@@ -1,6 +1,6 @@
 ---
-title: "概要 | Microsoft Docs"
-description: "System Center Configuration Manager の基本的な情報について説明します。"
+title: Introduzione | Microsoft Docs
+description: Informazioni di base come introduzione a System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,204 +17,204 @@ manager: angrobe
 ms.openlocfilehash: 76f907b17df0dd2f102e34ca3cfb3ffc813c0004
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="introduction-to-system-center-configuration-manager"></a>System Center Configuration Manager の概要
+# <a name="introduction-to-system-center-configuration-manager"></a>Introduzione a System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-管理ソリューション Microsoft System Center スイートの 1 製品である System Center Configuration Manager は、オンプレミス デバイスとクラウドの両方でデバイスとユーザーを管理するのに役立ちます。  
+Come prodotto nella suite di soluzioni di gestione Microsoft System Center, System Center Configuration Manager può essere utile nella gestione di dispositivi e utenti sia in locale che nel cloud.  
 
-**Configuration Manager を利用してできること:**   
--   手動のタスクを削減し、価値の高いプロジェクトに重点を置くことができるようにすることによって、IT スタッフの生産性と効率を向上させる。  
--   ハードウェアとソフトウェアの投資を最大限活かす。  
--   適切なタイミングで適切なソフトウェアを提供することによってユーザーの生産性を高める。  
+**L'uso di Configuration Manager può essere utile per:**   
+-   Aumentare l'efficienza e la produttività IT riducendo le attività manuali e consentendo di concentrarsi sui progetti di alto valore.  
+-   Ottimizzare gli investimenti hardware e software.  
+-   Incrementare la produttività degli utenti fornendo il software più adatto al momento giusto.  
 
-**より効果的な IT サービスを提供する Configuration Manager の機能:**  
+**Configuration Manager consente di offrire servizi IT più efficienti grazie all'abilitazione di:**  
 
--   安全でスケーラブルなソフトウェアの展開。  
--   コンプライアンス設定の管理。  
--   サーバー、デスクトップ、ラップトップ、およびモバイル デバイスの総合資産管理  
+-   Distribuzione del software sicura e scalabile.  
+-   Gestione delle impostazioni di conformità.  
+-   Gestione completa delle risorse di server, desktop, computer portatili e dispositivi mobili.  
 
-**既存の Microsoft テクノロジとソリューションを拡張し、共に機能する Configuration Manager**  
+**Configuration Manager estende soluzioni e tecnologie Microsoft esistenti e si integra con esse.**  
 
-たとえば、Configuration Manager は以下と統合されています。  
+Ad esempio, Configuration Manager si integra con:  
 
--   Microsoft Intune (さまざまなモバイル デバイス プラットフォームを管理)。  
--   Windows Server Update Services (WSUS) (ソフトウェアの更新を管理)。  
--   証明書サービス。  
--   Exchange Server および Exchange Online。  
--   Windows グループ ポリシー。
--   DNS。   
--   Windows 自動展開キット (Windows ADK) およびユーザー状態移行ツール (USMT)。  
--   Windows 展開サービス (WDS)。  
--   リモート デスクトップおよびリモート アシスタンス。  
+-   Microsoft Intune per gestire un'ampia gamma di piattaforme per dispositivi mobili.  
+-   Windows Server Update Services (WSUS) per gestire gli aggiornamenti software.  
+-   Servizi certificati.  
+-   Exchange Server e Exchange Online.  
+-   Criteri di gruppo di Windows.
+-   DNS.   
+-   Windows Automated Deployment Kit (Windows ADK) e Utilità di migrazione stato utente (USMT).  
+-   Servizi di distribuzione Windows (WDS).  
+-   Desktop remoto e Assistenza remota.  
 
-Configuration Manager は以下も使用します。  
+Configuration Manager usa anche:  
 
--   セキュリティ、サービスの場所、構成、および管理対象のユーザーとデバイスの探索に Active Directory ドメイン サービスを使用します。  
--   Microsoft SQL Server を分散型の変更管理データベースとして使用し、SQL Server Reporting Services (SSRS) と統合することで、管理アクティビティを監視および追跡するためのレポートを作成できます。  
--   管理機能を提供するサイト システムの役割、およびインターネット インフォメーション サービス (IIS) の Web サービスを使用します。
--   使用可能なネットワーク帯域幅を管理するために、バックグラウンド インテリジェント転送サービス (BITS) および BranchCache を使用します。  
+-   Servizi di dominio Active Directory per la sicurezza, la posizione del servizio, la configurazione e l'individuazione degli utenti e dei dispositivi da gestire.  
+-   Microsoft SQL Server come database di gestione delle modifiche distribuito e si integra con SQL Server Reporting Services (SSRS) per generare report per monitorare e tenere traccia delle attività di gestione.  
+-   I ruoli del sistema del sito che estendono le funzionalità di gestione e usano i servizi Web di Internet Information Services (IIS).
+-   Servizio trasferimento intelligente in background (BITS) e BranchCache per semplificare la gestione della larghezza di banda di rete disponibile.  
 
-Configuration Manager を適切に使用するには、運用環境で Configuration Manager を使用する前に、まず、管理機能のテストと計画を十分に行う必要があります。 強力な管理アプリケーションとして、Configuration Manager は組織内のすべてのコンピューターに影響する可能性があります。 ビジネス要件に沿って十分な計画を行ってから Configuration Manager を展開および管理すれば、Configuration Manager で管理オーバーヘッドと総所有コストを削減することができます。  
+Per il corretto funzionamento di Configuration Manager è necessario, prima di impiegarlo in un ambiente di produzione, pianificarne e testarne attentamente le funzionalità di gestione. Essendo un'applicazione di gestione avanzata, Configuration Manager ha la capacità di influire su ogni computer dell'organizzazione. Se lo si distribuisce e lo si gestisce con un'attenta pianificazione e tenendo in considerazione i requisiti aziendali, Configuration Manager consente di ridurre il carico amministrativo e il costo totale di proprietà.  
 
-Configuration Manager の詳細については、以下のトピックと、このトピックの追加セクションを参照してください。  
+Usare gli argomenti seguenti e le sezioni aggiuntive in questo argomento per altre informazioni su Configuration Manager.  
 
 
-**このドキュメント ライブラリ内の関連トピック:**  
+**Argomenti correlati in questa libreria della documentazione:**  
 
--   [System Center Configuration Manager の特徴と機能](../../core/plan-design/changes/features-and-capabilities.md)  
--   [System Center Configuration Manager のデバイス管理ソリューションの選択](../../core/plan-design/choose-a-device-management-solution.md)  
--   [System Center 2012 Configuration Manager からの System Center Configuration Manager の変更点](../../core/plan-design/changes/what-has-changed-from-configuration-manager-2012.md)
--   [System Center Configuration Manager の基本](../../core/understand/fundamentals.md)  
--   [独自のラボ環境を構築して System Center Configuration Manager を評価する](/sccm/core/get-started/set-up-your-lab)
--   [System Center Configuration Manager の使用に関するヘルプの検索](../../core/understand/find-help.md)  
--   [System Center Configuration Manager から削除された機能と非推奨の機能](../../core/plan-design/changes/removed-and-deprecated-features.md)  
+-   [Features and capabilities of System Center Configuration Manager](../../core/plan-design/changes/features-and-capabilities.md) (Caratteristiche e funzionalità di System Center Configuration Manager)  
+-   [Choose a device management solution for System Center Configuration Manager](../../core/plan-design/choose-a-device-management-solution.md) (Scegliere una soluzione di gestione dei dispositivi per System Center Configuration Manager)  
+-   [What's changed in System Center Configuration Manager from System Center 2012 Configuration Manager](../../core/plan-design/changes/what-has-changed-from-configuration-manager-2012.md) (Novità in System Center Configuration Manager rispetto a System Center Configuration Manager 2012)
+-   [Fundamentals of System Center Configuration Manager](../../core/understand/fundamentals.md) (Nozioni fondamentali su System Center Configuration Manager)  
+-   [Evaluate System Center Configuration Manager by building your own lab environment](/sccm/core/get-started/set-up-your-lab) (Valutare System Center Configuration Manager creando un proprio ambiente lab)
+-   [Find help for using System Center Configuration Manager](../../core/understand/find-help.md) (Reperire informazioni sull'uso di System Center Configuration Manager)  
+-   [Removed and deprecated features for System Center Configuration Manager](../../core/plan-design/changes/removed-and-deprecated-features.md) (Funzionalità rimosse e deprecate per System Center Configuration Manager)  
 
-##  <a name="BKMK_Console"></a> Configuration Manager コンソール  
- Configuration Manager をインストールしたら、Configuration Manager コンソールを使用して、サイトとクライアントを構成し、管理タスクを実行および監視します。 このコンソールは管理の中核であり、このコンソールで複数のサイトを管理できます。  
+##  <a name="BKMK_Console"></a> Console di Configuration Manager  
+ Dopo aver installato Configuration Manager usare la console di Configuration Manager per configurare siti e client e per eseguire e monitorare le attività di gestione. Questa console è il principale punto di amministrazione e consente di gestire più siti.  
 
- コンソールを使用してセカンダリ コンソールを実行し、次のような特定のクライアント管理タスクをサポートすることもできます。  
+ È possibile usare la console per eseguire console secondarie per supportare le attività di gestione client specifiche, ad esempio:  
 
--   **リソース エクスプローラー**。ハードウェアとソフトウェアのインベントリ情報を表示します。  
--   **リモート コントロール**。トラブルシューティング タスクを実行するために、クライアント コンピューターにリモート接続します。  
+-   **Esplora inventario risorse**: per visualizzare le informazioni sull'inventario hardware e software.  
+-   **Controllo remoto**: per connettersi in modalità remota a un computer client per eseguire attività di risoluzione dei problemi.  
 
-追加のコンピューターに Configuration Manager コンソールをインストールし、Configuration Manager の役割に基づいた管理権限で、アクセスを制限したり、コンソールで管理ユーザーが表示できる内容を制限したりできます。  
+È possibile installare la console di Configuration Manager in altri computer e limitare l'accesso e la visualizzazione degli elementi della console da parte degli utenti amministratori usando l'amministrazione basata su ruoli di Configuration Manager.  
 
-詳細については、「[Install System Center Configuration Manager consoles (System Center Configuration Manager コンソールのインストール)](../../core/servers/deploy/install/install-consoles.md)」をご覧ください。
+Per altre informazioni, vedere [Install System Center Configuration Manager consoles](../../core/servers/deploy/install/install-consoles.md) (Installare console di System Center Configuration Manager).
 
-##  <a name="BKMK_ApplicationCatalog"></a> アプリケーション カタログ、ソフトウェア センター、会社ポータル  
- **アプリケーション カタログ** は、ユーザーが Windows ベースの PC のソフトウェアを参照および要求できる Web サイトです。 アプリケーション カタログを使用するためには、サイトにアプリケーション カタログ Web サービス ポイントおよびアプリケーション カタログ Web サイト ポイントをインストールする必要があります。  
+##  <a name="BKMK_ApplicationCatalog"></a> Catalogo applicazioni, Software Center e portale aziendale  
+ Il **Catalogo applicazioni** è un sito Web dove gli utenti possono cercare e richiedere il software per i PC Windows. Per utilizzare il Catalogo applicazioni, è necessario installare il punto per servizi Web del Catalogo applicazioni e il punto per siti Web del Catalogo applicazioni per il sito.  
 
- **ソフトウェア センター**は、Windows ベースのコンピューターに Configuration Manager クライアントをインストールするとインストールされるアプリケーションです。 ユーザーはこのアプリケーションを実行し、ソフトウェアを要求したり、Configuration Manager で自身に展開されるソフトウェアを管理したりします。 ソフトウェア センターにより、ユーザーは次のことを行うことができます。  
+ **Software Center** è un'applicazione installata quando il client di Configuration Manager viene installato in computer basati su Windows. Gli utenti eseguono questa applicazione per richiedere software e gestire il software distribuito da Configuration Manager. Software Center consente agli utenti di eseguire le operazioni seguenti:  
 
--   アプリケーション カタログでソフトウェアを見つけてインストールする。  
--   自身のソフトウェア要求履歴を表示する。  
--   Configuration Manager がデバイスにソフトウェアをインストールできるタイミングを構成する。  
--   管理ユーザーがリモート コントロールを有効にしている場合、リモート コントロールのアクセス設定を構成する。  
+-   Cercare e installare il software dal Catalogo applicazioni.  
+-   Visualizzare la cronologia delle richieste di software.  
+-   Specificare quando Configuration Manager è in grado di installare il software nei dispositivi.  
+-   Configurare le impostazioni di accesso per il controllo remoto, se un utente amministratore ha abilitato il controllo remoto.  
 
-**会社のポータル**は、アプリケーション カタログと同様の機能を持つアプリケーションまたは Web サイトですが、Microsoft Intune で登録されるモバイル デバイス用である点が異なります。  
+Il **portale aziendale** è un'app o un sito Web che offre funzioni simili al Catalogo applicazioni, ma per i dispositivi mobili registrati da Windows Intune.  
 
-詳細については、「[System Center Configuration Manager のアプリケーション管理の概要](../../apps/understand/introduction-to-application-management.md)」を参照してください。  
+Per altre informazioni, vedere [Introduzione alla gestione delle applicazioni in System Center Configuration Manager](../../apps/understand/introduction-to-application-management.md).  
 
-###  <a name="BKMK_Client"></a> Configuration Manager のプロパティ (Windows PC)  
- Configuration Manager クライアントを Windows コンピューターにインストールすると、Configuration Manager はコントロール パネルにインストールされます。 通常、クライアント構成は Configuration Manager コンソールで実行されるため、このアプリケーションを構成する必要はありません。 このアプリケーションは、管理ユーザーとヘルプ デスクが個々のクライアントの問題をトラブルシューティングする際に役立ちます。  
+###  <a name="BKMK_Client"></a> Proprietà di Configuration Manager (in PC Windows)  
+ Quando il client di Configuration Manager è installato in computer Windows, Configuration Manager viene installato nel Pannello di controllo. Non è in genere necessario configurare questa applicazione perché la configurazione client viene eseguita nella console di Configuration Manager. Questa applicazione consente agli utenti amministratori e al supporto tecnico di risolvere i problemi relativi ai singoli client.  
 
- クライアント展開の詳細については、「[System Center Configuration Manager でのクライアントのインストール方法](../../core/clients/deploy/plan/client-installation-methods.md)」を参照してください。  
+ Per altre informazioni sulla distribuzione dei client, vedere [Metodi di installazione client in System Center Configuration Manager](../../core/clients/deploy/plan/client-installation-methods.md).  
 
-##  <a name="BKMK_ExampleScenarios"></a> Configuration Manager のシナリオ例  
- 次のシナリオ例には、Trey Research という会社が System Center Configuration Manager を使用して、ユーザーが以下の点を達成できるようにする方法が示されています。  
+##  <a name="BKMK_ExampleScenarios"></a> Scenari di esempio per Configuration Manager  
+ Gli scenari di esempio seguenti illustrano in che modo una società denominata Trey Research usa Configuration Manager per consentire agli utenti di:  
 
--   生産性の向上。  
--   管理操作をより合理化するためにデバイスのコンプライアンス管理を統合する。
--   デバイスの管理を簡素化してIT 運用コストを削減する。  
+-   Aumentare la produttività.  
+-   Unificare la gestione della conformità nei dispositivi per una migliore esperienza di amministrazione.
+-   Semplificare la gestione dei dispositivi per ridurre i costi operativi IT.  
 
-どの例でも、Adam が Configuration Manager のメインの管理者です。  
+In tutti gli scenari, Davide è l'amministratore principale di Configuration Manager.  
 
-###  <a name="BKMK_ScenarioEmpower"></a> シナリオ例: どんなデバイスからでもアプリケーションにアクセスできるようにしてユーザーの生産性を高める  
- Trey Research では、必要なアプリケーションに従業員が効率的にアクセスできるようにする必要があります。 Adam は、これらの要件を次のように分類します。  
+###  <a name="BKMK_ScenarioEmpower"></a> Scenario di esempio: consentire agli utenti di ottenere l'accesso alle applicazioni da qualsiasi dispositivo  
+ Trey Research vuole assicurarsi che i dipendenti abbiano accesso alle applicazioni necessarie nel modo più efficiente possibile. Davide esegue il mapping di questi requisiti aziendali agli scenari seguenti:  
 
-|要件|現在のクライアント管理の状態|将来のクライアント管理の状態|  
+|Requisito|Stato corrente della gestione client|Stato futuro della gestione client|  
 |-----------------|-------------------------------------|------------------------------------|  
-|新しい従業員が 1 日目から効率的に作業することができる。|従業員が入社すると、その従業員は、最初にサインインした後で、アプリケーションがインストールされるまで待つ必要がある。|従業員が入社したときに、その従業員がサインインすると、アプリケーションがインストールされており、いつでも使用できる状態になっている。|  
-|従業員が、必要な追加のソフトウェアをすばやく簡単に要求することができる。|従業員が追加のアプリケーションを必要とするとき、ヘルプ デスクにチケットを提出する。 その後、通常、チケットが処理され、アプリケーションがインストールされるまで 2 日間待機する。|従業員が追加のアプリケーションを必要になったら、Web サイトから依頼できる。 ライセンス制限がない場合、アプリケーションはすぐにインストールされる。 ライセンス制限がある場合、ユーザーがアプリケーションをインストールするには、まず承認を得る必要がある。<br /><br /> Web サイトには、インストールが許可されているアプリケーションのみユーザーに表示される。|  
-|従業員は、各自のモバイル デバイスが監視および適用されているセキュリティ ポリシーに準拠している場合、そのデバイスを職場で使用することができる。<br /><br /> これらのポリシーには、強力なパスワードの適用、無通信が一定時間続いた後のデバイスのロック、および紛失したデバイスや盗難されたデバイスのリモート ワイプが含まれます。|従業員は電子メール サービスを利用するために自分のモバイル デバイスを Exchange Server に接続する。 ただし、既定の Exchange ActiveSync メールボックス ポリシーのセキュリティ ポリシーに従業員が準拠していることを確認するためのレポートが限られている。 個人使用のモバイル デバイスは、IT 部門でポリシーの準拠を確認できない場合、禁止になる恐れがある。|IT 組織で、必要な設定を行って、モバイル デバイスのセキュリティ準拠をレポートすることができる。 この確認により、ユーザーは各自のモバイル デバイスを職場で引き続き使用することができる。 モバイル デバイスが紛失または盗難にあった場合、ユーザーがモバイル デバイスをリモートでワイプできる。また、紛失または盗難にあったと報告されたユーザーのモバイル デバイスを、ヘルプ デスクがワイプすることができる。<br /><br /> セキュリティと制御を高めるため、PKI 環境内でモバイル デバイスを登録できるようにする。|  
-|各自のデスクを離れているときでも従業員が生産性を維持できる。|従業員が各自のデスクを離れており、ポータブル コンピューターを持っていない場合、全社で利用可能なキオスク コンピューターを使用して各自のアプリケーションにアクセスすることができない。|従業員がキオスク コンピューターを使用して各自のアプリケーションとデータにアクセスすることができる。|  
-|通常、必要なアプリケーションとソフトウェア更新プログラムのインストールよりも、業務の継続性が優先される。|必要なアプリケーションとソフトウェア更新プログラムは昼間にインストールされるため、コンピューターのパフォーマンスが低下したりインストール時に再起動が必要になって、ユーザーの業務が中断されることが多い。|コンピューターを使用している間は必要なソフトウェアがインストールされないように、ユーザーが業務時間を設定することができる。|  
+|I nuovi dipendenti possono lavorare in modo efficiente dal primo giorno.|Quando i dipendenti entrano a far parte della società, devono attendere che le applicazioni vengano installate dopo il primo accesso.|Quando i dipendenti entrano a far parte della società, effettuano l'accesso e le applicazioni vengono installate e sono pronte per l'uso.|  
+|I dipendenti possono richiedere rapidamente e facilmente il software aggiuntivo necessario.|Quando i dipendenti hanno bisogno di altre applicazioni, creano un ticket per l'help desk. Devono quindi attendere un paio di giorni per l'elaborazione del ticket e l'installazione delle applicazioni.|Quando i dipendenti hanno bisogno di altre applicazioni, possono farne richiesta da un sito Web. L'installazione avviene immediatamente se non esistono restrizioni di licenza. Se esistono restrizioni di licenza, gli utenti devono richiedere l'approvazione prima di installare l'applicazione.<br /><br /> Il sito Web mostra agli utenti solo le applicazioni che sono autorizzati a installare.|  
+|I dipendenti possono usare i propri dispositivi portatili sul lavoro, se i dispositivi sono conformi ai criteri di sicurezza monitorati e applicati.<br /><br /> Questi criteri includono l'imposizione di una password complessa, il blocco di un dispositivo dopo un periodo di inattività e la cancellazione remota dei dispositivi smarriti o rubati.|I dipendenti possono connettere i dispositivi mobili a Exchange Server per il servizio di posta elettronica. Sono però disponibili informazioni di report limitate per confermare la conformità con i criteri di sicurezza nei criteri per le cassette postali predefiniti di Exchange ActiveSync. È possibile che l'utilizzo personale di dispositivi mobili venga vietato a meno che l'IT non sia in grado di confermare l'adesione ai criteri.|L'organizzazione IT può segnalare la conformità di protezione dei dispositivi mobili con le impostazioni necessarie. Questa conferma consente agli utenti di continuare a usare il dispositivo mobile sul lavoro. Gli utenti possono cancellare il dispositivo mobile in modalità remota se viene smarrito o rubato e l'help desk può cancellare il dispositivo mobile di qualsiasi utente segnalato come smarrito o rubato.<br /><br /> Prevedere la registrazione dei dispositivi mobili in un ambiente PKI per una maggiore sicurezza e un maggior controllo.|  
+|I dipendenti possono essere produttivi anche se non si trovano alla propria scrivania.|Quando i dipendenti non sono alla scrivania e non dispongono di computer portatili, non possono accedere alle applicazioni usando i computer pubblici disponibili nella società.|I dipendenti possono usare i computer pubblici per accedere ai dati e alle applicazioni.|  
+|In genere, la continuità aziendale ha la precedenza sull'installazione delle applicazioni e degli aggiornamenti software necessari.|Le applicazioni e gli aggiornamenti software necessari vengono installati durante il giorno interrompendo spesso il lavoro degli utenti perché i computer rallentano o vengono riavviati durante l'installazione.|Gli utenti possono configurare l'orario lavorativo per evitare che il software necessario venga installato mentre usano il computer.|  
 
- これらの要件を満たすため、Adam は次の Configuration Manager 管理機能と構成オプションを使用します。  
+ Per soddisfare i requisiti, Davide usa le funzionalità di gestione e le opzioni di configurazione di Configuration Manager seguenti:  
 
--   アプリケーション管理  
--   モバイル デバイス管理  
+-   Gestione delle applicazioni  
+-   Gestione dispositivi mobili  
 
-これらを次の表の構成手順を使用して実装します。  
+L'implementazione viene eseguita tramite la procedura di configurazione illustrata nella tabella seguente:  
 
-|構成手順|成果|  
+|Procedura di configurazione|Risultato|  
 |-------------------------|-------------|  
-|Adam は、新しいユーザーが Active Directory のユーザー アカウントを持っていることを確認し、これらのユーザーについて、Configuration Manager でクエリベースのコレクションを作成します。 次に、これらのユーザーが使用するプライマリ コンピューターにユーザー アカウントをマップするファイルを作成することで、これらのユーザーにユーザー デバイスのアフィニティを定義し、このファイルを Configuration Manager にインポートします。<br /><br /> 新規ユーザーが持つアプリケーションは、Configuration Manager で既に作成されています。 次に、目的が [必須] のアプリケーションを、新規ユーザーを含むコレクションに展開します。|ユーザー デバイスのアフィニティ情報により、これらのアプリケーションは、ユーザーがサインインする前に各ユーザーのプライマリ コンピューターにインストールされます。<br /><br /> ユーザーが正常にサインインするとすぐに、アプリケーションが使用できるようになります。|  
-|Adam は、インストールするアプリケーションをユーザーが参照できるように、アプリケーション カタログ サイト システムの役割をインストールして構成します。 利用可能の目的に設定されたアプリケーション展開を作成し、これらのアプリケーションを新しいユーザーが含まれるコレクションに展開します。<br /><br /> ライセンス数が制限されているアプリケーションの場合、Adam は承認を要求するようにこれらのアプリケーションを構成します。|これでユーザーはアプリケーション カタログを利用し、インストールが許可されているアプリケーションを閲覧できます。 ユーザーはすぐにアプリケーションをインストールするか、承認を要求して、ヘルプ デスクから要求が承認されてからアプリケーション カタログに戻り、アプリケーションをインストールすることができます。|  
-|Adam は、会社の社内 Exchange Server に接続するモバイル デバイスを管理するために、Configuration Manager で Exchange Server コネクタを作成します。 このコネクタにセキュリティを設定します。セキュリティ設定には、強力なパスワードの設定を要求することと、非アクティブの状態が一定時間続いた場合にモバイル デバイスをロックすることを含めます。<br /><br /> Adam は Windows Phone 8、Windows RT、iOS を実行するデバイスの管理を強化するために Microsoft Intune サブスクリプションを取得します。 それからサービス接続ポイントのサイト システムの役割をインストールします。 このモバイル デバイス管理ソリューションを使用すると、モバイル デバイスの管理のサポートを改善できます。 たとえば、ユーザーがモバイル デバイスにアプリケーションをインストールできるようになり、さまざまな設定の管理も可能になります。 さらに、モバイル デバイス接続は PKI 証明書を使用して保護されます。PKI 証明書は Intune によって自動的に作成され、展開されます。<br /><br /> Adam は、Configuration Manager で使用するためにサービス接続ポイントとサブスクリプションを構成した後、モバイル デバイスを所有しているユーザーに対して、リンクをクリックして登録プロセスを開始するように通知する電子メール メッセージを送信します。<br /><br /> モバイル デバイスが Microsoft Intune で登録されると、Adam はコンプライアンス設定を使用して、これらのモバイル デバイスのセキュリティ設定を構成します。 セキュリティ設定には、強力なパスワードの設定を要求することと、非アクティブの状態が一定時間続いた場合にモバイル デバイスをロックすることを含めます。|これらの 2 つのモバイル デバイス管理ソリューションにより、IT 組織では、社内ネットワークで使用されているモバイル デバイス、および構成されているセキュリティ設定の準拠に関するレポート情報を提供できるようになりました。<br /><br /> ユーザーには、モバイル デバイスが紛失または盗難にあった場合に、アプリケーション カタログまたは会社ポータルを使用してモバイル デバイスをリモートでワイプする方法が示されます。 ヘルプ デスクにも、Configuration Manager コンソールを使用してユーザーのモバイル デバイスをリモートでワイプする方法が説明されます。<br /><br /> また、Adam は、Microsoft Intune で登録されたモバイル デバイスについて、さらに多くの設定にアクセスできるようにすることで、ユーザーがインストールするモバイル アプリケーションを展開し、モバイル デバイスからより多くのインベントリ データを収集し、モバイル デバイスの管理制御を強化できるようになりました。|  
-|Trey Research には、オフィスを訪れた従業員が使用するキオスク コンピューターが何台かあります。 これらの従業員は、サインインする場所に関係なく、各自のアプリケーションを利用することを望んでいます。 ただし、Adam は、すべてのアプリケーションを各コンピューターにローカルにインストールするのは避けたいと考えています。<br /><br /> そのため、Adam は次の 2 つの展開の種類で、必要なアプリケーションを作成します。<br /><br /> **1:** アプリケーションの完全なローカル インストール。ユーザーのプライマリ デバイスにのみインストールできるという要件があります。<br /><br /> **2:** アプリケーションの仮想バージョン。ユーザーのプライマリ デバイスにはインストールできないという要件があります。|オフィスを訪れた従業員がキオスク コンピューターにサインインすると、各自が必要なアプリケーションがキオスク コンピューターのデスクトップ上にアイコンとして表示されます。 アプリケーションを実行すると、仮想アプリケーションとしてストリーミングされます。 そのため、普段のデスクトップと同様の生産性を維持できます。|  
-|Adam は、ソフトウェア センターでユーザーが業務時間を構成できることと、この業務時間内およびコンピューターがプレゼンテーション モードになっている間はソフトウェア展開処理が行われないようにするオプションをユーザーが選択できることを、ユーザーに通知します。|Configuration Manager によってコンピューターにソフトウェアを展開する時間帯をユーザーが制御できるため、業務時間内の生産性が向上します。|  
+|Davide verifica che i nuovi utenti dispongano di account utente in Active Directory e crea una nuova raccolta basata su query in Configuration Manager per questi utenti. Quindi definisce l'affinità utente dispositivo per questi utenti creando un file che associa gli account utente ai computer primari che utilizzeranno e importa il file in Configuration Manager.<br /><br /> Le applicazioni che i nuovi utenti devono avere sono già state create in Configuration Manager. Distribuisce quindi queste applicazioni con lo scopo Richiesto nella raccolta che contiene i nuovi utenti.|Tenendo conto delle informazioni di affinità utente-dispositivo, le applicazioni vengono installate nel computer primario o nei computer di ogni utente prima che l'utente esegua l'accesso.<br /><br /> Le applicazioni sono pronte all'uso non appena l'utente esegue l'accesso.|  
+|Davide installa e configura i ruoli del sistema del sito Catalogo applicazioni in modo che gli utenti possano cercare applicazioni da installare. Crea le distribuzioni delle applicazioni che hanno lo scopo di Disponibile e quindi distribuisce le applicazioni nella raccolta che contiene i nuovi utenti.<br /><br /> Per le applicazioni che dispongono di un numero limitato di licenze, Davide configura le applicazioni per richiedere l'approvazione.|Gli utenti possono ora usare il Catalogo applicazioni per vedere le applicazioni che sono autorizzati a installare. Gli utenti possono quindi installare le applicazioni subito o richiedere l'approvazione e tornare al Catalogo applicazioni per installarle dopo l'approvazione della richiesta dall'help desk.|  
+|Davide crea un connettore Exchange Server in Configuration Manager per gestire i dispositivi mobili che si connettono al server Exchange Server aziendale locale. Configura il connettore con le impostazioni di sicurezza che includono i requisiti per l'impostazione di una password complessa e il blocco del dispositivo mobile dopo un periodo di inattività.<br /><br /> Per la gestione aggiuntiva di dispositivi che eseguono Windows Phone 8, Windows RT e iOS, Davide ottiene una sottoscrizione di Microsoft Intune e installa quindi il ruolo del sistema del sito del punto di connessione del servizio. Questa soluzione di gestione dei dispositivi mobile offre alla società un maggiore supporto di gestione per questi dispositivi. Ad esempio, la possibilità data agli utenti di installare le applicazioni in questi dispositivi e la gestione completa delle impostazioni. La connessione per i dispositivi mobili, poi, viene protetta mediante certificati PKI creati automaticamente e distribuiti da Intune.<br /><br /> Dopo aver configurato il punto di connessione del servizio e la sottoscrizione per l'uso con Configuration Manager, Davide invia un messaggio di posta elettronica agli utenti proprietari dei dispositivi mobili interessati perché facciano clic su un collegamento per avviare il processo di registrazione.<br /><br /> Affinché i dispositivi mobili possano essere registrati da Microsoft Intune, Davide usa le impostazioni di conformità per configurare le impostazioni di protezione per i dispositivi mobili. Queste impostazioni includono il requisito di configurare una password complessa e il blocco del dispositivo mobile dopo un periodo di inattività.|Con queste due soluzioni per la gestione dei dispositivi mobili, l'organizzazione IT ora può fornire informazioni sulla creazione di report dei dispositivi mobili usati nella rete aziendale e la relativa conformità alle impostazioni di protezione configurate.<br /><br /> Agli utenti viene ora mostrato come cancellare da remoto il dispositivo mobile usando il Catalogo applicazioni o il portale aziendale in caso di perdita o furto del dispositivo mobile. Al supporto tecnico viene anche indicato come cancellare da remoto un dispositivo mobile per gli utenti usando la console di Configuration Manager.<br /><br /> Per i dispositivi mobili registrati da Microsoft Intune, Davide ora può anche distribuire le applicazioni mobili in modo che possano essere installate dagli utenti, raccogliere più dati di inventario dai dispositivi e disporre di maggiore controllo della gestione di questi dispositivi grazie alla possibilità di accedere a più impostazioni.|  
+|Trey Research dispone di diversi computer pubblici usati dai dipendenti in visita in ufficio. I dipendenti vogliono avere le loro applicazioni a disposizione ovunque eseguano l'accesso. Tuttavia, Davide non vuole installare localmente tutte le applicazioni in ogni computer.<br /><br /> A tale scopo, Davide crea le applicazioni richieste con due tipi di distribuzione:<br /><br /> **Primo**: un'installazione locale completa dell'applicazione, con il requisito di poter essere installata solo sul dispositivo primario dell'utente.<br /><br /> **Secondo**: una versione virtuale dell'applicazione, con il requisito di non dover essere installata sul dispositivo primario dell'utente.|Quando gli utenti in visita accedono a un computer pubblico, visualizzano le applicazioni necessarie come icone sul desktop di tale computer. L'applicazione viene eseguita in streaming come un'applicazione virtuale. In questo modo, possono essere produttivi come se fossero seduti alla propria scrivania.|  
+|Davide fa sapere agli utenti che possono configurare il loro orario lavorativo in Software Center e selezionare le opzioni per evitare le attività di distribuzione software durante questo periodo di tempo e quando il computer è in modalità presentazione.|Poiché gli utenti possono controllare quando Configuration Manager distribuisce software nei loro computer, gli utenti rimangono più produttivi durante le ore lavorative.|  
 
- これらの構成手順と成果により、Trey Research では、すべてのデバイスからアプリケーションにアクセスできるようにすることで、従業員の生産性を向上するのに成功しました。  
+ Questi passaggi di configurazione e i relativi risultati consentono a Trey Research di aumentare la produttività dei dipendenti garantendo l'accesso alle applicazioni da qualsiasi dispositivo.  
 
-###  <a name="BKMK_ScenarioUnify"></a> シナリオ例: デバイスのコンプライアンス管理を統合する  
- Trey Research は、最新の状態を自動的に保つウイルス対策ソフトウェアを社内のコンピューターで実行する、統合クライアント管理ソリューションを求めています。 つまり、  
+###  <a name="BKMK_ScenarioUnify"></a> Scenario di esempio: unificare la gestione della conformità per i dispositivi  
+ Trey Research vuole una soluzione di gestione client unificata che assicuri che nei computer sia in esecuzione un software antivirus che viene aggiornato automaticamente. Ovvero:  
 
--   Windows ファイアウォールが有効になっています。  
--   重要なソフトウェアの更新がインストールされています。  
--   特定のレジストリ キーが設定されています。  
--   管理対象のモバイル デバイスで署名のないアプリケーションをインストールおよび実行できません。  
+-   Windows Firewall è abilitato.  
+-   Gli aggiornamenti software critici sono installati.  
+-   Sono impostate specifiche chiavi del Registro di sistema.  
+-   I dispositivi mobili gestiti non possono installare o eseguire applicazioni non firmate.  
 
-また、Trey Research では、イントラネットからインターネットに移動するラップトップ向けに、この保護をインターネットに拡張する必要があります。  
+Inoltre, la società desidera estendere la protezione a Internet per i computer portatili che si spostano dalla rete Intranet a Internet.  
 
-Adam は、これらの要件を次のように分類します。  
+Davide esegue il mapping di questi requisiti aziendali agli scenari seguenti:  
 
-|要件|現在のクライアント管理の状態|将来のクライアント管理の状態|  
+|Requisito|Stato corrente della gestione client|Stato futuro della gestione client|  
 |-----------------|-------------------------------------|------------------------------------|  
-|すべてのコンピューターで、定義ファイルが最新のマルウェア対策ソフトウェアを実行し、Windows ファイアウォールを有効にする。|コンピューターが異なれば、実行しているマルウェア対策ソリューションも異なり、それらは常に最新の状態にあるとは限らない。 Windows ファイアウォールが既定で有効になるが、ユーザーが無効にすることがある。<br /><br /> コンピューターでマルウェアが検出されると、ユーザーはヘルプ デスクに連絡する必要がある。|すべてのコンピューターで、最新の定義更新ファイルが自動的にダウンロードされる、同じマルウェア対策ソリューションを実行し、ユーザーが無効にした場合でも Windows ファイアウォールが自動的に再度有効になる。<br /><br /> マルウェアが検出されると、ヘルプ デスクに自動的に通知される。|  
-|すべてのコンピューターで、リリースの 1 か月以内に重要なソフトウェア更新プログラムをインストールする。|ソフトウェア更新プログラムはコンピューターにインストールされますが、多くのコンピューターは、重要なソフトウェア更新プログラムがリリースされても自動的にインストールせず、数か月後にインストールしている。 この期間は攻撃に対して脆弱な状態である。<br /><br /> 重要なソフトウェア更新プログラムをインストールしていないコンピューターについては、ヘルプ デスクがまず電子メール メッセージを送信して、ユーザーに更新プログラムをインストールするように依頼している。 未対応のままのコンピューターについては、エンジニアがそれらのコンピューターにリモート接続し、不足しているソフトウェア更新プログラムを手動でインストールしている。|電子メール メッセージを送信したり、手動でインストールするようにヘルプ デスクに依頼したりせずに、指定の月内に現在の対応率が 95% 以上に向上される。|  
-|特定のアプリケーションのセキュリティ設定が定期的にチェックされて、必要に応じて修復される。|コンピューターで特定のアプリケーションのレジストリ値をリセットするために、コンピューター グループのメンバーシップを使用した複雑なスタートアップ スクリプトを実行している。<br /><br /> これらのスクリプトは起動時にのみ実行されるが、一部のコンピューターは何日もオンになったままであるため、既定の構成かどうかをヘルプ デスクが適時確認できない。|コンピューター グループのメンバーシップを使用したりコンピューターを再起動することなく、レジストリ値がチェックされて自動的に修復される。|  
-|モバイル デバイスで安全でないアプリケーションをインストールおよび実行できない。|安全でない可能性があるアプリケーションはインターネットからダウンロードし、実行しないようにユーザーに要求される。 ただし、これを監視または強制するためのコントロールは置かれない。|Microsoft Intune または Configuration Manager によって管理されるモバイル デバイスでは、署名されていないアプリケーションのインストールおよび実行は自動的に阻止される。|  
-|イントラネットからインターネットに移動するラップトップのセキュリティを確保する必要がある。|ユーザーが出張するとき、多くの場合、VPN で毎日接続できることはない。 出張者のラップトップがセキュリティ要件を満たさなくなる。|インターネット接続が、ラップトップがセキュリティ要件に対応するために必要なすべてである。 ユーザーは、VPN 接続にサインインする必要がない (使用する必要がない)。|  
+|Tutti i computer eseguono software antimalware che dispone di file di definizione aggiornati e abilita Windows Firewall.|Computer diversi eseguono soluzioni antimalware differenti, non sempre aggiornate. Anche se Windows Firewall è abilitato per impostazione predefinita, gli utenti a volte lo disabilitano.<br /><br /> Agli utenti viene richiesto di contattare il supporto tecnico se viene rilevato software dannoso nel computer.|Tutti i computer eseguono la stessa soluzione antimalware che scarica automaticamente i file più recenti di aggiornamento della definizione e automaticamente riabilita Windows Firewall, se gli utenti lo disabilitano.<br /><br /> Il supporto tecnico riceve automaticamente una notifica tramite posta elettronica se viene rilevato software dannoso.|  
+|Tutti i computer installano gli aggiornamenti software critici entro un mese dalla data di rilascio.|Anche se gli aggiornamenti software sono installati nei computer, molti computer non installano automaticamente gli aggiornamenti software critici fino a due o tre mesi dopo il rilascio. In questo modo rimangono vulnerabili agli attacchi durante questo periodo di tempo.<br /><br /> Per i computer che non installano gli aggiornamenti software critici, l'help desk invia prima un messaggio di posta elettronica chiedendo agli utenti di installare gli aggiornamenti. Per i computer che rimangono non conformi, i tecnici si connettono in remoto ai computer e installano manualmente gli aggiornamenti software mancanti.|Miglioramento del tasso di conformità corrente entro il mese specificato fino a più del 95% senza inviare messaggi di posta elettronica o chiedere all'help desk di installare gli aggiornamenti manualmente.|  
+|Le impostazioni di sicurezza per applicazioni specifiche vengono controllate regolarmente e aggiornate, se necessario.|I computer eseguono script di avvio complessi che si basano sull'appartenenza a gruppi di computer per reimpostare i valori del Registro di sistema per applicazioni specifiche.<br /><br /> Poiché questi script vengono eseguiti solo all'avvio e alcuni computer vengono lasciati accesi per giorni, l'help desk non può controllare la deviazione della configurazione in modo tempestivo.|I valori del Registro di sistema vengono controllati e aggiornati automaticamente senza basarsi sull'appartenenza al gruppo di computer o riavviare il computer.|  
+|I dispositivi mobili non possono installare o eseguire applicazioni non sicure.|Agli utenti non viene richiesto di scaricare ed eseguire applicazioni potenzialmente non sicure da Internet. Non è però attivo alcun controllo per il monitoraggio e l'imposizione di questi aspetti.|I dispositivi mobili gestiti con Microsoft Intune o Configuration Manager impediscono automaticamente l'installazione o l'esecuzione delle applicazioni non firmate.|  
+|I computer portatili che si spostano dalla rete Intranet a Internet devono essere protetti.|Gli utenti che lavorano fuori sede, spesso non possono connettersi tramite VPN ogni giorno. Questi portatili diventano non conformi ai requisiti di sicurezza.|È sufficiente una connessione Internet per mantenere i portatili conformi ai requisiti di protezione. Gli utenti non devono eseguire l'accesso o usare la connessione VPN.|  
 
- これらの要件を満たすため、Adam は次の Configuration Manager 管理機能と構成オプションを使用します。  
+ Per soddisfare i requisiti, Davide usa le funzionalità di gestione e le opzioni di configurazione di Configuration Manager seguenti:  
 
 -   Endpoint Protection  
--   ソフトウェア更新プログラム  
--   コンプライアンス設定  
--   モバイル デバイス管理  
--   インターネット ベースのクライアント管理  
+-   Aggiornamenti software  
+-   Impostazioni di conformità  
+-   Gestione dispositivi mobili  
+-   Gestione client basata su Internet  
 
-これらを次の表の構成手順を使用して実装します。  
+L'implementazione viene eseguita tramite la procedura di configurazione illustrata nella tabella seguente:  
 
-|構成手順|成果|  
+|Procedura di configurazione|Risultato|  
 |-------------------------|-------------|  
-|Adam は Endpoint Protection を構成し、 他のマルウェア対策ソリューションをアンインストールするようにクライアント設定を有効にし、Windows ファイアウォールを有効にします。 コンピューターが定期的に最新の定義更新ファイルをチェックしてインストールするように、自動展開規則を構成します。|単一のマルウェア対策ソリューションにより、すべてのコンピューターを最小限の管理オーバーヘッドで保護できます。 マルウェアが検出された場合、ヘルプ デスクには電子メール メッセージで自動的に通知されるため、問題を迅速に解決できます。 この機能によって、他のコンピューターに対する攻撃を防ぐことができます。|  
-|対応率を高めるため、Adam は、自動展開規則を使用し、サーバーのメンテナンス ウィンドウを定義し、休止状態のコンピューターで Wake On LAN を使用する場合の長所と短所を調べます。|重要なソフトウェア更新プログラムへの対応率が高くなり、ユーザーやヘルプ デスクがソフトウェア更新プログラムを手動でインストールする必要が少なくなります。|  
-|Adam は、コンプライアンス設定を使用して、指定のアプリケーションが存在するかどうかをチェックします。 アプリケーションが検出されると、構成項目によってレジストリ値がチェックされ、対応していない場合は自動的に修復されます。|すべてのコンピューターに展開されてコンプライアンスを毎日チェックする構成項目と構成基準を使用することで、コンピューターのメンバーシップを使用する個々のスクリプトやコンピューターの再起動は必要なくなります。|  
-|Adam は、登録されたモバイル デバイスに対してコンプライアンス設定を使用して、署名されていないアプリケーションはモバイル デバイスでインストールおよび実行できないように、Exchange Server コネクタを構成します。|署名されていないアプリケーションを禁止することで、モバイル デバイスは有害な可能性があるアプリケーションから自動的に保護されます。|  
-|Adam は、Configuration Manager が HTTPS 接続のために要求する PKI 証明書がサイト システムのサーバーとコンピューターにあることを確認します。 それから、境界ネットワークで、インターネットからのクライアント接続を承認する追加のサイト システムの役割をインストールします。|コンピューターがイントラネットからインターネットに移動した場合、インターネットに接続したときに Configuration Manager の管理が自動的に継続されます。 これらのコンピューターは、ユーザーがコンピューターにサインインしているか、VPN 接続に接続しているかに依存しません。<br /><br /> これらのコンピューターのマルウェア対策と Windows ファイアウォール、ソフトウェア更新プログラム、および更新アイテムは引き続き管理されます。 そのため、対応レベルが自動的に向上します。|  
+|Davide configura Endpoint Protection. Abilita l'impostazione client per disinstallare altre soluzioni antimalware e abilita Windows Firewall. Configura le regole di distribuzione automatica in modo che i computer controllino e installino regolarmente gli aggiornamenti più recenti delle definizioni.|La soluzione antimalware unica consente di proteggere tutti i computer riducendo al minimo il carico amministrativo. Dato che il supporto tecnico riceve automaticamente una notifica tramite posta elettronica se viene rilevato antimalware, i problemi possono essere risolti rapidamente. In questo modo è possibile impedire attacchi in altri computer.|  
+|Per aumentare i tassi di conformità, Davide usa le regole di distribuzione automatica, definisce le finestre di manutenzione per i server e verifica i vantaggi e gli svantaggi di usare la riattivazione LAN per i computer in stato di ibernazione.|La conformità per gli aggiornamenti software critici aumenta e si riduce la necessità per gli utenti o il supporto tecnico di installare manualmente gli aggiornamenti software.|  
+|Davide usa le impostazioni di conformità per verificare la presenza di applicazioni specifiche. Quando vengono rilevate le applicazioni, gli elementi di configurazione controllano i valori del Registro di sistema e li aggiornano automaticamente se non sono conformi.|Usando gli elementi e le linee base di configurazione distribuiti in tutti i computer e che controllano quotidianamente la conformità, non sono più necessari script distinti basati sull'appartenenza del computer e sul riavvio del computer.|  
+|Davide usa le impostazioni di conformità per i dispositivi mobili registrati e configura il connettore di Exchange Server in modo da proibire l'installazione e l'esecuzione di applicazioni non firmate nei dispositivi mobili.|Dato che le applicazioni non firmate sono vietate, i dispositivi mobili sono protetti automaticamente dalle applicazioni potenzialmente dannose.|  
+|Davide si assicura che i server e i computer del sistema del sito abbiano i certificati PKI richiesti da Configuration Manager per le connessioni HTTPS. Installa quindi ruoli del sistema del sito aggiuntivi nella rete perimetrale che accettano le connessioni client da Internet.|I computer che si spostano automaticamente dalla rete Intranet a Internet continueranno a essere gestiti da Configuration Manager quando dispongono di una connessione a Internet. Questi computer non dipendono dal fatto che gli utenti eseguano l'accesso al computer oppure attivino la connessione VPN.<br /><br /> Questi computer continueranno a essere gestiti per antimalware e Windows Firewall, aggiornamenti software ed elementi di configurazione. Di conseguenza, i livelli di conformità aumentano automaticamente.|  
 
- これらの構成手順と成果により、Trey Research では、デバイスのコンプライアンス管理を統合するのに成功しました。  
+ Questa procedura di configurazione e i relativi risultati consentono a Trey Research di semplificare la gestione dei client per dispositivi.  
 
-###  <a name="BKMK_ScenarioSimplify"></a> シナリオ例: デバイスのクライアント管理を簡素化する  
- Trey Research では、すべての新しいコンピューターが Windows 7 を実行する会社の基本のコンピューター イメージを自動的にインストールする必要があります。 オペレーティング システム イメージをインストールした後、これらのコンピューターにユーザーが追加でインストールしたソフトウェアは管理および監視される必要があります。 機密性の高い情報を保存しているコンピューターには、他のコンピューターよりも制限の厳しい管理ポリシーが必要です。 たとえば、そのようなコンピューターにはヘルプ デスクのエンジニアはリモート接続できず、再起動には BitLocker PIN の入力を使用する必要があり、ローカル管理者だけがソフトウェアをインストールできます。  
+###  <a name="BKMK_ScenarioSimplify"></a> Scenario di esempio: semplificare la gestione client per dispositivi  
+ Trey Research vuole che tutti i nuovi computer installino automaticamente l'immagine del computer di base dell'azienda, che esegue Windows 7. Dopo l'installazione dell'immagine del sistema operativo, i computer devono essere gestiti e monitorati per il software aggiuntivo installato dagli utenti. I computer che archiviano informazioni altamente riservate richiedono criteri di gestione più restrittivi rispetto ad altri computer. Ad esempio, i tecnici del supporto tecnico non devono connettersi da remoto, è necessario usare l'immissione PIN di BitLocker per il riavvio e solo gli amministratori locali possono installare software.  
 
- Adam は、これらの要件を次のように分類します。  
+ Davide esegue il mapping di questi requisiti aziendali agli scenari seguenti:  
 
-|要件|現在のクライアント管理の状態|将来のクライアント管理の状態|  
+|Requisito|Stato corrente della gestione client|Stato futuro della gestione client|  
 |-----------------|-------------------------------------|------------------------------------|  
-|新しいコンピューターに Windows 7 をインストールする。|ヘルプ デスクがユーザー用に Windows 7 をインストールして構成し、コンピューターを個々の場所に送付している。|新しいコンピューターは最終送付先に直接送付され、ネットワークに接続されると Windows 7 が自動的にインストールされて構成される。|  
-|コンピューターを管理および監視する必要がある。 これには、ライセンス要件を決定できるハードウェアおよびソフトウェア インベントリ データの収集が含まれる。|Configuration Manager クライアントは、自動クライアント プッシュ インストールの使用により展開される。 ヘルプ デスクは、インストール エラーやインベントリ データを予想どおり送信しないクライアントを調査する。<br /><br /> エラーは多くの場合、インストールの依存関係が満たされていないためや、クライアントの WMI の破損によるものである。|クライアント インストール、およびコンピューターから収集されるインベントリ データの信頼性が高まり、ヘルプ デスクが調査する必要が少なくなる。 レポートに、ライセンス情報用にソフトウェア使用状況を表示する。|  
-|一部のコンピューターの管理ポリシーをさらに厳しくする必要がある。|このさらに厳しい管理ポリシーのために、これらのコンピューターは現在、Configuration Manager によって管理されていない。|管理費を増やすことなく例外に対応するために、これらのコンピューターは Configuration Manager の使用により管理される。|  
+|Nei nuovi computer viene installato Windows 7.|L'help desk installa e configura Windows 7 per gli utenti e quindi invia il computer alla relativa posizione.|I nuovi computer vanno direttamente alla destinazione finale, sono collegati alla rete e installano e configurano Windows 7 automaticamente.|  
+|I computer devono essere gestiti e monitorati. Ciò include la raccolta dei dati di inventario hardware e software per determinare i requisiti di licenza.|Il client di Configuration Manager viene distribuito usando l'installazione push client automatica. L'help desk verifica gli errori di installazione e i client che non inviano i dati di inventario quando previsto.<br /><br /> Gli errori sono frequenti a causa di dipendenze di installazione non soddisfatte ed errori WMI nel client.|I dati di inventario e installazione client raccolti nei computer sono più affidabili e richiedono meno interventi di assistenza. I report mostrano l'utilizzo software per le informazioni sulla licenza.|  
+|Alcuni computer devono disporre di criteri di gestione più rigorosi.|A causa dei criteri di gestione più rigorosi, questi computer non sono attualmente gestiti da Configuration Manager.|Questi computer vengono gestiti con Configuration Manager per gestire le eccezioni senza ulteriore carico amministrativo.|  
 
- これらの要件を満たすため、Adam は次の Configuration Manager 管理機能と構成オプションを使用します。  
+ Per soddisfare i requisiti, Davide usa le funzionalità di gestione e le opzioni di configurazione di Configuration Manager seguenti:  
 
--   オペレーティング システムの展開  
--   クライアント展開とクライアント ステータス  
--   コンプライアンス設定  
--   クライアント設定  
--   インベントリ方法と資産インテリジェンス  
--   役割に基づいた管理  
+-   Distribuzione del sistema operativo  
+-   Distribuzione client e stato del client  
+-   Impostazioni di conformità  
+-   Impostazioni client  
+-   Metodi di inventario e Asset Intelligence  
+-   Amministrazione basata su ruoli  
 
-これらを次の表の構成手順を使用して実装します。  
+L'implementazione viene eseguita tramite la procedura di configurazione illustrata nella tabella seguente:  
 
-|構成手順|成果|  
+|Procedura di configurazione|Risultato|  
 |-------------------------|-------------|  
-|Adam は、Windows 7 がインストールされており、会社の仕様に合わせて構成されたコンピューターから、オペレーティング システム イメージをキャプチャします。 次に、不明なコンピューターのサポートおよび PXE を使用して、このオペレーティング システムを新しいコンピューターに展開します。 また、Configuration Manager クライアントをオペレーティング システム展開の一環としてインストールします。|新しいコンピューターは、ヘルプ デスクの対応なしに、短時間で利用できるようになります。|  
-|Adam は、検出されたすべてのコンピューターに Configuration Manager クライアントをインストールするように、サイト全体の自動クライアント プッシュ インストールを構成します。 これにより、クライアントのイメージが適用されていないコンピューターにも、Configuration Manager によって管理されるように、クライアントが確実にインストールされます。<br /><br /> Adam は、検出されたクライアントの問題を自動的に修復するように、クライアント ステータスを構成します。 また、必要なインベントリ データの収集を有効にするクライアント設定を構成し、資産インテリジェンスを構成します。|オペレーティング システムと共にクライアントをインストールするほうが、Configuration Manager がコンピューターを検出してコンピューターにクライアント ソース ファイルのインストールを試みるのを待つよりも、短時間で済み、信頼性も高くなります。 ただし、自動クライアント プッシュ オプションを有効なままにすると、既にオペレーティング システムがインストールされているコンピューターがネットワークに接続したときに、クライアントをインストールすることができるバックアップ手段として役立ちます。<br /><br /> クライアント設定によって、クライアントはサイトに対してインベントリ情報を定期的に送信します。 この定期的な送信とクライアント ステータス テストによって、ヘルプ デスクの操作を最小限に抑えてクライアントを継続的に実行することができます。 たとえば、WMI の破損が検出されて自動的に修復されます。<br /><br /> 資産インテリジェンス レポートは、ソフトウェアの使用状況とライセンスを監視するのに役立ちます。|  
-|Adam は、より強固なポリシー設定を与える必要があるコンピューターのコレクションを作成します。 それからそのコレクションに対して、リモート コントロールを無効にし、BitLocker PIN エントリを有効にし、ローカル管理者にのみソフトウェアのインストールを許可するカスタム クライアント デバイス設定を作成します。<br /><br /> Adam は、ヘルプ デスク エンジニアに対してこのコンピューター コレクションが表示されないようにロール ベース管理を構成します。 この構成により、コレクションのコンピューターが標準コンピューターとして間違って管理されることがなくなります。|これらのコンピューターは、Configuration Manager によって、新しいサイトは不要な、固有の設定を使用して管理されます。<br /><br /> これらのコンピューターのコレクションは、ヘルプ デスク エンジニアには表示されません。 それにより、間違って標準コンピューターの展開やスクリプトが送信される可能性が少なくなります。|  
+|Davide acquisisce un'immagine del sistema operativo da un computer con Windows 7 installato e configurato in base alle specifiche della società. Distribuisce quindi il sistema operativo nei nuovi computer, usando il supporto di computer sconosciuti e PXE. Installa anche il client di Configuration Manager come parte della distribuzione del sistema operativo.|I nuovi computer risultano operativi più rapidamente senza interventi da parte del supporto tecnico.|  
+|Davide configura l'installazione push client a livello di sito per installare il client di Configuration Manager in qualsiasi computer individuato. Ciò assicura che il client verrà installato anche in eventuali computer non inclusi nell'immagine del client, in modo che tali computer vengano gestiti da Configuration Manager.<br /><br /> Davide configura lo stato del client in modo che vengano risolti automaticamente eventuali problemi rilevati relativi al client. Configura inoltre le impostazioni del client che consentono la raccolta dei dati di inventario necessari e infine configura Asset Intelligence.|L'installazione del client insieme al sistema operativo risulta più rapida e più affidabile rispetto all'attesa dell'individuazione del computer da parte di Configuration Manager e del successivo tentativo di installare i file di origine del client nel computer. Se tuttavia si lascia abilitata l'opzione di push automatico del client, si ottiene un metodo alternativo per consentire a un computer in cui è già installato il sistema operativo di installare il client quando il computer si connette alla rete.<br /><br /> Le impostazioni del client assicurano che le informazioni di inventario vengano inviate regolarmente al sito dai client. Oltre ai test dello stato del client, ciò aiuta a mantenere in esecuzione il client con un intervento minimo da parte dell'help desk. Ad esempio, gli errori WMI vengono rilevati e risolti automaticamente.<br /><br /> I report di Asset Intelligence agevolano il monitoraggio dell'utilizzo del software e delle licenze.|  
+|Davide crea una raccolta per i computer con le impostazioni dei criteri più restrittive. Crea quindi un'impostazione per dispositivo client personalizzata per questa raccolta, che disabilita il controllo remoto, abilita l'immissione del PIN BitLocker e consente l'installazione di software solo agli amministratori locali.<br /><br /> Davide configura l'amministrazione basata su ruoli, in modo che i tecnici dell'help desk non vedano questa raccolta di computer. Ciò consente di assicurarsi che questi computer non vengano inavvertitamente gestiti come computer standard.|Questi computer vengono ora gestiti da Configuration Manager, ma con impostazioni specifiche che non necessitano di un nuovo sito.<br /><br /> La raccolta per questi computer non è visibile per i tecnici dell'help desk. Si riducono così le possibilità che i computer ricevano per errore distribuzioni e script destinati ai computer standard.|  
 
- これらの構成手順と成果により、Trey Research では、デバイスのクライアント管理を簡素化するのに成功しました。  
+ Questa procedura di configurazione e i relativi risultati consentono a Trey Research di ottenere una semplificazione della gestione dei client per dispositivi.  
 
-##  <a name="BKMK_NextSteps"></a> 次のステップ  
- Configuration Manager をインストールする前に、Configuration Manager 固有のいくつかの基本的な概念と用語を理解するようにしてください。  
+##  <a name="BKMK_NextSteps"></a> Passaggi successivi  
+ Prima di installare Configuration Manager, è possibile approfondire alcuni concetti e termini di base specifici di questo strumento.  
 
--   System Center 2012 Configuration Manager について既によく理解している場合は、新機能を理解するために、「[System Center 2012 Configuration Manager からの System Center Configuration Manager の変更点](../../core/plan-design/changes/what-has-changed-from-configuration-manager-2012.md)」を参照してください。  
--   System Center Configuration Manager の技術の概要については、「[System Center Configuration Manager の基本](../../core/understand/fundamentals.md)」を参照してください。  
+-   Se si ha familiarità con System Center Configuration Manager 2012, per informazioni sulle nuove funzionalità vedere [Novità in System Center Configuration Manager rispetto a System Center 2012 Configuration Manager](../../core/plan-design/changes/what-has-changed-from-configuration-manager-2012.md).  
+-   Per una panoramica tecnica di alto livello di System Center Configuration Manager, vedere [Fundamentals of System Center Configuration Manager](../../core/understand/fundamentals.md) (Nozioni fondamentali su System Center Configuration Manager).  
 
-基本的な概念を理解している場合は、System Center Configuration Manager のドキュメントを参照すると、Configuration Manager を適切に展開して使用するのに役立ちます。  
+Dopo avere approfondito i concetti di base, usare la documentazione di System Center Configuration Manager per agevolare la distribuzione e l'uso corretti di questo strumento.  

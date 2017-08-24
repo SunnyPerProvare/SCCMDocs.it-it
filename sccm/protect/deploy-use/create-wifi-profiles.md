@@ -1,6 +1,6 @@
 ---
-title: "Wi-Fi プロファイルの作成方法 | Microsoft Docs"
-description: "System Center Configuration Manager の Wi-Fi プロファイルを使用して、ワイヤレス ネットワーク設定を組織内のユーザーに展開する方法について説明します。"
+title: Come creare profili Wi-Fi | Microsoft Docs
+description: Di seguito viene illustrato come usare i profili Wi-Fi in System Center Configuration Manager per distribuire impostazioni di rete wireless agli utenti dell'organizzazione.
 ms.custom: na
 ms.date: 12/11/2016
 ms.prod: configuration-manager
@@ -18,111 +18,111 @@ manager: angrobe
 ms.openlocfilehash: f1ae976899de1fd3efcbde0c7268f071a5d0218b
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-wi-fi-profiles"></a>Wi-Fi プロファイルの作成
+# <a name="create-wi-fi-profiles"></a>Creare profili Wi-Fi
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-System Center Configuration Manager の Wi-Fi プロファイルを使用して、ワイヤレス ネットワーク設定を組織内のユーザーに展開します。 これらの設定を展開して、ユーザーが Wi-Fi 接続に簡単に接続できるようにします。  
+È possibile usare i profili Wi-Fi in System Center Configuration Manager per distribuire impostazioni di rete wireless agli utenti dell'organizzazione. Distribuendo queste impostazioni si semplifica la procedura di connessione alla rete Wi-Fi per gli utenti.  
 
- たとえば、接続するすべての iOS デバイスを有効にする Wi-Fi ネットワークがあります。 ワイヤレス ネットワークへの接続に必要な設定が含まれている Wi-Fi プロファイルを作成します。 その後、階層内の iOS デバイスを持つすべてのユーザーに、プロファイルを展開します。 iOS デバイスのユーザーは、ワイヤレス ネットワークの一覧で会社のネットワークを参照し、このネットワークに簡単に接続できるようになります。  
+ Si supponga ad esempio di disporre di una rete Wi-Fi per cui si vuole abilitare la connessione da parte di tutti i dispositivi iOS. Creare un profilo Wi-Fi contenente le impostazioni necessarie per connettersi alla rete wireless. Quindi, distribuire il profilo a tutti gli utenti della gerarchia che dispongono di dispositivi iOS. In questo modo gli utenti dei dispositivi iOS visualizzeranno la rete aziendale nell'elenco delle reti wireless e potranno facilmente connettersi a tale rete.  
 
- Wi-Fi プロファイルを使用して、次のデバイスの種類を構成できます。  
+ Con i profili Wi-Fi è possibile configurare i seguenti tipi di dispositivi:  
 
--   Windows 8.1 32 ビットを実行するデバイス  
+-   Dispositivi che eseguono Windows 8.1 a 32 bit  
 
--   Windows 8.1 64 ビットを実行するデバイス  
+-   Dispositivi che eseguono Windows 8.1 a 64 bit  
 
--   Windows RT 8.1 を実行するデバイス  
+-   Dispositivi che eseguono Windows RT 8.1  
 
--   Windows 10 デスクトップまたは Windows 10 Mobile を実行するデバイス  
+-   Dispositivi che eseguono Windows 10 Desktop o Mobile  
 
-[モバイル デバイスの Wi-Fi プロファイルの作成](../../mdm/deploy-use/create-wifi-profiles.md)に関する記事では、Configuration Manager で Wi-Fi プロファイルを使用して、ワイヤレス ネットワーク設定をモバイル デバイス ユーザーに展開する方法について説明しています。
+L'articolo [Creare profili Wi-Fi](../../mdm/deploy-use/create-wifi-profiles.md) contiene informazioni su come usare i profili Wi-Fi in Configuration Manager per distribuire le impostazioni di rete wireless agli utenti dei dispositivi mobili.
 
 > [!IMPORTANT]  
->  プロファイルを Android、iOS、Windows Phone、および登録されている Windows 8.1 以降の各デバイスに展開するには、これらのデバイスを Microsoft Intune に登録する必要があります。 デバイスの登録方法については、「[管理するデバイスを Intune に登録する](https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune)」を参照してください。  
+>  Per distribuire i profili nei dispositivi Android, iOS, Windows Phone e nei dispositivi registrati Windows 8.1 o versioni successive, tali dispositivi devono essere registrati in Microsoft Intune. Per informazioni su come registrare i dispositivi, vedere [Registrare i dispositivi per la gestione in Intune](https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune).  
 
- Wi-Fi プロファイルを作成するときに、さまざまなセキュリティ設定を含めることができます。 たとえば、Configuration Manager の証明書プロファイルを使ってプッシュされている、サーバー評価用の証明書やクライアント認証用の証明書を使えます。 証明書プロファイルの詳細については、「[System Center Configuration Manager の証明書プロファイル](introduction-to-certificate-profiles.md)」を参照してください。  
+ Quando si crea un profilo Wi-Fi, è possibile includere una vasta gamma di impostazioni di protezione. Queste includono certificati per la convalida del server e l'autenticazione del client che sono stati inseriti usando profili certificato di Configuration Manager. Per altre informazioni sui profili certificato, vedere [Profili certificato in System Center Configuration Manager](introduction-to-certificate-profiles.md).  
 
-## <a name="create-a-wi-fi-profile"></a>Wi-Fi プロファイルの作成  
+## <a name="create-a-wi-fi-profile"></a>Creare un profilo Wi-Fi  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[コンプライアンス設定]** >  **[会社のリソースへのアクセス]** > **[Wi-Fi プロファイル]** の順に選択します。  
+1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Impostazioni di conformità** >  **Accesso risorse aziendali** > **Profili Wi-Fi**.  
 
-3.  **[ホーム]** タブの **[作成]** グループで、**[Wi-Fi プロファイルの作成]** を選択します。  
+3.  Nel gruppo **Crea** della scheda **Home** scegliere **Crea profilo Wi-Fi**.  
 
-1.  **[全般]** ページで、Wi-Fi プロファイルの一意の名前と説明を入力します。  別の Wi-Fi プロファイルの設定を使用する場合は、**[ファイルから既存の Wi-Fi プロファイル項目をインポートする]** を選びます。  
-
-    > [!IMPORTANT]  
-    >  インポートする Wi-Fi プロファイルに Wi-Fi プロファイル用の有効な XML が含まれていることを確認します。 Configuration Manager はプロファイルを検証しません。  
-
-3.  **[レポートするコンプライアンス非対応の重要度]** で、クライアント デバイスの Wi-Fi プロファイルがコンプライアンスに対応していない場合 (プロファイルがインストールできなかった場合など) に報告する重要度レベルを指定します。 次のレベルがあります。  
-
-    -   **なし**: このコンプライアンス規則を満たしていないコンピューターは、Configuration Manager レポート用に非対応重要度を何も報告しません。  
-
-    -   **情報**: このコンプライアンス規則を満たしていないコンピューターは、Configuration Manager レポート用に**情報**というレベルで非対応重要度を報告します。  
-
-    -   **警告**: このコンプライアンス規則を満たしていないコンピューターは、Configuration Manager レポート用に**警告**というレベルで非対応重要度を報告します。  
-
-    -   **重大**: このコンプライアンス規則を満たしていないコンピューターは、Configuration Manager レポート用に**重大**というレベルで非対応重要度を報告します。  
-
-    -   **重大 (イベント)**: このコンプライアンス規則を満たしていないコンピューターは、Configuration Manager レポート用に **重大** というレベルで非対応重要度を報告します。 重要度のレベルは、アプリケーションのイベント ログでも Windows のイベントとしてログが登録されます。  
-
-1.  **[Wi-Fi プロファイル]** ページで、ネットワーク名として表示されるデバイスの名前を指定します。  
+1.  Nella pagina **Generale** immettere un nome univoco e una descrizione per il profilo Wi-Fi.  Per usare le impostazioni da un altro profilo Wi-Fi, selezionare **Importa un elemento del profilo Wi-Fi esistente da un file**.  
 
     > [!IMPORTANT]  
-    >  Configuration Manager は、ネットワーク名内のアポストロフィ ( **'** ) またはコンマ ( **,** ) の使用をサポートしていません。  
+    >  Accertarsi che il profilo Wi-Fi che si importa contenga un XML valido per un profilo Wi-Fi. Configuration Manager non convalida il profilo quando si importa il file.  
 
-2.  大文字と小文字を区別する**[SSID]** を指定します。
-3.  以下のものを含む、他の適切な接続オプションを選択します。   **[ネットワークが名前 (SSID) をブロードキャストしていない場合に接続する]** 。SSID が非表示である可能性がある場合  
+3.  In **Gravità della non conformità per i report** specificare il livello di gravità che viene segnalato se il profilo Wi-Fi risulta non conforme su dispositivi client, ad esempio se non è possibile installare il profilo. I livelli di gravità disponibili sono i seguenti:  
 
-4.  **[セキュリティの構成]** ページで、ワイヤレス ネットワークで使用するセキュリティ プロトコルを選択します。セキュリティで保護されていない場合は **[認証なし (オープン システム)]** を選択します。
+    -   **Nessuno**: i computer che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
+
+    -   **Informazioni**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Informazioni** per i report di Configuration Manager.  
+
+    -   **Avviso**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Avviso** per i report di Configuration Manager.  
+
+    -   **Errore critico**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico** per i report di Configuration Manager.  
+
+    -   **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel registro eventi applicazione.  
+
+1.  Nella pagina **Profilo Wi-Fi** fornire il nome che i dispositivi visualizzeranno come nome della rete.  
+
     > [!IMPORTANT]  
-    >  オンプレミス モバイル デバイスの Wi-Fi プロファイルを作成している場合は、Configuration Manager の Current Branch は次の Wi-Fi セキュリティ構成のみをサポートします。  
+    >  Configuration Manager non supporta l'uso dei caratteri apostrofo (**â€˜**) o virgola (**,**) nel nome della rete.  
+
+2.  Specificare l'**SSID** facendo attenzione alla distinzione tra maiuscole e minuscole.
+3.  Scegliere le altre opzioni di connettività appropriate, tra cui   **Connetti quando la rete non sta trasmettendo il nome (SSID)**, se è possibile che l'SSID sia nascosto.  
+
+4.  Nella pagina **Configurazione protezione** selezionare il protocollo di sicurezza usato dalla rete wireless oppure selezionare **Nessuna autenticazione (aperta)** se la rete non è protetta.
+    > [!IMPORTANT]  
+    >  Se si intende creare un profilo Wi-Fi per la gestione dei dispositivi mobili locale, il ramo corrente di Configuration Manager supporta solo le configurazioni di sicurezza Wi-Fi seguenti:  
     >   
-    >  セキュリティの種類: **[WPA2 Enterprise]** または **[WPA2 Personal]**  
-    > 暗号化の種類: **[AES]** または **[TKIP]**  
-    > EAP の種類: **スマート カードまたはその他の証明書** または **PEAP**  
+    >  Tipi di sicurezza: **WPA2 Enterprise** o **WPA2 Personal**  
+    > Tipi di crittografia: **AES** o **TKIP**  
+    > Tipi EAP: **Smart Card o altro certificato** o **PEAP**  
 
-    > Android デバイスの場合、セキュリティの種類のうち、**[WPA - パーソナル]** 、 **[WPA2 - パーソナル]**、**[WEP]** はサポートされていません。  
+    > Per i dispositivi Android, i tipi di sicurezza **WPA Personal**, **WPA2 Personal** e **WEP** non sono supportati.  
 
-2.  ワイヤレス ネットワークで使用する暗号化方法を選択します。  
+2.  selezionare il metodo di crittografia usato dalla rete wireless.  
 
-3.  ワイヤレス ネットワークで認証に使用する EAP の種類を選択します。  
+3.  selezionare il tipo EAP che viene usato per l'autenticazione con la rete wireless.  
 
-     Windows Phone デバイスの場合のみ: EAP の種類のうち **[LEAP]** と **[EAP-FAST]** はサポートされていません。  
+     Solo per i dispositivi Windows Phone: i tipi EAP **LEAP** e **EAP-FAST** non sono supportati.  
 
-4.  **[構成]** をクリックして、選択した EAP の種類のプロパティ指定します。 選択した EAP の種類によっては、このオプションを使用できません。  
+4.  Fare clic su **Configura** per specificare le proprietà per il tipo EAP selezionato. Questa opzione potrebbe non essere disponibile per alcuni tipi EAP selezionati.  
 
     > [!IMPORTANT]  
-    >  [ **構成** ]をクリックすると、Windows ダイアログ ボックスが開きます。 そのため、Configuration Manager コンソールを実行しているコンピューターのオペレーティング システムが、選択した EAP の種類の構成をサポートしている必要があります。  
+    >  Quando si fa clic su **Configura**, viene visualizzata una finestra di dialogo di Windows. Di conseguenza, è necessario garantire che il sistema operativo del computer che esegue la console di Configuration Manager supporti la configurazione del tipo EAP selezionato.  
     >   
-    >  IOS デバイスでは、認証用として非 EAP メソッドを選択した場合は、選択したメソッドに関係なく、MS-CHAP v2 が接続に使用されます。  
+    >  Per i dispositivi iOS, se si sceglie un metodo non EAP per l'autenticazione, a prescindere dal metodo scelto, per la connessione verrà utilizzato MS-CHAP v2.  
 
-5.  ユーザーがログオンのたびに資格情報を入力しなくても済むようにユーザーの資格情報を保存する場合、 **[ログオンのたびにユーザーの資格情報を記憶する]**を選択します。  
+5.  Selezionare **Memorizza le credenziali utente a ogni accesso**per archiviare le credenziali utente in modo che gli utenti non debbano immetterle a ogni accesso.  
 
-6. **iOS デバイスの場合のみ:**  
- Wi-Fi 接続に必要なすべての証明書に関する情報を構成します。 次の手順に従って、クライアント証明書と、信頼されたサーバー証明書の名前またはルート証明書を構成する必要があります。  
+6. **Solo per i dispositivi iOS:**  
+ configurare le impostazioni per gli eventuali certificati richiesti per la connessione Wi-Fi. È necessario configurare il certificato client e il nome del certificato server attendibile oppure il certificato radice come segue:  
 
-    -   **信頼されたサーバー証明書の名前**: デバイスから接続するサーバーが、サーバー認証証明書を使用してサーバーを識別して通信チャネルを保護する場合は、その証明書のサブジェクト名、またはサブジェクトの別名にある名前を入力します。 通常、この名前はサーバーの完全修飾ドメイン名です。 たとえば、証明書のサブジェクト名に指定されたサーバー証明書の共通名が srv1.contoso.com の場合、「 **srv1.contoso.com**」と入力します。 サーバー証明書のサブジェクトの別名が複数ある場合は、各名前をセミコロンで区切って入力します。  
+    -   **Nomi di certificato del server trusted**: se il server a cui si connette il dispositivo usa un certificato di autenticazione server per identificare il server e proteggere il canale di comunicazione, immettere il nome o i nomi nel nome del soggetto o nel nome alternativo del soggetto del certificato. Il nome o i nomi sono in genere il nome di dominio completo del server. Ad esempio, se il certificato del server ha un nome comune srv1.contoso.com nel soggetto del certificato, immettere **srv1.contoso.com**. Se il certificato del server dispone di più nomi specificati nel nome alternativo oggetto, immettere i nomi separati da un punto e virgola.  
 
     > [!TIP]  
-    >  リモート認証ダイヤルイン ユーザー サービス (RADIUS) サーバー (ネットワーク ポリシー サーバーなど) から認証を受けるために、EAP 認証用に選択したクライアント証明書や iOS デバイス認証用のクライアント証明書を使用する場合は、サブジェクトの別名をユーザー プリンシパル名に設定する必要があります。  
+    >  Se il certificato client selezionato per l'autenticazione EAP o l'autenticazione client per un dispositivo iOS verrà usato per l'autenticazione su un server RADIUS (Remote Authentication Dial-In User Service), ad esempio un server che sta eseguendo il server dei criteri di rete, il Nome alternativo oggetto deve essere impostato su Nome entità utente.  
 
-    -   **サーバー評価用のルート証明書の選択**: デバイスから接続するサーバーが、デバイスによって信頼されていないサーバー認証証明書を使用する場合は、そのサーバー証明書のルート証明書を含む証明書プロファイルを選択して、デバイスが信頼する証明書チェーンを作成します。  
+    -   **Seleziona i certificati radice per la convalida del server**: se il server a cui il dispositivo si connette utilizza un certificato di autenticazione server che non è ritenuto attendibile dal dispositivo, selezionare il profilo certificato contenente il certificato radice per il certificato del server per creare una catena di certificati attendibili sul dispositivo.  
 
-    -   [ **クライアント認証用のクライアント証明書の選択** ]:サーバーまたはネットワーク デバイスで、接続しているデバイスを認証するクライアント証明書が必要な場合は、クライアント認証証明書を含む証明書プロファイルを選択します。  
+    -   **Selezionare un certificato client per l'autenticazione client**: se il server o il dispositivo di rete richiede a un certificato client di autenticare il dispositivo connesso, selezionare il profilo certificato contenente il certificato di autenticazione client.  
 
     > [!NOTE]  
-    >  ルート証明書とクライアント証明書を構成して、証明書プロファイルとして展開しておかないと、ルート証明書とクライアント証明書を選択することはできません。 証明書プロファイルの詳細については、「[System Center Configuration Manager の証明書プロファイル](introduction-to-certificate-profiles.md)」を参照してください。  
+    >  Prima di selezionare il certificato radice e il certificato client, questi devono essere configurati e distribuiti come un profilo certificato. Per altre informazioni sui profili certificato, vedere [Profili certificato in System Center Configuration Manager](introduction-to-certificate-profiles.md).  
 
-7.  **[詳細設定]** ページで、認証モード、シングル サインオン、Federal Information Processing Standards 準拠などの Wi-Fi プロファイルの詳細設定を行います。 これらのオプションの詳細については、Windows のドキュメントを参照してください。 ウィザードの [ **セキュリティの構成** ] ページで選択したオプションによっては、詳細設定できない場合や、使用できる設定が異なる場合があります。  
+7.  Nella pagina **Impostazioni avanzate** specificare le impostazioni avanzate per il profilo Wi-Fi, ad esempio la modalità di autenticazione, le opzioni Single Sign-On e la conformità a FIPS (Federal Information Processing Standards). Per altre informazioni su queste opzioni, vedere la documentazione di Windows. Le impostazioni avanzate potrebbero non essere disponibili, o variare, in base alle opzioni selezionate nella pagina **Configurazione protezione** della procedura guidata.  
 
-1.  ワイヤレス ネットワークでプロキシ サーバーを使用する場合は、**[プロキシの設定]** ページで、**[この Wi-Fi プロファイルのプロキシ設定を構成する]** をオンにし、構成情報を指定します。  
+1.  Nella pagina **Impostazioni proxy** selezionare **Configura impostazioni proxy per questo profilo Wi-Fi** se la rete wireless usa un server proxy e quindi fornire le informazioni di configurazione.  
 
-2. **[サポートされているプラットフォーム]** ページで、Wi-Fi プロファイルをインストールするオペレーティング システムを選択します。 使用可能なすべてのオペレーティング システムに Wi-Fi プロファイルをインストールするには、[ **すべて選択** ] をクリックします。  
+2. Nella pagina **Piattaforme supportate** selezionare i sistemi operativi in cui si vuole installare il profilo Wi-Fi. In alternativa, fare clic su **Seleziona tutto** per installare il profilo Wi-Fi in tutti i sistemi operativi disponibili.  
 
-### <a name="next-steps"></a>次のステップ
- Wi-Fi プロファイルの展開方法については、「[System Center Configuration Manager で Wi-Fi プロファイルを展開する方法](deploy-wifi-vpn-email-cert-profiles.md)」を参照してください。  
+### <a name="next-steps"></a>Passaggi successivi
+ Per informazioni su come distribuire il profilo Wi-Fi, vedere [Come distribuire profili Wi-Fi in System Center Configuration Manager](deploy-wifi-vpn-email-cert-profiles.md).  

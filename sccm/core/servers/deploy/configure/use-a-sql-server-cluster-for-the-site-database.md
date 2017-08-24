@@ -1,6 +1,6 @@
 ---
-title: "SQL Server クラスター | Microsoft Docs"
-description: "SQL Server クラスターを使用して System Center Configuration Manager サイト データベースをホストします。 サポートされているオプションに関する情報が含まれます。"
+title: Cluster di SQL Server | Microsoft Docs
+description: Usare un cluster di SQL Server per ospitare il database del sito di System Center Configuration Manager. Include informazioni sulle opzioni supportate.
 ms.custom: na
 ms.date: 2/28/2017
 ms.prod: configuration-manager
@@ -18,85 +18,85 @@ manager: angrobe
 ms.openlocfilehash: 53f119bbb1f8827a9c23c8b747840350bbb92790
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-a-sql-server-cluster-for-the-system-center-configuration-manager-site-database"></a>SQL Server クラスターを使用した System Center Configuration Manager サイト データベースのホスト
+# <a name="use-a-sql-server-cluster-for-the-system-center-configuration-manager-site-database"></a>Usare un cluster di SQL Server per il database del sito di System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
- SQL Server クラスターを使用して System Center Configuration Manager サイト データベースをホストします。 サイト データベースは、サーバー クラスターでサポートされているサイト システムの役割として唯一のものです。  
+ È possibile usare un cluster di SQL Server per ospitare il database del sito di System Center Configuration Manager. Il database del sito è l'unico ruolo del sistema del sito supportato in un cluster del server.  
 
 > [!IMPORTANT]  
->  SQL Server クラスターの正常なセットアップは、SQL Server ドキュメント ライブラリで提供されるドキュメントと手順に依存します。  
+>  La configurazione corretta dei cluster di SQL Server si basa sulla documentazione e le procedure incluse nella libreria della documentazione di SQL Server.  
 
- クラスターは、フェールオーバーをサポートできるため、サイト データベースの信頼性を高めることができます。 ただし、処理や負荷分散に関するメリットが増えることはありません。 さらに、サイト サーバーが、サイト データベースに接続する前に SQL Server クラスターのアクティブ ノードを検索する必要があるため、パフォーマンスの低下が発生する可能性があります。  
+ Un cluster consente di garantire supporto per il failover e migliorare l'affidabilità del database del sito. Non offre tuttavia vantaggi aggiuntivi di elaborazione o bilanciamento del carico. Infatti, può verificarsi una riduzione delle prestazioni perché il server del sito deve trovare il nodo attivo del cluster di SQL Server prima di connettersi al database del sito.  
 
- Configuration Manager をインストールする前に、Configuration Manager をサポートするために SQL Server クラスターを準備する必要があります。 (このセクションで後ほど説明する前提条件をご覧ください)。  
+ Prima di installare Configuration Manager, è necessario preparare il cluster di SQL Server per il supporto di Configuration Manager. Vedere i prerequisiti descritti più avanti in questa sezione.  
 
- Configuration Manager のセットアップ中に、Microsoft Windows Server クラスターの各物理コンピューター ノードに Windows ボリューム シャドウ コピー サービス ライターがインストールされます。 これは、**バックアップ サイト サーバー**のメンテナンス タスクをサポートしています。  
+ Durante l'installazione di Configuration Manager il writer del Servizio Copia Shadow del volume (VSS) viene installato su ogni nodo dei computer fisici del cluster di Microsoft Windows Server. Ciò supporta l'attività di manutenzione **Backup server sito**.  
 
- サイトのインストール後に Configuration Manager は、1 時間ごとにクラスター ノードが変更されたかどうかを確認します。 Configuration Manager は、Configuration Manager コンポーネントのインストールに影響する、検出したすべての変更 (ノードのフェールオーバーや SQL Server クラスターへの新しいノードの追加など) を自動的に管理します。  
+ Dopo aver installato il sito, Configuration Manager controlla le modifiche al nodo del cluster ogni ora. Configuration Manager gestisce automaticamente tutte le modifiche trovate che possono interessare le installazioni dei componenti di Configuration Manager, ad esempio un failover del nodo o l'aggiunta di un nodo nuovo al cluster di SQL Server.  
 
-## <a name="supported-options-for-using-a-sql-server-failover-cluster"></a>SQL Server フェールオーバー クラスターの使用でサポートされるオプション
+## <a name="supported-options-for-using-a-sql-server-failover-cluster"></a>Opzioni supportate per l'uso di un cluster di failover di SQL Server
 
-サイト データベースとして使用される SQL Server フェールオーバー クラスターでは、次のオプションがサポートされます。
+Le opzioni seguenti sono supportate per i cluster di failover di SQL Server usati come database del sito:
 
--   単一インスタンス クラスター  
+-   Cluster a istanza singola  
 
--   複数インスタンス構成  
+-   Configurazione a più istanze  
 
--   複数のアクティブ ノード  
+-   Più nodi attivi  
 
--   名前付きインスタンスと既定のインスタンスの両方  
+-   Istanza predefinita o denominata  
 
-次の前提条件に注意してください。  
+Tenere presente i prerequisiti seguenti:  
 
--   サイト データベースは、サイト サーバーからリモートである必要があります (クラスターは、サイト システム サーバーを含めることはできません)。  
+-   Il database del sito deve essere lontano dal server del sito. Il cluster non può includere il server di sistema del sito.  
 
--   サイト サーバーのコンピューター アカウントを、クラスター内の各サーバーのローカルの Administrators グループに追加しなければなりません。  
+-   È necessario aggiungere l'account del computer del server del sito al gruppo Administrators locale di ogni server nel cluster.  
 
--   Kerberos 認証をサポートするには、**TCP/IP** ネットワーク通信プロトコルを各 SQL Server クラスター ノードのネットワーク接続に対して有効にする必要があります。 **名前付きパイプ** は不要ですが、Kerberos 認証に問題が発生したときのトラブルシューティングに使用できます。 ネットワーク プロトコルの設定は、**[SQL Server ネットワークの構成]** にある **[SQL Server 構成マネージャー]**で構成します。  
+-   Per supportare l'autenticazione Kerberos, il protocollo di comunicazione di rete **TCP/IP** deve essere abilitato per la connessione di rete di ogni nodo del cluster di SQL Server. **Named pipes** non è obbligatorio, ma può essere usato per risolvere i problemi relativi all'autenticazione Kerberos. Le impostazioni del protocollo di rete vengono configurate in **Gestione configurazione SQL Server** di **Configurazione di rete SQL Server**.  
 
--   PKI を使用する場合は、「Configuration Manager での PKI 証明書の要件」を参照し、サイト データベースに SQL Server クラスターを使用する場合に必要となる特定の証明書の要件を確認します。  
+-   Se si usa un certificato PKI, vedere Requisiti dei certificati PKI per Configuration Manager per i requisiti specifici dei certificati quando si usa un cluster di SQL Server per il database del sito.  
 
-次の制限が適用されます。  
+Tenere presente le limitazioni seguenti:  
 
--   **インストールおよび構成:**  
+-   **Installazione e configurazione:**  
 
-    -   セカンダリ サイトには、SQL Server クラスターを使用できません。  
+    -   I siti secondari non possono usare un cluster di SQL Server.  
 
-    -   サイト データベースに対して既定以外のファイルの場所を指定するオプションは、SQL Server クラスターを指定する場合は使用できません。  
+    -   L'opzione per specificare percorsi file non predefiniti per il database del sito non è disponibile quando si usa un cluster di SQL Server.  
 
--   **SMS プロバイダー:**  
+-   **Provider SMS:**  
 
-    -   SQL Server クラスター、またはクラスター化された SQL Server ノードとして実行されるコンピューターに SMS プロバイダーのインスタンスをインストールすることはサポートされていません。  
+    -   L'installazione di un'istanza del provider SMS in un cluster di SQL Server o in un computer in cui è in esecuzione un nodo di SQL Server in cluster non è supportata.  
 
--   **データ レプリケーションのオプション:**  
+-   **Opzioni di replica dei dati:**  
 
-    -   **分散ビュー**を使用する場合は、サイト データベースをホストするために SQL Server クラスターを使用することはできません。  
+    -   Se si usano **viste distribuite**, non è possibile usare un cluster di SQL Server per ospitare il database del sito.  
 
--   **バックアップと回復:**  
+-   **Backup e ripristino:**  
 
-    -   Configuration Manager では、名前付きインスタンスを使用する SQL Server クラスターの Data Protection Manager (DPM) のバックアップはサポートしません。 ただし、SQL Server の既定のインスタンスを使用する SQL Server クラスター上の DPM バックアップはサポートします。  
+    -   Configuration Manager non supporta backup di Data Protection Manager (DPM) per un cluster di SQL Server che usa un'istanza denominata. Supporta tuttavia backup di DPM in un cluster di SQL Server che usa l'istanza predefinita di SQL Server.  
 
-## <a name="prepare-a-clustered-sql-server-instance-for-the-site-database"></a>サイト データベースに対してクラスター化された SQL Server インスタンスを準備する  
+## <a name="prepare-a-clustered-sql-server-instance-for-the-site-database"></a>Preparare un'istanza di SQL Server in cluster per il database del sito  
 
-サイト データベースを準備するために完了する主なタスクを次に示します。
+Queste sono le attività principali da completare per preparare il database del sito:
 
--   サイト データベースをホストする仮想 SQL Server クラスターを既存の Windows Server クラスター環境で作成します。 SQL Server クラスターをインストールおよび設定するための特定の手順については、使用している SQL Server のバージョンのドキュメントをご覧ください。 たとえば、SQL Server 2008 R2 を使用している場合は、「 [SQL Server 2008 R2 フェールオーバー クラスターのインストール](http://go.microsoft.com/fwlink/p/?LinkId=240231)」を参照してください。  
+-   Creare il cluster di SQL Server virtuale per ospitare il database del sito in un ambiente cluster di Windows Server esistente. Per passaggi dettagliati sull'installazione e configurazione di un cluster di SQL Server, vedere la documentazione specifica della versione di SQL Server in uso. Ad esempio, se si sta utilizzando SQL Server 2008 R2, vedere [Installing a SQL Server 2008 R2 Failover Cluster (Installazione di un cluster di failover SQL Server 2008 R2)](http://go.microsoft.com/fwlink/p/?LinkId=240231).  
 
--   SQL Server クラスター内の各コンピューターで、ドライブのルート フォルダーにファイルを配置すると、Configuration Manager はサイト コンポーネントをそのドライブにインストールしません。 ファイル名は **NO_SMS_ON_DRIVE.SMS** にする必要があります。 既定では、Configuration Manager は各物理ノードにいくつかのコンポーネントをインストールして、バックアップなどの操作をサポートします。  
+-   In ogni computer del cluster di SQL Server è possibile inserire un file nella cartella radice di ogni unità in cui non si vuole che Configuration Manager installi i componenti del sito. Il file deve essere denominato **NO_SMS_ON_DRIVE.SMS**. Per impostazione predefinita, Configuration Manager installa alcuni componenti in ogni nodo fisico per supportare alcune operazioni, ad esempio il backup.  
 
--   サイト サーバーのコンピューター アカウントを、各 Windows Server クラスター ノード コンピューターのローカルの [ **Administrators** ] グループに追加します。  
+-   Aggiungere l'account computer del server del sito al gruppo **Amministratori locali** di ciascun computer del nodo del cluster Windows Server.  
 
--   仮想 SQL Server インスタンスで、Configuration Manager セットアップを実行するユーザー アカウントに、**sysadmin** という SQL Server の役割を割り当てます。  
+-   Nell'istanza virtuale di SQL Server assegnare il ruolo **sysadmin** di SQL Server all'account utente che esegue il programma di installazione di Configuration Manager.  
 
-### <a name="to-install-a-new-site-using-a-clustered-sql-server"></a>クラスター化された SQL Server を使用して新しいサイトをインストールするには  
- クラスター化されたサイト データベースを使用するサイトをインストールするには、次の部分を変更したうえで通常のサイトのインストール プロセスに従って、Configuration Manager のセットアップを実行します。  
+### <a name="to-install-a-new-site-using-a-clustered-sql-server"></a>Per installare un nuovo sito usando un'istanza cluster di SQL Server  
+ Per installare un sito che usa un database del sito in cluster, eseguire il programma di installazione di Configuration Manager seguendo la normale procedura per l'installazione di un sito con la modifica seguente:  
 
--   **[データベース情報]** ページで、サイト データベースをホストする仮想 SQL Server クラスター インスタンスの名前を指定します。 仮想インスタンスは、SQL Server を実行するコンピューターの名前を置き換えます。  
+-   Nella pagina **Informazioni database** specificare il nome dell'istanza virtuale del cluster di SQL Server che ospita il database del sito. L'istanza virtuale sostituisce il nome del computer che esegue SQL Server.  
 
     > [!IMPORTANT]  
-    >  仮想 SQL Server クラスター インスタンスの名前を入力するとき、Windows Server クラスターによって作成される仮想 Windows Server 名を入力しないでください。 仮想 Windows Server 名を使用すると、サイト データベースが、アクティブな Windows Server クラスター ノードのローカル ハード ディスクにインストールされます。 これにより、そのノードに障害が発生しても、正常にフェールオーバーできません。  
+    >  Al momento dell'immissione del nome dell'istanza virtuale del cluster di SQL Server, non immettere il nome Windows Server virtuale creato dal cluster di Windows Server. Se si usa il nome virtuale di Windows Server, il database del sito viene installato nel disco rigido locale del nodo del cluster di Windows Server attivo. In questo modo, si impedisce il failover se il nodo non riesce.  

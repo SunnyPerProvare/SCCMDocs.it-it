@@ -1,6 +1,6 @@
 ---
-title: "オペレーティング システムの展開のインフラストラクチャ要件 | Microsoft Docs"
-description: "オペレーティング システム展開に System Center 2012 Configuration Manager を利用する前に、外部依存関係と製品依存関係を理解しておきます。"
+title: Requisiti dell'infrastruttura per la distribuzione del sistema operativo | Microsoft Docs
+description: Assicurarsi di conoscere le dipendenze esterne e le dipendenze del prodotto prima di usare System Center Configuration Manager 2012 per la distribuzione del sistema operativo.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,227 +17,227 @@ manager: angrobe
 ms.openlocfilehash: 167e639cdb9995fd743787cc9fbf364ec70f6ed9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="infrastructure-requirements-for-operating-system-deployment-in-system-center-configuration-manager"></a>System Center Configuration Manager のオペレーティング システムの展開のインフラストラクチャ要件
+# <a name="infrastructure-requirements-for-operating-system-deployment-in-system-center-configuration-manager"></a>Requisiti dell'infrastruttura per la distribuzione del sistema operativo in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center 2012 Configuration Manager のオペレーティング システム展開には、外部依存関係と製品内部依存関係があります。 オペレーティング システムの展開を準備するには、次のセクションを使用します。  
+La distribuzione del sistema operativo in System Center Configuration Manager 2012 ha dipendenze esterne e dipendenze all'interno del prodotto. Usare le sezioni seguenti per prepararsi per la distribuzione del sistema operativo.  
 
-##  <a name="BKMK_ExternalDependencies"></a> Configuration Manager 外部の依存関係  
- Configuration Manager でオペレーティング システムを展開するのに必要な外部ツール、インストール キット、オペレーティング システムに関する情報を以下に示します。  
+##  <a name="BKMK_ExternalDependencies"></a> Dipendenze esterne a Configuration Manager  
+ Di seguito sono riportate informazioni su strumenti esterni, kit di installazione e sistemi operativi richiesti per distribuire sistemi operativi in Configuration Manager.  
 
-### <a name="windows-adk-for-windows-10"></a>Windows 10 用 Windows ADK  
- Windows ADK は、Windows オペレーティング システムの構成と展開をサポートするツールとドキュメントのセットです。 Configuration Manager では、Windows インストールの自動化、Windows イメージのキャプチャ、ユーザー プロファイルとデータの移行などを自動化するために Windows ADK を使用しています。  
+### <a name="windows-adk-for-windows-10"></a>Windows ADK per Windows 10  
+ Windows ADK è un insieme di strumenti e documentazione che supporta la configurazione e la distribuzione dei sistemi operativi Windows. Configuration Manager usa Windows ADK per automatizzare l'installazione e acquisire immagini di Windows, eseguire la migrazione di dati e profili utente e così via.  
 
- 階層の最上位サイトのサイト サーバーと、階層内の各プライマリ サイトのサイト サーバー、サイト システム サーバーの SMS プロバイダーに、Windows ADK の次の機能をインストールする必要があります。  
+ È necessario installare le seguenti funzionalità di Windows ADK nel server in sede del sito di livello superiore della gerarchia, nel server del sito di ogni sito primario nella gerarchia e nel server del sistema del sito del provider SMS:  
 
--   ユーザー状態移行ツール (USMT) <sup>1</sup>  
+-   Utilità di migrazione stato utente (USMT) <sup>1</sup>  
 
--   Windows 展開ツール  
+-   Strumenti di distribuzione Windows  
 
--   Windows プレインストール環境 (Windows PE)
+-   Ambiente preinstallazione di Windows (Windows PE)
 
-さまざまなバージョンの Configuration Manager で使用できる Windows 10 ADK のバージョン一覧については、[クライアントとしての Windows 10 のサポート](https://docs.microsoft.com/en-us/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk)に関するページを参照してください。
+Per un elenco delle versioni di Windows ADK 10 che si possono usare con versioni diverse di Configuration Manager, vedere [Supporto per Windows 10 come client](https://docs.microsoft.com/en-us/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk).
 
- <sup>1</sup> USMT は、SMS プロバイダー サイト システム サーバーでは必要ありません。  
+ <sup>1</sup> USMT non è richiesto nel server del sistema del sito del provider SMS.  
 
 > [!NOTE]  
->  Configuration Manager サイトをインストールする前に、中央管理サイトまたはプライマリ サイト サーバーをホストする各コンピューターに、Windows ADK を手動でインストールする必要があります。  
+>  È necessario installare manualmente Windows ADK in ogni computer che ospiterà un sito di amministrazione centrale o un server del sito primario prima di installare il sito di Configuration Manager.  
 
- 詳細については、次をご覧ください。  
+ Per altre informazioni, vedere:  
 
--   [IT 担当者向け Windows ADK for Windows 10 シナリオ](https://technet.microsoft.com/library/mt280162\(v=vs.85\).aspx)  
+-   [Scenari di Windows ADK per Windows 10 per i professionisti IT](https://technet.microsoft.com/library/mt280162\(v=vs.85\).aspx)  
 
--   [Windows ADK for Windows 10 をダウンロードする](https://msdn.microsoft.com/windows/hardware/dn913721.aspx#adkwin10)  
+-   [Scaricare Windows ADK per Windows 10](https://msdn.microsoft.com/windows/hardware/dn913721.aspx#adkwin10)  
 
--   [Windows 10 のサポート](/sccm/core/plan-design/configs/support-for-windows-10)  
+-   [Supporto per Windows 10](/sccm/core/plan-design/configs/support-for-windows-10)  
 
 
-### <a name="user-state-migration-tool-usmt"></a>ユーザー状態移行ツール (USMT)  
- Configuration Manager では、USMT 10 ソース ファイルを含む USMT パッケージを使用して、オペレーティング システムの展開の一部として、ユーザーの状態をキャプチャして復元します。 最上位サイトに Configuration Manager をセットアップすると、USMT パッケージが自動的に作成されます。 USMT 10 では、Windows 7、Windows 8、Windows 8.1 および Windows 10 からユーザー状態をキャプチャできます。 USMT 10 は、Windows 10 用 Windows アセスメント & デプロイメント キット (Windows ADK) に含まれています。  
+### <a name="user-state-migration-tool-usmt"></a>Utilità di migrazione stato utente (USMT)  
+ Configuration Manager usa un pacchetto USMT che contiene i file di origine di USMT 10 per acquisire e ripristinare lo stato utente nell'ambito della distribuzione del sistema operativo. Il programma di installazione di Configuration Manager crea automaticamente nel sito di livello superiore il pacchetto USMT. USMT 10 consente di acquisire lo stato utente da Windows 7, Windows 8, Windows 8.1 e Windows 10. USMT 10 è distribuito in Windows Assessment and Deployment Kit (Windows ADK) per Windows 10.  
 
- 詳細については、次をご覧ください。  
+ Per altre informazioni, vedere:  
 
--   [USMT 10 の一般的な移行シナリオ](https://technet.microsoft.com/library/mt299169\(v=vs.85\).aspx)  
+-   [Scenari di migrazione comuni per USMT 10](https://technet.microsoft.com/library/mt299169\(v=vs.85\).aspx)  
 
--   [ユーザー状態の管理](../get-started/manage-user-state.md)  
+-   [Gestire lo stato utente](../get-started/manage-user-state.md)  
 
 ### <a name="windows-pe"></a>Windows PE  
- Windows PE は、コンピューターを起動するブート イメージに使用されます。 それは、Windows オペレーティング システムのプレインストールや展開の最中に使用される、サービスが制限された Windows オペレーティング システムです。 Configuration Manager のバージョン、サポートされている Windows ADK のバージョン、Configuration Manager コンソールからカスタマイズできるブート イメージのベースとなる Windows PE バージョン、DISM でカスタマイズした後で Configuration Manager の指定バージョンに追加できるブート イメージのベースとなる Windows PE バージョンは、次のとおりです。  
+ Windows PE viene usato per le immagini di avvio per avviare un computer. Si tratta di un sistema operativo Windows con servizi limitati che viene usano durante la pre-installazione e la distribuzione dei sistemi operativi Windows. Di seguito sono riportate la versione di Configuration Manager e la versione supportata di Windows ADK, la versione di Windows PE su cui si basa l'immagine d'avvio che può essere personalizzata dalla console di Configuration Manager e le versioni di Windows PE su cui si basa l'immagine d'avvio che può essere personalizzata usando DISM e quindi aggiunta alla versione di Configuration Manager specificata.  
 
-#### <a name="configuration-manager-version-1511"></a>Configuration Manager バージョン 1511  
- サポートされている Windows ADK のバージョン、Configuration Manager コンソールからカスタマイズできるブート イメージのベースとなる Windows PE バージョン、DISM でカスタマイズした後で Configuration Manager に追加できるブート イメージのベースとなる Windows PE バージョンは次のとおりです。  
+#### <a name="configuration-manager-version-1511"></a>Configuration Manager versione 1511  
+ Di seguito sono riportate la versione supportata di Windows ADK, la versione di Windows PE su cui si basa l'immagine d'avvio che può essere personalizzata dalla console di Configuration Manager e le versioni di Windows PE su cui è basata l'immagine d'avvio che è possibile personalizzare usando DISM e quindi aggiungere a Configuration Manager.  
 
--   **Windows ADK バージョン**  
+-   **Versione di Windows ADK**  
 
-     Windows 10 用 Windows ADK  
+     Windows ADK per Windows 10  
 
--   **Configuration Manager コンソールでカスタマイズできる Windows PE ブート イメージのバージョン**  
+-   **Versioni di Windows PE per le immagini d'avvio personalizzabili dalla console di Configuration Manager**  
 
      Windows PE 10  
 
--   **Configuration Manager コンソールでカスタマイズできない Windows PE ブート イメージのバージョン**  
+-   **Versioni di Windows PE supportate per le immagini d'avvio non personalizzabili dalla console di Configuration Manager**  
 
-     Windows PE 3.1<sup>1</sup> および Windows PE 5  
+     Windows PE 3.1<sup>1</sup> e Windows PE 5  
 
-     <sup>1</sup> Windows PE 3.1 のブートイメージしか Configuration Manager に追加することができません。 Windows AIK for Windows 7 (Windows PE 3 の構築用) を Windows AIK Supplement for Windows 7 SP1 (Windows PE 3.1 の構築用) にアップグレードしてください。 Windows AIK Supplement for Windows 7 SP1 は、 [Microsoft ダウンロード センター](http://www.microsoft.com/download/details.aspx?id=5188)からダウンロードできます。  
+     <sup>1</sup> È possibile aggiungere un'immagine d'avvio a Configuration Manager solo se è basata su Windows PE 3.1. Installare il supplemento Windows AIK per Windows 7 SP1 per aggiornare Windows AIK per Windows 7 (basato su Windows PE 3) con il supplemento Windows AIK per Windows 7 SP1 (basato su Windows PE 3.1). È possibile scaricare il supplemento Windows AIK per Windows 7 SP1 dall' [Area download Microsoft](http://www.microsoft.com/download/details.aspx?id=5188).  
 
-     たとえば、Configuration Manager を使っている場合は、Windows 10 用 Windows ADK (Windows PE 10 に基づく) で構築したブート イメージを Configuration Manager コンソールでカスタマイズできます。 一方、Windows PE 5 のブート イメージはサポートされていますが、このブート イメージをカスタマイズするには、別のコンピューターにある Windows 8 用 Windows ADK に付属している DISM を使わなければなりません。 その後、ブート イメージを Configuration Manager コンソールに追加できます。 ブート イメージのカスタマイズ (オプションのコンポーネントとドライバーの追加)、ブート イメージのコマンド サポートの有効化、Configuration Manager コンソールへのブート イメージの追加、ブート イメージによる配布ポイントの更新の手順の詳細については、「[ブート イメージのカスタマイズ](../get-started/customize-boot-images.md)」を参照してください。 ブート イメージの詳細については、「[ブート イメージの管理](../get-started/manage-boot-images.md)」を参照してください。  
+     Ad esempio, se si ha Configuration Manager, è possibile personalizzare le immagini d'avvio da Windows ADK per Windows 10 (basato su Windows PE 10) dalla console di Configuration Manager. Tuttavia, anche se le immagini di avvio basate su Windows PE 5 sono supportate, è necessario personalizzarle da un computer diverso e usare la versione di Gestione e manutenzione immagini distribuzione installata con Windows AIK per Windows 8. È quindi possibile aggiungere l'immagine d'avvio alla console di Configuration Manager. Per altre informazioni sui passaggi per personalizzare un'immagine d'avvio (aggiungere componenti e driver facoltativi), abilitare il supporto comandi nell'immagine d'avvio, aggiungere l'immagine d'avvio alla console di Configuration Manager e aggiornare i punti di distribuzione con l'immagine d'avvio, vedere [Customize boot images](../get-started/customize-boot-images.md) (Personalizzare le immagini d'avvio). Per altre informazioni sulle immagini d'avvio, vedere [Gestire le immagini d'avvio con System Center Configuration Manager](../get-started/manage-boot-images.md).  
 
 ### <a name="windows-server-update-services-wsus"></a>Windows Server Update Services (WSUS)  
-次の WSUS 4.0 修正プログラムをインストールする必要があります。
-  - [Hotfix 3095113](https://support.microsoft.com/kb/3095113) を適用した WSUS 4.0 は Windows 10 サービスに必要であり、ソフトウェアの更新インフラストラクチャを使用して、Windows 10 の機能アップグレードを取得します。 WSUS 3.2 がある場合は、Windows 10 をアップグレードするためのタスク シーケンスを使用する必要があります。 詳細については、「[サービスとしての Windows の管理](../deploy-use/manage-windows-as-a-service.md)」を参照してください。  
-  - [Hotfix 3159706](https://support.microsoft.com/kb/3159706) は、Windows 10 サービスを利用してコンピューターを Windows 10 Anniversary Update とその後続バージョンにアップグレードするために必要です。 この修正プログラムをインストールするには、サポート記事で紹介されている手順を手動で実行する必要があります。 詳細については、「[サービスとしての Windows の管理](../deploy-use/manage-windows-as-a-service.md)」を参照してください。
+È necessario installare i seguenti hotfix di WSUS 4.0:
+  - [Hotfix 3095113](https://support.microsoft.com/kb/3095113) è necessario per la manutenzione di Windows 10, che usa l'infrastruttura di aggiornamenti software per ottenere gli aggiornamenti delle funzionalità di Windows 10. Se si usa WSUS 3.2, è necessario usare sequenze di attività per aggiornare Windows 10. Per altre informazioni, vedere [Gestire Windows come servizio](../deploy-use/manage-windows-as-a-service.md).  
+  - L'[hotfix 3159706](https://support.microsoft.com/kb/3159706) è necessario per usare la manutenzione di Windows 10 per aggiornare i computer a Windows 10 Anniversary Update e alle versioni successive. Per installare l'hotfix è necessario eseguire i passaggi manuali descritti nell'articolo del supporto tecnico. Per altre informazioni, vedere [Gestire Windows come servizio](../deploy-use/manage-windows-as-a-service.md).
 
 
-### <a name="internet-information-services-iis-on-the-site-system-servers"></a>サイト システム サーバー上のインターネット インフォメーション サービス (IIS)  
- IIS は、配布ポイント、状態移行ポイント、および管理ポイントに必要です。 この要件に関する詳細については、「[サイトとサイト システムの前提条件](../../core/plan-design/configs/site-and-site-system-prerequisites.md)」を参照してください。  
+### <a name="internet-information-services-iis-on-the-site-system-servers"></a>Internet Information Services (IIS) nei server del sistema del sito  
+ IIS è richiesto per il punto di distribuzione, il punto di migrazione stato e il punto di gestione. Per altre informazioni su questo requisito, vedere [Prerequisiti del sito e del sistema del sito](../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
 
-### <a name="windows-deployment-services-wds"></a>Windows 展開サービス (WDS)  
- WDS は、PXE 展開の場合、展開の帯域幅を最適化するのにマルチキャストを使用する場合と画像のオフライン サービスに必要です。 プロバイダーがリモート サーバーにインストールされている場合は、サイト サーバーとリモート プロバイダーに WDS をインストールする必要があります。 詳細については、このトピックの「 [Windows 展開サービス](#BKMK_WDS) 」をご覧ください。  
+### <a name="windows-deployment-services-wds"></a>Servizi di distribuzione Windows (WDS)  
+ WDS è necessario per le distribuzioni PXE, quando si usa il multicast per ottimizzare la larghezza di banda nelle distribuzioni e per la manutenzione offline delle immagini. Se il provider è installato in un server remoto, è necessario installare WDS nel server del sito e nel provider remoto. Per altre informazioni, vedere [Servizi di distribuzione Windows](#BKMK_WDS) in questo argomento.  
 
-### <a name="dynamic-host-configuration-protocol-dhcp"></a>動的ホスト構成プロトコル (DHCP)  
- PXE の展開には DHCP が必要です。 PXE を使用してオペレーティング システムを展開するには、アクティブなホストを持つ、機能している DHCP サーバーを用意する必要があります。 PXE 展開に関する詳細については、「[PXE を使用したネットワーク経由での Windows の展開](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md)」を参照してください。  
+### <a name="dynamic-host-configuration-protocol-dhcp"></a>Dynamic Host Configuration Protocol (DHCP)  
+ DHCP è necessario per le distribuzioni PXE. È necessario un server DHCP funzionante con un host attivo per distribuire i sistemi operativi utilizzando PXE. Per altre informazioni sulle distribuzioni PXE, vedere [Usare PXE per distribuire Windows in rete](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
 
-### <a name="supported-operating-systems-and-hard-disk-configurations"></a>サポートされるオペレーティング システムおよびハード ディスクの構成  
- オペレーティング システムを展開する場合に Configuration Manager がサポートするオペレーティング システムのバージョンとハード ディスクの構成についての詳細は、「[サポートされているオペレーティング システム](#BKMK_SupportedOS)」および「[サポートされているディスク構成](#BKMK_SupportedDiskConfig)」を参照してください。  
+### <a name="supported-operating-systems-and-hard-disk-configurations"></a>Sistemi operativi supportati e configurazioni del disco rigido  
+ Per altre informazioni sulle versioni del sistema operativo e le configurazioni del disco rigido supportate da Configuration Manager quando vengono distribuiti i sistemi operativi, vedere [Sistemi operativi supportati](#BKMK_SupportedOS) e [Configurazioni supportate per il disco](#BKMK_SupportedDiskConfig).  
 
-### <a name="windows-device-drivers"></a>Windows デバイス ドライバー  
- Windows デバイス ドライバーは、対象コンピューターにオペレーティング システムをインストールする場合と、ブート イメージを使って Windows PE を実行する場合に使用できます。 デバイス ドライバーの詳細については、「[ドライバーの管理](../get-started/manage-drivers.md)」を参照してください。  
+### <a name="windows-device-drivers"></a>Driver di dispositivo Windows  
+ È possibile utilizzare i driver di dispositivo Windows durante l'installazione del sistema operativo nel computer di destinazione e durante l'esecuzione di Windows PE tramite un'immagine di avvio. Per altre informazioni sui driver di dispositivo, vedere [Gestire i driver](../get-started/manage-drivers.md).  
 
-##  <a name="BKMK_InternalDependencies"></a> Configuration Manager の依存関係  
- Configuration Manager オペレーティング システムの展開の前提条件について、以下に示します。  
+##  <a name="BKMK_InternalDependencies"></a> Dipendenze di Configuration Manager  
+ Di seguito sono riportate informazioni sui prerequisiti di distribuzione del sistema operativo di Configuration Manager.  
 
-### <a name="operating-system-image"></a>オペレーティング システム イメージ  
- Configuration Manager のオペレーティング システム イメージは、Windows Imaging (WIM) ファイル形式で格納され、コンピューターのオペレーティング システムを正常にインストールおよび構成するのに必要な参照ファイルおよびフォルダーのコレクションを圧縮したものです。 詳細については、「[オペレーティング システム イメージの管理](../get-started/manage-operating-system-images.md)」を参照してください。  
+### <a name="operating-system-image"></a>Immagine del sistema operativo  
+ Le immagini del sistema operativo in Configuration Manager vengono archiviate in file in formato Windows Imaging (WIM) e rappresentano una raccolta compressa dei file e delle cartelle di riferimento necessari per installare e configurare correttamente un sistema operativo in un computer. Per altre informazioni, vedere [Gestire le immagini del sistema operativo](../get-started/manage-operating-system-images.md).  
 
-### <a name="driver-catalog"></a>ドライバー カタログ  
- デバイス ドライバーを展開するには、まずデバイス ドライバーをインポートしてこれを有効化し、Configuration Manager クライアントがアクセスできる配布ポイントで利用可能にする必要があります。 ドライバー カタログの詳細については、「[ドライバーの管理](../get-started/manage-drivers.md)」を参照してください。  
+### <a name="driver-catalog"></a>Catalogo driver  
+ Per distribuire un driver di dispositivo, è necessario importare tale driver, attivarlo e renderlo disponibile in un punto di distribuzione accessibile dal client di Configuration Manager. Per altre informazioni sul catalogo driver, vedere [Gestire i driver](../get-started/manage-drivers.md).  
 
-### <a name="management-point"></a>管理ポイント  
- 管理ポイントは、クライアント コンピューターと Configuration Manager サイト間で情報を転送します。 クライアントは、オペレーティング システムの展開を完了するのに必要なあらゆるタスク シーケンスを実行するのに管理ポイントを使用します。  
+### <a name="management-point"></a>Punto di gestione  
+ I punti di gestione trasferiscono le informazioni tra i computer client e il sito di Configuration Manager. Il client utilizza un punto di gestione per eseguire le sequenze attività necessarie per completare la distribuzione del sistema operativo.  
 
- タスク シーケンスの詳細については、「[タスクの自動化計画に関する考慮事項](planning-considerations-for-automating-tasks.md)」を参照してください。  
+ Per altre informazioni sulle sequenze di attività, vedere [Considerazioni sulla pianificazione dell'automazione delle attività](planning-considerations-for-automating-tasks.md).  
 
-### <a name="distribution-point"></a>配布ポイント  
- 配布ポイントは、オペレーティング システムのイメージや、デバイス ドライバーのパッケージなど、オペレーティング システムを展開するのに使用されるデータを格納するために、ほとんどの展開によって使用されます。 タスク シーケンスは通常、オペレーティング システムを展開するために配布ポイントからデータを取得します。  
+### <a name="distribution-point"></a>Punto di distribuzione  
+ I punti di distribuzione vengono utilizzati nella maggior parte delle distribuzioni per archiviare i dati utilizzati per distribuire un sistema operativo, quali l'immagine del sistema operativo o i pacchetti driver di dispositivo. In genere, le sequenze attività recuperano i dati da un punto di distribuzione per distribuire il sistema operativo.  
 
- 配布ポイントをインストールして、コンテンツを管理する方法の詳細については、「[コンテンツとコンテンツ インフラストラクチャの管理](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」を参照してください。  
+ Per altre informazioni su come installare i punti di distribuzione e gestire il contenuto, vedere [Gestire il contenuto e l'infrastruttura del contenuto](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
-### <a name="pxe-enabled-distribution-point"></a>PXE 対応配布ポイント  
- PXE を使った展開を行うには、クライアントからの PXE 要求を受け入れるように配布ポイントを構成する必要があります。 配布ポイントの構成方法の詳細については、「[配布ポイントの構成](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#pxe)」をご覧ください。  
+### <a name="pxe-enabled-distribution-point"></a>Punto di distribuzione che supporta PXE  
+ Per distribuire le distribuzioni avviate da PXE, è necessario configurare un punto di distribuzione in modo che accetti le richieste PXE dai client. Per altre informazioni, vedere [Configurare un punto di distribuzione](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#pxe).  
 
-### <a name="multicast-enabled-distribution-point"></a>マルチキャスト対応の配布ポイント  
- マルチキャストを使ってオペレーティング システムの展開を最適化するには、配布ポイントがマルチキャストをサポートするように構成する必要があります。 配布ポイントの構成方法の詳細については、「[配布ポイントの構成](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#multicast)」をご覧ください。   
+### <a name="multicast-enabled-distribution-point"></a>Punto di distribuzione abilitato per multicast  
+ Per ottimizzare le distribuzioni del sistema operativo tramite multicast, è necessario configurare un punto di distribuzione per il supporto di multicast. Per altre informazioni, vedere [Configurare un punto di distribuzione](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#multicast).   
 
-### <a name="state-migration-point"></a>状態移行ポイント  
- 並列展開および更新展開用にユーザー状態のデータをキャプチャして復元する場合、別のコンピューターにユーザー状態データを格納するように状態移行ポイントを構成する必要があります。  
+### <a name="state-migration-point"></a>Punto di migrazione stato  
+ Quando vengono acquisiti e ripristinati i dati sullo stato dell'utente per distribuzioni side-by-side e di aggiornamento, è necessario configurare un punto di migrazione stato per archiviare i dati sullo stato dell'utente in un altro computer.  
 
- 状態移行ポイントを構成する方法の詳細については、「 [状態移行ポイント](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_StateMigrationPoints)」をご覧ください。  
+ Per altre informazioni su come configurare il punto di migrazione stato, vedere [Punto di migrazione stato](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_StateMigrationPoints)  
 
- ユーザー状態をキャプチャして復元方法については、「[ユーザー状態の管理](../get-started/manage-user-state.md)」を参照してください。  
+ Per altre informazioni su come acquisire e ripristinare lo stato utente, vedere [Gestire lo stato utente](../get-started/manage-user-state.md).  
 
-### <a name="service-connection-point"></a>[サービス接続ポイント]  
- Windows 10 Current Branch を展開するために、Windows をサービスとして (WaaS) 使用する場合は、サービス接続ポイントをインストールする必要があります。 詳細については、「[サービスとしての Windows の管理](../deploy-use/manage-windows-as-a-service.md)」を参照してください。  
+### <a name="service-connection-point"></a>punto di connessione del servizio  
+ Quando si usa Windows come servizio (WaaS) per distribuire il ramo corrente di Windows 10, è necessario installare il punto di connessione del servizio. Per altre informazioni, vedere [Gestire Windows come servizio](../deploy-use/manage-windows-as-a-service.md).  
 
-### <a name="reporting-services-point"></a>レポート サービス ポイント  
- オペレーティング システムの展開に Configuration Manager レポートを使用するには、レポート サービス ポイントをインストールして構成する必要があります。 詳細については、「[レポート](../../core/servers/manage/reporting.md)」を参照してください。  
+### <a name="reporting-services-point"></a>Punto di Reporting Services  
+ Per usare i report di Configuration Manager per le distribuzioni del sistema operativo, è necessario installare e configurare un punto di Reporting Services. Per altre informazioni, vedere [Reporting](../../core/servers/manage/reporting.md) (Creazione di report).  
 
-### <a name="security-permissions-for-operating-system-deployments"></a>オペレーティング システム展開でのセキュリティ アクセス許可  
- **[オペレーティング システム展開マネージャー]** セキュリティ ロールは、変更のできない組み込みのセキュリティ ロールです。 しかし、このセキュリティ ロールをコピーして、変更を加え、変更を新しいカスタム セキュリティ ロールとして保存することができます。 オペレーティング システムの展開に直接適用できる許可を次に示します。  
+### <a name="security-permissions-for-operating-system-deployments"></a>Autorizzazioni di sicurezza per le distribuzioni del sistema operativo  
+ Il ruolo di sicurezza **Gestione distribuzione del sistema operativo** è un ruolo incorporato e non può essere modificato. Tuttavia, è possibile copiare il ruolo, apportare modifiche e quindi salvare tali modifiche come un nuovo ruolo di sicurezza personalizzato. Di seguito vengono riportate alcune delle autorizzazioni che si applicano direttamente alle distribuzioni del sistema operativo:  
 
--   **ブート イメージ パッケージ**: 作成、削除、変更、フォルダーの変更、オブジェクトの移動、読み取り、セキュリティ スコープの設定  
+-   **Pacchetto immagine d'avvio**: Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Imposta ambito di protezione  
 
--   **デバイス ドライバー**: 作成、削除、変更、フォルダーの変更、レポートの変更、オブジェクトの移動、読み取り、レポートの実行  
+-   **Driver dispositivo**: Crea, Elimina, Modifica, Modifica cartella, Modifica report, Sposta oggetto, Lettura, Esegui report  
 
--   **ドライバー パッケージ**: 作成、削除、変更、フォルダーの変更、オブジェクトの移動、読み取り、セキュリティ スコープの設定  
+-   **Pacchetto driver**: Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Imposta ambito di protezione  
 
--   **オペレーティング システム イメージ**: 作成、削除、変更、フォルダーの変更、オブジェクトの移動、読み取り、セキュリティ スコープの設定  
+-   **Immagine del sistema operativo**: Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Imposta ambito di protezione  
 
--   **オペレーティング システム インストール パッケージ**: 作成、削除、変更、フォルダーの変更、オブジェクトの移動、読み取り、セキュリティ スコープの設定  
+-   **Pacchetto di installazione sistema operativo**: Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Imposta ambito di protezione  
 
--   **タスク シーケンス パッケージ**: 作成、タスク シーケンス メディアの作成、削除、変更、フォルダーの変更、レポートの変更、オブジェクトの移動、読み取り、レポートの実行、セキュリティ スコープの設定  
+-   **Pacchetto sequenza di attività**: Crea, Crea supporto per sequenza di attività, Elimina, Modifica, Modifica cartella, Modifica report, Sposta oggetto, Lettura, Esegui report, Imposta ambito di protezione  
 
- カスタム セキュリティ ロールの詳細については、「 [カスタム セキュリティ ロールの作成](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_CreateSecRole)」をご覧ください。  
+ Per altre informazioni sui ruoli di sicurezza personalizzati, vedere [Creare ruoli di sicurezza personalizzati](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_CreateSecRole).  
 
-### <a name="security-scopes-for-operating-system-deployments"></a>オペレーティング システム展開のセキュリティ スコープ  
- セキュリティ スコープを使用すると、管理者は、オペレーティング システムとブート イメージ、ドライバー パッケージ、タスク シーケンス パッケージなど、オペレーティング システムの展開で使用される保護可能なオブジェクトにアクセスすることができます。 詳細については、「 [セキュリティ スコープ](../../core/understand/fundamentals-of-role-based-administration.md#bkmk_PlanScope)」をご覧ください。  
+### <a name="security-scopes-for-operating-system-deployments"></a>Ambiti di protezione per le distribuzioni del sistema operativo  
+ Utilizzare gli ambiti di protezione per consentire agli utenti amministratori di accedere agli oggetti a protezione diretta utilizzati nelle distribuzioni del sistema operativo, quali immagini di avvio e del sistema operativo, pacchetti driver e pacchetti sequenza attività. Per altre informazioni, vedere [Ambiti di protezione](../../core/understand/fundamentals-of-role-based-administration.md#bkmk_PlanScope).  
 
-##  <a name="BKMK_WDS"></a> Windows 展開サービス  
- Windows 展開サービス (WDS) は、PXE やマルチキャストをサポートするように構成する配布ポイントと同じサーバー上にインストールする必要があります。 WDS は、サーバーのオペレーティング システムに含まれています。 PXE 展開では、PXE ブートを行うサービスは WDS です。 PXE 用に配布ポイントがインストールされ、有効化された場合、Configuration Manager は、WDS PXE ブート機能を使用する WDS にプロバイダーをインストールします。  
+##  <a name="BKMK_WDS"></a> Servizi di distribuzione Windows  
+ È necessario installare Servizi di distribuzione Windows (WDS) sullo stesso server dei punti di distribuzione configurati per il supporto PXE o di multicast. Servizi di distribuzione Windows è incluso nel sistema operativo del server. Per le distribuzioni PXE, WDS è il servizio che esegue l'avvio PXE. Quando il punto di distribuzione viene installato e attivato per PXE, Configuration Manager installa un provider in WDS che usa le funzioni di avvio PXE di WDS.  
 
 > [!NOTE]  
->  サーバーの再起動が必要な場合、WDS のインストールに失敗する場合があります。 
+>  Se il server richiede un riavvio, l'installazione di WDS potrebbe non riuscire. 
 
- 考慮すべきその他の WDS の構成には、次のようなものがあります。  
+ È necessario considerare altre configurazioni di WDS, tra cui:  
 
--   WDS のサーバーへのインストールには、管理者がローカルの Administrators グループのメンバーであることが必要です。  
+-   Per l'installazione di WDS sul server è necessario che l'amministratore sia un membro del gruppo di amministratori locali.  
 
--   WDS サーバーが、Active Directory ドメインのメンバーか、Active Directory ドメインのドメイン コントローラーであること。 すべての Windows ドメインおよびフォレストの構成が WDS をサポートしていること。  
+-   È necessario che il server di WDS sia membro di un dominio Active Directory oppure controller di dominio per un dominio Active Directory. Tutte le configurazioni della foresta e del dominio di Windows supportano WDS.  
 
--   プロバイダーがリモート サーバーにインストールされている場合は、サイト サーバーとリモート プロバイダーに WDS をインストールする必要があります。  
+-   Se il provider è installato in un server remoto, è necessario installare WDS nel server del sito e nel provider remoto.  
 
-###  <a name="BKMK_WDSandDHCP"></a> 同じサーバー上に、WDS と DHCP がある場合の考慮事項  
- DHCP を実行するサーバーで配布ポイントを同時にホストする場合は、次の構成の問題を考慮する必要があります。  
+###  <a name="BKMK_WDSandDHCP"></a> Considerazioni in presenza di Servizi di distribuzione Windows e DHCP nello stesso server  
+ Se si prevede di co-ospitare il punto di distribuzione in un server DHCP, prendere in considerazione i seguenti aspetti di configurazione.  
 
--   アクティブなスコープを持つ、機能している DHCP サーバーが必要です。 Windows 展開サービスは PXE を使用しますが、PXE には DHCP サーバーが必要です。  
+-   È necessario disporre di un server DHCP funzionante con un ambito attivo. I Servizi di distribuzione Windows utilizzano PXE, che richiede un server DHCP.  
 
--   DHCP および Windows 展開サービスはどちらもポート番号 67 を必要とします。 Windows 展開サービスと DHCP を同時にホストする場合、PXE 用に構成した DHCP または配布ポイントを別のサーバーに移動できます。 または、次の手順を使用して、別のポートをリッスンするように Windows 展開サービス サーバーを構成できます。  
+-   DHCP e i Servizi di distribuzione Windows richiedono entrambi il numero di porta 67. Se si co-ospitano i Servizi di distribuzione Windows e DHCP, è possibile spostare DHCP o il punto di distribuzione configurato per PXE su un server separato. In alternativa, è possibile utilizzare la procedura seguente per configurare il server dei Servizi di distribuzione Windows in modo che sia in ascolto su una porta diversa.  
 
-    #### <a name="to-configure-the-windows-deployment-services-server-to-listen-on-a-different-port"></a>別のポートをリッスンするように Windows 展開サービス サーバーを構成するには  
+    #### <a name="to-configure-the-windows-deployment-services-server-to-listen-on-a-different-port"></a>Per configurare il server dei Servizi di distribuzione Windows in modo che sia in ascolto su una porta diversa  
 
-    1.  次のレジストリ キーを変更します。  
+    1.  Modificare la seguente chiave del Registro di sistema:  
 
          **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WDSServer\Providers\WDSPXE**  
 
-    2.  レジストリ値を次の値に設定します。 **UseDHCPPorts = 0**  
+    2.  Impostare il valore del Registro di sistema su: **UseDHCPPorts = 0**  
 
-    3.  新しい構成を適用するには、サーバーで次のコマンドを実行します。  
+    3.  Affinché la nuova configurazione abbia effetto, è necessario eseguire il comando seguente sul server:  
 
          `WDSUTIL /Set-Server /UseDHCPPorts:No /DHCPOption60:Yes`  
 
--   Windows 展開サービスを実行するには DNS サーバーが必要です。  
+-   È necessario un server DNS per l'esecuzione dei Servizi di distribuzione Windows.  
 
--   Windows 展開サービス サーバーで、次の UDP ポートを開く必要があります。  
+-   Le seguenti porte UDP devono essere aperte sul server dei Servizi di distribuzione Windows.  
 
-    -   ポート 67 (DHCP)  
+    -   Porta 67 (DHCP)  
 
-    -   ポート 69 (TFTP)  
+    -   Porta 69 (TFTP)  
 
-    -   ポート 4011 (PXE)  
+    -   Porta 4011 (PXE)  
 
     > [!NOTE]  
-    >  さらに、サーバーで DHCP の承認が必要な場合、サーバーで DHCP クライアント用のポート 68 を開く必要があります。  
+    >  Inoltre, se è necessaria l'autorizzazione DHCP sul server, occorre che la porta del client DHCP 68 sia aperta sul server.  
 
-##  <a name="BKMK_SupportedOS"></a> サポート対象のオペレーティング システム  
- 「[クライアントとデバイスでサポートされるオペレーティング システム](../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md)」でサポート対象クライアント オペレーティング システムとして示されているすべての Windows オペレーティング システムは、オペレーティング システム展開に対応しています。  
+##  <a name="BKMK_SupportedOS"></a> Sistemi operativi supportati  
+ Tutti i sistemi operativi Windows indicati come sistemi operativi client supportati in [Sistemi operativi supportati per client e dispositivi](../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md) sono supportati per le distribuzioni del sistema operativo.  
 
-##  <a name="BKMK_SupportedDiskConfig"></a> 対応するディスク構成  
- 次の表は、Configuration Manager オペレーティング システムの展開での使用がサポートされている参照コンピューターおよび展開先コンピューターのハード ディスク構成の組み合わせを示します。  
+##  <a name="BKMK_SupportedDiskConfig"></a> Configurazioni del disco supportate  
+ Le combinazioni di configurazioni del disco rigido nei computer di riferimento e di destinazione supportate per la distribuzione del sistema operativo di Configuration Manager sono visualizzate nella tabella seguente.  
 
-|参照コンピューターのハード ディスク構成|展開先コンピューターのハード ディスク構成|  
+|Configurazione del disco rigido del computer di riferimento|Configurazione del disco rigido del computer di destinazione|  
 |------------------------------------------------|--------------------------------------------------|  
-|ベーシック ディスク|ベーシック ディスク|  
-|ダイナミック ディスク上のシンプル ボリューム|ダイナミック ディスク上のシンプル ボリューム|  
+|Disco di base|Disco di base|  
+|Volume semplice su un disco dinamico|Volume semplice su un disco dinamico|  
 
- Configuration Manager では、シンプル ボリュームで構成されたコンピューターからのオペレーティング システム イメージのキャプチャのみをサポートしています。 次のハード ディスク構成はサポートされません。  
+ Configuration Manager supporta l'acquisizione di un'immagine del sistema operativo solo da computer configurati con volumi semplici. Le seguenti configurazioni del disco rigido non sono supportate:  
 
--   スパン ボリューム  
+-   Volumi con spanning  
 
--   ストライプ ボリューム (RAID 0)  
+-   Volumi con striping (RAID 0)  
 
--   ミラー ボリューム (RAID 1)  
+-   Volumi con mirroring (RAID 1)  
 
--   パリティ ボリューム (RAID 5)  
+-   Volumi di parità (RAID 5)  
 
- 次の表は、Configuration Manager のオペレーティング システム展開でサポートされていない参照および展開先コンピューターの追加のハード ディスク構成を示します。  
+ Nella tabella seguente viene elencata una configurazione del disco rigido aggiuntiva nei computer di riferimento e di destinazione non supportata con la distribuzione del sistema operativo di Configuration Manager.  
 
-|参照コンピューターのハード ディスク構成|展開先コンピューターのハード ディスク構成|  
+|Configurazione del disco rigido del computer di riferimento|Configurazione del disco rigido del computer di destinazione|  
 |------------------------------------------------|--------------------------------------------------|  
-|ベーシック ディスク|ダイナミック ディスク|  
+|Disco di base|Disco dinamico|  
 
-## <a name="next-steps"></a>次のステップ
-[オペレーティング システムの展開の準備](../get-started/prepare-for-operating-system-deployment.md)
+## <a name="next-steps"></a>Passaggi successivi
+[Prepare for operating system deployment](../get-started/prepare-for-operating-system-deployment.md) (Preparare la distribuzione del sistema operativo)

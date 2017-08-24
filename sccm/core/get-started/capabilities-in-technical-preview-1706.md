@@ -1,6 +1,6 @@
 ---
 title: Technical Preview 1706 | Microsoft Docs
-description: "System Center Configuration Manager の Technical Preview バージョン 1706 で使用できる機能について説明します。"
+description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1706 per System Center Configuration Manager."
 ms.custom: na
 ms.date: 06/30/2017
 ms.prod: configuration-manager
@@ -16,14 +16,14 @@ manager: angrobe
 ms.openlocfilehash: d45f504dfe0a4c7852b0e2c8ff60d54005346c02
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1706-for-system-center-configuration-manager"></a>System Center Configuration Manager の Technical Preview 1706 の機能
+# <a name="capabilities-in-technical-preview-1706-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1706 per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Technical Preview)*
+*Si applica a: System Center Configuration Manager (Technical Preview)*
 
-この記事では、System Center Configuration Manager の Technical Preview バージョン 1706 で使用できる機能について説明します。 このバージョンをインストールして更新し、新機能を Configuration Manager の Technical Preview サイトに追加できます。 このバージョンの Technical Preview をインストールする前に、「[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)」を確認して、Technical Preview の使用に関する一般的な要件と制限、バージョン間の更新方法、および Technical Preview の機能に関するフィードバックを提供する方法について理解してください。     
+Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1706 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare [Technical Preview per System Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.     
 
 
 <!--  Known Issues Template   
@@ -31,17 +31,17 @@ ms.lasthandoff: 08/07/2017
 -   **Issue Name**. Details
     Workaround details.
 -->
-**この Technical Preview の既知の問題:**
+**Problemi noti di questa versione Technical Preview:**
 
--   **配布ポイントの移動**: サイト間で配布ポイントを移動するコンソールのオプションは、単一のプライマリ サイトという Technical Preview の制限のため、このリリースでは使用できません。
+-   **Move distribution point** (Sposta punto di distribuzione): le opzioni nella console per spostare un punto di distribuzione tra i siti non possono essere usate con questa versione a causa del limite di Technical Preview a un singolo sito primario.
 
--   **デバイスのコンプライアンス設定**: 次の 2 つの新しいデバイスのコンプライアンス設定を使用したときに、逆の動作が発生する場合があります。
-    - **デバイスでの USB デバッグをブロックする**
-    - **提供元不明のアプリをブロックする**
+-   **Device compliance settings** (Impostazioni di conformità del dispositivo): potrebbe verificarsi un comportamento contrario quando si usano le due nuove impostazioni di conformità del dispositivo:
+    - **Blocca il debug USB nel dispositivo**
+    - **Blocca app da origini sconosciute**
 
-        たとえば、管理者が **[デバイスでの USB デバッグをブロックする]** を **true** に設定すると、USB デバッグが有効になっていないすべてのデバイスが非対応としてマークされます。
+        Ad esempio, se gli amministratori impostano **Blocca il debug USB nel dispositivo**  su **true**, tutti i dispositivi che non hanno attivato l'USB in esecuzione sono contrassegnati come non conformi.
 
-**このバージョンでお試しいただける新機能を次に示します。**  
+**Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
 <!--  Rough Section Template
 ##  FEATURE
@@ -53,530 +53,530 @@ ms.lasthandoff: 08/07/2017
  -  Task 2              
 -->
 
-## <a name="improved-boundary-groups-for-software-update-points"></a>ソフトウェアの更新ポイントのための境界グループの改善
+## <a name="improved-boundary-groups-for-software-update-points"></a>Gruppi di limiti migliorati per i punti di aggiornamento software
 <!-- 1324591 -->
-このリリースでは、ソフトウェアの更新ポイントでの境界グループの使用方法が改善されています。 新しいフォールバック動作を次にまとめます。
--   ソフトウェアの更新ポイントのフォールバックで、近隣境界グループへのフォールバックに時間構成を使用するようになりました。最小時間は 120 分です。
+Questa versione include dei miglioramenti per il funzionamento dei punti di aggiornamento del software con i gruppi di limiti. Di seguito viene riepilogato il nuovo comportamento di fallback:
+-   Il fallback per i punti di aggiornamento del software usa attualmente un tempo configurabile per il fallback a gruppi di limiti adiacenti, con un tempo minimo di 120 minuti.
 
--   フォールバックの構成に関係なく、クライアントは、使用した最後のソフトウェアの更新ポイントへの到達を 120 分間試行します。 120 分以内にそのサーバーに到達できない場合は、新しいサーバーを見つけるため、クライアントは利用可能なソフトウェアの更新ポイントのプールをチェックします。
+-   Indipendentemente dalla configurazione di fallback, un client tenta di raggiungere l'ultimo punto di aggiornamento del software che ha usato per 120 minuti. Dopo l'esito negativo nel raggiungere il server per 120 minuti, il client controlla quindi il proprio pool di punti di aggiornamento del software disponibili, per poterne trovare uno nuovo.
 
-  -   クライアントの現在の境界グループ内のすべてのソフトウェアの更新ポイントは、クライアントのプールにすぐに追加されます。
+  -   Tutti i punti di aggiornamento del software nel gruppo di limiti attuale del client vengono aggiunti immediatamente al pool del client.
 
-  -   クライアントは新しいサーバーを探す前に、元のサーバーを使用しようと 120 分間試行するため、2 時間が経過するまで追加のサーバーは接続されません。
+  -   Poiché un client cerca di usare il proprio server originale per 120 minuti prima di richiederne uno nuovo, non viene contattato nessun server aggiuntivo fino a che non sono trascorse due ore.
 
-  -   近隣グループへのフォールバックが最小の 120 分に設定されている場合、その近隣境界グループからのソフトウェアの更新ポイントがクライアントの利用可能なサーバーのプールの一部になります。
+  -   Se il fallback a un gruppo adiacente è configurato per il valore minimo di 120 minuti, i punti di aggiornamento del software da quel gruppo di limiti adiacente farà parte del pool del client di server disponibili.
 
--   2 時間で元のサーバーに到達できない場合、クライアントは、新しいソフトウェアの更新ポイントに接続するためにより短いサイクルに切り替えます。
+-   Dopo l'esito negativo nel raggiungere il server originale per due ore, il client passa a un ciclo più breve per contattare un nuovo punto di aggiornamento del software.
 
-    つまり、クライアントは新しいサーバーとの接続に失敗すると、使用可能なサーバー プールからすぐに次のサーバーを選択して、接続を試行します。
+    Ciò significa che se un client non riesce a connettersi con un nuovo server, seleziona rapidamente il server successivo dal relativo pool di server disponibili e cerca di contattarne uno nuovo.
 
-  -   このサイクルは、クライアントが使用可能なソフトウェアの更新ポイントに接続するまで続きます。
-  -   クライアントがソフトウェアの更新ポイントを見つけるまで、近隣境界グループのフォールバック時間が満たされるたびに、使用可能なサーバーのプールに追加のサーバーが追加されます。
+  -   Questo ciclo continua fino a quando il client si connette a un punto di aggiornamento del software da poter usare.
+  -   Fino a quando il client non trova un punto di aggiornamento del software, vengono aggiunti dei server aggiuntivi al pool di server disponibili quando si raggiunge l'ora di fallback per ogni gruppo di limiti adiacente.
 
-詳細については、Current Branch の境界グループに関するトピックの[ソフトウェアの更新ポイント](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points)の記述を参照してください。
+Per altre informazioni, vedere la sezione [Punti di aggiornamento software](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points) nell'argomento Gruppi di limiti e relazioni per il Current Branch.
 
 
-## <a name="site-server-role-high-availability"></a>サイト サーバーの役割の高可用性
+## <a name="site-server-role-high-availability"></a>Disponibilità elevata per il ruolo del server del sito
 <!-- 1128774 -->
-サイト サーバーの役割の高可用性は、追加のプライマリ サイト サーバーを*パッシブ* モードでインストールするための Configuration Manager ベースのソリューションです。 *アクティブ* モードになっている既存のプライマリ サイト サーバーに加えて、パッシブ モードのサイト サーバーが追加されます。 パッシブ モードのサイト サーバーは、必要なときにすぐに使用できます。
+La disponibilità elevata per il ruolo del server del sito è una soluzione di base di Configuration Manager per installare un server del sito primario aggiuntivo in modalità *Passivo*. Il server del sito in modalità Passivo è un'aggiunta al server del sito primario esistente in modalità *Attivo*. Un server del sito in modalità Passivo è disponibile per l'uso immediato, quando necessario.
 
-パッシブ モードのプライマリ サイト サーバー:
--   アクティブ サイト サーバーと同じサイト データベースを使用します。
--   アクティブ サイト サーバーのコンテンツ ライブラリを受け取り、同期を維持します。
--   パッシブ モードの間は、サイト データベースにデータを書き込みません。
--   パッシブ モードの間は、オプションのサイト システムの役割のインストールまたは削除をサポートしません。
+Un server del sito primario in modalità Passivo:
+-   Usa lo stesso database del sito usato dal server del sito attivo.
+-   Riceve una copia della raccolta del contenuto dei server del sito attivi, che viene quindi mantenuta sincronizzata.
+-   Non scrive dati nel database del sito fino a quando si trova in modalità Passivo.
+-   Non supporta l'installazione o la rimozione di ruoli del sistema del sito facoltativi, fino a quando si trova in modalità Passivo.
 
-パッシブ モードのサイト サーバーをアクティブ モードのサイト サーバーにするには、手動で昇格します。 これにより、アクティブ サイト サーバーがパッシブ サイト サーバーに切り替わります。 元のアクティブ モード サーバーで使用可能なサイト システムの役割は、そのコンピューターにアクセスできる間は引き続き使用できます。 サイト サーバーの役割のみが、アクティブ モードとパッシブ モードの間で切り替えられます。
+Per far sì che il server del sito in modalità Passivo diventi il server del sito in modalità attiva, alzare manualmente di livello. In questo modo si otterrà un server del sito attivo dal server del sito passivo. I ruoli del sistema del sito che sono disponibili nel server in modalità Attivo originale rimangono disponibili fin a quando tale computer è accessibile. Solo il ruolo del server del sito viene commutato tra modalità Attivo e Passivo.
 
-パッシブ モードのサイト サーバーをインストールするには、**サイト システム サーバーの作成ウィザード**を使用して、種類が**プライマリ サイト サーバー**でモードが**パッシブ**の新しいサイト サーバーを構成します。 ウィザードは、指定されたサーバーで Configuration Manager セットアップを実行して、パッシブ モードで新しいサイト サーバーをインストールします。 インストールが完了すると、アクティブ モードのサイト サーバーは、アクティブ サイト サーバーに行った変更や構成をパッシブ モードのサイト サーバーとそのコンテンツ ライブラリに同期させます。
+Per installare un server del sito in modalità Passivo, usare **Creazione guidata server del sistema sito** per configurare un nuovo server del sito con un tipo di **Server del sito primario** e una modalità di **Passivo**. La procedura guidata esegue quindi l'installazione di Configuration Manager nel server specificato per installare il nuovo server del sito in modalità Passivo. Al completamento dell'installazione, il server del sito in modalità Attivo mantiene il server del sito in modalità Passivo e la sua raccolta contenuto sincronizzata con le modifiche o le configurazioni apportate al server del sito attivo.
 
-### <a name="prerequisites-and-limitations"></a>前提条件と制限事項
--   プライマリ サイトごとに 1 つのパッシブ モードのサイト サーバーがサポートされます。
+### <a name="prerequisites-and-limitations"></a>Prerequisiti e limiti
+-   Ciascun sito primario supporta un singolo server del sito in modalità Passivo.
 
--   Azure では、パッシブ モードのサイト サーバーは、オンプレミスまたはクラウド ベースが可能です。
+-   Il server del sito in modalità Passivo può essere locale o basato su cloud in Azure.
 
--   アクティブ モードとパッシブ モードのサイト サーバーはどちらも同じドメインにある必要があります。
+-   I server del sito in modalità Passivo e in modalità Attivo devono essere nello stesso dominio.
 
--   アクティブ モードとパッシブ モードのサイト サーバーはどちらも同じサイト データベースを使用する必要があります。このサイト データベースは各サイト サーバーのコンピューターから離れている必要があります。
+-   I server del sito in modalità Passivo e in modalità Attivo devono usare lo stesso database del sito, che deve essere remoto rispetto ai computer di ogni server del sito.
 
-    -   データベースをホストする SQL Server では、既定のインスタンス、名前付きインスタンス、SQL Server クラスター、または Always On 可用性グループを使用できます。
+    -   SQL Server che ospita il database può usare un'istanza predefinita, un'istanza denominata, un cluster di SQL Server o un gruppo di disponibilità Always on.
 
-    -   パッシブ モードのサイト サーバーは、アクティブ モードのサイト サーバーと同じサイト データベースを使用するように構成されます。 ただし、パッシブ モードのサイト サーバーは、アクティブ モードに昇格するまで、そのデータベースを使用しません。
+    -   Il server del sito in modalità Passivo è configurato per usare lo stesso database del server del sito in modalità Attivo. Tuttavia, il server del sito in modalità Passivo non usa tale database finché non viene poi promosso alla modalità Attivo.
 
--   パッシブ モードのサイト サーバーを実行するコンピューターは、
+-   Il computer che eseguirà il server del sito in modalità Passivo:
 
-    -   [プライマリ サイトをインストールするための前提条件](https://docs.microsoft.com/en-us/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#primary-sites-and-the-central-administration-site)を満たす必要があります。
+    -   Deve soddisfare i [prerequisiti per l'installazione di un sito primario](https://docs.microsoft.com/en-us/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#primary-sites-and-the-central-administration-site).
 
-    -   アクティブ モードのサイト サーバーのバージョンと一致するソース ファイルを使用してインストールします。
+    -   Esegue l'installazione usando file di origine che corrispondono alla versione del server del sito in modalità Attivo.
 
-    -   パッシブ モード サイトをインストールするまでは、いずれのサイトからのサイト システムの役割も持つことはできません。
+    -   Non può avere un ruolo del sistema del sito da qualsiasi sito prima di installare il sito in modalità Passivo.
 
--   アクティブ モードとパッシブ モードのサイト サーバー コンピューターは、オペレーティング システムまたはサービス パックの異なるバージョンを実行できますが、お使いの Configuration Manager のバージョンでどちらもサポートされている場合に限ります。
+-   I computer del server del sito in modalità Attivo e Passivo possono eseguire diversi sistemi operativi o versioni di service pack, a condizione che entrambe restino supportate dalla versione di Configuration Manager dell'utente.
 
--   パッシブ モードのサイト サーバーのアクティブ モード サーバーへの昇格は手動で行います。 自動フェールオーバーはありません。
+-   La promozione del server del sito verso la modalità Attivo è manuale. Non si verifica failover automatico.
 
--   サイト システムの役割は、アクティブ モードのサイト サーバーにのみインストールできます。
+-   I ruoli del sistema del sito possono essere installati solo sul server del sito che è in modalità Attivo.
 
-    -   アクティブ モードのサイト サーバーは、すべてのサイト システムの役割をサポートします。 サーバーがパッシブ モードの時には、サイト システムの役割をインストールすることはできません。
+    -   Un server del sito in modalità Attivo supporta tutti i ruoli del sistema del sito. Non è possibile installare i ruoli del sistema del sito nel server quando è in modalità Passivo.
 
-    -   データベースを使用するサイト システムの役割 (レポート ポイントなど) には、アクティブ モードとパッシブ モードの両方のサイト サーバーから離れているサーバー上にあるデータベースが必要です。
+    -   I ruoli del sistema del sito che usano un database, ad esempio il punto di reporting, devono avere il database in un server che sia remoto rispetto ai server del sito in modalità Attivo e Passivo.
 
-    -   SMS_Provider はパッシブ モードのサイト サーバーにインストールされません。 サイトの SMS_Provider に接続して手動でパッシブ モードのサイト サーバーをアクティブ モードに昇格する必要があるため、追加のコンピューターに[プロバイダーの追加のインスタンスを少なくとも 1 つインストールする](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider)ことをお勧めします。
+    -   SMS_Provider non viene installato nel server del sito in modalità Passivo. Poiché è necessario connettersi a un SMS_Provider per far sì che il sito innalzi manualmente il livello del server dalla modalità Passivo a quella Attivo, è consigliabile [installare almeno un'istanza aggiuntiva del provider](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider) su un computer aggiuntivo.
 
-**既知の問題**:   
-このリリースでは、次の条件に対する**状態**が、わかりやすいテキストではなく、数値としてコンソールに表示されます。
--   131071: SQL Server のインストールに失敗しました
--   720895: サイト サーバーの役割のアンインストールに失敗しました
--   851967: フェールオーバーに失敗しました
+**Problema noto**:   
+Con questa versione, lo **Stato** per le condizioni seguenti viene visualizzato nella console come valori numerici anziché come testo leggibile:
+-   131071 - Installazione del server del sito non riuscita
+-   720895 - Disinstallazione del ruolo del server del sito non riuscita
+-   851967 - Failover non riuscito
 
-### <a name="add-a-site-server-in-passive-mode"></a>プライマリ サイト サーバーをパッシブ モードで追加する
-1.  コンソールで、**[管理]** > **[サイトの構成]** > **[サイト]** の順に移動して、[サイト システムの役割の追加ウィザード](/sccm/core/servers/deploy/configure/install-site-system-roles)を起動します。 **サイト システム サーバーの作成ウィザード**も使用できます。
+### <a name="add-a-site-server-in-passive-mode"></a>Aggiungere un server del sito in modalità Passivo
+1.  Nella console passare ad **Amministrazione** > **Configurazione del sito** > **Siti** e avviare l'[Aggiunta guidata ruoli del sistema del sito](/sccm/core/servers/deploy/configure/install-site-system-roles). È possibile usare anche la **Creazione guidata server del sistema sito**.
 
-2.  **[全般]** ページで、パッシブ モードのサイト サーバーをホストするサーバーを指定します。 指定したサーバーは、パッシブ モードでサイト サーバーをインストールするまで、サイト システムの役割をホストすることはできません。
+2.  Nella pagina **Generale** specificare il server che ospiterà il server del sito in modalità Passivo. Il server specificato non può ospitare eventuali ruoli del sistema del sito prima di installare un server del sito in modalità Passivo.
 
-3.  **[システムのロールの選択]** ページで、**パッシブ モードでのプライマリ サイト サーバー**のみを選択します。
+3.  Nella pagina **Selezione ruolo del sistema** selezionare solo **Primary site server in passive mode** (Server del sito primario in modalità Passivo).
 
-4.  ウィザードを完了するには、次の情報を提供する必要があります。この情報は、セットアップを実行して、指定したサーバーにサイト サーバーの役割をインストールするのに使用されます。
-    -   アクティブ サイト サーバーからインストール ファイルを新しいパッシブ モードのサイト サーバーにコピーするか、アクティブ サイト サーバーの **CD.Latest** フォルダーの内容を格納している場所へのパスを指定します。
+4.  Per completare la procedura guidata, è necessario fornire le informazioni seguenti che vengono usate per eseguire la configurazione e installare il ruolo del server del sito nel server specificato:
+    -   Scegliere di copiare i file di installazione dal server del sito attivo al nuovo server del sito in modalità Passivo o specificare un percorso a una posizione che includa il contenuto della cartella del server del sito attivo **CD.Latest**.
 
-    -   アクティブ モードのサイト サーバーで使用されているのと同じサイト データベース サーバーとデータベースの名前を指定します。
+    -   Specificare lo stesso server del database del sito e il nome del database come usati dal server del sito in modalità Attivo.
 
-5.  Configuration Manager が、指定されたサーバーにパッシブ モードでサイト サーバーをインストールします。
+5.  Configuration Manager installa quindi il server del sito in modalità Passivo nel server specificato.
 
-詳細なインストールの状態については、**[管理]** > **[サイトの構成]** > **[サイト]** で確認できます。
--   パッシブ モードのサイト サーバーの状態は、**[インストール中]** として表示されます。
+Per lo stato di installazione dettagliato, passare ad **Amministrazione** > **Configurazione sito** > **Siti**.
+-   Lo stato del server per il server del sito in modalità Passivo viene visualizzato come **Installazione**.
 
--   より詳細な情報を得るには、サーバーを選択し、**［ステータスの表示］** をクリックして **[サイト サーバーのインストール状態]** を開きます。
-
-
-
-### <a name="promote-the-passive-mode-site-server-to-active-mode"></a>パッシブ モードのサイト サーバーをアクティブ モードに昇格させる
-パッシブ モードのサイト サーバーをアクティブ モードに変更する場合は、**[管理]** > **[サイトの構成]** > **[サイト]** の **[ノード]** ウィンドウから行います。 SMS_Provider のインスタンスにアクセスできる間は、サイトにアクセスしてこの変更を行うことができます。
-1.  Configuration Manager コンソールの **[ノード]** ウィンドウで、パッシブ モードのサイト サーバーを選択し、リボンから **[アクティブに昇格]** を選択します。
-
-2.  昇格中のサーバーの単純な**状態**が、**[ノード]** ウィンドウに **[昇格中]** として表示されます。
-
-3.  昇格が完了すると、**[状態]** 列には、新しい*アクティブ* モードのサイト サーバーと新しい*パッシブ* モードのサイト サーバーの両方に対して **[OK]** が表示されます。
-
-4.  **[管理]** > **[サイトの構成]** > **[サイト]** では、プライマリ サイト サーバーの名前に新しい*アクティブ* モードのサイト サーバーの名前が表示されるようになります。
-詳細な状態については、**[監視]** > **[Site Server Status]\(サイト サーバーの状態\)** に移動します。
-    -   **[モード]** 列でどのサーバーが*アクティブ*または*パッシブ*かを識別できます。
-
-    -   サーバーをパッシブ モードからアクティブ モードに昇格している間に、アクティブに昇格中のサイト サーバーを選択し、リボンから **[状態を表示]** を選択します。 これによりプロセスに関する追加の情報が表示された **[Site Server Promotion Status]\(サイト サーバーの昇格の状態\)** ウィンドウが開きます。
-
-アクティブ モードのサイト サーバーがパッシブ モードに切り替わると、サイト システムの役割のみがパッシブになります。 そのコンピューターにインストールされている他のすべてのサイト システムの役割はアクティブのままで、クライアントからアクセスできます。
+-   Selezionare il server e quindi fare clic su **Mostra stato** per aprire lo **Site Server Installation Status** (Stato installazione del server del sito) per informazioni più dettagliate.
 
 
-### <a name="daily-monitoring"></a>日常的な監視
-パッシブ モードのプライマリ サイトがある場合は、アクティブ モードのサイト サーバーと同期がとれていて、すぐに使えるようにするため、日常的に監視します。 これを行うには、**[監視]** > **[Site Server Status]\(サイト サーバーの状態\)** に移動します。 ここでアクティブ モードとパッシブ モードの両方のサイト サーバーを表示できます。
 
-**[概要]** タブ:
--   **[モード]** 列では、どのサーバーがアクティブまたはパッシブかを識別できます。
--   **[状態]** 列には、パッシブ モードのサーバーがアクティブ モードのサーバーと同期している場合に **[OK]** がリストされます。
--   コンテンツの同期の状態に関するさらなる詳細を表示するには、[Content Sync State]\(コンテンツの同期状態\)から **[状態を表示]** をクリックします。 [コンテンツ ライブラリ] タブが開きます。ここでコンテンツの同期の問題を修正を試みることができます。
+### <a name="promote-the-passive-mode-site-server-to-active-mode"></a>Alzare il livello del server in modalità Passivo passandolo in modalità Attivo
+Se si desidera modificare il server del sito dalla modalità Passivo alla modalità Attivo, l'operazione viene eseguita dal riquadro **Nodi** **Amministrazione** > **Configurazione sito** > **Siti**. Finché si può accedere a un'istanza di SMS_Provider, è possibile accedere al sito per apportare questa modifica.
+1.  Nel riquadro **Nodi** della console di Configuration Manager selezionare il server del sito in modalità Passivo e quindi dalla barra multifunzione scegliere **Alza di livello su attivo**.
 
-**[コンテンツ ライブラリ]** タブ:
--   アクティブ サイト サーバーからパッシブ モードのサイト サーバーに同期するコンテンツの**状態**を表示します。
--   状態が **[失敗]** になっているコンテンツを選択して、リボンから **[Sync selected items]\(選択した項目を同期\)** を選択できます。 この操作は、コンテンツのソースからパッシブ モードのサイト サーバーにコンテンツの再同期を試行します。 回復中、[状態] に **[進行中]** が表示され、同期されると、**[成功]** と表示されます。
+2.  Il semplice **Stato** per il server che si sta alzando di livello viene visualizzato nel riquadro **Nodi** come **Innalzamento di livello**.
 
-### <a name="try-it-out"></a>試してみましょう。
-次のタスクを試した後、どのように動作したかについて、リボンの **[ホーム]** タブから **[フィードバック]** を送信してください。
--   パッシブ モードでプライマリ サイトをインストールできます。
--   コンソールを使用して、パッシブ モードのサイト サーバーを昇格してアクティブ モードのサイト サーバーにし、両方のサイト サーバーの状態の変更を確認できます。
+3.  Al termine dell'innalzamento di livello, la colonna **Stato** mostra la scritta **OK** per il nuovo server del sito in modalità *Attivo* e per il nuovo server del sito in modalità *Passivo*.
+
+4.  In **Amministrazione** > **Configurazione sito** > **Siti** il nome del server del sito primario mostra ora il nome del nuovo server del sito in modalità *Attivo*.
+Per informazioni dettagliate sullo stato, passare a **Monitoraggio** > **Site Server Status** (Stato server del sito).
+    -   La colonna **Modalità** identifica quale server è *Attivo* o *Passivo*.
+
+    -   Durante l'innalzamento di livello di un server dalla modalità Passivo alla modalità Attivo, selezionare il server del sito che si sta innalzando di livello in modalità Attivo e quindi scegliere **Mostra stato** dalla barra multifunzione. Viene visualizzata la finestra**Site Server Promotion Status** (Stato innalzamento di livello server del sito) che mostra altri dettagli relativi al processo.
+
+Quando un server del sito in modalità Attivo passa alla modalità Passivo, solo il ruolo del sistema del sito è reso passivo. Tutti gli altri ruoli del sistema del sito che vengono installati su quel computer restano attivi e accessibili ai client.
 
 
-## <a name="include-trust-for-specific-files-and-folders-in-a-device-guard-policy"></a>Device Guard ポリシーに特定のファイルとフォルダーの信頼を含める
+### <a name="daily-monitoring"></a>Monitoraggio giornaliero
+Quando si dispone di un sito primario in modalità Passivo, è possibile monitorarlo giornalmente per garantire che rimanga sincronizzato con il server del sito in modalità Attivo e pronto per l'uso. A tale scopo, passare a **Monitoraggio** > **Site Server Status** (Stato server del sito). In questa posizione è possibile visualizzare il server del sito in modalità Passivo e in modalità Attivo.
+
+La scheda **Riepilogo**:
+-   La colonna **Modalità** identifica quale server è Attivo o Passivo.
+-   La colonna **Stato** riporta **OK** quando il server in modalità Passivo è sincronizzato con il server in modalità Attivo.
+-   Per visualizzare altri dettagli sullo stato di sincronizzazione del contenuto, fare clic su **Mostra stato** dallo Content Sync State (Stato di sincronizzazione del contenuto). Viene visualizzata la scheda Content Library (Raccolta contenuto) in cui è possibile provare a risolvere i problemi di sincronizzazione del contenuto.
+
+La scheda **Content Library** (Raccolta contenuto):
+-   Visualizzare lo **Stato** per il contenuto che sincronizza dal server del sito Attivo al server del sito in modalità Passivo.
+-   È possibile selezionare il contenuto con uno stato di **Non riuscito** e quindi scegliere **Sync selected items** (Sincronizza elementi selezionati) dalla barra multifunzione. Questa azione tenta di sincronizzare nuovamente il contenuto dall'origine del contenuto al server del sito in modalità Passivo. Durante il recupero, lo Stato è visualizzato come **In corso** e dopo la sincronizzazione viene visualizzato come **Operazione riuscita**.
+
+### <a name="try-it-out"></a>Prova subito!
+Provare a completare le attività seguenti e quindi inviare **Feedback** dalla scheda **Home** della barra multifunzione per comunicarci come è andata:
+-   È possibile installare un sito primario nella modalità Passivo.
+-   È possibile usare la console per alzare di livello il server del sito in modalità Passivo per rendere il server del sito modalità Attivo e confermare la modifica dello stato di entrambi i server del sito.
+
+
+## <a name="include-trust-for-specific-files-and-folders-in-a-device-guard-policy"></a>Includere attendibilità per file e cartelle specifici in un criterio di Device Guard
 <!-- 1324676 -->
-このリリースでは、[Device Guard](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager) ポリシー管理に機能が追加されています。
+In questa versione sono state aggiunte altre funzionalità alla gestione del criterio di [Device Guard](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)
 
-必要に応じて、Device Guard ポリシー内のフォルダーの特定のファイルに信頼を追加できるようになりました。 これにより、次のことが可能になります。
+Ora è possibile aggiungere facoltativamente attendibilità per file e cartelle specifici in un criterio di Device Guard. Ciò consente di:
 
-1.  管理されたインストーラーの動作で問題を解決する
-2.  Configuration Manager で展開できない基幹業務アプリを信頼する
-3.  オペレーティング システムの展開イメージに含まれているアプリを信頼する
+1.  Risolvere i problemi relativi ai comportamenti del programma di installazione gestito
+2.  Rendere attendibili le app line-of-business che non possono essere distribuite con Configuration Manager
+3.  Rendere attendibili le app incluse in un'immagine di distribuzione del sistema operativo.
 
-### <a name="try-it-out"></a>試してみましょう。
+### <a name="try-it-out"></a>Prova subito!
 
-1.  Device Guard ポリシーの作成中に、Device Guard ポリシーの作成ウィザードの [Inclusions]\(追加\) タブで、**[追加]** をクリックします。
-2.  **[信頼できるファイルまたはフォルダーの追加]** ダイアログ ボックスで、信頼するファイルまたはフォルダーに関する情報を指定します。 ローカル ファイルまたはフォルダーのパスを指定するか、接続のアクセス許可を持つリモート デバイスに接続して、そのデバイス上のファイルまたはフォルダーのパスを指定できます。
-3.  ウィザードを完了します。
+1.  Durante la creazione di un criterio di Device Guard, nella scheda Inclusioni della procedura guidata per la creazione di criteri di Device Guard fare clic su **Aggiungi**.
+2.  Nella finestra di dialogo **Aggiungi file o cartella attendibile** specificare le informazioni sul file o sulla cartella che si desidera considerare attendibile. È possibile specificare un percorso di file o cartella locale oppure connettersi a un dispositivo remoto per cui si dispone dell'autorizzazione per connettersi e specificare un percorso di file o cartella nel dispositivo.
+3.  Completare la procedura guidata.
 
 
-## <a name="hide-task-sequence-progress"></a>タスク シーケンスの進行状況を非表示にする
+## <a name="hide-task-sequence-progress"></a>Nascondere l'avanzamento della sequenza di attività
 <!-- 1354291 -->
-このリリースでは、新しい変数を使用して、エンド ユーザーにタスク シーケンスの進行状況を表示するタイミングを制御できます。 タスク シーケンスで、**タスク シーケンス変数の設定**手順を使用して、変数 **TSDisableProgressUI** に値を設定して、タスク シーケンスの進行状況を表示または非表示にします。 タスク シーケンスでは、タスク シーケンス変数の設定手順を複数回使用して変数の値を変更できます。 これにより、タスク シーケンスの各セクションでタスク シーケンスの進行状況を表示または非表示できます。
+In questa versione è possibile controllare quando stato sequenza di attività viene visualizzato agli utenti finali tramite una nuova variabile. Nella sequenza di attività usare il passaggio **Imposta variabile della sequenza attività** per impostare il valore per la variabile **TSDisableProgressUI** per nascondere o visualizzare lo stato della sequenza di attività. È possibile usare più volte il passaggio Imposta variabile della sequenza di attività in una sequenza di attività per modificare il valore della variabile. Ciò consente di visualizzare o nascondere l'avanzamento dello stato della sequenza di attività in varie sezioni della sequenza di attività.
 
-#### <a name="to-hide-task-sequence-progress"></a>タスク シーケンスの進行状況を非表示にするには
-タスク シーケンス エディタで、[タスク シーケンス変数の設定](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable)手順を使用して、変数 **TSDisableProgressUI** の値を **True** に設定して、タスク シーケンスの進行状況を非表示にします。
+#### <a name="to-hide-task-sequence-progress"></a>Per nascondere l'avanzamento della sequenza di attività
+Nell'editor di sequenze di attività usare il passaggio [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) per impostare il valore della variabile **TSDisableProgressUI** su **True** per nascondere lo stato della sequenza di attività.
 
-#### <a name="to-display-task-sequence-progress"></a>タスク シーケンスの進行状況を表示するには
-タスク シーケンス エディタで、[タスク シーケンス変数の設定](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable)手順を使用して、変数 **TSDisableProgressUI** の値を **False** に設定して、タスク シーケンスの進行状況を表示します。
+#### <a name="to-display-task-sequence-progress"></a>Per visualizzare l'avanzamento della sequenza di attività
+Nell'editor di sequenze di attività usare il passaggio [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) per impostare il valore della variabile **TSDisableProgressUI** su **False** per visualizzare lo stato della sequenza di attività.
 
-## <a name="specify-a-different-content-location-for-install-content-and-uninstall-content"></a>コンテンツのインストールとコンテンツのアンインストール用に別のコンテンツの場所を指定する
+## <a name="specify-a-different-content-location-for-install-content-and-uninstall-content"></a>Specificare un percorso del contenuto diverso per il contenuto di installazione e il contenuto di disinstallazione
 <!-- 1097546 -->
-現在の Configuration Manager で、アプリのセットアップ ファイルを格納しているインストール場所を指定します。 インストール場所を指定すると、この場所がアプリケーションのコンテンツのアンインストールの場所としても使用されます。
-お客様のフィードバックに基づいて、展開したアプリケーションをアンインストールするときに、アプリのコンテンツがクライアント コンピューターにない場合、クライアントがすべてのアプリのセットアップ ファイルを再度ダウンロードしてからアプリケーションをアンインストールします。
-この問題を解決するため、インストール コンテンツの場所と必要に応じてアンインストール コンテンツの場所の両方を指定できるようになりました。 アンインストール コンテンツの場所は指定しなくても構いません。
+Oggi, in Configuration Manager specificare il percorso di installazione che contiene i file di installazione per un'app. Quando si specifica un percorso di installazione, questo viene usato anche come percorso di disinstallazione per il contenuto dell'applicazione.
+In base ai commenti, quando si desidera disinstallare un'applicazione distribuita e il contenuto dell'app non è presente nel computer client, il client scaricherà nuovamente tutti i file di installazione dell'app prima che l'applicazione venga disinstallata.
+Per risolvere questo problema, è ora possibile specificare sia il percorso del contenuto di installazione che il percorso del contenuto di disinstallazione facoltativo. In aggiunta, è possibile scegliere di non specificare il percorso del contenuto di disinstallazione.
 
-### <a name="try-it-out"></a>試してみましょう
+### <a name="try-it-out"></a>Procedura
 
-1. アプリケーションの展開の種類のプロパティで、**[コンテンツ]** タブをクリックします。
-2. **[インストール コンテンツ場所]** は通常どおりに構成します。
-3. **[アンインストール コンテンツ設定]** には、次のいずれかを選択します。
-    - **[インストール コンテンツと同じ]**: アプリケーションをインストールまたはアンインストールするかどうかに関係なく、同じコンテンツの場所が使用されます。
-    - **[アンインストール コンテンツなし]**: アプリケーションのアンインストール コンテンツ場所を指定しない場合は、これを選択します。
-    - **[インストール コンテンツと異なる]**: インストール コンテンツ場所と異なるアンインストール コンテンツ場所を指定する場合は、これを選択します。
-5. **[インストール コンテンツと異なる]** を選択した場合は、アプリケーションをアンインストールするために使用するアプリケーション コンテンツの場所を参照または入力します。
-6. [**OK**] をクリックして、[展開の種類プロパティ] ダイアログ ボックスを閉じます。
+1. Nelle proprietà del tipo di distribuzione di un'applicazione fare clic sulla scheda **Contenuto**.
+2. Configurare il **percorso del contenuto di installazione** come di consueto.
+3. Per **Impostazioni del contenuto di disinstallazione**, scegliere una delle opzioni seguenti:
+    - **Uguale al contenuto di installazione**: lo stesso percorso del contenuto sarà usato indipendentemente dal fatto che si stia installando o disinstallando l'applicazione.
+    - **Nessun contenuto di disinstallazione**: scegliere questa opzione se non si desidera fornire un percorso del contenuto di disinstallazione per l'applicazione.
+    - **Diversa dal contenuto di installazione**: scegliere questa opzione se si desidera specificare un percorso del contenuto di disinstallazione diverso dal percorso del contenuto di installazione.
+5. Se si seleziona **Diversa dal contenuto di installazione**, selezionare o immettere il percorso del contenuto dell'applicazione che verrà usato per disinstallare l'applicazione.
+6. Fare clic su **OK** per chiudere la finestra di dialogo delle proprietà del tipo di distribuzione.
 
 
-## <a name="accessibility-improvements"></a>ユーザー補助の機能強化  
+## <a name="accessibility-improvements"></a>Miglioramenti all'accessibilità  
 <!--1253000 -->
-このプレビューでは、Configuration Manager コンソールの[ユーザー補助機能](/sccm/core/understand/accessibility-features)にいくつかの機能強化が導入されています。 次の設定があります。     
+Questa versione di anteprima introduce diversi miglioramenti alle [funzionalità di accessibilità](/sccm/core/understand/accessibility-features) nella console di Configuration Manager. Sono inclusi:     
 
-**コンソール内を移動するための新しいショートカット キー:**
--   Ctrl + M キー: フォーカスをメイン (中央) ウィンドウに設定します。
--   Ctrl + T キー: フォーカスをナビゲーション ウィンドウの最上位ノードに設定します。 フォーカスが既にそのウィンドウにある場合、フォーカスは最後にアクセスしたノードに設定されます。
--   Ctrl + I キー: フォーカスをリボンの下の階層リンク バーに設定します。
--   Ctrl + L キー: フォーカスを **[検索]** フィールドに設定します (使用可能な場合)。
--   Ctrl + D キー: フォーカスを詳細ウィンドウに設定します (使用可能な場合)。
--   Alt キー: リボンのフォーカスのインとアウトを変更します。
+**Nuovi tasti di scelta rapida per spostarsi all'interno della console:**
+-   CTRL + M - Imposta il focus nel riquadro principale (centrale).
+-   CTRL + T - Imposta il focus sul nodo principale nel riquadro di spostamento. Se il focus era già in questo riquadro, viene impostato sull'ultimo nodo visitato.
+-   CTRL + I - Imposta il focus sulla barra di navigazione, sotto la barra multifunzione.
+-   CTRL + L - Imposta il focus sul campo **Ricerca**, se disponibile.
+-   CTRL + D - Imposta il focus sul riquadro dei dettagli, se disponibile.
+-   ALT - Sposta il focus dentro e fuori la barra multifunzione.
 
-**全般的な機能強化**
--   ノード名の文字を入力したときのナビゲーション ウィンドウでのナビゲーションが改善されました。
--   メイン ビューとリボンのキーボード ナビゲーションが循環になりました。
--   詳細ウィンドウのキーボード ナビゲーションが循環になりました。 前のオブジェクトまたはウィンドウに戻るには、Ctrl + D キーを押してから Shift + TAB キーを押します。
--   [ワークスペース] ビューを更新すると、フォーカスがそのワークスペースのメイン ウィンドウに設定されます。
--   スクリーン リーダーを有効にしてリスト アイテムの名前を読み上げる問題を修正しました。
--   スクリーン リーダーが重要な情報を読み上げられるように、ページ上の複数のコントロールにアクセス可能な名前を追加しました。
+**Miglioramenti generali:**
+-   Navigazione migliorata nel riquadro di spostamento quando si digitano le lettere del nome di un nodo.
+-   La navigazione tramite tastiera nella vista principale e nella barra multifunzione è ora circolare.
+-   La navigazione tramite tastiera nel riquadro dei dettagli è ora circolare. Per tornare al riquadro o all'oggetto precedente, è possibile usare Ctrl + D e poi MAIUSC + TAB.
+-   Dopo l'aggiornamento di una vista dell'area di lavoro, il focus è impostato nel riquadro principale dell'area di lavoro.
+-   Risolto un problema per abilitare i lettori dello schermo per annunciare i nomi degli elementi dell'elenco.
+-   Nomi accessibili aggiunti per più controlli nella pagina che consente ai lettori dello schermo di annunciare informazioni importanti.
 
 
-## <a name="changes-to-the-azure-services-wizard-to-support-upgrade-readiness"></a>Azure サービス ウィザードで Upgrade Readiness をサポートするための変更
+## <a name="changes-to-the-azure-services-wizard-to-support-upgrade-readiness"></a>Modifiche alla procedura guidata dei servizi di Azure per il supporto della Preparazione aggiornamenti
 <!-- 1353331 -->
-今回のリリースから、Azure サービス ウィザードを使用して、Configuration Manager から [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics) への接続を構成します。 ウィザードを使用することで、関連する Azure サービスの一般的なウィザードを使用したコネクタの構成が簡略化されます。   
+A partire da questa versione, usare la procedura guidata per i servizi di Azure per configurare una connessione da Configuration Manager a [Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics). L'uso della procedura guidata semplifica la configurazione del connettore tramite una procedura guidata comune per i servizi di Azure correlati.   
 
-接続の構成方法は変更されていますが、接続の前提条件と Upgrade Readiness の使用方法は変更されていません。   
+Anche se il metodo per configurare la connessione è stato modificato, i prerequisiti per la connessione e le modalità d'uso di Preparazione aggiornamenti restano invariati.   
 
-### <a name="prerequisites-for-upgrade-readiness"></a>Upgrade Readiness の前提条件
-[Upgrade Readiness への接続](/sccm/core/clients/manage/upgrade/upgrade-analytics#create-a-connection-to-upgrade-readiness)の前提条件は、Configuration Manager の Current Branch に詳しく記載されているものと変わりません。 便宜上、ここに再掲します。  
+### <a name="prerequisites-for-upgrade-readiness"></a>Prerequisiti per Preparazione aggiornamenti
+I prerequisiti per la [connessione a Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics#create-a-connection-to-upgrade-readiness) sono identici a quelli dettagliate per il Current Branch di Configuration Manager. Ne riportiamo un pratico riepilogo:  
 
-**必要条件**
--   接続を追加するために、Configuration Manager 環境で最初に[サービス接続ポイント](/sccm/core/servers/deploy/configure/about-the-service-connection-point)を[オンライン モード](/sccm/core/servers/deploy/configure/about-the-service-connection-point#a-namebkmkmodesa-modes-of-operation)で構成する必要があります。 接続を環境に追加する場合、このサイト システムの役割を実行するマシンに Microsoft Monitoring Agent もインストールされます。
--   "Web アプリケーションや Web API" 管理ツールとして Configuration Manager を登録し、[この登録のクライアント ID](https://azure.microsoft.com/documentation/articles/active-directory-integrating-applications/) を取得します。
--   Azure Active Directory で、登録済み管理ツールのクライアント キーを作成します。
--   「[Configuration Manager に OMS へのアクセス許可を付与する](https://azure.microsoft.com/documentation/articles/log-analytics-sccm/#provide-configuration-manager-with-permissions-to-oms)」の説明に従って、Azure 管理ポータルで、登録済みの Web アプリに OMS へのアクセス権を指定します。
+**Prerequisiti**
+-   Per l'aggiunta della connessione, è necessario che nell'ambiente di Configuration Manager sia stato configurato un [punto di connessione del servizio](/sccm/core/servers/deploy/configure/about-the-service-connection-point) in [modalità online](/sccm/core/servers/deploy/configure/about-the-service-connection-point#a-namebkmkmodesa-modes-of-operation). Quando si aggiunge la connessione all'ambiente, viene installato anche Microsoft Monitoring Agent nel computer che esegue questo ruolo del sistema del sito.
+-   Registrare Configuration Manager come strumento di gestione "Applicazione Web e/o API Web" e ottenere l'[ID client della registrazione](https://azure.microsoft.com/documentation/articles/active-directory-integrating-applications/).
+-   Creare una chiave client per lo strumento di gestione registrato in Azure Active Directory.
+-   Nel portale di gestione di Azure specificare l'autorizzazione di accesso OMS per l'app Web registrata, come descritto in [Fornire a Configuration Manager le autorizzazioni per accedere a OMS](https://azure.microsoft.com/documentation/articles/log-analytics-sccm/#provide-configuration-manager-with-permissions-to-oms).
 
 > [!IMPORTANT]       
-> OMS へのアクセス権を構成する場合は、必ず、**共同作成者**ロールを選択し、登録済みアプリのリソース グループへのアクセス権を割り当ててください。
+> Quando si configura l'autorizzazione per accedere a OMS, assicurarsi di scegliere il ruolo **Collaboratore** e di assegnare a tale ruolo le autorizzazioni per il gruppo di risorse dell'app registrata.
 
-前提条件の構成が終ったら、ウィザードを使用して接続を作成できます。
+Dopo aver configurato i prerequisiti, si è pronti a usare la procedura guidata per creare la connessione.
 
-### <a name="use-the-azure-services-wizard-to-configure-upgrade-readiness"></a>Azure サービス ウィザードを使用して、Upgrade Readiness を構成する
-1.  コンソールで、**[管理]** > **[概要]** > **[クラウド サービス]** > **[Azure サービス]** の順に移動し、リボンの **[ホーム]** タブから **[Azure サービスの構成]** を選択して、**Azure サービス ウィザード**を開始します。
+### <a name="use-the-azure-services-wizard-to-configure-upgrade-readiness"></a>Usare la procedura guidata dei servizi di Azure per configurare Preparazione aggiornamenti
+1.  Nella console passare ad **Amministrazione** > **Panoramica** > **Servizi cloud** > **Servizi di Azure** e quindi scegliere **Configura i servizi di Azure** dalla scheda **Home** della barra multifunzione per avviare la **Procedura guidata per i servizi di Azure**.
 
-2.  **[Azure サービス]** ページで、**[Upgrade Readiness コネクタ]** を選択し、**[次へ]** をクリックします。
+2.  Nella pagina **Servizi di Azure** selezionare **Connettore Upgrade Readiness** e quindi fare clic su **Avanti**.
 
-3.  **[アプリ]** ページで、ご使用の **Azure 環境**を指定します (Technical Preview では、パブリック クラウドのみがサポートされます)。 次に、**[インポート]** をクリックして、**[アプリのインポート]** ウィンドウを開きます。
+3.  Nella pagina **App** specificare l'**ambiente Azure** (technical preview supporta solo cloud pubblici). Quindi, fare clic su **Importa** per aprire la finestra **Importa le app**.
 
-4.  **[アプリのインポート]** ウィンドウで、Azure AD に既に存在する Web アプリの詳細を指定します。
-    -   [Azure AD テナント名] にフレンドリ名を入力します。 次に、テナント ID、アプリケーション名、クライアント ID、Azure Web アプリのシークレット キー、アプリ ID URI を指定します。
-    -   **[確認]** をクリックして、成功したら **[OK]** をクリックして続行します。
+4.  Nella finestra **Importa le app** specificare i dettagli per un'app Web già esistente in Azure AD.
+    -   Specificare un nome descrittivo per Nome del tenant di Azure AD. Quindi, specificare l'ID Tenant, il nome dell'applicazione, l'ID Client, la chiave privata per l'app Web di Azure e l'URI ID dell'app.
+    -   Fare clic su **Verifica** e, se ha esito positivo, fare clic su **OK** per continuare.
 
-5.   **[構成]** ページで、サブスクリプション、リソース グループ、および Upgrade Readiness へのこの接続で使用する Windows Analytics ワークスペースを指定します。  
+5.   Nella pagina **Configurazione** specificare la sottoscrizione, il gruppo di risorse e l'area di lavoro di Windows Analytics che si desidera usare con questa connessione a Preparazione aggiornamenti.  
 
-6.  **[次へ]** をクリックして **[概要]** ページに移動し、ウィザードを完了して接続を作成します。
+6.  Fare clic su **Avanti** per visualizzare la pagina **Riepilogo** e quindi completare la procedura guidata per creare la connessione.
 
 
-## <a name="new-client-settings-for-cloud-services"></a>クラウド サービスの新しいクライアント設定
+## <a name="new-client-settings-for-cloud-services"></a>Nuove impostazioni client per i servizi cloud
 <!-- 1319883 -->
 
-このリリースでは、Configuration Manager に次の 2 つの新しいクライアント設定が追加されました。 これらは **[クラウド サービス]** セクションにあります。  これらの設定により、次のことが可能になります。
+In questa versione sono state aggiunte due nuove impostazioni client di Configuration Manager. Sono disponibili nella sezione **Servizi Cloud**.  Queste impostazioni offrono le funzionalità seguenti:
 
-- 構成済みのクラウド管理ゲートウェイにアクセスできる Configuration Manager クライアントを制御する。
-- Windows 10 ドメインに参加済みの Configuration Manger クライアントを Azure Active Directory に自動的に登録する。
+- Controllare quali client di Configuration Manager possono accedere a un gateway di gestione del cloud configurato.
+- Registrare automaticamente i client di Configuration Manager appartenenti a un dominio di Windows 10 con Azure Active Directory.
 
-これらの新しい設定は、[Configuration Manager の Technical Preview 1705](/sccm/core/get-started/capabilities-in-technical-preview-1705#new-capabilities-for-azure-ad-and-cloud-management) で説明されている機能を実行するのに役立ちます。
+Le nuove impostazioni consentono di eseguire le funzionalità descritte in [Configuration Manager 1705 Technical Preview](/sccm/core/get-started/capabilities-in-technical-preview-1705#new-capabilities-for-azure-ad-and-cloud-management) (Technical Preview 1705 di Configuration Manager).
 
-### <a name="before-you-start"></a>アップグレードを開始する前に
+### <a name="before-you-start"></a>Prima di iniziare
 
-オンプレミスの Active Directory と Azure AD テナントの間に Azure AD Connect をインストールして構成している必要があります。
+È necessario aver installato e configurato Azure AD Connect tra Active Directory locale e il tenant di Azure AD.
 
-接続を削除すると、デバイスが登録解除されることはありませんが、新しいデバイスが登録されません。
+Se si rimuove la connessione, non viene annullata la registrazione dei dispositivi, ma non è possibile registrarne di nuovi.
 
-### <a name="try-it-out"></a>試してみましょう。
+### <a name="try-it-out"></a>Prova subito!
 
-1. 「[クライアント設定を構成する方法](/sccm/core/clients/deploy/configure-client-settings)」の情報を使用して、次のクライアント設定セクション ([クラウド サービス] にあります) を構成します。
-    -   **[新しい Windows 10 ドメインに参加しているデバイスを自動的に Azure Active Directory に登録する]**: **[はい]** (既定) または **[いいえ]** に設定します。
-    -   **[クライアントでクラウド管理ゲートウェイを使用できるようにする]**: **[はい]** (既定) または **[いいえ]** に設定します。
-2.  クライアント設定を必要なデバイスのコレクションに展開します。
+1. Configurare la sezione seguente di impostazioni client (in Servizi cloud) tramite le informazioni contenute in [Come configurare le impostazioni client in System Center Configuration Manager](/sccm/core/clients/deploy/configure-client-settings).
+    -   **Registra automaticamente i nuovi dispositivi Windows 10 aggiunti al dominio con Azure Active Directory** impostato su **Sì** (impostazione predefinita) o **No**.
+    -   **Consenti ai client di usare un gateway di gestione cloud** impostato su **Sì** (impostazione predefinita) o **No**.
+2.  Distribuire le impostazioni client per la raccolta necessaria di dispositivi.
 
-デバイスが Azure AD に参加していることを確認するには、コマンド プロンプト ウィンドウでコマンド **dsregcmd.exe/status** を実行します。 デバイスが Azure AD に参加している場合は、結果の **[AzureAdjoined]** フィールドに **[YES]** が表示されます。
+Per verificare che il dispositivo sia stato aggiunto ad Azure AD, eseguire il comando **dsregcmd.exe /status** in una finestra del prompt dei comandi. Il campo **AzureAdjoined** nei risultati visualizza **Sì** se il dispositivo è stato aggiunto ad Azure AD.
 
-## <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Configuration Manager コンソールから PowerShell スクリプトを作成して実行する
+## <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Creare ed eseguire gli script di PowerShell dalla console di Configuration Manager
 <!-- 1236459 -->
 
-Configuration Manager では、パッケージとプログラムを使用してクライアント デバイスにスクリプトを展開することができます。 この Technical Preview では、次の操作を実行するための新機能が追加されました。
+In Configuration Manager, è possibile distribuire script ai dispositivi client tramite pacchetti e programmi. In questa versione technical preview sono stati aggiunte nuove funzionalità che consentono di intraprendere le azioni seguenti:
 
-- PowerShell スクリプトを Configuration Manager にインポートする
-- Configuration Manager コンソールからスクリプトを編集する (署名されていないスクリプトのみ)
-- セキュリティを強化するため、スクリプトを承認または拒否としてマークする
-- Windows クライアント コンピューターのコレクションおよびオンプレミスの管理対象 Windows PC でスクリプトを実行する。 スクリプトを展開しない代わりに、スクリプトはクライアント デバイスでほぼリアルタイムで実行されます。
-- Configuration Manager コンソールで、スクリプトによって返される結果を確認する
-
-
-### <a name="prerequisites"></a>必要条件
-
-スクリプトを使用するには、適切な Configuration Manager のセキュリティ ロールのメンバーである必要があります。
-
-- **インポート、およびスクリプトを作成するには**: **コンプライアンス設定マネージャー**のセキュリティ ロールで、アカウントに **SMS スクリプト** への**作成**アクセス許可がある必要があります。
-- **スクリプトを承認または拒否するには**: **コンプライアンス設定マネージャー**のセキュリティ ロールで、アカウントに **SMS スクリプト** への**承認**アクセス許可がある必要があります。
-- **スクリプトを実行するには**: **コンプライアンス設定マネージャー**のセキュリティ ロールで、アカウントに **コレクション** への**スクリプトの実行**アクセス許可がある必要があります。
-
-Configuration Manager のセキュリティ ロールの詳細については、「[ロール ベース管理の基礎](/sccm/core/understand/fundamentals-of-role-based-administration)」を参照してください。
-
-既定では、ユーザーは自分が作成したスクリプトを承認できません。 スクリプトは強力で用途が広く、多くのデバイスに展開できるため、スクリプトを作成する人と、そのスクリプトを承認する人とで役割を分離する機能を提供する新しい概念を導入しました。 これにより、監視なしのスクリプト実行に対してさらに高いセキュリティ レベルが提供されます。 この二次的承認は、特に Technical Preview のリリース時など、テストをやりやすくするためにオフにすることができます。
-
-ユーザーが自身のスクリプトを承認できるようにするには、次の手順を実行します。
-
-1. Configuration Manager コンソールで、[ **管理**] をクリックします。
-2. [ **管理** ] ワークスペースで [ **サイトの構成**] を展開して、[ **サイト**] をクリックします。
-3. サイトの一覧で、自分のサイトを選択し、**[ホーム]** タブの **[サイト]** グループで **[階層設定]** をクリックします。
-4. **[階層設定のプロパティ]** ダイアログ ボックスの **[全般]** タブで、**[Do not allow script authors to approve their own scripts]\(スクリプト作成者に自身のスクリプトの承認を許可しない\)** チェック ボックスをオフにします。
+- Importare gli script di PowerShell in Configuration Manager
+- Modificare gli script dalla console di Configuration Manager (solo per script non firmati)
+- Contrassegnare gli script come Approvato o Rifiutato per migliorare la sicurezza
+- Eseguire gli script nelle raccolte di PC client Windows e nei PC Windows gestiti in locale. Gli script non vengono distribuiti ma eseguiti quasi in tempo reale sui dispositivi client.
+- Esaminare i risultati restituiti dallo script nella console di Configuration Manager.
 
 
-### <a name="try-it-out"></a>試してみましょう。
+### <a name="prerequisites"></a>Prerequisiti
 
-#### <a name="import-and-edit-a-script"></a>スクリプトをインポートして編集する
+Per usare gli script, l'utente deve essere membro del ruolo di sicurezza appropriato di Configuration Manager.
 
-1. Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。
-2. **[ソフトウェア ライブラリ]** ワークスペースで **[スクリプト]** をクリックします。
-3. **[ホーム]** タブの **[作成]** グループで、**[スクリプトの作成]** をクリックします。
-4. **スクリプトの作成**ウィザードの **[スクリプト]** ページで、次を構成します。
-    - **[スクリプト名]**: スクリプトの名前を入力します。 同じ名前の複数のスクリプトを作成できますが、Configuration Manager コンソールで必要なスクリプトを見つけるのがより困難になります。
-    - **[スクリプト言語]**: 現時点では、**PowerShell** スクリプトのみがサポートされています。
-    - **[インポート]**: PowerShell スクリプトをコンソールにインポートします。 スクリプトは **[スクリプト]** フィールドに表示されます。
-    - **[クリア]**: **[スクリプト]** フィールドから現在のスクリプトを削除します。
-    - **[スクリプト]**: 現在インポートされたスクリプトが表示されます。 必要に応じて、このフィールドでスクリプトを編集できます。
-5. ウィザードを完了します。 新しいスクリプトが**[承認を待っています]**の状態で **[スクリプト]** リストに表示されます。 このスクリプトをクライアント デバイスで実行するには、先にそのスクリプトを承認する必要があります。
+- **Per importare e creare script**: l'account deve disporre delle autorizzazioni **Create** per **script SMS** nel ruolo di sicurezza **Gestione impostazioni di conformità**.
+- **Per approvare o rifiutare script**: l'account deve disporre delle autorizzazioni **Approve** per **script SMS** nel ruolo di sicurezza **Gestione impostazioni di conformità**.
+- **Per eseguire script**: l'account deve disporre delle autorizzazioni **Run Script** per **script SMS** nel ruolo di sicurezza **Gestione impostazioni di conformità**.
+
+Per altre informazioni sui ruoli di sicurezza di Configuration Manager, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](/sccm/core/understand/fundamentals-of-role-based-administration).
+
+Per impostazione predefinita, gli utenti non possono approvare uno script da loro stessi creato. Poiché gli script sono versatili e possono essere distribuiti su più dispositivi, è stato introdotto un nuovo concetto per offrire la possibilità di separare i ruoli tra la persona che crea lo script e la persona che approva lo script. In questo modo viene garantito un livello aggiuntivo di protezione dall'esecuzione di uno script senza supervisione. È possibile disattivare questa approvazione secondaria, per semplificare il test, in particolare durante la versione Technical Preview.
+
+Per consentire agli utenti di approvare i propri script:
+
+1. Nella console di Configuration Manager fare clic su **Amministrazione**.
+2. Nell'area di lavoro **Amministrazione** , espandere **Configurazione sito**, quindi fare clic su **Siti**.
+3. Nell'elenco dei siti selezionare il sito e quindi scegliere la scheda **Home** nel gruppo **Siti** e fare clic su **Impostazioni gerarchia**.
+4. Nella scheda **Generale** della finestra di dialogo **Proprietà delle impostazioni di gerarchia** deselezionare la casella di controllo **Do not allow script authors to approve their own scripts** (Non consentire agli autori di script di approvare i propri script).
 
 
-#### <a name="approve-or-deny-a-script"></a>スクリプトの承認または拒否
+### <a name="try-it-out"></a>Prova subito!
+
+#### <a name="import-and-edit-a-script"></a>Importare e modificare uno script
+
+1. Nella console di Configuration Manager fare clic su **Raccolta software**.
+2. Nell'area di lavoro **Raccolta software** fare clic su **Script**.
+3. Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea gruppo**.
+4. Nella pagina **Script** della procedura guidata **Crea script** configurare quanto segue:
+    - In **Nome script** inserire il nome dello script. Sebbene sia possibile creare più script con lo stesso nome, ciò renderà più difficile individuare lo script necessario per la console di Configuration Manager.
+    - **Lingua script**: attualmente sono supportati solo script di **PowerShell**.
+    - **Importa**: importare uno script di PowerShell nella console. Lo script viene visualizzato nel campo **Script**.
+    - **Elimina**: rimuove lo script corrente dal campo **Script**.
+    - **Script**: visualizza lo script attualmente importato. È possibile modificare lo script in questo campo in base alle esigenze.
+5. Completare la procedura guidata. Il nuovo script viene visualizzato nell'elenco **Script** con stato **In attesa di approvazione** . Prima di poter eseguire questo script nei dispositivi client, è necessario approvarlo.
+
+
+#### <a name="approve-or-deny-a-script"></a>Approvare o rifiutare uno script
 
 
 
-スクリプトを実行する前に、そのスクリプトが承認されている必要があります。 スクリプトを承認するには、次の手順を実行します。
+Prima di eseguire uno script, deve essere approvato. Per approvare uno script:
 
-1. Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。
-2. **[ソフトウェア ライブラリ]** ワークスペースで **[スクリプト]** をクリックします。
-3. **[スクリプト]** リストで、承認または拒否するスクリプトを選択し、**[ホーム]** タブの **[スクリプト]** グループで、**[承認]/[拒否]** をクリックします。
-4. **[Approve or deny script]\(スクリプトの承認または拒否\)** ダイアログ ボックスで、スクリプトを**承認**または**拒否**します。必要に応じて決定に関するコメントを入力します。 スクリプトを拒否すると、クライアント デバイスでそのスクリプトを実行できません。
-5. ウィザードを完了します。 **[スクリプト]** リストの **[承認状態]** 列は、行った操作に応じて変わります。
+1. Nella console di Configuration Manager fare clic su **Raccolta software**.
+2. Nell'area di lavoro **Raccolta software** fare clic su **Script**.
+3. Nell'elenco **Script** scegliere lo script che si desidera approvare o rifiutare e quindi scegliere la scheda **Home** nel gruppo **Script**, quindi fare clic su **Approve/Deny** (Approva/Rifiuta).
+4. Nella finestra di dialogo **Approve or deny script** (Approvare o rifiutare script) scegliere di **approvare** o **rifiutare** lo script e, facoltativamente, immettere un commento sulla scelta. Se si rifiuta uno script, questo non può essere eseguito sui dispositivi client.
+5. Completare la procedura guidata. Nell'elenco **Script** la colonna **Stato dell'approvazione** cambia a seconda dell'azione eseguita.
 
-#### <a name="run-a-script"></a>[スクリプトの実行]
+#### <a name="run-a-script"></a>Esegui uno script
 
-スクリプトが承認されたら、選択したコレクションに対してそのスクリプトを実行できます。
+Dopo aver approvato uno script, questo può essere eseguito su una raccolta a scelta.
 
-1. Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。
-2. [ **資産とコンプライアンス** ] ワークスペースで [ **デバイス コレクション**] をクリックします。
-3. **[デバイス コレクション]** リストで、スクリプトを実行するデバイスのコレクションをクリックします。
-3. **[ホーム]** タブの **[すべてのシステム]** グループで、**[スクリプトの実行]**をクリックします。
-4. **スクリプトの実行**ウィザードの **[スクリプト]** ページで、リストからスクリプトを選択します。 承認済みスクリプトのみが表示されます。 **[次へ]** をクリックして、ウィザードを完了します。
+1. Nella console di Configuration Manager fare clic su **Asset e conformità**.
+2. Nell'area di lavoro **Asset e conformità** fare clic su **Raccolte dispositivi**.
+3. Nell'elenco **Raccolte dispositivi** fare clic sulla raccolta di dispositivi in cui si desidera eseguire lo script.
+3. Nella scheda **Home** nel gruppo **Tutti i sistemi** fare clic su **Esegui script**.
+4. Nella pagina **Script** della procedura guidata **Esegui Script** scegliere uno script dall'elenco. Vengono visualizzati solo gli script approvati. Fare clic su **Avanti** e completare la procedura guidata.
 
-#### <a name="monitor-a-script"></a>スクリプトの監視
+#### <a name="monitor-a-script"></a>Monitorare uno script
 
-クライアント デバイスにスクリプトを実行したら、次の手順を使用して操作の成功を監視します。
+Dopo aver eseguito uno script sui dispositivi client, è possibile usare questa procedura per monitorare la riuscita dell'operazione.
 
-1. Configuration Manager コンソールで、[ **監視**] をクリックします。
-2. **[監視]** ワークスペースで、**[Script Results]\(スクリプトの結果\)** をクリックします。
-3. **[Script Results]\(スクリプトの結果\)** リストには、クライアント デバイスで実行した各スクリプトの結果が表示されます。 スクリプトの終了コード **0** は、通常、スクリプトが正常に実行されたことを示します。
+1. Nella console di Configuration Manager fare clic su **Monitoraggio**.
+2. Nell'area di lavoro **Monitoraggio** fare clic su **Script Results** (Risultati script).
+3. Nell'elenco **Risultati script** vengono mostrati i risultati per ogni script eseguito sui dispositivi client. Il codice di uscita dello script **0** in genere indica che lo script è stato eseguito correttamente.
 
-## <a name="pxe-network-boot-support-for-ipv6"></a>PXE ネットワーク ブートでの IPv6 のサポート
+## <a name="pxe-network-boot-support-for-ipv6"></a>Supporto dell'avvio della rete PXE per IPv6
 <!-- 1269793 -->
-これで、PXE ネットワーク ブートでの IPv6 のサポートを有効にして、タスク シーケンス オペレーティング システム展開を開始することができます。 この設定を使用する場合、PXE 対応配布ポイントは IPv4 と IPv6 の両方をサポートします。 このオプションでは WDS を必要とせず、WDS が存在している場合は WDS が停止します。
+È ora possibile abilitare il supporto dell'avvio della rete PXE per IPv6 per avviare una distribuzione del sistema operativo della sequenza di attività. Quando si usa questa impostazione, i punti di distribuzione abilitati per PXE supporteranno sia IPv4 che IPv6. Questa opzione non richiede WDS e interromperà WDS, se presente.
 
-#### <a name="to-enable-pxe-boot-support-for-ipv6"></a>PXE ブートでの IPv6 のサポートを有効にするには
-PXE の IPv6 サポートのオプションを有効にするには、次の手順に従います。
+#### <a name="to-enable-pxe-boot-support-for-ipv6"></a>Per abilitare il supporto dell'avvio della rete PXE per IPv6
+Usare la procedura seguente per abilitare l'opzione per il supporto IPv6 per PXE.
 
-1. Configuration Manager コンソールで、**[管理]** > **[概要]** > **[配布ポイント]** の順に移動し、PXE 対応配布ポイントの **[プロパティ]** をクリックします。
-2. **[PXE]** タブで **[Support IPv6]\(IPv6 のサポート\)** を選択して、PXE の IPv6 サポートを有効にします。
+1. Nella console di Configuration Manager andare ad **Amministrazione** > **Panoramica** > **Punti di distribuzione** e fare clic su **Proprietà** per i punti di distribuzione abilitati per PXE.
+2. Nella scheda **PXE** selezionare **Support IPv6** (Supporto IPv6) per abilitare il supporto IPv6 per PXE.
 
-## <a name="manage-microsoft-surface-driver-updates"></a>Microsoft Surface ドライバーの更新プログラムの管理
+## <a name="manage-microsoft-surface-driver-updates"></a>Gestire gli aggiornamenti dei driver di Microsoft Surface
 <!-- 1098490 -->
-Configuration Manager を使用して、Microsoft Surface ドライバーの更新プログラムを管理できるようになりました。
+È ora possibile usare Configuration Manager per gestire gli aggiornamenti dei driver di Microsoft Surface.
 
-### <a name="prerequisites"></a>必要条件
-すべてのソフトウェアの更新ポイントで Windows Server 2016 を実行している必要があります。
+### <a name="prerequisites"></a>Prerequisiti
+Tutti i punti di aggiornamento software devono eseguire Windows Server 2016.
 
-### <a name="try-it-out"></a>試してみましょう。
-次のタスクを試した後、どのように動作したかについて、リボンの **[ホーム]** タブから **[フィードバック]** を送信してください。
-1. Microsoft Surface ドライバーの同期を有効にします。 [分類と製品の構成](/sccm/sum/get-started/configure-classifications-and-products)の手順を使用して、**[分類]** タブで **[Microsoft Surface のドライバーとファームウェアの更新プログラムを含める]** を選択して、Surface ドライバーを有効にします。
-2. [Microsoft Surface ドライバーを同期します](/sccm/sum/get-started/synchronize-software-updates.md)。
-3. [同期した Microsoft Surface ドライバーを展開します](/sccm/sum/deploy-use/deploy-software-updates)。
+### <a name="try-it-out"></a>Prova subito!
+Provare a completare le attività seguenti e quindi inviare **Feedback** dalla scheda **Home** della barra multifunzione per comunicarci come è andata:
+1. Abilitare la sincronizzazione per i driver di Microsoft Surface. Usare la procedura in [Configurare le classificazioni e i prodotti per la sincronizzazione](/sccm/sum/get-started/configure-classifications-and-products) e selezionare **Includi i driver di Microsoft Surface e gli aggiornamenti del firmware** nella scheda **Classificazioni** per abilitare i driver di Surface.
+2. [Sincronizzare i driver di Microsoft Surface](/sccm/sum/get-started/synchronize-software-updates.md).
+3. [Distribuire i driver di Microsoft Surface sincronizzati](/sccm/sum/deploy-use/deploy-software-updates)
 
-## <a name="configure-windows-update-for-business-deferral-policies"></a>Windows Update for Business 遅延ポリシーの構成
+## <a name="configure-windows-update-for-business-deferral-policies"></a>Configurare i criteri di rinvio di Windows Update for Business
 <!-- 1290890 -->
-Windows Update for Business によって直接管理されている Windows 10 デバイスの Windows 10 機能更新プログラムまたは品質更新プログラムに対し、遅延ポリシーを構成できるようになりました。 遅延ポリシーの管理は、**[ソフトウェア ライブラリ]** > **[Windows 10 のサービス]** の下の新しい **[Windows Update for Business ポリシー]** ノードでできます。
+È ora possibile configurare i criteri di rinvio dei dispositivi per gli aggiornamenti delle funzionalità di Windows 10 o gli aggiornamenti di qualità di Windows 10 gestiti direttamente da Windows Update for Business. È possibile gestire i criteri di rinvio nel nuovo nodo **Criteri di Windows Update for Business** in **Libreria Software** > **Manutenzione pacchetti di Windows 10**.
 
-### <a name="prerequisites"></a>必要条件
-Windows Update for Business で管理されている Windows 10 デバイスには、インターネット接続が必要です。
+### <a name="prerequisites"></a>Prerequisiti
+I dispositivi di Windows 10 gestiti da Windows Update for Business devono disporre di connettività a Internet.
 
-#### <a name="to-create-a-windows-update-for-business-deferral-policy"></a>Windows Update for Business 遅延ポリシーを作成するには
-1. **[ソフトウェア ライブラリ]** > **[Windows 10 のサービス]** > **[Windows Update for Business ポリシー]** に移動します。
-2. **[ホーム]** タブの **[作成]** グループで、**[Windows Update for Business ポリシーを作成する]** を選択し、Windows Update for Business ポリシーの作成ウィザードを開きます。
-3. **[全般]** ページで、ポリシーの名前と説明を入力します。
-4. **[遅延ポリシー]** ページで、機能更新プログラムを遅延または一時停止するかどうかを設定します。    
-    機能更新プログラムは通常、Windows の新機能です。 **[ブランチ準備レベル]** を設定すると、機能更新プログラムが Microsoft からリリースされた場合に、受け取りを遅延させるかどうか、およびその期間を定義できます。
-    - **[ブランチ準備レベル]**: Windows Update を受け取るデバイスのブランチを設定します (Current Branch または Current Branch for Business)。
-    - **[遅延期間 (日数)]**: 機能更新プログラムを遅延させる日数を指定します。 これらの機能更新プログラムの受け取りは、リリースから 180 日間遅延させることができます。
-    - **[Pause Features Updates starting]\(機能更新プログラムの一時停止の開始\)**: デバイスでの機能更新プログラムの受け取りを一時停止するかどうかを選択します。一時停止の期間は最大 60 日間です。 最大日数が経過すると、一時停止機能は自動的に期限切れとなり、デバイスは適用可能な更新を確認するために Windows Update をスキャンします。 このスキャンが終ったら、もう一度更新を一時停止することができます。 機能更新プログラムの一時停止を解除するには、チェック ボックスをオフにします。   
-5. 品質更新プログラムを遅延または一時停止するかどうかを選択します。     
-    品質更新プログラムは通常、既存の Windows 機能の修正と機能強化で、通常は毎月第 1 火曜日に公開されますが、Microsoft が任意のタイミングでリリースすることもあります。 品質更新プログラムが利用可能になった場合に受け取りを遅延させるかどうか、およびその期間を定義できます。
-    - **[遅延期間 (日数)]**: 機能更新プログラムを遅延させる日数を指定します。 これらの機能更新プログラムの受け取りは、リリースから 180 日間遅延させることができます。
-    - **[品質更新プログラムの一時停止の開始]**: デバイスでの品質更新プログラムの受け取りを一時停止するかどうかを選択します。一時停止の期間は最大 35 日間です。 最大日数が経過すると、一時停止機能は自動的に期限切れとなり、デバイスは適用可能な更新を確認するために Windows Update をスキャンします。 このスキャンが終ったら、もう一度更新を一時停止することができます。 品質更新プログラムの一時停止を解除するには、チェック ボックスをオフにします。
-6. **[他の Microsoft 製品の更新プログラムのインストール]** を選択して、遅延の設定を Microsoft Update と Windows Update に適用可能にするグループ ポリシー設定を有効にします。
-7. **[Include drivers with Windows Update]\(ドライバーと Windows Update を含める\)** を選択して、Windows Update から自動的にドライバーを更新します。 この設定をオフにすると、Windows Update からドライバーの更新プログラムがダウンロードされません。
-8. ウィザードを完了して新しいコレクションを作成します。
+#### <a name="to-create-a-windows-update-for-business-deferral-policy"></a>Per creare i criteri di rinvio di Windows Update for Business
+1. In **Libreria Software** > **Manutenzione pacchetti di Windows 10** > **Criteri di Windows Update for Business**
+2. Nella scheda **Home**, nel gruppo **Crea**, selezionare **Crea un criterio di Windows Update for Business** per aprire la procedura guidata Creazione guidata di un criterio di Windows Update for Business.
+3. Nella pagina **Generale** specificare un nome e una descrizione per il criterio.
+4. Nella pagina **Criteri di differimento** configurare se si desidera differire o sospendere gli aggiornamenti delle funzionalità.    
+    Gli aggiornamenti delle funzionalità sono generalmente nuove funzionalità per Windows. Dopo aver configurato l'impostazione **Livello di conformità con Branch**, è possibile definire se e per quanto tempo si desidera rinviare la ricezione di aggiornamenti delle funzionalità in base alla disponibilità da Microsoft.
+    - **Livello di conformità con Branch**: impostare il branch per il quale il dispositivo riceverà gli aggiornamenti di Windows (Current Branch o Current Branch for Business).
+    - **Periodo di differimento (giorni):** specificare il numero di giorni per cui verranno posticipati gli aggiornamenti delle funzionalità. È possibile posticipare la ricezione di questi aggiornamenti delle funzionalità per un periodo di 180 giorni dopo il rilascio.
+    - **Pause Features Updates starting** (Sospendi avvio degli aggiornamenti delle funzionalità): selezionare se sospendere la ricezione da parte dei dispositivi degli aggiornamenti delle funzionalità per un periodo massimo di 60 giorni a partire dal momento in cui si sospendono gli aggiornamenti. Una volta trascorso il numero massimo di giorni, la sospensione della funzionalità scadrà automaticamente e il dispositivo analizzerà Windows Updates per gli aggiornamenti applicabili. Dopo questa analisi, è possibile sospendere nuovamente gli aggiornamenti. È possibile riprendere gli aggiornamenti delle funzionalità deselezionando la casella di controllo.   
+5. Scegliere se rinviare o sospendere gli aggiornamenti di qualità.     
+    Gli aggiornamenti di qualità sono in genere correzioni e miglioramenti alle funzionalità esistenti di Windows e vengono generalmente pubblicati il primo martedì di ogni mese, sebbene possano essere rilasciati in qualsiasi momento da Microsoft. È possibile definire se e per quanto tempo si desidera rinviare la ricezione degli aggiornamenti di qualità dopo la loro disponibilità.
+    - **Periodo di differimento (giorni):** specificare il numero di giorni per cui verranno posticipati gli aggiornamenti delle funzionalità. È possibile posticipare la ricezione di questi aggiornamenti delle funzionalità per un periodo di 180 giorni dopo il rilascio.
+    - **Pause Quality Updates starting** (Sospendi avvio degli aggiornamenti di qualità): selezionare se sospendere la ricezione da parte dei dispositivi degli aggiornamenti di qualità per un periodo massimo di 35 giorni a partire dal momento in cui si sospendono gli aggiornamenti. Una volta trascorso il numero massimo di giorni, la sospensione della funzionalità scadrà automaticamente e il dispositivo analizzerà Windows Updates per gli aggiornamenti applicabili. Dopo questa analisi, è possibile sospendere nuovamente gli aggiornamenti. È possibile riprendere gli aggiornamenti di qualità deselezionando la casella di controllo.
+6. Selezionare **Installa gli aggiornamenti per altri prodotti Microsoft** per abilitare l'impostazione dei criteri di gruppo che rendono le impostazioni di rinvio applicabili a Microsoft Update, oltre agli aggiornamenti di Windows.
+7. Selezionare **Include drivers with Windows Update** (Includi i driver con Windows Update) per aggiornare automaticamente i driver da Windows Update. Se si deseleziona questa impostazione, gli aggiornamenti dei driver non vengono scaricati da Windows Update.
+8. Completare la procedura guidata per creare i nuovi criteri di rinvio.
 
-#### <a name="to-deploy-a-windows-update-for-business-deferral-policy"></a>Windows Update for Business 遅延ポリシーを展開するには
-1. **[ソフトウェア ライブラリ]** > **[Windows 10 のサービス]** > **[Windows Update for Business ポリシー]** に移動します。
-2. **[ホーム]** タブの **[展開]** グループで、**[Windows Update for Business ポリシーを展開する]** を選択します。
-3. 次の設定を構成します。
-    - **[展開する構成ポリシー]**: 展開する Windows Update for Business ポリシーを選択します。
-    - **[コレクション]**: **[参照]** をクリックして、ポリシーを展開するコレクションを選択します。
-    - **[サポートされている場合は対応していない規則を修復する]**: 選択すると、Windows Management Instrumentation (WMI)、レジストリ、スクリプト、および、Configuration Manager が登録したモバイル デバイスのすべての設定が対応しない規則があれば、自動的に修復します。
-    - **[メンテナンス期間以外の修復を許可する]**: ポリシーの展開先のコレクションにメンテナンス期間が設定されている場合、このオプションを有効にすると、コンプライアンス設定によって、メンテナンス期間外に値を修復できます。 メンテナンス期間について詳しくは、「[メンテナンス期間を使用する方法](/sccm/core/clients/manage/collections/use-maintenance-windows)」を参照してください。
-    - **[アラートを生成する]**: 構成基準のコンプライアンスが、指定した日付と時刻までに指定した割合に達しなかった場合に生成されるアラートを構成します。 アラートを System Center Operations Manager に送信するかどうかも指定できます。
-    - **[ランダム遅延 (時間)]**: ネットワーク デバイス登録サービスで処理量が過度にならないように、遅延期間を指定します。 既定値は 64 時間です。
-    - **[スケジュール]**: 展開されたプロファイルをクライアント コンピューターで評価するコンプライアンス評価スケジュールを指定します。 単純なスケジュールとカスタム スケジュールの 2種類あります。 プロファイルは、ユーザーがログオンしたときにクライアント コンピューターによって評価されます。
-4.  ウィザードを完了してプロファイルを展開します。
+#### <a name="to-deploy-a-windows-update-for-business-deferral-policy"></a>Per distribuire i criteri di rinvio di Windows Update for Business
+1. In **Libreria Software** > **Manutenzione pacchetti di Windows 10** > **Criteri di Windows Update for Business**
+2. Nella scheda **Home**, nel gruppo **Distribuzione** selezionare **Distribuisci il criterio di Windows Update for Business**.
+3. Configurare le seguenti impostazioni:
+    - **Criteri di configurazione da distribuire**: selezionare il criterio Windows Update for Business che si desidera distribuire.
+    - **Raccolta**: fare clic su **Sfoglia** per selezionare la raccolta in cui si desidera distribuire i criteri.
+    - **Monitora e aggiorna le regole non conformi, se supportato**: selezionare per correggere automaticamente tutte le regole non conformi per Strumentazione gestione Windows (WMI), il registro di sistema, gli script e tutte le impostazioni per i dispositivi mobili registrati da Configuration Manager.
+    - **Consenti monitoraggio e aggiornamento fuori dalla finestra di manutenzione**: se è stata configurata una finestra di manutenzione per la raccolta in cui si distribuiscono i criteri, abilitare questa opzione per consentire alle impostazioni di conformità di monitorare e aggiornare il valore fuori dalla finestra di manutenzione. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).
+    - **Genera un avviso**: configura un avviso che viene generato se la conformità della linea di base di configurazione è inferiore a una percentuale specificata in base a una data e un orario specifici. È inoltre possibile specificare se si desidera che un avviso venga inviato a System Center Operations Manager.
+    - **Ritardo casuale (ore)**: specifica una finestra di ritardo per evitare un'elaborazione eccessiva nel servizio Registrazione dispositivi di rete. Il valore predefinito è 64 ore.
+    - **Pianificazione**: specifica la pianificazione per la valutazione della conformità in base alla quale il profilo distribuito viene valutato nei computer client. Può trattarsi di una pianificazione semplice o personalizzata. Il profilo viene valutato dai computer client quando l'utente effettua l'accesso.
+4.  Completare la procedura guidata per distribuire il profilo.
 
 
 
-## <a name="support-for-entrust-certification-authorities"></a>Entrust 証明機関のサポート
+## <a name="support-for-entrust-certification-authorities"></a>Supporto per le autorità di certificazione Entrust
 <!-- 1350740 -->
-Configuration Manager は Entrust 証明機関をサポートするようになりました。これにより、Microsoft Intune に登録されたデバイスに PFX 証明書を発行できます。
+Configuration Manager supporta ora l'autorità di certificazione Entrust; ciò consente la consegna del certifica PFX nei dispositivi registrati in Microsoft Intune.
 
-Configuration Manager で証明書登録ポイントの役割を追加するときに、証明機関として Entrust を構成できます。 PFX 証明書を発行する新しい証明書プロファイルを追加する場合は、Microsoft または Entrust のいずれかの証明機関を選択できます。
+Quando si aggiunge un ruolo di punto di registrazione certificato in Configuration Manager, è possibile configurare Entrust come autorità di certificazione. Quando si aggiunge un nuovo profilo di certificato che emette i certificati PFX, è possibile selezionare l'autorità di certificazione Microsoft o Entrust.
 
-**既知の問題**: 1706 Technical Preview では、PFX 証明書は、Microsoft 証明機関用に発行されません。 これは、インポートされた PFX 証明書または SCEP プロファイルには影響ありません。
+**Problema noto**: nella Technical Preview 1706, i certificati PFX non vengono emessi per le autorità di certificazione di Microsoft. Ciò non influenza i certificati PFX importati o i profili SCEP.
 
 
-## <a name="cisco-ipsec-support-for-macos-vpn-profiles"></a>macOS VPN プロファイルの Cisco (IPsec) のサポート
+## <a name="cisco-ipsec-support-for-macos-vpn-profiles"></a>Supporto Cisco (IPsec) per i profili VPN di MacOS
 <!-- 1321367 -->
 
-接続タイプとして Cisco (IPsec) を指定して macOS VPN プロファイルを作成できます。 詳細については、「[VPN プロファイルの作成](https://docs.microsoft.com/en-us/sccm/mdm/deploy-use/create-vpn-profiles#create-vpn-profiles)」を参照してください。
+È possibile creare un profilo VPN di MacOS con Cisco (IPsec) come tipo di connessione. Per altre informazioni, vedere [Creare profili VPN](https://docs.microsoft.com/en-us/sccm/mdm/deploy-use/create-vpn-profiles#create-vpn-profiles).
 
 
-## <a name="new-windows-configuration-item-settings"></a>新しい Windows 構成アイテムの設定
+## <a name="new-windows-configuration-item-settings"></a>Nuove impostazioni degli elementi di configurazione di Windows
 <!-- 1354715 -->
 
-このリリースでは、Windows 構成アイテムで使用できる次の新しい設定が追加されました。
+In questa versione sono state aggiunte le seguenti nuove impostazioni che è possibile usare negli elementi di configurazione di Windows:
 
-### <a name="password"></a>パスワード
+### <a name="password"></a>Password
 
-- **デバイスの暗号化**
+- **Crittografia dispositivo**
 
-### <a name="device"></a>デバイス
+### <a name="device"></a>Dispositivo
 
-- **地域の設定の変更 (デスクトップのみ)**
-- **電源とスリープの設定の変更**
-- **言語の設定の変更**
-- **システム時刻の変更**
-- **デバイス名の変更**
+- **Modifica delle impostazioni dell'area (solo desktop)**
+- **Modifica delle impostazioni di risparmio energia e sospensione**
+- **Modifiche alle impostazioni della lingua**
+- **Modifica dell'ora di sistema**
+- **Modifica del nome dispositivo**
 
-### <a name="store"></a>ストア
+### <a name="store"></a>Archivio
 
-- **ストア アプリの自動更新**
-- **プライベート ストアのみを使用する**
-- **ストアから配信されたアプリの起動**
+- **Aggiorna automaticamente le app dallo Store**
+- **Usa solo lo Store privato**
+- **Avvio di app originate dallo Store**
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- **About Flags へのアクセスをブロック**
-- **SmartScreen のプロンプトの上書き**
-- **ファイルに対する SmartScreen プロンプトの上書き**
-- **WebRtc localhost IP アドレス**
-- **既定の検索エンジン**
-- **OpenSearch XML URL**
-- **ホームページ (デスクトップのみ)**
+- **Blocca l'accesso ai flag Informazioni su**
+- **Override del prompt SmartScreen**
+- **Override del prompt SmartScreen per i file**
+- **Indirizzo IP localhost WebRtc**
+- **Motore di ricerca predefinito**
+- **URL XML OpenSearch**
+- **Homepages (desktop only)** (Home page (solo desktop))
 
-コンプライアンス設定の詳細については、「[System Center Configuration Manager でのデバイス コンプライアンスの確認](/sccm/compliance/understand/ensure-device-compliance)」をご覧ください。
+Per altre informazioni sulle impostazioni di conformità, vedere [Garantire la conformità dei dispositivi con System Center Configuration Manager](/sccm/compliance/understand/ensure-device-compliance).
 
 
-## <a name="new-device-compliance-policy-rules"></a>新しいデバイス コンプライアンス ポリシー ルール
+## <a name="new-device-compliance-policy-rules"></a>Nuove regole per i criteri di conformità dei dispositivi
 
-* **必要なパスワードの種類**。 ユーザーが英数字のパスワードまたは数字のパスワードのどちらを使用する必要があるかを指定します。 英数字のパスワードの場合、パスワードに最低限必要な文字セットの数も指定します。 文字セットには、小文字、大文字、記号、および数字の 4 種類があります。
+* **Tipo di password richiesto**. Specificare se gli utenti devono creare una password alfanumerica o una password numerica. Per le password alfanumeriche, si specifica anche il numero minimo di set di caratteri che la password deve contenere. I quattro set di caratteri sono: lettere minuscole, lettere maiuscole, simboli e numeri.
 
-    **以下でサポートされています。**
+    **Supportato in:**
     * Windows Phone 8+
     * Windows 8.1+
     * iOS 6+
 <br></br>
-* **デバイスでの USB デバッグをブロックする**。 USB デバッグは Android for Work デバイスでは既に無効になっているため、この設定を構成する必要はありません。
+* **Blocca il debug USB nel dispositivo**. Non è necessario configurare questa impostazione poiché l'esecuzione del debug dell'USB è già stata disabilitata in Android per i dispositivi di lavoro.
 
-    **以下でサポートされています。**
-    * Android 4.0 以降
+    **Supportato in:**
+    * Android 4.0+
     * Samsung KNOX Standard 4.0+
 <br></br>
-* **提供元不明のアプリをブロックする**。 デバイスが不明なソースからのアプリのインストールを許可しないことが必要です。 Android for Work デバイスでは、不明なソースからのインストールは常に制限されるため、この設定を構成する必要はありません。
+* **Blocca app da origini sconosciute**. Obbligare i dispositivi a impedire l'installazione di app da origini sconosciute. Non è necessario configurare questa impostazione poiché Android per i dispositivi di lavoro limita sempre l'installazione da origini sconosciute.
 
-    **以下でサポートされています。**
-    * Android 4.0 以降
+    **Supportato in:**
+    * Android 4.0+
     * Samsung KNOX Standard 4.0+
 <br></br>
-* **アプリの脅威のスキャンが必要**。 この設定は、デバイスでアプリの確認機能が有効になっていることを指定します。
+* **Rendi obbligatoria l'analisi delle minacce nelle app**. Questa impostazione specifica che la funzionalità dell'app di verifica è abilitata nel dispositivo.
 
-    **以下でサポートされています。**
-    * Android 4.2 から 4.4
+    **Supportato in:**
+    * Android da 4.2 a 4.4
     * Samsung KNOX Standard 4.0+
 
-「[デバイス コンプライアンス ポリシーを作成して展開する](https://docs.microsoft.com/sccm/mdm/deploy-use/create-compliance-policy)」を参照して、新しいデバイス コンプライアンス ルールを試してください。
+Vedere [Creare e distribuire criteri di conformità del dispositivo](https://docs.microsoft.com/sccm/mdm/deploy-use/create-compliance-policy) per provare le nuove regole di conformità del dispositivo.
 
-## <a name="new-mobile-application-management-policy-settings"></a>新しいモバイル アプリケーション管理ポリシーの設定
-このリリースから、3 つの新しいモバイル アプリケーション管理 (MAM) ポリシー設定が使用できます。
+## <a name="new-mobile-application-management-policy-settings"></a>Nuove impostazioni dei criteri di gestione delle applicazioni mobili
+A partire da questa versione, è possibile usare tre nuove impostazioni di criteri di gestione delle applicazioni per dispositivi mobili (MAM):
 
-- **画面キャプチャの禁止 (Android デバイスのみ):** このアプリを使用するときに、デバイスの画面キャプチャ機能をブロックするように指定します。
+- **Blocca acquisizione schermo (solo per dispositivi Android):** specifica che le funzionalità di acquisizione schermo del dispositivo vengono bloccate quando si usa questa app.
 
-- **連絡先の同期を無効にする:** アプリでデバイス上のネイティブ連絡先アプリにデータを保存できなくなります。
+- **Disabilita la sincronizzazione dei contatti:** impedisce all'app di salvare i dati nell'app dei contatti nativa del dispositivo.
 
-- **印刷を無効にする:** アプリで職場または学校のデータを印刷できなくなります。
+- **Disabilita stampa:** impedisce all'app di stampare dati aziendali o dell'istituto di istruzione.
 
-「[Configuration Manager のモバイル アプリケーション管理ポリシーを使ったアプリの保護](https://docs.microsoft.com/sccm/mdm/deploy-use/protect-apps-using-mam-policies)」を参照し、新しいアプリの保護のポリシー設定を試してください。
+Vedere [Proteggere le app usando i criteri di gestione delle applicazioni mobili in System Center Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/protect-apps-using-mam-policies) per provare le nuove impostazioni dei criteri di protezione dell'app.
 
-## <a name="android-and-ios-enrollment-restrictions"></a>Android および iOS の登録制限
+## <a name="android-and-ios-enrollment-restrictions"></a>Restrizioni di registrazione di Android e iOS
 <!-- 1290826 -->
-このリリースから、管理者は、ユーザーがハイブリッド環境で個人の Android または iOS デバイスを登録できないように指定できるようになりました。 これにより、宣言済みのデバイス、会社が所有しているデバイス、またはデバイス登録プログラムで登録されている iOS デバイスに登録されるデバイスを制限することができます。
+A partire da questa versione, gli amministratori possono ora specificare che gli utenti non possono registrare dispositivi Android o iOS personali nel proprio ambiente ibrido. Ciò consente di limitare i dispositivi registrati ai dispositivi pre-dichiarati, di proprietà dell'azienda o ai dispositivi iOS registrati solo con il Device Enrollment Program.
 
-### <a name="try-it-out"></a>試してみましょう
-1. Configuration Manager コンソールの **[管理]** ワークスペースで、**[クラウド サービス]**  >  **[Microsoft Intune サブスクリプション]** に移動します。
-2. **[ホーム]** タブの **[サブスクリプション]** グループで、**[プラットフォームの構成]**を選択し、**[Android]** または **[iOS]** のいずれかを選択します。
-3. **[事前に宣言されたデバイスのみに Intune への登録を許可する]** を選択します。
+### <a name="try-it-out"></a>Procedura
+1. Nell'area di lavoro **Amministrazione** della console di Configuration Manager andare a **Servizi cloud** > **Sottoscrizioni a Microsoft Intune**.
+2. Nel gruppo **Sottoscrizione** della scheda **Home** scegliere **Configura piattaforme** e quindi selezionare **Android** o **iOS**.
+3. Selezionare **Consenti la registrazione a Intune solo ai dispositivi di proprietà dell'azienda, inclusi i dispositivi predichiarati e i dispositivi con registrazione DEP**.
 
-## <a name="android-for-work-application-management-policy-for-copy-paste"></a>コピー/貼り付け用の Android for Work アプリケーション管理ポリシー
-**[仕事用プロファイルと個人プロファイル間でのデータ共有を許可する]** の Android for Work の構成アイテムの設定の説明を更新しました。
+## <a name="android-for-work-application-management-policy-for-copy-paste"></a>Criteri per la gestione dell'applicazione Android for Work per il copia e incolla
+Sono state aggiornate le descrizioni delle impostazioni per Android per gli elementi di configurazione del lavoro per **Consenti la condivisione dei dati tra i profili di lavoro e personali**.
 
-|1706 より前の Technical Preview | 新しいオプション名 | 動作|
+|Prima della Technical Preview 1706 | Nuovo nome dell'opzione | Comportamento|
 |-|-|-|
-|境界を越えて共有できないようにする| 既定の共有制限| 仕事から個人: 既定 (すべてのバージョンでブロックされる見込み) <br>個人から仕事: 既定 (6.x 以降では許可、5.x ではブロック)|
-|制限事項なし|   個人プロファイル内のアプリが作業プロファイルからの共有要求を処理できる| 仕事から個人: 許可  <br>個人から仕事: 許可|
-|仕事用プロファイル内のアプリが個人プロファイルからの共有要求を処理できる |仕事用プロファイル内のアプリが個人プロファイルからの共有要求を処理できる |仕事から個人: 既定<br>個人から仕事: 許可<br>(個人から仕事がブロックされる 5.x でのみ有用)|
+|Impedire qualsiasi condivisione tra i limiti| Restrizioni di condivisione predefinite| Dall'ambito di lavoro a quello personale: predefinito (dovrà essere bloccato in tutte le versioni) <br>Dall'ambito personale a quello di lavoro: predefinito (consentito su 6.x+, bloccato su 5.x)|
+|Nessuna restrizione|   Le app nel profilo personale possono gestire richieste di condivisione dal profilo di lavoro| Dall'ambito di lavoro a quello personale: consentito  <br>Dall'ambito personale a quello di lavoro: consentito|
+|Le app nel profilo di lavoro possono gestire richieste di condivisione dal profilo personale |Le app nel profilo di lavoro possono gestire richieste di condivisione dal profilo personale |Dall'ambito di lavoro a quello personale: predefinito<br>Dall'ambito personale a quello di lavoro: consentito<br>(utile solamente su 5.x dove l'opzione dall'ambito personale a quello di lavoro è bloccata)|
 
-これらのオプションのいずれもコピー/貼り付け動作を直接妨げることはありません。 1704 ではサービスおよびポータル サイト アプリに、コピー/貼り付けを防ぐために設定可能なカスタム設定を追加しました。 これはカスタム URI から設定できます。
+Nessuna di queste opzioni impedisce direttamente il comportamento di copia e incolla. È stata aggiunta un'impostazione personalizzata al servizio e all'app del Portale aziendale in 1704 che può essere configurata per evitare di copiare e incollare. L'impostazione è configurabile tramite un URI personalizzato.
 
--   OMA-URI:  ./Vendor/MSFT/WorkProfile/DisallowCrossProfileCopyPaste
--   値の型: ブール値
+-   URI OMA:  ./Vendor/MSFT/WorkProfile/DisallowCrossProfileCopyPaste
+-   Tipo valore: booleano
 
-DisallowCrossProfileCopyPaste を true に設定すると、Android for Work の個人プロファイルと仕事用プロファイル間でのコピー/貼り付け動作を防止します。
+Impostando DisallowCrossProfileCopyPaste su true si impedisce il comportamento di copia e incolla tra Android for Work personale e i profili di lavoro.
 
-### <a name="try-it-out"></a>試してみましょう
-1. Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[概要]** > **[コンプライアンス設定]** > **[構成項目]** の順にクリックします。
-2. **[作成]** を選択して、新しい構成項目を作成し、**[名前]** と **[Android for Work]** を指定します。
-3. 構成するデバイス設定グループで、**[仕事用プロファイル]** を選択し、**[次へ]** を選択します。
-4. **[仕事用プロファイルと個人プロファイル間でのデータ共有を許可する]** の値を選択し、ウィザードを完了します。
+### <a name="try-it-out"></a>Procedura
+1. Nella console di Configuration Manager, selezionare **Asset e conformità** > **Panoramica** > **Impostazioni di conformità** > **Elementi di configurazione**.
+2. Scegliere **Crea** per creare un nuovo elemento di configurazione e specificare **Nome** e **Android for Work**.
+3. Nei gruppi di impostazione del dispositivo da configurare selezionare **Profilo di lavoro** e scegliere **Avanti**.
+4. Selezionare un valore per **Consenti la condivisione dei dati tra i profili di lavoro e personali** e completare la procedura guidata.
 
-## <a name="device-health-attestation-assessment-for-compliance-policies-for-conditional-access"></a>条件付きアクセスのコンプライアンス ポリシーに対するデバイス正常性構成証明の評価
+## <a name="device-health-attestation-assessment-for-compliance-policies-for-conditional-access"></a>Valutazione dell'attestazione dell'integrità dei dispositivi per i criteri di conformità per l'accesso condizionale
 <!-- 1097546 -->
-このリリースから、デバイス正常性構成証明の状態を会社のリソースへの条件付きアクセスのコンプライアンス ポリシー規則として使用できます。
+A partire da questa versione è possibile usare lo stato dell'attestazione dell'integrità del dispositivo come regola dei criteri di conformità per l'accesso condizionale alle risorse aziendali.
 
-### <a name="try-it-out"></a>試してみましょう
-デバイスの正常性構成証明書規則をコンプライアンス ポリシー評価の一部として選択します。
+### <a name="try-it-out"></a>Procedura
+Selezionare una regola di attestazione dell'integrità dei dispositivi come parte di una valutazione dei criteri di conformità.

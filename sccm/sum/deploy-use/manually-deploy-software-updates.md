@@ -1,6 +1,6 @@
 ---
-title: "ソフトウェア更新プログラムの手動展開 | Microsoft ドキュメント"
-description: "更新プログラムを手動で展開するには、Configuration Manager コンソールで更新プログラムを選んで手動で展開するか、または更新プログラムを更新プログラム グループに追加してグループを展開します。"
+title: Distribuire manualmente gli aggiornamenti software | Documentazione Microsoft
+description: Per distribuire manualmente gli aggiornamenti, selezionare gli aggiornamenti dalla console di Configuration Manager e distribuirli manualmente o aggiungere gli aggiornamenti a un gruppo di aggiornamento e distribuire il gruppo.
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,68 +14,68 @@ ms.assetid: 57184274-5fea-4d79-a2b4-22e08ed26daf
 ms.openlocfilehash: 2a0d5f12b99689749833c109d4fa399f99451d8a
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-#  <a name="BKMK_ManualDeploy"></a> ソフトウェア更新プログラムの手動展開  
+#  <a name="BKMK_ManualDeploy"></a> Distribuire manualmente gli aggiornamenti software  
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
- ソフトウェア更新プログラムの手動展開は、Configuration Manager コンソールでソフトウェア更新プログラムを選び、展開プロセスを手動で開始するプロセスです。 または、選択したソフトウェア更新プログラムを更新プログラム グループに追加して、手動で更新プログラム グループを展開できます。 通常は、手動展開によって、必要なソフトウェア更新プログラムを適用してクライアント デバイスを最新の状態にした後で、月 1 回の継続的なソフトウェア更新プログラムの展開を管理する ADR を作成します。 また、帯域外のソフトウェア更新プログラムの展開にも手動展開を使用します。 どちらの展開方法が適しているか判断する場合は、「[ソフトウェアの更新を展開する](deploy-software-updates.md)」を参照してください。
+ La distribuzione manuale degli aggiornamenti software consiste nel processo di selezione degli aggiornamenti software dalla console di Configuration Manager e di avvio manuale del processo di distribuzione. In alternativa, è possibile aggiungere gli aggiornamenti software selezionati a un gruppo di aggiornamento, quindi distribuire manualmente il gruppo di aggiornamento. In genere si usa la distribuzione manuale per mantenere aggiornati i dispositivi client con gli aggiornamenti software richiesti prima di creare ADR che gestiranno le distribuzioni degli aggiornamenti software mensili in corso. Si utilizzerà inoltre un metodo manuale per distribuire gli aggiornamenti software fuori banda. Per altre informazioni su come determinare il metodo di distribuzione da usare, vedere [Distribuire gli aggiornamenti software](deploy-software-updates.md).
 
- 以下のセクションでは、ソフトウェア更新プログラムを手動で展開する手順について説明します。  
+ Le sezioni seguenti descrivono i passaggi per distribuire manualmente gli aggiornamenti software.  
 
-##  <a name="BKMK_1SearchCriteria"></a> 手順 1: ソフトウェア更新プログラムの検索条件を指定する  
- Configuration Manager コンソールに表示されるソフトウェア更新プログラムの数は、数千個になることがあります。 手動でのソフトウェア更新プログラムの展開のワークフローでは、第一段階として、展開するソフトウェア更新プログラムを特定します。 たとえば、50 を超えるクライアント デバイスで必要であり、「 **セキュリティ** 」または「 **重大** 」に分類されているすべてのソフトウェア更新プログラムを取得するというような条件を指定できます。  
+##  <a name="BKMK_1SearchCriteria"></a> Passaggio 1: Specificare i criteri di ricerca per gli aggiornamenti software  
+ Esistono potenzialmente migliaia di aggiornamenti software visualizzati nella console di Configuration Manager. Il primo passaggio del flusso di lavoro per la distribuzione manuale degli aggiornamenti software consiste nell'identificare gli aggiornamenti software che si desidera distribuire. Ad esempio, si potrebbero fornire criteri che recuperino tutti gli aggiornamenti software richiesti su oltre 50 dispositivi client e che abbiano **Sicurezza** o **Errore critico** come classificazione di aggiornamento software.  
 
 > [!IMPORTANT]  
->  1 回のソフトウェア更新プログラムの展開に含めることができるソフトウェア更新プログラムの最大数は、1000 です。  
+>  Il numero massimo di aggiornamenti software che possono essere inclusi in una distribuzione di aggiornamenti software singola è 1.000.  
 
-#### <a name="to-specify-search-criteria-for-software-updates"></a>ソフトウェア更新プログラムの検索条件を指定するには  
+#### <a name="to-specify-search-criteria-for-software-updates"></a>Per specificare i criteri di ricerca per gli aggiornamenti software  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ソフトウェア ライブラリ] ワークスペースで [ソフトウェア更新プログラム ****] を展開して、[すべてのソフトウェア更新プログラム ****] をクリックします。 同期済みのソフトウェア更新プログラムが表示されます。  
+2.  Nell'area di lavoro Raccolta software, espandere **Aggiornamenti software**, quindi fare clic su **Tutti gli aggiornamenti software**. Vengono visualizzati gli aggiornamenti software sincronizzati.  
 
     > [!NOTE]  
-    >  Configuration Manager の **[すべてのソフトウェア更新プログラム]** ノードには、**[重大]** および **[セキュリティ]** に分類され、過去 30 日以内にリリースされたソフトウェア更新プログラムのみが表示されます。  
+    >  Nel nodo **Tutti gli aggiornamenti software** Configuration Manager visualizza solo gli aggiornamenti software con classificazione **Critico** e **Sicurezza** rilasciati negli ultimi 30 giorni.  
 
-3.  検索パネルで、次の手順のいずれか、または両方を使用して、必要なソフトウェア更新プログラムを絞り込みます。  
+3.  Nel riquadro di ricerca, applicare il filtro per identificare gli aggiornamenti software necessari usando uno o entrambi i seguenti passaggi:  
 
-    -   検索テキスト ボックスに、ソフトウェア更新プログラムを絞り込む検索文字列を入力します。 たとえば、特定のソフトウェア更新プログラムのアーティクル ID やセキュリティ情報 ID を入力するか、複数のソフトウェア更新プログラムのタイトルに使用されている可能性のある文字列を入力します。  
+    -   Nella casella di testo di ricerca, digitare una stringa di ricerca che consenta di filtrare gli aggiornamenti software. Ad esempio, digitare l'ID articolo o l'ID bollettino per un aggiornamento software specifico oppure inserire una stringa che verrebbe visualizzata nel titolo per diversi aggiornamenti software.  
 
-    -   [条件の追加 ****] をクリックしてソフトウェア更新プログラムの絞り込みに使用する条件を選択し、[追加 ****] をクリックして条件の値を指定します。  
+    -   Fare clic su **Aggiungi criteri**, selezionare i criteri che si desidera usare per filtrare gli aggiornamenti software, fare clic su **Aggiungi**, quindi fornire i valori per i criteri.  
 
-4.  [検索 **** ] をクリックして、ソフトウェア更新プログラムを絞り込みます。  
+4.  Fare clic su **Cerca** per filtrare gli aggiornamenti software.  
 
     > [!TIP]  
-    >  [検索 **** ] タブおよび [保存 **** ] グループに、フィルター条件を保存するためのオプションがあります。  
+    >  È disponibile l'opzione per salvare i criteri di filtro nella scheda **Cerca** e nel gruppo **Salva** .  
 
-##  <a name="BKMK_2UpdateGroup"></a> 手順 2: ソフトウェア更新プログラムを含むソフトウェア更新プログラム グループを作成する  
- ソフトウェア更新プログラム グループは、展開に備えてソフトウェア更新プログラムを整理するための有効な手段です。 ソフトウェア更新プログラムをソフトウェア更新プログラム グループに手動で追加したり、Configuration Manager の ADR を使用して、新規または既存のソフトウェア更新プログラム グループに自動的に追加したりできます。 ソフトウェア更新プログラムを新しいソフトウェア更新プログラム グループに手動で追加するには、次の手順に従います。  
+##  <a name="BKMK_2UpdateGroup"></a> Passaggio 2: Creare un gruppo di aggiornamenti software che contenga gli aggiornamenti software  
+ I gruppi di aggiornamento software forniscono un metodo efficace per organizzare gli aggiornamenti software in preparazione per la distribuzione. È possibile aggiungere manualmente aggiornamenti software a un gruppo di aggiornamento software oppure Configuration Manager può aggiungere automaticamente aggiornamenti software a un gruppo di aggiornamento software nuovo o esistente usando un'ADR. Usare le procedure seguenti per aggiungere manualmente gli aggiornamenti software in un nuovo gruppo di aggiornamento software.  
 
-#### <a name="to-manually-add-software-updates-to-a-new-software-update-group"></a>ソフトウェア更新プログラムを新しいソフトウェア更新プログラム グループに手動で追加するには  
+#### <a name="to-manually-add-software-updates-to-a-new-software-update-group"></a>Per aggiungere manualmente gli aggiornamenti software a un nuovo gruppo di aggiornamento software  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ソフトウェア ライブラリ] ワークスペースで、[ソフトウェア更新プログラム ****] をクリックします。  
+2.  Nell'area di lavoro Raccolta software, fare clic su **Aggiornamenti Software**.  
 
-3.  新しいソフトウェア更新プログラム グループに追加するソフトウェア更新プログラムを選択します。  
+3.  Selezionare gli aggiornamenti software che devono essere aggiunti al nuovo gruppo di aggiornamento software.  
 
-4.  [ホーム **** ] タブの [更新 **** ] グループで、[ソフトウェア更新プログラム グループの作成 ****] をクリックします。  
+4.  Nella scheda **Home** , nel gruppo **Aggiorna** , fare clic su **Crea gruppo di aggiornamento software**.  
 
-5.  ソフトウェア更新プログラム グループの名前を指定し、必要に応じて説明を入力します。 名前と説明によって、ソフトウェア更新プログラム グループに含まれているソフトウェア更新プログラムの種類を判別できる情報を指定します。 [作成 ****] をクリックします。  
+5.  Specificare il nome per il gruppo di aggiornamento software e fornire una descrizione facoltativa. Usare un nome e una descrizione che forniscano informazioni sufficienti per determinare il tipo di aggiornamenti software che si trovano nel gruppo di aggiornamento software. Per continuare, fare clic su **Crea**.  
 
-6.  [ソフトウェア更新プログラム グループ **** ] ノードをクリックして、新しいソフトウェア更新プログラム グループを表示します。  
+6.  Fare clic sul nodo **Gruppi di aggiornamenti software** per visualizzare il nuovo gruppo di aggiornamento software.  
 
-7.  ソフトウェア更新プログラム グループを選択し、[ホーム **** ] タブの [更新 **** ] グループで [メンバーの表示 **** ] をクリックして、グループに含まれているソフトウェア更新プログラムの一覧を表示します。  
+7.  Selezionare il gruppo di aggiornamento software, quindi nella scheda **Home** , nel gruppo **Aggiorna** , fare clic su **Mostra membri** per visualizzare un elenco degli aggiornamenti software inclusi nel gruppo.  
 
-##  <a name="BKMK_3DownloadContent"></a> 手順 3: ソフトウェア更新プログラム グループのコンテンツをダウンロードする  
- 必要に応じて、ソフトウェア更新プログラムを展開する前に、ソフトウェア更新プログラム グループに含めるソフトウェア更新プログラムのコンテンツをダウンロードできます。 この方法を選択すると、ソフトウェア更新プログラムを展開する前に、そのコンテンツが配布ポイントで使用可能になっていることを確認できます。 これにより、コンテンツの配布に関して、予期せぬ問題を回避できます。 この手順は省略することができ、その場合、コンテンツは展開プロセスの過程で配布ポイントにダウンロードされ、コピーされます。 ソフトウェア更新プログラムのコンテンツをソフトウェア更新プログラム グループにダウンロードするには、次の手順に従います。  
+##  <a name="BKMK_3DownloadContent"></a> Passaggio 3: Scaricare il contenuto per il gruppo di aggiornamenti software  
+ Facoltativamente, prima di distribuire gli aggiornamenti software, è possibile scaricare il contenuto per gli aggiornamenti software inclusi nel gruppo di aggiornamento software. È possibile scegliere di effettuare questa operazione in modo da poter verificare che il contenuto sia disponibile nei punti di distribuzione prima di distribuire gli aggiornamenti software. Ciò consentirà di evitare eventuali problemi imprevisti con la distribuzione del contenuto. È possibile ignorare questo passaggio e il contenuto verrà scaricato e copiato nei punti di distribuzione come parte del processo di distribuzione. Usare la procedura seguente per scaricare il contenuto per gli aggiornamenti software nel gruppo di aggiornamento software.  
 
 
 
-#### <a name="to-download-content-for-the-software-update-group"></a>ソフトウェア更新プログラム グループにコンテンツをダウンロードするには
+#### <a name="to-download-content-for-the-software-update-group"></a>Per scaricare il contenuto per il gruppo di aggiornamento software
 [!INCLUDE[downloadupdates](..\includes\downloadupdates.md)]
 <!--- 1.  In the Configuration Manager console, click **Software Library**.  
 
@@ -148,167 +148,167 @@ ms.lasthandoff: 08/07/2017
 
 11. On the Completion page, verify that the software updates were successfully downloaded, and then click **Close**. --->
 
-#### <a name="to-monitor-content-status"></a>コンテンツのステータスを監視するには
-1. ソフトウェア更新プログラムのコンテンツのステータスを監視するには、Configuration Manager コンソールで **[監視]** をクリックします。  
+#### <a name="to-monitor-content-status"></a>Per monitorare lo stato del contenuto
+1. Per monitorare lo stato del contenuto per gli aggiornamenti software, fare clic su **Monitoraggio** nella console di Configuration Manager.  
 
-2. [監視] ワークスペースで、[配布ステータス ****] を展開して、[コンテンツのステータス ****] をクリックします。  
+2. Nell'area di lavoro Monitoraggio, espandere **Stato distribuzione**, quindi fare clic su **Stato contenuto**.  
 
-3. ソフトウェア更新プログラム グループにソフトウェア更新プログラムをダウンロードするために、事前に特定したソフトウェア更新パッケージを選択します。  
+3. Selezionare il pacchetto di aggiornamento software precedentemente identificato per scaricare gli aggiornamenti software nel gruppo di aggiornamento software.  
 
-4. [ホーム **** ] タブの [コンテンツ **** ] グループで、[ステータスの表示 ****] をクリックします。  
+4. Nella scheda **Home** , nel gruppo **Contenuto** , fare clic su **Visualizza stato**.  
 
-##  <a name="BKMK_4DeployUpdateGroup"></a> 手順 4: ソフトウェア更新プログラム グループを展開する  
- 展開するソフトウェア更新プログラムを判別してソフトウェア更新プログラム グループに追加したら、ソフトウェア更新プログラム グループ内のソフトウェア更新プログラムを手動で展開できます。 ソフトウェア更新プログラム グループ内のソフトウェア更新プログラムを手動で展開するには、次の手順に従います。  
+##  <a name="BKMK_4DeployUpdateGroup"></a> Passaggio 4: Distribuire il gruppo di aggiornamenti software  
+ Dopo aver determinato quali aggiornamenti software di desidera distribuire e averli aggiunti a un gruppo di aggiornamento software, è possibile distribuire manualmente gli aggiornamenti software nel gruppo di aggiornamento software. Usare la procedura seguente per distribuire manualmente gli aggiornamenti software in un gruppo di aggiornamento software.  
 
-#### <a name="to-manually-deploy-the-software-updates-in-a-software-update-group"></a>ソフトウェア更新プログラム グループ内のソフトウェア更新プログラムを手動で展開するには  
+#### <a name="to-manually-deploy-the-software-updates-in-a-software-update-group"></a>Per distribuire manualmente gli aggiornamenti software in un gruppo di aggiornamento software  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ソフトウェア ライブラリ] ワークスペースで [ソフトウェア更新プログラム ****] を展開して、[ソフトウェア更新プログラム グループ ****] をクリックします。  
+2.  Nell'area di lavoro Raccolta software, espandere **Aggiornamenti software**, quindi fare clic su **Gruppi di aggiornamenti software**.  
 
-3.  展開するソフトウェア更新プログラム グループを選択します。  
+3.  Selezionare il gruppo di aggiornamento software che si desidera distribuire.  
 
-4.  [ **ホーム** ] タブの [ **展開** ] グループで、[ **展開**] をクリックします。 **ソフトウェア更新プログラムの展開ウィザード** が開きます。  
+4.  Nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Distribuisci**. Viene visualizzata la **Distribuzione guidata degli aggiornamenti software** .  
 
-5.  [全般] ページで、次の設定を構成します。  
+5.  Nella pagina Generale è possibile configurare le seguenti impostazioni:  
 
-    -   **名前**: 展開の名前を指定します。 展開の名前は、一意であり、展開の目的を示し、Configuration Manager サイト内の他の展開と区別できるものでなければなりません。 既定では、Configuration Manager により、自動的に展開の名前が次の形式で指定されます。**Microsoft Software Updates -** <*日付*><*時刻*>  
+    -   **Nome**: specificare il nome per la distribuzione. La distribuzione deve avere un nome univoco che descriva lo scopo della distribuzione e la distingua da altre distribuzioni nel sito di Configuration Manager. Per impostazione predefinita, Configuration Manager specifica automaticamente un nome per la distribuzione nel formato seguente: **Microsoft Software Updates -** <*data*><*ora*>  
 
-    -   **説明**: 展開の説明を指定します。 説明では、展開の概要、および、Configuration Manager サイト内の他の展開と区別するのに役立つその他の関連情報を示します。 説明フィールドは省略可能で、256 文字以内で指定する必要があります。既定値は空白です。  
+    -   **Descrizione**: specificare una descrizione per la distribuzione. La descrizione offre una panoramica della distribuzione, nonché tutte le altre informazioni rilevanti per identificare e distinguere la distribuzione dalle altre nel sito di Configuration Manager. Il campo della descrizione è facoltativo, ha un limite di 256 caratteri e un valore vuoto per impostazione predefinita.  
 
-    -   **ソフトウェア更新プログラム/ソフトウェア更新プログラム グループ**: 表示されたソフトウェア更新プログラム グループ、または、ソフトウェア更新プログラムが正しいことを確認します。  
+    -   **Aggiornamento software/gruppo di aggiornamenti software**: verificare che il gruppo di aggiornamento software visualizzato o l'aggiornamento software siano corretti.  
 
-    -   **展開テンプレートの選択**: 既に保存されている展開テンプレートを適用するかどうかを指定します。 複数の一般的なソフトウェア更新プログラムの展開プロパティを含む展開テンプレートを構成して、以降、ソフトウェア更新プログラムを展開する際に適用し、同じような展開で整合性を確保したり、時間を節約したりできます。  
+    -   **Seleziona modello di distribuzione**: specificare se applicare un modello di distribuzione precedentemente salvato. È possibile configurare un modello di distribuzione che contenga più proprietà di distribuzione aggiornamenti software comuni, quindi applicare il modello quando si distribuiscono aggiornamenti software successivi per garantire la coerenza tra distribuzioni simili e risparmiare tempo.  
 
-    -   **コレクション**: 適切に展開のコレクションを指定します。 コレクションのメンバーは、展開で定義されたソフトウェア更新プログラムを受信します。  
+    -   **Raccolta**: specificare la raccolta per la distribuzione, come applicabile. I membri della raccolta ricevono gli aggiornamenti software che vengono definiti nella distribuzione.  
 
-6.  [展開設定] ページで、次の設定を構成します。  
+6.  Nella pagina Impostazioni distribuzione, configurare le seguenti impostazioni:  
 
-    -   **展開の種類**: ソフトウェア更新プログラムの展開の種類を指定します。 構成されたインストール期限までにソフトウェア更新プログラムがクライアントで自動的にインストールされる必須のソフトウェア更新プログラムの展開を作成するには、[ **必須** ] を選択します。 ユーザーがソフトウェア センターから入手できるオプションのソフトウェア更新プログラムの展開を作成するには、[ **利用可能** ] を選択します。  
+    -   **Tipo di distribuzione**: specificare il tipo di distribuzione per la distribuzione degli aggiornamenti software. Selezionare **Richiesto** per creare una distribuzione degli aggiornamenti software obbligatoria in cui gli aggiornamenti software vengano automaticamente installati nei client prima della scadenza di un'installazione configurata. Selezionare **Disponibile** per creare una distribuzione degli aggiornamenti software aggiuntiva che gli utenti possano installare da Software Center.  
 
         > [!IMPORTANT]  
-        >  ソフトウェア更新プログラムの展開を作成した後に展開の種類を変更することはできません。  
+        >  Dopo aver creato la distribuzione degli aggiornamenti software, non è possibile modificare successivamente il tipo di distribuzione.  
 
         > [!NOTE]  
-        >  **[必須]** として展開されているソフトウェア更新プログラム グループは、バック グラウンドでダウンロードされ、BITS 設定に従います (構成されている場合)。  
-        > ただし、 **[利用可能]** として展開されているソフトウェア更新プログラム グループは、フォア グラウンドでダウンロードされ、BITS 設定を無視します。  
+        >  Un gruppo di aggiornamenti software distribuito come **Richiesto** verrà scaricato in background e rispetterà le impostazioni BITS, se configurate.  
+        > I gruppi di aggiornamenti software distribuiti come **Disponibile** verranno invece scaricati in primo piano e ignoreranno le impostazioni BITS.  
 
-    -   **展開が必要なときに、Wake-on-LAN を使用してクライアントを起動する**: 期限になったら Wake On LAN を有効にして、展開の 1 つまたは複数のソフトウェア更新プログラムを必要とするコンピューターにウェイクアップ パケットを送信するかどうかを指定します。 スリープ モードのコンピューターは、ソフトウェア更新プログラムのインストールを開始できるように、インストール期限になるとスリープ解除されます。 展開のソフトウェア更新プログラムを必要としないクライアントは起動されません。 既定では、この設定は無効になっており、[ **展開の種類** ] が [ **必須** ] に設定されている場合にのみ使用することができます。  
+    -   **Usa riattivazione LAN per riattivare i client per le distribuzioni richieste**: specificare se abilitare la riattivazione LAN alla scadenza per inviare pacchetti di riattivazione ai computer che richiedono uno o più aggiornamenti software nella distribuzione. Tutti i computer in modalità sospensione all'ora di scadenza dell'installazione verranno riattivati in modo che si possa avviare l'installazione degli aggiornamenti software. I client in modalità sospensione che non richiedono aggiornamenti software nella distribuzione non vengono avviati. Per impostazione predefinita, questa impostazione non viene abilitata ed è disponibile solo quando **Tipo di distribuzione** è impostato su **Richiesto**.  
 
         > [!WARNING]  
-        >  このオプションを使用する前に、コンピューターおよびネットワークを Wake On Lan 用に構成する必要があります。  
+        >  Prima di usare questa opzione, i computer e le reti devono essere configurati per riattivazione LAN.  
 
-    -   **詳細レベル**: クライアント コンピューターによって報告される状態メッセージの詳細レベルを指定します。  
+    -   **Livello dettaglio**: specificare il livello di dettaglio per i messaggi di stato segnalati dai computer client.  
 
-7.  [スケジュール] ページで、次の設定を構成します。  
+7.  Nella pagina Pianificazione, è possibile configurare le seguenti impostazioni:  
 
-    -   **スケジュールの評価**: 使用可能な時間およびインストール期限の時間を UTC と Configuration Manager コンソールを実行するコンピューターのローカル時刻のどちらを使用して評価するかを指定します。  
-
-        > [!NOTE]  
-        >  ローカル時刻を選択し、**[ソフトウェアが使用可能な時間]** または **[インストールの期限]** で **[直ちに]** を選択した場合は、Configuration Manager コンソールを実行しているコンピューターの現在の時刻を使用して、更新プログラムを利用可能にする時間またはクライアントにインストールする時間が評価されます。 クライアントのタイム ゾーンが異なる場合は、クライアントの時刻が評価時刻になったときにこれらのアクションが実行されます。  
-
-    -   **ソフトウェアが使用可能な時間**: 次の設定のいずれかを選んで、クライアントでソフトウェア更新プログラムを利用可能にする時間を指定します。  
-
-        -   **直ちに**: 展開のソフトウェア更新プログラムを直ちにクライアントで実行可能にします。 展開が作成されると、クライアント ポリシーが更新され、クライアントが次回のクライアント ポリシー ポーリング サイクルで展開を認識し、ソフトウェア更新プログラムがインストール可能になります。  
-
-        -   **指定した時間経過後**: 展開のソフトウェア更新プログラムを特定の日時にクライアントで実行可能にします。 展開が作成されると、クライアント ポリシーが更新され、クライアントが次回のクライアント ポリシー ポーリング サイクルで展開を認識します。 ただし、展開のソフトウェア更新プログラムは、指定した日付と時刻になるまで、インストールに使用できません。  
-
-    -   **インストールの期限**: 次の設定のいずれかを選んで、展開のソフトウェア更新プログラムのインストール期限を指定します。  
+    -   **Pianificazione valutazione**: specificare se il tempo disponibile e le scadenze dell'installazione sono valutate in base all'ora UTC o all'ora locale del computer su cui è in esecuzione la console di Configuration Manager.  
 
         > [!NOTE]  
-        >  インストール期限の設定を構成できるのは、[展開設定] ページで [展開の種類 **** ] が [必須 **** ] に設定されている場合のみです。  
+        >  Quando si seleziona l'ora locale e quindi si sceglie **Appena possibile** per **Tempo disponibile software** o **Scadenza installazione**, per valutare quando sono disponibili aggiornamento o quando vengono installati in un client, viene usata l'ora corrente del computer che esegue la console di Configuration Manager. Se il client si trova in un fuso orario diverso, verranno eseguite le azioni seguenti quando l'ora del client raggiunge quella impostata per la valutazione.  
 
-        -   **直ちに**: 展開のソフトウェア更新プログラムを直ちに自動インストールします。  
+    -   **Tempo disponibile software**: selezionare una delle seguenti impostazioni per specificare quando gli aggiornamenti del software saranno disponibili per i client:  
 
-        -   **指定した時間経過後**: 展開のソフトウェア更新プログラムを特定の日時に自動インストールします。  
+        -   **Appena possibile**: selezionare questa impostazione per rendere disponibili il prima possibile gli aggiornamenti software nella distribuzione per i client. Quando si crea la distribuzione, i criteri client vengono aggiornati, ai client viene comunicata la distribuzione nel successivo ciclo di polling dei criteri client e, quindi, gli aggiornamenti software sono disponibili per l'installazione.  
+
+        -   **Orario specifico**: selezionare questa impostazione per rendere disponibili gli aggiornamenti software nella distribuzione per i client in una data e a un orario specifici. Quando si crea la distribuzione, i criteri client vengono aggiornati e ai client viene comunicata la distribuzione nel successivo ciclo di polling dei criteri client. Tuttavia, gli aggiornamenti del software nella distribuzione non saranno disponibili per l'installazione prima della data e dell'orario specificati.  
+
+    -   **Scadenza installazione**: selezionare una delle seguenti impostazioni per specificare la scadenza per l'installazione degli aggiornamenti software nella distribuzione.  
 
         > [!NOTE]  
-        >  実際のインストール期限は、構成された特定の時刻に 2 時間までの任意の時間が加えられた時刻になります。 そのようにすることで、ターゲット コレクションのすべてのクライアント コンピューターで、同時に展開のソフトウェア更新プログラムがインストールされないようにしています。  
+        >  È possibile configurare l'impostazione della scadenza dell'installazione solo quando **Tipo di distribuzione** è impostato su **Richiesta** nella pagina Impostazioni distribuzione.  
+
+        -   **Appena possibile**: selezionare questa impostazione per installare automaticamente gli aggiornamenti software nella distribuzione appena possibile.  
+
+        -   **Orario specifico**: selezionare questa impostazione per installare automaticamente gli aggiornamenti software nella distribuzione in una data e a un orario specifici.  
+
+        > [!NOTE]  
+        >  L'orario di scadenza dell'installazione effettivo corrisponde all'orario specifico configurato più una quantità di tempo casuale di massimo 2 ore. Ciò consente di ridurre il potenziale impatto di un'installazione simultanea degli aggiornamenti software nella distribuzione da parte di tutti i computer client nella raccolta di destinazione.  
         >   
-        >  **[コンピューター エージェント]** クライアント設定で **[期限のランダム化を無効にする]** を構成して、必要なソフトウェア更新プログラムのインストールの遅延のランダム化を無効にできるようになっています。 詳細については、「 [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent)」をご覧ください。  
+        >  È possibile configurare l'impostazione **Disabilitare sequenza casuale scadenza** del client **Agente computer** per disabilitare il ritardo della sequenza casuale di installazione per gli aggiornamenti software richiesti. Per altre informazioni, vedere [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
 
-8.  [ユーザー側の表示と操作] ページで、次の設定を構成します。  
+8.  Nella pagina Esperienza utente, è possibile configurare le seguenti impostazioni:  
 
-    -   **ユーザーへの通知**: 構成された **[ソフトウェアが使用可能な時間]** に、クライアント コンピューターでソフトウェア センターにソフトウェア更新プログラムの通知を表示するかどうか、またユーザーへの通知をクライアント コンピューターで表示するかどうかを指定します。 [展開設定] ページで [展開の種類 **** ] が [利用可能 **** ] に設定されている場合、[すべての通知をソフトウェア センターで非表示にし、ユーザーにも通知しない ****] を選択することはできません。  
+    -   **Notifiche utente**: specificare se visualizzare la notifica degli aggiornamenti software in Software Center sul computer client in base al **Tempo disponibile software** configurato e se visualizzare le notifiche utente sui computer client. Quando **Tipo di distribuzione** è impostato su **Disponibile** nella pagina Impostazioni distribuzione, non è possibile selezionare **Nascondi in Software Center e nascondi tutte le notifiche**.  
 
-    -   **期限に達したときの操作**: *[展開設定] ページで* ***[展開の種類]** が **[必須]** に設定されている場合にのみ使用できます*。   
-    ソフトウェア更新プログラムの展開の期限に達したときに実行する操作を指定します。 展開のソフトウェア更新プログラムをインストールするかどうかを指定します。 また、構成されたメンテナンス期間に関係なく、ソフトウェア更新プログラムのインストール後に、システムの再起動を実行するかどうかを指定します。 メンテナンス期間について詳しくは、「[メンテナンス期間を使用する方法](../../core/clients/manage/collections/use-maintenance-windows.md)」を参照してください。  
+    -   **Comportamento scadenza**: *disponibile solo quando **Tipo di distribuzione** *è impostato su **Richiesto**  *nella pagina Impostazioni distribuzione.*   
+    specificare il comportamento che deve verificarsi quando si raggiunge la data di scadenza per la distribuzione degli aggiornamenti software. Specificare se installare gli aggiornamenti software nella distribuzione. Inoltre, specificare se eseguire un riavvio del sistema dopo l'installazione dell'aggiornamento software indipendentemente da una finestra di manutenzione configurata. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
-    -   **デバイスの再起動**: *[展開設定] ページで* ***[展開の種類]** が **[必須]** に設定されている場合にのみ使用できます*。    
-    ソフトウェア更新プログラムをインストールした後にサーバーおよびワークステーションでシステムの再起動を抑制するかどうか、また、インストールを完了するためにシステムの再起動が必要かどうかを指定します。  
+    -   **Comportamento riavvio dispositivo**: *disponibile solo quando **Tipo di distribuzione** *è impostato su **Richiesto** *nella pagina Impostazioni distribuzione.*    
+    specificare se evitare un riavvio del sistema su server e workstation dopo l'installazione degli aggiornamenti software e se è richiesto un riavvio del sistema per completare l'installazione.  
 
         > [!IMPORTANT]  
-        >  システムの再起動を抑制することは、サーバー環境や、ソフトウェア更新プログラムをインストールするコンピューターを、既定では再起動しない場合に役立ちます。 ただし、この場合、コンピューターが安全ではない状態のままになることがあります。一方、強制的に再起動すると、ソフトウェア更新プログラムのインストールをすぐに完了できます。
+        >  L'inibizione dei riavvii del sistema può essere utile negli ambienti server o nei casi in cui non si desidera che i computer sui quali si stanno installando gli aggiornamenti software vengano riavviati per impostazione predefinita. Tuttavia, tale soluzione potrebbe lasciare i computer in uno stato non protetto, mentre un riavvio forzato assicura il completamento immediato dell'installazione degli aggiornamenti software.
 
-    -   **Windows Embedded デバイスに対してフィルター処理を書き込む**: 書き込みフィルターが有効にされた Windows Embedded デバイスにソフトウェア更新プログラムを展開するときに、ソフトウェア更新プログラムを一時オーバーレイにインストールし、変更を後でコミットするか、インストール期限またはメンテナンス期間中に変更をコミットするかを指定できます。 インストールの期限またはメンテナンス期間中に変更をコミットする場合は、再起動が必要になります。再起動すると、デバイスに変更が保持されます。  
+    -   **Gestione filtri di scrittura per dispositivi con Windows Embedded**: quando si distribuiscono aggiornamenti software in dispositivi con Windows Embedded abilitati per i filtri di scrittura, è possibile specificare di installare l'aggiornamento software nella sovrapposizione temporanea e di confermare le modifiche in seguito oppure alla scadenza dell'installazione o all'interno di una finestra di manutenzione. Quando si confermano le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario il riavvio per mantenere le modifiche nel dispositivo.  
 
         > [!NOTE]  
-        >  ソフトウェア更新プログラムを Windows Embedded デバイスに展開する場合、デバイスが、メンテナンス期間が構成されたコレクションのメンバーであることを確認します。  
+        >  Quando si distribuisce un aggiornamento software in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta che dispone di una finestra di manutenzione configurata.  
 
-    - **再起動後のソフトウェア更新プログラムの展開の再評価動作**: Configuration Manager バージョン 1606 で開始した場合は、この設定を選択してソフトウェア更新プログラムの展開を構成します。これにより、クライアントはソフトウェア更新プログラムをインストールして再起動した後すぐに、ソフトウェア更新プログラムのコンプライアンス対応スキャンを実行するようになります。 これにより、クライアントは、クライアントの再起動後に適用可能になる追加のソフトウェア更新プログラムをチェックして、同じメンテナンス期間中にそれらをインストール (およびコンプライアンスに準拠) できます。
+    - **Comportamento di rivalutazione della distribuzione degli aggiornamenti software al riavvio**: a partire da Configuration Manager versione 1606, selezionare questa impostazione per configurare le distribuzioni degli aggiornamenti software in modo che i client eseguano un'analisi della conformità degli aggiornamenti software immediatamente dopo l'installazione degli aggiornamenti software e il riavvio. In questo modo, il client controlla la presenza di aggiornamenti software aggiuntivi che diventano applicabili dopo il riavvio e che possono quindi essere installati (e resi conformi) durante la stessa finestra di manutenzione.
 
-9. [アラート] ページで、Configuration Manager および System Center Operations Manager がこの展開のアラートを生成する方法を構成します。 アラートを構成できるのは、[展開設定] ページで [展開の種類 **** ] が [必須 **** ] に設定されている場合のみです。  
-
-    > [!NOTE]  
-    >  ソフトウェア更新プログラムに関する最新のアラートは、[ソフトウェア ライブラリ **** ] ワークスペースの [ソフトウェア更新プログラム **** ] ノードで確認することができます。  
-
-10. [ダウンロードの設定] ページで、次の設定を構成します。  
-
-    - クライアントが低速ネットワークに接続している場合、または、代替のコンテンツの場所を使用している場合に、クライアントでソフトウェア更新プログラムをダウンロードしてインストールするかどうかを指定します。  
-
-    - ソフトウェア更新プログラムのコンテンツが優先配布ポイントにない場合に、クライアントでソフトウェア更新プログラムを代替の配布ポイントからダウンロードしてインストールするかどうかを指定します。  
-
-    - **同じサブネットにある他のクライアントとのコンテンツの共有を許可する**: コンテンツのダウンロードで BranchCache の使用を有効にするかどうかを指定します。 BranchCache について詳しくは、「[コンテンツ管理の基本的な概念](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache)」を参照してください。  
-
-    - **If software updates are not available on distribution point in current, neighbor or site groups, download content from Microsoft Updates \(現在、近隣、またはサイト グループの配布ポイントでソフトウェア更新プログラムを利用できない場合は、Microsoft 更新プログラムからコンテンツをダウンロードします\)**: 配布ポイントでソフトウェア更新プログラムを利用できない場合に、イントラネットに接続されているクライアントで Microsoft 更新プログラムからソフトウェア更新プログラムをダウンロードする場合は、この設定を選択します。 インターネット ベースのクライアントは、ソフトウェア更新プログラムのコンテンツを取得するために Microsoft 更新プログラムにいつでも移動することができます。
-
-    - クライアントで従量制のインターネット接続を使用している場合に、インストール期限後にクライアントでのダウンロードを許可するかどうかを指定します。 インターネット プロバイダーは、従量制インターネット接続を使用しているときに送受信したデータ量に基づいて課金することがあります。  
+9. Nella pagina Avvisi configurare la modalità in cui Configuration Manager e System Center Operations Manager genereranno gli avvisi relativi alla distribuzione. È possibile configurare gli avvisi solo quando **Tipo di distribuzione** è impostato su **Richiesta** nella pagina Impostazioni distribuzione.  
 
     > [!NOTE]  
-    >  クライアントは、展開のソフトウェア更新プログラムの管理ポイントからコンテンツの場所を要求します。 ダウンロードの動作は、配布ポイント、展開パッケージ、このページの設定の構成によって異なります。 詳細については、「 [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md)」をご覧ください。  
+    >  È possibile riesaminare gli avvisi recenti sugli aggiornamenti software dal nodo **Aggiornamenti software** nell'area di lavoro **Raccolta software** .  
 
-11. 「 [手順 3: ソフトウェア更新プログラム グループのコンテンツをダウンロードする](#BKMK_3DownloadContent)」を実行している場合、[展開パッケージ]、[配布ポイント]、[言語の選択] の各ページは表示されず、ウィザードの手順 15 に進むことができます。  
+10. Nella pagina Impostazioni download, configurare le seguenti impostazioni:  
+
+    - Specificare se il client scaricherà e installerà gli aggiornamenti software durante una connessione a una rete lenta o mentre usa un percorso di fallback per il contenuto.  
+
+    - Specificare se il client dovrà scaricare e installare gli aggiornamenti software da un punto di distribuzione di fallback nel caso in cui il contenuto per tali aggiornamenti non fosse disponibile su un punto di distribuzione preferito.  
+
+    - **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'uso di BranchCache per il download del contenuto. Per altre informazioni su BranchCache, vedere [Concetti di base per la gestione dei contenuti](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
+
+    - **Se gli aggiornamenti software non sono disponibili nel punto di distribuzione nei gruppi correnti, adiacenti o del sito, scaricare il contenuto da Microsoft Updates**: selezionare questa impostazione in modo che i client connessi alla intranet scarichino gli aggiornamenti software da Microsoft Update se non sono disponibili nei punti di distribuzione. I client basati su Internet possono sempre passare a Microsoft Update per il contenuto degli aggiornamenti software.
+
+    - Specificare se consentire ai client di eseguire il download dopo una scadenza dell'installazione quando usano connessioni Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati in entrata e in uscita quando si usa una connessione Internet a consumo.  
+
+    > [!NOTE]  
+    >  I client richiedono il percorso del contenuto da un punto di gestione per gli aggiornamenti software in una distribuzione. Il comportamento di download dipende dalla configurazione del punto di distribuzione, del pacchetto di distribuzione e delle impostazioni in questa pagina. Per altre informazioni, vedere [Content source location scenarios](../../core/plan-design/hierarchy/content-source-location-scenarios.md).  
+
+11. Se si è eseguito il [Passaggio 3: Scaricare il contenuto per il gruppo di aggiornamenti software](#BKMK_3DownloadContent), le pagine Pacchetto di distribuzione, Punti di distribuzione e Selezione lingua non saranno visualizzate e sarà possibile procedere al passaggio 15 della procedura guidata.  
 
     > [!IMPORTANT]  
-    >  サイト サーバーのコンテンツ ライブラリに事前にダウンロードしたソフトウェア更新プログラムは、再度ダウンロードされません。 ソフトウェア更新プログラムの新しい展開パッケージを作成した場合でも同様です。 すべてのソフトウェア更新プログラムが既にダウンロードされている場合、ウィザードは [言語の選択 **** ] ページ (手順 15) に進みます。  
+    >  Gli aggiornamenti software precedentemente scaricati nella raccolta contenuto sul server del sito non vengono scaricati nuovamente. Questo vale anche quando si crea un nuovo pacchetto di distribuzione per gli aggiornamenti software. Se tutti gli aggiornamenti software sono stati già scaricati in precedenza, la procedura guidata passa alla pagina **Selezione lingua** (passaggio°15).  
 
-12. [展開パッケージ] ページで、既存の展開パッケージを選択するか、または、次の設定を構成して新しい展開パッケージを指定します。  
+12. Nella pagina del Pacchetto di distribuzione, selezionare un pacchetto di distribuzione esistente o configurare le seguenti impostazioni per specificare un nuovo pacchetto di distribuzione:  
 
-    1.  **名前**: 展開パッケージの名前を指定します。 これは、パッケージの内容を説明する一意の名前にする必要があります。 使用できる文字数は最大で 50 文字です。  
+    1.  **Nome**: specificare il nome del pacchetto di distribuzione. Deve essere un nome univoco che descrive il contenuto del pacchetto. Deve essere lungo massimo 50 caratteri.  
 
-    2.  **説明**: 展開パッケージに関する情報を示す説明を指定します。 説明に使用できる文字数は、最大で 127 文字です。  
+    2.  **Descrizione**: specificare una descrizione che fornisca informazioni sul pacchetto di distribuzione. La descrizione deve contenere un massimo di 127 caratteri.  
 
-    3.  **パッケージ ソース**: ソフトウェア更新プログラムのソース ファイルの場所を指定します。  ソースの場所に対応するネットワーク パス (例: **\\\server\sharename\path**) を入力するか、 **[参照]** をクリックして、該当するネットワークの場所を見つけます。 次のページに進む前に、展開パッケージのソース ファイル用の共有フォルダーを作成する必要があります。  
+    3.  **Origine pacchetto**: specificare il percorso dei file di origine dell'aggiornamento software.  Digitare un percorso di rete per il percorso di origine, ad esempio **\\\server\nomecondivisione\percorso**oppure fare clic su **Sfoglia** per trovare il percorso di rete. Prima di procedere alla pagina successiva, è necessario creare la cartella condivisa per i file di origine del pacchetto di distribuzione.  
 
         > [!NOTE]  
-        >  指定する展開パッケージのソースの場所を他のソフトウェア展開パッケージで使用することはできません。  
+        >  Il percorso di origine del pacchetto di distribuzione specificato non può essere usato da un altro pacchetto di distribuzione software.  
 
         > [!IMPORTANT]  
-        >  SMS プロバイダー コンピューター アカウントと、ウィザードを実行してソフトウェア更新プログラムをダウンロードするユーザーには、ダウンロード先に対する **書き込み** NTFS アクセス許可が必要です。 ソフトウェア更新プログラムのソース ファイルを攻撃者が改ざんするリスクを減らすため、ダウンロード先へのアクセスを注意深く制限する必要があります。  
+        >  L'account computer del provider SMS e l'utente che esegue la procedura guidata per scaricare gli aggiornamenti software devono disporre entrambi delle autorizzazioni NTFS di **Scrittura** nel percorso download. È necessario limitare con attenzione l'accesso al percorso download per ridurre il rischio di manomissioni da parte di utenti malintenzionati dei file origine degli aggiornamenti software.  
 
         > [!IMPORTANT]  
-        >  Configuration Manager によって展開パッケージが作成された後で、展開パッケージのプロパティで、パッケージ ソースの場所を変更できます。 ソースの場所を変更する場合、最初に、元のパッケージ ソースから新しいパッケージ ソースの場所にコンテンツをコピーする必要があります。  
+        >  È possibile modificare il percorso di origine del pacchetto nelle proprietà del pacchetto di distribuzione dopo che Configuration Manager ha creato il pacchetto di distribuzione. Ma in tal caso, è prima necessario copiare il contenuto dall'origine del pacchetto originale nel nuovo percorso di origine del pacchetto.  
 
-    4.  **送信の優先順位**: 展開パッケージの送信の優先順位を指定します。 Configuration Manager は、展開パッケージを配布ポイントに送信するときに、展開パッケージの送信の優先順位を使用します。 展開パッケージは優先順位に従って送信されます。[高]、[中]、[低] の順です。 パッケージの優先順位が同じ場合は、作成された順に送信されます。 バックログがない場合、パッケージは優先順位に関係なく直ちに処理されます。  
+    4.  **Priorità di invio**: specificare la priorità di invio per il pacchetto di distribuzione. Configuration Manager usa la priorità di invio quando invia il pacchetto di distribuzione ai punti di distribuzione. I pacchetti di distribuzione vengono inviati in ordine di priorità: Alta, Media o Bassa. I pacchetti con priorità identiche vengono inviati nell'ordine in cui sono stati creati. Se non esiste nessun backlog, il pacchetto eseguirà l'elaborazione immediatamente indipendentemente dalla relativa priorità.  
 
-13. [配布ポイント] ページで、ソフトウェア更新ファイルをホストする配布ポイントまたは配布ポイント グループを指定します。 配布ポイントの詳細については、「[配布ポイントの構成](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs)」を参照してください。  
+13. Nella pagina Punti di distribuzione, specificare i punti di distribuzione o i gruppi dei punti di distribuzione che ospiteranno i file di aggiornamento software. Per altre informazioni sui punti di distribuzione, vedere [Configurazioni dei punti di distribuzione](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs).  
 
-14. [ダウンロード先] ページで、ソフトウェア更新ファイルをインターネットとローカル ネットワークのどちらからダウンロードするかを指定します。 次の設定を構成します。  
+14. Nella pagina Percorso download, specificare se scaricare i file di aggiornamento software da Internet o dalla rete locale. Configurare le seguenti impostazioni:  
 
-    -   **インターネットからソフトウェア更新プログラムをダウンロードする**: ソフトウェア更新プログラムを、指定したインターネット上の場所からダウンロードします。 既定では、この設定は有効になっています。  
+    -   **Scarica aggiornamenti software da Internet**: selezionare questa impostazione per scaricare gli aggiornamenti software da un percorso specificato su Internet. Questa opzione è attivata per impostazione predefinita.  
 
-    -   **ネットワーク上の場所からソフトウェア更新プログラムをダウンロードする**: ソフトウェア更新プログラムを、ローカル フォルダーまたは共有ネットワーク フォルダーからダウンロードします。 ウィザードを実行するコンピューターからインターネットにアクセスできない場合は、この設定が役立ちます。 ソフトウェア更新プログラムは、インターネットにアクセス可能な任意のコンピューターから事前にダウンロードし、後でインストールするときにアクセスするローカル ネットワーク上の場所に保存できます。  
+    -   **Scarica aggiornamenti software da un percorso sulla rete locale**: selezionare questa impostazione per scaricare gli aggiornamenti software da una cartella locale o una cartella di rete condivisa. Questa impostazione è utile quando il computer che esegue la procedura guidata non dispone di accesso a Internet. Gli aggiornamenti software possono essere scaricati preventivamente da qualsiasi computer con accesso a Internet e memorizzati sulla rete locale per poi accedervi per l'installazione.  
 
-15. [言語の選択] ページで、選択したソフトウェア更新プログラムをダウンロードする言語を選択します。 ソフトウェア更新プログラムは、選択した言語で利用できる場合にのみダウンロードされます。 言語固有でないソフトウェア更新プログラムは、常にダウンロードされます。 既定では、ソフトウェアの更新ポイントのプロパティで構成した言語がウィザードで選択されます。 次のページに進む前に、言語を少なくとも 1 つ選択する必要があります。 ソフトウェア更新プログラムでサポートされていない言語のみを選択した場合、ソフトウェア更新プログラムのダウンロードは失敗します。  
+15. Nella pagina Selezione lingua selezionare le lingue per cui vengono scaricati gli aggiornamenti software selezionati. Gli aggiornamenti software vengono scaricati solo se sono disponibili nelle lingue selezionate. Gli aggiornamenti software non specifici per la lingua vengono sempre scaricati. Per impostazione predefinita, la procedura guidata consente di selezionare le lingue configurate nelle proprietà del punto di aggiornamento software. Prima di procedere alla pagina successiva, è necessario selezionare almeno una lingua. Quando si selezionano solo lingue non supportate da un aggiornamento software, il download dell'aggiornamento software avrà esito negativo.  
 
-16. [要約] ページで、設定を確認します。 設定を展開テンプレートに保存するには、[テンプレートとして保存 ****] をクリックし、名前を入力してテンプレートに含める設定を選択し、[保存 ****] をクリックします。 構成されている設定を変更するには、関連するウィザード ページをクリックして、設定を変更します。  
+16. Nella pagina Riepilogo, esaminare le impostazioni. Per salvare le impostazioni in un modello di distribuzione, fare clic su **Salva come modello**, immettere un nome e selezionare le impostazioni da includere nel modello, quindi fare clic su **Salva**. Per modificare un'impostazione configurata, fare clic sulla pagina della procedura guidata associata e modificare l'impostazione.  
 
     > [!WARNING]  
-    >  テンプレート名は、英数字の ASCII 文字と、 **\\** (円記号) または **‘** (一重引用符) で構成されます。  
+    >  Il nome modello può essere composto da caratteri ASCII alfanumerici così come da **\\** (barra rovesciata) o **‘** (virgoletta singola).  
 
-17. ソフトウェア更新プログラムを展開するには、[次へ **** ] をクリックします。  
+17. Fare clic su **Avanti** per distribuire l'aggiornamento software.  
 
- ウィザードを完了すると、Configuration Manager でソフトウェア更新プログラムがサイト サーバーのコンテンツ ライブラリにダウンロードされ、構成済みの配布ポイントに配布されて、ターゲット コレクション内のクライアントにソフトウェア更新プログラム グループが展開されます。 展開プロセスの詳細については、「 [Software update deployment process](../understand/software-updates-introduction.md#BKMK_DeploymentProcess)」を参照してください。
+ Dopo aver completato la procedura guidata, Configuration Manager scarica gli aggiornamenti software nella raccolta contenuto sul server del sito, distribuisce gli aggiornamenti software nei punti di distribuzione configurati e quindi distribuisce il gruppo di aggiornamento software nei client della raccolta di destinazione. Per altre informazioni sul processo di distribuzione, vedere [Software update deployment process](../understand/software-updates-introduction.md#BKMK_DeploymentProcess).
 
-## <a name="next-steps"></a>次のステップ
-[ソフトウェア更新プログラムの監視](monitor-software-updates.md)
+## <a name="next-steps"></a>Passaggi successivi
+[Monitorare gli aggiornamenti software](monitor-software-updates.md)

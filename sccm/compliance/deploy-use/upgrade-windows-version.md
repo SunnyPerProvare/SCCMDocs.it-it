@@ -1,6 +1,6 @@
 ---
-title: "Configuration Manager を利用し、Windows デバイスを別のバージョンにアップグレードする | Microsoft Docs"
-description: "Configuration Manager を利用し、Windows 10 Desktop、Windows 10 Mobile、Windows 10 Holographic を実行するデバイスを自動的に別のエディションにアップグレードします。"
+title: Aggiornare i dispositivi Windows a una versione differente con Configuration Manager | Microsoft Docs
+description: Aggiornare i dispositivi che eseguono Windows 10 Desktop, Windows 10 Mobile, o Windows 10 Holographic a un'edizione differente con Configuration Manager.
 ms.custom: na
 ms.date: 07/31/2017
 ms.prod: configuration-manager
@@ -18,83 +18,83 @@ manager: angrobe
 ms.openlocfilehash: cd8c644d07dab0010dc211df8ce4f2dc6e1fa7ae
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="upgrade-windows-devices-with-the-edition-upgrade-policy-in-system-center-configuration-manager"></a>System Center Configuration Manager でエディションのアップグレード ポリシーを使用して、Windows デバイスをアップグレードする
+# <a name="upgrade-windows-devices-with-the-edition-upgrade-policy-in-system-center-configuration-manager"></a>Aggiornare i dispositivi Windows con i criteri di aggiornamento edizione in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-System Center Configuration Manager **エディションのアップグレード ポリシー**を使用して、次に挙げる Windows 10 のバージョンのいずれかを実行するデバイスを自動的に別のエディションにアップグレードできます。
+I **criteri di aggiornamento edizione** di System Center Configuration Manager consentono di aggiornare automaticamente i dispositivi che eseguono una delle versioni seguenti di Windows 10 a un'edizione differente:
 
 - Windows 10 Desktop
 - Windows 10 Mobile
 <!-- - Windows 10 Holographic -->
 
-次のアップグレード パスがサポートされます。
+Sono supportati i percorsi di aggiornamento seguenti:
 
-- Windows 10 Pro から Windows 10 Enterprise
-- Windows 10 Home から Windows 10 Education
-- Windows 10 Mobile から Windows 10 Mobile Enterprise
+- Da Windows 10 Pro a Windows 10 Enterprise
+- Da Windows 10 Home a Windows 10 Education
+- Da Windows 10 Mobile a Windows 10 Mobile Enterprise
 <!-- - From Windows 10 Holographic Pro to Windows 10 Holographic Enterprise -->
 
-デバイスは Microsoft Intune に登録するか、Configuration Manager クライアント ソフトウェアを実行する必要があります。 現在、このポリシーは、オンプレミス MDM で管理されている PC と互換性はありません。
+I dispositivi devono essere registrati in Microsoft Intune o eseguire il software client di Configuration Manager. Questo criterio non è attualmente compatibile con i PC gestiti mediante MDM locale.
 
-## <a name="before-you-start"></a>アップグレードを開始する前に  
- デバイスを最新バージョンにアップグレードし始める前に、次のいずれかを用意する必要があります。  
+## <a name="before-you-start"></a>Prima di iniziare  
+ Prima di iniziare l'aggiornamento dei dispositivi alla versione più recente, è necessario uno degli elementi seguenti:  
 
--   ポリシーで対象とするすべてのデバイスに新しいバージョンの Windows をインストールするための有効なプロダクト キー (デスクトップ オペレーティング システムの場合)  
+-   Un codice Product Key valido per installare la nuova versione di Windows in tutti i dispositivi a cui sono destinati i criteri (per sistemi operativi desktop)  
 
--   ポリシーで対象とするすべてのデバイスに新しいバージョンの Windows をインストールするためのライセンス情報を含む、Microsoft からのライセンス ファイル (Windows 10 Mobile<!-- and Windows 10 Holographic-->の場合)。
+-   Un file di licenza da Microsoft che contiene le informazioni sulle licenze per installare la nuova versione di Windows in tutti i dispositivi a cui sono destinati i criteri (per Windows 10 Mobile<!-- and Windows 10 Holographic-->).
 
-- この種類のポリシーを作成して展開するには、Configuration Manager の**完全な権限を持つ管理者**のセキュリティ ロールが割り当てられている必要があります。
+- Per creare e distribuire questo tipo di criteri, è necessario aver assegnato il ruolo di sicurezza **amministratore completo** di Configuration Manager.
 
-## <a name="configure-the-edition-upgrade-policy"></a>エディションのアップグレード ポリシーを構成する  
+## <a name="configure-the-edition-upgrade-policy"></a>Configurare i criteri di aggiornamento edizione  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[コンプライアンス設定]** > **[Windows 10 エディションのアップグレード]** の順にクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Assets e conformità** > **Impostazioni di conformità** > **Aggiornamento edizione di Windows 10**.  
 
-3.  **[ホーム]** タブの **[作成]** グループで、 **[エディション アップグレード ポリシーの作成]**をクリックします。  
+3.  Nel gruppo **Crea** della scheda **Home** fare clic su **Crea criteri aggiornamento edizione**.  
 
-4.  **[ポリシーを作成する]**をクリックします。  
+4.  Fare clic su **Crea criterio**.  
 
-5.  **エディション アップグレード ポリシーの作成ウィザード** の **[全般]**ページで、次の情報を指定します。  
+5.  Nella pagina **Generale** della **Creazione guidata criteri aggiornamento edizione**specificare le informazioni seguenti:  
 
-    -   **名前** - エディションのアップグレード ポリシーの名前を入力します。  
+    -   **Nome** - Immettere un nome per i criteri di aggiornamento edizione.  
 
-    -   **説明** (省略可能) - 必要に応じて、Intune コンソールでの識別に役立つポリシーの説明を入力します。  
+    -   **Descrizione** (facoltativo) - Immettere facoltativamente una descrizione per i criteri che consenta di identificarli nella console di Intune.  
 
-    -   **デバイスのアップグレード先の SKU** - 対象のデバイスのアップグレード先となる Windows 10 Desktop、<!-- Windows 10 Holographic,-->、または Windows 10 Mobile のバージョンをドロップダウン リストから選びます。  
+    -   **SKU per aggiornare il dispositivo a**: nell'elenco a discesa selezionare la versione di Windows 10 Desktop, <!-- Windows 10 Holographic,--> o Windows 10 Mobile a cui aggiornare i dispositivi specificati.  
 
-    -   **ライセンス情報** - 次のいずれかを選びます。  
+    -   **Informazioni di licenza** - Selezionare una delle opzioni seguenti:  
 
-        -   **プロダクト キー** - Windows 10 Desktop オペレーティング システムを実行する対象デバイスをアップグレードするために使用する、Windows 10 の有効なプロダクト キーを入力します。  
+        -   **Codice Product Key** - Immettere un codice Product Key di Windows 10 valido che verrà usato per seguire l'aggiornamento dei dispositivi specificati che eseguono sistemi operativi Windows 10 Desktop.  
 
             > [!NOTE]  
-            >  プロダクト キーを含むポリシーを作成した後でプロダクト キーを編集することはできません。 これは、セキュリティ上の理由からキーが隠されるためです。 プロダクト キーを変更するには、キー全体を再入力する必要があります。  
+            >  Dopo aver creato criteri che contengono un codice Product Key, non è possibile modificare il codice Product Key in un secondo momento, perché il codice viene nascosto per motivi di sicurezza. Per modificare il codice Product Key, è necessario immettere nuovamente l'intero codice.  
 
-        -   **ライセンス ファイル** - **[参照]** をクリックし、<!--Windows 10 Holographic and -->Windows 10 Mobile のオペレーティング システムを実行する対象デバイスをアップグレードするために使用する XML 形式の正しいライセンス ファイルを選びます。  
+        -   **File di licenza**: fare clic su **Sfoglia** per selezionare un file di licenza valido in formato XML che verrà usato per aggiornare i dispositivi specificati che eseguono sistemi operativi <!--Windows 10 Holographic and -->Windows 10 Mobile.  
 
-6.  ウィザードを完了します。  
+6.  Completare la procedura guidata.  
 
-新しいポリシーは、 **[資産とコンプライアンス]** ワークスペースの **[Windows 10 エディション アップグレード]** ノードに表示されます。  
+I nuovi criteri verranno visualizzati nel nodo **Aggiornamento edizione Windows 10** dell'area di lavoro **Asset e conformità** .  
 
-## <a name="deploy-the-edition-upgrade-policy"></a>エディションのアップグレード ポリシーを展開する  
+## <a name="deploy-the-edition-upgrade-policy"></a>Distribuire i criteri di aggiornamento edizione  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[コンプライアンス設定]** > **[Windows 10 エディションのアップグレード]** の順にクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Assets e conformità** > **Impostazioni di conformità** > **Aggiornamento edizione di Windows 10**.  
 
-3.  展開する Windows 10 のエディションのアップグレード ポリシーを選び、 **[ホーム]** タブの **[展開]** グループで **[展開]**をクリックします。  
+3.  Selezionare i criteri di aggiornamento edizione Windows 10 da distribuire e quindi nel gruppo **Distribuzione** della scheda **Home** fare clic su **Distribuisci**.  
 
-4.  **[Windows 10 エディション アップグレードの展開]** ダイアログ ボックスで、ポリシーを展開するコレクションと、ポリシーを評価するスケジュールを選択し、**[OK]**をクリックします。 Configuration Manager クライアントで管理されている PC の場合は、デバイス コレクションにポリシーを展開する必要があります。 Intune で登録されている PC の場合は、ユーザーまたはデバイス コレクションにポリシーを展開できます。 
+4.  Nella finestra di dialogo **Distribuisci aggiornamento edizione Windows 10** scegliere la raccolta di utenti o dispositivi a cui distribuire i criteri e la pianificazione per la valutazione dei criteri, quindi fare clic su **OK**. Per i PC gestiti con il client di Configuration Manager, è necessario distribuire i criteri a una raccolta di dispositivi. Per i PC registrati con Intune, è possibile distribuire i criteri a una raccolta di utenti o di dispositivi. 
 
 
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>Passaggi successivi
 
-**[監視]** ワークスペースの **[展開]** ノードから、作成したばかりの展開を監視すると、展開が次のように失敗したことを示すエラーが表示されることがあります。
-- **このデバイスには該当しません**
-- **データ型を変換できませんでした**
+Quando si monitora la distribuzione creata dal nodo **Distribuzioni** dell'area di lavoro **Monitoraggio**, è possibile che vengano visualizzati errori indicanti che la distribuzione non è riuscita, ad esempio:
+- **Non applicabile per questo dispositivo**
+- **Conversione tipo di dati non riuscita**
 
-これらのエラーは、展開が失敗したことを意味しているわけではありません。 対象の PC で、アップグレードが正常に実行されたことを確認してください。
+Questi errori non indicano che la distribuzione non è riuscita. Verificare nel PC di destinazione che l'aggiornamento sia stato completato correttamente.
 
-ポリシーが対象の Windows PC に到達し、評価されると、アップグレードを適用するために PC が 2 時間以内に再起動します。 ポリシーを展開するすべてのユーザーに通知するか、ポリシーの実行をユーザーの業務時間外にスケジュール設定します。
+Quando i criteri raggiungono un PC Windows specificato e vengono valutati, il PC viene riavviato entro due ore per applicare l'aggiornamento. Informare tutti gli utenti interessati dalla distribuzione dei criteri o pianificare la distribuzione dei criteri in ore non lavorative.

@@ -1,6 +1,6 @@
 ---
-title: "証明書プロファイルのセキュリティとプライバシー | Microsoft Docs"
-description: "System Center Configuration Manager でユーザーとデバイスの証明書プロファイルを管理する場合のセキュリティのベスト プラクティスについて説明します。"
+title: Privacy e sicurezza per i profili certificato | Microsoft Docs
+description: Informazioni sulle procedure di sicurezza consigliate per gestire i profili certificato per utenti e dispositivi in System Center Configuration Manager.
 ms.custom: na
 ms.date: 12/28/2016
 ms.prod: configuration-manager
@@ -18,32 +18,32 @@ manager: angrobe
 ms.openlocfilehash: c51787ad3fa0bdb285017cfab1ca6931afba9ea6
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-certificate-profiles-in-system-center-configuration-manager"></a>System Center Configuration Manager の証明書プロファイルのセキュリティとプライバシー
+# <a name="security-and-privacy-for-certificate-profiles-in-system-center-configuration-manager"></a>Sicurezza e privacy per i profili certificato in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-##  <a name="security-best-practices-for-certificate-profiles"></a>証明書プロファイルのセキュリティ ベスト プラクティス  
- ユーザーとデバイスの証明書プロファイルを管理する場合は、次のセキュリティ ベスト プラクティスを使用してください。  
+##  <a name="security-best-practices-for-certificate-profiles"></a>Procedure consigliate per la protezione dei profili certificato  
+ Utilizzare le seguenti procedure consigliate per la protezione durante la gestione di profili certificato per utenti e dispositivi.  
 
-|セキュリティのベスト プラクティス|説明|  
+|Procedura di sicurezza consigliata|Altre informazioni|  
 |----------------------------|----------------------|  
-|ネットワーク デバイス登録サービスのセキュリティのベスト プラクティスに従います。たとえば、インターネット インフォメーション サービス (IIS) のネットワーク デバイス登録サービスの Web サイトが必ず SSL 接続されるように設定し、クライアント証明書を無視するように構成します。|TechNet の Active Directory 証明書サービスの「 [Network Device Enrollment Service Guidance (ネットワーク デバイス登録サービス ガイド)](http://go.microsoft.com/fwlink/p/?LinkId=309016) 」を参照してください。|  
-|SCEP 証明書プロファイルを構成するときに、デバイスとインフラストラクチャがサポートできる最も安全なオプションを選択します。|デバイスとインフラストラクチャに推奨されるセキュリティ ベスト プラクティスを特定し、実装し、従います。|  
-|プライマリ デバイスの指定をユーザーに許可せずに、手動でユーザーとデバイスのアフィニティを指定します。 また、使用状況に基づいた構成を有効にしないでください。|SCEP 証明書プロファイルで [ユーザーのプライマリ デバイスでのみ証明書登録を許可する **** ] オプションを選択するときは、必ず正規のユーザーやデバイスから情報が収集されることになると考えないでください。 このオプションを指定して SCEP 証明書プロファイルを展開し、信頼されている管理ユーザーがデバイスのアフィニティを指定しなかった場合は、権限のないユーザーに特権が付与され、その認証用の証明書が登録される可能性があります。<br /><br /> **注:** 使用状況に基づいた構成を有効にすると、使用状況に関する情報が、System Center Configuration Manager のセキュリティの管轄外の状態メッセージから収集されます。 この脅威を軽減するには、クライアント コンピューターと管理ポイント間で、SMB 署名または IPsec を使用します。|  
-|証明書テンプレートに対する読み取りアクセス許可または登録アクセス許可は、ユーザーに付与しないでください。また、証明書テンプレート チェックをスキップするように証明書登録ポイントを構成しないでください。|Configuration Manager は、ユーザーの読み取りおよび登録のセキュリティ アクセス許可を追加するかどうかの追加チェックをサポートしており、認証できない場合にこのチェックをスキップするように証明書登録ポイントを構成できますが、いずれの構成もセキュリティ ベスト プラクティスではありません。 詳細については、「[System Center Configuration Manager の証明書プロファイルに関する証明書テンプレート アクセス許可の計画](../../protect/plan-design/planning-for-certificate-template-permissions.md)」を参照してください。|  
+|Identificare e seguire eventuali procedure consigliate per la protezione per il servizio Registrazione dispositivi di rete, che include la configurazione del sito Web Servizio Registrazione dispositivi di rete in Internet Information Services (IIS) per richiedere SSL e ignorare certificati client.|Vedere [Network Device Enrollment Service Guidance (Informazioni aggiuntive sul servizio Registrazione dispositivi di rete)](http://go.microsoft.com/fwlink/p/?LinkId=309016) nella libreria Servizi certificati Active Directory in TechNet.|  
+|Quando si configurano profili certificato SCEP, scegliere le opzioni più sicure che i dispositivi e l'infrastruttura sono in grado di supportare.|Identificare, implementare e seguire le procedure consigliate per la protezione per i dispositivi e l'infrastruttura.|  
+|Specificare manualmente l'affinità utente dispositivo invece di consentire agli utenti di identificare il dispositivo principale. Inoltre, non abilitare la configurazione basata sulle statistiche di utilizzo.|Se si fa clic sull'opzione **Consenti registrazione dei certificati solo sul dispositivo primario dell'utente** in un profilo certificato SCEP, non considerare autorevoli le informazioni raccolte dagli utenti o dal dispositivo. Se si distribuiscono profili certificato SCEP con questa configurazione e l'affinità utente dispositivo non è specificata da un utente amministratore attendibile, utenti non autorizzati potrebbero ricevere privilegi elevati e potrebbero essere concessi loro certificati per effettuare l'autenticazione.<br /><br /> **Nota:** se si abilita la configurazione basata sulle statistiche di utilizzo, queste informazioni vengono raccolte usando messaggi di stato che non sono protetti da System Center Configuration Manager. Per limitare questo rischio, utilizzare la firma SMB o IPsec tra computer client e il punto di gestione.|  
+|Non aggiungere autorizzazioni Lettura e Registrazione per utenti ai modelli di certificato, né configurare il punto di registrazione certificati per ignorare la verifica del modello di certificato.|Anche se Configuration Manager supporta il controllo aggiuntivo se si aggiungono le autorizzazioni di protezione Lettura e Registrazione per gli utenti e sebbene sia possibile configurare il punto di registrazione certificati per ignorare questo controllo quando l'autenticazione non è possibile, nessuna delle due configurazioni è una procedura consigliata per la protezione. Per altre informazioni, vedere [Pianificazione delle autorizzazioni dei modelli di certificato per i profili di certificato in System Center Configuration Manager](../../protect/plan-design/planning-for-certificate-template-permissions.md).|  
 
-## <a name="privacy-information-for-certificate-profiles"></a>証明書プロファイルのプライバシー情報  
- 証明書プロファイルを使って、証明機関 (CA) のルート証明書とクライアント証明書を展開し、プロファイルの適用後にデバイスがコンプライアンスに対応しているかどうかを評価できます。 コンプライアンス対応情報は、管理ポイントからサイト サーバーに送信され、System Center Configuration Manager によってサイト データベースに保存されます。 コンプライアンス情報には、サブジェクト名や拇印などの証明書のプロパティが含まれます。 情報はデバイスが管理ポイントに送信するときは暗号化されますが、サイト データベースに保存するときは暗号化されません。 データベースに保存された情報は、90 日 (既定) 後に "期限切れの構成管理データの削除" というメンテナンス タスクで削除されるまで維持されます。 **** 削除間隔は構成できます。 対応情報がマイクロソフトに送信されることはありません。  
+## <a name="privacy-information-for-certificate-profiles"></a>Informazioni sulla privacy per i profili certificato  
+ È possibile utilizzare profili certificato per distribuire certificati da un'autorità di certificazione radice (CA) e client e quindi valutare se i dispositivi diventano conformi dopo che sono stati applicati i profili. Il punto di gestione invia informazioni sulla conformità al server del sito e System Center Configuration Manager memorizza queste informazioni nel database del sito. Informazioni sulla conformità includono proprietà certificato, ad esempio il nome oggetto e l'identificazione personale. Le informazioni vengono crittografate quando i dispositivi le inviano al punto di gestione, ma non vengono memorizzate in forma crittografata nel database del sito. Il database conserva le informazioni fino alla relativa eliminazione nell'ambito dell'attività di manutenzione del sito **Elimina dati di gestione configurazione obsoleti** che viene effettuata all'intervallo predefinito di 90 giorni. È possibile configurare l'intervallo di eliminazione. Le informazioni sulla conformità non vengono inviate a Microsoft.  
 
- 証明書プロファイルは、Configuration Manager の探索機能によって収集された情報を使用します。 探索のプライバシー情報の詳細については、「 **Security and privacy for System Center Configuration Manager** 」の「 [探索のプライバシー情報](../../core/plan-design/security/security-and-privacy.md)」を参照してください。  
+ I profili certificato usano le informazioni che Configuration Manager raccoglie eseguendo l'individuazione. Per ulteriori informazioni sulla privacy per individuazione, vedere la sezione **Informazioni sulla privacy per l'individuazione** in [Security and privacy for System Center Configuration Manager](../../core/plan-design/security/security-and-privacy.md).  
 
 > [!NOTE]  
->  ユーザーやデバイスに発行された証明書によって、機密情報にアクセス可能になる場合があります。  
+>  I certificati che vengono rilasciati a utenti o dispositivi potrebbero consentire l'accesso a informazioni riservate.  
 
- 既定では、デバイスは証明書プロファイルを評価しません。 また、証明書プロファイルを構成し、それをユーザーまたはデバイスに展開する必要があります。  
+ Per impostazione predefinita, i dispositivi non valutano i profili certificato. Inoltre, è necessario configurare i profili certificato e quindi distribuirli agli utenti o ai dispositivi.  
 
- 証明書プロファイルを構成する前に、プライバシー要件について検討してください。  
+ Prima di configurare i profili certificato, considerare i requisiti sulla privacy.  

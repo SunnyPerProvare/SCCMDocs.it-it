@@ -1,6 +1,6 @@
 ---
-title: "Mac コンピューターへのクライアント展開の計画 | Microsoft Docs"
-description: "System Center Configuration Manager での Mac コンピューターへのクライアント展開の計画"
+title: Pianificazione della distribuzione client in computer Mac | Microsoft Docs
+description: Pianificazione della distribuzione del client in computer Mac in System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -18,93 +18,93 @@ manager: angrobe
 ms.openlocfilehash: 75bddb41d4d1cf209fa7595c52b5a6aa831ba3dd
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="planning-for-client-deployment-to-mac-computers-in-system-center-configuration-manager"></a>System Center Configuration Manager での Mac コンピューターへのクライアント展開の計画
+# <a name="planning-for-client-deployment-to-mac-computers-in-system-center-configuration-manager"></a>Pianificazione della distribuzione del client in computer Mac in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Mac OS X オペレーティング システムを実行する Mac コンピューターに Configuration Manager クライアントをインストールして、次の管理機能を使用できます。  
+È possibile installare il client di Configuration Manager su computer Mac con sistema operativo Mac OS X e usare le funzionalità di gestione seguenti:  
 
--   **ハードウェア インベントリ**  
+-   **Inventario hardware**  
 
-     Configuration Manager ハードウェア インベントリを使用して、Mac コンピューターのハードウェアと、インストールされているアプリケーションに関する情報を収集できます。 この情報を Configuration Manager コンソールのリソース エクスプローラーで確認し、コレクション、クエリ、レポートの作成に使用できます。 詳細については、「[System Center Configuration Manager でリソース エクスプローラーを使用してハードウェア インベントリを表示する方法](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md)」を参照してください。  
+     È possibile usare l'inventario hardware di Configuration Manager per raccogliere informazioni sull'hardware e sulle applicazioni installate sui computer Mac. Tali informazioni possono essere visualizzate in Esplora inventario risorse nella console di Configuration Manager e usate per creare raccolte, query e report. Per altre informazioni, vedere [Come usare Esplora inventario risorse per visualizzare l'inventario hardware in Configuration Manager](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md).  
 
-     Configuration Manager は、Mac コンピューターから次のハードウェア情報を収集します。  
+     Configuration Manager raccoglie le informazioni hardware seguenti dai computer Mac:  
 
-    -   プロセッサ  
+    -   Processore  
 
-    -   コンピューター システム  
+    -   Sistema computer  
 
-    -   ディスク ドライブ  
+    -   Unità disco  
 
-    -   ディスク パーティション  
+    -   Partizione disco  
 
-    -   ネットワーク アダプター  
+    -   Scheda di rete  
 
-    -   オペレーティング システム  
+    -   Sistema operativo  
 
-    -   [サービス]  
+    -   Service  
 
-    -   プロセス  
+    -   Processo  
 
-    -   インストール済みソフトウェア  
+    -   Software installato  
 
-    -   コンピューター システム製品  
+    -   Prodotto di sistema  
 
-    -   USB コントローラー  
+    -   Controller USB  
 
-    -   USB デバイス  
+    -   Dispositivo USB  
 
-    -   CD-ROM ドライブ  
+    -   Unità CD-ROM  
 
-    -   ビデオ コントローラー  
+    -   Controller video  
 
-    -   デスクトップ モニター  
+    -   Monitor da tavolo  
 
-    -   ポータブル バッテリー  
+    -   Batteria portatile  
 
-    -   物理メモリ  
+    -   Memoria fisica  
 
-    -   プリンター  
+    -   Stampante  
 
     > [!IMPORTANT]  
-    >  ハードウェア インベントリ時に Mac コンピューターから収集されるハードウェア情報を拡張することはできません。  
+    >  Non è possibile estendere le informazioni hardware raccolte dai computer Mac durante l'inventario hardware.  
 
--   **コンプライアンス設定**  
+-   **Impostazioni di conformità**  
 
-     Configuration Manager コンプライアンス設定を使用して、コンプライアンスを確認し、Mac OS X 環境設定 (.plist) の設定を修復できます。 たとえば、Safari Web ブラウザーのホーム ページの設定を強制したり、Apple ファイアウォールを有効にしたりできます。 また、シェル スクリプトを使用して、Mac OS X の設定を監視、修復することもできます。  
+     È possibile usare le impostazioni di conformità di Configuration Manager per visualizzarne la conformità e correggere le impostazioni di preferenza di Mac OS X (file con estensione plist). Ad esempio, si potrebbero applicare le impostazioni per la home page del browser Web Safari oppure assicurarsi che il firewall Apple sia abilitato. È inoltre possibile usare gli script della shell per monitorare e correggere le impostazioni in MAC OS X.  
 
--   **アプリケーション管理**  
+-   **Gestione delle applicazioni**  
 
-     Configuration Manager は、Mac コンピューターにソフトウェアを展開できます。 Mac コンピューターには、次のソフトウェア形式を展開できます。  
+     Configuration Manager può distribuire software nei computer Mac. È possibile distribuire i seguenti formati di software nei computer Mac:  
 
-    -   Apple Disk Image (.DMG)  
+    -   Immagine disco Apple (.DMG)  
 
-    -   Meta Package File (.MPKG)  
+    -   File meta pacchetto (.MPKG)  
 
-    -   Mac OS X Installer Package (.PKG)  
+    -   Pacchetto di Mac OS X Installer (.PKG)  
 
-    -   Mac OS X Application (.APP)  
+    -   Applicazione di Mac OS X (.APP)  
 
- Mac コンピューターに Configuration Manager クライアントをインストールする場合、Windows ベースのコンピューターにインストールされた Configuration Manager クライアントでサポートされる次の管理機能を使用できません。  
+ Quando si installa il client di Configuration Manager in computer Mac, non è possibile usare le funzionalità di gestione seguenti supportate dal client di Configuration Manager in computer Windows:  
 
--   クライアント プッシュ インストール  
+-   Installazione push client  
 
--   オペレーティング システムの展開  
+-   Distribuzione del sistema operativo  
 
--   ソフトウェア更新プログラム  
+-   Aggiornamenti software  
 
     > [!NOTE]  
-    >  必要な Mac OS X ソフトウェア更新プログラムを Mac コンピューターに展開するには、Configuration Manager アプリケーション管理を使用します。 また、コンプライアンス設定を使用して、必要なソフトウェア更新プログラムを常にコンピューターに適用することもできます。  
+    >  È possibile usare la gestione applicazioni di Configuration Manager per distribuire gli aggiornamenti software Mac OS X necessari ai computer Mac. Inoltre, è possibile usare le impostazioni di conformità per assicurarsi che i computer abbiano tutti gli aggiornamenti software necessari.  
 
--   メンテナンス期間  
+-   Finestre di manutenzione  
 
--   リモート コントロール  
+-   Controllo remoto  
 
--   電源管理  
+-   Risparmio energia  
 
--   クライアント ステータスのクライアント チェックと修復  
+-   Controllo e correzione client dello stato client  
 
- Configuration Manager Mac クライアントのインストールおよび構成方法については、「[System Center Configuration Manager で Mac にクライアントを展開する方法](../../../../core/clients/deploy/deploy-clients-to-macs.md)」を参照してください。
+ Per altre informazioni su come installare e configurare il client Mac di Configuration Manager, vedere [Come distribuire i client a computer Mac in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-macs.md).

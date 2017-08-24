@@ -1,6 +1,6 @@
 ---
-title: "コンテンツを監視する | Microsoft Docs"
-description: "Configuration Manager コンソールを使用して配布コンテンツを監視する方法を説明します。"
+title: Monitorare il contenuto | Microsoft Docs
+description: Informazioni su come monitorare il contenuto distribuito usando la console di Configuration Manager.
 ms.custom: na
 ms.date: 4/17/2017
 ms.prod: configuration-manager
@@ -17,154 +17,154 @@ manager: angrobe
 ms.openlocfilehash: 7659d5789b8ce4e9e0b585a331c8f68869c9492d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="monitor-content-you-have-distributed-with-system-center-configuration-manager"></a>配布したコンテンツを System Center Configuration Manager で監視する
+# <a name="monitor-content-you-have-distributed-with-system-center-configuration-manager"></a>Monitorare il contenuto distribuito con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager コンソールを使用して、配布コンテンツの次のようなステータスを監視します。  
+Usare la console di System Center Configuration Manager per monitorare il contenuto distribuito, tra cui:  
 
--   関連する配布ポイントについて、すべての種類のパッケージのステータス。  
--   パッケージ内のコンテンツのコンテンツ検証ステータス。  
--   特定の配布ポイント グループに割り当てられているコンテンツのステータス。  
--   配布ポイントに割り当てられているコンテンツのステータス。  
--   各配布ポイントのオプション機能 (コンテンツ検証、PXE、およびマルチキャスト) のステータス。  
+-   Lo stato di tutti i tipi di pacchetti in relazione ai punti di distribuzione associati.  
+-   Lo stato di convalida per il contenuto di un pacchetto.  
+-   Lo stato del contenuto assegnato a un gruppo specifico di punti di distribuzione.  
+-   Lo stato del contenuto assegnato a un punto di distribuzione.  
+-   Lo stato delle funzionalità facoltative per ogni punto di distribuzione (convalida del contenuto, PXE e multicast).  
 
 > [!NOTE]  
->  Configuration Manager は、コンテンツ ライブラリ内にある配布ポイントのコンテンツのみを監視します。 パッケージまたはカスタム共有の配布ポイントに保存されているコンテンツは監視されません。  
+>  Configuration Manager monitora solo il contenuto in un punto di distribuzione nella raccolta contenuto. Il contenuto archiviato nel punto di distribuzione in condivisioni pacchetto o personalizzate non è monitorato.  
 
-##  <a name="BKMK_ContentStatus"></a> コンテンツのステータスの監視  
- [監視 **** ] ワークスペースの [コンテンツのステータス **** ] ノードには、コンテンツ パッケージについての情報が表示されます。 Configuration Manager コンソールでは、次のような情報を確認することができます。  
+##  <a name="BKMK_ContentStatus"></a> Monitoraggio dello stato del contenuto  
+ Il nodo **Stato componente** dell'area di lavoro **Monitoraggio** fornisce informazioni sui pacchetti contenuto. Nella console di Configuration Manager è possibile esaminare informazioni quali:  
 
--   パッケージ名。  
--   タイプ。  
--   パッケージが送信された配布ポイントの数。  
--   コンプライアンス対応率。  
--   パッケージの作成時期。  
--   パッケージ ID。  
--   ソース バージョン。  
+-   Il nome del pacchetto.  
+-   Il tipo.  
+-   Il numero di punti di distribuzione a cui è stato inviato un pacchetto.  
+-   Il tasso di conformità.  
+-   La data di creazione del pacchetto.  
+-   L'ID del pacchetto.  
+-   La versione di origine.  
 
-また、次の情報を含む、すべてのパッケージの詳細なステータス情報とパッケージの配布ステータスを確認することもできます。  
+È anche possibile trovare informazioni dettagliate sullo stato di qualsiasi pacchetto nonché lo stato di distribuzione del pacchetto, tra cui:  
 
--   エラーの数。  
--   保留中の配布。  
--   インストールの数。
+-   Il numero di errori.  
+-   Le distribuzioni in sospeso.  
+-   Il numero di installazioni.
 
-また、配布ポイントへの処理が進行中の配布や、コンテンツを正常に配布ポイントに配布できなかった配布を管理することもできます。  
+È anche possibile gestire le distribuzioni di contenuto ancora in corso o non completate correttamente in un punto di distribuzione:  
 
--   具体的には、コンテンツをキャンセルするか再配布することができます。**[資産の詳細]** ウィンドウで、配布ポイントへの配布ジョブの展開ステータス メッセージを表示すると、このオプションが表示されます。 このウィンドウは、**[コンテンツのステータス]** ノードの **[進行中]** タブまたは **[エラー]** タブにあります。  
--   **[進行中]** タブでジョブの詳細を表示した場合は、ジョブの完了率 (%) が表示されます。 **[エラー]** タブからジョブの詳細を表示した場合は、ジョブの残り再試行回数のほか、次の再試行までの時間も表示されます。  
+-   L'opzione per annullare o ridistribuire il contenuto è disponibile quando si visualizza il messaggio di stato di un processo di distribuzione a un punto di distribuzione nel riquadro **Dettagli asset**. Questo riquadro è disponibile nella scheda **In corso** o nella scheda **Errore** del nodo **Stato contenuto**.  
+-   Inoltre, nei dettagli di un processo nella scheda **In corso** viene visualizzata la percentuale di completamento del processo, mentre nei dettagli di un processo nella scheda **Errore** vengono visualizzati il numero di tentativi rimanenti per un processo e il tempo di attesa prima che possa essere effettuato un altro tentativo.  
 
-まだ完了していない展開をキャンセルすると、そのコンテンツを転送する配布ジョブは停止します。  
+Quando si annulla una distribuzione non ancora completata, il processo di distribuzione per il trasferimento del contenuto viene interrotto:  
 
--   その後、展開のステータスが更新され、展開が失敗したことと、ユーザー操作によってキャンセルされたことが示されます。  
--   この新しいステータスは、[エラー **** ] タブに表示されます。  
+-   Lo stato della distribuzione viene aggiornato per indicare che la distribuzione non è riuscita ed è stata annullata da un'azione dell'utente.  
+-   Questo nuovo stato viene visualizzato nella scheda **Errore** .  
 
 > [!TIP]  
->  展開が完了間近の場合、その配布をキャンセルする操作が、配布ポイントへの配布が完了するまでに処理されないことがあります。 この場合、展開をキャンセルする操作は無視され、展開のステータスは成功として表示されます。  
+>  A distribuzione quasi completata, è possibile che l'annullamento della distribuzione non venga effettuato prima del completamento di tale operazione al punto di distribuzione. In tal caso, l'annullamento della distribuzione viene ignorato e lo stato indica che la distribuzione è stata eseguita correttamente.  
 
 > [!NOTE]  
->  サイト サーバーにある配布ポイントへの配布をキャンセルするオプションを選択できますが、この操作は何も効果を持ちません。 これは、サイト サーバーと、サイト サーバー上の配布ポイントが同じ単一インスタンスのコンテンツ ストアを共有しているためです。 キャンセルする実際の配布ジョブは存在しません。  
+>  Sebbene si possa selezionare l'opzione per annullare una distribuzione a un punto di distribuzione che si trova su un server del sito, tale operazione non ha alcun effetto. Ciò si verifica perché il server del sito e il punto di distribuzione su un server del sito condividono l'archivio di contenuto a istanza singola. Non sono presenti processi di distribuzione da annullare.  
 
-以前に配布ポイントへの転送が失敗したコンテンツを再配布すると、Configuration Manager で、そのコンテンツの配布ポイントへの再展開がすぐに開始されます。 Configuration Manager で展開のステータスが更新され、再展開の進行中の状態が反映されます。  
+Quando si ridistribuisce il contenuto dopo un trasferimento non riuscito in un punto di distribuzione, Configuration Manager inizia subito a ridistribuire il contenuto nel punto di distribuzione, aggiornandone lo stato in base allo stato attuale di tale ridistribuzione.  
 
-コンテンツのステータスを表示したり、進行中または失敗した配布を管理するには、次の手順に従います。  
+Usare le procedure seguenti per visualizzare lo stato del contenuto e gestire distribuzioni ancora in corso o non riuscite.  
 
-### <a name="to-monitor-content-status"></a>コンテンツのステータスを監視するには  
+### <a name="to-monitor-content-status"></a>Per monitorare lo stato del contenuto  
 
-1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
+1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
-2.  [監視 **** ] ワークスペースで、[配布ステータス ****] を展開し、[コンテンツのステータス] をクリックします。 **** パッケージが表示されます。  
+2.  Nell'area di lavoro **Monitoraggio** espandere **Stato distribuzione**, quindi fare clic su **Stato contenuto**. Vengono visualizzati i pacchetti.  
 
-3.  詳細なステータス情報を確認するパッケージを選択します。  
+3.  Selezionare il pacchetto di cui visualizzare informazioni dettagliate sullo stato.  
 
-4.  [ホーム **** ] タブで [ステータスの表示 ****] をクリックします。 パッケージのステータスの詳細な情報が表示されます。  
+4.  Nella scheda **Home** fare clic su **Visualizza stato**. Vengono visualizzate informazioni dettagliate sullo stato per il pacchetto.  
 
-### <a name="to-cancel-a-distribution-that-remains-in-progress"></a>進行中の配布をキャンセルするには  
+### <a name="to-cancel-a-distribution-that-remains-in-progress"></a>Per annullare una distribuzione ancora in corso  
 
-1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
+1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
-2.  [監視 **** ] ワークスペースで、[配布ステータス ****] を展開し、[コンテンツのステータス] をクリックします。 **** パッケージが表示されます。  
+2.  Nell'area di lavoro **Monitoraggio** espandere **Stato distribuzione**, quindi fare clic su **Stato contenuto**. Vengono visualizzati i pacchetti.  
 
-3.  管理するパッケージを選択して、詳細ウィンドウで、[ステータスの表示 ****] をクリックします。  
+3.  Selezionare il pacchetto che si desidera gestire, quindi nel riquadro dei dettagli fare clic su **Visualizza stato**.  
 
-4.  **[進行中]** タブの **[資産の詳細]** ウィンドウで、キャンセルする配布のエントリを右クリックして、**[キャンセル]** を選択します。  
+4.  Nel riquadro **Dettagli asset** della scheda **In corso** fare clic con il pulsante destro del mouse sulla voce relativa alla distribuzione che si vuole annullare e scegliere **Annulla**.  
 
-5.  操作を確認し、その配布ポイントへの配布ジョブをキャンセルするには、[はい **** ] をクリックします。  
+5.  Fare clic su **Sì** per confermare l'operazione e annullare il processo di distribuzione a un determinato punto di distribuzione.  
 
-### <a name="to-redistribute-content-that-failed-to-distribute"></a>配布に失敗したコンテンツを再配布するには  
+### <a name="to-redistribute-content-that-failed-to-distribute"></a>Per ridistribuire il contenuto dopo una distribuzione non riuscita  
 
-1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
+1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
-2.  [監視 **** ] ワークスペースで、[配布ステータス ****] を展開し、[コンテンツのステータス] をクリックします。 **** パッケージが表示されます。  
+2.  Nell'area di lavoro **Monitoraggio** espandere **Stato distribuzione**, quindi fare clic su **Stato contenuto**. Vengono visualizzati i pacchetti.  
 
-3.  管理するパッケージを選択して、詳細ウィンドウで、[ステータスの表示 ****] をクリックします。  
+3.  Selezionare il pacchetto che si desidera gestire, quindi nel riquadro dei dettagli fare clic su **Visualizza stato**.  
 
-4.  **[エラー]** タブの **[資産の詳細]** ウィンドウで、再配布する配布のエントリを右クリックして、**[再配布]** を選択します。  
+4.  Nel riquadro **Dettagli asset** della scheda **Errore** fare clic con il pulsante destro del mouse sulla voce relativa alla distribuzione che si vuole ripetere e scegliere **Ridistribuisci**.  
 
-5.  操作を確認し、その配布ポイントへの再配布処理を開始するには、**[はい]** をクリックします。  
+5.  Fare clic su **Sì** per confermare l'operazione e avviare il processo di ridistribuzione allo specifico punto di distribuzione.  
 
-## <a name="distribution-point-group-status"></a>配布ポイント グループのステータス  
-[監視 **** ] ワークスペースの [配布ポイント グループのステータス **** ] ノードには、配布ポイント グループについての情報が表示されます。 次のような情報を確認することができます。  
+## <a name="distribution-point-group-status"></a>Stato del gruppo di punti di distribuzione  
+Il nodo **Stato gruppo di punti di distribuzione** nell'area di lavoro **Monitoraggio** fornisce informazioni sui gruppi di punti di distribuzione. È possibile esaminare informazioni quali:  
 
--   配布ポイント グループの名前。  
--   説明。  
--   配布ポイント グループのメンバーである配布ポイントの数。  
--   グループに割り当てられたパッケージの数。  
--   配布ポイント グループのステータス。  
--   コンプライアンス対応率。  
+-   Il nome del gruppo di punti di distribuzione.  
+-   La descrizione.  
+-   Il numero di punti di distribuzione appartenenti al gruppo.  
+-   Il numero di pacchetti assegnati al gruppo.  
+-   Lo stato del gruppo di punti di distribuzione.  
+-   Il tasso di conformità.  
 
-さらに、次の詳細なステータス情報も確認できます。  
+È anche possibile visualizzare informazioni dettagliate sullo stato per gli elementi seguenti:  
 
--   配布ポイント グループのエラー。  
--   進行中の配布の数。
--   正常に配布されたコンテンツの数。  
+-   Gli errori del gruppo di punti di distribuzione.  
+-   Il numero di distribuzioni in corso.
+-   Il numero di distribuzioni completate.  
 
-### <a name="to-monitor-distribution-point-group-status"></a>配布ポイント グループのステータスを監視するには  
+### <a name="to-monitor-distribution-point-group-status"></a>Per monitorare lo stato del gruppo di punti di distribuzione  
 
-1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
+1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
-2.  [監視 **** ] ワークスペースで、[配布ステータス ****] を展開し、[配布ポイント グループのステータス] をクリックします。 **** すると、配布ポイント グループが表示されます。  
+2.  Nell'area di lavoro **Monitoraggio** espandere **Stato distribuzione**, quindi fare clic su **Stato gruppo di punti di distribuzione**. Vengono visualizzati i gruppi di punti di distribuzione.  
 
-3.  詳細なステータス情報を確認する配布ポイント グループを選択します。  
+3.  Selezionare il gruppo di punti di distribuzione di cui visualizzare le informazioni dettagliate sullo stato.  
 
-4.  [ホーム **** ] タブで [ステータスの表示 ****] をクリックします。 配布ポイント グループの詳細なステータス情報が表示されます。  
+4.  Nella scheda **Home** fare clic su **Visualizza stato**. Vengono visualizzate le informazioni dettagliate sullo stato per il gruppo di punti di distribuzione.  
 
-## <a name="distribution-point-configuration-status"></a>配布ポイントの構成ステータス。  
- [監視 **** ] ワークスペースの [配布ポイントの構成ステータス **** ] ノードには、配布ポイントについての情報が表示されます。 PXE、マルチキャスト、コンテンツの検証、配布ポイントの配布ステータスなど、配布ポイントでどの属性が有効になっているかを確認できます。 また、配布ポイントの詳細なステータス情報も見ることができます。  
+## <a name="distribution-point-configuration-status"></a>Stato di configurazione dei punti di distribuzione  
+ Il nodo **Stato di configurazione dei punti di distribuzione** nell'area di lavoro **Monitoraggio** fornisce informazioni sul punto di distribuzione. È possibile verificare gli attributi che sono abilitati per il punto di distribuzione, come PXE, multicast, convalida del contenuto e lo stato della distribuzione per il punto di distribuzione. È inoltre possibile visualizzare informazioni dettagliate sullo stato per il punto di distribuzione.  
 
 > [!WARNING]  
->  配布ポイントの構成ステータスは直前の 24 時間に関するものです。 配布ポイントにエラーがあって回復すると、エラー ステータスは配布ポイントの回復から最大 24 時間表示される可能性があります。  
+>  Lo stato di configurazione del punto di distribuzione è relativo alle ultime 24 ore. Se il punto di distribuzione ha un errore e viene ripristinato, lo stato dell'errore potrebbe essere visualizzato fino a 24 ore dopo il ripristino del punto di distribuzione.  
 
-次の手順に従って、配布ポイント グループの構成ステータスを確認します。  
+Usare la procedura seguente per visualizzare lo stato di configurazione del punto di distribuzione.  
 
-### <a name="to-monitor-distribution-point-configuration-status"></a>配布ポイントの構成ステータスを監視するには  
+### <a name="to-monitor-distribution-point-configuration-status"></a>Per monitorare lo stato di configurazione del punto di distribuzione  
 
-1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
+1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
-2.  [監視 **** ] ワークスペースで、[配布ステータス ****] を展開し、[配布ポイントの構成ステータス ****] をクリックします。 すると、配布ポイントが表示されます。  
+2.  Nell'area di lavoro **Monitoraggio** espandere **Stato distribuzione**, quindi fare clic su **Stato di configurazione dei punti di distribuzione**. Vengono visualizzati i punti di distribuzione.  
 
-3.  配布ポイント ステータス情報を確認する配布ポイントを選択します。  
+3.  Selezionare il punto di distribuzione di cui visualizzare le informazioni sullo stato.  
 
-4.  [結果] ウィンドウで、[詳細 **** ] タブをクリックします。 すると、配布ポイントのステータス情報が表示されます。  
+4.  Nel riquadro dei risultati fare clic sulla scheda **Dettagli** . Verranno visualizzate le informazioni sullo stato per il punto di distribuzione.  
 
-## <a name="client-data-sources-dashboard"></a>クライアント データ ソース ダッシュボード
-バージョン 1610 以降、**クライアント データ ソース** ダッシュボードを使用して、環境内の[ピア キャッシュ](/sccm/core/plan-design/hierarchy/client-peer-cache)の使用状況を把握できるようになりました。 ダッシュボードは、クライアントがコンテンツをダウンロードし、情報がサイトに戻されたことを報告した後にデータの表示を開始します。 これには、最大 24 時間かかることがあります。
+## <a name="client-data-sources-dashboard"></a>Dashboard Origini dati del client
+A partire dalla versione 1610, è possibile usare il dashboard **Origini dati del client** per informazioni sull'uso di [Peer Cache](/sccm/core/plan-design/hierarchy/client-peer-cache) nell'ambiente. Questo dashboard inizierà a visualizzare i dati dopo che il contenuto è stato scaricato dai client e tale informazione viene segnalata al sito. Questa operazione può richiedere al massimo 24 ore.
 
 > [!TIP]  
-> **クライアント ピア キャッシュ**と**クライアント データ ソース** ダッシュボードは、バージョン 1610 で導入されたプレリリース機能です。 クライアント データ ソース ダッシュボードをコンソールに表示するには、クライアント ピア キャッシュを有効にする必要があります。 クライアント ピア キャッシュを有効にするには、「[更新プログラムからのプレリリース機能の使用](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease)」をご覧ください。 有効にしてからデータの表示を開始するまで、最大で 24 時間かかる場合があります。
+> La **peer cache client** e il dashboard 	**Origini dati del client** sono funzionalità di versioni non definitive introdotte nella versione 1610. È necessario abilitare la peer cache client prima che il dashboard Origini dati del client sia visibile nella console. Per abilitare la peer cache client, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease). Per la visualizzazione dei dati possono essere necessarie fino a 24 ore dopo l'abilitazione.
 
-コンソールで、**[監視]** > **[配布ステータス]** > **[クライアント データ ソース]** に移動します。 ここで、ダッシュボードに適用する期間を選択できます。 次に、表示で、情報を表示する境界グループまたはパッケージを選択できます。 情報を表示しているときは、画面上にマウスを移動して、コンテンツまたはポリシーのソースのソースについての詳細を表示できます。
+Nella console passare a **Monitoraggio** > **Stato distribuzione** > **Origini dati del client**. In questa posizione è possibile selezionare un periodo di tempo da applicare al dashboard. Nella visualizzazione è quindi possibile selezionare il gruppo di limiti o il pacchetto per il quale visualizzare le informazioni. Quando si esaminano le informazioni, passare il puntatore sulla superficie per vedere altri dettagli relativi ai diversi contenuti o origini dei criteri.
 
-たとえば、次の情報が表示されます。  
-- **クライアント コンテンツ ソース**: クライアントがコンテンツを取得するソースを表示します。
-- **配布ポイント**: 選択された境界グループに含まれる配布ポイントの数を表示します。
-- **配布ポイントを使用したクライアント**: 選択された境界グループに含まれるクライアントのうち、コンテンツの取得に配布ポイントを使用したクライアントの数を表示します。
-- **ピア キャッシュ ソース**: 選択された境界グループについて、ダウンロード履歴を報告したピア キャッシュ ソースの数を表示します。
-- **ピアを使用したクライアント**: 選択された境界グループに含まれるクライアントのうち、コンテンツの取得にピア キャッシュ ソースを使用したクライアントの数を表示します。
+Sono incluse le seguenti informazioni:  
+- **Client Content Sources** (Origini contenuto client): visualizza l'origine da cui i client hanno ottenuto il contenuto.
+- **Distribution points** (Punti di distribuzione): visualizza il numero di punti di distribuzione che fanno parte del gruppo di limiti selezionato.
+- **Clients that used a distribution point** (Clienti che hanno usato un punto di distribuzione): questo valore indica quanti client, tra quelli presenti nel gruppo di limiti selezionato, hanno usato un punto di distribuzione per ottenere il contenuto.
+- **Peer Cache sources** (Origini peer cache): per il gruppo di limiti selezionato indica quanti origini di peer cache hanno segnalato la cronologia di download.
+- **Clients that used a peer** (Clienti che hanno usato un peer): questo valore indica quanti client, tra quelli presenti nel gruppo di limiti selezionato, hanno usato un'origine peer cache per ottenere il contenuto.
 
 
 
-各境界グループのクライアント データ ソースの概要を表示する、新しいレポート **[Client Data Sources - Summarization (クライアント データ ソース - 概要)]** を使用することもできます。
+È anche possibile usare un nuovo report, **Client Data Sources - Summarization** (Origini dati del client - Riepilogo), per visualizzare un riepilogo delle origini dati del client per ogni gruppo di limiti.

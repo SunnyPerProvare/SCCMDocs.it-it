@@ -1,6 +1,6 @@
 ---
-title: "iOS のアクティベーション ロックの管理 | Microsoft Docs"
-description: "System Center Configuration Manager を使用して iOS のアクティベーション ロックを管理します。"
+title: Gestire il blocco attivazione iOS | Microsoft Docs
+description: Gestire il blocco attivazione iOS con System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -17,89 +17,89 @@ manager: angrobe
 ms.openlocfilehash: 88bef04a52f716ae13afc21c25d33dea06a3fc9c
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-ios-activation-lock-with-system-center-configuration-manager"></a>System Center Configuration Manager を使用した iOS のアクティベーション ロックの管理
+# <a name="manage-ios-activation-lock-with-system-center-configuration-manager"></a>Gestire il blocco attivazione iOS con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-System Center Configuration Manager は、iOS 7.1 以降向けの「iPhone を探す」アプリの機能である、iOS のアクティベーション ロックを管理するために役立ちます。 アクティベーション ロックを有効にすると、ユーザーの Apple ID とパスワードを入力しない限り、以下の操作を実行できなくなります。
+System Center Configuration Manager consente di gestire il blocco attivazione iOS, una funzionalità dell'app Trova il mio iPhone per dispositivi iOS 7.1 e versioni successive. Quando il blocco attivazione iOS è abilitato, richiede l'immissione di un ID Apple e una password dell'utente prima che sia possibile:
 
-- iPhone を探すアプリをオフにする
-- デバイスを消去する
-- ディスクを再アクティブ化する
+- Disattivare Trova il mio iPhone
+- Cancellare il dispositivo
+- Riattivare il dispositivo
 
-**監視対象外** のデバイスでは、iPhone を探すアプリを使用すると、アクティベーション ロックが自動的に有効になります。
+Nei dispositivi **senza supervisione** il blocco attivazione viene abilitato automaticamente quando si usa l'app Trova il mio iPhone.
 
-**管理対象** のデバイスでは、Configuration Manager のコンプライアンス設定を使用して、アクティベーション ロックをアクティブにする必要があります。
+Nei dispositivi **son supervisione** è necessario attivare il blocco attivazione tramite le impostazioni di conformità di Configuration Manager.
 
 > [!TIP]
-> iOS デバイスの監視モードでは、Apple Configurator ツールを使用して、デバイスをロックダウンし、特定のビジネス目的に必要な機能のみに制限することができます。 監視モードは、通常、企業所有のデバイス専用の機能です。
+> Nella modalità supervisionata per i dispositivi iOS è possibile usare lo strumento Apple Configurator per bloccare un dispositivo e limitarne la funzionalità per specifici scopi aziendali. Questa modalità è in genere usata solo per dispositivi di proprietà dell'azienda.
 
-アクティベーション ロックにより、iOS デバイスをセキュリティで保護でき、紛失や盗難にあった場合に戻ってくる可能性が高まりますが、この機能は IT 管理者にさまざまな課題をもたらすことがあります。 たとえば、
+Anche se il blocco attivazione consente di proteggere i dispositivi iOS e di aumentare le possibilità di ripristino in caso di smarrimento o furto del dispositivo, questa funzionalità può presentare una serie di difficoltà per gli amministratori IT. Ad esempio:
 
-- あるユーザーがデバイスでアクティブ化ロックを設定します。 その後、そのユーザーが退職し、デバイスを返却します。 ユーザーの Apple ID とパスワードがわからなければ、デバイスをワイプしても、再アクティベートすることはできません。
-- アクティベーション ロックが有効になっているすべてのデバイスのレポートが必要です。
-- 組織でデバイスを更新する場合に、一部のデバイスを別の部門に再割り当てする必要があります。 その際に再割り当てできるのは、アクティベーション ロックが有効になっていないデバイスに限られます。
-
-
-こうした問題を解決するために、Apple は iOS 7.1 でアクティブ化ロックのバイパスを導入しました。 この機能により、ユーザーの Apple ID とパスワードがなくても、監視対象のデバイスのアクティブ化ロックを解除することができます。 監視対象のデバイスでは、デバイス固有のアクティブ化ロックのバイパス コードを生成できます。このコードは、Apple のアクティブ化サーバーに格納されます。
-
-アクティベーション ロックについては、 [こちら](https://support.apple.com/HT201365)を参照してください。
-
-## <a name="how-configuration-manager-helps-you-manage-activation-lock"></a>Configuration Manager を使ってアクティベーション ロックを管理する方法
-
-Configuration Manager を使ってアクティベーション ロックを管理するには、次の 2 つの方法があります。
-
-1. 監視対象のデバイスでアクティベーション ロックを有効にする。
-2. 監視対象のデバイスでアクティベーション ロックをバイパスする。
-
-> [!IMPORTANT]
-> 監視対象外のデバイスでは、アクティベーション ロックをバイパスできません。
-
-企業所有のデバイスでは、この機能には次のようなビジネス上のメリットがあります。
+- Uno degli utenti configura Blocco attivazione in un dispositivo. L'utente lascia la società e restituisce il dispositivo. Senza l'ID Apple e la password dell'utente il dispositivo non può essere riattivato in alcun modo, neanche cancellandolo.
+- È necessario creare un report di tutti i dispositivi in cui è abilitato il blocco attivazione.
+- Durante un aggiornamento dei dispositivi nell'organizzazione si vuole riassegnare alcuni dispositivi a un reparto diverso. È possibile riassegnare solo i dispositivi per cui non è abilitato il blocco attivazione.
 
 
+Per facilitare la soluzione di questi problemi, Apple ha introdotto il bypass di Blocco attivazione in iOS 7.1 che consente di rimuovere Blocco attivazione dai dispositivi supervisionati senza richiedere Apple ID e password dell'utente. I dispositivi supervisionati possono generare un codice bypass di Blocco attivazione specifico, che viene archiviato nel server di attivazione di Apple.
 
-- ユーザーが iPhone を探すアプリのセキュリティ上のメリットを受けることができる。
-- デバイスを再利用する必要がある場合に、デバイスをインベントリから削除することや、ロック解除できることを把握したうえで、ユーザーが業務を遂行できるようにすることができる。
+Altre informazioni sul blocco attivazione sono disponibili [qui](https://support.apple.com/HT201365).
 
+## <a name="how-configuration-manager-helps-you-manage-activation-lock"></a>Come gestire il blocco di attivazione con Configuration Manager
 
-## <a name="enable-activation-lock-on-supervised-devices"></a>監視対象のデバイスでアクティベーション ロックを有効にする
+Configuration Manager consente di gestire il blocco attivazione in due modi:
 
-Configuration Manager のコンプライアンス設定を使用して、 **iOS および Mac OS X** タイプの構成項目を作成して展開し、監視対象のデバイスでアクティベーション ロックを有効にします。
-
-1. トピック「[System Center Configuration Manager クライアントを使用せずに管理されている iOS デバイスと Mac OS X デバイスの構成項目を作成する方法](/sccm/compliance/deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client)」の情報を使用して、**iOS および Mac OS X** タイプの構成項目を作成します。
-2. 構成項目の作成ウィザードの「 **システム セキュリティ** 」ページで、 **[アクティブ化ロックを許可する (監視モードのみ)]** を **[許可]**に設定します。
-3. [構成基準に構成項目を追加します](/sccm/compliance/deploy-use/create-configuration-baselines)。
-4. アクティベーション ロックを有効にする iOS デバイスが属するコレクションに、[この構成基準を展開](/sccm/compliance/deploy-use/deploy-configuration-baselines)します。
+1. Abilitando il blocco attivazione nei dispositivi con supervisione.
+2. Effettuando il bypass del blocco attivazione nei dispositivi con supervisione.
 
 > [!IMPORTANT]
-> デバイスが実際に手元にある状態で、この手順を実行してください。 そうしない場合、アクティベーション ロックがバイパスされたときにデバイスを手元に持っている人が完全なアクセス権を持つことになり、「iPhone を探す」アプリをオフにしたり、デバイスを消去したり、再アクティブ化したりできてしまいます。
+> Non è possibile eseguire il bypass del blocco attivazione nei dispositivi con supervisione.
 
-アクティベーション ロックのバイパスや、アクティベーション ロックのバイパス コードの取得は、監視対象デバイスでのみ行えます。監視対象外のデバイスでアクティベーション ロックをバイパスしようとしたり、バイパス コードを表示しようとしたりすると、エラーになります。
+I vantaggi garantiti alle aziende da questa funzionalità sui dispositivi di proprietà dell'azienda sono:
 
 
 
-## <a name="view-the-activation-lock-bypass-code"></a>アクティベーション ロックのバイパス コードを表示する
+- L'utente può usufruire dei vantaggi dell'app Trova il mio iPhone in termini di sicurezza.
+- L'amministratore può consentire all'utente di continuare a lavorare sapendo che, in caso di ridestinazione del dispositivo, potrà ritirarlo o sbloccarlo.
 
-1. Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。
-2. [ **資産とコンプライアンス** ] ワークスペースで [ **デバイス**] をクリックします。
-3. アクティベーション ロックが有効になっている、監視モードの登録済みのデバイスを選びます。
-4. **[ホーム]** タブの **[デバイス]** グループで、 **[リモート デバイスの操作]** > **[アクティブ化ロックのバイパス コードの表示]**をクリックします。
-5. 選んだデバイスのバイパス コードが **[アクティベーション ロックのバイパス コード (Activation Lock Bypass Code)]** ダイアログ ボックスに表示されます。
 
-## <a name="bypass-activation-lock"></a>アクティベーション ロックをバイパスする
+## <a name="enable-activation-lock-on-supervised-devices"></a>Abilitare il blocco attivazione nei dispositivi con supervisione
 
-1. Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。
-2. [ **資産とコンプライアンス** ] ワークスペースで [ **デバイス**] をクリックします。
-3. アクティベーション ロックが有効になっている、監視モードの登録済みのデバイスを選びます。
-3. **[ホーム]** タブの **[デバイス]** グループで、 **[リモート デバイスの操作]** > **[アクティブ化ロックのバイパス]**をクリックします。
-5. 警告ダイアログ ボックスのメッセージを読み、続ける準備ができたら **[はい]** をクリックします。
-6. 次の場所で、ロック解除要求の状態を確認できます。
+Per abilitare il blocco attivazione nei dispositivi con supervisione, si usano le impostazioni di conformità di Configuration Manager per creare e distribuire un elemento di configurazione di tipo **iOS e Mac OS X** :
 
-    - デバイスのプロパティ ダイアログ ボックスで、デバイスの検出データを確認する。
-    - **[デバイス]** ビューの **[アクティブ化ロック バイパスの状態]** 列 (既定でこの列は非表示) で確認する。
-    - 詳細ウィンドウの **[概要]** タブにある **[リモート デバイスの操作に関する情報]** セクション (デバイスが選ばれている状態) で確認する。
+1. Usare le informazioni nell'argomento [Come creare elementi di configurazione per dispositivi iOS e Mac OS X gestiti senza il client System Center Configuration Manager](/sccm/compliance/deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client) per creare un elemento di configurazione di tipo **iOS e Mac OS X**.
+2. Nella pagina **Protezione del sistema** della Creazione guidata dell'elemento di configurazione configurare l'impostazione **Consenti blocco attivazione (solo modalità di supervisione)** su **Consentito**.
+3. [Aggiungere l'elemento di configurazione a una linea di base di configurazione](/sccm/compliance/deploy-use/create-configuration-baselines).
+4. [Distribuire questa linea di base di configurazione](/sccm/compliance/deploy-use/deploy-configuration-baselines) a una raccolta contenente i dispositivi iOS per i quali si vuole abilitare il blocco di attivazione.
+
+> [!IMPORTANT]
+> Assicurarsi di essere fisicamente in possesso del dispositivo prima di eseguire questa procedura. In caso contrario, il bypass del blocco attivazione verrà eseguito e chiunque sia in possesso del dispositivo avrà accesso completo ad esso e potrà disattivare Trova il mio iPhone, cancellare il dispositivo o riattivarlo.
+
+È possibile eseguire il bypass del blocco attivazione o recuperare il codice di bypass del blocco solo per i dispositivi con supervisione. Se si tenta di eseguire il bypass del blocco attivazione per i dispositivi senza supervisione o di visualizzare i risultati del codice di bypass, si ottiene un errore.
+
+
+
+## <a name="view-the-activation-lock-bypass-code"></a>Visualizzare il codice di bypass del blocco attivazione
+
+1. Nella console di Configuration Manager fare clic su **Asset e conformità**.
+2. Nell'area di lavoro **Asset e conformità** fare clic su **Dispositivi**.
+3. Selezionare un dispositivo registrato in modalità di supervisione e con blocco attivazione abilitato.
+4. Nella scheda **Home** , nel gruppo **Dispositivo** , fare clic su **Azioni remote dispositivo** > **Visualizza il codice di bypass del blocco attivazione**.
+5. Nella finestra di dialogo **Visualizza il codice di bypass del blocco attivazione** è visualizzato il codice di bypass per il dispositivo selezionato.
+
+## <a name="bypass-activation-lock"></a>Eseguire il bypass del blocco attivazione
+
+1. Nella console di Configuration Manager fare clic su **Asset e conformità**.
+2. Nell'area di lavoro **Asset e conformità** fare clic su **Dispositivi**.
+3. Selezionare un dispositivo registrato in modalità di supervisione e con blocco attivazione abilitato.
+3. Nella scheda **Home** , nel gruppo **Dispositivo** , fare clic su **Azioni remote dispositivo** > **Bypass del blocco attivazione**.
+5. Leggere i messaggi nella finestra di dialogo di avviso e fare clic su **Sì** quando si è pronti a proseguire.
+6. È possibile esaminare lo stato della richiesta di sblocco tramite:
+
+    - I dati di individuazione per il dispositivo nella finestra di dialogo delle proprietà del dispositivo.
+    - La colonna **Stato di bypass del blocco attivazione** nella vista **Dispositivi** questa colonna è nascosta.
+    - La sezione **Informazioni sulle azioni remote dei dispositivi** nella scheda **Riepilogo** del riquadro dei dettagli, quando è selezionato un dispositivo.

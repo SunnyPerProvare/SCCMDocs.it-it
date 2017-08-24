@@ -1,6 +1,6 @@
 ---
-title: "BIOS からUEFI への変換を管理するためのタスク シーケンス手順 | Configuration Manager"
-description: "UEFI への移行用に FAT32 パーティションを準備するために、オペレーティング システム展開タスク シーケンスをカスタマイズする方法について説明します。"
+title: "Passaggi della sequenza di attività per la gestione della conversione da BIOS a UEFI | Configuration Manager"
+description: "Informazioni su come personalizzare una sequenza di attività di distribuzione del sistema operativo per preparare una partizione FAT32 per la transizione a UEFI."
 ms.custom: na
 ms.date: 03/24/2017
 ms.prod: configuration-manager
@@ -16,50 +16,50 @@ manager: angrobe
 ms.openlocfilehash: 528ce515c86c4e778532290026a90a46476c4576
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>BIOS からUEFI への変換を管理するためのタスク シーケンス手順
-Windows 10 では、UEFI 対応デバイスを必要とする新しいセキュリティ機能が多数提供されます。 最新の Windows PC では、UEFI がサポートされていても、従来の BIOS が使用されている場合があります。 デバイスを UEFI に変換する場合、各 PC に移動して、ハード ディスクのパーティションを再分割し、ファームウェアを再構成する必要がありました。 Configuration Manager でタスク シーケンスを使用すれば、BIOS から UEFI への変換のためにハード ドライブを準備し、インプレース アップグレード プロセスの一環として BIOS から UEFI への変換を行い、ハードウェア インベントリの一部として UEFI 情報を収集することができます。
+# <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>Passaggi della sequenza di attività per la gestione della conversione da BIOS a UEFI
+Molte delle nuove funzionalità di sicurezza offerte da Windows 10 richiedono dispositivi abilitati per UEFI. Alcuni PC Windows moderni supportano UEFI, ma usano un BIOS legacy. Per convertire un dispositivo da BIOS a UEFI, è necessario in genere accedere a ogni PC, ripartire il disco rigido e riconfigurare il firmware. Usando le sequenze di attività disponibili in Configuration Manager, è possibile preparare un disco rigido per la conversione da BIOS a UEFI, eseguire la conversione nell'ambito del processo di aggiornamento sul posto e raccogliere informazioni su UEFI nell'ambito dell'inventario hardware.
 
-## <a name="hardware-inventory-collects-uefi-information"></a>ハードウェア インベントリでの UEFI 情報の収集
-バージョン 1702 以降では、新しいハードウェア インベントリ クラス (**SMS_Firmware**) とプロパティ (**UEFI**) を使用することができ、コンピューターが UEFI モードで起動しているかどうかを判別するのに役立ちます。 コンピューターが UEFI モードで起動している場合、**UEFI** プロパティは **TRUE** に設定されています。 これはハードウェア インベントリでは既定で有効になっています。 ハードウェア インベントリの詳細については、「[ハードウェア インベントリを構成する方法](/sccm/core/clients/manage/inventory/configure-hardware-inventory)」を参照してください。
+## <a name="hardware-inventory-collects-uefi-information"></a>L'inventario hardware raccoglie le informazioni UEFI
+A partire dalla versione 1702, sono disponibili una nuova classe di inventario hardware (**SMS_Firmware**) e una nuova proprietà (**UEFI**) per determinare se un computer viene avviato in modalità UEFI. Quando un computer viene avviato in modalità UEFI, la proprietà **UEFI** è impostata su **TRUE**. L'impostazione è abilitata nell'inventario hardware per impostazione predefinita. Per altre informazioni sull'inventario hardware, vedere [How to configure hardware inventory](/sccm/core/clients/manage/inventory/configure-hardware-inventory) (Come configurare l'inventario hardware).
 
-## <a name="create-a-custom-task-sequence-to-prepare-the-hard-drive-for-bios-to-uefi-conversion"></a>カスタム タスク シーケンスを作成して BIOS から UEFI への変換のためにハード ドライブを準備する
-Configuration Manager バージョン 1610 以降では、**コンピューターの再起動**の手順で、UEFI への移行に備えてハード ドライブに FAT32 パーティションを準備するため、新しい変数 TSUEFIDrive を使って、オペレーティング システムの展開タスク シーケンスをカスタマイズできるようになりました。 次の手順では、タスク シーケンスのステップを作成して BIOS からUEFI への変換のためにハード ドライブを準備する方法の例を示します。
+## <a name="create-a-custom-task-sequence-to-prepare-the-hard-drive-for-bios-to-uefi-conversion"></a>Creare una sequenza di attività personalizzata per preparare il disco rigido per la conversione da BIOS a UEFI
+A partire da Configuration Manager versione 1610 è possibile personalizzare una sequenza di attività di distribuzione del sistema operativo con una nuova variabile, TSUEFIDrive, in modo che il passaggio **Riavvia computer** prepari una partizione FAT32 sul disco rigido per la transizione a UEFI. La procedura seguente fornisce un esempio sulle modalità di creazione dei passaggi della sequenza di attività per preparare il disco rigido alla conversione da BIOS a UEFI.
 
-### <a name="to-prepare-the-fat32-partition-for-the-conversion-to-uefi"></a>UEFI への変換のために FAT32 パーティションを準備するには:
-オペレーティング システムをインストールする既存のタスク シーケンスでは、BIOS からUEFI への変換を実行する手順を含む新しいグループを追加します。
+### <a name="to-prepare-the-fat32-partition-for-the-conversion-to-uefi"></a>Per preparare la partizione FAT32 alla conversione a UEFI:
+In una sequenza di attività esistente per installare un sistema operativo si aggiungerà un nuovo gruppo usando la procedura di conversione da BIOS a UEFI.
 
-1. ファイルと設定をキャプチャする手順を完了したら、新しいタスク シーケンス グループを作成してから、オペレーティング システムをインストールするステップを実行します。 たとえば、[**キャプチャ ファイルと設定**] グループの後に、[**BIOS-to-UEFI**] という名前のグループを作成します。
-2. 新しいグループの [**オプション**] タブで、新しいタスク シーケンス変数を条件 **_SMSTSBootUEFI** is **not equal** to **true** (_SMSTSBootUEFI は true と等しくない) として追加します。 これにより、コンピューターが既に UEFI モードになっている場合に、グループのステップが実行されないようにします。
+1. Creare un nuovo gruppo di sequenze di attività dopo aver eseguito la proceduta per acquisire file e impostazioni e prima della procedura di installazione del sistema operativo. Ad esempio, creare un gruppo dopo il gruppo **Acquisisci file e impostazioni** denominato **BIOS-to-UEFI** (Da BIOS a UEFI).
+2. Nella scheda **Opzioni** del nuovo gruppo aggiungere una nuova variabile della sequenza di attività come condizione in cui **_SMSTSBootUEFI** sia **diverso** da **true**. Questa operazione blocca l'esecuzione dei passaggi nel gruppo quando il computer è già in modalità UEFI.
 
-  ![BIOS-to-UEFI グループ](../../core/get-started/media/BIOS-to-UEFI-group.png)
-3. 新しいグループの下に、[**コンピューターの再起動**] タスク シーケンスのステップを追加します。 [**再起動後に実行するものを指定してください**] で、[**このタスク シーケンスに割り当てられているブート イメージ**] をオンにして、Windows PE でコンピューターを起動します。  
-4. [**オプション**] タブで、タスク シーケンス変数を条件 (**_SMSTSInWinPE equals false**) として追加します。 これにより、コンピューターが既に Windows PE にある場合に、このステップが実行されないようにします。
+  ![Gruppo BIOS-to-UEFI](../../core/get-started/media/BIOS-to-UEFI-group.png)
+3. Nel nuovo gruppo aggiungere il passaggio della sequenza di attività **Riavvia il computer**. In **Specificare cosa eseguire dopo il riavvio:** selezionare **The boot image assigned to this task sequence is selected** (L'immagine di avvio assegnata a questa sequenza di attività è selezionata) per avviare il computer in Windows PE.  
+4. Nella scheda **Opzioni** aggiungere una variabile della sequenza attività come condizione in cui **_SMSTSInWinPE sia uguale a false** Questa operazione blocca l'esecuzione di questo passaggio se il computer è già in Windows PE.
 
-  ![コンピューターの再起動のステップ](../../core/get-started/media/restart-in-windows-pe.png)
-5. ファームウェアを BIOS から UEFI に変換する OEM ツールを起動するステップを追加します。 これは一般に、OEM ツールを起動するコマンド ラインを含む**コマンドラインの実行**タスク シーケンスのステップになります。
-6. ハード ドライブをパーティションに分割してフォーマットするディスクのフォーマットとパーティション作成タスク シーケンスのステップを追加します。 このステップでは、次の操作を行います。
-  1. オペレーティング システムをインストールする前に、UEFI に変換される FAT32 パーティションを作成します。 [**ディスクの種類**] で [**GPT**] を選びます。
-    ![ディスクのフォーマットとパーティション作成のステップ](../media/format-and-partition-disk.png)
-  2. FAT32 パーティションのプロパティに移動します。 [**変数**] フィールドに「**TSUEFIDrive**」を入力します。 タスク シーケンスでこの変数を検出すると、コンピューターを再起動する前に UEFI 移行のための準備をします。
-    ![パーティションのプロパティ](../../core/get-started/media/partition-properties.png)
-  3. タスク シーケンス エンジンがその状態を保存し、ログ ファイルを保存するために使用する NTFS パーティションを作成します。
-7. **コンピューターの再起動**タスク シーケンスのステップを追加します。 [**再起動後に実行するものを指定してください**] で、[**このタスク シーケンスに割り当てられているブート イメージ**] をオンにして、Windows PE でコンピューターを起動します。  
+  ![Passaggio Riavvia il computer](../../core/get-started/media/restart-in-windows-pe.png)
+5. Aggiungere un passaggio per avviare lo strumento OEM che convertirà il firmware da BIOS a UEFI. Si tratta in genere di un passaggio della sequenza di attività **Esegui riga di comando** con una riga di comando per avviare lo strumento OEM.
+6. Aggiungere il passaggio della sequenza attività Formato e disco partizione che partiziona e formatta il disco rigido. Nel passaggio, eseguire le operazioni seguenti:
+  1. Creare la partizione FAT32 che verrà convertita in UEFI prima di installare il sistema operativo. Scegliere **GPT** per **Tipo disco**.
+    ![Passaggio Formato e disco partizione](../media/format-and-partition-disk.png)
+  2. Accedere alle proprietà della partizione FAT32. Immettere **TSUEFIDrive** nel campo **Variabile**. Quando la sequenza di attività rileva questa variabile, si avvia la preparazione per la transizione di UEFI prima di riavviare il computer.
+    ![Proprietà della partizione](../../core/get-started/media/partition-properties.png)
+  3. Creare una partizione NTFS che il motore della sequenza di attività usa per il salvataggio dello stato e per archiviare i file di log.
+7. Aggiungere il passaggio della sequenza di attività **Riavvia il computer**. In **Specificare cosa eseguire dopo il riavvio:** selezionare **The boot image assigned to this task sequence is selected** (L'immagine di avvio assegnata a questa sequenza di attività è selezionata) per avviare il computer in Windows PE.  
 
-## <a name="convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>インプレース アップグレード時に BIOS から UEFI に変換する
-Windows 10 Creators Update では、EFI 対応ハードウェアのハード ディスクのパーティションを再分割するプロセスを自動化する簡単な変換ツールが導入され、変換ツールは Windows 7 から Windows 10 へのインプレース アップグレード プロセスに統合されます。 このツールをオペレーティング システムのアップグレード タスク シーケンスと、ファームウェアを BIOS から UEFI に変換する OEM ツールと組み合わせて使用する場合、Windows 10 Creators Update へのインプレース アップグレード時にコンピューターを BIOS から UEFI に変換することができます。
+## <a name="convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>Conversione da BIOS a UEFI durante un aggiornamento sul posto
+Windows 10 Creators Update introduce un semplice strumento di conversione che automatizza il processo di ripartizione del disco rigido per l'hardware abilitato per UEFI e integra lo strumento di conversione nel processo di aggiornamento sul posto da Windows 7 a Windows 10. Quando si usa questo strumento in combinazione con la sequenza di attività di aggiornamento del sistema operativo e con lo strumento OEM che converte il firmware da BIOS a UEFI, è possibile convertire i computer da BIOS a UEFI durante un aggiornamento sul posto a Windows 10 Creators Update.
 
-**要件**:
+**Requisiti**:
 - Windows 10 Creators Update
-- UEFI をサポートするコンピューター
-- コンピューターのファームウェアを BIOS から UEFI に変換する OEM ツール
+- Computer con supporto per UEFI
+- Strumento OEM che converte il firmware del computer da BIOS a UEFI
 
-### <a name="to-convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>インプレース アップグレード時に BIOS から UEFI に変換するには
-1. Windows 10 Creators Update へのインプレース アップグレードを実行するオペレーティング システムのアップグレード タスク シーケンスを作成します。
-2. タスク シーケンスを編集します。 **後処理グループ**で、次のタスク シーケンス ステップを追加します。
-   1. [全般] から、**コマンド ラインを実行**ステップを追加します。 ディスクのデータを変更または削除せずに、ディスクを MBR から GPT に変換する MBR2GPT ツールのコマンド ラインを追加します。 コマンド ラインで、「**MBR2GPT/convert/disk:0/AllowFullOS**」と入力します。 フル オペレーティング システムではなく、Windows PE で MBR2GPT.EXE ツールを実行することもできます。 その場合、MBR2GPT.EXE ツールを実行するステップの前にコンピューターを再起動するステップを WinPE に追加し、コマンド ラインから /AllowFullOS オプションを削除します。 ツールと使用可能なオプションの詳細については、「[MBR2GPT.EXE](https://technet.microsoft.com/itpro/windows/deploy/mbr-to-gpt)」を参照してください。
-   2. ファームウェアを BIOS から UEFI に変換する OEM ツールを起動するステップを追加します。 これは一般に、OEM ツールを起動するコマンド ラインを含むコマンドラインの実行タスク シーケンスのステップになります。
-   3. [全般] から、**コンピューターの再起動**ステップを追加します。 [再起動後に実行するものを指定してください] では、**[現在インストールされている既定のオペレーティング システム]** を選択します。
-3. タスク シーケンスを展開します。
+### <a name="to-convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>Per eseguire la conversione da BIOS a UEFI durante un aggiornamento sul posto
+1. Creare una sequenza di attività di aggiornamento del sistema operativo per eseguire un aggiornamento sul posto a Windows 10 Creators Update.
+2. Modificare la sequenza di attività. Nel **gruppo Post-elaborazione** aggiungere i passaggi della sequenza di attività elencati di seguito.
+   1. Da Generale aggiungere un passaggio **Esegui riga di comando**. Verrà aggiunta la riga di comando per lo strumento MBR2GPT che consente di convertire un disco da MBR a GPT senza modificare o eliminare dati dal disco. Nella riga di comando digitare quanto segue: **MBR2GPT /convert /disk:0 /AllowFullOS**. È possibile anche scegliere di eseguire lo strumento MBR2GPT.EXE in Windows PE e non nel sistema operativo completo. A questo scopo, è necessario aggiungere un passaggio per riavviare il computer in WinPE prima del passaggio relativo all'esecuzione dello strumento MBR2GPT.EXE e rimuovere l'opzione /AllowFullOS dalla riga di comando. Per informazioni dettagliate sullo strumento e sulle opzioni disponibili, vedere [MBR2GPT.EXE](https://technet.microsoft.com/itpro/windows/deploy/mbr-to-gpt).
+   2. Aggiungere un passaggio per avviare lo strumento OEM che convertirà il firmware da BIOS a UEFI. Si tratta in genere di un passaggio della sequenza di attività Esegui riga di comando con una riga di comando per avviare lo strumento OEM.
+   3. Da Generale aggiungere il passaggio **Riavvia computer**. Per specificare cosa eseguire dopo il riavvio, selezionare **Il sistema operativo predefinito attualmente installato**.
+3. Distribuire la sequenza di attività.

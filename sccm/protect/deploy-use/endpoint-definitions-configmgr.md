@@ -1,6 +1,6 @@
 ---
-title: "Endpoint Protection のマルウェア定義 | Microsoft Docs"
-description: "クライアント コンピューターに定義ファイルの更新を配布するように Configuration Manager ソフトウェア更新プログラムを構成する方法について説明します。"
+title: Definizioni malware di Endpoint Protection | Microsoft Docs
+description: Informazioni su come configurare gli aggiornamenti software di Configuration Manager per recapitare gli aggiornamenti delle definizioni ai computer client.
 ms.custom: na
 ms.date: 02/14/2017
 ms.prod: configuration-manager
@@ -17,102 +17,102 @@ manager: angrobe
 ms.openlocfilehash: ca40c2c745ea516b56b637249b892cd44e570a9d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-#  <a name="using-configuration-manager-software-updates-to-deliver-definition-updates"></a>Configuration Manager のソフトウェアの更新プログラムを使用して、プログラムを配信するには
+#  <a name="using-configuration-manager-software-updates-to-deliver-definition-updates"></a>Utilizzo degli aggiornamenti Software di Configuration Manager per distribuire gli aggiornamenti delle definizioni
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
- クライアント コンピューターに定義ファイルの更新を配布するように Configuration Manager ソフトウェア更新プログラムを構成することができます。 これを行うには、自動展開規則を構成します。 自動展開規則の作成を開始する前に、Configuration Manager ソフトウェア更新プログラムを構成していることを確認します。 詳細については、「[System Center Configuration Manager のソフトウェア更新プログラムの概要](/sccm/sum/understand/software-updates-introduction)」をご覧ください。
+ È possibile configurare gli aggiornamenti software di Configuration Manager per recapitare gli aggiornamenti delle definizioni ai computer client. A tale scopo, è necessario configurare regole di distribuzione automatica. Prima di iniziare a creare regole di distribuzione automatica, assicurarsi di aver configurato gli aggiornamenti software di Configuration Manager. Per altre informazioni, vedere [Introduzione agli aggiornamenti software in System Center Configuration Manager](/sccm/sum/understand/software-updates-introduction).
 
 > [!NOTE]
->  この手順では、Endpoint Protection で特に構成する必要がある項目のみを示しています。 自動展開規則の作成ウィザードの詳細については、「[ソフトウェア更新プログラムの自動展開](/sccm/sum/deploy-use/automatically-deploy-software-updates)」をご覧ください。
+>  Questa procedura si applica solo agli elementi che devono essere configurati specificatamente per Endpoint Protection. Per altre informazioni sulla Creazione guidata delle regole di distribuzione automatica, vedere [Distribuire automaticamente gli aggiornamenti software](/sccm/sum/deploy-use/automatically-deploy-software-updates).
 
-## <a name="to-configure-an-automatic-deployment-rule-to-deliver-definition-updates"></a>定義ファイルの更新を配布するように自動展開規則を構成するには
+## <a name="to-configure-an-automatic-deployment-rule-to-deliver-definition-updates"></a>Per configurare una regola di distribuzione automatica per distribuire aggiornamenti delle definizioni
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.
 
-2.  [ソフトウェア ライブラリ **** ] ワークスペースで [ソフトウェア更新プログラム ****] を展開し、[自動展開規則 ****] をクリックします。
+2.  Nell'area di lavoro **Raccolta software** espandere **Aggiornamenti software**e quindi fare clic su **Regole di distribuzione automatica**.
 
-3.  [ホーム **** ] タブの [作成 **** ] グループで、[自動展開規則の作成 ****] をクリックします。
+3.  Nella scheda **Home** del gruppo **Crea** fare clic su **Crea regola di distribuzione automatica**.
 
-4.  **自動展開規則の作成ウィザード** の [全般 ****] ページで、次の情報を指定します。
+4.  Nella pagina **Generale** della **Creazione guidata delle regole di distribuzione automatica**specificare le informazioni seguenti:
 
-    -   **名前**: 自動展開規則の一意の名前を入力します。
+    -   **Nome**: immettere un nome univoco per la regola di distribuzione automatica.
 
-    -   **コレクション**: 定義ファイルの更新を展開するクライアント コンピューターのコレクションを選びます。
-
-        > [!NOTE]
-        >  定義ファイルの更新をユーザーのコレクションに展開することはできません。
-
-5.  [既存のソフトウェア更新プログラム グループに追加する ****] をクリックします。
-
-6.  **[この規則の実行後に展開を有効にする]** チェック ボックスがオンになっていることを確認し、 **[次へ]**をクリックします。
-
-7.  ウィザードの [展開設定 **** ] ページの [詳細レベル **** ] の一覧で、[最小 ****] を選択し、[次へ ****] をクリックします。
-
-    > [!NOTE]
-    >  **[詳細レベル]** の一覧から、**[最小]** (Service Pack なしの Configuration Manager) または **[エラー メッセージのみ]** (Configuration Manager) を選びます。 これにより、定義の展開によって返される状態メッセージの数が減ります。 この構成により、Configuration Manager サーバーの CPU 処理の使用率を低減できます。
-
-8.  [プロパティ フィルター **** ] の一覧で、[更新プログラムの分類 **** ] チェック ボックスをオンにします。
-
-9. **[検索条件]** 一覧で、**<検索する項目\>** をクリックします。 次に、 **[検索条件]** ダイアログ ボックスの **[検索する値を指定してください]** の一覧で **[定義ファイルの更新]**を選びます。
-
-10. [OK **** ] をクリックして [検索条件 **** ] ダイアログ ボックスを閉じます。
-
-11. [プロパティ フィルター **** ] の一覧で、[製品 **** ] チェック ボックスをオンにします。
-
-12. **[検索条件]** 一覧で、**<検索する項目\>** をクリックします。 その後、 **[検索条件]** ダイアログ ボックスで、 **[検索する値を指定してください]** の一覧で、Windows 8.1 以降には **[Forefront Endpoint Protection 2010]** 、Windows 10 以降には **[Windows Defender]** を選びます。
-
-13. [OK **** ] をクリックして [検索条件 **** ] ダイアログ ボックスを閉じ、[次へ ****] をクリックします。
-
-14. [プロパティ フィルター **** ] の一覧で、[優先 **** ] チェック ボックスをオンにします。
-
-15. **[検索条件]** 一覧で、**<検索する項目\>** をクリックします。 次に、 **[検索条件]** ダイアログ ボックスの **[検索する値を指定してください]** の一覧で **[いいえ]**を選びます。
-
-16. [OK **** ] をクリックして [検索条件 **** ] ダイアログ ボックスを閉じ、[次へ ****] をクリックします。
-
-17. ウィザードの **[評価スケジュール]** ページで **[スケジュールに従って実行するよう規則を有効化する]**を選んでから、定義ファイルの更新をダウンロードするスケジュールを構成します。 少なくとも、ソフトウェアの更新ポイントが同期されるたびに、その 2 時間後に実行するように規則を設定します。 **[次へ]**をクリックします。
-
-18. ウィザードの [展開スケジュール **** ] ページで、次の設定を構成します。
-
-    -   **[基準]**: 階層内のすべてのクライアントで一度に最新の定義をインストールするには、 **[UTC]** を選びます。 実際のインストール時間は、2 時間の範囲内で一定ではありません。 この設定が推奨されます。
-
-    -   **[ソフトウェアが使用可能な時間]**: この規則で作成される展開の使用可能な時間を指定します。 指定する時間は自動展開規則の実行から 1 時間以上後にする必要があります。 これにより、コンテンツを階層内の配布ポイントにレプリケートするのに十分な時間を確保することができます。 定義ファイルの更新にマルウェア対策エンジンの更新も含まれていることがあり、その場合は配布ポイントに到達するのに時間がかかる可能性があります。
-
-    -   **[インストールの期限]**– **[直ちに]**を選びます。
+    -   **Raccolta**: selezionare la raccolta di computer client in cui distribuire gli aggiornamenti delle definizioni.
 
         > [!NOTE]
-        >  すべてのクライアントが同時に更新を要求しないように、ソフトウェア更新の期限は 2 時間の範囲内でさまざまです。
+        >  Non è possibile distribuire aggiornamenti delle definizioni in una raccolta di utenti.
 
-19. **[次へ]**をクリックします。
+5.  Fare clic su **Aggiungi a un gruppo di aggiornamenti software**.
 
-20. ウィザードの **[ユーザー側の表示と操作]** ページで、 **[ユーザーへの通知]** の一覧の **[すべての通知をソフトウェア センターで非表示にし、ユーザーにも通知しない]**を選びます。   これにより、定義ファイルの更新がサイレント インストールされます。 **[次へ]**をクリックします。
+6.  Assicurarsi che la casella di controllo  **Attiva la distribuzione dopo l'esecuzione di questa regola** sia selezionata e quindi fare clic su **Avanti**.
 
-21. ウィザードの **[アラート]** ページでアラートを構成する必要はありません。 Configuration Manager の Endpoint Protection により、必要となるすべてのアラートが生成されます。 [次へ] をクリックします。 ****
-
-22. ウィザードの **[ダウンロードの設定]** ページで、必要なソフトウェア更新プログラム ダウンロード方法を選び、 **[次へ]**をクリックします。
-
-23. ウィザードの [展開パッケージ **** ] ページで、既存の展開パッケージを選択するか、規則に関連付けられたソフトウェア更新ファイルを含めるように新しい展開パッケージを作成します。
+7.  Nella pagina **Impostazioni distribuzione** della procedura guidata, nell'elenco **Livello dettaglio** selezionare **Minimo**e quindi fare clic su **Avanti**.
 
     > [!NOTE]
-    >  他のソフトウェア更新プログラムが含まれていないパッケージに、定義ファイルの更新を配置することを検討してください。 この方法によって、定義ファイルの更新パッケージのサイズが小さくなり、配布ポイントへより短時間でレプリケートすることができます。
+    >  Nell'elenco **Livello dettaglio** selezionare **Minimo** (Configuration Manager senza Service Pack) o **Solo messaggi di errore** (Configuration Manager). In questo modo, sarà possibile ridurre il numero di messaggi di stato restituiti dalla distribuzione delle definizioni. Questa configurazione consente di ridurre l'utilizzo dell'elaborazione CPU nei server di Configuration Manager.
 
-24. ウィザードの **[配布ポイント]** ページで、このパッケージのコンテンツをコピーする配布ポイントを 1 つ以上選び、 **[次へ]**をクリックします。
+8.  Nell'elenco **Filtri proprietà** selezionare la casella di controllo **Classificazione aggiornamento** .
 
-25. ウィザードの **[ダウンロード場所]** ページで、 **[インターネットからソフトウェア更新プログラムをダウンロードする]**を選び、 **[次へ]**をクリックします。
+9. Nell'elenco **Criteri di ricerca** fare clic su **<elementi da trovare\>**. Nella finestra di dialogo **Criteri di ricerca** selezionare quindi **Aggiornamenti delle definizioni** nell'elenco **Specificare il valore da cercare**.
 
-26. ウィザードの **[言語の選択]** ページで、ダウンロードする更新プログラムの各言語バージョンを選び、 **[次へ]**をクリックします。
+10. Fare clic su **OK** per chiudere la finestra di dialogo **Criteri di ricerca** .
 
-27. 自動展開規則の作成ウィザードを完了します。
+11. Nell'elenco **Filtri proprietà** selezionare la casella di controllo **Prodotto** .
 
-28. Configuration Manager コンソールの **[自動展開規則]** ノードに新しい規則が表示されるのを確認します。
+12. Nell'elenco **Criteri di ricerca** fare clic su **<elementi da trovare\>**. Nella finestra di dialogo **Criteri di ricerca** selezionare quindi **Forefront Endpoint Protection 2010** , per Windows 8.1 e versioni precedenti, o **Windows Defender** , per Windows 10 e versioni successive, nell'elenco **Specificare il valore da cercare** .
+
+13. Fare clic su **OK** per chiudere la finestra di dialogo **Criteri di ricerca** e quindi fare clic su **Avanti**.
+
+14. Nell'elenco **Filtri proprietà** selezionare la casella di controllo **Sostituito** .
+
+15. Nell'elenco **Criteri di ricerca** fare clic su **<elementi da trovare\>**. Nella finestra di dialogo **Criteri di ricerca** selezionare quindi **No** nell'elenco **Specificare il valore da cercare**.
+
+16. Fare clic su **OK** per chiudere la finestra di dialogo **Criteri di ricerca** e quindi fare clic su **Avanti**.
+
+17. Nella pagina **Pianificazione valutazione** della procedura guidata selezionare l'opzione **** per consentire l'esecuzione della regola in base a una pianificazione e quindi configurare la pianificazione in base a cui scaricare gli aggiornamenti delle definizioni. Impostare la regola in modo che venga almeno eseguita due ore dopo ogni sincronizzazione del punto di aggiornamento software. Fare clic su **Avanti**.
+
+18. Nella pagina **Pianificazione della distribuzione** della procedura guidata configurare le impostazioni seguenti:
+
+    -   **Tempo basato su**: selezionare **UTC** per fare in modo che tutti i client nella gerarchia installino le definizioni più aggiornate contemporaneamente. Il tempo di installazione effettivo può variare all'interno di una finestra di due ore. Questa è l'impostazione consigliata.
+
+    -   **Tempo disponibile software**: specificare il tempo disponibile per la distribuzione creata da questa regola. Il tempo specificato deve essere almeno un'ora dopo l'esecuzione della regola di distribuzione automatica. Ciò consente di assicurarsi che il contenuto abbia tempo sufficiente per la replica nei punti di distribuzione nella gerarchia. Alcuni aggiornamenti delle definizioni possono includere anche aggiornamenti del motore antimalware, che potrebbero richiedere più tempo per raggiungere i punti di distribuzione.
+
+    -   **Scadenza installazione**: selezionare **Appena possibile**.
+
+        > [!NOTE]
+        >  Le scadenze degli aggiornamenti software variano all'interno di un periodo di due ore, per impedire che tutti i client richiedano un aggiornamento contemporaneamente.
+
+19. Fare clic su **Avanti**.
+
+20. Nella pagina **Esperienza utente** della procedura guidata selezionare **Nascondi in Software Center e nascondi tutte le notifiche** nell'elenco **Notifiche utente**.   In questo modo, gli aggiornamenti delle definizioni verranno installati in modo invisibile all'utente. Fare clic su **Avanti**.
+
+21. Nella pagina **Avvisi** della procedura guidata non è necessario configurare avvisi. Endpoint Protection in Configuration Manager genera avvisi che potrebbero essere necessari. Fare clic su **Avanti**.
+
+22. Nella pagina **Impostazioni download** della procedura guidata selezionare il comportamento di download degli aggiornamenti software necessario e quindi fare clic su **Avanti**.
+
+23. Nella pagina **Pacchetto di distribuzione** della procedura guidata selezionare un pacchetto di distribuzione esistente o crearne uno nuovo per contenere i file degli aggiornamenti software associati alla regola.
+
+    > [!NOTE]
+    >  È consigliabile inserire gli aggiornamenti delle definizioni in un pacchetto che non contenga altri aggiornamenti software. In questo modo, le dimensioni del pacchetto di aggiornamenti delle definizioni resteranno contenute, consentendo una replica più veloce nei punti di distribuzione.
+
+24. Nella pagina **Punti di distribuzione** della procedura guidata selezionare uno o più punti di distribuzione in cui verrà copiato il contenuto del pacchetto e quindi fare clic su **Avanti**.
+
+25. Nella pagina **Percorso download** della procedura guidata selezionare **Scarica aggiornamenti software da Internet**e quindi fare clic su **Avanti**.
+
+26. Nella pagina **Selezione lingua** della procedura guidata selezionare ogni versione linguistica degli aggiornamenti da scaricare e quindi fare clic su **Avanti**.
+
+27. Completare la Creazione guidata delle regole di distribuzione automatica.
+
+28. Verificare che la nuova regola venga visualizzata nel nodo **Regole di distribuzione automatica** della console di Configuration Manager.
 
 
 > [!div class="button"]
-[次のステップ >](endpoint-antimalware-policies.md)
+[Passaggio successivo >](endpoint-antimalware-policies.md)
 
 > [!div class="button"]
-[戻る >](endpoint-configure-alerts.md)
+[Indietro >](endpoint-configure-alerts.md)

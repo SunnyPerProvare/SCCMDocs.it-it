@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager を使用した MDM の構成の確認 | Microsoft Docs"
-description: "System Center Configuration Manager を使用して MDM の構成を確認します。"
+title: Verificare la configurazione MDM tramite System Center Configuration Manager | Microsoft Docs
+description: Verificare la configurazione MDM tramite System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -18,20 +18,20 @@ manager: angrobe
 ms.openlocfilehash: ad4b923bd6d3e8acfe799a4ebe2adec737939d75
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="verify-mdm-configuration-with-system-center-configuration-manager"></a>System Center Configuration Manager を使用した MDM の構成の確認
+# <a name="verify-mdm-configuration-with-system-center-configuration-manager"></a>Verificare la configurazione MDM con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-次のログ ファイルをチェックして、特定のデバイス管理コンポーネントを確認できます。
+È possibile verificare alcuni componenti di gestione dei dispositivi controllando i file di log seguenti:
 
--   Cloudusersync.log を参照して、ユーザー アカウントが正常に同期されていることを確認する。
+-   Controllare Cloudusersync.log per verificare che gli account utente siano sincronizzati correttamente.
 
--   Sitecomp.log で、サービス接続ポイントが正常に作成されたことを確認する。
+-   Controllare Sitecomp.log per verificare che il punto di connessione del servizio sia stato creato correttamente.
 
-これらの特定のログ ファイルとその表示方法の詳細については、[System Center Configuration Manager のログ ファイル](../../core/plan-design/hierarchy/log-files.md#a-namebkmkfunctionlogsa-log-files-for-configuration-manager-functionality)に関する記事を参照してください。
+Per altre informazioni su questi file di log specifici e su come visualizzarli, vedere [File di log in System Center Configuration Manager](../../core/plan-design/hierarchy/log-files.md#a-namebkmkfunctionlogsa-log-files-for-configuration-manager-functionality).
 
 > [!div class="button"]
-[< 前のステップ](set-up-additional-management.md)
+[< Passaggio precedente](set-up-additional-management.md)

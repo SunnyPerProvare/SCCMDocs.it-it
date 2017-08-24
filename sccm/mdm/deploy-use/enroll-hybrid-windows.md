@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager と Microsoft Intune を使ったハイブリッド Windows デバイス管理のセットアップ | Microsoft Docs"
-description: "System Center Configuration Manager と Microsoft Intune を使用して Windows デバイス管理を設定します。"
+title: Configurare la gestione di dispositivi Windows ibrida con System Center Configuration Manager e Microsoft Intune | Microsoft Docs
+description: Impostare la gestione dei dispositivi Windows con System Center Configuration Manager e Microsoft Intune.
 ms.custom: na
 ms.date: 03/17/2017
 ms.prod: configuration-manager
@@ -17,114 +17,114 @@ manager: angrobe
 ms.openlocfilehash: 47348baeac26bfa2ad5016622fe4dbcb9f572483
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="set-up-windows-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>System Center Configuration Manager と Microsoft Intune を使ったハイブリッド Windows デバイス管理のセットアップ
+# <a name="set-up-windows-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurare la gestione di dispositivi ibridi Windows con System Center Configuration Manager e Microsoft Intune
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-このトピックでは、IT 管理者を対象に、ユーザーが Configuration Manager と Microsoft Intune を使用して、Windows PC とモバイル デバイスを管理できるようにする方法について説明します。
+Questo argomento descrive in che modo gli amministratori IT possono consentire agli utenti di iniziare a gestire i PC Windows e dispositivi mobili usando Configuration Manager e Microsoft Intune.
 
-## <a name="enable-windows-device-management"></a>Windows デバイスの管理を有効にする
-PC やモバイル デバイスの Windows デバイスの管理を有効にするには、次の手順を使用します。
+## <a name="enable-windows-device-management"></a>Abilitare la gestione dei dispositivi Windows
+Per abilitare la gestione dei dispositivi Windows per PC o dispositivi mobili, usare la procedura seguente:
 
-1.  任意のプラットフォームの登録をセットアップする前に、「[ハイブリッド MDM をセットアップする](setup-hybrid-mdm.md)」に記載されている前提条件と手順を完了しておきます。  
-2.  Configuration Manager コンソールの **[管理]** ワークスペースで、**[概要]** > **[クラウド サービス]** > **[Microsoft Intune サブスクリプション]** に移動します。  
-3.  リボンで、**[プラットフォームの構成]** をクリックし、Windows プラットフォームを選択します。
-    - Windows PC やラップトップの場合は、**[Windows]** を選択し、次の手順を実行します。
-      1. **[全般]** タブで **[Windows の登録を有効にする]**をクリックします。
-      2. 証明書を使用して会社ポータル アプリにコード署名して展開する場合は、「**コード署名証明書**」を参照してください。 デバイスのユーザーが Windows ストアから会社ポータル アプリをインストールすることも、管理者がコード署名せずにビジネス向け Windows ストアからアプリを展開することもできます。
-      3. [Windows Hello for Business 設定](windows-hello-for-business-settings.md)を構成することもできます。
-    - Windows Phone やタブレットの場合は、**[Windows Phone]** を選択し、次の手順を実行します。
-      1. **[全般]** タブで、**[Windows Phone 8.1 と Windows 10 Mobile]** チェック ボックスをオンにします。 Windows Phone 8.0 はサポートされなくなりました。
-      2. 組織で会社アプリをサイドロードする必要がある場合は、必要なトークンやファイルをアップロードできます。 アプリのサイドローディングの詳細については、「[Windows アプリの作成](https://docs.microsoft.com/sccm/apps/get-started/creating-windows-applications)」を参照してください。
-        - **アプリケーション登録トークン**
-        - **.pfx ファイル**
-        - **[なし]** Symantec 証明書を使用する場合は、**[Symantec 証明書の有効期限が切れる前にアラートを表示する]** を指定できます。
-4. [OK **** ] をクリックしてダイアログ ボックスを閉じます。  会社ポータルを使用して、登録プロセスを簡略化するには、デバイス登録用の DNS エイリアスを作成してください。 自分のデバイスを登録する方法をユーザーに通知することができます。
+1.  Prima di impostare la registrazione per una qualsiasi piattaforma, completare i prerequisiti e le procedure indicate in [Setup hybrid MDM](setup-hybrid-mdm.md) (Impostare una MDM ibrida).  
+2.  Nell'area di lavoro **Amministrazione** della console di Configuration Manager andare a **Panoramica** > **Servizi cloud** > **Sottoscrizioni a Microsoft Intune**.  
+3.  Nella barra multifunzione fare clic su **Configura piattaforme** e quindi selezionare la piattaforma Windows:
+    - **Windows** per PC desktop e portatili Windows, quindi completare i passaggi seguenti:
+      1. Nella scheda **Generale** fare clic sulla casella di controllo **Abilita registrazione Windows**.
+      2. Se si usa un certificato per firmare il codice e distribuire l'app del portale aziendale, individuare il **certificato di firma del codice**. Gli utenti dei dispositivi possono anche installare l'app del portale aziendale da Windows Store o è possibile distribuire l'app da Windows Store per Business senza firma del codice.
+      3. Inoltre è possibile configurare le [impostazioni di Windows Hello for Business](windows-hello-for-business-settings.md).
+    - **Windows Phone** per telefoni e tablet Windows, quindi completare la procedura seguente:
+      1. Nella scheda **Generale** fare clic sulla casella di controllo **Windows Phone 8.1 e Windows 10 Mobile**. Windows Phone 8.0 non è più supportato.
+      2. Se l'organizzazione ha bisogno di trasferire localmente app aziendali, è possibile caricare il file o il token necessario. Per altre informazioni sul trasferimento locale di app, vedere [Creare applicazioni Windows](https://docs.microsoft.com/sccm/apps/get-started/creating-windows-applications).
+        - **Token di registrazione applicazione**
+        - **File con estensione .pfx**
+        - **Nessuno** Se si usa un certificato Symantec, è possibile specificare **Show an alert before Symantec certificates expire** (Mostra un avviso prima della scadenza dei certificati Symantec).
+4. Fare clic su **OK** per chiudere la finestra di dialogo.  Per semplificare il processo di registrazione tramite il portale aziendale, è necessario creare un alias DNS per la registrazione del dispositivo. È quindi possibile indicare agli utenti come registrare i propri dispositivi.
 
-## <a name="choose-how-to-enroll-windows-devices"></a>Windows デバイスの登録方法を選択する
+## <a name="choose-how-to-enroll-windows-devices"></a>Scegliere come registrare i dispositivi Windows
 
-Intune ライセンスをユーザーに割り当てたら、Windows デバイスを追加の手順なしで登録できますが、ユーザーのために登録を簡単にすることができます。
+Dopo aver assegnato licenze Intune agli utenti, è possibile registrare i dispositivi Windows senza ulteriori passaggi, ma è anche possibile semplificare la registrazione per gli utenti.
 
-Windows デバイスの登録を簡単にする方法は次の 2 つの要素で決まります。
-- **Azure Active Directory Premium を使用していますか?** <br>[Azure AD Premium](https://docs.microsoft.com/azure/active-directory/active-directory-get-started-premium) は、Enterprise Mobility + Security およびその他のライセンス プランに付属します。
-- **どのバージョンの Windows クライアントが登録されますか?** <br>Windows 10 デバイスは、職場または学校のアカウントを追加すると自動的に登録できます。 以前のバージョンでは、会社ポータル アプリを使用して登録する必要があります。
+Due fattori determinano in che modo è possibile semplificare la registrazione dei dispositivi Windows:
+- **Si usa Azure Active Directory Premium?** <br>[Azure AD Premium](https://docs.microsoft.com/azure/active-directory/active-directory-get-started-premium) è incluso in Enterprise Mobility + Security e altri piani di licenze.
+- **Quali versioni di client Windows saranno registrate?** <br>I dispositivi Windows 10 possono essere registrati automaticamente mediante l'aggiunta di un account aziendale o dell'istituto di istruzione. Le versioni precedenti devono essere registrate con l'app del portale aziendale.
 
-||**Azure AD Premium**|**その他の AD**|
+||**Azure AD Premium**|**Altro AD**|
 |----------|---------------|---------------|  
-|**Windows 10**|[自動登録](#enable-windows-10-automatic-enrollment) |[ユーザー登録](#enable-windows-enrollment-without-azure-ad-premium)|
-|**以前の Windows バージョン**|[ユーザー登録](#enable-windows-enrollment-without-azure-ad-premium)|[ユーザー登録](#enable-windows-enrollment-without-azure-ad-premium)|
+|**Windows 10**|[Registrazione automatica](#enable-windows-10-automatic-enrollment) |[Registrazione utente](#enable-windows-enrollment-without-azure-ad-premium)|
+|**Versioni precedenti di Windows**|[Registrazione utente](#enable-windows-enrollment-without-azure-ad-premium)|[Registrazione utente](#enable-windows-enrollment-without-azure-ad-premium)|
 
-## <a name="enable-windows-10-automatic-enrollment"></a>Windows 10 の自動登録を有効にする
+## <a name="enable-windows-10-automatic-enrollment"></a>Abilitare la registrazione automatica di Windows 10
 
-自動登録を使用して、職場や学校のアカウントを追加し、管理されることに同意すると、会社所有のデバイスや個人の Windows 10 PC および Windows 10 Mobile デバイスを Intune に登録できます。 このように簡単です。 ユーザーのデバイスはバックグラウンドで登録され、Azure Active Directory に参加します。 登録されると、デバイスは Intune で管理されます。
+Con la registrazione automatica è possibile registrare PC Windows 10 e dispositivi mobili Windows 10 aziendali o personali in Intune aggiungendo un account aziendale o dell'istituto di istruzione e accettandone la gestione. Non occorrono altre operazioni. Il dispositivo dell'utente registra e aggiunge Azure Active Directory in background. Dopo essere stato registrato, il dispositivo viene gestito con Intune.
 
-**必要条件**
-- Azure Active Directory Premium サブスクリプション ([試用版サブスクリプション](http://go.microsoft.com/fwlink/?LinkID=816845))
-- Microsoft Intune サブスクリプション
-
-
-### <a name="configure-automatic-mdm-enrollment"></a>自動 MDM 登録の構成
-
-1. [Azure 管理ポータル](https://portal.azure.com) (https://manage.windowsazure.com) にサインインし、**[Azure Active Directory]** を選択します。
-
-  ![Azure ポータルのスクリーンショット](../media/auto-enroll-azure-main.png)
-
-2. **[モビリティ (MDM および MAM)]** を選択します。
-
-  ![Azure ポータルのスクリーンショット](../media/auto-enroll-mdm.png)
-
-3. **[Microsoft Intune]** を選択します。
-
-  ![Azure ポータルのスクリーンショット](../media/auto-enroll-intune.png)
-
-4. **[MDM ユーザー スコープ]** を構成します。 Microsoft Intune で管理するユーザーのデバイスを指定します。 これらのユーザーの Windows 10 デバイスは、Microsoft Intune の管理対象として自動的に登録されます。
-
-    - **なし**
-    - **一部**
-    - **すべて**
-
-   ![Azure ポータルのスクリーンショット](../media/auto-enroll-scope.png)
-
-5. 次の URL の既定値を使用します。
-    - **MDM 使用条件 URL**
-    - **MDM 探索 URL**
-    - **MDM 準拠 URL**
-
-6. **[保存]** を選択します。
+**Prerequisiti**
+- Sottoscrizione di Azure Active Directory Premium ([sottoscrizione di prova](http://go.microsoft.com/fwlink/?LinkID=816845))
+- Sottoscrizione di Microsoft Intune
 
 
-既定では、サービスの 2 要素認証は有効になっていません。 ただし、デバイスを登録するときには 2 要素認証をお勧めします。 このサービスの 2 要素認証を要求する前に、Azure Active Directory で 2 要素認証プロバイダーを構成し、多要素認証用にユーザー アカウントを構成する必要があります。 「[クラウドでの Azure Multi-Factor Authentication Server の概要](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-get-started-cloud)」を参照してください。
+### <a name="configure-automatic-mdm-enrollment"></a>Configurare la registrazione automatica MDM
 
-## <a name="enable-windows-enrollment-without-azure-ad-premium"></a>Azure AD Premium なしで Windows 登録を有効にする
-Azure AD Premium 自動登録なしでデバイスを登録することをユーザーに許可できます。 ライセンスを割り当てると、ユーザーは、自分の職場のアカウントを個人所有のデバイスに追加するか、会社所有のデバイスを Azure AD に参加させることで登録できます。 DNS エイリアス (CNAME レコード タイプ) を作成すると、ユーザーは自分のデバイスを簡単に登録できるようになります。 DNS CNAME リソース レコードを作成すると、ユーザーは Intune サーバー名を入力することなく Intune に接続して登録できます。
+1. Accedere al [portale di gestione di Azure](https://portal.azure.com) (https://manage.windowsazure.com) e selezionare **Azure Active Directory**.
 
-### <a name="create-cnames-to-simplify-enrollment"></a>CNAME を作成して登録を簡単にする
-会社のドメインの CNAME DNS リソース レコードを作成します。 たとえば、会社の Web サイトが contoso.com の場合、EnterpriseEnrollment.contoso.com を enterpriseenrollment-s.manage.microsoft.com にリダイレクトする CNAME を DNS に作成します。
+  ![Schermata del portale di Azure](../media/auto-enroll-azure-main.png)
 
-CNAME DNS エントリの作成は省略可能ですが、CNAME レコードにより、ユーザーによる登録が簡単になります。 CNAME レコードの登録が見つからない場合、ユーザーは手動で MDM サーバー名 enrollment.manage.microsoft.com を入力するように求められます。
+2. Selezionare **Servizi Mobility (MDM e MAM)**.
 
-|型|ホスト名|指定先|TTL|  
+  ![Schermata del portale di Azure](../media/auto-enroll-mdm.png)
+
+3. Selezionare **Microsoft Intune**.
+
+  ![Schermata del portale di Azure](../media/auto-enroll-intune.png)
+
+4. Configurare **Ambito utente MDM**. Specificare i dispositivi utente da gestire con Microsoft Intune. I dispositivi utente Windows 10 vengono registrati automaticamente per essere gestiti con Microsoft Intune.
+
+    - **Nessuno**
+    - **Alcuni**
+    - **Tutti**
+
+   ![Schermata del portale di Azure](../media/auto-enroll-scope.png)
+
+5. Usare i valori predefiniti per gli URL seguenti:
+    - **URL delle condizioni per l'uso di MDM**
+    - **URL individuazione MDM**
+    - **URL conformità MDM**
+
+6. Selezionare **Salva**.
+
+
+L'autenticazione a due fattori non è abilitata per il servizio per impostazione predefinita. Tuttavia l'autenticazione a due fattori è consigliabile quando si registra un dispositivo. Prima di richiedere l'autenticazione a due fattori per questo servizio, è necessario configurare un provider di autenticazione a due fattori in Azure Active Directory e configurare gli account utente per l'autenticazione a più fattori. Vedere [Introduzione al server Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-get-started-cloud).
+
+## <a name="enable-windows-enrollment-without-azure-ad-premium"></a>Abilitare la registrazione di Windows senza Azure AD Premium
+È possibile consentire agli utenti di registrare i propri dispositivi senza la registrazione automatica di Azure AD Premium. Una volta assegnate le licenze, gli utenti possono registrarsi dopo aver aggiunto l'account aziendale per i dispositivi personali o i dispositivi di proprietà dell'azienda ad Azure AD. La creazione di un alias DNS (tipo di record CNAME) semplifica la registrazione dei dispositivi per gli utenti. Se si creano record di risorse CNAME DNS, gli utenti si connettono e si registrano a Intune senza dover immettere il nome del server di Intune.
+
+### <a name="create-cnames-to-simplify-enrollment"></a>Creare record CNAME per semplificare la registrazione
+Creare record di risorse CNAME DNS per il dominio della società. Ad esempio, se il sito Web della società è contoso.com, si creerà un record CNAME in DNS che reindirizzi EnterpriseEnrollment.contoso.com a enterpriseenrollment-s.manage.microsoft.com.
+
+Sebbene la creazione di voci DNS CNAME sia facoltativa, i record CNAME semplificano la registrazione per gli utenti. Se non viene trovato alcun record di registrazione CNAME, agli utenti viene richiesto di immettere manualmente il nome del server MDM, enrollment.manage.microsoft.com.
+
+|Tipo|Nome dell'host|Punta a|TTL|  
 |----------|---------------|---------------|---|
-|CNAME|EnterpriseEnrollment.company_domain.com|EnterpriseEnrollment-s.manage.microsoft.com| 1 時間|
+|CNAME|EnterpriseEnrollment.company_domain.com|EnterpriseEnrollment-s.manage.microsoft.com| 1 ora|
 
-複数の UPN サフィックスがある場合は、各ドメイン名について 1 つの CNAME レコードを作成し、それぞれで EnterpriseEnrollment s.manage.microsoft.com をポイントする必要があります。 たとえば、Contoso 社でユーザーが name@contoso.com を使用しており、電子メール/UPN として name@us.contoso.com と name@eu.constoso.com も使用している場合、Contoso の DNS 管理者は次の CNAME を作成する必要があります。
+Se si dispone di più suffissi UPN, è necessario creare un CNAME per ciascun nome di dominio e puntare ciascuno a EnterpriseEnrollment-s.manage.microsoft.com. Ad esempio, se gli utenti di Contoso usano name@contoso.com, ma usano anche name@us.contoso.com e name@eu.constoso.com come indirizzo di posta elettronica/UPN, l'amministratore DNS Contoso dovrà creare i CNAME seguenti.
 
-|型|ホスト名|指定先|TTL|  
+|Tipo|Nome dell'host|Punta a|TTL|  
 |----------|---------------|---------------|---|
-|CNAME|EnterpriseEnrollment.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com|1 時間|
-|CNAME|EnterpriseEnrollment.us.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com|1 時間|
-|CNAME|EnterpriseEnrollment.eu.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com| 1 時間|
+|CNAME|EnterpriseEnrollment.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com|1 ora|
+|CNAME|EnterpriseEnrollment.us.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com|1 ora|
+|CNAME|EnterpriseEnrollment.eu.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com| 1 ora|
 
-`EnterpriseEnrollment-s.manage.microsoft.com` – Intune サービスへのリダイレクトと電子メールのドメイン名によるドメイン認識をサポートします。
+`EnterpriseEnrollment-s.manage.microsoft.com`: supporta un reindirizzamento al servizio Intune con riconoscimento del dominio dal nome di dominio del messaggio di posta elettronica
 
-DNS レコードの変更が反映されるまでには、最大で 72 時間かかります。 DNS レコードの変更が反映されるまで、Intune で DNS の変更を確認することはできません。
+La propagazione delle modifiche ai record DNS potrebbe richiedere fino a 72 ore. Non è possibile verificare la modifica DNS in Intune fino a quando il record DNS non si propaga.
 
-## <a name="tell-users-how-to-enroll-devices"></a>デバイスの登録方法をユーザーに通知する  
+## <a name="tell-users-how-to-enroll-devices"></a>Indicare agli utenti come registrare i dispositivi  
 
- セットアップが完了したら、デバイスを登録する方法をユーザーに知らせる必要があります。 ガイダンスとして[デバイスの登録についてユーザーに通知する項目](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune)に関する記事を参照してください。 ユーザーに「[Enroll your Windows device in Intune](https://docs.microsoft.com/intune/enduser/enroll-your-device-in-intune-windows)」 (Intune での Windows デバイスの登録) のページを案内します。 この情報は、Microsoft Intune と Configuration Manager の両方によって管理されるモバイル デバイスに適用されます。
+ Dopo aver completato la configurazione occorre informare gli utenti su come registrare i loro dispositivi. Per informazioni, vedere [Informazioni sull'uso di Microsoft Intune per gli utenti finali](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune). È possibile indirizzare gli utenti a [Uso del dispositivo Windows con Intune](https://docs.microsoft.com/intune/enduser/enroll-your-device-in-intune-windows). Queste informazioni si applicano ai dispositivi mobili gestiti sia con Microsoft Intune che con Configuration Manager.
 
 > [!div class="button"]
-[< 前のステップ](create-service-connection-point.md)  [次のステップ >](set-up-additional-management.md)
+[< Passaggio precedente](create-service-connection-point.md)  [Passaggio successivo >](set-up-additional-management.md)

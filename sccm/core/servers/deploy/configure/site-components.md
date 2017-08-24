@@ -1,6 +1,6 @@
 ---
-title: "Configuration Manager のサイト コンポーネント | Microsoft Docs"
-description: "サイト コンポーネントを構成して、サイト システムの役割とサイト ステータス レポートの動作を変更する方法について説明します。"
+title: Componenti del sito per Configuration Manager | Microsoft Docs
+description: Informazioni su come configurare i componenti del sito per modificare il comportamento dei ruoli del sistema del sito e la creazione di report sullo stato del sito.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,106 +17,106 @@ manager: angrobe
 ms.openlocfilehash: 83550fbf0ef1f9adb0bb2c51a4f3c26a7500d352
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="site-components-for-system-center-configuration-manager"></a>System Center Configuration Manager のサイト コンポーネント
+# <a name="site-components-for-system-center-configuration-manager"></a>Componenti del sito per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-各 System Center Configuration Manager サイトでサイト コンポーネントを設定すると、サイト システムの役割とサイト ステータス レポートの動作を変更できます。 サイト コンポーネントの構成はサイトと、サイトで適用可能なサイト システムの役割の各インスタンスに適用されます。  
+In ogni sito di System Center Configuration Manager è possibile impostare i componenti del sito per modificare il comportamento dei ruoli del sistema del sito e la creazione di report sullo stato del sito. Le configurazioni dei componenti del sito si applicano a un sito e a ogni istanza di un ruolo del sistema del sito applicabile nel sito.  
 
-## <a name="about-site-components"></a>サイト コンポーネントについて  
- さまざまなサイト コンポーネントのオプションのほとんどは、Configuration Manager コンソールに表示すると、ひとめでわかります。 ただし、次の詳細では、一部のより複雑な構成について説明しています。または、より複雑な構成について説明している追加のコンテンツを参照できます。  
+## <a name="about-site-components"></a>Informazioni sui componenti del sito  
+ La maggior parte delle opzioni per i diversi componenti del sito risulta di facile comprensione quando viene visualizzata nella console di Configuration Manager. Le informazioni riportate di seguito possono illustrare meglio alcune configurazioni complesse oppure indirizzano a contenuti aggiuntivi.  
 
-### <a name="software-distribution"></a>ソフトウェアの配布  
+### <a name="software-distribution"></a>Distribuzione del software  
 
--   **コンテンツ配布の設定:**  サイト サーバーから配布ポイントへのコンテンツの転送方法を変更する設定を指定できます。 同時配布設定に使用する値を増やすと、コンテンツの配布でより多くのネットワーク帯域幅を使用できます。  
+-   **Impostazioni per la distribuzione del contenuto:**  è possibile specificare le impostazioni per modificare la modalità di trasferimento del contenuto del server del sito ai relativi punti di distribuzione. Quando si aumentano i valori usati per le impostazioni di distribuzione simultanea, la distribuzione del contenuto potrebbe usare una maggiore larghezza della banda di rete.  
 
--   **ネットワーク アクセス アカウント:**  ネットワーク アクセス アカウントの設定と使用の詳細については、「[Network Access Account](../../../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#bkmk_NAA)」(ネットワーク アクセス アカウント) を参照してください。  
+-   **Account di accesso alla rete:** per informazioni su come impostare e usare l'account di accesso alla rete, vedere [Account di accesso alla rete](../../../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#bkmk_NAA).  
 
-### <a name="software-update-point"></a>ソフトウェアの更新ポイント  
+### <a name="software-update-point"></a>Punto di aggiornamento software  
 
--   ソフトウェアの更新ポイント コンポーネントの構成オプションについては、「[Install a software update point](../../../../sum/get-started/install-a-software-update-point.md)」(ソフトウェアの更新ポイントをインストールする) を参照してください。  
+-   Per informazioni sulle opzioni di configurazione per il componente del punto di aggiornamento software, vedere [Installare un punto di aggiornamento software](../../../../sum/get-started/install-a-software-update-point.md).  
 
-### <a name="management-point"></a>管理ポイント  
+### <a name="management-point"></a>Punto di gestione  
 
--   **管理ポイント:** 管理ポイントに関する情報を Active Directory Domain Services に発行するようにサイトを設定することができます。  
+-   **Punti di gestione:** è possibile impostare il sito per pubblicare informazioni sui punti di gestione in Active Directory Domain Services.  
 
-     Configuration Manager クライアントは、管理ポイントを使用してサービスを特定し、境界グループのメンバーシップや PKI 証明書の選択オプションなどのサイト情報を検索します。 また、クライアントは、サイト内の他の管理ポイントの検索や、ソフトウェアのダウンロード元の配布ポイントの検索にも管理ポイントを使用します。 クライアントは、管理ポイントを使用して、サイト割り当ての実行、クライアント ポリシーのダウンロード、クライアント情報のアップロードも行うことができます。  
+     I client di Configuration Manager usano punti di gestione per individuare i servizi e per trovare informazioni sul sito, ad esempio l'appartenenza al gruppo di limiti e le opzioni di selezione del certificato PKI. I client usano anche punti di gestione per trovare altri punti di gestione nel sito, nonché i punti di distribuzione da cui scaricare il software. I punti di gestione consentono ai client di completare l'assegnazione del sito e scaricare informazioni sul client.  
 
-     クライアントが管理ポイントを見つけるには、Active Directory ドメイン サービスに発行するのが最も安全な方法であるため、通常は、機能している管理ポイントをすべて選択して Active Directory ドメイン サービスに発行します。 ただし、このサービスの場所検索方法では、次の条件を満たしている必要があります。
+     Poiché per il client il metodo più sicuro per trovare punti di gestione è la loro pubblicazione nei Servizi di dominio Active Directory, in genere si selezioneranno sempre tutti i punti di gestione funzionanti per la pubblicazioni nei Servizi di dominio Active Directory. Questo metodo di individuazione del servizio tuttavia richiede i seguenti elementi:
 
-     - Configuration Manager のスキーマが拡張されている。
-     - **System Management** コンテナーがあり、サイト サーバーがこのコンテナーに発行するための適切なセキュリティ アクセス許可が設定されている。
-     - Configuration Manager サイトが Active Directory Domain Services に発行するように設定されている。
-     - クライアントが、サイト サーバーと同じ Active Directory フォレストに属している  
+     - Questo schema è esteso per Configuration Manager.
+     - È disponibile un contenitore di **Gestione sistema** con autorizzazioni di sicurezza appropriate per il server del sito per pubblicare in tale contenitore.
+     - Il sito di Configuration Manager è impostato per pubblicare in Active Directory Domain Services.
+     - I client appartengano alla stessa foresta di Active Directory del server del sito.  
 
-     イントラネット上のクライアントが管理ポイントの検索に Active Directory Domain Services を使用できない場合は、代わりに [DNS](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#bkmk_dns) 発行を使用します。  
+     Se i client nella Intranet non possono usare Active Directory Domain Services per trovare i punti di gestione, usare invece la pubblicazione [DNS](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#bkmk_dns).  
 
- サービスの場所の概要については、「[Understand how clients find site resources and services for System Center Configuration Manager](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md)」(クライアントが System Center Configuration Manager のサイト リソースやサービスを検索する方法を理解する) を参照してください。  
+ Per informazioni generali sulla posizione del servizio, vedere [Understand how clients find site resources and services for System Center Configuration Manager](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md) (Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager).  
 
--   **選択したイントラネット管理ポイントを DNS に発行する:** イントラネット上のクライアントが Active Directory ドメイン サービスから管理ポイントを検索できない場合は、このオプションを指定します。 代わりに、DNS サービスの場所リソース レコード (SRV RR) を使用して、割り当てられたサイト内の管理ポイントを検索できます。  
+-   **Pubblica punti di gestione intranet selezionati in DNS:** specificare questa opzione quando i client dell'intranet non possono trovare i punti di gestione da Active Directory Domain Services. Possono invece usare un record di risorse del percorso del servizio DNS (SRV RR) per trovare un punto di gestione nel sito assegnato.  
 
-    Configuration Manager がイントラネットの管理ポイントを DNS に発行するには、次の条件が満たされていなければなりません。  
+    Affinché Configuration Manager pubblichi i punti di gestione Intranet in DNS, è necessario che vengano soddisfatte tutte le condizioni seguenti:  
 
-    -   DNS サーバーが、バージョン 8.1.2 以降の BIND を使用している。  
+    -   La versione di BIND dei server DNS è 8.1.2 o successiva.  
 
-    -   DNS サーバーが自動更新用に設定されていて、サービスの場所のリソース レコードをサポートする。  
+    -   I server DNS sono impostati per eseguire aggiornamenti automatici e supportano i record di risorse del percorso del servizio.  
 
-    -   Configuration Manager 内の管理ポイント用に指定された完全修飾ドメイン名 (FQDN) に DNS のホスト エントリ (A または AAA レコード) がある。  
+    -   I nomi di domini completamente qualificati (FQDN) specificati per i punti di gestione in Configuration Manager hanno voci host (record A o AAA) in DNS.  
 
     > [!WARNING]  
-    >  クライアントが DNS で発行された管理ポイントを見つけるには、自動サイト割り当てを使用せずに、クライアントを特定のサイトに割り当てる必要があります。 管理ポイントのドメイン サフィックスを持つサイト コードを使用するには、これらのクライアントを設定します。 詳細については、「[How to assign clients to a site in System Center Configuration Manager](/sccm/core/clients/deploy/assign-clients-to-a-site)」(System Center Configuration Manager のサイトにクライアントを割り当てる方法) の「[Locating Management Points](/sccm/core/clients/deploy/assign-clients-to-a-site#locating-management-points)」(管理ポイントの特定) を参照してください。  
+    >  Affinché i client trovino punti di gestione pubblicati in DNS, è necessario assegnare i client a un sito specifico invece di usare l'assegnazione sito automatica. Impostare questi client per usare il codice del sito con il suffisso del dominio del relativo punto di gestione. Per altre informazioni, vedere [Individuazione dei punti di gestione](/sccm/core/clients/deploy/assign-clients-to-a-site#locating-management-points) in [Come assegnare i client a un sito in System Center Configuration Manager](/sccm/core/clients/deploy/assign-clients-to-a-site).  
 
-     Configuration Manager クライアントがイントラネット上の管理ポイントの検索に Active Directory Domain Services も DNS も使用できない場合は、[WINS](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#bkmk_wins) を使用します。 イントラネット上の HTTP クライアント接続を受信するように設定されている場合、サイトで最初にインストールされた管理ポイントが自動的に WINS に発行されます。  
+     Se i client di Configuration Manager non possono usare Active Directory Domain Services o DNS per trovare i punti di gestione nella Intranet, useranno [WINS](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#bkmk_wins). Il primo punto di gestione installato per il sito viene automaticamente pubblicato in WINS quando viene impostato per accettare le connessioni client HTTP nell'Intranet.  
 
-### <a name="status-reporting"></a>ステータス レポート  
+### <a name="status-reporting"></a>Creazione di report sullo stato  
 
--   これらの設定は、サイトとクライアントからの状態レポートに含まれている詳細のレベルを直接設定します。  
+-   Queste opzioni impostano direttamente il livello di dettaglio incluso nei report sullo stato dei siti e dei clienti.  
 
-### <a name="email-notification"></a>電子メール通知  
+### <a name="email-notification"></a>Notifica con posta elettronica  
 
--   アカウントと電子メール サーバーの詳細を指定して、Configuration Manager を有効にし、アラートとして電子メール通知を送信します。  
+-   Specificare i dettagli dell'account e del server di posta elettronica per abilitare Configuration Manager per l'invio di notifiche via posta elettronica per gli avvisi.  
 
-### <a name="collection-membership-evaluation"></a>コレクション メンバーシップの評価  
+### <a name="collection-membership-evaluation"></a>Valutazione dell'appartenenza alla raccolta  
 
--   このタスクは、コレクションのメンバーシップの変更箇所を評価する頻度を設定する場合に使用します。 変更箇所の評価は、新しいリソースが追加された場合またはリソースが変更された場合にのみコレクションのメンバーシップを更新します。  
+-   Usare questa attività per impostare la frequenza con cui l'appartenenza alla raccolta viene valutata in modo incrementale. La valutazione incrementale aggiorna l'appartenenza alla raccolta solo con risorse nuove o modificate.  
 
-### <a name="edit-the-site-components-at-a-site"></a>サイトでサイト コンポーネントを編集する  
+### <a name="edit-the-site-components-at-a-site"></a>Modificare i componenti del sito nel sito  
 
-サイト コンポーネントを編集するには、次の手順を使用します。
+Seguire la procedura seguente per modificare i componenti del sito:
 
-1.  Configuration Manager コンソールで、**[管理]** > **[サイトの構成]** > **[サイト]** の順にクリックし、構成するサイト コンポーネントのあるサイトを選択します。  
+1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Configurazione del sito** > **Siti** e quindi selezionare il sito che ha i componenti da configurare.  
 
-2.  **[ホーム]** タブの **[設定]** グループで、**[サイト コンポーネントの構成]** をクリックします。 構成するサイト コンポーネントを選択します。  
+2.  Nel gruppo **Impostazioni** della scheda **Home** fare clic su **Configura componenti sito**. Selezionare quindi il componente del sito da configurare.  
 
-##  <a name="BKMK_ServiceMgr"></a> Configuration Manager サービス マネージャーによるサイト コンポーネントの管理  
-Configuration Manager サービス マネージャーを使用して、Configuration Manager サービスを管理し、Configuration Manager サービスや実行中のスレッド (まとめて Configuration Manager コンポーネントと呼びます) のステータスを確認することができます。 Configuration Manager コンポーネントについて次のことを理解してください。  
+##  <a name="BKMK_ServiceMgr"></a> Usare Configuration Manager Service Manager per gestire i componenti del sito  
+È possibile usare Configuration Manager Service Manager per controllare i servizi di Configuration Manager e per visualizzare lo stato di qualsiasi servizio o thread di lavoro di Configuration Manager (definiti collettivamente come componenti di Configuration Manager). Informazioni sui componenti di Configuration Manager:  
 
--   コンポーネントは任意のサイト システムで実行できます。  
+-   I componenti possono essere eseguiti su ogni sistema del sito.  
 
--   コンポーネントは、Windows のサービスを管理する場合と同じ方法で管理されます。 Configuration Manager コンポーネントの開始、停止、一時停止、再開、または照会を行うことができます。  
+-   I componenti vengono gestiti allo stesso modo dei servizi in Windows. È possibile avviare, arrestare, sospendere, riprendere o eseguire query nei componenti di Configuration Manager.  
 
-Configuration Manager サービスによる処理が必要になると (通常は構成ファイルがコンポーネントの受信トレイに書き込まれたとき)、サービスが実行されます。 操作に関連するコンポーネントを識別する必要がある場合は、Configuration Manager サービス マネージャーを使用して、各種のサービスとスレッドを操作することができます。 Configuration Manager の動作で発生した変更を表示できます。 たとえば、特定の応答が排除されるまで Configuration Manager サービスを一度に 1 つずつ停止できます。 これにより、特定の動作の原因となっているサービスを判別できます。  
+Un servizio di Configuration Manager viene eseguito quando deve svolgere un compito, in genere quando un file di configurazione viene scritto nella inbox di un componente. Per identificare il componente coinvolto in un'operazione, è possibile usare Configuration Manager Service Manager per modificare vari servizi e thread. È quindi possibile notare la conseguente modifica nel comportamento di Configuration Manager. Ad esempio, è possibile interrompere i servizi di Configuration Manager uno alla volta fino a quando viene eliminata una particolare risposta. In questo modo è possibile determinare il servizio all'origine del comportamento.  
 
 > [!TIP]  
->  次の手順は、Configuration Manager コンポーネントの操作を変更するために使用できます。  
+>  La procedura seguente consente di modificare il funzionamento dei componenti di Configuration Manager.  
 
-### <a name="use-the-configuration-manager-service-manager"></a>Configuration Manager サービス マネージャーを使用する  
+### <a name="use-the-configuration-manager-service-manager"></a>Usare Configuration Manager Service Manager  
 
-1.  Configuration Manager コンソールで **[監視]** >  **[システムのステータス]** の順にクリックし、**[コンポーネントのステータス]** をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Monitoraggio** >  **Stato del sistema**e quindi fare clic su **Stato componente**.  
 
-2.  **[ホーム]** タブの **[コンポーネント]** グループで、**[開始]** をクリックします。 次に **[Configuration Manager サービス マネージャー]** を選択します。  
+2.  Nel gruppo **Componente** della scheda **Home** fare clic su **Avvio**. Selezionare quindi **Configuration Manager Service Manager**.  
 
-3.  Configuration Manager サービス マネージャーが開いたら、管理したいサイトに接続します。  
+3.  All'apertura di Configuration Manager Service Manager, connettersi al sito che si desidera gestire.  
 
-     管理したいサイトが表示されない場合は、 **[サイト]**、 **[接続]**の順にクリックして、該当するサイトのサイト サーバーの名前を入力します。  
+     Se non si visualizza il sito che si desidera gestire, fare clic su **Sito**, quindi su **Connetti**e infine immettere il nome del server del sito corretto.  
 
-4.  サイトを展開して、管理したいコンポーネントのある場所に応じて、[ **コンポーネント** ] または [ **サーバー**] に移動します。  
+4.  Espandere il sito e passare a **Componenti** o **Server**in base alla posizione dei componenti che si desidera gestire.  
 
-5.  右側のウィンドウで、1 つまたは複数のコンポーネントを選択します。 次に、**[コンポーネント]** メニューの **[クエリ]** をクリックして、選択項目の状態を更新します。  
+5.  Nel riquadro a destra selezionare uno o più componenti. Nel menu **Componente** fare clic su **Query** per aggiornare lo stato della selezione.  
 
-6.  コンポーネントのステータスを更新したら、**[コンポーネント]** メニューの 4 つのアクション ベースのオプションのいずれかを使用して、コンポーネントの操作を変更します。 アクションを要求したら、コンポーネントを照会して、コンポーネントの新しいステータスを表示する必要があります。  
+6.  Dopo aver aggiornato lo stato del componente, usare una delle quattro opzioni basate su azioni nel menu **Componente** per modificare il funzionamento dei componenti. Dopo aver richiesto un'azione, è necessario eseguire una query sul componente per visualizzare il nuovo stato del componente.  
 
-7.  コンポーネントの操作の状態の変更が完了したら、Configuration Manager サービス マネージャーを閉じます。  
+7.  Chiudere Configuration Manager Service Manager al termine della modifica dello stato operativo dei componenti.  

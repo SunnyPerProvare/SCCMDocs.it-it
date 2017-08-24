@@ -1,6 +1,6 @@
 ---
-title: "Configuration Manager の Technical Preview 1610 の機能"
-description: "System Center Configuration Manager の Technical Preview バージョン 1610 で使用できる機能について説明します。"
+title: "Funzionalità della versione Technical Preview 1610 per Configuration Manager"
+description: "Informazioni sulle funzionalità disponibili in Technical Preview per System Center Configuration Manager, versione 1610."
 ms.custom: na
 ms.date: 01/23/2017
 ms.reviewer: na
@@ -17,148 +17,148 @@ manager: angrobe
 ms.openlocfilehash: 59633ce68e2bb2d722900215751f345d6d098721
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1610-for-system-center-configuration-manager"></a>System Center Configuration Manager の Technical Preview 1610 の機能
+# <a name="capabilities-in-technical-preview-1610-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1610 per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Technical Preview)*
-
-
-
-この記事では、System Center Configuration Manager の Technical Preview バージョン 1610 で使用できる機能について説明します。 このバージョンをインストールして更新し、新機能を Configuration Manager の Technical Preview サイトに追加できます。      このバージョンの Technical Preview をインストールする前に、説明のトピック「[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)」を確認して、Technical Preview の使用に関する一般的な要件と制限、バージョン間の更新方法、および Technical Preview の機能に関するフィードバックを提供する方法について理解してください。    
+*Si applica a: System Center Configuration Manager (Technical Preview)*
 
 
-**このバージョンでお試しいただける新機能を次に示します。**  
-## <a name="filter-by-content-size-in-automatic-deployment-rules"></a>自動展開規則でコンテンツのサイズでフィルター処理する
-自動展開規則でソフトウェア更新プログラムのコンテンツのサイズでフィルター処理できるようになりました。 たとえば、**コンテンツ サイズ (KB)** フィルターを **< 2048** に設定して、2 MB 未満のソフトウェア更新プログラムだけをダウンロードできます。 ネットワーク帯域幅が制限されている場合に、下位レベルの簡素化された Windows サービスのよりよいサポートのため、このフィルターを使用して、サイズの大きいソフトウェア更新プログラムが自動的にダウンロードされるのを防止します。 詳細については、「[Configuration Manager and Simplified Windows Servicing on Down Level Operating Systems](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/)」(Configuration Manager と下位レベルのオペレーティング システムでの簡素化された Windows サービス) を参照してください。
 
-#### <a name="to-configure-the-content-size-field"></a>[コンテンツ サイズ] フィールドを構成するには
-[**コンテンツ サイズ (KB)**] フィールドを構成するには、ADR を作成する際に、自動展開規則の作成ウィザードの [**ソフトウェアの更新**] ページに移動するか、既存の ADR のプロパティの [**ソフトウェアの更新**] タブに移動します。
-
-![[コンテンツ サイズ] フィールド](media/contentsizefield.png)
-
-## <a name="improved-functionality-for-required-software-dialogs"></a>必要なソフトウェア ダイアログの機能向上
-ユーザーが必要なソフトウェアを受け取ったときに、[**次の時間が経過したら再通知する**] 設定で、次のドロップダウン リストから値を選択できます。
-- [後で]: クライアント エージェント設定で構成されている通知の設定に基づいて通知をスケジュールすることを指定します。
-- [定時]: 選択した時間後にもう一度通知を表示するように指定します。 たとえば、ユーザーが 30 分を選択した場合、その通知が 30 分後にもう一度表示されます。
-
-![クライアント エージェント設定の [コンピューター エージェント] ページ](media/computeragentsettings.png)
-
-最大の再通知時間は、展開のタイムラインに沿って、クライアント エージェント設定で毎回構成された値に常に基づきます。 たとえば、[コンピューター エージェント] ページで [**展開期限まで 24 時間以上の場合に、ユーザーに通知する間隔 (時間)**] 設定が 10 時間に設定されていて、ダイアログが起動する期限まで 24 時間以上ある場合は、ユーザーに最大で 10 時間以内の再通知を設定するオプションが表示されます。 期限が近づくと、展開タイムラインの各コンポーネントに関連するクライアント エージェント設定に合わせて、ダイアログに表示されるオプションが減ります。
-
-さらに、オペレーティング システムを展開するタスク シーケンスなど、危険度の高い展開に対しては、エンドユーザー通知のエクスペリエンスがより煩わしいものになりました。 一時的なタスク バーの代わりに、重要なソフトウェア メンテナンスが必要なことがユーザーに通知されるたび、次のようなダイアログ ボックスがユーザーのコンピューターに表示されます。
-
-![必要なソフトウェアのダイアログ](media/requiredsoftwaredialog.png)
+Questo articolo presenta le funzionalità disponibili in Technical Preview per System Center Configuration Manager, versione 1610. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
 
 
-詳細情報:
-- [危険度の高い展開を管理するための設定](../../protect/understand/settings-to-manage-high-risk-deployments.md)
-- [クライアント設定を構成する方法](../clients/deploy/configure-client-settings.md)
+**Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
+## <a name="filter-by-content-size-in-automatic-deployment-rules"></a>Filtrare per dimensioni del contenuto nelle regole di distribuzione automatica
+È ora possibile filtrare le dimensioni del contenuto per gli aggiornamenti software nelle regole di distribuzione automatica. Ad esempio, è possibile impostare il filtro **Dimensioni contenuto (KB)** su **< 2048** per scaricare solo gli aggiornamenti software inferiori a 2 MB. Questo filtro impedisce che vengano scaricati in automatico gli aggiornamenti software di grandi dimensioni al fine di migliorare il supporto della manutenzione Windows semplificata di livello inferiore quando la larghezza di banda è limitata. Per informazioni dettagliate, vedere [Configuration Manager and Simplified Windows Servicing on Down Level Operating Systems](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/) (Configuration Manager e manutenzione Windows semplificata su sistemi operativi di livello inferiore).
 
-## <a name="deny-previously-approved-application-requests"></a>以前に承認されたアプリケーションの要求を拒否する
+#### <a name="to-configure-the-content-size-field"></a>Per configurare il campo Dimensioni contenuto
+Per configurare il campo **Dimensioni contenuto (KB)**, accedere alla pagina **Aggiornamenti software** nella Creazione guidata delle regole di distribuzione automatica quando si crea un'ADR o accedere alla scheda **Aggiornamenti software** nelle proprietà di un'ADR esistente.
 
-管理者として、以前に承認されたアプリケーションの要求を拒否できるようになりました。 一度拒否したアプリケーションを後からインストールするには、ユーザーが要求を再送信する必要があります。 拒否はアプリケーションをアンインストールするのではなく、そのユーザーからそのアプリケーションの新たな要求に対して再承認を強制します。 以前は、アプリケーション要求の拒否は、承認されていないアプリケーションの要求に対してのみ可能でした。
+![Campo Dimensione contenuto](media/contentsizefield.png)
 
-#### <a name="try-it-out"></a>試してみましょう
-承認されたアプリケーション要求を拒否するには:
+## <a name="improved-functionality-for-required-software-dialogs"></a>Funzionalità migliorate per le finestre di dialogo del software richieste
+Quando si riceve il software necessario, dall'impostazione **Posponi e ricorda tra:** è possibile selezionare un'opzione dall'elenco di valori a discesa seguente:
+- In seguito: specifica che le notifiche vengono programmate in base alle impostazioni di notifica configurate nelle impostazioni dell'agente client.
+- Orario fisso: specifica che la notifica verrà pianificata per una nuova visualizzazione dopo l'ora selezionata. Ad esempio, se un utente seleziona 30 minuti, la notifica verrà visualizzata nuovamente dopo 30 minuti.
 
-1.  Configuration Manager コンソールで、承認を必要とする[アプリケーションを作成して展開します](https://docs.microsoft.com/en-us/sccm/apps/deploy-use/create-applications)。
-2.  クライアント コンピューターで、ソフトウェア センターを開き、アプリケーションの要求を送信します。
-3.  Configuration Manager コンソールで、アプリケーションの要求を承認します。
-4.  承認されたアプリケーションの要求を拒否する: Configuration Manager コンソールで [**ソフトウェア ライブラリ**] > [**概要**] > [**アプリケーション管理**] > [**承認依頼**] に移動し、拒否するアプリケーション要求を選択します。  リボンで [**拒否**] をクリックします。
+![Pagina dell'agente computer nelle impostazioni dell'agente client](media/computeragentsettings.png)
 
-## <a name="exclude-clients-from-automatic-upgrade"></a>自動アップグレードからクライアントを除外する
-Technical Preview 1610 では、クライアントのコレクションを更新されたクライアントのバージョンの自動インストールから除外するために使用できる新しい設定が導入されています。  これは、ソフトウェアの更新に基づいたアップグレード、ログオン スクリプト、およびグループ ポリシーなどのその他の方法とともに、自動アップグレードに適用されます。 これは、クライアントをアップグレードする際により注意が必要なコンピューターのコレクションに使用できます。 除外されるコレクション内にあるクライアントは、更新されたクライアント ソフトウェアのインストールの要求を無視します。
+Il tempo di posticipo massimo è sempre basato sui valori di notifica configurati nelle impostazioni dell'agente client su ogni orario presente lungo la cronologia di distribuzione. Ad esempio, se l'impostazione nella pagina dell'agente computer **Più di 24 ore alla scadenza di distribuzione. Avvisare l'utente ogni (ore)** è configurata per 10 ore e alla scadenza mancano più di 24 ore, all'avvio della finestra di dialogo l'utente visualizzerà un set di opzioni di posticipo mai superiori a 10 ore. Man mano che si avvicina la scadenza, la finestra di dialogo mostra un numero minore di opzioni coerente con le impostazioni dell'agente client pertinente per ogni componente della cronologia di distribuzione.
 
-### <a name="configure-exclusion-from-automatic-upgrade"></a>自動アップグレードからの除外を構成する
-自動アップグレードの除外を構成するには:
-1.  Configuration Manager コンソールで、**[管理] > [サイトの構成] > [サイト]** の下で [**階層設定**] を開き、[**クライアント アップグレード**] タブをクリックします。
-2.  [**指定したクライアントをアップグレードから除外する**] チェック ボックスをオンにして、[**除外コレクション**] で除外するコレクションを選択します。 除外するコレクションを 1 つだけ選択できます。
-3.  [**OK**] をクリックしてコンソールを閉じ、構成を保存します。 クライアントがポリシーを更新すると、除外されるコレクション内のクライアントに、クライアント ソフトウェアの更新プログラムが自動的にインストールされなくなります。
+Per una distribuzione ad alto rischio, ad esempio una sequenza di attività che distribuisce un sistema operativo, l'esperienza di notifica dell'utente finale è ora più invasiva. Ogni volta che l'utente viene informato della necessità di manutenzione critica del software, invece di una notifica temporanea sulla barra delle applicazioni, nel computer dell'utente viene visualizzata una finestra di dialogo simile alla seguente:
 
-  ![自動アップグレード除外の設定](media/automatic_upgrade_exclusion.png)
+![Finestra di dialogo del software richiesto](media/requiredsoftwaredialog.png)
 
-> [!NOTE]
-> ユーザー インターフェイスにどの方法でもクライアントがアップグレードされないことが示されますが、これらの設定を無効にするために使用できる 2 つの方法があります。 クライアント プッシュ インストールと手動クライアント インストールを使用すると、この設定を無効にできます。 詳細については、次のセクションを参照してください。
 
-### <a name="how-to-upgrade-a-client-that-is-in-an-excluded-collection"></a>除外されるコレクション内にあるクライアントをアップグレードする方法
-コレクションが除外されるように設定されている限り、そのコレクションのメンバーは、除外を無効にする 2 つの方法のいずれかでクライアント ソフトウェアを更新することしかできません。
- - **クライアント プッシュ インストール**: クライアント プッシュ インストールを使用して、除外されるコレクション内にあるクライアントをアップグレードすることができます。 これは管理者の意図と見なされるために許可され、除外からコレクション全体を削除しなくてもクライアントをアップグレードすることができます。       
- - **手動クライアント インストール**: ccmsetup で、コマンド ライン スイッチ ***/ignoreskipupgrade*** を使用すると、除外されるコレクション内のクライアントを手動でアップグレードすることができます。
+Per ulteriori informazioni:
+- [Impostazioni per gestire le distribuzioni ad alto rischio](../../protect/understand/settings-to-manage-high-risk-deployments.md)
+- [Come configurare le impostazioni client](../clients/deploy/configure-client-settings.md)
 
-  このスイッチを使用しないで除外されるコレクションのメンバーであるクライアントを手動でアップグレードしようとすると、クライアントに新しいクライアント ソフトウェアがインストールされません。 詳細については、「[Configuration Manager クライアントの手動インストール方法](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#a-namebkmkmanuala-how-to-install-configuration-manager-clients-manually)」をご覧ください。
+## <a name="deny-previously-approved-application-requests"></a>Negare richieste di applicazioni approvate in precedenza
 
-クライアント インストール方法の詳細については、「[System Center Configuration Manager でクライアントを Windows コンピューターに展開する方法](/sccm/core/clients/deploy/deploy-clients-to-windows-computers)」をご覧ください。
+In qualità di amministratore l'utente è ora in grado di negare una richiesta di applicazioni approvate in precedenza. Per installare un'applicazione negata, gli utenti successivi dovranno inviare una nuova richiesta. La negazione non disinstalla l'applicazione, ma impone che qualsiasi nuova richiesta dell'utente per l'applicazione specifica venga riapprovata. In precedenza era possibile negare soltanto richieste di applicazioni non approvate.
 
-## <a name="windows-defender-configuration-settings"></a>Windows Defender の構成設定
+#### <a name="try-it-out"></a>Procedura
+Per negare la richiesta di un'applicazione approvata:
 
-Configuration Manager コンソールの構成項目を使用して、Intune に登録されている Windows 10 コンピューターで Windows Defender クライアント設定を構成できるようになりました。
+1.  Nella console di Configuration Manager [creare e distribuire un'applicazione](https://docs.microsoft.com/en-us/sccm/apps/deploy-use/create-applications) che richiede l'approvazione.
+2.  In un computer client aprire Software Center e inviare una richiesta per l'applicazione.
+3.  Nella console di Configuration Manager approvare la richiesta per l'applicazione.
+4.  Negare la richiesta di un'applicazione approvata: nella console di Configuration Manager passare a**Raccolta software** > **Panoramica** > **Gestione applicazioni** > **Richieste di approvazione** e selezionare la richiesta di applicazione che si desidera negare.  Nella barra multifunzione fare clic su **Nega**.
 
-具体的には、Windows Defender の次の設定を構成できます。
-- リアルタイム監視を許可する
-- 動作監視を許可する
-- ネットワーク検査システムを有効にする
-- すべてのダウンロードをスキャンする
-- スクリプトのスキャンを許可する
-- ファイルとプログラムのアクティビティを監視する
-  - 監視されるファイル
-- 解決済みマルウェアを追跡する日数
-- クライアント UI アクセスを許可する
-- システム スキャンを予定に入れる
-  - スケジュールされた日
-  - スケジュールされた時刻
-- 毎日のクイック スキャンのスケジュール
-  - スケジュールされた時刻
-- スキャン中の CPU 使用率 (%) を制限するアーカイブ ファイルをスキャンする
-- 電子メール メッセージをスキャンする
-- リムーバブル ドライブをスキャンする
-- マップされたドライブをスキャンする
-- ネットワーク共有から開かれたファイルをスキャンする
-- 署名更新間隔
-- クラウド保護を許可する
-- ユーザーにサンプルの入力を求める
-- 望ましくない可能性のあるアプリケーションの検出
-- 除外されたファイル/フォルダー
-- 除外されたファイルの拡張子
-- 除外されたプロセス
+## <a name="exclude-clients-from-automatic-upgrade"></a>Impedire l'aggiornamento automatico dei client
+Tecnichal Preview 1610 presenta una nuova impostazione che consente di impedire che una raccolta di client installi automaticamente le versioni client aggiornate.  Questa funzione si applica sia all'aggiornamento automatico sia ad altri metodi, ad esempio all'aggiornamento basato sull'aggiornamento software, agli script di accesso e ai criteri di gruppo. Questa opzione può essere utile per una raccolta di computer che richiede particolare attenzione durante l'aggiornamento del client. I client che appartengono a una raccolta esclusa ignorano le richieste di aggiornamento del software client.
+
+### <a name="configure-exclusion-from-automatic-upgrade"></a>Configurare l'esclusione dall'aggiornamento automatico
+Per configurare le esclusioni dall'aggiornamento automatico:
+1.  Nella console di Configuration Manager aprire **Impostazioni gerarchia** in **Amministrazione > Configurazione del sito > Siti** e quindi selezionare la scheda **Aggiornamento client**.
+2.  Selezionare la casella di controllo **Exclude specified clients from upgrade** (Escludi dall'aggiornamento i client specificati) e **Exclusion collection** (Raccolta di esclusione), quindi selezionare la raccolta da escludere. È possibile selezionare per l'esclusione solo una singola raccolta.
+3.  Fare clic su **OK** per chiudere e salvare la configurazione. Dopo che i client avranno aggiornato i criteri, i client appartenenti alla raccolta esclusa non installeranno più automaticamente gli aggiornamenti per il software client.
+
+  ![Impostazioni per l'esclusione dall'aggiornamento automatico](media/automatic_upgrade_exclusion.png)
 
 > [!NOTE]
-> これらの設定は、Windows 10 の 11 月の更新プログラム (1511) またはそれ以降の更新プログラムを実行しているコンピューターでのみ構成することができます。
+> Anche se l'interfaccia utente indica che i client non verranno aggiornati, esistono due metodi che è possibile usare per sostituire queste impostazioni. L'installazione push del client e l'installazione manuale del client consentono di sostituire questa configurazione. Per altre informazioni, vedere la sezione seguente.
 
-### <a name="try-it-out"></a>試してみましょう。
+### <a name="how-to-upgrade-a-client-that-is-in-an-excluded-collection"></a>Come aggiornare un client in una raccolta esclusa
+Se una raccolta è configurata per l'esclusione, i membri di tale raccolta possono aggiornare il software client solo tramite uno dei due metodi che sostituiscono l'esclusione:
+ - **Installazione push client**: è possibile usare l'installazione push del client per eseguire l'aggiornamento di un client che appartiene a una raccolta esclusa. Questa operazione è consentita in quanto richiesta dall'amministratore e permette di aggiornare i client lasciando invariata l'esclusione dell'intera raccolta.       
+ - **Installazione client manuale**: è possibile aggiornare manualmente i client che appartengono a una raccolta esclusa usando la seguente opzione della riga di comando con ccmsetup: ***/ignoreskipupgrade***.
 
-1.  Configuration Manager コンソールで、[**資産とコンプライアンス**] > [**概要**] > [**コンプライアンス設定**] > [**構成項目**] の順に移動し、新しい [**構成項目**] を作成します。
-2.  名前を入力し、[**Configuration Manager クライアントを使用しないで管理されるデバイスの設定**] で [**Windows 8.1 および Windows 10**] を選択し、[**次へ**] をクリックします。
-3.  [**すべての Windows 10 (64 ビット)**] と [**すべての Windows 10 (32 ビット)**] が [**サポートされているプラットフォーム**] ページで選択されていることを確認し、[**次へ**] をクリックします。
-4.  [**Windows Defender**] 設定グループを選択し、[**次へ**] をクリックします。
-5.  このページで目的の設定を構成し、[**次へ**] をクリックします。
-6.  ウィザードを完了します。
-7.  この構成項目を構成基準に追加し、さらにこの基準を Windows 10 の 11 月の更新プログラム (1511) またはそれ以降の更新プログラムを実行しているコンピューターに展開します。
+  Se si tenta di aggiornare manualmente un client che fa parte della raccolta esclusa senza usare questa opzione, il client non installa il nuovo software client. Per altre informazioni, vedere [Come installare manualmente i client di Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#a-namebkmkmanuala-how-to-install-configuration-manager-clients-manually).
+
+Per altre informazioni su questi metodi di installazione del client, vedere [Come distribuire i client nei computer Windows in System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).
+
+## <a name="windows-defender-configuration-settings"></a>Impostazioni di configurazione di Windows Defender
+
+È ora possibile configurare le impostazioni del client di Windows Defender nei computer Windows 10 registrati in Intune usando gli elementi di configurazione nella console di Configuration Manager.
+
+In particolare, è possibile configurare le seguenti impostazioni di Windows Defender:
+- Consenti il monitoraggio in tempo reale
+- Consenti il monitoraggio del comportamento
+- Abilita Network Inspection System
+- Analizza tutti i download
+- Consenti analisi script
+- Monitora l'attività di file e programmi
+  - File monitorati
+- Giorni di rilevamento del malware risolto
+- Consenti l'accesso all'interfaccia utente client
+- Pianifica un'analisi del sistema
+  - Giorno pianificato
+  - Ora pianificata
+- Pianifica analisi veloce giornaliera
+  - Ora pianificata
+- Limita utilizzo CPU durante un'analisi Analizza file di archivio
+- Analisi dei messaggi di posta elettronica
+- Analizza unità rimovibili
+- Scan mapped drives (Analizza unità mappate)
+- Scan files opened from net shares (Analizza file aperti da condivisioni di rete)
+- Intervallo di aggiornamento della firma
+- Consenti protezione cloud
+- Richiedi agli utenti l'invio dei campioni
+- Rilevamento di applicazioni potenzialmente indesiderate
+- Cartelle e file esclusi
+- Estensioni di file escluse
+- Processi esclusi
 
 > [!NOTE]
-> 構成基準を展開する場合は、[**対応していない設定を修復する**] チェック ボックスをオンにすることを忘れないでください。
+> Queste impostazioni possono essere configurate solo nei computer client che eseguono Windows 10 November Update (1511) e versioni successive.
 
-## <a name="request-policy-sync-from-administrator-console"></a>管理者コンソールからのポリシー同期の要求
+### <a name="try-it-out"></a>Verifica
 
-Configuration Manager コンソールから、モバイル デバイスのポリシー同期を要求できるようになりましたので、デバイス自体から同期を要求する必要はありません。 同期要求の状態に関する情報は、デバイス ビュー内に 「**Remote Sync State**」 (リモート同期の状態) と呼ばれる新しい列として表示されます。 状態はまた、各モバイル デバイスの [**プロパティ**] ダイアログ ボックスの [**探索データ**] セクションにも表示されます。
+1.  Nella console di Configuration Manager passare ad **Asset e conformità** > **Panoramica** > **Impostazioni di conformità** > **Elementi di configurazione** e creare un nuovo **elemento di configurazione**.
+2.  Immettere un nome, quindi selezionare **Windows 8.1 e Windows 10** in **Impostazioni per dispositivi gestiti senza il client di Configuration Manager** e fare clic su **Avanti**.
+3.  Verificare che **tutti i dispositivi Windows 10 a 64 bit** e **tutti i dispositivi Windows 10 a 32 bit** siano selezionati nella pagina **Piattaforme supportate**, quindi fare clic su **Avanti**.
+4.  Selezionare il gruppo di impostazioni **Windows Defender**, quindi fare clic su **Avanti**.
+5.  Configurare le impostazioni desiderate in questa pagina, quindi fare clic su **Avanti**.
+6.  Completare la procedura guidata.
+7.  Aggiungere questo elemento di configurazione a una linea di base di configurazione e distribuire questa linea di base nei computer che eseguono Windows 10 November Update (1511) o versione successiva.
 
-### <a name="try-it-out"></a>試してみましょう。
+> [!NOTE]
+> Ricordarsi di selezionare la casella di controllo **Monitora e aggiorna impostazioni non conformi** quando si distribuisce la linea di base di configurazione.
 
-1.  Configuration Manager コンソールで、[**資産とコンプライアンス**] > [**概要**] > [デバイス] の順に移動します。
-2.  [**リモート デバイスの操作**] メニューの [**同期要求の送信**] をクリックします。
+## <a name="request-policy-sync-from-administrator-console"></a>Richiedere la sincronizzazione dei criteri dalla console di amministrazione
 
-同期には 5 ～ 10 分かかることがあります。 ポリシーに変更が生じると、デバイスに反映されます。 同期要求の状態は、[**デバイス**] ビューの 「**Remote Sync State**」 (リモート同期の状態) 列で、またはデバイスの [**プロパティ**] ダイアログ ボックスで把握できます。
+Ora è possibile richiedere una sincronizzazione dei criteri per un dispositivo mobile dalla console di Configuration Manager, senza dover richiedere la sincronizzazione dal dispositivo stesso. Le informazioni sullo stato della richiesta di sincronizzazione sono disponibili nelle visualizzazioni del dispositivo come nuova colonna, denominata **Remote Sync State** (Stato sincronizzazione remota). Lo stato è visualizzato anche nella sezione **Dati di individuazione** della finestra di dialogo **Proprietà** di ogni dispositivo mobile.
 
-## <a name="additional-security-role-support"></a>追加のセキュリティ ロールのサポート
+### <a name="try-it-out"></a>Verifica
 
-完全な権限を持つ管理者に加えて、次の組み込みのセキュリティ ロールが、**事前に宣言されたデバイス**、**iOS 登録プロファイル**、および **Windows 登録プロファイル**を含む**すべての企業所有のデバイス** ノードの項目にフル アクセスできるようになりました。• **資産マネージャー** • **会社リソース アクセス マネージャー**
+1.  Nella console di Configuration Manager console passare ad **Asset e conformità** > **Panoramica** > Dispositivi.
+2.  Nel menu **Azioni remote dispositivo** selezionare **Send Sync Request** (Invia richiesta di sincronizzazione).
 
-Configuration Manager コンソールのこれらの領域への読み取り専用アクセスは、引き続き**読み取り専用アナリスト** ロールに与えられます。
+La sincronizzazione può richiedere da 5 a 10 minuti. Tutte le modifiche ai criteri verranno sincronizzate nel dispositivo. È possibile rilevare lo stato della richiesta di sincronizzazione nella colonna **Remote Sync State** (Stato sincronizzazione remota) nella visualizzazione **Dispositivi** o nella finestra di dialogo **Proprietà** del dispositivo.
 
-## <a name="conditional-access-for-windows-10-vpn-profiles"></a>Windows 10 VPN プロファイルの条件付きアクセス
+## <a name="additional-security-role-support"></a>Supporto di ruoli di sicurezza aggiuntivi
 
-Configuration Manager コンソールで作成した Windows 10 VPN プロファイル経由で VPN アクセスできるようにするためには、Azure Active Directory に登録された Windows 10 デバイスを対応させる必要があります。 これは、VPN プロファイル ウィザードの [**認証方法**] ページの新しい [**この VPN 接続の条件付きアクセスを有効にする**] チェックボックスおよび Windows 10 VPN プロファイルの VPN プロファイルのプロパティによって可能です。 プロファイルの条件付きアクセスを有効にした場合、シングル サインオン認証用の別の証明書を指定することもできます。
+Oltre al ruolo Amministratore completo, anche i ruoli di sicurezza incorporati seguenti hanno ora accesso completo agli elementi nel nodo **Tutti i dispositivi di proprietà dell'azienda**, inclusi i **dispositivi predichiarati**, i **profili di registrazione iOS** e i **profili di registrazione Windows**: •   **Gestione asset** •   **Gestione accesso risorse aziendali**
 
-## <a name="see-also"></a>関連項目
-[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)
+A queste aree della console di Configuration Manager continua a essere concesso l'accesso in sola lettura al ruolo **Analista di sola lettura**.
+
+## <a name="conditional-access-for-windows-10-vpn-profiles"></a>Accesso condizionale per profili VPN di Windows 10
+
+È ora possibile richiedere la conformità dei dispositivi Windows 10 registrati in Azure Active Directory per poter ottenere l'accesso alla rete VPN tramite i profili VPM di Windows 10 creati nella console di Configuration Manager. Per disporre di questa funzionalità, selezionare la casella di controllo **Abilita l'accesso condizionale per questa connessione VPN** nella pagina **Metodo di autenticazione** della procedura di creazione guidata del profilo VPN e nelle proprietà dei profili VPN di Windows 10. Se si abilita l'accesso condizionale per il profilo, è anche possibile specificare un certificato separato per l'autenticazione Single Sign-On.
+
+## <a name="see-also"></a>Vedere anche
+[Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager)

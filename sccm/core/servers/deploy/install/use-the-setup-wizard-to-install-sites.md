@@ -1,5 +1,5 @@
 ---
-title: "セットアップ ウィザード | Microsoft Docs"
+title: Installazione guidata | Microsoft Docs
 ms.custom: na
 ms.date: 7/24/2017
 ms.prod: configuration-manager
@@ -16,93 +16,93 @@ manager: angrobe
 ms.openlocfilehash: 678f1b35fe6f7649dacb766f7c671f4ec8ea1435
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-the-setup-wizard-to-install-system-center-configuration-manager-sites"></a>セットアップ ウィザードを使用した System Center Configuration Manager サイトのインストール
+# <a name="use-the-setup-wizard-to-install-system-center-configuration-manager-sites"></a>Usare l'installazione guidata per installare i siti di System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-ガイド付きユーザー インターフェイスを使用して新しい System Center Configuration Manager サイトをインストールするには、Configuration Manager セットアップ ウィザード (setup.exe) を使用します。 このウィザードは、プライマリ サイトまたは中央管理サイトのインストールをサポートしています。 Configuration Manager の評価版インストールをフル機能のライセンス版インストールに[アップグレード](../../../../core/servers/deploy/install/upgrade-an-evaluation-install-to-a-full-install.md)するときにも、このウィザードを使用します。 ウィザードを使用しない場合は、代わりに[インストール スクリプト](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md)を使用して、コマンド ラインからの無人インストールを実行できます。
+Per installare un nuovo sito di System Center Configuration Manager tramite un'interfaccia utente interattiva, è possibile usare l'installazione guidata di Configuration Manager (setup.exe). La procedura guidata supporta l'installazione di un sito primario o un sito di amministrazione centrale. È anche possibile usare la procedura guidata per [eseguire l'aggiornamento da un'installazione di valutazione](../../../../core/servers/deploy/install/upgrade-an-evaluation-install-to-a-full-install.md) di Configuration Manager a un'installazione con licenza completa. Se non si vuole usare la procedura guidata, è possibile usare uno [script di installazione](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md) ed eseguire un'installazione automatica dalla riga di comando.
 
-セカンダリ サイトをインストールするには、Configuration Manager コンソール内からサイトをインストールする必要があります。 セカンダリ サイトは、スクリプトを使用してコマンド ラインからインストールすることはできません。
+Per installare un sito secondario, è necessario installare il sito dall'interno della console di Configuration Manager. I siti secondari non supportano l'installazione con script dalla riga di comando.
 
-## <a name="bkmk_primary"></a> 中央管理サイトまたはプライマリ サイトをインストールする
-中央管理サイトまたはプライマリ サイトをインストールする場合や、評価版サイトをフル機能のライセンス版 Configuration Manager サイトにアップグレードする場合は、次の手順に従います。   
+## <a name="bkmk_primary"></a> Installare un sito di amministrazione centrale o primario
+Usare la procedura seguente per installare un sito di amministrazione centrale o un sito primario oppure per aggiornare un sito di valutazione a un sito di Configuration Manager con licenza completa.   
 
-サイトのインストールを開始する前に、次の記事で詳細を確認してください。
- -  [サイトのインストールの準備](../../../../core/servers/deploy/install/prepare-to-install-sites.md)
- -  [サイトをインストールするための前提条件](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md)
+Prima di iniziare l'installazione del sito, è consigliabile acquisire familiarità con gli articoli seguenti:
+ -  [Preparare l'installazione di siti](../../../../core/servers/deploy/install/prepare-to-install-sites.md)
+ -  [Prerequisiti per l'installazione di siti](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md)
 
-この手順をサイト展開シナリオの一部として実行する場合は、次の手順を使用する前に、このトピックの「[スタンドアロン プライマリ サイトを拡張する](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_expand)」セクションを確認してください。
+Se si installa un sito di amministrazione centrale come parte di uno scenario di espansione del sito, vedere la sezione relativa all'[espansione di un sito primario autonomo](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_expand) in questo argomento usando la procedura seguente.
 
-### <a name="bkmk_installpri"></a>プライマリ サイトまたは中央管理サイトをインストールするには
+### <a name="bkmk_installpri"></a> Per installare un sito primario o di amministrazione centrale
 
-1.  サイトをインストールするコンピューターで、**&lt;InstallationMedia\>\SMSSETUP\BIN\X64\Setup.exe** を実行して **System Center Configuration Manager セットアップ ウィザード**を開始します。  
+1.  Nel computer in cui si vuole installare il sito eseguire **&lt;InstallationMedia\>\SMSSETUP\BIN\X64\Setup.exe** per avviare la procedura di **Installazione guidata di System Center Configuration Manager**.  
 
     > [!NOTE]  
-    > 中央管理サイトをスタンドアロン プライマリ サイトにインストールして拡張する場合、または新しい子プライマリ サイトを既存の階層にインストールする場合は、既存のサイトのバージョンに対応するインストール メディア (ソース ファイル) を使用する必要があります。 コンソール内の更新プログラムをインストールした結果、以前にインストールしたサイトのバージョンが変更された場合は、元のインストール メディアを使用しないでください。 代わりに、更新されたサイトの [CD.Latest フォルダー](../../../../core/servers/manage/the-cd.latest-folder.md)にあるソース ファイルを使用してください。 Configuration Manager では、新しいサイトが接続する既存のサイトのバージョンに対応したソース ファイルを使用する必要があります。  
+    > Quando si installa un sito di amministrazione centrale per espandere un sito primario autonomo o si installa un nuovo sito primario figlio in una gerarchia esistente, è necessario usare il supporto di installazione (file di origine) corrispondente alla versione del sito o dei siti esistenti. Se sono stati installati gli aggiornamenti nella console che hanno modificato la versione di siti installati in precedenza, non usare i supporti di installazione originale. Usare invece i file di origine dalla [cartella CD.Latest](../../../../core/servers/manage/the-cd.latest-folder.md) di un sito aggiornato. Configuration Manager richiede l'uso di file di origine corrispondenti alla versione del sito esistente a cui si connetterà il nuovo sito.  
 
-2.  **[開始する前に]** ページで、**[次へ]** を選択します。  
+2.  Nella pagina **Prima di iniziare** scegliere **Avanti**.  
 
-3.  **[はじめに]** ページで、インストールするサイトの種類を選択します。  
+3.  Nella pagina **Riquadro attività iniziale** selezionare il tipo di sito che si vuole installare:  
 
-    -   **中央管理サイト** – 新しい階層の最初のサイトとして、またはスタンドアロン プライマリ サイトを拡張するとき。  
+    -   **Sito di amministrazione centrale**, come primo sito di una nuova gerarchia o quando si espande un sito primario autonomo:  
 
-        選択: **[Configuration Manager 中央管理サイトをインストールする]**。  
+        Selezionare **Installa un sito di amministrazione centrale di Configuration Manager**.  
 
-         この手順の後のステップで、新しい階層の最初のサイトとして中央管理サイトをインストールするか、スタンドアロン プライマリ サイトに中央管理サイトをインストールして拡張するかを選べます。  
+         In un passaggio successivo di questa procedura, è possibile scegliere di installare un sito di amministrazione centrale come primo sito di una nuova gerarchia oppure installare un sito di amministrazione centrale per l'espansione in un sito primario autonomo.  
 
-    -    **プライマリ サイト** - 新しい階層の最初のサイトであるスタンドアロン プライマリ サイトとして、または子プライマリとして。  
+    -    **Sito primario**, come sito primario autonomo che è il primo sito di una nuova gerarchia o come sito primario figlio:  
 
-        選択: **[Configuration Manager プライマリ サイトをインストールする]**。  
+        Selezionare **Installa un sito primario di Configuration Manager**.  
 
         > [!TIP]  
-        > 通常、 **[標準インストール オプションを使用して、スタンドアロンのプライマリ サイトをインストールする]** オプションは、テスト環境にスタンドアロンのプライマリ サイトをインストールする場合にだけ選びます。 このオプションを選んだ場合、セットアップで次の処理が実行されます。  
+        > In genere, si seleziona l'opzione **Utilizza le opzioni di installazione tipiche per un sito primario autonomo** solo quando si vuole installare un sito primario autonomo in un ambiente di test. Se si seleziona questa opzione, il programma di installazione:  
 
-        > -   サイトをスタンドアロン プライマリ サイトとして自動的に構成する。  
-        > -   既定のインストール パスを使用する。  
-        > -   サイト データベースに SQL Server の既定のインスタンスのローカル インストールを使用する。  
-        > -   サイト サーバー コンピューターに管理ポイントと配布ポイントをインストールする。  
-        > -   プライマリ サイト サーバーのオペレーティング システムの表示言語が Configuration Manager でサポートされている言語である場合は、英語とその言語でサイトを構成する。  
+        > -   Configura automaticamente il sito come sito primario autonomo.  
+        > -   Usa un percorso di installazione predefinito.  
+        > -   Usa un'installazione locale dell'istanza predefinita di SQL Server per il database del sito.  
+        > -   Installa un punto di gestione e un punto di distribuzione nel computer server del sito.  
+        > -   Configura il sito con la lingua inglese e con la lingua di visualizzazione del sistema operativo nel server del sito primario, se corrisponde a una delle lingue supportate da Configuration Manager.  
 
-4.  **[プロダクト キー]** ページでの操作:
-    - [プロダクト キー] ページで、Configuration Manager を評価版としてインストールするか、製品版としてインストールするかを選びます。  
+4.  Nella pagina **Codice Product Key**:
+    - Scegliere se installare Configuration Manager come versione di valutazione o versione con licenza.  
 
-      -   製品版を選んだ場合は、プロダクト キーを入力し、**[次へ]** を選択します。  
+      -   Se si seleziona una versione con licenza, immettere il codice Product Key e fare clic su **Avanti**.  
 
-      -   評価版を選んだ場合は、**[次へ]** を選択します  (後で評価版を製品版にアップグレードすることができます)。  
-    - System Center Configuration Manager については、2016 年 10 月リリースのバージョン 1606 基準メディア以降、ソフトウェア アシュアランス契約の有効期限の日付を指定できます。 このページでは、ライセンス契約の**ソフトウェア アシュアランスの有効期限**を通知する便利なアラームとして、この日付を指定できます。 セットアップ時に入力しなかった場合は、後で Configuration Manager コンソール内から指定できます。
+      -   Se si seleziona una versione di valutazione, fare clic su **Avanti**. È possibile eseguire successivamente l'aggiornamento di un'installazione di valutazione a un'installazione completa.  
+    - A partire dalla versione di ottobre 2016 dei supporti di base 1606 per System Center Configuration Manager, è possibile specificare la data di scadenza del contratto Software Assurance. In questa pagina è possibile specificare la **data di scadenza di Software Assurance** del contratto di licenza come utile promemoria. Se non si immette questa data durante l'installazione, è possibile specificarla in un secondo momento dalla console di Configuration Manager.
 
       > [!NOTE]   
-      > Microsoft では、お客様が入力した有効期限の日付を確認していません。また、ライセンスを検証する場合もこの日付を使用しません。 お客様は有効期限を通知するアラームとして、この日付を使用することができます。 Configuration Manager ではオンラインで新しいソフトウェア更新プログラムが提供されていないか定期的に確認します。このような追加の更新プログラムを取得するためにはソフトウェア アシュアランス ライセンスが最新の状態になっている必要があります。このため有効期限を通知するアラーム機能は便利です。    
+      > Microsoft non convalida la data di scadenza immessa e non userà tale data per la convalida della licenza. È possibile invece usarla come promemoria della data di scadenza. Configuration Manager verifica periodicamente online la disponibilità di nuovi aggiornamenti software. Per usufruire di questi aggiornamenti aggiuntivi, è necessario che lo stato della licenza di Software Assurance sia regolare.    
 
-      詳細については、「[System Center Configuration Manager のライセンスとブランチ](/sccm/core/understand/learn-more-editions)」を参照してください。
+      Per altre informazioni, vedere [Licenze e rami per System Center Configuration Manager](/sccm/core/understand/learn-more-editions).
 
-5.  **[マイクロソフト ソフトウェア ライセンス条項]** ページで、ライセンス条項を読んで同意します。  
+5.  Nella pagina **Condizioni di licenza software Microsoft** leggere e accettare le condizioni di licenza.  
 
-6.  **[必須ライセンス]** ページで、必須ソフトウェアのライセンス条項を読んで同意します。 ソフトウェアがダウンロードされ、必要に応じて、サイト システムまたはクライアントに自動的にインストールされます。 次のページに進む前に、すべてのチェック ボックスをオンにする必要があります。  
+6.  Nella pagina **Licenze prerequisite** leggere e accettare le condizioni di licenza per i prerequisiti software. Il programma di installazione scarica e installa automaticamente il software nei client o nei sistemi del sito quando è necessario. Prima di procedere alla pagina successiva, è necessario selezionare tutte le caselle di controllo.  
 
-7.  **[必須ファイルのダウンロード]** ページで、前提条件の最新の再配布可能ファイルをインターネットからダウンロードするか、以前にダウンロードしたファイルを使用するかを指定します。  
+7.  Nella pagina **Download prerequisiti** specificare se il programma di installazione deve scaricare da Internet i file ridistribuibili richiesti più recenti o se usare i file scaricati in precedenza:  
 
-    -   この時点でファイルをダウンロードする場合は、 **[必須ファイルをダウンロードする]** を選び、ファイルを保存する場所を指定します。  
+    -   Se si vuole che il programma di installazione scarichi i file al momento dell'installazione, selezionare **Scarica file richiesti** e specificare un percorso in cui memorizzare i file.  
 
-    -   [セットアップ ダウンローダー](../../../../core/servers/deploy/install/setup-downloader.md)を使用して既にファイルをダウンロードしている場合は、**[ダウンロード済みのファイルを使用する]** を選択して、ダウンロード先フォルダーを指定します。  
+    -   Se i file sono stati scaricati in precedenza con il [downloader di installazione](../../../../core/servers/deploy/install/setup-downloader.md), selezionare **Utilizza file scaricati precedentemente** e specificare la cartella di download.  
 
         > [!TIP]  
-        > 前にダウンロードしたファイルを使用する場合は、ダウンロード先フォルダーのパスに、最新バージョンのファイルが含まれていることをご確認ください。  
+        > Se si usano i file scaricati in precedenza, verificare che il percorso alla cartella di download contenga la versione più recente dei file.  
 
-8.  **[サーバーの言語の選択]** ページで、Configuration Manager コンソールとレポートで使用できるようにする言語を選びます  (既定では英語が選ばれています。選択を解除することはできません)。  
+8.  Nella pagina **Selezione della lingua server** selezionare le lingue disponibili per la console di Configuration Manager e per i report. La lingua inglese è selezionata per impostazione predefinita e non può essere rimossa.  
 
-9. **[クライアント言語の選択]** ページで、クライアント コンピューターで使用できるようにする言語を選び、すべてのクライアント言語をモバイル デバイス クライアントで有効にするかどうかを指定します (既定では英語が選ばれています。選択を解除することはできません)。  
+9. Nella pagina **Selezione della lingua client** selezionare le lingue disponibili per i computer client e specificare se abilitare tutte le lingue per i client dei dispositivi mobili. La lingua inglese è selezionata per impostazione predefinita e non può essere rimossa.  
 
     > [!IMPORTANT]  
-    > 中央管理サイトを使用する場合は、中央管理サイトに構成するクライアント言語に、個々の子プライマリ サイトに構成するすべてのクライアント言語を含めてください。 そのようにする必要がある理由は、配布ポイントからインストールしたクライアントは最上階層のサイトからクライアント言語にアクセスしますが、管理ポイントからインストールしたクライアントは、割り当てられたプライマリ サイトからクライアント言語にアクセスするためです。  
+    > Quando si usa un sito di amministrazione centrale, verificare che le lingue client configurate nel sito di amministrazione centrale includano tutte le lingue configurate in ogni sito primario figlio. In questo modo i client installati da un punto di distribuzione hanno accesso alle lingue client dal sito di livello superiore, mentre client installati da un punto di gestione hanno accesso alle lingue client dal relativo sito primario assegnato.  
 
-10. **[サイトとインストールの設定]** ページで、インストールする新しいサイトの次の値を指定します。  
+10. Nella pagina **Impostazioni di installazione e del sito** specificare quanto segue per il nuovo sito che si sta installando:  
 
-    -   **サイト コード:** [階層内の各サイト コードは、一意であり](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_sitecodes)、3 つの英数字 (A から Z および 0 から 9) で構成されている必要があります。 サイト コードはフォルダー名に使用されるため、次のような Windows で予約されている名前をサイトに使用しないでください。    
+    -   **Codice del sito**: [ogni codice del sito in una gerarchia deve essere univoco](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_sitecodes) ed essere costituito da tre caratteri alfanumerici (dalla A alla Z e da 0 a 9). Poiché il codice del sito viene usato nei nomi di cartella, non usare i nomi riservati di Windows, ad esempio:    
         -   AUX  
         -   CON    
         -   NUL    
@@ -110,161 +110,161 @@ ms.lasthandoff: 08/07/2017
         -   SMS  
 
         > [!NOTE]  
-        > セットアップ時に、指定したサイト コードがまだ使用されているかどうかや、予約されている名前かどうかは検証されません。  
+        > Il programma di installazione non verifica se il codice del sito specificato è già in uso o ha un nome riservato.  
 
-    -   **サイト名:** 各サイトには、サイトを識別するのに役立つこのフレンドリ名が必要です。  
+    -   **Nome sito**: ogni sito deve avere un nome descrittivo per poterlo facilmente individuare.  
 
-    -   **インストール先フォルダー:** これは Configuration Manager のインストール フォルダーのパスです。 サイトのインストール後に場所を変更することはできません。 また、パスに Unicode 文字または末尾のスペースを含めることはできません。  
+    -   **Cartella di installazione**: questo è il percorso della cartella per l'installazione di Configuration Manager. Non è possibile modificare il percorso dopo l'installazione del sito. Il percorso non può contenere spazi finali o caratteri Unicode.  
 
-11. **[サイトのインストール]** ページで、シナリオに一致する次のオプションを使用します。  
+11. Nella pagina **Installazione sito** usare l'opzione seguente che corrisponde allo scenario:  
 
-    -   **中央管理サイトをインストールする:**  
+    -   **Installazione di un sito di amministrazione centrale:**  
 
-         **[中央管理サイトのインストール]** ページで、**[新しい階層に最初のサイトとしてインストールする]** を選び、**[次へ]** を選択して続けます。  
+         Nella pagina **Installazione del sito di amministrazione centrale** selezionare **Installa come primo sito in una nuova gerarchia** e quindi fare clic su **Avanti** per continuare.  
 
-    -   **スタンドアロン プライマリ サイトを中央管理サイトがある階層に拡張する:**  
+    -   **Espansione di un sito primario autonomo in una gerarchia con un sito di amministrazione centrale:**  
 
-         **[中央管理サイトのインストール]** ページで、**[既存のスタンドアロン プライマリを 1 つの階層に展開する]** を選び、スタンドアロン プライマリ サイト サーバーの FQDN を指定して、**[次へ]** を選択して続けます。  
+         Nella pagina **Installazione del sito di amministrazione centrale** selezionare **Espandi un sito primario autonomo esistente in una gerarchia**, specificare il nome FQDN del server del sito primario autonomo e quindi fare clic su **Avanti** per continuare.  
 
-         新しい中央管理サイトのインストールに使用するメディアが、プライマリ サイトのバージョンに一致する必要があります。  
+         Il supporto usato per l'installazione del nuovo sito di amministrazione centrale deve corrispondere alla versione del sito primario.  
 
-    -   **スタンドアロン プライマリ サイトをインストールする:**  
+    -   **Installazione di un sito primario autonomo:**  
 
-         **[プライマリ サイトのインストール]** ページで、**[プライマリ サイトをスタンドアロン サイトとしてインストールする]** を選び、**[次へ]** を選択します。  
+         Nella pagina **Installazione del sito primario** selezionare **Installa il sito primario come sito autonomo** e quindi fare clic su **Avanti**.  
 
-    -   **子プライマリ サイトをインストールする:**  
+    -   **Installazione di un sito primario figlio:**  
 
-         **[プライマリ サイトのインストール]** ページで **[プライマリ サイトを既存の階層に含める]** を選択し、中央管理サイトの FQDN を指定して **[次へ]** を選択します。  
+         Nella pagina **Installazione del sito primario** selezionare **Associa il sito primario a una gerarchia esistente**, specificare l'FQDN per il sito di amministrazione centrale e fare clic su **Avanti**.  
 
-12. **[データベース情報]** ページで、次の情報を指定します。  
+12. Nella pagina **Informazioni database** specificare le informazioni seguenti:  
 
-    -   **SQL Server 名 (FQDN):** 既定では、これはサイト サーバー コンピューターに設定されます。
+    -   **Nome SQL Server (FQDN):** per impostazione predefinita, il valore è impostato come computer server del sito.
 
-     カスタム ポートを使用する場合、そのポートを SQL Server の FQDN に追加します。 そのとき、SQL Server の FQDN の後にコンマを付け、さらにポート番号を付けます。   たとえば、サーバー *SQLServer1.fabrikam.com* の場合、**SQLServer1.fabrikam.com,1551** でポート *1551* を指定します。
+     Se si usa una porta personalizzata, aggiungerla al nome FQDN di SQL Server. Per eseguire questa operazione, aggiungere una virgola e quindi il numero di porta dopo il nome FQDN del server.   Ad esempio, se il server è *SQLServer1.fabrikam.com*, per specificare la porta *1551* usare **SQLServer1.fabrikam.com,1551**
 
-    -   **インスタンス名:** 既定では、これは空白です。 サイト サーバー コンピューター上の SQL の既定のインスタンスを使用します。  
+    -   **Nome dell'istanza:** per impostazione predefinita, il campo è vuoto. Usa l'istanza predefinita di SQL nel computer server del sito.  
 
-    -   **データベース名:** 既定では、これは CM_&lt;Sitecode\> に設定されます。 別の名前を自由に指定して使用できます。  
+    -   **Nome database:** per impostazione predefinita, questo valore è impostato su CM_&lt;CodiceSito\>. È possibile specificare un nome diverso.  
 
-    -   **Service Broker ポート:** 既定では、既定の SQL Server Service Broker (SSB) ポート 4022 を使用するように設定されます。 SQL は、他のサイトでサイト データベースと直接通信するためにこれを使用します。  
+    -   **Porta di Service Broker:** per impostazione predefinita, questa opzione è impostata per usare la porta predefinita Server Service Broker (SSB) di SQL 4022. SQL la usa per comunicare direttamente con il database del sito in altri siti.  
 
-13. 2 番目の **[データベース情報]** ページで、サイト データベースの SQL Server データ ファイルと SQL Server ログ ファイルに既定以外の場所を指定できます。  
+13. Nella seconda pagina **Informazioni database** è possibile specificare percorsi non predefiniti per il file di dati e il file di log SQL Server per il database del sito:  
 
-    -   SQL Server の既定のファイルの場所が指定されます  
+    -   I percorsi di file predefiniti per SQL Server vengono impostati.  
 
-    -   既定以外のファイルの場所を指定するオプションは、SQL Server クラスターを使用する場合は使用できません。  
+    -   L'opzione per specificare percorsi di file non predefiniti non è disponibile quando si usa un cluster di SQL Server.  
 
-    -   前提条件チェッカーでは、既定以外のファイルの場所の空きディスク領域については、チェックは実行されません  
+    -   Il controllo dei prerequisiti non verifica lo spazio libero su disco per i percorsi di file non predefiniti.  
 
-14. **[SMS プロバイダーの設定]** ページで、SMS プロバイダーをインストールするサーバーの FQDN を指定します。  
+14. Nella pagina **Impostazioni del provider SMS** specificare il nome FQDN per il server in cui si vuole installare il provider SMS.  
 
-    -   既定では、サイト サーバーが指定されます。  
+    -   Per impostazione predefinita, è specificato il server del sito.  
 
-    -   サイトのインストールが終わった後で、他の SMS プロバイダーを追加して構成できます  
+    -   Dopo l'installazione del sito, è possibile configurare altri provider SMS.  
 
-15. **[クライアント コンピューターの通信設定]** ページで、すべてのサイト システムがクライアントからの HTTPS 通信だけを受け入れるようにするか、サイト システムの役割ごとに通信方法を構成するかを選びます。  
+15. Nella pagina **Impostazioni di comunicazione client** scegliere se configurare tutti i sistemi del sito per l'accettazione esclusiva delle comunicazioni HTTPS dai client o per il metodo di comunicazione da configurare in ciascun ruolo del sistema del sito.  
 
-    **[すべてのサイト システム ロールでクライアントからの HTTPS 通信のみ受け付ける]** を選択すると、クライアント コンピューターで、クライアント認証用の有効な PKI 証明書が必要になります。 証明書の要件の詳細については、「[Configuration Manager での PKI 証明書の要件](https://technet.microsoft.com/library/gg699362.aspx)」を参照してください。  
-
-    > [!NOTE]  
-    > この手順は、プライマリ サイトをインストールする場合にのみ適用されます。 中央管理サイトをインストールする場合は、この手順をスキップします。  
-
-16. [ **サイト システムの役割** ] ページで、管理ポイントまたは配布ポイントをインストールするかどうかを選択します。 セットアップでインストールするように選んだ役割ごとに:  
-
-    -   役割をホストするコンピューターの **FQDN** を入力し、サーバーでサポートするクライアントの接続方法 (HTTP または HTTPS) を選ぶ必要があります。  
-
-    -   前のページで **[すべてのサイト システム ロールでクライアントからの HTTPS 通信のみ受け付ける]** を選択した場合は、クライアント接続設定が自動的に HTTPS に構成されています。前のページに戻らないと、この設定を変更することはできません。  
+    Quando si seleziona **Tutti i ruoli del sistema del sito accettano solo le comunicazioni HTTPS dai client**, il computer client deve avere un certificato PKI valido per l'autenticazione dei client. Per altre informazioni sui requisiti dei certificati, vedere [Requisiti dei certificati PKI per Configuration Manager](https://technet.microsoft.com/library/gg699362.aspx).  
 
     > [!NOTE]  
-    > この手順は、プライマリ サイトをインストールする場合にのみ適用されます。 中央管理サイトをインストールする場合は、この手順をスキップします。  
+    > Questo passaggio si applica solo quando si installa un sito primario. Se si installa un sito di amministrazione centrale, ignorare questo passaggio.  
+
+16. Nella pagina **Ruoli sistema del sito** scegliere se installare un punto di gestione o un punto di distribuzione. Per ogni ruolo che si è scelto di installare con il programma di installazione:  
+
+    -   È necessario immettere il nome **FQDN** per il computer che ospita il ruolo e scegliere il metodo di connessione ai client supportato dal server (HTTP o HTTPS).  
+
+    -   Se nella pagina precedente è stata selezionata l'opzione **Tutti i ruoli del sistema del sito accettano solo le comunicazioni HTTPS dai client**, le impostazioni di connessione client vengono automaticamente configurate per HTTPS e non sarà possibile modificarle a meno che non si torni indietro e si cambi l'impostazione.  
 
     > [!NOTE]  
-    > サイト システムの役割をインストールするために、セットアップでは **[サイト システムのインストール アカウント]**を使用します。 既定では、プライマリ サイトのコンピューター アカウントが使用されます。 このアカウントは、サイト システムの役割をインストールするリモート コンピューターのローカル管理者である必要があります。 このアカウントに必要な権限がない場合は、サイト システムの役割のチェック ボックスをオフにし、サイト システムのインストール アカウントとして使用する他のアカウントを構成した後で Configuration Manager コンソール内からサイト システムの役割をインストールします。  
-
-17. **[使用状況データ]** ページで、Microsoft が収集するデータに関する情報を確認してから、**[次へ]** を選択します。  
-
-18. 親プライマリ サイトの **[サービス接続ポイントのセットアップ]** ページは、次の場合にのみセットアップ時に使用できます。  
-
-    -   スタンドアロン プライマリ サイトをインストールする場合  
-
-    -   中央管理サイトをインストールする場合  
+    > Questo passaggio si applica solo quando si installa un sito primario. Se si installa un sito di amministrazione centrale, ignorare questo passaggio.  
 
     > [!NOTE]  
-    > 子プライマリ サイトをインストールする場合は、この手順をスキップします (このページは使用できません)。  
+    > Per installare i ruoli del sistema del sito, il programma di installazione usa l' **account di installazione del sistema del sito**. Per impostazione predefinita, quest'ultimo usa l'account computer del sito primario. Per installare il ruolo del sistema del sito, tale account deve corrispondere a un amministratore locale in un computer remoto. Se l'account non ha le autorizzazioni necessarie, deselezionare i ruoli del sistema del sito e installarli in un secondo momento dalla console di Configuration Manager, dopo aver configurato gli account aggiuntivi da usare come account di installazione del sistema del sito.  
 
-     サイト展開シナリオの一部として中央管理サイトをインストールするとき、この役割が既にスタンドアロン プライマリ サイトにインストールされている場合は、スタンドアロン プライマリ サイトからこの役割をアンインストールする必要があります。 この役割のインスタンスは、階層内で 1 つだけ許可されており、階層の最上位サイトでのみ許可されます。  
+17. Nella pagina **Dati di utilizzo** rivedere le informazioni sui dati raccolti da Microsoft e quindi fare clic su **Avanti**.  
 
-     **[サービス接続ポイント]** の構成を選んだら、**[次へ]** を選択します。 (セットアップの完了後、Configuration Manager コンソール内からこの構成を変更できます。)  
+18. La pagina **Installazione del punto di connessione del servizio** è disponibile solo durante il programma di installazione:  
 
-19. **[設定の概要]** ページで、選択した設定を確認します。 準備ができたら、**[次へ]** を選択して、前提条件チェッカーを起動します。  
+    -   Quando si installa un sito primario autonomo.  
 
-20. **[インストールの前提条件チェック]** ページに、特定できた問題が一覧表示されます。  
+    -   Quando si installa un sito di amministrazione centrale.  
 
-    -   一覧に問題が表示されている場合は、その問題を選択して解決方法を確認します。  
+    > [!NOTE]  
+    > Se si installa un sito primario figlio, ignorare questo passaggio (questa pagina non è disponibile).  
 
-    -   サイトのインストールを続ける前に、ステータスが **[失敗]** の各項目を解決する必要があります。 ステータスが **[警告]** の項目は解決することをお勧めしますが、サイトのインストールがブロックされることはありません。  
+     Se si installa un sito di amministrazione centrale come parte di uno scenario di espansione del sito e questo ruolo è già installato nel sito primario autonomo, è necessario disinstallare il ruolo dal sito primario autonomo. In una gerarchia è consentita solo un'istanza di questo ruolo ed è consentita solo nel sito di livello superiore della gerarchia.  
 
-    -   問題を解決したら、**[前提条件チェックの実行]** を選択して、前提条件チェッカーを再実行します。  
+     Dopo aver selezionato una configurazione per il **punto di connessione del servizio** fare clic su **Avanti**. Al termine dell'installazione, è possibile modificare questa configurazione nella console di Configuration Manager.  
 
-     前提条件チェッカーを実行し、ステータスが **[失敗]** の項目がなければ、**[インストールの開始]** を選択して、サイトのインストールを開始します。  
+19. Nella pagina **Riepilogo impostazioni** rivedere le impostazioni dell'aggiornamento selezionate. Quando si è pronti, scegliere **Avanti** per avviare il controllo dei prerequisiti.  
+
+20. Nella pagina di **verifica dell'installazione dei prerequisiti** vengono elencati i problemi che possono essere identificati.  
+
+    -   Quando il controllo dei prerequisiti rileva un problema, fare clic su un elemento nell'elenco per informazioni dettagliate su come risolverlo.  
+
+    -   Prima di continuare a installare il sito è necessario risolvere tutti gli elementi con stato **Non riuscito** . Gli elementi con stato **Avviso** devono essere risolti, ma non bloccano l'installazione del sito.  
+
+    -   Dopo la risoluzione dei problemi fare clic su **Esegui controllo** per eseguire nuovamente il controllo dei prerequisiti.  
+
+     Se si esegue il controllo dei prerequisiti e a nessun controllo viene assegnato lo stato **Non riuscito**, è possibile fare clic su **Inizia installazione** per avviare l'installazione del sito.  
 
     > [!TIP]  
-    > ウィザードで提供されるフィードバックのほかに、インストール先のコンピューターのシステム ドライブのルートにある **ConfigMgrPrereq.log** ファイルを確認すると、前提条件に関する問題についての補足情報を見つけることができます。 インストールの前提条件となる規則のリストと説明については、「[List of Prerequisite Checks for System Center Configuration Manager](../../../../core/servers/deploy/install/list-of-prerequisite-checks.md)」(System Center Configuration Manager の前提条件チェックのリスト) を参照してください。  
+    > Oltre ai suggerimenti offerti nella procedura guidata, è possibile trovare altre informazioni sui problemi dei prerequisiti quando si visualizza il file **ConfigMgrPrereq.log** nella radice dell'unità di sistema del computer su cui si sta eseguendo l'installazione. Per un elenco delle regole e delle descrizioni dei prerequisiti di installazione, vedere l'[elenco dei controlli dei prerequisiti per System Center Configuration Manager](../../../../core/servers/deploy/install/list-of-prerequisite-checks.md).  
 
-21. **[インストール]** ページに、インストールのステータスが表示されます。 コア サイト サーバーのインストールが完了したら、インストール ウィザードを**閉じる**ことができます。 ウィザードを閉じても、インストールとサイトの初期構成がバックグラウンドで続けられます。  
+21. Nella pagina **Installazione** viene visualizzato lo stato dell'installazione. Dopo aver completato l'installazione del server del sito principale, sarà possibile **chiudere** l'installazione guidata. Dopo aver chiuso la procedura guidata, l'installazione e la configurazione iniziale del sito continuano in background.  
 
-    -   セットアップが完了する前に Configuration Manager コンソールをサイトに接続できます。 このコンソールは読み取り専用として接続するため、オブジェクトや設定を表示することはできますが、編集することはできません。  
+    -   È possibile connettere una console di Configuration Manager al sito prima del completamento dell'installazione. Questa console si connette in sola lettura e consente di visualizzare oggetti e impostazioni, ma non consente di eseguire modifiche.  
 
-    -   セットアップの完了後は、オブジェクトや設定を編集できるコンソールを接続できます。  
-
-
-## <a name="bkmk_expand"></a> スタンドアロン プライマリ サイトを拡張する
-最初のサイトとしてスタンドアロン プライマリ サイトをインストールした場合は、後から中央管理サイトをインストールすることで、そのサイトを大きな階層に拡張できます。   
-
-スタンドアロン プライマリ サイトを拡張するときに、既存のスタンドアロン プライマリ サイトのデータベースを参照として使用する新しい中央管理サイトをインストールします。 新しい中央管理サイトをインストールした後は、スタンドアロン プライマリ サイトは子プライマリ サイトとして機能します。
-
--   新しい階層に拡張できるのは、スタンドアロン プライマリ サイトのみです。  
-
--   特定の階層に拡張できるスタンドアロン プライマリ サイトは 1 つのみです。 このオプションを使用して、追加のスタンドアロン プライマリ サイトを同じ階層に含めることはできません。 代わりに、移行操作を使用して、階層間でデータを移行します。  
-
--   スタンドアロン サイトを、中央管理サイトを持つ階層に拡張すると、子プライマリ サイトを追加できます。  
-
--   中央管理サイトを持つ階層からプライマリ サイトを削除するには、プライマリ サイトをアンインストールする必要があります。  
-
-サイトを拡張するには、System Center Configuration Manager セットアップ ウィザードを使用して、新しい中央管理サイトをインストールします。その際は、次の点にご注意ください。  
-
--   スタンドアロン プライマリ サイトと同じバージョンの Configuration Manager を使用して、中央管理サイトをインストールする必要があります。  
-
--   セットアップ ウィザードの **[はじめに]** ページで、中央管理サイトをインストールするオプションを選びます。 セットアップの後の段階で、既存のスタンドアロン プライマリ サイトを拡張するオプションを選びます。  
-
--   新しい中央管理サイトの **[クライアント言語の選択]** ページを構成する場合に、拡張するスタンドアロン プライマリ サイトに構成されているのと同じクライアント言語を選ぶ必要があります。  
-
--   **[サイトのインストール]** ページで、スタンドアロン プライマリ サイトを拡張するオプションを選びます。  
-
-スタンドアロン プライマリ サイトを拡張するには、まず、[サイトを拡張するための前提条件](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand)を確認してから、この記事の前半の「*[プライマリ サイトまたは中央管理サイトをインストールするには](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_installpri)*」の手順に従います。
+    -   Al termine dell'installazione, sarà possibile connettersi a una console che consente di modificare oggetti e impostazioni.  
 
 
-## <a name="bkmk_secondary"></a> セカンダリ サイトをインストールする
- Configuration Manager コンソールを使用して、セカンダリ サイトをインストールします。  
+## <a name="bkmk_expand"></a> Espandere un sito primario autonomo
+Dopo aver installato un sito primario autonomo come primo sito, è possibile successivamente espanderlo in una gerarchia più ampia installando un sito di amministrazione centrale.   
 
--   使用するコンソールが新しいセカンダリ サイトの親サイトとなるプライマリ サイトに接続されていない場合は、サイトをインストールするコマンドが適切なプライマリ サイトにレプリケートされます。  
+Quando si espande un sito primario autonomo, si installa un nuovo sito di amministrazione centrale che usa il database del sito primario autonomo esistente come riferimento. Dopo l'installazione del nuovo sito di amministrazione centrale, il sito primario autonomo agisce da sito primario figlio.
 
--   サイトのインストールを開始する前に、ユーザー アカウントに前提条件となるアクセス許可があり、新しいセカンダリ サイトをホストするコンピューターがセカンダリ サイト サーバーとして使用するための前提条件をすべて満たしていることを確認します。  
+-   Soltanto un sito primario autonomo può essere espanso in una nuova gerarchia.  
 
--   セカンダリ サイトをインストールすると、親プライマリ サイトで構成されているクライアント通信用ポートを新しいサイトで使用するように構成されます。  
+-   È possibile espandere un solo sito primario autonomo in una gerarchia specifica. Non è possibile usare questa opzione per aggiungere altri siti primari autonomi nella stessa gerarchia. In alternativa, usare la migrazione per migrare i dati da una gerarchia a un'altra.  
 
-### <a name="bkmk_installsecondary"></a> セカンダリ サイトをインストールするには  
+-   In seguito all'espansione di un sito primario autonomo in una gerarchia con un sito di amministrazione centrale, è possibile aggiungere altri siti primari figlio.  
+
+-   Per rimuovere un sito primario da una gerarchia con un sito di amministrazione centrale, è necessario disinstallare il sito primario.  
+
+Per espandere il sito, usare l'installazione guidata di System Center Configuration Manager per installare un nuovo sito di amministrazione centrale in base alle indicazioni seguenti:  
+
+-   È necessario installare il sito di amministrazione centrale usando la stessa versione di Configuration Manager del sito primario autonomo.  
+
+-   Nella pagina **Attività iniziale** dell'installazione guidata, selezionare l'opzione per installare un sito di amministrazione centrale. In una fase successiva dell'installazione, scegliere un'opzione per espandere un sito primario autonomo esistente.  
+
+-   Quando si configura la pagina **Selezione della lingua client** per il nuovo sito di amministrazione centrale, è necessario selezionare le stesse lingue client configurate per il sito primario autonomo che si vuole espandere.  
+
+-   Nella pagina **Installazione sito** selezionare l'opzione per espandere il sito primario autonomo.  
+
+Per espandere un sito primario autonomo, vedere prima l'argomento [Prerequisiti per l'espansione di un sito](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand) e quindi seguire la procedura *[Per installare un sito primario o di amministrazione centrale](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_installpri)* illustrata in precedenza in questo articolo.
 
 
-1.  Configuration Manager コンソールで、**[管理]** > **[サイトの構成]** > **[サイト]** に移動します。 新しいセカンダリ サイトの親プライマリ サイトとなるサイトを選択します。  
+## <a name="bkmk_secondary"></a> Installare un sito secondario
+ Per installare un sito secondario, usare la console di Configuration Manager.  
 
-2.  **[セカンダリ サイトの作成]** を選択して、**セカンダリ サイトの作成ウィザード**を開始します。  
+-   Se la console in uso non è connessa al sito primario che sarà il sito padre per il nuovo sito secondario, il comando per installare il sito verrà replicato nel sito primario corretto.  
 
-3.  **[開始する前に]** ページで、新しいセカンダリ サイトの親にするプライマリ サイトが表示されていることを確認します。 **[次へ]** を選びます。  
+-   Prima di iniziare l'installazione del sito, verificare che l'account utente abbia le autorizzazioni richieste e che il computer che ospiterà il nuovo sito secondario soddisfi tutti i prerequisiti per l'uso come server del sito secondario.  
 
-4.  **[全般]** ページで、次の値を指定します。  
+-   Quando si installa il sito secondario, Configuration Manager configura il nuovo sito per l'uso delle porte di comunicazione del client configurate nel sito primario padre.  
 
-    -   **サイト コード:** 階層内の各サイト コードは、一意であり、3 つの英数字 (A から Z および 0 から 9) で構成されている必要があります。 サイト コードはフォルダー名に使用されるため、次のような Windows で予約されている名前をサイトに使用しないでください。  
+### <a name="bkmk_installsecondary"></a> Per installare un sito secondario  
+
+
+1.  Nella console di Configuration Manager passare a **Amministrazione** > **Configurazione del sito** > **Siti**. Selezionare il sito che sarà il sito primario padre del nuovo sito secondario.  
+
+2.  Scegliere **Crea sito secondario** per avviare la **Creazione guidata sito secondario**.  
+
+3.  Nella pagina **Prima di iniziare** confermare che il sito primario elencato sia quello che si vuole definire come padre del nuovo sito secondario. Scegliere quindi **Avanti**.  
+
+4.  Nella pagina **Generale** specificare le impostazioni seguenti:  
+
+    -   **Codice del sito**: ogni codice del sito in una gerarchia deve essere univoco ed essere costituito da tre caratteri alfanumerici (dalla A alla Z e da 0 a 9). Poiché il codice del sito viene usato nei nomi di cartella, non usare i nomi riservati di Windows, ad esempio:  
 
         -   AUX    
         -   CON    
@@ -273,119 +273,119 @@ ms.lasthandoff: 08/07/2017
         -   SMS  
 
        > [!NOTE]  
-       > セットアップ時に、指定したサイト コードがまだ使用されていないかどうかや、予約されている名前かどうかは検証されません。  
+       > Il programma di installazione non verifica se il codice del sito specificato è già in uso o ha un nome riservato.  
 
-    -   **サイト サーバー名:**これは新しいセカンダリ サイトをインストールするサーバーの FQDN です。  
+    -   **Nome server sito**: questo è il nome FQDN del server in cui verrà installato il nuovo sito secondario.  
 
-    -   **サイト名:** 各サイトには、サイトを識別するのに役立つこのフレンドリ名が必要です。  
+    -   **Nome sito**: ogni sito deve avere un nome descrittivo per poterlo facilmente individuare.  
 
-    -   **インストール先フォルダー:**これは Configuration Manager のインストール フォルダーのパスです。 サイトのインストール後に場所を変更することはできません。 パスに Unicode 文字または末尾のスペースを含めることはできません。  
+    -   **Cartella di installazione**: questo è il percorso della cartella per l'installazione di Configuration Manager. Non è possibile modificare il percorso dopo l'installazione del sito. Il percorso non può contenere spazi finali o caratteri Unicode.  
 
     > [!IMPORTANT]  
-    > このページで詳細を指定した後は、**[概要]** を選択して、セカンダリ サイトの残りのオプションに既定の設定を使用し、ウィザードの **[概要]** ページに直接移動できます。  
+    > Dopo aver specificato i dettagli in questa pagina, è possibile fare clic su **Riepilogo** per usare le impostazioni predefinite per le rimanenti opzioni del sito secondario e per passare direttamente alla pagina **Riepilogo** della procedura guidata.  
 
-    > -   このウィザードの既定の設定を把握しており、それらの設定を使用する場合にのみ、このオプションをご使用ください。  
-    > -   既定の設定を使用すると、境界グループが配布ポイントに関連付けられません。 そのため、セカンダリ サイト サーバーを含む境界グループを構成するまで、クライアントはこのセカンダリ サイトにインストールされている配布ポイントをコンテンツ ソースの場所として使用しません。  
+    > -   Usare questa opzione solo se si ha familiarità con le impostazioni predefinite della procedura guidata e si vogliono usare tali impostazioni.  
+    > -   I gruppi di limiti non sono associati al punto di distribuzione quando si usano le impostazioni predefinite. Di conseguenza, se non si configurano i gruppi di limiti che includono il server del sito secondario, i client non useranno il punto di distribuzione installato in questo sito secondario come percorso di origine del contenuto.  
 
-5.  **[インストール ソース ファイル]** ページで、セカンダリ サイト コンピューターがサイト インストール用のソース ファイルを取得する方法を選びます。  
+5.  Nella pagina **File di origine dell'installazione** scegliere la modalità usata dal computer del sito secondario per ottenere i file di origine per l'installazione del sito.  
 
-     ネットワークに格納されているソース ファイル、またはセカンダリ サイト コンピューターに格納されているソース ファイルを使用する場合:  
+     Quando si usano i file di origine archiviati nella rete o nel computer del sito secondario:  
 
-    -   ソース ファイルの場所には、**Redist** という名前のフォルダーが含まれている必要があります。このフォルダーには、セットアップ ダウンローダーを使用して以前にダウンロードしたすべてのファイルが含まれています。  
+    -   Il percorso dei file di origine deve includere una cartella denominata **Redist** che contenga tutti i file scaricati in precedenza con il downloader di installazione.  
 
-    -   **Redist** のいずれかのファイルが利用できない場合は、セカンダリ サイトをインストールできません。  
+    -   Se i file della cartella **Redist** non sono disponibili, l'installazione del sito secondario avrà esito negativo.  
 
-    -   セカンダリ サイト コンピューターのコンピューター アカウントには、ソース ファイルのあるフォルダーおよび共有の **読み取り** 権限が必要です。  
+    -   L'account del computer del sito secondario deve avere le autorizzazioni di **lettura** sulla cartella del file di origine e di autorizzazioni di condivisione.  
 
-6.  **[SQL Server の設定]** ページで、使用する SQL Server のバージョンを指定し、関連する設定を構成します。  
+6.  Nella pagina **Impostazioni di SQL Server** specificare la versione di SQL Server da usare e quindi configurare le impostazioni correlate.  
 
     > [!NOTE]  
-    > このページに入力した情報は、インストールを開始するまで検証されません。 操作を続行する前に、設定に間違いがないことを確認してください。  
+    > Il programma di installazione non convalida le informazioni immesse in questa pagina fino all'avvio dell'installazione. Prima di continuare, verificare queste impostazioni.  
 
-     **セカンダリ サイト コンピューターに SQL Express のローカル コピーをインストールして構成する場合**  
+     **Installa e configura una copia locale di SQL Express nel computer del sito secondario**  
 
-    -   **SQL Server サービス ポート**: SQL Server Express で使用する SQL Server サービス ポートを指定します。 通常、TCP ポート 1433 に設定しますが、別のポートにすることもできます。  
+    -   **Porta del servizio di SQL Server**: specificare la porta del servizio di SQL Server per l'uso da parte di SQL Server Express. La porta del servizio è in genere configurata per l'utilizzo della porta TCP 1433, ma è possibile configurare un'altra porta.  
 
-    -   **SQL Server Broker ポート**: SQL Server Express で使用する SQL Server Service Broker (SSB) ポートを指定します。 通常、TCP ポート 4022 に設定しますが、別のポートにすることもできます。 別のサイトやサービスによって使用されておらず、ファイアウォールでブロックされていない有効なポートを指定してください。  
+    -   **Porta di SQL Server Service Broker**: specificare la porta di SQL Server Broker (SSB) per l'uso da parte di SQL Server Express. La porta di Service Broker è in genere configurata per l'utilizzo della porta TCP 4022, ma è possibile configurare un'altra porta. È necessario specificare una porta valida che non sia usata da nessun altro sito o servizio e che non sia soggetta ad alcuna restrizione del firewall.  
 
     > [!IMPORTANT]  
-    > Configuration Manager で SQL Server Express をインストールする場合は、Service Pack なしの SQL Server Express 2012 がインストールされます。  
+    > Quando Configuration Manager installa SQL Server Express, viene installata la versione 2012 senza Service Pack:  
 
-    > -   セカンダリ サイトをサポートするには、インストール後に、SQL Server Express 2012 を[サポートされているバージョン](/sccm/core/plan-design/configs/support-for-sql-server-versions#bkmk_SQLVersions)にアップグレードする必要があります。
-    > -   また、新しいセカンダリ サイトのインストールが完了に失敗したが、最初の SQL Server Express 2012 のインストールが完了した場合、Configuration Manager がセカンダリ サイトのインストールを正常にもう一度試すには、SQL Server Express のインスタンスを更新しておく必要があります。  
+    > -   Per il supporto del sito secondario, dopo l'installazione è necessario aggiornare SQL Server Express 2012 a [una versione supportata](/sccm/core/plan-design/configs/support-for-sql-server-versions#bkmk_SQLVersions).
+    > -   Se l'installazione del nuovo sito secondario non riesce, ma viene prima completata l'installazione di SQL Server Express 2012, è necessario aggiornare tale istanza di SQL Server Express prima che Configuration Manager possa riprovare l'installazione del sito secondario.  
 
-     **既存の SQL Server インスタンスを使用する場合**  
+     **Usa un'istanza di SQL Server esistente**  
 
-    -   **SQL Server の FQDN**: SQL Server を実行しているコンピューターの FQDN を確認します。 SQL Server を実行しているローカル サーバーでセカンダリ サイト データベースをホストする必要があります。この設定を変更することはできません。  
+    -   **FQDN di SQL Server**: rivedere il nome FQDN del computer SQL Server. È necessario usare un server locale che esegue SQL Server per ospitare il database del sito secondario. Non è possibile modificare questa impostazione.  
 
-    -   **SQL Server インスタンス**: セカンダリ サイト データベースとして使用する SQL Server インスタンスを指定します。 既定のインスタンスを使用する場合は、このオプションを空のままにしてください。  
+    -   **Istanza SQL Server**: specificare l'istanza di SQL Server da usare come database del sito secondario. Lasciare vuota questa opzione per usare l'istanza predefinita.  
 
-    -   **ConfigMgr サイト データベース名**: セカンダリ サイト データベースの名前を指定します。  
+    -   **Nome database del sito di Configuration Manager**: specificare il nome da usare per il database del sito secondario.  
 
-    -   **SQL Server Broker ポート**: SQL Server で使用する SQL Server Service Broker (SSB) ポートを指定します。 別のサイトやサービスによって使用されておらず、ファイアウォールでブロックされていない有効なポートを指定してください。  
+    -   **Porta di SQL Server Service Broker**: specificare la porta di SQL Server Service Broker (SSB) per l'uso da parte di SQL Server. È necessario specificare una porta valida che non sia usata da nessun altro sito o servizio e che non sia soggetta ad alcuna restrizione del firewall.  
 
     > [!TIP]  
-    > System Center Configuration Manager でサポートされている SQL Server のバージョンの一覧については、「[Support for SQL Server versions](../../../../core/plan-design/configs/support-for-sql-server-versions.md)」(SQL Server のバージョンのサポート) を参照してください。  
+    > Vedere l'argomento sulle [versioni supportate di SQL Server](../../../../core/plan-design/configs/support-for-sql-server-versions.md) per un elenco delle versioni di SQL Server supportate da System Center Configuration Manager.  
 
-7.  **[配布ポイント]** ページで、セカンダリ サイト サーバーにインストールする配布ポイントの設定を構成します。  
+7.  Nella pagina **Punto di distribuzione** configurare le impostazioni per il punto di distribuzione che verranno installate sul server del sito secondario.  
 
-     **必須の設定:**  
+     **Impostazioni obbligatorie:**  
 
-    -   **[クライアント デバイスが配布ポイントと通信する方法を指定します]** – HTTP と HTTPS のどちらかを選びます。  
+    -   **Specificare la modalità di comunicazione dei dispositivi client con il punto di distribuzione**: scegliere HTTP o HTTPS.  
 
-    -   **[自己署名入り証明書を作成するか、PKI クライアント証明書をインポートします]** – 自己署名入り証明書を使用するか (自己署名入り証明書を使用して、Configuration Manager クライアントからコンテンツ ライブラリへの匿名接続を許可することもできます)、PKI 証明書をインポートするかを選びます。  
+    -   **Creare un certificato autofirmato o importare un certificato client PKI**: scegliere tra l'uso di un certificato autofirmato (che consente anche di usare connessioni anonime dai client di Configuration Manager alla raccolta contenuto) o l'importazione di un certificato da PKI.  
 
-         証明書は、配布ポイントがステータス メッセージを送信する前に、管理ポイントに対する配布ポイントの認証に使用されます。  
+         Il certificato viene usato per l'autenticazione tra il punto di distribuzione e un punto di gestione prima che il punto di distribuzione invii messaggi di stato.  
 
-         証明書の要件の詳細については、「[Configuration Manager での PKI 証明書の要件](https://technet.microsoft.com/library/gg699362.aspx)」を参照してください。  
+         Per informazioni sui requisiti del certificato, vedere [Requisiti dei certificati PKI per Configuration Manager](https://technet.microsoft.com/library/gg699362.aspx).  
 
-    **オプションの設定:**  
+    **Impostazioni facoltative:**  
 
-    -   **Configuration Manager で必要な場合は IIS をインストールして構成する:** インターネット インフォメーション サービス (IIS) がまだサーバーにインストールされていない場合に Configuration Manager によってインストールされるようにする場合は、この設定を選びます。 IIS はすべての配布ポイントにインストールされなければなりません。  
+    -   **Installa e configura IIS se richiesto da Configuration Manager**: selezionare questa impostazione per consentire a Configuration Manager di installare e configurare Internet Information Services (IIS) nel server, se non è già installato. IIS deve essere installato su tutti i punti di distribuzione.  
 
         > [!NOTE]  
-        > この設定はオプションですが、配布ポイントを正常にインストールするためには、先に IIS をサーバーにインストールしておく必要があります。  
+        > Anche se questa impostazione è facoltativa, è necessario installare IIS nel server prima di poter installare un punto di distribuzione.  
 
-    -   **この配布ポイントの BranchCache を有効にして構成する**。  
+    -   **Abilita e configura BranchCache per questo punto di distribuzione**.  
 
-    -   **説明**。 これは配布ポイントを識別するためのわかりやすい説明です。  
+    -   **Descrizione**. Questa è una semplice descrizione del punto di distribuzione che consente di individuarlo.  
 
-    -   **事前設定されたコンテンツ用にこの配布ポイントを有効にする**。  
+    -   **Abilita questo punto di distribuzione per il contenuto pre-installato**.  
 
-8.  **[ドライブ設定]** ページで、セカンダリ サイトの配布ポイントのドライブ設定を指定します。  
+8.  Nella pagina **Impostazioni unità** specificare le impostazioni unità per il punto di distribuzione del sito secondario.  
 
-     最大でコンテンツ ライブラリ用に 2 つのディスク ドライブ、パッケージ共有用に 2 つのディスク ドライブを構成できます。 ただし、Configuration Manager は、最初の 2 つが構成されたドライブの予約領域に達した場合は、追加のドライブを使用できます。 **[ドライブ設定]** ページで、ディスク ドライブの優先度と各ディスク ドライブに残しておく空き容量を構成します。  
+     È possibile configurare fino a due unità disco per la raccolta contenuto e due unità disco per la condivisione dei pacchetti. Configuration Manager può usare unità aggiuntive nel caso in cui le prime due raggiungano il limite di spazio riservato nell'unità configurata. Nella pagina **Impostazioni unità** è possibile configurare la priorità per le unità disco e la quantità di spazio disponibile su disco da mantenere su ogni unità disco.  
 
-    -   **ドライブの予約領域 (MB)**: ドライブにどの程度空き領域を残しておくかを指定します。空き領域がこの値に達すると、Configuration Manager が別のドライブを選択して、そのドライブへのコピーを続けます。 コンテンツ ファイルは、複数のドライブにまたがって保存されます。  
+    -   **Spazio riservato nell'unità (MB)**: il valore configurato per questa impostazione determina la quantità di spazio disponibile su un'unità prima che Configuration Manager scelga un'altra unità e continui il processo di copia su tale unità. I file di contenuto possono estendersi su più unità.  
 
-    -   **コンテンツの場所**:コンテンツ ライブラリとパッケージの共有のコンテンツの場所を指定します。 Configuration Manager は、ドライブの空き領域が **[ドライブの予約領域 (MB)]** で指定した値になるまで、コンテンツの第 1 の場所にコンテンツをコピーします。
+    -   **Percorsi contenuto**: Specificare i percorsi del contenuto per la condivisione di pacchetti e raccolte di contenuti. Configuration Manager copia i contenuti nel percorso del contenuto principale finché la quantità di spazio libero raggiunge in valore specificato per **Riserva spazio su disco (MB)**.
 
-     既定では、コンテンツの場所は [ **自動**] に設定されています。 コンテンツの第 1 の場所は、インストール時に最も多くのディスク領域のあるディスク ドライブに設定されます。 第 2 の場所は、プライマリ ドライブの次に多くの空きディスク領域のあるディスク ドライブに設定されます。 第 1 と第 2 のドライブが予約領域に達すると、Configuration Manager は、使用可能なドライブのうち、空き領域が最も大きなドライブを選択してコピーを続けます。  
+     Per impostazione predefinita, i percorsi contenuto sono impostati su **Automatico**. Il percorso del contenuto primario è impostato sull'unità disco con più spazio al momento dell'installazione. Il percorso secondario viene impostato per l'unità disco con lo spazio libero maggiore dopo l'unità principale. Quando le unità primaria e secondaria raggiungono il limite di spazio riservato, Configuration Manager seleziona un'altra unità disponibile con la maggiore quantità di spazio libero e continua il processo di copia.  
 
-9. [ **コンテンツの検証** ] ページで、コンテンツ ファイルの整合性を配布ポイントで検証するかどうかを指定します。  
+9. Nella pagina **Convalida contenuto** specificare se convalidare l'integrità dei file di contenuto nel punto di distribuzione.  
 
-    -   スケジュールに従ったコンテンツの検証を有効にすると、指定した時刻に Configuration Manager が配布ポイントのコンテンツの検証プロセスを開始し、すべてのコンテンツが検証されます。  
+    -   Quando si abilita la convalida del contenuto su una pianificazione, Configuration Manager avvia il processo all'orario pianificato e tutto il contenuto sul punto di distribuzione viene verificato.  
 
-    -   また、 **[コンテンツの検証の優先順位]**を構成することもできます。  
+    -   È anche possibile configurare la **priorità di convalida del contenuto**.  
 
-    -   コンテンツの検証プロセスの結果を見るには、Configuration Manager コンソールで、**[監視]** > **[配布ステータス]** > **[コンテンツのステータス]** に移動します。 パッケージの種類 (アプリケーション、ソフトウェアの更新パッケージ、ブート イメージなど) ごとにコンテンツが表示されます。  
+    -   Per visualizzare i risultati del processo di convalida del contenuto, nella console di Configuration Manager passare a **Monitoraggio** > **Stato distribuzione** > **Stato contenuto**. Viene visualizzato il contenuto per ogni tipo di pacchetto (ad esempio, applicazione, pacchetto di aggiornamento software e immagine di avvio).  
 
-10. **[境界グループ]** ページで、この配布ポイントを割り当てる境界グループを管理します。  
+10. Nella pagina **Gruppi limite** gestire i gruppi di limiti ai quali viene assegnato questo punto di distribuzione:  
 
-    -   コンテンツを展開するときに、クライアントがコンテンツ ソースの場所として配布ポイントを使用するには、クライアントは、その配布ポイントに関連付けられた境界グループ内になければなりません。  
+    -   Durante la distribuzione del contenuto, i client devono trovarsi in un gruppo di limiti associato al punto di distribuzione per usarlo come percorso di origine per il contenuto.  
 
-    -   これらの境界グループの外にあるクライアントが、優先配布ポイントがない場合に、代わりの配布ポイントをコンテンツのソースの場所として使用できるようにするには、[ **代替のコンテンツ ソースの場所の使用を許可する** ] オプションを選択します。  
+    -   È possibile selezionare l'opzione **Consenti percorso origine di fallback per il contenuto** per consentire ai client al di fuori di questi gruppi di limiti di eseguire il fallback e usare il punto di distribuzione come un percorso di origine quando i punti di distribuzione preferiti non sono disponibili.  
 
-     優先配布ポイントの詳細については、「[コンテンツ管理の基本的な概念](../../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)」を参照してください。  
+     Per informazioni sui punti di distribuzione preferiti, vedere l'argomento [Concetti di base per la gestione dei contenuti](../../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
 
-11. **[概要]** ページで設定を確認し、**[次へ]** を選択してセカンダリ サイトをインストールします。 ウィザードの **[完了]** ページが表示されたら、ウィザードを閉じることができます。 セカンダリ サイトのインストールはバックグラウンドで続けられます。  
+11. Nella pagina **Riepilogo** verificare le impostazioni, quindi fare clic su **Avanti** per installare il sito secondario. Quando la procedura guidata visualizza la pagina **Completamento**, è possibile chiudere la procedura guidata. L'installazione del sito secondario continua in background.  
 
 
-### <a name="bkmk_verify"></a> セカンダリ サイトのインストール ステータスを確認するには  
+### <a name="bkmk_verify"></a> Per verificare lo stato di installazione del sito secondario  
 
-1.  Configuration Manager コンソールで、**[管理]** > **[サイトの構成]** > **[サイト]** に移動します。  
+1.  Nella console di Configuration Manager passare a **Amministrazione** > **Configurazione del sito** > **Siti**.  
 
-2.  インストールするセカンダリ サイト サーバーを選び、 **[インストール ステータスの表示]**を選択します。  
+2.  Selezionare il server del sito secondario che si sta installando e fare clic su **Mostra stato installazione**.  
 
     > [!TIP]  
-    > 一度に複数のセカンダリ サイトをインストールする場合、一度に 1 つのサイトに対して前提条件のチェックが実行されます。現在のサイトのチェックが完了するまで、次のサイトのチェックは開始されません。  
+    > Quando si installano più siti secondari simultaneamente, il controllo dei prerequisiti viene eseguito su un sito alla volta e deve essere terminato in un sito per proseguire al sito successivo.  

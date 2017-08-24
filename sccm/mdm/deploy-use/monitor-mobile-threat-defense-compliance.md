@@ -1,6 +1,6 @@
 ---
-title: "Mobile Threat Defense コンプライアンスの監視| System Center Configuration Manager"
-description: "Configuration Manager マネージャー コンソールからの Mobile Threat Defense パートナー コンプライアンス ステータスの監視"
+title: "Monitorare la conformità a Mobile Threat Defense | System Center Configuration Manager"
+description: "Monitorare lo stato di conformità al partner Mobile Threat Defense dalla console di Configuration Manager"
 ms.custom: na
 ms.date: 03/21/2017
 ms.prod: configuration-manager
@@ -17,58 +17,58 @@ manager: angrobe
 ms.openlocfilehash: 8edf83a0f761dfc16274ce49c3aa2b878c7fe6cd
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="monitor-mobile-threat-defense-compliance"></a>**Mobile Threat Defense コンプライアンスの監視**
+# <a name="monitor-mobile-threat-defense-compliance"></a>**Monitorare la conformità a Mobile Threat Defense**
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-## <a name="to-monitor-the-overall-compliance-status"></a>全体的なコンプライアンス ステータスを監視するには
+## <a name="to-monitor-the-overall-compliance-status"></a>Per monitorare lo stato di conformità complessivo
 
-Mobile Threat Defense のステータスを監視するには、次のようにします。
+Per monitorare lo stato di Mobile Threat Defense:
 
-1.  Configuration Manager コンソールで、**[監視]** ワークスペースをクリックします。
+1.  Nella console di Configuration Manager fare clic sull'area di lavoro **Monitoraggio**.
 
-2.  **[監視]** ワークスペースで、**[セキュリティ]** ノードをクリックします。
+2.  Nell'area di lavoro **Monitoraggio** fare clic sul nodo **Sicurezza**.
 
-ビジュアル グラフ形式で表示されるコンプライアンス ステータスの概要を、さまざまなレベルで確認することができます。 グラフの個々のセクションをクリックして、次のような詳細情報を表示することができます。 
+È possibile visualizzare un riepilogo dello stato di conformità con diversi livelli di minaccia, organizzato sotto forma di grafico. È possibile fare clic sulle diverse sezioni del grafico per visualizzare informazioni aggiuntive, ad esempio: 
 
-- プラットフォームごとの、非準拠として報告されたデバイスの数
-- デバイスのコンプライアンス ステータスに関連するエラー
+- Numero di dispositivi indicati come non conformi dalla piattaforma
+- Eventuali errori correlati allo stato di conformità dei dispositivi
 
 ![](http://i.imgur.com/bmPsiWk.png)
 
-## <a name="to-monitor-the-individual-compliance-status"></a>個々のコンプライアンス ステータスを監視するには
+## <a name="to-monitor-the-individual-compliance-status"></a>Per monitorare lo stato di conformità dei singoli dispositivi
 
-次のようにして、個々のデバイス ステータスを確認することもできます。
+È anche possibile visualizzare lo stato dei singoli dispositivi:
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** ワークスペースをクリックします。
+1.  Nella console di Configuration Manager fare clic sull'area di lavoro **Asset e conformità**.
 
-2.  **[デバイス]** をクリックします。
+2.  Fare clic su **Dispositivi**.
 
 > [!TIP] 
-> **[Device threat compliance]** (デバイス脅威コンプライアンス) 列と **[デバイス脅威レベル]** 列を追加して、状態を確認できます。 既定では、これらの列は表示されません。
+> Per visualizzare lo stato, è possibile aggiungere le colonne **Protezione dalle minacce per il dispositivo** e **Livello di minaccia del dispositivo**. Queste colonne non vengono visualizzate per impostazione predefinita.
 
-## <a name="device-threat-protection-tab"></a>[デバイス脅威保護] タブ
+## <a name="device-threat-protection-tab"></a>Scheda Protezione dalle minacce per il dispositivo
 
-さらに、**[デバイス]** 画面で、特定のデバイスを選択し、**[デバイス脅威保護]** タブをクリックして、デバイス コンプライアンス ステータスの詳細を表示することができます。 以下の列の説明と予期される値は、デバイスのコンプライアンス ステータスを分析するのに役立ちます。
+Nella schermata **Dispositivi** è inoltre possibile selezionare dispositivi specifici e quindi fare clic sulla scheda **Protezione dalle minacce per il dispositivo**, in cui sono riportati altri dettagli sullo stato di conformità dei dispositivi. Di seguito sono riportate le descrizioni delle colonne e i relativi valori previsti, in modo da facilitare l'analisi dello stato di conformità del dispositivo.
 
 > [!IMPORTANT] 
-> 選択したデバイスがモバイル デバイスである場合は、[デバイスの脅威保護] タブのみが表示されます。
+> Abilitare una regola di protezione dalle minacce nei criteri di conformità del dispositivo.
 
-|列名|既定で表示|説明| 
+|Nome della colonna|Visibile per impostazione predefinita|Descrizione| 
 |-|-|-|
-|**説明**| ○ | Mobile Threat Defense パートナーによって提供される脅威に関する詳細。 |
-|**最終更新時刻**| ○ | Mobile Threat Defense パートナーが Intune に脅威に関する更新済みの詳細情報を最後に送信した時刻。 |
-|**脅威の重要度**| ○ | 脅威の重要度は、Mobile Threat Defense パートナー コンソールでの管理者の構成に基づく個々の脅威の定義です。 3 つの値 (**低**、**中**、**高**) のいずれかになります。 |
-|**脅威の状態**| ○ | デバイスの脅威の現在の状態。 使用可能な値は、**Active** (アクティブ)、**Resolved** (解決済み)、**Ignored** (無視) です。無視の場合、ユーザーはデバイスの脅威を無視したが、脅威はまだ存在していることを意味します。 |
-|**脅威の種類**| ○ | Mobile Threat Defense パートナーの脅威の種類。 使用可能な値: **App** (アプリ)、**File** (ファイル)、**OS** |
-|**AAD アカウント ID**| × | Azure Active Directory の一意の識別子です。 |
-|**分類**| ○ | Mobile Threat Defense パートナーにより提供される脅威の分類。 使用可能な値: **Root Enabler, Riskware, Adware, Chargeware, DataLeak, Trojan, Worm, Virus, Exploit, Backdoor, Bot, AppDropper, ClickFraud, Spam, Spyware, SurveillanceWare, Vulnerability, Unknown, Root Jailbrake, Connectivity, TollFraud, SideloadedApp (ルート イネーブラー、リスクウェア、アドウェア、チャージウェア、データのリーク、トロイの木馬、ワーム、ウイルス、エクスプロイト、バックドア、ボット、アプリ ドロッパー、クリック詐欺、スパム、スパイウェア、監視ウェア、脆弱性、不明、root 化/脱獄、接続、料金詐欺、サイドロードされたアプリ)** |
-|**デバイス ID**| × | 脅威にさらされている社内参加済みデバイスに関する情報を示す Azure Active Directory のオブジェクト ID。 |
-|**脅威 ID**| × | Mobile Threat Defense パートナーで生成される脅威の一意の識別子。 脅威 ID は解決方法を追跡するために使用されます。 |
-|**脅威 URL**| × | 脅威 URL がある場合は、特定の脅威の Mobile Threat Defense パートナーの管理コンソール ビューに戻るリンクが示されます。 |
+|**Descrizione**| Sì | Dettagli sulla minaccia forniti dal partner Mobile Threat Defense. |
+|**Ora ultimo aggiornamento**| Sì | Ora dell'ultimo invio da parte del partner Mobile Threat Defense di dettagli aggiornati sulla minaccia a Intune. |
+|**Gravità minaccia**| Sì | "Gravità minaccia" è la definizione di una singola minaccia in base alla configurazione dell'amministratore nella console del partner Mobile Threat Defense. I valori possibili sono: **Bassa**, **Media** o **Alta** |
+|**Stato minacce**| Sì | Stato corrente della minaccia nel dispositivo. Gli stati possibili sono: **Attivo**, **Risolto** o **Ignorato**. Quest'ultimo stato indica che l'utente ha ignorato la minaccia sul dispositivo, ma che questa è ancora presente. |
+|**Tipo di minaccia**| Sì | Tipo di minaccia del partner Mobile Threat Defense. I valori possibili sono i seguenti: **App**, **File** o **Sistema operativo** |
+|**ID account AAD**| No | Identificatore univoco di Azure Active Directory. |
+|**Classificazione**| Sì | Classificazione della minaccia fornita dal partner Mobile Threat Defense. I valori possibili sono: **Root Enabler, Riskware, Adware, Chargeware, DataLeak, Trojan, Worm, Virus, Exploit, Backdoor, Bot, AppDropper, ClickFraud, Spam, Spyware, SurveillanceWare, Vulnerability, Unknown, Root Jailbrake, Connectivity, TollFraud, SideloadedApp** |
+|**ID dispositivo**| No | ID dell'oggetto Azure Active Directory che rappresenta il dispositivo aggiunto all'area di lavoro con informazioni sulle minacce. |
+|**ID minaccia**| No | Identificatore univoco della minaccia generato dal partner Mobile Threat Defense. L'ID minaccia viene usato per tenere traccia della risoluzione. |
+|**URL della minaccia**| No | Quando presente, l'URL della minaccia fornisce un collegamento alla vista della console di gestione del partner Mobile Threat Defense per la minaccia specifica. |
 
 > [!TIP] 
-> **既定で表示**されない列を有効にして、デバイスの Mobile Threat Defense コンプライアンス ステータスの詳細を確認できるようにしてください。
+> Verificare di abilitare le colonne che non sono **visibili per impostazione predefinita** per visualizzare maggiori dettagli sullo stato di conformità a Mobile Threat Defense dei dispositivi.

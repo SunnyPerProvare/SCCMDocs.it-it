@@ -1,6 +1,6 @@
 ---
-title: "サポートされるサイト システム サーバー | Microsoft Docs"
-description: "System Center Configuration Manager サイトまたはサイト システムの役割をホストできる Windows バージョンについて説明します。"
+title: Server di sistema del sito supportati | Microsoft Docs
+description: "Informazioni sulle versioni di Windows che è possibile usare per ospitare un sito di System Center Configuration Manager o un ruolo del sistema del sito."
 ms.custom: na
 ms.date: 06/27/2017
 ms.prod: configuration-manager
@@ -17,298 +17,298 @@ manager: angrobe
 ms.openlocfilehash: be635e4df79b57b6f650287fa3774d2c10613cee
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="supported-operating-systems-for-system-center-configuration-manager-site-system-servers"></a>System Center Configuration Manager サイト システム サーバーのサポートされるオペレーティング システム
+# <a name="supported-operating-systems-for-system-center-configuration-manager-site-system-servers"></a>Sistemi operativi supportati per i server dei sistemi del sito di System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-この記事では、System Center Configuration Manager サイトまたはサイト システムの役割をホストできる Windows バージョンについて説明します。
+L'articolo illustra in dettaglio le versioni di Windows che è possibile usare per ospitare un sito di System Center Configuration Manager o un ruolo del sistema del sito.
 
 
-このトピックの情報は、次の記事の情報とともに使用します。
--   [Configuration Manager の推奨ハードウェア](../../../core/plan-design/configs/recommended-hardware.md)
--   [Configuration Manager のサイトとサイト システムの前提条件](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)
--   [Configuration Manager のサイズとスケール番号](../../../core/plan-design/configs/size-and-scale-numbers.md)
+Usare le informazioni di questo argomento con quelle contenute negli articoli relativi a:
+-   [Recommended hardware for Configuration Manager](../../../core/plan-design/configs/recommended-hardware.md) (Hardware consigliato per Configuration Manager)
+-   [Prerequisiti del sito e del sistema del sito per Configuration Manager](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)
+-   [Numeri di ridimensionamento e scalabilità per Configuration Manager](../../../core/plan-design/configs/size-and-scale-numbers.md)
 
 
 
-## <a name="windows-server-2016-standard-and-datacenter"></a>Windows Server 2016: Standard、Datacenter
-バージョン 1606 以降および KB3186654 以降の修正プログラム ロールアップ (2016 年 10 月にリリースされた 1606 のベースライン バージョン) により、このオペレーティング システムは次の用途に対応します。
+## <a name="windows-server-2016-standard-and-datacenter"></a>Windows Server 2016 - Standard e Datacenter
+A partire dalla versione 1606 con l'hotfix rollup di KB3186654 (o dalla versione 1606 di base rilasciata nell'ottobre del 2016), questo sistema operativo è supportato per i componenti seguenti:
 
-**サイト サーバー:**  
+**Server del sito:**  
 
--   中央管理サイト  
+-   Sito di amministrazione centrale  
 
--   プライマリ サイト  
+-   Sito primario  
 
--   セカンダリ サイト  
+-   Sito secondario  
 
-**サイト システム サーバー:**  
+**Server del sistema del sito:**  
 
--   アプリケーション カタログ Web サービス ポイント  
+-   Punto per servizi Web del Catalogo applicazioni  
 
--   アプリケーション カタログ Web サイト ポイント  
+-   Punto per siti Web del Catalogo applicazioni  
 
--   資産インテリジェンス同期ポイント  
+-   Punto di sincronizzazione di Asset Intelligence  
 
--   証明書登録ポイント  
+-   Punto di registrazione certificati  
 
--   配布ポイント  
+-   Punto di distribuzione  
 
-     配布ポイントは、それぞれに異なる要件を持つ複数の異なる構成をサポートします。 場合によっては、これらの構成は、サーバー上のインストールだけでなく、クライアント オペレーティング システム上のインストールをサポートします。 配布ポイントで使用可能なオプションの詳細については、「[System Center Configuration Manager のコンテンツ インフラストラクチャとコンテンツの管理](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」を参照してください。  
+     I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
--   Endpoint Protection ポイント  
+-   Punto di Endpoint Protection  
 
--   登録ポイント  
+-   Punto di registrazione  
 
--   登録プロキシ ポイント  
+-   Punto proxy di registrazione  
 
--   フォールバック ステータス ポイント  
+-   Punto di stato di fallback  
 
--   管理ポイント
+-   Punto di gestione
 
--   レポート サービス ポイント  
+-   Punto di Reporting Services  
 
--   サービス接続ポイント  
+-   Punto di connessione del servizio  
 
--   サイト データベース サーバー  
+-   Server di database del sito  
 
-     サイト データベース サーバーは、読み取り専用のドメイン コントローラー (RODC) ではサポートされていません。 詳細については、Microsoft サポート技術情報の「 [You may encounter problems when installing SQL Server on a domain controller (ドメイン コントローラーに SQL Server をインストールすると問題が発生する)](http://go.microsoft.com/fwlink/p/?LinkId=264856) 」を参照してください。 さらに、セカンダリ サイト サーバーは、ドメイン コントローラーではサポートされません。  
+     I server di database del sito non sono supportati in un controller di dominio di sola lettura. Per altre informazioni, vedere [Si possono verificare problemi durante l'installazione di SQL Server in un controller di dominio](http://go.microsoft.com/fwlink/p/?LinkId=264856) nella Microsoft Knowledge Base. Inoltre, i server del sito secondario non sono supportati in alcun controller di dominio.  
 
--   SMS_Provider  
+-   Provider_SMS  
 
--   ソフトウェアの更新ポイント  
+-   Punto di aggiornamento software  
 
--   状態移行ポイント
+-   Punto di migrazione stato
 
-## <a name="windows-server-2012-r2-x64-standard-and-datacenter"></a>Windows Server 2012 R2 (x64): Standard、Datacenter  
-**サイト サーバー:**  
+## <a name="windows-server-2012-r2-x64-standard-and-datacenter"></a>Windows Server 2012 R2 (x64) - Standard e Datacenter  
+**Server del sito:**  
 
--   中央管理サイト  
+-   Sito di amministrazione centrale  
 
--   プライマリ サイト  
+-   Sito primario  
 
--   セカンダリ サイト  
+-   Sito secondario  
 
-**サイト システム サーバー:**  
+**Server del sistema del sito:**  
 
--   アプリケーション カタログ Web サービス ポイント  
+-   Punto per servizi Web del Catalogo applicazioni  
 
--   アプリケーション カタログ Web サイト ポイント  
+-   Punto per siti Web del Catalogo applicazioni  
 
--   資産インテリジェンス同期ポイント  
+-   Punto di sincronizzazione di Asset Intelligence  
 
--   証明書登録ポイント  
+-   Punto di registrazione certificati  
 
--   配布ポイント  
+-   Punto di distribuzione  
 
-     配布ポイントは、それぞれに異なる要件を持つ複数の異なる構成をサポートします。 場合によっては、これらの構成は、サーバー上のインストールだけでなく、クライアント オペレーティング システム上のインストールをサポートします。 配布ポイントで使用可能なオプションの詳細については、「[System Center Configuration Manager のコンテンツ インフラストラクチャとコンテンツの管理](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」を参照してください。  
+     I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
--   Endpoint Protection ポイント  
+-   Punto di Endpoint Protection  
 
--   登録ポイント  
+-   Punto di registrazione  
 
--   登録プロキシ ポイント  
+-   Punto proxy di registrazione  
 
--   フォールバック ステータス ポイント  
+-   Punto di stato di fallback  
 
--   管理ポイント
+-   Punto di gestione
 
--   レポート サービス ポイント  
+-   Punto di Reporting Services  
 
--   サービス接続ポイント  
+-   Punto di connessione del servizio  
 
--   サイト データベース サーバー  
+-   Server di database del sito  
 
-     サイト データベース サーバーは、読み取り専用のドメイン コントローラー (RODC) ではサポートされていません。 詳細については、Microsoft サポート技術情報の「 [You may encounter problems when installing SQL Server on a domain controller (ドメイン コントローラーに SQL Server をインストールすると問題が発生する)](http://go.microsoft.com/fwlink/p/?LinkId=264856) 」を参照してください。 さらに、セカンダリ サイト サーバーは、ドメイン コントローラーではサポートされません。  
+     I server di database del sito non sono supportati in un controller di dominio di sola lettura. Per altre informazioni, vedere [Si possono verificare problemi durante l'installazione di SQL Server in un controller di dominio](http://go.microsoft.com/fwlink/p/?LinkId=264856) nella Microsoft Knowledge Base. Inoltre, i server del sito secondario non sono supportati in alcun controller di dominio.  
 
--   SMS_Provider  
+-   Provider_SMS  
 
--   ソフトウェアの更新ポイント  
+-   Punto di aggiornamento software  
 
--   状態移行ポイント  
+-   Punto di migrazione stato  
 
-## <a name="windows-server-2012-x64-standard-and-datacenter"></a>Windows Server 2012 (x64): Standard、Datacenter  
-**サイト サーバー:**  
+## <a name="windows-server-2012-x64-standard-and-datacenter"></a>Windows Server 2012 (x64) - Standard e Datacenter  
+**Server del sito:**  
 
--   中央管理サイト  
+-   Sito di amministrazione centrale  
 
--   プライマリ サイト  
+-   Sito primario  
 
--   セカンダリ サイト  
+-   Sito secondario  
 
-**サイト システム サーバー:**  
+**Server del sistema del sito:**  
 
--   アプリケーション カタログ Web サービス ポイント  
+-   Punto per servizi Web del Catalogo applicazioni  
 
--   アプリケーション カタログ Web サイト ポイント  
+-   Punto per siti Web del Catalogo applicazioni  
 
--   資産インテリジェンス同期ポイント  
+-   Punto di sincronizzazione di Asset Intelligence  
 
--   証明書登録ポイント  
+-   Punto di registrazione certificati  
 
--   配布ポイント  
+-   Punto di distribuzione  
 
-     配布ポイントは、それぞれに異なる要件を持つ複数の異なる構成をサポートします。 場合によっては、これらの構成は、サーバー上のインストールだけでなく、クライアント オペレーティング システム上のインストールをサポートします。 配布ポイントで使用可能なオプションの詳細については、「[System Center Configuration Manager のコンテンツ インフラストラクチャとコンテンツの管理](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」を参照してください。  
+     I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
--   Endpoint Protection ポイント  
+-   Punto di Endpoint Protection  
 
--   登録ポイント  
+-   Punto di registrazione  
 
--   登録プロキシ ポイント  
+-   Punto proxy di registrazione  
 
--   フォールバック ステータス ポイント  
+-   Punto di stato di fallback  
 
--   管理ポイント
+-   Punto di gestione
 
--   レポート サービス ポイント  
+-   Punto di Reporting Services  
 
--   サービス接続ポイント  
+-   Punto di connessione del servizio  
 
--   サイト データベース サーバー  
+-   Server di database del sito  
 
-     サイト データベース サーバーは、読み取り専用のドメイン コントローラー (RODC) ではサポートされていません。 詳細については、Microsoft サポート技術情報の「 [You may encounter problems when installing SQL Server on a domain controller (ドメイン コントローラーに SQL Server をインストールすると問題が発生する)](http://go.microsoft.com/fwlink/p/?LinkId=264856) 」を参照してください。 さらに、セカンダリ サイト サーバーは、ドメイン コントローラーではサポートされません。  
+     I server di database del sito non sono supportati in un controller di dominio di sola lettura. Per altre informazioni, vedere [Si possono verificare problemi durante l'installazione di SQL Server in un controller di dominio](http://go.microsoft.com/fwlink/p/?LinkId=264856) nella Microsoft Knowledge Base. Inoltre, i server del sito secondario non sono supportati in alcun controller di dominio.  
 
--   SMS_Provider  
+-   Provider_SMS  
 
--   ソフトウェアの更新ポイント  
+-   Punto di aggiornamento software  
 
--   状態移行ポイント  
+-   Punto di migrazione stato  
 
-## <a name="windows-server-2008-r2-with-sp1-x64-standard-enterprise-and-datacenter"></a>Windows Server 2008 R2 SP1 (x64): Standard、Enterprise、Datacenter  
- [マイクロソフト サポート ライフサイクル](https://support.microsoft.com/lifecycle)で詳述するように、Windows Server 2008 R2 が延長サポートになり、メインストリーム サポートが終了しました。 Configuration Manager を使用したサイト システム サーバーとしてのこれらのオペレーティング システムの将来のサポートの詳細については、「[System Center Configuration Manager から削除された機能と非推奨の機能](../../../core/plan-design/changes/removed-and-deprecated-features.md)」を参照してください。  
+## <a name="windows-server-2008-r2-with-sp1-x64-standard-enterprise-and-datacenter"></a>Windows Server 2008 R2 con SP1 (x64) - Standard, Enterprise e Datacenter  
+ Windows Server 2008 R2 è ora in modalità di supporto Extended e non più in modalità di supporto Mainstream, come descritto in [Criteri relativi al ciclo di vita Microsoft](https://support.microsoft.com/lifecycle). Per altre informazioni sul supporto disponibile in futuro per questi sistemi operativi come server di sistema del sito con Configuration Manager, vedere [Funzionalità rimosse e deprecate per System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md).  
 
- Configuration Manager バージョン 1702 以降では、このオペレーティング システムはサイト サーバーやほとんどのサイト システムの役割でサポートされませんが、配布ポイントのサイト システムの役割 (プル配布ポイント、PXE およびマルチキャストの場合を含む) では引き続きサポートされます。
+ A partire da Configuration Manager versione 1702, questo sistema operativo non è supportato per i server del sito o per la maggior parte dei ruoli del sistema del sito, ma è ancora supportato per il ruolo del sistema del sito del punto di distribuzione, compresi il punto di distribuzione pull, PXE e il multicast.
 
- 1702 より前のバージョンでは、以下の使用が引き続きサポートされます。
+ Continua inoltre a essere supportato dalle versioni precedenti la 1702 per i seguenti tipi di server.
 
 
-**サイト サーバー:**  
+**Server del sito:**  
 
--   中央管理サイト  
+-   Sito di amministrazione centrale  
 
--   プライマリ サイト  
+-   Sito primario  
 
--   セカンダリ サイト  
+-   Sito secondario  
 
-**サイト システム サーバー:**  
+**Server del sistema del sito:**  
 
--   アプリケーション カタログ Web サービス ポイント  
+-   Punto per servizi Web del Catalogo applicazioni  
 
--   アプリケーション カタログ Web サイト ポイント  
+-   Punto per siti Web del Catalogo applicazioni  
 
--   資産インテリジェンス同期ポイント  
+-   Punto di sincronizzazione di Asset Intelligence  
 
--   証明書登録ポイント  
+-   Punto di registrazione certificati  
 
--   配布ポイント  
+-   Punto di distribuzione  
 
-     配布ポイントは、それぞれに異なる要件を持つ複数の異なる構成をサポートします。 場合によっては、これらの構成は、サーバー上のインストールだけでなく、クライアント オペレーティング システム上のインストールをサポートします。 配布ポイントで使用可能なオプションの詳細については、「[System Center Configuration Manager のコンテンツ インフラストラクチャとコンテンツの管理](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」を参照してください。  
+     I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
--   Endpoint Protection ポイント  
+-   Punto di Endpoint Protection  
 
--   登録ポイント  
+-   Punto di registrazione  
 
--   登録プロキシ ポイント  
+-   Punto proxy di registrazione  
 
--   フォールバック ステータス ポイント  
+-   Punto di stato di fallback  
 
--   管理ポイント
+-   Punto di gestione
 
--   レポート サービス ポイント  
+-   Punto di Reporting Services  
 
--   サービス接続ポイント  
+-   Punto di connessione del servizio  
 
--   サイト データベース サーバー  
+-   Server di database del sito  
 
-     サイト データベース サーバーは、読み取り専用のドメイン コントローラー (RODC) ではサポートされていません。 詳細については、Microsoft サポート技術情報の「 [You may encounter problems when installing SQL Server on a domain controller (ドメイン コントローラーに SQL Server をインストールすると問題が発生する)](http://go.microsoft.com/fwlink/p/?LinkId=264856) 」を参照してください。 さらに、セカンダリ サイト サーバーは、ドメイン コントローラーではサポートされません。  
+     I server di database del sito non sono supportati in un controller di dominio di sola lettura. Per altre informazioni, vedere [Si possono verificare problemi durante l'installazione di SQL Server in un controller di dominio](http://go.microsoft.com/fwlink/p/?LinkId=264856) nella Microsoft Knowledge Base. Inoltre, i server del sito secondario non sono supportati in alcun controller di dominio.  
 
--   SMS_Provider  
+-   Provider_SMS  
 
--   ソフトウェアの更新ポイント  
+-   Punto di aggiornamento software  
 
--   状態移行ポイント  
+-   Punto di migrazione stato  
 
-## <a name="windows-server-2008-with-sp2-x86-x64-standard-enterprise-and-datacenter"></a>Windows Server 2008 SP2 (x86, x64): Standard、Enterprise、Datacenter  
- [マイクロソフト サポート ライフサイクル](https://support.microsoft.com/lifecycle)で詳述するように、Windows Server 2008 が延長サポートになり、メインストリーム サポートが終了しました。 Configuration Manager を使用したサイト システム サーバーとしてのこれらのオペレーティング システムの将来のサポートの詳細については、「[System Center Configuration Manager から削除された機能と非推奨の機能](../../../core/plan-design/changes/removed-and-deprecated-features.md)」を参照してください。  
+## <a name="windows-server-2008-with-sp2-x86-x64-standard-enterprise-and-datacenter"></a>Windows Server 2008 con SP2 (x86, x64) - Standard, Enterprise e Datacenter  
+ Windows Server 2008 è ora in modalità di supporto Extended e non più in modalità di supporto Mainstream, come descritto in [Criteri relativi al ciclo di vita Microsoft](https://support.microsoft.com/lifecycle). Per altre informazioni sul supporto disponibile in futuro per questi sistemi operativi come server di sistema del sito con Configuration Manager, vedere [Funzionalità rimosse e deprecate per System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md).  
 
-このオペレーティング システムは、サイト サーバーとして、または配布ポイントとプル配布ポイントを除くサイト システムの役割としてはサポートされていません。 このサポートの廃止が発表されるまで、またはこのオペレーティング システムの拡張サポート期間が終了するまでは、このオペレーティング システムを配布ポイントとして使用し続けることができます。 詳細については、「[Installation of System Center Configuration Manager CB and LTSB fails on Windows Server 2008](https://support.microsoft.com/help/4015095)」 (Windows Server 2008 で System Center Configuration Manager CB および LTSB のインストールに失敗する) を参照してください。
+Questo sistema operativo non è supportato per i server del sito o ruoli del sistema del sito fatta eccezione per il punto di distribuzione e il punto di distribuzione pull. È possibile continuare a usare questo sistema operativo come punto di distribuzione fino all'annuncio della deprecazione di questo supporto o alla scadenza del periodo di supporto "Extended" di questo sistema operativo. Per altre informazioni, vedere l'argomento relativo ai [problemi di installazione di System Center Configuration Manager CB in Windows Server 2008](https://support.microsoft.com/help/4015095).
 
-**サイト システム サーバー:**  
--   配布ポイント  
+**Server del sistema del sito:**  
+-   Punto di distribuzione  
 
-    -   このオペレーティング システムの配布ポイントでは、マルチキャストをサポートしません。  
+    -   I punti di distribuzione in questo sistema operativo non supportano il multicast.  
 
-    -   このオペレーティング システムの配布ポイントは、PXE ではサポートされますが、EFI モードでのクライアント コンピューターのネットワーク ブートはサポートしません。 クライアント コンピューターのレガシ モードでの BIOS ブートまたは EFI ブートはサポートされます。  
+    -   I punti di distribuzione in questo sistema operativo sono supportati per PXE, ma non supportano l'avvio di rete dei computer client in modalità EFI. I computer client con BIOS o con avvio EFI in modalità legacy sono supportati.  
 
-    -   配布ポイントは、それぞれに異なる要件を持つ複数の異なる構成をサポートします。 場合によっては、これらの構成は、サーバー上のインストールだけでなく、クライアント オペレーティング システム上のインストールをサポートします。 配布ポイントで使用可能なオプションの詳細については、「[System Center Configuration Manager のコンテンツ インフラストラクチャとコンテンツの管理](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」を参照してください。  
+    -   I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
 
 
-## <a name="windows-10-x86-x64-pro-and-enterprise"></a>Windows 10 (x86, x64): Pro、Enterprise  
-**サイト システム サーバー:**  
+## <a name="windows-10-x86-x64-pro-and-enterprise"></a>Windows 10 (x86, x64) - Pro e Enterprise  
+**Server del sistema del sito:**  
 
--   配布ポイント  
+-   Punto di distribuzione  
 
-    -   このオペレーティング システムの配布ポイントは、PXE ではサポートされません。  
+    -   I punti di distribuzione in questo sistema operativo non sono supportati per PXE.  
 
-    -   このオペレーティング システムのバージョンの配布ポイントでは、マルチキャストをサポートしません。  
+    -   I punti di distribuzione in questa versione del sistema operativo non supportano il multicast.  
 
-    -   配布ポイントは、それぞれに異なる要件を持つ複数の異なる構成をサポートします。 場合によっては、これらの構成は、サーバー上のインストールだけでなく、クライアント オペレーティング システム上のインストールをサポートします。 配布ポイントで使用可能なオプションの詳細については、「[System Center Configuration Manager のコンテンツ インフラストラクチャとコンテンツの管理](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」を参照してください。  
+    -   I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
-## <a name="windows-81-x86-x64-professional-and-enterprise"></a>Windows 8.1 (x86、x64): Professional、Enterprise  
-**サイト システム サーバー:**  
+## <a name="windows-81-x86-x64-professional-and-enterprise"></a>Windows 8.1 (x86, x64) - Professional e Enterprise  
+**Server del sistema del sito:**  
 
--   配布ポイント  
+-   Punto di distribuzione  
 
-    -   このオペレーティング システムの配布ポイントは、PXE ではサポートされません。  
+    -   I punti di distribuzione in questo sistema operativo non sono supportati per PXE.  
 
-    -   このオペレーティング システムのバージョンの配布ポイントでは、マルチキャストをサポートしません。  
+    -   I punti di distribuzione in questa versione del sistema operativo non supportano il multicast.  
 
-    -   配布ポイントは、それぞれに異なる要件を持つ複数の異なる構成をサポートします。 場合によっては、これらの構成は、サーバー上のインストールだけでなく、クライアント オペレーティング システム上のインストールをサポートします。 配布ポイントで使用可能なオプションの詳細については、「[System Center Configuration Manager のコンテンツ インフラストラクチャとコンテンツの管理](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」を参照してください。  
+    -   I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
-## <a name="windows-8-x86-x64-professional-and-enterprise"></a>Windows 8 (x86、x64): Professional、Enterprise
-**サイト システム サーバー:**  
+## <a name="windows-8-x86-x64-professional-and-enterprise"></a>Windows 8 (x86, x64) - Professional e Enterprise
+**Server del sistema del sito:**  
 
--   配布ポイント  
+-   Punto di distribuzione  
 
-    -   このオペレーティング システムの配布ポイントは、PXE ではサポートされません。  
+    -   I punti di distribuzione in questo sistema operativo non sono supportati per PXE.  
 
-    -   このオペレーティング システムのバージョンの配布ポイントでは、マルチキャストをサポートしません。  
+    -   I punti di distribuzione in questa versione del sistema operativo non supportano il multicast.  
 
-    -   配布ポイントは、それぞれに異なる要件を持つ複数の異なる構成をサポートします。 場合によっては、これらの構成は、サーバー上のインストールだけでなく、クライアント オペレーティング システム上のインストールをサポートします。 配布ポイントで使用可能なオプションの詳細については、「[System Center Configuration Manager のコンテンツ インフラストラクチャとコンテンツの管理](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」を参照してください。  
+    -   I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
-## <a name="windows-7-with-sp1-x86-x64-professional-enterprise-and-ultimate"></a>Windows 7 SP1 (x86、x64): Professional、Enterprise、Ultimate  
-**サイト システム サーバー:**  
+## <a name="windows-7-with-sp1-x86-x64-professional-enterprise-and-ultimate"></a>Windows 7 con SP1 (x86, x64) - Professional, Enterprise e Ultimate  
+**Server del sistema del sito:**  
 
--   配布ポイント  
+-   Punto di distribuzione  
 
-    -   このオペレーティング システムの配布ポイントは、PXE ではサポートされません。  
+    -   I punti di distribuzione in questo sistema operativo non sono supportati per PXE.  
 
-    -   このオペレーティング システムのバージョンの配布ポイントでは、マルチキャストをサポートしません。  
+    -   I punti di distribuzione in questa versione del sistema operativo non supportano il multicast.  
 
-    -   配布ポイントは、それぞれに異なる要件を持つ複数の異なる構成をサポートします。 場合によっては、これらの構成は、サーバー上のインストールだけでなく、クライアント オペレーティング システム上のインストールをサポートします。 配布ポイントで使用可能なオプションの詳細については、「[System Center Configuration Manager のコンテンツ インフラストラクチャとコンテンツの管理](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」を参照してください。  
+    -   I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
 
-## <a name="the-server-core-installation-of-windows-server-2016"></a>Windows Server 2016 の Server Core インストール
-バージョン 1606 以降および KB3186654 以降の修正プログラム ロールアップ (2016 年 10 月にリリースされた 1606 のベースライン バージョン) により、このオペレーティング システムは、配布ポイントとしての用途に対応します。ただし次の制限があります。  
-  -   64 ビット バージョンのみがサポートされています。
-  -   このオペレーティング システムの配布ポイントでは、PXE またはマルチキャストをサポートしません。  
+## <a name="the-server-core-installation-of-windows-server-2016"></a>Installazione Server Core di Windows Server 2016
+A partire dalla versione 1606 con l'hotfix rollup di KB3186654 (o dalla versione 1606 di base rilasciata nell'ottobre del 2016), questo sistema operativo è supportato per l'uso come punto di distribuzione con le limitazioni seguenti:  
+  -   È supportata solo la versione a x64 bit.
+  -   I punti di distribuzione in questo sistema operativo non supportano PXE o il multicast.  
 
 
-## <a name="the-server-core-installation-of-windows-server-2012-r2"></a>Windows Server 2012 R2 の Server Core のインストール  
- 記載されている前のオペレーティング システムだけでなく、Windows Server 2012 R2 の Server Core インストールが、次の制限付きの配布ポイントとしての使用でサポートされます。  
+## <a name="the-server-core-installation-of-windows-server-2012-r2"></a>Installazione Server Core di Windows Server 2012 R2  
+ Oltre ai sistemi operativi precedentemente elencati, l'installazione Server Core di Windows Server 2012 R2 è supportata anche per l'uso come punto di distribuzione con le limitazioni seguenti:  
 
--   64 ビット バージョンのみがサポートされています。
+-   È supportata solo la versione a x64 bit.
 
--   このオペレーティング システムの配布ポイントでは、PXE またはマルチキャストをサポートしません。  
+-   I punti di distribuzione in questo sistema operativo non supportano PXE o il multicast.  
 
-## <a name="the-server-core-installation-of-windows-server-2012"></a>Windows Server 2012 の Server Core のインストール  
- 記載されている前のオペレーティング システムだけでなく、Windows Server 2012 の Server Core インストールが、次の制限付きの配布ポイントとしての使用でサポートされます。  
+## <a name="the-server-core-installation-of-windows-server-2012"></a>Installazione Server Core di Windows Server 2012  
+ Oltre ai sistemi operativi precedentemente elencati, l'installazione Server Core di Windows Server 2012 è supportata anche per l'uso come punto di distribuzione con le limitazioni seguenti:  
 
--   64 ビット バージョンのみがサポートされています。  
+-   È supportata solo la versione a 64 bit.  
 
--   このオペレーティング システムの配布ポイントでは、PXE またはマルチキャストをサポートしません。
+-   I punti di distribuzione in questo sistema operativo non supportano PXE o il multicast.

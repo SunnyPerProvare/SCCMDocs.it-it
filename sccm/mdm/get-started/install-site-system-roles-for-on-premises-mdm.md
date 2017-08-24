@@ -6,22 +6,19 @@ ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: c3cf9f64-c2b9-4ace-9527-2aba6d4eef04
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: Mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3743c80b0c2b5142f3a537ba3855ffd14794d42b
-ms.openlocfilehash: 916b971f851f968f6534ac834bd3182cc61614aa
-ms.contentlocale: it-it
-ms.lasthandoff: 01/24/2017
-
-
+ms.openlocfilehash: 4913606e2f8a36e0004f711b24ecd836d0485124
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="install-site-system-roles-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Installare i ruoli del sistema del sito per la gestione dei dispositivi mobili (MDM) locale in System Center Configuration Manager
 
@@ -73,4 +70,3 @@ La gestione di dispositivi mobili locale di System Center Configuration Manager 
      Questo consente di trasformare il punto di gestione in un punto di gestione dei dispositivi.  
 
  Una volta aggiunti e configurati i ruoli del sistema del sito per la gestione dei dispositivi moderni, è necessario configurare i server che ospitano i ruoli come endpoint di tipo trusted per la registrazione e la comunicazione con i dispositivi gestiti. Per altre informazioni, vedere [Set up certificates for trusted communications for On-premises Mobile Device Management in System Center Configuration Manager](../../mdm/get-started/set-up-certificates-on-premises-mdm.md) (Configurazione di certificati per comunicazioni attendibili per la gestione di dispositivi mobili locale in System Center Configuration Manager).  
-

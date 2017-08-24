@@ -1,6 +1,6 @@
 ---
-title: "クライアントのセキュリティとプライバシー | Microsoft Docs"
-description: "System Center Configuration Manager のクライアントのセキュリティとプライバシーについて説明します。"
+title: Privacy e sicurezza per i client | Microsoft Docs
+description: Informazioni sulla sicurezza e la privacy dei client in System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -18,289 +18,289 @@ manager: angrobe
 ms.openlocfilehash: 1d871b0e1a2897c236d17211a23c9c7d93e42313
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-clients-in-system-center-configuration-manager"></a>System Center Configuration Manager のクライアントのセキュリティとプライバシー
+# <a name="security-and-privacy-for-clients-in-system-center-configuration-manager"></a>Sicurezza e privacy per i client in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-この記事では、System Center Configuration Manager のクライアントおよび Exchange Server コネクタで管理されるモバイル デバイスに関するセキュリティ情報とプライバシー情報を紹介します。  
+Questo articolo contiene le informazioni sulla privacy e sulla sicurezza dei client in System Center Configuration Manager e dei dispositivi mobili gestiti dal connettore Exchange Server:  
 
-##  <a name="BKMK_Security_Cliients"></a> クライアントのセキュリティのベスト プラクティス  
- Configuration Manager クライアントを実行するデバイスからのデータを Configuration Manager が受け入れる際には、サイトが攻撃されるリスクが伴います。 たとえば、クライアントが形式の正しくないインベントリを送信したり、サイト システムに過剰な負荷をかけようとしたりする可能性があります。 Configuration Manager クライアントは、信頼されているデバイスにのみ展開してください。 また、セキュリティに関する次のベスト プラクティスに従うと、許可されていないデバイスや危険性のあるデバイスからサイトを保護するのに役立ちます。  
+##  <a name="BKMK_Security_Cliients"></a> Procedure di sicurezza consigliate per i client  
+ Quando Configuration Manager accetta dati provenienti da dispositivi che eseguono il client di Configuration Manager espone il sito al possibile attacco da parte dei client. Ad esempio, i client potrebbero inviare un inventario non corretto o tentare di sovraccaricare i sistemi del sito. Distribuire il client di Configuration Manager solo ai dispositivi considerati attendibili. Inoltre, è possibile usare le seguenti procedure consigliate per proteggere il sito da dispositivi non autorizzati o compromessi:  
 
- **IIS を実行するサイト システムとのクライアント通信には公開キー基盤 (PKI) 証明書を使用します。**  
+ **Usare i certificati di infrastruttura a chiave pubblica (PKI) per le comunicazioni client con sistemi del sito che eseguono IIS.**  
 
--   サイト プロパティとして、[ **HTTPS のみ** ] の [ **サイト システム設定**] を構成します。  
+-   Quale proprietà del sito, configurare **Impostazioni sistema del sito** su **Solo HTTPS**.  
 
--   **/UsePKICert** CCMSetup プロパティを指定してクライアントをインストールする  
+-   Installare i client con la proprietà CCMSetup **/UsePKICert**  
 
--   証明書失効リスト (CRL) を使用し、必ずクライアントと通信先のサーバーが CRL にアクセスできるようにします。  
+-   Usare un elenco di revoche di certificati (CRL) e assicurarsi che i client e i server di comunicazione possano sempre accedervi.  
 
- これらの証明書は、モバイル デバイス クライアントおよびインターネット上でのクライアント コンピューター接続に必要であり、配布ポイントを除き、イントラネット上でのすべてのクライアント接続に使用することが推奨されます。  
+ Questi certificati sono richiesti per i client di dispositivi mobili e per le connessioni di computer client su Internet e sono consigliati per tutte le connessioni client sulla intranet, ad eccezione dei punti di distribuzione.  
 
- PKI 証明書の要件および Configuration Manager の保護のために PKI 証明書を使用する方法の詳細については、「[System Center Configuration Manager での PKI 証明書の要件](../../../../core/plan-design/network/pki-certificate-requirements.md)」を参照してください。  
+ Per altre informazioni sui requisiti dei certificati PKI e su come vengono usati per contribuire alla protezione di Configuration Manager, vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
 
- **信頼されているドメインのクライアントを自動的に承認し、他のコンピューターは手動で確認して承認する**  
+ **Approvare automaticamente i computer client dai domini attendibili e controllare e approvare manualmente gli altri computer**  
 
- 承認を、手動、信頼されているドメインのコンピューターについては自動、すべてのコンピューターについて自動という階層形式に構成することができます。 最も安全な承認方法は、信頼されているドメインのメンバーであるクライアントを自動で承認し、他のすべてのコンピューターを手動で確認して承認するという方法です。 すべてのクライアントを自動で承認することは、他のアクセス制御によって信頼できないコンピューターがネットワークにアクセスできないようにしていない限り、推奨されません。  
+ È possibile configurare l'approvazione per la gerarchia come manuale, automatica per i computer in domini attendibili o automatica per tutti i computer. Il metodo più sicuro è quello che prevede l'approvazione automatica dei client membri di domini attendibili, con successivo controllo e successiva approvazione manuale di tutti gli altri computer. Si sconsiglia di approvare automaticamente tutti i client a meno che non ci si avvalga di altri controlli di accesso per impedire l'ingresso nella rete di computer non attendibili.  
 
- PKI 認証を使用できない場合に、承認処理により、Configuration Manager での管理対象となる信頼されるコンピューターを識別します。  
+ L'approvazione identifica un computer considerato attendibile per la gestione da parte di Configuration Manager quando non è possibile usare l'autenticazione PKI.  
 
- コンピューターを手動で承認する方法の詳細については、「[デバイス ノードからのクライアントの管理](../../../../core/clients/manage/manage-clients.md#BKMK_ManagingClients_DevicesNode)」を参照してください。  
+ Per altre informazioni sull'approvazione manuale dei computer, vedere [Gestire i client dal nodo Dispositivi](../../../../core/clients/manage/manage-clients.md#BKMK_ManagingClients_DevicesNode).  
 
- **クライアントが Configuration Manager 階層にアクセスするのを防ぐためにブロックに依存しない**  
+ **Non affidarsi al blocco per impedire l'accesso dei client alla gerarchia di Configuration Manager**  
 
- ブロックされたクライアントは、Configuration Manager インフラストラクチャによって拒否されるため、サイト システムと通信してポリシーをダウンロードしたり、インベントリ データをアップロードしたり、状態またはステータス メッセージを送信したりすることはできなくなります。 ただし、サイト システムで HTTP クライアント接続を受け入れる場合、信頼されていないコンピューターから Configuration Manager 階層を保護するためにブロックに依存しないでください。 このシナリオでは、ブロックされているクライアントが、新しい自己署名証明書とハードウェア ID でサイトに再参加できる可能性があります。 ブロック機能は、オペレーティングシステムをクライアントに展開するとき、また、すべてのサイト システムが HTTPS クライアント接続を受け入れるとき、失われた、またはセキュリティ上問題のあるブート メディアをブロックするように設計されています。 公開キー基盤 (PKI) を使用する場合に証明書失効リスト (CRL) がサポートされているのであれば、危険性がある証明書に対しては、常に証明書失効が第 1 の防御ラインとなるものと考えてください。 Configuration Manager でクライアントをブロックすることは、階層を保護するための第 2 の防御ラインとなります。  
+ I client bloccati vengono rifiutati dall'infrastruttura di Configuration Manager e non potranno pertanto comunicare con i sistemi del sito per scaricare criteri, caricare dati di inventario o inviare messaggi di stato. Tuttavia, è opportuno non affidarsi al blocco per proteggere la gerarchia di Configuration Manager da computer non attendibili quando i sistemi del sito accettano connessioni client HTTP. In questo scenario, un client bloccato potrebbe associarsi di nuovo al sito con un nuovo certificato autofirmato e un ID hardware. Il blocco è progettato per intervenire in caso di supporti di avvio persi o compromessi quando si distribuisce un sistema operativo ai client e quando tutti i sistemi del sito accettano connessioni client HTTPS. Se si usa un'infrastruttura a chiave pubblica (PKI) che supporta un elenco di revoche di certificati (CRL), considerare sempre la revoca del certificato come prima linea di difesa contro certificati potenzialmente compromessi. Il blocco dei client in Configuration Manager offre una seconda linea di difesa per la protezione della gerarchia.  
 
- 詳細については、「[System Center Configuration Manager でクライアントをブロックするかどうかの判断](../../../../core/clients/deploy/plan/determine-whether-to-block-clients.md)」を参照してください。  
+ Per altre informazioni, vedere [Determinare se bloccare o meno i client in System Center Configuration Manager](../../../../core/clients/deploy/plan/determine-whether-to-block-clients.md).  
 
- **環境について実用的である最も安全なクライアント インストール方法を使用する**  
+ **Usare i metodi di installazione client più sicuri e più adatti al proprio ambiente:**  
 
--   ドメイン コンピューターでは、グループ ポリシー クライアント インストールおよびソフトウェア更新プログラムに基づくクライアント インストールの方がクライアント プッシュ インストールよりも安全なインストール方法です。  
+-   Per i computer del dominio, i metodi di installazione client basati su aggiornamento software e sui Criteri di gruppo sono più sicuri dell'installazione push client.  
 
--   アクセス制御および変更制御を適用すると、イメージング インストールおよび手動インストールについて極めて高い安全性を確保することができます。  
+-   È possibile garantire un'elevata protezione della creazione dell'immagine e dell'installazione manuale applicando controlli di accesso e controlli delle modifiche.  
 
- すべてのクライアント インストール方法の中で最も安全性が低いのがクライアント プッシュ インストールです。それは、ローカル管理許可、Admin$ の共有、多数のファイアウオール例外など、多くの要素に依存するからです。 そのような依存性により、攻撃対象が増えることになります。  
+ Di tutti i metodi di installazione client, l'installazione push client è il meno sicuro date le numerose dipendenze, incluse le autorizzazioni amministrative locali, la condivisione Admin$ e molte eccezioni del firewall. Queste dipendenze aumentano la superficie di attacco.  
 
- クライアント展開の詳細については、「[System Center Configuration Manager でのクライアントのインストール方法](../../../../core/clients/deploy/plan/client-installation-methods.md)」を参照してください。  
+ Per altre informazioni sui vari metodi di installazione dei client, vedere [Metodi di installazione client in System Center Configuration Manager](../../../../core/clients/deploy/plan/client-installation-methods.md).  
 
- また、可能な場合は、Configuration Manager でセキュリティが最も低いアクセス許可を必要とするクライアント インストール方法を選択し、クライアントの展開以外の目的で使用できるアクセス許可を含むセキュリティ ロールが割り当てられている管理ユーザーを制限してください。 たとえば、自動クライアント アップグレードには、管理ユーザーにすべてのセキュリティ アクセス許可を付与する [ **完全な権限を持つ管理者** ] セキュリティ ロールが必要です。  
+ Inoltre, laddove possibile, selezionare il metodo di installazione client che richiede le minime autorizzazioni di sicurezza in Configuration Manager, quindi limitare gli utenti amministratori a cui assegnare ruoli di protezione, incluse autorizzazioni che possono essere usate per scopi diversi dalla distribuzione dei client. Ad esempio, l'aggiornamento automatico del client richiede il ruolo di protezione **Amministratore completo** , che garantisce a un utente amministratore tutte le autorizzazioni di sicurezza.  
 
- それぞれのクライアント インストール方法に関する依存関係および必要なセキュリティ アクセス許可の詳細については、「[コンピューター クライアントの前提条件](../../../../core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.md#BKMK_prereqs_computers)」の「インストール方法の依存関係」を参照してください。  
+ Per altre informazioni sulle dipendenze e sulle autorizzazioni di sicurezza necessarie per ogni metodo di installazione client, vedere "Dipendenze del metodo di installazione" in [Prerequisiti per client per computer](../../../../core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.md#BKMK_prereqs_computers).  
 
- **クライアント プッシュ インストールを使用する必要がある場合は、追加手順を実行し、クライアント プッシュ インストール アカウントを保護する**  
+ **Se è necessario usare l'installazione push client, adottare misure aggiuntive per proteggere l'account di installazione push client**  
 
- このアカウントは、Configuration Manager クライアントのソフトウェアをインストールする各コンピューター上のローカルの **Administrators** グループのメンバーである必要がありますが、クライアント プッシュ インストール アカウントを **Domain Admins** グループに追加しないでください。 代わりに、グローバル グループを作成して、そのグローバル グループを、クライアント コンピューター上のローカルの [ **Administrators** ] グループに追加します。 また、グループ ポリシー オブジェクトを作成し、制限されたグループ設定を追加して、クライアント プッシュ インストール アカウントをローカルの [ **Administrators** ] グループに追加することもできます。  
+ Sebbene questo account debba essere membro del gruppo locale **Administrators** in ogni computer in cui verrà installato il software client di Configuration Manager, non aggiungere mai l'account di installazione push client al gruppo **Domain Admins**. Al contrario, creare un gruppo globale e aggiungerlo al gruppo locale **Admnistrators** sui computer client. È inoltre possibile creare un oggetto Criteri di gruppo per aggiungere un'impostazione di Gruppi con restrizioni per l'aggiunta dell'account di installazione push client nel gruppo locale **Administrators** .  
 
- セキュリティを強化するため、クライアント プッシュ インストール アカウントを複数作成し、各アカウントが限られた数のコンピューターに対して管理アクセスを持つようにします。そのようにすると、1 つのアカウントが侵害された場合に影響を受けるのは、そのアカウントがアクセスできるクライアント コンピューターのみになります。  
+ Per una maggiore sicurezza, creare più account di installazione push client, ciascuno con accesso amministrativo a un numero di computer limitato in modo tale che, in caso di compromissione di un account, saranno compromessi solo i computer client accessibili per tale account.  
 
- **イメージングによるクライアント コンピューターの展開の前に証明書を削除する**  
+ **Rimuovere i certificati prima della creazione dell'immagine del computer client**  
 
- クライアントの展開にイメージング テクノロジを使用する場合は、イメージをキャプチャする前に、クライアント認証証明書や自己署名証明書を含む PKI 証明書などの証明書を必ず削除してください。 それらの証明書を削除しないと、クライアントが互い偽装し、各クライアントのデータを検証できなくなる可能性があります。  
+ Se si prevede di distribuire i client usando la tecnologia di creazione dell'immagine, rimuovere sempre i certificati, tra cui i certificati PKI, che includono l'autenticazione client e i certificati autofirmati prima di acquisire l'immagine. In caso di mancata rimozione di questi certificati, i client potrebbero rappresentarsi reciprocamente e non sarebbe possibile verificare i dati per ciascuno di essi.  
 
- Sysprep を使用してイメージング用にコンピューターの準備をする方法の詳細については、Windows の展開のドキュメントを参照してください。  
+ Per altre informazioni sull'utilizzo di Sysprep per la preparazione di un computer per la creazione dell'immagine, vedere la documentazione sulla distribuzione di Windows.  
 
- **Configuration Manager クライアント コンピューターが次の証明書の正規コピーを取得することを確認する**  
+ **Assicurarsi che i client del computer di Configuration Manager ottengano una copia autorizzata di questi certificati:**  
 
--   Configuration Manager の信頼されたルート キー  
+-   Chiave radice attendibile di Configuration Manager  
 
-     Configuration Manager 用に Active Directory スキーマを拡張しておらず、クライアントが管理ポイントとの通信時に PKI 証明書を使用しない場合、クライアントは Configuration Manager の信頼されたルート キーに依存して有効な管理ポイントを認証します。 そのようなシナリオでは、クライアントは、信頼されたルート キーを使用しない限り、管理ポイントが階層に対して信頼された管理ポイントであることを検証できません。 信頼されたルート キーを使用しないと、巧みな攻撃者がクライアントを偽の管理ポイントに誘導する可能性があります。  
+     Se lo schema di Active Directory non è stato esteso per Configuration Manager e i client non usano certificati PKI per la comunicazione con i punti di gestione, i client si baseranno sulla chiave radice attendibile di Configuration Manager per autenticare punti di gestione validi. In questo scenario, i client non sono in grado di verificare in alcun modo l'attendibilità di un punto di gestione per la gerarchia, a meno che non utilizzino la chiave radice attendibile. Senza la chiave radice attendibile, un utente malintenzionato esperto potrebbe indirizzare i client verso un punto di gestione non autorizzato.  
 
-     クライアントが Configuration Manager の信頼されたルート キーをグローバル カタログからダウンロードできない場合や PKI 証明書を使用してダウンロードできない場合には、事前に信頼されたルート キーをクライアントに準備して、クライアントが偽の管理ポイントに誘導されることのないようにします。 詳細については、「 [Planning for the Trusted Root Key](../../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForRTK)」をご覧ください。  
+     Quando i client non sono in grado di scaricare la chiave radice attendibile di Configuration Manager dal catalogo globale o tramite i certificati PKI, eseguire il pre-provisioning dei client con la chiave radice attendibile per verificare che non possano essere indirizzati a un punto di gestione non autorizzato. Per ulteriori informazioni, vedere [Planning for the Trusted Root Key](../../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForRTK).  
 
--   サイト サーバー署名証明書  
+-   Certificato di firma del server del sito  
 
-     クライアントは、サイト サーバー署名証明書を使用して、管理ポイントからダウンロードするクライアント ポリシーにサイト サーバーの署名があることを確認します。 この証明書は、サイト サーバーによって自己署名されてから Active Directory ドメイン サービスに発行されます。  
+     I client usano il certificato di firma del server del sito per verificare che quest'ultimo abbia firmato i criteri client che i client scaricano da un punto di gestione. Questo certificato è autofirmato dal server del sito e pubblicato in Servizi di dominio Active Directory.  
 
-     クライアントは、サイト サーバー署名証明書をグローバル カタログからダウンロードできない場合は、既定で、管理ポイントからダウンロードします。 管理ポイントが (インターネットなどの) 信頼されていないネットワークにさらされている場合は、手動でサイト サーバー署名証明書をクライアントにインストールして、信頼できない管理ポイントから送信される改ざんされたクライアント ポリシーがクライアントで実行されないようにします。  
+     Per impostazione predefinita, quando i client non sono in grado di scaricare il certificato di firma del server del sito dal catalogo globale, lo scaricano dal punto di gestione. Quando il punto di gestione è esposto a una rete non attendibile (Internet, ad esempio), installare manualmente il certificato di firma del server del sito sui client per assicurarsi che non possano eseguire criteri client manomessi provenienti da un punto di gestione compromesso.  
 
-     サイト サーバー署名証明書を手動でインストールするには、CCMSetup client.msi プロパティ **SMSSIGNCERT**を使用します。 詳細については、「[System Center Configuration Manager のクライアント インストール プロパティについて](../../../../core/clients/deploy/about-client-installation-properties.md)」を参照してください。  
+     Per installare manualmente il certificato di firma del server del sito, usare la proprietà client.msi CCMSetup **SMSSIGNCERT**. Per altre informazioni, vedere [Informazioni sulle proprietà di installazione del client in System Center Configuration Manager](../../../../core/clients/deploy/about-client-installation-properties.md).  
 
- **クライアントが接続した最初の管理ポイントから、信頼されたルート キーをダウンロードする場合に、サイトの自動割り当てを使用しない**  
+ **Non usare l'assegnazione automatica del sito se il client scaricherà la chiave radice attendibile dal primo punto di gestione con cui entrerà in contatto**  
 
- このセキュリティ ベスト プラクティスは前のエントリに関連します。 新しいクライアントが不正な管理ポイントから信頼されるルート キーをダウンロードするリスクを回避するために、次のシナリオでのみサイトの自動割り当てを使用してください。  
+ Questa procedura consigliata è collegata alla voce precedente. Per evitare il rischio che un nuovo client scarichi la chiave radice attendibile da un punto di gestione non autorizzato, usare l'assegnazione automatica del sito solo negli scenari seguenti:  
 
--   クライアントが、Active Directory Domain Services に発行されている Configuration Manager サイト情報にアクセスできる  
+-   Il client può accedere alle informazioni del sito di Configuration Manager pubblicate in Active Directory Domain Services.  
 
--   クライアントに、信頼されたルート キーを事前に準備する  
+-   Viene eseguito il pre-provisioning del client con la chiave radice attendibile.  
 
--   エンタープライズ証明機関から PKI 証明書を使用して、クライアントと管理ポイント間に信頼関係を確立する  
+-   Sono usati certificati PKI rilasciati da un'autorità di certificazione dell'organizzazione (enterprise) per stabilire un trust tra il client e il punto di gestione.  
 
- 信頼されたルート キーの詳細については、「 [Planning for the Trusted Root Key](../../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForRTK)」を参照してください。  
+ Per altre informazioni sulla chiave radice attendibile, vedere [Planning for the Trusted Root Key](../../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForRTK).  
 
- **CCMSetup Client.msi オプション SMSDIRECTORYLOOKUP=NoWINS を指定してクライアント コンピューターをインストールする**  
+ **Installare i computer client con l'opzione Client.msi CCMSetup SMSDIRECTORYLOOKUP=NoWINS**  
 
- クライアントで使用できる最も安全なサイトおよび管理ポイントの検出方法は、Active Directory Domain Services を使用することです。 それが不可能な場合、たとえば、Configuration Manager 用に Active Directory スキーマを拡張できない場合やクライアントが信頼されていないフォレストまたはワークグループに属している場合などは、代わりに DNS 発行をサービス検出方法として使用することができます。 これら両方の方法が失敗すると、管理ポイントが HTTPS クライアント接続用に構成されていない場合、WINS を使用するようにクライアントが切り替えられることがあります。  
+ Il metodo di individuazione del servizio più sicuro per il rilevamento di siti e punti di gestione da parte dei client è quello che prevede l'utilizzo di Servizi di dominio Active Directory. Se ciò non fosse attuabile, ad esempio per l'impossibilità di estendere lo schema di Active Directory per Configuration Manager o perché i client si trovano in un gruppo di lavoro o una foresta non trusted, è possibile usare la pubblicazione DNS come metodo di individuazione del servizio alternativo. Se entrambi i metodi hanno esito negativo, i client possono cercare di usare WINS quando il punto di gestione non è configurato per le connessioni client HTTPS.  
 
- WINS への発行は他の公開方法に比べて安全性が低いので、SMSDIRECTORYLOOKUP=NoWINS を指定することにより、WINS を使用するように切り替えられないようにクライアント コンピューターを構成します。 サービスの検出に WINS を使用する必要がある場合は、SMSDIRECTORYLOOKUP=WINSSECURE (既定の設定) を指定してください。そうすることで、Configuration Manager の信頼できるルート キーを使用して管理ポイントの自己署名証明書が確認されるようになります。  
+ Dal momento che la pubblicazione su WINS è meno sicura rispetto agli altri metodi di pubblicazione, configurare i computer client in modo tale che non cerchino di usare WINS specificando SMSDIRECTORYLOOKUP=NoWINS. Se fosse necessario usare WINS per l'individuazione del servizio, usare SMSDIRECTORYLOOKUP=WINSSECURE (impostazione predefinita) che usa la chiave radice attendibile di Configuration Manager per convalidare il certificato autofirmato del punto di gestione.  
 
 > [!NOTE]  
->  クライアントで構成に SMSDIRECTORYLOOKUP=WINSSECURE が指定されている場合、管理ポイントが WINS から検出されると、クライアントは WMI 内にある Configuration Manager の信頼できるルート キーのコピーを確認します。 管理ポイント証明書の署名とクライアントの信頼されたルート キーのコピーが一致すると、証明書が有効なものであると認められ、クライアントは WINS を使用して検出される管理ポイントと通信します。 管理ポイント証明書の署名とクライアントの信頼されたルート キーのコピーが一致しなければ、証明書は有効なものとは見なされず、クライアントは WINS を使用して検出された管理ポイントと通信しません。  
+>  Quando il client è configurato per SMSDIRECTORYLOOKUP=WINSSECURE e rileva un punto di gestione da WINS, il client controlla la sua copia della chiave radice attendibile di Configuration Manager presente in WMI. Se la firma sul certificato del punto di gestione corrisponde alla copia del client della chiave radice attendibile, il certificato viene convalidato e il client comunica con il punto di gestione rilevato tramite WINS. Se la firma sul certificato del punto di gestione non corrisponde alla copia del client della chiave radice attendibile, il certificato non è valido e il client non comunicherà con il punto di gestione rilevato tramite WINS.  
 
- **重要なソフトウェア更新プログラムを展開するのに十分なメンテナンス期間を確保する**  
+ **Assicurarsi che le dimensioni delle finestre di manutenzione siano sufficienti per la distribuzione degli aggiornamenti software critici**  
 
- デバイス コレクションのメンテナンス期間を構成して、Configuration Manager がソフトウェアをそれらのデバイスにインストールできる時間を制限することができます。 メンテナンス期間の構成で十分な時間が確保されていない場合、クライアントは重要なソフトウェア更新プログラムをインストールできない可能性があり、その結果、ソフトウェア更新プログラムによって緩和される攻撃に対して脆弱なままになります。  
+ È possibile configurare le finestre di manutenzione per le raccolte di dispositivi al fine di limitare il numero di possibili installazioni del software da parte di Configuration Manager su questi dispositivi. Se si configurano dimensioni insufficienti della finestra di manutenzione, il client potrebbe non essere in grado di installare aggiornamenti software critici, rendendo il client vulnerabile ad attacchi altrimenti limitati dall'aggiornamento software.  
 
- **ソフトウェアのインストールと変更を実行するために Configuration Manager で書き込みフィルターが無効にされている場合に、攻撃対象を減らす目的で、書き込みフィルターが有効な Windows Embedded デバイスに対する追加のセキュリティ予防措置を取る**  
+ **Per i dispositivi con Windows Embedded che dispongono di filtri di scrittura, adottare precauzioni di sicurezza aggiuntive per ridurre la superficie di attacco nel caso in cui Configuration Manager disabiliti i filtri di scrittura per rendere permanenti installazioni software e modifiche**  
 
- Windows Embedded デバイスで書き込みフィルターを有効にすると、ソフトウェアのインストールまたは変更はオーバーレイに対してのみ実行され、デバイスの再起動後には維持されません。 Configuration Manager を使用して書き込みフィルターを一時的に無効にして、ソフトウェアのインストールと変更を維持すると、その期間中の組み込みデバイスは、共有フォルダーを含むすべてのボリュームの変更に対して脆弱になります。  
+ Quando i filtri di scrittura vengono abilitati su dispositivi con Windows Embedded, qualsiasi modifica o installazione software viene eseguita solo sulla sovrapposizione e non permane dopo il riavvio del dispositivo. Se si usa Configuration Manager per disabilitare temporaneamente i filtri di scrittura per rendere permanenti modifiche e installazioni software, durante questo periodo il dispositivo con Windows Embedded è vulnerabile alle modifiche su tutti i volumi, comprese le cartelle condivise.  
 
- この期間中は、ローカル管理者のみがログオンできるように、 Configuration Manager はコンピューターをロックしますが、可能な限り、コンピューターを保護できるように追加のセキュリティ予防措置を取ってください。 たとえば、ファイアウォールで追加の制限を有効にし、ネットワークからデバイスを切断します。  
+ Sebbene Configuration Manager blocchi il computer durante questo periodo in modo da consentire l'accesso solo agli amministratori locali, laddove possibile, adottare precauzioni di sicurezza aggiuntive per proteggere il computer. Ad esempio, abilitare ulteriori restrizioni del firewall e scollegare il dispositivo dalla rete.  
 
- メンテナンス期間を使用して変更を維持する場合、書き込みフィルターを無効にする期間を、ソフトウェアのインストールと再起動を完了できる程度に最短に抑えるように計画します。  
+ Se si usano delle finestre di manutenzione per rendere permanenti le modifiche, pianificarle attentamente per limitare al massimo il tempo di disabilitazione dei filtri di scrittura, pur garantendo un intervallo sufficiente al completamento delle installazioni software e dei riavvii.  
 
- **ソフトウェア更新プログラムに基づくクライアント インストールを使用し、新しいバージョンのクライアントをサイトにインストールする場合、クライアントが最新のバージョンを受け取るようにするため、ソフトウェアの更新ポイントで公開されているソフトウェア更新プログラムを更新する**  
+ **Se si usa l'installazione client basata su aggiornamento software e si installa una versione del client successiva sul sito, aggiornare l'aggiornamento software pubblicato sul punto di aggiornamento software per consentire ai client di ricevere la versione più recente**  
 
- 新しいバージョンのクライアントをサイトにインストールする場合 (たとえば、サイトをアップグレードする場合など)、そのクライアントを展開するためにソフトウェアの更新ポイントで公開されているソフトウェア更新プログラムは自動的には更新されません。 Configuration Manager クライアントをソフトウェアの更新ポイントに再公開し、[**はい**] をクリックしてバージョン番号を更新する必要があります。  
+ Se si installa una versione del client successiva sul sito, ad esempio durante un aggiornamento del sito, l'aggiornamento software per la distribuzione client pubblicato nel punto di aggiornamento software non viene aggiornato automaticamente. È necessario pubblicare nuovamente il client di Configuration Manager nel punto di aggiornamento software, quindi fare clic su **Sì** per aggiornare il numero di versione.  
 
- 詳細については、「[ソフトウェアの更新に基づいたインストールを使用した Configuration Manager クライアントのインストール方法](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientSUP)」の「ソフトウェアの更新ポイントに Configuration Manager クライアントを発行するには」を参照してください。  
+ Per altre informazioni, vedere la procedura "Per pubblicare il client di Configuration Manager nel punto di aggiornamento software" in [Come installare i client di Configuration Manager usando l'Installazione basata sull'aggiornamento software](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientSUP).  
 
- **信頼でき、物理アクセスが制限されているコンピューターについてのみ、[コンピューター エージェント] のクライアント デバイス設定 [再起動時の BitLocker PIN の入力を一時停止する] が [常時] となるように構成する**  
+ **Configurare l'impostazione Sospendere immissione PIN di BitLocker al riavvio del dispositivo client Agente computer su Sempre solo per i computer considerati attendibili e con accesso fisico limitato**  
 
- このクライアント設定を [**常時**] に設定すると、Configuration Manager がソフトウェアのインストールを完了することができ、確実に重要なソフトウェア更新プログラムがインストールされて該当のサービスが再開されるようにするのに役立ちます。 ただし、攻撃者が再開プロセスをインターセプトすると、コンピューターの制御が奪われる可能性があります。 この設定は、コンピューターが信頼できるものである場合およびコンピューターへの物理アクセスが制限されている場合にのみ使用してください。 たとえば、この設定はデータ センターのサーバーに適している場合があります。  
+ Quando si configura questa impostazione su **Sempre**, Configuration Manager è in grado di completare l'installazione del software per garantire l'installazione di aggiornamenti software critici e il ripristino dei servizi. Tuttavia, se un utente malintenzionato intercettasse il processo di riavvio, potrebbe assumere il controllo del computer. Usare questa impostazione solo se il computer è considerato attendibile e il relativo accesso fisico è limitato. Ad esempio, questa impostazione potrebbe essere appropriata per i server in un data center.  
 
- **[コンピューター エージェント] のクライアント デバイス設定 [PowerShell 実行ポリシー] を [バイパス] に構成しないでください。**  
+ **Non configurare l'impostazione Criteri di esecuzione di PowerShell del dispositivo client Agente computer su Ignora**  
 
- このクライアント設定は、Configuration Manager クライアントが署名されていない PowerShell スクリプトを実行することを許可するものであり、その結果、マルウェアがクライアント コンピューターで実行されるのを許可することになる可能性があります。 このオプションを選択する必要がある場合は、カスタム クライアント設定を使用し、署名されていない PowerShell スクリプトを実行しなければならないクライアント コンピューターにのみ、そのカスタム クライアント設定を割り当ててください。  
+ Questa impostazione consente al client di Configuration Manager di eseguire script PowerShell non firmati, permettendo potenzialmente l'esecuzione di malware sui computer client. Se è necessario selezionare questa opzione, usare un'impostazione client personalizzata e assegnarla esclusivamente ai computer client che devono eseguire script PowerShell non firmati.  
 
-##  <a name="bkmk_mobile"></a> モバイル デバイスのセキュリティのベスト プラクティス  
- **Configuration Manager に登録され、インターネットでサポートされるモバイル デバイスの場合:登録プロキシ ポイントを境界ネットワークにインストールし、登録ポイントをイントラネットにインストールする**  
+##  <a name="bkmk_mobile"></a> Procedure di sicurezza consigliate per i dispositivi mobili  
+ **Per i dispositivi mobili registrati con Configuration Manager e supportati su Internet: installare il punto proxy di registrazione in una rete perimetrale e il punto di registrazione nella intranet**  
 
- このようにロールを分けることで、登録ポイントを攻撃から保護するのに役立ちます。 登録ポイントが侵害された場合、攻撃者が認証用の証明書を取得して、モバイル デバイスを登録しているユーザーの資格情報を盗み出す可能性があります。  
+ Questa separazione dei ruoli contribuisce a proteggere il punto di registrazione da attacchi esterni. Se il punto di registrazione è compromesso, un utente malintenzionato potrebbe ottenere i certificati per l'autenticazione e rubare le credenziali di utenti che registrano il proprio dispositivo mobile.  
 
- **モバイル デバイスの場合:モバイル デバイスに対する不正アクセスを防ぐのに役立つパスワード設定を構成する**  
+ **Per i dispositivi mobili: configurare le impostazioni della password per proteggere i dispositivi mobili da accessi non autorizzati**  
 
- Configuration Manager によって登録されるモバイル デバイスの場合: モバイル デバイス構成項目を使用して、パスワードの複雑さが PIN となり、最低限必要なパスワードの長さが少なくとも既定の長さになるように構成します。  
+ Per i dispositivi mobili che vengono registrati da Configuration Manager: usare un elemento di configurazione del dispositivo mobile per scegliere di configurare una password della complessità di un PIN e almeno la lunghezza minima predefinita della password.  
 
- Configuration Manager クライアントがインストールされておらず、Exchange Server コネクタによって管理されているモバイル デバイスの場合: Exchange Server コネクタの [**パスワードの設定**] で、パスワードの複雑さが PIN となり、最低限必要なパスワードの長さが少なくとも既定の長さになるように構成します。  
+ Per i dispositivi mobili su cui non è installato il client di Configuration Manager ma che sono gestiti dal connettore Exchange Server: configurare le **Impostazioni password** per il connettore Exchange Server, scegliendo di configurare una password della complessità di un PIN e specificando almeno la lunghezza minima predefinita della password.  
 
- **モバイル デバイスの場合: 信頼できる企業によって署名されている場合にのみアプリケーションの実行を許可し、署名されていないファイルのインストールを許可しないようにすると、インベントリ情報およびステータス情報が改ざんされるのを防ぐのに役立つ**  
+ **Per i dispositivi mobili: prevenire eventuali manomissioni delle informazioni di inventario e delle informazioni sullo stato abilitando solo l'esecuzione delle applicazioni firmate da società ritenute attendibili e impedendo l'installazione di file non firmati**  
 
- Configuration Manager に登録したモバイル デバイスの場合: モバイル デバイス構成項目を使用して、セキュリティ設定 [**署名されていないアプリケーションを実行する**] が [**禁止**] となるように、また、[**署名されていないファイルのインストール**] が信頼できるソースとなるように構成します。  
+ Per più dispositivi mobili registrati da Configuration Manager: usare un elemento di configurazione del dispositivo mobile per configurare l'impostazione di protezione **Applicazioni non firmate** su **Non consentito** e configurare **Installazione file non firmati** come un'origine attendibile.  
 
- Configuration Manager クライアントがインストールされておらず、Exchange Server コネクタによって管理されているモバイル デバイスの場合: Exchange Server コネクタの [**アプリケーション設定**] で [**署名されていないファイルのインストール**] および [**署名されていないアプリケーション**] が [**禁止**] となるように構成します。  
+ Per i dispositivi mobili su cui non è installato il client di Configuration Manager ma che sono gestiti dal connettore Exchange Server: configurare **Impostazioni applicazione** per il connettore Exchange Server in modo che **Installazione file non firmati** e **Applicazioni non firmate** siano impostate su **Non consentito**.  
 
- **モバイル デバイスの場合: モバイル デバイスを使用していないときにロックすると特権の評価に対する攻撃を防ぐのに役立つ**  
+ **Per i dispositivi mobili: evitare attacchi tramite elevazione dei privilegi bloccando il dispositivo mobile quando non usato**  
 
- Configuration Manager に登録したモバイル デバイスの場合: モバイル デバイス設定項目を使ってパスワード設定 [**モバイル デバイスがロックされるまでのアイドル時間 (分)**] を構成します。  
+ Per più dispositivi mobili registrati da Configuration Manager: usare un elemento di configurazione del dispositivo mobile per configurare l'impostazione della password **Tempo di inattività in minuti prima del blocco del dispositivo mobile**.  
 
- Configuration Manager クライアントがインストールされておらず、Exchange Server コネクタによって管理されているモバイル デバイスの場合:Exchange Server コネクタの [**パスワードの設定**] を構成して [**モバイル デバイスがロックされるまでのアイドル時間 (分)**] を構成します。  
+ Per i dispositivi mobili su cui non è installato il client di Configuration Manager ma che sono gestiti dal connettore Exchange Server: Configurare le **Impostazioni password** per il connettore Exchange Server per impostare **Tempo di inattività in minuti prima del blocco del dispositivo mobile**.  
 
- **モバイル デバイスの場合:モバイル デバイスを登録できるユーザーを制限すると、権限の昇格を防ぐのに役立つ**  
+ **Per i dispositivi mobili: evitare l'elevazione dei privilegi limitando gli utenti autorizzati a registrare i propri dispositivi mobili.**  
 
- 許可されたユーザーだけがモバイル デバイスを登録できるようにするには、既定のクライアント設定ではなくカスタム クライアント設定を使用します。  
+ Usare un'impostazione client personalizzata anziché le impostazioni predefinite per consentire solo a utenti autorizzati di registrare i propri dispositivi mobili.  
 
- **モバイル デバイスの場合: 次のシナリオでは、Configuration Manager または Microsoft Intune で登録されたモバイル デバイスを持つユーザーにアプリケーションを展開しません。**  
+ **Per i dispositivi mobili: non distribuire applicazioni agli utenti che hanno dispositivi mobili registrati da Configuration Manager o Microsoft Intune negli scenari seguenti:**  
 
--   複数のユーザーが 1 台のモバイル デバイスを使用する場合。  
+-   Quando il dispositivo mobile viene usato da più persone.  
 
--   ユーザーの代理で管理者がデバイスを登録する場合。  
+-   Quando il dispositivo viene registrato da un amministratore per conto di un utente.  
 
--   デバイスをインベントリから削除してから再登録する手順を実行せずに、別のユーザーにデバイスを譲渡する場合。  
+-   Quando il dispositivo viene trasferito a un'altra persona senza ritiro e successiva nuova registrazione del dispositivo.  
 
- ユーザーとデバイスのアフィニティは登録中に作成されます。この処理によって、登録を実行するユーザーがモバイル デバイスにマップされます。 別のユーザーがモバイル デバイスを使用する場合、元のユーザーに展開したアプリケーションを実行できます。その結果、特権が昇格する可能性があります。 同様に、管理者がユーザーのモバイル デバイスを登録する場合、そのユーザーに展開されたアプリケーションはモバイル デバイスにインストールされず、代わりに管理者に展開されたアプリケーションがインストールされる可能性があります。  
+ Viene creata una relazione di affinità utente dispositivo durante la registrazione, che consente di associare l'utente che esegue la registrazione al dispositivo mobile. Se il dispositivo mobile è usato da un altro utente, sarà possibile eseguire le applicazioni distribuite all'utente originale, determinando potenzialmente un'elevazione dei privilegi. Allo stesso modo, se un amministratore registra il dispositivo mobile per un utente, le applicazioni distribuite all'utente non saranno installate sul dispositivo, mentre potrebbero invece essere installate le applicazioni distribuite all'amministratore.  
 
- Windows Intune コンピューターのユーザーとデバイスのアフィニティとは異なり、Microsoft Intune が登録したモバイル デバイスではユーザーとデバイスのアフィニティ情報を手動で定義できません。  
+ A differenza dell'affinità utente-dispositivo per computer Windows, non è possibile definire manualmente le informazioni relative a tale affinità per i dispositivi mobili registrati da Microsoft Intune.  
 
- Intune が登録したモバイル デバイスの所有権を譲渡する場合、Intune からモバイル デバイスを削除してユーザーとデバイスのアフィニティを削除し、現在のユーザーにデバイスを再登録するように依頼します。  
+ Se si trasferisce la titolarità di un dispositivo mobile registrato da Intune, ritirare il dispositivo mobile da Intune per rimuovere l'affinità utente-dispositivo, quindi chiedere all'utente corrente di registrare nuovamente il dispositivo.  
 
- **モバイル デバイスの場合: ユーザーが必ず自分の所有する Microsoft Intun のモバイル デバイスを登録していることを確認する**  
+ **Per i dispositivi mobili: assicurarsi che gli utenti registrino i propri dispositivi mobili per Microsoft Intune**  
 
- 登録中にユーザーとデバイスのアフィニティの関係が作成され、登録を実行するユーザーがモバイル デバイスにマップされるため、管理者がユーザーのモバイル デバイスを登録する場合、そのユーザーに展開されたアプリケーションはモバイル デバイスにインストールされません。代わりに、管理者に展開されたアプリケーションがインストールされる可能性があります。  
+ Dal momento che la relazione di affinità utente dispositivo viene creata durante la registrazione, che consente di associare l'utente che esegue la registrazione al dispositivo mobile, se un amministratore registra il dispositivo mobile per un utente, le applicazioni distribuite a tale utente non saranno installate sul dispositivo, mentre potrebbero invece essere installate le applicazioni distribuite all'amministratore.  
 
- **Exchange Server コネクタの場合: Configuration Manager サイト サーバーと Exchange Server コンピューターの間の接続が保護されていることを確認する**  
+ **Per il connettore Exchange Server: accertarsi che la connessione tra il server del sito di Configuration Manager e il computer che esegue Exchange Server sia protetta**  
 
- Exchange Server が内部設置されている場合は IPsec を使用します。Hosted Exchange は、SSL を使って自動的に接続を保護します。  
+ Usare IPsec se Exchange Server si trova in locale. Exchange Server ospitato protegge automaticamente la connessione usando SSL.  
 
- **Exchange Server コネクタの場合: コンピューターに対する最小限の特権という原則を使用する**  
+ **Per il connettore Exchange Server: usare il principio dei privilegi minimi per il connettore**  
 
- Exchange Server コネクタで最低限必要とされるコマンドレットの一覧については、「[System Center Configuration Manager と Exchange によるモバイル デバイスの管理](../../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)」をご覧ください。  
+ Per un elenco dei cmdlet minimi richiesti dal connettore Exchange Server, vedere [Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange](../../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
 
-##  <a name="bkmk_macs"></a> Mac コンピューターのセキュリティのベスト プラクティス  
- **Mac コンピューターの場合: クライアント ソース ファイルを安全な場所に保存し、アクセスします。**  
+##  <a name="bkmk_macs"></a> Procedure di sicurezza consigliate per i Mac  
+ **Per i computer Mac: archiviare e accedere ai file di origine del client da un percorso protetto.**  
 
- Configuration Manager では、Mac コンピューターにクライアントをインストールまたは登録する前に、クライアント ソース ファイルが改ざんされたかどうかを検証しません。 信頼できるソースからこれらのファイルをダウンロードして、安全な場所に保存し、アクセスしてください。  
+ Configuration Manager non verifica se i file di origine client sono stati manomessi prima dell'installazione o della registrazione del client nel computer Mac. Scaricare questi file da una fonte attendibile, archiviarli e accedervi in modo sicuro.  
 
- **Mac コンピューターの場合: Configuration Manager とは独立して、ユーザーに対して登録された証明書の有効期限を監視、追跡する**  
+ **Per i computer Mac: indipendentemente da Configuration Manager, monitorare e tenere traccia del periodo di validità del certificato registrato per gli utenti.**  
 
- 業務の継続性を確保するには、Mac コンピューター用に使用する証明書の有効期間を監視および追跡します。 Configuration Manager はこの証明書の自動更新をサポートしたり、証明書の期限切れが近いことを警告したりしません。 一般的な有効期間は 1 年間です。  
+ Per garantire la continuità aziendale, monitorare e tenere traccia del periodo di validità dei certificati usati per i computer Mac. Configuration Manager non supporta il rinnovo automatico del certificato o avvisa della scadenza prossima. Un periodo di validità tipico è 1 anno.  
 
- 証明書の更新方法については、「  [Renewing the Mac Client Certificate Manually](../../../../core/clients/deploy/deploy-clients-to-macs.md#renewing-the-mac-client-certificate)」をご覧ください。  
+ Per informazioni su come rinnovare il certificato, vedere  [Renewing the Mac Client Certificate Manually](../../../../core/clients/deploy/deploy-clients-to-macs.md#renewing-the-mac-client-certificate).  
 
- **Mac コンピューターの場合: 特権の昇格から保護するために、SSL プロトコルに対してのみ、信頼されたルート CA 証明書を信頼するように、証明書を構成することを考慮します。**  
+ **Per i computer Mac: valutare se configurare il certificato CA radice attendibile in modo che sia attendibile solo per il protocollo SSL e semplificare la protezione contro l'elevazione dei privilegi.**  
 
- Mac コンピューターを登録するときに、Configuration Manager クライアントを管理するためのユーザー証明書と共に、ユーザー証明書がチェーンされている信頼されたルート証明書が自動的にインストールされます。 SSL プロトコルに対してのみこのルート証明書を信頼するように制限する場合、次の手順を使用できます。  
+ Quando si registrano i computer Mac, viene installato automaticamente un certificato utente per gestire il client di Configuration Manager insieme a un certificato radice attendibile a cui il certificato utente si collega. Se si desidera limitare l'attendibilità del certificato radice al solo protocollo SSL, è possibile usare la procedura seguente.  
 
- この手順が完了した後、SSL 以外のプロトコル (Secure Mail (S/MIME)、Extensible Authentication (EAP)、またはコード署名など) の検証で、ルート証明書は信頼されません。  
+ Dopo aver completato la procedura, il certificato radice non sarà più attendibile per convalidare protocolli diversi da SSL, ad esempio, Protezioni messaggi (S/MIME), Extensible Authentication (EAP) o firma codice.  
 
 > [!NOTE]  
->  Configuration Manager とは独立してクライアント証明書をインストールした場合にも、この手順を使用できます。  
+>  È inoltre possibile usare questa procedura se è stato installato il certificato client indipendentemente da Configuration Manager.  
 
- ルート CA 証明書を SSL プロトコルのみに制限するには:  
+ Per limitare il certificato CA radice al solo protocollo SSL:  
 
-1.  Mac コンピューターで、ターミナル ウィンドウを開きます。  
+1.  Nei computer Mac, aprire una finestra terminale.  
 
-2.  コマンド **sudo /Applications/Utilities/Keychain\ Access.app/Contents/MacOS/Keychain\ Access**を入力します  
+2.  Immettere il comando **sudo /Applications/Utilities/Keychain\ Access.app/Contents/MacOS/Keychain\ Access**  
 
-3.  [ **キーチェーンアクセス** ] ダイアログ ボックスの [ **キーチェーン** ] セクションで、[ **システム**] をクリックし、[ **カテゴリ** ] セクションの [ **証明書**] をクリックします。  
+3.  Nella finestra di dialogo **Accesso Portachiavi** nella sezione **Portachiavi** , fare clic su **Sistema**, quindi nella sezione **Categoria** fare clic su **Certificati**.  
 
-4.  Mac クライアント証明書のルート CA 証明書を見つけて、ダブルクリックします。  
+4.  Individuare e fare doppio clic sul certificato CA radice per il certificato del client Mac.  
 
-5.  ルート CA 証明書のダイアログ ボックスで、[ **信頼** ] セクションを展開し、次の変更を行います。  
+5.  Nella finestra di dialogo per il certificato CA radice espandere la sezione **Attendibilità** ed eseguire le modifiche seguenti:  
 
-    1.  [ **この証明書を使用するとき** ] 設定で、既定の設定の [ **常に信頼** ] を [ **システムデフォルトを使用**] に変更します。  
+    1.  Per l'impostazione **Quando si usa questo certificato** modificare l'impostazione predefinita **Considera sempre attendibile** in **Usa valori predefiniti di sistema**.  
 
-    2.  [ **SSL (Secure Sockets Layer)** ] 設定で、[ **値が指定されていません** ] を [ **常に信頼**] に変更します。  
+    2.  Per l'impostazione **Secure Sockets Layer (SSL)** modificare **Nessun valore specificato** in **Considera sempre attendibile**.  
 
-6.  ダイアログ ボックスを閉じ、管理者のバスワードを入力するように求められたら、パスワードを入力して、[**設定の更新**] をクリックします。  
+6.  Chiudere la finestra di dialogo e, quando richiesto, immettere la password dell'amministratore e quindi fare clic su **Aggiorna impostazioni**.  
 
-##  <a name="BKMK_SecurityIssues_Clients"></a> Configuration Manager クライアントのセキュリティの問題  
- 次のセキュリティに関する問題には軽減策がありません。  
+##  <a name="BKMK_SecurityIssues_Clients"></a> Problemi di protezione per i client di Configuration Manager  
+ Non è possibile ovviare ai seguenti problemi di protezione:  
 
--   ステータス メッセージが認証されない  
+-   I messaggi di stato non sono autenticati  
 
-     ステータス メッセージに対しては認証作業は行われません。 管理ポイントが HTTP クライアント接続を受け入れると、どのデバイスでも管理ポイントにステータス メッセージを送信できます。 管理ポイントが HTTPS クライアント接続しかを受け入れない場合は、デバイスは、信頼されたルート証明機関から有効なクライアント認証証明書を取得する必要がありますが、その後でステータス メッセージを送信することもできます。 クライアントが無効なステータス メッセージを送信した場合、そのメッセージは破棄されます。  
+     L'autenticazione non viene eseguita sui messaggi di stato. Quando un punto di gestione accetta connessioni client HTTP, tutti i dispositivi possono inviare messaggi di stato al punto di gestione. Se il punto di gestione accetta solo connessioni client HTTPS, un dispositivo dovrà ottenere un certificato di autenticazione client valido da un'autorità di certificazione radice attendibile, ma potrà anche inviare successivamente qualsiasi messaggio di stato. Un eventuale messaggio di stato non valido inviato da un client verrà rimosso.  
 
-     この脆弱性に対していくつかの攻撃の可能性が考えられます。 攻撃者は、偽のステータス メッセージを送信し、ステータス メッセージ クエリに基づいてコレクションのメンバーシップを取得することができます。 任意のクライアントが、管理ポイントに大量のステータス メッセージを送信することで管理ポイントに対するサービス拒否攻撃を開始する可能性があります。 ステータス メッセージがステータス メッセージ フィルター規則内の動作をトリガーしている場合、攻撃者はステータス メッセージ フィルター規則をトリガーできます。 攻撃者は、レポート情報を不正確なものにするステータス メッセージを送信することもできます。  
+     Esistono alcuni potenziali attacchi contro questa vulnerabilità. Un utente malintenzionato potrebbe inviare un messaggio di stato falso per ottenere l'appartenenza a una raccolta basata su query messaggi di stato. Qualsiasi client può lanciare un attacco di tipo Denial of Service contro il punto di gestione, sovraccaricandolo con messaggi di stato. Se i messaggi di stato attivano azioni nelle regole di filtro del messaggio di stato, un utente malintenzionato potrebbe attivare una regola. Potrebbe inoltre inviare un messaggio di stato che renderebbe le informazioni relative ai rapporti inaccurate.  
 
--   対象外のクライアントがポリシーの対象に変更される可能性がある  
+-   I criteri possono essere reindirizzati ai client non di destinazione  
 
-     1 つのクライアントを対象としたポリシーをまったく異なるクライアントに適用するために攻撃者が使用できる方法がいくつかあります。 たとえば、信頼されたクライアントを使用する攻撃者が、偽のインベントリ情報や探索情報を送信して、所属すべきでないコンピューターをコレクションに追加し、コレクション向けのすべての展開を受けることができます。 攻撃者がポリシーを直接変更することを防ぐために役立つ制御方法が存在しても、攻撃者は、既存のポリシーを取得して再フォーマットし、オペレーティング システムを再展開して異なるコンピューターに送信し、サービス拒否攻撃を行うことができます。 これらの種類の攻撃には、正確なタイミングと、Configuration Manager インフラストラクチャに関する広範囲にわたる知識が必要です。  
+     Gli autori di un attacco potrebbero usare diversi metodi per applicare un criterio assegnato a un client a un altro client completamente differente. Ad esempio, un utente malintenzionato su un client attendibile potrebbe inviare informazioni di individuazione o di inventario false per aggiungere il computer a una raccolta alla quale non dovrebbe appartenere, ricevendo successivamente tutte le distribuzioni in quella raccolta. Sebbene siano previsti controlli per impedire la modifica diretta di un criterio, gli autori di attacchi potrebbero usare un criterio esistente per riformattare e ridistribuire un sistema operativo e inviarlo a un computer diverso, creando un attacco di tipo Denial of Service. Questi tipi di attacchi richiederebbero tempistiche precise e una profonda conoscenza dell'infrastruttura di Configuration Manager.  
 
--   クライアント ログに対するユーザー アクセスが許可される  
+-   I registri del client consentono l'accesso utente  
 
-     すべてのクライアント ログ ファイルでは、ユーザーの読み取りアクセス権と、対話ユーザーの書き込みアクセス権が許可されます。 詳細ログ記録を有効にすると、攻撃者がログ ファイルを読み取って、コンプライアンス対応またはシステムの脆弱性に関する情報を探す可能性があります。 ソフトウェアのインストールなど、ユーザーのコンテキストで実行されるプロセスでは、権限の低いユーザー アカウントを使用してログに書き込める必要があります。 このことは、攻撃者も権限の低いアカウントを使用してログに書き込めることになります。  
+     Tutti i file di log client consentono agli utenti l'accesso in lettura e agli utenti interattivi l'accesso in scrittura. Se si abilita la registrazione dettagliata, gli autori di un attacco potrebbero leggere i file di log per cercare informazioni sulle vulnerabilità del sistema o sulla conformità. Processi come l'installazione software eseguiti in un contesto utente devono essere in grado di scrivere nei file di log con un account utente con diritti limitati. Ciò significa che un utente malintenzionato potrebbe anche scrivere nei registri con un account con diritti limitati.  
 
-     最も重大なリスクは、管理者が監査および侵入者の検知で必要とするログ ファイル内の情報を攻撃者が削除する可能性があることです。  
+     Il rischio più preoccupante è che l'autore dell'attacco possa rimuovere delle informazioni all'interno dei file di log potenzialmente utili per il controllo e il rilevamento di intrusi da parte dell'amministratore.  
 
--   モバイル デバイス登録用に設計された証明書を取得するのにコンピューターが使用される  
+-   È possibile usare un computer per ottenere un certificato progettato per la registrazione di dispositivi mobili  
 
-     Configuration Manager は、登録要求を処理するとき、その要求がコンピューターではなくモバイル デバイスから送られたことを確認することはできません。 要求がコンピューターから送られた場合、そのコンピューターは PKI 証明書をインストールし、その証明書を使ってコンピューターを Configuration Manager に登録することができます。 このような権限の昇格攻撃を防ぐため、信頼されたユーザーにのみモバイル デバイスの登録を許可し、登録アクティビティを注意して監視してください。  
+     Quando Configuration Manager elabora una richiesta di registrazione, non è in grado di verificare se la richiesta proviene da un dispositivo mobile piuttosto che da un computer. Se la richiesta proviene da un computer, sarà possibile installare un certificato PKI che consentirà la successiva registrazione in Configuration Manager. Per evitare un attacco tramite elevazione dei privilegi in questo scenario, consentire solo a utenti attendibili di registrare il proprio dispositivo mobile e monitorare attentamente le attività di registrazione.  
 
--   あるクライアントをブロックした場合にクライアントから管理ポイントへの接続が削除されず、そのブロックされたクライアントは、その後も管理ポイントにキープアライブ メッセージとしてクライアント通知パケットを送信することがある  
+-   La connessione da un client al punto di gestione non viene interrotta se si blocca un client e tale client è in grado di continuare a inviare pacchetti di notifica client al punto di gestione, come messaggi keep-alive  
 
-     信頼していないクライアントをブロックし、クライアント通知通信を確立すると、Configuration Manager はセッションを切断しません。 ブロックされたクライアントは、ネットワークから切断されるまで、引き続き管理ポイントにパケットを送信できます。 これらのパケットはサイズがごく小さなキープアライブ パケットであり、クライアントのブロックが解除されるまで、これらのクライアントを Configuration Manager で管理できません。  
+     Quando si blocca un client non ritenuto più attendibile e il client ha stabilito una comunicazione di notifica client, Configuration Manager non disconnette la sessione. Il client bloccato può continuare a inviare pacchetti al suo punto di gestione finché non si disconnette dalla rete. Si tratta solo di piccoli pacchetti keep-alive e questi client non possono essere gestiti da Configuration Manager finché sono bloccati.  
 
--   自動クライアント アップグレードを使用し、クライアント ソース ファイルをダウンロードするためにクライアントが管理ポイントに誘導された場合、その管理ポイントが信頼されたソースとして確認されない  
+-   Quando si usa l'aggiornamento automatico del client e quest'ultimo viene indirizzato a un punto di gestione per il download dei file di origine client, il punto di gestione non viene verificato come un'origine attendibile  
 
--   初めて Mac コンピューターを登録する場合、DNS スプーフィングのリスクがある  
+-   La prima volta che eseguono la registrazione di computer Mac, gli utenti sono esposti al rischio di attacchi di spoofing DNS  
 
-     Mac コンピューターが登録中に登録プロキシ ポイントに接続するときに、多くの場合、Mac コンピューターにはルート CA 証明書がありません。 この時点で、サーバーは Mac コンピューターによって信頼されず、ユーザーは続行するように求められます。 登録プロキシ ポイントの完全修飾名が偽の DNS サーバーによって解決されると、Mac コンピューターが偽の登録プロキシ ポイントに接続され、信頼されていないソースから証明書がインストールされる可能性があります。 このリスクを低減するには、使用する環境での DNS スプーフィングを回避するベスト プラクティスに従います。  
+     Quando i computer Mac si connettono al punto proxy di registrazione durante la registrazione, probabilmente il computer Mac non disporrà del certificato CA radice. A questo punto, il server è considerato attendibile dal computer Mac e chiede all'utente di continuare. Se il nome completo del punto proxy di registrazione viene risolto da un server DNS non autorizzato, potrebbe indirizzare il computer Mac in punto proxy di registrazione non autorizzato e installare i certificati da un'origine non attendibile. Per ridurre questo rischio, seguire le procedure consigliate per evitare gli attacchi di spoofing DNS nel proprio ambiente.  
 
--   Mac の登録では証明書の要求に制限がない  
+-   La registrazione Mac non limita le richieste di certificati  
 
-     ユーザーは新しいクライアント証明書を要求するたびに Mac コンピューターを再登録できます。 Configuration Manager は複数の要求をチェックせず、1 台のコンピューターから要求される証明書の数を制限しません。 偽のユーザーがコマンドラインの登録要求を繰り返すスクリプトを実行すると、ネットワークや、発行元の証明機関 (CA) でサービス拒否が発生します。 このリスクを低減するには、発行元の CA で、こうした種類の疑わしい動作を注意深く監視します。 こうしたパターンの動作を示すコンピューターは、Configuration Manager 階層からすぐにブロックする必要があります。  
+     Gli utenti possono registrare di nuovo i computer Mac, ogni volta che richiedono un nuovo certificato client. Configuration Manager non verifica più richieste o non limita il numero di certificati richiesti da un singolo computer. Un utente non autorizzato potrebbe eseguire uno script che ripete la richiesta di registrazione della riga di comando causando un attacco di tipo Denial of Service nella rete o nell'autorità di emissione del certificato (CA). Per ridurre questo rischio, è necessario monitorare questo tipo di comportamenti sospetti nella CA emittente. Un computer che mostra questo tipo di comportamento deve essere immediatamente bloccato dalla gerarchia di Configuration Manager.  
 
--   ワイプの確認では、デバイスが正常にワイプされたかどうかが検証されない  
+-   Una conferma di cancellazione non verifica che il dispositivo sia stato effettivamente cancellato  
 
-     モバイル デバイスのワイプ操作を開始すると、Configuration Manager でワイプ状態の確認が表示されますが、これは、Configuration Manager が正常にメッセージが送信したことを検証するもので、操作の対象となるデバイスは検証されません。 また、Exchange Server コネクタで管理されるモバイル デバイスでは、ワイプの確認は、Exchange でコマンドが受信されたことを検証しますが、デバイスで受信されたかどうかは検証しません。  
+     Quando si avvia un'azione di cancellazione per un dispositivo mobile e Configuration Manager visualizza lo stato di cancellazione da confermare, il sistema verifica che Configuration Manager abbia inviato il messaggio e non che l'azione sia stata completata. Inoltre, per i dispositivi mobili gestiti dal connettore Exchange Server, una conferma di cancellazione verifica che il comando sia stato ricevuto da Exchange, non dal dispositivo.  
 
--   Windows Embedded デバイスでの変更をコミットするオプションを使用している場合、予想よりも早くアカウントが使用不可になることがあります  
+-   Se si usano le opzioni di conferma delle modifiche in dispositivi con Windows Embedded, gli account potrebbero essere bloccati prima del previsto  
 
-     Windows Embedded デバイスが、Windows 7 よりも前のオペレーティング システムを実行し、Configuration Manager による変更をコミットするために書き込みフィルターが無効にされている間に、ユーザーがログオンしようとすると、アカウントが使用不可になるまで許容されるログオン試行回数が実質的に半分になります。 たとえば、[ **アカウントのロックアウトのしきい値** ] を 6 と構成し、ユーザーがパスワードの入力を 3 回間違えると、アカウントが使用不可になり、実質的にサービス拒否の状況が作られます。  このシナリオでユーザーが組み込みデバイスにログオンする必要がある場合、使用不可のしきい値が低くなる可能性についてユーザーに注意してください。  
+     Se il dispositivo con Windows Embedded esegue un sistema operativo precedente a Windows 7 e un utente prova ad accedere mentre i filtri di scrittura sono disabilitati per la conferma delle modifiche eseguite da Configuration Manager, il numero di tentativi di accesso errati consentiti prima del blocco dell'account viene effettivamente dimezzato. Ad esempio, se **Valore di soglia di blocco account** è configurato su 6 e un utente digita una password errata per 3 volte, l'account viene bloccato, creando effettivamente una situazione del tipo Denial of Service.  In questo scenario, se gli utenti devono accedere a dispositivi incorporati, è necessario allertarli circa la potenziale riduzione del valore di soglia di blocco.  
 
-##  <a name="BKMK_Privacy_Cliients"></a> Configuration Manager クライアントのプライバシー情報  
- Configuration Manager クライアントを展開すると、クライアント設定を有効にして Configuration Manager 管理機能を使用できます。 機能を構成するために使用する設定は Configuration Manager 階層内のすべてのクライアントに適用されます。これは、クライアントが企業ネットワークに直接接続しているか、リモート セッションを介して接続しているか、インターネットに接続しているが Configuration Manager にサポートされているかに関係ありません。  
+##  <a name="BKMK_Privacy_Cliients"></a> Informazioni sulla privacy per i client di Configuration Manager  
+ Quando si distribuisce il client di Configuration Manager, vengono abilitate le impostazioni client che consentono di usare le funzionalità di gestione di Configuration Manager. Le impostazioni usate per la configurazione delle funzionalità possono essere applicate a tutti i client nella gerarchia di Configuration Manager, indipendentemente dal fatto che siano connessi direttamente alla rete aziendale, connessi tramite sessione remota o connessi a Internet ma supportati da Configuration Manager.  
 
- クライアント情報は Configuration Manager データベースに格納されます。Microsoft に送信されることはありません。 情報は、90 日ごとに実行されるサイトのメンテナンス タスク [ **期限切れの探索データの削除** ] によって削除されるまで、データベースに保持されます。 削除間隔は構成できます。  
+ Le informazioni sui client vengono archiviate nel database di Configuration Manager e non vengono inviate a Microsoft. Le informazioni vengono conservate nel database fino alla relativa eliminazione nell'ambito delle attività di manutenzione del sito **Elimina dati di individuazione obsoleti** eseguite ogni 90 giorni. È possibile configurare l'intervallo di eliminazione.  
 
- Configuration Manager クライアントを構成する前に、プライバシー要件について検討してください。  
+ Prima di configurare il client di Configuration Manager, esaminare i requisiti sulla privacy.  
 
-### <a name="privacy-information-for-mobile-devices-that-are-enrolled-by-configuration-manager"></a>Configuration Managerに登録されたモバイル デバイスのプライバシー情報  
- Configuration Manager でモバイル デバイスを登録するときのプライバシー情報の詳細については、「[System Center Configuration Manager のプライバシーに関する声明 - モバイル デバイスに関する補遺](../../../../core/misc/privacy/privacy-statement-mobile-device-addendum.md)」を参照してください。  
+### <a name="privacy-information-for-mobile-devices-that-are-enrolled-by-configuration-manager"></a>Informazioni sulla privacy per i client dispositivo mobile registrati da Configuration Manager  
+ Per informazioni sulla privacy in merito alla registrazione di un dispositivo mobile da parte di Configuration Manager, vedere [Informativa sulla privacy di System Center Configuration Manager - Supplemento per dispositivi mobili](../../../../core/misc/privacy/privacy-statement-mobile-device-addendum.md).  
 
-### <a name="client-status"></a>クライアント ステータス  
- Configuration Manager はクライアントのアクティビティを監視します。また、Configuration Manager クライアントとその依存関係を定期的に評価して、修復できます。 クライアント ステータスは既定で有効になっています。また、クライアント アクティビティのチェックにはサーバー側の指標を使用し、自己チェック、修復、Configuration Manager サイトへのクライアント ステータス情報の送信にはクライアント側の操作を使用します。 クライアントは構成できるスケジュールに従って、自己チェックを実行します。 クライアントはチェックの結果を Configuration Manager サイトに送信します。 この情報は、転送中、暗号化されます。  
+### <a name="client-status"></a>Stato del client  
+ Configuration Manager monitora l'attività dei client e periodicamente valuta ed eventualmente aggiorna il client di Configuration Manager e le relative dipendenze. Lo stato del client è attivato per impostazione predefinita e usa una metrica lato server per i controlli dell'attività client e azioni lato client per i controlli automatici, l'aggiornamento e l'invio di informazioni sullo stato del client al sito di Configuration Manager. Il client esegue i controlli automatici secondo una pianificazione configurabile. Il client invia i risultati dei controlli al sito di Configuration Manager. Queste informazioni vengono crittografate durante il trasferimento.  
 
- クライアントのステータス情報は Configuration Manager データベースに格納されます。Microsoft に送信されることはありません。 この情報は、暗号化された形式でデータベースに格納されるわけではありません。 この情報は、クライアント ステータス設定 [ **クライアント ステータス履歴を保持する日数** ] で構成された値に従って削除されるまで、データベースに保持されます。 この設定の既定値は 31 日ごとです。  
+ Le informazioni sullo stato del client vengono archiviate nel database di Configuration Manager e non vengono inviate a Microsoft. Le informazioni non vengono memorizzate in forma crittografata nel database del sito. Le informazioni vengono conservate nel database fino alla relativa eliminazione, che avviene come specificato dal valore dell'impostazione di stato del client **Mantieni la cronologia stato del client per il numero di giorni seguente** . Il valore predefinito di tale impostazione è ogni 31 giorni.  
 
- Configuration Manager クライアントをクライアント ステータス チェック機能と共にインストールする前に、プライバシー要件を検討してください。  
+ Prima di installare il client di Configuration Manager con il controllo dello stato del client, valutare i requisiti relativi alla privacy.  
 
-##  <a name="BKMK_Privacy_ExchangeConnector"></a> Exchange Server コネクタを使用して管理されるモバイル デバイスのプライバシー情報  
- Exchange Server コネクタは、Exchange Server (内部設置型またはホスト型) に ActiveSync プロトコルで接続するデバイスを見つけて管理します。 Exchange Server コネクタにより検出されたレコードは、Configuration Manager データベースに格納されます。 この情報は、Exchange Server から収集されます。 これには、モバイル デバイスが Exchange Server に送信したその他の情報は一切含まれません。  
+##  <a name="BKMK_Privacy_ExchangeConnector"></a> Informazioni sulla privacy per i dispositivi mobili gestiti con il connettore Exchange Server  
+ Il connettore Exchange Server rileva e gestisce i dispositivi che si connettono a Exchange Server (locale o ospitato) usando il protocollo ActiveSync. I record rilevati dal connettore Exchange Server vengono memorizzati nel database di Configuration Manager. Le informazioni vengono raccolte da Exchange Server. Tali informazioni non includono informazioni aggiuntive su quanto i dispositivi mobili inviano a Exchange Server.  
 
- モバイル デバイス情報がマイクロソフトに送信されることはありません。 その後、モバイル デバイス情報が Configuration Manager データベースに格納されます。 情報は、90 日ごとに実行されるサイトのメンテナンス タスク [ **期限切れの探索データの削除** ] によって削除されるまで、データベースに保持されます。 削除間隔は構成できます。  
+ Le informazioni sul dispositivo mobile non vengono inviate a Microsoft. Le informazioni sui dispositivi mobili sono archiviate nel database di Configuration Manager. Le informazioni vengono conservate nel database fino alla relativa eliminazione nell'ambito delle attività di manutenzione del sito **Elimina dati di individuazione obsoleti** eseguite ogni 90 giorni. È possibile configurare l'intervallo di eliminazione.  
 
- Exchange Server をインストールして構成する前に、プライバシー要件を検討してください。  
+ Prima di installare e configurare il connettore Exchange Server, valutare i requisiti relativi alla privacy.  

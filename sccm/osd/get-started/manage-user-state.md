@@ -1,6 +1,6 @@
 ---
-title: "ユーザー状態の管理 - Configuration Manager | Microsoft Docs"
-description: "System Center Configuration Manager では、ユーザー状態移行ツールを使用してオペレーティング システムの展開シナリオでのユーザー状態データをキャプチャして復元します。"
+title: Gestire lo stato utente - Configuration Manager| Microsoft Docs
+description: "System Center Configuration Manager usa l'Utilità di migrazione stato utente per acquisire e ripristinare i dati sullo stato utente negli scenari di distribuzione del sistema operativo."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -18,114 +18,114 @@ manager: angrobe
 ms.openlocfilehash: a0bd86587669c32377b1eafa6a890d37e10ac3f6
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-user-state-in-system-center-configuration-manager"></a>System Center Configuration Manager でのユーザー状態の管理
+# <a name="manage-user-state-in-system-center-configuration-manager"></a>Gestire lo stato utente in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-オペレーティング システムを展開するときに、現在のオペレーティング システムのユーザー状態を維持したい場合は、System Center Configuration Manager のタスク シーケンスを使って、ユーザー状態データをキャプチャして復元します。 たとえば、  
+È possibile usare le sequenze di attività di System Center Configuration Manager per acquisire e ripristinare i dati sullo stato utente in scenari di distribuzione del sistema operativo in cui si desidera mantenere lo stato utente del sistema operativo corrente. Ad esempio:  
 
--   あるコンピューターのユーザー状態をキャプチャし、別のコンピューターで復元する展開。  
+-   Distribuzioni in cui si vuole acquisire lo stato utente da un computer per ripristinarlo in un altro computer.  
 
--   同じコンピューターでユーザー状態をキャプチャして復元する更新プログラムの展開。  
+-   Distribuzioni di aggiornamenti in cui si desidera acquisire e ripristinare lo stato utente sullo stesso computer.  
 
- オペレーティング システムのインストールが完了した後、Configuration Manager では、ユーザー状態移行ツール (USMT) 10.0 を使用して、ソース コンピューターからセットアップ先のコンピューターへのユーザー状態データの移行を管理します。 USMT 10.0 の一般的な移行シナリオの詳細については、「  [一般的な移行シナリオ](https://technet.microsoft.com/library/mt299169\(v=vs.85\).aspx)」を参照してください。  
+ Configuration Manager usa l'Utilità di migrazione stato utente (USMT) 10.0 per gestire la migrazione dei dati sullo stato utente da un computer di origine a un computer di destinazione al termine dell'installazione del sistema operativo. Per altre informazioni sugli scenari comuni di migrazione per USMT 10.0 vedere  [Scenari di migrazione comuni](https://technet.microsoft.com/library/mt299169\(v=vs.85\).aspx).  
 
- 以下のセクションを参照して、ユーザー データをキャプチャして復元してください。
+ Vedere le sezioni seguenti per informazioni sull'acquisizione e sul ripristino dei dati utente.
 
 
-##  <a name="BKMK_StoringUserData"></a> ユーザー状態データの保存  
- ユーザー状態をキャプチャするとき、セットアップ先のコンピューターまたは状態移行ポイントにユーザー状態データを保存できます。 ユーザー状態移行ポイント上にユーザー状態を保存するには、状態移行ポイント サイト システムの役割をホストする Configuration Manager サイト システム サーバーを使用する必要があります。 展開先コンピューター上にユーザー状態を保存するには、タスク シーケンスを構成し、リンクを使用してローカルにデータを保存する必要があります。  
+##  <a name="BKMK_StoringUserData"></a> Archiviare i dati dello stato utente  
+ Quando si acquisisce lo stato utente, è possibile archiviare i dati corrispondenti nel computer di destinazione o in un punto di migrazione stato. Per archiviare lo stato utente in un punto di migrazione stato utente, è necessario usare un server di sistema del sito di Configuration Manager che ospita il ruolo di sistema del sito del punto di migrazione stato. Per archiviare lo stato utente nel computer di destinazione, è necessario configurare la sequenza attività in modo da archiviare i dati localmente utilizzando i collegamenti.  
 
 > [!NOTE]  
->  ユーザー状態をローカルに保存するために使用されるリンクはハードリンクと呼ばれます。 ハードリンクは USMT 10.0 機能であり、コンピューターのユーザー ファイルと設定をスキャンし、これらのファイルに対するハードリンクのディレクトリを作成します。 次に、新しいオペレーティング システムの展開後に、ハードリンクを使用して、ユーザー データを復元します。  
+>  I collegamenti utilizzati per archiviare lo stato utente localmente vengono definiti collegamenti reali. I collegamenti reali sono una funzionalità di USMT 10.0 che cerca nel computer i file e le impostazioni utente e quindi crea una directory di collegamenti reali a questi file. I collegamenti reali vengono quindi utilizzati per ripristinare i dati utente dopo la distribuzione del nuovo sistema operativo.  
 
 > [!IMPORTANT]  
->  状態移行ポイントとハードリンクを使用して、同時にユーザー状態データを保存することはできません。  
+>  Non è possibile utilizzare un punto di migrazione stato e utilizzare i collegamenti reali per archiviare i dati dello stato utente nello stesso momento.  
 
- ユーザー状態情報をキャプチャしたら、次のいずれかの方法でこの情報を保存できます。  
+ Quando vengono acquisite le informazioni sullo stato utente, le informazioni possono essere memorizzate in uno dei modi seguenti:  
 
--   状態移行ポイントを構成することによって、リモートにユーザー状態データを保存することができます。 **キャプチャ** のタスク シーケンスが状態移行ポイントへデータを送信します。 そして、オペレーティング システムが展開された後、 **復元** のタスク シーケンスがデータを取得し、セットアップ先のコンピューターにユーザー状態を復元します。  
+-   È possibile memorizzare i dati di stato utente in remoto configurando un punto di migrazione stato. La sequenza di attività di **acquisizione** invia i dati al punto di migrazione stato. Dopo aver distribuito il sistema operativo, la sequenza di attività di **ripristino** recupera i dati e ripristina lo stato utente nel computer di destinazione.  
 
--   ユーザー状態データは特定の場所にローカルに保存できます。 このシナリオでは、 **キャプチャ** のタスク シーケンスはユーザー データをセットアップ先のコンピューターの特定の場所にコピーします。 そして、オペレーティング システムが展開された後、 **復元** のタスク シーケンスがその場所からユーザー データを取得します。  
+-   È possibile memorizzare i dati dello stato utente in una posizione specifica in locale. In questo scenario la sequenza di attività di **acquisizione** copia i dati utente in una posizione specifica nel computer di destinazione. Dopo aver distribuito il sistema operativo, la sequenza di attività di **ripristino** recupera i dati e ripristina lo stato utente da tale posizione.  
 
--   ユーザー データを元の場所に復元するために使用するハード リンクを指定できます。 このシナリオでは、古いオペレーティング システムが消去されてもユーザー状態データはドライブに保持されます。 そして、新しいオペレーティング システムが展開された後、 **復元** のタスク シーケンスがハードリンクを使用して、元の場所にユーザー状態データを復元します。  
+-   È possibile specificare i collegamenti reali che possono essere usati per ripristinare i dati utente e la relativa posizione originale. In questo scenario i dati dello stato utente rimangono sull'unità quando viene rimosso il sistema operativo precedente. Dopo aver distribuito il sistema operativo, la sequenza di attività di **ripristino** usa quindi i collegamenti reali per ripristinare i dati dello stato utente nella posizione originale.  
 
-###  <a name="BKMK_UserDataSMP"></a> 状態移行ポイントにユーザー状態データを保存する  
- 状態移行ポイントにユーザー状態データを保存するには、次の操作を行う必要があります。  
+###  <a name="BKMK_UserDataSMP"></a> Archiviare i dati utente in un punto di migrazione stato  
+ Per archiviare i dati dello stato utente in un punto di migrazione stato, è necessario procedere come segue:  
 
-1.  ユーザー状態データを保存するために、[Configure a state migration point](#BKMK_StateMigrationPoint) 。  
+1.  [Configure a state migration point](#BKMK_StateMigrationPoint) per archiviare i dati dello stato utente.  
 
-2.  ソース コンピューターとセットアップ先のコンピューターの間に、[Create a computer association](#BKMK_ComputerAssociation) 。 ソース コンピューター上でユーザー状態をキャプチャする前に、この関連付けを作成する必要があります。  
+2.  [Create a computer association](#BKMK_ComputerAssociation) tra il computer di origine e il computer di destinazione. Prima di acquisire lo stato utente nel computer di origine, è necessario creare questa associazione.  
 
-3.  [System Center Configuration Manager でユーザー状態をキャプチャおよび復元するためのタスク シーケンスを作成する](../deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md)。 具体的には、コンピューターからユーザー データをキャプチャし、状態移行ポイントにユーザーのデータを保存し、ユーザー データをコンピューターに復元するために、次のタスク シーケンスのステップを追加する必要があります。  
+3.  [Creare una sequenza di attività per acquisire e ripristinare lo stato utente in System Center Configuration Manager](../deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md). In particolare, è necessario aggiungere i passaggi della sequenza di attività seguenti per acquisire dati utente da un computer, archiviarli in un punto di migrazione stato e ripristinarli in un computer:  
 
-    -   [状態ストアの要求](../understand/task-sequence-steps.md#BKMK_RequestStateStore)で、コンピューターから状態をキャプチャするときに、状態移行ポイントへのアクセスを要求します。  
+    -   [Richiedi archiviazione stati](../understand/task-sequence-steps.md#BKMK_RequestStateStore) per richiedere l'accesso a un punto di migrazione stato durante l'acquisizione dello stato da un computer o il ripristino dello stato in un computer.  
 
-    -   [ユーザー状態のキャプチャ](../understand/task-sequence-steps.md#BKMK_CaptureUserState)で、ユーザー状態データをキャプチャし、状態移行ポイントに保存します。  
+    -   [Acquisisci stato utente](../understand/task-sequence-steps.md#BKMK_CaptureUserState) per acquisire e archiviare i dati sullo stato utente nel punto di migrazione stato.  
 
-    -   [ユーザー状態の復元](../understand/task-sequence-steps.md#BKMK_RestoreUserState)で、ユーザー状態移行ポイントからデータを取得して、セットアップ先のコンピューターにユーザー状態を復元します。  
+    -   [Ripristina stato utente](../understand/task-sequence-steps.md#BKMK_RestoreUserState) per ripristinare lo stato utente nel computer di destinazione recuperando i dati da un punto di migrazione stato utente.  
 
-    -   [状態ストアのリリース](../understand/task-sequence-steps.md#BKMK_ReleaseStateStore)で、キャプチャ アクションまたは復元アクションが完了した状態移行ポイントを通知します。  
+    -   [Rilascia archiviazione stati](../understand/task-sequence-steps.md#BKMK_ReleaseStateStore) per notificare il completamento dell'azione di ripristino o acquisizione al punto di migrazione stato.  
 
-###  <a name="BKMK_UserDataDestination"></a> ユーザー データをローカルに保存する  
- ユーザー状態データをローカルに保存するには、次の操作を行う必要があります。  
+###  <a name="BKMK_UserDataDestination"></a> Archiviare localmente i dati utente  
+ Per archiviare i dati dello stato utente localmente, è necessario procedere come segue:  
 
--   [ユーザー状態をキャプチャおよび復元するタスク シーケンスの作成](../deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md)。 具体的には、コンピューターからユーザー データをキャプチャし、ハードリンクを使用してユーザー データをコンピューターに復元するために、次のタスク シーケンスのステップを追加する必要があります。  
+-   [Creare una sequenza di attività per acquisire e ripristinare lo stato utente](../deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md). In particolare, è necessario aggiungere i passaggi della sequenza di attività seguenti per acquisire i dati utente da un computer e ripristinarli in un computer usando collegamenti reali:  
 
-    -   [ユーザー状態のキャプチャ](../understand/task-sequence-steps.md#BKMK_CaptureUserState) で、ユーザー状態データをキャプチャし、ハードリンクを使用して、ローカル フォルダーに保存します。  
+    -   [Acquisisci stato utente](../understand/task-sequence-steps.md#BKMK_CaptureUserState) per acquisire e archiviare i dati sullo stato utente in una cartella locale usando collegamenti reali.  
 
-    -   [ユーザー状態の復元](../understand/task-sequence-steps.md#BKMK_RestoreUserState) で、ハードリンクを使用してデータを取得し、セットアップ先のコンピューターにユーザー状態を復元します。  
+    -   [Ripristina stato utente](../understand/task-sequence-steps.md#BKMK_RestoreUserState) per ripristinare lo stato utente nel computer di destinazione recuperando i dati tramite collegamenti reali.  
 
         > [!NOTE]  
-        >  タスク シーケンスが古いオペレーティング システムを削除した後、ハードリンクが参照するユーザー状態データがコンピューターに残ります。 新しいオペレーティング システムが展開される際、このデータを使用してユーザー状態を復元します。  
+        >  I dati dello stato utente a cui fanno riferimento i collegamenti reali rimangono nel computer dopo che la sequenza attività ha rimosso il sistema operativo precedente. Si tratta dei dati utilizzati per ripristinare lo stato utente quando viene distribuito il nuovo sistema operativo.  
 
 ##  <a name="BKMK_StateMigrationPoint"></a> Configure a state migration point  
- 状態移行ポイントには、あるコンピューターでキャプチャされて別のコンピューターで復元されるユーザー状態データが保存されます。 ただし、セットアップ先のコンピューターでオペレーティング システムを更新する展開など、同じコンピューター上のオペレーティング システム展開のユーザー設定をキャプチャする場合、データは、ハードリンクを使用して同じコンピューターに保存したり、状態移行ポイントに保存したりすることができます。 一部のコンピューター展開では、状態ストアを作成すると、Configuration Manager によって状態ストアと対象コンピューターの関連付けが自動的に作成されます。 次の方法を使用して、ユーザー移行ポイントがユーザー状態データを保存するように構成できます。  
+ Il punto di migrazione stato archivia i dati sullo stato dell'utente acquisiti in un computer e quindi ripristinati in un altro computer. Tuttavia, quando si acquisiscono le impostazioni utente per una distribuzione del sistema operativo nello stesso computer, ad esempio una distribuzione in cui il sistema operativo viene aggiornato nel computer di destinazione, è possibile archiviare i dati nello stesso computer con collegamenti reali oppure in un punto di migrazione stato. Per alcune distribuzioni di computer, quando viene creata l'archiviazione stati, Configuration Manager crea automaticamente un'associazione tra l'archiviazione stati e il computer di destinazione. Per configurare un punto di migrazione stato per archiviare i dati dello stato utente, è possibile utilizzare i metodi seguenti:  
 
--   サイト システム サーバーの作成ウィザードを使用して、状態移行ポイント用の新しいサイト システム サーバーを作成します。 ****  
+-   Utilizzare la **Creazione guidata server del sistema sito** per creare un nuovo server di sistema del sito per il punto di migrazione stato.  
 
--   サイト システムの役割の追加ウィザードを使用して、状態移行ポイントを既存のサーバーに追加します。 ****  
+-   Utilizzare l' **Aggiunta guidata ruoli del sistema del sito** per aggiungere un punto di migrazione stato a un server esistente.  
 
- これらのウィザードを使用すると、次の状態移行ポイント情報の入力を求められます。  
+ Quando si utilizzano queste procedure guidate, viene richiesto di fornire le informazioni seguenti per il punto di migrazione stato:  
 
--   ユーザー状態データを保存するフォルダー  
+-   Cartelle in cui archiviare i dati dello stato utente.  
 
--   状態移行ポイントにデータを保存できる最大クライアント数  
+-   Numero massimo di client che possono archiviare i dati nel punto di migrazione stato.  
 
--   ユーザー状態データを保存するための状態移行ポイントの最低空き領域  
+-   Spazio minimo disponibile per il punto di migrazione stato in cui archiviare i dati sullo stato utente.  
 
--   役割の削除ポリシー。 (ユーザー状態データがコンピューターに復元された後、またはユーザー データがコンピューターに復元されて特定の日数が経過した後、直ちにユーザー状態データを削除するように指定できます。)  
+-   Criteri di eliminazione per il ruolo. È possibile specificare che i dati dello stato utente vengano eliminati immediatamente dopo il ripristino in un computer o dopo un numero specifico di giorni dopo il ripristino dei dati utente in un computer.  
 
--   状態移行ポイントがユーザー状態データの復元要求にのみ応答するかどうか (このオプションを有効にすると、状態移行ポイントを使用してユーザー状態データを保存できません。)  
+-   Se il punto di migrazione stato deve rispondere solo alle richieste di ripristino dei dati dello stato utente. Quando si abilita questa opzione, non è possibile utilizzare il punto di migrazione stato per archiviare dati dello stato utente.  
 
- 状態移行ポイントおよびそれを構成する手順の詳細については、「[State migration point](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_StateMigrationPoints)」 (状態移行ポイント) を参照してください。  
+ Per altre informazioni sul punto di migrazione stato e sui passaggi per configurarlo, vedere [Punto di migrazione stato](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_StateMigrationPoints).  
 
 ##  <a name="BKMK_ComputerAssociation"></a> Create a computer association  
- 新しいハードウェアにオペレーティング システムをインストールするときに、ユーザー データの設定をキャプチャおよび復元する場合は、ソース コンピューターとセットアップ先のコンピューターの間の関係を定義するために、コンピューターの関連付けを作成します。 ソース コンピューターは、Configuration Manager で管理される既存のコンピューターです。 新しいオペレーティング システムを展開先コンピューターに展開する際、ソース コンピューターには、展開先コンピューターに移行されるユーザー状態が含まれます。  
+ Creare un'associazione computer per definire una relazione tra un computer di origine e un computer di destinazione quando si installa un sistema operativo su hardware nuovo e si vogliono acquisire e ripristinare le impostazioni dei dati utente. Il computer di origine è un computer esistente gestito da Configuration Manager. Quando si distribuisce il nuovo sistema operativo nel computer di destinazione, il computer di origine contiene lo stato utente di cui viene eseguita la migrazione al computer di destinazione.  
 
 > [!NOTE]  
->  Configuration Manager の親サイトにあるコンピューターと子サイトにあるコンピューターの間では、コンピューターの関連付けを作成できません。 コンピューターの関連付けはサイト固有であり、レプリケートされません。  
+>  Non è supportata la creazione di un'associazione computer tra computer che si trovano in un sito padre di Configuration Manager e computer in un sito figlio. Le associazioni computer sono specifiche del sito e non vengono replicate.  
 
-#### <a name="to-create-a-computer-association"></a>コンピューターの関連付けを作成するには  
+#### <a name="to-create-a-computer-association"></a>Per creare un'associazione computer  
 
-1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
 
-2.  [ **資産とコンプライアンス** ] ワークスペースで [ **ユーザー状態の移行**] をクリックします。  
+2.  Nell'area di lavoro **Asset e conformità** fare clic su **Migrazione stato utente**.  
 
-3.  [ **ホーム** ] タブの [ **作成** ] グループで、[ **コンピューターの関連付けの作成**] をクリックします。  
+3.  Nel gruppo **Crea** della scheda **Home** fare clic su **Crea associazione di computer**.  
 
-4.  [ **コンピューターの関連付けのプロパティ** ] ダイアログ ボックスの [ **コンピューターの関連付け** ] のタブで、ユーザー状態のキャプチャ元のコンピューターと、ユーザー状態データの復元先のコンピューターを指定します。  
+4.  Nella scheda **Associazione computer** della finestra di dialogo **Proprietà associazione computer** specificare il computer di origine di cui è necessario acquisire lo stato utente e il computer di destinazione in cui ripristinare i dati dello stato utente.  
 
-5.  [ユーザー アカウント] タブで、展開先コンピューターに移行するユーザー アカウントを指定します。 **** 次のいずれかの設定を指定します。  
+5.  Nella scheda **Account utente** specificare gli account utente di cui eseguire la migrazione nel computer di destinazione. Specificare una delle impostazioni seguenti:  
 
-    -   **すべてのユーザー アカウントをキャプチャして復元する**: この設定は、すべてのユーザー アカウントをキャプチャして復元します。 この設定を使用して、同じソース コンピューターに対する複数の関連付けを作成します。  
+    -   **Acquisisci e ripristina tutti gli account utente**: questa impostazione consente di acquisire e ripristinare tutti gli account utente. Utilizzare questa impostazione per creare più associazioni con lo stesso computer di origine.  
 
-    -   **すべてのユーザー アカウントをキャプチャして、特定のアカウントを復元する**: この設定は、ソース コンピューターのすべてのユーザー アカウントをキャプチャし、展開先コンピューターで指定したアカウントのみを復元します。 また、同じソース コンピューターに対する複数の関連付けを作成する場合にもこの設定を使用できます。  
+    -   **Acquisisci tutti gli account utente e ripristina gli account specificati**: questa impostazione consente di acquisire tutti gli account utente nel computer di origine e di ripristinare solo gli account specificati nel computer di destinazione. Inoltre, è possibile utilizzare questa impostazione quando si desidera creare più associazioni con lo stesso computer di origine.  
 
-    -   **特定のユーザー アカウントをキャプチャして復元する**: この設定は、指定したアカウントのみをキャプチャして復元します。 この設定を選択するときには、同じソース コンピューターに対する複数の関連付けを作成できません。  
+    -   **Acquisisci e ripristina gli account utente specificati**: questa impostazione consente di acquisire e ripristinare solo gli account specificati. Quando si seleziona questa impostazione, non è possibile creare più associazioni con lo stesso computer di origine.  
 
-##  <a name="BKMK_MigrationFails"></a> オペレーティング システムの展開が失敗したときにユーザー状態データを復元する  
- オペレーティング システムの展開が失敗する場合、USMT 10.0 LoadState 機能を使用して、展開プロセス中にキャプチャされたユーザー状態データを取得します。 このデータには、状態移行ポイントに保存されているデータや、移行先コンピューターのローカルに保存されているデータが含まれます。 この USMT 機能の詳細については、「 [LoadState 構文](https://technet.microsoft.com/library/mt299188\(v=vs.85\).aspx)」をご覧ください。  
+##  <a name="BKMK_MigrationFails"></a> Ripristinare i dati dello stato utente in caso di errore di distribuzione del sistema operativo  
+ Se la distribuzione del sistema operativo non riesce, usare la funzionalità USMT 10.0 LoadState per recuperare i dati dello stato utente acquisito durante il processo di distribuzione. Sono inclusi i dati memorizzati su un punto di migrazione dello stato o i dati salvati localmente sul computer di destinazione. Per ulteriori informazioni su questa caratteristica di USMT, vedere [Sintassi di LoadState](https://technet.microsoft.com/library/mt299188\(v=vs.85\).aspx).  

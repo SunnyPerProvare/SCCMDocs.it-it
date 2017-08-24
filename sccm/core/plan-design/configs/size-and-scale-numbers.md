@@ -1,6 +1,6 @@
 ---
-title: "サイズとスケール | Microsoft Docs"
-description: "System Center Configuration Manager 環境でデバイスをサポートするために必要になるサイト システムの役割とサイトの数を特定します。"
+title: Ridimensionamento e scala | Microsoft Docs
+description: Identificare il numero di ruoli del sistema del sito e di siti necessari per supportare i dispositivi nell'ambiente System Center Configuration Manager.
 ms.custom: na
 ms.date: 07/24/2017
 ms.prod: configuration-manager
@@ -17,178 +17,178 @@ manager: angrobe
 ms.openlocfilehash: f539e2d282b56e56a9c58c773788325b27ea6b37
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>System Center Configuration Manager のサイズとスケールの数
+# <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Numeri di ridimensionamento e scalabilità per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
-
-
-
-System Center Configuration Manager の各展開には、サポートできるサイト、サイト システムの役割、デバイスの最大数があります。 この最大数は、展開する階層構造 (使用するサイトの種類と数) とサイト システムの役割によって変わります。  実際の環境で管理するデバイスをサポートするために必要なサイト システムの役割とサイトの数を特定するには、以下の項目の情報を参照してください。
-
-このトピックの情報は、次の記事の情報と一緒にご使用ください。
--   [推奨ハードウェア](../../../core/plan-design/configs/recommended-hardware.md)
--   [サイト システム サーバーのサポートされるオペレーティング システム](../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md)  
--   [クライアントとデバイスのサポートされるオペレーティング システム](../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md)
--   [サイトとサイト システムの前提条件](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-次のサポート数は、Configuration Manager の推奨ハードウェアと、使用可能なすべての Configuration Manager 機能の既定の設定に基づいています。 推奨されるハードウェアを使用しない場合、またはよりアグレッシブなカスタム設定を使用する場合 (7 日に 1 回 (既定値) よりも頻繁にハードウェアまたはソフトウェア インベントリを実行するような場合)、サイト システムのパフォーマンスが低下し、規定されたレベルのサポートを満たさない可能性があります。
 
-##  <a name="bkmk_SiteSystemScale"></a> サイトの種類  
- **中央管理サイト:**  
+Ogni distribuzione di System Center Configuration Manager ha un numero massimo di siti, di ruoli del sistema del sito e di dispositivi che può supportare. Questi numeri variano a seconda della struttura della gerarchia (i tipi e i numeri dei siti che vengono usati) e dei ruoli del sistema del sito che vengono distribuiti.  Le informazioni nelle aree seguenti consentono di identificare il numero di ruoli del sistema del sito e di siti necessari per supportare i dispositivi che si prevede di gestire con il proprio ambiente.
 
--   中央管理サイトでは、最大 25 の子プライマリ サイトをサポートします。  
+Usare le informazioni di questo argomento insieme a quelle contenute negli articoli seguenti:
+-   [Recommended hardware](../../../core/plan-design/configs/recommended-hardware.md) (Hardware consigliato)
+-   [Sistemi operativi supportati per i server del sistema del sito di System Center Configuration Manager](../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md)  
+-   [Sistemi operativi supportati per client e dispositivi](../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md)
+-   [Prerequisiti del sito e del sistema del sito per System Center Configuration Manager](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)
 
-**プライマリ サイト:**  
 
--   各プライマリ サイトでは、最大 250 のセカンダリ サイトをサポートします。  
+I numeri del supporto riportati di seguito si basano sull'uso dell'hardware consigliato per Configuration Manager e delle impostazioni predefinite per tutte le funzionalità di Configuration Manager disponibili. Quando non si usa l'hardware consigliato oppure si usano impostazioni personalizzate più aggressive (come l'esecuzione dell'inventario hardware o software con maggiore frequenza rispetto all'impostazione predefinita pari a una volta ogni sette giorni), le prestazioni dei sistemi del sito possono peggiorare e non corrispondere ai livelli di supporto dichiarati.
 
--   プライマリ サイトあたりのセカンダリ サイトの数は、常時接続されている信頼性の高い WAN ネットワーク接続に基づいています。 クライアント数が 500 よりも少ない場所については、セカンダリ サイトではなく、配布ポイントを検討してください。  
+##  <a name="bkmk_SiteSystemScale"></a> Tipi di sito  
+ **Sito di amministrazione centrale:**  
 
- 1 つのプライマリ サイトでサポート可能なクライアントとデバイスの数については、このトピックの「[サイトおよび階層のクライアント数](#bkmk_clientnumbers)」を参照してください。  
+-   Un sito di amministrazione centrale supporta fino a 25 siti primari figlio.  
 
-**セカンダリ サイト:**  
+**Sito primario:**  
 
--   セカンダリ サイトでは、子サイトはサポートされません。  
+-   Ogni sito primario può supportare fino a 250 siti secondari.  
 
--   中央管理サイトでは、最大 25 の子プライマリ サイトをサポートします。  
+-   Il numero di siti secondari per il sito primario si basa su connessioni WAN (Wide Area Network) continuamente connesse e affidabili. Per i percorsi contenenti meno di 500 client, considerare un punto di distribuzione anziché un sito secondario.  
 
-**アプリケーション カタログ Web サイト ポイント:**  
+ Per informazioni sul numero di client e di dispositivi che un sito primario può supportare, vedere la sezione [Numero di client per siti e gerarchie](#bkmk_clientnumbers) in questo argomento.  
 
--   プライマリ サイトには、複数のアプリケーション カタログ Web サイト ポイントのインスタンスをインストールできます。  
+**Sito secondario:**  
 
-    > [!TIP]  
-    >  ベスト プラクティスとして、アプリケーション カタログ Web サイト ポイントとアプリケーション カタログ Web サービス ポイントは、イントラネット上のクライアントにサービスを提供する場合は、同じサイト システムにまとめてインストールします。  
+-   I siti secondari non supportano siti figlio.  
 
-    -   パフォーマンスを向上するために、インスタンスあたり最大 50,000 台のクライアントをサポートするように計画してください。  
+-   Un sito di amministrazione centrale supporta fino a 25 siti primari figlio.  
 
-    -   サイト システムの役割の各インスタンスでは、階層でサポートされる最大のクライアント数をサポートします。  
+**Punto per siti Web del Catalogo applicazioni:**  
 
-## <a name="bkmk_roles"></a> サイト システムの役割    
-
-**アプリケーション カタログ Web サービス ポイント:**  
-
--   プライマリ サイトには、複数のアプリケーション カタログ Web サービス ポイントのインスタンスをインストールできます。  
+-   È possibile installare più istanze del punto di sito Web Catalogo applicazioni nei siti primari.  
 
     > [!TIP]  
-    >  ベスト プラクティスとして、アプリケーション カタログ Web サイト ポイントとアプリケーション カタログ Web サービス ポイントは、イントラネット上のクライアントにサービスを提供する場合は、同じサイト システムにまとめてインストールします。  
+    >  Come procedura consigliata, installare il punto di sito Web Catalogo applicazioni e il punto di servizio Web Catalogo applicazioni nello stesso sistema del sito quando offrono servizi ai client che si trovano nella intranet.  
 
-    -   パフォーマンスを向上するために、インスタンスあたり最大 50,000 台のクライアントをサポートするように計画してください。  
+    -   Per migliorare le prestazioni, prevedere di supportare fino a 50.000 client per ogni istanza.  
 
-    -   サイト システムの役割の各インスタンスでは、階層でサポートされる最大のクライアント数をサポートします。  
+    -   Ogni istanza di questo ruolo del sistema del sito supporta il numero massimo di client supportati dalla gerarchia.  
 
-**配布ポイント:**  
+## <a name="bkmk_roles"></a> Site system roles    
 
--   サイトごとの配布ポイント:  
+**Punto per servizi Web del Catalogo applicazioni:**  
 
-    -   各プライマリ サイトおよびセカンダリ サイトでは、最大 250 個の配布ポイントをサポートします。  
+-   È possibile installare più istanze del punto di servizio Web Catalogo applicazioni nei siti primari.  
 
-    -   各プライマリ サイトおよびセカンダリ サイトでは、プル配布ポイントとして構成されている最大 2,000 個の追加の配布ポイントをサポートします。 **たとえば**、プル配布ポイントとして構成されている配布ポイントが 2,000 個ある場合は、1 つのプライマリ サイトで 2,250 個の配布ポイントをサポートすることになります。  
+    > [!TIP]  
+    >  Come procedura consigliata, installare il punto di sito Web Catalogo applicazioni e il punto di servizio Web Catalogo applicazioni nello stesso sistema del sito quando offrono servizi ai client che si trovano nella intranet.  
 
-    -   各配布ポイントでは、最大 4,000 台のクライアントからの接続をサポートします。  
+    -   Per migliorare le prestazioni, prevedere di supportare fino a 50.000 client per ogni istanza.  
 
-    -   プル配布ポイントは、ソース配布ポイントからのコンテンツにアクセスするときには、クライアントのように機能します。  
+    -   Ogni istanza di questo ruolo del sistema del sito supporta il numero massimo di client supportati dalla gerarchia.  
 
--   各プライマリ サイトでは、総計で最大 5,000 個の配布ポイントをサポートします。 この総計には、プライマリ サイトのすべての配布ポイントと、そのプライマリ サイトの子の各セカンダリ サイトに属するすべての配布ポイントが含まれます。  
+**Punto di distribuzione:**  
 
--   各配布ポイントでは、総計で最大 10,000 個のパッケージとアプリケーションをサポートします。  
+-   Punti di distribuzione per sito:  
+
+    -   Ogni sito primario e secondario supporta fino a 250 punti di distribuzione.  
+
+    -   Ogni sito primario e secondario supporta fino a 2000 punti di distribuzione aggiuntivi configurati come punti di distribuzione pull. **Ad esempio**, un singolo sito primario supporta 2250 punti di distribuzione quando 2000 di questi punti di distribuzione sono configurati come punti di distribuzione pull.  
+
+    -   Ogni punto di distribuzione supporta connessioni da massimo 4.000 client.  
+
+    -   Un punto di distribuzione pull funziona come client durante l'accesso al contenuto da un punto di distribuzione di origine.  
+
+-   Ogni sito primario e secondario supporta un totale combinato di massimo 5.000 punti di distribuzione. Tale totale include tutti i punti di distribuzione nel sito primario e tutti i punti di distribuzione che appartengono ai siti secondari figlio del sito primario.  
+
+-   Ogni punto di distribuzione supporta un totale combinato di massimo 10.000 pacchetti e applicazioni.  
 
 > [!WARNING]  
->  1 つの配布ポイントでサポート可能な実際のクライアントの数は、ネットワークの速度と、配布ポイントのコンピューターのハードウェア構成によって異なります。  
+>  Il numero effettivo di client che un punto di distribuzione può supportare dipende dalla velocità della rete e dalla configurazione hardware del computer del punto di distribuzione.  
 >   
->  1 つのソース配布ポイントでサポート可能なプル配布ポイントの数も同様に、ネットワークの速度と、ソース配布ポイントのコンピューターのハードウェア構成によって異なります。 ただし、この値は、展開済みのコンテンツの量にも影響されます。 というのは、一般にクライアントは展開期間中に別々のタイミングでコンテンツにアクセスしますが、それとは異なり、プル配布ポイントの場合は、すべてのプル配布ポイントが同時にコンテンツを要求するためです。さらに、該当するコンテンツのみを要求するクライアントとは異なり、プル配布ポイントでは使用可能なすべてのコンテンツを要求することがあります。 1 つのソース配布ポイントに処理負荷がかかりすぎると、ユーザーの環境内にある目的の配布ポイントへのコンテンツの配布に、予期しない遅延が生じる場合があります。  
+>  Analogamente, il numero di punti di distribuzione pull che un punto di distribuzione di origine può supportare dipende dalla velocità della rete e dalla configurazione hardware del computer del punto di distribuzione di origine. Ma questo numero dipende anche dalla quantità di contenuto che è stato distribuito. Infatti, a differenza dei client che in genere accedono al contenuto in momenti diversi nel corso di una distribuzione, tutti i punti di distribuzione pull richiedono il contenuto nello stesso momento e possono chiedere tutto il contenuto disponibile, non solo quello loro applicabile, come farebbe un client. Quando un punto di distribuzione di origine presenta un carico di elaborazione eccessivo, si possono verificare ritardi imprevisti nella distribuzione del contenuto ai punti di distribuzione previsti nell'ambiente in uso.  
 
 
-**フォールバック ステータス ポイント:**  
+**Punto di stato di fallback:**  
 
--   各フォールバック ステータス ポイントでは、最大 100,000 台のクライアントをサポートできます。  
+-   Ogni punto di stato di fallback è in grado di supportare fino a 100.000 client.  
 
-**管理ポイント:**  
+**Punto di gestione:**  
 
--   各プライマリ サイトでは、最大 15 個の管理ポイントをサポートします。  
+-   Ogni sito primario supporta fino a 15 punti di gestione.  
 
     > [!TIP]  
-    >  管理ポイントを、プライマリ サイト サーバーやサイト データベース サーバーから低速リンクを使用したサーバーにインストールしないでください。  
+    >  Non installare punti di gestione in server che usano un collegamento lento dal server del sito primario o dal server di database del sito.  
 
--   セカンダリ サイトごとに、1 つの管理ポイントがサポートされます。この管理ポイントは、セカンダリ サイト サーバーにインストールする必要があります。  
+-   Ciascun sito secondario supporta un unico punto di gestione che deve essere installato nel server del sito secondario.  
 
- 1 つの管理ポイントでサポート可能なクライアント数とデバイスの数については、このトピックの「[管理ポイント](#bkmk_mp)」セクションを参照してください。  
+ Per informazioni sul numero di client e dispositivi che un punto di gestione può supportare, vedere la sezione [Punti di gestione](#bkmk_mp) in questo argomento.  
 
-**ソフトウェアの更新ポイント:**  
+**Punto di aggiornamento software:**  
 
--   サイト サーバーにインストールしたソフトウェアの更新ポイントでは、最大 25,000 台のクライアントをサポートできます。  
+-   Un punto di aggiornamento software installato nel server del sito può supportare fino a 25.000 client.  
 
--   サイト サーバーから離れた場所にあるソフトウェアの更新ポイントで、最大 150,000 台のクライアントをサポートできます。ただし、このクライアント数をサポートするには、リモート コンピューターが Windows Server Update Services (WSUS) の要件を満たしている必要があります。  
+-   Un punto di aggiornamento software installato in un computer remoto rispetto al server del sito può supportare fino a 150.000 client quando il computer remoto soddisfa i requisiti di Windows Server Update Services (WSUS) per il supporto di questo numero di client.  
 
--   既定で、Configuration Manager はソフトウェアの更新ポイントをネットワーク負荷分散 (NLB) クラスターとして構成することはサポートされていません。 ただし、Configuration Manager SDK を使って、NLB クラスターに最大 4 つのソフトウェアの更新ポイントを構成できます。  
+-   Per impostazione predefinita, Configuration Manager non supporta la configurazione di punti di aggiornamento software come cluster di Bilanciamento carico di rete. È possibile tuttavia usare l'SDK di Configuration Manager per configurare fino a quattro punti di aggiornamento software in un cluster di Bilanciamento carico di rete.  
 
-##  <a name="bkmk_clientnumbers"></a> サイトおよび階層のクライアント数  
- 次の情報を使用して、サイトまたは階層内でサポートすることができるクライアントの数と種類を特定します。  
+##  <a name="bkmk_clientnumbers"></a> Numero di client per siti e gerarchie  
+ Usare le informazioni seguenti per determinare quanti e quali tipi di client è possibile supportare in un sito o in una gerarchia.  
 
-###  <a name="bkmk_cas"></a> 中央管理サイトを使用した階層  
-中央管理サイトでは、最大で次の 3 つのグループに表示されているデバイスの数を含む、デバイスの合計数がサポートされています。  
+###  <a name="bkmk_cas"></a> Gerarchia con un sito di amministrazione centrale  
+Un sito di amministrazione centrale supporta un numero totale di dispositivi che comprende fino al numero di dispositivi elencati per i tre gruppi seguenti:  
 
--   700,000 個のデスクトップ (Windows、Linux、UNIX を実行するコンピューター)。 [組み込みデバイス](#embedded)のサポートも参照してください。
+-   700.000 desktop (computer che eseguono Windows, Linux e UNIX). Vedere anche il supporto per i [dispositivi integrati](#embedded).
 
--   Mac および Windows CE 7.0 を実行している 25,000 個のデバイス  
+-   25.000 dispositivi che eseguono Mac e Windows CE 7.0  
 
--   展開でモバイル デバイス管理 (MDM) をサポートする方法に応じた、次のいずれか:  
+-   Uno dei gruppi seguenti, a seconda del modo in cui la distribuzione supporta la gestione di dispositivi mobili (MDM):  
 
-    -   オンプレミスの MDM を使用して管理する 100,000 個のデバイス  
+    -   100.000 dispositivi gestiti con software MDM locale  
 
-    -   300,000 個のクラウドベースのデバイス  
+    -   300.000 dispositivi basati sul cloud  
 
- たとえば、階層では、700,000 個のデスクトップ、最大 25,000 個の Mac および Windows CE 7.0、および Microsoft Intune と統合する場合は最大 300,000 個のクラウドベースのデバイスをサポートでき、合計 1,025,000 個のデバイスになります。 オンプレミス MDM で管理されているデバイスをサポートする場合は、階層のデバイス数の合計は 825,000 個です。  
+ Ad esempio, in una gerarchia è possibile supportare 700.000 desktop, fino a 25.000 Mac e Windows CE 7.0 e fino a 300.000 dispositivi basati su cloud quando si integra Microsoft Intune, per un totale di 1.025.000 dispositivi. Se si supportano dispositivi gestiti tramite software MDM locale, il totale per la gerarchia è 825.000 dispositivi.  
 
 > [!IMPORTANT]  
->  中央管理サイトが SQL Server の Standard エディションを使用する階層では、階層は、最大 50,000 個のデスクトップとデバイスをサポートします。 スタンドアロン プライマリ サイトで使用している SQL Server のエディションでは、規定された数までのクライアントをサポートするそのサイト容量は制限されません。  
+>  In una gerarchia in cui il sito di amministrazione centrale usa un'edizione Standard di SQL Server, la gerarchia supporta un massimo di 50.000 desktop e dispositivi. L'edizione di SQL Server in uso in un sito primario autonomo non limita la capacità di tale sito di supportare fino al numero dichiarato di client.  
 
 
-###  <a name="bkmk_chipri"></a> 子プライマリ サイト  
-中央管理サイトを持つ階層の各子プライマリ サイトは、次をサポートしています。  
+###  <a name="bkmk_chipri"></a> Sito primario figlio  
+Ogni sito primario figlio in una gerarchia con un sito di amministrazione centrale supporta le quantità seguenti:  
 
--   特定のグループまたは種類に制限されない合計 150,000 個のクライアントとデバイス (サポートが階層でサポートされている数を超えない場合)。 [組み込みデバイス](#embedded)のサポートも参照してください。
+-   Un totale di 150.000 client e dispositivi che non sono limitati a un gruppo o tipo specifico, a condizione di non superare il numero supportato per la gerarchia. Vedere anche il supporto per i [dispositivi integrati](#embedded).
 
-たとえば、(階層の制限があるため) Mac および Windows CE 7.0 を実行する 25,000 台のコンピューターをサポートするプライマリ サイトでは、追加で 125,000 台のデスクトップ コンピューターをサポートできます。 これによって、サポートされるデバイスの合計数の上限は、子のプライマリ サイトでサポートされる 150,000 の上限まで上がります。
+Ad esempio, un sito primario che supporta 25.000 computer che eseguono Mac e Windows CE 7.0, vale a dire il limite per una gerarchia, può quindi supportare 125.000 computer desktop aggiuntivi, raggiungendo un numero totale di dispositivi supportati pari al limite massimo dei siti figlio primari, ovvero 150.000.
 
-###  <a name="bkmk_pri"></a> スタンドアロン プライマリ サイト  
-スタンドアロン プライマリ サイトは、次のデバイス数をサポートしています。  
+###  <a name="bkmk_pri"></a> Sito primario autonomo  
+Un sito primario autonomo supporta il numero seguente di dispositivi:  
 
--   次の制限を持つ合計 175,000 個のクライアントとデバイス:  
+-   Un totale di 175.000 client e dispositivi, senza superare:  
 
-    -   150,000 個のデスクトップ (Windows、Linux、UNIX を実行するコンピューター)。 [組み込みデバイス](#embedded)のサポートも参照してください。
+    -   150.000 desktop (computer che eseguono Windows, Linux e UNIX). Vedere anche il supporto per i [dispositivi integrati](#embedded).
 
-    -   Mac および Windows CE 7.0 を実行している 25,000 個のデバイス
+    -   25.000 dispositivi che eseguono Mac e Windows CE 7.0
 
-    -   展開でモバイル デバイス管理をサポートする方法に応じた、次のいずれか:  
+    -   Uno dei gruppi seguenti, a seconda del modo in cui la distribuzione supporta la gestione dei dispositivi mobili:  
 
-        -   オンプレミスの MDM を使用して管理する 50,000 個のデバイス  
+        -   50.000 dispositivi gestiti con software MDM locale  
 
-        -   150,000 個のクラウドベースのデバイス  
+        -   150.000 dispositivi basati sul cloud  
 
 
-たとえば、150,000 個のデスクトップと 10,000 個の Mac または Windows CE 7.0 をサポートするスタンドアロン プライマリ サイトでは、追加のデバイスを 15,000 個のみサポートできます。 これらのデバイスは、クラウドベースにすることも、オンプレミスの MDM を使用して管理することもできます。  
+Ad esempio, un sito primario autonomo che supporta 150.000 desktop e 10.000 Mac o Windows CE 7.0 può supportare solo 15.000 dispositivi aggiuntivi. Questi dispositivi possono essere basati sul cloud o gestiti con software MDM locale.  
 
-### <a name="embedded"></a> プライマリ サイトと Windows Embedded デバイス
-プライマリ サイトで、ファイル ベースの書き込みフィルター (FBWF) を有効にしている Windows Embedded デバイスがサポートされます。 Embedded デバイスの書き込みフィルターが有効にされていないときには、プライマリ サイトでサポート可能な Embedded デバイスの最大数が、そのサイトの許容デバイス数になります。 プライマリ サイトでサポートされるデバイスの合計台数のうち、最大 10,000 台を Windows Embedded デバイスに割り当てることができます。ただし、それらのデバイスは「[Windows Embedded デバイスへのクライアント展開の計画](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices)」の重要な注意点にある例外に対応するように構成されている必要があります。 EWF が有効化されていても、例外に対応するように構成されていない Windows Embedded デバイスは、1 つのプライマリ サイトで 3,000 台しかサポートされません。
+### <a name="embedded"></a> Siti primari e dispositivi con Windows Embedded
+I siti primari supportano i dispositivi con Windows Embedded in cui sono abilitati i filtri di scrittura basati su file (FBWF). Se nei dispositivi integrati non sono abilitati filtri di scrittura, un sito primario può supportare un numero di dispositivi integrati non superiore al numero di dispositivi consentito per il sito. Del numero totale di dispositivi supportati da un sito primario, al massimo 10.000 possono essere dispositivi con Windows Embedded quando tali dispositivi sono configurati per le eccezioni riportate nella nota importante in [Pianificazione della distribuzione del client in dispositivi con Windows Embedded in System Center Configuration Manager](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices). Un sito primario supporta solo 3.000 dispositivi con Windows Embedded in cui è abilitato EWF e che non sono configurati per le eccezioni.
 
-###  <a name="bkmk_sec"></a> セカンダリ サイト  
-セカンダリ サイトは、次をサポートします。  
+###  <a name="bkmk_sec"></a> Siti secondari  
+I siti secondari supportano le quantità seguenti:  
 
--   15,000 個のデスクトップ (Windows、Linux および UNIX を実行するコンピューター)  
+-   15.000 desktop (computer che eseguono Windows, Linux e UNIX)  
 
-###  <a name="bkmk_mp"></a> 管理ポイント  
-各管理ポイントでは、次のデバイス数をサポートできます。  
+###  <a name="bkmk_mp"></a> Punti di gestione  
+Ogni punto di gestione può supportare il numero di dispositivi seguente:  
 
--   次の制限を持つ合計 25,000 個のクライアントとデバイス:  
+-   Un totale di 25.000 client e dispositivi, senza superare:  
 
-    -   25,000 個のデスクトップ (Windows、Linux および UNIX を実行するコンピューター)  
+    -   25.000 desktop (computer che eseguono Windows, Linux e UNIX)  
 
-    -   次のいずれか (両方ではありません):  
+    -   Uno dei gruppi seguenti (non entrambi):  
 
-        -   オンプレミスの MDM を使用して管理する 10,000 個のデバイス  
+        -   10.000 dispositivi gestiti con software MDM locale  
 
-        -   Mac および Windows CE 7.0 クライアントを実行している 10,000 個のデバイス
+        -   10.000 dispositivi che eseguono client Mac e Windows CE 7.0

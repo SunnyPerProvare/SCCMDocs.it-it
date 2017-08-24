@@ -1,6 +1,6 @@
 ---
-title: "オンプレミス モバイル デバイス管理 (MDM) | Microsoft Docs"
-description: "System Center Configuration Manager のデバイス管理ソリューション、オンプレミス モバイル デバイス管理について説明します。"
+title: Gestione dei dispositivi mobili (MDM) locale | Microsoft Docs
+description: Informazioni sulla gestione dispositivi mobili locale, una soluzione di gestione dei dispositivi in System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -17,35 +17,35 @@ manager: angrobe
 ms.openlocfilehash: 7b96c4d4d87aa150eacc5d7d20710f5d2199e48a
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="on-premises-mobile-device-management-mdm-in-system-center-configuration-manager"></a>System Center Configuration Manager でのオンプレミス モバイル デバイス管理 (MDM)
+# <a name="on-premises-mobile-device-management-mdm-in-system-center-configuration-manager"></a>Gestione di dispositivi mobili (MDM) locale in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager のオンプレミス モバイル デバイス管理 は、デバイスのオペレーティング システムの組み込み管理機能 (Open Mobile Alliance Device Management や OMA DM 標準に基づく機能) を利用するデバイス管理ソリューションです。デバイス自体は、会社の Configuration Manager インフラストラクチャを使用して管理および維持します。 オンプレミス モバイル デバイス管理では、Microsoft Intune で管理機能を設定する必要がありますが、これはサブスクリプションのため (およびポリシー変更のためにチェックインするようにデバイスに通知するとき) にのみ必要であり、デバイスの管理や、デバイスに関するデータの格納に使用されることはありません。  
+La gestione di dispositivi mobili locale di System Center Configuration Manager è una soluzione di gestione dei dispositivi che si basa sulle funzionalità di gestione integrate dei sistemi operativi dei dispositivi (in base allo standard Open Mobile Alliance Device Management o OMA DM) e usa l'infrastruttura di Configuration Manager aziendale per la gestione e la manutenzione dei dispositivi. La gestione di dispositivi mobili locale richiede Microsoft Intune per la configurazione della funzionalità di gestione. Microsoft Intune, tuttavia, è necessario soltanto per la sottoscrizione e a volte per inviare una notifica ai dispositivi che richiede di verificare eventuali modifiche ai criteri ma non viene usato per la gestione dei dispositivi o l'archiviazione di dati sui dispositivi.  
 
- ![オンプレミスの概念](media/On-premises-conceptual.png)  
+ ![Gestione locale](media/On-premises-conceptual.png)  
 
- オンプレミス モバイル デバイス管理これは、同じく組み込みの OMA DM 機能を利用する Microsoft Intune とは異なりますが、すべての管理機能はクラウド サービス経由で提供されます。  オンプレミス モバイル デバイス管理 は、これまで Configuration Manager によって提供されてきたクライアント ベースの管理ソリューションとも異なります。具体的には、同じような企業インフラストラクチャを利用しますが、管理対象コンピューターとデバイスに個別にインストールされたクライアント ソフトウェアを使用しません。  
+ La gestione di dispositivi mobili locale differisce da Microsoft Intune che si basa anche sulle funzionalità OMA DM integrate, mentre tutte le funzioni di gestione vengono offerte tramite i servizi cloud.  La gestione di dispositivi mobili locale differisce anche dalla soluzione di gestione basata su client tradizionalmente offerta da Configuration Manager perché si basa su un'infrastruttura aziendale simile, ma non usa software client installato separatamente nei computer e nei dispositivi gestiti.  
 
- 次の表は、オンプレミス モバイル デバイス管理と従来のクライアント ベースの管理の長所と短所を比較した一覧です。  
+ La tabella seguente elenca i vantaggi e svantaggi della gestione di dispositivi mobili locale rispetto alla gestione basata su client tradizionale:  
 
-|長所|短所|  
+|Vantaggi|Svantaggi|  
 |----------------|-------------------|  
-|**簡素化されたインフラストラクチャ** - 必要になるサイト システムの役割が少なくなります。<br /><br /> **管理が容易** - 管理機能がデバイスのオペレーティング システムに組み込まれているため、新しい管理機能を Configuration Manager システムに導入するときに、新しいバージョンのクライアント ソフトウェアが必要ありません。<br /><br /> **オンプレミス** - すべての管理とデータをオンプレミスに保持します。|**クライアント管理機能が少ない** - オーケストレーション、ソフトウェア使用状況測定、サード パーティ統合、タスク シーケンス、およびソフトウェア センター サポートがありません。<br /><br /> **デバイス サポートの制限** - 現時点で、オンプレミス モバイル デバイス管理は Windows 10 および Windows 10 Mobile を実行しているデバイスのみをサポートしています。|  
+|**Infrastruttura semplificata** : sono necessari meno ruoli del sistema del sito.<br /><br /> **Maggiore facilità di gestione**: poiché la funzionalità di gestione è integrata nel sistema operativo del dispositivo, non sono necessarie nuove versioni del software client quando vengono introdotte nuove funzionalità di gestione nel sistema di Configuration Manager.<br /><br /> **Locale** : tutte le attività di gestione e i dati vengono mantenuti in locale.|**Meno funzionalità di gestione client** : nessun supporto di orchestrazione, misurazione del software, integrazione di terze parti, sequenza di attività o Software Center.<br /><br /> **Supporto dei dispositivi limitato**: attualmente la gestione di dispositivi mobili locale supporta solo i dispositivi che eseguono Windows 10 e Windows 10 Mobile.|  
 
- 次のトピックでは、オンプレミス モバイル デバイス管理用にデバイスを計画、準備、および登録する際に使用できる情報を提供します。  
+ Gli argomenti seguenti offrono informazioni che è possibile usare per pianificare, preparare e registrare i dispositivi per la gestione di dispositivi mobili locale:  
 
--   [System Center Configuration Manager でのオンプレミス モバイル デバイス管理の計画](../plan-design/plan-on-premises-mdm.md)  
+-   [Pianificare la gestione di dispositivi mobili locale in System Center Configuration Manager](../plan-design/plan-on-premises-mdm.md)  
 
-     Configuration Manager インフラストラクチャを設定し、オンプレミス モバイル デバイス管理でのデバイス登録を計画するときに考慮すべき事項について確認します。  
+     Informazioni sugli aspetti da considerare per la configurazione dell'infrastruttura di Configuration Manager e la pianificazione della registrazione dei dispositivi nella gestione di dispositivi mobili locale.  
 
--   [System Center Configuration Manager でのオンプレミス モバイル デバイス管理の準備手順](../get-started/preparation-steps-for-on-premises-mdm.md)  
+-   [Preparativi per la gestione dei dispositivi mobili (MDM) locale in System Center Configuration Manager](../get-started/preparation-steps-for-on-premises-mdm.md)  
 
-     Microsoft Intune サブスクリプションの設定、証明書の設定、サイト システムの役割のインストール、およびデバイス登録の設定を行うことで、Configuration Manager システムをオンプレミス モバイル デバイス管理用に準備する方法について確認します。  
+     Informazioni su come preparare il sistema di Configuration Manager per la gestione di dispositivi mobili locale tramite la configurazione della sottoscrizione di Microsoft Intune, l'impostazione dei certificati, l'installazione dei ruoli di sistema del sito e l'impostazione della registrazione dei dispositivi.  
 
--   [System Center Configuration Manager でのオンプレミス モバイル デバイス管理の対象となるデバイスの登録](../deploy-use/enroll-devices-on-premises-mdm.md)  
+-   [Registrare i dispositivi per la gestione di dispositivi mobili locale in System Center Configuration Manager](../deploy-use/enroll-devices-on-premises-mdm.md)  
 
-     登録を行う方法、ユーザーが自分のデバイスを登録する方法、および登録パッケージを使用してデバイスを一括登録する方法について確認します。  
+     Informazioni sulla modalità di registrazione, su come gli utenti possono registrare i propri dispositivi e sulla registrazione in blocco dei dispositivi con un pacchetto di registrazione.  

@@ -1,6 +1,6 @@
 ---
-title: "サイトのバックアップ | Microsoft Docs"
-description: "System Center Configuration Manager で、障害やデータの損失が発生する前にサイトをバックアップする方法について説明します。"
+title: Eseguire il backup dei siti | Microsoft Docs
+description: Informazioni su come eseguire il backup e ripristino di siti prima di errore o perdita di dati in System Center Configuration Manager.
 ms.custom: na
 ms.date: 6/5/2017
 ms.prod: configuration-manager
@@ -17,191 +17,191 @@ manager: angrobe
 ms.openlocfilehash: 7deb00d4b67eabf3238907b337a9d0367c3d99cc
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="back-up-a-configuration-manager-site"></a>Configuration Manager サイトのバックアップ
+# <a name="back-up-a-configuration-manager-site"></a>Eseguire il backup di un sito di Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-データの損失を防ぐためにバックアップと回復方法を準備します。 Configuration Manager サイトのバックアップと回復方法は、データの損失を最小限に抑え、サイトと階層をより迅速に回復するのに役立ちます。  
+Preparare gli approcci di backup e ripristino per evitare la perdita di dati. Per i siti di Configuration Manager un approccio di backup e ripristino consente di ripristinare siti e gerarchie più rapidamente e con la minore perdita di dati.  
 
-このトピックの各セクションは、サイトをバックアップするときに役立ちます。 サイトを回復する方法については、「[Recovery for Configuration Manager](/sccm/protect/understand/recover-sites)」(Configuration Manager の回復) を参照してください。  
+Le sezioni di questo argomento sono utili per eseguire il backup dei siti. Per ripristinare un sito, vedere [Ripristino per Configuration Manager](/sccm/protect/understand/recover-sites).  
 
-## <a name="considerations-before-creating-a-backup"></a>バックアップを作成する前の検討事項  
--   **SQL Server Always On 可用性グループを使用して、サイト データベースをホストする場合:** [SQL Server Always On の使用準備](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database#changes-for-site-backup)に関するページの説明に従って、バックアップおよび回復計画を変更します。
+## <a name="considerations-before-creating-a-backup"></a>Considerazioni prima della creazione di un backup  
+-   **Se si usa un gruppo di disponibilità SQL Server AlwaysOn per ospitare il database del sito:** modificare i piani di backup e ripristino come descritto in [Prepararsi all'uso di SQL Server Always On](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database#changes-for-site-backup).
 
--   Configuration Manager では、Configuration Manager のバックアップ メンテナンス タスク、または別のプロセスで作成したサイト データベース バックアップからサイト データベースを回復できます。   
+-   Configuration Manager è in grado di ripristinare il database del sito dall'attività di manutenzione di backup di Configuration Manager oppure da un backup del database del sito creato mediante un altro processo.   
 
-    たとえば、Microsoft SQL Server のメンテナンス プランの一環として作成されたバックアップから、サイト データベースを復元することができます。 また、Data Protection Manager を使用してサイト データベースのバックアップを実行して作成されたバックアップを使用することもできます (DPM)。
+    Ad esempio, è possibile ripristinare il database del sito da un backup creato all'interno di un piano di manutenzione di Microsoft SQL Server. È possibile usare un backup creato usando Data Protection Manager per eseguire il backup del database del sito (DPM).
 
-####  <a name="using-data-protection-manager-to-back-up-your-site-database"></a>Data Protection Manager を使用したサイト データベースのバックアップ
-System Center 2012 Data Protection Manager (DPM) を使用してサイト データベースをバックアップできます。
+####  <a name="using-data-protection-manager-to-back-up-your-site-database"></a>Utilizzo di Data Protection Manager per eseguire il backup del database del sito
+È possibile usare System Center 2012 Data Protection Manager (DPM) per eseguire il backup del database del sito.
 
-DPM でサイト データベース コンピューターの新しい保護グループを作成する必要があります。 新しい保護グループの作成ウィザードの [ **グループ メンバーの選択** ] ページで、データ ソース一覧から SMS ライター サービスを選択してから、該当するメンバーとしてサイト データベースを選択します。 DPM を使用したサイト データベースのバックアップの詳細については、TechNet の「 [Data Protection Manager](http://go.microsoft.com/fwlink/?LinkId=272772) 」ドキュメント ライブラリを参照してください。  
+È necessario creare un nuovo gruppo di protezione in DPM per il computer del database del sito. Nella pagina **Seleziona membri del gruppo** della procedura guidata Crea nuovo gruppo protezione dati, selezionare il servizio SMS Writer dall'elenco di origine dei dati, quindi selezionare il database del sito come membro appropriato. Per altre informazioni sull'utilizzo di Data Protection Manager per il backup del database del sito, vedere [Data Protection Manager Documentation Library (Libreria di documentazione di Data Protection Manager)](http://go.microsoft.com/fwlink/?LinkId=272772) in TechNet.  
 
 > [!IMPORTANT]  
->  Configuration Manager では、名前付きインスタンスを使用する SQL Server クラスターの DPM バックアップはサポートしていませんが、SQL Server の既定インスタンスを使用する SQL Server クラスターの DPM バックアップはサポートしています。  
+>  Configuration Manager non supporta il backup DPM per un cluster SQL Server che usa un'istanza denominata ma supporta il backup DPM in un cluster SQL Server che usa l'istanza predefinita di SQL Server.  
 
- サイト データベースを復元したら、セットアップの手順に従ってサイトを回復します。 Data Protection Manager で回復したサイト データベースを使用するには、**[手動で回復したサイト データベースを使用する]** 回復オプションを選択します。  
+ Dopo il ripristino del database del sito, seguire i passaggi della procedura di installazione per ripristinare il sito. Selezionare l'opzione di ripristino **Usa un database del sito ripristinato manualmente** per usare il database del sito ripristinato mediante Data Protection Manager.  
 
-## <a name="backup-maintenance-task"></a>バックアップ メンテナンス タスク
-Configuration Manager サイトのバックアップは、定義済みのサイト サーバーのバックアップ メンテナンス タスクをスケジュール設定することで自動化できます。 次のタスクをスケジュールできます。
+## <a name="backup-maintenance-task"></a>Attività di manutenzione di backup
+È possibile automatizzare il backup per i siti di Configuration Manager mediante la programmazione dell'attività di manutenzione Backup server sito predefinita. Questa attività:
 
--   スケジュールに従って実行する
--   サイト データベースのバックアップを作成する
--   特定のレジストリ キーのバックアップを作成する
--   特定のフォルダーとファイルのバックアップを作成する
--   [CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder) フォルダーのバックアップを作成する   
+-   Viene eseguita in base a una pianificazione
+-   Esegue il backup del database del sito
+-   Esegue il backup di chiavi del Registro di sistema specifiche
+-   Esegue il backup di cartelle e file specifici
+-   Esegue il backup della cartella [CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder)   
 
-既定のサイト バックアップ タスクを少なくとも 5 日ごとに実行するように計画を立ててください。 これは、Configuration Manager で使用される *SQL Server の変更の追跡の保有期間*が 5 日間であるためです   (「サイトの回復」トピックの「[SQL Server change tracking retention period](/sccm/protect/understand/recover-sites#bkmk_SQLretention)」(SQL Server の変更の追跡の保有期間) を参照してください)。
+Pianificare l'esecuzione dell'attività di backup del sito predefinita almeno ogni cinque giorni. Il motivo è che Configuration Manager usa un *periodo di conservazione del rilevamento delle modifiche di SQL Server* di 5 giorni.  (Vedere [Periodo di memorizzazione del rilevamento modifiche di SQL Server](/sccm/protect/understand/recover-sites#bkmk_SQLretention) nell'argomento Ripristinare i siti.)
 
-バックアップ プロセスを簡略化するには、**AfterBackup.bat** ファイルを作成して、このバックアップ メンテナンス タスクが正常に実行された時点で自動的にバックアップ後処理が実行されるようにします。 通常、AfterBackup.bat ファイルは、バックアップのスナップショットを安全な場所にアーカイブするために使用します。 AfterBackup.bat ファイルは、バックアップ フォルダーにファイルをコピーしたり、その他のバックアップ タスクを開始するときにも使用できます。  
+Per semplificare il processo di backup, è possibile creare un file **AfterBackup.bat** per eseguire automaticamente azioni post-backup dopo la corretta esecuzione dell'attività di manutenzione di backup. Il file AfterBackup.bat viene usato di solito per archiviare lo snapshot di backup in una posizione sicura. È inoltre possibile usare il file AfterBackup.bat per copiare i file nella cartella di backup e avviare attività di backup supplementari.  
 
-中央管理サイトとプライマリ サイトをバックアップすることはできますが、セカンダリ サイトやサイト システム サーバーのバックアップはサポートされていません。
+È possibile eseguire il backup di un sito di amministrazione centrale e di un sito primario, ma per i siti secondari o i server di sistema del sito il backup non è supportato.
 
-Configuration Manager のバックアップ サービスは、バックアップ コントロール ファイル (**&lt;ConfigMgrInstallationFolder\>\Inboxes\Smsbkup.box\Smsbkup.ctl**) で定義されている指示に従って実行されます。 このバックアップ コントロール ファイルを変更して、バックアップ サービス動作を変更することができます。  
+Durante l'esecuzione del servizio di backup di Configuration Manager vengono seguite le istruzioni definite nel file di controllo del backup (**&lt;CartellaInstallazioneConfigMgr\>\Inboxes\Smsbkup.box\Smsbkup.ctl**). È possibile modificare il file di controllo del backup per modificare il comportamento del servizio di backup.  
 
-サイトのバックアップ状態に関する情報は、 **Smsbkup.log** ファイルに書き込まれます。 このファイルは、サイト サーバーのバックアップ メンテナンス タスクのプロパティで指定した、バックアップ先フォルダーに保存されます。  
+Le informazioni sullo stato di backup del sito vengono scritte nel file **Smsbkup.log** . Questo file viene creato nella cartella di destinazione specificata nelle proprietà dell'attività di manutenzione di Backup server sito.  
 
-#### <a name="to-enable-the-site-backup-maintenance-task"></a>サイトのバックアップ メンテナンス タスクを有効にするには  
+#### <a name="to-enable-the-site-backup-maintenance-task"></a>Per attivare l'attività di manutenzione di backup del sito  
 
-1.  Configuration Manager コンソールで、**[管理]** > **[サイトの構成]** > **[サイト]** の順に開きます。  
+1.  Nella console di Configuration Manager aprire **Amministrazione** > **Configurazione del sito** > **Siti**.  
 
-2.  バックアップ メンテナンス タスクを有効にしたいサイトを選択します。  
+2.  Selezionare il sito in cui si desidera attivare l'attività di manutenzione di backup del sito.  
 
-3.  **[ホーム]** タブの **[設定]** グループで、**[サイトのメンテナンス タスク]** を選択します。  
+3.  Nella scheda **Home**, nel gruppo **Impostazioni**, selezionare **Attività di manutenzione sito**.  
 
-4.  **[サイト サーバーのバックアップ]**  >  **[編集]** の順に選択します。  
+4.  Scegliere **Backup server sito**  >  **Modifica**.  
 
-5.  **[このタスクを有効にする]** > **[パスの設定]** の順に選択してバックアップ先を指定します。 次のオプションがあります。  
+5.  Selezionare **Abilita questa attività** > **Imposta percorsi** per specificare la destinazione di backup. Sono disponibili le seguenti opzioni:  
 
     > [!IMPORTANT]  
-    >  バックアップ ファイルの改ざんを防ぐため、ファイルを安全な場所に保存してください。 最も安全なバックアップ パスは、フォルダーに NTFS ファイル システムのアクセス許可を設定できるローカル ドライブです。 Configuration Manager では、バックアップ パスに保存されたバックアップ データは暗号化されません。  
+    >  Per impedire la manomissione dei file di backup, archiviare i file in una posizione sicura. Il percorso di backup più sicuro è un'unità locale, che consente di impostare le autorizzazioni del file system NTFS nella cartella. Configuration Manager non esegue la crittografia dei dati di backup archiviati nel percorso di backup.  
 
-    -   **サイト データおよびデータベース用のサイト サーバーのローカル ドライブ**: サイト サーバーのローカル ディスク ドライブの指定したパスに、サイトとサイト データベースのバックアップ ファイルが保存されるようにします。 バックアップ タスクを実行する前に、ローカル フォルダーを作成する必要があります。 サイト サーバーのローカル システム アカウントが、サイト サーバーのバックアップ先フォルダーへの NTFS **書き込み** 権限を持っている必要があります。 SQL Server を実行しているコンピューターのローカル システム アカウントが、サイト データベースのバックアップ先フォルダーへの NTFS **書き込み** 権限を持っている必要があります。  
+    -   **Unità locale nel server del sito per il database e i dati del sito**: specifica che i file di backup per il sito e il database del sito vengono archiviati nel percorso indicato nel disco rigido locale del server del sito. È necessario creare la cartella locale prima dell'esecuzione dell'attività di backup. L'account di sistema locale nel server del sito deve disporre delle autorizzazioni del file system NTFS di **Scrittura** nella cartella locale per il backup del server del sito. L'account di sistema locale nel computer che esegue SQL Server deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella per il backup database del sito.  
 
-    -   **サイト データおよびデータベース用のネットワーク パス (UNC 名)**: 指定した UNC パスに、サイトとサイト データベースのバックアップ ファイルが保存されるようにします。 バックアップ タスクを実行する前に、共有を作成する必要があります。 SQL Server が別のコンピューターにインストールされている場合は、サイト サーバーのコンピューター アカウントと SQL Server のコンピューター アカウントが、共有ネットワーク フォルダーの NTFS **書き込み** 権限と共有権限を持っている必要があります。  
+    -   **Percorso di rete (nome UNC) per il database e i dati del sito**: specifica che i file di backup per il sito e il database del sito vengono archiviati nel percorso UNC indicato. È necessario creare la condivisione prima dell'esecuzione dell'attività di backup. L'account computer del server del sito e l'account computer di SQL Server, se SQL Server è installato in un altro computer, devono disporre delle autorizzazioni di condivisione e NTFS di **Scrittura** nella cartella di rete condivisa.  
 
-    -   **サイト サーバーおよび SQL Server のローカル ドライブ**: サイト サーバーのバックアップ ファイルが、サイト サーバーのローカル ドライブの指定したパスに保存され、サイト データベースのバックアップ ファイルが、サイト データベース サーバーのローカル ドライブの指定したパスに保存されるようにします。 バックアップ タスクを実行する前に、ローカル フォルダーを作成する必要があります。 サイト サーバーのコンピューター アカウントが、サイト サーバーに作成するフォルダーの NTFS **書き込み** 権限を持っている必要があります。 SQL Server のコンピューター アカウントが、サイト データベース サーバーに作成するフォルダーの NTFS **書き込み** 権限を持っている必要があります。 このオプションは、サイト データベースがサイト サーバーにインストールされていない場合のみ選択できます。  
+    -   **Unità locali nel server del sito e in SQL Server**: specifica che i file di backup per il sito vengono archiviati nel percorso indicato nell'unità locale del server del sito, mentre i file di backup per il database del sito vengono archiviati nel percorso indicato nell'unità locale del server di database del sito. È necessario creare le cartelle locali prima dell'esecuzione dell'attività di backup. L'account computer del server del sito deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella creata nel server del sito. L'account computer di SQL Server deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella creata nel server di database del sito. Questa opzione è disponibile solo quando il database del sito non è installato nel server del sito.  
 
     > [!NOTE]  
-    >   バックアップ先を参照できるのは、UNC パスを指定した場合だけです。
+    >   L'opzione per selezionare la destinazione di backup è disponibile solo quando si specifica il percorso UNC della destinazione di backup.
 
-    > バックアップ先フォルダー名や共有名に Unicode 文字を含めることはできません。  
+    > Il nome della cartella o il nome condivisione usato per la destinazione di backup non supporta l'utilizzo di caratteri Unicode.  
 
-6.  サイトのバックアップ タスクのスケジュールを構成します。 ベスト プラクティスとして、営業時間外に実行することをお勧めします。 階層構造がある場合は、サイトの障害発生に備え、データの保管期間が長くなるように、少なくとも 1 週間に 2 回実行するスケジュールを設定してください。  
+6.  Configurare una pianificazione per l'attività di backup del sito. Come procedura ottimale, è consigliabile valutare una pianificazione di backup in orari non lavorativi. Se si dispone di una gerarchia, valutare una pianificazione da eseguire almeno due volte a settimana per garantire la massima conservazione dei dati in caso di errore del sito.  
 
-    バックアップを構成しているのと同じサイト サーバーで Configuration Manager コンソールを実行する場合は、サイト サーバーのバックアップ メンテナンス タスクのスケジュールでローカル時間が使用されます。 バックアップを構成しているサイトから離れたコンピューターから Configuration Manager コンソールが実行されている場合は、サイト サーバーのバックアップ メンテナンス タスクのスケジュールで UTC が使用されます。  
+    Quando la console di Configuration Manager viene eseguita nello stesso server del sito configurato per il backup, l'attività di manutenzione Backup server sito usa l'ora locale per la pianificazione. Quando la console di Configuration Manager viene eseguita da un computer in remoto rispetto al sito configurato per il backup, l'attività di manutenzione Backup server sito usa l'ora UTC per la pianificazione.  
 
-7.  サイト バックアップ タスクが失敗した場合にアラートを作成するかどうかを選択し、**[OK]** をクリックしてから　**[OK]** をクリックします。 選択した場合は、Configuration Manager がバックアップ エラーに関する重大なアラートを作成したときに、**[監視]** ワークスペースの **[アラート]** ノードで確認できます。  
+7.  Scegliere se creare un avviso in caso di errore dell'attività di backup del sito, fare clic su **OK**, quindi su **OK**. Se l'opzione è selezionata, Configuration Manager crea un avviso critico per l'errore di backup che è possibile esaminare nel nodo **Avvisi** dell'area di lavoro **Monitoraggio**.  
 
- 次に、サイト サーバーのバックアップ メンテナンス タスクが実行されており、バックアップが作成されることを確認します。  
+ Successivamente verificare che l'attività di manutenzione Backup server sito sia in esecuzione, per garantire che i backup vengano creati.  
 
-#### <a name="to-verify-that-the-backup-site-server-maintenance-task-is-running"></a>サイト サーバーのバックアップ メンテナンス タスクが実行されていることを確認するには  
-次のいずれかの操作を行って、サイト サーバーのバックアップ メンテナンス タスクが実行されていることを確認します。  
+#### <a name="to-verify-that-the-backup-site-server-maintenance-task-is-running"></a>Per verificare che l'attività di manutenzione Backup server sito sia stata completata correttamente  
+Accertarsi che l'attività di manutenzione Backup sito sia in esecuzione effettuando una delle verifiche seguenti:  
 
--   タスクで作成したバックアップ先フォルダーにあるファイルのタイムスタンプを確認します。 タイムスタンプが、タスクのスケジュールされた前回の実行日時と同じ日時で更新されていることを確認します。  
+-   Esaminare il timestamp nei file della cartella di destinazione del backup creata dall'attività di manutenzione Backup server sito. Verificare che il timestamp sia stato aggiornato con un orario corrispondente all'orario in cui è stata pianificata l'ultima esecuzione dell'attività.  
 
--   [ **監視** ] ワークスペースの [ **コンポーネントのステータス** ] ノードで、SMS_SITE_BACKUP のステータス メッセージを確認します。 サイトのバックアップが問題なく完了している場合は、ID 5035 のメッセージが表示されているはずです。  
+-   Nel nodo **Stato componente** dell'area di lavoro **Monitoraggio** esaminare i messaggi di stato per SMS_SITE_BACKUP. Al termine del backup del sito verrà visualizzato il messaggio ID 5035, in cui viene indicato che il backup del sito è stato completato senza errori.  
 
--   バックアップが失敗したら警告を生成するようにサイト サーバーのバックアップ メンテナンス タスクが構成されている場合は、[ **監視** ] ワークスペースの [ **アラート** ] ノードでバックアップ エラーを確認できます。  
+-   Se l'attività di manutenzione Backup server sito è configurata per la creazione di un avviso in caso di errore del backup, è possibile controllare il nodo **Avvisi** nell'area di lavoro **Monitoraggio** per verificare la presenza di errori.  
 
--   &lt;*ConfigMgrInstallationFolder*>\Logs にある Smsbkup.log で警告やエラーを確認します。 サイトのバックアップが問題なく完了している場合は、メッセージ ID " `Backup completed` " の " `STATMSG: ID=5035`" というメッセージとタイムスタンプが表示されているはずです。  
+-   In &lt;*CartellaInstallazioneConfigMgr*>\Logs esaminare Smsbkup.log per verificare la presenza di avvisi ed errori. Quando il backup del sito viene completato correttamente, viene visualizzato `Backup completed` con un timestamp e un ID messaggio `STATMSG: ID=5035`.  
 
     > [!TIP]  
-    >  サイト サーバーのバックアップ メンテナンス タスクが正常に実行されなかった場合は、SMS_SITE_BACKUP サービスを停止してから、再開してみてください。  
+    >  In caso di errore dell'attività di manutenzione di backup, è possibile riavviare l'attività di backup interrompendo e riavviando il servizio SMS_SITE_BACKUP.  
 
-## <a name="archive-the-backup-snapshot"></a>バックアップ スナップショットのアーカイブ  
-サイト サーバーのバックアップ メンテナンス タスクを初めて実行するときに、障害が発生したサイト サーバーの復元に使用できるバックアップ スナップショットが作成されます。 その後、スケジュールに従って、バックアップ タスクが実行されると、新しいバックアップ スナップショットが作成され、前のスナップショットが上書きされます。 つまり、サイトのバックアップ スナップショットは 1 つだけになります。それより前のスナップショットに戻すことはできません。  
+## <a name="archive-the-backup-snapshot"></a>Archiviare lo snapshot di backup  
+Durante la prima esecuzione dell'attività di manutenzione Backup server sito, viene creato lo snapshot di backup, che è possibile usare per il ripristino del server del sito in caso di errore. Quando l'attività di backup viene eseguita nuovamente durante i cicli successivi, viene creato un nuovo snapshot di backup che sovrascrive lo snapshot precedente. Di conseguenza, il sito dispone di un singolo snapshot di backup e non è possibile recuperare uno snapshot di backup precedente.  
 
-しかし、次のような状況を考慮して、バックアップ スナップショットを複数アーカイブしておくことをお勧めします。  
+Come procedura consigliata, mantenere più archivi dello snapshot di backup per i seguenti motivi:  
 
--   バックアップ メディアに障害が発生したり、紛失したりすることはよくあります。また、部分的にしかバックアップが格納されていない場合もあります。 障害が発生したスタンドアロンのプライマリ サイトは、バックアップがまったくない状態で復元するよりも、古いバックアップから復元する方が手間がかかりません。 階層にあるサイトの場合は、SQL Server の変更の追跡の保有期間内のバックアップでなければなりません。それ以外は必要ありません。  
+-   I supporti di backup possono presentare problemi, venire smarriti o contenere solo un backup parziale. Il ripristino di un sito primario autonomo danneggiato da un vecchio backup è una soluzione migliore rispetto a un ripristino senza backup. Per un server sito in una gerarchia, il backup deve essere eseguito nel periodo di memorizzazione del rilevamento delle modifiche SQL Server, altrimenti il backup non è richiesto.  
 
--   サイト内の破損が検出されないまま、バックアップ サイクルが何回か繰り返される可能性があります。 そのため、サイトが破損する前のバックアップ スナップショットを使用する必要がある場合があります。 これは、スタンドアロンのプライマリ サイトと、SQL Server の変更の追跡の保有期間内にバックアップしている階層内のサイトに当てはまります。  
+-   È possibile che un danneggiamento del sito non venga rilevato per diversi cicli di backup. Potrebbe essere necessario usare lo snapshot di un backup precedente il danneggiamento del sito. Quanto detto si applica a un sito primario autonomo e ai siti in una gerarchia in cui il backup rientri nel periodo di memorizzazione del rilevamento delle modifiche SQL Server.  
 
--   サイトのバックアップ スナップショットがまったくない状態になる可能性があります。 たとえば、サイト サーバーのバックアップ タスクは現在のデータのバックアップを開始する前に以前のバックアップ スナップショットを削除するので、タスクが正常に実行されなかった場合は、有効なバックアップ スナップショットがなくなります。  
+-   Il sito potrebbe non avere alcuno snapshot di backup se, ad esempio, l'attività di manutenzione Backup server sito non fosse completata correttamente. Dal momento che l'attività di backup determina la rimozione dello snapshot di backup precedente prima di avviare il backup dei dati correnti, non ci sarà alcuno snapshot di backup valido.  
 
-## <a name="using-the-afterbackupbat-file"></a>AfterBackup.bat ファイルの使用  
-サイト サーバーのバックアップ タスクでサイトが正常にバックアップされると、AfterBackup.bat というファイルが自動的に実行されます。 この AfterBackup.bat ファイルは、手動で作成して &lt;*ConfigMgrInstallationFolder*>\Inboxes\Smsbkup に保存しておく必要があります。 AfterBackup.bat ファイルが存在し、正しいフォルダーに保存されている場合、バックアップ タスクの完了後に、このファイルが自動的に実行されます。
+## <a name="using-the-afterbackupbat-file"></a>Uso del file AfterBackup.bat  
+Dopo aver eseguito correttamente il backup up del sito, l'attività Backup server sito prova a eseguire automaticamente un file denominato AfterBackup.bat. È necessario creare manualmente il file AfterBackup.bat in &lt;*CartellaInstallazioneConfigMgr*>\Inboxes\Smsbkup. Se un file AfterBackup.bat è già presente ed è memorizzato nella cartella corretta, il file viene eseguito automaticamente al termine dell'attività di backup.
 
-AfterBackup.bat を使って、バックアップが完了するたびにバックアップ スナップショットがアーカイブされるようにしたり、サイト サーバーのバックアップ メンテナンス タスクに含まれていない後処理が自動的に行われるようにすることができます。 前者の場合は、AfterBackup.bat でアーカイブ処理とバックアップ処理を統合することにより、常に新しいバックアップ スナップショットがアーカイブされるようにします。
+Il file AfterBackup.bat consente di archiviare lo snapshot di backup al termine di ogni operazione di backup e di eseguire automaticamente altre attività post-backup che non rientrano nell'attività di manutenzione Backup server sito. Il file AfterBackup.bat integra l'archivio e le operazioni di backup, assicurando che ogni nuovo snapshot di backup sia archiviato.
 
-AfterBackup.bat ファイルが存在しない場合は、バックアップ タスクでその実行がスキップされます。バックアップ処理自体には、何も影響ありません。 サイト バックアップ タスクによって AfterBackup.bat ファイルが正常に実行されたことを確認するには、[ **監視** ] ワークスペースの [ **コンポーネントのステータス** ] ノードを参照して、SMS_SITE_BACKUP のステータス メッセージを確認します。 AfterBackup.bat コマンド ファイルの実行が正常に開始された場合は、ID 5040 の付いたメッセージが表示されているはずです。  
+Quando il file AfterBackup.bat non è presente, questo passaggio viene ignorato dall'attività di backup senza effetto sull'operazione di backup. Per verificare che l'attività di backup del sito abbia eseguito correttamente il file AfterBackup.bat, vedere il nodo **Stato componente** nell'area di lavoro **Monitoraggio** e rivedere i messaggi di stato per SMS_SITE_BACKUP. Quando l'attività avvia correttamente il file di comando AfterBackup.bat, viene visualizzato il messaggio ID 5040.  
 
 > [!TIP]  
->  サイト サーバーのバックアップ ファイルをアーカイブする AfterBackup.bat ファイルを作成するには、バッチ ファイルで、[Robocopy](http://go.microsoft.com/fwlink/p/?LinkId=228408) などのコピー コマンド ツールを使用する必要があります。 たとえば、AfterBackup.bat ファイルを作成して、1 行目に次のように記述します: `Robocopy E:\ConfigMgr_Backup \\ServerName\ShareName\ConfigMgr_Backup /MIR`  
+>  Per creare il file AfterBackup.bat per archiviare i file di backup del server del sito, è necessario usare uno strumento di comando copia nel file batch come [Robocopy](http://go.microsoft.com/fwlink/p/?LinkId=228408). Ad esempio, è possibile creare il file AfterBackup.bat e aggiungere nella prima riga un stringa simile a quella indicata di seguito: `Robocopy E:\ConfigMgr_Backup \\ServerName\ShareName\ConfigMgr_Backup /MIR`  
 
- AfterBackup.bat を使用する本来の目的は、バックアップ スナップショットをアーカイブすることですが、バックアップするたびに何らかの後処理を行うための AfterBackup.bat を作成することもできます。  
+ Sebbene il file AfterBackup.bat sia pensato principalmente per l'archiviazione di snapshot di backup, è possibile creare un file AfterBackup.bat che consenta di eseguire attività aggiuntive al termine di ogni operazione di backup.  
 
-##  <a name="supplemental-backup-tasks"></a>その他のバックアップ タスク  
-サイト サーバーのバックアップ メンテナンス タスクによって、サイト サーバー ファイルとサイト データベースのバックアップ スナップショットが作成されますが、この他にも、バックアップすることを検討した方がよい項目があります。 以下のセクションは、Configuration Manager のバックアップ戦略を立てる場合に役立ちます。  
+##  <a name="supplemental-backup-tasks"></a>Attività di backup supplementari  
+L'attività di manutenzione Backup server sito fornisce uno snapshot di backup per i file del server del sito e il database del sito. Tuttavia, quando si definisce una strategia di backup, occorre considerare anche altri elementi di cui non viene eseguito il backup. Per completare la strategia di backup di Configuration Manager usare le seguenti sezioni.  
 
-### <a name="back-up-custom-reporting-services-reports"></a>Reporting Services のカスタム レポートのバックアップ  
-Reporting Services の定義済みのレポートを変更した場合や、カスタム レポートを作成した場合は、レポート サーバー データベース ファイルのバックアップを取ることが重要です。 レポート サーバーのバックアップには、レポートとモデルのソース ファイル、暗号化キー、カスタム アセンブリや拡張機能、構成ファイル、カスタム レポートで使用する SQL Server カスタム ビュー、カスタム ストアード プロシージャなどが含まれていなければなりません。  
+### <a name="back-up-custom-reporting-services-reports"></a>Eseguire il backup dei report di Reporting Services personalizzati  
+Dopo aver modificato dei report di Reporting Services predefiniti o aver creato dei report di Reporting Services personalizzati, la creazione di un backup per i file del database del server di report rappresenta una priorità nella strategia di backup. Il backup del server di report deve includere un backup dei file di origine per report e modelli, chiavi di crittografia, estensioni o assembly personalizzati, file di configurazione, visualizzazioni SQL Server personalizzate usate nei report personalizzati, stored procedure personalizzate e così via.  
 
 > [!IMPORTANT]  
->  Configuration Manager を新しいバージョンにアップグレードすると、定義済みのレポートが新しいレポートで上書きされる可能性があります。 定義済みレポートを変更した場合は、レポートのバックアップを作成した後、Reporting Services で復元してください。  
+>  Quando Configuration Manager viene aggiornato a una versione più recente, i report predefiniti potrebbero essere sovrascritti da nuovi report. Se si modifica un report predefinito, eseguirne il backup e quindi ripristinare il report in Reporting Services.  
 
- Reporting Services のカスタム レポートのバックアップの詳細については、SQL Server 2014 Books Online の「 [Reporting Services インストールのバックアップおよび復元操作](https://technet.microsoft.com/library/ms155814\(v=sql.120\).aspx) 」を参照してください。  
+ Per altre informazioni sul backup dei report personalizzati in Reporting Services, vedere [Operazioni di backup e ripristino per Reporting Services](https://technet.microsoft.com/library/ms155814\(v=sql.120\).aspx) nella documentazione online di SQL Server 2014.  
 
-### <a name="back-up-content-files"></a>コンテンツ ファイルのバックアップ  
-Configuration Manager のコンテンツ ライブラリは、ソフトウェア更新プログラム、アプリケーション、オペレーティング システムの展開などで使用するコンテンツ ファイルがすべて保管されている場所です。 コンテンツ ライブラリは、サイト サーバーと各配布ポイントにあります。 サイト サーバーのバックアップ メンテナンス タスクでは、コンテンツ ライブラリのファイルやパッケージ ソース ファイルはバックアップされません。 サイト サーバーで障害が発生したときに、コンテンツ ライブラリのファイルに関する情報は、サイト データベースに復元されますが、コンテンツ ライブラリのファイルとパッケージ ソース ファイルはサイト サーバーに手動で復元する必要があります。  
+### <a name="back-up-content-files"></a>Eseguire il backup di file di contenuto  
+La raccolta contenuto in Configuration Manager è il luogo in cui vengono archiviati tutti i file di contenuto per aggiornamenti software, applicazioni, distribuzione di sistemi operativi e così via. La raccolta contenuto si trova sul server del sito e in corrispondenza di ogni punto di distribuzione. L'attività di manutenzione Backup server sito non include una copia di backup per la raccolta contenuto o i file di origine del pacchetto. Quando si verifica un errore sul server del sito, le informazioni sui file della raccolta contenuto vengono ripristinate nel database del sito, ma è necessario ripristinare la raccolta contenuto e i file di origine del pacchetto sul server del sito.  
 
--   **コンテンツ ライブラリ**: コンテンツ ライブラリを復元してからでないと、配布ポイントにコンテンツを再配布することはできません。 コンテンツの再配布を開始すると、Configuration Manager によって、サイト サーバーにあるコンテンツ ライブラリから配布ポイントにファイルがコピーされます。 サイト サーバーのコンテンツ ライブラリは SCCMContentLib フォルダーにあります。このフォルダーは、通常、サイトがインストールされた時点で空きディスク領域が最も大きかったドライブにあります。  
+-   **Raccolta contenuto**: la raccolta contenuto deve essere ripristinata prima di ridistribuire il contenuto nei punti di distribuzione. Quando si avvia la ridistribuzione del contenuto, Configuration Manager copia i file dalla raccolta contenuto sul server del sito nei punti di distribuzione. La raccolta contenuto per il server del sito si trova nella cartella SCCMContentLib, generalmente posizionata nell'unità con maggiore spazio su disco disponibile al momento dell'installazione del sito.  
 
--   **パッケージのソース ファイル**: パッケージのソース ファイルを復元してからでないと、配布ポイントのコンテンツを更新することはできません。 コンテンツの更新を開始すると、Configuration Manager によって、パッケージ ソースから新しいファイルや変更されたファイルがコンテンツ ライブラリにコピーされ、次に、関連する配布ポイントにコピーされます。 すべてのパッケージとアプリケーションのパッケージ ソースの場所を見つけるには、SQL Server で `SELECT * FROM v_Package`というクエリを実行します。 パッケージ ID の先頭の 3 文字を見ると、パッケージ ソースのサイトがわかります。 たとえば、CEN00001 というパッケージ ID では、CEN がソース サイトのサイト コードです。 パッケージのソース ファイルを復元するときは、障害発生前と同じ場所に復元する必要があります。  
+-   **File di origine del pacchetto**: i file di origine del pacchetto devono essere ripristinati prima di aggiornare il contenuto nei punti di distribuzione. Quando si avvia un aggiornamento del contenuto, Configuration Manager copia i file nuovi o modificati dall'origine del pacchetto alla raccolta contenuto, che a sua volta li copia nei punti di distribuzione associati. È possibile eseguire la seguente query in SQL Server per trovare il percorso di origine del pacchetto per tutti i pacchetti e le applicazioni: `SELECT * FROM v_Package`. È possibile identificare il sito di origine del pacchetto esaminando i primi tre caratteri dell'ID di pacchetto. Ad esempio, se l'ID del pacchetto è CEN00001, il codice del sito per il sito di origine è CEN. I file di origine del pacchetto devono essere ripristinati nella stessa posizione in cui si trovavano prima dell'errore.  
 
- サイト サーバーのファイル システムのバックアップに、コンテンツ ライブラリとパッケージ ソースの両方の場所を含めていることを確認してください。  
+ Verificare di aver incluso sia la raccolta contenuto sia i percorsi di origine del pacchetto nel backup del file system per il server del sito.  
 
-### <a name="back-up-custom-software-updates"></a>カスタム ソフトウェア更新プログラムのバックアップ  
- System Center Updates Publisher 2011 は、カスタム ソフトウェア更新プログラムの Windows Server Update Services (WSUS) への発行、ソフトウェア更新プログラムの Configuration Manager との同期、ソフトウェア更新プログラムのコンプライアンスの評価、およびカスタム ソフトウェア更新プログラムのクライアントへの展開を行えるスタンドアロン ツールです。 Updates Publisher では、ソフトウェア更新プログラムのリポジトリとしてローカル データベースを使用します。 Updates Publisher を使ってカスタム ソフトウェア更新プログラムを管理している場合は、Updates Publisher データベースをバックアップに含める必要があるかどうかを検討してください。 Updates Publisher の詳細については、System Center TechCenter ライブラリの「 [System Center Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkId=228726) 」を参照してください。  
+### <a name="back-up-custom-software-updates"></a>Eseguire il backup di aggiornamenti software personalizzati  
+ System Center Updates Publisher 2011 è uno strumento autonomo che consente di pubblicare aggiornamenti software personalizzati in Windows Server Update Services (WSUS), sincronizzare gli aggiornamenti software di Configuration Manager, valutare la conformità degli aggiornamenti software e distribuire gli aggiornamenti software personalizzati ai client. Updates Publisher usa un database locale per il relativo repository degli aggiornamenti software. Quando si usa Updates Publisher per gestire gli aggiornamenti software personalizzati, stabilire se è necessario includere il database di Updates Publisher nel piano di backup. Per altre informazioni su Updates Publisher, vedere [System Center Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkId=228726) nella Libreria TechCenter di System Center.  
 
- 次の手順に従って、Updates Publisher データベースをバックアップします。  
+ Per eseguire il backup del database Updates Publisher usare la procedura seguente.  
 
-#### <a name="to-back-up-the-updates-publisher-2011-database"></a>Updates Publisher 2011 データベースをバックアップするには  
+#### <a name="to-back-up-the-updates-publisher-2011-database"></a>Per eseguire il backup del database di Updates Publisher 2011  
 
-1.  Updates Publisher を実行しているコンピューターで、%*USERPROFILE*%\AppData\Local\Microsoft\System Center Updates Publisher 2011\5.00.1727.0000\\ の Updates Publisher データベース ファイル (Scupdb.sdf) を見つけます。 Updates Publisher を実行するユーザーごとに異なるデータベース ファイルがあります。  
+1.  Sul computer su cui è in esecuzione Updates Publisher individuare il file del database Updates Publisher (Scupdb.sdf) in %*PROFILOUTENTE*%\AppData\Local\Microsoft\System Center Updates Publisher 2011\5.00.1727.0000\\. Esiste un file di database diverso per ogni utente che esegue Updates Publisher.  
 
-2.  データベース ファイルをバックアップ先にコピーします。 たとえば、バックアップ先が E:\ConfigMgr_Backup の場合は、Updates Publisher データベース ファイルを E:\ConfigMgr_Backup\SCUP2011 にコピーします。  
+2.  Copiare il file di database nella destinazione di backup. Ad esempio, se la destinazione di backup è E:\ConfigMgr_Backup, è possibile copiare il file di database di Updates Publisher in E:\ConfigMgr_Backup\SCUP2011.  
 
     > [!TIP]  
-    >  コンピューターにデータベース ファイルが複数ある場合は、データベース ファイルに関連付けられているユーザー プロファイルを示すサブフォルダーにファイルを保存することを検討してください。 たとえば、E:\ConfigMgr_Backup\SCUP2011\User1 というサブフォルダーと E:\ConfigMgr_Backup\SCUP2011\User2 というサブフォルダーに、それぞれ該当するデータベース ファイルを保存します。  
+    >  In presenza di più file di database su un computer, archiviare eventualmente il file in una sottocartella che indichi il profilo associato con il file di database. Ad esempio, si potrebbe avere un file di database in E:\ConfigMgr_Backup\SCUP2011\User1 e un altro file di database in E:\ConfigMgr_Backup\SCUP2011\User2.  
 
-## <a name="user-state-migration-data"></a>ユーザー状態の移行データ  
-オペレーティング システムを展開するときに、現在のオペレーティング システムのユーザー状態を維持したい場合は、Configuration Manager のタスク シーケンスを使用し、ユーザー状態データをキャプチャして復元できます。 ユーザー状態データを格納しているフォルダーは、状態移行ポイントのプロパティに一覧されます。 このユーザー状態の移行データは、サイト サーバーのバックアップ メンテナンス タスクでバックアップされません。 そのため、ユーザー状態の移行データを格納するように指定したフォルダーを手動でバックアップする必要があります。   
+## <a name="user-state-migration-data"></a>Dati di migrazione sullo stato utente  
+È possibile usare le sequenze attività di Configuration Manager per acquisire e ripristinare i dati sullo stato utente in scenari di distribuzione del sistema operativo in cui si desidera mantenere lo stato utente del sistema operativo corrente. Le cartelle che contengono i dati sullo stato dell'utente sono elencate nelle proprietà del punto di migrazione dello stato. Non è previsto il backup di questi dati di migrazione sullo stato utente nell'ambito dell'attività di manutenzione Backup server sito. Come parte del piano di backup, è necessario eseguire manualmente il backup delle cartelle in cui si è specificato di archiviare i dati di migrazione sullo stato dell'utente.   
 
-### <a name="to-determine-the-folders-used-to-store-user-state-migration-data"></a>ユーザー状態の移行データを格納しているフォルダーを確認するには  
+### <a name="to-determine-the-folders-used-to-store-user-state-migration-data"></a>Per determinare le cartelle usate per l'archiviazione dei dati di migrazione sullo stato dell'utente  
 
-1.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
 
-2.  **[管理]** ワークスペースで、**[サイトの構成]** を展開して **[サーバーとサイト システムの役割]** を選択します。  
+2.  Nell'area di lavoro **Amministrazione** espandere **Configurazione del sito** e scegliere **Server e ruoli del sistema del sito**.  
 
-3.  状態移行の役割をホストするサイト システムを選択し、**[サイト システムの役割]** で **[状態移行ポイント]** を選択します。  
-
-
-4.  **[サイトの役割** ] タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
-5.  ユーザー状態移行データが保存されているフォルダーが [ **全般** ] タブの [ **フォルダーの詳細** ] セクションに一覧表示されます。  
+3.  Selezionare il sistema del sito che ospita il ruolo migrazione stato, quindi selezionare **Punto di migrazione stato** in **Ruoli sistema del sito**.  
 
 
+4.  Nella scheda **Ruolo del sito** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
+5.  Nella sezione **Dettagli cartella** della scheda **Generale** vengono elencate le cartelle in cui sono archiviati i dati di migrazione sullo stato dell'utente.  
 
-## <a name="about-the-sms-writer-service"></a>SMS ライター サービスの概要  
-SMS ライターは、バックアップ中にボリューム シャドー コピー サービス (VSS) と相互に動作するサービスです。 Configuration Manager サイトのバックアップを正常に完了するには、SMS ライター サービスが実行されていなければなりません。  
 
-### <a name="purpose"></a>目的  
-SMS ライターは、VSS に登録して、そのインターフェイスとイベントをバインドします。 VSS がイベントをブロードキャストするか、SMS ライターに特定の通知を送信すると、SMS ライターは、その通知に応答して適切な措置を取ります。 SMS ライターは、&lt;*ConfigMgr Installation Path*>\inboxes\smsbkup.box にあるバックアップ コントロール ファイル (smsbkup.ctl) を読み取って、バックアップするファイルとデータを確認します。 次に、この情報、および、SMS レジストリ キーとサブキーの特定のデータに基づいて、さまざまなコンポーネントからなるメタデータを構築します。 SMS ライターは、このデータが要求されたときに VSS に送信します。 次に、VSS が、要求元のアプリケーション、つまり、Configuration Manager バックアップ マネージャーにこのメタデータを送信します。 バックアップ マネージャーは、バックアップするデータを選択し、そのデータを VSS 経由で SMS ライターに送信します。 SMS ライターは、バックアップを開始するのに必要な処理を行います。 その後、VSS がスナップショットを撮る準備ができたら、イベントを送信します。SMS ライターは、スナップショットが作成されている間は、Configuration Manager のすべてのサービスを停止して、Configuration Manager の動作を止めます。 スナップショットの作成が終わったら、SMS ライターが、停止していたサービスを再開します。  
 
-SMS ライター サービスは自動的にインストールされます。 VSS アプリケーションがバックアップまたは復元を要求したときに、このサービスが実行されていなければなりません。  
+## <a name="about-the-sms-writer-service"></a>Informazioni sul servizio SMS Writer  
+SMS Writer è un servizio che interagisce con Servizio Copia Shadow del volume (VSS) durante il processo di backup. Per la corretta esecuzione del backup del sito di Configuration Manager è necessario che SMS Writer sia in esecuzione.  
 
-### <a name="writer-id"></a>ライター ID  
-SMS ライターの ID は、03ba67dd-dc6d-4729-a038-251f7018463b です。  
+### <a name="purpose"></a>Scopo  
+SMS Writer esegue la registrazione al servizio VSS e associa le interfacce e gli eventi. Quando VSS trasmette gli eventi o invia determinate notifiche a SMS Writer, questo risponde alla notifica ed esegue l'azione appropriata. SMS Writer legge il file di controllo del backup (smsbkup.ctl), disponibile in &lt;*Percorso installazione ConfigMgr*>\inboxes\smsbkup.box, e determina i file e i dati di cui eseguire il backup. SMS Writer crea i metadati, composti da vari componenti, in base a tali informazioni e a dati specifici provenienti dalla chiave e dalle sottochiavi di registro SMS. Quando richiesto invia i metadati a VSS. VSS invia quindi i metadati all'applicazione richiedente: Gestione backup di Configuration Manager. Gestione backup seleziona i dati di cui eseguire il backup e li invia a SMS Writer tramite VSS. SMS Writer esegue i passaggi appropriati per la preparazione del backup. Quando VSS è pronto per lo snapshot, invia un evento. A quel punto SMS Writer interrompe tutti i servizi di Configuration Manager e garantisce che le attività di Configuration Manager vengano bloccate durante la creazione dello snapshot. In seguito al completamento dello snapshot, SMS Writer riavvia i servizi e le attività.  
 
-### <a name="permissions"></a>アクセス許可  
-SMS ライターは、ローカル システム アカウントで実行する必要があります。  
+Il servizio SMS Writer viene installato automaticamente. Deve essere eseguito quando l'applicazione VSS richiede un backup o un ripristino.  
 
-### <a name="volume-shadow-copy-service"></a>ボリューム シャドウ コピー サービス  
-VSS は、システムのアプリケーションがボリュームに書き込んでいる間にボリュームをバックアップできるようにするフレームワークを実装する COM API のセットです。 VSS は、ディスクのデータを更新するユーザー アプリケーション (SMS ライター サービス) と、アプリケーションのバックアップを取るユーザー アプリケーション (Backup Manager サービス) を連携させるインターフェイスとして機能します。 詳細については、Windows Server TechCenter の「[Volume Shadow Copy Service](http://go.microsoft.com/fwlink/p/?LinkId=241968)」(ボリューム シャドウ コピー サービス) を参照してください。  
+### <a name="writer-id"></a>ID writer  
+L'ID writer per SMS Writer è: 03ba67dd-dc6d-4729-a038-251f7018463b.  
 
-## <a name="next-steps"></a>次のステップ
-バックアップを作成したら、そのバックアップを使用して[サイトの回復](/sccm/protect/understand/recover-sites)を練習しまししょう。 回復プロセスが必要な状況になる前に慣れておくことができます。また、目的に合わせてバックアップが成功したことを確認することもできます。  
+### <a name="permissions"></a>Autorizzazioni  
+Il servizio SMS Writer deve essere eseguito all'interno dell'account di sistema locale.  
+
+### <a name="volume-shadow-copy-service"></a>Servizio Copia Shadow del volume  
+VSS è un set di API COM che consente di implementare un framework per l'esecuzione dei backup del volume durante la scrittura delle applicazioni di un sistema nei volumi. VSS offre un'interfaccia coerente che consente il coordinamento tra le applicazioni utente per l'aggiornamento dei dati sul disco (il servizio SMS Writer) e quelle che eseguono il backup delle applicazioni (il servizio Gestione backup). Per altre informazioni, vedere l'argomento [Volume Shadow Copy Service (Servizio Copia Shadow del volume)](http://go.microsoft.com/fwlink/p/?LinkId=241968) in TechCenter di Windows Server.  
+
+## <a name="next-steps"></a>Passaggi successivi
+Dopo aver creato un backup, esercitarsi a [ripristinare il sito](/sccm/protect/understand/recover-sites) con tale backup. Questo permette di acquisire familiarità con il processo di ripristino prima di fare affidamento su di esso e può consentire di verificare che il backup è adatto allo scopo.  

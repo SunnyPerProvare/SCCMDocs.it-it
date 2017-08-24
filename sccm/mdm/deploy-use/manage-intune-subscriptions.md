@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager に関連付けられた Intune サブスクリプションの管理 | Microsoft Docs"
-description: "System Center Configuration Manager に関連付けられた Intune サブスクリプションを管理します。"
+title: Gestire una sottoscrizione di Intune associata a System Center Configuration Manager | Microsoft Docs
+description: Gestire una sottoscrizione di Intune associata a System Center Configuration Manager.
 ms.custom: na
 ms.date: 06/02/2017
 ms.prod: configuration-manager
@@ -18,39 +18,39 @@ manager: angrobe
 ms.openlocfilehash: 2cb4d724c8b78657458a30c0bb020f67c6b62795
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-an-intune-subscription-associated-with-system-center-configuration-manager"></a>System Center Configuration Manager に関連付けられた Intune サブスクリプションの管理
+# <a name="manage-an-intune-subscription-associated-with-system-center-configuration-manager"></a>Gestire una sottoscrizione di Intune associata a System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Microsoft Intune (試用版サブスクリプションまたは有料サブスクリプション) を Configuration Manager に追加してから、別の Intune サブスクリプションに切り替える必要がある場合は、**Microsoft Intune サブスクリプション**と**サービス接続ポイント**の両方を Configuration Manager コンソールから削除する必要があります。これにより、新しいサブスクリプションを追加することができるようになります。
+Se si aggiunge una sottoscrizione di valutazione o a pagamento di Microsoft Intune in Configuration Manager e successivamente è necessario passare a una sottoscrizione di Intune diversa, eliminare sia la **sottoscrizione a Microsoft Intune** che il **punto di connessione del servizio** dalla console di Configuration Manager prima di aggiungere una nuova sottoscrizione.
 
 > [!NOTE]
-> ハイブリッド モバイル デバイス管理では 1 回につき 1 つだけ Intune サブスクリプションを構成できます。
+> È possibile configurare una sola sottoscrizione di Intune alla volta nella gestione dei dispositivi mobili ibrida.
 
-## <a name="how-to-delete-an-intune-subscription-from-configuration-manager"></a>Configuration Manager から Intune サブスクリプションを削除する方法
+## <a name="how-to-delete-an-intune-subscription-from-configuration-manager"></a>Come eliminare una sottoscrizione di Intune da Configuration Manager
 
 > [!IMPORTANT]
->  サブスクリプションを削除すると、Intune サブスクリプションによって管理されるデバイスに構成された、ユーザー登録、ポリシー、アプリの展開などのすべてのコンテンツが削除されます。
+>  Tutto il contenuto, tra cui le registrazioni utente, i criteri e le distribuzioni di app configurate per i dispositivi gestiti dalla sottoscrizione a Intune, viene rimosso quando si elimina la sottoscrizione.
 
-1.  Configuration Manager コンソールで、**[管理]** > **[概要]** > **[Cloud Services]** > **[Microsoft Intune サブスクリプション]** の順に移動します。
+1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Panoramica** > **Servizi cloud** > **Sottoscrizioni a Microsoft Intune**.
 
-2.  表示された **[Microsoft Intune サブスクリプション]** を右クリックしてから、**[削除]** をクリックします。
+2.  Fare clic con il pulsante destro del mouse su **Sottoscrizione a Microsoft Intune** e fare clic su **Elimina**.
 
-3.   ウィザードで、**[Configuration Manager から Microsoft Intune サブスクリプションを削除]**、**[次へ]**、**[次へ]** の順にクリックして、サブスクリプションを削除します。
+3.   Nella procedura guidata fare clic su **Remove Microsoft Intune Subscription from Configuration Manager** (Rimuovi sottoscrizione a Microsoft Intune da Configuration Manager), selezionare **Avanti** e fare clic ancora su **Avanti** per rimuovere la sottoscrizione.
 
 
-## <a name="how-to-remove-the-service-connection-point-role"></a>サービス接続ポイントの役割を削除する方法
+## <a name="how-to-remove-the-service-connection-point-role"></a>Come rimuovere il ruolo del punto di connessione del servizio
 
-1.  **[管理]** > **[概要]** > **[サイトの構成]** > **[サーバーとサイト システムの役割]** の順に移動します。
+1.  Passare ad **Amministrazione** > **Panoramica** > **Configurazione del sito** > **Server e ruoli del sistema del sito**.
 
-2.  **[サービス接続ポイント]** の役割をホストするサーバーを選びます。
+2.  Selezionare il server che ospita il ruolo **Punto di connessione del servizio**.
 
-3.  **[サイト システムの役割]** 一覧で、**[サービス接続ポイント]** を選んでから、リボンに表示されている **[役割の削除]** をクリックします。 ロールを削除することを確認します。 サービス接続ポイントが削除されます。
+3.  Nell'elenco **Ruoli sistema del sito** selezionare **Punto di connessione del servizio** e quindi fare clic su **Rimuovi ruolo** nella barra multifunzione. Confermare la rimozione del ruolo. Il punto di connessione del servizio viene eliminato.
 
-これで、新しいサービス接続ポイントを作成したり、Configuration Manager に新規 Intune サブスクリプションを追加したり、Configuration Manager を MDM 機関として設定したりできるようになります。
+È ora possibile creare un nuovo punto di connessione del servizio, aggiungere una nuova sottoscrizione di Intune a Configuration Manager e impostare Configuration Manager come autorità MDM.
 
-## <a name="how-to-change-mdm-authority-to-intune"></a>MDM 機関を Intune に変更する方法
-Configuration Manager バージョン 1610 および Microsoft Intune バージョン 1705 以降では、Microsoft サポートに連絡しなくても、また、既存の管理対象デバイスの登録を解除してから再登録しなくても、MDM 機関を変更することができます。 詳細については、「[MDM 機関を変更する](/sccm/mdm/deploy-use/change-mdm-authority)」を参照してください。
+## <a name="how-to-change-mdm-authority-to-intune"></a>Come cambiare l'autorità di gestione dei dispositivi mobili in Intune
+A partire da Configuration Manager versione 1610 e Microsoft Intune versione 1705, è possibile cambiare l'autorità MDM senza dover contattare il supporto Microsoft e senza dover annullare e ripetere la registrazione dei dispositivi gestiti esistenti. Per altre informazioni, vedere [Cambiare l'autorità MDM](/sccm/mdm/deploy-use/change-mdm-authority).

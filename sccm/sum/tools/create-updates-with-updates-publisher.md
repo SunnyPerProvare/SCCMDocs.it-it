@@ -1,6 +1,6 @@
 ---
-title: "更新プログラムの作成 | Microsoft Docs"
-description: "System Center Updates Publisher を使用してソフトウェア更新プログラムを作成およびバンドルする"
+title: Creare aggiornamenti | Microsoft Docs
+description: Creare e aggregare aggiornamenti software con System Center Updates Publisher
 ms.custom: na
 ms.date: 4/29/2017
 ms.prod: configuration-manager
@@ -18,176 +18,176 @@ robots: NOINDEX, NOFOLLOW
 ms.openlocfilehash: 98e490d7f5ca17dcf2a0aaa848f14e789f214123
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create--software-updates-and-update-bundles-with-updates-publisher"></a>Updates Publisher を使用してソフトウェア更新プログラムおよび更新プログラムのバンドルを作成する
+# <a name="create--software-updates-and-update-bundles-with-updates-publisher"></a>Creare aggiornamenti software e aggiornare aggregazioni con Updates Publisher
 
-*適用対象: System Center Updates Publisher*
+*Si applica a: System Center Updates Publisher*
 
-Updates Publisher を使用すると、**Create Update (更新プログラムの作成)** ウィザードを使用して、独自の更新プログラムを作成でき、**Create Bundle (バンドルの作成)** ウィザードを使用して、更新プログラムのバンドルを作成できます。
+Con Updates Publisher è possibile usare la **Creazione guidata aggiornamento** per creare aggiornamenti e la **Creazione guidata aggregazione** per creare aggregazioni di aggiornamenti.
 
-これら 2 つのウィザードのワークフローは似ているため、更新プログラムのバンドルを作成する手順では、更新プログラムを作成する手順を参照し、相違点のみを必要に応じて詳述してあります。
+Poiché queste due procedure guidate hanno un flusso di lavoro simile, la procedura per la creazione di un'aggregazione di aggiornamenti fa riferimento a quella per la creazione di aggiornamenti, con solo le differenze rilevanti dettagliate.
 
-## <a name="use-the-create-update-wizard"></a>Create Update (更新プログラムの作成) ウィザードの使用
-1.  コンソールで **[更新プログラム ワークスペース]** に移動し、**[はじめに]** ウィンドウで、リボンの **[ホーム]** タブで **[更新]** をクリックします。 **Create Update (更新プログラムの作成)** ウィザードが開きます。
+## <a name="use-the-create-update-wizard"></a>Usare la Creazione guidata aggiornamento
+1.  Nella console passare all'**area di lavoro Aggiornamenti** , quindi, nel riquadro **Operazioni preliminari**, scegliere **Aggiorna** dalla scheda **Home** della barra multifunzione. Viene avviata la **Creazione guidata aggiornamento**.
 
-2.  **[パッケージ]** ページで、次の情報を使用して更新プログラムを構成できます。
+2.  Nella pagina **Pacchetto** usare le informazioni seguenti per configurare l'aggiornamento:
 
-    -   **[参照]** をクリックして、パッケージ ソースとして使用するソフトウェア更新プログラム パッケージを検索します。 有効なソースとしては、.MSI、.MSP、または .EXE ファイルがあります。 Updates Publisher でファイルのハッシュを作成するには、ファイルにアクセスする必要があります。 ハッシュとファイル名は、作成する更新プログラムの更新プログラムのメタデータで使用されます。
+    -   Scegliere **Sfoglia** per individuare il pacchetto di aggiornamento che verrà usato come origine del pacchetto. Le origini valide includono file con estensione msi, msp o exe. Updates Publisher richiede l'accesso al file per creare un hash di file. L'hash e il nome file vengono quindi usati nei metadati dell'aggiornamento per l'aggiornamento in fase di creazione.
 
-    -   この更新プログラムのコンテンツのソースの場所を指定します。 通常は、WSUS サーバーへの発行中に更新プログラムのバイナリがダウンロードされる場所です。  **[Use a local source to publish software update content]\(ローカル ソースを使用してソフトウェア更新プログラム コンテンツを発行する\)** オプションがオンの場合、このパスは必須ではありません。
+    -   Specificare il percorso di origine del contenuto per l'aggiornamento. In genere si tratta del percorso da cui il file binario di aggiornamento verrà scaricato durante la pubblicazione in un server WSUS.  Se è selezionata l'opzione **Use a local source to publish software update content** (Usa un'origine locale per pubblicare il contenuto dell'aggiornamento software), non è richiesto il percorso.
 
-        後で、更新プログラムが WSUS サーバーに発行されると、Updates Publisher では、指定されたソースの場所から更新プログラムのバイナリ ファイルをダウンロードします。  パスが指定されていない場合、Update Publisher では更新プログラム バイナリの[ローカル ソース発行パス](/sccm/sum/tools/updates-publisher-options#advanced)が検索されます。
+        Successivamente, quando l'aggiornamento viene pubblicato in un server WSUS, Updates Publisher scarica i file binari per l'aggiornamento dal percorso di origine indicato.  Se non viene fornito alcun percorso, Update Publisher cerca il file binario di aggiornamento nel [percorso di pubblicazione di origine locale](/sccm/sum/tools/updates-publisher-options#advanced).
 
-    -   ソフトウェア更新プログラムの **[Binary language]\(バイナリ言語)** を指定します。
+    -   Specificare **Binary language** (Linguaggio binario) per l'aggiornamento software.
 
-    -   更新プログラムの **[Success return codes]\(成功リターン コード)** および **[Success pending reboot codes]\(成功保留中再起動コード)** を指定します。 複数のリターン コードは、コンマ (,) で区切ります。 更新プログラムのインストールが成功した場合と、再起動が必要である場合を判別するために、リターン コードを使用できます。
+    -   Specificare **Success return codes** (Codici restituiti per esito positivo) e **Success pending reboot codes** (Codici di avvio in sospeso per esito positivo) per l'aggiornamento. Separare più codici restituiti mediante una virgola. È possibile usare i codici restituiti per determinare quando l'installazione dell'aggiornamento ha avuto esito positivo e quando è stato necessario un riavvio.
 
-        -   Windows インストーラー ファイルと修正プログラム (.MSI ファイルと .MSP ファイル) ではこれらの値が自動的に設定され、変更できません。
+        -   Questi valori, che non possono essere modificati, vengono impostati automaticamente dai file e dalle patch di Windows Installer (file con estensione msi e msp).
 
-        -   .EXE 形式の更新プログラムでリターン コードが指定されていない場合は、.EXE ファイルによって定義されている既定のコードが使用されます。
+        -   Per gli aggiornamenti con estensione exe, se non è specificato alcun codice restituito, vengono usati i codici predefiniti definiti dal file con estensione exe.
 
-    -   ソフトウェア更新プログラムのインストールに必要なすべてのコマンドライン引数を指定します。
+    -   Specificare gli eventuali argomenti della riga di comando necessari per installare l'aggiornamento software.
 
-        -   Windows インストーラー ファイルと修正プログラム (.MSI ファイルと .MSP ファイル) ではこれらの値が自動的に設定されます。 これらのファイルの種類の場合、引数は、**\[名\]=\[値\]**として指定する必要があります。 さらに、 **/**  で始まるすべてのオプション (**/qn** など) は .MSI または .MSP 形式のソフトウェア更新プログラムではサポートされていません。
+        -   Questi valori vengono impostati automaticamente dai file e dalle patch di Windows Installer (file con estensione msi e msp). Per questi tipi di file gli argomenti devono essere specificati come **\[nome\]=\[valore\]**. Inoltre, tutte le opzioni che iniziano con **/** (ad esempio **/qn**) non sono supportate per gli aggiornamenti software con estensione msi o msp.
 
-        -   .EXE 形式の更新プログラムでは、すべての引数が有効です。
+        -   Per gli aggiornamenti con estensione exe tutti gli argomenti sono validi.
 
-3.  **[情報]** ページで、更新プログラムが発行またはエクスポートされるときに含められる更新プログラムに関する詳細を指定します。 詳細には、更新プログラムの名前 (タイトル) や説明など、ローカライズされたプロパティが含まれます。 次に、分類、ベンダー、製品、更新プログラムの詳細説明が提供されている場所など、より一般的な詳細を指定します。
+3.  Nella pagina **Informazioni** specificare i dettagli che vengono inclusi al momento della pubblicazione o dell'esportazione dell'aggiornamento. I dettagli includono proprietà localizzate quali il nome (titolo) e la descrizione degli aggiornamenti. Specificare quindi i dettagli più generali, ad esempio la classificazione, il fornitore e il prodotto, e i riferimenti per altre informazioni sull'aggiornamento.
 
-     __ローカライズされたプロパティ:__
+     __Proprietà localizzate:__
 
-    -   **[言語]**: 言語を選択し、タイトルと説明を指定します。 次に、追加の言語を 1 つずつ追加し、各言語で独自のタイトルや説明をサポートできます。
+    -   **Lingua**: selezionare una lingua e quindi specificare un titolo e una descrizione. È quindi possibile selezionare lingue aggiuntive, specificandone una alla volta. Ciascuna lingua supporta i propri titolo e descrizione.
 
-    -   **[タイトル]**: 更新プログラムの名前を入力します。 この名前は、Updates Publisher コンソールの [更新プログラム ワークスペース] に表示されます。
+    -   **Titolo**: immettere il nome dell'aggiornamento. Questo nome viene visualizzato nell'area di lavoro Aggiornamenti della console di Updates Publisher.
 
-    -   **[説明]**: 更新プログラムのわかりやすい説明です。 更新プログラムによってインストールされる対象、使用する理由と状況などを含めることができます。
+    -   **Descrizione**: una breve descrizione dell'aggiornamento. È possibile includere il contenuto installato dall'aggiornamento e specificare il motivo o le situazioni d'uso.
 
-     **[分類]**: さまざまな分類の一般的な説明を次に示します。
+     **Classificazione:** di seguito vengono riportate descrizioni di uso comune per le differenti classificazioni.
 
-    -   **[更新]**: 現在インストールされているアプリケーションまたはファイルの更新です。
+    -   **Aggiornamento**: aggiornamento di un'applicazione o di un file attualmente installato.
 
-    -   **[重要]**: セキュリティには関係しない重要な不具合に対応する特定の問題に対して、広範にリリースされた更新です。
+    -   **Critico**: aggiornamento rilasciato su vasta scala per un problema specifico e che risolve un bug critico non correlato alla sicurezza.
 
-    -   **[Feature Pack]**: 製品リリースに先立って配布され、通常は次回の製品版リリースに含まれる、製品の新機能です。
+    -   **Feature Pack**: nuove funzionalità del prodotto distribuite al di fuori di una versione del prodotto. In genere sono incluse nella versione successiva del prodotto completo.
 
-    -   **[セキュリティ]**: 製品固有でセキュリティに関係する問題に対して、広範にリリースされた更新です。
+    -   **Sicurezza**: aggiornamento rilasciato su vasta scala per un problema specifico del prodotto e correlato alla sicurezza.
 
-    -   **[更新プログラムのロールアップ]**: 容易に展開できるようにパッケージにまとめられた修正プログラムを累積したセットです。 これらの修正プログラムには、セキュリティの更新プログラム、重要な更新プログラム、更新プログラムなどが含まれています。 更新プログラムのロールアップは、通常セキュリティまたは製品機能など特定の領域に対応します。
+    -   **Aggiornamento cumulativo**: set cumulativo di aggiornamenti rapidi inclusi nello stesso pacchetto per facilitarne la distribuzione. Questi aggiornamenti rapidi possono includere aggiornamenti della sicurezza, aggiornamenti critici, aggiornamenti e così via. Un aggiornamento cumulativo riguarda in genere un'area specifica, ad esempio la sicurezza o una funzionalità del prodotto.
 
-    -   **[Service Pack]**: アプリケーションに適用される修正プログラムを累積したセットです。 これらの修正プログラムには、セキュリティの更新プログラム、重要な更新プログラム、ソフトウェア更新プログラムなどが含まれています。
+    -   **Service Pack**: set cumulativo di aggiornamenti rapidi applicati a un'applicazione. Questi aggiornamenti rapidi possono includere aggiornamenti della sicurezza, aggiornamenti critici, aggiornamenti software e così via.
 
-    -   **[ツール]**: 1 つまたは複数のタスクを完了するために役立つツールまたは機能を示します。
+    -   **Strumento**: specifica uno strumento o una funzionalità che consente di completare una o più attività.
 
-     -   **[ドライバー]**: ドライバー ソフトウェアの更新プログラムです。
+     -   **Driver**: aggiornamento del software driver.
 
-    **[ベンダー]**: 更新プログラムのベンダーを指定します。 ドロップダウン リストを使用して、リポジトリにある更新プログラムの値を使用できます。 ベンダーを指定すると、**[更新プログラム ワークスペース]** の **[All Software Updates]\(すべてのソフトウェア更新プログラム)** の下にこのベンダー名のフォルダーがまだ存在しない場合は、ウィザードによってこのベンダー名のフォルダーが作成されます。 Windows Server Update Services (WSUS) の予約名になっており、更新プログラムを作成するときに入力できない名前を次に示します。
+    **Fornitore**: specificare un fornitore per l'aggiornamento. Per usare i valori di aggiornamenti disponibili nel repository, è possibile usare l'elenco a discesa. Quando si specifica un fornitore, la procedura guidata crea una cartella con lo stesso nome del fornitore sotto **Tutti gli aggiornamenti software** nell'**area di lavoro Aggiornamenti**, se tale cartella non esiste già. Di seguito sono riportati nomi WSUS (Windows Server Update Services) riservati che non è possibile immettere per gli aggiornamenti creati:
  >*   Microsoft Corporation
  >*   Microsoft
- >*   更新
- >*   ソフトウェア更新プログラム
- >*   ［ツール］
- >*   ツール
- >*   重要
- >*   重要な更新プログラム
- >*   セキュリティ
- >*   セキュリティ更新プログラム
- >*   機能パック
- >*   更新プログラムのロールアップ
- >*   サービス パック
- >*   ドライバー
- >*   ドライバーの更新
- >*   バンドル
- >*   バンドルの更新
+ >*   Aggiornamento
+ >*   Aggiornamento software
+ >*   Strumenti
+ >*   Strumento
+ >*   Critico
+ >*   Aggiornamenti critici
+ >*   Sicurezza
+ >*   Aggiornamenti della sicurezza
+ >*   Feature Pack
+ >*   Aggiornamento cumulativo
+ >*   Service Pack
+ >*   Driver
+ >*   Aggiornamento driver
+ >*   Bundle
+ >*   Aggiornamento aggregazione
 
-**[製品]**: 更新プログラムが適用される製品の種類を指定します。 ドロップダウン リストを使用して、リポジトリにある更新プログラムの値を使用できます。 **[ベンダー]** に使用できない WSUS 予約名のリストにある名前は、**[製品]** でも使用できません。
+**Prodotto**: specificare il tipo di prodotto a cui si applica l'aggiornamento. Per usare i valori di aggiornamenti disponibili nel repository, è possibile usare l'elenco a discesa. I nomi riservati WSUS che non possono essere usati per **Fornitore** non possono essere usati nemmeno per **Prodotto**.
 
- **[More info URL]\(詳細情報の URL)**: この更新プログラムの詳細を検索できる URL を指定します。 この URL を入力するときの **https** または **http** には小文字を使用する必要があります。
+ **More info URL** (URL altre informazioni): specificare l'URL in cui è possibile trovare altre informazioni sull'aggiornamento. Quando si immette l'URL, è necessario usare lettere minuscole per **https** o **http**.
 
-4.  **[Optional Info]\(省略可能な情報)** ページで、更新プログラムに関する追加情報を提供する詳細を構成できます。
+4.  Nella pagina **Optional Info** (Informazioni facoltative) è possibile configurare dettagli che forniscono informazioni aggiuntive sull'aggiornamento.
 
-    -   **[セキュリティ情報 ID]**: セキュリティ情報 ID は常にではありませんが、通常は更新プログラム ベンダーによって提供されます。
+    -   **ID bollettino**: gli ID bollettino vengono in genere, ma non sempre, specificati dai fornitori degli aggiornamenti.
 
-    -   **[記事 ID]**: ソフトウェア更新プログラムの記事が利用可能な場合、[記事 ID] は更新プログラムに関する追加情報を検索する個人にとって便利です。
+    -   **ID articolo**: se è disponibile l'ID articolo di un aggiornamento software, gli utenti possono usarlo per cercare altre informazioni sull'aggiornamento in questione.
 
-    -   **[CVE ID]**: 更新プログラムまたは更新プログラム バンドルに関するセキュリティ情報を提供する 1 つまたは複数の共通脆弱性識別子 (CVE) のリストです。 複数をリストするときは、この例のようにセミコロンを使用して CVE を区切ります: *CVE1;CVE2.*
+    -   **CVE IDs** (ID CVE): elencare uno o più indicatori CVE (Common Vulnerabilities and Exposures) che offrono informazioni sulla sicurezza per l'aggiornamento o l'aggregazione di aggiornamenti. Quando si elencano più ID CVE, separarli con un punto e virgola, come nell'esempio seguente: *CVE1;CVE2.*
 
-    -   **[サポートの URL]**: 利用可能な場合は、この更新プログラムのサポート情報を含む URL をリストします。 この URL を入力するときの **https** または **http** には小文字を使用する必要があります。
+    -   **Support URL** (URL supporto): indicare l'URL in cui sono disponibili informazioni di supporto per l'aggiornamento, se disponibili. Quando si immette l'URL, è necessario usare lettere minuscole per **https** o **http**.
 
-    -   **[重要度]**: この更新プログラムの重要度レベルを設定します。
+    -   **Gravità**: impostare il livello di gravità per l'aggiornamento.
 
-    -   **[影響]**: 次のオプションを使用して影響を指定できます。
-        -   **[ノーマル]**: これを使用して、一般的なインストール手順が必要な更新プログラムを示します。
-        -   **[マイナー]**: これを使用して、最小限のインストール手順が必要な更新プログラムを示します。
-        -   **[Requires exclusive handling]\(排他的な処理が必要)**: この更新プログラムはこれのみで、他の更新プログラムとは排他的にインストールする必要があることを示すために使用します。   <br /><br />
+    -   **Impatto**: per specificare l'impatto è possibile usare le opzioni seguenti:
+        -   **Normale**: usare questa opzione per indicare che l'aggiornamento richiede procedure di installazione tipiche.
+        -   **Minor** (Secondario): usare questa opzione per indicare che l'aggiornamento richiede procedure di installazione minime.
+        -   **Requires exclusive handling** (Richiede gestione esclusiva): usare questa opzione per indicare che l'aggiornamento deve essere installato da solo, separato da altri aggiornamenti.   <br /><br />
 
-    -   **[再起動の動作]**: 更新プログラムの再起動の動作に関する情報を提供するために使用します。 この設定によって、更新プログラムをインストールするときの実際の動作が変わることはありません。
+    -   **Riavvio del sistema**: usare questa opzione per fornire informazioni sul comportamento del riavvio degli aggiornamenti. Questa impostazione non influisce sul comportamento effettivo dell'installazione dell'aggiornamento.
 
-        -   **[Never reboots]\(再起動なし)**: ソフトウェア更新プログラムをインストールした後、コンピューターでシステムの再起動を実行することはありません。
-        -   **[Always requires reboot]\(常に再起動が必要)**: ソフトウェア更新プログラムをインストールした後、コンピューターは常にシステムの再起動を実行します。
-        -   **[Can request reboot]\(再起動を要求する場合あり)**: ソフトウェア更新プログラムをインストールした後、コンピューターは再起動が必要な場合にのみシステムの再起動を要求します。 ユーザーは、後で再起動することを選択できます。 これは既定値です。 <br /><br />
+        -   **Never reboots** (Non riavviare mai): il computer non esegue mai un riavvio del sistema dopo l'installazione dell'aggiornamento software.
+        -   **Always requires reboot** (Richiede sempre il riavvio): il computer esegue sempre un riavvio del sistema dopo l'installazione dell'aggiornamento software.
+        -   **Can request reboot** (Può richiedere il riavvio): dopo l'installazione dell'aggiornamento software, il computer richiede un riavvio del sistema solo se necessario. L'utente può posticipare il riavvio. Questo è il valore predefinito. <br /><br />
 
-5.  **[前提条件]** ページで、この更新プログラムをインストールする前に、コンピューターにインストールする必要のある前提条件を指定します。 前提条件は **detectoid** または他の更新プログラムの可能性があります。 detectoid は、コンピューターの CPU が 64 ビット プロセッサであることを必要とするなどの高度なルールです。 detectoid では、この更新プログラムをインストールする前にインストールする必要がある特定の更新プログラムも指定できます。
+5.  Nella pagina **Prerequisito** specificare i prerequisiti che devono essere installati nel computer prima dell'installazione dell'aggiornamento. I prerequisiti possono essere **detectoid** o altri aggiornamenti. I detectoid sono regole di livello elevato, come quella secondo la quale la CPU dei computer deve essere un processore a 64 bit. I detectoid possono anche specificare aggiornamenti che devono essere installati prima dell'aggiornamento.
 
-    -   パフォーマンスを向上するためには、同じチェックまたは操作を実行する *[インストール可能]* と *[installed rules]\(インストールしたルール)* を作成する代わりに detectoid を使用します。
+    -   Per prestazioni ottimali, usare i detectoid ed evitare di creare regole di tipo *installabile* e *installato* che eseguono la stessa azione o lo stesso controllo.
 
-    **[Available software updates and detectoid]\(利用可能なソフトウェア更新プログラムと detectoid\)** の検索オプションを使用すると特定の detectoid を探すのに役立ちます。 たとえば、特定の CPU アーキテクチャに基づいてインストールを制限できる detectoid を検索するには、**[CPU]** で検索します。
+    Usare l'opzione di ricerca **Available software updates and detectoids** (Aggiornamenti software e detectoid disponibili) per trovare aggiornamenti o detectoid specifici. Ad esempio, cercare **CPU** per trovare il detectoid che consente di limitare l'installazione in base alla specifica architettura della CPU.
 
-    一度に 1 つまたは複数の項目を選択して前提条件として追加できます。 前提条件を追加する際、選択した detectoid は 1 つまたは複数のグループとして追加されます。 コンピューターがインストール要件を満たすには、構成する各グループで少なくとも 1 つのメンバーの要件を満たす必要があります。
+    È possibile selezionare uno o più elementi alla volta da aggiungere come prerequisito. Durante l'aggiunta di prerequisiti, i detectoid selezionati vengono aggiunti come uno o più gruppi. Un computer viene considerato adatto per l'installazione solo se soddisfa i requisiti di almeno un membro di ciascun gruppo configurato:
 
- -   **[Add Prerequisite]\(前提条件の追加)** をクリックすると、選択したすべての項目が別々の個別グループに追加されます。 コンピューターをこの更新プログラムの対象にするためには、このグループの前提条件を満たしたうえで、構成されている他のすべてのグループによる要件を満たす必要があります。
+ -   Quando si fa clic su **Add Prerequisite** (Aggiungi prerequisito), tutti gli elementi selezionati vengono aggiunti a singoli gruppi separati. Un computer viene considerato adatto per l'aggiornamento solo se soddisfa i prerequisiti del gruppo in questione e quelli di qualsiasi gruppo aggiuntivo configurato.
 
- -   **[グループの追加]** をクリックすると、選択したすべての項目が 1 つのグループに追加されます。 コンピューターをこの更新プログラムの対象にするためには、このグループの前提条件を少なくとも 1 つ満たしたうえで、構成されている他のすべてのグループによる要件を満たす必要があります。
+ -   Quando si fa clic su **Aggiungi gruppo**, tutti gli elementi selezionati vengono aggiunti a un singolo gruppo. Un computer viene considerato adatto per l'aggiornamento solo se soddisfa almeno uno dei prerequisiti del gruppo in questione e quelli di qualsiasi gruppo aggiuntivo configurato.
 
-6.  **[置き換え]** ページで、この更新プログラムによって置き換えられる更新プログラムを指定します。 この更新プログラムを発行すると、置き換えられる各更新プログラムは Configuration Manager によって **[期限切れ]** とマークされます。 そうすると、クライアントでは、置き換えられた更新プログラムではなく、この更新プログラムをインストールします。
+6.  Nella pagina **Sostituzione** specificare gli aggiornamenti che vengono sostituiti dal nuovo aggiornamento. Quando questo aggiornamento viene pubblicato, Configuration Manager contrassegna ogni aggiornamento sostituito come **Scaduto**. I clienti installano quindi questo aggiornamento al posto di quelli sostituiti.
 
-7.  **[Applicability]\(適用性)** ページで、**[ルール エディター]** を使用して、デバイスにこの更新プログラムが必要かどうかを判別するルールのセットを定義します。 (このページは、それに続く **[インストール済み]** ページに似ています)。
+7.  Nella pagina **Applicabilità** usare l'**Editor delle regole** per definire un set di regole che determina se un dispositivo necessita dell'aggiornamento. Questa pagina è simile alla pagina **Installato**, che la segue.
 
-    新しいルールを追加するには、 ![[新しいルール] をクリックします](media/newrule.png)。 [適用性ルール] ページが開いてルールを構成できます。
+    Per aggiungere una nuova regola, fare clic su ![Nuova regola](media/newrule.png). Verrà visualizzata la pagina Applicability Rule (Regola di applicabilità) in cui è possibile configurare le regole.
 
-    作成できるルールの種類は次のとおりです。
+    I tipi di regole che è possibile creare includono i seguenti:
 
-    -   **[ファイル]**: この更新プログラムを適用する前に、指定した 1 つまたは複数の条件を満たすプロパティを格納したファイルをデバイスが持つことを要求するには、このルールを使用します。
+    -   **File**: usare questa regola per indicare che, per poter eseguire l'aggiornamento, nel dispositivo deve essere presente un file con proprietà che soddisfano uno o più dei criteri specificati.
 
-    -   **[レジストリ]**: この種類は、この更新プログラムをデバイスにインストールするには、レジストリに存在している必要がある詳細を指定するために使用します。
+    -   **Registro di sistema**: usare questo tipo per specificare i dettagli del Registro di sistema che devono essere presenti per consentire l'installazione dell'aggiornamento nel dispositivo.
 
-    -   **[システム]**: このルールでは、システムの詳細を使用して適用性を判別します。 Windows のバージョン、Windows の言語、プロセッサ アーキテクチャを定義するか、デバイスのオペレーティング システムを識別するために WMI クエリを指定するかを選択できます。
+    -   **Sistema**: questa regola usa i dettagli relativi al sistema per determinare l'applicabilità. È possibile scegliere tra la definizione di una versione di Windows, un linguaggio di Windows o l'architettura del processore. In alternativa, è possibile specificare una query WMI per identificare il sistema operativo dei dispositivi.
 
-    -   **[Windows インストーラー]**: インストール済みの .MSI または Windows インストーラー修正プログラム (.MSP) に基づいて適用性を判別するには、このルールの種類を使用します。 要件の一部として特定のコンポーネントまたは機能がインストールされているかどうかも判別できます。
+    -   **Windows Installer**: usare questa regola per determinare l'applicabilità in base a una patch installata Windows Installer o con estensione msi. È anche possibile determinare se funzionalità o componenti specifici vengono installati come parte del requisito.
 
         > [!IMPORTANT]  
-        > 管理デバイスでは、ユーザーごとにインストールされている Windows インストール パッケージを Windows 更新エージェントによって検出できません。 このルールの種類を使用する場合は、ユーザーごとなのかシステムごとなのかに関係なく Windows インストーラー パッケージを正しく検出できるように、ファイル バージョンやレジストリ キー値など、追加の適用性ルールを構成してください。
+        > Nel dispositivi gestiti, l'agente di Windows Update non è in grado di rilevare i pacchetti del programma di installazione di Windows installati per utente. Quando si usa questo tipo di regola, configurare regole di applicabilità aggiuntive, come le versioni del file o i valori della chiave del Registro di sistema, in modo che il pacchetto Windows Installer possa essere rilevato correttamente sia in base a un criterio "per utente" che in base a un criterio "per sistema".
 
-    -   **[Saved rule]\(保存済みルール)**: このオプションでは、*[Rules Workspace]\(ルール ワークスペース) で作成した*ルールを検索して使用できます。
+    -   **Saved rule** (Regola salvata): questa regola consente di trovare e usare regole *create nell'area di lavoro delle regole*.
 
-        ルールを作成した後で、他のアイコンを使用してルールを変更でき、複数のルールがある場合、それらのルールの間のリレーションシップを定義できます。
+        Dopo aver creato una regola, è possibile usare le altre icone per modificare la regola e, se sono presenti più regole, per definire relazioni tra di esse.
 
-    ルールの作成と追加を完了したら、**[Create Rule Set]\(ルール セットの作成)** ダイアログ ボックスで **[OK]** をクリックしてセットを保存します。 その後、**[新規]** ルールを作成し、同様にセットに追加できます。
+    Dopo aver creato e aggiunto le regole, fare clic su **OK** nella finestra di dialogo **Create Rule Set** (Crea set di regole) per salvare il set. È quindi possibile usare l'opzione **Nuova** per creare una regola e aggiungerla al set.
 
-    更新プログラムに追加するルールまたはルール セットが複数ある場合は、**[ルール エディター]** で論理演算子を使用してルール間の条件と処理順序を指定できます。
+    Quando è necessario aggiungere più regole o set di regole, è possibile usare gli operatori logici nell' **Editor delle regole** per determinare le condizioni tra le regole e il relativo ordine di elaborazione.
 
-8.  **[インストール済み]** ページで **[ルール エディター]** を使用して、構成中の更新プログラムが既にデバイスにインストールされているかどうかを判別するルールのセットを定義します。 (このページは、このページに先行する **[適用性]** ページに似ています)。
+8.  Nella pagina **Installato** usare l'**Editor delle regole** per definire un set di regole che determinano se in un dispositivo è già stato installato l'aggiornamento che si sta configurando. Questa pagina è simile alla pagina **Applicabilità**, che la precede.
 
-    ウィザードのこのページでは、**[適用性]** ページと同じオプションおよび条件を使用したルールのルールをサポートしています。
+    Questa pagina della procedura guidata supporta regole di configurazione con le stesse opzioni e gli stessi criteri della pagina **Applicabilità**.
 
-    ウィザードが完了すると、新しい更新プログラムが **[更新プログラム ワークスペース]** 内のノードに追加されており、このノードは更新プログラムで使用した **[ベンダー]** と **[製品]** の名前によって識別されています。
+    Al termine della procedura guidata, il nuovo aggiornamento viene aggiunto a un nodo nell'**area di lavoro Aggiornamenti** identificato dal nome del **Fornitore** e dal nome del **Prodotto** utilizzati per l'aggiornamento.
 
-## <a name="use-the-create-bundle-wizard"></a>Create Bundle (バンドルの作成) ウィザードの使用
-このウィザードは、[Create Update (更新プログラムの作成) ウィザード](#use-the-create-update-wizard)と同じワークフローを使用しているため、そのワークフローを使用しますが、バンドルの場合は次の相違があることに注意してください。
+## <a name="use-the-create-bundle-wizard"></a>Usare la Creazione guidata aggregazione
+Poiché questa procedura guidata usa lo stesso flusso di lavoro della [Creazione guidata aggiornamento](#use-the-create-update-wizard), usare tale flusso di lavoro, ma notare la differenza seguente per le aggregazioni:
 
-1.  ウィザードを開始するには、コンソールで **[更新プログラム ワークスペース]** に移動し、リボンの**[ホーム]** タブで **[バンドル]** をクリックします。
+1.  Per avviare la procedura guidata, nella console passare all'**area di lavoro Aggiornamenti** e quindi selezionare **Aggregazione** dalla scheda **Home** della barra multifunzione.
 
-2.  Create Update (更新プログラムの作成) ウィザードとは異なり、バンドルを作成するときは [パッケージ] ページはありません。
+2.  A differenza di quanto si verifica nella Creazione guidata aggiornamento, quando si crea un'aggregazione non è presente una pagina Pacchetto.
 
-3.  **[情報]** ページで、更新プログラムが発行またはエクスポートされるときに含められる更新プログラム バンドルに関する詳細を指定します。
+3.  Nella pagina **Informazioni** specificare i dettagli sull'aggregazione di aggiornamenti che vengono inclusi al momento della pubblicazione o dell'esportazione dell'aggiornamento.
 
-4.  **[Optional Info]\(省略可能な情報)** ページで、更新プログラム バンドルに関する追加情報を提供する詳細を構成できます。 使用可能なオプションは、更新プログラムを作成する場合と同じです。 ただし、[影響] と [再起動の動作] のオプションはバンドルには適用されないため使用できません。
+4.  Nella pagina **Optional Info** (Informazioni facoltative) è possibile configurare dettagli che forniscono informazioni aggiuntive sul raggruppamento di aggiornamenti. Si tratta delle stesse opzioni disponibili per la creazione di un aggiornamento. Le opzioni relative a Riavvio del sistema, tuttavia, non sono disponibili e non si applicano alle aggregazioni.
 
-5.  **[前提条件]** ページで、このバンドルをインストールする前に、コンピューターにインストールする必要のある前提条件を指定します。 これらのルールは、個々の更新プログラムで説明されているルールと同じです。
+5.  Nella pagina **Prerequisito** specificare i prerequisiti che devono essere installati nel computer prima dell'installazione dell'aggregazione. Si tratta delle stesse regole descritte per gli aggiornamenti individuali.
 
-6.  **[置き換え]** ページで、この更新プログラム バンドルによって置き換えられる更新プログラムを指定します。 これらのルールは、個々の更新プログラムで説明されているルールと同じです。
+6.  Nella pagina **Sostituzione** specificare gli aggiornamenti che vengono sostituiti dalla nuova aggregazione di aggiornamenti. Si tratta delle stesse regole descritte per gli aggiornamenti individuali.
 
-7.  **[メンバー]** ページで、更新プログラム バンドルに追加する更新プログラムを選択します。 Updates Publisher で作成したかインポートした更新プログラムのみ利用できます。
+7.  Nella pagina **Membri**  selezionare gli aggiornamenti da aggiungere all'aggregazione di aggiornamenti. Sono disponibili solo gli aggiornamenti creati o importati in Updates Publisher.
 
-ウィザードが完了すると、新しい更新プログラム バンドルが **[更新プログラム ワークスペース]** 内のノードに追加されており、このノードは更新プログラム バンドルで使用した **[ベンダー]** 名によって識別されています。
+Al termine della procedura guidata, la nuova aggregazione di aggiornamenti viene aggiunta a un nodo nell'**area di lavoro Aggiornamenti** identificato dal nome del **Fornitore** usato per l'aggregazione di aggiornamenti.

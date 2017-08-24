@@ -6,25 +6,21 @@ ms.date: 2/6/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e80d1151-91db-4a27-8411-a957297b67d0
-caps.latest.revision: 15
-caps.handback.revision: 0
+caps.latest.revision: "15"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 37e4f27fcea0bbdd39c9fd3ab38aa46e3059f73a
 ms.openlocfilehash: d9dff97126c34a726677de60dd7647370c553b6e
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
-
 # <a name="manage-network-bandwidth-for-content"></a>Gestire la larghezza di banda della rete per il contenuto
 Per gestire più facilmente la larghezza di banda della rete usata per il processo di gestione del contenuto di System Center Configuration Manager, è possibile usare i controlli predefiniti per la pianificazione e la limitazione della larghezza di banda della rete. È inoltre possibile usare contenuto pre-installato. Le sezioni seguenti includono informazioni più dettagliate su queste opzioni.
 
@@ -77,4 +73,3 @@ Facoltativamente, è possibile configurare il punto di distribuzione come **pre-
     >  Le opzioni precedenti sono applicabili in base al pacchetto e vengono usate solo quando un punto di distribuzione è identificato come pre-installato. I punti di distribuzione che non sono stati identificati come pre-installati ignorano queste impostazioni. In questo caso, il contenuto sempre viene distribuito in rete dal server del sito ai punti di distribuzione.  
 
 -   **Ripristinare la raccolta contenuto in un server del sito.** Quando un server del sito restituisce un errore, le informazioni sui pacchetti e le applicazioni contenute nella raccolta contenuto vengono ripristinate nel database del sito come parte del processo di ripristino, ma i file della raccolta contenuto non vengono ripristinati come parte del processo. Se non si ha un backup del file system per ripristinare la raccolta contenuto, è possibile creare un file di contenuto pre-installato da un altro sito che contiene i pacchetti e le applicazioni necessari. È quindi possibile estrarre il file di contenuto pre-installato sul server del sito ripristinato. Per altre informazioni sul backup e il ripristino del server del sito, vedere [Backup e ripristino per System Center Configuration Manager](/sccm/protect/understand/backup-and-recovery).  
-

@@ -1,5 +1,5 @@
 ---
-title: "クラウド管理ゲートウェイを監視する - Configuration Manager | Microsoft Docs"
+title: Monitorare il gateway di gestione cloud - Configuration Manager | Microsoft Docs
 description: 
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -11,41 +11,41 @@ manager: angrobe
 ms.openlocfilehash: daa0790995dc13ec2c78ae2d98a9eb38c0bcf8ae
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="monitor-cloud-management-gateway-in-configuration-manager"></a>Configuration Manager でクラウド管理ゲートウェイを監視する
+# <a name="monitor-cloud-management-gateway-in-configuration-manager"></a>Monitorare il gateway di gestione cloud in Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-バージョン 1610 以降、クラウド管理ゲートウェイ サービスを実行中で、そのサービス経由でクライアントが接続していると、クライアントとネットワーク トラフィックを監視し、サービスのパフォーマンスを把握できるようになりました。
+A partire dalla versione 1610, se il servizio gateway di gestione cloud è in esecuzione e i client sono connessi tramite questo servizio, è possibile monitorare i client e il traffico di rete per controllare il funzionamento del servizio.
 
-## <a name="monitor-clients"></a>クライアントの監視
+## <a name="monitor-clients"></a>Monitorare i client
 
-クラウド管理ゲートウェイ サービス経由で接続されているクライアントは、オンプレミス クライアントと同様に、Configuration Manager コンソールに表示されます。 詳細については、「[System Center Configuration Manager でクライアントを監視する方法](monitor-clients.md)」を参照してください。
+I client connessi tramite il servizio gateway di gestione cloud vengono visualizzati nella console di Configuration Manager come nel caso di client locali. Per altre informazioni, vedere [Come monitorare i client in System Center Configuration Manager](monitor-clients.md).
 
-## <a name="monitor-traffic-in-the-console"></a>コンソールでトラフィックを監視する
+## <a name="monitor-traffic-in-the-console"></a>Monitorare il traffico nella console
 
-Configuration Manager コンソールを使用して、クラウド管理ゲートウェイのトラフィックを監視できます。
+È possibile monitorare il traffico relativo al gateway di gestione cloud usando la console di Configuration Manager:
 
-1. **[管理] > [クラウド サービス] > [Cloud Management Gateway]** に移動します。
+1. Passare a **Amministrazione > Servizi Cloud > Cloud Management Gateway** (Gateway di gestine cloud).
 
-2. 一覧ウィンドウにあるクラウド管理ゲートウェイ サービスを選択します。
+2. Selezionare il servizio gateway di gestione cloud nell'elenco dei campi.
 
-3. 詳細ウィンドウで、接続しているクラウド管理ゲートウェイ接続の役割とサイト システムの役割のトラフィック情報を確認します。
+3. Visualizzare le informazioni sul traffico nel riquadro dei dettagli per il ruolo di connessione del gateway di gestione cloud e per i ruoli del sistema del sito ai quali è connesso.
 
-## <a name="set-up-outbound-traffic-alerts"></a>送信トラフィック アラートの設定
+## <a name="set-up-outbound-traffic-alerts"></a>Configurare gli avvisi del traffico in uscita
 
-送信トラフィック アラートを使用すると、トラフィックが 14 日 (2 週間) のしきい値レベルに達したときに知ることができます。 クラウド管理ゲートウェイ サービスを作成するときに、トラフィック アラートを設定するオプションが表示されます。 この部分をスキップして、サービスの実行後にアラートを設定することもできます。 また、いつでもアラート設定を調整できます。
+Gli avvisi del traffico in uscita consentono di sapere quando il traffico sta per raggiungere un livello di soglia di 14 giorni, vale a dire 2 settimane. Gli avvisi del traffico in uscita possono essere configurati quando si crea il servizio gateway di gestione cloud. Se questa operazione non è stata eseguita, è possibile configurare gli avvisi anche dopo che il servizio è in esecuzione. È anche possibile regolare le impostazioni degli avvisi in qualsiasi momento.
 
-1. **[管理] > [クラウド サービス] > [Cloud Management Gateway]** に移動します。
+1. Passare a **Amministrazione > Servizi Cloud > Cloud Management Gateway** (Gateway di gestine cloud).
 
-2. 一覧ウィンドウのクラウド管理ゲートウェイ サービスを右クリックし、**[プロパティ]** を選択します。
+2. Fare clic con il pulsante destro del mouse sul servizio gateway di gestione cloud nell'elenco dei campi e scegliere **Proprietà**.
 
-3. [アラート] タブをクリックし、しきい値とアラートを有効 (または無効) にすることができます。 次に 14 日のしきい値 (GB 単位) と、異なるアラート レベルを上げるためのしきい値の割合を指定します。
+3. Fare clic sulla scheda Avvisi e scegliere di abilitare (o disabilitare) la soglia e gli avvisi. Specificare la soglia di 14 giorni (in GB) e le percentuali di soglia per generare diversi livelli di avviso.
 
-4. 完了したら、**[OK]** をクリックします。
+4. Al termine fare clic su **OK**.
 
-## <a name="monitor-logs"></a>監視ログ
+## <a name="monitor-logs"></a>Monitorare i log
 
-クラウド管理ゲートウェイ サービスは、複数のログ ファイルにエントリを生成します。 詳細については、「[System Center Configuration Manager のログ ファイル](/sccm/core/plan-design/hierarchy/log-files)」を参照してください。
+Il servizio gateway di gestione cloud genera voci in alcuni file di log. Per altre informazioni, vedere [Log in Configuration Manager](/sccm/core/plan-design/hierarchy/log-files).

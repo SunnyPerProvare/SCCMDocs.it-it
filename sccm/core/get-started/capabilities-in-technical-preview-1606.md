@@ -1,6 +1,6 @@
 ---
-title: "Configuration Manager の Technical Preview 1606 の機能"
-description: "System Center Configuration Manager の Technical Preview バージョン 1606 で使用できる機能について説明します。"
+title: "Funzionalità della versione Technical Preview 1606 per Configuration Manager"
+description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1606 per System Center Configuration Manager."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -17,250 +17,250 @@ manager: angrobe
 ms.openlocfilehash: 08747ca981f6697e2bd621afe5df0e3bd06b332d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1606-for-system-center-configuration-manager"></a>System Center Configuration Manager の Technical Preview 1606 の機能
+# <a name="capabilities-in-technical-preview-1606-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1606 per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Technical Preview)*
+*Si applica a: System Center Configuration Manager (Technical Preview)*
 
-この記事では、System Center Configuration Manager の Technical Preview バージョン 1606 で使用できる機能について説明します。 このバージョンをインストールして更新し、新機能を Configuration Manager の Technical Preview サイトに追加できます。      このバージョンの Technical Preview をインストールする前に、説明のトピック「[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)」を確認して、Technical Preview の使用に関する一般的な要件と制限、バージョン間の更新方法、および Technical Preview の機能に関するフィードバックを提供する方法について理解してください。    
+Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1606 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
 
-**この Technical Preview の既知の問題:**  
-*  Technical Preview 1604 から 1605 に更新してからバージョン 1606 に更新すると、更新が失敗し、次のようなエラーが **cmupdate.log** に記録されることがあります。
+**Problemi noti di questa versione Technical Preview:**  
+*  Quando si esegue l'aggiornamento dalla versione Technical Preview 1604 alla 1605 e quindi alla 1606, l'aggiornamento potrebbe non riuscire e si potrebbe ottenere la registrazione di un errore simile al seguente in **cmupdate.log**:
 
        ERROR: Failed to execute SQL Server command:  ~ ~-- Create site boundary group ~IF  dbo.fnIsCasOrStandalonePrimary() = 1 ~BEGIN ~   PRINT N'Create site boundary group during upgrade' ~   EXEC dbo.spBuildDefaultBoundaryGroups @UserName = N'SYSTEM' ~END          
 
-    これが発生した場合には、[**更新とサービス**] ノードで [**更新プログラムの確認**] をクリックしてから更新プログラムのインストールを**再試行**します。
+    In questo caso nel nodo **Aggiornamenti e manutenzione** fare clic su **Controlla aggiornamenti** e quindi su **Riprova** per ritentare l'installazione dell'aggiornamento.
     ***
 
-**このバージョンでお試しいただける新機能を次に示します。**  
+**Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
-## <a name="dmp_category"></a> デバイスを自動的にコレクションごとに分類
-Microsoft Intune と Configuration Manager を使用している場合に、デバイス コレクションにデバイスを自動的に配置するために使用できるデバイス カテゴリを作成することができます。 ユーザーは Intune にデバイスを登録するときに、デバイス カテゴリの選択を求められます。 Configuration Manager コンソールから、デバイスのカテゴリをさらに変更できます。
+## <a name="dmp_category"></a> Categorizzazione automatica dei dispositivi in raccolte
+È possibile creare categorie di dispositivi da usare per inserire automaticamente i dispositivi nelle raccolte di dispositivi quando si usa Configuration Manager con Microsoft Intune. Agli utenti verrà quindi richiesto di scegliere una categoria di dispositivo quando eseguono la registrazione di un dispositivo in Intune. È anche possibile modificare la categoria di un dispositivo dalla console di Configuration Manager.
 
-**重要:** この機能は、Microsoft Intune の **2016 年 6 月** のリリースで機能します。 これらの手順を実行する前に、今回のリリースに更新していることを確認してください。
+**Importante:** questa funzionalità può essere usata con la versione di Microsoft Intune di **giugno 2016**. Verificare che l'installazione sia aggiornata a questa versione prima di tentare queste procedure.
 
-### <a name="try-it-out"></a>試してみましょう。
+### <a name="try-it-out"></a>Prova subito!
 
-### <a name="create-a-set-of-device-categories"></a>デバイス カテゴリのセットの作成
-1.  Configuration Manager コンソールの [**資産とコンプライアンス**] ワークスペースで、[**概要**] を展開してから [**デバイス コレクション**] をクリックします。
-2.  [**ホーム**] タブの [**カテゴリ**] グループで、[**デバイス カテゴリの管理**] をクリックします。
-3.  [**デバイス カテゴリの管理**] ダイアログ ボックスでは、カテゴリの作成、編集、または削除ができます。 新しいカテゴリを作成してみましょう。
+### <a name="create-a-set-of-device-categories"></a>Creare un set di categorie di dispositivo
+1.  Nell'area di lavoro **Asset e conformità** della console di Configuration Manager espandere **Panoramica** e fare clic su **Raccolte di dispositivi**.
+2.  Sulla scheda **Home**, nel gruppo **Categorie**, fare clic su **Gestire le categorie di dispositivi**.
+3.  Nella finestra di dialogo **Gestire le categorie di dispositivi** è possibile creare, modificare o rimuovere le categorie. Provare a creare una nuova categoria.
 
-### <a name="associate-a-collection-with-a-device-category"></a>コレクションをデバイス カテゴリに関連付ける
-コレクションをデバイス カテゴリと関連付けると、指定したカテゴリのすべてのデバイスがそのコレクションに追加されます。
-1.  デバイス コレクションの [**プロパティ**] ダイアログをクリックして、[**規則の追加**] > [**デバイス カテゴリの規則**] の順にクリックします。
-2.  [**デバイス カテゴリのメンバーシップ規則の作成**] ダイアログ ボックスで、コレクション内のすべてのデバイスに適用されるカテゴリを選択します。
-3.  [**デバイス カテゴリのメンバーシップ規則の作成**] ダイアログ ボックスと [コレクションのプロパティ] ダイアログ ボックスを閉じます。
+### <a name="associate-a-collection-with-a-device-category"></a>Associare una raccolta a una categoria di dispositivo
+Quando si associa una raccolta a una categoria di dispositivo, tutti i dispositivi della categoria specificata verranno aggiunti alla raccolta.
+1.  Nella della finestra di dialogo **Proprietà** per una raccolta di dispositivi fare clic su **Aggiungi regola** > **Regola categoria di dispositivi**.
+2.  Nella finestra di dialogo **Create Device Category Membership Rule** (Crea regola di appartenenza per la categoria di dispositivi) selezionare la categoria che sarà applicata a tutti i dispositivi della raccolta.
+3.  Chiudere la finestra di dialogo **Create Device Category Membership Rule** (Crea regola di appartenenza per la categoria di dispositivi) e la finestra di dialogo delle proprietà della raccolta.
 
-### <a name="change-the-category-of-a-device"></a>デバイスのカテゴリを変更する
-1.  Configuration Manager コンソールの [**資産とコンプライアンス**] ワークスペースで、[**概要**] を展開してから [**デバイス**] をクリックします。
-2.  [**デバイス**] の一覧からデバイスを選択して、[**ホーム**] タブの [**デバイス**] グループで [**カテゴリの変更**] をクリックします。
-3.  [**デバイス カテゴリの編集**] ダイアログ ボックスで、このデバイスに適用するカテゴリを選択し、[**OK**] をクリックします。
+### <a name="change-the-category-of-a-device"></a>Cambiare la categoria di un dispositivo
+1.  Nell'area di lavoro **Asset e conformità** della console di Configuration Manager espandere **Panoramica** e fare clic su **Dispositivi**.
+2.  Selezionare un dispositivo nell'elenco **Dispositivi** quindi, sulla scheda **Home**, nel gruppo **Dispositivo**, fare clic su **Cambia categoria**.
+3.  Nella finestra di dialogo **Modifica categoria di dispositivi** scegliere la categoria da applicare al dispositivo e fare clic su **OK**.
 
-## <a name="dmp_grace"></a> 必要なアプリケーションとソフトウェア更新プログラムを展開するための適用猶予期間
+## <a name="dmp_grace"></a> Periodo di tolleranza di imposizione per le distribuzioni di applicazioni e aggiornamenti software obbligatori
 
-場合によっては、必要なアプリケーション展開またはソフトウェア更新プログラムのインストールに、設定した期限よりも多くの時間をユーザーに与えることができます。 これは通常、コンピューターが長期間オフになっていて、多数のアプリケーションや更新プログラムの展開をインストールする必要がある場合に必要になります。
-たとえば、エンド ユーザーが休暇から戻って来たばかりの場合、期限切れのアプリケーションの展開がインストールされるまで、長時間待たなければならない場合があります。
-この問題を解決するため、Configuration Manager クライアント設定をコレクションに展開することで、適用猶予期間を定義できるようになりました。
+In alcuni casi è possibile concedere agli utenti più tempo per l'installazione di distribuzioni di applicazioni o aggiornamenti del software obbligatori, superando eventuali scadenze configurate. In genere questo potrebbe essere necessario quando un computer è stato disattivato per un lungo periodo di tempo ed è necessario installare un numero elevato di distribuzioni di applicazioni o aggiornamenti.
+Ad esempio, se un utente finale è appena tornato da una vacanza, potrebbe dover attendere un po' tempo mentre vengono installate le distribuzioni delle applicazioni scadute.
+Per risolvere il problema ora è possibile definire un periodo di tolleranza di imposizione distribuendo le impostazioni del client di Configuration Manager a una raccolta.
 
-### <a name="try-it-out"></a>試してみましょう。
+### <a name="try-it-out"></a>Prova subito!
 
-猶予期間を設定するには、次の操作を実行します。
+Per configurare il periodo di tolleranza eseguire le operazioni seguenti:
 
-1.  クライアント設定の [**コンピューター エージェント**] ページで、新しいプロパティ [**展開期限後の実施の猶予期間 (時間)**] の値を **1** ～ **120** 時間で設定します。
-2.  新しい必須アプリケーションの展開、または既存の展開のプロパティで、[**スケジュール**] ページで [**ユーザー設定に従い、クライアント設定で定義された猶予期間が終了するまでこの展開の実施を延期する**] チェック ボックスをオンにします。
-このチェック ボックスがオンになっていて、クライアント設定も展開するデバイスを対象としているすべての展開が、適用猶予期間を使用します。
+1.  Nella pagina **Agente computer** delle impostazioni del client configurare la nuova proprietà **Periodo di tolleranza per l'imposizione dopo la scadenza della distribuzione (ore)** con un valore compreso tra **1** e **120** ore.
+2.  In una nuova distribuzione richiesta dell'applicazione o nelle proprietà di una distribuzione esistente, nella pagina **Pianificazione** selezionare la casella di controllo **Ritardare l'imposizione di questa distribuzione in base alle preferenze dell'utente**, fino al periodo di tolleranza definito nelle impostazioni client.
+Tutte le distribuzioni con questa casella di controllo selezionata e che sono destinate a dispositivi in cui è stata distribuita anche l'impostazione del client useranno il periodo di tolleranza di imposizione.
 
-適用猶予期間を構成し、チェック ボックスをオンにすると、アプリケーションのインストール期限になると、ユーザーがその猶予期間までに設定した最初の非ビジネス ウィンドウで、アプリケーションがインストールされます。 ただし、ユーザーはソフトウェア センターを開いて、いつでもアプリケーションをインストールすることもできます。 猶予期間が切れると、適用は期限切れの展開に対する通常の動作に戻ります。
-ソフトウェア更新プログラムの展開ウィザード、自動展開規則の作成ウィザード、およびプロパティ ページに、同様のオプションが追加されています。
+Se si configura un periodo di tolleranza di imposizione e si seleziona la casella di controllo, quando si raggiunge la scadenza dell'installazione dell'applicazione, essa verrà installata nella prima finestra non aziendale che l'utente ha configurato fino al periodo di grazia. Tuttavia l'utente può comunque aprire Software Center e installare l'applicazione in qualsiasi momento. Una volta scaduto il periodo di tolleranza, le distribuzioni scadute torneranno al normale comportamento.
+Opzioni simili sono state aggiunte alla procedura guidata di distribuzione degli aggiornamenti software, alla procedura guidata di creazione delle regole di distribuzione automatica e alle pagine delle proprietà.
 
-##  <a name="dmp_devg"></a> デバイス ガードにより Configuration Manager を管理インストーラーとして使用
+##  <a name="dmp_devg"></a>Uso di Configuration Manager come programma di installazione gestito con Device Guard
 
-Device Guard は、ハードウェアとソフトウェアの機能を使用して、デバイスでの実行を許可する条件を厳密に制御する Windows 10 の機能です。
+Controllo dispositivo è una funzionalità di Windows 10 che usa funzioni hardware e software per controllare accuratamente ciò che può essere eseguita sul dispositivo.
 
-Device Guard の詳細な概要とそのしくみについては、[この Technet の記事](https://technet.microsoft.com/itpro/windows/whats-new/device-guard-overview)をご覧ください。
+È possibile leggere una panoramica dettagliata del funzionamento di Controllo dispositivo in [questo articolo Technet](https://technet.microsoft.com/itpro/windows/whats-new/device-guard-overview).
 
-このリリースでは、Configuration Manager は Device Guard および [Windows AppLocker](https://technet.microsoft.com/library/dd723678(v=ws.10).aspx) と相互運用して、Configuration Manager で展開される実行可能ファイルや DLL ファイルが、管理されたインストーラーから提供されているものとして自動的に信頼されるようにすることができます。つまり、これらのファイルが対象のデバイス上で実行されることが許可され、その他のソフトウェアは他の AppLocker の規則によって明示的に実行が許可されない限り、実行することはできません。  
+In questa versione Configuration Manager può interagire con Controllo dispositivo e [Windows AppLocker](https://technet.microsoft.com/library/dd723678(v=ws.10).aspx) in modo che i file eseguibili e le DLL che vengono distribuite con Configuration Manager siano automaticamente attendibili, in quanto provenienti da un programma di installazione gestito, perciò sia consentita la loro esecuzione sul dispositivo di destinazione, mentre non sarà consentita agli altri software se non esplicitamente specificato da altre regole di AppLocker.  
 
-現時点では、この機能は Configuration Manager コンソールから構成することはできません。 ポリシーを構成するには、クライアントごとにレジストリ キーを構成し、クライアントで Windows サービスを構成する必要があります。
-これが完了したら、AppLocker ポリシー ファイルを構成します。 ポリシー ファイルを構成したら、それを互換性のある任意のクライアント デバイスに展開できます。
-
-
-すべての AppLocker ポリシーと同様に、管理インストーラー規則を含むポリシーは、次の 2 つのモードで実行できます。
-
-- 監査モード: アプリケーションの実行は妨げられませんが、ブロックされたすべてのアプリケーションがログ ファイルに報告されます (これは今後の Configuration Manager のリリースでサポートされる予定です)。
-- 適用を有効にする: アプリケーションが実行できなくなります。
-
-Configuration Manager での Device Guard の詳しい使用方法は、[Enterprise Mobility and Security ブログ](https://blogs.technet.microsoft.com/enterprisemobility/2016/06/20/configmgr-as-a-managed-installer-with-win10)をご覧ください。
-
-参考資料:
-
-- [Device Guard の概要](https://technet.microsoft.com/itpro/windows/keep-secure/introduction-to-device-guard-virtualization-based-security-and-code-integrity-policies)
-- [Device Guard certification and compliance](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-certification-and-compliance) (Device Guard の証明書とコンプライアンス)
-- [Device Guard 展開ガイド](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)
-
- ##  <a name="dmp_onprem"></a> オンプレミス モバイル デバイス管理のための複数のデバイス管理ポイント  
- Technical Preview 1606 では、オンプレミスのモバイル デバイス管理 (MDM) で、複数のデバイス管理ポイントが使用できるように登録済みのデバイスを自動的に構成する Windows 10 Anniversary Update の新機能をサポートしています。 この機能により、通常使用しているデバイスの管理ポイントが使用できない場合に、デバイスが別のデバイス管理ポイントにフォールバックすることができます。 この機能は、Windows 10 Anniversary Update がインストールされている PC でのみ機能します。  
-
-### <a name="try-it-out"></a>試してみましょう。  
-
-1.  階層内に複数のデバイス管理ポイントをインストールします。  
-
-2.  Windows 10 Anniversary Update  デバイスをオンプレミスのモバイル デバイス管理に登録します。  
-
-サイトを準備して、デバイスをオンプレミスのモバイル デバイス管理に登録する方法の詳細については、「[Manage mobile devices with on-premises infrastructure in System Center Configuration Manager](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md)」(System Center Configuration Manager でオンプレミス インフラストラクチャを使用してモバイル デバイスを管理する) をご覧ください。  
-
-## <a name="cloud_proxy"></a>インターネット上でクライアントを管理するためのクラウド プロキシ サービス
-
-クラウド プロキシ サービスは、インターネット上で Configuration Manager クライアントを管理する簡単な方法を提供します。 Microsoft Azure にデプロイされ、Azure サブスクリプションを必要とするサービスは、クラウド プロキシ コネクタ ポイントと呼ばれる新しい役割を使用して、オンプレミスの Configuration Manager インフラストラクチャに接続します。 完全にデプロイされ、構成されると、クライアントは内部のプライベート ネットワークに接続しているかどうか、またはインターネット上にあるかどうかに関係なく、オンプレミスの Configuration Manager サイト システムの役割にアクセスできるようになります。
-
-Configuration Manager コンソールを使用して、Azure にサービスをデプロイし、クラウド プロキシ コネクタ ポイントの役割を追加し、クラウド プロキシ トラフィックを許可するサイト システムの役割を構成します。 クラウド プロキシ サービスは現在、管理ポイント、配布ポイント、およびソフトウェアの更新ポイントの役割のみをサポートしています。
-
-コンピューターを認証し、異なる層のサービス間の通信を暗号化するには、クライアント証明書および Secure Socket Layer (SSL) 証明書が必要です。 クライアント コンピューターは通常、グループ ポリシーの適用を介してクライアント証明書を受け取ります。 クライアントと役割をホストしているサイト システム サーバー間のトラフィックを暗号化するには、CA からカスタム SSL 証明書を作成する必要があります。 これらの 2 種類の証明書に加え、クラウド プロキシ サービスのデプロイを Configuration Manager に許可する管理証明書を Azure で設定する必要もあります。  
-
-### <a name="requirements-for-cloud-proxy-service-in-tp-1606"></a>TP 1606 でのクラウド プロキシ サービスの要件
-- クライアント コンピューターとクラウド プロキシ コネクタ ポイントを実行するサイト システム サーバー
-- クライアント コンピューターからの通信を暗号化し、クラウド プロキシ サービスの ID を認証するために使用される内部 CA からのカスタムの SSL 証明書
-- クラウド サービスの Azure サブスクリプション
-- Azure での Configuration Manager の認証に使用される Azure 管理証明書
-
-### <a name="limitations-of-cloud-proxy-service-in-tp-1606"></a>TP 1606 でのクラウド プロキシ サービスの制限事項
-
-- 管理ポイント、配布ポイント、およびソフトウェアの更新ポイントの役割のみをサポートします。
-- ユーザー ポリシーはサポートされていません。
-- Configuration Manager で[オンプレミス モバイル デバイス管理 (MDM)](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md) とともに使用することはできません。
-- Azure のパブリック クラウド プラットフォームでのみサポートされます。
+Attualmente questa funzionalità non è configurabile dalla console di Configuration Manager. Per configurare i criteri è necessario configurare una chiave di registro su ciascun client e configurare servizi di Windows sul client.
+Al termine configurare il file di criteri di AppLocker. Dopo aver configurato il file dei criteri è possibile distribuirlo a qualsiasi dispositivo compatibile con il client.
 
 
-### <a name="try-it-out"></a>試してみましょう。
+I criteri con regole del programma di installazione gestito, come tutti i criteri di AppLocker, possono essere eseguiti in due modalità:
 
-クラウド プロキシ サービスをデプロイするためのプロセスには、次の手順が含まれます。
+- Modalità di controllo: non viene impedita l'esecuzione delle applicazioni ma tutte le applicazioni che sarebbero state bloccate vengono segnalate in un file di log (la funzionalità sarà supportata in una versione successiva di Configuration Manager).
+- Imposizione abilitata: viene impedita l'esecuzione delle applicazioni.
 
-1. クラウド プロキシ サービス用のカスタム SSL 証明書を作成して発行します。
-1. クライアント証明書のルートをエクスポートします。
-2. 管理証明書を Azure にアップロードします。
-3. Configuration Manager コンソールで、クラウド プロキシ サービスを設定します。
-4. クライアント証明書の認証を使用するプライマリ サイトを構成します。
-5. クラウド プロキシ コネクタ ポイントをサイトに追加します。
-6. クラウド プロキシ トラフィックを受け入れるサイト システムの役割を構成します。
+Altre informazioni sull'uso di Controllo dispositivo con Configuration Manager sono disponibili nel [blog sulla mobilità aziendale e la sicurezza](https://blogs.technet.microsoft.com/enterprisemobility/2016/06/20/configmgr-as-a-managed-installer-with-win10).
 
-次のセクションでは、これらの手順を完了するための詳細を提供します。
+Letture di approfondimento:
 
-#### <a name="create-a-custom-ssl-certificate"></a>カスタム SSL 証明書を作成する
+- [Introduzione a Controllo dispositivo](https://technet.microsoft.com/itpro/windows/keep-secure/introduction-to-device-guard-virtualization-based-security-and-code-integrity-policies)
+- [Conformità e certificazione di Controllo dispositivo](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-certification-and-compliance)
+- [Guida alla distribuzione di Controllo dispositivo](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)
 
-クラウド ベースの配布ポイントで行うのと同じ方法で、クラウド プロキシ サービスのカスタム SSL 証明書を作成できます。 次の操作以外は、「[クラウドベースの配布ポイント用のサービス証明書の展開](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clouddp2008_cm2012)」の指示に従います。
+ ##  <a name="dmp_onprem"></a> Punti di gestione dei dispositivi multipli per la gestione dei dispositivi mobili locale  
+ Con la versione Technical Preview 1606, Gestione dispositivi mobili locali supporta una nuova funzionalità di Windows 10 Anniversary Update che configura automaticamente un dispositivo registrato affinché usi più di un punto di gestione periferiche. Questa funzionalità consente al dispositivo il fallback su un altro punto di gestione periferiche quando quello che usa di solito non è disponibile. La funzionalità è operativa solo nei PC in cui è stato installato Windows 10 Anniversary Update.  
 
-* 新しい証明書テンプレートを設定する際に、Configuration Manager サーバー用に設定したセキュリティ グループに **読み取り**と**登録**のアクセス許可を与えます。
+### <a name="try-it-out"></a>Prova subito!  
 
-#### <a name="export-the-client-certificates-root"></a>クライアント証明書のルートをエクスポートする
+1.  Installare più di un punto di gestione dispositivi nella gerarchia.  
 
-ネットワークで使用されているクライアント証明書のルートをエクスポートする最も簡単な方法は、クライアント証明書を含むドメインに参加しているいずれかのコンピューター上でクライアント証明書を開いてコピーすることです。
+2.  Registrare un dispositivo Windows 10 Anniversary Update per Gestione dispositivi mobili locali.  
+
+Per informazioni su come preparare il sito e registrare i dispositivi per Gestione dispositivi mobili locali, vedere [Manage mobile devices with on-premises infrastructure in System Center Configuration Manager](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md) (Gestione dei dispositivi mobili con infrastruttura locale in System Center Configuration Manager).  
+
+## <a name="cloud_proxy"></a>Servizio proxy cloud per la gestione dei client su Internet
+
+Il servizio proxy cloud offre un modo semplice per gestire i client di Configuration Manager su Internet. Il servizio, che viene distribuito in Microsoft Azure e richiede una sottoscrizione di Azure, si connette all'infrastruttura di Configuration Manager locale usando un nuovo ruolo, denominato punto del connettore proxy cloud. Una volta che è stato completamente distribuito e configurato, i client saranno in grado di accedere ai ruoli di sistema del sito Configuration Manager locale indipendentemente dal fatto che siano connessi alla rete privata interna o su Internet.
+
+Si usa la console di Configuration Manager per distribuire il servizio in Azure, aggiungere il ruolo punto di connessione proxy cloud e configurare i ruoli del sistema del sito per consentire il traffico del proxy cloud. Il servizio proxy cloud supporta attualmente solo i ruoli punto di gestione, punto di distribuzione e punto di aggiornamento software.
+
+Per autenticare i computer e crittografare le comunicazioni tra i diversi livelli di servizio sono necessari certificati client e certificati Secure Socket Layer (SSL). I computer client ricevono in genere un certificato client mediante l'imposizione dei criteri di gruppo. Per crittografare il traffico tra i client e il server di sistema del sito che ospita i ruoli, è necessario creare un certificato SSL personalizzato mediante un'autorità di certificazione. Oltre a questi due tipi di certificati è inoltre necessario impostare un certificato di gestione in Azure che consente a Configuration Manager di distribuire il servizio proxy cloud.  
+
+### <a name="requirements-for-cloud-proxy-service-in-tp-1606"></a>Requisiti per il servizio proxy cloud in TP 1606
+- I computer client e il server di sistema del sito eseguono il punto di connessione del proxy cloud.
+- Certificati SSL personalizzati dell'autorità di certificazione interna, utilizzati per crittografare le comunicazioni dai computer client e autenticare l'identità del servizio proxy cloud.
+- Sottoscrizione di Azure per i servizi cloud.
+- Certificato di gestione di Azure, utilizzato per l'autenticazione di Configuration Manager con Azure.
+
+### <a name="limitations-of-cloud-proxy-service-in-tp-1606"></a>Limitazioni del servizio proxy cloud in TP 1606
+
+- Supporta solo i ruoli punto di gestione, punto di distribuzione e punto di aggiornamento software.
+- I criteri utente non sono supportati.
+- Non è utilizzabile con [Gestione dispositivi mobili locali](../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md) in Configuration Manager.
+- Supportato solo nella piattaforma cloud pubblica di Azure.
+
+
+### <a name="try-it-out"></a>Prova subito!
+
+La procedura per distribuire il servizio proxy cloud include i passaggi seguenti:
+
+1. Creare ed emettere un certificato SSL personalizzato per il servizio proxy cloud.
+1. Esportare la radice del certificato client.
+2. Caricare il certificato di gestione in Azure.
+3. Impostare il servizio proxy cloud nella console di Configuration Manager.
+4. Configurare il sito primario per l'uso dell'autenticazione del client mediante certificato.
+5. Aggiungere il punto di connessione del proxy cloud al sito.
+6. Configurare i ruoli del sistema del sito per accettare il traffico del proxy cloud.
+
+Le sezioni seguenti forniscono altre informazioni per completare questi passaggi.
+
+#### <a name="create-a-custom-ssl-certificate"></a>Creare un certificato SSL personalizzato
+
+È possibile creare un certificato SSL personalizzato per il servizio proxy cloud esattamente come si farebbe per un punto di distribuzione basato su cloud. Seguire le istruzioni per la [distribuzione del certificato di servizio per i punti di distribuzione basati su cloud](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clouddp2008_cm2012) procedendo in modo diverso per le operazioni seguenti:
+
+* Quando si configura il nuovo modello di certificato, assegnare le autorizzazioni **Lettura** e **Registrazione** al gruppo di protezione impostato per i server di Configuration Manager.
+
+#### <a name="export-the-client-certificates-root"></a>Esportare la radice del certificato client
+
+Il modo più semplice per ottenere l'esportazione della radice dei certificati client utilizzati nella rete è aprire un certificato client in uno dei computer appartenenti a un dominio che ne abbia uno e copiarlo.
 
 >[!NOTE]
->クライアント証明書は、クラウド プロキシ サービスで管理するコンピューター上およびクラウド プロキシ コネクタ ポイントをホストしているサイト システム サーバー上で必要です。 これらの任意のコンピューターにクライアント証明書を追加する必要がある場合は、「[Windows コンピューター用のクライアント証明書の展開](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clouddp2008_cm2012)」をご覧ください。
+>I certificati client sono richiesti su qualsiasi computer che si vuole gestire con il servizio proxy cloud e sul server di sistema del sito che ospita il punto di connessione del proxy cloud. Se è necessario aggiungere un certificato client a uno di tali computer, vedere [Distribuzione del certificato client per computer Windows](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clouddp2008_cm2012).
 
-1. [実行] ウィンドウで、「**mmc**」を入力して Return キーを押します。
-2. 管理コンソールの [ファイル] メニューで [**スナップインの追加と削除**] をクリックします。
-3. [スナップインの追加と削除] ダイアログ ボックスで [**証明書**] をクリックして、[**追加**]、[**コンピューター アカウント**]、[**次へ**]、[**ローカル コンピューター**] の順にクリックし、[**完了**] をクリックします。 [OK **** ] をクリックしてダイアログ ボックスを閉じます。
-4. **[証明書] > [個人用] > [証明書]** に移動します。
-5. コンピューターでクライアント認証用の証明書をダブルクリックして、[証明パス] タブをクリックし、ルート証明機関 (パスの先頭) をダブルクリックします。
-6.  [詳細] タブをクリックし、[**ファイルにコピー**] をクリックします。
-7. 既定の証明書形式を使用して証明書のエクスポート ウィザードを完了します。 作成したルート証明書の名前と場所をメモします。 これは後の手順でクラウド プロキシ サービスを構成する際に必要になります。
+1. Nella finestra Esegui digitare **mmc** e premere INVIO.
+2. Nel menu File della console di gestione fare clic su **Aggiungi/Rimuovi snap-in**.
+3. Nella finestra di dialogo Aggiungi o rimuovi Snap-in fare clic su **Certificati**, fare clic su **Aggiungi >**, su **Account computer**, su **Avanti**, su **Computer locale**, quindi fare clic su **Fine**. Fare clic su **OK** per chiudere la finestra di dialogo.
+4. Passare a **Certificati > Personale > Certificati**.
+5. Fare doppio clic sul certificato per l'autenticazione client nel computer, fare clic sulla scheda Percorso certificazione e fare doppio clic sull'autorità radice (nella parte superiore del percorso).
+6.  Fare clic sulla scheda Dettagli e fare clic su **Copia su file...**.
+7. Completare l'Esportazione guidata certificati utilizzando il formato di certificato predefinito. Prendere nota del nome e percorso del certificato radice creato. Sarà necessario configurare il servizio proxy cloud in un passaggio successivo.
 
-#### <a name="upload-the-management-certificate-to-azure"></a>管理証明書を Azure にアップロードする
+#### <a name="upload-the-management-certificate-to-azure"></a>Caricare il certificato di gestione in Azure
 
-Azure 管理証明書は、Configuration Manager が Azure API にアクセスして、クラウド プロキシ サービスを構成するために必要です。 管理証明書をアップロードする方法の詳細と手順については、Azure のドキュメントの次の記事を参照してください。
-- [Azure Cloud Services の証明書の概要](https://azure.microsoft.com/documentation/articles/cloud-services-certs-create/)
-- [Azure Management API 管理証明書のアップロード](https://azure.microsoft.com/documentation/articles/azure-api-management-certs/)
+È necessario un certificato di gestione di Azure perché Configuration Manager possa accedere all'API di Azure e configurare il servizio proxy cloud. Per altre informazioni e istruzioni su come caricare un certificato di gestione, vedere gli articoli seguenti nella documentazione di Azure:
+- [Panoramica sui certificati per i servizi cloud di Azure](https://azure.microsoft.com/documentation/articles/cloud-services-certs-create/)
+- [Caricare un certificato di gestione dell'API di gestione di Azure](https://azure.microsoft.com/documentation/articles/azure-api-management-certs/).
 
-管理証明書に関連付けられているサブスクリプション ID を必ずコピーしてください。 これは Configuration Manager コンソールで、クラウド プロキシ サービスを設定する際に必要になります。
+Assicurarsi di copiare l'ID sottoscrizione associato al certificato di gestione. Sarà necessario per configurare il servizio proxy cloud nella console di Configuration Manager.
 
-#### <a name="set-up-cloud-proxy-service"></a>クラウド プロキシ サービスの設定
+#### <a name="set-up-cloud-proxy-service"></a>Configurare il servizio proxy cloud
 
-1. Configuration Manager コンソールで、**[管理] > [Cloud Services] > [クラウド プロキシ サービス]** に移動します。
-2. [**クラウド プロキシ サービスの作成**] をクリックします。
-3. クラウド プロキシ サービスの作成ウィザードで、(Azure 管理ポータルからコピーした) Azure サブスクリプション ID を入力し、[参照] をクリックして Azure の管理証明書としてアップロードするために使用する証明書ファイルを選択します。 [次へ] をクリックします。 **** コンソールを Azure に接続するためにしばらく待機します。
-4. ウィザードで追加の詳細を入力します。
-    - カスタム SSL 証明書からエクスポートした秘密キー (.pfx ファイル) を指定します。
-    - クライアント証明書からエクスポートしたルート証明書を指定します。
-    - 新しい証明書テンプレートを作成するときに使用したのと同じサービス名の FQDN を指定します。
-    - [**クライアント証明書の失効状態を検証する**] の横のボックスをオフにします (CRL 情報をパブリックに発行している場合を除く)。
-    - 完了したら、[**次へ**] をクリックします。
-5. 設定を確認して、[**次へ**] をクリックします。 Configuration Manager がサービスの設定を開始します。 ウィザードが完了したら、[**閉じる**] をクリックします。ただし、Azure で完全にサービスをプロビジョニングするまで 5 ～ 15 分間かかります。 新しく設定されたクラウド プロキシ サービスの [**状態**] 列を確認して、サービスの準備が完了するタイミングを判断します。
+1. Aprire la console di Configuration Manager e passare ad **Amministrazione > Servizi cloud > Servizio proxy cloud**.
+2. Fare clic su **Crea il servizio proxy cloud**.
+3. Nella Creazione guidata del servizio proxy cloud immettere l'ID sottoscrizione di Azure (copiato dal portale di gestione di Azure), fare clic su Sfoglia e selezionare il file di certificato caricato come certificato di gestione di Azure. Fare clic su **Avanti**. Attendere qualche secondo affinché la console si connetta ad Azure.
+4. Compilare i dettagli aggiuntivi nella procedura guidata:
+    - Specificare la chiave privata (file con estensione .pfx) esportato dal certificato SSL personalizzato.
+    - Specificare il certificato radice esportato dal certificato client.
+    - Specificare lo stesso FQDN del nome del servizio utilizzato per creare il nuovo modello di certificato.
+    - Deselezionare la casella accanto a **Verifica la revoca di certificato client**  (a meno che non si intenda pubblicare le informazioni di CRL).
+    - Al termine fare clic su **Avanti**.
+5. Verificare le impostazioni e fare clic su **Avanti**. Configuration Manager avvia la configurazione del servizio. Al termine della procedura guidata è possibile fare clic su **Chiudi** ma saranno necessari da 5 a 15 minuti per completare il provisioning del servizio in Azure. Controllare la colonna **Stato** per il nuovo servizio proxy cloud configurato per determinare quando il servizio è pronto.
 
-#### <a name="configure-primary-site-for-client-certification-authentication"></a>クライアント証明書の認証用にプライマリ サイトを構成する
+#### <a name="configure-primary-site-for-client-certification-authentication"></a>Configurare il sito primario per l'autenticazione con certificati client
 
-1. Configuration Manager コンソールで、**[管理]、[サイトの構成]、[サイト]** の順に移動します。
-2. クラウド プロキシ サービスを使用して管理するクライアントのプライマリ サイトを選択して [**プロパティ**] をクリックします。
-3. プライマリ サイトのプロパティ シートの [クライアント コンピューターの通信方法] タブで、[**使用可能な場合は PKI クライアント証明書 (クライアント認証機能) を使用する**] の横のチェック ボックスをオンにします。
-4. [**サイト システムの証明書失効リスト (CRL) をチェックする**] の横のチェック ボックスがオフになっていることを確認します。 このオプションは、CRL をパブリックに公開した場合にのみ必要になります。
-5. **[OK]**をクリックします。
+1. Nella console di Configuration Manager passare ad **Amministrazione > Configurazione del sito > Siti**.
+2. Selezionare il sito primario per i client che si vuole gestire tramite il servizio proxy cloud e fare clic su **Proprietà**.
+3. Nella scheda Comunicazioni computer client della finestra delle proprietà del sito primario selezionare la casella accanto a **Utilizza certificato client PKI (funzionalità di autenticazione client) quando disponibile**.
+4. Deselezionare la casella accanto a **Controllo client dell'elenco di revoche di certificati (CRL) per i sistemi del sito**. Questa opzione è necessaria solo quando si pubblicano i CRL.
+5. Fare clic su **OK**.
 
-#### <a name="add-the-cloud-proxy-connector-point"></a>クラウド プロキシ コネクタ ポイントを追加する
+#### <a name="add-the-cloud-proxy-connector-point"></a>Aggiungere il punto di connessione del proxy cloud
 
-クラウド プロキシ コネクタ ポイントは、クラウド プロキシ サービスと通信するための新しいサイト システムの役割です。 クラウド プロキシ コネクタ ポイントを追加するには、「[System Center Configuration Manager のサイト システム役割の追加](../../core/servers/deploy/configure/add-site-system-roles.md)」の手順に従います。
+Il punto di connessione del proxy cloud è un nuovo ruolo del sistema del sito per la comunicazione con il servizio proxy cloud. Per aggiungere il punto di connessione del proxy cloud seguire le istruzioni in [Add site system roles for System Center Configuration Manager](../../core/servers/deploy/configure/add-site-system-roles.md) (Aggiungere ruoli del sistema del sito per System Center Configuration Manager).
 
-#### <a name="configure-roles-for-cloud-proxy-traffic"></a>クラウドプロキシ トラフィックの役割を構成する
+#### <a name="configure-roles-for-cloud-proxy-traffic"></a>Configurare i ruoli per il traffico del proxy cloud
 
-クラウド プロキシ サービスを設定する最後のステップは、クラウド プロキシ トラフィックを受け入れるためのサイト システムの役割を構成することです。 Tech Preview 1606 の場合、管理ポイント、配布ポイント、およびソフトウェアの更新ポイントの役割のみがクラウド プロキシ サービスでサポートされています。 各役割を個別に構成する必要があります。
+L'ultimo passaggio della configurazione del servizio proxy cloud consiste nel configurare i ruoli del sistema del sito per accettare il traffico del proxy cloud. Con la versione Technical Preview 1606 solo i ruoli punto di gestione, punto di distribuzione e aggiornamento del software sono supportati per il servizio proxy cloud. È necessario configurare separatamente ogni ruolo.
 
-1. Configuration Manager コンソールで、**[管理] > [サイトの構成] > [サーバーとサイト システムの役割]** の順に移動します。
-2. クラウド プロキシ トラフィックに構成したい役割のサイト システム サーバーをクリックします。
-3. 役割をクリックして、[**プロパティ**] をクリックします。
-4. 役割のプロパティ シートの [クライアント接続] の下で、[**HTTPS**] を選択し、[**Configuration Manager のクラウド プロキシ トラフィックを許可する**] の横のチェック ボックスをオンにして [**OK**] をクリックします。 残りの役割にこれらの手順を繰り返します。
+1. Nella console di Configuration Manager passare ad **Amministrazione > Configurazione del sito > Server e ruoli del sistema del sito**.
+2. Fare clic sul server di sistema del sito per il ruolo che si vuole configurare per il traffico del proxy cloud.
+3. Fare clic sul ruolo e quindi fare clic su **Proprietà**.
+4. Nella finestra delle proprietà del ruolo, sotto Connessioni client, scegliere **HTTPS**, selezionare la casella accanto a **Consenti traffico proxy cloud di Configuration Manager** quindi fare clic su **OK**. Ripetere questi passaggi per i ruoli rimanenti.
 
-#### <a name="check-status-on-a-client-on-the-internet"></a>インターネットでクライアントの状態を確認する
+#### <a name="check-status-on-a-client-on-the-internet"></a>Controllare lo stato in un client su Internet
 
-サービスと役割をすべて構成すると、内部クライアントは次回の場所の要求でクラウド プロキシ サービスの場所を取得します。 更新された場所の情報を取得したクライアントは、インターネット上で Configuration Manager と通信できるようになります。 場所の要求のポーリング サイクルは 24 時間ごとです。 通常にスケジュール設定された場所の要求を待機したくない場合は、コンピューターで SMS Agent Host サービス (ccmexec.exe) を再起動することによって、要求を強制できます。
+Quando il servizio e i ruoli sono completamente configurati, i client interni otterranno la posizione del servizio proxy cloud alla successiva richiesta di percorso. I client con informazioni sul percorso aggiornate possono quindi comunicare con Configuration Manager su Internet. Il ciclo di polling per le richieste di percorso è di 24 ore. Se non si vuole attendere la richiesta di percorso della normale pianificazione, è possibile forzare la richiesta riavviando il servizio host agenti di SMS (ccmexec.exe) nel computer.
 
-クライアントがクラウド プロキシ サービスの新しい場所の情報を取得したら、不要になった内部のプライベート ネットワーク上にあってインターネットにアクセスを持つクライアントの状態を確認してください。 **[管理] > [Cloud Services] > [クラウド プロキシ サービス]** の順に移動して、リスト ウィンドウでサービスを選択し、詳細ペインでトラフィックの情報を表示することで、クラウド プロキシ サービスのトラフィックを監視することもできます。   
+Quando i client hanno le nuove informazioni di percorso per il servizio proxy cloud, controllare lo stato dei client che non sono più nella rete privata interna ma hanno accesso a Internet. È inoltre possibile monitorare il traffico sul servizio proxy cloud passando ad **Amministrazione > Servizi cloud > Servizio proxy cloud**, selezionando il servizio nel riquadro dell'elenco e visualizzando le informazioni di traffico nel riquadro dei dettagli.   
 
-## <a name="manage_o365"></a>Configuration Manager で Office 365 のクライアント エージェントを管理  
+## <a name="manage_o365"></a> Gestione dell'agente del client Office 365 in Configuration Manager  
 
-Technical Preview 1606 を起動すると、グループ ポリシーの代わりに Configuration Manager クライアント エージェント設定を使用して、Office 365 クライアントが Configuration Manager から更新プログラムを受信できるようにすることができます。 この設定を構成し、Office 365 の更新プログラムを展開すると、Configuration Manager クライアント エージェントは、Office 365 のクライアント エージェントと通信して、配布ポイントから Office 365 の更新プログラムをダウンロードしてインストールします。 Configuration Manager は、クライアント エージェント設定のインベントリも取得します。
+A partire dalla versione Technical Preview 1606 è possibile usare un'impostazione dell'agente client di Configuration Manager, invece dei criteri di gruppo, per consentire ai client di Office 365 di ricevere aggiornamenti da Configuration Manager. Dopo aver configurato questa impostazione e distribuito gli aggiornamenti di Office 365, l'agente client di Configuration Manager comunica con l'agente client di Office 365 al fine di scaricare gli aggiornamenti di Office 365 da un punto di distribuzione e installarli. Configuration Manager rileva inoltre l'impostazione dell'agente client.
 
-詳細については、「[System Center Configuration Manager での Office 365 ProPlus の更新プログラムの管理](https://technet.microsoft.com/library/mt741983.aspx)」をご覧ください。
+Per altre informazioni, vedere [Manage Office 365 ProPlus updates](https://technet.microsoft.com/library/mt741983.aspx) (Gestire gli aggiornamenti di Office 365 ProPlus).
 
-### <a name="set-the-configuration-manager-client-setting-to-manage-the-office-365-client-agent"></a>Configuration Manager クライアント設定で Office 365 クライアント エージェントを管理するように設定する
-1.  Configuration Manager コンソールで、[**管理**] > [**概要**] > [**クライアント設定**] の順にクリックします。
-2. クライアント エージェントを有効にする適切なデバイスの設定を開きます。 既定およびカスタムのクライアント設定の詳細については、「[System Center Configuration Manager でクライアント設定を構成する方法](../../core/clients/deploy/configure-client-settings.md)」を参照してください。
-3. **[ソフトウェアの更新]** を選択し、**[Office 365 クライアント エージェントの管理を有効にする]** の設定に **[はい]** を設定します。  
-
-
-## <a name="osdpreservedriveletter"></a>OSDPreserveDriveLetter タスク シーケンス変数は使用されなくなった
-OSDPreserveDriveLetter タスク シーケンス変数は、タスク シーケンスが対象コンピューターにそのイメージを適用するときに、オペレーティング システム イメージ WIM ファイルにキャプチャされたドライブ文字を使用するかどうかを判断します。
-- Technical Preview 1606 では、このタスク シーケンス変数は使用されていません。
-
-既定で、オペレーティング システムの展開中に、Windows セットアップが使用する最適なドライブ文字を決定するようになりました (通常は C:)。 別のドライブを使用するように指定する場合は、オペレーティング システムの適用タスク シーケンスのステップで場所を変更できます。 [**このオペレーティング システムの適用先を選択してください。**] 設定に移動し、[**特定の論理ドライブ文字**] を選択し、使用するドライブを選択します。 設定先のコンピューター上に、選択した文字が割り当てられたドライブが作成されているはずです。 
-
-## <a name="updatesandservicing"></a>更新プログラムとサービス ノードの変更
-Technical Preview 1606 では、Configuration Manager コンソールの [更新とサービス] に適用されるいくつかの変更が導入されています。
-- **ノード名の変更:**
-
-    **[監視]** ワークスペースで、**[サイト サービスの状態]** ノードの名前が **[更新とサービスの状態]** に変更されました。
-- **追加のインストール状態:**
-
-    サイトの更新プログラムのインストールの状態を表示すると、次の操作の詳細がコンソールで個別に表示されるようになりました。
-    - **ダウンロード** (これは、サービス接続ポイントのサイト システムの役割がインストールされている最上位層のサイトにのみ適用されます)
-    - **Replication**
-    - **前提条件の確認**
-    - **インストール**
-
-  さらに、各手順のより詳細な情報 (詳細な情報を表示できるログ ファイルなど) が追加されています。  
--   **前提条件のエラーを再試行する新しいオプション:**
-
-    [**管理**] ワークスペースと [**監視**] ワークスペースの両方で、[**更新とサービス**] ノードのリボンに [**前提条件チェックの警告を無視する**] という名前の新しいボタンが含まれています。
-
-    [前提条件チェックの警告を無視する] オプションを使用せずに更新プログラムを (更新ウィザードから) インストールし、その更新プログラムのインストールが**前提条件の警告**状態になって停止した場合は、後でリボンから **[前提条件チェックの警告を無視する]** を選択すれば、その更新プログラムのインストールが自動的に継続され、前提条件チェックの警告が無視されます。  
+### <a name="set-the-configuration-manager-client-setting-to-manage-the-office-365-client-agent"></a>Definire l'impostazione del client di Configuration Manager per gestire l'agente client di Office 365
+1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Panoramica** > **Impostazioni client**.
+2. Aprire le impostazioni del dispositivo appropriato per abilitare l'agente client. Per altre informazioni sulle impostazioni client predefinite e personalizzate, vedere [How to configure client settings in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md) (Come configurare le impostazioni client in System Center Configuration Manager).
+3. Fare clic su **Aggiornamenti software** e selezionare **Sì** per l'impostazione **Abilita la gestione dell'agente client di Office 365**.  
 
 
+## <a name="osdpreservedriveletter"></a>La variabile della sequenza di attività OSDPreserveDriveLetter è stata deprecata
+La variabile della sequenza di attività OSDPreserveDriveLetter determina se la sequenza di attività usa la lettera di unità acquisita nel file WIM dell'immagine del sistema operativo quando si applica tale immagine a un computer di destinazione.
+- Questa variabile della sequenza di attività è stata deprecata nella versione Technical Preview 1606.
 
-- **より見やすくなった更新プログラムのビュー:**
+Durante la distribuzione del sistema operativo, per impostazione predefinita l'installazione di Windows ora stabilisce qual è la lettera di unità migliore da usare (in genere C:). Se si vuole specificare un'unità diversa da usare, è possibile modificare il percorso nella sequenza di passaggi dell'attività Applica sistema operativo. Passare all'impostazione **Selezionare il percorso in cui applicare questo sistema operativo**, selezionare **Lettera unità logica specifica** e scegliere l'unità che si vuole usare. Nel computer di destinazione deve essere presente un'unità assegnata alla lettera che si sceglie. 
 
-    [**更新とサービス**] ノードを表示すると、最近インストールされた更新プログラムと、インストール可能な新しい更新プログラムのみが表示されるようになりました。 以前にインストールされた更新プログラムを表示するには、リボンに表示される新しい **[履歴]** ボタンをクリックします。  
+## <a name="updatesandservicing"></a>Modifiche per il nodo Aggiornamenti e manutenzione
+Con la versione Technical Preview 1606 sono state introdotte diverse modifiche che si applicano ad aggiornamenti e manutenzione nella console di Configuration Manager:
+- **Modifica del nome del nodo:**
 
--   **実稼働前の名前変更されたオプション:**
+    Nell'area di lavoro **Monitoraggio** il nodo dello stato **Manutenzione del sito** è stato rinominato in **Aggiornamenti e stato di manutenzione**.
+- **Altri stati di installazione:**
 
-    [更新とサービス] ノードで、[**クライアント オプション**] という名前だったボタンが [**実稼働前クライアントの昇格**] に変更されました。
+    Quando si visualizza lo stato di installazione dell'aggiornamento di un sito, nella console vengono ora mostrate informazioni distinte per le azioni seguenti:
+    - **Download** (si applica solo al sito di livello superiore in cui è installato il ruolo del sistema del sito del punto di connessione del servizio)
+    - **Replica**
+    - **Controllo dei prerequisiti**
+    - **Installazione**
+
+  Inoltre, sono ora presenti più informazioni dettagliate per ogni passaggio, incluso il file di log nel quale è possibile visualizzare altre informazioni.  
+-   **Nuova opzione per ignorare i messaggi sui prerequisiti non soddisfatti:**
+
+    In entrambe le aree di lavoro **Amministrazione** e **Monitoraggio** il nodo **Aggiornamenti e manutenzione** include un nuovo pulsante sulla barra multifunzione denominato **Ignora avvisi dei prerequisiti**.
+
+    Se si installa un aggiornamento senza usare l'opzione Ignora avvisi dei prerequisiti dalla procedura guidata e l'installazione dell'aggiornamento viene interrotta da un **avviso relativo ai prerequisiti** senza che si siano verificati errori, è possibile selezionare **Ignora avvisi dei prerequisiti** dalla barra multifunzione per riprendere automaticamente l'installazione ignorando gli avvisi dei prerequisiti.  
+
+
+
+- **Visualizzazione più chiara degli aggiornamenti:**
+
+    Quando si visualizza il nodo **Aggiornamenti e manutenzione**, ora è possibile visualizzare solo l'aggiornamento installato più recente e qualsiasi nuovo aggiornamento disponibile per l'installazione. Per visualizzare gli aggiornamenti installati in precedenza, fare clic sul nuovo pulsante **Cronologia** nella barra multifunzione.  
+
+-   **Opzioni ridenominate per la fase di pre-produzione:**
+
+    Nel nodo Aggiornamenti e manutenzione, il pulsante che era denominato **Opzioni client** è ora stato denominato **Alza di livello il client di pre-produzione**.

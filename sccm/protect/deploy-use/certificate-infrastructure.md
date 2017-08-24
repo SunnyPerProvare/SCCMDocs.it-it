@@ -1,6 +1,6 @@
 ---
-title: "証明書インフラストラクチャの構成 | Microsoft Docs"
-description: "System Center Configuration Manager で証明書の登録を構成する方法を説明します。"
+title: Configurare l'infrastruttura di certificazione | Microsoft Docs
+description: Informazioni su come configurare la registrazione dei certificati in System Center Configuration Manager.
 ms.custom: na
 ms.date: 07/25/2017
 ms.prod: configuration-manager
@@ -18,74 +18,74 @@ manager: angrobe
 ms.openlocfilehash: 640eb1df9d53fc83d93c39a7ecbaf2668e176805
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="configure-certificate-infrastructure"></a>証明書インフラストラクチャの構成
+# <a name="configure-certificate-infrastructure"></a>Configurare l'infrastruttura di certificazione
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager で証明書インフラストラクチャを構成する方法について説明します。 また、作業を始める前に、「[System Center Configuration Manager での証明書プロファイルの前提条件](../../protect/plan-design/prerequisites-for-certificate-profiles.md)」にある前提条件を確認してください。  
+Informazioni su come configurare l'infrastruttura di certificazione in System Center Configuration Manager. Prima di iniziare, verificare gli eventuali prerequisiti elencati in [Prerequisiti per i profili certificato in System Center Configuration Manager](../../protect/plan-design/prerequisites-for-certificate-profiles.md).  
 
-次の手順を使用し、SCEP のインフラストラクチャまたは PFX 証明書を構成します。
+Usare questi passaggi per configurare l'infrastruttura per i certificati SCEP o PFX.
 
-## <a name="step-1---install-and-configure-the-network-device-enrollment-service-and-dependencies-for-scep-certificates-only"></a>手順 1 - ネットワーク デバイス登録サービスおよび依存する要素をインストールして構成する (SCEP 証明書の場合のみ)
+## <a name="step-1---install-and-configure-the-network-device-enrollment-service-and-dependencies-for-scep-certificates-only"></a>Passaggio 1: installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze (solo per certificati SCEP)
 
- Active Directory 証明書サービス (AD CS) 用のネットワーク デバイス登録サービスの役割サービスをインストールして構成し、証明書テンプレートのセキュリティ アクセスを変更し、公開キー基盤 (PKI) クライアント認証証明書を展開して、レジストリでインターネット インフォメーション サービス (IIS) の既定の URL サイズの制限を上げます。 必要に応じて、証明書の発行元証明機関 (CA) でカスタムの有効期限を使えるように構成します。  
+ È necessario installare e configurare il servizio del ruolo Servizio di registrazione dispositivi di rete per Servizi certificati Active Directory (AD CS), modificare le autorizzazioni di sicurezza nei modelli del certificato, distribuire un certificato di autenticazione client PKI (Public Key Infrastructure) e modificare il registro per aumentare il limite della dimensione predefinita di IIS (Internet Information Services). Se necessario, occorre configurare anche l'autorità di certificazione (CA) emittente per consentire un periodo di validità personalizzato.  
 
 > [!IMPORTANT]  
->  System Center Configuration Manager でネットワーク デバイス登録サービスを使用するように構成する前に、ネットワーク デバイス登録サービスがインストールされ、構成されていることを確認してください。 サービスに依存する要素が正しく動作しないと、System Center Configuration Manager による証明書登録のトラブルシューティングが難しくなります。  
+>  Prima di configurare System Center Configuration Manager per usare il servizio Registrazione dispositivi di rete, verificare l'installazione e la configurazione del servizio stesso. Se queste dipendenze non funzionano correttamente, sarà difficile risolvere problemi di registrazione dei certificati usando System Center Configuration Manager.  
 
-### <a name="to-install-and-configure-the-network-device-enrollment-service-and-dependencies"></a>ネットワーク デバイス登録サービスおよび依存する要素をインストールして構成するには  
+### <a name="to-install-and-configure-the-network-device-enrollment-service-and-dependencies"></a>Per installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze  
 
-1.  Windows Server 2012 R2 を実行しているサーバーに、ネットワーク デバイス登録サービスの役割サービスをインストールし、Active Directory 証明書サービス サーバーの役割用に構成します。 詳細については、TechNet の Active Directory 証明書サービスの「 [Network Device Enrollment Service Guidance (ネットワーク デバイス登録サービス ガイド)](http://go.microsoft.com/fwlink/p/?LinkId=309016) 」を参照してください。  
+1.  Su un server che esegue Windows Server 2012 R2, installare e configurare il ruolo servizio Registrazione dispositivi di rete per il ruolo del server Servizi certificati Active Directory. Per altre informazioni, vedere [Informazioni aggiuntive sul servizio Registrazione dispositivi di rete](http://go.microsoft.com/fwlink/p/?LinkId=309016) nella libreria Servizi certificati Active Directory in TechNet.  
 
-2.  必要に応じて、ネットワーク デバイス登録サービスが使用している証明書テンプレートのセキュリティ アクセス許可を変更します。  
+2.  Controllare e, se necessario, modificare le autorizzazioni di sicurezza per i modelli di certificato usati dal servizio Registrazione dispositivi di rete:  
 
-    -   System Center Configuration Manager コンソールを実行するアカウントの場合: **[読み取り]** アクセス許可。  
+    -   Per l'account che esegue la console di System Center Configuration Manager: autorizzazione **Lettura**.  
 
-         このアクセス許可は、証明書プロファイルの作成ウィザードを実行して、SCEP 設定プロファイルの作成に使用する証明書テンプレートを参照して選択するときに必要です。 証明書テンプレートを選択すると、ウィザードのページに設定値がいくつか自動的に挿入されます。そのため、手動で入力する手間が省けるだけでなく、ネットワーク デバイス登録サービスが使用している証明書テンプレートと適合しない設定を選択する危険性が低くなります。  
+         Questa autorizzazione è richiesta in modo che durante l'esecuzione di Creazione guidata profilo di certificato è possibile selezionare il modello di certificato che si desidera usare quando si crea profilo delle impostazioni SCEP. La selezione di un modello di certificato implica che alcune impostazioni nella procedura guidata vengano popolate automaticamente. Questo semplifica la configurazione ed evita la selezione di impostazioni che non sono compatibili con i modelli di certificato usati dal servizio Registrazione dispositivi di rete.  
 
-    -   ネットワーク デバイス登録サービスのアプリケーション プールで使用する SCEP サービス アカウントの場合:[ **読み取り** ] および [ **登録** ] のアクセス許可  
+    -   Per l'account del servizio SCEP usato dal pool di applicazioni del servizio Registrazione dispositivi di rete: autorizzazioni **Lettura** e **Registrazione** .  
 
-         この要件は System Center Configuration Manager に固有ではありませんが、ネットワーク デバイス登録サービスの構成に含まれます。 詳細については、TechNet の Active Directory 証明書サービスの「 [Network Device Enrollment Service Guidance (ネットワーク デバイス登録サービス ガイド)](http://go.microsoft.com/fwlink/p/?LinkId=309016) 」を参照してください。  
+         Questo non è un requisito specifico di System Center Configuration Manager ma è parte della configurazione del servizio Registrazione dispositivi di rete. Per altre informazioni, vedere [Informazioni aggiuntive sul servizio Registrazione dispositivi di rete](http://go.microsoft.com/fwlink/p/?LinkId=309016) nella libreria Servizi certificati Active Directory in TechNet.  
 
     > [!TIP]  
-    >  どの証明書テンプレートをネットワーク デバイス登録サービスで使用しているかを調べるには、ネットワーク デバイス登録サービスを実行しているサーバーの「HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MSCEP」というレジストリ キーを開きます。  
+    >  Per identificare i modelli di certificato usati dal servizio Registrazione dispositivi di rete, visualizzare la seguente chiave del Registro di sistema sul server che esegue il servizio Registrazione dispositivi di rete: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MSCEP.  
 
     > [!NOTE]  
-    >  これらは、ほとんどの環境に適した既定のセキュリティ アクセス許可です。 ただし、別のセキュリティ構成を使用することもできます。 詳細については、「[System Center Configuration Manager の証明書プロファイルに関する証明書テンプレート アクセス許可の計画](../../protect/plan-design/planning-for-certificate-template-permissions.md)」を参照してください。  
+    >  Queste sono le autorizzazioni di sicurezza predefinite appropriate per la maggior parte degli ambienti. Tuttavia, è possibile usare una configurazione di protezione alternativa. Per altre informazioni, vedere [Pianificazione delle autorizzazioni dei modelli di certificato per i profili di certificato in System Center Configuration Manager](../../protect/plan-design/planning-for-certificate-template-permissions.md).  
 
-3.  このサーバーに、クライアント認証をサポートする PKI 証明書を展開します。 使用するコンピューターに、既に適切な証明書がインストールされている場合もあれば、この目的専用の証明書を展開しなければならない (または展開したい) 場合もあります。 この証明書の要件の詳細については、「[System Center Configuration Manager での PKI 証明書の要件](../../core/plan-design/network/pki-certificate-requirements.md)」トピックの「**サーバー用の PKI 証明書**」セクションに記載されているネットワーク デバイス登録サービスの役割サービスが設定された Configuration Manager ポリシー モジュールを実行するサーバーに関する詳細を参照してください。  
+3.  Distribuire a questo server un certificato PKI che supporta l'autenticazione client. Un certificato adatto potrebbe essere già disponibile sul computer in uso oppure potrebbe essere necessario o preferibile distribuire un certificato in modo specifico per questo scopo. Per altre informazioni sui requisiti richiesti per questo certificato, fare riferimento alle informazioni relative ai server in cui è in esecuzione il modulo criteri di Configuration Manager con il servizio ruolo del servizio Registrazione dispositivi di rete nella sezione** Certificati PKI per server** dell'argomento [Requisiti dei certificati PKI per System Center Configuration Manager](../../core/plan-design/network/pki-certificate-requirements.md).  
 
     > [!TIP]  
-    >  この証明書の展開について不明な点がある場合は、「[配布ポイント用のクライアント証明書の展開](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clientdistributionpoint2008_cm2012)」の手順を参照してください。次の 1 つの例外を除き、証明書の要件は同じです。  
+    >  Per consentire la distribuzione di questo certificato, è possibile usare le istruzioni relative a [Distribuzione del certificato client per punti di distribuzione](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clientdistributionpoint2008_cm2012), perché i requisiti del certificato sono gli stessi con un'unica eccezione:  
     >   
-    >  -   証明書テンプレートのプロパティの [ **要求処理** ] タブにある [ **プライベート キーのエクスポートを許可する** ] チェック ボックスをオンにしないでください。  
+    >  -   Non selezionare la casella di controllo **Rendi la chiave privata esportabile** nella scheda **Gestione richiesta** delle proprietà dei modelli di certificato.  
     >   
-    >  System Center Configuration Manager ポリシー モジュールを構成するときに、ローカルのコンピューター ストアを参照して選択できるので、プライベート キーを使用してこの証明書をエクスポートする必要はありません。  
+    >  Non è necessario esportare questo certificato con la chiave privata perché sarà possibile accedere all'archivio del computer locale e selezionarlo quando si configura il modulo criteri di System Center Configuration Manager.  
 
-4.  クライアント認証証明書が関連付けられているルート証明書を探します。 そのルート CA 証明書を証明書ファイル (.cer) にエクスポートします。 このファイルを、後で証明書登録ポイント サイト システム サーバーのインストールと構成を行うときに安全にアクセスできる場所に保存します。  
+4.  Individuare il certificato principale a cui è collegato il certificato di autenticazione client. Quindi esportare questo certificato CA radice in un file di certificato (.cer). Salvare questo file in un percorso protetto a cui sarà possibile accedere in modo sicuro quando si installa e si configura il server di sistema del sito per il punto di registrazione certificati.  
 
-5.  同じサーバーでレジストリ エディターを使って IIS の既定の URL サイズの制限を上げます。このためには、HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\HTTP\Parameters のレジストリ キー DWORD 値を次のように設定します。  
+5.  Sullo stesso server usare l'editor del Registro di sistema per incrementare il limite dimensione URL predefinito IIS impostando i seguenti valori DWORD delle chiavi del Registro di sistema in HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\HTTP\Parameters:  
 
-    -   **MaxFieldLength** キーを **65534**に設定します。  
+    -   Impostare la chiave **MaxFieldLength** su **65534**.  
 
-    -   **MaxRequestBytes** キーを **16777216**に設定します。  
+    -   Impostare la chiave **MaxRequestBytes** su **16777216**.  
 
-     詳細については、Microsoft サポート技術情報の記事「 [820129: Windows 用 Http.sys レジストリ設定](http://go.microsoft.com/fwlink/?LinkId=309013) 」を参照してください。  
+     Per altre informazioni, vedere l'articolo [820129: Impostazioni del Registro di sistema Http.sys per Windows](http://go.microsoft.com/fwlink/?LinkId=309013) nella Microsoft Knowledge Base.  
 
-6.  同じサーバーでインターネット インフォーメーション サービス (IIS) マネージャーを開き、/certsrv/mscep アプリケーションの要求のフィルタリング設定を変更してサーバーを再起動します。 [ **要求フィルター設定の編集** ] ダイアログ ボックスの [ **要求制限** ] 設定は次のように設定されています。  
+6.  Sullo stesso server, in Gestione Internet Information Services (IIS), modificare le impostazioni del filtro richieste per l'applicazione /certsrv/mscep, quindi riavviare il server. Nella finestra di dialogo **Modifica impostazioni di filtro richieste** , verificare che le impostazioni **Limiti richiesta** corrispondano alle seguenti:  
 
-    -   **許可されたコンテンツ最大長 (バイト)**: **30000000**  
+    -   **Lunghezza contenuto massima consentita (byte)**: **30000000**  
 
-    -   **URL の最大長 (バイト)**: **65534**  
+    -   **Lunghezza massima URL (byte)**: **65534**  
 
-    -   **クエリ文字列の最大長 (バイト)**: **65534**  
+    -   **Lunghezza massima stringa di query in (byte)**: **65534**  
 
-     これらの設定とその構成方法の詳細については、IIS リファレンス ライブラリの「 [Requests Limits (要求の制限)](http://go.microsoft.com/fwlink/?LinkId=309014) 」を参照してください。  
+     Per altre informazioni su queste impostazioni e sulla loro configurazione, vedere [Limiti richiesta](http://go.microsoft.com/fwlink/?LinkId=309014) nella Raccolta informazioni di riferimento IIS.  
 
-7.  使用している証明書テンプレートよりも有効期間が短い証明書を要求できるようにしたい場合があります。この設定は、エンタープライズ CA では既定で無効になっています。 エンタープライズ CA でこのオプションを有効にするには、次のように、Certutil コマンドライン ツールを使って設定を変更してから、証明書サービスをいったん停止して再開します。  
+7.  Per poter richiedere un certificato il cui periodo di validità è inferiore a quello del modello di certificato in uso: Questa configurazione è disabilitata per impostazione predefinita da una CA globale (enterprise). Per abilitare questa opzione in una CA globale (enterprise), usare lo strumento della riga di comando Certutil, quindi arrestare e riavviare il servizio certificati usando i seguenti comandi:  
 
     1.  **certutil - setreg Policy\EditFlags +EDITF_ATTRIBUTEENDDATE**  
 
@@ -93,116 +93,116 @@ System Center Configuration Manager で証明書インフラストラクチャ�
 
     3.  **net start certsvc**  
 
-     詳細については、TechNet ライブラリの PKI Technologies セクションの「 [Certificate Services Tools and Settings (証明書サービスのツールと設定)](http://go.microsoft.com/fwlink/p/?LinkId=309015) 」を参照してください。  
+     Per altre informazioni, vedere [Strumenti e impostazioni servizi certificati](http://go.microsoft.com/fwlink/p/?LinkId=309015) nella libreria PKI Technologies in TechNet.  
 
-8.  次のようなリンクを使用して、ネットワーク デバイス登録サービスが動作していることを確認してください。例: **https://server.contoso.com/certsrv/mscep/mscep.dll**。 組み込まれているネットワーク デバイス登録サービスの Web ページが表示されるはずです。 この Web ページには、登録サービスの紹介と、ネットワーク デバイスが証明書要求を送信する URL の説明が記載されています。  
+8.  Verificare che il servizio Registrazione dispositivi di rete sia in funzione usando il seguente collegamento come esempio: **https://server.contoso.com/certsrv/mscep/mscep.dll**. Verrà visualizzata la pagina Web incorporata del servizio Registrazione dispositivi di rete. Questa pagina Web illustra il servizio e spiega che i dispositivi di rete usano l'URL per inviare richieste di certificati.  
 
- ネットワーク デバイス登録サービスと依存する要素の構成が完了したら、証明書登録ポイントをインストールおよび構成することができます。
+ Ora che il servizio Registrazione dispositivi di rete e le dipendenze sono configurate, è possibile installare e configurare il punto di registrazione certificati.
 
 
-## <a name="step-2---install-and-configure-the-certificate-registration-point"></a>手順 2 - 証明書登録ポイントをインストールおよび構成する
+## <a name="step-2---install-and-configure-the-certificate-registration-point"></a>Passaggio 2: installare e configurare il punto di registrazione certificati.
 
-System Center Configuration Manager の階層に証明書登録ポイントを少なくとも 1 つインストールして構成する必要があります。このサイト システムの役割は、中央管理サイトまたはプライマリ サイトにインストールできます。  
+È necessario installare e configurare almeno un punto di registrazione certificato nella gerarchia di System Center Configuration Manager ed è possibile installare questo ruolo del sistema del sito nel sito dell'amministrazione centrale oppure in un sito primario.  
 
 > [!IMPORTANT]  
->  証明書登録ポイントをインストールする前に、「 **サイト システムの要件** 」の「 [Supported configurations for System Center Configuration Manager](../../core/plan-design/configs/supported-configurations.md) 」で、証明書登録ポイントに必要なオペレーティング システムとその他の条件を確認してください。  
+>  Prima di installare il punto di registrazione del certificato, fare riferimento alla sezione **Requisiti del sistema del sito** nell'argomento [Supported configurations for System Center Configuration Manager](../../core/plan-design/configs/supported-configurations.md) per i requisiti del sistema operativo e le dipendenze per il punto di registrazione certificati.  
 
-##### <a name="to-install-and-configure-the-certificate-registration-point"></a>証明書登録ポイントをインストールおよび構成するには  
+##### <a name="to-install-and-configure-the-certificate-registration-point"></a>Per installare e configurare il punto di registrazione certificati  
 
-1.  System Center Configuration Manager コンソールで、**[管理]** をクリックします。  
+1.  Nella console di System Center Configuration Manager fare clic su **Amministrazione**.  
 
-2.  [ **管理** ] ワークスペースで [ **サイトの構成** ] を展開し、[ **サーバーとサイト システムの役割** ] をクリックしてから、証明書登録ポイントに使用するサーバーを選択します。  
+2.  Nell'area di lavoro **Amministrazione** espandere **Configurazione del sito**, fare clic su **Server e ruoli del sistema del sito**, quindi selezionare il server che si desidera usare per il punto di registrazione certificati.  
 
-3.  **[ホーム]** タブの **[サーバー]** グループで、 **[サイト システムの役割の追加]** をクリックします。  
+3.  Nella scheda **Home** , nel gruppo **Server** , fare clic su **Aggiungi ruoli del sistema del sito**.  
 
-4.  **[全般]** ページで、サイト システムの全般設定を指定し、 **[次へ]** をクリックします。  
+4.  Nella pagina **Generale** specificare le impostazioni generali per il sistema del sito e quindi fare clic su **Avanti**.  
 
-5.  [ **プロキシ** ] ページで [ **次へ** ] をクリックします。 証明書登録ポイントでは、インターネット プロキシ設定を使用しません。  
+5.  Nella pagina **Proxy** fare clic su **Avanti**. Il punto di registrazione certificati non usa le impostazioni del proxy Internet.  
 
-6.  [ **システムの役割の選択** ] ページで、利用可能な役割の一覧から [ **証明書登録ポイント** ] を選択してから、[ **次へ**] をクリックします。 
+6.  Nella pagina **Selezione ruolo del sistema** selezionare **Punto di registrazione certificati** dall'elenco dei ruoli disponibili, quindi fare clic su **Avanti**. 
 
-7. **証明書の登録モード** ページで、この証明書登録ポイントで **SCEP 証明書要求を処理する**のか、**PFX 証明書要求を処理する**のか選択します。 1 つの証明書登録ポイントで 2 種類の要求を処理することはできません。ただし、両方の種類の証明書を使用している場合、複数の証明書登録ポイントを作成できます。
+7. Nella pagina **Modalità di registrazione del certificato** specificare quali richieste devono essere elaborate dal punto di registrazione certificati selezionando **Elabora le richieste di certificati SCEP** o **Elabora le richieste di certificati PFX**. Un punto di registrazione certificati non può elaborare entrambi i tipi di richieste, ma è possibile creare più punti di registrazione se si usano entrambi i tipi di certificato.
 
-   PFX 証明書を処理している場合、証明機関として Microsoft または Entrust のいずれかを選択する必要があります。
+   Se si elaborano certificati PFX, è necessario scegliere una CA, Microsoft o Entrust.
 
-8.  **[証明書登録ポイント設定]** ページは証明書の種類によって異なります。
-    -   **[SCEP 証明書要求を処理する]** を選択した場合、次を構成します。
-        -   証明書登録ポイントの **[Web サイト名]**、**[HTTPS ポート番号]**、**[仮想アプリケーション名]**。 これらのフィールドには既定値が自動的に入力されます。 
-        -   **ネットワーク デバイス登録サービスの URL とルート CA 証明書** - **[追加]** をクリックし、**[URL とルート証明機関証明書の追加]** ダイアログ ボックスで次を指定します。
-            - **ネットワーク デバイス登録サービスの URL**: https://*<server_FQDN>*/certsrv/mscep/mscep.dll たとえば、ネットワーク デバイス登録サービスを実行している FQDN が「server1.contoso.com」の場合は、「 **https://server1.contoso.com/certsrv/mscep/mscep.dll**」と入力します。
-            - **ルート CA 証明書**:証明書 (.cer) ファイルを参照して選択します。これは、 **手順 1: ネットワーク デバイス登録サービスおよび依存する要素をインストールして構成する**で作成および保存したファイルです。 このルート CA 証明書を使用することで、証明書登録ポイントで、System Center Configuration Manager ポリシー モジュールが使用するクライアント認証証明書を検証できます。  
+8.  La pagina **Impostazioni del punto di registrazione certificati** varia a seconda del tipo di certificato:
+    -   Se si è selezionata l'opzione **Elabora le richieste di certificati SCEP**, configurare quanto segue:
+        -   **Nome sito Web**, **Numero porta HTTPS** e **Nome dell'applicazione virtuale** per il punto di registrazione certificati. In questi campi vengono inseriti automaticamente i valori predefiniti. 
+        -   **URL per il servizio di registrazione dispositivi di rete e il certificato CA radice**: fare clic su **Aggiungi** e nella finestra di dialogo **Aggiungi URL e certificato CA radice** specificare quanto segue:
+            - **URL per il servizio di registrazione dispositivi di rete**: specificare l'URL nel formato seguente: https://*<FQDN_server>*/certsrv/mscep/mscep.dll. Ad esempio, se il FQDN del server che esegue il servizio Registrazione dispositivi di rete è server1.contoso.com, digitare **https://server1.contoso.com/certsrv/mscep/mscep.dll**.
+            - **Certificato CA radice**: Individuare e selezionare il file del certificato (con estensione cer) creato e salvato nel **Passaggio 1: Installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze**. Questo certificato CA radice consente al punto di registrazione certificati di convalidare il certificato di autenticazione client che verrà usato dal modulo criteri di System Center Configuration Manager.  
 
-    - **[PFX 証明書要求を処理する]** を選択した場合、選択した証明書機関の接続詳細と資格情報を構成します。
+    - Se l'opzione **Elabora le richieste di certificati PFX** è selezionata, configurare i dettagli e le credenziali di connessione per la CA selezionata.
 
-        - 証明書機関として Microsoft を利用するには、**[追加]** をクリックし、**[証明機関とアカウントを追加する]** ダイアログ ボックスで次を指定します。
-            - **証明機関のサーバー名** - 証明機関サーバーの名前を入力します。
-            - **証明機関アカウント** - **[設定]** をクリックし、証明機関のテンプレートで登録するアクセス許可が与えられているアカウントを選択するか、作成します。
-            - **証明書登録ポイント接続アカウント** - 証明書登録ポイントを Configuration Manager データベースに接続するアカウントを選択するか、作成します。 あるいは、証明書登録ポイントをホストしているコンピューターのローカル コンピューター アカウントを利用できます。
-            - **Active Directory 証明書の公開アカウント** - Active Directory のユーザー オブジェクトに証明書を公開するためのアカウントを選択するか、新規作成します。
+        - Per usare Microsoft come CA, fare clic su **Aggiungi** e quindi nella finestra di dialogo **Aggiungi un'autorità di certificazione e un account** specificare quanto segue:
+            - **Nome del server dell'autorità di certificazione**: immettere il nome del server dell'autorità di certificazione.
+            - **Account dell'autorità di certificazione**: fare clic su **Imposta** per selezionare o creare l'account che dispone delle autorizzazioni per eseguire la registrazione a modelli nell'autorità di certificazione.
+            - **Account connessione al punto di registrazione certificati**: selezionare o creare l'account che connette il punto di registrazione certificati al database di Configuration Manager. In alternativa, è possibile usare l'account locale del computer che ospita il punto di registrazione certificati.
+            - **Account di pubblicazione di certificati di Active Directory**: selezionare un account o creare un nuovo account che verrà usato per pubblicare i certificati agli oggetti utente in Active Directory.
 
-            - **[URL for the Network Device Enrollment and root CA certificate]\(ネットワーク デバイス登録の URL とルート CA 証明書\)** ダイアログ ボックスで、次の項目を指定し、**[OK]** をクリックします。  
+            - Nella finestra di dialogo **URL per il servizio di registrazione dispositivi di rete e il certificato CA radice** specificare quanto segue e quindi fare clic su **OK**:  
 
-        - 証明機関として Entrust を使用するには、次のように指定します。
+        - Per usare Entrust come CA, specificare:
 
-           - **MDM Web サービス URL**
-           - URL のユーザー名とパスワード資格情報
+           - L'**URL del servizio Web MDM**
+           - Il nome utente e la password per l'URL.
 
-           MDM API を使用し、Entrust Web サービス URL を定義するとき、次のサンプルのように、API のバージョン 9 以降を使用してください。
+           Se per definire l'URL del servizio Web Entrust si usa l'API MDM, assicurarsi di usare almeno la versione 9 dell'API, come illustrato nell'esempio seguente:
 
            `https://entrust.contoso.com:19443/mdmws/services/AdminServiceV9`
 
-           それ以前のバージョンの API は Entrust に対応していません。
+           Le versioni precedenti dell'API non supportano Entrust.
 
-9. **[次へ]** をクリックして、ウィザードを完了します。  
+9. Fare clic su **Avanti** e completare la procedura guidata.  
 
-10. インストールが完了するまで待ち、次のいずれかの方法を使用して、証明書登録ポイントが正常にインストールされたことを確認します。  
+10. Attendere qualche minuto per consentire il completamento dell'installazione, quindi verificare che il punto di registrazione certificati sia installato correttamente usando uno dei seguenti metodi:  
 
-    -   [ **監視** ] ワークスペースで [ **システムのステータス**] を展開し、[ **コンポーネントのステータス**] をクリックし、[ **SMS_CERTIFICATE_REGISTRATION_POINT** ] コンポーネントからのステータス メッセージを参照します。  
+    -   Nell'area di lavoro **Monitoraggio** espandere **Stato del sistema**, fare clic su **Stato componente**e cercare i messaggi di stato dal componente **SMS_CERTIFICATE_REGISTRATION_POINT** .  
 
-    -   サイト システム サーバーで、*<ConfigMgr インストール パス\>*\Logs\crpsetup.log ファイルおよび *<ConfigMgr インストール パス\>*\Logs\crpmsi.log ファイルを使用します。 インストールが成功した場合、0 の終了コードを返します。  
+    -   Nel server del sistema del sito usare il file *<Percorso di installazione di ConfigMgr\>*\Logs\crpsetup.log e il file *<Percorso di installazione di ConfigMgr\>*Logs\crpmsi.log. Una corretta installazione restituirà un codice di uscita pari a 0.  
 
-    -   ブラウザーを使用して、証明書登録ポイントの URL (https://server1.contoso.com/CMCertificateRegistration など) に接続できることを確認します。 アプリケーション名の **サーバー エラー** ページが開き、 HTTP 404 の説明が表示されます。  
+    -   Usando un browser, verificare che sia possibile connettersi all'URL del punto di registrazione certificati, ad esempio https://server1.contoso.com/CMCertificateRegistration. Accertarsi che venga visualizzata una pagina di **Errore server** per il nome dell'applicazione con una descrizione HTTP 404.  
 
-11. 証明書登録ポイントが自動的に作成してエクスポートしたルート CA 証明書ファイルを、プライマリ サイト サーバー コンピューターの *<ConfigMgr Installation Path\>*\inboxes\certmgr.box フォルダーで見つけます。 このファイルを、後でネットワーク デバイス登録サービスを実行しているサーバーに System Center Configuration Manager ポリシー モジュールをインストールするときに安全にアクセスできる場所に保存します。  
+11. Individuare il file del certificato esportato per la CA radice che il punto di registrazione certificati ha creato automaticamente nella seguente cartella del computer del server del sito primario: *<Percorso di installazione di ConfigMgr\>*\inboxes\certmgr.box. Salvare questo file in un percorso protetto a cui sarà possibile accedere in modo sicuro quando si installerà il modulo criteri di System Center Configuration Manager sul server che esegue il servizio Registrazione dispositivi di rete.  
 
     > [!TIP]  
-    >  この証明書ファイルは、上に示されているフォルダー内にすぐに格納されません。 System Center Configuration Manager がこの場所にファイルをコピーするまで、しばらく (30 分ほど) 待つ必要がある場合があります。  
+    >  Questo certificato non è immediatamente disponibile in questa cartella. Potrebbe essere necessario attendere (ad esempio, mezz'ora) prima che System Center Configuration Manager copi il file in questo percorso.  
 
 
-## <a name="step-3----install-the-system-center-configuration-manager-policy-module-for-scep-certificates-only"></a>手順 3 - System Center Configuration Manager ポリシー モジュールをインストールする (SCEP 証明書の場合のみ)
+## <a name="step-3----install-the-system-center-configuration-manager-policy-module-for-scep-certificates-only"></a>Passaggio 3: installare il modulo criteri di System Center Configuration Manager (solo per certificati SCEP).
 
-「**手順 2: 証明書登録ポイントをインストールおよび構成する** 」で指定した各サーバーに、System Center Configuration Manager ポリシー モジュールをインストールして、証明書登録ポイントのプロパティの **[ネットワーク デバイス登録サービスの URL]** として構成する必要があります。  
+È necessario installare e configurare il modulo criteri di System Center Configuration Manager in ogni server specificato in **Passaggio 2: installare e configurare il punto di registrazione certificati** come **URL per il servizio Registrazione dispositivi di rete** nelle proprietà del punto di registrazione certificati.  
 
-##### <a name="to-install-the-policy-module"></a>ポリシー モジュールをインストールするには  
+##### <a name="to-install-the-policy-module"></a>Per installare il modulo criteri  
 
-1.  ネットワーク デバイス登録サービスを実行するサーバーで、ドメイン管理者としてログオンし、次のファイルを System Center Configuration Manager インストール メディアの <ConfigMgrInstallationMedia\>\SMSSETUP\POLICYMODULE\X64 フォルダーから一時フォルダーにコピーします。  
+1.  Nel server che esegue il servizio Registrazione dispositivi di rete accedere come amministratore di dominio e copiare i seguenti file dalla cartella <ConfigMgrInstallationMedia\>\SMSSETUP\POLICYMODULE\X64 nei supporti di installazione di System Center Configuration Manager in una cartella temporanea:  
 
     -   PolicyModule.msi  
 
     -   PolicyModuleSetup.exe  
 
-    さらに、インストール メディアのに LanguagePack フォルダーがある場合、そのフォルダーとフォルダーの内容をコピーします。  
+    Inoltre, se si dispone di una cartella LanguagePack sul supporto di installazione, copiare questa cartella e il relativo contenuto.  
 
-2.  一時フォルダーから PolicyModuleSetup.exe を実行して、System Center Configuration Manager ポリシー モジュールのセットアップ ウィザードを起動します。  
+2.  Dalla cartella temporanea, eseguire PolicyModuleSetup.exe per avviare Installazione guidata del modulo criteri di System Center Configuration Manager.  
 
-3.  ウィザードの最初のページで [ **次へ** ] をクリックしてライセンス条項に同意し、[ **次へ** ] ボタンをクリックします。  
+3.  Nella pagina iniziale della configurazione guidata, fare clic su **Avanti**, accettare le condizioni di licenza, quindi fare clic su **Avanti**.  
 
-4.  [ **インストール先フォルダー** ] ページで、ポリシー モジュールの既定のインストール先フォルダーをそのまま使用するか、別のフォルダーを指定し、[ **次へ** ] をクリックします。  
+4.  Nella pagina **Cartella di installazione** accettare la cartella di installazione predefinita per il modulo criteri o specificare una cartella alternativa, quindi fare clic su **Avanti**.  
 
-5.  [ **証明書登録ポイント** ] ページで、サイト システム サーバーの FQDN と証明書登録ポイントのプロパティで指定した仮想アプリケーション名から成る、証明書登録ポイントの URL を指定します。 既定の仮想アプリケーション名は CMCertificateRegistration です。 たとえば、サイト システム サーバーの FQDN が server1.contoso.com で、既定の仮想アプリケーション名を使用した場合、「 **https://server1.contoso.com/CMCertificateRegistration**」と指定します。  
+5.  Nella pagina **Punto di registrazione certificati** , specificare l'URL del punto di registrazione certificati usando l'FQDN del server del sistema del sito e il nome dell'applicazione virtuale specificato nelle proprietà del punto di registrazione certificati. Il nome dell'applicazione virtuale predefinito è CMCertificateRegistration. Ad esempio, se il nome di dominio qualificato (FQDN) del server del sistema del sito è server1.contoso.com ed è stato usato il nome dell'applicazione virtuale, specificare **https://server1.contoso.com/CMCertificateRegistration**.  
 
-6.  [ **443** ] という既定のポートをそのまま使用するか、証明書登録ポイントが使用する別のポート番号を指定して、[ **次へ** ] をクリックします。  
+6.  Accettare la porta predefinita **443** o specificare un numero di porta alternativo usato dal punto di registrazione certificati, quindi fare clic su **Avanti**.  
 
-7.  **[ポリシー モジュールのクライアント証明書]**ページで、「 **手順 1: ネットワーク デバイス登録サービスおよび依存する要素をインストールして構成する**」で展開したクライアント認証証明書を参照して指定し、 **[次へ]**をクリックします。  
+7.  Nella pagina **Certificato client per il modulo criteri**individuare e specificare il certificato di autenticazione client distribuito nel **Passaggio 1: Installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze**e quindi fare clic su **Avanti**.  
 
-8.  **[証明書登録ポイント証明書]** ページで **[参照]** をクリックし、「 **手順 2: 証明書登録ポイントをインストールおよび構成する**」の最後で見つけて保存した、ルート CA にエクスポートされた証明書ファイルを選択します。  
+8.  Nella pagina **Certificato punto di registrazione certificati** fare clic su **Sfoglia** per selezionare il file del certificato esportato per la CA radice individuata e salvata alla fine del **Passaggio 2: Installare e configurare il punto di registrazione certificati**.  
 
     > [!NOTE]  
-    >  この証明書ファイルを以前に保存していない場合は、サイト サーバー コンピューターの <ConfigMgr インストール パス\>\inboxes\certmgr.box にあります。  
+    >  Se non è stato salvato in precedenza, il file di certificato si trova in <Percorso di installazione di ConfigMgr\>\inboxes\certmgr.box nel computer del server del sito.  
 
-9. **[次へ]** をクリックして、ウィザードを完了します。  
+9. Fare clic su **Avanti** e completare la procedura guidata.  
 
- System Center Configuration Manager ポリシー モジュールをアンインストールする場合は、コントロール パネルの **[プログラムと機能]** を使用します。 
+ Se si desidera disinstallare il modulo criteri di System Center Configuration Manager, usare **Programmi e funzionalità** nel Pannello di controllo. 
 
  
-これで構成手順が完了したので、証明書をユーザーやデバイスに展開できます。証明書をユーザーやデバイスに展開するには、証明書プロファイルを作成して展開します。 証明書プロファイルの作成方法の詳細については、「[System Center Configuration Manager で証明書プロファイルを作成する方法](../../protect/deploy-use/create-certificate-profiles.md)」を参照してください。  
+Ora che sono stati completati i passaggi di configurazione, si è pronti a distribuire i certificati a utenti e dispositivi creando e distribuendo profili certificato. Per altre informazioni su come creare profili certificato, vedere [Come creare profili certificato in System Center Configuration Manager](../../protect/deploy-use/create-certificate-profiles.md).  

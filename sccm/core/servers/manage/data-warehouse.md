@@ -1,6 +1,6 @@
 ---
-title: "データ ウェアハウス | Microsoft Docs"
-description: "System Center Configuration Manager のデータ ウェアハウス サービス ポイントとデータベース"
+title: Data warehouse | Microsoft Docs
+description: Punto di servizio e database del data warehouse per System Center Configuration Manager
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
@@ -17,178 +17,178 @@ manager: angrobe
 ms.openlocfilehash: eedbf12d3bf628666efc90c85a8dfab37e4dc9ab
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-#  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>System Center Configuration Manager のデータ ウェアハウス サービス ポイント
-*適用対象: System Center Configuration Manager (Current Branch)*
+#  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>Punto di servizio del data warehouse per System Center Configuration Manager
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-バージョン 1702 以降では、データ ウェアハウス サービス ポイントを使用して、Configuration Manager 展開の長期的な履歴データを格納およびレポートできるようになりました。
+A partire dalla versione 1702 è possibile usare il punto di servizio del data warehouse per archiviare e creare report di dati cronologici a lungo termine per la distribuzione di Configuration Manager.
 
 > [!TIP]
-> データ ウェアハウス サービス ポイントは、バージョン 1702 で導入されたプレリリース機能です。 有効にするには、[プレリリース機能の使用](/sccm/core/servers/manage/pre-release-features)に関する記事をご覧ください。
+> Il punto di servizio del data warehouse è una funzionalità di versione non definitiva introdotta con la versione 1702. Per abilitarla, vedere [Usare le funzionalità di versioni non definitive](/sccm/core/servers/manage/pre-release-features).
 
-> 1706 以降のバージョンでは、この機能はプレリリース機能ではありません。
+> A partire dalla versione 1706, questa funzionalità non è più una funzionalità di versione non definitiva.
 
-データ ウェアハウスでは、最大 2 TB のデータをサポートし、変更追跡にはタイムスタンプが使用されます。 データの格納は、Configuration Manager サイト データベースからデータ ウェアハウス データベースへの自動化された同期によって達成されます。 この情報には、レポート サービス ポイントからアクセスできます。 データ ウェアハウス データベースに同期されるデータは、3 年間保持されます。 3 年を経過したデータは、組み込みタスクによって定期的に削除されます。
+Il data warehouse supporta fino a 2 TB di dati, con timestamp per il rilevamento delle modifiche. L'archiviazione dei dati viene eseguita tramite sincronizzazioni automatizzate dal database del sito di Configuration Manager al database del data warehouse. Queste informazioni diventano quindi accessibili dal punto di Reporting Services. I dati sincronizzati con il database del data warehouse vengono mantenuti per tre anni. Periodicamente, un'attività predefinita rimuove i dati che hanno superato i tre anni.
 
-同期されるデータには、グローバル データ グループとサイト データ グループからの次のデータが含まれます。
-- インフラストラクチャの正常性
-- セキュリティ
-- コンプライアンス
-- マルウェア   
-- ソフトウェアの展開
-- インベントリの詳細 (ただし、インベントリの履歴は同期されない)
+Tra i dati sincronizzati sono inclusi i dati seguenti dai gruppi di dati globali e del sito:
+- Integrità dell'infrastruttura
+- Sicurezza
+- Conformità
+- Malware   
+- Distribuzioni software
+- Dettagli relativi all'inventario. La cronologia dell'inventario, tuttavia, non è sincronizzata
 
-サイト システムの役割のインストール時には、データ ウェアハウス データベースがインストールされて構成されます。 いくつかのレポートもインストールされるため、データを簡単に検索してレポートすることができます。
+Quando viene installato, il ruolo del sistema del sito installa e configura il database del data warehouse. Vengono inoltre installati alcuni report che semplificano le attività di ricerca dei dati e di creazione dei report.
 
 
 
-## <a name="prerequisites-for-the-data-warehouse-service-point"></a>データ ウェアハウス サービス ポイントの前提条件
-- データ ウェアハウス サイト システムの役割は、階層の最上位サイトでのみサポートされます  (中央管理サイトまたはスタンドアロン プライマリ サイト)。
-- サイト システムのロールをインストールするコンピューターには、.NET Framework 4.5.2 以降が必要です。
-- サイト システムの役割をインストールするコンピューターのコンピューター アカウントは、データをデータ ウェアハウス データベースと同期するために使用します。 このアカウントには次の権限が必要です。  
-  - データ ウェアハウス データベースをホストするコンピューターの**管理者**。
-  - データ ウェアハウス データベースの **DB_owner** へのアクセス許可。
-  - 最上位サイトのサイト データベースに対する **DB_reader** および **execute** アクセス許可。
-- データ ウェアハウス データベースでは、SQL Server 2012 以降を使用する必要があります。 Standard、Enterprise、または Datacenter Edition が利用できます。
-- サイト データベースをホストするため、次の SQL Server 構成がサポートされています。  
-  - 既定のインスタンス
-  - 名前付きインスタンス
-  - SQL Server AlwaysOn 可用性グループ
-  - SQL Server フェールオーバー クラスター
--   データ ウェアハウス データベースがサイト サーバー データベースから離れた場所にある場合は、データベースをホストする各 SQL Server に個別のライセンスが必要です。
-- [分散ビュー](/sccm/core/servers/manage/data-transfers-between-sites#bkmk_distviews)を使用する場合、中央管理サイトのサイト データベースをホストしているのと同じサーバーに、データ ウェアハウス サービス ポイント サイト システムの役割をインストールする必要があります。
+## <a name="prerequisites-for-the-data-warehouse-service-point"></a>Prerequisiti per il punto di servizio del data warehouse
+- Il ruolo del sistema del sito del data warehouse è supportato solo dal sito di livello superiore della gerarchia, che è un sito di amministrazione centrale o un sito primario autonomo.
+- Il computer in cui si installa il ruolo del sistema del sito richiede .NET Framework 4.5.2 o versioni successive.
+- L'account del computer in cui si installa il ruolo del sistema del sito viene usato per sincronizzare i dati con il database del data warehouse. L'account richiede le autorizzazioni seguenti:  
+  - **Amministratore** nel computer che ospiterà il database del data warehouse.
+  - **DB_owner** per il database del data warehouse.
+  - **DB_reader** ed **execute** per il database del sito dei siti di livello superiore.
+- Il database del data warehouse richiede l'uso di SQL Server 2012 o versione successiva, edizione Standard, Enterprise o Datacenter.
+- Per ospitare il database del sito sono supportate le configurazioni di SQL Server seguenti:  
+  - Istanza predefinita
+  - Istanza denominata
+  - Gruppo di disponibilità Always On di SQL Server
+  - Cluster di failover di SQL Server
+-   Se il database del data warehouse è remoto rispetto al database del server del sito, è necessaria una licenza separata per ogni istanza di SQL Server che ospita il database.
+- Se si usano le [viste distribuite](/sccm/core/servers/manage/data-transfers-between-sites#bkmk_distviews), il ruolo del sistema del sito del punto di servizio del data warehouse deve essere installato nello stesso server che ospita il database dei siti di amministrazione centrale.
 
 
 
 > [!IMPORTANT]  
-> データ ウェアハウス サービス ポイントを実行しているコンピューターまたはデータ ウェアハウス データベースをホストしているコンピューターが、次のいずれかの言語を実行している場合、データ ウェアハウスはサポートされません。
-> - JPN – 日本語
-> - KOR – 韓国語
-> - CHS - 簡体字中国語
-> - CHT – 繁体字中国語 この問題は、今後のリリースで解決される予定です。
+> Il data warehouse non è supportato se il computer che esegue il punto di servizio del data warehouse o che ospita il database del data warehouse esegue una delle lingue seguenti:
+> - JPN - Giapponese
+> - KOR - Coreano
+> - CHS - Cinese semplificato
+> - CHT - Cinese tradizionale. Il problema verrà risolto in una versione successiva.
 
 
-## <a name="install-the-data-warehouse"></a>データ ウェアハウスのインストール
-最上位層サイトのどのサイト システムでも、各階層でこの役割の単一インスタンスがサポートされます。 ウェアハウスのデータベースをホストする SQL Server は、サイト システムの役割に対してローカルまたはリモートに配置できます。 データ ウェアハウスは同じサイトにインストールされているレポート サービス ポイントと連携しますが、この 2 つのサイト システムの役割が同じサーバーにインストールされている必要はありません。   
+## <a name="install-the-data-warehouse"></a>Installare il data warehouse
+Ogni gerarchia supporta un'unica istanza di questo ruolo, in qualsiasi sistema del sito di livello superiore. L'istanza di SQL Server che ospita il database del data warehouse può essere locale nel ruolo del sistema del sito o remota. Anche se il data warehouse funziona con il punto di Reporting Services installato nello stesso sito, non è necessario che i due ruoli del sistema del sito siano installati nello stesso server.   
 
-役割をインストールするには、**[サイト システムの役割の追加ウィザード]** または **[サイト システム サーバーの作成ウィザード]** を使用します。 詳細については、[サイト システムのロールのインストール](/sccm/core/servers/deploy/configure/install-site-system-roles)に関するページを参照してください。  
+Per installare il ruolo, usare l'**Aggiunta guidata ruoli del sistema del sito** o la **Creazione guidata server del sistema sito**. Per altre informazioni, vedere [Installare ruoli del sistema del sito](/sccm/core/servers/deploy/configure/install-site-system-roles).  
 
-ロールをインストールすると、指定した SQL Server のインスタンス上にデータ ウェアハウス データベースが Configuration Manager によって作成されます。 既存のデータベース名を指定した場合 ([データ ウェアハウス データベースを新しい SQL Server に移動する場合と同様に](#move-the-data-warehouse-database))、Configuration Manager では、新しいデータベースは作成されず、代わりに指定したデータベースが使用されます。
+Quando si installa il ruolo, Configuration Manager crea il database del data warehouse nell'istanza di SQL Server specificata dall'utente. Se si specifica il nome di un database esistente, come si farebbe se si [spostasse il database del data warehouse in un nuovo SQL Server](#move-the-data-warehouse-database), Configuration Manager non crea un nuovo database, ma usa invece quello specificato dall'utente.
 
-### <a name="configurations-used-during-installation"></a>インストール時に使用する構成
-**[システムのロールの選択]** ページ:  
+### <a name="configurations-used-during-installation"></a>Configurazioni usate durante l'installazione
+Pagina **Selezione ruolo del sistema**:  
 
-**[全般]** ページ:
--   **Configuration Manager データ ウェアハウス データベース接続設定**:
- - **SQL Server の完全修飾ドメイン名**:  
- データ ウェアハウス サービス ポイント データベースをホストするサーバーの完全修飾ドメイン名 (FQDN) を指定します。
- - **SQL Server インスタンス名 (該当する場合)**:   
- SQL Server の既定のインスタンスを使用していない場合は、インスタンスを指定する必要があります。
- - **データベース名**:   
- データ ウェアハウス データベースの名前を指定します。 データベース名は、10 文字以内にする必要があります  (サポートされる名前の長さは、将来のリリースで増える可能性があります)。
- Configuration Manager はこの名前を使用して、データ ウェアハウス データベースを作成します。 SQL server のインスタンスに既に存在しているデータベース名を指定した場合、Configuration Manager はそのデータベースを使用します。
- - **接続に使用するSQL Server ポート**:   
- データ ウェアハウス データベースをホストする SQL Server 用に構成した TCP/IP ポート番号を指定します。 データ ウェアハウスの同期サービスはこのポートを使用して、データ ウェアハウス データベースに接続します。  
+Pagina **Generale**:
+-   **Impostazioni di connessione del database del data warehouse di Configuration Manager**:
+ - **Nome di dominio completo di SQL**:  
+ Specificare il nome di dominio completo (FQDN, Full Qualified Domain Name) del server che ospita il database del punto di servizio del data warehouse.
+ - **Nome istanza di SQL Server, se applicabile**:   
+ Se non si usa un'istanza predefinita di SQL Server, è necessario specificare l'istanza.
+ - **Nome database**:   
+ Specificare il nome del database del data warehouse. Il nome del database non può essere costituito da più di 10 caratteri. La lunghezza del nome supportata verrà aumentata in una versione successiva.
+ Configuration Manager crea il database del data warehouse con questo nome. Se si specifica un nome di database già esistente nell'istanza di SQL Server, Configuration Manager usa il database corrispondente.
+ - **Porta di SQL Server usata per la connessione**:   
+ Specificare il numero di porta TCP/IP configurato per l'istanza di SQL Server che ospita il database del data warehouse. Questa porta viene usata dal servizio di sincronizzazione del data warehouse per la connessione al database del data warehouse.  
 
-**[同期スケジュール]** ページ:   
-- **同期スケジュール**:
- - **開始時刻**:  
- データ ウェアハウスの同期を開始する時刻を指定します。
- - **繰り返しパターン**:
-    - **毎日**: 同期が毎日実行されるように指定します。
-    - **毎週**: 各週の曜日を 1 つ指定して、同期が毎週繰り返されるようにします。
+Pagina **Pianificazione della sincronizzazione**:   
+- **Pianificazione della sincronizzazione**:
+ - **Ora di inizio**:  
+ Specificare l'ora in cui si vuole avviare la sincronizzazione del data warehouse.
+ - **Criterio ricorrenza**:
+    - **Ogni giorno**: specificare che la sincronizzazione viene eseguita ogni giorno.
+    - **Ogni settimana**: specificare un solo giorno alla settimana e la ricorrenza settimanale per la sincronizzazione.
 
-## <a name="reporting"></a>レポート
-データ ウェアハウス サービス ポイントをインストールすると、同じサイトにインストールされているレポート サービス ポイントでいくつかのレポートが利用できます。 レポート サービス ポイントをインストールする前にデータ ウェアハウス サービス ポイントをインストールした場合は、後でレポート サービス ポイントをインストールしたときにレポートが自動的に追加されます。
+## <a name="reporting"></a>Reporting
+Dopo aver installato un punto di servizio del data warehouse, diversi report diventano disponibili nel punto di Reporting Services installato nello stesso sito. Se si installa il punto di servizio del data warehouse prima di installare un punto di Reporting Services, i report verranno aggiunti automaticamente quando in seguito si installerà il punto di Reporting Services.
 
-データ ウェアハウス サイト システムの役割には、**データ ウェアハウス**のカテゴリを持つ次のレポートが含まれます。
- - **アプリケーションの展開 - 履歴**:   
- 特定のアプリケーションとコンピューターについてアプリケーション展開の詳細を表示します。
- - **Endpoint Protection とソフトウェアの更新プログラムの対応 - 履歴**: ソフトウェアの更新プログラムが欠落しているコンピューターを表示します。  
- - **全般的なハードウェアのインベントリ - 履歴**:   
- 特定のコンピューターのすべてのハードウェア インベントリを表示します。
- - **全般的なソフトウェアのインベントリ - 履歴**:   
- 特定のコンピューターのすべてのソフトウェア インベントリを表示します。
- - **インフラストラクチャの正常性の概要 - 履歴**:  
- Configuration Manager のインフラストラクチャの正常性の概要を表示します。
- - **検出されたマルウェアの一覧 - 履歴**:    
- 組織内で検出されたマルウェアを表示します。
- - **ソフトウェア配布の概要 - 履歴**:   
- 特定の提供情報を目的とし特定のコンピューターを対象としたソフトウェアの配布の概要。
-
-
-## <a name="expand-an-existing-stand-alone-primary-into-a-hierarchy"></a>既存のスタンドアロン プライマリを 1 つの階層に展開する
-中央管理サイトをインストールして既存のスタンドアロン プライマリ サイトを拡張する前に、まずデータ ウェアハウス サービス ポイントの役割をアンインストールする必要があります。 中央管理サイトをインストールした後に、中央管理サイトでサイト システムの役割をインストールすることができます。  
-
-データ ウェアハウス データベースの移動とは異なり、この変更によって以前にプライマリ サイトで同期した履歴データが失われます。 プライマリ サイトからデータベースをバックアップして、中央管理サイトで復元することはサポートされていません。
+Il ruolo del sistema del sito del data warehouse include i report seguenti, che hanno una categoria di **Data Warehouse**:
+ - **Application Deployment - Historical** (Distribuzione applicazioni - Cronologia):   
+ Visualizza i dettagli per la distribuzione di applicazioni per un'applicazione e un computer specifici.
+ - **Endpoint Protection and Software Update Compliance - Historical** (Endpoint Protection e Conformità dell'aggiornamento software - Cronologia): visualizza i computer in cui mancano aggiornamenti software.  
+ - **General Hardware Inventory - Historical** (Inventario generale hardware - Cronologia):   
+ Visualizza tutto l'inventario dell'hardware per un computer specifico.
+ - **General Software Inventory - Historical** (Inventario generale software - Cronologia):   
+ Visualizza tutto l'inventario del software per un computer specifico.
+ - **Infrastructure Health Overview - Historical** (Panoramica integrità infrastruttura - Cronologia):  
+ Visualizza una panoramica dell'integrità dell'infrastruttura di Configuration Manager
+ - **List of Malware Detected - Historical** (Elenco di malware rilevato - Cronologia):    
+ Visualizza il malware che è stato rilevato nell'organizzazione.
+ - **Software Distribution Summary - Historical** (Riepilogo distribuzione software - Cronologia):   
+ Riepilogo della distribuzione del software per un annuncio e un computer specifici.
 
 
+## <a name="expand-an-existing-stand-alone-primary-into-a-hierarchy"></a>Espandere un sito primario autonomo esistente in una gerarchia
+Prima di installare un sito di amministrazione centrale per espandere un sito primario autonomo esistente, è necessario disinstallare il ruolo del punto di servizio del data warehouse. Dopo aver installato il sito di amministrazione centrale, è possibile installare il ruolo del sistema del sito nel sito di amministrazione centrale.  
+
+A differenza di uno spostamento del database del data warehouse, questa modifica comporta la perdita dei dati cronologici sincronizzati in precedenza nel sito primario. Le operazioni di backup del database dal sito primario e di ripristino nel sito di amministrazione centrale non sono supportate.
 
 
-## <a name="move-the-data-warehouse-database"></a>データ ウェアハウス データベースの移動
-データ ウェアハウス データベースを新しい SQL Server に移動するには、次の手順に従います。
 
-1.  SQL Server Management Studio を使用して、データ ウェアハウス データベースをバックアップします。 次に、そのデータベースをデータ ウェアハウスをホストしている新しいコンピューター上の SQL Server に復元します。   
+
+## <a name="move-the-data-warehouse-database"></a>Spostare il database del data warehouse
+Per spostare il database del data warehouse in un nuovo SQL Server, procedere come segue:
+
+1.  Usare SQL Server Management Studio per eseguire il backup del database del data warehouse. Ripristinare quindi il database in SQL Server nel nuovo computer che ospita il data warehouse.   
 > [!NOTE]     
-> 新しいサーバーにデータベースを復元したら、新しいデータ ウェアハウス データベースに対するデータベース アクセス許可が、元のデータ ウェアハウス データベースの場合と同じであることを確認します。  
+> Dopo aver ripristinato il database nel nuovo server, assicurarsi che le autorizzazioni di accesso al database per il nuovo database del data warehouse siano le stesse del data warehouse originale.  
 
-2.  Configuration Manager コンソールを使用して、データ ウェアハウス サービス ポイント サイト システムの役割を現在のサーバーから削除します。
-3.  データ ウェアハウス サービス ポイントを再インストールします。さらに、新しい SQL Server の名前と復元したデータ ウェアハウス データベースをホストするインスタンスを指定します。
-4.  サイト システムのロールがインストールされたら、移動は完了です。
+2.  Usare la console di Configuration Manager per rimuovere il ruolo del sistema del sito del punto di servizio del data warehouse dal server corrente.
+3.  Reinstallare il punto di servizio del data warehouse e specificare il nome della nuova istanza di SQL Server e dell'istanza che ospita il database del data warehouse appena ripristinato.
+4.  Dopo l'installazione del ruolo del sistema del sito, lo spostamento è completato.
 
-## <a name="troubleshooting-data-warehouse-issues"></a>データ ウェアハウス問題のトラブルシューティング
-**ログ ファイル**：  
-データ ウェアハウス サービス ポイントのインストールまたはデータの同期に関する問題を調査するには、次のログを使用します。
- - *DWSSMSI.log* と *DWSSSetup.log* - データ ウェアハウス サービス ポイントのインストール時に発生したエラーを調査する場合に使用するログです。
- - *Microsoft.ConfigMgrDataWarehouse.log* - サイト データベースとデータ ウェアハウス データベースの間のデータ同期について調査する場合に使用するログです。
+## <a name="troubleshooting-data-warehouse-issues"></a>Risoluzione dei problemi del data warehouse
+**File di log**:  
+Usare i log seguenti per analizzare i problemi dell'installazione del punto di servizio del data warehouse o della sincronizzazione dei dati:
+ - *DWSSMSI.log* e *DWSSSetup.log*: questi log consentono di analizzare gli errori che si verificano durante l'installazione del punto di servizio del data warehouse.
+ - *Microsoft.ConfigMgrDataWarehouse.log*: questo log consente di analizzare la sincronizzazione dei dati tra il database del sito e il database del data warehouse.
 
-**セットアップの失敗**  
- コンピューターにインストールした最初のサイト システムの役割がデータ ウェアハウスのとき、リモート サイト システム サーバーでのデータ ウェアハウス サービス ポイントのインストールが失敗します。  
-  - **解決方法**：   
-    データ ウェアハウス サービス ポイントをインストールするコンピューターが、少なくとも他に 1 つのサイト システムの役割をホストしていることを確認します。  
-
-
-**既知の同期の問題**:   
-同期に失敗し、*Microsoft.ConfigMgrDataWarehouse.log* に次のエラー メッセージが表示されます。**"failed to populate schema objects (スキーマ オブジェクトの作成に失敗しました)"**  
- - **解決方法**：  
-    サイト システムの役割をホストするコンピューターのコンピューター アカウントが、データ ウェアハウス データベースで **db_owner** であることを確認します。
-
-データ ウェアハウス データベースとレポート サービス ポイントが別のサイト システムにあるとき、データ ウェアハウスのレポートを開くことができません。  
-
- - **解決方法**：  
-    **レポート サービス ポイントのアカウント**に、データ ウェアハウス データベースの **db_datareader** アクセス許可を付与します。
-
-データ ウェアハウスのレポートを開くと、次のエラーが返されます。
-
-*レポートの処理中にエラーが発生しました。(rsProcessingAborted) データ ソース 'AutoGen__39B693BB_524B_47DF_9FDB_9000C3118E82_' への接続を作成できません。(rsErrorOpeningConnection) サーバーとの接続を正常に確立しましたが、ログイン前のハンドシェイク中にエラーが発生しました。(プロバイダー: SSL プロバイダー、エラー: 0 - 証明書チェーンが信頼されていない証明機関によって発行されました。)*
-
-- **解決策**: 次の手順に従って、証明書を構成します。
-
-  1. データ ウェアハウス データベースをホストするコンピューターで、
-
-    1. IIS を開き、**[サーバー証明書]** をクリックして、**[自己署名証明書の作成]** を右クリックし、証明書名の "フレンドリ名" を **Data Warehouse SQL Server Identification Certificate (データ ウェアハウス SQL サーバーの識別証明書)** に指定します。 証明書ストアを **[個人]** として選択します。
-    2. **[SQL Server Configuration Manager]** を開き、**[SQL Server ネットワークの構成]** で **[MSSQLSERVER のプロトコル]** を右クリックし、**[プロパティ]** を選択します。 次に、**[証明書]** タブで **[Data Warehouse SQL Server Identification Certificate]\(データ ウェアハウス SQL サーバーの識別証明書)** を証明書として選択し、変更を保存します。  
-    3. **SQL Server Configuration Manager** を開き、**[SQL Server サービス]** で、**SQL Server サービス**と**レポート サービス**を再起動します。
-    4.  Microsoft 管理コンソール (MMC) を開き、**証明書**のスナップインを追加して、ローカル コンピューターの**コンピューター アカウント**の証明書の管理を選択します。 次に、MMC で、**[個人用]** フォルダー > **[証明書]** を展開し、**Data Warehouse SQL Server Identification Certificate (データ ウェアハウス SQL サーバーの識別証明書)** を **DER encoded binary X.509 (.CER)** ファイルとしてエクスポートします。    
-  2.    SQL Server Reporting Services をホストするコンピューターで、MMC を開いて**証明書**のスナップインを追加します。 次に、**コンピューター アカウント**の証明書の管理を選択します。 **[信頼されたルート証明機関]** フォルダーで、**Data Warehouse SQL Server Identification Certificate (データ ウェアハウス SQL サーバーの識別証明書)** をインポートします。
+**Errore di installazione**  
+ L'installazione del punto di servizio del data warehouse non riesce nel server di sistema di un sito remoto se il data warehouse è il primo ruolo del sistema del sito installato in tale computer.  
+  - **Soluzione**:   
+    Verificare che il computer in cui si installa il punto di servizio del data warehouse ospiti già almeno un altro ruolo del sistema del sito.  
 
 
-## <a name="data-warehouse-dataflow"></a>データ ウェアハウスのデータフロー   
+**Problemi di sincronizzazione noti**:   
+La sincronizzazione non riesce e restituisce il messaggio seguente nel file *Microsoft.ConfigMgrDataWarehouse.log*: **"failed to populate schema objects"** (Impossibile popolare gli oggetti dello schema)  
+ - **Soluzione**:  
+    Verificare che l'account del computer che ospita il ruolo del sistema del sito sia un **db_owner** nel database del data warehouse.
+
+Non è possibile aprire i report del data warehouse quando il database del data warehouse e il punto di Reporting Services si trovano in sistemi del sito diversi.  
+
+ - **Soluzione**:  
+    Concedere ad **Account punto di Reporting Services** l'autorizzazione **db_datareader** per il database del data warehouse.
+
+Quando si apre un report del data warehouse, viene restituito l'errore seguente:
+
+*Errore durante l'elaborazione del report. (rsProcessingAborted) Non è possibile creare una connessione all'origine dati 'AutoGen__39B693BB_524B_47DF_9FDB_9000C3118E82_'. (rsErrorOpeningConnection) La connessione con il server è stata stabilita correttamente, ma poi si è verificato un errore durante l'handshake pre-login. (provider: Provider SSL, errore: 0 - La catena di certificati è stata emessa da un'autorità non disponibile nell'elenco locale.)*
+
+- **Soluzione**: attenersi alla procedura seguente per configurare i certificati:
+
+  1. Nel computer che ospita il database del data warehouse:
+
+    1. Aprire IIS, fare clic su **Certificati del server**, fare clic con il pulsante destro del mouse su **Crea certificato autofirmato** e quindi specificare il "nome descrittivo" del nome del certificato come **Certificato di identificazione SQL Server del data warehouse**. Selezionare l'archivio certificati come **Personale**.
+    2. Aprire **Gestione configurazione SQL Server** in **Configurazione di rete SQL Server**, fare clic con il pulsante destro del mouse per selezionare **Proprietà** in **Protocolli per MSSQLSERVERR**. Quindi, nella scheda **Certificato** selezionare **Certificato di identificazione SQL Server del data warehouse** come certificato e salvare le modifiche.  
+    3. Aprire **Gestione configurazione SQL Server** in **Servizi di SQL Server**, riavviare **Servizio SQL Server** e **Servizio di creazione report**.
+    4.  Aprire Microsoft Management Console (MMC), aggiungere lo snap-in per **Certificati** e quindi selezionare **Account del computer** per gestire il certificato per l'account del computer locale. Quindi, in MMC espandere la cartella **Personale** > **Certificati** ed esportare **Certificato di identificazione SQL Server del data warehouse** come file **Binario codificato DER x.509 (.CER)**.    
+  2.    Nel computer che ospita SQL Server Reporting Services, aprire MMC e aggiungere lo snap-in per **Certificati**. Quindi selezionare per gestire i certificati per **account computer**. Nella cartella **Autorità di certificazione principale attendibili** importare **Certificato di identificazione SQL Server del data warehouse**.
+
+
+## <a name="data-warehouse-dataflow"></a>Flusso dei dati del data warehouse   
 ![Datawarehouse_flow](./media/datawarehouse.png)
 
-**データの格納と同期**
+**Sincronizzazione e archiviazione dei dati**
 
-| 手順   | 説明  |
+| Passaggio   | Dettagli  |
 |:------:|-----------|  
-| **1**  |  サイト サーバーは、サイト データベースにデータを転送して格納します。  |  
-| **2**  |      データ ウェアハウス サービス ポイントでは、スケジュールと構成に基づいて、サイト データベースからデータを取得します。  |  
-| **3**  |  データ ウェアハウス サービス ポイントでは、同期されたデータのコピーをデータ ウェアハウス データベースに転送して保存します。 |  
-**レポート**
+| **1**  |  Il server del sito trasferisce e archivia i dati nel database del sito.  |  
+| **2**  |      In base alla pianificazione e alla configurazione, il punto di servizio del data warehouse recupera dati dal database del sito.  |  
+| **3**  |  Il punto di servizio del data warehouse trasferisce e archivia una copia dei dati sincronizzati nel database del data warehouse. |  
+**Creazione di report**
 
-| 手順   | 説明  |
+| Passaggio   | Dettagli  |
 |:------:|-----------|  
-| **A**  |  組み込みのレポート機能を使用して、ユーザーがデータを要求します。 この要求は SQL Server Reporting Services を使用してレポート サービス ポイントに渡されます。 |  
-| **B**  |      レポートの大部分は最新の情報に関するものです、これらの要求は、サイト データベースに対して実行されます。 |  
-| **C**  | レポートで履歴データを要求する場合は、*カテゴリ*が**データ ウェアハウス**になっているレポートの 1 つで、データ ウェアハウス データベースに対して要求が実行されます。   |  
+| **A**  |  Un utente richiede i dati usando i report predefiniti. Questa richiesta viene passata al punto di Reporting Services tramite SQL Server Reporting Services. |  
+| **B**  |      La maggior parte dei report sono usati per informazioni correnti e queste richieste vengono eseguite tramite il database del sito. |  
+| **C**  | Se un report richiede dati cronologici, tramite un report con *Categoria* corrispondente a **Data warehouse** la richiesta viene eseguita tramite il database del data warehouse.   |  

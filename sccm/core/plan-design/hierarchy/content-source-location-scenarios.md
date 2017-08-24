@@ -1,6 +1,6 @@
 ---
-title: "コンテンツ ソースの場所 | Microsoft Docs"
-description: "クライアントが低速ネットワークでコンテンツを検索できるようにする System Center Configuration Manager 設定について説明します。"
+title: Percorso di origine del contenuto | Microsoft Docs
+description: Informazioni sulle impostazioni di System Center Configuration Manager che consentono ai client di individuare il contenuto in una rete lenta.
 ms.custom: na
 ms.date: 1/3/2017
 ms.reviewer: na
@@ -17,239 +17,239 @@ manager: angrobe
 ms.openlocfilehash: a823458dc3b891b1c32d1cb44a96e8cafd376ed5
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="content-source-location-scenarios-in-system-center-configuration-manager"></a>System Center Configuration Manager でのコンテンツ ソースの場所に関するシナリオ
+# <a name="content-source-location-scenarios-in-system-center-configuration-manager"></a>Scenari del percorso di origine del contenuto in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager の 1610 より前のバージョンでは、クライアントが低速ネットワークでコンテンツを検索する方法と場所を定義するために組み合わせて使用する設定がいくつかサポートされていました。 使用可能な組み合わせはクライアントが使用するコンテンツの場所に影響します。また、コンテンツの優先ソースを利用できないときにフォールバックの場所を正しく使用できるかどうかに影響します。  
+Nelle versioni precedenti alla versione 1610, System Center Configuration Manager supporta diverse impostazioni che è possibile combinare per definire come e dove i client possono trovare il contenuto quando sono connessi a una rete lenta. Le combinazioni possibili influiscono sui percorsi del contenuto usati dai client e sulla possibilità di usare correttamente un percorso di fallback quando l'origine preferita del contenuto non è disponibile.  
 
 > [!IMPORTANT]  
-> **サイトでバージョン 1511、1602、1606 を実行している場合**、このトピックの情報がインフラストラクチャに適用されます。 これらのバージョンの Configuration Manager の境界グループに固有の情報については、「[バージョン 1511、1602、1606 の境界グループ](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606)」を参照してください。
+> **Se i siti eseguono la versione 1511, 1602 o 1606**, le informazioni contenute in questo argomento sono valide per l'infrastruttura in uso. Vedere anche [Gruppi di limiti per System Center Configuration Manager versioni 1511, 1602 e 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606) per informazioni specifiche per i gruppi di limiti con queste versioni di Configuration Manager.
 >
-> **サイトでバージョン 1610 以降を実行している場合**、コンテンツが利用できる配布ポイントをクライアントが見つけるしくみは「[System Center Configuration Manager のサイト境界と境界グループの定義](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups)」の情報で確認してください。
+> **Se i siti eseguono la versione 1610 o versioni successive**, usare le informazioni contenute in [Definire i limiti del sito e i gruppi di limiti per System Center Configuration Manager](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups) per comprendere in che modo i client individuano i punti di distribuzione con contenuto disponibile.
 
 
 
 
 
-**次の 3 つの設定は、クライアントがコンテンツを要求した場合の動作を定義します。**
+**Le tre impostazioni seguenti definiscono il comportamento quando i client richiedono contenuti:**
 
--  **代替のコンテンツ ソースの場所の使用を許可する** (有効または無効): 配布ポイントの [**境界グループ**] タブで、このオプションを有効にできます。 これにより、優先配布ポイントでコンテンツを利用できない場合は、フォールバックの場所として構成されている配布ポイントをクライアントで使用できます。  
+-  **Consenti percorso origine di fallback per il contenuto** (opzione abilitata o non abilitata): questa opzione può essere abilitata nella scheda **Gruppi limite** di un punto di distribuzione. L'opzione consente al client di usare un punto di distribuzione configurato come percorso di fallback quando non è disponibile contenuto in un punto di distribuzione preferito.  
 
- - **ネットワーク接続の速度に応じた展開の動作**: 配布ポイントへの接続が低速である場合に、次のいずれかの動作を使用して各展開が構成されます。  
+ - **Comportamento di distribuzione per la velocità di connessione di rete**: ogni distribuzione è configurata con uno dei comportamenti seguenti da usare quando la connessione al punto di distribuzione è lenta:  
 
-    -   **配布ポイントからコンテンツをダウンロードしてローカルで実行する**  
+    -   **Scarica il contenuto dal punto di distribuzione ed esegui in locale**  
 
-    -   **コンテンツをダウンロードしない**: クライアントがフォールバックの場所を使用してコンテンツを取得するときに限り、このオプションは使用されます。  
+    -   **Non scaricare il contenuto**: questa opzione viene usata solo quando un client usa un percorso di fallback per ottenere il contenuto.  
 
-    配布ポイントの接続速度は、境界グループの [**参照**] タブで構成され、その境界グループに固有です。  
+    La velocità di connessione per un punto di distribuzione è configurata nella scheda **Riferimenti** di un gruppo di limiti ed è specifica per tale gruppo.  
 
- -  (優先配布ポイントへの) **オンデマンド パッケージ配布**: パッケージまたはアプリケーション プロパティの [**配布の設定**] タブで [**このパッケージのコンテンツを優先配布ポイントに配布する**] オプションを選択すると、これが有効になります。 このオプションが有効である場合は、クライアントが優先配布ポイントのコンテンツを要求した後に、まだコンテンツがない優先配布ポイントには Configuration Manager によってコンテンツが自動的にコピーされます。  
+ -  **Distribuzione di pacchetti su richiesta** (nei punti di distribuzione preferiti): questa opzione viene abilitata quando si seleziona l'opzione **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti** nella scheda **Impostazioni distribuzione** delle proprietà delle applicazioni o di un pacchetto. Quando è abilitata, questa opzione fa in modo che Configuration Manager copi automaticamente il contenuto in un punto di distribuzione preferito in cui ancora non è presente dopo che un client richiede tale contenuto da tale punto di distribuzione.  
 
 
- **すべてのシナリオに以下の要件が適用されます。**
+ **I requisiti seguenti si applicano a tutti gli scenari:**
 
 
--   フォールバック配布ポイントに利用可能なコンテンツがある  
+-   Il contenuto è disponibile in un punto di distribuzione di fallback  
 
--   配布ポイントがオフラインでアクセス可能である  
+-   I punti di distribuzione sono online e accessibili  
 
 
-## <a name="scenario-1"></a>例 1  
- 次の構成が存在する場合に適用されます。  
+## <a name="scenario-1"></a>Scenario 1  
+ Si applica in presenza delle configurazioni seguenti:  
 
--   **優先配布ポイントに利用可能なコンテンツがある**  
+-   **Il contenuto è disponibile in un punto di distribuzione preferito**  
 
--   **フォールバック可能**: 無効  
+-   **Consenti fallback**: opzione non abilitata  
 
--   **低速ネットワークでの展開の動作**: 任意の構成  
+-   **Comportamento di distribuzione per rete lenta**: qualsiasi configurazione  
 
 
-**詳細:** (このシナリオにはオンデマンド パッケージ配布の構成は関係ありません)  
+**Dettagli**: la configurazione per la distribuzione di pacchetti su richiesta non è pertinente in questo scenario.  
 
-1.  クライアントは、管理ポイントにコンテンツ要求を送信します。  
+1.  Il client invia una richiesta di contenuto al punto di gestione.  
 
-2.  コンテンツが存在する優先配布ポイントが設定されているコンテンツの場所のリストが、管理ポイントからクライアントに返されます。  
+2.  Al client viene restituito un elenco di percorsi del contenuto dal punto di gestione con i punti di distribuzione preferiti con contenuto.  
 
-3.  クライアントは、リスト上の優先配布ポイントからコンテンツをダウンロードします。  
+3.  Il client scarica il contenuto da un punto di distribuzione preferito nell'elenco.  
 
-## <a name="scenario-2"></a>シナリオ 2  
- 次の構成が存在します。  
+## <a name="scenario-2"></a>Scenario 2  
+ In presenza delle configurazioni seguenti:  
 
--   **優先配布ポイントに利用可能なコンテンツがある**  
+-   **Il contenuto è disponibile in un punto di distribuzione preferito**  
 
--   **フォールバック可能**: 有効  
+-   **Consenti fallback**: opzione abilitata  
 
--   **低速ネットワークの展開の動作**: コンテンツをダウンロードしない  
+-   **Comportamento di distribuzione per rete lenta**: Non scaricare il contenuto  
 
 
-**詳細:** (このシナリオにはオンデマンド パッケージ配布の構成は関係ありません)  
+**Dettagli**: la configurazione per la distribuzione di pacchetti su richiesta non è pertinente in questo scenario.  
 
-1.  クライアントは、管理ポイントにコンテンツ要求を送信します。 クライアントは、代替の配布ポイントが許可されることを示すフラグを要求に含めます。  
+1.  Il client invia una richiesta di contenuto al punto di gestione. Il client include un flag con la richiesta che indica che i punti di distribuzione di fallback sono consentiti.  
 
-2.  コンテンツが存在する優先配布ポイントおよび代替の配布ポイントが設定されているコンテンツの場所のリストが、管理ポイントからクライアントに返されます。  
+2.  Al client viene restituito un elenco di percorsi del contenuto dal punto di gestione con i punti di distribuzione preferiti e i punti di distribuzione di fallback con contenuto.  
 
-3.  クライアントは、リスト上の優先配布ポイントからコンテンツをダウンロードします。  
+3.  Il client scarica il contenuto da un punto di distribuzione preferito nell'elenco.  
 
-## <a name="scenario-3"></a>シナリオ 3  
- 次の構成が存在します。  
+## <a name="scenario-3"></a>Scenario 3  
+ In presenza delle configurazioni seguenti:  
 
--   **優先配布ポイントに利用可能なコンテンツがある**  
+-   **Il contenuto è disponibile in un punto di distribuzione preferito**  
 
--   **フォールバック可能**: 有効  
+-   **Consenti fallback**: opzione abilitata  
 
--   **低速ネットワークの展開の動作**: コンテンツをダウンロードしてインストールする  
+-   **Comportamento di distribuzione per rete lenta**: Scaricare e installare il contenuto  
 
 
-**詳細:** (このシナリオにはオンデマンド パッケージ配布の構成は関係ありません)  
+**Dettagli**: la configurazione per la distribuzione di pacchetti su richiesta non è pertinente in questo scenario.  
 
-1.  クライアントは、管理ポイントにコンテンツ要求を送信します。 クライアントは、代替の配布ポイントが許可されることを示すフラグを要求に含めます。  
+1.  Il client invia una richiesta di contenuto al punto di gestione. Il client include un flag con la richiesta che indica che i punti di distribuzione di fallback sono consentiti.  
 
-2.  コンテンツが存在する優先配布ポイントおよび代替の配布ポイントが設定されているコンテンツの場所のリストが、管理ポイントからクライアントに返されます。  
+2.  Al client viene restituito un elenco di percorsi del contenuto dal punto di gestione con i punti di distribuzione preferiti e i punti di distribuzione di fallback con contenuto.  
 
-3.  クライアントは、リスト上の優先配布ポイントからコンテンツをダウンロードします。  
+3.  Il client scarica il contenuto da un punto di distribuzione preferito nell'elenco.  
 
-## <a name="scenario-4"></a>シナリオ 4  
- 次の構成が存在します。  
+## <a name="scenario-4"></a>Scenario 4  
+ In presenza delle configurazioni seguenti:  
 
--   **優先配布ポイントでコンテンツを利用できない**  
+-   **Il contenuto non è disponibile in un punto di distribuzione preferito**  
 
--   **[このパッケージのコンテンツを優先配布ポイントに配布する]** が有効になっていない  
+-   **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti**: opzione non abilitata  
 
--   **フォールバック可能**: 無効  
+-   **Consenti fallback**: opzione non abilitata  
 
--   **低速ネットワークでの展開の動作**: 任意の構成  
+-   **Comportamento di distribuzione per rete lenta**: qualsiasi configurazione  
 
 
-**詳細:**  
+**Dettagli:**  
 
-1.  クライアントは、管理ポイントにコンテンツ要求を送信します。  
+1.  Il client invia una richiesta di contenuto al punto di gestione.  
 
-2.  コンテンツが存在する優先配布ポイントが設定されているコンテンツの場所のリストが、管理ポイントからクライアントに返されます。 そのリストには優先配布ポイントがありません。  
+2.  Al client viene restituito un elenco di percorsi del contenuto dal punto di gestione con i punti di distribuzione preferiti con contenuto. Nell'elenco non sono disponibili punti di distribuzione preferiti.  
 
-3.  クライアントは、[ **コンテンツは利用できません** ] というメッセージを受け取って失敗し、再試行モードに入ります。 新しいコンテンツ要求が 1 時間ごとに開始されます。  
+3.  Il client genera il messaggio di errore **Contenuto non disponibile** e passa in modalità Riprova. Ogni ora viene avviata una nuova richiesta di contenuto.  
 
-## <a name="scenario-5"></a>シナリオ 5  
- 次の構成が存在します。  
+## <a name="scenario-5"></a>Scenario 5  
+ In presenza delle configurazioni seguenti:  
 
--   **優先配布ポイントでコンテンツを利用できない**  
+-   **Il contenuto non è disponibile in un punto di distribuzione preferito**  
 
--   **[このパッケージのコンテンツを優先配布ポイントに配布する]** が有効になっていない  
+-   **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti**: opzione non abilitata  
 
--   **フォールバック可能**: 有効  
+-   **Consenti fallback**: opzione abilitata  
 
--   **低速ネットワークの展開の動作**: コンテンツをダウンロードしない  
+-   **Comportamento di distribuzione per rete lenta**: Non scaricare il contenuto  
 
 
-**詳細:**  
+**Dettagli:**  
 
-1.  クライアントは、管理ポイントにコンテンツ要求を送信します。 クライアントは、代替の配布ポイントが許可されることを示すフラグを要求に含めます。  
+1.  Il client invia una richiesta di contenuto al punto di gestione. Il client include un flag con la richiesta che indica che i punti di distribuzione di fallback sono consentiti.  
 
-2.  コンテンツが存在する優先配布ポイントおよび代替の配布ポイントが設定されているコンテンツの場所のリストが、管理ポイントからクライアントに返されます。 コンテンツが存在する優先配布ポイントはありませんが、少なくとも 1 つの代替の配布ポイントにコンテンツがあります。  
+2.  Al client viene restituito un elenco di percorsi del contenuto dal punto di gestione con i punti di distribuzione preferiti e i punti di distribuzione di fallback con contenuto. Non esistono punti di distribuzione preferiti con contenuto, ma esiste almeno un punto di distribuzione di fallback con contenuto.  
 
-3.  (クライアントがコンテンツを取得するのに代替使用する) 代替の配布ポイントをクライアントが使用する場合の展開のプロパティが **[コンテンツをダウンロードしない]** に設定されているため、コンテンツはダウンロードされません。 クライアントは、[ **コンテンツは利用できません** ] というメッセージを受け取って失敗し、再試行モードに入ります。 クライアントは新しいコンテンツ要求を 1 時間ごとに送ります。  
+3.  Il contenuto non viene scaricato perché la proprietà di distribuzione per quando il client usa un punto di distribuzione di fallback è impostata su **Non scaricare il contenuto** (opzione usata quando i client eseguono il fallback per ottenere il contenuto). Il client genera il messaggio di errore **Contenuto non disponibile** e passa in modalità Riprova. Il client effettua una nuova richiesta di contenuto ogni ora.  
 
-## <a name="scenario-6"></a>シナリオ 6  
- 次の構成が存在します。  
+## <a name="scenario-6"></a>Scenario 6  
+ In presenza delle configurazioni seguenti:  
 
--   **優先配布ポイントでコンテンツを利用できない**  
+-   **Il contenuto non è disponibile in un punto di distribuzione preferito**  
 
--   **[このパッケージのコンテンツを優先配布ポイントに配布する]** が有効になっていない  
+-   **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti**: opzione non abilitata  
 
--   **フォールバック可能**: 有効  
+-   **Consenti fallback**: opzione abilitata  
 
--   **低速ネットワークの展開の動作**: コンテンツをダウンロードしてインストールする  
+-   **Comportamento di distribuzione per rete lenta**: Scaricare e installare il contenuto  
 
 
-**詳細:**  
+**Dettagli:**  
 
-1.  クライアントは、管理ポイントにコンテンツ要求を送信します。 この要求には、代替の配布ポイントが有効になっていることを示すフラグが付いています。  
+1.  Il client invia una richiesta di contenuto al punto di gestione. Il client include un flag con la richiesta che indica che i punti di distribuzione di fallback sono abilitati.  
 
-2.  コンテンツが存在する優先配布ポイントおよび代替の配布ポイントが設定されているコンテンツの場所のリストが、管理ポイントからクライアントに返されます。 コンテンツが存在する優先配布ポイントはありませんが、少なくとも 1 つの代替の配布ポイントにコンテンツがあります。  
+2.  Al client viene restituito un elenco di percorsi del contenuto dal punto di gestione con i punti di distribuzione preferiti e i punti di distribuzione di fallback con contenuto. Non esistono punti di distribuzione preferiti con contenuto, ma almeno un punto di distribuzione di fallback con contenuto.  
 
-3.  クライアントが代替の配布ポイントを使用する場合の展開のプロパティが [ **コンテンツをダウンロードしてインストールする**] に設定されているため、リストにある代替の配布ポイントからコンテンツがダウンロードされます。  
+3.  Il contenuto viene scaricato da un punto di distribuzione di fallback nell'elenco perché la proprietà di distribuzione per quando il client usa un punto di distribuzione di fallback è impostata su **Scarica e installa il contenuto**.  
 
-## <a name="scenario-7"></a>シナリオ 7  
- 次の構成が存在します。  
+## <a name="scenario-7"></a>Scenario 7  
+ In presenza delle configurazioni seguenti:  
 
--   **優先配布ポイントでコンテンツを利用できない**  
+-   **Il contenuto non è disponibile in un punto di distribuzione preferito**  
 
--   **[このパッケージのコンテンツを優先配布ポイントに配布する]** が有効になっている  
+-   **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti**: opzione abilitata  
 
--   **フォールバック可能**: 無効  
+-   **Consenti fallback**: opzione non abilitata  
 
--   **低速ネットワークでの展開の動作**: 任意の構成  
+-   **Comportamento di distribuzione per rete lenta**: qualsiasi configurazione  
 
 
-**詳細:**  
+**Dettagli:**  
 
-1.  クライアントは、管理ポイントにコンテンツ要求を送信します。  
+1.  Il client invia una richiesta di contenuto al punto di gestione.  
 
-2.  コンテンツが存在する優先配布ポイントが設定されているコンテンツの場所のリストが、管理ポイントからクライアントに返されます。 コンテンツが存在する優先配布ポイントはありません。  
+2.  Al client viene restituito un elenco di percorsi del contenuto dal punto di gestione con i punti di distribuzione preferiti con contenuto. Non esistono punti di distribuzione preferiti con contenuto.  
 
-3.  クライアントは、[ **コンテンツは利用できません** ] というメッセージを受け取って失敗し、再試行モードに入ります。 新しいコンテンツ要求が 1 時間ごとに送られます。  
+3.  Il client genera il messaggio di errore **Contenuto non disponibile** e passa in modalità Riprova. Ogni ora viene effettuata una nuova richiesta di contenuto.  
 
-4.  管理ポイントは、コンテンツ要求を送ったクライアントのすべての優先配布ポイントにコンテンツを配布するトリガーを配布マネージャーに作成します。  
+4.  Il punto di gestione crea un trigger per Distribution Manager per distribuire il contenuto in tutti i punti di distribuzione preferiti per il client che ha effettuato la richiesta di contenuto.  
 
-5.  配布マネージャーは、すべての優先配布ポイントにコンテンツを配布します。 ほとんどの場合は、1 時間以内にコンテンツが優先配布ポイントに配布されます。  
+5.  Distribution Manager distribuisce il contenuto in tutti i punti di distribuzione preferiti. Nella maggior parte dei casi il contenuto viene distribuito correttamente nei punti di distribuzione preferiti entro un'ora.  
 
-6.  クライアントから管理ポイントへの新しいコンテンツ要求が開始されます。  
+6.  Una nuova richiesta di contenuto viene avviata dal client al punto di gestione.  
 
-7.  コンテンツが存在する優先配布ポイントが設定されているコンテンツの場所のリストが、管理ポイントからクライアントに返されます。 クライアントは、リスト上の優先配布ポイントからコンテンツをダウンロードします。  
+7.  Al client viene restituito un elenco di percorsi del contenuto dal punto di gestione con i punti di distribuzione preferiti con contenuto. Il client scarica il contenuto da un punto di distribuzione preferito nell'elenco.  
 
-## <a name="scenario-8"></a>シナリオ 8  
- 次の構成が存在します。  
+## <a name="scenario-8"></a>Scenario 8  
+ In presenza delle configurazioni seguenti:  
 
--   **優先配布ポイントでコンテンツを利用できない**  
+-   **Il contenuto non è disponibile in un punto di distribuzione preferito**  
 
--   **[このパッケージのコンテンツを優先配布ポイントに配布する]** が有効になっている  
+-   **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti**: opzione abilitata  
 
--   **フォールバック可能**: 有効  
+-   **Consenti fallback**: opzione abilitata  
 
--   **低速ネットワークの展開の動作**: コンテンツをダウンロードしない  
+-   **Comportamento di distribuzione per rete lenta**: Non scaricare il contenuto  
 
 
-**詳細:**  
+**Dettagli:**  
 
-1.  クライアントは、管理ポイントにコンテンツ要求を送信します。 クライアントは、代替の配布ポイントが許可されることを示すフラグを要求に含めます。  
+1.  Il client invia una richiesta di contenuto al punto di gestione. Il client include un flag con la richiesta che indica che i punti di distribuzione di fallback sono consentiti.  
 
-2.  コンテンツが存在する優先配布ポイントおよび代替の配布ポイントが設定されているコンテンツの場所のリストが、管理ポイントからクライアントに返されます。 コンテンツが存在する優先配布ポイントはありませんが、少なくとも 1 つの代替の配布ポイントにコンテンツがあります。  
+2.  Al client viene restituito un elenco di percorsi del contenuto dal punto di gestione con i punti di distribuzione preferiti e i punti di distribuzione di fallback con contenuto. Non esistono punti di distribuzione preferiti con contenuto, ma esiste almeno un punto di distribuzione di fallback con contenuto.  
 
-3.  クライアントが代替の配布ポイントを使用する場合の展開のプロパティが [ **ダウンロードしない**] に設定されているため、コンテンツはダウンロードされません。 クライアントは、[ **コンテンツは利用できません** ] というメッセージを受け取って失敗し、再試行モードに入ります。 クライアントは新しいコンテンツ要求を 1 時間ごとに送ります。  
+3.  Il contenuto non viene scaricato perché la proprietà di distribuzione per quando il client usa un punto di distribuzione di fallback è impostata su **Non scaricare**. Il client genera il messaggio di errore **Contenuto non disponibile** e passa in modalità Riprova. Il client effettua una nuova richiesta di contenuto ogni ora.  
 
-4.  管理ポイントは、コンテンツ要求を送ったクライアントのすべての優先配布ポイントにコンテンツを配布するトリガーを配布マネージャーに作成します。  
+4.  Il punto di gestione crea un trigger per Distribution Manager per distribuire il contenuto in tutti i punti di distribuzione preferiti per il client che ha effettuato la richiesta di contenuto.  
 
-5.  配布マネージャーは、すべての優先配布ポイントにコンテンツを配布します。 ほとんどの場合は、1 時間以内にコンテンツが優先配布ポイントに配布されます。  
+5.  Distribution Manager distribuisce il contenuto in tutti i punti di distribuzione preferiti. Nella maggior parte dei casi il contenuto viene distribuito correttamente nei punti di distribuzione preferiti entro un'ora.  
 
-6.  クライアントから管理ポイントへの新しいコンテンツ要求が開始されます。  
+6.  Una nuova richiesta di contenuto viene avviata dal client al punto di gestione.  
 
-7.  コンテンツが存在する優先配布ポイントが設定されているコンテンツの場所のリストが、管理ポイントからクライアントに返されます。  
+7.  Al client viene restituito un elenco di percorsi del contenuto dal punto di gestione con i punti di distribuzione preferiti con contenuto.  
 
-8.  クライアントは、リスト上の優先配布ポイントからコンテンツをダウンロードします。  
+8.  Il client scarica il contenuto da un punto di distribuzione preferito nell'elenco.  
 
-## <a name="scenario-9"></a>シナリオ 9  
- 次の構成が存在します。  
+## <a name="scenario-9"></a>Scenario 9  
+ In presenza delle configurazioni seguenti:  
 
--   **優先配布ポイントでコンテンツを利用できない**  
+-   **Il contenuto non è disponibile in un punto di distribuzione preferito**  
 
--   **[このパッケージのコンテンツを優先配布ポイントに配布する]** が有効になっている  
+-   **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti**: opzione abilitata  
 
--   **フォールバック可能**: 有効  
+-   **Consenti fallback**: opzione abilitata  
 
--   **低速ネットワークの展開の動作**: コンテンツをダウンロードしてインストールする  
+-   **Comportamento di distribuzione per rete lenta**: Scaricare e installare il contenuto  
 
 
-**詳細:**  
+**Dettagli:**  
 
-1.  クライアントは、管理ポイントにコンテンツ要求を送信します。 クライアントは、代替の配布ポイントが許可されることを示すフラグを要求に含めます。  
+1.  Il client invia una richiesta di contenuto al punto di gestione. Il client include un flag con la richiesta che indica che i punti di distribuzione di fallback sono consentiti.  
 
-2.  コンテンツが存在する優先配布ポイントおよび代替の配布ポイントが設定されているコンテンツの場所のリストが、管理ポイントからクライアントに返されます。 コンテンツが存在する優先配布ポイントはありませんが、少なくとも 1 つの代替の配布ポイントにコンテンツがあります。  
+2.  Al client viene restituito un elenco di percorsi del contenuto dal punto di gestione con i punti di distribuzione preferiti e i punti di distribuzione di fallback con contenuto. Non esistono punti di distribuzione preferiti con contenuto, ma esiste almeno un punto di distribuzione di fallback con contenuto.  
 
-3.  クライアントが代替の配布ポイントを使用する場合の展開のプロパティが [ **コンテンツをダウンロードしてインストールする**] に設定されているため、リストにある代替の配布ポイントからコンテンツがダウンロードされます。 この展開の設定により、クライアントはコンテンツの代替場所を使用して、その場所からコンテンツを取得する必要があります。  
+3.  Il contenuto viene scaricato da un punto di distribuzione di fallback nell'elenco perché la proprietà di distribuzione per quando il client usa un punto di distribuzione di fallback è impostata su **Scarica e installa il contenuto**. Questa impostazione di distribuzione consente a un client che deve usare un percorso dei contenuti di fallback di ottenere il contenuto da tale percorso.  
 
-4.  管理ポイントは、コンテンツ要求を送ったクライアントのすべての優先配布ポイントにコンテンツを配布するトリガーを配布マネージャーに作成します。  
+4.  Il punto di gestione crea un trigger per Distribution Manager per distribuire il contenuto in tutti i punti di distribuzione preferiti per il client che ha effettuato la richiesta di contenuto.  
 
-5.  配布マネージャーはすべての優先配布ポイントにコンテンツを配布します。これにより、追加のクライアントは代替の配布ポイントを使用せずに、コンテンツを取得できるようになります。  
+5.  Distribution Manager distribuisce il contenuto in tutti i punti di distribuzione preferiti, consentendo ai client aggiuntivi di ottenere il contenuto senza usare un punto di distribuzione di fallback.  

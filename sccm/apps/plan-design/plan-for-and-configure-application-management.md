@@ -6,22 +6,19 @@ ms.date: 02/09/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-app
+ms.technology: configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 2be84a1d-ebb9-47ae-8982-c66d5b92a52a
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 1c43c4968f93985515249ddb117269f8ed61302a
 ms.openlocfilehash: 46cc3fcfd9516cf1c124e24b50d0aac0cb0025dc
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="plan-for-and-configure-application-management-in-system-center-configuration-manager"></a>Pianificare e configurare la gestione delle applicazioni in System Center Configuration Manager
 
@@ -227,4 +224,3 @@ In Software Center la personalizzazione viene applicata secondo le regole seguen
 
 > [!WARNING]  
 >  Dopo aver installato i ruoli del sistema del sito del Catalogo applicazioni, il Catalogo non verrà visualizzato immediatamente selezionando **Trova applicazioni aggiuntive dal catalogo delle applicazioni** da Software Center. Il Catalogo applicazioni diventa disponibile in Software Center al successivo download dei criteri client da parte del client oppure dopo un massimo di 25 ore dall'installazione dei ruoli del sistema del sito del Catalogo applicazioni.  
-

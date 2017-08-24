@@ -1,6 +1,6 @@
 ---
-title: "移行ジョブ計画 | Microsoft Docs"
-description: "System Center Configuration Manager 環境に移行する特定のデータを構成するには、移行ジョブを使用します。"
+title: Pianificazione del processo di migrazione | Microsoft Docs
+description: Usare i processi di migrazione per configurare i dati di cui si vuole eseguire la migrazione nell'ambiente di System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -19,305 +19,305 @@ robots: noindex
 ms.openlocfilehash: 4c83540db763bea039a92633a1d1a808e60e27ad
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-a-migration-job-strategy-in-system-center-configuration-manager"></a>System Center Configuration Manager での移行ジョブ戦略の計画
+# <a name="plan-a-migration-job-strategy-in-system-center-configuration-manager"></a>Pianificare una strategia di processo di migrazione in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager 環境に移行する特定のデータを構成するには、移行ジョブを使用します。 移行ジョブは、移行を計画しているオブジェクトを識別するもので、移行先階層の最上位サイトで実行します。 ソース サイトごとに 1 つまたは複数の移行ジョブを設定できます。 これにより、一度にすべてのオブジェクトを移行したり、各ジョブを使って、データの限定されたサブセットを移行したりできます。  
+Usare i processi di migrazione per configurare i dati specifici di cui si vuole eseguire la migrazione nell'ambiente di System Center Configuration Manager. I processi di migrazione identificano gli oggetti che si prevede di migrare e vengono eseguiti nel sito di livello superiore nella gerarchia di destinazione. È possibile configurare uno o più processi di migrazione per ogni sito di origine. In questo modo è possibile eseguire la migrazione di tutti gli oggetti in una sola volta o di limitati sottogruppi di dati in ogni processo.  
 
- 移行ジョブは、Configuration Manager でソース階層の 1 つまたは複数のサイトから正常にデータを収集した後に作成できます。 データを収集したソース サイトから任意の順序でデータを移行できます。 Configuration Manager 2007 ソース サイトでは、オブジェクトが作成されたサイトからのみデータを移行できます。 System Center 2012 Configuration Manager 以降を実行するソース サイトでは、移行できるすべてのデータがソース階層の最上位サイトで利用できます。  
+ È possibile creare i processi di migrazione dopo che Configuration Manager ha raccolto i dati da uno o più siti nella gerarchia di origine. È possibile migrare i dati in qualsiasi sequenza dai siti di origine da cui sono stati raccolti i dati. Con un sito di origine di Configuration Manager 2007 è possibile eseguire la migrazione dei dati solo dal sito in cui è stato creato l'oggetto. Con i siti di origine che eseguono System Center 2012 Configuration Manager o versioni successive, tutti i dati di cui è possibile eseguire la migrazione sono disponibili nel sito principale della gerarchia di origine.  
 
- 階層間でクライアントを移行する前に、クライアントが使用するオブジェクトが移行されており、それらのオブジェクトが移行先階層で利用できることを確認します。 たとえば、Configuration Manager 2007 SP2 ソース階層から移行する場合は、クライアントが含まれているカスタム コレクションに展開されるコンテンツの開示通知がある可能性があります。 この場合、クライアントを移行する前に、コレクション、公開通知、および関連するコンテンツを移行することをお勧めします。 クライアントの移行前にコンテンツ、コレクション、および開示通知を移行しない場合、このデータを移行先階層のクライアントに関連付けることはできません。 以前に実行した開示通知とコンテンツに関連するデータにクライアントが関連付けられていない場合は、移行先階層でのインストールのためにクライアントにコンテンツを提供できますが、これが不要になります。 データを移行してからクライアントを移行すると、クライアントはこのコンテンツと開示通知に関連付けられて、開示通知が反復的なものでない限り、移行済みの開示通知のこのコンテンツがクライアントに再度提供されることはありません。  
+ Prima di eseguire la migrazione dei client da una gerarchia all'altra, verificare che gli oggetti utilizzati dai client siano stati migrati e che questi oggetti siano disponibili nella gerarchia di destinazione. Ad esempio, quando si esegue la migrazione da una gerarchia di origine di Configuration Manager 2007 SP2, si potrebbe ricevere un annuncio per contenuti che sono distribuiti in una raccolta personalizzata che include un client. In questo scenario è consigliabile eseguire la migrazione della raccolta, dell'annuncio e del contenuto associato prima di eseguire la migrazione del client. I dati non potranno essere associati al client nella gerarchia di destinazione se la migrazione del contenuto, della raccolta e dell'annuncio non viene eseguita prima di quella del client. Se un client non è associato ai dati relativi a un annuncio e contenuto precedentemente eseguiti, il client potrebbe ricevere il contenuto per l'installazione nella gerarchia di destinazione che potrebbe non essere necessario. Se viene eseguita la migrazione del client dopo che sono stati migrati i dati, il client viene associato al contenuto e all'annuncio e, a meno che l'annuncio non sia ricorrente, non riceve di nuovo il contenuto per l'annuncio migrato.  
 
- 一部のオブジェクトでは、ソース階層から移行先階層にデータを移行する以外のことも必要になります。 たとえば、クライアントのソフトウェア更新プログラムを移行先階層に正常に移行するには、移行先階層にアクティブなソフトウェアの更新ポイントを展開し、製品のカタログを構成して、ソフトウェアの更新ポイントを Windows Server Update Services (WSUS) と同期する必要があります。  
+ Alcuni oggetti richiedono altro oltre alla migrazione dei dati dalla gerarchia di origine nella gerarchia di destinazione. Ad esempio, per eseguire la migrazione degli aggiornamenti software dai client alla gerarchia di destinazione, è necessario distribuire un punto di aggiornamento software attivo, configurare il catalogo dei prodotti e sincronizzare il punto di aggiornamento software con Windows Server Update Services (WSUS) nella gerarchia di destinazione.  
 
- 移行ジョブを計画するときに、次のセクションを参考にしてください。  
+ Utilizzare le sezioni seguenti per pianificare i processi di migrazione.  
 
--   [移行ジョブの種類](#Types_of_Migration)  
+-   [Tipi di processi di migrazione](#Types_of_Migration)  
 
--   [すべての移行ジョブについての全般的な計画](#About_Migration_Jobs)  
+-   [Pianificazione generale di tutti i processi di migrazione](#About_Migration_Jobs)  
 
--   [コレクションの移行ジョブの計画](#About_Collection_Migration)  
+-   [Pianificazione di processi di migrazione raccolta](#About_Collection_Migration)  
 
--   [オブジェクトの移行ジョブの計画](#About_Object_Migration)  
+-   [Pianificazione di processi di migrazione oggetto](#About_Object_Migration)  
 
--   [移行済みのオブジェクトの移行ジョブの計画](#About_Object_Migrations)  
+-   [Pianificazione di processi di migrazione di oggetti migrati precedentemente](#About_Object_Migrations)  
 
-##  <a name="Types_of_Migration"></a> 移行ジョブの種類  
- Configuration Manager では、次の種類の移行ジョブをサポートしています。 各ジョブの種類は、そのジョブに含めることができるオブジェクトを定義できるように設計されています。  
+##  <a name="Types_of_Migration"></a> Tipi di processi di migrazione  
+ Configuration Manager supporta i tipi seguenti di processi di migrazione. Ogni tipo di processo è progettato per definire gli oggetti che è possibile includere nel processo.  
 
- **コレクションの移行** (Configuration Manager 2007 SP2 から移行する場合のみサポート): 選んだコレクションに関連するオブジェクトを移行します。 既定では、コレクションの移行には、コレクションのメンバーに関連付けられているすべてのオブジェクトが含まれます。 コレクションの移行ジョブを使用すると、特定のオブジェクトのインスタンスを除外できます。  
+ **Migrazione raccolta** (supportata solo durante la migrazione da Configuration Manager 2007 SP2): esegue la migrazione di oggetti relativi alle raccolte selezionate. Per impostazione predefinita, la migrazione di una raccolta include tutti gli oggetti che sono associati ai membri della raccolta. Quando si utilizza un processo di migrazione raccolta, è possibile escludere le istanze specifiche di oggetti.  
 
- **オブジェクトの移行**: 選んだ個々のオブジェクトを移行します。 移行する特定のデータのみを選択します。  
+ **Migrazione oggetto**: esegue la migrazione di singoli oggetti selezionati. Selezionare solo i dati da migrare.  
 
- **移行済みオブジェクトの移行**: 以前に移行したオブジェクトが前回の移行後にソース階層で更新されている場合に、これらのオブジェクトを移行します。  
+ **Migrazione di oggetti di cui è già stata eseguita la migrazione**: esegue la migrazione di oggetti di cui è stata eseguita prima la migrazione quando sono stati aggiornati nella gerarchia di origine dopo l'ultima migrazione.  
 
-###  <a name="Objects_that_can_migrate"></a> 移行できるオブジェクト  
- 特定の種類の移行ジョブで、すべてのオブジェクトを移行できるわけではありません。 次の一覧に、各種類の移行ジョブで移行することができるオブジェクトの種類を示します。  
+###  <a name="Objects_that_can_migrate"></a> Oggetti di cui è possibile eseguire la migrazione  
+ Non tutti gli oggetti possono essere migrati da un tipo specifico di processo di migrazione. L'elenco seguente identifica il tipo di oggetti di cui è possibile eseguire la migrazione con ciascun tipo di processo di migrazione.  
 
 > [!NOTE]  
->  コレクションの移行ジョブは、Configuration Manager 2007 SP2 ソース階層からオブジェクトを移行する場合のみ使用できます。  
+>  I processi di migrazione raccolta sono disponibili solo quando si esegue la migrazione di oggetti da una gerarchia di origine di Configuration Manager 2007 SP2.  
 
- **各オブジェクトの移行に使用できるジョブの種類**  
+ **Tipi di processo che è possibile usare per la migrazione di ogni oggetto**  
 
--   **開示通知** (サポートされている Configuration Manager 2007 ソース サイトからの移行に使用可能)  
+-   **Annunci** (disponibili per la migrazione dai siti di origine di Configuration Manager 2007 supportati)  
 
-    -   コレクションの移行  
+    -   Migrazione raccolta  
 
 
--   **資産インテリジェンス カタログ**  
+-   **Catalogo di Asset Intelligence**  
 
-    -   オブジェクトの移行  
+    -   Migrazione oggetto  
 
-    -   移行済みオブジェクトの移行  
+    -   Migrazione di oggetti di cui è già stata eseguita la migrazione  
 
--   **資産インテリジェンスのハードウェアの要件**  
+-   **Requisiti hardware di Asset Intelligence**  
 
-    -   オブジェクトの移行  
+    -   Migrazione oggetto  
 
-    -   移行済みオブジェクトの移行  
+    -   Migrazione di oggetti di cui è già stata eseguita la migrazione  
 
--   **資産インテリジェンスのソフトウェア一覧**  
+-   **Elenco di software di Asset Intelligence**  
 
-    -   オブジェクトの移行  
+    -   Migrazione oggetto  
 
-    -   移行済みオブジェクトの移行  
+    -   Migrazione di oggetti di cui è già stata eseguita la migrazione  
 
--   **境界**  
+-   **Limiti**  
 
-    -   オブジェクトの移行  
+    -   Migrazione oggetto  
 
-    -   移行済みオブジェクトの移行  
+    -   Migrazione di oggetti di cui è già stata eseguita la migrazione  
 
--   **構成基準**  
+-   **Configurazione di base**  
 
-    -   コレクションの移行  
+    -   Migrazione raccolta  
 
-    -   オブジェクトの移行  
+    -   Migrazione oggetto  
 
-    -   移行済みオブジェクトの移行  
+    -   Migrazione di oggetti di cui è già stata eseguita la migrazione  
 
--   **構成項目**  
+-   **Elementi di configurazione**  
 
-    -   コレクションの移行  
+    -   Migrazione raccolta  
 
-    -   オブジェクトの移行  
+    -   Migrazione oggetto  
 
-    -   移行済みオブジェクトの移行  
+    -   Migrazione di oggetti di cui è già stata eseguita la migrazione  
 
--   **メンテナンス期間**  
+-   **Finestre di manutenzione**  
 
-    -   コレクションの移行  
+    -   Migrazione raccolta  
 
 
--   **オペレーティング システムの展開用ブート イメージ**  
+-   **Immagini di avvio della distribuzione del sistema operativo**  
 
-    -   コレクションの移行  
+    -   Migrazione raccolta  
 
-    -   オブジェクトの移行  
+    -   Migrazione oggetto  
 
-    -   移行済みオブジェクトの移行  
+    -   Migrazione di oggetti di cui è già stata eseguita la migrazione  
 
--   **オペレーティング システムの展開に含めるドライバー パッケージ**  
+-   **Pacchetti driver della distribuzione del sistema operativo**  
 
-    -   コレクションの移行  
+    -   Migrazione raccolta  
 
-    -   オブジェクトの移行  
+    -   Migrazione oggetto  
 
-    -   移行済みオブジェクトの移行  
+    -   Migrazione di oggetti di cui è già stata eseguita la migrazione  
 
--   **オペレーティング システムの展開に含めるドライバー**  
+-   **Driver di distribuzione del sistema operativo**  
 
-    -   コレクションの移行  
+    -   Migrazione raccolta  
 
-    -   オブジェクトの移行  
+    -   Migrazione oggetto  
 
-    -   移行済みオブジェクトの移行  
+    -   Migrazione di oggetti di cui è già stata eseguita la migrazione  
 
--   **オペレーティング システムの展開用イメージ**  
+-   **Immagini di distribuzione del sistema operativo**  
 
-    -   コレクションの移行  
+    -   Migrazione raccolta  
 
-    -   オブジェクトの移行  
+    -   Migrazione oggetto  
 
-    -   移行済みオブジェクトの移行  
+    -   Migrazione di oggetti di cui è già stata eseguita la migrazione  
 
--   **オペレーティング システム展開パッケージ**  
+-   **Pacchetti di distribuzione del sistema operativo**  
 
-    -   コレクションの移行  
+    -   Migrazione raccolta  
 
-    -   オブジェクトの移行  
+    -   Migrazione oggetto  
 
-    -   移行済みオブジェクトの移行  
+    -   Migrazione di oggetti di cui è già stata eseguita la migrazione  
 
--   **ソフトウェアの配布パッケージ**  
+-   **Pacchetti di distribuzione software**  
 
-    -   コレクションの移行  
+    -   Migrazione raccolta  
 
-    -   オブジェクトの移行  
+    -   Migrazione oggetto  
 
-    -   移行済みオブジェクトの移行  
+    -   Migrazione di oggetti di cui è già stata eseguita la migrazione  
 
--   **ソフトウェア使用状況測定規則 (旧称「ソフトウェア メータリング規則」)**  
+-   **Regole di controllo software**  
 
-    -   オブジェクトの移行  
+    -   Migrazione oggetto  
 
-    -   移行済みオブジェクトの移行  
+    -   Migrazione di oggetti di cui è già stata eseguita la migrazione  
 
--   **ソフトウェア更新プログラムの展開パッケージ**  
+-   **Pacchetti di distribuzione degli aggiornamenti software**  
 
-    -   コレクションの移行  
+    -   Migrazione raccolta  
 
-    -   オブジェクトの移行  
+    -   Migrazione oggetto  
 
-    -   移行済みオブジェクトの移行  
+    -   Migrazione di oggetti di cui è già stata eseguita la migrazione  
 
--   **ソフトウェア更新プログラムの展開テンプレート**  
+-   **Modelli di distribuzione degli aggiornamenti software**  
 
-    -   コレクションの移行  
+    -   Migrazione raccolta  
 
-    -   オブジェクトの移行  
+    -   Migrazione oggetto  
 
-    -   移行済みオブジェクトの移行  
+    -   Migrazione di oggetti di cui è già stata eseguita la migrazione  
 
--   **ソフトウェア更新プログラムの展開**  
+-   **Distribuzioni di aggiornamenti software**  
 
-    -   コレクションの移行  
+    -   Migrazione raccolta  
 
 
--   **ソフトウェア更新プログラム一覧**  
+-   **Elenchi di aggiornamenti software**  
 
-    -   オブジェクトの移行  
+    -   Migrazione oggetto  
 
-    -   移行済みオブジェクトの移行  
+    -   Migrazione di oggetti di cui è già stata eseguita la migrazione  
 
--   **タスク シーケンス**  
+-   **Sequenze di attività**  
 
-    -   コレクションの移行  
+    -   Migrazione raccolta  
 
-    -   オブジェクトの移行  
+    -   Migrazione oggetto  
 
-    -   移行済みオブジェクトの移行  
+    -   Migrazione di oggetti di cui è già stata eseguita la migrazione  
 
--   **仮想アプリケーション パッケージ**  
+-   **Pacchetti di applicazioni virtuali**  
 
-    -   コレクションの移行  
+    -   Migrazione raccolta  
 
-    -   オブジェクトの移行  
+    -   Migrazione oggetto  
 
     > [!IMPORTANT]  
-    >  仮想アプリケーション パッケージは、オブジェクトの移行ジョブを使って移行できますが、 **移行済みのオブジェクトの移行**ジョブを使って移行することはできません。 移行するには、移行済みの仮想アプリケーション パッケージを移行先サイトから削除して、仮想アプリケーションを移行するための新しい移行ジョブを作成する必要があります。  
+    >  Sebbene sia possibile eseguire la migrazione di un pacchetto di applicazioni virtuali utilizzando la migrazione oggetto, non è possibile seguire la migrazione dei pacchetti utilizzando il tipo di processo di migrazione di **Migrazione di oggetti di cui è già stata eseguita la migrazione**. Al contrario, è necessario eliminare il pacchetto di applicazioni virtuali di cui è stata eseguita la migrazione dal sito di destinazione e quindi creare un nuovo processo di migrazione per eseguire la migrazione dell'applicazione virtuale.  
 
-##  <a name="About_Migration_Jobs"></a> すべての移行ジョブについての全般的な計画  
- 移行先階層にオブジェクトを移行する移行ジョブを作成するには、移行ジョブの作成ウィザードを使用します。 作成する移行ジョブの種類で、移行できるジョブが決まります。 複数の移行ジョブを作成して使用すると、データの移行を同じソース サイトから行ったり、複数のソース サイトから行ったりできます。 特定の 1 種類の移行ジョブの使用で、別の種類の移行ジョブの使用がブロックされることはありません。  
+##  <a name="About_Migration_Jobs"></a> Pianificazione generale di tutti i processi di migrazione  
+ Usare la Creazione guidata del processo di migrazione per creare un processo di migrazione per la migrazione degli oggetti nella gerarchia di destinazione. Il tipo di processo di migrazione creato determina quali oggetti sono disponibili per la migrazione. È possibile creare e usare più processi di migrazione per trasferire i dati dallo stesso sito di origine o da più siti di origine. L'utilizzo di un tipo di processo di migrazione non blocca l'utilizzo di un altro tipo di processo di migrazione.  
 
- 移行ジョブが正常に実行されると、そのステータスは [完了] と表示されて、再度実行することはできなくなります。 **** ただし、元のジョブで移行したオブジェクトを移行する、新しい移行ジョブを作成することができます。また、新しい移行ジョブに追加のオブジェクトを含めることもできます。 追加の移行ジョブを作成すると、移行済みのオブジェクトのステータスは **[移行完了]** と表示されます。 これらのオブジェクトを選択して再度移行することはできますが、ソース階層でオブジェクトが更新されていない限り、これらのオブジェクトを再度移行する必要はありません。 最初に移行されてからオブジェクトがソース階層内で更新されている場合は、移行ジョブの種類に [移行後に変更されたオブジェクト] を使用すると、そのオブジェクトを識別できます。 ****  
+ Dopo che è stato eseguito il processo di migrazione, lo stato viene elencato come **Completato** e non può essere eseguito di nuovo. Tuttavia, è possibile creare un nuovo processo di migrazione per eseguire la migrazione degli oggetti che sono stati trasferiti dal processo originario. Il nuovo processo di migrazione può includere anche oggetti aggiuntivi. Quando si creano altri processi di migrazione, gli oggetti che sono stati trasferiti prima, presentano lo stato **Migrato**. È possibile selezionare gli oggetti per eseguire di nuovo la migrazione, ma, a meno che l'oggetto sia stato aggiornato nella gerarchia di origine, non sarà necessario eseguire nuovamente la migrazione di questi oggetti. Se l'oggetto è stato aggiornato nella gerarchia di origine dopo la migrazione originaria, è possibile identificare l'oggetto quando si utilizza il tipo di processo di migrazione di **Oggetti modificati dopo la migrazione**.  
 
- 実行する前は移行ジョブを削除できます。 ただし、移行ジョブが完了した後では、その移行ジョブは Configuration Manager コンソールにそのまま表示されて、削除することはできません。 完了した各移行ジョブやまだ実行していない各移行ジョブは、移行処理を完了して移行データをクリーンアップするまで、Configuration Manager コンソールに引き続き表示されます。  
-
-> [!NOTE]  
->  **[移行データのクリーン アップ]** アクションを使用して移行を完了した後で、同じ階層を現在のソース階層として再構成して、移行済みのオブジェクトの表示を復元できます。  
-
- Configuration Manager コンソールで、移行ジョブに含まれているオブジェクトを表示するには、移行ジョブを選択して、**[ジョブに含まれているオブジェクト]** タブを選びます。  
-
- 次のセクションの情報を使用して、すべての移行ジョブを計画します。  
-
-### <a name="data-selection"></a>データの選択  
- コレクションの移行ジョブを作成する場合、1 つまたは複数のコレクションを選択する必要があります。 コレクションを選択すると、移行ジョブの作成ウィザードに、選択したコレクションに関連付けられているオブジェクトが表示されます。 既定では、選択したコレクションに関連付けられているすべてのオブジェクトが移行されますが、そのジョブで移行しないようにするオブジェクトはオフにすることができます。 依存するオブジェクトのあるオブジェクトをオフにすると、それらの依存するオブジェクトもオフになります。 オフにしたすべてのオブジェクトが除外リストに追加されます。 除外リストのオブジェクトは、今後の移行ジョブの自動選択から削除されます。 今後作成する移行ジョブで移行に自動選択されるようにする必要があるオブジェクトを削除するには、除外リストを手動で編集する必要があります。  
-
-### <a name="site-ownership-for-migrated-content"></a>移行されるコンテンツのサイト所有権  
- 展開のためにコンテンツを移行する場合は、コンテンツ オブジェクトを移行先階層内のサイトに割り当てる必要があります。 このサイトが移行先階層内のコンテンツの所有者になります。 移行先階層の最上位サイトは、コンテンツのメタデータを実際に移行するサイトですが、ネットワーク経由でコンテンツの元のソース ファイルにアクセスするのは、割り当てられているサイトです。  
-
- 移行時に使用されるネットワーク帯域幅を最小化するために、コンテンツの所有権を最も近い利用可能なサイトに移動することを検討してください。 コンテンツに関する情報は System Center Configuration Manager 内でグローバルに共有されるため、すべてのサイトで利用できます。  
-
- コンテンツに関する情報は、データベース レプリケーションを使用して、移行先階層のすべてのサイトで共有されます。 ただし、プラマリ サイトに割り当てられてから、他のプライマリ サイトの配布ポイントに展開されたコンテンツは、ファイル ベースのレプリケーションを使用して転送されます。 これは、中央管理サイトを経由して、その他の各プライマリ サイトに転送されます。 コンテンツの所有者としてサイトを割り当てる場合、移行の前または移行中に複数のプライマリ サイトへの配布を計画しているパッケージを中央に集めると、帯域幅の狭いネットワークを使用したデータの転送を減らすことができます。  
-
-### <a name="role-based-administration-security-scopes-for-migrated-data"></a>移行されるデータに対する、ロール ベース管理のセキュリティ スコープ  
- 移行先階層にデータを移行する場合、1 つまたは複数の役割に基づいた管理のセキュリティ スコープを、データを移行するオブジェクトに割り当てる必要があります。 これにより、適切な管理ユーザーのみが、移行後にこのデータにアクセスすることができます。 指定したセキュリティ スコープは移行ジョブで定義され、そのジョブで移行される各オブジェクトに割り当てられます。 複数のセキュリティ スコープを別々の一連のオブジェクトに適用する必要があり、移行中にこれらのスコープを割り当てる場合は、複数の移行ジョブを使用して別々の一連のオブジェクトを移行する必要があります。  
-
- 移行ジョブを設定する前に、役割に基づいた管理が System Center Configuration Manager で機能するしくみを確認します。 必要に応じて、移行するデータに 1 つまたは複数のセキュリティ スコープを設定して、移行先階層内の移行されたオブジェクトにアクセスできるユーザーを制御します。  
-
- セキュリティ スコープとロール ベース管理の詳細については、「[System Center Configuration Manager のロール ベース管理の基礎](../../core/understand/fundamentals-of-role-based-administration.md)」をご覧ください。  
-
-### <a name="review-migration-actions"></a>移行アクションの確認  
- 移行ジョブを設定すると、移行ジョブの作成ウィザードに、移行を正常に実行するために行う必要がある操作のリスト、および選択したデータの移行中に Configuration Manager で実行される操作のリストが表示されます。 この情報を慎重に確認し、予想される結果を検証します。  
-
-### <a name="schedule-migration-jobs"></a>移行ジョブのスケジュール  
- 既定では、移行ジョブは、作成すると直ちに実行されます。 ただし、移行ジョブの作成時に、またはジョブのプロパティを編集して、移行ジョブをいつ実行するのかを指定できます。 次のように実行するように、移行ジョブをスケジュールできます。  
-
--   ジョブを直ちに実行する  
-
--   ジョブを特定の開始時刻に実行する  
-
--   ジョブを実行しない  
-
-### <a name="specify-conflict-resolution-for-migrated-data"></a>移行されるデータの競合の解決を指定する  
- 既定では、移行先データベースに以前に移行したデータをスキップまたは上書きするように移行ジョブを構成していない場合、移行ジョブによって移行先データベースのデータは上書きされません。  
-
-##  <a name="About_Collection_Migration "></a> コレクションの移行ジョブの計画  
- コレクションの移行ジョブは、サポートされているバージョンの Configuration Manager 2007 を実行しているソース階層からデータを移行する場合にのみ使用できます。 コレクションによって移行する場合は、1 つまたは複数のコレクションを指定する必要があります。 指定したコレクションごとに、移行ジョブは移行に関連するすべてのオブジェクトを自動的に選択します。 たとえば、特定のユーザーのコレクションを選択すると、コレクションのメンバーが識別され、そのコレクションに関連付けられている展開を移行できます。 必要に応じて、それらのメンバーに関連付けられている他の展開オブジェクトを選択して移行できます。 これらの選択したすべての項目が、移行可能なオブジェクトのリストに追加されます。  
-
- コレクションを移行すると、System Center Configuration Manager ではコレクション設定 (メンテナンス期間、コレクション変数を含む) も移行しますが、AMT クライアント プロビジョニングのコレクション設定は移行できません。  
-
- 次のセクションの情報を使用して、コレクション ベースの移行ジョブに適用可能な追加の構成を理解してください。  
-
-### <a name="exclude-objects-from-collection-migration-jobs"></a>コレクションの移行ジョブからのオブジェクトの除外  
- コレクションの移行ジョブから特定のオブジェクトを除外できます。 コレクションの移行ジョブから特定のオブジェクトを除外すると、そのオブジェクトは、現在のソース階層内のソース サイトに作成した移行ジョブから除外されたすべてのオブジェクトが含まれた、グローバルな除外リストに追加されます。 除外リストに含まれているオブジェクトは今後のジョブでの移行に引き続き利用できますが、新しいコレクション ベースの移行ジョブを作成したときに、自動的には含められません。  
-
- 除外リストを編集して、以前除外したオブジェクトを削除できます。 除外リストからオブジェクトを削除すると、新しい移行ジョブの作成中に、関連付けられているコレクションが指定されると、自動的に選択されます。  
-
-### <a name="unsupported-collections"></a>サポートされていないコレクション  
- では、既定のユーザー コレクション、デバイス コレクション、Configuration Manager 2007 ソース階層のほとんどのカスタム コレクションを移行できます。 ただし、Configuration Manager では、同じコレクション内にユーザーとデバイスが含まれているコレクションを移行することはできません。  
-
- 次のコレクションは移行できません。  
-
--   ユーザーとデバイスが含まれているコレクション。  
-
--   他のリソースの種類のコレクションへの参照が含まれているコレクション。 たとえば、ユーザー ベースのコレクションのサブコレクションまたはリンクを持つデバイス ベースのコレクションです。 この例では、最上位のコレクションのみが移行されます。  
-
--   不明なコンピューターを含める規則が含まれているコレクション。 コレクションは移行されますが、不明なコンピューターを含める規則は移行されません。  
-
-### <a name="empty-collections"></a>空のコレクション  
- 空のコレクションとは、リソースが関連付けられていないコレクションです。 Configuration Manager が空のコレクションを移行する場合は、ユーザーやデバイスが含まれていないフォルダーにコレクションを変換します。 このフォルダーは、空のコレクションという名前で、Configuration Manager コンソールの **[資産とコンプライアンス]** ワークスペースの **[ユーザー コレクション]** ノードまたは **[デバイス コレクション]** ノードの下に作成されます。  
-
-### <a name="linked-collections-and-subcollections"></a>リンクされたコレクションおよびサブコレクション  
- 他のコレクションにリンクされているコレクション、またはサブコレクションがあるコレクションを移行する場合、Configuration Manager は、リンクされたコレクションおよびサブコレクションに加えて、**[ユーザー コレクション]** ノードまたは **[デバイス コレクション]** ノードの下にフォルダーを作成します。  
-
-### <a name="collection-dependencies-and-include-objects"></a>コレクションの依存関係および含まれるオブジェクト  
- 移行ジョブの作成ウィザードで移行するコレクションを指定すると、依存するコレクションがジョブに含められるように自動的に選択されます。 この動作により、必要なすべてのリソースが移行後に利用可能になることが保証されます。  
-
- たとえば、**[Win_7]** という名前の Windows 7 を実行するデバイス用のコレクションを選択します。 このコレクションは、すべてのクライアント オペレーティング システムが含まれている **[All_Clients]** という名前のコレクションに限定されています。 この場合、コレクション [All_Clients] が、移行のために自動的に選択されます。 ****  
-
-### <a name="collection-limiting"></a>コレクションの限定  
- System Center Configuration Manager では、コレクションはグローバル データであり、階層内の各サイトで評価されます。 このため、移行後にコレクションのスコープを制限する方法を計画します。 移行されるコレクションに予期しないメンバーが含まれないように、移行中に、移行先階層からのコレクションを識別して、移行するコレクションのスコープを限定できます。  
-
- たとえば、Configuration Manager 2007 では、コレクションはそれを作成したサイトおよび子サイトで評価されます。 公開通知は、子サイトにのみ展開できます。これにより、その公開通知のスコープがその子サイトに限定されます。 それに対して、System Center Configuration Manager では、各サイトでコレクションが評価された後、関連付けられている公開通知が各サイトについて評価されます。 コレクションの限定を使用すると、別のコレクションに基づいてコレクションのメンバーを絞り込み、予期しないコレクションのメンバーが追加されることを防ぐことできます。  
-
-### <a name="site-code-replacement"></a>サイト コードの置き換え  
- Configuration Manager 2007 サイトを識別する条件が含まれているコレクションを移行する場合は、階層内の特定のサイトを指定する必要があります。 これにより、移行されたコレクションが移行先環境で引き続き動作可能で、スコープが拡大しないことが保証されます。  
-
-### <a name="specify-behavior-for-migrated-advertisements"></a>移行される公開通知の動作の指定  
- 既定では、コレクションベースの移行ジョブでは、移行先階層に移行する公開通知が無効になっています。 これには、公開通知に関連するすべてのプログラムが含まれます。 公開通知が含まれるコレクション ベースの移行ジョブを作成すると、移行ジョブの作成ウィザードの **[設定]** ページに **[公開通知が移行された後、Configuration Manager でプログラムを展開可能にする]** オプションが表示されます。 このオプションを選択すると、その公開通知に関連付けられているプログラムが、移行された後に有効になります。 ベスト プラクティスとしては、このオプションを選択しません。 代わりに、プログラムが移行されて、それらを受け取るクライアントを確認できるようになったときにプログラムを有効にします。  
+ È possibile eliminare un processo di migrazione prima dell'esecuzione. Dopo che un processo di migrazione è stato completato, rimane tuttavia visibile nella console di Configuration Manager e non può essere eliminato. Ogni processo di migrazione completato o non ancora eseguito rimane visibile nella console di Configuration Manager finché il processo di migrazione non viene completato e non viene eseguita la pulizia dei dati della migrazione.  
 
 > [!NOTE]  
->  **[公開通知が移行された後、Configuration Manager でプログラムを展開可能にする]** オプションが表示されるのは、コレクション ベースの移行ジョブを作成し、その移行ジョブに公開通知が含まれている場合のみです。  
+>  Dopo aver completato la migrazione usando l'azione **Pulisci dati migrazione**, è possibile configurare di nuovo una gerarchia analoga alla gerarchia di origine corrente per ripristinare la visibilità per gli oggetti di cui è stata eseguita prima la migrazione.  
 
- 移行後にプログラムを有効にするには、プログラムのプロパティの **[詳細設定]** タブで、**[提供先のコンピューターでこのプログラムを無効にする]** をオフにします。  
+ È possibile visualizzare gli oggetti contenuti in ogni processo di migrazione nella console di Configuration Manager selezionando il processo di migrazione e scegliendo la scheda **Oggetti nel processo**.  
 
-##  <a name="About_Object_Migration"></a> オブジェクトの移行ジョブの計画  
- コレクションの移行と異なり、移行する各オブジェクトおよびオブジェクト インスタンスを選択する必要があります。 個々のオブジェクト (Configuration Manager 2007 階層の公開通知や System Center 2012 Configuration Manager または System Center Configuration Manager 階層のパブリケーションなど) を選択して、特定の移行ジョブの移行対象オブジェクトのリストに追加できます。 移行リストに追加していないオブジェクトは、オブジェクトの移行ジョブで移行先サイトには移行されません。  
+ Utilizzare le informazioni nelle sezioni riportate di seguito per pianificare tutti i processi di migrazione.  
 
- オブジェクト ベースの移行ジョブには、すべての移行ジョブに適用される構成以外に計画する追加の構成はありません。  
+### <a name="data-selection"></a>Selezione dei dati  
+ Quando si crea un processo di migrazione raccolta, è necessario selezionare una o più raccolte. Dopo aver selezionato le raccolte, la Creazione guidata del processo di migrazione visualizza gli oggetti associati alle raccolte. Per impostazione predefinita, viene eseguita la migrazione degli oggetti associati alle raccolte selezionate, ma è possibile deselezionare gli oggetti che non si vuole trasferire con tale processo. Quando si deseleziona un oggetto contenente oggetti dipendenti, anche gli oggetti dipendenti verranno deselezionati. Tutti gli oggetti deselezionati vengono aggiunti a un elenco di esclusione. Gli oggetti in un elenco di esclusione vengono rimossi dalla selezione automatica per i processi di migrazione futura. È necessario modificare manualmente l'elenco di esclusione per rimuovere gli oggetti che si desidera selezionare automaticamente per la migrazione nei processi di migrazione futura.  
 
-##  <a name="About_Object_Migrations"></a> 移行済みのオブジェクトの移行ジョブの計画  
- 移行先階層に既に移行したオブジェクトをソース階層で更新した場合、 **移行後に変更されたオブジェクト** ジョブを使ってそのオブジェクトを再度移行できます。 たとえば、ソース階層内のパッケージのソース ファイルの名前を変更したりソース ファイルを更新したりすると、ソース階層のパッケージのバージョンが上がります。 パッケージのバージョンが上がると、このジョブの種類で、移行するパッケージを識別できるようになります。  
+### <a name="site-ownership-for-migrated-content"></a>Proprietà del sito per i contenuti di cui viene eseguita la migrazione  
+ Quando si esegue la migrazione dei contenuti per le distribuzioni, è necessario assegnare l'oggetto contenuto a un sito nella gerarchia di destinazione. Il sito diventa quindi il proprietario di tale contenuto nella gerarchia di destinazione. Benché il sito di livello superiore della gerarchia di destinazione sia il sito che esegue la migrazione dei metadati per il contenuto, è il sito assegnato che accede ai file di origine per il contenuto nella rete.  
 
- このジョブの種類はオブジェクトの移行と似ていますが、移行するオブジェクトを選択するときに、以前の移行ジョブで移行した後で更新のあったオブジェクトのみ選択できることが異なります。   
+ Per ridurre al minimo la larghezza di banda di rete utilizzata durante la migrazione, si consiglia di trasferire la proprietà del contenuto al sito disponibile più vicino. Poiché le informazioni sul contenuto vengono condivise globalmente in System Center Configuration Manager, saranno disponibili in ogni sito.  
 
- このジョブの種類を選択すると、移行ジョブの作成ウィザードの **[設定]** ページの競合を解決する動作が、移行済みのオブジェクトを上書きするように構成されます。 この設定は変更できません。  
+ Le informazioni sul contenuto vengono condivise in tutti i siti della gerarchia di destinazione usando la replica di database. I contenuti assegnati a un sito primario e quindi distribuiti nei punti di distribuzione in altri siti primari vengono tuttavia trasferiti usando la replica basata su file. Il trasferimento viene instradato attraverso il sito di amministrazione centrale e quindi a ciascun sito primario aggiuntivo. Centralizzando i pacchetti che si prevede di distribuire in più siti primari prima o durante la migrazione quando si assegna un sito come proprietario del contenuto, è possibile ridurre i trasferimenti di dati in reti a larghezza di banda ridotta.  
+
+### <a name="role-based-administration-security-scopes-for-migrated-data"></a>Ambiti di protezione dell'amministrazione basata su ruoli per i dati di cui è stata eseguita la migrazione  
+ Quando si esegue la migrazione dei dati in una gerarchia di destinazione, è necessario assegnare uno o più ambiti di protezione dell'amministrazione basata su ruoli agli oggetti di cui si esegue la migrazione dei dati. In questo modo solo gli utenti amministrativi appropriati hanno accesso ai dati dopo che viene eseguita la migrazione. Gli ambiti di protezione specificati vengono definiti dal processo di migrazione e vengono applicati a tutti gli oggetti migrati da quel processo. Se è necessario applicare ambiti di protezione diversi a set di oggetti diversi e si vogliono assegnare gli ambiti durante la migrazione, è necessario eseguire la migrazione dei diversi set di oggetti usando diversi processi di migrazione.  
+
+ Prima di configurare un processo di migrazione, verificare come funziona l'amministrazione basata su ruoli in System Center Configuration Manager. Se necessario, configurare uno o più ambiti di protezione per i dati di cui si esegue la migrazione per controllare chi avrà accesso agli oggetti di cui si esegue la migrazione nella gerarchia di destinazione.  
+
+ Per altre informazioni sugli ambiti di protezione e sull'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
+
+### <a name="review-migration-actions"></a>Verificare le azioni di migrazione  
+ Quando si configura un processo di migrazione, la Creazione guidata del processo di migrazione visualizza un elenco di azioni da eseguire per completare una migrazione in modo corretto e un elenco di azioni che Configuration Manager esegue durante la migrazione dei dati selezionati. Leggere attentamente queste informazioni per controllare il risultato previsto.  
+
+### <a name="schedule-migration-jobs"></a>Pianificare i processi di migrazione  
+ Per impostazione predefinita, un processo di migrazione viene eseguito subito dopo la sua creazione. Tuttavia, è possibile specificare quando il processo di migrazione viene eseguito quando si crea il processo oppure modificando le proprietà del processo. È possibile pianificare l'esecuzione del processo di migrazione come segue:  
+
+-   Eseguire il processo ora  
+
+-   Eseguire il processo a un'ora specifica  
+
+-   Non eseguire il processo  
+
+### <a name="specify-conflict-resolution-for-migrated-data"></a>Specificare la risoluzione dei conflitti per i dati di cui è stata eseguita la migrazione  
+ Per impostazione predefinita, i processi di migrazione non sovrascrivono i dati nel database di destinazione, a meno che il processo di migrazione non sia configurato per ignorare o sovrascrivere i dati di cui è già stata eseguita la migrazione nel database di destinazione.  
+
+##  <a name="About_Collection_Migration "></a> Pianificare processi di migrazione raccolta  
+ I processi di migrazione raccolta sono disponibili solo quando si esegue la migrazione di dati da una gerarchia di origine che esegue una versione supportata di Configuration Manager 2007. Quando si esegue la migrazione per raccolta, è necessario specificare una o più raccolte di cui eseguire la migrazione. Per ogni raccolta specificata, il processo di migrazione seleziona automaticamente tutti gli oggetti correlati per la migrazione. Ad esempio, se si seleziona una raccolta specifica di utenti, vengono identificati i membri della raccolta e sarà possibile eseguire la migrazione delle distribuzioni associate a tale raccolta. Facoltativamente, è possibile selezionare altri oggetti di distribuzione associati a tali membri per eseguirne la migrazione. Tutti questi elementi selezionati vengono aggiunti all'elenco di oggetti di cui può essere eseguita la migrazione.  
+
+ Quando viene eseguita la migrazione di una raccolta, System Center Configuration Manager esegue anche la migrazione delle impostazioni della raccolta, incluse finestre di manutenzione e variabili di raccolta, ma non può eseguire la migrazione delle impostazioni della raccolta per il provisioning del client AMT.  
+
+ Usare le informazioni nelle sezioni riportate di seguito per comprendere altre configurazioni che possono essere applicabili ai processi di migrazione basati sulle raccolte.  
+
+### <a name="exclude-objects-from-collection-migration-jobs"></a>Escludere oggetti dai processi di migrazione raccolta  
+ È possibile escludere oggetti specifici da un processo di migrazione raccolte. Quando si esclude un oggetto specifico da un processo di migrazione raccolte, tale oggetto viene aggiunto a un elenco di esclusione globale contenente tutti gli oggetti esclusi dai processi di migrazione creati per ogni sito di origine nella gerarchia di origine corrente. Gli oggetti inclusi nell'elenco di esclusione risultano ancora disponibili per la migrazione in processi futuri, ma non vengono inclusi automaticamente quando si crea un nuovo processo di migrazione basato su raccolte.  
+
+ È possibile modificare l'elenco di esclusione per rimuovere gli oggetti esclusi in precedenza. Dopo la rimozione dall'elenco di esclusione, l'oggetto verrà selezionato automaticamente quando si specifica una raccolta associata durante la creazione di un nuovo processo di migrazione.  
+
+### <a name="unsupported-collections"></a>Raccolte non supportate  
+ Configuration Manager può eseguire la migrazione di qualsiasi raccolta utente predefinita, di qualsiasi raccolta dispositivi e della maggior parte delle raccolte personalizzate da una gerarchia di origine di Configuration Manager 2007. Configuration Manager non può eseguire la migrazione di raccolte che contengono utenti e dispositivi nella stessa raccolta.  
+
+ Non è possibile eseguire la migrazione delle raccolte seguenti:  
+
+-   Raccolta contenente utenti e dispositivi.  
+
+-   Raccolta contenente un riferimento a una raccolta con tipo di risorse diverso. Ad esempio, una raccolta basata su dispositivi che include una sottoraccolta o un collegamento a una raccolta basata su utenti. In questo esempio viene eseguita la migrazione solo della raccolta di livello superiore.  
+
+-   Raccolta contenente una regola per l'inclusione di computer sconosciuti. Viene eseguita la migrazione della raccolta, ma non della regola per l'inclusione di computer sconosciuti.  
+
+### <a name="empty-collections"></a>Raccolte vuote  
+ Una raccolta vuota è una raccolta a cui non è associata alcuna risorsa. Quando Configuration Manager esegue la migrazione di una raccolta vuota, converte la raccolta in una cartella organizzativa senza utenti o dispositivi. Tale cartella viene creata usando il nome della raccolta vuota nel nodo **Raccolte utenti** o **Raccolte dispositivi** dell'area di lavoro **Asset e conformità** della console di Configuration Manager.  
+
+### <a name="linked-collections-and-subcollections"></a>Raccolte e sottoraccolte collegate  
+ Quando si esegue la migrazione di raccolte collegate ad altre raccolte o che includono sottoraccolte, Configuration Manager crea una cartella nel nodo **Raccolte utenti** o **Raccolte dispositivi** in aggiunta alle raccolte e sottoraccolte collegate.  
+
+### <a name="collection-dependencies-and-include-objects"></a>Dipendenze della raccolta e inclusione di oggetti  
+ Quando si specifica una raccolta di cui eseguire la migrazione nella Creazione guidata del processo di migrazione, eventuali raccolte dipendenti verranno selezionate automaticamente per l'inclusione nel processo. Questo comportamento assicura che tutte le risorse necessarie siano disponibili dopo la migrazione.  
+
+ Ad esempio: si seleziona una raccolta per dispositivi che eseguono Windows 7 e denominata **Win_7**. Questa raccolta è limitata a una raccolta contenente tutti i sistemi operativi client e denominata **All_Clients**. La raccolta **All_Clients** verrà selezionata automaticamente per la migrazione.  
+
+### <a name="collection-limiting"></a>Limitazione della raccolta  
+ Con System Center Configuration Manager, le raccolte sono dati globali e vengono valutate in ogni sito nella gerarchia. Pianificare quindi come limitare l'ambito di una raccolta dopo la migrazione. Durante la migrazione è possibile identificare una raccolta della gerarchia di destinazione da utilizzare per limitare l'ambito della raccolta di cui si esegue la migrazione, in modo che la raccolta di cui è stata eseguita la migrazione non includa membri imprevisti.  
+
+ Ad esempio, in Configuration Manager 2007 le raccolte vengono valutate nel sito in cui vengono create e nei siti figlio. È possibile distribuire un annuncio solo nel sito figlio, in modo da limitare l'ambito di tale annuncio a tale sito figlio. Con System Center Configuration Manager, invece, le raccolte e gli annunci associati vengono valutati in ogni sito. La limitazione della raccolta consente di specificare i membri della raccolta in base a un'altra raccolta, in modo da evitare l'aggiunta di membri di raccolta imprevisti.  
+
+### <a name="site-code-replacement"></a>Sostituzione del codice del sito  
+ Quando si esegue la migrazione di una raccolta contenente criteri che identificano un sito di Configuration Manager 2007, è necessario definire un sito specifico nella gerarchia di destinazione. Ciò assicura il funzionamento corretto della raccolta di cui è stata eseguita la migrazione nella gerarchia di destinazione, senza incrementi dell'ambito.  
+
+### <a name="specify-behavior-for-migrated-advertisements"></a>Specificare il comportamento di annunci di cui è stata eseguita la migrazione  
+ Per impostazione predefinita, i processi di migrazione basati su raccolte disabilitano gli annunci di cui viene eseguita la migrazione nella gerarchia di destinazione. Sono inclusi tutti i programmi associati all'annuncio. Quando si crea un processo di migrazione basato su raccolte contenente annunci, viene visualizzata l'opzione **Abilitare i programmi per la distribuzione nella gerarchia di destinazione dopo la migrazione di un annuncio da una gerarchia di origine** nella pagina **Impostazioni** della Creazione guidata del processo di migrazione. Se si seleziona questa opzione, i programmi associati agli annunci verranno abilitati dopo la migrazione. È consigliabile non selezionare questa opzione. Abilitare invece i programmi dopo la migrazione, quando sarà possibile verificare i client che li riceveranno.  
 
 > [!NOTE]  
->  この移行ジョブでは、ソース階層で自動的に更新されたオブジェクトおよび管理ユーザーが更新したオブジェクトを識別できます。  
+>  L'opzione **Abilitare i programmi per la distribuzione nella gerarchia di destinazione dopo la migrazione di un annuncio da una gerarchia di origine** viene visualizzata solo quando si crea un processo di migrazione basato su raccolte e se il processo di migrazione contiene annunci.  
+
+ Per abilitare un programma dopo la migrazione, deselezionare **Disattiva il programma nei computer in cui è distribuito** nella scheda **Avanzate** delle proprietà del programma.  
+
+##  <a name="About_Object_Migration"></a> Pianificare processi di migrazione oggetto  
+ A differenza di migrazione di raccolte, è necessario selezionare ogni oggetto e l'istanza dell'oggetto di cui si desidera eseguire la migrazione. È possibile selezionare i singoli oggetti (ad esempio, annunci da una gerarchia di Configuration Manager 2007 o una pubblicazione da una gerarchia di System Center 2012 Configuration Manager o System Center Configuration Manager) da aggiungere all'elenco di oggetti di cui eseguire la migrazione per un determinato processo di migrazione. Il processo di migrazione oggetti non eseguirà la migrazione nel sito di destinazione di eventuali oggetti non aggiungi all'elenco di migrazione.  
+
+ I processi di migrazione basati su oggetti non richiedono configurazione aggiuntiva rispetto alle configurazione applicabili a tutti i processi di migrazione.  
+
+##  <a name="About_Object_Migrations"></a> Pianificare processi di migrazione di oggetti di cui è già stata eseguita la migrazione  
+ Quando un oggetto di cui è già stata eseguita la migrazione nella gerarchia di destinazione viene aggiornato nella gerarchia di origine, sarà possibile eseguire di nuovo la migrazione di tale oggetto utilizzando il tipo di processo **Oggetti modificati dopo la migrazione** . Ad esempio, quando si rinominano o si aggiornano i file di origine per un pacchetto nella gerarchia di origine, la versione del pacchetto viene incrementata nella gerarchia di origine. Dopo gli incrementi di versione del pacchetto, il pacchetto può essere identificato per la migrazione da questo tipo di processo.  
+
+ Questo tipo di processo è analogo al tipo di migrazione oggetti, ma quando si selezionano gli oggetti di cui eseguire la migrazione è possibile selezionare solo gli oggetti aggiornati dopo la migrazione da parte di un processo di migrazione precedente.   
+
+ Quando si seleziona questo tipo di processo, il comportamento di risoluzione dei conflitti nella pagina **Impostazioni** della Creazione guidata del processo di migrazione viene configurato per poter sovrascrivere oggetti di cui è stata eseguita prima la migrazione. Questa impostazione non può essere modificata.  
+
+> [!NOTE]  
+>  Questo processo di migrazione consente di identificare gli oggetti che vengono aggiornati automaticamente dalla gerarchia di origine e gli oggetti aggiornati da un utente amministrativo.  

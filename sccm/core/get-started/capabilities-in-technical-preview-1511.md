@@ -1,6 +1,6 @@
 ---
-title: "Configuration Manager の Technical Preview 1511 の機能"
-description: "System Center Configuration Manager の Technical Preview バージョン 1511 で使用できる機能について説明します。"
+title: "Funzionalità della versione Technical Preview 1511 per Configuration Manager"
+description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1511 per System Center Configuration Manager."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -18,170 +18,170 @@ robots: noindex,nofollow
 ms.openlocfilehash: d0bde2c085cc9b330bc772e68081d629ca9e2f11
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1511-for-system-center-configuration-manager"></a>System Center Configuration Manager の Technical Preview 1511 の機能
+# <a name="capabilities-in-technical-preview-1511-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1511 per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Technical Preview)*
+*Si applica a: System Center Configuration Manager (Technical Preview)*
 
-この記事では、System Center Configuration Manager の Technical Preview バージョン 1511 で使用できる機能について説明します。 このバージョンは、新しい Technical Preview サイトをインストールまたは以前のバージョンの Technical Preview からアップグレードするために使用できる Technical Preview の基準インストールです。   このバージョンの Technical Preview をインストールする前に、説明のトピック「[System Center Configuration Manager の Technical Preview](/sccm/core/get-started/technical-preview)」を確認して、Technical Preview の使用に関する一般的な要件と制限、バージョン間の更新方法、および Technical Preview の機能に関するフィードバックを提供する方法について理解してください。  
+Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1511 per System Center Configuration Manager. Questa versione è un'installazione di base per la Technical Preview che è possibile usare per installare un nuovo sito Technical Preview o per eseguire l'aggiornamento da una Technical Preview precedente.   Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](/sccm/core/get-started/technical-preview) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.  
 
-このバージョンでお試しいただける新機能を次に示します。  
+Di seguito sono riportate le nuove funzionalità disponibili con questa versione.  
 
-##  <a name="BKMK_WUfB"></a> Windows 10 における Windows Update for Business との統合  
- Configuration Manager では、Windows Update for Business (WUfB) を介して直接接続されている Windows 10 コンピューターと、Windows 10 の更新プログラムとアップグレードを取得するために WSUS に接続されているコンピューターとを区別できるようになりました。  WUfB を介して接続されているコンピューターの場合、更新プログラムとアップグレードは、管理ユーザーによってグループ ポリシーまたは MDM ポリシーを使用して設定された間隔で管理でき、これらの更新プログラムやアップグレードを WUfB から直接インストールできます。    
-WUfB を介して接続されているコンピューターの場合、Configuration Manager で、対応ステータス (Windows Update や定義の更新プログラムを含む) についてレポートすることはできません。 また、Configuration Manager では、これらのコンピューターに Microsoft Update やサード パーティの更新プログラムを展開することもできません。  
+##  <a name="BKMK_WUfB"></a> Integrazione con Windows Update for Business in Windows 10  
+ Configuration Manager ora può distinguere un computer Windows 10 che è direttamente connesso tramite Windows Update for Business (WUfB) da quelli connessi a WSUS per ottenere gli aggiornamenti di Windows 10.  Per i computer connessi tramite WUfB, gli aggiornamenti possono essere gestiti secondo la cadenza impostata da un utente amministratore in Criteri di gruppo o Criteri MDM. Gli aggiornamenti potranno essere installati direttamente da WUfB.    
+Per i computer connessi tramite WUfB, Configuration Manager non potrà segnalare lo stato di conformità (inclusi gli aggiornamenti di Windows o gli aggiornamenti delle definizioni). Inoltre, Configuration Manager non potrà distribuire aggiornamenti Microsoft o aggiornamenti di terze parti in questi computer.  
 
- **このシナリオの前提条件:**  
+ **Prerequisiti per questo scenario:**  
 
--   Windows 10 Desktop Pro または Windows 10 Enterprise Edition バージョン 1511 以降  
+-   Windows 10 Desktop Pro o Windows 10 Enterprise Edition versione 1511 o successive  
 
--   [Windows Update for Business](https://technet.microsoft.com/library/mt622730\(v=vs.85\).aspx)を介して管理されているコンピューター  
+-   Computer da gestire tramite [Windows Update for Business](https://technet.microsoft.com/library/mt622730\(v=vs.85\).aspx).  
 
-### <a name="try-it-out"></a>試してみましょう。  
- 次のタスクを実行してから、このトピックの先頭付近にあるフィードバック情報を使用してその動作を報告してください。  
+### <a name="try-it-out"></a>Prova subito!  
+ Prova a completare l'attività seguente e quindi usa le informazioni relative a commenti e suggerimenti nella parte superiore di questo argomento per comunicare i risultati:  
 
-1.  Windows Update エージェントが以前有効になっていた場合は、WSUS がスキャンされないように、無効にします。   
-    レジストリ キー **HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU\useWSUSServer** を設定し、コンピューターによって WSUS または Windows Update がスキャンされるかどうかを指定できます。  この値が 2 の場合、WSUS についてはスキャンされません。  
+1.  Disabilitare l'agente di Windows Update in modo che non esegua l'analisi rispetto a WSUS, se è stata precedentemente abilitata.   
+    La chiave del Registro di sistema **HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU\useWSUSServer** può essere impostata in modo da indicare se il computer sta eseguendo l'analisi rispetto a Windows Update o WSUS.  Quando il valore è 2, l'analisi non viene eseguita rispetto a WSUS.  
 
-2.  Configuration Manager リソース エクスプローラーで、 **Windows Update**ノードの下にある新しい属性 **UseWUServer** を確認します。  
+2.  Prendere nota del nuovo attributo **UseWUServer**, nel nodo **Windows Update** di Esplora inventario risorse di Configuration Manager.  
 
-3.  更新プログラムとアップグレードのために WUfB を介して接続されているすべてのコンピューターを対象とした **UseWUServer** 属性に基づいて、コレクションを作成します。  
+3.  Creare una raccolta sulla base dell'attributo **UseWUServer** per tutti i computer connessi tramite WUfB per gli aggiornamenti.  
 
-4.  ソフトウェア更新プログラム ワークフローを無効にするクライアント エージェント設定を作成し、WUfB に直接接続されているコンピューターのコレクションに、この設定を展開します。  
+4.  Creare un'impostazione dell'agente client per disabilitare il flusso di lavoro di aggiornamento software e distribuire l'impostazione nella raccolta di computer connessi direttamente a WUfB.  
 
-5.  WUfB を介して管理されているコンピューターの対応ステータスには **[不明]** と表示され、全体のコンプライアンス対応率をカウントする際に、これらのコンピューターは除外されます。  
+5.  Lo stato di conformità dei computer gestiti tramite WUfB sarà **Sconosciuto** e quindi questi non verranno conteggiati come parte della percentuale di conformità complessiva.  
 
-##  <a name="BKMK_Office365ProPlus"></a> System Center Configuration Manager を使用した Office 365 ProPlus クライアント更新プログラムの管理  
- Configuration Manager では、Configuration Manager ソフトウェア更新管理のワークフローを使用して、Office 365 デスクトップ クライアントの更新プログラムを管理できます。    
-Microsoft から、Windows Server Updates Services (WSUS) に新しい Office 365 デスクトップ クライアントの更新プログラムが公開されると、Office 365 の更新プログラムがカタログの同期の一部として構成されている場合、Configuration Manager で、この更新プログラムをそのカタログと同期することができます。  Configuration Manager サイト サーバーでは、Office 365 クライアントの更新プログラムをダウンロードして、そのパッケージを Configuration Manager 配布ポイントに配布します。  次に、Configuration Manager クライアントにより、更新プログラムの取得場所とそのインストール プロセスの開始時期が、Office 365 デスクトップ クライアントに通知されます。  
+##  <a name="BKMK_Office365ProPlus"></a> Gestione dell'aggiornamento del client Office 365 ProPlus tramite System Center Configuration Manager  
+ Configuration Manager ora consente di gestire gli aggiornamenti dei client per desktop di Office 365 usando il flusso di lavoro Gestione aggiornamenti software di Configuration Manager.    
+Quando Microsoft pubblica un nuovo aggiornamento dei client per desktop di Office 365 in Windows Server Updates Services (WSUS), Configuration Manager potrà sincronizzare l'aggiornamento con il relativo catalogo se l'aggiornamento di Office 365 è configurato come parte della sincronizzazione del catalogo.  Il server del sito di Configuration Manager scaricherà gli aggiornamenti del client di Office 365 e distribuirà il pacchetto ai punti di distribuzione di Configuration Manager.  Il client di Configuration Manager indicherà quindi ai client per desktop di Office 365 dove ottenere gli aggiornamenti e quando avviarne il processo di installazione.  
 
-**このシナリオの前提条件:**  
+**Prerequisiti per questo scenario:**  
 
-### <a name="try-it-out"></a>試してみましょう。  
- 次のタスクを実行してから、このトピックの先頭付近にあるフィードバック情報を使用してその動作を報告してください。  
+### <a name="try-it-out"></a>Prova subito!  
+ Prova a completare l'attività seguente e quindi usa le informazioni relative a commenti e suggerimenti nella parte superiore di questo argomento per comunicare i risultati:  
 
-1.  Office 365 の更新プログラムを Configuration Manager サイト サーバーと同期して、Configuration Manager コンソールから表示できます。  
+1.  È possibile sincronizzare gli aggiornamenti di Office 365 per il server del sito di Configuration Manager e visualizzarli dalla console di Configuration Manager.  
 
-2.  Office 365 の更新プログラムを承認して、正常に展開できます。  
+2.  È possibile approvare e distribuire correttamente gli aggiornamenti di Office 365.  
 
-3.  クライアントに Office 365 の更新プログラムを正常にダウンロードできます。  
+3.  È possibile scaricare correttamente gli aggiornamenti di Office 365 nei client.  
 
-4.  コンソール内の監視機能またはレポートを使用して、Office 365 の更新プログラムのコンプライアンス対応を確認できます。  
+4.  È possibile verificare la conformità degli aggiornamenti di Office 365 usando il monitoraggio integrato nella console o i report.  
 
- 詳しい手順については、「 [System Center Configuration Manager Technical Preview による Office 365 クライアント更新プログラムの管理](https://technet.microsoft.com/library/mt628083.aspx)」をご覧ください。  
+ Per informazioni dettagliate sui passaggi da eseguire, vedere l'articolo relativo alla [gestione degli aggiornamenti client di Office 365 con System Center Configuration Manager Technical Preview](https://technet.microsoft.com/library/mt628083.aspx).  
 
-##  <a name="BKMK_AlwasyOn"></a> 高可用性データベース用の SQL Server AlwaysOn のサポート  
- Configuration Manager は、SQL Server AlwaysOn 可用性グループを使用したサイト データベースのホスティングをサポートします。  新しいサイトをインストールするときに、SQL Server の通常のインスタンスではなく、可用性グループを使用するようにセットアップに指示できます。  
+##  <a name="BKMK_AlwasyOn"></a> Supporto per SQL Server AlwaysOn per database a disponibilità elevata  
+ Configuration Manager ora supporta l'utilizzo di un gruppo di disponibilità SQL Server AlwaysOn per ospitare il database del sito.  Quando si installa un nuovo sito, è possibile indirizzare il programma di installazione all'uso del gruppo di disponibilità anziché una normale istanza di SQL Server.  
 
 > [!NOTE]  
->  可用性グループを正しく構成および使用するには、SQL Server 可用性グループの構成に習熟している必要があり、SQL Server ドキュメント ライブラリで提供されるドキュメントと手順に従う必要があります。  
+>  Per la configurazione e l'uso corretti dei gruppi di disponibilità occorre che l'utente abbia una certa familiarità con la configurazione dei gruppi di disponibilità di SQL Server, in base alla documentazione e alle procedure fornite nella libreria della documentazione di SQL Server.  
 
-可用性グループを構成して使用するプロセスには、大まかに、次のことが含まれます。  
+Il processo generale per configurare e usare i gruppi di disponibilità include le operazioni seguenti:  
 
-1.  SQL Server で可用性グループを構成します。  
+1.  Configurazione del gruppo di disponibilità in SQL Server.  
 
-2.  新しい Configuration Manager サイトをインストールして、セットアップ中に、グループのエンドポイントを指定することによって、可用性グループを使用するようにサイトに指示します。  
+2.  Installare un nuovo sito di Configuration Manager indicando al sito, durante l'installazione, di usare il gruppo di disponibilità specificando l'endpoint dei gruppi.  
 
-**このシナリオの前提条件:**  
+**Prerequisiti per questo scenario:**  
 
--   Configuration Manager Technical Preview でサポートされる SQL Server のバージョンが必要です。  
+-   Richiede una versione di SQL Server supportata da Configuration Manager Technical Preview  
 
--   Configuration Manager をインストールする前に、SQL Server 可用性グループを作成して構成する必要があります。  
+-   È necessario creare e configurare il gruppo di disponibilità di SQL Server prima di installare Configuration Manager  
 
--   可用性グループには、1 つのプライマリ レプリカを含める必要があり、最大 2 つの同期セカンダリ レプリカを含めることができます。  
+-   Il gruppo di disponibilità deve disporre di una replica primaria e può avere fino a due repliche secondarie sincrone  
 
--   可用性グループには、少なくとも 1 つのエンドポイントを含める必要があります。  
+-   Il gruppo di disponibilità deve disporre di almeno un endpoint  
 
--   可用性グループ内の SQL Server からアクセス可能なネットワークの場所を用意する必要があります。 この場所は、可用性グループの構成時にセットアップで使用され、セットアップの完了後に削除することができます。  
+-   È necessario disporre di un percorso di rete al quale ogni computer SQL Server nel gruppo di disponibilità sia in grado di accedere. Questo percorso viene utilizzato dal programma di installazione quando si configura il gruppo di disponibilità e può essere rimosso al termine dell'installazione.  
 
-**このリリースの既知の問題:**  
+**Problemi noti per questa versione:**  
 
--   既にサイト データベースとして使用されている可用性グループに新しいレプリカ メンバーを追加することはできません。 新しいレプリカ メンバーを追加するには、サイトをインストールし直す必要があります。  
+-   Non è possibile aggiungere correttamente un nuovo membro di replica a un gruppo di disponibilità che è già in uso come database del sito. In alternativa, è necessario reinstallare il sito dopo aver aggiunto il nuovo membro di replica.  
 
--   このシナリオでは、管理ポイント サーバーに **SQL Server 2012 ネイティブ クライアント** を ([SQL Server 2012 機能パックから](http://www.microsoft.com/download/details.aspx?id=29065)) インストールしなければならない場合があります。 これにより、SQL 接続エラー (管理ポイント サーバー上の **mp_getauth.log** に記録される) が回避されます。  
+-   Per questo scenario potrebbe essere necessario installare il **client nativo di SQL Server 2012** ([da SQL Server 2012 Feature Pack](http://www.microsoft.com/download/details.aspx?id=29065)) nel server del punto di gestione. In questo modo vengono evitati gli errori di connessione SQL (che vengono registrati in **mp_getauth.log** nel server del punto di gestione).  
 
-### <a name="try-it-out"></a>試してみましょう。  
-次のタスクを実行してから、このトピックの先頭付近にあるフィードバック情報を使用してその動作を報告してください。  
+### <a name="try-it-out"></a>Prova subito!  
+Prova a completare le attività seguenti, quindi usa le informazioni relative a commenti e suggerimenti nella parte superiore di questo argomento per comunicare i risultati:  
 
--   SQL AlwaysOn 可用性グループ用に構成されたデータベース サーバーを使用するプライマリ サイトをインストールすることができます。  
+-   Sono in grado di installare un sito primario che utilizza un server di database configurato per i gruppi di disponibilità SQL AlwaysOn  
 
--   自分の SQL AlwaysOn 可用性グループをグループ内の新しいレプリカにフェールオーバーできました。プライマリ サイトはまだ稼働しています。  
+-   Sono riuscito a eseguire il failover del gruppo di disponibilità SQL AlwaysOn a una nuova replica del gruppo e il sito primario è ancora operativo  
 
-### <a name="configuring-sql-server-alwayson-for-configuration-manager"></a>Configuration Manager 用の SQL Server AlwaysOn の構成  
- 次の手順を使用して、可用性グループを作成して構成してから、その可用性グループを使用する新しい Configuration Manager サイトをインストールします。  
+### <a name="configuring-sql-server-alwayson-for-configuration-manager"></a>Configurazione di SQL Server AlwaysOn per Configuration Manager  
+ Usare le procedure seguenti per creare e configurare prima di tutto il gruppo di disponibilità e quindi installare un nuovo sito di Configuration Manager che utilizza il gruppo di disponibilità.  
 
-#### <a name="to-create-a-sql-server-alwayson-availability-group"></a>SQL Server AlwaysOn 可用性グループを作成するには  
-[SQL Server 可用性グループを作成する](https://technet.microsoft.com/library/ff878265\(v=sql.120\).aspx) プロセスは、SQL Server ドキュメント ライブラリに記載されています。  可用性グループを作成するときに、Configuration Manager で使用するための次の要件が満たされていることを確認します。  
+#### <a name="to-create-a-sql-server-alwayson-availability-group"></a>Per creare un gruppo di disponibilità SQL Server AlwaysOn  
+Il processo per [creare un gruppo di disponibilità di SQL Server](https://technet.microsoft.com/library/ff878265\(v=sql.120\).aspx) è documentato nella raccolta di documentazione di SQL Server.  Quando si crea il gruppo di disponibilità, verificare che siano soddisfatti i requisiti seguenti per l'uso con Configuration Manager:  
 
--   最大 3 つのメンバー:  
+-   Un massimo di tre membri:  
 
-    -   1 つのプライマリ レプリカと最大 2 つのセカンダリ レプリカ  
+    -   Una replica primaria e fino a due repliche secondarie  
 
-    -   セカンダリ レプリカは同期している必要があります。  
+    -   Le repliche secondarie devono essere sincrone.  
 
         > [!TIP]  
-        >  セカンダリ レプリカは読み取り専用に構成することをお勧めします。 これにより、サイト操作のためのプライマリ レプリカのパフォーマンスを維持しながら、レポートなどの機能にセカンダリ レプリカを使用することができます。  
+        >  È consigliabile che le repliche secondarie siano configurate per essere di sola lettura. In questo modo è possibile utilizzare una replica secondaria per funzioni quali la creazione di report mantenendo al contempo le prestazioni della replica primaria per le operazioni del sito.  
 
--   少なくとも 1 つのエンドポイント。 Configuration Manager サイトをインストールするときに、このエンドポイントの仮想名が使用されます。  
-
-    > [!TIP]  
-    >  グループには複数のエンドポイントを含めることができますが、Configuration Manager はそのうちの 1 つしか利用できません。  
-
-#### <a name="to-install-a-configuration-manager-site-that-uses-the-availability-group"></a>可用性グループを使用する Configuration Manager サイトをインストールするには  
-SQL Server 可用性グループを使用するサイトをインストールするには、次のようにします。  
-
-1.  Configuration Manager セットアップから要求されたら、以下を代入します。  
-
-    -   **SQL Server 名**: 可用性グループを作成するときに構成したエンドポイントの仮想名を入力します。 仮想名は、**&lt;endpointServer\>.fabrikam.com** のように完全な DNS 名にする必要があります。  
-
-    -   **インスタンス**: この値は空白のままにする必要があります。 この構成内にはインスタンスが存在しません。  
-
-    -   **データベース**: 可用性グループのプライマリ レプリカ上に作成したデータベースの名前を入力します。  
-
-2.  次に、グループ内の SQL Server からアクセス可能なネットワークの場所を用意する必要があります。  
-
-    -   各 SQL Server からのコンピューター アカウントとサービス アカウントには、この場所へのフル コントロール アクセス権が必要です。  
-
-    -   この場所は、セットアップ中にのみ使用され、セットアップが完了してサイトがインストールされたら、共有解除または削除することができます。  
-
-3.  この情報を提供した後、通常のプロセスと構成を使ってセットアップを完了します。  
-
-##  <a name="BKMK_ClusterServerUpdates"></a> サーバー クラスターの提供  
-クラスター内のサーバーを含むコレクションを作成してから、更新プログラムをクラスターに展開するときに使用するようにクラスター設定を構成できるようになりました。 任意の時点でオンラインになっているサーバーの割合を制御できるだけでなく、カスタム アクションを実行するように展開前および展開後の PowerShell スクリプトを構成できます。  
-
-**このリリースの既知の問題:**  
-
--   クラスター サーバーのソフトウェア更新プログラム展開のステータスのチェックに使用できるレポートはありません。  
-
--   このリリースでは、 **[クラスター設定]** ページのメンテナンス シーケンス オプションが無効になっており、使用できません。  
-
-### <a name="try-it-out"></a>試してみましょう。  
-次のタスクを実行してから、このトピックの先頭付近にあるフィードバック情報を使用してその動作を報告してください。  
-
--   サーバーのクラスターを表すコレクションを作成できます。 このテストでは、このコレクションに 2 台のコンピューターを含めるようにメンバーシップ収集規則を構成できます。  
-
--   クラスター内の 50% のサーバーしかクラスター サービス中の任意の時点でオフラインにできないことを指定できます。 手順内のサンプル スクリプトを使用して、展開前スクリプトと展開後スクリプトを指定します。  
-
--   更新プログラムをこのコレクションに展開します。 C:\temp で start.txt ファイルと end.txt ファイルを調査して、クラスター内のサーバー上の展開の開始時刻と終了時刻を確認します。 詳細については、UpdatesDeployment.log ファイルを参照してください。  
-
-#### <a name="to-create-a-collection-for-a-server-cluster"></a>サーバー クラスターのコレクションを作成するには  
-
-1.  クラスター内のサーバーを含む[デバイス コレクションを作成します](https://technet.microsoft.com/library/gg712295.aspx)。  
-
-2.  [**資産とコンプライアンス**] ワークスペースで [**デバイス コレクション**] をクリックし、クラスター内のサーバーを含むコレクションを右クリックして、[**プロパティ**] をクリックします。  
-
-3.  [**全般**] タブで [**すべてのデバイスが同じサーバー クラスターに含まれる**] を選択し、[**設定**] をクリックします。  
-
-4.  [**クラスター設定**] ページで、ソフトウェア更新プログラムをインストールするために、同時にオフラインにできるサーバーの割合を選択します。 指定した割合に関係なく、クラスター サーバーは一度に 1 台ずつオフラインになります。 Configuration Manager では、一度にサービスを提供できるサーバー数の端数は切り捨てられます。 たとえば、51% を選択し、クラスターに 4 台のサーバーがある場合、2 台のサーバーが同時にオフラインになります。  
-
-5.  展開前 (ノードのドレイン) スクリプトまたは展開後 (ノードの再開) スクリプトを使用するかどうかを指定します。  
+-   Almeno un endpoint. Quando si installa il sito di Configuration Manager verrà utilizzato il nome virtuale di questo endpoint.  
 
     > [!TIP]  
-    >  次の例は、現在の時刻をテキスト ファイルに書き込む、展開前スクリプトと展開後スクリプトをテストするときに使用できます。  
+    >  Anche se il gruppo può contenere più endpoint, Configuration Manager può utilizzarne solo uno.  
+
+#### <a name="to-install-a-configuration-manager-site-that-uses-the-availability-group"></a>Per installare un sito di Configuration Manager che utilizza il gruppo di disponibilità  
+Per installare un sito che utilizza un gruppo di disponibilità di SQL Server:  
+
+1.  Sostituire gli elementi indicati di seguito quando richiesto dal programma di installazione di Configuration Manager:  
+
+    -   **Nome server SQL**: immettere il nome virtuale per l'endpoint configurato al momento della creazione del gruppo di disponibilità. Il nome virtuale deve essere un nome DNS completo, ad esempio **&lt;serverEndpoint\>.fabrikam.com**.  
+
+    -   **Istanza**: questo valore deve rimanere vuoto. In questa configurazione non esiste alcuna istanza.  
+
+    -   **Database**: immettere il nome del database creato nella replica primaria del gruppo di disponibilità.  
+
+2.  Successivamente, è necessario fornire un percorso di rete al quale ciascun SQL Server del gruppo sia in grado di accedere:  
+
+    -   L'account computer e l’account di servizio da ogni computer SQL Server richiedono l'accesso con controllo completo a questo percorso.  
+
+    -   Questo percorso viene utilizzato solo durante l'installazione ed è possibile rimuoverne la condivisione oppure eliminarlo al termine della configurazione e dell'installazione del sito.  
+
+3.  Dopo aver fornito queste informazioni, completare l'installazione con il processo e le configurazioni normali.  
+
+##  <a name="BKMK_ClusterServerUpdates"></a> Eseguire la manutenzione di un cluster di server  
+Ora è possibile creare una raccolta che contiene i server in un cluster e quindi configurare le impostazioni del cluster da utilizzare quando si distribuiscono gli aggiornamenti al cluster. È possibile controllare la percentuale di server che sono in linea in dato momento, oltre che configurare script PowerShell di pre-distribuzione e post-distribuzione per eseguire azioni personalizzate.  
+
+**Problemi noti per questa versione:**  
+
+-   La creazione di report non è disponibile per controllare lo stato della distribuzione degli aggiornamenti software per i server del cluster.  
+
+-   L'opzione della sequenza di manutenzione nella pagina **Impostazioni cluster** è disabilitata e non è disponibile in questa release.  
+
+### <a name="try-it-out"></a>Prova subito!  
+Prova a completare l'attività seguente e quindi usa le informazioni relative a commenti e suggerimenti nella parte superiore di questo argomento per comunicare i risultati:  
+
+-   Sono in grado di creare una raccolta che rappresenta un cluster di server. Per questo test, è possibile configurare le regole di appartenenza alla raccolta in modo che nella raccolta siano presenti 2 macchine.  
+
+-   Sono in grado di specificare che solo il 50% dei server del cluster può essere offline in qualsiasi punto della manutenzione del cluster. Utilizzare gli script di esempio nella procedura per specificare gli script di pre-distribuzione e post-distribuzione.  
+
+-   Distribuire un aggiornamento a questa raccolta. Esaminare i file start.txt ed end.txt in C:\temp e verificare l'ora di inizio e fine per la distribuzione nei server del cluster. Esaminare il file UpdatesDeployment.log per ulteriori informazioni.  
+
+#### <a name="to-create-a-collection-for-a-server-cluster"></a>Per creare una raccolta per un cluster di server  
+
+1.  [Creare una raccolta di dispositivi](https://technet.microsoft.com/library/gg712295.aspx) che contenga i server nel cluster.  
+
+2.  Nell'area di lavoro **Asset e conformità** fare clic su **Raccolte di dispositivi**, quindi fare clic con il pulsante destro del mouse sulla raccolta che contiene i server nel cluster e scegliere **Proprietà**.  
+
+3.  Nella scheda **Generale** selezionare **Tutti i dispositivi fanno parte dello stesso cluster di server**, quindi fare clic su **Impostazioni**.  
+
+4.  Nella pagina **Impostazioni cluster** selezionare la percentuale di server che possono essere portati offline contemporaneamente per l'installazione di aggiornamenti software. È possibile portare offline un server del cluster alla volta indipendentemente dalla percentuale specificata. Configuration Manager eseguirà l'arrotondamento per difetto quando si seleziona il numero di server di cui eseguire la manutenzione contemporaneamente. Ad esempio, se si sceglie il 51% e nel cluster sono presenti 4 server, verranno portati offline contemporaneamente 2 server.  
+
+5.  Specificare se usare uno script di pre-distribuzione (svuotamento del nodo) o di post-distribuzione (ripresa del nodo).  
+
+    > [!TIP]  
+    >  Di seguito sono riportati alcuni esempi che è possibile usare nei test degli script di pre-distribuzione e post-distribuzione, con cui viene scritta l'ora corrente in un file di testo:  
     >   
-    >  **展開前**  
+    >  **Pre-distribuzione**  
     >   
     >  `#Start`  
     >   
@@ -191,7 +191,7 @@ SQL Server 可用性グループを使用するサイトをインストールす
     >   
     >  `Out-File C:\temp\start.txt`  
     >   
-    >  **展開後**  
+    >  **Post-distribuzione**  
     >   
     >  `#End`  
     >   
@@ -201,8 +201,8 @@ SQL Server 可用性グループを使用するサイトをインストールす
     >   
     >  `Out-File C:\temp\end.txt`  
 
-#### <a name="to-deploy-software-updates-to-the-server-cluster"></a>ソフトウェア更新プログラムをサーバー クラスターに展開するには  
+#### <a name="to-deploy-software-updates-to-the-server-cluster"></a>Per distribuire gli aggiornamenti software nel cluster di server  
 
-1.  サーバー クラスター コレクションにソフトウェア[更新プログラムを展開します](https://technet.microsoft.com/library/gg712304.aspx)。  
+1.  [Distribuire gli aggiornamenti software](https://technet.microsoft.com/library/gg712304.aspx) nella raccolta del cluster di server.  
 
-2.  [ソフトウェア更新プログラムの展開を監視します](https://technet.microsoft.com/library/gg712304.aspx)。  
+2.  [Monitorare la distribuzione degli aggiornamenti software](https://technet.microsoft.com/library/gg712304.aspx).  

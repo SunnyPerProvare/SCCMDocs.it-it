@@ -1,6 +1,6 @@
 ---
-title: "リスクに基づいたアクセスの制限 | Microsoft Docs"
-description: "デバイス、ネットワーク、アプリケーションのリスクに基づいてアクセスを制限します。"
+title: Limitare l'accesso in base ai rischi | Microsoft Docs
+description: Limitare l'accesso alle risorse aziendali in base ai rischi per dispositivi, rete e applicazioni.
 ms.custom: na
 ms.date: 04/25/2017
 ms.prod: configuration-manager
@@ -17,78 +17,78 @@ manager: angrobe
 ms.openlocfilehash: 21841d97387f07f53993d957641f9ad892d723c2
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-access-to-company-resource-based-on-device-network-and-application-risk"></a>デバイス、ネットワーク、アプリケーションのリスクに基づき、会社のリソースへのアクセスを管理する
+# <a name="manage-access-to-company-resource-based-on-device-network-and-application-risk"></a>Gestire l'accesso alle risorse aziendali in base ai rischi per dispositivi, rete e applicazioni
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Lookout が実施するリスク評価に基づき、モバイル デバイスから企業のリソースへのアクセスを制御できます。Lookout はデバイスを脅威から守るためのソリューションであり、Microsoft Intune と統合されています。 リスクは、Lookout サービスがデバイスから集めた、オペレーティング システム (OS) の脆弱性、インストールされた悪意のあるアプリ、悪意のあるネットワーク プロファイルに関する製品利用統計情報に基づきます。 
+È possibile controllare l'accesso dai dispositivi mobili alle risorse aziendali in base alla valutazione dei rischi condotta da Lookout, una soluzione di protezione dalle minacce per i dispositivi integrata con Microsoft Intune. Il rischio si basa su dati di telemetria che il servizio Lookout raccoglie dai dispositivi per vulnerabilità del sistema operativo, app dannose installate e profili di rete dannosi. 
 
-System Center Configuration Manager (SCCM) コンプライアンス ポリシー経由で有効になる、Lookout のリスク評価レポートに基づき、条件付きアクセス ポリシーを構成したり、検出された脅威に起因して非準拠として判断されたデバイスをブロックしたりできます。
+In base alla valutazione dei rischi segnalati da Lookout abilitata tramite i criteri di conformità di System Center Configuration Manager (SCCM), è possibile configurare criteri di accesso condizionale e consentire o bloccare i dispositivi che sono stati rilevati come non conformi a causa di minacce in essi rilevate.
 
-[ハイブリッド MDM 展開 (SCCM と Intune)](https://docs.microsoft.com/sccm/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management) では、Lookout のようなデバイスを脅威から守るためのソリューションが提供するリスク評価に基づき、会社のリソースやデータへのアクセスを制御できます。
+La [distribuzione MDM ibrida (SCCM con Intune) ](https://docs.microsoft.com/sccm/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management) consente di controllare l'accesso alle risorse e ai dati aziendali in base alla valutazione dei rischi offerta da soluzioni di protezione dalle minacce per i dispositivi come Lookout.
 
-## <a name="how-do-the-hybrid-mdm-deployment-and-lookout-device-threat-protection-help-protect-company-resources"></a>ハイブリッド MDM 展開と Lookout デバイス脅威防御で会社のリソースを守るしくみとはどのようなものですか。
-モバイル デバイスで実行される Lookout のモバイル アプリ (Lookout for work) は、ファイル システム、ネットワーク スタック、デバイス、アプリケーションの製品利用統計情報を記録し (利用できる場合)、Lookout デバイス脅威防御クラウド サービスに送信し、モバイルの脅威に関するデバイスのリスクを計算し、集計します。 Lookout コンソールで、脅威のリスク レベルの分類を要件に合わせて変更することもできます。  
+## <a name="how-do-the-hybrid-mdm-deployment-and-lookout-device-threat-protection-help-protect-company-resources"></a>In che modo la distribuzione MDM ibrida e la protezione dalle minacce per i dispositivi di Lookout aiutano a proteggere le risorse aziendali?
+L'app per dispositivi mobili di Lookout (Lookout for work), in esecuzione sui dispositivi mobili, acquisisce file system, stack di rete e dati di telemetria di dispositivi e applicazioni (se disponibili) e li invia al servizio cloud di protezione dalle minacce per i dispositivi di Lookout per calcolare un rischio complessivo del dispositivo per le minacce per i dispositivi mobili. È anche possibile modificare la classificazione del livello di rischio per le minacce nella console di Lookout in base alle proprie esigenze.  
 
-SCCM のコンプライアンス ポリシーには、Lookout デバイス脅威リスク評価に基づく、Lookout モバイル脅威防御のための新しいルールが追加されました。 このルールを有効にすると、デバイスのコンプライアンスが評価されます。
+I criteri di conformità in SCCM includono ora una nuova regola per la protezione dalle minacce per i dispositivi mobili di Lookout basata sulla valutazione del rischio delle minacce per i dispositivi di Lookout. Quando questa regola è abilitata, il dispositivo viene valutato per la conformità.
 
-デバイスがコンプライアンス ポリシーに準拠していないと判断されると、Exchange Online や SharePoint Online など、リソースへのアクセスを条件付きアクセス ポリシーでブロックできます。 アクセスがブロックされると、問題を解決し、会社のリソースに再度アクセスするためのチュートリアルがエンドユーザーに与えられます。 このチュートリアルは、Lookout for work アプリ経由で起動します。
+Se il dispositivo viene indicato come non conforme ai criteri di conformità, è possibile bloccare l'accesso a risorse come Exchange Online e SharePoint Online tramite criteri di accesso condizionale. Quando viene bloccato l'accesso, agli utenti finali viene indicata una procedura dettagliata per risolvere il problema e ottenere l'accesso alle risorse aziendali. Questa procedura dettagliata viene avviata tramite l'app Lookout for work.
 
-## <a name="supported-platforms"></a>サポートされているプラットフォーム:
-* **Android 4.1 以降**、Microsoft Intune に登録済み。
-* **iOS 8 以降**、Microsoft Intune に登録済み。
-Lookout でサポートされているプラットフォームと言語の詳細については、この[記事](https://personal.support.lookout.com/hc/en-us/articles/114094140253)をご覧ください。
+## <a name="supported-platforms"></a>Piattaforme supportate:
+* **Android 4.1 e versioni successive** e registrate in Microsoft Intune.
+* **iOS 8 e versioni successive** e registrate in Microsoft Intune.
+Per informazioni sulle piattaforme e i linguaggi supportati da Lookout, vedere questo [articolo](https://personal.support.lookout.com/hc/en-us/articles/114094140253).
 
-## <a name="prerequisites"></a>必要条件:
-* [ハイブリッド MDM 展開](https://docs.microsoft.com/sccm/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management)
-* Microsoft Intune のサブスクリプションと Azure Active Directory。
-* Lookout Mobile EndPoint Security のエンタープライズ サブスクリプション。  詳細については、「[Lookout Mobile Endpoint Security」](https://www.lookout.com/products/mobile-endpoint-security)を参照してください。
+## <a name="prerequisites"></a>Prerequisiti:
+* [Distribuzione MDM ibrida](https://docs.microsoft.com/sccm/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management)
+* Una sottoscrizione a Microsoft Intune e Azure Active Directory.
+* Una sottoscrizione aziendale a Lookout Mobile EndPoint Security.  Per altre informazioni, vedere [Lookout Mobile Endpoint Security](https://www.lookout.com/products/mobile-endpoint-security)
 
-## <a name="example-scenarios"></a>シナリオ例
-一般的なシナリオを次に示します。
-### <a name="control-access-based-on-threat-from-malicious-apps"></a>悪意のあるアプリからの脅威に基づくアクセス制御:
-マルウェアなど、悪意のあるアプリがデバイスで検出されると、そのデバイスで次の動作が禁止されます。
-* 脅威を解決する前に企業の電子メールに接続すること。
-* OneDrive for Work アプリを利用して企業のファイルを同期すること。
-* ビジネス クリティカルなアプリケーションにアクセスすること。
+## <a name="example-scenarios"></a>Scenari di esempio
+Di seguito sono riportati alcuni scenari comuni:
+### <a name="control-access-based-on-threat-from-malicious-apps"></a>Controllare l'accesso in base alle minacce da app dannose:
+Quando vengono rilevate app dannose, ad esempio malware sul dispositivo, è possibile impedire ai dispositivi di:
+* Connettersi alla posta elettronica aziendale prima di aver risolto la minaccia.
+* Sincronizzare file aziendali tramite l'app OneDrive per il lavoro.
+* Accedere ad app critiche per l'azienda.
 
-**悪意のあるアプリが検出されると、アクセスが禁止される:**
+**Accesso bloccato quando vengono rilevate app dannose:**
 
-![悪意のあるアプリに起因し、デバイスが非準拠として見なされたときにアクセスを禁止する条件付きアクセス ポリシーの図](media/config-mgr-maliciousapps_blocked.png)
+![diagramma che illustra i criteri di accesso condizionale che bloccano l'accesso quando il dispositivo viene indicato come non conforme a causa della presenza di app dannose su di esso](media/config-mgr-maliciousapps_blocked.png)
 
-**脅威が取り除かれると、デバイスのブロックが解除され、会社のリソースにアクセスできる:**
+**Dispositivo sbloccato e in grado di accedere alle risorse aziendali dopo che la minaccia è stata corretta:**
 
-![修復後、デバイスが準拠として見なされたときにアクセスを与える条件付きアクセス ポリシーの図](media/config-mgr-maliciousapps-unblocked.png)
-### <a name="control-access-based-on-threat-to-network"></a>ネットワークの脅威に基づくアクセス制御:
-Man-in-the-middle 攻撃のようなネットワークの脅威を検出し、デバイス リスクに基づき、WiFi ネットワークへのアクセスを制限します。
+![diagramma che illustra i criteri di accesso condizionale che concedono l'accesso quando il dispositivo viene indicato come conforme dopo la correzione](media/config-mgr-maliciousapps-unblocked.png)
+### <a name="control-access-based-on-threat-to-network"></a>Controllare l'accesso in base alle minacce per la rete:
+Rilevare le minacce alla rete, ad esempio attacchi di tipo man-in-the-middle, e limitare l'accesso alle reti Wi-Fi in base al rischio per il dispositivo.
 
-**WiFi 経由のネットワーク アクセスを禁止する:**
+**Accesso bloccato alla rete Wi-Fi:**
 
-![ネットワークの脅威に基づいて WiFi アクセスを禁止する条件付きアクセスの図](media/config-mgr-network-wifi-blocked.png)
+![diagramma che illustra i criteri di accesso condizionale che bloccano l'accesso alla rete Wi-Fi in base alle minacce per la rete](media/config-mgr-network-wifi-blocked.png)
 
-**修復後、アクセスが与えられる:**
+**Accesso concesso dopo la correzione:**
 
-![脅威が取り除かれたときにアクセスを許可する条件付きアクセスの図](media/config-mgr-network-wifi-unblocked.png)
-### <a name="control-access-to-sharepoint-online-based-on-threat-to-network"></a>ネットワークの脅威に基づき、SharePoint Online へのアクセスを制御する:
+![diagramma che illustra l'accesso condizionale che consente l'accesso dopo la correzione della minaccia](media/config-mgr-network-wifi-unblocked.png)
+### <a name="control-access-to-sharepoint-online-based-on-threat-to-network"></a>Controllare l'accesso a SharePoint Online in base alle minacce alla rete:
 
-Man-in-the-middle 攻撃のようなネットワークの脅威を検出し、デバイス リスクに基づき、企業ファイルの同期を制限します。
+Rilevare le minacce alla rete, ad esempio attacchi di tipo man-in-the-middle, e impedire la sincronizzazione dei file aziendali in base al rischio per il dispositivo.
 
-**デバイスで検出されたネットワークの脅威に基づき、SharePoint Online へのアクセスを禁止する:**
+**Accesso bloccato a SharePoint Online in base alla minaccia per la rete rilevata sul dispositivo:**
 
-![脅威の検出に基づいて SharePoint Online へのデバイス アクセスを禁止する条件付きアクセスの図](media/config-mgr-network-spo-blocked.png)
+![Diagramma che illustra l'accesso condizionale che blocca l'accesso del dispositivo a SharePoint Online in base al rilevamento della minaccia](media/config-mgr-network-spo-blocked.png)
 
 
-**修復後、アクセスが与えられる:**
+**Accesso concesso dopo la correzione:**
 
-![ネットワークの脅威が取り除かれたときにアクセスを許可する条件付きアクセスの図](media/config-mgr-network-spo-unblocked.png)
+![Diagramma che illustra l'accesso condizionale che consente l'accesso dopo la correzione della minaccia per la rete](media/config-mgr-network-spo-unblocked.png)
 
-## <a name="next-steps"></a>次のステップ
-このソリューションを実装するために必須となる主な手順:
-1.  [Lookout モバイル脅威防御のサブスクリプションを設定する](set-up-your-subscription-with-lookout.md)
-2.  [Intune で Lookout MTP の接続を有効にする](enable-lookout-connection-in-intune.md)
-3.  [Lookout for work アプリケーションを構成し、展開する](configure-and-deploy-lookout-for-work-apps.md)
-4.  [コンプライアンス ポリシーを構成する](enable-device-threat-protection-rule-compliance-policy.md)
-5.  [Troubleshoot Lookout integration](troubleshoot-lookout-integration.md) (Lookout 統合のトラブルシューティング)
+## <a name="next-steps"></a>Passaggi successivi
+Ecco i passaggi principali da seguire per implementare questa soluzione:
+1.  [Configurare la sottoscrizione con la protezione dalle minacce mobili Lookout](set-up-your-subscription-with-lookout.md)
+2.  [Abilitare la connessione MTP di Lookout in Intune](enable-lookout-connection-in-intune.md)
+3.  [Configurare e distribuire l'app Lookout for Work](configure-and-deploy-lookout-for-work-apps.md)
+4.  [Configurare i criteri di conformità](enable-device-threat-protection-rule-compliance-policy.md)
+5.  [Risoluzione dei problemi di integrazione di Lookout](troubleshoot-lookout-integration.md)

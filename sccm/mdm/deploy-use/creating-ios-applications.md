@@ -1,6 +1,6 @@
 ---
-title: "iOS アプリケーションの作成 | Microsoft Docs"
-description: "iOS デバイス用アプリケーションを作成して展開するときに検討する必要がある考慮事項について説明します。"
+title: Creare applicazioni iOS | Microsoft Docs
+description: Questo articolo descrive le considerazioni da tenere presenti quando si creano e distribuiscono applicazioni per i dispositivi iOS.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -17,37 +17,37 @@ manager: angrobe
 ms.openlocfilehash: 349fcf335e7faddbcbd2ffe0ece7e711465f28df
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-ios-applications-with-system-center-configuration-manager"></a>System Center Configuration Manager で iOS アプリケーションを作成する
+# <a name="create-ios-applications-with-system-center-configuration-manager"></a>Creare applicazioni iOS con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager アプリケーションには、デバイスにソフトウェアを展開するために必要なインストール ファイルと情報からなる、1 つまたは複数の展開の種類があります。 また、展開の種類には、ソフトウェアを展開するタイミングと方法を指定する規則があります。  
+Un'applicazione di System Center Configuration Manager contiene uno o più tipi di distribuzione che comprendono le informazioni e i file di installazione necessari per distribuire software in un dispositivo. Un tipo di distribuzione contiene anche le regole che specificano quando e come deve essere distribuito il software.  
 
- アプリケーションを作成するには、次の 2 通りの方法があります。  
+ È possibile creare applicazioni usando due metodi:  
 
--   アプリケーション インストール ファイルを読み取って、アプリケーションおよび展開の種類を自動的に作成する。  
+-   Creare automaticamente i tipi di applicazione e di distribuzione leggendo i file di installazione dell'applicazione.  
 
--   アプリケーションを手動で作成してから、後で展開の種類を追加する。  
+-   Creare manualmente l'applicazione e quindi aggiungere tipi di distribuzione in un secondo momento.  
 
--   アプリケーションをファイルからインポートする。  
+-   Importare un'applicazione da un file.  
 
-Configuration Manager アプリケーションと展開の種類の作成に必要な手順については、「[アプリケーションの作成ウィザードを開始する](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard)」を参照してください。 また、iOS デバイス用アプリケーションを作成して展開するときは、以下の考慮事項について留意してください。  
+Per la procedura necessaria per creare le applicazioni e i tipi di distribuzione di Configuration Manager, vedere [Avviare la Creazione guidata applicazione](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard). Inoltre, quando si creano e si distribuiscono applicazioni per i dispositivi iOS, tenere presenti le considerazioni seguenti.  
 
-## <a name="general-considerations"></a>一般的な考慮事項  
- Configuration Manager では、次のアプリの種類の展開がサポートされています。  
+## <a name="general-considerations"></a>Considerazioni generali  
+ Configuration Manager supporta la distribuzione dei seguenti tipi di app:  
 
-|デバイスの種類|サポートされているファイル|  
+|Tipo di dispositivo|File supportati|  
 |-----------------|---------------------|  
-|iOS|*.ipa<br /><br /> System Center Configuration Manager では、iOS アプリをインポートするときに、プロパティ一覧 (.plist) ファイルを指定する必要はありません。|  
+|iOS|*.ipa<br /><br /> In System Center Configuration Manager non è necessario specificare un file di elenco di proprietà (PLIST) quando si importa un'app iOS.|  
 
- 次の展開操作がサポートされています。  
+ Sono supportate le azioni di distribuzione seguenti:  
 
-|デバイスの種類|サポートされている操作|  
+|Tipo di dispositivo|Azioni supportate|  
 |-----------------|-----------------------|  
-|iOS|**利用可能**、**必須**。 インストールとアンインストールの両方に、ユーザーが同意する必要があります。
+|iOS|**Disponibile**, **Richiesto**. L'utente deve accettare l'installazione e la disinstallazione.
 
 > [!IMPORTANT]  
->  現在、エンド ユーザーは iOS 向け Microsoft Intune 会社ポータル アプリから会社のアプリをインストールできません。 これは、iOS App Store に公開されたアプリに設けられた制限によるものです (「App Store レビューに関するガイドライン」の第 2 節をご覧ください)。 ユーザーが会社アプリ (管理されている App Store アプリ、基幹業務アプリ パッケージなど) をインストールするには、自身のデバイスで Intune Web ポータルを参照する必要があります (portal.manage.microsoft.com)。 Intune ポータル サイト アプリで有効化されるモバイル管理機能について詳しくは、「[Microsoft Intune の登録済みデバイス管理機能](https://technet.microsoft.com/library/dn600287.aspx)」をご覧ください。  
+>  Al momento gli utenti finali non possono installare app aziendali dall'app Portale aziendale di Microsoft Intune per iOS. Ciò è dovuto a restrizioni relative alle app pubblicate in App Store iOS (vedere la sezione 2 delle linee guida di revisione di App Store). Gli utenti possono installare app aziendali (incluse le app gestite di App Store e i pacchetti di app line-of-business) passando al portale Web di Intune nel proprio dispositivo (portal.manage.microsoft.com). Per altre informazioni sulle funzionalità di gestione dei dispositivi mobili offerte dall'app Portale aziendale di Intune, vedere [Funzionalità di gestione dei dispositivi registrati di Microsoft Intune](https://technet.microsoft.com/library/dn600287.aspx).  

@@ -1,6 +1,6 @@
 ---
-title: "クエリの作成 | Microsoft Docs"
-description: "System Center Configuration Manager でクエリを作成してインポートする方法を紹介します。 クエリの例とヒントが含まれています。"
+title: Creare query | Microsoft Docs
+description: Questo argomento illustra come creare e importare query in System Center Configuration Manager. Include query di esempio e suggerimenti.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,95 +18,95 @@ manager: angrobe
 ms.openlocfilehash: 9f38d86ff6227bb6ea88c358a3d61242372d449e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-queries-in-system-center-configuration-manager"></a>System Center Configuration Manager でクエリを作成する方法
+# <a name="how-to-create-queries-in-system-center-configuration-manager"></a>Come creare query in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager でクエリを作成またはインポートするときは、このトピックを参照してください。  
+Usare questo argomento per informazioni su come creare o importare query in System Center Configuration Manager.  
 
-##  <a name="BKMK_Create"></a> クエリを作成する方法  
- Configuration Manager でクエリを作成するには、この手順に従います。  
+##  <a name="BKMK_Create"></a> Come creare query  
+ Usare questa procedura per creare query in Configuration Manager.  
 
-#### <a name="to-create-a-query"></a>クエリを作成するには  
+#### <a name="to-create-a-query"></a>Per creare una query  
 
-1.  Configuration Manager コンソールで、**[監視]** をクリックします。  
+1.  Nella console di Configuration Manager scegliere **Monitoraggio**.  
 
-2.  **[監視]** ワークスペースで、**[クエリ]** を選択します。 **[ホーム]** タブの **[作成]** グループで **[クエリの作成]** を選択します。  
+2.  Nell'area di lavoro **Monitoraggio** scegliere **Query**. Nel gruppo **Crea** della scheda **Home** scegliere **Crea query**.  
 
-3.  **全般** のタブ、 **クエリの作成ウィザード**, 、一意の名前と、クエリのオプションのコメントを指定します。  
+3.  Nella scheda **Generale** della **Creazione guidata query**specificare un nome univoco e un commento facoltativo per la query.  
 
-4.  既存のクエリをインポートして新しいクエリの基礎として使用するには、**[クエリ ステートメントのインポート]** を選択します。 **[クエリの参照]** ダイアログ ボックスで、インポートする既存のクエリを選択し、**[OK]** を選択します。  
+4.  Per importare una query esistente da usare come modello per la nuova query, scegliere **Importa istruzione query**. Nella finestra di dialogo **Sfoglia query**, selezionare la query esistente da importare e quindi scegliere **OK**.  
 
-5.  **[オブジェクトの種類]** 一覧で、クエリが返すオブジェクトの種類を選択します。 次の表に、検索可能なオブジェクトの種類の例をいくつか示します。  
+5.  Nell'elenco **Tipo oggetto** selezionare il tipo di oggetto che si vuole che la query restituisca. Nella tabella seguente vengono descritti alcuni esempi del tipo di oggetto che è possibile cercare:  
 
-    |オブジェクトの種類|説明|  
+    |Tipo di oggetto|Descrizione|  
     |-----------------|-----------------|  
-    |**[システム リソース]**|デバイスの NetBIOS 名、クライアントのバージョン、クライアントの IP アドレス、Active Directory ドメイン サービス情報など、一般的なシステム属性の検索に使用します。|  
-    |**[ユーザー リソース]**|ユーザー名、ユーザー グループ名、セキュリティ グループ名など、一般的なユーザー情報の検索に使用します。|  
-    |**展開**|展開名、スケジュール、展開先となったコレクションなど、展開の一般的な属性の検索に使用します。|  
+    |**Risorsa di sistema**|Usare questo tipo di oggetto per cercare attributi di sistema standard, ad esempio il nome NetBIOS di un dispositivo, la versione del client, l'indirizzo IP del client e informazioni su Servizi di dominio Active Directory.|  
+    |**Risorsa utente**|Usare questo tipo di oggetto per cercare informazioni utente standard, ad esempio i nomi utente, i nomi di gruppi di utenti e i nomi dei gruppi di sicurezza.|  
+    |**Distribuzione**|Usare questo tipo di oggetto per cercare gli attributi standard di una distribuzione, ad esempio il nome della distribuzione, la pianificazione e la raccolta in cui è stata distribuita.|  
 
-6.  **[クエリ ステートメントの編集]** を選択して、*[&lt;クエリ名\>* **ステートメントのプロパティ]** ダイアログ ボックスを開きます。  
+6.  Selezionare **Modifica istruzione query** per aprire la finestra di dialogo *&lt;Nome query\>***Proprietà istruzione**.  
 
-7.  *[&lt;クエリ名\>* **ステートメントのプロパティ]** ダイアログ ボックスの **[全般]** タブで、クエリが返す属性と、その属性の表示方法を指定します。 **[新規]** アイコンをクリックして、新しい属性を追加します。 **[クエリ言語を表示する]** を選択して、クエリを、直接 WMI クエリ言語 (WQL) で入力または編集することもできます。 WMI クエリの例については、このトピックの「 [Example WQL queries](#BKMK_Example) 」セクションを参照してください。  
+7.  Nella scheda **Generale** della finestra di dialogo *&lt;Nome query\>***Proprietà istruzione** specificare gli attributi restituiti da questa query e la relativa modalità di visualizzazione. Fare clic sull'icona **Nuovo** per aggiungere un nuovo attributo. È anche possibile selezionare **Mostra linguaggio query** per immettere o modificare la query direttamente in WMI Query Language (WQL). Per esempi di query WMI, vedere la sezione [Example WQL queries](#BKMK_Example) in questo argomento.  
 
     > [!TIP]  
-    > 独自の WQL クエリを作成する場合は、次の MSDN リファレンス ドキュメントを参考にしてください。  
+    > È possibile usare la documentazione di riferimento MSDN seguente per creare query WQL personalizzate:  
     >   
-    > -   [WQL (WMI 用の SQL)](http://go.microsoft.com/fwlink/p/?LinkId=256653)  
-    > -   [WHERE 句](http://go.microsoft.com/fwlink/p/?LinkId=256654)  
-    > -   [WQL オペレーター](http://go.microsoft.com/fwlink/p/?LinkId=256655)  
+    > -   [WQL (SQL per WMI)](http://go.microsoft.com/fwlink/p/?LinkId=256653)  
+    > -   [Clausola WHERE](http://go.microsoft.com/fwlink/p/?LinkId=256654)  
+    > -   [Operatori WQL](http://go.microsoft.com/fwlink/p/?LinkId=256655)  
 
-8.  *[&lt;クエリ名\>* **ステートメントのプロパティ]** ダイアログ ボックスの **[条件]** タブで、クエリ結果の絞り込みに使用する条件を指定します。 たとえば、クエリ結果にサイト コード **XYZ** を含むリソースのみを返すことができます。 1 つのクエリに複数の条件を構成することができます。  
+8.  Nella scheda **Criteri** della finestra di dialogo *&lt;Nome query\>***Proprietà istruzione** specificare i criteri usati per definire i risultati della query. Ad esempio, è possibile restituire solo le risorse con un codice di sito **XYZ** nei risultati della query. È possibile configurare più criteri per una query.  
 
     > [!IMPORTANT]  
-    > 条件が含まれないクエリを作成した場合、そのクエリは、 **[すべてのシステム]** コレクションのすべてのデバイスを返します。  
+    > Se si crea una query che non contiene alcun criterio, verranno restituiti tutti i dispositivi presenti nella raccolta **Tutti i sistemi** .  
 
-9. *[&lt;クエリ名\>* **ステートメントのプロパティ]** ダイアログ ボックスの **[結合]** タブで、2 つの異なる属性からのデータをクエリ結果に組み合わせることができます。 クエリ結果に 2 つの異なる属性を選択すると、Configuration Manager は自動的にクエリの結合を作成しますが、[**結合**] タブには、より詳細なオプションが用意されています。 次の表は、System Center 2012 Configuration Manager がサポートする属性クラスを示しています。  
+9. Nella scheda **Join** della finestra di dialogo *&lt;Nome query\>***Proprietà istruzione** è possibile combinare i dati di due attributi diversi nei risultati della query. Anche se Configuration Manager crea automaticamente join di query quando vengono selezionati attributi diversi per il risultato della query, nella scheda **Join** sono disponibili ulteriori opzioni avanzate. Le classi di attributi supportate da System Center 2012 Configuration Manager sono illustrate nella tabella seguente:  
 
-    |結合の種類|説明|  
+    |Tipo di join|Descrizione|  
     |---------------|-----------------|  
-    |内部|一致する結果のみを表示します。自動的に作成される結合で常に使用されます。|  
-    |左|基本属性についてはすべての結果を表示し、結合の属性については一致する結果だけを表示します。|  
-    |権限|結合の属性についてはすべての結果を表示し、基本属性については一致する結果だけを表示します。|  
-    |完全|基本属性と結合の属性の両方について、すべての結果を表示します。|  
+    |Inner|Consente di visualizzare solo i risultati corrispondenti e viene sempre usato per i join creati automaticamente.|  
+    |Sinistra|Consente di visualizzare tutti i risultati per l'attributo di base e solo i risultati corrispondenti per l'attributo di join.|  
+    |Destra|Consente di visualizzare tutti i risultati per l'attributo di join e solo i risultati corrispondenti per l'attributo di base.|  
+    |Completo|Consente di visualizzare tutti i risultati sia per l'attributo di base che per l'attributo di join.|  
 
-     結合操作を使用する方法の詳細については、SQL Server のドキュメントを参照してください。  
+     Per altre informazioni su come usare le operazioni di join, vedere la documentazione di SQL Server.  
 
-10. **[OK]** を選択して *[&lt;クエリ名\>* **ステートメントのプロパティ]** ダイアログ ボックスを閉じます。  
+10. Scegliere **OK** per chiudere la finestra di dialogo *&lt;Nome query\>***Proprietà istruzione**.  
 
-11. **クエリの作成ウィザード**の **[全般]** タブで、クエリ結果を、コレクションのメンバーに制限しないか、指定したコレクションのメンバーに制限するか、クエリを実行するたびにコレクションの入力を求めるかを指定します。  
+11. Nella scheda **Generale** della **Creazione guidata query**specificare se i risultati della query non sono limitati ai membri di una raccolta, sono limitati ai membri di una raccolta specificata oppure se viene richiesta una raccolta ogni volta che viene eseguita la query.  
 
-12. ウィザードを完了すると、クエリが作成されます。 新しいクエリが表示される、 **クエリ** 内のノード、 **監視** ワークスペース。  
+12. Completare la procedura guidata per creare la query. La nuova query verrà visualizzata nel nodo **Query** nell'area di lavoro **Monitoraggio** .  
 
-##  <a name="BKMK_Import"></a> クエリをインポートする方法  
- Configuration Manager にクエリをインポートするには、この手順に従います。 クエリのエクスポート方法については、「[System Center Configuration Manager でクエリを管理する方法](../../../core/servers/manage/manage-queries.md)」を参照してください。  
+##  <a name="BKMK_Import"></a> Come importare le query  
+ Usare questa procedura per importare una query in Configuration Manager. Per informazioni su come esportare le query, vedere [Come gestire le query in System Center Configuration Manager](../../../core/servers/manage/manage-queries.md).  
 
-#### <a name="to-import-a-query"></a>クエリをインポートするには  
+#### <a name="to-import-a-query"></a>Per importare una query  
 
-1.  Configuration Manager コンソールで、**[監視]** をクリックします。  
+1.  Nella console di Configuration Manager scegliere **Monitoraggio**.  
 
-2.  **[監視]** ワークスペースで、**[クエリ]** を選択します。 **[ホーム]** タブの **[作成]** グループで、**[オブジェクトのインポート]** を選択します。  
+2.  Nell'area di lavoro **Monitoraggio** scegliere **Query**. Nella scheda **Home**, nel gruppo **Crea**, scegliere **Importa oggetti**.  
 
-3.  **オブジェクトのインポート ウィザード**の **[MOF ファイル名]** ページで、**[参照]** を選択して、インポートするクエリを含む管理オブジェクト フォーマット (MOF) ファイルを選択します。  
+3.  Nella pagina **Nome file MOF** dell'**Importazione guidata oggetti** scegliere **Sfoglia** per selezionare il file MOF (Managed Object Format) contenente la query da importare.  
 
-4.  インポートされるクエリの情報を確認して、ウィザードを完了します。 新しいクエリは、**[監視]** ワークスペースの **[クエリ]** ノードに表示されます。  
+4.  Esaminare le informazioni relative alla query da importare e quindi completare la procedura guidata. La nuova query verrà visualizzata nel nodo **Query** nell'area di lavoro **Monitoraggio**.  
 
 ##  <a name="BKMK_Example"></a> Example WQL queries
 
-このセクションでは、階層で使用したり、他の目的のために変更したりできる WMI クエリの例を示します。 これらのクエリを使用するには、**[クエリ ステートメントのプロパティ]** ダイアログ ボックスで **[クエリ言語を表示する]** を選択します。 次に、クエリをコピーして **[クエリ ステートメント]** フィールドに貼り付けます。  
+Questa sezione contiene query WMI di esempio che è possibile usare nella gerarchia o modificare per altri scopi. Per usare queste query, scegliere **Mostra linguaggio Query** nella finestra di dialogo **Proprietà istruzione query**. Copiare e incollare la query nel campo **Istruzione query**.  
 
 > [!TIP]  
-> 任意の文字列を表すには、ワイルドカード文字 `%` を使用します。 たとえば、`%Visio%` は、Microsoft Office Visio 2010 を返します。  
+> Usare il carattere jolly `%` per indicare qualsiasi stringa di caratteri. Ad esempio, `%Visio%` restituisce Microsoft Office Visio 2010.  
 
-### <a name="computers-that-run-windows-7"></a>Windows 7 を実行しているコンピューター
+### <a name="computers-that-run-windows-7"></a>Computer che eseguono Windows 7
 
-Windows 7 を実行しているすべてのコンピューターの NetBIOS 名とオペレーティング システムのバージョンを返すには、次のクエリを使用します。  
+Usare la query seguente per restituire il nome NetBIOS e la versione del sistema operativo di tutti i computer che eseguono Windows 7.  
 
 > [!TIP]  
-> Windows Server 2008 R2 を実行しているコンピューターを返すには、`%Workstation 6.1%` を `%Server 6.1%` に変更します。  
+> Per restituire i computer che eseguono Windows Server 2008 R2, modificare `%Workstation 6.1%` in `%Server 6.1%`.  
 
 ```  
 select SMS_R_System.NetbiosName,  
@@ -115,12 +115,12 @@ SMS_R_System where
 SMS_R_System.OperatingSystemNameandVersion like "%Workstation 6.1%"  
 ```  
 
-### <a name="computers-with-a-specific-software-package-installed"></a>特定のソフトウェア パッケージがインストールされているコンピューター  
+### <a name="computers-with-a-specific-software-package-installed"></a>Computer con uno specifico pacchetto software installato  
 
-特定のソフトウェア パッケージがインストールされているすべてのコンピューターの NetBIOS 名とソフトウェア パッケージ名を返すには、次のクエリを使用します。 この例では、いずれかのバージョンの Microsoft Visio がインストールされているすべてのコンピューターが表示されます。 `%Visio%` を、クエリで照会するソフトウェア パッケージに置き換えます。  
+Usare la query seguente per restituire il nome NetBIOS e il nome del pacchetto software di tutti i computer in cui è installato un pacchetto software specifico. Questo esempio visualizza tutti i computer con una versione di Microsoft Visio installata. Sostituire `%Visio%` con il pacchetto software da cercare.  
 
 > [!TIP]  
-> このクエリは、Windows コントロール パネルのプログラムの一覧に表示される名前を使用して、ソフトウェア パッケージを検索します。  
+> Questa query cerca il pacchetto software usando i nomi visualizzati nell'elenco di programmi nel Pannello di controllo di Windows.  
 
 ```  
 select SMS_R_System.NetbiosName,   
@@ -131,9 +131,9 @@ SMS_R_System.ResourceId where
 SMS_G_System_ADD_REMOVE_PROGRAMS.DisplayName like "%Visio%"  
 ```  
 
-### <a name="computers-that-are-in-a-specific-active-directory-domain-services-organizational-unit"></a>特定の Active Directory ドメイン サービス組織単位にあるコンピューター
+### <a name="computers-that-are-in-a-specific-active-directory-domain-services-organizational-unit"></a>Computer inclusi in una specifica unità organizzativa di Active Directory Domain Services
 
-指定した組織単位 (OU) 内のすべてのコンピューターの NetBIOS 名と OU 名を返すには、次のクエリを使用します。 テキスト `OU Name` を、クエリで照会する OU の名前に置き換えます。  
+Usare la query seguente per restituire il nome NetBIOS e il nome dell'unità organizzativa di tutti i computer in un'unità organizzativa specificata. Sostituire il testo `OU Name` con il nome dell'unità organizzativa da cercare.  
 
 ```  
 select SMS_R_System.NetbiosName,   
@@ -142,47 +142,47 @@ SMS_R_System where
 SMS_R_System.SystemOUName = "OU Name"  
 ```  
 
-### <a name="computers-with-a-specific-netbios-name"></a>特定の NetBIOS 名のコンピューター
+### <a name="computers-with-a-specific-netbios-name"></a>Computer con un nome NetBIOS specifico
 
-特定の文字列で始まるすべてのコンピューターの NetBIOS 名を返すには、次のクエリを使用します。 この例では、クエリは、`ABC` で始まる NetBIOS 名を持つすべてのコンピューターを返します。  
+Usare la query seguente per restituire il nome NetBIOS di tutti i computer il cui nome inizia con una stringa specifica di caratteri. In questo esempio la query restituisce tutti i computer con un nome NetBIOS che inizia con `ABC`.  
 
 ```  
 select SMS_R_System.NetbiosName from    
 SMS_R_System where SMS_R_System.NetbiosName like "ABC%"  
 ```  
 
-###  <a name="BKMK_DeviceType"></a> 特定の種類のデバイス
+###  <a name="BKMK_DeviceType"></a> Dispositivi di un tipo specifico
 
-デバイスの種類は、Configuration Manager データベースのリソース クラス **sms_r_system** および属性名 **AgentEdition** の下に格納されます。 指定したデバイスの種類のエージェント エディションと一致するデバイスのみを取得するには、次のクエリを使用します。  
+I tipi di dispositivo vengono archiviati nel database di Configuration Manager con la classe di risorse **sms_r_system** e il nome di attributo **AgentEdition**. Usare la query seguente per recuperare solo i dispositivi che corrispondono all'edizione dell'agente del tipo di dispositivo specificato:  
 
 ```  
 Select SMS_R_System.ClientEdition from SMS_R_System where SMS_R_System.ClientEdition = <Device ID>  
 ```  
 
-*&lt;デバイス ID\>* に対して次のいずれかの値を使用します。  
+Usare uno dei valori seguenti per *&lt;ID dispositivo\>*:  
 
-|デバイスの種類|AgentEdition の値|  
+|Tipo di dispositivo|Valore di AgentEdition|  
 |-----------------|---------------------------|  
-|Windows デスクトップまたはラップトップ コンピューター|0|  
-|Windows ARM ベースのデバイス (Windows RT を実行)|1|  
+|Computer desktop o portatile Windows|0|  
+|Dispositivo Windows basato su ARM (che esegue Windows RT)|1|  
 |Windows Mobile 6.5|2|  
 |Nokia Symbian|3|  
 |Windows Phone|4|  
-|Mac コンピューター|5|  
+|Computer Mac|5|  
 |Windows CE|6|  
 |Windows Embedded|7|  
 |iOS|8|  
 |iPad|9|  
 |iPod Touch|10|  
 |Android|11|  
-|Intel System-on-a-Chip|12|  
-|Unix および Linux サーバー|13|  
+|Intel System On Chip (SOC)|12|  
+|Server UNIX e Linux|13|  
 
- たとえば、クエリで Mac コンピューターのみを返すには、次のクエリを使用します。  
+ Ad esempio, se si vuole che la query restituisca solo i computer Mac, usare la query seguente:  
 
 ```  
 Select SMS_R_System.ClientEdition from SMS_R_System where SMS_R_System.ClientEdition = 5  
 ```  
 
-## <a name="see-also"></a>関連項目  
- [System Center Configuration Manager でのクエリの操作とメンテナンス](../../../core/servers/manage/operations-and-maintenance-for-queries.md)
+## <a name="see-also"></a>Vedere anche  
+ [Operazioni e manutenzione per le query in System Center Configuration Manager](../../../core/servers/manage/operations-and-maintenance-for-queries.md)

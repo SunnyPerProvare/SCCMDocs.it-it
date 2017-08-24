@@ -1,6 +1,6 @@
 ---
-title: "コレクションの作成 | Microsoft Docs"
-description: "System Center Configuration Manager でユーザーとデバイスのグループをより簡単に管理するコレクションを作成します。"
+title: Creare raccolte | Microsoft Docs
+description: "Creare raccolte in System Center Configuration Manager per gestire più facilmente gruppi di utenti e dispositivi."
 ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
@@ -18,84 +18,84 @@ manager: angrobe
 ms.openlocfilehash: 44b4707b1a40624c51decf548d23ddd2164c5833
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-collections-in-system-center-configuration-manager"></a>System Center Configuration Manager でコレクションを作成する方法
+# <a name="how-to-create-collections-in-system-center-configuration-manager"></a>Come creare le raccolte in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-コレクションはユーザーまたはデバイスのグループです。 コレクションを使用して、アプリケーションの管理、コンプライアンス設定の展開、ソフトウェア更新プログラムのインストールなどのタスクを行います。 クライアント設定のグループを管理したり、役割ベースの管理を行ってリソースを管理者ユーザーのみアクセス可能に指定したりといったことに、コレクションを使用することもできます。 Configuration Manager には、組み込みコレクションが複数含まれます。 詳細については、「[Introduction to collections in System Center Configuration Manager](../../../../core/clients/manage/collections/introduction-to-collections.md)」(System Center Configuration Manager でのコレクションの概要) をご覧ください。  
+Le raccolte costituiscono raggruppamenti di utenti o dispositivi. Usare le raccolte per attività quali gestione delle applicazioni, distribuzione delle impostazioni di conformità o installazione degli aggiornamenti software. È anche possibile usare le raccolte per gestire gruppi di impostazioni client o con l'amministrazione basata sui ruoli per specificare le risorse accessibili per un utente amministratore. Configuration Manager contiene varie raccolte predefinite. Per altre informazioni, vedere [Introduzione alle raccolte in System Center Configuration Manager](../../../../core/clients/manage/collections/introduction-to-collections.md).  
 
 > [!NOTE]  
->  コレクションにはユーザーまたはデバイスを含めることができますが、両方を含めることはできません。  
+>  Una raccolta può contenere utenti o dispositivi, ma non entrambi.  
 
- 次の表は、Configuration Manager でのコレクションのメンバーを構成するために使用する規則の一覧を示しています。  
+ Nella tabella seguente sono elencate le regole che è possibile usare per configurare i membri di una raccolta in Configuration Manager.  
 
-|メンバーシップ規則の種類|説明|  
+|Tipo di regola di appartenenza|Altre informazioni|  
 |--------------------------|----------------------|  
-|ダイレクト規則|コレクションに追加するユーザーまたはコンピューターを選択する場合に使用します。 このメンバーシップは、リソースを Configuration Manager から削除しない限り、変わりません。 リソースをダイレクト規則コレクションに追加するには、そのリソースが Configuration Manager で既に検出されているか、ユーザーがそのリソースをインポートしておく必要があります。 ダイレクト規則コレクションは、手動で変更する必要があるため、クエリ規則コレクションよりも管理オーバーヘッドが高くなります。|  
-|クエリ規則|Configuration Manager がスケジュールに従って実行するクエリに基づいて、コレクションのメンバーシップを動的に更新します。 たとえば、Active Directory ドメイン サービスの人事ユニットのメンバーであるユーザーのコレクションを作成することができます。 このコレクションは、人事ユニットに対して新しいユーザーが追加または削除されたりすると、自動的に更新されます。<br /><br /> コレクションを構築するのに使用できるクエリの例については、「[System Center Configuration Manager でクエリを作成する方法](../../../../core/servers/manage/create-queries.md)」を参照してください。|  
-|[コレクションを含める] 規則|Configuration Manager コレクションに他のコレクションのメンバーを含めます。該当するコレクションに変更があった場合は、現在のコレクションのメンバーシップはスケジュールに従って更新されます。<br /><br /> 複数の [コレクションを含める] 規則をコレクションに追加できます。<br /> |  
-|[コレクションを除外する] 規則|[コレクションを除外する] 規則を使用すると、Configuration Manager における他のコレクションのメンバーを除外することができます。 除外されるコレクションに変更があった場合は、現在のコレクションのメンバーシップはスケジュールに従って更新されます。<br /><br /> 複数の [コレクションを除外する] 規則をコレクションに追加できます。 コレクションが、[コレクションを含める] 規則と [コレクションを除外する] 規則の両方を含み、競合が生じた場合は、[コレクションを除外する] 規則が優先されます。<br />              **例:** [コレクションを含める] 規則と [コレクションを除外する] 規則が 1 つずつ含まれるコレクションを作成します。 [コレクションを含める] 規則の対象は Dell デスクトップのコレクションです。 [コレクションを除外する] 規則の対象は、RAM が 4 GB 未満のコンピューターのコレクションです。 新しいコレクションには、RAM が 4 GB 以上の Dell デスクトップが含まれます。|  
+|Regola diretta|Consente di scegliere gli utenti o i computer da aggiungere a una raccolta. Questa appartenenza non cambia a meno che non si rimuova una risorsa da Configuration Manager. Prima di poter aggiungere le risorse a una raccolta con regole dirette, è necessario importarle o che vengano individuate da Configuration Manager. Le raccolte con regole dirette presentano un maggiore carico amministrativo rispetto alle raccolte con regole di query, dal momento che richiedono modifiche manuali.|  
+|Regola di query|Consente di aggiornare in modo dinamico l'appartenenza di una raccolta con una query eseguita da Configuration Manager in base a una pianificazione. Ad esempio, è possibile creare una raccolta degli utenti membri dell'unità organizzativa Risorse umane in Servizi di dominio Active Directory. Questa raccolta viene aggiornata automaticamente in seguito all'aggiunta o alla rimozione di utenti nell'unità organizzativa Risorse umane.<br /><br /> Per alcuni esempi di query da usare per creare raccolte, vedere [Come creare query in System Center Configuration Manager](../../../../core/servers/manage/create-queries.md).|  
+|Regola di inclusione raccolte|Consente di includere i membri di un'altra raccolta in una raccolta di Configuration Manager. L'appartenenza della raccolta corrente viene aggiornata in base a una pianificazione in caso di modifica della raccolta inclusa.<br /><br /> È possibile aggiungere più regole di inclusione raccolte in una raccolta.<br /> |  
+|Regola di esclusione raccolte|Le regole di esclusione raccolte consentono di escludere i membri di un'altra raccolta da una raccolta di Configuration Manager. L'appartenenza della raccolta corrente viene aggiornata in base a una pianificazione in caso di modifica della raccolta esclusa.<br /><br /> È possibile aggiungere più regole di esclusione raccolte in una raccolta. Se una raccolta include sia regole di inclusione raccolte che di esclusione raccolte e si verifica un conflitto, la regola di esclusione raccolte ha la priorità.<br />              **Esempio:** si crea una raccolta con una regola di inclusione raccolte e una di esclusione raccolte. La regola di inclusione è relativa a una raccolta di desktop Dell. La regola di esclusione è per una raccolta di computer con meno di 4 GB di RAM. La nuova raccolta conterrà i desktop Dell con almeno 4 GB di RAM.|  
 
- Configuration Manager でコレクションを作成する際は、次の手順を参考にします。 Configuration Manager サイトに作成されたコレクションをインポートすることもできます。 コレクションのエクスポートとインポートの方法については、「[System Center Configuration Manager でコレクションを管理する方法](../../../../core/clients/manage/collections/manage-collections.md)」を参照してください。  
+ Usare le procedure seguenti per creare le raccolte in Configuration Manager. È anche possibile importare le raccolte create in questo o in altro sito di Configuration Manager. Per informazioni sull'esportazione e l'importazione di raccolte, vedere [Come gestire le raccolte in System Center Configuration Manager](../../../../core/clients/manage/collections/manage-collections.md).  
 
- Linux および UNIX を実行しているコンピューターのコレクションの作成については、「[System Center Configuration Manager で Linux および UNIX サーバーのクライアントを管理する方法](../../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md)」を参照してください。  
+ Per informazioni sulla creazione di raccolte per i computer che eseguono Linux e UNIX, vedere [Come gestire i client per i server Linux e UNIX in System Center Configuration Manager](../../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md).  
 
-##  <a name="BKMK_1"></a> デバイス コレクションを作成するには  
+##  <a name="BKMK_1"></a> Per creare una raccolta di dispositivi  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[デバイス コレクション]** の順に選択します。  
+1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Raccolte dispositivi**.  
 
-3.  **[ホーム]** タブの **[作成]** グループで、**[デバイス コレクションの作成]** を選択します。  
+3.  Nel gruppo **Crea** della scheda **Home** scegliere **Crea raccolta dispositivi**.  
 
-4.  **[全般]** ページで、**[名前]** と **[コメント]** を指定します。 次に、**[限定コレクション]** で、**[参照]** を選んで限定コレクションを選択します。 コレクションが限定コレクションのメンバーのみを含むようになります。  
+4.  Nella pagina **Generale** specificare un **Nome** e un **Commento**. Quindi, in **Raccolta di limitazione** scegliere **Sfoglia** per selezionare una raccolta di limitazione. La raccolta conterrà solo i membri della raccolta di limitazione.  
 
-5.  **デバイス コレクションの作成ウィザード**の **[メンバーシップの規則]** ページにある **[規則の追加]** リストで、このコレクションで使用するメンバーシップ規則の種類を選択します。 1 つのコレクションにつき複数の規則を構成することができます。  
+5.  Nella pagina **Regole di appartenenza** della **Creazione guidata raccolta dispositivi**, nell'elenco **Aggiungi regola**, selezionare il tipo di regola di appartenenza che si vuole usare per questa raccolta. È possibile configurare più regole per ogni raccolta.  
 
         
-##### <a name="to-configure-a-direct-rule"></a>ダイレクト規則を構成するには  
+##### <a name="to-configure-a-direct-rule"></a>Per configurare una regola diretta  
 
-1.  ダイレクト メンバーシップの規則の作成ウィザード **** の [リソースの検索] ****ページで、次の情報を指定します。  
+1.  Nella pagina **Cerca risorse** della **Creazione guidata regola di appartenenza diretta**specificare le informazioni seguenti:  
 
--   **リソース クラス**: 検索してコレクションに追加するリソースの種類を選択します。 [システム リソース] **** から選択してクライアント コンピューターが返すインベントリ データを検索、または[不明なコンピューター] **** を選択して不明なコンピューターが返す値から選択します。  
+-   **Classe di risorse**: selezionare il tipo di risorsa che si vuole cercare e aggiungere alla raccolta. Selezionare un valore in **Risorsa di sistema** per cercare i dati di inventario restituiti dai computer client o **Computer sconosciuti** per effettuare una selezione tra i valori restituiti dai computer sconosciuti.  
 
--   **属性名**: 検索対象として選択したリソース クラスに関連する属性を選択します。 たとえば、NetBIOS 名でコンピューターを選択する場合は、[リソース クラス] **** の一覧で [システム リソース] **** を、 [属性名] **** の一覧で [NetBIOS 名] **** を選択します。  
+-   **Nome attributo**: selezionare l'attributo associato alla classe di risorse selezionata che si vuole cercare. Ad esempio, per selezionare i computer in base al relativo nome NetBIOS, selezionare **Risorsa di sistema** nell'elenco **Classe di risorse** e **Nome NetBIOS** nell'elenco **Nome attributo** .  
 
--   **不使用とマークされているリソースを除外する**: クライアント コンピューターが不使用とマークされている場合は、検索結果にその値を含めません。  
+-   **Escludere le risorse contrassegnate come obsolete**: se un computer client è contrassegnato come obsoleto, non includere questo valore nei risultati della ricerca.  
 
--   **Configuration Manager クライアントがインストールされていないリソースを除外する** - この場合、検索結果には表示されません。  
+-   **Escludere le risorse in cui non è installato il client di Configuration Manager**: questi valori non saranno visualizzati nei risultati della ricerca.  
 
--   **値** : 選択した属性名を検索するための値を入力します。 ワイルドカードとしてパーセント ( **%** ) を使用できます。 たとえば、"M" で始まる NetBIOS 名のコンピューターを検索する場合は、このフィールドに「**M%**」と入力します。  
+-   **Valore:** immettere un valore per il quale si vuole cercare il nome di attributo selezionato. È possibile usare il simbolo di percentuale **%** come carattere jolly. Ad esempio, per cercare i computer con un nome NetBIOS che inizia con "M", immettere **M%** in questo campo.  
 
-2.  **[リソースの選択]** ページで、コレクションに追加するリソースを **[リソース]** リストから選択し、**[次へ]** を選択します。  
+2.  Nella pagina **Seleziona risorse** selezionare le risorse da aggiungere alla raccolta nell'elenco **Risorse** e quindi scegliere **Avanti**.  
 
 
-##### <a name="to-configure-a-query-rule"></a>クエリ規則を構成するには  
+##### <a name="to-configure-a-query-rule"></a>Per configurare una regola di query  
 
-1.  [クエリ規則のプロパティ] **** ダイアログ ボックスで、次の情報を入力します。  
+1.  Nella finestra di dialogo **Proprietà regola di query** specificare le informazioni seguenti:  
 
--   **名前**: 固有の名前を指定します。  
+-   **Nome**: specificare un nome univoco.  
 
--   **クエリ ステートメントのインポート** - コレクションのクエリ規則として使用する [Configuration Manager クエリ](../../../../core/servers/manage/create-queries.md)を選択できる **[クエリの参照]** ダイアログ ボックスを開きます。   
+-   **Importa istruzione query**: apre la finestra di dialogo **Sfoglia query** nella quale è possibile selezionare una [query di Configuration Manager](../../../../core/servers/manage/create-queries.md) da usare come regola di query per la raccolta.   
 
--   **リソース クラス**: 検索してコレクションに追加するリソースの種類を選択します。 [システム リソース] **** から値を選択してクライアント コンピューターが返すインベントリ データを検索、または[不明なコンピューター] **** を選択して不明なコンピューターが返す値から選択します。  
+-   **Classe di risorse**: selezionare il tipo di risorsa che si vuole cercare e aggiungere alla raccolta. Selezionare un valore in **Risorsa di sistema** per cercare i dati di inventario restituiti dai computer client o **Computer sconosciuto** per effettuare una selezione tra i valori restituiti dai computer sconosciuti.  
 
--   **クエリ ステートメントの編集**: コレクションのクエリ規則として使用するクエリを編集できる [**クエリ ステートメントのプロパティ**] ダイアログ ボックスを開きます。 クエリに関する詳細については、「[System Center Configuration Manager のクエリのテクニカル リファレンス](../../../../core/servers/manage/queries-technical-reference.md)」を参照してください。  
+-   **Modifica istruzione query**: apre la finestra di dialogo **Proprietà istruzione query** nella quale è possibile creare una query da usare come regola per la raccolta. Per altre informazioni sulle query, vedere [Riferimento tecnico per le query per System Center Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md).  
 
     
-##### <a name="to-configure-an-include-collection-rule"></a>[コレクションを含める] 規則を構成するには  
+##### <a name="to-configure-an-include-collection-rule"></a>Per configurare una regola di inclusione raccolte  
 
-**[コレクションの選択]** ダイアログ ボックスで、新しいコレクションに含めるコレクションを選択し、**[OK]** を選択します。  
+Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da includere nella nuova raccolta e quindi scegliere **OK**.  
 
-##### <a name="to-configure-an-exclude-collection-rule"></a>[コレクションを除外する] 規則を構成するには  
+##### <a name="to-configure-an-exclude-collection-rule"></a>Per configurare una regola di esclusione raccolte  
 
-**[コレクションの選択]** ダイアログ ボックスで、新しいコレクションから除外コレクションを選択し、**[OK]** を選択します。  
+Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da escludere dalla nuova raccolta e quindi scegliere **OK**.  
 
--   **このコレクションで増分更新を使用する** - コレクションのフル評価とは別に、新しいリソースまたは前回のコレクション評価から変更されたリソースのみを定期的にスキャンおよび更新する場合は、このオプションを選択します。 増分更新は 10 分間隔で行われます。  
+-   **Utilizza aggiornamenti incrementali per questa raccolta**: selezionare questa opzione per eseguire periodicamente una scansione e aggiornare solo le risorse nuove o modificate rispetto alla valutazione raccolta precedente, indipendentemente da una valutazione raccolta completa. Gli aggiornamenti incrementali vengono eseguiti a intervalli di 10 minuti.  
 
 > [!IMPORTANT]  
->  次のクラスを使用しているクエリ規則で構成されたコレクションは、増分更新をサポートしません。  
+>  Le raccolte configurate tramite le regole di query che usano le classi seguenti non supportano gli aggiornamenti incrementali:  
 >   
 > -   SMS_G_System_CollectedFile  
 > -   SMS_G_System_LastSoftwareScan  
@@ -104,70 +104,70 @@ ms.lasthandoff: 08/07/2017
 > -   SMS_G_System_DCMDeploymentErrorAssetDetails  
 > -   SMS_G_System_DCMDeploymentCompliantAssetDetails  
 > -   SMS_G_System_DCMDeploymentNonCompliantAssetDetails  
-> -   SMS_G_User_DCMDeploymentCompliantAssetDetails (ユーザーのコレクションのみ)  
-> -   SMS_G_User_DCMDeploymentNonCompliantAssetDetails (ユーザーのコレクションのみ)  
+> -   SMS_G_User_DCMDeploymentCompliantAssetDetails (per raccolte di soli utenti)  
+> -   SMS_G_User_DCMDeploymentNonCompliantAssetDetails (per raccolte di soli utenti)  
 > -   SMS_G_System_SoftwareUsageData  
 > -   SMS_G_System_CI_ComplianceState  
 > -   SMS_G_System_EndpointProtectionStatus  
 > -   SMS_GH_System_*  
 > -   SMS_GEH_System_*  
 
--   **このコレクションの完全な更新をスケジュールする** - コレクションのメンバーシップのフル評価を定期的にスケジュールします。  
+-   **Pianifica un aggiornamento completo in questa raccolta**: pianificare una regolare valutazione completa dell'appartenenza alla raccolta.  
 
-6.  新しいコレクションを作成するウィザードを完了します。 新しいコレクションは、[資産とコンプライアンス] **** ワークスペースの [デバイス コレクション] **** ノードに表示されます。  
+6.  Completare la procedura guidata per creare la nuova raccolta. La nuova raccolta viene visualizzata nel nodo **Raccolte dispositivi** dell'area di lavoro **Asset e conformità** .  
 
 > [!NOTE]  
->  コレクション メンバーを表示するには、Configuration Manager コンソールを更新または再読み込みする必要があります。 ただし、メンバーは、スケジュールされた最初の更新が行われるか、コレクションに対して **[メンバーシップの更新]** を手動で選択するまでコレクションに表示されません。 コレクションの更新が完了するまで、しばらく時間がかかる場合があります。  
+>  È necessario aggiornare o ricaricare la console di Configuration Manager per visualizzare i membri della raccolta. Tuttavia, i membri non compariranno nella raccolta fino a dopo il primo aggiornamento pianificato o fino a quando non si seleziona manualmente **Aggiorna appartenenza** per la raccolta. L'aggiornamento della raccolta può richiedere alcuni minuti.  
 
-##  <a name="BKMK_2"></a> ユーザー コレクションを作成するには  
+##  <a name="BKMK_2"></a> Per creare una raccolta utenti  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[ユーザー コレクション]** の順に選択します。  
+1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Raccolte utenti**.  
 
-3.  **[ホーム]** タブの **[作成]** グループで、**[ユーザー コレクションの作成]** を選択します。  
+3.  Nel gruppo **Crea** della scheda **Home** scegliere **Crea raccolta utenti**.  
 
-4.  ウィザードの **[全般]** ページで、**[名前]** と **[コメント]** を指定します。 次に、**[限定コレクション]** で、**[参照]** を選んで限定コレクションを選択します。 コレクションが限定コレクションのメンバーのみを含むようになります。  
+4.  Nella pagina **Generale** della procedura guidata specificare un **Nome** e un **Commento**. Quindi, in **Raccolta di limitazione** scegliere **Sfoglia** per selezionare una raccolta di limitazione. La raccolta conterrà solo i membri della raccolta di limitazione.  
 
-5.  **[メンバーシップの規則]** ページで、次のように指定します。  
+5.  Nella pagina **Regole di appartenenza** specificare le informazioni seguenti:  
 
-    -   [規則の追加] **** 一覧で、このコレクションで使用するメンバーシップ規則の種類を選択します。 1 つのコレクションにつき複数の規則を構成することができます。  
+    -   Nell'elenco **Aggiungi regola** selezionare il tipo di regola di appartenenza che si vuole usare per questa raccolta. È possibile configurare più regole per ogni raccolta.  
 
-##### <a name="to-configure-a-direct-rule"></a>ダイレクト規則を構成するには  
+##### <a name="to-configure-a-direct-rule"></a>Per configurare una regola diretta  
 
-1.  **ダイレクト メンバーシップの規則の作成ウィザード**の **[リソースの検索]** ページで、次のように指定します。  
+1.  Nella pagina **Cerca risorse** della **Creazione guidata regola di appartenenza diretta** specificare:  
 
--   **リソース クラス**: 検索してコレクションに追加するリソースの種類を選択します。 Configuration Manager によって収集されるユーザー情報を検索する場合は [**ユーザー リソース**] から、Configuration Manager によって収集されたユーザー グループ情報を検索する場合は [**ユーザー グループ リソース**] から選択します。  
+-   **Classe di risorse**: selezionare il tipo di risorsa che si vuole cercare e aggiungere alla raccolta. Effettuare una selezione tra i valori **Risorsa utente** per cercare le informazioni sugli utenti raccolte da Configuration Manager o in **Risorsa gruppo utenti** per cercare le informazioni sui gruppi di utenti raccolte da Configuration Manager.  
 
--   **属性名**: 検索するリソース クラスに関連する属性を選択します。 たとえば、組織単位 (OU) 名でユーザーを選択する場合は、 **[リソース クラス]** の一覧で **[ユーザー リソース]** を、 **[属性名]** の一覧で **[ユーザー OU 名]** を選択します。  
+-   **Nome attributo**: selezionare l'attributo associato alla classe di risorse che si vuole cercare. Ad esempio, per selezionare gli utenti in base al nome dell'unità organizzativa (OU), selezionare **Risorsa utente** nell'elenco **Classe di risorse** e **Nome unità organizzativa utente** nell'elenco **Nome attributo** .  
 
--   **値:** 検索する値を入力します。 ワイルドカードとしてパーセント ( **%** ) を使用できます。 たとえば、Contoso OU 内のユーザーを検索する場合は、このフィールドに「**Contoso**」と入力します。  
+-   **Valore:** immettere un valore che si vuole cercare. È possibile usare il simbolo di percentuale **%** come carattere jolly. Ad esempio, per cercare gli utenti nell'unità organizzativa Contoso, immettere **Contoso** in questo campo.  
 
-2.  **[リソースの選択]** ページで、コレクションに追加するリソースを **[リソース]** リストから選択します。  
+2.  Nella pagina **Seleziona risorse** selezionare le risorse da aggiungere alla raccolta nell'elenco **Risorse**.  
 
-##### <a name="to-configure-a-query-rule"></a>クエリ規則を構成するには  
+##### <a name="to-configure-a-query-rule"></a>Per configurare una regola di query  
 
-1.  **[クエリ規則のプロパティ]** ダイアログ ボックスで、次のように指定します。  
+1.  Nella finestra di dialogo **Proprietà regola di query** specificare:  
 
--   **名前**: 一意の名前です。  
+-   **Nome**: un nome univoco.  
 
--   **クエリ ステートメントのインポート** - コレクションのクエリ規則として使用する [Configuration Manager クエリ](../../../../core/servers/manage/queries-technical-reference.md)を選択できる **[クエリの参照]** ダイアログ ボックスを開きます。  
+-   **Importa istruzione query**: apre la finestra di dialogo **Sfoglia query** nella quale è possibile selezionare una [query di Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md) da usare come regola di query per la raccolta.  
 
--   **リソース クラス**: 検索してコレクションに追加するリソースの種類を選択します。 Configuration Manager によって収集されるユーザー情報を検索する場合は [**ユーザー リソース**] から、Configuration Manager によって収集されたユーザー グループ情報を検索する場合は [**ユーザー グループ リソース**] から選択します。  
+-   **Classe di risorse**: selezionare il tipo di risorsa che si vuole cercare e aggiungere alla raccolta. Effettuare una selezione tra i valori **Risorsa utente** per cercare le informazioni sugli utenti raccolte da Configuration Manager o in **Risorsa gruppo utenti** per cercare le informazioni sui gruppi di utenti raccolte da Configuration Manager.  
 
--   **クエリ ステートメントの編集** - コレクションの規則として使用する[クエリを作成](../../../../core/servers/manage/queries-technical-reference.md)できる **[クエリ ステートメントのプロパティ]** ダイアログ ボックスを開きます。  
+-   **Modifica istruzione query**: apre la finestra di dialogo **Proprietà istruzione query** nella quale è possibile [creare una query](../../../../core/servers/manage/queries-technical-reference.md) da usare come regola per la raccolta.  
 
-##### <a name="to-configure-an-include-collection-rule"></a>[コレクションを含める] 規則を構成するには  
+##### <a name="to-configure-an-include-collection-rule"></a>Per configurare una regola di inclusione raccolte  
 
-**[コレクションの選択]** ダイアログ ボックスで、新しいコレクションに含めるコレクションを選択し、**[OK]** を選択します。  
+Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da includere nella nuova raccolta e quindi scegliere **OK**.  
 
-##### <a name="to-configure-an-exclude-collection-rule"></a>[コレクションを除外する] 規則を構成するには  
+##### <a name="to-configure-an-exclude-collection-rule"></a>Per configurare una regola di esclusione raccolte  
 
-**[コレクションの選択]** ダイアログ ボックスで、新しいコレクションから除外コレクションを選択し、**[OK]** を選択します。  
+Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da escludere dalla nuova raccolta e quindi scegliere **OK**.  
 
 
--   **このコレクションで増分更新を使用する** - コレクションのフル評価とは別に、新しいリソースまたは前回のコレクション評価から変更されたリソースのみを定期的にスキャンおよび更新する場合は、このオプションを選択します。 増分更新は 10 分間隔で行われます。  
+-   **Utilizza aggiornamenti incrementali per questa raccolta**: selezionare questa opzione per eseguire periodicamente una scansione e aggiornare solo le risorse nuove o modificate rispetto alla valutazione raccolta precedente, indipendentemente da una valutazione raccolta completa. Gli aggiornamenti incrementali vengono eseguiti a intervalli di 10 minuti.  
 
 > [!IMPORTANT]  
->  次のクラスを使用しているクエリ規則で構成されたコレクションは、増分更新をサポートしません。  
+>  Le raccolte configurate tramite le regole di query che usano le classi seguenti non supportano gli aggiornamenti incrementali:  
 >   
 > -   SMS_G_System_CollectedFile  
 > -   SMS_G_System_LastSoftwareScan  
@@ -176,32 +176,32 @@ ms.lasthandoff: 08/07/2017
 > -   SMS_G_System_DCMDeploymentErrorAssetDetails  
 > -   SMS_G_System_DCMDeploymentCompliantAssetDetails  
 > -   SMS_G_System_DCMDeploymentNonCompliantAssetDetails  
-> -   SMS_G_User_DCMDeploymentCompliantAssetDetails (ユーザーのコレクションのみ)  
-> -   SMS_G_User_DCMDeploymentNonCompliantAssetDetails (ユーザーのコレクションのみ)  
+> -   SMS_G_User_DCMDeploymentCompliantAssetDetails (per raccolte di soli utenti)  
+> -   SMS_G_User_DCMDeploymentNonCompliantAssetDetails (per raccolte di soli utenti)  
 > -   SMS_G_System_SoftwareUsageData  
 > -   SMS_G_System_CI_ComplianceState  
 > -   SMS_G_System_EndpointProtectionStatus  
 > -   SMS_GH_System_*  
 > -   SMS_GEH_System_*  
 
--   **このコレクションの完全な更新をスケジュールする** - コレクションのメンバーシップのフル評価を定期的にスケジュールします。  
+-   **Pianifica un aggiornamento completo in questa raccolta**: pianificare una regolare valutazione completa dell'appartenenza alla raccolta.  
 
-6.  ウィザードを完了します。 新しいコレクションは、[資産とコンプライアンス] **** ワークスペースの [ユーザー コレクション] **** ノードに表示されます。  
+6.  Completare la procedura guidata. La nuova raccolta viene visualizzata nel nodo **Raccolte utenti** dell'area di lavoro **Asset e conformità** .  
 
 > [!NOTE]  
->  コレクション メンバーを表示するには、Configuration Manager コンソールを更新または再読み込みする必要があります。 ただし、メンバーは、スケジュールされた最初の更新が行われるか、コレクションに対して **[メンバーシップの更新]** を手動で選択するまでコレクションに表示されません。 コレクションの更新が完了するまで、しばらく時間がかかる場合があります。  
+>  È necessario aggiornare o ricaricare la console di Configuration Manager per visualizzare i membri della raccolta. Tuttavia, i membri non compariranno nella raccolta fino a dopo il primo aggiornamento pianificato o fino a quando non si seleziona manualmente **Aggiorna appartenenza** per la raccolta. L'aggiornamento della raccolta può richiedere alcuni minuti.  
 
-##  <a name="BKMK_3"></a> コレクションをインポートするには  
+##  <a name="BKMK_3"></a> Per importare una raccolta  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[ユーザー コレクション]** または **[デバイス コレクション]** の順に選択します。  
+1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Raccolte utenti** oppure **Raccolte dispositivi**.  
 
-3.  **[ホーム]** タブの **[作成]** グループで、**[コレクションのインポート]** を選択します。  
+3.  Nel gruppo **Crea** della scheda **Home** scegliere **Importa raccolte**.  
 
-4.  **コレクションのインポート ウィザード**の **[全般]** ページで **[次へ]** を選択します。  
+4.  Nella pagina **Generale** dell'**Importazione guidata raccolte** scegliere **Avanti**.  
 
-5.  **[MOF ファイル名]** ページで、**[参照]** を選択し、インポートするコレクション情報を含む MOF ファイルを参照します。  
+5.  Nella pagina **Nome file MOF** scegliere **Sfoglia** e quindi individuare il file MOF che contiene le informazioni sulla raccolta da importare.  
 
     > [!NOTE]  
-    >  インポートするファイルは、同じバージョンの Configuration Manager が動作するサイトからエクスポートされたものである必要があります。 コレクションのエクスポートの詳細については、「[System Center Configuration Manager でコレクションを管理する方法](../../../../core/clients/manage/collections/manage-collections.md)」を参照してください。  
+    >  Il file che si vuole importare deve essere stato esportato da un sito che esegue la stessa versione di Configuration Manager di quello corrente. Per ulteriori informazioni sull'esportazione di raccolte, vedere [Come gestire le raccolte in System Center Configuration Manager](../../../../core/clients/manage/collections/manage-collections.md).  
 
-6.  コレクションをインポートするウィザードを完了します。 新しいコレクションは、 **[資産とコンプライアンス]** ワークスペースの **[ユーザー コレクション]** または **[デバイス コレクション]** ノードに表示されます。 新しくインポートされたコレクションのコレクション メンバーを表示するには、Configuration Manager コンソールを更新または再読み込みします。  
+6.  Completare la procedura guidata per importare la raccolta. La nuova raccolta viene visualizzata nel nodo **Raccolte utenti** o **Raccolte dispositivi** dell'area di lavoro **Asset e conformità** . Aggiornare o ricaricare la console di Configuration Manager per visualizzare i membri della raccolta appena importata.  

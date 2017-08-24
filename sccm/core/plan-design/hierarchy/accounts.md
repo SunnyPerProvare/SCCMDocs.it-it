@@ -1,6 +1,6 @@
 ---
-title: "Configuration Manager で使用されるアカウント | Microsoft Docs"
-description: "System Center Configuration Manager で Windows のグループとアカウントを識別し、管理します。"
+title: Account usati da Configuration Manager | Microsoft Docs
+description: Identificare e gestire i gruppi di Windows e gli account in System Center Configuration Manager.
 ms.custom: na
 ms.date: 2/9/2016
 ms.prod: configuration-manager
@@ -18,328 +18,328 @@ manager: angrobe
 ms.openlocfilehash: a776667cc9f24bd4a468afea76e466c34ce66864
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="accounts-used-in-system-center-configuration-manager"></a>System Center Configuration Manager で使用されるアカウント
+# <a name="accounts-used-in-system-center-configuration-manager"></a>Account usati in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager で使用する Windows グループとアカウント、これらのグループとアカウントの使用方法、および要件を特定するときに、次の情報を参照してください。  
+Usare le informazioni seguenti per identificare i gruppi di Windows e gli account usati in System Center Configuration Manager, le relative modalità d'uso ed eventuali requisiti.  
 
-## <a name="windows-groups-that-configuration-manager-creates-and-uses"></a>Configuration Manager が作成および使用する Windows グループ  
- Configuration Manager は、次の Windows グループを自動的に作成し、多くの場合、自動的に保持します。  
+## <a name="windows-groups-that-configuration-manager-creates-and-uses"></a>Gruppi Windows creati e usati da Configuration Manager  
+ Configuration Manager crea automaticamente e, in molti casi, gestisce automaticamente i gruppi di Windows seguenti.  
 
 > [!NOTE]  
->  Configuration Manager が、ドメインのメンバーであるコンピューター上にグループを作成した場合、このグループはローカル セキュリティ グループとなります。 コンピューターがドメイン コントローラーの場合、このグループはドメイン内のすべてのドメイン コントローラー間で共有されるドメイン ローカル グループとなります。  
+>  Quando Configuration Manager crea un gruppo in un computer appartenente a un dominio, il gruppo è un gruppo di sicurezza locale. Se il computer è un controller di dominio, il gruppo è un gruppo locale di dominio condiviso da tutti i controller di dominio del dominio.  
 
 
 ### <a name="configmgrcollectedfilesaccess"></a>ConfigMgr_CollectedFilesAccess  
-Configuration Manager は、このグループを使用して、ソフトウェア インベントリで収集されたファイルを表示するためのアクセスを許可します。  
+Configuration Manager usa questo gruppo per concedere l'accesso per la visualizzazione dei file raccolti dall'inventario software.  
 
-次の表に、このグループの詳細情報を示します。  
+Nella seguente tabella sono elencati dettagli aggiuntivi per questo gruppo:  
 
-|項目|説明|  
+|Dettagli|Altre informazioni|  
 |------------|----------------------|  
-|種類と場所|このグループは、プライマリ サイト サーバー上に作成されるローカル セキュリティ グループです。<br /><br /> サイトをアンインストールしても、このグループが自動的に削除されることはありません。 手動で削除する必要があります。|  
-|メンバーシップ|Configuration Manager は、グループ メンバーシップを自動的に管理します。 メンバーシップには、割り当てられたセキュリティ ロールからの保護可能な [ **コレクション** ] オブジェクトに対する [ **収集ファイルの表示** ] アクセス許可が付与されている管理ユーザーが含まれます。|  
-|アクセス許可|既定では、このグループには、サイト サーバーの **%path%\Microsoft Configuration Manager\sinv.box\FileCol** フォルダーに対する **Read**アクセス許可が与えられます。|  
+|Tipo e percorso|Questo è un gruppo di sicurezza locale creato nel server del sito primario.<br /><br /> Quando si disinstalla un sito, questo gruppo non viene rimosso automaticamente. Deve essere eliminato manualmente.|  
+|Appartenenze|Configuration Manager gestisce automaticamente l'appartenenza a gruppi. L'appartenenza comprende gli utenti amministratori a cui è concessa l'autorizzazione **Visualizza file raccolti** per l'oggetto a protezione diretta **Raccolta** da un ruolo di sicurezza assegnato.|  
+|Autorizzazioni|Per impostazione predefinita, questo gruppo dispone dell'autorizzazione di **Read** per la seguente cartella nel server del sito: **%path%\Microsoft Configuration Manager\sinv.box\FileCol**.|  
 
 ### <a name="configmgrdviewaccess"></a>ConfigMgr_DViewAccess  
- このグループは、Configuration Manager がサイト データベース サーバーまたはデータベース レプリカ サーバー上に作成するローカル セキュリティ グループです。 現時点では使用されていませんが、将来の使用のために予約されています。  
+ Questo gruppo è un gruppo di sicurezza locale creato da Configuration Manager nel server di database del sito o nel server di replica del database. Attualmente non viene usato ma è riservato per un uso futuro.  
 
-### <a name="configmgr-remote-control-users"></a>ConfigMgr リモート コントロール ユーザー  
- Configuration Manager リモート ツールは、このグループを使用して、アクセス許可のあるユーザーの一覧で構成されている、各クライアントに割り当てられるアカウントとグループを保存します。  
+### <a name="configmgr-remote-control-users"></a>Utenti di Controllo remoto di ConfigMgr  
+ Gli strumenti remoti di Configuration Manager usano questo gruppo per l'archiviazione di account e gruppi configurati nell'elenco dei visualizzatori autorizzati assegnato a ogni client.  
 
- 次の表に、このグループの詳細情報を示します。  
+ Nella seguente tabella sono elencati dettagli aggiuntivi per questo gruppo:  
 
-|項目|説明|  
+|Dettagli|Altre informazioni|  
 |------------|----------------------|  
-|種類と場所|このグループは、クライアントがリモート ツールを有効にするポリシーを受信すると Configuration Manager クライアントに作成されるローカル セキュリティ グループです。<br /><br /> クライアントのリモート ツールを無効にしても、このグループが自動的に削除されることはありません。 各クライアント コンピューターから手動で削除する必要があります。|  
-|メンバーシップ|既定では、このグループにメンバーシップはありません。 ユーザーをアクセス許可のあるユーザーの一覧に追加すると、このユーザーは自動的にこのグループに追加されます。<br /><br /> このグループにユーザーやグループを直接追加する代わりに、アクセス許可のあるユーザーの一覧を使用して、このグループのメンバーシップを管理できます。<br /><br /> 管理ユーザーは、アクセス許可のあるユーザーであるだけでなく、**コレクション** オブジェクトに対する**リモート制御**アクセス許可が割り当てられている必要があります。 このアクセス許可を割り当てるには、リモート ツール オペレーター セキュリティ ロールを使用します。|  
-|アクセス許可|既定では、このグループには、コンピューター上の任意の場所に対するアクセス許可は割り当てられていません。 それは、[アクセス許可のあるユーザー] の一覧を保持するためだけに使用されます。|  
+|Tipo e percorso|Questo è un gruppo di sicurezza locale creato nel client di Configuration Manager quando il client riceve un criterio che abilita gli strumenti remoti.<br /><br /> Questo gruppo non viene rimosso automaticamente dopo avere disabilitato gli strumenti remoti per un client. Deve essere eliminato manualmente da ogni computer client.|  
+|Appartenenze|Per impostazione predefinita, non esistono membri per questo gruppo. Gli utenti aggiunti all'elenco dei visualizzatori autorizzati vengono aggiunti automaticamente a questo gruppo.<br /><br /> Invece di aggiungere direttamente utenti o gruppi, è possibile usare l'elenco dei visualizzatori autorizzati per gestire l'appartenenza a questo gruppo.<br /><br /> Oltre a essere un visualizzatore autorizzato, un utente amministratore deve avere l'autorizzazione **Controllo remoto** per l'oggetto **Raccolta**. È possibile assegnare questa autorizzazione tramite il ruolo di sicurezza Operatore strumenti remoti.|  
+|Autorizzazioni|Per impostazione predefinita, questo gruppo non ha le autorizzazioni per accedere a qualsiasi percorso nel computer. Viene usato esclusivamente per contenere l'elenco dei visualizzatori autorizzati.|  
 
 ### <a name="sms-admins"></a>SMS Admins  
- Configuration Manager は、このグループを使用して、Windows Management Instrumentation (WMI) 経由で SMS プロバイダーに対するアクセスを許可します。 SMS プロバイダーへのアクセスは、Configuration Manager コンソールでオブジェクトを表示および変更するために必要です。  
+ Configuration Manager usa questo gruppo per concedere l'accesso al provider SMS tramite Strumentazione gestione Windows (WMI). L'accesso al provider SMS è necessario per visualizzare e modificare gli oggetti nella console di Configuration Manager.  
 
 > [!NOTE]  
->  管理ユーザーの役割に基づいた管理構成によって、Configuration Manager コンソールを使用して管理ユーザーが表示および管理できるオブジェクトが決まります。  
+>  La configurazione dell'amministrazione basata su ruoli di un utente amministratore determina gli oggetti che è possibile visualizzare e gestire usando la console di Configuration Manager.  
 
- 次の表に、このグループの詳細情報を示します。  
+ Nella seguente tabella sono elencati dettagli aggiuntivi per questo gruppo:  
 
-|項目|説明|  
+|Dettagli|Altre informazioni|  
 |------------|----------------------|  
-|種類と場所|このグループは、SMS プロバイダーのある各コンピューターに作成されるローカル セキュリティ グループです。<br /><br /> サイトをアンインストールしても、このグループが自動的に削除されることはありません。 手動で削除する必要があります。|  
-|メンバーシップ|Configuration Manager は、グループ メンバーシップを自動的に管理します。 既定では、階層内の各管理ユーザーおよびサイト サーバーのコンピューター アカウントが、サイト内の各 SMS プロバイダー コンピューターの SMS Admins グループのメンバーとなります。|  
-|アクセス許可|SMS Admins の権限とアクセス許可は、WMI コントロール MMC スナップインで設定します。 既定では、SMS Admins グループには Root\SMS 名前空間に対する **Enable Account** と **Remote Enable** が付与されます。 認証されたユーザーは、**メソッドの実行**、**プロバイダーの書き込み**、および **アカウントの有効化**を実行できます。<br /><br /> リモートの Configuration Manager コンソールを使用する管理ユーザーは、サイト サーバー コンピューターおよび SMS プロバイダー コンピューターの両方で、リモートからアクティブ化するための DCOM アクセス許可が必要です。 管理を簡略化するために、これらの権限は、ユーザーまたはグループに直接付与するのではなく、SMS Admins に付与することをお勧めします。 詳細については、「 [Configure DCOM permissions for remote Configuration Manager consoles](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole) 」トピックの「 [Modify your System Center Configuration Manager infrastructure](../../../core/servers/manage/modify-your-infrastructure.md) 」セクションを参照してください。|  
+|Tipo e percorso|Questo è un gruppo di sicurezza locale creato in ogni computer che ha un provider SMS.<br /><br /> Quando si disinstalla un sito, questo gruppo non viene rimosso automaticamente. Deve essere eliminato manualmente.|  
+|Appartenenze|Configuration Manager gestisce automaticamente l'appartenenza a gruppi. Per impostazione predefinita, ogni utente amministratore di una gerarchia e l'account computer del server del sito appartengono al gruppo SMS Admins in ciascun computer del provider SMS in un sito.|  
+|Autorizzazioni|I diritti e le autorizzazioni SMS Admins vengono impostati nello snap-in MMC del controllo WMI. Per impostazione predefinita, al gruppo SMS Admins vengono concessi **Enable Account** e **Remote Enable** nello spazio dei nomi Root\SMS. Agli utenti autenticati, invece, vengono concesse le autorizzazioni **Esegui metodi**, **Scrittura provider** e **Abilita account**.<br /><br /> Gli utenti amministratori che usano una console di Configuration Manager remota richiedono autorizzazioni DCOM per l'attivazione remota sul computer del server di sito e sul computer del provider SMS. È consigliabile concedere questi diritti a SMS Admins per semplificare l'amministrazione anziché concedere questi diritti direttamente a utenti o a gruppi. Per ulteriori informazioni, vedere la sezione [Configure DCOM permissions for remote Configuration Manager consoles](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole) nell'argomento [Modify your System Center Configuration Manager infrastructure](../../../core/servers/manage/modify-your-infrastructure.md) .|  
 
-### <a name="smssitesystemtositeserverconnectionmpltsitecode"></a>SMS_SiteSystemToSiteServerConnection_MP_&lt;sitecode\>  
- サイト サーバーからリモートにある Configuration Manager 管理ポイントは、サイト データベースに接続するためにこのグループを使用します。 このグループは、サイトサーバーおよびサイト データベース上の受信トレイ フォルダーへの管理ポイント アクセスを提供します。  
+### <a name="smssitesystemtositeserverconnectionmpltsitecode"></a>SMS_SiteSystemToSiteServerConnection_MP_&lt;codicesito\>  
+ I punti di gestione di Configuration Manager remoti rispetto al server del sito usano questo gruppo per connettersi database del sito. Questo gruppo consente l'accesso del punto di gestione alle cartelle della posta in arrivo nel server del sito e nel database del sito.  
 
- 次の表に、このグループの詳細情報を示します。  
+ Nella seguente tabella sono elencati dettagli aggiuntivi per questo gruppo:  
 
-|項目|説明|  
+|Dettagli|Altre informazioni|  
 |------------|----------------------|  
-|種類と場所|このグループは、SMS プロバイダーのある各コンピューターに作成されるローカル セキュリティ グループです。<br /><br /> サイトをアンインストールしても、このグループが自動的に削除されることはありません。 手動で削除する必要があります。|  
-|メンバーシップ|Configuration Manager は、グループ メンバーシップを自動的に管理します。 既定では、メンバーシップには、サイトの管理ポイントを持つリモート コンピューターのコンピューター アカウントが含まれます。|  
-|アクセス許可|既定では、このグループには、サイト サーバーの **%path%\Microsoft Configuration Manager\inboxes** フォルダーの**読み取り**、**読み取りと実行**、**フォルダーの内容の一覧表示**のアクセス許可が付与されます。 このグループには、管理ポイントがクライアント データを書き込む **inboxes** の下のサブフォルダーへの追加の**書き込み**アクセス許可が付与されます。|  
+|Tipo e percorso|Questo è un gruppo di sicurezza locale creato in ogni computer che ha un provider SMS.<br /><br /> Quando si disinstalla un sito, questo gruppo non viene rimosso automaticamente. Deve essere eliminato manualmente.|  
+|Appartenenze|Configuration Manager gestisce automaticamente l'appartenenza a gruppi. Per impostazione predefinita, l'appartenenza include gli account computer dei computer remoti che dispongono di un punto di gestione per il sito.|  
+|Autorizzazioni|Per impostazione predefinita, questo gruppo include le autorizzazioni **Lettura**, **Lettura ed esecuzione** e **Visualizzazione contenuto cartella** per la cartella **%percorso%\Microsoft Configuration Manager\inboxes** del server del sito. Questo gruppo ha anche l'autorizzazione **Scrittura** per varie sottocartelle in **inboxes**, in cui il punto di gestione scrive i dati client.|  
 
-### <a name="smssitesystemtositeserverconnectionsmsprovltsitecode"></a>SMS_SiteSystemToSiteServerConnection_SMSProv_&lt;sitecode\>  
- サイト サーバーからリモートにある Configuration Manager SMS プロバイダー コンピューターは、このグループを使用してサイト サーバーに接続します。  
+### <a name="smssitesystemtositeserverconnectionsmsprovltsitecode"></a>SMS_SiteSystemToSiteServerConnection_SMSProv_&lt;codicesito\>  
+ I computer del provider SMS di Configuration Manager remoti rispetto al server del sito usano questo gruppo per connettersi al server del sito.  
 
- 次の表に、このグループの詳細情報を示します。  
+ Nella seguente tabella sono elencati dettagli aggiuntivi per questo gruppo:  
 
-|項目|説明|  
+|Dettagli|Altre informazioni|  
 |------------|----------------------|  
-|種類と場所|このグループは、サイト サーバー上に作成されるローカル セキュリティ グループです。<br /><br /> サイトをアンインストールしても、このグループが自動的に削除されることはありません。 手動で削除する必要があります。|  
-|メンバーシップ|Configuration Manager は、グループ メンバーシップを自動的に管理します。 既定では、メンバーシップには、サイトの SMS プロバイダーがインストールされている各リモート コンピューターからサイト サーバーに接続するために使用される、コンピューター アカウントまたはドメイン ユーザー アカウントが含まれます。|  
-|アクセス許可|既定では、このグループには、サイト サーバーの **%path%\Microsoft Configuration Manager\inboxes** フォルダーの**読み取り**、**読み取りと実行**、**フォルダーの内容の一覧表示**のアクセス許可が付与されます。 このグループには、追加の**書き込み**アクセス許可、または SMS プロバイダーがアクセスする必要がある **inboxes** の下のサブフォルダーへの**書き込み**および**変更**アクセス許可が付与されます。<br /><br /> また、このグループには、サイト サーバー上の **%path%\Microsoft Configuration Manager\OSD\boot** の下にあるフォルダーに対する**読み取り**、**読み取りと実行**、**フォルダーの内容の一覧表示**、**書き込み**、**変更**のアクセス許可と、**%path%\Microsoft Configuration Manager\OSD\Bin** の下にあるフォルダーに対する**読み取り**アクセス許可も割り当てられます。|  
+|Tipo e percorso|Questo è un gruppo di sicurezza locale creato nel server del sito.<br /><br /> Quando si disinstalla un sito, questo gruppo non viene rimosso automaticamente. Deve essere eliminato manualmente.|  
+|Appartenenze|Configuration Manager gestisce automaticamente l'appartenenza a gruppi. Per impostazione predefinita, l'appartenenza comprende l'account computer o l'account utente di dominio usato per la connessione al server del sito da ciascun computer remoto in cui è installato un provider SMS per il sito.|  
+|Autorizzazioni|Per impostazione predefinita, questo gruppo include le autorizzazioni **Lettura**, **Lettura ed esecuzione** e **Visualizzazione contenuto cartella** per la cartella **%percorso%\Microsoft Configuration Manager\inboxes** del server del sito. Questo gruppo ha anche le autorizzazioni **Scrittura** o **Scrittura** e **Modifica** per le varie sottocartelle in **inboxes** a cui il provider SMS richiede l'accesso.<br /><br /> Questo gruppo include anche le autorizzazioni di **Lettura**, **Lettura ed esecuzione**, **Visualizzazione contenuto cartella**, **Scrittura** e **Modifica** per le cartelle in **%percorso%\Microsoft Configuration Manager\OSD\boot** e autorizzazione di **Lettura** per le cartelle in **%percorso%\Microsoft Configuration Manager\OSD\Bin** del server del sito.|  
 
-### <a name="smssitesystemtositeserverconnectionstatltsitecode"></a>SMS_SiteSystemToSiteServerConnection_Stat_&lt;sitecode\>  
- Configuration Manager のリモート サイト システム コンピューターの File Dispatch Manager は、このグループを使用して、サイト サーバーに接続します。  
+### <a name="smssitesystemtositeserverconnectionstatltsitecode"></a>SMS_SiteSystemToSiteServerConnection_Stat_&lt;codicesito\>  
+ Gestione invio file nei computer del sistema del sito remoto di Configuration Manager usa questo gruppo per la connessione al server del sito.  
 
- 次の表に、このグループの詳細情報を示します。  
+ Nella seguente tabella sono elencati dettagli aggiuntivi per questo gruppo:  
 
-|項目|説明|  
+|Dettagli|Altre informazioni|  
 |------------|----------------------|  
-|種類と場所|このグループは、サイト サーバー上に作成されるローカル セキュリティ グループです。<br /><br /> サイトをアンインストールしても、このグループが自動的に削除されることはありません。 手動で削除する必要があります。|  
-|メンバーシップ|Configuration Manager は、グループ メンバーシップを自動的に管理します。 既定では、メンバーシップには、File Dispatch Manager を実行する各リモート サイト システム コンピューターからサイト サーバーに接続するために使用される、コンピューター アカウントまたはドメイン ユーザー アカウントが含まれます。|  
-|アクセス許可|既定では、このグループには、サイト サーバーの **%path%\Microsoft Configuration Manager\inboxes** フォルダーおよびその下のサブフォルダーへの**読み取り**、**読み取りと実行**、および**フォルダーの内容の一覧表示**のアクセス許可が付与されます。 このグループには、サイト サーバー上の **%path%\Microsoft Configuration Manager\inboxes\statmgr.box** フォルダーへの追加の**書き込み**および**変更**のアクセス許可が付与されます。|  
+|Tipo e percorso|Questo è un gruppo di sicurezza locale creato nel server del sito.<br /><br /> Quando si disinstalla un sito, questo gruppo non viene rimosso automaticamente. Deve essere eliminato manualmente.|  
+|Appartenenze|Configuration Manager gestisce automaticamente l'appartenenza a gruppi. Per impostazione predefinita, l'appartenenza comprende l'account computer o l'account utente di dominio usato per la connessione al server del sito da ciascun computer del sistema del sito remoto che esegue Gestione invio file.|  
+|Autorizzazioni|Per impostazione predefinita, questo gruppo include le autorizzazioni **Lettura**, **Lettura ed esecuzione** e **Visualizzazione contenuto cartella** per la cartella **%path%\Microsoft Configuration Manager\inboxes** e per le sottocartelle in questo percorso nel server del sito. Questo gruppo ha anche le autorizzazioni **Scrittura** e **Modifica** per la cartella **%path%\Microsoft Configuration Manager\inboxes\statmgr.box** nel server del sito.|  
 
-### <a name="smssitetositeconnectionltsitecode"></a>SMS_SiteToSiteConnection_&lt;sitecode\>  
- Configuration Manager は、このグループを使用して、階層内のサイト間でファイルベースのレプリケーションを有効にします。 このサイトにファイルを直接転送する各リモート サイトについて、このグループには **ファイル レプリケーション アカウント**として設定されたアカウントが含まれます。  
+### <a name="smssitetositeconnectionltsitecode"></a>SMS_SiteToSiteConnection_&lt;codicesito\>  
+ Configuration Manager usa questo gruppo per abilitare la replica basata su file tra siti di una gerarchia. Per ciascun sito remoto che esegue il trasferimento diretto di file in questo sito, questo gruppo contiene account configurati come **account di replica file**.  
 
- 次の表に、このグループの詳細情報を示します。  
+ Nella seguente tabella sono elencati dettagli aggiuntivi per questo gruppo:  
 
-|項目|説明|  
+|Dettagli|Altre informazioni|  
 |------------|----------------------|  
-|種類と場所|このグループは、サイト サーバー上に作成されるローカル セキュリティ グループです。|  
-|Membership|新しいサイトを別のサイトの子としてインストールすると、Configuration Manager は、新しいサイトのコンピューター アカウントを親サイト サーバーのグループに自動的に追加します。 さらに、Configuration Manager は、親サイトのコンピューター アカウントを新しいサイト サーバーのグループに追加します。 ファイルベースの転送用に別のアカウントを指定する場合は、移行先のサイト サーバーのこのグループにアカウントを追加します。<br /><br /> サイトをアンインストールしても、このグループが自動的に削除されることはありません。 手動で削除する必要があります。|  
-|アクセス許可|既定では、このグループには **%path%\Microsoft Configuration Manager\inboxes\despoolr.box\receive** フォルダーに対する **フル コントロール** があります。|  
+|Tipo e percorso|Questo è un gruppo di sicurezza locale creato nel server del sito.|  
+|Appartenenze|Quando si installa un nuovo sito come sito figlio di un altro sito, Configuration Manager aggiunge automaticamente l'account computer del nuovo sito al gruppo nel server del sito padre. Configuration Manager aggiunge anche l'account computer del sito padre al gruppo nel nuovo server del sito. Se viene specificato un altro account per i trasferimenti basati su file, aggiungere l'account al gruppo nel server del sito di destinazione.<br /><br /> Quando si disinstalla un sito, questo gruppo non viene rimosso automaticamente. Deve essere eliminato manualmente.|  
+|Autorizzazioni|Per impostazione predefinita, il gruppo dispone del **controllo completo** per la cartella **%path%\Microsoft Configuration Manager\inboxes\despoolr.box\receive** .|  
 
-## <a name="accounts-that-configuration-manager-uses"></a>Configuration Manager が使用するアカウント  
- Configuration Manager に次のアカウントを設定できます。  
+## <a name="accounts-that-configuration-manager-uses"></a>Account usati da Configuration Manager  
+ È possibile configurare gli account seguenti per Configuration Manager.  
 
-### <a name="active-directory-group-discovery-account"></a>Active Directory グループ探索アカウント  
- **Active Directory グループ探索アカウント**は、Active Directory Domain Services 内の指定された場所から、ローカル セキュリティ グループ、グローバル セキュリティ グループ、ユニバーサル セキュリティ グループ、これらのグループ内のメンバーシップ、および配布グループ内のメンバーシップを探索するために使用されます。 配布グループは、グループ リソースとは見なされません。  
+### <a name="active-directory-group-discovery-account"></a>Account di individuazione gruppo Active Directory  
+ L'**account di individuazione gruppo Active Directory** viene usato per individuare gruppi di sicurezza locali, globali e universali, l'appartenenza all'interno di tali gruppi e l'appartenenza all'interno dei gruppi di distribuzione dei percorsi specificati in Active Directory Domain Services. I gruppi di distribuzione non vengono rilevati come risorse di gruppo.  
 
- このアカウントは、探索を実行するサイト サーバーのコンピューター アカウントでも、Windows ユーザー アカウントでも構いません。 このアカウントは、探索に指定された Active Directory の場所の [読み取り] アクセス許可を持っている必要があります。 ****  
+ Questo account può essere un account computer del server del sito che esegue l'individuazione o un account utente Windows. L'account deve disporre dell'autorizzazione di accesso in **Lettura** ai percorsi di Active Directory specificati per l'individuazione.  
 
-### <a name="active-directory-system-discovery-account"></a>Active Directory システム探索アカウント  
- **Active Directory システム探索アカウント** は、Active Directory ドメイン サービス内の指定された場所からコンピューターを探索するために使用されます。  
+### <a name="active-directory-system-discovery-account"></a>Account individuazione sistema Active Directory  
+ L' **account individuazione sistema Active Directory** viene usato per individuare computer nei percorsi specificati in Servizi di dominio Active Directory.  
 
- このアカウントは、探索を実行するサイト サーバーのコンピューター アカウントでも、Windows ユーザー アカウントでも構いません。 このアカウントは、探索に指定された Active Directory の場所の [読み取り] アクセス許可を持っている必要があります。 ****  
+ Questo account può essere un account computer del server del sito che esegue l'individuazione o un account utente Windows. L'account deve disporre dell'autorizzazione di accesso in **Lettura** ai percorsi di Active Directory specificati per l'individuazione.  
 
-### <a name="active-directory-user-discovery-account"></a>Active Directory ユーザー探索アカウント  
- **Active Directory ユーザー探索アカウント** は、Active Directory ドメイン サービス内の指定された場所からユーザー アカウントを探索するために使用されます。  
+### <a name="active-directory-user-discovery-account"></a>Account individuazione utente Active Directory  
+ L' **account individuazione utente Active Directory** viene usato per individuare gli account utente nei percorsi specificati in Servizi di dominio Active Directory.  
 
- このアカウントは、探索を実行するサイト サーバーのコンピューター アカウントでも、Windows ユーザー アカウントでも構いません。 このアカウントは、探索に指定された Active Directory の場所の [読み取り] アクセス許可を持っている必要があります。 ****  
+ Questo account può essere un account computer del server del sito che esegue l'individuazione o un account utente Windows. L'account deve disporre dell'autorizzazione di accesso in **Lettura** ai percorsi di Active Directory specificati per l'individuazione.  
 
-### <a name="active-directory-forest-account"></a>Active Directory フォレスト アカウント  
- **Active Directory フォレスト アカウント**は、Active Directory フォレストからネットワーク インフラストラクチャを探索するために使用されます。 中央管理サイトとプライマリ サイトも、フォレストの Active Directory Domain Services にサイト データを発行するためにそれを使用します。  
+### <a name="active-directory-forest-account"></a>Account foresta Active Directory  
+ L'**account foresta Active Directory** viene usato per individuare l'infrastruttura di rete nelle foreste Active Directory. Viene anche usato dai siti di amministrazione centrale e dai siti primari per pubblicare i dati del sito in Active Directory Domain Services per una foresta.  
 
 > [!NOTE]  
->  セカンダリ サイトでは、Active Directory に発行するときに、必ず、セカンダリ サイト サーバーのコンピューター アカウントを使います。  
+>  I siti secondari usano sempre l'account computer del server del sito secondario per la pubblicazione in Active Directory.  
 
 > [!NOTE]  
->  信頼されていないフォレストを検出して、そのフォレストに発行するには、Active Directory フォレスト アカウントはグローバル アカウントでなければなりません。 サイト サーバーのコンピューター アカウントを使用しない場合は、グローバル アカウントのみ選択できます。  
+>  L'account foresta Active Directory deve essere un account globale per l'individuazione e la pubblicazione in foreste non trusted. Se non si usa l'account computer del server del sito, è possibile selezionare solo un account globale.  
 
- このアカウントは、ネットワーク インフラストラクチャを探索する各 Active Directory フォレストの [読み取り] アクセス許可を持っている必要があります。 ****  
+ L'account deve disporre delle autorizzazioni di **Lettura** per ogni foresta Active Directory in cui di desidera individuare l'infrastruttura di rete.  
 
- このアカウントは、サイト データを発行する各 Active Directory フォレスト内の System Management コンテナーおよびすべての子オブジェクトに対する [フル コントロール] アクセス許可を持っている必要があります。 ****  
+ L'account deve disporre delle autorizzazioni di **Controllo completo** per il contenitore di System Management e per i relativi oggetti figlio in tutte le foreste Active Directory in cui si desidera pubblicare i dati del sito.  
 
-### <a name="asset-intelligence-synchronization-point-proxy-server-account"></a>資産インテリジェンス同期ポイントのプロキシ サーバー アカウント  
- 資産インテリジェンス同期ポイントは、**資産インテリジェンス同期ポイント プロキシ サーバー アカウント**を使用して、認証済みアクセスが必要なプロキシ サーバーまたはファイアウォール経由でインターネットにアクセスします。  
+### <a name="asset-intelligence-synchronization-point-proxy-server-account"></a>Account server proxy del punto di sincronizzazione di Asset Intelligence  
+ Il punto di sincronizzazione di Asset Intelligence usa l'**account server proxy del punto di sincronizzazione di Asset Intelligence** per accedere a Internet con un server proxy o un firewall che richiede l'accesso autenticato.  
 
 > [!IMPORTANT]  
->  必要なプロキシ サーバーまたはファイアウォールに対するアクセス許可ができるだけ制限されたアカウントを指定します。  
+>  Specificare un account che disponga delle autorizzazioni minime per il server proxy o il firewall richiesti.  
 
-### <a name="certificate-registration-point-account"></a>証明書登録ポイント アカウント  
- **証明書登録ポイント アカウント**は、証明書登録ポイントを Configuration Manager データベースに接続します。 既定では、証明書登録ポイント サーバーのコンピューター アカウントが使用されますが、代わりにユーザー アカウントを設定することもできます。 証明書登録ポイントがサイト サーバーの信頼されていないドメインにある場合は常に、ユーザー アカウントを指定する必要があります。 このアカウントには、サイト データベースに対する**読み取り**アクセス許可のみが必要です。理由は、書き込みタスクは、状態メッセージ システムが処理するためです。  
+### <a name="certificate-registration-point-account"></a>Account del punto di registrazione certificati  
+ L'**account del punto di registrazione certificati** connette il punto di registrazione certificati al database di Configuration Manager. Per impostazione predefinita viene usato l'account computer del server del punto di registrazione certificati viene, ma è comunque possibile configurare un account utente. È necessario specificare un account utente ogni volta che il punto di registrazione certificati si trova in un dominio non attendibile dal server del sito. Questo account richiede solo l'accesso in **Lettura** al database del sito perché le operazioni di scrittura vengono gestite dal sistema dei messaggio di stato.  
 
-### <a name="capture-operating-system-image-account"></a>オペレーティング システム イメージのキャプチャ アカウント  
- Configuration Manager は、**オペレーティング システム イメージのキャプチャ アカウント** を使用して、オペレーティング システムをデプロイする際にキャプチャしたイメージを格納するフォルダーにアクセスします。 このアカウントは、タスク シーケンスに **オペレーティング システム イメージのキャプチャ** の手順を追加する場合に必要です。  
+### <a name="capture-operating-system-image-account"></a>Account di acquisizione immagine del sistema operativo  
+ Configuration Manager usa l'**account di acquisizione immagine del sistema operativo** per accedere alla cartella in cui sono archiviate le immagini acquisite quando si distribuiscono sistemi operativi. Questo account è necessario se si aggiunge il passaggio **Acquisisci immagine del sistema operativo** a una sequenza di attività.  
 
- アカウントには、キャプチャしたイメージが格納されるネットワーク共有での **読み取り** および **書き込み** アクセス許可が必要です。  
+ L'account deve disporre delle autorizzazioni di **Lettura** e **Scrittura** nella condivisione di rete in cui sono archiviate le immagini acquisite.  
 
- Windows でアカウントのパスワードが変更されている場合、新しいパスワードを使用してタスク シーケンスを更新する必要があります。 Configuration Manager クライアントは、クライアント ポリシーの次回ダウンロード時に、新しいパスワードを受け取ります。  
+ Se si cambia la password dell'account in Windows, è necessario aggiornare la sequenza di attività con la nuova password. Il client di Configuration Manager riceverà la nuova password durante il successivo download dei criteri client.  
 
- このアカウントを使用する場合、必要なネットワーク リソースにアクセスするために最小限必要なアクセス許可を持つドメイン ユーザー アカウントを 1 つ作成して、このアカウントをすべてのタスク シーケンス アカウントに対して使用できます。  
+ Se si usa questo account, è possibile creare un account utente di dominio con le autorizzazioni minime per accedere alle risorse di rete richieste e usarlo per tutti gli account delle sequenze di attività.  
 
 > [!IMPORTANT]  
->  このアカウントに対話型サインインのアクセス許可を割り当てないでください。  
+>  Non assegnare autorizzazioni di accesso interattivo a questo account.  
 >   
->  このアカウントにネットワーク アクセス アカウントを使用しないでください。  
+>  Non usare l'account di accesso alla rete per questo account.  
 
-### <a name="client-push-installation-account"></a>クライアント プッシュ インストール アカウント  
- **クライアント プッシュ インストール アカウント** は、クライアント プッシュ インストールを使用してクライアントを展開する場合に、コンピューターへの接続と Configuration Manager クライアント ソフトウェアのインストールに使用されます。 このアカウントが指定されていない場合は、サイト サーバー アカウントを使用してクライアント ソフトウェアをインストールします。  
+### <a name="client-push-installation-account"></a>Account di installazione push client  
+ L' **account di installazione push client** viene usato per la connessione ai computer e per l'installazione del software client di Configuration Manager se si distribuiscono i client usando l'installazione push client. Se questo account non è specificato, l'account del server del sito viene usato per tentare di installare il software client.  
 
- このアカウントは、Configuration Manager クライアント ソフトウェアがインストールされるコンピューターのローカル **Administrators** グループのメンバーでなければなりません。 このアカウントに、**ドメイン管理者**の権限は必要ありません。  
+ Questo account deve essere membro del gruppo **Administrators** locale nei computer in cui verrà installato il software client di Configuration Manager. Questo account non necessita di diritti di **amministratore di dominio**.  
 
- 1 つまたは複数のクライアント プッシュ インストール アカウントを指定して、いずれかが成功するまで Configuration Manager によって試行できます。  
+ È possibile specificare uno o più account di installazione push client, che Configuration Manager proverà in successione fino a quando uno di essi non avrà esito positivo.  
 
 > [!TIP]  
->  大規模な Active Directory 展開でのアカウントの更新をより効率的に行うには、新しいアカウントを別の名前で作成し、Configuration Manager で新しいアカウントをクライアント プッシュ インストール アカウントのリストに追加します。 新しいアカウントを Active Directory がレプリケートするための十分な時間を取り、古いアカウントを Configuration Manager と Active Directory Domain Services から削除します。  
+>  Per coordinare in modo più efficace gli aggiornamenti di account in distribuzioni ampie di Active Directory, creare un nuovo account con un nome diverso e aggiungere il nuovo account all'elenco degli account di installazione push client in Configuration Manager. Attendere un tempo sufficiente per la replica del nuovo account da parte di Active Directory Domain Services e rimuovere il vecchio account da Configuration Manager e da Active Directory Domain Services.  
 
 > [!IMPORTANT]  
->  このアカウントにローカルにサインインする権限を与えないでください。  
+>  Non concedere a questo account il diritto di accesso locale.  
 
-### <a name="enrollment-point-connection-account"></a>登録ポイントの接続アカウント  
- **登録ポイントの接続アカウント**は、登録ポイントを Configuration Manager サイト データベースに接続します。 既定では、登録ポイントのコンピューター アカウントが使用されますが、代わりにユーザー アカウントを設定することもできます。 登録ポイントがサイト サーバーの信頼されていないドメインにある場合は常に、ユーザー アカウントを指定する必要があります。 このアカウントには、サイト データベースに対する**読み取り**および**書き込み**アクセス権が必要です。  
+### <a name="enrollment-point-connection-account"></a>account di connessione al punto di registrazione  
+ L' **account di connessione al punto di registrazione** connette il punto di registrazione al database del sito di Configuration Manager. Per impostazione predefinita viene usato l'account computer del punto di registrazione, ma è comunque possibile configurare un account utente. È necessario specificare un account utente ogni volta che il punto di registrazione si trova in un dominio non attendibile dal server del sito. Questo account richiede l'accesso in **Lettura** e **Scrittura** al database del sito.  
 
-### <a name="exchange-server-connection-account"></a>Exchange Server 接続アカウント  
- **Exchange Server 接続アカウント** は、Exchange Server に接続しているモバイル デバイスを検出および管理するために、指定された Exchange Server コンピューターにサイト サーバーを接続します。 このアカウントには、Exchange Server コンピューターへの必要なアクセス許可を提供する Exchange PowerShell コマンドレットが必要です。 このコマンドレットの詳細については、「[System Center Configuration Manager と Exchange によるモバイル デバイスの管理](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)」をご覧ください。  
+### <a name="exchange-server-connection-account"></a>Account di connessione a Exchange Server  
+ L' **account di connessione a Exchange Server** collega il server del sito al computer Exchange Server specificato per trovare e gestire i dispositivi mobili che si connettono a Exchange Server. Questo account richiede i cmdlet di Exchange PowerShell che forniscono le autorizzazioni necessarie per il computer Exchange Server. Per altre informazioni sui cmdlet, vedere [Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
 
-### <a name="exchange-server-connector-proxy-server-account"></a>Exchange Server コネクタのプロキシ サーバー アカウント  
- Exchange Server コネクタは、**Exchange Server コネクタ プロキシ サーバー アカウント** を使用して、認証済みアクセスが必要なプロキシ サーバーまたはファイアウォール経由でインターネットにアクセスします。  
-
-> [!IMPORTANT]  
->  必要なプロキシ サーバーまたはファイアウォールに対するアクセス許可ができるだけ制限されたアカウントを指定します。  
-
-### <a name="management-point-connection-account"></a>管理ポイントの接続アカウント  
- **管理ポイントの接続アカウント** は、クライアントに関する情報を送受信できるように、管理ポイントを Configuration Manager サイト データベースに接続するために使用されます。 既定では、管理ポイントのコンピューター アカウントが使用されますが、代わりにユーザー アカウントを設定することもできます。 管理ポイントがサイト サーバーの信頼されていないドメインにある場合は常に、ユーザー アカウントを指定する必要があります。  
-
- このアカウントは、Microsoft SQL Server を実行しているコンピューター上の権限の低いローカル アカウントとして作成します。  
+### <a name="exchange-server-connector-proxy-server-account"></a>Account server proxy del connettore Exchange Server  
+ Il connettore Exchange Server usa l'**account server proxy del connettore Exchange Server** per accedere a Internet con un server proxy o un firewall che richiede l'accesso autenticato.  
 
 > [!IMPORTANT]  
->  このアカウントに対話型サインイン権限を付与しないでください。  
+>  Specificare un account che disponga delle autorizzazioni minime per il server proxy o il firewall richiesti.  
 
-### <a name="multicast-connection-account"></a>マルチキャスト接続アカウント  
- マルチキャスト用に設定されている配布ポイントは、**マルチキャスト接続アカウント**を使用して、サイト データベースから情報を読み取ります。 既定では、配布ポイントのコンピューター アカウントが使用されますが、代わりにユーザー アカウントを設定することもできます。 サイト データベースが信頼されていないフォレストにある場合は常に、ユーザー アカウントを指定する必要があります。 たとえば、データ センターでは、サイト サーバーとサイト データベースとは別にフォレストに境界ネットワークがある場合、このアカウントを使用してマルチキャスト情報をサイト データベースから読み込むことができます。  
+### <a name="management-point-connection-account"></a>Account di connessione al punto di gestione  
+ L'**account di connessione al punto di gestione** viene usato per collegare il punto di gestione al database del sito di Configuration Manager, in modo che possa inviare e recuperare informazioni per i client. Per impostazione predefinita viene usato l'account computer del punto di gestione, ma è comunque possibile configurare un account utente. È necessario specificare un account utente ogni volta che il punto di gestione si trova in un dominio non attendibile dal server del sito.  
 
- このアカウントを作成する場合は、Microsoft SQL Server を実行しているコンピューター上の権限の低いローカル アカウントとして作成します。  
+ Creare l'account come account locale e con diritti limitati sul computer con Microsoft SQL Server in esecuzione.  
 
 > [!IMPORTANT]  
->  このアカウントに対話型サインイン権限を付与しないでください。  
+>  Non concedere diritti di accesso interattivo a questo account.  
 
-### <a name="network-access-account"></a>ネットワーク アクセス アカウント  
- クライアント コンピューターは、ローカルのコンピューター アカウントで配布ポイントのコンテンツにアクセスできない場合に**ネットワーク アクセス アカウント**を使用します。 たとえば、このアカウントは、ワークグループ クライアントや信頼されていないドメインのコンピューターに適用されます。 このアカウントは、オペレーティング システムのデプロイ中に、オペレーティング システムをインストールするコンピューターにドメインのコンピューター アカウントがない場合にも使用されます。  
+### <a name="multicast-connection-account"></a>Account di connessione multicast  
+ I punti di distribuzione configurati per il multicast usano l'**account di connessione multicast** per leggere le informazioni dal database del sito. Per impostazione predefinita viene usato l'account computer del punto di distribuzione, ma è comunque possibile configurare un account utente. Ogni volta che il database del sito si trova in una foresta non trusted, è necessario specificare un account utente. Ad esempio, se il data center dispone di una rete perimetrale in una foresta diversa dal server del sito e dal database del sito, è possibile usare questo account per leggere le informazioni multicast dal database del sito.  
+
+ Durante la creazione, impostare questo account come account locale e con diritti limitati sul computer che esegue Microsoft SQL Server.  
+
+> [!IMPORTANT]  
+>  Non concedere diritti di accesso interattivo a questo account.  
+
+### <a name="network-access-account"></a>Account di accesso alla rete  
+ I computer client usano l'**account di accesso alla rete** quando non possono usare il proprio account computer locale per accedere al contenuto nei punti di distribuzione. Ad esempio, si applica a client e computer di gruppi di lavoro di domini non attendibili. Questo account può anche essere usato durante la distribuzione del sistema operativo quando il computer che installa il sistema operativo non ha ancora un account computer nel dominio.  
 
 > [!NOTE]  
->  ネットワーク アクセス アカウントは、プログラムの実行、ソフトウェア更新プログラムのインストール、タスク シーケンスの実行のためのセキュリティ コンテキストとして使用されることはありません。 ネットワーク上のリソースへのアクセス専用に使用されます。  
+>  L'account di accesso alla rete non viene mai usato come contesto di protezione per eseguire programmi, installare aggiornamenti software o eseguire sequenze di attività. Viene usato solo per l'accesso alle risorse in rete.  
 
- このアカウントには、ソフトウェアにアクセスするためにクライアントで必要となる、コンテンツに対する最低限の適切なアクセス許可を付与します。 このアカウントは、パッケージ コンテンツが保存されている配布ポイントまたはその他のサーバーで、[ネットワーク経由でコンピューターへアクセス] の権限を持っている必要があります。 **** サイトごとに最大 10 個のネットワーク アクセス アカウントを構成することができます。  
+ Concedere a questo account le autorizzazioni minime appropriate sul contenuto che il client richiede per accedere al software. L'account deve disporre del diritto **Accedi al computer dalla rete** nel punto di distribuzione o in un altro server che contiene il contenuto del pacchetto. È possibile configurare fino a 10 account di accesso alla rete per sito.  
 
 > [!WARNING]  
->  Configuration Manager は、computername$ アカウントを使用してコンテンツをダウンロードしようとして失敗した場合、既に試みて失敗した場合であっても、ネットワーク アクセス アカウントの使用を自動的にもう一度試みます。  
+>  Quando Configuration Manager tenta di usare l'account nomecomputer$ per scaricare il contenuto ma non ci riesce, ritenta automaticamente con l'Account di accesso alla rete anche se ci ha già provato in precedenza non riuscendoci.  
 
- このアカウントは、リソースへの必要なアクセスを提供する任意のドメインに作成します。 ネットワーク アクセス アカウントには、常にドメイン名が含まれている必要があります。 このアカウントでは、パススルー セキュリティはサポートされません。 複数のドメインに配布ポイントがある場合は、信頼される側のドメインにアカウントを作成します。  
-
-> [!TIP]  
->  アカウントのロックアウトを避けるため、既存のネットワーク アクセス アカウントのパスワードは変更しないでください。 代わりに、新しいアカウントを作成して、Configuration Manager でその新しいアカウントを設定します。 すべてのクライアントが新しいアカウントの詳細情報を受け取ったら、ネットワーク共有フォルダーから古いアカウントを削除して、古いアカウントを削除します。  
-
-> [!IMPORTANT]  
->  このアカウントに対話型サインイン権限を付与しないでください。
->   
->  コンピューターがドメインに参加する権限をこのアカウントに付与しないでください。 タスク シーケンス中にコンピューターをドメインに参加させる必要がある場合は、タスク シーケンス エディターのドメイン参加アカウントを使用します。  
-
-### <a name="package-access-account"></a>パッケージ アクセス アカウント  
- **パッケージ アクセス アカウント** を使用すると、NTFS アクセス許可を設定して、配布ポイントのパッケージ フォルダーにアクセスできるユーザーおよびユーザー グループを指定できます。 既定では、Configuration Manager は、汎用のアクセス アカウントである**ユーザー**と**管理者**にのみアクセス権を付与します。 その他の Windows アカウントや Windows グループを使用してクライアント コンピューターのアクセスを制御できます。 モバイル デバイスは、常にパッケージのコンテンツを匿名で取得するため、パッケージ アクセス アカウントは使用しません。  
-
- 既定では、Configuration Manager が配布ポイントにパッケージ共有を作成するときに、ローカルの **Users** グループに **読み取り** のアクセスを、ローカル **Administrators** グループに **フル コントロール** を許可します。 実際の必要なアクセス許可はパッケージに応じて異なります。 クライアントがワークグループや信頼されていないフォレストに含まれている場合は、そのクライアントはネットワーク アクセス アカウントを使用してパッケージ コンテンツにアクセスします。 ネットワーク アクセス アカウントに、定義されたパッケージ アクセス アカウントを使用したパッケージへのアクセス許可があることを確認してください。  
-
- 配布ポイントにアクセスできるドメイン内のアカウントを使用します。 パッケージの作成後にアカウントを作成または変更した場合は、パッケージを再配布する必要があります。 パッケージを更新しても、パッケージに対する NTFS アクセス許可は変更されません。  
-
- ネットワーク アクセス アカウントは、Users グループのメンバーシップによって自動的に追加されるため、パッケージ アクセス アカウントとして追加する必要はありません。 パッケージ アクセス アカウントをネットワーク アクセス アカウントのみに制限しても、クライアントによるパッケージへのアクセスを妨げることはありません。  
-
-### <a name="reporting-services-point-account"></a>レポート サービス ポイントのアカウント  
- SQL Server Reporting Services は、**レポート サービス ポイント アカウント** を使用して、サイト データベースから Configuration Manager レポート用のデータを取得します。 指定した Windows ユーザー アカウントとパスワードは暗号化されて、SQL Server Reporting Services データベースに保存されます。  
-
-### <a name="remote-tools-permitted-viewer-accounts"></a>リモート ツールの許可されたビューアー アカウント  
- リモート コントロール用に [アクセス許可のあるユーザー] として指定するアカウントとは、クライアントでのリモート ツール機能の使用を許可されたユーザーの一覧です。 ****  
-
-### <a name="site-system-installation-account"></a>サイト システムのインストール アカウント  
- サイト サーバーは、**サイト システムのインストール アカウント** を使用して、サイト システムのインストール、再インストール、アンインストール、およびセットアップを行います。 このサイト システムへの接続の開始をサイト サーバーに要求するようにサイト システムを設定すると、サイト システムおよびサイト システムの役割がインストールされた後で、Configuration Manager はこのアカウントを使用してサイト システム コンピューターからデータを取得します。 各サイト システムは複数のサイト システム インストール アカウントを持つことができますが、そのサイト システムのすべての役割を管理するように設定できるサイト システム インストール アカウントは 1 つだけです。  
-
- このアカウントには、管理者がインストールしてセットアップするサイト システムに対するローカルの管理アクセス許可が必要です。 また、このアカウントには、管理者がインストールしてセットアップするサイト システム上のセキュリティ ポリシーで **[ネットワーク経由でコンピューターへアクセス]** が設定されている必要があります。  
+ Creare l'account in tutti i domini che forniranno l'accesso necessario alle risorse. L'account di accesso alla rete deve sempre includere un nome di dominio. La protezione pass-through non è supportata per questo account. Se si dispone di punti di distribuzione in più domini, creare l'account in un dominio attendibile.  
 
 > [!TIP]  
->  ドメイン コントローラーが多数あり、これらのアカウントをドメイン間で使用する場合は、サイト システムをセットアップする前に、これらのアカウントがレプリケートされていることを確認します。  
+>  Per evitare blocchi degli account, non modificare la password per un account di accesso alla rete esistente. Creare invece un nuovo account e configurarlo in Configuration Manager. Quando è trascorso tempo sufficiente e tutti i client hanno ricevuto i dettagli del nuovo account, rimuovere il vecchio account dalle cartelle condivise in rete ed eliminare l'account.  
+
+> [!IMPORTANT]  
+>  Non concedere diritti di accesso interattivo a questo account.
 >   
->  管理対象の各サイト システムにローカル アカウントを指定すると、アカウントに侵入されても攻撃者の行動が制限されるため、ドメイン アカウントを使用するよりも、この構成の方が安全です。 ただし、ドメイン アカウントのほうが管理は簡単です。 セキュリティと効果的な管理間のトレードオフを検討してください。  
+>  Non concedere a questo account il diritto di aggiungere computer al dominio. Se è necessario aggiungere computer al dominio durante una sequenza di attività, usare l'account di aggiunta dominio dell'editor della sequenza di attività.  
 
-### <a name="smtp-server-connection-account"></a>SMTP サーバー接続アカウント  
- サイト サーバーは、**SMTP サーバー接続アカウント**を使用して、SMTP サーバーで認証済みアクセスが必要な場合に電子メール アラートを送信します。  
+### <a name="package-access-account"></a>Account di accesso al pacchetto  
+ Un **account di accesso ai pacchetti** consente di impostare le autorizzazioni NTFS per specificare gli utenti e i gruppi di utenti che possono accedere a una cartella del pacchetto nei punti di distribuzione. Per impostazione predefinita, Configuration Manager concede l'accesso solo agli account di accesso generici **Utenti** e **Amministratori**. È possibile controllare l'accesso per i computer client usando gruppi o account di Windows aggiuntivi. I dispositivi mobili recuperano sempre il contenuto dei pacchetti in modo anonimo, quindi non usano gli account di accesso ai pacchetti.  
+
+ Per impostazione predefinita, quando Configuration Manager crea la condivisione pacchetto in un punto di distribuzione, concede l'accesso di **Lettura** al gruppo **Utenti** locale e **Controllo completo** al gruppo **Amministratori** locale. Le autorizzazioni effettivamente necessarie dipenderanno dal pacchetto. Se si dispone di client in gruppi di lavoro o in foreste non trusted, tali client usano l'account di accesso alla rete per accedere al contenuto del pacchetto. Assicurarsi che l'Account di accesso alla rete disponga delle autorizzazioni per il pacchetto usando gli Account di accesso al pacchetto definiti.  
+
+ Usare gli account in un dominio che possa accedere ai punti di distribuzione. Se si crea o si cambia l'account dopo la creazione del pacchetto, è necessario ridistribuire il pacchetto. L'aggiornamento del pacchetto non modifica le autorizzazioni NTFS sul pacchetto.  
+
+ Non è necessario aggiungere l'account di accesso alla rete come account di accesso al pacchetto, poiché l'appartenenza al gruppo Utenti lo aggiunge automaticamente. La limitazione dell'account di accesso al pacchetto al solo account di accesso alla rete non impedisce ai client di accedere al pacchetto.  
+
+### <a name="reporting-services-point-account"></a>Account punto di Reporting Services  
+ SQL Server Reporting Services usa l'**account punto di Reporting Services** per recuperare i dati per i report di Configuration Manager dal database del sito. La password e l'account utente Windows specificati vengono crittografati e archiviati nel database di SQL Server Reporting Services.  
+
+### <a name="remote-tools-permitted-viewer-accounts"></a>Account visualizzatori autorizzati di strumenti remoti  
+ Gli account specificati come **Visualizzatori autorizzati** per il controllo remoto sono un elenco di utenti a cui è consentito usare le funzionalità di strumenti remoti nei client.  
+
+### <a name="site-system-installation-account"></a>Account di installazione sistema del sito  
+ Il server del sito usa l'**account di installazione del sistema del sito** per installare, reinstallare, disinstallare e configurare i sistemi del sito. Se si configura il sistema del sito in modo che il server del sito avvii le connessioni a questo sistema del sito, Configuration Manager usa anche questo account per eseguire il pull dei dati dal computer di sistema del sito dopo l'installazione del sistema del sito e di tutti i ruoli di sistema del sito. Ogni sistema del sito può avere un account di installazione del sistema del sito diverso, ma è possibile configurare un unico account di questo tipo per gestire tutti i ruoli del sistema del sito in quel sistema del sito.  
+
+ Questo account richiede le autorizzazioni amministrative locali nei sistemi del sito che verranno installati e configurati dagli amministratori. Inoltre, questo account deve avere il diritto **Accedi al computer dalla rete** dei criteri di sicurezza nei sistemi del sito che verranno installati e configurati dagli amministratori.  
+
+> [!TIP]  
+>  Se sono presenti numerosi controller di dominio e questi account verranno usati nei domini, verificare che gli account siano stati replicati prima di configurare il sistema del sito.  
+>   
+>  Quando si specifica un account locale in ogni sistema del sito da gestire, questa configurazione è più sicura dell'utilizzo di account di dominio poiché limita il danno che gli utenti malintenzionati possono causare se l'account viene compromesso. Gli account di dominio sono comunque più semplici da gestire. Valutare i vantaggi e gli svantaggi in termini di sicurezza ed efficienza per l'amministrazione.  
+
+### <a name="smtp-server-connection-account"></a>Account di connessione al server SMTP  
+ Il server del sito usa l'**account di connessione al server SMTP** per inviare avvisi tramite posta elettronica quando il server SMTP richiede l'accesso autenticato.  
 
 > [!IMPORTANT]  
->  電子メールを送信するための最低限のアクセス許可を持つアカウントを指定します。  
+>  Specificare un account che disponga delle autorizzazioni minime per l'invio di e-mail.  
 
-### <a name="software-update-point-connection-account"></a>ソフトウェアの更新ポイントの接続アカウント  
- サイト サーバーは、次の 2 つのソフトウェア更新サービスで**ソフトウェアの更新ポイントの接続アカウント**を使用します。  
+### <a name="software-update-point-connection-account"></a>Account di connessione al punto di aggiornamento software  
+ Il server del sito usa l'**account di connessione al punto di aggiornamento software** per i due servizi di aggiornamento software seguenti:  
 
--   Windows Server Update Services (WSUS) Configuration Manager。製品の定義、分類、上流設定などの設定を行います。  
+-   Windows Server Update Services (WSUS) Configuration Manager, che configura impostazioni quali classificazioni, definizioni di prodotti e impostazioni upstream.  
 
--   WSUS 同期マネージャー。上流の WSUS サーバーまたは Microsoft Update への同期を要求します。  
+-   Gestione sincronizzazione WSUS, che richiede la sincronizzazione a un server WSUS upstream o a Microsoft Update.  
 
-サイト システムのインストール アカウントはソフトウェアの更新のコンポーネントをインストールできますが、ソフトウェアの更新ポイントでソフトウェアの更新固有の機能を実行することはできません。 信頼されていないフォレストにソフトウェアの更新ポイントがあるため、この機能にサイト サーバーのコンピューター アカウントを使用できない場合、サイト システムのインストール アカウントに加えて、このアカウントを指定する必要があります。  
+L'account di installazione del sistema del sito può installare i componenti per gli aggiornamenti software, ma non può eseguire funzioni specifiche di aggiornamenti software nel punto di aggiornamento software. Se non è possibile usare l'account del computer del server di sito per questa funzionalità poiché il punto di aggiornamento software si trova in una foresta non trusted, è necessario specificare questo account oltre all'account di installazione sistema del sito.  
 
-このアカウントは、WSUS がインストールされているコンピューター上のローカル管理者である必要があります。 さらに、ローカルの WSUS Administrators グループに属している必要があります。  
+Questo account deve essere un amministratore locale sul computer in cui è installato WSUS. Deve anche essere membro del gruppo WSUS Administrators locale.  
 
-### <a name="software-update-point-proxy-server-account"></a>ソフトウェアの更新ポイントのプロキシ サーバー アカウント  
- ソフトウェアの更新ポイントは、**ソフトウェアの更新ポイントのプロキシ サーバー アカウント**を使用して、認証済みアクセスが必要なプロキシ サーバーまたはファイアウォール経由でインターネットにアクセスします。  
+### <a name="software-update-point-proxy-server-account"></a>Account del server proxy del punto di aggiornamento software  
+ Il punto di aggiornamento software usa l'**account del server proxy del punto di aggiornamento software** per accedere a Internet con un server proxy o un firewall che richiede l'accesso autenticato.  
 
 > [!IMPORTANT]  
->  必要なプロキシ サーバーまたはファイアウォールに対するアクセス許可ができるだけ制限されたアカウントを指定します。  
+>  Specificare un account che disponga delle autorizzazioni minime per il server proxy o il firewall richiesti.  
 
-### <a name="source-site-account"></a>ソース サイトのアカウント  
- 移行プロセスは、**ソース サイトのアカウント**を使用して、ソース サイトの SMS プロバイダーにアクセスします。 移行ジョブのデータを収集するため、このアカウントにはソース サイトのサイト オブジェクトに対する [読み取り] アクセス許可が必要です。 ****  
+### <a name="source-site-account"></a>Account del sito di origine  
+ Il processo di migrazione usa l'**account del sito di origine** per accedere al provider SMS del sito di origine. Questo account richiede autorizzazioni di **Lettura** per gli oggetti del sito presenti nel sito di origine per raccogliere dati per i processi di migrazione.  
 
- Configuration Manager 2007 の配布ポイントまたは配布ポイントが併置されているセカンダリ サイトを System Center Configuration Manager の配布ポイントにアップグレードする場合、アップグレード中に Configuration Manager 2007 サイトから配布ポイントを正常に削除するために、このアカウントには **[サイト]** クラスに対する **[削除]** アクセス許可も必要になります。  
+ Se si aggiornano siti secondari o punti di distribuzione di Configuration Manager 2007 che hanno punti di distribuzione condivisi nei punti di distribuzione per System Center Configuration Manager, questo account deve avere anche le autorizzazioni **Elimina** per la classe **Sito** per rimuovere il punto di distribuzione dal sito di Configuration Manager 2007 durante l'aggiornamento.  
 
 > [!NOTE]  
->  Configuration Manager コンソールの **[管理]** ワークスペースの **[アカウント]** ノードでは、ソース サイトのアカウントとソース サイトのデータベース アカウントの両方が **[移行マネージャー]** として識別されます。  
+>  L'account del sito di origine e l'account del database del sito di origine vengono identificati come **Gestione migrazione** nel nodo **Account** dell'area di lavoro **Amministrazione** nella console di Configuration Manager.  
 
-### <a name="source-site-database-account"></a>ソース サイトのデータベース アカウント  
- 移行プロセスは、**ソース サイトのデータベース アカウント**を使用して、ソース サイトの SQL Server データベースにアクセスします。 ソース サイトの SQL Server データベースからデータを収集するには、ソース サイトのデータベース アカウントに、ソース サイトの SQL Server データベースに対する**読み取り**および **実行**のアクセス許可が必要です。  
-
-> [!NOTE]  
->  System Center Configuration Manager のコンピューター アカウントを使用する場合、このアカウントに次のすべてが該当することを確認します。  
->   
-> -   Configuration Manager 2007 サイトが存在するドメイン内のセキュリティ グループ **[Distributed COM Users]** のメンバーである。  
-> -   [SMS Admins] セキュリティ グループのメンバーである。 ****  
-> -   あらゆる Configuration Manager 2007 オブジェクトの **読み取り** アクセス許可がある。  
+### <a name="source-site-database-account"></a>Account del database del sito di origine  
+ Il processo di migrazion usa l'**account del database del sito di origine** per accedere al database di SQL Server per il sito di origine. Per raccogliere dati dal database di SQL Server del sito di origine, l'account del database del sito di origine deve avere le autorizzazioni **Lettura** ed **Esegui** per il database di SQL Server del sito di origine.  
 
 > [!NOTE]  
->  Configuration Manager コンソールの **[管理]** ワークスペースの **[アカウント]** ノードでは、ソース サイトのアカウントとソース サイトのデータベース アカウントの両方が **[移行マネージャー]** として識別されます。  
+>  Se si usa un account computer di System Center Configuration Manager, verificare che tutte le opzioni seguenti siano vere per tale account:  
+>   
+> -   È un membro del gruppo di sicurezza **Distributed COM Users** nel dominio in cui risiede il sito di Configuration Manager 2007.  
+> -   È un membro del gruppo di sicurezza **SMS Admins** .  
+> -   Ha l'autorizzazione **Lettura** per tutti gli oggetti di Configuration Manager 2007.  
 
-### <a name="task-sequence-editor-domain-joining-account"></a>タスク シーケンス エディターのドメイン参加アカウント  
- **タスク シーケンス エディターのドメイン参加アカウント** は、新しくイメージングされたコンピューターをドメインに参加させるために、タスク シーケンスで使用されます。 [ **ドメインまたはワークグループへの参加** ] ステップをタスク シーケンスに追加した後、[ **ドメインに参加**] を選択する場合は、このアカウントが必要です。 このアカウントは、**[ネットワーク設定の適用]** ステップをタスク シーケンスに追加した場合も設定できますが、必須ではありません。  
+> [!NOTE]  
+>  L'account del sito di origine e l'account del database del sito di origine vengono identificati come **Gestione migrazione** nel nodo **Account** dell'area di lavoro **Amministrazione** nella console di Configuration Manager.  
 
- このアカウントには、コンピューターが参加するドメインにおける [ドメイン参加] 権利が必要です。 ****  
+### <a name="task-sequence-editor-domain-joining-account"></a>Account di aggiunta dominio dell'editor della sequenza di attività  
+ L' **account per l'aggiunta al dominio nell'editor delle sequenze di attività** viene usato in una sequenza di attività per aggiungere un nuovo computer con immagine a un dominio. Questo account è necessario se si aggiunge il passaggio **Aggiunta a dominio o gruppo di lavoro** a una sequenza di attività e quindi si seleziona **Aggiunta a un dominio**. Questo account può essere configurato anche se si aggiunge il passaggio **Applica impostazioni di rete** a una sequenza di attività, ma non è necessario.  
+
+ Questo account richiede il diritto **Aggiungi a dominio** nel dominio a cui il computer verrà aggiunto.  
 
 > [!TIP]  
->  タスク シーケンスにこのアカウントが必要な場合は、必要なネットワーク リソースにアクセスするために最小限必要なアクセス許可を持つドメイン ユーザー アカウントを 1 つ作成し、すべてのタスク シーケンス アカウントに対して使用できます。  
+>  Se è necessario questo account per le sequenze attività, è possibile creare un account utente di dominio con le autorizzazioni minime per accedere alle risorse di rete richieste e usarlo per tutti gli account delle sequenze attività.  
 
 > [!IMPORTANT]  
->  このアカウントに対話型サインインのアクセス許可を割り当てないでください。  
+>  Non assegnare autorizzazioni di accesso interattivo a questo account.  
 >   
->  このアカウントにネットワーク アクセス アカウントを使用しないでください。  
+>  Non usare l'account di accesso alla rete per questo account.  
 
-### <a name="task-sequence-editor-network-folder-connection-account"></a>タスク シーケンス エディターのネットワーク フォルダーの接続アカウント  
- タスク シーケンスは、**タスク シーケンス エディターのネットワーク フォルダーの接続アカウント**を使用して、ネットワーク上の共有フォルダーに接続します。 このアカウントは、タスク シーケンスに [ネットワーク フォルダーへの接続] ステップを追加する場合に必要です。 ****  
+### <a name="task-sequence-editor-network-folder-connection-account"></a>Account di connessione cartella di rete dell'editor della sequenza di attività  
+ Una sequenza di attività usa l'**account per la connessione di cartelle di rete nell'editor delle sequenze di attività** per la connessione a una cartella condivisa in rete. Questo account è necessario se si aggiunge il passaggio **Connetti alla cartella di rete** a una sequenza di attività.  
 
- このアカウントは、指定された共有フォルダへアクセスするためのアクセス許可が必要です。 ユーザーのドメイン アカウントでなければなりません。  
+ Questo account richiede autorizzazioni per accedere alla cartella condivisa specificata. Deve essere un account utente di dominio.  
 
 > [!TIP]  
->  タスク シーケンスにこのアカウントが必要な場合は、必要なネットワーク リソースにアクセスするために最小限必要なアクセス許可を持つドメイン ユーザー アカウントを 1 つ作成し、すべてのタスク シーケンス アカウントに対して使用できます。  
+>  Se è necessario questo account per le sequenze attività, è possibile creare un account utente di dominio con le autorizzazioni minime per accedere alle risorse di rete richieste e usarlo per tutti gli account delle sequenze attività.  
 
 > [!IMPORTANT]  
->  このアカウントに対話型サインインのアクセス許可を割り当てないでください。  
+>  Non assegnare autorizzazioni di accesso interattivo a questo account.  
 >   
->  このアカウントにネットワーク アクセス アカウントを使用しないでください。  
+>  Non usare l'account di accesso alla rete per questo account.  
 
-### <a name="task-sequence-run-as-account"></a>タスク シーケンスの別のユーザーとして実行アカウント  
- **タスク シーケンスの別のユーザーとして実行アカウント** は、コマンド ラインを実行するためにタスク シーケンスで使用され、ローカル システム アカウント以外の資格情報を使用します。 このアカウントは、**コマンド ラインの実行**ステップをタスク シーケンスに追加するが、管理されているコンピューターでのタスク シーケンスの実行にローカル システム アカウントのアクセス許可を使用しない場合に必要です。  
+### <a name="task-sequence-run-as-account"></a>Sequenza di attività eseguita come account  
+ La **sequenza di attività eseguita come account** viene usata per eseguire righe di comando in sequenze di attività e usare credenziali diverse dall'account di sistema locale. Questo account è necessario se si aggiunge il passaggio **Esegui riga di comando** a una sequenza di attività ma non si vuole che questa venga eseguita con le autorizzazioni dell'account di sistema locale nel computer gestito.  
 
- このアカウントは、タスク シーケンスに指定されているコマンド ラインを実行するために必要な最低限のアクセス許可を持つように設定します。 このアカウントは、対話型サインイン権限を持つ必要があり、通常はソフトウェアのインストールとネットワーク リソースにアクセスできる必要があります。  
+ Configurare l'account in modo che abbia le autorizzazioni minime necessarie per eseguire la riga di comando specificata nella sequenza di attività. L'account deve avere diritti di accesso interattivo e in genere richiede la possibilità di installare il software e accedere alle risorse di rete.  
 
 > [!IMPORTANT]  
->  このアカウントにネットワーク アクセス アカウントを使用しないでください。  
+>  Non usare l'account di accesso alla rete per questo account.  
 >   
->  このアカウントをドメイン管理者にしないでください。  
+>  Non impostare mai l'account come amministratore di dominio.  
 >   
->  このアカウントにローミング プロファイルを設定しないでください。 タスク シーケンスを実行すると、アカウントのローミング プロファイルがダウンロードされます。 これは、プロファイルをローカル コンピューター上でのアクセスに対して脆弱な状態のままにします。  
+>  Non configurare mai profili mobili per questo account. Quando viene eseguita la sequenza di attività, verrà scaricato il profilo mobile per l'account. In questo modo il profilo è vulnerabile all'accesso nel computer locale.  
 >   
->  アカウントのスコープを制限する たとえば、タスク シーケンスごとに異なるタスク シーケンスの別のユーザーとして実行アカウントを作成すると、1 つのアカウントが侵害された場合に侵害されるのは、そのアカウントがアクセスできるクライアント コンピューターのみになります。  
+>  Limitare l'ambito dell'account. Ad esempio, creare diverse esecuzioni della sequenza di attività come account per ciascuna sequenza di attività, in modo che nel caso in cui venga compromesso un account, vengano compromessi solo i computer client a cui tale account ha accesso.  
 >   
->  コマンド ラインにコンピューターの管理アクセスが必要な場合は、該当するタスク シーケンスを実行するすべてのコンピューターに、タスク シーケンスの実行アカウント専用のローカル管理者アカウントを作成することを検討してください。 そのアカウントは、不要になり次第、削除してください。  
+>  Se la riga di comando richiede accesso amministrativo nel computer, creare un account amministratore locale unicamente per la sequenza di attività Account RunAs in tutti i computer che eseguiranno la sequenza di attività. Eliminare l'account non appena non è più necessario.  

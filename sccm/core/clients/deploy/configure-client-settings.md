@@ -1,6 +1,6 @@
 ---
-title: "クライアント設定の構成 | Microsoft Docs"
-description: "System Center Configuration Manager でクライアント設定を選択します。"
+title: Configurare le impostazioni client | Documentazione Microsoft
+description: Selezionare le impostazioni client in System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -17,65 +17,65 @@ manager: angrobe
 ms.openlocfilehash: 478d562bfb7fdb3921a4278741ff096e81e6092a
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-configure-client-settings-in-system-center-configuration-manager"></a>System Center Configuration Manager でクライアント設定を構成する方法
+# <a name="how-to-configure-client-settings-in-system-center-configuration-manager"></a>Come configurare le impostazioni client in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager のすべてのクライアント設定は、**[管理]** > **[クライアント設定]** から管理できます。 カスタム設定が適用されていない、階層内のすべてのユーザーおよびデバイスの設定を構成する場合は、既定の設定を変更します。 別の設定を一部のユーザーまたはデバイスのみに適用する場合は、カスタム設定を作成して、それらをコレクションに展開します。  
+È possibile gestire tutte le impostazioni client in System Center Configuration Manager da **Amministrazione** > **Impostazioni client**. Modificare le impostazioni predefinite quando si desidera configurare le impostazioni per tutti gli utenti e i dispositivi nella gerarchia per cui non sono applicate impostazioni personalizzate. Se si desidera applicare impostazioni diverse solo alcuni utenti o dispositivi, creare delle impostazioni personalizzate e distribuirle alle raccolte.  
 
-各クライアント設定の詳細については、「[System Center Configuration Manager のクライアント設定について](../../../core/clients/deploy/about-client-settings.md)」を参照してください。
+Per informazioni su ogni impostazione client, vedere [Informazioni sulle impostazioni client in Configuration Manager](../../../core/clients/deploy/about-client-settings.md).
 
 > [!NOTE]  
->  クライアントを管理する構成項目を使用して、デバイスの構成対応の評価、追跡、および修復を行うことができます。 詳細については、「[System Center Configuration Manager でのデバイス コンプライアンスの確認](../../../compliance/understand/ensure-device-compliance.md)」を参照してください。  
+>  È inoltre possibile usare gli elementi di configurazione per gestire i client per la valutazione, il controllo e la correzione della conformità di configurazione dei dispositivi. Per altre informazioni, vedere [Garantire la conformità dei dispositivi con System Center Configuration Manage](../../../compliance/understand/ensure-device-compliance.md).  
 
-##  <a name="configure-the-default-client-settings"></a>既定のクライアント設定を構成する    
+##  <a name="configure-the-default-client-settings"></a>Configurare le impostazioni client predefinite    
 
-1.  Configuration Manager コンソールで、**[管理]** > **[クライアント設定]** > **[既定のクライアント設定]** の順に選択します。  
+1.  Nella console di Configuration Manager selezionare **Amministrazione** > **Impostazioni client** > **Impostazioni client predefinite**.  
 
-3.  **[ホーム]** タブで **[プロパティ]** を選択します。  
+3.  Nella scheda **Home** scegliere **Proprietà**.  
 
-4.  ナビゲーション ウィンドウで、各設定のグループのクライアント設定を表示および構成します。  
+4.  Visualizzare e configurare le impostazioni client per ogni gruppo di impostazioni nel riquadro di spostamento.  
 
- クライアント コンピューターは、次にクライアント ポリシーをダウンロードするときに、これらの設定で構成されます。 単一クライアントのポリシーの取得を開始するには、「[System Center Configuration Manager でクライアントを管理する方法](../../../core/clients/manage/manage-clients.md)」の「[Configuration Manager クライアントのポリシーの取得開始](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval)」セクションを参照してください。  
+ I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero dei criteri per un singolo client, vedere la sezione [Avviare il recupero criteri per un client di Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval) in [Come gestire i client in System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
 
-##  <a name="create-and-deploy-custom-client-settings"></a>カスタム クライアント設定を作成および展開する  
-これらのカスタム設定を展開すると、既定のクライアント設定が上書きされます。 この手順を始める前に、これらのカスタム クライアント設定を必要とするユーザーまたはデバイスを含むコレクションがあることを確認します。  
+##  <a name="create-and-deploy-custom-client-settings"></a>Creare e distribuire impostazioni client personalizzate  
+Quando queste impostazioni personalizzate vengono distribuite, sostituiscono le impostazioni client predefinite. Prima di iniziare questa procedura, assicurarsi di disporre di una raccolta contenente gli utenti o i dispositivi che richiedono queste impostazioni client personalizzate.  
 
-1.  Configuration Manager コンソールで、**[管理]** > **[クライアント設定]** の順に選択します。  
+1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Impostazioni client**.  
 
-3.  **[ホーム]** タブの **[作成]** グループで、**[カスタム クライアント設定の作成]** を選択してから、次のいずれかを選択します。  
+3.  Nel gruppo **Crea** della scheda **Home** scegliere **Crea impostazioni dispositivo client personalizzate** e quindi scegliere una delle opzioni seguenti:  
 
-    -   **カスタム クライアント デバイス設定の作成**  
+    -   **Crea impostazioni dispositivo client personalizzate**  
 
-    -   **カスタム クライアント ユーザー設定の作成**  
+    -   **Crea impostazioni utente client personalizzate**  
 
-4.  一意の名前と、必要に応じて説明を指定します。  
+4.  Specificare un nome univoco e una descrizione dell'opzione.  
 
-5.  設定のグループが表示されているチェック ボックスのうち 1 つまたは複数をオンにします。  
+5.  Selezionare una o più delle caselle di controllo che mostrano un gruppo di impostazioni.  
 
-6.  ナビゲーション ウィンドウの各設定のグループを選択し、利用可能な設定を構成して **[OK]** をクリックします。   
+6.  Scegliere ciascun gruppo di impostazioni dal riquadro di spostamento, configurare le impostazioni disponibili e quindi fare clic su **OK**.   
 
-8.  作成したカスタム クライアント設定を選択します。 **[ホーム]** タブの **[クライアント設定]** グループで、**[展開]** を選択します。  
+8.  Selezionare l'impostazione client personalizzata creata. Nella scheda **Home**, nel gruppo **Impostazioni client**, scegliere **Distribuisci**.  
 
-9. **[コレクションの選択]** ダイアログ ボックスで適切なコレクションを選択し、**[OK]** を選択します。 選択したコレクションを確認するには、詳細ウィンドウで [ **展開** ] タブをクリックします。  
+9. Nella finestra di dialogo **Seleziona raccolta** selezionare la raccolta appropriata e quindi scegliere **OK**. È possibile controllare la raccolta selezionata facendo clic sulla scheda **Distribuzioni** nel riquadro dei dettagli.  
 
-10. 作成したカスタム クライアント設定の順序を表示します。 複数のカスタム クライアント設定がある場合は、順序番号に従って適用されます。 競合がある場合は、順序番号が一番小さい設定によってその他の設定が上書きされます。 順序番号を変更するには、**[ホーム]** タブの **[クライアント設定]** グループで、**「Move Item Up」 (項目を上に移動)** または **「Move Item Down」 (項目を下に移動)** を選択します。  
+10. Visualizzare l'ordine dell'impostazione client personalizzata appena creata. Quando sono presenti più impostazioni client personalizzate, vengono applicate in base al numero d'ordine. Se sono presenti conflitti, l'impostazione con il numero d'ordine più basso sostituisce le altre impostazioni. Per modificare il numero d'ordine, nel gruppo **Impostazioni client** della scheda **Home** scegliere **Sposta elemento in alto** o **Sposta elemento in basso**.  
 
- クライアント コンピューターは、次にクライアント ポリシーをダウンロードするときに、これらの設定で構成されます。 単一クライアントのポリシーの取得を開始するには、「[System Center Configuration Manager でクライアントを管理する方法](../../../core/clients/manage/manage-clients.md)」の「[Configuration Manager クライアントのポリシーの取得開始](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval)」セクションを参照してください。  
+ I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero dei criteri per un singolo client, vedere la sezione [Avviare il recupero criteri per un client di Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval) in [Come gestire i client in System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
 
-##  <a name="view-client-settings"></a>クライアント設定を表示する  
- 同じデバイス、ユーザー、または、ユーザー グループに複数のクライアント設定が展開されている場合、優先順位と設定が複雑になることがあります。 クライアント設定を表示するには  
+##  <a name="view-client-settings"></a>Visualizzare le impostazioni client  
+ Una volta distribuite più impostazioni client allo stesso dispositivo, utente o gruppo degli utenti, la definizione delle priorità e la combinazione delle impostazioni possono essere complesse. Per visualizzare le impostazioni client:  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[デバイス]** > **[ユーザー]** または **[ユーザー コレクション]** の順に選択します。  
+1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Dispositivi** > **Utenti** o **Raccolte utenti**.  
 
-3.  [ **クライアント設定** ] グループで、デバイス、ユーザー、または、ユーザー グループを選択して、[ **クライアントの設定の結果**] を選択します。  
+3.  Selezionare un dispositivo, un utente o un gruppo di utenti e nel gruppo **Impostazioni client** , selezionare **Impostazioni del client risultanti**.  
 
-4.  左ウィンドウからクライアント設定を選択すると、設定が表示されます。 この表示では、設定は読み取り専用です。 
+4.  Selezionare un'impostazione client dal riquadro a sinistra: vengono visualizzate le impostazioni. In questa visualizzazione le impostazioni sono di sola lettura. 
 
     > [!NOTE]  
-    >  クライアント設定を表示するには、クライアント設定に対する読み取りアクセス権を持っている必要があります。  
+    >  Per visualizzare le impostazioni client, è necessario disporre dell'accesso in lettura a Impostazioni client.  
 
     

@@ -1,6 +1,6 @@
 ---
-title: "更新のリセット ツール | Microsoft Docs"
-description: "System Center Configuration Manager のコンソール内の更新のリセット ツールを使用します。"
+title: Strumento di reimpostazione dell'aggiornamento | Microsoft Docs
+description: Usare lo strumento di reimpostazione dell'aggiornamento per gli aggiornamenti nella console per System Center Configuration Manager.
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
@@ -18,62 +18,62 @@ manager: angrobe
 ms.openlocfilehash: 1960f86e98a957559f379b9eeb6d293f7e4182e5
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="update-reset-tool"></a>更新のリセット ツール
+# <a name="update-reset-tool"></a>Strumento di reimpostazione dell'aggiornamento
 
-*適用対象: System Center Configuration Manager (Current Branch)*  
+*Si applica a: System Center Configuration Manager (Current Branch)*  
 
 
-バージョン 1706 以降、Configuration Manager のプライマリ サイトと中央管理サイトには、Configuration Manager 更新のリセット ツール **CMUpdateReset.exe** が含まれています。 このツールを使用して、コンソール内の更新プログラムのダウンロードやレプリケートに問題がある場合に、問題を修正します。 このツールはサイト サーバーの ***\cd.latest\SMSSETUP\TOOLS*** フォルダーにあります。
+A partire dalla versione 1706, i siti primari e i siti di amministrazione centrale di Configuration Manager includono lo strumento di reimpostazione dell'aggiornamento di Configuration Manager, **CMUpdateReset.exe**. Usare lo strumento per correggere gli errori quando gli aggiornamenti nella console presentano problemi durante il download o la replica. Lo strumento si trova nella cartella ***\cd.latest\SMSSETUP\TOOLS*** del server del sito.
 
-このツールは、サポートされている Current Branch のすべてのバージョンで使用できます。
+È possibile usare questo strumento con qualsiasi versione di Current Branch supportata.
 
-このツールは、[コンソール内の更新プログラム](/sccm/core/servers/manage/install-in-console-updates)がまだインストールされておらず、失敗状態のときに使用することができます。 失敗状態とは、更新プログラムのダウンロードが進行中だが、スタックしているか、極端に長い時間がかかっていることを示します。 長時間とは、同様のサイズの更新プログラム パッケージの過去の予想よりも長い時間と見なされます。 また、更新プログラムの子プライマリ サイトへのレプリケートの失敗を意味している場合もあります。  
+Usare questo strumento quando un [aggiornamento nella console](/sccm/core/servers/manage/install-in-console-updates) non è ancora installato e si trova in uno stato di errore. Uno stato di errore indica che il download dell'aggiornamento è in corso, ma è bloccato o sta richiedendo troppo tempo. Per "troppo tempo" si intende più ore di quanto previsto in base alle precedenti esperienze con aggiornamenti di dimensioni simili. Può anche trattarsi di un errore nella replica dell'aggiornamento nei siti primari figlio.  
 
-ツールを実行する際には、指定した更新プログラムに対して実行します。 既定では、このツールで正常にインストールまたはダウンロードされた更新プログラムが削除されることはありません。  
+Lo strumento viene eseguito nell'aggiornamento specificato. Per impostazione predefinita, lo strumento non elimina gli aggiornamenti scaricati o installati correttamente.  
 
-### <a name="prerequisites"></a>必要条件
-ツールの実行に使用するアカウントには、次のアクセス許可が必要です。
--   中央管理サイトと階層の各プライマリ サイトのサイト データベースへの**読み取り**と**書き込み**アクセス許可。 これらのアクセス許可を設定するため、各サイトの Configuration Manager データベースで、ユーザー アカウントを **db_datawriter** および **db_datareader** の[固定データベース ロール](/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles)のメンバーとして追加できます。 このツールは、セカンダリ サイトとは対話しません。
--   階層の最上位サイトの**ローカル管理者**。
--   サービス接続ポイントをホストするコンピューターの**ローカル管理者**。
+### <a name="prerequisites"></a>Prerequisiti
+L'account usato per eseguire lo strumento richiede le autorizzazioni seguenti:
+-   **Lettura** e **Scrittura** per il database del sito di amministrazione centrale e per ogni sito primario della gerarchia. Per impostare queste autorizzazioni, aggiungere l'account utente come membro dei [ruoli predefiniti del database ](/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles)**db_datawriter** e **db_datareader** nel database di Configuration Manager di ogni sito. Lo strumento non interagisce con i siti secondari.
+-   **Amministratore locale** nel sito di livello superiore della gerarchia.
+-   **Amministratore locale** nel computer che ospita il punto di connessione del servizio.
 
-リセットする更新プログラム パッケージの GUID が必要になります。 GUID の取得には、次の手順を実行します。
-  1.   コンソールで、**[管理]** > **[更新とサービス]** の順に進みます。
-  2.   表示ウィンドウでいずれかの列の見出し (**[状態]** など) を右クリックして、**[パッケージ GUID]** を選択し、その列を表示に追加します。
-  3.   列に、更新プログラム パッケージの GUID が表示されます。
+È necessario il GUID dell'aggiornamento da reimpostare. Per ottenere il GUID:
+  1.   Nella console passare ad **Amministrazione** > **Aggiornamenti e manutenzione**.
+  2.   Nel riquadro informazioni fare clic con il pulsante destro del mouse sull'intestazione di una delle colonne, ad esempio **Stato**, quindi selezionare **GUID pacchetto** per aggiungere tale colonna alle informazioni.
+  3.   La colonna visualizza ora il GUID dell'aggiornamento.
 
 > [!TIP]  
-> GUID をコピーするには、リセットする更新プログラム パッケージの行を選択し、CTRL + C キーを使用してその行をコピーします。 コピーした選択をテキスト エディターに貼り付けると、ツールを実行する際に、GUID のみをコピーしてコマンド ライン パラメーターとして使用できます。
+> Per copiare il GUID, selezionare la riga del pacchetto di aggiornamento da ripristinare e quindi copiarla premendo CTRL+C. Copiando la selezione in un editor di testo, è possibile copiare solo il GUID per usarlo come parametro della riga di comando quando si esegue lo strumento.
 
-### <a name="run-the-tool"></a>ツールを実行します。    
-このツールは、階層の最上位サイトで実行する必要があります。
+### <a name="run-the-tool"></a>Eseguire lo strumento    
+Lo strumento deve essere eseguito nel sito di livello superiore della gerarchia.
 
-ツールを実行するときは、コマンドライン パラメーターを使用して、次を指定します。
-  -   階層の最上位層サイトにある SQL Server。
-  -   最上位層サイトにあるサイト データベース名。
-  -   リセットする更新プログラム パッケージの GUID。
+Quando si esegue lo strumento, usare i parametri della riga di comando per specificare:
+  -   L'istanza di SQL Server nel sito di livello superiore della gerarchia.
+  -   Il nome del database del sito nel sito di livello superiore.
+  -   Il GUID dell'aggiornamento da reimpostare.
 
-ツールは、更新プログラムの状態に基づいてアクセスする必要がある追加のサーバーを識別します。   
+In base allo stato dell'aggiornamento, lo strumento identifica i server aggiuntivi a cui deve accedere.   
 
-更新プログラム パッケージが*ダウンロード後*の状態にある場合、ツールはパッケージをクリーンアップしません。 オプションとして、強制削除パラメーター (このトピックで後述するコマンド ライン パラメーターを参照) を使用して、正常にダウンロードされた更新プログラムを強制的に削除できます。
+Se il pacchetto di aggiornamento è nella fase *successiva al download*, lo strumento non esegue la pulizia del pacchetto. In alternativa, è possibile forzare la rimozione di un aggiornamento scaricato correttamente usando il parametro per l'eliminazione forzata. I parametri della riga di comando vengono descritti più avanti in questo argomento.
 
-ツールの実行後:
--   パッケージが削除された場合、最上位層サイトの SMS_Executive サービスを再起動します。 次に、再度パッケージをダウンロードするために更新プログラムを確認します。
--   パッケージが削除されていない場合は、何もする必要はありません。 更新プログラムが再初期化され、レプリケーションまたはインストールが再開されます。
+Dopo l'esecuzione dello strumento:
+-   Se un pacchetto è stato eliminato, riavviare il servizio SMS_Executive nel sito di livello superiore. Verificare la disponibilità di aggiornamenti per poter scaricare nuovamente il pacchetto.
+-   Se un pacchetto non è stato eliminato, non è necessario intraprendere alcuna azione. L'aggiornamento reinizializza e quindi riavvia la replica o l'installazione.
 
-**コマンドライン パラメーター:**  
+**Parametri della riga di comando:**  
 
-| パラメーター        |説明                 |  
+| Parametro        |Descrizione                 |  
 |------------------|----------------------------|  
-|**-S &lt;最上位層サイトの SQL Server の FQDN>** | *必須* <br> 階層の最上位層サイトのサイト データベースをホストする SQL Server の FQDN を指定します。    |  
-| **-D &lt;データベース名>**                        | *必須* <br> 最上位層サイトにあるデータベースの名前を指定します。  |  
-| **-P &lt;パッケージ GUID>**                         | *必須* <br> リセットする更新プログラム パッケージの GUID を指定します。   |  
-| **-I &lt;SQL Server インスタンス名>**             | *省略可能* <br> サイト データベースをホストする SQL Server のインスタンスを識別します。 |
-| **-FDELETE**                              | *省略可能* <br> 正常にダウンロードした更新プログラム パッケージを強制的に削除します。 |  
- **例:**  
- 一般的なシナリオで、ダウンロードに関する問題のある更新プログラムをリセットするとします。 SQL Server の FQDN が *server1.fabrikam.com* で、サイト データベースが *CM_XYZ*、パッケージ GUID が *61F16B3C-F1F6-4F9F-8647-2A524B0C802C* の場合、  次を実行します: ***CMUpdateReset.exe-s server1.fabrikam.com-d CM_XYZ-p 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
+|**-S &lt;FQDN dell'istanza di SQL Server del sito di livello superiore>** | *Richiesto* <br> Specificare il nome di dominio completo dell'istanza di SQL Server che ospita il database del sito per il sito di livello superiore della gerarchia.    |  
+| **-D &lt;Nome database>**                        | *Richiesto* <br> Specificare il nome del database nel sito di livello superiore.  |  
+| **-P &lt;GUID pacchetto>**                         | *Richiesto* <br> Specificare il GUID dell'aggiornamento da reimpostare.   |  
+| **-I &lt;Nome istanza SQL Server>**             | *Facoltativa* <br> Identifica l'istanza di SQL Server che ospita il database del sito. |
+| **-FDELETE**                              | *Facoltativa* <br> Forza l'eliminazione di un aggiornamento scaricato correttamente. |  
+ **Esempi:**  
+ In uno scenario tipico, si vuole reimpostare un aggiornamento che presenta problemi di download. L'FQDN di SQL Server è *server1.fabrikam.com*, il database del sito è *CM_XYZ* e il GUID del pacchetto è *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Eseguire: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 
- より極端なシナリオで、問題のある更新プログラム パッケージの削除を強制するとします。 SQL Server の FQDN が *server1.fabrikam.com* で、サイト データベースが *CM_XYZ*、パッケージ GUID が *61F16B3C-F1F6-4F9F-8647-2A524B0C802C* の場合、  次を実行します: ***CMUpdateReset.exe  -FDELETE -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
+ In uno scenario più complesso, si vuole forzare l'eliminazione del pacchetto di aggiornamento che crea problemi. L'FQDN di SQL Server è *server1.fabrikam.com*, il database del sito è *CM_XYZ* e il GUID del pacchetto è *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Eseguire: ***CMUpdateReset.exe  -FDELETE -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***

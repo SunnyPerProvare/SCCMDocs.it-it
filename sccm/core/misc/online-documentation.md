@@ -1,5 +1,5 @@
 ---
-title: "オンライン ドキュメント | Microsoft Docs"
+title: Documentazione online | Microsoft Docs
 ms.custom: na
 ms.date: 10/06/2016
 ms.reviewer: na
@@ -17,87 +17,87 @@ manager: angrobe
 ms.openlocfilehash: 73bb5d4236469746102fd4893c53f20aaee122d5
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="online-documentation-for-system-center-configuration-manager"></a>System Center Configuration Manager のオンライン ドキュメント
+# <a name="online-documentation-for-system-center-configuration-manager"></a>Documentazione online per System Center Configuration Manager
 
 
-System Center Configuration Manager ドキュメント ライブラリへようこそ。  
-ご使用の製品のバージョンに対応するドキュメント ライブラリを見つけてください。  
+Benvenuto nella raccolta della documentazione di System Center Configuration Manager.  
+Trovare la raccolta della documentazione per la versione del prodotto in uso:  
 
-## <a name="system-center-configuration-manager-current-branch"></a>System Center Configuration Manager (現在のブランチ)  
-**オンライン ドキュメント:** TechNet で、System Center Configuration Manager の現在のブランチに対応するオンライン ドキュメントを参照できます。  
+## <a name="system-center-configuration-manager-current-branch"></a>System Center Configuration Manager (ramo corrente)  
+**Documentazione online:** è possibile visualizzare la documentazione online per il ramo corrente di System Center Configuration Manager su TechNet:  
 
--   [System Center Configuration Manager の概要](https://technet.microsoft.com/library/mt622715.aspx)  
+-   [Introduzione a System Center Configuration Manager](https://technet.microsoft.com/library/mt622715.aspx)  
 
--   [System Center Configuration Manager の準備](https://technet.microsoft.com/library/mt608540.aspx)  
+-   [Preparativi per System Center Configuration Manager](https://technet.microsoft.com/library/mt608540.aspx)  
 
--   [System Center Configuration Manager の使用の開始](https://technet.microsoft.com/library/mt608544.aspx)  
+-   [Iniziare a usare System Center Configuration Manager](https://technet.microsoft.com/library/mt608544.aspx)  
 
--   [System Center Configuration Manager でのエンタープライズ オペレーティング システムの管理](https://technet.microsoft.com/library/mt627933.aspx)  
+-   [Gestione dei sistemi operativi aziendali con System Center Configuration Manager](https://technet.microsoft.com/library/mt627933.aspx)  
 
--   [System Center Configuration Manager でのアプリケーションの展開および管理](https://technet.microsoft.com/library/mt627959.aspx)  
+-   [Distribuire e gestire le applicazioni con System Center Configuration Manager](https://technet.microsoft.com/library/mt627959.aspx)  
 
--   [System Center Configuration Manager でのソフトウェア更新プログラムの展開および管理](https://technet.microsoft.com/library/mt634340.aspx)  
+-   [Distribuire e gestire gli aggiornamenti software in System Center Configuration Manager](https://technet.microsoft.com/library/mt634340.aspx)  
 
--   [System Center Configuration Manager でのデバイス コンプライアンスの確認](https://technet.microsoft.com/library/mt595717.aspx)  
+-   [Garantire la conformità dei dispositivi con System Center Configuration Manager](https://technet.microsoft.com/library/mt595717.aspx)  
 
--   [System Center Configuration Manager でのデータとサイト インフラストラクチャの保護](https://technet.microsoft.com/library/mt613161.aspx)  
+-   [Proteggere i dati e l'infrastruttura del sito con System Center Configuration Manager](https://technet.microsoft.com/library/mt613161.aspx)  
 
--   [System Center Configuration Manager の監視と保守](https://technet.microsoft.com/library/mt612855.aspx)  
+-   [Monitoraggio e manutenzione di System Center Configuration Manager](https://technet.microsoft.com/library/mt612855.aspx)  
 
--   [System Center Configuration Manager のセキュリティとプライバシー](https://technet.microsoft.com/library/mt622694.aspx)  
+-   [Sicurezza e privacy per System Center Configuration Manager](https://technet.microsoft.com/library/mt622694.aspx)  
 
-**リリース ノート:** リリース ノートには、製品ドキュメントに含まれていない情報、および System Center Configuration Manager を正しくインストールして使用するために必要な情報が記載されています。 「[System Center Configuration Manager リリース ノート](https://technet.microsoft.com/library/mt592024.aspx)」を参照してください。  
+**Note sulla versione:** le note sulla versione contengono informazioni che non sono disponibili nella documentazione del prodotto e potrebbero essere necessarie per installare e usare correttamente System Center Configuration Manager. Vedere [Note sulla versione per System Center Configuration Manager](https://technet.microsoft.com/library/mt592024.aspx)  
 
-**ヘルプの検索**: 「[System Center Configuration Manager の使用に関するヘルプの検索](https://technet.microsoft.com/library/mt628521.aspx)」を参照してください。  
+**Reperire informazioni:** vedere [Reperire informazioni sull'uso di System Center Configuration Manager](https://technet.microsoft.com/library/mt628521.aspx):  
 
-**ユーザー補助:** 「[Configuration Manager コンソールのユーザー補助機能](https://technet.microsoft.com/library/mt628521.aspx)」を参照してください。  
+**Accessibilità:** vedere [Funzionalità di accessibilità per la console di Configuration Manager](https://technet.microsoft.com/library/mt628521.aspx)  
 
 
 ## <a name="system-center-configuration-manager-technical-preview"></a>System Center Configuration Manager Technical Preview  
-**オンライン ドキュメント:** TechNet で、以下のガイドのオンライン ドキュメントを確認できます。  
+**Documentazione online:** è possibile visualizzare la documentazione online nelle guide seguenti su TechNet:  
 
  [System Center Configuration Manager Technical Preview](https://go.microsoft.com/fwlink/p/?LinkId=534001)  
 
-**リリース ノート:** このテクニカル プレビューのリリース ノートは、このリリースの基本ドキュメントに含まれており、各機能の情報に沿って提供されています。  
+**Note sulla versione:** le note sulla versione per questa versione Technical Preview sono incluse nella documentazione principale per questa versione e vengono presentate insieme alle informazioni per ogni funzionalità.  
 
-**アクセシビリティ:** このテクニカル プレビューのアクセシビリティ情報は、System Center 2012 Configuration Manager から変更されていません。 Configuration Manager を障碍のある方にとってより使いやすくするための機能、製品、サービスについては、「 [Configuration Manager のユーザー補助機能](http://go.microsoft.com/fwlink/p/?LinkId=258586)」をご覧ください。  
+**Accessibilità:** le informazioni sull'accessibilità per questa versione Technical Preview sono invariate rispetto a System Center 2012 Configuration Manager. Vedere [Funzionalità di accessibilità di Configuration Manager](http://go.microsoft.com/fwlink/p/?LinkId=258586), per informazioni sulle funzionalità, i prodotti e i servizi che rendono Configuration Manager più accessibile per gli utenti disabili.  
 
 ## <a name="system-center-2012-configuration-manager"></a>System Center 2012 Configuration Manager  
-**オンライン ドキュメント:** 次の製品が対象  
+**Documentazione in linea:** per gli elementi seguenti:  
 
--   System Center 2012 Configuration Manager サービス パックなし、および SP1、SP2  
+-   System Center 2012 Configuration Manager senza Service Pack, SP1 e SP2  
 
--   System Center 2012 R2 Configuration Manager サービス パックなし、および SP1  
+-   System Center 2012 R2 Configuration Manager senza Service Pack e SP1  
 
-TechNet で、以下のガイドのオンライン ドキュメントを確認できます。  
+è possibile visualizzare la documentazione online nelle guide seguenti su TechNet:  
 
--   [System Center 2012 Configuration Manager の概要](https://go.microsoft.com/fwlink/p/?LinkId=210632)  
+-   [Iniziare con System Center 2012 Configuration Manager](https://go.microsoft.com/fwlink/p/?LinkId=210632)  
 
--   [System Center 2012 Configuration Manager のサイト管理](https://go.microsoft.com/fwlink/p/?LinkId=210636)  
+-   [Amministrazione del sito per System Center 2012 Configuration Manager](https://go.microsoft.com/fwlink/p/?LinkId=210636)  
 
--   [System Center 2012 Configuration Manager の階層の移行](https://go.microsoft.com/fwlink/p/?LinkId=210645)  
+-   [Migrazione delle gerarchie con System Center 2012 Configuration Manager](https://go.microsoft.com/fwlink/p/?LinkId=210645)  
 
--   [System Center 2012 Configuration Manager のクライアントの展開](https://go.microsoft.com/fwlink/p/?LinkId=210638)  
+-   [Distribuzione dei client per System Center 2012 Configuration Manager](https://go.microsoft.com/fwlink/p/?LinkId=210638)  
 
--   [Managing Mobile Devices with Microsoft Intune and Configuration Manager (Microsoft Intune と Configuration Manager を使用したモバイル デバイスの管理) (Microsoft Intune と Configuration Manager を使用したモバイル デバイスの管理)](https://go.microsoft.com/fwlink/?LinkId=529959)  
+-   [Gestione di dispositivi mobili con Microsoft Intune e Configuration Manager](https://go.microsoft.com/fwlink/?LinkId=529959)  
 
--   [System Center 2012 Configuration Manager でのソフトウェアとオペレーティング システムの展開](https://go.microsoft.com/fwlink/p/?LinkId=210635)  
+-   [Distribuzione di software e sistemi operativi con System Center 2012 Configuration Manager](https://go.microsoft.com/fwlink/p/?LinkId=210635)  
 
--   [System Center 2012 Configuration Manager の資産とコンプライアンス](https://go.microsoft.com/fwlink/p/?LinkId=210639)  
+-   [Asset e conformità in System Center 2012 Configuration Manager](https://go.microsoft.com/fwlink/p/?LinkId=210639)  
 
--   [System Center 2012 Configuration Manager のセキュリティとプライバシー](https://go.microsoft.com/fwlink/p/?LinkId=210640)  
+-   [Protezione e privacy con System Center 2012 Configuration Manager](https://go.microsoft.com/fwlink/p/?LinkId=210640)  
 
--   [System Center 2012 Configuration Manager を使用したシナリオとソリューション](https://go.microsoft.com/fwlink/p/?LinkId=290889)  
+-   [Scenari e soluzioni per System Center 2012 Configuration Manager](https://go.microsoft.com/fwlink/p/?LinkId=290889)  
 
- **リリース ノートと技術文書:** リリース ノートと技術文書は、Configuration Manager のガイドを補足するものです。 リリース ノートには、製品ドキュメントに含まれていない情報、および Configuration Manager を正しくインストールするために必要な情報が記載されています。 技術文書では、Configuration Manager に関する追加情報を提供します。  
+ **Note sulla versione e pubblicazioni tecniche:** le note sulla versione e le pubblicazioni tecniche integrano le guide di Configuration Manager. Le note sulla versione contengono informazioni non presenti nella documentazione del prodotto e necessarie per la corretta installazione di Configuration Manager. Le pubblicazioni tecniche offrono informazioni aggiuntive a supporto di Configuration Manager.  
 
--   [System Center 2012 Configuration Manager リリース ノート](http://go.microsoft.com/fwlink/?LinkId=529437)  
+-   [Note sulla versione per System Center 2012 Configuration Manager](http://go.microsoft.com/fwlink/?LinkId=529437)  
 
--   [System Center 2012 Configuration Manager のテクニカル文書](http://go.microsoft.com/fwlink/p/?LinkId=261032)  
+-   [Pubblicazioni tecniche per System Center 2012 Configuration Manager](http://go.microsoft.com/fwlink/p/?LinkId=261032)  
 
-**アクセシビリティ:** Configuration Manager を障碍のある方にとってより使いやすくするための機能、製品、サービスについては、「 [Configuration Manager のユーザー補助機能](http://go.microsoft.com/fwlink/p/?LinkId=258586)」をご覧ください。  
+**Accessibilità:** vedere l'argomento online [Funzionalità di accessibilità di Configuration Manager](http://go.microsoft.com/fwlink/p/?LinkId=258586), per informazioni sulle funzionalità, i prodotti e i servizi che rendono Configuration Manager più accessibile per gli utenti disabili.  
 
-**ダウンロード可能なドキュメント:** [Microsoft ダウンロード センターからこの技術文書のコピー](http://go.microsoft.com/fwlink/?LinkId=253643)から変更がありません。 最新情報については、オンラインの TechNet ライブラリでご確認ください。
+**Documentazione scaricabile:** è possibile scaricare una [copia di questa documentazione tecnica dall'Area download Microsoft](http://go.microsoft.com/fwlink/?LinkId=253643). Usare la libreria TechNet online per le informazioni più aggiornate.

@@ -1,5 +1,5 @@
 ---
-title: "ネットワーク共有からの Endpoint Protection のマルウェア定義 | Microsoft Docs"
+title: Definizioni malware di Endpoint Protection da una condivisione di rete| Microsoft Docs
 ms.custom: na
 ms.date: 02/14/2017
 ms.prod: configuration-manager
@@ -16,21 +16,21 @@ manager: angrobe
 ms.openlocfilehash: 7bd9f6bc1b6314b7889543d0d6042893538736fc
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="using-the-microsoft-malware-protection-center-to-download-definitions"></a>Microsoft マルウェア プロテクション センターを使用して定義ファイルをダウンロードするには
+# <a name="using-the-microsoft-malware-protection-center-to-download-definitions"></a>Uso di Microsoft Malware Protection Center per scaricare le definizioni
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
- Microsoft マルウェア プロテクション センターから、定義ファイルの更新をダウンロードできるようにクライアントを構成することができます。 Endpoint Protection クライアントは、別のソースから更新をダウンロードできない場合に、このオプションを使用して定義ファイルの更新をダウンロードします。 この更新方法は、Configuration Manager インフラストラクチャに更新ファイルの配布を妨げる問題がある場合に役立ちます。
+ È possibile configurare i client per scaricare gli aggiornamenti delle definizioni da Microsoft Malware Protection Center. Questa opzione è usata dai client di Endpoint Protection per scaricare gli aggiornamenti delle definizioni se non sono riusciti a scaricare gli aggiornamenti da un'altra origine. Questo metodo di aggiornamento può essere utile se si verifica un problema con l'infrastruttura di Configuration Manager che impedisce il recapito degli aggiornamenti.
 
 > [!IMPORTANT]
->  この方法を使用して定義ファイルの更新をダウンロードするには、クライアントがインターネット経由で Microsoft Update にアクセスできなければなりません。
+>  Per poter usare questo metodo per scaricare gli aggiornamenti delle definizioni, i client devono avere accesso a Microsoft Update in Internet.
 
 
 > [!div class="button"]
-[次のステップ >](endpoint-antimalware-policies.md)
+[Passaggio successivo >](endpoint-antimalware-policies.md)
 
 > [!div class="button"]
-[戻る >](endpoint-configure-alerts.md)
+[Indietro >](endpoint-configure-alerts.md)

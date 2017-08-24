@@ -1,6 +1,6 @@
 ---
-title: "Dynamics CRM Online アクセスの管理 | Microsoft Docs"
-description: "Microsoft Intune 条件付きアクセスを使用して iOS および Android デバイスから Microsoft Dynamics CRM Online へのアクセスを制御する方法について説明します。"
+title: Gestire l'accesso a Dynamics CRM Online | Microsoft Docs
+description: Informazioni su come controllare l'accesso a Microsoft Dynamics CRM Online da dispositivi iOS e Android con accesso condizionale di Microsoft Intune.
 ms.custom: na
 ms.date: 03/05/2017
 ms.reviewer: na
@@ -17,84 +17,84 @@ manager: angrobe
 ms.openlocfilehash: bd00f12ae3bc14a34d24c22c3d5277d275d51e85
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-dynamics-crm-online-access-in-system-center-configuration-manager"></a>System Center Configuration Manager での Dynamics CRM Online アクセスの管理
+# <a name="manage-dynamics-crm-online-access-in-system-center-configuration-manager"></a>Gestire l'accesso a Dynamics CRM Online in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Microsoft Intune の条件付きアクセスを使用して、iOS および Android デバイスから Microsoft Dynamics CRM Online へのアクセスを制御できます。  Intune の条件付きアクセスには、2 つのコンポーネントがあります。
-* [デバイス コンプライアンス ポリシー](../../protect/deploy-use/device-compliance-policies.md): 準拠と見なされるためにデバイスが準拠する必要があるポリシーです。
-* [条件付きアクセス ポリシー](../../protect/deploy-use/manage-access-to-services.md): サービスにアクセスするためにデバイスが満たす必要のある条件を指定するポリシーです。
+È possibile controllare l'accesso a Microsoft Dynamics CRM Online da dispositivi iOS e Android con accesso condizionale di Microsoft Intune.  L'accesso condizionale di Intune include due componenti:
+* I [criteri di conformità dei dispositivi](../../protect/deploy-use/device-compliance-policies.md) che il dispositivo deve soddisfare per essere considerato conforme.
+* I [criteri di accesso condizionale](../../protect/deploy-use/manage-access-to-services.md) che consentono di specificare le condizioni che il dispositivo deve soddisfare per poter accedere al servizio.
 
-条件付きアクセスのしくみの詳細については、「[Manage access to services](../../protect/deploy-use/manage-access-to-services.md)」 (サービスへのアクセスの管理) を参照してください。
+Per altre informazioni sul funzionamento dell'accesso condizionale, leggere l'articolo [Gestire l'accesso ai servizi](../../protect/deploy-use/manage-access-to-services.md).
 
 
-対象ユーザーが各自のデバイスで Dynamics CRM を使用しようとすると、次の評価が行われます。
+Quando un utente di destinazione prova a usare l'app Dynamics CRM nel proprio dispositivo, vengono effettuate le valutazioni seguenti:
 
-![デバイスからサービスへのアクセスが許可されるか、またはブロックされるかを判断するために使用する意思決定ポイントを示す図](media/mdm-ca-dynamics-crm-flow-diagram.png)
+![La figura mostra i punti decisionali usati per determinare se consentire a un dispositivo di accedere a un servizio o bloccare l'accesso](media/mdm-ca-dynamics-crm-flow-diagram.png)
 
-Dynamics CRM Online へのアクセスを必要とするデバイスは、次の条件を満たしている必要があります。
-* **Android** または **iOS** デバイスである。
-* Microsoft Intune に**登録**されている。
-* 展開されているすべての Intune コンプライアンス ポリシーに**準拠**している。
+Il dispositivo che necessita di accedere a Dynamics CRM Online deve:
+* Essere un dispositivo **Android** o **iOS**.
+* Essere **registrato** in Microsoft Intune.
+* Essere **conforme** ai criteri di conformità di Microsoft Intune distribuiti.
 
-デバイスの状態は、Azure Active Directory に格納され、指定した条件に基づいてアクセスが許可されたりブロックされたりします。
+Lo stato del dispositivo viene archiviato in Azure Active Directory che consente o blocca l'accesso, in base alle condizioni specificate.
 
-条件が満たされない場合、ユーザーにはログイン時に以下のうちのいずれかのメッセージが表示されます。
-* デバイスが Microsoft Intune または Azure Active Directory に登録されていない場合は、会社ポータルのアプリをインストールおよび登録する手順を含むメッセージが表示されます。
-* デバイスが準拠していない場合は、Microsoft Intune の会社ポータル Web サイトまたは会社ポータルのアプリにユーザーを誘導するメッセージが表示されます。このポータルで、ユーザーは問題とその解決方法に関する情報を確認できます。
+Se non viene soddisfatta una condizione, viene visualizzato uno dei due messaggi seguenti quando l'utente esegue l'accesso:
+* Se il dispositivo non è registrato con Microsoft Intune oppure non è registrato in Azure Active Directory, viene visualizzato un messaggio contenente le istruzioni su come installare l'app Portale aziendale ed eseguire la registrazione.
+* Se il dispositivo non è conforme, viene visualizzato un messaggio che indirizza l'utente al sito Web del portale aziendale di Microsoft Intune o all'app Portale aziendale dove sono disponibili informazioni sul problema e su come risolverlo.
 
-## <a name="configure-conditional-access-for-dynamics-crm-online"></a>Dynamics CRM Online 用の条件付きアクセスの構成  
-### <a name="step-1-configure-active-directory-security-groups"></a>手順 1. Active Directory セキュリティ グループを構成する
+## <a name="configure-conditional-access-for-dynamics-crm-online"></a>Configurare l'accesso condizionale per Dynamics CRM Online  
+### <a name="step-1-configure-active-directory-security-groups"></a>Passaggio 1: Configurare i gruppi di sicurezza di Active Directory
 
-開始する前に、条件付きアクセス ポリシーの Azure Active Directory セキュリティ グループを構成します。 **Office 365 管理センター**でこれらのグループを構成できます。 これらのグループは、ユーザーをポリシーの対象にするか、または対象外にするために使用します。 ユーザーがポリシーの対象となる場合、ユーザーに使用される各デバイスがリソースにアクセスするには、ポリシーを遵守している必要があります。
+Prima di iniziare configurare i gruppi di sicurezza di Azure Active Directory per i criteri di accesso condizionale. È possibile configurare questi gruppi nel **centro di amministrazione di Office 365**. I gruppi verranno usati per applicare o ignorare i criteri per gli utenti. Per poter accedere alle risorse, un utente di destinazione in un criterio deve usare solo dispositivi conformi.
 
-Dynamics CRM ポリシーに適用する 2 つのグループの種類を指定できます。
-* **対象グループ** – ポリシーを適用するユーザーのグループを含みます。
-* **例外グループ** – ポリシーから除外されるユーザーのグループを含みます。
+È possibile specificare due tipi di gruppo da usare per i criteri di Dynamics CRM:
+* **Gruppi di destinazione**: contiene i gruppi di utenti per i quali si applicano i criteri.
+* **Gruppi esentati**: contiene i gruppi di utenti che sono esentati dai criteri.
 
-ユーザーが両方のグループに含まれている場合は、ポリシーから除外されます。
+Se un utente si trova in entrambi i gruppi, sarà esentato dai criteri.
 
-### <a name="step-2-configure-and-deploy-a-compliance-policy"></a>手順 2:コンプライアンス ポリシーを構成し展開する
-影響を受けるすべてのデバイスに対してコンプライアンス ポリシーを[作成および展開](../../protect/deploy-use/device-compliance-policies.md)します。 これらは、対象グループ内のユーザーが使用するすべてのデバイスです。
+### <a name="step-2-configure-and-deploy-a-compliance-policy"></a>Passaggio 2: Configurare e distribuire i criteri di conformità
+[Creare e distribuire](../../protect/deploy-use/device-compliance-policies.md) i criteri di conformità in tutti i dispositivi cui verranno applicati i criteri. Si tratta di tutti i dispositivi usati dagli utenti dei gruppi di destinazione.
 
 > [!NOTE]
-> コンプライアンス ポリシーは Microsoft Intune グループに展開されますが、条件付きアクセス ポリシーは、Azure Active Directory セキュリティ グループを対象とします。
+> Mentre i criteri di conformità vengono distribuiti nei gruppi di Microsoft Intune, i criteri di accesso condizionale sono destinati ai gruppi di sicurezza di Azure Active Directory.
 
 > [!IMPORTANT]
-> コンプライアンス ポリシーを展開していない場合、デバイスは準拠として扱われます。
+> Se non sono stati distribuiti criteri di conformità, i dispositivi verranno considerati conformi.
 
-準備ができたら、手順 3 に進みます。
-### <a name="step-3-configure-the-dynamics-crm-policy"></a>手順 3: Dynamics CRM ポリシーを構成する
-次に、管理デバイスおよび準拠デバイスのみが Dynamics CRM にアクセスできるように要求するポリシーを構成します。 このポリシーは、Azure Active Directory に格納されます。
+Quando si è pronti, continuare con il Passaggio 3.
+### <a name="step-3-configure-the-dynamics-crm-policy"></a>Passaggio 3: Configurare i criteri di Dynamics CRM
+A questo punto, configurare i criteri in modo che solo i dispositivi gestiti e conformi possano accedere a Dynamics CRM. Questi criteri verranno archiviati in Azure Active Directory.
 
-1.  Microsoft Intune 管理コンソールで、**[ポリシー] > [条件付きアクセス] > [Dynamics CRM Online ポリシー]** をクリックします。
+1.  Nella console di amministrazione di Microsoft Intune scegliere **Criteri > Accesso condizionale > Criteri di Dynamics CRM Online**.
 
-     ![Dynamics CRM Online の条件付きアクセス ポリシー ページのスクリーン ショット](media/mdm-ca-dynamics-crm-policy-configuration.png)
+     ![Schermata della pagina dei criteri di accesso condizionale di Dynamics CRM Online](media/mdm-ca-dynamics-crm-policy-configuration.png)
 
-2.  **[条件付きアクセス ポリシーを有効にする]**を選択します。
-3.  **[アプリケーション アクセス]**で、条件付きアクセス ポリシーの適用対象を次の中から選択できます。
+2.  Selezionare **Abilitare i criteri di accesso condizionale**.
+3.  In **Accesso all'applicazione**è possibile scegliere di applicare i criteri di accesso condizionale a:
   * **iOS**
-  * **Outlook Web Access (OWA)**
-4.  **[対象グループ]**で、 **[変更]** をクリックして、ポリシーを適用する Azure Active Directory セキュリティ グループを選択します。 すべてのユーザーを対象にすることも、選んだユーザー グループのみを対象にすることもできます。
-5.  **[例外グループ]**で、必要に応じて **[変更]** をクリックして、このポリシーから除外する Azure Active Directory セキュリティ グループを選択します。
-6.  終了したら、 **[保存]**をクリックします。
+  * **Android**
+4.  In **Gruppi di destinazione** scegliere **Modifica** per selezionare i gruppi di sicurezza di Azure Active Directory ai quali verranno applicati i criteri. È possibile scegliere applicare questa opzione a tutti gli utenti o solo a un gruppo selezionato di utenti.
+5.  Facoltativamente, in **Gruppi esentati** scegliere **Modifica** per selezionare i gruppi di sicurezza di Azure Active Directory esentati da questi criteri.
+6.  Al termine, scegliere **Salva**.
 
-これで Dynamics CRM の条件付きアクセスの構成が完了します。 条件付きアクセス ポリシーを展開する必要はありません。直ちに有効になります。
-##  <a name="monitor-the-compliance-and-conditional-access-policies"></a>コンプライアンスと条件付きアクセス ポリシーを監視する
+L'accesso condizionale per Dynamics CRM è stato configurato. Non è necessario distribuire i criteri di accesso condizionale perché diventano immediatamente effettivi.
+##  <a name="monitor-the-compliance-and-conditional-access-policies"></a>Monitorare i criteri di conformità e di accesso condizionale
 
-**[グループ]** ワークスペースで、デバイスの条件付きアクセスの状態を表示できます。
+Nell'area di lavoro **Gruppi** è possibile visualizzare lo stato dell'accesso condizionale per i dispositivi.
 
-モバイル デバイス グループを選択し、 **[デバイス]** タブで、次の **[フィルター]**のいずれかを選択します。
-* **AAD に登録されていないデバイス** – これらのデバイスは Dynamics CRM からブロックされます。
-* **準拠していないデバイス** – これらのデバイスは Dynamics CRM からブロックされます。
-* **AAD に登録され、準拠しているデバイス** – これらのデバイスは、Dynamics CRM にアクセスできます。
+Selezionare un gruppo qualsiasi di dispositivi mobili e quindi nella scheda **Dispositivi** selezionare uno dei **Filtri**seguenti:
+* **Dispositivi non registrati con AAD**: si tratta dei dispositivi che non possono accedere a Dynamics CRM.
+* **Dispositivi non conformi**: si tratta dei dispositivi che non possono accedere a Dynamics CRM.
+* **Dispositivi conformi e registrati con AAD**: si tratta dei dispositivi che possono accedere a Dynamics CRM.
 
-###  <a name="see-also"></a>関連項目
-[電子メールへのアクセスの管理](../../protect/deploy-use/manage-email-access.md)
+###  <a name="see-also"></a>Vedere anche
+[Gestire l'accesso alla posta elettronica](../../protect/deploy-use/manage-email-access.md)
 
-[SharePoint Online へのアクセスの管理](../../protect/deploy-use/manage-sharepoint-online-access.md)
+[Gestire l'accesso a SharePoint Online](../../protect/deploy-use/manage-sharepoint-online-access.md)
 
-[Skype for Business Online へのアクセスの管理](../../protect/deploy-use/manage-skype-for-business-online-access.md)
+[Gestire l'accesso a Skype for Business Online](../../protect/deploy-use/manage-skype-for-business-online-access.md)

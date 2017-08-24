@@ -1,6 +1,6 @@
 ---
-title: "修正プログラム インストーラー | Microsoft Docs"
-description: "どのような場合に、どのような方法で Configuration Manager の修正プログラム インストーラーを使用して更新プログラムをインストールするかについて説明します。"
+title: Programma di installazione degli hotfix | Microsoft Docs
+description: Informazioni su quando e come installare gli aggiornamenti usando il programma di installazione degli hotfix per Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,251 +17,251 @@ manager: angrobe
 ms.openlocfilehash: 8ffc7383e895909e6e6c4b8a7875fd5f0df2220e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-the-hotfix-installer-to-install-updates-for-system-center-configuration-manager"></a>Use the Hotfix Installer to install updates for System Center Configuration Manager (修正プログラム インストーラーを使用して、System Center Configuration Manager の更新プログラムをインストールする)
+# <a name="use-the-hotfix-installer-to-install-updates-for-system-center-configuration-manager"></a>Usare il programma di installazione di hotfix per installare gli aggiornamenti per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-一部の System Center Configuration Manager の更新プログラムは、Microsoft クラウド サービスからは使用できず、帯域外でのみ取得されます。 たとえば、特定の問題に対処する限定リリース修正プログラムです。   
-マイクロソフトから受け取った更新プログラム (または修正プログラム) をインストールする必要があり、その更新プログラムのファイル名が拡張子 **.exe** で終わる場合は (ただし、**update.exe を除く**)、その修正プログラムのダウンロードに含まれている修正プログラム インストーラーを使用して、更新プログラムを Configuration Manager サイト サーバーに直接インストールします。  
+Alcuni aggiornamenti per System Center Configuration Manager non sono disponibili dal servizio cloud Microsoft e possono essere ottenuti solo come rilascio fuori programma. Questo si verifica, ad esempio, nel caso di un hotfix a rilascio limitato per la soluzione di un problema specifico.   
+Quando è necessario installare un aggiornamento (o hotfix) ricevuto da Microsoft e tale aggiornamento ha un nome file che termina con l'estensione **.exe** (non **update.exe**), usare il programma di installazione di hotfix incluso con il download dell'hotfix per installare l'aggiornamento direttamente nel server del sito di Configuration Manager.  
 
- 修正プログラム ファイルのファイル拡張子が **.update.exe** である場合は、「[修正プログラムを System Center Configuration Manager にインポートするには、更新登録ツールを使用します](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md)」を参照してください。  
-
-> [!NOTE]  
->  このトピックでは、System Center Configuration Manager を更新する修正プログラムをインストールする方法に関する一般的なガイダンスを提供します。 特定の更新に関する詳細については、Microsoft サポートで、対応するサポート技術情報 (KB) 記事を参照してください。  
-
-##  <a name="bkmk_Overview"></a> Configuration Manager の修正プログラムの概要  
- Configuration Manager の修正プログラムは、SQL Server などの他の Microsoft 製品の修正プログラムに類似していて、1 つの個別の修正プログラムまたはバンドル (修正プログラムのロールアップ) のどちらかが含まれており、マイクロソフト サポート技術情報の記事で説明されています。  
-
- 単一の更新プログラムには、Configuration Manager を更新する修正プログラムのインストール方法について一般的なガイダンスが提供されます。  
-更新バンドルには、Configuration Manager の特定のバージョンを対象とする複数の更新プログラムが含まれています。  
-更新がバンドルである場合は、そのバンドルから個々の更新プログラムをインストールすることはできません。  
-
- 追加のコンピューターに更新プログラムをインストールするための展開を作成する予定なら、更新バンドルを中央管理サイト サーバーまたはプライマリ サイト サーバーにインストールする必要があります。  
-
- 更新バンドルを実行すると、以下のことが実行されます。  
-
--   該当する各コンポーネント用の更新ファイルが更新バンドルから抽出されます。  
-
--   更新プログラムと更新プログラムの展開オプションを構成する手順を案内するウィザードが起動されます。  
-
--   ウィザードが完了したら、サイト サーバーに適用されるバンドル内の更新プログラムがサイト サーバーにインストールされます。  
-
-また、このウィザードは、追加のコンピューターに更新プログラムをインストールするために使用できる展開も作成します。 追加のコンピューターに更新プログラムを展開するには、ソフトウェア展開パッケージや Microsoft System Center Updates Publisher 2011 などのサポートされている展開方法を使用します。  
-
- ウィザードを実行すると、Updates Publisher 2011 で使用する **.cab** ファイルがサイト サーバー上に作成されます。 必要に応じて、ソフトウェア展開用の 1 つまたは複数のパッケージを作成するようにウィザードを構成することもできます。 これらの展開を使用して、クライアントまたは Configuration Manager コンソールなどのコンポーネントに更新プログラムをインストールできます。 Configuration Manager クライアントを実行していないコンピューターに、手動で更新プログラムをインストールすることもできます。  
-
- Configuration Manager の次の 3 つのグループを更新できます。  
-
--   Configuration Manager には次のサーバーの役割があります。  
-
-    -   中央管理サイト  
-
-    -   プライマリ サイト  
-
-    -   セカンダリ サイト  
-
-    -   リモート SMS プロバイダー  
-
--   Configuration Manager コンソール  
-
--   Configuration Manager クライアント  
+ Se il file dell'hotfix ha estensione **.update.exe**, vedere [Usare lo strumento di registrazione dell'aggiornamento per importare hotfix in System Center Configuration Manager](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md).  
 
 > [!NOTE]  
->  **サイト システムの役割用の更新プログラム** (サイト データベースとクラウドベースの配布ポイントの更新を含む) は、サイト コンポーネント マネージャーによってサイト サーバーおよびサービスの更新プログラムの一部としてインストールされます。  
+>  Questo argomento fornisce indicazioni generali su come installare gli hotfix che aggiornano System Center Configuration Manager. Per informazioni dettagliate su uno specifico aggiornamento, consultare l'articolo corrispondente della Knowledge Base (KB) nel Supporto tecnico Microsoft.  
+
+##  <a name="bkmk_Overview"></a> Panoramica degli hotfix per Configuration Manager  
+ Gli hotfix per Configuration Manager sono simili a quelli per altri prodotti Microsoft, ad esempio SQL Server, contengono una singola correzione o un bundle (un rollup di correzioni) e sono descritti in un articolo della Microsoft Knowledge Base.  
+
+ Gli aggiornamenti singoli includono un solo aggiornamento mirato per una versione specifica di Configuration Manager.  
+I bundle di aggiornamenti comprendono più aggiornamenti per una versione specifica di Configuration Manager.  
+Quando un aggiornamento è in bundle, non è possibile installare singoli aggiornamenti da tale bundle.  
+
+ Se si pianifica di creare distribuzioni per installare gli aggiornamenti in computer aggiuntivi, è necessario installare il bundle di aggiornamenti in un server del sito di amministrazione centrale o del sito primario.  
+
+ Quando si esegue il bundle di aggiornamenti, si verifica quanto segue:  
+
+-   I file di aggiornamento per ciascun componente applicabile vengono estratti dal bundle di aggiornamenti.  
+
+-   Avvia una procedura guidata che descrive il processo per la configurazione degli aggiornamenti e delle opzioni di distribuzione degli aggiornamenti.  
+
+-   Quando si completa la procedura guidata, nel server del sito vengono installati gli aggiornamenti presenti nel bundle che si applicano al server del sito.  
+
+La procedura guidata crea anche distribuzioni che è possibile usare per installare gli aggiornamenti in computer aggiuntivi. Gli aggiornamenti vengono distribuiti agli altri computer utilizzando un metodo di distribuzione supportato, ad esempio un pacchetto di distribuzione software o Microsoft System Center Updates Publisher 2011.  
+
+ Quando viene eseguita la procedura guidata, viene creato un file con estensione **.cab** nel server del sito da usare con Updates Publisher 2011. Facoltativamente, è possibile configurare la procedura guidata in modo da creare anche uno o più pacchetti di distribuzione software. È possibile usare queste distribuzioni per installare aggiornamenti sui componenti, come i client o la console di Configuration Manager. È anche possibile installare manualmente gli aggiornamenti nei computer in cui non è in esecuzione il client di Configuration Manager.  
+
+ I tre gruppi seguenti in Configuration Manager possono essere aggiornati:  
+
+-   Ruoli del server di Configuration Manager, tra cui:  
+
+    -   Sito di amministrazione centrale  
+
+    -   Sito primario  
+
+    -   Sito secondario  
+
+    -   Provider SMS remoto  
+
+-   Console di Configuration Manager  
+
+-   Client di Configuration Manager  
+
+> [!NOTE]  
+>  Gli **aggiornamenti per i ruoli del sistema del sito**, inclusi gli aggiornamenti per il database del sito e i punti di distribuzione basati sul cloud, vengono installati come parte dell'aggiornamento per i servizi e i server del sito da Gestione componenti del sito.  
 >   
->  ただし、更新プル配布ポイントは、サイト コンポーネント マネージャーではなく、配布マネージャーによって処理されます。  
+>  I punti di distribuzione pull degli aggiornamenti sono tuttavia gestiti da Distribution Manager e non da Gestione componenti del sito.  
 
- Configuration Manager の各更新バンドルは、自己抽出型の .exe ファイル (SFX) です。このファイルには、Configuration Manager の適用対象コンポーネントに更新プログラムをインストールするために必要なファイルが含まれています。 通常、SFX ファイルには次のファイルが含まれています。  
+ Ogni bundle di aggiornamenti per Configuration Manager è un file EXE autoestraente (SFX) che contiene i file necessari per installare l'aggiornamento nei componenti applicabili di Configuration Manager. In genere, il file SFX può contenere i file seguenti:  
 
-|ファイル|説明|  
+|File|Dettagli|  
 |----------|-------------|  
-|&lt;製品バージョン\>-QFE-KB&lt;サポート技術情報の記事 ID\>-&lt;プラットフォーム\>-&lt;言語\>.exe|更新プログラム ファイルです。 このファイルのコマンド ラインは、Updatesetup.exe によって管理されます。<br /><br /> たとえば、<br />CM1511RTM-QFE-KB123456-X64-ENU.exe|  
-|Updatesetup.exe|.msi ラッパーは、更新プログラムのバンドルのインストールを管理します。<br /><br /> 更新プログラムを実行すると、Updatesetup.exe によって、このファイルを実行するコンピューターの表示言語が検出されます。 既定では、更新プログラムのユーザー インターフェイスは英語で表示されます。 ただし、表示言語がサポートされている場合、ユーザー インターフェイスは、コンピューターのローカル言語で表示されます。|  
-|License_&lt;言語\>.rtf|適用対象となる場合、各更新プログラムには、サポートされる言語の 1 つまたは複数のライセンス ファイルが含まれます。|  
-|&lt;製品と更新の種類>-&lt;製品バージョン\>-&lt;サポート技術情報の記事 ID\>-&lt;プラットフォーム\>.msp|更新プログラムが Configuration Manager コンソールまたはクライアントに適用される場合、更新プログラムのバンドルには、個別の Windows インストーラー修正プログラム (.msp) ファイルが含まれます。<br /><br /> たとえば、<br /><br /> **Configuration Manager コンソールの更新プログラム:** ConfigMgr1511-AdminUI-KB1234567-i386.msp<br /><br /> **クライアントの更新プログラム:** ConfigMgr1511-client-KB1234567-i386.msp<br />ConfigMgr1511-client-KB1234567-x64.msp|  
+|&lt;Versione prodotto\>-QFE-KB&lt;ID articolo KB\>-&lt;piattaforma\>-&lt;lingua\>.exe|Questo è il file di aggiornamento. La riga di comando per questo file è gestita da Updatesetup.exe.<br /><br /> Ad esempio:<br />CM1511RTM-QFE-KB123456-X64-ENU.exe|  
+|Updatesetup.exe|Questo wrapper .msi gestisce l'installazione del bundle di aggiornamenti.<br /><br /> Quando si esegue l'aggiornamento, Updatesetup.exe rileva la lingua di visualizzazione del computer in cui viene eseguito. Per impostazione predefinita, l'interfaccia utente per l'aggiornamento è in inglese. Quando la lingua di visualizzazione è supportata, l'interfaccia utente viene visualizzato nella lingua locale del computer.|  
+|License_&lt;lingua\>.rtf|Ove applicabile, ogni aggiornamento contiene uno o più file di licenza per le lingue supportate.|  
+|&lt;TipoProdotto&Aggiornamento>-&lt;versione prodotto\>-&lt;ID articolo KB\>-&lt;piattaforma\>.msp|Quando l'aggiornamento si applica alla console o ai client di Configuration Manager, il bundle di aggiornamento include file (.msp) separati della patch di Windows Installer.<br /><br /> Ad esempio:<br /><br /> **Aggiornamento della console di Configuration Manager:** ConfigMgr1511-AdminUI-KB1234567-i386.msp<br /><br /> **Aggiornamento del client:** ConfigMgr1511-client-KB1234567-i386.msp<br />ConfigMgr1511-client-KB1234567-x64.msp|  
 
- 既定では、更新プログラムのバンドルは、サイト サーバーの .log ファイルに操作の履歴を記録します。 ログ ファイルは、更新プログラムのバンドルと同じ名前で、 **%SystemRoot%/Temp** フォルダーに保存されます。  
+ Per impostazione predefinita, il bundle di aggiornamento registra le azioni in un file .log sul server del sito. Il file di log ha lo stesso nome del bundle di aggiornamento e viene scritto nella cartella **%SystemRoot%/Temp** .  
 
- 更新プログラムのバンドルを実行すると、更新プログラムのバンドルと同じ名前のファイルがコンピューターの一時フォルダーに抽出され、Updatesetup.exe が実行されます。 Updatesetup.exe によって、Configuration Manager のソフトウェア更新プログラム &lt;製品バージョン\> &lt;サポート技術情報の記事番号\> のウィザードが開始されます。  
+ Quando si esegue il pacchetto di aggiornamento, viene estratto un file con lo stesso nome del pacchetto di aggiornamento in una cartella temporanea sul computer, quindi viene eseguito Updatesetup.exe. Updatesetup.exe avvia la procedura guidata di aggiornamento software per la procedura guidata di &lt;versione prodotto\> &lt;numero KB\> di Configuration Manager.  
 
- 更新プログラムのスコープに当てはまる場合は、サイト サーバーの System Center Configuration Manager インストール フォルダーに一連のフォルダーがウィザードによって作成されます。 フォルダー構造は   
- **\\\\&lt;サーバー名\>\SMS_&lt;サイト コード\>\Hotfix\\&lt;サポート技術情報の記事番号\>\\&lt;更新プログラムの種類\>\\&lt;プラットフォーム\>**です。  
+ In base a quanto applicabile per l'ambito dell'aggiornamento, la procedura guidata crea una serie di cartelle nella cartella di installazione di System Center Configuration Manager nel server del sito. La struttura di cartelle è simile alla seguente:   
+ **\\\\&lt;Nome del server\>\SMS_&lt;Codice sito\>\HotFix\\&lt;Numero KB\>\\&lt;Tipo di aggiornamento\>\\&lt;Piattaforma\>**.  
 
- 次の表に、フォルダー構造内のフォルダーに関する詳細を示します。  
+ La tabella seguente fornisce informazioni dettagliate sulle cartelle nella struttura di cartelle:  
 
-|フォルダー名|説明|  
+|Nome cartella|Altre informazioni|  
 |-----------------|----------------------|  
-|&lt;サーバー名\>|更新プログラムのバンドルを実行するサイト サーバーの名前です。|  
-|SMS_&lt;サイト コード\>|Configuration Manager インストール フォルダーの共有名です。|  
-|&lt;サポート技術情報の記事番号\>|この更新プログラムのバンドルのサポート技術情報記事の ID 番号です。|  
-|&lt;更新プログラムの種類\>|Configuration Manager の更新プログラムの種類です。 ウィザードによって、更新プログラムのバンドルに含まれる更新プログラムの種類ごとに、個別のフォルダーが作成されます。 フォルダー名は、更新プログラムの種類を表します。 フォルダーには次のようなものがあります。<br /><br /> **サーバー**:サイト サーバー、サイト データベース サーバー、SMS プロバイダーを実行するコンピューターの更新プログラムが格納されます。<br /><br /> **クライアント**: Configuration Manager クライアントの更新プログラムが含まれています。<br /><br /> **AdminConsole**: Configuration Manager コンソールの更新プログラムが含まれています。<br /><br /> 前述の更新の種類に加えて、ウィザードでは **SCUP**という名前のフォルダーが作成されます。 このフォルダーは更新プログラムの種類を表していません。Updates Publisher の .cab ファイルが格納されます。|  
-|&lt;プラットフォーム\>|プラットフォーム別のフォルダーです。 プロセッサの種類固有の更新プログラム ファイルが格納されます。  フォルダーには次のようなものがあります。<br /><br />- x64<br /><br /> - I386|  
+|&lt;Nome del server\>|Questo è il nome del server del sito in cui si esegue il bundle di aggiornamento.|  
+|SMS_&lt;Codice sito\>|Questo è il nome della condivisione della cartella di installazione di Configuration Manager.|  
+|&lt;Numero KB\>|Questo è il numero ID dell'articolo della Knowledge Base per questo bundle di aggiornamento.|  
+|&lt;Tipo di aggiornamento\>|Questi sono i tipi di aggiornamenti per Configuration Manager. La procedura guidata crea una cartella separata per ogni tipo di aggiornamento incluso nel bundle di aggiornamento. I nomi delle cartelle rappresentano i tipi di aggiornamento. Essi includono quanto segue:<br /><br /> **Server**: include gli aggiornamenti ai server del sito, ai server del database del sito e ai computer che eseguono il provider SMS.<br /><br /> **Client**: include gli aggiornamenti del client di Configuration Manager.<br /><br /> **AdminConsole**: include gli aggiornamenti della console di Configuration Manager.<br /><br /> Oltre ai tipi di aggiornamento precedenti, la procedura guidata crea una cartella denominata **SCUP**. Questa cartella non rappresenta un tipo di aggiornamento, ma contiene invece il file CAB per Updates Publisher.|  
+|&lt;Platform\>|Si tratta di una cartella specifica della piattaforma. Contiene i file di aggiornamento specifici di un tipo di processore.  Queste cartelle includono:<br /><br />- x64<br /><br /> - I386|  
 
-##  <a name="bkmk_Install"></a> 更新プログラムのインストール方法  
- 更新プログラムをインストールするには、最初に、サイト サーバーに更新プログラムのバンドルをインストールする必要があります。 更新バンドルをインストールすると、その更新プログラムのインストール ウィザードが開始されます。 ウィザードでは次の操作が実行されます。  
+##  <a name="bkmk_Install"></a> Come installare gli aggiornamenti  
+ Per installare gli aggiornamenti, è prima necessario installare il bundle di aggiornamento in un server del sito. Quando si installa un bundle di aggiornamenti, viene avviata una procedura guidata di installazione dell'aggiornamento. Questa procedura:  
 
--   更新プログラム ファイルの抽出  
+-   Estrae i file di aggiornamento  
 
--   展開の構成のサポート  
+-   Consente di configurare le distribuzioni  
 
--   ローカル コンピューターのサーバー コンポーネントへの適用対象の更新プログラムのインストール  
+-   Installa gli aggiornamenti applicabili nei componenti del server del computer locale  
 
-サイト サーバーに更新プログラムのバンドルをインストールした後で、Configuration Manager を更新する修正プログラムのインストール方法について一般的なガイダンスを提供します。 次の表では、これらのさまざまなコンポーネントに対する更新操作について説明します。  
+Dopo aver installato il bundle di aggiornamento in un server del sito, è possibile aggiornare i componenti aggiuntivi per Configuration Manager. La tabella seguente descrive le azioni di aggiornamento per i vari componenti:  
 
-|コンポーネント|手順|  
+|Componente|Istruzioni|  
 |---------------|------------------|  
-|サイト サーバー|リモート サイト サーバーに更新プログラムのバンドルを直接インストールしない場合、リモート サイト サーバーに更新プログラムを展開します。|  
-|サイト データベース|リモート サイト サーバーに更新プログラムのバンドルを直接インストールしない場合、リモート サイト サーバー用に、サイト データベースに対する更新プログラムが含まれるサーバー更新プログラムを展開します。|  
-|Configuration Manager コンソール|Configuration Manager コンソールの最初のインストール後、コンソールを実行する各コンピューターに Configuration Manager コンソールの更新プログラムをインストールできます。 Configuration Manager コンソールのインストール ファイルを変更して、コンソールの最初のインストール中に更新プログラムを適用することはできません。|  
-|リモート SMS プロバイダー|更新プログラムのバンドルをインストールしたサイト サーバーとは別のコンピューターで実行する、SMS プロバイダーの各インスタンス用の更新プログラムをインストールします。|  
-|Configuration Manager クライアント|Configuration Manager クライアントの最初のインストール後、クライアントを実行する各コンピューターに Configuration Manager クライアントの更新プログラムをインストールできます。|  
+|Server del sito|Distribuire gli aggiornamenti in un server del sito remoto quando si sceglie di non installare il bundle di aggiornamenti direttamente sul tale server del sito remoto.|  
+|Database del sito|Per i server del sito remoti, distribuire gli aggiornamenti del server che includono un aggiornamento al database del sito se non si installa il bundle di aggiornamento su tale server del sito remoto.|  
+|Console di Configuration Manager|Dopo l'installazione iniziale della console di Configuration Manager, è possibile installare aggiornamenti per la console di Configuration Manager in ogni computer in cui è in esecuzione la console. Non è possibile modificare il file di installazione della console di Configuration Manager per applicare gli aggiornamenti durante l'installazione iniziale della console.|  
+|Provider SMS remoto|Installare gli aggiornamenti per ciascuna istanza del provider SMS che viene eseguita su un computer diverso dal server del sito dove è stato installato il bundle di aggiornamento.|  
+|Client di Configuration Manager|Dopo l'installazione iniziale del client di Configuration Manager, è possibile installare aggiornamenti per il client di Configuration Manager in ogni computer in cui è in esecuzione il client.|  
 
 > [!NOTE]  
->  更新プログラムは、Configuration Manager クライアントを実行しているコンピューターのみに展開できます。  
+>  È possibile distribuire aggiornamenti solo ai computer in cui è in esecuzione il client di Configuration Manager.  
 
- クライアント、Configuration Manager コンソール、または SMS プロバイダーを再インストールする場合、これらのコンポーネントの更新プログラムも再インストールする必要があります。  
+ Se si reinstalla un client, la console di Configuration Manager o il provider SMS, è necessario reinstallare anche gli aggiornamenti per questi componenti.  
 
- Configuration Manager の各コンポーネントに更新プログラムをインストールする詳細については、以下のセクションの情報を参照してください。  
+ Usare le informazioni delle sezioni che seguono per installare gli aggiornamenti in ognuno dei componenti per Configuration Manager.  
 
-###  <a name="bkmk_servers"></a> サーバーの更新  
- サーバーの更新には、構成に応じて、 **サイト**、 **site database**、 **SMS プロバイダー**のインスタンスを実行するコンピューターの更新が含まれます。  
+###  <a name="bkmk_servers"></a> Aggiornare i server  
+ Gli aggiornamenti per server possono includere gli aggiornamenti per i **siti**, per il **site database**e per i computer che eseguono un'istanza del **provider SMS**:  
 
-####  <a name="bkmk_site"></a> サイトの更新  
- Configuration Manager サイトを更新するには、サイト サーバーに更新プログラムのバンドルを直接インストールするか、別のサイトに更新プログラムのバンドルをインストールした後で、サイト サーバーに更新プログラムを展開するかを選べます。  
+####  <a name="bkmk_site"></a> Aggiornare un sito  
+ Per aggiornare un sito di Configuration Manager, è possibile installare il bundle di aggiornamento direttamente in un server del sito oppure distribuire gli aggiornamenti in un server del sito dopo aver installato il bundle di aggiornamento in un sito diverso.  
 
- サイト サーバーに更新プログラムをインストールする場合、更新プログラムのインストール処理で、サイト システムの役割の更新など、更新プログラムの適用に必要な追加の操作が管理されます。 例外はサイト データベースです。 次のセクションで、サイト データベースの更新方法について説明します。  
+ Quando si installa un aggiornamento su un server del sito, il processo di installazione dell'aggiornamento gestisce azioni aggiuntive richieste per applicare l'aggiornamento, come ad esempio i ruoli del sistema del sito che stanno effettuando l'aggiornamento. L'eccezione è il database del sito. La sezione seguente contiene informazioni su come aggiornare il database del sito.  
 
-####  <a name="bkmk_database"></a> サイト データベースの更新  
- サイト データベースを更新する場合、インストール処理によって、サイト データベースで **update.sql** という名前のファイルが実行されます。 サイト データベースを自動的に更新する、または、後でサイト データベースを手動で更新するように、更新処理を構成できます。  
+####  <a name="bkmk_database"></a> Aggiornare un database del sito  
+ Per aggiornare il database del sito, il processo di installazione esegue un file denominato **update.sql** sul database del sito. È possibile configurare il processo di aggiornamento per aggiornare automaticamente il database del sito oppure aggiornare manualmente il database del sito in un secondo momento.  
 
- **サイト データベースの自動更新**  
+ **Aggiornamento automatico del database del sito**  
 
- サイト サーバーに更新プログラムのバンドルをインストールする場合、サーバーの更新プログラムをインストールするときにサイト データベースを自動的に更新できます。 この指定は、更新プログラムのバンドルをインストールするサイト サーバーにのみ適用され、リモート サイト サーバーに更新プログラムをインストールするために作成される展開には適用されません。  
+ Quando si installa il bundle di aggiornamento su un server del sito, è possibile scegliere di aggiornare automaticamente il database del sito quando viene installato l'aggiornamento del server. Tale decisione si applica solo al server del sito in cui si installa il bundle di aggiornamenti e non si applica alle distribuzioni create per installare gli aggiornamenti su server del sito remoti.  
 
 > [!NOTE]  
->  サイト データベースを自動的に更新する場合、データベースがサイト サーバーとリモート コンピューターのどちらにあるかに関係なく、データベースが更新されます。  
+>  Quando si sceglie di aggiornare automaticamente il database del sito, il processo aggiorna un database indipendentemente dal fatto che sia posizionato sul server del sito o su un computer remoto.  
 
 > [!IMPORTANT]  
->  サイト データベースを更新する前に、サイト データベースのバックアップを作成します。 サイト データベースに対する更新プログラムをアンインストールすることはできません。 Configuration Manager のバックアップを作成する方法の詳細については、「[System Center Configuration Manager のバックアップと回復](../../../protect/understand/backup-and-recovery.md)」を参照してください。  
+>  Prima di aggiornare il database del sito, creare un backup del database del sito. Non è possibile disinstallare un aggiornamento nel database del sito. Per informazioni su come creare un backup per Configuration Manager, vedere [Backup e ripristino per System Center Configuration Manager](../../../protect/understand/backup-and-recovery.md).  
 
- **サイト データベースの手動更新**  
+ **Aggiornamento manuale del database del sito**  
 
- サイト サーバーに更新プログラムのバンドルをインストールするときに、サイト データベースを自動的に更新しない場合、サーバーの更新プログラムによって、更新プログラムのバンドルを実行するサイト サーバーのデータベースは変更されません。 ただし、ソフトウェアの展開用に作成されたパッケージやインストールするパッケージを使用する展開では、常にサイト データベースが更新されます。  
+ Se si sceglie di non aggiornare automaticamente il database del sito quando si installa il bundle di aggiornamento sul server del sito, l'aggiornamento del server non modifica il database sul server del sito in cui è in esecuzione il bundle di aggiornamento. Le distribuzioni che usano il pacchetto creato per la distribuzione software o installato, tuttavia, aggiornano sempre il database del sito.  
 
 > [!WARNING]  
->  更新プログラムに、サイト サーバーとサイト データベースの両方に対する更新プログラムが含まれている場合、サイト サーバーとサイト データベースの両方に対する更新が完了するまで、更新内容は機能しません。 更新プログラムがサイト データベースに適用されるまで、サイトがサポートされていない状態です。  
+>  Quando l'aggiornamento include gli aggiornamenti al server del sito e al database del sito, l'aggiornamento non è funzionale finché non è stato completato sia per il server del sito che per il database del sito. Il sito rimane in uno stato non supportato fino a che l'aggiornamento non viene applicato al database del sito.  
 
- **サイト データベースを手動で更新するには:**  
+ **Per aggiornare manualmente un database del sito:**  
 
-1.  サイト サーバーで、SMS_SITE_COMPONENT_MANAGER サービスを停止してから、SMS_EXECUTIVE サービスを停止します。  
+1.  Arrestare il servizio SMS_SITE_COMPONENT_MANAGER nel server del sito e quindi arrestare il servizio SMS_EXECUTIVE.  
 
-2.  Configuration Manager コンソールを閉じます。  
+2.  Chiudere la console di Configuration Manager.  
 
-3.  そのサイトのデータベースに対して **update.sql** という名前の更新スクリプトを実行します。 スクリプトを実行して SQL Server データベースを更新する方法の詳細については、サイト データベース サーバーで使用する SQL Server のバージョンに対応するドキュメントを参照してください。  
+3.  Eseguire lo script di aggiornamento denominato **update.sql** nel database di tale sito. Per informazioni su come eseguire uno script per aggiornare un database di SQL Server, vedere la documentazione per la versione di SQL Server utilizzata per il server del database del sito.  
 
-4.  前の手順で停止されたサービスを再起動します。  
+4.  Riavviare i servizi arrestati nei passaggi precedenti.  
 
-5.  更新プログラムのバンドルをインストールすると、サイト サーバーの場所 **\\\\&lt;サーバー名\>\SMS_&lt;サイト コード\>\Hotfix\\&lt;サポート技術情報の記事\>\update.sql** に **update.sql** が抽出されます。  
+5.  Quando si installa il bundle di aggiornamenti, viene estratto **update.sql** nel percorso seguente nel server del sito: **\\\\&lt;Nome del server\>\SMS_&lt;Codice sito\>\Hotfix\\&lt;Numero KB\>\update.sql**  
 
-####  <a name="bkmk_provider"></a> SMS プロバイダーを実行するコンピューターの更新  
- SMS プロバイダーの更新プログラムが含まれた更新バンドルをインストールした後で、SMS プロバイダーを実行する各コンピューターに更新プログラムを展開する必要があります。 この唯一の例外は、更新バンドルをインストールしたサイト サーバーに以前にインストールされた SMS プロバイダーのインスタンスです。 サイト サーバーの SMS プロバイダーのローカル インスタンスは、更新バンドルをインストールすると更新されます。  
+####  <a name="bkmk_provider"></a> Aggiornare un computer che esegue il provider SMS  
+ Dopo aver installato un pacchetto di aggiornamento che include aggiornamenti per il provider SMS è necessario distribuire l'aggiornamento in ogni computer che esegue il provider SMS. L'unica eccezione è costituita dall'istanza del provider SMS installata in precedenza nel server del sito in cui si installa il bundle di aggiornamenti. L'istanza locale del provider SMS nel server del sito viene aggiornata quando si installa il bundle di aggiornamenti.  
 
- SMS プロバイダーを削除してからコンピューターに再インストールする場合は、次に、そのコンピューターに SMS プロバイダーの更新プログラムを再インストールする必要があります。  
+ Se si rimuove e quindi si reinstalla il provider SMS in un computer, sarà necessario reinstallare l'aggiornamento per il provider SMS in tale computer.  
 
-###  <a name="BKMK_clients"></a> クライアントの更新  
- Configuration Manager の更新プログラムを含む更新プログラムをインストールするときには、更新のインストールでクライアントを自動的にアップグレードするオプション、または後でクライアントを手動でアップグレードするオプションが表示されます。 自動クライアント アップグレードの詳細については、「 [Windows コンピューター用クライアントをアップグレードする方法](https://technet.microsoft.com/library/mt627885.aspx)を更新する修正プログラムのインストール方法について一般的なガイダンスを提供します。  
+###  <a name="BKMK_clients"></a> Aggiornare i client  
+ Quando si installa un aggiornamento che include aggiornamenti per il client di Configuration Manager è possibile scegliere se aggiornare automaticamente i client con l'installazione dell'aggiornamento oppure aggiornarli manualmente in un secondo momento. Per altre informazioni sull'aggiornamento automatico dei client, vedere [Come aggiornare i client per i computer Windows](https://technet.microsoft.com/library/mt627885.aspx).  
 
- Updates Publisher またはソフトウェア展開パッケージを使って更新プログラムを展開したり、クライアントごとに更新プログラムを手動でインストールしたりすることもできます。 展開を使用して更新プログラムをインストールする方法については、このトピックの「 [Configuration Manager の更新プログラムの展開](#BKMK_Deploy) 」セクションを参照してください。  
-
-> [!IMPORTANT]  
->  クライアントの更新プログラムと、サーバーの更新プログラムが含まれた更新バンドルをインストールするときには、クライアントが割り当てられているプライマリ サイトにもサーバーの更新プログラムをインストールしてください。  
-
-クライアントの更新プログラムを手動でインストールするには、各 Configuration Manager クライアントで **Msiexec.exe** を実行し、プラットフォーム固有のクライアントの更新プログラム .msp ファイルを参照する必要があります。  
-
- たとえば、クライアントの更新プログラムに次のコマンド ラインを使用できます。 このコマンド ラインは、クライアント コンピューターで MSIEXEC を実行し、サイト サーバーで更新プログラムのバンドルから抽出された .msp ファイルを参照します。**msiexec.exe /p \\\\&lt;サーバー名\>\SMS_&lt;サイトコード\>\Hotfix\\&lt;サポート技術情報の記事番号\>\Client\\&lt;プラットフォーム\>\\&lt;msp\> /L\*v &lt;ログ ファイル\>REINSTALLMODE=mous REINSTALL=ALL**  
-
-###  <a name="BKMK_console"></a> Configuration Manager コンソールの更新  
- Configuration Manager コンソールを更新するには、コンソールのインストールが終了した後で、コンソールを実行するコンピューターに更新プログラムをインストールする必要があります。  
+ È possibile distribuire gli aggiornamenti con Updates Publisher o un pacchetto di distribuzione software oppure è possibile scegliere di installare manualmente l'aggiornamento in ogni client. Per altre informazioni su come usare le distribuzioni per installare gli aggiornamenti, vedere la sezione [Distribuire gli aggiornamenti per Configuration Manager](#BKMK_Deploy) in questo argomento.  
 
 > [!IMPORTANT]  
->  Configuration Manager コンソールの更新プログラムと、サーバーの更新プログラムが含まれた更新バンドルをインストールするときに、Configuration Manager コンソールなどのコンポーネントに更新プログラムをインストールできます。  
+>  Quando si installano gli aggiornamenti per i client e il pacchetto di aggiornamento include aggiornamenti per i server, assicurarsi di installare anche gli aggiornamenti server nel sito primario a cui sono assegnati i client.  
 
-更新するコンピューターで Configuration Manager クライアントを実行している場合:  
+Per installare manualmente l'aggiornamento software, è necessario eseguire **Msiexec.exe** e fare riferimento al file con estensione MSP specifico della piattaforma in ogni client di Configuration Manager.  
 
--   展開を使用して更新プログラムをインストールできます。 展開を使用して更新プログラムをインストールする方法については、このトピックの「 [Configuration Manager の更新プログラムの展開](#BKMK_Deploy) 」セクションを参照してください。  
+ Ad esempio, è possibile utilizzare la seguente riga di comando per un aggiornamento client. Questa riga di comando esegue MSIEXEC nel computer client e fa riferimento al file MSP estratto dal pacchetto di aggiornamento nel server del sito: **msiexec.exe /p \\\\&lt;NomeServer\>\SMS_&lt;CodiceSito\>\Hotfix\\&lt;Numero KB\>\Client\\&lt;Piattaforma\>\\&lt;msp\> /L\*v &lt;filelog\>REINSTALLMODE=mous REINSTALL=ALL**  
 
--   クライアント コンピューターに直接ログオンしている場合は、インストールを対話的に実行することができます。  
-
--   コンピューターごとに更新プログラムを手動でインストールできます。 Configuration Manager コンソールの更新プログラムを手動でインストールするには、Configuration Manager コンソールを実行する各コンピューターで Msiexec.exe を実行して、Configuration Manager コンソール更新プログラムの .msp ファイルを参照する必要があります。  
-
-たとえば、次のコマンド ラインを使用して Configuration Manager コンソールを更新できます。 このコマンド ラインは、クライアント コンピューターで MSIEXEC を実行し、サイト サーバーで更新プログラムのバンドルから抽出された .msp ファイルを参照します。**msiexec.exe /p \\\\&lt;サーバー名\>\SMS_&lt;サイト コード\>\Hotfix\\&lt;サポート技術情報の記事番号\>\AdminConsole\\&lt;プラットフォーム\>\\&lt;msp\> /L\*v &lt;ログ ファイル\>REINSTALLMODE=mous REINSTALL=ALL**  
-
-##  <a name="BKMK_Deploy"></a> Configuration Manager の更新プログラムの展開  
- サイト サーバーに更新バンドルをインストールしたら、以下の 3 つの方法のいずれかで他のコンピューターに更新プログラムを展開できます。  
-
-###  <a name="BKMK_DeploySCUP"></a> Updates Publisher 2011 を使用した更新プログラムのインストール  
- サイト サーバーに更新バンドルをインストールすると、対象コンピューターに更新プログラムを展開するのに使用できる Updates Publisher のカタログ ファイルがインストール ウィザードによって作成されます。 オプション **[パッケージとプログラムを使用して、この更新プログラムを展開する]**を更新する修正プログラムのインストール方法について一般的なガイダンスを提供します。  
-
- Updates Publisher のカタログは **SCUPCatalog.cab** という名前で、更新バンドルを実行しているコンピューター上の場所 **\\\\&lt;サーバー名\>\SMS_&lt;サイト コード\>\Hotfix\\&lt;サポート技術情報の記事番号\>\SCUP\SCUPCatalog.cab** にあります。  
+###  <a name="BKMK_console"></a> Aggiornare le console di Configuration Manager  
+ Per aggiornare una console di Configuration Manager, al termine dell'installazione della console è necessario installare l'aggiornamento nel computer che esegue la console.  
 
 > [!IMPORTANT]  
->  SCUPCatalog.cab ファイルは、更新バンドルがインストールされているサイト サーバー固有のパスを使用して作成されるため、他のサイト サーバーで使用することはできません。  
+>  Quando si installano gli aggiornamenti per la console di Configuration Manager e il pacchetto di aggiornamento include aggiornamenti per i server, assicurarsi di installare anche gli aggiornamenti server nel sito che si usa con la console di Configuration Manager.  
 
- ウィザードが終了したら、Updates Publisher にカタログをインポートしてから、Configuration Manager のソフトウェア更新プログラムを使用して更新プログラムを展開できます。 Updates Publisher の詳細については、System Center 2012 の TechNet ライブラリの「[Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkID=83449)」を参照してください。  
+Se il computer che si aggiorna esegue il client di Configuration Manager:  
 
- Updates Publisher に SCUPCatalog.cab ファイルをインポートして更新プログラムを発行するには、次の手順に従います。  
+-   È possibile usare una distribuzione per installare l'aggiornamento. Per altre informazioni su come usare le distribuzioni per installare gli aggiornamenti, vedere la sezione [Distribuire gli aggiornamenti per Configuration Manager](#BKMK_Deploy) in questo argomento.  
 
-##### <a name="to-import-the-updates-to-updates-publisher-2011"></a>Updates Publisher 2011 に更新プログラムをインポートするには  
+-   Se si è connessi direttamente al computer client, è possibile eseguire l'installazione in modo interattivo.  
 
-1.  Updates Publisher コンソールを起動し、**[インポート]** をクリックします。  
+-   È possibile installare manualmente l'aggiornamento in ogni computer. Per installare manualmente l'aggiornamento della console di Configuration Manager, in ogni computer che esegue la console di Configuration Manager è possibile eseguire Msiexec.exe e fare riferimento al file MSP di aggiornamento della console di Configuration Manager.  
 
-2.  ソフトウェア更新プログラム カタログのインポート ウィザードの [ **インポートの種類** ] ページで、[ **インポートするカタログへのパスを指定**] を選択してから、SCUPCatalog.cab ファイルを指定します。  
+Ad esempio, è possibile usare la riga di comando seguente per aggiornare una console di Configuration Manager. Questa riga di comando esegue MSIEXEC nel computer e fa riferimento al file MSP estratto dal pacchetto di aggiornamento nel server del sito: **msiexec.exe /p \\\\&lt;NomeServer\>\SMS_&lt;CodiceSito\>\Hotfix\\&lt;Numero KB\>\AdminConsole\\&lt;Piattaforma\>\\&lt;msp\> /L\*v &lt;filelog\>REINSTALLMODE=mous REINSTALL=ALL**  
 
-3.  [ **次へ**] をクリックしてから、もう一度 [ **次へ** ] をクリックします。  
+##  <a name="BKMK_Deploy"></a> Distribuire gli aggiornamenti per Configuration Manager  
+ Dopo aver installato il bundle di aggiornamenti in un server del sito, è possibile distribuire gli aggiornamenti in altri computer usando uno dei tre metodi seguenti.  
 
-4.  [ **セキュリティ警告 - カタログ検証** ] ダイアログ ボックスで、[ **同意する**] をクリックします。 終了したら、ウィザードを閉じます。  
+###  <a name="BKMK_DeploySCUP"></a> Usare Updates Publisher 2011 per installare gli aggiornamenti  
+ Quando si installa il bundle di aggiornamenti in un server del sito, la procedura guidata di installazione crea un file di catalogo per Updates Publisher che è possibile usare per distribuire gli aggiornamenti nei computer applicabili. La procedura guidata crea sempre questo catalogo, anche quando si seleziona l'opzione **Use package and program to deploy this update**.  
 
-5.  Updates Publisher コンソールで、展開する更新プログラムを選んでから、**[発行]** をクリックします。  
+ Il catalogo per Updates Publisher è denominato **SCUPCatalog.cab** ed è disponibile nel percorso seguente del computer in cui viene eseguito il bundle di aggiornamenti: **\\\\&lt;NomeServer\>\SMS_&lt;CodiceSito\>\Hotfix\\&lt;Numero KB\>\SCUP\SCUPCatalog.cab**  
 
-6.  ソフトウェア更新プログラムの発行ウィザードの [ **発行オプション** ] ページで、[ **完全なコンテンツ**] を選択してから、[ **次へ**] をクリックします。  
+> [!IMPORTANT]  
+>  Poiché viene creato utilizzando i percorsi specifici per il server del sito in cui viene installato il pacchetto di aggiornamento, il file SCUPCatalog.cab non può essere utilizzato in altri server del sito.  
 
-7.  ウィザードを完了して更新プログラムを発行します。  
+ Al termine della procedura guidata è possibile importare il catalogo in Updates Publisher e usare gli aggiornamenti software di Configuration Manager per distribuire gli aggiornamenti. Per informazioni su Updates Publisher, vedere [Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkID=83449) nella libreria TechNet per System Center 2012.  
 
-###  <a name="BKMK_DeploySWDist"></a> ソフトウェア展開を使用した更新プログラムのインストール  
- プライマリ サイトまたは中央管理サイトのサイト サーバーに更新バンドルをインストールするときに、ソフトウェア展開の更新プログラム パッケージを作成するようにインストール ウィザードを構成できます。 その後で、更新するコンピューターのコレクションに各パッケージを展開できます。  
+ Usare la procedura seguente per importare il file SCUPCatalog.cab in Updates Publisher e pubblicare gli aggiornamenti.  
 
- ソフトウェア展開パッケージを作成するには、ウィザードの [ソフトウェア更新プログラムの展開の構成] ページで、更新する更新プログラム パッケージの各種類のチェック ボックスをオンにします。 **** 使用可能な種類には、サーバー、Configuration Manager コンソール、クライアントを含めることができます。 選択した更新プログラムの種類ごとに、別々のパッケージが作成されます。  
+##### <a name="to-import-the-updates-to-updates-publisher-2011"></a>Per importare gli aggiornamenti in Updates Publisher 2011  
+
+1.  Avviare la console di Updates Publisher e fare clic su **Import**.  
+
+2.  Nella pagina **Import Type** della procedura guidata Import Software Updates Catalog Wizard selezionare **Specify the path to the catalog to import**, quindi specificare il file SCUPCatalog.cab.  
+
+3.  Fare clic su **Next**, quindi fare clic di nuovo su **Next** .  
+
+4.  Nella finestra di dialogo **Security Warning - Catalog Validation** fare clic su **Accept**. Al termine, chiudere la procedura guidata.  
+
+5.  Nella console di Updates Publisher selezionare l'aggiornamento da distribuire e quindi fare clic su **Publish**.  
+
+6.  Nella pagina **Publish Options** della procedura guidata Publish Software Updates Wizard selezionare **Full Content**e quindi fare clic su **Next**.  
+
+7.  Completare la procedura guidata per pubblicare gli aggiornamenti.  
+
+###  <a name="BKMK_DeploySWDist"></a> Usare la distribuzione software per installare gli aggiornamenti  
+ Quando si installa il bundle di aggiornamenti nel server del sito di un sito primario o di un sito di amministrazione centrale, è possibile configurare la procedura guidata di installazione per creare pacchetti di aggiornamento per la distribuzione software. È quindi possibile distribuire ogni pacchetto in una raccolta di computer che si desidera aggiornare.  
+
+ Per creare un pacchetto di distribuzione software, nella pagina **Configure Software Update Deployment** della procedura guidata selezionare la casella di controllo relativa a ogni tipo di pacchetto di aggiornamento che si desidera aggiornare. I tipi disponibili possono includere server, console di Configuration Manager e client. Viene creato un pacchetto separato per ogni tipo di aggiornamento selezionato.  
 
 > [!NOTE]  
->  サーバーのパッケージには、次のコンポーネントの更新プログラムが含まれます。  
+>  Il pacchetto per i server contiene aggiornamenti per i seguenti componenti:  
 >   
->  -   サイト サーバー  
->  -   SMS プロバイダー  
->  -   サイト データベース  
+>  -   Server del sito  
+>  -   provider SMS  
+>  -   Database del sito  
 
- 次に、ウィザードの [ **ソフトウェア更新プログラムの展開方法の構成** ] ページで、オプション [ **ソフトウェア配布を使用する**] を選択します。 選択すると、ウィザードによってソフトウェア展開パッケージが作成されます。  
+ Quindi, nella pagina **Configure Software Update Deployment Method** della procedura guidata selezionare l'opzione **I will use software distribution**. Questa selezione imposta la procedura guidata in modo da creare i pacchetti di distribuzione software.  
 
- ウィザードが完了したら、Configuration Manager コンソールで作成したパッケージを **[ソフトウェア ライブラリ]** ワークスペースの **[パッケージ]** ノードに表示することができます。 その後、標準のプロセスを使用して Configuration Manager クライアントにソフトウェア パッケージを展開できます。 クライアントでパッケージを実行すると、クライアント コンピューターの Configuration Manager の該当するコンポーネントに更新プログラムがインストールされます。  
+ Al termine della procedura guidata, è possibile visualizzare i pacchetti creati nella console di Configuration Manager nel nodo **Pacchetti** nell'area di lavoro **Raccolta software**. È quindi possibile usare il processo standard per distribuire i pacchetti software nei client di Configuration Manager. Quando viene eseguito un pacchetto in un client, gli aggiornamenti dei componenti applicabili di Configuration Manager vengono installati nel computer client.  
 
- Configuration Manager クライアントへのパッケージの展開方法については、「[Packages and programs in System Center Configuration Manager](../../../apps/deploy-use/packages-and-programs.md)」(System Center Configuration Manager のパッケージとプログラム) を参照してください。  
+ Per informazioni su come distribuire i pacchetti ai client di Configuration Manager, vedere [Pacchetti e programmi in System Center Configuration Manager](../../../apps/deploy-use/packages-and-programs.md).  
 
-###  <a name="BKMK_DeployCollections"></a> Configuration Manager に更新プログラムを展開するためのコレクションの作成  
- 該当するクライアントに特定の更新プログラムを展開できます。 Configuration Manager の複数の異なるコンポーネントのデバイス コレクションを作成するときに、以下の情報をご参照ください。  
+###  <a name="BKMK_DeployCollections"></a> Creare raccolte per la distribuzione degli aggiornamenti in Configuration Manager  
+ È possibile distribuire aggiornamenti specifici nei client applicabili. Le informazioni seguenti consentono di creare raccolte di dispositivi per i vari componenti per Configuration Manager.  
 
-|Configuration Manager のコンポーネント|手順|  
+|Componente di Configuration Manager|Istruzioni|  
 |----------------------------------------|------------------|  
-|中央管理サイト サーバー|ダイレクト メンバーシップのクエリを作成して、中央管理サイト サーバー コンピューターを追加します。|  
-|すべてのプライマリ サイト サーバー|ダイレクト メンバーシップのクエリを作成して、各プライマリ サイト サーバー コンピューターを追加します。|  
-|すべてのセカンダリ サイト サーバー|ダイレクト メンバーシップのクエリを作成して、各セカンダリ サイト サーバー コンピューターを追加します。|  
-|すべての x86 クライアント|次のクエリ条件でコレクションを作成します。<br /><br /> **Select \* from SMS_R_System inner join SMS_G_System_SYSTEM on SMS_G_System_SYSTEM.ResourceID = SMS_R_System.ResourceId where SMS_G_System_SYSTEM.SystemType = "X86-based PC"**|  
-|すべての x64 クライアント|次のクエリ条件でコレクションを作成します。<br /><br /> **Select \* from SMS_R_System inner join SMS_G_System_SYSTEM on SMS_G_System_SYSTEM.ResourceID = SMS_R_System.ResourceId where SMS_G_System_SYSTEM.SystemType = "X64-based PC"**|  
-|Configuration Manager コンソールを実行しているすべてのコンピューター|ダイレクト メンバーシップのクエリを作成して、各コンピューターを追加します。|  
-|SMS プロバイダーのインスタンスを実行するリモート コンピューター|ダイレクト メンバーシップのクエリを作成して、各コンピューターを追加します。|  
+|Server del sito di amministrazione centrale|Creare una query di appartenenza diretta e aggiungere il computer del server del sito di amministrazione centrale.|  
+|Tutti i server del sito primario|Creare una query di appartenenza diretta e aggiungere ogni computer del server del sito primario.|  
+|Tutti i server del sito secondario|Creare una query di appartenenza diretta e aggiungere ogni computer del server del sito secondario.|  
+|Tutti i client x86|Creare una raccolta con i seguenti criteri di query:<br /><br /> **Select \* from SMS_R_System inner join SMS_G_System_SYSTEM on SMS_G_System_SYSTEM.ResourceID = SMS_R_System.ResourceId where SMS_G_System_SYSTEM.SystemType = "X86-based PC"**|  
+|Tutti i client x64|Creare una raccolta con i seguenti criteri di query:<br /><br /> **Select \* from SMS_R_System inner join SMS_G_System_SYSTEM on SMS_G_System_SYSTEM.ResourceID = SMS_R_System.ResourceId where SMS_G_System_SYSTEM.SystemType = "X64-based PC"**|  
+|Tutti i computer che eseguono la console di Configuration Manager|Creare una query di appartenenza diretta e aggiungere ogni computer.|  
+|Computer remoti che eseguono un'istanza del provider SMS|Creare una query di appartenenza diretta e aggiungere ogni computer.|  
 
 > [!NOTE]  
->  サイト データベースを更新するには、そのサイトのサイト サーバーに更新プログラムを展開します。  
+>  Per aggiornare un database del sito, è necessario distribuire l'aggiornamento nel server del sito per tale sito.  
 
- コレクションを作成する方法については、「[System Center Configuration Manager でコレクションを作成する方法](../../../core/clients/manage/collections/create-collections.md)」を参照してください。  
+ Per informazioni su come creare raccolte, vedere [Come creare le raccolte in System Center Configuration Manager](../../../core/clients/manage/collections/create-collections.md).  

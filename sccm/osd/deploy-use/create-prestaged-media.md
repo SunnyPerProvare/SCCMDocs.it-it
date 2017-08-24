@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager を使用した事前設定されたメディアの作成 | Microsoft Docs"
-description: "いくつかのシナリオで Windows の展開を簡素化するため、System Center Configuration Manager で事前設定されたメディアを作成します。"
+title: Creare supporti pre-installati con System Center Configuration Manager | Microsoft Docs
+description: Creare supporti preinstallati in System Center Configuration Manager per semplificare la distribuzione di Windows in diversi scenari.
 ms.custom: na
 ms.date: 04/11/2017
 ms.prod: configuration-manager
@@ -17,128 +17,128 @@ manager: angrobe
 ms.openlocfilehash: 33abf3853d912d423e427db4d35fb4a16167164e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-prestaged-media-with-system-center-configuration-manager"></a>System Center Configuration Manager を使用した事前設定されたメディアの作成
+# <a name="create-prestaged-media-with-system-center-configuration-manager"></a>Creare supporti pre-installati con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager で事前設定されたファイルは、Windows Imaging Format (WIM) と呼ばれる形式のファイルであり、製造元によるベア メタル コンピューター、または Configuration Manager 環境に接続していない企業の準備センターにインストールすることができます。  
-事前設定されたメディアには展開先のコンピューターを起動するのに使用するブート イメージと、展開先のコンピューターに適用されるオペレーティング システム イメージを含んでいます。 また、事前設定されたメディアの一部として含める、アプリケーション、パッケージ、およびドライバー パッケージを指定できます。 オペレーティング システムを展開するタスク シーケンスはメディアに含まれていません。 事前設定されたメディアは、コンピューターがエンドユーザーに渡る前に、新しいコンピューターのハード ドライブに適用されます。 事前設定されたメディアは、次のオペレーティング システムの展開シナリオに使用します。  
+I supporti preinstallati in System Center Configuration Manager sono file WIM (Windows Imaging Format) che possono essere installati in un computer bare metal dal produttore o in un centro di gestione temporanea aziendale non connesso all'ambiente di Configuration Manager.  
+Il supporto pre-installato contiene l'immagine di avvio usata per avviare il computer di destinazione e l'immagine del sistema operativo applicata al computer di destinazione. È anche possibile specificare applicazioni, pacchetti e pacchetti driver da includere come parte del supporto pre-installato. La sequenza di attività che distribuisce il sistema operativo non è inclusa nel supporto. Il supporto pre-installato viene applicato al disco rigido di un nuovo computer prima che il computer venga inviato all'utente finale. Usare i supporti preinstallati per gli scenari di distribuzione del sistema operativo seguenti:  
 
--   [工場出荷時の OEM 用、または現地保管場所用のイメージの作成](../../osd/deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
+-   [Creare un'immagine per un OEM in modalità produttore computer o per un rivenditore locale](../../osd/deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
 
--   [新しいコンピューター (ベア メタル) に新しいバージョンの Windows をインストールする](install-new-windows-version-new-computer-bare-metal.md)  
+-   [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)  
 
--   [Windows to Go の展開](deploy-windows-to-go.md)  
+-   [Distribuire Windows to Go](deploy-windows-to-go.md)  
 
- 事前設定されたメディアを適用して初めてコンピューターを起動すると、コンピューターは Windows PE を起動し、オペレーティング システム展開プロセスを完了するタスク シーケンスが置かれている管理ポイントに接続します。 事前設定されたメディアの一部として、アプリケーション、パッケージ、およびドライバー パッケージを含めることができます。 事前設定されたメディアを使用するタスク シーケンスを展開すると、ウィザードによって、まずローカルのタスク シーケンス キャッシュ内に有効なコンテンツがあることが確認され、コンテンツが見つからない場合、またはコンテンツが改訂された場合は、配布ポイントからコンテンツがダウンロードされます。  
+ Quando viene avviato per la prima volta dopo l'applicazione del supporto pre-installato, il computer avvia Windows PE e si connette a un punto di gestione per trovare la sequenza di attività che completa il processo di distribuzione del sistema operativo. È possibile specificare applicazioni, pacchetti e pacchetti driver da includere come parte del supporto preinstallato. Quando si distribuisce una sequenza di attività che usa un supporto pre-installato, la procedura guidata verifica innanzitutto la presenza di contenuto valido nella cache della sequenza di attività locale. Se non è possibile trovare il contenuto oppure il contenuto è stato rivisto, la procedura guidata scarica il contenuto dal punto di distribuzione.  
 
-##  <a name="BKMK_CreatePrestagedMedia"></a> 事前設定されたメディアの作成方法  
- タスク シーケンス メディアの作成ウィザードを使用して、事前設定されたメディアを作成する前に、次の条件がすべて満たされていることを確認してください。  
+##  <a name="BKMK_CreatePrestagedMedia"></a> Come creare un supporto pre-installato  
+ Prima di creare un supporto preinstallato usando la Creazione guidata del supporto per la sequenza attività, assicurarsi che siano soddisfatte tutte le condizioni seguenti:  
 
-|タスク|説明|  
+|Attività|Descrizione|  
 |----------|-----------------|  
-|ブート イメージ|オペレーティング システムを展開するためにタスク シーケンスで使用するブート イメージについて、次の事項を考慮してください。<br /><br /> -   ブート イメージのアーキテクチャが、展開先のコンピューターのアーキテクチャに対して適切である必要があります。 たとえば、x64 のコンピューターでは、x86 または x64 のブート イメージを起動して実行できます。 ただし、x86 のコンピューターで起動して実行できるのは、x86 ブート イメージのみです。<br />-  ブート イメージに、対象コンピューターのプロビジョニングに必要なネットワーク ドライバーと大容量記憶装置ドライバーが含まれている必要があります。|  
-|オペレーティング システムを展開するタスク シーケンスを作成する|事前設定されたメディアの一部として、オペレーティング システムを展開するタスク シーケンスを指定する必要があります。<br /><br /> -  新しいタスク シーケンスを作成する手順については、「[オペレーティング システムをインストールするタスク シーケンスの作成](../../osd/deploy-use/create-a-task-sequence-to-install-an-operating-system.md)」を参照してください。<br />-  タスク シーケンスの詳細については、「[タスクを自動化するためのタスク シーケンスの管理](../../osd/deploy-use/manage-task-sequences-to-automate-tasks.md)」を参照してください。|  
-|タスク シーケンスに関連付けられているすべてのコンテンツを配布する|1 つ以上の配布ポイントに対し、タスク シーケンスに必要なすべてのコンテンツを配布する必要があります。 これには、ブート イメージ、オペレーティング システム イメージ、その他の関連するファイルが含まれます。 スタンドアロン メディアの作成時に、ウィザードによって配布ポイントから情報が収集されます。 配布ポイントのコンテンツ ライブラリへの **読み取り** アクセス権を持っている必要があります。  詳細については、「[コンテンツ ライブラリについて](../../core/plan-design/hierarchy/the-content-library.md)」を参照してください。|  
-|展開先のコンピューター上のハード ディスク ドライブ|事前設定メディアをコンピューターのハード ドライブにステージングする前に、セットアップ先のコンピューターのハード ドライブをフォーマットする必要があります。 メディアの適用時にハード ドライブがフォーマットされていないと、オペレーティング システムを展開するタスク シーケンスが対象コンピューターを起動しようとしたときに、このタスク シーケンスは失敗します。|  
+|Immagine d'avvio|Tenere presente quanto segue per l'immagine d'avvio da usare nella sequenza di attività per distribuire il sistema operativo:<br /><br /> - L'architettura dell'immagine di avvio deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86.<br />- Verificare che l'immagine di avvio contenga i driver di archiviazione di rete e di massa necessari per eseguire il provisioning del computer di destinazione.|  
+|Creare una sequenza di attività per distribuire un sistema operativo|Come parte del supporto preinstallato, è necessario specificare la sequenza di attività per distribuire il sistema operativo.<br /><br /> - Per i passaggi necessari per creare una nuova sequenza di attività, vedere [Creare una sequenza di attività per installare un sistema operativo](../../osd/deploy-use/create-a-task-sequence-to-install-an-operating-system.md).<br />- Per altre informazioni sulle sequenze di attività, vedere l'argomento sulla [gestione delle sequenze di attività per automatizzare le attività](../../osd/deploy-use/manage-task-sequences-to-automate-tasks.md).|  
+|Distribuire tutto il contenuto associato alla sequenza di attività|È necessario distribuire in almeno un punto di distribuzione tutto il contenuto richiesto dalla sequenza di attività. Ciò include l'immagine d'avvio, l'immagine del sistema operativo e altri file associati. La procedura guidata raccoglie le informazioni dal punto di distribuzione quando viene creato il supporto autonomo. È necessario avere i diritti di accesso in **lettura** alla raccolta contenuto nel punto di distribuzione.  Per informazioni dettagliate, vedere [Informazioni sulla raccolta contenuto](../../core/plan-design/hierarchy/the-content-library.md).|  
+|Disco rigido nel computer di destinazione|È necessario eseguire la formattazione del disco rigido del computer di destinazione prima che il supporto di pre-installazione venga installato nel disco rigido del computer. Se il disco rigido non è formattato quando viene applicato il supporto, la sequenza di attività che distribuisce il sistema operativo non riuscirà ad avviare il computer di destinazione.|  
 
 > [!NOTE]  
->  タスク シーケンス メディアの作成ウィザードは、次のタスク シーケンス変数条件をメディアに設定します: **_SMSTSMediaType = OEMMedia**。 この条件をタスク シーケンスで使用できます。  
+>  La Creazione guidata del supporto per la sequenza di attività imposta la seguente condizione variabile di sequenza di attività nel supporto: **_SMSTSMediaType = OEMMedia**. È possibile usare questa condizione nella sequenza di attività.  
 
- 事前設定メディアを作成するには、次の手順に従います。  
+ Usare la procedura seguente per creare supporti pre-installati.  
 
-#### <a name="to-create-prestaged-media"></a>事前設定メディアを作成するには  
+#### <a name="to-create-prestaged-media"></a>Per creare supporti pre-installati  
 
-1.  Configuration Manager コンソールで、 **[ソフトウェア ライブラリ]** をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス**] をクリックします。  
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
 
-3.  [ **ホーム** ] タブの [ **作成** ] グループで [ **タスク シーケンス メディアの作成** ] をクリックして、タスク シーケンス メディアの作成ウィザードを起動します。  
+3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea supporto per sequenza di attività** per avviare la Creazione guidata del supporto per la sequenza di attività.  
 
-4.  [ **メディアの種類の選択** ] ページで、次の情報を指定してから、[ **次へ** ] をクリックします。  
+4.  Nella pagina **Seleziona tipo di supporto** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
 
-    -   [ **事前設定されたメディア** ] を選択します。  
+    -   Selezionare **Supporti preinstallati**.  
 
-    -   必要に応じて、ユーザーの入力なしにオペレーティング システムを展開できるようにするには、[ **オペレーティング システムの無人展開を許可する** ] を選択します。 このオプションを選択すると、ネットワーク構成情報またはオプションのタスク シーケンスのプロンプトはユーザーに表示されません。 ただし、メディアにパスワード保護が構成されている場合は、パスワードの入力を求めるメッセージがユーザーに表示されます。  
+    -   Se si desidera consentire la distribuzione del sistema operativo senza l'interazione dell'utente, selezionare **Consenti distribuzione automatica del sistema operativo**. Quando si seleziona questa opzione, all'utente non verrà chiesto di immettere informazioni sulla configurazione di rete o di scegliere se eseguire sequenze attività facoltative. Tuttavia, all'utente viene richiesta una password se il supporto è configurato per la protezione con password.  
 
-5.  [ **メディアの管理** ] ページで、次の情報を指定してから、[ **次へ** ] をクリックします。  
+5.  Nella pagina **Gestione del supporto** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
 
-    -   サイト境界内のクライアントの場所に基づいて、ある管理ポイントから別の管理ポイントにメディアをリダイレクトできるようにする場合は、[ **動的メディア** ] を選択します。  
+    -   Selezionare **Supporto dinamico** se si desidera consentire a un punto di gestione di reindirizzare il supporto a un altro punto di gestione, in base al percorso del client nei limiti del sito.  
 
-    -   指定の管理ポイントにのみメディアを接続する必要がある場合は、[ **サイトベースのメディア** ] を選択します。  
+    -   Selezionare **Supporto basato su sito** se si desidera che il supporto contatti solo il punto di gestione specificato.  
 
-6.  [ **メディアのプロパティ** ] ページで、次の情報を指定してから、[ **次へ** ] をクリックします。  
+6.  Nella pagina **Proprietà del supporto**  specificare le informazioni seguenti e fare clic su **Avanti**.  
 
-    -   **作成者**: メディアの作成者を指定します。  
+    -   **Creato da**: specificare chi ha creato il supporto.  
 
-    -   **バージョン**: メディアのバージョン番号を指定します。  
+    -   **Versione**: specificare il numero di versione del supporto.  
 
-    -   **コメント**: メディアの用途に関する一意の説明を指定します。  
+    -   **Commento**: specificare una descrizione univoca dello scopo per cui viene usato il supporto.  
 
-    -   **メディア ファイル**: 出力ファイルの名前とパスを指定します。 この場所に出力ファイルが書き込まれます。 例: **\\\servername\folder\outputfile.wim**  
+    -   **File supporto**: specificare il nome e il percorso dei file di output. La procedura guidata scrive i file di output in questa posizione. Ad esempio: **\\\nomeserver\cartella\fileoutput.wim**  
 
-7.  [ **セキュリティ** ] ページで、以下の情報を指定してから、[ **次へ** ] をクリックします。  
+7.  Nella pagina **Sicurezza** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
 
-    -   メディアが Configuration Managerで管理されていないコンピューターにオペレーティング システムを展開できるようにするには、[ **不明なコンピューターのサポートを有効にする** ] チェックボックスをオンにします。 これらのコンピューターのレコードは Configuration Manager データベースには存在しません。  詳細については、「[不明なコンピューターの展開の準備](../get-started/prepare-for-unknown-computer-deployments.md)」を参照してください。  
+    -   Selezionare la casella di controllo **Abilita supporto per computer sconosciuti** per consentire al supporto di distribuire un sistema operativo a un computer non gestito da Configuration Manager. Non sono presenti record di questi computer nel database di Configuration Manager.  Per altre informazioni, vedere [Operazioni preliminari alle distribuzioni in computer sconosciuti](../get-started/prepare-for-unknown-computer-deployments.md).  
 
-    -   メディアを不正アクセスから保護するため、[ **メディアをパスワードで保護する** ] チェック ボックスをオンにし、強力なパスワードを入力します。 パスワードを指定した場合、ユーザーは、事前設定メディアを使用するにはパスワードを入力する必要があります。  
+    -   Selezionare la casella di controllo **Proteggi supporto con password** e immettere una password complessa per proteggere il supporto da accesso non autorizzato. Quando si specifica una password l'utente deve immettere la password per usare il supporto pre-installato.  
 
         > [!IMPORTANT]  
-        >  セキュリティ運用方法として、事前設定メディアを保護するために、常にパスワードを指定することをお勧めします。  
+        >  Come procedura consigliata di sicurezza, assegnare sempre una password per proteggere il supporto pre-installato.  
 
-    -   HTTP 接続用には、[ **自己署名入りメディア証明書を作成する** ] を選択し、証明書の開始日と有効期限を指定します。  
+    -   Per le comunicazioni HTTP, selezionare **Crea certificato del supporto autofirmato**e quindi specificare la data di inizio e di scadenza del certificato.  
 
-    -   HTTPS 接続用には、[ **PKI 証明書のインポート**] を選択し、インポートする証明書とそのパスワードを指定します。  
+    -   Per le comunicazioni HTTPS, selezionare **Importa certificato PKI**e quindi specificare il certificato da importare e la relativa password.  
 
-         ブート イメージで使用される、このクライアント証明書の詳細については、[PKI 証明書の要件](../../core/plan-design/network/pki-certificate-requirements.md)を参照してください。  
+         Per altre informazioni su questo certificato client usato per le immagini di avvio, vedere [Requisiti dei certificati PKI](../../core/plan-design/network/pki-certificate-requirements.md).  
 
-    -   **ユーザーとデバイスのアフィニティ**: Configuration Manager でユーザー中心の管理をサポートするため、ユーザーと対象コンピューターをメディアによって関連付ける方法を指定します。 オペレーティング システムの展開でユーザーとデバイスのアフィニティをサポートする方法については、「[展開先のコンピューターにユーザーを関連付ける](../get-started/associate-users-with-a-destination-computer.md)」をご覧ください。  
+    -   **Affinità utente dispositivo**: per supportare la gestione basata sugli utenti in Configuration Manager, specificare come si vuole che il supporto associ gli utenti al computer di destinazione. Per altre informazioni su come la distribuzione del sistema operativo supporti l'affinità utente dispositivo, vedere [Associare gli utenti a un computer di destinazione](../get-started/associate-users-with-a-destination-computer.md).  
 
-        -   メディアがユーザーと対象コンピューターを自動的に関連付けるようにするには、[ **ユーザーとデバイスのアフィニティを自動的に承認する** ] を選択します。 この機能は、オペレーティング システムを展開するタスク シーケンスのアクションに基づきます。 このシナリオでは、タスク シーケンスが、対象コンピューターにオペレーティング システムを展開するときに、指定のユーザーと対象コンピューターの関係を作成します。  
+        -   Specificare **Consenti affinità utente dispositivo con approvazione automatica** se si desidera che il supporto associ automaticamente gli utenti al computer di destinazione. Questa funzionalità si basa sulle azioni della sequenza di attività che distribuisce il sistema operativo. In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.  
 
-        -   メディアが承認を待ってユーザーと対象コンピューターを関連付けるようにするには、[ **ユーザーとデバイスのアフィニティを管理者の承認待ちにする** ] を選択します。 この機能は、オペレーティング システムを展開するタスク シーケンスのスコープに基づきます。 このシナリオでは、タスク シーケンスは、指定のユーザーと対象コンピューターの関係を作成しますが、オペレーティング システムを展開する前に管理ユーザーからの承認を待機します。  
+        -   Specificare **Consenti approvazione amministratore in sospeso per affinità utente dispositivo** se si desidera che il supporto associ gli utenti al computer di destinazione dopo la concessione dell'approvazione. Questa funzionalità si basa sull'ambito della sequenza di attività che distribuisce il sistema operativo. In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione, ma attende l'approvazione di un utente amministratore prima di distribuire il sistema operativo.  
 
-        -   メディアがユーザーと対象コンピューターを関連付けないようにするには、[ **ユーザーとデバイスのアフィニティを許可しない** ] を選択します。 このシナリオでは、タスク シーケンスは、オペレーティング システムを展開するときにユーザーと対象コンピューターを関連付けません。  
+        -   Specificare **Non consentire affinità utente dispositivo** se non si desidera che il supporto associ gli utenti al computer di destinazione. In questo scenario, la sequenza di attività non associa gli utenti al computer di destinazione quando distribuisce il sistema operativo.  
 
-8.  **[タスク シーケンス]** ページで、セットアップ先のコンピューターで実行されるタスク シーケンスを指定します。 タスク シーケンスによって参照されるコンテンツが **[このタスク シーケンスが参照するコンテンツ]** に表示されます。 コンテンツを確認して、 **[次へ]** をクリックします。  
+8.  Nella pagina **Sequenza di attività** specificare la sequenza di attività che verrà eseguita nel computer di destinazione. Il contenuto a cui fa riferimento la sequenza di attività viene visualizzato in **Questa sequenza attività fa riferimento al contenuto seguente**. Verificare il contenuto e quindi fare clic su **Avanti**.  
 
-9. [ **ブート イメージ** ] ページで次の情報を指定し、[ **次へ** ] をクリックします。  
+9. Nella pagina **Immagine di avvio** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
 
     > [!IMPORTANT]  
-    >  配布されているブート イメージのアーキテクチャが、対象コンピューターのアーキテクチャに適切である必要があります。 たとえば、x64 のコンピューターでは、x86 または x64 のブート イメージを起動して実行できます。 ただし、x86 のコンピューターで起動して実行できるのは、x86 ブート イメージのみです。  
+    >  L'architettura dell'immagine di avvio distribuita deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86.  
 
-    -   [ **ブート イメージ** ] ボックスで、対象コンピューターを起動するブート イメージを指定します。 詳細については、「[ブート イメージの管理](../get-started/manage-boot-images.md)」をご覧ください。  
+    -   Nella casella **Immagine di avvio** specificare l'immagine di avvio per avviare il computer di destinazione. Per altre informazioni, vedere la sezione relativa alla [gestione delle immagini di avvio](../get-started/manage-boot-images.md).  
 
-    -   [ **配布ポイント** ] ボックスで、ブート イメージが配置されている配布ポイントを指定します。 配布ポイントからブート イメージが取得されてメディアに書き込まれます。  
+    -   Nella casella **Punto di distribuzione** specificare il punto di distribuzione in cui si trova l'immagine di avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
 
         > [!NOTE]  
-        >  配布ポイントのコンテンツ ライブラリへの **読み取り** アクセス権を持っている必要があります。 詳細については、「[コンテンツ ライブラリについて](../../core/plan-design/hierarchy/the-content-library.md)」をご覧ください。  
+        >  È necessario avere i diritti di accesso in **lettura** alla raccolta contenuto nel punto di distribuzione. Per altre informazioni, vedere [Informazioni sulla raccolta contenuto](../../core/plan-design/hierarchy/the-content-library.md).  
 
-    -   このウィザードの **[メディア管理]** ページで **[サイトベースのメディア]** を選択した場合、 **[管理ポイント]** ボックスで、プライマリ サイトの管理ポイントを指定します。  
+    -   Se è stato selezionato **Supporto basato su sito** nella pagina **Gestione del supporto** della procedura guidata, nella casella **Punto di gestione** specificare un punto di gestione da un sito primario.  
 
-    -   ウィザードの **[メディア管理]** ページで **[動的メディア]** を選択した場合、 **[関連付けられている管理ポイント]** ボックスで、使用するプライマリ サイトの管理ポイントと、初期通信での優先順位を指定します。  
+    -   Se è stato selezionato **Supporto dinamico** nella pagina **Gestione del supporto** della procedura guidata, nella casella **Punti di gestione associati** specificare i punti di gestione del sito primario da usare e un ordine di priorità per le comunicazioni iniziali.  
 
-10. [ **イメージ** ] ページで、次の情報を指定してから、[ **次へ** ] をクリックします。  
+10. Nella pagina **Immagini** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
 
-    -   **[イメージ パッケージ]** ボックスで、オペレーティング システム イメージを指定します。 詳細については、「[オペレーティング システム イメージの管理](../get-started/manage-operating-system-images.md)」をご覧ください。  
+    -   Nella casella **Pacchetto immagine** specificare l'immagine del sistema operativo. Per altre informazioni, vedere [Gestire le immagini del sistema operativo](../get-started/manage-operating-system-images.md).  
 
-    -   パッケージに複数のオペレーティング システム イメージが含まれている場合、[ **イメージのインデックス** ] ボックスで、展開するイメージを指定します。  
+    -   Se il pacchetto contiene più immagini del sistema operativo, nella casella **Pacchetto immagine** specificare l'immagine da distribuire.  
 
-    -   [ **配布ポイント** ] ボックスで、オペレーティング システム イメージのパッケージが配置されている配布ポイントを指定します。 ウィザードにより、配布ポイントからオペレーティング システム イメージが取得されてメディアに書き込まれます。  
+    -   Nella casella **Punto di distribuzione** specificare il punto di distribuzione in cui si trova il pacchetto immagine del sistema operativo. La procedura guidata recupera l'immagine del sistema operativo dal punto di distribuzione e la scrive sul supporto.  
 
-11. [ **カスタマイズ** ] ページで、次の情報を指定して [ **次へ** ] をクリックします。  
+11. Nella pagina **Personalizzazione** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   オペレーティング システムを展開するためにタスク シーケンスで使用する変数を指定します。  
+    -   Specificare le variabili usate dalla sequenza di attività per distribuire il sistema operativo.  
 
-    -   タスク シーケンスを実行する前に実行する起動前コマンドを指定します。 起動前コマンドは、タスク シーケンスを実行してオペレーティング システムをインストールする前に、Windows PE でユーザーと対話できるスクリプトまたは実行可能ファイルです。 メディアの起動前コマンドの詳細については、「[タスク シーケンス メディアの起動前コマンド](../understand/prestart-commands-for-task-sequence-media.md)」トピックを参照してください。  
+    -   Specificare i comandi preavvio da eseguire prima dell'esecuzione della sequenza di attività. I comandi di preavvio sono costituiti da uno script o da un eseguibile in grado di interagire con l'utente in Windows PE prima che venga eseguita la sequenza di attività per l'installazione del sistema operativo. Per altre informazioni sui comandi di preavvio per il supporto, vedere [Comandi di preavvio per supporti per sequenza di attività](../understand/prestart-commands-for-task-sequence-media.md).  
 
         > [!TIP]  
-        >  タスク シーケンス メディアの作成中に、パッケージ ID と起動前コマンドライン (タスク シーケンスの変数の値を含む) が、Configuration Manager コンソールを実行しているコンピューターの CreateTSMedia.log というログファイルに書き込まれます。 このログ ファイルで、タスク シーケンスの変数の値を確認できます。  
+        >  Durante la creazione del supporto delle sequenza di attività, tale sequenza scrive l'ID del pacchetto e la riga di comando di preavvio, incluso il valore per eventuali variabili della sequenza di attività, nel file di registro CreateTSMedia.log nel computer che esegue la console di Configuration Manager. È possibile rivedere questo file di registro per verificare il valore per le variabili della sequenza di attività.  
 
-12. ウィザードを完了します。  
+12. Completare la procedura guidata.  
 
-## <a name="next-steps"></a>次のステップ
-[エンタープライズ オペレーティング システムを展開するシナリオ](scenarios-to-deploy-enterprise-operating-systems.md)
+## <a name="next-steps"></a>Passaggi successivi
+[Scenari di distribuzione di sistemi operativi aziendali](scenarios-to-deploy-enterprise-operating-systems.md)

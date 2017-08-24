@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager の準備 | Microsoft Docs"
-description: "System Center Configuration Manager の展開を計画する際に役立つトピックを示します。"
+title: Preparativi per System Center Configuration Manager | Microsoft Docs
+description: Argomenti che consentono di pianificare una distribuzione di System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,24 +18,24 @@ manager: angrobe
 ms.openlocfilehash: b2d9cf11b944b6ee648b8fc7bc836ed5a82925a5
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="get-ready-for-system-center-configuration-manager"></a>System Center Configuration Manager の準備
+# <a name="get-ready-for-system-center-configuration-manager"></a>Preparativi per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager の展開を計画する準備ができたら、次のトピックの情報を使用します。  
+Vedere le informazioni contenute negli argomenti seguenti prima di iniziare la pianificazione della distribuzione di System Center Configuration Manager:  
 
 
-  -   [System Center Configuration Manager のサイト階層の設計](../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md)  
+  -   [Design a hierarchy of sites for System Center Configuration Manager](../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md) (Progettare una gerarchia di siti per System Center Configuration Manager)  
 
-  -   [System Center Configuration Manager のロール ベース管理の基礎](../../core/understand/fundamentals-of-role-based-administration.md)  
+  -   [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md) (Nozioni di base sull'amministrazione basata su ruoli per System Center Configuration Manager)  
 
-  -   [System Center Configuration Manager でのコンテンツ管理の基本的な概念](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)  
+  -   [Fundamental concepts for content management in System Center Configuration Manager](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md) (Concetti di base per la gestione dei contenuti in System Center Configuration Manager)  
 
-  -   [クライアントが System Center Configuration Manager のサイト リソースやサービスを検索する方法を理解する](../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md)  
+  -   [Understand how clients find site resources and services for System Center Configuration Manager](../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md) (Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager)  
 
--   [System Center Configuration Manager のネットワーク環境の準備](/sccm/core/plan-design/network/configure-firewalls-ports-domains)  
+-   [Preparare l'ambiente di rete per System Center Configuration Manager](/sccm/core/plan-design/network/configure-firewalls-ports-domains)  
 
--   [System Center Configuration Manager のサポートされている構成](../../core/plan-design/configs/supported-configurations.md)  
+-   [Supported configurations for System Center Configuration Manager](../../core/plan-design/configs/supported-configurations.md) (Configurazioni supportate per System Center Configuration Manager)  

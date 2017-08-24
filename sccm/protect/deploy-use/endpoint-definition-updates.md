@@ -1,6 +1,6 @@
 ---
-title: "Endpoint Protection の構成 | Microsoft Docs"
-description: "System Center Configuration Manager で Endpoint Protection を使用する方法を選択および構成し、クライアント コンピューターでマルウェア対策定義を最新の状態に保つ方法について説明します。"
+title: Configurare Endpoint Protection | Microsoft Docs
+description: Informazioni su come selezionare e configurare metodi con Endpoint Protection in System Center Configuration Manager per mantenere aggiornate le definizioni antimalware nei computer client.
 ms.custom: na
 ms.date: 02/14/2017
 ms.prod: configuration-manager
@@ -17,55 +17,55 @@ manager: angrobe
 ms.openlocfilehash: b5da7900a4f8e2f330c4dcb2cac00b45099bd909
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-#  <a name="configure-definition-updates-for-endpoint-protection"></a>Endpoint Protection の定義ファイルの更新を構成する  
+#  <a name="configure-definition-updates-for-endpoint-protection"></a>Configurare gli aggiornamenti delle definizioni per Endpoint Protection  
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
- System Center Configuration Manager で Endpoint Protection を使用すると、利用できるいくつかの方法のいずれかを使用して、階層内のクライアント コンピューターでマルウェア対策定義を最新の状態に保つことができます。 このトピックの情報は、これらの方法を選んで構成するのに役立ちます。
+ Con Endpoint Protection in System Center Configuration Manager è possibile usare uno dei vari metodi disponibili per mantenere aggiornate le definizioni antimalware nei computer client della gerarchia. Le informazioni in questo argomento possono essere utili per scegliere questi metodi e configurarli.
 
- マルウェア対策定義を更新するには、次の方法から 1 つ以上を使用できます。
+ Per aggiornare le definizioni antimalware, è possibile usare uno o più dei metodi seguenti:
 
--   [[Configuration Manager から配布される更新プログラム]](endpoint-definitions-configmgr.md) - この方法では、Configuration Manager ソフトウェア更新プログラムを使用して、階層内のコンピューターに定義とエンジンの更新プログラムを配布します。
+-   [Aggiornamenti distribuiti da Configuration Manager](endpoint-definitions-configmgr.md): questo metodo usa gli aggiornamenti software di Configuration Manager per recapitare aggiornamenti del motore e delle definizioni ai computer della gerarchia.
 
--   [[Windows Server Update Services (WSUS) から配信される更新プログラム]](endpoint-definitions-wsus.md) - この方法では、WSUS インフラストラクチャを使用して定義とエンジンの更新プログラムをコンピューターに配布します。
+-   [Aggiornamenti distribuiti da Windows Server Update Services (WSUS)](endpoint-definitions-wsus.md): questo metodo usa l'infrastruttura di WSUS per recapitare aggiornamenti del motore e delle definizioni ai computer.
 
--   [[Microsoft Update から配信される更新プログラム]](endpoint-definitions-microsoft-updates.md) - この方法では、コンピューターを Microsoft Update に直接接続し、定義とエンジンの更新プログラムをダウンロードできます。 この方法は、ビジネス ネットワークにあまり接続していないコンピューターに役立ちます。
+-   [Aggiornamenti distribuiti da Microsoft Update](endpoint-definitions-microsoft-updates.md): questo metodo consente ai computer di connettersi direttamente a Microsoft Update per scaricare gli aggiornamenti del motore e delle definizioni. Questo metodo può essere utile per i computer che spesso non sono connessi alla rete aziendale.
 
--   [[Microsoft Malware Protection Center から配信された更新プログラム]](endpoint-definitions-protection-center.md) - この方法では、Microsoft Malware Protection Center から定義ファイルの更新をダウンロードします。
+-   [Aggiornamenti distribuiti da Microsoft Malware Protection Center](endpoint-definitions-protection-center.md): questo metodo scarica gli aggiornamenti delle definizioni da Microsoft Malware Protection Center.
 
--   [[UNC ファイル共有から更新する]](endpoint-definitions-network.md) - この方法では、最新の定義とエンジンの更新プログラムをネットワーク上の共有に保存できます。 各クライアントは、ネットワークにアクセスして更新プログラムをインストールできます。
+-   [Aggiornamenti dalle condivisioni file UNC](endpoint-definitions-network.md): con questo metodo è possibile salvare gli aggiornamenti più recenti del motore e delle definizioni in una condivisione in rete. I client possono quindi accedere alla rete per installare gli aggiornamenti.
 
- 定義ファイルの更新ソースを複数構成し、それを評価および適用する順序を制御できます。 これは、マルウェア対策ポリシーを作成するときに、 **[定義ファイルの更新ソースの構成]** ダイアログ ボックスで行います。
+ È possibile configurare più origini degli aggiornamenti delle definizioni e controllare l'ordine in cui vengono valutate e applicate. Questa operazione può essere eseguita nella finestra di dialogo **Configura origini aggiornamenti definizioni** quando si crea un criterio antimalware.
 
 > [!IMPORTANT]
->  Windows 10 が動作する PC の場合は、Endpoint Protection を構成して Windows Defender のマルウェア定義を更新する必要があります。
+>  Per i computer che eseguono Windows 10, è necessario configurare Endpoint Protection per aggiornare le definizioni di malware per Windows Defender.
 
-## <a name="how-to-configure-definition-update-sources"></a>定義ファイルの更新ソースを構成する方法
- 次の手順を使用すると、各マルウェア対策ポリシーに使用する定義ファイルの更新ソースを構成できます。
+## <a name="how-to-configure-definition-update-sources"></a>Come configurare le origini degli aggiornamenti delle definizioni
+ Usare la procedura seguente per configurare le origini degli aggiornamenti delle definizioni da usare per ogni criterio antimalware.
 
-1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.
 
-2.  **[資産とコンプライアンス]** ワークスペースで **[Endpoint Protection]**を展開してから、 **[マルウェア対策ポリシー]**をクリックします。
+2.  Nell'area di lavoro **Asset e conformità** espandere **Endpoint Protection**e quindi fare clic su **Criteri antimalware**.
 
-3.  **[既定のマルウェア対策ポリシー]** プロパティ ページを開くか、新しいマルウェア対策ポリシーを作成します。 マルウェア対策ポリシーを作成する方法の詳細については、「[System Center Configuration Manager で Endpoint Protection 用にマルウェア対策ポリシーを作成し展開する方法](endpoint-antimalware-policies.md)」をご覧ください。
+3.  Aprire la pagina delle proprietà relativa a **Criterio antimalware predefinito** o creare un nuovo criterio antimalware. Per altre informazioni su come creare criteri antimalware, vedere [Come creare e distribuire criteri antimalware per Endpoint Protection in System Center Configuration Manager](endpoint-antimalware-policies.md).
 
-4.  マルウェア対策プロパティ ダイアログ ボックスの **[定義ファイルの更新]** セクションで **[ソースの設定]**をクリックします。
+4.  Nella sezione **Aggiornamenti delle definizioni** della finestra di dialogo delle proprietà antimalware fare clic su **Imposta origine**.
 
-5.  **[定義ファイルの更新ソースの構成]** ダイアログ ボックスで、定義ファイルの更新に使用するソースを選びます。 **[上]** または **[下]** をクリックしてそれらのソースを使用する順序を変更します。
+5.  Nella finestra di dialogo **Configura origini aggiornamenti definizioni** selezionare le origini da usare per gli aggiornamenti delle definizioni. È possibile fare clic su **Su** o **Giù** per modificare l'ordine in cui le origini vengono usate.
 
-6.  **[OK]** をクリックして **[定義ファイルの更新ソースの構成]** ダイアログ ボックスを閉じます。
+6.  Fare clic su **OK** per chiudere la finestra di dialogo **Configura origini aggiornamenti definizioni** .
 
-## <a name="configure-endpoint-protection-definitions"></a>Endpoint Protection 定義の構成
+## <a name="configure-endpoint-protection-definitions"></a>Configurare le definizioni di Endpoint Protection
 
--   [[Configuration Manager から配布される更新プログラム]](endpoint-definitions-configmgr.md) - この方法では、Configuration Manager ソフトウェア更新プログラムを使用して、階層内のコンピューターに定義とエンジンの更新プログラムを配布します。
+-   [Aggiornamenti distribuiti da Configuration Manager](endpoint-definitions-configmgr.md): questo metodo usa gli aggiornamenti software di Configuration Manager per recapitare aggiornamenti del motore e delle definizioni ai computer della gerarchia.
 
--   [[Windows Server Update Services (WSUS) から配信される更新プログラム]](endpoint-definitions-wsus.md) - この方法では、WSUS インフラストラクチャを使用して定義とエンジンの更新プログラムをコンピューターに配布します。
+-   [Aggiornamenti distribuiti da Windows Server Update Services (WSUS)](endpoint-definitions-wsus.md): questo metodo usa l'infrastruttura di WSUS per recapitare aggiornamenti del motore e delle definizioni ai computer.
 
--   [[Microsoft Update から配信される更新プログラム]](endpoint-definitions-microsoft-updates.md) - この方法では、コンピューターを Microsoft Update に直接接続し、定義とエンジンの更新プログラムをダウンロードできます。 この方法は、ビジネス ネットワークにあまり接続していないコンピューターに役立ちます。
+-   [Aggiornamenti distribuiti da Microsoft Update](endpoint-definitions-microsoft-updates.md): questo metodo consente ai computer di connettersi direttamente a Microsoft Update per scaricare gli aggiornamenti del motore e delle definizioni. Questo metodo può essere utile per i computer che spesso non sono connessi alla rete aziendale.
 
--   [Microsoft Malware Protection Center から配信された更新プログラム] - この方法では、Microsoft Malware Protection Center から定義ファイルの更新をダウンロードします。
+-   Aggiornamenti distribuiti da Microsoft Malware Protection Center: questo metodo consente di scaricare gli aggiornamenti delle definizioni da Microsoft Malware Protection Center.
 
--   [[UNC ファイル共有から更新する]](endpoint-definitions-network.md) - この方法では、最新の定義とエンジンの更新プログラムをネットワーク上の共有に保存できます。 各クライアントは、ネットワークにアクセスして更新プログラムをインストールできます。
+-   [Aggiornamenti dalle condivisioni file UNC](endpoint-definitions-network.md): con questo metodo è possibile salvare gli aggiornamenti più recenti del motore e delle definizioni in una condivisione in rete. I client possono quindi accedere alla rete per installare gli aggiornamenti.

@@ -1,6 +1,6 @@
 ---
-title: "モバイル アプリケーション管理ポリシーを使用したアプリの保護 | Microsoft Docs"
-description: "会社のコンプライアンスとセキュリティ ポリシーに従うように展開するアプリの機能を変更します。"
+title: Proteggere le app usando i criteri di gestione delle applicazioni mobili | Microsoft Docs
+description: "Modificare la funzionalità delle app distribuite in modo che soddisfino i criteri aziendali di conformità e di sicurezza."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -18,162 +18,162 @@ manager: angrobe
 ms.openlocfilehash: 50c137f159b0ef631f7173b8eec190182ce41cee
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="protect-apps-using-mobile-application-management-policies-in-system-center-configuration-manager"></a>System Center Configuration Manager のモバイル アプリケーション管理ポリシーを使ったアプリの保護
+# <a name="protect-apps-using-mobile-application-management-policies-in-system-center-configuration-manager"></a>Proteggere le app usando i criteri di gestione delle applicazioni mobili in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager アプリケーション管理ポリシーを使用すると、会社のコンプライアンス ポリシーやセキュリティ ポリシーに合わせて、展開するアプリの機能を変更することができます。 たとえば、制限付きアプリでの切り取り、コピー、貼り付け操作を制限することや、すべての URL を管理対象ブラウザー内で開くようにアプリを構成することができます。 アプリ管理ポリシーでサポートされるものは次のとおりです。  
+I criteri di gestione delle applicazioni di System Center Configuration Manager consentono di modificare le funzionalità delle app distribuite per adeguarle ai criteri aziendali di conformità e sicurezza. Ad esempio, è possibile limitare le operazioni taglia, copia e incolla in un'app con restrizioni oppure configurare un'app per aprire tutti i collegamenti Web in Managed Browser. I criteri di gestione delle app supportano:  
 
--   Android 4 以降が実行されているデバイス  
+-   Dispositivi che eseguono Android 4 e versioni successive  
 
--   iOS 7 以降を実行するデバイス  
+-   Dispositivi che eseguono iOS 7 e versioni successive  
 
-モバイル アプリ管理ポリシーを使って、Intune で管理されていないデバイス上のアプリも保護することができます。 この新機能を使用して、Office 365 サービスに接続するアプリに対してモバイル アプリ管理ポリシーを適用できます。 これは、オンプレミス Exchange や SharePoint に接続するアプリではサポートされていません。  
+È anche possibile usare i criteri di gestione delle app mobili per proteggere le app su dispositivi non gestiti da Intune. Con questa nuova funzionalità è possibile applicare i criteri di gestione delle app mobili ad app che si connettono ai servizi di Office 365. Questa funzionalità non è supportata per le app che si connettono a Exchange o SharePoint locale.  
 
-この新機能を使用するには、Azure プレビュー ポータルを使用する必要があります。 使い始めるにあたり、次のトピックを参考にしてください。  
--   [Azure ポータルでモバイル アプリ管理ポリシーを使ってみる](https://technet.microsoft.com/library/mt627830.aspx)  
--   [Microsoft Intune でのモバイル アプリ管理ポリシーの作成および展開](https://technet.microsoft.com/library/mt627829.aspx)  
+Per usare questa nuova funzionalità, è necessario usare il portale di anteprima di Azure. Per acquisire familiarità con tale funzionalità, usare gli argomenti seguenti:  
+-   [Introduzione ai criteri di gestione delle app mobili nel portale di Azure](https://technet.microsoft.com/library/mt627830.aspx)  
+-   [Creare e distribuire i criteri di gestione delle app mobili con Microsoft Intune](https://technet.microsoft.com/library/mt627829.aspx)  
 
- Configuration Manager の構成項目および基準とは異なり、アプリケーションの管理ポリシーは直接展開しないでください。 代わりに、制限するアプリケーション展開の種類にポリシーを関連付けます。 アプリ展開の種類がデバイスに展開され、インストールされると、指定された設定が有効になります。  
+ Un criterio di gestione delle applicazioni non viene distribuito direttamente come invece avviene per le linee base e gli elementi di configurazione in Configuration Manager. Al contrario, è possibile associare i criteri al tipo di distribuzione delle applicazioni che si vuole limitare. Le impostazioni specificate diventeranno effettive quando il tipo di distribuzione delle app verrà distribuito e installato nei dispositivi.  
 
-アプリに制限を適用するには、アプリに Microsoft Intune アプリケーション ソフトウェア開発キット (SDK) を組み込む必要があります。 この種類のアプリを取得するには、次の 2 つの方法があります。  
+Per applicare le restrizioni a un'app, è necessario che nell'app sia incorporato il Software Development Kit (SDK) dell'app di Microsoft Intune. Esistono due metodi per ottenere questo tipo di app:  
 
--   **ポリシー管理型アプリを使用する** (Android および iOS): これらのアプリには App SDK が組み込まれています。 この種類のアプリを追加するには、iTunes ストアや Google Play などのアプリ ストアからアプリへのリンクを指定します。 それ以上の処理は、この種類のアプリには必要ありません。 iOS デバイスと Android デバイスで使用可能なポリシー管理型アプリの一覧については、「 [Microsoft Intune モバイル アプリケーション管理ポリシー用の管理型アプリ](https://technet.microsoft.com/library/dn708489.aspx)」を参照してください。  
+-   **Usare un'app gestita da criteri** (Android e iOS): queste app includono App SDK incorporato. Per aggiungere questo tipo di applicazione, è possibile specificare un collegamento all'app da un archivio di app, ad esempio l'iTunes store o Google Play. Non sono richieste ulteriori elaborazioni per questo tipo di app. Per un elenco delle app gestite da criteri disponibili per dispositivi iOS e Android, vedere [App gestite per criteri di gestione delle applicazioni per dispositivi mobili di Microsoft Intune](https://technet.microsoft.com/library/dn708489.aspx).  
 
--   **"ラップされた" アプリを使用する** (Android および iOS): これらのアプリは、**Microsoft Intune アプリ ラッピング ツール**を使用して、アプリ SDK を含むように再パッケージされています。 通常、このツールは、社内で作成された企業アプリの処理に使用されます。 このツールを使用して、アプリ ストアからダウンロードされたアプリを処理することはできません。 詳細については、以下の記事を参照してください。
-    - [Microsoft Intune アプリ ラッピング ツールでモバイル アプリケーション管理のために iOS アプリを準備する](https://technet.microsoft.com/library/dn878028.aspx)
+-   **Usare un'app con wrapper** (Android e iOS): app che sono state riassemblate per includere App SDK usando lo  **strumento per la disposizione testo per app di Microsoft Intune**. Questo strumento viene in genere usato per elaborare le app aziendali create internamente. Non può essere usato per elaborare le app state scaricate dall'App Store. Per altre informazioni, vedere i seguenti articoli:
+    - [Preparare le app per iOS per la gestione di applicazioni per dispositivi mobili con lo strumento per la disposizione testo per app di Intune](https://technet.microsoft.com/library/dn878028.aspx)
 
-    - [Microsoft Intune アプリ ラッピング ツールでモバイル アプリケーション管理のために Android アプリを準備する](https://technet.microsoft.com/library/mt147413.aspx)  
+    - [Preparare le app per Android per la gestione di applicazioni per dispositivi mobili con lo strumento per la disposizione testo per app di Intune](https://technet.microsoft.com/library/mt147413.aspx)  
 
-## <a name="create-and-deploy-an-app-with-a-mobile-application-management-policy"></a>モバイル アプリケーション管理ポリシーを使用したアプリの作成とデプロイ  
+## <a name="create-and-deploy-an-app-with-a-mobile-application-management-policy"></a>Creare e distribuire un'app con criterio di gestione delle applicazioni mobili  
 
-##  <a name="step-1-obtain-the-link-to-a-policy-managed-app-or-create-a-wrapped-app"></a>手順 1: ポリシー管理型アプリへのリンクを取得するか、ラップされたアプリを作成する  
+##  <a name="step-1-obtain-the-link-to-a-policy-managed-app-or-create-a-wrapped-app"></a>Passaggio 1: Ottenere il collegamento a un'app gestita da criteri o creare un'app con wrapper  
 
--   **ポリシー管理型アプリへのリンクを取得するには**: アプリ ストアから、展開するポリシー管理型アプリの URL を見つけてメモします。  
+-   **Per ottenere un collegamento a un'app gestita da criteri**: nell'App Store trovare e prendere nota dell'URL dell'app gestita da criteri che si vuole distribuire.  
 
-     たとえば、Microsoft Word for iPad アプリの URL は **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**です。  
+     Ad esempio, l'URL dell'app Microsoft Word per iPad è **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**  
 
--   **ラップされたアプリを作成するには**: 「[Microsoft Intune アプリ ラッピング ツールでモバイル アプリケーション管理のために iOS アプリを準備する](https://technet.microsoft.com/library/dn878028.aspx)」と「[Microsoft Intune アプリ ラッピング ツールでモバイル アプリケーション管理のために Android アプリを準備する](https://technet.microsoft.com/library/mt147413.aspx)」の各トピックの情報を活用して、ラップされたアプリを作成します。  
+-   **Per creare un'app con wrapper**: usare le informazioni negli argomenti [Preparare le app per iOS per la gestione di applicazioni per dispositivi mobili con lo strumento per la disposizione testo per app di Intune](https://technet.microsoft.com/library/dn878028.aspx) e [Preparare le app per Android per la gestione di applicazioni per dispositivi mobili con lo strumento per la disposizione testo per app di Intune](https://technet.microsoft.com/library/mt147413.aspx) per creare un'app con wrapper.  
 
-     このツールは、処理済みのアプリと関連するマニフェスト ファイルを作成します。 アプリが含まれている Configuration Manager アプリケーションの作成時にこれらのファイルを使用します。  
+     Lo strumento crea un'app elaborata e un file manifesto associato. Questi file vengono usati quando si crea un'applicazione di Configuration Manager che contiene l'app.  
 
-##  <a name="step-2-create-a-configuration-manager-application-that-contains-an-app"></a>手順 2: アプリが含まれた Configuration Manager アプリケーションを作成する  
- Configuration Manager アプリケーションの作成手順は、ポリシー管理型アプリ (外部リンク) であるか、iOS 用 Microsoft Intune アプリ ラッピング ツール (iOS 用アプリ パッケージ) を使用して作成されたアプリかによって異なります。 次のいずれかの手順に従って、Configuration Manager アプリケーションを作成します。  
+##  <a name="step-2-create-a-configuration-manager-application-that-contains-an-app"></a>Passaggio 2: Creare un'applicazione di Configuration Manager che contenga un'app  
+ La procedura per creare l'applicazione di Configuration Manager è diversa quando si usa un'app gestita da criteri (collegamento esterno) o un'app creata tramite Microsoft Intune App Wrapping Tool di Microsoft Intune per iOS (pacchetto dell'app per iOS). Per creare l'applicazione di Configuration Manager, usare una delle procedure seguenti.  
 
-1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[アプリケーション管理]** > **[アプリケーション]** の順に選択します。  
+1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
 
-3.  **[ホーム]** タブの **[作成]** グループで **[アプリケーションの作成]** を選択して**アプリケーションの作成**ウィザードを開きます。  
+3.  Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea applicazione** per aprire la **Creazione guidata applicazione**.  
 
-4.  **[全般]** ページで、 **[このアプリケーションの情報をインストール ファイルから自動的に検出する]**を選択します。  
+4.  Nella pagina **Generale** selezionare **Rileva automaticamente le informazioni sull'applicazione dai file di installazione**.  
 
-5.  **[種類]** ドロップダウン リストで、**[iOS アプリケーション パッケージ (\*.ipa ファイル)]** を選びます。  
+5.  Nell'elenco a discesa **Tipo** selezionare **Pacchetto app iOS (file \*.ipa)**.  
 
-6.  **[参照]** を選択してインポートするアプリケーション パッケージを選択し、**[次へ]** をクリックします。  
+6.  Fare clic su **Sfoglia** per selezionare il pacchetto dell'app che si vuole importare e quindi fare clic su **Avanti**.  
 
-7.  **[一般情報]** ページで、会社ポータルでユーザーに表示する説明とカテゴリ情報を入力します。  
+7.  Nella pagina **Informazioni generali** immettere il testo descrittivo e le informazioni di categoria che si desidera visualizzare agli utenti nel portale della società.  
 
-8.  ウィザードを完了します。  
+8.  Completare la procedura guidata.  
 
- 新しいアプリケーションが **[ソフトウェア ライブラリ]** の **[アプリケーション]** ノードに表示されます。  
+ La nuova applicazione viene visualizzata nel nodo **Applicazioni** dell'area di lavoro **Raccolta software** .  
 
-### <a name="create-an-application-that-contains-a-link-to-a-policy-managed-app"></a>ポリシー管理型アプリへのリンクを含むアプリケーションを作成する  
+### <a name="create-an-application-that-contains-a-link-to-a-policy-managed-app"></a>Creare un'applicazione contenente un collegamento a un'app gestita da criteri  
 
-1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[アプリケーション管理]** > **[アプリケーション]** の順に選択します。  
+1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
 
-3.  **[ホーム]** タブの **[作成]** グループで **[アプリケーションの作成]** を選択して**アプリケーションの作成**ウィザードを開きます。  
+3.  Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea applicazione** per aprire la **Creazione guidata applicazione**.  
 
-4.  **[全般]** ページで、 **[このアプリケーションの情報をインストール ファイルから自動的に検出する]**を選択します。  
+4.  Nella pagina **Generale** selezionare **Rileva automaticamente le informazioni sull'applicazione dai file di installazione**.  
 
-5.  **[種類]** ドロップダウン リストから、次のいずれかを選択します。  
+5.  Nell'elenco a discesa **Tipo** selezionare una delle opzioni seguenti:  
 
-    -   iOS: **iOS アプリケーション パッケージ (App Store 内)**  
+    -   Per iOS: **Pacchetto app per iOS nell'App Store**  
 
-    -   Android: **Android アプリケーション パッケージ (Google Play 内)**  
+    -   Per Android: **Pacchetto app per Android in Google Play**  
 
-6.  (手順 1 の) アプリの URL を入力してから、**[次へ]** を選択します。  
+6.  Immettere l' URL per l'app (dal passaggio 1) e quindi fare clic su **Avanti**.  
 
-7.  **[一般情報]** ページで、会社ポータルでユーザーに表示する説明とカテゴリ情報を入力します。  
+7.  Nella pagina **Informazioni generali** immettere il testo descrittivo e le informazioni di categoria che si desidera visualizzare agli utenti nel portale della società.  
 
-8.  ウィザードを完了します。  
+8.  Completare la procedura guidata.  
 
- 新しいアプリケーションが **[ソフトウェア ライブラリ]** の **[アプリケーション]** ノードに表示されます。  
+ La nuova applicazione viene visualizzata nel nodo **Applicazioni** dell'area di lavoro **Raccolta software** .  
 
-##  <a name="step-3-create-an-application-management-policy"></a>手順 3: アプリケーション管理ポリシーを作成する  
- 次に、アプリケーションと関連付けるアプリケーション管理ポリシーを作成します。 全般ポリシーまたは管理対象ブラウザー ポリシーを作成することができます。  
+##  <a name="step-3-create-an-application-management-policy"></a>Passaggio 3: Creare criteri di gestione delle applicazioni  
+ Creare quindi un criterio di gestione delle applicazioni che verrà associato all'applicazione. È possibile creare criteri di Managed Browser o generali.  
 
-1)  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[アプリケーション管理]** > **[アプリケーション管理ポリシー]** の順に選択します。  
+1)  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Criteri di gestione delle applicazioni**.  
 
-2)  **[ホーム]** タブの **[作成]** グループで、**[アプリケーション管理ポリシーの作成]** を選択します。  
+2)  Nella scheda **Home** nel gruppo **Crea** scegliere **Crea criteri di gestione delle applicazioni**.  
 
-3)  **[全般]** ページで、ポリシーの名前と説明を入力してから、**[次へ]** を選択します。  
+3)  Nella pagina **Generale** immettere il nome e la descrizione per il criterio e quindi fare clic su **Avanti**.  
 
-4)  **[ポリシーの種類]** ページで、このポリシーのプラットフォームとポリシーの種類を選択してから、**[次へ]** を選択します。 次のポリシーの種類を使用できます。  
+4)  Nella pagina **Tipo di criterio** selezionare la piattaforma e il tipo di criterio e quindi fare clic su **Avanti**. Sono disponibili i tipi di criterio seguenti:  
 
--   **[全般]**: [全般] ポリシーの種類を使用すると、会社のコンプライアンス ポリシーやセキュリティ ポリシーに合わせて、展開するアプリの機能を変更することができます。 たとえば、切り取り、コピー、貼り付けの各操作を制限付きのアプリ内で制限することができます。  
+-   **Generale**: il tipo di criterio Generale consente di modificare la funzionalità delle app distribuite per adeguarle ai criteri aziendali di conformità e sicurezza. Ad esempio, è possibile limitare le operazioni taglia, copia e incolla in un'app con restrizioni.  
 
--   **[管理対象ブラウザー]**: [管理対象ブラウザー] ポリシーでは、管理対象ブラウザーが URL の一覧を開くことを許可またはブロックするように指定できます。 管理対象ブラウザー ポリシーの種類を使用すると、Intune 管理対象ブラウザー アプリの機能を変更できます。 これは、ユーザーが実行可能な操作 (ユーザーがアクセスできるサイト、ブラウザー内のコンテンツへのリンクを開く方法など) を管理できる Web ブラウザーです。 詳しくは、「  [iOS 用の Intune Managed Browser アプリ](https://itunes.apple.com/us/app/microsoft-intune-managed-browser/id943264951?mt=8) 」と「 [Android 用の Intune Managed Browser アプリ](https://play.google.com/store/apps/details?id=com.microsoft.intune.mam.managedbrowser&hl=en)」をご覧ください。
+-   **Managed Browser**: consente di scegliere se consentire o meno a Managed Browser di aprire un elenco di URL. Il tipo di criteri Managed Browser consente di modificare la funzionalità dell'app Intune Managed Browser. Si tratta di un Web browser che consente di gestire le azioni eseguibili dagli utenti, inclusi i siti che possono visitare, e come aprire i collegamenti al contenuto all'interno del browser. Altre informazioni sull'  [app Intune Managed Browser per iOS](https://itunes.apple.com/us/app/microsoft-intune-managed-browser/id943264951?mt=8) e l' [app Intune Managed Browser per Android](https://play.google.com/store/apps/details?id=com.microsoft.intune.mam.managedbrowser&hl=en).
 
-5)  **[iOS ポリシー]** ページまたは **[Android ポリシー]** ページで、必要に応じて次の値を構成してから、**[次へ]** を選択します。 オプションは、ポリシーを構成するデバイスの種類によって異なる場合があります。  
+5)  Nella pagina **Criteri iOS** o **Criteri Android** configurare i valori seguenti come richiesto e quindi fare clic su **Avanti**. Le opzioni possono variare a seconda del tipo di dispositivo per il quale si sta configurando il criterio.  
 
-|値|説明|  
+|Valore|Altre informazioni|  
 |-----------|----------------------|  
-|**[Web コンテンツを会社の管理対象ブラウザーで表示するように制限する]**|アプリのすべてのリンクを管理対象ブラウザーで開くことができるようになります。 このオプションを有効にするには、デバイスにこのアプリをデプロイしている必要があります。|  
-|[**Android のバックアップを禁止** ] または [ **Prevent iTunes および iCloud のバックアップを禁止**]|アプリからのすべての情報のバックアップを無効にします。|  
-|**[アプリで他のアプリへのデータ転送を許可する]**|このアプリがデータを送信できる、送信先のアプリを指定します。 いずれのアプリへのデータ転送も許可しない、他の制限付きアプリへの転送のみを許可する、または任意のアプリへの転送を許可する選択ができます。<br /><br /> iOS デバイスの場合、管理されたアプリと管理されていないアプリケーション間のドキュメント転送を防ぐには、[ **管理されていないその他のアプリで管理されたドキュメントを許可する**] 設定を無効にするモバイル デバイスのセキュリティ ポリシーを構成し、デプロイする必要もあります。<br /><br /> 他の制限付きアプリへの転送のみを許可するように選択した場合、それぞれの種類のコンテンツを開くために、Intune PDF Viewer および Image Viewer (デプロイされている場合) が使用されます。|  
-|**[アプリで他のアプリからのデータの受信を許可する]**|このアプリがデータを受信できる、受信元のアプリを指定します。 いずれのアプリからのデータ転送も許可しない、他の制限付きアプリからの転送のみを許可する、または任意のアプリからの転送を許可する選択ができます。|  
-|**[[名前を付けて保存] を禁止]**|このポリシーを使用するすべてのアプリで、**[名前を付けて保存]** オプションの使用を無効にします。|  
-|**[切り取り、コピー、および他のアプリでの貼り付けを制限する]**|切り取り、コピー、および貼り付け操作を、アプリで使用する方法を指定します。 次の中から選択します。<br /><br /> **[ブロック]** - このアプリと他のアプリの間で、切り取り、コピー、および貼り付け操作を許可しません。<br /><br /> **[ポリシー管理型アプリ]** - このアプリと他の制限付きアプリ間のみで、切り取り、コピー、および貼り付け操作を許可します。<br /><br /> **[ポリシー管理型アプリと貼り付け]** - このアプリからのデータの切り取りまたはコピーと、他の制限付きアプリへの貼り付けのみを許可します。 任意のアプリからのデータの切り取りまたはコピーと、このアプリへの貼り付けを許可します。<br /><br /> **[すべてのアプリ]** - このアプリとの切り取り、コピー、および貼り付けの操作に制限はありません。|  
-|**[アクセスには簡易暗証番号が必要]**|このアプリを使用するための暗証番号の入力をユーザーに要求します。 ユーザーは、アプリを初めて実行するときに、この暗証番号の設定が求められます。|  
-|**[暗証番号をリセットするまでの試行数]**|ユーザーが PIN の入力を何回試行すると、PIN のリセットが必要になるかを指定します。|  
-|**[アクセスには会社の資格情報が必要]**|アプリにアクセスする前に会社のサインイン情報の入力をユーザーに要求します。|  
-|**[アクセスには会社のポリシーに準拠したデバイスが必要]**|デバイスが脱獄または root 化されていない場合にのみ、アプリを使用できるようにします。|  
-|**[(分数) 後に、アクセス要件を再確認する]**|**[タイムアウト]** フィールドに、アプリの起動後にアプリのアクセス要件を再確認するまでの時間を指定します。<br /><br /> **[オフラインの猶予期間]** フィールドには、デバイスがオフラインの場合は、アプリのアクセス要件を再確認するまでの時間を指定します。|  
-|**[アプリ データの暗号化]**|SD カードに格納されているデータなど、外部に格納されているデータを含む、このアプリに関連するすべてのデータを暗号化することを指定します。<br /><br /> **iOS 用の暗号化**<br /><br /> Configuration Manager モバイル アプリケーション管理ポリシーに関連付けられているアプリでは、データは OS によって提供されるデバイス レベルの暗号化を使用して、格納中に暗号化されます。 これは、IT 管理者によって設定される必要があるデバイスの暗証番号ポリシーを介して有効になります。 暗証番号が必要な場合、モバイル アプリケーション管理ポリシーの設定に従ってデータが暗号化されます。 Apple のドキュメントで説明されているように、[iOS 7 で使用されるモジュールは、FIPS 140-2 で認定されています](http://support.apple.com/en-us/HT202739)。<br /><br /> **Android 用の暗号化**<br /><br /> Configuration Manager モバイル アプリケーション管理ポリシーに関連付けられているアプリでは、暗号化は Microsoft によって提供されます。 データは、モバイル アプリケーション管理ポリシーの設定に従ってファイル I/O 操作中に同期的に暗号化されます。 Android 上の管理されたアプリは、プラットフォームの暗号化ライブラリを利用して、CBC モードで AES-128 暗号化を使用します。 この暗号化方法は FIPS 140-2 で認定されていません。 デバイス ストレージ上のコンテンツは常に暗号化されます。|  
-    |「**画面キャプチャをブロック** 」 (Android デバイスのみ)|このアプリを使用するときに、デバイスの画面キャプチャ機能をブロックするように指定します。|  
+|**Limitare il contenuto Web per la visualizzazione in Managed Browser dell'azienda**|Abilita tutti i collegamenti nell'app da aprire in Managed Browser. Per usare questa opzione, è necessario avere distribuito l'app nei dispositivi.|  
+|**Impedisci backup in Android** o **Impedisci backup in iTunes e iCloud**|Disabilita il backup delle informazioni presenti nell'app.|  
+|**Consenti all'app di trasferire i dati ad altre app**|Specifica le app a cui questa app può inviare dati. È possibile scegliere di non consentire il trasferimento dei dati a qualsiasi app, consentire il trasferimento solo ad altre app con restrizioni o consentire il trasferimento a qualsiasi app.<br /><br /> Nei dispositivi iOS, per impedire il trasferimento di documenti tra app gestite e non gestite, è necessario anche configurare e distribuire un criterio di sicurezza dei dispositivi mobili che disabilita l'impostazione **Consenti documenti gestiti in altre app non gestite**.<br /><br /> Se si sceglie di consentire il trasferimento solo ad altre app con restrizioni, vengono usati i visualizzatori Intune di immagini e PDF (se distribuiti) per aprire il contenuto dei rispettivi tipi.|  
+|**Consenti all'app di ricevere i dati da altre app**|Specifica le app da cui questa app può ricevere dati. È possibile scegliere di non consentire il trasferimento dei dati da qualsiasi app, consentire il trasferimento solo da altre app con restrizioni o consentire il trasferimento da qualsiasi app.|  
+|**Impedisci "Salva con nome"**|Disabilita l'uso dell'opzione **Salva con nome** in qualsiasi app che usa questo criterio.|  
+|**Limita le operazioni taglia, copia e incolla con le altre app**|Specifica come è possibile usare le operazioni taglia, copia e incolla con l'app. È possibile scegliere tra:<br /><br /> **Bloccato**: non consente le operazioni taglia, copia e incolla tra questa app e altre app.<br /><br /> **App gestite da criteri**: consente le operazioni taglia, copia e incolla solo tra questa app e altre app con restrizioni.<br /><br /> **App gestite da criteri con Incolla in**: consente di incollare i dati tagliati o copiati da questa app solo in altre app con restrizioni. I dati tagliati o copiati da qualsiasi app possono essere incollati in questa app.<br /><br /> **Qualsiasi app**: nessuna restrizione per le operazioni taglia, copia e incolla in o da questa app.|  
+|**Richiedi PIN semplice per l'accesso**|Richiede all'utente di immettere un PIN specificato per l'uso dell'app. All'utente viene richiesto di impostare questo numero alla prima esecuzione dell'app.|  
+|**Numero di tentativi prima della reimpostazione del PIN**|Specifica il numero di tentativi di immissione del PIN che è possibile effettuare prima che all'utente venga richiesto di reimpostare il PIN.|  
+|**Richiedi credenziali aziendali per l'accesso**|Richiede all'utente di immettere le informazioni di accesso aziendali per poter accedere all'app.|  
+|**Richiedi la conformità del dispositivo ai criteri aziendali per l'accesso**|Consente l'uso dell'app solo se il dispositivo non è jailbroken o rooted.|  
+|**Controlla di nuovo i requisiti di accesso dopo (minuti)**|Specifica il periodo di tempo che deve trascorrere prima che vengano controllati di nuovo i requisiti di accesso per l'app dopo l'avvio (nel campo **Timeout**).<br /><br /> Nel campo **Periodo di prova offline**, se il dispositivo è offline, specifica il periodo di tempo che deve trascorrere prima che vengano controllati di nuovo i requisiti di accesso per l'app.|  
+|**Crittografa dati app**|Specifica che tutti i dati associati a questa app siano crittografati, compresi i dati archiviati esternamente come, ad esempio, i dati archiviati sulle schede SD.<br /><br /> **Crittografia per iOS**<br /><br /> Per le app associate ai criteri di gestione delle applicazioni mobili di Configuration Manager, i dati vengono crittografati a riposo usando la crittografia a livello di dispositivo implementata dal sistema operativo. Ciò viene abilitato tramite i criteri PIN del dispositivo che devono essere impostati dall'amministratore IT. Quando viene richiesto un PIN, i dati vengono crittografati in base alle impostazioni nei criteri di gestione delle applicazioni mobili. Come indicato nella documentazione di Apple, [i moduli usati da iOS 7 sono FIPS 140-2 certified](http://support.apple.com/en-us/HT202739).<br /><br /> **Crittografia per Android**<br /><br /> Per le app associate ai criteri di gestione delle applicazioni mobili di Configuration Manager, la crittografia viene implementata da Microsoft. I dati vengono crittografati in modo sincrono durante le operazioni di I/O dei file in base all'impostazione nei criteri di gestione delle applicazioni mobili. Le app gestite su Android usano la crittografia AES-128 in modalità CBC con le librerie di crittografia della piattaforma. Il metodo di crittografia non è conforme agli standard FIPS 140-2. Il contenuto nell'archivio del dispositivo è sempre crittografato.|  
+    |**Blocca acquisizione schermo** (solo per dispositivi Android)|Specifica che le funzionalità di acquisizione schermo del dispositivo vengono bloccate quando si usa questa app.|  
 
-6)  **[管理対象ブラウザー]** ページで、管理対象ブラウザーが一覧内の URL のみを開くことを許可するか、管理対象ブラウザーが一覧内の URL を開けないようにするかを選択し、**[次へ]** をクリックします。  
-詳細については、「[Managed Browser ポリシーを使用したインターネット アクセスの管理](manage-internet-access-using-managed-browser-policies.md)」を参照してください。  
+6)  Nella pagina **Managed Browser** selezionare se Managed Browser è autorizzato ad aprire solo gli URL nell'elenco o meno e quindi fare clic su **Avanti**.  
+Per altre informazioni, vedere [Gestire un accesso Internet tramite i criteri di Managed Browser](manage-internet-access-using-managed-browser-policies.md).  
 
-7)  ウィザードを完了します。  
+7)  Completare la procedura guidata.  
 
- 新しいポリシーが **[ソフトウェア ライブラリ]** ワークスペースの **[アプリケーション管理ポリシー]** ノードに表示されます。  
+ Il nuovo criterio viene visualizzato nel nodo **Criteri di gestione delle applicazioni** dell'area di lavoro **Raccolta software** .  
 
-##  <a name="step-4-associate-the-application-management-policy-with-a-deployment-type"></a>手順 4: アプリケーション管理ポリシーを展開の種類と関連付ける  
+##  <a name="step-4-associate-the-application-management-policy-with-a-deployment-type"></a>Passaggio 4: Associare i criteri di gestione delle applicazioni a un tipo di distribuzione  
 
- アプリケーション管理ポリシーを必須とするアプリの展開の種類を作成すると、Configuration Manager に認識され、アプリケーション管理ポリシーを関連付けるように求められます。 管理対象ブラウザーでは、全般ポリシーと管理対象ブラウザー ポリシーの両方を関連付ける必要があります 詳細については、「[Create applications](create-applications.md)」 (アプリケーションを作成する) を参照してください。  
-
-> [!IMPORTANT]  
->  アプリケーションが既に展開されている場合、新しい種類の展開は、この関連付けがなされるまで失敗します。 関連付けは、 **[アプリケーション管理]** タブにある、アプリケーションの **プロパティ** で実行できます。  
+ Quando viene creato un tipo di distribuzione per un'app che richiede un criterio di gestione dell'applicazione, Configuration Manager lo riconosce e chiede di associare un criterio di gestione dell'app. Per Managed Browser, è necessario associare i criteri Managed Browser e Generale. Per altre informazioni, vedere [Create applications](create-applications.md) (Creare le applicazioni).  
 
 > [!IMPORTANT]  
->  iOS 7.1 以前のオペレーティング システムを実行しているデバイスの場合、関連付けられているポリシーはアプリのアンインストール時に削除されません。  
+>  Se l'applicazione è già stata distribuita, la distribuzione per il nuovo tipo di distribuzione ha esito negativo fino a quando non viene eseguita questa associazione. È possibile eseguire l'associazione in **Proprietà** per l'applicazione nella scheda **Gestione applicazioni** .  
+
+> [!IMPORTANT]  
+>  Per i dispositivi che eseguono sistemi operativi precedenti a iOS 7.1, i criteri associati non vengono rimossi quando si disinstalla l'app.  
 >   
->  デバイスが Configuration Manager から登録解除された場合、ポリシーはアプリから削除されません。 ポリシーが適用されたアプリは、アプリがアンインストールされ、再インストールされた後でもポリシー設定を保持します。  
+>  Se viene annullata la registrazione del dispositivo da Configuration Manager, i criteri non vengono rimossi dalle app. Nelle app con i criteri applicati vengono mantenute le impostazioni dei criteri anche dopo che l'applicazione viene disinstallata e reinstallata.  
 
-##  <a name="step-5-monitor-the-app-deployment"></a>手順 5: アプリの展開を監視する  
- モバイル アプリケーション管理ポリシーに関連付けられたアプリを作成し、展開したら、アプリを監視し、ポリシーの競合を解決することができます。  
+##  <a name="step-5-monitor-the-app-deployment"></a>Passaggio 5: Monitorare la distribuzione dell'app  
+ Dopo aver creato e distribuito un'app associata al criterio di gestione delle applicazioni mobili, è possibile monitorare l'app e risolvere eventuali conflitti di criteri.  
 
-1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[概要]** > **[展開]** を選択します。  
+1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Panoramica** > **Distribuzioni**.  
 
-3.  作成した展開を選択します。 **[ホーム]** タブで **[プロパティ]** を選択します。  
+3.  Selezionare la distribuzione che è stata creata. Nella scheda **Home** scegliere **Proprietà**.  
 
-4.  展開の [詳細] ウィンドウで、**[関連オブジェクト]** の下にある **[アプリケーション管理ポリシー]** を選択します。  
+4.  Nel riquadro dei dettagli per la distribuzione scegliere **Criteri di gestione delle applicazioni** in **Oggetti correlati**.  
 
- アプリケーションの監視の詳細については、「[アプリケーションの監視](/sccm/apps/deploy-use/monitor-applications-from-the-console)」を参照してください。  
+ Per altre informazioni sul monitoraggio delle applicazioni, vedere [Monitorare le applicazioni](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
 
-##  <a name="learn-how-policy-conflicts-are-resolved"></a>ポリシー競合の解決方法  
- ユーザーまたはデバイスへの最初のデプロイで、モバイル アプリケーション管理ポリシーの競合がある場合、競合している特定の設定値が、アプリにデプロイされたポリシーから削除されます。 次に、アプリは組み込みの競合値を使用します。  
+##  <a name="learn-how-policy-conflicts-are-resolved"></a>Informazioni su come vengono risolti i conflitti tra criteri  
+ Quando si verifica un conflitto tra i criteri di gestione delle applicazioni mobili nella prima distribuzione all'utente o al dispositivo, il valore di impostazione specifico in conflitto viene rimosso dai criteri distribuiti all'app. L'app usa quindi un valore in conflitto incorporato.  
 
- アプリまたはユーザーへの以降のデプロイでモバイル アプリ管理ポリシーの競合がある場合、競合している特定の設定値は、アプリにデプロイされたモバイル アプリ管理ポリシーで更新されず、アプリはその設定の既存の値を使用します。  
+ Quando si verifica un conflitto tra i criteri di gestione delle applicazioni mobili nelle successive distribuzioni all'utente o all'app, il valore di impostazione specifico in conflitto non viene aggiornato nei criteri distribuiti all'app e l'app usa il valore esistente per tale impostazione.  
 
- デバイスまたはユーザーが 2 つの競合するポリシーを受け取った場合は、次の動作が適用されます。  
+ Nei casi in cui il dispositivo o l'utente riceva due criteri in conflitto, si applica il comportamento seguente:  
 
--   ポリシーがデバイスに既にデプロイされている場合、既存のポリシー設定は上書きされません。  
+-   Se un criterio è già stato distribuito al dispositivo, le impostazioni dei criteri esistenti non vengono sovrascritte.  
 
--   ポリシーが既にデバイスにデプロイされておらず、2 つの競合する設定がデプロイされている場合、デバイスに組み込まれている既定の設定が使用されます。  
+-   Se al dispositivo non è stato ancora distribuito alcun criterio e vengono distribuite due impostazioni in conflitto, viene usata l'impostazione predefinita del dispositivo.  
 
-##  <a name="see-a-list-of-available-policy-managed-apps"></a>使用可能なポリシー管理型アプリの一覧  
- iOS デバイスと Android デバイスで使用可能なポリシー管理型アプリの一覧については、「[Microsoft Intune application partners](https://www.microsoft.com/cloud-platform/microsoft-intune-partners)」(Microsoft Intune アプリケーション パートナー) を参照してください。  
+##  <a name="see-a-list-of-available-policy-managed-apps"></a>Vedere un elenco delle app gestite da criteri disponibili  
+ Per un elenco delle app gestite da criteri disponibili per dispositivi iOS e Android, vedere [Partner di applicazioni per Microsoft Intune](https://www.microsoft.com/cloud-platform/microsoft-intune-partners).  

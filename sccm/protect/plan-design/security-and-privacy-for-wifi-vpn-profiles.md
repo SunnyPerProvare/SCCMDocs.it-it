@@ -1,6 +1,6 @@
 ---
-title: "Wi-Fi および VPN プロファイルのセキュリティとプライバシー | Microsoft Docs"
-description: "System Center Configuration Manager でデバイスの Wi-Fi および VPN プロファイルを管理する場合のセキュリティのベスト プラクティスについて説明します。"
+title: Privacy e sicurezza dei profili Wi-Fi e VPN | Microsoft Docs
+description: Informazioni sulle procedure di sicurezza consigliate per gestire i profili Wi-Fi e VPN per i dispositivi in System Center Configuration Manager.
 ms.custom: na
 ms.date: 12/28/2016
 ms.prod: configuration-manager
@@ -18,23 +18,23 @@ manager: angrobe
 ms.openlocfilehash: 6d1d0a393a2ce614ae5f819475bd47b05e699b45
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-wi-fi-and-vpn-profiles-in-system-center-configuration-manager"></a>System Center Configuration Manager の Wi-Fi および VPN プロファイルのセキュリティとプライバシー
+# <a name="security-and-privacy-for-wi-fi-and-vpn-profiles-in-system-center-configuration-manager"></a>Sicurezza e privacy per i profili Wi-Fi e VPN in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-##  <a name="security-best-practices-for-wi-fi--and-vpn-profiles"></a>Wi-Fi および VPN プロファイルのセキュリティのベスト プラクティス  
- デバイスの Wi-Fi および VPN プロファイルを管理するときは、次のようなセキュリティのベスト プラクティスに従ってください。  
+##  <a name="security-best-practices-for-wi-fi--and-vpn-profiles"></a>Procedure di sicurezza consigliate per i profili Wi-Fi e VPN  
+ Usare le procedure di sicurezza consigliate seguenti per gestire i profili Wi-Fi e VPN per i dispositivi.  
 
-|セキュリティのベスト プラクティス|説明|  
+|Procedura di sicurezza consigliata|Altre informazioni|  
 |----------------------------|----------------------|  
-|可能な場合、使用する Wi-Fi および VPN インフラストラクチャとクライアントのオペレーティング システムでサポートできる最も安全なオプションを選択します。|Wi-Fi および VPN プロファイルは、デバイスで既にサポートしている Wi-Fi および VPN 設定を中央から配付して管理するのに便利です。 Configuration Manager では、Wi-Fi および VPN 機能は追加されません。<br /><br /> デバイスとインフラストラクチャに推奨されるセキュリティ ベスト プラクティスを特定し、実装し、従います。|  
+|Se possibile, scegliere le opzioni più sicure supportate dall'infrastruttura Wi-Fi e VPN e dai sistemi operativi client.|I profili Wi-Fi e VPN rappresentano un metodo pratico per distribuire e gestire in modo centralizzato le impostazioni Wi-Fi e VPN già supportate dai dispositivi in uso. Configuration Manager non aggiunge funzionalità Wi-Fi o VPN.<br /><br /> Identificare, implementare e seguire le procedure consigliate per la protezione per i dispositivi e l'infrastruttura.|  
 
-## <a name="privacy-information-for-wi-fi-profiles"></a>Wi-Fi プロファイルのプライバシー情報  
- Wi-Fi および VPN プロファイルを使って、クライアント デバイスと Wi-Fi および VPN サーバーとの接続を構成し、プロファイルの適用後に、それらのデバイスがコンプライアンスに対応しているかどうかを評価できます。 コンプライアンス対応情報は、管理ポイントからサイト サーバーに送信され、サイト データベースに保存されます。 情報はデバイスが管理ポイントに送信するときは暗号化されますが、サイト データベースに保存するときは暗号化されません。 データベースに保存された情報は、"期限切れの構成管理データの削除" というメンテナンス タスクで削除されるまで維持されます。 **** 情報が削除される既定の期限は 90 日ですが、変更することができます。 対応情報がマイクロソフトに送信されることはありません。  
+## <a name="privacy-information-for-wi-fi-profiles"></a>Informazioni sulla privacy per i profili Wi-Fi  
+ È possibile usare i profili Wi-Fi e VPN per configurare i dispositivi client per connettersi ai server Wi-Fi e VPN e quindi valutare se questi dispositivi diventano conformi dopo che sono stati applicati i profili. Il punto di gestione invia informazioni sulla conformità al server del sito e le informazioni vengono memorizzate nel database del sito. Le informazioni vengono crittografate quando i dispositivi le inviano al punto di gestione, ma non vengono memorizzate in forma crittografata nel database del sito. Il database conserva le informazioni fino a quando l'attività di manutenzione del sito **Elimina dati di gestione configurazione obsoleti** le elimina. L'intervallo di eliminazione predefinito è 90 giorni, ma è possibile modificarlo. Le informazioni sulla conformità non vengono inviate a Microsoft.  
 
- 既定では、デバイスでは Wi-Fi および VPN プロファイルを評価しません。 また、プロファイルを構成してから、プロファイルをユーザーに展開する必要があります。  
+ Per impostazione predefinita, i dispositivi non valutano i profili Wi-Fi e VPN. È necessario anche configurare i profili e quindi distribuirli agli utenti.  
 
- Wi-Fi または VPN プロファイルを構成する前に、プライバシー要件について検討してください。  
+ Prima di configurare i profili Wi-Fi e VPN, considerare i requisiti sulla privacy.  

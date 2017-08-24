@@ -1,6 +1,6 @@
 ---
-title: "ハードウェア インベントリを表示する | Microsoft Docs | リソース エクスプローラー"
-description: "System Center Configuration Manager でリソース エクスプローラーを使用してハードウェア インベントリを表示します。"
+title: Visualizzare l'inventario hardware | Microsoft Docs | Resource Explorer
+description: Usare Esplora inventario risorse per visualizzare l'inventario hardware in System Center Configuration Manager.
 ms.custom: na
 ms.date: 01/03/2017
 ms.prod: configuration-manager
@@ -17,35 +17,35 @@ manager: angrobe
 ms.openlocfilehash: e39fa60a5d215fa1b0a98d4463058497e63a4d4f
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-use-resource-explorer-to-view-hardware-inventory-in-system-center-configuration-manager"></a>System Center Configuration Manager でリソース エクスプローラーを使用してハードウェア インベントリを表示する方法
+# <a name="how-to-use-resource-explorer-to-view-hardware-inventory-in-system-center-configuration-manager"></a>Come usare Esplora inventario risorse per visualizzare l'inventario hardware in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager のリソース エクスプローラーを使用して、階層内のクライアントから収集されたハードウェア インベントリに関する情報を表示します。  
+È possibile usare Esplora inventario risorse in System Center Configuration Manager per visualizzare informazioni relative all'inventario hardware raccolto dai client nella gerarchia.  
 
 > [!NOTE]  
->  リソース エクスプローラーでは、接続するクライアントでハードウェア インベントリ サイクルが実行されるまで、インベントリ データは表示されません。  
+>  Esplora inventario risorse non visualizzerà alcun inventario dati fino a quando non è eseguito un ciclo di inventario hardware nel client si connette a.  
 
- リソース エクスプローラーには、ハードウェア インベントリに関する次のセクションが含まれます。  
+ Esplora inventario risorse contiene le sezioni seguenti relative all'inventario hardware:  
 
--   **[ハードウェア]** - 指定したクライアント デバイスから収集された、最新のハードウェア インベントリが含まれます。  **[ワークステーションのステータス]** には、デバイスがハードウェア インベントリを最後に実行した日付と時刻が表示されます。  
+-   **Hardware**: contiene l'inventario hardware più recente raccolto dal dispositivo client specificato.  **Stato workstation**: indica la data e ora dell'ultima esecuzione di un inventario hardware del dispositivo.  
 
--   **[ハードウェア履歴]** – 前回ハードウェア インベントリが実行されてから変更されたインベントリ項目の履歴が含まれます。 各項目には、**[現在]** ノードと、1 つ以上の *<日付\>* ノードが含まれます。 現在のノードの情報と、履歴ノードの 1 つを比較して、変更された項目を見つけることができます。  
+-   **Cronologia hardware**: contiene una cronologia degli elementi inclusi nell'inventario che sono stati modificati dall'ultima esecuzione dell'inventario hardware. Ogni elemento contiene un nodo **Corrente** e uno o più nodi *<data\>*. È possibile confrontare le informazioni nel nodo corrente con uno dei nodi cronologici per individuare gli elementi modificati.  
 
     > [!NOTE]  
-    >  Configuration Manager では、**[期限切れのインベントリ履歴の削除]** サイト メンテナンス タスクで、サイトに対して指定されている日数だけ、インベントリの履歴が保持されます。  
+    >  Configuration Manager mantiene una cronologia dell'inventario hardware per il numero di giorni specificato nell'attività di manutenzione del sito **Elimina cronologia inventario obsoleta**  
 
 > [!NOTE]  
->  Linux および UNIX を実行しているクライアントからハードウェア インベントリを表示する方法については、「 [System Center Configuration Manager で Linux および UNIX サーバーのクライアントを監視する方法](../../../../core/clients/manage/monitor-clients-for-linux-and-unix-servers.md)」を参照してください。  
+>  Per informazioni su come visualizzare l'inventario hardware dai client che eseguono Linux e UNIX, vedere [Come monitorare i client per i server Linux e UNIX in System Center Configuration Manager](../../../../core/clients/manage/monitor-clients-for-linux-and-unix-servers.md).  
 
-### <a name="how-to-run-resource-explorer-from-the-configuration-manager-console"></a>Configuration Manager コンソールからリソース エクスプローラーを実行する方法  
+### <a name="how-to-run-resource-explorer-from-the-configuration-manager-console"></a>Come eseguire Esplora inventario risorse dalla console di Configuration Manager  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[デバイス]** を選択するか、デバイスを表示する任意のコレクションを開きます。  
+1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Dispositivi** oppure aprire qualsiasi raccolta che visualizza dispositivi.  
 
-3.  表示するインベントリが含まれているコンピューターをクリックしたら、**[ホーム]** タブの **[デバイス]** グループで **[開始]** >  **[リソース エクスプローラー]** の順に選択します。   
+3.  Scegliere il computer che contiene l'inventario da visualizzare e quindi nel gruppo **Dispositivi** della scheda **Home** scegliere **Avvia** >  **Esplora inventario risorse**.   
 
-4.  **[リソース エクスプローラー]** ウィンドウの右ウィンドウの項目を右クリックし、**[プロパティ]** をクリックして、*[<項目名\>***のプロパティ]** ダイアログ ボックスを開くことができます。このダイアログ ボックスには、収集されたインベントリ情報を、より読みやすい形式で表示できます。  
+4.  Fare clic con il pulsante destro del mouse su qualsiasi elemento nel riquadro di destra della finestra **Esplora inventario risorse** e quindi scegliere **Proprietà** per aprire la finestra di dialogo *<Nome elemento\>***Proprietà** per visualizzare le informazioni di inventario raccolte in un formato più leggibile.  
 

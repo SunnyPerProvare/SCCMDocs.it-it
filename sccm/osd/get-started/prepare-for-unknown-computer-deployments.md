@@ -1,6 +1,6 @@
 ---
-title: "不明なコンピューターの展開の準備 | Microsoft Docs"
-description: "System Center Configuration Manager 環境内で Configuration Manager によって管理されていないコンピューターにオペレーティング システムを展開する方法について説明します。"
+title: Preparare le distribuzioni in computer sconosciuti | Microsoft Docs
+description: Informazioni su come distribuire i sistemi operativi ai computer che non sono gestiti da Configuration Manager nell'ambiente di System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,68 +18,68 @@ manager: angrobe
 ms.openlocfilehash: 445e76950f0605da917f3d0e7e71557d969e3c2d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="prepare-for-unknown-computer-deployments-in-system-center-configuration-manager"></a>System Center Configuration Manager での不明なコンピューターの展開の準備
+# <a name="prepare-for-unknown-computer-deployments-in-system-center-configuration-manager"></a>Operazioni preliminari alle distribuzioni in computer sconosciuti in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager 環境でオペレーティング システムを不明なコンピューターに展開するには、このトピックの情報を参考にしてください。 不明なコンピューターとは、Configuration Manager によって管理されていないコンピューターのことです。 これは、Configuration Manager データベースにそれらのコンピューターのレコードがないことを意味します。 不明なコンピューターには次のようなものがあります。  
+Usare le informazioni di questo argomento per distribuire sistemi operativi a computer sconosciuti nell'ambiente di System Center Configuration Manager. Un computer sconosciuto è un computer che non è gestito da Configuration Manager. Ciò vuol dire che non ci sono record di questi computer nel database di Configuration Manager. I computer sconosciuti includono i seguenti:  
 
--   Configuration Manager クライアントがインストールされていないコンピューター  
+-   Computer in cui non è installato il client di Configuration Manager  
 
--   Configuration Manager にインポートされていないコンピューター  
+-   Computer non importati in Configuration Manager  
 
--   Configuration Manager で検出されていないコンピューター  
+-   Computer non rilevati da Configuration Manager  
 
- 以下の展開方法で、不明なコンピューターにオペレーティング システムを展開できます。  
+ È possibile distribuire sistemi operativi in computer sconosciuti con i metodi di distribuzione seguenti:  
 
--   [PXE を使用したネットワーク経由での Windows の展開](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md)  
+-   [Usare PXE per distribuire Windows in rete](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md)  
 
--   [起動可能なメディアを使用して、オペレーティング システムを展開する](../deploy-use/create-bootable-media.md)  
+-   [Usare i supporti di avvio per distribuire un sistema operativo](../deploy-use/create-bootable-media.md)  
 
--   [事前設定されたメディアを使用して、オペレーティング システムを展開する](../deploy-use/create-prestaged-media.md)  
+-   [Usare i supporti preinstallati per distribuire un sistema operativo](../deploy-use/create-prestaged-media.md)  
 
-## <a name="unknown-computer-deployment-workflow"></a>不明なコンピューターの展開のワークフロー  
- 以下に、不明なコンピューターにオペレーティング システムを展開する際の基本的なワークフローについて説明します。  
+## <a name="unknown-computer-deployment-workflow"></a>Flusso di lavoro per la distribuzione in computer sconosciuti  
+ Di seguito è riportato il flusso di lavoro di base per distribuire un sistema operativo in un computer sconosciuto:  
 
--   展開で使用する不明なコンピューター オブジェクトを選択する。 オペレーティング システムを、 **すべての不明なコンピューター** コレクションの不明なコンピューター オブジェクトのいずれかに展開したり、 **すべての不明なコンピューター** コレクション内のオブジェクトを別のコレクションに追加したりできます。 Configuration Manager では、**すべての不明なコンピューター** コレクション内に 2 つの不明なコンピューター オブジェクトがあります。 ひとつは x86 コンピューター用オブジェクトで、もうひとつは x64 コンピューター用オブジェクトです。  
+-   Selezionare un oggetto computer sconosciuto da utilizzare nella distribuzione. È possibile distribuire il sistema operativo in uno degli oggetti computer sconosciuti nella raccolta **Tutti i computer sconosciuti** oppure è possibile aggiungere gli oggetti nella raccolta **Tutti i computer sconosciuti** a un'altra raccolta. Configuration Manager offre due oggetti computer sconosciuti nella raccolta **Tutti i computer sconosciuti**. Un oggetto è per i computer x86 e l'altro per i computer x64.  
 
     > [!NOTE]  
-    >  [不明な x86 コンピューター] は、x86 のみが可能なコンピューター用オブジェクトです。 **** **[不明な x64 コンピューター]** は、x86 および x64 が可能なコンピューター用オブジェクトです。 言い換えると、これらのオブジェクトは、展開先コンピューターのアーキテクチャの説明になります。 セットアップ先のコンピューターに展開するオペレーティング システムの説明ではありません。  
+    >  L'oggetto **Computer x86 sconosciuto** è solo per i computer che supportano x86. L'oggetto **Computer x64 sconosciuto** è per i computer che supportano x86 e x64. In pratica, questi oggetti descrivono l'architettura del computer di destinazione. Non descrivono il sistema operativo che si vuole distribuire nel computer di destinazione.  
 
--   不明なコンピューターの展開をサポートする PXE 対応配布ポイントを構成するか、メディアを作成する。  
+-   Configurare un punto di distribuzione che supporta PXE o creare un supporto che consenta le distribuzioni in computer sconosciuti.  
 
--   オペレーティング システムをインストールするタスク シーケンスを展開する。  
+-   Distribuire la sequenza di attività per installare il sistema operativo.  
 
-## <a name="unknown-computer-installation-process"></a>不明なコンピューターのインストール プロセス  
- コンピューターが最初に PXE またはメディアから起動されると、 Configuration Manager は、コンピューターのレコードが Configuration Manager データベースに存在するかどうか確認します。 レコードがある場合は、Configuration Manager がさらに、そのレコードに展開されるタスク シーケンスがあるかどうかを確認します。 レコードがない場合は、Configuration Manager は、不明なコンピューター オブジェクトに展開されたタスク シーケンスがあるかどうか確認します。 いずれの場合も、Configuration Manager は、それから次のいずれかのアクションを実行します。  
+## <a name="unknown-computer-installation-process"></a>Processo di installazione di computer sconosciuti  
+ Quando un computer viene avviato da PXE o da un supporto per la prima volta, Configuration Manager verifica la presenza di record per tale computer nel database di Configuration Manager. Se viene rilevato un record, Configuration Manager verifica la presenza di sequenze di attività distribuite nel record. Se non viene rilevato alcun record, Configuration Manager verifica la presenza di sequenze di attività distribuite in un oggetto computer sconosciuto. In entrambi i casi, Configuration Manager esegue una delle operazioni seguenti:  
 
--   タスク シーケンスを使用できる場合は、Configuration Manager はユーザーにタスク シーケンスの実行を求めます。  
+-   Se c'è una sequenza di attività disponibile, Configuration Manager richiede all'utente di eseguire tale sequenza.  
 
--   必要なタスク シーケンスがある場合は、Configuration Manager がそのタスク シーケンスを自動的に実行します。  
+-   Se c'è una sequenza di attività necessaria, Configuration Manager esegue tale sequenza automaticamente.  
 
--   タスク シーケンスがレコードに展開されていない場合は、Configuration Manager は、展開先コンピューターにタスク シーケンスが展開されていないというエラーを生成します。  
+-   Se non è distribuita una sequenza di attività per il record, Configuration Manager genera un errore che indica che non è presente nessuna sequenza di attività distribuita per il computer di destinazione.  
 
- 不明なコンピューターが開始された場合、Configuration Manager はそのコンピューターを、不明なコンピューターではなく、プロビジョニングが解除されたコンピューターとして認識します。 これは、そのコンピューターが、不明なコンピューター オブジェクトに展開されたタスク シーケンスを受信できることを意味します。 展開されたタスク シーケンスは、Configuration Manager クライアントを含むオペレーティング システム イメージをインストールします。  
+ Quando viene avviato un computer sconosciuto, Configuration Manager identifica il computer come computer di cui non è stato eseguito il provisioning e non come computer sconosciuto. Ciò significa che il computer è ora in grado di ricevere le sequenze attività distribuite per l'oggetto computer sconosciuto. La sequenza di attività distribuita installa quindi un'immagine del sistema operativo che deve includere il client di Configuration Manager.  
 
- Configuration Manager クライアントがインストールされた後、コンピューターのレコードが作成され、そのコンピューターが適切な Configuration Manager コレクションのリストに追加されます。 コンピューターがオペレーティング システム イメージまたは Configuration Manager クライアントのインストールに失敗した場合、コンピューターの "不明" のレコードが作成され、コンピューターは**すべてのシステム**コレクションに表示されます。  
+ Dopo aver installato il client di Configuration Manager, viene creato un record per il computer e tale computer viene elencato nella raccolta di Configuration Manager appropriata. Se il computer non riesce a installare l'immagine del sistema operativo o il client di Configuration Manager, viene creato un record "sconosciuto" per il computer e tale computer viene visualizzato nella raccolta **Tutti i sistemi**.  
 
 > [!NOTE]  
->  オペレーティング システム イメージのインストール時、タスク シーケンスは、不明なコンピューターからコレクション変数を取得できますが、コンピューター変数は取得できません。  
+>  Durante l'installazione dell'immagine del sistema operativo, la sequenza attività può recuperare le variabili raccolta ma non le variabili computer da questo computer.  
 
-##  <a name="BKMK_EnablingUnknown"></a> 不明なコンピューターのサポートの有効化  
- PXE、起動可能なメディア、または事前設定されたメディアを使用してオペレーティング システムを展開する場合、不明なコンピューターのサポートを有効にするには、次をご使用ください。  
+##  <a name="BKMK_EnablingUnknown"></a> Attivazione del supporto per computer sconosciuti  
+ Usare le informazioni seguenti per consentire il supporto di computer sconosciuti quando si distribuisce un sistema operativo con PXE, supporti di avvio e supporti pre-installati.  
 
 -   **PXE**  
 
-     配布ポイントを PXE に有効にするには、 **[PXE]** タブで **[不明なコンピューターのサポートを有効にする]** チェック ボックスをオンにします。 詳細については、「[PXE 要求を受け入れるための配布ポイントの構成](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint)」を参照してください。  
+     Selezionare la casella di controllo **Abilita supporto per computer sconosciuti** nella scheda **PXE** per un punto di distribuzione che supporta PXE. Per altre informazioni, vedere [Configurazione dei punti di distribuzione per accettare le richieste PXE](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint).  
 
--   **起動可能なメディア**  
+-   **Supporto di avvio**  
 
-     タスク シーケンス メディアの作成ウィザードの **[セキュリティ]** ページで、 **[不明なコンピューターのサポートを有効にする]** チェック ボックスをオンにします。 詳細については、「[PXE 要求を受け入れるための配布ポイントの構成](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint)」および「[System Center Configuration Manager で PXE を使用してネットワーク経由で Windows を展開する](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md)」を参照してください。  
+     Selezionare la casella di controllo **Abilita supporto per computer sconosciuti** nella pagina **Protezione** della Creazione guidata del supporto per la sequenza attività. Per altre informazioni, vedere [Configurazione dei punti di distribuzione per accettare le richieste PXE](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint) e [Usare PXE per distribuire Windows in rete con System Center Configuration Manager](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
 
--   **事前設定されたメディア**  
+-   **Supporto pre-installato**  
 
-     タスク シーケンス メディアの作成ウィザードの **[セキュリティ]** ページで、 **[不明なコンピューターのサポートを有効にする]** チェック ボックスをオンにします。 詳細については、「 [Create prestaged media with System Center Configuration Manager](../deploy-use/create-prestaged-media.md)」をご覧ください。  
+     Selezionare la casella di controllo **Abilita supporto per computer sconosciuti** nella pagina **Protezione** della Creazione guidata del supporto per la sequenza attività. Per ulteriori informazioni, vedere [Create prestaged media with System Center Configuration Manager](../deploy-use/create-prestaged-media.md).  

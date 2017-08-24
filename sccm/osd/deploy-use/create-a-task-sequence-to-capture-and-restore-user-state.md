@@ -1,6 +1,6 @@
 ---
-title: "ユーザー状態をキャプチャおよび復元するタスク シーケンスの作成 | Microsoft Docs"
-description: "System Center Configuration Manager のタスク シーケンスを使用してオペレーティング システムの展開シナリオでのユーザー状態のデータをキャプチャして復元します。"
+title: "Creare una sequenza di attività per acquisire e ripristinare lo stato utente | Microsoft Docs"
+description: "Usare le sequenze di attività di System Center Configuration Manager per acquisire e ripristinare i dati dello stato utente in scenari di distribuzione del sistema operativo."
 ms.custom: na
 ms.date: 06/07/2017
 ms.prod: configuration-manager
@@ -18,153 +18,153 @@ manager: angrobe
 ms.openlocfilehash: 4b3668094d576b1b8710f08b384aa2f7c5eb0cca
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-a-task-sequence-to-capture-and-restore-user-state-in-system-center-configuration-manager"></a>System Center Configuration Manager でユーザー状態をキャプチャおよび復元するためのタスク シーケンスを作成する
+# <a name="create-a-task-sequence-to-capture-and-restore-user-state-in-system-center-configuration-manager"></a>Creare una sequenza di attività per acquisire e ripristinare lo stato utente in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-オペレーティング システムを展開するときに、現在のオペレーティング システムのユーザー状態を維持したい場合は、System Center Configuration Manager のタスク シーケンスを使って、ユーザー状態データをキャプチャして復元します。 作成するタスク シーケンスの種類によっては、タスク シーケンスの一部として、キャプチャの作成と復元のステップが自動的に追加されることがあります。 他のシナリオでは、タスク シーケンスにキャプチャと復元のステップを手動で追加する必要があります。 このトピックでは、ユーザー状態データをキャプチャして復元するために、既存のタスク シーケンスに追加する必要があるステップを示します。  
+È possibile usare le sequenze attività di System Center Configuration Manager per acquisire e ripristinare i dati sullo stato utente in scenari di distribuzione del sistema operativo in cui si desidera mantenere lo stato utente del sistema operativo corrente. A seconda del tipo di sequenza di attività che si crea, è possibile aggiungervi automaticamente i passaggi di acquisizione e ripristino. In altri scenari potrebbe essere necessario aggiungere manualmente i passaggi di acquisizione e ripristino alla sequenza di attività. Questo argomento fornisce i passaggi che è necessario aggiungere a una sequenza di attività esistente per acquisire e ripristinare i dati dello stato utente.  
 
-##  <a name="BKMK_CaptureRestoreUserState"></a> ユーザー状態データのキャプチャおよび復元方法  
- ユーザー状態をキャプチャして復元するには、タスク シーケンスに、次のステップを追加する必要があります。  
+##  <a name="BKMK_CaptureRestoreUserState"></a> Come acquisire e ripristinare i dati dello stato utente  
+ Per acquisire e ripristinare lo stato utente, è necessario aggiungere i passaggi seguenti alla sequenza di attività:  
 
--   **状態ストアの要求**: 状態移行ポイントにユーザー状態を保存する場合に限り、このステップが必要となります。  
+-   **Richiedi archiviazione stati**: questo passaggio è necessario solo se si archivia lo stato utente nel punto di migrazione stato.  
 
--   **ユーザー状態のキャプチャ**: このステップでは、ユーザー状態データをキャプチャし、状態移行ポイントに保存するか、リンクを使用してローカルに保存します。  
+-   **Acquisisci stato utente**: questo passaggio consente di acquisire i dati dello stato utente e di archiviarli nel punto di migrazione stato o localmente tramite collegamenti.  
 
--   **ユーザー状態の復元**: このステップでは、ユーザー状態データを展開先コンピューターに復元します。 ユーザー状態移行ポイントまたは展開先コンピューターからデータを取得できます。  
+-   **Ripristina stato utente**: questo passaggio consente di ripristinare i dati dello stato utente nel computer di destinazione. Consente di recuperare i dati da un punto di migrazione stato utente o dal computer di destinazione.  
 
--   **状態ストアのリリース**: 状態移行ポイントにユーザー状態を保存する場合に限り、このステップが必要です。 このステップでは、状態移行ポイントからこのデータを削除します。  
+-   **Rilascia archiviazione stati**: questo passaggio è necessario solo se si archivia lo stato utente nel punto di migrazione stato. Questo passaggio consente di rimuovere i dati dal punto di migrazione stato.  
 
- 次の手順に従い、ユーザー状態のキャプチャと復元に必要なタスク シーケンスのステップを追加します。 タスク シーケンスの作成の詳細については、「[タスクを自動化するためのタスク シーケンスの管理](manage-task-sequences-to-automate-tasks.md)」を参照してください。  
+ Utilizzare le procedure seguenti per aggiungere i passaggi della sequenza attività necessari per acquisire lo stato utente e ripristinare lo stato utente. Per altre informazioni sulla creazione di sequenze di attività, vedere [Gestire le sequenze di attività per automatizzare le attività](manage-task-sequences-to-automate-tasks.md).  
 
-#### <a name="to-add-task-sequence-steps-to-capture-the-user-state"></a>ユーザー状態をキャプチャするタスク シーケンスのステップを追加するには  
+#### <a name="to-add-task-sequence-steps-to-capture-the-user-state"></a>Per aggiungere i passaggi della sequenza attività per acquisire lo stato utente  
 
-1.  [ **タスク シーケンス** ] 一覧で、タスク シーケンスを選択し、[ **編集**] をクリックします。  
+1.  Nell'elenco **Sequenza attività** selezionare una sequenza attività, quindi fare clic su **Modifica**.  
 
-2.  状態移行ポイントを使用してユーザー状態を保存するには、[状態ストアの要求] ステップをタスク シーケンスに追加します。 **** [タスク シーケンス エディター] ダイアログ ボックス **** で、[追加 ****] をクリックし、[ユーザー状態 ****] をポイントしてから、[ユーザー状態の要求 ****] をクリックします。 [ **状態ストアの要求** ] 手順について、次のプロパティとオプションを指定し、[ **適用**] をクリックします。  
+2.  Se si utilizza un punto di migrazione stato per archiviare lo stato utente, aggiungere il passaggio **Richiedi archiviazione stati** alla sequenza attività. Nella finestra di dialogo **Editor della sequenza attività** fare clic su **Aggiungi**, scegliere **Stato utente**e quindi fare clic su **Richiedi archiviazione stati**. Specificare le proprietà e le opzioni seguenti per il passaggio **Richiedi archiviazione stati** e quindi fare clic su **Applica**.  
 
-     [プロパティ] タブで、次のオプションを指定します。 ****   
+     Nella scheda **Proprietà** specificare le opzioni seguenti:  
 
-    -   ステップの名前と説明を入力します。  
+    -   Immettere un nome e una descrizione per il passaggio.  
 
-    -   [状態をコンピューターからキャプチャする] をクリックします。 ****  
+    -   Fare clic su **Acquisisci stato dal computer**.  
 
-    -   [再試行の回数] ボックスで、エラーが発生した場合にタスク シーケンスがユーザー状態のキャプチャを試行する回数を指定します。 ****  
+    -   Nella casella **Numero di tentativi** specificare per quante volte la sequenza attività tenterà di acquisire i dati dello stato utente qualora si verifichi un errore.  
 
-    -   [再試行の待ち時間 (秒)] ボックスで、タスク シーケンスがデータのキャプチャを再試行するまで待機する秒数を指定します。 ****  
+    -   Nella casella **Intervallo tra tentativi (in secondi)** specificare quanti secondi la sequenza attività attenderà prima di riprovare ad acquisire i dati.  
 
-    -   状態ストアへの接続に Configuration Manager [ネットワーク アクセス アカウント](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#a-namebkmknaaa-network-access-account)を使用するかどうかを指定するには、[**コンピューター アカウントで状態ストアに接続できない場合、ネットワーク アクセス アカウントを使用する**] チェック ボックスをオンにします。  
+    -   Selezionare la casella di controllo **Se l'account del computer non riesce a connettersi a un archivio stato, usare l'account di accesso alla rete** per specificare se usare l'[account di accesso alla rete](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#a-namebkmknaaa-network-access-account) di Configuration Manager per connettersi allo stato utente.  
 
-     [オプション **** ] タブで、次のオプションを指定します。  
+     Nella scheda **Opzioni** specificare le seguenti opzioni:  
 
-    -   このステップが失敗した場合にタスク シーケンスが次のステップに進むようにするには、[エラー時に続行する **** ] チェック ボックスをオンにします。  
+    -   Selezionare la casella di controllo **Continua in caso di errore** se si desidera che la sequenza attività passi al passaggio successivo in caso di errore di questo passaggio.  
 
-    -   エラーが発生した場合に、タスク シーケンスが続行するために満たす必要のある条件を指定します。  
+    -   Specificare le condizioni che devono essere soddisfatte prima di proseguire la sequenza attività in caso di errore.  
 
-3.  [ユーザー状態のキャプチャ] ステップをタスク シーケンスに追加します。 **** [タスク シーケンス エディター] **** ダイアログ ボックスで、[追加 ****] をクリックし、[ユーザー状態 ****] をポイントしてから、[ユーザー状態のキャプチャ ****] をクリックします。 [ **ユーザー状態のキャプチャ** ] 手順について、次のプロパティとオプションを指定し、[ **OK**] をクリックします。  
-
-    > [!IMPORTANT]  
-    >  タスク シーケンスにこの手順を追加する場合、 **OSDStateStorePath** タスク シーケンス変数を設定して、ユーザー状態データの保存場所を指定します。 ユーザー状態をローカルに保存する場合は、ルート フォルダーを指定しないでください。タスク シーケンスが失敗する可能性があります。 ユーザー データをローカルに保存する場合は、常にフォルダーまたはサブフォルダーを使用してください。 この変数については、「[ユーザー状態のキャプチャ タスク シーケンス アクション変数](../understand/task-sequence-action-variables.md#BKMK_CaptureUserState)」を参照してください。  
-
-     [プロパティ] タブで、次のオプションを指定します。 ****   
-
-    -   ステップの名前と説明を入力します。  
-
-    -   ユーザー状態データのキャプチャに使用する USMT ソース ファイルを含むパッケージを指定します。  
-
-    -   キャプチャするユーザー プロファイルを指定します。  
-
-        -   すべてのユーザー プロファイルをキャプチャするには、[標準オプションを使用してすべてのユーザー プロファイルをキャプチャする] をクリックします。 ****  
-
-        -   キャプチャするユーザー プロファイルを個別に指定するには、[ユーザー プロファイルのキャプチャ方法をカスタマイズする] をクリックします。 **** ユーザー プロファイル情報を含む構成ファイル (miguser.xml、migsys.xml、または migapp.xml) を選択します。 ここでは config.xml 構成ファイルを使用できませんが、OSDMigrageAdditionalCaptureOptions 変数と OSDMigrateAdditionalRestoreOptions 変数を使用して、USMT コマンド ラインに手動で追加することができます。
-
-    -   [詳細ログ記録を有効にする **** ] を選択し、エラーが発生した場合にどのくらいの情報をログに書き込むかを指定します。  
-
-    -   [暗号化されたファイル システム (EFS) を使用するファイルをスキップする] をオンにします。 ****  
-
-    -   次の設定を指定するには、[ファイル システム アクセスを使用してコピーする] をオンにします。 ****  
-
-        -   **キャプチャできないファイルがあっても続行する**: この設定では、タスク シーケンス手順が一部のファイルをキャプチャできない場合でも移行処理を続行できます。 このオプションを無効にし、ファイルをキャプチャできない場合、タスク シーケンスのステップは失敗します。 既定では、このオプションは有効になっています。  
-
-        -   **ファイルをコピーする代わりに、リンクを使用してローカルでキャプチャする**: この設定では、USMT 4.0 で使用可能なハード リンク移行機能を使用することができます。 USMT 4.0 より前のバージョンの USMT を使用している場合、この設定は無視されます。  
-
-        -   **オフライン モードでキャプチャする (Windows PE のみ)**: この設定では、既存のオペレーティング システムを起動せずに、Windows PE からユーザー状態をキャプチャできます。 USMT 4.0 より前のバージョンの USMT を使用している場合、この設定は無視されます。  
-
-    -   [Volume Copy Shadow Services (VSS) を使用してキャプチャする] ****を選択します。 USMT 4.0 より前のバージョンの USMT を使用している場合、この設定は無視されます。  
-
-     [オプション **** ] タブで、次のオプションを指定します。  
-
-    -   このステップが失敗した場合にタスク シーケンスが次のステップに進むようにするには、[エラー時に続行する **** ] チェック ボックスをオンにします。  
-
-    -   エラーが発生した場合に、タスク シーケンスが続行するために満たす必要のある条件を指定します。  
-
-4.  状態移行ポイントを使用してユーザー状態を保存する場合は、タスク シーケンスに、[[状態ストアのリリース](../understand/task-sequence-steps.md#BKMK_ReleaseStateStore)] ステップを追加します。 [タスク シーケンス エディター **** ] ダイアログ ボックスで [追加 ****] をクリックし、[ユーザー状態 ****] を選択してから [状態ストアのリリース ****] をクリックします。 [状態ストアのリリース **** ] 手順について次のプロパティとオプションを指定し、[OK ****] をクリックします。  
+3.  Aggiungere il passaggio **Acquisisci stato utente** alla sequenza attività. Nella finestra di dialogo **Editor della sequenza attività** fare clic su **Aggiungi**, scegliere **Stato utente**e quindi fare clic su **Acquisisci stato utente**. Specificare le proprietà e le opzioni seguenti per il passaggio **Acquisisci stato utente** e quindi fare clic su **OK**.  
 
     > [!IMPORTANT]  
-    >  [状態ストアのリリース **** ] 手順の開始前に実行するタスク シーケンス アクションは、正常に実行できる必要があります。 ****  
+    >  Quando si aggiunge questo passaggio alla sequenza attività, impostare anche la variabile della sequenza attività **OSDStateStorePath** per specificare dove vengono archiviati i dati dello stato utente. Se si archivia lo stato utente localmente, non specificare una cartella radice perché potrebbe verificarsi un errore nella sequenza attività. Quando si archiviano i dati utente localmente, utilizzare sempre una cartella o una sottocartella. Per informazioni su questa variabile, vedere [Variabili di azione della sequenza di attività Acquisisci stato utente](../understand/task-sequence-action-variables.md#BKMK_CaptureUserState).  
 
-     [プロパティ **** ] タブに手順の名前と説明を入力します。  
+     Nella scheda **Proprietà** specificare le opzioni seguenti:  
 
-     [オプション **** ] タブで、次のオプションを指定します。  
+    -   Immettere un nome e una descrizione per il passaggio.  
 
-    -   このステップが失敗した場合にタスク シーケンスが次のステップに進むようにするには、[エラー時に続行する **** ] チェック ボックスをオンにします。  
+    -   Specificare il pacchetto contenente il file di origine USMT utilizzato per acquisire i dati dello stato utente.  
 
-    -   エラーが発生した場合に、タスク シーケンスが続行するために満たす必要のある条件を指定します。  
+    -   Specificare i profili utente da acquisire:  
 
- このタスク シーケンスを展開し、展開先コンピューターでユーザー状態をキャプチャします。 タスク シーケンスの展開方法の詳細については、「[タスク シーケンスの展開](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS)」を参照してください。  
+        -   Fare clic su **Acquisisci tutti i profili utente utilizzando le opzioni standard** per acquisire tutti i profili utente.  
 
-#### <a name="to-add-task-sequence-steps-to-restore-the-user-state"></a>ユーザー状態を復元するタスク シーケンスのステップを追加するには  
+        -   Fare clic su **Personalizza modalità di acquisizione dei profili utente** per specificare i singoli profili utente da acquisire. Selezionare il file di configurazione (miguser.xml, migsys.xml o migapp.xml) che contiene le informazioni sul profilo utente. Non è possibile usare il file di configurazione config.xml qui, ma è possibile aggiungerlo manualmente alla riga di comando USMT usando le variabili OSDMigrageAdditionalCaptureOptions e OSDMigrateAdditionalRestoreOptions.
 
-1.  [ **タスク シーケンス** ] 一覧で、タスク シーケンスを選択し、[ **編集**] をクリックします。  
+    -   Selezionare **Abilita la registrazione dettagliata** per specificare la quantità di informazioni da scrivere nei file di log in caso di errore.  
 
-2.  [[ユーザー状態の復元](../understand/task-sequence-steps.md#BKMK_RestoreUserState)] ステップをタスク シーケンスに追加します。 [タスク シーケンス エディター] **** ダイアログ ボックスで、[追加 ****] をクリックし、[ユーザー状態 ****] をポイントしてから、[ユーザー状態の復元 ****] をクリックします。 このステップでは、状態移行ポイントへの接続を確立します。 [ **ユーザー状態の復元** ] 手順について、次のプロパティとオプションを指定し、[ **OK**] をクリックします。  
+    -   Selezionare **Ignora file che utilizzano Encrypting File System (EFS)**.  
 
-     [プロパティ] タブで、次のプロパティを指定します。 ****   
+    -   Selezionare **Copia utilizzando l'accesso al file system** per specificare le impostazioni seguenti:  
 
-    -   ステップの名前と説明を入力します。  
+        -   **Continua se non è possibile acquisire alcuni file**: questa impostazione consente al passaggio della sequenza di attività di continuare il processo di migrazione, anche se non è possibile acquisire alcuni file. Se si disattiva questa opzione e non è possibile acquisire un file, il passaggio della sequenza attività avrà esito negativo. Questa opzione è attivata per impostazione predefinita.  
 
-    -   ユーザー状態データを復元する USMT を含むパッケージを指定します。  
+        -   **Esegui acquisizione localmente utilizzando i collegamenti invece di copiare i file**: questa impostazione consente di usare la funzionalità di migrazione con collegamenti reali disponibile in USMT 4.0. Questa impostazione viene ignorata se si utilizzano versioni di USMT precedenti a USMT 4.0.  
 
-    -   復元するユーザー プロファイルの指定:  
+        -   **Acquisisci in modalità non in linea (solo Windows PE)**: questa impostazione consente di acquisire lo stato di utilizzo da Windows PE senza eseguire l'avvio del sistema operativo esistente. Questa impostazione viene ignorata se si utilizzano versioni di USMT precedenti a USMT 4.0.  
 
-        -   [キャプチャしたすべてのユーザー プロファイルを標準オプションを使用して復元する **** ] をクリックし、ユーザー プロファイルをすべて復元します。  
+    -   Selezionare **Acquisisci utilizzando Servizio Copia Shadow del volume (VSS)**. Questa impostazione viene ignorata se si utilizzano versioni di USMT precedenti a USMT 4.0.  
 
-        -   **[Customize user profile restore]\(ユーザー プロファイルの復元方法をカスタマイズする\)** をクリックし、個別のユーザー プロファイルを復元します。 ユーザー プロファイル情報を含む構成ファイル (miguser.xml、migsys.xml、または migapp.xml) を選択します。 ここでは config.xml 構成ファイルを使用できませんが、OSDMigrageAdditionalCaptureOptions 変数と OSDMigrateAdditionalRestoreOptions 変数を使用して、USMT コマンド ラインに手動で追加することができます。
+     Nella scheda **Opzioni** specificare le seguenti opzioni:  
 
-    -   [ローカル コンピューターのユーザー プロファイルを復元する **** ] を選択し、復元したプロファイルの新しいパスワードを入力します。 ローカル プロファイルのパスワードは移行できません。  
+    -   Selezionare la casella di controllo **Continua in caso di errore** se si desidera che la sequenza attività passi al passaggio successivo in caso di errore di questo passaggio.  
+
+    -   Specificare le condizioni che devono essere soddisfatte prima di proseguire la sequenza attività in caso di errore.  
+
+4.  Se si usa un punto di migrazione stato per archiviare lo stato utente, aggiungere il passaggio [Rilascia archiviazione stati](../understand/task-sequence-steps.md#BKMK_ReleaseStateStore) alla sequenza di attività. Nella finestra di dialogo **Editor della sequenza attività** fare clic su **Aggiungere**, scegliere **Stato utente**, quindi fare clic su **Rilascia archiviazione stati**. Specificare le proprietà e le opzioni seguenti per il passaggio **Rilascia archiviazione stati** , quindi fare clic su **OK**.  
+
+    > [!IMPORTANT]  
+    >  È necessario che l'azione della sequenza attività eseguita prima del passaggio **Rilascia archiviazione stati** abbia esito positivo prima dell'avvio del passaggio **Rilascia archiviazione stati** .  
+
+     Nella scheda **Proprietà** immettere un nome e una descrizione per il passaggio.  
+
+     Nella scheda **Opzioni** specificare le seguenti opzioni.  
+
+    -   Selezionare la casella di controllo **Continua in caso di errore** se si desidera che la sequenza attività passi al passaggio successivo in caso di errore di questo passaggio.  
+
+    -   Specificare le condizioni che devono essere soddisfatte prima di proseguire la sequenza attività in caso di errore.  
+
+ Distribuire questa sequenza attività per acquisire lo stato utente in un computer di destinazione. Per altre informazioni su come distribuire sequenze di attività, vedere [Distribuire una sequenza di attività](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
+
+#### <a name="to-add-task-sequence-steps-to-restore-the-user-state"></a>Per aggiungere i passaggi della sequenza attività per ripristinare lo stato utente  
+
+1.  Nell'elenco **Sequenza attività** selezionare una sequenza attività, quindi fare clic su **Modifica**.  
+
+2.  Aggiungere il passaggio [Ripristina stato utente](../understand/task-sequence-steps.md#BKMK_RestoreUserState) alla sequenza attività. Nella finestra di dialogo **Editor della sequenza attività** fare clic su **Aggiungere**, scegliere **Stato utente**, quindi fare clic su **Ripristina stato utente**. Questo passaggio stabilisce una connessione al punto di migrazione dello stato. Specificare le proprietà e le opzioni seguenti per il passaggio **Ripristina stato utente** , quindi fare clic su **OK**.  
+
+     Nella scheda **Proprietà** specificare le seguenti proprietà:  
+
+    -   Immettere un nome e una descrizione per il passaggio.  
+
+    -   Specificare il pacchetto che contiene l'USMT per ripristinare i dati sullo stato dell'utente.  
+
+    -   Specificare i profili utente da ripristinare:  
+
+        -   Fare clic su **Ripristina tutti i profili utente acquisiti con le opzioni standard** per ripristinare tutti i profili utente.  
+
+        -   Fare clic su **Personalizza la modalità di ripristino dei profili utente** per ripristinare singoli profili utente. Selezionare il file di configurazione (miguser.xml, migsys.xml o migapp.xml) che contiene le informazioni sul profilo utente. Non è possibile usare il file di configurazione config.xml qui, ma è possibile aggiungerlo manualmente alla riga di comando USMT usando le variabili OSDMigrageAdditionalCaptureOptions e OSDMigrateAdditionalRestoreOptions.
+
+    -   Selezionare **Ripristina profili utente del computer locale** per fornire una nuova password per i profili ripristinati. Non è possibile eseguire la migrazione delle password per i profili locali.  
 
         > [!NOTE]  
-        >  ローカル ユーザー アカウントがあり、[[ユーザー状態のキャプチャ](../understand/task-sequence-steps.md#BKMK_CaptureUserState)] ステップを使用して、[**すべてのユーザー プロファイルを標準オプションでキャプチャする**]を選択する場合、[[ユーザー状態の復元](../understand/task-sequence-steps.md#BKMK_RestoreUserState)] ステップで、[**ローカル コンピューターのユーザー プロファイルを復元する**] 設定を選択する必要があります。そうしないと、タスク シーケンスは失敗します。  
+        >  Se sono disponibili account utente locale e si usa il passaggio [Acquisisci stato utente](../understand/task-sequence-steps.md#BKMK_CaptureUserState) con l'opzione **Acquisisci tutti i profili utente utilizzando le opzioni standard**selezionata, sarà necessario selezionare l'impostazione **Ripristina profili utente del computer locale** nel passaggio [Ripristina stato utente](../understand/task-sequence-steps.md#BKMK_RestoreUserState). In caso contrario, la sequenza attività avrà esito negativo.  
 
-    -   ファイルを復元できない状態で [ユーザー状態の復元 **** ] 手順を続行する場合は、[復元できないファイルがあっても続行する **** ] を選択します。  
+    -   Selezionare **Continua se non è possibile ripristinare dei file** se si desidera che il passaggio **Ripristina stato utente** proceda anche in caso di impossibilità di ripristinare un file.  
 
-         ローカル リンクを使用してユーザー状態を保存しており、正常に復元できなかった場合、管理者ユーザーは作成されたハードリンクを手動で削除してデータを復元できます。あるいは、タスク シーケンスで USMTUtils ツールを実行することもできます。 USMTUtils を使用してハードリンクを削除する場合は、USMTUtils を実行してから [[コンピューターの再起動](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer)] ステップを追加します。  
+         Se lo stato utente viene archiviato tramite collegamenti locali e il ripristino ha esito negativo, l'utente amministratore potrà eliminare manualmente i collegamenti reali creati per l'archiviazione dei dati. In alternativa, la sequenza attività può eseguire lo strumento USMTUtils. Se si utilizza USMTUtils per eliminare il collegamento reale, aggiungere un passaggio [Riavvia computer](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer) dopo l'esecuzione di USMTUtils.  
 
-    -   [詳細ログ記録を有効にする **** ] を選択し、エラーが発生した場合にどのくらいの情報をログに書き込むかを指定します。  
+    -   Selezionare **Abilita la registrazione dettagliata** per specificare la quantità di informazioni da scrivere nei file di log in caso di errore.  
 
-     [オプション **** ] タブで、次のオプションを指定します。  
+     Nella scheda **Opzioni** specificare le seguenti opzioni:  
 
-    -   このステップが失敗した場合にタスク シーケンスが次のステップに進むようにするには、[エラー時に続行する **** ] チェック ボックスをオンにします。  
+    -   Selezionare la casella di controllo **Continua in caso di errore** se si desidera che la sequenza attività passi al passaggio successivo in caso di errore di questo passaggio.  
 
-    -   エラーが発生した場合に、タスク シーケンスが続行するために満たす必要のある条件を指定します。  
+    -   Specificare le condizioni che devono essere soddisfatte prima di proseguire la sequenza attività in caso di errore.  
 
-3.  状態移行ポイントを使用してユーザー状態を保存する場合は、タスク シーケンスに、[[状態ストアのリリース](../understand/task-sequence-steps.md#BKMK_ReleaseStateStore)] ステップを追加します。 [タスク シーケンス エディター **** ] ダイアログ ボックスで [追加 ****] をクリックし、[ユーザー状態 ****] を選択してから [状態ストアのリリース ****] をクリックします。 [状態ストアのリリース **** ] 手順について次のプロパティとオプションを指定し、[OK ****] をクリックします。  
+3.  Se si usa un punto di migrazione stato per archiviare lo stato utente, aggiungere il passaggio [Rilascia archiviazione stati](../understand/task-sequence-steps.md#BKMK_ReleaseStateStore) alla sequenza di attività. Nella finestra di dialogo **Editor della sequenza attività** fare clic su **Aggiungere**, scegliere **Stato utente**, quindi fare clic su **Rilascia archiviazione stati**. Specificare le proprietà e le opzioni seguenti per il passaggio **Rilascia archiviazione stati** , quindi fare clic su **OK**.  
 
     > [!IMPORTANT]  
-    >  [状態ストアのリリース **** ] 手順の開始前に実行するタスク シーケンス アクションは、正常に実行できる必要があります。 ****  
+    >  È necessario che l'azione della sequenza attività eseguita prima del passaggio **Rilascia archiviazione stati** abbia esito positivo prima dell'avvio del passaggio **Rilascia archiviazione stati** .  
 
-     [プロパティ **** ] タブに手順の名前と説明を入力します。  
+     Nella scheda **Proprietà** immettere un nome e una descrizione per il passaggio.  
 
-     [オプション **** ] タブで、次のオプションを指定します。  
+     Nella scheda **Opzioni** specificare le seguenti opzioni.  
 
-    -   このステップが失敗した場合にタスク シーケンスが次のステップに進むようにするには、[エラー時に続行する **** ] チェック ボックスをオンにします。  
+    -   Selezionare la casella di controllo **Continua in caso di errore** se si desidera che la sequenza attività passi al passaggio successivo in caso di errore di questo passaggio.  
 
-    -   エラーが発生した場合に、タスク シーケンスが続行するために満たす必要のある条件を指定します。  
+    -   Specificare le condizioni che devono essere soddisfatte prima di proseguire la sequenza attività in caso di errore.  
 
- このタスク シーケンスを展開し、対象コンピューターでユーザー状態を復元します。 タスク シーケンスの詳細については、「[タスク シーケンスの展開](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS)」を参照してください。  
+ Distribuire questa sequenza attività per ripristinare lo stato utente in un computer di destinazione. Per informazioni sulla distribuzione di sequenze di attività, vedere [Distribuire una sequenza di attività](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
 
-## <a name="next-steps"></a>次のステップ
-[タスク シーケンスの展開の監視](monitor-operating-system-deployments.md#BKMK_TSDeployStatus)
+## <a name="next-steps"></a>Passaggi successivi
+[Monitorare la distribuzione della sequenza di attività](monitor-operating-system-deployments.md#BKMK_TSDeployStatus)

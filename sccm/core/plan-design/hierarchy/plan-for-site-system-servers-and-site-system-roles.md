@@ -1,6 +1,6 @@
 ---
-title: "サイト システムの役割の計画 | Microsoft Docs"
-description: "System Center Configuration Manager の階層を計画するとき、サイト システム サーバーとサイト システムの役割を考慮します。"
+title: Pianificare i server e i ruoli del sistema | Documentazione Microsoft
+description: Prendere in considerazione i server di sistema del sito e i ruoli di sistema del sito quando si pianifica la gerarchia di System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,137 +17,137 @@ manager: angrobe
 ms.openlocfilehash: 0a3704a2d3b75ed7e0a7f718b681448ab6fc078d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-for-site-system-servers-and-site-system-roles-for-system-center-configuration-manager"></a>System Center Configuration Manager のサイト システム サーバーとサイト システムの役割の計画
+# <a name="plan-for-site-system-servers-and-site-system-roles-for-system-center-configuration-manager"></a>Pianificare i server e i ruoli del sistema del sito per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-インストールする各 System Center Configuration Manager サイトには、**サイト システム サーバー**であるサイト サーバーが含まれます。 サイトには、サイト サーバーからリモートにあるコンピューター上の追加のサイト システム サーバーを含めることもできます。 サイト システム サーバー (サイト サーバーまたはリモート サイト システム サーバー) は **サイト システムの役割**をサポートします。
-
-
-##  <a name="bkmk_siteservers"></a> サイト システム サーバー  
- コンピューターにサイト システムの役割をインストールすると、そのコンピューターは、サイト システム サーバーになります。 各サイトで、追加のサイト システム サーバーを 1 つ以上インストールできます。 追加のサイト システム サーバーをインストールせずに、すべてのサイト システムの役割をサイト サーバー コンピューター上で直接実行することもできます。 各サイト システム サーバーは、1 つまたは複数のサイト システムの役割をサポートします。 追加のサーバーは、そのサイト システムの役割によってサーバーに発生する CPU の処理負荷を共有することにより、サイトの機能と容量を拡張できます。  
-
- サイト システム サーバーの追加を検討する際には、意図している用途の前提条件をそのサーバーが満たしていることを確認してください。 また、追加のサーバーは、サイト サーバー、ドメイン リソース、クラウド ベースの場所、サイト システム サーバー、クライアントなど、想定されるエンドポイントと通信するのに十分な帯域幅のあるネットワークの場所に追加することをお勧めします。  
-
- サイト システムの役割で使用するためのプロキシをサイト システム サーバーに構成する場合は、「[プロキシ サーバーを使用できるサイト システムの役割](#bkmk_proxy)」をご覧ください。  
-
-##  <a name="bkmk_planroles"></a> サイト システムの役割  
- サイト システムの役割は、サイトに追加の機能を提供するためにコンピューターにインストールされます。 その例は次のとおりです。  
-
--   追加の管理ポイント。サイトでサポートできるデバイスを、サイトでサポートされる容量まで増やします。  
-
--   追加の配布ポイント。コンテンツのインフラストラクチャを拡張し、デバイスとユーザーへのコンテンツの配布のパフォーマンスを向上させます。  
-
--   1 つ以上の機能固有のサイト システムの役割。 たとえば、ソフトウェアの更新ポイントをインストールして、管理されたデバイスのソフトウェア更新プログラムを使用したり、レポート サービス ポイントをインストールして、展開したシステムを監視して把握するための、または情報を共有するためのレポートを実行したりします。  
+Ogni sito di System Center Configuration Manager installato include un server del sito, ovvero un **server di sistema del sito**. Il sito può includere anche altri server del sistema del sito nei computer remoti rispetto al server del sito. I server del sistema del sito, ovvero il server del sito o un server del sistema del sito remoto, supportano i **ruoli del sistema del sito**.
 
 
-Configuration Manager の各サイトは異なるセットのサイト システムの役割をサポートします。 サポートされているサイト システムの役割のセットは、サイトの種類 (中央管理サイト、プライマリ サイト、またはセカンダリ サイト) によって異なります。 階層のトポロジで、特定の種類のサイトでのいくつかの役割の配置が制限される場合があります。 たとえば、サービス接続ポイントは、中央管理サイトまたはスタンドアロン プライマリ サイトである階層の最上階層のサイトでのみサポートされます。 この役割は、子プライマリ サイトまたはセカンダリ サイトではサポートされていません。  
+##  <a name="bkmk_siteservers"></a> Server del sistema del sito  
+ Quando si installa un ruolo del sistema del sito in un computer, il computer diventa un server del sistema del sito. In ogni sito è possibile installare uno o più server del sistema del sito aggiuntivi. Si può anche scegliere di non installare altri server del sistema del sito ed eseguire tutti i ruoli del sistema del sito direttamente nel computer del server del sito. Ogni server di sistema del sito supporta uno o più ruoli del sistema del sito. I server supplementari possono essere utili per espandere le funzionalità e la capacità di un sito condividendo il carico di elaborazione della CPU derivante dai ruoli del sistema del sito in un server.  
 
-サイトをインストールした後に、一部のサイト システムの役割の場所を、サイト サーバーの既定の場所から別のサーバーに移動できます。 たとえば、これはプライマリまたはセカンダリのサイト サーバーに既定でインストールする管理ポイントや配布ポイントに当てはまります。 一部のサイト システムの役割の追加インスタンスをインストールしてサイトの機能を拡張し (追加のサービスをクライアントに提供)、ビジネス要件に対応することもできます。 一部の役割は必須ですが、それ以外は省略可能です。  
+ Quando si valuta se aggiungere un server del sistema del sito, verificare che il server soddisfi i prerequisiti per l'uso previsto. È consigliabile aggiungere un percorso di rete con larghezza di banda sufficiente per comunicare con gli endpoint previsti, inclusi il server del sito, le risorse di dominio, un percorso basato sul cloud, i server del sistema del sito e i client.  
 
--   **Configuration Manager サイト サーバー。** この役割は、Configuration Manager セットアップを実行してサイトをインストールするサーバー、またはセカンダリ サイトをインストールするサーバーを識別します。 この役割は、サイトをアンインストールしない限り、移動したりアンインストールしたりできません。  
+ Se si configura il server del sistema del sito con un proxy usato dai ruoli del sistema del sito, vedere [Ruoli del sistema del sito che possono usare un server proxy](#bkmk_proxy).  
 
--   **Configuration Manager サイト システム。** この役割は、サイトをインストールするコンピューター、またはサイト システムの役割をインストールするコンピューターのいずれかに割り当てられます。 この役割は、最後のサイト システムの役割がコンピューターから削除されるまでは、移動したりアンインストールしたりできません。  
+##  <a name="bkmk_planroles"></a> Site system roles  
+ I ruoli del sistema del sito vengono installati in un computer per fornire altre funzionalità al sito. Alcuni esempi:  
 
--   **Configuration Manager コンポーネント サイト システムの役割。** この役割は、SMS Executive サービスのインスタンスを実行するサイト システムを識別します。この役割は、管理ポイントと同様に、その他の役割をサポートするために必要です。 この役割は、最後の該当するサイト システムの役割がコンピューターから削除されるまでは、移動したりアンインストールしたりできません。  
+-   Punti di gestione aggiuntivi in modo tale che il sito possa supportare più dispositivi, fino alla capacità supportata del sito.  
 
--   **Configuration Manager サイト データベース サーバー。** この役割は、サイトのサイト データベースのインスタンスを保持するサイト システム サーバーに割り当てられます。 この役割は、新しいサーバーにのみ移動できます。移動するには、サイト データベースをホストする別のインスタンスの SQL Server を使用するようにサイトを変更します。  
+-   Punti di distribuzione aggiuntivi per espandere l'infrastruttura del contenuto, migliorando le prestazioni delle distribuzioni di contenuto a utenti e dispositivi.  
 
--   **SMS プロバイダー。** SMS プロバイダーの役割は、SMS プロバイダーのインスタンスをホストする各コンピューター、および Configuration Manager コンソールとサイト データベース間のインターフェイスをホストする各コンピューターに割り当てられます。 既定では、この役割は中央管理サイトとプライマリ サイトのサイト サーバーに自動的にインストールします。 各サイトに追加のインスタンスをインストールして、追加の管理ユーザーに対してアクセス許可を与えます。  
-
-     追加のプロバイダーをインストールするには、Configuration Manager のセットアップを実行して [SMS サーバーを管理する](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ManageSMSprovider)必要があります。 その後、追加のプロバイダーを追加のコンピューターにインストールできます。 1 台のコンピューターにインストールできるのは SMS プロバイダーの 1 つのインスタンスのみです。また、そのコンピューターは、サイト サーバーと同じドメインにある必要があります。  
-
--   **アプリケーション カタログ Web サービス ポイント。** ソフトウェア ライブラリから、アプリケーション カタログ Web サイトにソフトウェア情報を供給します。 この役割はプライマリ サイトでのみサポートされていますが、この役割の複数のインスタンスを 1 つのサイトにインストールしたり、同じ階層内の複数のサイトにインストールしたりできます。  
-
--   **アプリケーション カタログ Web サイト ポイント。** アプリケーション カタログにある使用可能なソフトウェアの一覧をユーザーに提供します。 この役割はプライマリ サイトでのみサポートされていますが、この役割の複数のインスタンスを 1 つのサイトにインストールしたり、同じ階層内の複数のサイトにインストールしたりできます。  
-
-     インターネット上のクライアント コンピューターからアプリケーション カタログにアクセスできるようにする場合は、セキュリティのベスト プラクティスとして、セキュリティで保護するためにアプリケーション カタログ Web サイト ポイントを境界ネットワークに、アプリケーション カタログ Web サービス ポイントをイントラネットにインストールすることをお勧めします。  
-
--   **資産インテリジェンス同期ポイント。** マイクロソフトに接続して資産インテリジェンス カタログの情報をダウンロードします。 また、この役割は将来カタログに追加する候補として、分類されていないタイトルをアップロードします。 階層はこの役割の 1 つのインスタンスのみをサポートします。このインスタンスは、階層の最上位層サイト (中央管理サイトまたはスタンドアロン プライマリ サイト) に置く必要があります。 スタンドアロン プライマリ サイトをより大きな階層に拡張する場合は、この役割をプライマリ サイトからアンインストールしてから、中央管理サイトにインストールする必要があります。   詳細については、「[System Center Configuration Manager の資産インテリジェンス](../../../core/clients/manage/asset-intelligence/introduction-to-asset-intelligence.md)」をご覧ください。  
-
--   **証明書登録ポイント。** ネットワーク デバイス登録サービスを実行するサーバーと通信します。 この役割は、Simple Certificate Enrollment Protocol (SCEP) を使用するデバイス証明書の要求を管理します。 この役割は、プライマリ サイトと中央管理サイトでのみサポートされています。
-
-     単一の証明書登録ポイントは階層全体に機能を提供できますが、1 つのサイトまたは同じ階層の複数のサイトにこの役割の複数のインスタンスをインストールすることをお勧めします。 これにより、負荷が分散されます。 階層に複数のインスタンスが存在する場合、クライアントは証明書登録ポイントのいずれかに無作為に割り当てられます。  
-
-     証明書登録ポイントごとに、ネットワーク デバイス登録サービスの個別のインスタンスにアクセスする必要があります。 2 つ以上の証明書登録ポイントで同じネットワーク デバイス登録サービスを使用するように構成することはできません。 また、証明書登録ポイントは、ネットワーク デバイス登録サービスを実行するサーバーと同じサーバーにインストールしないでください。  
-
-- **クラウド管理ゲートウェイ コネクタ ポイント。** [クラウド管理ゲートウェイ](/sccm/core/clients/manage/setup-cloud-management-gateway)と通信します。
-
--   **配布ポイント。** クライアントがダウンロードするソース ファイルを格納します。このソースファイルには、アプリケーションのコンテンツ、ソフトウェア パッケージ、ソフトウェア更新プログラム、オペレーティング システム イメージ、ブート イメージなどがあります。 既定では、この役割は、サイトのインストール時に新しいプライマリ サイトとセカンダリ サイトのサイト サーバー コンピューターにインストールされます。 この役割は中央管理サイトではサポートされていません。 1 つのサポートされているサイトおよび同じ階層の複数のサイトにこの役割の複数のインスタンスをインストールできます。 詳細については、「[Fundamental concepts for content management in System Center Configuration Manager (System Center Configuration Manager のコンテンツ管理の基本的な概念)](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)」と「[System Center Configuration Manager のコンテンツ インフラストラクチャとコンテンツの管理](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」をご覧ください。  
-
--   **フォールバック ステータス ポイント。** クライアントのインストールを監視し、管理ポイントと通信できないため管理されていないクライアントを識別します。 この役割はプライマリ サイトでのみサポートされていますが、この役割の複数のインスタンスを 1 つのサイトにインストールしたり、同じ階層内の複数のサイトにインストールしたりできます。     
+-   Uno o più ruoli del sistema del sito specifici per le funzionalità. Ad esempio, un punto di aggiornamento software consente di gestire gli aggiornamenti software per i dispositivi gestiti oppure un punto di Reporting Services consente di eseguire report per monitorare e comprendere o condividere le informazioni relative alla distribuzione.  
 
 
--   **Endpoint Protection ポイント。** Configuration Manager で Endpoint Protection ライセンス条項に同意し、Cloud Protection Service の既定のメンバーシップを構成します。 階層はこの役割の 1 つのインスタンスのみをサポートします。このインスタンスは、階層の最上位層サイト (中央管理サイトまたはスタンドアロン プライマリ サイト) に置く必要があります。 スタンドアロン プライマリ サイトをより大きな階層に拡張する場合は、この役割をプライマリ サイトからアンインストールしてから、中央管理サイトにインストールする必要があります。 詳しくは、「[System Center Configuration Manager での Endpoint Protection](../../../protect/deploy-use/endpoint-protection.md)」をご覧ください。  
+Vari siti di Configuration Manager possono supportare diversi set di ruoli di sistema del sito. Il set di ruoli del sistema del sito supportato dipende dal tipo di sito, ad esempio un sito di amministrazione centrale, un sito primario o un sito secondario. La topologia della gerarchia può limitare l'uso di alcuni ruoli a determinati tipi di sito. Ad esempio, il punto di connessione del servizio è supportato solo nel sito di livello superiore della gerarchia, che può essere un sito di amministrazione centrale o un sito primario autonomo. Questo ruolo non è supportato in un sito primario figlio o nei siti secondari.  
 
--   **登録ポイント。** Configuration Manager の PKI 証明書を使用してモバイル デバイスと Mac コンピューターを登録します。 この役割はプライマリ サイトでのみサポートされていますが、この役割の複数のインスタンスを 1 つのサイトにインストールしたり、同じ階層内の複数のサイトにインストールしたりできます。  
+Dopo l'installazione di un sito, è possibile spostare la posizione di alcuni ruoli del sistema del sito dalla posizione predefinita nel server del sito a un altro server. Questo vale ad esempio per il punto di gestione o il punto di distribuzione installato per impostazione predefinita in un server del sito primario o secondario. È anche possibile installare altre istanze di alcuni ruoli del sistema del sito per espandere le funzionalità del sito, ovvero fornire altri servizi ai client, e per soddisfare i requisiti aziendali. Alcuni ruoli sono obbligatori, mentre altri sono facoltativi.  
 
-     ユーザーが Configuration Manager を使用してモバイル デバイスを登録し、ユーザーの Active Directory アカウントが、サイト サーバーのフォレストによって信頼されていないフォレストにある場合は、登録ポイントをユーザーのフォレストにインストールする必要があります。 これによりユーザーが認証されます。  
+-   **Server del sito di Configuration Manager.** Questo ruolo identifica il server in cui viene eseguito il programma di installazione di Configuration Manager per installare un sito oppure il server in cui viene installato un sito secondario. Questo ruolo non può essere spostato o disinstallato finché non viene disinstallato il sito.  
 
--   **登録プロキシ ポイント。** モバイル デバイスと Mac コンピューターから Configuration Manager の登録要求を管理するサイト システムの役割。 この役割はプライマリ サイトでのみサポートされていますが、この役割の複数のインスタンスを 1 つのサイトにインストールしたり、同じ階層内の複数のサイトにインストールしたりできます。  
+-   **Sistema del sito di Configuration Manager.** Questo ruolo viene assegnato a qualsiasi computer in cui si installa un sito o un ruolo del sistema del sito. Questo ruolo non può essere spostato o disinstallato finché l'ultimo ruolo del sistema del sito non viene rimosso dal computer.  
 
-     イントラネット上のモバイル デバイスをサポートする場合は、登録プロキシ ポイントを境界ネットワークに、セキュリティで保護するために登録ポイントをイントラネットにインストールすることをお勧めします。  
+-   **Ruolo del sistema del sito del componente di Configuration Manager.** Questo ruolo identifica un sistema del sito che esegue un'istanza del servizio SMS Executive ed è necessario per supportare altri ruoli, ad esempio i punti di gestione. Questo ruolo non può essere spostato o disinstallato finché l'ultimo ruolo del sistema del sito applicabile non viene rimosso dal computer.  
 
--   **Exchange Server コネクタ。** この役割について詳しくは、「[System Center Configuration Manager と Exchange によるモバイル デバイスの管理](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)」をご覧ください。  
+-   **Server di database del sito di Configuration Manager.** Questo ruolo viene assegnato ai server di sistema del sito che mantengono un'istanza del database del sito per un sito. Questo ruolo può essere spostato solo in un nuovo server modificando il sito in modo che usi un'altra istanza di SQL Server per ospitare il database del sito.  
 
--   **管理ポイント。** クライアントにポリシーとサービスの場所の情報を送信し、クライアントから構成データを受け取ります。  
+-   **Provider SMS.** Questo ruolo viene assegnato a ogni computer che ospita un'istanza del provider SMS, l'interfaccia tra una console di Configuration Manager e il database del sito. Per impostazione predefinita, questo ruolo viene installato automaticamente nel server del sito di un sito di amministrazione centrale e nei siti primari. È possibile installare altre istanze in ogni sito per fornire l'accesso ad altri utenti amministratori.  
 
-    既定では、この役割は、サイトのインストール時に新しいプライマリ サイトとセカンダリ サイトのサイト サーバー コンピューターにインストールされます。 プライマリ サイトはこの役割の複数のインスタンスをサポートします。 セカンダリ サイトは単一の管理ポイントをサポートし、クライアントがコンピューターとユーザーのポリシーを取得するときのローカルの接続先となります (セカンダリ サイトの管理ポイントはプロキシ管理ポイントと呼ばれます)。  
+     Per installare altri provider, è necessario eseguire il programma di installazione di Configuration Manager per [gestire il provider SMS](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ManageSMSprovider). Quindi installare altri provider in computer aggiuntivi. È possibile installare solo un'istanza del provider SMS in un computer e tale computer deve essere nello stesso dominio del server del sito.  
 
-     管理ポイントは、HTTP または HTTPS をサポートするようにセットアップでき、System Center Configuration Manager でのオンプレミス モバイル デバイス管理で管理するモバイル デバイスをサポートするようにも構成できます。 [System Center Configuration Manager の管理ポイントにデータベース レプリカ](../../../core/servers/deploy/configure/database-replicas-for-management-points.md)を使うと、それらのデータベース レプリカがクライアントからの要求を処理するので、サイト データベース サーバーに管理ポイントから加えられる CPU 負荷を軽減できます。  
+-   **Punto per servizi Web del Catalogo applicazioni.** Ruolo del sistema del sito che fornisce informazioni sul software per il sito Web del Catalogo applicazioni dalla Raccolta software. Anche se questo ruolo è supportato solo nei siti primari, è possibile installarne più istanze in un sito o in più siti della stessa gerarchia.  
 
--   **レポート サービス ポイント。** SQL Server Reporting Services と連携し、Configuration Manager のレポートを作成して管理するサイト システムの役割。 この役割は、プライマリ サイトと中央管理サイトでサポートされており、サポートされているサイトにこの役割の複数のインスタンスをインストールできます。 詳細については、「[System Center Configuration Manager のレポートの計画](../../../core/servers/manage/planning-for-reporting.md)」をご覧ください。  
+-   **Punto per siti Web del Catalogo applicazioni.** Ruolo del sistema del sito che offre agli utenti un elenco dei software disponibili dal Catalogo applicazioni. Anche se questo ruolo è supportato solo nei siti primari, è possibile installarne più istanze in un sito o in più siti della stessa gerarchia.  
 
--   **サービス接続ポイント。** Microsoft Intune およびオンプレミス MDM でモバイル デバイスを管理するために使用します。 この役割によって、サイトから使用状況データもアップロードされます。この役割は、Configuration Manager コンソールで使用可能な Configuration Manager の更新を行うために必要です。 階層はこの役割の 1 つのインスタンスのみをサポートします。このインスタンスは、階層の最上位層サイト (中央管理サイトまたはスタンドアロン プライマリ サイト) に置く必要があります。 スタンドアロン プライマリ サイトをより大きな階層に拡張する場合は、この役割をプライマリ サイトからアンインストールしてから、中央管理サイトにインストールする必要があります。 詳細については、[System Center Configuration Manager のサービス接続ポイントについて](../../../core/servers/deploy/configure/about-the-service-connection-point.md)をご覧ください。  
+     Quando il Catalogo applicazioni supporta computer client su Internet, installare il punto per siti Web del Catalogo applicazioni in una rete perimetrale e il punto per servizi Web del Catalogo applicazioni sulla Intranet come procedura di sicurezza consigliata.  
 
--   **ソフトウェアの更新ポイント。** Windows Server Update Services (WSUS) と連携して、Configuration Manager クライアントがソフトウェア更新プログラムを利用できるようにするサイト システムの役割。 この役割は、すべてのサイトでサポートされています。  
+-   **Punto di sincronizzazione di Asset Intelligence.** Ruolo del sistema del sito che si connette a Microsoft per scaricare informazioni sul catalogo di Asset Intelligence. Questo ruolo carica anche i titoli senza categoria in modo che possano essere presi in considerazione per una futura inclusione nel catalogo. Una gerarchia supporta una sola istanza di questo ruolo, che deve trovarsi nel sito di livello superiore della gerarchia, ovvero un sito di amministrazione centrale o il sito primario autonomo. Se si espande il sito primario autonomo in una gerarchia più ampia, è necessario disinstallare questo ruolo dal sito primario per poterlo quindi installare nel sito di amministrazione centrale.   Per altre informazioni, vedere [Asset Intelligence in System Center Configuration Manager](../../../core/clients/manage/asset-intelligence/introduction-to-asset-intelligence.md).  
 
-    -   このサイト システムを中央管理サイトにインストールして、WSUS と同期します。  
+-   **Punto di registrazione certificati.** Ruolo del sistema del sito che comunica con un server in cui è in esecuzione il servizio Registrazione dispositivi di rete. Questo ruolo gestisce le richieste di certificato del dispositivo che usano il protocollo Simple Certificate Enrollment Protocol (SCEP). Questo ruolo è supportato solo nei siti primari e nel sito di amministrazione centrale.
 
-    -   子プライマリ サイトでこの役割の各インスタンスをセットアップして、中央管理サイトと同期します。  
+     Anche se un unico punto di registrazione certificati può fornire funzionalità a un'intera gerarchia, può essere opportuno installare più istanze di questo ruolo in uno o più siti della stessa gerarchia. Questo è utile per il bilanciamento del carico. Quando esistono più istanze in una gerarchia, i client vengono assegnati in modo casuale a uno dei punti di registrazione certificati.  
 
-    -   ネットワークのデータ転送速度が低い場合は、セカンダリ サイトにソフトウェアの更新ポイントをインストールすることを検討してください。  
+     Ogni punto di registrazione certificati richiede l'accesso a un'istanza separata di un servizio Registrazione dispositivi di rete. È possibile configurare due o più punti di registrazione certificati per usare lo stesso servizio Registrazione dispositivi di rete. Il punto di registrazione certificati non deve inoltre essere installato sullo stesso server che esegue il servizio Registrazione dispositivi di rete.  
 
-    詳細については、「[System Center Configuration Manager でのソフトウェア更新プログラムの計画](../../../sum/plan-design/plan-for-software-updates.md)」をご覧ください。  
+- **Punto di connessione del gateway di gestione cloud.** Ruolo del sistema del sito per la comunicazione con il [gateway di gestione cloud](/sccm/core/clients/manage/setup-cloud-management-gateway).
 
--   **状態移行ポイント。** コンピューターを新しいオペレーティング システムに移行するときに、ユーザー状態データを保管します。 この役割は、プライマリ サイトおよびセカンダリ サイトでサポートされています。 1 つのサイトおよび同じ階層の複数のサイトにこの役割の複数のインスタンスをインストールできます。 オペレーティング システムを展開するときにユーザー状態を保管する方法の詳細については、「[System Center Configuration Manager でのユーザー状態の管理](../../../osd/get-started/manage-user-state.md)」をご覧ください。  
+-   **Punto di distribuzione.** Ruolo del sistema del sito che contiene file di origine per i client da scaricare, come contenuto di applicazioni, pacchetti software, aggiornamenti software, immagini del sistema operativo e immagini d'avvio. Per impostazione predefinita, questo ruolo viene installato nel computer del server del sito dei nuovi siti primari e secondari quando viene installato il sito. Questo ruolo non è supportato in un sito di amministrazione centrale. È possibile installare più istanze di questo ruolo in un sito supportato e in più siti della stessa gerarchia. Per altre informazioni, vedere [Concetti di base per la gestione dei contenuti in System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md) e [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
--   **システム正常性検証ツール ポイント。** このサイト システムの役割は Configuration Manager コンソールに表示されていますが、使用されていません。  
-
-###  <a name="bkmk_proxy"></a> プロキシ サーバーを使用できるサイト システムの役割  
- いくつかの Configuration Manager サイト システムの役割がインターネットへの接続を必要とし、役割をホストするサイト システム サーバーにプロキシ サーバーが構成されている場合は、そのプロキシ サーバーを使用します。 通常、この接続は、サイト システムの役割がインストールされているコンピューターの **システム** コンテキストで行われます。 接続は通常のユーザー アカウントにはプロキシ構成を使用できません。 インターネット接続を完了するにはプロキシ サーバーが必要な場合、プロキシ サーバーを使用するようにコンピューターをセットアップする必要があります。  
-
--   サイト システムの役割をインストールするときに、プロキシ サーバーをセットアップすることができます。  
-
--   Configuration Manager コンソールを使用すると、プロキシ サーバー構成を追加または変更できます。  
-
--   プロキシ サーバーの構成を使用できるサイト システム サーバー上のすべてのサイト システムの役割は、同じプロキシ サーバーの構成を使用します。 個々のサイト システムの役割で別々のプロキシ サーバーを使用する必要がある場合は、サイト システム サーバーの別々のコンピューターにサイト システムの役割をインストールする必要があります。  
-
--   プロキシ サーバーの構成を変更する場合、または既にプロキシ サーバーの構成を持つコンピューターに新しいサイト システムの役割をインストールする場合は、新しい構成によって、元の構成が上書きされます。  
+-   **Punto di stato di fallback.** Ruolo del sistema del sito che consente di monitorare l'installazione client e di identificare i client che non sono gestiti perché non possono comunicare con il relativo punto di gestione. Anche se questo ruolo è supportato solo nei siti primari, è possibile installarne più istanze in un sito e in più siti della stessa gerarchia.     
 
 
-サイト システムの役割にプロキシ サーバーをセットアップする手順については、「[System Center Configuration Manager のサイト システム役割の追加](../../../core/servers/deploy/configure/add-site-system-roles.md)」をご覧ください。  
+-   **Punto di Endpoint Protection.** Ruolo del sistema del sito che Configuration Manager usa per accettare le condizioni di licenza di Endpoint Protection e per configurare l'appartenenza predefinita per Cloud Protection Service. Una gerarchia supporta una sola istanza di questo ruolo, che deve trovarsi nel sito di livello superiore della gerarchia, ovvero un sito di amministrazione centrale o il sito primario autonomo. Se si espande il sito primario autonomo in una gerarchia più ampia, è necessario disinstallare questo ruolo dal sito primario per poterlo quindi installare nel sito di amministrazione centrale. Per altre informazioni, vedere [Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/endpoint-protection.md).  
 
-次に、プロキシ サーバーを使用できるサイト システムの役割を示します。  
+-   **Punto di registrazione.** Ruolo del sistema del sito che usa i certificati PKI affinché Configuration Manager registri i dispositivi mobili e i computer Mac. Anche se questo ruolo è supportato solo nei siti primari, è possibile installarne più istanze in un sito o in più siti della stessa gerarchia.  
 
--   **資産インテリジェンス同期ポイント。** マイクロソフトに接続して、資産インテリジェンス同期ポイントをホストするコンピューターのプロキシ サーバー構成を使用します。  
+     Se un utente registra dispositivi mobili tramite Configuration Manager e il relativo account di Active Directory si trova in una foresta considerata non attendibile dalla foresta del server del sito, è necessario installare un punto di registrazione nella foresta dell'utente. L'utente può quindi essere autenticato.  
 
--   **クラウドベースの配布ポイント。** クラウドベースの配布ポイントを使用する場合、配布ポイントにコンテンツをプロビジョニング、監視、および配布するために、クラウドベースの配布ポイントを管理するプライマリ サイトが Microsoft Azure に接続できる必要があります。 この接続にプロキシ サーバーが必要な場合、プライマリ サイト サーバーにプロキシ サーバーをセットアップする必要があります。 Azure のクラウドベースの配布ポイントでは、プロキシ サーバーをセットアップできません。 詳しくは、トピック「[Microsoft Azure for System Center Configuration Manager のクラウド ベース配布ポイントのインストール](../../../core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure.md)」のセクション「[クラウド サービスを管理するプライマリ サイトのプロキシ設定の構成](../../../core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure.md#BKMK_ConfigProxyforCloud)」をご覧ください。  
+-   **Punto proxy di registrazione.** Ruolo del sistema del sito che gestisce le richieste di registrazione di Configuration Manager provenienti da dispositivi mobili e computer Mac. Anche se questo ruolo è supportato solo nei siti primari, è possibile installarne più istanze in un sito o in più siti della stessa gerarchia.  
 
--   **Exchange Server コネクタ。** Exchange Server に接続して、Exchange Server コネクタをホストするコンピューターのプロキシ サーバー構成を使用します。  
+     Quando vengono supportati dispositivi mobili su Internet, installare il punto proxy di registrazione in una rete perimetrale per sicurezza e il punto di registrazione sulla Intranet.  
 
--   **ソフトウェアの更新ポイント。** 修正プログラムをダウンロードし、更新プログラムの情報を同期するために、Microsoft Update への接続を要求できます。 通常、プロキシ サーバーをセットアップすると、プロキシ サーバーの使用をサポートしているコンピューターの各サイト システムの役割は、プロキシ サーバーを使用します。 これ以上の構成は必要ありません。 この例外となるのが、ソフトウェアの更新ポイントです。 既定では、ソフトウェアの更新ポイントをセットアップするときに、次のオプションも有効にしない限り、ソフトウェアの更新ポイントは使用可能なプロキシ サーバーを使用しません。  
+-   **Connettore Exchange Server.** Per altre informazioni su questo ruolo, vedere [Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
 
-    -   **[ソフトウェア更新プログラムを同期するときにプロキシ サーバーを使用する]**  
+-   **Punto di gestione.** Ruolo del sistema del sito che invia informazioni sui criteri e sulla posizione del servizio ai client e riceve da essi i dati di configurazione.  
 
-    -   **[自動展開規則を使用してコンテンツをダウンロードするときにプロキシ サーバーを使用する]**  
+    Per impostazione predefinita, questo ruolo viene installato nel computer del server del sito dei nuovi siti primari e secondari quando viene installato il sito. I siti primari supportano più istanze di questo ruolo. I siti secondari supportano un unico punto di gestione che invia ai client un punto di contatto locale per ottenere i criteri per computer e utenti. Un punto di gestione nel sito secondario viene chiamato punto di gestione proxy.  
+
+     I punti di gestione possono essere configurati per supportare HTTP o HTTPS e i dispositivi mobili gestiti con la gestione dei dispositivi mobili locale di System Center Configuration Manager. È possibile usare [repliche di database per i punti di gestione per System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md) per ridurre il carico della CPU sul server di database del sito derivante dai punti di gestione quando gestiscono le richieste provenienti dai client.  
+
+-   **Punto di Reporting Services.** Ruolo del sistema del sito che si integra con SQL Server Reporting Services per creare e gestire rapporti per Configuration Manager. Questo ruolo è supportato nei siti primari e nel sito di amministrazione centrale ed è possibile installarne più istanze in un sito supportato. Per altre informazioni, vedere [Pianificazione per la creazione di report in System Center Configuration Manager](../../../core/servers/manage/planning-for-reporting.md).  
+
+-   **Punto di connessione del servizio.** Ruolo del sistema del sito usato per gestire i dispositivi mobili con Microsoft Intune e MDM locale. Questo ruolo carica anche i dati di utilizzo dal sito ed è necessario per rendere disponibili gli aggiornamenti per Configuration Manager nella console di Configuration Manager. Una gerarchia supporta una sola istanza di questo ruolo, che deve trovarsi nel sito di livello superiore della gerarchia, ovvero un sito di amministrazione centrale o il sito primario autonomo. Se si espande il sito primario autonomo in una gerarchia più ampia, è necessario disinstallare questo ruolo dal sito primario per poterlo quindi installare nel sito di amministrazione centrale. Per ulteriori informazioni, vedere [Informazioni sul punto di connessione del servizio in System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
+
+-   **Punto di aggiornamento software.** Ruolo del sistema del sito che si integra con Windows Server Update Services (WSUS) per fornire aggiornamenti software ai client di Configuration Manager. Questo ruolo è supportato in tutti i siti:  
+
+    -   Installare questo sistema del sito nel sito di amministrazione centrale per la sincronizzazione con WSUS.  
+
+    -   Configurare ogni istanza di questo ruolo nei siti primari figlio per la sincronizzazione con il sito di amministrazione centrale.  
+
+    -   Valutare la possibilità di installare un punto di aggiornamento software nei siti secondari se il trasferimento dei dati nella rete risulta lento.  
+
+    Per altre informazioni, vedere [Pianificare gli aggiornamenti software in System Center Configuration Manager](../../../sum/plan-design/plan-for-software-updates.md).  
+
+-   **Punto di migrazione stato.** Ruolo del sistema del sito che memorizza i dati sullo stato utente quando viene eseguita la migrazione di un computer a un nuovo sistema operativo. Questo ruolo è supportato nei siti primari e nei siti secondari. È possibile installare più istanze di questo ruolo in un sito e in più siti della stessa gerarchia. Per altre informazioni sulla memorizzazione dello stato utente durante la distribuzione di sistemi operativi, vedere [Gestire lo stato utente in System Center Configuration Manager](../../../osd/get-started/manage-user-state.md).  
+
+-   **Punto di Convalida integrità sistema.** Questo ruolo del sistema del sito non è più usato, anche se rimane visibile nella console di Configuration Manager.  
+
+###  <a name="bkmk_proxy"></a> Ruoli del sistema del sito che possono usare un server proxy  
+ Alcuni ruoli di sistema del sito di Configuration Manager richiedono connessioni a Internet e usano un server proxy se il server di sistema del sito che ospita il ruolo è configurato con questa opzione. In genere, questa connessione viene eseguita nel contesto del **sistema** del computer in cui è installato il ruolo del sistema del sito. La connessione non può usare una configurazione proxy per gli account utente tipici. Quando un server proxy è necessario per completare una connessione a Internet, il computer deve essere configurato per l'uso di un server proxy:  
+
+-   È possibile configurare un server proxy quando si installa un ruolo del sistema del sito.  
+
+-   È possibile aggiungere o modificare una configurazione del server proxy quando si usa la console di Configuration Manager.  
+
+-   Viene usata la stessa configurazione del server proxy per tutti i ruoli del sistema del sito in un server del sistema del sito che può usare una configurazione del server proxy. Se sono richiesti ruoli del sistema del sito diversi per usare server proxy differenti, è necessario installare i ruoli del sistema del sito su computer del server del sistema del sito differenti.  
+
+-   Se si modifica la configurazione del server proxy o si installa un nuovo ruolo del sistema del sito in un computer che ha già una configurazione del server proxy, la configurazione originale viene sovrascritta.  
+
+
+Per le procedure di configurazione del server proxy per i ruoli del sistema del sito, vedere l'argomento [Aggiungere ruoli del sistema del sito per System Center Configuration Manager](../../../core/servers/deploy/configure/add-site-system-roles.md).  
+
+I ruoli del sistema del sito seguenti possono usare un server proxy:  
+
+-   **Punto di sincronizzazione di Asset Intelligence.** Questo ruolo del sistema del sito si connette a Microsoft e usa una configurazione del server proxy sul computer che ospita il punto di sincronizzazione di Asset Intelligence.  
+
+-   **Punto di distribuzione basato sul cloud.** Quando si usa un punto di distribuzione basato sul cloud, il sito primario che lo gestisce deve potersi connettere a Microsoft Azure per effettuare il provisioning, il monitoraggio e la distribuzione del contenuto al punto di distribuzione. Se è necessario un server proxy per questa connessione, occorre configurarlo sul server del sito primario. Non è possibile configurare un server proxy nel punto di distribuzione basato sul cloud in Azure. Per altre informazioni, vedere la sezione [Configurare le impostazioni proxy per i siti primari che gestiscono servizi cloud](../../../core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure.md#BKMK_ConfigProxyforCloud) nell'argomento [Installare punti di distribuzione basati sul cloud in Microsoft Azure per System Center Configuration Manager](../../../core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure.md).  
+
+-   **Connettore Exchange Server.** questo ruolo del sistema del sito si connette a Exchange Server e usa una configurazione del server proxy nel computer che ospita il connettore Exchange Server.  
+
+-   **Punto di aggiornamenti software.** Questo ruolo del sistema del sito può richiedere connessioni a Microsoft Update per scaricare le patch e sincronizzare le informazioni sugli aggiornamenti. In genere, quando si configura il server proxy, ogni ruolo del sistema del sito nel computer che supporta l'uso del server proxy usa il server proxy. Non è richiesta alcuna configurazione aggiuntiva. Un'eccezione al riguardo è rappresentata dal punto di aggiornamento software. Per impostazione predefinita, un punto di aggiornamento software non usa un server proxy disponibile a meno che non vengano abilitate anche le opzioni seguenti durante la configurazione di tale punto:  
+
+    -   **Usa un server proxy durante la sincronizzazione degli aggiornamenti software**  
+
+    -   **Usare un server proxy quando si scaricano contenuti tramite le regole di distribuzione automatica**  
 
     > [!TIP]  
-    >  いずれかのオプションを選択する前に、ソフトウェアの更新ポイントをホストするサイト システム サーバーにプロキシ サーバーをセットアップする必要があります。 プロキシ サーバーは、選択した特定のオプションでのみ使用されます。  
+    >  Prima di poter selezionare una delle due opzioni, è necessario che nel server del sistema del sito che ospita il punto di aggiornamento software sia configurato un server proxy. Il server proxy viene usato solo per le opzioni specifiche selezionate.  
 
- ソフトウェアの更新ポイント用のプロキシ サーバーについて詳しくは、[ソフトウェアの更新ポイントのインストール](../../../sum/get-started/install-a-software-update-point.md)に関するトピックの「プロキシ サーバーの設定」セクションをご覧ください。  
+ Per altre informazioni sui server proxy per i punti di aggiornamento software, vedere la sezione "Impostazioni del server proxy" nell'argomento [Installare e configurare un punto di aggiornamento software](../../../sum/get-started/install-a-software-update-point.md).  
 
--   **サービス接続ポイント。** オンライン (オフラインでなく) にセットアップされているときに、Microsoft Intune と Microsoft クラウド サービスに接続します。  
+-   **Punto di connessione del servizio.** quando è configurato per essere online (non offline), questo ruolo del sistema del sito si connette a Microsoft Intune e al servizio cloud Microsoft.  

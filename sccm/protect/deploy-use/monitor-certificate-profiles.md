@@ -1,6 +1,6 @@
 ---
-title: "証明書プロファイルを監視する | Microsoft Docs"
-description: "System Center Configuration Manager 証明書プロファイルのコンプライアンス状態を監視する方法を説明します。"
+title: Monitorare i profili certificato | Microsoft Docs
+description: "Informazioni su come monitorare lo stato di conformità dei profili certificato di System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,64 +18,64 @@ manager: angrobe
 ms.openlocfilehash: 84e275fa5b17bc703da22fb686ef9050d17e557f
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-monitor-certificate-profiles-in-system-center-configuration-manager"></a>System Center Configuration Manager で証明書プロファイルを監視する方法
+# <a name="how-to-monitor-certificate-profiles-in-system-center-configuration-manager"></a>Come monitorare i profili certificato in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-##  <a name="view-compliance-results-in-the-configuration-manager-console"></a>Configuration Manager コンソールでのコンプライアンス結果の表示  
+##  <a name="view-compliance-results-in-the-configuration-manager-console"></a>Visualizzare i risultati di conformità nella console di Configuration Manager  
 
-SCEP 証明書のコンプライアンスを監視するには、コンソールを使用するのではなく、[レポート](#view-compliance-results-by-using-reports)を使用してください。 
+Per monitorare la conformità dei certificati SCEP, usare i [report](#view-compliance-results-by-using-reports) invece della console. 
 
-1.  Configuration Manager コンソールで、**[監視]**>  **[展開]** の順に選択します。  
+1.  Nella console di Configuration Manager scegliere **Monitoraggio**>  **Distribuzioni**.  
 
-3.  関心のある証明書プロファイル展開を選択します。  
+3.  Selezionare la distribuzione del profilo certificato desiderata.  
 
-4.  メイン ページで概要の証明書コンプライアンス情報を確認します。 詳しい情報については、証明書プロファイルの展開を選択してから、**[ホーム]** タブの **[展開]** グループで **[ステータスの表示]** を選択し、**[展開ステータス]** ページを開きます。  
+4.  Controllare le informazioni di riepilogo sulla conformità del certificato nella pagina principale. Per informazioni più dettagliate, selezionare il profilo certificato, quindi nella scheda **Home**, nel gruppo **Distribuzione**, scegliere **Visualizza stato** per aprire la pagina **Stato distribuzione** .  
 
-     **[展開のステータス]** ページには次のタブがあります。  
+     La pagina **Stato distribuzione** contiene le seguenti schede:  
 
-    -   **対応**: 証明書プロファイルに対応している資産とその数を示します。 規則をダブルクリックすると、 **[資産とコンプライアンス]** ワークスペースの **[ユーザー]** ノードに一時ノードを作成できます。 このノードには、証明書プロファイルに対応しているすべてのユーザーが含まれます。 このプロファイルに対応しているユーザーは、[ **資産の詳細** ] ウィンドウにも表示されます。 リストのユーザーをダブルクリックすると、詳細が表示されます。  
+    -   **Conforme**: visualizza la conformità del profilo certificato in base al numero degli asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti gli utenti che sono conformi al profilo del certificato. Il riquadro **Dettagli asset** visualizza anche gli utenti che sono conformi a questo profilo. Fare doppio clic su un utente nell'elenco per visualizzare altre informazioni.  
 
         > [!IMPORTANT]  
-        >  証明書プロファイルをクライアント デバイスに適用できない場合は評価されませんが、 対応しているという結果が返されます。  
+        >  Un profilo certificato non viene valutato se non è applicabile a un dispositivo client. Tuttavia, viene restituito come conforme.  
 
-    -   **エラー**: 選択した証明書プロファイルの展開で発生したエラーとその影響を受けた資産の数の一覧を示します。 規則をダブルクリックすると、 **[資産とコンプライアンス]** ワークスペースの **[ユーザー]** ノードに一時ノードを作成できます。 このノードには、このプロファイルでエラーが発生したすべてのユーザーが含まれます。 ユーザーを選択すると、[ **資産の詳細** ] ウィンドウに、選択した問題に影響を受けているユーザーが表示されます。 リストのユーザーをダブルクリックすると、詳細が表示されます。  
+    -   **Errore**: visualizza un elenco di tutti gli errori per la distribuzione del profilo certificato selezionata in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti gli utenti che hanno generato errori con questo profilo. Quando si seleziona un utente, il riquadro **Dettagli asset** visualizza gli utenti interessati dal problema selezionato. Fare doppio clic su un utente nell'elenco per visualizzare altre informazioni.  
 
-    -   **非対応**: 証明書プロファイルにある非対応の規則とその影響を受けた資産の数の一覧を示します。 規則をダブルクリックすると、 **[資産とコンプライアンス]** ワークスペースの **[ユーザー]** ノードに一時ノードを作成できます。 このノードには、このプロファイルに対応していないすべてのユーザーが含まれます。 ユーザーを選択すると、[ **資産の詳細** ] ウィンドウに、選択した問題に影響を受けているユーザーが表示されます。 問題の詳細情報を表示するには、一覧内のユーザーをダブルクリックします。  
+    -   **Non conforme**: visualizza un elenco di tutte le regole non conformi nel profilo certificato in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti gli utenti che non sono conformi a questo profilo. Quando si seleziona un utente, il riquadro **Dettagli asset** visualizza gli utenti interessati dal problema selezionato. Fare doppio clic su un utente nell'elenco per visualizzare informazioni aggiuntive sul problema.  
 
-    -   **不明**: 選択した証明書プロファイルに対応しているかどうかを報告しなかった全ユーザーと、デバイスにあるクライアントの現在の状態を一覧表示します。  
+    -   **Sconosciuto**: visualizza un elenco di tutti gli utenti che non sono conformi alla distribuzione del profilo certificato selezionata insieme allo stato client corrente dei dispositivi.  
 
-5.  **[展開ステータス]** ページで、展開した証明書プロファイルのコンプライアンスの詳細情報を確認します。 [ **展開** ]ノードの下に一時ノードが作成されるため、後から再度この情報をすばやく確認できます。  
+5.  Nella pagina **Stato distribuzione** esaminare le informazioni dettagliate sulla conformità del profilo certificato distribuito. Viene creato un nodo temporaneo nel nodo **Distribuzioni** che consente di ritrovare rapidamente queste informazioni.  
 
-     証明書の登録ステータスは、数値で表示されます。 次の表に、その数値の意味を示します。  
+     Lo stato di registrazione del certificato viene visualizzato come un numero. Utilizzare la tabella seguente per comprendere il significato di ciascun numero:  
 
-    |登録ステータス|説明|  
+    |Stato registrazione|Descrizione|  
     |-----------------------|-----------------|  
-    |0x00000001|登録が正常に完了し、証明書が発行されました。|  
-    |0x00000002|要求が送信され登録を待っているか、要求が帯域外で送信されました。|  
-    |0x00000004|登録を延期する必要があります。|  
-    |0x00000010|エラーが発生しました。|  
-    |0x00000020|登録ステータスが不明です。|  
-    |0x00000040|ステータス情報がスキップされました。 これは、ハイパーリンク "http://msdn.microsoft.com/ja-jp/windows/ms721572" \l "_security_certification_authority_gly" の証明機関が無効であるか監視対象に選択されていない場合に発生することがあります。|  
-    |0x00000100|登録が拒否されました。|  
+    |0x00000001|La registrazione ha avuto esito positivo e il certificato è stato rilasciato.|  
+    |0x00000002|La richiesta è stata inviata e la registrazione è in sospeso o la richiesta è stata emessa fuori banda.|  
+    |0x00000004|La registrazione deve essere rinviata.|  
+    |0x00000010|Si è verificato un errore.|  
+    |0x00000020|Lo stato di registrazione è sconosciuto.|  
+    |0x00000040|Le informazioni sullo stato sono state ignorate. Ciò può verificarsi se un'autorità di certificazione  (collegamento ipertestuale: http://msdn.microsoft.com/en-us/windows/ms721572" \l "_security_certification_authority_gly) non è valida o non è stata selezionata per il monitoraggio.|  
+    |0x00000100|La registrazione è stata negata.|  
 
-##  <a name="view-compliance-results-by-using-reports"></a>レポートを使用してコンプライアンス結果を表示する
+##  <a name="view-compliance-results-by-using-reports"></a>Visualizzare i risultati di conformità usando i report
 
- System Center Configuration Manager のコンプライアンスの設定には、証明書プロファイルの対応状態を監視するための組み込みレポートが含まれています。 これらのレポートには、[ **コンプライアンスおよび設定管理** ]のカテゴリがあります。  
+ Le impostazioni di conformità in System Center Configuration Manager includono report incorporati che è possibile usare per monitorare le informazioni sui profili certificato. Tali report dispongono della categoria report di **Gestione conformità e impostazioni**.  
 
 > [!IMPORTANT]  
->  コンプライアンス設定でレポートの [ **デバイス フィルター** ] と [ **ユーザー フィルター** ] パラメーターを指定するときは、必ず、ワイルドカード (%) 文字を使ってください。  
+>  È necessario utilizzare un carattere jolly (%) quando si utilizzano i parametri **Filtro dispositivo** e **Filtro utente** nei report per le impostazioni di conformità.  
 
-SCEP 証明書コンプライアンスを監視するには、レポート ノード **[会社のリソースへのアクセス]**の下にあるこれらの証明書のレポートを使用します。  
+Per monitorare la conformità dei certificati SCEP, usare questi report sui certificati disponibili nel nodo dei report **Accesso risorse aziendali**:  
 
- -   証明書の発行履歴  
- -   証明書の有効期限が近づいている資産の一覧  
- -   証明書の発行ステータス別資産の一覧  
+ -   Cronologia di rilascio dei certificati  
+ -   Elenco degli asset con certificati prossimi alla scadenza  
+ -   Elenco degli asset per stato di rilascio del certificato  
 
 
 
- System Center Configuration Manager でのレポートの構成方法に関して詳しくは、「[System Center Configuration Manager のレポート](../../core/servers/manage/reporting.md)」を参照してください。  
+ Per altre informazioni sulle modalità di configurazione dei report in System Center Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  

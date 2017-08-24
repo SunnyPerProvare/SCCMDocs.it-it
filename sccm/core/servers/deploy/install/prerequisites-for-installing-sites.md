@@ -1,6 +1,6 @@
 ---
-title: "サイトの前提条件 | Microsoft Docs"
-description: "さまざまな種類の System Center Configuration Manager サイトをインストールするための前提条件について説明します。"
+title: Prerequisiti per i siti | Microsoft Docs
+description: Informazioni sui prerequisiti per l'installazione di diversi tipi di siti di System Center Configuration Manager.
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
@@ -17,113 +17,113 @@ manager: angrobe
 ms.openlocfilehash: d46a8b66ace45d25da9d86f2e91b19ae1d6875ab
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="prerequisites-for-installing-system-center-configuration-manager-sites"></a>System Center Configuration Manager サイトのインストールの前提条件
+# <a name="prerequisites-for-installing-system-center-configuration-manager-sites"></a>Prerequisiti per l'installazione di siti di System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-サイトのインストールを開始する前に、さまざまな種類の System Center Configuration Manager サイトをインストールするための前提条件を確認しておくことをお勧めします。
+Prima di iniziare l'installazione di un sito, è consigliabile conoscere i prerequisiti per l'installazione di diversi tipi di siti di System Center Configuration Manager.
 
-## <a name="primary-sites-and-the-central-administration-site"></a>プライマリ サイトと中央管理サイト
-階層の最初のサイトとして中央管理サイトをインストールする場合、スタンドアロン プライマリ サイト、または子プライマリ サイトをインストールする場合は、次の前提条件が適用されます。 階層拡張の一部として中央管理サイトをインストールする場合は、このトピックの「[スタンドアロン プライマリ サイトを拡張する](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md#bkmk_expand)」を参照してください。
+## <a name="primary-sites-and-the-central-administration-site"></a>Siti primari e sito di amministrazione centrale
+I prerequisiti seguenti si applicano all'installazione di un sito di amministrazione centrale come primo sito di una gerarchia, di un sito primario autonomo o di un sito primario figlio. Se si installa un sito di amministrazione centrale come parte di un'espansione della gerarchia, vedere [Espansione di un sito primario autonomo](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md#bkmk_expand) in questo argomento.
 
-###  <a name="bkmk_PrereqPri"></a> プライマリ サイトまたは中央管理サイトをインストールするための前提条件  
+###  <a name="bkmk_PrereqPri"></a> Prerequisiti per l'installazione di un sito primario o un sito di amministrazione centrale  
 
--   サイトをインストールするユーザー アカウントには、次の権限が必要です。  
+-   L'account utente che installa il sito deve disporre dei diritti seguenti:  
 
-    -   サイト サーバー コンピューターの**管理者**  
-    -   **サイト データベース**またはサイトの **SMS プロバイダー**のインスタンスをホストする各コンピューターの**管理者**  
-    -   サイト データベースをホストする SQL Server インスタンスの **Sysadmin**  
+    -   **Amministratore** nel computer server del sito  
+    -   **Amministratore** in ogni computer che ospiterà il **database del sito** o un'istanza del **provider SMS** per il sito  
+    -   **Amministratore di sistema** nell'istanza di SQL Server che ospita il database del sito  
 
         > [!IMPORTANT]  
-        >  セットアップが完了したら、セットアップを実行するユーザー アカウントと、サイト サーバー コンピューター アカウントの両方で SQL Server の sysadmin 権限を保持する必要があります。 これらのアカウントから sysadmin 権限を削除しないでください。  
+        >  Al termine dell'installazione, sia l'account utente che esegue l'installazione che l'account computer server del sito devono mantenere i diritti di amministratore di sistema in SQL Server. Non rimuovere i diritti di amministratore di sistema da questi account.  
 
--   プライマリ サイトをインストールする場合は、次の権限も必要です。  
-    -  最初の管理ポイントと配布ポイントをインストールする追加のコンピューターの**管理者** (サイト サーバーにインストールしない場合)  
+-   Quando si installa un sito primario, sono necessari i diritti aggiuntivi seguenti:  
+    -  **Amministratore** in altri computer in cui verranno installati il punto di gestione iniziale e il punto di distribuzione, se non sono installati nel server del sito  
 
--   中央管理サイトの下に新しい子プライマリ サイトをインストールする場合は、次の権限も必要です。  
+-   Se si installa un nuovo sito primario figlio all'interno di un sito di amministrazione centrale, sono necessari i diritti aggiuntivi seguenti:  
 
-    -   中央管理サイトをホストするコンピューターの**管理者**  
+    -   **Amministratore** nel computer che ospita il sito di amministrazione centrale  
 
-    -   **インフラストラクチャ管理者**または**完全な権限を持つ管理者**のセキュリティ ロールと同等の、Configuration Manager 内のロール ベース管理権限  
+    -   Diritti di amministrazione basata su ruoli in Configuration Manager equivalenti al ruolo di sicurezza **Amministratore infrastruttura** o **Amministratore completo**  
 
--   正しいインストール メディア (ソース ファイル) を使用して、その場所からセットアップを実行する必要があります。 別の種類のサイトのインストールに使用する適切なソース ファイルについては、「[サイトのインストールの準備](../../../../core/servers/deploy/install/prepare-to-install-sites.md)」トピックの「[異なる種類のサイトをインストールするためのオプション](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_options)」を参照してください。
+-   È necessario usare il supporto di installazione corretto (file di origine) ed eseguire il programma di installazione da tale percorso. Per informazioni sui file di origine corretti da usare per installare i diversi tipi di siti, vedere [Opzioni per l'installazione di diversi tipi di siti](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_options) nell'argomento [Preparare l'installazione di siti](../../../../core/servers/deploy/install/prepare-to-install-sites.md).
 
--   サイト サーバー コンピューターは、次のいずれかの方法で Microsoft から更新されたセットアップ ファイルにアクセスできる必要があります。
-    -  インストールを開始する前に、[セットアップ ダウンローダー](../../../../core/servers/deploy/install/setup-downloader.md)を使用して、これらのファイルのコピーをダウンロードしてローカル ネットワークに保存することができます。
-    -  これらのファイルのローカル コピーを使用できない場合は、サイト サーバーからインターネットにアクセスしてインストール中に Microsoft からこのファイルをダウンロードできる必要があります。
+-   Il computer server del sito deve avere accesso ai file di installazione aggiornati offerti da Microsoft in uno dei modi seguenti:
+    -  Prima di iniziare l'installazione, è possibile scaricare e archiviare una copia di questi file nella rete locale usando il [downloader di installazione](../../../../core/servers/deploy/install/setup-downloader.md).
+    -  Se non è disponibile una copia locale di questi file, il server del sito deve avere accesso a Internet in modo da poter scaricare i file dal sito Microsoft durante l'installazione.
 
-- サービス接続ポイント サイト システムの役割がインストールされているスタンドアロン プライマリ サイトを拡張するには、先にサービス接続ポイントをアンインストールする必要があります。 この役割のインスタンスは、階層内で 1 つだけ許可されており、階層の最上位サイトでのみ許可されます。 中央管理サイトのインストール時に、この役割を再インストールできます。
-- サイト サーバーとサイト データベース コンピューターは、すべての前提条件の構成を満たしている必要があります。 セットアップを開始する前に、[前提条件チェッカーを手動で実行して](../../../../core/servers/deploy/install/prerequisite-checker.md)、問題を特定し、修正することができます。  
-
-
-### <a name="bkmk_expand"></a> スタンドアロン プライマリ サイトを拡張するための前提条件
-スタンドアロン プライマリ サイトを中央管理サイトがある階層に拡張するには、スタンドアロン プライマリ サイトが次の前提条件を満たしている必要があります。
-
--   **スタンドアロン プライマリ サイトのバージョンと一致する新しい中央管理サイトを CD.Latest フォルダー (ソース ファイルを含む) のメディアを使用してインストールする必要がある**
-
- バージョンを確実に一致させるには、スタンドアロン プライマリ サイト上の [CD.Latest フォルダー](/sccm/core/servers/manage/the-cd.latest-folder)内にあるソース ファイルを使用します。
-
- 別のサイトのインストールに使用する適切なソース ファイルについては、「[サイトのインストールの準備](../../../../core/servers/deploy/install/prepare-to-install-sites.md)」トピックの「[異なる種類のサイトをインストールするためのオプション](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_options)」を参照してください。
+- Prima di espandere un sito primario autonomo in cui è installato un ruolo del sistema del sito relativo al punto di connessione del servizio, è necessario disinstallare il punto di connessione del servizio. In una gerarchia è consentita solo un'istanza di questo ruolo ed è consentita solo nel sito di livello superiore della gerarchia. Sarà possibile reinstallare il ruolo durante l'installazione del sito di amministrazione centrale.
+- Il server del sito e i computer del database del sito devono soddisfare tutte le configurazioni dei prerequisiti. Prima di avviare il programma di installazione, è possibile [eseguire manualmente Controllo prerequisiti](../../../../core/servers/deploy/install/prerequisite-checker.md) per identificare e risolvere eventuali problemi.  
 
 
--   **スタンドアロン プライマリ サイトは、別の Configuration Manager 階層からデータを移行するように構成できない**  
+### <a name="bkmk_expand"></a> Prerequisiti per l'espansione di un sito primario autonomo
+Un sito primario autonomo deve soddisfare i seguenti prerequisiti ai fini dell'espansione in una gerarchia con un sito di amministrazione centrale:
 
-     その他の Configuration Manager 階層からのスタンドアロン プライマリ サイトへのアクティブな移行を停止し、移行のすべての構成を削除する必要があります。 これには、完了していない移行ジョブ、データの収集、およびアクティブなソース階層の構成が含まれます。  
+-   **È necessario installare il nuovo sito di amministrazione centrale usando i file inclusi nella cartella CD.Latest (contenente i file di origine), che corrispondono alla versione del sito primario autonomo**
 
-     これが必要なのは、移行操作は階層の最上位のサイトで実行され、スタンドアロン プライマリ サイトの拡張時に、移行の構成は中央管理サイトに転送されないためです。  
+ Per assicurarsi che la versione corrisponda, usare i file di origine presenti nella [cartella CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder) del sito primario autonomo.
 
-     スタンドアロン プライマリ サイトを拡張した後で、プライマリ サイトで移行を再構成する場合、中央管理サイトが移行に関する操作を実行します。 移行を構成する方法の詳細については、「[System Center Configuration Manager に移行するためのソース階層とソース サイトの構成](../../../../core/migration/configuring-source-hierarchies-and-source-sites-for-migration.md)」を参照してください。  
+ Per altre informazioni sui file di origine corretti da usare per installare i diversi siti, vedere [Opzioni per l'installazione di diversi tipi di siti](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_options) nell'argomento [Preparare l'installazione di siti](../../../../core/servers/deploy/install/prepare-to-install-sites.md).
 
--   **新しい中央管理サイトをホストするコンピューターのコンピューター アカウントは、スタンドアロン プライマリ サイトの管理者ユーザー グループのメンバーである必要がある**  
 
-     スタンドアロン プライマリ サイトを正常に拡張するには、中央管理サイトのコンピューター アカウントが、スタンドアロン プライマリ サイトの**管理者**権限を持っている必要があります。 これは、サイトの拡張中にのみ必要です。 アカウントは、サイトの拡張が完了すると、プライマリ サイトでユーザー グループから削除できます。  
+-   **Non è possibile configurare il sito primario autonomo per eseguire la migrazione dei dati da un'altra gerarchia di Configuration Manager**  
 
--   **新しい中央管理サイトをインストールするセットアップ プログラムを実行するユーザー アカウントには、スタンドアロン プライマリ サイトの役割ベースの管理権限が必要**  
+     È necessario interrompere la migrazione attiva al sito primario autonomo da altre gerarchie di Configuration Manager e rimuovere tutte le configurazioni per la migrazione, inclusi i processi di migrazione che non sono stati completati, la raccolta dati e la configurazione della gerarchia di origine attiva.  
 
-     サイト拡張の一環として中央管理サイトをインストールする場合は、その中央管理サイトをインストールするためのセットアップ プログラムを実行するユーザー アカウントが、スタンドアロン プライマリ サイトの役割ベース管理において、 **完全な権限を持つ管理者**または**インフラストラクチャ管理者**として定義されている必要があります。  
+     Ciò è necessario perché le operazioni di migrazione sono eseguite dal sito superiore della gerarchia e le configurazioni per la migrazione non vengono trasferite al sito di amministrazione centrale quando si espande un sito primario autonomo.  
 
--   **サイトを拡張する前に、次のサイト システムの役割をスタンドアロン プライマリ サイトからアンインストールする必要があります。**  
+     Se si riconfigura la migrazione nel sito primario dopo l'espansione del sito primario autonomo, le operazioni correlate alla migrazione vengono eseguite dal sito di amministrazione centrale. Per altre informazioni sulla configurazione della migrazione, vedere [Configurare gerarchie di origine e siti di origine per la migrazione a System Center Configuration Manager](../../../../core/migration/configuring-source-hierarchies-and-source-sites-for-migration.md).  
 
-    -   資産インテリジェンス同期ポイント  
-    -   Endpoint Protection ポイント  
-    -   [サービス接続ポイント]  
+-   **L'account del computer che ospiterà il nuovo sito di amministrazione centrale deve essere un membro del gruppo utenti Amministratore nel sito primario autonomo**  
 
-   これらのサイト システムの役割は、階層の最上位サイトでのみサポートされます。 そのため、スタンドアロン プライマリ サイトを拡張する前に、これらのサイト システムの役割をアンインストールする必要があります。 サイトを拡張した後、中央管理サイトでこれらのサイト システムの役割を再インストールできます。  
+     Per espandere correttamente il sito primario autonomo, l'account computer del nuovo sito di amministrazione centrale deve avere diritti di **Amministratore** nel sito primario autonomo. Ciò è richiesto solo durante l'espansione del sito. L'account può essere rimosso dal gruppo utenti nel sito primario al termine dell'espansione del sito.  
 
-    その他のサイト システムの役割は、すべてプライマリ サイトにインストールしたままにできます。  
+-   **L'account utente che esegue il programma di installazione per installare il nuovo sito di amministrazione centrale deve avere i diritti di amministrazione basata su ruoli nel sito primario autonomo**  
 
--   **スタンドアロン プライマリ サイトと、中央管理サイトをインストールするコンピューターの間で、SQL Server Service Broker (SSB) のポートが開かれている必要がある**  
+     Per installare un sito di amministrazione centrale come parte di un'espansione del sito, l'account utente che esegue il programma di installazione per installare il sito di amministrazione centrale deve essere definito nell'amministrazione basata su ruoli nel sito primario autonomo come **Amministratore completo** o **Amministratore infrastruttura**.  
 
-     Configuration Manager で、中央管理サイトとプライマリ サイト間でデータを正常にレプリケートするには、SSB で使用されるポートが 2 つのサイト間で開かれている必要があります。 中央管理サイトをインストールし、スタンドアロン プライマリ サイトを拡張するときに、前提条件のチェックでは、SSB 用に指定したポートがプライマリ サイトで開かれていることを確認しません。  
+-   **Per espandere il sito, è necessario prima disinstallare i ruoli seguenti di sistema del sito dal sito primario autonomo:**  
 
-**Azure サービス構成時の既知の問題:**  
-Configuration Manager で次の Azure サービスのいずれかを使用するとき、サイトを拡張する予定であれば、サイトの拡張後にサービスとの接続を削除し、再作成する必要があります。
+    -   Punto di sincronizzazione di Asset Intelligence  
+    -   Punto di Endpoint Protection  
+    -   punto di connessione del servizio  
 
-サービス:  
+   Questi ruoli del sistema del sito sono supportati solo nel sito di livello superiore della gerarchia. È necessario pertanto disinstallare questi ruoli di sistema del sito prima di espandere il sito primario autonomo. Al termine dell'espansione, è possibile reinstallare questi ruoli del sistema del sito nel sito di amministrazione centrale.  
+
+    Tutti gli altri ruoli del sistema del sito possono rimanere installati nel sito primario.  
+
+-   **La porta per SQL Server Service Broker tra il sito primario autonomo e il computer che installerà il sito di amministrazione centrale deve essere aperta**  
+
+     Per replicare correttamente i dati tra un sito di amministrazione centrale e un sito primario, Configuration Manager richiede una porta aperta tra i due siti per SSB. Quando si installa un sito di amministrazione centrale e si espande un sito primario autonomo, il controllo dei prerequisiti non verifica che la porta specificata per SSB sia aperta nel sito primario.  
+
+**Problemi noti dopo la configurazione dei servizi di Azure:**  
+Quando si usa uno dei seguenti servizi di Azure con Configuration Manager e si prevede di espandere un sito, dopo l'espansione del sito è necessario rimuovere e quindi ricreare la connessione al servizio.
+
+Servizi:  
 -       [Operations Manager Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) (OMS)
--       [アップグレードの準備](/sccm/core/clients/manage/upgrade/upgrade-analytics)
--       [ビジネス向け Windows ストア](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)
+-       [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics)
+-       [Windows Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)
 
-次の手順でこの問題を解決してください。
- 1.    Configuration Manager コンソールで、Azure サービス ノードから Azure サービスを削除します。
- 2.    Azure Portal で、Azure Active Directory テナント ノードからサービスに関連付けられているテナントを削除します。  サービスに関連付けられている Azure AD Web アプリも削除されます。  
- 3.   Configuration Manager で使用する Azure サービスとの接続を再構成します。
+Attenersi a questa procedura per risolvere il problema:
+ 1.    Nella console di Configuration Manager eliminare il servizio di Azure dal nodo dei servizi di Azure.
+ 2.    Nel portale di Azure eliminare il tenant associato al servizio dal nodo dei tenant di Azure Active Directory.  Questa procedura elimina anche l'app Web di Azure AD associata al servizio.  
+ 3.   Riconfigurare la connessione al servizio di Azure per l'uso con Configuration Manager.
 
 
-## <a name="bkmk_secondary"></a> セカンダリ サイト
-次の表は、セカンダリ サイトのインストールの前提条件を示しています。
--   Configuration Manager コンソールでセカンダリ サイトのインストールを構成する管理者は、**インフラストラクチャ管理者**または**完全な権限を持つ管理者**のセキュリティ ロールと同等の、役割に基づいた管理権限を持っている必要があります。  
--   親プライマリ サイトのコンピューター アカウントは、セカンダリ サイト サーバー コンピューターの**管理者**である必要があります。  
--   事前にインストールした SQL Server のインスタンスをセカンダリ サイトで使用して、セカンダリ サイト データベースをホストする場合:  
+## <a name="bkmk_secondary"></a> Siti secondari
+Di seguito vengono elencati i prerequisiti per l'installazione di siti secondari:
+-   L'amministratore che configura l'installazione del sito secondario nella console di Configuration Manager deve avere i diritti di amministrazione basata su ruoli equivalenti al ruolo di sicurezza di **Amministratore infrastruttura** o **Amministratore completo**.  
+-   L'account computer del sito primario padre deve essere un **amministratore** nel computer server del sito secondario.  
+-   Quando il sito secondario usa un'istanza di SQL Server installata in precedenza per ospitare il database del sito secondario:  
 
-    -   親プライマリ サイトの **コンピューター アカウント** は、セカンダリ サイト サーバー コンピューターの SQL Server インスタンスの **sysadmin** 権限を持っている必要があります。  
+    -   L' **account computer** del sito primario padre deve avere i diritti di **amministratore di sistema** sull'istanza di SQL Server sul computer server del sito secondario.  
 
-    -   セカンダリ サイト サーバー コンピューターの **ローカル システム** アカウントは、セカンダリ サイト サーバー コンピューターの SQL Server インスタンスの **sysadmin** 権限を持っている必要があります。  
+    -   L'account di **sistema locale** del computer server del sito secondario deve avere i diritti di **amministratore di sistema** sull'istanza di SQL Server sul computer server del sito secondario.  
 
         > [!IMPORTANT]  
-        >  セットアップが完了したら、両方のアカウントで SQL Server の sysadmin 権限を保持する必要があります。 これらのアカウントから sysadmin 権限を削除しないでください。  
+        >  Al termine dell'installazione, entrambi gli account devono mantenere diritti di amministratore di sistema per SQL Server. Non rimuovere i diritti di amministratore di sistema da questi account.  
 
--   セカンダリ サイト サーバー コンピューターは、SQL Server や、管理ポイントと配布ポイントの既定のサイト システムの役割など、前提条件の構成をすべて満たす必要があります。  
+-   Il computer server del sito secondario deve soddisfare tutte le configurazioni richieste, inclusi SQL Server e i ruoli del sistema del sito predefiniti del punto di gestione e del punto di distribuzione.  

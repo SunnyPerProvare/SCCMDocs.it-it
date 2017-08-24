@@ -1,6 +1,6 @@
 ---
-title: "ソフトウェアの更新ポイントのインストールと構成 | Microsoft Docs"
-description: "プライマリ サイトでは、ソフトウェア更新プログラムのコンプライアンス対応状態を評価するためとソフトウェア更新プログラムをクライアントに展開するために、中央管理サイト上にソフトウェアの更新ポイントが必要になります。"
+title: Installare e configurare un punto di aggiornamento software | Microsoft Docs
+description: "I siti primari richiedono un punto di aggiornamento software nel sito di amministrazione centrale per la valutazione della conformità degli aggiornamenti software e per la distribuzione degli aggiornamenti software nei client."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,138 +14,138 @@ ms.assetid: b099a645-6434-498f-a408-1d438e394396
 ms.openlocfilehash: 7d369384d133c90a15e01df50ac53992d61f3873
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="install-and-configure-a-software-update-point"></a>ソフトウェアの更新ポイントのインストールと構成  
+# <a name="install-and-configure-a-software-update-point"></a>installare e configurare un punto di aggiornamento software  
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-
-> [!IMPORTANT]  
->  ソフトウェアの更新ポイント サイト システムの役割をインストールする前に、サーバーが必要な依存関係を満たしていることを確認し、サイトのソフトウェアの更新ポイントのインフラストラクチャを決定する必要があります。 ソフトウェア更新プログラムを計画する方法およびソフトウェアの更新ポイントのインフラストラクチャを決定する方法については、「[ソフトウェア更新プログラムの計画](../plan-design/plan-for-software-updates.md)」を参照してください。  
-
- ソフトウェア更新プログラムのコンプライアンス対応評価を有効にし、ソフトウェア更新プログラムをクライアントに展開するには、中央管理サイトとプライマリ サイトにソフトウェアの更新ポイントが必要です。 セカンダリ サイトのソフトウェアの更新ポイントは、オプションです。 ソフトウェアの更新ポイント サイト システムの役割は、WSUS がインストールされているサーバーに作成する必要があります。 ソフトウェアの更新ポイントは、ソフトウェアの更新設定を構成し、ソフトウェア更新プログラムのメタデータの同期を要求するために、WSUS サービスと通信します。 Configuration Manager 階層がある場合は、まず中央管理サイトでソフトウェアの更新ポイントのインストールと構成を行い、次に子プライマリ サイトでインストールと構成を行ってから、必要に応じてセカンダリ サイトでインストールと構成を行います。 中央管理サイトではなく、スタンドアロン プライマリ サイトがある場合は、まずプライマリ サイトでソフトウェアの更新ポイントをインストールして構成してから、オプションでセカンダリ サイトでインストールと構成を行います。 一部の設定は、ソフトウェアの更新ポイントを最上位サイトに構成するときにのみ使用できます。 ソフトウェアの更新ポイントをインストールする場所に応じて、さまざまなオプションを検討する必要があります。  
 
 > [!IMPORTANT]  
->  1 つのサイトに複数のソフトウェアの更新ポイントをインストールできます。 インストールする最初のソフトウェアの更新ポイントは同期ソースとして構成され、更新プログラムを Microsoft Update またはアップストリームの同期ソースと同期します。 サイトの他のソフトウェアの更新ポイントは、最初のソフトウェアの更新ポイントのレプリカとして構成されます。 そのため、最初のソフトウェアの更新ポイントをインストールして構成した後で、一部の設定が使用できなくなります。  
+>  Prima di installare il ruolo del sistema sito del punto di aggiornamento software, è necessario verificare che il server soddisfi le dipendenze richieste e stabilisca l'infrastruttura del punto di aggiornamento software nel sito. Per altre informazioni su come pianificare gli aggiornamenti software e stabilire l'infrastruttura del punto di aggiornamento software, vedere [Plan for software updates](../plan-design/plan-for-software-updates.md) (Pianificare aggiornamenti software).  
+
+ Il punto di aggiornamento software è richiesto nel sito di amministrazione centrale e nei siti primari per abilitare la valutazione della conformità degli aggiornamenti software e per distribuire gli aggiornamenti software nei client. Il punto di aggiornamento software è facoltativo nei siti secondari. Il ruolo del sistema sito del punto di aggiornamento software deve essere creato in un server in cui è installato WSUS. Il punto di aggiornamento software interagisce con i servizi WSUS per configurare le impostazioni di aggiornamento software e per richiedere la sincronizzazione dei metadati degli aggiornamenti software. Nel caso di una gerarchia di Configuration Manager, installare e configurare il punto di aggiornamento software prima nel sito di amministrazione centrale, quindi nei siti primari figli e infine, facoltativamente, nei siti secondari. Nel caso di un sito primario autonomo, non un sito di amministrazione centrale, installare e configurare il punto di aggiornamento software prima nel sito primario e facoltativamente nei siti secondari. Alcune impostazioni sono disponibili solo quando si configura il punto di aggiornamento software in un sito di livello superiore. Esistono diverse opzioni che è necessario considerare in base a dove è installato il punto di aggiornamento software.  
 
 > [!IMPORTANT]  
->  スタンドアロン WSUS サーバーとして構成され、使用されているサーバーにソフトウェアの更新ポイント サイト システムの役割をインストールすること、またはソフトウェアの更新ポイントを使用して WSUS クライアントを直接管理することは、サポートされていません。 既存の WSUS サーバーは、アクティブなソフトウェアの更新ポイントのアップストリーム同期ソースとしてのみサポートされています。 「[アップストリームのデータ ソースの場所から同期する](#BKMK_wsussync)」を参照してください。
+>  È possibile installare più di un punto di aggiornamento software in un sito. Il primo punto di aggiornamento software installato viene configurato come origine della sincronizzazione che sincronizza gli aggiornamenti da Microsoft Update o da un'origine di sincronizzazione upstream. Gli altri punti di aggiornamento software nel sito sono configurati come repliche del primo punto di aggiornamento software. Pertanto, alcune impostazioni non sono disponibili dopo aver installato e configurato il punto di aggiornamento software iniziale.  
 
- 既存のサイト システム サーバーにソフトウェアの更新ポイント サイト システムの役割を追加できます。また、新しい役割を作成することもできます。 サイト システムの役割を追加するサイト サーバーが新規であるか既存であるかに応じて、 **サイト システム サーバーの作成ウィザード** または **サイト システムの役割の追加ウィザード** の [ **システムの役割の選択** ] ページで、[ **ソフトウェアの更新ポイント**] を選択し、ウィザードでソフトウェア更新ポイントの設定を構成します。 設定は、使用する Configuration Manager のバージョンによって異なります。 サイト システムの役割のインストール方法の詳細については、「[サイト システムの役割のインストール](../../core/servers/deploy/configure/install-site-system-roles.md)」を参照してください。  
+> [!IMPORTANT]  
+>  Non è supportata l'installazione del ruolo del sistema del sito per il punto di aggiornamento software in un server che è stato configurato e usato come server WSUS autonomo o l'uso di un punto di aggiornamento software per gestire direttamente i client WSUS. I server WSUS esistenti sono supportati solo come origini di sincronizzazione upstream per il punto di aggiornamento software attivo. Vedere [Sincronizza da un percorso di origine dati upstream](#BKMK_wsussync)
 
- サイトのソフトウェアの更新ポイントの設定の詳細については、以下のセクションを参照してください。  
+ È possibile aggiungere il ruolo del sistema sito del punto di aggiornamento software a un server del sistema del sito esistente oppure è possibile crearne uno nuovo. Nella pagina **Selezione ruolo del sistema** della **Creazione guidata server del sistema sito** o dell' **Aggiunta guidata ruoli del sistema del sito** , in base al fatto di aver aggiunto il ruolo del sistema sito o un server del sito nuovo o esistente, selezionare **Punto di aggiornamento software**e quindi configurare le impostazioni del punto di aggiornamento software nella procedura guidata. Le impostazioni sono diverse a seconda della versione di Configuration Manager che si usa. Per altre informazioni su come installare i ruoli del sistema del sito, vedere [Installare ruoli del sistema del sito](../../core/servers/deploy/configure/install-site-system-roles.md).  
 
-## <a name="proxy-server-settings"></a>プロキシ サーバーの設定  
- 使用する Configuration Manager のバージョンによって、**サイト システム サーバーの作成ウィザード** または **サイト システムの役割の追加ウィザード** のさまざまなページで、プロキシ サーバー設定を構成できます。  
+ Utilizzare le sezioni seguenti per informazioni sulle impostazioni del punto di aggiornamento software in un sito.  
 
--   プロキシ サーバーを構成してから、プロキシ サーバーをソフトウェア更新プログラムにいつ使用するのかを指定する必要があります。 次の設定を構成します。  
+## <a name="proxy-server-settings"></a>Impostazioni del server proxy  
+ È possibile configurare le impostazioni del server proxy all'interno di pagine diverse della **Creazione guidata server del sistema sito** o dell'**Aggiunta guidata ruoli del sistema del sito** in base alla versione di Configuration Manager in uso.  
 
-    -   ウィザードの [ **プロキシ** ] ページまたはサイト システムのプロパティの [ **プロキシ** ] タブでプロキシ サーバー設定を構成します。 プロキシ サーバー設定はサイト システムに固有のものです。指定したプロキシ サーバー設定がすべてのサイト システムの役割で使用されます。  
+-   È necessario configurare il server proxy e quindi specificare quando utilizzare il server proxy per gli aggiornamenti software. Configurare le seguenti impostazioni:  
 
-    -   Configuration Manager でソフトウェア更新プログラムを同期するとき、および自動展開規則に従ってコンテンツをダウンロードするときに、プロキシ サーバーを使用するかどうかを指定します。 ウィザードの [ **プロキシとアカウントの設定** ] ページまたは、ソフトウェアの更新ポイントのプロパティの [ **プロキシとアカウントの設定** ] タブで、ソフトウェア更新ポイントのプロキシ サーバー設定を構成します。  
+    -   Configurare le impostazioni del server proxy nella pagina **Proxy** della procedura guidata o nella scheda **Proxy** in Proprietà sistema del sito. Le impostazioni del server proxy sono specifiche del sistema del sito, pertanto tutti i ruoli del sistema del sito utilizzano le impostazioni del server proxy specificato.  
+
+    -   Specificare se usare un server proxy quando Configuration Manager sincronizza gli aggiornamenti software e scarica contenuti tramite una regola di distribuzione automatica. Configurare le impostazioni del server proxy nel punto di aggiornamento software nella pagina **Impostazioni proxy e account** della procedura guidata o nella scheda **Impostazioni proxy e account** in Proprietà punto di aggiornamento software.  
 
         > [!NOTE]  
-        >  [自動展開規則を使用してコンテンツをダウンロードするときにプロキシ サーバーを使用する] 設定を使用できますが、この設定はセカンダリ サイトのソフトウェアの更新ポイントには使用されません。 **** 中央管理サイトとプライマリ サイトのソフトウェアの更新ポイントのみ、Microsoft Update ページからコンテンツをダウンロードします。  
+        >  L'impostazione **Utilizzare un server proxy quando si scaricano contenuti tramite le regole di distribuzione automatica** è disponibile ma non viene utilizzata per un punto di aggiornamento software in un sito secondario. Solo il punto di aggiornamento software nel sito di amministrazione centrale e nel sito primario scarica i contenuti dalla pagina di Microsoft Update.  
 
 > [!IMPORTANT]  
->  既定では、自動展開ルールを実行する際、インターネットへの接続およびソフトウェア更新プログラムのダウンロードに、自動展開ルールが作成されたサーバーの **ローカル システム** アカウントを使用します。 このアカウントでインターネットにアクセスできない場合、ソフトウェア更新プログラムはダウンロードされず、ruleengine.log に次のエントリが書き込まれます。「**Failed to download the update from internet.Error = 12007**. ローカル システム アカウントでインターネットにアクセスできないときにプロキシ サーバーに接続するための資格情報を構成します。  
+>  Per impostazione predefinita, l'account **Sistema locale** per il server in cui è stata creata una regola di distribuzione automatica viene utilizzato per connettersi a Internet e scaricare gli aggiornamenti software quando sono in esecuzione le regole di distribuzione automatica. Quando l'account non ha accesso a Internet, non è possibile scaricare gli aggiornamenti software e in ruleengine.log viene registrata la voce seguente: **Impossibile scaricare l'aggiornamento da Internet. Errore = 12007**. Configurare le credenziali per la connessione al server proxy quando l'account di sistema locale non dispone di accesso a Internet.  
 
 
-## <a name="wsus-settings"></a>WSUS の設定  
- 使用する Configuration Manager のバージョンに応じて、**サイト システム サーバーの作成ウィザード** または **サイト システムの役割の追加ウィザード** のさまざまなページで、WSUS の設定を構成する必要があります。ソフトウェア更新ポイントのプロパティ ([ソフトウェアの更新ポイント コンポーネントのプロパティ]) のみで構成が必要になる場合もあります。 WSUS の設定を構成するときに、以下のセクションの情報を参照してください。  
+## <a name="wsus-settings"></a>Impostazioni di WSUS  
+ È necessario configurare le impostazioni WSUS in diverse pagine della **Creazione guidata server del sistema sito** o dell'**Aggiunta guidata ruoli del sistema del sito** in base alla versione di Configuration Manager in uso e, in alcuni casi, solo nelle proprietà per il punto di aggiornamento software, note anche come Proprietà del componente del punto di aggiornamento software. Utilizzare le informazioni nelle sezioni riportate di seguito per configurare le impostazioni WSUS.  
 
-### <a name="BKMK_wsusport"></a>WSUS ポート設定  
- ウィザードの [ソフトウェアの更新ポイント] ページまたはソフトウェアの更新ポイントのプロパティで、WSUS ポート設定を構成する必要があります。 WSUS が使用するポート設定を特定するには、次の手順に従います。  
+### <a name="BKMK_wsusport"></a>Impostazioni della porta WSUS  
+ È necessario configurare le impostazioni della porta di WSUS nella pagina Punto di aggiornamento software della procedura guidata o nelle proprietà del punto di aggiornamento software. Usare la procedura seguente per determinare le impostazioni della porta usate da Windows Server Update Services.  
 
-#### <a name="to-determine-the-port-settings-used-in-iis"></a>IIS で使用されるポート設定を特定するには  
+#### <a name="to-determine-the-port-settings-used-in-iis"></a>Per determinare le impostazioni della porta usate in IIS  
 
- 1.  WSUS サーバーで、インターネット インフォメーション サービス (IIS) マネージャーを起動します。  
+ 1.  Nel server WSUS aprire Gestione Internet Information Services (IIS).  
 
- 2.  [ **サイト**] を展開し、WSUS サーバーの Web サイトを右クリックして [ **バインディングの編集**] をクリックします。 [サイト バインド] ダイアログ ボックスで、HTTP および HTTPS ポート値がポートコラムに表示されます。 ****
+ 2.  Espandere **Siti**, fare clic con il pulsante destro del mouse sul server WSUS e quindi su **Modifica binding**. Nella finestra di dialogo Binding sito i valori di porta HTTP e HTTPS vengono visualizzati nella colonna **Porta** .
 
 
-### <a name="configure-ssl-communications-to-wsus"></a>WSUS への SSL 通信の構成  
- SSL 通信の構成は、ウィザードの [ **全般** ] ページまたはソフトウェアの更新ポイントのプロパティの [ **全般** ] タブで行うことができます。  
+### <a name="configure-ssl-communications-to-wsus"></a>Configurare le comunicazioni SSL in WSUS  
+ È possibile configurare la comunicazione SSL nella pagina **Generale** della procedura guidata o nella scheda **Generale** nelle proprietà del punto di aggiornamento software.  
 
- SSL の使用方法の詳細については、「 [Decide whether to configure WSUS to use SSL](../plan-design/plan-for-software-updates.md#BKMK_WSUSandSSL)」を参照してください。  
+ Per altre informazioni su come usare SSL, vedere [Decide whether to configure WSUS to use SSL](../plan-design/plan-for-software-updates.md#BKMK_WSUSandSSL).  
 
-### <a name="wsus-server-connection-account"></a>WSUS サーバー接続アカウント  
- ソフトウェアの更新ポイントで実行されている WSUS にサイト サーバーが接続するときにサイト サーバーで使用するアカウントを構成できます。 このアカウントを構成しない場合は、Configuration Manager によって、サイト サーバーが WSUS に接続するときにコンピューター アカウントが使用されます。 WSUS サーバー接続アカウントの構成は、ウィザードの **[プロキシとアカウントの設定]** ページまたはソフトウェアの更新ポイントのプロパティの **[プロキシとアカウントの設定]** タブで行います。  使用する Configuration Manager のバージョンに応じて、ウィザードのさまざまな場所でこのアカウントを構成できます。  
+### <a name="wsus-server-connection-account"></a>Account di connessione al server WSUS  
+ È possibile configurare un account che il server del sito utilizzerà per connettersi a WSUS in esecuzione nel punto di aggiornamento software. Se non si configura questo account, Configuration Manager si connette a WSUS tramite l'account computer del server del sito. Configurare l'account di connessione al server WSUS nella pagina **Impostazioni proxy e account** della procedura guidata o nella scheda **Impostazioni proxy e account** nelle proprietà del punto di aggiornamento software.  È possibile configurare l'account nelle pagine della procedura guidata a seconda della versione di Configuration Manager in uso.  
 
- Configuration Manager アカウントの詳細については、「[System Center Configuration Manager で使用されるアカウント](../../core/plan-design/hierarchy/accounts.md)」を参照してください。  
+ Per altre informazioni sugli account di Configuration Manager, vedere [Accounts used in System Center Configuration Manager](../../core/plan-design/hierarchy/accounts.md) (Account usati in System Center Configuration Manager).  
 
-## <a name="synchronization-source"></a>同期ソース  
- ソフトウェア更新プログラムの同期のアップ ストリームの同期ソースは、ウィザードの [ **同期ソース** ] ページまたはソフトウェアの更新ポイント コンポーネントのプロパティの [ **同期設定** ] タブで構成できます。 同期ソースのオプションは、サイトによって異なります。  
+## <a name="synchronization-source"></a>Origine di sincronizzazione  
+ È possibile configurare l'origine sincronizzazione upstream per la sincronizzazione degli aggiornamenti software nella pagina **Origine sincronizzazione** della procedura guidata oppure nella scheda **Impostazioni di sincronizzazione** in Proprietà del componente del punto di aggiornamento software. Le opzioni per l'origine di sincronizzazione variano a seconda del sito.  
 
- 次の表に、サイトにソフトウェアの更新ポイントを構成するときに使用できるオプションを示します。  
+ Utilizzare la seguente tabella per le opzioni disponibili quando si configura il punto di aggiornamento software in un sito.  
 
-|サイト|使用できる同期ソース オプション|  
+|Sito|Opzioni dell'origine di sincronizzazione disponibili|  
 |----------|----------------------------------------------|  
-|- 中央管理サイト<br />- スタンドアロン プライマリ サイト|- Microsoft Update と同期する<br />- アップストリームのデータ ソースの場所から同期する<br />- Microsoft Update またはアップストリームのデータ ソースから同期しない|  
-|- サイトの追加のソフトウェアの更新ポイント<br />- 子プライマリ サイト<br />- セカンダリ サイト|- アップストリームのデータ ソースの場所から同期する|  
+|- Sito di amministrazione centrale<br />- Sito primario autonomo|- Sincronizza dal sito Web Microsoft Update<br />- Sincronizza da un percorso di origine dati upstream<br />- Non eseguire la sincronizzazione da Microsoft Update o origine dati upstream|  
+|- Punti di aggiornamento software aggiuntivi in un sito<br />- Sito primario figlio<br />- Sito secondario|- Sincronizza da un percorso di origine dati upstream|  
 
- 次の一覧に、同期ソースとして使用できる各オプションの詳細を示します。  
+ Nell'elenco seguente vengono fornite ulteriori informazioni su ciascuna opzione utilizzabile come origine di sincronizzazione:  
 
--   **Microsoft Update と同期する**: ソフトウェア更新プログラムのメタデータを Microsoft Update と同期するには、この設定を使用します。 中央管理サイトがインターネットにアクセスできる必要があります。インターネットにアクセスできない場合、同期は失敗します。 この設定は、ソフトウェアの更新ポイントを最上位サイトに構成するときにのみ使用できます。  
+-   **Sincronizza da Microsoft Update**: usare questa impostazione per sincronizzare i metadati degli aggiornamenti software da Microsoft Update. Il sito di amministrazione centrale deve avere accesso a Internet; in caso contrario, la sincronizzazione avrà esito negativo. Questa impostazione è disponibile solo quando si configura il punto di aggiornamento software nel sito di livello superiore.  
 
     > [!NOTE]  
-    >  ソフトウェアの更新ポイントとインターネットの間にファイアウォールがある場合は、WSUS Web サイトに使用する HTTP ポートと HTTPS ポートを受け入れるようにファイアウォールを構成することが必要になる可能性があります。 また、ファイアウォールでのアクセスを一部のドメインに制限することもできます。 ソフトウェア更新プログラムをサポートするファイアウォールを計画する方法の詳細については、「 [Configure firewalls](../plan-design/plan-for-software-updates.md#BKMK_ConfigureFirewalls)」を参照してください。  
+    >  Se è presente un firewall tra il punto di aggiornamento software e Internet, potrebbe essere necessario configurarlo per accettare le porte HTTP e HTTPS usate per il sito Web WSUS. È inoltre possibile limitare l'accesso al firewall a determinati domini. Per altre informazioni sulla pianificazione di un firewall che supporta aggiornamenti software, vedere [Configure firewalls](../plan-design/plan-for-software-updates.md#BKMK_ConfigureFirewalls).  
 
--   **<a name="BKMK_wsussync"></a>アップストリームのデータ ソースの場所から同期する**: ソフトウェア更新プログラムのメタデータをアップストリームの同期ソースと同期するには、この設定を使用します。 子プライマリ サイトとセカンダリ サイトは、この設定に親サイトの URL を使用するように自動的に構成されます。 ソフトウェア更新プログラムを既存の WSUS サーバーと同期することができます。 https://WSUSServer:8531 などの URL を指定します。ここで、8531 は、WSUS サーバーへの接続に使用するポートです。  
+-   **<a name="BKMK_wsussync"></a>Sincronizza da un percorso di origine dati upstream**: usare questa impostazione per sincronizzare i metadati degli aggiornamenti software dall'origine sincronizzazione upstream. I siti primari figlio e i siti secondari vengono configurati automaticamente per l'utilizzo dell'URL del sito padre per questa impostazione. È possibile sincronizzare gli aggiornamenti software da un server WSUS esistente. Specificare un URL, ad esempio https://WSUSServer:8531, dove 8531 è la porta utilizzata per connettersi al server WSUS.  
 
--   **Microsoft Update またはアップストリームのデータ ソースから同期しない**: 最上位サイトのソフトウェアの更新ポイントがインターネットから切断されているときに、ソフトウェア更新プログラムを手動で同期するには、この設定を使用します。 詳細については、「[切断されているソフトウェアの更新ポイントからのソフトウェア更新プログラムの同期](synchronize-software-updates-disconnected.md)」を参照してください。  
+-   **Non sincronizzare da Microsoft Update o da origine dati upstream**: usare questa impostazione per sincronizzare manualmente gli aggiornamenti software quando il punto di aggiornamento software nel sito di livello superiore viene disconnesso da Internet. Per altre informazioni, vedere [Sincronizzare gli aggiornamenti software da un punto di aggiornamento software disconnesso](synchronize-software-updates-disconnected.md).  
 
 > [!NOTE]  
->  ソフトウェアの更新ポイントとインターネットの間にファイアウォールがある場合は、WSUS Web サイトに使用する HTTP ポートと HTTPS ポートを受け入れるようにファイアウォールを構成することが必要になる可能性があります。 また、ファイアウォールでのアクセスを一部のドメインに制限することもできます。 ソフトウェア更新プログラムをサポートするファイアウォールを計画する方法の詳細については、「 [Configure firewalls](../plan-design/plan-for-software-updates.md#BKMK_ConfigureFirewalls)」を参照してください。  
+>  Se è presente un firewall tra il punto di aggiornamento software e Internet, potrebbe essere necessario configurarlo per accettare le porte HTTP e HTTPS usate per il sito Web WSUS. È inoltre possibile limitare l'accesso al firewall a determinati domini. Per altre informazioni sulla pianificazione di un firewall che supporta aggiornamenti software, vedere [Configure firewalls](../plan-design/plan-for-software-updates.md#BKMK_ConfigureFirewalls).  
 
- ウィザードの [ **同期ソース** ] ページまたはソフトウェアの更新ポイント コンポーネントのプロパティの [ **同期設定** ] タブで、WSUS レポート イベントを作成するかどうかを構成することもできます。 Configuration Manager はこれらのイベントを使用しません。したがって、通常は既定の設定、**[WSUS レポート イベントを作成しない]** を選択します。  
+ È anche possibile configurare se creare gli eventi di reporting WSUS nella pagina **Origine di sincronizzazione** della procedura guidata oppure nella scheda **Impostazioni di sincronizzazione** in Proprietà del componente del punto di aggiornamento software. Configuration Manager non usa tali eventi. Pertanto, in genere si sceglie l'impostazione predefinita **Non creare eventi di reporting WSUS**.  
 
-## <a name="synchronization-schedule"></a>同期スケジュール  
- 同期スケジュールは、ウィザードの [同期スケジュール] ページまたは [ソフトウェアの更新ポイント コンポーネントのプロパティ] で構成します。 **** この設定は、最上位サイトのソフトウェアの更新ポイントにのみ構成します。  
+## <a name="synchronization-schedule"></a>Pianificazione della sincronizzazione  
+ Configurare la pianificazione della sincronizzazione nella pagina **Pianificazione della sincronizzazione** della procedura guidata o in Proprietà del componente del punto di aggiornamento software. Questa impostazione viene configurata solo nel punto di aggiornamento software nel sito di livello superiore.  
 
- スケジュールを有効にすると、定期的な簡易スケジュールまたはカスタムの同期スケジュールを構成することができます。 簡易スケジュールを構成する場合、開始時刻は、Configuration Manager コンソールを実行するコンピューターのスケジュール作成時におけるローカル時刻に基づいて設定されます。 カスタム スケジュールの開始時刻を構成する場合、時刻は、Configuration Manager コンソールを実行するコンピューターのローカル時刻に基づいて設定されます。  
+ Se si abilita la pianificazione, è possibile configurare una pianificazione della sincronizzazione semplice ricorrente o personalizzata. Quando si configura una pianificazione semplice, l'ora di avvio corrisponde all'ora locale del computer in cui è in esecuzione la console di Configuration Manager al momento della creazione della pianificazione. La configurazione dell'ora di avvio per una pianificazione personalizzata si basa sull'ora locale del computer in cui è in esecuzione la console di Configuration Manager.  
 
 > [!TIP]  
->  環境に合ったタイムフレームを使用して、ソフトウェア更新プログラムの同期を実行するスケジュールを設定します。 典型的なシナリオとして、毎月第 2 火曜日に実施される Microsoft のセキュリティ更新プログラムの定期リリース直後に実行されるように、ソフトウェア更新プログラムの同期スケジュールを設定するというものがあります (これは、一般的に月例パッチと呼ばれます)。 もう 1 つの典型的なシナリオは、ソフトウェア更新プログラムを使って Endpoint Protection 定義とエンジンの更新プログラムを送信するときに毎日実行されるように、ソフトウェア更新プログラムの同期スケジュールを設定するというものです。  
+>  Pianificare la sincronizzazione degli aggiornamenti software da eseguire usando un intervallo di tempo appropriato per l'ambiente. Un tipico scenario è quello che prevede di impostare l'esecuzione della pianificazione della sincronizzazione degli aggiornamenti poco dopo il normale rilascio di aggiornamenti della protezione Microsoft il secondo martedì di ogni mese, noto come Patch martedì. Un altro scenario frequente prevede di impostare l'esecuzione giornaliera della pianificazione della sincronizzazione degli aggiornamenti software quando si utilizzano tali aggiornamenti per fornire aggiornamenti del motore e delle definizioni di Endpoint Protection.  
 
 > [!NOTE]  
->  スケジュールに基づくソフトウェア更新プログラムの同期を有効にしない場合は、[ソフトウェア ライブラリ] ワークスペースで [すべてのソフトウェアの更新 **** ] ノードまたは [ソフトウェア更新プログラム グループ **** ] ノードを使用して、ソフトウェア更新プログラムを手動で同期させることができます。 詳細については、「[ソフトウェア更新プログラムの同期](synchronize-software-updates.md)」を参照してください。  
+>  Quando si sceglie di non abilitare la sincronizzazione degli aggiornamenti software su una pianificazione, è possibile sincronizzare manualmente tali aggiornamenti dal nodo **Tutti gli aggiornamenti software** o **Gruppi di aggiornamenti software** nell'area di lavoro Raccolta software. Per altre informazioni, vedere [Synchronize software updates from a disconnected software update point](synchronize-software-updates.md) (Sincronizzare gli aggiornamenti software da un punto di aggiornamento software disconnesso).  
 
-## <a name="supersedence-rules"></a>置き換え規則  
- ウィザードの [ **置き換え規則** ] ページまたはソフトウェアの更新ポイント コンポーネントのプロパティの [ **置き換え規則** ] タブで、置き換え設定を構成します。 置き換え規則は、最上位サイトでのみ構成できます。  
+## <a name="supersedence-rules"></a>Regole di sostituzione  
+ Configurare le impostazioni di sostituzione nella pagina **Regole di sostituzione** della procedura guidata o nella scheda **Regole di sostituzione** in Proprietà del componente del punto di aggiornamento software. È possibile configurare le regole di sostituzione solo nel sito di livello superiore.  
 
- このページで、置き換えられるソフトウェア更新プログラムが直ちに期限切れになるように指定することができます。その場合、これらのプログラムが新しい展開に含まれなくなり、また、既存の展開には、置き換えられるソフトウェア更新プログラムに期限切れのソフトウェア更新プログラムが 1 つまたは複数含まれていることを示すフラグが付けられます。 または、置き換えられるソフトウェア更新プログラムが期限切れになるまでの期間を指定することができます。その場合、これらのプログラムを引き続き展開することができます。 詳細については、「 [Supersedence rules](../plan-design/plan-for-software-updates.md#BKMK_SupersedenceRules)」を参照してください。  
-
-> [!NOTE]  
->  ウィザードの **[置き換え規則]** ページは、最初のソフトウェアの更新ポイントをサイトで構成するときにのみ使用できます。 追加のソフトウェアの更新ポイントをインストールするときには、このページは表示されません。  
-
-## <a name="classifications"></a>分類  
- ウィザードの [ **分類** ] ページまたはソフトウェアの更新ポイント コンポーネントのプロパティの [ **分類** ] タブで、分類設定を構成します。 ソフトウェア更新プログラムの分類の詳細については、「 [Update classifications](../plan-design/plan-for-software-updates.md#BKMK_UpdateClassifications)」を参照してください。  
+ In questa pagina è possibile specificare di applicare immediatamente la scadenza agli aggiornamenti software sostituiti, impedendo in tal modo che siano inclusi nelle nuove distribuzioni e contrassegnando le distribuzioni esistenti per indicare che gli aggiornamenti software sostituiti contengono uno o più aggiornamenti scaduti. In alternativa, è possibile specificare un periodo di tempo prima della scadenza degli aggiornamenti software sostituiti, che consente di continuare a distribuirli. Per altre informazioni, vedere [Supersedence rules](../plan-design/plan-for-software-updates.md#BKMK_SupersedenceRules).  
 
 > [!NOTE]  
->  ウィザードの **[分類]** ページは、最初のソフトウェアの更新ポイントをサイトで構成するときにのみ使用できます。 追加のソフトウェアの更新ポイントをインストールするときには、このページは表示されません。  
+>  La pagina **Regole di sostituzione** della procedura guidata è disponibile solo quando si configura il primo punto di aggiornamento software nel sito. Questa pagina non viene visualizzata quando si installano punti di aggiornamento software aggiuntivi.  
+
+## <a name="classifications"></a>Classificazioni  
+ Configurare le impostazioni delle classificazioni nella pagina **Classificazioni** della procedura guidata o nella scheda **Classificazioni** in Proprietà del componente del punto di aggiornamento software. Per altre informazioni sulle classificazioni degli aggiornamenti software, vedere [Update classifications](../plan-design/plan-for-software-updates.md#BKMK_UpdateClassifications).  
+
+> [!NOTE]  
+>  La pagina **Classificazioni** della procedura guidata è disponibile solo quando si configura il primo punto di aggiornamento software nel sito. Questa pagina non viene visualizzata quando si installano punti di aggiornamento software aggiuntivi.  
 
 > [!TIP]  
->  最上位サイトにソフトウェアの更新ポイントを初めてインストールするときに、ソフトウェア更新プログラムのすべての分類をオフにします。 ソフトウェア更新プログラムの初回同期後に、更新された一覧から分類を構成してから、同期を再開します。 この設定は、最上位サイトのソフトウェアの更新ポイントにのみ構成します。  
+>  Durante la prima installazione del punto di aggiornamento software nel sito di livello superiore, cancellare tutte le classificazioni degli aggiornamenti software. Dopo la sincronizzazione iniziale degli aggiornamenti software, configurare le classificazioni da un elenco aggiornato e quindi riavviare la sincronizzazione. Questa impostazione viene configurata solo nel punto di aggiornamento software nel sito di livello superiore.  
 
-## <a name="products"></a>製品  
- ウィザードの [ **製品** ] ページまたはソフトウェアの更新ポイント コンポーネントのプロパティの [ **製品** ] タブで、製品設定を構成します。  
+## <a name="products"></a>Prodotti  
+ Configurare le impostazioni dei prodotti nella pagina **Prodotti** della procedura guidata o nella scheda **Prodotti** in Proprietà del componente del punto di aggiornamento software.  
 
 > [!NOTE]  
->  ウィザードの **[製品]** ページは、最初のソフトウェアの更新ポイントをサイトで構成するときにのみ使用できます。 追加のソフトウェアの更新ポイントをインストールするときには、このページは表示されません。  
+>  La pagina **Prodotti** della procedura guidata è disponibile solo quando si configura il primo punto di aggiornamento software nel sito. Questa pagina non viene visualizzata quando si installano punti di aggiornamento software aggiuntivi.  
 
 > [!TIP]  
->  最上位サイトにソフトウェアの更新ポイントを初めてインストールするときに、すべての製品をオフにします。 ソフトウェア更新プログラムの初回同期後に、更新された一覧から製品を構成してから、同期を再開します。 この設定は、最上位サイトのソフトウェアの更新ポイントにのみ構成します。  
+>  Durante la prima installazione del punto di aggiornamento software nel sito di livello superiore, deselezionare tutti i prodotti. Dopo la sincronizzazione iniziale degli aggiornamenti software, configurare i prodotti da un elenco aggiornato e quindi riavviare la sincronizzazione. Questa impostazione viene configurata solo nel punto di aggiornamento software nel sito di livello superiore.  
 
-## <a name="languages"></a>言語  
- ウィザードの [ **言語** ] ページまたはソフトウェアの更新ポイント コンポーネントのプロパティの [ **言語** ] タブで、言語設定を構成します。 ソフトウェア更新ファイルと概要情報を同期する言語を指定します。 **[ソフトウェア更新ファイル]** 設定は、Configuration Manager 階層内の各ソフトウェアの更新ポイントで構成されます。 [概要情報] 設定は、最上位のソフトウェアの更新ポイントにのみ構成します。 **** 詳細については、「 [Languages](../plan-design/plan-for-software-updates.md#BKMK_UpdateLanguages)」をご覧ください。  
+## <a name="languages"></a>Lingue  
+ Configurare le impostazioni delle lingue nella pagina **Lingue** della procedura guidata o nella scheda **Lingue** in Proprietà del componente del punto di aggiornamento software. Specificare le lingue per cui si desidera sincronizzare i file di aggiornamento software e i dettagli di riepilogo. L'impostazione **File di aggiornamento software** è configurata in ogni punto di aggiornamento software della gerarchia di Configuration Manager. Le impostazioni **Dettagli di riepilogo** sono configurate solo nel punto di aggiornamento software di livello superiore. Per ulteriori informazioni, vedere [Languages](../plan-design/plan-for-software-updates.md#BKMK_UpdateLanguages).  
 
 > [!NOTE]  
->  ウィザードの **[言語]** ページは、ソフトウェアの更新ポイントを中央管理サイトにインストールする場合にのみ使用できます。 ソフトウェア更新ファイルの言語を子サイトで構成するには、[ソフトウェアの更新ポイント コンポーネントのプロパティ] の [言語] タブを使用します。 ****  
+>  La pagina **Lingue** della procedura guidata è disponibile solo quando si installa il punto di aggiornamento software nel sito di amministrazione centrale. È possibile configurare le lingue del File di aggiornamento software nei siti figlio dalla scheda **Lingue** in Proprietà del componente del punto di aggiornamento software.  
 
-## <a name="next-steps"></a>次のステップ
-ソフトウェア更新ポイントをインストールしたとき、Configuration Manager 階層の一番上のサイトから始めました。 このトピックの手順を繰り返し、子サイトでソフトウェア更新ポイントをインストールします。
+## <a name="next-steps"></a>Passaggi successivi
+Il punto di aggiornamento software è stato installato dal sito più in alto della gerarchia di Configuration Manager. Ripetere le procedure descritte in questo argomento per installare il punto di aggiornamento software nei siti figlio.
 
-ソフトウェア更新ポイントをインストールしたら、「[ソフトウェア更新プログラムの同期](synchronize-software-updates.md)」に進みます。
+Dopo aver installato i punti di aggiornamento software, passare a [sincronizzare gli aggiornamenti software](synchronize-software-updates.md).

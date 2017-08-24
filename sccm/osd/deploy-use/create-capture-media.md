@@ -1,6 +1,6 @@
 ---
-title: "キャプチャ メディアの作成 - Configuration Manager | Microsoft Docs"
-description: "タスク シーケンス メディアの作成ウィザードを使用して、Configuration Manager でキャプチャ メディアを作成し、オペレーティング システム イメージを参照コンピューターからキャプチャします。"
+title: Creare supporti di acquisizione - Configuration Manager | Microsoft Docs
+description: "Usare la Creazione guidata del supporto per la sequenza di attività per creare supporti di acquisizione in Configuration Manager per acquisire un'immagine del sistema operativo da un computer di riferimento."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -18,64 +18,64 @@ manager: angrobe
 ms.openlocfilehash: 5acf800ff5aebd849e294393337755145a60cca5
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-capture-media-with-system-center-configuration-manager"></a>System Center Configuration Manager を使用したキャプチャ メディアの作成
+# <a name="create-capture-media-with-system-center-configuration-manager"></a>Creare supporti di acquisizione con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Configuration Manager のキャプチャ メディアにより、オペレーティング システム イメージを参照コンピューターからキャプチャすることが可能です。 キャプチャ メディアは、次のシナリオに使用します。  
+Il supporto di acquisizione in Configuration Manager consente di acquisire un'immagine del sistema operativo da un computer di riferimento. Usare i supporti di acquisizione per lo scenario seguente:  
 
--   [オペレーティング システムをキャプチャするタスク シーケンスの作成](create-a-task-sequence-to-capture-an-operating-system.md)  
+-   [Creare una sequenza di attività per acquisire un sistema operativo](create-a-task-sequence-to-capture-an-operating-system.md)  
 
-##  <a name="BKMK_CreateCaptureMedia"></a> キャプチャ メディアの作成方法  
- オペレーティング システム イメージを参照コンピューターからキャプチャするには、キャプチャ メディアを使用します。 キャプチャ メディアには、参照コンピューターを起動するブート イメージとオペレーティング システム イメージをキャプチャするタスク シーケンスが含まれています。
+##  <a name="BKMK_CreateCaptureMedia"></a> Come creare supporti di acquisizione  
+ Usare il supporto di acquisizione per acquisire un'immagine del sistema operativo da un computer di riferimento. Il supporto di acquisizione contiene l'immagine di avvio che avvia il computer di riferimento e la sequenza di attività che acquisisce l'immagine del sistema operativo.
 
-キャプチャ メディアは、タスク シーケンス メディアの作成ウィザードを使用して作成します。 ウィザードを実行する前に、次の条件がすべて満たされていることを確認します。  
+Per creare i supporti di acquisizione, usare la Creazione guidata del supporto per la sequenza di attività. Prima di eseguire la procedura guidata, verificare che siano soddisfatte tutte le condizioni seguenti:  
 
-|タスク|説明|  
+|Attività|Descrizione|  
 |----------|-----------------|  
-|ブート イメージ|オペレーティング システムをキャプチャするためにタスク シーケンスで使用するブート イメージについて、次の事項を考慮してください。<br /><br /> -   ブート イメージのアーキテクチャが、展開先のコンピューターのアーキテクチャに対して適切である必要があります。 たとえば、x64 のコンピューターでは、x86 または x64 のブート イメージを起動して実行できます。 ただし、x86 のコンピューターで起動して実行できるのは、x86 ブート イメージのみです。<br />-  ブート イメージに、対象コンピューターのプロビジョニングに必要なネットワーク ドライバーと大容量記憶装置ドライバーが含まれている必要があります。|  
-|タスク シーケンスに関連付けられているすべてのコンテンツを配布する|1 つ以上の配布ポイントに対し、タスク シーケンスに必要なすべてのコンテンツを配布する必要があります。 これには、ブート イメージ、オペレーティング システム イメージ、その他の関連するファイルが含まれます。 スタンドアロン メディアの作成時に、ウィザードによって配布ポイントから情報が収集されます。 その配布ポイントのコンテンツ ライブラリへの **読み取り** アクセス権を持っている必要があります。  詳細については、「[コンテンツの配布](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute)」をご覧ください。|  
-|リムーバブル USB ドライブを準備する|リムーバブル USB ドライブの場合:<br /><br /> リムーバブル USB ドライブを使用する場合は、ウィザードが実行されるコンピューターに USB ドライブが接続され、USB ドライブが Windows に取り外し可能なメディアとして検知されている必要があります。 メディアの作成時に、ウィザードによって USB ドライブに直接書き込まれます。|  
-|出力フォルダーを作成する|CD/DVD セットの場合:<br /><br /> タスク シーケンス メディアの作成ウィザードを実行して CD または DVD セット用のメディアを作成する前に、ウィザードで作成される出力ファイル用のフォルダーを作成する必要があります。 CD または DVD セット用に作成されるメディアは、そのフォルダーに .iso ファイルとして直接書き込まれます。|  
+|Immagine d'avvio|Tenere presente quanto segue per l'immagine d'avvio da usare nella sequenza di attività per acquisire il sistema operativo:<br /><br /> - L'architettura dell'immagine di avvio deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine d'avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86.<br />- Verificare che l'immagine di avvio contenga i driver di archiviazione di rete e di massa necessari per eseguire il provisioning del computer di destinazione.|  
+|Distribuire tutto il contenuto associato alla sequenza di attività|È necessario distribuire in almeno un punto di distribuzione tutto il contenuto richiesto dalla sequenza di attività. Ciò include l'immagine d'avvio, l'immagine del sistema operativo e altri file associati. La procedura guidata raccoglie le informazioni dal punto di distribuzione quando viene creato il supporto autonomo. È necessario avere i diritti di accesso in **lettura** alla raccolta contenuto nel punto di distribuzione.  Per altre informazioni, vedere [Distribuire il contenuto](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute).|  
+|Preparare l'unità USB rimovibile|Per un'unità USB rimovibile:<br /><br /> Se si usa un'unità USB rimovibile, l'unità deve essere collegata al computer in cui viene eseguita la procedura guidata e rilevabile da Windows come dispositivo rimovibile. La procedura guidata scrive direttamente nell'unità USB durante la creazione del supporto.|  
+|Creare una cartella di output|Per un set di CD/DVD:<br /><br /> Prima di eseguire la Creazione guidata del supporto per la sequenza di attività per creare il supporto per un set di CD o DVD, è necessario creare una cartella per i file di output creati dalla procedura guidata. Il supporto creato per un set di CD o DVD viene scritto come file con estensione iso direttamente nella cartella.|  
 
- キャプチャ メディアを作成するには、次の手順に従います。  
+ Usare la procedura seguente per creare supporti di acquisizione.  
 
-#### <a name="to-create-capture-media"></a>キャプチャ メディアを作成するには  
+#### <a name="to-create-capture-media"></a>Per creare supporti di acquisizione  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス**] をクリックします。  
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
 
-3.  [ **ホーム** ] タブの [ **作成** ] グループで [ **タスク シーケンス メディアの作成** ] をクリックして、タスク シーケンス メディアの作成ウィザードを起動します。  
+3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea supporto per sequenza di attività** per avviare la Creazione guidata del supporto per la sequenza di attività.  
 
-4.  [ **メディアの種類の選択** ] ページで、[ **キャプチャ メディア**] を選択し、[ **次へ**] をクリックします。  
+4.  Nella pagina **Seleziona tipo di supporto** selezionare **Acquisisci supporto**, quindi fare clic su **Avanti**.  
 
-5.  **[メディアの種類]** ページで、メディアがフラッシュ ドライブか、または CD/DVD セットであるかを指定してから、次の構成をクリックします。  
+5.  Nella pagina **Tipo di supporto** specificare se il supporto è un'unità flash o un set di CD/DVD, quindi configurare quanto segue:  
 
-    -   **[USB フラッシュ ドライブ]**を選択した場合は、コンテンツを保存するドライブを指定します。  
+    -   Se si seleziona **Unità memoria flash USB**, è necessario specificare l'unità in cui archiviare il contenuto.  
 
-    -   **CD/DVD セット**を選択した場合は、メディアの容量および出力ファイルの名前とパスを指定します。 この場所に出力ファイルが書き込まれます。 例: **\\\servername\folder\outputfile.iso**  
+    -   Se si seleziona l'opzione **CD/DVD impostato**, specificare la capacità del supporto e il nome e il percorso dei file di output. La procedura guidata scrive i file di output in questa posizione. Ad esempio: **\\\nomeserver\cartella\filedioutput.iso**  
 
-         メディアにコンテンツ全体を保存しきれない場合は、複数のファイルが作成されます。この場合、複数の CD または DVD を使用してコンテンツを保存する必要があります。 複数のメディアが必要な場合は、Configuration Manager が作成する各出力ファイルの名前に連番が付けられます。 さらに、オペレーティング システムと共にアプリケーションを展開し、アプリケーションが 1 つのメディアに収まらない場合、Configuration Manager は複数のメディアでアプリケーションを保存します。 スタンドアロン メディアを実行している場合、Configuration Manager は、アプリケーションを保存する次のメディアの指定をユーザーに求めます。  
+         Se la capacità del supporto non è sufficiente per archiviare l'intero contenuto, vengono creati più file ed è necessario archiviare il contenuto in più CD o DVD. Quando sono necessari più supporti, Configuration Manager aggiunge un numero di sequenza al nome di ogni file di output creato. Se insieme al sistema operativo si distribuisce un'applicazione e questa non può essere contenuta in un unico supporto, Configuration Manager archivia l'applicazione in più supporti. Quando il supporto autonomo viene eseguito Configuration Manager chiede all'utente il supporto successivo contenente l'applicazione.  
 
         > [!IMPORTANT]  
-        >  既存の .iso イメージを選択した場合は、タスク シーケンス メディア ウィザードの次のページに進むと、ドライブまたは共有フォルダーからイメージが削除されます。 既存のイメージは、ウィザードをキャンセルしても削除されます。  
+        >  Se si seleziona un'immagine iso esistente, la Creazione guidata del supporto per la sequenza di attività elimina l'immagine dall'unità o dalla condivisione non appena si passa alla pagina successiva della procedura guidata. L'immagine esistente viene eliminata, anche se si annulla la procedura guidata.  
 
-     **[次へ]**をクリックします。  
+     Fare clic su **Avanti**.  
 
-6.  [ **ブート イメージ** ] ページで次の情報を指定し、[ **次へ**] をクリックします。  
+6.  Nella pagina **Immagine di avvio** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
 
     > [!IMPORTANT]  
-    >  指定するブート イメージのアーキテクチャは、参照コンピューターのアーキテクチャに適したものである必要があります。 たとえば、x64 参照コンピューターは x86 または x64 ブート イメージを起動し実行できます。 ただし、x86 参照コンピューターが起動し実行できるのは、x86 ブート イメージのみです。  
+    >  L'architettura dell'immagine di avvio specificata deve essere appropriata per l'architettura del computer di riferimento. Ad esempio, un computer di riferimento x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di riferimento x86 può avviare ed eseguire solo un'immagine di avvio x86.  
 
-    -   [ **ブート イメージ** ] ボックスで、参照コンピューターを起動するブート イメージを指定します。  
+    -   Nella casella **Immagine di avvio** specificare l'immagine di avvio per avviare il computer di riferimento.  
 
-    -   [ **配布ポイント** ] ボックスで、ブート イメージが配置されている配布ポイントを指定します。 配布ポイントからブート イメージが取得されてメディアに書き込まれます。  
+    -   Nella casella **Punto di distribuzione** specificare il punto di distribuzione in cui si trova l'immagine di avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
 
         > [!NOTE]  
-        >  配布ポイントのコンテンツ ライブラリへの読み取りアクセス権を持っている必要があります。  
+        >  È necessario disporre dei diritti di accesso in lettura alla raccolta contenuto nel punto di distribuzione.  
 
-7.  ウィザードを完了します。  
+7.  Completare la procedura guidata.  

@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager の VPN プロファイル | Microsoft Docs"
-description: "System Center Configuration Manager のモバイル デバイスの VPN プロファイルです。"
+title: Profili VPN in System Center Configuration Manager | Microsoft Docs
+description: Profili VPN nei dispositivi mobili in System Center Configuration Manager.
 ms.custom: na
 ms.date: 07/26/2017
 ms.prod: configuration-manager
@@ -18,148 +18,148 @@ manager: angrobe
 ms.openlocfilehash: e4a53caab7d76b604a3fee7dcfc4dc48f22b0fb0
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>System Center Configuration Manager のモバイル デバイスの VPN プロファイル
+# <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Profili VPN nei dispositivi mobili in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager の VPN プロファイルを使用して、VPN 設定を組織内のモバイル デバイス ユーザーに展開します。 これらの設定を展開して、企業ネットワーク上のリソースに接続するために必要なエンド ユーザーの作業を最小化します。  
+Usare profili VPN in System Center Configuration Manager per distribuire impostazioni VPN agli utenti dei dispositivi mobili nell'organizzazione. La distribuzione di queste impostazioni consente di ridurre al minimo le operazioni che l'utente finale deve eseguire per connettersi alle risorse sulla rete aziendale.  
 
- たとえば、iOS オペレーティング システムを実行するすべてのデバイスに対して、企業ネットワーク上のファイル共有に接続するために必要な設定を使用して、セットアップを行うことができます。 企業ネットワークに接続するために必要な設定が含まれている VPN プロファイルを作成した後、階層内で iOS を実行するデバイスを持つすべてのユーザーにこのプロファイルを展開できます。 iOS デバイスのユーザーに対して使用可能なネットワークの一覧で VPN 接続が表示されるため、最小限の作業でこのネットワークに接続できます。  
+ Si supponga, ad esempio, di voler configurare tutti i dispositivi che eseguono il sistema operativo iOS usando le impostazioni necessarie per connettersi a una condivisione file nella rete aziendale. È possibile creare un profilo VPN contenente le impostazioni necessarie per connettersi alla rete aziendale e quindi distribuire questo profilo a tutti gli utenti della gerarchia che dispongono di dispositivi iOS. Gli utenti dei dispositivi iOS visualizzeranno la connessione VPN nell'elenco delle reti disponibili e potranno connettersi molto facilmente alla rete.  
 
- VPN プロファイルを作成するときに、さまざまなセキュリティ設定を含めることができます。 たとえば、System Center Configuration Manager の証明書プロファイルを使用してセットアップされたサーバー評価用の証明書とクライアント認証用の証明書を指定できます。 証明書プロファイルの詳細については、「[Certificate profiles in System Center Configuration Manager (System Center Configuration Manager の証明書プロファイル)](../../protect/deploy-use/introduction-to-certificate-profiles.md)」をご覧ください。  
+ Quando si crea un profilo VPN, è possibile includere una vasta gamma di impostazioni di protezione. È ad esempio possibile specificare certificati per la convalida del server e l'autenticazione del client impostati usando i profili di certificato di System Center Configuration Manager. Per altre informazioni sui profili di certificato, vedere [Profili certificato in System Center Configuration Manager](../../protect/deploy-use/introduction-to-certificate-profiles.md).  
 
- ## <a name="vpn-profiles-when-using-configuration-manager-together-with-intune"></a>Configuration Manager と Intune を併用する場合の VPN プロファイル
+ ## <a name="vpn-profiles-when-using-configuration-manager-together-with-intune"></a>Profili VPN usando Configuration Manager insieme a Intune
 
- プロファイルを iOS、Android、Windows Phone、Windows 8.1 の各デバイスに展開するには、これらのデバイスを Microsoft Intune に登録する必要があります。 その他のプラットフォームのデバイスも、Intune に登録できます。 登録方法については、「[Microsoft Intune を使用したモバイル デバイスの管理](https://technet.microsoft.com/en-us/library/dn646962.aspx)」を参照してください。 次の表は、各デバイス プラットフォームでサポートされている接続の種類を示しています。  
+ Per distribuire i profili nei dispositivi Android, iOS, Windows Phone e Windows 8.1, tali dispositivi devono essere registrati in Microsoft Intune. Anche i dispositivi su altre piattaforme possono essere registrati in Intune. Per informazioni su come eseguire la registrazione, vedere [Gestire i dispositivi mobili con Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx). La tabella seguente mostra il tipo di connessione supportato per ogni piattaforma del dispositivo:  
 
- |接続の種類|iOS と macOS X|Android|Windows 8.1|Windows RT|Windows RT 8.1|Windows Phone 8.1|Windows 10 Desktop および Mobile|  
+ |Tipo di connessione|iOS e MacOS X|Android|Windows 8.1|Windows RT|Windows RT 8.1|Windows Phone 8.1|Windows 10 Desktop e Mobile|  
  |---------------------|----------------------|-------------|-----------------|----------------|--------------------|-----------------------|-----------------------------------|  
- |Cisco AnyConnect|○|○|いいえ|いいえ|いいえ|いいえ|はい (OMA-URI)|
- |Cisco (IPSec)|iOS のみ|×|いいえ|いいえ|いいえ|いいえ|×|  
- |Pulse Secure|[はい]|[はい]|○|×|[はい]|[はい]|○|  
- |F5 Edge Client|[はい]|[はい]|○|×|[はい]|[はい]|○|  
- |Dell SonicWALL Mobile Connect|[はい]|[はい]|○|×|[はい]|[はい]|[はい]|  
- |チェック ポイント モバイル VPN|○|[はい]|○|×|[はい]|[はい]|○|  
- |Microsoft SSL (SSTP)|×|いいえ|[はい]|[はい]|○|いいえ|いいえ|  
- |Microsoft 自動|いいえ|いいえ|[はい]|[はい]|○|×|はい (OMA-URI)|  
- |IKEv2|はい (カスタム ポリシー)|いいえ|[はい]|[はい]|[はい]|○|はい (OMA-URI)|  
- |PPTP|○|×|[はい]|[はい]|○|×|はい (OMA-URI)|  
- |L2TP|[はい]|×|[はい]|[はい]|○|×|はい (OMA-URI)|  
+ |Cisco AnyConnect|Sì|Sì|No|No|No|No|Sì (URI OMA)|
+ |Cisco (IPSec)|Solo iOS|No|No|No|No|No|No|  
+ |Pulse Secure|Sì|Sì|Sì|No|Yes|Sì|Sì|  
+ |F5 Edge Client|Yes|Sì|Sì|No|Yes|Sì|Yes|  
+ |Dell SonicWALL Mobile Connect|Sì|Sì|Sì|No|Yes|Sì|Sì|  
+ |VPN mobile Check Point|Sì|Sì|Sì|No|Yes|Sì|Sì|  
+ |Microsoft SSL (SSTP)|No|No|Yes|Sì|Sì|No|No|  
+ |Microsoft Automatico|No|No|Yes|Sì|Sì|No|Sì (URI OMA)|  
+ |IKEv2|Sì (Criteri personalizzati)|No|Yes|Sì|Sì|Sì|Sì (URI OMA)|  
+ |PPTP|Sì|No|Yes|Sì|Sì|No|Sì (URI OMA)|  
+ |L2TP|Sì|No|Yes|Sì|Sì|No|Sì (URI OMA)|  
 
-## <a name="create-vpn-profiles"></a>VPN プロファイルの作成
-VPN プロファイルの作成方法に関する一般情報は、「[System Center Configuration Manager で VPN プロファイルを作成する方法](../../protect/deploy-use/create-vpn-profiles.md)」をご覧ください。
+## <a name="create-vpn-profiles"></a>Creare profili VPN
+Per informazioni generali sulla creazione di profili VPN, vedere [Come creare profili VPN in System Center Configuration Manager](../../protect/deploy-use/create-vpn-profiles.md).
 
-###   <a name="windows-10-vpn-features-available-when-using-configuration-manager-with-intune"></a>Intune と Configuration Manager を使用するときに使用できる Windows 10 の VPN 機能  
+###   <a name="windows-10-vpn-features-available-when-using-configuration-manager-with-intune"></a>Funzionalità VPN di Windows 10 disponibili quando si usa Configuration Manager con Intune  
 
 
 > [!NOTE]  
-> Windows 10 の VPN 機能を使用する VPN プロファイルの名前は、Unicode にしたり、特殊文字を含めたりすることはできません。
+> Il nome di un profilo VPN che usa le funzionalità VPN di Windows 10 non può essere in formato Unicode né contenere caratteri speciali.
 
 
-|オプション|説明|接続の種類|  
+|Opzione|Altre informazioni|Tipo di connessione|  
     |------------|----------------------|---------------------|  
-    |**企業の Wi-Fi ネットワークに接続しているときは VPN をバイパスする**|デバイスが企業の Wi-Fi ネットワークに接続されている場合、VPN 接続は使用されません。 デバイスが会社のネットワークに接続されているかどうかを判断するために使用する、信頼されたネットワーク名を入力します。|すべて|  
-    |**ネットワーク トラフィック規則**|VPN 接続に対して有効にするプロトコル、ローカル ポート、リモート ポート、アドレス範囲を設定します。<br /><br /> **注:** ネットワーク トラフィック規則を作成しない場合は、すべてのプロトコル、ポート、アドレス範囲が有効になります。 規則を作成すると、その規則または追加の規則で指定したプロトコル、ポート、アドレス範囲のみが VPN 接続で使用されます。|すべて|  
-    |**ルート**|VPN 接続を使用するルート。 60 を超えるルートを作成すると、ポリシーが機能しなくなる場合があることに注意してください。 |すべて|  
-    |**DNS サーバー**|接続の確立後に VPN 接続で使用する DNS サーバー。|すべて|  
-    |**自動的に VPN に接続するアプリ**|自動的に VPN 接続を使用するアプリの追加やアプリのリストのインポートができます。 アプリの種類によってアプリの識別子が決まります。 デスクトップ アプリの場合、アプリのファイル パスを提供します。 ユニバーサル アプリの場合、パッケージ ファミリ名 (PFN) を提供します。 アプリの PFN を検索する方法については、「[Find a package family name for per-app VPN](../../protect/deploy-use/find-a-pfn-for-per-app-vpn.md)」(アプリごとの VPN のパッケージ ファミリ名を検索する) を参照してください。 |すべて|
+    |**Disabilita VPN quando il dispositivo è connesso alla rete Wi-Fi aziendale**|La connessione VPN non verrà usata quando il dispositivo è connesso alla rete Wi-Fi aziendale. Immettere il nome di rete attendibile usato per determinare se il dispositivo è connesso alla rete aziendale.|All|  
+    |**Regole del traffico di rete**|Impostare i protocolli, la porta locale, la porta remota e gli intervalli di indirizzi che verranno abilitati per la connessione VPN.<br /><br /> **Nota:** se non si crea una regola del traffico di rete, tutti i protocolli, le porte e gli intervalli di indirizzi vengono abilitati. Dopo la creazione di una regola, verranno usati dalla connessione VPN solo i protocolli, le porte e gli intervalli di indirizzi specificati in tale regola o nelle regole aggiuntive.|All|  
+    |**Route**|Route che verranno usate dalla connessione VPN. Si noti che la creazione di più di 60 route può causare errori del criterio. |All|  
+    |**Server DNS**|Server DNS usati dalla connessione VPN una volta stabilita la connessione.|All|  
+    |**App in grado di connettersi automaticamente alla rete VPN**|È possibile aggiungere app o importare elenchi di app che useranno automaticamente la connessione VPN. Il tipo di app determinerà l'identificatore dell'app. Per un'app desktop, specificare il percorso file dell'app. Per un'app universale, specificare il nome della famiglia di pacchetti (PFN). Per sapere come individuare il nome PFN per un'app, vedere la sezione relativa al [reperimento di un nome di famiglia di pacchetti per la VPN per app](../../protect/deploy-use/find-a-pfn-for-per-app-vpn.md). |All|
 
 > [!IMPORTANT]
-> アプリごとの VPN の構成で使用するためにコンパイルする関連付けられたアプリのすべてのリストをセキュリティで保護することをお勧めします。 承認されていないユーザーによって変更されたリストを、アプリごとの VPN のアプリのリストにインポートすると、アクセスが許可されていないアプリへの VPN アクセスを認証してしまう可能性があります。 アプリのリストをセキュリティで保護できる 1 つの方法は、アクセス制御リスト (ACL) を使用することです。
+> Si consiglia di proteggere tutti gli elenchi di app associate che si compilano per l'uso nella configurazione della VPN per app. Se l'elenco viene modificato da un utente non autorizzato e viene importato nell'elenco di app della VPN per app, si autorizza potenzialmente l'accesso alla VPN da parte di applicazioni che non devono potervi accedere. Un modo per proteggere gli elenchi di app consiste nell'usare un elenco di controllo di accesso (ACL).
 
 
-1.  ウィザードの **[認証方法]** ページで、次のように指定します。  
+1.  Nella pagina **Metodo di autenticazione** della procedura guidata specificare:  
 
-    -   **認証方法**: VPN 接続で使用する認証方法を選択します。 使用可能な方法は、この表に示されている接続の種類によって異なります。  
+    -   **Metodo di autenticazione**: selezionare il tipo di metodo di autenticazione che verrà usato dalla connessione VPN. I metodi disponibili variano a seconda del tipo di connessione come illustrato in questa tabella.  
 
-        |[認証方法]|サポートされる&nbsp;接続&nbsp;の種類|  
+        |Metodo di autenticazione|Tipi di &nbsp;connessione&nbsp; supportati|  
         |---------------------------|--------------------------------|  
-        |**証明書**<br /><br /> **注:**<ul><li>RADIUS サーバー (ネットワーク ポリシー サーバーなど) での認証にクライアント証明書を使用する場合は、証明書のサブジェクトの別名をユーザーのプリンシパル名に設定する必要があります。</li><li>Android 向けに展開する場合は、EKU 識別子と証明書発行者の拇印のハッシュ値を選択します。  それ以外の場合は、ユーザーは適切な証明書を手動で選択する必要があります。</li></ul>  |<ul><li>Cisco AnyConnect</li><li>Pulse Secure</li><li>F5 Edge Client</li><li>Dell SonicWALL Mobile Connect</li><li> チェック ポイント モバイル VPN</li></ul>|  
-        |**ユーザー名とパスワード**|<ul><li>Pulse Secure</li><li>F5 Edge Client</li><li>Dell SonicWALL Mobile Connect</li><li> チェック ポイント モバイル VPN</li></ul>|  
-        |**Microsoft EAP-TTLS**|<ul><li>Microsoft SSL (SSTP)</li><li>Microsoft 自動</li><li>PPTP</li><li>IKEv2</li><li>L2TP</li></ul>|  
-        |**Microsoft 保護された EAP (PEAP)**|<ul><li>Microsoft SSL (SSTP)</li><li>Microsoft 自動</li><li>IKEv2</li><li>PPTP</li><li>L2TP</li></ul>|  
-        |**Microsoft セキュリティで保護されたパスワード (EAP-MSCHAP v2)**|<ul><li>Microsoft SSL (SSTP)</li><li>Microsoft 自動</li><li>IKEv2</li><li>PPTP</li><li>L2TP</li></ul>|  
-        |**スマート カードまたはその他の証明書**|<ul><li>Microsoft SSL (SSTP)</li><li>Microsoft 自動</li><li>IKEv2</li><li>PPTP</li><li>L2TP</li></ul>|  
-        |**MSCHAP v2**|<ul><li>Microsoft SSL (SSTP)</li><li>Microsoft 自動</li><li>IKEv2</li><li>PPTP</li><li>L2TP</li></ul>|  
-        |**RSA SecurID** (iOS のみ)|<ul><li>Microsoft SSL (SSTP)</li><li>Microsoft 自動</li><li>PPTP</li><li>L2TP</li></ul>|  
-        |**コンピューターの証明書を使う**|<ul><li>IKEv2</li></ul>|  
+        |**Certificati**<br /><br /> **Note:**<ul><li>Se il certificato client esegue l'autenticazione in un server RADIUS, ad esempio un server dei criteri di rete, il nome alternativo del soggetto nel certificato deve essere impostato sul nome dell'entità utente.</li><li>Per le distribuzioni Android, selezionare l'identificatore EKU e il valore hash di identificazione personale dell'autorità di certificazione.  In caso contrario, gli utenti devono selezionare il certificato appropriato manualmente.</li></ul>  |<ul><li>Cisco AnyConnect</li><li>Pulse Secure</li><li>F5 Edge Client</li><li>Dell SonicWALL Mobile Connect</li><li> VPN mobile Check Point</li></ul>|  
+        |**Nome utente e password**|<ul><li>Pulse Secure</li><li>F5 Edge Client</li><li>Dell SonicWALL Mobile Connect</li><li> VPN mobile Check Point</li></ul>|  
+        |**Microsoft EAP-TTLS**|<ul><li>Microsoft SSL (SSTP)</li><li>Microsoft Automatico</li><li>PPTP</li><li>IKEv2</li><li>L2TP</li></ul>|  
+        |**Microsoft PEAP (Protected EAP)**|<ul><li>Microsoft SSL (SSTP)</li><li>Microsoft Automatico</li><li>IKEv2</li><li>PPTP</li><li>L2TP</li></ul>|  
+        |**Password protetta Microsoft (EAP-MSCHAP v2)**|<ul><li>Microsoft SSL (SSTP)</li><li>Microsoft Automatico</li><li>IKEv2</li><li>PPTP</li><li>L2TP</li></ul>|  
+        |**Smart card o altro certificato**|<ul><li>Microsoft SSL (SSTP)</li><li>Microsoft Automatico</li><li>IKEv2</li><li>PPTP</li><li>L2TP</li></ul>|  
+        |**MSCHAP v2**|<ul><li>Microsoft SSL (SSTP)</li><li>Microsoft Automatico</li><li>IKEv2</li><li>PPTP</li><li>L2TP</li></ul>|  
+        |**RSA SecurID** (solo iOS)|<ul><li>Microsoft SSL (SSTP)</li><li>Microsoft Automatico</li><li>PPTP</li><li>L2TP</li></ul>|  
+        |**Usa certificati computer**|<ul><li>IKEv2</li></ul>|  
 
-         選択したオプションに応じて、次のような詳細情報の指定を求められることがあります。  
+         A seconda delle opzioni selezionate, potrebbe essere necessario specificare altre informazioni, ad esempio:  
 
-        -   **[ログオンごとにユーザー資格情報を保存する]**: ユーザーが接続するたびに入力しなくても済むように、ユーザーの資格情報が記憶されます。  
+        -   **Memorizza le credenziali utente a ogni accesso**: le credenziali utente vengono memorizzate in modo che gli utenti non debbano immetterle ogni volta che si connettono.  
 
-        -   **[クライアント認証用のクライアント証明書の選択]**: 事前に作成した、VPN 接続の認証に使用するクライアント [SCEP 証明書](create-pfx-certificate-profiles.md)を選択します。   
+        -   **Selezionare un certificato client per l'autenticazione client**: selezionare il [certificato SCEP](create-pfx-certificate-profiles.md) creato in precedenza che verrà usato per autenticare la connessione VPN.   
 
             > [!NOTE]  
-            >  iOS デバイスの場合、選択する SCEP プロファイルは VPN プロファイルに埋め込まれます。 その他のプラットフォームでは、証明書が存在しないまたは準拠していない場合に VPN プロファイルがインストールされないようにする適用規則が追加されます。  
+            >  Per i dispositivi iOS, il profilo SCEP selezionato verrà incorporato nel profilo VPN. Per altre piattaforme, viene aggiunta una regola di applicabilità per garantire che il profilo VPN non venga installato se il certificato non è presente o non è conforme.  
             >   
-            >  指定した SCEP 証明書が準拠していないまたは展開されていない場合、VPN プロファイルはデバイスにインストールされません。
+            >  Se il certificato SCEP specificato non è conforme o non è stato distribuito, il profilo VPN non verrà installato nel dispositivo.
             >  
-            >  IOS を実行するデバイスは、接続種類が PPTP の場合に認証方法として RSA SecurID と MSCHAP v2のみをサポートします。 エラーの報告を回避するには、iOS を実行するデバイスに、個別に PPTP VPN プロファイルを展開します。  
+            >  I dispositivi che eseguono iOS supportano solo RSA SecurID e MSCHAP v2 per il metodo di autenticazione quando il tipo di connessione è PPTP. Per evitare la segnalazione di errori, distribuire un profilo VPN PPTP distinto nei dispositivi che eseguono iOS.  
 
-        - **条件付きアクセス**
-            - VPN に接続するデバイスについて、接続前に条件付きアクセスのコンプライアンスのためにテストするには、**[この VPN 接続に対して条件付きアクセスを有効にする]** をオンにします。 コンプライアンス ポリシーについては、「[Device compliance policies in System Center Configuration Manager (System Center Configuration Manager でのデバイス コンプライアンス ポリシー)](https://docs.microsoft.com/en-us/sccm/protect/deploy-use/device-compliance-policies.md)」をご覧ください。
-            - デバイスのコンプライアンスのために VPN 認証証明書以外の証明書を選択するには、**[別の証明書でのシングル サインオン (SSO) を有効にする]** をオンにします。 このオプションをオンにする場合は、VPN クライアントを特定できる正しい証明書の **[EKU]** (コンマ区切りリスト) と **[発行元ハッシュ]** を指定します。
+        - **Accesso condizionale**
+            - Scegliere **Abilita l'accesso condizionale per questa connessione VPN** per garantire che prima della connessione i dispositivi che si connettono alla rete VPN siano stati sottoposti a test di conformità all'accesso condizionale. I criteri di conformità sono descritti in [Criteri di conformità del dispositivo in System Center Configuration Manager](https://docs.microsoft.com/en-us/sccm/protect/deploy-use/device-compliance-policies.md).
+            - Scegliere **Abilita l'accesso Single Sign-On (SSO) con il certificato alternativo** per scegliere un certificato diverso dal certificato di autenticazione VPN per la conformità del dispositivo. Se si sceglie questa opzione, specificare **EKU** (elenco delimitato da virgole) e **Hash dell'emittente** per ottenere il certificato corretto che il client VPN deve individuare.
 
-         - **[Windows 情報保護]** には、企業が管理する企業 ID を指定します。通常、これは組織のプライマリ ドメインです (*contoso.com* など)。 組織が所有している複数のドメインを指定するには、"|" 文字で区切ります。 たとえば、「*contoso.com|newcontoso.com*」と指定します。   
-            Windows 情報保護については、「[Create a Windows Information Protection (WIP) policy using Microsoft Intune (Microsoft Intune を使用した Windows 情報保護 (WIP) ポリシーの作成)](https://technet.microsoft.com/en-us/itpro/windows/keep-secure/create-wip-policy-using-intune)」をご覧ください。   
+         - Per **Windows Information Protection**, specificare l'identità aziendale gestita dall'organizzazione, che corrisponde in genere al dominio primario dell'organizzazione, ad esempio *contoso.com*. È possibile specificare più domini di proprietà dell'organizzazione separandoli con il carattere "|". Ad esempio, *contoso.com|newcontoso.com*.   
+            Per informazioni su Windows Information Protection, vedere [Creare un criterio di Windows Information Protection (WIP) con Microsoft Intune](https://technet.microsoft.com/en-us/itpro/windows/keep-secure/create-wip-policy-using-intune).   
 
-         ![VPN に条件付きアクセスを構成する](media/vpn-conditional-access.png)
+         ![Configurare l'accesso condizionale per VPN](media/vpn-conditional-access.png)
 
-         Configuration Manager を実行する Windows のバージョンが機能をサポートしていて、_かつ_、認証方法が選択されている場合は、**[構成]** を選択することができ、[Windows プロパティ] ダイアログ ボックスを開いて認証方法のプロパティを構成できます。  **[構成]** が無効になっている場合は、別の方法で認証方法のプロパティを構成してください。
+         Se è supportato dalla versione di Windows che esegue Configuration Manager _e_ dal metodo di autorizzazione selezionati, è possibile scegliere **Configura** per aprire la finestra di dialogo delle proprietà di Windows e configurare le proprietà del metodo di autenticazione.  Se l'opzione **Configura** è disabilitata, usare modi diversi per configurare le proprietà del metodo di autenticazione.
 
-2.  VPN 接続でプロキシ サーバーを使用する場合は、**[VPN プロファイルの作成ウィザード]** の **[プロキシの設定]** ページで、**[この VPN プロファイルのプロキシ設定の構成]** チェック ボックスをオンにします。 次に、プロキシ サーバーの情報を指定します。 詳細については、Windows Server のドキュメントを参照してください。  
+2.  Nella pagina **Impostazioni proxy** della **Creazione guidata profilo VPN** selezionare la casella **Configura impostazioni proxy per questo profilo VPN** se la connessione VPN in uso utilizza un server proxy. Quindi, specificare le informazioni relative al server proxy. Per altre informazioni, vedere la documentazione di Windows Server.  
 
     > [!NOTE]  
-    >  Windows 8.1 コンピューターでは、そのコンピューターを VPN に接続するまで、VPN プロファイルにプロキシ情報は表示されません。  
+    >  Nei computer Windows 8.1 il profilo VPN non visualizzerà le informazioni sul proxy finché l'utente non si connette alla rete VPN usando tale computer.  
 
 
-3. 詳細な DNS 設定を構成する (必要な場合)。  
- **[自動 VPN 接続の構成]** ページで、次のように構成できます。  
+3. Configurare altre impostazioni DNS (se necessario).  
+ Nella pagina **Configura connessione VPN automatica** è possibile configurare quanto segue:  
 
-    -   **[VPN オンデマンドを有効にする]**: Windows Phone 8.1 デバイス用の DNS の詳細設定を構成する場合に使用します。 この設定は Windows Phone 8.1 デバイスのみに適用され、Windows Phone 8.1 デバイスに展開することになっている VPN プロファイルでのみ有効にします。
+    -   **Abilita VPN su richiesta**: usare questa opzione per configurare altre impostazioni DNS per i dispositivi Windows Phone 8.1. Questa impostazione si applica solo ai dispositivi Windows Phone 8.1 e deve essere abilitata solo nei profili VPN che verranno distribuiti a dispositivi Windows Phone 8.1.
 
-    -   **[DNS サフィックスの一覧]** (Windows Phone 8.1 デバイスのみ): VPN 接続を確立するドメインを構成します。 指定するドメインごとに、DNS サフィックス、DNS サーバーのアドレス、次のいずれかのオンデマンド操作を追加します。  
+    -   **DNS Suffix list** (Elenco suffissi DNS) (solo per i dispositivi Windows Phone 8.1): consente di configurare i domini che stabiliranno una connessione VPN. Per ogni dominio specificato, aggiungere il suffisso DNS, l'indirizzo del server DNS e una delle azioni su richiesta seguenti:  
 
-        -   **[確立しない]**: VPN 接続を開くことはありません。  
+        -   **Non stabilire mai**: non viene mai aperta una connessione VPN.  
 
-        -   **[必要に応じて確立する]**: デバイスがリソースに接続する必要がある場合にのみ VPN 接続を開きます。  
+        -   **Stabilisci se necessario**: viene aperta una connessione VPN solo se il dispositivo deve connettersi alle risorse.  
 
-        -   **[常に確立する]**: 常時 VPN 接続を開きます。  
+        -   **Stabilisci sempre**: viene sempre aperta la connessione VPN.  
 
-    -   **[結合]**: **[信頼されたネットワーク一覧]** に構成したすべての DNS サフィックスをコピーします。  
+    -   **Unisci**: eventuali suffissi DNS configurati vengono copiati nell'**Elenco reti attendibili**.  
 
-    -   **[信頼されたネットワーク一覧]** (Windows Phone 8.1 デバイスのみ): 各行に 1 つの DNS サフィックスを指定します。 デバイスが信頼されたネットワークにある場合、VPN 接続は開かれません。  
+    -   **Elenco reti attendibili** (solo per i dispositivi Windows Phone 8.1): viene specificato un suffisso DNS per ogni riga. Se il dispositivo è in una rete attendibile, la connessione VPN non verrà aperta.  
 
-    -   **[サフィックス検索一覧]** (Windows Phone 8.1 デバイスのみ): 各行に 1 つの DNS サフィックスを指定します。 短い名前を使用して Web サイトに接続するときに、各 DNS サフィックスが検索されます。  
+    -   **Elenco ricerca suffissi** (solo per i dispositivi Windows Phone 8.1): viene specificato un suffisso DNS per ogni riga. Per cercare ogni suffisso DNS durante la connessione a un sito Web verrà usato un nome breve.  
 
-     たとえば、**domain1.contoso.com** と **domain2.contoso.com** の DNS サフィックスを指定し、次に URL **http://mywebsite** にアクセスしたとします。 次のアドレスが検索されます。  
+     Ad esempio, è possibile specificare i suffissi DNS **domain1.contoso.com** e **domain2.contoso.com** e quindi passare all'URL **http://mywebsite**. Verranno quindi cercati i seguenti indirizzi:  
 
     -   **http://mywebsite.domain1.contoso.com**  
 
     -   **http://mywebsite.domain2.contoso.com**  
 
     > [!NOTE]  
-    >  Windows Phone 8.1 デバイスのみ  
+    >  Solo per i dispositivi Windows Phone 8.1  
     >   
-    >  *[すべてのネットワーク トラフィックを VPN 接続経由で送信する]* オプションの選択されており、*かつ*、VPN 接続が完全トンネリングを使用している場合は、最初のデバイス プロファイルを使用して VPN 接続が自動的に開きます。 別のプロファイルで接続を開くには、既定値として必要なプロファイルを設定します。  
+    >  Quando l'opzione *Invia tutto il traffico di rete tramite la connessione VPN* è selezionata *e* la connessione VPN usa il tunneling completo, tale connessione viene aperta automaticamente mediante il primo profilo di dispositivo. Per aprire una connessione con un profilo diverso, impostare il profilo desiderato come predefinito.  
     >   
-    >  *[すべてのネットワーク トラフィックを VPN 接続経由で送信する]* オプションが選択されて*おらず*、*かつ*、VPN 接続が分割トンネリングを使用している場合、VPN 接続は構成されたルートまたは接続固有の DNS サフィックスに対して自動的に開きます。  
+    >  Se l'opzione *Invia tutto il traffico di rete tramite la connessione VPN* *non* è selezionata *e* la connessione VPN usa lo split tunneling, le connessioni VPN vengono aperte automaticamente per le route configurate o i suffissi DNS specifici delle connessione.  
 
 
-4. **[VPN プロファイルの作成ウィザード]** の **[サポートされているプラットフォーム]** ページで、VPN プロファイルをインストールするオペレーティング システムを選択します。使用できるすべてのオペレーティング システムに VPN プロファイルをインストールするには、**[すべて選択]** を選択します。  
+4. Nella pagina **Piattaforme supportate** della **Creazione guidata profilo VPN** selezionare i sistemi operativi in cui il profilo VPN verrà installato o scegliere **Seleziona tutto** per installare il profilo VPN in tutti i sistemi operativi disponibili.  
 
-5. ウィザードを終了します。 新しい VPN プロファイルは、**[資産とコンプライアンス]** ワークスペースの **[VPN プロファイル]** ノードに表示されます。  
+5. Completa la procedura guidata. Il nuovo profilo VPN viene visualizzato nel nodo **Profilo VPN** dell'area di lavoro **Asset e conformità**.  
 
 
-**展開**: VPN プロファイルの展開については、[Wi-Fi、VPN、電子メール、証明書プロファイルの展開](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md)に関する記事をご覧ください。
+**Distribuisci**: per altre informazioni sulla distribuzione dei profili VPN, vedere [Distribuire profili Wi-Fi, VPN, di posta elettronica e di certificato](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md).
 
-### <a name="next-steps"></a>次のステップ  
- Configuration Manager で VPN プロファイルの計画、構成、操作、メンテナンスを行うときに、次のトピックを参考にしてください。  
+### <a name="next-steps"></a>Passaggi successivi  
+ Usare gli argomenti seguenti per pianificare, configurare, far funzionare e gestire i profili VPN in Configuration Manager.  
 
--   [System Center Configuration Manager の VPN プロファイルの前提条件](../../protect/plan-design/prerequisites-for-wifi-vpn-profiles.md)  
+-   [Prerequisiti per i profili VPN in System Center Configuration Manager](../../protect/plan-design/prerequisites-for-wifi-vpn-profiles.md)  
 
--   [System Center Configuration Manager の VPN プロファイルのセキュリティとプライバシー](../../protect/plan-design/security-and-privacy-for-wifi-vpn-profiles.md)
+-   [Sicurezza e privacy per i profili VPN in System Center Configuration Manager](../../protect/plan-design/security-and-privacy-for-wifi-vpn-profiles.md)

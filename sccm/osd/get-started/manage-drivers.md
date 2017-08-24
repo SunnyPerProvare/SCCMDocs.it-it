@@ -1,6 +1,6 @@
 ---
-title: "ドライバーの管理 - Configuration Manager | Microsoft Docs"
-description: "Configuration Manager のドライバー カタログを使用して、デバイス ドライバーをインポートし、ドライバーをパッケージにグループ化し、これらのパッケージを配布ポイントに配布します。"
+title: Gestire i driver - Configuration Manager | Microsoft Docs
+description: Usare il catalogo dei driver di Configuration Manager per importare i driver dei dispositivi, raggruppare i driver in pacchetti e distribuire i pacchetti ai punti di distribuzione.
 ms.custom: na
 ms.date: 01/27/2017
 ms.prod: configuration-manager
@@ -18,259 +18,259 @@ manager: angrobe
 ms.openlocfilehash: 87ab9925717a307cbda3cea1f2e470ae012fa067
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-drivers-in-system-center-configuration-manager"></a>System Center Configuration Manager でのドライバーの管理
+# <a name="manage-drivers-in-system-center-configuration-manager"></a>Gestire i driver in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager には、Configuration Manager 環境で Windows デバイス ドライバーを管理するために使用できるドライバー カタログが用意されています。 このドライバー カタログを使用して、デバイス ドライバーを Configuration Manager にインポートしたり、デバイス ドライバーをパッケージにグループ化したり、オペレーティング システムを展開するときにアクセスできる配布ポイントにこれらのパッケージを配布したりすることができます。 デバイス ドライバーは、対象コンピューターにフル オペレーティング システムをインストールする場合と、ブート イメージを使って Windows PE をインストールする場合に使用できます。 Windows デバイス ドライバーには、セットアップ情報 (INF) ファイル、およびデバイスをサポートするのに必要なその他のファイルが含まれます。 オペレーティング システムが展開されると、Configuration Manager は .INF ファイルからそのデバイス用に、ハードウェアやプラットフォーム情報を取得します。 Configuration Manager 環境でドライバーを管理するには、次のものを使用します。
+System Center Configuration Manager include un catalogo di driver che è possibile usare per gestire i driver di dispositivo Windows presenti nell'ambiente di Configuration Manager. È possibile usare il catalogo dei driver per importare i driver di dispositivo in Configuration Manager e raggrupparli in pacchetti da distribuire a punti di distribuzione che consentono di accedere ai pacchetti durante la distribuzione di un sistema operativo. È possibile utilizzare i driver di dispositivo durante l'installazione completa del sistema operativo nel computer di destinazione e durante l'installazione di Windows PE tramite un'immagine di avvio. I driver di dispositivo Windows sono costituiti da un file di informazioni per l'installazione (INF) ed eventuali file aggiuntivi necessari per il supporto del dispositivo. Quando si distribuisce un sistema operativo, Configuration Manager recupera le informazioni su piattaforma e hardware per il dispositivo dal file INF. Usare gli argomenti seguenti per gestire i driver nell'ambiente di Configuration Manager.
 
-##  <a name="BKMK_DriverCategories"></a> デバイス ドライバーのカテゴリ  
- デバイス ドライバーをインポートする場合、デバイス ドライバーをカテゴリに割り当てることができます。 デバイス ドライバーのカテゴリはドライバー カタログで同じように使用されるデバイス ドライバーをグループ化するのに役立ちます。 たとえば、すべてのネットワーク アダプター デバイス ドライバーを特定のカテゴリに割り当てることができます。 そのあと、「 [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers) 」ステップなどのタスク シーケンスを作成する場合に、特定のカテゴリのデバイス ドライバーを指定できます。 Configuration Manager によってハードウェアがスキャンされ、そのカテゴリから、使用する Windows セットアップのシステムの段階に適用できるドライバーが選択されます。  
+##  <a name="BKMK_DriverCategories"></a> Categorie di driver di dispositivo  
+ Quando si importano i driver di dispositivo, è possibile assegnarli a una categoria. Le categorie di driver di dispositivo consentono di raggruppare nel catalogo i driver utilizzati in modo analogo. Ad esempio, è possibile assegnare tutti i driver di dispositivo della scheda di rete a una categoria specifica. Quindi, quando si crea una sequenza di attività che include il passaggio [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers) , è possibile specificare una categoria specifica di driver di dispositivo. Configuration Manager analizza l'hardware e seleziona i driver applicabili dalla categoria per eseguire un'installazione di appoggio sul sistema per l'uso da parte dell'installazione di Windows.  
 
-##  <a name="BKMK_ManagingDriverPackages"></a> ドライバー パッケージ  
- 類似したデバイス ドライバーをパッケージにグループ化すると、オペレーティング システムの展開の合理化に役立ちます。 たとえば、ネットワーク上のコンピューターの製造元ごとにドライバー パッケージを作成できます。 ドライバー パッケージは、ドライバーをドライバー カタログにインポートするときに **[ドライバー パッケージ]** ノードに直接作成できます。 ドライバー パッケージを作成した後、配布ポイントに配布して、要求に応じて Configuration Manager クライアント コンピューターがそこからドライバーをインストールできるようにする必要があります。 次の点を考慮します。  
+##  <a name="BKMK_ManagingDriverPackages"></a> Pacchetti driver  
+ È possibile raggruppare driver di dispositivo simili in pacchetti per semplificare le distribuzioni del sistema operativo. Si potrebbe, ad esempio, decidere di creare un pacchetto driver per ogni produttore di computer nella rete. È possibile creare un pacchetto driver durante l'importazione dei driver nel catalogo direttamente nel nodo **Pacchetti driver** . Al termine della creazione del pacchetto driver, è necessario distribuirlo ai punti di distribuzione da cui i computer client di Configuration Manager possono installare i driver necessari. Considerare quanto segue:  
 
--   ドライバー パッケージを作成する場合は、パッケージのソースの場所として他のドライバー パッケージが使用していない空のネットワーク共有を指していることが必要です。また、SMS プロバイダーは、その場所の [読み取り] および [書き込み] アクセス許可が必要です。  
+-   Quando si crea un pacchetto driver, il percorso di origine del pacchetto deve puntare a una condivisione di rete vuota che non sia utilizzata da un altro pacchetto driver e il provider SMS deve disporre di autorizzazioni di lettura e scrittura per tale percorso.  
 
--   デバイス ドライバーをドライバー パッケージに追加すると、Configuration Manager によってデバイス ドライバーがドライバー パッケージのソースの場所にコピーされます。 ドライバー パッケージには、ドライバー カタログにインポートされ、有効化されたデバイス ドライバーだけを追加できます。  
+-   Quando si aggiungono driver di dispositivo a un pacchetto driver, Configuration Manager copia il driver di dispositivo nel percorso di origine del pacchetto. È possibile aggiungere solo i driver di dispositivo importati e abilitati nel catalogo per un pacchetto driver.  
 
--   既存のドライバー パッケージからデバイス ドライバーのサブセットをコピーするには、まず新しいドライバー パッケージを作成し、この新しいパッケージにデバイス ドライバーのサブセットを追加した後で、このパッケージを配布ポイントに配布します。  
+-   Per copiare un sottoinsieme di driver di dispositivo da un pacchetto driver esistente, creare un nuovo pacchetto, aggiungere il sottoinsieme di driver di dispositivo, quindi distribuire il nuovo pacchetto in un punto di distribuzione.  
 
- ドライバー パッケージを作成および管理する場合は、次のセクションを参考にします。  
+ Usare le sezioni seguenti per creare e gestire i pacchetti driver.  
 
-###  <a name="CreatingDriverPackages"></a> ドライバー パッケージの作成  
- 新しいドライバー パッケージを作成するには、次の手順に従います。  
+###  <a name="CreatingDriverPackages"></a> Creare un pacchetto driver  
+ Utilizzare la seguente procedura per creare un nuovo pacchetto driver.  
 
 > [!IMPORTANT]  
->  ドライバー パッケージを作成するには、他のドライバー パッケージで使用されていない空のネットワーク フォルダーが必要です。 ほとんどの場合、この手順を開始する前に、新しいフォルダーを作成することが必要になります。  
+>  Per creare un pacchetto driver, è necessario disporre di una cartella di rete vuota non utilizzata da un altro pacchetto driver. Nella maggior parte dei casi, è necessario creare una nuova cartella prima di avviare questa procedura.  
 
 > [!NOTE]  
->  タスク シーケンスを使用してドライバーをインストールする場合は、作成するドライバー パッケージに含めるデバイス ドライバーの数を 500 個未満にします。  
+>  Quando si usano sequenze di attività per installare i driver, creare pacchetti driver contenenti meno di 500 driver di dispositivo.  
 
- ドライバー パッケージを作成するには、次の手順に従います。  
+ Utilizzare la seguente procedura per creare un pacchetto driver.  
 
-#### <a name="to-create-a-driver-package"></a>ドライバー パッケージを作成するには  
+#### <a name="to-create-a-driver-package"></a>Per creare un pacchetto driver  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ソフトウェア ライブラリ **** ] ワークスペースで [オペレーティング システム ****] を展開して、[ドライバー パッケージ ****] をクリックします。  
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Pacchetti driver**.  
 
-3.  [ホーム **** ] タブの [作成 **** ] グループで、[ドライバー パッケージの作成 ****] をクリックします。  
+3.  Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea pacchetto driver**.  
 
-4.  [名前 **** ] ボックスに、わかりやすいドライバー パッケージ名を指定します。  
+4.  Nella casella **Nome** specificare un nome descrittivo per il pacchetto driver.  
 
-5.  コメント **** ］ボックスに、ドライバー パッケージの説明を入力します (省略可能)。 この説明は、ドライバー パッケージのコンテンツや目的に関する情報を提供するものとなるようにしてください。  
+5.  Nella casella **Commento** immettere una descrizione facoltativa per il pacchetto driver. Assicurarsi che la descrizione fornisca informazioni sul contenuto o sullo scopo del pacchetto driver.  
 
-6.  [パス **** ] ボックスに、ドライバー パッケージ用の空のソースを指定します。 ソース フォルダーへのパスを UNC (汎用名前付け規則) 形式で入力します。 それぞれのドライバー パッケージに固有のフォルダーを使用する必要があります。  
+6.  Nella casella **Percorso** specificare una cartella di origine vuota per il pacchetto driver. Immettere il percorso della cartella di origine in formato UNC (Universal Naming Convention). Ogni pacchetto driver deve utilizzare una cartella univoca.  
 
     > [!IMPORTANT]  
-    >  サイト サーバー アカウントには、指定するソース フォルダーに対する **読み取り** および **書き込み** アクセス許可が必要です。  
+    >  L'account del server del sito deve avere le autorizzazioni di **lettura** e **scrittura** per la cartella di origine specificata.  
 
- 新しいドライバー パッケージにはドライバーが含まれていません。 次の手順として、ドライバーをパッケージに追加します。  
+ Il nuovo pacchetto driver non contiene nessun driver. Il passaggio successivo consiste nell'aggiunta dei driver al pacchetto.  
 
- [ドライバー パッケージ **** ] ノードに複数のパッケージが含まれている場合は、ノードにフォルダーを追加してパッケージを論理グループに分けることができます。  
+ Se il nodo **Pacchetti driver** contiene diversi pacchetti, è possibile aggiungere cartelle al nodo per separare i pacchetti in gruppi logici.  
 
-###  <a name="BKMK_PackageActions"></a> ドライバー パッケージに対するその他のアクション  
- 1 つまたは複数のドライバー パッケージを [ドライバー パッケージ **** ] ノードで選択するときに、ドライバー パッケージ管理のためのその他の操作を実行することができます。 必要となる操作には、次のようなものがあります。  
+###  <a name="BKMK_PackageActions"></a> Azioni aggiuntive per i pacchetti driver  
+ Durante la selezione di uno o più pacchetti driver dal nodo **Pacchetti driver** è possibile eseguire azioni aggiuntive per gestire i pacchetti driver. Le azioni includono le seguenti:  
 
-|操作|[説明]|  
+|Azione|Descrizione|  
 |------------|-----------------|  
-|**事前設定コンテンツ ファイルの作成**|コンテンツおよびそれに関連付けられているメタデータを手動でインポートするために使用できるファイルを作成します。 事前設定コンテンツは、ドライバー パッケージが格納されている配布ポイントとサイト サーバーの間のネットワーク帯域幅が限られている場合に使用してください。|  
-|**削除**|ドライバー パッケージを [ドライバー パッケージ **** ] ノードから削除します。|  
-|**[ドライバー パッケージ]**|ドライバー パッケージを配布ポイント、配布ポイント グループ、およびコレクションに関連付けられている配布ポイントグループに配布します。|  
-|**アクセス アカウントの管理**|ドライバー パッケージのアクセス アカウントを追加、変更、または削除します。<br /><br /> パッケージ アクセス アカウントの詳細については、「[Configuration Manager で使用されるアカウント](../../core/plan-design/hierarchy/accounts.md)」を参照してください。|  
-|**移動**|ドライバー パッケージを [ドライバー パッケージ **** ] ノード内の他のフォルダーに移動します。|  
-|**配布ポイントの更新**|デバイス ドライバー パッケージが格納されているすべての配布ポイントでパッケージを更新します。 この操作では、前回の配布以降に変更されたコンテンツのみがコピーされます。|  
-|**プロパティ**|[プロパティ **** ] ダイアログ ボックスを開いて、デバイス ドライバーのコンテンツとプロパティを確認および変更することができます。 たとえば、デバイス ドライバーの名前と説明を変更する、デバイス ドライバーを有効にする、デバイス ドライバーを実行できるプラットフォームを指定するといったことができます。|  
+|**Crea file di contenuto di pre-installazione**|Crea file che possono essere utilizzati per importare manualmente il contenuto e i metadati associati. Utilizzare il contenuto pre-installazione quando si dispone di larghezza di banda di rete bassa tra il server del sito e i punti di distribuzione in cui è archiviato il pacchetto driver.|  
+|**Eliminazione**|Rimuove il pacchetto driver dal nodo **Pacchetti driver** .|  
+|**Distribuisci contenuto**|Distribuisce il pacchetto driver nei punti di distribuzione, nei gruppi di punti di distribuzione e nei gruppi di punti di distribuzione associati alle raccolte.|  
+|**Gestione account di accesso**|Aggiunge, modifica o rimuove gli account di accesso per il pacchetto driver.<br /><br /> Per altre informazioni sugli account di accesso al pacchetto, vedere [Account usati in Configuration Manager](../../core/plan-design/hierarchy/accounts.md).|  
+|**Sposta**|Sposta il pacchetto driver in un'altra cartella del nodo **Pacchetti driver** .|  
+|**Aggiorna punti di distribuzione**|Aggiorna il pacchetto driver del dispositivo in tutti i punti di distribuzione in cui è archiviato il pacchetto. Questa azione copia solo il contenuto modificato dopo l'ultima distribuzione.|  
+|**Proprietà**|Apre la finestra di dialogo **Proprietà** che consente di esaminare e modificare il contenuto e le proprietà del driver di dispositivo. È ad esempio possibile modificare il nome e la descrizione del driver di dispositivo, abilitare il driver di dispositivo e specificare in quale piattaforma possa essere eseguito il driver di dispositivo.|  
 
-##  <a name="BKMK_DeviceDrivers"></a> デバイス ドライバー  
- 展開するオペレーティング システム イメージにデバイス ドライバーを含まなくても、対象となるコンピューターにインストールできます。 Configuration Manager は、Configuration Manager にインポートするすべてのデバイス ドライバーへの参照を含むドライバー カタログを提供します。 ドライバー カタログは [ **ソフトウェア ライブラリ** ] ワークスペースに保存されており、2 つのノードで構成されます。 **ドライバー** と **ドライバー パッケージ**。 [ **ドライバー** ] ノードにはドライバー カタログにインポートしたすべてのドライバーが一覧になっています。 このノードを使用して、インポートした各ドライバーの詳細な情報を検出したり、ドライバー パッケージやブート イメージ内のドライバーを変更したり、ドライバーを有効または無効にしたりすることができます。  
+##  <a name="BKMK_DeviceDrivers"></a> Driver di dispositivo  
+ È possibile installare i driver del dispositivo nei computer di destinazione senza includerli nell'immagine del sistema operativo in fase di distribuzione. Configuration Manager offre un catalogo dei driver che contiene i riferimenti a tutti i driver di dispositivo importati in Configuration Manager. Il catalogo dei driver si trova nell'area di lavoro **Raccolta software** ed è costituito da due nodi: **Driver** e **Pacchetti driver**. Nel nodo **Driver** vengono elencati tutti i driver sono stati importati nel catalogo dei driver. Usare il nodo per trovare i dettagli di tutti i driver importati, modificare i driver in un pacchetto driver o in un'immagine di avvio, abilitare o disabilitare un driver e altro ancora.  
 
-###  <a name="BKMK_ImportDrivers"></a> ドライバー カタログへのデバイス ドライバーのインポート  
- オペレーティング システムを展開する場合、デバイス ドライバーを使用する前に、これをドライバー カタログにインポートする必要があります。 デバイス ドライバーをよりよく管理するために、オペレーティング システムの展開の一環としてインストールする予定のデバイス ドライバーだけをインポートします。 しかし一方で、複数のバージョンのデバイス ドライバーをドライバー カタログに保存しておくと、ネットワーク上でハードウェア デバイス要件が変更されたときに既存のデバイス ドライバーを簡単にアップグレードできます。  
+###  <a name="BKMK_ImportDrivers"></a> Importare i driver di dispositivo nel catalogo dei driver  
+ È necessario importare i driver di dispositivo nel catalogo dei driver prima di utilizzarli durante la distribuzione di un sistema operativo. Per gestire meglio i driver di dispositivo, importare solo i driver da installare all'interno della distribuzione del sistema operativo. Tuttavia, è anche possibile archiviare più versioni di driver di dispositivo nel catalogo dei driver per aggiornare in modo semplice i driver dispositivo esistenti quando cambiano i requisiti dei dispositivi hardware nella rete.  
 
- Configuration Manager は、デバイス ドライバーのインポート プロセスの過程で、デバイスに関連付けられているプロバイダー、クラス、バージョン、署名、サポートされているハードウェア、およびサポートされているプラットフォームといった情報を読み込みます。 既定では、デバイス ドライバーには、サポートしている最初のハードウェア デバイスにちなんだ名前が付けられますが、後で名前を変更することができます。 サポートされているプラットフォームの一覧は、ドライバーの INF ファイルの情報に基づいて作成されます。 この情報の精度は状況によって異なることがあるので、デバイス ドライバーをドライバー カタログにインポートした後にそのドライバーがサポートされていることを手動で確認してください。  
+ Durante il processo di importazione del driver di dispositivo, Configuration Manager esegue la lettura delle informazioni relative a provider, classe, versione, firma, hardware supportato e piattaforma supportata associate al dispositivo. Per impostazione predefinita, il driver viene denominato come il primo dispositivo hardware supportato. Tuttavia, è possibile rinominare il driver di dispositivo in un secondo momento. L'elenco di piattaforme supportate si basa sulle informazioni contenute nel file INF del driver. Dal momento che l'accuratezza di queste informazioni può variare, è necessario verificare manualmente che il driver di dispositivo sia supportato dopo l'importazione nel catalogo dei driver.  
 
- デバイス ドライバーをカタログにインポートした後、そのデバイス ドライバーをドライバー パッケージまたはブート イメージ パッケージに追加できます。  
+ Dopo aver importato i driver di dispositivo nel catalogo, è inoltre possibile aggiungere i driver di dispositivo ai pacchetti driver o ai pacchetti di immagini di avvio.  
 
 > [!IMPORTANT]  
->  デバイス ドライバーを [ドライバー **** ] ノードのサブフォルダーに直接インポートすることはできません。 サブフォルダーにデバイス ドライバーをインポートするには、最初にデバイス ドライバーを [ドライバー **** ] ノードにインポートしてからサブフォルダーに移動します。  
+>  Non è possibile importare i driver di dispositivo direttamente in una sottocartella del nodo **Driver** . Per importare un driver di dispositivo in una sottocartella, è innanzitutto necessario importare il driver di dispositivo nel nodo **Driver** , quindi spostare il driver nella sottocartella.  
 
- Windows デバイス ドライバーをインポートするには、次の手順に従います。  
+ Utilizzare la seguente procedura per importare i driver di dispositivo Windows.  
 
-#### <a name="to-import-windows-device-drivers-into-the-driver-catalog"></a>Windows デバイス ドライバーをドライバー カタログにインポートするには  
+#### <a name="to-import-windows-device-drivers-into-the-driver-catalog"></a>Per importare i driver di dispositivo Windows nel catalogo dei driver  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ソフトウェア ライブラリ **** ] ワークスペースで [オペレーティング システム ****] を展開して、[ドライバー ****] をクリックします。  
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Driver**.  
 
-3.  [ホーム **** ] タブの [作成 **** ] グループで、[ドライバーのインポート **** ] をクリックして、新しいドライバーのインポート ウィザード ****を開始します。  
+3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Importa driver** per avviare **Importazione guidata nuovo driver**.  
 
-4.  [ドライバーの特定 **** ] ページで、次のオプションを指定して、[次へ ****] をクリックします。  
+4.  Nella pagina **Trova driver** specificare le opzioni seguenti e quindi fare clic su **Avanti**:  
 
-    -   次のネットワーク パス (UNC) 上にあるすべてのドライバーをインポートする****:特定のフォルダーに含まれているすべてのデバイス ドライバーをインポートするには、そのデバイス ドライバー フォルダーへのネットワーク パスを指定します。 たとえば、  **\\\servername\folder**などです。  
+    -   **Importa tutti i driver presenti nel percorso di rete seguente (UNC)**: Per importare tutti i driver di dispositivo contenuti in una cartella specifica, specificare il percorso di rete per la cartella del driver di dispositivo. Ad esempio:  **\\\nomeserver\cartella**.  
 
         > [!NOTE]  
-        >  フォルダーとドライバー ファイル (.inf) の数が多い場合、すべてのドライバーをインポートするプロセスには時間がかかることがあります。  
+        >  Il processo di importazione di tutti i driver può richiedere alcuni minuti se sono presenti numerose cartelle e numerosi file di driver (.inf).  
 
-    -   **[特定のドライバーをインポートする]**: 特定のドライバーをフォルダーからインポートするには、Windows デバイス ドライバー (.INF) またはドライバーの大容量記憶装置 Txtsetup.oem ファイルへのネットワーク パス (UNC) を指定します。  
+    -   **Importa un driver specifico**: per importare un driver specifico da una cartella, specificare il percorso di rete (UNC) del file INF del driver di dispositivo Windows o del file Txtsetup.oem di archiviazione di massa del driver.  
 
-    -   **重複するドライバーのオプションを指定する**: 重複するデバイス ドライバーがインポートされたときに Configuration Manager でドライバー カテゴリを管理する方法を選択します。  
+    -   **Specifica l'opzione per i driver duplicati**: selezionare la modalità di gestione delle categorie driver da parte di Configuration Manager quando viene importato un driver di dispositivo duplicato.  
 
     > [!IMPORTANT]  
-    >  ドライバーをインポートする場合、サイト サーバーにはフォルダーに対する「 **読み取り** 」アクセス許可が必要です。このアクセス許可がないと、インポートが失敗します。  
+    >  Quando si importano i driver, se il server del sito non dispone dell'autorizzazione **Lettura** per la cartella, l'importazione non riesce.  
 
-5.  [ドライバーの詳細 **** ] ページで、次のオプションを指定して、[次へ ****] をクリックします。  
+5.  Nella pagina **Dettagli driver** specificare le opzioni seguenti e quindi fare clic su **Avanti**:  
 
-    -   **[記憶域クラスおよびネットワーク クラス以外のドライバーを非表示にする (ブート イメージの場合)]**: この設定は、ストレージ ドライバーとネットワーク ドライバーのみを表示して、ビデオ ドライバーやモデム ドライバーなど、通常ブート イメージに必要でない他のドライバーを非表示にする場合に使用します。  
+    -   **Nascondi driver non inclusi in una classe di archiviazione o di rete (per immagini d'avvio)**: usare questa impostazione per visualizzare solo i driver di archiviazione e di rete e per nascondere gli altri driver in genere non necessari per le immagini di avvio, ad esempio, i driver video o quelli del modem.  
 
-    -   **[デジタル署名されていないドライバーを非表示にする]**: この設定は、デジタル署名されていないドライバーを非表示にする場合に使用します。  
+    -   **Nascondi driver senza firma digitale**: usare questa impostazione per nascondere i driver privi di firma digitale.  
 
-    -   ドライバーの一覧で、ドライバー カタログにインポートするドライバーを選択します。  
+    -   Nell'elenco dei driver, selezionare i driver che si desidera importare nel catalogo dei driver.  
 
-    -   **[これらのドライバーを有効にして、コンピューターにインストールを許可する]**: この設定を選択すると、デバイス ドライバーがコンピューターにインストールされるようになります。 既定では、このチェック ボックスはオンです。  
+    -   **Abilita questi driver e consenti ai computer di installarli**: selezionare questa impostazione per consentire ai computer di installare i driver di dispositivo. Per impostazione predefinita, questa casella di controllo è selezionata.  
 
         > [!IMPORTANT]  
-        >  デバイス ドライバーが原因で問題が発生している場合、またはデバイス ドライバーのインストールを中断する場合は、[これらのドライバーを有効にし、コンピューターにインストールを許可する **** ] チェック ボックスをオフにすることによって、デバイス ドライバーを無効にすることができます。 インポートした後にデバイス ドライバーを無効にすることもできます。  
+        >  In caso di problemi causati da un dispositivo o se si desidera sospendere l'installazione di un driver di dispositivo, è possibile disabilitare il driver di dispositivo deselezionando la casella di controllo **Abilita questi driver e consenti ai computer di installarli** . È inoltre possibile disattivare i driver in seguito all'importazione.  
 
-    -   フィルタリングのためデバイス ドライバーを管理カテゴリー (「デスクトップ」や「ノートブック」など) に割り当てるには、[カテゴリー **** ] をクリックし、既存のカテゴリーを選択するか、または新しいカテゴリーを作成します。 また、カテゴリー割り当てを使用して、「 [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers) 」タスク シーケンスの手順でデバイス ドライバーをどの展開に適用するかを構成することもできます。  
+    -   Per assegnare i driver di dispositivo a una categoria amministrativa per l'applicazione di filtri, ad esempio le categorie "Desktop" o "Notebook", fare clic su **Categorie** e selezionare una categoria esistente oppure crearne una nuova. È inoltre possibile utilizzare l'assegnazione categoria per la configurazione dei driver di dispositivo applicati alla distribuzione mediante il passaggio della sequenza attività [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers) .  
 
-6.  **[パッケージへのドライバーの追加]** ページで、パッケージにドライバーを追加するかどうかを選択し、 **[次へ]**をクリックします。 ドライバーをパッケージに追加する場合は、次の点を考慮してください。  
+6.  Nella pagina **Aggiungi driver ai pacchetti** scegliere se aggiungere i driver a un pacchetto e quindi fare clic su **Avanti**. Per aggiungere i driver a un pacchetto tenere presente quanto segue:  
 
-    -   デバイス ドライバーの配布に使用するドライバー パッケージを選択します。  
+    -   Selezionare i pacchetti driver utilizzati per distribuire i driver di dispositivo.  
 
-         必要に応じて、[新しいパッケージ **** ] をクリックして新しいドライバー パッケージを作成します。 新しいドライバー パッケージを作成する場合は、他のドライバー パッケージで使用されていないネットワーク共有フォルダーを指定する必要があります。  
+         In alternativa, fare clic su **Nuovo pacchetto** per creare un nuovo pacchetto driver. Quando viene creato un nuovo pacchetto driver, è necessario specificare una condivisione di rete non utilizzata da altri pacchetti driver.  
 
-    -   パッケージが配布ポイントに既に配布されている場合は、ダイアログ ボックスの **[はい]** をクリックして、配布ポイントのブート イメージを更新します。 デバイス ドライバーは配布ポイントに配布されるまで使用できません。 **[いいえ]**をクリックする場合、ブート イメージが更新されたドライバーを格納する前に、 **[配布ポイントの更新]** を実行する必要があります。 ドライバー パッケージが一度も配布されたことがない場合は、 **[ドライバー パッケージ]** ノードから **[コンテンツの配布]** をクリックする必要があります。  
+    -   Se il pacchetto è stato già distribuito nei punti di distribuzione, fare clic su **Sì** nella finestra di dialogo per aggiornare le immagini di avvio nei punti di distribuzione. Fino a quando i driver di dispositivo non vengono distribuiti ai punti di distribuzione non è possibile utilizzarli. Se si fa clic su **No**, è necessario eseguire l'azione **Aggiorna punto di distribuzione** prima che l'immagine di avvio contenga i driver aggiornati. Se il pacchetto driver non è mai stato distribuito, è necessario fare clic su **Distribuisci contenuto** nel nodo **Pacchetti driver** .  
 
-7.  **[ブート イメージへのドライバーの追加]** ページで、既存のブート イメージにデバイス ドライバーを追加するかどうかを選択し、 **[次へ]**をクリックします。 ブート イメージを選択する場合は、次の点を考慮してください。  
+7.  Nella pagina **Aggiungi driver alle immagini d'avvio** scegliere se aggiungere i driver di dispositivo alle immagini di avvio esistenti, quindi fare clic su **Avanti**. Se si seleziona un'immagine di avvio, tenere presente quanto segue:  
 
     > [!NOTE]  
-    >  推奨される方法として、オペレーティング システムの展開シナリオでは、大容量記憶装置ドライバーとネットワーク デバイス ドライバーのみをブート イメージに追加してください。  
+    >  Come procedura consigliata, aggiungere solo driver di dispositivo di rete e di archiviazione di massa alle immagini di avvio per gli scenari di distribuzione del sistema operativo.  
 
-    -   ダイアログ ボックスの **[はい]** をクリックして、配布ポイントのブート イメージを更新します。 デバイス ドライバーは配布ポイントに配布されるまで使用できません。 **[いいえ]**をクリックする場合、ブート イメージが更新されたドライバーを格納する前に、 **[配布ポイントの更新]** を実行する必要があります。 ドライバー パッケージが一度も配布されたことがない場合は、 **[ドライバー パッケージ]** ノードから **[コンテンツの配布]** をクリックする必要があります。  
+    -   Fare clic su **Sì** nella finestra di dialogo per aggiornare le immagini di avvio nei punti di distribuzione. Fino a quando i driver di dispositivo non vengono distribuiti ai punti di distribuzione non è possibile utilizzarli. Se si fa clic su **No**, è necessario eseguire l'azione **Aggiorna punto di distribuzione** prima che l'immagine di avvio contenga i driver aggiornati. Se il pacchetto driver non è mai stato distribuito, è necessario fare clic su **Distribuisci contenuto** nel nodo **Pacchetti driver** .  
 
-    -   1 つまたは複数のドライバーのアーキテクチャが選択したブート イメージのアーキテクチャに一致しない場合、Configuration Manager が警告を生成します。 これらが一致しない場合は、 **[OK]** をクリックして、 **[ドライバの詳細]** ページに戻り、選択したブート イメージのアーキテクチャと一致しないドライバーをオフにします。 たとえば、x64 および x86 ブート イメージを選択する場合、すべてのドライバーが両方のアーキテクチャをサポートする必要があります。 x64 ブート イメージを選択する場合、すべてのドライバーが x64 アーキテクチャをサポートする必要があります。  
-
-        > [!NOTE]  
-        >  -   アーキテクチャは、製造元が提供する .INF で報告されるアーキテクチャに基づいています。  
-        > -   ドライバーが両方のアーキテクチャをサポートしていることを報告する場合、そのドライバーをいずれかのブート イメージにインポートできます。  
-
-    -   ネットワークでもストレージ ドライバーでもないデバイス ドライバーをブート イメージに追加すると、Configuration Manager が警告を生成します。ほとんどの場合、これはそのデバイス ドライバーがブート イメージに必要ではないためです。 **[はい]** をクリックしてドライバーをブート イメージに追加するか、または **[いいえ]** をクリックして戻り、ドライバーの選択を変更します。  
-
-    -   1 つまたは複数の選択したドライバーが適切にデジタル署名されていない場合、Configuration Manager が警告を生成します。 **[はい]** をクリックすると続行し、 **[いいえ]** をクリックすると戻ってドライバーの選択を変更します。  
-
-8.  ウィザードを完了します。  
-
-###  <a name="BKMK_ModifyDriverPackage"></a> ドライバー パッケージ内のデバイス ドライバーの管理  
- ドライバー パッケージおよびブート イメージに変更を加えるには、次の手順に従います。 デバイス ドライバーを追加または削除するには、ドライバーを [ドライバー **** ] ノードで見つけ、選択したドライバーが関連付けられているパッケージまたはブート イメージを編集します。  
-
-#### <a name="to-modify-the-device-drivers-in-a-driver-package"></a>ドライバー パッケージ内のデバイス ドライバーを変更するには  
-
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
-
-2.  [ソフトウェア ライブラリ **** ] ワークスペースで [オペレーティング システム ****] を展開して、[ドライバー ****] をクリックします。  
-
-3.  [ドライバー **** ] ノードで、ドライバー パッケージに追加するデバイス ドライバーを選択します。  
-
-4.  **[ホーム]** タブの **[ドライバー]** グループで、 **[編集]**、 **[ドライバー パッケージ]**を順にクリックします。  
-
-5.  デバイス ドライバーを追加するには、そのデバイス ドライバーを追加するドライバー パッケージのチェック ボックスを選択します。 デバイス ドライバーを削除するには、そのデバイス ドライバーを削除するドライバー パッケージのチェック ボックスをオフにします。  
-
-     ドライバー パッケージに関連付けられるデバイス ドライバーを追加する場合は、必要に応じて、新しいパッケージを作成することができます。[新しいパッケージ ****] をクリックすると [新しいドライバー パッケージ **** ] ダイアログ ボックスが開きます。  
-
-6.  パッケージが配布ポイントに既に配布されている場合は、ダイアログ ボックスの **[はい]** をクリックして、配布ポイントのブート イメージを更新します。 デバイス ドライバーは配布ポイントに配布されるまで使用できません。 **[いいえ]**をクリックする場合、ブート イメージが更新されたドライバーを格納する前に、 **[配布ポイントの更新]** を実行する必要があります。 ドライバー パッケージが一度も配布されたことがない場合は、 **[ドライバー パッケージ]** ノードから **[コンテンツの配布]** をクリックする必要があります。 ドライバーを使用可能にする前に、配布ポイント上のドライバー パッケージを更新する必要があります。  
-
-     [ **OK**] をクリックします。  
-
-###  <a name="BKMK_ManageDriversBootImage"></a> ブート イメージ内のデバイス ドライバーの管理  
- ドライバー カタログにインポートされている Windows デバイス ドライバーを、ブート イメージに追加できます。 デバイス ドライバーをブート イメージに追加するときは、次のガイドラインに従います。  
-
--   ブート イメージには、大容量記憶装置とネットワーク アダプターのデバイス ドライバーのみ追加します。一般にその他の種類のドライバーが必要になることはありません。 必要のないドライバーはブート イメージのサイズを不必要に増大させる結果となります。  
-
--   Windows 10 のデバイス ドライバーのみをブート イメージに追加します。必要なバージョンの Windows PE は、Windows 10 に基づいているためです。  
-
--   ブート イメージのアーキテクチャには、必ず正しいデバイス ドライバーを使用してください。  x86 デバイス ドライバーを x64 ブート イメージに追加しないでください。  
-
- ブート イメージ内のデバイス ドライバーを追加または削除するには、次の手順に従います。  
-
-#### <a name="to-modify-the--device-drivers-associated-with-a-boot-image"></a>ブート イメージに関連付けられているデバイス ドライバーを変更するには  
-
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
-
-2.  [ソフトウェア ライブラリ **** ] ワークスペースで [オペレーティング システム ****] を展開して、[ドライバー ****] をクリックします。  
-
-3.  [ドライバー **** ] ノードで、ドライバー パッケージに追加するデバイス ドライバーを選択します。  
-
-4.  **[ホーム]** タブの **[ドライバー]** グループで、 **[編集]**、 **[ブート イメージ]**を順にクリックします。  
-
-5.  デバイス ドライバーを追加するには、そのデバイス ドライバーを追加するブート イメージのチェック ボックスを選択します。 デバイス ドライバーを削除するには、そのデバイス ドライバーを削除するブート イメージのチェック ボックスをオフにします。  
-
-6.  ブート イメージが格納されている配布ポイントを更新しない場合は、[完了したら配布ポイントを更新する **** ] チェック ボックスをオフにします。 既定では、ブート イメージの更新時に配布ポイントが更新されます。  
-
-     **[OK]** をクリックし、次の点を考慮します。  
-
-    -   ダイアログ ボックスの **[はい]** をクリックして、配布ポイントのブート イメージを更新します。 デバイス ドライバーは配布ポイントに配布されるまで使用できません。 **[いいえ]**をクリックする場合、ブート イメージが更新されたドライバーを格納する前に、 **[配布ポイントの更新]** を実行する必要があります。 ドライバー パッケージが一度も配布されたことがない場合は、 **[ドライバー パッケージ]** ノードから **[コンテンツの配布]** をクリックする必要があります。  
-
-    -   1 つまたは複数のドライバーのアーキテクチャが選択したブート イメージのアーキテクチャに一致しない場合、Configuration Manager が警告を生成します。 これらが一致しない場合は、 **[OK]** をクリックして、 **[ドライバの詳細]** ページに戻り、選択したブート イメージのアーキテクチャと一致しないドライバーをオフにします。 たとえば、x64 および x86 ブート イメージを選択する場合、すべてのドライバーが両方のアーキテクチャをサポートする必要があります。 x64 ブート イメージを選択する場合、すべてのドライバーが x64 アーキテクチャをサポートする必要があります。  
+    -   Configuration Manager segnala se l'architettura per uno o più driver non corrisponde all'architettura delle immagini d'avvio selezionate. Se non corrispondono, fare clic su **OK** e tornare alla pagina **Dettagli driver** per cancellare i driver che non corrispondono all'architettura dell'immagine di avvio selezionata. Ad esempio, se si seleziona un'immagine di avvio x64 e x86, tutti i driver devono supportare entrambe le architetture. Se si seleziona un'immagine di avvio x64, tutti i driver devono supportare l'architettura x64.  
 
         > [!NOTE]  
-        >  -   アーキテクチャは、製造元が提供する .INF で報告されるアーキテクチャに基づいています。  
-        > -   ドライバーが両方のアーキテクチャをサポートしていることを報告する場合、そのドライバーをいずれかのブート イメージにインポートできます。  
+        >  -   L'architettura è basata su quella riportata nel file con estensione inf fornito dal produttore.  
+        > -   Se un driver segnala che supporta entrambe le architetture, è possibile importarlo in un'immagine di avvio.  
 
-    -   ネットワークでもストレージ ドライバーでもないデバイス ドライバーをブート イメージに追加すると、Configuration Manager が警告を生成します。ほとんどの場合、これはそのデバイス ドライバーがブート イメージに必要ではないためです。 **[はい]** をクリックしてドライバーをブート イメージに追加するか、または **[いいえ]** をクリックして戻り、ドライバーの選択を変更します。  
+    -   Configuration Manager avvisa l'utente se vengono aggiunti driver di dispositivo che non sono driver di rete o di archiviazione a un'immagine d'avvio perché nella maggior parte dei casi non sono necessari per l'immagine d'avvio. Fare clic su **Sì** per aggiungere i driver all'immagine di avvio oppure su **No** per tornare indietro e modificare la selezione dei driver.  
 
-    -   1 つまたは複数の選択したドライバーが適切にデジタル署名されていない場合、Configuration Manager が警告を生成します。 **[はい]** をクリックすると続行し、 **[いいえ]** をクリックすると戻ってドライバーの選択を変更します。  
+    -   Configuration Manager segnala se uno o più driver selezionati non includono una firma digitale corretta. Fare clic su **Sì** per continuare e fare clic su **No** per tornare indietro e apportare modifiche alla selezione dei driver.  
 
-7.  [ **OK**] をクリックします。  
+8.  Completare la procedura guidata.  
 
-###  <a name="BKMK_DriverActions"></a> デバイス ドライバーに対するその他のアクション  
- 1 つまたは複数のデバイス ドライバーを [ドライバー **** ] ノードで選択するときに、デバイス ドライバー管理のためのその他の操作を実行することができます。 必要となる操作には、次のようなものがあります。  
+###  <a name="BKMK_ModifyDriverPackage"></a> Gestire i driver di dispositivo in un pacchetto driver  
+ Utilizzare le seguenti procedure per modificare i pacchetti driver e le immagini di avvio. Per aggiungere o rimuovere i driver di dispositivo, individuare i driver nel nodo **Driver** , quindi modificare i pacchetti o le immagini di avvio a cui sono associati i driver selezionati.  
 
-|操作|[説明]|  
+#### <a name="to-modify-the-device-drivers-in-a-driver-package"></a>Per modificare i driver di dispositivo in un pacchetto driver  
+
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Driver**.  
+
+3.  Nel nodo **Driver** selezionare i driver di dispositivo che si desidera aggiungere al pacchetto driver.  
+
+4.  Nella scheda **Home** , nel gruppo **Driver** , fare clic su **Modifica**, quindi su **Pacchetti driver**.  
+
+5.  Per aggiungere un driver di dispositivo, selezionare la casella di controllo dei pacchetti driver a cui si desidera aggiungere i driver di dispositivo. Per rimuovere un driver di dispositivo, deselezionare la casella di controllo dei pacchetti driver da cui si desidera rimuovere il driver di dispositivo.  
+
+     Se vengono aggiunti driver di dispositivo associati a pacchetti driver, è possibile creare un nuovo pacchetto facendo clic su **Nuovo pacchetto**. In questo modo verrà visualizzata la finestra di dialogo **Nuovo pacchetto driver** .  
+
+6.  Se il pacchetto è stato già distribuito nei punti di distribuzione, fare clic su **Sì** nella finestra di dialogo per aggiornare le immagini di avvio nei punti di distribuzione. Fino a quando i driver di dispositivo non vengono distribuiti ai punti di distribuzione non è possibile utilizzarli. Se si fa clic su **No**, è necessario eseguire l'azione **Aggiorna punto di distribuzione** prima che l'immagine di avvio contenga i driver aggiornati. Se il pacchetto driver non è mai stato distribuito, è necessario fare clic su **Distribuisci contenuto** nel nodo **Pacchetti driver** . Prima che i driver siano disponibili, è necessario aggiornare il pacchetto driver nei punti di distribuzione.  
+
+     Fare clic su **OK**.  
+
+###  <a name="BKMK_ManageDriversBootImage"></a> Gestire i driver di dispositivo in un'immagine di avvio  
+ È possibile aggiungere i driver di dispositivo Windows importati nel catalogo dei driver alle immagini di avvio. Quando si aggiungono driver di dispositivo a un'immagine di avvio, utilizzare le seguenti linee guida:  
+
+-   Poiché in genere non sono necessari altri tipi di driver, aggiungere solo driver di dispositivi di archiviazione di massa e di schede di rete alle immagini di avvio. I driver non necessari aumentano inutilmente le dimensioni dell'immagine di avvio.  
+
+-   Considerato che la versione di Windows PE richiesta si basa su Windows 10, aggiungere solo driver di dispositivo per Windows 10 a un'immagine di avvio.  
+
+-   Assicurarsi di utilizzare il driver di dispositivo corretto per l'architettura dell'immagine di avvio.  Non aggiungere un driver di dispositivo x86 a un'immagine di avvio x64.  
+
+ Usare la procedura seguente per aggiungere o rimuovere driver di dispositivo in un'immagine di avvio.  
+
+#### <a name="to-modify-the--device-drivers-associated-with-a-boot-image"></a>Per modificare i driver di dispositivo associati a un'immagine di avvio  
+
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Driver**.  
+
+3.  Nel nodo **Driver** selezionare i driver di dispositivo che si desidera aggiungere al pacchetto driver.  
+
+4.  Nella scheda **Home** , nel gruppo **Driver** , fare clic su **Modifica**, quindi su **Immagini d'avvio**.  
+
+5.  Per aggiungere un driver di dispositivo, selezionare la casella di controllo dell'immagine di avvio a cui si desidera aggiungere i driver di dispositivo. Per rimuovere un driver di dispositivo, deselezionare la casella di controllo dell'immagine di avvio da cui si desidera rimuovere il driver di dispositivo.  
+
+6.  Se non si desidera aggiornare i punti di distribuzione in cui è archiviata l'immagine di avvio, deselezionare la casella di controllo **Al termine aggiorna punti di distribuzioni** . Per impostazione predefinita, i punti di distribuzione vengono aggiornati quando viene aggiornata l'immagine di avvio.  
+
+     Fare clic su **OK** e tenere presente quanto segue:  
+
+    -   Fare clic su **Sì** nella finestra di dialogo per aggiornare le immagini di avvio nei punti di distribuzione. Fino a quando i driver di dispositivo non vengono distribuiti ai punti di distribuzione non è possibile utilizzarli. Se si fa clic su **No**, è necessario eseguire l'azione **Aggiorna punto di distribuzione** prima che l'immagine di avvio contenga i driver aggiornati. Se il pacchetto driver non è mai stato distribuito, è necessario fare clic su **Distribuisci contenuto** nel nodo **Pacchetti driver** .  
+
+    -   Configuration Manager segnala se l'architettura per uno o più driver non corrisponde all'architettura delle immagini d'avvio selezionate. Se non corrispondono, fare clic su **OK** e tornare alla pagina **Dettagli driver** per cancellare i driver che non corrispondono all'architettura dell'immagine di avvio selezionata. Ad esempio, se si seleziona un'immagine di avvio x64 e x86, tutti i driver devono supportare entrambe le architetture. Se si seleziona un'immagine di avvio x64, tutti i driver devono supportare l'architettura x64.  
+
+        > [!NOTE]  
+        >  -   L'architettura è basata su quella riportata nel file con estensione inf fornito dal produttore.  
+        > -   Se un driver segnala che supporta entrambe le architetture, è possibile importarlo in un'immagine di avvio.  
+
+    -   Configuration Manager avvisa l'utente se vengono aggiunti driver di dispositivo che non sono driver di rete o di archiviazione a un'immagine d'avvio perché nella maggior parte dei casi non sono necessari per l'immagine d'avvio. Fare clic su **Sì** per aggiungere i driver all'immagine di avvio oppure su **No** per tornare indietro e modificare la selezione dei driver.  
+
+    -   Configuration Manager segnala se uno o più driver selezionati non includono una firma digitale corretta. Fare clic su **Sì** per continuare e fare clic su **No** per tornare indietro e apportare modifiche alla selezione dei driver.  
+
+7.  Fare clic su **OK**.  
+
+###  <a name="BKMK_DriverActions"></a> Azioni aggiuntive per i driver di dispositivo  
+ Durante la selezione di uno o più driver di dispositivo dal nodo **Driver** è possibile eseguire azioni aggiuntive per gestire i driver di dispositivo. Le azioni includono le seguenti:  
+
+|Azione|Descrizione|  
 |------------|-----------------|  
-|**カテゴリー化**|選択したデバイス ドライバーの管理カテゴリーをクリア、管理、または設定します。|  
-|**削除**|デバイス ドライバーを [ドライバー **** ] ノードから削除し、関連付けられている配布ポイントからも削除します。|  
-|**無効化**|デバイス ドライバーがインストールされないようにします。 オペレーティング システムの展開時に Configuration Manager クライアント コンピューターおよびタスク シーケンスでインストールされないようにするため、デバイス ドライバーを一時的に無効にすることができます。 **注:**  無効化の操作によってのみ、ドライバーの自動適用タスク シーケンスのステップを使用したドライバーのインストールが禁止されます。|  
-|**有効化**|オペレーティング システムの展開時に Configuration Manager クライアント コンピューターおよびタスク シーケンスでデバイス ドライバーがインストールされるようにします。|  
-|**移動**|デバイス ドライバーを [ドライバー **** ] ノード内の他のフォルダーに移動します。|  
-|**プロパティ**|[プロパティ **** ] ダイアログ ボックスを開いて、デバイス ドライバーのプロパティを確認および変更することができます。 たとえば、デバイス ドライバーの名前と説明を変更する、デバイス ドライバーを有効にする、デバイス ドライバーを実行できるプラットフォームを指定するといったことができます。|  
+|**Categorizza**|Consente di cancellare, gestire o impostare una categoria amministrativa per i driver di dispositivo selezionati.|  
+|**Eliminazione**|Rimuove il driver di dispositivo dal nodo **Driver** e dai punti di distribuzione associati.|  
+|**Disabilitato**|Impedisce l'installazione del driver di dispositivo. È possibile disattivare temporaneamente i driver di dispositivo in modo che le sequenze di attività e i computer client di Configuration Manager non siano in grado di installarli durante la distribuzione dei sistemi operativi. **Nota:**  l'azione Disabilita impedisce solo l'installazione dei driver con il passaggio della sequenza di attività Applica automaticamente i driver.|  
+|**Attiva**|Consente alle sequenze di attività e ai computer client di Configuration Manager di installare il driver di dispositivo durante la distribuzione del sistema operativo.|  
+|**Sposta**|Sposta il driver di dispositivo in un'altra cartella del nodo **Driver** .|  
+|**Proprietà**|Apre la finestra di dialogo **Proprietà** , che consente di esaminare e modificare le proprietà del driver di dispositivo. È ad esempio possibile modificare il nome e la descrizione del driver di dispositivo, attivare il driver di dispositivo e specificare in quali piattaforme è possibile eseguire il driver di dispositivo.|  
 
-##  <a name="BKMK_TSDrivers"></a> タスク シーケンスを使用したデバイス ドライバーのインストール  
- タスク シーケンスを使うと、オペレーティング システムの展開を自動化できます。 タスク シーケンスの各ステップは、デバイス ドライバーのインストールなど、特定のアクションを実行することができます。 次のタスク シーケンス ステップを使うと、オペレーティング システムを展開しているときにデバイス ドライバーをインストールできます。  
+##  <a name="BKMK_TSDrivers"></a> Usare le sequenze di attività per installare i driver di dispositivo  
+ Utilizzare le sequenze attività per automatizzare la modalità di distribuzione del sistema operativo. Ogni passaggio della sequenza attività può eseguire un'azione specifica, ad esempio l'installazione di un driver di dispositivo. È possibile utilizzare i due passaggi della sequenza attività che seguono per installare driver di dispositivo durante la distribuzione dei sistemi operativi:  
 
--   [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers): このステップでは、オペレーティング システムの展開の一部として、デバイス ドライバーのマッチとインストールを行うことができます。 タスク シーケンス ステップを構成して、検出された各ハードウェア デバイスに最適なドライバーのみをインストールしたり、検出された各ハードウェア デバイスと互換性のあるすべてのドライバーをインストールするように指定して、Windows セットアップで最適なドライバーを選択できるようにすることができます。 さらに、デバイス ドライバーのカテゴリを指定して、そのステップで利用できるドライバーの数を制限することもできます。  
+-   [Auto Apply Drivers](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers): questo passaggio consente di associare e installare automaticamente i driver di dispositivo all'interno di una distribuzione del sistema operativo. È possibile configurare il passaggio della sequenza attività in modo che venga installato solo il driver più compatibile per ogni dispositivo hardware rilevato oppure specificare che il passaggio della sequenza attività installi tutti i driver compatibili per ogni dispositivo hardware rilevato e quindi consentire all'installazione di Windows di scegliere il driver migliore. Inoltre, è possibile specificare una categoria di driver di dispositivo per limitare i driver disponibili per questo passaggio.  
 
--   [Apply Driver Package](../understand/task-sequence-steps.md#BKMK_ApplyDriverPackage): このステップでは、特定のドライバー パッケージに含まれるすべてのデバイス ドライバーを Windows セットアップで使用可能にすることができます。 Windows セットアップは必要なデバイス ドライバーを、特定のドライバー パッケージでの中で検索します。 スタンドアロン メディアを作成するときは、このステップを使用してデバイス ドライバーをインストールする必要があります。  
+-   [Apply Driver Package](../understand/task-sequence-steps.md#BKMK_ApplyDriverPackage): questo passaggio consente di rendere disponibili tutti i driver di dispositivo in un pacchetto driver specifico per l'installazione di Windows. Nei pacchetti driver specificati l'installazione di Windows cerca i driver di dispositivo necessari. Quando si creano supporti autonomi, è necessario usare questo passaggio per installare i driver di dispositivo.  
 
- こうしたタスク シーケンス ステップを使用する場合、オペレーティング システムを展開するコンピューターにデバイス ドライバーをどのようにインストールするかも指定できます。 詳細については、「[タスクを自動化するためのタスク シーケンスの管理](../deploy-use/manage-task-sequences-to-automate-tasks.md)」をご覧ください。  
+ Quando si utilizzano questi passaggi della sequenza attività, è anche possibile specificare la modalità di installazione dei driver di dispositivo nel computer in cui viene distribuito il sistema operativo. Per altre informazioni, vedere [Gestire le sequenze di attività per automatizzare le attività](../deploy-use/manage-task-sequences-to-automate-tasks.md).  
 
-##  <a name="BKMK_InstallingDeviceDiriversTS"></a> タスク シーケンスを使用したコンピューターへのデバイス ドライバーのインストール  
- オペレーティング システム展開の一部としてデバイス ドライバーをインストールするには、次の手順に従います。  
+##  <a name="BKMK_InstallingDeviceDiriversTS"></a> Usare le sequenze di attività per installare driver di dispositivo nei computer  
+ Utilizzare la procedura seguente per installare i driver di dispositivo durante la distribuzione del sistema operativo.  
 
-#### <a name="use-a-task-sequence-to-install-device-drivers"></a>タスク シーケンスを使用したデバイス ドライバーのインストール  
+#### <a name="use-a-task-sequence-to-install-device-drivers"></a>Usare una sequenza di attività per installare driver di dispositivo  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス**] をクリックします。  
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
 
-3.  **[タスク シーケンス]** ノードで、変更するタスク シーケンスを選択して、デバイス ドライバーをインストールし、 **[編集]**をクリックします。  
+3.  Nel nodo **Sequenze attività** selezionare la sequenza attività che si desidera modificare per installare il driver di dispositivo e quindi fare clic su **Modifica**.  
 
-4.  **ドライバー** の手順を追加する場所に移動し、 **[追加]**をクリックして **[ドライバー]**を選択します。  
+4.  Passare al punto in cui si desidera aggiungere la procedura **Driver** , fare clic su **Aggiungi**e quindi selezionare **Driver**.  
 
-5.  タスク シーケンスですべてのデバイス ドライバーをインストールしたり、指定した特定のカテゴリのデバイス ドライバーをインストールする場合は、[ドライバーの自動適用] ステップを追加します。 **** **[プロパティ]** タブで手順のオプションを、 **[オプション]** タブで手順の条件を、それぞれ指定します。  
+5.  Aggiungere il passaggio **Applica automaticamente i driver** se si desidera che la sequenza attività installi tutti i driver di dispositivo o solo le categorie specificate. Specificare le opzioni del passaggio nella scheda **Proprietà** e ogni eventuale condizione nella scheda **Opzioni** .  
 
-     タスク シーケンスで、特定のパッケージのデバイス ドライバーのみをインストールする場合は、[ドライバー パッケージの適用] ステップを追加します。 **** **[プロパティ]** タブで手順のオプションを、 **[オプション]** タブで手順の条件を、それぞれ指定します。  
+     Aggiungere il passaggio **Applica pacchetto di driver** se si desidera che la sequenza attività installi solo i driver di dispositivo presenti nel pacchetto specificato. Specificare le opzioni del passaggio nella scheda **Proprietà** e ogni eventuale condizione nella scheda **Opzioni** .  
 
     > [!IMPORTANT]  
-    >  タスク シーケンスのトラブルシューティングを行うには、 **[オプション]** タブで **[このステップを無効にする]** を選択して、ステップを無効にすることができます。  
+    >  È possibile selezionare **Disattiva questo passaggio** nella scheda **Opzioni** per disattivare il passaggio allo scopo di risolvere i problemi della sequenza di attività.  
 
-6.  **[OK]** をクリックしてタスク シーケンスを保存します。  
+6.  Fare clic su **OK** per salvare la sequenza attività.  
 
- オペレーティング システムをインストールするタスク シーケンスの作成方法の詳細については、「[Create a task sequence to install an operating system](../deploy-use/create-a-task-sequence-to-install-an-operating-system.md)」 (オペレーティング システムをインストールするタスク シーケンスの作成) を参照してください。  
+ Per altre informazioni sulla creazione di una sequenza di attività per installare un sistema operativo, vedere [Create a task sequence to install an operating system](../deploy-use/create-a-task-sequence-to-install-an-operating-system.md) (Creare una sequenza di attività per installare un sistema operativo).  
 
-##  <a name="BKMK_DriverReports"></a> ドライバー管理レポート  
- [ドライバー管理] レポート カテゴリにある複数のレポートを使って、ドライバー カタログのデバイス ドライバーに関する一般的な情報を確認できます。 **** レポートの詳細については、「[Reporting](../../core/servers/manage/reporting.md)」 (レポート) を参照してください。
+##  <a name="BKMK_DriverReports"></a> Report di Gestione driver  
+ È possibile utilizzare diversi report nella categoria di report **Gestione driver** per determinare informazioni generali sui driver di dispositivo nel catalogo. Per altre informazioni sui report, vedere [Creazione di report](../../core/servers/manage/reporting.md).

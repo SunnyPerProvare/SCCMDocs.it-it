@@ -1,6 +1,6 @@
 ---
-title: "Intune に登録されたデバイスのポリシーをリモートで同期する | Microsoft Docs"
-description: "Intune に登録されたデバイスのポリシーを Configuration Manager コンソールから同期する方法について説明します"
+title: Sincronizzare in remoto i criteri in dispositivi registrati in Intune |Microsoft Docs
+description: Informazioni sulla sincronizzazione dei criteri in dispositivi registrati in Intune dalla console di Configuration Manager
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -18,20 +18,20 @@ manager: angrobe
 ms.openlocfilehash: 337814fd5ba49ed17fc97aba49f79f02df817f4e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="remotely-synchronize-policy-on-intune-enrolled-devices-from-the-configuration-manager-console"></a>Intune に登録されたデバイスのポリシーを Configuration Manager コンソールからリモートで同期する
+# <a name="remotely-synchronize-policy-on-intune-enrolled-devices-from-the-configuration-manager-console"></a>Sincronizzare in remoto i criteri in dispositivi registrati in Intune dalla console di Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
-
-
-デバイス自体のポータル サイト アプリから同期を要求するのではなく、Configuration Manager コンソールから Intune に登録されたデバイスのポリシー同期を要求できます。 
-
-手順は次のとおりです。
-
-1.  **[資産とコンプライアンス]** > **[概要]** > **[デバイス]** で、デバイスを選択します。
-2.  **[リモート デバイスの操作]** メニューの **[同期要求の送信]** をクリックします。
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-5 ～ 10 分で、ポリシーのすべての変更がデバイスに同期されます。 同期要求の状態の情報を、デバイス ビューの新しい列 **[Remote Sync State]** (リモート同期の状態)、および各デバイスの **[プロパティ]** ダイアログ ボックスの [探索データ] セクションで、見ることができます。
+È possibile richiedere una sincronizzazione dei criteri per un dispositivo registrato in Intune dalla console di Configuration Manager, senza dover richiedere la sincronizzazione dall'app Portale aziendale sul dispositivo stesso. 
+
+Per eseguire questa operazione:
+
+1.  Selezionare un dispositivo in **Asset e conformità** > **Panoramica** > **Dispositivi**.
+2.  Nel menu **Azioni remote dispositivo** selezionare **Send Sync Request** (Invia richiesta di sincronizzazione).
+
+
+Trascorsi 5/10 minuti, le modifiche nei criteri saranno sincronizzate nel dispositivo. È possibile visualizzare le informazioni sullo stato della richiesta di sincronizzazione come nuova colonna nelle viste dispositivo denominate **Remote Sync State** (Stato sincronizzazione remota), nonché nella sezione dei dati di individuazione della finestra di dialogo **Proprietà** di ogni dispositivo.

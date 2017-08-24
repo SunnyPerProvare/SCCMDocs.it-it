@@ -1,5 +1,5 @@
 ---
-title: "Intune を使用して管理されている Windows Phone デバイスの構成項目を作成する方法 | Microsoft Docs"
+title: Come creare elementi di configurazione per dispositivi Windows Phone gestiti con Intune | Microsoft Docs
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -17,290 +17,290 @@ manager: angrobe
 ms.openlocfilehash: bcb2d14ef097afc2915932fe09f6d83c968aecf9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-configuration-items-for-windows-phone-devices-managed-without-the-system-center-configuration-manager-client"></a>System Center Configuration Manager クライアントを使用せずに管理されている Windows Phone デバイスの構成項目を作成する方法
-System Center Configuration Manager の **Windows Phone** 構成項目を使用して、Microsoft Intune に登録されているか、Configuration Manager によってオンプレミスで管理されている Windows Phone デバイスの設定を管理します。  
+# <a name="how-to-create-configuration-items-for-windows-phone-devices-managed-without-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Windows Phone gestiti senza il client System Center Configuration Manager
+Usare l'elemento di configurazione **Windows Phone** di System Center Configuration Manager per gestire le impostazioni per i dispositivi Windows Phone registrati in Microsoft Intune o gestiti localmente da Configuration Manager.  
   
-### <a name="to-create-a-windows-phone-configuration-item"></a>Windows Phone 構成項目を作成するには  
+### <a name="to-create-a-windows-phone-configuration-item"></a>Per creare un elemento di configurazione Windows Phone  
   
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
   
-2.  [ **資産とコンプライアンス** ] ワークスペースで [ **コンプライアンス設定** ] を展開して、[ **構成項目** ] をクリックします。  
+2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
   
-3.  [ **ホーム** ] タブの [ **作成** ] グループで、[ **構成項目の作成** ] をクリックします。  
+3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
   
-4.  **構成項目の作成ウィザード** の **[全般]**ページで、構成項目の名前と、必要に応じて説明を入力します。  
+4.  Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
   
-5.  **[作成する構成項目の種類の指定]**で、 **[Windows Phone]**を選択します。  
+5.  In **Specificare il tipo di elemento di configurazione da creare**selezionare **Windows Phone**.  
   
-6.  Configuration Manager コンソールで構成項目を検索およびフィルター処理するのに役立つカテゴリを作成して割り当てる場合は、[**カテゴリ**] をクリックします。  
+6.  Fare clic su **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
   
-7.  ウィザードの **[サポートされているプラットフォーム]** ページで、構成項目を評価する特定の Windows Phone プラットフォームを選択します。  
+7.  Nella pagina **Piattaforme supportate** della procedura guidata selezionare le piattaforme Windows Phone specifiche che valuteranno l'elemento di configurazione.  
   
-8.  ウィザードの **[デバイスの設定]** ページで、構成する設定グループを選択します。 このトピックの「 [Windows Phone の構成項目設定のリファレンス](#BKMK_Setref) 」で詳細情報を確認し、 **[次へ]**をクリックします。  
-  
-    > [!TIP]  
-    >  必要な設定が一覧にない場合は、 **[既定の設定グループに含まれない追加の設定を構成する]**チェック ボックスをオンにします。  
-  
-9. 各設定ページで、必要な設定と、その設定がデバイスに対応していないときにその設定を修正するかどうかを構成します (これがサポートされている場合)。  
-  
-10. 設定グループごとに、構成項目が非対応であることが検出されたときに報告される重要度を構成することもできます。  
-  
-    -   **なし** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に非対応重要度を何も報告しません。  
-  
-    -   **情報** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**情報**というレベルで非対応重要度を報告します。  
-  
-    -   **警告** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**警告**というレベルで非対応重要度を報告します。  
-  
-    -   **重大** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**重大**というレベルで非対応重要度を報告します。  
-  
-    -   **重大 (イベント)** - このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**重大**というレベルで非対応重要度を報告します。 重要度のレベルは、アプリケーションのイベント ログでも Windows のイベントとしてログが登録されます。  
-  
-11. ウィザードの **[プラットフォームの適用性]** ページで、前に選択したサポート対象プラットフォームと互換性がないすべての設定を確認します。 前に戻ってこれらの設定を削除するか、操作を続行できます。  
+8.  Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per dettagli, vedere [Informazioni di riferimento sulle impostazioni degli elementi di configurazione Windows Phone](#BKMK_Setref) in questo argomento e quindi fare clic su **Avanti**.  
   
     > [!TIP]  
-    >  サポートされていない設定のコンプライアンスは評価されません。  
+    >  Se l'impostazione da modificare non è inclusa nell'elenco, selezionare la casella di controllo **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  
   
-12. ウィザードを完了します。  
+9. In ogni pagina di impostazioni configurare le impostazioni necessarie e specificare se si vuole monitorarle e aggiornarle nel caso non siano conformi nei dispositivi (se questa funzionalità è supportata).  
   
- 新しい構成項目は、 **[資産とコンプライアンス]** ワークスペースの **[構成項目]** ノードに表示されます。  
+10. Per ogni gruppo di impostazioni, è anche possibile configurare il livello di gravità che verrà segnalato quando viene trovato un elemento di configurazione non conforme, selezionando uno dei livelli seguenti:  
   
-##  <a name="windows-phone-configuration-item-settings-reference"></a>Windows Phone の構成項目設定のリファレンス  
+    -   **Nessuno**: i dispositivi che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
   
-### <a name="password"></a>パスワード  
- これらの設定は、Windows Phone 8 および Windows Phone 8.1 の両方に適用されます。  
+    -   **Informazioni**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Informazioni** per i report di Configuration Manager.  
   
-|設定|説明|  
+    -   **Avviso**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Avviso** per i report di Configuration Manager.  
+  
+    -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
+  
+    -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel log eventi dell'applicazione.  
+  
+11. Nella pagina **Applicabilità piattaforma** della creazione guidata, verificare le eventuali impostazioni non compatibili con le piattaforme supportate selezionate in precedenza. È possibile tornare indietro e rimuovere queste impostazioni oppure continuare.  
+  
+    > [!TIP]  
+    >  Non viene valutata la conformità delle impostazioni non supportate.  
+  
+12. Completare la procedura guidata.  
+  
+ È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
+  
+##  <a name="windows-phone-configuration-item-settings-reference"></a>Informazioni di riferimento sulle impostazioni degli elementi di configurazione Windows Phone  
+  
+### <a name="password"></a>Password  
+ Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
+  
+|Impostazioni|Dettagli|  
 |-------------|-------------|  
-|**デバイスのパスワードの設定が必要**|サポート対象デバイスのパスワードが必要です。|  
-|**パスワードの最小文字数**|パスワードの最小の長さ。|  
-|**パスワードの有効期限 (日数)**|パスワードの変更が必要になるまでの日数。|  
-|**記憶するパスワードの数**|以前に使用したパスワードを再利用できないようにします。|  
-|**デバイスをワイプするまでのログオン失敗回数**|ログインの試みがこの回数だけ失敗した場合は、デバイスがワイプされます。|  
-|**パスワードの複雑さ**|「1234」などの PIN を指定できるのか、または強力なパスワードを指定する必要があるのかを選択します。|  
-|**パスワードの回復用 PIN を Exchange Server に送信する**||  
+|**Richiedi impostazioni password nei dispositivi mobili**|Richiede una password nei dispositivi supportati.|  
+|**Lunghezza minima password (caratteri)**|La lunghezza minima della password.|  
+|**Scadenza password in giorni**|Il numero di giorni prima che sia necessario modificare una password.|  
+|**Numero di password memorizzate**|Impedisce il riutilizzo delle password usate in precedenza.|  
+|**Numero di tentativi di accesso non riusciti prima della cancellazione dei dati dal dispositivo**|Cancella il dispositivo se questo numero di tentativi di accesso ha esito negativo.|  
+|**Complessità password**|Scegliere se è possibile specificare un PIN, ad esempio "1234", o se è necessario fornire una password complessa.|  
+|**Invia PIN di ripristino password a Exchange Server**||  
   
-### <a name="device"></a>デバイス  
+### <a name="device"></a>Dispositivo  
   
-|設定|説明|  
+|Impostazioni|Dettagli|  
 |-------------|-------------|  
-|**画面の取り込み**|ユーザーがデバイスのディスプレイのスクリーン ショットを取得できるようにします。<br /><br /> (Windows Phone 8.1 のみ)|  
-|**診断データの送信**|アプリのログ ファイルを送信できるようにします。|  
-|**位置情報**|デバイスで位置情報サービスの情報を使用できるようにします。<br /><br /> (Windows Phone 8.1 のみ)|  
-|**コピーと貼り付け**|コピーと貼り付けを使用してアプリ間でデータを転送します。<br /><br /> (Windows Phone 8.1 のみ)|  
-|**Bluetooth**|デバイスの Bluetooth 機能を使用できるようにします。|  
+|**Acquisizione schermo**|Consente all'utente di acquisire uno screenshot del display del dispositivo.<br /><br /> Solo Windows Phone 8.1.|  
+|**Invio dati diagnostici**|Consente l’invio dei file di log dell'app.|  
+|**Georilevazione**|Consente al dispositivo di usare le informazioni dei servizi di posizione.<br /><br /> Solo Windows Phone 8.1.|  
+|**Copia e Incolla**|Usare Copia e Incolla per trasferire dati tra app.<br /><br /> Solo Windows Phone 8.1.|  
+|**Bluetooth**|Consente di usare la funzionalità Bluetooth del dispositivo.|  
   
-### <a name="email-management"></a>電子メール管理  
- これらの設定は、Windows Phone 8 および Windows Phone 8.1 の両方に適用されます。  
+### <a name="email-management"></a>Gestione della posta elettronica  
+ Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|設定|説明|  
+|Impostazioni|Dettagli|  
 |-------------|-------------|  
-|**POP と IMAP の電子メール**|POP および IMAP 標準を使用する電子メール アカウントに接続できるようにします。|  
-|**電子メールの最長保管期間**|電子メールをサーバーから削除する前に保持する期間。|  
-|**許可するメッセージの形式**|ユーザーの電子メールを HTML 形式とテキスト形式のどちらにするかを指定します。|  
-|**テキスト形式の電子メールのサイズの制限 (自動的にダウンロードされる場合)**|テキスト形式の電子メールの最大サイズを制御します (自動的にダウンロードされる場合)。|  
-|**HTML 形式の電子メールの最大サイズ (自動的にダウンロードされる場合)**|HTML 形式の電子メールの最大サイズを制御します (自動的にダウンロードされる場合)。|  
-|**添付ファイルの最大サイズ (自動的にダウンロードされる場合)**|自動的にダウンロードされる電子メールの最大サイズを構成します。|  
-|**予定表の同期**||  
-|**カスタム電子メール アカウント**|デバイスで Microsoft 以外のアカウントを使用できるようにします。|  
-|**Windows メール アプリで Microsoft アカウントをオプションにする**|Windows メールへのサインインに Microsoft アカウントを使う必要がないようにします。|  
+|**Posta elettronica IMAP e POP**|Consente la connessione agli account di posta elettronica che usano gli standard POP e IMAP.|  
+|**Tempo massimo di conservazione della posta elettronica**|Il tempo di conservazione della posta elettronica prima che venga eliminata dal server.|  
+|**Formati messaggi consentiti**|Specificare se i messaggi di posta elettronica dell’utente possono essere in formato HTML o solo in testo normale.|  
+|**Dimensione massima per la posta elettronica con testo normale (scaricata automaticamente)**|Controlla la dimensione massima dei messaggi di posta elettronica con testo normale quando vengono scaricati automaticamente.|  
+|**Dimensione massima per la posta elettronica HTML (scaricata automaticamente)**|Controlla la dimensione massima dei messaggi di posta elettronica HTML quando vengono scaricati automaticamente.|  
+|**Dimensione massima di un allegato (scaricato automaticamente)**|Controlla la dimensione massima dei messaggi di posta elettronica che verranno scaricati automaticamente.|  
+|**Sincronizzazione calendario**||  
+|**Account di posta elettronica personalizzato**|Consente di usare un account non Microsoft sul dispositivo.|  
+|**Rendi l'account Microsoft facoltativo nell'applicazione Windows Mail**|Per accedere a Windows Mail non è necessario usare un account Microsoft.|  
   
-### <a name="store"></a>ストア  
- これらの設定は、Windows Phone 8.1 デバイスのみに適用されます。  
+### <a name="store"></a>Archivio  
+ Queste impostazioni si applicano solo ai dispositivi Windows Phone 8.1.  
   
-|設定|説明|  
+|Impostazioni|Dettagli|  
 |-------------|-------------|  
-|**アプリケーション ストア**|デバイスからアプリ ストアにアクセスできるようにします。|  
+|**Archivio applicazioni**|Consente l'accesso all'archivio applicazioni sul dispositivo.|  
   
-### <a name="browser"></a>ブラウザー  
- これらの設定は、Windows Phone 8 および Windows Phone 8.1 の両方に適用されます。  
+### <a name="browser"></a>Browser  
+ Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|設定|説明|  
+|Impostazioni|Dettagli|  
 |-------------|-------------|  
-|**Web ブラウザーを許可する**|既定のインターネット ブラウザーを有効または無効にします。|  
-|**オートフィル**|ユーザーは、ブラウザーのオートコンプリートの設定を変更できます。|  
-|**アクティブ スクリプト**|ブラウザーで Active X のスクリプトなどのスクリプトを実行できます。|  
-|**プラグイン**|ユーザーは、Internet Explorer にプラグインを追加できます。|  
-|**ポップアップ ブロック**|ブラウザーのポップアップ ブロックを有効または無効にします。|  
-|**不正の警告**|詐欺目的の疑いがある Web サイトの警告を有効または無効にします。|  
+|**Consenti browser Web**|Abilita o disabilita il browser Internet predefinito.|  
+|**Riempimento automatico**|L’utente può modificare le impostazioni di completamento automatico nel browser.|  
+|**Esecuzione script attivo**|Il browser può eseguire script, ad esempio gli script ActiveX.|  
+|**Plug-in**|L’utente può aggiungere plug-in a Internet Explorer.|  
+|**Blocco popup**|Attiva o disattiva il blocco popup del browser.|  
+|**Avviso frodi**|Attiva o disattiva gli avvisi di potenziali siti Web fraudolenti.|  
   
 ### <a name="internet-explorer"></a>Internet Explorer  
- これらの設定は、Windows Phone 8 および Windows Phone 8.1 の両方に適用されます。  
+ Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|設定|説明|  
+|Impostazioni|Dettagli|  
 |-------------|-------------|  
-|**常に Do Not Track ヘッダーを送信する**|参照情報がサード パーティのサイトに送信されないようにします。|  
-|**イントラネット セキュリティ ゾーン**||  
-|**インターネット ゾーンのセキュリティ レベル**|インターネット ゾーンのセキュリティ レベルを構成します。|  
-|**イントラネット ゾーンのセキュリティ レベル**|イントラネット ゾーンのセキュリティ レベルを構成します。|  
-|**信頼済みサイト ゾーンのセキュリティ レベル**|信頼済みサイト ゾーンのセキュリティ レベルを構成します。|  
-|**制限付きサイト ゾーンのセキュリティ レベル**|制限付きサイト ゾーンのセキュリティ レベルを構成します。|  
-|**イントラネット ゾーンの名前空間**||  
-|**1 単語の入力でイントラネット サイトに移動する**|先頭に HTTP を付けずに有効なサイト名が入力された場合に Internet Explorer がイントラネット サイトに自動的にアクセスすることを許可する設定を有効または無効にします。|  
-|**[エンタープライズ モード] メニュー オプション**|ユーザーが Internet Explorer の **[ツール]** メニューでエンタープライズ モードをアクティブ化および非アクティブ化できるようにします。|  
-|**ログ レポートの場所 (URL)**|エンタープライズ モードがアクティブな場合に、アクセスされた Web サイトがログに記録される URL を指定します。|  
-|**エンタープライズ モード サイト リストの場所 (URL)**|エンタープライズ モードがアクティブな場合に、エンタープライズ モードを使用する Web サイトの一覧の場所を指定します。|  
+|**Invia sempre l'intestazione DNT (Do Not Track)**|Impedisce che le informazioni cercate vengano inviate a siti di terze parti.|  
+|**Area di protezione Intranet**||  
+|**Livello di protezione per l'area Internet**|Configurare il livello di protezione per l'area Internet.|  
+|**Livello di protezione per l'area Intranet**|Configurare il livello di protezione per l'area intranet.|  
+|**Livello di protezione per l'area siti attendibili**|Configurare il livello di protezione per l'area siti attendibili.|  
+|**Livello di protezione per l'area siti con restrizioni**|Configurare il livello di protezione per l'area siti con restrizioni.|  
+|**Spazi dei nomi per l'area intranet**||  
+|**Accedi a un sito Intranet nel caso di immissione di una singola parola**|Abilita o disabilita l'impostazione che consente a Internet Explorer di passare automaticamente a un sito Intranet se viene immesso un nome di sito valido senza HTTP precedente:|  
+|**Opzione di menu modalità Enterprise**|Consente agli utenti di attivare e disattivare la modalità Enterprise dal menu **Strumenti** di Internet Explorer.|  
+|**Posizione report di registrazione (URL)**|Specificare un URL in cui verranno registrati i siti Web visitati quando è attiva la modalità Enterprise.|  
+|**Posizione elenco siti modalità Enterprise (URL)**|Specificare il percorso dell'elenco di siti Web che useranno la modalità Enterprise quando è attiva.|  
   
-### <a name="cloud"></a>クラウド  
+### <a name="cloud"></a>Cloud  
   
-|設定|説明|  
+|Impostazioni|Dettagli|  
 |-------------|-------------|  
-|**設定の同期**|デバイス間で設定を同期できるようにします。|  
-|**資格情報の同期**|デバイス間で資格情報を同期できるようにします。|  
-|**Microsoft アカウント**|デバイスで Microsoft アカウントを使用できるようにします。<br /><br /> (Windows Phone 8.1 のみ)|  
-|**従量制課金接続での設定の同期**|インターネット接続が従量制課金の場合に、設定を同期できるようにします。|  
+|**Sincronizzazione impostazioni**|Consente la sincronizzazione delle impostazioni tra i dispositivi.|  
+|**Sincronizzazione credenziali**|Consente la sincronizzazione delle credenziali tra i dispositivi.|  
+|**Account Microsoft**|Consente di usare un account Microsoft sul dispositivo.<br /><br /> Solo Windows Phone 8.1.|  
+|**Sincronizzazione delle impostazioni con connessione a consumo**|Consente la sincronizzazione delle impostazioni quando la connessione a Internet è a consumo.|  
   
-### <a name="security"></a>セキュリティ  
+### <a name="security"></a>Sicurezza  
   
-|設定|説明|  
+|Impostazioni|Dettagli|  
 |-------------|-------------|  
-|**署名されていないファイルのインストール**|署名されていないファイルの読み込みを許可します。|  
-|**署名されていないアプリケーション**|署名されていないアプリの読み込みを許可します。|  
-|**SMS と MMS メッセージング**|デバイスからの SMS および MMS メッセージングを許可します。|  
-|**リムーバブル記憶域**|デバイスで SD カードなどのリムーバブル記憶域を使用できるようにします。|  
-|**カメラ**|デバイスのカメラを使用できるようにします。|  
-|**近距離無線通信 (NFC)**|デバイスの NFC を使用した通信を許可します。<br /><br /> (Windows Phone 8.1 のみ)|  
-|**USB 接続を許可する**|周辺機器が USB 経由でこのデバイスに接続できるようにします。|
+|**Installazione file non firmati**|Consente il caricamento di file non firmati.|  
+|**Applicazioni non firmate**|Consente il caricamento di file non firmati.|  
+|**Messaggistica SMS e MMS**|Consente la messaggistica SMS e MMS dal dispositivo.|  
+|**Archivi rimovibili**|Consente di utilizzare archivi rimovibili, ad esempio una scheda SD sul dispositivo.|  
+|**Fotocamera**|Consente di utilizzare la fotocamera del dispositivo.|  
+|**NFC (Near Field Communication)**|Consente la comunicazione usando NFD nel dispositivo.<br /><br /> Solo Windows Phone 8.1.|  
+|**Consenti connessione USB**|Consente alle periferiche di connettersi al dispositivo tramite USB.|
   
-### <a name="peak-synchronization"></a>ピーク時の同期  
- これらの設定は、Windows Phone 8 および Windows Phone 8.1 の両方に適用されます。  
+### <a name="peak-synchronization"></a>Sincronizzazione nelle ore di punta  
+ Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|設定|説明|  
+|Impostazioni|Dettagli|  
 |-------------|-------------|  
-|**ピーク時間を指定します。**|次の 2 つの設定によって使われる時間帯を指定します。|  
-|**ピーク時の同期頻度**|指定したピーク時間中にデバイスが同期する頻度を選びます。|  
-|**ピーク時以外の同期頻度**|指定したピーク時間外にデバイスが同期する頻度を選びます。|  
+|**Specificare l'ora di punta**|Specificare un intervallo di tempo che verrà usato dalle due impostazioni seguenti.|  
+|**Frequenza di sincronizzazione nelle ore di punta**|Scegliere la frequenza con cui il dispositivo eseguirà la sincronizzazione durante le ore di punta specificate.|  
+|**Frequenza di sincronizzazione nelle ore non di punta**|Scegliere la frequenza con cui il dispositivo eseguirà la sincronizzazione al di fuori delle ore di punta specificate.|  
   
-### <a name="roaming"></a>ローミング  
- これらの設定は、Windows Phone 8 および Windows Phone 8.1 の両方に適用されます。  
+### <a name="roaming"></a>Roaming  
+ Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|設定|説明|  
+|Impostazioni|Dettagli|  
 |-------------|-------------|  
-|**ローミング中のデバイス管理**|デバイスがローミングされているときに、Configuration Manager でデバイスを管理できるようにします。|  
-|**ローミング中のソフトウェアのダウンロード**|ローミング中にアプリケーションやソフトウェアをダウンロードできるようにします。|  
-|**ローミング中の電子メールのダウンロード**|ローミング中に電子メールをダウンロードできるようにします。|  
-|**データ ローミング**|データへのアクセス中にネットワーク間のローミングを許可します。|  
+|**Gestione dispositivi mobili durante il roaming**|Consente la gestione del dispositivo con Configuration Manager in caso di roaming.|  
+|**Download del software durante il roaming**|Consente il download di applicazioni e software durante il roaming.|  
+|**Download della posta elettronica durante il roaming**|Consente il download di posta elettronica durante il roaming.|  
+|**Roaming dati**|Consente il roaming tra reti quando si accede a dati.|  
   
-### <a name="encryption"></a>暗号化  
- これらの設定は、Windows Phone 8 および Windows Phone 8.1 の両方に適用されます。  
+### <a name="encryption"></a>Crittografia  
+ Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|設定|説明|  
+|Impostazioni|Dettagli|  
 |-------------|-------------|  
-|**メモリ カードの暗号化**|デバイスと共に使用するストレージ カードを必ず暗号化するようにします。|  
-|**デバイスのファイルの暗号化**|モバイル デバイス上のファイルを必ず暗号化するようにします。|  
-|**電子メールの署名が必要**|電子メールを送信する前に、そのメールに署名する必要があります。|  
-|**署名アルゴリズム**|電子メールの署名に使用されるアルゴリズムを選択します。|  
-|**電子メールの暗号化が必要**|電子メールを送信する前に、そのメールを暗号化する必要があります。|  
-|**暗号化アルゴリズム**|電子メールの暗号化に使用されるアルゴリズムを選択します。|  
+|**Crittografia scheda di memoria**|Richiede la crittografia delle schede di memoria usate con il dispositivo.|  
+|**Crittografia file nel dispositivo mobile**|Richiede la crittografia dei file sul dispositivo mobile.|  
+|**Richiedi firma posta elettronica**|Richiede la firma dei messaggi di posta elettronica prima dell'invio.|  
+|**Algoritmo di firma**|Selezionare l'algoritmo usato per firmare i messaggi di posta elettronica.|  
+|**Richiedi crittografia posta elettronica**|Richiede la crittografia dei messaggi di posta elettronica prima dell'invio.|  
+|**Algoritmo di crittografia**|Selezionare l'algoritmo usato per crittografare i messaggi di posta elettronica.|  
   
-###  <a name="wireless-communications"></a>ワイヤレス通信  
- これらの設定は、Windows Phone 8 および Windows Phone 8.1 の両方に適用されます。  
+###  <a name="wireless-communications"></a>Comunicazioni wireless  
+ Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|設定の名前|説明|  
+|Nome impostazione|Dettagli|  
 |------------------|-------------|  
-|**ワイヤレス ネットワーク接続**|デバイスの Wi-Fi 機能を有効または無効にします。|  
-|**Wi-Fi テザリング**|ユーザーが自分のデバイスをモバイル ホットスポットとして使用できるようにします。|  
-|**可能な場合は Wi-Fi にデータをオフロードする**||  
-|**Wi-Fi ホットスポットの報告**||  
+|**Connessione rete wireless**|Abilita o disabilita la funzionalità Wi-Fi dei dispositivi.|  
+|**Tethering Wi-Fi**|Consente agli utente di usare il proprio dispositivo come hotspot mobile.|  
+|**Offload dei dati con Wi-Fi quando possibile**||  
+|**Reporting hotspot Wi-Fi**||  
   
-##### <a name="to-configure-a-wireless-network-connection"></a>ワイヤレス ネットワーク接続を構成するには  
+##### <a name="to-configure-a-wireless-network-connection"></a>Per configurare una connessione di rete wireless  
   
-1.  **[モバイル デバイスのワイヤレス通信設定の構成]** ページで、 **[追加]**をクリックします。  
+1.  Nella pagina **Configurare le impostazioni di comunicazione wireless per dispositivi mobili** fare clic su **Aggiungi**.  
   
-2.  **[ワイヤレス ネットワーク接続]** ダイアログ ボックスで、モバイル デバイスに対してプロビジョニングするワイヤレス接続に関する次の情報を指定します。  
+2.  Nella finestra di dialogo **Connessione rete wireless** , specificare le informazioni seguenti sulla connessione wireless che sarà fornita nei dispositivi mobili:  
   
-|設定|説明|  
+|Impostazioni|Altre informazioni|  
 |-------------|----------------------|  
-|**ネットワーク名 (SSID)**||  
-|**ネットワーク接続**|**[インターネット]** または **[社内ネットワーク]**を選択します。|  
-|**認証**|ワイヤレス接続の認証方法を次の中から選択します。<br><br> - **Open**<br> - **Shared**<br> - **WPA**<br> - **WPA-PSK**<br> - **WPA2**<br> - **WPA2-PSK**|  
-|**データの暗号化**|この接続で使用する暗号化方法を選択します。 選択できる値は、選択した **認証** 方法によって異なります。<br><br> - **Disabled**<br> - **WEP**<br> - **TKIP**<br> - **AES**|  
-|**キーのインデックス**|**[データの暗号化]** を **[WEP]** に設定した場合に使用するキーのインデックスを **1** から **4**から選択します。|  
-|**このネットワークはインターネットに接続する**|ワイヤレス接続上のモバイル デバイスをインターネットに接続するためのプロキシ設定を指定する場合は、このオプションを選択します。|  
-|**プロキシ サーバーの設定**|必要に応じて、 **[HTTP]** 、 **[WAP]** 、および **[Sockets]**の **[サーバー]** と **[ポート]**の設定値を指定します。|  
-|**802.1 X ネットワーク アクセスを有効にする**|EAP の種類を指定して接続をセキュリティで保護する場合は、このオプションを選択します。|  
-|**EAP の種類**|使用する EAP の種類を次の中から選択します。<br><br> - **PEAP**<br> - **スマート カードまたは証明書**|  
+|**Nome rete (SSID)**||  
+|**Connessione di rete**|Scegliere **Internet** o **Lavoro**.|  
+|**Autenticazione**|Selezionare il metodo di autenticazione per la connessione:<br><br> - **Aperta**<br> - **Condivisa**<br> - **WPA**<br> - **WPA-PSK**<br> - **WPA2**<br> - **WPA2-PSK**|  
+|**Crittografia dei dati**|Scegliere il metodo di crittografia usato dalla connessione. I valori che è possibile selezionare variano a seconda del metodo di **Autenticazione** scelto:<br><br> - **Disabilitato**<br> - **WEP**<br> - **TKIP**<br> - **AES**|  
+|**Indice chiavi**|Selezionare un indice chiavi da **1** a **4** da usare con l'impostazione di **Crittografia dei dati** **WEP**.|  
+|**Questa rete è connessa a Internet**|Selezionare questa opzione se si desidera specificare le impostazioni proxy che consentono la connessione a Internet dei dispositivi mobili su una connessione wireless.|  
+|**Impostazioni del server proxy**|Specificare le impostazioni **Server** e **Porta** necessarie per **HTTP**, **WAP** e **Socket**.|  
+|**Abilita accesso alla rete 802.1X**|Selezionare questa opzione per proteggere la connessione specificando un tipo di EAP.|  
+|**Tipo EAP**|Scegliere il tipo EAP da usare:<br><br> - **PEAP**<br> - **Smart card o certificato**|  
     
   
-###  <a name="certificates"></a>証明書  
- モバイル デバイスに証明書をインポートしてインストールできるようにします。  
+###  <a name="certificates"></a>Certificati  
+ È opportuno importare certificati da installare nei dispositivi mobili.  
   
- **[インポート]**をクリックして、次の値を指定します。  
+ Fare clic su **Importa**, quindi specificare i valori seguenti:  
   
--   **[証明書ファイル]** - **[参照]** をクリックし、インポートする証明書ファイル (拡張子 **.cer** ) を選択します。  
+-   **File di certificato** - fare clic su **Sfoglia** , quindi selezionare il file di certificato con estensione **cer** da importare.  
   
--   **保存先ストア** - インポートした証明書が追加されるモバイル デバイス上の保存先ストアを 1 つまたは複数選択します。  
+-   **Archivio di destinazione** - Scegliere uno o più archivi di destinazione da cui sarà aggiunto il certificato importato sul dispositivo mobile:  
   
-    -   **ルート**  
+    -   **Radice**  
   
     -   **CA**  
   
-    -   **標準**  
+    -   **Normale**  
   
-    -   **特権付き**  
+    -   **Con privilegi**  
   
     -   **SPC**  
   
-    -   **ピア**  
+    -   **Peer**  
   
--   **役割** - 保存先ストアとして **SPC** (ソフトウェア発行者の証明書) を選択した場合は、証明書に関連付けられる役割を次の中から選択します。  
+-   **Ruolo** - se **SPC** (Certificato autori software) viene selezionato come archivio di destinazione, scegliere il ruolo che verrà associato al certificato:  
   
-    -   **携帯電話会社**  
+    -   **Operatore di telefonia mobile**  
   
-    -   **マネージャー**  
+    -   **Gestore**  
   
-    -   **認証済みユーザー**  
+    -   **Autenticazione utente**  
   
-    -   **IT 管理者**  
+    -   **Amministratore IT**  
   
-    -   **非認証ユーザー**  
+    -   **Utente non autenticato**  
   
-    -   **信頼できるプロビジョニング サーバー**  
+    -   **Server di provisioning attendibile**  
   
-### <a name="system-security"></a>システム セキュリティ  
- これらの設定は、Windows Phone 8 および Windows Phone 8.1 の両方に適用されます。  
+### <a name="system-security"></a>Protezione del sistema  
+ Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|設定|説明|  
+|Impostazioni|Dettagli|  
 |-------------|-------------|  
-|**ユーザー アカウント コントロール**|デバイスの Windows ユーザー アカウント制御を有効または無効にします。|  
-|**ネットワーク ファイアウォール**|Windows ファイアウォールを有効または無効にします。|  
-|**更新プログラム**|Windows ソフトウェア更新プログラムをコンピューターにダウンロードする方法を選択します。 たとえば、更新プログラムを自動的にダウンロードし、インストールするタイミングをユーザーに選択させることができます。|  
-|**更新プログラムの最小の分類**|Windows コンピューターにダウンロードされる更新プログラムの最小の分類 ( **[なし]**、 **[重要]**、または **[推奨]**) を選択します。|  
-|**スマート スクリーン**|Windows SmartScreen を有効または無効にします。|  
-|**ウイルス対策**|デバイスがウイルス対策ソフトウェアによって保護されていることを確認します。|  
-|**ウイルス対策署名は最新です**|ウイルス対策ソフトウェアの署名が最新の状態であることを確認します。|
-|**手動での登録解除を許可する**|ユーザーが MDM からデバイスを削除できるようにします。|  
+|**Controllo dell'account utente**|Abilita o disabilita il controllo account utente di Windows sul dispositivo.|  
+|**Firewall di rete**|Attiva o disattiva Windows Firewall.|  
+|**Aggiornamenti**|Scegliere come gli aggiornamenti software di Windows verranno scaricati nel computer. Ad esempio, è possibile scaricare automaticamente gli aggiornamenti, ma consentire all'utente di scegliere quando installarli.|  
+|**Classificazione minima degli aggiornamenti**|Scegliere la classificazione minima degli aggiornamenti che verranno scaricati nei computer Windows: **Nessuno**, **Importante**o **Consigliato**.|  
+|**SmartScreen**|Abilita o disabilita SmartScreen.|  
+|**Protezione da virus**|Verifica che il dispositivo sia protetto da software antivirus.|  
+|**Le firme per la protezione da virus sono aggiornate**|Verifica che le firme del software antivirus siano aggiornate.|
+|**Consenti l'annullamento della registrazione manuale**|Consente all'utente di rimuovere il dispositivo da MDM.|  
   
-### <a name="windows-server-work-folders"></a>Windows Server の作業フォルダー  
- これらの設定は、Windows Phone 8 および Windows Phone 8.1 の両方に適用されます。  
+### <a name="windows-server-work-folders"></a>Cartelle di lavoro di Windows Server  
+ Queste impostazioni si applicano a Windows Phone 8 e Windows Phone 8.1.  
   
-|設定|説明|  
+|Impostazioni|Dettagli|  
 |-------------|-------------|  
-|**作業フォルダーの URL**|ユーザーが自分のデバイスから接続できる Windows Server の作業フォルダーの場所を構成します。|  
+|**URL cartelle di lavoro**|Configura il percorso di una cartella di lavoro di Windows Server a cui gli utenti possono connettersi dal dispositivo.|  
   
-### <a name="allowed-and-blocked-apps-list-windows-phone-81-only"></a>許可されたアプリと禁止されたアプリの一覧 (Windows Phone 8.1 のみ)  
- 社内の準拠している (または準拠していない) Windows Phone アプリの一覧を指定できます。 ブロックされるとして指定されたアプリをユーザーがインストールすることはできません。 許可されるアプリの一覧を指定した場合、ユーザーは一覧に含まれるアプリのみをインストールできます。  
+### <a name="allowed-and-blocked-apps-list-windows-phone-81-only"></a>Elenco delle app consentite e bloccate (solo Windows Phone 8.1)  
+ Consente di specificare un elenco di app Windows Phone conformi o non conformi all'interno della società. Le app specificate come bloccate non possono essere installate dagli utenti. Se si specifica un elenco di app consentite, gli utenti potranno installare solo tali applicazioni.  
   
- 同一の構成アイテム内で許可されるアプリとブロックされるアプリの両方を指定することはできません。  
+ Non è possibile specificare sia le app consentite che quelle bloccate nello stesso elemento di configurazione.  
   
 > [!IMPORTANT]  
->  許可されているアプリの一覧を指定する場合、会社のポータル アプリと Windows Phone 8.1 のデバイスに展開したすべてのアプリが **[許可されているアプリ]** の一覧にあることを確認する必要があります。  
+>  Se si specifica un elenco di app consentite, è necessario garantire che l'app del portale aziendale e tutte le altre app distribuite nei dispositivi Windows Phone 8.1 siano incluse nell'elenco **Consentito** .  
   
-##### <a name="to-specify-an-allowed-or-blocked-apps-list"></a>許可されているアプリまたはブロックされているアプリの一覧を指定するには  
+##### <a name="to-specify-an-allowed-or-blocked-apps-list"></a>Per specificare un elenco di app consentite o bloccate  
   
-1.  **[許可されるアプリとブロックされるアプリの一覧 (Windows Phone 8.1)]** ページで、次の情報を指定します。  
+1.  Nella pagina **Elenco delle app consentite e bloccate (Windows Phone 8.1)** indicare le informazioni seguenti:  
   
 |||  
 |-|-|  
-|設定|説明|  
-|**ブロックされているアプリの一覧**|ユーザーがインストールできないアプリの一覧を指定するには、このオプションを選択します。|  
-|**許可されているアプリの一覧**|ユーザーがインストールできるアプリの一覧を指定するには、このオプションを選択します。|  
-|**[追加]**|選択した一覧にアプリを追加します。 選択した名前と、必要に応じて、アプリの発行者、App Store のアプリへの URL を指定します。<br /><br /> URL を指定するには、Windows Phone ストア ページで、使用するアプリを検索します。<br /><br /> **例:** ストアで **Skype** アプリを検索します。 http://www.windowsphone.com/en-us/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51 という URL を使用します。<br /><br /> ポータル サイトのアプリや基幹業務アプリの場合、完全な URL を指定する必要はなく、アプリの GUID のみで十分です。|  
-|**編集**|選択したアプリの名前、発行者、および URL を編集します。|  
-|**削除**|選択したアプリを一覧から削除します。|  
-|**[インポート]**|コンマ区切り値ファイルで指定したアプリの一覧をインポートします。 ファイルの形式、アプリケーション名、発行者、アプリの URL を使用します。|  
+|Impostazioni|Altre informazioni|  
+|**Elenco delle app bloccate**|Selezionare questa opzione per specificare un elenco di applicazioni che gli utenti non sono autorizzati a installare.|  
+|**Elenco delle app consentite**|Selezionare questa opzione per specificare un elenco di applicazioni che gli utenti sono autorizzati a installare.|  
+|**Aggiungi**|Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, nella pagina di Windows Phone Store cercare l'app da usare.<br /><br /> **Esempio:** cercare l'app **Skype** nello store. L'URL usato sarà http://www.windowsphone.com/en-us/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51.<br /><br /> Nel caso dell'app del portale aziendale o delle app line-of-business, non è necessario specificare un URL completo ma soltanto il GUID dell'app.|  
+|**Modifica**|Consente di modificare il nome, l'autore e l'URL dell'app selezionata.|  
+|**Rimuovi**|Elimina l'app selezionata dall'elenco.|  
+|**Importa**|Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.|  
   
-## <a name="see-also"></a>関連項目  
- [System Center Configuration Manager クライアントを使用せずに管理されているデバイスの構成項目](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)
+## <a name="see-also"></a>Vedere anche  
+ [Elementi di configurazione per dispositivi gestiti senza il client di System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)

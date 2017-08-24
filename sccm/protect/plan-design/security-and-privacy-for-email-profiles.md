@@ -1,6 +1,6 @@
 ---
-title: "電子メール プロファイルのセキュリティとプライバシー | Microsoft Docs"
-description: "System Center Configuration Manager でデバイスの電子メール プロファイルを管理する場合のセキュリティのベスト プラクティスについて説明します。"
+title: Privacy e sicurezza dei profili di posta elettronica | Microsoft Docs
+description: Informazioni sulle procedure di sicurezza consigliate per gestire i profili di posta elettronica per i dispositivi in System Center Configuration Manager.
 ms.custom: na
 ms.date: 12/28/2016
 ms.prod: configuration-manager
@@ -18,21 +18,21 @@ manager: angrobe
 ms.openlocfilehash: 17707f931a4fa58b225ce14f04c2a19648585bc4
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-email-profiles-in-system-center-configuration-manager"></a>System Center Configuration Manager の電子メール プロファイルのセキュリティとプライバシー
+# <a name="security-and-privacy-for-email-profiles-in-system-center-configuration-manager"></a>Sicurezza e privacy per i profili di posta elettronica in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-## <a name="security-best-practices-for-email-profiles"></a>電子メール プロファイルのセキュリティ上のベスト プラクティス  
- デバイスの電子メール プロファイルを管理するときには、次のセキュリティのベスト プラクティスに従ってください。  
+## <a name="security-best-practices-for-email-profiles"></a>Procedure di sicurezza consigliate per i profili di posta elettronica  
+ Usare le procedure di sicurezza consigliate seguenti per gestire i profili di posta elettronica per i dispositivi.  
 
-|セキュリティのベスト プラクティス|説明|  
+|Procedura di sicurezza consigliata|Altre informazioni|  
 |----------------------------|----------------------|  
-|可能な限り、使用する電子メール インフラストラクチャとクライアント オペレーティング システムでサポートできる、最も安全なオプションを選択します。|電子メール プロファイルは、デバイスで既にサポートしている電子メール設定を中央から配付して管理するのに便利です。 Configuration Manager では、電子メール機能は追加されません。<br /><br /> 使用するデバイスと電子メール インフラストラクチャに推奨されているセキュリティ上のベスト プラクティスを特定および実装し、それに従います。|  
+|Se possibile, scegliere le opzioni più sicure per l'infrastruttura di posta elettronica e i sistemi operativi client usati.|I profili di posta elettronica costituiscono un metodo pratico per distribuire e gestire in modo centralizzato le impostazioni di posta elettronica giù supportate dai dispositivi in uso. Configuration Manager non aggiunge funzionalità di posta elettronica.<br /><br /> Identificare, implementare e seguire le procedure di sicurezza consigliate per i dispositivi e l'infrastruttura di posta elettronica.|  
 
-## <a name="privacy-information-for-email-profiles"></a>電子メール プロファイルのプライバシー情報  
- 既定では、デバイスは電子メール プロファイルを評価しません。 また、電子メール プロファイルを構成してから、電子メール プロファイルをユーザーに展開する必要があります。  
+## <a name="privacy-information-for-email-profiles"></a>Informazioni sulla privacy per i profili di posta elettronica  
+ Per impostazione predefinita, i dispositivi non valutano i profili di posta elettronica. È inoltre necessario configurare i profili di posta elettronica e quindi distribuirli agli utenti.  
 
- 電子メール プロファイルを構成する前に、プライバシー要件について検討してください。  
+ Prima di configurare i profili di posta elettronica, considerare i requisiti sulla privacy.  

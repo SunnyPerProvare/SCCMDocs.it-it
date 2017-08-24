@@ -1,6 +1,6 @@
 ---
-title: "クライアントをサイトに割り当てる | Microsoft Docs"
-description: "System Center Configuration Manager でクライアントをサイトに割り当てます。"
+title: Assegnare i client a un sito | Microsoft Docs
+description: Assegnare client a un sito in System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -17,148 +17,148 @@ manager: angrobe
 ms.openlocfilehash: a0ccd453fbe346c239eb6e37bc3ed557487b1e27
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-assign-clients-to-a-site-in-system-center-configuration-manager"></a>System Center Configuration Manager でクライアントをサイトに割り当てる方法
+# <a name="how-to-assign-clients-to-a-site-in-system-center-configuration-manager"></a>Come assegnare i client a un sito in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager クライアントをインストールした後、それを管理するには、Configuration Manager プライマリ サイトに参加させる必要があります。 クライアントが参加するサイトのことを、*割り当てられたサイト*と呼びます。 クライアントを中央管理サイトまたはセカンダリ サイトに割り当てることはできません。  
+Dopo l'installazione di un client di System Center Configuration Manager, è necessario aggiungerlo a un sito primario di Configuration Manager perché possa essere gestito. Il sito a cui si aggiunge il client viene definito come *sito assegnato*. I client non possono essere assegnati a un sito di amministrazione centrale o a un sito secondario.  
 
-割り当て処理はクライアントが正常にインストールされた後に実行され、どのサイトがクライアント コンピューターを管理するかを決定します。 クライアントをサイトに直接割り当てることも、サイトの自動割り当てを使用することもできます。サイトの自動割り当てでは、クライアントは自動的に、現在のネットワークの場所に基づいて適切なサイトを検出するか、階層に構成されているフォールバック サイトを検出します。
+Il processo di assegnazione si verifica dopo che il client è stato installato correttamente e determina il sito che gestisce il computer client. È possibile assegnare il client direttamente a un sito oppure usare l'assegnazione sito automatica in cui il client individua automaticamente un sito appropriato sulla base del suo attuale percorso di rete o un sito di fallback configurato per la gerarchia.
 
-Configuration Manager の登録中にモバイル デバイス クライアントをインストールする場合、デバイスは常にサイトに自動的に割り当てられます。 コンピューターにクライアントをインストールする場合は、クライアントをサイトに割り当てるかどうかを選択できます。 ただし、クライアントをインストールしたが割り当てていない場合、サイトの割り当てが正常に行われるまで、クライアントは管理されません。  
+Quando si installa il client del dispositivo mobile durante la registrazione di Configuration Manager, il dispositivo viene sempre assegnato automaticamente a un sito. Quando si installa il client in un computer, è possibile scegliere se assegnare il client a un sito oppure no. Tuttavia, quando il client viene installato ma non assegnato, non è gestito fino al corretto completamento dell'assegnazione.  
  
 
 > [!NOTE]  
->  常に同じバージョンの Configuration Manager を実行しているサイトにクライアントを割り当てます。 新リリースの Configuration Manager クライアントを古いリリースのサイトに割り当てないでください。   必要に応じて、クライアントに使用しているのと同じ Configuration Manager バージョンにプライマリ サイトを更新します。  
+>  Assegnare sempre i client a siti che eseguono la stessa versione di Configuration Manager. Evitare di assegnare un client di Configuration Manager di una versione più recente a un sito di una versione precedente.   Se necessario, aggiornare il sito primario alla stessa versione di Configuration Manager in uso per i client.  
 
-クライアントは、サイトに割り当てられると、IP アドレスを変更したり別のサイトにローミングする場合でも、このサイトに割り当てられたままになります。 管理者のみが、手動でクライアントを別のサイトに割り当てたり、クライアントの割り当てを削除したりできます。  
+Una volta assegnato a un sito, il client vi rimane assegnato, anche se cambia indirizzo IP e si sposta in un altro sito. Solo un amministratore potrà assegnare manualmente il client a un altro sito o rimuovere l'assegnazione del client.  
 
 > [!WARNING]  
->  書き込みフィルターを有効にしたときに、サイトに割り当てられたままになるクライアントの例外は、Windows Embedded デバイスのクライアントを割り当てる場合です。 クライアントを割り当てる前に書き込みフィルターを無効にしなかった場合、そのクライアントは、デバイスの次回の再起動時にサイトの割り当ての状態が元の状態に戻ります。  
+>  Un'eccezione alla condizione in cui il client rimane assegnato a un sito riguarda il caso di assegnazione del client su un dispositivo con Windows Embedded quando i filtri di scrittura sono abilitati. Se i filtri di scrittura non vengono disabilitati prima dell'assegnazione del client, lo stato di assegnazione sito del client tornerà alla sua versione originale al successivo riavvio del dispositivo.  
 >   
->  たとえば、クライアントに自動サイト割り当てが構成されている場合、スタートアップ時に再割り当てが実行され、別にサイトに割り当てられることがあります。 クライアントに自動サイト割り当てが構成されておらず、手動でサイトを割り当てる必要がある場合、Configuration Manager でこのクライアントをまた管理できるようにするには、スタートアップ後にクライアントの再割り当てを実行する必要があります。  
+>  Ad esempio, se il client è configurato per l'assegnazione sito automatica, sarà riassegnato all'avvio, eventualmente a un sito differente. Se il client non è configurato per l'assegnazione automatica ai siti ma richiede un'assegnazione manuale, è necessario riassegnarlo manualmente dopo l'avvio per poterlo gestire nuovamente tramite Configuration Manager.  
 >   
->  この動作を防ぐには、書き込みフィルターを無効にしてから、組み込みデバイスのクライアントを割り当てます。そしてサイトの割り当てが成功したことを確認してから、書き込みフィルターを有効にします。  
+>  Per evitare tale comportamento, disabilitare i filtri di scrittura prima di assegnare il client su dispositivi incorporati, quindi abilitare i filtri di scrittura dopo aver verificato che il sito sia stato assegnato correttamente.  
 
-クライアントの割り当てが失敗した場合、クライアント ソフトウェアはインストールされたままですが、管理されません。 クライアントがインストールされているがサイトに割り当てられていない場合、またはサイトに割り当てられているが管理ポイントと通信できない場合、クライアントは管理されていないと見なされます。  
+Se non è possibile completare l'assegnazione del client al sito, il software client rimarrà installato ma non sarà gestito. Un client è considerato non gestito quando viene installato ma non assegnato a un sito, oppure quando viene assegnato a un sito ma non è in grado di comunicare con un punto di gestione.  
 
-##  <a name="using-manual-site-assignment-for-computers"></a>コンピューターにサイトの手動割り当てを使用する  
- 次の 2 つの方法を使用して、クライアント コンピューターを手動でサイトに割り当てることができます。  
+##  <a name="using-manual-site-assignment-for-computers"></a>Utilizzo dell'assegnazione manuale del sito per i computer  
+ È possibile assegnare manualmente i computer client a un sito utilizzando i due metodi seguenti:  
 
--   サイト コードを指定するクライアント インストールのプロパティを使用する  
+-   Utilizzare una proprietà di installazione client che specifichi il codice del sito.  
 
--   コントロール パネルの [ **Configuration Manager** ] でサイト コードを指定する  
-
-> [!NOTE]  
->  クライアント コンピューターを存在しない Configuration Manager サイト コードに手動で割り当てると、サイトの割り当ては失敗します。   
-
-##  <a name="BKMK_AutomaticAssignment"></a> コンピューターにサイトの自動割り当てを使用する  
- サイトの自動割り当ては、クライアントの展開時に実行できます。または [ **Configuration Manager のプロパティ** ] の [ **詳細設定** ] タブにある [ **サイトの探索** ] をクリックしても、実行できます。 Configuration Manager クライアントは、自身のネットワークの場所を、Configuration Manager 階層内に構成されている境界と比較します。 クライアントのネットワークの場所が、サイトの割り当てが有効な境界グループ内にある場合や、階層がフォールバック サイト用に構成されている場合、サイト コードを指定する必要なく、クライアントは自動的にそのサイトに割り当てられます。  
-
- 次の 1 つまたは複数を使用して境界を構成できます。  
-
--   IP サブネット  
-
--   Active Directory サイト  
-
--   IP v6 プレフィックス  
-
--   IP アドレスの範囲  
+-   Nel Pannello di controllo, in **Configuration Manager**, specificare il codice del sito.  
 
 > [!NOTE]  
->  Configuration Manager クライアントに複数のネットワーク アダプターがあるため、複数の IP アドレスがある場合、クライアントのサイト割り当ての評価に使用される IP アドレスはランダムに割り当てられます。  
+>  Se si assegna manualmente un computer client a un codice sito di Configuration Manager inesistente, l'assegnazione al sito avrà esito negativo.   
 
- サイトの割り当て用に境界グループを構成する方法、およびサイトの自動割り当て用にフォールバック サイトを構成する方法については、「 [System Center Configuration Manager のサイト境界と境界グループの定義](../../../core/servers/deploy/configure/define-site-boundaries-and-boundary-groups.md)」をご覧ください。  
+##  <a name="BKMK_AutomaticAssignment"></a> Utilizzo dell'assegnazione automatica del sito per i computer  
+ L'assegnazione automatica del sito può verificarsi durante la distribuzione client o quando si seleziona **Trova sito** nella scheda **Avanzate** delle **Proprietà di Configuration Manager** nel Pannello di controllo. Il client di Configuration Manager confronta il proprio percorso di rete con i limiti configurati nella gerarchia di Configuration Manager. Se il percorso di rete del client rientra in un gruppo di limiti abilitato per l'assegnazione del sito, oppure la gerarchia è configurata per un sito di fallback, il client viene automaticamente assegnato a tale sito senza dover specificare un codice del sito.  
 
- Configuration Manager クライアントは、Active Directory Domain Services に発行されているサイトの境界グループを検出するように試みます。 この試みが失敗した場合 (Active Directory スキーマが Configuration Manager 用に拡張されていない場合や、クライアントがワークグループ コンピューターでない場合など)、クライアントは管理ポイントで境界情報を取得することができます。  
+ È possibile configurare i limiti utilizzando uno o più degli elementi seguenti:  
 
- インストール時に、クライアント コンピューターで使用する管理ポイントを指定できます。または、DNS 発行や WINS を使用してクライアントによって管理ポイントを検出することもできます。  
+-   Subnet IP  
 
- ネットワークの場所が含まれている境界グループに関連付けられたサイトをクライアントが検出することができず、階層にフォールバック サイトがない場合、クライアントは、サイトに割り当てられるまで 10 分ごとに再試行します。  
+-   Sito di Active Directory  
 
- 次のいずれかに該当する場合は、Configuration Manager クライアント コンピューターをサイトに自動的に割り当てることはできないため、手動で割り当てる必要があります。  
+-   Prefisso IP v6  
 
--   クライアントが現在、サイトに割り当てられている  
-
--   クライアントがインターネット上にあるか、イントラネット専用のクライアントとして構成されている  
-
--   クライアントのネットワークの場所が、Configuration Manager 階層内の構成された境界グループ内に存在せず、階層にフォールバック サイトが存在しない  
-
-##  <a name="completing-site-assignment-by-checking-site-compatibility"></a>サイトの互換性をチェックしてサイトの割り当てを完了する  
- 割り当てられたサイトがクライアントによって検出されると、Configuration Manager サイトがクライアントを管理できることを確認するため、クライアントのバージョンとオペレーティング システムがチェックされます。 たとえば、Configuration Manager では、Configuration Manager 2007 クライアント、System Center 2012 Configuration Manager クライアント、または Windows 2000 を実行しているクライアントを管理することができません。  
-
- Windows 2000 を実行しているクライアントを Configuration Manager サイトに割り当てると、サイトの割り当ては失敗します。 Configuration Manager 2007 クライアントまたは System Center 2012 Configuration Manager クライアントを、Configuration Manager (現在のブランチ) サイトに割り当てると、サイトの割り当てが成功して、クライアントの自動アップグレードがサポートされます。 ただし、古い世代のクライアントが Configuration Manager (現在のブランチ) クライアントにアップグレードされるまで、Configuration Manager はクライアント設定、アプリケーション、またはソフトウェア更新プログラムを使用してこのクライアントを管理できません。  
+-   Intervallo indirizzi IP  
 
 > [!NOTE]  
->  Configuration Manager (現在のブランチ) サイトに対する Configuration Manager 2007 または System Center 2012 Configuration Manager クライアントのサイトの割り当てをサポートするには、階層の自動クライアント アップグレードを構成する必要があります。 詳細については、「[System Center Configuration Manager で Windows コンピューター用クライアントをアップグレードする方法](../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md)」を参照してください。  
+>  Se un client di Configuration Manager ha più schede di rete e di conseguenza più indirizzi IP, l'indirizzo IP usato per l'assegnazione al sito di un client a scopo di valutazione viene assegnato in modo casuale.  
 
-また、Configuration Manager では、Configuration Manager (現在のブランチ) クライアントをサポートしているサイトにそのクライアントが割り当てられていることも確認します。 Configuration Manager の以前のバージョンからの移行中に生じる可能性があるシナリオは次のとおりです。  
+ Per informazioni su come configurare gruppi di limiti per l'assegnazione sito e un sito di fallback per l'assegnazione sito automatica, vedere [Define site boundaries and boundary groups for System Center Configuration Manager](../../../core/servers/deploy/configure/define-site-boundaries-and-boundary-groups.md).  
 
--   シナリオ: サイトの自動割り当てを使用していて、境界が、以前のバージョンの Configuration Manager で定義されている境界と重複する。  
+ I client di Configuration Manager che usano l'assegnazione al sito automatica tentano di individuare i gruppi limite del sito pubblicati in Servizi di dominio Active Directory. Se tale metodo ha esito negativo, se ad esempio lo schema Active Directory non è esteso per Configuration Manager oppure i client sono computer di un gruppo di lavoro, i client possono reperire le informazioni sui gruppi di limiti da un punto di gestione.  
 
-     この場合、クライアントは Configuration Manager (現在のブランチ) サイトの検索を自動的に試行します。  
+ È possibile specificare un punto di gestione che i computer client possono utilizzare al momento dell'installazione, oppure i client possono individuare un punto di gestione tramite pubblicazione DNS o WINS.  
 
-     最初にクライアントは、Active Directory Domain Services を確認します。発行されている Configuration Manager (現在のブランチ) サイトが見つかった場合は、サイトの割り当てが成功します。 これが失敗した場合 (たとえば、Configuration Manager サイトが公開されていない場合や、コンピューターがワークグループ クライアントである)、クライアントは、割り当てられている管理ポイントからのサイト情報を確認します。  
+ Se il client non è in grado di rilevare un sito associato a un gruppo di limiti contenente il relativo percorso di rete, e non è presente un sito di fallback nella gerarchia, il client eseguirà dei tentativi a intervalli di 10 minuti fino a quando non sarà assegnato a un sito.  
+
+ I computer client di Configuration Manager non possono essere assegnati automaticamente a un sito nei seguenti casi, per i quasi sarà invece necessaria un'assegnazione manuale:  
+
+-   Sono attualmente assegnati a un sito.  
+
+-   Si trovano su Internet o sono configurati come client Internet esclusivi.  
+
+-   Il relativo percorso di rete non rientra in uno dei gruppi di limiti configurati nella gerarchia di Configuration Manager e non è presente alcun sito di fallback per la gerarchia.  
+
+##  <a name="completing-site-assignment-by-checking-site-compatibility"></a>Completamento dell'assegnazione del sito tramite controllo della compatibilità del sito  
+ Dopo che un client ha individuato il sito assegnato, vengono controllati sistema operativo e versione del client per verificare che quest'ultimo possa essere gestito da un sito di Configuration Manager. Ad esempio, Configuration Manager non può gestire i client di Configuration Manager 2007, i client di System Center 2012 Configuration Manager o i client che eseguono Windows 2000.  
+
+ L'assegnazione al sito ha esito negativo se un client che esegue Windows 2000 viene assegnato a un sito di Configuration Manager. Quando si assegna un client di Configuration Manager 2007 o di System Center 2012 Configuration Manager a un sito di Configuration Manager (Current Branch), l'assegnazione ha esito positivo per il supporto dell'aggiornamento automatico del client. Tuttavia, finché i client di generazione precedente non vengono aggiornati a un client di Configuration Manager (ramo corrente), Configuration Manager non riuscirà a gestire questo client usando le impostazioni, le applicazioni o gli aggiornamenti software del client.  
+
+> [!NOTE]  
+>  Per supportare l'assegnazione di un client di Configuration Manager 2007 o di System Center 2012 Configuration Manager a un sito di Configuration Manager (ramo corrente), è necessario configurare l'aggiornamento automatico del client per la gerarchia. Per altre informazioni, vedere [Come aggiornare i client per i computer Windows in System Center Configuration Manager](../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
+
+Configuration Manager controlla anche che il client di Configuration Manager (ramo corrente) sia stato assegnato a un sito che lo supporta. Durante la migrazione da versioni precedenti di Configuration Manager potrebbero verificarsi gli scenari seguenti.  
+
+-   Scenario: è stata usata l'assegnazione al sito automatica e i limiti si sovrappongono ai limiti definiti in una versione precedente di Configuration Manager.  
+
+     In questo caso il client prova a rilevare automaticamente un sito di Configuration Manager (Current Branch).  
+
+     Il client esegue prima un controllo in Servizi di dominio Active Directory e, se rileva un sito di Configuration Manager (ramo corrente) pubblicato, l'assegnazione al sito riesce. In caso contrario, ad esempio se il sito di Configuration Manager non è pubblicato o il computer è un client di un gruppo di lavoro, il client verificherà la presenza di informazioni del sito dal punto di gestione assegnato.  
 
     > [!NOTE]  
-    >  クライアントのインストール時に、Client.msi のプロパティ **SMSMP=&lt;server_name>** を使用して、クライアントに管理ポイントを割り当てることができます。  
+    >  È possibile assegnare un punto di gestione al client durante l'installazione del client usando la proprietà Client.msi **SMSMP=&lt;nome_server>**.  
 
-     どちらの方法も失敗した場合は、サイト割り当てが失敗し、クライアントを手動で割り当てる必要があります。  
+     Se entrambi i metodi hanno esito negativo, si verifica un errore di assegnazione del sito ed è necessario assegnare il client manualmente.  
 
--   シナリオ: サイトの自動割り当てを使用せずに、特定のサイト コードを使用して Configuration Manager (現在のブランチ) クライアントを割り当てたときに、System Center 2012 R2 Configuration Manager より前のバージョンの Configuration Manager のサイト コードを誤って指定した。  
+-   Scenario: il client di Configuration Manager (ramo corrente) è stato assegnato usando un codice sito specifico anziché l'assegnazione automatica, ma è stato erroneamente specificato un codice sito per una versione di Configuration Manager precedente System Center 2012 R2 Configuration Manager.  
 
-     この場合は、サイトの割り当ては失敗します。クライアントを Configuration Manager (現在のブランチ) サイトに手動で再び割り当てる必要があります。  
+     In questo caso l'assegnazione al sito non riesce ed è necessario riassegnare il client manualmente a un sito di Configuration Manager (ramo corrente).  
 
- サイト互換性チェックには、次のうちいずれかの条件が必要です。  
+ Il controllo di compatibilità del sito richiede una delle seguenti condizioni:  
 
--   クライアントが、Active Directory ドメイン サービスに発行されているサイト情報にアクセスできる  
+-   Il client può accedere alle informazioni del sito pubblicate in Servizi di dominio Active Directory.  
 
--   クライアントが、サイト内の管理ポイントと通信できる  
+-   Il client può comunicare con un punto di gestione nel sito.  
 
- サイト互換性チェックが正常に完了しない場合、サイトの割り当ては失敗し、サイト互換性チェックが再度実行されて正常に完了するまで、クライアントは管理されないままになります。  
+ Se la verifica compatibilità del sito non viene completata correttamente, l'assegnazione al sito avrà esito negativo e il client resterà non gestito fino a quando tale verifica non verrà completata correttamente durante la successiva esecuzione.  
 
- サイト互換性チェックは、クライアントがインターネット ベースの管理ポイント用に構成されている場合は、例外的に実行されません。 この場合、サイト互換性チェックは実行されません。 クライアントをインターネット ベースのサイト システムが含まれているサイトに割り当てて、インターネット ベースの管理ポイントを指定する場合は、クライアントを正しいサイトに割り当てていることを確認する必要があります。 Configuration Manager 2007 サイト、System Center 2012 Configuration Manager サイト、またはインターネット ベースのサイト システムのない Configuration Manager サイトに誤ってクライアントを割り当てた場合、このクライアントは管理されません。  
+ L'eccezione all'esecuzione del controllo di compatibilità del sito riguarda il caso in cui un client venga configurato per un punto di gestione basato su Internet. In questo scenario non viene effettuata alcuna verifica compatibilità del sito. Se si stanno assegnando dei client a un sito contenente sistemi basati su Internet e si specifica un punto di gestione basato su Internet, assicurarsi che il client sia assegnato al sito corretto. Se si assegna erroneamente il client a un sito di Configuration Manager 2007, un sito di System Center 2012 Configuration Manager o un sito di Configuration Manager che non dispone di ruoli del sistema del sito basati su Internet, il client sarà non gestito.  
 
-##  <a name="locating-management-points"></a>管理ポイントを検出する  
- クライアントは、サイトに正常に割り当てられると、サイト内の管理ポイントを検出します。  
+##  <a name="locating-management-points"></a>Individuazione dei punti di gestione  
+ Dopo che un client viene assegnato a un sito, individua un punto di gestione all'interno del sito.  
 
- クライアント コンピューターは、サイト内の接続可能な管理ポイントの一覧をダウンロードします。 このプロセスは、クライアントの再起動のたびに、25 時間ごとに、またはクライアントがネットワークの変更 (ネットワークでのコンピューターの切断や再接続、新しい IP アドレスの受信など) を検出した場合に実行されます。 一覧には、イントラネットの管理ポイントと、HTTP 経由と HTTPS 経由のいずれのクライアント接続を受け入れるかの情報が含まれます。 クライアント コンピューターがインターネット上にあり、クライアントに管理ポイントの一覧がない場合、クライアントは、指定されたインターネット ベースの管理ポイントに接続して管理ポイントの一覧を取得します。 割り当てられたサイトの管理ポイントの一覧がある場合、クライアントはいずれかの管理ポイントを選択して接続します。  
+ I computer client scaricano un elenco dei punti di gestione del sito ai quali possono connettersi. Questo processo si verifica a ogni riavvio del client, oppure ogni 25 ore o se il client rileva una modifica della rete, come la disconnessione e la riconnessione del computer alla rete o la ricezione di un nuovo indirizzo IP da parte del computer. L'elenco include i punti di gestione della intranet e indica la relativa eventuale accettazione di connessioni client tramite HTTP o HTTPS. Quando il computer client si trova su Internet e non dispone ancora di un elenco di punti di gestione, si connette al punto di gestione basato su Internet specificato per ottenere tale elenco. Quando il client dispone di un elenco dei punti di gestione per il sito assegnato, ne seleziona uno a cui connettersi:  
 
--   クライアントがイントラネット上にあり、使用できる有効な PKI 証明書がある場合、クライアントは HTTP 管理ポイントの前に HTTPS 管理ポイントを選択します。 その後、フォレストのメンバーシップに基づいて、最も近い管理ポイントを見つけます。  
+-   Quando il client si trova sulla intranet e dispone di un certificato PKI valido da utilizzare, sceglie i punti di gestione HTTPS prima di quelli HTTP. Individua quindi il punto di gestione più vicino in base all'appartenenza alla relativa foresta.  
 
--   クライアントがインターネット上にある場合、クライアントはインターネット ベースの管理ポイントのいずれかをランダムに選択します。  
+-   Quando il client si trova su Internet, sceglie in modo casuale uno dei punti di gestione basati su Internet.  
 
-Configuration Manager に登録されているモバイル デバイス クライアントは、割り当てられたサイトの 1 つの管理ポイントにのみ接続し、セカンダリ サイトの管理ポイントには接続しません。 これらのクライアントは常に HTTPS 経由で接続するため、インターネット経由のクライアント接続を受け入れるように管理ポイントを構成する必要があります。 プライマリ サイトにモバイル デバイス クライアント用の複数の管理ポイントがある場合、Configuration Manager は、割り当て時にこれらの管理ポイントのいずれかをランダムに選択し、モバイル デバイス クライアントは同じ管理ポイントを使用し続けます。  
+I client dei dispositivi mobili registrati da Configuration Manager si connettono solo a un punto di gestione nel relativo sito assegnato e non si connettono mai ai punti di gestione nei siti secondari. Questi client si connettono sempre tramite HTTPS e il punto di gestione deve essere configurato per l'accettazione delle connessioni client su Internet. In presenza di più di un punto di gestione per i client dei dispositivi mobili nel sito primario, Configuration Manager ne sceglie uno in modo casuale durante l'assegnazione e il client del dispositivo mobile continua a usare lo stesso punto di gestione.  
 
-クライアントがサイト内の管理ポイントからクライアント ポリシーをダウンロードすると、クライアントは管理されたクライアントになります。  
+Una volta scaricati i criteri client da un punto di gestione nel sito, il client diventa gestito.  
 
-##  <a name="downloading-site-settings"></a>サイト設定をダウンロードする  
- サイト割り当てが完了し、クライアントが管理ポイントを検出すると、サイト互換性チェックに Active Directory ドメイン サービスを使用するクライアント コンピューターは、割り当てられたサイトのクライアント関連のサイト設定をダウンロードします。 これらの設定には、クライアント証明書の選択条件、証明書失効リストを使用するかどうか、およびクライアント要求のポート番号が含まれています。 クライアントはこれらの設定を定期的に確認します。  
+##  <a name="downloading-site-settings"></a>Download delle impostazioni del sito  
+ Al termine dell'assegnazione del sito e dopo che il client ha rilevato un punto di gestione, un computer client che utilizza Servizi di dominio Active Directory per il relativo controllo di compatibilità del sito scarica le impostazioni del sito relative al client per il sito assegnato. Tali impostazioni includono i criteri di selezione del certificato client, l'opzione per l'utilizzo di un elenco di revoche di certificati e i numeri porta di richiesta client. Il client continuerà a controllare queste impostazioni su base periodica.  
 
- Active Directory ドメイン サービスからサイト設定を取得できない場合、クライアント コンピューターは管理ポイントからサイト設定をダウンロードします。 クライアント コンピューターは、クライアント プッシュを使用したインストール時にサイト設定を取得することもできます。また、CCMSetup.exe とクライアント インストールのプロパティを使用して手動で指定することもできます。 クライアント インストールのプロパティの詳細については、「[System Center Configuration Manager のクライアント インストール プロパティについて](../../../core/clients/deploy/about-client-installation-properties.md)」を参照してください。  
+ Quando i computer client non sono in grado di ottenere le impostazioni del sito da Servizi di dominio Active Directory, le scaricano dal proprio punto di gestione. I computer client possono ottenere tali impostazioni anche quando vengono installati tramite installazione push client oppure quando vengono specificate manualmente usando le proprietà di installazione client e CCMSetup.exe. Per altre informazioni sulle proprietà di installazione dei client, vedere [Informazioni sulle proprietà di installazione del client in System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
-##  <a name="downloading-client-settings"></a>クライアント設定をダウンロードする  
- すべてのクライアントが、既定のクライアント設定ポリシーと適切なカスタムのクライアント設定ポリシーをダウンロードします。 ソフトウェア センターは、Windows コンピューターのこれらのクライアント構成ポリシーを使用するため、この構成情報がダウンロードされるまでソフトウェア センターが正常に実行されないことをユーザーに通知します。 構成されているクライアント設定によっては、クライアント設定の初回ダウンロードに時間がかかることがあります。また、このプロセスが完了するまで、一部の管理タスクが実行されない可能性があります。  
+##  <a name="downloading-client-settings"></a>Download delle impostazioni client  
+ Tutti i client scaricano i criteri delle impostazioni client predefinite nonché qualsiasi criterio delle impostazioni client personalizzate applicabile. Software Center si basa su questi criteri di configurazione client per i computer Windows e comunica agli utenti che non potrà essere eseguito correttamente finché tali informazioni di configurazione non saranno scaricate. A seconda delle impostazioni client configurate, il download iniziale potrebbe richiedere qualche istante e alcune attività di gestione client potrebbero non essere eseguite fino al completamente del processo.  
 
-##  <a name="verifying-site-assignment"></a>サイト割り当てを確認する  
- 次のいずれかの方法を使用して、サイト割り当てが正常に行われていることを確認できます。  
+##  <a name="verifying-site-assignment"></a>Verifica dell'assegnazione del sito  
+ È possibile verificare l'esito dell'assegnazione del sito usando uno dei metodi seguenti:  
 
--   Windows コンピューターのクライアントには、コントロール パネルの Configuration Manager を使用し、[**サイト**] タブにサイト コードが正しく表示されることを確認します。  
+-   Per i client su computer Windows, usare Configuration Manager nel Pannello di controllo e verificare che il codice del sito sia visualizzato correttamente nella scheda **Sito**.  
 
--   クライアント コンピューターの場合、[**資産とコンプライアンス**] ワークスペースの [**デバイス**] ノードで、コンピューターの [**クライアント**] 列に [**はい**] が表示され、[**サイト コード**] 列に正しいプライマリ サイト コードが表示されることを確認する。  
+-   Per i computer client, nell'area di lavoro **Asset e conformità** > nodo **Dispositivi** verificare che il computer visualizzi **Sì** per la colonna **Client** e il codice sito primario corretto per la colonna **Codice sito**.  
 
--   モバイル デバイス クライアントの場合、[ **資産とコンプライアンス** ] ワークスペースの [ **すべてのモバイル デバイス** ] コレクションを使用して、モバイル デバイスの [ **クライアント** ] 列に [ **はい** ] が表示され、[ **サイト コード** ] 列に正しいプライマリ サイト コードが表示されることを確認する  
+-   Per i client dispositivo mobile, nell'area di lavoro **Asset e conformità** utilizzare la raccolta **Tutti i dispositivi mobili** per verificare che il dispositivo mobile visualizzi **Sì** per la colonna **Client** e il codice sito primario corretto per la colonna **Codice sito** .  
 
--   クライアント割り当てとモバイル デバイス登録のレポートを使用する  
+-   Utilizzare i report per l'assegnazione del client e la registrazione del dispositivo mobile.  
 
--   クライアント コンピューターの場合、クライアント上の LocationServices.log ファイルを使用する  
+-   Per i computer client, utilizzare il file LocationServices.log nel client.  
 
-##  <a name="roaming-to-other-sites"></a>他のサイトにローミングする  
- イントラネット上のクライアント コンピューターがプライマリ サイトに割り当てられており、別のサイトに構成されている境界グループに入るようにネットワークの場所が変更された場合、これらのクライアント コンピューターは別のサイトにローミングされます。 このサイトが、割り当てられたサイトのセカンダリ サイトである場合、クライアントはセカンダリ内の管理ポイントを使用してクライアント ポリシーのダウンロードとクライアント データのアップロードを行うため、このデータは低速ネットワーク経由では送信されません。 ただし、これらのクライアントが、別のプライマリ サイトの境界または割り当てられたサイトの子サイトでないセカンダリの境界にローミングする場合、これらのクライアントは常に、割り当てられたサイト内の管理ポイントを使用して、クライアント ポリシーのダウンロードとサイトへのデータのアップロードを行います。  
+##  <a name="roaming-to-other-sites"></a>Roaming in altri siti  
+ Quando i computer client nella Intranet sono assegnati a un sito primario ma cambiano percorso di rete così da ricadere in un gruppo di limiti configurato per un altro sito, vanno in roaming in un altro sito. Quando tale sito è un sito secondario del sito loro assegnato, i client possono utilizzare un punto di gestione nel secondario per scaricare criteri client e caricare dati client, evitando così di trasmettere tali dati in una rete potenzialmente lenta. I client che eseguono il roaming nei limiti di un altro sito primario o di un secondario che non è un sito figlio del sito loro assegnato utilizzano comunque sempre un punto di gestione nel sito loro assegnato per scaricare criteri client e caricare dati nel proprio sito.  
 
- ほかのサイト (すべてのプライマリ サイトとすべてのセカンダリ サイト) にローミングするこれらのクライアント コンピューターは、コンテンツの場所を要求するため、いつでもほかのサイトの管理ポイントを使用できます。 現在のサイトの管理ポイントは、クライアントが要求するコンテンツを持つ配布ポイントの一覧を、クライアントに渡すことができます。  
+ I computer client che eseguono il roaming in altri siti (tutti i siti primari e tutti i siti secondari) possono sempre utilizzare i punti di gestione in altri siti per le richieste di percorso dei contenuti. I punti di gestione del sito corrente possono fornire ai client un elenco dei punti di distribuzione che dispongono dei contenuti richiesti dai client.  
 
- インターネットのみで管理されるように構成されたクライアント コンピューターや、Configuration Manager に登録されたモバイル デバイスおよび Mac コンピューター用に構成されたクライアント コンピューターの場合は、クライアントは割り当てられたサイトの管理ポイントとのみ通信します。 これらのクライアントは、セカンダリ サイトの管理ポイントや、ほかのプライマリ サイトの管理ポイントと通信することは一切ありません。  
+ Per i computer client configurati per la gestione client basata solo su Internet e per i dispositivi mobili e i computer Mac registrati da Configuration Manager, questi client comunicano solo con i punti di gestione presenti nel sito loro assegnato. Questi client non comunicano mai con i punti di gestione presenti in siti secondari o in altri siti primari.  

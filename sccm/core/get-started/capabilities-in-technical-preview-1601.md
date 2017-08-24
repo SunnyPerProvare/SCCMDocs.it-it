@@ -1,6 +1,6 @@
 ---
-title: "Configuration Manager の Technical Preview 1601 の機能"
-description: "System Center Configuration Manager の Technical Preview バージョン 1601 で使用できる機能について説明します。"
+title: "Funzionalità della versione Technical Preview 1601 per Configuration Manager"
+description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1601 per System Center Configuration Manager."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -18,24 +18,24 @@ robots: noindex,nofollow
 ms.openlocfilehash: ef0db5b11ae2be5edcb4db87400c5c273c89972e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1601-for-system-center-configuration-manager"></a>System Center Configuration Manager の Technical Preview 1601 の機能
+# <a name="capabilities-in-technical-preview-1601-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1601 per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Technical Preview)*
+*Si applica a: System Center Configuration Manager (Technical Preview)*
 
-この記事では、System Center Configuration Manager の Technical Preview バージョン 1601 で使用できる機能について説明します。 このバージョンをインストールして更新し、新機能を Configuration Manager の Technical Preview サイトに追加できます。      このバージョンの Technical Preview をインストールする前に、説明のトピック「[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)」を確認して、Technical Preview の使用に関する一般的な要件と制限、バージョン間の更新方法、および Technical Preview の機能に関するフィードバックを提供する方法について理解してください。  
+Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1601 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.  
 
- **この Technical Preview の既知の問題:**  
+ **Problemi noti di questa versione Technical Preview:**  
 
--   [**Client Update Options (クライアント更新オプション)**] を管理して、実稼働前クライアントを実稼働版に昇格するときに、このチェック ボックスのテキストに、実際のクライアント ビルド番号ではなく、クライアント バージョン 0 が表示されます。 実稼働前クライアントの正しいバージョンはこのオプションの上にある画面に表示され、このオプションを選択すると、実稼働版に昇格されるクライアント バージョンです。  
+-   quando di gestiscono le **Opzioni di aggiornamento client** per alzare il livello di un client di pre-produzione a client di produzione, il testo della casella di controllo indica una versione client zero (0) invece del numero effettivo della build client. La versione corretta del client di pre-produzione è indicata nell'area sopra questa opzione e corrisponde alla versione del client alzato di livello a client di produzione quando si seleziona questa opzione.  
 
--   Technical Preview 1601 に更新し、実稼働前コレクションで Configuration Manager クライアントをテストするように選択した場合、コレクションのクライアント パッケージはアップグレードされません。 この問題は Technical Preview 1601 のみが対象です。  
+-   Quando si esegue l'aggiornamento alla versione Technical Preview 1601 e si sceglie di testare il client di Configuration Manager in una raccolta di pre-produzione, il pacchetto client per la raccolta non verrà aggiornato. Questo problema riguarda solo la Technical Preview 1601.  
 
-     この問題を回避するには、次のいずれかを行います。  
+     Per una soluzione alternativa a questo problema, effettuare una delle operazioni seguenti:  
 
-    -   プライマリ サイトのデータベースで、次の SQL スクリプトを実行します。  
+    -   Eseguire lo script SQL seguente nel database del sito primario:  
 
         ```  
         DECLARE @PilotingPkgID NVARCHAR(8)  
@@ -56,165 +56,165 @@ ms.lasthandoff: 08/07/2017
 
         ```  
 
-    -   ラボ サイトに新しい配布ポイント サイト システム役割を追加します。 新しい配布ポイントでは、新しいクライアント パッケージを使用して実稼働前コレクションをアップグレードします。  
+    -   Aggiungere un nuovo ruolo del sistema del sito del punto di distribuzione al sito lab. Il nuovo punto di distribuzione aggiornerà la raccolta di pre-produzione con il nuovo pacchetto client.  
 
-**このバージョンでお試しいただける新機能を次に示します。**  
+**Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
-##  <a name="bkmk_hybrid1"></a> Microsoft Intune の統合の機能強化  
-1601 Technical Preview では、次の機能のサポートが追加されました。  
+##  <a name="bkmk_hybrid1"></a> Miglioramenti dell'integrazione di Microsoft Intune  
+Nella Technical Preview 1601 è stato aggiunto il supporto delle funzionalità seguenti:  
 
-### <a name="improvements-to-conditional-access"></a>条件付きアクセスの機能強化  
+### <a name="improvements-to-conditional-access"></a>Miglioramenti per l'accesso condizionale  
 
--   **System Center Configuration Manager が管理する PC の条件付きアクセス サポート**  
+-   **Supporto dell'accesso condizionale per i PC gestiti da System Center Configuration Manager**  
 
-     System Center Configuration Manager の管理対象 PC に条件付きアクセス ポリシーを設定できるようになりました。こうすると、Exchange Online サービスと SharePoint Online サービスにアクセスするために、対象の PC がコンプライアンス ポリシーに準拠していることが必要になります。  この新しい機能を使用すると、コンプライアンス ポリシーによって PC を Azure AD に登録し、Azure AD 登録を監視してレポートすることもできます。  
+     È ora possibile impostare criteri di accesso condizionale per i PC gestiti da System Center Configuration Manager, che richiedono che i PC siano conformi ai criteri di conformità per accedere ai servizi Exchange Online e SharePoint Online.  Con questa nuova funzionalità, è anche possibile registrare i PC in Azure AD tramite i criteri di conformità, oltre a monitorare la registrazione in Azure AD e generare report corrispondenti.  
 
     > [!NOTE]  
-    >  条件付きアクセスは、Windows 10 ではまだサポートされていません。  
+    >  L'accesso condizionale non è ancora supportato in Windows 10.  
 
-    この機能を使用する前提条件を次に示します。  
+    L'elenco seguente include i prerequisiti per usare questa funzionalità:  
 
-    -   Azure Active Directory Premium サブスクリプションと ADFS 同期。  
+    -   Sottoscrizione di Azure Active Directory Premium e ADFS Sync.  
 
-    -   Microsoft Intune サブスクリプション。 Microsoft Intune サブスクリプションは、Configuration Manager コンソールで構成する必要があります。  
+    -   Sottoscrizione di Microsoft Intune. La sottoscrizione di Microsoft Intune deve essere configurata nella console di Configuration Manager.  
 
-    -   [Azure AD 自動登録の前提条件](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1)。  
+    -   [Prerequisiti per la registrazione automatica in Azure AD](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
 
-    このオプションを使用するには、以下に示す特定のルールが含まれるコンプライアンス ポリシーを Configuration Manager で作成し、Intune コンソールで条件付きアクセス ポリシーを設定する必要があります。  また、コンプライアンスに適合した PC のみにアクセスが許可されるようにするため、Windows コンピューターの要件で [**デバイスは準拠デバイスである必要があります**] オプションを設定しなければなりません。 System Center Configuration Manager によって管理される PC に適用されるコンプライアンス ポリシー ルールを次に示します。  
+    Per usare l'opzione, è necessario creare un criterio di conformità in Configuration Manager con le regole specifiche descritte di seguito e impostare un criterio di accesso condizionale nella console di Intune.  Inoltre, per assicurarsi che l'accesso sia consentito solo ai PC conformi, è necessario impostare il requisito PC Windows per l'opzione **I dispositivi devono essere conformi**. Di seguito sono descritte le regole dei criteri di conformità applicabili ai PC gestiti da System Center Configuration Manager.  
 
-    -   **Azure Active Directory への登録が必要**: このルールは、ユーザーのデバイスが Azure AD に社内参加しているかどうかをチェックし、参加していない場合には Azure AD に自動的に登録します。 自動登録がサポートされているのは Windows 8.1 のみです。 Windows 7 PC の場合には、MSI を展開して自動登録を実行します。 詳しくは、[こちら](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1)をご覧ください。  
+    -   **Richiedi registrazione in Azure Active Directory:** questa regola controlla se il dispositivo dell'utente è aggiunto all'area di lavoro in Azure AD e in caso contrario il dispositivo viene registrato automaticamente in Azure AD. La registrazione automatica è supportata solo in Windows 8.1. Per i PC con Windows 7, distribuire un file MSI per eseguire la registrazione automatica. Per altre informazioni, vedere [qui](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
 
-    -   **必要な更新が特定の日数の期限を過ぎている場合、そのすべてをインストール:** このルールは、ユーザーが指定した期限および猶予期間内の必須のすべての更新 「**Required automatic updates**」 (必須の自動更新) ルールで指定 がユーザーのデバイスに含まれているかどうかを確認し、保留されている必須の更新すべてを自動的にインストールします。  
+    -   **Tutti gli aggiornamenti richiesti installati con una scadenza maggiore di X giorni:** questa regola controlla se il dispositivo dell'utente dispone di tutti gli aggiornamenti necessari **specificati nella regola Richiedi aggiornamenti automatici** entro la scadenza e il periodo di tolleranza specificati dall'utente e installa automaticamente eventuali aggiornamenti necessari in sospeso.  
 
-    -   **BitLocker ドライブ暗号化が必要:** これは、デバイスのプライマリ ドライブ (C:\\ など) が BitLocker で暗号化されたかどうかをチェックします。 Bitlocker 暗号化がプライマリ デバイスで有効でない場合、電子メール サービスおよび SharePoint サービスへのアクセスがブロックされます。  
+    -   **Richiedi crittografia unità BitLocker**questo è un controllo per verificare se l'unità principale del dispositivo, ad esempio C:\\\, è crittografata con BitLocker. Se la crittografia Bitlocker non è attivata nel dispositivo primario, l'accesso alla posta elettronica e ai servizi di SharePoint è bloccato.  
 
-    -   **マルウェア対策が必要:** これは、マルウェア対策ソフトウェア (System Center Endpoint Protection または Windows Defender 限定) が有効で実行されているかどうかをチェックします。  
-         無効な場合、電子メール サービスおよび SharePoint サービスへのアクセスがブロックされます。  
+    -   **Richiedi antimalware:** questo è un controllo per verificare se il software antimalware (System Center Endpoint Protection o solo Windows Defender) è abilitato e in esecuzione.  
+         Se non è abilitato, l'accesso alla posta elettronica e ai servizi di SharePoint è bloccato.  
 
-    非対応のためにブロックされているエンドユーザーは、SCCM ソフトウェア センターでコンプライアンス情報を表示し、コンプライアンスに関する問題が解決されると新たにポリシー評価が開始されます。  
+    Gli utenti finali bloccati a causa di non conformità visualizzeranno le informazioni di conformità in Software Center di SCCM e verrà avviata una nuova valutazione dei criteri dopo la risoluzione dei problemi di conformità.  
 
--   **正常性構成証明書サービスによる条件付きアクセス** 電子メール サービスと 0365 サービスへのアクセスを、正常性構成証明書サービスによってレポートされるデバイスの正常性に基づいて制限できるようになりました。  さらに、Intune で管理されているデバイスが、デバイスの正常性レポートに含まれます。  
+-   **Accesso condizionale con il servizio di attestazione dell'integrità** È ora possibile limitare l'accesso alla posta elettronica e ai servizi di Office 365 in base all'integrità dei dispositivi, come segnalato dal servizio di attestazione dell'integrità.  Inoltre, i dispositivi gestiti da Intune sono inclusi nei report sull'integrità del dispositivo.  
 
-    新しいコンプライアンス ルールが Configuration Manager コンソールに追加されました。このルールを使用すると、デバイスの正常性の状態に基づいてアクセスを許可するかブロックするかを指定できます。  このルールを作成するには、[**コンプライアンス ポリシーの作成ウィザード**] を開き、新しいルールを追加します。  条件として 「**Reported as health by Health Attestation Service**」 (正常性構成証明書サービスによって正常と報告される) を選択し、値を **True** にします。  これにより、正常と報告されるデバイスのみが、会社のリソースにアクセスできるようになります。 正常性構成証明書サービスと Intune でデバイスの正常性を報告する方法に関する詳細については、「[デバイス正常性構成証明書](#bkmk_devicehealth)」をご覧ください。  
+    È stata aggiunta una nuova regola di conformità alla console di Configuration Manager che consente di specificare se l'accesso deve essere consentito o negato ai dispositivi in base al loro stato di integrità.  Per creare questa regola, aprire la **Creazione guidata criteri di conformità** e aggiungere una nuova regola.  Selezionare la condizione **Segnalato come integro dal servizio di attestazione dell'integrità** e impostare il valore su **True**.  Questo garantirà che solo i dispositivi segnalati come integri avranno accesso alle risorse aziendali. Per informazioni dettagliate sul servizio di attestazione dell'integrità e su come viene segnalata l'integrità dei dispositivi in Intune, vedere [Device Health Attestation](#bkmk_devicehealth) (Attestazione dell'integrità dei dispositivi).  
 
--   **新しいコンプライアンス ポリシーの設定:** 新しいコンプライアンス ポリシーの設定を使用すると、会社の電子メール サービスおよび SharePoint サービスにアクセスするために使用するデバイスのセキュリティと保護を強化できます。  
+-   **Nuove impostazioni dei criteri di conformità:** le nuove impostazioni dei criteri di conformità consentono di migliorare la sicurezza e la protezione nei dispositivi utilizzati per accedere alla posta elettronica aziendale e ai servizi di SharePoint:  
 
-    -   **自動更新が必要:** Windows 8.1 以降のデバイスで、更新プログラムの自動インストールを許可し、インストールされる更新プログラムのクラスを指定できるように求めることができます。  重要というマークが付いている更新のみをインストールするか、推奨される更新すべてをインストールするかを選択できます。  
+    -   **Richiedi aggiornamenti automatici:** è possibile richiedere ai dispositivi con Windows 8.1 o versione successiva di consentire l'installazione automatica degli aggiornamenti e anche di specificare la classe degli aggiornamenti installati.  È possibile scegliere di installare solo gli aggiornamenti contrassegnati come importanti o tutti gli aggiornamenti consigliati.  
 
-         自動更新用のルールを作成するには、[**コンプライアンス ポリシーの作成ウィザード**] を開き、新しいルールを追加します。  条件として [**Minimum classification of required updates**]\(必須の更新プログラムの最小限の分類) を選択し、値を [**なし**]、[**推奨**]、[**重要**] のいずれかに設定します。  
+         Per creare una regola per gli aggiornamenti automatici, aprire la **Creazione guidata criteri di conformità** e aggiungere una nuova regola.  Selezionare **Classificazione minima aggiornamenti richiesti** come condizione e impostare l'opzione su uno dei valori disponibili: **Nessuno**, **Consigliati** e **Importanti**.  
 
-        -   [**なし**]: 更新プログラムは自動的にインストールされません。  
+        -   **Nessuno:** gli aggiornamenti non vengono installati automaticamente.  
 
-        -   [**推奨**]: すべての推奨される更新プログラムがインストールされます。  
+        -   **Consigliati:** vengono installati tutti gli aggiornamenti consigliati  
 
-        -   [**重要**] 重要として分類された更新プログラムのみがインストールされます。  
+        -   **Importanti:** vengono installati solo gli aggiornamenti classificati come importanti.  
 
-    -   **モバイル デバイスのロックを解除するパスワードを要求する:** この設定を [**はい**] にすると、ユーザーは対象デバイスにアクセスする前にパスワードを入力する必要があります。  
+    -   **Richiedi una password per sbloccare i dispositivi mobili:** quando questa opzione è impostata su **Sì**, gli utenti finali devono immettere una password per poter accedere al dispositivo.  
 
-         モバイル デバイスのロックを解除するためのルールを作成するには、[**コンプライアンス ポリシーの作成ウィザード**] を開き、新しいルールを追加します。 条件として [**Require a password to unlock an idle device**]\(アイドル状態のデバイスのロックを解除するパスワードを要求する) を選択し、値を **True** にします。  
+         Per creare una regola per la password con cui sbloccare i dispositivi mobili, aprire la **Creazione guidata criteri di conformità** e aggiungere una nuova regola. Selezionare **Richiedi una password per sbloccare un dispositivo inattivo** come condizione e impostare il valore su **True**.  
 
-    -   **デバイスの画面がロックされるまでの非アクティブな時間 (分):** ユーザーがパスワードを再入力しなければならなくなるまでのアイドル時間を指定します。  
+    -   **Minuti di inattività prima che venga richiesta la password:** specifica il tempo di inattività prima che l'utente debba immettere nuovamente la password.  
 
-         このルールを作成するには、[**コンプライアンス ポリシーの作成ウィザード**] を開き、新しいルールを追加します。 条件として [**デバイスの画面がロックされるまでの非アクティブな時間 (分)**] を選択し、値を 1 分、5 分、15 分、30 分、1 時間のいずれかのオプションに設定します。  
+         Per creare questa regola, aprire la **Creazione guidata criteri di conformità** e aggiungere una nuova regola. Selezionare **Minuti di inattività prima che venga richiesta la password** come condizione e impostare l'opzione su uno dei valori disponibili: 1 minuto, 5 minuti, 15 minuti, 30 minuti, 1 ora.  
 
--   **既定ルールより優先 - Intune に登録された準拠デバイスがオンプレミスの Exchange にいつでもアクセスできるようにする:**  
+-   **Sostituzione regola predefinita - Consenti sempre ai dispositivi registrati in Intune e conformi di accedere a Exchange locale:**  
 
-     このオプションをオンにすると、Intune に登録され、コンプライアント ポリシーに準拠しているデバイスはオンプレミスの Exchange へのアクセスが許可されます。 このルールは既定のルールに優先します。つまり、アクセスを検疫またはブロックする既定のルールを設定した場合でも、登録された準拠デバイスは引き続きオンプレミスの Exchange にアクセスできます。  
-     この設定は、登録された準拠デバイスを、オンプレミスの Exchange を介して電子メールにいつでもアクセスさせる場合に使用します。  
+     Quando si seleziona questa opzione, i dispositivi registrati in Intune e conformi ai criteri di conformità possono accedere a Exchange locale. Questa regola sostituisce la regola predefinita, ossia anche se si definisce per la regola predefinita l'impostazione per la quarantena o il blocco dell'accesso, i dispositivi registrati e conformi potranno accedere a Exchange locale.  
+     Usare questa impostazione quando si vuole che i dispositivi registrati e conformi abbiano sempre accesso alla posta elettronica tramite Exchange locale.  
 
-     これは、次のプラットフォームでサポートされています。Windows Phone 8 以降、iOS 6 以降。 Android 4.0 以降、Samsung KNOX Standard 4.0 以降  
+     La funzione è supportata sulle seguenti piattaforme: Windows Phone 8 e versioni successive, iOS 6 e versioni successive. Android 4.0 e versioni successive, Samsung KNOX Standard 4.0 e versioni successive.  
 
-     このオプションを使用するには、オンプレミスの Exchange の [**条件付きアクセス ポリシーの構成ウィザード**] の [**全般**] ページに移動します。  
+     Per usare questa opzione, vedere la pagina **Generale** della **Configurazione guidata dei criteri di accesso condizionale** per Exchange locale.  
 
-##  <a name="bkmk_clientStatus"></a> クライアントのオンライン状態  
-Technical Preview 1601 以降、Configuration Manager コンソールでクライアントがオンラインとオフラインのどちらであるかがすぐにわかるようになりました。 コンソール デバイス一覧の更新されたアイコンと列によって、環境内のクライアントの状態を把握し、問題の領域と、注意が必要なその他の問題を特定できます。  
+##  <a name="bkmk_clientStatus"></a> Stato online del client  
+A partire dalla versione Technical Preview 1601, è possibile appurare rapidamente se un client è online o offline nella console di Configuration Manager. Grazie alle icone e alle colonne aggiornate negli elenchi di dispositivi della console, è possibile valutare lo stato dei client nell'ambiente in uso per identificare aree problematiche e altri problemi che richiedono attenzione.  
 
-クライアントが Configuration Manager 管理ポイント サイト システムの役割に接続されている場合には、オンラインです。 管理ポイントが、クライアントから ping のようなメッセージを受信している場合には、状態はオンラインになります。 管理ポイントがメッセージを 5 分ほど何も受け取らないと、クライアントの状態はオフラインになります。  
+Un client è online se è attualmente connesso a un ruolo del sistema del sito del punto di gestione di Configuration Manager. Fino a quando il punto di gestione riceve messaggi di tipo ping dal client, il relativo stato è online. Se il punto di gestione non riceve un messaggio per circa 5 minuti, lo stato del client diventa offline.  
 
-### <a name="icons-for-client-status"></a>クライアントの状態アイコン  
+### <a name="icons-for-client-status"></a>Icone per lo stato del client  
 
 |||  
 |-|-|  
-|![クライアントのオンライン状態アイコン](media/online-status-icon.png)|クライアントはオンラインです。|  
-|![クライアントのオフライン状態アイコン](media/offline-status-icon.png)|クライアントはオフラインです。|  
-|![クライアントの不明な状態アイコン](media/unknown-status-icon.png)|クライアントの状態は不明です。|  
+|![icona di stato online per i client](media/online-status-icon.png)|Il client è online.|  
+|![icona di stato offline per i client](media/offline-status-icon.png)|Il client è offline.|  
+|![icona di stato sconosciuto per i client](media/unknown-status-icon.png)|Lo stato del client è sconosciuto.|  
 
-### <a name="prerequisites"></a>必要条件  
- クライアントのオンライン状態には、前提条件はありません。 Configuration Manager Technical Preview 1601 がインストールされるとすぐに使用を開始できます。  
+### <a name="prerequisites"></a>Prerequisiti  
+ Non ci sono prerequisiti per lo stato online del client. È possibile iniziare a usarlo subito dopo aver installato Configuration Manager Technical Preview 1601.  
 
-### <a name="limitations"></a>制限事項  
- クライアントのオンライン状態が利用できるのは、Configuration Manager クライアントがインストールされている Windows コンピューターのみです。 クライアントのオンライン状態は、Mac コンピューター、Linux と UNIX コンピューター、オンプレミス モバイル デバイス管理によって管理されているデバイスではサポートされていません。  
+### <a name="limitations"></a>Limitazioni  
+ Lo stato online del client è disponibile solo per i computer Windows con il client di Configuration Manager installato. Lo stato online del client non è supportato per i computer Mac, Linux o UNIX o per i dispositivi gestiti con Gestione dispositivi mobili locali.  
 
-### <a name="to-view-client-online-status"></a>クライアントのオンライン状態を表示するには  
+### <a name="to-view-client-online-status"></a>Per visualizzare lo stato online del client  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]、[概要] > [デバイス]** に移動します。  
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità > Panoramica > Dispositivi**.  
 
-2.  列ヘッダーを右クリックし、デバイスのビューに追加するクライアントのオンライン状態フィールドのいずれかをクリックします。 次のフィールドがあります。  
+2.  Fare clic con il pulsante destro del mouse nell'intestazione di colonna e quindi fare clic su uno dei campi dello stato online del client per aggiungerlo alla visualizzazione del dispositivo. I campi sono  
 
-    -   **[デバイスのオンライン状態]** は、クライアントが現在オンラインとオフラインのどちらであるかを示します。  
+    -   **Stato online dispositivo** indica se il client è attualmente online o offline.  
 
-    -   [**Last Online Time**] \(前回のオンライン時刻) は、クライアントのオンライン状態がオフラインからオンラインにいつ変わったかを示します。  
+    -   **Ora ultimo stato online** indica quando lo stato online del client è cambiato da offline a online.  
 
-    -   [**Last Offline Time**] \(前回のオフライン時刻) は、状態がオンラインからオフラインにいつ変わったかを示します。  
+    -   **Ora ultimo stato offline** indica quando lo stato è cambiato da online a offline.  
 
- クライアントの状態に対する最近の変更を表示するには、コンソールを更新します。  
+ Per visualizzare le modifiche più recenti allo stato del client, aggiornare la console.  
 
-##  <a name="bkmk_appmgmt1601"></a> アプリケーション管理の機能強化  
- 1601 Technical Preview では、次の機能のサポートが追加されました。  
+##  <a name="bkmk_appmgmt1601"></a> Miglioramenti per la gestione delle applicazioni  
+ Nella Technical Preview 1601 è stato aggiunto il supporto delle funzionalità seguenti:  
 
-### <a name="manage-volume-purchased-apps-for-ios-devices"></a>iOS デバイス用のボリューム購入アプリの管理  
- 一部のアプリ ストアでは、社内で実行するアプリの複数ライセンスを購入することができます。 これは、購入したアプリの複数コピーを追跡する管理オーバーヘッドを削減するのに役立ちます。  
+### <a name="manage-volume-purchased-apps-for-ios-devices"></a>Gestione delle app acquistate tramite Volume Purchase Program per dispositivi iOS  
+ Alcuni App Store consentono di acquistare più licenze per un'app da eseguire nell'azienda. In questo modo, è possibile ridurre il sovraccarico amministrativo associato al monitoraggio di più copie delle app acquistate.  
 
- Configuration Manager は、このようなプログラムなどを通じて購入したアプリを、アプリ ストアからライセンス情報をインポートし、使用したライセンスの数を追跡することにより、管理できるようにします。  
+ Configuration Manager consente ora di gestire le app acquistate con tale programma tramite l'importazione delle informazioni di licenza dall'App Store e la verifica del numero di licenze utilizzate.  
 
- 詳しくは、「[ボリューム購入プログラムを通じて購入されたアプリの Configuration Manager での管理](https://technet.microsoft.com/library/mt627954.aspx)」をご覧ください。  
+ Per altre informazioni, vedere [Gestire le app acquistate tramite Volume Purchase Program con Configuration Manager](https://technet.microsoft.com/library/mt627954.aspx).  
 
-### <a name="ios---app-configuration-for-applicationsbr-hybrid"></a>iOS - アプリケーションのアプリ構成<br />ハイブリッド  
- 一部の iOS アプリケーションでは、アプリケーションが接続する必要があるサーバーまたはデータベースなどの事前構成設定をサポートしています。 Configuration Manager は、デバイスに対するアプリ構成ポリシーの展開をサポートするようになりました。これにより、ユーザーは情報を知る必要なくアプリをすぐに使用できます。 開発者が対象アプリでこの機能を有効にする必要があります。  
+### <a name="ios---app-configuration-for-applicationsbr-hybrid"></a>iOS - Configurazione delle applicazioni<br />Ibrido  
+ Alcune applicazioni iOS supportano impostazioni di pre-configurazione, come il server o il database a cui deve connettersi l'applicazione. Configuration Manager supporta ora la distribuzione di criteri di configurazione dell'app nel dispositivo che consentono all'utente di usare immediatamente l'app senza dover conoscere queste informazioni. Gli sviluppatori devono abilitare questa funzionalità nelle proprie app.  
 
- 現在、事前構成がサポートされているアプリが既にいくつかリリースされています。また、社内で開発された基幹業務アプリでこれらがサポートされている可能性もあります。  
+ Un numero limitato di app rilasciate pubblicamente supporta attualmente le impostazioni di pre-configurazione. È anche possibile che siano disponibili app line-of-business sviluppate internamente che supportano queste impostazioni.  
 
-#### <a name="prerequisites-for-this-scenario"></a>このシナリオの前提条件  
+#### <a name="prerequisites-for-this-scenario"></a>Prerequisiti per questo scenario  
 
--   Microsoft Intune サブスクリプションを Configuration Manager に追加しておく必要があります。  
+-   È necessario aver aggiunto una sottoscrizione di Microsoft Intune a Configuration Manager.  
 
--   有効な Apple APN 証明書を Intune サブスクリプションに追加する必要があります。  
+-   È necessario aver aggiunto un certificato APN Apple valido alla sottoscrizione di Intune.  
 
--   アプリケーション構成をサポートする iOS アプリケーションを展開する必要があります。  
+-   È necessario avere distribuito un'applicazione iOS che supporta la configurazione dell'applicazione.  
 
-#### <a name="try-it-out"></a>試してみましょう。  
- 前述の前提条件を満たした後、iOS展開の種類を使用する Configuration Manager アプリケーションを作成しなければなりません。 使用するアプリは、アプリケーション構成をサポートしている必要があります。 構成できる具体的な項目 (名前/値ペア) については、アプリケーション ベンダーの資料を参照してください。  
+#### <a name="try-it-out"></a>Prova subito!  
+ Una volta soddisfatti i prerequisiti sopra indicati, è necessario creare un'applicazione Configuration Manager che usa un tipo di distribuzione iOS. L'app usata deve supportare la configurazione dell'applicazione. Fare riferimento alla documentazione del fornitore dell'applicazione per informazioni su quali elementi specifici (coppie nome/valore), è possibile configurare.  
 
- 次に、アプリ展開の際に、アプリ構成ポリシーを iOS 展開の種類に関連付けます。 既存のアプリとコレクションを対象としている [**App Configuration Policies**] \(アプリ構成ポリシー) ノードからポリシーを展開することもできます。  
+ Associare quindi i criteri di configurazione dell'app al tipo di distribuzione iOS durante la distribuzione di app. È anche possibile distribuire i criteri dal nodo **Criteri di configurazione dell'app**, selezionando un'app e una raccolta esistente come destinazione.  
 
- 次のタスクを実行してから、このトピックの先頭付近にあるフィードバック情報を使用してその動作を報告してください。  
+ Prova a completare le attività seguenti, quindi usa le informazioni relative a commenti e suggerimenti nella parte superiore di questo argomento per comunicare i risultati:  
 
--   アプリ構成をサポートする iOS アプリの場合は、アプリ ベンダーの資料を参照して、アプリケーションを構成するために指定する必要がある名前と値のペアを調べてください。  
+-   Se è disponibile un'app iOS che supporta la configurazione dell'app, consultare la documentazione del fornitore dell'app per trovare le coppie nome/valore che è necessario specificare per configurare l'applicazione.  
 
--   [**Create App Configuration Policy**] \(アプリ構成ポリシーの作成) ウィザードを開始します。 ウィザードの [**iOS のポリシー**] ページで、アプリ ベンダーの資料で調べた名前と値のペアを追加するか、必要な値が入っている XML ファイルをインポートできます。  
+-   Avviare la procedura guidata **Crea criteri di configurazione app**. Nella pagina **Criteri iOS** della procedura guidata provare ad aggiungere le coppie nome/valore riportate nella documentazione del fornitore dell'app oppure importare un file XML contenente i valori richiesti.  
 
--   [**ソフトウェアの展開**] ウィザードの [**App Configuration Policy**] \(アプリ構成ポリシー) ページで、作成したアプリ構成ポリシーを、アプリケーションの互換性がある展開の種類と関連付けます。  
+-   Nella **Distribuzione guidata del software**, nella pagina **Criteri di configurazione dell'app**, associare i criteri di configurazione dell'app creati a un tipo di distribuzione compatibile dall'applicazione.  
 
-##  <a name="bkmk_compliance1601"></a> コンプライアンス設定の機能強化  
- 1601 Technical Preview では、次の機能のサポートが追加されました。  
+##  <a name="bkmk_compliance1601"></a> Miglioramenti per le impostazioni di conformità  
+ Nella Technical Preview 1601 è stato aggiunto il supporto delle funzionalità seguenti:  
 
-### <a name="microsoft-edge-browser-settings"></a>Microsoft Edge ブラウザーの設定  
- Microsoft Edge ブラウザーの新しい設定が、**Windows 8.1 および Windows 10** 構成項目 (Windows 10 デバイスのみに適用される設定) に追加されました。  
+### <a name="microsoft-edge-browser-settings"></a>Impostazioni del browser Microsoft Edge  
+ Sono state aggiunte nuove impostazioni per il browser Microsoft Edge all'elemento di configurazione **Windows 8.1 e Windows 10** (le impostazioni si applicano solo ai dispositivi Windows 10).  
 
- これらの新しい設定を確認するには、[**構成項目の作成**] ウィザードの構成項目 [**デバイス設定**] ページで、[**Microsoft Edge**] を選択します。  
+ Per visualizzare le nuove impostazioni, scegliere **Microsoft Edge** nella pagina **Impostazioni dispositivo** dell'elemento di configurazione della **Creazione guidata dell'elemento di configurazione**.  
 
- 詳しくは、「[System Center Configuration Manager クライアントを使用せずに管理されている Windows 8.1 デバイスと Windows 10 デバイスの構成項目を作成する方法](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md)」をご覧ください。  
+ Per altre informazioni, vedere [Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
 
-### <a name="compliance-settings-for-windows-10-team-devices"></a>Windows 10 Team デバイスのコンプライアンス設定  
- これらの新しいコンプライアンス設定を使用すると、Surface Hub デバイスなどの Windows 10 Team を実行するデバイスを構成できます。  
+### <a name="compliance-settings-for-windows-10-team-devices"></a>Impostazioni di conformità per i dispositivi Windows 10 Team  
+ Usare le nuove impostazioni di conformità per configurare i dispositivi che eseguono Windows 10 Team, ad esempio dispositivi Surface Hub.  
 
- 新しい設定を確認するには、[**構成項目の作成**] ウィザードの構成項目 [**デバイス設定**] ページで、[**Windows 10 Team**] を選択します。  
+ Per visualizzare le nuove impostazioni, scegliere **Windows 10 Team** nella pagina **Impostazioni dispositivo** dell'elemento di configurazione della **Creazione guidata dell'elemento di configurazione**.  
 
- 詳しくは、「[System Center Configuration Manager クライアントを使用せずに管理されている Windows 8.1 デバイスと Windows 10 デバイスの構成項目を作成する方法](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md)」をご覧ください。  
+ Per altre informazioni, vedere [Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
 
-### <a name="android---kiosk-mode-for-samsung-knox-standardbr-hybrid"></a>Android - Samsung KNOX Standard のキオスク モード<br />ハイブリッド  
- キオスク モードを使用すると、特定の機能のみ実行できるようにデバイスをロックできます。 たとえば、指定した 1 つの管理対象アプリの実行のみをデバイスに許可することや、デバイスのボリューム ボタンを無効にすることができます。 これらの設定は、デバイスのデモ モデルや、POS デバイスなどの 1 つの機能の実行専用のデバイス向けに使用できます。 これらの設定は、**Windows 8.1 および Windows 10** 構成項目 (Windows 10 デバイスのみに適用される設定) で Samsung KNOX Standard デバイスには使用できません。  
+### <a name="android---kiosk-mode-for-samsung-knox-standardbr-hybrid"></a>Android - Modalità tutto schermo per Samsung KNOX Standard<br />Ibrido  
+ La modalità tutto schermo consente di bloccare un dispositivo per consentire solo l'uso di alcune funzionalità. Ad esempio, è possibile consentire a un dispositivo di eseguire solo un'app gestita specificata o disabilitare i pulsanti del volume in un dispositivo. Queste impostazioni potrebbero essere usate per un modello demo di un dispositivo o per un dispositivo dedicato all'esecuzione di una sola funzione, ad esempio un dispositivo POS. Queste impostazioni non sono disponibili per i dispositivi Samsung KNOX Standard nell'elemento di configurazione **Windows 8.1 e Windows 10** (le impostazioni si applicano solo ai dispositivi Windows 10).  
 
- 新しい設定を確認するには、[**構成項目の作成**] ウィザードの構成項目 [**デバイス設定**] ページで、[**Kiosk Mode - Samsung KNOX**] \(キオスク モード - Samsung KNOX) を選択します。  
+ Per visualizzare le nuove impostazioni, scegliere **Modalità tutto schermo - Samsung KNOX** nella pagina **Impostazioni dispositivo** dell'elemento di configurazione della **Creazione guidata dell'elemento di configurazione**.  
 
- 詳しくは、「[System Center Configuration Manager クライアントを使用せずに管理されている Windows 8.1 デバイスと Windows 10 デバイスの構成項目を作成する方法](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md)」をご覧ください。  
+ Per altre informazioni, vedere [Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  

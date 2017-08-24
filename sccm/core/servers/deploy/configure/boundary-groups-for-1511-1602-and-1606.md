@@ -1,6 +1,6 @@
 ---
-title: "1511、1602、1606 の境界グループ |System Center Configuration Manager"
-description: "Configuration Manager バージョン 1511、1602、1606 で境界グループを使用します。"
+title: Gruppi di limiti per le versioni 1511, 1602 e 1606 | System Center Configuration Manager
+description: Usare gruppi di limiti con Configuration Manager versioni 1511, 1602 e 1606.
 ms.custom: na
 ms.date: 2/8/2017
 ms.prod: configuration-manager
@@ -17,159 +17,159 @@ manager: angrobe
 ms.openlocfilehash: 311606b8d52645d3ca89642be4cc341b8a64ec56
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="boundary-groups-for-system-center-configuration-manager-version-1511-1602-and-1606"></a>System Center Configuration Manager バージョン 1511、1602、1606 の境界グループ
+# <a name="boundary-groups-for-system-center-configuration-manager-version-1511-1602-and-1606"></a>Gruppi di limiti per System Center Configuration Manager versioni 1511, 1602 e 1606
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 <!-- This topic drops from TOC with the release of version 1706 -->
 
-このトピックの情報は、System Center Configuration Manager のバージョン 1511、1602、1606 での境界グループの使用に関するものです。
-バージョン 1610 以降を使用する場合、再設計された境界グループの使用方法については「[境界グループを構成する](/sccm/core/servers/deploy/configure/boundary-groups)」を参照してください。  
+Le informazioni contenute in questo argomento si riferiscono specificamente all'uso di gruppi di limiti con le versioni 1511, 1602 e 1606 di System Center Configuration Manager.
+Se si usa la versione 1610 o successiva, vedere [Configurare gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups) per informazioni sull'uso di gruppi di limiti riprogettati.  
 
 
 ##  <a name="BKMK_BoundaryGroups"></a> Boundary groups  
- 境界グループを作成すると、関連するネットワークの場所 (境界) を論理的にグループ化して、インフラストラクチャを管理しやすくできます。 境界グループを使用するには、先に境界を境界グループに割り当てておく必要があります。 クライアントは、次の目的で境界グループの構成を使用します。  
+ I gruppi di limiti vengono creati per raggruppare logicamente i percorsi di rete correlati (limiti) e semplificare la gestione dell'infrastruttura. Prima di usare un gruppo di limiti è necessario assegnare i limiti ai gruppi di limiti. I client usano la configurazione del gruppo di limiti per:  
 
--   サイトの自動割り当て  
+-   Assegnazione automatica al sito  
 
--   コンテンツの場所  
+-   Percorso contenuto  
 
--   優先管理ポイント
+-   Punti di gestione preferiti
 
-    優先管理ポイントを使用する場合は、境界グループの構成内ではなく、階層に対してこのオプションを有効にする必要があります。 このトピックの次の手順「*優先管理ポイントの使用を有効にする*」を参照してください。  
+    Se si usano i punti di gestione preferiti, è necessario abilitare questa opzione per la gerarchia e non dall'interno della configurazione del gruppo di limiti. Vedere la procedura *Per abilitare l'uso dei punti di gestione preferiti* più avanti in questo argomento.  
 
-境界グループを設定するときは、その境界グループに少なくとも 1 つの境界を追加します。 そのうえで、それらの境界にあるクライアントが使用するための追加設定を構成します。  
+Quando si configurano i gruppi di limiti, uno o più limiti vengono aggiunti al gruppo. È quindi possibile configurare altre impostazioni per l'uso da parte dei client che si trovano in tali limiti.  
 
-#### <a name="to-create-a-boundary-group"></a>境界グループを作成するには  
+#### <a name="to-create-a-boundary-group"></a>Per creare un gruppo di limiti  
 
-1.  Configuration Manager コンソールで、**[管理]** > **[階層の構成]** >  **[境界グループ]** をクリックします。  
+1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** >  **Gruppi di limiti**.  
 
-2.  **[ホーム]** タブの **[作成]** グループで、**[境界グループの作成]** を選択します。  
+2.  Nella scheda **Home**, nel gruppo **Crea**, scegliere **Crea gruppo limite**.  
 
-3.  **[境界グループの作成]** ダイアログ ボックスで、**[全般]** タブを選択し、この境界グループの **[名前]** を入力します。  
+3.  Nella finestra di dialogo **Crea gruppo limite** scegliere la scheda **Generale** e quindi specificare **Nome** per il gruppo di limiti.  
 
-4.  **[OK]** を選択して新しい境界グループを保存します。  
+4.  Scegliere **OK** per salvare il nuovo gruppo di limiti.  
 
-#### <a name="to-set-up-a-boundary-group"></a>境界グループを設定するには  
+#### <a name="to-set-up-a-boundary-group"></a>Per configurare un gruppo di limiti  
 
-1.  Configuration Manager コンソールで、**[管理]** > **[階層の構成]** >  **[境界グループ]** をクリックします。  
+1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** >  **Gruppi di limiti**.  
 
-2.  変更する境界グループを選びます。  
+2.  Scegliere il gruppo di limiti da modificare.  
 
-3.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
+3.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
 
-4.  境界グループの **[プロパティ]** ダイアログ ボックスで、**[全般]** タブを選択してこの境界グループのメンバーである境界を変更します。  
+4.  Nella finestra di dialogo **Proprietà** del gruppo di limiti scegliere la scheda **Generale** per modificare i limiti appartenenti a questo gruppo:  
 
-    -   境界を追加するには、**[追加]** を選択し、1 つまたは複数の境界のチェック ボックスをオンにして、**[OK]** をクリックします。  
+    -   Per aggiungere limiti, scegliere **Aggiungi**, selezionare la casella di controllo per uno o più limiti e quindi scegliere **OK**.  
 
-    -   境界を削除するには、目的の境界を選択して **[削除]** を選択します。  
+    -   Per rimuovere limiti, selezionarne uno e scegliere **Rimuovi**.  
 
-5.  **[参照]** タブを選択し、サイトの割り当てと、関連付けられたサイト システム サーバーの構成を変更します。  
+5.  Scegliere la scheda **Riferimenti** per modificare l'assegnazione al sito e la configurazione del server del sistema del sito associata:  
 
-    -   この境界グループをサイト割り当て用にクライアントが使用できるようにするには、**[サイト割り当てにこの境界を使用する]** のチェック ボックスをオンにして、**[割り当てられたサイト]** のドロップダウン ボックスからサイトを選択します。  
+    -   Per consentire ai client di usare questo gruppo di limiti per l'assegnazione al sito, selezionare la casella di controllo **Utilizza questo gruppo limite per l'assegnazione sito** e quindi selezionare un sito dalla casella a discesa **Sito assegnato**.  
 
-    -   この境界グループに関連付けられている使用可能なサイト システム サーバーを設定するには:  
+    -   Per configurare quali server del sistema del sito disponibili sono associati a questo gruppo di limiti:  
 
-    1.  **[追加]** をクリックし、1 つまたは複数のサーバーのチェック ボックスをオンにします。 サーバーは、この境界グループの関連付けられたサイト システム サーバーとして追加されます。 サーバーにインストールされたサイト システムの役割をサポートしているサーバーのみを利用できます。  
-
-        > [!NOTE]  
-        >  階層内のすべてのサイトから、利用可能なサイト システムの任意の組み合わせを選択できます。 選択したサイト システムは [サイト システム **** ] タブで、この境界グループのメンバーの各境界のプロパティに一覧表示されます。  
-
-    2.  サーバーを境界グループから削除するには、サーバーを選択して **[削除]** をクリックします。  
+    1.  Scegliere **Aggiungi** e quindi selezionare la casella di controllo per uno o più server. I server vengono aggiunti come server del sistema del sito associati per questo gruppo di limiti. Sono disponibili solo i server su cui è installato il ruolo del sistema del sito supportato.  
 
         > [!NOTE]  
-        >  この境界グループが関連するサイト システムに使用されないようにするには、関連付けられたサイト システム サーバーとして表示されているすべてのサーバーを削除する必要があります。  
+        >  È possibile selezionare qualsiasi combinazione dei sistemi del sito disponibili da qualsiasi sito della gerarchia. I sistemi del sito selezionati vengono elencati nella scheda **Sistemi del sito** nelle proprietà di ogni limite appartenente a questo gruppo di limiti.  
 
-    3.  この境界グループのサイト システム サーバーのネットワーク接続速度を変更するには、サーバーを選択して **[接続の変更]** を選択します。  
+    2.  Per rimuovere un server da questo gruppo di limiti, selezionare il server e quindi scegliere **Rimuovi**.  
 
-         既定では、各サイト システムの接続速度が **[高速]** になっていますが、接続速度を **[低速]** に変更することもできます。 ネットワーク接続速度と展開の構成を基に、クライアントがコンテンツをサーバーからダウンロードできるかどうかが決定されます。  
+        > [!NOTE]  
+        >  Per non usare più questo gruppo di limiti per l'associazione dei sistemi del sito, è necessario rimuovere tutti i server elencati come server del sistema del sito associati.  
 
-6.  **[OK]** をクリックして境界グループのプロパティを閉じ、構成を保存します。  
+    3.  Per modificare la velocità di connessione di rete per un server del sistema del sito per questo gruppo di limiti, selezionare il server e quindi scegliere **Modifica connessione**.  
 
-#### <a name="to-associate-a-content-deployment-server-or-management-point-with-a-boundary-group"></a>コンテンツ展開サーバーまたは管理ポイントを境界グループに関連付けるには  
+         Per impostazione predefinita, la velocità di connessione per ogni sistema del sito è impostata su **Veloce**, ma è possibile modificarla in **Lenta**. La velocità di connessione di rete e la configurazione di una distribuzione determinano se un client può scaricare il contenuto dal server.  
 
-1.  Configuration Manager コンソールで、**[管理]** > **[階層の構成]** >  **[境界グループ]** をクリックします。  
+6.  Scegliere **OK** per chiudere le proprietà del gruppo di limiti e salvare la configurazione.  
 
-2.  変更する境界グループを選びます。  
+#### <a name="to-associate-a-content-deployment-server-or-management-point-with-a-boundary-group"></a>Per associare un server di distribuzione del contenuto o un punto di gestione a un gruppo di limiti  
 
-3.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
+1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** >  **Gruppi di limiti**.  
 
-4.  境界グループの **[プロパティ]** ダイアログ ボックスで、**[参照]** タブを選択します。  
+2.  Scegliere il gruppo di limiti da modificare.  
 
-5.  **[サイト システム サーバーの選択]** にある **[追加]** を選択し、この境界グループに関連付けるサイト システム サーバーのチェック ボックスをオンにして **[OK]** を選択します。  
+3.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
 
-6.  **[OK]** をクリックしてダイアログ ボックスを閉じ、境界グループの構成を保存します。  
+4.  Nella finestra di dialogo **Proprietà** per il gruppo di limiti scegliere la scheda **Riferimenti**.  
 
-#### <a name="to-enable-use-of-preferred-management-points"></a>優先管理ポイントの使用を有効にする  
+5.  In **Seleziona server del sistema del sito** scegliere **Aggiungi**, selezionare la casella di controllo per i server del sistema del sito da associare a questo gruppo di limiti e quindi scegliere **OK**.  
 
-1.  Configuration Manager コンソールで、**[管理]** > **[サイトの構成]** > **[サイト]** の順に選択し、**[ホーム]** タブの **[階層設定]** を選択します。  
+6.  Scegliere **OK** per chiudere la finestra di dialogo e salvare la configurazione del gruppo di limiti.  
 
-2.  **[階層設定]** の **[全般]** タブで、**[クライアントは境界グループで指定された管理ポイントの使用を優先]** を選択します。  
+#### <a name="to-enable-use-of-preferred-management-points"></a>Per abilitare l'uso dei punti di gestione preferiti  
 
-3.  **[OK]** をクリックしてダイアログ ボックスを閉じ、構成を保存します。  
+1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione del sito** > **Siti** e quindi nella scheda **Home** scegliere **Impostazioni gerarchia**.  
 
-#### <a name="to-set-up-a-fallback-site-for-automatic-site-assignment"></a>サイトの自動割り当てでのフォールバック サイトを設定するには  
+2.  Nella scheda **Generale** di **Impostazioni gerarchia** scegliere **I client preferiscono usare i punti di gestione specificati nei gruppi di limiti**.  
 
-1.  Configuration Manager コンソールで、[**管理**] > [**サイトの構成**] >  [**サイト**] の順に選択します。  
+3.  Scegliere **OK** per chiudere le finestra di dialogo e salvare la configurazione.  
 
-2.  **[ホーム]** タブの **[サイト]** グループで、**[階層設定]** を選択します。  
+#### <a name="to-set-up-a-fallback-site-for-automatic-site-assignment"></a>Per configurare un sito di fallback per l'assegnazione automatica al sito  
 
-3.  **[全般]** タブで、**[フォールバック サイトを使用する]**のチェック ボックスをオンにして、**[フォールバック サイト]** のドロップダウン リストからサイトを選択します。  
+1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione del sito** >  **Siti**.  
 
-4.  **[OK]** をクリックして構成を保存します。  
+2.  Nella scheda **Home** del gruppo **Siti** scegliere **Impostazioni gerarchia**.  
 
- 次のセクションでは、境界グループの構成に関する追加情報について説明します。  
+3.  Nella scheda **Generale** selezionare la casella di controllo **Utilizza sito di fallback** e quindi scegliere un sito dall'elenco a discesa **Sito di fallback**.  
 
-###  <a name="BKMK_BoundarySiteAssignment"></a> サイトの割り当てについて  
- 各境界グループごとに、クライアント用の割り当てられたサイトを設定できます。  
+4.  Scegliere **OK** per salvare la configurazione.  
 
--   サイトの自動割り当てを使用する新しくインストールされたクライアントは、クライアントの現在のネットワークの場所を含む境界グループの割り当て済みサイトに参加します。  
+ Le sezioni seguenti forniscono dettagli aggiuntivi sulle configurazioni del gruppo di limiti.  
 
--   サイトに割り当てられたクライアントが、そのネットワークの場所を変更しても、そのサイトの割り当ては変更されません。 たとえば、別のサイトが割り当てられた境界グループ内の境界が示されている新しいネットワークの場所にクライアントがローミングしたとしても、クライアントに対して割り当てられたサイトが変更されることはありません。  
+###  <a name="BKMK_BoundarySiteAssignment"></a> Informazioni sull'assegnazione al sito  
+ È possibile configurare ogni gruppo di limiti con un sito assegnato per i client.  
 
--   Active Directory システムの探索で新しいリソースが検出されると、検出されたリソースのネットワーク情報が境界グループ内の境界に対して評価されます。 このプロセスにより、割り当てられたサイトに新しいリソースが関連付けられ、クライアント プッシュ インストール方法で使用できるようになります。  
+-   Un client appena installato che usa l'assegnazione automatica al sito verrà aggiunto al sito assegnato di un gruppo di limiti che si trova nel percorso di rete corrente del client.  
 
--   境界が、異なる割り当て済みサイトを持つ複数の境界グループのメンバーである場合は、クライアントによってランダムにいずれかのサイトが選択されます。  
+-   Dopo l'assegnazione a un sito, il client non cambia la propria assegnazione in caso di modifica del percorso di rete. Se ad esempio il client si sposta in un nuovo percorso di rete rappresentato da un limite incluso in un gruppo con un'assegnazione sito diversa, il sito assegnato di tale client rimane invariato.  
 
--   境界グループの割り当て済みサイトへの変更は、新しいサイトの割り当て操作にのみ適用されます。 以前にサイトに割り当て済みのクライアントが境界グループの構成の変更 (またはクライアントのネットワークの場所の変更) に基づいてサイトの割り当てを再評価することはありません。  
+-   Quando l'individuazione sistema Active Directory rileva una nuova risorsa, le informazioni sulla rete per la risorsa individuata vengono valutate in rapporto ai limiti nei gruppi di limiti. Tramite questo processo la nuova risorsa viene associata a un sito assegnato per poter essere utilizzata dal metodo di installazione push client.  
 
-クライアントのサイトの割り当ての詳細については、「[System Center Configuration Manager でクライアントをサイトに割り当てる方法](../../../../core/clients/deploy/assign-clients-to-a-site.md)」の「[コンピューターにサイトの自動割り当てを使用する](../../../../core/clients/deploy/assign-clients-to-a-site.md#BKMK_AutomaticAssignment)」をご覧ください。  
+-   Quando un limite è membro di più gruppi con diversi siti assegnati, i client selezionano uno dei siti in modo casuale.  
 
-###  <a name="BKMK_BoundaryContentLocation"></a> コンテンツの場所について  
- 各境界グループに 1 つまたは複数の配布ポイントと状態移行ポイントを含めるよう設定し、同じ配布ポイントと状態移行ポイントを複数の境界グループに関連付けることができます。  
+-   Le modifiche a un sito assegnato del gruppo di limiti si applicano solo alle nuove azioni di assegnazione sito. I client assegnati in precedenza a un sito non valutano nuovamente l'assegnazione in base alle modifiche apportate alla configurazione di un gruppo di limiti (o al proprio percorso di rete).  
 
--   **ソフトウェアの配布時に**、クライアントは展開コンテンツ用の場所を要求します。 Configuration Manager は、クライアントの現在のネットワークの場所を含む各境界グループに関連付けられた配布ポイントのリストをクライアントに送信します。  
+Per altre informazioni sull'assegnazione di client a un sito, vedere [Utilizzo dell'assegnazione automatica del sito per i computer](../../../../core/clients/deploy/assign-clients-to-a-site.md#BKMK_AutomaticAssignment) in [Come assegnare i client a un sito in System Center Configuration Manager](../../../../core/clients/deploy/assign-clients-to-a-site.md).  
 
--   **オペレーティング システムの展開時**に、クライアントは状態移行情報の送受信用の場所を要求します。 Configuration Manager は、クライアントの現在のネットワークの場所を含む、各境界グループに関連付けられた状態移行ポイントのリストをクライアントに送信します。  
+###  <a name="BKMK_BoundaryContentLocation"></a> Informazioni sul percorso del contenuto  
+ È possibile configurare ogni gruppo di limiti con uno o più punti di distribuzione e punti di migrazione stato e associare questi stessi punti a più gruppi di limiti.  
 
-この動作により、コンテンツまたは状態移行情報の転送元となる最も近いサーバーをクライアントが選択できるようになります。  
+-   **Durante la distribuzione del software**, i client richiedono un percorso per il contenuto di distribuzione. Configuration Manager invia al client un elenco dei punti di distribuzione associati a ogni gruppo di limiti che include il percorso di rete corrente del client.  
 
-###  <a name="BKMK_PreferredMP"></a> 優先管理ポイントについて  
- 優先管理ポイントを使用すると、クライアントは、その現在のネットワークの場所 (境界) に関連付けられた管理ポイントを特定できます。  
+-   **Durante la distribuzione del sistema operativo** i client richiedono un percorso per l'invio o la ricezione delle informazioni di migrazione dello stato. Configuration Manager invia al client un elenco dei punti di migrazione dello stato associati a ogni gruppo di limiti che include il percorso di rete corrente del client.  
 
--   クライアントは、優先として設定されていない割り当て済みサイトの管理ポイントを使用する前に、割り当て済みサイトの優先管理ポイントを使用しようとします。  
+Questo comportamento consente al client di selezionare il server più vicino da cui trasferire le informazioni di migrazione dello stato o del contenuto.  
 
--   このオプションを使用するには、それを階層に対して有効にして、境界グループの関連境界に関連付ける必要がある管理ポイントを含めるように個々のプライマリ サイトの境界グループを設定する必要があります。  
+###  <a name="BKMK_PreferredMP"></a> Informazioni sui punti di gestione preferiti  
+ I punti di gestione preferiti consentono a un client di identificare un punto di gestione associato al percorso di rete corrente (limite).  
 
--   優先管理ポイントが設定され、クライアントが管理ポイントの一覧を整理するときに、割り当て済み管理ポイントの一覧 (クライアントの割り当て済みサイトのすべての管理ポイントを含む) の一番上に優先管理ポイントがクライアントにより配置されます。  
+-   Il client prova a usare un punto di gestione preferito dal sito assegnato prima di usare un punto di gestione dal sito assegnato che non è configurato come preferito.  
+
+-   Per usare questa opzione è necessario abilitarla per la gerarchia e configurare i gruppi di limiti nei singoli siti primari in modo da includere i punti di gestione che devono essere associati ai limiti del gruppo.  
+
+-   Se sono configurati punti di gestione preferiti e un client organizza l'elenco dei punti di gestione, i punti di gestione preferiti vengono inseriti all'inizio dell'elenco dei punti di gestione assegnati, che include tutti i punti di gestione del sito assegnato del client.  
 
 > [!NOTE]  
->  クライアントのローミング時 (ラップトップ コンピューターをリモート オフィスに持って行き、そのネットワークの場所を変更するときなど) に、クライアントは新しい場所でローカル サイトの管理ポイント (またはプロキシ管理ポイント) を使用してから、割り当て済みサイト (優先管理ポイントがあるサイト) の管理ポイントを使用する場合があります。  詳細については、「[クライアントが System Center Configuration Manager のサイト リソースやサービスを検索する方法を理解する](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md)」をご覧ください。  
+>  Quando un client si sposta, come nel caso di un computer portatile spostato in una postazione remota con un nuovo percorso di rete, può usare un punto di gestione (o un punto di gestione proxy) dal sito locale nella nuova posizione prima di provare a usare un punto di gestione dal sito assegnato (che include i punti di gestione preferiti).  Per altre informazioni, vedere [Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
 
-###  <a name="BKMK_BoundaryOverlap"></a> 重複する境界について  
- Configuration Manager は、コンテンツの場所について、重複する境界を持つ構成をサポートします。  
+###  <a name="BKMK_BoundaryOverlap"></a> Informazioni sui limiti sovrapposti  
+ Configuration Manager supporta le configurazioni con sovrapposizione dei limiti per il percorso del contenuto:  
 
--   **クライアントがコンテンツを要求し**、クライアントのネットワークの場所が複数の境界グループに属している場合、Configuration Manager はコンテンツが格納されているすべての配布ポイントのリストをクライアントに送信します。  
+-   **Quando un client richiede un contenuto** e il percorso di rete del client appartiene a più gruppi di limiti, Configuration Manager invia al client un elenco di tutti i punti di distribuzione che hanno il contenuto.  
 
--   **クライアントが状態移行情報の送受信をサーバーに要求し**、クライアントのネットワークの場所が複数の境界グループに属している場合は、Configuration Manager は、クライアントの現在のネットワークの場所を含む境界グループに関連付けられた状態移行ポイントのリストをクライアントに送信します。  
+-   **Quando un client richiede a un server di inviare o ricevere le informazioni di migrazione dello stato** e il percorso di rete del client appartiene a più gruppi di limiti, Configuration Manager invia al client un elenco di tutti i punti di migrazione dello stato associati a un gruppo di limiti che include il percorso di rete corrente del client.  
 
-この動作により、コンテンツまたは状態移行情報の転送元となる最も近いサーバーをクライアントが選択できるようになります。  
+Questo comportamento consente al client di selezionare il server più vicino da cui trasferire le informazioni di migrazione dello stato o del contenuto.  
 
-###  <a name="BKMK_BoudnaryNetworkSpeed"></a> ネットワーク接続速度について  
- 境界グループ内の各サイト システム サーバーのネットワーク接続速度を設定できます。 この設定は、この境界グループの構成に基づいてサイト システムに接続するクライアントに適用されます。 異なる境界グループ内で、同じサイト システム サーバーに異なる接続速度を設定できます。  
+###  <a name="BKMK_BoudnaryNetworkSpeed"></a> Informazioni sulla velocità di connessione di rete  
+ È possibile impostare la velocità di connessione di rete per ogni server del sistema del sito in un gruppo di limiti. Questa impostazione si applica ai client che si connettono a un sistema del sito basato sulla configurazione di questo gruppo di limiti. Lo stesso server del sistema del sito può avere una velocità di connessione impostata nei diversi gruppi di limiti.  
 
- 既定では、ネットワーク接続が **[高速]** に設定されますが、ネットワーク速度を **[低速]** に設定することもできます。 ネットワーク接続速度と展開構成を基に、クライアントが関連付けられた境界グループ内にある場合に、コンテンツを配布ポイントからダウンロードできるかどうかが決定されます。  
+ Per impostazione predefinita, la velocità di connessione di rete è **Veloce**, ma è possibile modificarla in **Lenta**. La velocità di connessione di rete e la configurazione della distribuzione verificano se un client incluso in un gruppo di limiti associato può scaricare contenuto da un punto di distribuzione.  
 
- ネットワーク接続速度の構成がクライアントのコンテンツ取得方法に及ぼす影響の詳細については、[コンテンツ ソースの場所に関するシナリオ](../../../../core/plan-design/hierarchy/content-source-location-scenarios.md)を紹介したページをご覧ください。  
+ Per altre informazioni sul modo in cui la configurazione della velocità di connessione di rete influisce sulla modalità di recupero del contenuto da parte dei client, vedere [Scenari del percorso di origine del contenuto](../../../../core/plan-design/hierarchy/content-source-location-scenarios.md).  

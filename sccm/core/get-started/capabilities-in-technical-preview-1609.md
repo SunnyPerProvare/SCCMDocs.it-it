@@ -1,6 +1,6 @@
 ---
-title: "Configuration Manager の Technical Preview 1609 の機能"
-description: "System Center Configuration Manager の Technical Preview バージョン 1609 で使用できる機能について説明します。"
+title: "Funzionalità della versione Technical Preview 1609 per Configuration Manager"
+description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1609 per System Center Configuration Manager."
 ms.custom: na
 ms.date: 01/23/2017
 ms.reviewer: na
@@ -17,440 +17,440 @@ manager: angrobe
 ms.openlocfilehash: 89a41c8a3137d0e54011ddf9a1d9b4894ecb7df8
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1609-for-system-center-configuration-manager"></a>System Center Configuration Manager の Technical Preview 1609 の機能
+# <a name="capabilities-in-technical-preview-1609-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1609 per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Technical Preview)*
-
-
-
-この記事では、System Center Configuration Manager の Technical Preview バージョン 1609 で使用できる機能について説明します。 このバージョンをインストールして更新し、新機能を Configuration Manager の Technical Preview サイトに追加できます。      このバージョンの Technical Preview をインストールする前に、説明のトピック「[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)」を確認して、Technical Preview の使用に関する一般的な要件と制限、バージョン間の更新方法、および Technical Preview の機能に関するフィードバックを提供する方法について理解してください。    
-
-**この Technical Preview の既知の問題:**  
-*  Configuration Manager の Technical Preview 1609 に更新すると、展開したすべてのエディション アップグレード ポリシーが削除されます。 引き続きこれらのポリシーを使用するには、ポリシーを再作成して展開する必要があります。
+*Si applica a: System Center Configuration Manager (Technical Preview)*
 
 
-**このバージョンでお試しいただける新機能を次に示します。**  
 
-## <a name="improvements-to-endpoint-protection"></a>Endpoint Protection の機能強化
-Endpoint Protection マルウェア対策ポリシーの設定の改善: Endpoint Protection Cloud Protection Service が不審なファイルをブロックするレベルを指定できるようになりました。 新しい設定では、管理者が発見した大量のマルウェアに基づいて "危険な" コンピューターを指定できます。
+Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1609 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
 
-## <a name="increased-number-of-enrolled-devices"></a>登録されるデバイス数の増加
-管理者は、Intune でのハイブリッド モバイル デバイス管理に最大 15 のデバイスをユーザーが登録できるようにすることが可能になりました。 以前はユーザーあたり 5 つのデバイスに制限されていました。
+**Problemi noti di questa versione Technical Preview:**  
+*  Durante l'aggiornamento a Configuration Manager 1609 Technical Preview, verranno eliminati i criteri di aggiornamento dell'edizione eventualmente distribuiti. Per continuare a usare questi criteri, è necessario ricrearli e distribuirli.
 
-## <a name="additional-apple-dep-settings"></a>Apple DEP 設定の追加
 
-管理者は、iOS および Mac デバイスの DEP プロファイルで次の Apple Device Enrollment Program (DEP) 設定を構成できるようになりました。
+**Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
+
+## <a name="improvements-to-endpoint-protection"></a>Miglioramenti a Endpoint Protection
+Miglioramento delle impostazioni dei criteri antimalware di Endpoint Protection: è ora possibile specificare il livello a cui il servizio di protezione di Endpoint Protection Cloud bloccherà i file sospetti. Una nuova impostazione consente agli amministratori di specificare i computer "a rischio", in base a elevate quantità di malware rilevate.
+
+## <a name="increased-number-of-enrolled-devices"></a>Aumento del numero di dispositivi registrati
+Gli amministratori possono ora concedere agli utenti di registrare fino a 15 dispositivi nella gestione dei dispositivi mobili ibridi con Intune. In precedenza, il limite vigeva un limite di 5 dispositivi per utente.
+
+## <a name="additional-apple-dep-settings"></a>Impostazioni aggiuntive per il DEP di Apple
+
+Gli amministratori possono ora configurare le seguenti impostazioni del Programma di registrazione dispositivi di Apple nel profilo DEP di dispositivi iOS e Mac:
 - **Touch ID**
 - **Zoom**
 - **Siri**
 
-有効にすると、デバイスのアクティブ化時に、Apple のセットアップ アシスタントによってこのサービスがプロンプトされます。
+Se l'opzione è abilitata, l'assistente configurazione di Apple richiede questo servizio durante l'attivazione del dispositivo.
 
-## <a name="integration-with-upgrade-analytics"></a>Upgrade Analytics との統合
+## <a name="integration-with-upgrade-analytics"></a>Integrazione con Upgrade Analytics
 
-Upgrade Analytics を使用すると、デバイスの準備と Windows 10 との互換性を評価および分析して、簡単かつスムーズなアップグレードが可能になります。 Upgrade Analytics と Configuration Manager の統合により、Configuration Manager 管理コンソールでアップグレードの互換性データにアクセスし、デバイス リストから対象デバイスのアップグレードまたは修復ができます。
+Upgrade Analytics consente di valutare e analizzare la leggibilità e la compatibilità dei dispositivi con Windows 10, per consentire aggiornamenti più semplici. L'integrazione di Upgrade Analytics con Configuration Manager consente di accedere ai dati di compatibilità dell'aggiornamento nella console di amministrazione di Configuration Manager e quindi, dall'elenco dei dispositivi, ai dispositivi da aggiornare o correggere.
 
-Upgrade Analytics の詳細については、「[Get started with Upgrade Analytics](https://technet.microsoft.com/itpro/windows/deploy/upgrade-analytics-get-started)」(Upgrade Analytics の概要) をご覧ください。
+Per altre informazioni su Upgrade Analytics, vedere in [Get started with Upgrade Analytics](https://technet.microsoft.com/itpro/windows/deploy/upgrade-analytics-get-started) (Introduzione a Upgrade Analytics).
 
-## <a name="native-connection-types-for-windows-10-vpn-hybrid-profiles"></a>Windows 10 VPN ハイブリッド プロファイルのネイティブ接続の種類
+## <a name="native-connection-types-for-windows-10-vpn-hybrid-profiles"></a>Tipi di connessione nativa per i profili ibridi VPN di Windows 10
 
-Intune で Configuration Manager を使用すると、OMA-URI を使用しなくても、Configuration Manager コンソールで Microsoft 自動、IKEv2、PPTP、L2TP 接続の種類を使用して、Windows 10 の VPN プロファイルを作成できるようになりました。
+Quando si usa Configuration Manager con Intune, è possibile creare profili VPN di Windows 10 con tipi di connessione Microsoft Automatico, IKEv2, PPTP e L2TP nella console di Configuration Manager senza usare URI OMA.
 
-## <a name="enhancements-to-windows-store-for-business-integration-with-configuration-manager"></a>ビジネス向け Windows ストアと Configuration Manager のとの統合の強化
+## <a name="enhancements-to-windows-store-for-business-integration-with-configuration-manager"></a>Miglioramenti apportati a Integrazione di Windows Store per le aziende con Configuration Manager
 
-このリリースでは、以下の新機能により[ビジネス向け Windows ストアの統合](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)が更新されています。
+In questa versione [Integrazione di Windows Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business) è stata aggiornata con le nuove funzionalità seguenti:
 
-**更新:** Technical Preview の現在のリリースでは、即時同期機能は機能しません。
+**Aggiornamento:** nella versione di Technical Preview corrente, la funzionalità di sincronizzazione immediata non è funzionale.
 
-- 以前は、ビジネス向け Windows ストアから無料のアプリの展開のみができました。 さらに、Configuration Manager で有償のオンライン ライセンス付きアプリ (Intune に登録されているデバイスのみ) も展開できるようになりました。
-- ビジネス向け Windows ストアと Configuration Manager との即時同期を開始できるようになりました。
-- Azure Active Directory から取得したクライアントの秘密鍵を変更できるようになりました。
+- In precedenza, era possibile distribuire solo app gratuite da Windows Store per le aziende. Configuration Manager ora supporta anche la distribuzione di app con licenza online a pagamento (solo per dispositivi registrati con Intune).
+- Ora è possibile avviare una sincronizzazione immediata tra Windows Store per le aziende e Configuration Manager.
+- È ora possibile modificare la chiave privata del client ottenuta da Azure Active Directory.
 
-### <a name="try-it-out"></a>試してみましょう。
+### <a name="try-it-out"></a>Prova subito!
 
-#### <a name="purchase-and-sync-a-paid-online-licensed-app"></a>有料のオンライン ライセンス付きアプリの購入と同期
+#### <a name="purchase-and-sync-a-paid-online-licensed-app"></a>Acquisto e sincronizzare di un'app con licenza online a pagamento
 
-1. ビジネス向け Windows ストアから有料のオンライン ライセンス付きアプリを購入します。
-2. Configuration Manager コンソールの [**管理**] ワークスペースで、[**Cloud Services**] > [**更新とサービス**] > [**ビジネス向け Windows ストア**] の順にクリックします。
-3. [**ホーム**] タブの [**同期**] グループで、[**今すぐ同期**] をクリックします。
-4. その後すぐに購入したアプリが [**アプリケーション管理**] ワークスペースの [**ストア アプリのライセンス情報**] ノードに表示されます。
+1. Acquistare almeno un'app con licenza online a pagamento da Windows Store per le aziende.
+2. Nell'area di lavoro **Amministrazione** della console di Configuration Manager fare clic su **Servizi cloud** > **Aggiornamenti e manutenzione** > **Windows Store per le aziende**.
+3. Nella scheda **Home** nel **Gruppo di sincronizzazione** fare clic su **Sincronizza ora**.
+4. Immediatamente dopo, l'app acquistata viene visualizzata nel nodo **Informazioni di licenza per le app dello Store** dell'area di lavoro **Gestione applicazioni**.
 
-#### <a name="create-and-deploy-a-configuration-manager-application-from-the-synchronized-app-data"></a>同期済みのアプリ データから Configuration Manager アプリケーションを作成して展開する
+#### <a name="create-and-deploy-a-configuration-manager-application-from-the-synchronized-app-data"></a>Creare e distribuire un'applicazione di Configuration Manager dai dati di un'app sincronizzata
 
-有料のストア アプリから Configuration Manager アプリケーションを作成して展開する手順は、無料のアプリからアプリケーションを作成する場合と同じです。 「[System Center Configuration Manager によるビジネス向け Windows ストアからのアプリの管理](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)」の「**Create and deploy a Configuration Manager application from a Windows Store for Business app**」(ビジネス向け Windows ストア アプリから Configuration Manager を作成して展開する) セクションを参照してください。
+La procedura per creare e distribuire un'applicazione di Configuration Manager da un'app dello Store a pagamento è identica a quella usata per la creazione di un'applicazione da un'applicazione gratuita. Vedere la sezione **Create and deploy a Configuration Manager application from a Windows Store for Business app** (Creare e distribuire un'applicazione di Configuration Manager da un'app Windows Store per le aziende) in [Manage apps from the Windows Store for Business with System Center Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business) (Gestire le app Windows Store per le aziende con System Center Configuration Manager).
 
 
-#### <a name="modify-the-client-secret-key-from-azure-active-directory"></a>Azure Active Directory からのクライアントの秘密鍵を変更する
+#### <a name="modify-the-client-secret-key-from-azure-active-directory"></a>Modificare la chiave privata del client da Azure Active Directory
 
-1. Configuration Manager コンソールの [**管理**] ワークスペースで、[**Cloud Services**] > [**更新とサービス**] > [**ビジネス向け Windows ストア**] の順にクリックします。
-2. ビジネス向け Windows ストアのアカウントを選択し、[**プロパティ**] をクリックします。
-3. [**ビジネス アカウントのプロパティ用の Windows ストア**] ダイアログ ボックスで、[**クライアントの秘密鍵**] フィールドに新しいキーを入力し、[**確認**] をクリックします。 確認されたら、[**適用**] をクリックしてダイアログ ボックスを閉じます。
+1. Nell'area di lavoro **Amministrazione** della console di Configuration Manager fare clic su **Servizi cloud** > **Aggiornamenti e manutenzione** > **Windows Store per le aziende**.
+2. Selezionare l'aqccount Windows Store per le aziende e fare clic su **Proprietà**.
+3. Nella finestra di dialogo **Windows Store for Business Account Properties** (Proprietà account Windows Store per le aziende) immettere una nuova chiave nel campo **Chiave privata del client** e quindi fare clic su **Verifica**. Al termine della verifica, fare clic su **Applica**, quindi chiudere la finestra di dialogo.
 
 
-## <a name="new-compliance-settings-for-configuration-items"></a>構成アイテムの新しいコンプライアンス設定
+## <a name="new-compliance-settings-for-configuration-items"></a>Nuove impostazioni di conformità per gli elementi di configurazione
 
-さまざまなデバイス プラットフォームの構成アイテムで使用できる多くの新しい設定が追加されました。
-これらの設定は、以前はスタンドアロン構成での Microsoft Intune にありましたが、Intune を Configuration Manager で使用する際にも使用できるようになりました。
-これらのいずれかの設定のヘルプが必要な場合は、「[Microsoft Intune ポリシーを使用してデバイスの設定と機能を管理する](https://docs.microsoft.com/en-us/intune/deploy-use/manage-settings-and-features-on-your-devices-with-microsoft-intune-policies)」を開き、対象のプラットフォームの設定のサブトピックを選択します。
+Sono state aggiunte molte nuove impostazioni che è possibile usare negli elementi di configurazione relativi a diverse piattaforme di dispositivi.
+Si tratta di impostazioni che in precedenza esistevano nella configurazione autonoma di Microsoft Intune, rese ora disponibili per Intune con Configuration Manager.
+Per assistenza con queste impostazioni, aprire [Gestire impostazioni e funzionalità nei dispositivi con i criteri di Microsoft Intune](https://docs.microsoft.com/en-us/intune/deploy-use/manage-settings-and-features-on-your-devices-with-microsoft-intune-policies) e selezionare il sottoargomento relativo alle impostazioni per la piattaforma desiderata.
 
 
-### <a name="new-settings-for-android-devices"></a>Android デバイス向けの新しい設定
+### <a name="new-settings-for-android-devices"></a>Nuove impostazioni per i dispositivi Android
 
-#### <a name="password-settings"></a>パスワードの設定
+#### <a name="password-settings"></a>Impostazioni della password
 
-- **パスワードの履歴を記憶する**
-- **指紋によるロック解除を使用する**
+- **Ricorda cronologia password**
+- **Consenti sblocco delle impronte digitali**
 
-#### <a name="security-settings"></a>セキュリティ設定
+#### <a name="security-settings"></a>Impostazioni di sicurezza
 
-- **メモリ カードの暗号化を必要とする**
-- **画面のキャプチャを許可する**
-- **診断データの送信を使用する**
+- **Richiedi crittografia sulle schede di memoria**
+- **Consenti acquisizione schermo**
+- **Consenti invio dati di diagnostica**
 
-#### <a name="browser-settings"></a>ブラウザーの設定
+#### <a name="browser-settings"></a>Impostazioni del browser
 
-- **Web ブラウザーを許可する**
-- **オートコンプリートを使用する**
-- **ポップアップ ブロックを使用する**
-- **Cookie を使用する**
-- **アクティブ スクリプティングを使用する**
+- **Consenti browser Web**
+- **Consenti riempimento automatico**
+- **Consenti blocco popup**
+- **Consenti cookie**
+- **Consenti scripting**
 
-#### <a name="app-settings"></a>アプリの設定
+#### <a name="app-settings"></a>Impostazioni delle app
 
-- **Google Play ストアを使用する**
+- **Consenti archivio Google Play**
 
-#### <a name="device-capability-settings"></a>デバイスの機能の設定
+#### <a name="device-capability-settings"></a>Impostazioni relative alle funzionalità dei dispositivi
 
-- **リムーバブル記憶域を許可する**
-- **Wi-Fi テザリングを許可する**
-- **位置情報を許可する**
-- **NFC を許可する**
-- **Bluetooth を許可する**
-- **音声通話ローミングを許可する**
-- **データ ローミングを許可する**
-- **SMS/MMS メッセージングを許可する**
-- **音声アシスタントを使用する**
-- **音声による発信を使用する**
-- **コピーと貼り付けを許可する**
+- **Consenti archivi rimovibili**
+- **Consenti tethering Wi-Fi**
+- **Consenti georilevazione**
+- **Consenti NFC**
+- **Consenti Bluetooth**
+- **Consenti roaming vocale**
+- **Consenti dati in roaming**
+- **Consenti messaggi SMS/MMS**
+- **Consenti assistente vocale**
+- **Consenti composizione vocale**
+- **Consenti copia e incolla**
 
 
-### <a name="new-settings-for-ios-devices"></a>iOS デバイスの新しい設定
+### <a name="new-settings-for-ios-devices"></a>Nuove impostazioni per i dispositivi iOS
 
-#### <a name="password-settings"></a>パスワードの設定
+#### <a name="password-settings"></a>Impostazioni della password
 
-- **パスワードに必要な複雑な文字の数**
-- **単純なパスワードを許可する**
-- **パスワードが必要になるまでの非アクティブ状態の時間 (分)**
-- **パスワードの履歴を記憶する**
+- **Numero di caratteri complessi richiesti nella password**
+- **Consenti password semplici**
+- **Minuti di inattività prima che venga richiesta la password**
+- **Ricorda cronologia password**
 
-### <a name="new-settings-for-mac-os-x-devices"></a>Mac OS X デバイスの新しい設定
+### <a name="new-settings-for-mac-os-x-devices"></a>Nuove impostazioni per i dispositivi Mac OS X
 
-#### <a name="password-settings"></a>パスワードの設定
+#### <a name="password-settings"></a>Impostazioni della password
 
-- **パスワードに必要な複雑な文字の数**
-- **単純なパスワードを許可する**
-- **パスワードの履歴を記憶する**
-- **スクリーンセーバーがアクティブになるまでの非アクティブな時間 (分)**
+- **Numero di caratteri complessi richiesti nella password**
+- **Consenti password semplici**
+- **Ricorda cronologia password**
+- **Minuti di inattività prima dell'attivazione dello screen saver**
 
-### <a name="new-settings-for-windows-10-desktop-and-mobile-devices"></a>Windows 10 デスクトップおよびモバイル デバイスの新しい設定
+### <a name="new-settings-for-windows-10-desktop-and-mobile-devices"></a>Nuove impostazioni per i dispositivi Windows 10 Desktop e mobili
 
-#### <a name="password-settings"></a>パスワードの設定
+#### <a name="password-settings"></a>Impostazioni della password
 
-- **文字セットの最小数**
-- **パスワードの履歴を記憶する**
-- **デバイスがアイドル状態から戻るときにパスワードを必須とする**
+- **Numero minimo di set di caratteri**
+- **Ricorda cronologia password**
+- **Richiedi una password quando il dispositivo torna attivo dopo uno stato di inattività**
 
-#### <a name="security-settings"></a>セキュリティ設定
+#### <a name="security-settings"></a>Impostazioni di sicurezza
 
-- **モバイル デバイスの暗号化を要求する**
-- **手動での登録解除を許可する**
+- **Richiedi crittografia sui dispositivi mobili**
+- **Consenti l'annullamento della registrazione manuale**
 
-#### <a name="device-capability-settings"></a>デバイスの機能の設定
+#### <a name="device-capability-settings"></a>Impostazioni relative alle funzionalità dei dispositivi
 
-- **移動体通信で VPN を許可する**
-- **移動体通信で VPN ローミングを許可する**
-- **電話リセットを許可する**
-- **USB 接続を許可する**
-- **Cortana を許可する**
-- **アクション センターの通知を許可する**
+- **Consenti VPN su rete cellulare**
+- **Consenti roaming VPN su rete cellulare**
+- **Consenti ripristino del telefono**
+- **Consenti connessione USB**
+- **Consenti Cortana**
+- **Consenti notifiche del Centro operativo**
 
-### <a name="new-settings-for-windows-10-team-devices"></a>Windows 10 Team デバイスの新しい設定
+### <a name="new-settings-for-windows-10-team-devices"></a>Nuove impostazioni per i dispositivi Windows 10 Team
 
-#### <a name="device-settings"></a>デバイスの設定
+#### <a name="device-settings"></a>Impostazioni del dispositivo
 
-- **Azure Operational Insights を有効にする**
-- **Miracast ワイヤレス投影を有効にする**
-- **[ようこそ] 画面に表示される会議の情報を選択する**
-- **ロック画面の背景画像 URL**
+- **Abilita Azure Operational Insights**
+- **Abilita proiezione wireless Miracast**
+- **Scegli le informazioni sulla riunione visualizzate nella schermata iniziale**
+- **URL dell'immagine di sfondo per la schermata di blocco**
 
 
-### <a name="new-settings-for-windows-81-devices"></a>Windows 8.1 デバイスの新しい設定
+### <a name="new-settings-for-windows-81-devices"></a>Nuove impostazioni per i dispositivi Windows 8.1
 
-#### <a name="applicability-settings"></a>適用性の設定
+#### <a name="applicability-settings"></a>Impostazioni di applicabilità
 
-- **Windows 10 にすべての構成を適用する**
+- **Applica tutte le configurazioni a Windows 10**
 
-#### <a name="password-settings"></a>パスワードの設定
+#### <a name="password-settings"></a>Impostazioni della password
 
-- **必要なパスワードの種類**
-- **文字セットの最小数**
-- **最小のパスワードの長さ**
-- **デバイスをワイプするまでの連続サインイン エラーの数**
-- **画面がオフになるまでの非アクティブな時間 (分)**
-- **パスワードの有効期限 (日)**
-- **パスワードの履歴を記憶する**
-- **前のパスワードの再利用を防止**
-- **ピクチャ パスワードと PIN を許可する**
+- **Tipo di password richiesto**
+- **Numero minimo di set di caratteri**
+- **Lunghezza minima password**
+- **Numero di errori di accesso ripetuti consentiti prima della cancellazione del dispositivo**
+- **Minuti di inattività prima dello spegnimento dello schermo**
+- **Scadenza password (giorni)**
+- **Ricorda cronologia password**
+- **Impedisci riutilizzo delle password precedenti**
+- **Consenti password grafica e PIN**
 
-#### <a name="browser-settings"></a>ブラウザーの設定
+#### <a name="browser-settings"></a>Impostazioni del browser
 
-- **イントラネット ネットワークの自動検出を使用する**
+- **Consenti rilevamento automatico della rete Intranet**
 
 
-### <a name="new-settings-for-windows-phone-81-devices"></a>Windows Phone 8.1 デバイスの新しい設定
+### <a name="new-settings-for-windows-phone-81-devices"></a>Nuove impostazioni per i dispositivi Windows Phone 8.1
 
-#### <a name="applicability-settings"></a>適用性の設定
+#### <a name="applicability-settings"></a>Impostazioni di applicabilità
 
-- **Windows 10 にすべての構成を適用する**
+- **Applica tutte le configurazioni a Windows 10**
 
-#### <a name="password-settings"></a>パスワードの設定
+#### <a name="password-settings"></a>Impostazioni della password
 
-- **文字セットの最小数**
-- **単純なパスワードを許可する**
-- **パスワードの履歴を記憶する**
+- **Numero minimo di set di caratteri**
+- **Consenti password semplici**
+- **Ricorda cronologia password**
 
-#### <a name="device-capability-settings"></a>デバイスの機能の設定
+#### <a name="device-capability-settings"></a>Impostazioni relative alle funzionalità dei dispositivi
 
-- **無料 Wi-Fi スポットへの自動接続を許可する**
+- **Consenti connessione automatica agli hotspot Wi-Fi gratuiti**
 
 
-## <a name="improvements-for-boundary-groups"></a>境界グループの機能強化
-この Preview では、境界グループとそれらが配布ポイントを扱う方法に重要な変更が加えられています。 これらの変更は、コンテンツのインフラストラクチャの設計を簡略化に役立つ一方で、クライアントがコンテンツ ソースの場所として追加の配布ポイントにフォールバックして検索する方法とタイミングをより細かく制御することもできます。 これには、オンプレミスとクラウド ベースの配布ポイントの両方が含まれます。
+## <a name="improvements-for-boundary-groups"></a>Miglioramenti ai gruppi limite
+Questa versione di anteprima introduce importanti modifiche ai gruppi limite e al relativo funzionamento con i punti di distribuzione. Queste modifiche consentiranno di semplificare la progettazione dell'infrastruttura del contenuto, offrendo maggiore controllo su come e quando i client eseguono il fallback per la ricerca di punti di distribuzione aggiuntivi come i percorsi di origine del contenuto. Sono inclusi i punti di distribuzione in locale e su cloud.
 
-これらの機能強化により、慣れ親しんだ概念と動作 (配布ポイントを高速または低速に設定するなど) が、より簡単にセットアップして管理できる新しいモデルに置き換えられています。 これらの変更も、境界グループに関連付けるその他のサイト システムの役割を向上させる将来の変更のための基礎です。  
+Questi miglioramenti sostituiscono i concetti e i comportamenti correnti, come la configurazione dei punti di distribuzione rapida o lenta, con un nuovo modello più facile da configurare e mantenere. Tali modifiche rappresentano anche un presupposto per le modifiche future che miglioreranno altri ruoli del sistema del sito associati ai gruppi limite.  
 
-1609 へのアップグレード時に、これらの変更がコンテンツの配布の構成を妨げないように、アップグレードによって現在の境界グループ構成が新しいモデルに適合するように変換されます (「[既存の境界グループを新しいモデルに更新する](/sccm/core/get-started/capabilities-in-technical-preview-1609#bkmk_update)」を参照してください)。
+Durante l'aggiornamento a 1609, si verifica la conversione delle configurazioni dell gruppi limite corrente per adattarlo al nuovo modello, in modo che queste modifiche non disturbino le configurazioni di distribuzione del contenuto. Vedere [Update existing boundary groups to the new model](/sccm/core/get-started/capabilities-in-technical-preview-1609#bkmk_update) (Aggiornare i gruppi limite esistenti al nuovo modello).
 
-次のセクションでは、この Preview で導入された変更、新しいモデルのしくみ、および既に境界グループが構成されているサイトをアップグレードするとどうなるかについて詳しく説明します。
+Le sezioni seguenti illustrano le modifiche introdotte con questa versione di anteprima, il funzionamento del nuovo modello e le aspettative per l'aggiornamento di un sito che dispone già di gruppi limite configurati.
 
 
 
-### <a name="changes-in-ui-and-behavior-for-boundary-groups-and-content-locations"></a>境界グループの UI と動作およびコンテンツの場所の変更
-境界グループとクライアントのコンテンツ検索方法への主な変更を次に示します。 これらの変更と概念の多くが連動しています。
--   **高速または低速の構成の削除:** 個々の配布ポイントに高速または低速を設定する必要がなくなりました。  代わりに、境界グループに関連付けられている各サイト システムが同じように処理されます。 この変更により、境界グループ プロパティの [**参照**] タブで高速または低速の構成がサポートされなくなりました。
--   **各サイトに新しい既定の境界グループ:** 各プライマリ サイトに ***Default-Site-Boundary-Group\<sitecode>*** という名前の新しい既定の境界グループが追加されました。  クライアントが境界グループに割り当てられているネットワークの場所にいない場合、そのクライアントは、割り当てられたサイトの既定のグループに関連付けられているサイト システムを使用します。 フォールバックするコンテンツの場所の概念に代わるものとして、この境界グループを使用することを計画してください。    
- -  [**代替のコンテンツ ソースの場所の使用を許可する**] の削除: フォールバックに使用する配布ポイントを明示的に構成する必要がなくなったため、これを設定するオプションが UI から削除されました。
+### <a name="changes-in-ui-and-behavior-for-boundary-groups-and-content-locations"></a>Modifiche all'interfaccia utente e al comportamento per gruppi limite e percorsi del contenuto
+Di seguito sono riportate le modifiche principali ai gruppi limite e alle modalità di ricerca del contenuto da parte dei client. Molti di queste modifiche e concetti funzionano in combinazione.
+-   **Le configurazioni Veloce o Lento vengono rimosse:** non è più possibile configurare la velocità o la lentezza dei singoli punti di distribuzione.  Al contrario, ogni sistema del sito associato a un gruppo limite viene trattato ugualmente. Grazie a questa modifica, la scheda **Riferimenti** delle proprietà del gruppo limite non supporta la configurazione Veloce o Lento.
+-   **Nuovo gruppo limite predefinito in ogni sito:** ciascun sito primario dispone di un nuovo gruppo limite predefinito denominato ***Default-Site-Boundary-Group\<CodiceSito>***.  Quando un client non è presente in un percorso di rete che viene assegnato a un gruppo limite, il client usa i sistemi del sito associati al gruppo predefinito del sito assegnato. Considerare l'uso di questo gruppo limite come sostituzione del concetto di percorso del contenuto di fallback.    
+ -  L'opzione **"Allow fallback source locations for content"** (Consenti percorsi di origine di fallback per il contenuto) viene rimossa: la configurazione di un punto di distribuzione da usare per il fallback non avviene più in modo esplicito e le opzioni per impostare questa proprietà vengono rimosse dall'interfaccia utente.
 
-    さらに、アプリケーションの展開の種類で [**代替のコンテンツ ソースの場所の使用をクライアントに許可する**] の設定をオンにした場合の結果が変更されています。 展開の種類でこの設定をオンにすると、クライアントがコンテンツ ソースの場所として既定のサイトの境界グループを使用できるようになりました。
+    Il risultato dell'impostazione **Allow fallback source locations for content** (Consenti percorsi di origine di fallback per il contenuto) in un tipo di distribuzione per le applicazioni cambia. Questa impostazione su un tipo di distribuzione consente ora al client di usare il gruppo limite del sito predefinito come percorso di origine del contenuto.
 
- -  **境界グループのリレーションシップ:** 各境界グループを 1 つ以上の別の境界グループにリンクできます。 これらのリンクは、**[リレーションシップ]** という名前の新しい境界グループ プロパティ タブに構成されるリレーションシップを形成します。
-    -   クライアントに直接関連付けられている各境界グループは、**現在の**境界グループと呼ばれます。  
-    -   クライアントの*現在の*境界グループと別のグループとの関連付けによりクライアントが使用できる境界グループはすべて、**近隣**境界グループと呼ばれます。
-    -  これは [**リレーションシップ**] タブにあり、ここで*近隣*境界グループとして使用できる境界グループを追加します。 また、クライアントが*現在の*グループで配布ポイントからコンテンツを検索するのに失敗したと判断して、これらの*近隣*境界グループからコンテンツの場所の検索を開始する時間を分単位で設定することもできます。
+ -  **Relazioni tra gruppi limite:** ciascun gruppo limite può essere collegato a uno o più gruppi limite aggiuntivi. Questi collegamenti costituiscono le relazioni configurate sulla nuova scheda delle proprietà del gruppo limite, denominata **Relationships** (Relazioni):
+    -   Ogni gruppo limite associato direttamente a un client viene chiamato gruppo limite **corrente**.  
+    -   Qualsiasi gruppo limite che un client può usare grazie all'associazione tra il gruppo limite *corrente* e un altro gruppo viene chiamato gruppo limite **adiacente**.
+    -  Nella scheda **Relationships** (Relazioni) è possibile aggiungere gruppi limite da usare come gruppo limite *adiacente*. È anche possibile configurare una quantità di minuti che stabiliste il momento in cui il client che non riesce a trovare il contenuto da un punto di distribuzione nel gruppo *corrente* avvierà la ricerca dei percorsi del contenuto nei gruppi limite *adiacenti*.
 
-        境界グループの構成を追加または変更する場合に、構成している現在のグループから特定の境界グループへのフォールバックをブロックするオプションがあります。
+        Quando si aggiunge o si modifica una configurazione del gruppo limite, è possibile bloccare il fallback su tale gruppo limite dal gruppo corrente che si sta configurando.
 
-    新しい構成を使用するには、ある境界グループから別の境界グループに明示的な関連付け (リンク) を定義し、関連付けられているグループ内のすべての配布ポイントを同じ時間 (分単位) で設定します。 設定する時間によって、クライアントが*現在の*境界グループからのコンテンツ ソースの検索に失敗した場合に、近隣境界グループからコンテンツ ソースの検索を開始できる時間が決まります。
+    Per usare la nuova configurazione, definire le associazioni esplicite (collegamenti) da un gruppo limite a un altro e configurare tutti i punti di distribuzione nel gruppo associato con la stessa durata in minuti. Il tempo configurato determina quando il momento in cui un client che non riesce a trovare l'origine di un contenuto del relativo gruppo limite *corrente* può iniziare a cercare le origini del contenuto nel gruppo limite adiacente.
 
-    明示的に設定した境界グループに加え、各境界グループには既定のサイト境界グループへの暗黙的なリンクもあります。 このリンクは、既定のサイトの境界グループが近隣境界グループになり、クライアントにコンテンツ ソースの場所としてその境界グループと関連付けられた配布ポイントを使用できるようになってから 120 分後にアクティブになります。
+    Oltre ai gruppi limite configurati in modo esplicito, ogni gruppo limite dispone di un collegamento implicito al gruppo limite del sito predefinito. Questo collegamento si attiva dopo 120 minuti, momento in cui il gruppo limite del sito predefinito diventa un gruppo limite adiacente che consente ai client di usare i punti di distribuzione associati a tale gruppo limite come percorsi di origine del contenuto.
 
-    これは、以前はコンテンツのフォールバックと呼ばれていた動作に取って代わるものです。  この 120 分の既定の動作は、既定のサイトの境界グループを*現在の*グループに明示的に関連付け、特定の時間を分単位で設定するか、フォールバックを完全にブロックして使用できないようにすることで無効にすることができます。
+    Questo comportamento sostituisce ciò che in precedenza veniva definito "fallback per il contenuto".  È possibile eseguire l'override di questo comportamento predefinito di 120 minuti, associando in modo esplicito il gruppo limite del sito predefinito a un gruppo *corrente* e impostando un momento specifico, indicato in minuti, o il blocco completo del fallback per impedirne l'uso.
 
 
--   **クライアントは各配布ポイントからのコンテンツ取得を最大 2 分間試みる:** クライアントは、コンテンツ ソースの場所を検索する際に、各配布ポイントへのアクセスを 2 分間試行してから別の配布ポイントを試します。 これは、クライアントが配布ポイントへの接続を最大 2 時間試行していた以前のバージョンからの変更点です。
+-   **I client tentano di ottenere i contenuti da ogni punto di distribuzione per un massimo di 2 minuti:** quando un client cerca un percorso di origine del contenuto, tenta di accedere a ogni punto di distribuzione per 2 minuti prima di passare a un altro punto di distribuzione. Si tratta di una modifica rispetto alle versioni precedenti in cui i client tentavano di connettersi a un punto di distribuzione per un massimo di 2 ore.
 
-    - クライアントが使用を試みる最初の配布ポイントは、クライアントの*現在の*境界グループ (複数可) 内の利用可能な配布ポイントのプールからランダムに選択されます。
+    - Il primo punto di distribuzione che un client tenta di usare viene selezionato casualmente dal pool di punti di distribuzione disponibili nel gruppo, o gruppi, limite *corrente* del client.
 
-    - 2 分後に、クライアントがコンテンツを見つけられない場合は、新しい配布ポイントに切り替えて、そのサーバーからコンテンツを取得しようとします。 このプロセスは、クライアントがコンテンツを見つけるか、そのプール内の最後のサーバーに到達するまで 2 分ごとに繰り返されます。
+    - Dopo due minuti, se il client non ha trovato il contenuto, passa a un nuovo punto di distribuzione e tenta di ottenere il contenuto da questo server. Questo processo viene ripetuto ogni due minuti fino a quando il client trova il contenuto o raggiunge l'ultimo server del pool.
 
-    - クライアントが*近隣*境界グループへのフォールバック期間に達するまでに、*現在の*プールから有効なコンテンツ ソースの場所を見つけられない場合、クライアントはその*近隣*グループからの配布ポイントを現在のリストの末尾に追加して、両方の境界グループからの配布ポイントを含む拡張されたソースの場所のグループを検索します。
+    - Se un client non trova un percorso di origine del contenuto valido nel proprio pool *corrente* prima dell'intervallo di fallback verso un gruppo limite *adiacente*, il client aggiunge quindi i punti di distribuzione dal gruppo *adiacente* alla fine dell'elenco corrente e quindi cerca nel gruppo espanso di percorsi di origine che include i punti di distribuzione da entrambi i gruppi limite.
 
         > [!TIP]  
-        > 現在の境界グループから既定のサイトの境界グループに明示的なリンクを作成し、近隣境界グループへのリンクのフォールバック時間よりも短いフォールバック時間を定義すると、クライアントは、近隣グループを含める前の既定のサイトの境界グループからのソースの場所の検索を開始します。
+        > Quando si crea un collegamento esplicito tra il gruppo limite corrente e il gruppo limite del sito predefinito e si definisce un intervallo di fallback inferiore al tempo di fallback per il collegamento a un gruppo limite adiacente, i client iniziano la ricerca dei percorsi di origine dal gruppo limite del sito predefinito prima di includere il gruppo adiacente.
 
-    - クライアントがプール内の最後のサーバーからのコンテンツの取得に失敗した場合、もう一度プロセスを開始します。
+    - Quando il client non riesce a ottenere il contenuto dall'ultimo server nel pool, avvia nuovamente il processo.
 
 
-### <a name="how-the-new-model-works"></a>新しいモデルのしくみ
-境界グループを構成するときに、配布ポイントを境界グループに関連付けるのと同じように、境界 (ネットワークの場所) とサイト システムの役割を関連付けます。 これは、ネットワーク上のクライアントの近くにある配布ポイントのようにサイト システム サーバーにクライアントをリンクすることに役立ちます。   
--   同じ境界を複数の境界グループに割り当てることができます。
--   サイト システム サーバーは、配布ポイントと同様に、複数の境界グループに関連付けて、広範なネットワークの場所から利用できるようにすることができます。
--   配布ポイントが境界グループに関連付けられていない場合は、クライアントはその配布ポイントをコンテンツ ソースの場所として使用することはできません。
+### <a name="how-the-new-model-works"></a>Come funziona il nuovo modello
+Quando si configurano i gruppi limite, associare i limiti (percorsi di rete) e i ruoli del sistema del sito, ad esempio i punti di distribuzione, al gruppo limite. Questa operazione agevola il collegamento dei client ai server del sistema del sito, come i punti di distribuzione che si trovano vicino ai client nella rete.   
+-   È possibile assegnare lo stesso limite a più gruppi limite.
+-   I server del sistema del sito, ad esempio i punti di distribuzione, possono essere associati a più gruppi limite, rendendoli disponibili per una vasta gamma di percorsi di rete.
+-   Se un punto di distribuzione non è associato a un gruppo limite, i client non saranno in grado di usare tale punto di distribuzione come percorso di origine del contenuto.
 
-この Technical Preview から、境界グループのリレーションシップを定義して、コンテンツ ソースの場所にフォールバック動作を設定します。 この新しい動作は、境界グループのプロパティの新しい [**リレーションシップ**] タブで設定でき、サイト システムの低速または高速の設定、およびコンテンツに代替ソースの場所を許可する境界グループの設定を置き換えます。
+A partire da questa Technical Preview, è possibile definire le relazioni del gruppo limite per configurare il comportamento di fallback per i percorsi di origine del contenuto. Questo nuovo comportamento viene configurato nella nuova scheda **Relationships** (Relazioni) delle proprietà del gruppo limite e sostituisce la configurazione veloce o lenta dei sistemi del sito, nonché la configurazione di un gruppo limite per consentire il percorso di origine di fallback per il contenuto.
 
-[リレーションシップ] タブで、リレーションシップを構成するその他の境界グループをこれらのグループに追加します。 各リレーションシップは、**現在の**境界グループから**近隣**と呼ばれる追加する境界グループへの一方向のリンクです。 作成する各リンクに対し、フォールバック時間 (分) を指定した配布ポイントを構成することができます。 この時間は、クライアントが現在の境界グループから有効なコンテンツ ソースの場所を検索できない場合に、*近隣*境界グループ内の配布ポイントの使用を開始できるようになるまでに*現在の*境界グループにとどまる時間を決定するために使用されます。
+Nella scheda Relationshps (Relazioni) aggiungere altri gruppi limite per configurare una relazione con questi gruppi. Ogni relazione è un collegamento unidirezionale dal gruppo limite **corrente** al gruppo limite che si aggiunge, chiamato gruppo **adiacente**. Per ogni collegamento creato, è possibile configurare i punti di distribuzione con un tempo di fallback definito in minuti. Questo tempo viene usato per determinare dopo quanto tempo client del gruppo limite *corrente* può fare uso dei punti di distribuzione del gruppo limite *adiacente* se non riesce a trovare un percorso di origine del contenuto valido nel gruppo limite corrente.
 
-クライアントがコンテンツを見つけられずに近隣境界グループから場所の検索を開始する際に、そのクライアントが利用できる配布ポイントのプールを制御された方法で増やします。  
+Se un client non riesce a trovare il contenuto e inizia la ricerca dei percorsi nei gruppi limite adiacenti, il pool di punti di distribuzione disponibili aumenta in modo controllato per quel client.  
 
--   境界グループには複数のリレーションシップを設定できます。 これにより、異なる期間後に異なる近隣グループへのフォールバックが発生するように構成できます。
--   クライアントは、現在の境界グループに直接隣接している境界グループにのみフォールバックします。
--   クライアントが複数の境界グループのメンバーである場合は、現在の境界グループが、そのクライアントのすべての境界グループの結合として定義されます。  これによりそのクライアントが元の境界グループの任意の近隣グループにフォールバックできます。
+-   Un gruppo limite può avere più di una relazione. Ciò consente di configurare il fallback su diversi gruppi adiacenti a diversi intervalli di tempo.
+-   I client eseguiranno il fallback a un gruppo limite solo se è direttamente adiacente al gruppo limite corrente.
+-   Se un client fa parte di più gruppi limite, il gruppo limite corrente è definito come un'unione di tutti i gruppi limite del client.  Il client può quindi eseguire il fallback a un gruppo adiacente di uno di questi gruppi limite originali.
 
-定義するリンクに加え、作成する境界グループとサイトごとに自動的に作成される既定の境界グループとの間に自動的に作成される暗黙的なリンクがあります。 この自動リンクは、
--   割り当てられたサイトから既定の境界グループを自動的に使用する階層内の任意の境界グループに関連付けられている境界上にないクライアントによって、有効なコンテンツ ソースの場所を識別するために使用されます。   
--   120 分後に使用される現在の境界グループからサイトの既定の境界グループへの既定のフォールバック オプションです。
+Oltre ai collegamenti definiti dall'utente, esiste un collegamento implicito che viene creato automaticamente tra i gruppi limite creato dall'utente e il gruppo limite predefinito, creato automaticamente per ogni sito. Questo collegamento automatico:
+-   Viene usato dai client che non si trovano su un limite associato a un gruppo limite nella gerarchia che usa automaticamente il gruppo limite predefinito dal proprio sito assegnato per identificare i percorsi di origine del contenuto validi.   
+-   Si tratta di un'opzione di fallback predefinita dal gruppo limite corrente al gruppo limite predefinito dei siti, usato dopo 120 minuti.
 
-**新しいモデルの使用例:**     
-境界またはサイト システム サーバーを共有しない次の 3 つの境界グループを作成します。
--   配布ポイント DP_A1 と DP_A2 が関連付けられたグループ BG_A
--   配布ポイント DP_B1 と DP_B2 が関連付けられたグループ BG_B
--   配布ポイント DP_C1 と DP_C2 が関連付けられたグループ BG_C
+**Esempio sull'uso del nuovo modello:**     
+Creare tre gruppi limite che non condividono limiti o server del sistema del sito:
+-   Gruppo BG_A con punti di distribuzione DP_A1 e DP_A2 associati al gruppo
+-   Gruppo BG_B con punti di distribuzione DP_B1 e DP_B2 associati al gruppo
+-   Gruppo BG_C con punti di distribuzione DP_C1 e DP_C2 associati al gruppo
 
-クライアントのネットワークの場所を境界として BG_A 境界グループにのみ追加し、その境界グループから他の 2 つの境界グループへのリレーションシップを構成します。
--   10 分後に使用する 1 つ目の*近隣*グループ (BG_B) に配布ポイントを構成します。 このグループには、配布ポイント DP_B1 と DP_B2 が含まれています。 どちらも、最初のグループの境界の場所に適切に接続されています。
--   20 分後に使用するように 2 つ目の*近隣*グループ (BG_C) を構成します。 このグループには、配布ポイント DP_C1 と DP_C2 が含まれています。 どちらも、他の 2 つの境界グループから WAN を経由します。
--   また、サイト サーバーに配置される追加の配布ポイントをサイトの既定のサイト境界グループに追加します。 これは、最小限の推奨されるコンテンツ ソースの場所ですが、すべての境界グループの中心的な場所に配置されます。
+Aggiungere i percorsi di rete dei client come limiti solo al gruppo limite BG_A e configurare le relazioni tra tale gruppo limite e gli altri due gruppi limite:
+-   Configurare i punti di distribuzione per il primo gruppo *adiacente* (BG_B) da usare dopo 10 minuti. Questo gruppo contiene i punti di distribuzione DP_B1 e DP_B2. Entrambi sono ben connessi ai percorsi limite dei primi gruppi.
+-   Configurare il secondo gruppo *adiacente* (BG_C) da usare dopo 20 minuti. Questo gruppo contiene i punti di distribuzione DP_C1 e DP_C2. Entrambi si trovano a un WAN rispetto agli altri due gruppi limite.
+-   Aggiungere anche un punto di distribuzione aggiuntivo che si trova nel server del sito al gruppo limite del sito predefinito di siti. Si tratta della posizione di origine di contenuto meno preferita, ma si trova a livello centrale per tutti i gruppi limite.
 
-    境界グループとフォールバック時間の例:
+    Esempio di gruppi limite e tempi di fallback:
 
      ![BG_Fallack](media/BG_Fallback.png)
 
 
-この構成では:
--   クライアントは*現在の*境界グループ (BG_A) 内の配布ポイントからコンテンツの検索を開始し、各配布ポイントを 2 分間検索してから、境界グループ内の次の配布ポイントに切り替えます。 有効なコンテンツ ソースの場所のクライアントのプールには、DP_A1 と DP_A2 が含まれています。
--   クライアントは*現在の* 境界グループを 10 分間検索してコンテンツが見つからなかった場合、BG_B 境界グループから配布ポイントを検索に追加します。 BG_A と BG_B の両方の境界グループからの配布ポイントを含む結合された配布ポイントのプール内の配布ポイントからコンテンツの検索を続行します。 クライアントは引き続き各配布ポイントを 2 分間検索してから、そのプール内の次の配布ポイントに切り替えます。 有効なコンテンツ ソースの場所のクライアントのプールには、DP_A1、DP_A2、DP_B1、DP_B2 が含まれています。
--   さらに 10 分 (合計 20 分) 経っても、クライアントがコンテンツがある配付ポイントをまだ見つけられない場合は、利用可能な配布ポイントのプールを拡大して、2 番目の*近隣*グループ (境界グループ BG_C) からの配付ポイントを含めます。 これで、クライアントが検索する配布ポイントが 6 個 (DP_A1、DP_A2、DP_B2、DP_B2、DP_C1、DP_C2) になり、コンテンツが見つかるまで 2 分ごとに新しい配布ポイントへの切り替えを続行します。
--   合計で 120 分経ってもクライアントがコンテンツを見つけられない場合は、フォールバックして*既定サイトの境界グループ*を継続的な検索の一部として含めます。 これで配布ポイントのプールに構成した 3 つの境界グループからすべての配布ポイントが含まれ、最後の配布ポイントがサイト サーバー コンピューター上に配置されました。  クライアントはコンテンツが見つかるまで 2 分ごとに配布ポイントを切り替えてコンテンツの検索を続けます。
+Con questa configurazione:
+-   Il client inizia la ricerca del contenuto dai punti di distribuzione nel relativo gruppo limite *corrente* (BG_A), cercando in ogni punto di distribuzione per due minuti prima di passare al successivo punto di distribuzione del gruppo limite. Il pool di client dei percorsi di origine del contenuto validi include DP_A1 e DP_A2.
+-   Se il client non riesce a trovare il contenuto nel proprio gruppo limite *corrente* dopo 10 minuti di ricerca, aggiunge i punti di distribuzione dal gruppo limite BG_B alla ricerca. Continua quindi a eseguire la ricerca del contenuto da un punto di distribuzione nel proprio pool combinato di punti di distribuzione che include ora i gruppi limite BG_A sia BG_B. Il client continuerà a contattare ogni punto di distribuzione per due minuti prima di passare al successivo punto di distribuzione del pool. Il pool di client dei percorsi di origine del contenuto validi include DP_A1, DP_A2, DP_B1 e DP_B2.
+-   Dopo altri 10 minuti (totale di 20 minuti), se il client non ha ancora rilevato un punto di distribuzione con contenuto, espande il proprio pool di punti di distribuzione disponibili per includere i punti del secondo gruppo *adiacente*, il gruppo limite BG_C. Il client ora dispone di 6 punti di distribuzione per la ricerca (DP_A1, DP_A2, DP_B2, DP_B2, DP_C1 e DP_C2) e continua la modifica a un nuovo punto di distribuzione ogni due minuti fino a quando il contenuto non viene trovato.
+-   Se il client non ha rilevato il contenuto dopo un totale di 120 minuti, esegue il fallback per includere il *gruppo limite del sito predefinito* nella ricerca. Il pool di punti di distribuzione include ora tutti i punti di distribuzione dei tre gruppi limite configurati e il punto di distribuzione finale situato nel computer server del sito.  Il client continua quindi la ricerca del contenuto, modificando i punti di distribuzione ogni due minuti fino a quando il contenuto non viene trovato.
 
-異なる時間に異なる近隣グループが利用可能になるように構成することで、特定の配布ポイントがコンテンツ ソースの場所として追加されるタイミング、およびクライアントが既定サイトの境界グループへのフォールバックを他の場所から使用できないコンテンツのセーフティ ネットとして使用するタイミングまたは状況を制御します。
+Configurando i vari gruppi adiacenti perché siano disponibili in momenti diversi, è possibile controllare quando i punti di distribuzione specifici vengono aggiunti come percorso di origine del contenuto e quando o se il client esegue il fallback al gruppo limite del sito predefinito come rete di protezione per il contenuto non disponibile in altre posizioni.
 
 
-### <a name="bkmk_update"></a>既存の境界グループを新しいモデルに更新する
-バージョン 1609 をインストールしてサイトを更新するときに、次の構成が自動的に行われます。 これらは、新しい境界グループおよびリレーションシップを構成するまで、現在のフォールバック動作をそのまま利用できるようにすることを目的としています。  
--   サイトで保護されていない配布ポイントがそのサイトの *Default-Site-Boundary-Group\<sitecode>* 境界グループに追加されます。
--   低速接続が設定されているサイト サーバーを含む既存の各境界グループのコピーが作成されます。 新しいグループの名前は ***\<元の境界グループ名>-Slow-Tmp*** です。  
-    -   高速接続が設定されているサイト システムは、元の境界グループに残されます。
-    -   低速接続が設定されているサイト システムのコピーが、境界グループのコピーに追加されます。 低速接続で設定されている元のサイト システムは、後方互換性のために元の境界グループに残っていますが、その境界グループからは使用されません。
-    -   この境界グループのコピーには、それに関連付けられている境界はありません。 ただし、元のグループとフォールバックの時間が 0 に設定された新しい境界グループのコピー間にフォールバック リンクが作成されます。
+### <a name="bkmk_update"></a>Aggiornare i gruppi limite esistenti al nuovo modello
+Quando si installa la versione 1609 e si aggiorna il sito, le configurazioni seguenti vengono eseguite in automatico. Tali configurazioni sono utili per verificare che il comportamento di fallback corrente rimanga disponibile finché non si configurano i nuovi gruppi limite e le relazioni.  
+-   Vengono aggiunti punti di distribuzione non protetti di un sito al gruppo limite *Default-Site-Boundary-Group\<CodiceSito>* di tale sito.
+-   Viene creata una copia di ogni gruppo limite esistente che include un server del sito configurato con una connessione lenta. Il nome del nuovo gruppo è ***\<nome originale del gruppo limite >-Slow-Tmp***:  
+    -   I sistemi del sito che dispongono di una connessione veloce rimangono nel gruppo limite originale.
+    -   Viene aggiunta una copia dei sistemi del sito con connessione lenta alla copia del gruppo limite. I sistemi del sito originale configurati con connessione lenta rimangono nel gruppo limite originale per la compatibilità con le versioni precedenti, ma non vengono usati da questo gruppo limite.
+    -   Questa copia del gruppo limite non dispone di limiti associati. Tuttavia, viene creato un collegamento fallback tra il gruppo originale e la nuova copia del gruppo limite che presenta l'ora di fallback impostata su zero.
 
- 次の表に、元の展開設定と配付ポイントの設定の組み合わせから期待できる新しいフォールバック動作を示します。
+ La tabella seguente identifica il nuovo comportamento di fallback previsto dalla combinazione di impostazioni di distribuzione originali e di configurazioni di punti di distribuzione:
 
-低速ネットワークでの [プログラムを実行しない] の元の展開構成  |[代替のコンテンツ ソースの場所の使用をクライアントに許可する] の元の配布ポイントの構成  |新しいフォールバック動作  
+Configurazione della distribuzione originale per "Non eseguire il programma" in una rete lenta  |Configurazione del punto di distribuzione originale per "Allow client to use a fallback source location for content" (Consenti al client di usare un percorso di origine di fallback per il contenuto)  |Nuovo comportamento di fallback  
 ---------|---------|---------
-オン     |  オン    |  **フォールバックなし**: 現在の境界グループ内の配布ポイントのみを使用します。       
-オン     |  オフ|  **フォールバックなし**: 現在の境界グループ内の配布ポイントのみを使用します。       
-オフ |  オフ|  **近隣ノードへのフォールバック**: 現在の境界グループ内の配布ポイントを使用し、近隣境界グループから配布ポイントを追加します。 既定のサイトの境界グループに明示的なリンクを構成しない限り、クライアントはそのグループにフォールバックしません。    
-オフ | オン     |   **通常のフォールバック**: 現在の境界グループ内の配布ポイントを使用してから、近隣ノードとサイトの既定の境界グループから配布ポイントを使用します。
+Selezionato     |  Selezionato    |  **Nessun fallback**: usare solo i punti di distribuzione nel gruppo limite corrente       
+Selezionato     |  Non selezionato|  **Nessun fallback**: usare solo i punti di distribuzione nel gruppo limite corrente       
+Non selezionato |  Non selezionato|  **Fallback verso adiacente**: usare i punti di distribuzione nel gruppo limite corrente e quindi aggiungere i punti di distribuzione del gruppo limite adiacente. A meno che non sia configurato un collegamento esplicito al gruppo limite del sito predefinito, i client non eseguono il fallback su questo gruppo.    
+Non selezionato | Selezionato     |   **Fallback normale**: usare i punti di distribuzione nel gruppo limite corrente, quindi quelli del gruppo adiacente e dal gruppo limite del sito predefinito
 
- その他のすべての展開の構成は**通常のフォールバック**になります。  
+ Tutte le altre configurazioni di distribuzione seguiranno il **Fallback normale**.  
 
 
 
-## <a name="office-365-client-management-dashboard"></a>Office 365 クライアント管理ダッシュボード  
-Configuration Manager の Technical Preview 1609 では、新しいダッシュボードが導入されています。 このダッシュボードを表示するには、Configuration Manager コンソールで [**ソフトウェア ライブラリ**] > [**概要**] > [**Office 365 クライアント管理**] に移動します。
+## <a name="office-365-client-management-dashboard"></a>Dashboard di Gestione client di Office 365  
+Configuration Manager 1609 Technical Preview introduce un nuovo dashboard. Per visualizzare il dashboard, nella console di Configuration Manager passare a **Raccolta software** > **Panoramica** > **Office 365 Client Management** (Gestione Client di Office 365).
 >[!NOTE]
->Configuration Manager コンソールの [**新着情報** ] ワークスペースでは、新しいダッシュボードが正しくない名前の [**Office 365 サービス ダッシュボード**] と書かれています。
+>Nell'area di lavoro **Novità** della console di Configuration Manager, il nuovo dashboard viene erroneamente chiamato **Office 365 Servicing dashboard** (Dashboard per la manutenzione di Office 365).
 
-ダッシュボードには、次のチャートが表示されます。
+Nel dashboard vengono visualizzati i grafici per:
 
-- Office 365 クライアントの数
-- Office 365 クライアントのバージョン
-- Office 365 クライアントの言語
-- Office 365 クライアントのチャネル     
-詳細については、「[Office 365 ProPlus 更新プログラム チャネルの概要](https://technet.microsoft.com/library/mt455210.aspx)」をご覧ください。
-- Office 365 クライアントが使用可能な製品のセットで選択した自動展開規則
+- Numero di client di Office 365
+- Versioni dei client di Office 365
+- Lingue dei client di Office 365
+- Canali dei client di Office 365     
+Per altre informazioni, vedere [Panoramica dei canali di aggiornamento per Office 365 ProPlus](https://technet.microsoft.com/library/mt455210.aspx).
+- Regole di distribuzione automatica con il client di Office 365 selezionato nel set dei prodotti disponibili.
 
-ダッシュボードでは、次の操作を実行できます。
-- ダッシュボードの上部にある [**コレクション**] ドロップダウン設定を使用して、特定のコレクションのメンバーでダッシュボードのデータをフィルター処理します。
-- ダッシュボードの右上にある [**Office 365 インストーラー**] をクリックして、Office 365 クライアントのインストール ウィザードを起動して、Office 365 アプリをクライアントに展開します。 詳細については、「[クライアントに Office 365 アプリを展開する](#deploy-office-365-apps-to-clients)」をご覧ください。
-- ダッシュボードの右中央で、[**ADR の作成**] をクリックして自動展開規則の作成ウィザードを開き、新しい自動展開規則 (ADR) を作成します。 Office 365 アプリに ADR を作成するには、製品を選択するときに [**Office 365 クライアント**] を選択します。 詳細については、「[ソフトウェア更新プログラムの自動展開](/sccm/sum/deploy-use/automatically-deploy-software-updates)」を参照してください。
-- ダッシュボードの右下で、[**クライアント エージェント設定の作成**] をクリックしてクライアント エージェントの設定を開きます。 詳細については、「[クライアント設定について](/sccm/core/clients/deploy/about-client-settings)」を参照してください。
+Sul dashboard è possibile eseguire le azioni seguenti:
+- Nella parte superiore del dashboard, usare l'impostazione a discesa **Raccolta** per filtrare i dati del dashboard in base ai membri di una raccolta specifica.
+- Sul lato superiore destro del dashboard, fare clic su **Office 365 Installer** (Programma di installazione di Office 365) per avviare l'installazione guidata di Office 365 Client e distribuire le applicazioni di Office 365 sui client. Per informazioni dettagliate, vedere [Distribuire le app di Office 365 sui client](#deploy-office-365-apps-to-clients).
+- Sul lato centrale a destra del dashboard, fare clic su **Create an ADR** (Crea un ADR) per aprire la creazione guidata delle regole di distribuzione automatica e creare una nuova regola di distribuzione automatica (ADR). Per creare un ADR per le applicazioni di Office 365, selezionare **Office 365 Client** (Client Office 365) quando si sceglie il prodotto. Per altre informazioni, vedere [Distribuire automaticamente gli aggiornamenti software](/sccm/sum/deploy-use/automatically-deploy-software-updates).
+- Sul lato inferiore destro del dashboard, fare clic su **Create Client Agent Settings** (Crea impostazioni agente client) per aprire le impostazioni dell'agente client. Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings) (Informazioni sulle impostazioni client).
 
 
 
-Office 365 ProPlus の更新プログラムの詳細については、「[Manage Office 365 ProPlus updates with Configuration Manager](/sccm/sum/deploy-use/manage-office-365-proplus-updates)」 (Configuration Manager での Office 365 ProPlus の更新プログラムの管理) をご覧ください。
+Per altre informazioni sugli aggiornamenti di Office 365 ProPlus, vedere [Manage Office 365 ProPlus updates with Configuration Manager](/sccm/sum/deploy-use/manage-office-365-proplus-updates) (Gestire gli aggiornamenti di Office 365 ProPlus con Configuration Manager).
 
-## <a name="deploy-office-365-apps-to-clients"></a>クライアントに Office 365 アプリを展開する
-このリリースでは、Office 365 クライアント管理ダッシュボードから Office 365 のインストーラーを起動できます。インストーラーを使用すると、Office 365 のインストール設定を構成し、Office コンテンツ配信ネットワーク (CDN) からファイルをダウンロードし、Configuration Manager でファイルをアプリケーションとして展開できます。
+## <a name="deploy-office-365-apps-to-clients"></a>Distribuire le app di Office 365 sui client
+In questa versione, nel dashboard di gestione del client di Office 365, è possibile avviare l'installazione di Office 365 che consente di configurare le impostazioni di installazione di Office 365, scaricare file dalle reti di distribuzione del contenuto (CDN) e distribuire i file come applicazione in Configuration Manager.
 
-### <a name="limitations-of-office-365-deployment"></a>Office 365 展開の制限事項
-- Office 365 アプリのインストール ウィザードで既存のクライアント設定 (XML) をインポートしようとすると、問題が発生する場合があります。 手動では問題なくクライアント設定を構成できます。
+### <a name="limitations-of-office-365-deployment"></a>Limitazioni della distribuzione di Office 365
+- Si potrebbero anche presentare problemi quando si tenta di importare le impostazioni client esistenti (XML) durante l'installazione guidata dell'app Office 365. È possibile configurare manualmente le impostazioni del client senza riscontrare problemi.
 
-#### <a name="to-deploy-office-365-apps-to-clients"></a>クライアントに Office 365 アプリを展開するには
-1. Configuration Manager コンソールで [**ソフトウェア ライブラリ**] > [**概要**] > [**Office 365 クライアント管理**] に移動します。
-2. 右上のウィンドウで [**Office 365 インストーラー**] をクリックします。 Office 365 クライアントのインストール ウィザードが開きます。
-3. [**アプリケーションの設定**] ページでアプリの名前と説明を入力し、ファイルをダウンロードする場所を入力して、[**次へ**] をクリックします。 場所は &#92;&#92;*server*&#92;*share* の形式で指定する必要があります。
-4. [**クライアント設定のインポート**] ページで、Office 365 クライアントの設定を既存の XML 構成ファイルからインポートするか、手動で設定を指定するかどうかを選び、[**次へ**] をクリックします。
-既存の構成ファイルを使用する場合は、ファイルの場所を入力し、ステップ 7 に進みます。 場所は &#92;&#92;*server*&#92;*share*&#92;*filename*.XML の形式で指定する必要があります。
+#### <a name="to-deploy-office-365-apps-to-clients"></a>Per distribuire le app di Office 365 sui client
+1. Nella console di Configuration Manager passare a **Raccolta software** > **Panoramica** > **Office 365 Client Management** (Gestione Client di Office 365).
+2. Fare clic su **Office 365 Installer** (Programma di installazione di Office 365) nel riquadro in alto a destro. Si apre l'installazione guidata dei client di Office 365.
+3. Nella pagina **Impostazioni applicazione** specificare il nome e la descrizione per l'app, immettere il percorso di download per i file e quindi fare clic su **Avanti**. Si noti che è necessario specificare il percorso nel formato &#92;&#92;*server*&#92;*share*.
+4. Nella pagina **Import Client Settings** (Importa impostazioni client) scegliere se importare le impostazioni del client di Office 365 da un file di configurazione XML esistente o se specificare manualmente le impostazioni, quindi fare clic su **Avanti**.
+Se già si dispone di un file di configurazione, immettere il percorso del file e andare al passaggio 7. Si noti che è necessario specificare il percorso nel formato &#92;&#92;*server*&#92;*share*&#92;*nomedelfile*.XML.
 
     > [!IMPORTANT]
-    >この Technical Preview で既存のクライアント設定 (XML) をインポートしようとすると、問題が発生する場合があります。
+    >In questa Tecnical Preview, si potrebbero anche presentare problemi quando si tenta di importare le impostazioni client esistenti (XML).
 
-5. [**クライアント プロダクト**] ページで、使用する Office 365 スイートを選び、含めたいアプリケーションを選び、含める必要がある追加の Office 製品を選び、[**次へ**] をクリックします。
-6. [**クライアント設定**] ページで、含める設定を選び、[**次へ**] をクリックします。
-7. [**展開**] ページで、アプリケーションを展開するかどうかを選び[**次へ**] をクリックします。
-ウィザードでパッケージを展開しないことを選択した場合は、ステップ 9 に進みます。
-8. 一般的なアプリケーション展開の場合と同様に、ウィザードの残りのページを構成します。 詳細については、「[アプリケーションの作成と展開](/sccm/apps/get-started/create-and-deploy-an-application)」を参照してください。
-9. ウィザードを完了します。
-10. 他のアプリケーションと同様に、Configuration Manager で [**ソフトウェア ライブラリ**] > [**概要**] > [**アプリケーション管理**] > [**アプリケーション**] の順に選択して、アプリケーションを展開または編集することができます。
+5. Nella pagina **Client Products** (Prodotti client) selezionare la suite Office 365 in uso, selezionare le applicazioni da includere, selezionare eventuali prodotti aggiuntivi di Office da includere e quindi fare clic su **Avanti**.
+6. Nella pagina **Impostazioni client** scegliere le impostazioni da includere e fare clic su **Avanti**.
+7. Nella pagina **Distribuzione** scegliere se distribuire l'applicazione, quindi fare clic su pagina **Avanti**.
+Se si sceglie di non distribuire il pacchetto nella procedura guidata, andare al passaggio 9.
+8. Configurare il resto delle pagine della procedura guidata come si farebbe per la distribuzione di un'applicazione comune. Per altre informazioni, vedere [Create and deploy an application](/sccm/apps/get-started/create-and-deploy-an-application) (Creare e distribuire un'applicazione).
+9. Completare la procedura guidata.
+10. È possibile distribuire o modificare l'applicazione esattamente come si farebbe con qualsiasi altra applicazione in Configuration Manager da **Raccolta software** > **Panoramica** > **Gestione applicazioni** > **Applicazioni**.
 
 >[!NOTE]
->Office 365 アプリを展開すると、アプリを維持するための自動展開規則を作成できます。 Office 365 アプリに ADR を作成するには、製品を選択するときに [**ADR の作成**] をクリックし、[**Office 365 クライアント**] を選択します。 詳細については、「[ソフトウェア更新プログラムの自動展開](/sccm/sum/deploy-use/automatically-deploy-software-updates)」を参照してください。
+>Dopo la distribuzione delle applicazioni di Office 365, è possibile creare regole di distribuzione automatica per le applicazioni. Per creare un ADR per le applicazioni di Office 365, fare clic su **Create an ADR** (Crea un ADR) e selezionare **Office 365 Client** (Client Office 365) quando si sceglie il prodotto. Per altre informazioni, vedere [Distribuire automaticamente gli aggiornamenti software](/sccm/sum/deploy-use/automatically-deploy-software-updates).
 
-## <a name="BKMK_UEFIConversion"></a>BIOS から UEFI への変換の改善
-コンピューターの再起動のステップで、UEFI に移行するためにハード ドライブに FAT32 パーティションを準備するため、新しい変数 TSUEFIDrive を使用して、オペレーティング システムの展開タスク シーケンスをカスタマイズできるようになりました。 次の手順では、タスク シーケンスのステップを作成して BIOS からUEFI への変換のためにハード ドライブを準備する方法の例を示します。
+## <a name="BKMK_UEFIConversion"></a>Miglioramenti della conversione da BIOS a UEFI
+È ora possibile personalizzare una sequenza di attività di distribuzione del sistema operativo con una nuova variabile, TSUEFIDrive, in modo che il passaggio di riavvio del computer prepari una partizione FAT32 sul disco rigido per la transizione a UEFI. La procedura seguente fornisce un esempio sulle modalità di creazione dei passaggi della sequenza di attività per preparare il disco rigido alla conversione da BIOS a UEFI.
 
-#### <a name="to-prepare-the-fat32-partition-for-the-conversion-to-uefi"></a>UEFI への変換のために FAT32 パーティションを準備するには:
-オペレーティング システムをインストールする既存のタスク シーケンスでは、BIOS からUEFI への変換を実行する手順を含む新しいグループを追加します。
+#### <a name="to-prepare-the-fat32-partition-for-the-conversion-to-uefi"></a>Per preparare la partizione FAT32 alla conversione a UEFI:
+In una sequenza di attività esistente per installare un sistema operativo si aggiungerà un nuovo gruppo usando la procedura di conversione da BIOS a UEFI.
 
-1. ファイルと設定をキャプチャする手順を完了したら、新しいタスク シーケンス グループを作成してから、オペレーティング システムをインストールするステップを実行します。 たとえば、[**キャプチャ ファイルと設定**] グループの後に、[**BIOS-to-UEFI**] という名前のグループを作成します。
-2. 新しいグループの [**オプション**] タブで、新しいタスク シーケンス変数を条件 **_SMSTSBootUEFI** is **not equal** to **true** (_SMSTSBootUEFI は true と等しくない) として追加します。 これにより、コンピューターが既に UEFI モードになっている場合に、グループのステップが実行されないようにします。
-![BIOS-to-UEFI グループ](media/BIOS-to-UEFI-group.png)
-3. 新しいグループの下に、[**コンピューターの再起動**] タスク シーケンスのステップを追加します。 [**再起動後に実行するものを指定してください**] で、[**このタスク シーケンスに割り当てられているブート イメージ**] をオンにして、Windows PE でコンピューターを起動します。  
-4. [**オプション**] タブで、タスク シーケンス変数を条件 (**_SMSTSInWinPE equals false**) として追加します。 これにより、コンピューターが既に Windows PE にある場合に、このステップが実行されないようにします。
+1. Creare un nuovo gruppo di sequenze di attività dopo aver eseguito la proceduta per acquisire file e impostazioni e prima della procedura di installazione del sistema operativo. Ad esempio, creare un gruppo dopo il gruppo **Acquisisci file e impostazioni** denominato **BIOS-to-UEFI** (Da BIOS a UEFI).
+2. Nella scheda **Opzioni** del nuovo gruppo aggiungere una nuova variabile della sequenza di attività come condizione in cui **_SMSTSBootUEFI** sia **diverso** da **true**. Questa operazione blocca l'esecuzione dei passaggi nel gruppo quando il computer è già in modalità UEFI.
+![Gruppo BIOS to UEFI](media/BIOS-to-UEFI-group.png)
+3. Nel nuovo gruppo aggiungere il passaggio della sequenza di attività **Riavvia il computer**. In **Specificare cosa eseguire dopo il riavvio:** selezionare **The boot image assigned to this task sequence is selected** (L'immagine di avvio assegnata a questa sequenza di attività è selezionata) per avviare il computer in Windows PE.  
+4. Nella scheda **Opzioni** aggiungere una variabile della sequenza attività come condizione in cui **_SMSTSInWinPE sia uguale a false** Questa operazione blocca l'esecuzione di questo passaggio se il computer è già in Windows PE.
 
-    ![コンピューターの再起動のステップ](media/Restart-in-Windows-PE.png)
-5. ファームウェアを BIOS から UEFI に変換する OEM ツールを起動するステップを追加します。 これは一般に、OEM ツールを起動するコマンド ラインを含む**コマンドラインの実行**タスク シーケンスのステップになります。
-5.  ハード ドライブをパーティションに分割してフォーマットするディスクのフォーマットとパーティション作成タスク シーケンスのステップを追加します。 このステップでは、次の操作を行います。
-    1.  オペレーティング システムをインストールする前に、UEFI に変換される FAT32 パーティションを作成します。 [**ディスクの種類**] で [**GPT**] を選びます。
-    ![ディスクのフォーマットとパーティション作成のステップ](media/Format-and-partition-disk.png)
-    2.  FAT32 パーティションのプロパティに移動します。 [**変数**] フィールドに「**TSUEFIDrive**」を入力します。 タスク シーケンスでこの変数を検出すると、コンピューターを再起動する前に UEFI 移行のための準備をします。
-    ![パーティションのプロパティ](media/Partition-properties.png)
-    3. タスク シーケンス エンジンがその状態を保存し、ログ ファイルを保存するために使用する NTFS パーティションを作成します。
-6.  **コンピューターの再起動**タスク シーケンスのステップを追加します。 [**再起動後に実行するものを指定してください**] で、[**このタスク シーケンスに割り当てられているブート イメージ**] をオンにして、Windows PE でコンピューターを起動します。  
-
-
+    ![Passaggio Riavvia il computer](media/Restart-in-Windows-PE.png)
+5. Aggiungere un passaggio per avviare lo strumento OEM che convertirà il firmware da BIOS a UEFI. Si tratta in genere di un passaggio della sequenza di attività **Esegui riga di comando** con una riga di comando per avviare lo strumento OEM.
+5.  Aggiungere il passaggio della sequenza attività Formato e disco partizione che partiziona e formatta il disco rigido. Nel passaggio, eseguire le operazioni seguenti:
+    1.  Creare la partizione FAT32 che verrà convertita in UEFI prima di installare il sistema operativo. Scegliere **GPT** per **Tipo disco**.
+    ![Passaggio Formato e disco partizione](media/Format-and-partition-disk.png)
+    2.  Accedere alle proprietà della partizione FAT32. Immettere **TSUEFIDrive** nel campo **Variabile**. Quando la sequenza di attività rileva questa variabile, si avvia la preparazione per la transizione di UEFI prima di riavviare il computer.
+    ![Proprietà della partizione](media/Partition-properties.png)
+    3. Creare una partizione NTFS che il motore della sequenza di attività usa per il salvataggio dello stato e per archiviare i file di log.
+6.  Aggiungere il passaggio della sequenza di attività **Riavvia il computer**. In **Specificare cosa eseguire dopo il riavvio:** selezionare **The boot image assigned to this task sequence is selected** (L'immagine di avvio assegnata a questa sequenza di attività è selezionata) per avviare il computer in Windows PE.  
 
 
-## <a name="intune-compliance-charts"></a>Intune 準拠チャート
-このリリースでは、Configuration Manager コンソールの[**監視**] ワークスペースで新しいチャートを使用して、デバイスの全体の準拠と非準拠の主な理由をすばやく表示することができます。
 
-#### <a name="to-view-the-intune-compliance-charts"></a>Intune 準拠チャートを表示するには
-1. Configuration Manager コンソールで [**監視**] > [**概要**] > [**コンプライアンス設定**]に移動します。
-2. **デバイスの全体の準拠**チャートが表示されます。
-3. [**コンプライアンス ポリシー**] をクリックして、**デバイスの全体の準拠**チャートと**非準拠の主な理由**チャートを表示します。
 
-### <a name="limitations-of-intune-compliance-charts-in-tp-1609"></a>TP 1609 での Intune 準拠チャートの制限事項
-- 現在、**デバイスの全体の準拠**チャートのドリルダウンはエラーが発生します。
-- **非準拠の主な理由**チャートは、ポリシー名を一覧表示し、非準拠の個別の理由については一覧表示しません。 ポリシーをクリックしてドリル ダウンし、そのポリシーに準拠していないデバイスを表示できます。
+## <a name="intune-compliance-charts"></a>Grafici di conformità di Intune
+In questa versione, è possibile ottenere una panoramica sulla conformità generale dei dispositivi e sui motivi principali della non conformità tramite nuovi grafici offerti **nell'area di lavoro di monitoraggio** della console di Configuration Manager.
 
-### <a name="try-it-out"></a>試してみましょう
-次のセクションを順番どおりに実行します。
+#### <a name="to-view-the-intune-compliance-charts"></a>Per visualizzare i grafici di conformità di Intune
+1. Nel riquadro di spostamento della console di Configuration Manager passare a **Monitoraggio** > **Panoramica** > **Impostazioni di conformità**.
+2. Viene visualizzato il grafico **Overall Device Compliance** (Conformità generale del dispositivo).
+3. Fare clic sul nodo **Criteri di conformità** per visualizzare i grafici **Overall Device Compliance** (Conformità generale del dispositivo) e **Top Non-Compliance Reasons** (Motivi principali della non conformità).
 
-#### <a name="check-overall-compliance-chart"></a>全体の準拠チャートを確認する
-1. Configuration Manager で 2 つの iOS コンプライアンス ポリシーを追加します。 一方のポリシーには 1 セットのデバイス設定が必要です (たとえば、暗証番号 (PIN) の長さを 6 に設定)。 もう一方のポリシーには別のセットの設定が必要です (複雑さの要件など)。 ポリシーの設定は、重複または競合することはできません。
-2. 2 つのポリシーをユーザーのセットに展開します。
-3. 前のステップでポリシーを受信したのと同じユーザー アカウントを使用して、2 つの iOS デバイスを Intune に登録します。 デバイスは、コンプライアンス ポリシーの条件を満たす必要はありません。
-4. Configuration Manager で、**デバイスの全体の準拠**チャートを確認します。 両方のデバイスが非準拠として報告されているはずです。
+### <a name="limitations-of-intune-compliance-charts-in-tp-1609"></a>Limitazioni dei grafici di conformità di Intune in 1609 TP
+- Attualmente, il drill-down per il grafico **Overall Device Compliance** (Conformità generale del dispositivo) genera un errore.
+- Il grafico **Top Non-Compliance Reasons** (Motivi principali della non conformità) elenca il nome del criterio e non i singoli motivi di non conformità. È possibile scegliere i criteri per il drill-down e visualizzare i dispositivi non conformi a tale criterio.
+
+### <a name="try-it-out"></a>Procedura
+Completare le sezioni seguenti in ordine:
+
+#### <a name="check-overall-compliance-chart"></a>Controllare il grafico sulla conformità generale.
+1. Aggiungere a due criteri di conformità iOS in Configuration Manager. Un criterio deve avere un set di impostazioni per i dispositivi (ad esempio, impostare la lunghezza del PIN su 6). L'altro criterio deve avere un altro set di impostazioni (ad esempio, la complessità del PIN). Le impostazioni dei criteri non devono sovrapporsi o essere in conflitto.
+2. Distribuire i due criteri in un set di utenti.
+3. Registrare due dispositivi iOS in Intune usando lo stesso account utente e un account che abbia ricevuto i criteri nel passaggio precedente. I dispositivi non devono soddisfare i criteri di conformità.
+4. In Configuration Manager, controllare il grafico **Overall Device Compliance** (Conformità generale del dispositivo). Entrambi i dispositivi devono essere contrassegnati come non conformi.
 <!-- 5. Click the **Non-compliant** section of the chart. Both devices should appear in the filtered view under **Assets and Compliance** > **Overview** > **Device**. -->
 
-#### <a name="check-the-top-non-compliance-reasons-chart"></a>非準拠の主な理由チャートを確認する
-5. **非準拠の主な理由**チャートを確認します。 このチャートには、非準拠の理由の上位 5 つが表示されますが、ポリシー全体で 2 つのコンプライアンス設定しか設定されていない場合は、上位 2 つの非準拠の理由だけが表示されます。
-6. チャートのいずれかのセクションをクリックします。 両方のデバイスが、[**資産とコンプライアンス**] > [**概要**] > [**デバイス**] の下のフィルター処理されたビューに表示されるはずです。
+#### <a name="check-the-top-non-compliance-reasons-chart"></a>Controllare il grafico Top Non-Compliance Reasons (Motivi principali della non conformità).
+5. Controllare il grafico **Top Non-Compliance Reasons (Motivi principali della non conformità)**. Questo grafico elenca i 5 motivi principali della non conformità ma, se sono state configurate solo due impostazioni di conformità nei criteri, vengono visualizzati solo i primi 2 motivi.
+6. Fare clic su una delle sezioni nel grafico. Entrambi i dispositivi dovrebbero essere visualizzati nella visualizzazione filtrata in **Asset e conformità** > **Panoramica** > **Dispositivo**.
 
-#### <a name="make-devices-compliant-and-check-the-charts"></a>デバイスを準拠させてチャートを確認する
-7. いずれかのデバイスをいずれかのポリシーに準拠させます。 もう一度、**デバイスの全体の準拠**チャートを確認します。 チャートには、準拠デバイス 1 つと、非準拠のデバイスが 1 つ表示されるはずです。
-8. 同じポリシーで他のデバイスを準拠させます。 これにより、1 つのデバイスを両方のポリシーに準拠させ、1 つのデバイスをいずれか 1 つのポリシーのみに準拠させます。
-9. **非準拠の主な理由**チャートを確認します。 非準拠の理由が 1 つだけ表示されるはずです。
+#### <a name="make-devices-compliant-and-check-the-charts"></a>Rendere i dispositivi conformi e controllare i grafici.
+7. Rendere uno dei dispositivi conformi a uno dei criteri. Controllare nuovamente il grafico **Overall Device Compliance** (Conformità generale del dispositivo). Il grafico deve visualizzare un dispositivo conforme e un dispositivo non conforme.
+8. Rendere l'altro dispositivo conforme agli stessi criteri. In questo modo si avrà un dispositivo conforme ai due criteri e un dispositivo conforme a uno solo dei criteri.
+9. Controllare il grafico **Top Non-Compliance Reasons (Motivi principali della non conformità)**. Dovrebbe essere elencato un solo motivo di non conformità.
 <!--7. Click the **Compliant** section of the chart. Only the compliant device should appear in the filtered view. -->
 
 
 
 
 
-## <a name="see-also"></a>関連項目
-[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)
+## <a name="see-also"></a>Vedere anche
+[Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager)

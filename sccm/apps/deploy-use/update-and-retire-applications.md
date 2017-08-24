@@ -1,6 +1,6 @@
 ---
-title: "アプリケーションの更新とインベントリからの削除 | Microsoft Docs"
-description: "System Center Configuration Manager を使用して、展開済みのアプリケーションを、改訂、置き換え、またはアンインストールします。"
+title: Aggiornare e ritirare applicazioni | Microsoft Docs
+description: Rivedere, sostituire o disinstallare le applicazioni distribuite tramite System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,24 +17,24 @@ manager: angrobe
 ms.openlocfilehash: 805e04c447747b4d12350b692880dbc005bd7168
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="update-and-retire-applications-with-system-center-configuration-manager"></a>System Center Configuration Manager でのアプリケーションの更新とインベントリからの削除
+# <a name="update-and-retire-applications-with-system-center-configuration-manager"></a>Aggiornare e ritirare le applicazioni con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-いずれはアプリケーションに変更を加えたり、アンインストールしたり、既に展開されているアプリケーションを新しいアプリケーションに置き換えたりすることが必要になる可能性があります。 System Center Configuration Manager では、アプリケーションの更新とインベントリからの削除に役立つ、以下の機能が提供されます。  
+È possibile che in un determinato momento si voglia apportare modifiche a un'applicazione, disinstallarla o sostituire un'applicazione già distribuita con un'applicazione nuova. System Center Configuration Manager offre queste funzionalità, che consentono di aggiornare e ritirare le applicazioni:  
 
--   **アプリケーションの改訂**。 アプリケーションや展開の種類を変更するときに、Configuration Manager は変更の履歴を保持します。 いつでも以前のリビジョンにアプリケーションを戻すことができます。 プロパティの表示、旧リビジョンのアプリケーションの復元、または旧リビジョンの削除を行うこともできます。  
+-   **Modificare applicazioni**. Quando si apportano modifiche a un'applicazione o a un tipo di distribuzione, Configuration Manager mantiene una cronologia delle modifiche. È possibile ripristinare l'applicazione a una revisione precedente in qualsiasi momento. È anche possibile visualizzarne le proprietà, ripristinare una revisione precedente o eliminare una revisione precedente di un'applicazione.  
 
-  詳細については、「[アプリケーションのリビジョン](revise-and-supersede-applications.md#application-revisions)」を参照してください。  
+  Per altre informazioni, vedere [Application revisions](revise-and-supersede-applications.md#application-revisions) (Revisioni delle applicazioni).  
 
--   **アプリケーションの置き換え**。 置き換えの関係を使用して、既存のアプリケーションをアップグレードするか置き換えることができます。 アプリケーションを置き換える場合は、置換対象のアプリケーションの展開の種類を置き換える新しい展開の種類を指定できます。 また、既存のものを置き換えるアプリケーションがインストールされる前に、新しいもので置き換えられるアプリケーションをアップグレードするかアンインストールするかを設定することもできます。  
+-   **Sostituire applicazioni**. È possibile aggiornare o sostituire applicazioni esistenti usando una relazione di sostituzione. Quando si sostituisce un'applicazione, è possibile specificare un nuovo tipo di distribuzione che andrà a sostituire il tipo di distribuzione dell'applicazione sostituita. È anche possibile impostare l'aggiornamento o la disinstallazione dell'applicazione sostituita prima di installare l'applicazione sostitutiva.  
 
-  詳細については、「[アプリケーションの置き換え](revise-and-supersede-applications.md#application-supersedence)」を参照してください。  
+  Per altre informazioni, vedere [Application revisions](revise-and-supersede-applications.md#application-supersedence) (Sostituzione delle applicazioni).  
 
--   **アプリケーションのアンインストール**。 Configuration Manager では簡単にアプリケーションをアンインストールできます。 これは、アプリケーションまたはデバイスのユーザーが操作を一切行うことなく、自動実行できます。  
+-   **Disinstallare applicazioni**. Configuration Manager consente di disinstallare un'applicazione in modo semplice. L'operazione può essere effettuata in modalità invisibile, senza l'intervento dell'utente dell'applicazione o del dispositivo.  
 
-  詳細については、「[アプリケーションのアンインストール](uninstall-applications.md)」を参照してください。  
+  Per altre informazioni, vedere [Disinstallare applicazioni](uninstall-applications.md).  

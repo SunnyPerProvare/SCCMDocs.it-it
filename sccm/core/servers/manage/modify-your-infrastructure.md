@@ -1,6 +1,6 @@
 ---
-title: "インフラストラクチャの変更 | Microsoft Docs"
-description: "展開した Configuration Manager のインフラストラクチャに影響する変更を加えたりアクションを実行したりする方法について説明します。"
+title: Modificare l'infrastruttura | Microsoft Docs
+description: Informazioni su come apportare modifiche o eseguire azioni che interessano l'infrastruttura di Configuration Manager distribuita.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,352 +18,352 @@ manager: angrobe
 ms.openlocfilehash: a5228c4984347be4b115bfa5563791fa2fb7319c
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="modify-your-system-center-configuration-manager-infrastructure"></a>System Center Configuration Manager インフラストラクチャの変更
+# <a name="modify-your-system-center-configuration-manager-infrastructure"></a>Modificare l'infrastruttura di System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-1 つ以上のサイトをインストールした後、構成を変更するか、展開したインフラストラクチャに影響を与えるアクションを取る必要があります。  
+Dopo aver installato uno o più siti, può essere necessario modificare le configurazioni o eseguire azioni che incidono sull'infrastruttura distribuita.  
 
 
-##  <a name="BKMK_ManageSMSprovider"></a> SMS プロバイダーを管理する  
- SMS プロバイダー (ダイナミック リンク ライブラリ ファイル: smsprov.dll) は、1 つ以上の Configuration Manager コンソールの管理のための接続ポイントとなります。 複数の SMS プロバイダーをインストールすると、サイトおよび階層を管理するための冗長な接続ポイントを提供できます。  
+##  <a name="BKMK_ManageSMSprovider"></a> Gestire il provider SMS  
+ Il provider SMS (un file di libreria a collegamento dinamico: smsprov.dll) offre il punto di contatto amministrativo per una o più console di Configuration Manager. Quando si installano più provider SMS, è possibile fornire ridondanza per i punti di contatto per l'amministrazione del sito e della gerarchia.  
 
- 各 Configuration Manager サイトで、セットアップを再実行できます。  
+ In ogni sito di Configuration Manager è possibile eseguire nuovamente il programma di installazione per:  
 
--   SMS プロバイダーの追加インスタンスを追加します (SMS プロバイダーの各追加インスタンスは別々のコンピューターに配置する必要があります)  
+-   Aggiungere un'altra istanza del provider SMS (ogni istanza aggiuntiva del provider SMS deve trovarsi in un computer separato)  
 
--   SMS プロバイダーのインスタンスを削除します (サイトの最新の SMS プロバイダーを削除するには、サイトをアンインストールする必要があります)  
+-   Rimuovere un'istanza del provider (per rimuovere l'ultimo provider SMS per un sito, è necessario disinstallare il sito)  
 
- SMS プロバイダーのインストールまたは削除を監視するには、セットアップを実行したサイト サーバーのルート フォルダーにある ConfigMgrSetup.log を表示します。 ****  
+ È possibile monitorare l'installazione o la rimozione del provider SMS visualizzando **ConfigMgrSetup.log** nella cartella radice del server del sito su cui si esegue il programma di installazione.  
 
- サイトの SMS プロバイダーを変更する前に、「[System Center Configuration Manager の SMS プロバイダーの計画](../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md)」にある情報をよく理解しておいてください。  
+ Prima di modificare il provider SMS in un sito, leggere le informazioni contenute in [Plan for the SMS Provider for System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md) (Pianificare per il provider SMS per System Center Configuration Manager).  
 
-#### <a name="to-manage-the-sms-provider-configuration-for-a-site"></a>サイトの SMS プロバイダーの構成を管理するには  
+#### <a name="to-manage-the-sms-provider-configuration-for-a-site"></a>Per gestire la configurazione del provider SMS per un sito  
 
-1.  **&lt;Configuration Manager サイトのインストール フォルダー\>\BIN\X64\setup.exe** から **Configuration Manager のセットアップ**を実行します。  
+1.  Eseguire il **programma di installazione di Configuration Manager** da **&lt;cartella di installazione del sito di Configuration Manager\>\BIN\X64\setup.exe**.  
 
-2.  **[作業の開始]** ページで、 **[サイトのメンテナンスを実施するか、このサイトをリセットする]**を選択し、 **[次へ]**をクリックします。  
+2.  Nella pagina **Riquadro attività iniziale** selezionare **Esegui una manutenzione del sito o reimposta il sito**, quindi fare clic su **Avanti**.  
 
-3.  **[サイトのメンテナンス]** ページで、 **[SMS プロバイダーの構成を変更する]**を選択し、 **[次へ]**をクリックします。  
+3.  Nella pagina **Manutenzione sito** selezionare **Modifica configurazione provider SMS**, quindi fare clic su **Avanti**.  
 
-4.  [SMS プロバイダーの管理] ページで、次のいずれかのオプションを選択して、ウィザードを完了します。 ****  
+4.  Nella pagina **Gestisci provider SMS** selezionare una delle seguenti opzioni per completare la procedura guidata:  
 
-    -   このサイトに SMS プロバイダーを追加するには  
+    -   Per aggiungere un provider SMS aggiuntivo in questo sito:  
 
-         **[新しい SMS プロバイダーを追加する]**を選択し、SMS プロバイダーをホストする予定の (現在 SMS プロバイダーをホストしていない) コンピューターの FQDN を指定して、 **[次へ]**をクリックします。  
+         Selezionare **Aggiungi nuovo provider SMS**, specificare l'FQDN per un computer che ospiterà il provider SMS e che attualmente non ne ospita uno, quindi fare clic su **Avanti**.  
 
-    -   サーバーから SMS プロバイダーを削除するには  
+    -   Per rimuovere un provider SMS da un server:  
 
-         **[指定した SMS プロバイダーをアンインストールする]**を選択し、SMS プロバイダーを削除するコンピューターの名前を選択して **[次へ]**をクリックし、操作を確定します。  
+         Selezionare **Disinstalla il provider SMS specificato**, selezionare il nome del computer da cui si desidera rimuovere il provider SMS, fare clic su **Avanti**, quindi confermare l'azione.  
 
         > [!TIP]  
-        >  2 つのコンピューター間で SMS プロバイダーを移動するには、新しいコンピューターに SMS プロバイダーをインストールして、元の場所から SMS プロバイダーを削除する必要があります。 一度の処理で SMS プロバイダーをコンピューター間で移動する専用のオプションはありません。  
+        >  Per spostare il provider SMS tra due computer, occorre installarlo sul nuovo computer e rimuoverlo dal percorso originale. Non esiste nessuna opzione dedicata per spostare il provider SMS tra computer in un unico processo.  
 
- セットアップ ウィザードを終了すると、SMS プロバイダーの構成が完了します。 **[全般]** タブのサイトの **[プロパティ]** ダイアログ ボックスで、サイトの SMS プロバイダーがインストールされているコンピューターを確認できます。  
+ Al termine dell'Installazione guidata, viene completata la configurazione del provider SMS. Nella scheda **Generale** della finestra di dialogo del sito **Proprietà** , è possibile verificare i computer su cui è installato un provider SMS per un sito.  
 
-##  <a name="bkmk_Console"></a> Configuration Manager コンソールを管理する  
- Configuration Manager コンソールの管理で行えるタスクは、次のとおりです。  
+##  <a name="bkmk_Console"></a> Gestire la console di Configuration Manager  
+ Di seguito sono riportate le attività che è possibile eseguire per gestire la console di Configuration Manager:  
 
--   **Configuration Manager コンソールに表示される言語を変更する**: インストールされている言語を変更するには、このトピックの「[Configuration Manager コンソールの言語の管理](#BKMK_ManageConsoleLanguages)」を参照してください。  
+-   **Modificare la lingua visualizzata nella console di Configuration Manager**: per modificare le lingue installate, vedere [Gestire la lingua della console di Configuration Manager](#BKMK_ManageConsoleLanguages) in questo argomento.  
 
--   **追加コンソールをインストールする**: 追加コンソールをインストールするには、「[System Center Configuration Manager コンソールのインストール](/sccm/core/servers/deploy/install/install-consoles)」を参照してください。  
+-   **Installare console aggiuntive**: per installare altre console, vedere [Install System Center Configuration Manager consoles](/sccm/core/servers/deploy/install/install-consoles) (Installare le console di System Center Configuration Manager).  
 
--   **DCOM を構成する**: サイト サーバーからリモートにあるコンソールが接続できるよう DCOM アクセス許可を構成するには、このトピックの「[リモートからの Configuration Manager コンソールに対する DCOM アクセス許可の構成](#BKMK_ConfigDCOMforRemoteConsole)」を参照してください。  
+-   **Configurare DCOM**: per configurare le autorizzazioni DCOM per abilitare la connessione delle console remote rispetto al server del sito, vedere [Configurare le autorizzazioni DCOM per le console remote di Configuration Manager](#BKMK_ConfigDCOMforRemoteConsole) in questo argomento.  
 
--   [**コンソールで管理ユーザーに表示される内容を制限するようアクセス許可を変更する**] 管理アクセス許可を変更するには (これによって、コンソールに表示される内容とコンソールで行える操作が制限される)、「[管理ユーザーの管理スコープの変更](/sccm/core/servers/deploy/configure/configure-role-based-administration#BKMK_ModAdminUser)」を参照してください。     
+-   **Modificare le autorizzazioni per limitare le informazioni che gli utenti amministratori possono vedere nella console**: per modificare le autorizzazioni amministrative che limitano ciò che gli utenti possono fare e vedere nella console, vedere [Modificare l'ambito amministrativo di un utente amministratore](/sccm/core/servers/deploy/configure/configure-role-based-administration#BKMK_ModAdminUser).     
 
-###  <a name="BKMK_ManageConsoleLanguages"></a> Configuration Manager コンソールの言語を管理する  
- サイト サーバーのインストール中に、Configuration Manager コンソールのインストール ファイルおよびサイトでサポートされる言語パックが、サイト サーバーの **&lt;Configuration Manager のインストール パス\>\Tools\ConsoleSetup** サブフォルダーにコピーされます。  
+###  <a name="BKMK_ManageConsoleLanguages"></a> Gestire la lingua della console di Configuration Manager  
+ Durante l'installazione del server del sito, i file di installazione della console di Configuration Manager e i Language Pack supportati per il sito vengono copiati nella sottocartella **&lt;PercorsoInstallazioneConfigMgr\>\Tools\ConsoleSetup** nel server del sito.  
 
--   サイト サーバーのこのフォルダーから Configuration Manager コンソールのインストールを開始すると、Configuration Manager コンソールとサポートされる言語パック ファイルがコンピューターにコピーされます。  
+-   Quando si avvia l'installazione della console di Configuration Manager da questa cartella nel server del sito, la console di Configuration Manager e i file dei Language Pack supportati vengono copiati nel computer  
 
--   コンピューターの現在の言語設定と同じ言語パックがある場合は、Configuration Manager コンソールがその言語で開きます。  
+-   Quando un Language Pack è disponibile per l'impostazione della lingua corrente nel computer, la console di Configuration Manager viene aperta in questa lingua  
 
--   関連付けられている言語パックがない場合は、Configuration Manager コンソールが英語で開きます。  
+-   Se il Language Pack associato non è disponibile per la console di Configuration Manager, la console viene aperta in inglese  
 
-たとえば、英語、ドイツ語、およびフランス語をサポートするサイト サーバーから Configuration Manager コンソールをインストールした場合を考えます。 フランス語の言語設定のコンピューターでは、Configuration Manager コンソールもフランス語で開きます。 一方、日本語の言語設定のコンピューターで Configuration Manager コンソールを開いた場合は、日本語の言語パックがないので、英語で表示されます。  
+Ad esempio, considerare uno scenario in cui si installa la console di Configuration Manager da un server del sito che supporta l'inglese, il tedesco e il francese. Se si apre la console di Configuration Manager su un computer con un'impostazione lingua configurata sul francese, la console si aprirà in francese. Se si apre la console di Configuration Manager su un computer con la lingua configurata sul giapponese, la console si aprirà in inglese perché il Language Pack giapponese non è disponibile.  
 
- Configuration Manager コンソールを開くたびに、コンピューターの言語設定と、該当する言語パックが Configuration Manager コンソールで使用できるかどうかが確認されて、適切な言語パックを使ってコンソールが表示されます。 コンピューターの言語設定に関係なく、Configuration Manager コンソールを英語で開きたい場合は、コンピューターの言語パック ファイルを手動で削除するか、名前を変更する必要があります。  
+ A ogni apertura della console di Configuration Manager, vengono determinate le impostazioni di lingua configurate per il computer, viene verificata la disponibilità di un Language Pack associato per la console di Configuration Manager e infine viene aperta la console usando il Language Pack appropriato. Per aprire la console di Configuration Manager in inglese indipendentemente dalle impostazioni di lingua configurate nel computer, è necessario rimuovere o rinominare manualmente i file dei Language Pack nel computer.  
 
- コンピューターのロケール設定に関係なく Configuration Manager コンソールが常に英語で開くようにするには、次の手順に従います。  
+ Usare le procedure seguenti per avviare la console di Configuration Manager in inglese indipendentemente dalle impostazioni locali configurate nel computer.  
 
-##### <a name="to-install-an-english-only-version-of-the-configuration-manager-console-on-computers"></a>Configuration Manager コンソールの英語専用バージョンをコンピューターにインストールするには  
+##### <a name="to-install-an-english-only-version-of-the-configuration-manager-console-on-computers"></a>Per installare una versione solo in lingua inglese della console di Configuration Manager sui computer  
 
-1.  エクスプローラーで **&lt;Configuration Manager のインストール パス\>\Tools\ConsoleSetup\LanguagePack** に移動します。  
+1.  In Esplora risorse passare a **&lt;PercorsoInstallazioneConfigMgr\>\Tools\ConsoleSetup\LanguagePack**  
 
-2.  **.msp** ファイルと **.mst** ファイルの名前を変更します。 たとえば、**&lt;ファイル名\>.MSP** を**&lt; ファイル名\>.MSP.disabled** に変更します。  
+2.  Rinominare i file **.msp** e **.mst** Ad esempio, è possibile modificare **&lt;nome file\>.MSP** in **&lt;nome file\>.MSP.disabled**.  
 
-3.  Configuration Manager コンソールをコンピューターにインストールします。  
+3.  Installare la console di Configuration Manager nel computer.  
 
     > [!IMPORTANT]  
-    >  サイト サーバーで新しいサーバー言語が構成された場合は、.msp ファイルと .mst ファイルが **LanguagePack** フォルダーに再びコピーされるため、上記の手順を繰り返して、英語専用の新しい Configuration Manager コンソールをインストールする必要があります。  
+    >  Quando vengono configurate nuove lingue per il server del sito, i file .msp e .mst vengono ricopiati nella cartella **LanguagePack** ed è necessario ripetere questa procedura per installare le nuove console di Configuration Manager solo in lingua inglese.  
 
-##### <a name="to-temporarily-disable-a-console-language-on-an-existing-configuration-manager-console-installation"></a>既存の Configuration Manager コンソールで言語を一時的に無効にするには  
+##### <a name="to-temporarily-disable-a-console-language-on-an-existing-configuration-manager-console-installation"></a>Per disattivare temporaneamente una lingua della console in un'installazione della console di Configuration Manager esistente  
 
-1.  Configuration Manager コンソールを実行しているコンピューターで、Configuration Manager コンソールを閉じます。  
+1.  Nel computer che esegue la console di Configuration Manager chiudere la console.  
 
-2.  エクスプローラーで、Configuration Manager コンソール コンピューターの &lt;*コンソールのインストール パス*>\Bin\ に移動します。  
+2.  In Esplora risorse passare a &lt;*PercorsoInstallazioneConsole*>\Bin\ nel computer della console di Configuration Manager.  
 
-3.  コンピューターで設定されている言語のフォルダーの名前を変更します。 たとえば、コンピューターでドイツ語が設定されている場合は、[ **de** ] フォルダーの名前を「 **de.disabled**」に変更します。  
+3.  Rinominare la cartella della lingua appropriata per la lingua configurata nel computer. Ad esempio, se le impostazioni della lingua per il computer erano configurate per il tedesco, è possibile rinominare la cartella **de** in **de.disabled**.  
 
-4.  コンピューターで設定されている言語で Configuration Manager コンソールを開くには、フォルダーを元の名前に戻します。 たとえば、「 **de.disabled** 」を「 **de**」に変更します。  
+4.  Per aprire la console di Configuration Manager nella lingua configurata per il computer, rinominare la cartella con il nome originale. Ad esempio, rinominare **de.disabled** in **de**.  
 
-##  <a name="BKMK_ConfigDCOMforRemoteConsole"></a> リモート Configuration Manager コンソールに対する DCOM アクセス許可を構成する  
- Configuration Manager コンソールを実行するユーザー アカウントには、SMS プロバイダーを使用してサイト データベースにアクセスするためのアクセス許可が必要となります。 ただし、リモート Configuration Manager コンソールを使用する管理ユーザーには、次の場所での **リモート アクティブ化** DCOM アクセス許可も必要となります。  
+##  <a name="BKMK_ConfigDCOMforRemoteConsole"></a> Configurare le autorizzazioni DCOM per le console remote di Configuration Manager  
+ L'account utente su cui è in esecuzione la console di Configuration Manager richiede l'autorizzazione ad accedere al database del sito usando il provider SMS. Tuttavia, un utente amministratore che usa una console di Configuration Manager remota deve avere anche le autorizzazioni DCOM di **attivazione remota** per:  
 
--   サイト サーバー コンピューター  
+-   Il computer del server del sito  
 
--   SMS プロバイダーのインスタンスをホストする各コンピューター  
+-   Ogni computer che ospita un'istanza del provider SMS  
 
- **SMS 管理者** という名前のセキュリティ グループは、コンピューター上の SMS プロバイダーへのアクセス許可を付与します。また、必要な DCOM アクセス許可を付与するために使用できます。 このグループは、SMS プロバイダーがメンバー サーバーで実行されている場合は、そのコンピューターのローカルとなり、SMS プロバイダーがドメイン コントローラーで実行されている場合は、ドメインのローカル グループとなります。  
+ Il gruppo di sicurezza **SMS Admins** concede l'accesso a un computer al provider SMS e può essere usato anche per concedere le autorizzazioni DCOM necessarie. Questo gruppo è locale nel computer quando il provider SMS è in esecuzione in un server membro ed è un gruppo locale di dominio quando il provider SMS è in esecuzione in un controller di dominio.  
 
 > [!IMPORTANT]  
->  Configuration Manager コンソールは Windows Management Instrumentation (WMI) を使用して SMS プロバイダーに接続し、WMI は内部的に DCOM を使用します。 このため、Configuration Manager では、Configuration Manager コンソールが SMS プロバイダー以外のコンピューターで実行されている場合、SMS プロバイダー コンピューターで DCOM サーバーをアクティブにするためのアクセス許可が必要です。 既定では、リモートでアクティブにするためのアクセス許可は、組み込みの管理者グループのメンバーにのみ付与されます。 SMS 管理者グループにリモートでアクティブにするためのアクセス許可を付与すると、このグループのメンバーは SMS プロバイダーのコンピューターに対して DCOM 攻撃を試みることができるようになります。 また、この構成ではコンピューターの脆弱性が増します。 この脅威を軽減するには、SMS 管理者グループのメンバーシップを慎重に監視します。  
+>  La console di Configuration Manager usa la Strumentazione gestione Windows (WMI) per collegarsi al provider SMS, mentre la WMI usa a sua volta DCOM a livello interno. Pertanto, Configuration Manager richiede le autorizzazioni per attivare un server DCOM sul computer del provider SMS se la console di Configuration Manager è in esecuzione su un computer diverso dal computer del provider SMS. Per impostazione predefinita, l'attivazione remota viene concessa solo ai membri del gruppo Administrators incorporato. Se si concede l'autorizzazione di attivazione remota al gruppo SMS Admins, un membro di tale gruppo potrebbe tentare degli attacchi DCOM contro il computer del provider SMS. Questa configurazione aumenta anche la superficie di attacco del computer. Per limitare questo rischio, è necessario monitorare attentamente l'appartenenza al gruppo SMS Admins.  
 
- 各中央管理サイト、プライマリ サイト サーバー、および SMS プロバイダーがインストールされている各コンピューターを構成し、リモートの Configuration Manager コンソールからのアクセス権を管理ユーザーに付与するには、次の手順に従います。  
+ Usare la procedura riportata di seguito per configurare ciascun sito di amministrazione centrale, server del sito primario e ciascun computer in cui è installato il provider SMS per garantire alla console remota di Configuration Manager l'accesso per gli utenti amministratori.  
 
-#### <a name="to-configure-dcom-permissions-for-remote-configuration-manager-console-connections"></a>リモートからの Configuration Manager コンソール接続に対する DCOM アクセス許可を構成するには  
+#### <a name="to-configure-dcom-permissions-for-remote-configuration-manager-console-connections"></a>Per configurare le autorizzazioni DCOM per le connessioni remote della console di Configuration Manager  
 
-1.  **Dcomcnfg.exe** を実行して **コンポーネント サービス**を開きます。  
+1.  Aprire  **Servizi componenti** eseguendo **Dcomcnfg.exe**.  
 
-2.  **[コンポーネント サービス]** で **[コンソールのルート]** >  **[コンポーネント サービス]** > **[コンピューター]** の順にクリックし、**[マイ コンピューター]** をクリックします。 **[操作]** メニューの **[プロパティ]**をクリックします。  
+2.  In **Servizi componenti**fare clic su **Radice console** >  **Servizi componenti** > **Computer**, quindi fare clic su **Risorse del computer**. Nel menu **Azione** fare clic su **Proprietà**.  
 
-3.  **[マイ コンピューターのプロパティ]** ダイアログ ボックスの **[COM セキュリティ]** タブで、 **[起動とアクティブ化のアクセス許可]** セクションにある **[制限の編集]**をクリックします。  
+3.  Nella finestra di dialogo **Proprietà computer** , nella scheda **Protezione COM** , nella sezione **Autorizzazioni di esecuzione e attivazione** , fare clic su **Modifica limiti**.  
 
-4.  **[起動とアクティブ化のアクセス許可]** ダイアログ ボックスで、 **[追加]**をクリックします。  
+4.  Nella finestra di dialogo **Autorizzazioni di esecuzione e attivazione** , fare clic su **Aggiungi**.  
 
-5.  **[ユーザー、コンピューター、サービス アカウントまたはグループの選択]** ダイアログ ボックスの **[選択するオブジェクト名を入力してください (例)]** ボックスに、「 **SMS Admins**」と入力し、 **[OK]**をクリックします。  
+5.  Nella casella **Immettere i nomi degli oggetti da selezionare (esempi)** della finestra di dialogo **Seleziona utenti, computer, account di servizio o gruppi** digitare **SMS Admins**, quindi fare clic su **OK**.  
 
     > [!NOTE]  
-    >  SMS 管理者グループを見つけるには、[検索場所] の設定を変更する必要がある場合があります。 **** このグループは、SMS プロバイダーがメンバー サーバーで実行されている場合は、そのコンピューターのローカルとなり、SMS プロバイダーがドメイン コントローラーで実行されている場合は、ドメインのローカル グループとなります。  
+    >  Potrebbe essere necessario modificare l'impostazione per **Da questo percorso** per individuare il gruppo SMS Admins. Questo gruppo è in locale sul computer quando il provider SMS è in esecuzione su un server membro ed è un gruppo locale di dominio quando il provider SMS è in esecuzione su un controller di dominio.  
 
-6.  **[SMS 管理者のアクセス許可]** セクションで、リモート アクティブ化を許可するために、 **[リモートからのアクティブ化]** チェック ボックスをオンにします。  
+6.  Nella sezione **Autorizzazioni per SMS Admins** , per consentire l'attivazione remota selezionare la casella di controllo **Attivazione remota** .  
 
-7.  **[OK]** をクリックし、もう一度 **[OK]** をクリックしてから、 **[コンピューターの管理]**を閉じます。 SMS 管理者グループのメンバーに対して、リモートの Configuration Manager コンソールからのアクセスを許可するようにコンピューターが構成されました。  
+7.  Fare clic su **OK** e ancora su **OK** , quindi chiudere **Gestione computer**. Il computer è ora configurato per consentire l'accesso alla console remota di Configuration Manager ai membri del gruppo Amministratori SMS.  
 
- リモートの Configuration Manager コンソールをサポートする各 SMS プロバイダーのコンピューターで、この手順を繰り返します。  
+ Ripetere questa procedura in ciascun computer del provider SMS che potrebbe supportare le console remote di Configuration Manager.  
 
-##  <a name="bkmk_dbconfig"></a> サイト データベースの構成を変更する  
- サイトをインストールした後に、サイト データベースおよびサイト データベース サーバーの構成を変更するには、中央管理サイト サーバーまたはプライマリ サイト サーバーでセットアップを実行します。 サイト データベースは、同じコンピューター上の SQL Server の新しいインスタンス、またはサポートされているバージョンの SQL Server を実行する別のコンピューターに移動できます。 これらの変更および関連する変更は、セカンダリ サイトのデータベースの構成ではサポートされません。  
+##  <a name="bkmk_dbconfig"></a> Modificare la configurazione del database del sito  
+ Dopo aver installato un sito, è possibile modificarne la configurazione del database e del server di database eseguendo il programma di installazione su un server del sito di amministrazione centrale o un server del sito primario. È possibile spostare il database del sito in una nuova istanza di SQL Server sullo stesso computer o su un computer diverso sul quale è in esecuzione una versione supportata di SQL Server. Queste modifiche e quelle correlate non sono supportate per la configurazione del database nei siti secondari.  
 
- サポートの制限について詳しくは、「 [Configuration Manager 環境での手動によるデータベース変更のサポート ポリシー](https://support.microsoft.com/kb/3106512)」をご覧ください。  
+ Per altre informazioni sui limiti del supporto, vedere [Criteri di supporto per la modifica manuale del database in un ambiente di Configuration Manager](https://support.microsoft.com/kb/3106512).  
 
 > [!NOTE]  
->  サイトのデータベース構成を変更すると、Configuration Manager はサイト サーバー、およびそのデータベースと通信するリモート サイト システム サーバー上の Configuration Manager サービスを再起動または再インストールします。  
+>  Quando si modifica la configurazione del database di un sito, Configuration Manager riavvia o reinstalla i servizi di Configuration Manager nel server del sito e nei server del sistema del sito remoto che comunicano con il database.  
 
-**データベース構成を変更するには**、サイト サーバーでセットアップを実行し、 **[サイトのメンテナンスを実施するか、このサイトをリセットする]**オプションを選択します。 次に、[SQL Server の構成を変更する] オプションを選択します。 **** 次のサイト データベースの構成を変更することができます。  
+**Per modificare la configurazione del database**, è necessario eseguire il programma di installazione nel server del sito e selezionare l'opzione **Esegui una manutenzione del sito o reimposta il sito**. Selezionare quindi l'opzione **Modifica la configurazione di SQL Server** . È possibile modificare le seguenti configurazioni del database del sito:  
 
--   データベースをホストする Windows ベースのサーバー。  
+-   Il server basato su Windows che ospita il database.  
 
--   SQL Server データベースをホストするサーバーで使用されている SQL Server のインスタンス。  
+-   L'istanza di SQL Server in uso su un server che ospita il database SQL Server.  
 
--   データベース名。  
+-   Nome del database.  
 
--   Configuration Manager によって使用中の SQL Server のポート  
+-   Porta di SQL Server usata da Configuration Manager  
 
--   Configuration Manager によって使用中の SQL Server サービス ブローカーのポート  
+-   Porta di SQL Server Service Broker usata da Configuration Manager  
 
-**サイト データベースを移動するには、次の項目を構成する必要があります。**  
+**Se si sposta il database del sito, è necessario configurare quanto segue:**  
 
--   **[アクセスの構成]** : サイト データベースを新しいコンピューターに移動する場合は、SQL Server を実行するコンピューターの **ローカルの [Administrators]** グループにサイト サーバーのコンピューター アカウントを追加します。 サイト データベースに SQL Server クラスターを使用する場合は、各 Windows Server クラスター ノード コンピューターのローカルの [Administrators] グループにコンピューター アカウントを追加する必要があります。 ****  
+-   **Configurare l'accesso:** quando si sposta il database del sito in un nuovo computer, aggiungere l'account computer del server del sito al gruppo di ****  amministratori locale nel computer che esegue SQL Server. Se si utilizza un cluster SQL Server per il database del sito, è necessario aggiungere l'account computer al gruppo di **amministratori locali** di ciascun computer nodo cluster Windows Server.  
 
--   **共通言語ランタイム (CLR) 統合:**  データベースを SQL Server 上の新しいインスタンス、または新しい SQL Server コンピューターに移動する場合は、共通言語ランタイム (CLR) 統合を有効にする必要があります。 CLR を有効にするには、**SQL Server Management Studio** を使用して、サイト データベースをホストする SQL Server のインスタンスに接続し、ストアド プロシージャ **sp_configure 'clr enabled',1; reconfigure** をクエリとして実行します。  
--  **新しい SQL Server がバックアップの場所にアクセスできることを確認する:** サイト データベースのバックアップを格納するために UNC を使っている場合は、データベースを新しいサーバーに移動した後で (SQL Server AlwaysOn 可用性グループまたは SQL Server クラスターの移動を含みます)、新しい SQL Server のコンピューター アカウントに UNC の場所への**書き込み**アクセス許可があることを確認します。  
+-   **Abilitare l'integrazione di Common Language Runtime (CLR):**  quando si sposta il database in una nuova istanza di SQL Server o in un nuovo computer SQL Server, è necessario abilitare l'integrazione di Common Language Runtime (CLR). Per abilitare CLR, usare **SQL Server Management Studio** per connettersi all'istanza di SQL Server che ospita il database del sito ed eseguire la stored procedure seguente come query: **sp_configure 'clr enabled',1; reconfigure**.  
+-  **Verificare che il nuovo SQL Server sia in possesso dell'accesso al percorso di backup:** quando si usa un percorso UNC per archiviare il backup del database del sito, dopo lo spostamento del database in un nuovo server, incluso lo spostamento in un gruppo di disponibilità AlwaysOn di SQL Server o in un cluster di SQL Server, verificare che l'account del computer del nuovo SQL Server abbia le autorizzazioni di **scrittura** per il percorso UNC.  
 
 
 > [!IMPORTANT]  
->  管理ポイントの 1 つまたは複数のデータベースのレプリカを持つデータベースを移動する場合は、最初にデータベースのレプリカを削除する必要があります。 データベースの移動が完了したら、データベースのレプリカを再構成できます。 詳細については、「 [Database replicas for management points for System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md)」をご覧ください。  
+>  Prima di spostare un database contenente una o più repliche di database per i punti di gestione, è necessario rimuovere innanzitutto le repliche di database. Dopo aver completato lo spostamento del database, è possibile riconfigurare le repliche di database. Per altre informazioni, vedere [Database replicas for management points for System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
-##  <a name="bkmk_SPN"></a> サイト データベース サーバーの SPN を管理する  
-サイト データベースの SQL サービスを実行するアカウントを選択することができます。  
+##  <a name="bkmk_SPN"></a> Gestire il nome dell'entità servizio (SPN) per il server di database del sito  
+È possibile scegliere l'account che esegue i servizi di SQL per il database del sito:  
 
--   コンピューターのシステム アカウントでサービスが実行されると、SPN は自動的に登録されます。  
+-   Quando i servizi vengono eseguiti con l'account di sistema del computer, il SPN viene registrato automaticamente.  
 
--   ドメイン ローカル ユーザー アカウントでサービスが実行される場合、SQL クライアントおよびその他のサイト システムが Kerberos 認証を確実に実行できるよう SPN を手動で登録する必要があります。 Kerberos 認証を使用しない場合、データベースへの通信は失敗する可能性があります。  
+-   Quando i servizi vengono eseguiti con un account utente locale di dominio, è necessario registrare manualmente il SPN per assicurarsi che i client SQL e altri sistemi del sito possano eseguire l'autenticazione Kerberos. Senza l'autenticazione Kerberos, la comunicazione con il database potrebbe non riuscire.  
 
-SQL Server ドキュメントは [SPN を手動で登録する](https://technet.microsoft.com/library/ms191153\(v=sql.120\).aspx)うえで役立ち、SPN および Kerberos 接続に関する追加の背景情報を提供します。  
+La documentazione di SQL Server contiene informazioni su come [registrare manualmente il SPN](https://technet.microsoft.com/library/ms191153\(v=sql.120\).aspx), oltre che maggiori dettagli sulle connessioni SPN e Kerberos.  
 
 > [!IMPORTANT]  
->  -   クラスター化された SQL Server の SPN を作成する場合は、SQL Server クラスターの仮想名を SQL Server のコンピューター名として指定する必要があります。  
-> -   SQL Server の名前付きインスタンスの SPN を登録するコマンドは、既定のインスタンスの SPN を登録するときに使用するコマンドと同じですが、ポート番号が名前付きインスタンスで使用するポートと一致している必要があります。  
+>  -   Quando si crea un SPN per un server SQL in cluster, è necessario specificare il nome virtuale del cluster SQL Server come nome del computer SQL Server.  
+> -   Il comando per registrare un SPN per un'istanza denominata di SQL Server è lo stesso usato per la registrazione di un SPN per un'istanza predefinita, salvo per il numero di porta, che deve corrispondere alla porta usata dall'istanza denominata.  
 
-サイト データベース サーバーの SQL Server サービス アカウントの SPN を登録するには、 **Setspn** ツールを使用します。 Setspn ツールは、SQL Server のドメインに存在するコンピューターで、ドメイン管理者の資格情報を使用して実行する必要があります。  
+È possibile registrare un SPN per l'account del servizio SQL Server del server di database del sito usando lo strumento **Setspn** . È necessario eseguire lo strumento Setspn su un computer che risiede nel dominio di SQL Server e che per l'esecuzione utilizza le credenziali dell'amministratore di dominio.  
 
- Windows Server 2008 R2 で Setspn ツールを使用する SQL Server サービス アカウントの SPN を管理するには、次の手順に従います。 Setspn の詳細については、「 [Setspn Overview (Setspn の概要)](http://go.microsoft.com/fwlink/p/?LinkId=226343)」または使用しているオペレーティング システムの同様のドキュメントを参照してください。  
+ Utilizzare le procedure seguenti come un esempio della modalità di gestione dell'SPN per l'account servizio SQL Server che utilizza lo strumento Setspn su Windows Server 2008 R2. Per una guida specifica sullo strumento Setspn, vedere [Setspn Overview (Panoramica su Setspn)](http://go.microsoft.com/fwlink/p/?LinkId=226343)o una documentazione simile specifica del sistema operativo in uso.  
 
 > [!NOTE]  
->  次の手順では Setspn コマンドライン ツールを使用しています。 Setspn コマンドライン ツールは、Windows Server 2003 Support Tools を製品 CD または [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/p/?LinkId=100114)からインストールするときに含められます。 Windows Support Tools を製品 CD からインストールする方法の詳細については、「 [Windows サポート ツールをインストールする](http://go.microsoft.com/fwlink/p/?LinkId=62270)」を参照してください。  
+>  Le procedure seguenti fanno riferimento allo strumento da riga di comando di Setspn. Lo strumento da riga di comando di Setspn è incluso in caso di installazione degli strumenti di supporto di Windows Server 2003 da CD o da [Microsoft Download Center (Area download Microsoft)](http://go.microsoft.com/fwlink/p/?LinkId=100114). Per ulteriori informazioni sulla modalità di installazione degli strumenti di supporto di Windows da CD, vedere [Installare gli Strumenti di supporto di Windows](http://go.microsoft.com/fwlink/p/?LinkId=62270).  
 
-#### <a name="to-manually-create-a-domain-user-service-principal-name-spn-for-the-sql-server-service-account"></a>SQL Server サービス アカウントのドメイン ユーザー サービス プリンシパル名 (SPN) を手動で作成するには  
+#### <a name="to-manually-create-a-domain-user-service-principal-name-spn-for-the-sql-server-service-account"></a>Per creare manualmente il nome dell'entità di servizio (SPN) di un utente di dominio per l'account servizio SQL Server  
 
-1.  **[スタート]** メニューの **[ファイル名を指定して実行]**をクリックし、[ファイル名を指定して実行] ダイアログ ボックスに「 **cmd** 」と入力します。  
+1.  Nel menu **Start** , fare clic su **Esegui**, quindi immettere **cmd** nella finestra di dialogo Esegui.  
 
-2.  コマンド ラインで、Windows Server サポート ツールのインストール ディレクトリに移動します。 既定では、これらのツールは **C:\Program Files\Support Tools** ディレクトリにあります。  
+2.  Nella riga di comando, passare alla directory di installazione degli strumenti di supporto di Windows Server. Per impostazione predefinita, questi strumenti si trovano nella directory **C:\Programmi\Support Tools** .  
 
-3.  有効なコマンドを入力して SPN を作成します。 SPN を作成するには、NetBIOS 名、または SQL Server を実行するコンピューターの完全修飾ドメイン名 (FQDN) を使用できます。 ただし、NetBIOS 名と FQDN の両方の SPN を作成する必要があります。  
+3.  Immettere un comando valido per creare l'SPN. Per creare l'SPN, è possibile utilizzare il nome NetBIOS o il nome di dominio completo (FQDN) del computer che esegue SQL Server. Tuttavia, è necessario creare un SPN per il nome NetBIOS e il nome FQDN.  
 
     > [!IMPORTANT]  
-    >  クラスター化された SQL Server の SPN を作成する場合は、SQL Server クラスターの仮想名を SQL Server のコンピューター名として指定する必要があります。  
+    >  Quando si crea un SPN per un server SQL del cluster, è necessario specificare il nome virtuale del cluster SQL Server come nome del computer SQL Server.  
 
-    -   SQL Server コンピューターの NetBIOS 名の SPN を作成するには、コマンド **setspn -A MSSQLSvc/&lt;SQL Server コンピューター名\>:1433 &lt;ドメイン\アカウント** を入力します。  
+    -   Per creare un SPN per il nome NetBIOS del computer SQL Server, digitare il comando seguente: **setspn -A MSSQLSvc/&lt;nome computer SQL Server>:1433 <Dominio\Account\>:1433 &lt;Dominio\Account>**  
 
-    -   SQL Server コンピューターの FQDN の SPN を作成するには、コマンド **setspn -A MSSQLSvc/&lt;SQL Server FQDN\>:1433 &lt;ドメイン\アカウント** を入力します。  
+    -   Per creare un SPN per il nome FQDN del computer SQL Server, digitare il comando seguente: **setspn -A MSSQLSvc/&lt;FQDN SQL Server\>:1433 &lt;Dominio\Account>**  
 
     > [!NOTE]  
-    >  SQL Server の名前付きインスタンスの SPN を登録するコマンドは、既定のインスタンスの SPN を登録するときに使用するコマンドと同じですが、ポート番号が名前付きインスタンスで使用するポートと一致している必要があります。  
+    >  Il comando per registrare un SPN per un'istanza denominata SQL Server è lo stesso utilizzato per la registrazione di un SPN per un'istanza predefinita, salvo per il numero di porta che deve corrispondere alla porta utilizzata dall'istanza denominata.  
 
-#### <a name="to-verify-the-domain-user-spn-is-registered-correctly-by-using-the-setspn-command"></a>Setspn コマンドを使用してドメイン ユーザーの SPN が正しく登録されていることを確認するには  
+#### <a name="to-verify-the-domain-user-spn-is-registered-correctly-by-using-the-setspn-command"></a>Per verificare che l'SPN dell'utente di dominio sia registrato correttamente tramite il comando Setspn  
 
-1.  **[スタート]** メニューの **[ファイル名を指定して実行]**をクリックし、 **[ファイル名を指定して実行]** ダイアログ ボックスに「 **cmd** 」と入力します。  
+1.  Nel menu **Start** , fare clic su **Esegui**, quindi immettere **cmd** nella finestra di dialogo **Esegui** .  
 
-2.  コマンド プロンプトで、コマンド **setspn -L &lt;ドメインn\SQL サービス アカウント** を入力します。  
+2.  Al prompt dei comandi immettere il comando seguente: **setspn -L &lt;dominio\Account servizio SQL>**.  
 
-3.  登録された [ServicePrincipalName] を確認して、SQL Server に有効な SPN が作成されたことを確認します。 ****  
+3.  Esaminare l'attributo **ServicePrincipalName** registrato per assicurarsi che sia stato creato un SPN valido per SQL Server.  
 
-#### <a name="to-verify-the-domain-user-spn-is-registered-correctly-when-using-the-adsiedit-mmc-console"></a>ADSIEdit MMC コンソールを使用している場合に、ドメイン ユーザーの SPN が正しく登録されていることを確認するには  
+#### <a name="to-verify-the-domain-user-spn-is-registered-correctly-when-using-the-adsiedit-mmc-console"></a>Per verificare che l'SPN dell'utente di dominio sia stato registrato correttamente quando si utilizza la console MMC ADSIEdit  
 
-1.  **[スタート]** メニューの **[ファイル名を指定して実行]**をクリックし、「 **adsiedit.msc** 」と入力して ADSIEdit MMC コンソールを起動します。  
+1.  Nel menu **Start** , fare clic su **Esegui**, quindi immettere **adsiedit.msc** per avviare la console MMC ADSIEdit.  
 
-2.  必要に応じて、サイト サーバーのドメインに接続します。  
+2.  Se necessario, connettersi al dominio del server del sito.  
 
-3.  コンソール ウィンドウで、サイト サーバーのドメイン、**DC=&lt;サーバー識別名\>**、**CN=Users** の順に展開し、**CN=&lt;サービス アカウント ユーザー\>** を右クリックして、**[プロパティ]** をクリックします。  
+3.  Nel riquadro della console espandere il dominio del server del sito, espandere **DC=&lt;nome distinto server\>**, espandere **CN=Users**, fare clic con il pulsante destro del mouse su **CN=&lt;Utente account servizio\>** e quindi fare clic su **Proprietà**.  
 
-4.  **[CN=&lt;サービス アカウント ユーザー\> のプロパティ]** ダイアログ ボックスで、**servicePrincipalName** の値を検討し、有効な SPN が作成されて適切な SQL Server コンピューターに関連付けられていることを確認します。  
+4.  Nella finestra di dialogo **Proprietà CN=&lt;Utente account servizio\>**, esaminare il valore **servicePrincipalName** per verificare che sia stato creato un SPN valido e che sia stato associato al computer SQL Server corretto.  
 
-#### <a name="to-change-the-sql-server-service-account-from-local-system-to-a-domain-user-account"></a>SQL Server のサービス アカウントをローカル システムからドメイン ユーザー アカウントに変更するには  
+#### <a name="to-change-the-sql-server-service-account-from-local-system-to-a-domain-user-account"></a>Per modificare l'account servizio SQL Server dal sistema locale in un account utente di dominio  
 
-1.  SQL Server サービス アカウントとして使用するドメインまたはローカルのシステム ユーザー アカウントを作成または選択します。  
+1.  Creare o selezionare un dominio o un account utente del sistema locale che si desidera utilizzare come account servizio SQL Server.  
 
-2.  **[SQL Server 構成マネージャー]**を開きます。  
+2.  Aprire **Gestione configurazione SQL Server**.  
 
-3.  **[SQL Server のサービス]** をクリックし、**[SQL Server&lt;インスタンス名\>]** をダブルクリックします。  
+3.  Fare clic su **Servizi di SQL Server**, quindi fare doppio clic su **SQL Server&lt;NOME ISTANZA\>**.  
 
-4.  **[ログオン]** タブで、 **[このアカウント]**を選択してから、手順 1 で作成したドメイン ユーザー アカウントのユーザー名とパスワードを入力するか、 **[参照]** をクリックして Active Directory ドメイン サービスのユーザー アカウントを見つけて、最後に **[適用]**をクリックします。  
+4.  Nella scheda **Accedi** , selezionare **Questo account**, quindi immettere il nome utente e la password per l'account utente di dominio creati al passaggio 1, oppure fare clic su **Sfoglia** per trovare l'account utente in Servizi di dominio Active Directory, quindi fare clic su **Applica**.  
 
-5.  **[アカウントの変更の確認]** ダイアログ ボックスで **[はい]** をクリックして、サービス アカウントの変更を確認し SQL Server サービスを再起動します。  
+5.  Fare clic su **Sì** nella finestra di dialogo **Conferma modifica account** per confermare la modifica dell'account servizio e riavviare il servizio SQL Server.  
 
-6.  サービス アカウントの変更が完了したら、 **[OK]** をクリックします。  
+6.  Fare clic su **OK** dopo aver modificato correttamente l'account servizio.  
 
-##  <a name="bkmk_reset"></a> サイト リセットを実行する  
- 中央管理サイトまたはプライマリ サイトでサイト リセットを実行すると、サイトで次の操作が行われます。  
+##  <a name="bkmk_reset"></a> Eseguire una reimpostazione del sito  
+ Quando viene eseguita la reimpostazione di un sito di amministrazione centrale o di un sito primario, il sito:  
 
--   既定の Configuration Manager ファイルおよびレジストリ アクセス許可を再適用する  
+-   Riapplica le autorizzazioni di file e registro di sistema predefinite di Configuration Manager  
 
--   サイトにすべてのサイト コンポーネントおよびすべてのサイト システムの役割を再インストールする  
+-   Reinstalla tutti i componenti e tutti i ruoli del sistema del sito  
 
-セカンダリ サイトでは、サイトのリセットはサポートされません。  
+I siti secondari non supportano la reimpostazione del sito.  
 
-選択する場合にはサイト リセットを手動で実行することができますが、サイト構成を変更した後で自動的に実行することもできます。  
+Le reimpostazioni di siti possono essere eseguite manualmente, quando si preferisce, oppure automaticamente, dopo aver modificato la configurazione del sito.  
 
-たとえば、Configuration Manager コンポーネントによって使用されるアカウントに対して変更が加えられた場合、サイト コンポーネントの更新が確実に行われて新しいアカウントの詳細が使用されるよう手動サイト リセットを検討する必要があります。 ただし、サイトのクライアントまたはサーバーの言語を変更した場合、サイトでこの変更を使用できるようにするにはリセットを行う必要があるため、Configuration Manager は自動的にサイトのリセットを実行します。  
+Ad esempio, se è stata apportata una modifica agli account usati dai componenti di Configuration Manager, è consigliabile eseguire una reimpostazione manuale del sito per assicurarsi che componenti del sito vengano aggiornati in modo da usare i nuovi dati degli account. Se si modificano le lingue del client o del server in un sito, tuttavia, Configuration Manager esegue una reimpostazione automatica del sito, necessaria perché il sito possa usare la modifica.  
 
 > [!NOTE]  
->  サイトのリセットでは、Configuration Manager 以外のオブジェクトに対するアクセス許可はリセットされません。  
+>  Una reimpostazione del sito non consente la reimpostazione delle autorizzazioni di accesso a oggetti non Configuration Manager.  
 
-サイト リセットの実行時には、以下が行われます。  
+Quando viene eseguita la reimpostazione di un sito:  
 
-1.  セットアップでは、 **SMS_SITE_COMPONENT_MANAGER** サービスと、 **SMS_EXECUTIVE** サービスのスレッド コンポーネントを停止してから再起動します。  
+1.  Il programma di installazione interrompe e riavvia il servizio **SMS_SITE_COMPONENT_MANAGER** e i componenti thread del servizio **SMS_EXECUTIVE** .  
 
-2.  セットアップは、ローカル コンピューターおよびリモート サイト システム コンピューター上にある、サイト システムの共有フォルダーと **[SMS Executive]** コンポーネントを削除してから再作成します。  
+2.  Il programma di installazione rimuove, quindi ricrea, la cartella condivisa del sistema del sito e il componente **SMS Executive** nel computer locale e nei computer del sistema del sito remoto.  
 
-3.  セットアップにより **SMS_SITE_COMPONENT_MANAGER** サービスが再インストールされ、このサービスによって **SMS_EXECUTIVE** サービスと **SMS_SQL_MONITOR** サービスがインストールされます。  
+3.  Il programma di installazione riavvia il servizio **SMS_SITE_COMPONENT_MANAGER** e quest'ultimo installa a sua volta i servizi **SMS_EXECUTIVE** e **SMS_SQL_MONITOR** .  
 
-また、サイトのリセットでは、次のオブジェクトが復元されます。  
+Inoltre, una reimpostazione del sito consente di ripristinare gli oggetti seguenti:  
 
--   **SMS** または **NAL** のレジストリ キー、またはこれらのキーの既定のサブキー。  
+-   Le chiavi del Registro di sistema **SMS** o **NAL** e qualsiasi altra sottochiave di queste chiavi.  
 
--   Configuration Manager ファイル ディレクトリ ツリー、およびこのファイル ディレクトリ ツリー内の既定のファイルまたはサブディレクトリ。  
+-   L'albero della directory di file di Configuration Manager e qualsiasi sottodirectory o file predefinito presenti nell'albero.  
 
-**サイトのリセットを実行するための必要条件**  
+**Prerequisiti per eseguire una reimpostazione del sito**  
 
-サイトのリセットの実行に使用するアカウントには、次のアクセス許可がある必要があります。  
+L'account utilizzato per eseguire una reimpostazione del sito deve disporre delle seguenti autorizzazioni:  
 
--   サイトのリセットの実行に使用するアカウントには、次のアクセス許可がある必要があります。  
+-   L'account utilizzato per eseguire una reimpostazione del sito deve disporre delle seguenti autorizzazioni:  
 
-    -   **中央管理サイト**: このサイトでサイトのリセットの実行に使用するアカウントは、中央管理サイト サーバーのローカル管理者であり、 **[完全な権限を持つ管理者]** の役割に基づいた管理セキュリティ ロールと同等の権限を持っている必要があります。  
+    -   **Sito di amministrazione centrale**: l'account usato per eseguire una reimpostazione del sito deve essere un server del sito di amministrazione centrale o un amministratore locale e deve disporre dei privilegi equivalenti al ruolo di sicurezza di amministrazione basato su ruoli **Amministratore completo** .  
 
-    -   **プライマリ サイト**: このサイトでサイトのリセットの実行に使用するアカウントは、プライマリ サイト サーバーのローカル管理者であり、 **[完全な権限を持つ管理者]** の役割に基づいた管理セキュリティ ロールと同等の権限を持っている必要があります。 プライマリ サイトが中央管理サイトの階層内にある場合、このアカウントは中央管理サイト サーバーのローカル管理者でもある必要があります。  
+    -   **Sito primario**: l'account usato per eseguire una reimpostazione del sito deve essere un amministratore locale nel server del sito primario e deve disporre dei privilegi equivalenti al ruolo di sicurezza di amministrazione basato su ruoli **Amministratore completo** . Se il sito primario si trova in una gerarchia con un sito di amministrazione centrale, anche questo account deve essere un amministratore locale nel server del sito di amministrazione centrale.  
 
-**サイトのリセットに関する制限事項**
-  - バージョン 1602 以降、[実稼働前コレクションでのクライアント アップグレードのテスト](/sccm/core/clients/manage/upgrade/test-client-upgrades)をサポートするように階層が構成されている場合、サイトにインストールされているサーバーまたはクライアント言語パックをサイトのリセットによって変更することはできません。
+**Limitazioni per la reimpostazione del sito**
+  - A partire dalla versione 1602, non è possibile usare una reimpostazione del sito per modificare i Language Pack server o client installati nei siti quando la gerarchia è configurata per supportare i [test degli aggiornamenti client in una raccolta di pre-produzione](/sccm/core/clients/manage/upgrade/test-client-upgrades).
 
-#### <a name="to-perform-a-site-reset"></a>サイトのリセットを実行するには  
+#### <a name="to-perform-a-site-reset"></a>Per eseguire una reimpostazione del sito  
 
-1.  **&lt;Configuration Manager サイトのインストール フォルダー\>\BIN\X64\setup.exe** から **Configuration Manager のセットアップ**を実行します。  
+1.  Eseguire il **programma di installazione di Configuration Manager** da **&lt;cartella di installazione del sito di Configuration Manager\>\BIN\X64\setup.exe**.  
 
     > [!TIP]  
-    >  サイト サーバー コンピューターの **[スタート]** メニューまたは Configuration Manager のソース メディアから Configuration Manager のセットアップを開始することによって、サイトのリセットを実行することもできます。  
+    >  È possibile eseguire una reimpostazione del sito anche avviando l'installazione di Configuration Manager nel menu **Start** del computer del server del sito o dal supporto di origine di Configuration Manager.  
 
-2.  **[作業の開始]** ページで、 **[サイトのメンテナンスを実施するか、このサイトをリセットする]**を選択し、 **[次へ]**をクリックします。  
+2.  Nella pagina **Riquadro attività iniziale** selezionare **Esegui una manutenzione del sito o reimposta il sito**, quindi fare clic su **Avanti**.  
 
-3.  **[サイトのメンテナンス]** ページで、 **[構成を変更せずにサイトをリセットする]**を選択してから、 **[次へ]**をクリックします。  
+3.  Nella pagina **Manutenzione sito** selezionare **Reimposta sito senza modifiche alla configurazione**, quindi fare clic su **Avanti**.  
 
-4.  [はい] をクリックして、サイトのリセットを開始します。 ****  
+4.  Fare clic su **Sì** per iniziare la reimpostazione del sito.  
 
-サイトのリセットが完了したら、[閉じる] をクリックしてこの手順を完了します。 ****  
+Al termine della reimpostazione del sito, fare clic su **Chiudi** per completare la procedura.  
 
-##  <a name="bkmk_sitelang"></a> サイトの言語パックを管理する  
-サイトをインストールした後、使用中のサーバーおよびクライアントの言語パックを変更することができます。  
+##  <a name="bkmk_sitelang"></a> Gestire i Language Pack in un sito  
+Dopo l'installazione di un sito, è possibile gestire i Language Pack di server e client in uso:  
 
-**サーバー言語パック:**  
+**Language Pack server:**  
 
--   **適用対象:**  
+-   **Si applica a:**  
 
-     Configuration Manager コンソールのインストール  
+     Installazioni delle console di Configuration Manager  
 
-     適用可能なサイト システムの役割の新規インストール  
+     Nuove installazioni dei ruoli del sistema del sito applicabili  
 
--   **詳細:**  
+-   **Dettagli:**  
 
-     サイトのサーバー言語パックを更新した後は、言語パックのサポートを Configuration Manager コンソールに追加できます。  
+     Dopo aver aggiornato i Language Pack server in un sito è possibile aggiungere il supporto per i Language Pack nelle console di Configuration Manager.  
 
-     サーバー言語パックのサポートを Configuration Manager コンソールに追加するには、サイト サーバー上にある、使用する言語パックが格納されている **ConsoleSetup** フォルダーから Configuration Manager コンソールをインストールする必要があります。 Configuration Manager コンソールが既にインストールされている場合、新しいインストールを有効にしてサポートされる言語パックの最新の一覧を特定するには、まず既存のコンソールをアンインストールする必要があります。  
+     Per aggiungere il supporto per un Language Pack server in una console di Configuration Manager, è necessario installare la console di Configuration Manager dalla cartella **ConsoleSetup** in un server del sito che include il Language Pack da usare. Se la console di Configuration Manager è già installata, è necessario innanzitutto disinstallarla per consentire alla nuova installazione di identificare l'elenco corrente di Language Pack supportati.  
 
-**クライアント言語パック:**  
+**Language Pack client:**  
 
--   **適用対象:**  
+-   **Si applica a:**  
 
-     クライアント言語パックに変更が生じると、新しいクライアントのインストールとアップグレードによってクライアント言語の更新されたリストのサポートが追加されるよう、クライアント インストール ソース ファイルが更新されます。  
+     Le modifiche ai Language Pack dei client aggiornano i file di origine dell'installazione client in modo che le nuove installazioni di client o gli aggiornamenti possano aggiungere il supporto per l'elenco corrente di lingue del client.  
 
--   **詳細:**  
+-   **Dettagli:**  
 
-     サイトのクライアント言語パックを更新したら、クライアント言語パックを含むソース ファイルを使用して、言語パックを使用する各クライアントをインストールする必要があります。  
+     Dopo aver aggiornato i Language Pack client in un sito è necessario installare ogni client che utilizzerà i Language Pack tramite i file origine che includono i Language Pack client.  
 
-Configuration Manager によってサポートされているクライアントとサーバーの言語については、「[System Center Configuration Manager の言語パック](../../../core/servers/deploy/install/language-packs.md)」を参照してください。  
+Per informazioni sulle lingue di client e server supportate da Configuration Manager, vedere [Language Pack in System Center Configuration Manager](../../../core/servers/deploy/install/language-packs.md)  
 
-#### <a name="to-modify-the-language-packs-that-are-supported-at-a-site"></a>サイトでサポートされる言語パックを変更するには  
+#### <a name="to-modify-the-language-packs-that-are-supported-at-a-site"></a>Per modificare i Language Pack supportati in un sito  
 
-1.  サイト サーバーで、**&lt;Configuration Manager のサイトのインストール フォルダー\>\BIN\X64\setup.exe** から Configuration Manager のセットアップを実行します。  
+1.  Nel server del sito eseguire l'installazione di Configuration Manager da **&lt;cartella di installazione sito Configuration Manager\>\BIN\X64\setup.exe.**  
 
-2.  [作業の開始 **** ] ページで、[サイトのメンテナンスを実施するか、このサイトをリセットする ****] を選択し、[次へ ****] をクリックします。  
+2.  Nella pagina **Riquadro attività iniziale** selezionare **Esegui una manutenzione del sito o reimposta il sito**, quindi fare clic su **Avanti**.  
 
-3.  [サイトのメンテナンス **** ] ページで、[言語構成を変更する ****] を選択し、[次へ ****] をクリックします。  
+3.  Nella pagina **Manutenzione sito** selezionare **Modifica la configurazione della lingua**, quindi fare clic su **Avanti**.  
 
-4.  [必須ファイルのダウンロード **** ] ページで [必須ファイルをダウンロードする **** ] を選択して言語パックの更新プログラムを取得するか、[ダウンロード済みのファイルを使用する **** ] を選択して、サイトに使用する言語パックを含むダウンロード済みのファイルを使用します。 [次へ **** ] をクリックしてファイルを確認して続行します。  
+4.  Nella pagina **Download prerequisiti** selezionare **Scarica file richiesti** per acquisire gli aggiornamenti nei Language Pack o selezionare **Utilizza file scaricati precedentemente** per utilizzare i file scaricati in precedenza che includono i Language Pack da aggiungere al sito. Fare clic su **Avanti** per convalidare i file e continuare.  
 
-5.  [サーバーの言語の選択 **** ] ページで、そのサイトがサポートするサーバー言語のチェック ボックスをオンにし、[次へ ****] をクリックします。  
+5.  Nella pagina **Selezione della lingua server** selezionare la casella di controllo relativa alle lingue del server supportate dal sito e quindi fare clic su **Avanti**.  
 
-6.  [クライアント言語の選択 **** ] ページで、そのサイトがサポートするクライアント言語のチェック ボックスをオンにし、[次へ ****] をクリックします。  
+6.  Nella pagina **Selezione della lingua client** selezionare la casella di controllo relativa alle lingue del client supportate dal sito e quindi fare clic su **Avanti**.  
 
-7.  [次へ ****] をクリックして、サイトの言語サポートを変更します。  
+7.  Fare clic su **Avanti**per modificare la lingua di supporto nel sito.  
 
     > [!NOTE]  
-    >  Configuration Manager でサイトのリセットが開始され、サイトのすべてのサイト システムの役割も再インストールされます。  
+    >  Configuration Manager avvia una reimpostazione del sito che reinstalla anche tutti i ruoli di sistema del sito presenti nel sito.  
 
-8.  [閉じる **** ] をクリックしてこの手順を完了します。  
+8.  Fare clic su **Chiudi** per completare la procedura.  
 
-##  <a name="BKMK_ModDBAlert"></a> データベース サーバーのアラートしきい値を変更する  
- Configuration Manager の既定では、サイト データベース サーバーの空きディスク領域が少なくなると、アラートが発生するようになっています。 既定では、空きディスク領域が 10 GB 以下になると警告アラートが、5 GB 以下になると重大なアラートが発生します。 サイトごとに、このしきい値を変更したり、アラートを無効にしたりすることができます。  
+##  <a name="BKMK_ModDBAlert"></a> Modificare la soglia di avviso del server di database  
+ Per impostazione predefinita, Configuration Manager genera avvisi quando lo spazio libero su disco in un server di database del sito è insufficiente. Le impostazioni predefinite sono configurate per generare un'avvertenza quando lo spazio disponibile su disco è pari o inferiore a 10 GB e un avviso critico quando tale spazio è pari o inferiore a 5 GB. È possibile modificare questi valori o disattivare gli avvisi per ogni sito.  
 
- アラートの設定を変更するには  
+ Per modificare queste impostazioni:  
 
-1.  [ **管理** ] ワークスペースで [ **サイトの構成**] を展開して、[ **サイト**] をクリックします。  
+1.  Nell'area di lavoro **Amministrazione** , espandere **Configurazione sito**, quindi fare clic su **Siti**.  
 
-2.  構成を変更するサイトを選択し、そのサイトの **[プロパティ]** を開きます。  
+2.  Selezionare il sito che si vuole configurare e aprire la finestra di dialogo **Proprietà** del sito.  
 
-3.  サイトの **[プロパティ]** ダイアログ ボックスで **[アラート]** タブを選択し、設定を編集します。  
+3.  Nella finestra di dialogo **Proprietà** del sito selezionare la scheda **Avviso** e quindi modificare le impostazioni.  
 
-4.  [OK] をクリックし、[プロパティ] ダイアログ ボックスを閉じます。 ****  
+4.  Fare clic su **OK** per chiudere la finestra di dialogo delle proprietà del sito.  

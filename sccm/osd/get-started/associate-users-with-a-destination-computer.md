@@ -1,6 +1,6 @@
 ---
-title: "展開先のコンピューターにユーザーを関連付ける | Microsoft Docs"
-description: "オペレーティング システムを展開するときに、ユーザーをセットアップ先のコンピューターと関連付けるように、System Center Configuration Manager を構成します。"
+title: Associare gli utenti a un computer di destinazione | Microsoft Docs
+description: Configurare System Center Configuration Manager per associare gli utenti ai computer di destinazione quando si distribuiscono sistemi operativi.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,28 +18,28 @@ manager: angrobe
 ms.openlocfilehash: c0331567b94a99b29cc73c16de17a9f3bc6b9e43
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="associate-users-with-a-destination-computer-in-system-center-configuration-manager"></a>System Center Configuration Manager でユーザーをセットアップ先のコンピューターに関連付ける
+# <a name="associate-users-with-a-destination-computer-in-system-center-configuration-manager"></a>Associare gli utenti a un computer di destinazione in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager を使ってオペレーティング システムを展開するときに、ユーザーを、オペレーティング システムの展開先のコンピューターに関連付けることができます。 この構成には、次の事柄が含まれます。  
+Quando si utilizza System Center Configuration Manager per la distribuzione del sistema operativo, è possibile associare gli utenti al computer di destinazione in cui viene distribuito il sistema operativo. Questa configurazione include i seguenti punti:  
 
--   単一ユーザーが展開先コンピューターのプライマリ ユーザーであること  
+-   Che un singolo utente sia l'utente primario del computer di destinazione.  
 
--   複数ユーザーが展開先コンピューターのプライマリ ユーザーであること  
+-   Che più utenti siano gli utenti primari del computer di destinazione.  
 
- ユーザーとデバイスのアフィニティは、アプリケーションを展開するときにユーザー中心の管理をサポートします。 オペレーティング システムをインストールするセットアップ先のコンピューターにユーザーを関連付けると、後でそのユーザーにアプリケーションを展開することにより、セットアップ先のコンピューターにアプリケーションが自動的にインストールされるようになります。 ただし、オペレーティング システムを展開するときにユーザーとデバイスのアフィニティのサポートを構成することはできますが、ユーザーとデバイスのアフィニティを使ってオペレーティング システムを展開することはできません。  
+ L'affinità utente dispositivo supporta la gestione incentrata sull'utente durante la distribuzione delle applicazioni. Quando si associa un utente al computer di destinazione in cui viene installato un sistema operativo, successivamente è possibile distribuire le applicazioni all'utente associato e le applicazioni verranno installate automaticamente nel computer di destinazione. Tuttavia, nonostante sia possibile configurare il supporto per l'affinità utente dispositivo durante la distribuzione dei sistemi operativi, non è possibile utilizzare l'affinità utente dispositivo per la distribuzione dei sistemi operativi.  
 
- ユーザーとデバイスのアフィニティの詳細については、「[ユーザーとデバイスのアフィニティへのユーザーとデバイスの関連付け](../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md)」をご覧ください。  
+ Per altre informazioni sull'affinità utente dispositivo, vedere l'argomento [Link users and devices with user device affinity in System Center Configuration Manager](../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md) (Collegare utenti e dispositivi con l'affinità utente dispositivo in System Center Configuration Manager).  
 
-## <a name="how-to-specify-a-user-when-you-deploy-operating-systems"></a>オペレーティング システムを展開するときにユーザーを指定する方法  
- 次の表に、ユーザーとデバイスのアフィニティをオペレーティング システムの展開に統合するときに実行できる操作を示します。 ユーザーとデバイスのアフィニティは、PXE 展開、起動可能なメディアの展開、事前設定されたメディアの展開に統合することができます。  
+## <a name="how-to-specify-a-user-when-you-deploy-operating-systems"></a>Come specificare un utente durante la distribuzione dei sistemi operativi  
+ Nella seguente tabella sono elencate le azioni che consentono di integrare l'affinità utente dispositivo nelle distribuzioni del sistema operativo. È possibile integrare l'affinità utente-dispositivo nelle distribuzioni PXE, nelle distribuzioni dei supporti di avvio e nelle distribuzioni dei supporti pre-installati.  
 
-|操作|説明|  
+|Azione|Altre informazioni|  
 |------------|----------------------|  
-|**SMSTSAssignUsersMode** 変数を含むタスク シーケンスを作成する|**Set Task Sequence Variable** のタスク シーケンスの手順に沿って、タスク シーケンスの最初に  [SMSTSAssignUsersMode](../../osd/understand/task-sequence-steps.md#BKMK_SetTaskSequenceVariable) 変数を追加します。 この変数は、タスク シーケンスでのユーザー情報の処理方法を指定します。<br /><br /> 変数に次のいずれかの値を設定します。<br /><br /> <br /><br /> **自動**:タスク シーケンスが自動的にユーザーと展開先コンピューターの関係を作成し、オペレーティング システムを展開します。<br /><br /> **保留中**:タスク シーケンスは、ユーザーと展開先コンピューターの関係を作成しますが、オペレーティング システムを展開する前に管理ユーザーの承認を待ちます。<br /><br /> **無効**:タスク シーケンスは、ユーザーを展開先コンピューターに関連付けずに、オペレーティング システムの展開を続行します。<br /><br /> <br /><br /> この変数は、コンピューターまたはコレクションにも設定することができます。 組み込み変数の詳細については、「[タスク シーケンス組み込み変数](../../osd/understand/task-sequence-built-in-variables.md)」をご覧ください。|  
-|ユーザー情報を収集する起動前コマンドを作成する|起動前コマンドは、入力ボックスのある Visual Basic (VB) スクリプト、または、入力されたユーザー データを検証する HTML アプリケーション (HTA) です。<br /><br /> 起動前コマンドには、タスク シーケンスの実行時に使用される **SMSTSUdaUsers** 変数を設定する必要があります。 この変数は、コンピューター、コレクション、あるいはタスク シーケンスの変数にも設定することができます。 複数のユーザー ( *domain\user1、domain\user2、domain\user3*) を追加するときには、次の形式を使用します。|  
-|配布ポイントとメディアによるユーザーと展開先コンピューターの関連付けを構成する|[配布ポイントが PXE ブート要求を受け入れるように構成し](https://technet.microsoft.com/library/mt627944\(TechNet.10\).aspx#BKMK_PXEDistributionPoint) 、 [起動可能なメディア](http://technet.microsoft.com/library/mt627921\(TechNet.10\).aspx) や [事前設定されたメディア](https://technet.microsoft.com/library/mt627922\(TechNet.10\).aspx) をタスク シーケンス メディアの作成ウィザードを使って作成する場合、配布ポイントやメディアが、ユーザーとオペレーティング システムのセットアップ先のコンピューターとの関連付けをどのようにサポートするかを指定できます。<br /><br /> ユーザーとデバイスのアフィニティのサポートの構成には、ユーザー ID を検証する方法は組み込まれていません。 このことは、技術者がコンピューターをプロビジョニングするときに、ユーザーに代わって情報を入力するときに重要になります。 タスク シーケンスによるユーザー情報の処理方法の設定に加えて、配布ポイントとメディアにこれらのオプションを構成することで、PXE ブートや特定の種類のメディアからの展開開始を制限することができます。|  
+|Creare una sequenza attività che includa la variabile **SMSTSAssignUsersMode**|Aggiungere la variabile **SMSTSAssignUsersMode** all'inizio della sequenza di attività usando il passaggio della sequenza di attività  [Set Task Sequence Variable](../../osd/understand/task-sequence-steps.md#BKMK_SetTaskSequenceVariable) . Questa variabile specifica la modalità di gestione delle informazioni utente da parte della sequenza attività.<br /><br /> Impostare la variabile su uno dei seguenti valori:<br /><br /> <br /><br /> **Automatica**: la sequenza attività crea automaticamente una relazione tra l'utente e il computer di destinazione, quindi distribuisce il sistema operativo.<br /><br /> **In sospeso**: la sequenza attività crea una relazione tra l'utente e il computer di destinazione, ma attende l'approvazione dell'utente amministratore prima di distribuire il sistema operativo.<br /><br /> **Disattivata**: la sequenza attività non associa un utente al computer di destinazione e continua a distribuire il sistema operativo.<br /><br /> <br /><br /> È inoltre possibile impostare la variabile su un computer o una raccolta. Per altre informazioni sulle variabili predefinite, vedere [Task sequence built-in variables](../../osd/understand/task-sequence-built-in-variables.md) (Variabili predefinite della sequenza di attività).|  
+|Creare un comando di preavvio che raccoglie le informazioni utente|Il comando di preavvio può essere uno script di Visual Basic (VB) con una casella di input oppure un'applicazione HTML (HTA) che convalida i dati utente immessi.<br /><br /> Il comando di preavvio deve impostare la variabile **SMSTSUdaUsers** utilizzata durante l'esecuzione della sequenza attività. Questa variabile può essere impostata su un computer, una raccolta o una variabile della sequenza attività. Quando si aggiungono più utenti, usare il seguente formato: *dominio\utente1, dominio\utente2, dominio\utente3*.|  
+|Configurare la modalità di associazione dell'utente al computer di destinazione utilizzata da punti di distribuzione e supporti|Quando la [configurazione di un punto di distribuzione prevede l'accettazione delle richieste di avvio PXE](https://technet.microsoft.com/library/mt627944\(TechNet.10\).aspx#BKMK_PXEDistributionPoint) e quando si creano [supporti di avvio](http://technet.microsoft.com/library/mt627921\(TechNet.10\).aspx) o [supporti pre-installati](https://technet.microsoft.com/library/mt627922\(TechNet.10\).aspx) usando la Creazione guidata del supporto per la sequenza di attività, è possibile specificare la modalità di supporto dell'associazione degli utenti al computer di destinazione in cui viene distribuito il sistema operativo da parte del punto di distribuzione o del supporto.<br /><br /> La configurazione del supporto per l'affinità utente dispositivo non dispone di un metodo integrato per la convalida dell'identità utente. Questo elemento può essere importante quando un tecnico che esegue il provisioning del computer immette le informazioni per conto dell'utente. Oltre a impostare la modalità di gestione delle informazioni utente da parte della sequenza di attività, la configurazione di queste opzioni nel punto di distribuzione e nel supporto consente di limitare le distribuzioni avviate da un avvio PXE o da un tipo di supporto specifico.|  

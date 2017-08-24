@@ -1,6 +1,6 @@
 ---
-title: "Windows Phone アプリケーションの作成 | Microsoft Docs"
-description: "Windows Phone デバイス用アプリケーションを作成して展開するときに検討する必要がある考慮事項について説明します。"
+title: Creare applicazioni Windows Phone | Microsoft Docs
+description: Questo articolo descrive le considerazioni da tenere presenti quando si creano e distribuiscono applicazioni per i dispositivi Windows Phone.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -17,49 +17,49 @@ manager: angrobe
 ms.openlocfilehash: 6cbf2389a72c0c384ef8e84a1755ac77b64bfc6d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-windows-phone-applications-with-system-center-configuration-manager"></a>System Center Configuration Manager で Windows Phone アプリケーションを作成する
+# <a name="create-windows-phone-applications-with-system-center-configuration-manager"></a>Creare applicazioni Windows Phone con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager アプリケーションには、デバイスにソフトウェアを展開するために必要なインストール ファイルと情報からなる、1 つまたは複数の展開の種類があります。 また、展開の種類には、ソフトウェアを展開するタイミングと方法を指定する規則があります。  
+Un'applicazione di System Center Configuration Manager contiene uno o più tipi di distribuzione che comprendono le informazioni e i file di installazione necessari per distribuire software in un dispositivo. Un tipo di distribuzione contiene anche le regole che specificano quando e come deve essere distribuito il software.  
 
- アプリケーションを作成するには、次の 2 通りの方法があります。  
+ È possibile creare applicazioni usando due metodi:  
 
--   アプリケーション インストール ファイルを読み取って、アプリケーションおよび展開の種類を自動的に作成する。  
+-   Creare automaticamente i tipi di applicazione e di distribuzione leggendo i file di installazione dell'applicazione.  
 
--   アプリケーションを手動で作成してから、後で展開の種類を追加する。  
+-   Creare manualmente l'applicazione e quindi aggiungere tipi di distribuzione in un secondo momento.  
 
--   アプリケーションをファイルからインポートする。  
+-   Importare un'applicazione da un file.  
 
-Configuration Manager アプリケーションと展開の種類の作成に必要な手順については、「[アプリケーションの作成ウィザードを開始する](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard)」を参照してください。 また、Windows Phone デバイス用アプリケーションを作成して展開するときは、以下の考慮事項について留意してください。  
+Per la procedura necessaria per creare le applicazioni e i tipi di distribuzione di Configuration Manager, vedere [Avviare la Creazione guidata applicazione](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard). Inoltre, quando si creano e si distribuiscono applicazioni per i dispositivi Windows Phone, tenere presenti le considerazioni seguenti.  
 
-## <a name="general-considerations"></a>一般的な考慮事項  
- Configuration Manager では、次のアプリ ファイルの種類の展開がサポートされています。  
+## <a name="general-considerations"></a>Considerazioni generali  
+ Configuration Manager supporta la distribuzione dei tipi di file app seguenti:  
 
-|デバイスの種類|サポートされているファイルの種類|  
+|Tipo di dispositivo|Tipi di file supportati|  
 |-----------------|---------------------|  
 |Windows Phone 8|.xap|  
-|Windows Phone 8.1|.xap、.appx、.appxbundle|
-|Windows 10 Mobile|.xap、.appx、.appxbundle|
+|Windows Phone 8.1|.xap, .appx, .appxbundle|
+|Windows 10 Mobile|.xap, .appx, .appxbundle|
 
- 次の展開操作がサポートされています。  
+ Sono supportate le azioni di distribuzione seguenti:  
 
-|デバイスの種類|サポートされている操作|  
+|Tipo di dispositivo|Azioni supportate|  
 |-----------------|-----------------------|  
-|Windows Phone 8、Windows Phone 8.1、および Windows 10 Mobile|利用可能、必須、アンインストール|  
+|Windows Phone 8, Windows Phone 8.1 e Windows 10 Mobile|Disponibile, Richiesto, Disinstalla|  
 
-## <a name="steps-to-deploy-the-latest-windows-phone-company-portal-app-with-supersedence"></a>最新の Windows Phone 会社ポータル アプリケーションに置き換え関係を展開する手順  
- 次の表に、Windows Phone 8 用の最新の会社ポータル アプリケーションを作成する手順とその簡単な説明、および関連情報のある場所へのリンクをまとめます。  
+## <a name="steps-to-deploy-the-latest-windows-phone-company-portal-app-with-supersedence"></a>Passaggi per distribuire l'app più recente del portale aziendale di Windows Phone con sostituzione  
+ Nella tabella seguente vengono forniti i passaggi, i dettagli e ulteriori informazioni per la creazione e distribuzione dell'app del portale aziendale più recente di Windows Phone 8.  
 
-|手順|説明|  
+|Passaggio|Altre informazioni|  
 |----------|----------------------|  
-|**ステップ 1:** 最新の会社ポータル アプリケーションを取得する。|[Windows Phone 8 ポータル サイト アプリ](http://go.microsoft.com/fwlink/?LinkId=268440)をダウンロードします。|  
-|**ステップ 2:** 会社ポータル アプリケーションに、Symantec 証明書を使って署名する。|ポータル サイト アプリに署名する方法については、「[System Center Configuration Manager と Microsoft Intune による Windows Phone および Windows 10 Mobile のハイブリッドのデバイス管理のセットアップ](../../mdm/deploy-use/enroll-hybrid-windows.md)」を参照してください。|  
-|**ステップ 3:** 最新バージョンの会社ポータルアプリケーションを含む新しいアプリケーションを作成して置き換え関係を指定する。|詳細については、「[アプリケーションの作成](../../apps/deploy-use/create-applications.md)」と「[アプリケーションを修正して置き換える方法](../../apps/deploy-use/revise-and-supersede-applications.md)」を参照してください。|  
-|**ステップ 4:** Microsoft Intune サブスクリプションの作成ウィザードでアプリケーションを追加する。|詳細については、「[System Center Configuration Manager と Microsoft Intune による Windows Phone および Windows 10 Mobile のハイブリッドのデバイス管理のセットアップ](../../mdm/deploy-use/enroll-hybrid-windows.md)」を参照してください。|  
-|**ステップ 5:** Microsoft Intune サブスクリプションの作成ウィザードで会社ポータル アプリケーションを追加したときに自動的に作成された展開を削除する。|Microsoft Intune のサブスクリプションによって、このアプリケーションの展開が自動的に作成されますが、この展開には置き換えを設定できないので削除します。|  
-|**手順 6:**アプリケーションの新しい展開を作成する。 **ソフトウェアの展開ウィザード**の [**展開設定**] ページで [**このアプリケーションの置き換えられるバージョンを自動的にアップグレードする**] チェック ボックスをオンにします。|置き換え関係を設定して作成したアプリケーションの新しい展開を作成します。|  
-|**ステップ 7 (オプション):** 既定では、置き換えるアプリケーションがデバイスに 7 日後にインストールされる。 登録済みデバイスに、これより早く会社ポータル アプリケーションを展開したい場合は、[**展開の再評価スケジュールを指定する**] を小さな値に設定します。<br /><br /> この値を既定値より小さくすると、ネットワークとクライアント コンピューターのパフォーマンスが低下する可能性があります。|詳細情報はありません。|  
+|**Passaggio 1:** ottenere l'app più recente del portale aziendale.|Scaricare l' [App Portale aziendale di Windows Phone 8](http://go.microsoft.com/fwlink/?LinkId=268440).|  
+|**Passaggio 2:** firmare l'app del portale aziendale con il certificato Symantec.|Per informazioni sulla procedura di firma dell'app Portale aziendale, vedere [Configurare la gestione di dispositivi ibridi Windows Phone e Windows 10 con System Center Configuration Manager e Microsoft Intune](../../mdm/deploy-use/enroll-hybrid-windows.md).|  
+|**Passaggio 3:** creare una nuova applicazione con la versione più recente dell'app del portale aziendale e specificare una relazione di sostituzione.|Per altre informazioni, vedere le indicazioni su [come creare applicazioni](../../apps/deploy-use/create-applications.md) e [come rivedere e sostituire le applicazioni](../../apps/deploy-use/revise-and-supersede-applications.md).|  
+|**Passaggio 4:** aggiungere l'applicazione alla Sottoscrizione guidata di Microsoft Intune.|Per altre informazioni, vedere [Configurare la gestione di dispositivi ibridi Windows Phone e Windows 10 con System Center Configuration Manager e Microsoft Intune](../../mdm/deploy-use/enroll-hybrid-windows.md).|  
+|**Passaggio 5:** eliminare la distribuzione che viene creata automaticamente quando si aggiunge l'app Portale aziendale alla Sottoscrizione guidata di Microsoft Intune.|La sottoscrizione di Microsoft Intune ha creato una distribuzione automatica di questa app e la distribuzione non supporterà la sostituzione.|  
+|**Passaggio 6:** creare una nuova distribuzione dell'applicazione. Nella pagina **Impostazioni distribuzione** della **Distribuzione guidata del software** selezionare **Aggiorna automaticamente tutte le versioni sostituite di questa applicazione**.|Creare una nuova distribuzione con sostituzione usando l'applicazione creata con la relazione di sostituzione.|  
+|**Passaggio 7 (facoltativo):** per impostazione predefinita, le app di sostituzione vengono installate nei dispositivi dopo 7 giorni. Per distribuire prima l'app del portale aziendale ai dispositivi registrati in precedenza, modificare l'impostazione **Pianificare nuova valutazione per le distribuzioni** impostandola su un valore inferiore.<br /><br /> Se viene impostato su un valore inferiore rispetto a quello predefinito, questo valore può influire negativamente sulle prestazioni della rete e dei computer client.|Nessuna informazione aggiuntiva.|  

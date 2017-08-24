@@ -1,5 +1,5 @@
 ---
-title: "クラウド管理ゲートウェイの計画 | Microsoft Docs"
+title: Pianificare il gateway di gestione cloud | Microsoft Docs
 description: 
 ms.date: 06/07/2017
 ms.prod: configuration-manager
@@ -11,187 +11,187 @@ manager: angrobe
 ms.openlocfilehash: a7380ae781447880ffcba0778694ea62e10c4889
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Configuration Manager でクラウド管理ゲートウェイを計画する
+# <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-バージョン 1610 より、クラウド管理ゲートウェイは、インターネット上で Configuration Manager クライアントを管理する簡単な方法を提供します。 クラウド管理ゲートウェイ サービスは、Microsoft Azure に展開され、Azure サブスクリプションを必要とします。 このサービスは、クラウド管理ゲートウェイ コネクタ ポイントと呼ばれる新しいロールを使って、オンプレミスの Configuration Manager インフラストラクチャに接続します。 デプロイされて構成されると、クライアントは、内部のプライベート ネットワーク上にいるかどうか、またはインターネット上にあるかどうかに関係なく、オンプレミスの Configuration Manager サイト システムの役割にアクセスできるようになります。
+A partire dalla versione 1610, il gateway di gestione cloud consente di gestire i client di Configuration Manager su Internet in modo semplice. Il servizio gateway di gestione cloud viene distribuito in Microsoft Azure e richiede una sottoscrizione di Azure. Si connette all'infrastruttura di Configuration Manager locale usando un nuovo ruolo chiamato punto di connessione del gateway di gestione cloud. Dopo che sarà stato completamente distribuito e configurato, i client potranno accedere ai ruoli del sistema del sito di Configuration Manager locale indipendentemente dal fatto che siano connessi alla rete privata interna o su Internet.
 
 > [!TIP]  
-> バージョン 1610 で導入されたクラウド管理ゲートウェイはプレリリース機能です。 有効にするには、「[更新プログラムからのプレリリース機能の使用](/sccm/core/servers/manage/pre-release-features)」をご覧ください。
+> Introdotto con la versione 1610, il cloud management gateway è una funzionalità di versione non definitiva. Per abilitarla, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/pre-release-features).
 
-Configuration Manager コンソールを使って、Azure にサービスを展開し、クラウド管理ゲートウェイ コネクタ ポイントの役割を追加して、クラウド管理ゲートウェイ トラフィックを許可するサイト システムの役割を構成します。 クラウド管理ゲートウェイは現在、管理ポイントとソフトウェアの更新ポイントの役割のみをサポートしています。
+Usare la console di Configuration Manager per distribuire il servizio in Azure, aggiungere il ruolo punto di connessione del gateway di gestione cloud e configurare i ruoli del sistema del sito per consentire il traffico del gateway di gestione cloud. Il gateway di gestione cloud supporta attualmente solo i ruoli punto di gestione e punto di aggiornamento software.
 
-コンピューターを認証し、異なる層のサービス間の通信を暗号化するには、クライアント証明書および Secure Socket Layer (SSL) 証明書が必要です。 クライアント コンピューターは通常、グループ ポリシーの適用を介してクライアント証明書を受け取ります。 クライアントと役割をホストしているサイト システム サーバー間のトラフィックを暗号化するには、CA からカスタム SSL 証明書を作成する必要があります。 クラウド管理ゲートウェイ サービスの展開を Configuration Manager に許可する管理証明書を Azure で設定する必要もあります。
+Per autenticare i computer e crittografare le comunicazioni tra i diversi livelli di servizio sono necessari certificati client e certificati Secure Socket Layer (SSL). I computer client ricevono in genere un certificato client mediante l'imposizione dei criteri di gruppo. Per crittografare il traffico tra i client e il server di sistema del sito che ospita i ruoli, è necessario creare un certificato SSL personalizzato mediante un'autorità di certificazione. È anche necessario configurare un certificato di gestione in Azure che consente a Configuration Manager di distribuire il servizio gateway di gestione cloud.
 
-## <a name="requirements-for-cloud-management-gateway"></a>クラウド管理ゲートウェイの要件
+## <a name="requirements-for-cloud-management-gateway"></a>Requisiti per il gateway di gestione cloud
 
--   クライアント コンピューターとクラウド管理ゲートウェイ コネクタ ポイントを実行するサイト システム サーバー
+-   Computer client e server di sistema del sito che eseguono il punto di connessione del gateway di gestione cloud.
 
--   クライアント コンピューターからの通信を暗号化し、クラウド管理ゲートウェイ サービスの ID を認証するために使用される内部 CA からのカスタムの SSL 証明書
+-   Certificati SSL personalizzati dell'autorità di certificazione interna, necessari per crittografare le comunicazioni dai computer client e autenticare l'identità del servizio gateway di gestione cloud.
 
--   クラウド サービスの Azure サブスクリプション
+-   Sottoscrizione di Azure per i servizi cloud.
 
--   Azure での Configuration Manager の認証に使用される Azure 管理証明書
+-   Certificato di gestione di Azure, utilizzato per l'autenticazione di Configuration Manager con Azure.
 
-## <a name="specifications-for-cloud-management-gateway"></a>クラウド管理ゲートウェイの仕様
+## <a name="specifications-for-cloud-management-gateway"></a>Specifiche per il gateway di gestione cloud
 
-- クラウド管理ゲートウェイの各インスタンスは、4,000 クライアントをサポートします。
-- 可用性を高めるため、クラウド管理ゲートウェイのインスタンスを少なくとも 2 つ作成することをお勧めします。
-- クラウド管理ゲートウェイは、管理ポイントとソフトウェアの更新ポイントの役割のみをサポートしています。
--   クラウド管理ゲートウェイに関しては、Configuration Manager の次の機能が現在のところサポートされていません。
+- Ogni istanza del gateway di gestione cloud supporta 4.000 client.
+- È consigliabile creare almeno due istanze del gateway di gestione cloud per aumentare la disponibilità.
+- Il gateway di gestione cloud supporta solo i ruoli punto di gestione e punto di aggiornamento software.
+-   Le funzionalità seguenti in Configuration Manager non sono attualmente supportate dal gateway di gestione cloud:
 
-    -   クライアント展開
-    -   サイトの自動割り当て
-    -   ユーザー ポリシー
-    -   アプリケーション カタログ (ソフトウェア承認要求を含む)
-    -   完全なオペレーティング システム展開 (OSD)
-    -   Configuration Manager コンソール
-    -   ［リモート ツール］
-    -   Web サイトのレポート
-    -   Wake On LAN
-    -   Mac、Linux、UNIX クライアント
+    -   Distribuzione client
+    -   Assegnazione automatica al sito
+    -   Criteri utente
+    -   Catalogo applicazioni, incluse le richieste di approvazione software
+    -   Distribuzione completa del sistema operativo
+    -   Console di Configuration Manager
+    -   Strumenti remoti
+    -   Sito Web di Reporting
+    -   Riattivazione LAN
+    -   Client Mac, Linux e UNIX
     -   Azure Resource Manager
-    -   ピア キャッシュ
-    -   オンプレミス モバイル デバイス管理
+    -   Peer cache
+    -   Gestione dei dispositivi mobili (MDM) locale
 
-## <a name="cost-of-cloud-management-gateway"></a>クラウド管理ゲートウェイのコスト
+## <a name="cost-of-cloud-management-gateway"></a>Costo del gateway di gestione cloud
 
 >[!IMPORTANT]
->以下のコスト情報は、見積もり目的のみで提供されます。 ご利用の環境によっては、変動要素が他にも存在し、それがクラウド管理ゲートウェイの総コストに影響を与えることがあります。
+>Le informazioni sui costi specificate di seguito sono puramente stime. Altre variabili di ambiente possono influire sul costo complessivo dell'uso del gateway di gestione cloud.
 
-クラウド管理ゲートウェイでは、次の Microsoft Azure の機能が使用され、その料金が Azure サブスクリプション アカウントに請求されます。
+Il gateway di gestione cloud usa le funzionalità di Microsoft Azure seguenti, che vengono addebitate all'account di sottoscrizione di Azure:
 
--   バーチャル マシン
+-   Macchina virtuale
 
-    -   現在のところ、クラウド管理ゲートウェイには Standard\_A2 バーチャル マシンが必要になります。 サービスを作成するとき、サービスをサポートする VM の数を選択できます (既定は 1 です)。
+    -   Per il gateway di gestione cloud è attualmente necessaria una macchina virtuale Standard\_A2. Quando si crea il servizio, è possibile selezionare il numero di macchine virtuali necessarie per supportare il servizio. Uno è il valore predefinito.
 
-    -   1 台の Azure Standard\_A2 バーチャル マシンでインターネット ベースのクライアントを約 2,000 台同時にサポートできると予想されます (この数値は見積もり目的でのみ提供されます)。
+    -   Per una stima, supporre che una sola macchina virtuale Azure Standard\_A2 possa supportare circa 2000 client simultanei basati su Internet .
 
-    -   予想されるコストについては、「[Azure の料金計算ツール](https://azure.microsoft.com/en-us/pricing/calculator/)」を参照してください。
+    -   Vedere il [calcolatore dei prezzi di Azure](https://azure.microsoft.com/en-us/pricing/calculator/) per determinare i costi potenziali.
 
       >[!NOTE]
-      >バーチャル マシンのコストは地域によって異なります。
+      >I costi delle macchine virtuali variano a seconda dell'area.
 
--   送信データの転送
+-   Trasferimento dati in uscita
 
-    -   サービスから送信されるデータに対して料金が発生します。 予想されるコストについては、「[Azure 帯域幅の料金詳細](https://azure.microsoft.com/en-us/pricing/details/bandwidth/)」を参照してください。
+    -   Il flusso dati non compreso nel servizio viene addebitato. Vedere i [dettagli sui prezzi per la larghezza di banda di Azure](https://azure.microsoft.com/en-us/pricing/details/bandwidth/) per determinare i costi potenziali.
 
-    -   インターネット ベースのクライアントが 1 時間ごとにポリシーを更新する場合、クライアントあたり毎月約 100 MB が予想されます (この数値は見積もり目的でのみ提供されます)。
+    -   Per una stima, supporre circa 100 MB per client/mese per client basati su Internet che eseguono l'aggiornamento dei criteri ogni ora.
 
     >[!NOTE]
-    > クラウド管理ゲートウェイでサポートされている他のアクションを実行すると (ソフトウェアの更新プログラムやアプリケーションの展開など)、Azure から送信されるデータが増えます。
+    > Se vengono eseguite altre azioni supportate tramite il gateway di gestione cloud, ad esempio la distribuzione di aggiornamenti software o di applicazioni, il trasferimento dei dati in uscita da Azure aumenta.
 
--   コンテンツ ストレージ
+-   Archivio del contenuto
 
-    -   クラウド管理ゲートウェイで管理されるインターネット ベースのクライアントは、Windows Update から無料でソフトウェア更新プログラム コンテンツを受信します。
+    -   I client basati su Internet che sono gestiti con il gateway di gestione cloud ottengono contenuto di aggiornamento software da Windows Update senza nessun addebito.
 
-    -   その他の必要なコンテンツ (アプリケーションなど) は、クラウド ベースの配布ポイントに配布する必要があります。 現在のところ、クラウド管理ゲートウェイでは、コンテンツをクライアントに送信するときにのみ、クラウド配布ポイントがサポートされます。
+    -   Altri contenuti necessari, ad esempio le applicazioni, devono essere distribuiti in un punto di distribuzione basato sul cloud. Il gateway di gestione cloud supporta attualmente solo il punto di distribuzione cloud per l'invio di contenuto ai client.
 
-    - 詳細については、「[クラウドベースの配布にかかるコスト](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#cost-of-using-cloud-based-distribution)」を参照してください。
+    - Per altri dettagli, vedere il costo di utilizzo di una [distribuzione basata sul cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#cost-of-using-cloud-based-distribution).
 
-## <a name="frequently-asked-questions-about-the-cloud-management-gateway-cmg"></a>クラウド管理ゲートウェイ (CMG) についてよく寄せられる質問
+## <a name="frequently-asked-questions-about-the-cloud-management-gateway-cmg"></a>Domande frequenti sul gateway di gestione cloud
 
-### <a name="why-use-the-cloud-management-gateway"></a>なぜクラウド管理ゲートウェイを使用するのですか?
+### <a name="why-use-the-cloud-management-gateway"></a>Perché usare il gateway di gestione cloud?
 
-このロールを使用することで、インターネット ベースのクライアント管理が、Configuration Manager コンソールから 3 つの手順で簡単に行えるようになります。
+Usare questo ruolo per semplificare la gestione client basata su Internet eseguendo solo tre passaggi dalla console di Configuration Manager.
 
-1. [クラウド管理ゲートウェイの作成](/sccm/core/clients/manage/setup-cloud-management-gateway)ウィザードを使用して、CMG を Azure にデプロイします。
-2. [クラウド管理ゲートウェイ接続ポイント](/sccm/core/servers/deploy/configure/install-site-system-roles)のサイト システム ロールを構成します。
-3. [クラウド管理ゲートウェイ トラフィック](/sccm/core/clients/manage/setup-cloud-management-gateway#step-7-configure-roles-for-cloud-management-gateway-traffic)のロールを構成します (管理ポイント、ソフトウェアの更新ポイントなど)。
+1. Distribuire il gateway di gestione cloud in Azure usando la [Creazione guidata gateway di gestione cloud](/sccm/core/clients/manage/setup-cloud-management-gateway).
+2. Configurare il ruolo del sistema del sito del [punto di connessione del gateway di gestione cloud](/sccm/core/servers/deploy/configure/install-site-system-roles).
+3. [Configurare i ruoli per il traffico del gateway di gestione cloud](/sccm/core/clients/manage/setup-cloud-management-gateway#step-7-configure-roles-for-cloud-management-gateway-traffic), ad esempio il punto di gestione e il punto di aggiornamento software.
 
-### <a name="how-does-the-cloud-management-gateway-work"></a>クラウド管理ゲートウェイはどのような仕組みになっていますか?
+### <a name="how-does-the-cloud-management-gateway-work"></a>Come funziona il gateway di gestione cloud?
 
-- クラウド管理ゲートウェイ接続ポイントは、インターネットからクラウド管理ゲートウェイへの一貫性のある高パフォーマンスな接続を可能にします。
-- Configuration Manager は、接続情報やセキュリティ設定などの各種設定を CMG に発行します。
-- CMG は、Configuration Manager クライアントの要求を認証し、クラウド管理ゲートウェイ接続ポイントに転送します。 これらの要求は、URL マッピングに従って企業ネットワーク内のロールに転送されます。
+- Il punto di connessione del gateway di gestione cloud assicura una connessione coerente e a prestazioni elevate tra Internet e il gateway di gestione cloud.
+- Configuration Manager pubblica le impostazioni nel gateway di gestione cloud, incluse le informazioni sulla connessione e le impostazioni di protezione.
+- Il gateway di gestione cloud autentica le richieste del client di Configuration Manager e le inoltra al punto di connessione del gateway di gestione cloud. Queste richieste vengono inoltrate ai ruoli della rete aziendale in base ai mapping di URL.
 
-### <a name="how-is-the-cloud-management-gateway-deployed"></a>クラウド管理ゲートウェイのデプロイはどうやって行いますか?
+### <a name="how-is-the-cloud-management-gateway-deployed"></a>Come viene distribuito il gateway di gestione cloud?
 
-CMG のデプロイ タスクはすべて、サービス接続ポイントのクラウド サービス マネージャー コンポーネントによって処理されます。 また、このコンポーネントは、Azure AD のサービスの正常性とログ情報も監視し、レポートします。
+Il gestore del servizio cloud presente nel punto di connessione del servizio gestisce tutte le attività di distribuzione del gateway di gestione cloud. Esegue inoltre il monitoraggio e l'invio di informazioni sull'integrità del servizio e di registrazione da Azure AD.
 
-#### <a name="certificate-requirements"></a>証明書の要件
+#### <a name="certificate-requirements"></a>Requisiti del certificato
 
-CMG のセキュリティ保護には、次の証明書が必要になります。
+Per proteggere il gateway di gestione cloud sono necessari i certificati seguenti:
 
-- **管理証明書** - 自己署名証明書を含む、任意の証明書を使用できます。 Azure AD にアップロードされた公開証明書、または Azure AD での認証用に Configuration Manager にインポートされた[秘密キー付きの PFX](/sccm/mdm/deploy-use/create-pfx-certificate-profiles) を使用できます。
-- **Web サービス証明書** -  クライアントによるネイティブな信頼を得るために、パブリック CA 証明書を使用することをお勧めします。 CNAME は、パブリック DNS レジスタで作成する必要があります。 ワイルド カード証明書はサポートされていません。
-- **CMG にアップロードされたルート証明書または SubCA 証明書** - クライアントの PKI 証明書に対して、CMG がチェーンの完全検証を行う必要があります。 クライアント PKI 証明書の発行に エンタープライズ CA を使用していて、証明書のルート CA や下位 CA がインターネットにない場合は、エンタープライズ CA を CMG にアップロードする必要があります。
+- **Certificato di gestione**: può trattarsi di qualsiasi certificato, inclusi i certificati autofirmati. È possibile usare un certificato pubblico caricato in Azure AD o un certificato in formato [PFX con chiave privata](/sccm/mdm/deploy-use/create-pfx-certificate-profiles) importato in Configuration Manager per l'autenticazione con Azure AD.
+- **Certificato del servizio Web**: è consigliabile usare un certificato di un'autorità di certificazione pubblica per ottenere attendibilità nativa dai client. Il record CName deve essere creato nel registro DNS pubblico. I certificati con caratteri jolly non sono supportati.
+- **Certificati dell'autorità di certificazione radice o subordinata**: il gateway di gestione cloud deve eseguire una convalida completa della catena sui certificati PKI del client. Se per l'emissione dei certificati PKI del client si usa un'autorità di certificazione dell'organizzazione e la relativa autorità di certificazione radice o subordinata non è disponibile in Internet, è necessario caricarla nel gateway di gestione cloud.
 
-#### <a name="deployment-process"></a>デプロイのプロセス
+#### <a name="deployment-process"></a>Processo di distribuzione
 
-デプロイには次の 2 つのフェーズがあります。
+La distribuzione si articola in due fasi:
 
-- クラウド サービスのデプロイ
-    - [Azure サービス定義スキーマ](https://msdn.microsoft.com/library/azure/ee758711.aspx) (csdef) ファイルをアップロードする
-    - [Azure サービス構成スキーマ](https://msdn.microsoft.com/library/azure/ee758710.aspx) (cscfg) ファイルをアップロードする。
-- Azure AD サーバーでの CMG コンポーネントのセットアップと、エンドポイント、HTTP ハンドラー、インターネット インフォメーション サービス (IIS) のサービスの構成
+- Distribuire il servizio cloud
+    - Caricare il file dello [schema di definizione dei servizi di Azure](https://msdn.microsoft.com/library/azure/ee758711.aspx) (csdef)
+    - Caricare il file dello [schema di configurazione dei servizi di Azure](https://msdn.microsoft.com/library/azure/ee758710.aspx) (cscfg)
+- Impostare il gateway di gestione cloud sul server di Azure AD e configurare gli endpoint, i gestori HTTP e i servizi in Internet Information Services (IIS)
 
-CMG の構成を変更する場合は、構成のデプロイが CMG に行われます。
+Se si modifica la configurazione del gateway di gestione cloud, viene avviata una distribuzione di configurazione nel gateway di gestione cloud stesso.
 
-### <a name="how-does-the-cloud-management-gateway-help-ensure-security"></a>クラウド管理ゲートウェイは、どうやってセキュリティを確実にするのですか?
+### <a name="how-does-the-cloud-management-gateway-help-ensure-security"></a>In che modo il gateway di gestione cloud consente di garantire la protezione?
 
-CMG は次の方法で、セキュリティによる保護を確実なものにします。
+Il gateway di gestione cloud consente di garantire la protezione nei modi seguenti:
 
-- 内部証明書と接続 ID を使用して、相互 SSL 認証を含む CMG 接続からの接続を承諾し、管理します。
-- クライアント要求の承諾と転送
-    - クライアント PKI 証明書の 相互 SSL を使用して、接続を事前に認証します。
-    - 証明書信頼リストが、クライアント PKI 証明書のルートを確認します。 この設定は、サイトのプロパティのクライアント通信設定で指定できます。 またクライアントに対して、管理ポイントと同じ検証を実施します。
-    - 受信した URL を確認します。
-    - 受信した URL をフィルターして、接続している CMG 接続ポイントのなかで URL 要求を処理できるものがないか確認します。  
-    - 発行エンドポイントごとにコンテンツの長さのチェックを確認します。
-    - 「ラウンドロビン」を使用して、同一サイトからの CMG 接続ポイント間の負荷を分散します。
+- Accetta e gestisce le connessioni dai punti di connessione del gateway di gestione cloud, inclusa l'autenticazione SSL reciproca, usando certificati interni e ID di connessione.
+- Accetta e inoltra le richieste client
+    - Esegue l'autenticazione preliminare usando l'autenticazione SSL reciproca sul certificato PKI del client.
+    - L'elenco di certificati attendibili controlla la radice del certificato PKI del client. È possibile specificare questa impostazione nelle impostazioni di comunicazione del client nelle proprietà del sito. Esegue inoltre per il client la stessa convalida del punto di gestione.
+    - Convalida gli URL ricevuti
+    - Filtra gli URL ricevuti per verificare se un punto di connessione del gateway di gestione cloud può gestire la richiesta dell'URL.  
+    - Controlla la lunghezza del contenuto per ogni endpoint di pubblicazione.
+    - Usa l'approccio 'round robin' per bilanciare il carico tra i punti di connessione del gateway di gestione cloud dallo stesso sito.
 
-- CMG 接続ポイントの保護
-    - 接続している CMG のすべての仮想インスタンスに対して、一貫性のある HTTP/TCP 接続を構築します。 1 分ごとに接続を確認し、維持します。
-    - 内部証明書を使用する CMG で、SSL 認証を相互に認証します。
-    - URL マッピングに基づいて、HTTP 要求を転送します。
-    - 接続の状態をレポートして管理サービスの正常性状態を表示します。
-    - エンドポイント別のエンドポイントのトラフィックレポートを、5 分ごとにレポートします。
+- Protegge il punto di connessione del gateway di gestione cloud
+    - Crea connessioni HTTP/TCP coerenti con tutte le istanze virtuali del gateway di gestione cloud che esegue la connessione. Controlla e gestisce le connessioni ogni minuto.
+    - Esegue l'autenticazione SSL reciproca con il gateway di gestione cloud usando certificati interni.
+    - Inoltra le richieste HTTP in base ai mapping di URL.
+    - Segnala lo stato della connessione per visualizzare lo stato di integrità del servizio di amministrazione.
+    - Genera un report sul traffico per ciascun endpoint ogni 5 minuti.
 
-- 管理ポイントのようなロールと向き合っている発行エンドポイント Configuration Manager クライアントと、IIS のソフトウェアの更新ポイント ホスト エンドポイントをセキュリティで保護してクライアントの要求を処理します。 CMG に発行されたすべてのエンドポイントに、URL マッピングがあります。
-外部 URL は、CMG との通信にクライアントが使用する URL です。
-内部 URL は、内部サーバーに要求を転送するときに使用する CMG 接続ポイントです。
+- Protegge il client degli endpoint di pubblicazione di Configuration Manager con ruoli quali gli endpoint dell'host del punto di gestione e del punto di aggiornamento software in IIS per gestire le richieste client. Ogni endpoint pubblicato del gateway di gestione cloud ha un mapping di URL.
+L'URL esterno è quello usato dal client per comunicare con il gateway di gestione cloud.
+L'URL interno è il punto di connessione del gateway di gestione cloud usato per inoltrare le richieste al server interno.
 
-#### <a name="example"></a>例:
-管理ポイントの CMG トラフィックを有効にすると、ccm_system、ccm_incoming、sms_mp などの 各管理ポイント サーバーの URL マッピングのセットが、Configuration Manager 内で作成されます。
-管理ポイントの ccm_system のエンドポイントの外部 URL は、**https://<CMG service name>/CCM_Proxy_MutualAuth/<MP Role ID>/CCM_System** のようになります。
-この URL は、管理ポイントごとに一意となっています。 その後、Configuration Manager クライアントによって、**<CMG service name>/CCM_Proxy_MutualAuth/<MP Role ID>** のような CMG が有効化された MP 名がインターネット管理ポイントのリストに追加されます。
-発行された外部 URL はすべて自動で CMG にアップロードされます。その後、CMG による URL のフィルタリングが可能になります。 すべての URL マッピングは、外部 URL を要求するクライアントに応じて内部サーバーに転送できるように、CMG 接続ポイントに複製されます。
+#### <a name="example"></a>Esempio:
+Quando si abilita il traffico del gateway di gestione cloud su un punto di gestione, Configuration Manager crea a livello interno un set di mapping di URL per ogni server del punto di gestione, ad esempio ccm_system, ccm_incoming e sms_mp.
+L'URL esterno dell'endpoint ccm_system del punto di gestione può essere simile a quanto segue: **https://<CMG service name>/CCM_Proxy_MutualAuth/<MP Role ID>/CCM_System**.
+L'URL è univoco per ogni punto di gestione. Il client di Configuration Manager inserisce quindi il nome MP abilitato per il gateway di gestione cloud, ad esempio **<CMG service name>/CCM_Proxy_MutualAuth/<MP Role ID>**, nel relativo elenco Internet di punti di gestione.
+Tutti gli URL esterni pubblicati vengono caricati automaticamente nel gateway di gestione cloud, che è quindi in grado di filtrare gli URL. Tutti i mapping di URL vengono replicati al punto di connessione del gateway di gestione cloud. Quest'ultimo può quindi eseguire l'inoltro ai server interni in base al client che richiede l'URL esterno.
 
-### <a name="what-ports-are-used-by-the-cloud-management-gateway"></a>クラウド管理ゲートウェイが使用するポートは何ですか?
+### <a name="what-ports-are-used-by-the-cloud-management-gateway"></a>Quali porte vengono usate dal gateway di gestione cloud?
 
-- オンプレミスのネットワークでは、受信ポートは必要ありません。 CMG をデプロイすると、CMG 上に自動的に作成されます。
-- 443 以外の一部の送信ポートは、CMG 接続ポイントで必要です。
+- Nella rete locale non è necessaria alcuna porta in ingresso. La distribuzione del gateway di gestione cloud determina la creazione automatica di una serie di gateway di gestione cloud.
+- Oltre alla 443, per il punto di connessione del gateway di gestione cloud sono necessarie alcune porte in uscita.
 
 |||||
 |-|-|-|-|
-|データ フロー|サーバー|サーバーのポート|クライアント|
-|CMG のデプロイ|Azure|443|Configuration Manager サービス接続ポイント|
-|CMG チャネルの構築|CMG|VM インスタンス: 1 個のポート: 443<br>VM インスタンス: N (N > = 2、N < = 16) 個のポート: 10124 ~ N 10140 ~ N|CMG 接続ポイント|
-|クライアントから CMG|CMG|443|クライアント|
-|CMG コネクタからサイトの役割 (現状、管理ポイントとソフトウェアの更新ポイント)|サイトの役割|サイトの役割で構成されているプロトコル/ポート|CMG 接続ポイント|
+|Flusso di dati|Server|Porte server|Client|
+|Distribuzione del gateway di gestione cloud|Azure|443|Punto di connessione del servizio Configuration Manager|
+|Compilazione canale gateway di gestione cloud|Gateway di gestione cloud|Istanza VM: 1 porta: 443<br>Istanza VM: N (N>=2 e N<= 16) Porte: 10124~N 10140~N|Punto di connessione del gateway di gestione cloud|
+|Dal client al gateway di gestione cloud|Gateway di gestione cloud|443|Client|
+|Connettore del gateway di gestione cloud al ruolo del sito (attualmente punti di gestione e punti di aggiornamento software)|Ruolo del sito|Protocollo/porte configurati nel ruolo del sito|Punto di connessione del gateway di gestione cloud|
 
-### <a name="how-can-you-improve-performance-of-the-cloud-management-gateway"></a>クラウド管理ゲートウェイのパフォーマンスを強化する方法はありますか?
+### <a name="how-can-you-improve-performance-of-the-cloud-management-gateway"></a>In che modo è possibile migliorare le prestazioni del gateway di gestione cloud?
 
-- 可能な場合、CMG、CMG 接続ポイント、Configuration Manager のサイト サーバーは同じネットワーク リージョンで構成してください。待機時間を減らすことができます。
-- 現在、Configuration Manager クライアントと CMG 間の接続は、リージョンを意識していません。
-- 高可用性を得るために、1 サイトあたり少なくとも 2 つの CMG 仮想インスタンスと 2 つの CMG 接続ポイントをお勧めします。
-- VM インスタンスを追加することで CMG をスケールし、より多くのクライアントをサポートできます。 これらは、Azure AD のロード バランサーによって負荷分散されています。
-- CMG 接続ポイントを増やすことで、ポイント間の負荷を分散できます。 CMG は接続している CMG 接続ポイントに対して、トラフィックを「ラウンドロビン」で処理します。
-- 1702 のリリースでサポートされているクライアントの数は、CMG VM インスタンスあたり 6,000 台です。 CMG チャネルが高負荷状態のときでも要求は処理されますが、通常よりも時間がかかる場合があります。
+- Se possibile, configurare il gateway di gestione cloud, il punto di connessione del gateway di gestione cloud e il server del sito di Configuration Manager nella stessa area di rete per ridurre la latenza.
+- Attualmente la connessione tra il client di Configuration Manager e il gateway di gestione cloud non è in grado di riconoscere l'area.
+- Per ottenere la disponibilità elevata, è consigliabile avere almeno due istanze del gateway di gestione cloud e due punti di connessione del gateway di gestione cloud per sito
+- È possibile scalare il gateway di gestione cloud per supportare più client mediante l'aggiunta di più istanze di macchine virtuali. Il bilanciamento del carico delle macchine virtuali viene eseguito dall'apposito servizio di Azure AD.
+- Creare altri punti di connessione del gateway di gestione cloud per distribuire il carico tra di essi. Il gateway di gestione cloud gestisce il traffico verso i propri punti di connessione mediante un approccio 'round robin'.
+- Nella versione 1702 il numero di client supportati per istanza di macchina virtuale del gateway di gestione cloud è 6000. Quando il carico di lavoro del canale del gateway di gestione cloud è molto elevato, la richiesta verrà comunque gestita, ma con tempi più lunghi del normale.
 
-### <a name="how-can-you-monitor-the-cloud-management-gateway"></a>クラウド管理ゲートウェイを監視する方法はありますか?
+### <a name="how-can-you-monitor-the-cloud-management-gateway"></a>In che modo è possibile monitorare il gateway di gestione cloud?
 
-デプロイのトラブルシューティングの場合は、**CloudMgr.log** と **CMGSetup.log** を使用します。
-サービス正常性のトラブルシューティングの場合は、**CMGService.log** と **SMS_CLOUD_PROXYCONNECTOR.log** を使用します。
-クライアントのトラフィックのトラブルシューティングの場合は、**CMGHttpHandler.log**、**CMGService.Log**、**SMS_CLOUD_PROXYCONNECTOR.log** を使用します。
+Per la risoluzione dei problemi relativi alla distribuzione, usare **CloudMgr.log** e **CMGSetup.log**.
+Per la risoluzione dei problemi relativi all'integrità del servizio, usare **CMGService.log** e **SMS_CLOUD_PROXYCONNECTOR.log**.
+Per la risoluzione dei problemi relativi al traffico client, usare **CMGHttpHandler.log**, **CMGService.Log** e **SMS_CLOUD_PROXYCONNECTOR.log**.
 
-CMG 関連のすべてのログ ファイルの一覧は、[Configuration Manager のログ ファイル](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/log-files#cloud-management-gateway)に関するページをご覧ください。
+Per un elenco dei file di log relativi al gateway di gestione cloud, vedere [File di log in Configuration Manager](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/log-files#cloud-management-gateway)
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>Passaggi successivi
 
-[Set up cloud management gateway](setup-cloud-management-gateway.md) (クラウド管理ゲートウェイの設定)
+[Configurare il gateway di gestione cloud](setup-cloud-management-gateway.md)

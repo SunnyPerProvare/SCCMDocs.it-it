@@ -1,6 +1,6 @@
 ---
-title: "Managed Browser ポリシーを使用したインターネット アクセスの管理 | Microsoft Docs"
-description: "Intune Managed Browser を展開してインターネット アクセスを管理および制限します。"
+title: Gestire l'accesso a Internet con i criteri di Managed Browser | Microsoft Docs
+description: Distribuire Intune Managed Browser per gestire e limitare l'accesso a Internet.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -18,104 +18,104 @@ manager: angrobe
 ms.openlocfilehash: d2dd2c25a2714851ba1e71414cabcef38d3ce014
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-internet-access-using-managed-browser-policies-with-system-center-configuration-manager"></a>System Center Configuration Manager での Managed Browser ポリシーを使用したインターネット アクセスの管理
+# <a name="manage-internet-access-using-managed-browser-policies-with-system-center-configuration-manager"></a>Gestire l'accesso a Internet mediante criteri di Managed Browser con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager では、Intune Managed Browser という Web 閲覧アプリケーションを展開し、アプリケーションを Managed Browser ポリシーに関連付けることができます。 Managed Browser ポリシーは、Managed Browser のユーザーがアクセスできる Web サイトを制限する許可リストまたはブロック リストをセットアップするものです。  
+In System Center Configuration Manager è possibile distribuire Intune Managed Browser, un'applicazione Web browser, e associare l'applicazione ai criteri di Managed Browser. I criteri di Managed Browser consentono di configurare un elenco Consenti o Blocca che limita i siti Web che gli utenti di Managed Browser possono visitare.  
 
- このアプリは管理対象アプリであり、モバイル アプリケーション管理ポリシーを適用できます。切り取り、コピー、貼り付けの利用の管理などです。 画面のキャプチャを禁止し、コンテンツのリンクが他の管理対象アプリでのみ開くようにできます。 詳細については、「[Protect apps using mobile application management policies](protect-apps-using-mam-policies.md)」 (モバイル アプリケーション管理ポリシーを使ったアプリの保護) を参照してください。  
+ Poiché questa applicazione è un'applicazione gestita, è possibile anche applicare criteri di gestione delle applicazioni per dispositivi mobili, ad esempio il controllo dell'uso delle funzioni taglia, copia e incolla. Ciò impedisce l'acquisizione di schermate e garantisce anche che i collegamenti al contenuto vengano aperti solo in altre app gestite. Per informazioni dettagliate, vedere [Proteggere le app usando i criteri di gestione delle applicazioni mobili](protect-apps-using-mam-policies.md).  
 
 > [!IMPORTANT]  
->  ユーザーが Managed Browser を自分でインストールした場合、指定されたポリシーで管理されなくなります。 ブラウザーを確実に Configuration Manager で管理するには、ユーザーにアプリをアンインストールしてもらってから、管理対象アプリとして展開する必要があります。  
+>  Se gli utenti installano il browser gestito autonomamente, non verrà gestito da alcun criterio specificato. Per assicurarsi che il browser sia gestito da Configuration Manager, è necessario disinstallare l'applicazione prima di poterla distribuire come applicazione gestita.  
 
- 次の種類のデバイス用に Managed Browser のポリシーを作成することができます。  
+ È possibile creare criteri di browser gestiti per i seguenti tipi di dispositivo:  
 
--   Android 4 以降が実行されているデバイス  
+-   Dispositivi che eseguono Android 4 e versioni successive  
 
--   iOS 7 以降を実行するデバイス  
+-   Dispositivi che eseguono iOS 7 e versioni successive  
 
 > [!NOTE]  
->  Intune Managed Browser アプリの詳細とダウンロード方法については、[iTunes](https://itunes.apple.com/us/app/microsoft-intune-managed-browser/id943264951?mt=8) (iOS の場合)、および [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.intune.mam.managedbrowser&hl=en) (Android の場合) を参照してください。  
+>  Per altre informazioni e per scaricare l'app Intune Managed Browser, vedere [iTunes](https://itunes.apple.com/us/app/microsoft-intune-managed-browser/id943264951?mt=8) per iOS e [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.intune.mam.managedbrowser&hl=en) per Android.  
 
-## <a name="create-a-managed-browser-policy"></a>Managed Browser のポリシーを作成する  
+## <a name="create-a-managed-browser-policy"></a>Creare un criterio di browser gestiti  
 
-1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[アプリケーション管理]** > **[アプリケーション管理ポリシー]** の順に選択します。  
+1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Criteri di gestione delle applicazioni**.  
 
-3.  **[ホーム]** タブの **[作成]** グループで、**[アプリケーション管理ポリシーの作成]** を選択します。  
+3.  Nella scheda **Home** nel gruppo **Crea** scegliere **Crea criteri di gestione delle applicazioni**.  
 
-4.  **[全般]** ページで、ポリシーの名前と説明を入力してから、**[次へ]** を選択します。  
+4.  Nella pagina **Generale** immettere il nome e la descrizione per il criterio e quindi fare clic su **Avanti**.  
 
-5.  **[ポリシーの種類]** ページで、プラットフォームを選択し、ポリシーの種類で **[管理対象ブラウザー]** を選択してから、 **[次へ]**を選択します。  
+5.  Nella pagina **Tipo di criterio** selezionare la piattaforma, selezionare **Managed Browser** per il tipo di criterio e quindi fare clic su **Avanti**.  
 
-     **[管理対象ブラウザー]** ページで、次のオプションのいずれかを選択します。  
+     Nella pagina **Managed Browser** selezionare una delle opzioni seguenti:  
 
-    -   **Managed Browser が以下に示す URL のみを開けるようにする** : Managed Browser で開くことができる URL の一覧を指定します。  
+    -   **Consenti a Managed Browser di aprire solo gli URL elencati di seguito**: specificare un elenco di URL che potranno essere aperti da Managed Browser.  
 
-    -   **Managed Browser が以下に示す URL を開けないようにする** : Managed Browser で開けないようにブロックする URL の一覧を指定します。  
-
-    > [!NOTE]  
-    >  同じ Managed Browser ポリシーに、許可される URL とブロックされる URL の両方を含めることはできません。  
-
-     指定できる URL の形式の詳細については、この記事の「許可される URL とブロックされる URL の形式」を参照してください。  
+    -   **Non consentire a Managed Browser di aprire gli URL elencati di seguito**: specificare un elenco di URL che non potranno essere aperti da Managed Browser.  
 
     > [!NOTE]  
-    >  [全般] ポリシーの種類を使用すると、会社のコンプライアンス ポリシーとセキュリティ ポリシーに合わせて、展開するアプリの機能を変更することができます。 たとえば、切り取り、コピー、貼り付けの各操作を制限付きのアプリ内で制限することができます。 全般的なポリシーの種類の詳細については、「[Protect apps using mobile application management policies](protect-apps-using-mam-policies.md)」 (モバイル アプリケーション管理ポリシーを使ったアプリの保護) を参照してください。  
+    >  Non è possibile includere le URL consentiti e bloccati nello stesso criterio di browser gestiti.  
 
-6.  ウィザードを終了します。  
+     Per altre informazioni sui formati URL che è possibile specificare, vedere la sezione relativa ai formati URL per gli URL consentiti e bloccati in questo articolo.  
 
-新しいポリシーが **[ソフトウェア ライブラリ]** ワークスペースの **[アプリケーション管理ポリシー]** ノードに表示されます。  
+    > [!NOTE]  
+    >  Il tipo di criterio Generale consente di modificare la funzionalità delle app distribuite per adeguarle ai criteri aziendali di conformità e sicurezza. Ad esempio, è possibile limitare le operazioni taglia, copia e incolla in un'app con restrizioni. Per altre informazioni sul tipo di criterio Generale, vedere [Proteggere le app usando i criteri di gestione delle applicazioni mobili](protect-apps-using-mam-policies.md).  
 
-## <a name="create-a-software-deployment-for-the-managed-browser-app"></a>Managed Browser アプリ向けにソフトウェアの展開を作成する  
- 管理対象ブラウザー ポリシーを作成した後、管理対象ブラウザー アプリ向けにソフトウェア展開の種類を作成できます。 管理対象ブラウザー アプリには、全般ポリシーと管理対象ブラウザー ポリシーの両方を関連付ける必要があります。  
+6.  Completa la procedura guidata.  
 
- 詳細については、「[Create applications](create-applications.md)」 (アプリケーションを作成する) を参照してください。  
+Il nuovo criterio viene visualizzato nel nodo **Criteri di gestione delle applicazioni** dell'area di lavoro **Raccolta software** .  
 
-## <a name="security-and-privacy-for-the-managed-browser"></a>Managed Browser のセキュリティとプライバシー  
+## <a name="create-a-software-deployment-for-the-managed-browser-app"></a>Creare una distribuzione di software per l'applicazione di browser gestiti  
+ Dopo aver creato il criterio di Managed Browser, è possibile creare un tipo di distribuzione di software per l'applicazione Managed Browser. È necessario associare un criterio generale e un criterio di Managed Browser per l'app Managed Browser.  
 
--   iOS デバイスでは、証明書の有効期限が切れている Web サイトや証明書が信頼されていない Web サイトにユーザーがアクセスしても、開くことができません。  
+ Per altre informazioni, vedere [Create applications](create-applications.md) (Creare le applicazioni).  
 
--   ユーザーが自分のデバイスの組み込みブラウザーに対して構成した設定は、Managed Browser では使用されません。 Managed Browser はこれらの設定にアクセスできません。  
+## <a name="security-and-privacy-for-the-managed-browser"></a>Sicurezza e privacy per lo strumento di wrapping delle app  
 
--   Managed Browser に関連付けられているモバイル アプリケーション管理ポリシーで **[アクセスの際にシンプルな PIN を要求する]** オプションか **[アクセスの際に会社の資格情報を要求する]** オプションが設定されている場合は、ユーザーが認証ページのヘルプ リンクをクリックすると、Managed Browser ポリシーのブロック リストに追加されている場合でも、ユーザーはすべてのサイトにアクセスできます。  
+-   Sui dispositivi iOS, non è possibile aprire i siti Web con certificati scaduti o non attendibili.  
 
--   Managed Browser では、直接アクセスされたときのみ、サイトへのアクセスをブロックできます。 サイトへのアクセスに中間サービス (翻訳サービスなど) が使用されている場合は、アクセスをブロックすることができません。  
+-   Impostazioni apportate dall'utente per il browser predefinito sui dispositivi non vengono utilizzate dal browser gestiti. Managed Browser non ha infatti accesso a queste impostazioni.  
 
-## <a name="reference-information"></a>参照情報  
+-   Se si configurano le opzioni **Richiedi PIN semplice per l'accesso** o **Richiedi credenziali aziendali per l'accesso** nei criteri di gestione per applicazioni mobili associati a Managed Browser, un utente può fare clic sul collegamento Guida nella pagina di autenticazione e quindi passare a qualsiasi sito, inclusi quelli aggiunti a un elenco di siti bloccati nei criteri di Managed Browser.  
 
-###  <a name="url-format-for-allowed-and-blocked-urls"></a>許可される URL とブロックされる URL の形式  
+-   Il Browser gestito può bloccare l'accesso ai siti solo quando vi si accede direttamente. È possibile bloccare l'accesso quando servizi intermedi (ad esempio, un servizio di traduzione) vengono utilizzati per accedere al sito.  
 
-許可リストとブロック リストで URL を指定するときに使用できる形式とワイルドカードについて説明します。  
+## <a name="reference-information"></a>Informazioni di riferimento  
 
--   ワイルドカード記号 "**\***" は、以下の許可されているパターン リストの規則に従って使用できます。  
+###  <a name="url-format-for-allowed-and-blocked-urls"></a>Formato dell'URL per URL consentite e bloccate  
 
--   リストに入力するときは、すべての URL の先頭に必ず **http** または **https** を付けてください。  
+Utilizzare le seguenti informazioni per ulteriori informazioni sui formati consentiti e i caratteri jolly, che è possibile utilizzare quando si specificano le URL negli elenchi consentiti e bloccati.  
 
--   アドレスにはポート番号を指定できます。 ポート番号を指定しない場合は、次の値が使用されます。  
+-   È possibile utilizzare il carattere jolly asterisco '**\***' secondo le regole nell'elenco di modelli consentiti sottostante.  
 
-    -   http の場合はポート 80  
+-   Assicurarsi che tutte le  URL abbiano con prefisso **http** o **https** quando immetterle nell'elenco.  
 
-    -   https の場合はポート 443  
+-   È possibile specificare numeri di porta nell'indirizzo. Se non si specifica un numero di porta, i valori utilizzati sono:  
 
-     **http://www.contoso.com:\*** や **http://www.contoso.com: /\*** のように、ポート番号にワイルドカードを使用することはできません。  
+    -   Porta 80 per http  
 
--   URL を指定するときに使用できるパターンの詳細については、次の表を参照してください。  
+    -   Porta 443 per https  
 
-    |[URL]|［一致する］|［次の値に一致しない］|  
+     L'uso dei caratteri jolly per il numero di porta non è supportato, ad esempio **http://www.contoso.com:\*** e **http://www.contoso.com: /\***  
+
+-   Per ulteriori informazioni sui modelli consentiti che è possibile utilizzare quando si specificano gli URL, utilizzare la tabella seguente:  
+
+    |URL|Corrispondenze|Non corrisponde|  
     |---------|-------------|--------------------|  
-    |http://www.contoso.com<br /><br /> 単一のページと一致する|www.contoso.com|host.contoso.com<br /><br /> www.contoso.com/images<br /><br /> contoso.com/|  
-    |http://contoso.com<br /><br /> 単一のページと一致する|contoso.com/|host.contoso.com<br /><br /> www.contoso.com/images<br /><br /> www.contoso.com|  
-    |http://www.contoso.com/*<br /><br /> www.contoso.com で始まるすべての URL と一致する|www.contoso.com<br /><br /> www.contoso.com/images<br /><br /> www.contoso.com/videos/tvshows|host.contoso.com<br /><br /> host.contoso.com/images|  
-    |http://*.contoso.com/\*<br /><br /> contoso.com の下のすべてのサブドメインに一致する|developer.contoso.com/resources<br /><br /> news.contoso.com/images<br /><br /> news.contoso.com/videos|contoso.host.com|  
-    |http://www.contoso.com/images<br /><br /> 単一のフォルダーと一致する|www.contoso.com/images|www.contoso.com/images/dogs|  
-    |http://www.contoso.com:80<br /><br /> ポート番号を使用し、単一のページと一致する|http://www.contoso.com:80||  
-    |https://www.contoso.com<br /><br /> セキュリティで保護された単一のページと一致する|https://www.contoso.com|http://www.contoso.com|  
-    |http://www.contoso.com/images/*<br /><br /> 1 つのフォルダーおよびすべてのサブフォルダーと一致する|www.contoso.com/images/dogs<br /><br /> www.contoso.com/images/cats|www.contoso.com/videos|  
+    |http://www.contoso.com<br /><br /> Corrisponde a una singola pagina|www.contoso.com|host.contoso.com<br /><br /> www.contoso.com/images<br /><br /> contoso.com/|  
+    |http://contoso.com<br /><br /> Corrisponde a una singola pagina|contoso.com/|host.contoso.com<br /><br /> www.contoso.com/images<br /><br /> www.contoso.com|  
+    |http://www.contoso.com/*<br /><br /> Corrisponde a tutte le URL a partire da www.contoso.com|www.contoso.com<br /><br /> www.contoso.com/images<br /><br /> www.contoso.com/videos/tvshows|host.contoso.com<br /><br /> host.contoso.com/images|  
+    |http://*.contoso.com/\*<br /><br /> Corrisponde a tutti i sottodomini in contoso.com|developer.contoso.com/resources<br /><br /> news.contoso.com/images<br /><br /> news.contoso.com/videos|contoso.host.com|  
+    |http://www.contoso.com/images<br /><br /> Corrisponde a una singola cartella|www.contoso.com/images|www.contoso.com/images/dogs|  
+    |http://www.contoso.com:80<br /><br /> Corrisponde a una singola pagina utilizzando un numero di porta|http://www.contoso.com:80||  
+    |https://www.contoso.com<br /><br /> Corrisponde a una singola pagina protetta|https://www.contoso.com|http://www.contoso.com|  
+    |http://www.contoso.com/Images/*<br /><br /> Corrisponde a una singola cartella e a tutte le sottocartelle|www.contoso.com/images/dogs<br /><br /> www.contoso.com/images/cats|www.contoso.com/videos|  
 
--   指定することができない入力例を次に示します。  
+-   Di seguito sono riportati esempi di alcuni input che non è possibile specificare:  
 
     -   *.com  
 
@@ -127,7 +127,7 @@ System Center Configuration Manager では、Intune Managed Browser という We
 
     -   www.contoso.com/page*  
 
-    -   IP アドレス  
+    -   Indirizzi IP  
 
     -   https://*  
 
@@ -138,15 +138,15 @@ System Center Configuration Manager では、Intune Managed Browser という We
     -   http://www.contoso.com:/*  
 
 > [!NOTE]  
->  *.microsoft.com は常に許可されます。  
+>  *.microsoft.com è sempre consentito.  
 
-### <a name="how-conflicts-between-the-allow-and-block-list-are-resolved"></a>許可リストとブロック リストの競合を解決する方法  
- 複数の Managed Browser ポリシーがデバイスに展開され、設定が競合する場合、モード (許可またはブロック) と URL の一覧の両方が競合していると判断されます。 競合が発生した場合は、次の動作が適用されます。  
+### <a name="how-conflicts-between-the-allow-and-block-list-are-resolved"></a>Come vengono risolti i conflitti tra l'elenco Consenti e blocca  
+ Se distribuiti diversi criteri browser gestito a un dispositivo e si verifica un conflitto di impostazioni, sia per modalità (Consenti o blocca) e per elenchi di URL, che vengono poi valutati a livello di conflitti. In caso di conflitto si applica il comportamento seguente:  
 
--   各ポリシーのモードは同じで、URL の一覧が異なる場合、URL はデバイスに適用されません。  
+-   Se le modalità disponibili in ogni criterio sono uguali ma gli elenchi di URL sono diversi, gli URL non verranno applicati sul dispositivo.  
 
--   各ポリシーのモードが異なり、URL の一覧は同じである場合、URL はデバイスに適用されません。  
+-   Se le modalità in ogni criterio sono diverse ma gli elenchi di URL sono uguali, gli URL non verranno applicati sul dispositivo.  
 
--   デバイスが初めて Managed Browser ポリシーを受信するときに、2 つのポリシーが競合する場合、URL はデバイスに適用されません。 **[ポリシー]** ワークスペースの **[ポリシーの競合]** ノードを使用して、競合を表示します。  
+-   Se un dispositivo riceve i criteri di browser gestiti per la prima volta ed il conflitto nei due criteri, le URL non verranno applicate al dispositivo Utilizzare il nodo **conflitti tra criteri** dei **criteri** nell’area di lavoro per visualizzare i conflitti.  
 
--   デバイスが Managed Browser ポリシーを既に受信していて、2 番目のポリシーが競合する設定で展開される場合、元の設定がデバイスに残ります。 **[ポリシー]** ワークスペースの **[ポリシーの競合]** ノードを使用して、競合を表示します。  
+-   Se un dispositivo ha già ricevuto un criterio di browser gestiti e un secondo criterio è distribuito con le impostazioni in conflitto, le impostazioni originali rimangono sul dispositivo. Utilizzare il nodo **conflitti tra criteri** dei **criteri** nell’area di lavoro per visualizzare i conflitti.  

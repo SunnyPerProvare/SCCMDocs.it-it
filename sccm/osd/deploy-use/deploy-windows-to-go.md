@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager を使用した Windows to Go の展開 | Microsoft Docs"
-description: "System Center Configuration Manager で Windows To Go をプロビジョニングして、外部ドライブから起動する Windows To Go ワークスペースを作成する方法について説明します。"
+title: Distribuire Windows to Go con System Center Configuration Manager | Microsoft Docs
+description: "Informazioni su come eseguire il provisioning di Windows To Go in System Center Configuration Manager per creare un'area di lavoro Windows To Go avviata da un'unità esterna."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,451 +18,451 @@ manager: angrobe
 ms.openlocfilehash: a8b1a42c43438553cfbb62328bed933378bb344c
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="deploy-windows-to-go-with-system-center-configuration-manager"></a>System Center Configuration Manager を使用した Windows to Go の展開
+# <a name="deploy-windows-to-go-with-system-center-configuration-manager"></a>Distribuire Windows to Go con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-このトピックでは、System Center Configuration Manager で Windows To Go をプロビジョニングする手順について説明します。 Windows To Go は Windows 8 のエンタープライズ機能で、コンピューターに USB 接続された外部ドライブからブート可能な Windows To Go ワークスペースを作成できます。コンピューターは、Windows 7 または Windows 8 の認定要件を満たしている必要がありますが、コンピューターで実行されているオペレーティング システムは問いません。 Windows To Go では、企業のデスクトップ コンピューターとノート パソコンで使用しているものと同じイメージを使用でき、同じ方法で管理できます。  
+In questo argomento viene illustrato come eseguire il provisioning di Windows To Go in System Center Configuration Manager. Windows To Go è una funzionalità aziendale di Windows 8 che permette di creare un'area di lavoro di Windows To Go che può essere avviata da un'unità esterna connessa tramite USB nei computer che soddisfano i requisiti di certificato di Windows 7 o Windows 8, indipendentemente dal sistema operativo in esecuzione nel computer. Le aree di lavoro di Windows To Go possono utilizzare la stessa immagine che utilizzano le organizzazioni per i desktop e laptop e possono essere gestite allo stesso modo.  
 
- Windows To Go の詳細については、「[Windows To Go: 機能の概要](http://go.microsoft.com/fwlink/p/?LinkId=263433)」をご覧ください。  
+ Per altre informazioni su Windows To Go, vedere [Windows To Go: panoramica della funzionalità](http://go.microsoft.com/fwlink/p/?LinkId=263433).  
 
-## <a name="provision-windows-to-go"></a>Windows To Go の準備  
- Windows To Go は、USB 接続の外部ドライブに保存されるオペレーティング システムです。 Windows To Go ドライブは、その他のオペレーティング システムの展開と同じようにプロビジョニングできます。 ただし、Windows To Go はユーザー中心のモバイルに特化したソリューションとして設計されているため、ドライブをプロビジョニングするには、少し異なる方法で行う必要があります。  
+## <a name="provision-windows-to-go"></a>Provisioning di Windows To Go  
+ Windows To Go è un sistema operativo archiviato in un'unità esterna con collegamento USB. È possibile eseguire il provisioning dell'unità di Windows To Go esattamente come viene eseguito per le distribuzioni di altri sistemi operativi. Tuttavia, poiché Windows To Go è progettato come soluzione altamente mobile e incentrata sull'utente, è necessario adottare un approccio leggermente diverso al provisioning di queste unità.  
 
- 全体として Windows To Go は 2 段階の展開で、Windows To Go デバイスを構成して、オペレーティング システムの展開に必要なコンテンツを事前設定できます。 展開では、ユーザーへの影響は最小限に抑えられ、ユーザーのコンピューターのダウンタイムも短時間で済みます。 コンピューターを事前設定した後で、ユーザーがコンピューターを使用できるようにするために、プロビジョニング プロセスを完了する必要があります。 プロビジョニング プロセスは、現在のオペレーティング システムの展開プロセスと同様です。 コンテンツの事前準備と Windows To Go のプロビジョニングの全般的なワークフローは、次のとおりです。  
+ A un livello elevato, Windows To Go è una distribuzione in due fasi che consente di configurare il contenuto pre-installato e il dispositivo di Windows To Go per la distribuzione del sistema operativo. È possibile ottenere questo risultato con un intervento dell'utente e un tempo di inattività del computer ridotti al minimo. Dopo aver pre-installato il computer, è necessario completare il processo di provisioning per assicurarsi che il computer sia pronto per l'utente. Il processo di provisioning è simile al processo di distribuzione del sistema operativo corrente. Di seguito viene elencato il flusso di lavoro generale che consente di pre-installare il contenuto ed eseguire il provisioning di Windows To Go:  
 
-1.  [Windows To Go のプロビジョニングの前提条件](#BKMK_Prereqs)  
+1.  [Prerequisiti per il provisioning di Windows To Go](#BKMK_Prereqs)  
 
-2.  [事前設定されたメディアの作成](#BKMK_CreatePrestagedMedia)  
+2.  [Creare supporti pre-installati](#BKMK_CreatePrestagedMedia)  
 
-3.  [Windows To Go Creator パッケージの作成](#BKMK_CreatePackage)  
+3.  [Creare un pacchetto Windows To Go Creator](#BKMK_CreatePackage)  
 
-4.  [Windows To Go で BitLocker を有効にするタスク シーケンスの更新](#BKMK_UpdateTaskSequence)  
+4.  [Aggiornare la sequenza di attività per attivare BitLocker per Windows To Go](#BKMK_UpdateTaskSequence)  
 
-5.  [Windows To Go Creator パッケージとタスク シーケンスの展開](#BKMK_Deployments)  
+5.  [Distribuire la sequenza di attività e il pacchetto di Windows To Go Creator](#BKMK_Deployments)  
 
-6.  [ユーザーによる Windows To Go Creator の実行](#BKMK_UserExperience)  
+6.  [L'utente esegue Windows To Go Creator](#BKMK_UserExperience)  
 
-7.  [Configuration Manager による Windows To Go ドライブの構成とステージング](#BKMK_ConfigureStageDrive)  
+7.  [Configuration Manager consente di configurare e preparare l'unità Windows To Go](#BKMK_ConfigureStageDrive)  
 
-8.  [ユーザーによる Windows 8 へのログイン](#BKMK_UserLogsIn)  
+8.  [L'utente accede a Windows 8](#BKMK_UserLogsIn)  
 
-###  <a name="BKMK_Prereqs"></a> Windows To Go のプロビジョニングの前提条件  
- Windows To Go をプロビジョニングする前に、Configuration Manager で次の手順を完了する必要があります。  
+###  <a name="BKMK_Prereqs"></a> Prerequisiti per il provisioning di Windows To Go  
+ Prima di seguire il provisioning di Windows To Go, è necessario completare le operazioni seguenti in Configuration Manager:  
 
--   **配布ポイントへのブート イメージの配布**  
+-   **Distribuire un'immagine di avvio in un punto di distribuzione**  
 
-     事前設定されたメディアを作成する前に、ブート イメージを配布ポイントに配布する必要があります。  
-
-    > [!NOTE]  
-    >  ブート イメージは、Configuration Manager 環境の対象コンピューターにオペレーティング システムをインストールするために使用されます。 ブート イメージには、オペレーティング システムをインストールするバージョンの Windows PE、およびその他の必要なデバイス ドライバーが含まれています。 Configuration Manager には 2 つのブート イメージがあります。一方は x86 プラットフォームをサポートし、もう一方は x64 プラットフォームをサポートします。 独自のブート イメージを作成することもできます。 詳細については、「[ブート イメージの管理](../get-started/manage-boot-images.md)」をご覧ください。  
-
--   **配布ポイントへの Windows 8 オペレーティング システム イメージの配布**  
-
-     事前設定されたメディアを作成する前に、Windows 8 オペレーティング システム イメージを配布ポイントに配布する必要があります。  
+     prima di creare supporti pre-installati, è necessario distribuire l'immagine di avvio in un punto di distribuzione.  
 
     > [!NOTE]  
-    >  オペレーティング システム イメージは、.WIM 形式のファイルで、コンピューターにオペレーティング システムを正常にインストールして構成するのに必要な参照ファイルおよびフォルダーのコレクションを圧縮したものです。 詳細については、「[オペレーティング システム イメージの管理](../get-started/manage-operating-system-images.md)」をご覧ください。  
+    >  Le immagini di avvio vengono usate per installare il sistema operativo nei computer di destinazione nell'ambiente di Configuration Manager. Queste immagini contengono una versione di Windows PE che installa il sistema operativo e i driver di dispositivo aggiuntivi richiesti. Configuration Manager offre due immagini di avvio: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. È inoltre possibile creare le proprie immagini di avvio. Per altre informazioni, vedere [Manage boot images](../get-started/manage-boot-images.md) (Gestire le immagini d'avvio).  
 
--   **Windows 8 を展開するためのタスク シーケンスの作成**  
+-   **Distribuire l'immagine del sistema operativo Windows 8 in un punto di distribuzione**  
 
-     事前設定されたメディアを作成するときに参照する、Windows 8 展開用のタスク シーケンスを作成する必要があります。 詳細については、「[タスクを自動化するためのタスク シーケンスの管理](manage-task-sequences-to-automate-tasks.md)」をご覧ください。  
+     prima di creare supporti pre-installati, è necessario distribuire l'immagine del sistema operativo di Windows 8 in un punto di distribuzione.  
 
-###  <a name="BKMK_CreatePrestagedMedia"></a> 事前設定されたメディアの作成  
- 事前設定されたメディアには展開先のコンピューターを起動するのに使用するブート イメージと、展開先のコンピューターに適用されるオペレーティング システム イメージを含んでいます。 事前設定されたメディアを使用してプロビジョニングしたコンピューターは、ブート イメージを使用して起動できます。 その後、コンピューターで既存のオペレーティング システムの展開タスク シーケンスを実行して、オペレーティング システムの展開を完了させることができます。 オペレーティング システムを展開するタスク シーケンスはメディアに含まれていません。  
+    > [!NOTE]  
+    >  Le immagini di sistema operativo sono file con formato .WIM e rappresentano una raccolta compressa di cartelle e file di riferimento necessari per installare e configurare un sistema operativo in un computer. Per altre informazioni, vedere [Manage operating system images](../get-started/manage-operating-system-images.md) (Gestire le immagini del sistema operativo).  
 
- 事前設定段階で、オペレーティング システム イメージとブート イメージに加えて、アプリケーションやデバイス ドライバーなどのコンテンツを追加できます。 事前にドライブにコンテンツを配置できるため、オペレーティング システムの展開にかかる時間を短縮し、ネットワーク トラフィックを低減できます。  
+-   **Creare una sequenza attività per distribuire Windows 8**  
 
- 事前設定メディアを作成するには、次の手順に従います。  
+     è necessario creare una sequenza attività per una distribuzione di Windows 8 a cui si farà riferimento durante la creazione di supporti pre-installati. Per altre informazioni, vedere [Gestire le sequenze di attività per automatizzare le attività](manage-task-sequences-to-automate-tasks.md).  
 
-#### <a name="to-create-prestaged-media"></a>事前設定メディアを作成するには  
+###  <a name="BKMK_CreatePrestagedMedia"></a> Creare supporti pre-installati  
+ Il supporto pre-installato contiene l'immagine di avvio usata per avviare il computer di destinazione e l'immagine del sistema operativo applicata al computer di destinazione. Il computer di cui viene effettuato il provisioning con i supporti pre-installati può essere avviato con l'immagine di avvio. Il computer è quindi in grado di eseguire quindi una sequenza attività di distribuzione del sistema operativo esistente per installare una distribuzione completa del sistema operativo. La sequenza di attività che distribuisce il sistema operativo non è inclusa nel supporto.  
 
-1.  Configuration Manager コンソールで、 **[ソフトウェア ライブラリ]** をクリックします。  
+ È possibile aggiungere contenuto, ad esempio applicazioni e driver di dispositivo, oltre all'immagine del sistema operativo e all'immagine di avvio durante la fase di pre-installazione. Poiché il contenuto è già presente nell'unità, è possibile ridurre il tempo impiegato per distribuire un sistema operativo e il traffico di rete.  
 
-2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス**] をクリックします。  
+ Utilizzare la seguente procedura per creare supporti pre-installati.  
 
-3.  [ **ホーム** ] タブの [ **作成** ] グループで [ **タスク シーケンス メディアの作成** ] をクリックして、タスク シーケンス メディアの作成ウィザードを起動します。  
+#### <a name="to-create-prestaged-media"></a>Per creare supporti pre-installati  
 
-4.  [ **メディアの種類の選択** ] ページで、次の情報を指定してから、[ **次へ** ] をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-    -   [ **事前設定されたメディア**] を選択します。  
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
 
-    -   ユーザーの操作なしで Windows To Go 展開をブートするには、[オペレーティング システムの無人展開を許可する **** ] を選択します。  
+3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea supporto per sequenza di attività** per avviare la Creazione guidata del supporto per la sequenza di attività.  
 
-        > [!IMPORTANT]  
-        >  SMSTSPreferredAdvertID カスタム変数 (この手順の後述の項を参照) を指定して、このオプションを使用する場合、ユーザー操作は必要なく、Windows To Go ドライブを検出すると、コンピューターは自動的に Windows To Go 展開をブートします。 ただし、メディアでパスワード保護が構成されている場合、ユーザーは、パスワードの入力を求められます。 SMSTSPreferredAdvertID 変数を構成せずに [オペレーティング システムの無人展開を許可する **** ] 設定を使用すると、タスク シーケンスを展開するときにエラーが発生します。  
+4.  Nella pagina **Seleziona tipo di supporto** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
 
-5.  [ **メディアの管理** ] ページで、次の情報を指定してから、[ **次へ**] をクリックします。  
+    -   Selezionare **Supporti preinstallati**.  
 
-    -   サイト境界内のクライアントの場所に基づいて、ある管理ポイントから別の管理ポイントにメディアをリダイレクトできるようにする場合は、[ **動的メディア** ] を選択します。  
-
-    -   指定の管理ポイントにのみメディアを接続する必要がある場合は、[ **サイトベースのメディア** ] を選択します。  
-
-6.  [ **メディアのプロパティ** ] ページで、次の情報を指定してから、[ **次へ** ] をクリックします。  
-
-    -   **作成者**: メディアの作成者を指定します。  
-
-    -   **バージョン**: メディアのバージョン番号を指定します。  
-
-    -   **コメント**: メディアの用途に関する一意の説明を指定します。  
-
-    -   **メディア ファイル**: 出力ファイルの名前とパスを指定します。 この場所に出力ファイルが書き込まれます。 例: **\\\servername\folder\outputfile.wim**  
-
-7.  [ **セキュリティ** ] ページで、以下の情報を指定してから、[ **次へ**] をクリックします。  
-
-    -   メディアが Configuration Manager で管理されていないコンピューターにオペレーティング システムを展開できるようにするには、**[不明なコンピューターのサポートを有効にする]** をオンにします。 これらのコンピューターのレコードは Configuration Manager データベースには存在しません。 不明なコンピューターには次のようなものがあります。  
-
-        -   Configuration Manager クライアントがインストールされていないコンピューター  
-
-        -   Configuration Manager にインポートされていないコンピューター  
-
-        -   Configuration Manager で検出されていないコンピューター  
-
-    -   承認されていないアクセスからメディアを保護するには、[パスワードでメディアを保護する **** ] を選択して、強力なパスワードを入力します。 パスワードを指定した場合、ユーザーは、事前設定メディアを使用するにはパスワードを入力する必要があります。  
+    -   Selezionare **Consenti distribuzione automatica del sistema operativo** per avviare la distribuzione di Windows To Go senza l'intervento dell'utente.  
 
         > [!IMPORTANT]  
-        >  セキュリティ運用方法として、事前設定メディアを保護するために、常にパスワードを指定することをお勧めします。  
+        >  Quando si utilizza questa opzione con la variabile personalizzata SMSTSPreferredAdvertID (impostata in seguito nel corso di questa procedura), non è necessario l'intervento dell'utente e il computer avvierà automaticamente la distribuzione di Windows To Go quando rileverà l'unità di Windows To Go. Tuttavia, all'utente viene richiesta una password se il supporto è configurato per la protezione con password. Se si utilizza l'impostazione **Consenti distribuzione automatica del sistema operativo** senza configurare la variabile SMSTSPreferredAdvertID, si verificherà un errore durante la distribuzione della sequenza attività.  
+
+5.  Nella pagina **Gestione del supporto** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
+
+    -   Selezionare **Supporto dinamico** se si desidera consentire a un punto di gestione di reindirizzare il supporto a un altro punto di gestione, in base al percorso del client nei limiti del sito.  
+
+    -   Selezionare **Supporto basato su sito** se si desidera che il supporto contatti solo il punto di gestione specificato.  
+
+6.  Nella pagina **Proprietà del supporto**  specificare le informazioni seguenti e fare clic su **Avanti**.  
+
+    -   **Creato da**: specificare chi ha creato il supporto.  
+
+    -   **Versione**: specificare il numero di versione del supporto.  
+
+    -   **Commento**: specificare una descrizione univoca dello scopo per cui viene usato il supporto.  
+
+    -   **File supporto**: specificare il nome e il percorso dei file di output. La procedura guidata scrive i file di output in questa posizione. Ad esempio: **\\\nomeserver\cartella\fileoutput.wim**  
+
+7.  Nella pagina **Sicurezza** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
+
+    -   Selezionare **Abilita supporto per computer sconosciuti** per consentire al supporto di distribuire un sistema operativo a un computer non gestito da Configuration Manager. Non sono presenti record di questi computer nel database di Configuration Manager. I computer sconosciuti includono i seguenti:  
+
+        -   Computer in cui non è installato il client di Configuration Manager  
+
+        -   Computer che non sono stati importati in Configuration Manager  
+
+        -   Un computer che non è stato rilevato da Configuration Manager  
+
+    -   Selezionare **Proteggi supporto con password** e immettere una password complessa per proteggere il supporto da accesso non autorizzato. Quando si specifica una password l'utente deve immettere la password per usare il supporto pre-installato.  
+
+        > [!IMPORTANT]  
+        >  Come procedura consigliata di sicurezza, assegnare sempre una password per proteggere il supporto pre-installato.  
 
         > [!NOTE]  
-        >  事前設定されたメディアをパスワードで保護する場合、メディアで [オペレーティング システムの無人展開を許可する **** ] 設定が構成されていても、ユーザーは、パスワードの入力を求められます。  
+        >  Quando si protegge il supporto pre-installato con una password all'utente viene richiesto di immettere la password anche se il supporto è stato configurato con l'impostazione **Consenti distribuzione automatica del sistema operativo** .  
 
-    -   HTTP 接続用には、[ **自己署名入りメディア証明書を作成する**] を選択し、証明書の開始日と有効期限を指定します。  
+    -   Per le comunicazioni HTTP, selezionare **Crea certificato del supporto autofirmato**e quindi specificare la data di inizio e di scadenza del certificato.  
 
-    -   HTTPS 接続用には、[ **PKI 証明書のインポート**] を選択し、インポートする証明書とそのパスワードを指定します。  
+    -   Per le comunicazioni HTTPS, selezionare **Importa certificato PKI**e quindi specificare il certificato da importare e la relativa password.  
 
-         ブート イメージで使用される、このクライアント証明書の詳細については、[PKI 証明書の要件](../../core/plan-design/network/pki-certificate-requirements.md)を参照してください。  
+         Per altre informazioni su questo certificato client usato per le immagini di avvio, vedere [Requisiti dei certificati PKI](../../core/plan-design/network/pki-certificate-requirements.md).  
 
-    -   **ユーザーとデバイスのアフィニティ**: Configuration Manager でユーザー中心の管理をサポートするため、ユーザーと対象コンピューターをメディアによって関連付ける方法を指定します。 オペレーティング システムの展開でユーザーとデバイスのアフィニティをサポートする方法については、「[展開先のコンピューターにユーザーを関連付ける](../get-started/associate-users-with-a-destination-computer.md)」をご覧ください。  
+    -   **Affinità utente dispositivo**: per supportare la gestione basata sugli utenti in Configuration Manager, specificare come si vuole che il supporto associ gli utenti al computer di destinazione. Per altre informazioni su come la distribuzione del sistema operativo supporti l'affinità utente dispositivo, vedere [Associare gli utenti a un computer di destinazione](../get-started/associate-users-with-a-destination-computer.md).  
 
-        -   メディアがユーザーと対象コンピューターを自動的に関連付けるようにするには、[ **ユーザーとデバイスのアフィニティを自動的に承認する** ] を選択します。 この機能は、オペレーティング システムを展開するタスク シーケンスのアクションに基づきます。 このシナリオでは、タスク シーケンスが、対象コンピューターにオペレーティング システムを展開するときに、指定のユーザーと対象コンピューターの関係を作成します。  
+        -   Specificare **Consenti affinità utente dispositivo con approvazione automatica** se si desidera che il supporto associ automaticamente gli utenti al computer di destinazione. Questa funzionalità si basa sulle azioni della sequenza di attività che distribuisce il sistema operativo. In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.  
 
-        -   メディアが承認を待ってユーザーと対象コンピューターを関連付けるようにするには、[ **ユーザーとデバイスのアフィニティを管理者の承認待ちにする** ] を選択します。 この機能は、オペレーティング システムを展開するタスク シーケンスのスコープに基づきます。 このシナリオでは、タスク シーケンスは、指定のユーザーと対象コンピューターの関係を作成しますが、オペレーティング システムを展開する前に管理ユーザーからの承認を待機します。  
+        -   Specificare **Consenti approvazione amministratore in sospeso per affinità utente dispositivo** se si desidera che il supporto associ gli utenti al computer di destinazione dopo la concessione dell'approvazione. Questa funzionalità si basa sull'ambito della sequenza di attività che distribuisce il sistema operativo. In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione, ma attende l'approvazione di un utente amministratore prima di distribuire il sistema operativo.  
 
-        -   メディアがユーザーと対象コンピューターを関連付けないようにするには、[ **ユーザーとデバイスのアフィニティを許可しない** ] を選択します。 このシナリオでは、タスク シーケンスは、オペレーティング システムを展開するときにユーザーと対象コンピューターを関連付けません。  
+        -   Specificare **Non consentire affinità utente dispositivo** se non si desidera che il supporto associ gli utenti al computer di destinazione. In questo scenario, la sequenza di attività non associa gli utenti al computer di destinazione quando distribuisce il sistema operativo.  
 
-8.  [タスク シーケンス **** ] ページで、前のセクションで作成した Windows 8 タスク シーケンスを指定します。  
+8.  Nella pagina **Sequenza attività** specificare la sequenza attività di Windows 8 creata nella sezione precedente.  
 
-9. [ **ブート イメージ** ] ページで次の情報を指定し、[ **次へ**] をクリックします。  
+9. Nella pagina **Immagine di avvio** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
 
     > [!IMPORTANT]  
-    >  配布されているブート イメージのアーキテクチャが、対象コンピューターのアーキテクチャに適切である必要があります。 たとえば、x64 のコンピューターでは、x86 または x64 のブート イメージを起動して実行できます。 ただし、x86 のコンピューターで起動して実行できるのは、x86 ブート イメージのみです。 EFI モードの Windows 8 認定コンピューターでは、x64 ブート イメージを使用する必要があります。  
+    >  L'architettura dell'immagine di avvio distribuita deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86. Per i computer certificati Windows 8 in modalità EFI, è necessario utilizzare un'immagine di avvio x64.  
 
-    -   **[ブート イメージ]**: 対象コンピューターを起動するブート イメージを指定します。  
+    -   **Immagine d'avvio**: specificare l'immagine d'avvio per l'avvio del computer di destinazione.  
 
-    -   **[配布ポイント]**: ブート イメージをホストする配布ポイントを指定します。 配布ポイントからブート イメージが取得されてメディアに書き込まれます。  
-
-        > [!NOTE]  
-        >  管理ユーザーは、配布ポイントのブート イメージ コンテンツの **読み取り** アクセス権を持っている必要があります。 詳細については、「[コンテンツにアクセスするためのアカウントの管理](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md)」をご覧ください。  
-
-    -   このウィザードの [メディア管理 **** ] ページで [サイトベースのメディア **** ] を選択した場合、[管理ポイント **** ] ボックスで、プライマリ サイトの管理ポイントを指定します。  
-
-    -   ウィザードの [メディア管理 **** ] ページで [動的メディア **** ] を選択した場合、[関連付けられている管理ポイント **** ] ボックスで、使用するプライマリ サイトの管理ポイントと、初期通信での優先順位を指定します。  
-
-10. [ **イメージ** ] ページで、次の情報を指定してから、[ **次へ**] をクリックします。  
-
-    -   **[イメージ パッケージ]**: Windows 8 オペレーティング システム イメージを含むパッケージを指定します。  
-
-    -   **[イメージ インデックス]**: パッケージに複数のオペレーティング システム イメージが含まれている場合、展開するイメージを指定します。  
-
-    -   **[配布ポイント]**: オペレーティング システムのブート イメージをホストする配布ポイントを指定します。 ウィザードにより、配布ポイントからオペレーティング システム イメージが取得されてメディアに書き込まれます。  
+    -   **Punto di distribuzione**: specificare il punto di distribuzione che ospita l'immagine d'avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
 
         > [!NOTE]  
-        >  管理ユーザーは、配布ポイントのオペレーティング システム イメージ コンテンツの **読み取り** アクセス権を持っている必要があります。 詳細については、「[コンテンツにアクセスするためのアカウントの管理](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md)」をご覧ください。  
+        >  L'utente amministratore deve disporre dei diritti di accesso di **Lettura** per il contenuto dell'immagine di avvio nel punto di distribuzione. Per altre informazioni, vedere [Manage accounts to access content](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md) (Gestire gli account per l'accesso al contenuto).  
 
-11. [アプリケーションの選択 **** ] ページで、メディア ファイルに含めるアプリケーション コンテンツを選択して、[次へ ****] をクリックします。  
+    -   Se è stato selezionato **Supporto basato su sito** nella pagina **Gestione del supporto** di questa procedura guidata, nella casella **Punto di gestione** specificare un punto di gestione da un sito primario.  
 
-12. [パッケージの選択 **** ] ページで、メディア ファイルに含める追加のパッケージ コンテンツを選択して、[次へ ****] をクリックします。  
+    -   Se è stato selezionato **Supporto basato su sito** nella pagina **Gestione del supporto** di questa procedura guidata, nella casella **Punto di gestione** specificare un punto di gestione da un sito primario.  
 
-13. [ドライバー パッケージの選択 **** ] ページで、メディア ファイルに含めるドライバー パッケージ コンテンツを選択して、[次へ ****] をクリックします。  
+10. Nella pagina **Immagini** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
 
-14. [配布ポイント **** ] ページで、タスク シーケンスに必要なコンテンツがある配布ポイントを 1 つまたは複数選択し、[次へ ****] をクリックします。  
+    -   **Pacchetto immagine**: specificare il pacchetto che contiene l'immagine del sistema operativo Windows 8.  
 
-15. [ **カスタマイズ** ] ページで、次の情報を指定して [ **次へ**] をクリックします。  
+    -   **Indice immagine**: specificare l'immagine da distribuire se il pacchetto contiene più immagini del sistema operativo.  
 
-    -   **[変数]**: オペレーティング システムを展開するためにタスク シーケンスで使用する変数を指定します。 Windows To Go で、自動的に Windows To Go 展開を選択するには、次の形式で SMSTSPreferredAdvertID 変数を使用します。  
+    -   **Punto di distribuzione**: specificare il punto di distribuzione che ospita il pacchetto di immagini del sistema operativo. La procedura guidata recupera l'immagine del sistema operativo dal punto di distribuzione e la scrive sul supporto.  
 
-         SMSTSPreferredAdvertID = {*DeploymentID*}。DeploymentID は、Windows To Go ドライブのプロビジョニング プロセスを完了するために使用するタスク シーケンスに関連付けられている展開 ID です。  
+        > [!NOTE]  
+        >  L'utente amministratore deve disporre dei diritti di accesso di **Lettura** per il contenuto dell'immagine del sistema operativo nel punto di distribuzione. Per altre informazioni, vedere [Manage accounts to access content](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md) (Gestire gli account per l'accesso al contenuto).  
+
+11. Nella pagina **Selezione applicazione** selezionare il contenuto dell'applicazione da includere nel file supporto e quindi fare clic su **Avanti**.  
+
+12. Nella pagina **Seleziona pacchetto** selezionare il contenuto del pacchetto aggiuntivo da includere nel file supporto e quindi fare clic su **Avanti**.  
+
+13. Nella pagina **Selezionare il pacchetto driver** selezionare il contenuto del pacchetto driver da includere nel file supporto e quindi fare clic su **Avanti**.  
+
+14. Nella pagina **Punti di distribuzione** selezionare uno o più punti di distribuzione che includono il contenuto richiesto dalla sequenza attività e quindi fare clic su **Avanti**.  
+
+15. Nella pagina **Personalizzazione** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
+
+    -   **Variabili**: specificare le variabili usate dalla sequenza di attività per distribuire il sistema operativo. Per Windows To Go, utilizzare la variabile SMSTSPreferredAdvertID per selezionare automaticamente la distribuzione di Windows To Go utilizzando il seguente formato:  
+
+         SMSTSPreferredAdvertID = {*IDDistribuzione*}, dove IDDistribuzione è l'ID distribuzione associato alla sequenza attività che verrà utilizzata dal processo di provisioning per l'unità di Windows To Go.  
 
         > [!TIP]  
-        >  無人実行 (この手順の後述の項を参照) を設定したタスク シーケンスを指定して、この変数を使用する場合、ユーザー操作は必要なく、Windows To Go ドライブを検出すると、コンピューターは自動的に Windows To Go 展開をブートします。 ただし、メディアでパスワード保護が構成されている場合、ユーザーは、パスワードの入力を求められます。  
+        >  Quando si utilizza questa variabile con una sequenza attività impostata per l'esecuzione automatica (impostazione configurata in precedenza nella procedura), non è necessario l'intervento dell'utente e il computer avvierà automaticamente la distribuzione di Windows To Go quando rileverà l'unità di Windows To Go. Tuttavia, all'utente viene richiesta una password se il supporto è configurato per la protezione con password.  
 
-    -   **[起動前コマンド]**: タスク シーケンスを実行する前に実行する起動前コマンドを指定します。 起動前コマンドはスクリプトまたは実行可能ファイルであり、オペレーティング システムをインストールするタスク シーケンスを実行する前に Windows PE でユーザーと対話することができます。 Windows To Go 展開では、次の項目を構成します。  
+    -   **Comando di preavvio**: specificare i comandi di preavvio da eseguire prima dell'esecuzione della sequenza di attività. I comandi di preavvio possono essere uno script o un eseguibile che possono interagire con l'utente in Windows PE prima che venga eseguita la sequenza attività per l'installazione del sistema operativo. Configurare quanto segue per la distribuzione di Windows To Go:  
 
-        -   **OSDBitLockerPIN**: Windows To Go の BitLocker では、パスフレーズが必要です。 Windows To Go ドライブの BitLocker パスフレーズを設定するには、起動前コマンドの一部として、 **OSDBitLockerPIN** 変数を設定します。  
+        -   **OSDBitLockerPIN**: BitLocker per Windows To Go richiede una passphrase. Impostare la variabile di **OSDBitLockerPIN** come parte di un comando di preavvio per l'impostazione della passphrase di BitLocker per l'unità di Windows To Go.  
 
             > [!WARNING]  
-            >  BitLocker でパスフレーズが有効にされた後、コンピューターで Windows To Go ドライブがブートされるたびに、ユーザーはパスフレーズを入力する必要があります。  
+            >  Dopo aver attivato BitLocker per la passphrase, l'utente deve immettere la passphrase a ogni riavvio del computer per l'unità di Windows To Go.  
 
-        -   **SMSTSUDAUsers**: 対象のコンピューターのプライマリ ユーザーを指定します。 ユーザー名を収集するには、この変数を使用します。ユーザー名は、ユーザーとデバイスの関連付けに使用できます。 詳細については、「[展開先のコンピューターにユーザーを関連付ける](../get-started/associate-users-with-a-destination-computer.md)」をご覧ください。  
+        -   **SMSTSUDAUsers**: specifica l'utente primario del computer di destinazione. Utilizzare questa variabile per raccogliere il nome utente, che quindi può essere utilizzato per associare l'utente al dispositivo. Per altre informazioni, vedere [Associate users with a destination computer](../get-started/associate-users-with-a-destination-computer.md) (Associare gli utenti a un computer di destinazione).  
 
             > [!TIP]  
-            >  ユーザー名を取得するには、起動前コマンドの一部として、入力ボックスを作成し、ユーザーにユーザー名の入力を求めて、変数に値を設定します。 たとえば、次の行を起動前コマンドのスクリプト ファイルに追加します。  
+            >  Per recuperare il nome utente, è possibile creare una casella di immissione come parte del comando di preavvio, far immettere all'utente il relativo nome utente e quindi impostare la variabile con il valore. Ad esempio, è possibile aggiungere le seguenti righe al file script del comando di preavvio:  
             >   
             >  `UserID = inputbox("Enter Username" ,"Enter your username:","",400,0)`  
             >   
             >  `env("SMSTSUDAUsers") = UserID`  
 
-         起動前コマンドとして使用するスクリプト ファイルを作成する方法の詳細については、「[タスク シーケンス メディアの起動前コマンド](../understand/prestart-commands-for-task-sequence-media.md)」をご覧ください。  
+         Per altre informazioni su come creare un file script da usare come comando di preavvio, vedere [Prestart commands for task sequence media](../understand/prestart-commands-for-task-sequence-media.md) (Comandi di preavvio del supporto per sequenza attività).  
 
-16. ウィザードを完了します。  
-
-    > [!NOTE]  
-    >  ウィザードで、事前設定されたメディア ファイルを完了するまで、時間がかかることがあります。  
-
-###  <a name="BKMK_CreatePackage"></a> Windows To Go Creator パッケージの作成  
- Windows To Go 展開の一部として、事前設定されたメディア ファイルを展開するパッケージを作成する必要があります。 パッケージには、Windows To Go ドライブを構成し、事前設定されたメディアをドライブに抽出するツールを含めます。 Windows To Go Creator パッケージを作成するには、次の手順に従います。  
-
-#### <a name="to-create-the-windows-to-go-creator-package"></a>Windows To Go Creator パッケージを作成するには  
-
-1.  Windows To Go Creator パッケージ ファイルをホストするサーバーで、パッケージ ソース ファイル用のソース フォルダーを作成します。  
+16. Completare la procedura guidata.  
 
     > [!NOTE]  
-    >  サイト サーバーのコンピューター アカウントには、ソース フォルダーへの **読み取り** アクセス権が必要です。  
+    >  Il completamento del file dei supporti pre-installati da parte della procedura guidata può richiedere un periodo di tempo prolungato.  
 
-2.  「 [Create prestaged media](#BKMK_CreatePrestagedMedia) 」セクションで作成した、事前設定されたメディア ファイルを、パッケージ ソース フォルダーにコピーします。  
+###  <a name="BKMK_CreatePackage"></a> Creare un pacchetto Windows To Go Creator  
+ Come parte della distribuzione di Windows To Go, è necessario creare un pacchetto per distribuire il file dei supporti pre-installati. Il pacchetto deve includere lo strumento che consente di configurare l'unità Windows Go e di estrarre il supporto pre-installato sull'unità. Utilizzare la seguente procedura per creare il pacchetto di Windows To Go Creator.  
 
-3.  Windows To Go Creator (WTGCreator.exe) ツールを、パッケージ ソース フォルダーにコピーします。 Creator ツールは、任意のプライマリ サイト サーバーの <*ConfigMgrInstallationFolder*>\OSD\Tools\WTG\Creator にあります。  
+#### <a name="to-create-the-windows-to-go-creator-package"></a>Per creare il pacchetto di Windows To Go Creator  
 
-4.  パッケージとプログラムの作成ウィザードを使用して、パッケージとプログラムを作成します。  
+1.  Nel server che ospiterà i file del pacchetto di Windows To Go Creator, creare una cartella di origine per i file di origine del pacchetto.  
 
-5.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+    > [!NOTE]  
+    >  L'account computer del server del sito deve disporre dei diritti di accesso in **Lettura** alla cartella di origine.  
 
-6.  [ソフトウェア ライブラリ **** ] ワークスペースで [アプリケーション管理 ****] を展開して、[パッケージ ****] をクリックします。  
+2.  Copiare il file supporto pre-installato creato nella sezione [Create prestaged media](#BKMK_CreatePrestagedMedia) nella cartella di origine del pacchetto.  
 
-7.  [ **ホーム** ] タブの [ **作成** ] グループで [ **パッケージの作成**] をクリックします。  
+3.  Copiare lo strumento Windows To Go Creator (WTGCreator.exe) nella cartella di origine del pacchetto. Lo strumento è disponibile in qualsiasi server del sito primario nel percorso seguente: <*CartellaInstallazioneConfigMgr*>\OSD\Tools\WTG\Creator.  
 
-8.  [パッケージ **** ] ページで、パッケージの名前と説明を指定します。 たとえば、パッケージ名として「 **Windows To Go** 」と入力し、パッケージの説明として **Package to configure a Windows To Go drive using System Center Configuration Manager** を指定します。  
+4.  Creare un pacchetto e un programma utilizzando la Creazione guidata pacchetto e programma.  
 
-9. [このパッケージにソース ファイルを含める ****] を選択して、手順 1 で作成したパッケージ ソース フォルダーへのパスを指定し、[次へ ****] をクリックします。  
+5.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-10. [プログラムの種類 **** ] ページで、[標準プログラム ****] を選択し、[次へ ****] をクリックします。  
+6.  Nell'area di lavoro **Raccolta software** espandere **Gestione applicazioni**, quindi fare clic su **Pacchetti**.  
 
-11. [標準プログラム **** ] ページで、次の項目を指定します。  
+7.  Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea pacchetto**.  
 
-    -   **[名前]**: プログラムの名前を指定します。 たとえば、プログラム名として「 **Creator** 」と入力します。  
+8.  Nella pagina **Pacchetto** specificare il nome e la descrizione del pacchetto. Ad esempio, immettere **Windows To Go** per il nome del pacchetto e specificare **Package to configure a Windows To Go drive using System Center Configuration Manager** per la descrizione del pacchetto.  
 
-    -   **[コマンド ライン]**: 「 **WTGCreator.exe /wim:PrestageName.wim**」と入力します。PrestageName は、Windows To Go Creator パッケージ用に作成して、パッケージ ソース フォルダーにコピーした、事前設定されたファイルの名前です。  
+9. Selezionare **Questo pacchetto contiene file di origine**, specificare il percorso della cartella di origine del pacchetto creato nel passaggio 1, e quindi fare clic su **Avanti**.  
 
-         任意で、次のオプションを追加できます。  
+10. Nella pagina **Tipo di programma** selezionare **Programma standard**, quindi fare clic su **Avanti**.  
 
-        -   **enableBootRedirect**: ブートのリダイレクトを使用する Windows To Go 起動オプションを変更するコマンドライン オプションです。 このオプションを使用すると、コンピューターのファームウェアでブート順序を変更したり、起動時にブート オプションの一覧からユーザーが選択したりする必要なく、コンピューターは USB からブートします。 Windows To Go ドライブが検出されると、コンピューターはそのドライブからブートします。  
+11. Nella **Programma standard** specificare quanto segue:  
 
-    -   **[実行]**: システムとプログラムの既定に基づいてプログラムを実行するには、 **[通常]** を指定します。  
+    -   **Nome**: specificare il nome del programma. Ad esempio, digitare **Creator** per il nome del programma.  
 
-    -   **[プログラムの実行条件]**: ユーザーがログオンしている場合にのみ、プログラムを実行できるようにするかどうかを指定します。  
+    -   **Riga di comando**: digitare **WTGCreator.exe /wim:PrestageName.wim**, dove PrestageName è il nome del file pre-installato che è stato creato e copiato nella cartella di origine del pacchetto per il pacchetto di Windows To Go Creator.  
 
-    -   **[実行モード]**: プログラムの実行をログオンしているユーザーのアクセス許可で行うのか、管理者ユーザーのアクセス許可で行うのかを指定します。 Windows To Go Creator を実行するには、管理者特権が必要です。  
+         Facoltativamente, è possibile aggiungere le seguenti opzioni:  
 
-    -   [プログラムのインストールの表示および対話をユーザーに許可する ****] を選択して、[次へ ****] をクリックします。  
+        -   **enableBootRedirect**: opzione della riga di comando per la modifica delle opzioni di avvio di Windows Go per consentire il reindirizzamento di avvio. Quando si utilizza questa opzione, il computer si avvierà da USB senza che sia necessario modificare l'ordine di avvio nel firmware del computer o che l'utente debba selezionare da un elenco di opzioni di avvio durante l'avvio. Se viene rilevata un'unità di Windows To Go, il computer avvia tale unità.  
 
-12. [要件] ページで、次の項目を指定します。  
+    -   **Esegui**: specificare **Normale** per eseguire il programma in base alle impostazioni predefinite del sistema e del programma.  
 
-    -   **[プラットフォームの要件]**: プロビジョニングを許可する適用対象の Windows 8 プラットフォームを選択します。  
+    -   **Requisiti per esecuzione programma**: specificare se il programma può essere eseguito solo quando un utente è connesso.  
 
-    -   **[推定ディスク空き領域]**: Windows To Go Creator のパッケージ ソース フォルダーのサイズを指定します。  
+    -   **Modalità esecuzione**: specificare se il programma verrà eseguito con le autorizzazioni degli utenti connessi o con autorizzazioni amministrative. Windows To Go Creator richiede autorizzazioni elevate per l'esecuzione.  
 
-    -   **[許容最長実行時間 (分)]**: クライアント コンピューターでのプログラムの実行に許可する最長時間を指定します。 既定では、120 分に設定されます。  
+    -   Selezionare **Consenti agli utenti di visualizzare e interagire con l'installazione del programma**, quindi fare clic su **Avanti**.  
+
+12. Nella pagina dei requisiti, specificare quanto segue:  
+
+    -   **Requisiti di piattaforma**: selezionare le piattaforme Windows 8 applicabili per consentire il provisioning.  
+
+    -   **Spazio su disco stimato**: specificare le dimensioni della cartella di origine del pacchetto per Windows To Go Creator.  
+
+    -   **Tempo di esecuzione massimo consentito (minuti)**: specifica la durata massima di esecuzione prevista per il programma nel computer client. Per impostazione predefinita, il valore è impostato su 120 minuti.  
 
         > [!IMPORTANT]  
-        >  このプログラムを実行しているコレクションに対してメンテナンス期間を使用している場合は、[許容最長実行時間 **** ] がスケジュールされたメンテナンス期間より長いと、競合が発生する可能性があります。 最長実行時間が [不明 ****] に設定されている場合、プログラムはメンテナンス期間中に起動されますが、メンテナンス期間が終了した後も、完了するか失敗するまで実行し続けます。 利用可能なメンテナンス期間よりも長い ([不明] 以外の) 期間に最長実行時間を設定している場合、プログラムは実行されません。  
+        >  Se si utilizzano finestre di manutenzione per la raccolta in cui viene eseguito il programma, è possibile che si verifichi un conflitto se il **Tempo di esecuzione massimo consentito** è superiore alla finestra di manutenzione pianificata. Se il tempo di esecuzione massimo è impostato su **Sconosciuto**, l'avvio avverrà all'interno della finestra di manutenzione, ma l'esecuzione proseguirà fino al completamento oppure non riuscirà se si chiude la finestra di manutenzione. Se si imposta il tempo di esecuzione massimo viene impostato su un periodo specifico (non su Sconosciuto) con durata superiore a quella di tutte le finestre di manutenzione disponibili, il programma non verrà eseguito.  
 
         > [!NOTE]  
-        >  値が **[不明]** に設定されている場合、Configuration Manager は最長の実行許容時間を 12 時間 (720 分) に設定します。  
+        >  Se il valore è impostato come **sconosciuto**, Configuration Manager imposta un limite massimo di 12 ore (720 minuti).  
 
         > [!NOTE]  
-        >  最長実行時間 (ユーザーが設定したか、既定値として設定されているかどうかにかかわらず) を超えた場合、**[標準プログラム]** ページで **[管理者権限で実行する]** が選択されていて、**[プログラムのインストールの表示および対話をユーザーに許可する]** が選択されていなければ、Configuration Manager はプログラムを停止します。  
+        >  Se il tempo di esecuzione massimo (sia impostato dall'utente che come valore predefinito) viene superato, Configuration Manager arresta il programma se l'opzione **Esegui con diritti amministrativi** viene selezionata mentre l'opzione **Consenti agli utenti di visualizzare e interagire con l'installazione del programma** non viene selezionata nella pagina **Programma standard**.  
 
-     **[次へ]** をクリックして、ウィザードを完了します。  
+     Fare clic su **Avanti** e completare la procedura guidata.  
 
-###  <a name="BKMK_UpdateTaskSequence"></a> Windows To Go で BitLocker を有効にするタスク シーケンスの更新  
- Windows To Go では、TPM を使用せずに、外部ブート可能デバイスで BitLocker を有効にします。 このため、Windows To Go ドライブで BitLocker を構成するには、個別のツールを使用する必要があります。 BitLocker を有効にするには、タスク シーケンスの「 **Windows と ConfigMgr のセットアップ** 」手順の後に、アクションを追加する必要があります。  
+###  <a name="BKMK_UpdateTaskSequence"></a> Aggiornare la sequenza di attività per attivare BitLocker per Windows To Go  
+ Windows To Go attiva BitLocker in un'unità di avvio esterne senza utilizzare TPM. Pertanto, è necessario utilizzare uno strumento separato per configurare BitLocker nell'unità di Windows To Go. Per attivare BitLocker, è necessario aggiungere un'azione alla sequenza attività dopo il passaggio **Imposta Windows e ConfigMgr** .  
 
 > [!NOTE]  
->  Windows To Go の BitLocker では、パスフレーズが必要です。 「 [Create prestaged media](#BKMK_CreatePrestagedMedia) 」手順で、OSDBitLockerPIN 変数を使用して、事前設定コマンドの一部としてパスフレーズを設定します。  
+>  BitLocker per Windows To Go richiede una passphrase. Nel passaggio [Create prestaged media](#BKMK_CreatePrestagedMedia) è possibile impostare la passphrase come parte di un comando di preavvio utilizzando la variabile OSDBitLockerPIN.  
 
- Windows 8 タスク シーケンスを更新して、Windows To Go で BitLocker を有効にするには、次の手順に従います。  
+ Utilizzare la seguente procedura per aggiornare la sequenza attività di Windows 8 per attivare BitLocker per Windows To Go.  
 
-#### <a name="to-update-the-windows-8-task-sequence-to-enable-bitlocker"></a>Windows 8 タスク シーケンスを更新して BitLocker を有効にするには  
+#### <a name="to-update-the-windows-8-task-sequence-to-enable-bitlocker"></a>Per aggiornare la sequenza attività di Windows 8 per attivare BitLocker  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ソフトウェア ライブラリ **** ] ワークスペースで [アプリケーション管理 ****] を展開して、[パッケージ ****] をクリックします。  
+2.  Nell'area di lavoro **Raccolta software** espandere **Gestione applicazioni**, quindi fare clic su **Pacchetti**.  
 
-3.  [ **ホーム** ] タブの [ **作成** ] グループで [ **パッケージの作成**] をクリックします。  
+3.  Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea pacchetto**.  
 
-4.  [パッケージ **** ] ページで、パッケージの名前と説明を指定します。 たとえば、パッケージ名として「 **BitLocker for Windows To Go** 」と入力し、パッケージの説明として **Package to update BitLocker for Windows To Go** を指定します。  
+4.  Nella pagina **Pacchetto** specificare il nome e la descrizione del pacchetto. Ad esempio, digitare **BitLocker for Windows To Go** per il nome del pacchetto e specificare **Package to update BitLocker for Windows To Go** per la descrizione del pacchetto.  
 
-5.  [ **このパッケージはソース ファイルを含む**] を選択し、Windows To Go 用 BitLocker ツールの場所を指定してから、[ **次へ**] をクリックします。 BitLocker ツールは、任意の Configuration Manager プライマリ サイト サーバーの <*ConfigMgrInstallationFolder*>\OSD\Tools\WTG\BitLocker\ にあります。  
+5.  Selezionare **Questo pacchetto contiene file di origine**, specificare il percorso dello strumento di BitLocker per Windows To Go e quindi fare clic su **Avanti**. Lo strumento BitLocker è disponibile in qualsiasi server del sito primario di Configuration Manager nel percorso seguente: <*CartellaInstallazioneConfigMgr*>\OSD\Tools\WTG\BitLocker\  
 
-6.  [ **プログラムの種類** ] ページで、[ **プログラムを作成しない**] を選択します。  
+6.  Nella pagina **Tipo di programma** selezionare **Non creare un programma**.  
 
-7.  **[次へ]** をクリックして、ウィザードを完了します。  
+7.  Fare clic su **Avanti** e completare la procedura guidata.  
 
-8.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+8.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-9. [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス**] をクリックします。  
+9. Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
 
-10. 事前設定メディアで参照する、Windows 8 タスク シーケンスを選択します。  
+10. Selezionare la sequenza attività di Windows 8 a cui si fa riferimento nei supporti pre-installati.  
 
-11. [ **ホーム** ] タブの [ **タスク シーケンス** ] グループで、[ **編集**] をクリックします。  
+11. Nella scheda **Home** , nel gruppo **Sequenza di attività** , fare clic su **Modifica**.  
 
-12. [ **Windows と ConfigMgr のセットアップ** ] ステップをクリックし、[ **追加**]、[ **全般**]、[ **コマンドラインの実行**] の順にクリックします。 [Windows と ConfigMgr のセットアップ] ステップの後に、[コマンド ラインの実行] ステップが追加されます。  
+12. Fare clic sul passaggio **Imposta Windows e ConfigMgr** , fare clic su **Aggiungi**, quindi su **Generale**e infine su **Esegui riga di comando**. Il passaggio Esegui riga di comando viene aggiunto dopo il passaggio Imposta Windows e ConfigMgr.  
 
-13. [ **コマンド ラインの実行** ] ステップの [ **プロパティ** ] タブで、次を追加します。  
+13. Nella scheda **Proprietà** per il passaggio **Esegui riga di comando** aggiungere quanto segue:  
 
-    1.  **[名前]**: **Enable BitLocker for Windows To Go**などのコマンド ラインの名前を指定します。  
+    1.  **Nome**: specificare un nome per la riga di comando, ad esempio **Enable BitLocker for Windows To Go**.  
 
-    2.  **[コマンド ライン]**: i386\osdbitlocker_wtg.exe /Enable /pwd:< *None&#124;AD*>  
+    2.  **Riga di comando**: i386\osdbitlocker_wtg.exe /Enable /pwd:< *None&#124;AD*>  
 
-         パラメーター:  
+         Parametri:  
 
-        -   /pwd:<None&#124;AD> - BitLocker パスワードの回復モードを指定します。 このパラメーターは、コマンドラインで /Enable パラメーターを使用するために必要です。  
+        -   /pwd:<None&#124;AD> : specificare la modalità di ripristino della password di BitLocker. Questo parametro è obbligatorio. Utilizzare il parametro /Enable nella riga di comando.  
 
-             BitLocker で保護されているドライブの回復情報を Active Directory ドメイン サービス (AD DS) にバックアップするように BitLocker ドライブ暗号化を構成するには、[AD] を選択します。 **** BitLocker で保護されているドライブの回復パスワードをバックアップすると、ドライブがロックされたときに、管理ユーザーがドライブを回復できます。 そのため、許可されたユーザーが、企業の所有する暗号化されたデータに常にアクセスできます。 [なし] を指定すると、ユーザーが回復パスワードまたは回復キーのコピーを保持する必要があります。 **** ユーザーがこの情報を紛失したり、退職する前にドライブの暗号化解除をしなかった場合、管理ユーザーはドライブに容易にアクセスできなくなります。  
+             Selezionare **AD** per configurare Crittografia unità BitLocker in modo che venga eseguito il backup delle informazioni di ripristino per le unità protette da BitLocker in Servizi di dominio Active Directory (AD DS). Il backup delle password di ripristino per un'unità protetta da BitLocker consente agli utenti amministratori di ripristinare l'unità se questa è bloccata. Ciò garantisce che i dati crittografati appartenenti all'azienda siano sempre accessibili dagli utenti autorizzati. Quando si specifica **None**l'utente ha la responsabilità di conservare una copia della password di ripristino o della chiave di ripristino. Se l'utente perde tali informazioni o non crittografa l'unità prima di lasciare l'azienda, gli utenti amministratori non potranno accedere all'unità.  
 
-        -   /wait:<TRUE&#124;FALSE> - タスク シーケンスが完了する前に、暗号化が完了するのを待機するかどうかを指定します。  
+        -   /wait:<TRUE&#124;FALSE>: specificare se la sequenza di attività attende il completamento della crittografia per essere completata.  
 
-    3.  [パッケージ] を選択してから、この手順の最初に作成したパッケージを指定します。 ****  
+    3.  Selezionare **Pacchetto**, quindi specificare il pacchetto creato all'inizio di questa procedura.  
 
-    4.  [オプション] タブで、次の条件を追加します。 ****  
+    4.  Nella scheda **Opzioni** aggiungere le seguenti condizioni:  
 
-        -   条件: タスク シーケンス変数  
+        -   Condizione = Variabile della sequenza attività  
 
-        -   変数: _SMSTSWTG  
+        -   Variabile = _SMSTSWTG  
 
-        -   条件: 次の値と等しい  
+        -   Condizione = Uguale a  
 
-        -   値: True  
+        -   Valore = True  
 
     > [!NOTE]  
-    >  新しいコマンド ライン ステップの後に使用する [BitLocker の有効化] ステップは、Windows To Go 用の BitLocker を有効にする際には使用しません。 **** ただし、このステップをタスク シーケンスに保持して、Windows To Go ドライブを使用しない Windows 8 展開に使用することができます。  
+    >  Il passaggio **Attiva BitLocker** , che è probabile dopo il passaggio della nuova riga di comando, non viene utilizzato per attivare BitLocker per Windows To Go. Tuttavia, è possibile mantenere questo passaggio nella sequenza attività per l'utilizzo con le distribuzioni di Windows 8 che non utilizzano un'unità Windows To Go.  
 
-###  <a name="BKMK_Deployments"></a> Windows To Go Creator パッケージとタスク シーケンスの展開  
- Windows To Go は、ハイブリッドの展開プロセスです。 そのため、Windows To Go Creator パッケージと Windows 8 タスク シーケンスを展開する必要があります。 展開プロセスを完了するには、次の手順に従います。  
+###  <a name="BKMK_Deployments"></a> Distribuire la sequenza di attività e il pacchetto di Windows To Go Creator  
+ Windows To Go è un processo di distribuzione ibrida. Pertanto, è necessario distribuire il pacchetto di Windows To Go Creator e la sequenza attività di Windows 8. Utilizzare le seguenti procedure per completare il processo di distribuzione.  
 
-#### <a name="to-deploy-the-windows-to-go-creator-package"></a>Windows To Go Creator パッケージを展開するには  
+#### <a name="to-deploy-the-windows-to-go-creator-package"></a>Per distribuire il pacchetto di Windows To Go Creator  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ソフトウェア ライブラリ **** ] ワークスペースで [アプリケーション管理 ****] を展開して、[パッケージ ****] をクリックします。  
+2.  Nell'area di lavoro **Raccolta software** espandere **Gestione applicazioni**, quindi fare clic su **Pacchetti**.  
 
-3.  手順「 [Windows To Go Creator パッケージの作成](#BKMK_CreatePackage) 」で作成した Windows To Go パッケージを選択します。  
+3.  Selezionare il pacchetto di Windows To Go creato nel passaggio [Creare un pacchetto Windows To Go Creator](#BKMK_CreatePackage) .  
 
-4.  [ **ホーム** ] タブの [ **展開** ] グループで、[ **展開**] をクリックします。  
+4.  Nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Distribuisci**.  
 
-5.  [ **全般** ] ページで、次の設定を行います。  
+5.  Nella pagina **Generale** specificare le impostazioni seguenti:  
 
-    1.  **[ソフトウェア]**: Windows To Go パッケージを選択していることを確認します。  
+    1.  **Software**: verificare che il pacchetto di Windows To Go sia selezionato.  
 
-    2.  **[コレクション]**: **[参照]** をクリックして、Windows To Go パッケージを展開するコレクションを選択します。  
+    2.  **Raccolta**: fare clic su **Sfoglia** per selezionare la raccolta in cui si vuole distribuire il pacchetto di Windows To Go.  
 
-    3.  **[このコレクションに関連付けられている既定の配布ポイント グループを使用する]**: コレクションの既定の配布ポイント グループにパッケージ コンテンツを保存する場合に、このオプションを選択します。 選択したコレクションが配布ポイント グループと関連付けられていない場合は、このオプションは使用できません。  
+    3.  **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta**: selezionare questa opzione se si vuole archiviare il contenuto del pacchetto nel gruppo di punti di distribuzione predefinito della raccolta. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, l'opzione non sarà disponibile.  
 
-6.  [ **コンテンツ** ] ページで [ **追加** ] をクリックし、このパッケージとプログラムに関連付けられているコンテンツを展開する配布ポイントまたは配布ポイント グループを選択します。  
+6.  Nella pagina **Contenuto** fare clic su **Aggiungi** e quindi selezionare i punti di distribuzione o i gruppi di punti di distribuzione in cui si desidera distribuire il contenuto associato a questo programma e pacchetto.  
 
-7.  [ **展開設定** ] ページで、展開の種類として [ **利用可能** ] を選択してから、[ **次へ**] をクリックします。  
+7.  Nella pagina **Impostazioni distribuzione** selezionare **Disponibile** per il tipo di distribuzione e quindi fare clic su **Avanti**.  
 
-8.  [スケジュール] で、このパッケージとプログラムを展開するタイミングまたはクライアント デバイスで利用できるようにするタイミングを構成します。 ****  
+8.  Nella **Pianificazione**configurare il momento in cui pacchetto e programma verranno distribuiti o resi disponibili ai dispositivi client.  
 
-     このページのオプションは、展開操作が [ **利用可能** ] または [ **必須**] のどちらに設定されているかによって変わります。  
+     Le opzioni presenti in questa pagina varieranno in base all'impostazione dell'azione di distribuzione, che può essere **Disponibile** o **Richiesto**.  
 
-9. [ **スケジュール**] ページで、次の設定を構成してから、[ **次へ**] をクリックします。  
+9. Nella **Pianificazione**configurare le seguenti informazioni e quindi fare clic su **Avanti**.  
 
-    1.  **[この展開が使用可能になる日時を指定する]**: パッケージとプログラムを対象コンピューターで実行可能にする日付と時刻を指定します。 [UTC] を選択すると、この設定により、対象コンピューターのローカル時刻に従って、複数の対象コンピューターで、異なる時刻ではなく同じ時刻にパッケージとプログラムが利用可能になります。 ****  
+    1.  **Pianifica quando questa distribuzione diventerà disponibile**: specificare la data e l'ora in cui pacchetto e programma saranno disponibili per l'esecuzione nel computer di destinazione. Quando si seleziona **UTC**questa impostazione assicura che pacchetto e programma siano disponibile per più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
 
-    2.  **[この展開の有効期限を指定する]**: 対象コンピューターでパッケージとプログラムを期限切れにする日付と時刻を指定します。 [UTC] を選択すると、この設定により、対象コンピューターのローカル時刻に従って、複数の対象コンピューターで、異なる時刻ではなく同じ時刻にタスク シーケンスが期限切れになります。 ****  
+    2.  **Pianifica alla scadenza di questa assegnazione**: specificare la data e l'ora di scadenza di pacchetto e programma nel computer di destinazione. Quando si seleziona **UTC**, questa impostazione assicura che la sequenza attività scada in più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
 
-10. ウィザードの [ユーザー側の表示と操作 **** ] ページで、以下の情報を指定します。  
+10. Nella pagina **Esperienza utente** della procedura guidata specificare le seguenti informazioni:  
 
-    -   **[ソフトウェアのインストール]**: 構成されたメンテナンス期間外でソフトウェアをインストールできます。  
+    -   **Installazione software**: permette l'installazione del software al di fuori di qualsiasi finestra di manutenzione configurata.  
 
-    -   **[システムの再起動 (インストールの完了に必要な場合)]**: ソフトウェアのインストールで必要となった場合に、構成されたメンテナンス期間外でデバイスを再起動できます。  
+    -   **Riavvio del sistema (se richiesto per completare l'installazione)**: consente il riavvio di un dispositivo al di fuori di una finestra di manutenzione configurata quando necessario per l'installazione del software.  
 
-    -   **[埋め込みデバイス]**: 書き込みフィルターが有効になっている Windows Embedded デバイスにパッケージとプログラムを展開する場合、一時的なオーバーレイにパッケージとプログラムをインストールして後で変更をコミットするか、インストールの期限またはメンテナンス期間中に変更をコミットするように指定できます。 インストールの期限またはメンテナンス期間中に変更をコミットする場合は、再起動が必要になります。再起動すると、デバイスに変更が保持されます。  
+    -   **Dispositivi integrati**: quando si distribuiscono pacchetti e programmi in dispositivi con Windows Embedded abilitati per i filtri di scrittura, è possibile specificare di installare i pacchetti e i programmi nella sovrapposizione temporanea e confermare le modifiche in seguito oppure confermare le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione. Quando si confermano le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario il riavvio per mantenere le modifiche nel dispositivo.  
 
-11. [配布ポイント] ページで、次の情報を指定します。 ****  
+11. Nella pagina **Punti di distribuzione** specificare le informazioni seguenti:  
 
-    -   **[配布ポイント]** : **[配布ポイントからコンテンツをダウンロードしてローカルで実行する]**を指定します。  
+    -   **Opzioni di distribuzione** : specificare **Scarica il contenuto dal punto di distribuzione ed esegui in locale**.  
 
-    -   **[同じサブネットにある他のクライアントとのコンテンツの共有を許可する]**: コンテンツを既にダウンロードしてキャッシュしているネットワーク上の他のクライアントから、クライアントがコンテンツをダウンロードできるようにして、ネットワークの負荷を軽減するには、このオプションを選択します。 このオプションは Windows BranchCache を利用し、Windows Vista SP2 以降を実行しているコンピューターで使用できます。  
+    -   **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: selezionare questa opzione per ridurre il carico sulla rete permettendo ai client di scaricare il contenuto da altri client nella rete che hanno già scaricato e memorizzato nella cache il contenuto. Questa opzione utilizza Windows BranchCache e può essere utilizzata in computer che eseguono Windows Vista SP2 e versioni successive.  
 
-    -   **[代替のコンテンツ ソースの場所の使用をクライアントに許可する]**: 優先配布ポイントでコンテンツを使用できない場合に、クライアントがフォールバックして、優先でない配布ポイントをコンテンツ ソースの場所として使用できるようにするかどうかを指定します。  
+    -   **Consenti ai client di utilizzare un percorso origine di fallback per il contenuto**: specificare se consentire ai client di eseguire il fallback e usare un punto di distribuzione non preferito come percorso di origine del contenuto quando il contenuto non è disponibile presso un punto di distribuzione preferito.  
 
-12. ウィザードを完了します。  
+12. Completare la procedura guidata.  
 
-#### <a name="to-deploy-the-windows-8-task-sequence"></a>Windows 8 タスク シーケンスを展開するには  
+#### <a name="to-deploy-the-windows-8-task-sequence"></a>Per distribuire la sequenza attività per Windows 8  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス**] をクリックします。  
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
 
-3.  [Prerequisites to provision Windows To Go](#BKMK_Prereqs) の手順で作成した Windows 8 のタスク シーケンスを選択します。  
+3.  Selezionare la sequenza di attività di Windows 8 creata al passaggio [Prerequisites to provision Windows To Go](#BKMK_Prereqs) .  
 
-4.  [ **ホーム** ] タブの [ **展開** ] グループで、[ **展開**] をクリックします。  
+4.  Nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Distribuisci**.  
 
-5.  [ **全般** ] ページで、次の設定を行います。  
+5.  Nella pagina **Generale** specificare le impostazioni seguenti:  
 
-    1.  **[タスク シーケンス]**: Windows 8 タスク シーケンスを選択していることを確認します。  
+    1.  **Sequenza di attività**: verificare che sia selezionata la sequenza di attività per Windows 8.  
 
-    2.  **[コレクション]**: **[参照]** をクリックして、ユーザーが Windows To Go をプロビジョニングする可能性があるすべてのデバイスが含まれたコレクションを選択します。  
-
-        > [!IMPORTANT]  
-        >  「[事前設定されたメディアの作成](#BKMK_CreatePrestagedMedia)」セクションで作成した事前設定メディアが SMSTSPreferredAdvertID 変数を使用する場合、タスク シーケンスを **[すべてのシステム]** コレクションに展開して、**[コンテンツ]** ページで **[Windows PE のみ (非表示)]** を指定できます。 タスク シーケンスは表示されないため、メディアでのみ使用可能になります。  
-
-    3.  **[このコレクションに関連付けられている既定の配布ポイント グループを使用する]**: コレクションの既定の配布ポイント グループにパッケージ コンテンツを保存する場合に、このオプションを選択します。 選択したコレクションが配布ポイント グループと関連付けられていない場合は、このオプションは使用できません。  
-
-6.  [ **展開設定** ] ページで、次の設定を構成してから、[ **次へ**] をクリックします。  
-
-    -   **[目的]**: **[利用可能]**を選択します。 タスク シーケンスをユーザーに展開すると、ユーザーは、公開されているタスク シーケンスをアプリケーション カタログで参照して、必要に応じて要求できます。 タスク シーケンスをデバイスに展開すると、ユーザーは、タスク シーケンスをソフトウェア センターで参照して、必要に応じてインストールできます。  
-
-    -   **[利用できるようにする項目]**: タスク シーケンスを構成マネージャー クライアント、メディア、または PXE で使用可能にするかどうかを指定します。  
+    2.  **Raccolta**: fare clic su **Sfoglia** per selezionare la raccolta che include tutti i dispositivi per cui un utente potrebbe eseguire il provisioning di Windows To Go.  
 
         > [!IMPORTANT]  
-        >  自動タスク シーケンスの展開に [メディアと PXE のみ (非表示) **** ] 設定を使用します。 Windows To Go デバイスが検出された場合は、ユーザー操作なしに、コンピューターが自動的に起動して Windows To Go を展開するようにするには、[オペレーティング システムの無人展開を許可する] を選択して、事前設定メディアの一部として SMSTSPreferredAdvertID 変数を設定します。 **** これらの事前設定メディアの詳細については、「 [Create prestaged media](#BKMK_CreatePrestagedMedia) 」セクションを参照してください。  
+        >  Se il supporto preinstallato creato nella sezione [Create prestaged media](#BKMK_CreatePrestagedMedia) utilizza la variabile SMSTSPreferredAdvertID, è possibile distribuire la sequenza attività nella raccolta **Tutti i sistemi** e specificare l'impostazione **Solo Windows PE (nascosto)** nella pagina **Contenuto** . Poiché la sequenza attività è nascosta, sarà disponibile solo per il supporto.  
 
-7.  [ **スケジュール** ] ページで、次の設定を構成してから、[ **次へ**] をクリックします。  
+    3.  **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta**: selezionare questa opzione se si vuole archiviare il contenuto del pacchetto nel gruppo di punti di distribuzione predefinito della raccolta. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, l'opzione non sarà disponibile.  
 
-    1.  **[この展開が使用可能になる日時を指定する]**: タスク シーケンスを対象コンピューターで実行可能にする日時を指定します。 [UTC] を選択すると、この設定により、対象コンピューターのローカル時刻に従って、複数の対象コンピューターで、異なる時刻ではなく同じ時刻にタスク シーケンスが使用可能になります。 ****  
+6.  Nella pagina **Impostazioni distribuzione** configurare le impostazioni seguenti e quindi fare clic su **Avanti**.  
 
-    2.  **[この展開の有効期限を指定する]**: タスク シーケンスを対象コンピューターで期限切れにする日時を指定します。 [UTC] を選択すると、この設定により、対象コンピューターのローカル時刻に従って、複数の対象コンピューターで、異なる時刻ではなく同じ時刻にタスク シーケンスが期限切れになります。 ****  
+    -   **Scopo**: selezionare **Disponibile**. Quando si distribuisce la sequenza attività a un utente, l'utente la vede pubblicata nel Catalogo applicazioni e può richiederla all'occorrenza. Se si distribuisce la sequenza attività in un dispositivo, l'utente la vede nel Software Center e può installarla all'occorrenza.  
 
-8.  [ユーザー側の表示と操作] ページで、次の情報を指定します。 ****  
+    -   **Rendi disponibile per**: specificare se la sequenza di attività è disponibile per i client di Configuration Manager, i supporti o PXE.  
 
-    -   **[タスク シーケンスの進行状況の表示]**: 構成マネージャー クライアントでタスク シーケンスの進捗状況を表示するかどうかを指定します。  
+        > [!IMPORTANT]  
+        >  Usare l'impostazione **Solo supporti e PXE (nascosto)** per le distribuzioni sequenza di attività automatiche. Selezionare **Consenti distribuzione automatica del sistema operativo** e impostare la variabile SMSTSPreferredAdvertID come parte del supporto preinstallato affinché il computer venga avviato automaticamente con la distribuzione Windows To Go senza alcuna interazione da parte dell'utente in presenza di un'unità Windows To Go. Per ulteriori informazioni sulle impostazioni relative ai supporti preinstallati, vedere la sezione [Create prestaged media](#BKMK_CreatePrestagedMedia) .  
 
-    -   **[ソフトウェアのインストール]**: スケジュールされている日時以降の構成済みメンテナンス期間外でユーザーがソフトウェアをインストールできるようにするかどうかを指定します。  
+7.  Nella pagina **Pianificazione** configurare le informazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   **[システムの再起動 (インストールの完了に必要な場合)]**: ソフトウェアのインストールで必要となった場合に、構成されたメンテナンス期間外でデバイスを再起動できます。  
+    1.  **Pianifica quando questa distribuzione diventerà disponibile**: specificare la data e l'ora in cui la sequenza di attività può essere eseguita nel computer di destinazione. Quando si seleziona **UTC**, questa impostazione assicura che la sequenza attività sia disponibile per più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
 
-    -   **[埋め込みデバイス]**: 書き込みフィルターが有効になっている Windows Embedded デバイスにパッケージとプログラムを展開する場合、一時的なオーバーレイにパッケージとプログラムをインストールして後で変更をコミットするか、インストールの期限またはメンテナンス期間中に変更をコミットするように指定できます。 インストールの期限またはメンテナンス期間中に変更をコミットする場合は、再起動が必要になります。再起動すると、デバイスに変更が保持されます。  
+    2.  **Pianifica alla scadenza di questa assegnazione**: specificare la data e l'ora di scadenza della sequenza di attività nel computer di destinazione. Quando si seleziona **UTC**, questa impostazione assicura che la sequenza attività scada in più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
 
-    -   **[インターネット ベースのクライアント]**: インターネット ベースのクライアントでタスク シーケンスを実行できるようにするかどうかを指定します。 オペレーティング システムなどのソフトウェアをインストールする操作は、この設定ではサポートされていません。 このオプションは、標準オペレーティング システムで操作を実行する一般的なスクリプト ベースのタスク シーケンスにのみ使用してください。  
+8.  Nella pagina **Esperienza utente** specificare le informazioni seguenti:  
 
-9. [ **アラート** ] ページで、このタスク シーケンスによる展開に必要なアラート設定を指定して、[ **次へ** ] をクリックします。  
+    -   **Mostra stato sequenza di attività**: specificare se il client di Configuration Manager visualizza lo stato di avanzamento della sequenza di attività.  
 
-10. [配布ポイント **** ] ページで、次の情報を指定して、[次へ ****] をクリックします。  
+    -   **Installazione software**: specificare se l'utente è autorizzato a installare il software al di fuori di una finestra di manutenzione configurata dopo l'orario pianificato.  
 
-    -   **展開オプション**: **実行中のタスク シーケンスでコンテンツが必要になったときにローカルにダウンロードする**を選択します。  
+    -   **Riavvio del sistema (se richiesto per completare l'installazione)**: consente il riavvio di un dispositivo al di fuori di una finestra di manutenzione configurata quando necessario per l'installazione del software.  
 
-    -   **[ローカルの配布ポイントを利用できない場合は、リモートの配布ポイントを使用する]**: クライアントで低速ネットワーク上または信頼性の低いネットワーク上の配布ポイントを使用してタスク シーケンスに必要なコンテンツをダウンロードするかどうかを指定します。  
+    -   **Dispositivi integrati**: quando si distribuiscono pacchetti e programmi in dispositivi con Windows Embedded abilitati per i filtri di scrittura, è possibile specificare di installare i pacchetti e i programmi nella sovrapposizione temporanea e confermare le modifiche in seguito oppure confermare le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione. Quando si confermano le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario il riavvio per mantenere le modifiche nel dispositivo.  
 
-    -   **代替のコンテンツ ソースの場所の使用をクライアントに許可する**:
-        - *バージョン 1610 より前では*、[代替のコンテンツ ソースの場所の使用を許可する] チェック ボックスをオンにすると、他に利用できる代替ポイントがない場合に、この境界グループ外のクライアントのフォールバックが許可され、配布ポイントをコンテンツ ソースの場所として使用できるようになります。
-        - *バージョン 1610 以降*、**[代替のコンテンツ ソースの場所の使用を許可する]** は構成できません。  代わりに、境界グループ間の関係を構成し、有効なコンテンツ ソースの場所を追加の境界グループからクライアントが検索するタイミングを決定するようにします。 
+    -   **Client basati su Internet**: specificare se la sequenza di attività può essere eseguita in un client basato su Internet. Le operazioni di installazione di software, quale un sistema operativo, non sono supportate con questa impostazione. Usare questa opzione solo per le sequenze attività generiche basate su script che eseguono operazioni nel sistema operativo standard.  
 
-11. ウィザードを完了します。  
+9. Nella pagina **Avvisi** specificare le impostazioni di avviso desiderate per la distribuzione di questa sequenza di attività e quindi fare clic su **Avanti**.  
 
-###  <a name="BKMK_UserExperience"></a> ユーザーによる Windows To Go Creator の実行  
- Windows To Go パッケージと Windows 8 タスク シーケンスを展開したら、ユーザーが Windows To Go Creator を使用できるようになります。 ユーザーは、ソフトウェア カタログにアクセスするか、Windows To Go Creator がデバイスに展開されている場合はソフトウェア センターにアクセスして、Windows To Go Creator プログラムを実行できます。 Creator パッケージがダウンロードされると、タスク バーに点滅するアイコンが表示されます。 ユーザーがアイコンをクリックすると、ダイアログ ボックスが表示されて、プロビジョニングする Windows To Go ドライブをユーザーが選択できるようになります (/drive コマンド ライン オプションを使用しない場合)。 ドライブが Windows To Go の要件を満たしていない場合や、ドライブにイメージをインストールするのに十分な空きディスク容量がない場合は、エラー メッセージが表示されます。 ユーザーは、確認ページで、適用されるドライブとイメージを確認できます。 Windows To Go ドライブにコンテンツが構成されて事前設定されている間、ダイアログ ボックスに進行状況が表示されます。 事前設定が完了すると、Windows To Go ドライブで起動するために、コンピューターの再起動を求めるメッセージが表示されます。  
+10. Nella pagina **Punti di distribuzione** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
+
+    -   **Opzioni di distribuzione**: selezionare **Scaricare il contenuto localmente quando necessario eseguendo la sequenza di attività**.  
+
+    -   **Utilizzare un punto di distribuzione remoto quando non sono disponibili punti di distribuzione locali**: specificare se i client possono scaricare il contenuto necessario per la sequenza di attività da punti di distribuzione disponibili in reti lente e inaffidabili.  
+
+    -   **Consenti ai client di utilizzare un percorso origine di fallback per il contenuto**:
+        - *Nelle versioni precedenti alla 1610* è possibile selezionare la casella di controllo Consenti percorso origine di fallback per il contenuto per consentire ai client esterni a questi gruppi di limiti di eseguire il fallback e usare il punto di distribuzione come percorso di origine per il contenuto in assenza di altri punti di distribuzione disponibili.
+        - *A partire dalla versione 1610* non è più possibile configurare **Consenti percorso origine di fallback per il contenuto**.  È invece possibile configurare relazioni tra gruppi di limiti per determinare quando un client può iniziare la ricerca di gruppi di limiti aggiuntivi per un percorso di origine del contenuto valido. 
+
+11. Completare la procedura guidata.  
+
+###  <a name="BKMK_UserExperience"></a> L'utente esegue Windows To Go Creator  
+ Dopo la distribuzione del pacchetto Windows To Go e della sequenza attività per Windows 8, Windows To Go Creator sarà disponibile all'utente. L'utente può accedere al catalogo del software (o al Software Center, se Windows To Go Creator è stato distribuito nei dispositivi) ed eseguire il programma Windows To Go Creator. Al termine del download del pacchetto di Creator, viene visualizzata un'icona lampeggiante sulla barra delle applicazioni. Quando l'utente fa clic sull'icona, viene visualizzata una finestra di dialogo in cui è possibile selezionare l'unità Windows To Go di cui eseguire il provisioning (a meno che non venga utilizzata l'opzione della riga di comando /drive). Se l'unità non soddisfa i requisiti per Windows To Go o se l'unità non dispone di spazio sufficiente per l'installazione dell'immagine, verrà visualizzato un messaggio di errore. Nella pagina di conferma l'utente può verificare l'unità e l'immagine che verranno applicate. Durante la configurazione e la pre-installazione del contenuto nell'unità Windows To Go, viene visualizzata una finestra di dialogo di avanzamento. Al termine della pre-installazione, viene chiesto di riavviare il computer dall'unità Windows To Go.  
 
 > [!NOTE]  
->  「 [Create a Windows To Go Creator package](#BKMK_CreatePackage) 」セクションで、ブートのリダイレクトを Creator プログラムのコマンド ラインの一部として有効にしなかった場合は、システムを再起動するたびに、ユーザーが手動で Windows To Go ドライブで起動することが必要になる可能性があります。  
+>  Se nella sezione [Create a Windows To Go Creator package](#BKMK_CreatePackage) non è stato abilitato il reindirizzamento dell'avvio nella riga di comando del programma di creazione nella sezione, è possibile che l'utente debba eseguire manualmente l'avvio dall'unità Windows To Go ad ogni riavvio del sistema.  
 
-###  <a name="BKMK_ConfigureStageDrive"></a> Configuration Manager による Windows To Go ドライブの構成とステージング  
- コンピューターを Windows To Go ドライブで再起動すると、ドライブは Windows PE で起動し、管理ポイントに接続してポリシーを取得し、オペレーティング システムの展開を完了します。 Configuration Manager でドライブが構成され、ステージングされます。 Configuration Manager によってドライブがステージングされた後で、ユーザーは、コンピューターを再起動してプロビジョニング処理 (ドメインへの参加やアプリケーションのインストールなど) を終了できます。 この処理は、事前設定メディアの場合と同じです。  
+###  <a name="BKMK_ConfigureStageDrive"></a> Configuration Manager consente di configurare e preparare l'unità Windows To Go  
+ Quando il computer viene riavviato dall'unità Windows To Go, l'unità esegue il riavvio in Windows PE ed esegue la connessione al punto di gestione per ottenere i criteri necessari per il completamento della distribuzione del sistema operativo. Configuration Manager configura e prepara l'unità Windows To Go. Quando Configuration Manager completa la preparazione dell'unità, l'utente può riavviare il computer per finalizzare il processo di provisioning, ad esempio mediante l'unione a un dominio o l'installazione di applicazioni. Questo processo è lo stesso per tutti i supporti preinstallati.  
 
-###  <a name="BKMK_UserLogsIn"></a> ユーザーによる Windows 8 へのログイン  
- Configuration Manager でプロビジョニング処理が完了して Windows 8 のロック画面が表示されると、ユーザーはオペレーティング システムにログインできるようになります。  
+###  <a name="BKMK_UserLogsIn"></a> L'utente accede a Windows 8  
+ Quando Configuration Manager completa il processo di provisioning e viene visualizzata la schermata di blocco di Windows 8, l'utente può eseguire l'accesso al sistema operativo.  

@@ -1,6 +1,6 @@
 ---
-title: "Exchange ActiveSync 電子メール プロファイルを作成する | Microsoft Docs"
-description: "Microsoft Intune と連携して機能する System Center Configuration Manager で電子メール プロファイルを作成および構成する方法について説明します。"
+title: Creare profili di posta elettronica di Exchange ActiveSync | Microsoft Docs
+description: Di seguito viene illustrato come creare e configurare i profili di posta elettronica in System Center Configuration Manager che funzionano con Microsoft Intune.
 ms.custom: na
 ms.date: 07/28/2017
 ms.prod: configuration-manager
@@ -18,160 +18,160 @@ manager: angrobe
 ms.openlocfilehash: 7434c98f2217cf63fdcd250b91e772de72daaea9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="exchange-activesync-email-profiles-in-system-center-configuration-manager"></a>System Center Configuration Manager で Exchange ActiveSync 電子メール プロファイルを作成する
+# <a name="exchange-activesync-email-profiles-in-system-center-configuration-manager"></a>Profili di posta elettronica di Exchange ActiveSync in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Microsoft Intune と Exchange ActiveSync を利用すると、デバイスに電子メール プロファイルと制約を設定できます。 ユーザーは最小限の設定で自分のデバイスから会社の電子メールにアクセスできるようになります。  
+Usando Microsoft Intune ed Exchange ActiveSync è possibile configurare i dispositivi con profili di posta elettronica e restrizioni. In questo modo gli utenti possono accedere alla posta elettronica aziendale dai propri dispositivi dopo aver eseguito pochissime operazioni di configurazione.  
 
- 次の種類のデバイスに電子メール プロファイルを構成できます。  
+ È possibile configurare i seguenti tipi di dispositivi con profili di posta elettronica:  
 
 - Windows 10
 - Windows Phone 8.1
 - Windows Phone 8.0
-- iPhone (iOS 5、iOS 6、iOS 7、iOS 8)  
-- iPad (iOS 5、iOS 6、iOS 7、iOS 8)  
-- Samsung KNOX Standard (4 以降)
+- iPhone che eseguono iOS 5, iOS 6, iOS 7 e iOS 8  
+- iPad che eseguono iOS 5, iOS 6, iOS 7 e iOS 8  
+- Samsung KNOX Standard (4 e versioni successive)
 - Android for Work
 
-電子メール プロファイルをデバイスに展開するには、デバイスを Intune に登録する必要があります。 デバイスの登録方法については、「 [Microsoft Intune を使用したモバイル デバイスの管理](https://technet.microsoft.com/en-us/library/dn646962.aspx)」を参照してください。
+Per distribuire profili di posta elettronica ai dispositivi, è necessario registrare questi ultimi in Intune. Per informazioni su come registrare i dispositivi, vedere [Gestire i dispositivi mobili con Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).
 
 > [!NOTE]
-> Intune には Android for Work 電子メール プロファイルが 2 つあります。それぞれ、Gmail 電子メール アプリ用と Nine Work 電子メール アプリ用です。 これらのアプリは Google Play ストアで入手できます。また、Exchange への接続をサポートしています。 電子メール接続を有効にするには、いずれかの電子メール アプリをユーザーのデバイスに展開し、適切なプロファイルを作成して展開します。 Nine Work などの電子メール アプリは有料になる場合があります。 アプリケーションのライセンスの詳細を確認するか、アプリの会社に問い合わせてください。
+> Intune offre due profili di posta elettronica Android for Work, uno per Gmail e l'altro per l'app di posta elettronica Nine Work. Queste app sono disponibili in Google Play Store e possono connettersi a Exchange. Per abilitare la connettività della posta elettronica, distribuire una di queste app nei dispositivi dell'utente. In seguito creare e distribuire il profilo appropriato. App di posta elettronica come Nine Work potrebbero non essere gratuite. Rivedere i dettagli della licenza dell'app o contattare la società produttrice per chiedere chiarimenti.
 
- デバイスに電子メール アカウントを構成するだけでなく、アドレス帳、予定表、作業の同期を設定できます。  
+ Oltre a configurare un account di posta elettronica sul dispositivo, è possibile configurare le impostazioni di sincronizzazione per i contatti, i calendari e le attività.  
 
- 電子メール プロファイルを作成するとき、さまざまなセキュリティ設定を含めることができます。 たとえば、ID の証明書、暗号化、System Center Configuration Manager プロファイルにより設定された署名などです。 証明書プロファイルの詳細については、「[System Center Configuration Manager の証明書プロファイル](/sccm/protect/deploy-use/introduction-to-certificate-profiles.md)」を参照してください。    
+ Quando si crea un profilo di posta elettronica, è possibile includere una vasta gamma di impostazioni di protezione. Queste impostazioni includono certificati per l'identità, la crittografia e la firma, che sono stati configurati usando profili certificato in System Center Configuration Manager. Per altre informazioni sui profili certificato, vedere [Profili certificato in System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles.md).    
 
-## <a name="create-an-exchange-activesync-email-profile"></a>Exchange ActiveSync 電子メール プロファイルを作成する  
+## <a name="create-an-exchange-activesync-email-profile"></a>Creare un profilo di posta elettronica di Exchange ActiveSync  
 
-プロファイルを作成するには、Exchange ActiveSync 電子メール プロファイルの作成ウィザードを利用します。 
+Per creare un profilo, usare la Creazione guidata profilo di posta elettronica di Exchange ActiveSync. 
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** を選択します。  
+1.  Nella console di Configuration Manager scegliere **Asset e conformità**.  
 
-2.  **[資産とコンプライアンス]** ワークスペースで、**[コンプライアンス設定]**、**[会社リソースのアクセス]** の順に展開し、**[電子メール プロファイル]** を選択します。  
+2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**, **Accesso risorse aziendali** e quindi scegliere **Profili di posta elettronica**.  
 
-3.  **[ホーム]** タブの **[作成]** グループで、**[Exchange ActiveSync 電子メール プロファイルの作成]** を選択し、ウィザードを起動します。
+3.  Nella scheda **Home** del gruppo **Crea** scegliere **Crea il profilo di posta elettronica di Exchange ActiveSync** per avviare la procedura guidata.
 
-4.  ウィザードの **[全般]** ページで、次のように構成します。
+4.  Nella pagina **Generale** della procedura guidata configurare le opzioni seguenti:
 
-    - **名前**。 電子メール プロファイルにわかりやすい名前を指定します。
+    - **Nome**. Specificare un nome descrittivo per il profilo di posta elettronica.
 
-    - **説明**。 必要に応じて、Configuration Manager コンソールで識別するのに役立つ電子メール プロファイルの説明を指定します。
+    - **Descrizione**. Facoltativamente, immettere una descrizione del profilo di posta elettronica che consenta di identificarlo nella console di Configuration Manager.
 
-    - **この電子メール プロファイルは Android for Work 用です**。 Android for Work デバイスにのみこの電子メール プロファイルを展開する場合、このオプションを選択します。 このチェック ボックスをオンにした場合、**サポートされているプラットフォーム** ウィザード ページは表示されません。 Android for Work の電子メール プロファイルのみが構成されます。
+    - **Questo profilo di posta elettronica è per Android for Work**. Scegliere questa opzione se si intende distribuire questo profilo di posta elettronica solo ai dispositivi Android for Work. Se si seleziona questa casella, la pagina **Piattaforme supportate** della procedura guidata non viene mostrata. Vengono configurati soltanto i profili di posta elettronica Android for Work.
 
-4.  ウィザードの **[Exchange ActiveSync]** ページで、次の情報を指定します。  
+4.  Nella pagina **Exchange ActiveSync** della procedura guidata specificare le informazioni seguenti:  
 
-    -   **Exchange ActiveSync ホスト**。 Exchange ActiveSync サービスをホストする社内 Exchange サーバーのホスト名を指定します。  
+    -   **Nome host di Exchange ActiveSync**. Specificare il nome host del server Exchange aziendale che ospita i servizi di Exchange ActiveSync.  
 
-    -   **アカウント名**。 ユーザーのデバイスに表示される電子メール アカウントの表示名を指定します。  
+    -   **Nome account**. Specificare il nome visualizzato dell'account di posta elettronica così come verrà mostrato nei dispositivi degli utenti.  
 
-    -   **アカウントのユーザー名**。 クライアント デバイスで電子メール アカウントのユーザー名を構成する方法を選択します。 ドロップダウン リストから次のオプションのいずれかを選択できます。  
+    -   **Nome utente account**. Scegliere la configurazione del nome utente dell'account di posta elettronica sui dispositivi client. Nell'elenco a discesa è possibile scegliere una delle opzioni seguenti:  
 
-        -   **ユーザー プリンシパル名**。 完全なユーザー プリンシパル名を使用して Exchange にサインインします。  
+        -   **Nome entità utente**. Usare il nome completo dell'entità utente per accedere a Exchange.  
 
-        -   **AccountName**。 Active Directory の完全なユーザー アカウント名を使用します。
+        -   **Nome account**. Usare il nome completo dell'account da Active Directory.
 
-        -   **プライマリ SMTP アドレス**。 ユーザーのプライマリ SMTP アドレスを使用して Exchange にサインインします。  
+        -   **Indirizzo SMTP primario**. Usare l'indirizzo SMTP primario usato dagli utenti per accedere a Exchange.  
 
-    -   **電子メール アドレス**。 各クライアント デバイスでユーザーの電子メール アドレスを生成する方法を選択します。 ドロップダウン リストから次のオプションのいずれかを選択できます。  
+    -   **Indirizzo di posta elettronica**. Scegliere la modalità di generazione dell'indirizzo di posta elettronica per l'utente in ogni dispositivo client. Nell'elenco a discesa è possibile scegliere una delle opzioni seguenti:  
 
-        -   **プライマリ SMTP アドレス**。 ユーザーのプライマリ SMTP アドレスを使用して Exchange にサインインします。  
+        -   **Indirizzo SMTP primario**. Usare l'indirizzo SMTP primario usato dagli utenti per accedere a Exchange.  
 
-        -   **ユーザー プリンシパル名**。 電子メール アドレスとして完全ユーザー プリンシパル名を使用します。  
+        -   **Nome entità utente**. Usare come indirizzo di posta elettronica il nome completo dell'entità utente.  
 
-    -   **アカウント ドメイン**。 次のいずれかのオプションを選択します。  
+    -   **Dominio account**. Scegliere una delle seguenti opzioni:  
 
-        -   **Active Directory から取得する**  
+        -   **Ottieni da Active Directory**  
 
-        -   **カスタム**  
+        -   **Personalizzato**  
 
-         このフィールドは、**[sAMAccountName]** が **[アカウントのユーザー名]** ドロップボックス リストで選択されている場合にのみ該当します。  
+         Questo campo è applicabile solo se nell'elenco a discesa **Nome utente account** è selezionato **Nome account SAM**.  
 
-    -   **認証方法**。 Exchange ActiveSync への接続の認証に使用する認証方法を次から 1 つ選択します。  
+    -   **Metodo di autenticazione**. scegliere uno dei seguenti metodi di autenticazione che verranno usati per autenticare la connessione a Exchange ActiveSync:  
 
-        -   **証明書**。 ID 証明書を Exchange ActiveSync 接続の認証に使用します。  
+        -   **Certificati**. Verrà usato un certificato di identità per autenticare la connessione a Exchange ActiveSync.  
 
-        -   **ユーザー名とパスワード**。 デバイスのユーザーが Exchange ActiveSync に接続するには、パスワードを入力する必要があります。 (ユーザー名は電子メール プロファイルの一部として構成されます。)  
+        -   **Nome utente e password**. L'utente del dispositivo deve specificare una password per connettersi a Exchange ActiveSync (il nome utente è configurato come parte del profilo di posta elettronica).  
 
-    -   **ID 証明書**。 **[選択]** を選択し、ID として使用する証明書を選択します。  
+    -   **Certificato di identità**. Scegliere **Seleziona** e quindi scegliere un certificato da usare per l'identità.  
 
-         ID 証明書には SCEP 証明書を使用する必要があります。PFX 証明書は使用できません。  詳細については、「[Certificate profiles in System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles)」(System Center Configuration Manager の証明書プロファイル) を参照してください。  
+         I certificati di identità devono essere certificati SCEP. Non è possibile usare un certificato PFX.  Per altre informazioni, vedere [Profili certificato in System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
 
-         このオプションは、**[認証方法]** の下で **[証明書]** を選択した場合にのみ利用できます。  
+         Questa opzione è disponibile solo se in **Metodo di autenticazione** è stata scelta l'opzione **Certificati**.  
 
-    -   **S/MIME を使用する**。 S/MIME 暗号化を使用して送信メールを送信します。 このオプションは iOS デバイスにのみ適用されます。 次のオプションを選択します。
+    -   **Usa S/MIME**. Consente di usare la crittografia S/MIME per inviare posta elettronica in uscita. Questa opzione è applicabile solo ai dispositivi iOS. È possibile scegliere una delle opzioni seguenti:
 
-        -   **[署名証明書]**。  **[選択]** を選択し、暗号化に使用する証明書プロファイルを選択します。  
+        -   **Certificati di firma**.  Scegliere **Seleziona** e quindi scegliere un profilo certificato da usare per la crittografia.  
 
-            SCEP 証明書または PFX 証明書のプロファイルを使用できます。  ただし、署名と暗号化の両方を使用する場合は、署名と暗号化の*両方*のために PFX 証明書プロファイルを選択する必要があります。
+            Il profilo può essere un certificato SCEP o PFX.  Tuttavia, se si usano sia la firma che la crittografia, è necessario selezionare profili certificato PFX per *entrambe*, sia per la firma che per la crittografia.
 
-        -   **暗号化証明書**。 **[選択]** を選択し、暗号化に使用する証明書を選択します。 暗号化証明書として使うことができるのは、PFX 証明書だけです。
+        -   **Certificati di crittografia**. Scegliere **Seleziona** e quindi scegliere un certificato da usare per la crittografia. È possibile scegliere solo un certificato PFX da usare come certificato di crittografia.
 
-        -   iOS デバイス上のすべての電子メール メッセージを暗号化するには、**[暗号化を必須にする]** をオンにします。    
+        -   Per crittografare tutti i messaggi di posta elettronica all'interno di dispositivi iOS, abilitare la casella di controllo **Richiedi crittografia**.    
 
-         この項目を選択するには、証明書プロファイルを作成しておく必要があります。  詳細については、「[Certificate profiles in System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles)」(System Center Configuration Manager の証明書プロファイル) を参照してください。  
+         Perché sia possibile scegliere profili certificato qui, è necessario crearli.  Per altre informazioni, vedere [Profili certificato in System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
 
-## <a name="configure-synchronization-settings-for-the-exchange-activesync-email-profile"></a>Exchange ActiveSync 電子メール プロファイルの同期設定を構成します。  
+## <a name="configure-synchronization-settings-for-the-exchange-activesync-email-profile"></a>Configurare le impostazioni di sincronizzazione per il profilo di posta elettronica di Exchange ActiveSync  
 
-Exchange ActiveSync 電子メール プロファイルの作成ウィザードの [ **同期設定の構成** ] ページで、次の情報を指定します。  
+Nella pagina **Configura impostazioni di sincronizzazione** della Creazione guidata profilo di posta elettronica di Exchange ActiveSync specificare le informazioni seguenti:  
 
--   **スケジュール**。 デバイスが Exchange サーバーからデータを同期するスケジュールを選択します。 このオプションは Windows Phone デバイスにのみ適用できます。 次の中から選択します。  
+-   **Pianificazione**. Scegliere la pianificazione in base a cui i dispositivi sincronizzeranno i dati dal server di Exchange. Questa opzione è applicabile solo ai dispositivi Windows Phone. È possibile scegliere tra:  
 
-    -   **未構成**。 同期スケジュールは強制されません。 それにより、独自の同期スケジュールを構成できます。  
+    -   **Non configurato**. Non viene applicata una pianificazione della sincronizzazione. In questo modo gli utenti possono configurare una pianificazione personalizzata per la sincronizzazione.  
 
-    -   **メッセージの着信時**。 電子メールや予定表アイテムなどのデータが到着したとき、自動的に同期します。  
+    -   **All'arrivo di messaggi**. I dati quali i messaggi di posta elettronica e gli elementi del calendario verranno sincronizzati automaticamente all'arrivo.  
 
-    -   **15 分**。 電子メールや予定表アイテムなどのデータが 15 分おきに同期されます。  
+    -   **15 minuti**. I dati quali i messaggi di posta elettronica e gli elementi del calendario verranno sincronizzati automaticamente ogni 15 minuti.  
 
-    -   **30 分**。 電子メールや予定表アイテムなどのデータが 30 分おきに同期されます。  
+    -   **30 minuti**. I dati quali i messaggi di posta elettronica e gli elementi del calendario verranno sincronizzati automaticamente ogni 30 minuti.  
 
-    -   **60 分**。 電子メールや予定表アイテムなどのデータが 60 分おきに同期されます。  
+    -   **60 minuti**. I dati quali i messaggi di posta elettronica e gli elementi del calendario verranno sincronizzati automaticamente ogni 60 minuti.  
 
-    -   **手動**。 手動で同期を開始する必要があります。  
+    -   **Manuale**. L'utente del dispositivo deve avviare manualmente la sincronizzazione.  
 
--   **同期する電子メールの日数**。 ドロップダウン リストから、同期する電子メールの日数を選択します。 次のいずれかの値を選択します。  
+-   **Numero di giorni di messaggi di posta elettronica da sincronizzare**. Scegliere il numero di giorni di posta elettronica da sincronizzare. Scegliere uno dei valori seguenti:  
 
-    -   **未構成**。 設定は強制されません。 そのため、デバイスにダウンロードする電子メールの量を構成できます。  
+    -   **Non configurato**. L'impostazione non viene applicata. In questo modo gli utenti possono configurare la quantità di posta elettronica da scaricare sul dispositivo.  
 
-    -   **無制限**。 利用可能なすべての電子メールを同期します。  
+    -   **Illimitato**. Sincronizza tutti i messaggi di posta elettronica disponibili.  
 
-    -   **1 日**  
+    -   **1 giorno**  
 
-    -   **3 日間**  
+    -   **3 giorni**  
 
-    -   **1 週間**  
+    -   **1 settimana**  
 
-    -   **2 週間**  
+    -   **2 settimane**  
 
-    -   **1 か月**  
+    -   **1 mese**  
 
--   **他の電子メール アカウントへのメッセージの移動を許可する**。 このオプションを選択すると、デバイス上に構成されている複数のアカウント間で電子メール メッセージを移動できます。 このオプションは iOS デバイスにのみ適用されます。  
+-   **Consenti di spostare i messaggi negli altri account di posta elettronica**. Scegliere questa opzione per consentire agli utenti di spostare i messaggi di posta elettronica tra i diversi account configurati nel dispositivo. Questa opzione è applicabile solo ai dispositivi iOS.  
 
--   **サード パーティ製アプリケーションからの電子メールの送信を許可する**。 このオプションを選択すると、既定ではない、サードパーティ製アプリケーションから電子メールを送信できます。 このオプションは iOS デバイスにのみ適用されます。  
+-   **Consentire l'invio di messaggi di posta elettronica da applicazioni di terze parti**. Selezionare questa opzione per consentire agli utenti di inviare messaggi di posta elettronica da alcune applicazioni di posta elettronica di terze parti non predefinite. Questa opzione è applicabile solo ai dispositivi iOS.  
 
--   **最近使用した電子メール アドレスを同期する**。 このオプションを選択すると、デバイスで最近使用された電子メール アドレスのリストが同期されます。 このオプションは iOS デバイスにのみ適用されます。  
+-   **Sincronizza gli indirizzi di posta elettronica utilizzati di recente**. Scegliere questa opzione per sincronizzare l'elenco di indirizzi di posta elettronica usati di recente nel dispositivo. Questa opzione è applicabile solo ai dispositivi iOS.  
 
--   **SSL の使用**。 電子メールの送受信と Exchange Server との通信に Secure Sockets Layer (SSL) 通信を使用するには、このオプションを選択します。  
+-   **Usa SSL**. Scegliere questa opzione per usare la comunicazione Secure Sockets Layer (SSL) per l'invio di messaggi di posta elettronica, la ricezione di messaggi di posta elettronica e la comunicazione con Exchange Server.  
 
--   **同期するコンテンツの種類**。 デバイスに同期するコンテンツの種類を選択します。 このオプションは Windows Phone デバイスにのみ適用できます。 次の中から選択します。  
+-   **Tipo di contenuti da sincronizzare**. Scegliere i tipi di contenuto da sincronizzare nei dispositivi. Questa opzione è applicabile solo ai dispositivi Windows Phone. È possibile scegliere tra:  
 
-    -   **電子メール**  
+    -   **Posta elettronica**  
 
-    -   **連絡先**  
+    -   **Contatti**  
 
-    -   **カレンダー**  
+    -   **Calendario**  
 
-    -   **タスク**  
+    -   **Attività**  
 
-## <a name="specify-supported-platforms-for-the-exchange-activesync-email-profile"></a>Exchange ActiveSync 電子メール プロファイルにサポートされているプラットフォームを指定します。  
+## <a name="specify-supported-platforms-for-the-exchange-activesync-email-profile"></a>Specificare le piattaforme supportate per il profilo di posta elettronica di Exchange ActiveSync  
 
-1.  Exchange ActiveSync 電子メール プロファイルの作成ウィザードの **[サポートされているプラットフォーム]** ページで、電子メール プロファイルをインストールするオペレーティング システムを選択します。 あるいは、**[すべて選択]** を選択し、利用可能なすべてのオペレーティング システムに電子メール プロファイルをインストールします。  
+1.  Nella pagina **Piattaforme supportate** della Creazione guidata profilo di posta elettronica di Exchange ActiveSync scegliere i sistemi operativi in cui verrà installato il profilo. In alternativa, scegliere **Seleziona tutto** per installare il profilo di posta elettronica su tutti i sistemi operativi disponibili.  
 
-2.  ウィザードを終了します。
+2.  Completa la procedura guidata.
 
-Exchange ActiveSync 電子メール プロファイルを展開する方法については、「[How to Deploy Email Profiles in Configuration Manager](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md)」(System Center Configuration Manager でプロファイルを展開する方法) を参照してください。  
+Per informazioni su come distribuire i profili di posta elettronica di Exchange ActiveSync, vedere l'argomento sulla [distribuzione dei profili in System Center Configuration Manager](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md).  

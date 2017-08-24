@@ -1,6 +1,6 @@
 ---
-title: "電源プランを作成して適用する | Microsoft Docs"
-description: "System Center Configuration Manager で電源プランを作成して適用します。"
+title: Creare e applicare combinazioni per il risparmio di energia | Microsoft Docs
+description: Creare e applicare combinazioni per il risparmio di energia in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,96 +18,96 @@ manager: angrobe
 ms.openlocfilehash: de81da31b524cebe8e820766a64ecc5fdb7e4771
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-and-apply-power-plans-in-system-center-configuration-manager"></a>System Center Configuration Manager で電源プランを作成して適用する方法
+# <a name="how-to-create-and-apply-power-plans-in-system-center-configuration-manager"></a>Come creare e applicare combinazioni per il risparmio di energia in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager の電源管理では、Configuration Manager に付属の電源プランを階層内のコンピューターのコレクションに適用したり、カスタムの電源プランを作成したりできます。 このトピックの手順に従って、コンピューターに組み込みの電源プランまたはカスタムの電源プランを適用します。  
-
-> [!IMPORTANT]  
->  デバイス コレクションには Configuration Manager 電源プランのみ適用できます。  
-
- コンピューターが、それぞれ異なる電源プランが適用されている複数のコレクションのメンバーである場合、次の処理が行われます。  
-
--   電源プラン: 1 台のコンピューターに複数の電源設定値が適用されている場合、最も制限の緩い値が使用されます。  
-
--   ウェイクアップ時間: 1 台のデスクトップ コンピューターに複数のウェイクアップ時間が適用されている場合、深夜に最も近い時間が使用されます。  
-
- [電源プランが複数あるコンピューター] レポートを使用すると、複数の電源プランが適用されているすべてのコンピューターを表示できます。 **** このレポートは、電源設定が競合するコンピューターを検出するのに役立ちます。 電源管理レポートの詳細については、「[System Center Configuration Manager で電源管理を監視して計画する方法](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md)」を参照してください。  
+Le funzionalità di risparmio energia in System Center Configuration Manager consentono di applicare le combinazioni per il risparmio di energia fornite con Configuration Manager a raccolte di computer nella gerarchia oppure di creare combinazioni per il risparmio di energia personalizzate. Usare la procedura in questo argomento per applicare una combinazione per il risparmio di energia predefinita o personalizzata ai computer.  
 
 > [!IMPORTANT]  
->  Windows グループ ポリシーを使用して構成された電源設定は、Configuration Manager 電源管理に優先します。  
+>  È possibile applicare le combinazioni per il risparmio di energia di Configuration Manager solo a raccolte di dispositivi.  
 
- Configuration Manager 電源プランを作成し適用するには、次の手順に従います。  
+ Se un computer è un membro di più raccolte, ognuna con combinazioni per il risparmio di energia diverse, verranno eseguite le azioni seguenti:  
 
-### <a name="to-create-and-apply-a-power-plan"></a>電源プランを作成し適用するには  
+-   Combinazione per il risparmio di energia: se a un computer sono applicati più valori per le impostazioni di risparmio energia, viene usato il valore meno restrittivo.  
 
-1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。  
+-   Ora riattivazione: se a un computer desktop vengono applicate più ore di riattivazione, viene usata l'ora più vicina alla mezzanotte.  
 
-2.  [ **資産とコンプライアンス** ] ワークスペースで [ **デバイス コレクション**] をクリックします。  
+ Usare il report **Computer con più combinazioni per il risparmio di energia** per visualizzare tutti i computer a cui sono applicate più combinazioni di risparmio di energia. In questo modo è più facile individuare i computer con conflitti. Per ulteriori informazioni sui report relativi al risparmio di energia, vedere [Come monitorare e pianificare il risparmio energia in System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
 
-3.  **デバイス コレクション** ボックスの一覧で、電源管理設定を適用して、コレクションをクリックして、 **ホーム** ] タブで、 **プロパティ** グループで、[ **プロパティ**です。  
+> [!IMPORTANT]  
+>  Le impostazioni di risparmio energia configurate tramite Criteri di gruppo di Windows avranno la priorità sulle impostazioni configurate dalle funzionalità di risparmio energia di Configuration Manager.  
 
-4.  [*<コレクション名\>* **のプロパティ**] ダイアログ ボックスの [**電源管理**] タブで、[**このコレクションの電源管理設定を指定する**] を選択します。  
+ Usare la procedura seguente per creare e applicare una combinazione per il risparmio di energia di Configuration Manager.  
+
+### <a name="to-create-and-apply-a-power-plan"></a>Per creare e applicare una combinazione per il risparmio di energia  
+
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+
+2.  Nell'area di lavoro **Asset e conformità** fare clic su **Raccolte dispositivi**.  
+
+3.  Nell'elenco **Raccolte dispositivi** fare clic sulla raccolta a cui si vogliono applicare le impostazioni di risparmio energia e quindi nel gruppo **Proprietà** della scheda **Home** fare clic su **Proprietà**.  
+
+4.  Nella scheda **Risparmio energia** della finestra di dialogo **Proprietà***<nome raccolta\>* selezionare **Specifica impostazioni di risparmio energia per questa raccolta**.  
 
     > [!NOTE]  
-    >  [参照] をクリックして、選択したコレクションから選択したコレクションへ、電源管理設定をコピーできます。 ****  
+    >  È anche possibile fare clic su **Sfoglia** e quindi copiare le impostazioni di risparmio energia da una raccolta selezionata alla raccolta selezionata.  
 
-5.  **開始** と **終了** フィールド、開始が指定および、ピーク時間 （または業務) の時間の時間を終了します。  
+5.  Nei campi **Inizio** e **Fine** specificare l'ora di inizio e di fine per le ore di punta (o lavorative).  
 
-6.  [ウェイクアップ時間 (デスクトップ コンピューター)] を有効にして、デスクトップ コンピューターが、スケジュールされた更新またはソフトウェアのインストールを実行するために、スリープ状態または休止状態から復帰する時刻を指定します。 ****  
+6.  Abilitare **Ora riattivazione (computer desktop)** per specificare l'ora in cui un computer desktop verrà riattivato dalla modalità di sospensione o ibernazione per installare gli aggiornamenti pianificati o per installazioni di software.  
 
     > [!IMPORTANT]  
-    >  電源管理機能は、内部の Windows ウェイクアップ タイマー機能を使用して、コンピューターをスリープ状態または休止状態から復帰させます。 ポータブル コンピューターが電源に接続されていないときにスリープ解除されることがないように、ポータブル コンピューターにはウェイクアップ時間の設定が適用されません。 ウェイク アップ時間はランダム化し、コンピューターが、指定されたウェイク アップ時間から 1 つの時間にわたるウェイクします。  
+    >  Le funzionalità di risparmio energia usano l'ora di riattivazione di Windows interna per riattivare i computer dalla modalità di sospensione o ibernazione. Le impostazioni dell'ora di riattivazione non vengono applicate ai computer portatili per evitare scenari in cui la riattivazione potrebbe essere eseguita quando non sono collegati alla rete elettrica. L'ora di riattivazione è casuale e i computer verranno riattivati per un periodo di un'ora dall'ora di attivazione specificata.  
 
-7.  ピーク時 (業務時間内) のカスタムの電源プランを構成する場合は、選択 **カスタム ピーク時 (ConfigMgr)** から、 **ピーク時プラン** クリックしてドロップダウン リストでは、 **編集**です。 を非ピーク時 (または業務) の時間の電源プランを構成する場合は、選択 **カスタム ピーク外 (ConfigMgr)** から、 **ピーク外プラン** クリックしてドロップダウン リストでは、 **編集**です。  
-
-    > [!NOTE]  
-    >  [コンピューター動作状況] レポートを使用すると、コンピューターのコレクションに電源プランを適用するときにピーク時およびピーク時外に使用するスケジュールを決定するのに役立ちます。 **** 詳細については、「[System Center Configuration Manager で電源管理を監視して計画する方法](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md)」を参照してください。  
-
-     組み込みの電源プランから選択することもできます。 **バランス (ConfigMgr)**, 、 **高パフォーマンス (ConfigMgr)** と **省電力 (ConfigMgr)**, 、順にクリック **ビュー** 各電源プランのプロパティを表示します。  
+7.  Se si vuole configurare una combinazione per il risparmio di energia personalizzata per le ore di punta (o lavorative), selezionare **Personalizzazione ore di punta (Configuration Manager)** nell'elenco a discesa **Piano ore di punta** e quindi fare clic su **Modifica**. Se si vuole configurare una combinazione per il risparmio di energia personalizzata per le ore non di punta (o non lavorative), selezionare **Personalizzazione fuori ore di punta (Configuration Manager)** nell'elenco a discesa **Piano fuori ore di punta** e quindi fare clic su **Modifica**.  
 
     > [!NOTE]  
-    >  組み込みの電源プランは変更できません。  
+    >  È possibile usare il report **Attività computer** per decidere le pianificazioni da usare per le ore di punta e non di punta quando si applicano combinazioni per il risparmio di energia a raccolte di computer. Per altre informazioni, vedere [Come monitorare e pianificare il risparmio energia in System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
 
-8.  [*<電源プラン名\>* **のプロパティ**] ダイアログ ボックスで、次の設定を構成します。  
+     È anche possibile selezionare le combinazioni per il risparmio di energia predefinite, **Bilanciamento (Configuration Manager)**, **Prestazioni elevate (Configuration Manager)** e **Risparmio di energia (Configuration Manager)**, quindi fare clic su **Visualizza** per visualizzare le proprietà di ogni combinazione.  
 
-    -   **名前:** この電源プランの名前を指定するか、既定値を使用します。  
+    > [!NOTE]  
+    >  Non è possibile modificare le combinazioni per il risparmio di energia predefinite.  
 
-    -   **説明:**  この電源プランの説明を指定するか、既定値を使用します。  
+8.  Nella finestra di dialogo **Proprietà***<Nome combinazione risparmio di energia\>*  configurare le impostazioni seguenti:  
 
-    -   **この電源プランのプロパティの指定:** 電源プランのプロパティを構成します。 プロパティを無効にするには、そのプロパティのチェック ボックスをオフにします。 使用できる設定の詳細については、このトピックの「 [Available power management plan settings](#BKMK_Plans) 」を参照してください。  
+    -   **Nome:** specificare un nome per la combinazione per il risparmio di energia o usare il valore predefinito fornito.  
+
+    -   **Descrizione:**  specificare una descrizione per la combinazione per il risparmio di energia o usare il valore predefinito fornito.  
+
+    -   **Specificare le proprietà di questa combinazione per il risparmio di energia:** configurare le proprietà della combinazione per il risparmio di energia. Per disabilitare una proprietà, deselezionare la casella di controllo. Per informazioni sulle impostazioni disponibili, vedere [Available power management plan settings](#BKMK_Plans) in questo argomento.  
 
         > [!IMPORTANT]  
-        >  有効にした設定は、電源プランの適用時にコンピューターに適用されます。 電源設定のチェック ボックスをオフにした場合、この電源プランが適用されたときにクライアント コンピューターの値が変更されません。 チェック ボックスをオフにしても、電源設定の値が電源プランが適用される前の値に戻ることはありません。  
+        >  Le impostazioni abilitate vengono applicate ai computer quando viene applicata la combinazione per il risparmio di energia. Se si deseleziona la casella di controllo di un'impostazione di risparmio energia, il valore nel computer client non viene modificato quando viene applicata la combinazione per il risparmio di energia. La deselezione di una casella di controllo non consente di ripristinare l'impostazione di risparmio energia sul valore precedente prima dell'applicazione di una combinazione per il risparmio di energia.  
 
-9. [**OK**] をクリックして、[*<電源プラン名\>* **のプロパティ**] ダイアログ ボックスを閉じます。  
+9. Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà***<Nome combinazione risparmio energia\>*.  
 
-10. [**OK**] をクリックして [*<コレクション名\>* **の設定**] ダイアログ ボックスを閉じ、電源プランを適用します。  
+10. Fare clic su **OK** per chiudere la finestra di dialogo **Impostazioni** *<nome raccolta\>* e applicare la combinazione per il risparmio di energia.  
 
 ##  <a name="BKMK_Plans"></a> Available power management plan settings  
- 次の表に、Configuration Manager で使用できる電源管理設定を示します。 コンピューターが電源に接続されているときの設定と、バッテリで動作しているときの設定を別々に構成できます。 使用している Windows のバージョンによっては、一部の設定が構成できない場合もあります。  
+ Nella tabella seguente sono elencate le impostazioni di risparmio energia disponibili in Configuration Manager. È possibile configurare impostazioni distinte per quando il computer è alimentato da rete elettrica o alimentato a batteria. A seconda della versione di Windows in uso, alcune impostazioni potrebbero non essere configurabili.  
 
 > [!NOTE]  
->  構成しない電源設定については、クライアント コンピューター上の現在の値が保持されます。  
+>  Le impostazioni di risparmio energia che non vengono configurate manterranno il valore corrente nei computer client.  
 
-|名前|説明|  
+|Nome|Descrizione|  
 |----------|-----------------|  
-|**(分) 後にディスプレイの電源を切る**|コンピューターが非アクティブになってから、ディスプレイをオフにするまでの時間を分単位で指定します。 ディスプレイを電源管理によってオフにしない場合は、[0] の値を指定します。 ****|  
-|**(分) 後にスリープ状態にする**|コンピューターが非アクティブになってから、そのコンピューターをスリープ状態に切り替えるまでの時間を分単位で指定します。 コンピューターを電源管理によってスリープ状態にしない場合は、[0] の値を指定します。 ****|  
-|**復帰時のパスワードを必要とする**|[**はい**] または [**いいえ**] の値で、スリープ状態から復帰するときに、コンピューターをロック解除するためにパスワードの入力を要求するかどうかを指定します。|  
-|**電源ボタン操作**|コンピューターの電源ボタンを押したときに行われる操作を指定します。 ユーザーがポータブル コンピューターのカバーを閉じたときに行われる操作を指定します。 使用可能な値は [**何もしない**]、[**スリープ**]、[**休止状態**]、および [**シャットダウン**] です。|  
-|**スタート メニュー電源ボタン**|コンピューターの [スタート] メニューの電源ボタンをクリックしたときに行われる操作を指定します。 **** ユーザーがポータブル コンピューターのカバーを閉じたときに行われる操作を指定します。 使用可能な値は [**スリープ**]、[**休止状態**]、および [**シャットダウン**] です。|  
-|**スリープ ボタン操作**|コンピューターの "スリープ" ボタンを押したときに行われる操作を指定します。 **** ユーザーがポータブル コンピューターのカバーを閉じたときに行われる操作を指定します。 使用可能な値は [**何もしない**]、[**スリープ**]、[**休止状態**]、および [**シャットダウン**] です。|  
-|**カバーを閉じたときの操作**|ユーザーがポータブル コンピューターのカバーを閉じたときに行われる操作を指定します。 使用可能な値は [**何もしない**]、[**スリープ**]、[**休止状態**]、および [**シャットダウン**] です。|  
-|**(分) 後にハード ディスクの電源を切る**|コンピューターが非アクティブになってから、ハード ディスクをオフにするまでの時間を分単位で指定します。 コンピューターのハード ディスクを電源管理によってオフにしない場合は、[0] の値を指定します。 ****|  
-|**(分) 後に休止状態にする**|コンピューターが非アクティブになってから、そのコンピューターを休止状態に切り替えるまでの時間を分単位で指定します。 コンピューターを電源管理によって休止状態にしない場合は、[0] の値を指定します。 ****|  
-|**バッテリ低下時の操作**|コンピューターのバッテリが、指定されたバッテリ低下の通知レベルに達したときに行われる操作を指定します。 ユーザーがポータブル コンピューターのカバーを閉じたときに行われる操作を指定します。 使用可能な値は [**何もしない**]、[**スリープ**]、[**休止状態**]、および [**シャットダウン**] です。|  
-|**バッテリ切れの操作**|コンピューターのバッテリが、指定されたバッテリ切れの通知レベルに達したときに行われる操作を指定します。 ユーザーがポータブル コンピューターのカバーを閉じたときに行われる操作を指定します。 使用可能な値には [**スリープ**]、[**休止状態**]、および [**シャットダウン**] が含まれます。|  
-|**ハイブリッド スリープを許可する**|[**オン**] または [**オフ**] を選択して、Windows がスリープ状態に入るときに休止状態ファイルを保存するかどうかを指定します。休止状態ファイルは、スリープ状態になっている間に停電が起きた場合に、コンピューターの状態を復元するために使用されます。<br /><br /> 既定では、ハイブリッド スリープはデスクトップ コンピューター向けに設計されているので、ポータブル コンピューターでは無効になっています。 Windows 7 を実行しているコンピューターでハイブリッド スリープを有効にすると、休止機能が無効になります。|  
-|**操作の休止中は、スタンバイ状態を許可する**|[**オン**] または [**オフ**] を選択して、コンピューターをスタンバイ状態にすること許可します。スタンバイ状態では電力がいくらか消費されますが、ウェイクアップにかかる時間を短縮できます。 [オフ] に設定した場合、コンピューターを休止状態にするか電源をオフにするかのどちらかのみが可能です。 ****|  
-|**スリープ状態になる前に必要なアイドル状態 (%)**|コンピューターがスリープ状態に切り替わるために必要な、コンピューター プロセッサのアイドル時間の割合を指定します。 Windows 7 を実行しているコンピューターでは、この値が常に [**0**] に設定されます。|  
-|**デスクトップ コンピューターの Windows ウェイク アップ タイマーを有効にする**|[**有効にする**] または [**無効にする**] を選択することで、電源管理でデスクトップ コンピューターをスリープ解除するために使用される、Windows の内蔵タイマーを有効にできます。 Windows ウェイクアップ タイマーを使ってデスクトップ コンピューターをスリープ解除する場合、コンピューターが更新をインストールしたりポリシーを受け取る時間を確保するために、既定ではウェイク状態が 10 分間保持されます。<br /><br /> ポータブル コンピューターが電源に接続されていないときにスリープ解除されることがないよう、ポータブル コンピューターではウェイク アップ タイマーがサポートされません。|  
+|**Disattiva schermo dopo (minuti)**|Specifica per quanto tempo, in minuti, il computer deve essere inattivo prima che venga disattivato lo schermo. Specificare il valore **0** se non si vuole disattivare lo schermo.|  
+|**Entra in sospensione dopo (minuti)**|Specifica per quanto tempo, in minuti, il computer deve essere inattivo prima che venga attivata la sospensione. Specificare il valore **0** se non si vuole attivare lo stato di sospensione per il computer.|  
+|**Richiedi password alla riattivazione**|Un valore **Sì** o **No** specifica se una password è necessaria per sbloccare il computer quando si accede alla riattivazione dalla sospensione.|  
+|**Azione pulsante di alimentazione**|Specifica l'azione da eseguire quando viene premuto il pulsante di alimentazione del computer. Specifica l'azione che si verifica quando l'utente chiude il coperchio di un computer portatile. Valori possibili: **Non eseguire alcuna operazione**, **Sospendi**, **Iberna** e **Arresta**.|  
+|**Pulsante di alimentazione menu Start**|Specifica l'azione che si verifica quando si preme il pulsante di alimentazione nel menu **Start** del computer. Specifica l'azione che si verifica quando l'utente chiude il coperchio di un computer portatile. Valori possibili: **Sospendi**, **Iberna** e **Arresta**.|  
+|**Azione pulsante di sospensione**|Specifica l'azione che si verifica quando si preme il pulsante **Sospendi** del computer. Specifica l'azione che si verifica quando l'utente chiude il coperchio di un computer portatile. Valori possibili: **Non eseguire alcuna operazione**, **Sospendi**, **Iberna** e **Arresta**.|  
+|**Azione chiusura coperchio**|Specifica l'azione che si verifica quando l'utente chiude il coperchio di un computer portatile. Valori possibili: **Non eseguire alcuna operazione**, **Sospendi**, **Iberna** e **Arresta**.|  
+|**Disattiva disco rigido dopo (minuti)**|Specifica per quanto tempo, in minuti, il disco rigido del computer deve essere inattivo prima che venga disattivato. Specificare il valore **0** se non si vuole disattivare il disco rigido del computer.|  
+|**Metti in stato di ibernazione dopo (minuti)**|Specifica per quanto tempo, in minuti, il computer deve essere inattivo prima che venga attivato lo stato di ibernazione. Specificare il valore **0** se non si vuole attivare lo stato di ibernazione per il computer.|  
+|**Azione per batteria in esaurimento**|Specifica l'azione che si verifica quando la batteria del computer raggiunge il livello di notifica di batteria in esaurimento specificato. Specifica l'azione che si verifica quando l'utente chiude il coperchio di un computer portatile. Valori possibili: **Non eseguire alcuna operazione**, **Sospendi**, **Iberna** e **Arresta**.|  
+|**Azione per batteria quasi scarica**|Specifica l'azione eseguita quando la batteria raggiunge il livello di notifica di batteria quasi scarica specificato. Specifica l'azione che si verifica quando l'utente chiude il coperchio di un computer portatile. I valori possibili includono: **Sospendi**, **Iberna** e **Arresta**.|  
+|**Consenti sospensione ibrida**|Impostando l'opzione su **Disattivato** o **Attivato** si specifica se Windows salva un file di ibernazione quando entra in stato di sospensione, che può essere usato per ripristinare lo stato del computer in caso di interruzione dell'alimentazione mentre è in stato di sospensione.<br /><br /> La sospensione ibrida è progettata per i computer desktop e, per impostazione predefinita, non è abilitata nei computer portatili. Nei computer che eseguono Windows 7 l'abilitazione della sospensione ibrida disabilita la funzionalità di ibernazione.|  
+|**Consentire lo stato di standby durante la sospensione dell'azione**|Impostando l'opzione su **Disattivato** o **Attivato** si consente lo stato di standby per il computer, che consuma un po' di energia, ma permette una riattivazione più veloce del computer. Se questa impostazione è impostata su **Disattivato**, il computer può solo entrare in stato ibernazione o essere spento.|  
+|**Inattività richiesta prima della sospensione (%)**|Specifica la percentuale del tempo di inattività per il tempo del processore del computer, prima che il computer possa entrare in stato di sospensione. Nei computer che eseguono Windows 7, questo valore è sempre impostato su **0**.|  
+|**Abilita timer riattivazione Windows per computer desktop**|Impostando questa opzione su **Abilitato** o **Disabilitato** è possibile abilitare il timer di Windows integrato usato dalla funzionalità di risparmio energia per riattivare un computer desktop. Quando un computer desktop viene riattivato tramite il timer di riattivazione di Windows, rimarrà attivo per 10 minuti per impostazione predefinita per consentire tempo sufficiente al computer per installare eventuali aggiornamenti o per ricevere criteri.<br /><br /> I timer di riattivazione non sono supportati nei computer portatili per evitare scenari in cui la riattivazione potrebbe essere eseguita quando non sono collegati alla rete elettrica.|  

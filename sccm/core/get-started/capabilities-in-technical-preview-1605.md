@@ -1,6 +1,6 @@
 ---
-title: "Configuration Manager の Technical Preview 1605 の機能"
-description: "System Center Configuration Manager の Technical Preview バージョン 1605 で使用できる機能について説明します。"
+title: "Funzionalità della versione Technical Preview 1605 per Configuration Manager"
+description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1605 per System Center Configuration Manager."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -17,206 +17,206 @@ manager: angrobe
 ms.openlocfilehash: 8b3d472c586e704ee48e9825138c72f655d89492
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1605-for-system-center-configuration-manager"></a>System Center Configuration Manager の Technical Preview 1605 の機能
+# <a name="capabilities-in-technical-preview-1605-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1605 per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Technical Preview)*
+*Si applica a: System Center Configuration Manager (Technical Preview)*
 
-この記事では、System Center Configuration Manager の Technical Preview バージョン 1605 で使用できる機能について説明します。 このバージョンをインストールして更新し、新機能を Configuration Manager の Technical Preview サイトに追加できます。      このバージョンの Technical Preview をインストールする前に、説明のトピック「[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)」を確認して、Technical Preview の使用に関する一般的な要件と制限、バージョン間の更新方法、および Technical Preview の機能に関するフィードバックを提供する方法について理解してください。  
+Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1605 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.  
 
- **この Technical Preview の既知の問題:**  
+ **Problemi noti di questa versione Technical Preview:**  
 
--   Technical Preview 1605 をインストールした後、管理ポイントのプロパティを更新すると、コンソールを強制的に閉じまるコンソール エラーが発生する場合があります。  これが発生した場合、管理ポイントをアンインストールし、目的の設定を使用して管理ポイントを再インストールできます。 または、Technical Preview 1605 をインストールする前に、管理ポイントを変更することができます。  
+-   Con la versione Technical Preview 1605, se si aggiornano le proprietà di un punto di gestione dopo l'installazione, si potrebbe ottenere un errore di console che forza la chiusura della console.  In questo caso è possibile disinstallare il punto di gestione e quindi reinstallarlo utilizzando le impostazioni desiderate. In alternativa è possibile modificare il punto di gestione prima di installare la versione Technical Preview 1605.  
 
--   ビジネス向け Windows ストア機能を Technical Preview 1604 で使用していて、Technical Preview 1605 にアップグレードすると、オンボード データを表示できなくなります。 他の機能はすべて引き続き機能します。 Technical Preview 1604 でオンボードした場合、Technical Preview 1605 をインストールした後もオンボードされたままで、追加のアクションを行う必要はありません。  
+-   Quando si usa la funzionalità Windows Store per le aziende con la versione Technical Preview 1604 e quindi si esegue l'aggiornamento a Technical Preview 1605 non è più possibile visualizzare i dati di caricamento. Tutte le altre caratteristiche continuano a funzionare. Se si è eseguito il caricamento con la versione Technical Preview 1604, lo si mantiene dopo l'installazione di Technical Preview 1605 e non è necessario eseguire altre azioni.  
 
- **このバージョンでお試しいただける新機能を次に示します。**  
+ **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
-##  <a name="BKMK_PerAppVPN"></a> Windows 10 デバイス向けのアプリごとの VPN  
- Configuration Manager と Intune を使用して管理されている Windows 10 デバイスの場合、Configuration Manager 管理コンソールで構成した VPN 接続を自動的に開くアプリの一覧を追加できます。 これらのアプリへの VPN トラフィックを制限するか、VPN 接続を介してすべてのトラフィックを許可し続けることができます。  
+##  <a name="BKMK_PerAppVPN"></a> VPN per app per dispositivi Windows 10  
+ Per i dispositivi Windows 10 gestiti tramite Configuration Manager con Intune è possibile aggiungere un elenco di app che aprono automaticamente una connessione VPN che è stata configurata tramite la console di amministrazione di Configuration Manager. È possibile scegliere di limitare il traffico VPN per tali applicazioni oppure continuare a consentire tutto il traffico tramite la connessione VPN.  
 
- **要件**:  
+ **Requisiti**:  
 
--   Configuration Manager と Intune  
+-   Configuration Manager con Intune  
 
--   少なくとも 1 つのデバイスに展開されている Windows 10 の VPN プロファイル  
+-   Un profilo VPN di Windows 10 che è stato distribuito ad almeno un dispositivo  
 
-##  <a name="BKMK_InstallSU"></a> ソフトウェア更新プログラムのインストール タスク シーケンスの向上  
- ソフトウェア更新プログラムのインストール タスク シーケンスに次の改良が加えられています。  
+##  <a name="BKMK_InstallSU"></a> Miglioramenti della sequenza di attività Installa aggiornamenti software  
+ Sono stati apportati i seguenti miglioramenti alla sequenza di attività Installa aggiornamenti software:  
 
--   新しいタスク シーケンス変数 SMSTSSoftwareUpdateScanTimeout が使用可能になり、タスク シーケンスの「ソフトウェア更新プログラム インストール」ステップの間に、ソフトウェア更新プログラムのスキャンのタイムアウトを制御できます。 既定値は 30 分です。  
+-   È disponibile la nuova variabile di sequenza di attività SMSTSSoftwareUpdateScanTimeout che consente di controllare il timeout dell'analisi degli aggiornamenti software durante il passaggio della sequenza di attività Installa aggiornamenti software. Il valore predefinito è 30 minuti.  
 
--   ログ記録が改善されています。 smsts.log ログ ファイルには、ソフトウェア更新プログラムのインストール プロセス中に問題をトラブルシューティングするのに役立つその他のログ ファイルを参照する新しいログ エントリが格納されます。  
+-   Sono stati apportati miglioramenti alla registrazione. Il file di registro smsts.log conterrà nuove voci di log che fanno riferimento ad altri file di log che consentono di risolvere i problemi durante il processo di installazione degli aggiornamenti software.  
 
-##  <a name="BKMK_PrepareConfigMgrClient"></a> ConfigMgr クライアントのキャプチャの準備タスク シーケンス ステップの向上  
- ConfigMgr クライアントの準備手順で、キー情報だけではなく、Configuration Manager クライアントが完全に削除されるようになりました。 タスク シーケンスでキャプチャしたオペレーティング システム イメージを展開すると、毎回新しい Configuration Manager クライアントがインストールされます。  
+##  <a name="BKMK_PrepareConfigMgrClient"></a> Miglioramenti del passaggio della sequenza di attività Prepara client ConfigMgr per l'acquisizione  
+ Il passaggio Prepara client ConfigMgr a questo punto rimuove completamente il client di Configuration Manager, invece di rimuovere solo le informazioni sulla chiave. Quando la sequenza di attività distribuisce l'immagine del sistema operativo acquisita, verrà installato ogni volta un nuovo client di Configuration Manager.  
 
-##  <a name="BKMK_Grace"></a> 必要なアプリケーション展開の猶予期間  
- 場合によっては、必要なアプリケーション展開のインストールに、設定した期限よりも多くの時間をユーザーに与えることができます。 たとえば、エンド ユーザーが休暇から戻って来たばかりの場合、期限切れのアプリケーションの展開がインストールされるまで、長時間待たなければならない場合があります。 ただし、必要なときにいつでもアプリケーションをすぐにインストールできます。  
+##  <a name="BKMK_Grace"></a> Periodo di tolleranza per le distribuzioni di applicazioni obbligatorie  
+ In alcuni casi è possibile concedere agli utenti più tempo per l'installazione di distribuzioni di applicazioni obbligatorie oltre eventuali scadenze configurate. Ad esempio, se un utente finale è appena tornato da una vacanza, potrebbe dover attendere un po' tempo mentre vengono installate le distribuzioni delle applicazioni scadute. Tuttavia potrà comunque installare l'applicazione immediatamente in qualsiasi momento.  
 
- この問題を解決するため、Configuration Manager クライアント設定をコレクションに展開することで、**猶予期間**を定義できるようになりました。  
+ Per risolvere il problema adesso è possibile definire un **periodo di tolleranza** distribuendo le impostazioni client di Configuration Manager in una raccolta.  
 
- 猶予期間を設定するには、次の操作を実行します。  
+ Per configurare il periodo di tolleranza eseguire le operazioni seguenti:  
 
-1.  クライアント設定の [**コンピューター エージェント**] ページで、新しいプロパティ [**展開期限後の実施の猶予期間 (時間)**] の値を **1** ～ **120** 時間で設定します。  
+1.  Nella pagina **Agente computer** delle impostazioni del client configurare la nuova proprietà **Periodo di tolleranza per l'imposizione dopo la scadenza della distribuzione (ore)** con un valore compreso tra **1** e **120** ore.  
 
-2.  新しいアプリケーションの展開、または既存の展開のプロパティで、[**スケジュール**] ページで [**ユーザー設定に従い、クライアント設定で定義された猶予期間が終了するまでこの展開の実施を延期する**] チェック ボックスをオンにします。  
+2.  In una nuova distribuzione dell'applicazione o nelle proprietà di una distribuzione esistente, nella pagina **Pianificazione** selezionare la casella di controllo **Ritardare l'imposizione di questa distribuzione in base alle preferenze dell'utente**, fino al periodo di tolleranza definito nelle impostazioni client.  
 
-     このチェック ボックスがオンになっていて、クライアント設定も展開するデバイスを対象としているすべての展開が、猶予期間を使用します。  
+     Tutte le distribuzioni con questa casella di controllo selezionata e che sono destinate a dispositivi in cui è stata distribuita anche l'impostazione del client avranno il periodo di tolleranza.  
 
- このリリースでは、構成する猶予期間はクライアント デバイスでは使用されません。 猶予期間を構成し、チェック ボックスをオンにすると、期限後にユーザーが構成した最初の非ビジネス ウィンドウで、アプリケーションがインストールされます。  
+ In questa versione il periodo di tolleranza configurato non è utilizzato dai dispositivi client. Se si configura un periodo di tolleranza e si seleziona la casella di controllo, l'applicazione verrà installata nella prima finestra non aziendale che l'utente ha configurato dopo la scadenza.  
 
- ソフトウェア更新プログラムの展開ウィザード、自動展開規則の作成ウィザード、およびプロパティ ページに、同様のオプションが追加されています。 ただし、現在、これらはこの Technical Preview には実装されていません。  
+ Opzioni simili sono state aggiunte alla procedura guidata di distribuzione degli aggiornamenti software, alla procedura guidata di creazione delle regole di distribuzione automatica e alle pagine delle proprietà. Tuttavia non sono attualmente implementate in questa versione Technical Preview.  
 
-##  <a name="BKMK_Remote"></a> リモート デバイスの操作の新しいエクスペリエンス  
- Configuration Manager コンソールからリモート デバイスの操作を実行するため、エクスペリエンスが改善されました。  
-[**削除/ワイプ**]、[**パスコードのリセット**]、[**リモート ロック**]、および [**アクティブ化ロックのバイパス**] などの一般的なアクションは、[**資産とコンプライアンス**] ワークスペースからアクセスする [**リモート デバイスの操作**] メニューに移動しました。  
+##  <a name="BKMK_Remote"></a> Nuova esperienza per le azioni dei dispositivi remoti  
+ È stata migliorata l'esperienza di esecuzione delle azioni dei dispositivi remoti dalla console di Configuration Manager.  
+Azioni comuni come **Ritira/cancella dati**, **Reimpostazione passcode**, **Blocco remoto** e **Bypass del blocco attivazione** sono adesso disponibili nel menu **Azioni remote dispositivo** accessibile dall'area di lavoro **Asset e conformità**.  
 
- ![新しいリモート デバイスの操作のスクリーンショット](media/New-Remote-Device-Actions.png)  
+ ![Nuova schermata Azioni remote dispositivo](media/New-Remote-Device-Actions.png)  
 
- これらの各操作の状態は次の場所で確認できます。  
+ È possibile trovare lo stato per ognuna di queste operazioni nelle seguenti posizioni:  
 
--   [**デバイス**] ノードからデバイスを選択する場合は、詳細ウィンドウ  
+-   Nel riquadro dei dettagli quando si seleziona un dispositivo dal nodo **Dispositivi**.  
 
--   デバイスの [**プロパティ**] ページ  
+-   Nella pagina **Proprietà** per un dispositivo.  
 
--   [**デバイス**] ノードのメイン ページ (既定ではすべての列が表示されない場合があります)  
+-   Nella pagina principale del nodo **Dispositivi** (non tutte le colonne potrebbero essere visibili per impostazione predefinita).  
 
- iOS のアクティブ化ロックのバイパスの詳細については、「[Help protect iOS devices with Activation Lock bypass for Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock)」(Configuration Manager のアクティブ化ロックのバイパスで iOS デバイスを保護する) の「**Current known issues with Activation Lock bypass in the Configuration Manager Technical Preview**」(Configuration Manager の Technical Preview におけるのアクティブ化ロックのバイパスの現在の既知の問題) セクションをご覧ください。  
+ Per altre informazioni sul bypass del blocco attivazione iOS, vedere [Proteggere i dispositivi iOS con il bypass del blocco attivazione per Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock), in particolare la sezione **Problemi noti correnti relativi al bypass del blocco attivazione in Configuration Manager Technical Preview**.  
 
-##  <a name="BKMK_WSFB"></a> ビジネス向け Windows ストアのアプリ  
- [ビジネス向け Windows ストア](https://www.microsoft.com/business-store)は、組織向けのアプリを検索して、個別に、または一括で購入できる場所です。 ストアを Configuration Manager に接続すると、一括購入したアプリを Configuration Manager コンソールから管理できます。例を挙げます。  
+##  <a name="BKMK_WSFB"></a> Windows Store per le app aziendali  
+ In [Windows Store per le aziende](https://www.microsoft.com/business-store) è possibile trovare e acquistare app per l'organizzazione, singolarmente o con Volume Purchase Program. Connettendo lo Store a Configuration Manager, è possibile gestire le app acquistate con Volume Purchase Program dalla console di Configuration Manager, ad esempio:  
 
--   購入したアプリの一覧を Configuration Manager に同期させることができます。  
+-   È possibile sincronizzare l'elenco di app acquistate con Configuration Manager  
 
--   同期されたアプリは Configuration Manager コンソールに表示され、他のすべてのアプリと同様に展開できます。  
+-   Le app sincronizzate vengono visualizzate nella console di Configuration Manager e possono essere distribuite come qualsiasi altra app  
 
--   Configuration Manager は 24 時間ごとにストアからアプリのライセンス情報をダウンロードし、Configuration Manager コンソールで、これを確認することができます。  
+-   Ogni 24 ore Configuration Manager scarica informazioni sulle licenze delle app dall'archivio ed è possibile esaminarle nella console di Configuration Manager  
 
- Technical Preview の 1604 リリースでは、Configuration Manager コンソールでビジネス向け Windows ストアからアプリの同期と表示ができました。 このリリースでは、同期されたストア アプリから Configuration Manager アプリケーションを作成して展開する機能が追加されています。  
+ Nella versione Technical Preview 1604 è possibile sincronizzare e visualizzare le app da Windows Store per l'azienda nella console di Configuration Manager. In questa versione è stata aggiunta la possibilità di creare e distribuire applicazioni di Configuration Manager da app dello store sincronizzate.  
 
-### <a name="set-up-windows-store-for-business-synchronization"></a>ビジネス向け Windows ストアの同期の設定  
+### <a name="set-up-windows-store-for-business-synchronization"></a>Configurare la sincronizzazione di Windows Store per le aziende  
 
-1.  Azure Active Directory で、"Web アプリケーションや Web API" 管理ツールとして Configuration Manager を登録します。 後で必要なクライアント ID が表示されます。  
+1.  In Azure Active Directory registrare Configuration Manager come strumento di gestione "Applicazione Web e/o API Web". Si riceverà un ID client che sarà necessario in seguito.  
 
-    1.  [https://manage.windowsazure.com](https://manage.windowsazure.com) の Active Directory ノードで、Azure Active Directory を選択し、[**アプリケーション**]  >  [**追加**] をクリックします。  
+    1.  Nel nodo Active Directory di [https://manage.windowsazure.com](https://manage.windowsazure.com) selezionare Azure Active Directory e quindi fare clic su **Applicazioni** > **Aggiungi**.  
 
-    2.  **[組織で開発中のアプリケーションを追加]** をクリックします。  
+    2.  Fare clic su **Aggiungi un'applicazione che l'organizzazione sta sviluppando**.  
 
-    3.  アプリケーションの名前を入力し、**[Web アプリケーション]** または **[Web API]**、あるいはその両方を選択し、**次へ進む**矢印をクリックします。  
+    3.  Immettere un nome per l'applicazione, selezionare **Applicazione Web** e/o **API Web** e quindi fare clic sulla freccia **Avanti**.  
 
-    4.  **[サインオン URL]** と **[アプリケーション ID/URI]** の両方に同じ URL を入力します。 URL はあらゆるものを使用でき、実際のアドレスに解決する必要はありません。 たとえば、**https://&lt;yourdomain>/sccm** を入力できます。  
+    4.  Immettere lo stesso URL per **URL accesso** e **URI ID app**. L'URL può essere di qualsiasi tipo e non è necessario che venga risolto in un indirizzo reale. Ad esempio, è possibile immettere **https://&lt;dominioutente>/sccm**.  
 
-    5.  ウィザードを完了します。  
+    5.  Completare la procedura guidata.  
 
-2.  Azure Active Directory で、登録済み管理ツールのクライアント キーを作成します。  
+2.  In Azure Active Directory creare una chiave client per lo strumento di gestione registrato.  
 
-    1.  作成したアプリケーションを強調表示し、[**構成**] をクリックします。  
+    1.  Evidenziare l'applicazione appena creata e fare clic su **Configura**.  
 
-    2.  [**キー**] で、リストから期間を選択して、[**保存**] をクリックします。 これにより、新しいクライアント キーが作成されます。 ビジネス向け Windows ストアを Configuration Manager に正常にオンボードするまで、このページから移動しないでください。  
+    2.  In **Chiavi** selezionare una durata nell'elenco e fare clic su **Salva**. Verrà creata una nuova chiave client. Non uscire dalla pagina fino a quando non è stato completato il caricamento di Windows Store per le aziende in Configuration Manager.  
 
-3.  ビジネス向け Windows ストアで、ストア管理ツールとして Configuration Manager を構成します。  
+3.  In Windows Store per le aziende configurare Configuration Manager come strumento di gestione dello Store.  
 
-    1.  [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/managementtools) を開き、サインインを求められたらサインインします。  
+    1.  Aprire [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/managementtools) e, se viene chiesto, eseguire l'accesso.  
 
-    2.  要求された場合は、使用条件に同意します。  
+    2.  Accettare le condizioni per l'utilizzo, se necessario.  
 
-    3.  [**管理ツール**] で、[**Add a management tool**]\(管理ツールを追加) をクリックします。  
+    3.  In **Management Tools** fare clic su **Add a management tool**.  
 
-    4.  **[Search for the tool by name]** (名前でツールを検索) で、先ほど AAD で作成したアプリケーションの名前を入力して、**[追加]** クリックします。  
+    4.  In **Search for the tool by name** digitare il nome dell'applicazione creata in precedenza in AAD e quindi fare clic su **Add**.  
 
-    5.  インポートしたアプリケーションの横にある [**アクティブ化**] をクリックします。  
+    5.  Fare clic su **Activate** accanto all'applicazione appena importata.  
 
-    6.  オフラインでライセンスされるアプリケーションを購入する場合、**オフラインでライセンスされたアプリの表示**ウィザードで、[**はい**] をクリックします。  
+    6.  Nella procedura guidata **Show Offline-Licensed app** fare clic su **Yes** se si vuole consentire l'acquisto di applicazioni con licenza offline.  
 
-4.  ビジネス向け Windows ストアから少なくとも 1 つのアプリを購入します。  
+4.  Acquistare almeno un'app da Windows Store per le aziende.  
 
-5.  Configuration Manager コンソールの**管理**ワークスペースで、[**Cloud Services**] を展開して、[**ビジネス向け Windows ストア**] をクリックします。  
+5.  Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e quindi fare clic su **Windows Store per le aziende.**  
 
-6.  [**ホーム**] タブの [**作成**] グループで、[**ビジネス向け Windows ストア アカウントの追加**] をクリックします。  
+6.  Nel gruppo **Crea** della scheda **Home** fare clic su **Aggiungere un account di Windows Store per le aziende**.  
 
-7.  Azure Active Directory からテナント ID、クライアント ID、クライアント キーを追加し、ウィザードを完了します。  
+7.  Aggiungere l'ID tenant, l'ID client e la chiave client da Azure Active Directory, quindi completare la procedura guidata.  
 
-8.  完了した時点で、Configuration Manager コンソールの [**ビジネス向け Windows ストア**] で構成されたアカウントが表示されます。  
+8.  Al termine verrà visualizzato l'account configurato nell'elenco degli **account di Windows Store per le aziende** nella console di Configuration Manager.  
 
-### <a name="try-it-out"></a>試してみましょう。  
- 次のタスクを完了し、Microsoft Connect サイトの「[Configuration Manager feedback program](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback)」 (Configuration Manager フィードバック プログラム) ページのフィードバック フォームを使用して、どのように動作したかをお知らせください。  
+### <a name="try-it-out"></a>Prova subito!  
+ Provare a completare l'operazione seguente e inviare le informazioni sul funzionamento della procedura utilizzando il modulo di feedback disponibile alla pagina del [programma dei commenti e suggerimenti di Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) sul sito Microsoft Connect:  
 
- ビジネス向け Windows ストアのオフライン ライセンス付きアプリから Configuration Manager アプリケーションを作成して展開します。  
+ Creare e distribuire un'applicazione di Configuration Manager da un archivio di Windows per app aziendali con licenza offline.  
 
-1.  Configuration Manager コンソールの [**ソフトウェア ライブラリ**] ワークスペースで [**アプリケーション管理**] を展開し、[**ストア アプリのライセンス情報**] をクリックします。  
+1.  Nell'area di lavoro **Raccolta software** della console di Configuration Manager espandere **Gestione applicazioni** e fare clic su **Informazioni di licenza per le app dello Store**.  
 
-2.  展開するアプリを選び、**[ホーム]** タブの **[作成]** グループで、**[アプリケーションの作成]** をクリックします。  
+2.  Scegliere l'app che si vuole distribuire quindi nella scheda **Home** nel gruppo **Crea** fare clic su **Crea applicazione**.  
 
- ビジネス向け Windows ストアのアプリを含む Configuration Manager アプリケーションが作成されます。 他の Configuration Manager のアプリケーションと同様に、このアプリケーションを展開して監視できます。  
+ Viene creata un'applicazione di Configuration Manager contenente l'archivio di Windows per l'applicazione aziendale. È quindi possibile distribuire e monitorare l'applicazione come qualsiasi altra applicazione di Configuration Manager.  
 
 > [!IMPORTANT]  
->  オフライン ライセンス付きアプリから単一の展開の種類で Configuration Manager アプリケーションを作成すると、これを MDM 管理されたデバイスに展開して、Configuration Manager クライアントで管理することもできます。 複数の展開の種類でアプリを展開しようとすると、インストールは失敗します。  
+>  Quando si crea un'applicazione di Configuration Manager con un solo tipo di distribuzione da un'app con licenza offline, è possibile distribuirla a dispositivi che sono gestiti da MDM e anche gestirla con il client di Configuration Manager. Se si tenta di distribuire un'app con più tipi di distribuzione l'installazione non riuscirà.  
 >   
->  現在、Configuration Manager でオフライン ライセンス付きアプリを展開することはできません。  
+>  Attualmente non è possibile distribuire le applicazioni con licenza online con Configuration Manager.  
 
-##  <a name="BKMK_VPP2"></a> ボリューム購入アプリの全般的な向上  
+##  <a name="BKMK_VPP2"></a> Miglioramenti generali per le app acquistate con Volume Purchase Program  
 
--   このリリースでは、ビジネス向け Windows ストアおよび iOS App Store のボリューム購入アプリが同じビューの [**ストア アプリのライセンス情報**] に統合されています。  
+-   In questa versione le app acquistate con Volume Purchase Program dall'archivio di Windows per l'azienda e iOS App Store sono state consolidate nella stessa visualizzazione **Informazioni di licenza per le app dello Store**.  
 
--   iOS のボリューム購入アプリの場合、アプリケーションの作成ウィザードの [**iOS アプリケーション パッケージ ブラウザー**] ダイアログ ボックスから [Apple Volume Purchase Program] タブが削除されています。 iOS のボリューム購入アプリを作成するには、次の手順を使用します。  
+-   Per le app iOS acquistate con Volume Purchase Program la scheda Volume Purchase Program di Apple è stata rimossa dalla finestra di dialogo **Browser pacchetto app per iOS** nella Creazione guidata applicazione. Per creare un'app iOS acquistata con Volume Purchase Program eseguire questi passaggi:  
 
-    1.  1.  Configuration Manager コンソールの [**ソフトウェア ライブラリ**] ワークスペースで [**アプリケーション管理**] を展開し、[**ストア アプリのライセンス情報**] をクリックします。  
+    1.  1.  Nell'area di lavoro **Raccolta software** della console di Configuration Manager espandere **Gestione applicazioni** e fare clic su **Informazioni di licenza per le app dello Store**.  
 
-    2.  2.  展開するアプリを選び、[**ホーム**] タブの [**作成**] グループで、[**アプリケーションの作成**]をクリックします。  
+    2.  2.  Scegliere l'app che si vuole distribuire quindi nella scheda **Home** nel gruppo **Crea** fare clic su **Crea applicazione**.  
 
--   ボリューム購入アプリの Apple VPP トークンの取得とアップロードに使用する Configuration Manager コンソール内の場所が変更されました。 これは、[**Cloud Services**] > [**Apple Volume Purchase Program のトークン**] ノードの下の [**管理者**] ワークスペースで行えます。  
+-   Il percorso che si usa per ottenere e caricare un token VPP di Apple per le app acquistate con Volume Purchase Program nella console di Configuration Manager è stato modificato. Ora è possibile farlo nell'area di lavoro **Amministrazione** sotto il nodo **Servizi cloud** > **Token di Volume Purchase Program di Apple**.  
 
-##  <a name="BKMK_VPP"></a> エンタープライズ データ保護 (EDP)  
- エンタープライズ データ保護 (EDP) ポリシー (保護されているアプリ、EDP 保護レベル、およびネットワーク上の企業データを検索する方法を選択できるようにするなど) を展開するのに便利な構成項目を作成することができます。 EDP の詳細については、次のトピックを参照してください。  
+##  <a name="BKMK_VPP"></a> Enterprise Data Protection (EDP)  
+ È possibile creare elementi di configurazione che consentono di distribuire i criteri di protezione dei dati aziendali (Enterprise Data Protection o EDP), ad esempio consentono di scegliere le app protette, il livello di protezione EDP e come trovare i dati aziendali in rete. Per altre informazioni su EDP, vedere gli argomenti seguenti:  
 
--   [エンタープライズ データ保護 (EDP) を使用した企業のデータの保護](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-edp)  
+-   [Proteggere i dati aziendali tramite EDP (Enterprise Data Protection)](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-edp)  
 
--   [System Center Configuration Manager を使用したエンタープライズ データ保護 (EDP) ポリシーの作成と展開](https://technet.microsoft.com/itpro/windows/keep-secure/create-edp-policy-using-sccm)  
+-   [Creare e distribuire un criterio di protezione dei dati aziendali (EDP) tramite System Center Configuration Manager](https://technet.microsoft.com/itpro/windows/keep-secure/create-edp-policy-using-sccm)  
 
-##  <a name="BKMK_End"></a> エンド ユーザーはポータル サイトからアプリをインストールできる  
- オンプレミスの MDM は、System Center Configuration Manager バージョン 1511 で導入されました。 以前のバージョンでは、オンプレミスの MDM で管理されているデバイスへの**必須**インストールの展開目的で、MDM で管理された Windows 10 デバイスにアプリケーションを展開することができました。  
+##  <a name="BKMK_End"></a> Gli utenti finali possono installare le app dal portale aziendale  
+ MDM locale è stato introdotto nella versione 1511 di System Center Configuration Manager. Nelle versioni precedenti era possibile distribuire applicazioni per dispositivi Windows 10 gestiti da MDM che avevano installazione **Richiesta** come scopo di distribuzione per dispositivi locali gestiti da MDM.  
 
- このリリースでは、オンプレミスの MDM で管理された Windows 10 コンピューターのユーザーにアプリを**使用可能にする**目的で展開できるようになり、ユーザーはこれらのアプリをポータル サイトから自身でインストールできるようになりました。
-この Technical Preview では、会社のポータルを 15 分以上開いたままにすると、エンド ユーザーにエラー メッセージが表示されます。 この問題に対処するには、会社のポータルを再起動します。  
+ In questa versione è possibile distribuire applicazioni con lo scopo di distribuzione **Disponibile** a utenti di computer Windows 10 locali gestiti da MDM e gli utenti possono installare queste applicazioni autonomamente dal portale aziendale.
+In questa versione Technical Preview se il portale aziendale rimane aperto per più di 15 minuti all'utente finale verrà visualizzato un messaggio di errore. Per risolvere il problema riavviare il portale aziendale.  
 
-### <a name="before-you-start"></a>アップグレードを開始する前に  
+### <a name="before-you-start"></a>Prima di iniziare  
 
-#### <a name="server-prerequisites"></a>サーバーの前提条件  
+#### <a name="server-prerequisites"></a>Prerequisiti del server  
 
--   .NET 4.5 以降 (再起動が必要)  
+-   .NET 4.5 o versioni successive (richiede il riavvio)  
 
--   設定スクリプト用の PowerShell 3.0 (再起動が必要)  
+-   PowerShell 3.0 per lo script di configurazione (richiede il riavvio)  
 
-#### <a name="client-prerequisites"></a>クライアントに関する前提条件  
+#### <a name="client-prerequisites"></a>Prerequisiti client  
 
--   Windows 10 Desktop 1511 (OS ビルド番号 10586.218) 以降  
+-   Windows 10 Desktop 1511 (build del sistema operativo 10586.218) o versione successiva  
 
-#### <a name="general-prerequisites"></a>一般的な前提条件  
+#### <a name="general-prerequisites"></a>Prerequisiti generali  
 
--   [オンプレミス モバイル デバイス管理の準備手順](https://technet.microsoft.com/library/mt613153.aspx)と[デバイスの登録](https://technet.microsoft.com/library/mt627870.aspx)が完了していることを確認します。  
+-   Accertarsi di avere completato la [preparazione per Gestione dispositivi mobili locali](https://technet.microsoft.com/library/mt613153.aspx) e di aver [registrato i dispositivi](https://technet.microsoft.com/library/mt627870.aspx).  
 
--   会社のポータルを使用した場合の最適なアプリケーションのインストール エクスペリエンスのため、Configuration Manager に Microsoft Intune へのアクティブな接続があることを確認します。  
+-   Per la migliore esperienza di installazione delle applicazioni quando si usa il portale aziendale, assicurarsi che Configuration Manager disponga di una connessione attiva a Microsoft Intune.  
 
--   一括登録オプションを選択した場合は、このシナリオを実行する前に登録したデバイスにユーザーとデバイスのアフィニティを構成します。  
+-   Se si sceglie l'opzione di registrazione in blocco, configurare l'affinità del dispositivo utente per il dispositivo registrato prima di provare questo scenario.  
 
-### <a name="configuration-steps"></a>構成手順  
+### <a name="configuration-steps"></a>Procedura di configurazione  
 
-#### <a name="install-the-application-catalog-roles-and-enable-mobile-device-management-support"></a>アプリケーション カタログの役割をインストールし、モバイル デバイス管理のサポートを有効にします。  
+#### <a name="install-the-application-catalog-roles-and-enable-mobile-device-management-support"></a>Installare i ruoli Catalogo applicazioni e abilitare il supporto di Gestione di dispositivi mobili  
 
-1.  アプリケーション カタログ Web サービスと Web サイトのロールを追加します。  
+1.  Aggiungere i ruoli Servizio Web e Sito Web del Catalogo applicazioni  
 
-    1.  [**HTTPS モード**] と [**モバイル デバイスでこのアプリケーション カタログ Web サービス ポイントの使用を許可する**] オプションを選びます。  
+    1.  Selezionare **Modalità HTTPS** e l'opzione **Consenti ai dispositivi mobili di usare questo punto per servizi Web del Catalogo applicazioni**.  
 
-    2.  この Technical Preview の制限事項:  
+    2.  Limitazioni note della versione Technical Preview:  
 
-        -   モバイル デバイスの接続を許可するオプションを選択する前に、既存のアプリケーション カタログの役割をアンインストールする必要があります。  
+        -   È necessario disinstallare eventuali ruoli Catalogo applicazioni esistenti prima di selezionare l'opzione per consentire ai dispositivi mobili di connettersi.  
 
-        -   アプリケーション カタログの役割が 1 セットしかないことを確認し、その役割が登録ポイントと登録プロキシ ポイントの役割と同じサイト システムに併置されていることを確認します。  
+        -   Assicurarsi che esista un solo set di ruoli Catalogo applicazioni e che i ruoli si trovino nello stesso sistema del sito insieme ai ruoli Punto di registrazione e Punto proxy di registrazione.  
 
-2.  次のコンポーネントが Configuration Manager コンソールの [コンポーネント ステータス] ノードから動作可能であることを確認します。  
+2.  Verificare che i componenti seguenti siano operativi dal nodo Stato componente nella console di Configuration Manager:  
 
     -   **SMS_AWEBSVC_CONTROL_MANAGER**  
 
@@ -226,88 +226,88 @@ ms.lasthandoff: 08/07/2017
 
     -   **SMS_PORTALWEB_CONTROL_MANAGER**  
 
-### <a name="configure-boundaries"></a>［境界の構成］  
- イントラネット専用の配布ポイントの必要な境界を構成します。  
+### <a name="configure-boundaries"></a>Configurare i limiti  
+ Configurare i limiti necessari per i punti di distribuzione solo intranet.  
 
 > [!NOTE]  
->  現時点では、モバイル デバイス管理には IPv4 範囲の境界のみがサポートされています。  
+>  In questo momento per la gestione dei dispositivi mobili sono supportati solo i limiti dell'intervallo IPv4.  
 
-### <a name="deploy-the-company-portal-application-and-configuration"></a>会社のポータル アプリケーションと構成を展開する  
+### <a name="deploy-the-company-portal-application-and-configuration"></a>Distribuire l'applicazione del portale aziendale e la configurazione  
 
-1.  Technical Preview に含まれている構成スクリプトを使用して、会社のポータルの展開と構成を準備します。  
+1.  Per preparare la distribuzione del portale aziendale e la configurazione, usare lo script di configurazione incluso nella versione Technical Preview:  
 
-    1.  管理者特権の PowerShell コマンド ウィンドウを開きます。  
+    1.  Aprire un prompt di comando di PowerShell con privilegi elevati.  
 
-    2.  **set-executionPolicy RemoteSigned** を実行します。  
+    2.  Eseguire **set-executionPolicy RemoteSigned**  
 
-    3.  フォルダー **&lt;SCCM のインストール ディレクトリ\>\cd.latest\SMSSETUP\TOOLS\MDM** から **.\ConfigurationScript.ps1** を実行します。  
+    3.  Dalla cartella **&lt;directory di installazione SCCM\>\cd.latest\SMSSETUP\TOOLS\MDM** eseguire **.\ConfigurationScript.ps1**  
 
-     構成スクリプトは、以下を行います。  
+     Lo script di configurazione esegue le operazioni seguenti:  
 
-    1.  同じフォルダー内の**CompanyPortalOnPremisesMDM.appx** を使用して、Windows アプリ パッケージの展開の種類を持つ Configuration Manager アプリケーションを作成する  
+    1.  Crea un'applicazione di Configuration Manager con il tipo di distribuzione pacchetto app Windows tramite **CompanyPortalOnPremisesMDM.appx** nella stessa cartella.  
 
-    2.  会社のポータルを構成する構成項目と構成基準を作成する  
+    2.  Crea un elemento di configurazione e la linea di base di configurazione che configura il portale aziendale.  
 
-    3.  構成基準とアプリケーションの両方を展開し、すべての配布ポイントにアプリケーションを追加する  
+    3.  Consente di distribuire sia la linea di base di configurazione sia l'applicazione e aggiunge l'applicazione a tutti i punti di distribuzione.  
 
     > [!NOTE]  
-    >  アプリケーション カタログの役割が、プライマリ サイトと併置されていない場合は、次の操作を実行します。  
+    >  Se i ruoli Catalogo applicazioni non si trovano nella stessa posizione del sito primario, eseguire le operazioni seguenti:  
     >   
-    >  -   [**資産とコンプライアンス**] ワークスペースで、構成項目 **OnPremMDM Portal Configuration CI - server urls** を検索します。  
-    > -   [**コンプライアンス規則**] の値をアプリケーション カタログの役割が配置されているサイト システムの完全修飾ドメイン名に変更します。  
+    >  -   Nell'area di lavoro **Asset e conformità** individuare l'elemento di configurazione **OnPremMDM Portal Configuration CI - server urls** (CI configurazione portale OnPremMDM - URL del server)  
+    > -   Modificare il valore **Regole di conformità** nel nome di dominio completo del sistema del sito in cui si trovano i ruoli Catalogo applicazioni.  
 
-2.  会社のポータル アプリケーションとその構成がどちらも展開されたら、Configuration Manager コンソールの [**展開**] セクションを使用して、アプリケーションと構成基準が特定のデバイスに対応していることを確認します。 デバイスの [スタート] メニューに、会社のポータルが [**会社のポータル (Technical Preview)**] として表示されます。  
+2.  Dopo aver distribuito l'applicazione del portale aziendale e la relativa configurazione, verificare che la linea di base dell'applicazione e della configurazione siano compatibili per il dispositivo specificato utilizzando la sezione **Distribuzioni** della console di Configuration Manager. Il portale aziendale verrà visualizzato come **Portale aziendale (Technical Preview)** nel menu Start sul dispositivo.  
 
-### <a name="try-it-out"></a>試してみましょう。  
- 次のタスクを完了し、Microsoft Connect サイトの「[Configuration Manager feedback program](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback)」 (Configuration Manager フィードバック プログラム) ページのフィードバック フォームを使用して、どのように動作したかをお知らせください。  
+### <a name="try-it-out"></a>Prova subito!  
+ Provare a completare le operazioni seguenti e inviare le informazioni sul funzionamento della procedura utilizzando il modulo di feedback disponibile alla pagina del [programma dei commenti e suggerimenti di Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) sul sito Microsoft Connect:  
 
-1.  サポートされている展開の種類を持つ複数のアプリケーションを、**使用可能にする**目的でユーザー コレクションに展開します。 この Technical Preview では、管理者の承認を必要とするアプリケーションはサポートされておらず、会社のポータルにも表示されません。  
+1.  Distribuire varie applicazioni con tipi di distribuzione supportati a una raccolta di utenti con scopo di distribuzione **Disponibile**. In questa versione Technical Preview le applicazioni che richiedono l'approvazione dell'amministratore non sono supportate e non saranno visualizzate nel portale aziendale.  
 
-2.  ユーザーはポータル サイトからアプリを参照してインストールできます。  
+2.  Gli utenti possono quindi cercare e installare le app dal portale aziendale.  
 
-     会社のポータルを開くと、[**System Center Configuration Manager**] という認証ダイアログ ボックスが表示されます。ユーザーの Active Directory の資格情報を指定 (user@domain またはドメイン\ユーザーのいずれかの形式で) してログインします。  
+     Dopo aver aperto il portale aziendale, verrà visualizzata una finestra di dialogo di autenticazione denominata **System Center Configuration Manager**. Specificare le credenziali Active Directory dell'utente (nella forma user@domain o dominio\utente) per effettuare l'accesso.  
 
-##  <a name="BKMK_SW1"></a> ソフトウェア センターの更新プログラムおよびオペレーティング システムの新しいタブ  
- このリリースでは、ソフトウェア センター アプリケーションのレイアウトを改善するため、次の変更が加えられています。  
+##  <a name="BKMK_SW1"></a> Nuove schede per gli aggiornamenti e i sistemi operativi in Software Center  
+ In questa versione sono state apportate le seguenti modifiche per migliorare il layout dell'applicazione Software Center:  
 
--   [**アプリケーション**] タブは、[**更新**]、「**オペレーティング システム**」 (どちらも以前は 「**フィルター**」 一覧にありました)、および [**アプリケーション**] の 3 つの別々のタブに分割されています。  
+-   La scheda **Applicazioni** è stata suddivisa in tre schede separate: **Aggiornamenti**, **Sistemi operativi** (disponibili in precedenza nell'elenco **Filtri**) e **Applicazioni**.  
 
-##  <a name="BKMK_ServerGroups"></a> サーバー グループの提供  
- System Center Configuration Manager の Technical Preview バージョン 1511 には、コレクション内のすべてのデバイスがサーバー グループを構成するコレクションを作成する機能が含まれていました。 そして、サーバー グループにソフトウェアの更新プログラムを展開するときに使用するサーバー グループ設定を構成する、特定の時間に更新されるコンピューターの割合を制御する、および展開前および展開後の PowerShell スクリプトを構成してカスタム アクションを実行することができました。  
+##  <a name="BKMK_ServerGroups"></a> Eseguire la manutenzione di un gruppo di server  
+ La versione Technical Preview 1511 per System Center Configuration Manager includeva la possibilità di creare una raccolta in cui tutti i dispositivi della raccolta formavano un gruppo di server. Quindi si poteva configurare le impostazioni del gruppo di server da usare per la distribuzione di aggiornamenti software al gruppo di server, controllare la percentuale di computer che venivano aggiornati in qualsiasi momento e configurare gli script di PowerShell di pre-distribuzione e post-distribuzione per eseguire azioni personalizzate.  
 
- System Center Configuration Manager の Technical Preview バージョン 1605 では、サーバー グループ内のコンピューターを定義した順番で更新できる機能と、サーバー グループ内のコンピューターの状態を表示するため強化された監視が追加されています。また、クライアントがソフトウェア更新プログラムのインストールに失敗し、他のクライアントのソフトウェア更新プログラムのインストールを妨げている場合に便利な、展開ロックを解除する機能も提供されています。  
+ La versione Technical Preview 1605 per System Center Configuration Manager aggiunge la possibilità di aggiornare i computer del gruppo di server in un ordine specifico definito dall'utente, aggiunge il monitoraggio avanzato per visualizzare lo stato per i computer del gruppo di server e offre la possibilità di cancellare i blocchi di distribuzione, che si rivela utile quando i client non sono riusciti a installare gli aggiornamenti software e impediscono ad altri client di installare i loro aggiornamenti software.  
 
-### <a name="try-it-out"></a>試してみましょう。  
- 次のタスクを完了し、Microsoft Connect サイトの「[Configuration Manager feedback program](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback)」 (Configuration Manager フィードバック プログラム) ページのフィードバック フォームを使用して、どのように動作したかをお知らせください。  
+### <a name="try-it-out"></a>Prova subito!  
+ Provare a completare le operazioni seguenti e inviare le informazioni sul funzionamento della procedura utilizzando il modulo di feedback disponibile alla pagina del [programma dei commenti e suggerimenti di Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) sul sito Microsoft Connect:  
 
--   サーバー グループを表すコレクションを作成できます。 このテストでは、このコレクションに 2 台のコンピューターを含めるようにメンバーシップ収集規則を構成できます。   
+-   È possibile creare una raccolta che rappresenta un gruppo di server. Per questo test, è possibile configurare le regole di appartenenza alla raccolta in modo che nella raccolta siano presenti 2 macchine.   
 
--   サーバー グループ内のコンピューターが、コレクションのサーバー グループの設定に基づいて、特定の順序でソフトウェア更新プログラムをインストールすることを指定できます。 手順内のサンプル スクリプトを使用して、展開前スクリプトと展開後スクリプトを指定します。  
+-   È possibile specificare che i computer del gruppo di server installano gli aggiornamenti software in un ordine specifico in base alle impostazioni del gruppo di server per la raccolta. Utilizzare gli script di esempio nella procedura per specificare gli script di pre-distribuzione e post-distribuzione.  
 
--   ソフトウェア更新プログラムをこのコレクションに展開できます。 C:\temp で (サンプル スクリプトから作成した) start.txt ファイルと end.txt ファイルを調査して、サーバー グループ内のコンピューター上の展開の開始時刻と終了時刻を確認します。 詳細については、UpdatesDeployment.log ファイルを参照してください。  
+-   È possibile distribuire un aggiornamento software a questa raccolta. Esaminare i file start.txt ed end.txt (creati dagli script di esempio) in C:\temp e verificare l'ora di inizio e fine per la distribuzione nei computer del gruppo di server. Esaminare il file UpdatesDeployment.log per ulteriori informazioni.  
 
-#### <a name="to-create-a-collection-for-a-server-group"></a>サーバー グループのコレクションを作成するには  
+#### <a name="to-create-a-collection-for-a-server-group"></a>Per creare una raccolta per un gruppo di server  
 
-1.  サーバー グループ内のコンピューターを含む[デバイス コレクションを作成](https://technet.microsoft.com/library/gg712295.aspx)します。  
+1.  [Creare una raccolta di dispositivi](https://technet.microsoft.com/library/gg712295.aspx) che contenga i computer del gruppo di server.  
 
-2.  **[資産とコンプライアンス]** ワークスペースで **[デバイス コレクション]** をクリックし、サーバー グループ内のコンピューターを含むコレクションを右クリックして、**[プロパティ]** をクリックします。  
+2.  Nell'area di lavoro **Asset e conformità** fare clic su **Raccolte di dispositivi**, quindi fare clic con il pulsante destro del mouse sulla raccolta che contiene i computer del gruppo di server e scegliere **Proprietà**.  
 
-3.  **[全般]** タブで **[すべてのデバイスが同じサーバー グループに属す]** を選択し、**[設定]** をクリックします。  
+3.  Nella scheda **Generale** selezionare **Tutti i dispositivi fanno parte dello stesso gruppo di server**, quindi fare clic su **Impostazioni**.  
 
-4.  **[サーバー グループ設定]** ページで、次のいずれかの設定を指定します。  
+4.  Nella pagina **Impostazioni gruppo di server** specificare una delle impostazioni seguenti:  
 
-    -   **[同時更新を許可するコンピューターの割合]**: 任意の時点で特定の割合のクライアントのみを更新するように指定します。 たとえば、コレクションに 10 のクライアントがあり、クライアントの 30% を同時に更新するようにコレクションが構成されている場合は、任意の時点で 3 つのクライアントだけがソフトウェア更新プログラムをインストールします。  
+    -   **Consentire a una percentuale di computer di essere aggiornati contemporaneamente**: specifica che solo una determinata percentuale di client vengono aggiornati in qualsiasi momento. Se, ad esempio, l'insieme ha 10 client e la raccolta viene configurata per aggiornare il 30% dei client allo stesso tempo, solo 3 client installeranno gli aggiornamenti software in qualsiasi momento.  
 
-    -   **[同時更新を許可するコンピューターの数]**: 任意の時点で特定の数のクライアントのみを更新するように指定します。  
+    -   **Consentire a un numero di computer di essere aggiornati contemporaneamente**: specifica che solo un certo numero di client possono essere aggiornati in un determinato momento.  
 
-    -   **[メンテナンス シーケンスを指定する]**: コレクション内のクライアントが、構成した順番で 1 つずつ更新されるように指定します。 クライアントは、一覧で前にあるクライアントがソフトウェア更新プログラムのインストールを完了しないと、ソフトウェア更新プログラムをインストールできません。  
+    -   **Specifica la sequenza di manutenzione**: specifica che i client nella raccolta saranno aggiornati uno alla volta nella sequenza che viene configurata. Un client installerà gli aggiornamenti software solo dopo che il client che lo precede nell'elenco avrà completato l'installazione degli aggiornamenti.  
 
-5.  展開前 (ノードのドレイン) スクリプトまたは展開後 (ノードの再開) スクリプトを使用するかどうかを指定します。  
+5.  Specificare se usare uno script di pre-distribuzione (svuotamento del nodo) o di post-distribuzione (ripresa del nodo).  
 
     > [!TIP]  
-    >  次の例は、現在の時刻をテキスト ファイルに書き込む、展開前スクリプトと展開後スクリプトをテストするときに使用できます。  
+    >  Di seguito sono riportati alcuni esempi che è possibile usare nei test degli script di pre-distribuzione e post-distribuzione, con cui viene scritta l'ora corrente in un file di testo:  
     >   
-    >  **展開前**  
+    >  **Pre-distribuzione**  
     >   
     >  `#Start`  
     >   
@@ -317,7 +317,7 @@ ms.lasthandoff: 08/07/2017
     >   
     >  `Out-File C:\temp\start.txt`  
     >   
-    >  **展開後**  
+    >  **Post-distribuzione**  
     >   
     >  `#End`  
     >   
@@ -327,144 +327,144 @@ ms.lasthandoff: 08/07/2017
     >   
     >  `Out-File C:\temp\end.txt`  
 
-#### <a name="to-deploy-software-updates-to-the-server-group-and-monitor-status"></a>ソフトウェア更新プログラムをサーバー グループに展開して状態を監視するには  
+#### <a name="to-deploy-software-updates-to-the-server-group-and-monitor-status"></a>Per distribuire gli aggiornamenti software nel gruppo di server e monitorare lo stato  
 
-1.  サーバーグループ コレクションに[ソフトウェア更新プログラムを展開](https://technet.microsoft.com/library/gg712304.aspx)します。  
+1.  [Distribuire gli aggiornamenti software](https://technet.microsoft.com/library/gg712304.aspx) nella raccolta del gruppo di server.  
 
-2.  [ソフトウェア更新プログラムの展開を監視します](https://technet.microsoft.com/library/gg712304.aspx)。 ソフトウェア更新プログラムの展開の標準の監視ビューに加え、クライアントがソフトウェア更新プログラムをインストールする順番を待機している際に、新しい状態の説明が表示されるようになりました。 [**ロックを待っています**] がこの新しい状態に表示されます。  
+2.  [Monitorare la distribuzione degli aggiornamenti software](https://technet.microsoft.com/library/gg712304.aspx). Oltre alle viste di monitoraggio standard per la distribuzione degli aggiornamenti software, una nuova descrizione dello stato viene visualizzata quando un client è in attesa del proprio turno per installare gli aggiornamenti software. Per il nuovo stato compare **In attesa di blocco**.  
 
-#### <a name="to-clear-the-deployment-locks-for-computers-in-a-server-group"></a>サーバー グループ内のコンピューターの展開のロックを解除するには  
+#### <a name="to-clear-the-deployment-locks-for-computers-in-a-server-group"></a>Per cancellare i blocchi di distribuzione per i computer di un gruppo di server  
 
-1.  [**資産とコンプライアンス**] ワークスペースで、[**デバイス コレクション**] ノードをクリックしてから、コレクションをクリックして展開のロックを解除します。  
+1.  Nell'area di lavoro **Asset e conformità** fare clic su **Raccolte di dispositivi** e quindi fare clic sulla raccolta per cancellare i blocchi.  
 
-2.  **[ホーム]** タブの **[展開]** グループで、**[サーバー グループ展開のロックを解除]** をクリックします。 クライアントがソフトウェア更新プログラムのインストールに失敗し他のクライアントのソフトウェア更新プログラムのインストールを妨げている場合は、展開のロックを手動でクリアできます。  
+2.  Sulla scheda **Home**, nel gruppo **Distribuzione**, fare clic su **Cancellare i blocchi di distribuzione del gruppo di server**. Quando i client non sono riusciti a installare gli aggiornamenti software e impediscono ad altri client di installare i loro aggiornamenti software, i blocchi di distribuzione possono essere cancellati manualmente.  
 
-##  <a name="BKMK_ATP"></a> Windows Defender Advanced Threat Protection サービスのサポート  
- Windows Defender Advanced Threat Protection (ATP) は、企業が自社のネットワーク上の攻撃を検出、調査、および対応するのに役立つ新しいサービスです。 Windows Defender ATP の詳細は、[こちら](https://blogs.windows.com/windowsexperience/2016/03/01/announcing-windows-defender-advanced-threat-protection)をご覧ください。 Configuration Manager は、管理対象の Windows 10 Anniversary Edition クライアント デバイスのオンボードと監視に役立ちます。  
+##  <a name="BKMK_ATP"></a> Supporto del servizio Windows Defender Advanced Threat Protection  
+ Windows Defender Advanced Threat Protection (ATP) è un nuovo servizio che consente alle aziende di rilevare, analizzare e rispondere agli attacchi avanzati sulle reti. Altre informazioni su [Windows Defender ATP](https://blogs.windows.com/windowsexperience/2016/03/01/announcing-windows-defender-advanced-threat-protection). Configuration Manager può essere d'aiuto per caricare e monitorare dispositivi client Windows 10 Anniversary Edition gestiti.  
 
-### <a name="try-it-now"></a>今すぐ試す  
- 次のタスクを完了し、Microsoft Connect サイトの「[Configuration Manager feedback program](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback)」 (Configuration Manager フィードバック プログラム) ページのフィードバック フォームを使用して、どのように動作したかをお知らせください。  
+### <a name="try-it-now"></a>Prova subito!  
+ Provare a completare le operazioni seguenti e inviare le informazioni sul funzionamento della procedura utilizzando il modulo di feedback disponibile alla pagina del [programma dei commenti e suggerimenti di Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) sul sito Microsoft Connect:  
 
--   Windows Defender Advanced Threat Protection (ATP) オンライン サービスにデバイスをオンボードする  
+-   Caricare dispositivi sul servizio online Windows Defender Advanced Threat Protection (ATP)  
 
--   管理対象デバイスへの Windows Defender ATP の展開を監視する  
+-   Monitorare la distribuzione di Windows Defender ATP per dispositivi gestiti  
 
- **必要条件**  
+ **Prerequisiti**  
 
--   Windows Defender Advanced Threat Protection オンライン サービスのサブスクリプション  
+-   Sottoscrizione al servizio online Windows Defender Advanced Threat Protection  
 
--   Windows 10 Anniversary Edition (ビルド番号 14328 以降) を実行しているクライアント  
+-   Client che eseguono Windows 10 Anniversary Edition (build 14328 e versioni successive)  
 
--   クライアント オンボード構成ファイルの作成  
+-   Creare un file di configurazione per il caricamento di client  
 
-    ##### <a name="how-to-create-an-onboarding-configuration-file"></a>オンボード構成ファイルの作成方法  
+    ##### <a name="how-to-create-an-onboarding-configuration-file"></a>Come creare un file di configurazione per il caricamento  
 
-    1.  Windows Defender ATP オンライン サービスにログオンします。  
+    1.  Accedere al servizio online Windows Defender ATP  
 
-    2.  [**クライアント オンボーディング**] メニュー項目をクリックします。  
+    2.  Fare clic sulla voce di menu **Client On-boarding** (Caricamento client)  
 
-    3.  **[System Center Configuration Manager]** を選択し、**[パッケージのダウンロード]** をクリックします。  
+    3.  Selezionare **System Center Configuration Manager** e fare clic su **Scarica pacchetto**.  
 
-    4.  圧縮済みアーカイブ (.zip) ファイルをダウンロードして内容を抽出します。  
+    4.  Scaricare il file di archivio compresso (zip) ed estrarre il contenuto.  
 
 
-##### <a name="onboard-devices-for-windows-defender-atp"></a>Windows Defender ATP のオンボード デバイス  
+##### <a name="onboard-devices-for-windows-defender-atp"></a>Caricare dispositivi per Windows Defender ATP  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[概要]** > **[Endpoint Protection]** > **[Windows Defender ATP ポリシー]** の順に移動し、**[Windows Defender ATP ポリシーの作成]** をクリックします。 Windows Defender ATP ポリシーの作成ウィザードが開きます。  
+1.  Nella console di Configuration Manager passare ad **Asset e conformità** > **Panoramica** > **Protezione endpoint** > **Criteri di Windows Defender ATP** e fare clic su **Creare criteri di Windows Defender ATP**. Verrà visualizzata la Creazione guidata criteri di Windows Defender ATP.  
 
-2.  Windows Defender ATP ポリシーの [**名前**] と [**説明**] を入力し、[**オンボード**] を選択します。 [次へ] をクリックします。  
+2.  Digitare il **nome** e la **descrizione** per il criterio di Windows Defender ATP e selezionare **Onboarding** (Caricamento). Scegliere Avanti.  
 
-3.  組織の Windows Defender ATP のクラウド サービス テナントによって提供される構成ファイルを**参照**します。 [ **次へ** ] をクリックします。  
+3.  Usare **Sfoglia** per cercare il file di configurazione fornito dal tenant del servizio cloud Windows Defender ATP dell'organizzazione. Fare clic su **Avanti**.  
 
-4.  管理対象のデバイスから分析用に収集され共有されるファイルのサンプルを指定します。  
+4.  Specificare i file campione che vengono raccolti e condivisi dai dispositivi gestiti per l'analisi.  
 
-    -   **なし**: 分析用にサンプル ファイルは収集されません。  
+    -   **Nessuno**: nessun file campione viene raccolto per l'analisi  
 
-    -   **移植可能な実行可能ファイル**: プログラム ファイル (.exe)、ダイナミック ライブラリ リンク (.dll) ファイル、およびサイバー攻撃にさらされる可能性がある同様のファイルなどが分析用に収集され共有されます。  
+    -   **File eseguibili portabili**: file come programmi (.exe), librerie di collegamento dinamico (.dll), file di caratteri e simili, che possono essere sfruttati in attacchi informatici, vengono raccolti e condivisi per l'analisi  
 
-     [ **次へ** ] をクリックします。  
+     Fare clic su **Avanti**.  
 
-5.  概要を確認して、ウィザードを完了します。  
+5.  Esaminare le informazioni di riepilogo e completare la procedura guidata.  
 
-6.  これで、**[展開]** をクリックすると、Windows Defender ATP ポリシーを管理対象のクライアント コンピューターに展開できます。  
+6.  È ora possibile distribuire i criteri di Windows Defender ATP nei computer client gestiti facendo clic su **Distribuisci**.  
 
-##### <a name="monitor-windows-defender-atp"></a>Windows Defender ATP の監視  
+##### <a name="monitor-windows-defender-atp"></a>Monitorare Windows Defender ATP  
 
-1.  Configuration Manager コンソールで、**[監視]** > **[概要]** > **[セキュリティ]** の順に移動し、**[Windows Defender ATP]** をクリックします。  
+1.  Nella console di Configuration Manager passare a **Monitoraggio** > **Panoramica** > **Sicurezza** e quindi fare clic su **Windows Defender ATP**.  
 
-2.  Windows Defender Advanced Threat Protection ダッシュボードを確認します。  
+2.  Esaminare il dashboard di Windows Defender Advanced Threat Protection.  
 
-    -   **Windows Defender のエージェントの展開ステータス**: アクティブな Windows Defender ATP ポリシーがオンボードされている管理対象のクライアント コンピューターの数と割合  
+    -   **Windows Defender Agent Deployment Status** (Stato distribuzione agente Windows Defender): il numero e la percentuale di computer client gestiti idonei con criteri Windows Defender ATP attivi caricati  
 
-    -   **Windows Defender ATP エージェントの正常性**: 自身の Windows Defender ATP エージェントの状態を報告するコンピューター クライアントの割合  
+    -   **Integrità dell'agente di Windows Defender ATP**: percentuale di computer client che inviano informazioni sullo stato per i relativi agenti di Windows Defender ATP  
 
-        -   **正常**: 正常に機能しています  
+        -   **Integro**: funziona correttamente  
 
-        -   **非アクティブ**: 期間中にサービスに送信されるデータがありません  
+        -   **Inattivo**: nessun dato inviato al servizio durante il periodo di tempo  
 
-        -   **エージェントの状態**: Windows でエージェントのシステム サービスが実行されていません。  
+        -   **Stato agente**: il servizio di sistema per l'agente in Windows non è in esecuzione  
 
-        -   **非オンボード**: ポリシーは適用されましたが、エージェントがポリシー オンボードを報告していません。  
+        -   **Non caricato**: i criteri sono stati applicati ma l'agente non ha segnalato il caricamento dei criteri  
 
-##  <a name="BKMK_DHA"></a> オンプレミスのデバイス正常性構成証明書  
- オンプレミスのインフラストラクチャを使用して通信するように、Windows 10 デバイスの正常性構成証明書を構成できるようになりました。 管理者は、報告がクラウドを使用して行われるか、オンプレミスのリソースを使用して行われるかを指定できます。 正常性構成証明書の報告にオンプレミスが選択されている場合、サービスに URL を指定することができます。 これにより、インターネット アクセスを使用しないクライアント PC が、正常性構成証明書を使用してデバイスを有効化および管理できるようになります。  
+##  <a name="BKMK_DHA"></a> Attestazione dell'integrità del dispositivo locale  
+ L'attestazione dell'integrità per i dispositivi Windows 10 può ora essere configurata per comunicare usando l'infrastruttura locale. Gli amministratori possono specificare se la creazione di report avviene tramite risorse cloud o locali. Se è selezionata l'opzione locale per la creazione di report di attestazione dell'integrità, è possibile specificare un URL per il servizio. In questo modo i PC client senza accesso a Internet possono abilitare e gestire i dispositivi usando l'attestazione dell'integrità.  
 
-### <a name="enable-health-attestation-for-on-premises-devices"></a>オンプレミス デバイス正常性構成証明書の有効化  
- 1605 では、1604 の Technical Preview で見つかったいくつかのバグが修正されています。  これを試すには、クライアント エージェント設定を使用して、オンプレミスの正常性構成証明書サービスを構成します。  
+### <a name="enable-health-attestation-for-on-premises-devices"></a>Abilitare l'attestazione dell'integrità per i dispositivi locali  
+ Nella versione 1605 sono stati corretti alcuni bug individuati nella Technical Preview 1604.  Per provare, configurare il servizio di attestazione dell'integrità locale usando le impostazioni agente client.  
 
-1.  Configuration Manager コンソールで、[**管理**] > [**概要**] > [**クライアント設定**] に移動し、[**オンプレミスの正常性構成証明書サービスを使用**] を [**はい**] に設定します。  
+1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Panoramica** > **Impostazioni client**e quindi impostare **Usare il servizio di attestazione dell'integrità locale** su **Sì**.  
 
-2.  **[オンプレミスの正常性構成証明書サービスの URL]** を指定し、**[OK]** をクリックします。  
+2.  Specificare l' **URL del servizio di attestazione dell'integrità locale**e quindi fare clic su **OK**.  
 
-##  <a name="BKMK_RestartOptions"></a> Windows 10 クライアントにおけるソフトウェア更新プログラムのインストール後の新しい再起動オプション  
- 再起動の必要なソフトウェア更新プログラムが Configuration Manager により展開され、コンピューターにインストールされた場合、再起動が保留中としてスケジュールされ、再起動のダイアログ ボックスが表示されます。 現在、Windows 8 以降のコンピューターでは、再起動が保留中となっているときに、(再起動ダイアログから行う代わりに) Windows 電源オプションを使用してコンピューターをシャットダウンまたは再起動する場合、再起動ダイアログはコンピューターの再起動後もそのまま表示され、コンピューターも構成された期限までに再起動が必要になります。 この Technical Preview では、Configuration Manager ソフトウェアの更新のために再起動が保留中となっているときはいつでも Windows 10 コンピューターの Windows 電源オプションで [**更新と再起動**]および [**更新とシャットダウン**] のオプションを利用できるようになりました。 これらのオプションのいずれかを使用した場合、コンピューターの再起動後に再起動ダイアログは表示されません。  
+##  <a name="BKMK_RestartOptions"></a> Nuove opzioni di riavvio per i client Windows 10 dopo l'installazione degli aggiornamenti software  
+ Quando un aggiornamento software che richiede il riavvio viene distribuito tramite Configuration Manager e viene installato in un computer, viene pianificato un riavvio in sospeso e viene visualizzata una finestra di dialogo di riavvio. Attualmente, per Windows 8 e versioni successive, se si arresta o si riavvia il computer tramite le opzioni di risparmio energia di Windows anziché dalla finestra di dialogo di riavvio, la finestra di dialogo di riavvio viene ancora visualizzata dopo il riavvio del computer e sarà necessario riavviare di nuovo il computer in corrispondenza della scadenza configurata. Nella versione Technical Preview, quando c'è un riavvio in sospeso per un aggiornamento software di Configuration Manager, tra le opzioni di risparmio energia di Windows nei computer Windows 10 sono disponibili **Aggiorna e riavvia**e **Aggiorna e arresta**. Dopo che una di queste opzioni è stata usata e il computer è stato riavviato, la finestra di dialogo di riavvio non verrà visualizzata.  
 
-##  <a name="BKMK_IMEI"></a> IMEI または iOS シリアル番号を持つ会社所有のデバイスの事前宣言  
- 会社が所有するデバイスの International station Mobile Equipment Identity (IMEI) 番号をインポートすることでデバイスを識別できるようになりました。 デバイスの IMEI 番号を含むコンマ区切り値 (.csv) ファイルをアップロードするか、デバイス情報を手動で入力することができます。  iOS デバイスのシリアル番号をインポートすることもできます。  インポートされた情報によって登録するデバイスの所有権が "企業" として設定されます。  Intune ライセンスも、サービスにアクセスする各ユーザーに必要です。  
+##  <a name="BKMK_IMEI"></a> Pre-dichiarare i dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS  
+ È ora possibile identificare i dispositivi di proprietà dell'azienda importando i relativi codici IMEI (International station Mobile Equipment Identity). È possibile caricare un file con valori separati da virgola (CSV) contenente i codici IMEI o immettere manualmente le informazioni relative ai dispositivi.  Possono essere importati i numeri di serie anche per i dispositivi iOS.  Le informazioni importate imposteranno la proprietà dei dispositivi registrati come "Aziendale".  È tuttavia necessaria una licenza di Intune per ogni utente che accede al servizio.  
 
-### <a name="try-it-out"></a>試してみましょう。  
- 次のタスクを完了し、Microsoft Connect サイトの「[Configuration Manager feedback program](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback)」 (Configuration Manager フィードバック プログラム) ページのフィードバック フォームを使用して、どのように動作したかをお知らせください。  
+### <a name="try-it-out"></a>Prova subito!  
+ Provare a completare le operazioni seguenti e inviare le informazioni sul funzionamento della procedura utilizzando il modulo di feedback disponibile alla pagina del [programma dei commenti e suggerimenti di Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) sul sito Microsoft Connect:  
 
--   IMEI 番号のセットを .csv ファイルでインポートします。 各行には、IMEI 番号に続いて詳細フィールドを含めることができます。  
+-   Importare un set di numeri IMEI in un file .csv. Ogni riga può contenere il numero IMEI seguito da un campo di dettagli.  
 
--   Configuration Manager コンソールから IMEI 番号を手動でインポートします。  
+-   Importare manualmente i numeri IMEI dalla console di Configuration Manager.  
 
--   iOS 番号のセットを .csv ファイルでインポートします。 ここでも、各行には、番号に続いてデバイスの詳細を含めることができます。  
+-   Importare un set di numeri di serie iOS in un file .csv. Anche in questo caso, ogni riga contiene un numero seguito dai dettagli per il dispositivo.  
 
-##### <a name="pre-declare-corporate-owned-devices-with-imei-or-ios-serial-number"></a>IMEI または iOS シリアル番号を持つ会社所有のデバイスの事前宣言  
+##### <a name="pre-declare-corporate-owned-devices-with-imei-or-ios-serial-number"></a>Predichiarazione dei dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS  
 
-1.  Configuration Manager コンソールで [**資産とコンプライアンス**] > [**概要**] > [**会社が所有しているすべてのデバイス**] > [**事前に宣言されたデバイス**] の順に移動し、[**事前に宣言されたデバイスを作成します**] をクリックします。 事前に宣言されたデバイス ウィザードが開きます。  
+1.  Nella console di Configuration Manager passare ad **Asset e conformità** > **Panoramica** > **Tutti i dispositivi di proprietà dell'azienda** > **Dispositivi predichiarati** e fare clic su **Crea dispositivi predichiarati**. Verrà avviata la procedura guidata relativa ai dispositivi predichiarati.  
 
-2.  デバイス情報を追加する方法を指定します。  
+2.  Specificare il modo in cui si vogliono aggiungere le informazioni sul dispositivo:  
 
-    -   **デバイスの IMEI 番号と詳細情報を記載した CSV ファイルをアップロードする**: 番号の一覧をアップロードするには、ステップ 3 を参照してください。  
+    -   **Caricare un file .csv contenente numeri IMEI e dettagli**: per caricare un elenco di numeri, vedere il passaggio 3.  
 
-    -   **IMEI 番号と詳細情報を手作業で追加する**: 手動で情報を入力するには、IMEI 番号または iOS シリアル番号とデバイスの詳細を入力してからステップ 4 に進みます。  
+    -   **Aggiungere manualmente i dettagli e i numeri IMEI**: per inserire manualmente le informazioni, digitare il numero IMEI o il numero di serie iOS e i dettagli per i dispositivi e quindi procedere al passaggio 4.  
 
-3.  アップロードされたファイルの場合、情報を含む .csv ファイルを参照し、会社所有のデバイスを事前に宣言します。 ファイルには、次の形式が必要です。ただし、一番上の行 (ガイダンスのためだけに提供) は除きます。  
+3.  Per i file caricati, individuare il file .csv contenente le informazioni per predichiarare i dispositivi aziendali. Il file deve avere il formato seguente, esclusa la prima riga, specificata a scopo informativo:  
 
-    |**IMEI #**|**iOS シリアル**|**OS**|**詳細**|
+    |**IMEI #**|**Numero di serie iOS**|**OS**|**Informazioni dettagliate**|
     |---|---|---|---|
-    |123456789012345||WINDOWS|会社所有の Windows デバイス|
-    |123456789012|A0BCD0EFGH0J|IOS|会社所有の iOS デバイス|
-    |123456789012346||ANDROID|会社所有の Android デバイス|
+    |123456789012345||WINDOWS|Dispositivo Windows di proprietà dell'azienda|
+    |123456789012|A0BCD0EFGH0J|IOS|Dispositivi iOS di proprietà dell'azienda|
+    |123456789012346||ANDROID|Dispositivo Android di proprietà dell'azienda|
 
-     **列:**  
+     **Colonne:**  
 
-    -   列 1: IMEI 番号: 各行に IMEI 番号または iOS シリアル番号のいずれかが必要です。  
+    -   Colonna 1: Numero IME. Un numero IMEI o un numero di serie iOS è obbligatorio per ogni riga  
 
-    -   列 2: iOS シリアル番号: 事前宣言できるのは iOS シリアル番号だけです。 他のデバイス プラットフォームには IMEI 番号を使用します。  
+    -   Colonna 2: numero di serie iOS. Solo i numeri di serie iOS possono essere predichiarati. Usare il numero IMEI per le altre piattaforme di dispositivi  
 
-    -   列 3: デバイスのオペレーティング システム (大文字化が必要):  
+    -   Colonna 3: sistema operativo del dispositivo (maiuscole necessarie):  
 
-        -   IOS: すべての iOS デバイス  
+        -   IOS: tutti i dispositivi iOS  
 
-        -   WINDOWS: Windows Phone、Window 10 Mobile、および Windows PC など  
+        -   WINDOWS: include Windows Phone, Windows 10 per dispositivi mobili e PC Windows  
 
-        -   ANDROID: すべての Android デバイス  
+        -   ANDROID: tutti i dispositivi Android  
 
-    -   列 4: 詳細: Configuration Manager コンソールに表示される追加のデバイス情報  
+    -   Colonna 4: dettagli. Informazioni aggiuntive sul dispositivo che vengono visualizzate nella console di Configuration Manager  
 
-     [ **次へ** ] をクリックします。  
+     Fare clic su **Avanti**.  
 
-4.  ファイル インポートの結果を確認します。 以前にインポートした IMEI またはシリアル番号には、新しい詳細で更新された詳細があります。  [**次へ**] をクリックして続行するか、[**戻る**] をクリックして最新の詳細を保持して、ウィザードを完了します。  
+4.  Esaminare i risultati dell'importazione del file. Per i numeri IMEI o i numeri di serie importati in precedenza, i dettagli saranno aggiornati con nuovi dettagli.  Fare clic su **Avanti** per continuare o **Indietro** per mantenere aggiornati i dettagli e completare la procedura guidata.  

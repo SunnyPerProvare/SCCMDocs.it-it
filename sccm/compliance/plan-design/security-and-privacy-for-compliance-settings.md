@@ -1,6 +1,6 @@
 ---
-title: "コンプライアンス設定のセキュリティとプライバシー | Microsoft Docs"
-description: "System Center Configuration Manager のコンプライアンス設定のセキュリティのベスト プラクティスについて説明します。"
+title: "Sicurezza e privacy per le impostazioni di conformità | Microsoft Docs"
+description: "Informazioni sulle procedure di sicurezza consigliate per le impostazioni di conformità in System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,26 +18,26 @@ manager: angrobe
 ms.openlocfilehash: e7dc554ffcd23978eed44819b525f6cc239b2135
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-compliance-settings-in-system-center-configuration-manager"></a>System Center Configuration Manager のコンプライアンス設定のセキュリティとプライバシー
+# <a name="security-and-privacy-for-compliance-settings-in-system-center-configuration-manager"></a>Sicurezza e privacy per le impostazioni di conformità in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-## <a name="security-best-practices-for-compliance-settings"></a>コンプライアンス設定に関するセキュリティのベスト プラクティス  
+## <a name="security-best-practices-for-compliance-settings"></a>Procedure di sicurezza consigliate per le impostazioni di conformità  
 
-|セキュリティのベスト プラクティス|説明|  
+|Procedura di sicurezza consigliata|Altre informazioni|  
 |----------------------------|----------------------|  
-|機密データを監視しないでください。|情報開示を防ぐため、構成項目が機密の可能性のある情報を監視するように構成しないでください。|  
-|エンド ユーザーによって変更できるユーザー データを使用するコンプライアンス規則を構成しない|構成の選択肢のレジストリ設定など、ユーザーが変更できるデータに基づいてコンプライアンス規則を作成した場合、コンプライアンス評価結果は信頼できません。|  
-|Microsoft System Center 構成パッケージと、その他の外部ソースからの構成データをインポートします。外部ソースからの構成データは信頼された発行元の有効なデジタル署名がある場合に限り、インポートしてください。|発行された構成データは、発行元を検証し、不正に変更されていないことを確認できるように、デジタル署名することが可能です。 デジタル署名の確認に失敗すると、警告が表示され、インポートを続行するかどうか選択を求められます。 発行元やデータの整合性が証明できない場合は、署名のないデータをインポートしないでください。|  
-|アクセス制御を実装して参照コンピューターを保護する|参照コンピューターを参照して管理者がレジストリやファイル システム設定を構成する場合は、参照コンピューターが侵害されていないことを確認してください。|  
-|参照コンピューターを参照するときは、通信チャネルを保護してください。|ネットワークを介してデータを転送するときはデータの改ざんを防ぐため、Configuration Manager コンソールを実行するコンピューターと参照コンピューター間で、インターネット セキュリティ プロトコル (IPsec) またはサーバー メッセージ ブロック (SMB) を使用してください。|  
-|コンプライアンス設定マネージャーの役割によってセキュリティ ロールを付与された管理者を制限し、監視してください。|**コンプライアンス設定マネージャー** の役割が付与された管理者は、階層内のすべてのデバイスとすべてのユーザーに構成項目を展開できます。 構成項目は、きわめて強力で、たとえばスクリプトやレジストリの再構成を含むことが可能です。|  
+|Non monitorare i dati sensibili.|Per evitare la divulgazione di informazioni, non configurare elementi di configurazione per il monitoraggio di informazioni potenzialmente riservate.|  
+|Non configurare regole di conformità che usano dati modificabili dagli utenti finali.|Se si crea una regola di conformità in base a dati che gli utenti possono modificare, ad esempio le impostazioni del Registro di sistema per le scelte di configurazione, i risultati di conformità non saranno affidabili.|  
+|Importare pacchetti di configurazione di Microsoft System Center e altri dati di configurazione da origini esterne solo se dispongono di una firma digitale valida da un autore attendibile.|I dati di configurazione pubblicati possono essere dotati di firma digitale, in modo che sia possibile verificare l'origine della pubblicazione e assicurarsi che i dati non siano stati manomessi. Se il controllo della verifica della firma digitale ha esito negativo, l'utente riceve un avviso e una richiesta di conferma dell'importazione. Non importare dati non firmati se non è possibile verificare l'origine e l'integrità dei dati stessi.|  
+|Implementare i controlli di accesso per proteggere i computer di riferimento.|Quando un utente amministratore configura un'impostazione del Registro di sistema o del file system selezionando un computer di riferimento, assicurarsi che quest'ultimo non sia stato compromesso.|  
+|Proteggere il canale di comunicazione quando si passa a un computer di riferimento.|Per impedire l'eventuale manomissione di dati durante il trasferimento in rete, usare IPsec (Internet Protocol security) o SMB (Server Message Block) tra il computer che esegue la console di Configuration Manager e il computer di riferimento.|  
+|Limitare e monitorare gli utenti amministratori che dispongono del ruolo di sicurezza basato sui ruoli Gestione impostazioni di conformità.|Gli utenti amministratori che dispongono del ruolo **Gestione impostazioni di conformità** possono distribuire elementi di configurazione a tutti i dispositivi e a tutti gli utenti nella gerarchia. Gli elementi di configurazione possono essere molto potenti. Possono, ad esempio, includere script ed eseguire la riconfigurazione del Registro di sistema.|  
 
-## <a name="privacy-information-for-compliance-settings"></a>コンプライアンス設定に関するプライバシー情報  
- コンプライアンス設定を使って、構成基準によって展開する構成項目に対して、クライアント デバイスがコンプライアンス対応しているかどうかを評価できます。 コンプライアンス対応していない場合、一部の設定は自動修復できます。 コンプライアンス対応情報は管理ポイントによってサイト サーバーに送信され、サイト データベースに保存されます。 情報はデバイスが管理ポイントに送信するときは暗号化されますが、サイト データベースに保存するときは暗号化されません。 情報は、90 日ごとに実行されるサイトのメンテナンス タスク [期限切れの構成管理データの削除] によって削除されるまでデータベースに保持されます。 **** 削除間隔は構成できます。 対応情報がマイクロソフトに送信されることはありません。  
+## <a name="privacy-information-for-compliance-settings"></a>Informazioni sulla privacy per le impostazioni di conformità  
+ È possibile usare le impostazioni di conformità per valutare la conformità dei dispositivi client con gli elementi di configurazione distribuiti nelle linee di base di configurazione. Alcune impostazioni non conformi possono essere corrette automaticamente. Le informazioni sulla conformità vengono inviate al server del sito dal punto di gestione e memorizzate nel database del sito. Le informazioni vengono crittografate quando i dispositivi le inviano al punto di gestione, ma non vengono memorizzate in forma crittografata nel database del sito. Le informazioni vengono conservate nel database fino alla relativa eliminazione nell'ambito dell'attività di manutenzione del sito **Elimina dati di gestione configurazione obsoleti** eseguita ogni 90 giorni. È possibile configurare l'intervallo di eliminazione. Le informazioni sulla conformità non vengono inviate a Microsoft.  
 
- 既定では、デバイスはコンプライアンス設定を評価しません。 さらに、構成項目と構成基準を設定してから、それをデバイスに展開することが必要です。  
+ Per impostazione predefinita, i dispositivi non valutano le impostazioni di conformità. È anche necessario configurare gli elementi di configurazione e le linee di base di configurazione prima di distribuirli ai dispositivi.  

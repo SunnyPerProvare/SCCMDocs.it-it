@@ -1,6 +1,6 @@
 ---
-title: "ソフトウェア更新プログラムの展開 | Microsoft Docs"
-description: "Configuration Manager コンソールでソフトウェア更新プログラムを選択し、展開プロセスを手動で開始するか、更新プログラムを自動的に展開します。"
+title: Distribuire gli aggiornamenti software | Microsoft Docs
+description: Scegliere gli aggiornamenti software nella console di Configuration Manager per avviare manualmente il processo di distribuzione o distribuire automaticamente gli aggiornamenti.
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,59 +14,59 @@ ms.assetid: 04536d51-3bf7-45e5-b4af-36ceed10583d
 ms.openlocfilehash: 70a0ad1da03a7ca88df206fec683ab1df2b531e1
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-#  <a name="BKMK_SUMDeploy"></a> ソフトウェアの更新を展開する  
+#  <a name="BKMK_SUMDeploy"></a> Distribuire gli aggiornamenti software  
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-ソフトウェア更新プログラムの展開フェーズは、ソフトウェア更新プログラムを展開するプロセスです。 ソフトウェア更新プログラムの展開方法にかかわらず、更新プログラムは通常、ソフトウェア更新プログラム グループに追加され、ソフトウェア更新プログラムは配布ポイントにダウンロードされ、更新プログラム グループはクライアントに展開されます。 展開を作成すると、関連するソフトウェア更新プログラム ポリシーがクライアント コンピューターに送信され、ソフトウェア更新プログラムのコンテンツ ファイルが配布ポイントからクライアント コンピューターのローカル キャッシュにダウンロードされて、ソフトウェア更新プログラムがクライアントでインストールに使用できるようになります。 インターネットに接続されているクライアントは、Microsoft Update からコンテンツをダウンロードします。  
-
-> [!NOTE]  
->  イントラネットのクライアントで、配布ポイントを利用できない場合に、Microsoft Update からのソフトウェア更新プログラムのダウンロードを構成できます。  
+La fase di distribuzione degli aggiornamenti software è il processo di distribuzione degli aggiornamenti software. Indipendentemente da come vengono distribuiti gli aggiornamenti software, gli aggiornamenti sono in genere aggiunti a un gruppo di aggiornamento software, gli aggiornamenti software vengono scaricati nei punti di distribuzione e il gruppo di aggiornamento viene distribuito ai client. Quando viene creata la distribuzione, i criteri di aggiornamento software vengono inviati ai computer client, i file di contenuto dell'aggiornamento software vengono scaricati da un punto di distribuzione nella cache locale dei computer client e gli aggiornamenti software sono quindi disponibili per l'installazione nel client. I client su Internet scaricano il contenuto da Microsoft Update.  
 
 > [!NOTE]  
->  他の種類の展開とは異なり、すべてのソフトウェア更新プログラムは、クライアントの最大キャッシュ サイズの設定に関係なく、クライアント キャッシュにダウンロードされます。 クライアント キャッシュ設定の詳細については、「 [Configure the Client Cache for Configuration Manager Clients](../../core/clients/manage/manage-clients.md#BKMK_ClientCache)」を参照してください。  
+>  È possibile configurare un client nella Intranet in modo che scarichi gli aggiornamenti software da Microsoft Update se un punto di distribuzione non è disponibile.  
 
-必要なソフトウェア更新プログラムの展開を構成すると、ソフトウェア更新プログラムは、スケジュールされた期限に自動的にインストールされます。 または、クライアント コンピューターのユーザーが、期限前にソフトウェア更新プログラムのインストールをスケジュール設定または開始できます。 指定したインストール後、ソフトウェア更新プログラムのインストールが正常に完了したかどうかを報告する状態メッセージがクライアント コンピューターからサイト サーバーに送信されます。 ソフトウェア更新プログラムの展開の詳細については、「 [Software update deployment workflows](../understand/software-updates-introduction.md#BKMK_DeploymentWorkflows)」を参照してください。  
+> [!NOTE]  
+>  A differenza di altri tipi di distribuzione gli aggiornamenti software vengono tutti scaricati nella cache del client, indipendentemente dall'impostazione della dimensione massima della cache sul client. Per altre informazioni sull'impostazione della cache client, vedere [Configure the Client Cache for Configuration Manager Clients](../../core/clients/manage/manage-clients.md#BKMK_ClientCache).  
 
-ソフトウェ更新プログラムを展開するための主なシナリオには、手動展開と自動展開の 2 つがあります。 通常は、最初にソフトウェア更新プログラムを手動で展開してクライアント コンピューター用の基準を作成してから、自動展開を使用してクライアントでソフトウェア更新プログラムを管理します。  
+Se si configura una distribuzione degli aggiornamenti software necessaria, gli aggiornamenti software vengono installati automaticamente alla scadenza programmata. In alternativa, l'utente del computer client può pianificare o avviare l'installazione dell'aggiornamento software prima della scadenza. Dopo il tentativo di installazione, i computer client inviano messaggi di stato al server del sito per segnalare se l'installazione dell'aggiornamento software è stata eseguita correttamente. Per altre informazioni sulle distribuzioni degli aggiornamenti software, vedere [Software update deployment workflows](../understand/software-updates-introduction.md#BKMK_DeploymentWorkflows).  
 
-## <a name="BKMK_ManualDeployment"></a> ソフトウェア更新プログラムの手動展開
-Configuration Manager コンソールでソフトウェア更新プログラムを選択し、展開プロセスを手動で開始することができます。 継続的な月ごとのソフトウェア更新プログラムの展開を管理する自動展開規則を作成する前に、必要なソフトウェア更新プログラムでクライアントを最新の状態にする場合と、帯域外のソフトウェア更新プログラム要件を展開する場合は、通常、この展開方法を使用します。 次の一覧に、ソフトウェア更新プログラムの手動展開の一般的なワークフローを示します。  
+Esistono due scenari principali per la distribuzione di aggiornamenti software: la distribuzione manuale e la distribuzione automatica. In genere, si effettuerà inizialmente la distribuzione manuale degli aggiornamenti software per creare una linea di base per i computer client e quindi si gestiranno gli aggiornamenti software sui client usando la distribuzione automatica.  
 
-1. 特定の要件を使用するソフトウェア更新プログラムをフィルター処理します。 たとえば、50 を超えるクライアント コンピューターで必要なすべてのセキュリティまたは重要なソフトウェア更新プログラムを取得する条件を指定できます。  
-2. ソフトウェア更新プログラムを格納するソフトウェア更新プログラム グループを作成します。  
-3. ソフトウェア更新プログラム グループにソフトウェア更新プログラムのコンテンツをダウンロードします。  
-4. 手動でソフトウェア更新プログラム グループを展開します。
+## <a name="BKMK_ManualDeployment"></a> Distribuire manualmente gli aggiornamenti software
+È possibile scegliere gli aggiornamenti software nella console di Configuration Manager per avviare manualmente il processo di distribuzione. In genere si utilizzerà questo metodo di distribuzione per mantenere aggiornati i computer client con gli aggiornamenti software richiesti prima di creare regole di distribuzione automatica che gestiranno le distribuzioni degli aggiornamenti software in corso a cadenza mensile e per distribuire i requisiti di aggiornamento software fuori banda. Il seguente elenco descrive il flusso di lavoro generale per la distribuzione manuale degli aggiornamenti software:  
 
-詳細な手順については、「[ソフトウェア更新プログラムの手動展開](manually-deploy-software-updates.md)」をご覧ください。
+1. Filtrare gli aggiornamenti software che usano requisiti specifici. Ad esempio, è possibile fornire criteri per il recupero di tutti gli aggiornamenti software critici o della sicurezza necessari su più di 50 computer client.  
+2. Creare un gruppo di aggiornamenti software che contenga gli aggiornamenti software.  
+3. Scaricare il contenuto per gli aggiornamenti software nel gruppo di aggiornamenti software.  
+4. Distribuire manualmente il gruppo di aggiornamenti software.
 
-## <a name="automatically-deploy-software-updates"></a>ソフトウェア更新プログラムの自動展開
-ソフトウェア更新プログラムの自動展開は自動展開規則 (ADR) を使用して構成します。 月ごとのソフトウェア更新プログラム (一般的に "月例パッチ" として知られています) と、定義の更新の管理には、通常、この展開方法が使用されます。 ルールの実行時、ソフトウェア更新プログラムがソフトウェア更新プログラム グループから削除され (既存の更新プログラム グループを使用している場合)、指定した基準 (たとえば、先月リリースされたすべてのセキュリティ ソフトウェア更新プログラム) を満たすソフトウェア更新プログラムがソフトウェア更新プログラム グループに追加され、ソフトウェア更新プログラムのコンテンツ ファイルがダウンロードされ、配布ポイントにコピーされ、ソフトウェア更新プログラムがターゲット コレクションのクライアントに展開されます。 次の一覧に、ソフトウェア更新プログラムの自動展開の一般的なワークフローを示します。  
+Per informazioni dettagliate, vedere [Distribuire manualmente gli aggiornamenti software](manually-deploy-software-updates.md).
 
-1.  展開設定を指定する ADR を作成します。
-2.  ソフトウェア更新プログラムがソフトウェア更新プログラム グループに追加されます。  
-3.  ソフトウェア更新プログラム グループは、ターゲット コレクションが指定されている場合、そのターゲット コレクションのクライアント コンピューターに展開されます。  
+## <a name="automatically-deploy-software-updates"></a>Distribuire automaticamente gli aggiornamenti software
+La distribuzione automatica degli aggiornamenti software viene configurata con una regola di distribuzione automatica. Si tratta di un metodo comune di distribuzione per aggiornamenti software mensili ("Patch Tuesday") e per la gestione degli aggiornamenti delle definizioni. Quando si esegue la regola, gli aggiornamenti software vengono rimossi dal gruppo di aggiornamenti software (se si usa un gruppo di aggiornamento esistente), gli aggiornamenti software che soddisfano un criterio specificato (ad esempio, tutti gli aggiornamenti software della sicurezza rilasciati il mese precedente) vengono aggiunti a un gruppo di aggiornamenti software, i file di contenuto per gli aggiornamenti software vengono scaricati e copiati nei punti di distribuzione e gli aggiornamenti software vengono distribuiti nei computer client nella raccolta di destinazione. L'elenco seguente descrive il flusso di lavoro generale per la distribuzione automatica degli aggiornamenti software:  
 
-環境で使用する展開戦略を決定する必要があります。 たとえば、ADR を作成して、テスト用クライアントのコレクションをターゲットにします。 ソフトウェア更新プログラムがテスト グループにインストールされることを確認した後で、規則に新しい展開を追加したり、この既存の展開規則に指定したコレクションを、さらに多くのクライアントが含まれるターゲット コレクションに変更したりすることができます。 ADR で作成されるソフトウェア更新プログラムのオブジェクトは双方向です。  
+1.  Creare una regola di distribuzione automatica che specifica le impostazioni di distribuzione.
+2.  Gli aggiornamenti software vengono aggiunti a un gruppo di aggiornamenti software.  
+3.  Il gruppo di aggiornamenti software viene distribuito ai computer client nella raccolta di destinazione, se specificato.  
 
--   ADR を使用して展開されたソフトウェア更新プログラムは、ターゲット コレクションに追加された新しいクライアントに自動的に展開されます。  
--   ソフトウェア更新プログラム グループに追加された新しいソフトウェア更新プログラムは、ターゲット コレクションのクライアントに自動的に展開されます。  
--   ADR では、展開をいつでも有効または無効にできます。  
+È necessario determinare la strategia di distribuzione da usare nel proprio ambiente. Ad esempio, è possibile creare la regola di distribuzione automatica e trovare una raccolta di destinazione dei client di prova. Dopo aver verificato che gli aggiornamenti software siano installati nel gruppo di prova, è possibile aggiungere una nuova distribuzione alla regola o modificare la raccolta nella distribuzione esistente in una raccolta di destinazione che include un set di client più ampio. Gli oggetti di aggiornamento software creati dalle regole di distribuzione automatica sono interattivi.  
 
-ADR を作成した後、ルールにさらに他の展開を追加できます。 これにより、コレクションごとに異なる更新プログラムを展開する複雑さが軽減されます。 それぞれの新しい展開がさまざまな機能と展開監視エクスペリエンスを備え、追加するそれぞれの新しい展開には次の機能があります。  
+-   Gli aggiornamenti software distribuiti usando una regola di distribuzione automatica vengono distribuiti automaticamente nei nuovi client aggiunti alla raccolta di destinazione.  
+-   I nuovi aggiornamenti software aggiunti a un gruppo di aggiornamenti software vengono distribuiti automaticamente ai client nella raccolta di destinazione.  
+-   È possibile abilitare o disabilitare le distribuzioni in qualsiasi momento per la regola di distribuzione automatica.  
 
--   ADR を初めて実行したときに作成されたものと同じ更新グループとパッケージを使用します。  
--   別のコレクションを指定することができます。  
--   次のような独自の展開プロパティをサポートします。  
-   -   アクティベーション時間  
-   -   期限  
-   -   エンド ユーザー エクスペリエンスの表示/非表示  
-   -   この展開の個別のアラート  
+Dopo aver creato una regola di distribuzione automatica, è possibile aggiungere altre distribuzioni alla regola. Ciò consente di gestire la complessità della distribuzione di aggiornamenti diversi a raccolte differenti. Ogni nuova distribuzione include l'intera gamma dell'esperienza di monitoraggio di funzionalità e distribuzione. Ogni nuova distribuzione aggiunta:  
 
-詳細な手順については、「[ソフトウェア更新プログラムの自動展開](automatically-deploy-software-updates.md)」をご覧ください。
+-   Utilizza lo stesso gruppo e lo stesso pacchetto di aggiornamento creato alla prima esecuzione di ADR  
+-   Può specificare una raccolta diversa  
+-   Supporta proprietà di distribuzione univoca tra cui:  
+   -   Ora attivazione  
+   -   Scadenza  
+   -   Mostra o nascondi l'esperienza dell'utente finale  
+   -   Avvisi separati per questa distribuzione  
+
+Per informazioni dettagliate, vedere [Automatically deploy software updates](automatically-deploy-software-updates.md) (Distribuire automaticamente gli aggiornamenti software)
 
 <!-- ###  <a name="BKMK_ClientCache"></a> Client cache setting  
 The Configuration Manager client downloads the content for required software updates to the local client cache soon after it receives the deployment. However, the client waits to download the content until after the **Software available time** setting for the deployment. The client does not download software updates in optional deployments (deployments that do not have a scheduled installation deadline) until the user manually starts the installation. When the configured deadline passes, the software updates client agent performs a scan to verify that the software update is still required, then the software updates client agent checks the local cache on the client computer to verify that the software update source file is still available, and then installs the software update. If the content was deleted from the client cache to make room for another deployment, the client downloads the software updates to the cache. Software updates are always downloaded to the client cache regardless of the configured maximum client cache size. For other deployments, such as applications or packages, the client only downloads content that is within the maximum cache size that you configure for the client. Cached content is not automatically deleted, but it remains in the cache for at least one day after the client used that content.  -->

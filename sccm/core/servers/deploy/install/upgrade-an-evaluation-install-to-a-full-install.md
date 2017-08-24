@@ -1,6 +1,6 @@
 ---
-title: "評価版のアップグレード | Microsoft Docs"
-description: "評価版の System Center Configuration Manager を製品版にアップグレードする方法について説明します。"
+title: Aggiornare le installazioni di valutazione | Documentazione Microsoft
+description: Informazioni su come eseguire l'aggiornamento di un'installazione di valutazione a installazione completa di System Center Configuration Manager.
 ms.custom: na
 ms.date: 2/7/2017
 ms.prod: configuration-manager
@@ -17,38 +17,38 @@ manager: angrobe
 ms.openlocfilehash: 8f951805c2fc25059965c15c94934c0f8546735c
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="upgrade-an-evaluation-installation-of-system-center-configuration-manager-to-a-full-installation"></a>評価版の System Center Configuration Manager を製品版にアップグレードする方法
+# <a name="upgrade-an-evaluation-installation-of-system-center-configuration-manager-to-a-full-installation"></a>Aggiornare un'installazione di valutazione di System Center Configuration Manager a un'installazione completa
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager を評価版としてインストールすると、180 日後に Configuration Manager コンソールが読み取り専用になります。ライセンス認証するには、セットアップの **[サイトのメンテナンス]** ページでプロダクト キーを入力する必要があります。 この 180 日の前または後のいつでも、評価版を製品版にアップグレードできます。  
+Se System Center Configuration Manager è stato installato come versione di valutazione, dopo 180 giorni la console di Configuration Manager passerà alla modalità di sola lettura fino a quando il prodotto non sarà attivato nella pagina **Manutenzione sito** del programma di installazione. In qualsiasi momento prima o dopo il periodo di 180 giorni, è possibile eseguire l'aggiornamento di un'installazione di valutazione a un'installazione completa.  
 
 > [!NOTE]  
->  Configuration Manager コンソールを Configuration Manager の評価版に接続すると、コンソールのタイトル バーに、評価版が期限切れになるまでの日数が表示されます。 ただし、この日数は自動的に更新されず、サイトに新しく接続した場合だけ更新されます。  
+>  Quando si connette una console di Configuration Manager a un'installazione di valutazione di Configuration Manager, sulla barra del titolo della console viene visualizzato il numero di giorni restanti prima della scadenza dell'installazione di valutazione. Il numero di giorni non viene aggiornato automaticamente, ma solo quando si stabilisce una nuova connessione a un sito.  
 
- 評価版インストールを実行している次のサイトをアップグレードできます。  
+ È possibile aggiornare i siti seguenti che eseguono un'installazione di valutazione:  
 
--   中央管理サイト  
--   プライマリ サイト  
+-   Sito di amministrazione centrale  
+-   Sito primario  
 
-セカンダリ サイトは評価版としては処理されないため、親プライマリ サイトを製品版にアップグレードした後で、セカンダリ サイトを変更する必要はありません。  
+Poiché i siti secondari non sono trattati come installazioni di valutazione, non è necessario modificare un sito secondario dopo l'aggiornamento del sito padre primario a un'installazione completa.  
 
-ライセンスのある製品版に評価版をアップグレードするための前提条件:  
+Prerequisiti per l'aggiornamento di una versione di valutazione a una versione con licenza:  
 
--   アップグレード中に使用する正しい製品が必要です。  
--   アカウントには、サイトがインストールされているコンピューターの**管理者**権限が必要です。  
+-   È necessario avere un prodotto valido da usare durante l'aggiornamento.  
+-   L'account deve avere i diritti di **amministratore** sul computer in cui è installato il sito.  
 
-### <a name="to-upgrade-an-evaluation-version-of-configuration-manager-to-a-licensed-version"></a>Configuration Manager の評価版をライセンスのある製品版にアップグレードするには  
+### <a name="to-upgrade-an-evaluation-version-of-configuration-manager-to-a-licensed-version"></a>Per aggiornare una versione di valutazione di Configuration Manager a una versione con licenza  
 
-1.  サイト サーバーで、インストール フォルダー (**%path%\BIN\X64**) から **SETUP.exe** (Configuration Manager のセットアップ) を実行します。 インストール メディアからセットアップを実行した場合はサイトのメンテナンス オプションを利用できないため、サイト サーバーの Configuration Manager フォルダーにある Setup のコピーを実行する必要があります。  
-2.  **[開始する前に]** ページで、**[次へ]** を選択します。  
-3.  **[はじめに]** ページで **[Perform site maintenance or reset the Site (サイトのメンテナンスを実施するか、このサイトをリセットする)]** を選択し、**[次へ]** を選択します。  
-4.  **[サイトのメンテナンス]** ページで、**[Upgrade the evaluation edition to a licensed edition (評価版を製品版にアップグレードする)]** を選び、正しいプロダクト キーを入力して、**[次へ]** をクリックします。  
-5.  **[マイクロソフト ソフトウェア ライセンス条項]** ページで、ライセンス条項を読んで同意し、**[次へ]** を選択します。  
-6.  **[構成]** ページで **[閉じる]** を選択してウィザードを終了します。  
+1.  Nel server del sito eseguire il programma di installazione di Configuration Manager **Setup.exe** dalla cartella di installazione di Configuration Manager (**%path%\BIN\X64**). È necessario copiare il programma di installazione che si trova nel server del sito nella cartella Configuration Manager perché le opzioni di manutenzione del sito non sono disponibili quando si esegue il programma di installazione dal supporto di installazione.  
+2.  Nella pagina **Prima di iniziare** scegliere **Avanti**.  
+3.  Nella pagina **Riquadro attività iniziale** selezionare **Esegui una manutenzione del sito o reimposta il sito** e quindi scegliere **Avanti**.  
+4.  Nella pagina **Manutenzione sito** selezionare **Aggiornare la versione di valutazione a una versione con licenza**, immettere un codice Product Key valido e quindi scegliere **Avanti**.  
+5.  Nella pagina **Condizioni di licenza software Microsoft** leggere e accettare le condizioni di licenza e scegliere **Avanti**.  
+6.  Nella pagina **Configurazione** scegliere **Chiudi** per completare la procedura guidata.  
 
     > [!NOTE]  
-    >  アップグレードしたサイトに Configuration Manager コンソールを接続したままの場合は、サイトに接続し直さないと、コンソールのタイトル バーに評価版と表示される可能性があります。  
+    >  È possibile che la barra del titolo di una console di Configuration Manager che rimane connessa al sito aggiornato indichi che nel sito è ancora attiva la versione di valutazione finché non si riconnette la console al sito.  

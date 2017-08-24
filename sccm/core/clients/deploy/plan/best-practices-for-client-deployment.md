@@ -1,6 +1,6 @@
 ---
-title: "クライアント展開のベスト プラクティス | Microsoft Docs"
-description: "System Center Configuration Manager のクライアント展開のベスト プラクティスを示します。"
+title: Procedure consigliate per la distribuzione client | Microsoft Docs
+description: Apprendere le procedure consigliate per la distribuzione client in System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -17,63 +17,63 @@ manager: angrobe
 ms.openlocfilehash: 979c21c436429cad03a61671b707a99817146d95
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="best-practices-for-client-deployment-in-system-center-configuration-manager"></a>System Center Configuration Manager のクライアント展開のベスト プラクティス
+# <a name="best-practices-for-client-deployment-in-system-center-configuration-manager"></a>Procedure consigliate per la distribuzione di client in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-## <a name="use-software-update-based-client-installation-for-active-directory-computers"></a>Active Directory コンピューターには、ソフトウェア更新プログラムを使ったクライアントのインストールを行う  
- このクライアント展開方法は、既存の Windows テクノロジを使用し、Active Directory インフラストラクチャと統合し、Configuration Manager で最低限の構成しか必要とせず、ファイアウォール用の構成が最も容易で、最も安全です。 グループ ポリシーの構成にセキュリティ グループと WMI フィルターを使用するので、どのコンピューターに Configuration Manager クライアントをインストールするかについても、柔軟に制御できます。  
+## <a name="use-software-update-based-client-installation-for-active-directory-computers"></a>Utilizzare l'installazione client basata su aggiornamento software per i computer Active Directory  
+ Questo metodo di distribuzione client usa tecnologie Windows esistenti, si integra con l'infrastruttura di Active Directory, richiede la configurazione minima in Configuration Manager, è il più semplice da configurare per i firewall ed è il più sicuro. L'uso di gruppi di protezione e di filtri WMI per la configurazione dei criteri di gruppo consente di controllare in modo flessibile su quali computer installare il client di Configuration Manager.  
 
- 詳細については、「 [ソフトウェアの更新に基づいたインストールを使用した Configuration Manager クライアントのインストール方法](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientSUP)」をご覧ください。  
+ Per altre informazioni, vedere [How to Install Configuration Manager Clients by Using Software Update-Based Installation](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientSUP).  
 
-## <a name="extend-the-active-directory-schema-and-publish-the-site-so-that-you-can-run-ccmsetup-without-command-line-options"></a>Active Directory スキーマを拡張してサイトを公開し、コマンドライン オプションなしでCCMSetup が実行できるようにする  
- Active Directory スキーマを Configuration Manager 用に拡張して、サイトが Active Directory Domain Services に公開されるとき、多くのクライアント インストール プロパティが Active Directory Domain Services に公開されます。 コンピューターでこれらのクライアント インストール プロパティを見つけることができる場合は、Configuration Manager クライアントの展開時にそれらを使用できます。 この情報は自動的に生成されるため、インストール プロパティを手動で入力するために発生する人的ミスのリスクが排除されます。  
+## <a name="extend-the-active-directory-schema-and-publish-the-site-so-that-you-can-run-ccmsetup-without-command-line-options"></a>Estendere lo schema di Active Directory e pubblicare il sito in modo che sia possibile eseguire CCMSetup senza opzioni di riga di comando  
+ Quando si estende lo schema di Active Directory per Configuration Manager e il sito viene pubblicato su Servizi di dominio Active Directory, molte proprietà di installazione client vengono pubblicate in Servizi di dominio Active Directory. Se un computer è in grado di rilevare le proprietà di installazione del client, può usarle durante la distribuzione del client di Configuration Manager. Poiché queste informazioni vengono generate automaticamente, viene eliminato il rischio di errori umani associato all'immissione manuale delle proprietà di installazione.  
 
- 詳細については、「[System Center Configuration Manager で Active Directory ドメイン サービスに発行されたクライアント インストールのプロパティについて](../../../../core/clients/deploy/about-client-installation-properties-published-to-active-directory-domain-services.md)」を参照してください。  
+ Per altre informazioni, vedere [Informazioni sulle proprietà di installazione client pubblicate in Servizi di dominio Active Directory in System Center Configuration Manager](../../../../core/clients/deploy/about-client-installation-properties-published-to-active-directory-domain-services.md).  
 
-## <a name="use-a-phased-rollout-to-manage-cpu-usage"></a>段階的なロールアウトを使用して CPU 使用率を管理する  
- クライアントの段階的なロールアウトを使用して、CPU 処理の要件によるサイト サーバーへの影響を最小化します。 業務時間外にクライアントを展開すると、日中他のビジネス サービスに使用できる帯域幅が増え、ユーザーのコンピューターの反応が遅くなったり、再起動を要求して、ユーザーに支障をきたしたりすることがありません。  
+## <a name="use-a-phased-rollout-to-manage-cpu-usage"></a>Usare un'implementazione graduale per gestire l'utilizzo della CPU  
+ Per ridurre al minimo l'impatto dei requisiti di elaborazione della CPU sul server del sito, usare un'implementazione graduale dei client. Distribuire i client fuori dall'orario di ufficio in modo da garantire una maggiore larghezza di banda per altri servizi durante il giorno ed evitare che i computer siano rallentati o che sia necessario un riavvio.  
 
-## <a name="enable-automatic-upgrade-after-your-main-client-deployment-has-finished"></a>主要なクライアント展開が終わったら、自動アップグレードを有効化する  
- [自動クライアント アップグレード](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md)は、おそらくオフラインだったために主要なクライアント インストール方法に含まれなかった少数のクライアント コンピューターをアップグレードする場合に役立ちます。 
+## <a name="enable-automatic-upgrade-after-your-main-client-deployment-has-finished"></a>Attivare l'aggiornamento automatico al termine della distribuzione del client principale  
+ Gli [aggiornamenti client automatici](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md) sono utili quando si vuole aggiornare un numero ridotto di computer client che potrebbero essere stati esclusi dal metodo di installazione client principale, probabilmente perché offline. 
 
 > [!NOTE]  
->  Configuration Manager のパフォーマンスが改善され、プライマリ クライアントのアップグレード方法として自動アップグレードを使用できるようになりました。 ただし、パフォーマンスは、クライアント数など、階層のインフラストラクチャに左右されます。  
+>  Grazie alle prestazioni migliorate di Configuration Manager, è possibile usare gli aggiornamenti automatici come metodo principale di aggiornamento dei client. Tuttavia, le prestazioni variano in base all'infrastruttura della gerarchia, come ad esempio il numero di client.  
 
 
-## <a name="use-smsmp-and-fsp-if-you-install-the-client-with-clientmsi-properties"></a>client.msi プロパティを使ってクライアントをインストールするときは、SMSMP と FSP を使用する  
- SMSMP プロパティはクライアントが通信する最初の管理ポイントを指定し、Active Directory ドメイン サービス、DNS、WINS などの、サービスの場所のソリューションへの依存を排除します。  
+## <a name="use-smsmp-and-fsp-if-you-install-the-client-with-clientmsi-properties"></a>Se si installa il client con proprietà client.msi utilizzare SMSMP e FSP  
+ La proprietà SMSMP specifica il punto di gestione iniziale per la comunicazione del client ed elimina la dipendenza da soluzioni di posizionamento dei servizi come Servizi di dominio Active Directory, DNS e WINS.  
 
- FSP プロパティを使ってフォールバック ステータス ポイントをインストールすると、クライアントのインストールや割り当てを監視し、通信上の問題点を特定できます。  
+ Utilizzare la proprietà FSP e installare un punto di stato di fallback in modo da poter controllare l'installazione e l'assegnazione di client e identificare eventuali problemi di comunicazione.  
 
- これらのオプションの詳細については、「[System Center Configuration Manager のクライアント インストール プロパティについて](../../../../core/clients/deploy/about-client-installation-properties.md)」を参照してください。  
+ Per altre informazioni su queste opzioni, vedere [Informazioni sulle proprietà di installazione del client in System Center Configuration Manager](../../../../core/clients/deploy/about-client-installation-properties.md).  
 
-## <a name="install-client-language-packs-before-you-install-the-clients"></a>クライアントをインストールする前に、クライアント言語パックをインストールする  
-クライアントを展開する前に、クライアント言語パックをインストールすることをお勧めします。 クライアントをインストールしてから、(追加の言語を有効化するために) サイトに[クライアントの言語パック](../../../../core/servers/deploy/install/language-packs.md)をインストールする場合、追加の言語を使用するには、クライアントを再インストールする必要があります。 モバイル デバイス クライアントの場合、モバイル デバイスをワイプして再登録する必要があります。  
+## <a name="install-client-language-packs-before-you-install-the-clients"></a>Installare i Language Pack client prima di installare i client  
+È consigliabile installare i Language Pack client prima di distribuire il client. Se si installano [Language Pack client](../../../../core/servers/deploy/install/language-packs.md) (per abilitare altre lingue) in un sito dopo aver installato i client, è necessario reinstallare i client per consentire l'uso di tali lingue. Per i client di dispositivi mobili, è necessario cancellare il dispositivo e registrarlo nuovamente.  
 
-## <a name="prepare-required-pki-certificates-in-advance"></a>必要な PKI 証明書を事前に準備する  
- インターネット上のデバイス、登録済みモバイル デバイス、および Mac コンピューターを管理するには、サイト システム (管理ポイントと配布ポイント) とクライアント デバイスに PKI 証明書が必要です。 運用ネットワークでは、状況に応じて、管理者が新しい証明書を使用するために管理承認を変更したり、サイト システム サーバーを再起動する必要があります。また、ユーザーは新しいグループ メンバーシップのためにログオフおよびログオンが必要になる場合があります。 さらに、セキュリティ アクセス許可のレプリケーションと新しい証明書テンプレートのために、十分な時間を見込む必要があります。  
+## <a name="prepare-required-pki-certificates-in-advance"></a>Preparare in anticipo i certificati PKI richiesti  
+ Per gestire dei dispositivi su Internet, dispositivi mobili registrati e computer Mac è necessario disporre di certificati PKI sui sistemi del sito (punti di gestione e punti di distribuzione) e sui dispositivi client. Sulle reti di produzione potrebbe essere richiesta l'approvazione della gestione delle modifiche per utilizzare i nuovi certificati, il riavvio dei server di sistema del sito oppure la disconnessione e l'accesso per una nuova appartenenza al gruppo. Inoltre, potrebbe essere necessario attendere un tempo sufficiente per la replica delle autorizzazioni di protezione e per i nuovi modelli di certificato.  
 
- 必要な PKI 証明書の詳細については、「[System Center Configuration Manager での PKI 証明書の要件](../../../../core/plan-design/network/pki-certificate-requirements.md)」をご覧ください。  
+ Per altre informazioni sui certificati PKI richiesti, vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
 
-## <a name="before-you-install-clients-configure-any-required-client-settings-and-maintenance-windows"></a>クライアントをインストールする前に必要なクライアント設定とメンテナンス期間を構成する  
- [クライアント設定](../../../../core/clients/deploy/configure-client-settings.md)とメンテナンス期間は、クライアントをインストールする前または後に構成できますが、クライアントをインストールしてすぐにこれらの設定を使用できるように、クライアントをインストールする前に必要な設定を構成することをお勧めします。 
+## <a name="before-you-install-clients-configure-any-required-client-settings-and-maintenance-windows"></a>Prima di installare i client, configurare le impostazioni client richieste e le finestre di manutenzione  
+ Sebbene sia possibile [configurare le impostazioni client](../../../../core/clients/deploy/configure-client-settings.md) e le finestre di manutenzione prima o dopo aver installato i client, è meglio configurare le impostazioni richieste prima di installare i client in modo che le impostazioni vengano usate al momento dell'installazione. 
 
- サーバーや Windows Embedded デバイスといった重要なデバイスでは、業務の継続性を確保するために、メンテナンス期間を構成します。 必要なソフトウェア更新プログラムとマルウェア対策ソフトウェアによってコンピューターが営業時間内に再起動しないように、メンテナンス期間を設定することができます。  
+ Configurare le finestre di manutenzione per i server e per i dispositivi con Windows Embedded per garantire la continuità aziendale per i dispositivi critici. Le finestre di manutenzione garantiscono che gli aggiornamenti software richiesti e il software antimalware non determinino il riavvio del computer durante l'orario di lavoro.  
 
 > [!IMPORTANT]  
->  Unified Write Filter (UWF) で保護する予定の Windows 10 コンピューターでは、クライアントをインストールする前に UWF のデバイスを構成する必要があります。 これにより、メンテナンス モード中に権限の低いユーザーをロックアウトしてデバイスにログインできなくするカスタム資格情報プロバイダーを使用して、Configuration Manager がクライアントをインストールできるようになります。  
+>  Per i computer Windows 10 che si prevede di proteggere con il Filtro di scrittura unificato (UWF), è necessario configurare il dispositivo per UWF prima di installare il client. In questo modo Configuration Manager installa il client con un provider di credenziali personalizzato che blocca l'accesso degli utenti con diritti limitati al dispositivo in modalità di manutenzione.  
 
-## <a name="plan-your-user-enrollment-experience-for-mac-computers-and-mobile-devices"></a>Mac コンピューターとモバイル デバイスのユーザー登録エクスペリエンスを計画する   
- ユーザーが Configuration Manager を使用して自分の Mac コンピューターとモバイル デバイスを登録する場合、ユーザー エクスペリエンスを計画します。 たとえば、Web ページを使用してインストールおよび登録プロセスをスクリプト化し、ユーザーが入力する情報を必要最小限に抑えたり、手順とリンクを電子メールで送信したりすることができます。  
+## <a name="plan-your-user-enrollment-experience-for-mac-computers-and-mobile-devices"></a>Pianificare l'esperienza di registrazione utente per i computer Mac e i dispositivi mobili   
+ Se gli utenti registrano i loro computer Mac e i dispositivi mobili in Configuration Manager, pianificare l'esperienza utente. Ad esempio, è possibile creare uno script per l'installazione e il processo di registrazione usando una pagina Web in modo che gli utenti possano inserire una quantità minima di informazioni necessarie e ricevano le istruzioni con un collegamento tramite posta elettronica.  
 
-## <a name="use-file-based-write-filters-for-windows-embedded-devices"></a>Windows Embedded デバイスにファイル ベースの書き込みフィルターを使用する 
- Enhanced Write Filter (EWF) を使用する組み込みデバイスでは、状態メッセージの再同期が発生しやすくなります。 Enhanced Write Filter を使用する組み込みデバイスが少数の場合は、この問題に気がつかない可能性があります。 ただし、差分のインベントリではなく完全なインベントリを送信する場合など、情報を再同期する組み込みデバイスが多数ある場合、ネットワーク パケットが大幅に増え、サイト サーバーの CPU 処理量が多くなる可能性があります。  
+## <a name="use-file-based-write-filters-for-windows-embedded-devices"></a>Usare filtri di scrittura basati su file per i dispositivi Windows Embedded 
+ I dispositivi incorporati che utilizzano i filtri di scrittura avanzati (EWF) sono soggetti alle risincronizzazioni dei messaggi di stato. Se si dispone solo di pochi dispositivi incorporati che utilizzano filtri di scrittura avanzati, tale evento potrebbe passare inosservato. Tuttavia, in caso di risincronizzazione delle informazioni di numerosi dispositivi integrati, come l'invio dell'inventario completo piuttosto che l'inventario differenziale, potrebbe verificarsi un significativo aumento dei pacchetti di rete e un maggiore carico di elaborazione della CPU sul server del sito.  
 
- 有効にする書き込みフィルターの種類を選択できる場合は、Configuration Manager クライアント上のネットワークと CPU の効率のために、ファイル ベースの書き込みフィルターを選択し、デバイスの再起動から次の再起動までクライアントの状態とインベントリ データを維持する例外を構成します。 書き込みフィルターについて詳しくは「   [System Center Configuration Manager での Windows Embedded デバイスへのクライアント展開の計画](../../../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md)」をご覧ください。  
+ Se è possibile scegliere il tipo di filtro di scrittura da abilitare, scegliere i filtri di scrittura basati su file. Configurare quindi le eccezioni per il mantenimento dello stato del client e dei dati di inventario tra riavvii dei dispositivi per la massima efficienza della rete e della CPU nel client di Configuration Manager. Per altre informazioni sui filtri di scrittura, vedere   [Planning for client deployment to Windows Embedded devices in System Center Configuration Manager](../../../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md).  
 
- プライマリ サイトでサポートできる Windows Embedded クライアントの最大数の詳細については、「[クライアントとデバイスでサポートされるオペレーティング システム](../../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md)」を参照してください。  
+ Per altre informazioni sul numero massimo di client con Windows Embedded supportati da un sito primario, vedere [Supported operating sysetms for clients and devices](../../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md) (Sistemi operativi supportati per client e dispositivi).  

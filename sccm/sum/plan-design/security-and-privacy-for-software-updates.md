@@ -1,6 +1,6 @@
 ---
-title: "ソフトウェア更新プログラムのセキュリティとプライバシー | Microsoft Docs"
-description: "ソフトウェア更新プログラムのセキュリティのベスト プラクティスおよび Configuration Manager でのプライバシー情報の処理方法について説明します。"
+title: Sicurezza e privacy per gli aggiornamenti software | Microsoft Docs
+description: "Seguire queste procedure consigliate per gli aggiornamenti software ed esaminare le informazioni sulla modalità di gestione delle informazioni sulla privacy di Configuration Manager."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,58 +14,58 @@ ms.assetid: 41d6d5d8-ba84-4efb-b105-4d1eed239824
 ms.openlocfilehash: 4b4f045138abc14b6e93b3b990c5f3a8b4f2f952
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-software-updates-in-system-center-configuration-manager"></a>System Center Configuration Manager のソフトウェア更新プログラムのセキュリティとプライバシー
+# <a name="security-and-privacy-for-software-updates-in-system-center-configuration-manager"></a>Sicurezza e privacy per gli aggiornamenti software in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-このトピックには、System Center Configuration Manager におけるソフトウェア更新プログラムのセキュリティとプライバシーの情報が含まれています。  
+In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy per gli aggiornamenti software in System Center Configuration Manager.  
 
-##  <a name="BKMK_Security_HardwareInventory"></a> ソフトウェア更新プログラムに関するセキュリティ上のベスト プラクティス  
- クライアントにソフトウェア更新プログラムを展開するときは、次のようなセキュリティのベスト プラクティスに従ってください。  
+##  <a name="BKMK_Security_HardwareInventory"></a> Procedure di sicurezza consigliate per gli aggiornamenti software  
+ Quando si distribuiscono gli aggiornamenti software ai client, utilizzare le seguenti procedure ottimali di protezione:  
 
--   ソフトウェアの更新パッケージに対する既定のアクセス許可を変更しない。  
+-   Non modificare le autorizzazioni predefinite nei pacchetti di aggiornamento software.  
 
-     既定では、ソフトウェアの更新パッケージは、管理者に **フル コントロール** を許可し、ユーザーに **読み取り** アクセスを付与するように設定されます。 これらのアクセス許可を変更すると、攻撃者によるソフトウェア更新プログラムの追加または削除が可能になる危険性があります。  
+     Per impostazione predefinita, i pacchetti di aggiornamento software sono impostati in modo da consentire agli amministratori il **Controllo completo** e agli utenti l'accesso in **Lettura** . Se si modificano queste autorizzazioni, è possibile che un utente malintenzionato aggiunga, rimuova o elimini aggiornamenti software.  
 
--   ソフトウェア更新プログラムのダウンロード先へのアクセスを制御する。  
+-   Controllare l'accesso al percorso download per gli aggiornamenti software.  
 
-     ソフトウェア更新プログラムを実際にダウンロード先にダウンロードする管理者と SMS プロバイダー、サイトサーバーのコンピューター アカウントは、ダウンロード先への [書き込み] アクセス許可が必要です。 **** ダウンロード先へのアクセスを制限して、そこにあるソフトウェアの更新のソース ファイルを攻撃者が改ざんするリスクを低減します。  
+     Per gli account computer per il provider SMS, il server del sito e l'utente amministratore che scaricherà gli aggiornamenti software nel percorso download è necessario disporre dell'accesso in **Scrittura** al percorso download. Limitare l'accesso al percorso download consente di ridurre il rischio di manomissioni da parte di utenti malintenzionati dei file origine degli aggiornamenti software nel percorso download.  
 
-     さらに、ダウンロード先で UNC 共有を使用する場合は、ネットワークを通じて転送するときにソフトウェア更新のソース ファイルが改ざんされることを防ぐため、IPsec または SMB 署名 を使用して、ネットワーク チャネルをセキュリティ保護してください。  
+     Inoltre, se si utilizza una condivisione UNC per il percorso download, proteggere il canale di rete utilizzando una firma SMB o IPsec per impedire manomissioni dei file origine degli aggiornamenti software durante il trasferimento in rete.  
 
--   展開時刻の評価に UTC を使用する。  
+-   Per valutare la durata della distribuzione, utilizzare l'ora UTC.  
 
-     UTC ではなくローカル時刻を使用する場合は、ユーザーがコンピューターのタイム ゾーンを変更していると、ソフトウェア更新プログラムのインストールが遅れる可能性があります。  
+     Se gli utenti utilizzano l'ora locale invece dell'ora UTC potrebbero ritardare l'installazione di aggiornamenti software modificando il fuso orario nel computer  
 
--   Windows Server Update Services (WSUS). の SSL を有効にし、WSUS をセキュリティ保護するためのベスト プラクティスに従います。  
+-   Attivare SSL in WSUS (Windows Server Update Services) e seguire le procedure ottimali per la protezione di WSUS.  
 
-     Configuration Manager で使用する WSUS のバージョン用のセキュリティのベストプラクティスを確認し、これに従います。  
+     Individuare e seguire le procedure di sicurezza consigliate per la versione di WSUS in uso con Configuration Manager.  
 
     > [!IMPORTANT]  
-    >  WSUS サーバーで SSL コミュニケーションを有効にするようにソフトウェア更新ポイントを構成する場合は、WSUS サーバーの SSL の仮想ルートを構成する必要があります。  
+    >  Se si configura il punto di aggiornamento software per attivare le comunicazioni SSL per il server WSUS, è necessario configurare radici virtuali per SSL nel server WSUS.  
 
--   CRL チェックを有効にする  
+-   Attivare il controllo CRL.  
 
-     既定では、Configuration Manager は、ソフトウェア更新プログラムがコンピューターに展開される前に、更新の署名を検証するための証明書失効リスト (CRL) を確認しません。 証明書が使用されるたびに CRL をチェックすることで、失効済み証明書の使用に対するセキュリティを向上できますが、接続に遅れが発生し、CRL チェックを実行するコンピューターの処理の増加を招くことになります。  
+     Per impostazione predefinita, Configuration Manager non controlla l'elenco di revoche di certificati (CRL) per verificare la firma degli aggiornamenti software prima della distribuzione nei computer. Il controllo dell'elenco CRL a ogni utilizzo del certificato offre una maggiore protezione dall'utilizzo di un certificato revocato, ma introduce un ritardo nella connessione e genera un'ulteriore elaborazione nel computer che esegue il controllo CRL.  
 
-     ソフトウェア更新の CRL チェックを有効化する方法の詳細については、「[System Center Configuration Manager でのソフトウェアの更新の CRL チェックを有効にする方法](../get-started/manage-settings-for-software-updates.md#crl-checking-for-software-updates)」を参照してください。  
+     Per altre informazioni su come attivare il controllo CRL per gli aggiornamenti software, vedere [How to Enable CRL Checking for Software Updates](../get-started/manage-settings-for-software-updates.md#crl-checking-for-software-updates) (Come abilitare il controllo CRL per gli aggiornamenti software).  
 
--   WSUS がカスタム Web サイトを使用するように構成する。  
+-   Configurare WSUS per l'utilizzo di un sito Web personalizzato.  
 
-     ソフトウェアの更新ポイントに WSUS をインストールする場合、既存の IIS 既定 Web サイトを使用するか、またはカスタム WSUS Web サイトを作成するかを選択できます。 他の Configuration Manager サイト システムまたは他のアプリケーションで使用されているのと同じ Web サイトを共有せずに、WSUS サービスが IIS によって専用の仮想 Web サイトでホストされるようにするには、WSUS のカスタム Web サイトを作成してください。  
+     Quando si installa WSUS nel punto di aggiornamento software, è possibile scegliere di utilizzare il sito Web IIS predefinito o di creare un sito Web WSUS personalizzato. Creare un sito Web personalizzato per WSUS in modo che IIS ospiti i servizi WSUS in un sito Web virtuale dedicato invece di condividere lo stesso sito Web usato dagli altri sistemi del sito di Configuration Manager o da altre applicazioni.  
 
-     詳細については、「[WSUS がカスタム Web サイトを使用するように構成する](plan-for-software-updates.md#BKMK_CustomWebSite)」を参照してください。  
+     Per altre informazioni, vedere [Configure WSUS to use a custom web site](plan-for-software-updates.md#BKMK_CustomWebSite) (Configurare WSUS per l'uso di un sito Web personalizzato).  
 
-##  <a name="BKMK_Privacy_HardwareInventory"></a> ソフトウェア更新プログラムに関するプライバシー情報  
- ソフトウェアの更新は、クライアント コンピューターをスキャンして、必要なソフトウェアの更新を判断し、情報をサイト データベースに返送します。 ソフトウェアの更新プロセスの間、Configuration Manager では、コンピューターとログオン アカウントを識別する情報がクライアントとサーバー間で送信されることがあります。  
+##  <a name="BKMK_Privacy_HardwareInventory"></a> Informazioni sulla privacy per gli aggiornamenti software  
+ Gli aggiornamenti software consentono di esaminare i computer del client per stabilire quali aggiornamenti software sono necessari, quindi reinviano le informazioni al database del sito. Durante il processo di aggiornamento del software, Configuration Manager può trasmettere le informazioni tra i client e i server che identificano gli account di accesso e del computer.  
 
- Configuration Manager は、ソフトウェアの展開プロセスに関するステータス情報を維持します。 状態情報は、送信時や保管時に暗号化されません。 状態情報は、Configuration Manager データベースに保管され、データベース メンテナンス タスクによって削除されます。 状態情報が Microsoft に送信されることはありません。  
+ Configuration Manager mantiene le informazioni sullo stato relative al processo di distribuzione del software. Le informazioni sullo stato non vengono crittografate durante la trasmissione o l'archiviazione. Le informazioni sullo stato vengono archiviate nel database di Configuration Manager ed eliminate dalle attività di manutenzione del database stesso. Nessuna informazione sullo stato viene inviata a Microsoft.  
 
- Configuration Manager のソフトウェアの更新を使用してクライアント コンピューターにソフトウェアの更新をインストールする場合は、その更新に関するソフトウェア ライセンス条項の対象となることがあります。これは、Configuration Manager のソフトウェア ライセンス条項とは別個のものです。 Configuration Manager を使用してソフトウェア更新プログラムをインストールする前に、必ずソフトウェア ライセンス条項を確認して同意する必要があります。  
+ L'uso degli aggiornamenti software di Configuration Manager per installare gli aggiornamenti software nei computer client può essere soggetto alle condizioni di licenza software per tali aggiornamenti, che si distinguono dalle condizioni di licenza software per System Center Configuration Manager. Esaminare sempre e accettare le condizioni di licenza software prima di installare gli aggiornamenti software tramite Configuration Manager.  
 
- Configuration Manager では、既定でソフトウェアの更新が実装されることはありません。また、複数の構成手順を実行しなければ、情報が収集されることはありません。  
+ Per impostazione predefinita, Configuration Manager non implementa gli aggiornamenti software e richiede di eseguire diversi passaggi di configurazione prima di raccogliere le informazioni.  
 
- ソフトウェア更新プログラムを構成する前に、プライバシー要件について検討してください。  
+ Prima di configurare gli aggiornamenti software, considerare i requisiti sulla privacy.  

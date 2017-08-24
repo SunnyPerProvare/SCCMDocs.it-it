@@ -1,6 +1,6 @@
 ---
-title: "フローチャート - レプリケーションの更新 | Microsoft Docs"
-description: "インストールすることを選択したコンソール内の更新プログラムを別のサイトにレプリケートするプロセスについて説明します。"
+title: Diagramma di flusso - Replica degli aggiornamenti | Microsoft Docs
+description: Vedere il processo in base al quale un aggiornamento nella console selezionato installa le repliche in siti aggiuntivi.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,13 +17,13 @@ manager: angrobe
 ms.openlocfilehash: cefde9fa6894e39715257f0453ccfe160a55919e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="flowchart---update-replication-for-system-center-configuration-manager"></a>Flowchart - Update replication for System Center Configuration Manager (フローチャート - System Center Configuration Manager のレプリケーションの更新)
+# <a name="flowchart---update-replication-for-system-center-configuration-manager"></a>Flowchart - Update replication for System Center Configuration Manager (Diagramma di flusso - aggiornare la replica per System Center Configuration Manager)
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-これらのデータ フローでは、インストールすることを選択したコンソール内の更新プログラムを別のサイトにレプリケートするプロセスを示します。 また、これらのフローでは、更新プログラムを抽出し、前提条件の確認を実行して、中央管理サイトとプライマリ サイトで更新プログラムをインストールするプロセスも示します。  
+Questi flussi di dati visualizzano il processo in base al quale un aggiornamento nella console selezionato installa le repliche in siti aggiuntivi. Questi flussi illustrano anche il processo di estrazione dell'aggiornamento per eseguire i controlli dei prerequisiti e installare gli aggiornamenti in un sito di amministrazione centrale e nei siti primari.  
 
- ![フローチャート - 更新プログラムのレプリケート](media/Flowchart---Replicate-updates.png)  
+ ![Diagramma di flusso - Replicare gli aggiornamenti](media/Flowchart---Replicate-updates.png)  

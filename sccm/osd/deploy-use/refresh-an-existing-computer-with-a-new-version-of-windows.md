@@ -1,6 +1,6 @@
 ---
-title: "新しいバージョンの Windows で既存のコンピューターを更新する | Microsoft Docs"
-description: "Configuration Manager でいくつかの方法を使用して、既存のコンピューターのパーティション分割とフォーマット (ワイプ) を行い、そのコンピューターに新しいオペレーティング システムをインストールする一般的な手順を説明します。"
+title: Aggiornare un computer esistente con una nuova versione di Windows | Microsoft Docs
+description: "È possibile usare vari metodi in Configuration Manager per eseguire partizioni e formattare (cancellare) un computer esistente e installare un nuovo sistema operativo nel computer."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,72 +17,72 @@ manager: angrobe
 ms.openlocfilehash: b247cbb68ed63a8eb99715a248686d68a28c53e2
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="refresh-an-existing-computer-with-a-new-version-of-windows-using-system-center-configuration-manager"></a>System Center Configuration Manager を使用して新しいバージョンの Windows で既存のコンピューターを更新する
+# <a name="refresh-an-existing-computer-with-a-new-version-of-windows-using-system-center-configuration-manager"></a>Aggiornare un computer esistente con una nuova versione di Windows tramite System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Configuration Manager でいくつかの方法を使用して、既存のコンピューターのパーティション分割とフォーマット (ワイプ) を行い、そのコンピューターに新しいオペレーティング システムをインストールする一般的な手順を説明します。 このシナリオでは、PXE、起動可能なメディア、またはソフトウェア センターなど、多数のさまざまな展開方法を選べます。 また、状態移行ポイントをインストールして設定を保存し、新しいオペレーティング システムをインストールした後、そこに復元することもできます。 適切なオペレーティング システムの展開シナリオがわからない場合は、「[エンタープライズ オペレーティング システムを展開するシナリオ](scenarios-to-deploy-enterprise-operating-systems.md)」を参照してください。  
+Questo argomento illustra la procedura generale in Configuration Manager per eseguire partizioni e formattare (cancellare) un computer esistente e installare un nuovo sistema operativo nel computer. Per questo scenario è possibile scegliere tra i numerosi e diversi metodi di distribuzione disponibili, ad esempio PXE, supporti di avvio o Software Center. È anche possibile scegliere di installare un punto di migrazione stato per archiviare le impostazioni e quindi ripristinarle nel nuovo sistema operativo dopo l'installazione. Se non si è sicuri che questo sia lo scenario di distribuzione del sistema operativo più adatto alle esigenze, vedere [Scenari per distribuire sistemi operativi aziendali](scenarios-to-deploy-enterprise-operating-systems.md).  
 
- Windows の新しいバージョンで既存のコンピューターを更新する場合は、次のセクションを参考にします。  
+ Per informazioni su come aggiornare un computer esistente con una nuova versione di Windows, vedere le sezioni seguenti.  
 
-##  <a name="BKMK_Plan"></a> プラン  
+##  <a name="BKMK_Plan"></a> Pianificazione  
 
--   **インフラストラクチャの要件の計画と実装**  
+-   **Pianificare e implementare i requisiti di infrastruttura**  
 
-     オペレーティング システムを展開する前に解決しなければならないインフラストラクチャの要件として、Windows ADK、ユーザー状態移行ツール (USMT)、Windows 展開サービス (WDS)、サポートされているハード ディスクの構成などがあります。詳細については、「[オペレーティング システムの展開のインフラストラクチャ要件](../plan-design/infrastructure-requirements-for-operating-system-deployment.md)」を参照してください。  
+     Per poter distribuire i sistemi operativi, è necessario soddisfare diversi requisiti di infrastruttura, ad esempio Windows ADK, Utilità di migrazione stato utente (USMT), Servizi di distribuzione Windows (WDS), configurazioni supportate del disco rigido e così via. Per altre informazioni, vedere [Requisiti dell'infrastruttura per la distribuzione del sistema operativo](../plan-design/infrastructure-requirements-for-operating-system-deployment.md).  
 
--   **状態移行ポイントのインストール (設定を転送する場合にのみ必要)**  
+-   **Installare un punto di migrazione stato, obbligatorio solo se si trasferiscono le impostazioni**  
 
-     既存のコンピューターから設定をキャプチャし、新しいオペレーティング システムにその設定を復元するときは、状態移行ポイントをインストールする必要があります。 詳細については、「[状態移行ポイント](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_StateMigrationPoints)」を参照してください。  
+     Quando si prevede di acquisire le impostazioni dal computer esistente e quindi di ripristinarle nel nuovo sistema operativo, è necessario installare un punto di migrazione stato. Per altre informazioni, vedere [Punto di migrazione dello stato](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_StateMigrationPoints).  
 
-##  <a name="BKMK_Configure"></a> 構成  
+##  <a name="BKMK_Configure"></a> Configura  
 
-1.  **ブート イメージの準備**  
+1.  **Preparare un'immagine d'avvio**  
 
-     ブート イメージは、Windows PE 環境 (コンポーネントやサービスが制限された最小オペレーティング システム) でコンピューターを起動して、完全な Windows オペレーティング システムをコンピューターにインストールできるようにします。   オペレーティング システムを展開する場合は、使用するブート イメージを選択し、配布ポイントにそのイメージを配布する必要があります。 ブート イメージを準備するには、次のものを使用します。  
+     Le immagini d'avvio avviano un computer in un ambiente Windows PE (un sistema operativo minimo con componenti e servizi limitati) che può quindi installare un sistema operativo Windows completo nel computer.   Quando si distribuiscono sistemi operativi, è necessario selezionare un'immagine d'avvio da usare e distribuirla in un punto di distribuzione. Per preparare l'immagine d'avvio, vedere quanto segue:  
 
-    -   イメージの詳細については、「[ブート イメージの管理](../get-started/manage-boot-images.md)」を参照してください。  
+    -   Per altre informazioni sulle immagini d'avvio, vedere [Gestire le immagini di avvio](../get-started/manage-boot-images.md).  
 
-    -   ブート イメージをカスタマイズする方法の詳細については、「[ブート イメージのカスタマイズ](../get-started/customize-boot-images.md)」を参照してください。  
+    -   Per altre informazioni su come personalizzare un'immagine di avvio, vedere [Personalizzare immagini di avvio](../get-started/customize-boot-images.md).  
 
-    -   配布ポイントへブート イメージを配布します。 詳細については、「[コンテンツの配布](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content)」を参照してください。  
+    -   Distribuire l'immagine d'avvio nei punti di distribuzione. Per altre informazioni, vedere [Distribuire contenuto](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).  
 
-2.  **オペレーティング システム イメージの準備**  
+2.  **Preparare un'immagine del sistema operativo**  
 
-     オペレーティング システム イメージには、セットアップ先のコンピューターにオペレーティング システムをインストールするために必要なファイルが含まれています。 オペレーティング システム イメージを準備するには、次のものを使用します。  
+     L'immagine del sistema operativo contiene i file necessari per installare il sistema operativo nel computer di destinazione. Per preparare l'immagine del sistema operativo, vedere quanto segue:  
 
-    -   オペレーティング システム イメージを作成する方法の詳細については、「[オペレーティング システム イメージを管理する](../get-started/manage-operating-system-images.md)」を参照してください。  
+    -   Per altre informazioni su come creare un'immagine del sistema operativo, vedere [Gestire immagini del sistema operativo](../get-started/manage-operating-system-images.md).  
 
-    -   オペレーティング システム イメージを配布ポイントに配布します。 詳細については、「[コンテンツの配布](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content)」を参照してください。  
+    -   Distribuire l'immagine del sistema operativo nei punti di distribuzione. Per altre informazioni, vedere [Distribuire contenuto](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).  
 
-3.  **オペレーティング システムをネットワーク経由で展開するためのタスク シーケンスの作成**  
+3.  **Creare una sequenza di attività per distribuire sistemi operativi nella rete**  
 
-     ネットワーク経由でのオペレーティング システムのインストールを自動化するタスク シーケンスを使用します。 「[オペレーティング システムをインストールするタスク シーケンスの作成](create-a-task-sequence-to-install-an-operating-system.md)」の手順でオペレーティング システムを展開するためのタスク シーケンスを作成します。 選択した展開方法に応じて、タスク シーケンスに追加の考慮事項があります。  
+     Usare una sequenza di attività per automatizzare l'installazione del sistema operativo nella rete. Usare i passaggi in [Creare una sequenza di attività per installare un sistema operativo](create-a-task-sequence-to-install-an-operating-system.md) per creare la sequenza di attività per distribuire il sistema operativo. A seconda del metodo di distribuzione scelto, potrebbero essere necessarie considerazioni aggiuntive per la sequenza di attività.  
 
     > [!NOTE]  
-    >  このシナリオでは、タスク シーケンスは、コンピューターのハード ディスクをフォーマットし、パーティション分割します。 ユーザー設定をキャプチャするには、状態移行ポイントを使用する必要があります。タスク シーケンスの作成ウィザードの **[状態の移行]** ページで **[ユーザー設定とファイルを状態移行ポイントに保存する]** を選びます。 ユーザー設定とファイルをローカルに保存する場合、ハード ディスクをフォーマットすると、それらの情報は失われ、Configuration Manager が設定を復元できなくなります。 詳細については、「[ユーザー状態の管理](../get-started/manage-user-state.md)」を参照してください。  
+    >  In questo scenario, la sequenza di attività formatta e partiziona i dischi rigidi del computer. Per acquisire le impostazioni utente, è necessario usare il punto di migrazione stato e selezionare **Salva impostazioni utente e file in punto di migrazione stato** nella pagina **Migrazione stato** della Creazione guidata della sequenza attività. Se le impostazioni utente e i file vengono salvati localmente, andranno persi quando il disco rigido viene formattato e Configuration Manager non potrà ripristinare le impostazioni. Per altre informazioni, vedere [Gestire lo stato utente](../get-started/manage-user-state.md).  
 
-##  <a name="BKMK_Deploy"></a> デプロイ  
+##  <a name="BKMK_Deploy"></a> Distribuisci  
 
--   オペレーティング システムを展開するには、次の展開方法のいずれかを使用します。  
+-   Usare uno dei metodi di distribuzione seguenti per distribuire il sistema operativo:  
 
-    -   [PXE を使用したネットワーク経由での Windows の展開](use-pxe-to-deploy-windows-over-the-network.md)  
+    -   [Usare PXE per distribuire Windows in rete](use-pxe-to-deploy-windows-over-the-network.md)  
 
-    -   [マルチキャストを使用した、ネットワーク経由での Windows の展開](use-multicast-to-deploy-windows-over-the-network.md)  
+    -   [Usare il multicast per distribuire Windows in rete](use-multicast-to-deploy-windows-over-the-network.md)  
 
-    -   [工場出荷時の OEM 用、または現地保管場所用のイメージの作成](create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
+    -   [Creare un'immagine per un OEM in modalità produttore computer o per un rivenditore locale](create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
 
-    -   [ネットワークではなくスタンドアロン メディアを使用した Windows の展開](use-stand-alone-media-to-deploy-windows-without-using-the-network.md)  
+    -   [Usare i supporti autonomi per distribuire Windows senza usare la rete](use-stand-alone-media-to-deploy-windows-without-using-the-network.md)  
 
-    -   [起動可能なメディアを使用したネットワーク経由での Windows の展開](use-bootable-media-to-deploy-windows-over-the-network.md)  
+    -   [Usare i supporti di avvio per distribuire Windows in rete](use-bootable-media-to-deploy-windows-over-the-network.md)  
 
-    -   [ソフトウェア センターを使用したネットワーク経由での Windows の展開](use-software-center-to-deploy-windows-over-the-network.md)  
+    -   [Usare Software Center per distribuire Windows in rete](use-software-center-to-deploy-windows-over-the-network.md)  
 
-## <a name="monitor"></a>モニター  
+## <a name="monitor"></a>Monitoraggio  
 
--   **タスク シーケンスの展開の監視**  
+-   **Monitorare la distribuzione della sequenza di attività**  
 
-     オペレーティング システムをインストールするために、タスク シーケンスの展開を監視するには、「[オペレーティング システムの展開の監視](monitor-operating-system-deployments.md)」を参照してください。  
+     Per monitorare la distribuzione della sequenza di attività per l'installazione del sistema operativo, vedere [Monitorare le distribuzioni del sistema operativo](monitor-operating-system-deployments.md).  

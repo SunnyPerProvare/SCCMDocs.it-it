@@ -1,6 +1,6 @@
 ---
-title: "クライアントのアップグレード | Microsoft Docs"
-description: "System Center Configuration Manager で Windows コンピューターのクライアントをアップグレードします。"
+title: Aggiornare i client | Microsoft Docs
+description: Aggiornare i client di System Center Configuration Manager in computer Windows.
 ms.custom: na
 ms.date: 05/04/2017
 ms.prod: configuration-manager
@@ -18,85 +18,85 @@ manager: angrobe
 ms.openlocfilehash: 98b8c92e4dad3cef1ed3701b9c0f9111eb9941ea
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-upgrade-clients-for-windows-computers-in-system-center-configuration-manager"></a>System Center Configuration Manager で Windows コンピューター用クライアントをアップグレードする方法
+# <a name="how-to-upgrade-clients-for-windows-computers-in-system-center-configuration-manager"></a>Come aggiornare i client per i computer Windows in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-クライアント インストール方法または Configuration Manager の自動クライアント アップグレード機能を使用して、Windows コンピューター上のクライアントをアップグレードできます。 次のクライアント インストール方法は、Windows コンピューター上のクライアント ソフトウェアをアップグレードする有効な方法です。  
+È possibile aggiornare il client in computer Windows usando i metodi di installazione client o le funzionalità di aggiornamento client automatico di Configuration Manager. I metodi di installazione client seguenti sono validi per aggiornare il software client nei computer Windows:  
 
--   グループ ポリシーによるインストール  
+-   Installazione con Criteri di gruppo  
 
--   ログオン スクリプトによるインストール  
+-   Installazione tramite script di accesso  
 
--   手動インストール  
+-   Installazione manuale  
 
--   アップグレード インストール  
+-   Aggiornare l'installazione  
 
- クライアント インストール方法を使用してクライアントをアップグレードする場合は、「[System Center Configuration Manager でクライアントを Windows コンピューターに展開する方法](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md)」で、その方法について詳細を確認してください。
+ Se si intende aggiornare il client con metodi di installazione client, sono disponibili altre informazioni sull'uso di tali metodi in [Come distribuire i client nei computer Windows in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md).
 
- バージョン 1610 以降では、除外グループを指定して、クライアントをアップグレード対象から除外することができます。 詳細については、「[Windows コンピューター用クライアントをアップグレードする方法](exclude-clients-windows.md)」を参照してください。  
+ A partire dalla versione 1610 è possibile escludere client dall'aggiornamento specificando un gruppo di esclusioni. Per altre informazioni, vedere [How to exclude upgrading clients for Windows computers](exclude-clients-windows.md) (Come escludere l'aggiornamento di client per computer Windows).  
 
 
 > [!TIP]  
->  Configuration Manager の以前のバージョン \(Configuration Manager 2007 または System Center 2012 Configuration Manager など\) から、サーバー インフラストラクチャをアップグレードする場合は、Configuration Manager クライアントをアップグレードする前に、現在のすべてのブランチの更新プログラムのインストールを含む、サーバーのアップグレードを完了することをお勧めします。   現在のブランチの最新の更新プログラムには、クライアントの最新バージョンが含まれているため、使用するすべての Configuration Manager 更新プログラムをインストールした後に、クライアントのアップグレードを実行することをお勧めします。
+>  Se si esegue l'aggiornamento dell'infrastruttura di server da una versione precedente di Configuration Manager \(ad esempio Configuration Manager 2007 o System Center 2012 Configuration Manager\), è consigliabile completare gli aggiornamenti dei server, tra cui l'installazione di tutti gli aggiornamenti del ramo corrente, prima dell'aggiornamento dei client di Configuration Manager.   L'aggiornamento più recente del ramo corrente contiene la versione più recente del client, quindi è consigliabile eseguire gli aggiornamenti dei client dopo aver installato tutti gli aggiornamenti di Configuration Manager che si vogliono usare.
 
 > [!NOTE]
-> アップグレード中にクライアントのサイトを再割り当てする予定の場合は、SMSSITECODE client.msi プロパティを使用して新しいサイトを指定できます。 SITEREASSIGN で AUTO を使用する場合は、SITEREASSIGN=TRUE を指定して、アップグレード中にサイトの自動再割り当てを許可する必要があります。 詳細については、「[SMSSITECODE](../../deploy/about-client-installation-properties.md#smssitecode)」を参照してください。
+> Se si prevede di riassegnare il sito dei client durante l'aggiornamento, è possibile specificare il nuovo sito tramite la proprietà SMSSITECODE di client.msi. Se si usa AUTO per SMSSITECODE, è necessario specificare anche SITEREASSIGN = TRUE per consentire la riassegnazione automatica del sito durante l'aggiornamento. Per altre informazioni, vedere [SMSSITECODE](../../deploy/about-client-installation-properties.md#smssitecode).
 
-## <a name="use-automatic-client-upgrade"></a>自動クライアント アップグレードの使用  
- Configuration Manager 階層に割り当てられているクライアントが階層内で使用しているバージョンよりも前のバージョンであることが Configuration Manager で識別された場合に、クライアント ソフトウェアを最新バージョンの Configuration Manager クライアントに自動的にアップグレードするように、Configuration Manager を構成することもできます。 このシナリオには、クライアントを Configuration Manager サイトに割り当てるときの最新バージョンへのアップグレードも含まれます。  
+## <a name="use-automatic-client-upgrade"></a>Usare l'aggiornamento client automatico  
+ È anche possibile configurare Configuration Manager per l'aggiornamento automatico del software client all'ultima versione client di Configuration Manager quando Configuration Manager rileva che la versione di un client assegnato alla gerarchia di Configuration Manager è precedente a quella usata nella gerarchia. Questo scenario include l'aggiornamento del client all'ultima versione durante il tentativo di assegnazione a un sito di Configuration Manager.  
 
- クライアントは、次の場合に自動的にアップグレードされます。  
+ È possibile aggiornare automaticamente un client negli scenari seguenti:  
 
--   クライアント バージョンが、階層内で使用されているバージョンよりも前のバージョンである  
+-   La versione client è inferiore a quella usata nella gerarchia.  
 
--   中央管理サイトのクライアントに言語パックがインストールされており、既存のクライアントにはインストールされていない  
+-   Nel client sul sito di amministrazione centrale è installato un Language Pack non presente nel client esistente.  
 
--   階層内のクライアントの前提条件のバージョンが、クライアントにインストールされている前提条件とは異なっている  
+-   Un prerequisito client nella gerarchia prevede una versione differente rispetto a quella installata sul client.  
 
--   クライアント インストール ファイルのバージョンが異なっている  
-
-> [!NOTE]  
->  レポート フォルダー **Site - Client Information** で、 **[Configuration Manager クライアント バージョン別の数]** レポートを実行すると、階層内の異なるバージョンの Configuration Manager クライアントを識別できます。  
-
- Configuration Manager では、階層内のすべての配布ポイントに自動的に送信されるアップグレード パッケージを既定で作成します。 クライアント言語パックを追加するなど、中央管理サイトのクライアント パッケージを変更すると、Configuration Manager は、自動的にパッケージを更新して階層内のすべての配布ポイントに配布します。 自動クライアント アップグレードを有効にすると、すべてのクライアントに新しいクライアント言語パッケージが自動的にインストールされます。  
+-   Uno o più file di installazione client hanno una versione diversa.  
 
 > [!NOTE]  
->  Configuration Manager は、Configuration Manager のクラウドベースの配布ポイントには、クライアント アップグレード パッケージを自動的に送信しません。  
+>  È possibile eseguire il report **Conteggio dei client di Configuration Manager per versioni client** nella cartella report **Sito - Informazioni client** per individuare le diverse versioni del client di Configuration Manager nella gerarchia.  
 
- 階層全体の自動クライアント アップグレードを有効にすることをお勧めします。 そうすれば、最小の管理オーバーヘッドで更新されたクライアントが保持されます。  
+ Per impostazione predefinita, Configuration Manager crea un pacchetto di aggiornamento che viene inviato automaticamente a tutti i punti di distribuzione nella gerarchia. In caso di modifiche al pacchetto client sul sito di amministrazione centrale, come l'aggiunta di un Language Pack client, Configuration Manager aggiorna automaticamente il pacchetto e lo distribuisce a tutti i punti di distribuzione nella gerarchia. Se l'aggiornamento client automatico è attivato, il nuovo Language Pack client sarà installato automaticamente su tutti i client.  
 
- 自動クライアント アップグレードを構成するには、次の手順に従います。 自動クライアント アップグレードは、中央管理サイトで構成し、階層内のすべてのクライアントにこの構成を適用する必要があります。  
+> [!NOTE]  
+>  Configuration Manager non invia automaticamente il pacchetto di aggiornamento client ai punti di distribuzione di Configuration Manager basati sul cloud.  
 
-### <a name="to-configure-automatic-client-upgrades"></a>自動クライアント アップグレードを構成するには  
+ È consigliabile attivare l'aggiornamento client automatico nell'intera gerarchia. In tal modo i client verranno mantenuti aggiornati con un carico amministrativo minimo.  
 
-1.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
+ Usare la procedura seguente per configurare l'aggiornamento client automatico. L'aggiornamento client automatico deve essere configurato in un sito di amministrazione centrale e tale configurazione viene applicata a tutti i client nella gerarchia.  
 
-2.  [ **管理** ] ワークスペースで [ **サイトの構成**] を展開して、[ **サイト**] をクリックします。  
+### <a name="to-configure-automatic-client-upgrades"></a>Per configurare gli aggiornamenti automatici dei client  
 
-3.  **[ホーム]** タブの **[サイト]** グループで、 **[階層設定]**をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
 
-4.  **[階層設定のプロパティ]** ダイアログ ボックスの **[クライアント アップグレード]** のタブで、実稼働クライアントのバージョンと日付を確認し、Windows コンピューターをアップグレードするために使用するバージョンであるかどうかを確認します。  目的のクライアント バージョンが表示されない場合は、実稼働前環境クライアントを実稼働環境に昇格させることが必要になることがあります。 詳細については、「[System Center Configuration Manager で実稼働前コレクションのクライアント アップグレードをテストする方法](../../../../core/clients/manage/upgrade/test-client-upgrades.md)」を参照してください。  
+2.  Nell'area di lavoro **Amministrazione** , espandere **Configurazione sito**, quindi fare clic su **Siti**.  
 
-5.  **[実稼働クライアントを使用して階層内のすべてのクライアントをアップグレードする]** をクリックし、確認ダイアログ ボックスで **[OK]** をクリックします。  
+3.  Nella scheda **Home** , del gruppo **Siti** , fare clic su **Impostazioni gerarchia**.  
 
-6.  クライアントのアップグレードをサーバーに適用しない場合は、 **[サーバーをアップグレードしない]**をクリックします。  
+4.  Nella scheda **Aggiornamento client** della finestra di dialogo **Proprietà delle impostazioni di gerarchia** verificare la versione e la data del client di produzione e assicurarsi che la versione corrisponda a quella che si vuole usare per l'aggiornamento dei computer Windows.  Se la versione del client non è quella prevista, potrebbe essere necessario alzare il livello del client di preproduzione a client di produzione. Per altre informazioni, vedere [Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager](../../../../core/clients/manage/upgrade/test-client-upgrades.md).  
 
-7.  クライアント ポリシーを受信した後、コンピューターでクライアントを何日間以内にアップグレードしなければならないかを指定します。 クライアントはこの日数内のランダムな間隔でアップグレードされます。 この設定により、多数のクライアント コンピューターが同時にアップグレードされることを回避できます。
+5.  Fare clic su **Aggiorna tutti i client nella gerarchia usando il client di produzione** , quindi fare clic su **OK** nella finestra di dialogo di conferma.  
+
+6.  Se non si vuole che gli aggiornamenti client si applichino ai server, fare clic su **Non aggiornare i server**.  
+
+7.  Specificare il numero di giorni entro i quali i computer client devono aggiornare il client dopo aver ricevuto i criteri client. Il client verrà aggiornato a un intervallo casuale entro tale periodo. In questo modo è possibile evitare che un numero elevato di computer client venga aggiornato simultaneamente.
 
     > [!NOTE]
-    > クライアントをアップグレードするコンピューターが実行されている必要があります。 アップグレードを受信するようにスケジュールされている時刻にコンピューターが実行されていない場合、アップグレードは発生しません。 代わりに、コンピューターを再起動したときに、許可されている日数の期間内のランダムな時間に別のアップグレードがスケジュールされます。 アップグレードが可能な日数の期限が切れた後にこの状況が発生する場合は、コンピューターの再起動後 24 時間以内の任意の時点に行われるように、アップグレードがスケジュールされます。
+    > Per eseguire l'aggiornamento del client, è necessario che un computer sia in esecuzione. Se invece il computer non è esecuzione nel momento in cui è pianificata la ricezione dell'aggiornamento, l'aggiornamento non sarà eseguito. Al riavvio del computer, verrà pianificato un altro aggiornamento in un momento casuale entro un numero di giorni consentiti. Se i giorni per eseguire l'aggiornamento sono scaduti, l'aggiornamento sarà pianificato per essere eseguito in un momento casuale entro 24 ore dal riavvio del computer.
     >     
-    > この動作のために、平日の終業時に決まってシャットダウンされるコンピューターは、ランダムにスケジュールされたアップグレード時間が通常の業務時間内ではない場合、アップグレードされるまでに予想以上に時間がかかることがあります。
+    > Dato tale comportamento, è possibile che i computer che vengono regolarmente arrestati alla fine della giornata lavorativa impieghino più tempo del previsto per eseguire l'aggiornamento se il momento casuale dell'aggiornamento pianificato non rientra nelle normali ore lavorative.
 
-7. バージョン 1610 以降では、クライアントをアップグレードから除外する場合に、**[指定したクライアントをアップグレードから除外する]** をクリックし、除外するコレクションを指定します。
+7. A partire dalla versione 1610, se si vuole escludere uno o più client dall'aggiornamento, fare clic su **Escludi i client specificati dall'aggiornamento** e specificare la raccolta da escludere.
 
-8.  事前設定されたコンテンツが有効になっている配布ポイントにクライアント インストール パッケージをコピーする場合は、 **[事前設定されたコンテンツ用に有効になっている配布ポイントにクライアント インストール パッケージを自動配布する]**をクリックします。  
+8.  Se si vuole che il pacchetto di installazione venga copiato nei punti di distribuzione che sono stati abilitati per i contenuti in versione di preproduzione, fare clic su **Distribuisci automaticamente il pacchetto di installazione client nei punti di distribuzione abilitati per i contenuti in versione di preproduzione**.  
 
-9. **[OK]** をクリックします。設定が保存され、 **[階層設定のプロパティ]** ダイアログ ボックスが閉じます。 次回クライアントでポリシーをダウンロードしたときに、これらの設定が受信されます。
+9. Fare clic su **OK** per salvare le impostazioni e chiudere la finestra di dialogo **Proprietà delle impostazioni di gerarchia** . I client ricevono queste impostazioni al successivo download dei criteri.
 
 >[!NOTE]
->Configuration Manager のメンテナンス期間を構成している場合、クライアントのアップグレードではそれが優先されます。
+>Per gli aggiornamenti client vengono rispettate tutte le finestre di manutenzione di Configuration Manager configurate.

@@ -1,6 +1,6 @@
 ---
-title: "オペレーティング システムをインストールするタスク シーケンスの作成 | Microsoft Docs"
-description: "System Center Configuration Manager でタスク シーケンスを使用して、オペレーティング システム イメージとその他のコンテンツをインストール先のコンピューターに自動的にインストールします。"
+title: "Creare una sequenza di attività per installare un sistema operativo | Microsoft Docs"
+description: "Usare le sequenze di attività in System Center Configuration Manager per installare automaticamente l'immagine di un sistema operativo o altro contenuto su un computer di destinazione."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,141 +17,141 @@ manager: angrobe
 ms.openlocfilehash: 41aa6cf69a746f0ab67d804f1ee0c70db05d65ee
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-a-task-sequence-to-install-an-operating-system-in-system-center-configuration-manager"></a>System Center Configuration Manager のオペレーティング システムをインストールするタスク シーケンスを作成する
+# <a name="create-a-task-sequence-to-install-an-operating-system-in-system-center-configuration-manager"></a>Creare una sequenza di attività per installare un sistema operativo in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager でタスク シーケンスを使用して、オペレーティング システム イメージをインストール先のコンピューターに自動的にインストールします。 セットアップ先のコンピューターを起動する起動イメージ、セットアップ先のコンピューターにインストールするオペレーティング システム イメージ、およびアプリケーションやソフトウェア更新プログラムなどといったその他のインストールする追加のコンテンツを参照するタスク シーケンスを作成します。 その後、セットアップ先のコンピューターを含んでいるコレクションにタスク シーケンスを展開します。  
+Usare le sequenze di attività in System Center Configuration Manager per installare automaticamente l'immagine di un sistema operativo su un computer di destinazione. Creare una sequenza di attività che faccia riferimento a un'immagine di avvio usata per avviare il computer di destinazione, all'immagine del sistema operativo da installare nel computer di destinazione e qualsiasi altro contenuto aggiuntivo, ad esempio altre applicazioni o aggiornamenti software, che si vuole installare. Distribuire quindi la sequenza di attività in una raccolta che contiene il computer di destinazione.  
 
-##  <a name="BKMK_InstallOS"></a> オペレーティング システムをインストールするタスク シーケンスの作成  
- 環境内のコンピューターにオペレーティング システムを展開するシナリオは多様です。 ほとんどの場合、タスク シーケンスを作成し、タスク シーケンスの作成ウィザードで **[既存のイメージ パッケージをインストールする]** を選択して、オペレーティング システムのインストール、ユーザー設定の移行、ソフトウェア更新プログラムの適用、およびアプリケーションのインストールを行います。 タスク シーケンスを作成してオペレーティング システムをインストールする前に、次を準備する必要があります。   
+##  <a name="BKMK_InstallOS"></a> Creare una sequenza di attività per installare un sistema operativo  
+ Esistono molti scenari per la distribuzione di un sistema operativo nei computer dell'ambiente. Nella maggior parte dei casi, è necessario creare una sequenza di attività e selezionare **Installa un pacchetto immagine esistente** nella Creazione guidata della sequenza di attività per installare il sistema operativo, eseguire la migrazione delle impostazioni utente, applicare gli aggiornamenti software e installare le applicazioni. Prima di creare una sequenza di attività per installare un sistema operativo, devono essere disponibili gli elementi seguenti:   
 
--   **必須**  
+-   **Richiesto**  
 
-    -   [ブート イメージ](../get-started/manage-boot-images.md)が Configuration Manager コンソールで使用可能である必要があります。  
+    -   Nella console di Configuration Manager deve essere disponibile un'[immagine di avvio](../get-started/manage-boot-images.md).  
 
-    -   [オペレーティング システム イメージ](../get-started/manage-operating-system-images.md)が Configuration Manager コンソールで使用可能である必要があります。  
+    -   Nella console di Configuration Manager deve essere disponibile un'[immagine del sistema operativo](../get-started/manage-operating-system-images.md).  
 
--   **必須 (使用する場合)**  
+-   **Obbligatorio (se usato)**  
 
-    -   [ソフトウェア更新プログラム](../../sum/get-started/synchronize-software-updates.md)が Configuration Manager コンソールで同期されている必要があります。  
+    -   Gli [aggiornamenti software](../../sum/get-started/synchronize-software-updates.md) devono essere sincronizzati nella console di Configuration Manager.  
 
-    -   [アプリケーション](../../apps/deploy-use/create-applications.md)が Configuration Manager コンソールに追加されている必要があります。  
+    -   Le [applicazioni](../../apps/deploy-use/create-applications.md) devono essere aggiunte alla console di Configuration Manager.  
 
-#### <a name="to-create-a-task-sequence-that-installs-an-operating-system"></a>オペレーティング システムをインストールするタスク シーケンスを作成するには  
+#### <a name="to-create-a-task-sequence-that-installs-an-operating-system"></a>Per creare una sequenza di attività che installi un sistema operativo  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス** ] をクリックします。  
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
 
-3.  [ホーム **** ] タブの [作成 **** ] グループで [タスク シーケンスの作成 **** ] をクリックして、タスク シーケンスの作成ウィザードを起動します。  
+3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea sequenza di attività** per avviare la Creazione guidata della sequenza di attività.  
 
-4.  [新しいタスク シーケンスの作成] **** ページで、[既存のイメージ パッケージをインストールする] ****をクリックしてから、[次へ] ****をクリックします。  
+4.  Nella pagina **Crea una nuova sequenza di attività** fare clic su **Installa un pacchetto immagine esistente**, quindi fare clic su **Avanti**.  
 
-5.  [タスク シーケンス情報 **** ] ページで次の設定を指定し、[次へ ****] をクリックします。  
+5.  Nella pagina **Informazioni sequenza di attività** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   **タスク シーケンス名**:タスク シーケンスを識別する名前を指定します。  
+    -   **Nome sequenza di attività**: specificare un nome che identifica la sequenza di attività.  
 
-    -   **説明**:タスク シーケンスによって実行されるタスクの説明を指定します。  
+    -   **Descrizione**: specificare una descrizione dell'attività eseguita dalla sequenza di attività.  
 
-    -   **ブート イメージ**:展開先コンピューターにオペレーティング システムをインストールするブート イメージを指定します。 ブート イメージには、オペレーティング システムのインストールに使用される Windows PE のバージョンのほか、必要な追加のデバイス ドライバーが含まれます。 詳細については、「[ブート イメージの管理](../get-started/manage-boot-images.md)」を参照してください。  
-
-        > [!IMPORTANT]  
-        >  ブート イメージのアーキテクチャは、対象となるコンピューターのハードウェア アーキテクチャと互換性がある必要があります。  
-
-6.  [Windows のインストール] **** ページで次の設定を指定し、[次へ] ****をクリックします。  
-
-    -   **イメージ パッケージ**:インストールするオペレーティング システムを含むパッケージを指定します。 詳細については、「[オペレーティング システム イメージの管理](../get-started/manage-operating-system-images.md)」をご覧ください。  
-
-    -   [**イメージ**]:オペレーティング システム イメージ パッケージに複数のイメージがある場合は、インストールするオペレーティング システム イメージのインデックスを指定します。  
-
-    -   [**オペレーティング システムをインストールする前に対象のコンピューターのパーティションを作成してフォーマットする**]:展開先コンピューターのパーティション作成とフォーマットを、オペレーティング システムがインストールされる前に行うかどうかを指定します。  
-
-    -   **プロダクト キー**:インストールする Windows オペレーティング システムのプロダクト キーを指定します。 エンコードされたボリューム ライセンス キーと標準のプロダクト キーを指定できます。 エンコードされていないプロダクト キーを使用する場合は、5 桁ごとにハイフン (-) で区切る必要があります。 例: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
-
-    -   **サーバー ライセンス モード**: サーバー ライセンスが **[接続クライアント数]**と **[同時使用ユーザー数]**のいずれか、または決められていないかを指定します。 サーバー ライセンスが [同時使用ユーザー数] ****の場合は、サーバー接続の最大数も指定します。  
-
-    -   オペレーティング システム イメージが展開されたときに使用される管理者アカウントの処理方法を指定します。  
-
-        -   [**ローカルの管理者アカウントを無効にする**]:オペレーティング システム イメージが展開されたときにローカルの管理者アカウントを無効にするかどうかを指定します。  
-
-        -   [**常に同じ管理者パスワードを使用する**]:オペレーティング システム イメージが展開されたすべてのコンピューターでローカルの管理者アカウントに同じパスワードを使用するかどうかを指定します。  
-
-7.  [ネットワーク の構成] **** ページで次の設定を指定してから、[次へ] ****をクリックします。  
-
-    -   **ワークグループに参加**:展開先コンピューターをワークグループに追加するかどうかを指定します。  
-
-    -   **ドメインに参加**:展開先コンピューターをドメインに追加するかどうかを指定します。 [ドメイン] ****にドメインの名前を指定します。  
+    -   **Immagine di avvio**: specificare l'immagine di avvio che installa il sistema operativo nel computer di destinazione. L'immagine di avvio contiene una versione di Windows PE usata per installare il sistema operativo e i driver di dispositivo aggiuntivi richiesti. Per altre informazioni, vedere [Gestire le immagini di avvio](../get-started/manage-boot-images.md).  
 
         > [!IMPORTANT]  
-        >  ローカル フォレストではドメインを参照できますが、リモート フォレストではドメイン名を指定する必要があります。  
+        >  L'architettura dell'immagine di avvio deve essere compatibile con l'architettura hardware del computer di destinazione.  
 
-         組織単位 (OU) も指定することができます。 OU の LDAP X.500 識別名を指定するオプションの設定です。コンピューター アカウントがまだ存在しない場合に作成するのに使用されます。  
+6.  Nella pagina **Installa Windows** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   **アカウント**: 指定したドメインに参加するアクセス許可を持つアカウントの、ユーザー名とパスワードを指定します。 例: *domain\user* または *%variable%*。  
+    -   **Pacchetto immagine**: specificare il pacchetto che contiene l'immagine del sistema operativo da installare. Per altre informazioni, vedere [Gestire le immagini del sistema operativo](../get-started/manage-operating-system-images.md).  
+
+    -   **Immagine**: se il pacchetto immagine del sistema operativo contiene più immagini, specificare l'indice dell'immagine del sistema operativo da installare.  
+
+    -   **Creare partizioni e formattare il computer di destinazione prima di installare il sistema operativo**: specificare se si desidera che la sequenza di attività partizioni e formatti il computer di destinazione prima dell'installazione del sistema operativo.  
+
+    -   **Codice Product key**: specificare il codice Product Key per il sistema operativo Windows da installare. È possibile specificare i codici Product Key per contratti multilicenza codificati e i codici Product Key standard. Se si usa un codice Product Key non codificato, ogni gruppo di 5 caratteri deve essere separato da un trattino (-). Ad esempio: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
+
+    -   **Modalità di gestione licenze del server**: specificare che la licenza del server è **Per postazione**, **Per server**o che non è specificata alcuna licenza. Se la licenza del server è **Per server**, specificare anche il numero massimo di connessioni al server.  
+
+    -   Specificare come gestire l'account amministratore usato quando viene distribuita l'immagine del sistema operativo.  
+
+        -   **Disabilita account amministratore locale**: specificare se l'account di amministratore locale viene disabilitato quando viene distribuita l'immagine del sistema operativo.  
+
+        -   **Attiva l'account e specifica la password dell'amministratore locale**: specificare se la stessa password viene usata per l'account di amministratore locale su tutti i computer in cui viene distribuita l'immagine del sistema operativo.  
+
+7.  Nella pagina **Configura rete** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
+
+    -   **Aggiunta a un gruppo di lavoro**: specificare se aggiungere il computer di destinazione a un gruppo di lavoro.  
+
+    -   **Aggiunta a un dominio**: specificare se aggiungere il computer di destinazione a un dominio. In **Dominio**specificare il nome del dominio.  
 
         > [!IMPORTANT]  
-        >  ドメイン設定またはワークグループ設定を移行する場合は、適切なドメイン資格情報を入力する必要があります。  
+        >  È possibile cercare i domini nella foresta locale, ma è necessario specificare il nome di dominio per una foresta remota.  
 
-8.  [**Configuration Manager のインストール**] ページで、インストール先コンピューターにインストールする Configuration Manager クライアント パッケージを指定してから、[**次へ**] をクリックします。  
+         È inoltre possibile specificare un'unità organizzativa. Si tratta di un'impostazione facoltativa che specifica il nome distinto LDAP X.500 dell'unità organizzativa in cui creare l'account computer se non esiste già.  
 
-9. [状態移行] **** ページで次の設定を指定してから、[次へ] ****をクリックします。  
+    -   **Account**: specificare il nome utente e la password per l'account con le autorizzazioni per l'aggiunta al dominio specificato. Ad esempio: *dominio\utente* o *%variabile%*.  
 
-    -   **ユーザー設定のキャプチャ**:タスク シーケンスがユーザーの状態をキャプチャするかどうかを指定します。 ユーザー状態をキャプチャして復元する方法の詳細については、「[ユーザー状態の管理](../get-started/manage-user-state.md)」をご覧ください。  
+        > [!IMPORTANT]  
+        >  Se si prevede di migrare le impostazioni del dominio o le impostazioni del gruppo di lavoro, è necessario immettere le credenziali di dominio appropriate.  
 
-    -   **ネットワーク設定のキャプチャ**:タスク シーケンスが展開先コンピューターからネットワーク設定をキャプチャするかどうかを指定します。 ネットアーク アダプター設定のほか、ドメインまたはワークグループのメンバーシップもキャプチャすることができます。  
+8.  Nella pagina **Installa Configuration Manager** specificare il pacchetto client di Configuration Manager da installare nel computer di destinazione e quindi fare clic su **Avanti**.  
 
-    -   **Microsoft Windows の設定のキャプチャ**:タスク シーケンスがオペレーティング システム イメージをインストールする前に、展開先コンピューターから Windows 設定をキャプチャするかどうかを指定します。 コンピューター名、登録ユーザー名と組織名、およびタイム ゾーン設定をキャプチャできます。  
+9. Nella pagina **Migrazione stato** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
 
-10. [更新プログラムを含める] **** ページで、必要なソフトウェア更新プログラム、すべてのソフトウェア更新プログラム、またはソフトウェア更新プログラムなしを指定してから、[次へ] ****をクリックします。 ソフトウェア更新プログラムをインストールするように指定する場合、Configuration Manager は、セットアップ先のコンピューターがメンバーとなっているコレクション向けのソフトウェア更新プログラムのみをインストールします。  
+    -   **Acquisisci impostazioni utente**: specificare se la sequenza di attività acquisisce lo stato utente. Per altre informazioni su come acquisire e ripristinare lo stato utente, vedere [Gestire lo stato utente](../get-started/manage-user-state.md).  
 
-11. **[アプリケーションのインストール]** ページで、展開先コンピューターにインストールするアプリケーションを指定してから、**[次へ]** をクリックします。 複数のアプリケーションを指定する場合は、特定のアプリケーションのインストールに失敗したときにタスク シーケンスを続行するかどうかも指定することができます。  
+    -   **Acquisisci impostazioni di rete**: specificare se la sequenza di attività acquisisce le impostazioni di rete dal computer di destinazione. È possibile acquisire l'appartenenza del dominio o del gruppo di lavoro oltre alle impostazioni della scheda di rete.  
 
-12. ウィザードを完了します。  
+    -   **Acquisisci impostazioni di Microsoft Windows**:  specificare se la sequenza di attività acquisisce le impostazioni di Windows dal computer di destinazione prima dell'installazione dell'immagine del sistema operativo. È possibile acquisire il nome del computer, il nome dell'utente registrato e dell'organizzazione e le impostazioni di fuso orario.  
 
- コンピューターのコレクションにタスク シーケンスを展開できるようになりました。  詳細については、「 [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS)」をご覧ください。  
+10. Nella pagina **Includi aggiornamenti** specificare se installare gli aggiornamenti software necessari, tutti gli aggiornamenti software o nessun aggiornamento software e quindi fare clic su **Avanti**. Se si sceglie di installare gli aggiornamenti software, Configuration Manager installa solo quelli assegnati alle raccolte di cui il computer di destinazione è membro.  
 
-##  <a name="BKMK_InstallExistingOSImageTSExample"></a> 既存のオペレーティング システム イメージをインストールするためのタスク シーケンスの例  
- 既存のオペレーティング システム イメージを使用してオペレーティング システムを展開するタスク シーケンスを作成する場合は、次の表をガイドとして使用してください。 この表を利用して、タスク シーケンス ステップの全般的な順序と、これらのタスク シーケンス ステップを論理的なグループに整理および構造化する方法を決定できます。 実際に作成するタスク シーケンスは、この例とは異なり、タスク シーケンス ステップやグループの数が違う場合があります。  
+11. Nella pagina **Installa applicazioni** specificare le applicazioni da installare nel computer di destinazione e quindi fare clic su **Avanti**. Se si specificano più applicazioni, è possibile specificare che la sequenza di attività continui anche se l'installazione di un'applicazione specifica non riesce.  
+
+12. Completare la procedura guidata.  
+
+ Ora è possibile distribuire la sequenza di attività in una raccolta di computer.  Per altre informazioni, vedere [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
+
+##  <a name="BKMK_InstallExistingOSImageTSExample"></a> Esempio di sequenza di attività per l'installazione di un'immagine del sistema operativo esistente  
+ Usare la tabella seguente come guida durante la creazione di una sequenza di attività per la distribuzione di un sistema operativo con un'immagine del sistema operativo esistente. La tabella sarà utile per decidere la sequenza generale per i passaggi della sequenza di attività e per determinare come organizzare e strutturare tali passaggi in gruppi logici. La sequenza di attività creata può variare rispetto a questo esempio e può contenere un numero minore o maggiore di passaggi e gruppi.  
 
 > [!IMPORTANT]  
->  このタスク シーケンスを作成するには、タスク シーケンスの新規作成ウィザードを常に使用する必要があります。  
+>  Usare sempre la Creazione guidata della sequenza attività per creare questa sequenza di attività.  
 
- タスク シーケンスの新規作成ウィザードを使用してこの新しいタスク シーケンスを作成する場合、一部のタスク シーケンス ステップ名は、これらのタスク シーケンス ステップを既存のタスク シーケンスに手動で追加した場合の名前とは異なります。 名前の違いについて、次の表で説明します。  
+ Quando si usa la Creazione guidata della sequenza attività per creare questa nuova sequenza di attività, alcuni nomi dei passaggi potrebbero essere diversi rispetto a quelli che verrebbero usati aggiungendo manualmente i passaggi a una sequenza di attività esistente. La tabella seguente mostra le differenze di denominazione:  
 
-|タスク シーケンスの新規作成ウィザードのタスク シーケンス ステップ名|タスク シーケンス エディターの同等のステップ名|  
+|Nome del passaggio della sequenza di attività di Creazione guidata della sequenza di attività|Nome del passaggio equivalente dell'editor delle sequenze di attività|  
 |---------------------------------------------------------|-----------------------------------------------|  
-|ユーザー状態ストアの要求|状態ストアの要求|  
-|ユーザー ファイルと設定のキャプチャ|ユーザー状態のキャプチャ|  
-|ユーザー状態ストアのリリース|状態ストアのリリース|  
-|Windows PE での再起動|Windows PE またはハード ディスクでの再起動|  
-|ディスク 0 のパーティション作成|ディスクのフォーマットとパーティション作成|  
-|ユーザー ファイルと設定の復元|ユーザー状態の復元|  
+|Archiviazione dello stato utente richiesta|Richiedi archiviazione stati|  
+|Acquisizione file e impostazioni utente|Acquisisci stato utente|  
+|Archiviazione dello stato utente di rilascio|Rilascia archiviazione stati|  
+|Riavvia in Windows PE|Riavvia in Windows PE o usando il disco rigido|  
+|Disco di partizione 0|Formato e disco partizione|  
+|Ripristinare file e impostazioni utente|Ripristina stato utente|  
 
-|タスク シーケンス グループまたはステップ|説明|  
+|Passaggio o gruppo di sequenze di attività|Descrizione|  
 |---------------------------------|-----------------|  
-|ファイルと設定のキャプチャ **(新しいタスク シーケンス グループ)**|タスク シーケンス グループを作成します。 タスク シーケンス グループを使用すると、類似のタスク シーケンス ステップをまとめて、整理とエラー制御を向上させることができます。<br /><br /> このグループには、参照コンピューターのオペレーティング システムからファイルと設定をキャプチャするために必要なステップが含まれています。|  
-|Windows 設定のキャプチャ|このタスク シーケンス ステップを使用して、参照コンピューターからキャプチャする Microsoft Windows 設定を確認できます。 コンピューター名、ユーザー情報と組織情報、およびタイム ゾーン設定をキャプチャできます。|  
-|ネットワーク設定のキャプチャ|このタスク シーケンス ステップを使用して、参照コンピューターからネットワーク設定をキャプチャできます。 参照コンピューターのドメインまたはワークグループのメンバーシップ、およびネットワーク アダプター設定情報をキャプチャできます。|  
-|ユーザーファイルと設定のキャプチャ - **(新規タスク シーケンス サブグループ)**|タスク シーケンス グループ内にタスク シーケンス グループを作成します。 このサブグループには、ユーザー状態データのキャプチャに必要なステップが含まれています。 追加した最初のグループと同様に、このサブグループは類似のタスク シーケンス ステップをまとめて、整理とエラー制御を向上させることができます。|  
-|ユーザー状態ストアの要求|このタスク シーケンス ステップを使用して、ユーザー状態データを保存する状態移行ポイントへのアクセスを要求することができます。 このタスク シーケンス ステップを構成して、ユーザー状態情報をキャプチャまたは復元できます。|  
-|ユーザー ファイルと設定のキャプチャ|このタスク シーケンス ステップでは、ユーザー状態移行ツール (USMT) を使用し、このタスク ステップに関連付けられたタスク シーケンスを受信する参照コンピューターからユーザーの状態と設定をキャプチャできます。 標準オプションをキャプチャするか、キャプチャするオプションを構成できます。|  
-|ユーザー状態ストアのリリース|このタスク シーケンス ステップでは、キャプチャ処理または復元処理が完了した状態移行ポイントが通知されます。|  
-|オペレーティング システムのインストール - **(新規タスク シーケンス グループ)**|タスク シーケンス サブグループを作成します。 このサブグループには、Windows PE 環境のインストールと構成に必要なステップが含まれています。|  
-|Windows PE での再起動|このタスク シーケンス ステップを使用して、このタスク シーケンスを受信する対象のコンピューターの再起動オプションを指定できます。 このステップでは、インストールを続行するためにコンピューターを再起動することをユーザーに示すメッセージが表示されます。<br /><br /> このステップでは、読み取り専用の **_SMSTSInWinPE** タスク シーケンス変数が使用されます。 関連する値が **false** の場合に、タスク シーケンス ステップが続行されます。|  
-|ディスク 0 のパーティション作成|このタスク シーケンス ステップを使用して、対象のコンピューターのハード ドライブのフォーマットに必要な処理を指定できます。 既定のディスク番号は **0**です。<br /><br /> このステップでは、読み取り専用の **_SMSTSClientCache** タスク シーケンス変数が使用されます。 このステップは、Configuration Manager クライアント キャッシュが存在しない場合に実行されます。|  
-|オペレーティング システムの適用|このタスク シーケンス手順を使用すると、セットアップ先コンピューターにオペレーティング システム イメージをインストールできます。 このステップでは、WIM ファイルに含まれているすべてのボリューム イメージを、対象のコンピューター上の対応する順次ディスク ボリュームに適用します。この処理は、最初にこのボリューム上のすべてのファイルを削除した後で実行されます (Configuration Manager 固有のコントロール ファイルを除く)。 sysprep **** 応答ファイルを指定したり、インストールに使用するディスク パーティションを構成することもできます。|  
-|Windows 設定の適用|このタスク シーケンス ステップを使用して、対象コンピューターの Windows 設定の構成情報を構成できます。 適用できる Windows 設定は、ユーザーと組織の情報、製品またはライセンス キーの情報、タイム ゾーン、およびローカル管理者パスワードです。|  
-|ネットワーク設定の適用|このタスク シーケンス ステップを使用して、対象コンピューターのネットワークまたはワークグループの構成情報を指定できます。 コンピューターが DHCP サーバーを使用するかどうか、または IP アドレス情報を静的に割り当てられるかどうかも指定できます。|  
-|デバイス ドライバーの適用|このタスク シーケンス ステップを使用して、オペレーシング システムの展開の一部としてドライバーをインストールできます。 [すべてのカテゴリのドライバーを検討する **** ] を選択して、Windows セットアップですべての既存ドライバー カテゴリを検索するか、[ドライバーの一致条件を制限して、選択したカテゴリに属するドライバーだけを検討する ****] を選択して、Windows セットアップが検索するドライバー カテゴリを制限できます。<br /><br /> このステップでは、読み取り専用の **_SMSTSMediaType** タスク シーケンス変数が使用されます。 このタスク シーケンス ステップは、変数の値が FullMedia ****に等しくない場合にのみ実行されます。|  
-|ドライバー パッケージの適用|このタスク シーケンス ステップを使用して、ドライバー パッケージ内のデバイス ドライバーをすべて Windows セットアップで使用できるようにします。|  
-|オペレーティング システムのセットアップ - **(新規タスク シーケンス グループ)**|タスク シーケンス サブグループを作成します。 このサブグループには、インストール済みのオペレーティング システムのセットアップに必要なステップが含まれています。|  
-|Windows と ConfigMgr のセットアップ|このタスク シーケンス ステップを使用して Configuration Manager クライアント ソフトウェアをインストールします。 Configuration Manager は、Configuration Manager クライアントの GUID をインストールして登録します。 必要なインストール パラメーターは、 **[インストールのプロパティ]** ウィンドウで割り当てることができます。|  
-|更新のインストール|このタスク シーケンス ステップを使用して、ソフトウェア更新を対象のコンピューターにインストールする方法を指定できます。 このタスク シーケンス ステップが実行されるまで、対象のコンピューターは適用可能なソフトウェア更新プログラムが評価されません。 このとき、セットアップ先のコンピューターは、Configuration Manager が管理している他のクライアントと同様にソフトウェア更新プログラムが評価されます。<br /><br /> このステップでは、読み取り専用の **_SMSTSMediaType** タスク シーケンス変数が使用されます。 このタスク シーケンス ステップは、変数の値が FullMedia ****に等しくない場合にのみ実行されます。|  
-|ユーザー ファイルと設定の復元 - **(新しいタスク シーケンス サブグループ)**|タスク シーケンス サブグループを作成します。 このサブグループには、ユーザー ファイルと設定の復元に必要なステップが含まれます。|  
-|ユーザー状態ストアの要求|このタスク シーケンス ステップを使用して、ユーザー状態データを保存する状態移行ポイントへのアクセスを要求することができます。|  
-|ユーザー ファイルと設定の復元|このタスク シーケンス ステップを使用すると、ユーザー状態移行ツール (USMT) を起動して、対象のコンピューターにユーザーの状態および設定を復元できます。|  
-|ユーザー状態ストアのリリース|このタスク シーケンス ステップを使用すると、ユーザー状態データが必要ではなくなった状態移行ポイントが通知されます。|  
+|Acquisire i File e impostazioni - **(nuovo gruppo di sequenze attività)**|Creare un gruppo di sequenze di attività. Un gruppo di sequenze di attività consente di mantenere simile passaggi della sequenza attività per una migliore organizzazione e il controllo degli errori.<br /><br /> Questo gruppo contiene i passaggi necessari per l'acquisizione di file e impostazioni dal sistema operativo del computer di riferimento.|  
+|Acquisisci impostazioni Windows|Usare questo passaggio della sequenza di attività per identificare le impostazioni di Microsoft Windows per l'acquisizione dal computer di riferimento. È possibile acquisire il nome computer, informazioni sull'utente e sull'organizzazione e le impostazioni di fuso orario.|  
+|Acquisisci impostazioni di rete|Usare questo passaggio della sequenza di attività per acquisire le impostazioni di rete dal computer di riferimento. È possibile acquisire l'appartenenza al gruppo di lavoro o dominio del computer di riferimento e impostazione delle informazioni relative alla scheda di rete.|  
+|Acquisire i file utente e impostazioni - **(nuovo gruppo sequenza attività secondarie)**|Creare un gruppo di sequenze di attività all'interno di un gruppo di sequenze di attività. Questo sottogruppo contiene i passaggi necessari per acquisire dati dello stato utente. Analogamente al gruppo iniziale aggiunto, questo sottogruppo tiene uniti i passaggi delle sequenze di attività per una migliore organizzazione e un maggiore controllo degli errori.|  
+|Archiviazione dello stato utente richiesta|Usare questo passaggio della sequenza di attività per richiedere l'accesso a un punto di migrazione stato in cui sono archiviati i dati dello stato utente. È possibile configurare questo passaggio della sequenza di attività per acquisire o ripristinare le informazioni sullo stato utente.|  
+|Acquisisci file utente e impostazioni|Usare questo passaggio della sequenza di attività per usare l'Utilità di migrazione stato utente per acquisire lo stato utente e le impostazioni dal computer di riferimento che riceve la sequenza di attività associata a questo passaggio. È possibile acquisire le opzioni standard o configurare le opzioni specifiche da acquisire.|  
+|Rilascia archiviazione stato utente|Utilizzare questo passaggio della sequenza attività per notificare lo stato punto di migrazione che l'azione di ripristino o acquisizione è stata completata.|  
+|Installare il sistema operativo - **(nuovo gruppo di sequenze attività)**|Creare un altro gruppo secondario di sequenze attività. Questo gruppo secondario contiene i passaggi necessari per installare e configurare l'ambiente Windows PE.|  
+|Riavvia in Windows PE|Utilizzare questo passaggio della sequenza attività per specificare le opzioni di riavvio del computer di destinazione che riceve questa sequenza di attività. Questo passaggio viene visualizzato un messaggio all'utente che indica che il computer verrà riavviato affinché possa continuare l'installazione.<br /><br /> Questo passaggio usa la variabile della sequenza di attività **_SMSTSInWinPE** di sola lettura. Se il valore associato è uguale a **false** il passaggio della sequenza attività continua.|  
+|Partizione disco 0|Questo passaggio della sequenza attività specifica le azioni necessarie per formattare il disco rigido nel computer di destinazione. Il numero di disco predefinito è **0**.<br /><br /> Questo passaggio usa la variabile della sequenza di attività **_SMSTSClientCache** di sola lettura. Questo passaggio verrà eseguito se la cache del client di Configuration Manager non esiste.|  
+|Applica sistema operativo|Utilizzare questo passaggio della sequenza attività per installare l'immagine del sistema operativo nel computer di destinazione. Questo passaggio applica tutte le immagini di volume contenute nel file WIM al volume del disco sequenziale corrispondente nel computer di destinazione, dopo aver prima eliminato tutti i file in tale volume (ad eccezione dei file di controllo specifici di Configuration Manager). È possibile specificare un **sysprep** file di risposte e inoltre configurare la partizione del disco viene utilizzata per l'installazione.|  
+|Applica impostazioni Windows|Usare questo passaggio della sequenza di attività per configurare le informazioni di configurazione delle impostazioni di Windows per il computer di destinazione. Le impostazioni di Windows applicabili sono le informazioni sull'utente e sull'organizzazione, le informazioni sul prodotto o sul codice di licenza, il fuso orario e la password dell'amministratore locale.|  
+|Applica impostazioni di rete|Usare questo passaggio della sequenza di attività per specificare le informazioni di configurazione per la rete o il gruppo di lavoro per il computer di destinazione. È inoltre possibile specificare se il computer utilizza un server DHCP oppure è possibile assegnare staticamente le informazioni sull'indirizzo IP.|  
+|Applica driver dispositivo|Utilizzare questo passaggio della sequenza attività per installare i driver come parte della distribuzione del sistema operativo. È possibile consentire a Installazione di Windows di cercare tutte le categorie di driver esistenti selezionando **Considera i driver di tutte le categorie** oppure limitare le categorie in cui Installazione di Windows esegue la ricerca selezionando **Limita la corrispondenza dei driver in modo da considerare solo i driver delle categorie selezionate**.<br /><br /> Questo passaggio viene utilizzata la proprietà di sola lettura **_SMSTSMediaType** variabile della sequenza attività. Questo passaggio della sequenza attività viene eseguita solo se il valore della variabile non è uguale **FullMedia**.|  
+|Applica pacchetto di driver|Utilizzare questo passaggio della sequenza attività per rendere disponibili per l'utilizzo tutti i driver di dispositivo in un pacchetto driver dal programma di installazione di Windows.|  
+|Installazione del sistema operativo - **(nuovo gruppo di sequenze attività)**|Creare un altro gruppo secondario di sequenze attività. Questo sottogruppo contiene i passaggi necessari per configurare il sistema operativo installato.|  
+|Imposta Windows e ConfigMgr|Usare questo passaggio della sequenza di attività per installare il software client di Configuration Manager. Configuration Manager installa e registra il GUID del client di Configuration Manager. È possibile assegnare i parametri di installazione necessari nella finestra **Proprietà di installazione** .|  
+|Installa aggiornamenti|Usare questo passaggio della sequenza di attività per specificare in che modo gli aggiornamenti software vengono installati nel computer di destinazione. Il computer di destinazione viene valutato alla ricerca di aggiornamenti software applicabili solo in corrispondenza con l'esecuzione di questo passaggio della sequenza di attività, quando il computer di destinazione viene valutato alla ricerca di aggiornamenti software applicabili in modo simile agli altri client gestiti da Configuration Manager.<br /><br /> Questo passaggio usa la variabile della sequenza di attività **_SMSTSMediaType** di sola lettura. Questo passaggio della sequenza di attività viene eseguito solo se il valore della variabile è diverso da **FullMedia**.|  
+|Ripristina file utente e impostazioni - **(Nuovo sottogruppo di sequenze di attività)**|Creare un altro gruppo secondario di sequenze attività. Questo sottogruppo contiene i passaggi necessari per ripristinare i file utente e le impostazioni.|  
+|Richiedi archiviazione stato utente|Utilizzare questo passaggio della sequenza attività per richiedere l'accesso a un punto di migrazione stato archiviazione i dati dello stato utente.|  
+|Ripristina file utente e impostazioni|Usare questo passaggio della sequenza di attività per avviare l'Utilità di migrazione stato utente e ripristinare lo stato utente e le impostazioni in un computer di destinazione.|  
+|Archiviazione dello stato utente di rilascio|Usare questo passaggio della sequenza di attività per segnalare al punto di migrazione stato che i dati dello stato utente non sono più necessari.|  

@@ -1,6 +1,6 @@
 ---
-title: "エンタープライズ オペレーティング システムを展開する方法 | Microsoft Docs"
-description: "System Center Configuration Manager 環境にエンタープライズ オペレーティング システムを展開するのに使用できる方法について説明します。"
+title: Metodi per distribuire i sistemi operativi aziendali | Microsoft Docs
+description: "Informazioni sui metodi che è possibile usare per distribuire i sistemi operativi aziendali nell'ambiente System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,25 +17,25 @@ manager: angrobe
 ms.openlocfilehash: 6cec9275009ac19ad65a03792c1bc4d0c528ea4c
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="methods-to-deploy-enterprise-operating-systems-using-system-center-configuration-manager"></a>System Center Configuration Manager を使用してエンタープライズ オペレーティング システムを展開する方法
+# <a name="methods-to-deploy-enterprise-operating-systems-using-system-center-configuration-manager"></a>Metodi per distribuire i sistemi operativi aziendali con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager 環境にオペレーティング システムを展開するには、さまざまな方法を使用できます。
+Sono disponibili diversi metodi che è possibile usare per distribuire un sistema operativo nell'ambiente System Center Configuration Manager.
 
--   [PXE を使用したネットワーク経由での Windows の展開](use-pxe-to-deploy-windows-over-the-network.md)  
+-   [Usare PXE per distribuire Windows in rete](use-pxe-to-deploy-windows-over-the-network.md)  
 
--   [ソフトウェア センターを使用したネットワーク経由での Windows の展開](use-software-center-to-deploy-windows-over-the-network.md)  
+-   [Usare Software Center per distribuire Windows in rete](use-software-center-to-deploy-windows-over-the-network.md)  
 
--   [起動可能なメディアを使用したネットワーク経由での Windows の展開](use-bootable-media-to-deploy-windows-over-the-network.md)  
+-   [Usare i supporti di avvio per distribuire Windows in rete](use-bootable-media-to-deploy-windows-over-the-network.md)  
 
--   [マルチキャストを使用した、ネットワーク経由での Windows の展開](use-multicast-to-deploy-windows-over-the-network.md)  
+-   [Usare il multicast per distribuire Windows in rete](use-multicast-to-deploy-windows-over-the-network.md)  
 
--   [ネットワークではなくスタンドアロン メディアを使用した Windows の展開](use-stand-alone-media-to-deploy-windows-without-using-the-network.md)  
+-   [Usare i supporti autonomi per distribuire Windows senza usare la rete](use-stand-alone-media-to-deploy-windows-without-using-the-network.md)  
 
--   [工場出荷時の OEM 用、または現地保管場所用のイメージの作成](create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
+-   [Creare un'immagine per un OEM presso un produttore computer o un deposito locale](create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
 
--   [Windows to Go の展開](deploy-windows-to-go.md)  
+-   [Distribuire Windows to Go](deploy-windows-to-go.md)  

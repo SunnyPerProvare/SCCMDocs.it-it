@@ -1,6 +1,6 @@
 ---
-title: "オペレーティング システムの展開の準備 | Microsoft Docs"
-description: "オペレーティング システムの展開を準備するために Configuration Manager で実行する必要がある作業については、これらの記事をお読みください。"
+title: Preparare la distribuzione del sistema operativo | Microsoft Docs
+description: Leggere questi articoli che illustrano le operazioni da eseguire in Configuration Manager per preparare le distribuzioni del sistema operativo.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,25 +17,25 @@ manager: angrobe
 ms.openlocfilehash: dcc35f39b6ece8b466fc3770c6b9f304180eb42a
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="prepare-for-operating-system-deployment-in-system-center-configuration-manager"></a>System Center Configuration Manager のオペレーティング システムの展開の準備
+# <a name="prepare-for-operating-system-deployment-in-system-center-configuration-manager"></a>Preparativi per la distribuzione del sistema operativo per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-オペレーティング システムを展開する前に、Configuration Manager でいくつかの作業を行う必要があります。 オペレーティング システムの展開を準備するには、次のトピックを使用します。  
+Prima di poter distribuire i sistemi operativi è necessario eseguire alcune operazioni in Configuration Manager. Per preparare la distribuzione del sistema operativo usare gli argomenti seguenti:  
 
--   [ブート イメージの管理](manage-boot-images.md)  
+-   [Gestire le immagini di avvio](manage-boot-images.md)  
 
--   [オペレーティング システム イメージを管理する](manage-operating-system-images.md)  
+-   [Gestire le immagini del sistema operativo](manage-operating-system-images.md)  
 
--   [オペレーティング システムのアップグレード パッケージの管理](manage-operating-system-upgrade-packages.md)  
+-   [Gestire i pacchetti di aggiornamento del sistema operativo](manage-operating-system-upgrade-packages.md)  
 
--   [ドライバーの管理](manage-drivers.md)  
+-   [Gestire i driver](manage-drivers.md)  
 
--   [ユーザー状態の管理](manage-user-state.md)  
+-   [Gestire lo stato utente](manage-user-state.md)  
 
--   [不明なコンピューターの展開の準備](prepare-for-unknown-computer-deployments.md)  
+-   [Preparare le distribuzioni in computer sconosciuti](prepare-for-unknown-computer-deployments.md)  
 
--   [展開先のコンピューターにユーザーを関連付ける](associate-users-with-a-destination-computer.md)  
+-   [Associare gli utenti a un computer di destinazione](associate-users-with-a-destination-computer.md)  

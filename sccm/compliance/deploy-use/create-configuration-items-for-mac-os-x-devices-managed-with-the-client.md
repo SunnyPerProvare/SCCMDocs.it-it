@@ -1,6 +1,6 @@
 ---
-title: "クライアントで管理されている Mac の構成項目を作成する - Configuration Manager | Microsoft Docs"
-description: "System Center Configuration Manager の Mac OS X 構成項目使用して、Mac OS X デバイスの設定を管理します。"
+title: Creare elementi di configurazione per dispositivi Mac gestiti da client - Configuration Manager | Microsoft Docs
+description: Usare l'elemento di configurazione Mac OS X di System Center Configuration Manager per gestire le impostazioni dei dispositivi Mac OS X.
 ms.custom: na
 ms.date: 03/28/2017
 ms.prod: configuration-manager
@@ -18,158 +18,158 @@ manager: angrobe
 ms.openlocfilehash: 541e5ad629a9e2ed9c353dff150f9b86b9d12b7d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-configuration-items-for-mac-os-x-devices-managed-with-the-system-center-configuration-manager-client"></a>System Center Configuration Manager クライアントを使用して管理されている Mac OS X デバイスの構成項目を作成する方法
-System Center Configuration Manager の **Mac OS X (カスタム)** 構成項目を使って、Configuration Manager クライアントで管理されている Mac OS X デバイスの設定を管理します。  
+# <a name="how-to-create-configuration-items-for-mac-os-x-devices-managed-with-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Mac OS X gestiti con il client di System Center Configuration Manager
+Usare l'elemento di configurazione **Mac OS X (personalizzato)** di System Center Configuration Manager per gestire le impostazioni dei dispositivi Mac OS X gestiti dal client di Configuration Manager.  
   
- Mac OS X オペレーティング システムでは、プロパティの一覧 (plist) ファイルを使用して、アプリケーション設定を保存します。 コンプライアンス設定を使用して、プロパティの一覧ファイルの設定を評価および修復します。 コンプライアンスについて評価および修復できる値を返すシェル スクリプトを記述することで、Mac OS X の設定を管理することもできます。  
+ Il sistema operativo Mac OS X usa i file elenco delle proprietà (o plist) per archiviare le impostazioni dell'applicazione. Usare le impostazioni di conformità per valutare e correggere le impostazioni in un file elenco delle proprietà. È anche possibile gestire le impostazioni di Mac OS X scrivendo uno script della shell che restituisce un valore che è possibile valutare e correggere in modo da renderlo conforme.  
   
-### <a name="to-create-a-custom-mac-os-x-configuration-item"></a>カスタム Mac OS X 構成項目を作成するには  
+### <a name="to-create-a-custom-mac-os-x-configuration-item"></a>Per creare un elemento di configurazione personalizzato di Mac OS X  
   
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
   
-2.  [ **資産とコンプライアンス** ] ワークスペースで [ **コンプライアンス設定** ] を展開して、[ **構成項目** ] をクリックします。  
+2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
   
-3.  [ **ホーム** ] タブの [ **作成** ] グループで、[ **構成項目の作成** ] をクリックします。  
+3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
   
-4.  **構成項目の作成ウィザード** の **[全般]**ページで、構成項目の名前と、必要に応じて説明を入力します。  
+4.  Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
   
-5.  **[作成する構成項目の種類の指定]**で、 **[Mac OS X (カスタム)]**を選択します。  
+5.  In **Specificare il tipo di elemento di configurazione da creare**selezionare **Mac OS X (personalizzato)**.  
   
-6.  Configuration Manager コンソールで構成項目を検索およびフィルター処理するのに役立つカテゴリを作成して割り当てる場合は、[**カテゴリ**] をクリックします。  
+6.  Fare clic su **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
   
-7.  ウィザードの **[サポートされているプラットフォーム]** ページで、構成項目を評価する特定の Mac OS X バージョンを選択します。  
+7.  Nella pagina **Piattaforme supportate** della procedura guidata selezionare le versioni specifiche di Mac OS X che valuteranno l'elemento di configurazione.  
   
-8.  ウィザードの **[設定]** ページで、Mac コンピューターでコンプライアンスを評価する新しい設定を追加します。 **[新規作成]** をクリックして、 **[設定の作成]** ダイアログ ボックスを開きます。  
+8.  Nella pagina **impostazioni** della procedura guidata aggiungere le nuove impostazioni che verranno valutate a livello di conformità nei computer Mac. Fare clic su **Nuova** per aprire la finestra di dialogo **Crea impostazione** .  
   
-9. **[設定の作成]** ダイアログ ボックスで、設定の一意の名前と説明を入力します。  
+9. Nella finestra di dialogo **Crea impostazione** immettere un nome univoco e una descrizione per l'impostazione.  
   
-10. **[設定の種類]** を選択し、必要な情報を指定します (次の表を参照)。  
+10. Scegliere il **tipo di impostazione** desiderato e quindi fornire le informazioni necessarie, come illustrato nella tabella seguente:  
   
-    -   **Mac OS X の設定** -  
+    -   **Preferenze di Mac OS X** -  
   
-        -   **アプリケーション ID** - キーのコンプライアンスを評価するプロパティの一覧ファイルのアプリケーション ID を指定します。  
+        -   **ID applicazione** : specificare l'ID applicazione del file elenco delle proprietà in base al quale si vuole valutare la conformità di una chiave.  
   
-             たとえば、Safari Web ブラウザーの設定を編集する場合は、ことができます **com.apple.Safari.plist**です。  
+             Ad esempio, se si desidera modificare le impostazioni per il browser Safari, è possibile utilizzare **com.apple.Safari.plist**.  
   
-        -   **キー** – Mac コンピューターのコンプライアンスを評価するキーの名前を指定します。 */<ディクショナリ\>/<キー名\>* という構文を使用します。  
-  
-            > [!IMPORTANT]  
-            >  キー名は大文字と小文字が区別され、Mac コンピューターのキー名と異なる場合は評価されません。 また、一度指定したキー名は編集できません。 キー名を編集する必要がある場合は、削除して、設定を再作成します。  
-  
-    -   **スクリプト** -  
-  
-        -   **探索スクリプト** - **[スクリプトの追加]**をクリックし、Mac コンピューターで設定のコンプライアンスを評価するシェル スクリプトを入力します。 シェル スクリプトで **echo** コマンドを使用し、コンプライアンスを評価するために Configuration Manager に値を返します。 Configuration Manager は、**STDOUT** で返された結果を使用して、コンプライアンスを評価します。  
+        -   **Chiave** : specificare il nome della chiave che si desidera valutare la conformità nei computer Mac. Usare la sintassi seguente: */<dizionario\>/<nomechiave\>*.  
   
             > [!IMPORTANT]  
-            >  探索スクリプトに **reboot** コマンドは含めないでください。 探索スクリプトはクライアントが再起動するたびに実行されるため、Mac コンピューターは継続的に再起動されます。  
+            >  Il nome chiave fa distinzione tra maiuscole e minuscole e non verrà valutato se è diverso dal nome chiave sul computer Mac. Inoltre, non è possibile modificare il nome chiave dopo che è stato specificato. Se è necessario modificare il nome della chiave, eliminare e ricreare l'impostazione.  
   
-        -   **修復スクリプト (オプション)** - 必要に応じて、 **[スクリプトの追加]** をクリックし、Mac クライアント コンピューターで見つかった非対応の設定を修復するときに使用するシェル スクリプトを入力します。  
+    -   **Script** -  
+  
+        -   **Script di individuazione** : fare clic su **Aggiungi script**e quindi immettere uno script della shell per valutare la conformità delle impostazioni nel computer Mac. Usare il comando **echo** nello script della shell per restituire i valori conformi a Configuration Manager. Configuration Manager usa i risultati restituiti in **STDOUT** per valutare la conformità.  
   
             > [!IMPORTANT]  
-            >  Mac コンピューターが解釈できない文字の書式設定が適用されないように、コピーと貼り付けを使用せず、スクリプトの文字を直接入力するようにしてください。  
+            >  Non includere il comando **reboot** nello script di individuazione. Poiché lo script di individuazione viene eseguito a ogni riavvio del client, questo comando comporta il continuo riavvio del computer Mac.  
   
-11. 設定の評価に使用する前に、条件の戻り値となるデータの形式である **[データ型]** を選択します。  
+        -   **Script di monitoraggio e aggiornamento (facoltativo)** : facoltativamente, fare clic su **Aggiungi script** e quindi immettere uno script della shell che viene usato per monitorare e aggiornare le impostazioni non conformi rilevate nei computer client Mac.  
+  
+            > [!IMPORTANT]  
+            >  Per evitare di introdurre caratteri di formattazione che il computer Mac non è in grado di interpretare, digitare lo script anziché copiarlo e incollarlo.  
+  
+11. Scegliere il **tipo di dati** che è il formato in cui la condizione restituisce i dati prima che vengano usati per valutare l'impostazione.  
   
     > [!NOTE]  
-    >  [ **浮動小数点** ]データの種類は、小数点第 3 位までをサポートしています。  
+    >  Il tipo di dati **Virgola mobile** supporta solo 3 cifre dopo il separatore decimale.  
     >   
-    >  Mac 構成項目のスクリプト設定の場合、Configuration Manager では、**ブール** データ型をサポートしません。 代わりに、スクリプトが必ず整数値を返すように、データ型は **整数** に設定してください。  
+    >  Configuration Manager non supporta l'uso del tipo di dati **booleano** per le impostazioni script dell'elemento di configurazione Mac. Al contrario, impostare il tipo di dati su **Integer** e assicurarsi che lo script restituisca un valore intero.  
   
-12. **[OK]** をクリックして設定を保存し、 **[設定の作成]** ダイアログ ボックスを閉じた後、必要な数だけ設定を追加します。  
+12. Fare clic su **OK** per salvare le impostazioni e chiudere la finestra di dialogo **Crea impostazione** e quindi continuare ad aggiungere tutte le impostazioni necessarie.  
   
-13. ウィザードの **[コンプライアンス規則]** ページで、構成項目のコンプライアンスを定義する条件を指定します。 設定のコンプライアンスを評価するには、コンプライアンス規則が少なくとも 1 つ必要です。 **[新規作成]** をクリックして、新しい規則を追加します。  
+13. Nella pagina **Regole di conformità** della procedura guidata specificare le condizioni che definiscono la conformità di un elemento di configurazione. Prima che sia possibile valutare la conformità di un'impostazione, è necessario che tale impostazione disponga almeno di una regola di conformità. Fare clic su **Nuova** per aggiungere una nuova regola.  
   
-14. [ **規則の作成** ]ダイアログ ボックスで、次の情報を入力します。  
+14. Nella finestra di dialogo **Crea regola** immettere le informazioni seguenti:  
   
-    -   **名前:** コンプライアンス規則の名前を入力します。  
+    -   **Nome:** Immettere un nome per la regola di conformità.  
   
-    -   **説明 :** コンプライアンス規則の説明を入力します。  
+    -   **Descrizione:** Immettere una descrizione per la regola di conformità.  
   
-    -   **選択された設定:** [ **参照** ]をクリックして、[ **設定の選択** ]ダイアログ ボックスを開きます。 規則を定義する設定を選択するか、または [ **新しい設定** ]をクリックします。 完了したら、[ **選択** ]をクリックします。  
+    -   **Impostazione selezionata:** Fare clic su **Sfoglia** per aprire la **Select impostazione** nella finestra di dialogo. Selezionare l'impostazione che si desidera definire una regola per oppure fare clic su **nuova impostazione**. Al termine, fare clic su **selezionare**.  
   
         > [!TIP]  
-        >  [ **プロパティ** ]をクリックすると、現在選択されている設定についての情報も表示できます。  
+        >  È inoltre possibile fare clic su **proprietà** per visualizzare informazioni sull'impostazione attualmente selezionata.  
   
-    -   **ルールの種類:** 使用するコンプライアンス規則の種類を選択します。  
+    -   **Tipo di regola:** selezionare il tipo di regola di conformità da usare:  
   
-        -   **値:** 構成項目から返された値を、指定の値と比較する規則を作成します。  
+        -   **Valore:** creare una regola che confronta il valore restituito dall'elemento di configurazione con un valore specificato.  
   
-        -   **存在:** デバイスに存在するかどうかに応じて、設定を評価する規則を作成します。  
+        -   **Esistenziale** : creare una regola che valuta l'impostazione a seconda se esiste in un dispositivo.  
   
-    -   [ **値** ]の種類の規則では、次の情報を指定します:  
+    -   Per il tipo di regola **Valore**specificare le informazioni seguenti:  
   
-        -   この設定は次の規則に対応する必要があります – 選択された設定のコンプライアンスで評価される演算子と値を選択します。 使用できる演算子は次のとおりです。  
+        -   L'impostazione deve essere conforme alla seguente regola - Selezionare un operatore e un valore la cui conformità viene valutata in base all'impostazione selezionata. È possibile usare gli operatori seguenti:  
   
-            -   **次の値と等しい**  
+            -   **È uguale a**  
   
-            -   **次の値に等しくない**  
+            -   **Diverso da**  
   
-            -   **次の値より大きい**  
+            -   **Maggiore di**  
   
-            -   **次の値より小さい**  
+            -   **Minore di**  
   
-            -   **次の値の間**  
+            -   **Tra**  
   
-            -   **次の値以上**  
+            -   **Maggiore o uguale a**  
   
-            -   **次の値以下**  
+            -   **Minore o uguale a**  
   
-            -   **次のいずれか** - テキスト ボックスで 1 行ごとに 1 つのエントリを指定します。  
+            -   **Uno** : nella casella di testo specificare una voce per ogni riga.  
   
-            -   **次のいずれでもない** - テキスト ボックスで 1 行ごとに 1 つのエントリを指定します。  
+            -   **Nessuno** : nella casella di testo specificare una voce per ogni riga.  
   
-        -   **サポートされている場合は対応していない規則を修復する** - このオプションを選択すると、Configuration Manager がコンプライアンス非対応の規則を自動的に修復します。  
+        -   **Monitora e aggiorna le regole non conformi, se supportato** : selezionare questa opzione se si vuole monitorare e aggiornare automaticamente le regole non conformi mediante Configuration Manager.  
   
             > [!IMPORTANT]  
-            >  コンプライアンス非対応の規則は、演算子が [ **等しい** ]に設定されている場合にのみ修復されます。  
+            >  È possibile correggere le regole non conformi solo quando l'operatore per la regola è impostato su **Uguale a**.  
   
-        -   **この設定インスタンスが見つからない場合はコンプライアンス非対応としてレポートする** - 構成項目は、設定が Mac コンピューターで見つからなかった場合、コンプライアンス非対応を報告します。  
+        -   **Segnalare la non conformità se questa istanza dell'impostazione non viene trovata** : l'elemento di configurazione segnala la mancata conformità se questa impostazione non viene trovata nel computer Mac.  
   
-    -   **レポートするコンプライアンス非対応の重要度** - コンプライアンス規則に従っていないときにレポートをする重要度のレベルを指定します。 利用可能な重要度のレベルは、次のとおりです。  
+    -   **Gravità della non conformità per i report:** specificare il livello di gravità segnalato nel caso la regola di conformità non venga soddisfatta. I livelli di gravità disponibili sono i seguenti:  
   
-        -   **なし** - このコンプライアンス規則を満たしていないコンピューターは、Configuration Manager レポート用に非対応重要度を何も報告しません。  
+        -   **Nessuno**: i computer che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
   
-        -   **情報** - このコンプライアンス規則を満たしていないコンピューターは、Configuration Manager レポート用に**情報**というレベルで非対応重要度を報告します。  
+        -   **Informazioni**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Informazioni** per i report di Configuration Manager.  
   
-        -   **警告** - このコンプライアンス規則を満たしていないコンピューターは、Configuration Manager レポート用に**警告**というレベルで非対応重要度を報告します。  
+        -   **Avviso**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Avviso** per i report di Configuration Manager.  
   
-        -   **重大** - このコンプライアンス規則を満たしていないコンピューターは、Configuration Manager レポート用に**重大**というレベルで非対応重要度を報告します。  
+        -   **Errore critico**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
   
-        -   **重大 (イベント)** - このコンプライアンス規則を満たしていないコンピューターは、Configuration Manager レポート用に**重大**というレベルで非対応重要度を報告します。 この重要度のレベルも、Mac クライアント コンピューターにログ記録されます。  
+        -   **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato dal computer client Mac.  
   
-    -   [ **存在** ]の種類の規則では、次の情報を指定します:  
+    -   Per il tipo di regola **Esistenziale**specificare le informazioni seguenti:  
   
-        -   次のいずれかを選択します。  
+        -   Scegliere una delle opzioni seguenti:  
   
-            -   **この設定はクライアント デバイスに存在しなければならない**  
+            -   **L'impostazione deve esistere nei dispositivi client**  
   
-            -   **この設定はクライアント デバイスに存在してはならない**  
+            -   **L'impostazione non deve esistere nei dispositivi client**  
   
-        -   **レポートするコンプライアンス非対応の重要度:** コンプライアンス規則に従っていないときにレポートをする重要度のレベルを指定します。 利用可能な重要度のレベルは、次のとおりです。  
+        -   **Gravità della non conformità per i report:** Specificare il livello di gravità che viene segnalato se si verifica un errore di questa regola di conformità. I livelli di gravità disponibili sono i seguenti:  
   
-            -   **なし** - このコンプライアンス規則を満たしていないコンピューターは、Configuration Manager レポート用に非対応重要度を何も報告しません。  
+            -   **Nessuno**: i computer che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
   
-            -   **情報** - このコンプライアンス規則を満たしていないコンピューターは、Configuration Manager レポート用に**情報**というレベルで非対応重要度を報告します。  
+            -   **Informazioni**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Informazioni** per i report di Configuration Manager.  
   
-            -   **警告** - このコンプライアンス規則を満たしていないコンピューターは、Configuration Manager レポート用に**警告**というレベルで非対応重要度を報告します。  
+            -   **Avviso**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Avviso** per i report di Configuration Manager.  
   
-            -   **重大** - このコンプライアンス規則を満たしていないコンピューターは、Configuration Manager レポート用に**重大**というレベルで非対応重要度を報告します。  
+            -   **Errore critico**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
   
-            -   **重大 (イベント)** - このコンプライアンス規則を満たしていないコンピューターは、Configuration Manager レポート用に**重大**というレベルで非対応重要度を報告します。 この重要度のレベルも、Mac クライアント コンピューターにログ記録されます。  
+            -   **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato dal computer client Mac.  
   
         > [!NOTE]  
-        >  表示されるオプションは、規則を構成する設定の種類によって異なります。  
+        >  Le opzioni visualizzate potrebbero variare a seconda del tipo di impostazione per cui si sta configurando una regola.  
   
-    -   [ **OK** ]をクリックして [ **規則の作成** ]ダイアログ ボックスを閉じます。  
+    -   Fare clic su **OK** per chiudere la finestra di dialogo **Crea regola** .  
   
-15. **[概要]** ページで新しい構成項目の設定を確認し、ウィザードを完了します。  
+15. Nella **Riepilogo** confermare le impostazioni del nuovo elemento di configurazione e quindi completare la procedura guidata.  
   
- 新しい構成項目は、 **[資産とコンプライアンス]** ワークスペースの **[構成項目]** ノードに表示されます。  
+ Il nuovo elemento di configurazione viene visualizzato nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
   
- ここで、この構成項目を構成基準に追加する場合は、「[System Center Configuration Manager で構成基準を作成する方法](../../compliance/deploy-use/create-configuration-baselines.md)」を参照してください。  
+ Se si vuole aggiungere l'elemento di configurazione a una linea di base di configurazione, vedere [Come creare linee di base di configurazione in System Center Configuration Manager](../../compliance/deploy-use/create-configuration-baselines.md).  
   
-## <a name="see-also"></a>関連項目  
- [System Center Configuration Manager クライアントを使用して管理されているデバイスの構成項目](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md)
+## <a name="see-also"></a>Vedere anche  
+ [Elementi di configurazione per dispositivi gestiti con il client di System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md)

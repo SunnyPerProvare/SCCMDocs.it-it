@@ -1,28 +1,25 @@
 ---
 title: Individuare risorse dei dispositivi e degli utenti | Documentazione Microsoft
-description: Leggere la panoramica del processo di individuazione e dei record di dati dell&quot;individuazione.
+description: Leggere la panoramica del processo di individuazione e dei record di dati dell'individuazione.
 ms.custom: na
 ms.date: 2/8/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 30844519-ce14-456f-bfb8-4318b578e9f6
-caps.latest.revision: 20
-caps.handback.revision: 0
+caps.latest.revision: "20"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 7b6674f331c82cc7899b8661cf38b9d3022cf21b
 ms.openlocfilehash: 647826e9d340d3ef97abab0dba51041a3727dedc
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="run-discovery-for-system-center-configuration-manager"></a>Eseguire l'individuazione per System Center Configuration Manager
 
@@ -89,4 +86,3 @@ Gli argomenti seguenti offrono informazioni basilari per l'uso corretto dei meto
 -   [Selezionare i metodi di individuazione da usare per System Center Configuration Manager](../../../../core/servers/deploy/configure/select-discovery-methods-to-use.md)  
 
 Quindi, dopo aver stabilito quali metodi usare, vedere le informazioni relative all'impostazione di ogni metodo nell'argomento [Configurare i metodi di individuazione per System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-discovery-methods.md).  
-

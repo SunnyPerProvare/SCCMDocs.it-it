@@ -1,6 +1,6 @@
 ---
-title: "コンテンツ ライブラリ クリーンアップ ツール | Microsoft Docs"
-description: "System Center Configuration Manager の展開と関連付けられなくなった孤立コンテンツを削除するには、コンテンツ ライブラリ クリーンアップ ツールを使います。"
+title: Strumento di pulizia della raccolta contenuto | Microsoft Docs
+description: "Usare lo strumento di pulizia della raccolta contenuto per rimuovere contenuto orfano non più associato a una distribuzione di System Center Configuration Manager."
 ms.custom: na
 ms.date: 4/7/2017
 ms.reviewer: na
@@ -17,62 +17,62 @@ manager: angrobe
 ms.openlocfilehash: 76e6772bdd5cbd32d525e728f6ebc988b045da78
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="the-content-library-cleanup-tool-for-system-center-configuration-manager"></a>System Center Configuration Manager のコンテンツ ライブラリ クリーンアップ ツール
+# <a name="the-content-library-cleanup-tool-for-system-center-configuration-manager"></a>Strumento di pulizia della raccolta contenuto per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
- バージョン 1702 以降では、コマンド ライン ツール (**ContentLibraryCleanup.exe**) を使って、どのパッケージまたはアプリケーションにも関連付けられなくなったコンテンツ (孤立コンテンツ) を配布ポイントから削除できます。 このツールはコンテンツ ライブラリ クリーンアップ ツールと呼ばれ、過去の Configuration Manager 製品用にリリースされた同様のツールの古いバージョンに代わるものです。  
+ A partire dalla versione 1702, è possibile usare uno strumento da riga di comando (**ContentLibraryCleanup.exe**) per rimuovere contenuto non più associato a un pacchetto o a un'applicazione da un punto di distribuzione (contenuto orfano). Questo strumento, denominato strumento di pulizia della raccolta contenuto, sostituisce le versioni precedenti di strumenti simili rilasciati per i prodotti Configuration Manager precedenti.  
 
-このツールでは、ツールを実行するときに指定する配布ポイントのコンテンツのみが処理されます。 このツールで、サイト サーバー上のコンテンツ ライブラリからコンテンツを削除することはできません。
+Lo strumento interessa solo il contenuto presente nel punto di distribuzione che viene specificato quando si esegue lo strumento stesso. Quest'ultimo non può rimuovere contenuto dalla raccolta contenuto nel server del sito.
 
-**ContentLibraryCleanup.exe** は、中央管理サイトまたはプライマリ サイトのサイト サーバーの *%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* フォルダーにあります。
+Lo strumento **ContentLibraryCleanup.exe** è disponibile nella cartella *%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* nel server del sito in un sito di amministrazione centrale o in un sito primario.
 
-## <a name="requirements"></a>［要件］  
- このツールは、一度に 1 つの配布ポイントに対してのみ実行できます。  
- - このツールは、クリーンアップする配布ポイントをホストするコンピューター上で直接実行することも、別のサーバーからリモートで実行することもできます。
- - ツールを実行するユーザー アカウントは、Configuration Manager 階層の完全な権限を持つ管理者と同じロールベース管理アクセス許可を直接持っている必要があります。 完全なアクセス許可を持つ管理者のアクセス許可がある Windows セキュリティ グループのメンバーとしてこれらのアクセス許可を付与される場合、このツールは機能しません。
+## <a name="requirements"></a>Requisiti  
+ Lo strumento può essere eseguito solo in un singolo punto di distribuzione alla volta.  
+ - È possibile eseguire lo strumento direttamente nel computer che ospita il punto di distribuzione da pulire oppure in remoto da un altro server.
+ - L'account utente che esegue lo strumento deve disporre di autorizzazioni di amministrazione dirette basate sui ruoli equivalenti a quelle di amministratore completo nella gerarchia di Configuration Manager. Lo strumento non funziona se all'account sono state concesse queste autorizzazioni in quanto membro di un gruppo di sicurezza di Windows con autorizzazioni di amministratore completo.
 
-## <a name="modes-of-operation"></a>操作モード
-このツールは、次の 2 つのモードで実行できます。 *What If モード*でツールを実行して結果を確認した後、*削除モード*でツールを実行することをお勧めします。
-  1.    **What If モード**:   
-      **/delete** スイッチを指定しないと、ツールは What If モードで実行され、配布ポイントから削除されるコンテンツを識別します。
-   - このモードでツールを実行した場合、データは削除されません。
-   - 削除されるコンテンツに関する情報はツールのログ ファイルに書き込まれ、可能性のある削除ごとにユーザーが確認を求められることはありません。  
+## <a name="modes-of-operation"></a>Modalità di funzionamento
+È possibile eseguire lo strumento nelle due modalità seguenti. È consigliabile eseguire lo strumento in modalità *di simulazione*, in modo che sia possibile esaminare i risultati prima di eseguirlo in *modalità di eliminazione*:
+  1.    **Modalità di simulazione**:   
+      Se non si specifica l'opzione **/delete**, lo strumento viene eseguito in modalità di simulazione e identifica il contenuto da eliminare dal punto di distribuzione.
+   - Quando viene eseguito in questa modalità, lo strumento non elimina alcun dato.
+   - Le informazioni sul contenuto da eliminare vengono scritte nel file di log dello strumento e non viene chiesto di confermare ogni potenziale eliminazione.  
       </br>   
 
-  2. **削除モード**:   
-    **/delete** スイッチを使ってツールを実行すると、ツールは削除モードで実行されます。
+  2. **Modalità di eliminazione**:   
+    Se si attiva l'opzione **/delete**, lo strumento viene eseguito in modalità di eliminazione.
 
-     - このモードでツールを実行すると、指定した配布ポイントで検出された孤立コンテンツを、配布ポイントのコンテンツ ライブラリから削除することができます。
-     -  各ファイルを削除する前に、ユーザーはファイルを削除することを確認する必要があります。  削除する場合は [**Y**] を選択し、削除しない場合は [**N**] を選択します。あるいは、[**すべて削除**] を選択すると、以降のメッセージは省略され、孤立したすべてのコンテンツが削除されます。  
+     - Se si esegue lo strumento in questa modalità, il contenuto orfano rilevato nel punto di distribuzione specificato può essere eliminato dalla raccolta contenuto del punto di distribuzione stesso.
+     -  Prima di eliminare ciascun file, è necessario confermare l'operazione.  È possibile selezionare **S** per Sì, **N** per No o **Sì a tutti** per ignorare le altre richieste di conferma ed eliminare tutto il contenuto orfano.  
      </br>
 
-ツールをどちらのモードで実行しても、自動的にログが作成されます。このログには、ツールの実行モード、配布ポイントの名前、日付、および操作時刻を含んだ名前が付けられます。 ツールが終了すると、ログ ファイルが自動的に開きます。
+Quando si esegue lo strumento, indipendentemente dalla modalità, viene creato automaticamente un log il cui nome è composto dalla modalità in cui viene eseguito lo strumento, dal nome del punto di distribuzione e dalla data e dall'ora dell'operazione. Il file di log si apre automaticamente al termine dell'esecuzione dello strumento.
 
-既定では、ログ ファイルは、ツールが実行されているコンピューターの、ツールを実行しているユーザー アカウントの一時フォルダーに書き込まれます。 **/log** スイッチを使って、ネットワーク共有などの別の場所にログ ファイルをリダイレクトできます。
+Per impostazione predefinita, il file di log viene scritto nella cartella temp dell'account utente che esegue lo strumento, sul computer in cui quest'ultimo viene eseguito. È tuttavia possibile usare l'opzione **/log** per reindirizzare il file di log a un'altra posizione, compresa una condivisione di rete.
 
 
-## <a name="run-the-tool"></a>ツールを実行します。
-ツールを実行するには:
-1. 管理コマンド プロンプトで、**ContentLibraryCleanup.exe** を含むフォルダーを開きます。  
-2. 次に、必須のコマンド ライン スイッチと、使用する省略可能なスイッチを含めたコマンドラインを入力します。
+## <a name="run-the-tool"></a>Eseguire lo strumento
+Per eseguire lo strumento:
+1. Aprire un prompt dei comandi amministrativo in una cartella contenente **ContentLibraryCleanup.exe**.  
+2. Immettere quindi una riga di comando che includa le opzioni della riga di comando obbligatorie e le opzioni facoltative che si vogliono usare.
 
-**既知の問題** パッケージまたは展開が失敗した場合、または進行中の場合、ツールを実行すると、次のようなエラーが返される可能性があります。
--  *System.InvalidOperationException: This content library cannot be cleaned up right now because package <packageID> is not fully installed.* (System.InvalidOperationException: パッケージ <パッケージ ID> が完全にインストールされていないため、このコンテンツ ライブラリを今すぐクリーンアップすることはできません。)
+**Problema noto** Quando si esegue lo strumento, se un pacchetto o una distribuzione ha esito negativo o è in corso, è possibile che venga restituito un errore simile al seguente:
+-  *System.InvalidOperationException: non è possibile eseguire la pulizia della raccolta contenuto perché il pacchetto <packageID> non è installato completamente*.
 
-**対応策 :** なし。 コンテンツの展開が進行中または失敗した場合、このツールは孤立ファイルを確実に識別することはできません。 したがって、その問題が解決されるまで、ツールではコンテンツのクリーンアップが許可されません。
+**Soluzione temporanea:** Nessuna. Lo strumento non è in grado di identificare in modo affidabile i file orfani quando il contenuto è in corso o la sua distribuzione ha avuto esito negativo. Di conseguenza, lo strumento non consente di eseguire la pulizia del contenuto fino a quando il problema non viene risolto.
 
-### <a name="command-line-switches"></a>コマンド ライン スイッチ  
-コマンドライン スイッチは、任意の順に使用できます。   
+### <a name="command-line-switches"></a>Opzioni della riga di comando  
+È possibile usare le opzioni della riga di comando seguenti in qualsiasi ordine.   
 
-|スイッチ|説明|
+|Opzione|Dettagli|
 |---------|-------|
-|**/delete**  |**省略可能** </br> 配布ポイントからコンテンツを削除する場合は、このスイッチを使用します。 コンテンツが削除される前に確認を求めるメッセージが表示されます。 </br></br> このスイッチが使われていない場合、ツールはどのコンテンツが削除対象かについて結果をログに記録しますが、配布ポイントからコンテンツを削除しません。 </br></br> 例: ***ContentLibraryCleanup.exe /dp server1.contoso.com /delete*** |
-| **/q**       |**省略可能** </br> このスイッチを指定すると、ツールはすべてのプロンプト (コンテンツを削除する場合のプロンプトなど) を非表示にする Quiet モードで実行し、ログ ファイルは自動的に開かれません。 </br></br> 例: ***ContentLibraryCleanup.exe /q /dp server1.contoso.com*** |
-| **/dp &lt;配布ポイント FQDN>**  | **必須** </br> クリーニングする配布ポイントの完全修飾ドメイン名 (FQDN) を指定します。 </br></br> 例: ***ContentLibraryCleanup.exe /dp server1.contoso.com***|
-| **/ps &lt;プライマリ サイト FQDN>**       | プライマリ サイトで配布ポイントからコンテンツをクリーニングする場合は**省略可能**。</br>セカンダリ サイトで配布ポイントからコンテンツをクリーニングする場合は**必須**。 </br></br>このツールは、親プライマリ サイトに接続して、SMS_Provider に対するクエリを実行します。 このクエリによって、どのコンテンツを配布ポイントに置くかをツールが決定して、孤立しているコンテンツや削除できるコンテンツを特定できるようになります。 必要な情報がセカンダリ サイトからは直接入手できないため、親プライマリ サイトへのこの接続はセカンダリ サイトの配布ポイントに対して行う必要があります。</br></br> 配布ポイントが属するプライマリ サイトの FQDN を指定します。または、配布ポイントがセカンダリ サイトにある場合は、親であるプライマリ サイトの FQDN を指定します。 </br></br> 例: ***ContentLibraryCleanup.exe /dp server1.contoso.com /ps siteserver1.contoso.com*** |
-| **/sc &lt;プライマリ サイト コード>**  | プライマリ サイトで配布ポイントからコンテンツをクリーニングする場合は**省略可能**。</br>セカンダリ サイトで配布ポイントからコンテンツをクリーニングする場合は**必須**。 </br></br> 配布ポイントが属するプライマリ サイトのサイト コードを指定します。あるいは、配布ポイントがセカンダリ サイトにある場合は親であるプライマリ サイトのサイト コードを指定します。</br></br> 例: ***ContentLibraryCleanup.exe /dp server1.contoso.com /sc ABC*** |
-| **/log <log file directory>**       |**省略可能** </br> ツールがログ ファイルを書き込む場所を指定します。 ローカル ドライブやネットワーク共有上の場所を指定できます。</br></br> このスイッチを指定しないと、ログ ファイルは、ツールが実行されているコンピューター上のユーザーの一時フォルダーに格納されます。</br></br> ローカル ドライブの例: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log C:\Users\Administrator\Desktop*** </br></br>ネットワーク共有の例: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log \\&lt;share>\&lt;folder>***|
+|**/delete**  |**Facoltativa** </br> Usare questa opzione se si desidera eliminare contenuto dal punto di distribuzione. Prima dell'eliminazione viene richiesta la conferma. </br></br> Se questa opzione non viene usata, lo strumento registra i risultati relativi al contenuto da eliminare, ma non elimina contenuto dal punto di distribuzione. </br></br> Esempio: ***ContentLibraryCleanup.exe /dp server1.contoso.com /delete*** |
+| **/q**       |**Facoltativa** </br> Questa opzione consente di eseguire lo strumento in modalità non interattiva. Tutte le richieste di conferma, ad esempio in caso di eliminazione di contenuto, vengono soppresse e il file di log non viene aperto automaticamente. </br></br> Esempio: ***ContentLibraryCleanup.exe /q /dp server1.contoso.com*** |
+| **/dp &lt;FQDN punto di distribuzione>**  | **Richiesto** </br> Specificare il nome di dominio completo (FQDN) del punto di distribuzione che si desidera pulire. </br></br> Esempio: ***ContentLibraryCleanup.exe /dp server1.contoso.com***|
+| **/ps &lt;FQDN sito primario>**       | **Facoltativa** per la pulizia del contenuto di un punto di distribuzione in un sito primario.</br>**Obbligatoria** per la pulizia del contenuto di un punto di distribuzione in un sito secondario. </br></br>Lo strumento si connette al sito primario padre per eseguire query su SMS_Provider. Queste query consentono allo strumento di determinare il tipo di contenuto che deve essere disponibile nel punto di distribuzione, in modo da poter identificare il contenuto isolato e che può essere rimosso. La connessione al sito primario padre deve essere eseguita per i punti di distribuzione in un sito secondario, perché i dettagli necessari non sono disponibili direttamente dal sito secondario.</br></br> Specificare il nome FQDN del sito primario a cui appartiene il punto di distribuzione oppure il nome del padre primario se il punto di distribuzione si trova in un sito secondario. </br></br> Esempio: ***ContentLibraryCleanup.exe /dp server1.contoso.com /ps siteserver1.contoso.com*** |
+| **/sc &lt;codice del sito primario>**  | **Facoltativa** per la pulizia del contenuto di un punto di distribuzione in un sito primario.</br>**Obbligatoria** per la pulizia del contenuto di un punto di distribuzione in un sito secondario. </br></br> Specificare il codice del sito primario a cui appartiene il punto di distribuzione o del sito primario padre se il punto di distribuzione si trova in un sito secondario.</br></br> Esempio: ***ContentLibraryCleanup.exe /dp server1.contoso.com /sc ABC*** |
+| **/log <log file directory>**       |**Facoltativa** </br> Specificare il percorso in cui lo strumento scrive il file di log. Può trattarsi di un'unità locale o di una condivisione di rete.</br></br> Quando questa opzione non viene usata, il file di log viene scritto nella cartella temp dell'utente, sul computer in cui viene eseguito lo strumento.</br></br> Esempio di unità locale: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log C:\Users\Administrator\Desktop*** </br></br>Esempio di condivisione di rete: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log \\&lt;condivisione>\&lt;cartella>***|

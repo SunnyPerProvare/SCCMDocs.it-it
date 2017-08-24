@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager を使用したスタンドアロン メディアを作成する | Microsoft Docs"
-description: "Configuration Manager サイトまたはネットワークへの接続を使用せずに、コンピューターにオペレーティング システムを展開するには、スタンドアロン メディアを使用します。"
+title: Creare supporti autonomi con System Center Configuration Manager | Microsoft Docs
+description: Usare i supporti autonomi per distribuire il sistema operativo in un computer senza connessione a un sito di Configuration Manager o alla rete.
 ms.custom: na
 ms.date: 06/07/2017
 ms.prod: configuration-manager
@@ -18,158 +18,158 @@ manager: angrobe
 ms.openlocfilehash: 98f902429ad1b9965a0dc4cc2e1bd071ad5c0779
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-stand-alone-media-with-system-center-configuration-manager"></a>System Center Configuration Manager を使用したスタンドアロン メディアを作成する
+# <a name="create-stand-alone-media-with-system-center-configuration-manager"></a>Creare supporti autonomi con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Configuration Manager のスタンドアロン メディアには、Configuration Manager サイトへの接続も、ネットワークの使用もせずに、オペレーティング システムをコンピューターに展開するために必要なすべてが含まれています。 次のオペレーティング システム展開シナリオでは、スタンドアロン メディアを使用します。  
+Il supporto autonomo in Configuration Manager contiene tutto il necessario per distribuire il sistema operativo in un computer senza connettersi a un sito di Configuration Manager o alla rete. Usare il supporto autonomo con gli scenari di distribuzione del sistema operativo seguenti:  
 
--   [新しいバージョンの Windows で既存のコンピューターを更新する](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
+-   [Aggiornare un computer esistente con una nuova versione di Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
 
--   [新しいコンピューター (ベア メタル) に新しいバージョンの Windows をインストールする](install-new-windows-version-new-computer-bare-metal.md)  
+-   [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)  
 
--   [Windows を最新バージョンにアップグレードする](upgrade-windows-to-the-latest-version.md)  
+-   [Aggiornare Windows alla versione più recente](upgrade-windows-to-the-latest-version.md)  
 
-スタンドアロン メディアには、オペレーティング システムと他のすべて必要なコンテンツ (ブート イメージ、オペレーティング システム イメージ、およびデバイス ドライバーなど) をインストールするステップを自動化するタスク シーケンスが含まれています。 オペレーティング システムを展開するためのすべてがスタンドアロン メディアに保存されるため、スタンドアロン メディアのディスク容量は、他の種類のメディアで必要とされる容量よりもずっと大きなものである必要があります。 中央管理サイトにスタンドアロン メディアを作成すると、クライアントは割り当てられたサイト コードを Active Directory から取得します。 子サイトで作成されたスタンドアロン メディアは、そのサイトのサイト コードをクライアントに自動的に割り当てます。  
+Il supporto autonomo include la sequenza di attività che consente di automatizzare i passaggi di installazione del sistema operativo e di tutti gli altri contenuti necessari, tra cui immagine d'avvio, immagine del sistema operativo e driver di dispositivo. Poiché tutto il necessario per la distribuzione del sistema operativo è archiviato nel supporto autonomo, lo spazio su disco richiesto per il supporto autonomo è notevolmente superiore allo spazio su disco richiesto per altri tipi di supporti. Quando si creano supporti autonomi in un sito di amministrazione centrale, il client recupererà il relativo codice del sito assegnato da Active Directory. I supporti autonomi creati nei siti figlio assegneranno automaticamente al client il codice del sito per tale sito.  
 
-##  <a name="BKMK_CreateStandAloneMedia"></a> スタンドアロン メディアの作成  
-タスク シーケンス メディアの作成ウィザードを使用してスタンドアロン メディアを作成する前に、次の条件が満たされていることを確認します。  
+##  <a name="BKMK_CreateStandAloneMedia"></a> Creare supporti autonomi  
+Prima di creare un supporto autonomo usando la Creazione guidata del supporto per la sequenza attività, assicurarsi che siano soddisfatte le condizioni seguenti:  
 
-### <a name="create-a-task-sequence-to-deploy-an-operating-system"></a>オペレーティング システムを展開するタスク シーケンスを作成する
-スタンドアロン メディアの一部として、オペレーティング システムを展開するタスク シーケンスを指定する必要があります。 新しいタスク シーケンスを作成する手順については、「[System Center Configuration Manager のオペレーティング システムをインストールするタスク シーケンスを作成する](create-a-task-sequence-to-install-an-operating-system.md)」を参照してください。
+### <a name="create-a-task-sequence-to-deploy-an-operating-system"></a>Creare una sequenza di attività per distribuire un sistema operativo
+Come parte del supporto autonomo, è necessario specificare la sequenza di attività per distribuire un sistema operativo. Per i passaggi necessari per creare una nuova sequenza di attività, vedere [Creare una sequenza di attività per installare un sistema operativo in System Center Configuration Manager](create-a-task-sequence-to-install-an-operating-system.md).
 
-スタンドアロン メディアでは、次の操作はサポートされていません。
-- タスク シーケンスでのドライバーの自動適用のステップ ドライバー カタログからのデバイス ドライバーの自動適用はサポートされていませんが、[ドライバー パッケージの適用] ステップを選択して、指定された一連のドライバーを Windows セットアップで使用できるようにします。
-- タスク シーケンスの [パッケージ コンテンツのダウンロード] のステップ スタンドアロン メディアでは管理ポイントの情報は使用できません。そのため、コンテンツの場所を列挙しようとするこのステップは失敗します。
-- ソフトウェア更新プログラムのインストール
-- オペレーティング システム展開前のソフトウェアのインストール
-- オペレーティング システム以外の展開用タスク シーケンス
-- ユーザーとデバイスのアフィニティをサポートする展開先のコンピューターとユーザーの関連付け
-- 動的なパッケージはパッケージのインストール タスクを使用してインストールします。
-- 動的なアプリケーションはアプリケーションのインストール タスクを使用してインストールします。
+Per il supporto autonomo non sono supportate le seguenti azioni:
+- Passaggio Applica automaticamente i driver nella sequenza di attività. L'applicazione automatica di driver di dispositivo dal catalogo di driver non è supportata, ma è possibile scegliere il passaggio Applica pacchetto di driver per rendere disponibile un set di driver specificato per l'installazione di Windows.
+- Passaggio Scarica contenuto pacchetto nella sequenza di attività. Le informazioni relative ai punti di gestione non sono disponibili nel supporto autonomo, pertanto il passaggio avrà esito negativo durante il tentativo di enumerazione dei percorsi del contenuto.
+- Istallazione di aggiornamenti software.
+- Installazione del software prima della distribuzione del sistema operativo.
+- Sequenza di attività per distribuzioni non di sistema operativo.
+- Associazione di utenti al computer di destinazione per il supporto dell'affinità utente dispositivo.
+- Installazione dinamica dei pacchetti tramite l'attività Installa pacchetti.
+- Installazioni dinamiche delle applicazioni tramite l'attività Installa applicazione.
 
 > [!NOTE]    
-> オペレーティング システムを展開するタスク シーケンスに [[パッケージのインストール]](../../osd/understand/task-sequence-steps.md#BKMK_InstallPackage) ステップが含まれる場合に、中央管理サイトでスタンドアロン メディアを作成すると、エラーが発生する可能性があります。 中央管理サイトには、タスク シーケンスの実行中に、ソフトウェアの配布エージェントを有効にするために必要なクライアント構成ポリシーがありません。 CreateTsMedia.log ファイルに次のエラーが表示される場合があります。    
+> Se la sequenza di attività per la distribuzione di un sistema operativo include il passaggio [Installa pacchetto](../../osd/understand/task-sequence-steps.md#BKMK_InstallPackage) e si crea il supporto autonomo in un sito di amministrazione centrale, può verificarsi un errore. Il sito di amministrazione centrale non dispone dei criteri di configurazione del client necessari per abilitare l'agente di distribuzione software durante l'esecuzione della sequenza di attività. Nel file CreateTsMedia.log potrebbe essere visualizzato l'errore seguente:    
 >     
 > "WMI method SMS_TaskSequencePackage.GetClientConfigPolicies failed (0x80041001)"    
 > 
-> **パッケージのインストール** ステップを含むスタンドアロン メディアの場合、ソフトウェアの配布エージェントが有効なプライマリ サイトにスタンドアロン メディアを作成するか、または [Windows と ConfigMgr のセットアップ](../understand/task-sequence-steps.md#BKMK_RunCommandLine) ステップの後かつタスク シーケンスの最初の**パッケージのインストール** ステップの前に[コマンド ラインの実行](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr)ステップを追加する必要があります。 [ **コマンド ラインの実行** ] ステップでは、最初の [パッケージのインストール] ステップを実行する前に、ソフトウェアの配布エージェントを有効にする WMIC コマンドを実行します。 [ **コマンド ラインの実行** ] タスク シーケンス ステップでは、次のコマンド ラインを使用できます。    
+> Per un supporto autonomo che include il passaggio **Installa pacchetto**, è necessario creare il supporto autonomo in un sito primario in cui l'agente di distribuzione software sia abilitato oppure aggiungere un passaggio [Esegui riga di comando](../understand/task-sequence-steps.md#BKMK_RunCommandLine) dopo il passaggio [Imposta Windows e ConfigMgr](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr) e prima del primo passaggio **Installa pacchetto** nella sequenza di attività. Il passaggio **Esegui riga di comando** esegue un comando WMIC per abilitare l'agente di distribuzione software prima dell'esecuzione del primo passaggio Installa pacchetto. È possibile usare quanto segue nel passaggio della sequenza di attività **Esegui riga di comando** :    
 >    
 > *WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE*
 
 
 > [!IMPORTANT]    
-> オペレーティング システム タスク シーケンスの「**Windows と ConfigMgr のセットアップ**」タスク シーケンス手順を使用している場合は、スタンドアロン メディアに **[使用可能な場合は、実稼働前クライアント パッケージを使用する]** をオンにしないでください。 この設定をオンにして、実稼働前のクライアント パッケージが使用可能な場合、スタンドアロン メディアで使用されます。 この方法はサポートされていません。 この設定の詳細については、「[Windows と ConfigMgr のセットアップ](/sccm/osd/understand/task-sequence-steps#BKMK_SetupWindowsandConfigMgr)」を参照してください。
+> Quando si usa il passaggio **Configurare Windows e ConfigMgr** della sequenza di attività del sistema operativo, non selezionare l'impostazione **Usa il pacchetto client di pre-produzione se disponibile** per il supporto autonomo. Se questa impostazione è selezionata e il pacchetto client di preproduzione è disponibile, sarà usato nel supporto autonomo. Questa operazione non è supportata. Per informazioni dettagliate su questa impostazione, vedere [Configurare Windows e ConfigMgr](/sccm/osd/understand/task-sequence-steps#BKMK_SetupWindowsandConfigMgr).
 
 
-### <a name="distribute-all-content-associated-with-the-task-sequence"></a>タスク シーケンスに関連付けられているすべてのコンテンツを配布する
-少なくとも 1 つの配布ポイントに対して、タスク シーケンスで必要なすべてのコンテンツを配布する必要があります。 これには、ブート イメージ、オペレーティング システム イメージ、その他の関連するファイルが含まれます。 スタンドアロン メディアの作成時に、ウィザードによって配布ポイントから情報が収集されます。 その配布ポイントのコンテンツ ライブラリへの **読み取り** アクセス権を持っている必要があります。  詳細については、「[タスク シーケンスによって参照されるコンテンツの配布](manage-task-sequences-to-automate-tasks.md#BKMK_DistributeTS)」を参照してください。
+### <a name="distribute-all-content-associated-with-the-task-sequence"></a>Distribuire tutto il contenuto associato alla sequenza di attività
+È necessario distribuire tutto il contenuto richiesto dalla sequenza di attività in almeno un punto di distribuzione. Ciò include l'immagine d'avvio, l'immagine del sistema operativo e altri file associati. La procedura guidata raccoglie le informazioni dal punto di distribuzione quando viene creato il supporto autonomo. È necessario avere i diritti di accesso in **lettura** alla raccolta contenuto per il punto di distribuzione.  Per i dettagli, vedere [Distribuire il contenuto a cui fa riferimento una sequenza attività](manage-task-sequences-to-automate-tasks.md#BKMK_DistributeTS).
 
-### <a name="prepare-the-removable-usb-drive"></a>リムーバブル USB ドライブを準備する
-*リムーバブル USB ドライブの場合:*
+### <a name="prepare-the-removable-usb-drive"></a>Preparare l'unità USB rimovibile
+*Per un'unità USB rimovibile:*
 
-リムーバブル USB ドライブを使用する場合は、ウィザードが実行されるコンピューターに USB ドライブが接続され、USB ドライブが Windows に取り外し可能なメディアとして検知されている必要があります。 メディアの作成時に、ウィザードによって USB ドライブに直接書き込まれます。 スタンドアロン メディアでは FAT32 ファイル システムが使用されています。 スタンドアロン メディアは、サイズが 4 GB を超えるコンテンツが入っている USB フラッシュ ドライブには作成できません。
+Se si usa un'unità USB rimovibile, l'unità deve essere collegata al computer in cui viene eseguita la procedura guidata e rilevabile da Windows come dispositivo rimovibile. La procedura guidata scrive direttamente nell'unità USB durante la creazione del supporto. Supporto autonomo usa un file system FAT32. Non è possibile creare supporti autonomi in un'unità flash USB il cui contenuto include un file di oltre 4 GB.
 
-### <a name="create-an-output-folder"></a>出力フォルダーを作成する
-*CD/DVD セットの場合:*
+### <a name="create-an-output-folder"></a>Creare una cartella di output
+*Per un set di CD/DVD:*
 
-タスク シーケンス メディアの作成ウィザードを実行して CD または DVD セット用のメディアを作成する前に、ウィザードで作成される出力ファイル用のフォルダーを作成する必要があります。 CD または DVD セット用に作成されるメディアは、そのフォルダーに .iso ファイルとして直接書き込まれます。
+Prima di eseguire la Creazione guidata del supporto per la sequenza di attività per creare il supporto per un set di CD o DVD, è necessario creare una cartella per i file di output creati dalla procedura guidata. Il supporto creato per un set di CD o DVD viene scritto come file con estensione iso direttamente nella cartella.
 
 
- リムーバブル USB ドライブまたは CD/DVD セット用のスタンドアロン メディアを作成するには、次の手順に従います。  
+ Usare la procedura seguente per creare un supporto autonomo per un'unità USB rimovibile o un set di CD/DVD.  
 
-## <a name="to-create-stand-alone-media"></a>スタンドアロン メディアを作成するには  
+## <a name="to-create-stand-alone-media"></a>Per creare un supporto autonomo  
 
-1.  Configuration Manager コンソールで、 **[ソフトウェア ライブラリ]** をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス**] をクリックします。  
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
 
-3.  [ **ホーム** ] タブの [ **作成** ] グループで [ **タスク シーケンス メディアの作成** ] をクリックして、タスク シーケンス メディアの作成ウィザードを起動します。  
+3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea supporto per sequenza di attività** per avviare la Creazione guidata del supporto per la sequenza di attività.  
 
-4.  [ **メディアの種類の選択** ] ページで次のオプションを指定し、[ **次へ** ] をクリックします。  
+4.  Nella pagina **Seleziona tipo di supporto** specificare le opzioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   [ **スタンドアロン メディア** ] を選択します。  
+    -   Selezionare **Supporto autonomo**.  
 
-    -   必要に応じて、ユーザーの入力なしにオペレーティング システムを展開できるようにするには、[ **オペレーティング システムの無人展開を許可する** ] を選択します。 このオプションを選択すると、ネットワーク構成情報またはオプションのタスク シーケンスのプロンプトはユーザーに表示されません。 ただし、メディアにパスワード保護が構成されている場合は、パスワードの入力を求めるメッセージがユーザーに表示されます。  
+    -   Se si desidera consentire la distribuzione del sistema operativo senza l'interazione dell'utente, selezionare **Consenti distribuzione automatica del sistema operativo**. Quando si seleziona questa opzione, all'utente non verrà chiesto di immettere informazioni sulla configurazione di rete o di scegliere se eseguire sequenze attività facoltative. Tuttavia, all'utente viene richiesta una password se il supporto è configurato per la protezione con password.  
 
-5.  **[メディアの種類]** ページで、メディアがフラッシュ ドライブか、または CD/DVD セットであるかを指定してから、次の構成をクリックします。  
+5.  Nella pagina **Tipo di supporto** specificare se il supporto è un'unità flash o un set di CD/DVD, quindi configurare quanto segue:  
 
     > [!IMPORTANT]  
-    >  スタンドアロン メディアでは FAT32 ファイル システムが使用されています。 スタンドアロン メディアは、サイズが 4 GB を超えるコンテンツが入っている USB フラッシュ ドライブには作成できません。  
+    >  Supporto autonomo usa un file system FAT32. Non è possibile creare supporti autonomi in un'unità flash USB il cui contenuto include un file di oltre 4 GB.  
 
-    -   **[USB フラッシュ ドライブ]**を選択した場合は、コンテンツを保存するドライブを指定します。  
+    -   Se si seleziona **Unità memoria flash USB**, è necessario specificare l'unità in cui archiviare il contenuto.  
 
-    -   **CD/DVD セット**を選択した場合は、メディアの容量および出力ファイルの名前とパスを指定します。 この場所に出力ファイルが書き込まれます。 例: **\\\servername\folder\outputfile.iso**  
+    -   Se si seleziona l'opzione **CD/DVD impostato**, specificare la capacità del supporto e il nome e il percorso dei file di output. La procedura guidata scrive i file di output in questa posizione. Ad esempio: **\\\nomeserver\cartella\filedioutput.iso**  
 
-         メディアにコンテンツ全体を保存しきれない場合は、複数のファイルが作成されます。この場合、複数の CD または DVD を使用してコンテンツを保存する必要があります。 複数のメディアが必要な場合は、Configuration Manager が作成する各出力ファイルの名前に連番が付けられます。 さらに、オペレーティング システムと共にアプリケーションを展開し、アプリケーションが 1 つのメディアに収まらない場合、Configuration Manager は複数のメディアでアプリケーションを保存します。 スタンドアロン メディアを実行している場合、Configuration Manager は、アプリケーションを保存する次のメディアの指定をユーザーに求めます。   
+         Se la capacità del supporto non è sufficiente per archiviare l'intero contenuto, vengono creati più file ed è necessario archiviare il contenuto in più CD o DVD. Quando sono necessari più supporti, Configuration Manager aggiunge un numero di sequenza al nome di ogni file di output creato. Se insieme al sistema operativo si distribuisce un'applicazione e questa non può essere contenuta in un unico supporto, Configuration Manager archivia l'applicazione in più supporti. Quando il supporto autonomo viene eseguito Configuration Manager chiede all'utente il supporto successivo contenente l'applicazione.   
 
          > [!IMPORTANT]  
-         >  既存の .iso イメージを選択した場合は、タスク シーケンス メディア ウィザードの次のページに進むと、ドライブまたは共有フォルダーからイメージが削除されます。 既存のイメージは、ウィザードをキャンセルしても削除されます。  
+         >  Se si seleziona un'immagine iso esistente, la Creazione guidata del supporto per la sequenza di attività elimina l'immagine dall'unità o dalla condivisione non appena si passa alla pagina successiva della procedura guidata. L'immagine esistente viene eliminata, anche se si annulla la procedura guidata.  
 
-     **[次へ]** をクリックします。  
+     Fare clic su **Avanti**.  
 
-6.  **[セキュリティ]** ページで、次のいずれかの設定を選び、**[次へ]** をクリックします。
-    - **[メディアをパスワードで保護する]**: 強力なパスワードを入力してメディアを保護します。 パスワードを指定した場合は、メディアを使用する際にパスワードが必要になります。  
+6.  Nella pagina **Sicurezza** scegliere tra le opzioni seguenti e quindi fare clic su **Avanti**:
+    - **Proteggi supporto con password**: immettere una password complessa per proteggere il supporto. Se si specifica una password, per usare il supporto sarà necessario immetterla.  
 
         > [!IMPORTANT]  
-        >  スタンドアロン メディアでは、タスク シーケンス ステップとその変数のみが暗号化されます。 メディアの残りのコンテンツは暗号化されません。このため、機密情報をタスク シーケンスのスクリプトに含めないでください。 機密情報はすべて、タスク シーケンスの変数を使用して保存し、実装します。  
+        >  Nel supporto autonomo vengono crittografate solo le procedure delle sequenze attività e le relative variabili. Il resto del contenuto del supporto non è crittografato. Pertanto, non includere informazioni riservate negli script della sequenza di attività. Archiviare e implementare tutte le informazioni riservate usando variabili della sequenza di attività.  
 
-    - **[このスタンドアロン メディアが有効な日付の範囲を選択します]** (バージョン 1702 以降): メディアにオプションの開始日と有効期限日を設定します。 これらの設定は既定では無効になっています。 スタンドアロン メディアが実行される前に、この日付はコンピューター上のシステム時刻と比較されます。 システム時刻が開始時刻より前か、有効期限より後の場合、スタンドアロン メディアは開始されません。 これらのオプションは、New-CMStandaloneMedia PowerShell コマンドレットを使用して利用することもできます。
-7.  [ **スタンドアロン CD/DVD** ] ページで、オペレーティング システムを展開するタスク シーケンスを指定して [ **次へ** ] をクリックします。 **[関連するアプリケーションの依存関係を検出し、このメディアに追加する]** を選択し、アプリケーションの依存関係のスタンドアロン メディアにコンテンツを追加します。
+    - **Seleziona l'intervallo di date di validità per il supporto autonomo** (disponibile a partire dalla versione 1702): impostare le date facoltative di inizio e scadenza nel supporto. Queste impostazioni sono disabilitate per impostazione predefinita. Le date vengono confrontate con l'ora di sistema nel computer prima che il supporto autonomo venga eseguito. Quando l'ora di sistema è precedente all'ora di inizio o successiva all'ora di scadenza, il supporto autonomo non viene avviato. Queste opzioni sono disponibili anche tramite il cmdlet PowerShell New-CMStandaloneMedia.
+7.  Nella pagina **CD/DVD autonomo** specificare la sequenza di attività che distribuisce il sistema operativo, quindi fare clic su **Avanti**. Per aggiungere contenuto all'elemento multimediale autonomo per le dipendenze dell'applicazione, scegliere **Rileva le dipendenze dell'applicazione associata e aggiungile a questo contenuto multimediale**.
     > [!TIP]
-    > 予想したアプリケーションの依存関係が表示されない場合は、**[関連するアプリケーションの依存関係を検出し、このメディアに追加する]** の設定の選択を解除してから再度選択し、一覧を更新します。
+    > Se non vengono visualizzate le dipendenze dell'applicazione previste, deselezionare e selezionare nuovamente l'impostazione **Rileva le dipendenze dell'applicazione associata e aggiungile a questo contenuto multimediale** per aggiornare l'elenco.
 
-    ウィザードでは、ブート イメージに関連付けられたタスク シーケンスのみを選択できます。  
+    La procedura guidata consente di selezionare solo le sequenze attività associate a un'immagine d'avvio.  
 
-8. **[アプリケーションの選択]** ページ (バージョン 1702 以降) で、メディア ファイルの一部として含めるアプリケーション コンテンツを指定し、**[次へ]** をクリックします。
-9. **[パッケージの選択]** ページ (バージョン 1702 以降) で、メディア ファイルの一部として含めるパッケージ コンテンツを指定し、**[次へ]** をクリックします。
-10. **[ドライバー パッケージの選択]** ページ (バージョン 1702 以降) で、メディア ファイルの一部として含めるドライバー パッケージ コンテンツを指定し、**[次へ]** をクリックします。
-11.  **[配布ポイント]** ページで、タスク シーケンスに必要なコンテンツを含む配布ポイントを指定して、 **[次へ]** をクリックします。  
+8. Nella pagina **Selezione applicazione**, disponibile a partire dalla versione 1702, specificare il contenuto dell'applicazione da includere nel file del supporto e quindi fare clic su **Avanti**.
+9. Nella pagina **Seleziona pacchetto**, disponibile a partire dalla versione 1702, specificare il contenuto del pacchetto da includere nel file del supporto e quindi fare clic su **Avanti**.
+10. Nella pagina **Selezionare il pacchetto driver**, disponibile a partire dalla versione 1702, specificare il contenuto del pacchetto driver da includere nel file del supporto e quindi fare clic su **Avanti**.
+11.  Nella pagina **Punti di distribuzione** specificare i punti di distribuzione che includono il contenuto richiesto dalla sequenza di attività e quindi fare clic su **Avanti**.  
 
-     Configuration Manager には、コンテンツが含まれる配布ポイントのみが表示されます。 続行する前に、タスク シーケンス (ブート イメージ、オペレーティング システム イメージなど) に関連付けられているすべてのコンテンツを少なくとも 1 つの配布ポイントに配布する必要があります。 コンテンツを配布した後、ウィザードを再起動するか、またはこのページで既に選択した配布ポイントを削除して、前のページに戻ってから **[配布ポイント]** ページに戻り、配布ポイントの一覧を更新できます。 コンテンツ配布の詳細については、「[タスク シーケンスによって参照されるコンテンツの配布](manage-task-sequences-to-automate-tasks.md#BKMK_DistributeTS)」を参照してください。 配布ポイントとコンテンツを管理の詳細については、「[System Center Configuration Manager のコンテンツ インフラストラクチャとコンテンツの管理](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」をご覧ください。  
+     Configuration Manager visualizzerà solo i punti di distribuzione che includono il contenuto. Per continuare, è necessario distribuire tutto il contenuto associato alla sequenza di attività (immagine d'avvio, immagine del sistema operativo e così via) in almeno un punto di distribuzione. Dopo la distribuzione del contenuto, è possibile riavviare la procedura guidata o rimuovere i punti di distribuzione già selezionati in questa pagina, passare alla pagina precedente e quindi tornare alla pagina **Punti di distribuzione** per aggiornare l'elenco di punti di distribuzione. Per altre informazioni sulla distribuzione di contenuto, vedere [Distribuire il contenuto a cui fa riferimento una sequenza attività](manage-task-sequences-to-automate-tasks.md#BKMK_DistributeTS). Per altre informazioni sui punti di distribuzione e la gestione del contenuto, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
     > [!NOTE]  
-    >  配布ポイントのコンテンツ ライブラリへの **読み取り** アクセス権限を持っている必要があります。  
+    >  È necessario avere i diritti di accesso in **lettura** alla raccolta contenuto nei punti di distribuzione.  
 
-12. [ **カスタマイズ** ] ページで、次の情報を指定して [ **次へ** ] をクリックします。  
+12. Nella pagina **Personalizzazione** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   オペレーティング システムを展開するためにタスク シーケンスで使用する変数を指定します。  
+    -   Specificare le variabili usate dalla sequenza di attività per distribuire il sistema operativo.  
 
-    -   タスク シーケンスの前に実行する起動前コマンドを指定します。 起動前コマンドは、タスク シーケンスを実行してオペレーティング システムをインストールする前に、Windows PE でユーザーと対話できるスクリプトまたは実行可能ファイルです。 メディアの起動前コマンドの詳細については、「[System Center Configuration Manager でのタスク シーケンス メディアの起動前コマンド](../understand/prestart-commands-for-task-sequence-media.md)」を参照してください。  
+    -   Specificare i comandi di preavvio da eseguire prima della sequenza di attività. I comandi di preavvio sono costituiti da uno script o da un eseguibile in grado di interagire con l'utente in Windows PE prima che venga eseguita la sequenza di attività per l'installazione del sistema operativo. Per altre informazioni sui comandi di preavvio per i supporti, vedere [Comandi di preavvio per supporti per sequenza di attività in System Center Configuration Manager](../understand/prestart-commands-for-task-sequence-media.md).  
 
-         必要に応じて、 **[起動前コマンドのファイル]** を選択して、起動前コマンドに必要なファイルを含めます。  
+         Facoltativamente, selezionare **Includi file per il comando di preavvio** per includere eventuali file necessari per il comando di preavvio.  
 
         > [!TIP]  
-        >  タスク シーケンス メディアの作成中に、パッケージ ID と起動前コマンドライン (タスク シーケンスの変数の値を含む) が、Configuration Manager コンソールを実行しているコンピューターの CreateTSMedia.log というログファイルに書き込まれます。 このログ ファイルで、タスク シーケンスの変数の値を確認できます。  
+        >  Durante la creazione del supporto delle sequenza di attività, tale sequenza scrive l'ID del pacchetto e la riga di comando di preavvio, incluso il valore per eventuali variabili della sequenza di attività, nel file di registro CreateTSMedia.log nel computer che esegue la console di Configuration Manager. È possibile rivedere questo file di registro per verificare il valore per le variabili della sequenza di attività.  
 
-13. ウィザードを完了します。  
+13. Completare la procedura guidata.  
 
- スタンドアロンのメディア ファイル (.iso) は、対象フォルダーに作成されます。 **[スタンドアロン CD/DVD]** を選択すると、一連の CD または DVD に出力ファイルをコピーできるようになります。  
+ I file di supporto autonomo (ISO) vengono creati nella cartella di destinazione. Se è stata selezionata l'opzione **CD/DVD autonomo**, è ora possibile copiare i file di output in un set di CD o DVD.  
 
-##  <a name="BKMK_StandAloneMediaTSExample"></a> スタンドアロン メディアのタスク シーケンス例  
- スタンドアロン メディアを使用してオペレーティング システムを展開するタスク シーケンスを作成するときは、次の表をガイドとして使用してください。 この表を利用して、タスク シーケンス ステップの全般的な順序と、これらのタスク シーケンス ステップを論理的なグループに整理および構造化する方法を決定できます。 実際に作成するタスク シーケンスは、この例とは異なり、タスク シーケンス ステップやグループの数が違う場合があります。  
+##  <a name="BKMK_StandAloneMediaTSExample"></a> Sequenza di attività di esempio per i supporti autonomi  
+ Utilizzare la tabella seguente come guida durante la creazione di una sequenza attività per distribuire un sistema operativo utilizzando supporti autonomi. La tabella sarà utile per decidere la sequenza generale per i passaggi della sequenza di attività e come organizzare e strutturare tali passaggi della sequenza di attività in gruppi logici. La sequenza di attività che crea potrebbe variare da questo esempio e può contenere più o meno passaggi della sequenza attività e gruppi.  
 
 > [!NOTE]  
->  スタンドアロン メディアを作成するには、タスク シーケンス メディア ウィザードを常に使用する必要があります。  
+>  Per creare supporti autonomi, è necessario utilizzare sempre la procedura guidata supporti sequenza di attività.  
 
-|タスク シーケンス グループまたはステップ|説明|  
+|Gruppo sequenza attività o del passaggio|Descrizione|  
 |---------------------------------|-----------------|  
-|ファイルと設定のキャプチャ **(新しいタスク シーケンス グループ)**|タスク シーケンス グループを作成します。 タスク シーケンス グループを使用すると、類似のタスク シーケンス ステップをまとめて、整理とエラー制御を向上させることができます。|  
-|Windows 設定のキャプチャ|このタスク シーケンス ステップを使用して、再イメージングする前に対象コンピューターの既存のオペレーティング システムからキャプチャした Microsoft Windows 設定を確認できます。 コンピューター名、ユーザーと組織の情報、およびタイム ゾーン設定をキャプチャできます。|  
-|ネットワーク設定のキャプチャ|このタスク シーケンス ステップを使用して、タスク シーケンスを受信するコンピューターからネットワーク設定をキャプチャできます。 コンピューターのドメインまたはワークグループのメンバーシップ、およびネットワーク アダプター設定情報をキャプチャできます。|  
-|ユーザーファイルと設定のキャプチャ - **(新規タスク シーケンス サブグループ)**|タスク シーケンス グループ内にタスク シーケンス グループを作成します。 このサブグループには、再イメージングの前に対象コンピューターの既存のオペレーティング システムからユーザー状態データをキャプチャするために必要なステップが含まれています。 追加した最初のグループと同様に、このサブグループは類似のタスク シーケンス ステップをまとめて、整理とエラー制御を向上させることができます。|  
-|ローカルの状態の場所の設定|このタスク シーケンス ステップを使用して、保護されたパス タスク シーケンス変数によりローカルの場所を指定できます。 ユーザーの状態は、ハード ドライブの保護されたディレクトリに保存されます。|  
-|ユーザー状態のキャプチャ|このタスク シーケンス ステップを使用して、新しいオペレーティング システムに移行するユーザー ファイルおよび設定をキャプチャできます。|  
-|オペレーティング システムのインストール - **(新規タスク シーケンス グループ)**|タスク シーケンス サブグループを作成します。 このサブグループには、オペレーティング システムのインストールに必要なステップが含まれています。|  
-|Windows PE またはハード ディスクでの再起動|このタスク シーケンス ステップを使用して、このタスク シーケンスを受信するコンピューターの再起動オプションを指定できます。 このステップでは、インストールを続行するためにコンピューターを再起動することをユーザーに示すメッセージが表示されます。<br /><br /> このステップでは、読み取り専用の **_SMSTSInWinPE** タスク シーケンス変数が使用されます。 関連する値が **false** の場合に、タスク シーケンス ステップが続行されます。|  
-|オペレーティング システムの適用|このタスク シーケンス ステップを使用して、オペレーティング システム イメージを対象のコンピューターにインストールできます。 このステップでは、ボリュームのファイルをすべて削除し (Configuration Manager 固有の制御ファイルは例外)、WIM ファイルに含まれるすべてのボリューム イメージを対応する順次ディスク ボリュームに適用します。 また、**sysprep** 応答ファイルを指定したり、インストールに使用するディスク パーティションを構成することもできます。|  
-|Windows 設定の適用|このタスク シーケンス ステップを使用して、対象コンピューターの Windows 設定の構成情報を構成できます。 適用できる Windows 設定は、ユーザーと組織の情報、製品またはライセンス キーの情報、タイム ゾーン、およびローカル管理者パスワードです。|  
-|ネットワーク設定の適用|このタスク シーケンス ステップを使用して、対象コンピューターのネットワークまたはワークグループの構成情報を指定できます。 コンピューターが DHCP サーバーを使用するかどうか、または IP アドレス情報を静的に割り当てられるかどうかも指定できます。|  
-|ドライバー パッケージの適用|このタスク シーケンス ステップを使用して、ドライバー パッケージ内のデバイス ドライバーをすべて Windows セットアップで使用できるようにします。 すべての必要なデバイス ドライバーをスタンドアロン メディアに含める必要があります。|  
-|オペレーティング システムのセットアップ - **(新規タスク シーケンス グループ)**|タスク シーケンス サブグループを作成します。 このサブグループには、Configuration Manager クライアントのインストールに必要なステップが含まれています。|  
-|Windows と ConfigMgr のセットアップ|このタスク シーケンス ステップを使用して Configuration Manager クライアント ソフトウェアをインストールします。 Configuration Manager は、Configuration Manager クライアントの GUID をインストールして登録します。 必要なインストール パラメーターは、 **[インストールのプロパティ]** ウィンドウで割り当てることができます。|  
-|ユーザーファイルと設定の復元 - **(新規タスク シーケンス グループ)**|タスク シーケンス サブグループを作成します。 このサブグループには、ユーザー状態の復元に必要なステップが含まれています。|  
-|ユーザー状態の復元|このタスク シーケンス ステップを使用して、ユーザー状態移行ツール (USMT) を起動し、ユーザー状態のキャプチャ アクションからキャプチャしたユーザーの状態および設定を対象コンピューターに復元できます。|  
+|Acquisire i File e impostazioni - **(nuovo gruppo di sequenze attività)**|Creare un gruppo di sequenze di attività. Un gruppo di sequenze di attività consente di mantenere simile passaggi della sequenza attività per una migliore organizzazione e il controllo degli errori.|  
+|Acquisisci impostazioni Windows|Utilizzare questo passaggio della sequenza attività per identificare le impostazioni di Microsoft Windows che sono state acquisite dal sistema operativo esistente nel computer di destinazione prima della ricostruzione. È possibile acquisire il nome del computer, utente e informazioni sull'organizzazione e le impostazioni di fuso orario.|  
+|Acquisisci impostazioni di rete|Utilizzare questo passaggio della sequenza attività per acquisire le impostazioni di rete dal computer che riceve la sequenza di attività. È possibile acquisire l'appartenenza al gruppo di lavoro o dominio del computer e impostazione delle informazioni relative alla scheda di rete.|  
+|Acquisire i file utente e impostazioni - **(nuovo gruppo sequenza attività secondarie)**|Creare un gruppo di sequenze di attività all'interno di un gruppo di sequenze di attività. Questo gruppo secondario contiene i passaggi necessari per acquisire dati sullo stato utente dal sistema operativo esistente nel computer di destinazione prima della ricostruzione. Controllano simile passaggi della sequenza attività insieme per una migliore organizzazione e l'errore simile al gruppo iniziale che è stato aggiunto, questa mantiene sottogruppi.|  
+|Percorso locale Imposta stato|Utilizzare questo passaggio della sequenza attività per specificare un percorso locale utilizzando la variabile della sequenza attività percorso protetto. Lo stato utente è archiviato in una directory protetta sul disco rigido.|  
+|Acquisisci stato utente|Utilizzare questo passaggio della sequenza attività per acquisire il file e impostazioni utente che si desidera eseguire la migrazione al nuovo sistema operativo.|  
+|Installare il sistema operativo - **(nuovo gruppo di sequenze attività)**|Creare un altro gruppo secondario di sequenze attività. Questo gruppo secondario contiene i passaggi necessari per installare il sistema operativo.|  
+|Riavviare il computer a Windows PE o un disco rigido|Utilizzare questo passaggio della sequenza attività per specificare le opzioni di riavvio del computer che riceve questa sequenza di attività. Questo passaggio viene visualizzato un messaggio all'utente che indica che il computer verrà riavviato affinché possa continuare l'installazione.<br /><br /> Questo passaggio viene utilizzata la proprietà di sola lettura **_SMSTSInWinPE** variabile della sequenza attività. Se il valore associato è uguale a **false** il passaggio della sequenza attività continua.|  
+|Applica sistema operativo|Utilizzare questo passaggio della sequenza attività per installare l'immagine del sistema operativo nel computer di destinazione. Questo passaggio consente di eliminare tutti i file nel volume, ad eccezione dei file di controllo specifici di Configuration Manager, quindi applica tutte le immagini del volume contenute nel file WIM al volume del disco sequenziale corrispondente. È anche possibile specificare un file di risposta **sysprep** per configurare le partizioni del disco da usare per l'installazione.|  
+|Applica impostazioni Windows|Usare questo passaggio della sequenza di attività per configurare le informazioni di configurazione delle impostazioni di Windows per il computer di destinazione. Le impostazioni di Windows applicabili sono le informazioni sull'utente e sull'organizzazione, le informazioni sul prodotto o sul codice di licenza, il fuso orario e la password dell'amministratore locale.|  
+|Applica impostazioni di rete|Usare questo passaggio della sequenza di attività per specificare le informazioni di configurazione per la rete o il gruppo di lavoro per il computer di destinazione. È inoltre possibile specificare se il computer utilizza un server DHCP oppure è possibile assegnare staticamente le informazioni sull'indirizzo IP.|  
+|Applica pacchetto di driver|Utilizzare questo passaggio della sequenza attività per rendere disponibili per l'utilizzo tutti i driver di dispositivo in un pacchetto driver dal programma di installazione di Windows. Tutti i driver necessari devono essere contenuti nel supporto autonomo.|  
+|Installazione del sistema operativo - **(nuovo gruppo di sequenze attività)**|Creare un altro gruppo secondario di sequenze attività. Questo sottogruppo contiene i passaggi necessari per installare il client di Configuration Manager.|  
+|Imposta Windows e ConfigMgr|Usare questo passaggio della sequenza di attività per installare il software client di Configuration Manager. Configuration Manager installa e registra il GUID del client di Configuration Manager. È possibile assegnare i parametri di installazione necessari nella finestra **Proprietà di installazione** .|  
+|Ripristinare file e impostazioni - utente **(nuovo gruppo di sequenze attività)**|Creare un altro gruppo secondario di sequenze attività. Questo gruppo secondario contiene i passaggi necessari per ripristinare lo stato utente.|  
+|Ripristina stato utente|Usare questo passaggio della sequenza di attività per avviare l'Utilità di migrazione stato utente e ripristinare lo stato utente e le impostazioni acquisiti dall'azione Acquisisci stato utente nel computer di destinazione.|  

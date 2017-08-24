@@ -1,25 +1,24 @@
 ---
 title: "Pianificare e configurare le impostazioni di conformità | Microsoft Docs"
-description: "Informazioni sui prerequisiti e sulle attività di configurazione per l&quot;uso delle impostazioni di conformità in System Center Configuration Manager."
+description: "Informazioni sui prerequisiti e sulle attività di configurazione per l'uso delle impostazioni di conformità in System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9ea20b01-676a-4cc2-b328-0098a41b202e
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
 ms.openlocfilehash: d26ac3de58d2f0ef447725e63fc2d8adda6ea06c
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="plan-for-and-configure-compliance-settings-in-system-center-configuration-manager"></a>Pianificare e configurare le impostazioni di conformità in System Center Configuration Manager
 
@@ -52,9 +51,3 @@ Questa procedura consente di configurare le impostazioni client predefinite per 
 5. Fare clic su **OK** per chiudere la finestra di dialogo **Impostazioni dispositivo** .  
 
 I computer client vengono configurati con queste impostazioni al successivo download dei criteri client.  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-

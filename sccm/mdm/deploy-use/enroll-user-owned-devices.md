@@ -1,6 +1,6 @@
 ---
-title: "Configuration Manager を使用してハイブリッド展開用にユーザー所有のデバイスを登録する | Microsoft Docs"
-description: "Configuration Manager を使用してハイブリッド展開用にユーザー所有のデバイスを登録するさまざまな方法について説明します。"
+title: "Registrare dispositivi di proprietà dell'utente per le distribuzioni ibride con Configuration Manager | Microsoft Docs"
+description: "Informazioni sui vari metodi per registrare i dispositivi di proprietà dell'utente per le distribuzioni ibride con Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -17,15 +17,15 @@ manager: angrobe
 ms.openlocfilehash: 6793e4736fe2603dfaef9f98b0fb54e5584aa7cd
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="enroll-user-owned-devices-for-hybrid-deployments-with-configuration-manager"></a>Configuration Manager を使用してハイブリッド展開用にユーザー所有のデバイスを登録する
+# <a name="enroll-user-owned-devices-for-hybrid-deployments-with-configuration-manager"></a>Registrare i dispositivi di proprietà dell'utente per le distribuzioni ibride con Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-ユーザー所有のデバイス (BYOD) は、デバイスおよびその購入方法に応じて、さまざまな方法で管理対象に含めることができます。  
+I dispositivi di proprietà dell'utente (BYOD) possono essere gestiti in diversi modi a seconda del dispositivo e della modalità di acquisto.  
 
-登録を有効にすると、会社のポータル アプリを使用してユーザー所有のデバイスを登録できます。
+Dopo che la registrazione è stata abilitata, i dispositivi di proprietà dell'utente possono essere registrati tramite l'app del portale aziendale.
 
-[Microsoft Intune を使用したエンドユーザー エクスペリエンスに関するリソース](https://docs.microsoft.com/en-us/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune)では、エンド ユーザーがデバイス登録後に Intune でさまざまなタスクを実行するために取るべき手順の一部を説明しています。
+L'articolo [Come informare gli utenti finali su Microsoft Intune](https://docs.microsoft.com/en-us/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune) illustra alcuni dei passaggi completati dagli utenti finali per eseguire diverse attività in Intune dopo la registrazione dei dispositivi.

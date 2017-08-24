@@ -1,6 +1,6 @@
 ---
-title: "境界と境界グループを使用する | Microsoft Docs"
-description: "管理対象のデバイスに対してネットワークの場所とアクセス可能なサイト システムを定義するには、境界と境界グループを使います。"
+title: Usare limiti e gruppi di limiti | Microsoft Docs
+description: Usare i limiti e i gruppi di limiti per definire percorsi di rete e sistemi del sito accessibili per i dispositivi gestiti.
 ms.custom: na
 ms.date: 3/27/2017
 ms.prod: configuration-manager
@@ -17,48 +17,48 @@ manager: angrobe
 ms.openlocfilehash: 0fea1dece0768a2b7bcd3fcedc2288ea2d52e73d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="define-site-boundaries-and-boundary-groups-for-system-center-configuration-manager"></a>System Center Configuration Manager のサイト境界と境界グループの定義
+# <a name="define-site-boundaries-and-boundary-groups-for-system-center-configuration-manager"></a>Definire i limiti del sito e i gruppi di limiti per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager の境界は、管理するデバイスを含めることができる、イントラネット上のネットワークの場所を定義します。 境界グループは、構成する対象となる境界の論理的なグループです。
+I limiti per System Center Configuration Manager definiscono i percorsi di rete nella intranet che possono contenere i dispositivi da gestire. I gruppi di limiti sono gruppi logici di limiti che è possibile configurare.
 
- 階層には、任意の数の境界グループを含めることができ、各境界グループには、次の境界の種類のあらゆる組み合わせを含めることができます。  
+ Una gerarchia può includere qualsiasi numero di gruppi di limiti e ogni gruppo di limiti può contenere qualsiasi combinazione dei tipi di limite seguenti:  
 
--   IP サブネット、  
--   Active Directory サイト名  
--   IPv6 プレフィックス  
--   IP アドレスの範囲  
+-   Subnet IP  
+-   Nome del sito Active Directory  
+-   Prefisso IPv6  
+-   Intervallo indirizzi IP  
 
-イントラネット上のクライアントは、現在のネットワークの場所を評価し、所属する境界グループを識別するためにその情報を使用します。  
+I client nella intranet valutano il relativo percorso di rete corrente e quindi usano tali informazioni per identificare i gruppi di limiti a cui appartengono.  
 
- クライアントは、次の目的で境界グループを使用します。  
--   **割り当て済みサイトの検索:** 境界グループを使用することで、クライアントによるクライアント割り当て用のプライマリ サイトの検出を有効にします (サイトの自動割り当て)。  
--   **使用できる特定のサイト システムの役割の検索:** 境界グループを特定のサイト システムの役割と関連付けると、境界グループによって、クライアントにサイト システムの一覧が提供され、コンテンツの検索時に使ったり、優先する管理ポイントとして使ったりすることができます。  
+ I client usano i gruppi di limiti per:  
+-   **Trovare un sito assegnato:** i gruppi di limiti consentono ai client di trovare un sito primario per l'assegnazione client (assegnazione automatica del sito).  
+-   **Trovare specifici ruoli del sistema del sito che possono usare:** quando si associa un gruppo di limiti a specifici ruoli del sistema del sito, il gruppo di limiti fornisce ai client l'elenco di sistemi del sito da usare durante la specifica del percorso del contenuto e come punti di gestione preferiti.  
 
-インターネット上のクライアントまたはインターネット専用として構成されたクライアントは、境界情報を使用しません。 これらのクライアントはサイトの自動割り当てを使用できないため、インターネットを介したクライアント接続を許可するように配布ポイントが構成されている場合は、いつでも割り当て済みサイトの配布ポイントからコンテンツをダウンロードできます。  
+I client in Internet o configurati come client solo per Internet non usano le informazioni relative ai limiti. Questi client non possono usare l'assegnazione automatica del sito e, se il punto di distribuzione è configurato per consentire le connessioni client da Internet, scaricano sempre il contenuto da qualsiasi punto di distribuzione del sito assegnato.  
 
-**作業方法:**
-- 最初に、[境界としてネットワークの場所を定義](/sccm/core/servers/deploy/configure/boundaries)します。
-- 次に、[境界グループを構成](/sccm/core/servers/deploy/configure/boundary-groups)し、境界内のクライアントを、クライアントが使用できるサイト システム サーバーに関連付けます。
+**Per iniziare:**
+- Come prima operazione, [definire i percorsi di rete come limiti](/sccm/core/servers/deploy/configure/boundaries).
+- Continuare quindi [configurando gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups) per associare i client presenti in tali limiti ai server del sistema del sito che possono usare.
 
 
 
-##  <a name="BKMK_BoundaryBestPractices"></a> 境界と境界グループのベスト プラクティス  
+##  <a name="BKMK_BoundaryBestPractices"></a> Procedure consigliate per i limiti e i gruppi di limiti  
 
--   **ニーズに合う最小限の境界を組み合わせて使用します。**  
-   過去には、他の境界よりも一部の境界の種類について使用を推奨していましたが、 変更によってパフォーマンスを改善されたため、実際の環境に合わせて任意の境界の種類を使用し、管理タスクを簡易にするために最小限の境界数を使用することをお勧めします。      
+-   **Usare una combinazione del numero minimo di limiti che soddisfano le esigenze:**  
+   In passato era consigliabile preferire alcuni tipi di limiti rispetto ad altri. Con le modifiche apportate per migliorare le prestazioni, è ora consigliabile usare il tipo o i tipi di limiti più adatti all'ambiente in uso e il numero più basso possibile di limiti, per semplificare le attività di gestione.      
 
--   **サイトの自動割り当てでは、重複する境界を避けてください。**  
-     各境界グループは、サイト割り当ての構成とコンテンツの場所の構成をサポートしていますが、運用方法としては、サイトの割り当てのみに使用する境界グループのセットを個別に作成することをお勧めします。 意味: 境界グループ内の各境界が、異なるサイトの割り当てが指定された別の境界グループのメンバーになっていないことを確認してください。 その理由:  
+-   **Evitare la sovrapposizione dei limiti per l'assegnazione automatica del sito:**  
+     Anche se ogni gruppo di limiti supporta sia le configurazioni di assegnazione del sito che quelle per il percorso del contenuto, è consigliabile creare un set separato di gruppi di limiti da usare solo per l'assegnazione del sito. Significato: verificare che ogni limite in un gruppo di limiti non sia membro di un altro gruppo di limiti con un'assegnazione del sito diversa. Motivo:  
 
-    -   1 つの境界を、複数の境界グループに含めることができます。  
+    -   Un singolo limite può essere incluso in più gruppi di limiti  
 
-    -   各境界グループは、サイト割り当てのための別のプライマリ サイトを関連付けることができます。  
+    -   Ogni gruppo di limiti può essere associato a un sito primario diverso per l'assegnazione del sito  
 
-    -   異なるサイトの割り当てが指定された 2 つの別の境界グループのメンバーである境界にクライアントが配置されていると、そのクライアントは参加するサイトをランダムに選択します。ただし、そのサイトはクライアントが参加する予定のサイトではない可能性があります。  この構成は、重複する境界と呼ばれます。  
+    -   Un client in un limite membro di due gruppi di limiti con assegnazioni del sito diverse selezionerà in modo casuale il sito a cui aggiungersi, che potrebbe non corrispondere a quello a cui si intende aggiungere il client.  Questa configurazione è definita a limiti sovrapposti.  
 
-     重複する境界は、コンテンツの場所に関しては問題とはなりません。むしろ、多くの場合、使用できる他のリソースやコンテンツの場所をクライアントに提供するのに適した構成となります。  
+     La sovrapposizione dei limiti non è un problema per il percorso del contenuto e spesso è la configurazione desiderata che fornisce ai client risorse aggiuntive o percorsi del contenuto che possono usare.  

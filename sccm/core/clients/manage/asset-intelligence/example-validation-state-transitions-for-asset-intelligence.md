@@ -1,6 +1,6 @@
 ---
-title: "資産インテリジェンスの検証状態移行の例 | Microsoft Docs"
-description: "System Center Configuration Manager での資産インテリジェンスの検証状態移行の例について説明します。"
+title: Transizioni dello stato di convalida di esempio per Asset Intelligence | Microsoft Docs
+description: Vedere le transizioni di esempio dello stato di convalida per Asset Intelligence in System Center Configuration Manager
 ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
@@ -18,65 +18,65 @@ manager: angrobe
 ms.openlocfilehash: f280e06f34c0ed355b7c2652c571e36eb6684c59
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="example-validation-state-transitions-for-asset-intelligence-in-system-center-configuration-manager"></a>System Center Configuration Manager での資産インテリジェンスの検証状態移行の例
+# <a name="example-validation-state-transitions-for-asset-intelligence-in-system-center-configuration-manager"></a>Transizioni dello stato di convalida di esempio per Asset Intelligence in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager の資産インテリジェンスの検証の状態は固定したものではなく、資産インテリジェンス カタログに保持されたデータに影響を与える管理操作によって変化することがあります。 このトピックでは、考えられる検証状態の変化について例を挙げて説明します。
+Gli stati di convalida di Asset Intelligence in System Center Configuration Manager non sono statici e possono essere modificati da operazioni di amministrazione eseguite per modificare i dati archiviati nel catalogo di Asset Intelligence. In questo argomento vengono descritti esempi relativi alle possibili transizioni dello stato di convalida.
 
-##  <a name="BKMK_UncategorizedIsCategorized"></a> カテゴリ化されていないカタログ項目が管理ユーザーによってカテゴリ化される  
+##  <a name="BKMK_UncategorizedIsCategorized"></a> L'elemento del catalogo senza categoria viene categorizzato dall'utente amministratore  
 
-|**状態の変化**|**状態の変化の説明**|  
+|**Transizione di stato**|**Descrizione della transizione di stato**|  
 |--------------------------|--------------------------------------|  
-|**カテゴリ化されていない**|System Center Online または管理ユーザーによってカテゴリ化されたことがない、インベントリされたソフトウェア タイトルが、資産インテリジェンス カタログに入力されます。|  
-|**カテゴリ化されていない** に **ユーザー定義**|カテゴリ化されていない項目が、管理ユーザーによってカテゴリ化されます。|  
+|**Senza categoria**|Un titolo di software di inventario che non è stato categorizzato in precedenza da System Center Online o che l'utente amministratore ha inserito nel catalogo di Asset Intelligence.|  
+|**Senza categoria** a **utentedefinito**|L'elemento senza categoria viene categorizzato dall'utente amministratore.|  
 
-##  <a name="BKMK_CategorizedIsReCategorized"></a> カテゴリ化されたカタログ項目が管理ユーザーによって再カテゴリ化される  
+##  <a name="BKMK_CategorizedIsReCategorized"></a> L'elemento del catalogo categorizzato viene categorizzato di nuovo dall'utente amministratore  
 
-|**状態の変化**|**状態の変化の説明**|  
+|**Transizione di stato**|**Descrizione della transizione di stato**|  
 |--------------------------|--------------------------------------|  
-|**検証済み**|カタログ項目は、System Center Online の調査員によって定義され、資産インテリジェンス カタログ内に存在しています。|  
-|**カテゴリ化されていない** から **検証済み**|検証されていない項目が、管理ユーザーによってカテゴリ化されます。|  
+|**Convalidato**|L'elemento del catalogo è stato definito dai ricercatori di System Center Online ed è presente nel catalogo di Asset Intelligence.|  
+|**Convalidaa** a **Definito da utente**|L'elemento del catalogo convalidato viene categorizzato di nuovo dall'utente amministratore.|  
 
 > [!NOTE]  
->  System Center Online から取得したカテゴリ化情報はデータベースに格納されて削除できないため、管理ユーザーは、後で System Center Online のカテゴリ化を復元することができます。  
+>  Dato che le informazioni di categorizzazione ottenute da System Center Online vengono archiviate nel database e non possono essere eliminate, l'utente amministratore può ripristinare la categorizzazione di System Center Online in un secondo momento.  
 
-##  <a name="BKMK_UserDefinedIsRecategorized"></a> ユーザー定義のカタログ項目が System Center Online によって再カテゴリ化される  
+##  <a name="BKMK_UserDefinedIsRecategorized"></a> L'elemento del catalogo definito dall'utente è categorizzato di nuovo da System Center Online  
 
-|**状態の変化**|**状態の変化の説明**|  
+|**Transizione di stato**|**Descrizione della transizione di stato**|  
 |--------------------------|--------------------------------------|  
-|**カテゴリ化されていない**|インベントリされたソフトウェア タイトルが、System Center Online または管理ユーザーによってカテゴリ化されたことのない資産インテリジェンス カタログに入力されます。|  
-|**検証済み**|カテゴリ化されていない項目が、管理ユーザーによってカテゴリ化されます。|  
-|**ユーザー定義済み** から **更新可能**|ユーザー定義のカタログ項目は、その後の資産インテリジェンス カタログの手動一括更新中に、System Center Online によって異なったカテゴリ化がされています。<br /><br /> 管理ユーザーは [ソフトウェア詳細の不一致の解決] ダイアログ ボックスを使用して、新しいカテゴリ化情報と以前のユーザー定義済みの値のいずれを使用するのかを決定できます。 ****|  
-|**更新可能** から **検証済み**|管理ユーザーは [ソフトウェア詳細の不一致の解決] ダイアログ ボックスを使用して、前回のカタログ更新中に System Center Online から受信した新しいカテゴリ化情報を使用します。 ****|  
-|または||  
-|**更新可能** から **検証済み**|管理ユーザーは [ソフトウェア詳細の不一致の解決] ダイアログ ボックスを使用して、以前のユーザー定義済みの値を使用します。 ****|  
+|**Senza categoria**|Nel catalogo di Asset Intelligence viene inserito un titolo software di inventario non categorizzato in precedenza da System Center Online o dall'utente amministratore.|  
+|**Definito da utente**|L'elemento senza categoria viene categorizzato dall'utente amministratore.|  
+|**Definia da utente** a **Aggiornabile**|Un elemento di catalogo definito dall'utente è stato categorizzato in modo diverso da System Center Online durante i successivi aggiornamenti in blocco del catalogo di Asset Intelligence.<br /><br /> L'utente amministratore può usare la finestra di dialogo **Risoluzione conflitti dettagli software** per decidere se usare le nuove informazioni di categorizzazione o il precedente valore definito dall'utente.|  
+|**Aggiornabile** a **Convalidato**|L'utente amministratore usa la finestra di dialogo **Risoluzione conflitti dettagli software** per usare le nuove informazioni di categorizzazione ricevute da System Center Online durante il precedente aggiornamento del catalogo.|  
+|Oppure||  
+|**Aggiornabile** a **Definito da utente**|L'utente amministratore usa la finestra di dialogo **Risoluzione conflitti dettagli software** per usare il precedente valore definito dall'utente.|  
 
 > [!NOTE]  
->  System Center Online から取得したカテゴリ化情報はデータベースに格納されて削除できないため、管理ユーザーは、後で System Center Online のカテゴリ化を復元することができます。  
+>  Dato che le informazioni di categorizzazione ottenute da System Center Online vengono archiviate nel database e non possono essere eliminate, l'utente amministratore può ripristinare la categorizzazione di System Center Online in un secondo momento.  
 
-##  <a name="BKMK_UncategorizedIsSubmitted"></a> カテゴリ化されていないカタログ項目が、カテゴリ化のために System Center Online に送信される  
+##  <a name="BKMK_UncategorizedIsSubmitted"></a> L'elemento del catalogo senza categoria viene inviato a System Center Online per la categorizzazione  
 
-|**状態の変化**|**状態の変化の説明**|  
+|**Transizione di stato**|**Descrizione della transizione di stato**|  
 |--------------------------|--------------------------------------|  
-|**カテゴリ化されていない**|インベントリされたソフトウェア タイトルが、System Center Online または管理ユーザーによってカテゴリ化されたことのない資産インテリジェンス データベースに入力されます。|  
-|**カテゴリ化されていない** から **保留中**|カテゴリ化されていない項目が、管理ユーザーによるカテゴリ化のために System Center Online に送信されます。|  
-|**保留中** から **検証済み**|この項目は System Center Online によってカテゴリ化されています。 管理ユーザーは、一括カタログ更新または資産インテリジェンス カタログの同期化を使用して、この項目を資産インテリジェンス カタログにインポートします。 資産インテリジェンス同期ポイント サイト システムの役割を使用すると、両方を使用できます。|  
+|**Senza categoria**|Nel database di Asset Intelligence viene inserito un titolo di software di inventario non categorizzato in precedenza da System Center Online o dall'utente amministratore.|  
+|**Senza categoria** a **In sospeso**|L'elemento senza categoria viene inviato a System Center Online per la categorizzazione dall'utente amministratore|  
+|**In sospeso** a **Convalidato**|L'elemento è categorizzato da System Center Online. L'utente amministratore importa l'elemento nel catalogo di Asset Intelligence tramite un aggiornamento in blocco del catalogo oppure una sincronizzazione del catalogo di Asset Intelligence. Entrambe le operazioni sono disponibili mediante il ruolo del sistema del sito del punto di sincronizzazione di Asset Intelligence.|  
 
-##  <a name="BKMK_UserDefinedIsSubmitted"></a> ユーザー定義のカタログ項目が、カテゴリ化のために System Center Online に送信される  
+##  <a name="BKMK_UserDefinedIsSubmitted"></a> L'elemento del catalogo definito dall'utente viene inviato a System Center Online per la categorizzazione  
 
-|**状態の変化**|**状態の変化の説明**|  
+|**Transizione di stato**|**Descrizione della transizione di stato**|  
 |--------------------------|--------------------------------------|  
-|**カテゴリ化されていない**|インベントリされたソフトウェア タイトルが、System Center Online または管理ユーザーによってカテゴリ化されたことのない資産インテリジェンス データベースに入力されます。|  
-|**検証済み**|ユーザーがカテゴリ化されていない項目がカテゴリ化しました。|  
-|**ユーザー定義済み** から **保留中**|ユーザー定義のカタログ項目を、カテゴリ化のために System Center Online に送信します。|  
-|**保留中** から **更新可能**|ユーザー定義のカタログ項目が、その後のカタログ同期時に System Center Online により、異なるようにカテゴリ化されました。 [競合の解決] 操作を使用して、新しいカテゴリ化情報または以前のユーザー定義値を使用するかどうかを決定することができます。 **** 競合の解決の詳細については、「[ソフトウェア詳細の競合の解決](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md#BKMK_ResolveSoftwareDetails)」をご覧ください。|  
-|**更新可能** から **検証済み**|[競合の解決] 操作を使用して、前回のカタログ更新中に System Center Online から受信した新しいカテゴリ化情報を選択します。 **** 競合の解決の詳細については、「[ソフトウェア詳細の競合の解決](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md#BKMK_ResolveSoftwareDetails)」をご覧ください。|  
-|または||  
-|**更新可能** から **検証済み**|[競合の解決] 操作を使用して、以前のユーザー定義値の使用を選択します。 **** 競合の解決の詳細については、「[ソフトウェア詳細の競合の解決](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md#BKMK_ResolveSoftwareDetails)」をご覧ください。|  
+|**Senza categoria**|Nel database di Asset Intelligence viene inserito un titolo di software di inventario non categorizzato in precedenza da un utente amministratore o da System Center Online.|  
+|**Definito da utente**|L'elemento senza categoria è stato categorizzato.|  
+|**Definia da utente** a **In sospeso**|L'elemento definito dall'utente viene inviato a System Center Online per la categorizzazione.|  
+|**In sospeso** a **Aggiornabile**|Un elemento di catalogo definito dall'utente è stato categorizzato in modo diverso da System Center Online durante una categorizzazione del catalogo successiva. È possibile usare l'azione **Risolvi conflitto** per decidere se usare le nuove informazioni di categorizzazione o il valore definito dall'utente precedente. Per altre informazioni sulla risoluzione dei conflitti, vedere [Resolve software details conflicts](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md#BKMK_ResolveSoftwareDetails) (Risolvere i conflitti con dettagli software)|  
+|**Aggiornabile** a **Convalidato**|Usare l'azione **Risolvi conflitto** e selezionare le nuove informazioni di categorizzazione ricevute da System Center Online durante l'aggiornamento del catalogo precedente. Per altre informazioni sulla risoluzione dei conflitti, vedere [Resolve software details conflicts](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md#BKMK_ResolveSoftwareDetails) (Risolvere i conflitti con dettagli software)|  
+|Oppure||  
+|**Aggiornabile** a **Definito da utente**|Usare l'azione **Risolvi conflitto** e selezionare l'opzione per usare il valore definito dall'utente precedente. Per altre informazioni sulla risoluzione dei conflitti, vedere [Resolve software details conflicts](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md#BKMK_ResolveSoftwareDetails) (Risolvere i conflitti con dettagli software)|  
 
 > [!NOTE]  
->  System Center Online から取得したカテゴリ化情報はデータベースに格納されて削除できないため、後で System Center Online のカテゴリ化を復元することができます。  
+>  Dato che le informazioni di categorizzazione ottenute da System Center Online vengono archiviate nel database e non possono essere eliminate, è possibile ripristinare la categorizzazione di System Center Online in un secondo momento.  

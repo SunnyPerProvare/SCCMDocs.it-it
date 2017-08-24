@@ -1,6 +1,6 @@
 ---
-title: "Windows 10 更新プログラムに対する高速インストール ファイルの管理 | Microsoft Docs"
-description: "Configuration Manager では Windows 10 用の高速インストール ファイルがサポートされます。これを使用すると、クライアント上でのダウンロード量を少なくし、インストールに要する時間を短縮できます。"
+title: Gestire i file di installazione rapida per gli aggiornamenti di Windows 10 | Microsoft Docs
+description: "Configuration Manager supporta l'installazione rapida dei file per Windows 10, garantendo download più contenuti e tempi di installazione più rapidi per i client."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,30 +14,30 @@ ms.assetid: b8d8af88-e8ac-4deb-921b-975e2d2afd80
 ms.openlocfilehash: baffb5f026bd63c50f878214e71d2c9e9b8b51c2
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-express-installation-files-for-windows-10-updates"></a>Windows 10 更新プログラムに対する高速インストール ファイルの管理
-Configuration Manager バージョン 1702 以降、Configuration Manager では Windows 10 更新プログラムに対する高速インストール ファイルがサポートされています。 サポートされているバージョンの Windows 10 を使用する場合は、当月の Windows 10 累積的な更新プログラムと、前月の更新プログラムとの差分のみをダウンロードする Configuration Manager 設定を使用できます。 高速インストール ファイルを使用しない場合、Configuration Manager では完全な Windows 10 累積的な更新プログラム (以前の月の更新プログラムをすべて含む) が毎月ダウンロードされます。 高速インストール ファイルを使用すると、クライアント上でのダウンロード量を少なくし、インストールに要する時間を短縮できます。
+# <a name="manage-express-installation-files-for-windows-10-updates"></a>Gestire i file di installazione rapida per gli aggiornamenti di Windows 10
+A partire dalla versione 1702, Configuration Manager supporta i file di installazione rapida per gli aggiornamenti di Windows 10. Se si usa una versione supportata di Windows 10, è possibile usare le impostazioni di Configuration Manager per scaricare solo le differenze tra l'aggiornamento cumulativo di Windows 10 del mese corrente e l'aggiornamento cumulativo del mese precedente. Senza i file di installazione rapida, Configuration Manager scarica ogni mese l'aggiornamento cumulativo completo di Windows 10, inclusi tutti gli aggiornamenti dei mesi precedenti. Grazie ai file di installazione rapida sono possibili download più brevi e tempi di installazione più rapidi per i client.
 
 > [!IMPORTANT]
-> 高速インストール ファイルの使用をサポートする設定は Configuration Manager バージョン 1702 で使用できますが、オペレーティング システム クライアント サポートは Windows Update エージェントの更新プログラムが適用された Windows 10 バージョン 1607 でサポートされます。 この更新プログラムは、2017 年 4 月 11 日リリースの更新プログラム (月例パッチ) に含まれています。 これらの更新プログラムの詳細については、「[サポート技術情報 4015217](http://support.microsoft.com/kb/4015217)」を参照してください。 今後の更新プログラムでは、高速の活用によりダウンロード量をさらに少なくすることができます。 この更新プログラムが適用されていない Windows 10 バージョン 1607 および以前のバージョンでは、高速インストール ファイルをサポートしていません。
+> Anche se le impostazioni per il supporto dei file di installazione rapida sono disponibili in Configuration Manager versione 1702, il supporto per il sistema operativo client è disponibile in Windows 10 versione 1607 con un aggiornamento dell'agente Windows Update. Questo aggiornamento è incluso negli aggiornamenti rilasciati in data 11 aprile 2017 (Patch Tuesday). Per altre informazioni su questi aggiornamenti, vedere l'[articolo del supporto tecnico 4015217](http://support.microsoft.com/kb/4015217). Gli aggiornamenti futuri sfrutteranno i file di installazione rapida per download di dimensioni più contenute. Windows 10 versione 1607 senza l'aggiornamento e le versioni precedenti di Windows non supportano i file di installazione rapida.
 
 
-### <a name="to-enable-the-download-of-express-installation-files-for-windows-10-updates"></a>Windows 10 更新プログラム用の高速インストール ファイルのダウンロードを有効にするには
-Windows 10 高速インストール ファイルのメタデータの同期を開始するには、ソフトウェアの更新ポイントのプロパティで同期を有効にする必要があります。
-1.  Configuration Manager コンソールで、**[管理]** > **[サイトの構成]** > **[サイト]** に移動します。
-2.  中央管理サイトまたはスタンドアロン プライマリ サイトを選択します。
-3.  [ホーム **** ] タブの [設定 **** ] グループで [サイト コンポーネントの構成 ****] をクリックし、[ソフトウェアの更新ポイント ****] を選択します。 **[更新ファイル]** タブで **[Windows 10 のすべての承認済み更新プログラムの全部のファイルと高速インストール ファイルをダウンロードする]** を選択します。
+### <a name="to-enable-the-download-of-express-installation-files-for-windows-10-updates"></a>Per abilitare il download dei file di installazione rapida per gli aggiornamenti di Windows 10
+Per avviare la sincronizzazione dei metadati per i file di installazione rapida di Windows 10 è necessario abilitarla nelle proprietà del punto di aggiornamento software.
+1.  Nella console di Configuration Manager passare a **Amministrazione** > **Configurazione del sito** > **Siti**.
+2.  Selezionare il sito di amministrazione centrale o il sito primario autonomo.
+3.  Nel gruppo **Impostazioni** della scheda **Home** fare clic su **Configura componenti sito**, quindi fare clic su **Punto di aggiornamento software**. Nella scheda **File di aggiornamento** selezionare **Download full files for all approved updates and express installation files for Windows 10** (Download di file completi per tutti gli aggiornamenti approvati e i file di installazione rapida per Windows 10).
 
-### <a name="to-enable-support-for-clients-to-download-and-install-express-installation-files"></a>クライアントが高速インストール ファイルをダウンロードしてインストールするためのサポートを有効にするには
-クライアント上で高速インストール ファイルのサポートを有効にするには、クライアント設定の [ソフトウェア更新プログラム] セクションで高速インストール ファイルを有効にする必要があります。 これにより、指定したポートへの高速インストール ファイルのダウンロード要求をリッスンする新しい HTTP リスナーが作成されます。
+### <a name="to-enable-support-for-clients-to-download-and-install-express-installation-files"></a>Per abilitare il supporto del download e dell'installazione di file di installazione rapida per i client
+Per abilitare il supporto dei file di installazione rapida per i client, è necessario abilitare i file di installazione rapida nella sezione Aggiornamenti software delle impostazioni del client. Questa operazione crea un nuovo listener HTTP che attende le richieste di download dei file di installazione rapida sulla porta specificata.
 
 > [!NOTE]    
-> これは、クライアントが配信の最適化 (DO) またはバックグラウンド インテリジェント転送サービス (BITS) からの要求をリッスンして、配布ポイントから高速コンテンツをダウンロードするのに使用するローカル ポートです。 すべてのトラフィックはローカル コンピューター上にあるため、ファイウォールでこのポートを開く必要はありません。
+> Si tratta di una porta locale usata dai client per restare in ascolto delle richieste da Ottimizzazione recapito o dal Servizio trasferimento intelligente in background (BITS) per scaricare il contenuto rapido dal punto di distribuzione. Non è necessario aprire la porta nel firewall perché tutto il traffico è nel computer locale.
 
-クライアント上でこの機能を有効にするようにクライアント設定を展開すると、当月の Windows 10 累積的な更新プログラムと、前月の更新プログラムとの間の差分のダウンロードが試みられます (クライアントでは、高速インストール ファイルをサポートする Windows 10 のバージョンが実行されている必要があります)。
-1.  ソフトウェアの更新ポイント コンポーネントのプロパティで高速インストール ファイルのサポートを有効にします(前の手順を参照)。
-2.  Configuration Manager コンソールで、**[管理]** > **[クライアント設定]** の順に移動します。
-3.  適切なクライアント設定を選択し、**[ホーム]** タブで **[プロパティ]** をクリックします。
-4.  **[ソフトウェア更新プログラム]** ページを選択し、**[Express の更新プログラムのクライアントでのインストールを有効にする]** 設定で **[はい]** を構成し、**[Express の更新プログラムのコンテンツをダウンロードするために使用するポート]** 設定で HTTP リスナーが使用するポートを構成します。
+Dopo aver distribuito le impostazioni client per abilitare questa funzionalità nel client, la funzionalità tenterà di scaricare le differenze tra l'aggiornamento cumulativo di Windows 10 del mese corrente e l'aggiornamento cumulativo del mese precedente. Nei client deve essere in esecuzione una versione di Windows 10 che supporti i file di installazione rapida.
+1.  Abilitare il supporto per i file di installazione rapida nelle proprietà del componente del punto di aggiornamento software (procedura precedente).
+2.  Nella console di Configuration Manager passare ad **Amministrazione** > **Impostazioni client**.
+3.  Selezionare le impostazioni client appropriate e quindi nella scheda **Home** fare clic su **Proprietà**.
+4.  Selezionare la pagina **Aggiornamenti software** , selezionare **Sì** nell'impostazione **Abilita l'installazione di aggiornamenti rapidi nei client** e configurare la porta usata dal listener HTTP nel client per l'impostazione **Porta usata per scaricare contenuto per gli aggiornamenti rapidi**.

@@ -1,6 +1,6 @@
 ---
-title: "ネットワークではなくスタンドアロン メディアを使用して Windows を展開する | Microsoft Docs"
-description: "Configuration Manager で、帯域幅が制限された環境でオペレーティング システムを展開する場合、スタンドアロン メディアを使用します。スタンドアロン メディアは、コンピューターを更新、インストール、またはアップグレードするためのオプションとしても使用します。"
+title: Usare i supporti autonomi per distribuire Windows senza usare la rete | Microsoft Docs
+description: "I supporti autonomi in Configuration Manager consentono di distribuire i sistemi operativi dove la larghezza di banda è limitata nonché di installare e aggiornare i computer."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,64 +17,64 @@ manager: angrobe
 ms.openlocfilehash: 30ae794381c6894e11b21a8167d0af60463c5279
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-stand-alone-media-to-deploy-windows-without-using-the-network-in-system-center-configuration-manager"></a>System Center Configuration Manager でのネットワークではなくスタンドアロン メディアを使用した Windows の展開
+# <a name="use-stand-alone-media-to-deploy-windows-without-using-the-network-in-system-center-configuration-manager"></a>Usare i supporti autonomi per distribuire Windows senza usare la rete in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager のスタンドアロン メディアには、コンピューターにオペレーティング システムを展開するのに必要なすべてが含まれています。 これには、アプリケーションやドライバーなどを含めてオペレーティング システムをインストールするための、ブート イメージ、オペレーティング システム イメージ、およびタスク シーケンスが含まれます。 スタンドアロン メディアによる展開では、次のような状況でオペレーティング システムを展開できます。  
+I supporti autonomi in System Center Configuration Manager contengono tutti gli elementi necessari per distribuire un sistema operativo in un computer, tra cui l'immagine d'avvio, l'immagine del sistema operativo e la sequenza di attività per installare il sistema operativo, incluse le applicazioni, i driver e così via. Le distribuzioni autonome avviate da supporti consentono di distribuire i sistemi operativi nelle condizioni seguenti:  
 
--   オペレーティング システム イメージまたはファイルサイズの大きなパッケージをネットワークを通じてコピーするのが実用的ではない環境。  
+-   In ambienti dove non è semplice copiare un'immagine del sistema operativo o altri pacchetti di grandi dimensioni sulla rete.  
 
--   ネットワーク接続がない、または低帯域幅のネットワーク接続しかできない環境。  
+-   In ambienti senza connettività di rete o con connettività di rete a larghezza di banda ridotta.  
 
-スタンドアロン メディアは、次のオペレーティング システム展開シナリオで使用できます。  
+È possibile usare il supporto autonomo negli scenari di distribuzione del sistema operativo seguenti:  
 
--   [新しいバージョンの Windows で既存のコンピューターを更新する](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
+-   [Aggiornare un computer esistente con una nuova versione di Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
 
--   [新しいコンピューター (ベア メタル) に新しいバージョンの Windows をインストールする](install-new-windows-version-new-computer-bare-metal.md)  
+-   [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)  
 
--   [Windows を最新バージョンにアップグレードする](upgrade-windows-to-the-latest-version.md)  
+-   [Aggiornare Windows alla versione più recente](upgrade-windows-to-the-latest-version.md)  
 
- いずれかのオペレーティング システムの展開シナリオのステップを完了させてから、次のセクションを参照して、スタンドアロン メディアを準備および作成します。  
+ Completare i passaggi in uno degli scenari di distribuzione del sistema operativo e quindi usare le sezioni seguenti per preparare e creare il supporto autonomo.  
 
-## <a name="task-sequence-actions-not-supported-when-using-stand-alone-media"></a>スタンドアロン メディアを使用する場合にサポートされないタスク シーケンス アクション  
- サポートされているいずれかのオペレーティング システム展開シナリオのステップが完了している場合は、オペレーティング システムを展開またはアップグレードするためのタスク シーケンスが作成され、関連するすべてのコンテンツが配布ポイントに配布されています。 スタンドアロン メディアを使用した場合、タスク シーケンスでは、次のアクションはサポートされません。  
+## <a name="task-sequence-actions-not-supported-when-using-stand-alone-media"></a>Azioni della sequenza di attività non supportate quando si usa il supporto autonomo  
+ Se la procedura descritta in uno degli scenari di distribuzione del sistema operativo supportati è stata completata, la sequenza di attività per distribuire o aggiornare il sistema operativo è stata creata e tutti i contenuti associati sono stati distribuiti in un punto di distribuzione. Quando si usa il supporto autonomo, nella sequenza di attività le azioni seguenti non sono supportate:  
 
--   タスク シーケンスでのドライバーの自動適用のステップ ドライバー カタログからのデバイス ドライバーの自動適用はサポートされていませんが、[ドライバー パッケージの適用] ステップを選択して、指定された一連のドライバーを Windows セットアップで使用できるようにします。  
+-   Passaggio Applica automaticamente i driver nella sequenza di attività. L'applicazione automatica di driver di dispositivo dal catalogo di driver non è supportata, ma è possibile scegliere il passaggio Applica pacchetto di driver per rendere disponibile un set di driver specificato per l'installazione di Windows.  
 
--   ソフトウェア更新プログラムのインストール  
+-   Istallazione di aggiornamenti software.  
 
--   オペレーティング システム展開前のソフトウェアのインストール  
+-   Installazione del software prima della distribuzione del sistema operativo.  
 
--   ユーザーとデバイスのアフィニティをサポートする展開先のコンピューターとユーザーの関連付け  
+-   Associazione di utenti al computer di destinazione per il supporto dell'affinità utente dispositivo.  
 
--   動的なパッケージはパッケージのインストール タスクを使用してインストールします。  
+-   Installazione dinamica dei pacchetti tramite l'attività Installa pacchetti.  
 
--   動的なアプリケーションはアプリケーションのインストール タスクを使用してインストールします。  
+-   Installazioni dinamiche delle applicazioni tramite l'attività Installa applicazione.  
 
 > [!NOTE]  
->  オペレーティング システムを展開するタスク シーケンスに [[パッケージのインストール]](../understand/task-sequence-steps.md#BKMK_InstallPackage) ステップが含まれる場合に、中央管理サイトでスタンドアロン メディアを作成すると、エラーが発生する可能性があります。 中央管理サイトには、タスク シーケンスの実行中に、ソフトウェアの配布エージェントを有効にするために必要なクライアント構成ポリシーがありません。 CreateTsMedia.log ファイルに次のエラーが表示される場合があります。  
+>  Se la sequenza di attività per la distribuzione di un sistema operativo include il passaggio [Installa pacchetto](../understand/task-sequence-steps.md#BKMK_InstallPackage) e si crea il supporto autonomo in un sito di amministrazione centrale, può verificarsi un errore. Il sito di amministrazione centrale non dispone dei criteri di configurazione del client necessari per abilitare l'agente di distribuzione software durante l'esecuzione della sequenza di attività. Nel file CreateTsMedia.log potrebbe essere visualizzato l'errore seguente:  
 >   
 >  `"WMI method SMS_TaskSequencePackage.GetClientConfigPolicies failed (0x80041001)"`
 >   
->  **[パッケージのインストール]** ステップを含むスタンドアロン メディアの場合、ソフトウェアの配布エージェントが有効なプライマリ サイトにスタンドアロン メディアを作成するか、または [[Windows と ConfigMgr のセットアップ]](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr) ステップの後かつタスク シーケンスの最初の **[パッケージのインストール]** ステップの前に [[コマンド ラインの実行]](../understand/task-sequence-steps.md#BKMK_RunCommandLine) ステップを追加する必要があります。 [ **コマンド ラインの実行** ] ステップでは、最初の [パッケージのインストール] ステップを実行する前に、ソフトウェアの配布エージェントを有効にする WMIC コマンドを実行します。 [ **コマンド ラインの実行** ] タスク シーケンス ステップでは、次のコマンド ラインを使用できます。  
+>  Per un supporto autonomo che include il passaggio **Installa pacchetto**, è necessario creare il supporto autonomo in un sito primario in cui l'agente di distribuzione software sia abilitato oppure aggiungere un passaggio [Esegui riga di comando](../understand/task-sequence-steps.md#BKMK_RunCommandLine) dopo il passaggio [Imposta Windows e ConfigMgr](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr) e prima del primo passaggio **Installa pacchetto** nella sequenza di attività. Il passaggio **Esegui riga di comando** esegue un comando WMIC per abilitare l'agente di distribuzione software prima dell'esecuzione del primo passaggio Installa pacchetto. È possibile usare quanto segue nel passaggio della sequenza di attività **Esegui riga di comando** :  
 >   
->  **コマンド ライン**: **WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE**  
+>  **Riga di comando**: **WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE**  
 
-## <a name="configure-deployment-settings"></a>展開の設定の構成  
- スタンドアロン メディアを使用してオペレーティング システムの展開プロセスを開始する場合、オペレーティング システムをメディアから使用できるように展開を構成する必要があります。 これはソフトウェアの展開ウィザードの **[展開の設定]** ページか展開のプロパティの **[配置の設定]** タブで構成することができます。  **[利用できるようにする項目]** の設定では、次のいずれかを設定します。  
+## <a name="configure-deployment-settings"></a>Configurare le impostazioni di distribuzione  
+ Quando si usa un supporto autonomo per avviare il processo di distribuzione del sistema operativo, è necessario configurare la distribuzione per rendere disponibile il sistema operativo per il supporto. È possibile eseguire questa configurazione nella pagina **Impostazioni di distribuzione** della Distribuzione guidata del software o nella scheda **Impostazioni di distribuzione** nelle proprietà della distribuzione.  Per l'impostazione **Rendi disponibile per** , configurare uno degli elementi seguenti:  
 
--   **Configuration Manager クライアント、メディア、PXE**  
+-   **Client di Configuration Manager, supporti e PXE**  
 
--   **メディアと PXE のみ**  
+-   **Solo supporti e PXE**  
 
--   **メディアと PXE のみ (非表示)**  
+-   **Solo supporti e PXE (nascosto)**  
 
-## <a name="create-the-stand-alone-media"></a>スタンドアロン メディアの作成  
- スタンドアロン メディアとして USB フラッシュ ドライブと CD/DVD セットのどちらかを指定できます。 起動可能なドライブに選ぶオプションは、メディアを起動するコンピューターがサポートするものでなければなりません。 詳細については、「[スタンドアロン メディアの作成](create-stand-alone-media.md)」を参照してください。  
+## <a name="create-the-stand-alone-media"></a>Creare il supporto autonomo  
+ È possibile specificare se il supporto autonomo è un'unità flash USB o un set di CD/DVD. Il computer in cui verrà avviato il supporto deve supportare l'opzione scelta come unità di avvio. Per altre informazioni, vedere [Creare supporti autonomi](create-stand-alone-media.md).  
 
-## <a name="install-the-operating-system-from-stand-alone-media"></a>スタンドアロン メディアからのオペレーティング システムのインストール  
- コンピューターの起動可能なドライブにスタンドアロン メディアを挿入し、電源を入れてオペレーティング システムをインストールします。  
+## <a name="install-the-operating-system-from-stand-alone-media"></a>Installare il sistema operativo dal supporto autonomo  
+ Inserire il supporto autonomo in un'unità di avvio del computer e quindi accendere il sistema per installare il sistema operativo.  

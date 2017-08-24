@@ -1,6 +1,6 @@
 ---
-title: "Configuration Manager の Technical Preview 1704 の機能"
-description: "System Center Configuration Manager の Technical Preview バージョン 1704 で使用できる機能について説明します。"
+title: "Funzionalità della versione Technical Preview 1704 per Configuration Manager"
+description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1704 per System Center Configuration Manager."
 ms.custom: na
 ms.date: 4/21/2017
 ms.prod: configuration-manager
@@ -16,58 +16,58 @@ manager: angrobe
 ms.openlocfilehash: d7caee47ca74064630e09c1bdb94187af256d4b4
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1704-for-system-center-configuration-manager"></a>System Center Configuration Manager の Technical Preview 1704 の機能
+# <a name="capabilities-in-technical-preview-1704-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1704 per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Technical Preview)*
+*Si applica a: System Center Configuration Manager (Technical Preview)*
 
-この記事では、System Center Configuration Manager の Technical Preview バージョン 1704 で使用できる機能について説明します。 このバージョンをインストールして更新し、新機能を Configuration Manager の Technical Preview サイトに追加できます。 このバージョンの Technical Preview をインストールする前に、説明のトピック「[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)」を確認して、Technical Preview の使用に関する一般的な要件と制限、バージョン間の更新方法、および Technical Preview の機能に関するフィードバックを提供する方法について理解してください。    
+Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1704 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
 
 
-**このバージョンでお試しいただける新機能を次に示します。**  
+**Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
-## <a name="configure-android-apps-with-app-configuration-policies"></a>アプリ構成ポリシーを使用した Android アプリの構成
-System Center Configuration Manager (Configuration Manager) のアプリ構成ポリシーを使用し、ユーザーが Android for Work デバイス上でアプリを実行するときに必要となる可能性のある設定を配布できます。 Android アプリ構成ポリシーは、Android for Work デバイス上でのみ使用でき、Play for Work ストアの承認済みアプリに適用されます。
+## <a name="configure-android-apps-with-app-configuration-policies"></a>Configurare le app Android con i criteri di configurazione delle app
+È possibile usare i criteri di configurazione delle app in System Center Configuration Manager (Configuration Manager) per distribuire impostazioni che potrebbero essere necessarie quando un utente esegue un'app in un dispositivo Android for Work. I criteri di configurazione delle app per Android sono disponibili solo nei dispositivi che eseguono Android for Work e riguardano le applicazioni approvate per lo store Play for Work.
 
-### <a name="try-it-out"></a>試してみましょう                 
+### <a name="try-it-out"></a>Procedura                 
 
-Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[アプリケーション管理]** > **[アプリ構成ポリシー]** の順に選択し、**[アプリ構成ポリシーの作成]** を選択します。 ウィザードの **[全般]** ページで、**[構成ポリシーの種類の選択]** ができます。 アプリの構成ポリシー [**Android for Work アプリの構成ポリシー**] の対象となるプラットフォームを指定します。 次に、**[名前と値のペアを指定します]** または **[プロパティ一覧 JSON ファイルを参照します]** を選択します。 新しいアプリ構成ポリシーが **[ソフトウェア ライブラリ]** ワークスペースの **[アプリ構成ポリシー]** ノードに表示されます。 アプリ構成ポリシーと Android for Work アプリの展開を関連付けるには、「[アプリケーションの展開](/sccm/apps/deploy-use/deploy-applications)」トピックの手順に従い、通常どおりにアプリを展開します。
+Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Criteri di configurazione dell'app**, quindi scegliere **Create App Configuration Policy** (Crea criteri di configurazione dell'app). Nella pagina **Generale** della procedura guidata scegliere **Select a configuration policy type** (Selezionare un tipo di criteri di configurazione). Specificare la piattaforma di destinazione per i criteri di configurazione dell'app: **Configuration policy for Android for Work apps** (Criteri di configurazione per app Android for Work). Quindi è possibile scegliere **Specify name and value pairs** (Specifica coppie di nome e valore) o **Browse to a property list JSON file** (Esplora file elenco proprietà JSON). I nuovi criteri di configurazione app vengono visualizzati nel nodo **Criteri di configurazione dell'app** dell'area di lavoro **Raccolta software**. Per associare criteri di configurazione delle app alla distribuzione di un'app per Android for Work, distribuire l'applicazione nel modo consueto con la procedura descritta nell'argomento [Distribuire applicazioni](/sccm/apps/deploy-use/deploy-applications).
 
-## <a name="hardware-inventory-collects-secure-boot-information"></a>ハードウェア インベントリでのセキュア ブート情報の収集
-ハードウェア インベントリは、クライアントでセキュア ブートが有効になっているかどうかの情報を収集します。 この情報は、**SMS_Firmware** クラス (バージョン 1702 で導入) に格納されており、ハードウェア インベントリでは既定で有効になっています。 ハードウェア インベントリの詳細については、[ハードウェア インベントリを構成する方法](/sccm/core/clients/manage/inventory/configure-hardware-inventory)に関する記事を参照してください。
+## <a name="hardware-inventory-collects-secure-boot-information"></a>L'inventario hardware raccoglie le informazioni di Avvio protetto
+L'inventario hardware ora raccoglie informazioni sull'attivazione di Avvio protetto nei client. Queste informazioni sono archiviate nella classe **SMS_Firmware** (introdotta nella versione 1702) e abilitate nell'inventario hardware per impostazione predefinita. Per altre informazioni sull'inventario hardware, vedere [Come configurare l'inventario hardware](/sccm/core/clients/manage/inventory/configure-hardware-inventory).
 
-## <a name="add-child-task-sequences-to-a-task-sequence"></a>子タスク シーケンスをタスク シーケンスに追加する
-このバージョンでは、別のタスク シーケンスを実行する新しいタスク シーケンスのステップを追加することができ、タスク シーケンス間に親子関係を作成できます。 これにより、再利用可能なモジュール型のタスク シーケンスをより多く作成できます。  
+## <a name="add-child-task-sequences-to-a-task-sequence"></a>Aggiungere sequenze di attività figlio a una sequenza di attività
+In questa versione è possibile aggiungere un nuovo passaggio della sequenza di attività che esegue un'altra sequenza di attività, la quale crea una relazione padre/figlio tra le sequenze di attività. In questo modo è possibile creare più sequenze di attività modulari riusabili.  
 
-タスク シーケンスに子タスク シーケンスを追加する場合は、以下の点を考慮してください。
+Quando si aggiunge una sequenza di attività figlio a una sequenza di attività, tenere presente quanto segue:
 
-- 親と子のタスク シーケンスが、クライアントが実行する 1 つのポリシーに効率的に結合されていること。
-- 別のタスク シーケンスの親になっている子タスク シーケンスを追加することはできないこと。
-- 環境がグローバルであること。 たとえば、親タスク シーケンスによって変数が設定され、その変数が子タスク シーケンスによって変更された場合、変数はそれ以降変更されたままになります。 同様に、子タスク シーケンスによって新しい変数が作成された場合、親タスク シーケンスの残りのステップでその変数を使用できます。
-- ステータス メッセージは、通常どおり 1 つのタスク シーケンス操作で複数送信されること。
-- タスク シーケンスは、エントリを smsts.log ファイルに書き込み、新しいログ エントリによって子タスク シーケンスの開始タイミングを明確にするということ。
-- Configuration Manager バージョン 1704 の Technical Preview で、子タスク シーケンスがパッケージを参照している状態で親タスク シーケンスがソフトウェア センターから実行された場合、子タスク シーケンスが実行されるときにクライアントはそのパッケージ コンテンツを検出できないということ。 このシナリオでは、タスク シーケンスをメディア (ブート メディア、PXE など) から実行する必要があります。  
+- Le sequenze di attività padre e figlio sono di fatto combinate in un unico criterio eseguito dal client.
+- Non è supportata l'aggiunta di una sequenza di attività figlio che è la sequenza padre di un'altra sequenza di attività.
+- L'ambiente è globale. Ad esempio, se una variabile viene impostata dalla sequenza di attività padre e quindi modificata dalla sequenza di attività figlio, la variabile resta modificata nelle fasi successive. Analogamente, se la sequenza di attività figlio crea una nuova variabile, la variabile è disponibile per i passaggi rimanenti della sequenza di attività padre.
+- I messaggi di stato vengono inviati con la procedura normale per un'operazione sequenza di attività singola.
+- Le sequenze di attività scrivono voci nel file smsts.log. Le nuove voci di registro evidenziano l'avvio di una sequenza di attività figlio.
+- Nella versione Technical Preview 1704 per Configuration Manager, se la sequenza di attività figlio fa riferimento a qualsiasi pacchetto e si esegue la sequenza di attività padre da Software Center, quando viene eseguita la sequenza di attività figlio il client non trova il contenuto del pacchetto. In questo scenario, è necessario eseguire la sequenza di attività da un supporto (supporto di avvio, PXE e così via).  
 
-    子タスク シーケンスが、**コマンド ラインの実行** (パッケージ参照なし) や**形式**、**BitLocker** などのステップを使用している場合は、そのタスク シーケンスをソフトウェア センターから正常に実行できます。
+    Se la sequenza di attività figlio usa passaggi quali **Esegui riga di comando** (senza riferimenti a pacchetti), **Format**, **BitLocker** e così via, la sequenza di attività viene eseguita correttamente da Software Center.
 
-### <a name="to-add-a-child-task-sequence-to-a-task-sequence"></a>子タスク シーケンスをタスク シーケンスに追加するには
-1. タスク シーケンス エディターで、**[追加]** をクリックし、**[全般]** を選択してから **[タスク シーケンスの実行]** をクリックします。
-2. **[参照]** をクリックして子タスク シーケンスを選択します。  
+### <a name="to-add-a-child-task-sequence-to-a-task-sequence"></a>Per aggiungere una sequenza di attività figlio a una sequenza di attività
+1. Nell'editor della sequenza di attività fare clic su **Aggiungi**, selezionare **Generale**, quindi fare clic su **Run Task Sequence** (Esegui sequenza di attività).
+2. Fare clic su **Sfoglia** per selezionare la sequenza di attività figlio.  
 
-## <a name="reload-boot-images-with-current-windows-pe-version"></a>最新バージョンの Windows PE を使用してブート イメージを再読み込みする
-選択したブート イメージ上で **[配布ポイントの更新]** を実行した場合、そのブート イメージ内の (Windows ADK インストール ディレクトリにある) 最新バージョンの Windows PE を再読み込みできます。 ウィザードの **[全般]** ページには、サイト サーバーにインストールされた Windows ADK のバージョン情報、ブート イメージ内の Windows PE を使用した Windows ADK のバージョン情報、Configuration Manager クライアントのバージョン情報が表示されます。 この情報はブート イメージを再読み込みするかどうかを決めるのに役立ちます。 また、**[ブート イメージ]** ノードでブート イメージを表示すると、新しい列 (**[クライアント バージョン]**) が追加されているため、各ブート イメージがどのバージョンの Configuration Manager クライアントを使用しているかを確認できます。
+## <a name="reload-boot-images-with-current-windows-pe-version"></a>Ricaricare immagini di avvio con la versione corrente di Windows PE
+Quando si esegue **Aggiorna punti di distribuzione** su un'immagine d'avvio selezionata, ora è possibile scegliere di ricaricare nell'immagine d'avvio la versione più recente di Windows PE (dalla directory di installazione di Windows ADK). La pagina **Generale** della procedura guidata offre informazioni sulla versione di Windows ADK installata nel server del sito, sulla versione di Windows ADK dalla quale è stato usato Windows PE nell'immagine d'avvio e sulla versione del client di Configuration Manager. È possibile usare queste informazioni per decidere se ricaricare l'immagine d'avvio. Inoltre la nuova colonna **Versione client** aggiunta alla visualizzazione delle immagini d'avvio nel nodo **Immagini d'avvio** visualizza la versione del client di Configuration Manager usata da ogni immagine d'avvio.
 
-### <a name="to-reload-a-boot-image-with-the-current-windows-pe-version"></a>最新バージョンの Windows PE を使用してブート イメージを再読み込みするには
+### <a name="to-reload-a-boot-image-with-the-current-windows-pe-version"></a>Per ricaricare un'immagine d'avvio con la versione corrente di Windows PE
 
-1. Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[オペレーティング システム]** > **[ブート イメージ]** に移動します。
-2. ブート イメージを選択し、**[配布ポイントの更新]** をクリックします。
-3. ウィザードの**[全般]** ページで、**[Reload boot image using the current version of Windows PE from the installed Windows ADK]\(インストール済みの Windows ADK にある最新バージョンの Windows PE を使用してブート イメージを再読み込みする)** を選択します。
+1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Immagini d'avvio**.
+2. Selezionare un'immagine d'avvio e fare clic su **Aggiorna punti di distribuzione**.
+3. Nella scheda **Generale** della procedura guidata, selezionare **Reload boot image using the current version of Windows PE from the installed Windows ADK** (Ricarica immagine d'avvio con la versione corrente di Windows PE da Windows ADK installato).
 
-## <a name="improvements-to-operating-system-deployment"></a>オペレーティング システムの展開に関する機能拡張
-オペレーティング システムの展開について、皆さまからのフィードバックを基に、次のような機能拡張を行いました。
+## <a name="improvements-to-operating-system-deployment"></a>Miglioramenti alla distribuzione del sistema operativo
+Sono stati apportati i miglioramenti seguenti alla distribuzione del sistema operativo, molti dei quali sono il risultato del feedback degli utenti.
 
-- [オペレーティング システム イメージに追加された新しい **[OS バージョン]** 列](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17558407-add-a-column-to-the-operating-system-images-node-f): イメージのオペレーティング システムのバージョンを表示する **[OS バージョン]** 列を追加しました。この列は、**[オペレーティング システム イメージ]** や **[オペレーティング システム アップグレード パッケージ]** ノードを開いた際に表示され、バージョン情報を確認できます。 .WIM ファイル内の最初のインデックスのバージョンだけが表示されます。 他のインデックスのオペレーティング システムのバージョンを確認するには、そのイメージの **[詳細]** タブに移動してください。
+- [Nuova colonna **Versione SO** per le immagini del sistema operativo](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17558407-add-a-column-to-the-operating-system-images-node-f): la nuova colonna **Versione SO** è stata aggiunta per visualizzare la versione del sistema operativo dell'immagine quando si visualizzano informazioni nei nodi **Immagini del sistema operativo** e **Pacchetti di aggiornamento del sistema operativo**. Viene visualizzata solo la versione del primo indice del file .WIM. Per verificare le versioni del sistema operativo corrispondenti agli altri indici, aprire la scheda **Dettagli** dell'immagine.
 
-- [smsts.log によるより効率的なログの記録](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/16791919-stop-filling-smsts-log-with-useless): このバージョンから、CCM_CIVersionInfo.PolicyID 情報のために smsts.log ファイルにエントリを書き込む必要はなくなりました。 以前のバージョンでは、この情報のために多くのエントリが書き込まれ、ログ ファイル内で関連情報を探しにくくなっていました。
+- [Registrazione più efficiente in Smsts.log](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/16791919-stop-filling-smsts-log-with-useless): a partire dalla versione corrente, nel file smsts.log non verranno più scritte voci per le informazioni CCM_CIVersionInfo.PolicyID. Prima di questa versione venivano spesso registrate molte voci con queste informazioni, che rendevano difficile la ricerca di informazioni più importanti nel file di registro.

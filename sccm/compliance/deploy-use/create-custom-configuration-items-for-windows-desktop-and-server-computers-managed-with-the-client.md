@@ -1,6 +1,6 @@
 ---
-title: "クライアントで管理されている Windows コンピューターの構成項目を作成する - Configuration Manager | Microsoft Docs"
-description: "カスタム Windows デスクトップおよびサーバーの構成項目を使用して Windows コンピューターとサーバーの設定を管理します。"
+title: Creare elementi di configurazione per computer Windows gestiti da client - Configuration Manager | Microsoft Docs
+description: "È possibile gestire le impostazioni per i computer e i server Windows usando un elemento di configurazione personalizzato per computer desktop e server Windows."
 ms.custom: na
 ms.date: 11/18/2016
 ms.prod: configuration-manager
@@ -18,62 +18,62 @@ manager: angrobe
 ms.openlocfilehash: e040c6b3a951d1bdf5a46dd82f1bd92b45c2e71d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-system-center-configuration-manager-client"></a>System Center Configuration Manager クライアントを使用して管理されている Windows デスクトップおよびサーバー コンピューターのカスタム構成項目を作成する方法
+# <a name="how-to-create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione personalizzati per computer desktop e server Windows gestiti con il client di System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-System Center Configuration Manager **カスタム Windows デスクトップおよびサーバー**の構成項目を使用して、Configuration Manager クライアントで管理されている Windows コンピューターおよびサーバーの設定を管理します。  
+Usare l'elemento di configurazione **personalizzato per computer desktop e server Windows** di System Center Configuration Manager per gestire le impostazioni per i computer e server Windows gestiti dal client di Configuration Manager.  
 
-## <a name="start-the-create-configuration-item-wizard"></a>構成項目の作成ウィザードを開始する
+## <a name="start-the-create-configuration-item-wizard"></a>Avviare la creazione guidata dell'elemento di configurazione
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[コンプライアンス設定]** > **[構成項目]** の順にクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Elementi di configurazione**.  
 
-3.  [ホーム **** ] タブの [作成 **** ] グループで、[構成項目の作成 ****] をクリックします。  
+3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
 
-4.  **構成項目の作成ウィザード** の **[全般]**ページで、構成項目の名前と、必要に応じて説明を入力します。  
+4.  Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
 
-5.  **[作成する構成項目の種類の指定]**で、 **[Windows デスクトップおよびサーバー (カスタム)]**を選択します。  
+5.  In **Specificare il tipo di elemento di configurazione da creare**selezionare **Desktop e server di Windows (personalizzato)**.  
 
     > [!TIP]  
-    >  アプリケーションの有無を確認する検出方法の設定を指定するには、 **[この構成ファイルにアプリケーションの設定が含まれる]**を選択します。  
+    >  Per specificare le impostazioni del metodo di rilevamento che consentono di controllare l'esistenza di un'applicazione, selezionare **Questo elemento di configurazione contiene le impostazioni dell'applicazione**.  
 
-6.  Configuration Manager コンソールで構成項目を検索およびフィルター処理するのに役立つカテゴリを作成して割り当てる場合は、[**カテゴリ**] をクリックします。  
+6.  Fare clic su **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
 
-## <a name="provide-detection-method-information"></a>検出方法の情報の指定  
- 構成項目の検出方法に関する情報を指定するには、次の手順に従います。  
+## <a name="provide-detection-method-information"></a>Fornire informazioni sul metodo di rilevamento  
+ Usare questa procedura per fornire informazioni sul metodo di rilevamento per l'elemento di configurazione.  
 
 > [!NOTE]  
->  これは、ウィザードの [全般 **** ] ページで [この構成項目にアプリケーション設定を含める **** ] を選択した場合にのみ、適用されます。  
+>  Si applica solo se si seleziona **questo elemento di configurazione contiene le impostazioni dell'applicazione** sul **Generale** pagina della procedura guidata.  
 
- Configuration Manager における検出方法には、アプリケーションがコンピューターにインストールされているかどうかを検出するために使用される規則が含まれます。 この検出は、コンプライアンスに関連する構成項目の評価の前に実行されます。 アプリケーションがインストールされているかどうかを検出するため、そのアプリケーションの Windows インストーラー ファイルの存在を検出します。または、[常にアプリケーションがインストールされていると仮定する **** ] を選択して、アプリケーションがインストールされているかどうかに関係なく、コンプライアンスに関する構成項目の評価が行われるようにします。  
+ Un metodo di rilevamento in Configuration Manager contiene regole che consentono di rilevare se un'applicazione viene installata in un computer. Questo rilevamento si verifica prima valutazione della conformità dell'elemento di configurazione. Per rilevare se un'applicazione è installata, è possibile rilevare la presenza di un file Windows Installer per l'applicazione, utilizzare uno script personalizzato o selezionare **presupporre sempre l'applicazione viene installata** per valutare l'elemento di configurazione per la conformità, anche se è installata l'applicazione.  
 
- これらの手順を使用して、System Center Configuration Manager で検出方法を構成します。  
+ Usare queste procedure per configurare i metodi di rilevamento in System Center Configuration Manager.  
 
-### <a name="to-detect-an-application-installation-by-using-the-windows-installer-file"></a>Windows インストーラー ファイルを使用してアプリケーションのインストールを検出するには  
+### <a name="to-detect-an-application-installation-by-using-the-windows-installer-file"></a>Per rilevare l'installazione di un'applicazione utilizzando il File Windows Installer  
 
-1.  構成項目の作成ウィザード **** の [検出方法 ****] ページで、[Windows インストーラーの検出を使用する **** ] チェック ボックスを選択します。  
+1.  Nel **metodi di rilevamento** pagina del **Creazione guidata dell'elemento di configurazione**, selezionare il **il rilevamento di utilizzare Windows Installer** casella di controllo.  
 
-2.  [開く ****] をクリックして、検出する Windows インストーラー (.msi) ファイルを参照してから、[開く ****] をクリックします。  
+2.  Fare clic su **Apri**, individuare il file Windows Installer (MSI) che si desidera rilevare, quindi fare clic su **Apri**.  
 
-3.  [バージョン **** ] ボックスには、選択した Windows インストーラー ファイルのバージョン番号が自動的に入力されます。 このボックスに表示された値が正しくない場合は新しいバージョン番号を入力することができます。  
+3.  Il **versione** è popolato automaticamente con il numero di versione del file di Windows Installer selezionato. È possibile immettere un nuovo numero di versione in questa casella se il valore visualizzato è corretto.  
 
-4.  コンピューターのユーザー プロファイルごとに検出を実行する場合は、 **[このアプリケーションは 1 人以上のユーザー用にインストールする]** チェック ボックスをオンにします。  
+4.  Selezionare la casella di controllo **Questa applicazione viene installata per uno o più utenti** se si vuole rilevare ogni profilo utente nel computer.  
 
-### <a name="to-detect-a-specific-application-and-deployment-type"></a>特定のアプリケーションおよび展開の種類を検出するには  
+### <a name="to-detect-a-specific-application-and-deployment-type"></a>Per rilevare un tipo specifico di applicazione e di distribuzione  
 
-1.  **構成項目の作成ウィザード** の **[検出方法]**ページで、 **[特定のアプリケーションと展開の種類を検出する]** チェック ボックスをオンにして、 **[選択]**をクリックします。  
+1.  Nella pagina **Metodi di rilevamento** della **Creazione guidata dell'elemento di configurazione**selezionare la casella di controllo **Rilevare un tipo di applicazione e distribuzione specifico** e quindi fare clic su **Seleziona**.  
 
-2.  **[アプリケーションの指定]** ダイアログ ボックスで、検出するアプリケーションおよび関連付けられている展開の種類を選択します。  
+2.  Nella finestra di dialogo **Specifica applicazione** selezionare l'applicazione e un tipo di distribuzione associato da rilevare.  
 
-### <a name="to-detect-an-application-installation-by-using-a-custom-script"></a>カスタム スクリプトを使用してアプリケーションのインストールを検出するには  
+### <a name="to-detect-an-application-installation-by-using-a-custom-script"></a>Per rilevare l'installazione di un'applicazione con uno script personalizzato  
 
-1.  構成項目の作成ウィザード **** の [検出方法 ****] ページで、[カスタム スクリプトを使用する **** ] チェック ボックスを選択します。  
+1.  Nel **metodi di rilevamento** pagina del **Creazione guidata dell'elemento di configurazione**, selezionare il **utilizzare uno script personalizzato per rilevare l'applicazione** casella di controllo.  
 
-2.  一覧で、開くスクリプトの言語を選択します。 次のスクリプトから選択できます。  
+2.  Nell'elenco, selezionare la lingua dello script che si desidera aprire. Scegliere gli script seguenti:  
 
     -   **VBScript**  
 
@@ -81,277 +81,277 @@ System Center Configuration Manager **カスタム Windows デスクトップお
 
     -   **PowerShell**  
 
-3.  [開く ****] をクリックして、使用するスクリプトを参照してから、[開く ****] をクリックします。  
+3.  Fare clic su **Apri**, selezionare lo script che si vuole usare e quindi fare clic su **Apri**.  
 
-##  <a name="configure-settings"></a>設定の構成  
- 構成項目の設定を構成するには、次の手順に従います。  
+##  <a name="configure-settings"></a>Configurare le impostazioni  
+ Usare questa procedura per configurare le impostazioni nell'elemento di configurazione.  
 
- 設定は、クライアント デバイスでコンプライアンス対応の評価に使用されるビジネス条件または技術条件を表わします。 新しい設定を構成することも、参照コンピューターの既存の設定を参照することもできます。  
+ Le impostazioni rappresentano le condizioni aziendali o tecniche usate per valutare la conformità nei dispositivi client. È possibile configurare una nuova impostazione o selezionare un'impostazione esistente in un computer di riferimento.  
 
-1.  構成項目の作成ウィザード **** の [設定 ****] ページで、[新規 ****] をクリックします。  
+1.  Nel **impostazioni** pagina del **Creazione guidata dell'elemento di configurazione**, fare clic su **New**.  
 
-2.  [設定の作成 **** ] ダイアログ ボックスの [全般 **** ] タブで、次の情報を指定します。  
+2.  Nel **Generale** scheda il **Crea impostazione** finestra di dialogo immettere le informazioni seguenti:  
 
-    -   **名前:** 設定の一意の名前を入力します。 最大 256 文字を使用できます。  
+    -   **Nome:** Immettere un nome univoco per l'impostazione. È possibile usare un massimo di 256 caratteri.  
 
-    -   **説明 :** 設定の説明を入力します。 最大 256 文字を使用できます。  
+    -   **Descrizione:** Immettere una descrizione per l'impostazione. È possibile usare un massimo di 256 caratteri.  
 
-    -   **設定の種類:** 一覧で、この設定を使用する次の設定の種類のいずれかを選択して、構成します。  
+    -   **Tipo di impostazione**: scegliere dall'elenco e configurare uno dei seguenti tipi di impostazione da usare per questa impostazione:  
 
-        -   **Active Directory クエリ**  
+        -   **Query Active Directory**  
 
-             **[LDAP プレフィックス]** - クライアント コンピューターでコンプライアンス対応を評価するための Active Directory ドメイン サービス クエリの有効なプレフィックスを指定します。 いずれかを使用する **LDAP://** のまたは **GC://** をグローバル カタログの検索を実行する.  
+             **Prefisso LDAP** - Specificare un prefisso valido per la query di Servizi di dominio Active Directory per valutare la conformità nei computer client. È possibile utilizzare **LDAP: / /** per una o **GC: / /** per eseguire una ricerca nel catalogo globale.  
 
-             **** [識別名 (DN)] - クライアント コンピューターでコンプライアンス対応を評価する Active Directory ドメイン サービス オブジェクトの識別名を指定します。  
+             **Nome distinto (DN)** -specificare il nome distinto dell'oggetto servizi di dominio Active Directory che viene valutata per la conformità nei computer client.  
 
-             たとえば、corp.contoso.com ドメインの John Smith という名前のユーザーに関連する値を評価する場合は、次のように入力します。  
+             Ad esempio, se si vuole valutare un valore correlato a un utente chiamato John Smith nel dominio corp.contoso.com, immettere quanto segue:  
 
-            -   [検索フィルター**** ] - クライアント コンピューターでコンプライアンス対応を評価するための Active Directory ドメイン サービス クエリの結果を絞り込む、オプションの LDAP フィルターを指定します。  
+            -   **Filtro di ricerca** : specificare un filtro LDAP opzionale per rifinire i risultati derivanti dalla query Servizi di dominio Active Directory per valutare la conformità nei computer client.  
 
-                 クエリからすべての結果を返すには、「**(objectclass=\*)**」と入力します。  
+                 Per restituire tutti i risultati della query, immettere **(objectclass=\*)**.  
 
-            -   **[検索範囲]** - Active Directory ドメイン サービスにおける検索範囲を指定します。次の中から選択できます。  
+            -   **Ambito di ricerca**: specificare l'ambito di ricerca in Servizi di dominio Active Directory/ È possibile scegliere tra:  
 
-                -   [基本**** ] - 指定されているオブジェクトのみを対象としてクエリを実行します。  
+                -   **Base** -query solo nell'oggetto specificato.  
 
-                -   **1 つのレベル** - このバージョンの Configuration Managerでは使用されていないオプションです。  
+                -   **Un livello**: questa opzione non è usata in questa versione di Configuration Manager.  
 
-                -   [サブツリー**** ] - ディレクトリー内で指定されているオブジェクトとそのサブツリー一式を対象としてクエリを実行します。  
+                -   **Sottoalbero** -l'oggetto specificato e il relativo sottoalbero completo nella directory una query.  
 
-            -   [プロパティ**** ] - クライアント コンピューターでコンプライアンス対応を評価するために使用する Active Directory ドメイン サービス オブジェクトのプロパティを指定します。  
+            -   **Proprietà** -specificare la proprietà dell'oggetto servizi di dominio Active Directory che consente di valutare la conformità nei computer client.  
 
-                 たとえば、次の Active Directory プロパティのクエリを実行する **badPwdCount**, 、ユーザーがパスワードを正しく入力回数の合計を格納している、入力 **badPwdCount** このフィールドにします。  
+                 Ad esempio, se si desidera eseguire una query la proprietà di Active Directory **badPwdCount**, che archivia il numero di volte in cui un utente immette correttamente una password, immettere **badPwdCount** in questo campo.  
 
-            -   **クエリ** -内のエントリから構築されたクエリが表示されます **LDAP プレフィックス**, 、 **識別名 (DN)**, 、 **検索フィルター** (選択した場合のみ)、および **プロパティ**, 、クライアント コンピュータで対応を評価するために使用します。  
+            -   **Query** -Visualizza la query creata dalle voci in **prefisso LDAP**, **nome distinto (DN)**, **filtro di ricerca** (se specificato), e **proprietà**, che vengono utilizzati per valutare la conformità nei computer client.  
 
-             詳細については、LDAP クエリを構築する、Windows Server のマニュアルを参照してください。  
+             Per ulteriori informazioni sulla creazione di query LDAP, vedere la documentazione di Windows Server.  
 
-        -   **アセンブリ**  
+        -   **Assembly**  
 
-             この設定の種類では次を構成します。  
+             Configurare i seguenti elementi per questo tipo di impostazione:  
 
-            -   **アセンブリ名:** 検索する対象のアセンブリ オブジェクトの名前を指定します。 名前は、同じ種類の他のアセンブリ オブジェクトと同じにすることはできず、グローバル アセンブリ キャッシュ (GAC) に登録されている必要があります。 アセンブリ名は 256 文字以内で指定します。  
+            -   **Nome dell'assembly:** Specifica il nome dell'oggetto assembly che si desidera cercare. Il nome non può essere quella di altri oggetti assembly dello stesso tipo e deve essere registrato nella Global Assembly Cache. Il nome dell'assembly può essere composto al massimo da 256 caratteri.  
 
-             アセンブリは、アプリケーション間で共有可能なコードの断片です。 アセンブリのファイル拡張子は .dll または .exe です。 グローバル アセンブリ キャッシュ (GAC) は、クライアント コンピューター上の *%systemroot%\Assembly* という名前のフォルダーであり、すべての共有アセンブリが保存されます。  
+             Un assembly è una porzione di codice che può essere condivisa tra applicazioni. Le assembly possono avere come estensione del nome file .dll o .exe. Global Assembly Cache è una cartella denominata *%systemroot%\Assembly* sul client vengono archiviati i computer in tutti gli assembly condivisi.  
 
-        -   **ファイル システム**  
+        -   **File system**  
 
-            -   [種類**** ] - 一覧で、[ファイル **** ] と [フォルダー ****] のどちらを検索するか選択します。  
+            -   **Tipo** - Nell'elenco selezionare se si vuole effettuare la ricerca di un **File** o di una **Cartella**.  
 
-            -   [パス**** ] - 指定したファルまたはフォルダーのクライアント コンピューター上のパスを指定します。 パスには、システム環境変数と *%USERPROFILE%* 環境変数を指定できます。  
+            -   **Percorso** -specificare il percorso del file specificato o della cartella nei computer client. È possibile specificare le variabili di ambiente relative al sistema e la variabile di ambiente *%USERPROFILE%* nel percorso.  
 
                 > [!NOTE]  
-                >  *%USERPROFILE%* 環境変数を **[パス]** ボックスまたは **[ファイル名またはフォルダー名]** ボックスで使用すると、クライアント コンピューターのすべてのユーザー プロファイルが検索されます。そのため、ファイルまたはフォルダーのインスタンスが複数見つかることがあります。  
+                >  Se si usa la variabile di ambiente *% USERPROFILE %* nelle caselle **Percorso** o **Nome file o cartella** , la ricerca viene eseguita in tutti i profili utente nel computer client e ciò potrebbe portare all'individuazione di più istanze del file o della cartella.  
                 >   
-                >  指定されたパスに対するアクセス権がコンプライアンス設定に含まれていない場合、検出エラーが発生します。 また、検索対象のファイルが使用中である場合も、検出エラーが発生します。  
+                >  Se le impostazioni di conformità non hanno accesso al percorso specificato, viene generato un errore di individuazione. Inoltre, se il file che si sta cercando è attualmente in uso, viene generato un errore di individuazione.  
 
-            -   [ファイル名またはフォルダー名**** ] - 検索対象のファイル オブジェクトまたはフォルダー オブジェクトの名前を指定します。 ファイル名またはフォルダー名には、システム環境変数と *%USERPROFILE%* 環境変数を指定できます。 ファイル名にワイルドカードとして * と ? を 使用することもできます。  
-
-                > [!NOTE]  
-                >  ファイル名またはフォルダー名を指定するときにワイルドカードを使用すると、それらの組み合わせによっては検索結果の数が非常に多くなり、それに伴って、検索結果が Configuration Manager に報告される際にクライアント コンピューターで大量のリソースが使用され、大量のネットワーク トラフィックが発生する可能性があります。  
-
-            -   [サブフォルダーを含める**** ] - このオプションは、指定したパス内のサブフォルダーも検索する場合に有効にします。  
-
-            -   **このファイルまたはフォルダーは、64 ビット アプリケーションに関連付けられて** - 64 ビットのファイルの場所のみを有効な場合 (など *%programfiles%*) は、64 ビット コンピューターでチェックします。 このオプションが有効になっていない場合は、32 ビット ( *%ProgramFiles(x86)%*など) と 64 ビットの両方の場所がチェックされます。  
+            -   **Nome file o cartella** -specificare il nome dell'oggetto per la ricerca di file o cartella. È possibile specificare le variabili di ambiente relative al sistema e la variabile di ambiente *%USERPROFILE%* nel nome file o cartella. È inoltre possibile usare i caratteri jolly * e ? nel nome di file.  
 
                 > [!NOTE]  
-                >  同じ 64 ビット コンピューターで 32 ビット システム ファイルの場所と 64 ビット システム ファイルの場所に同じファイルまたはフォルダーが存在する場合、グローバル条件では複数のファイルが検出されます。  
+                >  Se si specifica un nome di file o cartella con i caratteri jolly, questa combinazione potrebbe produrre un numero elevato di risultati e potrebbe causare un uso elevato delle risorse nel computer client e un traffico di rete elevato per la restituzione dei risultati a Configuration Manager.  
 
-             設定の種類の [ファイル システム **** ] の場合、[パス **** ] ボックスにネットワーク共有フォルダーへの UNC パスを指定することはできません。  
+            -   **Includi sottocartelle** : abilitare questa opzione se si desidera effettuare la ricerca anche nelle sottocartelle nel percorso specificato.  
 
-        -   **IIS メタベース**  
-
-            -   [メタベース パス**** ] - インターネット インフォメーション サービス (IIS) メタベースへの有効なパスを指定します。  
-
-            -   [プロパティ ID**** ] - IIS メタベース設定の数値プロパティを指定します。  
-
-        -   **レジストリ キー**  
-
-            -   [ハイブ**** ] - 一覧で、検索場所となるレジストリ ハイブを選択します。  
-
-            -   [キー**** ] - 検索対象のレジストリ キーの名前を指定します。 「 *キー\サブキー*」の形式を使用します。  
-
-            -   [このレジストリ キーを 64 ビット アプリケーションに関連付ける**** ] - 64 ビット版の Windows を実行するクライアントで 32 ビット レジストリ キーだけでなく 64 ビット レジストリ キーも検索するかどうかを指定します。  
+            -   **Cartella o il file è associato a un'applicazione a 64 bit** - se abilitato, solo i percorsi di file a 64 bit (ad esempio *% ProgramFiles %*) viene selezionata in computer a 64 bit. Se questa opzione non è abilitata, la ricerca verrà eseguita sia nei percorsi a 32 bit (ad esempio *%ProgramFiles(x86)%*) che in quelli a 64 bit.  
 
                 > [!NOTE]  
-                >  64 ビット コンピューターの 64 ビット および 32 ビット システム ファイルの場所に同じレジストリ キーが存在する場合は、グローバル条件によって両方のレジストリ キーが検知されます。  
+                >  Se nel percorso dei file del sistema a 64 e 32 bit nello stesso computer a 64 bit esiste lo stesso file o cartella, la condizione globale individuerà più file.  
 
-        -   **レジストリ値**  
+             Il tipo di impostazione **File system** non supporta l'indicazione di un percorso UNC di una condivisione di rete nella casella **Percorso** .  
 
-            -   **[ハイブ]** - 一覧で、検索場所となるレジストリ ハイブを選択します。  
+        -   **Metabase IIS**  
 
-            -   [キー**** ] - 検索対象のレジストリ キーの名前を指定します。 「 *キー\サブキー*」の形式を使用します。  
+            -   **Percorso metabase** - Specificare un percorso valido per la metabase di Internet Information Services (IIS).  
 
-            -   **値** – 指定されたレジストリ キー内に含まれる必要がありますのある値を指定します。  
+            -   **ID proprietà** : specificare la proprietà numerica dell'impostazione della metabase IIS.  
 
-            -   [このレジストリ キーを 64 ビット アプリケーションに関連付ける**** ] - 64 ビット版の Windows を実行するクライアントで 32 ビット レジストリ キーだけでなく 64 ビット レジストリ キーも検索するかどうかを指定します。  
+        -   **Chiave del Registro di sistema**  
 
-                > [!NOTE]  
-                >  64 ビット コンピューターの 64 ビット および 32 ビット システム ファイルの場所に同じレジストリ キーが存在する場合は、グローバル条件によって両方のレジストリ キーが検知されます。  
+            -   **Hive** - Nell'elenco a discesa selezionare l'hive del Registro di sistema in cui si vuole eseguire la ricerca.  
 
-             **[参照]** をクリックして、コンピューターまたはリモート コンピューターのレジストリの場所を参照することもできます。 リモート コンピューターを参照するには、リモート コンピューターで管理者権限が必要し、リモート コンピューターでは、リモート レジストリ サービスが実行されている必要があります。  
+            -   **Chiave** : specificare il nome della chiave del Registro di sistema in cui si desidera effettuare la ricerca. Utilizzare il formato *key\subkey*.  
 
-        -   **スクリプト**  
-
-            -   **探索スクリプト** - **[追加]** をクリックして入力するか、使用するスクリプトを参照します。 Windows PowerShell、VBScript、または Microsoft JScript のスクリプトが使用できます。  
-
-            -   **ログオンしたユーザーの資格情報を使用してスクリプトを実行する** - このオプションをオンにすると、ログオンしているユーザーの認証を使って、クライアント コンピューターでスクリプトが実行されます。  
+            -   **Questa chiave del Registro di sistema associato a un'applicazione a 64 bit** -specifica se le chiavi del Registro di sistema a 64 bit devono essere eseguite oltre le chiavi del Registro di sistema a 32 bit su client che eseguono una versione a 64 bit di Windows.  
 
                 > [!NOTE]  
-                >  スクリプトによって返された値は、グローバル条件のコンプライアンスを評価するのに使用されます。 たとえば、VBScript を使用している場合、コマンド [WScript.Echo Result] **** を使用して、 *Result* 変数値をグローバル条件に返すことができます。  
+                >  Se la stessa chiave del Registro di sistema esiste nei percorsi dei Registri di sistema a 64 e 32 bit sullo stesso computer a 64 bit, la condizione globale individua entrambe le chiavi.  
 
-        -   **SQL クエリ**  
+        -   **Valore del Registro di sistema**  
 
-            -   **SQL Serverインスタンス** – 既定のインスタンス、すべてのインスタンス、または特定のデータベースのインスタンス名のどれで SQL クエリを実行するかを選択します。  
+            -   **Hive** - Nell'elenco a discesa selezionare l'hive del Registro di sistema in cui si vuole eseguire la ricerca.  
+
+            -   **Chiave** : specificare il nome della chiave del Registro di sistema in cui si desidera effettuare la ricerca. Utilizzare il formato *key\subkey*.  
+
+            -   **Valore** : specificare il valore che deve essere contenuto all'interno della chiave del Registro di sistema specificato.  
+
+            -   **Questa chiave del Registro di sistema è associata a un'applicazione a 64 bit** - Consente di specificare se effettuare la ricerca anche tra le chiavi del Registro di sistema a 64 bit, oltre alle chiavi del Registro di sistema a 32 bit su client che eseguono una versione a 64 bit di Windows.  
 
                 > [!NOTE]  
-                >  インスタンス名は、SQL Server のローカル インスタンスを参照する必要があります。 クラスター化された SQL Server インスタンスを参照するには、スクリプト設定を使用する必要があります。  
+                >  Se la stessa chiave del Registro di sistema esiste nei percorsi dei Registri di sistema a 64 e 32 bit sullo stesso computer a 64 bit, la condizione globale individua entrambe le chiavi.  
 
-            -   **データベース** -SQL クエリを実行する対象となる Microsoft SQL Server データベースの名前を指定します。  
+             È anche possibile fare clic su **Sfoglia** per selezionare un percorso del Registro di sistema nel computer o in un computer remoto. Per individuare un computer remoto, è necessario disporre dei diritti di amministratore sul computer remoto e il computer remoto deve essere in esecuzione il servizio Registro di sistema remoto.  
 
-            -   **列** -グローバル条件のコンプライアンス評価に使用される TRANSACT-SQL ステートメントによって返される列名を指定します。  
+        -   **Script**  
 
-            -   **TRANSACT-SQL ステートメント** – グローバル条件を使用する完全な SQL クエリを指定します。 また、[開く] **** をクリックして、既存の SQL クエリを開くこともできます。  
+            -   **Script di individuazione** - Fare clic su **Aggiungi** per immetterne uno oppure selezionare lo script da usare. È possibile utilizzare gli script Windows PowerShell, VBScript o Microsoft JScript.  
+
+            -   **Esegui script utilizzando le credenziali dell'utente connesso** - Se si abilita questa opzione, lo script verrà eseguito nei computer client che usano le credenziali degli utenti connessi.  
+
+                > [!NOTE]  
+                >  Il valore restituito dallo script viene usato per valutare la conformità della condizione globale. Ad esempio, quando si usa VBScript, si può usare il comando **WScript.Echo Result** per restituire il valore della variabile *Result* alla condizione globale.  
+
+        -   **Query SQL**  
+
+            -   **Istanza SQL Server** : scegliere se si desidera che la query SQL venga eseguita sul nome dell'istanza predefinita, di tutte le istanze o dell'istanza di un database specifico.  
+
+                > [!NOTE]  
+                >  Il nome dell'istanza deve fare riferimento a un'istanza locale di SQL Server. Per fare riferimento a un'istanza di SQL server del cluster, è necessario utilizzare un'impostazione script.  
+
+            -   **Database** -specificare il nome del database Microsoft SQL Server in cui si desidera eseguire la query SQL.  
+
+            -   **Colonna** -specificare il nome della colonna restituito dall'istruzione Transact-SQL che consente di valutare la conformità della condizione globale.  
+
+            -   **Istruzione Transact-SQL** : specificare la query SQL completa da utilizzare per la condizione globale. È inoltre possibile fare clic su **Apri** per aprire una query SQL esistente.  
 
                 > [!IMPORTANT]  
-                >  SQL クエリ設定はデータベースを変更する SQL コマンドに対応していません。 データベースから情報を読み込む SQL コマンドのみ使用できます。  
+                >  Le impostazioni Query SQL non supportano i comandi SQL che modificano il database. È possibile usare solo comandi SQL che leggono informazioni dal database.  
 
-        -   **WQL クエリ**  
+        -   **Query WQL**  
 
-            -   **名前空間** -クライアント コンピューターのコンプライアンスを評価する WQL クエリを作成に使用される Windows Management Instrumentation (WMI) 名前空間を指定します。 既定値は、Root\cimv2 です。  
+            -   **Dello spazio dei nomi** -specificare lo spazio dei nomi di Strumentazione gestione Windows (WMI) che viene utilizzato per costruire una query WQL che viene valutata per la conformità nei computer client. Il valore predefinito è Root\cimv2.  
 
-            -   **クラス** -クライアント コンピューターのコンプライアンスを評価する WQL クエリの構築に使用される WMI クラスを指定します。  
+            -   **Classe** -specifica la classe WMI che consente di compilare una query WQL che viene valutata per la conformità nei computer client.  
 
-            -   **プロパティ** -クライアント コンピューターのコンプライアンスを評価する WQL クエリの構築に使用される WMI プロパティを指定します。  
+            -   **Proprietà** -specifica la proprietà WMI che consente di compilare una query WQL che viene valutata per la conformità nei computer client.  
 
-            -   **WQL クエリの WHERE 句** - **WQL クエリの WHERE 句** 項目を使用して、クライアント コンピューター上の指定された名前空間、クラス、およびプロパティに適用される WHERE 句を指定できます。  
+            -   **Clausola WHERE della query WQL** : è possibile utilizzare l'elemento **Clausola WHERE della query WQL** per specificare una clausola WHERE da applicare allo spazio dei nomi, alla classe e alla proprietà specifici nei computer client.  
 
-        -   **XPath クエリ**  
+        -   **Query XPath**  
 
-            -   **パス** - コンプライアンスの評価で使用されるクライアント コンピューターの .xml ファイルへのパスを指定します。 Configuration Manager では、パス名にすべての Windows システム環境変数と *%USERPROFILE%* ユーザー変数の使用がサポートされています。  
+            -   **Percorso** - Specificare il percorso del file XML nei computer client che verrà usato per valutare la conformità. Configuration Manager supporta l'uso di tutte le variabili di ambiente di sistema Windows e la variabile utente *%USERPROFILE%* nel nome del percorso.  
 
-            -   **XML ファイル名** -クライアント コンピューターの対応評価に使用される XML クエリを含むファイル名を指定します。  
+            -   **Nome del file XML** -specificare il nome del file contenente la query XML utilizzato per valutare la conformità nei computer client.  
 
-            -   **サブフォルダーも含める** – 指定したパスの下にあるサブフォルダーも検索する場合は、このオプションをオンにします。  
+            -   **Includi sottocartelle** : abilitare questa opzione se si desidera effettuare la ricerca anche nelle sottocartelle nel percorso specificato.  
 
-            -   **このファイルは 64 ビット アプリケーションに関連付けられている** - 64 ビット バージョンの Windows を実行している Configuration Manager クライアントで、32 ビット システム ファイルの場所 (*%windir%*\System32) に加えて64 ビット システム ファイルの場所 (*%windir%*\Syswow64) も検索する必要があるかどうかを選択します。  
+            -   **Il file è associato a un'applicazione a 64 bit**: scegliere se effettuare la ricerca anche nel percorso dei file del sistema a 64 bit (*%windir%*\System32), oltre al percorso dei file del sistema a 32 bit (*%windir%*\Syswow64) nei client di Configuration Manager che eseguono una versione a 64 bit di Windows.  
 
-            -   **XPath クエリ** -有効な完全 XML パス言語 (XPath) クエリを使用してクライアント コンピュータで対応を評価するを指定します。  
+            -   **Query XPath** -specificare una valido XML path language (XPath) query completa che consente di valutare la conformità nei computer client.  
 
-            -   **名前空間** - XPath クエリの実行中に使用する名前空間およびプレフィックスを特定する **[XML 名前空間]** ダイアログ ボックスを開きます。  
+            -   **Spazi dei nomi** - Apre la finestra di dialogo **Spazi dei nomi XML** per individuare gli spazi dei nomi e i prefissi da usare durante la query XPath.  
 
-             暗号化された .xml ファイルを探索しようとすると、コンプライアンス設定でファイルを検索しますが、XPath クエリは結果を示さず、エラーも生成されません。  
+             Se si tenta di individuare un file XML crittografato, le impostazioni di conformità trovano il file, ma la query XPath non genera alcun risultato e non viene generato alcun errore.  
 
-             XPath クエリが有効でない場合は、設定はクライアント コンピューターでコンプライアンス非対応と評価されます。  
+             Se la query XPath non è valida, l'impostazione viene valutata come non conforme nei computer client.  
 
-    -   **データの種類:** 設定の評価に使用する前に、一覧から、条件の戻り値となるデータの形式を選択します。 [データの種類] **** 一覧は、設定の種類によっては表示されません。  
+    -   **Tipo di dati:** nell'elenco scegliere il formato in cui la condizione restituisce i dati prima che vengano usati per valutare l'impostazione. Il **tipo di dati** elenco non viene visualizzata per tutti i tipi di impostazione.  
 
         > [!NOTE]  
-        >  [浮動小数点] **** データの種類は、小数点第 3 位までをサポートしています。  
+        >  Il **a virgola mobile** tipo di dati supporta solo 3 cifre dopo il separatore decimale.  
 
-3.  [設定の種類] **** 一覧の下でこの設定についての追加情報を構成します。 構成できる項目は、選択した設定の種類によって異なります。  
+3.  Configurare ulteriori dettagli su questa impostazione sotto il **impostazione tipo** elenco. Gli elementi che è possibile configurare variano a seconda del tipo di impostazione che è stata selezionata.  
 
     > [!NOTE]  
-    >  [ファイル システム] ****、[レジストリ キー] ****、[レジストリ値] ****の設定を作成する場合は、[参照] **** をクリックして参照コンピューターの値で設定を構成できます。 レジストリ キーまたは値をリモート コンピューターで参照するには、リモート コンピューターのリモート レジストリ サービスが有効になっている必要があります。  
+    >  Quando si creano le impostazioni del tipo **File system**, **chiave del Registro di sistema**, e **il valore del Registro di sistema**, è possibile fare clic **Sfoglia** per configurare l'impostazione di valori in un computer di riferimento. Per selezionare una chiave del Registro di sistema o un valore in un computer remoto, il computer remoto deve essere il servizio Registro di sistema remoto abilitato.  
 
-4.  [OK] **** をクリックして設定を保存し、[設定の作成] **** ダイアログ ボックスを閉じます。  
+4.  Fare clic su **OK** per salvare l'impostazione e chiudere la finestra di dialogo **Crea impostazione** .  
 
-##  <a name="configure-compliance-rules"></a>コンプライアンス規則の構成  
- 構成項目のコンプライアンス規則を構成するには、次の手順に従います。  
+##  <a name="configure-compliance-rules"></a>Configurare le regole di conformità  
+ Usare la procedura seguente per configurare le regole di conformità per l'elemento di configurazione.  
 
- コンプライアンス規則は、構成項目のコンプライアンスを定義する条件を指定します。 設定に対してコンプライアンス評価が行われる前に、少なくとも 1 つのコンプライアンス規則を設ける必要があります。 WMI、レジストリ、およびスクリプトの設定により、コンプライアンス非対応となった値の修復ができます。 新しい規則を作成、または構成項目の既存の設定を参照して規則を選択することができます。  
+ Le regole di conformità consentono di specificare le condizioni che definiscono la conformità di un elemento di configurazione. Prima che sia possibile valutare la conformità di un'impostazione, è necessario che tale impostazione disponga almeno di una regola di conformità. Le impostazioni per WMI, Registro di sistema e script consentono di monitorare e aggiornare i valori che risultano non conformi. È possibile creare nuove regole o passare a un'impostazione esistente in qualsiasi elemento di configurazione per selezionare le regole in essa contenute.  
 
-### <a name="to-create-a-compliance-rule"></a>コンプライアンス規則を作成するには  
+### <a name="to-create-a-compliance-rule"></a>Per creare una regola di conformità  
 
-1.  構成項目の作成ウィザード **** の [コンプライアンスの規則] ****ページで、[次へ] ****をクリックします。  
+1.  Nel **le regole di conformità** pagina del **Creazione guidata dell'elemento di configurazione**, fare clic su **New**.  
 
-2.  [規則の作成] **** ダイアログ ボックスで、次の情報を入力します。  
+2.  Nel **Create Rule** finestra di dialogo immettere le informazioni seguenti:  
 
-    -   **名前:** コンプライアンス規則の名前を入力します。  
+    -   **Nome:** Immettere un nome per la regola di conformità.  
 
-    -   **説明 :** コンプライアンス規則の説明を入力します。  
+    -   **Descrizione:** Immettere una descrizione per la regola di conformità.  
 
-    -   **選択された設定:** [ **参照** ]をクリックして、[ **設定の選択** ]ダイアログ ボックスを開きます。 規則を定義する設定を選択するか、または [ **新しい設定** ]をクリックします。 完了したら、[ **選択** ]をクリックします。  
+    -   **Impostazione selezionata:** Fare clic su **Sfoglia** per aprire la **Select impostazione** nella finestra di dialogo. Selezionare l'impostazione che si desidera definire una regola per oppure fare clic su **nuova impostazione**. Al termine, fare clic su **selezionare**.  
 
         > [!NOTE]  
-        >  [ **プロパティ** ]をクリックすると、現在選択されている設定についての情報も表示できます。  
+        >  È inoltre possibile fare clic su **proprietà** per visualizzare informazioni sull'impostazione attualmente selezionata.  
 
-    -   **ルールの種類:** 使用するコンプライアンス規則の種類を選択します。  
+    -   **Tipo di regola:** Selezionare il tipo di regola di conformità che si desidera utilizzare:  
 
-        -   **値** 時間を指定する構成項目によって返される値を比較するルールを作成します。  
+        -   **Valore** creare una regola che confronta il valore restituito dall'elemento di configurazione con un valore specificato dall'utente.  
 
-        -   **存在** またはが見つかった回数を超えるクライアント デバイス上に存在するかどうかによって、設定を評価する規則を作成します。  
+        -   **Existential** creare una regola che restituisce l'impostazione a seconda se esistente in un dispositivo client o sul numero di volte in cui viene trovato.  
 
-    -   [値] ****の種類の規則では、次の情報を指定します:  
+    -   Per un tipo di regola di **valore**, specificare le seguenti informazioni:  
 
-        -   **設定は、次の規則に従う必要があります** – 演算子と、選択した設定に準拠するために評価される値を選択します。 使用できる演算子は次のとおりです。  
+        -   **L'impostazione deve essere conforme alle regole seguenti** : selezionare un operatore e un valore che viene valutato per la conformità con l'impostazione selezionata. È possibile utilizzare gli operatori seguenti:  
 
-            |演算子|説明|  
+            |Operator|Altre informazioni|  
             |--------------|----------------------|  
-            |次の値と等しい|詳細情報なし|  
-            |次の値に等しくない|詳細情報なし|  
-            |次の値より大きい|詳細情報なし|  
-            |次の値より小さい|詳細情報なし|  
-            |次の値の間|詳細情報なし|  
-            |次の値以上|詳細情報なし|  
-            |次の値以下|詳細情報なし|  
-            |次のいずれか|テキストボックスで 1 行ごとに 1 つのエントリを指定します。|  
-            |次のいずれでもない|テキストボックスで 1 行ごとに 1 つのエントリを指定します。|  
+            |Uguale a|Nessuna informazione aggiuntiva|  
+            |Diverso da|Nessuna informazione aggiuntiva|  
+            |Maggiore di|Nessuna informazione aggiuntiva|  
+            |Minore di|Nessuna informazione aggiuntiva|  
+            |Tra|Nessuna informazione aggiuntiva|  
+            |Maggiore o uguale a|Nessuna informazione aggiuntiva|  
+            |Minore o uguale a|Nessuna informazione aggiuntiva|  
+            |Uno|Nella casella di testo, specificare una voce per ogni riga.|  
+            |Nessuno|Nella casella di testo, specificare una voce per ogni riga.|  
 
-        -   **サポートされている場合は対応していない規則を修復する** - このオプションを選択すると、Configuration Manager がコンプライアンス非対応の規則を自動的に修復します。 Configuration Manager は次の規則の種類を自動的に修復できます。  
+        -   **Monitora e aggiorna le regole non conformi, se supportato** : selezionare questa opzione se si vuole monitorare e aggiornare automaticamente le regole non conformi mediante Configuration Manager. Configuration Manager consente di correggere automaticamente i tipi di regole seguenti:  
 
-            -   **レジストリ値** – が準拠していない場合は、レジストリ値は修復が存在しない場合に作成したとします。  
+            -   **Il valore del Registro di sistema** – il valore del Registro di sistema è aggiornato, se è conforme e creato se non esiste.  
 
-            -   **スクリプト** (を修復スクリプトを自動的に実行するには)。  
+            -   **Script** (eseguendo automaticamente uno script di monitoraggio e aggiornamento).  
 
-            -   **WQL クエリ**  
+            -   **Query WQL**  
 
             > [!IMPORTANT]  
-            >  コンプライアンス非対応の規則は、演算子が [等しい] ****に設定されている場合にのみ修復されます。  
+            >  È possibile correggere le regole non conformi solo quando l'operatore per la regola è impostato su **Uguale a**.  
 
-        -   **この設定のインスタンスが見つからない場合は、コンプライアンス非対応を報告** – クライアント コンピューターでこの設定が見つからない場合に、構成項目がコンプライアンス非対応を報告します。  
+        -   **Report non conformità, se questa istanza di impostazione non viene trovata** : l'elemento di configurazione segnala la non conformità, se questa impostazione non viene trovata nei computer client.  
 
-        -   **レポートするコンプライアンス非対応の重要度:** コンプライアンス規則に従っていないときに (Configuration Manager レポートで) レポートをする重要度のレベルを指定します。 利用可能な重要度のレベルは、次のとおりです。  
+        -   **Gravità della non conformità per i report:** specificare il livello di gravità che viene segnalato nei report di Configuration Manager se si verifica un errore di questa regola di conformità. I livelli di gravità disponibili sono i seguenti:  
 
-            -   **なし**: このコンプライアンス規則を満たしていないコンピューターは、何も報告しません。  
+            -   **Nessuno**: i computer che non soddisfano questa regola di conformità non segnalano una gravità dell'errore.  
 
-            -   **情報**: このコンプライアンス規則を満たしていないコンピューターは、**情報**というレベルで非対応を報告します。  
+            -   **Informazioni**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Informazioni**.  
 
-            -   **警告**: このコンプライアンス規則を満たしていないコンピューターは、**警告**というレベルで非対応を報告します。  
+            -   **Avviso**: i computer che non soddisfano questa regola di conformità segnalano una gravità errore del tipo **Avviso**.  
 
-            -   **重大**: このコンプライアンス規則を満たしていないコンピューターは、**重大**というレベルで非対応を報告します。  
+            -   **Errore critico**: i computer che non soddisfano questa regola di conformità segnalano una gravità errore del tipo **Critico**.  
 
-            -   **重大 (イベント)**: このコンプライアンス規則を満たしていないコンピューターは、**重大**というレベルで非対応を報告します。 重要度のレベルは、アプリケーションのイベント ログでも Windows のイベントとしてログが登録されます。  
+            -   **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico**. Il livello di gravità viene anche registrato come un evento Windows nel registro eventi applicazione.  
 
-        -   [存在] ****の種類の規則では、次の情報を指定します:  
+        -   Per il tipo di regola **Esistenziale**specificare le informazioni seguenti:  
 
             > [!NOTE]  
-            >  表示されるオプションは、規則を構成する設定の種類によって異なります。  
+            >  Le opzioni visualizzate potrebbero variare a seconda del tipo di impostazione per cui si sta configurando una regola.  
 
-            -   **この設定はクライアント デバイスに存在しなければならない**  
+            -   **L'impostazione deve esistere in dispositivi client**  
 
-            -   **この設定はクライアント デバイスに存在してはならない**  
+            -   **L'impostazione non deve esistere in dispositivi client**  
 
-            -   **この設定は次の回数出現する:**  
+            -   **L'impostazione è presente il seguente numero di volte:**  
 
-        -   **レポートするコンプライアンス非対応の重要度:** コンプライアンス規則に従っていないときに (Configuration Manager レポートで) レポートをする重要度のレベルを指定します。 利用可能な重要度のレベルは、次のとおりです。  
+        -   **Gravità della non conformità per i report:** specificare il livello di gravità che viene segnalato nei report di Configuration Manager se si verifica un errore di questa regola di conformità. I livelli di gravità disponibili sono i seguenti:  
 
-            -   **なし**: このコンプライアンス規則を満たしていないコンピューターは、何も報告しません。  
+            -   **Nessuno**: i computer che non soddisfano questa regola di conformità non segnalano una gravità dell'errore.  
 
-            -   **情報**: このコンプライアンス規則を満たしていないコンピューターは、**情報**というレベルで非対応を報告します。  
+            -   **Informazioni**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Informazioni**.  
 
-            -   **警告**: このコンプライアンス規則を満たしていないコンピューターは、**警告**というレベルで非対応を報告します。  
+            -   **Avviso**: i computer che non soddisfano questa regola di conformità segnalano una gravità errore del tipo **Avviso**.  
 
-            -   **重大**: このコンプライアンス規則を満たしていないコンピューターは、**重大**というレベルで非対応を報告します。  
+            -   **Errore critico**: i computer che non soddisfano questa regola di conformità segnalano una gravità errore del tipo **Critico**.  
 
-            -   **重大 (イベント)**: このコンプライアンス規則を満たしていないコンピューターは、**重大**というレベルで非対応を報告します。 重要度のレベルは、アプリケーションのイベント ログでも Windows のイベントとしてログが登録されます。  
+            -   **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico**. Il livello di gravità viene anche registrato come un evento Windows nel registro eventi applicazione.  
 
-3.  [OK] **** をクリックして [規則の作成] **** ダイアログ ボックスを閉じます。  
+3.  Fare clic su **OK** per chiudere la finestra di dialogo **Crea regola** .  
 
-##  <a name="specify-supported-platforms"></a>サポートされているプラットフォームの指定  
- 対応プラットフォームは、構成項目がコンプライアンスの評価をされるオペレーティング システムです。  
+##  <a name="specify-supported-platforms"></a>Specificare le piattaforme supportate  
+ Le piattaforme supportate sono i sistemi operativi in cui viene valutata la conformità di un elemento di configurazione.  
 
-**構成項目の作成ウィザード** の **[サポートされているプラットフォーム]**ページで、一覧から、コンプライアンスを評価する構成項目が存在する Windows バージョンを選択するか、 **[すべて選択]**をクリックします。  
+Nella pagina **Piattaforme supportate** della **Creazione guidata dell'elemento di configurazione**selezionare nell'elenco le versioni di Windows in cui si vuole valutare la conformità dell'elemento di configurazione oppure fare clic su **Seleziona tutto**.  
 
-## <a name="complete-the-wizard"></a>ウィザードを完了する  
- ウィザードの [概要] **** ページで、実行される操作を確認し、[次へ] をクリックします。 新しい構成項目は、[資産とコンプライアンス] **** ワークスペースの [構成項目] **** ノードに表示されます。  
+## <a name="complete-the-wizard"></a>Completare la procedura guidata  
+ Nella pagina **Riepilogo** della procedura guidata verificare le azioni che verranno eseguite e quindi completare la procedura guidata. Nuovo elemento di configurazione viene visualizzato nel **gli elementi di configurazione** nodo il **asset e conformità** area di lavoro.  

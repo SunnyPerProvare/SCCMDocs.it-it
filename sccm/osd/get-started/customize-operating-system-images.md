@@ -1,6 +1,6 @@
 ---
-title: "オペレーティング システム イメージのカスタマイズ - Configuration Manager | Microsoft Docs"
-description: "キャプチャとビルドのタスク シーケンスもしくは手動構成、またはこの両方の組み合わせを使用して、オペレーティング システム イメージをカスタマイズします。"
+title: Personalizzare le immagini del sistema operativo - Configuration Manager | Microsoft Docs
+description: "Usare le sequenze di attività di acquisizione e compilazione, la configurazione manuale o una combinazione di entrambe per personalizzare un'immagine del sistema operativo."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -18,121 +18,121 @@ manager: angrobe
 ms.openlocfilehash: 485cb3ca4988f983c1ec71b6c8daf136571bf0ea
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="customize-operating-system-images-with-system-center-configuration-manager"></a>System Center Configuration Manager でのオペレーティング システム イメージのカスタマイズ
+# <a name="customize-operating-system-images-with-system-center-configuration-manager"></a>Personalizzare le immagini del sistema operativo con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Configuration Manager のオペレーティング システム イメージは WIM 形式のファイルで、コンピューターにオペレーティング システムを正常にインストールして構成するのに必要な、参照ファイルとフォルダーのコレクションを圧縮したものです。 カスタムのオペレーティング システム イメージは、参照コンピューターから構築およびキャプチャし、オペレーティング システム ファイル、サポート ファイル、ソフトウェア更新プログラム、ツール、その他のソフトウェア アプリなど、必要なものをすべて含めて構成します。 参照コンピューターを手動で構成する範囲は、ユーザーが決められます。 参照コンピューターの構成は、構築およびキャプチャのタスク シーケンスを使用して完全に自動化することができます。また、参照コンピューターの特定の要素を手動で構成してから、タスク シーケンスを使用して残りを自動化したり、タスク シーケンスを使用せずに参照コンピューターを手動で構成したりもできます。 次のセクションを使用して、オペレーティング システムをカスタマイズします。
+Le immagini di sistema operativo in System Center Configuration Manager sono file WIM e rappresentano una raccolta compressa di cartelle e file di riferimento necessari per installare e configurare un sistema operativo in un computer. Un'immagine personalizzata del sistema operativo viene creata e acquisita da un computer di riferimento configurato con tutti gli strumenti, gli aggiornamenti software, i file di supporto, i file di sistema del sistema operativo necessari e altre applicazioni software. Il livello di configurazione manuale del computer di riferimento dipende dall'utente. È possibile automatizzare completamente la configurazione del computer di riferimento usando una sequenza di attività di creazione e acquisizione, configurare manualmente determinati aspetti del computer di riferimento e quindi automatizzare gli aspetti rimanenti usando sequenze di attività, oppure configurare manualmente il computer di riferimento senza usare le sequenze di attività. Usare le sezioni seguenti per personalizzare un sistema operativo.
 
-##  <a name="BKMK_PrepareReferenceComputer"></a> 参照コンピューターの準備  
- 参照コンピューターからオペレーティング システム イメージのキャプチャを行う前に、次の点をご検討ください。  
+##  <a name="BKMK_PrepareReferenceComputer"></a> Preparare il computer di riferimento  
+ Prima di acquisire un'immagine del sistema operativo da un computer di riferimento occorre considerare vari aspetti.  
 
-###  <a name="BKMK_RefComputerDecide"></a> 自動または手動の構成の決定  
- 次に、参照コンピューターの自動構成と手動構成の長所と短所を示します。  
+###  <a name="BKMK_RefComputerDecide"></a> Scegliere tra una configurazione automatizzata o manuale  
+ Di seguito vengono illustrati vantaggi e svantaggi della configurazione automatizzata e manuale del computer di riferimento.  
 
-#### <a name="automated-configuration"></a>自動構成  
- **長所**  
+#### <a name="automated-configuration"></a>Configurazione automatizzata  
+ **Vantaggi**  
 
--   構成を完全に無人で実行でき、管理者またはユーザーが同席する必要がありません。  
+-   La configurazione può essere completamente automatica, rendendo superflua la presenza di un amministratore o di un utente.  
 
--   タスク シーケンスを再利用し、安心して追加の参照コンピューターの構成を繰り返すことができます。  
+-   È possibile riutilizzare la sequenza attività per ripetere la configurazione di ulteriori computer di riferimento con un elevato livello di attendibilità.  
 
--   タスク シーケンス全体を再度作成せずに、タスク シーケンスを変更して参照コンピューターの違いに対応できます。  
+-   È possibile modificare la sequenza attività per gestire le differenze nei computer di riferimento senza la necessità di ricreare l'intera sequenza attività.  
 
- **短所**  
+ **Svantaggi**  
 
--   最初にタスク シーケンスを構築するときは、作成とテストに時間がかかります。  
+-   La fase iniziale di creazione e di testing di una sequenza attività può richiedere molto tempo.  
 
--   参照コンピューターの要件が大きく変化した場合、タスク シーケンスを再構築および再テストする時間が必要です。  
+-   Se i requisiti del computer di riferimento cambiano in modo significativo, ripetere la fase di creazione e di testing della sequenza attività può richiedere molto tempo.  
 
-#### <a name="manual-configuration"></a>手動構成  
- **長所**  
+#### <a name="manual-configuration"></a>Configurazione manuale  
+ **Vantaggi**  
 
--   タスク シーケンスを作成する必要がなく、タスク シーケンスのテストやトラブルシューティングの時間も不要です。  
+-   Non è necessario creare una sequenza attività o soffermarsi sulla verifica e sulla risoluzione dei problemi della sequenza attività.  
 
--   CD から直接インストールでき、すべてのソフトウェア パッケージ (Windows 自体を含む) を Configuration Manager パッケージに入れる必要がありません。  
+-   È possibile eseguire l'installazione direttamente dai CD, senza inserire tutti i pacchetti software (compreso lo stesso Windows) in un pacchetto di Configuration Manager.  
 
- **短所**  
+ **Svantaggi**  
 
--   参照コンピューターの構成精度が、コンピューターを構成している管理者またはユーザーにより変化します。  
+-   La precisione della configurazione del computer di riferimento dipende dall'amministratore o dall'utente che configura il computer.  
 
--   参照コンピューターが正しく構成されたことを検証し、テストする必要があります。  
+-   È comunque necessario verificare e testare la corretta configurazione del computer di riferimento.  
 
--   構成方法を再利用することはできません。  
+-   È impossibile riutilizzare il metodo di configurazione.  
 
--   プロセス全体にアクティブに関わる人が必要です。  
+-   Durante il processo è necessaria la presenza attiva di una persona.  
 
-###  <a name="BKMK_RefComputerConsiderations"></a> 参照コンピューターの考慮事項  
- 次に、参照コンピューターを構成するときに考慮する基本項目の一覧を示します。  
+###  <a name="BKMK_RefComputerConsiderations"></a> Considerazioni per il computer di riferimento  
+ Di seguito sono elencati gli elementi di base da prendere in considerazione durante la configurazione di un computer di riferimento.  
 
--   **展開するオペレーティング システム**  
+-   **Sistema operativo da distribuire**  
 
-     参照コンピューターには、対象となるコンピューターに展開するオペレーティング システムをインストールする必要があります。 展開できるオペレーティング システムの詳細については、「[オペレーティング システムの展開のインフラストラクチャ要件](../plan-design/infrastructure-requirements-for-operating-system-deployment.md)」 (オペレーティング システムの展開のインフラストラクチャの要件) をご覧ください。  
+     Il computer di riferimento deve essere installato con il sistema operativo che si intende distribuire nei computer di destinazione. Per altre informazioni sui sistemi operativi che è possibile distribuire, vedere [Requisiti dell'infrastruttura per la distribuzione del sistema operativo](../plan-design/infrastructure-requirements-for-operating-system-deployment.md).  
 
--   **適切なサービス パック**  
+-   **Service Pack appropriato**  
 
-     参照コンピューターには、対象となるコンピューターに展開するオペレーティング システムをインストールする必要があります。  
+     Il computer di riferimento deve essere installato con il sistema operativo che si intende distribuire nei computer di destinazione.  
 
--   **適切なソフトウェア更新プログラム**  
+-   **Aggiornamenti software appropriati**  
 
-     参照コンピューターからキャプチャするオペレーティング システム イメージに含めるソフトウェア アプリケーションをすべてインストールします。 キャプチャされたオペレーティング システム イメージを対象となるコンピューターに展開する際に、ソフトウェア アプリケーションをインストールすることもできます。  
+     Installare tutte le applicazioni software che si desidera includere nell'immagine del sistema operativo acquisita dal computer di riferimento. È inoltre possibile installare le applicazioni software quando si distribuisce l'immagine del sistema operativo acquisita nei computer di destinazione.  
 
--   **ワークグループ メンバーシップ**  
+-   **Appartenenza al gruppo di lavoro**  
 
-     参照コンピューターは、ワークグループのメンバーとして構成する必要があります。  
+     Il computer di riferimento deve essere configurato come membro di un gruppo di lavoro.  
 
 -   **Sysprep**  
 
-     システムの準備 (Sysprep) ツールは、Windows オペレーティング システムを新しいハードウェアにインストールするときに他の展開ツールと併用できるテクノロジです。 Sysprep は、コンピューターの再起動時に新しいコンピューター セキュリティ識別子 (SID) を作成するようにコンピューターを構成することで、ディスク イメージの作成または顧客への配布のためにコンピューターを準備します。 さらに、Sysprep は、ユーザーおよびコンピューター固有の設定と、対象コンピューターにコピーしてはならないデータを消去します。  
+     L'utilità preparazione sistema (Sysprep) è una tecnologia utilizzabile con altri strumenti di distribuzione per installare sistemi operativi Windows in nuovi dispositivi hardware. Sysprep prepara il computer per la creazione dell'immagine del disco o il recapito a un cliente configurando il computer per la creazione di un nuovo ID di sicurezza del computer (SID) al riavvio del computer. Sysprep esegue inoltre la pulizia delle impostazioni specifiche dell'utente e del computer, nonché dei dati da non copiare in un computer di destinazione.  
 
-     次のコマンドを実行することにより、参照コンピューターに対して手動で Sysprep を実行することができます。  
+     È possibile eseguire manualmente Sysprep nel computer di riferimento mediante il seguente comando:  
 
      `Sysprep /quiet /generalize /reboot`  
 
-     /generalize オプションは、Windows インストールからシステム固有のデータを削除することを Sysprep に指示します。 システム固有の情報には、イベント ログ、一意なセキュリティ識別子 (SID)、その他の一意の情報が含まれています。 システム固有の情報を削除してから、コンピューターを再起動します。  
+     L'opzione /generalize indica a Sysprep di rimuovere i dati specifici del sistema dall'installazione di Windows. Le informazioni specifiche del sistema includono registri eventi, ID di sicurezza univoci (SID) e altre informazioni univoche. Dopo la rimozione delle informazioni di sistema univoche, il computer viene riavviato.  
 
-     「 [Windows のキャプチャの準備](../understand/task-sequence-steps.md#BKMK_PrepareWindowsforCapture) 」タスク シーケンスのステップまたはキャプチャ メディアを使用して、Sysprep を自動化することができます。  
+     È possibile automatizzare Sysprep utilizzando il passaggio della sequenza attività [Prepare Windows for Capture](../understand/task-sequence-steps.md#BKMK_PrepareWindowsforCapture) o mediante i supporti di acquisizione.  
 
     > [!IMPORTANT]  
-    >  「 [Windows のキャプチャの準備](../understand/task-sequence-steps.md#BKMK_PrepareWindowsforCapture) 」タスク シーケンス ステップは、Sysprep を実行する前に、参照コンピューターのローカル管理者のパスワードをリセットしようとします。 ローカルのセキュリティ ポリシー [パスワードは、複雑さの要件を満たす必要がある] **** が有効な場合、タスク シーケンス ステップは、管理者パスワードのリセットに失敗します。 この場合は、タスク シーケンスを実行する前にこのポリシーを無効にします。  
+    >  Il passaggio della sequenza attività [Prepare Windows for Capture](../understand/task-sequence-steps.md#BKMK_PrepareWindowsforCapture) tenta di reimpostare la password dell'amministratore locale nel computer di riferimento su un valore vuoto prima dell'esecuzione di Sysprep. Se è attivato il criterio di protezione locale **La password deve soddisfare i requisiti di complessità** , questo passaggio della sequenza attività non consentirà di reimpostare la password dell'amministratore. In questo caso, disattivare il criterio prima di eseguire la sequenza attività.  
 
-     Sysprep について詳しくは、「 [システムの準備 (Sysprep) テクニカル リファレンス](http://go.microsoft.com/fwlink/?LinkId=280286)」をご覧ください。  
+     Per altre informazioni su Sysprep, vedere la [documentazione tecnica di Utilità preparazione sistema (Sysprep)](http://go.microsoft.com/fwlink/?LinkId=280286).  
 
--   **インストールのシナリオを軽減するために必要な適切なツールおよびスクリプト**  
+-   **Script e strumenti appropriati necessari per attenuare gli scenari di installazione**  
 
-     インストールのシナリオを軽減するために必要な適切なツールおよびスクリプト  
+     Script e strumenti appropriati necessari per attenuare gli scenari di installazione  
 
--   **壁紙、ブランド、既定のユーザー プロファイルなどのデスクトップの適切なカスタマイズ**  
+-   **Personalizzazione desktop appropriata, ad esempio sfondi, personalizzazioni e profili utente predefiniti**  
 
-     参照コンピューターのオペレーティングシステムをキャプチャするときに含めるデスクトップのカスタマイズ プロパティで参照コンピューターを構成できます。 デスクトップのプロパティには、壁紙、組織のブランド、標準の既定ユーザー プロファイルが含まれます。  
+     È possibile configurare il computer di riferimento con le proprietà di personalizzazione desktop che si desidera includere durante l'acquisizione dell'immagine del sistema operativo dal computer di riferimento. Le proprietà desktop includono sfondi, personalizzazioni organizzative e un profilo utente predefinito standard.  
 
-##  <a name="BKMK_ManuallyBuildReference"></a> 参照コンピューターの手動による構築  
- 次の手順を使用して、参照コンピューターを手動で構築します。  
+##  <a name="BKMK_ManuallyBuildReference"></a> Creare manualmente un computer di riferimento  
+ Usare la procedura seguente per creare manualmente computer di riferimento.  
 
 > [!NOTE]  
->  参照コンピューターを手動で構築する場合は、キャプチャ メディアを使用してオペレーティング システム イメージをキャプチャできます。 詳細については、「[キャプチャ メディアを作成する](../deploy-use/create-capture-media.md)」を参照してください。  
+>  Quando si crea il computer di riferimento manualmente, è possibile acquisire l'immagine del sistema operativo usando supporti di acquisizione. Per altre informazioni, vedere [Creare supporti di acquisizione](../deploy-use/create-capture-media.md).  
 
-#### <a name="to-manually-build-the-reference-computer"></a>参照コンピューターを手動で構築するには  
+#### <a name="to-manually-build-the-reference-computer"></a>Per creare manualmente il computer di riferimento  
 
-1.  参照コンピューターとして使用するコンピューターを特定します。  
+1.  Individuare il computer da utilizzare come computer di riferimento.  
 
-2.  展開するオペレーティング システム イメージの作成に必要な適切なオペレーティング システムやその他のソフトウェアを使用して、参照コンピューターを構成します。  
+2.  Configurare il computer di riferimento con il sistema operativo appropriato e con il software necessario per creare l'immagine del sistema operativo che si desidera distribuire.  
 
     > [!WARNING]  
-    >  少なくとも、適切なオペレーティング システムと Service Pack、サポート ドライバー、必要なソフトウェアの更新をインストールします。  
+    >  Installare almeno il sistema operativo e il Service Pack appropriati, i driver di supporto e gli aggiornamenti software richiesti.  
 
-3.  参照コンピューターをワークグループのメンバーとして構成します。  
+3.  Configurare il computer di riferimento per l'appartenenza a un gruppo di lavoro.  
 
-4.  パスワードの値が空白となるように、参照コンピューターのローカルの管理者パスワードをリセットします。  
+4.  Reimpostare la password dell'amministratore locale nel computer di riferimento in modo che il valore della password sia vuoto.  
 
-5.  **sysprep /quiet /generalize /reboot**コマンドを使用して Sysprep を実行します。 /generalize オプションは、Windows インストールからシステム固有のデータを削除することを Sysprep に指示します。 システム固有の情報には、イベント ログ、一意なセキュリティ識別子 (SID)、その他の一意の情報が含まれています。 システム固有の情報を削除してから、コンピューターを再起動します。  
+5.  Eseguire Sysprep usando il comando:  **sysprep /quiet /generalize /reboot**. L'opzione /generalize indica a Sysprep di rimuovere i dati specifici del sistema dall'installazione di Windows. Le informazioni specifiche del sistema includono registri eventi, ID di sicurezza univoci (SID) e altre informazioni univoche. Dopo la rimozione delle informazioni di sistema univoche, il computer viene riavviato.  
 
- 参照コンピューターの準備ができた後、タスク シーケンスを使用して、参照コンピューターからオペレーティング システム イメージをキャプチャします。  詳しい手順については、「 [オペレーティング システム イメージを既存の参照コンピューターからキャプチャする](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_CaptureExistingRefComputer)」をご覧ください。  
+ Quando il computer di riferimento è pronto, usare una sequenza di attività per acquisire l'immagine del sistema operativo da tale computer.  Per informazioni dettagliate, vedere [Acquisire un'immagine del sistema operativo da un computer di riferimento esistente](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_CaptureExistingRefComputer).  
 
-##  <a name="BKMK_UseTSToBuildReference"></a> タスク シーケンスによる参照コンピューターの構築  
- オペレーティング システム、ドライバー、アプリケーションなどを展開するタスク シーケンスを使用して、参照コンピューターを作成するプロセスを自動化できます。  以下の手順を使用して参照コンピューターを構築し、その後、参照コンピューターからオペレーティング システム イメージをキャプチャします。  
+##  <a name="BKMK_UseTSToBuildReference"></a> Usare una sequenza di attività per creare un computer di riferimento  
+ È possibile automatizzare il processo di creazione di un computer di riferimento usando una sequenza di attività per distribuire il sistema operativo, i driver, le applicazioni e così via.  Usare i passaggi seguenti per creare il computer di riferimento e quindi acquisire l'immagine del sistema operativo da tale computer.  
 
--   タスク シーケンスを使用して、参照コンピューターからオペレーティング システム イメージを構築し、キャプチャします。  詳しい手順については、「 [タスク シーケンスを使用して、参照コンピューターを構築およびキャプチャする](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_BuildCaptureTS)」を参照してください。  
+-   Usare una sequenza di attività per creare e acquisire l'immagine dal computer di riferimento.  Per informazioni dettagliate sui passaggi da eseguire, vedere [Usare una sequenza di attività per creare e acquisire un computer di riferimento](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_BuildCaptureTS).  

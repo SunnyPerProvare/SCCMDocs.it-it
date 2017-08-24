@@ -1,6 +1,6 @@
 ---
-title: "クエリの概要 | Microsoft Docs"
-description: "クエリを作成して実行すると、System Center Configuration Manager 階層内で、クエリ条件に一致するオブジェクトを見つけることができます。"
+title: Introduzione alle query | Microsoft Docs
+description: Creare ed eseguire query per individuare gli oggetti che soddisfano i criteri delle query stesse all'interno di una gerarchia di System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,22 +18,22 @@ manager: angrobe
 ms.openlocfilehash: f84d518670c0ece3c08c890d2293335518f7f8e9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="introduction-to-queries-in-system-center-configuration-manager"></a>System Center Configuration Manager のクエリの概要
+# <a name="introduction-to-queries-in-system-center-configuration-manager"></a>Introduzione alle query in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-クエリを作成して実行すると、System Center Configuration Manager 階層内で、クエリ条件に一致するオブジェクトを見つけることができます。 このようなオブジェクトとしては、特定の種類のコンピューターやユーザー グループなどの項目があります。 クエリは、サイト、コレクション、アプリケーション、インベントリ データなど、ほとんどの種類の Configuration Manager オブジェクトを返すことができます。  
+È possibile creare ed eseguire query per individuare gli oggetti che soddisfano i criteri delle query stesse all'interno di una gerarchia di System Center Configuration Manager. Questi oggetti possono essere tipi specifici di computer o gruppi di utenti. Le query possono restituire molti tipi di oggetti di Configuration Manager, ad esempio siti, raccolte, applicazioni e dati di inventario.  
 
- クエリを作成するときは、少なくとも 2 つのパラメーター、つまり検索する場所と検索する対象を指定する必要があります。 たとえば、Configuration Manager サイトのすべてのコンピューターで使用できるハード ディスクの空き領域を確認するには、使用できるハードディスク領域について、**[論理ディスク]** 属性クラスと **[空き領域 (MB)]** 属性を検索するクエリを作成します。  
+ Quando si crea una query, è necessario specificare un minimo di due parametri: dove eseguire la ricerca e cosa si vuole cercare. Ad esempio, per trovare la quantità di spazio disponibile su disco in tutti i computer in un sito di Configuration Manager è possibile creare una query per cercare lo spazio disponibile su disco nella classe di attributi **Disco logico** e nell'attributo **Spazio disponibile (MB)**.  
 
- 最初のクエリを作成した後、追加のクエリ条件を指定できます。 たとえば、クエリ結果が特定のサイトに割り当てられたコンピューターのみを含むように指定することができます。 また、結果の表示方法を変更して、必要な順序で結果を表示することもできます。 たとえば、ハード ディスクの空き領域を基準にして昇順または降順で結果を表示するように指定できます。  
+ Dopo aver creato una query iniziale, è possibile specificare ulteriori criteri di query. Ad esempio, è possibile specificare che i risultati della query includano solo i computer assegnati al sito specificato. È inoltre possibile modificare la modalità di visualizzazione dei risultati in modo che questi vengano presentati in un ordine significativo. Ad esempio, è possibile specificare che i risultati vengano visualizzati in ordine crescente o decrescente in base alla quantità di spazio disponibile su disco.  
 
- によって保存クエリを作成するときに Configuration Manager で表示されていると、**クエリ**内のノード、**監視**ワークスペース。 ここで、新しいクエリを作成してから、既存のクエリを実行し、更新し、管理することができます。  
+ Quando si crea una query, questa viene archiviata da Configuration Manager e visualizzata nel nodo **Query** nell'area di lavoro **Monitoraggio**. Da questa posizione è possibile creare una nuova query e quindi eseguire, aggiornare o gestire una query esistente.  
 
- また、クエリを Configuration Manager コレクションのクエリ規則にインポートすることもできます。 詳細については、「[Configuration Manager でのコレクションの作成方法](../../../core/clients/manage/collections/create-collections.md)」を参照してください。  
+ È anche possibile importare una query in una regola di query all'interno di una raccolta di Configuration Manager. Per altre informazioni, vedere [How to create collections in System Center Configuration Manager](../../../core/clients/manage/collections/create-collections.md) (Come creare le raccolte in System Center Configuration Manager).  
 
-## <a name="see-also"></a>関連項目  
- [System Center Configuration Manager のクエリのテクニカル リファレンス](../../../core/servers/manage/queries-technical-reference.md)
+## <a name="see-also"></a>Vedere anche  
+ [Riferimento tecnico per le query per System Center Configuration Manager](../../../core/servers/manage/queries-technical-reference.md)

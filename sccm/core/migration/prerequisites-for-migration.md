@@ -1,6 +1,6 @@
 ---
-title: "移行の前提条件 | Microsoft Docs"
-description: "Configuration Manager のサポートされているバージョン、サポートされているソース サイトの言語、および移行に必要な構成を理解します。"
+title: Prerequisiti per la migrazione | Microsoft Docs
+description: Individuare le versioni supportate di Configuration Manager, le lingue del sito di origine supportate e le configurazioni necessarie per la migrazione.
 ms.custom: na
 ms.date: 3/7/2017
 ms.prod: configuration-manager
@@ -18,110 +18,110 @@ manager: angrobe
 ms.openlocfilehash: cd90f5462ac4bb4c0a2021e6d5dde65161b9c5f6
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="prerequisites-for-migration-in-system-center-configuration-manager"></a>System Center Configuration Manager での移行の前提条件
+# <a name="prerequisites-for-migration-in-system-center-configuration-manager"></a>Prerequisiti per la migrazione in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-サポートされているソース階層から移行するには、該当する各 Configuration Manager ソース サイトのアクセス権と、System Center Configuration Manager 移行先サイト内で移行操作を構成および実行するアクセス許可が必要です。  
+Per eseguire la migrazione da una gerarchia di origine supportata, è necessario avere accesso a ogni sito di origine applicabile di Configuration Manager e le autorizzazioni per la configurazione e l'esecuzione delle operazioni di migrazione all'interno del sito di destinazione di System Center Configuration Manager.  
 
- 移行がサポートされている Configuration Manager のバージョンと必要な構成を把握する際には、以下のセクションの情報を参考にしてください。  
+ Usare le informazioni contenute nelle sezioni seguenti per individuare le versioni di Configuration Manager supportate per la migrazione e le configurazioni necessarie.  
 
--   [移行がサポートされている Configuration Manager のバージョン](#BKMK_SupportedMigrationVersions)  
+-   [Versioni di Configuration Manager supportate per la migrazione](#BKMK_SupportedMigrationVersions)  
 
--   [移行がサポートされているソース サイトの言語](#BKMK_SorceSiteLanguage)  
+-   [Lingue del sito di origine supportate per la migrazione](#BKMK_SorceSiteLanguage)  
 
--   [移行に必要な構成](#BKMK_Required_Configurations)  
+-   [Configurazioni necessarie per la migrazione](#BKMK_Required_Configurations)  
 
-##  <a name="BKMK_SupportedMigrationVersions"></a> 移行がサポートされている Configuration Manager のバージョン  
- 次のいずれかのバージョンの Configuration Manager を実行しているソース階層からデータを移行できます。  
+##  <a name="BKMK_SupportedMigrationVersions"></a> Versioni di Configuration Manager supportate per la migrazione  
+ È possibile eseguire la migrazione di dati da una gerarchia di origine che esegue una delle versioni seguenti di Configuration Manager:  
 
--   Configuration Manager 2007 SP2 (移行の目的では、ソース サイト上の Configuration Manager 2007 R2 や R3 は考慮されません。 ソース サイトで SP2 を実行していれば、R2 と R3 のどちらかのアドオンがインストールされているサイトが System Center Configuration Manager への移行でサポートされます)。  
+-   Configuration Manager 2007 SP2  (ai fini della migrazione, le versioni di Configuration Manager 2007 R2 o R3 nel sito di origine non sono prese in considerazione. Se il sito di origine esegue SP2, i siti in cui è installato il componente aggiuntivo R2 o R3 sono supportati per la migrazione a System Center Configuration Manager).  
 
--   System Center 2012 Configuration Manager SP2 または System Center 2012 R2 Configuration Manager SP1。  
+-   System Center 2012 Configuration Manager SP2 o System Center 2012 R2 Configuration Manager SP1.  
 
     > [!TIP]  
-    >  移行だけでなく、System Center 2012 Configuration Manager を実行しているサイトの System Center Configuration Manager へのインプレース アップグレードを使用できます。  
+    >  Oltre alla migrazione, è possibile usare un aggiornamento sul posto di siti che eseguono System Center 2012 Configuration Manager per System Center Configuration Manager.  
 
--   同じまたは低いバージョンの System Center Configuration Manager の System Center Configuration Manager 階層。  
+-   Gerarchia di System Center Configuration Manager della stessa versione o di una versione precedente di System Center Configuration Manager.  
 
-  たとえば、移行先階層で System Center Configuration Manager 1606 を実行している場合は、移行を使用してバージョン 1606 または 1602 を実行するソース階層からデータをコピーすることができます。 ただし、1610 を実行しているソース階層からデータを移行することはできません。  
+  Se, ad esempio, è presente una gerarchia di destinazione che esegue System Center Configuration Manager 1606, è possibile usare la migrazione per copiare dati da una gerarchia di origine che esegue la versione 1606 o 1602. Non è tuttavia possibile copiare dati da una gerarchia di origine che esegue la versione 1610.  
 
 
-##  <a name="BKMK_SorceSiteLanguage"></a> 移行がサポートされているソース サイトの言語  
- Configuration Manager 階層間でデータを移行すると、データは System Center Configuration Manager の言語に依存しない形式で移行先階層に保存されます。 Configuration Manager 2007 では、データは言語に依存しない形式では保存されないため、Configuration Manager 2007 からの移行中に、移行プロセスでオブジェクトをこの形式に変換する必要があります。 このため、以下の言語でインストールされている Configuration Manager 2007 ソース サイトのみ、移行がサポートされています。  
+##  <a name="BKMK_SorceSiteLanguage"></a> Lingue del sito di origine supportate per la migrazione  
+ Durante la migrazione dei dati da una gerarchia all'altra di Configuration Manager, i dati vengono archiviati nella gerarchia di destinazione nel formato indipendente dalla lingua per System Center Configuration Manager. Dal momento che Configuration Manager 2007 non archivia i dati in un formato indipendente dalla lingua, il processo di migrazione deve convertire gli oggetti in questo formato durante la migrazione da Configuration Manager 2007. Di conseguenza, per la migrazione sono supportati solo i siti di origine di Configuration Manager 2007 installati con le seguenti lingue:  
 
--   英語  
+-   Inglese  
 
--   フランス語  
+-   Francese  
 
--   ドイツ語  
+-   Tedesco  
 
--   日本語  
+-   Giapponese  
 
--   韓国語  
+-   Coreano  
 
--   ロシア語  
+-   Russo  
 
--   簡体字中国語  
+-   Cinese semplificato  
 
--   繁体字中国語  
+-   Cinese tradizionale  
 
-System Center 2012 Configuration Manager または System Center Configuration Manager 階層からデータを移行するときは、ソース サイトの言語の制限はありません。 ソース サイトのデータベースのオブジェクトは、常に言語に依存しない形式になります。  
+Quando si esegue la migrazione di dati da una gerarchia di System Center 2012 Configuration Manager o di System Center Configuration Manager, non ci sono limiti per le lingue del sito di origine. Gli oggetti nel database del sito di origine sono già in un formato indipendente dalla lingua.  
 
-##  <a name="BKMK_Required_Configurations"></a> 移行に必要な構成  
-移行と移行操作を使用するために必要な構成は以下のとおりです。  
+##  <a name="BKMK_Required_Configurations"></a> Configurazioni necessarie per la migrazione  
+Di seguito sono elencate le configurazioni necessarie per l'uso della migrazione e delle operazioni di migrazione:  
 
--   **Configuration Manager コンソールでの移行の構成、実行、および監視を行うには:**  
+-   **Per configurare, eseguire e monitorare la migrazione nella console di Configuration Manager:**  
 
-     移行先サイトでは、ロールベースの管理のセキュリティ ロール [ **インフラストラクチャ管理者** ] が割り当てられたアカウントを使用する必要があります。 このセキュリティ ロールにより、移行ジョブの作成、クリーンアップ、監視、および配布ポイントの共有とアップグレード操作など、すべての移行操作を管理するアクセス許可が付与されます。  
+     Nel sito di destinazione, all'account deve essere assegnato il ruolo di sicurezza di amministrazione basato su ruoli di **Amministratore infrastruttura**. Questo ruolo di sicurezza concede le autorizzazioni di gestione per tutte le operazioni di migrazione, tra cui la creazione dei processi di migrazione, la pulizia, il monitoraggio e l'azione di condivisione e aggiornamento dei punti di distribuzione.  
 
--   **データ収集:**  
+-   **Raccolta dati:**  
 
-     移行先サイトでデータ収集を有効にするためには、各ソース サイトで使用する次の 2 つのソース サイト アクセス アカウントを構成する必要があります。  
+     Per abilitare il sito di destinazione alla raccolta dei dati, è necessario configurare i due account di accesso al sito di origine che seguono per l'utilizzo con tutti i siti di origine:  
 
-    -   **ソース サイトのアカウント:** このアカウントを使用して、ソース サイトの SMS プロバイダーにアクセスします。  
+    -   **Account del sito di origine:** questo account viene usato per l'accesso al provider SMS del sito di origine.  
 
-        -   Configuration Manager 2007 SP2 ソース サイトの場合は、このアカウントにはすべてのソース サイト オブジェクトへの**読み取り**アクセス許可が必要です。  
+        -   Per un sito di origine di Configuration Manager 2007 SP2, questo account richiede l'autorizzazione **Lettura** per tutti gli oggetti del sito di origine.  
 
-        -   System Center 2012 Configuration Manager または System Center Configuration Manager ソース サイトの場合は、このアカウントにはすべてのソース サイト オブジェクトの **読み取り**アクセス許可が必要です。ロールベースの管理を使用して、このアクセス許可をアカウントに付与します。 ロール ベース管理の使用方法については、「 [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md)」を参照してください。  
+        -   Per un sito di origine di System Center 2012 Configuration Manager o System Center Configuration Manager, questo account richiede l'autorizzazione **Lettura** per tutti gli oggetti del sito di origine. L'autorizzazione all'account viene concessa tramite l'amministrazione basata su ruoli. Per informazioni su come usare l'amministrazione basata su ruoli, vedere [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
-    -   **ソース サイトのデータベース アカウント** : このアカウントは、ソース サイトの SQL Server データベースへのアクセスに使用され、ソース サイト データベースの **Connect**、 **Execute**、 **Select** のアクセス許可を必要とします。  
+    -   **Account del database del sito di origine:** questo account viene usato per l'accesso al database SQL Server del sito di origine e richiede le autorizzazioni **Connect**, **Execute**e **Select** per il database del sito di origine.  
 
-    新しいソース階層で追加のソース サイトのデータ収集を構成する際、またはソース サイトの資格情報を再構成する際に、これらのアカウントを構成できます。 これらのアカウントにドメイン ユーザー アカウントを使用できます。または、移行先階層の最上位サイトのコンピューター アカウントを指定することもできます。  
+    È possibile configurare questi account durante la configurazione di una nuova gerarchia di origine, la raccolta dati per un sito di origine aggiuntivo o la riconfigurazione delle credenziali per un sito di origine. Questi account possono utilizzare un account utente di dominio oppure è possibile specificare l'account computer del sito di livello superiore della gerarchia di destinazione.  
 
     > [!IMPORTANT]  
-    >  いずれかのアクセス アカウントに Configuration Manager コンピューター アカウントを使用する場合、このアカウントが、ソース サイトが存在するドメインの **Distributed COM Users** セキュリティ グループのメンバーであることを確認してください。  
+    >  Se si usa l'account computer di Configuration Manager per un account di accesso, verificare che l'account appartenga al gruppo di sicurezza **Distributed COM Users** nel dominio in cui si trova il sito di origine.  
 
-    データの収集時には、次のネットワーク プロトコルとポートが使用されます。  
+    Durante la raccolta dati vengono utilizzati le porte e i protocolli di rete seguenti:  
 
     -   NetBIOS/SMB - 445 (TCP)  
 
     -   RPC (WMI) - 135 (TCP)  
 
-    -   SQL Server - ソースおよび移行先サイト データベースの両方で使用される TCP ポート。  
+    -   SQL Server - porte TCP utilizzate dai database del sito di origine e di destinazione.  
 
--   **ソフトウェア更新プログラムの移行:**  
+-   **Eseguire la migrazione degli aggiornamenti software:**  
 
-     ソフトウェア更新プログラムを移行する前に、移行先階層のソフトウェアの更新ポイントを構成する必要があります。 詳細については、「[ソフトウェア更新プログラムの移行の計画](../../core/migration/planning-for-the-migration-of-objects.md#Plan_migrate_Software_updates)」をご覧ください。  
+     Prima di eseguire la migrazione degli aggiornamenti software, è necessario configurare la gerarchia di destinazione con un punto di aggiornamento software. Per altre informazioni, vedere [Pianificazione per eseguire la migrazione degli aggiornamenti software](../../core/migration/planning-for-the-migration-of-objects.md#Plan_migrate_Software_updates).  
 
--   **配布ポイントの共有:**  
+-   **Condividere i punti di distribuzione:**  
 
-     ソース サイトの配布ポイントを共有するためには、移行先階層の少なくとも 1 つのプライマリ サイトまたは中央管理サイトで、クライアントからの要求用にソース サイトと同じポート番号を使用している必要があります。 クライアント要求ポートの詳細については、「[System Center Configuration Manager でのクライアント通信ポートの構成方法](../../core/clients/deploy/configure-client-communication-ports.md)」を参照してください。  
+     Per condividere correttamente i punti di distribuzione da un sito di origine, è necessario che almeno un sito primario o il sito di amministrazione centrale nella gerarchia di destinazione utilizzi gli stessi numeri di porta per le richieste client del sito di origine. Per informazioni sulle porte di richiesta client, vedere [Come configurare porte di comunicazione client in System Center Configuration Manager](../../core/clients/deploy/configure-client-communication-ports.md)  
 
-     各ソース サイトでは、FQDN で構成されているサイト システム サーバーにインストールされた配布ポイントのみ共有されます。  
+     Per ogni sito di origine, vengono condivisi solo i punti di distribuzione installati nei server di sistema del sito configurati con un FQDN.  
 
-     また、System Center 2012 Configuration Manager または System Center Configuration Manager ソース サイトの配布ポイントを共有するには、**[ソース サイト アカウント]** (ソース サイト サーバーの SMS プロバイダーにアクセスするアカウント) に、ソース サイトの **[サイト]** オブジェクトの **[変更]** アクセス許可が必要です。 アカウントにこのアクセス許可を付与するには、ロールベースの管理を使用します。 ロール ベース管理の使用方法については、「 [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md)」を参照してください。  
+     Per condividere un punto di distribuzione da un sito di origine di System Center 2012 Configuration Manager o di System Center Configuration Manager, l'**account del sito di origine** (che accede al provider SMS per il server del sito di origine) deve avere anche l'autorizzazione **Modifica** per l'oggetto **Sito** nel sito di origine. È possibile concedere questa autorizzazione all'account utilizzando l'amministrazione basata su ruoli. Per informazioni su come usare l'amministrazione basata su ruoli, vedere [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
 
--   **配布ポイントのアップグレードまたは再割り当て:**  
+-   **Aggiornare o riassegnare i punti di distribuzione:**  
 
-     ソース サイトの SMS プロバイダーからデータを収集するように構成された [ **ソース サイトのアクセス アカウント** ] には、次のアクセス許可が必要です。  
+     L' **account di accesso al sito di origine** configurato per la raccolta dei dati dal provider SMS del sito di origine deve disporre delle seguenti autorizzazioni:  
 
-    -   Configuration Manager 2007 配布ポイントをアップグレードするためには、Configuration Manager 2007 ソース サイトから配布ポイントを削除するため、アカウントに Configuration Manager 2007 サイト サーバーの **[サイト]** クラスの **[読み取り]**、**[実行]**、**[削除]** アクセス許可が必要です。  
+    -   Per aggiornare un punto di distribuzione di Configuration Manager 2007, l'account richiede le autorizzazioni **Lettura**, **Esecuzione** ed **Eliminazione** per la classe **Sito** nel server del sito di Configuration Manager 2007 per rimuovere correttamente il punto di distribuzione dal sito di origine di Configuration Manager 2007.  
 
-    -   System Center 2012 Configuration Manager または System Center Configuration Manager の配布ポイントを再割り当てするには、アカウントにソース サイト上の **[サイト]** オブジェクトの **[変更]** アクセス許可が必要です。 アカウントにこのアクセス許可を付与するには、ロールベースの管理を使用します。 ロール ベース管理の使用方法については、「 [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md)」を参照してください。  
+    -   Per riassegnare un punto di distribuzione di System Center 2012 Configuration Manager o System Center Configuration Manager, l'account deve avere l'autorizzazione **Modifica** per l'oggetto **sito** nel sito di origine. È possibile concedere questa autorizzazione all'account utilizzando l'amministrazione basata su ruoli. Per informazioni su come usare l'amministrazione basata su ruoli, vedere [Fundamentals of role-based administration for System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
-     配布ポイントを新しい階層に正常にアップグレードまたは再割り当てするには、ソース階層の配布ポイントを管理するサイトのクライアント要求用に構成されたポートが、配布ポイントを管理する移行先サイトのクライアント要求用に構成されたポートと一致している必要があります。 クライアント要求ポートの詳細については、「[System Center Configuration Manager でのクライアント通信ポートの構成方法](../../core/clients/deploy/configure-client-communication-ports.md)」を参照してください。  
+     Per aggiornare o riassegnare correttamente un punto di distribuzione a una nuova gerarchia, le porte configurate per le richieste client nel sito che gestisce il punto di distribuzione nella gerarchia di origine devono corrispondere alla porte configurate per richieste client nel sito di destinazione che gestirà il punto di distribuzione. Per informazioni sulle porte di richiesta client, vedere [Come configurare porte di comunicazione client in System Center Configuration Manager](../../core/clients/deploy/configure-client-communication-ports.md).  

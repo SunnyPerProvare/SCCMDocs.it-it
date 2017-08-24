@@ -1,6 +1,6 @@
 ---
-title: "オンプレミス モバイル デバイス管理の対象となるアプリケーションの管理 | Microsoft Docs"
-description: "オンプレミス モバイル デバイス管理の対象となるアプリケーションを管理します。"
+title: Gestire applicazioni per la gestione dei dispositivi mobili locale | Microsoft Docs
+description: Gestire applicazioni per la gestione dei dispositivi mobili locale.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -18,13 +18,13 @@ manager: angrobe
 ms.openlocfilehash: 4085b007f006a4cfaeaef802d750b03018d6a683
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-applications-for-on-premises-mobile-device-management"></a>オンプレミス モバイル デバイス管理の対象となるアプリケーションの管理
+# <a name="manage-applications-for-on-premises-mobile-device-management"></a>Gestire applicazioni per la gestione dei dispositivi mobili locale
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Configuration Manager のオンプレミス モバイル デバイス管理 (MDM) でデバイスを管理する場合、追加で管理できるアプリケーションの種類があります。 オンプレミス MDM でアプリケーションを管理することは、ハイブリッド MDM 環境でアプリケーションを管理することと同じです。
+Quando si gestiscono dispositivi tramite la funzionalità di gestione dei dispositivi mobili (Mobile Device Management, MDM) locale di Configuration Manager, è possibile gestire determinati tipi di applicazione aggiuntivi. La gestione delle applicazioni in una distribuzione MDM locale è identica alla gestione delle app in un ambiente MDM ibrido.
 
-[モバイル アプリケーションの管理](management-tasks-applications.md)に関する記事では、ハイブリッド MDM またはオンプレミス MDM を使用したアプリケーションの作成と管理の詳細について説明しています。
+L'articolo [Manage mobile applications](management-tasks-applications.md) (Gestire applicazioni per dispositivi mobili) contiene informazioni dettagliate sulla creazione e la gestione di applicazioni tramite una MDM ibrida o una MDM locale.

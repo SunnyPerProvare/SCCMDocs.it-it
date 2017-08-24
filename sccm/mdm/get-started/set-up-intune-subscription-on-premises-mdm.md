@@ -1,6 +1,6 @@
 ---
-title: "Intune サブスクリプションのセットアップ | Microsoft Docs"
-description: "System Center Configuration Manager でのオンプレミス モバイル デバイス管理のためのライセンスを追跡するように、Intune サブスクリプションをセットアップします。"
+title: Configurare la sottoscrizione a Intune | Microsoft Docs
+description: Configurare una sottoscrizione di Intune per tenere traccia delle licenze per la gestione dei dispositivi mobili locale in System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -18,51 +18,51 @@ manager: angrobe
 ms.openlocfilehash: 5a81ec06e16992ae1c41b0fc98ebcd07386c5381
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="set-up-a-microsoft-intune-subscription-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>System Center Configuration Manager でのオンプレミスのモバイル デバイス管理のための Microsoft Intune サブスクリプションをセットアップする
+# <a name="set-up-a-microsoft-intune-subscription-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Configurare una sottoscrizione di Microsoft Intune per la gestione dei dispositivi mobili (MDM) locale in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager のオンプレミス モバイル デバイス管理では、ライセンスを追跡するために Microsoft Intune サブスクリプションが必要です。 Intune サービスは、デバイスの管理または管理情報の保存には使用されません。 オンプレミス モバイル デバイス管理の場合、すべてのデバイス管理は、Configuration Manager インフラストラクチャによって処理されます。  
+La gestione dei dispositivi mobili locale di System Center Configuration Manager richiede una sottoscrizione di Microsoft Intune per tenere traccia delle licenze. Il servizio Intune non viene usato per gestire i dispositivi o per archiviare le informazioni di gestione. Per la gestione dei dispositivi mobili locale, tutta la gestione dei dispositivi viene gestita dall'infrastruttura di Configuration Manager.  
 
 > [!NOTE]  
-> バージョン 1610 以降の Configuration Manager では、Microsoft Intune とオンプレミスの Configuration Manager インフラストラクチャの両方で同時にモバイル デバイスを管理できます。   
+> A partire dalla versione 1610, Configuration Manager supporta l'uso di Microsoft Intune e dell'infrastruttura di Configuration Manager locale per gestire simultaneamente i dispositivi mobili.   
 
 > [!TIP]  
->  サイト システムの役割をインストールする前に、オンプレミス モバイル デバイス管理用の Intune サブスクリプションをセットアップすることによって、新しくインストールされたサイト システムの役割が機能するまでにかかる時間を最小限に抑えることをお勧めします。  
+>  È consigliabile configurare la sottoscrizione di Intune per la gestione dei dispositivi mobili locale prima di installare i ruoli del sistema del sito necessari, per ridurre al minimo il tempo necessario prima che diventino funzionanti i ruoli del sistema del sito appena installati.  
 
-##  <a name="sign-up-for-microsoft-intune"></a>Microsoft Intune のセットアップ  
- オンプレミス モバイル デバイス管理が機能するには、Intune が必要です。 試用版または有料のサブスクリプションに[サインアップ](http://www.microsoft.com/en-us/server-cloud/products/microsoft-intune/)し、次の手順に進んでサブスクリプションを Configuration Manager に追加します。  
+##  <a name="sign-up-for-microsoft-intune"></a>Iscriversi a Microsoft Intune  
+ Intune è obbligatorio per il funzionamento della gestione dei dispositivi mobile locale. È sufficiente [iscriversi](http://www.microsoft.com/en-us/server-cloud/products/microsoft-intune/) per una sottoscrizione di valutazione o a pagamento e andare al passaggio successivo per aggiungere la sottoscrizione a Configuration Manager.  
 
-##  <a name="add-the-intune-subscription-to-configuration-manager"></a>Configuration Manager に Intune サブスクリプションを追加する  
- サブスクリプションを Configuration Manager に追加するには、Intune でモバイル デバイス管理のサブスクリプションを追加する場合と同じ基本的な手順に従います。 具体的な違いに関する以下のメモを参照して、[Intune サブスクリプションの構成](../deploy-use/configure-intune-subscription.md)に関するページに記載されている手順を使用します。  
+##  <a name="add-the-intune-subscription-to-configuration-manager"></a>Aggiungere la sottoscrizione di Intune a Configuration Manager  
+ Per aggiungere la sottoscrizione a Configuration Manager, la procedura è fondamentalmente la stessa valida per l'aggiunta della sottoscrizione per la gestione dei dispositivi mobili con Intune. Leggere le note riportate di seguito in merito alle differenze specifiche e seguire le istruzioni in [Configurare la sottoscrizione di Intune](../deploy-use/configure-intune-subscription.md).  
 
 > [!NOTE]  
->  Intune サブスクリプションを追加する場合は、次の点に注意してください。  
+>  Quando si aggiunge la sottoscrizione di Intune, tenere presente quanto segue:  
 >   
->  -   Microsoft Intune サブスクリプションの追加ウィザードで指定したコレクションは、オンプレミス モバイル デバイス管理のユーザー権限の委任には使用されません。 これは、Intune でのモバイル デバイス管理にのみ使用されます。 ただし、ウィザードを先に進めるためには、コレクションを指定する必要があります。  
-> -   ウィザードで指定したサイト コードの設定は、オンプレミス モバイル デバイス管理では無視されます。 使用されるのは、ユーザーに対してデバイスの登録の許可を与える登録プロファイルで指定されているサイト コードです。  
-> -   多要素認証を有効にしないでください。 オンプレミス モバイル デバイス管理ではサポートされていません。  
+>  -   La raccolta specificata nella procedura guidata Aggiungi sottoscrizione a Microsoft Intune non viene usata per la delega dei diritti utente della gestione dei dispositivi mobili locale. Viene usata solo per la gestione dei dispositivi mobili con Intune. È comunque necessario specificare una raccolta per poter continuare la procedura guidata.  
+> -   L'impostazione del codice del sito specificata nella procedura guidata viene ignorata per la gestione dei dispositivi mobili locale. Il codice del sito usato è quello che si specifica nel profilo di registrazione che concede agli utenti l'autorizzazione per registrare i dispositivi.  
+> -   Non abilitare l'autenticazione a più fattori. Non è supportata nella gestione dei dispositivi mobili locale.  
 
-##  <a name="configure-the-intune-subscription-for-on-premises-mobile-device-management"></a>オンプレミス モバイル デバイス管理用の Intune サブスクリプションを構成する  
+##  <a name="configure-the-intune-subscription-for-on-premises-mobile-device-management"></a>Configurare la sottoscrizione di Intune per la gestione dei dispositivi mobili (MDM) locale  
 
-1.  Configuration Manager コンソールで、**[Microsoft Intune サブスクリプション]** を右クリックし、**[プロパティ]** をクリックします。  
+1.  Nella console di Configuration Manager fare clic con il pulsante destro del mouse su **Sottoscrizione a Microsoft Intune** e scegliere **Proprietà**.  
 
-2.  [オンプレミス モバイル デバイス管理] ボックスで、次のいずれかを選択します。
+2.  Nella casella On Premises Mobile Device Management (Gestione dispositivi mobili locale) scegliere una delle soluzioni seguenti:
 
-  - オンプレミスのみでデバイスを管理する場合は、**[オンプレミスのデバイスのみを管理する]** の横にあるチェック ボックスをオンにして、**[OK]** をクリックします。  
+  - Se si prevede di gestire i dispositivi solo in locale, selezionare la casella di controllo accanto a **Only manage devices on-premises** (Gestire solo dispositivi in locale) e fare clic su **OK**.  
 
       > [!NOTE]  
-      >  このチェック ボックスをオンにすると、すべての管理情報をオンプレミスで保持し、データをクラウドにレプリケートしないように Intune サブスクリプションが構成されます。  
+      >  Selezionando questa casella di controllo, si configura la sottoscrizione di Intune per mantenere tutte le informazioni di gestione in locale senza replicare i dati nel cloud.  
 
-    - Intune とオンプレミス Configuration Manager の両方でデバイスを管理する場合は、ボックスをオフのままにします。
+    - Se si prevede di gestire i dispositivi in locale sia con Intune che con Configuration Manager, non selezionare la casella.
 
-3.  Windows 10 Mobile デバイスを管理する場合は、 **[Microsoft Intune サブスクリプション]**を右クリックし、 **[プラットフォームの構成]**、  **[Windows Phone]**の順にクリックします。  
+3.  Se si prevede di gestire dispositivi Windows 10 Mobile, fare clic con il pulsante destro del mouse su **Sottoscrizione a Microsoft Intune**, fare clic su **Configura piattaforme**e quindi su  **Windows Phone**.  
 
-4.  **[Windows Phone 8.1 および Windows 10 Mobile]**の横にあるチェック ボックスをオンにして、 **[OK]**をクリックします。  
+4.  Fare clic sulla casella di controllo accanto a **Windows Phone 8.1 e Windows 10 Mobile**, quindi fare clic su **OK**.  
 
-5.  Windows 10 のデスクトップ コンピューターを管理する場合は、 **[Microsoft Intune サブスクリプション]**を右クリックし、 **[プラットフォームの構成]**、 **[Windows の登録を有効にする]**の順にクリックします。  
+5.  Se si prevede di gestire computer desktop Windows 10, fare clic con il pulsante destro del mouse su **Sottoscrizione a Microsoft Intune**, fare clic su **Configura piattaforme**e quindi su **Abilita registrazione Windows**.  
 
-6.  **[Windows の登録を有効にする]**の横にあるチェック ボックスをオンにして、 **[OK]**をクリックします。  
+6.  Fare clic sulla casella di controllo accanto a **Abilita registrazione Windows**e quindi su **OK**.  

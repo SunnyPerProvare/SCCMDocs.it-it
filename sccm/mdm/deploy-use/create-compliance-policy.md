@@ -1,6 +1,6 @@
 ---
-title: "デバイス コンプライアンス ポリシーを作成して展開する | Microsoft Docs"
-description: "System Center Configuration Manager でのデバイス コンプライアンス ポリシーの作成および展開方法を説明します。"
+title: "Creare e distribuire criteri di conformità del dispositivo | Microsoft Docs"
+description: "Informazioni su come creare e distribuire criteri di conformità del dispositivo in System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -18,303 +18,303 @@ robots: noindex
 ms.openlocfilehash: 6630d0170df22f46f14df241ffd8d48266c69263
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-and-deploy-a-device-compliance-policy"></a>デバイス コンプライアンス ポリシーを作成して展開する
+# <a name="create-and-deploy-a-device-compliance-policy"></a>Creare e distribuire criteri di conformità del dispositivo
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-## <a name="create-a-compliance-policy"></a>コンプライアンス ポリシーの作成
+## <a name="create-a-compliance-policy"></a>Creare i criteri di conformità
 
-1.  System Center Configuration Manager コンソールで、**[資産とコンプライアンス]** を選択します。
+1.  Nella console di System Center Configuration Manager fare clic su **Asset e conformità**.
 
-2.  **[資産とコンプライアンス]** ワークスペースで **[コンプライアンス設定]** を展開して、**[コンプライアンス ポリシー]** を選択します。
+2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità** e scegliere**Criteri di conformità**.
 
-3.  **[ホーム]** タブの **[作成]** グループで、**[コンプライアンス ポリシーの作成]** を選択します。
+3.  Nel gruppo **Crea** della scheda **Home** scegliere **Crea criteri di conformità**.
 
-4.  **[コンプライアンス ポリシーの作成] ウィザード** の [全般] ページで、次の情報を指定します。
+4.  Nella pagina **Generale** della Creazione guidata criteri di conformità specificare le informazioni seguenti:
 
-  * **名前**。 コンプライアンス ポリシーの一意の名前を入力します。 256 文字まで使用できます。
+  * **Nome**. Immettere un nome univoco per il criterio di conformità. Non può superare i 256 caratteri.
 
-  * **説明**。 Configuration Manager コンソールで、VPN プロファイルを区別しやすくするために簡単な説明を入力します。 256 文字まで使用できます。
+  * **Descrizione**. Immettere una descrizione che offra una panoramica del profilo VPN e che consenta di facilitarne l'identificazione nella console di Configuration Manager. Non può superare i 256 caratteri.
 
-  * **コンプライアンス ポリシーの種類**。 デバイスが Configuration Manager によって管理されるかどうかに応じて、作成するポリシーの種類を選びます。 このポリシーの種類は、以降のバージョンに適用されます。<br /><br /> Intune で管理されるデバイスの場合は、 **[Compliance rules for devices managed without configuration manager client]** (Configuration Manager のクライアントなしで管理されるデバイスのコンプライアンス規則) オプションを選びます。 このオプションを選択するときには、このポリシーの適用対象プラットフォームの種類を選択することもできます。
+  * **Tipo di criteri di conformità**. Selezionare il tipo di criteri che si vuole creare a seconda che il dispositivo sia o meno gestito da Configuration Manager. Si applica alla versione o alle versioni successive.<br /><br /> Per i dispositivi gestiti da Intune, scegliere l'opzione **Regole di conformità per i dispositivi gestiti senza il client di Configuration Manager** . Quando si seleziona questa opzione, è anche possibile selezionare il tipo di piattaforma alla quale applicare i criteri.
 
-  * **レポートするコンプライアンス非対応の重要度**。 このコンプライアンス ポリシーが非対応として評価される場合に報告する重要度のレベルを指定します。 重要度レベルは次のとおりです。
+  * **Gravità della non conformità per i report**. Specificare il livello di gravità che viene segnalato se il criterio di conformità viene valutato come non conforme. I livelli di gravità disponibili sono i seguenti:
 
-     * **なし**。 このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に非準拠重要度を何も報告しません。
-     * **情報**。 このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**情報**というレベルで非準拠重要度を報告します。   
-     * **警告**。 このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**警告**というレベルで非準拠重要度を報告します。
-     * **重大**。 このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**重大**というレベルで非準拠重要度を報告します。
-     * **重大 (イベント)**。 このコンプライアンス規則を満たしていないデバイスは、Configuration Manager レポート用に**重大**というレベルで非準拠重要度を報告します。 重要度のレベルは、アプリケーションのイベント ログでも Windows のイベントとしてログが登録されます。      
+     * **Nessuno**. I dispositivi che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.
+     * **Informazioni**. I dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Informazioni** per i report di Configuration Manager.   
+     * **Avviso**. I dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Avviso** per i report di Configuration Manager.
+     * **Errore critico**. I dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.
+     * **Errore critico con evento**. I dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel registro eventi applicazione.      
 
-5.  **[サポートされているプラットフォーム]** ページで、このコンプライアンス ポリシーが評価されるデバイス プラットフォームを選択するか、**[すべて選択]** をクリックしてすべてのデバイス プラットフォームを選択します。 サポートされているプラットフォームは、Windows 7、Windows 8.1、Windows 10、Windows Server 2008 R2、Windows Server 2012、Windows Server 2012 R2、Windows Server 2016 です。
+5.  Nella pagina **Piattaforme supportate** scegliere le piattaforme del dispositivo che verranno valutate da questi criteri di conformità oppure scegliere **Seleziona tutto** per selezionare tutte le piattaforme del dispositivo. Le piattaforme supportate sono: Windows 7, Windows 8.1 e Windows 10; Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 e Windows Server 2016.
 
-6.  **[ルール]** ページで、デバイスが "準拠している" と見なされるために必要な構成を定義するルールを定義します。 コンプライアンス ポリシーを作成すると、既定でいくつかのルールが有効になりますが、これらは編集したり削除したりすることができます。 すべてのルールの完全なリストは、このトピックで後述する「コンプライアンス ポリシー ルール」セクションをご覧ください。
+6.  Nella pagina **Regole** , indicare una o più regole che definiscono la configurazione che i dispositivi devono possedere per essere ritenuti conformi. Quando si crea un criterio di conformità, alcune regole vengono attivate per impostazione predefinita. Tuttavia, è possibile modificarle o eliminarle. Per un elenco completo di tutte le regole, vedere la sezione "Regole dei criteri di conformità" più avanti in questo argomento.
 
   > [!NOTE]  
-  >  Windows PC では、Windows オペレーティング システム バージョン 8.1 は、8.1 ではなく 6.3 として報告されます。 OS バージョンのルールが Windows 8.1 に設定されている場合は、デバイスに Windows 8.1 がインストールされている場合でもそのデバイスは非準拠として報告されます。 最小 OS ルールと最大 OS ルールに Windows の適切な *報告* バージョンを設定していることを確認してください。 バージョン番号は、**winver** コマンドが返すバージョンと一致する必要があります。 Windows Phone ではこの問題は発生せず、バージョンは期待どおり 8.1 として報告されます。 Windows 10 オペレーティング システムを使っている Windows PC の場合、バージョンは **10.0** にし、**winver** コマンドが返す OS ビルド番号を付加したものに設定する必要があります。
+  >  Nei PC Windows la versione 8.1 del sistema operativo Windows viene indicata come 6.3. Se la regola della versione del sistema operativo è impostata su Windows 8.1 per Windows, il dispositivo risulterà non conforme anche se il sistema operativo installato è Windows 8.1. Assicurarsi di impostare la versione di Windows *riportata* corretta per le regole della versione minima e massima del sistema operativo. Il numero di versione deve corrispondere alla versione restituita dal comando **winver**. Il problema non riguarda i dispositivi Windows Phone perché la versione restituita è la 8.1, come previsto. Per i PC Windows con sistema operativo Windows 10, la versione deve essere impostata come **10.0** + il numero di build del sistema operativo restituito dal comando **winver**.
 
-7.  ウィザードの **[概要]** ページで、作成した設定を確認してから、ウィザードを終了します。
+7.  Nella pagina **Riepilogo** della procedura guidata rivedere le impostazioni definite e completare la procedura.
 
- **[資産とコンプライアンス]** ワークスペースの **[コンプライアンス ポリシー]** ノードに新しいポリシーが表示されます。
+ I nuovi criteri vengono visualizzati nel nodo **Criteri di conformità** dell'area di lavoro **Asset e conformità** .
 
-## <a name="deploy-a-compliance-policy"></a>コンプライアンス ポリシーの展開
+## <a name="deploy-a-compliance-policy"></a>Distribuire i criteri di conformità
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** を選択します。
+1.  Nella console di Configuration Manager scegliere **Asset e conformità**.
 
-2.  **[資産とコンプライアンス]** ワークスペースで **[コンプライアンス設定]** を展開して、**[コンプライアンス ポリシー]** を選択します。
+2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità** e scegliere**Criteri di conformità**.
 
-3.  **[ホーム]** タブの **[展開]** グループで、**[展開]** を選択します。
+3.  Nel gruppo **Distribuzione** della scheda **Home** scegliere **Distribuisci**.
 
-4.  **[コンプライアンス ポリシーの展開]** ダイアログ ボックスで、**[参照]** をクリックし、ポリシーを展開するユーザー コレクションを選択します。
+4.  Nella finestra di dialogo **Distribuisci criteri di conformità** scegliere **Sfoglia** per selezionare la raccolta utenti nella quale distribuire i criteri.
 
-     さらに、ポリシーが準拠していない場合にアラートを生成するオプションや、ポリシーのコンプライアンスを評価するスケジュールを設定するオプションを選択できます。
+     È anche possibile selezionare le opzioni per creare avvisi da inviare quando i criteri non sono conformi e configurare la pianificazione in base alla quale verrà valutata la conformità dei criteri.
 
-5.  終了したら、**[OK]** をクリックします。
+5.  Al termine, scegliere **Salva**.
 
-## <a name="monitor-the-compliance-policy"></a>コンプライアンス ポリシーの監視
+## <a name="monitor-the-compliance-policy"></a>Monitorare i criteri di conformità
 
-#### <a name="to-view-compliance-results-in-the-configuration-manager-console"></a>Configuration Manager コンソールでコンプライアンス結果を表示するには
+#### <a name="to-view-compliance-results-in-the-configuration-manager-console"></a>Per visualizzare i risultati di conformità nella console di Configuration Manager
 
-1.  Configuration Manager コンソールで、**[監視]** をクリックします。
+1.  Nella console di Configuration Manager scegliere **Monitoraggio**.
 
-2.  **[監視]** ワークスペースで、**[展開]** を選択します。
+2.  Nell'area di lavoro **Monitoraggio** scegliere **Distribuzioni**.
 
-3.  **[展開]** 一覧で、コンプライアンス情報を確認するコンプライアンス ポリシーの展開を選択します。
+3.  Nell'elenco **Distribuzioni** selezionare la distribuzione del criterio di conformità di cui si vogliono esaminare le informazioni sulla conformità.
 
-4.  メイン ページで、ポリシーの展開のコンプライアンスに関する概要情報を確認できます。 詳細情報を表示するには、展開を選択してから、**[ホーム]** タブの **[展開]** グループで **[ステータスの表示]** を選択して、**[展開ステータス]** ページを開きます。
+4.  È possibile esaminare le informazioni di riepilogo sulla conformità della distribuzione del criterio nella pagina principale. Per visualizzare informazioni più dettagliate, selezionare la distribuzione. Nel gruppo **Distribuzione** della scheda **Home** scegliere **Visualizza stato** per aprire la pagina **Stato distribuzione**.
 
-    **[展開ステータス]** ページには次のタブがあります。
+    La pagina **Stato distribuzione** contiene le schede seguenti:
 
-    -   **[準拠]**。 影響を受けた資産の数に基づいて、ポリシーのコンプライアンスを表示します。 ルールを選択して、そのルールに準拠したすべてのユーザーとデバイスを含む **[資産とコンプライアンス]** ワークスペースの **[ユーザー]** または **[デバイス]** のノードの下に、一時ノードを作成できます。 **[資産の詳細]** ウィンドウに、そのポリシーに準拠するユーザーやデバイスが表示されます。 一覧のユーザーまたはデバイスをダブルクリックすると、追加の情報が表示されます。
+    -   **Conforme**. Indica la conformità dei criteri in base al numero degli asset interessati. È possibile scegliere una regola per creare un nodo temporaneo nel nodo **Utenti** o **Dispositivi** dell'area di lavoro **Asset e conformità** che contenga tutti gli utenti o i dispositivi conformi a questa regola. Nel riquadro **Dettagli asset** vengono visualizzati gli utenti o i dispositivi conformi ai criteri. Fare doppio clic su un dispositivo o su un utente presente nell'elenco per visualizzare informazioni aggiuntive.
 
-    -   **エラー**。 影響を受けた資産の数に基づいて、選択したポリシーの展開におけるすべてのエラーの一覧が表示されます。 ルールを選択して、そのルールでエラーとなったすべてのユーザーとデバイスを含む **[資産とコンプライアンス]** ワークスペースの **[ユーザー]** または **[デバイス]** のノードの下に、一時ノードを作成できます。 ユーザーまたはデバイスを選択すると、**[資産の詳細]** ウィンドウに、問題によって影響を受けるユーザーやデバイスが表示されます。 一覧のユーザーまたはデバイスをダブルクリックすると、その問題についての追加の情報が表示されます。
+    -   **Errore**. Visualizza un elenco di tutti gli errori relativi alla distribuzione dei criteri selezionata, in base al numero di asset interessati. È possibile scegliere una regola per creare un nodo temporaneo nel nodo **Utenti** o **Dispositivi** dell'area di lavoro **Asset e conformità** che contenga tutti gli utenti o tutti i dispositivi che hanno generato errori con questa regola. Quando si seleziona un utente o un dispositivo, il riquadro **Dettagli asset** visualizza gli utenti o i dispositivi interessati dal problema. Fare doppio clic su un dispositivo o su un utente presente nell'elenco per visualizzare informazioni aggiuntive sul problema.
 
-    -   **[非準拠]**。 影響を受けた資産の数に基づいて、そのポリシー内のすべての非準拠のルールの一覧が表示されます。 ルールを選択して、そのルールに準拠していないすべてのユーザーとデバイスを含む **[資産とコンプライアンス]** ワークスペースの **[ユーザー]** または **[デバイス]** のノードの下に、一時ノードを作成できます。 ユーザーまたはデバイスを選択すると、**[資産の詳細]** ウィンドウに、問題によって影響を受けるユーザーやデバイスが表示されます。 一覧のユーザーまたはデバイスをダブルクリックすると、その問題について追加の情報が表示されます。
+    -   **Non conforme**. Visualizza un elenco di tutte le regole non conformi all'interno dei criteri, in base al numero di asset interessati. È possibile scegliere una regola per creare un nodo temporaneo nel nodo **Utenti** o **Dispositivi** dell'area di lavoro **Asset e conformità** che contenga tutti gli utenti o i dispositivi non conformi a questa regola. Quando si seleziona un utente o un dispositivo, il riquadro **Dettagli asset** visualizza gli utenti o i dispositivi interessati dal problema. Fare doppio clic su un dispositivo o su un utente presente nell'elenco per visualizzare informazioni aggiuntive sul problema.
 
-    -   **[不明]**。 選択したポリシーの展開に対するコンプライアンスが報告されなかったすべてのユーザーとデバイスの一覧が、現在のデバイスのクライアント ステータスと共に表示されます。
+    -   **Sconosciuto**. Visualizza un elenco di tutti gli utenti o di tutti i dispositivi che non sono conformi alla distribuzione dei criteri selezionata, insieme allo stato corrente del client dei dispositivi.
 
-#### <a name="to-monitor-the-compliance-status-of-an-individual-device"></a>個々のデバイスのコンプライアンス ステータスを監視するには
+#### <a name="to-monitor-the-compliance-status-of-an-individual-device"></a>Per monitorare lo stato di conformità di un singolo dispositivo
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** ワークスペースを選択します。
+1.  Nella console di Configuration Manager scegliere l'area di lavoro **Asset e conformità**.
 
-2.  **[デバイス]** を選択します。
+2.  Scegliere **Dispositivi**.
 
-3.  さらに多くの列を有効にするには、列の 1 つを右クリックします。
+3.  Fare clic con il pulsante destro del mouse su una delle colonne per abilitare altre colonne.
 
-  次の列を追加できます。
+  È possibile aggiungere le colonne seguenti:
 
-  - **[Azure Active Directory デバイス ID]**。  Azure Active Directory でのデバイスの一意の識別子です。
+  - **ID dispositivo di Azure Active Directory**.  Identificatore univoco del dispositivo in Azure Active Directory.
 
-  - **[コンプライアンス エラーの詳細]**。  エンド ツー エンド プロセスに問題が発生したときの、エラー メッセージの詳細です。 この列が空白の場合は、エラーが検出されず、コンプライアンス ステータスが正常に報告されたことを示します。
+  - **Dettagli dell'errore di conformità**.  Dettagli del messaggio di errore quando il processo end-to-end ha esito negativo. Se questa colonna è vuota, significa che non sono stati rilevati errori ed è stato segnalato lo stato di conformità.
 
-  - **[コンプライアンス エラーの場所]**。  コンプライアンスに問題があった場所についての詳細です。 この列が空白の場合は、エラーが検出されず、コンプライアンス ステータスが正常に報告されたことを示します。 コンプライアンス プロセスが失敗する可能性がある場所の例: 
-      - ConfigMgr クライアント
-      - 管理ポイント
+  - **Posizione dell'errore di conformità**.  Informazioni dettagliate sulla posizione in cui si è verificato l'errore di conformità. Se questa colonna è vuota, significa che non sono stati rilevati errori ed è stato segnalato lo stato di conformità. Esempi di posizione in cui il processo di conformità può restituire un errore: 
+      - Client di ConfigMgr
+      - Punto di gestione
       - Intune
       - Azure Active Directory
 <br></br>
-  - **[コンプライアンスの評価時間]**。 コンプライアンスが最後にチェックされた日時です。
+  - **Ora della valutazione della conformità**. Ora dell'ultimo controllo di conformità.
 
-  - **[コンプライアンスの設定時間]**。 最後にコンプライアンスが Azure Active Directory に更新された日時です。
+  - **Impostazione ora per la conformità**. Ora dell'ultimo aggiornamento della conformità in Azure Active Directory.
 
-  - **[条件付きアクセス準拠]**。  コンピューターが条件付きアクセス ポリシーに準拠しているかどうかを示します。
+  - **Conforme all'accesso condizionale**.  Se il computer è conforme o meno ai criteri di accesso condizionale.
 
   > [!IMPORTANT]
-  > 既定では、これらの列は表示されません。
+  > Queste colonne non vengono visualizzate per impostazione predefinita.
 
-#### <a name="to-view-intune-compliance-policies-charts"></a>Intune のコンプライアンス ポリシー グラフを表示するには
-1. Configuration Manager バージョン 1610 以降では、Configuration Manager コンソールで **[監視]** を選択します。
+#### <a name="to-view-intune-compliance-policies-charts"></a>Per visualizzare i grafici dei criteri di conformità di Intune
+1. A partire dalla versione 1610 di Configuration Manager, nella console di Configuration Manager scegliere **Monitoraggio**.
 
-2. **[監視]** ワークスペースで、**[概要]** > **[コンプライアンス設定]** > **[コンプライアンス ポリシー]** の順に移動します。
+2. Nell'area di lavoro **Monitoraggio** passare a **Panoramica** > **Impostazioni di conformità** > **Criteri di conformità**.
 
-   次のチャートが表示されます。
+   Vengono visualizzati i grafici seguenti:
 
-    - **[全体的なデバイスのコンプライアンス]**。 すべてのコンプライアンス ポリシーに対するデバイスの全体の準拠が表示されます。
-    - **[コンプライアンス非対応の主な原因]**。 非準拠のデバイスに対する主なポリシーが表示されます。
+    - **Conformità complessiva del dispositivo**. Visualizza la conformità complessiva dei dispositivi rispetto a tutti i criteri di conformità.
+    - **Motivi principali per la mancata conformità**. Visualizza i criteri principali ai quali i dispositivi non sono conformi.
 
-3. いずれかのチャートのセクションを選択し、そのカテゴリ内のデバイスのリストまでドリル ダウンします。
+3. Scegliere una sezione di uno dei due grafici per eseguire il drill-down nell'elenco dei dispositivi della categoria corrispondente.
 
-#### <a name="to-view-a-health-attestation-report"></a>正常性構成レポートを表示するには
+#### <a name="to-view-a-health-attestation-report"></a>Per visualizzare il report di attestazione dell'integrità
 
-1.  Configuration Manager バージョン 1602 以降では、Configuration Manager コンソールで **[監視]** を選択します。
+1.  A partire dalla versione 1602 di Configuration Manager, nella console di Configuration Manager scegliere **Monitoraggio**.
 
-2.  デバイスのコンプライアンス ステータスに基づいて現在の状態の概要レポートを表示するには、**[セキュリティ]**選択して、**[正常性構成]** を選択します。
+2.  Per visualizzare un report di riepilogo dello stato corrente dei dispositivi in base alla conformità, fare clic su **Sicurezza** e scegliere **Attestazione dell'integrità**.
 
-3.  すべてのデバイスと正常性構成のすべての属性を一覧表示するレポートを表示するには、**[セキュリティ]** 選択して、**[正常性構成]** を選択します。
+3.  Per visualizzare un report contenente l'elenco di tutti i dispositivi e tutti gli attributi di attestazione dell'integrità, scegliere **Sicurezza** e **Attestazione dell'integrità**.
 
-## <a name="compliance-policy-rules"></a>コンプライアンス ポリシー ルール
-* **[モバイル デバイスのパスワードの設定が必要]**。 デバイスにアクセスする際にパスワードを入力するよう、ユーザーに要求できます。
+## <a name="compliance-policy-rules"></a>Regole dei criteri di conformità
+* **Richiedi impostazioni password nei dispositivi mobili**. È possibile richiedere agli utenti di immettere una password per poter accedere al dispositivo.
 
-  **以下でサポートされています。**
+  **Supportato in:**
     * Windows Phone 8+
     * iOS 6+
-    * Android 4.0 以降
+    * Android 4.0+
     * Samsung KNOX Standard 4.0+
 
-* **[アイドル状態のデバイスのロックを解除する際にパスワードを要求する]** (1602 更新プログラム)。 ロックされているデバイスにアクセスする際にパスワードを入力するよう、ユーザーに要求できます。
+* **Richiedi una password per sbloccare un dispositivo inattivo** (aggiornamento 1602). È possibile richiedere agli utenti di immettere una password per poter accedere al dispositivo bloccato.
 
-  **以下でサポートされています。**
+  **Supportato in:**
   * Windows Phone 8+
   * iOS 6+
-  * Android 4.0 以降
+  * Android 4.0+
   * Samsung KNOX Standard 4.0+
 
-* **[パスワードが要求されるまでの非アクティブな時間 (分)]** (1602 更新プログラム)。 ユーザーがパスワードを再入力しなければならなくなるまでのアイドル時間を指定できます。 選択可能な値 **1 分**、**5 分**、**15 分**、**30 分**、**1 時間**のいずれかを設定します。
+* **Minuti di inattività prima che venga richiesta la password** (aggiornamento 1602). È possibile specificare il tempo di inattività prima che l'utente debba immettere nuovamente la password. Impostare il valore su una delle opzioni disponibili: **1 minuto**, **5 minuti**, **15 minuti**, **30 minuti**, **1 ora**.
 
-  この規則は **[アイドル状態のデバイスのロックを解除する際にパスワードを要求する]** と併用される必要があります。 ここで設定した値は、デバイスがアイドル状態と見なされてロックされる時間を決定します。 **[アイドル状態のデバイスのロックを解除する際にパスワードを要求する]** を **True** に設定した場合、ユーザーはロックされたデバイスにアクセスするためにパスワードを入力する必要があります。
+  Questa regola deve essere usata con **Richiedi una password per sbloccare un dispositivo inattivo**. Il valore qui impostato determina quando considerare il dispositivo inattivo e bloccato. Quando l'opzione **Richiedi una password per sbloccare un dispositivo inattivo** è impostata su **True**, l'utente deve immettere una password per accedere al dispositivo bloccato.
 
-  **以下でサポートされています。**
+  **Supportato in:**
   * Windows Phone 8+
   * Windows RT/8.1
   * iOS 6+
-  * Android 4.0 以降
+  * Android 4.0+
   * Samsung KNOX Standard 4.0+
 
-* **[自動更新を必須にする]** (1602 更新プログラム)。 Windows 8.1 以降のデバイスへの更新プログラムの自動インストールを必須にして、更新プログラムのクラスを指定できます。
+* **Richiedi aggiornamenti automatici** (aggiornamento 1602). È possibile richiedere ai dispositivi con Windows 8.1 o versioni successive di installare automaticamente gli aggiornamenti e specificare la classe degli aggiornamenti.
 
-  自動インストールを回避する場合は値を **[なし]** に設定する必要があります。推奨されるすべての更新プログラムを自動的にインストールする場合は **[推奨]** に設定し、重要として分類された更新プログラムのみをインストールする場合は **[重要]** に設定します。
+  Il valore deve essere impostato su **Nessuno** per impedire l'installazione automatica, su **Consigliati** per installare automaticamente tutti gli aggiornamenti consigliati o su **Importanti** per installare solo gli aggiornamenti classificati come importanti.
 
-  **以下でサポートされています。**
+  **Supportato in:**
   * Windows Phone 8+
 
-* **[単純なパスワードを許可する]**。 ユーザーは単純なパスワード ("1234"、"1111" など) を作成できます。 この設定は既定で無効になっています。
+* **Consenti password semplici**. Consente agli utenti di creare password semplici come "1234" o "1111." Per impostazione predefinita, questa impostazione è disabilitata.
 
-  **以下でサポートされています。**
+  **Supportato in:**
   * Windows Phone 8+
   * iOS 6+
 
-* **[パスワードの長さ]**。 ユーザーのパスワードに含まれている必要がある数字または文字の最小数を指定します (既定は 6)。
+* **Lunghezza minima password**. È possibile specificare il numero minimo di cifre o caratteri che la password dell’utente deve contenere (6 per impostazione predefinita).
 
-  **以下でサポートされています。**
+  **Supportato in:**
   * Windows Phone 8+
   * Windows 8.1
   * iOS 6+
-  * Android 4.0 以降
+  * Android 4.0+
   * Samsung KNOX Standard 4.0+
 
   >[!NOTE]
-  >Windows を実行し Microsoft アカウントでセキュリティ保護されるデバイスについては、**[パスワードの最小文字数]** が 8 文字より長い場合、または **[文字セットの最小数]** が 2 よりも大きい場合、コンプライアンス ポリシーは正しく評価を行うことができません。
+  >Per i dispositivi che eseguono Windows e sono protetti da un account Microsoft, i criteri di conformità non eseguono correttamente la convalida se **Lunghezza minima password** contiene più di otto caratteri o se **Numero minimo di set di caratteri** ne contiene più di due.
 
-* **[モバイル デバイスのファイルの暗号化]**。 リソースに接続するためにデバイスを暗号化できます。 Windows Phone 8 を実行するデバイスは自動的に暗号化されます。 iOS を実行するデバイスは、設定 **[モバイル デバイスのパスワードの設定が必要]**を構成すると、暗号化されます。 既定では、この設定は有効になっています。
+* **Crittografia file nel dispositivo mobile**. È possibile richiede la crittografia del dispositivo per la connessione alle risorse. I dispositivi che eseguono Windows Phone 8 vengono crittografati automaticamente. I dispositivi che eseguono iOS vengono crittografati quando si configura l'impostazione **Richiedi impostazioni password nei dispositivi mobili**. Questa opzione è attivata per impostazione predefinita.
 
-  **以下でサポートされています。**
+  **Supportato in:**
   * Windows Phone 8+
   * Windows 8.1
   * iOS 6+
-  * Android 4.0 以降
+  * Android 4.0+
   * Samsung KNOX Standard 4.0+
 
-* **[デバイスの脱獄または root 化を認めない]**。 この設定が有効である場合は、脱獄 (iOS) または root 化 (Android) されたデバイスは非準拠になります。 この設定は既定で無効になっています。
+* **Il dispositivo non deve essere jailbroken o rooted**. Se si abilita questa impostazione, i dispositivi jailbroken (iOS) o rooted (Android) non sono conformi. Per impostazione predefinita, questa impostazione è disabilitata.
 
-  **以下でサポートされています。**
+  **Supportato in:**
   * iOS 6+
-  * Android 4.0 以降
+  * Android 4.0+
   * Samsung KNOX Standard 4.0+
 
-* **[電子メール プロファイルを Intune で管理する必要がある]**。 このオプションが **[はい]** に設定されている場合、デバイスはそのデバイスに展開された電子メール プロファイルを使用する必要があります。 メール プロファイルが、コンプライアンス ポリシーの対象ユーザー グループと同じユーザー グループに展開されていない場合、デバイスは非準拠であると見なされます。
+* **Il profilo di posta elettronica deve essere gestito da Intune**. Quando questa opzione è impostata su **Sì**, il dispositivo deve usare il profilo di posta elettronica distribuito nel dispositivo. Il dispositivo viene considerato non conforme se il profilo di posta elettronica non viene distribuito allo stesso gruppo di utenti a cui si applicano i criteri di conformità.
 
-  デバイスに展開された Intune メール プロファイルと一致するメール アカウントが、ユーザーによってデバイスに既にセットアップされている場合も、非準拠であると見なされます。 この場合、Intune では、ユーザーがプロビジョニングしたプロファイルを上書きできないので、結果としてそのプロファイルを管理できません。 既存の電子メール設定を削除すれば Intune は管理対象の電子メール プロファイルをインストールできるようになって、ユーザーはデバイスを準拠させることができます。
+  Il dispositivo risulta non conforme anche se l'utente ha già configurato un account di posta elettronica nel dispositivo che corrisponde a un profilo di posta elettronica di Intune distribuito al dispositivo. In questo caso, Intune non può sovrascrivere il profilo con provisioning dell'utente, quindi non può gestirlo. L'utente può rendere conforme il dispositivo rimuovendo le impostazioni di posta elettronica esistenti, consentendo quindi a Intune di installare il profilo di posta elettronica gestito.
 
-  電子メール プロファイルの詳細については、「 [Microsoft Intune で電子メール プロファイルを使用して会社の電子メールへのアクセスを有効にする](https://technet.microsoft.com/library/dn800672.aspx)」をご覧ください。 この設定は既定で無効になっています。
+  Per consultare dettagli sui profili di posta elettronica, vedere [Consentire l'accesso alla posta elettronica aziendale usando profili di posta elettronica con Microsoft Intune](https://technet.microsoft.com/library/dn800672.aspx). Per impostazione predefinita, questa impostazione è disabilitata.
 
-  **以下でサポートされています。**
+  **Supportato in:**
   * iOS 6+
 
-* **[電子メール プロファイル]**。 **[電子メール アカウントを Intune で管理する必要がある]** が選択されている場合は、**[選択]** を選択して、デバイスの管理に使用する電子メール プロファイルを選択します。 電子メール プロファイルは、デバイス上に存在する必要があります。
+* **Profilo di posta elettronica**. Se è selezionata l'opzione **L'account di posta elettronica deve essere gestito da Intune**, scegliere **Seleziona** per scegliere il profilo di posta elettronica con cui gestire i dispositivi. Il profilo di posta elettronica deve essere presente nel dispositivo.
 
-  **以下でサポートされています。**
+  **Supportato in:**
   * iOS 6+
 
-* **[Minimum OS required (必要な最小 OS バージョン)]**。 指定した最小 OS バージョンの要件をデバイスが満たしていない場合、非準拠として報告されます。 アップグレードする方法に関する情報へのリンクが表示されます。 ユーザーは、デバイスのアップグレードを行うことを選択できます。アップグレード後は、会社のリソースにアクセスできるようになります。
+* **Versione minima richiesta del sistema operativo**. Quando un dispositivo non soddisfa il requisito per la versione minima del sistema operativo, viene segnalato come non conforme e viene visualizzato un collegamento con informazioni su come eseguire l'aggiornamento. È possibile scegliere di aggiornare il dispositivo e dopo l'aggiornamento si potrà accedere alle risorse aziendali.
 
-  **以下でサポートされています。**
+  **Supportato in:**
   * Windows Phone 8+
   * Windows 8.1
   * iOS 6+
-  * Android 4.0 以降
+  * Android 4.0+
   * Samsung KNOX Standard 4.0+
 
-* **[Maximum OS version allowed (許可される最大 OS バージョン)]**。 ルールに指定した OS バージョンより新しいバージョンの OS がデバイスで使用されている場合、会社のリソースへのアクセスがブロックされ、IT 管理者に問い合わせることをユーザーに促すメッセージが表示されます。 対象の OS バージョンを許可するようにルールを変更するまでは、このデバイスを使用して会社のリソースへアクセスすることはできません。
+* **Versione massima consentita del sistema operativo**. Quando un dispositivo usa una versione del sistema operativo successiva rispetto a quella specificata nella regola, l'accesso alle risorse aziendali risulta bloccato. È necessario contattare l'amministratore IT. Fino a quando la regola non viene modificata in modo da consentire la versione del sistema operativo, non è possibile usare questo dispositivo per accedere alle risorse aziendali.
 
-  **以下でサポートされています。**
+  **Supportato in:**
   * Windows Phone 8+
   * Windows 8.1
   * iOS 6+
-  * Android 4.0 以降
+  * Android 4.0+
   * Samsung KNOX Standard 4.0+
 
-* **[デバイスが正常として報告されることを必須とする]** (1602 更新プログラム)。 新規または既存のコンプライアンス ポリシーで、Windows 10 デバイスが健全であると報告されることを必須とする規則を設定できます。 この設定が有効である場合は、以下のデータ ポイントを対象に正常性構成証明サービス (HAS) を使用して Windows 10 デバイスが評価されます。
+* **Richiedi che i dispositivi siano riportati come integri** (aggiornamento 1602). È possibile impostare una regola per richiedere che i dispositivi Windows 10 vengano segnalati come integri in criteri di conformità nuovi o esistenti. Se questa impostazione è abilitata, i dispositivi Windows 10 vengono valutati tramite il servizio di attestazione dell'integrità del dispositivo riguardo ai punti dati seguenti:
 
-  - **[BitLocker is enabled (BitLocker が有効である)]**。 Bitlocker がオンである場合は、システムがオフになっているとき、または休止状態になるときに、デバイスはドライブに格納されているデータを不正アクセスから保護できます。
+  - **BitLocker è abilitato**. Quando Bitlocker è abilitato, il dispositivo può proteggere dall'accesso non autorizzato i dati archiviati nell'unità, quando il sistema viene spento o passa alla modalità di ibernazione.
 
-   BitLocker ドライブ暗号化は、Windows オペレーティング システムのボリュームに格納されているすべてのデータを暗号化します。 BitLocker は、Windows オペレーティング システムとユーザー データの保護のために TPM を使用します。 TMP は、コンピューターのそばに人がいなかった場合や、コンピューターを紛失したり、盗難されたりした場合でも、改ざんされていないことを確認するために役立ちます。
+   Crittografia unità BitLocker di Windows crittografa tutti i dati archiviati nel volume del sistema operativo Windows. BitLocker usa il TPM per proteggere il sistema operativo Windows e i dati utente. Consente di garantire che un computer non venga manomesso, anche se viene perso, rubato o lasciato incustodito.
    
-   コンピューターに互換性のある TPM がインストールされている場合は、BitLocker は TPM を使用してデータを保護する暗号化キーをロックします。 その結果、TPM がコンピューターの状態を確認するまで、キーはアクセスできません。
+   Se il computer è dotato di un TPM compatibile, BitLocker usa il TPM per bloccare le chiavi di crittografia che proteggono i dati. Di conseguenza, non è possibile accedere alle chiavi finché il TPM non ha verificato lo stato del computer.
 
-  - **[Code integrity is enabled (コードの整合性が有効である)]**。 コードの整合性は、メモリに読み込まれるたびに、ドライバーまたはシステム ファイルの整合性を検証する機能です。 コードの整合性により、未署名のドライバーまたはシステム ファイルがカーネルに読み込まれているかどうかが検出されます。 また、管理者権限を持つユーザー アカウントが実行している悪意のあるソフトウェアによってシステム ファイルが変更されたかどうかを検出します。
+  - **L'integrità del codice è abilitata**. La funzionalità Integrità del codice convalida l'integrità di un driver o di un file system ogni volta che viene caricato nella memoria. L'integrità del codice rileva se un driver o un file di sistema non firmato viene caricato nel kernel. Rileva anche se un file di sistema è stato modificato da un software dannoso eseguito da un account utente con privilegi di amministratore.
 
-  - **[Secure boot is enabled (セキュア ブートが有効である)]**。 セキュア ブートが有効である場合は、システムは強制的に工場出荷時の信頼された状態で起動します。 また、セキュア ブートが有効である場合は、マシンの起動に使用するコア コンポーネントには、デバイスの製造者が信頼している適切な暗号署名が必要です。 マシンの開始前に、UEFI ファームウェアはこれを確認します。 ファイルが改ざんされてその署名が破壊されると、システムは起動しません。
+  - **L'avvio protetto è abilitato**. Quando l'avvio protetto è abilitato, viene forzato l'avvio del sistema in uno stato attendibile predefinito. È anche necessario che i componenti di base usati per avviare il computer abbiano le firme crittografate corrette ritenute attendibili dall'organizzazione che ha prodotto il dispositivo. Il firmware UEFI verifica questo aspetto prima di permettere l'avvio del computer. Se alcuni file sono stati manomessi, danneggiandone la firma, il sistema non viene avviato.
 
-  - **[Early-launch antimalware is enabled (起動時マルウェア対策が有効である)]**。 この設定は PC にのみ適用されます。 起動時マルウェア対策 (ELAM) は、ネットワーク内のコンピューターの起動時にサードパーティ製のドライバーが初期化する前に、コンピューターを保護します。
+  - **L'antimalware ad esecuzione anticipata è abilitato**. Questa impostazione si applica solo ai PC. La funzionalità Antimalware ad esecuzione anticipata offre protezione per i computer in rete quando vengono avviati e prima dell'inizializzazione di driver di terze parti.
   
-   この規則は既定でオフになっています。
+   Questa regola è disattivata per impostazione predefinita.
 
-  HAS サービスの動作については、「 [Health Attestation CSP (正常性構成証明 CSP)](https://msdn.microsoft.com/library/dn934876.aspx)」をご覧ください。
+  Per informazioni sul funzionamento del servizio di attestazione dell'integrità, vedere l'argomento relativo al [provider di servizi di configurazione HealthAttestation](https://msdn.microsoft.com/library/dn934876.aspx).
 
-  **以下でサポートされています。**
-  * Windows 10 および Windows 10 Mobile
+  **Supportato in:**
+  * Windows 10 e Windows 10 Mobile
 
-- **[Apps that cannot be installed on the device (デバイスにインストールできないアプリ)]**。 ユーザーが管理非準拠のアプリ リストからアプリをインストールした場合、ユーザーは、会社の電子メールや、条件付きアクセスをサポートする他の会社のリソースにアクセスを試みても、ブロックされます。 この規則では、管理者によって定義された非準拠リストにアプリを追加する場合、アプリ名とアプリ ID が必要です。 アプリの発行元を追加することもできますが、必須ではありません。
+- **App che non possono essere installate nel dispositivo**. Se viene installata un'app dall'elenco di app non conformi per l'amministratore, l'accesso alla posta elettronica aziendale e ad altre risorse aziendali che supportano l'accesso condizionale viene bloccato. Questa regola richiede il nome e l'ID dell'app quando si aggiunge un'app all'elenco di app non conformi definito dall'amministratore. È possibile aggiungere anche l'autore dell'app, ma non è obbligatorio.
 
-    **以下でサポートされています。**
+    **Supportato in:**
       * iOS 6+
-      * Android 4.0 以降
+      * Android 4.0+
       * Samsung KNOX Standard 4.0+
 <br></br>
-* **必要なパスワードの種類**。 ユーザーが英数字のパスワードまたは数字のパスワードのどちらを使用する必要があるかを指定します。 英数字のパスワードの場合、パスワードに最低限必要な文字セットの数も指定します。 文字セットには、小文字、大文字、記号、および数字の 4 種類があります。
+* **Tipo di password richiesto**. Specificare se gli utenti devono creare una password alfanumerica o una password numerica. Per le password alfanumeriche, si specifica anche il numero minimo di set di caratteri che la password deve contenere. I quattro set di caratteri sono: lettere minuscole, lettere maiuscole, simboli e numeri.
 
-    **以下でサポートされています。**
+    **Supportato in:**
     * Windows Phone 8+
     * Windows 8.1+
     * iOS 6+
 <br></br>
-* **デバイスでの USB デバッグをブロックする**。 USB デバッグは Android for Work デバイスでは既に無効になっているため、この設定を構成する必要はありません。
+* **Blocca il debug USB nel dispositivo**. Non è necessario configurare questa impostazione poiché l'esecuzione del debug dell'USB è già stata disabilitata in Android per i dispositivi di lavoro.
 
-    **以下でサポートされています。**
-    * Android 4.0 以降
+    **Supportato in:**
+    * Android 4.0+
     * Samsung KNOX Standard 4.0+
 <br></br>
-* **提供元不明のアプリをブロックする**。 デバイスが不明なソースからのアプリのインストールを許可しないことが必要です。 Android for Work デバイスでは、不明なソースからのインストールは常に制限されるため、この設定を構成する必要はありません。
+* **Blocca app da origini sconosciute**. Obbligare i dispositivi a impedire l'installazione di app da origini sconosciute. Non è necessario configurare questa impostazione poiché Android per i dispositivi di lavoro limita sempre l'installazione da origini sconosciute.
 
-    **以下でサポートされています。**
-    * Android 4.0 以降
+    **Supportato in:**
+    * Android 4.0+
     * Samsung KNOX Standard 4.0+
 <br></br>
-* **アプリの脅威のスキャンが必要**。 この設定は、デバイスでアプリの確認機能が有効になっていることを指定します。 
+* **Rendi obbligatoria l'analisi delle minacce nelle app**. Questa impostazione specifica che la funzionalità dell'app di verifica è abilitata nel dispositivo. 
 
-    **以下でサポートされています。**
-    * Android 4.2 から 4.4
+    **Supportato in:**
+    * Android da 4.2 a 4.4
     * Samsung KNOX Standard 4.0+
 
-### <a name="find-an-app-id"></a>アプリ ID を検索する
+### <a name="find-an-app-id"></a>Trovare l'ID di un'app
 
-アプリ ID は、Apple および Google のアプリケーション サービス内でアプリを一意に識別する識別子です。 たとえば、com.contoso.myapp などです。 アプリ ID を検索するには：
+L'ID dell'app è un identificatore che identifica in modo univoco l'app all'interno dei servizi per applicazioni di Apple e Google, ad esempio com.contoso.myapp. Per trovare un ID:
 
 - **Android**
-    - アプリ ID は、アプリの作成に使用した Google Play ストアの URL で検索できます。 アプリ ID の例: *…?id=com.companyname.appname&hl=en*
+    - È possibile trovare l'ID di un'app nell'URL di Google Play Store usato per creare l'app. Esempio di ID app: *…?id=com.companyname.appname&hl=en*
 
 - **iOS**
-    1. iTunes ストアの URL で、次の例のような ID 番号を検索します: */id875948587?mt=8*
+    1. È possibile trovare il numero ID nell'URL di iTunes Store, ad esempio */id875948587?mt=8*
 
-    2. Web ブラウザーで次の URL に移動し、ID 番号をさきほど検索した ID 番号 (ここでは上記の例) に置換えます: https://itunes.apple.com/lookup?id=875948587
+    2. In un Web browser digitare l'URL seguente sostituendo il numero con il numero ID appena rilevato (in questo caso l'esempio precedente): https://itunes.apple.com/lookup?id=875948587
 
-    3. テキスト ファイルをダウンロードして開きます。
+    3. Scaricare e aprire il file di testo.
   
-    4. ”**bundleid**" というテキストを検索します。
+    4. Cercare il testo **bundleId**.
 
-    アプリ ID の例: "*bundleId*":"*com.companyname.appname*" 
+    Esempio di ID app: "*bundleId*":"*com.companyname.appname*" 
 

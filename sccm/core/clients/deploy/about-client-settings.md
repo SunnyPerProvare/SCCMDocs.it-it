@@ -1,6 +1,6 @@
 ---
-title: "クライアント設定 | Microsoft Docs"
-description: "System Center Configuration Manager の管理コンソールを使って、クライアント設定を選びます。"
+title: Impostazioni client | Documentazione Microsoft
+description: Scegliere le impostazioni client tramite la console di System Center Configuration Manager.
 ms.custom: na
 ms.date: 08/01/2017
 ms.prod: configuration-manager
@@ -18,652 +18,652 @@ manager: angrobe
 ms.openlocfilehash: a8233c361e1a78b14a02f328da445814624e38d8
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="about-client-settings-in-system-center-configuration-manager"></a>System Center Configuration Manager のクライアント設定について
+# <a name="about-client-settings-in-system-center-configuration-manager"></a>Informazioni sulle impostazioni client in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager のすべてのクライアント設定は、Configuration Manager コンソールの **[管理]** ワークスペースの **[クライアント設定]** ノードから管理できます。 Configuration Manager には、一連の既定の設定が用意されています。 既定のクライアント設定を変更すると、変更された設定が階層内のすべてのクライアントに適用されます。 カスタムのクライアント設定も構成でき、これらの設定をコレクションに割り当てると、既定のクライアント設定よりも優先されます。 クライアント設定の構成方法については、「 [How to configure client settings in System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md)」を参照してください。  
+Tutte le impostazioni client di System Center Configuration Manager vengono gestite nella console di Configuration Manager nel nodo **Impostazioni client** dell'area di lavoro **Amministrazione**. Con Configuration Manager viene specificato un set di impostazioni predefinite. Quando si modificano le impostazioni client predefinite, tali impostazioni vengono applicate a tutti i client nella gerarchia. È inoltre possibile configurare le impostazioni client personalizzate, che sostituiscono le impostazioni client predefinite quando le si assegnano a raccolte. Per altre informazioni su come configurare le impostazioni client, vedere [How to configure client settings in System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).  
 
-クライアント設定の多くはまさにその名のとおりです。 ここでは、それ以外について説明します。  
+Molte delle impostazioni client non necessitano di spiegazione. Altre sono descritte qui.  
 
-## <a name="background-intelligent-transfer-service"></a>バックグラウンド インテリジェント転送サービス  
+## <a name="background-intelligent-transfer-service"></a>Servizio trasferimento intelligente in background  
 
--   **[BITS バックグラウンド転送の最大ネットワーク帯域幅を制限する]**  
+-   **Limitare la larghezza di banda di rete massima per i trasferimenti in background BITS**  
 
-   このオプションを **[True]** または **[はい]** にすると、クライアントは BITS 帯域幅調整を使います。  
+   Quando questa opzione è **True** o **Sì**, i client usano la limitazione della larghezza di banda BITS.  
 
--   **[調整期間の開始時間]**  
+-   **Ora di inizio dell'intervallo di limitazione**  
 
-   BITS 調整期間の開始時刻 (ローカル時刻) を指定します。  
+   Specificare l'ora di inizio locale per l'intervallo di limitazione BITS.  
 
--   **[調整期間の終了時間]**  
+-   **Ora di fine dell'intervallo di limitazione**  
 
-   BITS 調整期間の終了時刻 (ローカル時刻) を指定します。 **[調整期間の開始時間]** と同じ場合、BITS 調整は常に有効になります。  
+   Specificare l'ora di fine locale per l'intervallo di limitazione BITS. Se il valore è lo stesso di **Ora di inizio dell'intervallo di limitazione**, la limitazione BITS è sempre abilitata.  
 
--   **[調整期間内の最大転送速度 (Kbps)]**  
+-   **Velocità massima di trasferimento durante l'intervallo di limitazione (Kbps)**  
 
-   クライアントが調整期間中に使うことができる最大転送速度を指定します。  
+   Specificare la velocità massima di trasferimento che i client possono usare durante l'intervallo.  
 
--   **[調整期間外に BITS ダウンロードを許可する]**  
+-   **Consentire i download BITS all'esterno dell'intervallo di limitazione**  
 
-   このオプションを選ぶと、Configuration Manager クライアントは調整期間外に個別の BITS 設定を使うことができます。  
+   Scegliere questa opzione per consentire ai client di Configuration Manager di usare impostazioni BITS separate fuori dall'intervallo specificato.  
 
--   **[調整期間外の最大転送速度 (Kbps)]**  
+-   **Velocità massima di trasferimento all'esterno dell'intervallo di limitazione (Kbps)**  
 
-   調整期間外の BITS 調整の許可を選択した場合に、BITS 調整期間外にクライアントが使う最大転送速度を指定します。  
+   Specificare la velocità massima di trasferimento usata dai client fuori dall'intervallo di limitazione BITS, se è stata selezionata l'opzione che consente la limitazione BITS all'esterno dell'intervallo.  
 
-## <a name="client-cache-settings"></a>クライアント キャッシュ設定
+## <a name="client-cache-settings"></a>Impostazioni della cache dei client
 
-- **BranchCache の構成**
+- **Configura BranchCache**
 
-  バージョン 1606 以降で、クライアント コンピューターを [BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#branchcache) 用に設定するには、この設定を使います。 クライアントで BranchCache のキャッシュを許可する場合は、**[BranchCache の有効化]** を **[はい]** に設定します。
+  A partire dalla versione 1606, questa opzione viene usata per configurare il computer client per [BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#branchcache). Per consentire la memorizzazione nella cache BranchCache nel client, impostare **Abilita BranchCache** su **Sì**.
 
-- **BranchCache の有効化**
+- **Abilita BranchCache**
 
-クライアント コンピューターで BranchCache を有効にします。
+Abilita BranchCache nei computer client.
 
-- **BranchCache キャッシュの最大サイズ (ディスクに占める割合)**
+- **Dimensioni massime della cache BranchCache (percentuale del disco)**.
 
-- **クライアント キャッシュ サイズの構成**
+- **Configurare la dimensione della cache client**
 
-  Windows コンピューターのクライアント キャッシュには、アプリケーションとプログラムのインストールに使用する一時ファイルが格納されます。 **[はい]** を選択し、次を指定します。
-    - **最大キャッシュ サイズ** (メガバイト)。 
-    - **最大キャッシュ サイズ** (ディスクの割合)
-クライアントのキャッシュ サイズは、最大サイズの MB またはディスク容量の割合 **(いずれか少ない方)** まで拡張できます。 このオプションを **[いいえ]** にすると、既定サイズの 5,120 MB になります。
+  Nei computer Windows la cache client archivia i file temporanei usati per installare applicazioni e programmi. Scegliere **Sì** e quindi specificare:
+    - **Dimensioni massime della cache** (MB). 
+    - **Dimensioni massime della cache** (percentuale del disco).
+La cache client può raggiungere la dimensione massima consentita in MB o in percentuale del disco, adeguandosi **al valore che risulta inferiore**. Se questa opzione è impostata su **No**, il valore predefinito è 5.120 MB.
 
-- **完全な OS 上の Configuration Manager クライアントでコンテンツを共有できるようにする**
+- **Abilita il client di Configuration Manager nell'intero sistema operativo per condividere i contenuti**
 
-Configuration Manager クライアントのピア キャッシュを有効にします。 次に、クライアントがピア コンピューターと通信するためのポート情報を指定します。 Configuration Manager はこのトラフィックを許可する Windows Firewall ルールを自動構成します。 別のファイアウォールを使用する場合、このトラフィックを許可するように手動でルールを構成する必要があります。
-
-
+Abilita la peer cache per i client di Configuration Manager. Specificare quindi le informazioni relative alla porta attraverso la quale il client comunica con il computer peer. Configuration Manager configurerà automaticamente le regole di Windows Firewall in modo che questo tipo di traffico sia consentito. Se si usa un firewall diverso, è necessario configurare le regole manualmente.
 
 
-## <a name="client-policy"></a>クライアント ポリシー  
 
--   **[クライアント ポリシーのポーリング間隔 (分)]**  
 
-   次の Configuration Manager クライアントがクライアント ポリシーをダウンロードする頻度を指定します。  
+## <a name="client-policy"></a>Criteri client  
 
-  -   Windows コンピューター (デスクトップ、サーバー、ラップトップなど)  
+-   **Intervallo di polling dei criteri client (minuti)**  
 
-  -   Configuration Manager で登録されるモバイル デバイス  
+   Specificare la frequenza con cui i client seguenti di Configuration Manager scaricano criteri client:  
 
-  -   Mac コンピューター  
+  -   Computer Windows (ad esempio, desktop, server, portatili)  
 
-  -   Linux または UNIX を実行しているコンピューター  
+  -   Dispositivi mobili registrati da Configuration Manager  
 
--   **クライアント上でのユーザー ポリシーのポーリングを有効にする**  
+  -   Computer Mac  
 
-   このオプションを **[True]** または **[はい]** に設定した場合、Configuration Manager が[ユーザーを検出](../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutUser)すると、コンピューター上のクライアントが、そのログオン ユーザーを対象としたアプリケーションとプログラムを受け取ります。  
+  -   Computer con sistema operativo Linux o UNIX  
 
-   アプリケーション カタログが、サイト サーバーからユーザーが利用可能なソフトウェアの一覧を受け取るので、アプリケーション カタログからユーザーがアプリケーションを表示、要求するために、この設定を **[True]** または **[はい]** にする必要はありません。 ただし、この設定が **[False]** または **[いいえ]** の場合は、ユーザーがアプリケーション カタログを使うと次のようになります。  
+-   **Abilitare il polling dei criteri utente sui client**  
 
-  -   アプリケーション カタログに表示されているアプリケーションはインストールできません。  
+   Quando questa opzione viene impostata su **True** o **Sì** e Configuration Manager [ha individuato l'utente](../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutUser), i client nei computer ricevono applicazioni e programmi destinati all'utente che ha eseguito l'accesso.  
 
-  -   ユーザーに、各自のアプリケーション承認要求に関する通知が表示されません。 その代わりに、ユーザーはアプリケーション カタログを更新して承認ステータスを確認する必要があります。  
+   Poiché il Catalogo applicazioni riceve l'elenco del software disponibile per gli utenti dal server del sito, questa impostazione non deve essere configurata su **True** o **Sì** affinché gli utenti visualizzino e richiedano le applicazioni dal Catalogo applicazioni. Tuttavia, se tale impostazione è **False** o **No**, quanto segue non funzionerà quando gli utenti useranno il Catalogo applicazioni:  
 
-  -   ユーザーは、アプリケーション カタログに発行されるアプリケーションのリビジョンおよび更新を受け取りません。 ただし、ユーザーにはアプリケーション カタログのアプリケーション変更情報が表示されます。  
+  -   Gli utenti non possono installare le applicazioni che vedono nel Catalogo applicazioni.  
 
-  -   アプリケーション カタログからクライアントにアプリケーションをインストールした後でアプリケーション展開を削除した場合、クライアントはアプリケーションがインストールされていることを最長 2 日間チェックします。  
+  -   Gli utenti non visualizzeranno le notifiche relative alle richieste di approvazione delle applicazioni. Al contrario, devono aggiornare il Catalogo applicazioni e verificare lo stato di approvazione.  
 
-   また、この設定が **[False]** または **[いいえ]** の場合、ユーザーは、ユーザーに展開される必要なアプリケーションや、ユーザー ポリシーの他の管理タスクを受け取りません。  
+  -   Gli utenti non riceveranno revisioni e aggiornamenti per le applicazioni che vengono pubblicate nel Catalogo applicazioni. Visualizzeranno però le modifiche alle informazioni sulle applicazioni nel Catalogo applicazioni.  
 
-   この設定は、ユーザーのコンピューターがイントラネットおよびインターネットに接続されているときに適用されます。 インターネットでもユーザー ポリシーを有効にする場合は、**[True]** または **[はい]** にする必要があります。  
+  -   Se si rimuove la distribuzione di un'applicazione dopo che il client ha installato l'applicazione dal catalogo applicazioni, i client continuano a controllare che l'applicazione sia installata per un periodo di tempo fino a 2 giorni.  
 
--   **インターネット クライアントからのユーザー ポリシー要求を有効にする**  
+   Quando questa impostazione è **False** o **No**, gli utenti non riceveranno le applicazioni richieste che si distribuiscono agli utenti o qualsiasi altra attività di gestione inclusa nei criteri utente.  
 
-   クライアントとサイトがインターネットベースのクライアント管理向けに構成されていて、このオプションを **[True]** または **[はい]** に設定した場合、次の両方の条件が当てはまると、ユーザーはコンピューターがインターネット上にあるときにユーザー ポリシーを受け取ります。  
+   Questa impostazione si applica agli utenti i cui computer si trovino nell'intranet e su Internet. Deve essere **True** o **Sì** se si vogliono abilitare i criteri utente anche su Internet.  
 
-  -   クライアント設定 **[クライアント上でのユーザー ポリシーのポーリングを有効にする]** が **[True]** に設定されている、**[クライアントでユーザー ポリシーを有効にする]** が **[はい]** に設定されている。  
+-   **Abilitare le richieste dei criteri utente dai client Internet**  
 
-  -   インターネットベースの管理ポイントが、Windows 認証 (Kerberos または NTLM) を使用してユーザーを正しく認証している。  
+   Quando il client e il sito sono configurati per la gestione client basata su Internet e si configura questa opzione su **True** o **Sì** e si applicano entrambe le condizioni seguenti, gli utenti ricevono i criteri utente quando il loro computer si trova su Internet:  
 
-   このオプションを **[False]** または **[いいえ]** のままにしている場合、またはいずれかの条件が当てはまらない場合は、インターネット上のコンピューターはコンピューター ポリシーのみ受け取ります。 この場合は、ユーザーは、インターネットベースのアプリケーション カタログからアプリケーションを表示、要求、およびインストールできます。 この設定が **[False]** または **[いいえ]** に設定されていて、**[クライアント上でのユーザー ポリシーのポーリングを有効にする]** が **[True]** に設定されているか、**[クライアントでユーザー ポリシーを有効にする]** が **[はい]**に設定されている場合は、コンピューターがイントラネットに接続されるまでユーザーはユーザー ポリシーを受け取りません。  
+  -   L'impostazione client **Abilitare il polling dei criteri utente sui client** è impostata su **True** o **Abilitare i criteri utente nei client** è impostata su **Sì**.  
 
-   インターネットでのクライアント管理の詳細については、「[System Center Configuration Manager でのエンドポイント間の通信](../../../core/plan-design/hierarchy/communications-between-endpoints.md)」の「[インターネットや信頼されていないフォレストからのクライアント通信に関する考慮事項](../../../core/plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan)」を参照してください。  
+  -   Il punto di gestione basato su Internet autentica automaticamente l'utente usando l'autenticazione di Windows (Kerberos o NTLM).  
+
+   Se si lascia l'opzione impostata su **False** o **No** o una delle due condizioni non viene soddisfatta, quando il computer è connesso a Internet riceverà solo i criteri computer. In questo scenario, gli utenti possono comunque visualizzare, richiedere e installare applicazioni da un Catalogo applicazioni basato su Internet. Se questa impostazione è **False** o **No** ma **Abilitare il polling dei criteri utente sui client** è configurato su **True** o **Abilitare i criteri utente nei client** è configurato su **Sì**, gli utenti non riceveranno i criteri client finché il computer non sarà connesso alla intranet.  
+
+   Per altre informazioni sulla gestione client in Internet, vedere [Considerazioni per le comunicazioni client da Internet o da una foresta non attendibile](../../../core/plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan) in  [Comunicazioni tra gli endpoint in System Center Configuration Manager](../../../core/plan-design/hierarchy/communications-between-endpoints.md).  
 
   > [!NOTE]  
-  >  ユーザーからのアプリケーションの承認要求には、ユーザー ポリシーまたはユーザー認証は必要ありません。  
+  >  Le richieste di approvazione dell'applicazione da parte degli utenti non richiedono criteri utente o l'autenticazione dell'utente.  
 
-##  <a name="compliance-settings"></a>コンプライアンス設定  
+##  <a name="compliance-settings"></a>Impostazioni di conformità  
 
--   **[コンプライアンスの評価スケジュールを設定する]**  
+-   **Valutazione di conformità della pianificazione**  
 
-     ユーザーが構成基準を展開するときにユーザーに対して表示される既定のスケジュールを作成するには、**[スケジュール]** を選びます。 この値は、[構成基準の展開 **** ] ダイアログ ボックスで、基準ごとに構成できます。  
+     Scegliere **Pianifica** per creare la pianificazione predefinita visualizzata dagli utenti quando distribuiscono una linea di base di configurazione. Questo valore può essere configurato per ogni linea di base nella finestra di dialogo **Linea di base configurazione distribuzione** .  
 
--   **[ユーザー データとプロファイルを有効にする]**  
+-   **Abilitare i dati e profili utente**  
 
-     [ユーザー データとプロファイル](../../../compliance/deploy-use/create-user-data-and-profiles-configuration-items.md)の構成項目を階層内の Windows 8 コンピューターに展開する場合は、**[はい]** を選びます。  
+     Scegliere **Sì** se si vuole distribuire elementi di configurazione di [dati e profili utente](../../../compliance/deploy-use/create-user-data-and-profiles-configuration-items.md) a computer con Windows 8 nella gerarchia.  
 
-## <a name="computer-agent"></a>コンピューター エージェント  
+## <a name="computer-agent"></a>Agente computer  
 
--   **既定のアプリケーション カタログ Web サイト ポイント**  
+-   **Punto per siti Web del Catalogo applicazioni predefinito**  
 
-     Configuration Manager は、この設定を使用して、ソフトウェア センターからアプリケーション カタログにユーザーを接続します。 アプリケーション カタログ Web サイト ポイントをホストするサーバーを NetBIOS 名または FQDN で指定したり、自動検出を指定したり、カスタマイズされた展開の URL を指定したりできます。 ほとんどの場合、次の利点のために自動検出が推奨されます。  
+     Configuration Manager usa questa impostazione per connettere gli utenti al Catalogo applicazioni dal Software Center. È possibile specificare un server che ospiti il punto per siti Web del catalogo applicazioni per nome NetBIOS o FQDN, specificare il rilevamento automatico o un URL per distribuzioni personalizzate. Nella maggior parte dei casi, il rilevamento automatico è la scelta migliore in quanto offre i seguenti vantaggi:  
 
-    -   サイトにアプリケーション カタログ Web サイト ポイントがある場合、サイトのアプリケーション カタログ Web サイト ポイントが自動的にクライアントに付与されます。  
+    -   Ai client viene assegnato automaticamente un punto per siti Web del Catalogo applicazioni dal relativo sito, se il sito ha un punto per siti Web del Catalogo applicazioni.  
 
-    -   HTTPS 向けに構成されているイントラネット上のアプリケーション カタログ Web サイト ポイントは、HTTPS 向けに構成されていない Web サイト ポイントより優先されます。 これは、偽のサーバーからの保護に役立ちます。
+    -   Ai punti per siti Web del Catalogo applicazioni sull'intranet configurati per HTTPS viene data la preferenza rispetto ai punti che non sono configurati per HTTPS. Ciò consente la protezione da server non autorizzati.
 
-    -   クライアントがイントラネットベースおよびインターネットベースのクライアント管理向けに構成されている場合、ユーザーがインターネット上にある場合はインターネットベースのアプリケーション カタログ Web サイト ポイントが付与され、イントラネット上にある場合はイントラネットベースのアプリケーション カタログ Web ポイントが付与されます。  
+    -   Ai client configurati per la gestione client basata su Internet e intranet, viene assegnato un punto per siti Web del Catalogo applicazioni basato su Internet quando si trovano su Internet e un punto per siti Web del Catalogo applicazioni basato su intranet quando si trovano sulla intranet.  
 
-     自動検出では、クライアントに最も近いアプリケーション カタログ Web サイト ポイントがクライアントに付与されるとは限りません。 次の理由から、[自動検出] を使用しない場合があります。 ****  
+     Il rilevamento automatico non garantisce che ai client verrà assegnato il punto per siti Web del Catalogo applicazioni più vicino. Si potrebbe decidere di non usare **Rileva automaticamente** per i seguenti motivi:  
 
-     -   クライアントに最も近いサーバーを手動で構成する必要がある、または低速のネットワーク接続経由でクライアントがサーバーに接続しないようにする必要がある。  
+     -   Si desidera configurare manualmente il server più vicino per il client o assicurarsi che non si connettano a un server con una connessione di rete lenta.  
 
-     -   各クライアントがどのサーバーに接続するのかを制御する必要がある。 この構成は、テスト、パフォーマンス、またはビジネス上の理由から行われることがあります。  
+     -   Si desidera controllare quali client si connettono a quale server. Questa configurazione può essere usata a scopo di test, per migliorare le prestazioni o per motivi aziendali.  
 
-     -   最長 25 時間、つまり、別のアプリケーションカタログ Web サイト ポイントでクライアントに対してネットワークの変更が構成されるまで、待つのを避けたい。  
+     -   Non si desidera aspettare fino a 25 ore o una modifica di rete affinché i client vengano configurati con un punto per siti Web del Catalogo applicazioni diverso.  
 
-     自動検出を使うのではなくアプリケーション カタログ Web サイト ポイントを指定する場合は、イントラネット FQDN ではなく NetBIOS 名を指定します。 これは、ユーザーがイントラネットのアプリケーション カタログに接続するときに資格情報の入力を求められる可能性を低くするのに役立ちます。 NetBIOS 名を使用するには、次の条件が当てはまる必要があります。  
+     Se si specifica il punto per siti Web del Catalogo applicazioni invece di usare il rilevamento automatico, specificare il nome NetBIOS invece del valore FQDN dell'intranet. Ciò consente di ridurre la probabilità che agli utenti vengano richieste le credenziali quando si connettono al Catalogo applicazioni sulla intranet. Per usare il nome NetBIOS, è necessario che siano applicabili le seguenti condizioni:  
 
-     -   NetBIOS 名がアプリケーション カタログ Web サイト ポイントのプロパティに指定されている。  
+     -   Il nome NetBIOS viene specificato nelle proprietà del punto per siti Web del Catalogo applicazioni.  
 
-     -   WINS を使っているか、すべてのクライアントがアプリケーション カタログ Web サイト ポイントと同じドメインに属している。  
+     -   Si usa WINS oppure tutti i client si trovano nello stesso dominio del punto per siti Web del Catalogo applicazioni.  
 
-     -   アプリケーション カタログ Web サイト ポイントが HTTP クライアント接続向けに構成されているか、または HTTPS クライアント接続向けに構成されており、Web サーバー証明書に NetBIOS 名が含まれている。  
+     -   Il punto per siti Web del Catalogo applicazioni è configurato per connessioni client HTTP oppure per connessioni client HTTPS e il certificato del server Web contiene il nome NetBIOS.  
 
-     通常、URL に FQDN が含まれている場合、ユーザーは資格情報の入力が求められますが、URL が NetBIOS 名の場合は、ユーザーは資格情報の入力が求められません。 ユーザーがインターネットから接続する場合は、この接続にインターネット FQDN を使用する必要があるため、ユーザーは常に資格情報の入力が求められます。 ユーザーがインターネット上にあるときに資格情報の入力を求める場合は、Kerberos を使用してユーザーを認証できるように、アプリケーション カタログ Web サイト ポイントを実行するサーバーがそのユーザー アカウントのドメイン コントローラーに接続できることを確認します。  
-
-    > [!NOTE]  
-    >  自動検出のしくみ  
-    >   
-    >  クライアントが、管理ポイントへのサービス探索要求を作成します。 クライアントと同じサイトにアプリケーション カタログ Web サイト ポイントがある場合、使用するアプリケーション カタログとしてこのサーバーがクライアントに付与されます。 サイトで複数のアプリケーション カタログ Web サイト ポイントを使うことができる場合、HTTPS 対応のサーバーが HTTPS に対応していないサーバーより優先されます。 このフィルタリングの後で、アプリケーション カタログとして使用するサーバーの 1 つがすべてのクライアントに対して付与されます。Configuration Manager は、複数のサーバー間で負荷分散を行いません。 クライアントのサイトにアプリケーション カタログ Web サイト ポイントが含まれていない場合、管理ポイントは、階層からアプリケーション カタログ Web サイト ポイントを特定せずに返します。  
-    >   
-    >  クライアントがイントラネット上にある場合、選択されたアプリケーション カタログ Web サイト ポイントは NetBIOS を使用してアプリケーション カタログの URL 用に構成され、イントラネット FQDN ではなくこの NetBIOS 名がクライアントに付与されます。 クライアントがインターネット上にあることが検出された場合は、インターネット FQDN のみクライアントに付与されます。  
-    >   
-    >  クライアントは、25 時間ごとまたはネットワークの変更を検出するたびに、このサービス探索要求を作成します。 たとえば、クライアントがイントラネットからインターネットに移動すると、このクライアントはインターネットベースの管理ポイントを見つけることができ、インターネットベースの管理ポイントからインターネットベースのアプリケーション カタログ Web サイト ポイント サーバーが提供されます。  
-
--   **[既定のアプリケーション カタログ Web サイトを Internet Explorer の信頼済みサイト ゾーンに追加する]**  
-
-     このオプションが **[True]** または **[はい]** の場合、現在の既定のアプリケーション カタログ Web サイトの URL がクライアントの Internet Explorer の信頼済みサイト ゾーンに自動的に追加されます。  
-
-     この設定では、Internet Explorer の保護モードの設定が有効になっていない必要があります。 保護モードが有効になっていると、Configuration Manager クライアントがアプリケーション カタログからアプリケーションをインストールできない可能性があります。 既定では、信頼済みサイト ゾーンは、Windows 認証が必要なアプリケーション カタログへのユーザー ログオンもサポートしています。  
-
-     このオプションを **[False]** のままにすると、Configuration Manager クライアントが使用するアプリケーション カタログの URL に応じて別のゾーンに Internet Explorer の設定を構成しない限り、そのクライアントはアプリケーション カタログからアプリケーションをインストールできなくなる可能性があります。  
+     In genere, agli utenti vengono richieste le credenziali quando l'URL contiene un FQDN, ma non quando l'URL è un nome NetBIOS. Agli utenti verrà sempre richiesto quando si connettono da Internet, poiché questa connessione deve usare l'FQDN Internet. Quando agli utenti vengono richieste le credenziali quando si trovano su Internet, assicurarsi che il server su cui è in esecuzione il punto per siti Web del Catalogo applicazioni possa connettersi a un controller di dominio per l'account dell'utente cosicché l'utente possa essere autenticato con Kerberos.  
 
     > [!NOTE]  
-    >  Configuration Manager が信頼済みサイト ゾーンに既定のアプリケーション カタログを追加するたびに、Configuration Manager は、新しいエントリを追加する前に、Configuration Manager が追加した以前の既定のアプリケーション カタログの URL を削除します。  
+    >  Funzionamento del rilevamento automatico:  
     >   
-    >  URL がいずれかのセキュリティ ゾーンに既に指定されている場合、Configuration Manager はその URL を追加することはできません。 この場合は、他のゾーンからその URL を削除するか、必要な Internet Explorer 設定を手動で構成する必要があります。  
+    >  Il client effettua una richiesta di posizione del servizio a un punto di gestione. Se nello stesso sito del client c'è un punto per siti Web del Catalogo applicazioni, tale server viene assegnato al client come server del Catalogo applicazioni da usare. Quando nel sito è disponibile più di un punto per siti Web del Catalogo applicazioni, un server abilitato per HTTPS ha la precedenza su un server non abilitato per HTTPS. Dopo l'applicazione di questo filtro, a tutti i client viene assegnato uno dei server da usare come Catalogo applicazioni; Configuration Manager non bilancia il carico tra più server. Quando il sito del client non contiene un punto per siti Web del Catalogo applicazioni, il punto di gestione restituisce in modo non deterministico un punto per siti Web del Catalogo applicazioni dalla gerarchia.  
+    >   
+    >  Quando il client si trova sulla intranet, se il punto per siti Web del Catalogo applicazioni selezionato è configurato con un nome NetBIOS per l'URL del Catalogo applicazioni, ai client viene assegnato questo nome NetBIOS invece del valore FQDN dell'intranet. Quando il client viene rilevato su Internet, gli viene assegnato solo l'FQDN Internet.  
+    >   
+    >  Il client effettua questa richiesta di posizione del servizio ogni 25 ore oppure ogni volta che rileva una modifica di rete. Ad esempio, se il client di sposta dalla intranet su Internet e il client può individuare un punto di gestione basato su Internet, tale punto assegna i server del punto per siti Web del Catalogo applicazioni ai client.  
 
--   **[Silverlight アプリケーションが管理者特権での信頼モードで実行されることを許可する]**  
+-   **Aggiungere il sito Web del Catalogo applicazioni predefinito all'area siti attendibili di Internet Explorer**  
 
-     この設定は、ユーザーが Configuration Manager クライアントを実行し、アプリケーション カタログを使用する場合、**[はい]** にする必要があります。  
+     Se questa opzione è impostata su **True** o **Sì**, l'URL del sito Web del Catalogo applicazioni corrente predefinito viene automaticamente aggiunto all'area siti attendibili di Internet Explorer nei client.  
 
-     この設定を変更すると、次にユーザーがブラウザーを読み込むか、現在開いているブラウザー ウィンドウを更新したときに、有効になります。  
+     Questa impostazione garantisce che l'impostazione di Internet Explorer in modalità protetta non sia abilitata. Se la modalità protetta è abilitata, il client di Configuration Manager potrebbe non essere in grado di installare applicazioni dal Catalogo applicazioni. Per impostazione predefinita, l'area siti attendibili supporta inoltre l'accesso utente per il Catalogo applicazioni, il che richiede l'autenticazione di Windows.  
 
-     この設定の詳細については、「[System Center Configuration Manager のアプリケーション管理のセキュリティとプライバシー](../../../apps/plan-design/security-and-privacy-for-application-management.md)」の「[Microsoft Silverlight 5 用の証明書、およびアプリケーション カタログに必要な管理者特権での信頼モード](../../../apps/plan-design/security-and-privacy-for-application-management.md#BKMK_CertificatesSilverlight5)」を参照してください。  
+     Se si lascia questa opzione impostata su **False**, i client di Configuration Manager potrebbero non essere in grado di installare applicazioni dal Catalogo applicazioni a meno che queste impostazioni di Internet Explorer non siano configurate in un'altra area per l'URL del Catalogo applicazioni usata dai client.  
 
--   **ソフトウェア センターに表示される組織名**  
+    > [!NOTE]  
+    >  Ogni volta che Configuration Manager aggiunge un Catalogo applicazioni predefinito all'area siti attendibili, rimuove un URL del Catalogo applicazioni precedentemente predefinito e aggiunto prima di aggiungere una nuova voce.  
+    >   
+    >  Configuration Manager non può aggiungere l'URL se è già specificato in una delle aree di sicurezza. In questo scenario è necessario rimuovere l'URL dall'altra area o configurare manualmente le impostazioni di Internet Explorer richieste.  
 
-     ソフトウェア センターでユーザーに表示する名前を入力します。 このブランド情報によって、ユーザーはこのアプリケーションを信頼されるソースとして特定できます。  
+-   **Consentire l'esecuzione in modalità di attendibilità elevata delle applicazioni Silverlight**  
 
--   **新しいソフトウェア センターの使用**  
+     Questa impostazione deve essere impostata su **Sì** se gli utenti eseguono il client di Configuration Manager e usano il Catalogo applicazioni.  
 
-     有効にすると、これらのクライアント設定の対象となるすべてのクライアント コンピューターは、新しいソフトウェア センターを使います。 ソフトウェア センターでは、以前は Silverlight に依存するアプリケーション カタログ内だけでアクセスできた、ユーザーが利用できるアプリが表示されます。  
+     L'eventuale modifica di questa impostazione ha effetto al successivo caricamento del browser o aggiornamento della finestra del browser attualmente aperta da parte degli utenti.  
 
-     ユーザーが利用できるアプリをソフトウェア センターに表示するには、アプリケーション カタログ Web サイト ポイントとアプリケーション カタログ Web サービス ポイントのサイト システムの役割が引き続き必要です。  
+     Per altre informazioni su questa impostazione, vedere [Certificati per Microsoft Silverlight 5 e modalità attendibile elevata richiesta per il Catalogo applicazioni](../../../apps/plan-design/security-and-privacy-for-application-management.md#BKMK_CertificatesSilverlight5) in [Sicurezza e privacy per la gestione di applicazioni in System Center Configuration Manager](../../../apps/plan-design/security-and-privacy-for-application-management.md).  
 
-     詳細については、「[System Center Configuration Manager のアプリケーション管理の計画と構成](../../../apps/plan-design/plan-for-and-configure-application-management.md)」を参照してください。  
+-   **Nome organizzazione visualizzato in Software Center**  
 
--   **インストール権限**  
+     Digitare il nome visualizzato dagli utenti in Software Center. Queste informazioni di personalizzazione consentono agli utenti di identificare questa applicazione come origine attendibile.  
 
-    > [!WARNING]  
-    >  この設定は、アプリケーション カタログとソフトウェア センターに適用されます。 この設定は、ユーザーが会社ポータルを使用するときには効果を持ちません。  
+-   **Usa il nuovo Software Center**  
 
-     ソフトウェア、ソフトウェア更新プログラム、およびタスク シーケンスのインストールをユーザーがどのように開始するのかを構成します。  
+     Se abilitata, tutti i computer client associati a queste impostazioni client useranno il nuovo Software Center. Software Center visualizza le applicazioni utente disponibili che precedentemente erano accessibili solo nel Catalogo applicazioni dipendente da Silverlight.  
 
-    -   **すべてのユーザー**: ゲスト以外のすべての権限を使用してクライアント コンピューターにログオンしたユーザーが、ソフトウェア、ソフトウェア更新プログラム、およびタスク シーケンスのインストールを開始できます。  
+     I ruoli del sistema del sito del punto per siti Web del Catalogo applicazioni e del punto per servizi Web del Catalogo applicazioni continuano a essere necessari per visualizzare le app disponibili per gli utenti in Software Center.  
 
-    -   **管理者のみ**: クライアント コンピューターにログオンしたユーザーが、ソフトウェア、ソフトウェア更新プログラム、およびタスク シーケンスのインストールを開始するには、ローカル Administrators グループのメンバーである必要があります。  
+     Per altre informazioni, vedere [Pianificare e configurare la gestione delle applicazioni in System Center Configuration Manager](../../../apps/plan-design/plan-for-and-configure-application-management.md).  
 
-    -   **管理者とプライマリ ユーザーのみ**: クライアント コンピューターにログオンしたユーザーが、ソフトウェア、ソフトウェア更新プログラム、およびタスク シーケンスのインストールを開始するには、ローカルの Administrators グループのメンバーであるか、コンピューターのプライマリ ユーザーである必要があります。  
-
-    -   **ユーザー以外**: クライアント コンピューターにログオンしたユーザーは、ソフトウェア、ソフトウェア更新プログラム、およびタスク シーケンスのインストールを開始できません。 コンピューターに必須の展開は、期限になると必ずインストールされます。 アプリケーション カタログまたはソフトウェア センターからのソフトウェアのインストールをユーザーが開始することはできません。  
-
--   **[再起動時の BitLocker PIN の入力を一時停止する]**  
-
-     コンピューターに BitLocker PIN の入力が構成されている場合、このオプションによって、ソフトウェアのインストール後にコンピューターを再起動するときに PIN 入力の要件をバイパスできます。  
-
-    -   **常時**: Configuration Manager は再起動が必要なソフトウェアのインストールを実行してコンピューターを再起動した後に、BitLocker を一時的に停止させます。 この設定は、Configuration Manager によって開始されるコンピューターの再起動にのみ適用され、ユーザーがコンピューターを再起動する場合は、BitLocker PIN の入力の要件は一時停止されません。 BitLocker PIN の入力要件は、Windows の起動後に再開されます。
-
-    -   **なし**: Configuration Manager は、再起動が必要なソフトウェアをインストールした後で、コンピューターの次回起動時に BitLocker を一時停止しません。 この場合は、ユーザーが PIN を入力して標準の起動プロセスを完了し、Windows を読み込むまで、ソフトウェアのインストールを終了できません。
-
--   **追加のソフトウェアでアプリケーションとソフトウェア更新プログラムの展開を管理します**  
-
-     このオプションは、次の条件のいずれかが当てはまる場合のみ有効にします。  
-
-    -   この設定を有効にする必要があるベンダー ソリューションを使用している。  
-
-    -   Configuration Manager Software Development Kit (SDK) を使用して、クライアント エージェントの通知、アプリケーションのインストール、およびソフトウェア更新プログラムのインストールを管理している。  
+-   **Autorizzazioni di installazione**  
 
     > [!WARNING]  
-    >  これらの条件のいずれも当てはまらない場合にこのオプションを選択すると、ソフトウェア更新プログラムと必要なアプリケーションがクライアントにインストールされません。 この設定によって、ユーザーがアプリケーション カタログからアプリケーションをインストールできなくなったり、パッケージ、プログラム、およびタスク シーケンスをクライアント コンピューターにインストールできなくなったりするということはありません。  
+    >  Questa impostazione è valida per il Catalogo applicazioni e Software Center. Questa impostazione non ha alcun effetto se gli utenti usano il portale aziendale.  
 
--   **PowerShell 実行ポリシー**  
+     Configurare la modalità di avvio dell'installazione del software, degli aggiornamenti software e delle sequenze attività da parte degli utenti:  
 
-     Configuration Manager クライアントで Windows PowerShell スクリプトを実行する方法を構成します。 これらのスクリプトは、構成項目でコンプライアンス設定を検出するときによく使用されます。 また、標準スクリプトとして展開で送信することもできます。  
+    -   **Tutti gli utenti**: gli utenti connessi a un computer client con qualsiasi autorizzazione ad eccezione di Guest possono avviare l'installazione del software, degli aggiornamenti software e delle sequenze di attività.  
 
-    -   **バイパス**: Configuration Manager クライアントは、署名されていないスクリプトを実行できるように、クライアント コンピューターの Windows PowerShell 構成をバイパスします。  
+    -   **Solo amministratori**: gli utenti connessi a un computer client devono essere membri del gruppo Administrators locale per avviare l'installazione del software, degli aggiornamenti software e delle sequenze di attività.  
 
-    -   **制限済み**: Configuration Manager クライアントは、クライアント コンピューターの現在の Windows PowerShell 構成を使います。 この構成により、署名されていないスクリプトを実行できるかどうかが決まります。  
+    -   **Solo amministratori e utenti primari**: gli utenti connessi a un computer client devono essere membri del gruppo Administrators locale o un utente primario del computer per avviare l'installazione del software, degli aggiornamenti software e delle sequenze di attività.  
 
-    -   **すべて署名済み**: Configuration Manager クライアントは、信頼された発行元によって署名されている場合にのみ、スクリプトを実行します。 この制限は、クライアント コンピューターの現在の Windows PowerShell 構成とは独立して適用されます。  
+    -   **Nessun utente**: nessun utente connesso a un computer client può avviare l'installazione del software, degli aggiornamenti software e delle sequenze di attività. Le distribuzioni richieste per il computer vengono sempre installate alla scadenza. Gli utenti non possono avviare l'installazione del software dal Catalogo applicazioni o da Software Center.  
 
-     このオプションには Windows PowerShell バージョン 2.0 以降が必要です。 既定値は **[すべて署名済み]** です。  
+-   **Sospendere immissione PIN di BitLocker al riavvio**  
+
+     Se l'immissione PIN di BitLocker è configurata sui computer, questa opzione può ignorare la richiesta di immissione di un PIN quando il computer viene riavviato dopo un'installazione software.  
+
+    -   **Sempre**: Configuration Manager sospende temporaneamente BitLocker dopo aver installato il software che richiede un riavvio e aver iniziato un riavvio del computer. Questa impostazione si applica solo a un riavvio del computer avviato da Configuration Manager e non sospende la richiesta di immissione del PIN di BitLocker quando l'utente riavvia il computer. La richiesta di immissione del PIN di BitLocker è ripristinata dopo l'avvio di Windows.
+
+    -   **Mai**: Configuration Manager non sospende BitLocker al successivo avvio del computer dopo aver installato software che richiede un riavvio. In questo scenario, l'installazione del software non può finire fino a quando l'utente immette il PIN per completare il processo di avvio e caricamento standard di Windows.
+
+-   **Il software aggiuntivo gestisce la distribuzione delle applicazioni e degli aggiornamenti software**  
+
+     Attivare questa opzione solo in presenza di una delle seguenti condizioni:  
+
+    -   Si usa una soluzione per fornitori che richiede l'abilitazione di questa impostazione.  
+
+    -   Per gestire le notifiche dell'agente client e l'installazione delle applicazioni e degli aggiornamenti software, si usa il Software Development Kit (SDK) di Configuration Manager.  
+
+    > [!WARNING]  
+    >  Se si seleziona questa opzione quando nessuna di queste condizioni è applicabile, gli aggiornamenti software e le applicazioni obbligatorie non vengono installati nei client. Questa impostazione non impedisce agli utenti di installare le applicazioni del Catalogo applicazioni o pacchetti, programmi e sequenze di attività sui computer client.  
+
+-   **Criteri di esecuzione di PowerShell**  
+
+     Configurare la modalità di esecuzione degli script di Windows PowerShell da parte dei client di Configuration Manager. Questi script sono spesso usati per il rilevamento negli elementi di configurazione per le impostazioni di conformità. Possono anche essere inviati in una distribuzione come script standard.  
+
+    -   **Ignora**: il client di Configuration Manager ignora la configurazione di Windows PowerShell nel computer client per consentire l'esecuzione degli script non firmati.  
+
+    -   **Con restrizioni**: il client di Configuration Manager usa la configurazione di Windows PowerShell corrente nel computer client. Questa configurazione determina se possono essere eseguiti script non firmati.  
+
+    -   **Tutti firmati**: il client di Configuration Manager esegue gli script solo se sono firmati da un autore attendibile. Questa restrizione si applica in modo indipendente dalla configurazione di Windows PowerShell corrente sul computer client.  
+
+     Questa opzione richiede almeno Windows PowerShell versione 2.0. Il valore predefinito è **Tutti firmati**.  
 
     > [!TIP]  
-    >  このクライアント設定によって、未署名のスクリプトの実行が失敗する場合、Configuration Manager は、このエラーを次の方法でレポートします。  
+    >  Se non è possibile eseguire gli script non firmati a causa di questa impostazione client, Configuration Manager segnala questo errore nei modi seguenti:  
     >   
-    > -   展開ステータス エラーとして、エラー ID **0X87D00327** と「**スクリプトに署名がありません**」という説明を、Configuration Manager コンソールの **[監視]** ワークスペースに表示する。  
-    > -   エラーの種類「**探索エラー**」で、エラー コード「**0X87D00327**」と説明「**スクリプトに署名がありません**」、または、エラー コード「**0X87D00320**」と説明「**スクリプトのホストがインストールされていません**」をレポートで通知する。 例: **資産の構成基準に含まれる構成項目のエラーの詳細**。  
-    > -   **Script is not signed (Error: 87D00327; Source: CCM)** ファイルにメッセージ「 **DcmWmiProvider.log** 」を記録する  
+    > -   ID errore **0X87D00327** e la descrizione di **Script non firmato** come errore di stato distribuzione nell'area di lavoro **Monitoraggio** della console di Configuration Manager.  
+    > -   I codici di errore e le descrizioni di **0X87D00327** e **Script non firmato** o **0X87D00320** e **L'host script non è stato ancora installato** con il tipo di errore **Errore di individuazione** nei report. Un esempio è **Dettagli degli errori degli elementi di configurazione in una linea di base configurazione per un asset**.  
+    > -   Il messaggio **Script is not signed (Error: 87D00327; Source: CCM)** nel file **DcmWmiProvider.log** .  
 
--   **新しい展開の通知を表示する**  
+-   **Mostra notifiche per nuove distribuzioni**  
 
-     公開されてから 1 週間未満の展開について通知を表示するには、**[はい]** を選択します。  このメッセージは、クライアント エージェントの起動時に毎回表示されます。
+     Scegliere **Sì** per visualizzare una notifica per le distribuzioni che sono rimaste disponibili per meno di una settimana.  Questo messaggio verrà visualizzato a ogni avvio dell'agente client.
 
--   **[期限のランダム化を無効にする]**  
+-   **Disabilitare sequenza casuale scadenza**  
 
-     この設定は、期限に達したときに、必要なソフトウェア更新プログラムをインストールするためのアクティブ化の待機時間 (最大 2 時間) をクライアントで使用するかどうかを指定します。 既定では、アクティブ化の待機時間は無効です。  
+     Questa impostazione determina se il client usa un ritardo di attivazione di un massimo di due ore per installare gli aggiornamenti software richiesti al raggiungimento della scadenza. Per impostazione predefinita, il ritardo di attivazione è disabilitato.  
 
-     仮想デスクトップ インフラストラクチャ (VDI) シナリオでは、この待機時間により、Configuration Manager クライアントを実行する複数のバーチャル マシンを持つコンピューターの CPU 処理とデータ転送が分散されます。 VDI を使わない場合でも、多くのクライアントで同時に同じ更新プログラムをインストールすると、サイト サーバーの CPU の使用率が増加して悪影響を及ぼす可能性があります。 また、配布ポイントの速度が低下して、使用可能なネットワーク帯域幅が大幅に減少する可能性もあります。  
+     Per gli scenari relativi all'infrastruttura VDI, questo ritardo consente di distribuire l'elaborazione della CPU e il trasferimento dei dati per un computer che ha più macchine virtuali che eseguono il client di Configuration Manager. Anche se non si usa l'infrastruttura VDI, uno scenario in cui gli stessi aggiornamenti vengono installati contemporaneamente in molti client potrebbe determinare un incremento dell'uso della CPU nel server del sito con impatto negativo. Potrebbero verificarsi anche il rallentamento dei punti di distribuzione e la riduzione significativa della larghezza di banda di rete disponibile.  
 
-     構成された期限に達したときに、待機時間なしで、必要なソフトウェア更新プログラムをインストールする必要がある場合、この設定で **[はい]** を選びます。  
+     Se gli aggiornamenti software richiesti devono essere installati senza ritardo al raggiungimento della scadenza configurata, selezionare **Sì** per questa opzione.  
 
--   **展開期限後の実施の猶予期間 (時間)**
+-   **Periodo di tolleranza per l'imposizione dopo la scadenza della distribuzione (ore)**
 
-     場合によっては、必要なアプリケーション展開またはソフトウェア更新プログラムをインストールできるように、設定期限よりも長い時間をユーザーに与える必要があります。 これは通常、コンピューターが長期間オフになっていて、多数のアプリケーションや更新プログラムの展開をインストールする必要がある場合に必要になります。 たとえば、ユーザーが休暇から戻って来たばかりの場合、期限切れのアプリケーションの展開がインストールされるまで、長時間待たなければならない場合があります。 この問題を解決するには、Configuration Manager クライアント設定をコレクションに展開することで、適用猶予期間を定義します。
+     In alcuni casi, è possibile concedere agli utenti più tempo per l'installazione di distribuzioni di applicazioni o aggiornamenti del software obbligatori, anche oltre eventuali scadenze configurate. In genere questo potrebbe essere necessario quando un computer è stato disattivato per un lungo periodo di tempo ed è necessario installare un numero elevato di distribuzioni di applicazioni o aggiornamenti. Ad esempio, se un utente è appena tornato da una vacanza, potrebbe dover attendere parecchio tempo mentre vengono installate le distribuzioni delle applicazioni scadute. Per risolvere il problema è possibile definire un periodo di tolleranza di imposizione distribuendo le impostazioni del client di Configuration Manager a una raccolta.
 
-     猶予期間は 1 ～ 120 時間の間で設定できます。 この設定は、**[ユーザー設定に従い、この展開の実施を延期する]** 展開プロパティと組み合わせて使用します。 詳細については、「[アプリケーションの展開](/sccm/apps/deploy-use/deploy-applications)」をご覧ください。
+     È possibile impostare un periodo di tolleranza compreso tra 1 e 120 ore. Questa impostazione viene usata in combinazione con la proprietà di distribuzione **Ritardare l'imposizione di questa distribuzione in base alle preferenze dell'utente**. Per altre informazioni, vedere [Distribuire le applicazioni con System Center Configuration Manager](/sccm/apps/deploy-use/deploy-applications).
 
-##  <a name="computer-restart"></a>コンピューターの再起動  
- これらのコンピューター再起動設定を指定すると、再起動の一時的な通知の間隔の値および最終カウントダウンの間隔の値を、コンピューターに適用されている最短のメンテナンス ウィンドウよりも短くできます。  
+##  <a name="computer-restart"></a>Riavvio del computer  
+ Quando si specificano queste impostazioni di riavvio del computer, assicurarsi che il valore per l'intervallo di notifica temporanea di riavvio e quello per l'intervallo del conto alla rovescia finale siano inferiori, in termini di durata, alla finestra di manutenzione più breve applicata al computer.  
 
- メンテナンス期間の詳細については、「[System Center Configuration Manager でメンテナンス期間を使用する方法](../../../core/clients/manage/collections/use-maintenance-windows.md)」を参照してください。  
+ Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione in System Center Configuration Manager](../../../core/clients/manage/collections/use-maintenance-windows.md).  
 
 ##  <a name="endpoint-protection"></a>Endpoint Protection  
 
--   **クライアント コンピューターの Endpoint Protection クライアントを管理する**  
+-   **Gestire il client Endpoint Protection nei computer client**  
 
-     階層内のコンピューター上の既存の Endpoint Protection クライアントを管理する必要がある場合は、**[True]** または **[はい]** を選びます。  
+     Scegliere **True** o **Sì** se si vuole gestire i client di Endpoint Protection esistenti nei computer della gerarchia.  
 
-     このオプションは、Endpoint Protection クライアントを既にインストールしており、Configuration Manager によってクライアントを管理する必要がある場合に選びます。  
+     Scegliere questa opzione se il client di Endpoint Protection è già installato e si vuole gestirlo con Configuration Manager.  
 
-     また、このオプションは、既存のマルウェア対策ソリューションをアンインストールするスクリプトを作成し、Endpoint Protection クライアントをインストールして、Configuration Manager アプリケーションまたはパッケージとプログラムを使ってこのスクリプトを展開する必要がある場合にも選びます。  
+     È anche possibile selezionare questa opzione se si vuole creare uno script per disinstallare una soluzione antimalware esistente, installare il client di Endpoint Protection e distribuire questo script usando un'applicazione di Configuration Manager o un pacchetto e programma.  
 
--   **[Endpoint Protection クライアントをクライアント コンピューターにインストールする]**  
+-   **Installare il client Endpoint Protection nei computer client**  
 
-     Endpoint Protection クライアントがまだインストールされていないクライアント コンピューターにクライアントをインストールして有効にする場合は、**[True]** または **[はい]** を選びます。  
+     Scegliere **True** o **Sì** per installare e abilitare il client di Endpoint Protection in computer client in cui non è già installato.  
 
     > [!NOTE]  
-    >  Endpoint Protection クライアントが既にインストールされている場合、**[False]** または **[いいえ]** を選んでも、Endpoint Protection クライアントはアンインストールされません。 Endpoint Protection クライアントをアンインストールするには、**[クライアント コンピューターの Endpoint Protection クライアントを管理する]** クライアント設定を **[False]** または **[いいえ]** に設定します。 その後、パッケージとプログラムを展開して Endpoint Protection クライアントをアンインストールします。  
+    >  Se il client di Endpoint Protection è già installato, selezionando **False** o **No** non verrà disinstallato. Per disinstallare il client di Endpoint Protection, impostare l'impostazione del client **Gestire il client Endpoint Protection nei computer client** su **False** o **No**. In seguito distribuire un pacchetto e programma per disinstallare il client di Endpoint Protection.  
 
--   **[書き込みフィルターのある Windows Embedded デバイスに対し、Endpoint Protection クライアントのインストールをコミットする (再起動が必要)]**  
+-   **Per i dispositivi con Windows Embedded con filtri di scrittura, confermare l'installazione del client di Endpoint Protection (richiesto riavvio)**  
 
-     Windows Embedded デバイスの書き込みフィルターを無効にして、デバイスを再起動するには、**[はい]** を選びます。 これにより、デバイスのインストールがコミットされます。  
+     Selezionare **Sì** per disattivare il filtro di scrittura nel dispositivo con Windows Embedded e riavviarlo. Ciò conferma l'installazione nel dispositivo.  
 
-     [ **いいえ** ] を指定すると、クライアントは一時オーバーレイにインストールされ、デバイスが再起動されるときに消去されます。 このシナリオでは、別のインストールによってデバイスに変更がコミットされない限り、Endpoint Protection クライアントはコミットされません。 これは、既定の設定です。  
+     Se viene specificato **No** , il client viene installato in una sovrapposizione temporanea che viene cancellata al riavvio del dispositivo. In questo scenario, il client di Endpoint Protection non viene confermato fino a quando un'altra installazione non conferma le modifiche al dispositivo. Questa è l'impostazione predefinita.  
 
--   **Endpoint Protection クライアントのインストール後に必要なコンピューターの再起動を抑制する**  
+-   **Evitare il riavvio necessario del computer dopo l'installazione del client Endpoint Protection**  
 
-     Endpoint Protection クライアントをインストールした後にコンピューターの再起動を抑制する必要がある場合は、**[True]** または **[はい]** を選びます。  
+     Selezionare **True** o **Sì** per evitare un riavvio del computer necessario dopo l'installazione del client di Endpoint Protection.  
 
     > [!IMPORTANT]  
-    >  Endpoint Protection クライアントでコンピューターの再起動が必要であり、この設定が **[False]** である場合は、構成されているメンテナンス ウィンドウに関係なく再起動が行われます。  
+    >  Se il client di Endpoint Protection richiede un riavvio del computer e questa impostazione è **False**, il riavvio avrà luogo indipendentemente da qualsiasi finestra di manutenzione configurata.  
 
--   **Endpoint Protection のインストールを完了するために必要な再起動をユーザーが一定の時間延期できるようにする (時間単位)**  
+-   **Periodo di tempo consentito agli utenti per rimandare un riavvio necessario per completare l'installazione di Endpoint Protection (ore)**  
 
-     Endpoint Protection クライアントのインストール後にコンピューターの再起動が必要な場合に、ユーザーが再起動を延期できる時間を指定します。 このオプションを構成できるのは、**[Endpoint Protection クライアントのインストール後に必要なコンピューターの再起動を抑制する]** オプションが **[False]** の場合のみです。  
+     Specificare il numero di ore che gli utenti possono impostare per rimandare un riavvio necessario del computer dopo l'installazione del client di Endpoint Protection. Questa opzione può essere configurata solo se l'opzione **Evitare il riavvio necessario del computer dopo l'installazione del client Endpoint Protection** è impostata su **False**.  
 
--   **[クライアント コンピューター上で定義ファイルを初めて更新する場合は、代替ソース (Microsoft Windows Update、Microsoft Windows Server Update Services、UNC 共有など) を無効にする]**  
+-   **Disattivare le origini alternative, quali Windows Update, Microsoft Windows Server Update Services o condivisioni UNC, per l'aggiornamento della definizione iniziale nei computer client**  
 
-     Configuration Manager に初期定義の更新プログラムのみをクライアント コンピューターにインストールさせる場合は、**[True]** または **[はい]** を選びます。 この設定は、定義ファイルの初回更新時に、不要なネットワーク接続を避けてネットワーク帯域幅を削減するのに役立ちます。  
+     Selezionare **True** o **Sì** se si vuole che Configuration Manager installi solo l'aggiornamento della definizione iniziale nei computer client. Questa impostazione può essere utile per evitare connessioni di rete non necessarie e ridurre la larghezza di banda durante l'installazione iniziale dell'aggiornamento della definizione.  
 
-##  <a name="hardware-inventory"></a>ハードウェア インベントリ  
+##  <a name="hardware-inventory"></a>Inventario hardware  
 
--   **カスタム MIF ファイルの最大サイズ (KB)**  
+-   **Dimensioni massime file MIF personalizzate (KB)**  
 
-     ハードウェア インベントリ サイクル中にクライアントから収集される各カスタムの各管理情報フォーマット (MIF) ファイルに対して許容される最大サイズを、キロバイト単位で指定します。 MIF ファイルがこのサイズを超える場合、Configuration Manager ハードウェア インベントリはその MIF ファイルを処理しません。 1 ～ 5,000 KB のサイズを指定できます。 既定では、この値は 250 KB に設定されます。 この設定は、通常のハードウェア インベントリ データ ファイルのサイズには影響しません。  
-
-    > [!NOTE]  
-    >  この設定は、既定のクライアント設定でのみ使用できます。  
-
--   **ハードウェア インベントリ クラス**  
-
-     Configuration Manager では、sms_def.mof ファイルを手動で編集することなく、クライアントから収集するハードウェア情報を拡張できます。 Configuration Manager ハードウェア インベントリを拡張する場合は、**[クラスの設定]** を選びます。 詳細については、「[System Center Configuration Manager でのハードウェア インベントリの拡張方法](../../../core/clients/manage/inventory/configure-hardware-inventory.md)」を参照してください。  
-
--   **MIF ファイルを収集する**  
-
-     ハードウェア インベントリの実行時に Configuration Manager クライアントから MIF ファイルを収集するかどうかを指定するには、この設定を使います。  
-
-     MIF ファイルをハードウェア インベントリで収集するためには、クライアント コンピューター上の正しい場所に MIF ファイルがある必要があります。 既定では、ファイルは次の場所にあります。  
-
-    -   IDMIF ファイルは、Windows\System32\CCM\Inventory\Idmif フォルダーに存在する必要があります。  
-
-    -   NOIDMIF ファイルは、Windows\System32\CCM\Inventory\Noidmif フォルダーに存在する必要があります。  
+     Specificare le dimensioni massime, in KB, consentite per ogni file MIF personalizzato che sarà raccolto da un client durante il ciclo di inventario hardware. Se un file MIF supera questa dimensione, non sarà elaborato dall'inventario hardware di Configuration Manager. È possibile specificare una dimensione compresa tra 1 e 5.000 KB. Per impostazione predefinita, il valore è impostato su 250 KB. Questa impostazione non influenza la dimensione del file di dati di inventario hardware normale.  
 
     > [!NOTE]  
-    >  この設定は、既定のクライアント設定でのみ使用できます。
+    >  Questa impostazione è disponibile solo nelle impostazioni del client predefinite.  
 
--   **最大ランダム遅延**
+-   **Classi di inventario hardware**  
 
-    すべてのクライアントで同時に操作が行われないように、ハードウェア情報のコレクションが最大 4 時間でランダム化されます。 最大遅延を設定して、操作が実行される時間を制限することができます。      
+     In Configuration Manager è possibile estendere le informazioni hardware raccolte dai client senza modificare manualmente il file sms_def.mof. Scegliere **Imposta classi** se si vuole estendere l'inventario hardware di Configuration Manager. Per altre informazioni, vedere [Come estendere l'inventario hardware in System Center Configuration Manager](../../../core/clients/manage/inventory/configure-hardware-inventory.md).  
 
-##  <a name="metered-internet-connections"></a>従量制インターネット接続  
- Windows 8 クライアント コンピューターが従量制のインターネット接続を使用している場合に、Configuration Manager サイトと通信する方法を管理できます。 インターネット プロバイダーは、従量制インターネット接続を使用しているときに送受信したデータ量に基づいて課金することがあります。  
+-   **Raccogli file MIF**  
+
+     Usare questa impostazione per specificare se raccogliere i file MIF dai client di Configuration Manager durante l'inventario hardware.  
+
+     Affinché un file MIF sia raccolto dall'inventario hardware, deve trovarsi nel percorso corretto nel computer client. Per impostazione predefinita, i file devono trovarsi dove descritto in seguito:  
+
+    -   I file IDMIF devono trovarsi nella cartella Windows\System32\CCM\Inventory\Idmif.  
+
+    -   I file NOIDMIF devono trovarsi nella cartella Windows\System32\CCM\Inventory\Noidmif.  
+
+    > [!NOTE]  
+    >  Questa impostazione è disponibile solo nelle impostazioni del client predefinite.
+
+-   **Ritardo casuale massimo**
+
+    La raccolta di informazioni relative all'hardware viene eseguita con un ritardo casuale fino a quattro ore in modo che l'operazione non avvenga contemporaneamente in tutti i client. È possibile impostare il ritardo massimo per limitare il periodo durante il quale viene eseguita l'operazione.      
+
+##  <a name="metered-internet-connections"></a>Connessioni Internet a consumo  
+ È possibile gestire la modalità di comunicazione dei computer client Windows 8 con i siti di Configuration Manager quando vengono usate connessioni Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati in entrata e in uscita quando si usa una connessione Internet a consumo.  
 
 > [!NOTE]  
->  構成したクライアント設定は、次のシナリオでは Windows 8 クライアント コンピューターに適用されません。  
+>  L'impostazione del client configurato non viene applicata ai computer client Windows 8 nei seguenti scenari:  
 >   
-> -   コンピューターがローミング データ接続を使っている場合: Configuration Manager クライアントは、Configuration Manager サイトへのデータ転送が必要なタスクを実行しません。  
-> -   Windows ネットワーク接続のプロパティが従量制以外に構成されている場合: Configuration Manager クライアントは、従量制以外のインターネット接続を使っているものとして動作し、Configuration Manager サイトにデータを転送します。  
+> -   Il computer usa una connessione dati in roaming: il client di Configuration Manager non esegue alcuna operazione che richiede il trasferimento dei dati nei siti di Configuration Manager.  
+> -   Le proprietà di connessione di rete di Windows sono configurate come connessioni non a consumo: il client di Configuration Manager si comporta come se fosse in presenza di una connessione Internet non a consumo e pertanto trasferisce i dati ai siti di Configuration Manager.  
 
--   **従量制ネットワーク接続でのクライアントの通信方法**  
+-   **Comunicazione dei client nelle connessioni Internet a consumo**  
 
-     ドロップダウン リストを使用して、Windows 8 クライアント コンピューター用に次から 1 つ選択します。  
+     Dall'elenco a discesa, scegliere una delle seguenti operazioni per i computer client Windows 8:  
 
-    -   **許可**: クライアント デバイスがローミング データ接続を使用していない場合、従量制インターネット接続でのすべてのクライアント通信を許可します。  
+    -   **Consenti**: tutte le comunicazioni client sono consentite tramite la connessione Internet a consumo a meno che il dispositivo client non stia usando una connessione dati in roaming.  
 
-    -   **制限**: 従量制インターネット接続で、次のクライアント通信のみを許可します。  
+    -   **Limite**: sono consentite solo le comunicazioni client seguenti tramite la connessione Internet a consumo:  
 
-        -   クライアント ポリシーの取得  
+        -   Recupero dei criteri client  
 
-        -   クライアント状態メッセージのサイトへの送信  
+        -   Messaggi di stato del client da inviare al sito  
 
-        -   アプリケーション カタログを使用したソフトウェアインストール要求  
+        -   Richieste di installazione di software mediante il Catalogo applicazioni  
 
-        -   必要な展開 (インストールの期限に達した場合)  
+        -   Distribuzioni richieste (quando viene raggiunta la scadenza per l'installazione)  
 
         > [!IMPORTANT]  
-        >  ユーザーがソフトウェア センターまたはアプリケーション カタログからソフトウェアのインストールを開始する場合、従量制インターネット接続の設定に関係なく、常に通信を許可します。  
+        >  Se un utente avvia un'installazione software da Software Center o dal Catalogo applicazioni, queste sono sempre consentite, indipendentemente dalle impostazioni della connessione Internet a consumo.  
 
-         従量制インターネット接続のデータ転送の制限に達した場合、クライアントはそれ以上 Configuration Manager サイトとの通信を試行しません。  
+         Se viene raggiunto il limite per il trasferimento dei dati per la connessione Internet a consumo, il client non prova più a comunicare con i siti di Configuration Manager.  
 
-    -   **ブロック**: Configuration Manager クライアントは、従量制インターネット接続を使っている場合に、Configuration Manager サイトとの通信を試行しません。 これは既定値です。  
+    -   **Blocca**: il client di Configuration Manager non prova a comunicare con i siti di Configuration Manager in presenza di una connessione Internet a consumo. Questo è il valore predefinito.  
 
-##  <a name="power-management"></a>電源管理  
+##  <a name="power-management"></a>Risparmio energia  
 
--   **ユーザーがデバイスを電源管理対象から外せるようにする**  
+-   **Consentire agli utenti di escludere il dispositivo usato dal risparmio energia**  
 
-     ソフトウェア センターのユーザーが、構成済みの電源管理設定から自分のコンピューターを除外できるようにするには、ドロップダウン リストから、**[True]** または **[はい]** を選びます。  
+     Nel menu a discesa selezionare **True** o **Sì** per consentire agli utenti di Software Center di escludere i computer dalle impostazioni di risparmio energia configurate.  
 
--   **[ウェイクアップ プロキシを有効にする]**  
+-   **Abilitare il proxy di riattivazione**  
 
-     サイトでユニキャスト パケットが構成されている場合に、サイトの Wake On LAN 設定を補足するには、[はい **** ] を指定します。  
+     Specificare **Sì** per integrare l'impostazione Riattivazione LAN del sito quando è configurata per i pacchetti unicast.  
 
-     ウェイクアップ プロキシの詳細については、「[Plan how to wake up clients in System Center Configuration Manager](../../../core/clients/deploy/plan/plan-wake-up-clients.md)」 (System Center Configuration Manager でのクライアントのウェイクアップ方法の計画) を参照してください。  
+     Per altre informazioni sul proxy di riattivazione, vedere [Pianificare la riattivazione dei client in System Center Configuration Manager](../../../core/clients/deploy/plan/plan-wake-up-clients.md).  
 
     > [!WARNING]  
-    >  テスト環境でウェイクアップ プロキシがどのように動作するかを理解するまで、実稼動環境でウェイクアップ プロキシを有効にしないでください。  
+    >  Non abilitare il proxy di riattivazione in una rete di produzione senza prima comprenderne il funzionamento e valutarlo in un ambiente di test.  
 
--   **[ウェイクアップ プロキシのポート番号 (UDP)]**  
+-   **Numero di porta del proxy di riattivazione (UDP)**  
 
-     管理コンピューターが、スリープ中のコンピューターにウェイクアップ パケットを送信するときに使うポート番号の既定値をそのまま使います。 または、数値を選択した値に変更します。  
+     Mantenere il valore predefinito per il numero di porta usata dai computer gestiti per inviare i pacchetti di riattivazione ai computer in modalità di sospensione. In alternativa modificare il numero con un valore di propria scelta.  
 
-     **[ウェイクアップ プロキシ用の Windows ファイアウォールの例外です]** オプションを使うと、ここで指定したポート番号は、Windows ファイアウォールを実行するクライアントで自動的に構成されます。 クライアントで別のファイアウォールを実行している場合、この設定で指定した UDP ポート番号を許可するように手動で構成する必要があります。  
+     Il numero di porta specificato qui viene configurato automaticamente per i client che eseguono Windows Firewall quando si configura l'opzione **Eccezione di Windows Firewall per il proxy di riattivazione**. Se i client eseguono un firewall diverso, è necessario configurarlo manualmente per consentire il numero della porta UDP specificato per questa impostazione.  
 
--   **[Wake On LAN ポート番号 (UDP)]**  
+-   **Numero di porta di riattivazione LAN (UDP)**  
 
-     サイトの **[プロパティ]** の **[ポート]** タブで Wake On LAN (UDP) ポート番号を変更していない場合は、既定値 9 のままにします。  
-
-    > [!IMPORTANT]  
-    >  この数値は、サイトの [プロパティ ****] の数値と一致する必要があります。 一方でこの数値を変更した場合、もう一方では自動的に更新されません。  
-
-##  <a name="remote-tools"></a>［リモート ツール］  
-
--   **クライアントのリモート コントロールを有効にする** 」で、エラー コード「 **ファイアウォール例外プロファイル**  
-
-     これらのクライアント設定を受け取るすべてのクライアント コンピューターで Configuration Manager リモート コントロールを有効にするかどうかを選びます。 リモート コントロールを有効にするには、**[構成]** を選びます。 必要に応じて、クライアント コンピューターでリモート コントロールが機能するようにファイアウォールの設定を構成します。  
-
-     既定では、リモート コントロールは無効になっています。  
+     Mantenere il valore predefinito 9 a meno che non sia stato modificato il numero di porta di riattivazione LAN (UDP) nelle **Proprietà** del sito nella scheda **Porte**.  
 
     > [!IMPORTANT]  
-    >  ファイアウォール設定が構成されていないと、リモート コントロールが正しく機能しない可能性があります。  
+    >  Questo numero deve corrispondere al numero nelle **Proprietà**del sito. Se si modifica questo numero in una posizione, non viene aggiornato automaticamente nell'altra.  
 
--   **ユーザーはソフトウェア センターでポリシー設定または通知設定を変更できる**  
+##  <a name="remote-tools"></a>Strumenti remoti  
 
-     ユーザーがソフトウェア センター内からリモート コントロール オプションを変更できるかどうかを選びます。  
+-   **Abilitare controllo remoto nei client** e **Profili delle eccezioni firewall**  
 
--   **無人のコンピューターのリモート コントロールを許可する**  
+     Selezionare se il controllo remoto di Configuration Manager è abilitato per tutti i computer client che ricevono queste impostazioni client. Scegliere **Configura** per abilitare il controllo remoto. Facoltativamente, configurare le impostazioni del firewall per consentire al controllo remoto di funzionare nei computer client.  
 
-     ログオフまたはロックされているクライアント コンピューターに、管理者がリモート コントロールを使ってアクセスできるかどうかを選びます。 この設定が無効になっている場合、ログオンされ、ロックが解除されているコンピューターのみリモート コントロールできます。  
-
--   **リモート コントロールのアクセス許可をユーザーに要求する**  
-
-     リモート コントロール セッションを許可する前に、クライアント コンピューターにユーザーの許可を確認するメッセージを表示するかどうかを選びます。  
-
--   **ローカルの Administrators グループにリモート コントロール権限を付与する**  
-
-     クライアント コンピューターへのリモート コントロール セッションを、リモート コントロール接続を開始するサーバーのローカル管理者が確立できるかどうかを選びます。  
-
--   **許容アクセス レベル**  
-
-     許可するリモート コントロール アクセスのレベルを指定します。 次の項目から選択できます。  
-
-    -   フル コントロール  
-
-    -   表示のみ  
-
-    -   なし  
-
--   **セッションを表示できるユーザー**  
-
-     **[ユーザーの設定]** を選んで **[クライアント設定の構成]** ダイアログ ボックスを開き、クライアント コンピューターとのリモート コントロール セッションを確立できる Windows ユーザーの名前を指定します。  
-
--   **タスクバーにセッション通知アイコンを表示する**  
-
-     クライアント コンピューターのタスクバーにリモート コントロール セッションがアクティブであることを示すアイコンを表示するには、このオプションを選びます。  
-
--   **セッション接続バーを表示する**  
-
-     クライアント コンピューターにリモート コントロール セッションがアクティブであることを示すセッション接続バーを表示するには、このオプションを選びます。  
-
--   **クライアントで音を鳴らす**  
-
-     音を使ってクライアント コンピューターでリモート コントロール セッションがアクティブであることを示すには、このオプションを選びます。 セッションが接続または切断されたときに音を鳴らしたり、セッション中に繰り返し音を鳴らすことができます。  
-
--   **[要請されていないリモート アシスタンス設定を管理する]**  
-
-     このオプションを選ぶと、Configuration Manager は要請されていないリモート アシスタンス セッションを管理できます。  
-
-     要請されていないリモート アシスタンス セッションでは、クライアント コンピューターのユーザーはセッションを開始するアシスタンスを要求していません。  
-
--   **[要請されたリモート アシスタンス設定を管理する]**  
-
-     このオプションを選ぶと、Configuration Manager は要請されたリモート アシスタンス セッションを管理できます。  
-
-     要請されたリモート アシスタンス セッションでは、クライアント コンピューターのユーザーが管理者にリモート アシスタンスを要求しています。  
-
--   **[リモート アシスタンスのアクセス レベル]**  
-
-     Configuration Manager コンソールで開始されるリモート アシスタンス セッションに割り当てるアクセス レベルを選びます。  
-
-    > [!NOTE]  
-    >  クライアント コンピューターのユーザーは、リモート アシスタンス セッションが実行されるときに常にアクセス許可を付与する必要があります。  
-
--   **リモート デスクトップ設定の管理**  
-
-     このオプションを選ぶと、Configuration Manager がコンピューターのリモート デスクトップ セッションを管理します。  
-
--   **[セッションを表示できるユーザーにリモート デスクトップ接続を許可する]**  
-
-     このオプションを選ぶと、アクセス許可の一覧で指定されているユーザーが、クライアント コンピューターのリモート デスクトップ ローカル ユーザー グループに追加されます。  
-
--   **[Windows Vista 以降のバージョンのオペレーティング システムが実行されているコンピューターではネットワーク レベルの認証を必要とする]**  
-
-     ネットワーク レベルの認証を使って、Windows Vista 以降を実行するクライアント コンピューターにリモート デスクトップ接続を確立する場合は、このより安全なオプションを選びます。 ネットワーク レベルの認証は、リモート デスクトップ接続を確立する前にユーザー認証を終了するため、最初に必要なリモート コンピューター リソースが少なくてすみます。 この方法は、悪意のあるユーザーやソフトウェアからコンピューターを保護するのに役立つため、より安全であり、サービス拒否攻撃からのリスクを軽減します。  
-
-## <a name="software-deployment"></a>ソフトウェアの展開  
-
--   **展開の再評価スケジュールを指定する**  
-
-     すべての展開に関して、Configuration Manager によって要件の規則を再評価するスケジュールを構成します。 既定値は 7 日間ごとです。  
+     Per impostazione predefinita, il controllo remoto è disattivato.  
 
     > [!IMPORTANT]  
-    >  この値を既定値より小さい値に変更しないことをお勧めします。 変更すると、ネットワークとクライアント コンピューターのパフォーマンスが低下する可能性があります。  
+    >  Se le impostazioni del firewall non sono configurate, il controllo remoto potrebbe non funzionare correttamente.  
 
-     この操作は、Configuration Manager クライアント コンピューターから開始することもできます。それには、コントロール パネルの **[Configuration Manager]** の **[アクション]** タブで、**[アプリケーション展開の評価サイクル]** アクションを選びます。  
+-   **Gli utenti possono modificare le impostazioni di criteri o notifiche in Software Center**  
 
-##  <a name="software-inventory"></a>ソフトウェア インベントリ  
+     Scegliere se gli utenti possono modificare le opzioni di controllo remoto da Software Center.  
 
--   **[インベントリ レポートの詳細]**  
+-   **Consentire il controllo remoto di un computer senza intervento dell'utente**  
 
-     インベントリに対するファイル情報のレベルを指定します。 ファイルの詳細、ファイルに関連付けられた製品の詳細、またはファイルの情報すべてをインベントリの対象とすることができます。  
+     Scegliere se un amministratore può usare il controllo remoto per accedere a un computer client disconnesso o bloccato. Solo un computer connesso e sbloccato può essere controllato da remoto quando questa impostazione è disattivata.  
 
--   **[これらのファイルの種類をインベントリ対象とする]**  
+-   **Richiedere all'utente l'autorizzazione di controllo remoto**  
 
-     インベントリに対するファイルの種類を指定する場合、**[種類の設定]** を選び、**[クライアント設定の構成]** ダイアログ ボックスの次の項目を構成します。  
+     Scegliere se nel computer client verrà visualizzato un messaggio che richiede l'autorizzazione dell'utente prima di consentire una sessione di controllo remoto.  
+
+-   **Concedere l'autorizzazione di controllo remoto al gruppo Administrators locale**  
+
+     Scegliere se gli amministratori locali del server che avvia la connessione di controllo remoto possono stabilire sessioni di controllo remoto nei computer client.  
+
+-   **Livello di accesso consentito**  
+
+     Specificare il livello di accesso di controllo remoto che sarà consentito. È possibile scegliere tra:  
+
+    -   Controllo completo  
+
+    -   Solo visualizzazione  
+
+    -   Nessuno  
+
+-   **Visualizzatori autorizzati**  
+
+     Fare clic su **Imposta** per aprire la finestra di dialogo **Configura impostazione client** e specificare i nomi degli utenti Windows che possono stabilire sessioni di controllo remoto nei computer client.  
+
+-   **Mostra icona di notifica sessione nella barra delle applicazioni**  
+
+     Selezionare questa opzione per visualizzare un'icona nella barra delle applicazioni dei computer client per indicare che è attiva una sessione di controllo remoto.  
+
+-   **Mostrare barra delle connessioni sessione**  
+
+     Selezionare questa opzione per visualizzare una barra di connessione della sessione ad alta visibilità nei computer client per indicare che è attiva una sessione di controllo remoto.  
+
+-   **Riprodurre un suono nel client**  
+
+     Selezionare questa opzione per usare un suono per indicare quando una sessione di controllo remoto è attiva in un computer client. È possibile riprodurre un suono quando la sessione si connette o disconnette, oppure è possibile riprodurre un suono più volte durante la sessione.  
+
+-   **Gestire le impostazioni di assistenza remota non richiesta**  
+
+     Selezionare questa opzione per consentire a Configuration Manager di gestire le sessioni di assistenza remota non richiesta.  
+
+     Nelle sessioni di assistenza remota non richiesta l'utente nel computer client non ha richiesto assistenza per avviare una sessione.  
+
+-   **Gestire le impostazioni di assistenza remota su richiesta**  
+
+     Scegliere questa opzione per consentire a Configuration Manager di gestire le sessioni di assistenza remota richiesta.  
+
+     Nelle sessioni di assistenza remota su richiesta l'utente nel computer client ha inviato una richiesta di assistenza remota all'amministratore.  
+
+-   **Livello di accesso per assistenza remota**  
+
+     Selezionare il livello di accesso da assegnare alle sessioni di assistenza remota avviate nella console di Configuration Manager.  
 
     > [!NOTE]  
-    >  複数のカスタム クライアント設定がコンピューターに適用されている場合は、各設定によって戻されるインベントリが結合されます。  
+    >  L'utente nel computer client deve sempre concedere l'autorizzazione per avviare una sessione di assistenza remota.  
 
-    -   **[新規]** アイコンを選んで、インベントリに新しいファイルの種類を追加します。 その後、**[インベントリされるファイルのプロパティ]** ダイアログ ボックスで次の情報を指定します。  
+-   **Gestire le impostazioni di desktop remoto**  
 
-        -   **[名前]**: インベントリの対象にするファイルの名前を指定します。 任意の文字列の代わりに「**\**」を、任意の 1 文字の代わりに「**?**」 を使用できます。 たとえば、拡張子 .doc を持つすべてのファイルをインベントリの対象にするには、ファイル名「**\*.doc**」を指定します。  
+     Selezionare questa opzione per consentire a Configuration Manager di gestire le sessioni di Desktop remoto per i computer.  
 
-        -   **[場所]**: **[設定]** を選んで **[パスのプロパティ]** ダイアログ ボックスを開きます。 ソフトウェア インベントリは、すべてのクライアントのハード ディスクで、特定のファイル、特定のパス (たとえば、**C:\Folder**) または特定の変数 (たとえば、*%windir%*) を検索するように構成できます。 特定のパスにあるすべてのサブフォルダーを検索するように構成することもできます。  
+-   **Consentire ai visualizzatori autorizzati di connettersi mediante connessione desktop remoto**  
 
-        -   **[暗号化または圧縮されたファイルを除く]**: このオプションをオンにすると、圧縮されたり暗号化されたりしたファイルはインベントリされません。  
+     Selezionare questa opzione per consentire agli utenti specificati nell'elenco di visualizzatori autorizzati di essere aggiunti al gruppo di utenti locale di Desktop remoto nei computer client.  
 
-        -   **[Windows フォルダー内のファイルは除く]**: このオプションをオンにすると、Windows フォルダーおよびそのサブフォルダー内のファイルはインベントリされません。  
+-   **Richiedere Autenticazione a livello di rete nei computer che eseguono il sistema operativo Windows Vista e versioni successive**  
 
-    -   **[OK]** を選んで **[インベントリされるファイルのプロパティ]** ダイアログ ボックスを閉じます。  
+     Selezionare questa opzione più sicura se si vuole usare l'autenticazione a livello di rete per stabilire connessioni di Desktop remoto nei computer client che eseguono Windows Vista o sistemi operativi successivi. L'autenticazione a livello di rete richiede inizialmente meno risorse del computer remoto perché completa l'autenticazione utente prima di stabilire una connessione di Desktop remoto. Questo metodo è più sicuro perché permette di proteggere il computer da utenti o software dannosi e riduce il rischio di attacchi di tipo Denial of Service.  
 
-    -   インベントリするファイルをすべて追加し、**[OK]** を選んで **[クライアント設定の構成]** ダイアログ ボックスを閉じます。  
+## <a name="software-deployment"></a>Distribuzione software  
 
--   **[ファイルの収集]**  
+-   **Pianificare nuova valutazione per le distribuzioni**  
 
-     クライアント コンピューターからファイルを収集するには、**[ファイルの設定]** を選んで次を構成します。  
+     Configurare una pianificazione che indichi quando Configuration Manager deve eseguire una nuova valutazione delle regole dei requisiti per tutte le distribuzioni. Il valore predefinito è ogni 7 giorni.  
+
+    > [!IMPORTANT]  
+    >  È consigliabile non modificare questo valore in un valore inferiore a quello predefinito poiché potrebbe influire negativamente sulle prestazioni della rete e dei computer client.  
+
+     È anche possibile avviare questa azione da un computer client di Configuration Manager selezionando l'azione **Ciclo di valutazione distribuzione applicazione** dalla scheda **Azioni** di **Configuration Manager** nel Pannello di controllo.  
+
+##  <a name="software-inventory"></a>Inventario software  
+
+-   **Dettaglio report inventario**  
+
+     Specificare il livello delle informazioni sui file nell'inventario. È possibile includere nell'inventario i dettagli sul file, i dettagli sul prodotto associato al file, oppure tutte le informazioni sul file.  
+
+-   **Tipi di file da includere nell'inventario**  
+
+     Per specificare i tipi di file nell'inventario, fare clic su **Imposta tipi**, quindi configurare le opzioni seguenti nella finestra di dialogo **Configura impostazione client**:  
 
     > [!NOTE]  
-    >  複数のカスタム クライアント設定がコンピューターに適用されている場合は、各設定によって戻されるインベントリが結合されます。  
+    >  Se più impostazioni client personalizzate vengono applicate a un computer, l'inventario restituito da ogni impostazione verrà unito.  
 
-    -   **[クライアント設定の構成]** ダイアログ ボックスで、**[新規]** アイコンを選んで収集するファイルを追加します。  
+    -   Scegliere l'icona **Nuovo** per aggiungere un nuovo tipo di file nell'inventario. In seguito specificare le informazioni seguenti nella finestra di dialogo **Proprietà file in inventario**:  
 
-    -   [収集するファイルのプロパティ] **** ダイアログ ボックスで、次の情報を入力します。  
+        -   **Nome**: specificare un nome per il file che si vuole includere nell'inventario. È possibile usare il carattere **\** per rappresentare qualsiasi stringa di testo e il carattere **?** per rappresentare qualsiasi carattere. Ad esempio, se si vuole includere nell'inventario tutti i file con estensione doc, specificare il nome del file **\*.doc**.  
 
-        -   **[名前]**: 収集するファイルの名前を指定します。 任意の文字列の代わりに「**\**」を、任意の 1 文字の代わりに「**?**」 を使用できます。  
+        -   **Percorso**: fare clic su **Imposta** per aprire la finestra di dialogo **Proprietà percorso**. È possibile configurare l'inventario software per cercare il file specificato in tutti i dischi rigidi del client, cercare un percorso specifico (ad esempio **:\Cartella**) o una variabile specifica (ad esempio, *%windir%*). È anche possibile cercare tutte le sottocartelle nel percorso specificato.  
 
-        -   **[場所]**: **[設定]** を選んで **[パスのプロパティ]** ダイアログ ボックスを開きます。 ソフトウェア インベントリは、すべてのクライアントのハード ディスクで、収集するファイル、特定のパス (たとえば、**C:\Folder**) または特定の変数 (たとえば、*%windir%*) を検索するように構成できます。 特定のパスにあるすべてのサブフォルダーを検索するように構成することもできます。  
+        -   **Escludi file crittografati e compressi**: quando si seleziona questa opzione, tutti i file che sono stati compressi o crittografati non verranno inclusi nell'inventario.  
 
-        -   **[暗号化または圧縮されたファイルを除く]**: このオプションをオンにすると、圧縮されたり暗号化されたりしたファイルは収集されません。  
+        -   **Escludi file nella cartella Windows**: quando si seleziona questa opzione, tutti i file nella cartella Windows e nelle relative sottocartelle non verranno inclusi nell'inventario.  
 
-        -   **[ファイルの合計サイズが次のサイズ (KB) を超える場合はファイルの収集を停止する]**: ファイルのサイズ (単位: キロバイト) で指定すると、これを超えるサイズの **[名前]** で指定されたファイルは収集されません。  
+    -   Scegliere **OK** per chiudere la finestra di dialogo **Proprietà file in inventario**.  
+
+    -   Aggiungere tutti i file che si vuole includere nell'inventario e fare clic su **OK** per chiudere la finestra di dialogo **Configura impostazione client**.  
+
+-   **Raccogli file**  
+
+     Se si vuole raccogliere i file dai computer client, scegliere **Imposta file** e quindi configurare le opzioni seguenti:  
+
+    > [!NOTE]  
+    >  Se più impostazioni client personalizzate vengono applicate a un computer, l'inventario restituito da ogni impostazione verrà unito.  
+
+    -   Nella finestra di dialogo **Configura impostazione client** fare clic sull'icona **Nuovo** per aggiungere un file da raccogliere.  
+
+    -   Nella finestra di dialogo **Proprietà file recuperato** immettere le informazioni seguenti:  
+
+        -   **Nome**: specificare un nome per il file che si vuole raccogliere. È possibile usare il carattere **\** per rappresentare qualsiasi stringa di testo e il carattere **?** per rappresentare qualsiasi carattere.  
+
+        -   **Percorso**: fare clic su **Imposta** per aprire la finestra di dialogo **Proprietà percorso**. È possibile configurare l'inventario software per cercare il file che si vuole raccogliere in tutti i dischi rigidi del client, cercare un percorso specifico (ad esempio **C:\Cartella**) o una variabile specifica (ad esempio, *%windir%*). È anche possibile cercare tutte le sottocartelle nel percorso specificato.  
+
+        -   **Escludi file crittografati e compressi**: quando si seleziona questa opzione, tutti i file che sono stati compressi o crittografati non verranno raccolti.  
+
+        -   **Interrompere la raccolta file quando le dimensioni totali dei file superano (KB)**: specificare le dimensioni del file (in KB) oltre le quali non verranno più raccolti altri file specificati in **Nome**.  
 
           > [!NOTE]  
-          >  サイト サーバーは、新しいものから 5 つまでの変更された収集ファイルを収集し、*&lt;ConfigMgr インストール ディレクトリ\>*\Inboxes\Sinv.box\Filecol ディレクトリに保存します。 前回のソフトウェア インベントリが収集されてからファイルが変更されていない場合、ファイルは再収集されません。  
+          >  Il server del sito raccoglie le cinque versioni più recenti dei file raccolti e le archivia nella directory *&lt;directory di installazione di ConfigMgr\>*\Inboxes\Sinv.box\Filecol. Se un file non è stato modificato dopo l'ultima raccolta dell'inventario software, il file non verrà raccolto nuovamente.  
           >   
-          >  20 MB より大きいファイルはソフトウェア インベントリでは収集されません。  
+          >  L'inventario software non raccoglie file di dimensioni superiori a 20 MB.  
           >   
-          >  **[クライアント設定の構成]** ダイアログ ボックスの **[収集した全ファイルの最大サイズ (KB)]** の値は、すべての収集されたファイルの最大サイズを示しています。 サイズがこの値に達すると、ファイルの収集は停止します。 既に収集されたファイルは保持され、サイト サーバーに送信されます。  
+          >  Il valore **Dimensioni massime per tutti i file raccolti (KB)** nella finestra di dialogo **Configura impostazione client** visualizza le dimensioni massime per tutti i file raccolti. Quando viene raggiunta questa dimensione, la raccolta di file verrà interrotta. Tutti i file già raccolti vengono mantenuti e inviati al server del sito.  
 
           > [!IMPORTANT]
-          >  ソフトウェア インベントリをたくさんのサイズの大きなファイルを収集するよう構成すると、ネットワークとサイト サーバーのパフォーマンスに悪影響となる場合があります。  
+          >  Se si configura l'inventario software per raccogliere molti file di grandi dimensioni, questo potrebbe influire negativamente sulle prestazioni del server di rete e del sito.  
 
-        収集されたファイルを表示する方法については、「[System Center Configuration Manager でリソース エクスプローラーを使用してソフトウェア インベントリを表示する方法](../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md)」を参照してください。  
+        Per informazioni sulla cronologia di inventario, vedere [Come usare Esplora inventario risorse per visualizzare l'inventario software in System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md).  
 
-    -   **[OK]** を選んで **[収集するファイルのプロパティ]** ダイアログ ボックスを閉じます。  
+    -   Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà file recuperato**.  
 
-    -   収集するファイルをすべて追加し、**[OK]** を選んで **[クライアント設定の構成]** ダイアログ ボックスを閉じます。  
+    -   Aggiungere tutti i file che si vuole raccogliere e fare clic su **OK** per chiudere la finestra di dialogo **Configura impostazione client**.  
 
--   **[名前の設定]**  
+-   **Impostare i nomi**  
 
-     ソフトウェア インベントリ時には、サイト内のクライアントにインストールされたファイルのヘッダー情報から製造元名と製品名が取得されます。 これらの名前はファイルのヘッダー情報内で常に標準化されているわけではないため、リソース エクスプローラーでソフトウェア インベントリ情報を表示するときや、クエリを実行するときに、同じ製造元名または製品名の異なるバージョンが表示される場合があります。 表示名を標準化するには、**[名前の設定]** を選んで **[クライアント設定の構成]** ダイアログ ボックスの次の項目を構成します。  
+     Durante l'inventario del software, i nomi di produttore e prodotto vengono recuperati dalle informazioni di intestazione dei file installati sui client nel sito. Poiché questi nomi non sono sempre standardizzati nelle informazioni di intestazione dei file, quando si visualizzano le informazioni sull'inventario del software in Esplora inventario risorse o si eseguono query, è possibile che vengano visualizzate versioni diverse dello stesso nome di produttore o prodotto. Per standardizzare questi nomi visualizzati, fare clic su **Imposta nomi** e configurare le opzioni seguenti nella finestra di dialogo **Configura impostazione client**:  
 
-    -   **[名前の種類]**: ソフトウェア インベントリは、製造元と製品の両方の情報を収集します。 ドロップダウン リストから、**[製造元]** と **[製品]** のどちらの表示名を構成するのかを選びます。  
+    -   **Tipo nome**: l'inventario software raccoglie informazioni su produttori e prodotti. Dall'elenco a discesa scegliere se si vuole configurare i nomi visualizzati per un **Produttore** o un **Prodotto**.  
 
-    -   **[表示名]**: **[インベントリされた名前]** の一覧の名前部分で使用する表示名を指定します。 新しい表示名を指定するには、**[新規]** アイコンを選びます。  
+    -   **Nome visualizzato:** specificare il nome visualizzato da usare al posto dei nomi inclusi nell'elenco **Nomi di inventario**. È possibile fare clic sull'icona **Nuovo** per specificare un nuovo nome visualizzato.  
 
-    -   **[インベントリされた名前]**: **[新規]** アイコンを選んでインベントリされる名前を新規で追加すると、ソフトウェア インベントリで **[表示名]** の一覧で選択された名前により置換されます。 置換する名前は複数追加することができます。  
+    -   **Nomi di inventario**: fare clic sull'icona **Nuovo** per aggiungere un nuovo nome di inventario, che verrà sostituito nell'inventario software dal nome selezionato nell'elenco **Nome visualizzato**. È possibile aggiungere più nomi che verranno sostituiti.  
 
-##  <a name="software-updates"></a>ソフトウェア更新プログラム  
+##  <a name="software-updates"></a>Aggiornamenti software  
 
--   **クライアントのソフトウェア更新プログラムを有効にする**  
+-   **Abilitare aggiornamento software nei client**  
 
-     この設定を使用して、Configuration Manager クライアント上のソフトウェア更新プログラムを有効にします。 この設定を無効にすると、Configuration Manager がクライアントから既存の展開ポリシーを削除します。 この設定を再度有効にすると、クライアントが現在の展開ポリシーをダウンロードします。  
+     Usare questa impostazione per abilitare gli aggiornamenti software nei client di Configuration Manager. Quando si disabilita questa opzione, Configuration Manager rimuove i criteri di distribuzione esistenti dal client. Quando si riattiva questa impostazione, il client scaricherà il criterio di distribuzione corrente.  
 
     > [!IMPORTANT]  
-    >  この設定を無効にすると、ソフトウェア更新プログラムのデバイス設定に依存する NAP およびコンプライアンス設定ポリシーは、機能しなくなります。  
+    >  Quando si deseleziona questa impostazione, i criteri di Protezione accesso alla rete e delle impostazioni di conformità basati sulle impostazioni dei dispositivi per gli aggiornamenti software non funzioneranno più.  
 
--   **ソフトウェア更新プログラムのスキャンのスケジュール**  
+-   **Pianificazione analisi aggiornamento software**  
 
-     この設定を使用して、クライアントがソフトウェア更新プログラムの対応評価スキャンを開始する頻度を指定します。 対応評価スキャンでは、クライアント上のソフトウェア更新プログラムのステータスを判別します (必要、インストール済みなど)。 コンプライアンス対応評価の詳細については、「[Software updates compliance assessment](../../../sum/understand/software-updates-introduction.md#BKMK_SUMCompliance)」 (ソフトウェア更新プログラムのコンプライアンス評価) を参照してください。  
+     Usare questa impostazione per specificare la frequenza con cui il client avvia un'analisi di valutazione conformità per l'aggiornamento software. L'analisi di valutazione della conformità determina lo stato degli aggiornamenti software sul client (ad esempio, obbligatorio o installato). Per altre informazioni sulla valutazione della conformità, vedere [Valutazione della conformità negli aggiornamenti software](../../../sum/understand/software-updates-introduction.md#BKMK_SUMCompliance).  
 
-     既定では、簡易スケジュールが使われ、対応スキャンが 7 日ごとに開始されます。 カスタム スケジュールを作成して具体的な開始日時を指定するように選択したり、UTC またはローカル時刻のいずれを使用するのかを選択したり、繰り返しの間隔を特定の曜日に構成したりできます。  
+     Per impostazione predefinita, viene usata una pianificazione semplice e l'analisi di conformità viene avviata ogni 7 giorni. È possibile scegliere di creare una pianificazione personalizzata per specificare una data e un'ora di avvio specifiche, per determinare se usare UTC o l'ora locale e per configurare l'intervallo ricorrente per un giorno specifico della settimana.  
 
     > [!NOTE]  
-    >  1 日未満の間隔を指定すると、Configuration Manager によって自動的に既定の 1 日に設定されます。  
+    >  Se si specifica un intervallo inferiore a 1 giorno, Configuration Manager userà automaticamente il valore pari a 1 giorno come impostazione predefinita.  
 
     > [!WARNING]  
-    >  クライアント コンピューターでの実際の開始時刻は、開始時刻に 2 時間までの任意の時間を加えた時刻です。 これにより、クライアント コンピューターがスキャンを開始すると同時にアクティブなソフトウェアの更新ポイント サーバーの Windows Server Update Services (WSUS) に接続するのを防止できます。  
+    >  L'ora di avvio effettiva nei computer client corrisponde all'ora di avvio con l'aggiunta di una quantità di tempo casuale, fino a un massimo di due ore. Ciò impedisce ai computer client di avviare l'analisi e di connettersi contemporaneamente a Windows Server Update Services (WSUS) sul server del punto di aggiornamento software attivo.  
 
--   **[展開の再評価のスケジュール]**  
+-   **Pianificare nuova valutazione di distribuzione**  
 
-     この設定を使用して、ソフトウェアの更新クライアント エージェントが Configuration Manager クライアント コンピューターでソフトウェア更新プログラムのインストール ステータスを再評価する頻度を構成します。 以前にインストールされたソフトウェアの更新は、クライアント コンピューター上で見つからなくなっても、必要である場合、再インストールされます。
+     Usare questa impostazione per configurare la frequenza della nuova valutazione degli aggiornamenti software da parte dell'Agente client aggiornamenti software per la verifica dello stato di installazione nei computer client di Configuration Manager. Se gli aggiornamenti software installati in precedenza non sono più disponibili nei computer client, ma sono ancora necessari, verranno reinstallati.
 
-     展開の再評価スケジュールは、ソフトウェア更新プログラムの対応への会社のポリシー、ユーザーがソフトウェア更新プログラムをアンインストールできるかどうかなどに基づいて調整する必要があります。 展開の再評価のすべてのサイクルがネットワークおよびクライアント コンピューターの何らかの CPU アクティビティになることに注意してください。 既定では、簡易スケジュールが使われ、展開再評価スキャンが 7 日ごとに開始されます。  
-
-    > [!NOTE]  
-    >  1 日未満の間隔を指定すると、Configuration Manager によって自動的に既定の 1 日に設定されます。  
-
--   **いすれかのソフトウェア更新プログラムが期限に達したときに、指定期間内に期限を迎える他のソフトウェア更新プログラムの展開をすべてインストールする**  
-
-     この設定を使用して、指定した期間内に期限を迎える、必須の展開に含まれるソフトウェア更新プログラムをすべてインストールします。 必須のソフトウェア更新プログラムの展開期限に達すると、展開に含まれているソフトウェア更新プログラムのインストールがクライアントで開始されます。 この設定で、指定期間内に期限が構成された、他の必須の展開に定義されているソフトウェア更新プログラムのインストールを開始するかどうかも指定します。  
-
-     この設定を使用すると、必須のソフトウェア更新プログラムのインストールが促進され、セキュリティの向上、表示通知の減少、およびクライアント コンピューターのシステム再起動の減少が見込まれます。 既定では、この設定は無効になっています。  
-
--   **保留中の展開の期限が指定した期間内の場合は、これらの展開もすべてインストールする**  
-
-     この設定を使用して、以前の設定に期間を指定します。 1 ～ 23 時間および 1 ～ 365 日の値を入力できます。 この設定の既定値は、7 日間です。  
-
--   **高速インストール ファイルのクライアントでのインストールを有効にする**
-
--   **高速インストール ファイルのコンテンツをダウンロードするために使用するポート**
-
--   **Office 365 クライアント エージェントの管理を有効にする** この設定を利用し、Office 365 クライアント エージェントの管理を有効にします。 値を **[はい]** に設定すると、Office 365 のインストール設定を構成し、Office コンテンツ配信ネットワーク (CDN) からファイルをダウンロードし、Configuration Manager でファイルをアプリケーションとして展開できます。
-
-##  <a name="user-and-device-affinity"></a>ユーザーとデバイスのアフィニティ  
-
--   **ユーザーとデバイスのアフィニティ使用状況のしきい値 (分)**  
-
-     ユーザー デバイスのアフィニティ マッピングを Configuration Manager が作成するまでの時間 (分) を指定します。  
-
--   **ユーザーとデバイスのアフィニティ使用状況のしきい値 (日)**  
-
-     使用状況に基づいたアフィニティのしきい値を測定する期間 (日) を指定します。  
+     La pianificazione di rivalutazione della distribuzione deve essere regolata in base ai criteri aziendali di conformità degli aggiornamenti software, alla possibilità eventuale per gli utenti di disinstallare gli aggiornamenti software e così via. Tenere presente che ogni ciclo di rivalutazione della distribuzione comporta attività della CPU del computer client e di rete. Per impostazione predefinita, viene usata una pianificazione semplice e l'analisi della rivalutazione della distribuzione viene avviata ogni 7 giorni.  
 
     > [!NOTE]  
-    >  たとえば、**[ユーザーとデバイスのアフィニティ使用状況のしきい値 (分)]** に **[60]** 分を指定し、**[ユーザーとデバイスのアフィニティ使用状況のしきい値 (日)]** に **[5]** 日を指定している場合、ユーザー デバイスのアフィニティを自動的に作成するためには、ユーザーは 5 日間に 60 分間デバイスを使う必要があります。  
+    >  Se si specifica un intervallo inferiore a 1 giorno, Configuration Manager userà automaticamente il valore pari a 1 giorno come impostazione predefinita.  
 
--   **使用状況データに基づいてユーザーとデバイスのアフィニティを自動構成する**  
+-   **Quando viene raggiunta la data di scadenza qualsiasi aggiornamento software, installare tutte le altre distribuzioni di aggiornamento software con scadenze che rientrano nel periodo di tempo specificato**  
 
-     収集された使用状況情報に基づいて Configuration Manager がユーザーとデバイスのアフィニティを自動構成できるようにする場合は、**[True]** または **[はい]** を選びます。  
+     Usare questa impostazione per installare tutti gli aggiornamenti software in installazioni necessarie con scadenze che rientrano in un periodo di tempo specificato. Quando viene raggiunta una scadenza per una distribuzione dell'aggiornamento software necessaria, verrà avviata l'installazione nei client per gli aggiornamenti software nella distribuzione. Questa impostazione determina se viene avviata anche l'installazione degli aggiornamenti software definiti in altre distribuzioni necessarie con scadenza configurata entro il periodo di tempo specificato.  
 
-##  <a name="mobile-devices"></a>モバイル デバイス  
+     Usare questa impostazione per accelerare l'installazione di aggiornamenti software per aggiornamenti software necessari, per incrementare potenzialmente la sicurezza, ridurre potenzialmente le notifiche visualizzate e ridurre potenzialmente il numero di riavvii di sistema nei computer client. Per impostazione predefinita, questa impostazione non è attivata.  
 
--   **モバイル デバイス登録プロファイル**  
+-   **Periodo di tempo entro cui verranno installate anche tutte le distribuzioni in sospeso con scadenza in questo periodo**  
 
-     この設定を構成するには、その前に、モバイル デバイス ユーザー設定 [ **ユーザーがモバイル デバイスを登録できるようにする** ] を [ **True**] に設定する必要があります。 次に、**[プロファイルの設定]** をクリックして、登録プロセス中に使う証明書テンプレートに関する情報が含まれる登録プロファイル、登録ポイントと登録プロキシ ポイントを含むサイト、および登録後にデバイスを管理するサイトを指定できます。  
+     Usare questa impostazione per specificare l'intervallo di tempo per l'impostazione precedente. È possibile immettere un valore compreso tra 1 e 23 e tra 1 e 365 giorni. Per impostazione predefinita, questa impostazione è configurata su 7 giorni.  
+
+-   **Abilita l'installazione di file per l'installazione rapida nei client**
+
+-   **Porta usata per scaricare contenuto per i file per l'installazione rapida**
+
+-   **Enable management of the Office 365 Client Again** (Abilita di nuovo la gestione del client Office 365) Usare questa impostazione per abilitare la gestione dell'agente client Office 365. Quando questa opzione è impostata su **Sì**, è possibile configurare le impostazioni di installazione di Office 365, scaricare file dalle reti di distribuzione del contenuto (CDN) e distribuire i file come applicazione in Configuration Manager.
+
+##  <a name="user-and-device-affinity"></a>Affinità utente-dispositivo  
+
+-   **Soglia di utilizzo di affinità utente dispositivo (minuti)**  
+
+     Specificare il numero di minuti prima della creazione di un mapping di affinità del dispositivo utente da parte di Configuration Manager.  
+
+-   **Soglia di utilizzo di affinità utente dispositivo (giorni)**  
+
+     Specificare il numero di giorni in cui viene misurata la soglia di affinità in base all'uso.  
+
+    > [!NOTE]  
+    >  Ad esempio, se **Soglia di utilizzo di affinità utente dispositivo (minuti)** viene specificato in **60** minuti e **Soglia di utilizzo di affinità utente dispositivo (giorni)** viene specificato in **5** giorni, l'utente dovrà usare il dispositivo per 60 minuti in un periodo di 5 giorni per creare automaticamente un'affinità utente-dispositivo.  
+
+-   **Configurare automaticamente l'affinità utente dispositivo dai dati di utilizzo**  
+
+     Selezionare **True** o **Sì** per consentire a Configuration Manager di creare automaticamente affinità utente-dispositivo in base alle informazioni raccolte sull'uso.  
+
+##  <a name="mobile-devices"></a>Dispositivi mobili  
+
+-   **Profilo di registrazione del dispositivo mobile**  
+
+     Per configurare questa impostazione, è innanzitutto necessario impostare su **True** l'impostazione **Consentire agli utenti di registrare i dispositivi mobili**dell'utente del dispositivo mobile. È quindi possibile fare clic su **Imposta profilo** per specificare un profilo di registrazione contenente informazioni sul modello di certificato da usare durante il processo di registrazione, il sito contenente un punto di registrazione e un punto proxy di registrazione e infine il sito che gestirà il dispositivo dopo la registrazione.  
 
     > [!IMPORTANT]  
-    >  このオプションを構成する前に、モバイル デバイスの登録に使用する証明書テンプレートを構成していることを確認してください。  
+    >  Assicurarsi di aver configurato un modello di certificato da usare per la registrazione del dispositivo mobile prima di configurare questa opzione.  
 
-##  <a name="enrollment"></a>登録  
+##  <a name="enrollment"></a>Registrazione  
 
--   **モバイル デバイス登録プロファイル**  
+-   **Profilo di registrazione del dispositivo mobile**  
 
-     この設定を構成する前に、まずユーザー設定 [ユーザーがモバイル デバイスと Mac コンピューターを登録できるようにする **** ] を [はい ****] に設定する必要があります。 次に、**[プロファイルの設定]** をクリックして、登録プロセス中に使う証明書テンプレートに関する情報が含まれる登録プロファイル、登録ポイントと登録プロキシ ポイントを含むサイト、および登録後にデバイスを管理するサイトを指定できます。  
+     Per configurare questa impostazione, è innanzitutto necessario impostare su **Sì** l'impostazione **Consentire agli utenti di registrare i dispositivi mobili e i computer Mac**dell'utente di registrazione. È quindi possibile fare clic su **Imposta profilo** per specificare un profilo di registrazione contenente informazioni sul modello di certificato da usare durante il processo di registrazione, il sito contenente un punto di registrazione e un punto proxy di registrazione e infine il sito che gestirà il dispositivo dopo la registrazione.  
 
     > [!IMPORTANT]  
-    >  このオプションを構成する前に、モバイル デバイスの登録または Mac クライアント証明書の登録に使用する証明書テンプレートを構成しておきます。  
+    >  Assicurarsi di aver configurato un modello di certificato da usare per la registrazione del dispositivo mobile o per la registrazione del certificato client Mac prima di configurare questa opzione.  
 
-## <a name="user-and-device-affinity"></a>ユーザーとデバイスのアフィニティ  
+## <a name="user-and-device-affinity"></a>Affinità utente-dispositivo  
 
--   **ユーザーがプライマリ デバイスを定義できるようにする**  
+-   **Consentire all'utente di definire i dispositivi primari**  
 
-     アプリケーション カタログの **[デバイス]** タブで、ユーザーが自身のプライマリ デバイスを特定できるようにするかどうかを指定します。  
+     Specificare se gli utenti sono autorizzati a identificare i propri dispositivi primari dal Catalogo applicazioni nella scheda **Dispositivi personali**.  

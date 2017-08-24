@@ -1,6 +1,6 @@
 ---
-title: "サイト システムの Web サイト | Microsoft Docs"
-description: "System Center Configuration Manager のサイト システム サーバーの既定およびカスタム Web サイトについて説明します。"
+title: Siti Web per i server del sistema del sito | Microsoft Docs
+description: Questa sezione contiene informazioni sui siti Web predefiniti e personalizzati per i server del sistema del sito in System Center Configuration Manager.
 ms.custom: na
 ms.date: 2/8/2017
 ms.prod: configuration-manager
@@ -18,116 +18,116 @@ manager: angrobe
 ms.openlocfilehash: 886ff3b8e867fc340c79648a57feae81653b0ccd
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="websites-for-site-system-servers-in-system-center-configuration-manager"></a>System Center Configuration Manager のサイト システム サーバーの Web サイト
+# <a name="websites-for-site-system-servers-in-system-center-configuration-manager"></a>Siti Web per i server del sistema del sito in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-いくつかの Configuration Manager のサイト システムの役割には、Microsoft インターネット インフォメーション サービス (IIS) を使用することが必要であり、そのような役割はサイト システム サービスをホストするために既定の IIS Web サイトを使用します。 同じサーバー上で他の Web アプリケーションを実行する必要があり、設定に Configuration Manager との互換性がない場合は、Configuration Manager のカスタム Web サイトの使用を検討します。  
+Alcuni ruoli del sistema del sito di Configuration Manager richiedono Microsoft Internet Information Services (IIS) e usano il sito Web IIS predefinito per ospitare i servizi del sistema del sito. Quando è necessario eseguire altre applicazioni Web nello stesso server e le impostazioni non sono compatibili con Configuration Manager, provare a usare un sito Web personalizzato per Configuration Manager.  
 
 > [!TIP]  
->  セキュリティのベスト プラクティスとして、IIS を必要とする Configuration Manager サイト システム専用のサーバーを設置してください。 Configuration Manager サイト システムで他のアプリケーションを実行すると、そのコンピューターが攻撃を受ける確率が高まります。  
+>  Una procedura di sicurezza consigliata consiste nel destinare un server ai sistemi del sito di Configuration Manager che richiedono IIS. Quando si eseguono altre applicazioni in un sistema del sito di Configuration Manager, si aumenta la superficie di attacco di tale computer.  
 
 
 
 
-##  <a name="BKMK_What2Know"></a> カスタム Web サイトを使用する前に理解しておくこと  
- 既定では、サイト システムの役割は、IIS の **既定の Web サイト** を使用します。 これは、サイト システムの役割のインストール時に自動的に設定されます。 ただし、プライマリ サイトでは、カスタム Web サイトを使用するように選択できます。 カスタム Web サイトを使用する場合。  
+##  <a name="BKMK_What2Know"></a> Cosa è necessario sapere prima di scegliere di usare i siti Web personalizzati  
+ Per impostazione predefinita, i ruoli del sistema del sito usano il **sito Web predefinito** in IIS. Questa configurazione viene definita automaticamente quando si installa il ruolo del sistema del sito. Tuttavia, nei siti primari è possibile scegliere di usare i siti Web personalizzati. Quando si usano siti Web personalizzati:  
 
--   カスタム Web サイトは、個々のサイト システム サーバーまたは役割に対してではなく、サイト全体に対して有効になります。  
+-   I siti Web personalizzati sono abilitati per l'intero sito, non per i singoli server o ruoli del sistema del sito.  
 
--   プライマリ サイトでは、適用可能なサイト システムの役割をホストする各コンピューターは、**SMSWEB** という名前のカスタム Web サイトで設定されている必要があります。 この Web サイトを作成し、そのコンピューター上のサイト システムの役割がカスタム Web サイトを使用するように設定されるまでの間、クライアントはそのコンピューターのサイト システムの役割と通信できない可能性があります。  
+-   Nei siti primari è necessario configurare ogni computer che ospiterà un ruolo del sistema del sito applicabile con un sito Web personalizzato denominato **SMSWEB**. Fino a quando non si crea il sito Web e non si configurano i ruoli del sistema del sito nel computer per l'uso del sito Web personalizzato, è possibile che i client non siano in grado di comunicare con i ruoli del sistema del sito in tale computer.  
 
--   プライマリ親サイトがカスタム Web サイトを使用するよう設定された場合には、セカンダリ サイトにも同じ設定が自動で行われるため、IIS を必要とする各セカンダリ サイト システム サーバー上でも IIS のカスタム Web サイトを作成する必要があります。  
+-   Dal momento che i siti secondari vengono configurati automaticamente per l'uso di un sito Web personalizzato quando il sito primario padre è configurato a tale scopo, è necessario anche creare siti Web personalizzati in IIS in ogni server del sistema del sito secondario che richiede IIS.  
 
 
-  **カスタム Web サイトを使用するための前提条件:**  
+  **Prerequisiti per l'uso di siti Web personalizzati:**  
 
- サイトでカスタム Web サイトを使用するオプションを有効にする前に、次の操作を実行する必要があります。  
+ prima di abilitare l'opzione per usare i siti Web personalizzati in un sito, è necessario:  
 
--   IIS を必要とする各サイト システム サーバーの IIS で **SMSWEB** という名前のカスタム Web サイトを作成します。 プライマリ サイトおよびすべての子セカンダリ サイトでこれを行います。  
+-   Creare un sito Web personalizzato denominato **SMSWEB** in IIS in ogni server del sistema del sito che richiede IIS. Eseguire questa operazione nel sito primario e in tutti i siti secondari figlio.  
 
--   Configuration Manager クライアント通信用に設定したのと同じポート (クライアント要求ポート) に応答するよう、カスタム Web サイトを設定します。  
+-   Configurare il sito Web personalizzato in modo che risponda alla stessa porta configurata per le comunicazioni client di Configuration Manager (porta della richiesta del client).  
 
--   カスタム フォルダーを使用するカスタムまたは既定の Web サイトごとに、使用する既定のドキュメントの種類のコピーを、Web サイトをホストするルート フォルダーに配置します。 たとえば、既定の構成を使用している Windows Server 2008 R2 コンピューターでは、**iisstart.htm** が、使用可能な既定のドキュメントの種類のうちの 1 つです。 既定の Web サイトのルートでこのファイルを検索し、SMSWEB カスタム Web サイトをホストするルート フォルダーにこのファイル (または使用する既定のドキュメントの種類のコピー) のコピーを配置できます。 既定のドキュメントの種類の詳細については、[IIS の 既定のドキュメント &lt;defaultDocument\>](http://www.iis.net/configreference/system.webserver/defaultdocument) に関するページを参照してください。  
+-   Per ogni sito Web personalizzato o predefinito che usa una cartella personalizzata, inserire una copia del tipo di documento predefinito da usare nella cartella radice che ospita il sito Web. Ad esempio, in un computer Windows Server 2008 R2 con configurazioni predefinite, **iisstart.htm** è uno dei diversi tipi di documento predefiniti disponibili. È possibile trovare questo file nella radice del sito Web predefinito e quindi inserire una copia del file (o una copia del tipo di documento predefinito da usare) nella cartella radice che ospita il sito Web personalizzato SMSWEB. Per altre informazioni sui tipi di documento predefiniti, vedere [Default Document &lt;defaultDocument\> for IIS](http://www.iis.net/configreference/system.webserver/defaultdocument) (Documento predefinito defaultDocument per IIS).  
 
-**IIS の要件について:**
-**次のサイト システムの役割では、サイト システム サービスをホストするために IIS と Web サイトが必要です。**  
+**Informazioni sui requisiti IIS:**
+** i seguenti ruoli del sistema del sito richiedono IIS e un sito Web per ospitare i servizi del sistema del sito:**  
 
--   アプリケーション カタログ Web サービス ポイント  
+-   Punto per servizi Web del Catalogo applicazioni  
 
--   アプリケーション カタログ Web サイト ポイント  
+-   Punto per siti Web del Catalogo applicazioni  
 
--   配布ポイント  
+-   Punto di distribuzione  
 
--   登録ポイント  
+-   Punto di registrazione  
 
--   登録プロキシ ポイント  
+-   Punto proxy di registrazione  
 
--   フォールバック ステータス ポイント  
+-   Punto di stato di fallback  
 
--   管理ポイント  
+-   Punto di gestione  
 
--   ソフトウェアの更新ポイント  
+-   Punto di aggiornamento software  
 
--   状態移行ポイント  
+-   Punto di migrazione stato  
 
-その他の考慮事項:  
+Altre considerazioni:  
 
--   プライマリ サイトでカスタム Web サイトを有効にすると、そのサイトに割り当てられたクライアントは、適用可能なサイト システム サーバー上の既定の Web サイトではなくカスタム Web サイトと通信するよう誘導されます。  
+-   Quando in un sito primario sono abilitati siti Web personalizzati, i client assegnati a tale sito vengono indirizzati in modo da comunicare con i siti Web personalizzati anziché con quelli predefiniti nei server del sistema del sito applicabili.  
 
--   1 つのプライマリ サイトでカスタム Web サイトを使用する場合は、クライアントが階層内を問題なくローミングできるように、階層にあるすべてのプライマリ サイトでカスタム Web サイトを使用することをご検討ください。 (ローミングは、クライアント コンピューターが他のサイトで管理されている新しいネットワーク セグメントに移動したときに発生します。 ローミングにより、クライアントが WAN リンク経由ではなくローカルでアクセスできるリソースに影響が及ぶ場合があります)。  
+-   Se si usano siti Web personalizzati per un sito primario, valutare l'opportunità di usare tali siti per tutti i siti primari nella gerarchia per consentire ai client di spostarsi all'interno della gerarchia. Il roaming avviene quando un computer client si sposta in un nuovo segmento di rete gestito da un sito diverso. Lo spostamento di un client può influire sulle risorse a cui il client può accedere in locale anziché attraverso un collegamento WAN.  
 
--   IIS を使用するがクライアントからの接続を受け入れないサイト システムの役割 (レポート サービス ポイントなど) も、既定の Web サイトではなく "SMSWEB" Web サイトを使用します。  
+-   Anche i ruoli del sistema del sito che usano IIS ma non accettano connessioni client, come ad esempio il punto di Reporting Services, usano il sito Web SMSWEB anziché il sito Web predefinito.  
 
--   カスタム Web サイトでは、コンピューターの既定の Web サイトで使用されるポート番号とは異なるポート番号を割り当てる必要があります。 既定の Web サイトとカスタム Web サイトで同じ TCP/IP ポートの使用を試みると、両方の Web サイトを同時に実行することはできません。  
+-   Ai siti Web personalizzati è necessario assegnare dei numeri di porta diversi da quelli usati dal sito Web predefinito del computer. Non è possibile eseguire contemporaneamente un sito Web predefinito e un sito Web personalizzato se entrambi provano a usare le stesse porte TCP/IP.  
 
--   カスタム Web サイトの IIS に設定する TCP/IP ポートは、サイト用のクライアント要求ポートと一致する必要があります。  
+-   Le porte TCP/IP configurate in IIS per il sito Web personalizzato devono corrispondere alle porte di richiesta client per il sito.  
 
-## <a name="switch-between-default-and-custom-websites"></a>既定の Web サイトとカスタム Web サイトの切り替え  
-カスタム Web サイトを使用するためのチェック ボックス (サイトの [プロパティ] の [全般] タブにあるチェック ボックス) のオンとオフは、プライマリ サイトでいつでも切り替えることができますが、この変更は十分に検討したうえで行ってください。 この構成が変更されると、プライマリ サイトと子セカンダリ サイトの適用可能なサイト システムの役割は、すべてアンインストールされてから再インストールされます。  
+## <a name="switch-between-default-and-custom-websites"></a>Passare dai siti Web predefiniti a quelli personalizzati e viceversa  
+Anche se è possibile selezionare o deselezionare in qualsiasi momento la casella di controllo per l'uso di siti Web personalizzati in un sito primario (si tratta di una casella di controllo nella scheda Generale delle proprietà del sito), effettuare un'attenta pianificazione prima di apportare questa modifica. Quando questa configurazione viene modificata, è necessario disinstallare e quindi reinstallare tutti i ruoli del sistema del sito applicabili nel sito primario e nei siti secondari figlio:  
 
-次の役割は、 **自動的に再インストール**されます。  
+I seguenti ruoli **vengono reinstallati automaticamente**:  
 
--   管理ポイント  
+-   Punto di gestione  
 
--   配布ポイント  
+-   Punto di distribuzione  
 
--   ソフトウェアの更新ポイント  
+-   Punto di aggiornamento software  
 
--   フォールバック ステータス ポイント  
+-   Punto di stato di fallback  
 
--   状態移行ポイント  
+-   Punto di migrazione stato  
 
-次の役割は、 **手動で再インストール**する必要があります。  
+I seguenti ruoli devono essere **reinstallati manualmente**:  
 
--   アプリケーション カタログ Web サービス ポイント  
+-   Punto per servizi Web del Catalogo applicazioni  
 
--   アプリケーション カタログ Web サイト ポイント  
+-   Punto per siti Web del Catalogo applicazioni  
 
--   登録ポイント  
+-   Punto di registrazione  
 
--   登録プロキシ ポイント  
+-   Punto proxy di registrazione  
 
-補足:  
+Inoltre:  
 
--   既定の Web サイトの使用からカスタム Web サイトの使用に変更した場合、Configuration Manager により、以前の仮想ディレクトリが削除されることはありません。 Configuration Manager で使用されたファイルを削除したい場合は、既定の Web サイトの下に作成された仮想ディレクトリを手動で削除する必要があります。  
+-   Quando si passa dall'uso del sito Web predefinito all'uso di un sito Web personalizzato, Configuration Manager non rimuove le vecchie directory virtuali. Se si decide di rimuovere i file usati da Configuration Manager, è necessario eliminare manualmente le directory virtuali create nel sito Web predefinito.  
 
--   カスタム Web サイトを使用するようサイトを変更した場合は、そのサイトに既に割り当てられているクライアントは、カスタム Web サイトの新しいクライアント要求ポートを使用するよう再構成する必要があります。 「[System Center Configuration Manager でのクライアント通信ポートの構成方法](../../../core/clients/deploy/configure-client-communication-ports.md)」を参照してください。  
+-   Se si modifica il sito per l'uso di siti Web personalizzati, è necessario riconfigurare i client già assegnati al sito in modo da usare le nuove porte di richiesta client per i siti Web personalizzati. Vedere [Come configurare porte di comunicazione client in System Center Configuration Manager](../../../core/clients/deploy/configure-client-communication-ports.md).  
 
-## <a name="set-up-custom-websites"></a>カスタム Web サイトの設定  
-オペレーティング システムのバージョンによってカスタム Web サイトを作成する手順が異なるため、正確な手順については、オペレーティング システムのバージョンのドキュメントをご覧ください。ただし、適用可能な場合は、次の情報を使用します。  
+## <a name="set-up-custom-websites"></a>Configurare siti Web personalizzati  
+Dal momento che la procedura per creare un sito Web personalizzato varia a seconda delle diverse versioni del sistema operativo, vedere la documentazione relativa alla versione del sistema operativo per la procedura esatta, ma usare le seguenti informazioni quando applicabile:  
 
--   Web サイトの名前は **SMSWEB** である必要があります。  
+-   Il nome del sito Web deve essere **SMSWEB**.  
 
--   HTTPS を設定する場合は、その構成を保存する前に、SSL 証明書を指定する必要があります。  
+-   Quando si configura il protocollo HTTPS, è necessario specificare un certificato SSL prima di poter salvare la configurazione.  
 
--   カスタム Web サイトを作成した後は、使用するカスタム Web サイトのポートを IIS 内の他の Web サイトから削除します。  
+-   Dopo aver creato il sito Web personalizzato, rimuovere le porte del sito Web personalizzato usate da altri siti Web in IIS:  
 
-    1.  他の Web サイトの**バインド**を編集し、**SMSWEB** Web サイトに割り当てられているポートと一致するポートを削除します。  
+    1.  Modificare le **associazioni** degli altri siti Web per rimuovere le porte che corrispondono a quelle assegnate al sito Web **SMSWEB**.  
 
-    2.  **SMSWEB** Web サイトを起動します。  
+    2.  Avviare il sito Web **SMSWEB**.  
 
-    3.  そのサイトのサイト サーバーの **SMS_SITE_COMPONENT_MANAGER** サービスを再開します。  
+    3.  Riavviare il servizio **SMS_SITE_COMPONENT_MANAGER** nel server del sito.  

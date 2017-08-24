@@ -6,21 +6,19 @@ ms.date: 06/13/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c14a3607-253b-41fb-8381-ae2d534a9022
-caps.latest.revision: 36
+caps.latest.revision: "36"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: 2bbc8935bee306ed0bc312cc43b8f5374a8df7ff
-ms.contentlocale: it-it
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="install-in-console-updates-for-system-center-configuration-manager"></a>Installare gli aggiornamenti nella console per System Center Configuration Manager
 
@@ -386,4 +384,3 @@ Quando entrambi gli aggiornamenti sono disponibili nella console, è consigliabi
 -   Se in precedenza si è installato l'aggiornamento meno recente, non è necessario installare anche quello con la data più recente. Se si installa l'aggiornamento più recente dopo aver installato il primo, i file binari in questione vengono aggiornati. Non si verifica alcun cambiamento aggiuntivo e non sono necessarie altre azioni da parte dell'utente.
 
 -   Se in precedenza si è installato l'aggiornamento più recente e quindi si installa l'aggiornamento con la data meno recente, non sono comunque necessarie altre operazioni. Questo perché i file binari più recenti che sono già installati non vengono sovrascritti da quelli dell'aggiornamento originale.
-

@@ -1,6 +1,6 @@
 ---
-title: "アップグレード、更新、およびインストールについて | Microsoft Docs"
-description: "Configuration Manager のインフラストラクチャを管理するときのインストール、更新、およびアップグレードという用語の相違点について説明します。"
+title: Informazioni su upgrade, aggiornamento e installazione | Documentazione Microsoft
+description: Informazioni sulla differenza tra i termini installazione, aggiornamento e upgrade per la gestione dell'infrastruttura di Configuration Manager.
 ms.custom: na
 ms.date: 1/11/2017
 ms.prod: configuration-manager
@@ -18,40 +18,40 @@ manager: angrobe
 ms.openlocfilehash: 6bd6cd7ea3c41fa1d70e17a1290c9f1f74cc9e37
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="about-upgrade-update-and-install-for-site-and-hierarchy-infrastructure"></a>サイトと階層のインフラストラクチャでのアップグレード、更新、およびインストールについて
+# <a name="about-upgrade-update-and-install-for-site-and-hierarchy-infrastructure"></a>Informazioni su upgrade, aggiornamento e installazione per l'infrastruttura del sito e della gerarchia
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-System Center Configuration Manager のサイトと階層のインフラストラクチャの管理において、*アップグレード*、*更新*、および*インストール* という用語は 3 つの異なる概念を説明するものです。
+Quando si gestisce l'infrastruttura del sito e della gerarchia di System Center Configuration Manager, i termini *upgrade*, *aggiornamento* e *installazione* vengono usati per descrivere tre concetti distinti.
 
 ## <a name="upgrade"></a>Upgrade
-*アップグレード*または*インプレース アップグレード*は、Configuration Manager 2012 のサイトまたは階層を System Center Configuration Manager を実行するサイトまたは階層に変換する際に使用されます。
-System Center 2012 Configuration Manager を System Center Configuration Manager にアップグレードする場合は、サイトおよびサイト サーバーをホストするために同じサーバーを引き続き使用し、Configuration Manager の既存のデータおよび構成を維持します。  これは、新しいハードウェアにインストールされている新しい System Center Configuration Manager サイトを使用しているときに、管理対象のデバイスに関する構成およびデータを保持する方法である[移行](/sccm/core/migration/migrate-data-between-hierarchies)とは異なります。
+Il termine *upgrade* o *upgrade sul posto* viene usato per indicare la conversione del sito o della gerarchia di Configuration Manager 2012 in un sito o una gerarchia che esegue System Center Configuration Manager.
+Quando si esegue l'upgrade di System Center 2012 Configuration Manager a System Center Configuration Manager, si continua a usare gli stessi server per ospitare i siti e i server dei siti e si mantengono i dati e le configurazioni esistenti per Configuration Manager.  Questo comportamento è diverso dalla [migrazione](/sccm/core/migration/migrate-data-between-hierarchies), che è un modo per mantenere le configurazioni e i dati sui dispositivi gestiti usando però i nuovi siti di System Center Configuration Manager installati nel nuovo hardware.
 
-詳細については、「[System Center Configuration Manager へのアップグレード](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager)」を参照してください。
-
-
-
-## <a name="update"></a>更新
-*更新*は、System Center Configuration Manager のコンソール内の更新プログラム、および Configuration Manager コンソール内から配信できない更新プログラムであるアウトオブバンドの更新プログラムのインストールに使用されます。 以降のバージョンが実行されるように、コンソール内の更新プログラムでは、Current Branch サイト (またはテクニカル プレビュー サイト) のバージョンを変更できます。 たとえば、サイトでバージョン 1606 を実行している場合は、バージョン 1610 用の更新プログラムをインストールできます。 更新プログラムではサイトのバージョンを変更しなくても、既知の問題に対する修正プログラムをインストールすることもできます。      
-
-通常、更新プログラムではセキュリティ修正プログラム、品質の向上、および新機能が既存の展開に追加されます。 Technical Preview ブランチを使用する場合、更新プログラムでは Technical Preview の最新バージョンをインストールできます。
--   コンソール内の更新プログラムをインストールするタイミングの選択を、階層の最上位サイトからします。
-- コンソール内から利用できる更新プログラムはすべてインストールできます。 たとえば、サイトでバージョン 1602 を実行していて、1606 と 1610 の両方が利用可能な場合は、バージョン 1610 をインストールすることをお勧めします。これは、以前にリリースされたバージョンで利用可能になった機能がそれ以降のバージョンに含まれているためです。
-- 新しい更新プログラムが最上位サイトでインストールを完了すると、子プライマリ サイトは自動的にプロセスを開始して更新します。 ただし、[サービス ウィンドウ](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkservicewindowa-service-windows-for-site-servers)を設定し、更新のタイミングを制御することができます。
-- セカンダリ サイトは更新プログラムを自動的にインストールしません。 代わりに、Configuration Manager コンソール内から手動で更新プログラムを開始します。
-
-詳細については、「[System Center Configuration Manager の更新プログラム](/sccm/core/servers/manage/updates)」、および「[System Center Configuration Manager の Technical Preview](/sccm/core/get-started/technical-preview)」を参照してください。
+Per altre informazioni, vedere l'articolo [Eseguire l'aggiornamento a System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).
 
 
 
-## <a name="install"></a>[インストール]
-*インストール*は、最初から新しい Configuration Manager の階層を作成する際、または追加のサイトを既存の階層に追加する際に使用されます。  
+## <a name="update"></a>Aggiornamento
+Il termine *aggiornamento* viene usato per indicare l'installazione di aggiornamenti nella console per System Center Configuration Manager e gli aggiornamenti fuori banda che non possono essere distribuiti dall'interno della console di Configuration Manager. Gli aggiornamenti nella console possono modificare la versione del sito Current Branch (o Technical Preview) in modo da eseguire una versione successiva. Se ad esempio il sito esegue una versione 1606, è possibile installare un aggiornamento per la versione 1610. Gli aggiornamenti possono inoltre installare correzioni per un problema noto, senza modificare la versione dei siti.      
 
-新しいプライマリ サイトまたは中央管理サイトをインストールする場合、使用する setup.exe の場所と関連するソース ファイルは、インストール シナリオによって異なります。
+In genere, gli aggiornamenti aggiungono correzioni per la sicurezza, miglioramenti della qualità e nuove funzionalità alla distribuzione esistente. Se si usa il ramo Technical Preview, un aggiornamento può installare una versione più recente della Technical Preview.
+-   È l'utente stesso a scegliere quando installare l'aggiornamento nella console, a partire dal sito di livello superiore della gerarchia.
+- È possibile installare qualsiasi aggiornamento disponibile dall'interno della console. Se ad esempio il sito esegue la versione 1602 e sono disponibili sia la 1606 sia la 1610, può essere opportuno installare la 1610 perché ogni versione include le funzionalità che sono state prima introdotte nelle versioni rilasciate in precedenza.
+- Al termine dell'installazione di un nuovo aggiornamento nel sito di livello superiore, i siti primari figlio avviano automaticamente il processo di aggiornamento. È tuttavia possibile impostare [intervalli di servizio](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkservicewindowa-service-windows-for-site-servers) per controllare i tempi di esecuzione degli aggiornamenti.
+- I siti secondari non installano gli aggiornamenti automaticamente. Spetta all'utente avviare manualmente l'aggiornamento dall'interno della console di Configuration Manager.
 
-詳細については、[サイトのインストールの準備](/sccm/core/servers/deploy/install/prepare-to-install-sites)に関するページを参照してください。
+Per altre informazioni, vedere [Aggiornamenti per System Center Configuration Manager](/sccm/core/servers/manage/updates) e [Technical Preview per System Center Configuration Manager](/sccm/core/get-started/technical-preview).
+
+
+
+## <a name="install"></a>Installazione
+Il termine *installazione* viene usato quando si crea una gerarchia di Configuration Manager completamente nuova o si aggiungono altri siti a una gerarchia esistente.  
+
+Quando si installa un nuovo sito primario o di amministrazione centrale, il percorso del file setup.exe e dei file di origine correlati varia a seconda dello scenario di installazione.
+
+Per altre informazioni, vedere [Preparare l'installazione di siti](/sccm/core/servers/deploy/install/prepare-to-install-sites).

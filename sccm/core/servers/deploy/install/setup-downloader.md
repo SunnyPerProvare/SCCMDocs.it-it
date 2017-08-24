@@ -1,6 +1,6 @@
 ---
-title: "セットアップ ダウンローダー | Microsoft Docs"
-description: "サイトのインストールで主要なインストール ファイルの最新バージョンが使用されることを保証するように設計されているこのスタンドアロン アプリケーションについて説明します。"
+title: Downloader di installazione | Microsoft Docs
+description: Leggere le informazioni su questa applicazione autonoma progettata per assicurare che l'installazione del sito usi le versioni correnti dei file di installazione principali.
 ms.custom: na
 ms.date: 3/1/2017
 ms.prod: configuration-manager
@@ -17,79 +17,79 @@ manager: angrobe
 ms.openlocfilehash: b72148ecc16141843178cbd220fe021fab8be992
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="setup-downloader-for-system-center-configuration-manager"></a>System Center Configuration Manager のセットアップ ダウンローダー
+# <a name="setup-downloader-for-system-center-configuration-manager"></a>Downloader di installazione per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-セットアップを実行して System Center Configuration Manager サイトをインストールまたはアップグレードする前に、インストールするバージョンの Configuration Manager からこのセットアップ ダウンローダー スタンドアロン アプリケーションを使用して、最新のセットアップ ファイルをダウンロードすることができます。  
+Prima di eseguire il programma di installazione per installare o aggiornare un sito di System Center Configuration Manager, è possibile usare l'applicazione autonoma downloader di installazione dalla versione di Configuration Manager che si vuole installare per scaricare i file di installazione aggiornati.  
 
-最新のセットアップ ファイルを使用することにより、サイト インストールで主要なインストール ファイルの最新バージョンが確実に使用されます。 概要:   
--   セットアップを開始する前にセットアップ ダウンローダーを使用してファイルをダウンロードするときは、ファイルを格納するフォルダーを指定します。  
--   セットアップ ダウンローダーの実行に使用するアカウントには、ダウンロード フォルダーへの**フル コントロール** アクセス許可が必要です。  
--   サイトをインストールまたはアップグレードするためのセットアップを実行するとき、このファイルのローカル コピー (過去にダウンロードしたもの) を使うようセットアップ プログラムに指示することができます。 その場合、サイトのインストールやアップグレードを開始する際、Microsoft に接続する必要はありません。  
--   以降のサイトのインストールまたはアップグレードには同じセットアップ ファイル (ローカル コピー) を使用することができます。  
+L'uso di file di installazione aggiornati assicura che l'installazione del sito usi le versioni correnti dei file di installazione principali. Panoramica:   
+-   Quando si usa il Downloader di installazione per scaricare i file prima di avviare il programma di installazione, specificare la cartella che contiene i file.  
+-   L'account usato per eseguire l'installazione del downloader deve avere autorizzazioni di tipo **Controllo completo** per accedere alla cartella del download.  
+-   Quando si esegue il programma di installazione per installare o aggiornare un sito, è possibile indirizzarlo per l'uso di questa copia locale dei file scaricati in precedenza. In questo modo, si evita che il programma di installazione debba connettersi a Microsoft quando si avvia l'installazione o l'aggiornamento del sito.  
+-   È possibile usare la stessa copia locale dei file di installazione per gli aggiornamenti o le installazioni successive del sito.  
 
-セットアップ ダウンローダーでダウンロードされるファイルの種類は次のとおりです。  
--   前提条件となる必須の再頒布可能ファイル  
--   言語パック  
--   セットアップ用の最新の製品の更新プログラム  
+I tipi di file seguenti vengono scaricati dal Downloader di installazione:  
+-   File ridistribuibili dei prerequisiti obbligatori  
+-   Language Pack  
+-   Aggiornamenti più recenti del programma di installazione  
 
-セットアップ ダウンローダーを実行するための 2 つのオプションがあります。
-- ユーザー インターフェイスを使用してアプリケーションを実行する
-- コマンド ライン オプションの場合は、コマンド プロンプトでアプリケーションを実行する
+Sono disponibili due opzioni per l'esecuzione del downloader di installazione:
+- Eseguire l'applicazione con l'interfaccia utente
+- Per le opzioni della riga di comando, eseguire l'applicazione al prompt dei comandi
 
 
-## <a name="run-setup-downloader-with-the-user-interface"></a>ユーザー インターフェイスでセットアップ ダウンローダーを実行する  
+## <a name="run-setup-downloader-with-the-user-interface"></a>Eseguire il Downloader di installazione con l'interfaccia utente  
 
-1.  インターネットにアクセスできるコンピューターでエクスプローラーを開き、**&lt;Configuration Manager のインストール メディア\>\SMSSETUP\BIN\X64** に移動します。  
+1.  In un computer con accesso a Internet, aprire Esplora risorse e passare a **&lt;ConfigMgrInstallationMedia\>\SMSSETUP\BIN\X64**.  
 
-2.  セットアップ ダウンローダーを開くには、**setupdl.exe** をダブルクリックします。   
+2.  Per aprire il downloader di installazione, fare doppio clic su **Setupdl.exe**.   
 
-3. 更新されたインストール ファイルをホストするフォルダーのパスを指定して、**[ダウンロード]** をクリックします。 セットアップ ダウンローダーにより、現在ダウンロード フォルダーにあるファイルが確認されます。 失われているファイルまたは既存のファイルより新しいファイルだけをダウンロードします。 ダウンロードした言語ごとのサブフォルダーと他の必要なサブフォルダーが作成されます。  
+3. Specificare il percorso della cartella che ospiterà i file di installazione aggiornati e quindi fare clic su **Download**. Il downloader di installazione verifica i file nella cartella di download. E scarica solo i file mancanti o più recenti rispetto ai file esistenti. Il downloader di installazione crea sottocartelle per le lingue scaricate e altre sottocartelle necessarie.  
 
-4.  ダウンロード結果を確認するには、C ドライブのルートにある **ConfigMgrSetup.log** ファイルを開きます。  
+4.  Per rivedere i risultati del download, aprire il file **ConfigMgrSetup.log** nella directory radice dell'unità C.  
 
-## <a name="run-setup-downloader-from-a-command-prompt"></a>コマンド プロンプトからセットアップ ダウンローダーを実行する  
+## <a name="run-setup-downloader-from-a-command-prompt"></a>Eseguire il Downloader di installazione da un prompt dei comandi  
 
-1.  コマンド プロンプト ウィンドウで **&lt;*Configuration Manager インストール メディア*\>\SMSSETUP\BIN\X64** に移動します。   
+1.  In una finestra del prompt dei comandi, passare a **&lt;*Supporti di installazione di Configuration Manager*\>\SMSSETUP\BIN\X64**.   
 
-2.  セットアップ ダウンローダーを開くには、**setupdl.exe** を実行します。
+2.  Eseguire **Setupdl.exe** per aprire il downloader di installazione.
 
-    次のコマンド ライン オプションを **Setupdl.exe** で使用できます。   
+    Con **Setupdl.exe** è possibile usare le seguenti opzioni della riga di comando:   
 
-    -   **/VERIFY**: ダウンロード先フォルダーにあるファイル (言語ファイルも含む) を確認します。 最新でないファイルのリストが、C ドライブのルート ディレクトリにある ConfigMgrSetup.log ファイルに記録されます。 このオプションを使用したときは、ファイルは何もダウンロードされません。  
+    -   **/VERIFY**: usare questa opzione per verificare i file nella cartella di download, inclusi i file di lingua. Rivedere il file ConfigMgrSetup.log nella directory radice dell'unità C per un elenco di file non aggiornati. Se si usa questa opzione, non verrà scaricato alcun file.  
 
-    -   **/VERIFYLANG**: ダウンロード先フォルダーにある言語ファイルを確認します。 最新でない言語ファイルのリストが、C ドライブのルート ディレクトリにある ConfigMgrSetup.log ファイルに記録されます。
+    -   **/VERIFYLANG**: usare questa opzione per verificare i file di lingua nella cartella di download. Rivedere il file ConfigMgrSetup.log nella directory radice dell'unità C per un elenco di file di lingue non aggiornati.
 
-    -   **/LANG**: 言語ファイルだけをダウンロード フォルダーにダウンロードします。  
+    -   **/LANG**: usare questa opzione per scaricare solo i file della lingua nella cartella di download.  
 
-    -   **/NOUI**: ユーザー インターフェイスを表示せずにセットアップ ダウンローダーを起動します。 このオプションを使用する場合は、**ダウンロード先のパス**をコマンド プロンプトで指定する必要があります。  
+    -   **/NOUI**: usare questa opzione per avviare il downloader di installazione senza visualizzare l'interfaccia utente. Quando si usa questa opzione, è necessario specificare il **percorso di download** come parte della riga di comando al prompt dei comandi.  
 
-    -   **&lt;DownloadPath\>**: ファイルを確認するフォルダー、またはファイルのダウンロード先にするフォルダーのパスを指定します。 **/NOUI** オプションを使用するときは、ダウンロード パスを指定する必要があります。 ダウンロード先パスを指定しなかった場合は、セットアップ ダウンローダーが開いたときにパスを指定する必要があります。 指定したフォルダーが存在しない場合は、新しく作成されます。  
+    -   **&lt;PercorsoDownload\>**: è possibile specificare il percorso della cartella di download per avviare automaticamente la verifica o il processo di download. Quando si usa l'opzione **/NOUI**, è necessario specificare il percorso di download. Se non si specifica un percorso di download, sarà necessario specificarlo all'apertura del downloader di installazione. Il downloader di installazione crea la cartella se non esiste già.  
 
-    コマンドの例:
+    Comandi di esempio:
 
-    -   **setupd &lt;DownloadPath\>**  
+    -   **setupd &lt;PercorsoDownload\>**  
 
-        -   セットアップ ダウンローダーを起動して、指定のダウンロード フォルダーにあるファイルを確認し、不足しているファイルと、既存のファイルより新しいバージョンだけをダウンロードします。     
+        -   Il downloader di installazione viene avviato, verifica i file nella cartella di download specificata e scarica solo i file mancanti o più recenti rispetto a quelli esistenti.     
 
-    -   **setupdl /VERIFY &lt;DownloadPath\>**  
+    -   **setupdl /VERIFY &lt;PercorsoDownload\>**  
 
-        -   セットアップ ダウンローダーを起動して、指定のダウンロード フォルダーにあるファイルを確認します。  
+        -   Il Downloader di installazione viene avviato e verifica i file nella cartella di download specificata.  
 
-    -   **setupdl /NOUI &lt;DownloadPath\>**  
+    -   **setupdl /NOUI &lt;PercorsoDownload\>**  
 
-        -   セットアップ ダウンローダーを起動して、指定のダウンロード フォルダーにあるファイルを確認し、不足しているファイルと、既存のファイルより新しいファイルだけをダウンロードします。  
+        -   Il downloader di installazione viene avviato, verifica i file nella cartella di download specificata e scarica solo i file mancanti o più recenti rispetto a quelli esistenti.  
 
-    -   **setupdl /LANG  &lt;DownloadPath\>**  
+    -   **setupdl /LANG  &lt;PercorsoDownload\>**  
 
-        -   セットアップ ダウンローダーが開始し、指定のダウンロード フォルダーにある言語ファイルを確認し、不足している言語ファイルと、既存のファイルより新しい言語ファイルだけをダウンロードします。  
+        -   Il downloader di installazione viene avviato, verifica i file della lingua nella cartella di download specificata e scarica solo i file della lingua mancanti o i file più recenti rispetto a quelli esistenti.  
 
     -   **setupdl /VERIFY**  
 
-        -   セットアップ ダウンローダーを起動してから、ダウンロード フォルダーへのパスを指定する必要があります。 次に、**[検証]** をクリックして、セットアップ ダウンローダーでダウンロード フォルダーにあるファイルを確認します。  
+        -   Il Downloader di installazione viene avviato e quindi è necessario specificare il percorso alla cartella di download. Dopo aver fatto clic su **Verifica**, il downloader di installazione verifica i file nella cartella di download.  
 
-3.  ダウンロード結果を確認するには、C ドライブのルート ディレクトリにある **ConfigMgrSetup.log** ファイルを開きます。
+3.  Per rivedere i risultati del download, aprire il file **ConfigMgrSetup.log** nella directory radice dell'unità C.

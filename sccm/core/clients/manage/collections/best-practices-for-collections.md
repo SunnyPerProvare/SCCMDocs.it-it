@@ -1,6 +1,6 @@
 ---
-title: "コレクションのベスト プラクティス | Microsoft Docs"
-description: "System Center Configuration Manager のコレクションのベスト プラクティスを示します。"
+title: Procedure consigliate per le raccolte | Microsoft Docs
+description: Apprendere le procedure consigliate per le raccolte in System Center Configuration Manager.
 ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
@@ -18,25 +18,25 @@ manager: angrobe
 ms.openlocfilehash: fd62af3910c0745e0f1105417701b894e10cbbac
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="best-practices-for-collections-in-system-center-configuration-manager"></a>System Center Configuration Manager のコレクションのベスト プラクティス
+# <a name="best-practices-for-collections-in-system-center-configuration-manager"></a>Procedure consigliate per le raccolte in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager のコレクションに関する以下のベスト プラクティスを使用してください。  
+Per le raccolte in System Center Configuration Manager usare le seguenti procedure consigliate.  
 
-## <a name="do-not-use-incremental-updates-for-a-large-number-of-collections"></a>多数のコレクションに対して、増分更新を使用しないでください。  
- [このコレクションで増分更新を使用する] オプションを多数のコレクションに対して有効にすると、この構成が評価の遅延を引き起こす可能性があります。 **** しきい値は、階層内では約 200 コレクションです。 正確な数は、次の要因によります。  
+## <a name="do-not-use-incremental-updates-for-a-large-number-of-collections"></a>Non usare gli aggiornamenti incrementali per un numero elevato di raccolte  
+ Quando si abilita l'opzione **Utilizza aggiornamenti incrementali per questa raccolta** , questa configurazione potrebbe provocare ritardi di valutazione se l'opzione viene abilitata per più raccolte. La soglia è pari a circa 200 raccolte nella gerarchia. Il numero esatto dipende dai fattori seguenti:  
 
--   コレクションの総数  
+-   Il numero totale di raccolte  
 
--   階層内で、リソースが新しく追加または変更される頻度  
+-   La frequenza di aggiunta e modifica delle nuove risorse nella gerarchia  
 
--   階層内のクライアント数  
+-   Il numero di client nella gerarchia  
 
--   階層内のコレクション メンバーシップ規則の複雑さ  
+-   La complessità delle regole di appartenenza alla raccolta nella gerarchia  
 
-## <a name="make-sure-that-maintenance-windows-are-large-enough-to-deploy-critical-software-updates"></a>重要なソフトウェア更新プログラムを展開するのに十分なメンテナンス期間を確保する  
- デバイス コレクションのメンテナンス期間を構成して、Configuration Manager がソフトウェアをそれらのデバイスにインストールできる時間を制限することができます。 メンテナンス期間の構成で十分な時間が確保されていない場合、クライアントは重要なソフトウェア更新プログラムをインストールできない可能性があり、その結果、ソフトウェア更新プログラムによって緩和される攻撃に対して脆弱なままになります。  
+## <a name="make-sure-that-maintenance-windows-are-large-enough-to-deploy-critical-software-updates"></a>Assicurarsi che le dimensioni delle finestre di manutenzione siano sufficienti per la distribuzione degli aggiornamenti software critici  
+ È possibile configurare le finestre di manutenzione per le raccolte di dispositivi al fine di limitare il numero di possibili installazioni del software da parte di Configuration Manager su questi dispositivi. Se si configurano dimensioni insufficienti della finestra di manutenzione, il client potrebbe non essere in grado di installare aggiornamenti software critici, rendendo il client vulnerabile ad attacchi altrimenti limitati dall'aggiornamento software.  

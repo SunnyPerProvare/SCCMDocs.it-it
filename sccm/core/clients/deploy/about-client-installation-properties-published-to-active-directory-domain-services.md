@@ -1,6 +1,6 @@
 ---
-title: "Active Directory Domain Services のクライアント インストール プロパティ | Microsoft Docs"
-description: "System Center Configuration Manager で Active Directory Domain Services に発行されたクライアント インストール プロパティを使用します。"
+title: "Proprietà di installazione client in Active Directory Domain Services | Documentazione Microsoft"
+description: "Usare le proprietà di installazione client pubblicate per Active Directory Domain Services in System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,110 +18,110 @@ manager: angrobe
 ms.openlocfilehash: 744bc3792a02f13d3cf940cd1a4f2fd8749ee2f4
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="about-client-installation-properties-published-to-active-directory-domain-services"></a>Active Directory Domain Services に発行されたクライアント インストールのプロパティについて
+# <a name="about-client-installation-properties-published-to-active-directory-domain-services"></a>Informazioni sulle proprietà di installazione client pubblicate in Active Directory Domain Services
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Active Directory スキーマを System Center Configuration Manager 用に拡張して、サイトを Active Directory Domain Services に公開すると、多くのクライアント インストール プロパティが Active Directory Domain Services に発行されます。 コンピューターでこれらのクライアント インストール プロパティを見つけることができる場合は、Configuration Manager クライアントの展開時にそれらを使用できます。  
+Quando si estende lo schema di Active Directory per System Center Configuration Manager e il sito viene pubblicato in Active Directory Domain Services, molte proprietà di installazione client vengono pubblicate in Active Directory Domain Services. Se un computer è in grado di rilevare le proprietà di installazione del client, può usarle durante la distribuzione del client di Configuration Manager.  
 
- クライアント インストール プロパティの発行に Active Directory ドメイン サービスを使用すると、次の利点があります。  
+ I vantaggi dell'uso di Active Directory Domain Services per pubblicare le proprietà dell'installazione del client includono:  
 
--   ソフトウェアの更新ポイントベースのクライアント インストールとグループ ポリシーのクライアント インストールで、セットアップ パラメーターを各コンピューターで設定する必要がありません。  
+-   L'installazione client basata sul punto di aggiornamento software e le installazioni client di Criteri di gruppo non richiedono la configurazione dei parametri di impostazione in ogni computer.  
 
--   この情報は自動的に生成されるため、インストール プロパティを手動で入力するために発生する人的ミスのリスクが排除されます。  
-
-> [!NOTE]  
->  Configuration Manager 用に Active Directory スキーマを拡張する方法、およびサイトの公開方法の詳細については、「[System Center Configuration Manager のスキーマ拡張](../../plan-design/network/schema-extensions.md)」を参照してください。  
-
-## <a name="client-installation-properties-published-to-active-directory-domain-services"></a>Active Directory Domain Services に発行されたクライアント インストール プロパティ  
-クライアント インストール プロパティの一覧を次に示します。 下記一覧の各項目の詳細については、「[System Center Configuration Manager のクライアント インストール プロパティについて](../../../core/clients/deploy/about-client-installation-properties.md)」を参照してください。  
-
--   Configuration Manager サイト コード。  
-
--   サイト サーバー署名証明書。  
-
--   信頼されたルート キー。  
-
--   HTTP おようび HTTPS 用のクライアント通信ポート。  
-
--   フォールバック ステータス ポイント。 サイトに複数のフォールバック ステータス ポイントがある場合は、最初にインストールしたフォールバック ステータス ポイントのみが Active Directory Domain Services に発行されます。  
-
--   クライアントが HTTPS のみを使用して通信する必要があることを示す設定。  
-
--   PKI 証明書に関する設定:  
-
-   -   クライアントの PKI 証明書を使用するかどうか。  
-
-   -   証明書の選択条件。 これは、Configuration Manager に使用できる有効な PKI 証明書がクライアントに複数ある場合に必要になります。  
-
-   -   どの証明書を使用するかを判断する設定（証明書選択プロセスの後に有効な証明書がクライアントに複数ある場合）。  
-
-   -   信頼されたルート（CA）証明書の一覧を含む証明書発行者の一覧  
-
--   ｃlient.msi インストール プロパティは、[ **クライアント プッシュ インストールのプロパティ** ]ダイアログ ボックスの [ **クライアント** ]タブで指定します。
-
-クライアント インストール (CCMSetup) では、次のいずれかを使用して指定されたプロパティが他にない場合にのみ、Active Directory Domain Services に発行されたプロパティを使用します。  
-
--   手動のインストール方法 (この記事で後述)
-
--   グループ ポリシーによるインストール方法 (この記事で後述)
+-   Poiché queste informazioni vengono generate automaticamente, viene eliminato il rischio di errori umani associato all'immissione manuale delle proprietà di installazione.  
 
 > [!NOTE]  
->  クライアント インストールにはクライアント インストール プロパティを使用します。 これらのプロパティは、クライアントがインストールされて Configuration Manager サイトに割り当てられると、割り当てられたサイトの新しい設定で上書きされる場合があります。  
+>  Per altre informazioni su come estendere lo schema di Active Directory per Configuration Manager e come pubblicare un sito, vedere [Estensioni dello schema per System Center Configuration Manager](../../plan-design/network/schema-extensions.md).  
 
- どの Configuration Manager クライアント インストール方法で Active Directory Domain Services を使用してクライアント インストール プロパティを取得するかを判断するには、以下のセクションの詳細を使用します。  
+## <a name="client-installation-properties-published-to-active-directory-domain-services"></a>Proprietà di installazione client pubblicate in Active Directory Domain Services  
+Di seguito è riportato un elenco delle proprietà di installazione client. Per altre informazioni sugli elementi elencati di seguito, vedere [Informazioni sulle proprietà di installazione del client in System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
-## <a name="client-push-installation"></a>クライアント プッシュ インストール  
- クライアント プッシュ インストールでは、インストール　プロパティの取得に Active Directory ドメイン サービスは使用されません。  
+-   Codice del sito di Configuration Manager.  
 
- その代わりに、**[クライアント プッシュ インストールのプロパティ]** ダイアログ ボックスの **[クライアント]** タブで、クライアント インストール プロパティを指定することができます。 これらのオプションとクライアント関連のサイト設定は、クライアントがクライアント インストールの際に読み込むファイルに保存されています。  
+-   Il certificato di firma del server del sito.  
+
+-   La chiave radice attendibile.  
+
+-   Le porte di comunicazione client per HTTP e HTTPS.  
+
+-   Il punto di stato di fallback. Se nel sito sono presenti più punti di stato di fallback, verrà pubblicato in Active Directory Domain Services soltanto il primo elemento installato.  
+
+-   Un'impostazione per indicare che il client deve comunicare solo tramite HTTPS.  
+
+-   Impostazioni relative ai certificati PKI:  
+
+   -   Se si desidera utilizzare un certificato PKI del client.  
+
+   -   Criteri per la selezione del certificato. Possono essere necessari perché il client dispone di più certificati PKI validi utilizzabili per Configuration Manager.  
+
+   -   Un'impostazione per stabilire quale certificato utilizzare se il client dispone di più certificati validi dopo il processo di selezione del certificato.  
+
+   -   L'elenco di autorità emittenti del certificato che contiene un elenco di certificati CA radice attendibili.  
+
+-   Le proprietà di installazione client.msi specificate nella scheda **Client** della finestra di dialogo **Proprietà installazione push client** .
+
+L'installazione client (CCMSetup) usa le proprietà pubblicate in Active Directory Domain Services solo se non vengono specificate altre proprietà mediante uno dei metodi seguenti:  
+
+-   Metodo di installazione manuale (descritto più avanti in questo articolo)
+
+-   Metodo di installazione Criteri di gruppo (descritto più avanti in questo articolo)
 
 > [!NOTE]  
->  クライアント プッシュ インストール、フォールバック ステータス ポイント、または信頼されたルート キーでは、[ **クライアント** ]タブで CCMSetup プロパティを設定する必要はありません。 これらの設定はクライアント プッシュ インストールを使用してインストールをしたときに、自動で行われます。  
+>  Proprietà di installazione client usate per installare il client. Queste proprietà possono essere sovrascritte con le nuove impostazioni del sito assegnato, dopo che il client è stato installato e assegnato correttamente a un sito di Configuration Manager.  
 
- **[クライアント]** タブで指定したプロパティは、サイトが Active Directory Domain Services に公開されると、Active Directory Domain Services に発行されます。 これらの設定は CCMSetup がインストール プロパティなしで実行されるクライアント インストールで読み込まれます。  
+ Usare le informazioni dettagliate nelle sezioni seguenti per determinare quali metodi di installazione client di Configuration Manager usano Active Directory Domain Services per ottenere le proprietà di installazione client.  
 
-## <a name="software-update-point-based-installation"></a>ソフトウェアの更新ポイント経由のインストール  
- ソフトウェアの更新ポイント ベースのインストール方法では、CCMSetup コマンド ラインへのインストール プロパティの追加はサポートされていません。  
+## <a name="client-push-installation"></a>Installazione push client  
+ L'installazione push del client non usa Active Directory Domain Services per ottenere le proprietà di installazione.  
 
- グループ ポリシーを使用してクライアント コンピューターでコマンド ライン プロパティが提供されなかった場合は、CCMSetup は Active Directory ドメイン サービス でインストール プロパティを検索します。  
+ È possibile specificare le proprietà di installazione client nella scheda **Client** della finestra di dialogo **Proprietà installazione push client**. Queste opzioni e impostazioni del sito relative al client vengono archiviate in un file che il client legge durante l'installazione client.  
 
-## <a name="group-policy-installation"></a>グループ ポリシーによるインストール  
- グループ ポリシーのインストール方法では、CCMSetup コマンド ラインへのインストール プロパティの追加はサポートされていません。  
+> [!NOTE]  
+>  Non è necessario specificare alcuna proprietà CCMSetup per l'installazione push client né il punto di stato di fallback né la chiave radice attendibile nella scheda **Client** . Queste impostazioni vengono fornite ai client automaticamente al momento dell'installazione tramite installazione push del client.  
 
- クライアント コンピューターでコマンド ライン プロパティが提供されなかった場合は、CCMSetup は Active Directory ドメイン サービス でインストール プロパティを検索します。  
+ Se il sito viene pubblicato in Active Directory Domain Services, qualsiasi proprietà specificata nella scheda **Client** viene pubblicata in Active Directory Domain Services. Queste impostazioni vengono lette dalle installazioni del client quando CCMSetup viene eseguito senza proprietà di installazione.  
 
-## <a name="manual-installation"></a>手動インストール  
- CCMSetup は、次の状況で Active Directory ドメイン サービスのインストール プロパティを検索します。  
+## <a name="software-update-point-based-installation"></a>Installazione basata sul punto di aggiornamento software  
+ Il metodo di installazione basata sul punto di aggiornamento software non supporta l'aggiunta di proprietà di installazione nella riga di comando di CCMSetup.  
 
--   CCMSetup.exe コマンドの後にコマンド ライン プロパティが指定されていない。  
+ Se non è stato eseguito il provisioning delle proprietà della riga di comando nel computer client utilizzando i Criterio di gruppo, CCMSetup cerca le proprietà di installazione in Active Directory Domain Services.  
 
--   コンピューターにグループ ポリシーを使用してインストール プロパティが提供されていない。  
+## <a name="group-policy-installation"></a>Installazione tramite Criteri di gruppo  
+ Il metodo di installazione con Criteri di gruppo non supporta l'aggiunta di proprietà di installazione nella riga di comando di CCMSetup.  
 
-## <a name="logon-script-installation"></a>ログオン スクリプトによるインストール  
- CCMSetup は、次の状況で Active Directory ドメイン サービスのインストール プロパティを検索します。  
+ Se non è stato eseguito il provisioning delle proprietà della riga di comando nel computer client, CCMSetup cerca le proprietà di installazione in Active Directory Domain Services.  
 
--   CCMSetup.exe コマンドの後にコマンド ライン プロパティが指定されていない。  
+## <a name="manual-installation"></a>Installazione manuale  
+ CCMSetup cerca le proprietà di installazione in Active Directory Domain Services nelle circostanze seguenti:  
 
--   コンピューターにグループ ポリシーを使用してインストール プロパティが提供されていない。  
+-   Nessuna proprietà della riga di comando viene specificata dopo il comando CCMSetup.exe.  
 
-## <a name="software-distribution-installation"></a>ソフトウェアの配布によるインストール  
- CCMSetup は、次の状況で Active Directory ドメイン サービスのインストール プロパティを検索します。  
+-   Non è stato eseguito il provisioning del computer con le proprietà di installazione utilizzando i Criteri di gruppo.  
 
--   CCMSetup.exe コマンドの後にコマンド ライン プロパティが指定されていない。  
+## <a name="logon-script-installation"></a>Installazione tramite script di accesso  
+ CCMSetup cerca le proprietà di installazione in Active Directory Domain Services nelle circostanze seguenti:  
 
--   コンピューターにグループ ポリシーを使用してインストール プロパティが提供されていない。  
+-   Nessuna proprietà della riga di comando viene specificata dopo il comando CCMSetup.exe.  
 
-## <a name="installations-for-clients-that-cannot-access-active-directory-domain-services"></a>Active Directory Domain Services にアクセスできないクライアントのインストール  
-こうしたクライアント コンピューターは、Active Directory Domain Services から発行されたインストール プロパティを読み込むことも、プロパティにアクセスすることもできません。
+-   Non è stato eseguito il provisioning del computer con le proprietà di installazione utilizzando i Criteri di gruppo.  
 
- これらのクライアントには次のものがあります。  
+## <a name="software-distribution-installation"></a>Installazione della distribuzione software  
+ CCMSetup cerca le proprietà di installazione in Active Directory Domain Services nelle circostanze seguenti:  
 
--   ワークグループ コンピューター。  
+-   Nessuna proprietà della riga di comando viene specificata dopo il comando CCMSetup.exe.  
 
--   Active Directory Domain Services に公開されていない Configuration Manager サイトに割り当てられたクライアント。  
+-   Non è stato eseguito il provisioning del computer con le proprietà di installazione utilizzando i Criteri di gruppo.  
 
--   インターネット上にあるときにインストールされたクライアント。  
+## <a name="installations-for-clients-that-cannot-access-active-directory-domain-services"></a>Installazioni per i client che non possono accedere ad Active Directory Domain Services  
+Questi computer client non sono in grado di leggere o accedere alle proprietà di installazione da Active Directory Domain Services.
+
+ Tra questi client sono inclusi:  
+
+-   Computer del gruppo di lavoro.  
+
+-   Client assegnati a un sito di Configuration Manager non pubblicato in Active Directory Domain Services.  
+
+-   Client installati quando si trovano in Internet.  

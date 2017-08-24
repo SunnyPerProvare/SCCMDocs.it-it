@@ -1,6 +1,6 @@
 ---
-title: "フローチャート - 更新プログラムのダウンロード | Microsoft Docs"
-description: "オンライン サービス接続ポイントのサイトがコンソール内の更新プログラムをダウンロードするプロセスを示します。"
+title: 'Diagramma di flusso: scaricare gli aggiornamenti | Microsoft Docs'
+description: Consente di visualizzare il processo con il quale un sito con un punto di connessione del servizio in linea scarica gli aggiornamenti nella console.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,13 +17,13 @@ manager: angrobe
 ms.openlocfilehash: cd2ef0f0d694937b760d514c2a6a24973810a2b2
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="flowchart---download-updates-for-system-center-configuration-manager"></a>フローチャート - System Center Configuration Manager の更新プログラムのダウンロード
+# <a name="flowchart---download-updates-for-system-center-configuration-manager"></a>Diagramma di flusso - scaricare gli aggiornamenti per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-このデータ フローは、オンライン サービス接続ポイントのサイトがコンソール内の更新プログラムをダウンロードするプロセスを示します。  
+Questo flusso di dati consente di visualizzare il processo con il quale un sito con un punto di connessione del servizio in linea scarica gli aggiornamenti nella console.  
 
- ![フローチャート - 更新プログラムのダウンロード](media/Flowchart---Download-updates.png)  
+ ![Diagramma di flusso - scaricare gli aggiornamenti](media/Flowchart---Download-updates.png)  

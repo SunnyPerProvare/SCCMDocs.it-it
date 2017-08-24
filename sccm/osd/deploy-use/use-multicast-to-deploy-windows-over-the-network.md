@@ -1,6 +1,6 @@
 ---
-title: "マルチキャストを使用してネットワーク経由で Windows を展開する | Microsoft Docs"
-description: "System Center Configuration Manager 環境内でマルチキャストを使用すると、複数のコンピューターがオペレーティング システム イメージを同時にダウンロードできるようになります。"
+title: Usare il multicast per distribuire Windows in rete | Microsoft Docs
+description: "È possibile usare il multicast nell'ambiente di System Center Configuration Manager in modo che più computer possano scaricare simultaneamente l'immagine del sistema operativo."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,28 +17,28 @@ manager: angrobe
 ms.openlocfilehash: 55266696aa7340fddda3a57ff90e20222ff665a5
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-multicast-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>System Center Configuration Manager でマルチキャストを使用してネットワーク経由で Windows を展開する
+# <a name="use-multicast-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Usare il multicast per distribuire Windows in rete con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-マルチキャストは、複数のクライアントが同じオペレーティング システム イメージをダウンロードすることが多い System Center Configuration Manage 環境で使用できるネットワーク最適化の方法です。 マルチキャストを使用すると、配布ポイントがデータのコピーを各々のクライアントに別々の接続で送信する代わりに、マルチキャストしますので、複数のコンピューターが同時にオペレーティング システム イメージをダウンロードすることになります。  
+Il multicast è un metodo di ottimizzazione della rete che è possibile usare nell'ambiente di System Center Configuration Manager in cui più client potrebbero scaricare la stessa immagine del sistema nello stesso momento. Quando si utilizza il multicast, l'immagine del sistema operativo viene scaricata contemporaneamente da più computer mentre il punto di distribuzione ne esegue il multicast, invece di far inviare una copia dei dati dal punto di distribuzione a ogni client in una connessione separata.  
 
- 次に挙げるオペレーティング システムの展開シナリオでは、マルチキャストを使用してネットワーク経由でオペレーティング システムを展開できます。  
+ È possibile distribuire i sistemi operativi in rete usando il multicast negli scenari di distribuzione del sistema operativo seguenti:  
 
--   [新しいバージョンの Windows で既存のコンピューターを更新する](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
+-   [Aggiornare un computer esistente con una nuova versione di Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
 
--   [新しいコンピューター (ベア メタル) に新しいバージョンの Windows をインストールする](install-new-windows-version-new-computer-bare-metal.md)  
+-   [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)  
 
- いずれかのオペレーティング システムの展開シナリオのステップを完了させてから、次のセクションを参照して、マルチキャストをサポートします。  
+ Completare i passaggi in uno degli scenari di distribuzione del sistema operativo e quindi usare le sezioni seguenti per supportare il multicast.  
 
-##  <a name="BKMK_Configure"></a> マルチキャストをサポートする配布ポイントの構成  
- オペレーティング システムを展開するときにマルチキャストを使用するには、マルチキャストをサポートするように配布ポイントを構成する必要があります。 詳細については、「[マルチキャストをサポートする配布ポイントの構成](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_DPMulticast)」を参照してください。  
+##  <a name="BKMK_Configure"></a> Configurare un punto di distribuzione per il supporto del multicast  
+ Per usare il multicast quando si distribuisce il sistema operativo, è necessario configurare un punto di distribuzione per il supporto del multicast. Per altre informazioni, vedere [Configurare i punti di distribuzione per il supporto del multicast](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_DPMulticast).  
 
-## <a name="prepare-an-operating-system-image-for-multicast-deployments"></a>マルチキャスト展開用のオペレーティング システム イメージの準備  
- マルチキャストをサポートするようにオペレーティング システム イメージ パッケージを構成するには、「[マルチキャスト展開用のオペレーティング システム イメージを準備する](../get-started/manage-operating-system-images.md#BKMK_OSImageMulticast)」を参照してください。  
+## <a name="prepare-an-operating-system-image-for-multicast-deployments"></a>Preparare un'immagine del sistema operativo per le distribuzioni multicast  
+ Per configurare il pacchetto immagine del sistema operativo per il supporto del multicast, vedere [Preparare l'immagine del sistema operativo per le distribuzioni multicast](../get-started/manage-operating-system-images.md#BKMK_OSImageMulticast).  
 
-##  <a name="BKMK_Deploy"></a> タスク シーケンスの展開  
- オペレーティング システムをターゲット コレクションに展開します。 詳細については、「 [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS)」をご覧ください。  
+##  <a name="BKMK_Deploy"></a> Distribuire la sequenza di attività  
+ Distribuire il sistema operativo in una raccolta di destinazione. Per altre informazioni, vedere [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  

@@ -1,6 +1,6 @@
 ---
-title: "ユーザー データとプロファイルの構成項目の作成 | Microsoft Docs"
-description: "System Center Configuration Manager でデータとプロファイル構成項目を使用して、フォルダーのリダイレクト、オフライン ファイル、ローミング プロファイルを管理します。"
+title: Creare dati utente ed elementi di configurazione profili | Microsoft Docs
+description: "È possibile usare gli elementi di configurazione di dati e profili in System Center Configuration Manager per gestire il reindirizzamento delle cartelle, i file non in linea e profili mobili."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,100 +18,100 @@ manager: angrobe
 ms.openlocfilehash: 85b984d739dc9f9d2046186b381eff54ba687c66
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-user-data-and-profiles-configuration-items-in-system-center-configuration-manager"></a>System Center Configuration Manager でユーザー データとプロファイル構成項目を作成する
+# <a name="create-user-data-and-profiles-configuration-items-in-system-center-configuration-manager"></a>Creare elementi di configurazione di profili e dati utente in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager のユーザー データとプロファイル構成項目には、Windows 8 以降を実行するコンピューターのフォルダー リダイレクト、オフライン ファイル、およびローミング プロファイルを管理できる、階層内のユーザー用の設定が含まれています。 たとえば、次のように操作できます。  
+Gli elementi di configurazione di profili e dati utente in System Center Configuration Manager contengono le impostazioni che consentono di gestire il reindirizzamento delle cartelle, i file offline e i profili mobili nei computer che eseguono Windows 8 e versioni successive per gli utenti della gerarchia. Ad esempio, è possibile:  
 
--   ユーザーのドキュメント フォルダーをネットワーク共有にリダイレクトします。  
+-   Reindirizzare la cartella Documenti di un utente a una condivisione di rete.  
 
--   ネットワーク接続が使用できないときにネットワーク上に格納されている指定のファイルをユーザーのコンピューターで使用できるようにします。  
+-   Assicurarsi che specifici file archiviati in rete siano disponibili nel computer di un utente quando la connessione di rete non è disponibile.  
 
--   ユーザーがログオンおよびログオフするときにネットワーク共有と同期するユーザーのローミング プロファイル内のファイルの種類を構成します。  
+-   Configurare i file nel profilo mobile di un utente da sincronizzare con una condivisione di rete quando l'utente si connette e si disconnette.  
 
- Configuration Manager の他の構成項目とは異なり、ユーザー データとプロファイル構成項目を構成基準に追加したうえで、それを展開することはしません。 代わりに、 **[ユーザー データとプロファイル構成項目の展開]** ダイアログ ボックスを使用して、構成項目を直接展開します。  
+ A differenza di altri elementi di configurazione in Configuration Manager, gli elementi di configurazione di profili e dati utente non vengono aggiunti a una linea di base di configurazione da distribuire in un secondo momento. Al contrario, l'elemento di configurazione si distribuisce direttamente usando la finestra di dialogo **Distribuisci elemento di configurazione profili e dati utente** .  
 
 > [!IMPORTANT]  
->  ユーザー データとプロファイル構成項目のみをユーザー コレクションに展開できます。  
+>  È possibile distribuire elementi di configurazione di profili e dati utente solo alle raccolte utenti.  
 
-## <a name="enable-user-data-and-profiles-for-compliance-settings"></a>コンプライアンス設定用のユーザー データとプロファイルの有効化  
- 階層内のすべてのコンピューターに適用されるユーザー データとプロファイル コンプライアンス設定の既定のクライアント設定を構成するには、次の手順に従います。 この設定を一部のコンピューターのみに適用する場合は、カスタム クライアント デバイス設定を作成して、ユーザー データとプロファイル コンプライアンス設定を使用するコンピューターを含むコレクションに割り当てます。 デバイスの設定をカスタマイズする方法について詳しくは、「[クライアント設定を構成する方法](../../core/clients/deploy/configure-client-settings.md)」をご覧ください。  
+## <a name="enable-user-data-and-profiles-for-compliance-settings"></a>Abilitare profili e dati utente per le impostazioni di conformità  
+ Usare la procedura seguente per configurare l'impostazione client predefinita per le impostazioni di conformità di profili e dati utente che verranno applicate a tutti i computer nella gerarchia. Per applicare queste impostazioni solo ad alcuni computer, creare un'impostazione client di dispositivo personalizzata e assegnarla a una raccolta contenente i computer per cui si vogliono usare le impostazioni di conformità di profili e dati utente. Per altre informazioni su come creare le impostazioni personalizzate del dispositivo, vedere [Come configurare le impostazioni client](../../core/clients/deploy/configure-client-settings.md).  
 
-1.  Configuration Manager コンソールで、**[管理]** > **[クライアント設定]** > **[既定の設定]**の順にクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Impostazioni client** > **Impostazioni predefinite**.  
 
-4.  **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
+4.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 
-5.  **既定の設定の** ダイアログ ボックスで、をクリックして **法令遵守の設定**です。  
+5.  Nella finestra di dialogo **Impostazioni predefinite** fare clic su **Impostazioni di conformità**.  
 
-6.  **を有効にするユーザー データとプロファイル** ドロップダウン リストで、 **はい**です。  
+6.  Nell'elenco a discesa **Abilitare profili e dati utente** selezionare **Sì**.  
 
-7.  [OK] **** をクリックして [既定の設定] **** ダイアログ ボックスを閉じます。  
+7.  Fare clic su **OK** per chiudere la finestra di dialogo **Impostazioni dispositivo** .  
 
-## <a name="create-a-user-data-and-profiles-configuration-item"></a>ユーザー データとプロファイル構成項目を作成する  
+## <a name="create-a-user-data-and-profiles-configuration-item"></a>Creare un elemento di configurazione di profili e dati utente  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[コンプライアンス設定]** > **[ユーザー データとプロファイル]** の順にクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Profili e dati utente**.  
 
-3.  **[ホーム]** タブの **[作成]** グループで、 **[ユーザー データとプロファイルの構成項目の作成]**をクリックします。  
+3.  Nella gruppo **Crea** della scheda **Home** fare clic su **Crea elemento di configurazione profili e dati utente**.  
 
-4.  **ユーザー データとプロファイル構成項目の作成ウィザード** の **[全般]**ページで、次の情報を指定します。  
+4.  Nella pagina **Generale** della **Creazione guidata elemento di configurazione profili e dati utente**specificare le informazioni seguenti:  
 
-    -   **名前:** 構成項目の一意の名前を入力します。 最大 256 文字を使用できます。  
+    -   **Nome** : immettere un nome univoco per l'elemento di configurazione. È possibile usare un massimo di 256 caratteri.  
 
-    -   **説明 :** 構成項目と関連情報を Configuration Manager コンソールで識別するための簡単な説明を提供します。 最大 256 文字を使用できます。  
+    -   **Descrizione:** Fornire una descrizione che offra una panoramica di elemento di configurazione e altre informazioni rilevanti per identificarlo nella console di Configuration Manager. È possibile usare un massimo di 256 caratteri.  
 
-    -   **フォルダーのリダイレクト:** このチェック ボックスは、この構成項目のフォルダー リダイレクトの設定を構成するときにオンにします。  
+    -   **Reindirizzamento cartelle:** selezionare questa casella di controllo se si vuole configurare le impostazioni per il reindirizzamento delle cartelle per questo elemento di configurazione.  
 
-    -   **オフライン ファイル:** このチェック ボックスは、この構成項目のオフライン ファイルの設定を構成するときにオンにします。  
+    -   **File offline:** selezionare questa casella di controllo se si vuole configurare le impostazioni per i file offline per questo elemento di configurazione.  
 
-    -   **ローミング ユーザー プロファイル:** このチェック ボックスは、この構成項目のローミング ユーザー プロファイルの設定を構成するときにオンにします。  
+    -   **Profili utente mobili:** selezionare questa casella di controllo se si vuole configurare le impostazioni per i profili utente mobili per questo elemento di configurazione.  
 
-5.  **ユーザー データとプロファイル構成項目の作成ウィザード** の **[フォルダーのリダイレクト]**ページで、この構成項目を受信するユーザーのクライアント コンピューターでフォルダー リダイレクトを管理する方法を指定します。 ユーザーのすべてのログオン先デバイスの設定を構成することも、プライマリ デバイスの設定のみを構成することもできます。 フォルダー リダイレクトの詳細については、Windows Server のマニュアルを参照してください。  
-
-    > [!NOTE]  
-    >  このページは、そのウィザードの [**全般**] ページで [**フォルダーのリダイレクト**] チェック ボックスをオンにした場合にのみ表示されます。  
-
-6.  **ユーザー データとプロファイル構成項目の作成ウィザード** の **[オフライン ファイル]**ページで、この構成項目を受信するユーザーのオフライン ファイルの使用を有効または無効にして、オフライン ファイルの動作の設定を構成できます。 ユーザーがログオンしているコンピューターで常に使用可能な状態にするオフライン ファイルを指定することもできます。 オフライン ファイルの詳細については、Windows Server のマニュアルを参照してください。  
+5.  Nella pagina **Reindirizzamento cartelle** della **Creazione guidata elemento di configurazione profili e dati utente**specificare come si vuole che i computer client degli utenti che ricevono questo elemento di configurazione gestiscano il reindirizzamento delle cartelle. È possibile configurare le impostazioni per qualsiasi dispositivo a cui l'utente accede o solo per i dispositivi primari dell'utente. Per altre informazioni sul reindirizzamento delle cartelle, vedere la documentazione di Windows Server.  
 
     > [!NOTE]  
-    >  このページは、そのウィザードの [**全般**] ページで [**オフライン ファイル**] チェック ボックスをオンにした場合にのみ表示されます。  
+    >  Questa pagina viene visualizzata solo se è stata selezionata la casella **Reindirizzamento cartelle** nella pagina **Generale** della procedura guidata.  
 
-7.  **ユーザー データとプロファイル構成項目の作成ウィザード** の **[ローミング プロファイル]**ページで、ユーザーがログオンするコンピューターでローミング プロファイルを使用可能にするかどうかを構成できます。また、これらのプロファイルの動作方法に関する情報をさらに詳しく構成することもできます。 ローミング プロファイルの詳細については、Windows Server のマニュアルを参照してください。  
+6.  Nella pagina **File offline** della **Creazione guidata elemento di configurazione profili e dati utente**è possibile abilitare o disabilitare l'uso dei file offline per gli utenti che ricevono questo elemento di configurazione e quindi configurare le impostazioni per il comportamento dei file offline. È inoltre possibile specificare i file offline che saranno sempre disponibili in qualsiasi computer a cui l'utente esegue l'accesso. Per altre informazioni sui file offline, vedere la documentazione di Windows Server.  
 
     > [!NOTE]  
-    >  このページは、そのウィザードの [**全般**] ページで [**ローミング ユーザー プロファイル**] チェック ボックスをオンにした場合にのみ表示されます。  
+    >  Questa pagina viene visualizzata solo se è stata selezionata la casella **File offline** nella pagina **Generale** della procedura guidata.  
 
-8.  ウィザードを完了します。  
+7.  Nella pagina **Profili mobili** della **Creazione guidata elemento di configurazione profili e dati utente**è possibile configurare se i profili mobili sono disponibili nei computer a cui l'utente esegue l'accesso e anche configurare informazioni aggiuntive sul funzionamento di tali profili. Per altre informazioni sui profili mobili, vedere la documentazione di Windows Server.  
 
- 新しいユーザー データとプロファイル構成項目が、 **[資産とコンプライアンス]** ワークスペースの **[ユーザー データとプロファイル]** ノードに表示されます。  
+    > [!NOTE]  
+    >  Questa pagina viene visualizzata solo se è stata selezionata la casella **Profili utente mobili** nella pagina **Generale** della procedura guidata.  
 
-## <a name="deploy-a-user-data-and-profiles-configuration-item"></a>ユーザー データとプロファイル構成項目を展開する  
+8.  Completare la procedura guidata.  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[コンプライアンス設定]** > **[ユーザー データとプロファイル]** の順にクリックします。  
+ Il nuovo elemento di configurazione dei profili e dati utente viene visualizzato nel nodo **Profili e dati utente** dell'area di lavoro **Asset e conformità** .  
 
-3.  展開するユーザー データとプロファイル構成項目を選択し、 **[ホーム]** タブの **[展開]** グループで、 **[展開]**をクリックします。  
+## <a name="deploy-a-user-data-and-profiles-configuration-item"></a>Distribuire un elemento di configurazione di profili e dati utente  
 
-4.  **[ユーザー データとプロファイル構成項目の展開]** ダイアログ ボックスで、次の情報を指定します。  
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Profili e dati utente**.  
 
-    -   **コレクション** - **[参照]** をクリックして、構成項目を展開するユーザー コレクションを選択します。  
+3.  Selezionare l'elemento di configurazione dei profili e dati utente che si vuole distribuire e quindi nel gruppo **Distribuzione** della scheda **Home** fare clic su **Distribuisci**.  
+
+4.  Nella finestra di dialogo **Distribuisci elemento di configurazione profili e dati utente** specificare le informazioni seguenti.  
+
+    -   **Raccolta** : fare clic su **Sfoglia** per selezionare la raccolta di utenti in cui si vuole distribuire l'elemento di configurazione.  
 
         > [!IMPORTANT]  
-        >  ユーザー データとプロファイル構成項目のみをユーザー コレクションに展開できます。  
+        >  È possibile distribuire gli elementi di configurazione dei profili e dati utente solo alle raccolte di utenti.  
 
-    -   **サポートされている場合は対応していない規則を修復する** - このオプションを有効にすると、クライアント コンピューターで非対応と評価されたすべての規則が自動的に修復されます。  
+    -   **Monitora e aggiorna le regole non conformi, se supportato** : abilitare questa opzione per monitorare e aggiornare automaticamente le regole che vengono valutate come non conforme nei computer client.  
 
-    -   **メンテナンス期間以外の修復を許可する** - 構成項目の展開先のコレクションにメンテナンス期間が設定されている場合、このオプションを有効にすると、コンプライアンス設定によって、メンテナンス期間外に値を修復できます。 メンテナンス期間について詳しくは、「[メンテナンス期間を使用する方法](../../core/clients/manage/collections/use-maintenance-windows.md)」をご覧ください。  
+    -   **Consenti monitoraggio e aggiornamento fuori dalla finestra di manutenzione** : se è stata configurata una finestra di manutenzione per la raccolta in cui si distribuisce l'elemento di configurazione, abilitare questa opzione per consentire alle impostazioni di conformità di monitorare e aggiornare il valore fuori dalla finestra di manutenzione. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione in Configuration Manager](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
-    -   **アラートを生成する** - このオプションを有効にすると、構成項目のコンプライアンスが指定の日時までに指定の割合に達しなかった場合に生成されるアラートを構成できます。 アラートを System Center Operations Manager に送信するかどうかも指定できます。  
+    -   **Genera un avviso** : abilitare questa opzione per configurare un avviso che viene generato se la conformità dell'elemento di configurazione è inferiore a una percentuale specificata in base a una data e un orario specifici. È inoltre possibile specificare se si desidera che un avviso venga inviato a System Center Operations Manager.  
 
-    -   **この構成項目のコンプライアンス評価スケジュールを指定します** - 展開された構成項目をクライアント コンピューターで評価するスケジュールを指定します。 簡易スケジュールまたはカスタム スケジュールを使用できます。  
+    -   **Specificare la pianificazione per la valutazione della conformità per questo elemento di configurazione** : specifica la pianificazione in base alla quale l'elemento di configurazione distribuito viene valutato nei computer client. Può trattarsi di una pianificazione semplice o personalizzata.  
 
-5.  **[OK]** をクリックして **[ユーザー データとプロファイル構成項目の展開]** ダイアログ ボックスを閉じると、展開が作成されます。  
+5.  Fare clic su **OK** per chiudere la finestra di dialogo **Distribuisci elemento di configurazione profili e dati utente** e creare la distribuzione.  
 
-## <a name="monitor-a-user-data-and-profiles-configuration-item"></a>ユーザー データとプロファイル構成項目を監視する  
- この種類の構成項目は、他のコンプライアンス設定の監視をするときと同じ方法で監視します。  
+## <a name="monitor-a-user-data-and-profiles-configuration-item"></a>Monitorare un elemento di configurazione dei profili e dati utente  
+ È possibile monitorare questo tipo di elemento di configurazione nello stesso modo in cui vengono monitorate altre impostazioni di conformità.  
 
- 詳細については、「[コンプライアンス設定を監視する方法](../../compliance/deploy-use/monitor-compliance-settings.md)」をご覧ください。  
+ Per altre informazioni, vedere [Come monitorare le impostazioni di conformità](../../compliance/deploy-use/monitor-compliance-settings.md).  

@@ -1,6 +1,6 @@
 ---
-title: "アプリケーション展開のシミュレーション | Microsoft Docs"
-description: "アプリケーションをインストールすることなく、展開の種類に関する検出方法、要件、および依存関係を評価します。"
+title: Simulare le distribuzioni di applicazioni | Microsoft Docs
+description: Valutare il metodo di individuazione, i requisiti e le dipendenze per un tipo di distribuzione senza installare l'applicazione.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,39 +18,39 @@ manager: angrobe
 ms.openlocfilehash: b06539ded21eac71dda7da89dae96fda7a801260
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="simulate-application-deployments-with-system-center-configuration-manager"></a>System Center Configuration Manager でアプリケーションの展開をシミュレートする
+# <a name="simulate-application-deployments-with-system-center-configuration-manager"></a>Simulare distribuzioni di applicazioni con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-アプリケーションをインストールまたはアンインストールしないでアプリケーションの展開をテストするには、シミュレートされた展開を使用できます。 シミュレートされた展開は、展開の種類に関する検出方法、要件、および依存関係を評価します。 結果は、**[監視]** ワークスペースの **[展開]** ノードでレポートされます。 System Center Configuration Manager (Configuration Manager) でアプリケーションの展開をシミュレーションするときは、このトピックの手順を使用します。  
+È possibile usare distribuzioni simulate per testare la distribuzione di un'applicazione senza installare o disinstallare l'applicazione. Una distribuzione simulata valuta il metodo di rilevamento, i requisiti e le dipendenze per un tipo di distribuzione e raccoglie i risultati nel nodo **Distribuzioni** dell'area di lavoro **Monitoraggio**. Usare la procedura descritta in questo argomento per simulare la distribuzione di un'applicazione in System Center Configuration Manager (Configuration Manager).  
 
 > [!NOTE]  
-> モバイル デバイスのコレクションには、展開シミュレーションを使用できません。  
+> Non è possibile usare le distribuzioni simulate per le raccolte di dispositivi mobili.  
 >   
-> アプリケーションの展開シミュレーションがアクティブな場合は、展開目的が [アンインストール] のアプリケーション展開を行うことはできません。 ****  
+> Non è possibile distribuire un'applicazione con scopo di distribuzione **Disinstalla** se è attiva una distribuzione simulata della stessa applicazione.  
 
-## <a name="configure-a-simulated-application-deployment"></a>シミュレートされたアプリケーションの展開を構成する
+## <a name="configure-a-simulated-application-deployment"></a>Configurare la distribuzione simulata di un'applicazione
 
-1.  Configuration Manager コンソールで、次のいずれかを選択します。  
-    -   ユーザーのコレクション  
-    -   デバイスのコレクション  
-    -   Configuration Manager アプリケーション  
+1.  Nella console di Configuration Manager selezionare uno degli elementi seguenti:  
+    -   Una raccolta di utenti.  
+    -   Una raccolta di dispositivi.  
+    -   Un'applicazione di Configuration Manager.  
 
-2.  **[ホーム]** タブの **[展開]** グループで、**[展開のシミュレーション]** を選択します。  
+2.  Nella gruppo **Distribuzione** della scheda **Home** scegliere **Simula distribuzione**.  
 
-3.  アプリケーション展開のシミュレーション ウィザードで、シミュレートされた展開に次の詳細を設定します。  
+3.  Nella simulazione guidata distribuzione applicazione impostare i dettagli seguenti per la distribuzione simulata:  
 
-    -   **[アプリケーション]**。 **[参照]** を選択し、展開のシミュレーションを作成するアプリケーションを選択します。  
+    -   **Applicazione**. Scegliere **Sfoglia** e selezionare l'applicazione per cui si vuole creare una distribuzione simulata.  
 
-    -   **[コレクション]**。 **[参照]** を選択し、シミュレーションされた展開に使うコレクションを選択します。  
+    -   **Raccolta**. Scegliere **Sfoglia** e selezionare la raccolta da usare per la distribuzione simulata.  
 
-    -   **[操作]**。 ドロップダウン リストから、選択したアプリケーションのインストールをシミュレーションするか、アンインストールをシミュレーションするかを選択します。  
+    -   **Azione**. Dall'elenco a discesa selezionare se si vuole simulare l'installazione o la disinstallazione dell'applicazione selezionata.  
 
-    -   **[ユーザーのログインに関係なく自動的に展開する]**。 このオプションをオンにすると、クライアントがログインしているかどうかにかかわらず、クライアントはシミュレーションされた展開を評価します。  
+    -   **Distribuisci automaticamente con o senza accesso utente**. Se questa opzione è selezionata, i client valutano la distribuzione simulata indipendentemente dal fatto che abbiano eseguito l'accesso.  
 
-4.  **[次へ]** をクリックし、**[概要]** ページで情報を確認して、ウィザードを終了し、シミュレーションされたアプリケーション展開を作成します。  
+4.  Fare clic su **Avanti**, rivedere le informazioni nella pagina **Riepilogo** e completare la procedura guidata per creare la distribuzione dell'applicazione simulata.  
 
-5.  シミュレーションされるアプリケーションは、**[監視]** ワークスペースの **[展開]** ノードに、**[シミュレート]** の目的で表示されます。 アプリケーション展開の監視方法の詳細については、「[Configuration Manager でのアプリケーションの監視方法](../../apps/deploy-use/monitor-applications-from-the-console.md)」を参照してください。  
+5.  Le applicazioni simulate vengono visualizzate nel nodo **Distribuzioni** dell'area di lavoro **Monitoraggio** con lo scopo **Simula**. Per altre informazioni su come monitorare le distribuzioni delle applicazioni, vedere [Monitor applications from the System Center Configuration Manager console](../../apps/deploy-use/monitor-applications-from-the-console.md) (Monitorare le applicazioni dalla console di System Center Configuration Manager).  

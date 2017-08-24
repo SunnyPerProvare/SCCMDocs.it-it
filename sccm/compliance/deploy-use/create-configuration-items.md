@@ -1,6 +1,6 @@
 ---
-title: "構成項目の作成方法 | Microsoft Docs"
-description: "構成を作成して、System Center Configuration Manager によって管理され、Microsoft Intune に登録されているデバイスに展開します。"
+title: Come creare elementi di configurazione | Microsoft Docs
+description: "È possibile creare e distribuire configurazioni sia ai dispositivi gestiti da System Center Configuration Manager, sia a quelli registrati con Microsoft Intune."
 ms.custom: na
 ms.date: 03/28/2017
 ms.prod: configuration-manager
@@ -18,17 +18,17 @@ manager: angrobe
 ms.openlocfilehash: cddf549f017792add1b17b722bf51769060520b7
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-configuration-items-in-system-center-configuration-manager"></a>System Center Configuration Manager で構成項目を作成する方法
+# <a name="how-to-create-configuration-items-in-system-center-configuration-manager"></a>Come creare elementi di configurazione in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager のコンプライアンス設定により、構成を作成し、Configuration Manager で管理されているデバイスと Microsoft Intune に登録されているデバイスの両方に展開できます。  
+Le impostazioni di conformità in System Center Configuration Manager consentono di creare e distribuire le configurazioni sia per i dispositivi gestiti da Configuration Manager sia per i dispositivi registrati con Microsoft Intune.  
 
-## <a name="in-this-section"></a>このセクションの内容  
+## <a name="in-this-section"></a>In questa sezione  
 
--   [System Center Configuration Manager クライアントを使用して管理されているデバイスの構成項目](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md)  
+-   [Elementi di configurazione per dispositivi gestiti con il client di System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md)  
 
--   [Intune で管理されているデバイスの構成項目](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)  
+-   [Elementi di configurazione per i dispositivi gestiti con Intune](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)  

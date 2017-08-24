@@ -1,6 +1,6 @@
 ---
-title: "ライセンスとブランチの詳細 | Microsoft Docs"
-description: "このトピックでは、2016 年 10 月リリースの System Center Configuration Manager で利用できるインストール オプションのライセンス要件について説明します。Current Branch バージョン 1606、Long-Term Servicing Branch (LTSB)、Current Branch の評価版インストールが対象となります。"
+title: Altre informazioni sulle licenze e Current Branch | Microsoft Docs
+description: Usare questo argomento per informazioni sui requisiti di licenza per le opzioni di installazione disponibili con la versione di ottobre 2016 di System Center Configuration Manager, che include Current Branch versione 1606, Long-Term Servicing Branch (LTSB) e l'installazione di valutazione di Current Branch.
 ms.custom: na
 ms.date: 10/12/2016
 ms.prod: configuration-manager
@@ -18,97 +18,97 @@ manager: angrobe
 ms.openlocfilehash: 90e16b316872cb370c9c2e645f46ac12afab7107
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="licensing-and-branches-for-system-center-configuration-manager"></a>System Center Configuration Manager のライセンスとブランチ
+# <a name="licensing-and-branches-for-system-center-configuration-manager"></a>Licenze e rami per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)、(Long-Term Servicing Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch), (Long-Term Servicing Branch)*
 
-このトピックでは、2016 年 10 月リリースの System Center Configuration Manager バージョン 1606 で利用可能なインストール オプションのライセンス要件について説明します。 これらのインストール オプションには、Current Branch バージョン 1606、Long-Term Servicing Branch (LTSB)、および Current Branch バージョン 1606 の評価版インストールが含まれます。
+Questo argomento offre informazioni sui requisiti di licenza per le opzioni di installazione disponibili con il rilascio di ottobre 2016 di System Center Configuration Manager versione 1606. Tali opzioni di installazione includono la versione Current Branch 1606, Long-Term Servicing Branch (LTSB) e l'installazione di valutazione della versione Current Branch 1606.
 
-**ライセンスの概要:**   
-2016 年 10 月 1 日の時点で System Center Configuration Manager ライセンスに対してソフトウェア アシュアランス (SA) が有効になっているお客様または同等のサブスクリプション権限を持っているお客様には、2016 年 10 月リリースのバージョン 1606 の System Center Configuration Manager を使用する権限があります。 2016 年 10 月 1 日以降、System Center Configuration Manager に対する権限を持つお客様には、インストール時に Current Branch および Long-Term Servicing Branch (LTSB) の 2 つのライセンス オプションが表示されます。
-
-
-**ライセンスの詳細:**  
-[Microsoft ボリューム ライセンス プログラムを通して購入する製品の使用条件についてはこちらを参照してください](http://go.microsoft.com/fwlink/?LinkId=800052)。
+**Panoramica delle licenza:**   
+I clienti con Software Assurance o sottoscrizione equivalente attiva per le licenze di System Center Configuration Manager a partire dal 1° ottobre 2016 hanno diritto a usare la versione 1606 (ottobre 2016) di System Center Configuration Manager. I clienti che il 1° ottobre 2016 o in data successiva hanno una sottoscrizione attiva a System Center Configuration Manager troveranno al momento dell'installazione due opzioni con licenza: Current Branch e Long-Term Servicing Branch (LTSB).
 
 
-## <a name="system-center-configuration-manager-licensed-branches"></a>System Center Configuration Manager のライセンされたブランチ  
-このトピックでは、Configuration Manager をインストールして使用する権限を付与する Microsoft ライセンス契約であるソフトウェア アシュアランス契約 (または同等のサブスクリプション権限) に言及します。
+**Specifiche delle licenze:**  
+[I termini e le condizioni relativi ai prodotti acquistati tramite i programmi multilicenza Microsoft sono disponibili qui](http://go.microsoft.com/fwlink/?LinkId=800052).
 
 
-|ブランチ|ライセンス|説明|
+## <a name="system-center-configuration-manager-licensed-branches"></a>Rami di System Center Configuration Manager con licenza  
+Questo argomento fa riferimento al contratto Software Assurance, o a diritti di sottoscrizione equivalenti, ovvero al contratto di licenza Microsoft che concede diritti per l'installazione e l'uso di Configuration Manager.
+
+
+|Ramo|Licenza|Dettagli|
 |----------------|---------------------|--------------------|
-|Current Branch | Configuration Manager に対してソフトウェア アシュアランス契約 (または同等の権限) が有効になっている必要があります。 </br></br> このトピックの「[ソフトウェア アシュアランスと Current Branch](#software-assurance-and-the-current-Branch)」を参照してください。| 品質と機能に関する更新プログラムを Microsoft から定期的に受信する必要がある運用環境での使用に対応しています。 </br></br> このブランチでは、すべての機能と強化された機能を使用するためのアクセス権が提供されます。 </br></br> 各バージョン更新は、リリース後、1 年間はサポートされます。この[サポート期間内](/sccm/core/servers/manage/current-branch-versions-supported)に次の新しいバージョンへの更新を行う必要があります。|
-|Long-Term Servicing Branch (LTSB)| リリース時 (2016 年 10 月 1 日) に Microsoft との間で現在有効になっているソフトウェア アシュアランス契約が必要です。 </br></br> このトピックの「[ソフトウェア アシュアランスと LTSB](#software-assurance-and-the-ltsb)」を参照してください。 | 運用環境での使用に対応しています。 2016 年 10 月 1 日以降、Configuration Manager に対するソフトウェア アシュアランス (SA) または同等のサブスクリプション権限が期限切れになったお客様向けです。 </br></br> Current Branch と比較して、このブランチには制限があります。 </br></br> このブランチでは、Configuration Manager に対するセキュリティ上重要な更新プログラムは利用できますが、新機能については利用できません。 |
-|Current Branch の評価版インストール| Microsoft とのソフトウェア アシュアランス契約は必要ありません。 | [評価版インストール](https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection) は必ず Current Branch となり、180 日間使用できます。 </br></br> 評価版インストールは、Current Branch の完全インストールにアップグレードできます。 評価版インストールを Long-Term Servicing Branch にアップグレードすることはできません。|
+|Current Branch | Richiede un contratto Software Assurance attivo (o diritti equivalenti) per Configuration Manager. </br></br> Vedere [Software Assurance e Current Branch](#software-assurance-and-the-current-Branch) in questo argomento.| Supportato per l'uso in ambienti di produzione per cui si vogliono ottenere regolarmente aggiornamenti qualitativi e funzionali da Microsoft. </br></br> Questo ramo consente di usare tutte le funzionalità e tutti i miglioramenti. </br></br> Ogni aggiornamento di versione è supportato per un (1) anno dopo il rilascio, al termine del quale è necessario eseguire l'aggiornamento a una versione più recente ancora [supportata](/sccm/core/servers/manage/current-branch-versions-supported).|
+|Long-Term Servicing Branch (LTSB)| Richiede un contratto Software Assurance corrente con Microsoft al momento del rilascio (1° ottobre 2016) </br></br> Vedere [Software Assurance e LTSB](#software-assurance-and-the-ltsb) in questo argomento. | Supportato per l'uso in ambienti di produzione. Destinato all'uso da parte di clienti che hanno lasciato scadere Software Assurance o diritti di sottoscrizione equivalenti per Configuration Manager dopo il 1° ottobre 2016. </br></br> Rispetto a Current Branch questo ramo presenta delle limitazioni. </br></br> Per questo ramo vengono resi disponibili gli aggiornamenti della sicurezza critici per Configuration Manager ma non vengono rese disponibili le nuove funzionalità. |
+|Installazione di valutazione di Current Branch| Non richiede un contratto Software Assurance con Microsoft. | Le [installazioni di valutazione](https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection) sono sempre di Current Branch e possono essere usate per 180 giorni. </br></br> L'installazione di valutazione può essere aggiornata a un'installazione completa di Current Branch. Non è possibile aggiornare un'installazione di valutazione a Long-Term Servicing Branch.|
 
-Current Branch、LTSB、および Current Branch の評価版インストールに加えて、[System Center Configuration Manager のテクニカル プレビュー](https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview) も利用できます。 これは、今後の更新プログラムで Current Branch に追加される可能性のある新機能をお客様にお試しいただくための Configuration Manager の制限付きビルドです。 テクニカル プレビューは、ライセンス版とは異なるメディアを使用してインストールします。 詳細については、[テクニカル プレビュー](/sccm/core/get-started/technical-preview)に関するドキュメントを参照してください。
+Oltre a Current Branch, a LTSB e all'installazione di valutazione di Current Branch, è anche disponibile una [Technical Preview di System Center Configuration Manager](https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview). Si tratta di una build di Configuration Manager limitata che consente di provare le nuove funzionalità che potrebbero essere aggiunte a Current Branch in un aggiornamento futuro. È possibile installare la Technical Preview tramite supporti diversi rispetto alle versioni con licenza. Per altre informazioni, vedere la documentazione relativa alla [Technical Preview](/sccm/core/get-started/technical-preview).
 
 
-## <a name="licensed-branches"></a>ライセンスされたブランチ
-2016 年 10 月 1 日の時点で System Center Configuration Manager ライセンスに対してソフトウェア アシュアランス (SA) が有効になっているお客様または同等のサブスクリプション権限を持っているお客様には、2016 年 10 月リリースのバージョン 1606 の System Center Configuration Manager を使用する権限があります。 2016 年 10 月 1 日以降、System Center Configuration Manager バージョン 1606 に対する権限を持つお客様には、インストール時に次の 2 つのライセンス オプションが表示されます。
+## <a name="licensed-branches"></a>Rami con licenza
+I clienti con Software Assurance o sottoscrizione equivalente attiva per le licenze di System Center Configuration Manager a partire dal 1° ottobre 2016 hanno diritto a usare la versione 1606 (ottobre 2016) di System Center Configuration Manager. I clienti che il 1° ottobre 2016 o in data successiva sono dotati di diritti per System Center Configuration Manager versione 1606 troveranno al momento dell'installazione due opzioni con licenza:
 -   **Current Branch**
 -   **Long-Term Servicing Branch (LTSB)**
 
 
-詳細については、前のセクションの表を参照してください。
+Per altre informazioni, vedere la tabella nella sezione precedente.
 
 
-## <a name="software-assurance-agreements-and-system-center-configuration-manager"></a>ソフトウェア アシュアランス契約と System Center Configuration Manager
-2016 年 10 月 1 日以降の System Center Configuration Manager のライセンスまたは同等のサブスクリプション権限の状態に応じて、インストールおよび使用できるブランチが決定されます。
+## <a name="software-assurance-agreements-and-system-center-configuration-manager"></a>Contratti Software Assurance e System Center Configuration Manager
+Lo stato di Software Assurance per le licenze di System Center Configuration Manager o diritti di sottoscrizione equivalenti, il 1° ottobre 2016 o in data successiva, determina il ramo che è possibile installare e usare.
 
 
-### <a name="software-assurance-and-the-current-branch"></a>ソフトウェア アシュアランスと Current Branch
-System Center Configuration Manager の Current Branch を使用する権限は、次の方法で提供できます。
--  **System Center:** System Center Standard または Datacenter のライセンスに対して SA が有効になっているお客様は、System Center Configuration Manager の Current Branch オプションをインストールして使用することができます。
+### <a name="software-assurance-and-the-current-branch"></a>Software Assurance e Current Branch
+I diritti per l'uso di System Center Configuration Manager Current Branch sono forniti da:
+-  **System Center:** i clienti con sottoscrizione Software Assurance attiva per licenze System Center Standard o Datacenter possono installare e usare l'opzione Current Branch di System Center Configuration Manager.
 
--  **System Center Configuration Manager:** System Center Configuration Manager のライセンスまたは同等のサブスクリプション権限に対して SA が有効になっている客様は System Center Configuration Manager の Current Branch オプションをインストールして使用することができます。
+-  **System Center Configuration Manager:** i clienti con sottoscrizione Software Assurance attiva per licenze di System Center Configuration Manager o con diritti di sottoscrizione equivalenti possono installare e usare l'opzione Current Branch di System Center Configuration Manager.
 
-2016 年 10 月 1 日以降、System Center Configuration Manager のライセンス (または同等のサブスクリプション権限) に対して SA が有効になっているお客様の場合:
-- Current Branch をインストールして使用することができます。
-- SA またはサブスクリプションが期限切れになった場合は、Current Branch を再インストールする必要があります。
+Se si dispone di una sottoscrizione Software Assurance attiva per le licenze di System Center Configuration Manager o di diritti di sottoscrizione equivalenti il 1° ottobre 2016 o in data successiva:
+- È possibile installare e usare Current Branch.
+- Se si lascia scadere la sottoscrizione Software Assurance, è necessario disinstallare Current Branch.
 
-### <a name="software-assurance-and-the-ltsb"></a>ソフトウェア アシュアランスと LTSB
- 2016 年 10 月 1 日以降、System Center Configuration Manager のライセンス (または同等のサブスクリプション権限) に対して SA が有効になっているお客様の場合:
- - LTSB をインストールしてを使用することができます。 System Center Configuration Manager に対して永続的な権利を持つお客様または、SA またはサブスクリプションが期限切れになったお客様は、該当する時点で最新のバージョンである System Center Configuration Manager LTSB をインストールできます。
+### <a name="software-assurance-and-the-ltsb"></a>Software Assurance e LTSB
+ Se si dispone di una sottoscrizione Software Assurance attiva per le licenze di System Center Configuration Manager o di diritti di sottoscrizione equivalenti il 1° ottobre 2016 o in data successiva:
+ - È possibile installare e usare LTSB. I clienti che hanno diritti perpetui su System Center Configuration Manager o lasciano scadere la sottoscrizione Software Assurance o equivalente possono installare la versione di System Center Configuration Manager LTSB corrente al momento della scadenza.
 
-LTSB は、Current Branch バージョン 1606 をベースにしており、次の制限があります。
-  - Current Branch から LTSB への変換はサポートされていません。 Current Branch サイトが現存する場合も、新しいサイトとして LTSB をインストールする必要があります。  
+LTSB si basa sulla versione Current Branch 1606, con le limitazioni seguenti:
+  - La conversione da Current Branch a LTSB non è supportata. Se si dispone di un sito Current Branch, è necessario installare LTSB come nuovo sito.  
 
-  - LTSB では、Current Branch のすべての機能をサポートしているわけではありません。 制限事項の詳細については、「[Introduction to the  Long-Term Servicing Branch](introduction-to-the-ltsb.md)」 (Long-Term Servicing Branch の概要) および関連するドキュメントを参照してください。 制限事項の例としては、機能セットの制限、アップグレード オプションの制限、製品サポート ライフサイクルの分離などがあります。  
+  - LTSB non supporta tutte le funzionalità di Current Branch. Le limitazioni sono descritte in dettaglio in[Introduzione a Long-Term Servicing Branch](introduction-to-the-ltsb.md) e nella relativa documentazione. Queste limitazioni prevedono un set limitato di funzionalità, opzioni di aggiornamento limitate e un ciclo di vita separato per il supporto del prodotto.  
 
 
-### <a name="software-assurance-expiration-date"></a>ソフトウェア アシュアランスの有効期限
-System Center Configuration Manager については、2016 年 10 月リリースのバージョン 1606 基準メディア以降、ソフトウェア アシュアランス契約の有効期限の日付を指定できます。 **ソフトウェア アシュアランスの有効期限の日付**は、Configuration Manager のセットアップを実行するとき、またはこのセットアップを後で Configuration Manager コンソールから実行するときに指定できる省略可能な値であり、アラームとして利用できます。
+### <a name="software-assurance-expiration-date"></a>Data di scadenza di Software Assurance
+A partire dalla versione di ottobre 2016 del supporto di base 1606 per System Center Configuration Manager, è possibile specificare la data di scadenza del contratto Software Assurance. La **data di scadenza di Software Assurance** è un valore facoltativo che è possibile specificare come utile promemoria quando si esegue il programma di installazione di Configuration Manager o in seguito dalla console di Configuration Manager.
 
 >  [!NOTE]   
->  Microsoft では、お客様が指定した有効期限の日付を確認していません。また、ライセンスを検証する場合もこの日付を使用しません。  お客様は有効期限を通知するアラームとして、この日付を使用することができます。 Configuration Manager ではオンラインで新しいソフトウェア更新プログラムが提供されていないか定期的に確認します。このような追加の更新プログラムを取得するためにはソフトウェア アシュアランス ライセンスが最新の状態になっている必要があります。このため有効期限を通知するアラーム機能は便利です。    
+>  Microsoft non convalida la data di scadenza specificata e non usa tale data per la convalida della licenza.  È possibile invece usarla come promemoria della data di scadenza. Configuration Manager infatti verifica periodicamente online la disponibilità di nuovi aggiornamenti software. Per usufruire di questi aggiornamenti aggiuntivi, è necessario che lo stato della licenza di Software Assurance sia regolare.    
 
-**日付を指定するには:**
-- System Center Configuration Manager バージョン 1606 の基準メディアからセットアップを実行する場合は、セットアップ ウィザードの [**プロダクト キー**] ページで値を指定できます。
+**Per specificare la data:**
+- Quando si esegue il programma di installazione dal supporto di base di System Center Configuration Manager versione 1606 è possibile specificare il valore nella pagina **Codice Product Key** dell'installazione guidata.
 
-- Configuration Manager コンソールの [**階層設定のプロパティ**] の [**ライセンス**] タブで値を指定することができます。
+- È anche possibile specificare il valore nella scheda **Gestione licenze** di **Proprietà delle impostazioni di gerarchia** nella console di Configuration Manager.
 
-ソフトウェア アシュアランス ライセンスおよび System Center Configuration Manager の Current Branch の詳細については、「[Licensing and branches for System Center Configuration Manager](/sccm/core/understand/learn-more-editions)」 (System Center Configuration Manager のライセンスとブランチ) を参照してください。
+Per altre informazioni sulle licenze Software Assurance e Current Branch di System Center Configuration Manager, vedere [Licenze e rami per System Center Configuration Manager](/sccm/core/understand/learn-more-editions).
 
 
-## <a name="resources-for-licensing-information"></a>ライセンス情報のリソース
-製品のライセンスに関する詳細については、次のリンクを使用してください。
+## <a name="resources-for-licensing-information"></a>Risorse per le informazioni sulle licenze
+Usare i collegamenti seguenti per altri dettagli sulle licenze dei prodotti.
 
-**Microsoft ボリューム ランセンス サービス センター (VLSC) のリンク:**
-- VLSC の概要: [https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx](https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx)
+**Collegamenti relativi al Centro servizi per contratti multilicenza:**
+- Panoramica del Centro servizi per contratti multilicenza: [https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx](https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx).
 
-- Microsoft ボリューム ライセンスでの製品の使用条件: [http://go.microsoft.com/fwlink/?LinkId=800052](http://go.microsoft.com/fwlink/?LinkId=800052)
+- Termini per i contratti multilicenza Microsoft per i prodotti: [http://go.microsoft.com/fwlink/?LinkId=800052](http://go.microsoft.com/fwlink/?LinkId=800052).
 
-- ボリューム ライセンスをお持ちのお客様は、ライセンスの概要を次のリンクを使用して確認できます: [https://www.microsoft.com/Licensing/servicecenter/default.aspx](https://www.microsoft.com/Licensing/servicecenter/default.aspx)  
-  [**ライセンス**] メニューに移動して、[**ライセンスの概要**] をクリックすると、ライセンスの概要が表示されます。
+- I clienti che hanno acquistato contratti multilicenza possono ottenere un riepilogo delle proprie licenze qui: [https://www.microsoft.com/Licensing/servicecenter/default.aspx](https://www.microsoft.com/Licensing/servicecenter/default.aspx).  
+  Per una panoramica delle licenze, passare al menu **Licenze** e fare clic su **Riepilogo licenze**.
 
-**VLSC ビデオ:**
-- VLSC の動作方法を示すビデオ: m[https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx#tab=2](https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx#tab=2)
+**Video sul Centro servizi per contratti multilicenza:**
+- Video di formazione sul funzionamento del Centro servizi per contratti multilicenza: [https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx#tab=2](https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx#tab=2).
 
-- 有効なアクティブなソフトウェア アシュアランス契約を参照する場所 (約 43 秒で開始): [https://www.microsoft.com/showcase/video.aspx?uuid=fe1846cb-1d26-49fc-b064-57b25dcc31a0](https://www.microsoft.com/showcase/video.aspx?uuid=fe1846cb-1d26-49fc-b064-57b25dcc31a0)
+- Dove cercare il proprio contratto Software Assurance (a 43 secondi dall'inizio): [https://www.microsoft.com/showcase/video.aspx?uuid=fe1846cb-1d26-49fc-b064-57b25dcc31a0](https://www.microsoft.com/showcase/video.aspx?uuid=fe1846cb-1d26-49fc-b064-57b25dcc31a0).
 
-- VLSC のアクセス許可を取得する方法: [https://www.microsoft.com/showcase/video.aspx?uuid=ac4ed1ca-d0a9-43cd-89fa-74ccb555dec4](https://www.microsoft.com/showcase/video.aspx?uuid=ac4ed1ca-d0a9-43cd-89fa-74ccb555dec4).  VLSC の読み取りおよび書き込みのアクセス許可は、組織内の他のユーザーに委任することができます。
+- Come ottenere le autorizzazioni per il Centro servizi per contratti multilicenza: [https://www.microsoft.com/showcase/video.aspx?uuid=ac4ed1ca-d0a9-43cd-89fa-74ccb555dec4](https://www.microsoft.com/showcase/video.aspx?uuid=ac4ed1ca-d0a9-43cd-89fa-74ccb555dec4).  È possibile delegare le autorizzazioni in lettura e scrittura per il Centro servizi per contratti multilicenza ad altri utenti nell'organizzazione.

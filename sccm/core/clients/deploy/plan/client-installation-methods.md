@@ -1,6 +1,6 @@
 ---
-title: "クライアントのインストール方法 | Microsoft Docs"
-description: "System Center Configuration Manager でのクライアントのインストール方法について説明します。"
+title: Metodi di installazione client | Microsoft Docs
+description: Informazioni sui metodi di installazione client per System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/25/2017
 ms.prod: configuration-manager
@@ -18,129 +18,129 @@ manager: angrobe
 ms.openlocfilehash: edca31249cc2bb3e0c67265962815c82e3f4711e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="client-installation-methods-in-system-center-configuration-manager"></a>System Center Configuration Manager でのクライアントのインストール方法
+# <a name="client-installation-methods-in-system-center-configuration-manager"></a>Metodi di installazione client in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Configuration Manager クライアント ソフトウェアはさまざまな方法でインストールできます。 1 つの方法を利用することも、複数の方法を組み合わせることもできます。 このトピックでは、それぞれの方法について説明します。組織にとって最適な方法を理解できます。  
+È possibile usare diversi metodi per installare il software client di Configuration Manager. È possibile usare un metodo o una combinazione di metodi. Questo argomento presenta informazioni su ogni metodo e consente quindi di comprendere quale sia più appropriato per l'organizzazione.  
 
-## <a name="client-push-installation"></a>クライアント プッシュ インストール  
+## <a name="client-push-installation"></a>Installazione push client  
 
- **サポートされるクライアント プラットフォーム:** Windows  
+ **Piattaforma client supportata:** Windows  
 
- **長所**  
+ **Vantaggi**  
 
--   単一コンピューター、コンピューターのコレクション、またはクエリの結果に対してクライアントをインストールするのに使用できます。  
+-   Può essere utilizzato per installare il client in un singolo computer, una raccolta di computer o nei risultati di una query.  
 
--   検出されたすべてのコンピューターにクライアントを自動インストールするときに使用できます。  
+-   Può essere utilizzato per installare automaticamente il client in tutti i computer individuati.  
 
--   **[クライアント プッシュ インストールのプロパティ]** ダイアログ ボックスの **[クライアント]** タブで定義したクライアント インストールのプロパティが自動的に使用されます。  
+-   Utilizza automaticamente le proprietà di installazione del client definite nella scheda **Client** della finestra di dialogo **Proprietà installazione push client** .  
 
- **短所**  
+ **Svantaggi**  
 
--   大きなコレクションにプッシュするとき、ネットワーク トラフィックの量が増加する可能性があります。  
+-   Può causare traffico di rete elevato quando si esegue il push in raccolte di grandi dimensioni.  
 
--   Configuration Manager で検出されたコンピューターでしか使用できません。  
+-   Può essere usato solo nei computer individuati da Configuration Manager.  
 
--   ワークグループにクライアントをインストールするときに使用することはできません。  
+-   Non può essere utilizzato per installare client in un gruppo di lavoro.  
 
--   クライアント プッシュ インストールのアカウントでは、どのアカウントに目的のクライアント コンピューターに対する管理者権限を付与するかを指定する必要があります。  
+-   È necessario specificare un account di installazione push client che dispone di diritti amministrativi sul computer client previsto.  
 
--   クライアント プッシュ インストールを完了するには、クライアント コンピューターで Windows ファイアウォールに例外を構成する必要があります。  
+-   È necessario che Windows Firewall sia configurato nei computer client con le eccezioni, in modo che l'installazione push client possa essere completata.  
 
--   クライアント プッシュ インストールはキャンセルできません。 このクライアントのインストール方法をサイトで使用すると、Configuration Manager はクライアントを検出されたすべてのリソースにインストールしようとし、失敗した場合は最大 7 日間にわたって再試行します。  
+-   Non è possibile annullare l'installazione push client. Quando si usa questo metodo di installazione del client per un sito, Configuration Manager tenta di installare il client in tutte le risorse individuate e ritenta l'installazione in caso di errori fino a 7 giorni.  
 
- このインストール方法の詳細については、「[System Center Configuration Manager でクライアントを Windows コンピューターに展開する方法](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md)」を参照してください。  
+ Per altre informazioni su questo metodo di installazione, vedere [Come distribuire i client nei computer Windows in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md).  
 
-## <a name="software-update-point-based-installation"></a>ソフトウェアの更新ポイント経由のインストール  
- **サポートされるクライアント プラットフォーム:** Windows  
+## <a name="software-update-point-based-installation"></a>Installazione basata sul punto di aggiornamento software  
+ **Piattaforma client supportata:** Windows  
 
- **利点:**  
+ **Vantaggi:**  
 
--   既存のソフトウェアの更新のインフラストラクチャを使用して、クライアント ソフトウェアを管理できます。  
+-   Può utilizzare l'infrastruttura di aggiornamenti software esistente per gestire il software client.  
 
--   Windows Server Update Services (WSUS) および Active Directory ドメイン サービスのグループ ポリシー設定が正しく構成されている場合は、新しいコンピューターにクライアント ソフトウェアを自動的にインストールできます。  
+-   Può installare automaticamente il software client nei nuovi computer se le impostazioni di Windows Server Update Services (WSUS) e dei Criteri di gruppo in Servizi di dominio Active Directory sono configuRati correttamente.  
 
--   クライアントをインストールする前に、コンピューターが検出されている必要はありません。  
+-   Non richiede l'individuazione dei computer prima di poter installare il client.  
 
--   コンピューターは、Active Directory ドメイン サービスに公表されたクライアント インストール プロパティを読み取ることができます。  
+-   I computer possono leggere le proprietà di installazione client che sono state pubblicate in Servizi di dominio Active Directory.  
 
--   クライアント ソフトウェアが削除された場合、再インストールします。  
+-   Reinstallerà il software client se è stato rimosso.  
 
--   目的のクライアント コンピューターのインストール アカウントを構成してメンテナンスを行う必要はありません。  
+-   Non richiede la configurazione e il mantenimento di un account di installazione per il computer client previsto.  
 
- **欠点:**  
+ **Svantaggi:**  
 
--   ソフトウェアの更新のインフラストラクチャが機能していることが前提条件です。  
+-   Richiede un'infrastruttura per gli aggiornamenti software che sia funzionante come prerequisito.  
 
--   クライアントのインストールとソフトウェアの更新に同じサーバーを使用する必要があります。また、このサーバーはプライマリ サイトに存在している必要があります。  
+-   Deve utilizzare lo stesso server per l'installazione del client e gli aggiornamenti software e il server deve risiedere in un sito principale.  
 
--   新しいクライアントをインストールするには、クライアントのアクティブなソフトウェアの更新ポイントおよびポートを使用して、Active Directory Domain Services 内のグループ ポリシー オブジェクト (GPO) を構成する必要があります。  
+-   Per installare nuovi client, è necessario configurare un oggetto Criteri di gruppo in Servizi di dominio Active Directory con la porta e il punto di aggiornamento software attivo del software.  
 
--   Active Directory スキーマが Configuration Manager 向けに拡張されていない場合、グループ ポリシー設定を使用してクライアント インストールのプロパティをコンピューターにプロビジョニングする必要があります。  
+-   Se lo schema di Active Directory non viene esteso per Configuration Manager, è necessario usare le impostazioni di Criteri di gruppo per eseguire il provisioning dei computer con le proprietà di installazione client.  
 
- このインストール方法の詳細については、「[System Center Configuration Manager でクライアントを Windows コンピューターに展開する方法](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md)」を参照してください。  
+ Per altre informazioni su questo metodo di installazione, vedere [Come distribuire i client nei computer Windows in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md).  
 
-## <a name="group-policy-installation"></a>グループ ポリシーによるインストール  
- **サポートされるクライアント プラットフォーム:** Windows  
+## <a name="group-policy-installation"></a>Installazione tramite Criteri di gruppo  
+ **Piattaforma client supportata:** Windows  
 
- **利点:**  
+ **Vantaggi:**  
 
--   クライアントをインストールする前に、コンピューターが検出されている必要はありません。  
+-   Non richiede l'individuazione dei computer prima di poter installare il client.  
 
--   新しいクライアントのインストールまたは更新で使用できます。  
+-   Può essere utilizzato per le nuove installazioni di client o per gli aggiornamenti.  
 
--   コンピューターは、Active Directory ドメイン サービスに公表されたクライアント インストール プロパティを読み取ることができます。  
+-   I computer possono leggere le proprietà di installazione client che sono state pubblicate in Servizi di dominio Active Directory.  
 
--   目的のクライアント コンピューターのインストール アカウントを構成してメンテナンスを行う必要はありません。  
+-   Non richiede la configurazione e il mantenimento di un account di installazione per il computer client previsto.  
 
- **欠点:**  
+ **Svantaggi:**  
 
--   多数のクライアントがインストールされた場合、ネットワーク トラフィックの量が増加する可能性があります。  
+-   Può causare traffico di rete elevato se viene installato un numero elevato di client.  
 
--   Active Directory スキーマが Configuration Manager 向けに拡張されていない場合、グループ ポリシー設定を使用してサイト内のコンピューターにクライアント インストール プロパティを追加する必要があります。  
+-   Se lo schema di Active Directory non viene esteso per Configuration Manager, è necessario usare le impostazioni di Criteri di gruppo per aggiungere le proprietà di installazione del client ai computer presenti nel sito.  
 
- このインストール方法の詳細については、「[System Center Configuration Manager でクライアントを Windows コンピューターに展開する方法](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md)」を参照してください。  
+ Per altre informazioni su questo metodo di installazione, vedere [Come distribuire i client nei computer Windows in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md).  
 
-## <a name="logon-script-installation"></a>ログオン スクリプトによるインストール  
- **サポートされるクライアント プラットフォーム:** Windows  
+## <a name="logon-script-installation"></a>Installazione tramite script di accesso  
+ **Piattaforma client supportata:** Windows  
 
- **利点:**  
+ **Vantaggi:**  
 
--   クライアントをインストールする前に、コンピューターが検出されている必要はありません。  
+-   Non richiede l'individuazione dei computer prima di poter installare il client.  
 
--   CCMSetup のコマンド ライン プロパティを使用してサポートします。  
+-   Supporta l'utilizzo di proprietà della riga di comando per CCMSetup.  
 
- **欠点:**  
+ **Svantaggi:**  
 
--   多数のクライアントが短時間にインストールされた場合、ネットワーク トラフィックの量が増加する可能性があります。  
+-   Può causare elevato traffico di rete se viene installato un numero di client elevato in un periodo di tempo breve.  
 
--   ユーザーがネットワークに頻繁にログオンしない場合は、すべてのクライアント コンピューターにインストールするのに長時間かかる場合があります。  
+-   Può richiedere molto tempo per l'installazione in tutti i computer client, se gli utenti non accedono spesso alla rete.  
 
- このインストール方法の詳細については、「[System Center Configuration Manager でクライアントを Windows コンピューターに展開する方法](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md)」を参照してください。  
+ Per altre informazioni su questo metodo di installazione, vedere [Come distribuire i client nei computer Windows in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md).  
 
-## <a name="manual-installation"></a>手動インストール  
- **サポートされるクライアント プラットフォーム:** Windows、UNIX/Linux、Mac OS X  
+## <a name="manual-installation"></a>Installazione manuale  
+ **Piattaforma client supportata:** Windows, UNIX/Linux, Mac OS X  
 
- **利点:**  
+ **Vantaggi:**  
 
--   クライアントをインストールする前に、コンピューターが検出されている必要はありません。  
+-   Non richiede l'individuazione dei computer prima di poter installare il client.  
 
--   テストの目的で役立ちます。  
+-   Può essere utile a scopo di test.  
 
--   CCMSetup のコマンド ライン プロパティを使用してサポートします。  
+-   Supporta l'utilizzo di proprietà della riga di comando per CCMSetup.  
 
- **欠点:**  
+ **Svantaggi:**  
 
--   自動化されていないため、時間を削減できます。  
+-   Non prevede automazione, pertanto risulta dispendioso in termini di tempo.  
 
- 各プラットフォームのクライアントを手動でインストールする方法の詳細については、次をご覧ください。  
+ Per altre informazioni su come installare manualmente il client in ciascuna piattaforma, vedere gli argomenti seguenti:  
 
--   [System Center Configuration Manager でクライアントを Windows コンピューターに展開する方法](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md)  
+-   [Come distribuire i client nei computer Windows in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md)  
 
--   [System Center Configuration Manager で UNIX および Linux サーバーにクライアントを展開する方法](../../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md)  
+-   [Come distribuire i client nei server UNIX e Linux in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md)  
 
--   [System Center Configuration Manager で Mac にクライアントを展開する方法](../../../../core/clients/deploy/deploy-clients-to-macs.md)  
+-   [How to deploy clients to Macs in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-macs.md) (Come distribuire i client nei computer Mac in System Center Configuration Manager)  

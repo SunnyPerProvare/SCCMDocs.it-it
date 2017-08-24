@@ -1,6 +1,6 @@
 ---
-title: "1606 の診断データ | Microsoft Docs"
-description: "System Center Configuration Manager バージョン 1606 で収集される診断結果および使用状況データの各種レベルについて説明します。"
+title: Dati di diagnostica per la versione 1606 | Microsoft Docs
+description: Informazioni sui livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1606.
 ms.custom: na
 ms.date: 12/29/2016
 ms.prod: configuration-manager
@@ -35,387 +35,387 @@ translation.priority.ht:
 ms.openlocfilehash: 27eb4225b7e907772fa5ed8b209fc04fa9f3a677
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="levels-of-diagnostic-usage-data-collection-for-version-1606-of-system-center-configuration-manager"></a>System Center Configuration Manager バージョン 1606 により収集される診断結果および使用状況データのレベル
+# <a name="levels-of-diagnostic-usage-data-collection-for-version-1606-of-system-center-configuration-manager"></a>Livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1606
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager バージョン 1606 では、**基本**、**エンハンス**、**フル**の 3 つのレベルの診断結果と使用状況データが収集されます。 既定では、この機能は、エンハンス レベルに設定されます。 以降のセクションでは、各レベルで収集されるデータについて詳しく説明します。
+System Center Configuration Manager versione 1606 raccoglie tre livelli di dati di diagnostica e di utilizzo: **Di base**, **Avanzato** e **Completo**. Per impostazione predefinita, per questa funzionalità è impostato il livello avanzato. Le sezioni seguenti forniscono ulteriori dettagli sui dati raccolti in ogni livello.
 
-以前のバージョンからの変更は、***[新規]***、***[更新]***、***[削除]***、または ***[移動]*** で示されます。
+Le modifiche rispetto alle versioni precedenti sono contrassegnate da ***[Nuovo]***, ***[Aggiornato]***, ***[Rimosso]*** o ***[Spostato]***.
 
 
 > [!IMPORTANT]
->  Configuration Manager は、基本レベルとエンハンス レベルでは、サイト コードまたはサイト名、IP アドレス、ユーザー名またはコンピューター名、物理アドレス、電子メール アドレスを収集しません。 フル レベルで収集したこの情報 (ログ ファイルやメモリのスナップショットなどの詳細な診断情報に含まれる可能性があります) に特別な目的はありません。 Microsoft が個人の特定、連絡、広告作成の目的でこの情報を使用することはありません。
+>  Configuration Manager non raccoglie codici del sito, nomi di siti, indirizzi IP, nomi utente, nomi di computer, indirizzi fisici o indirizzi di posta elettronica per i livelli di base e avanzato. L'eventuale raccolta di tali informazioni per il livello completo non è intenzionale, ovvero dati potenzialmente inclusi nelle informazioni di diagnostica avanzate come file di log o snapshot di memoria. Le informazioni eventualmente raccolte non verranno usate da Microsoft per identificare l'utente, contattare l'utente o per fini pubblicitari.
 
-##  <a name="bkmk_change"></a> レベルを変更する方法
- 管理者に指定された役割に基づいた管理スコープに、**サイト** オブジェクト クラスにおける**変更**アクセス許可が含まれる場合、その管理者は、Configuration Manager コンソールの診断結果と使用状況データの設定で収集されるデータ レベルを変更できます。
+##  <a name="bkmk_change"></a> Come cambiare il livello
+ Gli amministratori con ambito amministrativo basato sui ruoli che include le autorizzazioni **Modifica** per la classe di oggetti **Sito** possono modificare il livello dei dati raccolti nelle impostazioni Dati di diagnostica e di utilizzo nella console di Configuration Manager.
 
-   そのためには、コンソールで Backstage タブ (ドロップダウン矢印の付いた左上のタブ) に移動し、**[使用状況データ]** を選んで、使うデータ レベルを選びます。  
+   A tale scopo, nella console passare alla scheda Backstage (la scheda in alto a sinistra con la freccia a discesa), selezionare **Dati di utilizzo** e quindi selezionare il livello di dati che si vuole usare.  
 
-##  <a name="bkmk_level1"></a> レベル 1 - 基本
- 基本レベルには階層に関するデータが含まれています。これには、インストールまたはアップグレードのエクスペリエンスを向上させるために必要なデータや、階層に適用できる Configuration Manager 更新プログラムを判断するために役立つデータが含まれます。
+##  <a name="bkmk_level1"></a> Livello 1 - Di base
+ Il livello di base include i dati sulla gerarchia ed è necessario per consentire il miglioramento dell'esperienza di installazione o aggiornamento, nonché per determinare quali aggiornamenti di Configuration Manager sono applicabili per la gerarchia.
 
- System Center Configuration Manager バージョン 1606 から、このレベルには次の情報が含まれます。
+ A partire da System Center Configuration Manager versione 1606, questo livello include i dati seguenti:
 
 
- -   セットアップ情報:
-      - ビルド、インストールの種類、言語パック、有効にされた機能  
+ -   Informazioni sull'installazione:
+      - Build, tipo di installazione, Language Pack, funzionalità abilitate  
 
-      -   更新プログラム パックの展開の状態とエラー、ダウンロードの進行状況、前提条件エラー  
+      -   Stato di distribuzione ed errori del pacchetto di aggiornamento, stato del download ed errori dei prerequisiti  
 
-      -  アップグレード後のスクリプトのバージョン
+      -  Versione dello script post-aggiornamento
 
-      -  更新プログラムの高速リングの使用
+      -  Uso di Fast Ring di aggiornamento
 
--   データベースのパフォーマンス指標 (レプリケーション処理情報、プロセッサおよびディスク使用率が上位の SQL Server ストアド プロシージャ)
+-   Metriche delle prestazioni del database (informazioni sull'elaborazione della replica, principali stored procedure di SQL Server per processore e utilizzo del disco)
 
--   基本的なデータベース構成 (プロセッサ、クラスターの構成、分散ビューの構成)
+-   Configurazione di base dei database (processori, configurazione del cluster e configurazione delle viste distribuite)
 
--   Configuration Manager データベース スキーマ (すべてのオブジェクト定義のハッシュ)
+-   Schema del database di Configuration Manager (hash di tutte le definizioni di oggetti)
 
--   Configuration Manager クライアント バージョンとオペレーティング システム バージョンの数
+-   Numero delle versioni client di Configuration Manager e delle versioni del sistema operativo
 
--   管理対象デバイスのオペレーティング システムおよび Exchange Connector によって設定されたポリシーの数
+-   Numero dei sistemi operativi per i dispositivi gestiti e dei criteri impostati da Exchange Connector
 
--   クライアントの言語とロケールの数
+-   Numero delle lingue e delle impostazioni locali dei client
 
--   Windows 10 デバイスの数 (ブランチおよびビルド別)
+-   Numero dei dispositivi Windows 10 per ramo e build
 
--   Configuration Manager サイト階層の基本データ (サイトの一覧、種類、バージョン、状態、クライアントの数、およびタイム ゾーン)
+-   Dati di base sulla gerarchia dei siti di Configuration Manager (elenco dei siti, tipo, versione, stato, numero di client e fuso orario)
 
--   サイト システム サーバーの基本情報 (使用されるサイト システムの役割、インターネットと SSL ステータス、オペレーティング システム、プロセッサ、物理または仮想マシン)
+-   Informazioni di base sul server del sistema del sito (ruoli del sistema del sito usati, stato di Internet e SSL, sistema operativo, processori, computer fisico o macchina virtuale)
 
--   ユーザー探索に関する基本統計情報 (ユーザー探索の数、グループ サイズの最小/最大/平均値)
+-   Statistiche di base di individuazione degli utenti (numero di individuazioni di utenti e dimensioni minime/massime/medie dei gruppi)
 
--   エンドポイント保護の基本情報 (マルウェア対策クライアントのバージョン)
+-   Informazioni di base su Endpoint Protection (versioni client antimalware)
 
--   アプリケーションと展開の種類の数に関する基本情報 (アプリの合計、複数の展開の種類を持つアプリの合計、依存関係を持つアプリの合計、置き換えられたアプリの合計、使用中の展開テクノロジの数)
+-   Conteggi di base per applicazioni e tipi di distribuzione (totale app, totale app con più tipi di distribuzione, totale app con dipendenze, totale app sostituite e numero delle tecnologie di distribuzione in uso)
 
--   基本的なオペレーティング システム展開 (OSD) 数 (イメージ)
+-   Numero di distribuzioni del sistema operativo di base (immagini)
 
--   配布ポイントと管理ポイントの種類、構成の基本情報 (保護済み、事前設定済み、PXE、マルチキャスト、SSL の状態、プル/ピア配布ポイント、MDM 対応、SSL 対応など)
+-   Tipi di punto di distribuzione e di punto di gestione e informazioni di base sulla configurazione (protetto, pre-installato, PXE, multicast, stato di SSL, punti di distribuzione pull/peer, abilitato per MDM, abilitato per SSL e così via)
 
--   製品利用統計情報 (実行時、ランタイム、エラー)
+-   Statistiche di telemetria (data/ora di esecuzione, runtime ed errori)
 
--  構成された製品利用統計情報のレベル、モード (オンラインまたはオフライン)、更新プログラムの高速構成
+-  Livello di telemetria configurato, modalità online o offline e configurazione di aggiornamento rapido
 
--  ネットワーク探索の使用 (有効または無効)
--  管理コンソール:
+-  Uso di Network Discovery (abilitato o disabilitato)
+-  Admin Console:
 
-     -  コンソール接続に関する統計情報 (オペレーティング システムのバージョン、言語、SKU、アーキテクチャに加えて、システム メモリ、論理プロセッサの数、接続サイト ID、インストールされてた .NET のバージョン、コンソールの言語パック)    
+     -  Statistiche sulle connessioni della console (versione del sistema operativo, lingua, SKU e architettura, memoria di sistema, conteggio dei processori logici, ID del sito di connessione, versioni di .NET installate e Language Pack della console)    
 
 
-- ***[新規]*** SQL のバージョン、Service Pack レベル、エディション、照合順序 ID、文字セット
+- ***[Nuovo]*** Versione SQL, livello Service Pack, edizione, ID delle regole di confronto e set di caratteri
 
 
-##  <a name="bkmk_level2"></a> レベル 2 - エンハンス
-エンハンス レベルはセットアップ終了後の既定値です。 このレベルには、基本レベルで収集されたデータと機能固有のデータ (頻度と使用期間)、Configuration Manager クライアントの設定 (コンポーネント名、状態、ポーリング間隔などの特定の設定)、およびソフトウェアの更新に関する基本情報が含まれます。
+##  <a name="bkmk_level2"></a> Livello 2 - Avanzato
+Il livello avanzato è quello predefinito dopo l'installazione. Questo livello include i dati raccolti per il livello di base, oltre a dati specifici per le funzionalità (frequenza e durata d'uso), le impostazioni client di Configuration Manager (nome del componente, stato e alcune impostazioni come gli intervalli di polling) e le informazioni di base sugli aggiornamenti software.
 
-これが推奨レベルです。このレベルでは、製品やサービスを今後適切に改善するために最小限必要なデータを Microsoft に提供します。 このレベルでは、オブジェクト名 (サイト、ユーザー、コンピューター、またはオブジェクト)、セキュリティ関連のオブジェクトの詳細、またはソフトウェア更新プログラムを必要とするシステムの数などの脆弱性が収集されます。
+Questo livello è consigliato perché offre a Microsoft i dati minimi necessari per apportare miglioramenti utili nelle versioni future di prodotti e servizi. Con questo livello non vengono raccolti i nomi degli oggetti (siti, utenti, computer o oggetti), dettagli sugli oggetti correlati alla sicurezza o informazioni sulle vulnerabilità come il numero di sistemi che richiedono aggiornamenti software.
 
-System Center Configuration Manager バージョン 1606 から、このレベルには次の情報が含まれます。
+A partire da System Center Configuration Manager versione 1606, questo livello include i dati seguenti:
 
--   **アプリケーション管理:**  
+-   **Gestione delle applicazioni:**  
 
-    -    組織内で使用される展開の種類の使用状況/ターゲットに関する基本情報 (対象となるユーザー/デバイス、必須/使用可能、ユニバーサル アプリ)  
+    -    Informazioni di base su utilizzo/destinazione per i tipi di distribuzione usati all'interno dell'organizzazione (utente e dispositivo di destinazione, richiesto o disponibile e app universali)  
 
-    -   アプリケーションの展開情報 (インストール/アンインストール、承認が必要、ユーザーの介入が有効/無効、依存関係、置き換え)  
+    -   Informazioni sulla distribuzione delle applicazioni (installazione/disinstallazione, approvazione richiesta, interazione con l'utente abilitata o disabilitata, dipendenza e sostituzione)  
 
-    -   使用可能なアプリケーション要求の統計  
+    -   Dati statistici sulle richieste di applicazioni disponibili  
 
-    -   パッケージの数 (種類別)  
+    -   Numero di pacchetti per tipo  
 
-    -   アプリケーションへの適用の数 (オペレーティング システム別)  
+    -   Numero di applicabilità delle applicazioni per sistema operativo  
 
-    -   パッケージ/プログラムの展開の数  
+    -   Numero di distribuzioni di pacchetti/programmi  
 
-    -   App-V 環境と展開のプロパティの数  
+    -   Numero di ambienti e proprietà di distribuzione App-V  
 
-    -   Windows 10 ライセンスが供与されたアプリケーションのライセンスの数  
+    -   Numero di licenze per applicazioni con licenza Windows 10  
 
-    -   時間帯あたりのユーザーまたはデバイスあたりのアプリケーション展開数の最小/最大/平均値
+    -   Numero massimo/minimo/medio di distribuzioni di applicazioni per ogni utente o dispositivo per periodo
 
-    -   メンテナンス期間の種類と期間  
+    -   Tipo e durata della finestra di manutenzione  
 
-    -  アプリケーション ポリシーのサイズと複雑さの統計情報
+    -  Dimensioni criteri di applicazione e statistiche di complessità
 
-    - ***[新規]*** ビジネス向け Windows ストア アプリの数と同期の統計情報 (アプリの種類の集計を含む)  
+    - ***[Nuovo]*** Conteggio delle app di Windows Store per le aziende e statistiche di sincronizzazione (incluso il riepilogo dei tipi di app)  
 
-    - ***[新規]*** 境界グループの統計情報 (高速の数、低速の数、グループあたりの数)
+    - ***[Nuovo]*** Statistiche dei gruppi di limiti (numero di rapidi e lenti e conteggio per gruppo)
 
-    - ***[新規]*** MSI 構成オプションとカウント
+    - ***[Nuovo]*** Opzioni di configurazione MSI e conteggi
 
-    - ***[新規]*** アプリの要件 (組み込み条件の数を参照する展開テクノロジ)
+    - ***[Nuovo]*** Requisiti delle app (conteggio delle condizioni predefinite con riferimento per tecnologia di distribuzione)
 
-    - ***[新規]*** アプリの置き換え、チェーンの最大深度
+    - ***[Nuovo]*** Sostituzione delle app, profondità massima della catena
 
-    - ***[新規]*** Universal Data Access (UDA) の使用状況、作成方法
+    - ***[Nuovo]*** Uso e modalità di creazione di UDA (Universal Data Access)
 
 
 
--   **クライアント:**  
+-   **Client:**  
 
-    -   有効なクライアント エージェントの一覧/数  
+    -   Elenco/numero di agenti client abilitati  
 
-    -   クライアント インストールの数 (ソースの場所の種類別)  
+    -   Numero di installazioni client da ogni tipo di posizione di origine  
 
-    -   クライアント インストール エラーの数  
+    -   Numero di errori di installazioni client  
 
-    -  ***[新規]*** クライアントの自動アップグレード展開構成 (クライアントの試験稼働など)
+    -  ***[Nuovo]*** Configurazione della distribuzione degli aggiornamenti automatici dei client, incluso progetto pilota client
 
-    -  ***[新規]*** クライアントの正常性の統計情報と主要な問題のまとめ
+    -  ***[Nuovo]*** Statistiche dell'integrità dei client e riepilogo delle richieste principali
 
-    - ***[新規]*** BIOS の動作時間 (年単位)
+    - ***[Nuovo]*** Età del BIOS in anni
 
-    - ***[新規]*** オペレーティング システムの動作時間 (月単位)
+    - ***[Nuovo]*** Età del sistema operativo in mesi
 
-    - ***[新規]*** ソフトウェア センターのアクションの数
+    - ***[Nuovo]*** Conteggio delle azioni di Software Center
 
-    - ***[新規]*** Active Management Technology (AMT) クライアント バージョン
+    - ***[Nuovo]*** Versione del client AMT (Active Management Technology)
 
-    - ***[新規]*** クライアント展開のダウンロード エラー
+    - ***[Nuovo]*** Errori di download della distribuzione client
 
-    - ***[新規]*** クライアント通知操作の動作状態 (各々の実行回数、対象となるクライアントの最大数、平均の成功率)
+    - ***[Nuovo]*** Stato dell'azione operazione di notifica client: numero di esecuzioni di ogni azione, numero massimo di client assegnati e frequenza media esecuzioni senza errori
 
-    - ***[新規]*** クライアントで使用される展開方法、展開方法ごとのクライアントの数
+    - ***[Nuovo]*** Metodi di distribuzione usati per il client e numero di client per metodo di distribuzione
 
-    - ***[新規]*** クライアントのキャッシュ サイズ構成
+    - ***[Nuovo]*** Configurazione della dimensione della cache del client
 
 
 
-- ***[新規]*** **Cloud Services:**
+- ***[Nuovo]*** **Servizi cloud:**
 
-  - ***[新規]*** Operations Management Suite に同期されているコレクションの数
+  - ***[Nuovo]*** Numero di raccolte sincronizzate con Operations Management Suite
 
-  - ***[新規]*** Operations Management Suite クラウド コネクタが有効になっているかどうか
+  - ***[Nuovo]*** Stato di abilitazione del connettore cloud di Operations Management Suite
 
 
 
-- ***[新規] コレクション:***
+- ***[Nuovo] Raccolte:***
 
-    -  ***[移動]*** コレクションの評価統計情報 (クエリ時間、割り当て数/未割り当て数、種類別のカウント、ID のロール オーバー、規則の使用状況)
+    -  ***[Spostato]*** Statistiche di valutazione raccolte (durata query, conteggi assegnati e non assegnati, conteggi per tipo, rollover degli ID e uso delle regole)
 
-    - ***[新規]*** 展開なしのコレクション
+    - ***[Nuovo]*** Raccolte senza distribuzione
 
-    - ***[新規]*** コレクション ID の使用状況 (ID が不足していない)
+    - ***[Nuovo]*** Utilizzo ID raccolte (senza esaurimento degli ID)
 
 
 
--   **コンプライアンス設定:**  
+-   **Impostazioni di conformità:**  
 
-    -   構成アイテムの数 (種類別)  
+    -   Numero di elementi di configurazione per tipo  
 
-    -   構成基準の基本情報 (数、展開数、参照数)  
+    -   Informazioni di base sulla linea di base di configurazione (numero, numero di distribuzioni e numero di riferimenti)  
 
-    -   ***[更新]*** 組み込み設定を参照する展開の数 (修復設定をキャプチャするようになりました)  
+    -   ***[Aggiornato]*** Numero di distribuzioni che fanno riferimento a impostazioni predefinite (ora con acquisizione dell'impostazione di correzione)  
 
-    -   ***[更新]*** カスタム設定に対して作成された規則および展開の数 (修復設定をキャプチャするようになりました)  
-    -   展開された Simple Certificate Enrollment Protocol (SCEP)、VPN、Wi-Fi、証明書 (.pfx)、コンプライアンス ポリシー テンプレートの数
+    -   ***[Aggiornato]*** Conteggio delle regole e delle distribuzioni create per le impostazioni personalizzate (ora con acquisizione dell'impostazione di correzione)  
+    -   Numero di certificati SCEP (Simple Certificate Enrollment Protocol), VPN, Wi-Fi, certificati (.pfx) e modelli dei criteri di conformità distribuiti
 
-    -  SCEP 証明書、VPN、Wi-Fi、証明書 (.pfx)、プラットフォーム別のコンプライアンス ポリシー展開の数
+    -  Numero di certificati SCEP, VPN, Wi-Fi, certificati (.pfx) e distribuzioni dei criteri di conformità per piattaforma
 
-    - ***[新規]*** Passport for Work のポリシー (作成済み、展開済み)
+    - ***[Nuovo]*** Criteri di Passport for Work (creati, distribuiti)
 
 
 
--   **コンテンツ:**  
+-   **Contenuto:**  
 
-    -   境界の数 (種類別)  
+    -   Numero di limiti per tipo  
 
-    -   境界グループの情報 (各境界グループに割り当てられた境界とサイト システムの数)  
+    -   Informazioni sui gruppi di limiti (numero di limiti e di sistemi del sito assegnati a ogni gruppo di limiti)  
 
-    -   配布ポイント グループの情報 (配布ポイント グループに割り当てられたパッケージと配布ポイントの数)  
+    -   Informazioni sui gruppi di punti di distribuzione (numero di pacchetti e punti di distribuzione assegnati a ogni gruppo di punti di distribuzione)  
 
-    -   配布ポイントの構成情報 (ブランチ キャッシュの使用、配布ポイントの監視)  
+    -   Informazioni di configurazione sui punti di distribuzione (uso di BranchCache e monitoraggio dei punti di distribuzione)  
 
-    -   配布マネージャーの構成情報 (スレッド、再試行の待ち時間、再試行回数、プル配布ポイントの設定)  
+    -   Informazioni di configurazione di Distribution Manager (thread, intervallo tra tentativi, numero di tentativi e impostazioni dei punti di distribuzione pull)  
 
 
--   **エンドポイント保護:**  
+-   **Endpoint Protection:**  
 
-    -   Endpoint Protection のマルウェア対策および Windows ファイアウォール ポリシーの使用状況 (グループに割り当てられている固有のポリシーの数)<br /><br /> これには、ポリシーに含まれている設定に関する情報は含まれません。  
+    -   Utilizzo dei criteri antimalware di Endpoint Protection e di Windows Firewall (numero di criteri univoci assegnati al gruppo)<br /><br /> Non sono incluse informazioni sulle impostazioni contenute nei criteri.  
 
-    -   エンドポイント保護の展開エラー (エンドポイント保護ポリシーの展開エラー コードの数)  
+    -   Errori di distribuzione di Endpoint Protection (numero di codici di errore di distribuzione dei criteri di Endpoint Protection)  
 
-    -   エンドポイント保護ダッシュボードに表示するように選択されたコレクションの数  
+    -   Numero di raccolte selezionate per la visualizzazione nel dashboard di Endpoint Protection  
 
-    -   エンドポイント保護機能用に構成されたアラートの数  
+    -   Numero di avvisi configurati per la funzionalità Endpoint Protection  
 
-    - ***[新規]*** Advanced Threat Protection (ATP) ポリシー (ポリシーの数、ポリシーが展開されているかどうか)
+    - ***[Nuovo]*** Criteri avanzati di Advanced Threat Protection (ATP) (numero dei criteri e se i criteri sono distribuiti)
 
 
--   ***[削除]*** **モバイル アプリケーション管理 (MAM):**  
+-   ***[Rimosso]*** **Gestione di applicazioni mobili (MAM):**  
 
-    -   ***[削除]*** MAM 対応 Office アプリケーションおよび基幹業務アプリケーションとポリシーの数 (オペレーティング システム別)  
+    -   ***[Rimosso]*** Numero di applicazioni di Office e line-of-business e di criteri abilitati per MAM per sistema operativo  
 
-    -   ***[削除]*** MAM アプリケーション/ポリシーの展開の数  
+    -   ***[Rimosso]*** Numero di distribuzioni di applicazioni/criteri MAM  
 
-    -   ***[削除]*** MAM 設定ごとに作成された規則の数  
+    -   ***[Rimosso]*** Numero di regole create per ogni impostazione MAM  
 
 
-- ***[新規]*** **移行:**
+- ***[Nuovo]*** **Migrazione:**
 
-  -  ***[新規]*** 移行されたオブジェクト (移行ウィザードを使用) の数
+  -  ***[Nuovo]*** Numero di oggetti migrati (utilizzo della procedura guidata di migrazione)
 
 
 
--   **モバイル デバイス管理 (MDM):**  
+-   **Gestione di dispositivi mobili (MDM):**  
 
-    -   発行されたモバイル デバイス アクション (ロック、ピン留め、ワイプ、インベントリからの削除) コマンドの数  
+    -   Numero di azioni eseguite su dispositivi mobili (comandi di blocco, reimpostazione PIN, cancellazione e ritiro dati)  
 
-    -   Configuration Manager および Microsoft Intune によって管理されるモバイル デバイスの数と、そのデバイスの登録方法 (一括、ユーザー ベース)  
+    -   Numero di dispositivi mobili gestiti da Configuration Manager e Microsoft Intune e modalità di registrazione (in blocco o basata sull'utente)  
 
-    -   モバイル デバイスのポーリング スケジュールと統計情報、モバイル デバイスのチェックイン期間  
+    -   Pianificazione del polling dei dispositivi mobili e statistiche della durata della registrazione dei dispositivi mobili  
 
-    -   モバイル デバイス ポリシーの数  
+    -   Numero di criteri per dispositivi mobili  
 
-    -   複数の登録済みモバイル デバイスを持つユーザーの数  
+    -   Numero di utenti con più dispositivi mobili registrati  
 
--   **Microsoft Intune のトラブルシューティング:**
+-   **Risoluzione dei problemi di Microsoft Intune:**
 
-    -   状態、ステータス、インベントリ、RDR、DDR、UDX、テナントの状態、POL、LOG、証明書、CRP、再同期、CFD、RDO、BEX、ISM、および Microsoft Intune からダウンロードされたコンプライアンス メッセージの数とサイズ
+    -   Numero e dimensioni dei messaggi relativi a stato, inventario, RDR, DDR, UDX, stato tenant, POL, LOG, Cert, CRP, risincronizzazione, CFD, RDO, BEX, ISM e conformità scaricati da Microsoft Intune
 
-    -   Microsoft Intune にレプリケートされたデバイス アクション (ワイプ、インベントリからの削除、ロック)、製品利用統計情報、およびデータ メッセージの数とサイズ
+    -   Numero e dimensioni dei messaggi relativi ad azioni sui dispositivi (cancellazione, ritiro dati, blocco), telemetria e dati replicati in Microsoft Intune
 
-    -   Microsoft Intune のユーザー同期に関する完全な統計とデルタ統計
+    -   Statistiche della sincronizzazione degli utenti completa e differenziale per Microsoft Intune
 
 
--   **オンプレミス モバイル デバイス管理 (MDM):**  
+-   **Gestione di dispositivi mobili (MDM) in locale:**  
 
-    -   オンプレミス MDM アプリケーション展開に関する展開成功/失敗の統計情報  
+    -   Statistiche di esito positivo o negativo della distribuzione per distribuzioni di applicazioni MDM in locale  
 
-    -   Windows 10 一括登録パッケージおよびプロファイルの数  
+    -   Numero dei pacchetti e dei profili di registrazione in blocco di Windows 10  
 
 
 
--   **オペレーティング システムの展開:**  
+-   **Distribuzione del sistema operativo:**  
 
-    -   ブート イメージ、ドライバー、ドライバー パッケージ、マルチキャスト対応の配布ポイント、PXE 対応の配布ポイント、およびタスク シーケンスの数  
+    -   Numero di immagini di avvio, driver, pacchetti di driver, punti di distribuzione abilitati per il multicast, punti di distribuzione che supportano PXE e sequenze di attività  
 
-    -   ***[新規]*** タスク シーケンス ステップの使用数
+    -   ***[Nuovo]*** Conteggi dell'utilizzo della procedura della sequenza di attività
 
 
 
--   **サイトの更新プログラム:**
+-   **Aggiornamenti del sito:**
 
-    - インストールされた Configuration Manager 修正プログラムのバージョン
+    - Versioni degli hotfix di Configuraton Manager installati
 
 
 
 
--   **ソフトウェア更新プログラム:**  
+-   **Aggiornamenti del software:**  
 
-    -   ソフトウェア更新プログラムの展開が含まれるコレクション数の合計/平均値、および展開された更新プログラム数の最大/平均値  
+    -   Numero totale/medio di raccolte con distribuzioni di aggiornamento del software e numero massimo/medio di aggiornamenti distribuiti  
 
-    -   同期に関連付けられた自動展開規則の数  
+    -   Numero di regole di distribuzione automatica associate alla sincronizzazione  
 
-    -   新しく作成する、または更新プログラムを既存のグループに追加する自動展開規則の数  
+    -   Numero di regole di distribuzione automatica che aggiungono aggiornamenti o ne creano di nuovi in un gruppo esistente  
 
-    -   自動展開規則で使用される使用可能なデルタと期限デルタ  
+    -   Valori differenziali di disponibilità e scadenza usati nelle regole di distribuzione automatica  
 
-    -   更新プログラムあたりの割り当て数の平均/最大値  
+    -   Numero medio e massimo di assegnazioni per ogni aggiornamento  
 
-    -   System Center Update Publisher で作成および展開された更新プログラムの数  
+    -   Numero di aggiornamenti creati e distribuiti con System Center Update Publisher  
 
-    -   更新プログラムのグループと割り当ての数  
+    -   Numero di gruppi e assegnazioni di aggiornamento  
 
-    -   更新プログラム パッケージの数と、パッケージの対象配布ポイント数の最大/最小/平均値  
+    -   Numero di pacchetti di aggiornamento e numero massimo/minimo/medio dei punti di distribuzione assegnati con pacchetti  
 
-    -   更新プログラム グループの数と、グループあたりの更新プログラム数の最小/最大/平均値  
+    -   Numero di gruppi di aggiornamento e numero minimo/massimo/medio di aggiornamenti per ogni gruppo  
 
-    -   更新プログラムの数と、展開済み、期限切れ、置き換え済み、ダウンロード済み、および EULA を含む更新プログラムの割合  
+    -   Numero di aggiornamenti e percentuale di aggiornamenti distribuiti, scaduti, sostituiti, scaricati e contenenti EULA  
 
-    -   更新スキャン エラー コードとマシンの数  
+    -   Codici di errore e numero di computer per l'analisi per l'aggiornamento  
 
-    -   クライアント更新の評価とスキャンのスケジュール  
+    -   Pianificazioni di valutazione e analisi per l'aggiornamento dei client  
 
-    -   ソフトウェアの更新ポイントの同期スケジュール  
+    -   Pianificazione della sincronizzazione dei punti di aggiornamento software  
 
-    -   複数の展開を含む自動展開規則の数  
+    -   Numero di regole di distribuzione automatica con più distribuzioni  
 
-    -   アクティブな Windows 10 サービス プランに使用される構成  
+    -   Configurazioni usate per i piani di manutenzione attivi di Windows 10  
 
-    -   Windows 10 ダッシュボードのコンテンツ バージョン  
+    -   Versioni del contenuto del dashboard di Windows 10  
 
-    -   Windows Update for Business を使用している Windows 10 クライアントの数  
+    -   Numero di client Windows 10 che usano Windows Update per le aziende  
 
-    -   クラスターの修正プログラム適用の統計情報  
+    -   Statistiche relative all'applicazione di patch al cluster  
 
-    -   展開された Office 365 更新プログラムの数  
+    -   Numero di aggiornamenti di Office 365 distribuiti  
 
-    -   ソフトウェアの更新ポイントで同期される分類
+    -   Classificazioni sincronizzate dal punto di aggiornamento software
 
-    -   ***[新規]*** ソフトウェア更新ポイントの負荷分散の統計情報
+    -   ***[Nuovo]*** Statistiche di bilanciamento del carico del punto di aggiornamento software
 
 
 
--   **SQL/パフォーマンス データ:**  
+-   **Dati SQL/prestazioni:**  
 
-    -   最大データベース テーブルの数  
+    -   Numero delle tabelle di database più grandi  
 
-    -   SQL Always-On レプリカ情報  
+    -   Informazioni sulla replica SQL Always-On  
 
-    -  SQL の変更の追跡の保有期間
+    -  Periodo di memorizzazione del rilevamento modifiche di SQL
 
-    - ***[新規]*** 探索の種類、有効化、スケジュール (完全、増分)
+    - ***[Nuovo]*** Tipi di individuazione, abilitazione e pianificazione (completa, incrementale)
 
-    - ***[新規]*** 探索の運用統計 (見つかったオブジェクトの数)
+    - ***[Nuovo]*** Statistiche operative di individuazione (numero di oggetti trovati)
 
-    - ***[新規]*** SQL 変更の追跡のパフォーマンスの問題、保有期間、自動クリーンアップの状態
+    - ***[Nuovo]*** Problemi di prestazioni del rilevamento modifiche di SQL, periodo di memorizzazione e stato di pulizia automatica
 
 
 
-- ***[新規]*** **その他**
+- ***[Nuovo]*** **Varie**
 
-    - ***[新規]*** Wake On Lan (WOL) サイトの数
+    - ***[Nuovo]*** Numero dei siti con riattivazione LAN (WOL)
 
 
 
-##  <a name="bkmk_level3"></a> レベル 3 - フル
-フル レベルには、基本レベルとエンハンス レベルのすべてのデータが含まれます。 また、Endpoint Protection の詳細情報、更新プログラムの対応率、およびソフトウェア更新プログラム情報も含まれています。 このレベルには、キャプチャ時にメモリやログ ファイルに存在していた、個人情報が含まれる可能性があるシステム ファイルやメモリ スナップショットなどの詳細な診断情報を含めることもできます。
+##  <a name="bkmk_level3"></a> Livello 3 - Completo
+Il livello completo include tutti i dati dei livelli di base e avanzato. Include inoltre informazioni aggiuntive su Endpoint Protection, le percentuali di conformità degli aggiornamenti e informazioni sugli aggiornamenti software. Questo livello può includere anche informazioni di diagnostica avanzate, come file di sistema e snapshot di memoria, che possono contenere informazioni personali presenti in memoria o nei file di log al momento dell'acquisizione.
 
-System Center Configuration Manager バージョン 1606 から、このレベルには次の情報が含まれます。
+A partire da System Center Configuration Manager versione 1606, questo livello include i dati seguenti:
 
--   コレクションの評価および更新の統計情報
+-   Statistiche di valutazione e aggiornamento delle raccolte
 
--   Endpoint Protection の正常性の概要 (保護済み、危険、不明、未サポート クライアントの数を含む)
+-   Riepilogo dell'integrità di Endpoint Protection (incluso il numero di client protetti, a rischio, sconosciuti e non supportati)
 
--   Endpoint Protection ポリシーの構成
+-   Configurazione dei criteri di Endpoint Protection
 
--   ソフトウェア更新プログラムの展開情報 (クライアントとUTC 時刻の対象となっている展開の割合、必須/オプション/サイレント、再起動抑制)
+-   Informazioni sulla distribuzione degli aggiornamenti software (percentuale di distribuzioni assegnate con client o ora UTC, aggiornamento obbligatorio o facoltativo ed eliminazione del riavvio)
 
--   ソフトウェア更新プログラムの展開の全体的なコンプライアンス対応状況
+-   Conformità generale delle distribuzioni degli aggiornamenti software
 
--   自動展開規則の評価スケジュールの情報
+-   Informazioni sulla pianificazione di valutazione delle regole di distribuzione automatiche
 
--   ***[削除]*** ネットワーク アクセス保護ポリシーを持つクライアントの数
+-   ***[Rimosso]*** Numero di client con criteri di Protezione accesso alla rete
 
--   ソフトウェア更新プログラムの展開のエラー コードと数
+-   Codici e numero di errori di distribuzione degli aggiornamenti software
 
--   ソフトウェア更新プログラムの展開コレクションの非アクティブなクライアント数の最小/最大/平均値
+-   Numero minimo/massimo/medio dei client inattivi nelle raccolte di distribuzioni di aggiornamenti software
 
--   期限切れのソフトウェア更新プログラムが含まれるグループの数
+-   Numero di gruppi con aggiornamenti software scaduti
 
--   パッケージあたりのソフトウェア更新プログラム数の最小/最大/平均値
+-   Numero minimo/massimo/medio di aggiornamenti software per ogni gruppo
 
--   ソフトウェア更新プログラムのスキャン成功の割合
+-   Percentuali di analisi dell'aggiornamento software con esito positivo
 
--   最後のソフトウェア更新プログラムのスキャンが実行されてからの経過時間の最小/最大/平均値
+-   Numero minimo/massimo/medio di ore dall'ultima analisi di aggiornamenti software
 
--    ソフトウェアの更新ポイントで同期されるソフトウェア更新プログラムの製品
--    コンプライアンス設定: SCEP、VPN、Wi-Fi、コンプライアンス ポリシー テンプレートの構成の詳細
+-    Prodotti di aggiornamento software sincronizzati dal punto di aggiornamento software
+-    Impostazioni di conformità: dettagli di configurazione SCEP, VPN, Wi-Fi e del modello dei criteri di conformità
 
--    Intune で管理されるデバイス向けの EAS 条件付きアクセス ポリシーの種類 (ブロックまたは検疫)
+-    Tipo di criteri di accesso condizionale EAS (blocco o quarantena) per i dispositivi gestiti da Intune
 
--   ***[新規]*** 環境内の上位 50 の CPU
+-   ***[Nuovo]*** Prime 50 CPU dell'ambiente
 
--   ***[新規]*** System Center Configuration Manager の DCM 構成パックの使用状況
+-   ***[Nuovo]*** Uso del pacchetto di configurazione DCM per System Center Configuration Manager
 
--   ***[新規]*** MSI 製品コード (顧客が展開する一般的なアプリ)
+-   ***[Nuovo]*** Codice prodotto MSI (app comuni distribuite dai clienti)
 
--   ***[新規]*** ATP の正常性の概要
+-   ***[Nuovo]*** Riepilogo dell'integrità ATP
 
--   ***[新規]*** クライアント展開のインストール エラーの詳細
+-   ***[Nuovo]*** Errori di installazione della distribuzione client dettagliati

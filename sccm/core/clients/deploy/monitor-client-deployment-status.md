@@ -1,6 +1,6 @@
 ---
-title: "クライアントの展開ステータスを監視する | Microsoft Docs"
-description: "System Center Configuration Manager でクライアントの展開ステータスを監視します。"
+title: Monitorare lo stato di distribuzione dei client | Microsoft Docs
+description: Monitorare lo stato di distribuzione dei client in System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -18,47 +18,47 @@ manager: angrobe
 ms.openlocfilehash: 3d9d02d8c56aea17e563112f92173c2b56781da6
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-monitor-client-deployment-status-in-system-center-configuration-manager"></a>System Center Configuration Manager でクライアントの展開ステータスを監視する方法
+# <a name="how-to-monitor-client-deployment-status-in-system-center-configuration-manager"></a>Come monitorare lo stato di distribuzione dei client in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-サイト全体にクライアントを展開するには時間がかかります。初回インストールが失敗することがあります。 System Center Configuration Manager コンソールには、クライアント展開ステータスをリアルタイムで報告することによって、コレクション内のクライアントの展開を監視する方法が用意されています。  
+La distribuzione client nel sito richiede tempo e alcune installazioni non riescono la prima volta. La console di System Center Configuration Manager offre un modo per tenere d'occhio le distribuzioni client in una raccolta attraverso la segnalazione dello stato di distribuzione client in tempo reale.  
 
 > [!NOTE]  
->  クライアントの展開を監視するのに最も確実で最善の方法は、Configuration Manager コンソールを (この記事に説明されているとおりに) 使用することです。 コンソールの **[監視]** ワークスペースの **[クライアント ステータス]** セクションに、クライアントの展開ステータスが正確にリアルタイムで表示されます。 Windows Server のサーバー マネージャーや System Center Operations Manager といった他のツールを使用してクライアントの展開を監視することはできますが、通常のクライアント インストールのアクティビティからアラームを受信する可能性があります。 クライアントのインストール プログラム (CCMSetup.exe) がさまざまな環境でどのように実行されるかによって、クライアントの展開の状態を正確に反映していない誤ったアラームと警告がこれらの他のツールによって生成されることがあります。  
+>  Il modo migliore e più affidabile per monitorare la distribuzione client consiste nell'usare la console di Configuration Manager, come descritto in questo articolo. La sezione **Stato del client** dell'area di lavoro **Monitoraggio** nella console indica lo stato di distribuzione del client con precisione e in tempo reale. È possibile monitorare le distribuzioni client con altri strumenti, ad esempio Server Manager in Windows Server o System Center Operations Manager, ma è possibile ricevere avvisi da normali attività di installazione del client. A causa della modalità di esecuzione del programma di installazione del client (CCMSetup.exe) in vari ambienti, gli altri strumenti potrebbero generare falsi allarmi e avvisi che non riflettono accuratamente lo stato delle distribuzioni client.  
 
- 指定したコレクション内で実行されているクライアントの展開について、コンソールの **[監視]** ワークスペースで次のステータスを監視することができます。  
+ Nell'area di lavoro **Monitoraggio** della console è possibile monitorare i seguenti stati delle distribuzioni client che avvengono all'interno di una raccolta specificata:  
 
--   [準拠]  
+-   Conforme  
 
--   進行中  
+-   In corso  
 
--   非対応  
+-   Non conforme  
 
--   失敗  
+-   Operazione non riuscita  
 
--   不明  
+-   Sconosciuto  
 
- Configuration Manager は、実稼働クライアントや実稼働前クライアント展開について報告します。 Configuration Manager コンソールには、ユーザーが展開の問題を解決するために実行するアクションによって展開の成功率が徐々に改善しているかどうかを確認できるように、指定期間に失敗したクライアントの展開のグラフも表示されます。  
+ Configuration Manager segnala le distribuzioni client di produzione o di pre-produzione. La console di Configuration Manager offre anche un grafico delle distribuzioni client non riuscite in uno specifico periodo di tempo, per determinare se le azioni intraprese per la risoluzione dei problemi di distribuzione stanno migliorando la percentuale di distribuzione senza errori nel tempo.  
 
-## <a name="to-monitor-client-deployments"></a>クライアントの展開を監視するには  
+## <a name="to-monitor-client-deployments"></a>Per monitorare le distribuzioni client  
 
--   Configuration Manager コンソールで、**[監視]** > **[クライアントのステータス]** の順にクリックします。  
+-   Nella console di Configuration Manager fare clic su **Monitoraggio** > **Stato client**.  
 
--   監視するクライアントのバージョンに応じて、**[実稼働クライアント展開]** または **[実稼働前クライアント展開]** をクリックします。  
+-   Fare clic su **Distribuzione client di produzione** oppure su **Distribuzione client di pre-produzione** a seconda della versione del client da monitorare.  
 
--   クライアント展開ステータスとクライアント展開エラーのグラフを確認します。  
+-   Esaminare i grafici di stato della distribuzione client e di errore di distribuzione client.  
 
--   レポートのスコープを変更する場合は、**[参照...]** をクリックして、別のコレクションを選択します。  
+-   Per modificare l'ambito del report, fare clic su **Sfoglia…** e scegliere una raccolta diversa.  
 
- 実稼働前クライアント展開の詳細については、「[System Center Configuration Manager で実稼働前コレクションのクライアント アップグレードをテストする方法](../../../core/clients/manage/upgrade/test-client-upgrades.md)」を参照してください。
+ Per altre informazioni sulle distribuzioni client di pre-produzione, vedere [Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md).
 
  > [!NOTE]
- > 実稼働前コレクションでサイト システムの役割をホストしているコンピューターの展開ステータスは、クライアントが正常に展開された場合でも、**非対応**と報告されることがあります。 クライアントを実稼働環境に昇格すると、展開のステータスが正しく報告されます。   
+ > Lo stato della distribuzione nei computer che ospitano i ruoli del sistema del sito in una raccolta di pre-produzione può essere indicato come **Non conforme** anche quando il client è stato distribuito correttamente. Quando si promuove il client al livello di produzione, lo stato della distribuzione è segnalato in modo corretto.   
 
- 展開されたクライアントのステータスを監視するには、「[System Center Configuration Manager でクライアントを監視する方法](../../../core/clients/manage/monitor-clients.md)」を参照してください。  
+ Per monitorare lo stato dei client distribuiti, vedere [Come monitorare i client in System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md)  
 
- Configuration Manager レポートで、サイトのクライアント ステータスについての追加情報を確認できます。 レポートの実行方法の詳細については、「[System Center Configuration Manager のレポート](../../../core/servers/manage/reporting.md)」を参照してください。  
+ È possibile usare i report di Configuration Manager per ottenere altre informazioni sullo stato dei client nel proprio sito. Per altre informazioni sull'esecuzione dei report, vedere [Creazione di report in System Center Configuration Manager](../../../core/servers/manage/reporting.md).  

@@ -1,6 +1,6 @@
 ---
-title: "発行と Active Directory スキーマ | Microsoft Docs"
-description: "System Center Configuration Manager の Active Directory スキーマを拡張して、クライアントの展開と構成のプロセスを簡略化します。"
+title: Pubblicazione dei siti ed estensione dello schema di Active Directory | Microsoft Docs
+description: Estendere lo schema di Active Directory per System Center Configuration Manager per semplificare il processo di distribuzione e configurazione dei client.
 ms.custom: na
 ms.date: 2/6/2017
 ms.prod: configuration-manager
@@ -18,94 +18,94 @@ manager: angrobe
 ms.openlocfilehash: 58beef440db8e019a06ce7c4c8eaabc8e85ce954
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="prepare-active-directory-for-site-publishing"></a>サイト発行のために Active Directory を準備する
+# <a name="prepare-active-directory-for-site-publishing"></a>Preparare Active Directory per la pubblicazione di siti
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager 向けに Active Directory スキーマを拡張すると、クライアントが簡単にアクセスできる安全な場所に重要な情報を発行するために Configuration Manager サイトが使用する新しい構造が Active Directory に導入されます。  
+Quando si estende lo schema di Active Directory per System Center Configuration Manager, si introducono nuove strutture in Active Directory usate dai siti di System Center Configuration Manager per pubblicare le informazioni chiave in una posizione sicura facilmente accessibile ai client.  
 
-オンプレミスのクライアントを管理する場合は、Active Directory 拡張スキーマと共に Configuration Manager を使用することをお勧めします。 クライアントの展開とセットアップのプロセスは、拡張スキーマによって簡素化することができます。 また拡張スキーマを使用することで、Configuration Manager サイト システムの各種役割によって提供されるサービスやコンテンツ サーバーなどのリソースをクライアントが効率よく検索できます。  
+Quando si gestiscono client locali, è consigliabile usare Configuration Manager con uno schema di Active Directory esteso. Uno schema esteso può infatti semplificare il processo di distribuzione e configurazione dei client e consente ai client di individuare in modo efficiente le risorse, ad esempio server di contenuto e altri servizi forniti dai diversi ruoli del sistema del sito di Configuration Manager.  
 
--   Configuration Manager の展開における拡張スキーマの役割についてあまり詳しくない場合は、「[System Center Configuration Manager のスキーマ拡張](../../../core/plan-design/network/schema-extensions.md)」を参照して、使用するかどうかを判断してください。  
+-   Se non si sa quale schema esteso offra una distribuzione di Configuration Manager, vedere [Estensioni dello schema per System Center Configuration Manager](../../../core/plan-design/network/schema-extensions.md).  
 
--   拡張スキーマを使用しない場合は、DNS や WINS など、他の方法を設定してサービスやサイト システム サーバーを検索できます。 サービスの場所のこれらの方法には追加の構成が必要であり、クライアントが使用するサービスの場所に適した方法ではありません。 詳細については、[クライアントが System Center Configuration Manager のサイト リソースやサービスを検索する方法](../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md)に関するページを参照してください。  
+-   Se non si usa uno schema esteso, è possibile rilevare i servizi e i server del sistema del sito configurando altri metodi, ad esempio DNS e WINS. Questi metodi di individuazione de della posizione del servizio richiedono configurazioni aggiuntive e non sono il metodo preferito per l'individuazione della posizione del servizio da parte dei client. Per altre informazioni, vedere [Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager](../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
 
--   Active Directory スキーマが Configuration Manager 2007 または System Center 2012 Configuration Manager 用に拡張されている場合は、これ以上の操作を行う必要はありません。 スキーマ拡張は変更されず、既に使用可能な状態になっています。  
+-   Se lo schema di Active Directory è stato esteso per Configuration Manager 2007 o System Center Configuration Manager 2012, non è necessario eseguire altre operazioni. Le estensioni dello schema sono invariate e risultano già applicate.  
 
-スキーマの拡張は、どのフォレストでも 1 回限りの操作です。 Active Directory スキーマを拡張して使用するには、次の手順を実行します。  
+L'estensione dello schema è un'operazione eseguita una sola volta per ogni foresta. Per estendere e quindi usare lo schema di Active Directory esteso, seguire questa procedura:  
 
-## <a name="step-1-extend-the-schema"></a>手順 1. スキーマの拡張  
-Configuration Manager のスキーマを拡張するには  
+## <a name="step-1-extend-the-schema"></a>Passaggio 1. Estendere lo schema  
+Per estendere lo schema per Configuration Manager:  
 
--   Schema Admins セキュリティ グループのメンバーであるアカウントを使用します。  
+-   Usare un account che sia membro del gruppo di sicurezza Schema Admins.  
 
--   スキーマ マスター ドメイン コントローラーにサインインします。  
+-   È necessario avere eseguito l'accesso al controller di dominio master dello schema.  
 
--   **Extadsch.exe** ツールを実行するか、または LDIFDE コマンド ライン ユーティリティと **ConfigMgr_ad_schema.ldf** ファイルを使用します。 このツールとファイルはどちらも Configuration Manager インストール メディアの **SMSSETUP\BIN\X64** フォルダーにあります。  
+-   Eseguire lo strumento **Extadsch.exe** oppure usare l'utilità della riga di comando LDIFDE con il file **ConfigMgr_ad_schema.ldf** . Lo strumento e il file si trovano entrambi nella cartella **SMSSETUP\BIN\X64** del supporto di installazione di Configuration Manager.  
 
-#### <a name="option-a-use-extadschexe"></a>オプション A: Extadsch.exe を使用する  
+#### <a name="option-a-use-extadschexe"></a>Opzione A: usare Extadsch.exe  
 
-1.  **extadsch.exe** を実行して、新しいクラスと属性を Active Directory スキーマに追加します。  
+1.  Eseguire **extadsch.exe** per aggiungere nuove classi e attributi allo schema di Active Directory.  
 
     > [!TIP]  
-    >  このツールをコマンド ラインから実行すると、実行中にフィードバックが表示されます。  
+    >  Eseguire lo strumento da una riga di comando per visualizzare il feedback mentre è in esecuzione.  
 
-2.  システム ドライブのルートにある extadsch.log を確認することにより、スキーマの拡張が成功したことを確認します。  
+2.  Verificare che l'estensione dello schema abbia avuto esito positivo riesaminando il file extadsch.log nella radice dell'unità di sistema.  
 
-#### <a name="option-b-use-the-ldif-file"></a>オプション B: LDIF ファイルを使用する  
+#### <a name="option-b-use-the-ldif-file"></a>Opzione B: usare il file LDIF  
 
-1.  **ConfigMgr_ad_schema.ldf** ファイルを編集して、拡張する Active Directory ルート ドメインを定義します。  
+1.  Modificare il file **ConfigMgr_ad_schema.ldf** per definire il dominio radice di Active Directory da estendere:  
 
-    -   このファイルでは、テキスト **DC=x** のすべてのインスタンスを、拡張するドメインのフル ネームで置き換えます。  
+    -   Sostituire tutte le istanze del testo **DC=x** nel file con il nome completo del dominio da estendere.  
 
-    -   たとえば、拡張するドメインのフル ネームが widgets.microsoft.com である場合、ファイル内にあるすべての DC=x のインスタンスを **DC=widgets, DC=microsoft, DC=com**に変更します。  
+    -   Se ad esempio il nome completo del dominio da estendere è widgets.microsoft.com, modificare tutte le istanze di DC=x nel file in **DC=widgets, DC=microsoft, DC=com**.  
 
-2.  LDIFDE コマンド ライン ユーティリティを使用して、**ConfigMgr_ad_schema.ldf** ファイルの内容を Active Directory ドメイン サービスにインポートします。  
+2.  Usare l'utilità della riga di comando LDIFDE per importare il contenuto del file **ConfigMgr_ad_schema.ldf** in Active Directory Domain Services:  
 
-    -   たとえば、次のコマンド ラインは、スキーマ拡張を Active Directory Domain Services にインポートし、詳細ログ記録をオンにして、インポート処理中にログ ファイルを作成します: **ldifde -i -f ConfigMgr_ad_schema.ldf -v -j &lt;ログ ファイルの保存場所\>**  
+    -   Ad esempio, la seguente riga di comando importa le estensioni dello schema in Active Directory Domain Services, attiva la registrazione dettagliata e crea un file di log durante il processo di importazione: **ldifde -i -f ConfigMgr_ad_schema.ldf -v -j &lt;percorso di archiviazione del file di log\>**.  
 
-3.  スキーマの拡張が成功したことを確かめるには、前の手順で使用したコマンド ラインによって作成されたログ ファイルを確認します。  
+3.  Per verificare la riuscita dell'estensione dello schema, esaminare il file di log creato dalla riga di comando usata nel passaggio precedente.  
 
-## <a name="step-2--create-the-system-management-container-and-grant-sites-permissions-to-the-container"></a>手順 2.  System Management コンテナーの作成とコンテナーへのサイトに対するアクセス許可の付与  
- スキーマを拡張したら、Active Directory Domain Services (AD DS) で **System Management** という名前のコンテナーを作成する必要があります。  
+## <a name="step-2--create-the-system-management-container-and-grant-sites-permissions-to-the-container"></a>Passaggio 2:  Creare il contenitore di System Management e concedere le autorizzazioni per i siti al contenitore  
+ Dopo aver esteso lo schema, è necessario creare un contenitore denominato **System Management** in Active Directory Domain Services:  
 
--   データを Active Directory に発行するプライマリ サイトまたはセカンダリ サイトがあるドメインごとに、このコンテナーを 1 回作成します。  
+-   Questo contenitore viene creato una sola volta in ogni dominio che include un sito primario o secondario che pubblicherà dati in Active Directory.  
 
--   そのドメインにデータを発行する各プライマリ サイト サーバーおよびセカンダリ サイト サーバーのコンピューター アカウントに、各コンテナーのアクセス許可を付与します。 各アカウントには、コンテナーに対する**フルコントロール**と、**適用先**が**このオブジェクトとすべての子オブジェクト**である拡張アクセス許可が必要です。  
+-   Per ogni contenitore vengono concesse autorizzazioni all'account del computer di ogni server del sito primario e secondario che pubblica dati nel dominio. Ogni account deve disporre dei diritti di tipo **Controllo completo** sul contenitore con l'autorizzazione avanzata **Applica a** impostata su **Questo oggetto e tutti i discendenti**.  
 
-#### <a name="to-add-the-container"></a>コンテナーを追加する方法  
+#### <a name="to-add-the-container"></a>Per aggiungere il contenitore  
 
-1.  Active Directory ドメイン サービス内の **System** コンテナーで**すべての子オブジェクトの作成**アクセス許可があるアカウントを使用します。  
+1.  Accedere con un account con l'autorizzazione **Crea tutti gli oggetti figlio** per il contenitore **Sistema** in Active Directory Domain Services.  
 
-2.  **ADSI エディター** (adsiedit.msc) を実行して、サイト サーバーのドメインに接続します。  
+2.  Eseguire **ADSI Edit** (adsiedit.msc) e connettersi al dominio del server del sito.  
 
-3.  コンテナーを作成します。  
+3.  Creare il contenitore:  
 
-    -   **[ドメイン]** &lt;コンピューターの完全修飾ドメイン名\>、&lt;識別名\> の順に展開して **[CN=System]** を右クリックし、**[新規]**、**[オブジェクト]** の順に選択します。  
+    -   Espandere **Dominio** &lt;nome di dominio completo del computer\>, espandere &lt;nome distinto\>, fare clic con il pulsante destro del mouse su **CN=System**, scegliere **Nuovo** e quindi scegliere **Oggetto**.  
 
-    -   **[オブジェクトの作成]** ダイアログ ボックスで、**[コンテナー]**を選択し、**[次へ]** を選択します。  
+    -   Nella finestra di dialogo **Crea oggetto** scegliere **Contenitore** e quindi scegliere **Avanti**.  
 
-    -   **[値]** ボックスに、「**System Management**」と入力し、**[次へ]** をクリックします。  
+    -   Nella casella **Valore** immettere **System Management** e quindi scegliere **Avanti**.  
 
-4.  アクセス許可を割り当てます。  
+4.  Assegnare le autorizzazioni:  
 
     > [!NOTE]  
-    >  必要に応じて、Active Directory のユーザーとコンピューター管理ツール (dsa.msc) など他のツールを使用して、コンテナーにアクセス許可を追加することができます。  
+    >  Se si preferisce, è possibile usare altri strumenti come lo strumento di amministrazione Utenti e computer di Active Directory (dsa.msc) per aggiungere autorizzazioni al contenitore.  
 
-    -   **[CN=System Management]** を右クリックし、**[プロパティ]** を選択します。  
+    -   Fare clic con il pulsante destro del mouse su **CN=System Management** e scegliere **Proprietà**.  
 
-    -   **[セキュリティ]** タブを選択し、**[追加]** を選択して、**フル コントロール** アクセス許可があるサイト サーバーのコンピューター アカウントを追加します。  
+    -   Scegliere la scheda **Sicurezza**, scegliere **Aggiungi** e quindi aggiungere l'account computer del server del sito con l'autorizzazione **Controllo completo**.  
 
-    -   **[詳細設定]** を選択して、サイト サーバーのコンピューター アカウントを選択し、**[編集]** を選択します。  
+    -   Scegliere **Avanzate**, scegliere l'account computer del server del sito e quindi scegliere **Modifica**.  
 
-    -   **[適用先]** の一覧で **[このオブジェクトとすべての子オブジェクト]** を選択します。  
+    -   Dall'elenco **Applica a** selezionare **Questo oggetto e tutti i discendenti**.  
 
-5.  **[OK]** を選択してコンソールを閉じ、構成を保存します。  
+5.  Scegliere **OK** per chiudere la console e salvare la configurazione.  
 
-## <a name="step-3-set-up-sites-to-publish-to-active-directory-domain-services"></a>手順 3. Active Directory Domain Services に発行するサイトの設定  
- コンテナーを設定してアクセス許可を付与し、Configuration Manager プライマリ サイトをインストールした後、Active Directory にデータを発行するようにそのサイトを設定できます。  
+## <a name="step-3-set-up-sites-to-publish-to-active-directory-domain-services"></a>Passaggio 3. Configurare i siti per la pubblicazione in Active Directory Domain Services  
+ Dopo avere configurato il contenitore, avere ottenuto le autorizzazioni e avere installato un sito primario di Configuration Manager, è possibile configurare il sito per la pubblicazione di dati in Active Directory.  
 
- 発行の詳細については、「[System Center Configuration Manager のサイト データの発行](../../../core/servers/deploy/configure/publish-site-data.md)」をご覧ください。  
+ Per altre informazioni sulla pubblicazione, vedere [Pubblicare i dati del sito per System Center Configuration Manager](../../../core/servers/deploy/configure/publish-site-data.md).  

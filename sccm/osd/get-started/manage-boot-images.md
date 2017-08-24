@@ -1,6 +1,6 @@
 ---
-title: "ブート イメージの管理 - Configuration Manager | Microsoft Docs"
-description: "Configuration Manager で、オペレーティング システムの展開中に使用する Windows PE ブート イメージを管理する方法について説明します。"
+title: Gestire le immagini d'avvio - Configuration Manager | Microsoft Docs
+description: In Configuration Manager viene illustrato come gestire le immagini d'avvio Windows PE usate durante la distribuzione di un sistema operativo.
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -18,253 +18,253 @@ manager: angrobe
 ms.openlocfilehash: cc678c1133b1944f55bcad309cf9ede9f0660b57
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-boot-images-with-system-center-configuration-manager"></a>System Center Configuration Manager でのブート イメージの管理
+# <a name="manage-boot-images-with-system-center-configuration-manager"></a>Gestire le immagini d'avvio con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Configuration Manager のブート イメージは、オペレーティング システムの展開中に使用される [Windows PE (WinPE)](https://msdn.microsoft.com/library/windows/hardware/dn938389%28v=vs.85%29.aspx) のイメージです。 ブート イメージは、WinPE でコンピューターを起動するために使用されます。WinPE は、セットアップ先のコンピューターで Windows のインストールを準備する限られたコンポーネントとサービスが含まれた、最小限のオペレーティング システムです。  ブート イメージを管理するときは、以下のセクションを参照してください。
+Un'immagine d'avvio in Configuration Manager è un'immagine [Windows PE (WinPE)](https://msdn.microsoft.com/library/windows/hardware/dn938389%28v=vs.85%29.aspx) usata durante la distribuzione di un sistema operativo. Le immagini d'avvio vengono usate per avviare un computer in Windows PE, un sistema operativo minimo con componenti e servizi limitati che prepara il computer di destinazione per l'installazione di Windows.  Usare le sezioni seguenti per gestire le immagini d'avvio.
 
-## <a name="BKMK_BootImageDefault"></a> 既定のブート イメージ
-Configuration Manager には 2 つの既定のブート イメージがあります。一方は x86 プラットフォームをサポートし、もう一方は x64 プラットフォームをサポートします。 これらのイメージは次の場所に格納されています: \\\\*servername*>\SMS_<*sitecode*>\osd\boot\\<*x64*> または <*i386*>。 既定のブート イメージは、実行する操作に応じて更新または再生成されます。
+## <a name="BKMK_BootImageDefault"></a> Immagini d'avvio predefinite
+Configuration Manager offre due immagini d'avvio predefinite: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. Queste immagini sono archiviate nel percorso: \\\\*nomeserver*>\SMS_<*codicesito*>\osd\boot\\<*x64*> or <*i386*>. Le immagini di avvio predefinite vengono aggiornate o rigenerate in base all'azione eseguita.
 
-次のセクションで説明されているアクションに関する項目を考慮してください。
-- ソース ドライバー オブジェクトは、ドライバーのソース ファイルを含めて、有効である必要があり、そうでない場合、ドライバーはサイトのブート イメージに追加されません。
-- 同じ Windows PE バージョンを使用する場合でも、既定のブート イメージに基づいていないブート イメージは変更されません。
-- 変更したブート イメージを配布ポイントに再配布する必要があります。
-- 変更したブート イメージを使用するメディアを再作成する必要があります。
-- カスタマイズした/既定のブート イメージを自動的に更新しない場合は、既定の場所に保存しないでください。
+Per le azioni descritte nelle sezioni seguenti, tenere presente quanto segue:
+- Gli oggetti del driver di origine devono essere validi e inclusi i file di origine del driver, altrimenti i driver non verranno aggiunti alle immagini di avvio nel sito.
+- Le immagini di avvio che non sono basate sulle immagini di avvio predefinite, anche se usano la stessa versione di Windows PE, non verranno modificate.
+- È necessario ridistribuire le immagini di avvio modificate ai punti di distribuzione.
+- È necessario ricreare tutti i supporti che usano le immagini di avvio modificate.
+- Se si preferisce non aggiornare automaticamente le immagini di avvio personalizzate/predefinite, non archiviarle nella posizione predefinita.
 
 > [!NOTE]
-> **[ソフトウェア ライブラリ]** に追加したすべてのブート イメージに対して Configuration Manager トレース ログ ツールが追加されます。 Windows PE では、コマンド プロンプトから「**CMTrace**」と入力して、Configuration Manager トレース ログ ツールを起動できます。  
+> Lo strumento del registro di traccia di Configuration Manager viene aggiunto a tutte le immagini di avvio inserite nella **Raccolta software**. In Windows PE è possibile avviare lo strumento del registro di traccia di Configuration Manager digitando **CMTrace** al prompt dei comandi.  
 
-### <a name="use-updates-and-servicing-to-install-the-latest-version-of-configuration-manager"></a>更新プログラムとサービスを使用して、Configuration Manager の最新バージョンをインストールする
-バージョン 1702 以降、Windows ADK のバージョンをアップグレードし、更新プログラムとサービスを使用して、Configuration Manager の最新バージョンをインストールするときに、Configuration Manager によって既定のブート イメージが再生成されます。 これには、更新された Windows ADK の新しい Windows PE バージョン、新しいバージョンの Configuration Manager クライアント、ドライバー、カスタマイズが含まれます。カスタム ブート イメージは変更されません。
+### <a name="use-updates-and-servicing-to-install-the-latest-version-of-configuration-manager"></a>Usare gli aggiornamenti e le versioni di manutenzione per installare la versione più recente di Configuration Manager
+A partire dalla versione 1702, quando si aggiorna la versione di Windows ADK e quindi si usano gli aggiornamenti e le versioni di manutenzione per installare la versione più recente di Configuration Manager, Configuration Manager rigenera le immagini di avvio predefinite. Ciò include la nuova versione di Windows PE dalla versione aggiornata di Windows ADK, la nuova versione del client di Configuration Manager, i driver, le personalizzazioni e così via. Le immagini di avvio personalizzate non vengono modificate.
 
-Version 1702 より前のバージョンでは、 Configuration Manager は、クライアント コンポーネント、ドライバー、カスタマイズなどを使用して既存のブート イメージ (boot.wim) を更新しますが、Windows ADK に含まれる Windows PE の最新バージョンは使用されません。 新しいバージョンの Windows ADK を使用するために、ブート イメージを手動で変更する必要があります。
+Prima della versione 1702, Configuration Manager aggiorna l'immagine di avvio (boot.wim) esistente con i componenti client, i driver, le personalizzazioni e così via, ma non usa la versione più recente di Windows PE da Windows ADK. È necessario modificare manualmente l'immagine di avvio per usare la nuova versione di Windows ADK.
 
-### <a name="upgrade-from-configuration-manager-2012-to-configuration-manager-current-branch-cb"></a>Configuration Manager 2012 から Configuration Manager Current Branch (CB) へのアップグレード
-セットアップ プロセスを使用して Configuration Manager 2012 を Configuration Manager CB にアップグレードするときに、Configuration Manager が既定のブート イメージを再生成します。 これには、更新された Windows ADK の新しい Windows PE バージョン、新しいバージョンの Configuration Manager クライアントが含まれ、すべてのカスタマイズは変更されません。 カスタム ブート イメージは変更されません。
+### <a name="upgrade-from-configuration-manager-2012-to-configuration-manager-current-branch-cb"></a>Eseguire l'aggiornamento da Configuration Manager 2012 a Configuration Manager Current Branch (CB)
+Quando si esegue l'aggiornamento da Configuration Manager 2012 a Configuration Manager CB tramite il processo di installazione, Configuration Manager rigenera le immagini di avvio predefinite. Ciò include la nuova versione di Windows PE dalla versione aggiornata di Windows ADK, la nuova versione del client di Configuration Manager e tutte le personalizzazioni rimangono invariate. Le immagini di avvio personalizzate non vengono modificate.
 
-### <a name="update-distribution-points-with-the-boot-image"></a>ブート イメージを使用して配布ポイントを更新する
-Configuration Manager コンソールで、**[ブート イメージ]** ノードから **[配布ポイントの更新]** アクションを使用する場合、Configuration Manager は、クライアント コンポーネント、ドライバー、カスタマイズなどを使用して既定のブート イメージを更新します。    
+### <a name="update-distribution-points-with-the-boot-image"></a>Aggiornare i punti di distribuzione con l'immagine d'avvio
+Quando si usa l'azione **Aggiorna punti di distribuzione** dal nodo **Immagini di avvio** nella console di Configuration Manager, Configuration Manager aggiorna le immagini di avvio predefinite con i componenti client, i driver, le personalizzazioni e così via.    
 
-Configuration Manager バージョン 1706 以降、そのブート イメージ内の (Windows ADK インストール ディレクトリにある) 最新バージョンの Windows PE を再読み込みできます。 [配布ポイントの更新] ウィザードの **[全般]** ページには、サイト サーバーにインストールされた Windows ADK のバージョン情報、ブート イメージ内の Windows PE を使用した Windows ADK のバージョン情報、Configuration Manager クライアントのバージョン情報が表示されます。 この情報はブート イメージを再読み込みするかどうかを決めるのに役立ちます。 また、**[ブート イメージ]** ノードでブート イメージを表示すると、新しい列 (**[クライアント バージョン]**) が追加されているため、各ブート イメージがどのバージョンの Configuration Manager クライアントを使用しているかを確認できます。    
+A partire dal Configuration Manager versione 1706, è possibile scegliere di ricaricare nell'immagine d'avvio la versione più recente di Windows PE (dalla directory di installazione di Windows ADK). La pagina **Generale** dell'Aggiornamento guidato punti di distribuzione offre informazioni sulla versione di Windows ADK installata nel server del sito, sulla versione di Windows ADK dalla quale è stato usato Windows PE nell'immagine d'avvio e sulla versione del client di Configuration Manager. È possibile usare queste informazioni per decidere se ricaricare l'immagine d'avvio. Inoltre la nuova colonna **Versione client** aggiunta alla visualizzazione delle immagini d'avvio nel nodo **Immagini d'avvio** visualizza la versione del client di Configuration Manager usata da ogni immagine d'avvio.    
 
-カスタム ブート イメージは変更されません。
+Le immagini di avvio personalizzate non vengono modificate.
 
-##  <a name="BKMK_BootImageCustom"></a> ブート イメージのカスタマイズ  
- サポートされているバージョンの Windows ADK の Windows PE バージョンに基づいているブート イメージであれば、Configuration Manager コンソールからカスタマイズしたり、[ブート イメージの変更](#BKMK_ModifyBootImages)を行ったりできます。 新しいバージョンでサイトがアップグレードされ、新しいバージョンの Windows ADK がインストールされている場合、カスタム ブート イメージ (既定のブート イメージの場所ではない) は新しいバージョンの Windows ADK で更新されません。 このことが発生する場合、Configuration Manager コンソールでブート イメージをカスタマイズできなくなります。 ただし、引き続き、アップグレード前に同様に動作します。  
+##  <a name="BKMK_BootImageCustom"></a> Personalizzare un'immagine d'avvio  
+ È possibile personalizzare o [modificare un'immagine d'avvio](#BKMK_ModifyBootImages) dalla console di Configuration Manager basata su una versione di Windows PE dalla versione supportata di Windows ADK. Quando un sito viene aggiornato con una nuova versione e viene installata una nuova versione di Windows ADK, le immagini di avvio personalizzate (non nel percorso dell'immagine di avvio predefinita) non vengono aggiornate con la nuova versione di Windows ADK. In questo caso, non sarà possibile personalizzare le immagini d'avvio nella console di Configuration Manager. Tuttavia, continueranno a funzionare come prima dell'aggiornamento.  
 
- ブート イメージが、サイトにインストールされた Windows ADK とは別のバージョンに基づく場合、そのブート イメージは、別の方法でカスタマイズする必要があります。たとえば、Windows AIK と Windows ADK に含まれている、展開イメージのサービスと管理 (DISM) コマンドライン ツールなどを使います。 詳細については、「[ブート イメージのカスタマイズ](customize-boot-images.md)」を参照してください。  
+ Quando un'immagine di avvio si basa su una versione differente di Windows ADK installata in un sito, è necessario personalizzare le immagini di avvio usando un altro metodo, ad esempio lo strumento della riga di comando Gestione e manutenzione immagini distribuzione, che fa parte di Windows AIK e Windows ADK. Per altre informazioni, vedere [Customize boot images](customize-boot-images.md) (Personalizzare le immagini d'avvio).  
 
-##  <a name="BKMK_AddBootImages"></a> ブート イメージの追加  
+##  <a name="BKMK_AddBootImages"></a> Aggiungere un'immagine d'avvio  
 
- サイトのインストール中に、Configuration Manager は、Windows ADK のサポートされているバージョンから、WinPE バージョンに基づくブート イメージを自動的に追加します。 Configuration Manager のバージョンによっては、サポートされているバージョンの Windows ADK とは異なるバージョンの WinPE に基づくブート イメージを追加できる場合があります。  サポートされていないバージョンの WinPE が含まれるブート イメージを追加しようとすると、エラーが発生します。  
+ Durante l'installazione del sito, Configuration Manager aggiunge automaticamente immagini d'avvio basate su una versione di WinPE dalla versione supportata di Windows ADK. A seconda della versione di Configuration Manager, è possibile aggiungere immagini d'avvio basate su una diversa versione di WinPE dalla versione supportata di Windows ADK.  Quando si prova ad aggiungere un'immagine d'avvio che contiene una versione non supportata di WinPE, si verifica un errore.  
 
- サポートされている Windows ADK のバージョン、Configuration Manager コンソールからカスタマイズできるブート イメージのベースとなる Windows PE バージョン、DISM でカスタマイズした後で Configuration Manager に追加できるブート イメージのベースとなる Windows PE バージョンは次のとおりです。  
+ Di seguito sono riportate la versione supportata di Windows ADK, la versione Windows PE su cui si basa l'immagine d'avvio che può essere personalizzata dalla console di Configuration Manager e le versioni Windows PE su cui è basata l'immagine d'avvio che è possibile personalizzare usando DISM e aggiungere a Configuration Manager.  
 
--   **Windows ADK バージョン**  
+-   **Versione di Windows ADK**  
 
-     Windows 10 用 Windows ADK  
+     Windows ADK per Windows 10  
 
--   **Configuration Manager コンソールでカスタマイズできる Windows PE ブート イメージのバージョン**  
+-   **Versioni di Windows PE per le immagini d'avvio personalizzabili dalla console di Configuration Manager**  
 
      Windows PE 10  
 
--   **Configuration Manager コンソールでカスタマイズできない Windows PE ブート イメージのバージョン**  
+-   **Versioni di Windows PE supportate per le immagini d'avvio non personalizzabili dalla console di Configuration Manager**  
 
-     Windows PE 3.1<sup>1</sup> および Windows PE 5  
+     Windows PE 3.1<sup>1</sup> e Windows PE 5  
 
-     <sup>1</sup> Windows PE 3.1 のブートイメージしか Configuration Manager に追加することができません。 Windows AIK for Windows 7 (Windows PE 3 の構築用) を Windows AIK Supplement for Windows 7 SP1 (Windows PE 3.1 の構築用) にアップグレードしてください。 Windows AIK Supplement for Windows 7 SP1 は、 [Microsoft ダウンロード センター](http://www.microsoft.com/download/details.aspx?id=5188)からダウンロードできます。  
+     <sup>1</sup> È possibile aggiungere un'immagine d'avvio a Configuration Manager solo se è basata su Windows PE 3.1. Installare il supplemento Windows AIK per Windows 7 SP1 per aggiornare Windows AIK per Windows 7 (basato su Windows PE 3) con il supplemento Windows AIK per Windows 7 SP1 (basato su Windows PE 3.1). È possibile scaricare il supplemento Windows AIK per Windows 7 SP1 dall' [Area download Microsoft](http://www.microsoft.com/download/details.aspx?id=5188).  
 
-     たとえば、Configuration Manager を使っている場合は、Windows 10 用 Windows ADK (Windows PE 10 に基づく) で構築したブート イメージを Configuration Manager コンソールでカスタマイズできます。 一方、Windows PE 5 のブート イメージはサポートされていますが、このブート イメージをカスタマイズするには、別のコンピューターにある Windows 8 用 Windows ADK に付属している DISM を使わなければなりません。 その後、ブート イメージを Configuration Manager コンソールに追加できます。 ブート イメージのカスタマイズ (オプションのコンポーネントとドライバーの追加)、ブート イメージのコマンド サポートの有効化、Configuration Manager コンソールへのブート イメージの追加、ブート イメージによる配布ポイントの更新の手順の詳細については、「[ブート イメージのカスタマイズ](customize-boot-images.md)」を参照してください。
+     Ad esempio, se si ha Configuration Manager, è possibile personalizzare le immagini d'avvio da Windows ADK per Windows 10 (basato su Windows PE 10) dalla console di Configuration Manager. Tuttavia, anche se le immagini di avvio basate su Windows PE 5 sono supportate, è necessario personalizzarle da un computer diverso e usare la versione di Gestione e manutenzione immagini distribuzione installata con Windows AIK per Windows 8. È quindi possibile aggiungere l'immagine d'avvio alla console di Configuration Manager. Per altre informazioni sui passaggi per personalizzare un'immagine d'avvio (aggiungere componenti e driver facoltativi), abilitare il supporto comandi nell'immagine d'avvio, aggiungere l'immagine d'avvio alla console di Configuration Manager e aggiornare i punti di distribuzione con l'immagine d'avvio, vedere [Customize boot images](customize-boot-images.md) (Personalizzare le immagini d'avvio).
 
- ブート イメージを手動で追加するには、次の手順に従います。  
+ Usare la procedura seguente per aggiungere manualmente un'immagine d'avvio.  
 
-#### <a name="to-add-a-boot-image"></a>ブート イメージを追加するには  
+#### <a name="to-add-a-boot-image"></a>Per aggiungere un'immagine di avvio  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開し、[ **ブート イメージ**] をクリックします。  
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**e quindi fare clic su **Immagini d'avvio**.  
 
-3.  [ **ホーム** ] タブの [ **作成** ] グループで、[ **ブート イメージの追加** ] をクリックし、ブート イメージの追加ウィザードを開始します。  
+3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Aggiungi immagine di avvio** per avviare l'Aggiunta guidata immagine d'avvio.  
 
-4.  [ **データ ソース** ] ページで以下のオプションを指定し、[ **次へ**] をクリックします。  
+4.  Nella pagina **Origine dati** specificare le seguenti opzioni e quindi fare clic su **Avanti**.  
 
-    -   [パス **** ] ボックスで、ブート イメージの WIM ファイルへのパスを指定します。  
+    -   Nella casella **Percorso** specificare il percorso del file WIM dell'immagine di avvio.  
 
-         このパスは、UNC 形式の有効なネットワーク パスでなければなりません。 例: \\\\<*servername*\\<*sharename*>\\<*bootimagename*>.wim  
+         Il percorso specificato deve essere un percorso di rete valido in formato UNC. Ad esempio: \\\\<*nomeserver*\\<*nomecondivisione*>\\<*nomeimmagineavvio*>.wim.  
 
-    -   [ **ブート イメージ** ] ドロップダウン リストで、インポートするブート イメージを選択します。 WIM ファイルに複数のブート イメージが含まれている場合、該当するイメージを選びます。  
+    -   Selezionare l'immagine di avvio dall'elenco a discesa **Immagine di avvio** . Se il file WIM contiene più immagini di avvio, selezionare l'immagine appropriata.  
 
-5.  [ **全般**  ] ページで、以下のオプションを指定して [ **次へ**] をクリックします。  
+5.  Nella pagina **Generale**  specificare le opzioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   [ **名前** ] ボックスで、ブート イメージの一意の名前を指定します。  
+    -   Nella casella **Nome** specificare un nome univoco per l'immagine di avvio.  
 
-    -   [ **バージョン** ] ボックスで、ブート イメージのバージョン番号を指定します。  
+    -   Nella casella **Versione** specificare un numero di versione per l'immagine di avvio.  
 
-    -   [ **コメント** ] ボックスで、ブート イメージの使用方法について簡単な説明を指定します。  
+    -   Nella casella **Commento** specificare una breve descrizione di come viene usata l'immagine di avvio.  
 
-6.  ウィザードを完了します。  
+6.  Completare la procedura guidata.  
 
- Configuration Manager コンソールの **[ ブート イメージ]** ノードに、ブート イメージが一覧表示されます。 ただし、ブート イメージを使用してオペレーティング システムを展開する前に、配布ポイント、配布ポイント グループ、または配布ポイント グループに関連付けられているコレクションにブート イメージを配布する必要があります。  
-
-> [!NOTE]  
->  Configuration Manager コンソールで **[ブート イメージ]** ノードを選ぶと、**[サイズ (KB)]** 列に、各ブート イメージの圧縮解除後のサイズが表示されます。 ただし、Configuration Manager がネットワーク経由でブート イメージを送信する際は、イメージの圧縮コピーを送信します。このコピーは通常、**[サイズ (KB)]** 列に示されているサイズよりもはるかに小さいサイズです。  
-
-##  <a name="BKMK_DistributeBootImages"></a> 配布ポイントへのブート イメージの配布  
- ブート イメージは、他のコンテンツを配布するのと同じ方法で配布ポイントに配布されます。 ほとんどの場合は、オペレーティング システムを展開する前、およびメディアを作成する前に、少なくとも 1 つの配布ポイントにブート イメージを配布する必要があります。  
+ L'immagine d'avvio appare ora elencata nel nodo **Immagine d'avvio** della console di Configuration Manager. Tuttavia, prima di poter utilizzare l'immagine di avvio per distribuire un sistema operativo, è necessario distribuire tale immagine ai punti di distribuzione, ai gruppi di punti di distribuzione o alle raccolte associate ai gruppi di punti di distribuzione.  
 
 > [!NOTE]  
->  PXE を使用してオペレーティング システムを展開するには、ブート イメージを配布する前に次の点を考慮します。  
+>  Quando si seleziona il nodo **Immagine d'avvio** nella console di Configuration Manager, la colonna **Dimensione (KB)** visualizza la dimensione decompressa per ogni immagine d'avvio. Tuttavia, quando Configuration Manager invia un'immagine d'avvio in rete, invia una copia compressa dell'immagine che è generalmente molto più piccola della dimensione elencata nella colonna **Dimensione (KB)**.  
+
+##  <a name="BKMK_DistributeBootImages"></a> Distribuire immagini d'avvio in un punto di distribuzione  
+ Le immagini di avvio vengono distribuite nei punti di distribuzione nello stesso modo in cui vengono distribuiti gli altri contenuti. Nella maggior parte dei casi, è necessario distribuire l'immagine d'avvio almeno in un punto di distribuzione prima di distribuire il sistema operativo e prima di creare supporti.  
+
+> [!NOTE]  
+>  Per usare PXE per la distribuzione di un sistema operativo, prima di distribuire l'immagine d'avvio tenere presente quanto segue:  
 >   
->  -   配布ポイントは、PXE 要求を受け入れるように構成する必要があります。  
-> -   x86 と x64 の両方の PXE 対応ブート イメージを、少なくとも 1 つの PXE 対応配布ポイントに配布する必要があります。  
-> -   Configuration Manager は、ブート イメージを、PXE 対応配布ポイント上の **RemoteInstall** フォルダーに配布します。  
+>  -   Il punto di distribuzione deve essere configurato per accettare le richieste PXE.  
+> -   È necessario distribuire sia un'immagine d'avvio abilitata per PXE x86, sia una abilitata per PXE x64, in almeno un punto di distribuzione che supporta PXE.  
+> -   Configuration Manager distribuisce l'immagine d'avvio nella cartella **RemoteInstall** del punto di distribuzione abilitato per PXE.  
 >   
->  PXE を使用してオペレーティング システムを展開する方法の詳細については、「[PXE を使用したネットワーク経由での Windows の展開](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md)」を参照してください。  
+>  Per altre informazioni sull'uso di PXE per la distribuzione di sistemi operativi, vedere [Usare PXE per distribuire Windows in rete](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
 
- ブート イメージを配布する手順については、「 [Distribute content](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_distribute)」をご覧ください。  
+ Per la procedura di distribuzione di un'immagine d'avvio, vedere [Distribute content](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_distribute).  
 
-##  <a name="BKMK_ModifyBootImages"></a> ブート イメージの変更  
- デバイス ドライバーをイメージに追加または削除したり、ブート イメージに関連付けられているプロパティを編集したりできます。 追加または削除するデバイス ドライバーには、ネットワーク アダプターまたは大容量記憶装置のデバイス ドライバーが含まれる可能性があります。 ブート イメージを変更する際には、以下の点をご考慮ください。  
+##  <a name="BKMK_ModifyBootImages"></a> Modificare un'immagine d'avvio  
+ È possibile aggiungere o rimuovere driver di dispositivo dall'immagine o modificare le proprietà associate all'immagine d'avvio. Ad esempio, è possibile aggiungere o rimuovere driver per scheda di rete o per dispositivi di archiviazione di massa. Quando si modificano le immagini di avvio, tenere presente quanto segue:  
 
--   デバイス ドライバーをブート イメージに追加するには、事前にデバイス ドライバー カタログのデバイス ドライバーをインポートして有効にする必要があります。  
+-   Per poter aggiungere driver di dispositivo all'immagine d'avvio, è necessario prima importarli e abilitarli nel catalogo dei driver di dispositivo.  
 
--   ブート イメージを変更しても、ブート イメージが参照する関連パッケージは一切変更されません。  
+-   Quando si modifica un'immagine d'avvio, l'immagine non modifica i pacchetti associati a cui fa riferimento.  
 
--   ブート イメージを変更したら、既にそのブート イメージを含む配布ポイント上のブート イメージを **更新** し、最新バージョンのブート イメージを利用できるようにする必要があります。 詳細については、「 [Manage content you have distributed](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_manage)」を参照してください。  
+-   Dopo aver apportato delle modifiche a un'immagine d'avvio, è necessario **aggiornarla** nei punti di distribuzione che già la contengono, in modo che sia disponibile la versione più recente dell'immagine. Per ulteriori informazioni, vedere [Manage content you have distributed](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_manage).  
 
- ブート イメージを変更するには、次の手順に従います。  
+ Usare la procedura seguente per modificare un'immagine d'avvio.  
 
-#### <a name="to-modify-the-properties-of-a-boot-image"></a>ブート イメージのプロパティを変更するには  
+#### <a name="to-modify-the-properties-of-a-boot-image"></a>Per modificare le proprietà di un'immagine di avvio  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開し、[ **ブート イメージ**] をクリックします。  
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**e quindi fare clic su **Immagini d'avvio**.  
 
-3.  変更するブート イメージを選択します。  
+3.  Selezionare l'immagine di avvio da modificare.  
 
-4.  [ホーム **** ] タブの [プロパティ **** ] グループで [プロパティ **** ] をクリックして、ブート イメージの [プロパティ **** ] ダイアログ ボックスを開きます。  
+4.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà** per aprire la finestra di dialogo **Proprietà** per l'immagine di avvio.  
 
-5.  ブート イメージの動作を変更するには、以下の設定を行います。  
+5.  Impostare le seguenti impostazioni per modificare il comportamento dell'immagine di avvio:  
 
-    -   外部ツールを使用してブート イメージのプロパティを変更した場合は、[イメージ **** ] タブで [再読み込み ****] をクリックします。  
+    -   Nella scheda **Immagini** , se sono state modificate le proprietà dell'immagine di avvio utilizzando uno strumento esterno, fare clic su **Ricarica**.  
 
-    -   **[ドライバー]** タブで、WinPE をブートするために必要な Windows デバイス ドライバーを追加します。 デバイス ドライバーを追加する際には、以下の点を考慮してください。  
+    -   Nella scheda **Driver** aggiungere i driver di dispositivo di Windows necessari per avviare WinPE. Quando si aggiungono i driver di dispositivo, è necessario valutare quanto segue:  
 
-        -   **[ブート イメージのアーキテクチャに一致しないドライバーを非表示にする]** を選び、ブート イメージのアーキテクチャのドライバーのみを表示します。 アーキテクチャは、製造元が提供する .INF で報告されるアーキテクチャに基づいています。  
+        -   Selezionare **Nascondi driver che non corrispondono all'architettura dell'immagine d'avvio** per visualizzare solo i driver relativi all'architettura dell'immagine d'avvio. L'architettura è basata su quella riportata nel file con estensione inf fornito dal produttore.  
 
-        -   **[記憶域クラスおよびネットワーク クラス以外のドライバーを非表示にする (ブート イメージの場合)]** を選び、ストレージとネットワーク ドライバーのみを表示し、ビデオ ドライバーまたはモデム ドライバーなど、通常ブート イメージに必要でない他のドライバーを非表示にします。  
+        -   Selezionare **Nascondi driver non inclusi in una classe di archiviazione o di rete (per immagini d'avvio)** per visualizzare solo i driver di archiviazione e di rete e per nascondere gli altri driver in genere non necessari per le immagini di avvio, ad esempio, i driver video o quelli del modem.  
 
-        -   **[デジタル署名されていないドライバーを非表示にする]** を選び、デジタル署名されていないドライバーを非表示にします。  
+        -   Selezionare **Nascondi driver senza firma digitale** per nascondere i driver privi di firma digitale.  
 
-        -   他のドライバーを WinPE に含める要件がない場合は、最適な方法として、NIC ドライバーと大容量記憶装置ドライバーのみブート イメージに追加します。  
+        -   Come procedura consigliata, aggiungere solo i driver di archiviazione di massa e per la scheda di rete (NIC) alle immagini di avvio a meno che non vengano richiesti altri driver per WinPE.  
 
-        -   WinPE には多くの組み込みドライバーが既に付属しているため、WinPE で提供されない NIC ドライバーと大容量記憶装置ドライバーのみ追加します。  
+        -   Poiché WinPE include già molti driver, aggiungere solo i driver di archiviazione di massa e per la scheda di rete (NIC) non forniti da WinPE.  
 
-        -   ブート イメージに追加するドライバーがブート イメージのアーキテクチャと一致していることを確認します。  
+        -   Assicurarsi che i driver aggiunti all'immagine d'avvio corrispondano all'architettura dell'immagine d'avvio.  
 
         > [!NOTE]  
-        >  ブート イメージに追加する前に、デバイス ドライバーをドライバー カタログにインポートする必要があります。 デバイス ドライバーをインポートする方法については、「[ドライバーの管理](manage-drivers.md)」を参照してください。  
+        >  È necessario importare i driver di dispositivo nel catalogo driver prima di aggiungerli a un'immagine di avvio. Per informazioni su come importare i driver di dispositivo, vedere [Gestire i driver](manage-drivers.md).  
 
-    -   [カスタマイズ **** ] タブで、以下の設定を選択します。  
+    -   Nella scheda **Personalizzazione** selezionare una delle seguenti impostazioni:  
 
-        -   [起動前コマンドを有効にする **** ] チェック ボックスをオンにして、タスク シーケンスを実行する前に実行するコマンドを指定します。 起動前コマンドを有効にすると、実行するコマンド ライン、コマンドの実行にサポート ファイルが必要かどうか、およびそれらのサポート ファイルのソースの場所を指定できます。  
+        -   Selezionare la casella di controllo **Attiva comando di preavvio** per specificare un comando da eseguire prima della sequenza attività. Quando si attivano i comandi di preavvio, è possibile specificare la riga di comando da eseguire, se sono richiesti file di supporto per eseguire il comando e il percorso di origine di tali file di supporto.  
 
             > [!WARNING]  
-            >  **cmd /c** をコマンドラインの先頭に追加する必要があります。 **cmd /c** を指定しない場合、実行後にコマンドが閉じられません。 展開がコマンドの完了を待機し続けて、その他の構成済みのコマンドや操作が開始されません。  
+            >  È necessario aggiungere **cmd /c** all'inizio della riga di comando. Se non si specifica **cmd /c**, il comando non verrà chiuso al termine dell'esecuzione. La distribuzione continua ad attendere la fine del comando e non avvierà altri comandi o azioni configurati.  
 
             > [!TIP]  
-            >  タスク シーケンス メディアの作成中に、パッケージ ID と起動前コマンドライン (タスク シーケンスの変数の値を含む) が、Configuration Manager コンソールを実行しているコンピューターの CreateTSMedia.log というログファイルに書き込まれます。 このログ ファイルで、タスク シーケンスの変数の値を確認できます。  
+            >  Durante la creazione del supporto per sequenza di attività, la sequenza di attività scrive l'ID del pacchetto e la riga di comando di preavvio, incluso il valore di eventuali variabili della sequenza di attività, nel file di log CreateTSMedia.log nel computer che esegue la console di Configuration Manager. È possibile rivedere questo file di registro per verificare il valore per le variabili della sequenza di attività.  
 
-        -   **[Windows PE の背景]** 設定を構成して、既定の WinPE の背景またはカスタムの背景のいずれを使用するのかを指定します。  
+        -   Configurare l'impostazione **Sfondo Windows PE** per specificare se si vuole usare lo sfondo Windows PE predefinito o uno sfondo personalizzato.  
 
-        -   ブート イメージの展開時に **F8** キーを使用してコマンド プロンプトを開くには、 **[コマンド サポートを有効にする (テストのみ)]** を選びます。 これは、展開をテストする際のトラブルシューティングに役立ちます。 実稼働環境の展開でこの設定を使用することは推奨されません。  
+        -   Selezionare **Abilita supporto comandi (solo test)** per aprire un prompt dei comandi usando il tasto **F8** mentre l'immagine d'avvio viene distribuita. Questa operazione è utile per la risoluzione di problemi durante la verifica della distribuzione. Non è consigliabile utilizzare questa impostazione in un ambiente di produzione.  
 
-        -   Windows PE のスクラッチ領域を構成します。これは、WinPE で使用される一時記憶域 (RAM ドライブ) です。 たとえば、WinPE 内で実行するアプリケーションが一時ファイルに書き込む必要がある場合、WinPE はメモリ内のスクラッチ領域にファイルをリダイレクトすることで、ハード ディスクが存在することをシミュレートします。 既定で、WinPE は 32 メガバイト (MB) の書き込み可能メモリを割り当てています。  
+        -   Configurare l'area scratch di Windows PE, ovvero l'archivio temporaneo (unità RAM) usato da WinPE. Ad esempio, quando un'applicazione viene eseguita in WinPE e richiede la scrittura di file temporanei, WinPE reindirizza tali file all'area scratch in memoria per simulare la presenza di un disco rigido. Per impostazione predefinita, WinPE alloca 32 megabyte (MB) di memoria scrivibile.  
 
-    -   [データ ソース **** ] タブで、以下の設定を更新します。  
+    -   Nella scheda **Origine dati** aggiornare le seguenti impostazioni:  
 
-        -   ブート イメージのソース ファイルを変更するには、 **[イメージ パス]** と **[イメージ インデックス]** を設定します。  
+        -   Impostare **Percorso immagine** e **Indice immagini** per modificare il file di origine dell'immagine d'avvio.  
 
-        -   ブート イメージを更新するスケジュールを作成するには、 **[スケジュールに従って配布ポイントを更新する]** を選びます。  
+        -   Selezionare **Aggiorna i punti di distribuzione in base alla pianificazione** per creare una pianificazione per l'aggiornamento dell'immagine d'avvio.  
 
-        -   別のコンテンツ用の容量を確保するために、このパッケージのコンテンツのクライアント キャッシュを期限切れにする必要がない場合、 **[クライアント キャッシュの内容を保持する]** を選びます。  
+        -   Selezionare **Mantieni contenuto nella cache del client** se non si vuole che il contenuto del pacchetto venga eliminato dalla cache client per liberare spazio per altro contenuto.  
 
-        -   配布ポイントでブート イメージ パッケージが更新された場合に、変更のあったファイルのみ配布するように指定するには、 **[バイナリ差分レプリケーションを有効にする]** を選びます。 この設定により、特にブート イメージ パッケージが大きく変更が比較的少ない場合に、サイト間のネットワーク トラフィックを最小限に抑えることができます。  
+        -   Selezionare **Abilita replica differenziale binaria** per specificare che solo i file modificati vengono distribuiti quando il pacchetto dell'immagine d'avvio viene aggiornato nel punto di distribuzione. Questa impostazione riduce al minimo il traffico di rete tra siti, soprattutto quando il pacchetto di immagini di avvio è di grandi dimensioni e le modifiche sono relativamente piccole.  
 
-        -   ブート イメージを PXE 対応の展開で使用する場合、**[このブート イメージを PXE 対応の配布ポイントから展開する]** を選びます。  
-
-            > [!NOTE]  
-            >  詳細については、「[PXE を使用したネットワーク経由での Windows の展開](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md)」を参照してください。  
-
-    -   [データ アクセス **** ] タブで、以下の設定を選択します。  
-
-        -   クライアントでこのパッケージのコンテンツをネットワークからインストールする場合は、[パッケージ共有の設定 **** ] を設定します。  
-
-        -   **[パッケージの更新設定]** を設定して、Configuration Manager で配布ポイントからユーザーを切断する方法を指定します。 ユーザーが配布ポイントに接続されていると、Configuration Manager がブート イメージを更新できない場合があります。  
-
-    -   [配布の設定 **** ] タブで、以下の設定を選択します。  
-
-        -   **[配布の優先順位]** リストに、複数のパッケージを同じ配布ポイントに配布する場合に Configuration Manager が使用する優先レベルを指定します。  
-
-        -   優先配布ポイントへのオンデマンドのコンテンツ配布を有効にする場合、 **[このパッケージのコンテンツを優先配布ポイントに配布する]** を選びます。 この設定を有効にすると、クライアントがパッケージのコンテンツを要求し、そのコンテンツが優先配布ポイントにないときは、管理ポイントはすべての優先配布ポイントにコンテンツを配布します。  
-
-        -   [事前設定された配布ポイントの設定 **** ] を設定して、事前設定済みコンテンツが有効になっている配布ポイントにブート イメージを配布する方法を指定します。  
+        -   Selezionare **Distribuire questa immagine d'avvio dal punto di distribuzione che supporta PXE** se l'immagine d'avvio viene usata in una distribuzione che supporta PXE.  
 
             > [!NOTE]  
-            >  事前設定済みコンテンツについて詳しくは、「 [Prestage content](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_prestage)」をご覧ください。  
+            >  Per altre informazioni, vedere [Usare PXE per distribuire Windows in rete](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
 
-    -   [コンテンツの場所 **** ] タブで、配布ポイントまたは配布ポイント グループを選択して、次の操作を実行します。  
+    -   Nella scheda **Accesso dati** selezionare una delle seguenti impostazioni:  
 
-        -   選択した配布ポイントまたは配布ポイント グループに再度ブート イメージを配布するには、[再配布 **** ] をクリックします。  
+        -   Selezionare **Impostazioni condivisione pacchetto** se si desidera che i client installino il contenuto in questo pacchetto dalla rete.  
 
-        -   選択した配布ポイントまたは配布ポイント グループのブート イメージ パッケージの整合性を確認するには、[検証 **** ] をクリックします。  
+        -   In **Impostazioni aggiornamento pacchetto** specificare in che modo si vuole che Configuration Manager disconnetta gli utenti dal punto di distribuzione. È possibile che Configuration Manager non sia in grado di aggiornare l'immagine d'avvio quando gli utenti sono connessi al punto di distribuzione.  
 
-    -   **[オプション コンポーネント]** タブで、Configuration Manager で使用するために Windows PE に追加するコンポーネントを指定します。 使用可能なオプション コンポーネントについて詳しくは、「 [WinPE: パッケージの追加 (オプション コンポーネント リファレンス)](https://msdn.microsoft.com/library/windows/hardware/dn938382\(v=vs.85\).aspx)」をご覧ください。  
+    -   Nella scheda **Impostazioni distribuzione** selezionare una delle seguenti impostazioni:  
 
-    -   [セキュリティ **** ] タブで、管理ユーザーを選択して、その管理ユーザーが実行できる操作を変更します。  
+        -   Nell'elenco **Priorità di distribuzione** specificare il livello di priorità utilizzato da Configuration Manager durante la distribuzione di più pacchetti nello stesso punto di distribuzione.  
 
-6.  プロパティを構成したら、[OK ****] をクリックします。  
+        -   Selezionare **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti** per attivare la distribuzione del contenuto su richiesta nei punti di distribuzione preferiti. Quando questa impostazione è attivata, il punto di gestione distribuisce il contenuto in tutti i punti di distribuzione preferiti quando un client richiede il contenuto per il pacchetto e tale contenuto non è disponibile in nessuno dei punti di distribuzione preferiti.  
 
-##  <a name="BKMK_BootImagePXE"></a> PXE 対応の配布ポイントから展開するブート イメージの構成  
- PXE オペレーティング システムの展開用ブート イメージを使用するには、PXE 対応の配布ポイントから展開するブート イメージをあらかじめ構成する必要があります。  
+        -   Selezionare **Impostazioni punto di distribuzione pre-installazione** per specificare la modalità di distribuzione dell'immagine di avvio nei punti di distribuzione abilitati per il contenuto pre-installato.  
 
-#### <a name="to-configure-a-boot-image-to-deploy-from-a-pxe-enabled-distribution-point"></a>PXE 対応の配布ポイントから展開するブート イメージを構成するには  
+            > [!NOTE]  
+            >  Per altre informazioni sui contenuti in versione di preproduzione, vedere [Prestage content](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_prestage).  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+    -   Nella scheda **Percorsi contenuto** selezionare il punto di distribuzione o il gruppo di punti di distribuzione ed eseguire le seguenti azioni:  
 
-2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開し、[ **ブート イメージ**] をクリックします。  
+        -   Fare clic su **Ridistribuisci** per distribuire nuovamente l'immagine di avvio nel punto di distribuzione o nel gruppo di punti di distribuzione selezionato.  
 
-3.  変更するブート イメージを選択します。  
+        -   Fare clic su **Convalida** per verificare l'integrità del pacchetto di immagini di avvio nel punto di distribuzione o nel gruppo di punti di distribuzione selezionato.  
 
-4.  [ホーム **** ] タブの [プロパティ **** ] グループで [プロパティ **** ] をクリックして、ブート イメージの [プロパティ **** ] ダイアログ ボックスを開きます。  
+    -   Nella scheda **Componenti facoltativi** specificare i componenti aggiunti a Windows PE per l'utilizzo con Configuration Manager. Per altre informazioni sui componenti facoltativi disponibili, vedere [WinPE: aggiungere pacchetti (informazioni di riferimento sui componenti facoltativi)](https://msdn.microsoft.com/library/windows/hardware/dn938382\(v=vs.85\).aspx).  
 
-5.  **[データ ソース]** タブで、 **[このブート イメージを PXE 対応の配布ポイントから展開する]**を選びます。  
+    -   Nella scheda **Protezione** selezionare un utente amministratore e modificare le operazioni che può eseguire.  
+
+6.  Dopo aver configurato le proprietà, fare clic su **OK**.  
+
+##  <a name="BKMK_BootImagePXE"></a> Configurare un'immagine d'avvio per eseguire la distribuzione da un punto di distribuzione che supporta PXE  
+ Prima di usare un'immagine d'avvio per una distribuzione del sistema operativo PXE, è necessario configurare l'immagine d'avvio per la distribuzione da un punto di distribuzione che supporta PXE.  
+
+#### <a name="to-configure-a-boot-image-to-deploy-from-a-pxe-enabled-distribution-point"></a>Per configurare un'immagine d'avvio per eseguire la distribuzione da un punto di distribuzione che supporta PXE  
+
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**e quindi fare clic su **Immagini d'avvio**.  
+
+3.  Selezionare l'immagine di avvio da modificare.  
+
+4.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà** per aprire la finestra di dialogo **Proprietà** per l'immagine di avvio.  
+
+5.  Nella scheda **Origine dati** selezionare **Distribuire questa immagine d'avvio dal punto di distribuzione che supporta PXE**.  
 
     > [!NOTE]  
-    >  詳細については、「[PXE を使用したネットワーク経由での Windows の展開](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md)」を参照してください。  
+    >  Per altre informazioni, vedere [Usare PXE per distribuire Windows in rete](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
 
-6.  プロパティを構成したら、[OK ****] をクリックします。  
+6.  Dopo aver configurato le proprietà, fare clic su **OK**.  
 
-##  <a name="BKMK_BootImageLanguage"></a> ブート イメージの展開のための複数言語の構成  
- ブート イメージは言語に依存しません。 そのため、WinPE で、Windows PE のオプションのコンポーネントから適切な言語のサポートを含め、表示できる言語を示す適切なタスク シーケンス変数を設定すると、複数の言語でタスク シーケンス テキストを表示するブート イメージを使用できます。 展開するオペレーティング システムの言語は、Configuration Manager のバージョンにかかわらず、WinPE の場合に表示される言語には依存しません。 ユーザーに表示される言語は、次のように決定されます。  
+##  <a name="BKMK_BootImageLanguage"></a> Configurare più lingue per la distribuzione di immagini d'avvio  
+ Le immagini di avvio sono indipendenti dalla lingua. Questo consente di usare un'unica immagine d'avvio che mostra il testo della sequenza di attività in più lingue, in WinPE, a condizione che si includa il supporto lingua appropriato dai componenti facoltativi di Windows PE e si imposti la variabile della sequenza di attività appropriata per indicare quale lingua può essere visualizzata. La lingua del sistema operativo distribuito non dipende dalla lingua visualizzata in WinPE, indipendentemente dalla versione di Configuration Manager. La lingua visualizzata all'utente viene determinata come segue:  
 
--   ユーザーが既存のオペレーティング システムからタスク シーケンスを実行すると、Configuration Manager はユーザー用に構成された言語を自動的に使用します。 必須の展開期限の結果としてタスク シーケンスが自動的に実行された場合、Configuration Manager はオペレーティング システムの言語を使用します。  
+-   Quando un utente esegue la sequenza di attività da un sistema operativo esistente, Configuration Manager usa automaticamente la lingua configurata per l'utente. Quando la sequenza di attività viene eseguita automaticamente a causa della scadenza di una distribuzione obbligatoria, Configuration Manager usa la lingua del sistema operativo.  
 
--   PXE またはメディアを使用するオペレーティング システム展開の場合、起動前コマンドの一部として SMSTSLanguageFolder 変数で言語 ID 値を設定できます。 コンピューターを WinPE で起動すると、変数で指定した言語でメッセージが表示されます。 指定したフォルダーの言語リソース ファイルにアクセスできない場合、または変数を設定しなかった場合、メッセージは WinPE の言語で表示されます。  
+-   Per le distribuzioni di sistemi operativi avviate da PXE o da supporto, è possibile impostare il valore di ID lingua nella variabile SMSTSLanguageFolder come parte di un comando di preavvio. Quando il computer si avvia in Windows PE, i messaggi vengono visualizzati nella lingua specificata nella variabile. Se si verifica un errore durante l'accesso al file di risorse di lingua nella cartella specificata o non si imposta la variabile, i messaggi vengono visualizzati nella lingua di WinPE.  
 
     > [!NOTE]  
-    >  メディアがパスワードで保護されている場合、パスワードの入力をユーザーに求めるテキストは、常に WinPE の言語で表示されます。  
+    >  Quando il supporto è protetto da una password, il testo di richiesta di immissione della password viene sempre visualizzato nella lingua di WinPE.  
 
- PXE またはメディアから開始されたオペレーティング システムの展開の場合、次の手順で WinPE の言語を設定します。  
+ Usare la procedura seguente per impostare la lingua di WinPE per distribuzioni del sistema operativo avviate da PXE o da supporto.  
 
-#### <a name="to-set-the-windows-pe-language-for-a-pxe-or-media-initiated-operating-system-deployment"></a>PXE またはメディアから開始されたオペレーティング システムの展開の場合に Windows PE の言語を設定するには  
+#### <a name="to-set-the-windows-pe-language-for-a-pxe-or-media-initiated-operating-system-deployment"></a>Per impostare la lingua di Windows PE per una distribuzione del sistema operativo avviata da PXE o da supporto  
 
-1.  ブート イメージを更新する前に、適切なタスク シーケンス リソース ファイル (tsres.dll) がサイト サーバーの対応する言語フォルダー内にあることを確認します。 たとえば、英語版のリソース ファイルは <*ConfigMgrInstallationFolder*>\OSD\bin\x64\00000409\tsres.dll にあります。  
+1.  Prima di aggiornare l'immagine d'avvio, verificare che il file di risorse della sequenza attività appropriato (tsres.dll) sia contenuto nella cartella di lingua corrispondente. Ad esempio, il file di risorse inglese si trova nel percorso seguente: <*ConfigMgrInstallationFolder*>\OSD\bin\x64\00000409\tsres.dll.  
 
-2.  起動前コマンドの一部として、SMSTSLanguageFolder 環境変数を適切な言語 ID に設定します。 言語 ID は、16 進数ではなく 10 進数を使用して指定する必要があります。 たとえば、言語 ID を英語に設定するには、フォルダー名に使用される 16 進数の 00000409 ではなく、10 進数の 1033 を指定します。  
+2.  Come parte del comando di preavvio, impostare la variabile di ambiente SMSTSLanguageFolder sull'ID lingua appropriato. L'ID lingua deve essere specificato usando valori decimali e non esadecimali. Per impostare l'ID lingua su Inglese, è ad esempio necessario specificare il valore decimale 1033 in luogo del valore esadecimale 00000409 utilizzato per il nome della cartella.  

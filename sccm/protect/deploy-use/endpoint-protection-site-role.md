@@ -1,6 +1,6 @@
 ---
-title: "Endpoint Protection ポイント サイト システムの役割を作成する | Microsoft Docs"
-description: "構成マネージャー クライアント コンピューターのセキュリティとマルウェアを管理するように Endpoint Protection を構成する方法について説明します。"
+title: Create il ruolo del sistema del sito del punto di Endpoint Protection | Microsoft Docs
+description: Informazioni su come configurare Endpoint Protection per gestire la sicurezza e i malware nei computer client di Configuration Manager.
 defintion: 
 definition: 
 ms.custom: na
@@ -19,67 +19,67 @@ manager: angrobe
 ms.openlocfilehash: 6e717bcbe5ef8c3f2efa717d0cebb9e675e7c127
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-an-endpoint-protection-point-site-system-role"></a>Endpoint Protection ポイント サイト システムの役割を作成する
+# <a name="create-an-endpoint-protection-point-site-system-role"></a>Creare un ruolo del sistema del sito del punto di Endpoint Protection
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
- Endpoint Protection を使用するには、事前に Endpoint Protection ポイント サイト システムの役割をインストールしておく必要があります。 これは、1 つのサイト システム サーバーのみにインストールします。また、中央管理サイトまたはスタンドアロンのプライマリ サイトの階層の最上位にインストールしなければなりません。
+ Prima di poter usare Endpoint Protection, è necessario installare il ruolo del sistema del sito Punto di Endpoint Protection. Il ruolo deve essere installato in un solo server di sistema del sito, al livello superiore della gerarchia in un sito di amministrazione centrale o un sito primario autonomo.
 
- Endpoint Protection 用に新しいサイト システム サーバーをインストールするか、または既存のサイト システム サーバーを使用するかに応じて、次のいずれかの手順に従います。
- - [新しいサイト システム サーバーにインストールする](#new-site-system-server)
- - [既存のサイト システム サーバーにインストールする](#existing-site-system-server)
+ Usare una delle procedure seguenti a seconda che si voglia installare un nuovo server di sistema del sito per Endpoint Protection o usare un server di sistema del sito esistente:
+ - [Installare in un nuovo server di sistema del sito](#new-site-system-server)
+ - [Installare in un server di sistema del sito esistente](#existing-site-system-server)
 
 > [!IMPORTANT]
->  Endpoint Protection ポイントをインストールするときに、Endpoint Protection クライアントは、Endpoint Protection ポイントをホストするサーバーにインストールされます。 サーバーにインストールされている既存のマルウェア対策ソリューションとの共存を有効にするサービスとスキャンは、このクライアント上で無効になっています。 後で Endpoint Protection による管理用にこのサーバーを有効にする際、サードパーティのマルウェア対策ソリューションを削除するオプションを選択しても、サードパーティ製品は削除されません。 サードパーティ製品は手動でアンインストールする必要があります。
+>  Quando si installa un punto di Endpoint Protection, un client di Endpoint Protection viene installato nel server che ospita il punto di Endpoint Protection. Analisi e servizi sono disabilitati in questo client per consentirne la coesistenza con qualsiasi soluzione antimalware esistente installata nel server. Se in seguito si abilita il server per la gestione con Endpoint Protection e si seleziona l'opzione per rimuovere qualsiasi soluzione antimalware di terze parti, il prodotto di terze parti non verrà rimosso. È necessario disinstallare il prodotto manualmente.
 
-## <a name="new-site-system-server"></a>(新しいサイト システム サーバーの場合)
+## <a name="new-site-system-server"></a>nuovo server del sistema del sito
 
-1.  Configuration Manager コンソールで、[ **管理** ] をクリックします。
+1.  Nella console di Configuration Manager fare clic su **Amministrazione**.
 
-2.  [ **管理** ] ワークスペースで [ **サイトの構成** ] を展開して、[ **サーバーとサイト システムの役割** ] をクリックします。
+2.  Nell'area di lavoro **Amministrazione** espandere **Configurazione del sito**, quindi fare clic su **Server e ruoli del sistema del sito**.
 
-3.  [ **ホーム** ] タブの [ **作成** ] グループで、[ **サイト システム サーバーの作成** ] をクリックします。
+3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea server di sistema sito**.
 
-4.  **[全般]** ページで、サイト システムの全般設定を指定し、 **[次へ]** をクリックします。
+4.  Nella pagina **Generale** specificare le impostazioni generali per il sistema del sito e quindi fare clic su **Avanti**.
 
-5.  [ **システムの役割の選択** ] ページの利用可能な役割の一覧で [ **Endpoint Protection ポイント** ] を選択し、[ **次へ** ] をクリックします。
+5.  Nella pagina **Selezione ruolo del sistema** selezionare **Punto di Endpoint Protection** nell'elenco di ruoli disponibili e quindi fare clic su **Avanti**.
 
-6.  [ **Endpoint Protection** ] ページで [ **Endpoint Protection のライセンス条項に同意します** ] チェック ボックスをオンにし、[ **次へ** ] をクリックします。
-
-    > [!IMPORTANT]
-    >  Endpoint Protection を Configuration Manager で使用するには、ライセンス条項に同意する必要があります。
-
-7.  [ **Cloud Protection Service** ]ページで、新しい定義の作成に役立つようにマイクロソフトに送信する情報のレベルを選択し、[ **次へ** ]をクリックします。
-
-    > [!NOTE]
-    >  このオプションで、既定で使用する Cloud Protection Service (旧称: Microsoft Active Protection Service (MAPS)) の設定を構成します。 その後で、作成した各マルウェア対策ポリシーのカスタム設定を構成できます。 Cloud Protection Service に参加すると、常に最新のマルウェア対策定義を提供するのに役立つマルウェア サンプルをマイクロソフトに提供して、コンピューターのセキュリティを強化できます。 また、Cloud Protection Service に参加すると、Endpoint Protection クライアントが動的シグネチャ サービスを使用して、Windows Update に公開される前に新しい定義をダウンロードできます。 詳細については、「[System Center Configuration Manager で Endpoint Protection 用にマルウェア対策ポリシーを作成し展開する方法](endpoint-antimalware-policies.md)」をご覧ください。
-
-8.  ウィザードを完了します。
-
-
-## <a name="existing-site-system-server"></a>既存のサイト システム サーバー
-
-1.  Configuration Manager コンソールで、[ **管理** ] をクリックします。
-
-2.  [ **管理** ]ワークスペースで[ **サイトの構成** ]を展開し、[ **サーバーとサイト システムの役割** ]をクリックしてから、Endpoint Protection に使用するサーバーを選択します。
-
-3.  [ **ホーム** ]タブの[ **サーバー** ]グループで、[ **サイト システムの役割の追加** ]をクリックします。
-
-4.  [ **全般** ]ページで、サイト システムの全般設定を指定し、[ **次へ** ]をクリックします。
-
-5.  [ **システムの役割の選択** ] ページの利用可能な役割の一覧で [ **Endpoint Protection ポイント** ] を選択し、[ **次へ** ] をクリックします。
-
-6.  [ **Endpoint Protection** ] ページで [ **Endpoint Protection のライセンス条項に同意します** ] チェック ボックスをオンにし、[ **次へ** ] をクリックします。
+6.  Nella pagina **Endpoint Protection** selezionare la casella di controllo **Accetto le condizioni di licenza di Endpoint Protection** e quindi fare clic su **Avanti**.
 
     > [!IMPORTANT]
-    >  Endpoint Protection を Configuration Manager で使用するには、ライセンス条項に同意する必要があります。
+    >  Non è possibile usare Endpoint Protection in Configuration Manager se non si accettano le condizioni di licenza.
 
-7.  [ **Cloud Protection Service** ]ページで、新しい定義の作成に役立つようにマイクロソフトに送信する情報のレベルを選択し、[ **次へ** ]をクリックします。
+7.  Nella pagina **Cloud Protection Service** selezionare il livello di informazioni da inviare a Microsoft per supportare lo sviluppo di nuove definizioni e quindi fare clic su **Avanti**.
 
     > [!NOTE]
-    >  このオプションで、既定で使用する Cloud Protection Service (旧称: MAPS) の設定を構成します。 構成した各マルウェア対策ポリシーのカスタム設定を構成できます。 詳細については、「[System Center Configuration Manager で Endpoint Protection 用にマルウェア対策ポリシーを作成し展開する方法](endpoint-antimalware-policies.md)」をご覧ください。
+    >  Questa opzione consente di configurare le impostazioni di Cloud Protection Service (precedentemente denominato Microsoft Active Protection Service o MAPS) usate per impostazione predefinita. È quindi possibile configurare le impostazioni personalizzate per ogni criterio antimalware creato. Cloud Protection Service consente di mantenere i computer più sicuri offrendo a Microsoft esempi di malware in modo che possa mantenere le definizioni antimalware il più aggiornate possibile. Se si usa Cloud Protection Service, il client di Endpoint Protection può usare Dynamic Signature Service per scaricare le nuove definizioni prima che vengano pubblicate in Windows Update. Per altre informazioni, vedere [How to Create and Deploy Antimalware Policies for Endpoint Protection in Configuration Manager](endpoint-antimalware-policies.md) (Come creare e distribuire criteri antimalware per Endpoint Protection in System Center Configuration Manager).
 
-8.  ウィザードを完了します。
+8.  Completare la procedura guidata.
+
+
+## <a name="existing-site-system-server"></a>server del sistema del sito esistente
+
+1.  Nella console di Configuration Manager fare clic su **Amministrazione**.
+
+2.  Nell'area di lavoro **Amministrazione** espandere **Configurazione del sito**, fare clic su **Server e ruoli del sistema del sito** e quindi selezionare il server che si vuole usare per Endpoint Protection.
+
+3.  Nella scheda **Home** , nel gruppo **Server** , fare clic su **Aggiungi ruoli del sistema del sito**.
+
+4.  Nella pagina **Generale** specificare le impostazioni generali per il sistema del sito e quindi fare clic su **Avanti**.
+
+5.  Nella pagina **Selezione ruolo del sistema** selezionare **Punto di Endpoint Protection** nell'elenco di ruoli disponibili e quindi fare clic su **Avanti**.
+
+6.  Nella pagina **Endpoint Protection** selezionare la casella di controllo **Accetto le condizioni di licenza di Endpoint Protection** e quindi fare clic su **Avanti**.
+
+    > [!IMPORTANT]
+    >  Non è possibile usare Endpoint Protection in Configuration Manager se non si accettano le condizioni di licenza.
+
+7.  Nella pagina **Cloud Protection Service** selezionare il livello di informazioni da inviare a Microsoft per supportare lo sviluppo di nuove definizioni e quindi fare clic su **Avanti**.
+
+    > [!NOTE]
+    >  Questa opzione consente di configurare le impostazioni di Cloud Protection Service, precedentemente denominato MAPS, usate per impostazione predefinita. È possibile definire impostazioni personalizzate per ogni criterio antimalware configurato. Per altre informazioni, vedere [How to Create and Deploy Antimalware Policies for Endpoint Protection in Configuration Manager](endpoint-antimalware-policies.md) (Come creare e distribuire criteri antimalware per Endpoint Protection in System Center Configuration Manager).
+
+8.  Completare la procedura guidata.

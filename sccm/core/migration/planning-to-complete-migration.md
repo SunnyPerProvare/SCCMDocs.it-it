@@ -1,6 +1,6 @@
 ---
-title: "移行完了 | Microsoft Docs"
-description: "ソース階層にデータが含まれなくなった後で、System Center Configuration Manager の移行先階層への移行を完了する方法について説明します。"
+title: Completare la migrazione | Microsoft Docs
+description: "Informazioni su come completare la migrazione a una gerarchia di destinazione di System Center Configuration Manager dopo che una gerarchia di origine non contiene più dati."
 ms.custom: na
 ms.date: 1/12/2017
 ms.prod: configuration-manager
@@ -18,43 +18,43 @@ manager: angrobe
 ms.openlocfilehash: eb1d2e320df02b26423ed4341d5bd1568b9444ad
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-to-complete-migration-in-system-center-configuration-manager"></a>System Center Configuration Manager での移行完了の計画
+# <a name="plan-to-complete-migration-in-system-center-configuration-manager"></a>Pianificare il completamento della migrazione in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager では、移行先階層に移行するデータがソース階層に含まれない場合、移行プロセスを完了できます。 一般的に、移行の完了には次の手順が含まれます。  
+Con System Center Configuration Manager, è possibile completare il processo di migrazione quando una gerarchia di origine non contiene più dati per la migrazione alla gerarchia di destinazione. Il completamento della migrazione include i passaggi generali seguenti:  
 
--   必要なデータが移行されたことを確認します。 ソース階層からの移行を完了する前に、移行先階層に必要なすべてのリソースがソース階層から正常に移行されたことを確認します。 これには、データとクライアントも含まれます。  
+-   Assicurarsi che sia stata eseguita la migrazione dei dati necessari. Prima di completare la migrazione dalla gerarchia di origine, assicurarsi che tutte le risorse richieste siano state migrate correttamente alla gerarchia di destinazione. Tra le risorse sono inclusi dati e client.  
 
--   ソース サイトからのデータ収集を停止します。 ソース階層からの移行を完了するには、まずソース サイトからのデータ収集を停止する必要があります。  
+-   Interrompere la raccolta di dati dai siti di origine. Per completare la migrazione da una gerarchia di origine, è necessario prima interrompere la raccolta di dati dai siti di origine.  
 
--   移行データをクリーンアップします。 ソース階層内にあるすべてのソース サイトからのデータ収集を停止したら、移行先階層のデータベースから、移行プロセスとソース階層に関するデータを削除します。  
+-   Pulire i dati di migrazione. Dopo aver interrotto la raccolta di dati da tutti i siti di origine in una gerarchia di origine, è possibile rimuovere i dati sul processo di migrazione e sulla gerarchia di origine dal database della gerarchia di destinazione.  
 
--   ソース階層の使用を停止します。 ソース階層からの移行を完了し、ソース階層に管理対象のリソースが含まれていないことを確認したら、ソース階層内のサイトの使用を停止し、環境から関連するインフラストラクチャを削除できます。 サイトとソース階層の使用停止方法の詳細については、使用しているバージョンの Configuration Manager のドキュメントを参照してください。  
+-   Rimuovere le autorizzazioni della gerarchia di origine. Dopo aver completato la migrazione da una gerarchia di origine e quando la gerarchia non contiene più le risorse gestite, è possibile rimuovere le autorizzazioni dei siti nella gerarchia di origine e la relativa infrastruttura dall'ambiente. Per informazioni sulla rimozione delle autorizzazioni dai siti e dalle gerarchie di origine, vedere la documentazione della relativa versione di Configuration Manager.  
 
-データ収集を停止し、移行データをクリーンアップしてソース階層からの移行を完了する方法を計画する際には、次のサイトを参照してください。  
+Usare le sezioni seguenti per pianificare il completamento della migrazione da una gerarchia di origine arrestando la raccolta dati e pulendo i dati di migrazione:  
 
--   [データ収集の停止を計画する](#Plan_to_Stop_Data_Gath)  
+-   [Pianificare l'arresto della raccolta dati](#Plan_to_Stop_Data_Gath)  
 
--   [移行データのクリーンアップを計画する](#Plan_to_clean_up)  
+-   [Pianificare la pulizia dei dati di migrazione](#Plan_to_clean_up)  
 
-##  <a name="Plan_to_Stop_Data_Gath"></a> データ収集の停止を計画する  
- 移行を完了して移行データをクリーンアップする前に、ソース階層内の各ソース サイトからのデータ収集を停止する必要があります。 各ソース サイトからのデータ収集を停止するには、最下位のソースサイトで [データ収集の停止] コマンドを実行してから、各親サイトごとにそのプロセスを繰り返し実行する必要があります。 **** ソース階層の最上位サイトは、データ収集を停止する最後のサイトにする必要があります。 親サイトでデータ収集の停止コマンドを実行する前に、各子サイトでデータ収集を停止する必要があります。 通常、移行処理を完了する準備ができた時点でデータ収集を停止します。  
+##  <a name="Plan_to_Stop_Data_Gath"></a> Pianificare l'arresto della raccolta dati  
+ Prima di completare la migrazione ed eseguire la pulizia dei dati di migrazione, è necessario interrompere la raccolta dei dati da ciascun sito di origine nella gerarchia di origine. Per interrompere la raccolta dati da ciascun sito di origine, è necessario eseguire il comando **Interrompi raccolta dati** sui siti di origine di livello inferiore, quindi ripetere il processo su ciascun sito padre. L'interruzione della raccolta dati nel sito principale della gerarchia di origine deve rappresentare l'ultimo passaggio. È necessario interrompere la raccolta dati in ogni sito figlio prima di eseguire questo comando su un sito padre. In genere, si interrompe la raccolta dati solo quando si è pronti a completare il processo di migrazione.  
 
- ソース サイトからのデータ収集を停止すると、移行先階層内のクライアントは、コンテンツの場所としてソース サイトの共有配布ポイントを使用できなくなります。 そのため、移行先階層のクライアントで必要な移行済みコンテンツを引き続き使用できるようにするには、次のいずれかの方法を実行してください。  
+ Dopo aver interrotto la raccolta dati da un sito di origine, i punti di distribuzione condivisi da quel sito non sono più disponibili come percorsi del contenuto per i client nella gerarchia di destinazione. Pertanto, assicurarsi che qualsiasi contenuto migrato, per cui i client nella gerarchia di destinazione richiedono l'accesso, rimanga disponibile tramite una delle seguenti opzioni:  
 
--   移行先階層で、少なくとも 1 つの配布ポイントにコンテンツを配布する。  
+-   Nella gerarchia di destinazione, distribuire il contenuto almeno a un punto di distribuzione.  
 
--   ソース サイトからのデータの収集を停止する前に、必要なコンテンツがある共有配布ポイントをアップグレードまたは再割り当てする。 共有配布ポイントのアップグレードまたは再割り当ての詳細については、「[System Center Configuration Manager のコンテンツ展開移行戦略の計画](../../core/migration/planning-a-content-deployment-migration-strategy.md)」の該当するセクションを参照してください。  
+-   Prima di interrompere la raccolta dei dati da un sito di origine, aggiornare o riassegnare i punti di distribuzione condivisi con il contenuto richiesto. Per altre informazioni sull'aggiornamento o sulla riassegnazione dei punti di distribuzione condivisi, vedere le sezioni applicabili in [Pianificazione di una strategia di migrazione per la distribuzione del contenuto in System Center Configuration Manager](../../core/migration/planning-a-content-deployment-migration-strategy.md).  
 
-ソース階層内の各ソース サイトからのデータ収集を停止した後で、移行データをクリーンアップできます。 移行データをクリーンアップするまで、実行済み、または実行予定の各移行ジョブは Configuration Manager コンソール内でアクセス可能な状態のままになります。  
+Dopo aver interrotto la raccolta dati da ogni sito di origine nella gerarchia di origine, è possibile pulire i dati di migrazione. Fino a quando non viene completata la pulizia dei dati di migrazione, ogni processo di migrazione eseguito o pianificato rimane accessibile nella console di Configuration Manager.  
 
-ソース サイトとデータ収集の詳細については、「[System Center Configuration Manager でのソース階層戦略の計画](../../core/migration/planning-a-source-hierarchy-strategy.md)」を参照してください。  
+Per altre informazioni sui siti di origine e sulla raccolta dati, vedere [Pianificazione di una strategia per la gerarchia di origine in System Center Configuration Manager](../../core/migration/planning-a-source-hierarchy-strategy.md).  
 
-##  <a name="Plan_to_clean_up"></a> 移行データのクリーンアップを計画する  
- 移行完了に必要な最終手順は、移行データのクリーンアップです。 ソース階層の各ソース サイトのデータ収集を停止した後で、[移行データのクリーン アップ **** ] コマンドを使用できます。 クリーンアップは任意ですが、実行すると、移行先階層のデータベースから現在のソース階層に関するデータが削除されます。  
+##  <a name="Plan_to_clean_up"></a> Pianificare la pulizia dei dati di migrazione  
+ L'ultimo passaggio necessario per completare la migrazione consiste nella pulizia dei dati di migrazione. È possibile utilizzare il comando **Pulisci dati migrazione** dopo aver interrotto la raccolta dei dati per ogni sito di origine nella gerarchia di origine. Questa azione facoltativa determina la rimozione dei dati sulla gerarchia di origine corrente dal database della gerarchia di destinazione.  
 
- 移行データをクリーンアップすると、移行に関するほとんどのデータが移行先階層のデータベースから削除されます。 ただし、移行済みオブジェクトに関する詳細は維持されます。 これらの詳細を基に、**[移行]** ワークスペースを使用して、移行したデータを含むソース階層を再構成することで、そのソース階層から移行を再開したり、以前に移行したオブジェクトとオブジェクトのサイト所有権を確認したりできます。  
+ Durante la pulizia, la maggior parte dei dati sulla migrazione viene rimossa dal database della gerarchia di destinazione. Tuttavia, vengono conservati i dettagli sugli oggetti migrati. Con questi dettagli è possibile usare l'area di lavoro **Migrazione** per riconfigurare la gerarchia di origine che contiene i dati di cui è stata eseguita la migrazione per riprendere la migrazione dalla gerarchia di origine o rivedere gli oggetti e la proprietà sito degli oggetti di cui prima è stata eseguita la migrazione.  

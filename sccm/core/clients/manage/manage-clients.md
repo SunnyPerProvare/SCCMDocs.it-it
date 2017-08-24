@@ -1,6 +1,6 @@
 ---
-title: "クライアントの管理 | Microsoft Docs"
-description: "System Center Configuration Manager でクライアントを管理する方法について説明します。"
+title: Gestire i client | Microsoft Docs
+description: Informazioni su come gestire i client in System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -17,201 +17,201 @@ manager: angrobe
 ms.openlocfilehash: 3a86924b2e5db3ac16eeda78b95ae6747ffd656f
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>System Center Configuration Manager でクライアントを管理する方法
+# <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Come gestire i client in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager クライアントがインストールされ、Configuration Manager サイトに正しく割り当てられると、**[デバイス]** ノードの **[資産とコンプライアンス]** ワークスペースと、**[デバイス コレクション]** ノードの 1 つまたは複数のコレクションにデバイスが表示されます。 デバイスまたはコレクションを選択するときに、管理操作を実行できます。 ただし、コンソールの他のワークスペースを使用するか、Configuration Manager コンソールを使用しないタスクを実行して、別の方法でクライアントを管理することもできます。  
+Quando un client di System Center Configuration Manager viene installato e assegnato correttamente a un sito di Configuration Manager, il dispositivo viene visualizzato nell'area di lavoro **Asset e conformità** del nodo **Dispositivi** e in una o più raccolte del nodo **Raccolte dispositivi**. Quando si seleziona il dispositivo o una raccolta, è possibile eseguire le operazioni di gestione. Esistono tuttavia anche altre modalità di gestione del client che potrebbero interessare altre aree di lavoro della console o attività che non usano la console di Configuration Manager.  
 
 > [!NOTE]  
->  Configuration Manager クライアントがインストールされていても、Configuration Manager コンソールに表示されない場合があります。 この問題は、クライアントがサイトに正常に割り当てられていない場合や、コンソールの更新やコレクション メンバーシップの更新が必要な場合に生じる可能性があります。  
+>  È possibile che un client di Configuration Manager sia installato e non sia visualizzato nella console di Configuration Manager. Ciò può verificarsi se il client non è ancora stato assegnato a un sito oppure se è necessario aggiornare la console o l'appartenenza a una raccolta.  
 >   
->  また、Configuration Manager クライアントがインストールされていないのに、デバイスがコンソールに表示されることもあります。 この問題は、デバイスが検出されているが、Configuration Manager クライアントのインストールと割り当てが行われていない場合に生じる可能性があります。 Exchange Server コネクタを使用して管理されるモバイル デバイスと、Microsoft Intune に登録されているデバイスでは、Configuration Manager クライアントがインストールされません。  
+>  È anche possibile che un dispositivo venga visualizzato nella console quando il client di Configuration Manager non è installato. Ciò può verificarsi se il dispositivo viene individuato ma il client di Configuration Manager non è installato e assegnato. I dispositivi mobili gestiti tramite il connettore Exchange Server e i dispositivi registrati da Microsoft Intune non installano il client di Configuration Manager.  
 >   
->  Configuration Manager コンソールで **[クライアント]** 列を使用して、Configuration Manager クライアントがインストールされていて Configuration Manager コンソールから管理できるかどうかを判断できます。  
+>  Usare la colonna **Client** della console di Configuration Manager per determinare se il client di Configuration Manager è installato e può essere gestito dalla console di Configuration Manager.  
 
-##  <a name="BKMK_ManagingClients_DevicesNode"></a> [デバイス] ノードを使用してクライアントを管理する  
+##  <a name="BKMK_ManagingClients_DevicesNode"></a> Gestire i client dal nodo Dispositivi  
 
-デバイスの種類によっては、一部のオプションを使用できません。  
+Tenere presente che, a seconda del tipo di dispositivo, alcune di queste opzioni potrebbero non essere disponibili.  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** >  **[デバイス]** を選択します。  
+1.  Nella console di Configuration Manager scegliere **Asset e conformità** >  **Dispositivi**.  
 
-3.  1 つまたは複数のデバイスを選択してから、リボンからクライアント管理タスクのいずれかを選択するか、デバイスを右クリックします。  
+3.  Selezionare uno o più dispositivi, quindi selezionare una di queste attività di gestione client dalla barra multifunzione o facendo clic con il pulsante destro del mouse sul dispositivo:  
 
-    -   **ユーザー デバイスのアフィニティ情報を管理する**  
+    -   **Gestire le informazioni di affinità utente dispositivo**  
 
-         ユーザーとデバイスの関連付けを構成して、ユーザーにソフトウェアを効率的に展開することができます。  
+         Configurare le associazioni tra utenti e dispositivi, per una distribuzione efficiente del software agli utenti.  
 
-         「[System Center Configuration Manager でのユーザーとデバイスのアフィニティへのユーザーとデバイスの関連付け](../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md)」を参照してください  
+         Vedere [Collegare utenti e dispositivi mediante l'affinità utente dispositivo in System Center Configuration Manager](../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md)  
 
-    -   **新規または既存のコレクションにデバイスを追加する**  
+    -   **Aggiungere il dispositivo a una raccolta nuova o esistente**  
 
-         ダイレクト規則でデバイスをコレクションに追加します。  
+         Aggiungere il dispositivo a una raccolta con una regola diretta.  
          
-    -   **クライアント プッシュ ウィザードを使用してクライアントのインストールと再インストールを実行する**  
+    -   **Installare e reinstallare il client usando l'Installazione push client guidata**  
 
-         Configuration Manager クライアントの修復、または Windows を実行するコンピューターでの再構成には、インストールまたは再インストールを実行します。 サイトの構成オプションと、クライアントのプッシュ インストール用に設定した client.msi プロパティを含めます。  
+         Installare e reinstallare il client di Configuration Manager per ripristinarlo o riconfigurarlo nei computer che eseguono Windows. Include le opzioni di configurazione del sito e le proprietà di client.msi impostate per l'installazione push client.  
 
         > [!TIP]  
-        >  Configuration Manager クライアントのインストール (および再インストール) を実行するには、さまざまな方法があります。 クライアント プッシュ ウィザードはコンソールから実行できるため、クライアントのインストールには便利な方法ですが、この方法には数多くの依存関係があり、すべての環境に適しているわけではありません。 依存関係の詳細については、「[System Center Configuration Manager で Windows コンピューターにクライアントを展開するための前提条件](../../../core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.md)」を参照してください。 他のクライアント インストール方法の詳細については、「[System Center Configuration Manager でのクライアントのインストール方法](../../../core/clients/deploy/plan/client-installation-methods.md)」を参照してください。  
+        >  Esistono diversi modi per installare e reinstallare il client di Configuration Manager. Sebbene l'Installazione push client guidata consenta di installare il client in modo pratico grazie all'esecuzione dalla console, questo metodo presenta numerose dipendenze e non è adatto a tutti gli ambienti. Per altre informazioni sulle dipendenze, vedere [Prerequisiti per la distribuzione dei client nei computer Windows in System Center Configuration Manager](../../../core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.md). Per altre informazioni sugli altri metodi di installazione dei client, vedere [Metodi di installazione client in System Center Configuration Manager](../../../core/clients/deploy/plan/client-installation-methods.md).  
 
-         「 [クライアント プッシュを使用した Configuration Manager クライアントのインストール方法](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush)」を参照してください。  
+         Vedere [Come installare i client di Configuration Manager utilizzando push client](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush).  
 
-    -   **サイトの再割り当て**  
+    -   **Riassegnare il sito**  
 
-         1 つまたは複数のクライアント (管理しているモバイル デバイスを含む) を、階層内の別のプライマリ サイトに再割り当てします。 新しいサイトへのクライアントの再割り当ては、個別に行うことも、複数のクライアントを選択して一括で行うこともできます。  
+         È ora possibile riassegnare uno o più client, inclusi i dispositivi mobili gestiti, a un altro sito principale nella gerarchia. I client possono essere riassegnati singolarmente o possono essere selezionati più volte e riassegnati in massa a un nuovo sito.  
 
-    -   **クライアントをリモート管理する**  
+    -   **Amministrare in remoto il client**  
 
-         リソース エクスプローラーを実行して、ハードウェアとソフトウェアのインベントリ情報を Windows クライアントから確認したり、リモート コントロール、リモート アシスタンス、またはリモート デスクトップを使用してこれらの情報をリモートで管理できます。  
+         È possibile eseguire Esplora inventario risorse per visualizzare le informazioni di inventario software e hardware di un client Windows, nonché amministrarlo in remoto usando Controllo remoto, Assistenza remota o Desktop remoto.  
 
-         「[System Center Configuration Manager でリソース エクスプローラーを使用してハードウェア インベントリを表示する方法](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md)」および「[System Center Configuration Manager でリソース エクスプローラーを使用してソフトウェア インベントリを表示する方法](../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md)」を参照してください。  
+         Vedere [Come usare Esplora inventario risorse per visualizzare l'inventario hardware in System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md) e [Come usare Esplora inventario risorse per visualizzare l'inventario software in System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md).  
 
-         「[System Center Configuration Manager を使用して Windows クライアント コンピューターをリモート管理する方法](../../../core/clients/manage/remote-control/remotely-administer-a-windows-client-computer.md)」を参照してください。  
+         Vedere [Come amministrare un computer client Windows in remoto mediante System Center Configuration Manager](../../../core/clients/manage/remote-control/remotely-administer-a-windows-client-computer.md).  
 
-    -   **クライアントを承認する**  
+    -   **Approvare un client**  
 
-         クライアントが HTTP および自己署名証明書を使用してサイト システムと通信する場合、信頼されるコンピューターとして識別されるように、これらのクライアントを承認する必要があります。 既定では、各クライアントを手動で承認せずに済むように、サイト構成により、同じ Active Directory フォレストおよび信頼されるフォレストのクライアントは自動的に承認されます。 ただし、信頼できるワークグループ コンピューター、および信頼できるが承認されていないその他のコンピューターは手動で承認する必要があります。  
-
-        > [!WARNING]  
-        >  一部の管理機能は承認されていないクライアントでも動作する可能性がありますが、このシナリオは Configuration Manager ではサポートされていません。  
-
-         常に HTTPS を使用してサイト システムと通信するクライアントや、HTTP を使用してサイト システムと通信する際に PKI 証明書を使用するクライアントは、承認する必要はありません。 これらのクライアントは、PKI 証明書を使用して信頼を確立します。  
-
-    -   **クライアントをブロックまたはブロック解除する**  
-
-         信頼できなくなったクライアントをブロックして、このクライアントがクライアント ポリシーを受け取るのを防いだり、Configuration Manager サイト システムがこのクライアントと通信するのを防ぎます。  
+         Quando il client comunica con i sistemi del sito mediante HTTP e un certificato autofirmato, è necessario approvare i client per identificarli come computer attendibili. Per impostazione predefinita, la configurazione del sito approva automaticamente i client della stessa foresta Active Directory e delle foreste trusted e non è quindi necessario approvare manualmente ciascun client. È tuttavia necessario approvare manualmente i computer del gruppo di lavoro ritenuti attendibili e gli altri computer ritenuti attendibili ma non approvati.  
 
         > [!WARNING]  
-        >  クライアントをブロックすると、クライアントから Configuration Manager サイト システムへの通信のみ防ぐことができます。クライアントから他のデバイスへの通信を防ぐことはできません。 また、HTTPS の代わりに HTTP を使用してクライアントがサイト システムに通信する場合、セキュリティ上の制限がいくつか生じます。  
+        >  Sebbene alcune funzioni di gestione potrebbero funzionare per i client non approvati, si tratta di uno scenario non supportato per Configuration Manager.  
 
-         ブロックされていたクライアントのブロックを解除できます。 ただし、ブロックしたときに AMT 用にプロビジョニングされていた Inel AMT 搭載コンピューターのブロックを解除する場合、そのコンピューターを再度、帯域外管理するためには、追加の手順を実行する必要があります。  
+         Non è necessario approvare i client che comunicano sempre con i sistemi del sito usando HTTPS o i client che usano un certificato PKI durante la comunicazione con i sistemi del sito mediante HTTP. Questi client stabiliscono relazioni di trust mediante certificati PKI.  
 
-         「[System Center Configuration Manager でクライアントをブロックするかどうかの判断](../../../core/clients/deploy/plan/determine-whether-to-block-clients.md)」を参照してください。  
+    -   **Bloccare o sbloccare un client**  
 
-    -   **必要な PXE 展開をクリアする**  
-
-         コンピューターに必要な PXE 展開を再展開します。  
-
-         「[System Center Configuration Manager で PXE を使用してネットワーク経由で Windows を展開する](../../../osd/deploy-use/use-pxe-to-deploy-windows-over-the-network.md)」を参照してください。  
-
-    -   **クライアントのプロパティを管理する**  
-
-         クライアントを対象とした探索データと展開を表示します。 また、オペレーティング システムをデバイスに展開するためにタスク シーケンスで使用される変数を構成することもできます。  
-
-    -   **クライアントを削除する**  
+         Bloccare un client che non si ritiene più attendibile per fare in modo che non riceva i criteri client e che non comunichi con i sistemi del sito di Configuration Manager.  
 
         > [!WARNING]  
-        >  Configuration Manager クライアントをアンインストールする場合やコレクションから削除する際、クライアントを削除しないでください。  
+        >  Il blocco di un client impedisce solo la comunicazione del client con i sistemi del sito di Configuration Manager, non la comunicazione con gli altri dispositivi. Inoltre, quando il client comunica con i sistemi del sito mediante HTTP anziché HTTPS, vengono applicate alcune limitazioni di protezione.  
 
-         **[削除]** 操作を実行して、Configuration Manager データベースからクライアント レコードを手動で削除します。通常、この操作は、トラブルシューティング以外では使用しないでください。 クライアント レコードを削除しても、クライアントが引き続きインストールされており、Configuration Manager と通信している場合は、クライアント履歴と以前の関連付けは失われますが、定期探索によってクライアント レコードが再作成されて Configuration Manager コンソールに表示されます。  
+         È possibile sbloccare un client che è stato bloccato. Se tuttavia si sblocca un computer basato su Intel AMT di cui è stato eseguito il provisioning per AMT al momento del blocco, è necessario eseguire passaggi aggiuntivi prima di poter gestire nuovamente il computer fuori banda.  
+
+         Vedere [Determinare se bloccare o meno i client in System Center Configuration Manager](../../../core/clients/deploy/plan/determine-whether-to-block-clients.md).  
+
+    -   **Cancellare una distribuzione PXE richiesta**  
+
+         Ridistribuire le distribuzioni PXE richieste per il computer.  
+
+         Vedere [Usare PXE per distribuire Windows in rete con System Center Configuration Manager](../../../osd/deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
+
+    -   **Gestire le proprietà client**  
+
+         Visualizzare i dati di individuazione e le distribuzioni usate come destinazione per il client. È inoltre possibile configurare le variabili usate dalle sequenze attività per distribuire un sistema operativo nel dispositivo.  
+
+    -   **Eliminare il client**  
+
+        > [!WARNING]  
+        >  Non eliminare un client se si vuole disinstallare il client di Configuration Manager o rimuoverlo da una raccolta.  
+
+         L'azione **Elimina** consente di eliminare manualmente il record client dal database di Configuration Manager e, in genere, non va usata al di fuori degli scenari di risoluzione dei problemi. Se si elimina il record client e il client è ancora installato e in comunicazione con Configuration Manager, l'individuazione heartbeat ricreerà il record client che verrà visualizzato nuovamente nella console di Configuration Manager, sebbene la cronologia client ed eventuali associazioni precedenti andranno perse.  
 
         > [!NOTE]  
-        >  Configuration Manager によって登録されているモバイル デバイス クライアントを削除すると、この操作により、モバイル デバイス クライアントに発行された PKI 証明書が失効し、IIS によって CRL がチェックされない場合でも、この証明書が管理ポイントで拒否されるようになります。 モバイル デバイス レガシ クライアントを削除しても、これらのクライアントの証明書は失効しません。  
+        >  Quando viene eliminato un client di dispositivi mobili registrato da Configuration Manager, l'azione revoca inoltre il certificato PKI rilasciato al dispositivo mobile. Il certificato viene quindi rifiutato dal punto di gestione, anche se IIS non esegue il controllo CRL. I certificati dei client precedenti del dispositivo mobile non vengono revocati quando i client vengono eliminati.  
 
-         クライアントをアンインストールするには、「 [Configuration Manager クライアントのアンインストール](#BKMK_UninstalClient)」を参照してください。  
+         Per disinstallare il client, vedere [Disinstallare il client di Configuration Manager](#BKMK_UninstalClient).  
 
-         クライアントを新しいプライマリ サイトに割り当てるには、「[System Center Configuration Manager でクライアントをサイトに割り当てる方法](../../../core/clients/deploy/assign-clients-to-a-site.md)」を参照してください。  
+         Per assegnare il client a un nuovo sito primario, vedere [Come assegnare i client a un sito in System Center Configuration Manager](../../../core/clients/deploy/assign-clients-to-a-site.md).  
 
-         クライアントをコレクションから削除するには、コレクションのプロパティを再構成します。 「[System Center Configuration Manager でコレクションを管理する方法](../../../core/clients/manage/collections/manage-collections.md)」を参照してください。  
+         Per rimuovere il client da una raccolta, riconfigurare le proprietà della raccolta. Vedere [Come gestire le raccolte in System Center Configuration Manager](../../../core/clients/manage/collections/manage-collections.md).  
 
-    -   **モバイル デバイスをワイプする**  
+    -   **Cancellare i dati di un dispositivo mobile**  
 
-         ワイプ コマンドをサポートするモバイル デバイスをワイプできます。  
+         È possibile cancellare i dati dei dispositivi mobili che supportano il comando di cancellazione.  
 
-         この操作により、個人設定や個人データを含め、モバイル デバイスのすべてのデータが削除されます。 通常、この操作で、モバイル デバイスが工場出荷時の設定にリセットされます。 モバイル デバイスは、紛失や盗難にあうなど、信頼できなくなった場合にワイプします。  
+         Questa azione consente di rimuovere definitivamente tutti i dati del dispositivo mobile, comprese le impostazioni e i dati personali. In genere, questa azione consente di ripristinare le impostazioni di fabbrica nel dispositivo. Cancellare i dati di un dispositivo mobile quando il dispositivo mobile non è più considerato attendibile, ad esempio in caso di furto o smarrimento.  
 
         > [!TIP]  
-        >  モバイル デバイスでリモート ワイプ コマンドがどのように処理されるかについては、製造元のドキュメントを参照してください。  
+        >  Vedere la documentazione del produttore per altre informazioni sull'elaborazione di un comando di cancellazione remota da parte del dispositivo mobile.  
 
-         モバイル デバイスがワイプ コマンドを受信するまで、通常、待ち時間が発生します。  
+         Si verifica spesso un ritardo nella ricezione del comando di cancellazione da parte del dispositivo mobile:  
 
-        -   モバイル デバイスが Configuration Manager または Microsoft Intune によって登録されている場合、クライアントは、クライアント ポリシーのダウンロード時にコマンドを受信します。  
+        -   Se il dispositivo mobile è registrato da Configuration Manager o da Microsoft Intune, il client riceve il comando al momento del download dei criteri client.  
 
-        -   モバイル デバイスが Exchange Server コネクタによって管理されている場合、Exchange との同期時にコマンドを受信します。  
+        -   Se il dispositivo mobile è gestito dal connettore Exchange Server, riceve il comando al momento della sincronizzazione con Exchange.  
 
-         **[ワイプのステータス]** 列を使用して、デバイスがワイプ コマンドをいつ受信するのかを監視できます。 デバイスが Configuration Manager にワイプ確認を送信するまで、ワイプ コマンドをキャンセルできます。  
+         È possibile usare la colonna **Stato cancellazione** per il monitoraggio della ricezione del comando di cancellazione da parte del dispositivo. Finché il dispositivo non invia un acknowledgment di cancellazione a Configuration Manager, è possibile annullare il comando di cancellazione.  
 
-    -   **モバイル デバイスをインベントリから削除する**  
+    -   **Ritirare un dispositivo mobile**  
 
-         **[インベントリから削除]** オプションをサポートしているのは、Intune に登録されたか、\-オンプレミス モバイル デバイス管理で登録されたモバイル デバイスのみです。  
+         L'opzione **Ritira** è supportata solo dai dispositivi mobili registrati da Intune o da Gestione dispositivi mobili locali.  
 
-         詳細については、「 [System Center Configuration Manager によるリモート ワイプ、リモート ロック、パスコードのリセットを使用したデータの保護](../../../mdm/deploy-use/wipe-lock-reset-devices.md)」をご覧ください。  
+         Per altre informazioni, vedere [Proteggere i dati con Cancellazione remota, Blocco remoto o Reimpostazione passcode usando System Center Configuration Manager](../../../mdm/deploy-use/wipe-lock-reset-devices.md).  
 
-    -   **デバイスの所有権を変更する**  
+    -   **Modificare la proprietà di un dispositivo**  
 
-         デバイスがドメインに参加しておらず、Configuration Manager クライアントがインストールされていない場合は、デバイスの所有権を **[会社]** または **[個人]** に変更できます。  
+         È possibile modificare la proprietà dei dispositivi in **Società** o **Personale** se un dispositivo non appartiene al dominio e non dispone del client di Configuration Manager installato.  
 
-         アプリケーションの要件にこの値を使用して、展開を制御できます。また、ユーザー デバイスから収集するインベントリの量を制御できます。  
+         È possibile usare questo valore nei requisiti applicazione per controllare le distribuzioni e per controllare il volume dell'inventario raccolto dai dispositivi degli utenti.  
 
-        また、必要に応じて、列見出しを右クリックして選択し、ビューに **[デバイスの所有者]** 列を追加することもできます。
+        Può essere necessario aggiungere la colonna **Proprietario dispositivo** alla visualizzazione facendo clic con il pulsante destro del mouse su un'intestazione di colonna e scegliendo l'elemento corrispondente.
 
-         詳細については、「[System Center Configuration Manager と Microsoft Intune を使用するハイブリッド モバイル デバイス管理 (MDM)](../../../mdm/understand/hybrid-mobile-device-management.md)」を参照してください。  
+         Per altre informazioni, vedere [Gestione di dispositivi mobili ibridi con System Center Configuration Manager e Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md).  
 
-##  <a name="BKMK_ManagingClients_DeviceCollectionsNode"></a> [デバイス コレクション] ノードを使用してクライアントを管理する  
-  **[デバイス]** ノードの 1 つのデバイスまたは複数のデバイスに対して実行できる多くのタスクは、コレクションに対しても実行できます。 コレクションに対して実行すると、コレクション内の対象となるすべてのデバイスに操作が適用されます。 この処理で多数のネットワーク パケットが生成され、サイト サーバーの CPU 使用率が増加する点に注意してください。  
+##  <a name="BKMK_ManagingClients_DeviceCollectionsNode"></a> Gestire i client dal nodo Raccolte dispositivi  
+  Molte delle attività che è possibile eseguire su un singolo dispositivo o su più dispositivi nel nodo **Dispositivi** possono essere eseguite sulle raccolte. In tal modo l'operazione verrà applicata automaticamente a tutti i dispositivi idonei della raccolta. Tenere presente che questo genera numerosi pacchetti di rete e aumenta l'uso della CPU nel server del sito.  
 
-  コレクション レベルのクライアント管理タスクを実行する前に、コレクションにどの程度の数のデバイスが含まれているのか、それらのデバイスが低帯域幅のネットワーク接続で接続されていないかどうか、およびすべてのデバイスでタスクを完了するのにどの程度の時間がかかるのかを検討します。 タスクの開始後にコンソールからタスクを停止することはできません。  
+  Prima di eseguire le attività di gestione client a livello di raccolta, tenere in considerazione la quantità di dispositivi presenti nella raccolta, l'eventuale connessione mediante connessioni di rete con larghezza di banda ridotta e il tempo necessario per il completamento dell'attività in tutti i dispositivi. Una volta avviata, non è possibile arrestare l'attività dalla console.  
 
-#### <a name="to-manage-clients-from-the-device-collections-node"></a>[デバイス コレクション] ノードを使用してクライアントを管理するには  
+#### <a name="to-manage-clients-from-the-device-collections-node"></a>Per gestire i client dal nodo Raccolte dispositivi  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[デバイス コレクション]** の順に選択します。  
+1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Raccolte dispositivi**.  
 
-3.  コレクションを選んだ後、リボンから (またはコレクションを右クリックして) 次のいずれかのクライアント管理タスクを選びます。 これらのクライアント管理タスクは、*コレクション レベルでのみ*使用できます。  
+3.  Selezionare una raccolta, quindi selezionare una delle seguenti attività di gestione client dalla barra multifunzione o facendo clic con il pulsante destro del mouse sulla raccolta. Queste attività di gestione client possono essere eseguite *solo* a livello di raccolta.  
 
-    -   **マルウェアがないかどうかコンピューターをスキャンし、マルウェア対策の定義ファイルをダウンロードする**  
+    -   **Eseguire la scansione dei computer per rilevare la presenza di malware e scaricare i file di definizione antimalware.**  
 
-         「[System Center Configuration Manager での Endpoint Protection](../../../protect/deploy-use/endpoint-protection.md)」を参照してください。  
+         Vedere [Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/endpoint-protection.md).  
 
-    -   **ソフトウェア、構成基準、タスク シーケンスを展開する**  
+    -   **Distribuire software, linee di base della configurazione e sequenze attività.**  
 
-         関連項目  
+         Vedere:  
 
-        -   [System Center Configuration Manager でのソフトウェア更新プログラムの展開](../../../sum/deploy-use/deploy-software-updates.md)  
+        -   [Distribuire gli aggiornamenti software in System Center Configuration Manager](../../../sum/deploy-use/deploy-software-updates.md)  
 
-        -   [System Center Configuration Manager におけるコンプライアンス設定の計画と構成](../../../compliance/plan-design/plan-for-and-configure-compliance-settings.md)  
+        -   [Pianificare e configurare le impostazioni di conformità in System Center Configuration Manager](../../../compliance/plan-design/plan-for-and-configure-compliance-settings.md)  
 
-    -   **電源管理設定を構成する**  
+    -   **Configurare le impostazioni di risparmio energia.**  
 
-         「[System Center Configuration Manager で電源プランを作成して適用する方法](../../../core/clients/manage/power/create-and-apply-power-plans.md)」を参照してください。 電源プランは Windows を実行するコンピューターにのみ使用できます。  
+         Vedere [Come creare e applicare combinazioni per il risparmio di energia in System Center Configuration Manager](../../../core/clients/manage/power/create-and-apply-power-plans.md). Le combinazioni per il risparmio di energia sono utilizzabili solo con computer che eseguono Windows.  
 
-    -   **直ちにポリシーをダウンロードするようにコンピューターに通知する**  
+    -   **Inviare una notifica ai computer per il download dei criteri appena possibile.**  
 
-         クライアント通知を使用して、クライアント ポリシーのポーリング間隔に関係なく、直ちにコンピューター ポリシーをダウンロードするように、選択した Windows クライアントに通知します。  
+         Usare la notifica client per inviare una notifica ai client Windows selezionati per il download dei criteri computer appena possibile all'esterno dell'intervallo di polling dei criteri client.  
 
-         クライアント通知タスクは、[ **監視** ] ワークスペースの [ **クライアントの操作** ] ノードに表示されます。  
+         Le attività di notifica client vengono visualizzate nel nodo **Operazioni client** dell'area di lavoro **Monitoraggio** .  
 
-##  <a name="BKMK_ClientCache"></a> Configuration Manager クライアントにクライアントキャッシュを構成する  
-クライアントでアプリケーションとプログラムをインストールすると、一時ファイルがクライアント キャッシュに格納されます。 ソフトウェアの更新ではクライアント キャッシュも使用されますが、ソフトウェアの更新は構成されているキャッシュ サイズには制限されず、常にキャッシュへのダウンロードが試みられます。 Configuration Manager クライアントを手動でインストールする際、クライアント プッシュ インストールを使用する際、またはクライアントのインストール後に、クライアント キャッシュ設定 (サイズや場所など) を構成できます。
+##  <a name="BKMK_ClientCache"></a> Configurare la cache del client per i client di Configuration Manager  
+La cache client archivia i file temporanei per l'installazione di applicazioni e programmi nei client. Gli aggiornamenti software usano anche la cache client, ma non sono limitati dalla dimensione della cache configurata e tenteranno sempre di eseguire il download nella cache. È possibile configurare le impostazioni della cache client, ad esempio le dimensioni e il percorso, quando si installa manualmente il client di Configuration Manager, quando si usa l'installazione push client oppure dopo aver installato il client.
 
-Configuration Manager バージョン 1606 以降では、Configuration Manager コンソールでクライアント設定を使用してキャッシュ フォルダー サイズを指定できます。   
+A partire dalla versione 1606 di Configuration Manager, è possibile specificare le dimensioni della cartella della cache usando le impostazioni client nella console di Configuration Manager.   
 
- Configuration Manager クライアント キャッシュの既定の場所は %*windir*%\ccmcache で、既定のディスク容量は 5120 MB です。  
+ Il percorso predefinito per la cache del client di Configuration Manager è %*windir*%\ccmcache e lo spazio su disco predefinito è 5120 MB.  
 
 > [!IMPORTANT]  
->  クライアント キャッシュに使用するフォルダーは暗号化しないでください。 Configuration Manager は暗号化されたフォルダーにコンテンツをダウンロードすることはできません。  
+>  Non crittografare la cartella usata per la cache client. Configuration Manager non può scaricare il contenuto in una cartella crittografata.  
 
-### <a name="about-client-cache"></a>クライアント キャッシュについて  
+### <a name="about-client-cache"></a>Dimensione della cache del client  
 
-Configuration Manager クライアントは、展開を受けた後まもなく要求されたソフトウェアのコンテンツをダウンロードしますが、スケジュールされた展開時刻まで、それを実行しません。 スケジュールされた時刻になると、Configuration Manager クライアントはコンテンツがキャッシュで利用可能かどうかを確認します。 キャッシュにコンテンツがあり、それが正しいバージョンの場合は、クライアントはこのキャッシュされたコンテンツを使用します。 要求されたコンテンツのバージョンが変更されたり、別のパッケージのためにコンテンツが削除されたりした場合は、コンテンツはキャッシュに再びダウンロードされます。  
+Il client di Configuration Manager scarica il contenuto per il software richiesto non appena riceve la distribuzione ma non effettua l'esecuzione fino all'ora di distribuzione pianificata. All'ora pianificata, il client di Configuration Manager controlla se il contenuto è disponibile nella cache. Se il contenuto è disponibile nella cache e la versione è corretta, il client usa il contenuto nella cache. Quando la versione richiesta del contenuto viene modificata o se il contenuto viene eliminato per liberare spazio per un altro pacchetto, il contenuto viene scaricato di nuovo nella cache.  
 
-クライアントがキャッシュのサイズより大きいプログラム コンテンツまたはアプリケーション コンテンツをダウンロードしようとすると、Configuration Manager はステータス メッセージ ID 10050 を生成します。 後でキャッシュ サイズが増えると、結果は次のようになります。  
+Se il client tenta di scaricare il contenuto per un programma o un'applicazione di dimensioni superiori rispetto a quelle della cache, la distribuzione avrà esito negativo perché la dimensione della cache non è sufficiente e Configuration Manager genera l'ID messaggio di stato 10050. Se la dimensione della cache viene aumentata in un secondo momento, il risultato è il seguente:  
 
--   要求されるプログラムの場合:クライアントは、コンテンツのダウンロードを自動的に再試行しません。 パッケージとプログラムを再度展開する必要があります。  
--   要求されるアプリケーションの場合: クライアントは、クライアント ポリシーをダウンロードするときに、自動的にコンテンツのダウンロードを再試行します。  
+-   Per un programma richiesto: il client non tenterà automaticamente di scaricare il contenuto. È necessario ridistribuire il programma e il pacchetto al client.  
+-   Per un'applicazione richiesta: il client tenterà automaticamente di scaricare il contenuto al momento del download dei criteri client.  
 
-クライアントがダウンロードしようとするパッケージのサイズがキャッシュ サイズより小さくても、キャッシュに空きがない場合、キャッシュ領域が利用可能になるまで、またはダウンロードがタイムアウトするまで、あるいはキャッシュ領域による失敗の再試行回数の上限まで、要求された展開は再試行を繰り返します。 キャッシュ サイズが後で拡大されると、Configuration Manager クライアントは、次回の再試行時に再びパッケージのダウンロードを試みます。 クライアントは 4 時間ごとに 18 回になるまでコンテンツのダウンロードを試みます。  
+Se il client tenta di scaricare un pacchetto di dimensioni inferiori rispetto a quelle della cache ma la cache è piena, tutte le distribuzioni richieste eseguiranno altri tentativi finché non sarà disponibile spazio nella cache, non si verificherà un timeout del download oppure non verrà raggiunto il limite di tentativi per gli errori di spazio nella cache. Se in seguito la dimensione della cache viene aumentata, il client di Configuration Manager tenterà di scaricare nuovamente il pacchetto al successivo intervallo tra tentativi. Il client tenterà di scaricare il contenuto ogni quattro ore finché non avrà eseguito 18 tentativi.  
 
-キャッシュされたコンテンツは自動的には削除されず、クライアントがコンテンツを使用した後、少なくとも 1 日の間キャッシュに保持されます。 パッケージのプロパティを、クライアント キャッシュの内容を保持するオプションで構成すると、クライアントはキャッシュからコンテンツを自動的に削除しません。 クライアント キャッシュ領域が、24 時間以内にダウンロードされたパッケージによって使用されているときに、新しいパッケージをダウンロードする必要がある場合は、キャッシュ サイズを拡張するか、削除オプションを使って、保持しているキャッシュ コンテンツを削除できます。  
+Il contenuto nella cache non viene eliminato automaticamente ma rimane nella cache per almeno un giorno dopo essere stato usato dal client. Se si configurano le proprietà del pacchetto con l'opzione per mantenere il contenuto nella cache client, il client non elimina automaticamente il contenuto del pacchetto dalla cache. Se lo spazio nella cache client viene usato dai pacchetti scaricati nelle ultime 24 ore e il client deve scaricare nuovi pacchetti, è possibile aumentare la dimensione della cache client oppure scegliere l'opzione per eliminare il contenuto della cache persistente.  
 
- 手動によるクライアントのインストール中またはクライアントのインストール後に、クライアント キャッシュを構成するには、次の手順を使用します。  
+ Usare le seguenti procedure per configurare la cache client durante l'installazione client manuale oppure dopo l'installazione client.  
 
-### <a name="to-configure-the-client-cache-when-you-install-clients-by-using-manual-client-installation"></a>手動によってクライアントをインストールするときにクライアント キャッシュを構成するには  
+### <a name="to-configure-the-client-cache-when-you-install-clients-by-using-manual-client-installation"></a>Per configurare la cache client durante l'installazione client usando l'installazione client manuale  
 
-必要に応じて次のプロパティを指定して、インストール ソースの場所から CCMSetup.exe コマンドを実行します。プロパティはスペースで区切ります。  
+Eseguire il comando CCMSetup.exe dal percorso di origine di installazione e specificare le seguenti proprietà richieste e separate da spazi:  
 
    -   DISABLECACHEOPT  
 
@@ -222,17 +222,17 @@ Configuration Manager クライアントは、展開を受けた後まもなく�
     -   SMSCACHESIZE  
 
         > [!NOTE]
-        > バージョン 1606 では、SMSCACHESIZE ではなく Configuration Manager コンソールの **[クライアント設定]** で使用可能なキャッシュ サイズ設定を使用します。 詳細については、「[クライアントのキャッシュ設定](../../../core/clients/deploy/about-client-settings.md#client-cache-settings)」を参照してください。
+        > Per la versione 1606, usare le impostazioni della dimensione della cache disponibili in **Impostazioni client** nella console di Configuration Manager anziché SMSCACHESIZE. Per altre informazioni vedere [Impostazioni della cache del client](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
 
-CCMSetup.exe 用のこれらのコマンド ライン プロパティを使用する方法の詳細については、「[System Center Configuration Manager のクライアント インストール プロパティについて](../../../core/clients/deploy/about-client-installation-properties.md)」を参照してください。  
+Per altre informazioni sull'uso di queste proprietà della riga di comando di CCMSetup.exe, vedere [Informazioni sulle proprietà di installazione client in System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
-### <a name="to-configure-the-client-cache-folder-when-you-install-clients-by-using-client-push-installation"></a>クライアント プッシュ インストールによってクライアントをインストールするときにクライアント キャッシュを構成するには  
+### <a name="to-configure-the-client-cache-folder-when-you-install-clients-by-using-client-push-installation"></a>Per configurare la cartella cache client durante l'installazione client usando l'installazione push client  
 
-1.  Configuration Manager コンソールで、[**管理**] > [**サイトの構成**] > [**サイト**] の順に選択します。  
+1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione del sito** > **Siti**.  
 
-3.  適切なサイトを選択し、**[ホーム]** タブの **[設定]** グループで **[クライアント インストール設定]** > **[インストールのプロパティ]** タブを選択します。  
+3.  Selezionare il sito appropriato e nella scheda **Home**, nel gruppo **Impostazioni**, scegliere **Impostazioni di installazione client** > **scheda Proprietà di installazione**.  
 
-5.  スペース区切りで次のプロパティを指定します。  
+5.  Specificare le seguenti proprietà, separate da spazi:  
 
     -   DISABLECACHEOPT  
 
@@ -243,125 +243,125 @@ CCMSetup.exe 用のこれらのコマンド ライン プロパティを使用�
     -   SMSCACHESIZE  
 
         > [!NOTE]
-        > バージョン 1606 では、SMSCACHESIZE ではなく Configuration Manager コンソールの **[クライアント設定]** で使用可能なキャッシュ サイズ設定を使用します。 詳細については、「[クライアントのキャッシュ設定](../../../core/clients/deploy/about-client-settings.md#client-cache-settings)」を参照してください。
+        > Per la versione 1606, usare le impostazioni della dimensione della cache disponibili in **Impostazioni client** nella console di Configuration Manager anziché SMSCACHESIZE. Per altre informazioni vedere [Impostazioni della cache del client](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
 
-       CCMSetup.exe 用のこれらのコマンド ライン プロパティを使用する方法の詳細については、「[System Center Configuration Manager のクライアント インストール プロパティについて](../../../core/clients/deploy/about-client-installation-properties.md)」を参照してください。  
+       Per altre informazioni sull'uso di queste proprietà della riga di comando di CCMSetup.exe, vedere [Informazioni sulle proprietà di installazione client in System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
-### <a name="to-configure-the-client-cache-folder-on-the-client-computer"></a>クライアント コンピューターでクライアント キャッシュ フォルダーを構成するには  
+### <a name="to-configure-the-client-cache-folder-on-the-client-computer"></a>Per configurare la cartella cache del client sul computer client  
 
-1.  クライアント コンピューターで、コントロール パネルの **[Configuration Manager]** に移動し、ダブルクリックしてプロパティを開きます。  
+1.  Nel Pannello di controllo del computer client passare a **Configuration Manager** e fare doppio clic per aprire le proprietà.  
 
-2.  **[キャッシュ]** タブで領域と場所のプロパティを設定します。 既定の場所は *%windir%*\ccmcache です。  
+2.  Nella scheda **Cache** impostare le proprietà per lo spazio e il percorso. Il percorso predefinito è *%windir%*\ccmcache.  
 
-5.  キャッシュ フォルダーのファイルを削除するには、**[ファイルの削除]** を選択します。  
+5.  Per eliminare i file nella cartella della cache, scegliere **Elimina file**.  
 
     > [!NOTE]
     > 
-    > キャッシュ フォルダーは通常の Windows フォルダーです。そのため、スクリプト、ユーティリティ、または PowerShell コマンドレット `Remove-Item` を使用してフォルダーの内容を自動的に削除することができます。 
+    > La cartella della cache è una normale cartella di Windows, pertanto è possibile automatizzare l'eliminazione del contenuto della cartella usando uno script, tramite un'utilità o con il cmdlet PowerShell `Remove-Item`. 
 
 
-### <a name="to-configure-client-cache-size-in-client-settings"></a>[クライアント設定] でクライアント キャッシュ サイズを構成するには
+### <a name="to-configure-client-cache-size-in-client-settings"></a>Per configurare la dimensione della cache del client in Impostazioni client
 
-バージョン 1606 以降、クライアントを再インストールしなくても、クライアント キャッシュ フォルダーのサイズを調整できるようになりました。 これを行うには、Configuration Manager コンソールで [クライアント設定] を使用してクライアント キャッシュ サイズを構成します。  
+A partire dalla versione 1606, è possibile modificare la dimensione della cartella cache del client senza dover reinstallare il client. A tale scopo, è possibile configurare la dimensione della cache del client nella console di Configuration Manager usando le impostazioni del client.  
 
-1. Configuration Manager コンソールで、 **[管理]** > **[クライアント設定]**に移動します。
+1. Nella console di Configuration Manager scegliere **Amministrazione** > **Impostazioni client**.
 
-2. **[既定のクライアント設定]**をダブルクリックします。
-  また、キャッシュ サイズをより選択的に適用するためにカスタム クライアント設定を作成することもできます。 既定およびカスタムのクライアント設定の詳細については、「[System Center Configuration Manager でクライアント設定を構成する方法](../../../core/clients/deploy/configure-client-settings.md)」を参照してください。
+2. Fare doppio clic su **Impostazioni client predefinite**.
+  È anche possibile creare impostazioni client personalizzate per applicare la dimensione della cache in modo più selettivo. Per altre informazioni sulle impostazioni client predefinite e personalizzate, vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).
 
- 3. **[クライアント キャッシュの設定]** を選択し、**[クライアント キャッシュ サイズの構成]** で **[はい]** を選択して、ディスク設定の **[MB]** または **[割合]** のいずれかを使用します。 いずれか小さい方のサイズにキャッシュが調整されます。
+ 3. Scegliere **Impostazioni della cache del client**, scegliere **Sì** per **Configurare le dimensioni della cache del client**, quindi usare l'impostazione in **MB** o la **percentuale del disco**. La cache viene adeguata alla dimensione che risulta inferiore.
 
-     Configuration Manager クライアントは、次のクライアント ポリシーがダウンロードされるときにこれらの設定値を使ってキャッシュ サイズを構成します。
+     Il client di Configuration Manager configurerà la dimensione della cache con queste impostazioni al successivo download dei criteri client.
 
-##  <a name="BKMK_UninstalClient"></a> Configuration Manager クライアントをアンインストールする  
- **/Uninstall** プロパティを付けて **CCMSetup.exe** を使用すると、Windows Configuration Manager クライアント ソフトウェアをコンピューターからアンインストールできます。 個々のコンピューター上でコマンド プロンプトから CCMSetup.exe を実行するか、パッケージとプログラムを展開して、コンピューターのコレクションからクライアントをアンインストールします。  
+##  <a name="BKMK_UninstalClient"></a> Disinstallare il client di Configuration Manager  
+ È possibile disinstallare il software client di Windows Configuration Manager da un computer usando **CCMSetup.exe** con la proprietà **/Uninstall**. Eseguire CCMSetup.exe in un singolo computer dal prompt dei comandi oppure distribuire un pacchetto e programma per disinstallare il client da una raccolta di computer.  
 
 > [!WARNING]  
->  Configuration Manager クライアントをモバイル デバイスからアンインストールすることはできません。 Configuration Manager クライアントをモバイル デバイスから除去する必要がある場合は、デバイスをワイプする必要があります。ワイプはモバイル デバイス上のすべてのデータを削除します。  
+>  È impossibile disinstallare il client di Configuration Manager da un dispositivo mobile. Se è necessario rimuovere il client di Configuration Manager da un dispositivo mobile, è necessario cancellare il dispositivo eliminando tutti i dati nel dispositivo mobile.  
 
-#### <a name="to-uninstall-the-configuration-manager-client-from-the-command-prompt"></a>コマンド プロンプトから Configuration Manager クライアントをアンインストールするには  
+#### <a name="to-uninstall-the-configuration-manager-client-from-the-command-prompt"></a>Per disinstallare il client di Configuration Manager dal prompt dei comandi  
 
-1.  Windows コマンド プロンプトを開き、CCMSetup.exe のある場所へフォルダーを移動します。  
+1.  Aprire un prompt dei comandi di Windows e modificare la cartella del percorso in cui si trova CCMSetup.exe.  
 
-2.  「 **Ccmsetup.exe /uninstall**」と入力し、 **Enter**キーを押します。  
+2.  Digitare **Ccmsetup.exe /uninstall**e quindi premere **Invio**.  
 
 > [!NOTE]  
->  アンインストールを実行しても、画面に結果は表示されません。 クライアントのアンインストールが成功したことを確認するには、クライアント コンピューター上の **%windir%\ ccmsetup** 内にあるログ ファイル *CCMSetup.log* を確認します。  
+>  I risultati del processo di disinstallazione non vengono visualizzati sullo schermo. Per verificare il completamento della disinstallazione client, esaminare il file di log **CCMSetup.log** nella cartella *%windir%\ ccmsetup* nel computer client.  
 
-##  <a name="BKMK_ConflictingRecords"></a> Configuration Manager クライアントの競合しているレコードを管理する  
- Configuration Manager は、ハードウェア ID を使用して重複している可能性のあるクライアントを特定し、競合するレコードについて警告を発します。 たとえば、コンピューターを再インストールする場合、ハードウェア ID が同じであっても Configuration Manager の使用する GUID が異なる可能性があります。  
+##  <a name="BKMK_ConflictingRecords"></a> Gestire i record in conflitto per i client di Configuration Manager  
+ Configuration Manager usa l'ID hardware per tentare di identificare i client che potrebbero essere dei duplicati e avvertire l'utente dei record in conflitto. Ad esempio, se si reinstalla un computer, l'ID hardware rimane lo stesso mentre il GUID usato da Configuration Manager potrebbe cambiare.  
 
- コンピューター アカウントの Windows 認証または信頼されたソースからの PKI 証明書を使用して Configuration Manager が競合を解決できる場合、競合は自動的に解決されます。 ただし、Configuration Manager が競合を解決できない場合は階層設定が使用され、重複するハードウェア ID を検出したときにレコードを自動的にマージするか (既定の設定)、新しいクライアント レコードをマージ、ブロック、または作成するタイミングを管理者が決定できます。 重複レコードを手動で管理すると決定した場合、Configuration Manager コンソールを使用して競合するレコードを手動で解決する必要があります。  
-
-
-#### <a name="to-change-the-hierarchy-setting-for-managing-conflicting-records"></a>競合しているレコードの管理に関する階層の設定を変更するには  
-
-1.  Configuration Manager コンソールで、**[管理]** > **[サイトの構成]** > **[サイト]** > **[階層設定]** の順に選択します。
-2.  **[クライアントの承認と競合レコードの処理]** タブで **[競合しているレコードを自動的に解決する]** または **[競合しているレコードを手動で解決する]** を選択します。  
-
-#### <a name="to-manually-resolve-conflicting-records"></a>競合しているレコードを手動で解決するには  
-
-1.  Configuration Manager コンソールで **[監視]** > **[システムのステータス]** > **[競合しているレコード]** を選択します。  
-
-3.  1 つまたは複数の競合しているレコードを選択し、**[競合しているレコード]** をクリックします。  
-
-4.  次のいずれかを選択します。  
-
-    -   **[結合]**: 新しく検出されたレコードを既存のクライアント レコードと結合します。  
-
-    -   [**新規** ]: 競合しているクライアント レコードに対して新しいレコードを作成します。  
-
-    -   [**ブロック** ]: 競合しているクライアント レコードに対して新しいレコードを作成しますが、ブロックに設定します。  
-
-## <a name="manage-duplicate-hardware-identifiers"></a>重複するハードウェア識別子を管理する
-Configuration Manager バージョン 1610 より、PXE ブートとクライアント登録で Configuration Manager が無視するハードウェア ID の一覧を指定できます。 それにより 2 つの一般的な問題に対処できます。
-
-1. Surface Pro 3 など、新しいデバイスの多くにオンボード イーサネット ポートが含まれません。 オペレーティング システムの展開で有線接続を確立するとき、一般的に USB/イーサネット アダプターが使用されます。 しかしながら、コストや汎用性に起因し、多くの場合、共有アダプターになります。 そのアダプターの MAC アドレスを利用してデバイスを識別するため、展開ごとに管理者による追加措置がないと、アダプターの再利用が問題になります。 バージョン 1610 以降、このアダプターの MAC アドレスを除外できるようになったので、このシナリオで再利用できます。
-2. SMBIOS ID は一意のハードウェア識別子ですが、専門的なハードウェア デバイスには ID が重複するものもあります。 上記の USB/イーサネット アダプターのシナリオほど一般的ではありませんが、ハードウェア ID の一覧を利用してこの問題に対処することもできます。
-
-#### <a name="to-add-hardware-identifiers-for-configuration-manager-to-ignore"></a>Configuration Manager で無視するハードウェア識別子を追加するには  
-1. Configuration Manager コンソールで、[**管理**] > [**概要**] > [**サイトの構成**] > [**サイト**] の順に移動します。
-2. **[ホーム]** タブの **[サイト]** グループで、**[階層設定]** を選択します。
-3. **[クライアントの承認と競合レコードの処理]** タブの **[重複するハードウェア ID]** セクションの **[追加]** を選択して、新しいハードウェア識別子を追加します。
-
-##  <a name="BKMK_PolicyRetrieval"></a> Configuration Manager クライアントのポリシーの取得開始  
- Windows Configuration Manager クライアントは、クライアント設定として構成されているスケジュールに従ってクライアント ポリシーをダウンロードします。 ただし、トラブルシューティングやテストなどで、クライアントから特別なポリシー取得を開始する場合があります。  
-
-次の方法でポリシーの取得を開始できます。
+ Quando Configuration Manager è in grado di risolvere un conflitto usando l'autenticazione di Windows dell'account computer o un certificato PKI proveniente da un'origine attendibile, il conflitto viene automaticamente risolto. Quando tuttavia Configuration Manager non è in grado di risolvere il conflitto, viene usata un'impostazione gerarchia che unisce automaticamente i record in caso di rilevamento di ID hardware duplicati (impostazione predefinita) oppure consente di decidere quando unire, bloccare o creare nuovi record client. Se si decide di gestire manualmente i record duplicati, è necessario risolvere manualmente i record in conflitto nella console di Configuration Manager.  
 
 
-- [クライアント通知](#initiate-client-policy-retrieval-using-client-notification) 
-- [クライアントの **[操作]** タブ](#manually-initiate-client-policy-retrieval-on-the-actions-tab-of-the-configuration-manager-client)
-- [スクリプト](#manually-initiate-client-policy-retrieval-by-script)
+#### <a name="to-change-the-hierarchy-setting-for-managing-conflicting-records"></a>Per modificare l'impostazione della gerarchia per la gestione dei record in conflitto  
+
+1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione del sito** > **Siti** > **Impostazioni gerarchia**
+2.  Nella scheda **Approvazione client e record in conflitto** scegliere **Risolvi automaticamente record in conflitto** o **Risolvi manualmente record in conflitto**.  
+
+#### <a name="to-manually-resolve-conflicting-records"></a>Per risolvere manualmente i record in conflitto  
+
+1.  Nella console di Configuration Manager scegliere **Monitoraggio** > **Stato del sistema** > **Record in conflitto**.  
+
+3.  Selezionare uno o più record in conflitto e quindi scegliere **Record in conflitto**.  
+
+4.  Selezionare una delle opzioni seguenti:  
+
+    -   **Unisci** per combinare il record appena rilevato con il record client esistente.  
+
+    -   **Nuovo** per creare un nuovo record per il record client in conflitto.  
+
+    -   **Blocca** per creare un nuovo record per il record client in conflitto, ma contrassegnandolo come bloccato.  
+
+## <a name="manage-duplicate-hardware-identifiers"></a>Gestire gli identificatori di hardware duplicati
+A partire da Configuration Manager versione 1610, è possibile specificare un elenco di ID hardware che verranno ignorati da Configuration Manager ai fini dell'avvio PXE e della registrazione di client. Ciò contribuisce a risolvere due problemi comuni.
+
+1. Molti nuovi dispositivi, ad esempio Surface Pro 3, non includono una porta Ethernet incorporata. In genere viene usato un adattatore da USB a Ethernet per stabilire una connessione cablata per la distribuzione del sistema operativo. Tuttavia si tratta spesso di adattatori condivisi, per motivi di costi e usabilità generale. Poiché per identificare il dispositivo viene usato l'indirizzo MAC dell'adattatore, risulta problematico riusare l'adattatore senza interventi aggiuntivi dell'amministratore tra le diverse distribuzioni. A partire dalla versione 1610, è possibile escludere l'indirizzo MAC dell'adattatore in modo da poterlo riusare in questo scenario.
+2. Sebbene l'ID SMBIOS dovrebbe essere un identificatore hardware univoco, alcuni dispositivi hardware speciali sono realizzati con ID duplicati. Pur non essendo una soluzione comune come lo scenario dell'adattatore da USB a Ethernet descritto in precedenza, per risolvere questo problema è possibile usare anche l'elenco degli ID hardware.
+
+#### <a name="to-add-hardware-identifiers-for-configuration-manager-to-ignore"></a>Per aggiungere identificatori hardware che Configuration Manager deve ignorare  
+1. Nella console di Configuration Manager andare su **Amministrazione** > **Panoramica** > **Configurazione del sito** > **Siti**.
+2. Nella scheda **Home** del gruppo **Siti** scegliere **Impostazioni gerarchia**.
+3. Nella scheda **Approvazione client e record in conflitto** scegliere **Aggiungi** nella sezione **Identificatori hardware duplicati** per aggiungere nuovi identificatori hardware.
+
+##  <a name="BKMK_PolicyRetrieval"></a> Avviare il recupero criteri per un client di Configuration Manager  
+ Un client di Windows Configuration Manager scarica i relativi criteri client in base a una pianificazione configurata come impostazione client. In alcuni casi, tuttavia, può essere necessario avviare un recupero criteri ad hoc dal client, ad esempio per la risoluzione dei problemi oppure durante una verifica.  
+
+È possibile avviare il recupero dei criteri tramite:
+
+
+- [Notifica client](#initiate-client-policy-retrieval-using-client-notification) 
+- [La scheda **Azioni** nel client](#manually-initiate-client-policy-retrieval-on-the-actions-tab-of-the-configuration-manager-client)
+- [Uno script](#manually-initiate-client-policy-retrieval-by-script)
 
 > [!NOTE]  
 >   
->  Linux および UNIX を実行するクライアントのポリシー取得については、「 [Computer policy for Linux and UNIX servers](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_PolicyforLnU)」をご覧ください。  
+>  Per informazioni sul recupero dei criteri per i client che eseguono Linux e UNIX, vedere [Computer policy for Linux and UNIX servers](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_PolicyforLnU).  
 
-#### <a name="initiate-client-policy-retrieval-using-client-notification"></a>クライアント通知を使用してクライアント ポリシーの取得を開始する  
+#### <a name="initiate-client-policy-retrieval-using-client-notification"></a>Avviare il recupero dei criteri client usando la notifica client  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[デバイス コレクション]** の順に選択します。  
+1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Raccolte dispositivi**.  
 
-3.  ポリシーをダウンロードするコンピューターを含むデバイス コレクションを選択します。 **[ホーム]** タブの **[コレクション]** グループで **[クライアント通知]** > **[コンピューター ポリシーのダウンロード]** を選択します。  
+3.  Selezionare la raccolta di dispositivi che contiene i computer per cui scaricare i criteri. Nella scheda **Home**, nel gruppo **Raccolte**, scegliere **Notifica client** > **Scarica criteri computer**.  
 
     > [!NOTE]  
-    >  また、[ **デバイス** ] ノードの一時コレクション ノードに表示されるデバイスから 1 つまたは複数のデバイスを選択して、クライアント通知を使用してポリシーの取得を開始することもできます。  
+    >  È inoltre possibile usare la notifica client per avviare il recupero criteri per uno o più dispositivi selezionati visualizzati in un nodo raccolta temporaneo nel nodo **Dispositivi** .  
 
-#### <a name="manually-initiate-client-policy-retrieval-on-the-actions-tab-of-the-configuration-manager-client"></a>Configuration Manager クライアントの [操作] タブでクライアント ポリシーの取得を手動で開始する  
+#### <a name="manually-initiate-client-policy-retrieval-on-the-actions-tab-of-the-configuration-manager-client"></a>Avviare manualmente il recupero dei criteri client nella scheda Azioni del client di Configuration Manager  
 
-1.  コンピューターのコントロール パネルで、[ **Configuration Manager** ] を選択します。  
+1.  Selezionare **Configuration Manager** nel Pannello di controllo del computer.  
 
-2.  **[操作]** タブの **[コンピューター ポリシーの取得および評価サイクル]** を選択してコンピューター ポリシーを開始し、**[直ちに実行]** をクリックします。  
+2.  Nella scheda **Azioni** scegliere **Ciclo di recupero e valutazione criteri computer** per avviare i criteri computer e quindi scegliere **Esegui**.  
 
-4.  **[OK]** を選択してプロンプトを確定します。  
+4.  Scegliere **OK** per confermare la richiesta.  
 
-5.  ユーザー クライアント設定で必要な他の操作 (**[ユーザー ポリシーの取得および評価サイクル]** など) に関して、手順 3 と 4 を繰り返します。  
+5.  Ripetere i passaggi 3 e 4 per ogni altra azione richiesta, ad esempio **Ciclo di recupero e valutazione criteri utente** per le impostazioni client utente.  
 
-#### <a name="manually-initiate-client-policy-retrieval-by-script"></a>スクリプトを使用してクライアント ポリシーの取得を手動で開始する  
+#### <a name="manually-initiate-client-policy-retrieval-by-script"></a>Avviare manualmente il recupero criteri client tramite uno script  
 
-1.  メモ帳などのテキスト エディターを開きます。  
+1.  Aprire un editor di testo, come Blocco note.  
 
-2.  次をコピーし、ファイルに挿入します。  
+2.  Copiare e inserire quanto di seguito riportato nel file:  
 
     ```  
     on error resume next  
@@ -398,12 +398,12 @@ Configuration Manager バージョン 1610 より、PXE ブートとクライア
     set oCPAppletMgr=nothing  
     ```  
 
-3.  ファイルを .vbs 拡張子で保存します。  
+3.  Salvare il file con un'estensione .vbs.  
 
-4.  クライアント コンピューターにおいて、次のいずれかの方法でこのファイルを実行します。  
+4.  Nel computer client, eseguire il file usando uno dei seguenti metodi:  
 
-    -   エクスプローラーを使用してファイルに移動し、スクリプト ファイルをダブルクリックします。  
+    -   Individuare il file usando Esplora risorse e fare doppio clic sul file script.  
 
-    -   コマンド プロンプトを開き、「**cscript &lt;パス\ファイル名.vbs>**」と入力します。  
+    -   Aprire un prompt dei comandi e digitare: **cscript &lt;percorso\nomefile.vbs>**.  
 
-5.  **[Windows スクリプト ホスト]** ダイアログ ボックスで **[OK]** をクリックします。  
+5.  Scegliere **OK** nella finestra di dialogo **Windows Script Host**.  

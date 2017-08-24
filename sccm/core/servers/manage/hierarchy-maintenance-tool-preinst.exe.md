@@ -1,6 +1,6 @@
 ---
-title: "階層のメンテナンス ツール | Microsoft Docs"
-description: "階層のメンテナンス メールでできることとそれを利用する理由について説明します。 コマンド ライン オプションの参照が含まれています。"
+title: Strumento di manutenzione gerarchia | Microsoft Docs
+description: "Informazioni sulle finalità dello strumento di manutenzione gerarchia e motivi per usarlo. Include informazioni di riferimento alle opzioni della riga di comando."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,108 +18,108 @@ manager: angrobe
 ms.openlocfilehash: f3ddeaadfb1418aeeaacdca47768600c86b59083
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="hierarchy-maintenance-tool-preinstexe-for-system-center-configuration-manager"></a>System Center Configuration Manager の階層のメンテナンス ツール (Preinst.exe)
+# <a name="hierarchy-maintenance-tool-preinstexe-for-system-center-configuration-manager"></a>Strumento di manutenzione gerarchia (Preinst.exe) per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-階層のメンテナンス ツール (Preinst.exe) は、階層マネージャー サービスの実行中に System Center Configuration Manager 階層マネージャーにコマンドを渡します。 階層のメンテナンス ツールは、Configuration Manager サイトのインストール時に自動的にインストールされます。 Preinst.exe は、サイト サーバー上の \\&lt;*SiteServerName*>\SMS_&lt;*SiteCode*\bin\X64\00000409 共有フォルダーに格納されています。  
+Lo strumento di manutenzione gerarchia (Preinst.exe) passa i comandi alla gestione gerarchie di System Center Configuration Manager mentre il servizio di gestione gerarchie è in esecuzione. Lo strumento di manutenzione gerarchia viene installato automaticamente durante l'installazione di un sito di Configuration Manager. È possibile trovare Preinst.exe nella cartella condivisa \\&lt;*NomeServerSito*>\SMS_&lt;*CodiceSito*\bin\X64\00000409 del server del sito.  
 
- 次のような場合に、階層のメンテナンス ツールを使用します。  
+ È possibile utilizzare lo strumento di manutenzione gerarchia nei seguenti scenari:  
 
--   セキュリティ キーの交換が必要とされ、サイト間で初期公開キーを手動で交換しなければならない場合。 詳細については、このトピックの「 [サイト間で公開キーを手動で交換する](#BKMK_ManuallyExchangeKeys) 」をご覧ください。  
+-   Quando è richiesto uno scambio di chiavi di sicurezza, ci sono casi in cui è necessario eseguire manualmente lo scambio di chiavi pubbliche iniziale tra siti. Per altre informazioni, vedere la sezione [Scambiare manualmente chiavi pubbliche tra siti](#BKMK_ManuallyExchangeKeys) in questo argomento.  
 
--   現在は利用できなくなったターゲット サイト用のアクティブ ジョブを削除する場合。  
+-   Per rimuovere i processi attivi per un sito di destinazione non più disponibile.  
 
--   セットアップを使用してサイトをアンインストールできないときに、Configuration Manager コンソールからサイト サーバーを削除する場合。 たとえば、最初にセットアップを実行してサイトをアンインストールせずに、物理的に Configuration Manager サイトを削除した場合、サイト情報は親サイトのデータベース内に残ったままになり、親サイトは引き続き子サイトとの通信を試行します。 この問題を解決するには、階層のメンテナンス ツールを実行して、親サイトのデータベースから子サイトを手動で削除します。  
+-   Per eliminare un server del sito dalla console di Configuration Manager quando non si è grado di disinstallare il sito tramite il programma di installazione. Se ad esempio si rimuove fisicamente un sito di Configuration Manager senza prima eseguire il programma di installazione per disinstallare tale sito, le informazioni sul sito rimarranno nel database del sito padre e quest'ultimo continuerà a tentare la comunicazione con il sito figlio. Per risolvere questo problema, è necessario eseguire lo strumento di manutenzione gerarchia ed eliminare manualmente il sito figlio dal database del sito padre.  
 
--   サービスを個別に停止せずに、サイトのすべての Configuration Manager サービスを停止する場合。  
+-   Per interrompere tutti i servizi di Configuration Manager in un sito senza dover interrompere i servizi uno per uno.  
 
--   サイトの回復を行っている場合は、CHILDKEYS オプションを使用して、回復しているサイトに複数の子サイトの公開キーを配布できます。  
+-   Quando si ripristina un sito, è possibile utilizzare l'opzione CHILDKEYS per distribuire le chiavi pubbliche da più siti figli al sito in corso di ripristino.  
 
-階層のメンテナンス ツールを実行するには、現在のユーザーがローカル コンピューターに対する管理者特権を持っている必要があります。 また、現在のユーザーには、サイトの管理者セキュリティ権限が明示的に与えられている必要があります。現在のユーザーがそのアクセス許可を持つグループのメンバーであることによってこの権限を継承しているのでは不十分です。  
+Per eseguire lo strumento di manutenzione gerarchia, l'utente corrente deve disporre dei privilegi amministrativi nel computer locale. L'utente deve inoltre disporre esplicitamente del diritto di sicurezza Amministrazione per il sito. Non è sufficiente che l'utente erediti questo diritto come membro di un gruppo che dispone di questa autorizzazione.  
 
-## <a name="hierarchy-maintenance-tool-command-line-options"></a>階層のメンテナンス ツールのコマンドライン オプション  
-階層のメンテナンス ツールを使用する際には、中央管理サイト、プライマリ サイト、またはセカンダリ サイト サーバーでローカルに実行する必要があります。  
+## <a name="hierarchy-maintenance-tool-command-line-options"></a>Opzioni della riga di comando dello strumento di manutenzione gerarchia  
+Quando si utilizza lo strumento di manutenzione gerarchia, è necessario eseguirlo localmente nel server del sito di amministrazione centrale, del sito primario o del sito secondario.  
 
-階層のメンテナンス ツールの実行時には、preinst.exe /&lt;オプション\> という構文を使用する必要があります。 コマンド ライン オプションは以下のとおりです。  
+Quando si esegue lo strumento di manutenzione gerarchia, è necessario usare la sintassi seguente: preinst.exe /&lt;opzione\>. Di seguito sono elencate le opzioni della riga di comando.  
 
- **/DELJOB &lt;*SiteCode*>** - このオプションをサイトで使用して、現在のサイトから指定のターゲット サイトに対するすべてのジョブまたはコマンドを削除します。  
+ **/DELJOB &lt;*CodiceSito*>**: usare questa opzione in un sito per eliminare tutti i processi o i comandi dal sito corrente nel sito di destinazione specificato.  
 
- **/DELSITE &lt;*ChildSiteCodeToRemove*>** - このオプションを親サイトで使用して、親サイトのサイト データベースから子サイトのデータを削除します。 通常、サイト サーバー コンピューターからサイトをアンインストールする前に使用停止とされた場合に、このオプションを使用します。  
-
-> [!NOTE]  
->  /DELSITE オプションでは、ChildSiteCodeToRemove パラメーターで指定されたコンピューター上のサイトはアンインストールされません。 このオプションは、サイト情報を Configuration Manager サイト データベースから削除するだけです。  
-
-**/DUMP &lt;*SiteCode*>** - ローカル サイト サーバーでこのオプションを使用して、サイトがインストールされているドライブのルート フォルダーにサイト コントロール イメージを書き込みます。 特定のサイト コントロール イメージをフォルダーに書き込むか、階層内のすべてのサイト コントロール ファイルを書き込むことができます。  
-
--   /DUMP &lt;*SiteCode*> は、指定されたサイトについてのみサイト コントロール イメージを書き込みます。  
-
--   /DUMP は、すべてのサイトのサイト コントロール ファイルを書き込みます。  
-
-イメージとは、サイト コントロール ファイルのバイナリ表現であり、Configuration Manager サイト データベースに格納されています。 ダンプされたサイト コントロール ファイル イメージは、基本イメージと保留中のデルタ イメージを組み合わせたものです。  
-
-階層のメンテナンス ツールを使用してサイト コントロール ファイル イメージをダンプすると、sitectrl_&lt;*SiteCode*>.ct0 という形式のファイル名になります。  
-
-**/STOPSITE** - ローカル サイト サーバーでこのオプションを使用して、Configuration Manager サイト コンポーネント マネージャー サービスのシャットダウン サイクルを開始します。これにより、サイトが部分的にリセットされます。 このシャットダウン サイクルの実行時に、サイト サーバーの一部の Configuration Manager サービスとそのリモート サイト システムが停止します。 これらのサービスには、再インストールのフラグが付けられます。 シャットダウン サイクルの実行の結果、サービスの再インストール時に一部のパスワードが自動的に変更されます。  
+ **/DELSITE &lt;*CodiceSitoFiglioDaRimuovere*>**: usare questa opzione in un sito padre per eliminare i dati relativi ai siti figlio dal database del sito padre. In genere, è possibile utilizzare questa opzione se si rimuovono le autorizzazioni da un computer del server del sito prima che il sito sia stato disinstallato da tale computer.  
 
 > [!NOTE]  
->  サイト コンポーネント マネージャーのシャットダウン、再インストール、およびパスワード変更の記録を参照するには、このコマンド ライン オプションを使用する前にこのコンポーネントのログを有効にします。  
+>  L'opzione /DELSITE non disinstalla il sito nel computer specificato dal parametro ChildSiteCodeToRemove. Questa opzione rimuove solamente le informazioni sul sito dal database del sito di Configuration Manager.  
 
-シャットダウン サイクルの開始後は、自動的に処理が行われ、応答していないコンポーネントやコンピューターはスキップされます。 ただし、シャットダウン サイクル中にサイト コンポーネント マネージャー サービスからリモート サイト システムにアクセスできない場合は、サイト コンポーネント マネージャー サービスの再起動時に、リモート サイト システムにインストールされているコンポーネントが再インストールされます。 サイト コンポーネント マネージャー サービスは、再起動すると、再インストールのフラグが付いているすべてのサービスの再インストールが完了するまで、再インストールを繰り返し試行します。  
+**/DUMP &lt;*CodiceSito*>**: usare questa opzione nel server del sito locale per scrivere le immagini di controllo del sito nella cartella radice dell'unità in cui è installato il sito. È possibile scrivere un'immagine di controllo del sito specifica nella cartella o scrivere tutti i file di controllo del sito nella gerarchia.  
 
-サイト コンポーネント マネージャー サービスはサービス マネージャーを使用して再起動できます。 再起動後に、影響を受けたすべてのサービスのアンインストール、再インストール、および再起動が行われます。 /STOPSITE オプションを使用してシャットダウン サイクルを開始した後に、サイト コンポーネント マネージャー サービスの再起動後、再インストール サイクルを回避することはできません。  
+-   /DUMP &lt;*CodiceSito*> consente di scrivere l'immagine di controllo del sito solo per il sito specificato.  
 
-**/KEYFORPARENT** - このオプションをサイトで使用して、サイトの公開キーを親サイトに配布します。  
+-   /DUMP consente di scrivere i file di controllo del sito per tutti i siti.  
 
-/KEYFORPARENT オプションは、サイトの公開キーをプログラム ファイル ドライブのルートにある &lt;*SiteCode*>.CT4 ファイルに保存します。 このオプションを使用して preinst.exe を実行した後で、&lt;*SiteCode*>.CT4 ファイルを親サイトの ...\Inboxes\hman.box フォルダーに手動でコピーしてください。コピー先は hman.box\pubkey ではありません。  
+Un'immagine è una rappresentazione binaria del file di controllo del sito, che è archiviato nel database del sito di Configuration Manager. Il dump dell'immagine del file di controllo del sito è una somma dell'immagine di base e delle immagini differenziali in sospeso.  
 
-**/KEYFORCHILD** - このオプションをサイトで使用して、サイトの公開キーを子サイトに配布します。  
+Dopo aver eseguito il dump di un'immagine del file di controllo del sito con lo strumento di manutenzione gerarchia, il nome del file avrà il formato seguente: sitectrl_&lt;*CodiceSito*>.ct0.  
 
-/KEYFORCHILD オプションは、サイトの公開キーをプログラム ファイル ドライブのルートにある &lt;*SiteCode*>.CT5 ファイルに保存します。 このオプションを使用して preinst.exe を実行した後で、&lt;*SiteCode*>.CT5 ファイルを子サイトの ...\Inboxes\hman.box フォルダーに手動でコピーしてください。コピー先は hman.box\pubkey ではありません。  
-
-**/CHILDKEYS** - 回復中のサイトの子サイトでこのオプションを使用できます。 このオプションを使用して、複数の子サイトから回復サイトに公開キーを配布できます。  
-
-/CHILDKEYS オプションは、オプションの実行元のサイトのキーと、そのサイトのすべての子サイトの公開キーを &lt;*SiteCode*>.CT6 ファイルに保存します。  
-
-このオプションを使用して preinst.exe を実行した後で、&lt;*SiteCode*>.CT6 ファイルを回復サイトの ...\Inboxes\hman.box フォルダーに手動でコピーしてください。コピー先は hman.box\pubkey ではありません。  
-
-**/PARENTKEYS** - 回復サイトの親サイトでこのオプションを使用できます。 このオプションを使用して、すべての親サイトから回復中のサイトに公開キーを配布できます。  
-
-/PARENTKEYS オプションは、オプションの実行元のサイトのキーと、そのサイトの上位にある各親サイトのキーを &lt;SiteCode\>.CT7 ファイルに保存します。  
-
-このオプションを使用して preinst.exe を実行した後で、&lt;*SiteCode*>.CT7 ファイルを回復サイトの ...\Inboxes\hman.box フォルダーに手動でコピーしてください。コピー先は hman.box\pubkey ではありません。  
-
-##  <a name="BKMK_ManuallyExchangeKeys"></a> サイト間で公開キーを手動で交換する  
-既定で、Configuration Manager サイトでは **[セキュリティで保護されているキーの交換を必要とする]** オプションが有効になっています。 セキュリティ キーの交換が必要な場合、次の 2 つのケースで、サイト間の初期キー交換を手動で行う必要があります。  
-
--   Active Directory スキーマを Configuration Manager 用に拡張していない場合  
-
--   Configuration Manager サイトがサイト データを Active Directory に発行していない  
-
-階層のメンテナンス ツールを使用して、各サイトの公開キーをエクスポートできます。 公開キーのエクスポート後、サイト間でキーを手動で交換する必要があります。  
+**/STOPSITE**: usare questa opzione nel server del sito locale per avviare un ciclo di arresto per il servizio Gestione componenti del sito di Configuration Manager, che reimposta parzialmente il sito. Quando questo ciclo di arresto viene eseguito, alcuni servizi di Configuration Manager nel server del sito e i relativi sistemi del sito remoti vengono arrestati. Questi servizi vengono contrassegnati per la reinstallazione. In seguito a questo ciclo di arresto, alcune password vengono modificate automaticamente quando i servizi vengono reinstallati.  
 
 > [!NOTE]  
->  公開キーを手動で交換した後で、サイト構成の変更やサイト情報の Active Directory ドメイン サービスへの発行が記録される **hman.log** ログ ファイルを親サイト サーバーで表示し、プライマリ サイトで新しい公開キーが処理されたことを確認できます。  
+>  Se si desidera visualizzare un record per l'arresto, la reinstallazione e le modifiche alle password per Gestione componenti del sito, attivare la registrazione per questo componente prima di utilizzare questa opzione della riga di comando.  
 
-#### <a name="to-manually-transfer-the-child-site-public-key-to-the-parent-site"></a>子サイトの公開キーを親サイトに手動で転送するには  
+Dopo essere stato avviato, il ciclo di arresto procede automaticamente, ignorando qualsiasi componente o computer che non risponde. Se tuttavia il servizio Gestione componenti del sito non è in grado di accedere a un sistema del sito remoto durante il ciclo di arresto, i componenti installati nel sistema del sito remoto vengono reinstallati quando il servizio Gestione componenti del sito viene riavviato. Quando viene riavviato, il servizio Gestione componenti del sito tenta ripetutamente di reinstallare tutti i servizi contrassegnati per la reinstallazione finché non completa l'operazione.  
 
-1.  子サイトにログオンしている状態で、コマンド プロンプトを開き、 **Preinst.exe**がある場所に移動します。  
+È possibile riavviare il servizio Gestione componenti del sito utilizzando Service Manager. Dopo il riavvio, tutti i servizi interessati vengono disinstallati, reinstallati e riavviati. Dopo aver utilizzato l'opzione /STOPSITE per avviare il ciclo di arresto, è impossibile evitare i cicli di reinstallazione dopo che il servizio Gestione componenti del sito viene riavviato.  
 
-2.  次のように入力して、子サイトの公開キーをエクスポートします。 **Preinst /keyforparent**  
+**/KEYFORPARENT**: usare questa opzione in un sito per distribuire la chiave pubblica del sito in un sito padre.  
 
-3.  /keyforparent オプションは、子サイトの公開キーをシステム ドライブのルートにある **&lt;site code\>.CT4** ファイルに保存します。  
+L'opzione /KEYFORPARENT posiziona la chiave pubblica del sito nel file &lt;*CodiceSito*>.CT4 alla radice dell'unità della cartella Programmi. Dopo aver eseguito preinst.exe con questa opzione, copiare manualmente il file &lt;*CodiceSito*>.CT4 nella cartella …\Inboxes\hman.box del sito padre (non hman.box\pubkey).  
 
-4.  **&lt;site code\>.CT4** ファイルを、親サイトの **&lt;インストール ディレクトリ\>\inboxes\hman.box** フォルダーに移動します。  
+**/KEYFORCHILD**: usare questa opzione in un sito per distribuire la chiave pubblica del sito in un sito figlio.  
 
-#### <a name="to-manually-transfer-the-parent-site-public-key-to-the-child-site"></a>親サイトの公開キーを子サイトに手動で転送するには  
+L'opzione /KEYFORCHILD posiziona la chiave pubblica del sito nel file &lt;*CodiceSito*>.CT5 alla radice dell'unità della cartella Programmi. Dopo aver eseguito preinst.exe con questa opzione, copiare manualmente il file &lt;*CodiceSito*>.CT5 nella cartella …\Inboxes\hman.box del sito figlio (non hman.box\pubkey).  
 
-1.  親サイトにログオンしている状態で、コマンド プロンプトを開き、 **Preinst.exe**がある場所に移動します。  
+**/CHILDKEYS**: è possibile usare questa opzione nei siti figlio di un sito in corso di ripristino. Utilizzare questa opzione per distribuire le chiavi pubbliche da più siti figlio nel sito in corso di ripristino.  
 
-2.  「**Preinst /keyforchild**」と入力して、親サイトの公開キーをエクスポートします。  
+L'opzione /CHILDKEYS posiziona la chiave del sito in cui viene eseguita l'opzione e tutte le chiavi pubbliche dei siti figlio di tale sito nel file &lt;*CodiceSito*>.CT6.  
 
-3.  /keyforchild オプションは、親サイトの公開キーをシステム ドライブのルートにある **&lt;site code\>.CT5** ファイルに保存します。  
+Dopo aver eseguito preinst.exe con questa opzione, copiare manualmente il file &lt;*CodiceSito*>.CT6 nella cartella …\Inboxes\hman.box del sito in corso di ripristino (non hman.box\pubkey).  
 
-4.  **&lt;site code\>.CT5** ファイルを、子サイトの **&lt;インストール ディレクトリ\>\inboxes\hman.box** ディレクトリに移動します。  
+**/PARENTKEYS**: è possibile usare questa opzione nel sito padre di cui si sta eseguendo il ripristino. Utilizzare questa opzione per distribuire le chiavi pubbliche da tutti i siti padre nel sito in corso di ripristino.  
+
+L'opzione /PARENTKEYS posiziona la chiave del sito in cui viene eseguita l'opzione e tutte le chiavi di ogni sito padre situato a un livello superiore rispetto a tale sito nel file&lt;CodiceSito\>.CT7.  
+
+Dopo aver eseguito preinst.exe con questa opzione, copiare manualmente il file &lt;*CodiceSito*>.CT7 nella cartella …\Inboxes\hman.box del sito in corso di ripristino (non hman.box\pubkey).  
+
+##  <a name="BKMK_ManuallyExchangeKeys"></a> Scambiare manualmente chiavi pubbliche tra siti  
+Per impostazione predefinita, l'opzione **Richiedi scambio di chiavi di sicurezza** è attivata per i siti di Configuration Manager. Quando è richiesto uno scambio di chiavi di sicurezza, ci sono due casi in cui è necessario eseguire manualmente lo scambio di chiavi iniziale tra siti:  
+
+-   Lo schema di Active Directory non è stato esteso per Configuration Manager  
+
+-   I siti di Configuration Manager non pubblicano i dati del sito in Active Directory  
+
+È possibile utilizzare lo strumento di manutenzione gerarchia per esportare le chiavi pubbliche per ogni sito. Dopo che sono state esportate, è necessario scambiare manualmente le chiavi tra i siti.  
+
+> [!NOTE]  
+>  Dopo che le chiavi pubbliche sono state scambiate manualmente, è possibile esaminare il file di log **hman.log** , che registra le modifiche di configurazione del sito e la pubblicazione delle informazioni sul sito in Servizi di dominio Active Directory nel server del sito padre, per assicurarsi che il sito primario abbia elaborato la nuova chiave pubblica.  
+
+#### <a name="to-manually-transfer-the-child-site-public-key-to-the-parent-site"></a>Per trasferire manualmente la chiave pubblica del sito figlio nel sito padre  
+
+1.  Durante la connessione al sito figlio, aprire un prompt dei comandi e passare alla posizione di **Preinst.exe**.  
+
+2.  Digitare quanto segue per esportare la chiave pubblica del sito figlio: **Preinst /keyforparent**  
+
+3.  L'opzione /keyforparent posiziona la chiave pubblica del sito figlio nel file **&lt;codice sito\>.CT4** situato alla radice dell'unità di sistema.  
+
+4.  Spostare il file **&lt;codice sito\>.CT4** nella **&lt;directory installazione\>\inboxes\hman.box** del sito padre.  
+
+#### <a name="to-manually-transfer-the-parent-site-public-key-to-the-child-site"></a>Per trasferire manualmente la chiave pubblica del sito padre nel sito figlio  
+
+1.  Durante la connessione al sito padre, aprire un prompt dei comandi e passare alla posizione di **Preinst.exe**.  
+
+2.  Digitare quanto segue per esportare la chiave pubblica del sito padre: **Preinst /keyforchild**.  
+
+3.  L'opzione /keyforchild posiziona la chiave pubblica del sito padre nel file **&lt;codice sito\>.CT5** alla radice dell'unità di sistema.  
+
+4.  Spostare il file **&lt;codice sito\>.CT5** nella **&lt;directory installazione\>\inboxes\hman.box** del sito figlio.  

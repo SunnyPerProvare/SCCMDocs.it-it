@@ -1,27 +1,25 @@
 ---
 title: Gestire le app iOS acquistate con Volume Purchase Program | Microsoft Docs
-description: Distribuire, gestire e tenere traccia delle licenze per le app acquistate tramite l&quot;App Store iOS.
+description: Distribuire, gestire e tenere traccia delle licenze per le app acquistate tramite l'App Store iOS.
 ms.custom: na
 ms.date: 05/12/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7c3b9316-247b-490b-a363-8f8553821579
-caps.latest.revision: 18
-caps.handback.revision: 0
+caps.latest.revision: "18"
+caps.handback.revision: "0"
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f4cb711f369698fe8e045f8c83dd96ec6fb29d70
 ms.openlocfilehash: ce706e938f558406044f7890c80bb7156c3b262b
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="manage-volume-purchased-ios-apps-with-system-center-configuration-manager"></a>Gestire le app iOS acquistate tramite Volume Purchase Program con System Center Configuration Manager
 
@@ -124,4 +122,3 @@ L'applicazione di Configuration Manager creata contiene l'app Windows Store per 
  Questo report visualizza il nome di ogni applicazione, insieme al numero totale di licenze acquistate, il numero di licenze disponibili e altri dati ancora.  
 
  Per informazioni sull'esecuzione dei report di Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
-

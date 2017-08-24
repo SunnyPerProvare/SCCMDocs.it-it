@@ -6,21 +6,19 @@ ms.date: 02/06/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c21eec87-ad1c-4465-8e45-5feb60b92707
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: HT
-ms.sourcegitcommit: 1035dbbf944a3a467d637a4a948a75b0946eb711
 ms.openlocfilehash: 026d61113a918e43ac4395ef092b1931f33f16d3
-ms.contentlocale: it-it
-ms.lasthandoff: 07/11/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager"></a>Aggiornare Windows alla versione più recente con System Center Configuration Manager
 
@@ -91,4 +89,3 @@ Questo argomento descrive i passaggi da eseguire in System Center Configuration 
 -   **Monitorare la distribuzione della sequenza di attività**  
 
      Per monitorare la distribuzione della sequenza di attività per l'aggiornamento del sistema operativo, vedere [Monitor operating system deployments](monitor-operating-system-deployments.md) (Monitorare le distribuzioni del sistema operativo).  
-

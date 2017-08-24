@@ -1,6 +1,6 @@
 ---
-title: "準備手順 | Microsoft Docs"
-description: "System Center Configuration Manager でのオンプレミス モバイル デバイス管理でデバイスの管理を準備します。"
+title: Passaggi di preparazione | Microsoft Docs
+description: Preparare la gestione dei dispositivi con la gestione dei dispositivi mobili locale in System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -17,29 +17,29 @@ manager: angrobe
 ms.openlocfilehash: 85bdadaaaeed9a42cfa5165d2b9f0f3ef434dc03
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="preparation-steps-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>System Center Configuration Manager でのオンプレミス モバイル デバイス管理の準備手順
+# <a name="preparation-steps-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Preparativi per la gestione dei dispositivi mobili (MDM) locale in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager オンプレミス モバイル デバイス管理でデバイスを管理するには、Configuration Manager インフラストラクチャをセットアップして、必要なサイト システムの役割 (登録プロキシ ポイント、登録ポイント、デバイス管理ポイント、および配布ポイント) が信頼されたチャネル経由で管理対象のモバイル デバイスと通信できるようにする必要があります。\-  
+La gestione di dispositivi con la gestione dei dispositivi mobili locale in System Center Configuration Manager richiede che l'infrastruttura di Configuration Manager sia impostata in modo che i ruoli di sistema necessari del sito (punto proxy di registrazione, punto di registrazione, punto di gestione dispositivi e punto di distribuzione) possano comunicare attraverso un canale affidabile con i dispositivi mobili da gestire.  
 
- オンプレミス モバイル デバイス管理用に Configuration Manager システムを準備するには、次の高度なタスクを実行する必要があります。\-  
+ Le attività seguenti di alto livello sono necessarie per preparare il sistema di Configuration Manager per la gestione dei dispositivi mobili locale:  
 
--   [System Center Configuration Manager でのオンプレミスのモバイル デバイス管理のための Microsoft Intune サブスクリプションをセットアップする](../../mdm/get-started/set-up-intune-subscription-on-premises-mdm.md)  
+-   [Impostare una sottoscrizione di Microsoft Intune per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/set-up-intune-subscription-on-premises-mdm.md)  
 
-     このタスクでは、Microsoft Intune にサインアップし、し、Configuration Manager コンソールで、サブスクリプションを Configuration Manager に追加します。 この手順はライセンス付与のためにのみ必要となっています。 Intune はデバイスの管理にも、管理情報の保存にも使用されません。 デバイスの調整と管理のすべては、オンプレミスの Configuration Manager インフラストラクチャを使用して組織の計画に沿って行われます。  
+     In questa attività, è necessario registrarsi a Microsoft Intune e aggiungere la sottoscrizione a Configuration Manager tramite la console di Configuration Manager. Questo passaggio è necessario solo per scopi correlati alla gestione delle licenze. Intune non viene usato per gestire i dispositivi o archiviare le informazioni di gestione. Tutte le attività di coordinamento e gestione dei dispositivi sono a carico dell'azienda che usa l'infrastruttura di Configuration Manager locale.  
 
--   [System Center Configuration Manager でのオンプレミス モバイル デバイス管理のサイト システムの役割のインストール](../../mdm/get-started/install-site-system-roles-for-on-premises-mdm.md)  
+-   [Installare i ruoli di sistema del sito per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/install-site-system-roles-for-on-premises-mdm.md)  
 
-     このタスクでは、オンプレミスの Configuration Manager インフラストラクチャによるデバイス管理に必要なサイト システムの役割をインストールして構成します。 オンプレミス モバイル デバイス管理には、登録プロキシ ポイント、登録ポイント、デバイス管理ポイント、および配布ポイントの各サイト システムの役割が最低限必要です。\-  
+     In questa attività si installano e configurano i ruoli di sistema del sito necessari per gestire i dispositivi con l'infrastruttura di Configuration Manager locale. La gestione dei dispositivi mobili locale richiede minimo i ruoli di sistema del sito del punto proxy di registrazione, del punto di registrazione, del punto di gestione dispositivo e del punto di distribuzione.  
 
--   [System Center Configuration Manager でのオンプレミスのモバイル デバイス管理のために信頼された通信用の証明書をセットアップする](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)  
+-   [Impostare i certificati per comunicazioni affidabili per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)  
 
-     このタスクでは、オンプレミスの Configuration Manager インフラストラクチャを構成して、管理対象のデバイスと、必要なサイト システムの役割をホストするサーバーとの間の信頼できる通信 (HTTPS) を許可します。  
+     In questa attività si configura l'infrastruttura di Configuration Manager locale per consentire comunicazioni attendibili (HTTPS) tra i dispositivi gestiti e i server che ospitano i ruoli di sistema del sito necessari.  
 
--   [System Center Configuration Manager でのオンプレミスのモバイル デバイス管理のデバイス登録の設定](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md)  
+-   [Impostare la registrazione dei dispositivi per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md)  
 
-     このタスクでは、ユーザーにコンピューターとデバイスの登録の許可を与えます。またデバイス (通常は、ドメインに参加していないデバイス) に信頼されたルート証明書をインストールして、サイト システム サーバーへの HTTPS 接続を許可します。  
+     In questa attività si concedono le autorizzazioni agli utenti per registrare computer e dispositivi e si installa il certificato radice attendibile nei dispositivi (in genere quelli non aggiunti al dominio) per consentire le connessioni HTTPS ai server del sistema del sito.  

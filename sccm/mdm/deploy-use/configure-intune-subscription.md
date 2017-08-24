@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager を使用した Intune サブスクリプションの構成 | Microsoft Docs"
-description: "System Center Configuration Manager を使用して Intune サブスクリプションを構成します。"
+title: Configurare la sottoscrizione di Intune tramite System Center Configuration Manager | Microsoft Docs
+description: Configurare la sottoscrizione di Intune tramite System Center Configuration Manager.
 ms.custom: na
 ms.date: 06/02/2017
 ms.prod: configuration-manager
@@ -18,66 +18,66 @@ manager: angrobe
 ms.openlocfilehash: 22d890c972d3166f9c7b583d8d3fa917c1897880
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="configure-your-intune-subscription-with-system-center-configuration-manager-and-microsoft-intune"></a>System Center Configuration Manager と Microsoft Intune を使用した Intune サブスクリプションの構成
+# <a name="configure-your-intune-subscription-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurare la sottoscrizione di Intune con System Center Configuration Manager e Microsoft Intune
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Intune サブスクリプションを使用すると、インターネット上でデバイスを管理できます。 たとえば、デバイスを登録できるユーザー コレクションを指定したり、ユーザーに表示される情報を定義したりすることができます。 Intune サブスクリプションを作成するときに、Intune の会社のポータルに会社のロゴや独自のカラー スキームを含めて、会社のブランドを追加できます。
+La sottoscrizione di Intune consente di gestire i dispositivi su Internet. Consente anche di specificare quale raccolta utenti può registrare i dispositivi e di definire le informazioni presentate agli utenti. Durante la creazione della sottoscrizione di Intune è anche possibile aggiungere il proprio marchio al portale aziendale Intune con il logo e gli schemi di colori personalizzati della società.
 
-Intune サブスクリプションは、次のことを実行します。
+La sottoscrizione di Intune esegue le operazioni seguenti:
 
--   Intune サービスに接続するためにサービス接続ポイントによって必要とされる証明書を取得します
--   ユーザーがモバイル デバイスを登録できるようにするユーザー コレクションを定義します
--   サポートするモバイル プラットフォームを定義して構成します
+-   Recupera il certificato necessario al punto di connessione del servizio per connettersi al servizio Intune
+-   Definisce la raccolta di utenti che consente agli utenti di registrare i dispositivi mobili
+-   Definisce e configura le piattaforme mobili da supportare
 
 > [!IMPORTANT]
->  Configuration Manager で Microsoft Intune のサブスクリプションを作成すると、サイトのサービス接続ポイントが「オンライン モード」になります。 「[System Center Configuration Manager のサービス接続ポイントについて](../../core/servers/deploy/configure/about-the-service-connection-point.md)」を参照してください。
+>  Quando si crea una sottoscrizione per Microsoft Intune in Configuration Manager, il punto di connessione del servizio del sito passerà in "modalità online". Vedere [Informazioni sul punto di connessione del servizio in System Center Configuration Manager](../../core/servers/deploy/configure/about-the-service-connection-point.md).
 
-## <a name="to-create-the-microsoft-intune-subscription"></a>Microsoft Intune サブスクリプションを作成するには
+## <a name="to-create-the-microsoft-intune-subscription"></a>Per creare la sottoscrizione a Microsoft Intune
 
-1.  まだであれば、[Microsoft Intune](http://go.microsoft.com/fwlink/?LinkID=258216) で Microsoft Intune アカウントにサインアップします。  Intune アカウントを作成した後は、ユーザーを Intune アカウントに追加したり、追加の設定を構成したりする必要はありません。
+1.  Se non è già stato fatto, creare un account di Microsoft Intune nel sito [Microsoft Intune](http://go.microsoft.com/fwlink/?LinkID=258216).  Dopo aver creato l'account di Intune, non sarà necessario aggiungere utenti per l'account di Intune o eseguire altre configurazioni.
 
-2.  Configuration Manager コンソールで、[ **管理**] をクリックします。
+2.  Nella console di Configuration Manager fare clic su **Amministrazione**.
 
-3.  **[管理]** ワークスペースで、 **[クラウド サービス]**を展開して **[Microsoft Intune サブスクリプション]**をクリックします。 **[ホーム]** タブで、 **[Microsoft Intune サブスクリプションの追加]**をクリックします。
+3.  Nell'area di lavoro **Amministrazione** espandere **Servizi cloud**e fare clic su **Sottoscrizioni a Microsoft Intune**. Nella scheda **Home** fare clic su **Aggiungi sottoscrizione a Microsoft Intune**.
 
-![Intune サブスクリプションを作成する](../media/mdm-set-intune.png)
+![Creare una sottoscrizione di Intune](../media/mdm-set-intune.png)
 
-4.  [Microsoft Intune サブスクリプションの作成] ウィザードの [ **概要** ] ページで、内容を確認して、[ **次へ**] をクリックします。
+4.  Nella pagina **Introduzione** della Creazione guidata di una sottoscrizione a Microsoft Intune verificare il testo e quindi fare clic su **Avanti**.
 
-5.  [ **サブスクリプション** ] ページで、[ **サインイン** ] をクリックし、職場または学校のアカウントを使用してサインインします。 **[モバイル デバイス管理機関の設定]** ダイアログで、チェック ボックスをオンにして、Configuration Manager コンソールから Configuration Manager を使用してのみモバイル デバイスを管理するようにします。 サブスクリプションを続行するには、このオプションを選択する必要があります。
+5.  Nella pagina **Sottoscrizione** fare clic su **Accedi** e accedere usando l'account aziendale o dell'istituto di istruzione. Nella finestra di dialogo **Impostare l'autorità di gestione dei dispositivi mobili** selezionare la casella di controllo per gestire solo i dispositivi mobili usando Configuration Manager mediante la console di Configuration Manager. Per continuare con la sottoscrizione, è necessario selezionare questa opzione.
 
     > [!IMPORTANT]
-    >  管理機関として Configuration Manager を選択すると、Configuration Manager バージョン 1610 以降の Microsoft Intune および Microsoft Intune バージョン 1705 でのみ、Microsoft サポートに問い合わせることや、既存の管理対象の登録解除と再登録を行うことなく、管理機関を変更できます。 詳細については、「[Change your MDM authority](/sccm/mdm/deploy-use/change-mdm-authority)」(MDM 機関を変更する) を参照してください。
+    >  Dopo aver selezionato Configuration Manager come autorità di gestione, è possibile cambiare l'autorità di gestione di Microsoft Intune senza dover contattare il supporto Microsoft e senza dover annullare e ripetere la registrazione dei dispositivi gestiti esistenti solo in Configuration Manager versione 1610 o versione successiva e Microsoft Intune versione 1705. Per altre informazioni, vedere [Cambiare l'autorità MDM](/sccm/mdm/deploy-use/change-mdm-authority).
 
-6.  プライバシー リンクを確認するには、リンクをクリックして、[次へ ****] をクリックします。
+6.  Fare clic sui collegamenti privacy per verificarli e quindi fare clic su **Avanti**.
 
-7.  [ **全般** ] ページで、以下のオプションを指定して [ **次へ**] をクリックします。
+7.  Nella pagina **Generale** specificare le seguenti opzioni e quindi fare clic su **Avanti**.
 
-  -   **コレクション**:モバイル デバイスを登録するユーザーが含まれるユーザー コレクションを指定します。
+  -   **Raccolta**: Specificare una raccolta utenti che contenga gli utenti che registreranno i dispositivi mobili.
 
       > [!NOTE]
-      >  コレクションからユーザーを削除すると、そのユーザーのデバイスは、ユーザー レコードがユーザー データベースから削除されるまで最長 24 時間管理されます。
+      >  Se un utente viene rimosso dalla raccolta, il dispositivo dell'utente continuerà a essere gestito per un massimo di 24 ore finché il record utente non verrà rimosso dal database utenti.
 
-  -   **会社名**: 会社の名前を指定します。
+  -   **Nome società**: specificare il nome della società.
 
-  -   **会社のプライバシー ドキュメントの URL**: 会社のプライバシー保護情報を、インターネットからアクセス可能な場所で公開する場合は、ユーザーが会社ポータルからアクセスできるように、そのリンクを指定します (たとえば http://www.contoso.com/CP_privacy.html)。 プライバシー情報を使用すると、ユーザーが企業と共有する情報を明確にすることができます。
+  -   **URL della documentazione sulla privacy**: se si pubblicano le informazioni sulla privacy della società in un collegamento accessibile da Internet, fornire un collegamento a cui gli utenti possano accedere dal portale aziendale, ad esempio http://www.contoso.com/CP_privacy.html. Le informazioni sulla privacy possono chiarire quali informazioni gli utenti condividono con la società.
 
-  -   **会社ポータルの配色**:オプションで、既定の色 (青) を会社ポータル向けに変更できます。
+  -   **Combinazione colori per portale società**: Facoltativamente, modificare il colore predefinito blu per i portali società.
 
-  -   **Configuration Manager サイト コード**:モバイル デバイスを管理するための、プライマリ サイトのサイト コードを指定します。
+  -   **Codice del sito Configuration Manager**: Specificare un codice del sito per un sito primario per gestire i dispositivi mobili.
 
     > [!NOTE]
-    >  サイト コードの変更は、新しいデバイスの登録だけに影響します。既に登録済みのデバイスのサイト コードは変わりません。
+    >  La modifica del codice del sito riguarda solo le nuove registrazioni e non i dispositivi registrati esistenti.
 
-8.  **[会社の連絡先情報]** ページで、ポータル サイト アプリの **[IT に連絡]** でユーザーに表示する会社の連絡先情報を指定します。 会社の連絡先情報を指定し、**[次へ]** をクリックします。
+8.  Nella pagina **Informazioni di contatto società** specificare le informazioni di contatto dell'azienda che vengono visualizzate nell'app Portale aziendale in **Contatta l'IT**. Specificare le informazioni di contatto dell'azienda e quindi fare clic su **Avanti**.
 
-9. **[会社のロゴ]** ページでは、ポータル サイトにロゴを表示するかどうかを選択し、**[次へ]**をクリックします。
+9. Nella pagina **Logo società** scegliere se visualizzare un logo nel portale aziendale e quindi fare clic su **Avanti**.
 
-10. ウィザードを完了します。
+10. Completare la procedura guidata.
 
 > [!div class="button"]
-[< 前のステップ](confirm-dns.md)  [次のステップ >](terms-and-conditions.md)
+[< Passaggio precedente](confirm-dns.md)  [Passaggio successivo >](terms-and-conditions.md)

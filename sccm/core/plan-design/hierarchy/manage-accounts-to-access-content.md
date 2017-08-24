@@ -1,26 +1,24 @@
 ---
-title: Account per l&quot;accesso al contenuto in System Center Configuration Manager | Documentazione Microsoft
+title: Account per l'accesso al contenuto in System Center Configuration Manager | Documentazione Microsoft
 description: Informazioni sugli account in cui i client accedono al contenuto di System Center Configuration Manager.
 ms.custom: na
 ms.date: 2/6/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a7df9d0f-fbde-47eb-97e7-3d29536424fa
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: e592a732259147ee71d404a68982c28e5138e243
 ms.openlocfilehash: 0e982d08d54af39b13f553fc531a200f921e94a6
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="manage-accounts-to-access-content-in-system-center-configuration-manager"></a>Gestire gli account per l'accesso al contenuto in System Center Configuration Manager
 
@@ -121,4 +119,3 @@ Durante la creazione, impostare questo account come account locale e con diritti
 
 > [!IMPORTANT]  
 >  Non concedere a questo account i diritti interattivi per l'accesso.  
-

@@ -1,6 +1,6 @@
 ---
-title: "Skype for Business Online のアクセスの管理 | Microsoft Docs"
-description: "条件付きアクセス ポリシーを使用して、Skype for Business Online へのアクセスを管理する方法について説明します。"
+title: Gestire l'accesso a Skype for Business Online | Microsoft Docs
+description: Informazioni su come usare i criteri di accesso condizionale per gestire l'accesso a Skype for Business Online.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -17,96 +17,96 @@ manager: angrobe
 ms.openlocfilehash: cacb22a85e74a7d9cae75ad907d0206487cd4dc7
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-skype-for-business-online-access"></a>Skype for Business Online のアクセスの管理
+# <a name="manage-skype-for-business-online-access"></a>Gestire l'accesso a Skype for Business Online
 
-*適用対象: System Center Configuration Manager (Current Branch)*
-
-
-**Skype for Business Online** の条件付きアクセス ポリシーを使用して、Skype for Business Online へのアクセスを指定条件に基づいて管理します。  
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
- 対象ユーザーが各自のデバイスで Skype for Business Online を使用しようとすると、次の評価が行われます。![ConditionalAccess&#95;SFBFlow](media/ConditionalAccess_SFBFlow.png)  
+Usare i criteri di accesso condizionale per  **Skype for Business Online** per gestire l'accesso a Skype for Business Online in base alle condizioni specificate.  
 
-## <a name="prerequisites"></a>必要条件  
 
--   Skype for Business Online の先進認証を有効にします。 この [接続フォーム](https://connect.microsoft.com/office/Survey/NominationSurvey.aspx?SurveyID=17299&ProgramID=8715) に必要事項を記入して、最新の認証プログラムに登録します。  
+ Quando un utente di destinazione prova a usare Skype for Business Online nel proprio dispositivo, vengono effettuate le valutazioni seguenti:![ConditionalAccess&#95;SFBFlow](media/ConditionalAccess_SFBFlow.png)  
 
--   すべてのエンドユーザーが Skype for Business Online を使用している必要があります。 Skype for Business Online と Skype for Business オンプレミスの両方が含まれている展開の場合は、条件付きアクセス ポリシーはエンドユーザーに適用されません。  
+## <a name="prerequisites"></a>Prerequisiti  
 
--   Skype for Business Online へのアクセスを必要とするデバイスは次の条件を満たしている必要があります。  
+-   Abilitare l'autenticazione moderna per Skype for Business Online. Compilare il [modulo di connessione](https://connect.microsoft.com/office/Survey/NominationSurvey.aspx?SurveyID=17299&ProgramID=8715) per effettuare la registrazione nel programma di autenticazione moderna.  
 
-    -   Android または iOS デバイスである。  
+-   Tutti gli utenti finali devono usare Skype for Business Online. Se si ha una distribuzione con Skype for Business Online e Skype for Business locale, i criteri di accesso condizionale non verranno applicati agli utenti finali.  
 
-    -   Intune に登録されている。  
+-   Il dispositivo che ha bisogno di accedere a Skype for Business Online deve:  
 
-    -   展開されているすべての Intune コンプライアンス ポリシーに準拠している。  
+    -   Essere un dispositivo Android o iOS.  
 
- デバイスの状態は、Azure Active Directory に格納され、指定した条件に基づいてアクセスが許可されたりブロックされたりします。  
-条件が満たされない場合、ユーザーにはログイン時に以下のうちのいずれかのメッセージが表示されます。  
+    -   Essere registrato con Intune.  
 
--   デバイスが Intune または Azure Active Directory に登録されていない場合は、会社ポータルのアプリをインストールおよび登録する手順を含むメッセージが表示されます。  
+    -   Essere compatibile con i criteri di compatibilità di Intune distribuiti.  
 
--   デバイスが準拠していない場合は、Intune の会社ポータル Web サイトまたは会社ポータルのアプリにユーザーを誘導するメッセージが表示されます。このポータルで、ユーザーは問題とその解決方法に関する情報を確認できます。  
+ Lo stato del dispositivo viene archiviato in Azure Active Directory che consente o blocca l'accesso, in base alle condizioni specificate.  
+Se non viene soddisfatta una condizione, viene visualizzato uno dei due messaggi seguenti quando l'utente esegue l'accesso:  
 
-## <a name="configure-conditional-access-for-skype-for-business-online"></a>Skype for Business Online の条件付きアクセスの構成  
+-   Se il dispositivo non è registrato con Intune oppure non è registrato in Azure Active Directory, viene visualizzato un messaggio contenente le istruzioni su come installare l'app Portale aziendale ed eseguire la registrazione.  
 
-### <a name="step-1-configure-active-directory-security-groups"></a>手順 1. Active Directory セキュリティ グループを構成する  
- 開始する前に、条件付きアクセス ポリシーの Azure Active Directory セキュリティ グループを構成します。 Office 365 管理センターでこれらのグループを構成できます。 これらのグループには、ポリシーの対象となるユーザーや、ポリシーから除外されるユーザーが含まれます。 ユーザーがポリシーの対象となる場合、ユーザーに使用される各デバイスがリソースにアクセスするには、ポリシーを遵守している必要があります。  
+-   Se il dispositivo non è conforme, viene visualizzato un messaggio che indirizza l'utente al sito Web del portale aziendale di Intune o all'app Portale aziendale dove sono disponibili informazioni sul problema e su come risolverlo.  
 
- Skype for Business ポリシーに適用する 2 つのグループの種類を指定できます。  
+## <a name="configure-conditional-access-for-skype-for-business-online"></a>Configurare l'accesso condizionale per Skype for Business Online  
 
--   対象グループ – ポリシーを適用するユーザーのグループが含まれます。  
+### <a name="step-1-configure-active-directory-security-groups"></a>Passaggio 1: Configurare i gruppi di sicurezza di Active Directory  
+ Prima di iniziare configurare i gruppi di sicurezza di Azure Active Directory per i criteri di accesso condizionale. È possibile configurare questi gruppi nel centro di amministrazione di Office 365. Questi gruppi contengono gli utenti a cui saranno destinati i criteri o che ne saranno esenti. Per poter accedere alle risorse, un utente di destinazione in un criterio deve usare solo dispositivi conformi.  
 
--   例外グループ – ポリシーから除外されるユーザーのグループが含まれます (省略可能)。  
-    ユーザーが両方のグループに含まれている場合は、ポリシーから除外されます。  
+ È possibile specificare due tipi di gruppo da usare per i criteri di Skype for Business Online:  
 
-### <a name="step-2-configure-and-deploy-a-compliance-policy"></a>手順 2:コンプライアンス ポリシーを構成し展開する  
- コンプライアンス ポリシーを作成して、Skype for Business Online ポリシーの対象となるすべてのデバイスに展開します。  
+-   Gruppi di destinazione: contiene i gruppi di utenti per i quali si applicano i criteri  
 
- コンプライアンス ポリシーを構成する方法の詳細については、「[System Center Configuration Manager でのデバイス コンプライアンス ポリシーの管理](../../protect/deploy-use/device-compliance-policies.md)」を参照してください。  
+-   Gruppi esentati: contiene i gruppi di utenti che sono esentati dai criteri (facoltativo)  
+    Se un utente si trova in entrambi i gruppi, sarà esentato dai criteri.  
+
+### <a name="step-2-configure-and-deploy-a-compliance-policy"></a>Passaggio 2: Configurare e distribuire i criteri di conformità  
+ Assicurarsi di creare e distribuire i criteri di conformità in tutti i dispositivi a cui saranno destinati i criteri di Skype for Business Online.  
+
+ Per informazioni dettagliate su come configurare i criteri di conformità, vedere [Gestire i criteri di conformità del dispositivo in System Center Configuration Manager](../../protect/deploy-use/device-compliance-policies.md).  
 
 > [!NOTE]  
->  コンプライアンス ポリシーを展開していない場合に Skype for Business Online ポリシーを有効にすると、Intune に登録されているすべての対象デバイスにアクセスが許可されます。  
+>  Se non sono stati distribuiti criteri di conformità e non sono stati abilitati i criteri di Skype for Business Online, l'accesso sarà consentito a tutti i dispositivi di destinazione se sono registrati in Intune.  
 
- 準備ができたら、手順 3 に進みます。  
+ Quando si è pronti, continuare con il Passaggio 3.  
 
-### <a name="step-3-configure-the-skype-for-business-online-policy"></a>手順 3: Skype for Business Online ポリシーを構成する  
- 次に、管理対象の準拠デバイスのみが Skype for Business Online にアクセスできるようにポリシーを構成します。 このポリシーは、Azure Active Directory に格納されます。  
+### <a name="step-3-configure-the-skype-for-business-online-policy"></a>Passaggio 3: Configurare i criteri di Skype for Business Online  
+ A questo punto, configurare i criteri in modo che solo i dispositivi gestiti e conformi possano accedere a Skype for Business Online. Questi criteri verranno archiviati in Azure Active Directory.  
 
-1.  [Microsoft Intune 管理コンソール](https://manage.microsoft.com)で、 **[ポリシー]** > **[条件付きアクセス]** > **Skype for Business Online [ポリシー]**」を参照してください。  
+1.  Nella [console di amministrazione di Microsoft Intune](https://manage.microsoft.com) fare clic su **Criteri** > **Accesso condizionale** > **Criteri di Skype for Business Online**.  
 
      ![ConditionalAccess&#95;SFBPolicy](media/ConditionalAccess_SFBPolicy.png)  
 
-2.  **[条件付きアクセス ポリシーを有効にする]** を選択します。  
+2.  Selezionare **Abilitare i criteri di accesso condizionale**.  
 
-3.  **[アプリケーション アクセス]**で、条件付きアクセス ポリシーの適用対象を次の中から選択できます。  
+3.  In **Accesso all'applicazione**è possibile scegliere di applicare i criteri di accesso condizionale a:  
 
     -   iOS  
 
     -   Android  
 
-4.  **[対象グループ]**で、 **[変更]** をクリックして、ポリシーを適用する Azure Active Directory セキュリティ グループを選択します。 すべてのユーザーを対象にすることも、選んだユーザー グループのみを対象にすることもできます。  
+4.  In **Gruppi di destinazione**fare clic su **Modifica** per selezionare i gruppi di sicurezza di Azure Active Directory ai quali verranno applicati i criteri. È possibile scegliere applicare questa opzione a tutti gli utenti o solo a un gruppo selezionato di utenti.  
 
-5.  **[例外グループ]**で、必要に応じて **[変更]** をクリックして、このポリシーから除外する Azure Active Directory セキュリティ グループを選択します。  
+5.  Facoltativamente, in **Gruppi esentati**fare clic su **Modifica** per selezionare i gruppi di sicurezza di Azure Active Directory esentati da questi criteri.  
 
-6.  終了したら、 **[保存]**をクリックします。  
+6.  Al termine, fare clic su **Salva**.  
 
- これで Skype for Business Online の条件付きアクセスの構成が完了します。 条件付きアクセス ポリシーを展開する必要はありません。直ちに有効になります。  
+ È stato configurato l'accesso condizionale per Skype for Business Online. Non è necessario distribuire i criteri di accesso condizionale perché diventano immediatamente effettivi.  
 
-## <a name="monitor-the-compliance-and-conditional-access-policies"></a>コンプライアンスと条件付きアクセス ポリシーを監視する  
- [グループ] ワークスペースで、デバイスの条件付きアクセスの状態を表示できます。  
+## <a name="monitor-the-compliance-and-conditional-access-policies"></a>Monitorare i criteri di conformità e di accesso condizionale  
+ Nell'area di lavoro Gruppi è possibile visualizzare lo stato dell'accesso condizionale per i dispositivi.  
 
- モバイル デバイス グループを選択し、 **[デバイス]** タブで、次の **[フィルター]**のいずれかを選択します。  
+ Selezionare un gruppo qualsiasi di dispositivi mobili e quindi nella scheda **Dispositivi** selezionare uno dei **Filtri**seguenti:  
 
--   **AAD に登録されていないデバイス** – これらのデバイスは Skype for Business Online からブロックされます。  
+-   **Dispositivi non registrati con AAD**: questi dispositivi non possono accedere a Skype for Business Online.  
 
--   **準拠していないデバイス** – これらのデバイスは Skype for Business Online からブロックされます。  
+-   **Dispositivi non conformi**: questi dispositivi non possono accedere a Skype for Business Online.  
 
--   **AAD に登録され、準拠しているデバイス** – これらのデバイスは、Skype for Business Online にアクセスできます。  
+-   **Dispositivi conformi e registrati con AAD**: questi dispositivi possono accedere a Skype for Business Online.  
 
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>Vedere anche  
 
- [System Center Configuration Manager でのデバイス コンプライアンス ポリシーの管理](../../protect/deploy-use/device-compliance-policies.md)
+ [Gestire i criteri di conformità del dispositivo in System Center Configuration Manager](../../protect/deploy-use/device-compliance-policies.md)

@@ -1,6 +1,6 @@
 ---
-title: "ソース階層の戦略 | Microsoft Docs"
-description: "System Center Configuration Manager の移行ジョブを構成する前に、ソース階層を構成し、ソース サイトからデータを収集します。"
+title: Strategia per la gerarchia di origine | Microsoft Docs
+description: Configurare una gerarchia di origine e raccogliere i dati da un sito di origine prima di configurare un processo di migrazione di System Center Configuration Manager.
 ms.custom: na
 ms.date: 1/3/2017
 ms.prod: configuration-manager
@@ -18,91 +18,91 @@ manager: angrobe
 ms.openlocfilehash: 0619de32f859f512ee1c9f5a9c83ef8d04a256ca
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-a-source-hierarchy-strategy-in-system-center-configuration-manager"></a>System Center Configuration Manager でのソース階層戦略の計画
+# <a name="plan-a-source-hierarchy-strategy-in-system-center-configuration-manager"></a>Pianificare una strategia per la gerarchia di origine in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager 環境で移行ジョブを設定する前に、ソース階層を構成し、ソース階層内の少なくとも 1 つのソース サイトからデータを収集する必要があります。 ここでは、ソース階層の構成、ソース サイトの構成、および Configuration Manager でソース階層内のソース サイトからデータを収集する方法を決めるときに役立つ情報について説明します。 
+Prima di configurare un processo di migrazione nell'ambiente di System Center Configuration Manager, è necessario configurare una gerarchia di origine e raccogliere i dati da almeno un sito di origine di tale gerarchia. Usare le sezioni seguenti per pianificare la configurazione delle gerarchie di origine, configurare i siti di origine e determinare come Configuration Manager raccoglie le informazioni dai siti di origine nella gerarchia di origine. 
 
-##  <a name="BKMK_Source_Hierarchies"></a> ソース階層  
-ソース階層とは、移行するデータを含む Configuration Manager 階層です。 移行を設定し、ソース階層を指定するときは、そのソース階層の最上位サイトを指定します。 このサイトはソース サイトとも呼ばれます。 ソース階層からデータを移行できる追加サイトも、ソース サイトと呼ばれます。  
+##  <a name="BKMK_Source_Hierarchies"></a> Gerarchie di origine  
+Una gerarchia di origine è una gerarchia di Configuration Manager che contiene i dati di cui si vuole eseguire la migrazione. Quando si configura la migrazione e si specifica una gerarchia di origine, specificare il sito di livello superiore della gerarchia di origine. Tale sito viene anche denominato sito di origine. Anche i siti aggiuntivi da cui è possibile migrare dati dalla gerarchia di origine vengono denominati siti di origine.  
 
--   Configuration Manager 2007 ソース階層からデータを移行する移行ジョブを設定する場合、ソース階層の 1 つまたは複数の特定のソース サイトからデータを移行するように構成します。  
+-   Quando si configura un processo di migrazione per la migrazione dei dati da una gerarchia di origine di Configuration Manager 2007, tale processo viene configurato per eseguire la migrazione dei dati da uno o più siti di origine specifici nella gerarchia di origine.  
 
--   System Center 2012 Configuration Manager 以降を実行するソース階層からデータを移行する移行ジョブを設定する場合、最上位サイトを指定するだけで済みます。  
+-   Quando si configura un processo per la migrazione dei dati da una gerarchia di origine che esegue System Center 2012 Configuration Manager o versione successiva, è sufficiente specificare solo il sito principale.  
 
-一度に設定できるソース階層は 1 つのみです。  
+È possibile configurare una sola gerarchia di origine alla volta.  
 
--   新しいソース階層を設定すると、その階層が自動的に現在のソース階層になり、以前のソース階層が置き換えられます。  
+-   Se si configura una nuova gerarchia di origine, quest'ultima diventa automaticamente la gerarchia di origine corrente sostituendo la gerarchia di origine precedente.  
 
--   ソース階層を設定するには、ソース階層の最上位サイトを指定し、ソース サイトの SMS プロバイダーとサイト データベースへの接続に使用する Configuration Manager の資格情報を指定する必要があります。  
+-   Quando si configura una gerarchia di origine, è necessario specificare il sito principale della gerarchia di origine e specificare le credenziali per Configuration Manager da usare per connettersi al provider SMS e al database del sito di origine.  
 
--   Configuration Manager では、これらの資格情報を使用してデータ収集を実行し、ソース サイトからオブジェクトと配布ポイントに関する情報を取得します。  
+-   Configuration Manager usa queste credenziali per eseguire una raccolta dati per recuperare le informazioni sugli oggetti e sui punti di distribuzione dal sito di origine.  
 
--   データ収集処理の一環として、ソース階層の子サイトが識別されます。  
+-   Come parte del processo di raccolta dati, vengono individuati i siti figlio presenti nella gerarchia di origine.  
 
--   ソース階層が Configuration Manager 2007 階層の場合、各ソース サイト用の個別の資格情報を使用して、これらの追加サイトをソース サイトとして設定できます。  
+-   Se la gerarchia di origine è una gerarchia di Configuration Manager 2007, è possibile configurare tali siti aggiuntivi come siti di origine, con credenziali diverse per ogni sito di origine.  
 
-複数のソース階層を連続して設定できますが、一度の移行でアクティブになるのは 1 つのソース階層のみです。  
+Anche se è possibile configurare più gerarchie di origine, la migrazione è attiva per una sola gerarchia di origine alla volta.  
 
--   現在のソース階層からの移行を完了する前に、追加のソース階層を設定すると、Configuration Manager によってアクティブな移行ジョブはすべて取り消され、現在のソース階層に関するスケジュール済みの移行ジョブはすべて延期されます。  
+-   Se si configura una gerarchia di origine aggiuntiva prima di completare la migrazione dalla gerarchia di origine corrente, Configuration Manager annulla tutti i processi di migrazione attivi e posticipa tutti i processi di migrazione pianificati per la gerarchia di origine corrente.  
 
--   これで、新しく構成されたソース階層が現在のソース階層になり、元のソース階層は非アクティブになりました。  
+-   La gerarchia di origine appena configurata diventa quindi la gerarchia di origine corrente e la gerarchia originale viene disattivata.  
 
--   続いて、新しいソース階層の接続資格情報、追加のソース サイト、移行ジョブを設定できます。  
+-   È quindi possibile configurare le credenziali di connessione, i siti di origine aggiuntivi e i processi di migrazione per la nuova gerarchia di origine.  
 
-**[移行データのクリーン アップ]** を使用したことがない状態で、非アクティブなソース階層を復元した場合、そのソース階層で以前に構成した移行ジョブを表示することができます。 ただし、その階層から移行を続行する前に、階層内の対応するソース サイトに接続できる資格情報を再構成し、完了しなかった移行ジョブを再スケジュールする必要があります。  
+Se si ripristina una gerarchia di origine inattiva e non si è usato **Pulisci dati migrazione**, è possibile visualizzare i processi di migrazione configurati prima per tale gerarchia di origine. Tuttavia, prima di poter proseguire con la migrazione da tale gerarchia, è necessario riconfigurare le credenziali per la connessione ai siti di origine applicabili nella gerarchia e quindi pianificare nuovamente eventuali processi di migrazione non completati.  
 
 > [!CAUTION]  
->  複数のソース階層からデータを移行する場合、各追加ソース階層に固有のサイト コード セットを含める必要があります。  
+>  Se la migrazione di dati viene eseguita da più di una gerarchia di origine, è necessario che ogni gerarchia di origine aggiuntiva contenga un insieme univoco di codici del sito.  
 
-ソース階層の構成の詳細については、「[System Center Configuration Manager に移行するためのソース階層とソース サイトの構成](../../core/migration/configuring-source-hierarchies-and-source-sites-for-migration.md)」をご覧ください。  
+Per altre informazioni sulla configurazione di una gerarchia di origine, vedere [Configurazione di gerarchie di origine e siti di origine per la migrazione in System Center Configuration Manager](../../core/migration/configuring-source-hierarchies-and-source-sites-for-migration.md).  
 
-##  <a name="BKMK_Source_Sites"></a> ソース サイト  
- ソース サイトとは、移行するデータが格納されているソース階層内のサイトです。 ソース階層の最上位サイトは、常に最初のソース サイトとなります。 移行処理で新しいソース階層の最初のソース サイトからデータを収集すると、その階層内のその他のサイトに関する情報が検出されます。  
+##  <a name="BKMK_Source_Sites"></a> Siti di origine  
+ I siti di origine sono i siti nella gerarchia di origine che contengono i dati da migrare. Il sito di livello superiore della gerarchia di origine è sempre il primo sito di origine. Quando la migrazione raccoglie i dati dal primo sito di origine di una nuova gerarchia di origine, individua le informazioni sui siti aggiuntivi presenti in tale gerarchia.  
 
- 最初のソース サイトでデータの収集が完了した後に実行する操作は、ソース階層の製品バージョンによって異なります。  
+ Al termine della raccolta dati per il sito di origine iniziale, le azioni da intraprendere in seguito dipendono dalla versione del prodotto della gerarchia di origine.  
 
-### <a name="source-sites-that-run-configuration-manager-2007-sp2"></a>Configuration Manager 2007 SP2 を実行するソース サイト  
- Configuration Manager 2007 SP2 階層の最初のソース サイトからデータを収集したら、移行ジョブを作成する前に追加ソース サイトを設定する必要はありません。 ただし、追加サイトからデータを移行する前に、追加サイトをソース サイトとして設定する必要があります。また、System Center Configuration Manager がそれらのサイトからデータを正常に収集する必要があります。  
+### <a name="source-sites-that-run-configuration-manager-2007-sp2"></a>Siti di origine che eseguono Configuration Manager 2007 SP2  
+ Dopo aver raccolto i dati dal sito di origine iniziale della gerarchia di Configuration Manager 2007 SP2, non è necessario configurare i siti di origine aggiuntivi prima di creare i processi di migrazione. Prima di poter eseguire la migrazione dei dati dai siti aggiuntivi, è necessario configurare i siti aggiuntivi come siti di origine e System Center Configuration Manager deve completare la raccolta dati da tali siti.  
 
- 追加サイトからデータを収集するには、各サイトをソース サイトとして個別に設定します。 この場合、各ソース サイトの SMS プロバイダーとサイト データに接続できる System Center Configuration Manager の資格情報を指定する必要があります。 ソース サイトの資格情報を設定すると、そのサイトのデータ収集プロセスが開始されます。  
+ Per raccogliere dati da siti aggiuntivi, configurare singolarmente ogni sito come sito di origine. Per eseguire questa operazione è necessario specificare le credenziali per System Center Configuration Manager per la connessione al database del sito e al provider SMS di ogni sito di origine. Dopo aver configurato le credenziali per un sito di origine, viene avviato il processo di raccolta dati per tale sito.  
 
- Configuration Manager 2007 SP2 ソース階層で追加ソース サイトを設定するときは、上から順番にソース サイトを設定し、最後に最下位のサイトを設定します。 いつでも階層のいずれかの分岐でソース サイトを設定できますが、子サイトをソース サイトとして設定するには、先にその親サイトをソース サイトとして設定する必要があります。  
-
-> [!NOTE]  
->  Configuration Manager 2007 SP2 階層内のプライマリ サイトのみが移行対象としてサポートされます。  
-
-### <a name="source-sites-that-run-system-center-2012-configuration-manager-or-later"></a>System Center 2012 Configuration Manager 以降を実行しているソース サイト  
- System Center 2012 Configuration Manager 以降の階層の最初のソース サイトからデータを収集した後、そのソース階層から追加のソース サイトを設定する必要はありません。 これは、Configuration Manager 2007 と異なり、Configuration Manager のこれらのバージョンが共有データベースを使用するためです。共有データベースによって、最初のソース サイトから使用できるすべてのオブジェクトを識別し、移行することができます。  
-
- データを収集するためのアクセス アカウントを設定する場合、必要に応じて、**ソース サイトの SMS プロバイダー アカウント** アクセス権を、ソース階層内の複数のコンピューターに付与します。 ソース サイトが各コンピューターで SMS プロバイダーの複数のインスタンスをサポートしている場合に、この操作が必要になることがあります。 データ収集が始まると、移行先階層の最上位サイトはソース階層内の最上位サイトに接続し、そのサイトの SMS プロバイダーの場所を識別します。 SMS プロバイダーの最初のインスタンスのみが識別されます。 データ収集プロセスで、識別された場所の SMS プロバイダーにアクセスできない場合、プロセスは失敗し、そのサイトで SMS プロバイダーのインスタンスを実行する他のコンピューターには接続を試行しません。  
-
-##  <a name="BKMK_Data_Gathering"></a> データ収集  
- ソース階層を指定する操作、ソース階層内の各追加ソース サイトの資格情報を設定する操作、またはソース サイトの配布ポイントを共有する操作を行うと、Configuration Manager でソース サイトからのデータ収集が直ちに開始されます。  
-
- その後、データ収集プロセスは単純なスケジュールを繰り返し、ソース サイト内で変更されたデータを継続的に同期します。 既定では、このプロセスは 4 時間ごとに繰り返し実行されます。 このスケジュールを変更するには、ソース サイトの **[プロパティ]** を編集します。 初期のデータ収集プロセスでは、Configuration Manager データベース内のオブジェクトをすべて確認する必要があるため、時間がかかることがあります。 後続するデータ収集プロセスではデータの変更のみが識別されるため、所要時間は短くなります。  
-
- データを収集するために、移行先階層の最上位サイトは SMS プロバイダーとソース サイトのサイト データベースに接続し、オブジェクトと配布ポイントのリストを取得します。 これらの接続はソース サイト アクセス アカウントを使用します。 データ収集に必要な構成の詳細については、「 [Prerequisites for migration in System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md)」(System Center Configuration Manager の移行のための前提条件) を参照してください。  
-
- Configuration Manager コンソールで **[今すぐデータ収集]** および **[データ収集の停止]** を使用して、データ収集プロセスの開始と停止を行うことができます。  
-
- 何らかの理由でソース サイトの **[データ収集の停止]** を使用した後に、そのサイトから再びデータを収集する場合は、そのサイトの資格情報を再構成する必要があります。 ソース サイトを再構成するまでは、そのサイトの新規オブジェクトや以前に移行済みのオブジェクトに加えられた変更を Configuration Manager で識別することはできません。  
+ Quando si configurano i siti di origine aggiuntivi in una gerarchia di origine di Configuration Manager 2007 SP2, è necessario configurare i siti di origine dall'alto verso il basso, ovvero configurare per ultimi i siti di livello inferiore. È possibile configurare i siti di origine in un ramo della gerarchia in qualsiasi momento, ma è necessario configurare un sito come sito di origine prima di configurare eventuali siti figlio come siti di origine.  
 
 > [!NOTE]  
->  スタンドアロンのプライマリ サイトを中央管理サイトがある階層に拡張するには、あらかじめすべてのデータ収集を停止する必要があります。 サイトの拡張が完了したら、データ収集を再構成できます。  
+>  Solo i siti primari in una gerarchia di Configuration Manager 2007 SP2 sono supportati per la migrazione.  
 
-### <a name="gather-data-now"></a>コンソールで   
- サイトの初期データの収集プロセスの実行後、このプロセスが繰り返し実行され、前回のデータ収集時以降に更新されたオブジェクトを識別します。 Configuration Manager コンソールで [**今すぐデータ収集** ] アクションを使用して、プロセスをすぐに開始し、次のサイクルの開始時刻をリセットすることもできます。  
+### <a name="source-sites-that-run-system-center-2012-configuration-manager-or-later"></a>Siti di origine che eseguono System Center 2012 Configuration Manager o versioni successive  
+ Dopo aver raccolto i dati dal sito di origine iniziale della gerarchia di System Center 2012 Configuration Manager o versione successiva, non è necessario configurare siti di origine aggiuntivi in tale gerarchia di origine. Questo è possibile perché, a differenza di Configuration Manager 2007, le versioni di Configuration Manager usano un database condiviso che consente di identificare ed eseguire la migrazione di tutti gli oggetti disponibili dal sito di origine iniziale.  
 
- ソース サイトのデータ収集プロセスが正常に完了したら、そのソース サイトの配布ポイントを共有して、サイトのデータを移行する移行ジョブを構成できます。 データ収集は繰り返して実行される移行プロセスで、ソース階層を変更するか、**[データ収集の停止]** を使用してサイトのデータ収集プロセスを終了するまで継続されます。  
+ Quando si configurano gli account di accesso per la raccolta dati, potrebbe essere necessario garantire l'accesso **Account del provider SMS del sito di origine** per più computer nella gerarchia di origine. Potrebbe essere necessario, ad esempio, quando il sito di origine supporta più istanze del provider SMS, ognuna in un computer diverso. Quando la raccolta dati viene avviata, il sito di livello superiore della gerarchia di origine viene contattato dal sito di livello superiore della gerarchia di destinazione per individuare i percorsi del provider SMS per tale sito. Viene individuata solo la prima istanza del provider SMS. Se il processo di raccolta dati non riesce ad accedere al provider SMS nel percorso individuato, il processo non verrà completato e non tenterà di connettersi a computer aggiuntivi che eseguono un'istanza del provider SMS per tale sito.  
 
-### <a name="stop-gathering-data"></a>] および [  
- Configuration Manager がサイトから新規または変更オブジェクトを識別する必要がなくなったら、**[データ収集の停止]** を使用して、ソース サイトのデータ収集プロセスを終了できます。 データ収集を停止すると、Configuration Manager は、移行済みコンテンツの場所として、そのソース階層の共有配布ポイントを移行先階層のクライアントに提示しなくなります。  
+##  <a name="BKMK_Data_Gathering"></a> Raccolta dati  
+ Subito dopo aver specificato una gerarchia di origine, aver configurato le credenziali per ogni sito di origine aggiuntivo in una gerarchia di origine oppure aver condiviso i punti di distribuzione per un sito di origine, Configuration Manager avvia la raccolta dati dal sito di origine.  
 
- 各ソース サイトからのデータ収集を停止するには、最下位のソースサイトで **[データ収集の停止]** を実行してから、親サイトごとにそのプロセスを繰り返し実行する必要があります。 ソース階層の最上位サイトは、データ収集を停止する最後のサイトにする必要があります。 親サイトでデータ収集の停止操作を実行する前に、各子サイトでデータ収集を停止する必要があります。 通常、移行処理を完了する準備ができた時点でデータ収集を停止します。  
+ Il processo di raccolta dati quindi viene ripetuto in una pianificazione semplice per mantenere la sincronizzazione con eventuali modifiche apportate ai dati nel sito di origine. Per impostazione predefinita, il processo viene ripetuto ogni quattro ore. È possibile modificare la pianificazione di questo ciclo modificando le **Proprietà** del sito di origine. Il processo di raccolta dati iniziale deve esaminare tutti gli oggetti nel database di Configuration Manager e il completamento di questa operazione potrebbe richiedere diverso tempo. I processi di raccolta dati successivi individuano solo le modifiche apportate ai dati e richiedono meno tempo.  
 
- ソース サイトのデータ収集の停止後も、オブジェクトとコレクションに関してそのサイトから収集済みの情報は、新しい移行ジョブの設定時に引き続き使用可能な状態のままになります。 ただし、新しいオブジェクトやコレクションは表示されず、既存のオブジェクトに加えられた変更も表示されません。 ソース サイトを再構成してデータ収集を再び開始すると、以前に移行済みのオブジェクトに関する情報とステータスが表示されます。  
+ Per raccogliere i dati, il sito di livello superiore nella gerarchia di destinazione si connette al provider SMS e al database del sito del sito di origine per recuperare un elenco di oggetti e punti di distribuzione. Queste connessioni utilizzano gli account di accesso del sito di origine. Per informazioni sulle configurazioni necessarie per la raccolta dati, vedere [Prerequisiti per la migrazione in System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md).  
+
+ È possibile avviare e interrompere il processo di raccolta dati usando **Raccogli dati adesso**e **Interrompi raccolta dati** nella console di Configuration Manager.  
+
+ Dopo aver usato **Interrompi raccolta dati** per un sito di origine per qualsiasi motivo, è necessario riconfigurare le credenziali per il sito prima di poter raccogliere nuovamente i dati da tale sito. Finché il sito di origine non viene riconfigurato, Configuration Manager non è in grado di individuare nuovi oggetti o modifiche agli oggetti migrati in precedenza in quel sito.  
+
+> [!NOTE]  
+>  Prima di espandere un sito primario autonomo in una gerarchia con un sito di amministrazione centrale, è necessario interrompere la raccolta di tutti i dati. È possibile riconfigurare la raccolta dati al termine dell'espansione del sito.  
+
+### <a name="gather-data-now"></a>Raccogliere i dati adesso  
+ Dopo aver eseguito il processo di raccolta dati iniziale per un sito, questo processo viene ripetuto per individuare gli oggetti aggiornati dall'ultimo ciclo di raccolta dati. È anche possibile eseguire l'azione **Raccogli dati adesso** nella console di Configuration Manager per avviare subito il processo e reimpostare l'ora di inizio del ciclo successivo.  
+
+ Al termine del processo di raccolta dati per un sito di origine, è possibile condividere i punti di distribuzione dal sito di origine e configurare i processi di migrazione per eseguire la migrazione dei dati dal sito. La raccolta dati è un processo ripetuto per la migrazione e continua finché non viene modificata la gerarchia di origine oppure si usa **Interrompi raccolta dati** per terminare il processo di raccolta dati per tale sito.  
+
+### <a name="stop-gathering-data"></a>Interrompi raccolta dati  
+ È possibile eseguire **Interrompi raccolta dati** per terminare il processo di raccolta dati per un sito di origine quando non si vuole più che Configuration Manager individui oggetti nuovi o modificati da tale sito. Questa azione impedisce a Configuration Manager di offrire ai client nella gerarchia di destinazione punti di distribuzione condivisi dall'origine come percorsi contenuto per il contenuto migrato.  
+
+ Per interrompere la raccolta dati da ogni sito di origine, è necessario eseguire **Interrompi raccolta dati** nei siti di origine di livello inferiore, quindi ripetere il processo in ogni sito padre. L'interruzione della raccolta dati nel sito principale della gerarchia di origine deve rappresentare l'ultimo passaggio. È necessario interrompere la raccolta dati in ogni sito figlio prima di eseguire questa azione in un sito padre. In genere, si interrompe la raccolta dati solo quando si è pronti a completare il processo di migrazione.  
+
+ Dopo aver interrotto la raccolta dati per un sito di origine, le informazioni raccolte in precedenza sugli oggetti e le raccolte da tale sito rimangono disponibili per l'uso durante la configurazione di nuovi processi di migrazione. Tuttavia, non vengono visualizzati nuovi oggetti o raccolte né le modifiche apportate agli oggetti esistenti. Se si riconfigura il sito di origine e si avvia nuovamente la raccolta dati, verranno visualizzate le informazioni e lo stato relativi agli oggetti migrati in precedenza.  

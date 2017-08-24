@@ -1,6 +1,6 @@
 ---
-title: "子構成項目の作成 | Microsoft Docs"
-description: "System Center Configuration Manager で子構成項目を作成します。"
+title: Creare elementi di configurazione figlio | Microsoft Docs
+description: Creare elementi di configurazione figlio in System Center Configuration Manager.Come creare elementi di configurazione figlio in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,27 +18,27 @@ manager: angrobe
 ms.openlocfilehash: 33d4a2d5a09af74e1d76ac9b34a42b749f5bf7ef
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-child-configuration-items-in-system-center-configuration-manager"></a>System Center Configuration Manager で子構成項目を作成する方法
+# <a name="how-to-create-child-configuration-items-in-system-center-configuration-manager"></a>Come creare elementi di configurazione figlio in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager の子構成項目は構成項目のコピーであり、元の構成項目への関係を保持しています。したがって、子構成項目は親構成項目から元の構成を継承しています。  
+Gli elementi di configurazione figlio in System Center Configuration Manager sono copie di elementi di configurazione che mantengono una relazione con l'elemento di configurazione originale e che quindi ereditano la configurazione originale dall'elemento di configurazione padre.  
 
-Configuration Manager コンソールで子構成項目のプロパティを表示したときに、独自の検証条件を持つ継承されたオブジェクトと設定は編集できません。 ただし、子構成項目に検証条件を追加してから、その検証条件を編集することはできます。また、新しいオブジェクトや設定を子構成項目に追加することもできます。
-通常、子構成項目を作成したり編集したりする場合は、元の構成項目をビジネス要件に合わせることが目的になります。  
+Quando si visualizzano le proprietà di un elemento di configurazione figlio nella console di Configuration Manager, non è possibile modificare le impostazioni e gli oggetti ereditati con i relativi criteri di convalida. Tuttavia, è possibile aggiungere e quindi modificare criteri di convalida aggiuntivi per l'elemento di configurazione figlio, al quale è anche possibile aggiungere nuovi oggetti e impostazioni.
+Lo scopo della creazione e della modifica di un elemento di configurazione figlio è di solito quello di ottimizzare l'elemento di configurazione originale per soddisfare i requisiti aziendali.  
 
 > [!NOTE]  
->  子構成項目は、種類が **Windows デスクトップおよびサーバー (カスタム)**の構成項目からのみ作成できます。  
+>  È possibile creare elementi di configurazione figlio solo da elementi di configurazione del tipo **Windows desktop o server (personalizzato)**.  
 
-## <a name="to-create-a-child-configuration-item"></a>子構成項目を作成するには  
+## <a name="to-create-a-child-configuration-item"></a>Per creare un elemento di configurazione figlio  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[コンプライアンス設定]** > **[構成項目]** の順にクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Elementi di configurazione**.  
 
-3.  **構成項目** 一覧で、子構成項目を作成するため、次の構成項目を選択、 **ホーム** ] タブで、 **構成項目** グループで、[ **子構成項目の作成**です。  
+3.  Nell'elenco **Elementi di configurazione** selezionare l'elemento di configurazione per il quale si vuole creare un elemento di configurazione figlio e quindi nel gruppo **Elemento di configurazione** della scheda **Home** fare clic su **Crea elemento di configurazione figlio**.  
 
-4.  **全般** のページ、 **子の構成項目の作成ウィザード**, 、親の特定のバージョンを使用して、子を作成する構成項目を選択できます。 このウィザードのほかの手順は、標準の構成項目を作成する場合に使用する手順と同じです。 詳細については、｢[System Center Configuration Manager クライアントを使用して管理されている Windows デスクトップおよびサーバー コンピューターのカスタム構成項目を作成する方法](../../compliance/deploy-use/create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-client.md)｣を参照してください。  
+4.  Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione figlio**è possibile scegliere la revisione specifica dell'elemento di configurazione padre da usare per creare l'elemento figlio. Gli altri passaggi di questa procedura guidata sono identici a quelli eseguiti per creare un elemento di configurazione standard. Per altre informazioni, vedere [Come creare elementi di configurazione personalizzati per computer desktop e server Windows](../../compliance/deploy-use/create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-client.md).  
 
-5.  ウィザードを完了します。 新しい子構成項目は、[構成項目] 一覧に表示されます。 ****  
+5.  Completare la procedura guidata. Il nuovo elemento di configurazione figlio verrà visualizzato nell'elenco **Elementi di configurazione** .  

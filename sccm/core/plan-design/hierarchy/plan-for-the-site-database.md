@@ -1,6 +1,6 @@
 ---
-title: "サイト データベースの計画 | Microsoft Docs"
-description: "System Center Configuration Manager の階層を計画するとき、サイト データベースとサイト データベース サーバーの役割を考える必要があります。"
+title: Pianificare il database del sito | Microsoft Docs
+description: Prendere in considerazione il database del sito e il ruolo del server del database del sito quando si pianifica la gerarchia di System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,45 +18,45 @@ manager: angrobe
 ms.openlocfilehash: d4efe1f013dbb74efca79cd27f7248fc085c7424
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-for-the-site-database-for-system-center-configuration-manager"></a>System Center Configuration Manager のサイト データベースの計画
+# <a name="plan-for-the-site-database-for-system-center-configuration-manager"></a>Pianificare per il database del sito per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-サイト データベース サーバーとは、Microsoft SQL Server のサポートされているバージョンを実行するコンピューターのことです。 SQL Server を使用して、Configuration Manager サイトの情報を格納します。 Configuration Manager 階層内の各サイトには、サイト データベースと、サイト データベース サーバーの役割を持つサーバーがあります。  
+Il server di database del sito è un computer in cui viene eseguita una versione supportata di Microsoft SQL Server. SQL Server viene usato per archiviare le informazioni per i siti di Configuration Manager. Ogni sito in una gerarchia di Configuration Manager contiene un database e un server del sito a cui è assegnato il ruolo del server del database del sito.  
 
--   中央管理サイトとプライマリ サイトでは、SQL Server をサイト サーバーにインストールすることも、サイト サーバー以外のサーバーにインストールすることもできます。  
+-   Per i siti di amministrazione centrale e i siti primari, è possibile installare SQL Server sul server del sito oppure su un computer diverso dal server del sito.  
 
--   セカンダリ サイトでは、SQL Server の完全版の代わりに、SQL Server Express をインストールできます。 ただし、データベース サーバーは、セカンダリ サイト サーバーで実行する必要があります。  
+-   Per i siti secondari è possibile usare SQL Server Express anziché un'installazione completa di SQL Server. Il server database deve tuttavia essere eseguito nel server del sito secondario.  
 
-次の SQL Server 構成を使用して、サイト データベースをホストできます。  
+Per ospitare il database del sito è possibile usare le configurazioni di SQL Server seguenti:  
 
--   SQL Server の既定のインスタンス  
+-   L'istanza predefinita di SQL Server  
 
--   SQL Server を実行している 1 台のコンピューターの名前付きインスタンス  
+-   Un'istanza denominata in un unico computer che esegue SQL Server  
 
--   SQL Server のクラスター化されたインスタンスの名前付きインスタンス  
+-   Un'istanza denominata in un'istanza in cluster di SQL Server  
 
--   SQL Server AlwaysOn 可用性グループ (System Center Configuration Manager のバージョン 1602 以降)
-
-
-サイト データベースをホストするには、SQL Server が「[System Center Configuration Manager の SQL Server バージョンのサポート](../../../core/plan-design/configs/support-for-sql-server-versions.md)」に記載されている要件を満たしている必要があります。  
+-   Un gruppo di disponibilità AlwaysOn di SQL Server (a partire dalla versione 1602 di System Center Configuration Manager)
 
 
-
-## <a name="remote-database-server-location-considerations"></a>リモート データベース サーバーの場所に関する考慮事項  
-
-リモート データベース サーバーのコンピューターを使用する場合は、介在するネットワーク接続が可用性の高い広帯域のネットワーク接続であることを確認します。 サイト サーバーとサイト システムの役割のいくつかは、サイト データベースをホストしているリモート サーバーと継続的に通信する必要があります。
-
--   データベース サーバーとの通信に必要な帯域幅は、サイトとクライアントの構成によって異なります。 そのため、実際に必要な帯域幅を的確に予測することはできません。  
-
--   SMS プロバイダーを実行し、サイト データベースに接続するコンピューターが多いほど、必要なネットワーク帯域幅が大きくなります。  
-
--   SQL Server を実行するコンピューターは、サイト サーバー、および SMS プロバイダーを実行しているすべてのコンピューターとの双方向の信頼関係があるドメインになければなりません。  
-
--   サイト データベースとサイト サーバーを併置する場合は、クラスター化された SQL Server をサイト データベース サーバーにすることはできません。  
+Per ospitare il database del sito, SQL Server deve soddisfare i requisiti descritti in [Supporto per le versioni di SQL Server per System Center Configuration Manager](../../../core/plan-design/configs/support-for-sql-server-versions.md).  
 
 
-通常、サイト システム サーバーは、1 つだけの Configuration Manager サイトのサイト システムの役割をサポートしています。 ただし、SQL Server を実行するクラスター化または非クラスター化サーバーで、SQL Server のさまざまなインスタンスを使用して、さまざまな Configuration Manager サイトのデータベースをホストできます。 この場合は、SQL Server の各インスタンスが、通信用に別々のポートを使用するように構成する必要があります。  
+
+## <a name="remote-database-server-location-considerations"></a>Considerazioni sul percorso del server database remoto  
+
+Se si usa un computer server database remoto, verificare che la connessione di rete corrispondente sia una connessione a disponibilità e larghezza di banda elevate. Il server del sito e alcuni ruoli del sistema del sito devono comunicare costantemente con il server remoto che ospita il database del sito.
+
+-   La larghezza di banda richiesta per le comunicazioni con il server database dipende da una combinazione di numerose e diverse configurazioni di siti e client. Pertanto, non è possibile prevedere adeguatamente la larghezza di banda effettivamente richiesta.  
+
+-   Ogni computer su cui è in esecuzione il provider SMS e che si connette al database del sito contribuisce ad aumentare i requisiti di larghezza di banda della rete.  
+
+-   Il computer che esegue SQL Server deve essere posizionato in un dominio con un trust bidirezionale con il server del sito e tutti i computer che eseguono il provider SMS.  
+
+-   Quando il database del sito ha un percorso condiviso con il server del sito, non è possibile usare un server SQL del cluster per il server di database del sito.  
+
+
+In genere, un server del sistema del sito supporta ruoli del sistema del sito solo da un unico sito di Configuration Manager. È tuttavia possibile usare istanze diverse di SQL Server, su server cluster o non cluster che eseguono SQL Server, per ospitare un database da diversi siti di Configuration Manager. Per supportare i database da siti diversi, è necessario configurare ogni istanza di SQL Server in modo da usare porte univoche per la comunicazione.  

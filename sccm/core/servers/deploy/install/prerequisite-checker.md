@@ -1,6 +1,6 @@
 ---
-title: "前提条件チェッカー | Microsoft Docs"
-description: "前提条件チェッカーを使用して、サイトやサイト システムの役割のインストールを妨げる可能性のある問題を特定し、修正する方法について説明します。"
+title: Controllo prerequisiti | Microsoft Docs
+description: Informazioni sull'uso del Controllo prerequisiti per identificare e risolvere i problemi che possono bloccare un sito o l'installazione del ruolo di sistema del sito.
 ms.custom: na
 ms.date: 3/1/2017
 ms.prod: configuration-manager
@@ -17,41 +17,41 @@ manager: angrobe
 ms.openlocfilehash: f0d44f82a0b6068f8cecc5808774677eccb0f8d9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="prerequisite-checker-for-system-center-configuration-manager"></a>System Center Configuration Manager の前提条件チェッカー
+# <a name="prerequisite-checker-for-system-center-configuration-manager"></a>Controllo prerequisiti per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
- System Center Configuration Manager サイトをインストールまたはアップグレードするためのセットアップを実行する前や、サイト システムの役割を新しいサーバーにインストールする前に、使用するバージョンの Configuration Manager からこのスタンドアロン アプリケーション (**Prereqchk.exe**) を実行して、サーバーの対応状況を確認することができます。 前提条件チェッカーを使用して、サイトやサイト システムの役割のインストールを妨げる問題を特定し、修正します。  
+ Prima di eseguire il programma di installazione per installare o aggiornare un sito di System Center Configuration Manager oppure prima di installare un ruolo di sistema del sito in un nuovo server, è possibile usare questa applicazione autonoma (**Prereqchk.exe**) dalla versione di Configuration Manager che si vuole usare per verificare la disponibilità del server. Informazioni sull'uso di Controllo prerequisiti per identificare e risolvere i problemi che possono bloccare un sito o l'installazione del ruolo di sistema del sito.  
 
 > [!NOTE]  
->  前提条件チェッカーは、セットアップの過程で必ず実行されます。  
+>  Il Controllo prerequisiti viene sempre eseguito come parte del programma di installazione.  
 
-既定で、前提条件チェッカーを実行した場合:  
+Per impostazione predefinita, quando il Controllo prerequisiti viene eseguito:  
 
--   チェッカーが実行されるサーバーが検証されます。  
--   既存のサイト サーバーがあるかどうか、ローカル コンピューターがスキャンされ、そのサイトに該当するチェックだけが実行されます。  
--   サイトが検出されなかった場合は、すべての前提条件の規則が実行されます。  
--   セットアップに必要なソフトウェアと設定がインストールされていることがルールに従って確認されます。 必須ソフトウェアがさらに別の構成やソフトウェア更新プログラムを必要とし、それらが前提条件チェッカーによって確認されない場合があります。  
--   チェック結果は、コンピューターのシステム ドライブ上の **ConfigMgrPrereq.log** ファイルに記録されます。 ログ ファイルには、アプリケーションのインターフェイスに表示されない追加情報が含まれることがあります。  
+-   Convalida il server in cui viene eseguito.  
+-   Viene eseguita la scansione del computer locale alla ricerca di un server del sito esistente e vengono eseguiti solo i controlli applicabili al sito.  
+-   Se non viene rilevato alcun sito esistente, verranno eseguite tutte le regole relative ai prerequisiti.  
+-   Verifica che il software e le impostazioni necessarie per l'installazione siano installati. Il software obbligatorio potrebbe richiedere configurazioni aggiuntive o aggiornamenti software che non vengono verificati dal Controllo prerequisiti.  
+-   Registra i risultati nel file **ConfigMgrPrereq.log** nell'unità di sistema del computer. Il file di log potrebbe contenere informazioni aggiuntive che non vengono visualizzate nell'interfaccia dell'applicazione.  
 
-コマンド プロンプトから、特定のオプションを指定して前提条件チェッカーを実行した場合:  
+Quando si esegue il Controllo prerequisiti in un prompt dei comandi e si specificano determinate opzioni della riga di comando:  
 
--   前提条件チェッカーでは、コマンド ラインに指定したサイト サーバーまたはサイト システムに関連したチェックだけが実行されます。  
--   リモート コンピューターを確認するには、ユーザー アカウントに、そのリモート コンピューターに対する管理者権限が必要です。  
+-   Il Controllo prerequisiti esegue solo i controlli associati al server del sito o ai sistemi del sito specificati nella riga di comando.  
+-   Per controllare un computer remoto, l'account utente deve avere diritti amministrativi per il computer remoto.  
 
-前提条件チェッカーが実行する確認の詳細については、「[System Center Configuration Manager の前提条件の確認の一覧](../../../../core/servers/deploy/install/list-of-prerequisite-checks.md)」を参照してください。  
+Per altre informazioni sui controlli eseguiti dal Controllo prerequisiti, vedere [Elenco dei controlli dei prerequisiti per System Center Configuration Manager](../../../../core/servers/deploy/install/list-of-prerequisite-checks.md).  
 
-## <a name="copy-prerequisite-checker-files-to-another-computer"></a>前提条件チェッカー ファイルを別のコンピューターにコピーする  
+## <a name="copy-prerequisite-checker-files-to-another-computer"></a>Copiare i file del Controllo prerequisiti in un altro computer  
 
-1.  エクスプローラーで、次のいずれかの場所に移動します。  
+1.  In Esplora risorse passare a una delle posizioni seguenti:  
 
-    -   **&lt;*Configuration Manager インストール メディア*\>\SMSSETUP\BIN\X64**  
-    -   **&lt;*Configuration Manager インストール パス*\>\BIN\X64**  
+    -   **&lt;*Supporto di installazione di Configuration Manager*\>\SMSSETUP\BIN\X64**  
+    -   **&lt;*Percorso di installazione di Configuration Manager*\>\BIN\X64**  
 
-2.  次のファイルを別のコンピューターのフォルダーにコピーします。  
+2.  Copiare i seguenti file nella cartella di destinazione su un altro computer:  
 
     -   Prereqchk.exe  
     -   Prereqcore.dll  
@@ -59,140 +59,140 @@ ms.lasthandoff: 08/07/2017
     -   Basesvr.dll  
     -   Baseutil.dll  
 
-##  <a name="run-prerequisite-checker-with-default-checks"></a>前提条件チェッカーで既定のチェックを実行する  
+##  <a name="run-prerequisite-checker-with-default-checks"></a>Eseguire il Controllo prerequisiti con i controlli predefiniti  
 
-1.  エクスプローラーで、次のいずれかの場所に移動します。  
+1.  In Esplora risorse passare a una delle posizioni seguenti:  
 
-    -   **&lt;*Configuration Manager インストール メディア*\>\SMSSETUP\BIN\X64**  
-    -   **&lt;*Configuration Manager インストール パス*\>\BIN\X64**  
+    -   **&lt;*Supporto di installazione di Configuration Manager*\>\SMSSETUP\BIN\X64**  
+    -   **&lt;*Percorso di installazione di Configuration Manager*\>\BIN\X64**  
 
-2.  **prereqchk.exe** を実行して前提条件チェッカーを起動します。   
-    既存のサイトが検索され、見つかった場合は、アップグレードの準備ができているかどうかがチェックされます。 サイトが見つからなかった場合は、すべてのチェックが実行されます。 [ **サイトの種類** ] 列に、規則が関連付けられているサイト サーバーまたはサイト システムの情報が表示されます。  
+2.  Eseguire **prereqchk.exe** per avviare il Controllo prerequisiti.   
+    Controllo prerequisiti rileva i siti esistenti e, in caso di individuazione di siti, esegue i controlli di preparazione per l'aggiornamento. Se non viene trovato alcun sito, verranno eseguiti tutti i controlli. Nella colonna **Tipo di sito** sono disponibili informazioni sul server del sito o sul sistema del sito a cui è associata la regola.  
 
-##  <a name="run-prerequisite-checker-from-a-command-prompt-for-all-default-checks"></a>コマンド プロンプトから前提条件チェッカーを起動して既定のすべてのチェックを実行する  
+##  <a name="run-prerequisite-checker-from-a-command-prompt-for-all-default-checks"></a>Eseguire il Controllo prerequisiti da un prompt dei comandi per tutti i controlli predefiniti  
 
-1.  コマンド プロンプト ウィンドウを開いて、次のいずれかの場所に移動します。  
+1.  Aprire una finestra del prompt dei comandi e modificare le directory in base a una delle posizioni seguenti:  
 
-    -   **&lt;*Configuration Manager インストール メディア*\>\SMSSETUP\BIN\X64**  
-    -   **&lt;*Configuration Manager インストール パス*\>\BIN\X64**  
+    -   **&lt;*Supporto di installazione di Configuration Manager*\>\SMSSETUP\BIN\X64**  
+    -   **&lt;*Percorso di installazione di Configuration Manager*\>\BIN\X64**  
 
-2.  「  **prereqchk.exe /LOCAL** 」と入力して、前提条件チェッカーを起動し、サーバーに対してすべての前提条件チェックを実行します。  
+2.  Immettere  **prereqchk.exe /LOCAL** per avviare il Controllo prerequisiti ed eseguire tutti i controlli dei prerequisiti sul server.  
 
-## <a name="run-prerequisite-checker-from-a-command-prompt-to-use-options"></a>コマンド プロンプトからオプションを使用して前提条件チェッカーを実行する  
+## <a name="run-prerequisite-checker-from-a-command-prompt-to-use-options"></a>Eseguire il Controllo prerequisiti da un prompt dei comandi per usare le opzioni  
 
-1.  コマンド プロンプト ウィンドウを開いて、次のいずれかの場所に移動します。  
+1.  Aprire una finestra del prompt dei comandi e modificare le directory in base a una delle posizioni seguenti:  
 
-    -   **&lt;*Configuration Manager インストール メディア*\>\SMSSETUP\BIN\X64**  
-    -   **&lt;*Configuration Manager インストール パス*\>\BIN\X64**  
+    -   **&lt;*Supporto di installazione di Configuration Manager*\>\SMSSETUP\BIN\X64**  
+    -   **&lt;*Percorso di installazione di Configuration Manager*\>\BIN\X64**  
 
-2.  「**prereqchk.exe**」と入力し、次のコマンドライン オプションを指定します。  
+2.  Immettere **prereqchk.exe** con una o più opzioni della riga di comando seguenti.  
 
-    たとえば、プライマリ サイトをチェックするには、次の構文を使用します。  
+    Ad esempio, per controllare un sito primario è possibile usare le opzioni seguenti:  
 
-       **prereqchk.exe [/NOUI] /PRI /SQL &lt;SQL Server の FQDN\> /SDK &lt;SMS プロバイダーの FQDN\> [/JOIN &lt;中央管理サイトの FQDN\>] [/MP &lt;管理ポイントの FQDN\>] [/DP &lt;配布ポイントの FQDN\>]**  
+       **prereqchk.exe [/NOUI] /PRI /SQL &lt;FQDN di SQL Server\> /SDK &lt;FQDN del provider SMS\> [/JOIN &lt;FQDN del sito di amministrazione centrale\>] [/MP &lt;FQDN del punto di gestione\>] [/DP &lt;FQDN del punto di distribuzione\>]**  
 
-    **中央管理サイト サーバー**  
+    **Server del sito di amministrazione centrale:**  
 
     -   **/NOUI**  
 
-         必要なし。 ユーザー インターフェイスを表示せずに前提条件チェッカーを起動します。 このオプションは、他のどのオプションよりも先に入力する必要があります。  
+         Non obbligatorio. Avvia il Controllo prerequisiti senza visualizzare l'interfaccia utente. È necessario specificare questa opzione prima di qualsiasi altra opzione nella riga di comando.  
 
     -   **/CAS**  
 
-         必須。 ローカル コンピューターが、中央管理サイトの要件を満たしているかどうかを確認します。  
+         Obbligatorio. Verifica che il computer locale soddisfi i requisiti per il sito di amministrazione centrale.  
 
-    -   **/SQL &lt;*SQL Server の FQDN*>**  
+    -   **/SQL &lt;*FQDN di SQL Server*>**  
 
-         必須。 完全修飾ドメイン名 (FQDN) を使用して、指定されたコンピューターが、Configuration Manager サイト データベースをホストする SQL Server の要件を満たしているかどうかを確認します。  
+         Obbligatorio. Usando il nome di dominio completo (FQDN) verifica che il computer specificato soddisfi i requisiti per l'hosting del database del sito di Configuration Manager da parte di SQL Server.  
 
-    -   **/SDK &lt;*SMS プロバイダーの FQDN*>**  
+    -   **/SDK &lt;*FQDN del provider SMS*>**  
 
-         必須。 指定されたコンピューターが、SMS プロバイダーの要件を満たしているかどうかを確認します。  
+         Obbligatorio. Verifica che il computer specificato soddisfi i requisiti per il provider SMS.  
 
     -   **/Ssbport**  
 
-         必要なし。 ファイアウォールの例外で SQL Server Service Broker (SSB) ポートの通信を許可するように設定されているかどうかを確認します。 既定の SSB ポートは 4022 です。  
+         Non obbligatorio. Verifica se è attiva un'eccezione del firewall per consentire la comunicazione nella porta di SQL Server Service Broker (SSB). La porta SSB predefinita è la porta 4022.  
 
-    -   **InstallDir &lt;*Configuration Manager インストール パス*>**  
+    -   **InstallDir &lt;*Percorso di installazione di Configuration Manager*>**  
 
-         必要なし。 サイトのインストールに最低限必要な空きディスク領域を確認します。  
+         Non obbligatorio. Verifica lo spazio minimo su disco rispetto ai requisiti per l'installazione del sito.  
 
-    **プライマリ サイト サーバー:**  
+    **Server del sito primario:**  
 
     -   **/NOUI**  
 
-        必要なし。 ユーザー インターフェイスを表示せずに前提条件チェッカーを起動します。 このオプションは、他のどのオプションよりも先に入力する必要があります。  
+        Non obbligatorio. Avvia il Controllo prerequisiti senza visualizzare l'interfaccia utente. È necessario specificare questa opzione prima di qualsiasi altra opzione nella riga di comando.  
 
     -   **/PRI**  
 
-         必須。 ローカル コンピューターがプライマリ サイトの要件を満たしているかどうかを確認します。  
+         Obbligatorio. Verifica che il computer locale soddisfi i requisiti per il sito primario.  
 
-    -   **/SQL &lt;*SQL Server の FQDN*>**  
+    -   **/SQL &lt;*FQDN di SQL Server*>**  
 
-         必須。 指定されたコンピューターが、Configuration Manager サイト データベースをホストする SQL Server の要件を満たしているかどうかを確認します。  
+         Obbligatorio. Verifica che il computer specificato soddisfi i requisiti per l'hosting del database del sito di Configuration Manager da parte di SQL Server.  
 
-    -   **/SDK &lt;*SMS プロバイダーの FQDN*>**  
+    -   **/SDK &lt;*FQDN del provider SMS*>**  
 
-         必須。 指定されたコンピューターが、SMS プロバイダーの要件を満たしているかどうかを確認します。  
+         Obbligatorio. Verifica che il computer specificato soddisfi i requisiti per il provider SMS.  
 
-    -   **/JOIN &lt;*中央管理サイトの FQDN*>**  
+    -   **/JOIN &lt;*FQDN del sito di amministrazione centrale*>**  
 
-         必要なし。 ローカル コンピューターが、中央管理サイト サーバーに接続する要件を満たしているかどうかを確認します。  
+         Non obbligatorio. Verifica che il computer locale soddisfi i requisiti per la connessione al server del sito di amministrazione centrale.  
 
-    -   **/MP &lt;*管理ポイントの FQDN*>**  
+    -   **/MP &lt;*FQDN del punto di gestione*>**  
 
-         必要なし。 指定されたコンピューターが、管理ポイントのサイト システムの役割の要件を満たしているかどうかを確認します。 このオプションは、 **/PRI** オプションを使用する場合のみ指定できます。  
+         Non obbligatorio. Verifica che il computer specificato soddisfi i requisiti per il ruolo del sistema del sito del punto di gestione. Questa opzione è supportata solo quando si usa l'opzione **/PRI** .  
 
-    -   **/DP &lt;*配布ポイントの FQDN*>**  
+    -   **/DP &lt;*FQDN del punto di distribuzione*>**  
 
-         必要なし。 指定されたコンピューターが、配布ポイントのサイト システムの役割の要件を満たしているかどうかを確認します。 このオプションは、 **/PRI** オプションを使用する場合のみ指定できます。  
+         Non obbligatorio. Verifica che il computer specificato soddisfi i requisiti per il ruolo del sistema del sito del punto di distribuzione. Questa opzione è supportata solo quando si usa l'opzione **/PRI** .  
 
     -   **/Ssbport**  
 
-         必要なし。 ファイアウォールの例外で SSB ポートの通信を許可するように設定されているかどうかを確認します。 既定の SSB ポートは 4022 です。  
+         Non obbligatorio. Verifica se è attiva un'eccezione del firewall per consentire la comunicazione sulla porta SSB. La porta SSB predefinita è la porta 4022.  
 
-    -   **InstallDir &lt;*Configuration Manager インストール パス*>**  
+    -   **InstallDir &lt;*Percorso di installazione di Configuration Manager*>**  
 
-         必要なし。 サイトのインストールに最低限必要な空きディスク領域を確認します。  
+         Non obbligatorio. Verifica lo spazio minimo su disco rispetto ai requisiti per l'installazione del sito.  
 
-    **セカンダリ サイト サーバー:**  
+    **Server del sito secondario:**  
 
     -   **/NOUI**  
 
-         必要なし。 ユーザー インターフェイスを表示せずに前提条件チェッカーを起動します。 このオプションは、他のどのオプションよりも先に入力する必要があります。  
+         Non obbligatorio. Avvia il Controllo prerequisiti senza visualizzare l'interfaccia utente. È necessario specificare questa opzione prima di qualsiasi altra opzione nella riga di comando.  
 
-    -   **/SEC &lt;*セカンダリ サイト サーバーの FQDN*>**  
+    -   **/SEC &lt;*FQDN del server del sito secondario*>**  
 
-         必須。 指定されたコンピューターがセカンダリ サイトの要件を満たしているかどうかを確認します。  
+         Obbligatorio. Verifica che il computer specificato soddisfi i requisiti per il sito secondario.  
 
     -   **/INSTALLSQLEXPRESS**  
 
-         必要なし。 指定されたコンピューターに SQL Server Express をインストールできるかどうかを確認します。  
+         Non obbligatorio. Verifica se SQL Server Express può essere installato nel computer specificato.  
 
     -   **/Ssbport**  
 
-         必要なし。 ファイアウォールの例外で SSB ポートの通信を許可するように設定されているかどうかを確認します。 既定の SSB ポートは 4022 です。  
+         Non obbligatorio. Verifica se è attiva un'eccezione del firewall per consentire la comunicazione per la porta SSB. La porta SSB predefinita è la porta 4022.  
 
     -   **/Sqlport**  
 
-         必要なし。 ファイアウォールの例外で SQL Server サービス ポートの通信を許可するように設定されており、そのポートが別の SQL Server の名前付きインスタンスで使用されていないことを確認します。 既定のポート番号は 1433 です。  
+         Non obbligatorio. Verifica se è attiva un'eccezione del firewall per consentire le comunicazioni per la porta del servizio SQL Server e controlla che tale porta non sia usata da un'altra istanza denominata di SQL Server. La porta predefinita è 1433.  
 
-    -   **InstallDir &lt;*Configuration Manager インストール パス*>**  
+    -   **InstallDir &lt;*Percorso di installazione di Configuration Manager*>**  
 
-         必要なし。 サイトのインストールに最低限必要な空きディスク領域を確認します。  
+         Non obbligatorio. Verifica lo spazio minimo su disco rispetto ai requisiti per l'installazione del sito.  
 
     -   **/SourceDir**  
 
-         必要なし。 セカンダリ サイトのコンピューター アカウントが、セットアップのソース ファイルをホストするフォルダーにアクセスできるかどうかを確認します。  
+         Non obbligatorio. Verifica che l'account computer del sito secondario possa accedere alla cartella contenente i file di origine per l'installazione.  
 
-   **Configuration Manager コンソール:**  
+   **Console di Configuration Manager:**  
 
     -   **/Adminui**  
 
-         必須。 Configuration Manager をインストールするための要件をローカル コンピューターが満たしているかどうかを確認します。  
+         Obbligatorio. Verifica che il computer locale soddisfi i requisiti per l'installazione di Configuration Manager.  
 
-3.  前提条件チェッカーのユーザー インターフェイスの **[前提条件の確認結果]** セクションに、検出された問題が一覧表示されます。  
+3.  Nell'interfaccia utente del Controllo prerequisiti questo strumento crea un elenco di problemi individuati nella sezione **Risultato prerequisiti**.  
 
-    -   一覧にある問題をクリックすると、その解決方法が表示されます。  
-    -   サイト サーバー、サイト システム、または Configuration Manager コンソールをインストールする前に、ステータスが [**エラー**] になっている問題をすべて解決する必要があります。  
-    -   システム ドライブのルートにある **ConfigMgrPrereq.log** ファイルを開いて、前提条件チェッカーの結果を確認することもできます。 ログ ファイルには、前提条件チェッカーのユーザー インターフェイスに表示されていない情報が含まれていることがあります。  
+    -   Fare clic su un elemento nell'elenco per ottenere informazioni dettagliate su come risolvere il problema.  
+    -   Prima di installare il server del sito, il sistema del sito o la console di Configuration Manager, è necessario risolvere tutti gli elementi dell'elenco con stato di **errore**.  
+    -   È anche possibile aprire il file **ConfigMgrPrereq.log** nella radice dell'unità di sistema per esaminare i risultati del Controllo prerequisiti. Il file di log può contenere informazioni aggiuntive che non vengono visualizzate nell'interfaccia utente del Controllo Prerequisiti.  

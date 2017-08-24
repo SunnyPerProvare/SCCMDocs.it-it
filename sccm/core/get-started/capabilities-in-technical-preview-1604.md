@@ -1,6 +1,6 @@
 ---
-title: "Configuration Manager の Technical Preview 1604 の機能"
-description: "System Center Configuration Manager の Technical Preview バージョン 1604 で使用できる機能について説明します。"
+title: "Funzionalità della versione Technical Preview 1604 per Configuration Manager"
+description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1604 per System Center Configuration Manager."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -18,155 +18,155 @@ robots: noindex,nofollow
 ms.openlocfilehash: 26b0d8ea7b3e841c48945df55f8860394a98a29f
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1604-for-system-center-configuration-manager"></a>System Center Configuration Manager の Technical Preview 1604 の機能
+# <a name="capabilities-in-technical-preview-1604-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1604 per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Technical Preview)*
+*Si applica a: System Center Configuration Manager (Technical Preview)*
 
-この記事では、System Center Configuration Manager の Technical Preview バージョン 1604 で使用できる機能について説明します。 このバージョンをインストールして更新し、新機能を Configuration Manager の Technical Preview サイトに追加できます。      このバージョンの Technical Preview をインストールする前に、説明のトピック「[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)」を確認して、Technical Preview の使用に関する一般的な要件と制限、バージョン間の更新方法、および Technical Preview の機能に関するフィードバックを提供する方法について理解してください。  
+Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1604 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager.      Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.  
 
- このバージョンでお試しいただける新機能を次に示します。  
+ Di seguito sono riportate le nuove funzionalità disponibili con questa versione.  
 
-##  <a name="BKMK_WindowsVPP"></a> ビジネス向け Windows ストアからの一括購入アプリの管理  
- [ビジネス向け Windows ストア](https://www.microsoft.com/en-us/business-store)は、組織向けのアプリを検索して、個別に、または一括で購入できる場所です。 ストアを Configuration Manager に接続すると、一括購入したアプリを Configuration Manager コンソールから管理できます。例を挙げます。  
+##  <a name="BKMK_WindowsVPP"></a> Gestire le app acquistate con Volume Purchase Program da Windows Store per le aziende  
+ In [Windows Store per le aziende](https://www.microsoft.com/en-us/business-store) è possibile trovare e acquistare app per l'organizzazione, singolarmente o con Volume Purchase Program. Connettendo lo Store a Configuration Manager, è possibile gestire le app acquistate con Volume Purchase Program dalla console di Configuration Manager, ad esempio:  
 
--   購入したアプリの一覧を Configuration Manager に同期させることができます。  
+-   È possibile sincronizzare l'elenco di app acquistate con Configuration Manager  
 
--   同期されたアプリは Configuration Manager コンソールに表示され、他のすべてのアプリと同様に展開できます。  
+-   Le app sincronizzate vengono visualizzate nella console di Configuration Manager e possono essere distribuite come qualsiasi altra app  
 
--   使用可能なライセンスの数と、使用中の数を Configuration Manager コンソールで追跡できます。  
+-   È possibile tenere traccia del numero di licenze disponibili e del numero di licenze in uso nella console di Configuration Manager  
 
-### <a name="try-it-out"></a>試してみましょう。  
+### <a name="try-it-out"></a>Prova subito!  
 
-##### <a name="scenario-1-set-up-windows-store-for-business-synchronization"></a>シナリオ 1: ビジネス向け Windows ストアの同期の設定  
+##### <a name="scenario-1-set-up-windows-store-for-business-synchronization"></a>Scenario 1: Configurare la sincronizzazione di Windows Store per le aziende  
 
-1.  Azure Active Directory で、"Web アプリケーションや Web API" 管理ツールとして Configuration Manager を登録します。 後で必要なクライアント ID が表示されます。  
+1.  In Azure Active Directory registrare Configuration Manager come strumento di gestione "Applicazione Web e/o API Web". Si riceverà un ID client che sarà necessario in seguito.  
 
-    1.  [https://manage.windowsazure.com](https://manage.windowsazure.com) の **Active Directory** ノードで、Azure Active Directory を選択し、[**アプリケーション**] > [**追加**] をクリックします。  
+    1.  Nel nodo **Active Directory** di [https://manage.windowsazure.com](https://manage.windowsazure.com) selezionare Azure Active Directory e quindi fare clic su **Applicazioni** > **Aggiungi**.  
 
-    2.  [**組織で開発中のアプリケーションを追加**] をクリックします。  
+    2.  Fare clic su **Aggiungi un'applicazione che l'organizzazione sta sviluppando**.  
 
-    3.  アプリケーションの名前を入力し、[**Web アプリケーション**] または [**Web API**]、あるいはその両方を選択し、次へ進む矢印をクリックします。  
+    3.  Immettere un nome per l'applicazione, selezionare **Applicazione Web** e/o **API Web** e quindi fare clic sulla freccia Avanti.  
 
-    4.  [**サインオン URL**] と [**アプリケーション ID/URI**] の両方に同じ URL を入力します。  URL はあらゆるものを使用でき、実際のアドレスに解決する必要はありません。 たとえば、**https://&lt;yourdomain\>/sccm** を入力できます。  
+    4.  Immettere lo stesso URL per **URL accesso** e **URI ID app**.  L'URL può essere di qualsiasi tipo e non è necessario che venga risolto in un indirizzo reale. Ad esempio è possibile immettere **https://&lt;dominioutente\>/sccm**.  
 
-    5.  ウィザードを完了します。  
+    5.  Completare la procedura guidata.  
 
-2.  Azure Active Directory で、登録済み管理ツールのクライアント キーを作成します。  
+2.  In Azure Active Directory creare una chiave client per lo strumento di gestione registrato.  
 
-    1.  作成したアプリケーションを強調表示し、[**構成**] をクリックします。  
+    1.  Evidenziare l'applicazione appena creata e fare clic su **Configura**.  
 
-    2.  [**キー**] で、リストから期間を選択して、[**保存**] をクリックします。  これにより、新しいクライアント キーが作成されます。  ビジネス向け Windows ストアを Configuration Manager に正常にオンボードするまで、このページから移動しないでください。  
+    2.  In **Chiavi** selezionare una durata nell'elenco e fare clic su **Salva**.  Verrà creata una nuova chiave client.  Non uscire dalla pagina fino a quando non è stato completato il caricamento di Windows Store per le aziende in Configuration Manager.  
 
-3.  ビジネス向け Windows ストアで、ストア管理ツールとして Configuration Manager を構成します。  
+3.  In Windows Store per le aziende configurare Configuration Manager come strumento di gestione dello Store.  
 
-    1.  [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/en-us/managementtools) を開き、サインインを求められたらサインインします。  
+    1.  Aprire [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/en-us/managementtools) e, se viene chiesto, eseguire l'accesso.  
 
-    2.  要求された場合は、使用条件に同意します。  
+    2.  Accettare le condizioni per l'utilizzo, se necessario.  
 
-    3.  [**管理ツール**] で、[**Add a management tool**]\(管理ツールを追加) をクリックします。  
+    3.  In **Management Tools** fare clic su **Add a management tool**.  
 
-    4.  **[Search for the tool by name]** (名前でツールを検索) で、先ほど AAD で作成したアプリケーションの名前を入力して、**[追加]** クリックします。  
+    4.  In **Search for the tool by name** digitare il nome dell'applicazione creata in precedenza in AAD e quindi fare clic su **Add**.  
 
-    5.  インポートしたアプリケーションの横にある [**アクティブ化**] をクリックします。  
+    5.  Fare clic su **Activate** accanto all'applicazione appena importata.  
 
-    6.  オフラインでライセンスされるアプリケーションを購入する場合、**オフラインでライセンスされたアプリの表示**ウィザードで、[**はい**] をクリックします。  
+    6.  Nella procedura guidata **Show Offline-Licensed app** fare clic su **Yes** se si vuole consentire l'acquisto di applicazioni con licenza offline.  
 
-4.  ビジネス向け Windows ストアから少なくとも 1 つのアプリを購入します。  
+4.  Acquistare almeno un'app da Windows Store per le aziende.  
 
-5.  Configuration Manager コンソールの**管理**ワークスペースで、[**Cloud Services**] を展開して、[**ビジネス向け Windows ストア**] をクリックします。  
+5.  Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e quindi fare clic su **Windows Store per le aziende**.  
 
-6.  [**ホーム**] タブの [**作成**] グループで、[**ビジネス向け Windows ストア アカウントの追加**] をクリックします。  
+6.  Nel gruppo **Crea** della scheda **Home** fare clic su **Aggiungere un account di Windows Store per le aziende**.  
 
-7.  Azure Active Directory からテナント ID、クライアント ID、クライアント キーを追加し、ウィザードを完了します。  
+7.  Aggiungere l'ID tenant, l'ID client e la chiave client da Azure Active Directory, quindi completare la procedura guidata.  
 
-8.  完了した時点で、Configuration Manager コンソールの [**ビジネス向け Windows ストア**] で構成されたアカウントが表示されます。  
+8.  Al termine verrà visualizzato l'account configurato nell'elenco degli **account di Windows Store per le aziende** nella console di Configuration Manager.  
 
-##### <a name="scenario-2-create-and-deploy-a-configuration-manager-application-from-a-windows-store-for-business-offline-licensed-app"></a>シナリオ 2: ビジネス向け Windows ストアのオフライン ライセンス付きアプリから Configuration Manager アプリケーションを作成して展開する  
+##### <a name="scenario-2-create-and-deploy-a-configuration-manager-application-from-a-windows-store-for-business-offline-licensed-app"></a>Scenario 2: Creare e distribuire un'applicazione di Configuration Manager da un archivio di Windows per app aziendali con licenza offline  
 
-1.  Configuration Manager コンソールの [**ソフトウェア ライブラリ**] ワークスペースで [**アプリケーション管理**] を展開し、[**ストア アプリのライセンス情報**] をクリックします。  
+1.  Nell'area di lavoro **Raccolta software** della console di Configuration Manager espandere **Gestione applicazioni** e fare clic su **Informazioni di licenza per le app dello Store**.  
 
-2.  [**購入されたビジネス向け Windows ストア**] のリストにストアから同期されたアプリが一覧表示されます。 展開するアプリを選び、[**ホーム**] タブの [**作成**] グループで、[**アプリケーションの作成**]をクリックします。  
+2.  L'elenco delle **app di Windows Store per le aziende acquistate** mostra le applicazioni che sono state sincronizzate dall'archivio. Scegliere l'app che si vuole distribuire quindi nella scheda **Home** nel gruppo **Crea** fare clic su **Crea applicazione**.  
 
-3.  ビジネス向け Windows ストアのアプリを含む Configuration Manager アプリケーションが作成されます。 他の Configuration Manager のアプリケーションと同様に、このアプリケーションを展開して監視できます。  
+3.  Viene creata un'applicazione di Configuration Manager contenente l'archivio di Windows per l'applicazione aziendale. È quindi possibile distribuire e monitorare l'applicazione come qualsiasi altra applicazione di Configuration Manager.  
 
-##  <a name="BKMK_PFW"></a> Microsoft Passport for Work 管理の機能強化  
- Configuration Manager クライアントで管理されたドメインに参加している Windows 10 デバイスに Passport for Work ポリシーを展開できるようになりました。  
+##  <a name="BKMK_PFW"></a> Miglioramenti della gestione di Microsoft Passport for Work  
+ È ora possibile distribuire criteri di Passport for Work a dispositivi Windows 10 aggiunti a un dominio gestiti dal client di Configuration Manager.  
 
-##  <a name="bkmk_switchsup"></a> クライアントが新しいソフトウェア更新ポイントに切り替えるためのオプション  
- 1604 Technical Preview では、アクティブなソフトウェア更新ポイントに問題がある場合に、Configuration Manager クライアントが新しいソフトウェア更新ポイントに切り替えるためのオプションを有効にできます。 このオプションには、プライマリ サイトで利用可能な複数のソフトウェア更新ポイントが必要です。 デバイス コレクションでこのオプションを有効にします。有効にすると、コレクション内のクライアントは、次回のスキャンでアクティブなソフトウェアの更新ポイントへの接続に失敗したときに、別のソフトウェア更新ポイントを検索します。 WSUS の構成設定に応じて (更新プログラムの分類、製品など)、新しいソフトウェアの更新ポイントへの切り替えにより、追加のネットワーク トラフィックが発生します。 したがって、必要な場合に、このオプションのみを使用する必要があります。  
+##  <a name="bkmk_switchsup"></a> Opzione per il passaggio dei client a un nuovo punto di aggiornamento software  
+ Nella versione Technical Preview 1604 è possibile abilitare l'opzione per consentire ai client di Configuration Manager di passare a un nuovo punto di aggiornamento software quando si verificano problemi con il punto di aggiornamento software attivo. Per questa opzione, è necessario che siano disponibili più punti di aggiornamento software in un sito primario. Questa opzione viene abilitata in una raccolta di dispositivi e, una volta abilitata, i client della raccolta cercheranno un altro punto di aggiornamento software nell'analisi successiva quando il client non riuscirà a connettersi al punto di aggiornamento software attivo. A seconda delle impostazioni di configurazione di WSUS (Windows Server Update Services), ad esempio classificazioni degli aggiornamenti, prodotti e così via, il passaggio a un nuovo punto di aggiornamento software può generare traffico di rete aggiuntivo. È quindi consigliabile usare questa opzione solo quando è necessario.  
 
-#### <a name="to-enable-the-option-to-switch-software-update-points"></a>ソフトウェア更新ポイントを切り替えるオプションを有効にするには  
+#### <a name="to-enable-the-option-to-switch-software-update-points"></a>Per abilitare l'opzione per il passaggio tra punti di aggiornamento software  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス] > [概要] > [デバイス コレクション]** に移動します。  
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità > Panoramica > Raccolte dispositivi**.  
 
-2.  **[ホーム]** タブの **[コレクション]** グループで、 **[クライアント通知]**をクリックして、 **[次のソフトウェアの更新ポイントに切り替える]**をクリックします。  
+2.  Nel gruppo **Raccolta** della scheda **Home** fare clic su **Notifica client**e quindi su **Passare al punto di aggiornamento software successivo**.  
 
 > [!NOTE]  
->  このオプションは、複数のソフトウェア更新ポイントを持つサイトでのみ使用できます。  
+>  Questa opzione è disponibile solo per i siti con più punti di aggiornamento software.  
 
-##  <a name="bkmk_peercache"></a> クライアント キャッシュ設定とクライアント ピア キャッシュを管理するためのクライアント設定  
- Technical Preview 1604 で、クライアントのキャッシュの使用に影響する 2 つの新しいデバイス クライアント設定が導入されています。 両方とも個別に使用できますが、クライアント設定の同じプロパティ シートで構成されており、リモートの場所のクライアントへのコンテンツの展開を管理するために役立つよう結合されます。  
+##  <a name="bkmk_peercache"></a> Impostazioni client per gestire le impostazioni della cache del client e la peer cache del client  
+ Nella Technical Preview versione 1604 vengono introdotte due nuove impostazioni client dei dispositivi che influiscono sull'uso della cache del client. Entrambe le impostazioni possono essere usate singolarmente, ma vengono configurate nella stessa finestra delle proprietà per le impostazioni client e usate un combinazione offrono supporto per la gestione della distribuzione di contenuti ai client in posizioni remote.  
 
--   1 つ目は、クライアントがローカル キャッシュから直接他のクライアントとコンテンツを共有するための組み込みの Configuration Manager ソリューションである、**クライアント ピア キャッシュ**です。 ピア キャッシュ クライアントがコンテンツを共有するには、同じ境界グループのメンバーである必要があります。 ピア キャッシュは、BracnchCache などのその他のソリューションの使用に取って代わるものではなく、並列動作し、配布ポイントなどの従来のコンテンツ展開ソリューションを拡張する他のオプションを提供します。  
+-   La prima impostazione riguarda la **peer cache del client**, una soluzione Configuration Manager integrata che consente ai client di condividere i contenuti con altri client direttamente dalla cache locale. Per poter condividere i contenuti, i client con peer cache devono essere membri dello stesso gruppo di limiti. La peer cache non sostituisce l'uso di altre soluzioni come BracnchCache, ma si affianca a esse per offrire più opzioni che estendono le soluzioni di distribuzione di contenuti tradizionali quali i punti di distribuzione.  
 
-     ピア キャッシュを有効にするクライアント設定をコレクションに展開すると、そのコレクションのメンバーはその境界グループ内の他のクライアントのピア コンテンツ ソースとして動作できます。  ピア コンテンツ ソースとして動作するクライアントは、管理ポイントにキャッシュされている利用可能なコンテンツの一覧を送信します。 これで、その境界グループ内の次のクライアントがそのコンテンツを要求すると、ピア キャッシュ ソースが潜在的なコンテンツのソースとして高速にするために構成されているすべての配布ポイントとともに提供されます。 クライアントは、コンテンツ ソースの結合されたこのプールから、任意のコンテンツ ソースを選択します。 クライアントは、高速な配布ポイントがないまたはピア キャッシュ ソースが境界グループ内に存在している場合に、遅くなるように構成されている配布ポイントからコンテンツのシークのみを行います。  
+     Dopo aver distribuito le impostazioni client che abilitano la peer cache a una raccolta, i membri di tale raccolta possono fungere da origine di contenuto peer per altri client nel suo gruppo limite.  Il client che agisce come origine di contenuto peer invia un elenco di contenuti disponibili che ha memorizzato nella cache al suo punto di gestione. Quindi, quando il client successivo in tale gruppo limite richiede quel contenuto, l'origine peer cache viene offerta come potenziale origine di contenuto insieme a tutti i punti di distribuzione configurati per essere veloci. Il client seleziona un'origine di contenuto casuale da questo pool combinato di origini di contenuto. I client cercheranno il contenuto da un punto di distribuzione configurato per essere lento solo quando nel gruppo limite non sono presenti punti di distribuzione rapidi o origini peer cache.  
 
--   2 つ目の新しい設定により、クライアントの**キャッシュのサイズを管理**できます。 クライアントのドライブの領域に対する割合としてメガバイト単位の最大サイズを持つように、キャッシュを設定することができます。  クライアントは、先に到達した設定を適用します。  
+-   La seconda nuova impostazione consente di **gestire le dimensioni della cache** nei client. È possibile impostare la dimensione massima per la cache in megabyte o come percentuale dello spazio su disco del client.  Il client applica l'impostazione che viene raggiunta prima.  
 
-クライアントが正常にクライアント ピア キャッシュの使用を把握しやすいように、**クライアント データ ソース** ダッシュボードを表示できます。 コンソールで、**[監視] > [クライアント ステータス] > [Client Data Sources (クライアント データ ソース)]** に移動します。 ここで、ダッシュボードに適用する期間を選択できます。 次に、表示で、情報を表示する境界グループまたはパッケージを選択できます。 情報を表示しているときは、画面上にマウスを移動して、コンテンツまたはポリシーのソースのソースについての詳細を表示できます。  
+Per capire come viene usata la peer cache, è possibile visualizzare il dashboard delle **origini dati client**. Nella console passare a **Monitoraggio > Stato client > Origini dati del client**. In questa posizione è possibile selezionare un periodo di tempo da applicare al dashboard. Nella visualizzazione è quindi possibile selezionare il gruppo di limiti o il pacchetto per il quale visualizzare le informazioni. Quando si esaminano le informazioni, passare il puntatore sulla superficie per vedere altri dettagli relativi ai diversi contenuti o origini dei criteri.  
 
- 各境界グループのクライアント データ ソースの概要を表示する、新しいレポート 「**Client Data Sources - Summarization**」 (クライアント データ ソース - 概要) を使用することもできます。   
-**ピア キャッシュを使用するための要件:**  
+ È anche possibile usare un nuovo report, **Origini dati client - Riepilogo**, per visualizzare un riepilogo delle origini dati client per ogni gruppo limite.   
+**Requisiti per l'uso della peer cache:**  
 
--   各クライアントのキャッシュ フォルダーに対する**フル コントロール**を持つ**ネットワーク アクセス アカウント**を使用してサイトを構成する必要があります。 これは、既定では、**%windir%\ccmcache** です。  
+-   È necessario configurare il sito con un **Account di accesso alla rete** con **Controllo completo** per la cartella della cache in ogni client. Per impostazione predefinita, si tratta di **%windir%\ccmcache**  
 
--   クライアントは同じ境界グループのメンバーの場合にのみ、ピア キャッシュを使用して、コンテンツを転送できます。  
+-   I client possono trasferire il contenuto usando la peer cache solo quando sono membri dello stesso gruppo di limiti.  
 
-#### <a name="to-configure-client-peer-cache-client-settings"></a>クライアント ピア キャッシュのクライアント設定を構成するには  
+#### <a name="to-configure-client-peer-cache-client-settings"></a>Per configurare le impostazioni del client relative alla peer cache del client  
 
-1.  どちらの設定もクライアント設定の同じページで構成されます。 Configuration Manager コンソールで **[管理] > [クライアント設定]** に移動し、使用するデバイス クライアント設定オブジェクトを開きます。 既定のクライアント設定オブジェクトを変更することもできます。  
+1.  Entrambe le impostazioni vengono configurate nella stessa pagina delle impostazioni del client. Nella console di Configuration Manager passare ad **Amministrazione > Impostazioni client** e aprire l'oggetto impostazioni client del dispositivo che si desidera usare. È possibile anche modificare l'oggetto Impostazioni client predefinite.  
 
-2.  使用可能な設定のリストから [**クライアント キャッシュ設定**] を選びます。  
+2.  Nell'elenco delle impostazioni disponibili selezionare **Impostazioni della cache del client**.  
 
-3.  キャッシュのサイズを管理するには、[**クライアント キャッシュ サイズを構成する**] を [**はい**] に設定します。 最大キャッシュ サイズをメガバイトとクライアント ドライブ領域の割合として構成することができます。  
+3.  Per gestire la dimensione della cache impostare **Configurare le dimensioni della cache del client** su **Sì**. È quindi possibile configurare la dimensione massima della cache sia in megabyte sia come percentuale dello spazio su disco dei client.  
 
-4.  クライアントがクライアント ピア キャッシュに参加できるようにするには、[**完全な OS 上の Configuration Manager クライアントにコンテンツの共有を許可する**] を [**はい**] に設定します。 これでクライアントが使用するポート (HTTP または HTTPS でも) を構成することができます。  
+4.  Per consentire ai client di partecipare alla peer cache del client, impostare **Abilita il client di Configuration Manager nell'intero sistema operativo per condividere i contenuti** su **Sì**. È quindi possibile configurare le porte utilizzate dai client, incluso il fatto se saranno HTTP o HTTPS.  
 
-### <a name="try-it-out"></a>試してみましょう。  
- 次のタスクを実行してから、このトピックの先頭付近にあるフィードバック情報を使用してその動作を報告してください。  
+### <a name="try-it-out"></a>Prova subito!  
+ Provare a completare le attività seguenti e quindi usare il collegamento per l'invio di commenti e suggerimenti nella parte superiore di questo argomento per comunicare i risultati:  
 
-1.  クライアント設定を変更してクライアント キャッシュの新しいサイズを指定し、クライアントでこの設定を確認します。  
+1.  Modificare le impostazioni client per specificare una nuova dimensione per la cache client e quindi confermare questa impostazione su un computer client.  
 
-2.  クライアント設定を使用してピア キャッシュを使用する複数のクライアントを構成する  
+2.  Usare le impostazioni client per configurare più client per l'uso della peer cache  
 
-3.  コンテンツをクライアントに展開して、一部またはほとんどのクライアントがピア キャッシュを使用して別のクライアントからそのコンテンツを取得できるようにします。  新しいダッシュ ボード表示することによって、使用されるコンテンツのソースを確認することができます。  
+3.  Distribuire contenuti nei client in modo che alcuni o tutti i client ottengano i contenuti da un altro client usando la peer cache.  È possibile verificare l'origine contenuto in uso visualizzando il nuovo dashboard.  
 
     > [!NOTE]  
-    >  テクニカル プレビューと単一の配布ポイントに関するこのタスクを完了するには、すべてのクライアントのネットワークの場所で低速になるように配布ポイントを構成します。 その後、単一のクライアントにコンテンツを配布します。  そのクライアントがコンテンツを取得した後は、クライアントの場所から低速であると見なされる配布ポイントを使用する前に、コンテンツ ソースとして使用するローカルのピアを検索する別のクライアントにコンテンツを配布できます。  
+    >  Per completare questa attività con la Technical Preview e un singolo punto di distribuzione, configurare il punto di distribuzione in modo che sia lento per il percorso di rete di tutti i client. Distribuire quindi i contenuti in un singolo client.  Dopo che il client ha ottenuto i contenuti, è possibile distribuirli in altri client che devono trovare peer locali da usare come origine contenuto prima di ricorrere al punto di distribuzione considerato lento dal percorso del client.  
 
-##  <a name="bkmk_passport"></a> KSP としての Passport for Work のサポート  
- System Center Configuration Manager により、Microsoft Passport for Work を統合できます。これは Active Directory や Azure Active Directory アカウントを使った代替サインイン方法であり、パスワード、スマート カード、または仮想スマート カードに置き換わります。  
-Passport を使用すると、パスワードの代わりにユーザー ジェスチャを使用してログインできます。 ユーザー ジェスチャには、単純な暗証番号 (PIN)、Windows Hello などの生体認証、または指紋リーダーなどの外部のデバイスがあります。  
+##  <a name="bkmk_passport"></a> Supporto per Passport for Work come provider di archiviazione chiavi  
+ System Center Configuration Manager consente di eseguire l'integrazione con Microsoft Passport for Work, un metodo di accesso alternativo che usa Active Directory o un account Azure Active Directory per sostituire una password, una smart card o una smart card virtuale.  
+Passport consente di eseguire l'accesso usando un movimento dell'utente invece di una password. Un movimento dell'utente può essere un PIN semplice, l'autenticazione biometrica come Windows Hello o un dispositivo esterno come un lettore di impronte digitali.  
 
--   Configuration Manager を使用して、ユーザーがログインに使用できるジェスチャと使用できないジェスチャを制御できます。また、PIN の複雑さの要件を構成できます。  
+-   È possibile usare Configuration Manager per controllare i movimenti che gli utenti possono usare o meno per accedere, nonché per configurare i requisiti di complessità dei PIN.  
 
--   Passport for Work のキー格納プロバイダー (KSP) に認証証明書を格納できます。  
+-   È possibile archiviare i certificati di autenticazione nel provider di archiviazione chiavi (KSP) di Passport for Work.  
 
-ユーザーが Passport の PIN を作成すると、Windows は、Configuration Manager がリッスンする通知を送信します。  これにより、Configuration Manager が、Passport の PIN を作成したユーザーをすぐに認識できるようになります。 その後、Passport が証明書プロファイルでのキー記憶域プロバイダーとして使用される場合に、Configuration Manager はそれらのユーザーに対して新しい証明書を発行することもできます。  
+Quando un utente crea un PIN di Passport, Windows invia una notifica per la quale Configuration Manager è in ascolto.  Ciò consente a Configuration Manager di venire rapidamente a conoscenza di quali utenti hanno creato un PIN di Passport. Configuration Manager può quindi anche rilasciare nuovi certificati a tali utenti se Passport viene usato come provider di archiviazione chiavi in un profilo di certificato.  
 
-##  <a name="bkmk_onpremdha"></a> オンプレミスのデバイス正常性構成証明書  
- オンプレミスのインフラストラクチャを使用して通信するように、Windows 10 デバイスの正常性構成証明書を構成できるようになりました。  管理者は、報告がクラウドを使用して行われるか、オンプレミスのリソースを使用して行われるかを指定できます。  正常性構成証明書の報告に**オンプレミス**が選択されている場合、サービスに URI を指定することができます。 これにより、インターネット アクセスを使用しないクライアント PC が、正常性構成証明書を使用してデバイスを有効化および管理できるようになります。  
+##  <a name="bkmk_onpremdha"></a> Attestazione dell'integrità del dispositivo locale  
+ L'attestazione dell'integrità per i dispositivi Windows 10 può ora essere configurata per comunicare usando l'infrastruttura locale.  Gli amministratori possono specificare se la creazione di report avviene tramite risorse cloud o locali.  Se è selezionata l'opzione **locale** per la creazione dei report di attestazione dell'integrità, è possibile specificare un URI per il servizio. In questo modo i PC client senza accesso a Internet possono usare, abilitare e gestire i dispositivi usando l'attestazione dell'integrità.  
 
-#### <a name="enable-health-attestation-for-on-premises-devices"></a>オンプレミス デバイス正常性構成証明書の有効化  
+#### <a name="enable-health-attestation-for-on-premises-devices"></a>Abilitare l'attestazione dell'integrità per i dispositivi locali  
 
-1.  Configuration Manager コンソールで、**[管理]**  >  **[概要]**  >  **[クライアント設定]** に移動し、**[オンプレミスの正常性構成証明書サービスを使用]** を **[はい]** に設定します。  
+1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Panoramica** > **Impostazioni client**e quindi impostare **Usare il servizio di attestazione dell'integrità locale** su **Sì**.  
 
-2.  **[オンプレミスの正常性構成証明書サービスの URL]**を指定し、 **[OK]**をクリックします。  
+2.  Specificare l' **URL del servizio di attestazione dell'integrità locale**e quindi fare clic su **OK**.  
 
-これを試すには、クライアント エージェント設定を使用して、オンプレミスの正常性構成証明書サービスを構成します。  
+Per provare, configurare il servizio di attestazione dell'integrità locale usando le impostazioni agente client.  
 
-##  <a name="BKMK_Smart"></a> Android デバイスの SmartLock 設定  
- 新しい設定の [**Allow SmartLock and other trust agents**]\(SmartLock およびその他の信頼エージェントを許可) が [**Android and Samsung KNOX**]\(Android および Samsung KNOX) 構成項目に追加され、互換性のある Android デバイスで SmartLock 機能を制御することができます。 信頼エージェントとも呼ばれるこの電話機能では、デバイスが特定の Bluetooth デバイスに接続したときや、NFC タグの近くにある場合など、信頼できる場所にある場合、デバイスのロック画面のパスワードを無効化またはバイパスすることができます。 この設定を使用して、エンドユーザーが SmartLock を構成することを禁止できます。  
+##  <a name="BKMK_Smart"></a> Impostazione di Smart Lock per dispositivi Android  
+ È stata aggiunta una nuova impostazione, **Consenti Smart Lock e altri agenti di attendibilità**, all'elemento di configurazione **Android e Samsung KNOX** che consente di controllare la funzionalità Smart Lock sui dispositivi Android compatibili. Questa funzionalità del telefono, talvolta nota anche come agenti di attendibilità, consente di disabilitare o ignorare la password della schermata di blocco del dispositivo se il dispositivo si trova in una posizione attendibile, ad esempio quando è connesso a un dispositivo Bluetooth specifico oppure quando è nelle vicinanze di un tag NFC. È possibile usare questa impostazione per impedire agli utenti finali di configurare Smart Lock.  

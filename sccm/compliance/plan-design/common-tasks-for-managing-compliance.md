@@ -1,6 +1,6 @@
 ---
-title: "コンプライアンスを管理するための一般的なタスク | Microsoft Docs"
-description: "System Center Configuration Manager でコンプライアンス設定を使用する方法について説明します。"
+title: "Attività comuni per la gestione della conformità | Microsoft Docs"
+description: "Informazioni su come usare le impostazioni di conformità in System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,20 +17,20 @@ manager: angrobe
 ms.openlocfilehash: f62ae116f6f397e7de1da622eea0d9828dd220df
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="common-tasks-for-managing-compliance-with-system-center-configuration-manager"></a>System Center Configuration Manager でのコンプライアンスを管理するための一般的なタスク
+# <a name="common-tasks-for-managing-compliance-with-system-center-configuration-manager"></a>Attività comuni per la gestione della conformità con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-このセクションには、System Center Configuration Manager でのコンプライアンス設定の使用方法を習得するのに役立ついくつかの一般的なシナリオがあります。  
+In questa sezione sono disponibili alcuni scenari comuni utili per imparare a usare le impostazioni di conformità in System Center Configuration Manager.  
 
-## <a name="for-devices-that-run-the-configuration-manager-client"></a>Configuration Manager クライアントを実行しているデバイスの場合  
- [System Center Configuration Manager クライアントでデバイスのコンプライアンスを管理するための一般的なタスク](../../compliance/plan-design/common-tasks-for-managing-compliance-on-devices-with-the-client.md)  
+## <a name="for-devices-that-run-the-configuration-manager-client"></a>Per i dispositivi che eseguono il client di Configuration Manager  
+ [Attività comuni per la gestione della conformità nei dispositivi con il client System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-managing-compliance-on-devices-with-the-client.md)  
 
-## <a name="for-devices-that-do-not-run-the-configuration-manager-client"></a>Configuration Manager クライアントを実行していないデバイスの場合  
- [System Center Configuration Manager クライアントが実行されていないデバイスのコンプライアンスを管理するための一般的なタスク](../../compliance/plan-design/common-tasks-for-managing-compliance-on-devices-not-running-the-client.md)  
+## <a name="for-devices-that-do-not-run-the-configuration-manager-client"></a>Per i dispositivi che non eseguono il client di Configuration Manager  
+ [Attività comuni per la gestione della conformità nei dispositivi che non eseguono il client di System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-managing-compliance-on-devices-not-running-the-client.md)  
 
-## <a name="scenarios-for-creating-and-deploying-configuration-baselines"></a>構成基準の作成と展開に関するシナリオ  
- [System Center Configuration Manager での構成基準の作成と展開に関する一般的なタスク](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md)  
+## <a name="scenarios-for-creating-and-deploying-configuration-baselines"></a>Scenari per la creazione e la distribuzione di linee di base di configurazione  
+ [Attività comuni per la creazione e la distribuzione di linee base di configurazione con System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md)  

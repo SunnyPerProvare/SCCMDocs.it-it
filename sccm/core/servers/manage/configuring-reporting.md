@@ -1,6 +1,6 @@
 ---
-title: "レポートの構成 | Microsoft Docs"
-description: "SQL Server Reporting Services に関する情報を含め、Configuration Manager 階層でのレポートのセットアップ方法について説明します。"
+title: Configurare la creazione di report | Microsoft Docs
+description: Informazioni su come configurare la creazione di report nella gerarchia di Configuration Manager, incluse le informazioni su SQL Server Reporting Services.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,283 +17,283 @@ manager: angrobe
 ms.openlocfilehash: 7ae6bac23e585d6f61aff0f3155d050f1b537620
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="configuring-reporting-in-system-center-configuration-manager"></a>System Center Configuration Manager におけるレポートの構成
+# <a name="configuring-reporting-in-system-center-configuration-manager"></a>Configurazione della creazione di report in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager コンソールでレポートを作成、変更、および実行するには、事前にいくつかの構成タスクを実行する必要があります。 このトピックの以下のセクションは、Configuration Manager 階層でレポートを構成する場合に役立ちます。  
+Prima di poter creare, modificare ed eseguire report nella console di System Center Configuration Manager, è necessario eseguire una serie di attività di configurazione. Usare le sezioni seguenti di questo argomento per configurare la creazione di report nella gerarchia di Configuration Manager:  
 
- 階層での Reporting Services のインストールおよび構成に進む前に、次の Configuration Manager のレポートに関するトピックを参照してください。  
+ Prima di procedere all'installazione e alla configurazione di Reporting Services nella gerarchia, esaminare i seguenti argomenti sulla creazione di report in Configuration Manager:  
 
--   [System Center Configuration Manager のレポートの概要](../../../core/servers/manage/introduction-to-reporting.md)  
+-   [Introduzione alla creazione di report in System Center Configuration Manager](../../../core/servers/manage/introduction-to-reporting.md)  
 
--   [System Center Configuration Manager のレポートの計画](../../../core/servers/manage/planning-for-reporting.md)  
+-   [Pianificazione per la creazione di report in System Center Configuration Manager](../../../core/servers/manage/planning-for-reporting.md)  
 
 ##  <a name="BKMK_SQLReportingServices"></a> SQL Server Reporting Services  
- SQL Server Reporting Services は、サーバー ベースのレポート プラットフォームであり、各種のデータ リソースに包括的なレポート機能を提供します。 Configuration Manager のレポート サービス ポイントは、SQL Server Reporting Services と通信し、指定されたレポート フォルダーへの Configuration Manager レポートのコピー、Reporting Services 設定の構成、および Reporting Services のセキュリティ設定の構成を行います。 Reporting Services は、Configuration Manager のサイト データベースに接続し、レポートを実行したときに返されるデータを取得します。  
+ SQL Server Reporting Services è una piattaforma per la creazione di report basata su server che fornisce funzionalità di creazione di report complete per una vasta gamma di origini dati. Il punto di Reporting Services in Configuration Manager comunica con SQL Server Reporting Services per la copia dei report di Configuration Manager in una cartella report specifica, per la configurazione delle impostazioni di Reporting Services e per la configurazione delle impostazioni di protezione di Reporting Services. Reporting Services si connette al database del sito di Configuration Manager per il recupero dei dati restituiti durante l'esecuzione dei report.  
 
- Configuration Manager のサイトにレポート サービス ポイントをインストールする前に、レポート サービス ポイント サイト システムの役割をホストするサイト システムに、SQL Server Reporting Services をインストールして構成する必要があります。 Reporting Services のインストールの詳細については、 [SQL Server の TechNet ライブラリ](http://go.microsoft.com/fwlink/p/?LinkId=266389)を参照してください。  
+ Prima dell'installazione del punto di Reporting Services in un sito di Configuration Manager, è necessario installare e configurare SQL Server Reporting Services nel sistema del sito che ospita il ruolo del sistema del sito del punto di Reporting Services. Per informazioni sull'installazione di Reporting Services, vedere la [Libreria TechNet SQL Server](http://go.microsoft.com/fwlink/p/?LinkId=266389).  
 
- SQL Server Reporting Services がインストールされていて、正常に実行されているかどうかを確認するには、次の手順に従います。  
+ Utilizzare la seguente procedura per verificare che SQL Server Reporting Services sia installato ed eseguito correttamente.  
 
-#### <a name="to-verify-that-sql-server-reporting-services-is-installed-and-running"></a>SQL Server Reporting Services がインストールおよび実行されていることを確認するには  
+#### <a name="to-verify-that-sql-server-reporting-services-is-installed-and-running"></a>Per verificare che SQL Server Reporting Services sia installato ed eseguito correttamente  
 
-1.  デスクトップで、[スタート ****]、[すべてのプログラム ****]、[Microsoft SQL Server 2008 R2 ****]、[構成ツール ****]、[Reporting Services 構成マネージャー ****] の順にクリックします。  
+1.  Sul desktop fare clic su **Start**, **Tutti i programmi**, **Microsoft SQL Server 2008 R2**, **Strumenti di configurazione**e quindi fare clic su **Gestione configurazione Reporting Services**.  
 
-2.  [ **Reporting Services の構成の接続** ] ダイアログ ボックスで SQL Server Reporting Services をホストしているサーバーの名前を指定し、メニューで、SQL Reporting Services がインストールされている SQL Server のインスタンスを選択して、[ **接続**] をクリックします。 Reporting Services 構成マネージャーが開きます。  
+2.  Nella finestra di dialogo **Connessione configurazione Reporting Services** specificare il nome del server che ospita SQL Server Reporting Services e, nel menu, selezionare l'istanza di SQL Server in cui è stato installato SQL Reporting Services, quindi fare clic su **Connetti**. Verrà visualizzato Gestione configurazione Reporting Services.  
 
-3.  [ **レポート サーバーの状態** ] ページで、[ **レポート サービスの状態** ] が [ **開始**] に設定されていることを確認します。 設定されていない場合は、[開始] をクリックします。 ****  
+3.  Nella pagina **Stato server di report** verificare che **Stato servizio di report** sia impostato su **Avviato**. In caso contrario, fare clic su **Avvia**.  
 
-4.  [ **Web サービス URL** ] ページで、[ **レポート サービスの Web サービスの URL** ] をクリックして、レポート フォルダーへの接続をテストします。 [Windows セキュリティ] ダイアログ ボックスが開いて、セキュリティ資格情報の入力を求められることがあります。 **** 既定では、使用しているユーザー アカウントが表示されます。 パスワードを入力して、[OK] をクリックします。 **** Web ページが正常に開くことを確認します。 ブラウザー ウィンドウを閉じます。  
+4.  Nella pagina **URL servizio Web** fare clic sull'URL in **URL servizio Web Servizio report** per testare la connessione alla cartella report. È possibile che venga visualizzata la finestra di dialogo **Protezione di Windows** e che all'utente vengano richieste le credenziali di protezione. Per impostazione predefinita, viene visualizzato l'account utente. Immettere la password e fare clic su **OK**. Verificare che la pagina Web si apra correttamente. Chiudere la finestra del browser.  
 
-5.  [ **データベース** ] ページで、[ **レポート サーバー モード** ] 設定が [ **ネイティブ**] を使用して構成されていることを確認します。  
+5.  Nella pagina **Database** verificare che l'impostazione **Modalità server di report** sia configurata utilizzando **Originale**.  
 
-6.  [ **レポート マネージャーの URL** ] ページで、[ **レポート マネージャー サイトの識別情報** ] にある URL をクリックして、レポート マネージャーの仮想ディレクトリへの接続をテストします。 [Windows セキュリティ] ダイアログ ボックスが開いて、セキュリティ資格情報の入力を求められることがあります。 **** 既定では、使用しているユーザー アカウントが表示されます。 パスワードを入力して、[OK] をクリックします。 **** Web ページが正常に開くことを確認します。 ブラウザー ウィンドウを閉じます。  
+6.  Nella pagina **URL Gestione report** fare clic sull'URL in **Identificazione sito Gestione report** per testare la connessione alla directory virtuale per Gestione report. È possibile che venga visualizzata la finestra di dialogo **Protezione di Windows** e che all'utente vengano richieste le credenziali di protezione. Per impostazione predefinita, viene visualizzato l'account utente. Immettere la password e fare clic su **OK**. Verificare che la pagina Web si apra correttamente. Chiudere la finestra del browser.  
 
     > [!NOTE]  
-    >  Reporting Services のレポート マネージャーは、Configuration Manager のレポートには必要ありませんが、インターネット ブラウザーでレポートを実行する場合、またはレポート マネージャーを使用してレポートを管理する場合に必要となります。  
+    >  Gestione report di Reporting Services non è necessario per la creazione di report in Configuration Manager, ma è necessario per l'esecuzione di report in un browser Internet o per la gestione di report tramite Gestione report.  
 
-7.  **[終了]** をクリックし、Reporting Services Configuration Manager を閉じます。  
+7.  Fare clic su **Esci** per chiudere Configuration Manager Reporting Services.  
 
-##  <a name="BKMK_ReportBuilder3"></a> レポートの操作にレポート ビルダー 3.0 を使用するように構成する  
+##  <a name="BKMK_ReportBuilder3"></a> Configurare la creazione di report per l'uso di Generatore report 3.0  
 
-#### <a name="to-change-the-report-builder-manifest-name-to-report-builder-30"></a>レポート ビルダーのマニフェスト名をレポート ビルダー 3.0 に変更するには  
+#### <a name="to-change-the-report-builder-manifest-name-to-report-builder-30"></a>Per modificare il nome del manifesto di Generatore report in Generatore report 3.0  
 
-1.  Configuration Manager コンソールを実行しているコンピューターで、Windows レジストリ エディターを開きます。  
+1.  Nel computer che esegue la console di Configuration Manager aprire l'editor del Registro di sistema di Windows.  
 
-2.  **HKEY_LOCAL_MACHINE/SOFTWARE/Wow6432Node/Microsoft/ConfigMgr10/AdminUI/Reporting**を参照します。  
+2.  Selezionare **HKEY_LOCAL_MACHINE/SOFTWARE/Wow6432Node/Microsoft/ConfigMgr10/AdminUI/Reporting**.  
 
-3.  **ReportBuilderApplicationManifestName** キーをダブルクリックして、値データを編集します。  
+3.  Fare doppio clic sulla chiave **ReportBuilderApplicationManifestName** per modificare i dati del valore.  
 
-4.  [ReportBuilder_2_0_0_0.application **** ] を [ReportBuilder_3_0_0_0.application ****] に変更して、[OK ****] をクリックします。  
+4.  Modificare **ReportBuilder_2_0_0_0.application** in **ReportBuilder_3_0_0_0.application**, quindi fare clic su **OK**.  
 
-5.  Windows レジストリ エディターを閉じます。  
+5.  Chiudere l'editor del Registro di sistema di Windows.  
 
-##  <a name="BKMK_InstallReportingServicesPoint"></a> レポート サービス ポイントのインストール  
- サイトでレポートを管理するには、レポート サービス ポイントをサイトにインストールする必要があります。 レポート サービス ポイントは、SQL Server Reporting Services へのレポート フォルダーとレポートのコピー、レポートとフォルダーへのセキュリティ ポリシーの適用、および Reporting Services の構成設定を行います。 Configuration Manager コンソールでのレポートの表示、および Configuration Manager でのレポートの管理を行う前に、レポート サービス ポイントを構成する必要があります。 レポート サービス ポイントは、サイト システムの役割の 1 つであり、Microsoft SQL Server Reporting Services をインストールして実行しているサーバー上に構成する必要があります。 前提条件の詳細については、「[レポートの前提条件](prerequisites-for-reporting.md)」を参照してください。  
+##  <a name="BKMK_InstallReportingServicesPoint"></a> Installare un punto di Reporting Services  
+ Il punto di Reporting Services deve essere installato in un sito per gestire i report nel sito. Il punto di Reporting Services consente di copiare i report e le cartelle report in SQL Server Reporting Services, di applicare i criteri di protezione per i report e le cartelle, nonché di impostare le impostazioni di configurazione in Reporting Services. Per consentire la visualizzazione dei report nella console di Configuration Manager e la gestione dei report in Configuration Manager, è necessario configurare un punto di Reporting Services. Il punto di Reporting Services è un ruolo del sistema del sito che è necessario configurare su un server in cui Microsoft SQL Server Reporting Services è installato e in esecuzione. Per altre informazioni sui prerequisiti , vedere [Prerequisiti per la creazione di report](prerequisites-for-reporting.md).  
 
 > [!IMPORTANT]  
->  レポート サービス ポイントをインストールするサイトを選択するときは、レポートにアクセスすることになるユーザーが、レポート サービス ポイントのインストール先サイトと同じセキュリティ スコープにいなければならないことに注意してください。  
+>  Quando si seleziona un sito per installare il punto di Reporting Services, ricordare che gli utenti che avranno accesso ai report devono essere nello stesso ambito di protezione del sito in cui è installato il punto di Reporting Services.  
 
 > [!NOTE]  
->  サイト システムにレポート サービス ポイントをインストールした後に、レポート サーバーの URL を変更しないでください。 たとえば、レポート サービス ポイントを作成した後に、Reporting Services Configuration Manager でレポート サーバーの URL を変更すると、Configuration Manager コンソールは引き続き古い URL を使用するため、コンソールからレポートを実行、編集、または作成できません。 URL レポート サーバーを変更する必要がある場合は、レポート サービス ポイントを削除して、URL を変更し、レポート サービス ポイントを再インストールします。  
+>  Al termine dell'installazione di un punto di Reporting Services in un sistema del sito, non modificare l'URL del server di report. Se ad esempio viene creato il punto di Reporting Services e in Configuration Manager Reporting Services si modifica l'URL del server di report, la console di Configuration Manager continuerà a usare l'URL precedente e non sarà possibile eseguire, modificare o creare report dalla console. Se è necessario modificare l'URL del server di report, rimuovere il punto di Reporting Services, modificare l'URL e quindi reinstallare il punto di Reporting Services.  
 
 > [!IMPORTANT]    
-> レポート サービス ポイントをインストールする場合、レポート サービス ポイント アカウントを指定する必要があります。 後で別のドメインのユーザーがレポートを実行しようとすると、ドメイン間に双方向の信頼が確立していない場合、レポートの実行は失敗します。
+> Quando si installa un punto di Reporting Services, è necessario specificare un account del punto di Reporting Services. In seguito, quando gli utenti di un dominio diverso tenteranno di eseguire un report, l'esecuzione del report non riuscirà a meno che vi sia un trust bidirezionale tra i domini.
 
- レポート サービス ポイントをインストールするには、次の手順に従います。  
+ Utilizzare la seguente procedura per installare il punto di Reporting Services.  
 
-#### <a name="to-install-the-reporting-services-point-on-a-site-system"></a>サイト システムにレポート サービス ポイントをインストールするには  
+#### <a name="to-install-the-reporting-services-point-on-a-site-system"></a>Per installare il punto di Reporting Services in un sistema del sito  
 
-1.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
 
-2.  [ **管理** ] ワークスペースで [ **サイトの構成**] を展開して、[ **サーバーとサイト システムの役割**] をクリックします。  
+2.  Nell'area di lavoro **Amministrazione** espandere **Configurazione del sito**, quindi fare clic su **Server e ruoli del sistema del sito**.  
 
     > [!TIP]  
-    >  レポート サービス ポイント サイトの役割をホストするサイト システムのみを一覧表示するには、[ **サーバーとサイト システムの役割** ] を右クリックして、[ **レポート サービス ポイント**] を選択します。  
+    >  Per elencare solo i sistemi del sito che ospitano il ruolo del sito del punto di Reporting Services, fare clic con il pulsante destro del mouse su **Server e ruoli del sistema del sito** per selezionare **Punto di Reporting Services**.  
 
-3.  対応する手順を使用して、レポート サービス ポイント サイト システムの役割を新規または既存のサイト システム サーバーに追加します。  
-
-    > [!NOTE]  
-    >  サイト システムの構成の詳細については、「[System Center Configuration Manager のサイト システム役割の追加](../deploy/configure/add-site-system-roles.md)」を参照してください。  
-
-    -   **新しいサイト システム**: **[ホーム]** タブの **[作成]** グループで、 **[サイト システム サーバーの作成]**をクリックします。 サイト システム サーバーの作成ウィザードが開きます。 ****  
-
-    -   **既存のサイト システム**: レポート サービス ポイントのサイト システムの役割をインストールするサーバーをクリックします。 サーバーをクリックすると、サーバーに既にインストールされているサイト システムの役割の一覧が、結果ウィンドウに表示されます。  
-
-         [ **ホーム** ] タブの [ **サーバー** ] グループで、[ **サイト システムの役割の追加**] をクリックします。 サイト システムの役割の追加ウィザードが開きます。 ****  
-
-4.  [ **全般** ] ページで、サイト システム サーバーの全般設定を指定します。 レポート サービス ポイントを既存のサイト システム サーバーに追加する場合は、以前に構成した値を確認します。  
-
-5.  [ **システムの役割の選択** ] ページの利用可能な役割の一覧で [ **レポート サービス ポイント** ] を選択し、[ **次へ**] をクリックします。  
-
-6.  [レポート サービス ポイント **** ] ページで、次の設定を構成します。  
-
-    -   **サイト データベース サーバー名**: Configuration Manager サイト データベースをホストするサーバーの名前を指定します。 通常、ウィザードはサーバーの完全修飾ドメイン名 (FQDN) を自動的に取得します。 データベース インスタンスを指定するには、&lt;*サーバー名*>\&lt;*インスタンス名*> という形式を使用します。  
-
-    -   **データベース名**: Configuration Manager サイト データベース名を指定して、**[確認]** をクリックし、ウィザードがサイト データベースにアクセスできることを確認します。  
-
-        > [!IMPORTANT]  
-        >  レポート サービス ポイントを作成しているユーザー アカウントには、サイト データベースに対する **読み取り** アクセス許可がある必要があります。 接続テストに失敗した場合、赤色の警告アイコンが表示されます。 失敗の詳細を確認するには、このアイコンの上にカーソルを移動します。 エラーを修正し、[ **テスト** ] をもう一度クリックします。  
-
-    -   **フォルダー名**: Reporting Services で Configuration Manager レポートをホストするために作成および使用されるフォルダー名を指定します。  
-
-    -   **Reporting Services サーバー インスタンス**: Reporting Services の SQL Server のインスタンスの一覧から選択します。 見つかったインスタンスが 1 つのみの場合は、既定では、それが表示および選択されます。 インスタンスが見つからない場合は、SQL Server Reporting Services がインストールおよび構成されているかどうか、および SQL Server Reporting Services がサイト システム上で開始されているかどうかを確認します。  
-
-        > [!IMPORTANT]  
-        >  Configuration Manager は、現在のユーザー コンテキストで、選択したサイト システム上の Windows Management Instrumentation (WMI) に接続して、Reporting Services の SQL Server のインスタンスを取得します。 現在のユーザーには、サイト システム上の WMI に対する [読み取り **** ] アクセス許可がある必要があります。アクセス許可がない場合は、Reporting Services インスタンスを取得できません。  
-
-    -   **レポート サービス ポイントのアカウント**: **[設定]** をクリックして、レポートに表示されるデータを取得するために、レポート サービス ポイント上の SQL Server Reporting Services が Configuration Manager サイト データベースに接続する際に使用するアカウントを選択します。 **[既存のアカウント]** を選択して、以前に Configuration Manager アカウントとして構成されている Windows ユーザー アカウントを指定するか、**[新しいアカウント]** を選択して、現在 Configuration Manager アカウントとして構成されていない Windows ユーザー アカウントを指定します。 Configuration Manager は指定したユーザーにサイト データベースへのアクセスを自動的に付与します。 [ **管理** ] ワークスペースの [ **セキュリティ** ] ノードの [ **アカウント** ] サブフォルダーに、[ **ConfigMgr レポート サービス ポイント** ] のアカウント名でユーザーが表示されます。  
-
-         レポート サービスを実行するアカウントはドメイン ローカル セキュリティ グループ **Windows Authorization Access Group**に属し、[ **tokenGroupsGlobalAndUniversal の読み取り** ] アクセス許可が [ **許可**] に設定されている必要があります。 レポートを正常に実行するには、レポート サービス ポイント アカウントとは異なるドメインのユーザーに対して双方向の信頼が確立されている必要があります。
-
-         指定された Windows ユーザー アカウントとパスワードは、暗号化されて Reporting Services データベースに格納されます。 Reporting Services は、このアカウントとパスワードを使用して、サイト データベースからレポートのデータを取得します。  
-
-        > [!IMPORTANT]  
-        >  指定するアカウントは、Reporting Services データベースをホストするコンピューターに [ローカル ログオン **** ] アクセス許可がある必要があります。  
-
-7.  [ **レポート サービス ポイント** ] ページで、[ **次へ**] をクリックします。  
-
-8.  [ **概要** ] ページで設定を確認し、[ **次へ** ] をクリックしてレポート サービス ポイントをインストールします。  
-
-     ウィザードが完了すると、レポート フォルダーが作成され、Configuration Manager レポートが指定されたレポート フォルダーにコピーされます。  
+3.  Aggiungere il ruolo del sistema del sito del punto di Reporting Services a un server del sistema del sito nuovo o esistente utilizzando il passaggio associato:  
 
     > [!NOTE]  
-    >  レポート フォルダーが作成され、レポートがレポート サーバーにコピーされると、Configuration Manager はそのオブジェクトに適した言語を決定します。 関連する言語パックがサイトにインストールされている場合、Configuration Manager は、サイトのレポート サーバーで実行されているオペレーティング システムと同じ言語でオブジェクトを作成します。 その言語を使用できない場合、レポートは英語で作成および表示されます。 言語パックがないサイトにレポート サービス ポイントをインストールすると、レポートは英語でインストールされます。 レポート サービス ポイントをインストールした後に言語パックをインストールする場合、レポートのレポート サービス ポイントを適切な言語パックの言語で使用できるようにするには、そのポイントをアンインストールしてから再インストールする必要があります。 言語パックの詳細については、「[System Center Configuration Manager の言語パック](../deploy/install/language-packs.md)」を参照してください。  
+    >  Per altre informazioni sulla configurazione dei sistemi del sito, vedere [Aggiungere ruoli del sistema del sito per System Center Configuration Manager](../deploy/configure/add-site-system-roles.md).  
 
-###  <a name="BKMK_FileInstallationAndSecurity"></a> ファイルのインストールおよびレポート フォルダーのセキュリティ権限  
- Configuration Manager は次のアクションを実行して、レポート サービス ポイントをインストールし、Reporting Services を構成します。  
+    -   **Nuovo sistema del sito**: nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea server di sistema sito**. Viene visualizzata la **Creazione guidata server del sistema sito** .  
+
+    -   **Sistema del sito esistente**: fare clic sul server in cui si vuole installare il ruolo del sistema del sito del punto di Reporting Services. Quando si seleziona un server, nel riquadro dei risultati viene visualizzato un elenco dei ruoli del sistema del sito già installati nel server.  
+
+         Nella scheda **Home** , nel gruppo **Server** , fare clic su **Aggiungi ruoli del sistema del sito**. Verrà visualizzata la finestra di **Aggiunta guidata ruoli del sistema del sito** .  
+
+4.  Nella scheda **Generale** specificare le impostazioni generali per il server del sistema del sito. Quando si aggiunge il punto di Reporting Services a un server del sistema del sito esistente, verificare i valori configurati in precedenza.  
+
+5.  Nella pagina **Selezione ruolo del sistema** selezionare **Punto di Reporting Services** dall'elenco dei ruoli disponibili, quindi fare clic su **Avanti**.  
+
+6.  Nella pagina **Punto di Reporting Services** configurare le seguenti impostazioni:  
+
+    -   **Nome server di database del sito**: specificare il nome del server che ospita il database del sito di Configuration Manager. In genere, la procedura guidata recupera automaticamente il nome di dominio completo (FQDN) del server. Per specificare un'istanza di database, usare il formato &lt;*Nome server*>\&lt;*<Nome istanza*>.  
+
+    -   **Nome del database**: specificare il nome del database del sito di Configuration Manager, quindi fare clic su **Verifica** per verificare che la procedura guidata abbia accesso al database del sito.  
+
+        > [!IMPORTANT]  
+        >  L'account utente che crea il punto di Reporting Services deve disporre dell'accesso in **Lettura** al database del sito. Se la prova di connessione non riesce, verrà visualizzata un'icona di avviso rossa. Spostare il cursore sull'icona per leggere i dettagli dell'errore. Correggere l'errore, quindi fare nuovamente clic su **Verifica** .  
+
+    -   **Nome cartella**: specificare il nome della cartella creata e usata per l'hosting dei report di Configuration Manager in Reporting Services.  
+
+    -   **Istanza server di Reporting Services**: selezionare nell'elenco l'istanza di SQL Server per Reporting Services. Se viene rilevata solo un'istanza, questa verrà elencata e selezionata per impostazione predefinita. Se non viene rilevata nessuna istanza, verificare che SQL Server Reporting Services sia installato e configurato e che il servizio SQL Server Reporting Services sia stato avviato nel sistema nel sito.  
+
+        > [!IMPORTANT]  
+        >  Configuration Manager esegue una connessione nell'ambito dell'utente corrente a Windows Management Instrumentation (WMI) nel sistema del sito selezionato per recuperare l'istanza di SQL Server per Reporting Services. Se l'utente corrente non dispone dell'accesso in **Lettura** a WMI nel sistema del sito, non è possibile recuperare le istanze di Reporting Services.  
+
+    -   **Account punto di Reporting Services**: fare clic su **Imposta**, selezionare un account da usare quando SQL Server Reporting Services nel punto di Reporting Services si connette al database del sito di Configuration Manager per recuperare i dati visualizzati in un report. Selezionare **Account esistente** per specificare un account utente di Windows precedentemente configurato come account di Configuration Manager oppure selezionare **Nuovo account** per specificare un account utente di Windows non attualmente configurato come account di Configuration Manager. Configuration Manager concede automaticamente all'utente specificato l'accesso al database del sito. L'utente viene visualizzato nella sottocartella **Account** del nodo **Sicurezza** nell'area di lavoro **Amministrazione** con il nome account **Punto di Reporting Services di Configuration Manager** .  
+
+         L'account che esegue Reporting Services deve appartenere al gruppo di sicurezza locale del dominio **Gruppo di accesso Windows Authorization**e disporre dell'autorizzazione **Lettura tokenGroupsGlobalAndUniversal** impostata su **Consenti**. Per poter eseguire correttamente i report, deve essere presente un trust bidirezionale per gli utenti di un dominio diverso da quello dell'account al punto Servicies Reporting.
+
+         La password e l'account utente Windows specificati vengono crittografati e archiviati nel database di Reporting Services. Reporting Services recupera i dati per i report dal database del sito utilizzando l'account e la password.  
+
+        > [!IMPORTANT]  
+        >  L'account specificato deve disporre delle autorizzazioni di **Accesso locale** nel computer che ospita il database di Reporting Services.  
+
+7.  Nella pagina **Punto di Reporting Services** fare clic su **Avanti**.  
+
+8.  Nella pagina **Riepilogo** verificare le impostazioni, quindi fare clic su **Avanti** per installare il punto di Reporting Services.  
+
+     Al termine della procedura guidata vengono create le cartelle report e i report di Configuration Manager vengono copiati nelle cartelle specificate.  
+
+    > [!NOTE]  
+    >  Dopo che le cartelle report sono state create e i report sono stati copiati nel server di report, Configuration Manager determina la lingua appropriata per gli oggetti. Se il Language Pack associato è installato nel sito, Configuration Manager crea gli oggetti nella stessa lingua del sistema operativo in esecuzione nel server di report del sito. Se la lingua non è disponibile, i report vengono creati e visualizzati in inglese. Quando si installa un punto di Reporting Services in un sito senza Language Pack, i report vengono installati in inglese. Se un Language Pack viene installato in seguito all'installazione del punto di Reporting Services, è necessario disinstallare e reinstallare il punto di Reporting Services affinché i report siano disponibili nella lingua del Language Pack appropriato. Per altre informazioni sui Language Pack, vedere [Language Pack in System Center Configuration Manager](../deploy/install/language-packs.md).  
+
+###  <a name="BKMK_FileInstallationAndSecurity"></a> Privilegi di protezione della cartella report e della cartella di installazione file  
+ Configuration Manager esegue le seguenti azioni per installare il punto di Reporting Services e configurare Reporting Services:  
 
 > [!IMPORTANT]  
->  次の一覧のアクションは、SMS_Executive サービス用に構成したアカウント (通常は、サイト サーバーのローカルのシステム アカウント) の資格情報を使用して実行します。  
+>  Le azioni contenute nel seguente elenco vengono eseguite utilizzando le credenziali dell'account configurato per il servizio SMS_Executive, che solitamente corrisponde all'account di sistema locale del server del sito.  
 
--   レポート サービス ポイントのサイトの役割をインストールします。  
+-   Consente di installare il ruolo del sito del punto di Reporting Services.  
 
--   ウィザードで指定した格納されている資格情報を使用して、Reporting Services にデータ ソースを作成します。 これは、レポートを実行したときに、Reporting Services がサイト データベースに接続するために使用する Windows ユーザー アカウントとパスワードです。  
+-   Consente di creare l'origine dati in Reporting Services con le credenziali archiviate specificate nella procedura guidata. Si tratta della password e dell'account utente Windows utilizzati da Reporting Services per la connessione al database del sito durante l'esecuzione dei report.  
 
--   Reporting Services に Configuration Manager のルート フォルダーを作成します。  
+-   Consente di creare la cartella radice di Configuration Manager in Reporting Services.  
 
--   Reporting Services に [ **ConfigMgr レポート ユーザー** ] と [ **ConfigMgr レポート管理者** ] セキュリティ ロールを追加します。  
+-   Consente di aggiungere i ruoli di sicurezza **Utenti report di Configuration Manager** e **Amministratori report di Configuration Manager** in Reporting Services.  
 
--   サブフォルダーを作成し、%ProgramFiles%\SMS_SRSRP から Reporting Services に Configuration Manager レポートを展開します。  
+-   Consente di creare sottocartelle e di distribuire i report di Configuration Manager da %ProgramFiles%\SMS_SRSRP a Reporting Services.  
 
--   **サイトの読み取り**権限を持つ Configuration Manager 内のすべてのユーザー アカウントに、ルート フォルダーに対する Reporting Services の **[ConfigMgr レポート ユーザー]** ロールを追加します。  
+-   Consente di aggiungere il ruolo **Utenti report di Configuration Manager** in Reporting Services alle cartelle radice per tutti gli account utente in Configuration Manager che dispongono dei diritti di **Lettura**.  
 
--   **サイトの変更**権限を持つ Configuration Manager 内のすべてのユーザー アカウントに、ルート フォルダーに対する Reporting Services の **[ConfigMgr レポート管理者]** ロールを追加します。  
+-   Consente di aggiungere il ruolo **Amministratori report di Configuration Manager** in Reporting Services alle cartelle radice per tutti gli account utente in Configuration Manager che dispongono dei diritti di **lettura**.  
 
--   レポート フォルダーと Configuration Manager の保護されているオブジェクトの種類 (Configuration Manager サイト データベースで保持されているオブジェクト) の間のマッピングを取得します。  
+-   Consente di recuperare il mapping tra le cartelle report e i tipi di oggetti protetti di Configuration Manager (gestiti nel database del sito di Configuration Manager).  
 
--   Configuration Manager の管理ユーザーに、Reporting Services の特定のレポート フォルダーに対する次の権限を構成します。  
+-   Consente di configurare i seguenti diritti per utenti amministratori di Configuration Manager in cartelle report specifiche di Reporting Services:  
 
-    -   ユーザーを追加し、Configuration Manager オブジェクトの**レポートの実行**アクセス許可を持つ管理ユーザーに、関連付けられているレポート フォルダーに対する **[ConfigMgr レポート ユーザー]** ロールを割り当てます。  
+    -   Consente di aggiungere utenti e di assegnare il ruolo **Utenti report di Configuration Manager** alla cartella report associata per gli utenti amministratori che dispongono delle autorizzazioni **Esegui report** per l'oggetto di Configuration Manager.  
 
-    -   ユーザーを追加し、Configuration Manager オブジェクトの**レポートの変更**アクセス許可を持つ管理ユーザーに、関連付けられているレポート フォルダーに対する **[ConfigMgr レポート管理者]** ロールを割り当てます。  
+    -   Consente di aggiungere utenti e di assegnare il ruolo **Amministratori report di Configuration Manager** alla cartella report associata per gli utenti amministratori che dispongono delle autorizzazioni **Modifica report** per l'oggetto di Configuration Manager.  
 
-     Configuration Manager は Reporting Services に接続し、Configuration Manager と Reporting Services のルート フォルダーおよび特定のレポート フォルダーに対するアクセス許可をユーザーに設定します。 レポート サービス ポイントが最初にインストールされてから、Configuration Manager は Reporting Services に 10 分間隔で接続し、レポート フォルダーに構成されているユーザー権限が Configuration Manager ユーザーに設定された関連付けられている権限であることを確認します。 Reporting Services のレポート マネージャーを使用して、レポート フォルダーへのユーザーの追加、またはユーザー権限の変更を行うと、Configuration Manager は、サイト データベースに格納されている役割に基づいた割り当てを使用して、それらの変更を上書きします。 また、Configuration Manager は、Configuration Manager でのレポート権限を持っていないユーザーを削除します。  
+     Configuration Manager si connette a Reporting Services e configura le autorizzazioni per gli utenti nelle cartelle radice di Configuration Manager e di Reporting Services e in cartelle report specifiche. Al termine dell'installazione iniziale del punto di Reporting Services, Configuration Manager si connette a Reporting Services ad intervalli di 10 minuti per verificare che i diritti utente configurati nelle cartelle report siano i diritti associati configurati per gli utenti di Configuration Manager. Quando vengono aggiunti utenti o vengono modificati i diritti utente nella cartella report usando Gestione report di Reporting Services, Configuration Manager sovrascrive le modifiche mediante le assegnazioni basate sui ruoli archiviate nel database del sito. Configuration Manager rimuove anche gli utenti che non dispongono dei diritti di creazione di report in Configuration Manager.  
 
-##  <a name="BKMK_SecurityRoles"></a> Configuration Manager の Reporting Services のセキュリティ ロール  
- Configuration Manager がレポート サービス ポイントをインストールするときに、Reporting Services に次のセキュリティ ロールを追加します。  
+##  <a name="BKMK_SecurityRoles"></a> Ruoli di sicurezza di Reporting Services per Configuration Manager  
+ Quando Configuration Manager installa il punto di Reporting Services, in Reporting Services vengono aggiunti i seguenti ruoli di sicurezza:  
 
--   **ConfigMgr レポート ユーザー**: このセキュリティ ロールが割り当てられたユーザーは、Configuration Manager レポートのみを実行できます。  
+-   **Utenti report di Configuration Manager**: gli utenti assegnati a questo ruolo di sicurezza possono eseguire soltanto i report di Configuration Manager.  
 
--   **ConfigMgr レポート管理者**: このセキュリティ ロールが割り当てられたユーザーは、Configuration Manager のレポートに関連するすべてのタスクを実行できます。  
+-   **Amministratori report di Configuration Manager**: gli utenti assegnati a questo ruolo di sicurezza possono eseguire tutte le attività relative alla creazione di report in Configuration Manager.  
 
-##  <a name="BKMK_VerifyReportingServicesPointInstallation"></a> レポート サービス ポイントのインストールの検証  
- レポート サービス ポイントのサイトの役割を追加した後に、インストールを検証するには、特定のステータス メッセージおよびログ ファイルのエントリを確認します。 レポート サービス ポイントのインストールが成功したことを確認するには、次の手順に従います。  
+##  <a name="BKMK_VerifyReportingServicesPointInstallation"></a> Verificare l'installazione del punto di Reporting Services  
+ Al termine dell'aggiunta del ruolo del sito del punto di Reporting Services, è possibile verificare l'installazione esaminando i messaggi di stato specifici e le voci dei file di log. Utilizzare la seguente procedura per verificare il completamento dell'installazione del punto di Reporting Services.  
 
 > [!WARNING]  
->  レポートが Configuration Manager コンソールの **[監視]** ワークスペースにある **[レポート]** ノードの **[レポート]** サブフォルダーに表示される場合は、この手順をスキップすることができます。  
+>  È possibile ignorare questa procedura se i report vengono visualizzati nella sottocartella **Report** del nodo **Creazione di report** nell'area di lavoro **Monitoraggio** della console di Configuration Manager.  
 
-#### <a name="to-verify-the-reporting-services-point-installation"></a>レポート サービス ポイントのインストールを検証するには  
+#### <a name="to-verify-the-reporting-services-point-installation"></a>Per verificare l'installazione del punto di Reporting Services  
 
-1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
+1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
-2.  [ **監視** ] ワークスペースで、[ **システムのステータス**] を展開してから、[ **コンポーネントのステータス**] をクリックします。  
+2.  Nell'area di lavoro **Monitoraggio** , espandere **Stato del sistema**, quindi fare clic su **Stato componente**.  
 
-3.  コンポーネントの一覧で [SMS_SRS_REPORTING_POINT] をクリックします。 ****  
+3.  Fare clic su **SMS_SRS_REPORTING_POINT** nell'elenco dei componenti.  
 
-4.  [ **ホーム** ] タブの [ **コンポーネント** ] グループで、[ **メッセージを表示する**] をクリックして、[ **すべて**] をクリックします。  
+4.  Nella scheda **Home** , nel gruppo **Componente** , fare clic su **Mostra messaggi**, quindi selezionare **Tutti**.  
 
-5.  レポート サービス ポイントをインストールする前の日付と時刻を指定して、[OK] をクリックします。 ****  
+5.  Specificare una data e un'ora per un periodo antecedente all'installazione del punto di Reporting Services, quindi fare clic su **OK**.  
 
-6.  ステータス メッセージ ID 1015 が表示されていることを確認します。これは、レポート サービス ポイントが正常にインストールされたことを示します。 または、&lt;*ConfigMgr のインストール パス*>\Logs にある Srsrp.log ファイルを開いて、"**インストールは成功しました**" というメッセージを探します。  
+6.  Verificare che sia elencato il messaggio di stato ID 1015, in cui viene indicato che l'installazione del punto di Reporting Services è stata completata. In alternativa, è possibile aprire il file Srsrp.log file in &lt;*Percorso di installazione di Configuration Manager*>\Logs e individuare **Installazione completata**.  
 
-     Windows エクスプローラーで、&lt;*ConfigMgr のインストール パス*>\Logs に移動します。  
+     In Esplora risorse passare a Percorso di installazione di &lt;*Configuration Manager*>\Logs.  
 
-7.  Srsrp.log を開いて、ログ ファイルのレポート サービス ポイントが正常にインストールされた時刻からログを確認します。 レポート フォルダーが作成されたこと、レポートが展開されたこと、および各フォルダーのセキュリティ ポリシーが確認されたことを検証します。 セキュリティ ポリシーの確認の最後の行の後ろに "SRS Web サービスがサーバー上で正常であることを確認しました" というメッセージがあることを確認します。 ****  
+7.  Aprire Srsrp.log e procedere con il file di log a partire dal completamento dell'installazione del punto di Reporting Services. Verificare che le cartelle report siano state create, che i report siano stati distribuiti e che i criteri di protezione di ogni cartella siano stati confermati. Individuare **Verifica dell'integrità del servizio Web SRS nel server completata** dopo l'ultima riga di conferme dei criteri di sicurezza.  
 
-##  <a name="BKMK_Certificate"></a> Configuration Manager コンソール コンピューターの自己署名入り証明書の構成  
- SQL Server Reporting Services レポートを作成する場合、多くのオプションがあります。 Configuration Manager コンソールでレポートを作成または編集する場合、Configuration Manager はレポート ビルダーを開いて、作成環境として使用します。 Configuration Manager レポートをどのように作成するかにかかわらず、サイト データベース サーバーでのサーバー認証のために自己署名入り証明書が必要となります。 Configuration Manager は、SMS プロバイダーがインストールされているサイト サーバーとコンピューターに証明書を自動的にインストールします。 このため、これらのコンピューターのいずれかから Configuration Manager コンソールを実行する場合は、そこでレポートを作成または編集できます。 ただし、別のコンピューターにインストールされている Configuration Manager コンソールからレポートの作成または変更を行う場合、サイト サーバーから証明書をエクスポートし、Configuration Manager コンソールを実行するコンピューターの**信頼されたユーザー**証明書ストアに追加する必要があります。  
+##  <a name="BKMK_Certificate"></a> Configurare un certificato autofirmato per i computer della console di Configuration Manager  
+ Esistono diverse opzioni per la creazione di report SQL Server Reporting Services. Quando i report vengono creati o modificati nella console di Configuration Manager, Configuration Manager apre Generatore report che verrà usato come ambiente di creazione. A prescindere dalla modalità di creazione dei report di Configuration Manager, è necessario disporre di un certificato autofirmato per eseguire l'autenticazione server nel server di database del sito. Configuration Manager installa automaticamente il certificato nel server del sito e nei computer con installato il provider SMS. È pertanto possibile creare o modificare i report dalla console di Configuration Manager quando viene eseguita da uno di questi computer. Tuttavia, quando i report vengono creati o modificati da una console di Configuration Manager installata in un computer diverso, è necessario esportare il certificato dal server del sito e quindi aggiungerlo all'archivio certificati **Persone attendibili** nel computer che esegue la console di Configuration Manager.  
 
 > [!NOTE]  
->  SQL Server Reporting Services のその他のレポート作成環境の詳細については、SQL Server 2008 Books Online の「 [レポート作成環境の比較](http://go.microsoft.com/fwlink/p/?LinkId=242805) 」を参照してください。  
+>  Per ulteriori informazioni su altri ambienti di creazione report per SQL Server Reporting Services, vedere [Comparing Report Authoring Environments (Confronto tra ambienti di creazione report)](http://go.microsoft.com/fwlink/p/?LinkId=242805) nella documentazione online di SQL Server 2008.  
 
- 両方のコンピューターが Windows Server 2008 R2 を実行している場合に、自己署名入り証明書のコピーをサイト サーバーから Configuration Manager コンソールを実行する別のコンピューターに転送するには、次のような手順を使用します。 別のオペレーティング システムのバージョンを使用しているために、この手順に従うことができない場合は、使用しているオペレーティング システムのドキュメントの対応する手順を参照してください。  
+ Usare la procedura seguente come esempio di trasferimento di una copia del certificato autofirmato dal server del sito a un altro computer che esegue la console di Configuration Manager quando entrambi i computer eseguono Windows Server 2008 R2. Se non è possibile seguire questa procedura poiché si dispone di una versione diversa del sistema operativo, fare riferimento alla documentazione del sistema operativo per individuare la procedura equivalente.  
 
-#### <a name="to-transfer-a-copy-of-self-signed-certificate-from-the-site-server-to-another-computer"></a>自己署名入り証明書のコピーをサイト サーバーから別のコンピューターに転送するには  
+#### <a name="to-transfer-a-copy-of-self-signed-certificate-from-the-site-server-to-another-computer"></a>Per trasferire una copia del certificato autofirmato dal server del sito a un altro computer  
 
-1.  サイト サーバーで次の手順を実行して、自己署名入り証明書をエクスポートします。  
+1.  Nel server del sito eseguire i seguenti passaggi per esportare il certificato autofirmato:  
 
-    1.  **[スタート]**、 **[実行]**の順にクリックし、「 **mmc.exe**」と入力します。 空のコンソールで、[ **ファイル**] をクリックし、次に [ **スナップインの追加と削除**] をクリックします。  
+    1.  Fare clic su **Start**, quindi su **Esegui**e digitare **mmc.exe**. Nella console vuota fare clic su **File**, quindi fare clic su **Aggiungi/Rimuovi snap-in**.  
 
-    2.  [ **スナップインの追加と削除** ] ダイアログ ボックスで、[ **利用できるスナップイン** ] リストから [ **証明書**] を選択し、[ **追加**] をクリックします。  
+    2.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** , selezionare **Certificati** dall'elenco di **Snap-in disponibili**, quindi fare clic su **Aggiungi**.  
 
-    3.  [ **証明書スナップイン** ] ダイアログボックスで [ **コンピューター アカウント**] を選択し、[ **次へ**] をクリックします。  
+    3.  Nella finestra di dialogo **Snap-in certificati** , selezionare **Account computer**, quindi fare clic su **Avanti**.  
 
-    4.  [ **コンピューターの選択** ] ダイアログ ボックスで、[ **ローカル コンピューター: (このコンソールを実行しているコンピューター)** ] が選択されていることを確認して、[ **完了**] をクリックします。  
+    4.  Nella finestra di dialogo **Seleziona computer** verificare che l'opzione **Computer locale: (computer in cui è in esecuzione la console)** sia selezionata, quindi fare clic su **Fine**.  
 
-    5.  [ **スナップインの追加と削除** ] ダイアログ ボックスで、[ **OK**] をクリックします。  
+    5.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** , fare clic su **OK**.  
 
-    6.  コンソールで、[ **証明書 (ローカル コンピューター)**]、[ **信頼されたユーザー**] の順に展開して、[ **証明書**] をクリックします。  
+    6.  Nella console espandere **Certificati (computer locale)**, quindi **Persone attendibili**e selezionare **Certificati**.  
 
-    7.  &lt;*サイト サーバーの FQDN*> というフレンドリ名が付いている証明書を右クリックし、**[すべてのタスク]** をクリックして **[エクスポート]** を選択します。  
+    7.  Fare clic con il pulsante destro del mouse sul certificato con il nome descrittivo &lt;*FQDN del server sito*>, fare clic su **Tutte le attività**, quindi selezionare **Esporta**.  
 
-    8.  既定のオプションを使用して、 **証明書のエクスポート ウィザード** を完了し、 **.cer** ファイル名拡張子を使用して証明書を保存します。  
+    8.  Completare l' **Esportazione guidata certificati** usando le opzioni predefinite e salvare il certificato con l'estensione del nome file **.cer** .  
 
-2.  Configuration Manager コンソールを実行するコンピューターで次の手順を実行し、自己署名入り証明書を信頼されたユーザー証明書ストアに追加します。  
+2.  Eseguire i seguenti passaggi nel computer che esegue la console di Configuration Manager per aggiungere il certificato autofirmato all'archivio certificati Persone attendibili:  
 
-    1.  上記の手順 1.a から 1.e を繰り返し、 管理ポイントのコンピューターに [**証明書**] スナップイン MMC を構成します。  
+    1.  Ripetere i passaggi precedenti da 1.a a 1.e per configurare la console MMC dello snap-in dei **certificati** nel computer del punto di gestione.  
 
-    2.  コンソールで、[ **証明書 (ローカル コンピューター)**]、[ **信頼されたユーザー**] の順に展開し、[ **証明書**] を右クリックして、[ **すべてのタスク**]、[ **インポート** ] の順に選択して、 **証明書のインポート ウィザード**を開始します。  
+    2.  Nella console espandere **Certificati (computer locale)**, quindi **Persone attendibili**, fare clic con il pulsante destro del mouse su **Certificati**, selezionare **Tutte le attività**e infine **Importa** per avviare l' **Importazione guidata certificati**.  
 
-    3.  [ **インポートするファイル** ] ページで、手順 1.h で保存した証明書を選択し、[ **次へ**] をクリックします。  
+    3.  Nella pagina **File da importare** selezionare il certificato salvato nel passaggio 1.h, quindi fare clic su **Avanti**.  
 
-    4.  [ **証明書ストア** ] ページで [ **証明書をすべて次のストアに配置する**] を選択し、[ **証明書ストア** ] を [ **信頼されたユーザー**] に設定して、[ **次へ**] をクリックします。  
+    4.  Nella pagina **Archivio certificati** selezionare **Mettere tutti i certificati nel seguente archivio**con l'opzione **Archivio certificati** impostata su **Persone attendibili**, quindi fare clic su **Avanti**.  
 
-    5.  [完了] をクリックし、ウィザードを閉じて、コンピューターへの証明書の構成を完了します。 ****  
+    5.  Fare clic su **fine** per chiudere la procedura guidata e completare la configurazione dei certificati del computer.  
 
-##  <a name="BKMK_ModifyReportingServicesPoint"></a> レポート サービス ポイントの設定の変更  
- レポート サービス ポイントをインストールしたら、サイト データベースの接続および認証の設定をレポート サービス ポイントのプロパティで変更できます。 レポート サービス ポイントの設定を変更するには、次の手順に従います。  
+##  <a name="BKMK_ModifyReportingServicesPoint"></a> Modificare le impostazioni del punto di Reporting Services  
+ Al termine dell'installazione del punto di Reporting Services, è possibile modificare la connessione database del sito e le impostazioni di autenticazione nelle proprietà del punto di Reporting Services. Utilizzare la seguente procedura per modificare le impostazioni del punto di Reporting Services.  
 
-#### <a name="to-modify-reporting-services-point-settings"></a>レポート サービス ポイントの設定を変更するには  
+#### <a name="to-modify-reporting-services-point-settings"></a>Per modificare le impostazioni del punto di Reporting Services  
 
-1.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
 
-2.  [ **管理** ] ワークスペースで [ **サイトの構成**] を展開し、[ **サーバーとサイト システムの役割** ] をクリックして、サイト システムの一覧を表示します。  
+2.  Nell'area di lavoro **Amministrazione** espandere **Configurazione del sito**, quindi fare clic su **Server e ruoli del sistema del sito** per un elenco dei sistemi del sito.  
 
     > [!TIP]  
-    >  レポート サービス ポイント サイトの役割をホストするサイト システムのみを一覧表示するには、[ **サーバーとサイト システムの役割** ] を右クリックして、[ **レポート サービス ポイント**] を選択します。  
+    >  Per elencare solo i sistemi del sito che ospitano il ruolo del sito del punto di Reporting Services, fare clic con il pulsante destro del mouse su **Server e ruoli del sistema del sito** per selezionare **Punto di Reporting Services**.  
 
-3.  設定を変更するレポート サービス ポイントをホストするサイト システムを選択し、[ **サイト システムの役割** ] の [ **レポート サービス ポイント**] を選択します。  
+3.  Selezionare il sistema del sito che ospita il punto di Reporting Services in cui si desidera modificare le impostazioni, quindi selezionare **Punto di Reporting Services** in **Ruoli sistema del sito**.  
 
-4.  [ **サイトの役割** ] タブの [ **プロパティ** ] グループで、[ **プロパティ**] をクリックします。  
+4.  Nella scheda **Ruolo del sito** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 
-5.  [レポート サービス ポイントのプロパティ] ダイアログ ボックスで、次の設定を変更できます。 ****  
+5.  Nella finestra di dialogo **Proprietà punto di Reporting Services** è possibile modificare le seguenti impostazioni:  
 
-    -   **サイト データベース サーバー名**: Configuration Manager サイト データベースをホストするサーバーの名前を指定します。 通常、ウィザードはサーバーの完全修飾ドメイン名 (FQDN) を自動的に取得します。 データベース インスタンスを指定するには、&lt;*サーバー名*>\&lt;*インスタンス名*> という形式を使用します。  
+    -   **Nome server di database del sito**: specificare il nome del server che ospita il database del sito di Configuration Manager. In genere, la procedura guidata recupera automaticamente il nome di dominio completo (FQDN) del server. Per specificare un'istanza di database, usare il formato &lt;*Nome server*>\&lt;*<Nome istanza*>.  
 
-    -   **データベース名**: System Center 2012 Configuration Manager サイト データベース名を指定して、**[確認]** をクリックし、ウィザードがサイト データベースにアクセスできることを確認します。  
-
-        > [!IMPORTANT]  
-        >  レポート サービス ポイントを作成しているユーザー アカウントには、サイト データベースに対する読み取りアクセス許可がある必要があります。 接続テストに失敗した場合、赤色の警告アイコンが表示されます。 失敗の詳細を確認するには、このアイコンの上にカーソルを移動します。 エラーを修正し、[ **テスト** ] をもう一度クリックします。  
-
-    -   **ユーザー アカウント**: **[設定]**をクリックして、レポートに表示されるデータを取得するために、レポート サービス ポイント上の SQL Server Reporting Services が Configuration Manager サイト データベースに接続する際に使用するアカウントを選択します。 **[既存のアカウント]** を選択して、既存の Configuration Manager 権限を持つ Windows ユーザー アカウントを指定するか、**[新しいアカウント]** を選択して、現在 Configuration Manager で権限を持っていない Windows ユーザー アカウントを指定します。 Configuration Manager は指定したユーザー アカウントにサイト データベースへのアクセスを自動的に付与します。 アカウントは、[ **管理** ] ワークスペースの [ **セキュリティ** ] ノードの [ **アカウント** ] サブフォルダーに、[ **ConfigMgr SRS レポート ポイント** ] のアカウントとして表示されます。  
-
-         指定された Windows ユーザー アカウントとパスワードは、暗号化されて Reporting Services データベースに格納されます。 Reporting Services は、このアカウントとパスワードを使用して、サイト データベースからレポートのデータを取得します。  
+    -   **Nome del database**: specificare il nome del database del sito di System Center 2012 Configuration Manager, quindi fare clic su **Verifica** per verificare che la procedura guidata abbia accesso al database del sito.  
 
         > [!IMPORTANT]  
-        >  サイト データベースがリモート サイト システムにある場合は、そのコンピューターに対する [ローカル ログオン] アクセス許可が指定したアカウントにある必要があります。 ****  
+        >  L'account utente che crea il punto di Reporting Services deve disporre dell'accesso in Lettura al database del sito. Se la prova di connessione non riesce, verrà visualizzata un'icona di avviso rossa. Spostare il cursore sull'icona per leggere i dettagli dell'errore. Correggere l'errore, quindi fare nuovamente clic su **Verifica** .  
 
-6.  [ **OK** ] をクリックして、変更を保存し、ダイアログ ボックスを閉じます。  
+    -   **Account utente**: fare clic su **Imposta**, selezionare un account usato quando SQL Server Reporting Services nel punto di Reporting Services si connette al database del sito di Configuration Manager per recuperare i dati visualizzati in un report. Selezionare **Account esistente** per specificare un account utente Windows che attualmente dispone dei diritti per Configuration Manager. oppure selezionare **Nuovo account** per specificare un account utente Windows che attualmente non dispone dei diritti per Configuration Manager. Configuration Manager concede automaticamente all'account utente specificato l'accesso al database del sito. L'account viene visualizzato come account **Punto SQL Server Reporting Services di Configuration Manager** nella sottocartella **Account** del nodo **Sicurezza** nell'area di lavoro **Amministrazione** .  
 
-## <a name="upgrading-sql-server"></a>SQL Server のアップグレード  
- SQL Server と、レポート サービス ポイントのデータ ソースとして使用される SQL Server Reporting Services をアップグレードした後に、Configuration Manager コンソールからレポートを実行または編集するときにエラーが発生する可能性があります。 Configuration Manager コンソールからレポートが適切に機能するには、そのサイトのレポート サービス ポイント サイト システムの役割を削除してから、再インストールする必要があります。 ただし、アップグレード後は、インターネット ブラウザーから引き続き正常にレポートの実行と編集を行うことができます。  
+         La password e l'account utente Windows specificati vengono crittografati e archiviati nel database di Reporting Services. Reporting Services recupera i dati per i report dal database del sito utilizzando l'account e la password.  
 
-##  <a name="BKMK_ConfigureReportOptions"></a> レポート オプションの構成  
- レポートを管理するために使用する既定のレポート サービス ポイントを選択するには、Configuration Manager サイトのレポート オプションを使用します。 サイトでは複数のレポート サービス ポイントを持つことができますが、レポートの管理に使用されるのは、レポート オプションで選択した既定のレポート サーバーのみです。 サイトのレポート オプションを構成するには、次の手順に従います。  
+        > [!IMPORTANT]  
+        >  Quando il database del sito si trova in un sistema del sito remoto, l'account specificato deve disporre dell'autorizzazione **Accesso locale** per il computer.  
 
-#### <a name="to-configure-report-options"></a>レポート オプションを構成するには  
+6.  Fare clic su **OK** per salvare le modifiche e chiudere la finestra di dialogo.  
 
-1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
+## <a name="upgrading-sql-server"></a>Aggiornamento di SQL Server  
+ Al termine dell'aggiornamento di SQL Server e di SQL Server Reporting Services usato come origine dei dati per un punto di Reporting Services, è possibile che si verifichino errori durante l'esecuzione o la modifica dei report dalla console di Configuration Manager. Per una corretta creazione dei report dalla console di Configuration Manager, è necessario rimuovere il ruolo del sistema del sito del punto di Reporting Services per il sito e reinstallarlo. Al termine dell'aggiornamento è tuttavia possibile continuare a eseguire e modificare correttamente i report da un browser Internet.  
 
-2.  [ **監視** ] ワークスペースで、[ **レポート**] を展開し、[ **レポート**] をクリックします。  
+##  <a name="BKMK_ConfigureReportOptions"></a> Configurare le opzioni report  
+ Usare le opzioni dei report per un sito di Configuration Manager per selezionare il punto di Reporting Services predefinito usato per la gestione dei report. Benché sia possibile disporre di più di un punto di Reporting Services in un sito, per la gestione dei report viene utilizzato solo il server di report predefinito selezionato nelle opzioni report. Utilizzare la seguente procedura per configurare le opzioni report per il sito.  
 
-3.  [ **ホーム** ] タブの [ **設定** ] グループで、[ **レポート オプション**] をクリックします。  
+#### <a name="to-configure-report-options"></a>Per configurare le opzioni report  
 
-4.  一覧から既定のレポート サーバーを選択して、[OK] をクリックします。 **** 一覧にレポート サービス ポイントが表示されない場合は、レポート サービス ポイントがサイトに正常にインストールおよび構成されていることを確認します。  
+1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
-## <a name="next-steps"></a>次のステップ
-[レポートの操作とメンテナンス](operations-and-maintenance-for-reporting.md)
+2.  Nell'area di lavoro **Monitoraggio** espandere **Creazione di report**, quindi fare clic su **Report**.  
+
+3.  Nella scheda **Home** , nel gruppo **Impostazioni** , fare clic su **Opzioni rapporti**.  
+
+4.  Selezionare il server di report predefinito nell'elenco, quindi fare clic su **OK**. Se nell'elenco non sono presenti punti di Reporting Services, verificare di disporre di un punto di Reporting Services correttamente installato e configurato nel sito.  
+
+## <a name="next-steps"></a>Passaggi successivi
+[Operazioni e manutenzione per la creazione di report](operations-and-maintenance-for-reporting.md)

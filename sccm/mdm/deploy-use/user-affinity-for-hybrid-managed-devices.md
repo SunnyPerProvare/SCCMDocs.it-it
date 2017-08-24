@@ -1,6 +1,6 @@
 ---
-title: "Configuration Manager でのハイブリッド管理のデバイス向けユーザー アフィニティ | Microsoft Docs"
-description: "Configuration Manager で管理対象デバイスのユーザー アフィニティを構成します。"
+title: "Affinità utente per i dispositivi gestiti ibridi in Configuration Manager | Microsoft Docs"
+description: "Configurare l'affinità utente per i dispositivi gestiti in Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
 ms.reviewer: na
@@ -17,39 +17,39 @@ manager: angrobe
 ms.openlocfilehash: d039792a88b9e7704f37718a88f841dd9216d1b1
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="user-affinity-for-hybrid-managed-devices-in-configuration-manager"></a>Configuration Manager でのハイブリッド管理のデバイス向けユーザー アフィニティ
+# <a name="user-affinity-for-hybrid-managed-devices-in-configuration-manager"></a>Affinità utente per i dispositivi gestiti ibridi in Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-管理者は企業所有のデバイスのプロファイルを構成するときに、管理対象デバイスに*ユーザー アフィニティ*を設定できるかどうかを指定できます (ユーザー アフィニティはデバイスで特定のユーザーを識別します)。  
+Quando si configurano profili per i dispositivi di proprietà dell'azienda, l'amministratore può specificare se i dispositivi gestiti possono avere un'*affinità utente* che identifica un utente specifico con il dispositivo.  
 
-##  <a name="BKMK_iOSCP"></a> ユーザー アフィニティありの管理対象デバイス  
- **ユーザー アフィニティ**が構成されているデバイスは、会社のポータル アプリをインストールして実行することにより、アプリをダウンロードしてデバイスを管理できるようになります。 デバイスを受け取ったユーザーは、セットアップ アシスタントを完了して会社ポータル アプリをインストールするために、いくつもの追加の手順を完了する必要があります。  
+##  <a name="BKMK_iOSCP"></a> Dispositivi gestiti con affinità utente  
+ I dispositivi configurati con **user affinity** possono installare ed eseguire l'app Portale aziendale per scaricare le app e gestire i dispositivi. Quando gli utenti ricevono i dispositivi, devono eseguire alcuni passaggi supplementari per completare l'Assistente configurazione e installare l'app Portale aziendale.  
 
-#### <a name="how-to-enroll-ios-devices-with-user-affinity"></a>ユーザー アフィニティありで iOS デバイスを登録するには  
+#### <a name="how-to-enroll-ios-devices-with-user-affinity"></a>Come registrare i dispositivi iOS con l'affinità utente  
 
-1.  新しいデバイスの電源を初めてオンにしたとき、ユーザーはセットアップ アシスタントを完了するように求められます。 セットアップ中に資格情報の入力を求めるよう登録プロファイルで指定できます。 ユーザーは、Intune のサブスクリプションに関連付けられている資格情報 (つまり一意の個人名または UPN) を使用する必要があります。  
+1.  Quando gli utenti accendono per la prima volta i dispositivi nuovi, viene chiesto di completare l'Assistente configurazione. Nel profilo di registrazione può essere specificata la richiesta di credenziali durante l'installazione. Gli utenti devono usare le credenziali, ossia nome personale univoco o UPN, associate alla propria sottoscrizione in Intune.  
 
-2.  セットアップ中、ユーザーに Apple ID を要求することもできます。 デバイスを会社ポータルにインストールできるように、Apple ID を入力する必要があります。 セットアップの完了後に iOS の **[設定]** メニューから Apple ID を入力することもできます。  
+2.  Durante la configurazione, può anche essere richiesta l'immissione di un ID Apple. L'ID Apple è necessario per consentire al dispositivo di installare il Portale aziendale. Gli utenti possono specificare un ID Apple dopo la configurazione dal menu **Impostazioni** di iOS.  
 
-3.  セットアップが完了したら、iOS デバイスは App Store から[会社ポータル アプリ](https://itunes.apple.com/us/app/id719171358) (たとえば、会社ポータル アプリ) をインストールする必要があります。  
+3.  Al termine della configurazione, il dispositivo iOS deve installare l'app Portale aziendale dall'App Store, ad esempio [App Portale aziendale](https://itunes.apple.com/us/app/id719171358).  
 
-4.  これでユーザーは、デバイスを設定するときに使用した UPN で会社ポータルにログインできるようになります。  
+4.  A questo punto l'utente può accedere al Portale aziendale con l'UPN usato durante la configurazione del dispositivo.  
 
-5.  ユーザーはログインすると、デバイスを登録するように求められます。 最初の手順は **デバイスを識別する**ことです。 会社に登録されていてエンドユーザーの Intune アカウントに割り当てられている iOS デバイスの一覧が表示されます。 一致するデバイスを選択します。  
+5.  Dopo l'accesso, viene chiesto di registrare il dispositivo. Il primo passaggio consiste nell' **identificare il dispositivo**. L'applicazione visualizza un elenco di dispositivi iOS registrati dall'azienda e assegnati all'account di Intune dell'utente finale. Scegliere il dispositivo corrispondente.  
 
-     このデバイスがまだ会社に登録されていない場合は、[新しいデバイス] を選択して、標準登録フローを続行します。  
+     Se il dispositivo non è registrato dall'azienda, selezionare "nuovo dispositivo" per continuare con il flusso di registrazione standard.  
 
-6.  次の画面で、ユーザーは新しいデバイスのシリアルを確認する必要があります。 ユーザーは [シリアル番号を確認] リンクをクリックして、設定アプリを開始して、シリアル番号を確認できます。 ユーザーは、シリアル番号の最後の 4 文字を会社ポータル アプリに入力する必要があります。  
+6.  Nella schermata successiva l'utente deve confermare il numero di serie del nuovo dispositivo. L'utente può toccare il collegamento "confermare il numero di serie" per avviare l'app Impostazioni e verificare il numero di serie. Deve quindi immettere gli ultimi 4 caratteri del numero di serie nell'app Portale aziendale.  
 
-     この手順では、デバイスが Intune に登録されている会社のデバイスであることが確認されます。 デバイスのシリアル番号が一致しない場合は、間違ったデバイスが選択されています。 前の画面に戻り、別のデバイスを選択します。  
+     Questo passaggio verifica che il dispositivo sia il dispositivo aziendale registrato in Intune. Se il numero di serie sul dispositivo non corrisponde, è stato selezionato il dispositivo errato. Tornare alla schermata precedente e selezionare un dispositivo diverso.  
 
-7.  シリアル番号の確認後に、会社ポータル アプリは会社ポータル Web サイトにリダイレクトします。ユーザーはそこで登録を完了すると、アプリに戻るように求められます。  
+7.  Dopo aver verificato il numero di serie, l'app Portale aziendale reindirizza al sito Web del Portale aziendale per completare la registrazione e quindi chiede all'utente di tornare all'app.  
 
-8.  これで登録が完了します。 このデバイスのすべての機能を使用できるようになります。  
+8.  La registrazione è stata completata. Ora si può usare il dispositivo con il set completo di funzionalità.  
 
-##  <a name="BKMK_noUA"></a> ユーザー アフィニティなしの管理対象デバイス  
- **ユーザー アフィニティなし**で構成されているデバイスは、会社ポータルをサポートしませんので、アプリをインストールしないでください。 会社ポータルは、会社の資格情報を持ち、カスタマイズされた企業リソース (電子メールなど) へのアクセスを必要とするユーザー向けです。 **ユーザー アフィニティなし** で登録されたデバイスは、専用ユーザー サインインのためのデバイスではありません。 キオスク、販売時点管理 (POS)、または共有ユーティリティ デバイスは、ユーザー アフィニティなしで登録されたデバイスの一般的なユース ケースです。 ユーザー アフィニティが必要な場合は、デバイスの登録プロファイルで **[ユーザー アフィニティ]** が選択されていることを確認してから、デバイスを登録します。 デバイスのアフィニティ ステータスを変更するには、デバイスをインベントリから削除してから再登録する必要があります。
+##  <a name="BKMK_noUA"></a> Dispositivi gestiti senza affinità utente  
+ I dispositivi configurati con **no user affinity** non è supportato il Portale aziendale e non si dovrebbe installare l'app. Il Portale aziendale è progettato per gli utenti che hanno credenziali aziendali e richiedono l'accesso a risorse aziendali personalizzate, ad esempio la posta elettronica. I dispositivi registrati **senza affinità utente** non sono pensati per l'accesso utente dedicato. Chioschi multimediali, POS o dispositivi di utilità condivisi sono casi d'uso tipici per i dispositivi registrati senza affinità utente. Se è necessaria l'affinità utente, verificare che nel profilo di registrazione del dispositivo sia selezionata l'opzione **Affinità utente** prima di registrare il dispositivo. Per modificare lo stato di affinità in un dispositivo è necessario ritirare il dispositivo e quindi registrarlo nuovamente.

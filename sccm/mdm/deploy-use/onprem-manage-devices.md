@@ -1,6 +1,6 @@
 ---
-title: "オンプレミス モバイル デバイス管理の対象となるデバイスの管理 | Microsoft Docs"
-description: "Configuration Manager でオンプレミス モバイル デバイス管理の対象となるデバイスを管理します。"
+title: Gestire dispositivi per la gestione dei dispositivi mobili locale | Microsoft Docs
+description: Gestire dispositivi per la gestione dei dispositivi mobili locale con Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -18,13 +18,13 @@ manager: angrobe
 ms.openlocfilehash: 92009c96ccc5f4124b300873ff77088ea1712c19
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-devices-for-on-premises-mobile-device-management"></a>オンプレミス モバイル デバイス管理の対象となるデバイスの管理
+# <a name="manage-devices-for-on-premises-mobile-device-management"></a>Gestire dispositivi per la gestione dei dispositivi mobili locale
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager のオンプレミス モバイル デバイス管理 (MDM) でコンピューターとデバイスを管理できます。 そのためには、Configuration Manager が管理タスク用デバイスと通信できるよう、[デバイスを登録する必要](enroll-devices-on-premises-mdm.md)があります。
+È possibile gestire computer e dispositivi con la gestione dei dispositivi mobili (Mobile Device Management, MDM) locale di System Center Configuration Manager. A tale scopo, è necessario che i [dispositivi siano registrati](enroll-devices-on-premises-mdm.md) in modo che Configuration Manager possa comunicare con i dispositivi per le attività di gestione.
 
-オンプレミス MDM でのデバイスの管理は、ハイブリッド MDM 環境でのデバイスの管理と同じです。 デバイス管理の詳細については、[ハイブリッド MDM でのデバイスの管理](wipe-lock-reset-devices.md)に関する記事を参照してください。
+La gestione dei dispositivi in una distribuzione MDM locale è identica alla gestione dei dispositivi in un ambiente MDM ibrido. La sezione [Manage devices in hybrid MDM](wipe-lock-reset-devices.md) (Gestire dispositivi in una MDM ibrida) contiene informazioni dettagliate sulla gestione dei dispositivi.

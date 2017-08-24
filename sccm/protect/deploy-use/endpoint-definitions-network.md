@@ -1,6 +1,6 @@
 ---
-title: "ネットワーク共有からの Endpoint Protection のマルウェア定義 | Microsoft Docs"
-description: "Microsoft から最新の定義ファイルの更新を手動でダウンロードし、これらの定義をダウンロードするようにクライアントを構成する方法について説明します。"
+title: Definizioni malware di Endpoint Protection da una condivisione di rete| Microsoft Docs
+description: "Informazioni su come scaricare manualmente gli aggiornamenti delle definizioni più recenti da Microsoft e configurare i client per scaricare le definizioni."
 ms.custom: na
 ms.date: 02/14/2017
 ms.prod: configuration-manager
@@ -17,41 +17,41 @@ manager: angrobe
 ms.openlocfilehash: 110bd9a9d04b27ef6794145fae66dbd910308bdc
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="enable-endpoint-protection-malware-definitions-to-download-from-a-network-share-for-configuration-manager"></a>Configuration Manager で Endpoint Protection のマルウェア定義をネットワーク共有からダウンロードできるようにする
+# <a name="enable-endpoint-protection-malware-definitions-to-download-from-a-network-share-for-configuration-manager"></a>Abilitare le definizioni malware di Endpoint Protection da scaricare da una condivisione di rete per Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
- Microsoft から最新の定義ファイルの更新を手動でダウンロードし、ネットワーク上の共有フォルダーからこれらの定義をダウンロードするようにクライアントを構成できます。 この更新ソースを使用する場合、ユーザーは定義ファイルの更新も開始できます。
+ È possibile scaricare manualmente gli aggiornamenti delle definizioni più recenti da Microsoft e quindi configurare i client per scaricare le definizioni da una cartella condivisa in rete. Quando si usa questa origine degli aggiornamenti, gli utenti possono anche avviare gli aggiornamenti delle definizioni.
 
 > [!NOTE]
->  クライアントは、定義ファイルの更新をダウンロードするために、共有フォルダーへの読み取りアクセス権が必要です。
+>  Per poter scaricare gli aggiornamenti delle definizioni, i client devono avere accesso in lettura alla cartella condivisa.
 
- 定義とエンジンの更新プログラムをダウンロードしてファイル共有に保存する方法の詳細については、「[Install the latest Microsoft antimalware and antispyware software](http://www.microsoft.com/security/portal/Definitions/HowToForeFront.aspx)」 (最新の Microsoft マルウェア対策およびスパイウェア対策ソフトウェアのインストール) をご覧ください。
+ Per altre informazioni su come scaricare gli aggiornamenti del motore e delle definizioni per l'archiviazione nella condivisione file, vedere [Install the latest Microsoft antimalware and antispyware software](http://www.microsoft.com/security/portal/Definitions/HowToForeFront.aspx) (Installare il software antimalware e antispyware di Microsoft più recente).
 
-## <a name="to-configure-definition-downloads-from-a-file-share"></a>ファイル共有からの定義ファイルのダウンロードを構成するには
+## <a name="to-configure-definition-downloads-from-a-file-share"></a>Per configurare i download delle definizioni da una condivisione file
 
-1.  Configuration Manager コンソールで、[ **資産とコンプライアンス**] をクリックします。
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.
 
-2.  **[資産とコンプライアンス]** ワークスペースで **[Endpoint Protection]**を展開してから、 **[マルウェア対策ポリシー]**をクリックします。
+2.  Nell'area di lavoro **Asset e conformità** espandere **Endpoint Protection**e quindi fare clic su **Criteri antimalware**.
 
-3.  **[既定のマルウェア対策ポリシー]** プロパティ ページを開くか、新しいマルウェア対策ポリシーを作成します。 マルウェア対策ポリシーを作成する方法の詳細については、「[System Center Configuration Manager で Endpoint Protection 用にマルウェア対策ポリシーを作成し展開する方法](endpoint-antimalware-policies.md)」をご覧ください。
+3.  Aprire la pagina delle proprietà relativa a **Criterio antimalware predefinito** o creare un nuovo criterio antimalware. Per altre informazioni su come creare criteri antimalware, vedere [Come creare e distribuire criteri antimalware per Endpoint Protection in System Center Configuration Manager](endpoint-antimalware-policies.md).
 
-4.  マルウェア対策プロパティ ダイアログ ボックスの **[定義ファイルの更新]** セクションで **[ソースの設定]**をクリックします。
+4.  Nella sezione **Aggiornamenti delle definizioni** della finestra di dialogo delle proprietà antimalware fare clic su **Imposta origine**.
 
-5.  **[定義ファイルの更新ソースの構成]** ダイアログ ボックスで、 **[UNC ファイル共有から更新する]**を選びます。
+5.  Nella finestra di dialogo **Configura origini aggiornamenti definizioni** selezionare **Aggiornamenti dalle condivisioni file UNC**.
 
-6.  **[OK]** をクリックして **[定義ファイルの更新ソースの構成]** ダイアログ ボックスを閉じます。
+6.  Fare clic su **OK** per chiudere la finestra di dialogo **Configura origini aggiornamenti definizioni** .
 
-7.  **[パスの設定]**をクリックします。 次に、 **[定義更新プログラム用 UNC パスの構成]** ダイアログ ボックスで、ネットワーク共有上の定義ファイルの更新ファイルの場所を示す UNC パスを 1 つまたは複数追加します。
+7.  Fare clic su **Imposta percorsi**. Nella finestra di dialogo **Configurare percorsi UNC per l'aggiornamento di definizioni** aggiungere quindi uno o più percorsi UNC delle posizioni dei file degli aggiornamenti delle definizioni nella condivisione di rete.
 
-8.  **[OK]** をクリックして **[定義更新プログラム用 UNC パスの構成]** ダイアログ ボックスを閉じます。
+8.  Fare clic su **OK** per chiudere la finestra di dialogo **Configurare percorsi UNC per l'aggiornamento di definizioni** .
 
-
-> [!div class="button"]
-[次のステップ >](endpoint-antimalware-policies.md)
 
 > [!div class="button"]
-[戻る >](endpoint-configure-alerts.md)
+[Passaggio successivo >](endpoint-antimalware-policies.md)
+
+> [!div class="button"]
+[Indietro >](endpoint-configure-alerts.md)

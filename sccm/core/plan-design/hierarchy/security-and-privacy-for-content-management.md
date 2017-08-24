@@ -1,6 +1,6 @@
 ---
-title: "コンテンツ管理のセキュリティとプライバシー | Microsoft Docs"
-description: "System Center Configuration Manager のコンテンツ管理のセキュリティとプライバシーを最適化します。"
+title: Sicurezza e privacy per la gestione dei contenuti | Microsoft Docs
+description: "È possibile ottimizzare la protezione e la privacy per la gestione dei contenuti in System Center Configuration Manager."
 ms.custom: na
 ms.date: 3/1/2017
 ms.prod: configuration-manager
@@ -17,49 +17,49 @@ manager: angrobe
 ms.openlocfilehash: c4b9d13079c313879c6d43b10867c616fa962668
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-content-management-for-system-center-configuration-manager"></a>System Center Configuration Manager におけるコンテンツ管理のセキュリティとプライバシー
+# <a name="security-and-privacy-for-content-management-for-system-center-configuration-manager"></a>Sicurezza e privacy per la gestione dei contenuti per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-このトピックには、System Center Configuration Manager のコンテンツ管理のセキュリティとプライバシーの情報が含まれています。 次のトピックを参照しながら読むことをお勧めします。  
+Questo argomento contiene informazioni sulla sicurezza e la privacy per la gestione dei contenuti in System Center Configuration Manager. È possibile leggerlo insieme ai seguenti argomenti:  
 
--   [System Center Configuration Manager のアプリケーション管理のセキュリティとプライバシー](../../../apps/plan-design/security-and-privacy-for-application-management.md)  
+-   [Sicurezza e privacy per la gestione delle applicazioni in System Center Configuration Manager](../../../apps/plan-design/security-and-privacy-for-application-management.md)  
 
--   [System Center Configuration Manager のソフトウェア更新プログラムのセキュリティとプライバシー](/sccm/sum/plan-design/security-and-privacy-for-software-updates)  
+-   [Sicurezza e privacy per gli aggiornamenti software in System Center Configuration Manager](/sccm/sum/plan-design/security-and-privacy-for-software-updates)  
 
--   [System Center Configuration Manager のオペレーティング システムの展開でのセキュリティとプライバシー](../../../osd/plan-design/security-and-privacy-for-operating-system-deployment.md)  
+-   [Sicurezza e privacy per la distribuzione del sistema operativo in System Center Configuration Manager](../../../osd/plan-design/security-and-privacy-for-operating-system-deployment.md)  
 
-##  <a name="BKMK_Security_ContentManagement"></a> コンテンツ管理に関するセキュリティのベスト プラクティス  
- ここでは、コンテンツ管理に関するセキュリティのベスト プラクティスについて説明します。  
+##  <a name="BKMK_Security_ContentManagement"></a> Procedure di sicurezza consigliate per la gestione del contenuto  
+ Utilizzare le seguenti procedure ottimali di protezione per la gestione dei contenuti:  
 
- **イントラネット上の配布ポイントについて、HTTPS と HTTP の長所と短所を検討する**: ほとんどのシナリオでは、HTTP とパッケージ アクセス アカウントを承認に使用するほうが、暗号化はするが承認はしない HTTPS を使用するよりもセキュリティが高くなります。 ただし、転送中に暗号化する機密データがコンテンツにあれば、HTTPS を使用します。  
+ **Per i punti di distribuzione in Intranet, considerare i vantaggi e gli svantaggi dell'uso di HTTPS e HTTP**: nella maggior parte degli scenari, l'uso di HTTP e degli account di accesso al pacchetto per l'autorizzazione offre una protezione maggiore rispetto all'uso di HTTPS con crittografia ma senza autorizzazione. Se tuttavia sono presenti dati sensibili nel contenuto da crittografare durante il trasferimento, utilizzare HTTPS.  
 
--   **HTTPS を配布ポイントに使用すると**、Configuration Manager はコンテンツへのアクセスを承認するためにパッケージ アクセス アカウントを使用しませんが、コンテンツがネットワーク上を転送されるときに暗号化されます。  
+-   **Quando si usa HTTPS per un punto di distribuzione**, Configuration Manager non usa gli account di accesso al pacchetto per autorizzare l'accesso al contenuto, ma il contenuto viene crittografato durante il trasferimento in rete.  
 
--   **HTTP を配布ポイントに使用すると**、パッケージ アクセス アカウントを使用して承認できますが、コンテンツがネットワーク上を転送されるときに暗号化はされません。  
-
-
-**配布ポイントに、自己署名入り証明書ではなく PKI クライアント認証証明書を使用する場合は、強力なパスワードで証明書ファイル (.pfx) を保護する。ファイルをネットワーク上に保存する場合は、ファイルを Configuration Manager にインポートするときにネットワーク チャネルをセキュリティで保護する**: 管理ポイントと通信する配布ポイントで使用するクライアント認証証明書をインポートするためにパスワードが必要であれば、攻撃者から証明書を保護することになります。 ネットワークの場所とサイト サーバーの間でサーバー メッセージ ブロック (SMB) 署名または IPsec を使用して、攻撃者が証明書ファイルを改ざんするのを防ぎます。  
-
-**サイト サーバーから配布ポイントの役割を削除する**: 既定では、配布ポイントはサイト サーバーと同じサーバーにインストールされます。 クライアントはサイト サーバーと直接通信する必要はないため、攻撃対象を縮小するために、配布ポイントの役割を他のサイト システムに割り当て、サイト サーバーからは削除します。  
-
-**パッケージ アクセス レベルでコンテンツを保護する**: 配布ポイントを共有すると、すべてのユーザーに読み取りアクセス権が許可されます。 ユーザーがアクセス可能なコンテンツを制限するために、配布ポイントが HTTP に構成される場合はパッケージ アクセス アカウントを使用します。 これは、パッケージ アクセス アカウントがサポートされないクラウドベースの配布ポイントには該当しません。 パッケージ アクセス アカウントの詳細については、「[コンテンツにアクセスするためのアカウントの管理](../../../core/plan-design/hierarchy/manage-accounts-to-access-content.md)」を参照してください。
+-   **Quando si usa HTTP per un punto di distribuzione**, è possibile usare gli account di accesso al pacchetto per l'autorizzazione, ma il contenuto non viene crittografato durante il trasferimento in rete.  
 
 
-**配布ポイント サイト システムの役割を追加するときに Configuration Manager が IIS をインストールする場合は、配布ポイントのインストールが完了するときに、HTTP リダイレクトまたは IIS 管理スクリプトおよびツールを削除する**: 配布ポイントに HTTP リダイレクトまたは IIS 管理スクリプトおよびツールは必要ありません。 攻撃対象を減らすために、Web サーバー (IIS) の役割についてこれらの役割サービスを削除します。  配布ポイントの役割サービスの詳細については、「[サイトとサイト システムの前提条件](/sccm/core/plan-design/configs/site-and-site-system-prerequisites)」セクションを参照してください。  
+**Se si usa un certificato di autenticazione client PKI al posto di un certificato autofirmato per il punto di distribuzione, proteggere il file del certificato (con estensione PFX) con una password complessa. Se si archivia il file in rete, proteggere il canale di rete quando si importa il file in Configuration Manager**: impostando la richiesta di una password per importare il certificato di autenticazione client usato per la comunicazione tra il punto di distribuzione e i punti di gestione, il certificato viene protetto da utenti malintenzionati. Usare la firma Server Message Block (SMB) o IPsec tra il percorso di rete e il server del sito per impedire a utenti malintenzionati di manomettere il file di certificato.  
 
-**パッケージを作成するときにパッケージ アクセス許可を設定する**: パッケージ ファイルのアクセス アカウントの変更は、パッケージを再配布したときにのみ有効になるため、最初にパッケージを作成するときに、パッケージ アクセス許可を設定します。 パッケージが大きい場合、パッケージが多数の配布ポイントに配布される場合、コンテンツを配布するためのネットワーク帯域幅容量が限られている場合は、これは特に重要です。  
+**Rimuovere il ruolo di punto di distribuzione dal server del sito**: per impostazione predefinita, un punto di distribuzione è installato nello stesso server come server del sito. I client non devono comunicare direttamente con il server del sito, perciò, per ridurre la superficie di attacco. assegnare il ruolo del punto di distribuzione ad altri sistemi del sito e rimuoverlo dal server del sito.  
 
-**事前設定されたコンテンツを含むメディアを保護するためにアクセス制御を実装する**: 事前設定されたコンテンツは圧縮されていますが暗号化されていません。 攻撃者がファイルを読み取って変更し、デバイスにダウンロードする可能性があります。 Configuration Manager クライアントが改ざんされているコンテンツを拒否しても、それでもダウンロードされます。  
+**Proteggere il contenuto a livello di accesso al pacchetto**: la condivisione del punto di distribuzione consente l'accesso in lettura a tutti gli utenti. Per limitare gli utenti che possono accedere al contenuto, utilizzare gli account di accesso al pacchetto durante la configurazione del punto di distribuzione per HTTP. Questa opzione non viene applicata ai punti di distribuzione basati sul cloud, che non supportano gli account di accesso ai pacchetti. Per altre informazioni sugli account di accesso al pacchetto, vedere [Gestire gli account per l'accesso al contenuto](../../../core/plan-design/hierarchy/manage-accounts-to-access-content.md).
 
-**Configuration Manager で提供される ExtractContent コマンドライン ツール (ExtractContent.exe) のみを使用して事前設定されたコンテンツをインポートし、Microsoft によって署名されているかどうか確認する**: 改ざんと権限の昇格を避けるために、Configuration Manager で提供される承認済みコマンドライン ツールのみをご使用ください。  
 
-**サイト サーバーとパッケージ ソースの場所との間の通信チャネルをセキュリティで保護する**: アプリケーションおよびパッケージを作成するときには、サイト サーバーとパッケージ ソースの場所との間で IPsec または SMB 署名を使用します。 これにより、攻撃者からソース ファイルの改ざんを防ぎます。  
+**Se Configuration Manager installa IIS quando si aggiunge un ruolo del sistema del sito del punto di distribuzione, rimuovere Reindirizzamento HTTP e Strumenti e script di gestione IIS quando l'installazione del punto di distribuzione è completata**: il punto di distribuzione non richiede il reindirizzamento HTTP né gli strumenti e gli script di gestione IIS. Per ridurre la superficie di attacco, rimuovere questi servizi ruolo per il ruolo server Web (IIS).  Per altre informazioni sui servizi ruolo per il ruolo server Web (IIS) per i punti di distribuzione, vedere l'argomento relativo ai [prerequisiti dei siti e dei sistemi del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).  
 
-**配布ポイントの役割のインストール後に、既定の Web サイトではなくカスタム Web サイトを使うためにサイトの構成オプションを変更する場合は、既定の仮想ディレクトリを削除する**: 既定の Web サイトからカスタム Web サイトに切り替えた場合、Configuration Manager により、前の仮想ディレクトリが削除されることはありません。 既定の Web サイトの下に Configuration Manager によって作成された、仮想ディレクトリを削除します。  
+**Impostare le autorizzazioni di accesso al pacchetto durante la creazione del pacchetto**: poiché le modifiche apportate agli account di accesso nei file del pacchetto diventano effettive solo quando il pacchetto viene ridistribuito, impostare con attenzione le autorizzazioni di accesso al pacchetto quando si crea il pacchetto per la prima volta. Ciò è particolarmente importante quando il pacchetto è grande o viene distribuito a molti punti di distribuzione e quando la capacità di larghezza di banda di rete per la distribuzione del contenuto è limitata.  
+
+**Implementare i controlli di accesso per proteggere i supporti che contengono i contenuti in versione di preproduzione**: i contenuti in versione di preproduzione vengono compressi ma non crittografati. L'autore di un attacco potrebbe leggere e modificare i file che vengono scaricati dai dispositivi. I client di Configuration Manager rifiutano i contenuti manomessi, ma lo scaricano ugualmente.  
+
+**Importare i contenuti in versione di preproduzione usando solo lo strumento della riga di comando ExtractContent (ExtractContent.exe) incluso in Configuration Manager e verificare che siano firmati da Microsoft**: per evitare la manomissione e l'elevazione dei privilegi, usare soltanto lo strumento della riga di comando autorizzato incluso in Configuration Manager.  
+
+**Proteggere il canale di comunicazione tra il server del sito e il percorso di origine del pacchetto**: usare la firma SMB o IPsec tra il server del sito e il percorso di origine del pacchetto quando si creano applicazioni e pacchetti. In questo modo è possibile impedire all'autore di un attacco di manomettere i file di origine.  
+
+**Se si modifica l'opzione di configurazione del sito per usare un sito Web personalizzato anziché il sito Web predefinito dopo l'installazione di punti di distribuzione, rimuovere le directory virtuali predefinite**: quando si passa dal sito Web predefinito a un sito Web personalizzato, Configuration Manager non rimuove le directory virtuali usate in precedenza. Rimuovere le directory virtuali create in origine da Configuration Manager nel sito Web predefinito:  
 
 -   SMS_DP_SMSPKG$  
 
@@ -69,26 +69,26 @@ ms.lasthandoff: 08/07/2017
 
 -   NOCERT_SMS_DP_SMSSIG$  
 
-**クラウドベースの配布ポイントについて、サブスクリプションの詳細と証明書を保護する**: クラウド ベースの配布ポイントを使用する場合は、Azure サブスクリプションのユーザー名とパスワード、Azure 管理証明書、クラウド ベースの配布ポイント サービス証明書など、重要な項目を保護します。 証明書を安全に保存します。また、クラウドベースの配布ポイントを構成するときにネットワーク上の証明書を参照する場合、サイト システム サーバーとソースの場所の間で IPsec または SMB 署名を使用します。  
+**Per i punti di distribuzione basati sul cloud, proteggere i dettagli della sottoscrizione e i certificati**: quando si usano punti di distribuzione basati sul cloud, proteggere gli elementi importanti, inclusi il nome utente e la password per la sottoscrizione di Azure, il certificato di gestione di Azure e il certificato di servizio del punto di distribuzione basato sul cloud. Archiviare i certificati in modo protetto e se vengono selezionati dalla rete durante la configurazione del punto di distribuzione basato sul cloud, utilizzare la firma SMB o IPsec tra il server del sistema del sito e il percorso di origine.  
 
-**クラウド ベースの配布ポイント: サービスの継続性のために証明書の有効期限を監視する**: Configuration Manager は、クラウド ベースの配布ポイント サービスの管理のためにインポートした証明書の期限切れが近づいたときに警告しません。 Configuration Manager とは別に有効期限を監視し、有効期限前に新しい証明書に更新してインポートするようにします。 このような監視は、Configuration Manager クラウドベースの配布ポイント サービス証明書を外部証明機関 (CA) から購入している場合に特に重要です。更新された証明書を取得するために時間がかかる可能性があるためです。  
+**Per i punti di distribuzione basati sul cloud: per la continuità del servizio, monitorare la data di scadenza dei certificati**: Configuration Manager non avvisa l'utente quando i certificati importati per la gestione dei servizi dei punti di distribuzione basati sul cloud sta per scadere. È necessario monitorare le date di scadenza indipendentemente da Configuration Manager e assicurarsi di effettuare il rinnovo e quindi importare il nuovo certificato prima della data di scadenza. Questa operazione è importante specialmente se si acquista un certificato di servizio del punto di distribuzione basato sul cloud di Configuration Manager da un'autorità di certificazione (CA) esterna, perché potrebbe richiedere altro tempo per ottenere un certificato rinnovato.  
 
- いずれかの証明書の有効期限が切れると、Cloud Services Manager によってステータス メッセージ ID **9425** が生成され、CloudMgr.log ファイルにはログ記録された有効期限日 (UTC) とともに証明書の **is in expired state** を示すエントリが含まれます。  
+ Se un certificato scade, Gestione servizi cloud genera l'ID messaggio di stato **9425** e il file CloudMgr.log contiene una voce per indicare che il certificato **è scaduto** con la data di scadenza registrata in base all'ora UTC.  
 
-## <a name="security-considerations-for-content-management"></a>コンテンツ管理についてのセキュリティの考慮事項  
-コンテンツ管理を計画するときは、次のことをご考慮ください。  
+## <a name="security-considerations-for-content-management"></a>Considerazioni sulla sicurezza per la gestione del contenuto  
+Durante la pianificazione della gestione dei contenuti tenere presente quanto segue:  
 
--   クライアントはダウンロードが終わるまでコンテンツを検証しない  
+-   I client convalidano i contenuti solo dopo che sono stati scaricati.  
 
-     Configuration Manager クライアントは、コンテンツがクライアント キャッシュにダウロードされた後のみ、コンテンツのハッシュを検証します。 攻撃者によって、ダウンロードされるファイルのリスト、あるいはコンテンツ自体が改ざんされると、ダウンロード プロセスにおいて、クライアントのみのかなり広いネットワーク帯域幅が消費されてから、無効なハッシュが発生してコンテンツが破棄される可能性があります。  
+     I client di Configuration Manager convalidano l'hash nel contenuto solo dopo che è stato scaricato nella cache del client. Se un utente malintenzionato manomette l'elenco dei file da scaricare o il contenuto stesso, il processo di download può richiedere una larghezza di banda di rete considerevole solo affinché il client scarti il contenuto quando incontra l'hash non valido.  
 
--   クラウドベースの配布ポイントを使用する場合、コンテンツへのアクセスは社内に自動的に制限されるため、さらに選択したユーザーまたはグループに制限することはできません。  
+-   Quando si usano i punti di distribuzione basati sul cloud, l'accesso al contenuto viene automaticamente limitato all'azienda e non è possibile limitarlo ulteriormente a gruppi o utenti selezionati.  
 
--   クラウドベースの配布ポイントを使用する場合、クライアントは管理ポイントから認証され、Configuration Manager トークンを使用して、クラウドベースの配布ポイントにアクセスします。 トークンの有効期間は 8 時間です。 これは、信頼しなくなったクライアントをブロックしても、そのトークンの有効期間が切れるまで、クラウドベースの配布ポイントからコンテンツを継続してダウンロードできることを意味します。 この時点で、クライアントはブロックされているため、管理ポイントはクライアント用に追加のトークンを発行しません。  
+-   Quando si usano i punti di distribuzione basati sul cloud, i client vengono autenticati dal punto di gestione e quindi usano un token di Configuration Manager per accedere ai punti di distribuzione basati sul cloud. Il token è valido per 8 ore. Di conseguenza, se si blocca un client perché non è più attendibile, il client può continuare a scaricare il contenuto da un punto di distribuzione basato sul cloud finché il periodo di validità del token non scade. Al termine di questo periodo, il punto di gestione non creerà un altro token per il client perché il client è bloccato.  
 
-     ブロックされたクライアントがこの 8 時間の間にコンテンツをダウンロードできないようにするため、Configuration Manager コンソールの **[管理]** ワークスペースにある **[階層の構成]** の **[クラウド]** ノードからクラウド サービスを停止することができます。  
+     Per evitare che un client bloccato scarichi i contenuti in questo periodo di 8 ore, è possibile arrestare il servizio cloud dal nodo **Cloud**, **Configurazione della gerarchia**, nell'area di lavoro **Amministrazione** della console di Configuration Manager.  
 
-##  <a name="BKMK_Privacy_ContentManagement"></a> コンテンツ管理のプライバシー情報  
- 管理ユーザーが選択することがありますが、Configuration Manager はコンテンツ ファイルのユーザー データを含みません。  
+##  <a name="BKMK_Privacy_ContentManagement"></a> Informazioni sulla privacy per la gestione dei contenuti  
+ Configuration Manager non include dati utente nei file di contenuto, tuttavia un utente amministratore può scegliere di inserirli.  
 
- コンテンツ管理を構成する前に、プライバシー要件について検討してください。  
+ Prima di configurare la gestione dei contenuti, considerare i requisiti sulla privacy.  

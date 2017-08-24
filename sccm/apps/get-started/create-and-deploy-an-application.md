@@ -1,6 +1,6 @@
 ---
-title: "アプリケーションの作成と展開 | Microsoft Docs"
-description: "基幹業務アプリを含むアプリケーションの作成と展開、およびアプリを効果的に管理する方法について説明します。"
+title: Creare e distribuire un'applicazione | Documentazione Microsoft
+description: Creare e distribuire un'applicazione contenente un'app line-of-business e informazioni su come gestire le applicazioni in modo efficace.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,190 +18,190 @@ manager: angrobe
 ms.openlocfilehash: bbbf278f5d31c51bfe061dd44e170f7ab1ca70ad
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-and-deploy-an-application-with-system-center-configuration-manager"></a>System Center Configuration Manager でのアプリケーションの作成と展開
+# <a name="create-and-deploy-an-application-with-system-center-configuration-manager"></a>Creare e distribuire un'applicazione con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-このトピックでは、すぐに操作を開始し、アプリケーションを System Center Configuration Manager で作成します。 この例では、**Contoso.msi** と呼ばれる Windows PC 用の基幹業務アプリ (このアプリは社内の Windows 10 を実行するすべての PC にインストールされている必要があります) を含むアプリケーションを作成し、展開します。 その過程で、アプリケーションを効果的に管理するのに役立つさまざまな事柄について学習します。  
+Questo argomento fornisce informazioni che consentono di creare subito un'applicazione con System Center Configuration Manager. In questo esempio viene creata e distribuita un'applicazione contenente una riga per un'app aziendale per PC Windows denominata **Contoso.msi** che deve essere installata in tutti i PC che eseguono Windows 10 all'interno dell'azienda. Durante questo processo verranno fornite informazioni su gran parte delle operazioni che è possibile eseguire per gestire le applicazioni in modo efficace.  
 
- この手順は、Configuration Manager アプリケーションを作成および展開する方法の概要を示すことを目的としていますが、 ただし、すべての構成オプションや、他のプラットフォーム用のアプリケーションを作成および展開する方法については説明していません。  
+ Questa procedura è progettata per offrire una panoramica su come creare e distribuire le applicazioni di Configuration Manager. Tuttavia, non copre tutte le opzioni di configurazione e non fornisce tutte le informazioni su come creare e distribuire applicazioni per altre piattaforme.  
 
- 各プラットフォームに関する特定の詳細は、次のトピックのいずれかを参照してください。  
+ Per informazioni specifiche su ogni piattaforma, vedere uno degli argomenti seguenti:  
 
--   [Windows アプリケーションの作成](../../apps/get-started/creating-windows-applications.md)  
--   [iOS アプリケーションの作成](../../apps/get-started/creating-ios-applications.md)  
--   [Android アプリケーションの作成](../../apps/get-started/creating-android-applications.md)  
--   [Windows Phone アプリケーションの作成](../../apps/get-started/creating-windows-phone-applications.md)  
--   [Mac コンピューター アプリケーションの作成](../../apps/get-started/creating-mac-computer-applications.md)  
--   [Linux および UNIX のサーバー アプリケーションの作成](../../apps/get-started/creating-linux-and-unix-server-applications.md)
--   [Windows Embedded アプリケーションの作成](../../apps/get-started/creating-windows-embedded-applications.md)
+-   [Creare applicazioni Windows](../../apps/get-started/creating-windows-applications.md)  
+-   [Creazione di applicazioni iOS](../../apps/get-started/creating-ios-applications.md)  
+-   [Creazione di applicazioni Android](../../apps/get-started/creating-android-applications.md)  
+-   [Creazione di applicazioni Windows Phone](../../apps/get-started/creating-windows-phone-applications.md)  
+-   [Creazione di applicazioni per computer Mac](../../apps/get-started/creating-mac-computer-applications.md)  
+-   [Creazione di applicazioni server Linux e UNIX](../../apps/get-started/creating-linux-and-unix-server-applications.md)
+-   [Creazione di applicazioni Windows Embedded](../../apps/get-started/creating-windows-embedded-applications.md)
 
 
-Configuration Manager アプリケーションに既に精通している場合は、このトピックをスキップできます。 ただし、アプリケーションを作成および展開するときに、使用可能なすべてのオプションについて確認するには、「[アプリケーションの作成](../../apps/deploy-use/create-applications.md)」を参照してください。  
+Se si ha già familiarità con le applicazioni di Configuration Manager, è possibile ignorare questo argomento. Tuttavia, è consigliabile rivedere l'argomento [Create applications](../../apps/deploy-use/create-applications.md) (Creazione di applicazioni) per scoprire tutte le opzioni disponibili quando si creano e si distribuiscono le applicazioni.  
 
-## <a name="before-you-start"></a>アップグレードを開始する前に  
+## <a name="before-you-start"></a>Prima di iniziare  
 
-アプリケーションをインストールするサイトの準備を完了し、このトピックで使用されている用語を理解できるように、「[アプリケーション管理の概要](/sccm/apps/understand/introduction-to-application-management)」の情報を必ず確認してください。  
+Assicurarsi di aver esaminato le informazioni contenute in [Introduzione alla gestione delle applicazioni](/sccm/apps/understand/introduction-to-application-management) che indicano come preparare il sito per installare le applicazioni e di comprendere la terminologia usata in questo argomento.  
 
- また、**Contoso.msi** アプリのインストール ファイルがネットワーク上のアクセス可能な場所に配置されていることを確認してください。  
+ Assicurarsi inoltre che i file di installazione per l'app **Contoso.msi** si trovino in un percorso accessibile sulla rete.  
 
-## <a name="create-the-configuration-manager-application"></a>Configuration Manager アプリケーションの作成  
+## <a name="create-the-configuration-manager-application"></a>Creare l'applicazione di Configuration Manager  
 
-### <a name="to-start-the-create-application-wizard-and-create-the-application"></a>アプリケーションの作成ウィザードを開始してアプリケーションを作成するには  
+### <a name="to-start-the-create-application-wizard-and-create-the-application"></a>Per avviare la Creazione guidata applicazione e creare l'applicazione  
 
-1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[アプリケーション管理]** > **[アプリケーション]** の順に選択します。  
+1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
 
-3.  **[ホーム]** タブの **[作成]** グループで、**[アプリケーションの作成]** を選択します。  
+3.  Nella scheda **Home**, nel gruppo **Crea**, scegliere **Crea applicazione**.  
 
-4.  **アプリケーションの作成ウィザード**の **[全般]** ページで、**[このアプリケーションの情報をインストール ファイルから自動的に検出する]** を選択します。 これを選択すると、ウィザード内の一部の情報は、.msi インストール ファイルから抽出された情報で事前に設定されています。 以下の情報を指定します。  
+4.  Nella pagina **Generale** della **Creazione guidata applicazione** selezionare **Rileva automaticamente le informazioni sull'applicazione dai file di installazione**. Alcune sezioni della procedura guidata vengono prepopolate con le informazioni estratte dal file di installazione con estensione msi. A questo punto, specificare le informazioni seguenti:  
 
-    -   **種類** - **[Windows インストーラー (\*.msi ファイル)]** を選択します。  
+    -   **Tipo**: scegliere **Windows Installer (file \*.msi)**.  
 
-    -   **場所** - インストール ファイル **Contoso.msi** の場所を入力します (または **[参照]** を選択して一覧から場所を選択します)。 Configuration Manager がインストール ファイルを見つけることができるように、この場所は *\\\Server\Share\File* の形式で指定する必要があります。  
+    -   **Percorso**: immettere il percorso del file di installazione **Contoso.msi** o fare clic su **Sfoglia**per selezionare il percorso. Per trovare i file di installazione con Configuration Manager, il percorso deve essere specificato nel formato *\\\Server\Share\File*.  
 
-    次のスクリーン ショットのようになります。  
+    Al termine, verrà visualizzata una schermata simile alla seguente:  
 
-    ![アプリの管理ウィザードの全般ページ](/sccm/apps/get-started/media/App-management-wizard-general-page.png)  
+    ![Pagina generica di Gestione guidata applicazioni](/sccm/apps/get-started/media/App-management-wizard-general-page.png)  
 
-5.  **[次へ]** を選択します。 **[情報のインポート]** ページに、アプリと Configuration Manager にインポートされた関連ファイルに関する情報が表示されます。 完了したら、**[次へ]** を再度クリックします。  
+5.  Scegliere **Avanti**. Nella pagina **Importazione informazioni** verranno visualizzate alcune informazioni sull'app e tutti i file associati importati in Configuration Manager. Al termine, scegliere di nuovo **Avanti**.  
 
-6.  **[一般情報]** ページで、Configuration Manager コンソールで並べ替えたり、見つけたりするのに役立つアプリケーションに関する追加の情報を入力できます。  
+6.  Nella pagina **Informazioni generali**, è possibile fornire altre informazioni sull'applicazione che consentono di ordinarla e individuarla nella console di Configuration Manager.  
 
-     さらに、**[インストール プログラム]** フィールドに、PC にアプリケーションをインストールするために使用する完全なコマンド ラインを指定することができます。 これを編集して、独自のプロパティ (たとえば、無人インストールの場合 **/q**) を追加することができます。  
+     Inoltre, il campo **Programma di installazione** consente di specificare l'intera riga di comando usata per installare l'applicazione nei computer. È possibile modificare questa opzione per aggiungere proprietà personalizzate (ad esempio **/q** per un'installazione automatica).  
 
     > [!TIP]  
-    >  アプリケーション インストール ファイルをインポートした場合、ウィザードのこのページのいくつかのフィールドは、値が自動的に入力されている可能性があります。  
+    >  Alcuni dei campi in questa pagina della procedura guidata potrebbero essere stati compilati automaticamente durante l'importazione dei file di installazione dell'applicazione.  
 
-     次のスクリーンショットのような画面になります。  
+     Al termine, verrà visualizzata una schermata simile alla seguente:  
 
-     ![アプリの管理ウィザードの一般情報ページ](/sccm/apps/get-started/media/App-management-wizard-general-information-page.png)  
+     ![Pagina generica di informazioni di Gestione guidata applicazioni](/sccm/apps/get-started/media/App-management-wizard-general-information-page.png)  
 
-7.  **[次へ]** を選択します。 [概要] ページで、アプリケーションの設定を確認し、ウィザードを完了することができます。  
+7.  Scegliere **Avanti**. Nella pagina di riepilogo è possibile confermare le impostazioni dell'applicazione e quindi completare la procedura guidata.  
 
- これで、アプリの作成が完了しました。 アプリを確認するには、**[ソフトウェア ライブラリ]** ワークスペースで **[アプリケーション管理]** を展開し、**[アプリケーション]** を選択します。 この例の場合、次のように表示されます。  
+ L'app viene creata. Per trovarla, espandere **Gestione applicazioni** nell'area di lavoro **Raccolta software** e quindi fare clic su **Applicazioni**. Per questo esempio verrà visualizzato:  
 
- ![最終的なアプリのグラフィック](/sccm/apps/get-started/media/Final-app-graphic.png)  
+ ![Immagine finale dell'app](/sccm/apps/get-started/media/Final-app-graphic.png)  
 
-## <a name="examine-the-properties-of-the-application-and-its-deployment-type"></a>アプリケーションのプロパティとその展開の種類を調べる  
+## <a name="examine-the-properties-of-the-application-and-its-deployment-type"></a>Esaminare le proprietà dell'applicazione e il tipo di distribuzione  
 
-アプリケーションを作成したら、必要に応じてアプリケーションの設定を調整できます。 アプリケーションのプロパティを確認するには、アプリを選択し、**[ホーム]** タブの **[プロパティ]** グループにある **[プロパティ]** をクリックします。  
+Dopo aver creato un'applicazione, è possibile ridefinire le impostazioni dell'applicazione, se necessario. Per esaminare le proprietà dell'applicazione, selezionare l'app e quindi scegliere **Proprietà** nel gruppo **Proprietà** della scheda **Home**.  
 
- **[<Contoso\> アプリケーション プロパティ]** ダイアログ ボックスに、アプリケーションの動作を細かく調整するために構成可能な多くの項目が表示されます。 構成できるすべての設定の詳細については、「[アプリケーションの作成](../../apps/deploy-use/create-applications.md)」を参照してください。 この例では、アプリケーションの展開の種類の一部のプロパティのみを変更します。  
+ Nella finestra di dialogo **Proprietà applicazione \><Contoso** verranno visualizzati diversi elementi che è possibile configurare per perfezionare il comportamento dell'applicazione. Per informazioni dettagliate su tutte le impostazioni che è possibile configurare, vedere [Creazione di applicazioni](../../apps/deploy-use/create-applications.md). Ai fini di questo esempio, verranno modificate solo alcune delle proprietà del tipo di distribuzione dell'applicazione.  
 
- **[展開の種類]** タブ > **[Contoso Application]** (Contoso アプリケーション) 展開の種類 > **[編集]** を選択します。  
+ Fare clic sulla scheda **Tipi di distribuzione** > tipo di distribuzione **Applicazione Contoso** > **Modifica**.  
 
-次のようなダイアログ ボックスが表示されます。  
+Viene visualizzata una finestra di dialogo simile alla seguente:  
 
-![アプリ管理アプリのプロパティ ページ](/sccm/apps/get-started/media/App-management-app-properties-page.png)  
+![Pagina delle proprietà dell'app di gestione](/sccm/apps/get-started/media/App-management-app-properties-page.png)  
 
-## <a name="add-a-requirement-to-the-deployment-type"></a>展開の種類に要件を追加します。  
- 要件には、デバイスにアプリケーションをインストールする前に満たす必要がある条件を指定します。  組み込まれている要件から選択したり、独自に作成したりできます。 この例では、Windows 10 を実行している PC にのみアプリケーションをインストールする要件を追加します。  
+## <a name="add-a-requirement-to-the-deployment-type"></a>Aggiungere un requisito al tipo di distribuzione  
+ I requisiti specificano le condizioni che devono essere soddisfatte prima di installare un'applicazione in un dispositivo.  È possibile scegliere tra i requisiti predefiniti o crearne di personalizzati. In questo esempio viene aggiunto un requisito che consente l'installazione dell'applicazione solo nei computer che eseguono Windows 10.  
 
-1.  開いた [展開の種類] プロパティ ページから、**[要件]** タブを選択します。  
+1.  Nella pagina delle proprietà del tipo di distribuzione appena aperta scegliere la scheda **Requisiti**.  
 
-2.  **[追加]** を選択して **[要件の作成]** ダイアログ ボックスを開きます。  
+2.  Scegliere **Aggiungi** per aprire la finestra di dialogo **Crea requisito**.  
 
-3.  **[要件の作成]** ダイアログ ボックスで、次の情報を指定します。  
+3.  Nella finestra di dialogo **Crea requisito** specificare le seguenti informazioni:  
 
-    -   **[カテゴリ]** - **[デバイス]**  
+    -   **Categoria**: **Dispositivo**  
 
-    -   **[条件]** - **[オペレーティング システム]**  
+    -   **Condizione**: **Sistema operativo**  
 
-    -   **[ルールの種類]** - **[値]**  
+    -   **Tipo di regola**: **Valore**  
 
-    -   **[演算子]** - **[次のいずれか]**  
+    -   **Operatore**: **Uno**  
 
-    -   オペレーティング システムの一覧から、 **[Windows 10]**を選択します。  
+    -   Nell'elenco di sistemi operativi selezionare **Windows 10**.  
 
-    ダイアログ ボックスは次のようになります。  
+    Al termine, verrà visualizzata una finestra di dialogo simile alla seguente:  
 
-    ![アプリ管理アプリの要件ページ](/sccm/apps/get-started/media/App-management-requirements-page.png)  
+    ![Pagina dei requisiti dell'app di gestione](/sccm/apps/get-started/media/App-management-requirements-page.png)  
 
-4.  **[OK]** を選択して、開いている各プロパティ ページを閉じます。 Configuration Manager コンソールの **[アプリケーション]** 一覧に戻ります。  
-
-> [!TIP]  
->  要件を指定すると、必要になる Configuration Manager コレクションの数を減らすことができます。 Windows 10 を実行している PC にのみアプリケーションをインストールできるように指定したため、他のさまざまなオペレーティング システムを実行している PC を含むコレクションには、後から展開できます。 アプリケーションは Windows 10 の PC にのみインストールされます。  
-
-## <a name="add-the-application-content-to-a-distribution-point"></a>アプリケーション コンテンツを配布ポイントに追加する  
-
-次に、PC にアプリケーションを正常に展開するには、アプリケーション コンテンツを配布ポイントに確実にコピーします。 PC は、この配布ポイントにアクセスしてアプリケーションをインストールします。  
+4.  Scegliere **OK** per chiudere le singole pagine delle proprietà aperte e quindi tornare all'elenco **Applicazioni** nella console di Configuration Manager.  
 
 > [!TIP]  
->  配布ポイントと Configuration Manager のコンテンツ管理の詳細については、「[コンテンツ管理インフラストラクチャの展開と管理](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」を参照してください。  
+>  I requisiti consentono di ridurre il numero di raccolte di Configuration Manager necessario. Poiché è stato specificato che l'applicazione può essere installata solo nei computer che eseguono Windows 10, successivamente sarà possibile distribuirla in una raccolta contenente computer che eseguono sistemi operativi diversi. Tuttavia l'applicazione verrà installata solo nei PC con Windows 10.  
 
-1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** を選択します。  
+## <a name="add-the-application-content-to-a-distribution-point"></a>Aggiungere il contenuto dell'applicazione a un punto di distribuzione  
 
-2.  **[ソフトウェア ライブラリ]** ワークスペースで **[アプリケーション]** をクリックします。 アプリケーションの一覧で、作成した **Contoso アプリケーション**を選択します。  
-
-3.  **[ホーム]** タブの **[展開]** グループで、**[コンテンツの配布]** をクリックします。  
-
-4.  **コンテンツの配布ウィザード**の **[全般]** ページで、アプリケーション名が正しいことを確認し、**[次へ]** をクリックします。  
-
-5.  **[コンテンツ]** ページで、配布ポイントにコピーされる情報を確認し、**[次へ]** を選択します。  
-
-6.  **[コンテンツの配布先]** ページで、**[追加]** を選択して、アプリケーション コンテンツをインストールする 1 つまたは複数の配布ポイントを選択するか、または配布ポイント グループを選択します。  
-
-7.  ウィザードを完了します。  
-
-配布ポイントにアプリケーション コンテンツが正常にコピーされたことを確認するには、**[監視]** ワークスペースで **[配布ステータス]** > **[コンテンツのステータス]** で作成します。  
-
-## <a name="deploy-the-application"></a>アプリケーションを展開する  
-
-次に、階層内のデバイス コレクションにアプリケーションを展開します。 この例では、**[すべてのシステム]** デバイス コレクションにアプリケーションを展開します。  
+Successivamente, per distribuire l'applicazione nei PC, è necessario assicurarsi che il contenuto dell'applicazione venga copiato in un punto di distribuzione. I PC accedono al punto di distribuzione per installare l'applicazione.  
 
 > [!TIP]  
->  以前選択した要件のため、Windows 10 コンピューターのみがアプリケーションをインストールすることに注意してください。  
+>  Per altre informazioni sui punti di distribuzione e la gestione del contenuto in Configuration Manager, vedere [Gestire il contenuto e l'infrastruttura del contenuto](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
-1.  Configuration Manager コンソールで、**[ソフトウェア ライブラリ]** > **[アプリケーション管理]** > **[アプリケーション]** の順に選択します。  
+1.  Nella console di Configuration Manager scegliere **Raccolta software**.  
 
-3.  アプリケーションの一覧から、先ほど作成したアプリケーション (**Contoso アプリケーション**) を選択し、**[ホーム]** タブで **[展開]** グループの **[展開]** を選択します。  
+2.  Nell'area di lavoro **Raccolta software** espandere **Applicazioni** e quindi selezionare dall'elenco di applicazioni l'**applicazione Contoso** creata.  
 
-4.  **ソフトウェアの展開ウィザード** の **[全般]**ページで、 **[参照]** を選択して **[すべてのシステム]** デバイス コレクションを選択します。  
+3.  Nella scheda **Home**, nel gruppo **Distribuzione**, scegliere **Distribuisci contenuto**.  
 
-5.  **[コンテンツ]** ページで、PC がアプリケーションをインストールする際の元となる配布ポイントが選択されていることを確認します。  
+4.  Nella pagina **Generale** della **Distribuzione guidata contenuto** verificare che il nome dell'applicazione sia corretto e quindi scegliere **Avanti**.  
 
-6.  **[展開設定]** ページで、展開アクションが **[インストール]**に設定され、展開の目的が **[必須]** に設定されていることを確認します。  
+5.  Nella pagina **Contenuto** esaminare le informazioni che verranno copiate nel punto di distribuzione e quindi scegliere **Avanti**.  
+
+6.  Nella pagina **Destinazione del contenuto** fare clic su **Aggiungi** per selezionare uno o più punti di distribuzione o gruppi di punti di distribuzione in cui installare il contenuto dell'applicazione.  
+
+7.  Completare la procedura guidata.  
+
+È possibile verificare che il contenuto dell'applicazione sia stato copiato correttamente nel punto di distribuzione dall'area di lavoro **Monitoraggio** in **Stato di distribuzione** > **Stato contenuto**.  
+
+## <a name="deploy-the-application"></a>Distribuire l'applicazione  
+
+Successivamente, distribuire l'applicazione a una raccolta di dispositivi nella gerarchia. In questo esempio l'applicazione viene distribuita alla raccolta dispositivi **Tutti i sistemi**.  
+
+> [!TIP]  
+>  Tenere presente che l'applicazione verrà installata solo nei computer Windows 10 a causa dei requisiti selezionati in precedenza.  
+
+1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
+
+3.  Dall'elenco delle applicazioni selezionare l'applicazione creata in precedenza (**Applicazione Contoso**) e quindi scegliere **Distribuisci** nel gruppo **Distribuzione** della scheda **Home**.  
+
+4.  Nella pagina **Generale** della **Distribuzione guidata del software** fare clic su **Sfoglia** per selezionare la raccolta di dispositivi **Tutti i sistemi**.  
+
+5.  Nella pagina **Contenuto** verificare che il punto di distribuzione da cui si vuole consentire ai PC di installare l'applicazione sia selezionato.  
+
+6.  Nella pagina **Impostazioni di distribuzione** assicurarsi che l'azione di distribuzione sia impostata su **Installa** e che lo scopo della distribuzione sia impostato su **Richiesto**.  
 
     > [!TIP]  
-    >  展開の目的を **[必須]** に設定すると、設定した要件を満たす PC にアプリケーションが確実にインストールされるようになります。 この値を **[利用可能]**に設定すると、ユーザーがソフトウェア センターから必要に応じてアプリケーションをインストールできるようになります。  
+    >  Impostando lo scopo della distribuzione su **Richiesto** si garantisce che l'applicazione venga installata nei PC che soddisfano i requisiti impostati. Se si imposta questo valore su **Disponibile**, gli utenti possono installare l'applicazione su richiesta da Software Center.  
 
-7.  **[スケジュール]** ページで、アプリケーションをインストールする時間を構成できます。 この例では、 **[使用可能な時間後直ちに]**を選択します。  
+7.  Nella pagina **Pianificazione** è possibile configurare il momento in cui verrà installata l'applicazione. Per questo esempio, selezionare **Appena possibile dopo il tempo disponibile**.  
 
-8.  **[ユーザー エクスペリエンス]** ページで、**[次へ]** を選択して既定値をそのまま使用します。  
+8.  Nella pagina **Esperienza utente** scegliere **Avanti** per accettare i valori predefiniti.  
 
-9. ウィザードを完了します。  
+9. Completare la procedura guidata.  
 
-以下の **[アプリケーションを監視する]** セクション内の情報を使用して、アプリケーション展開の状態を確認します。  
+Usare le informazioni della sezione seguente **Monitorare l'applicazione** per visualizzare lo stato della distribuzione dell'applicazione.  
 
-## <a name="monitor-the-application"></a>[アプリケーションを監視する]  
- このセクションでは、展開したアプリケーションの展開状態をすばやく確認できます。  
+## <a name="monitor-the-application"></a>Monitorare l'applicazione  
+ In questa sezione verrà esaminato rapidamente lo stato di distribuzione dell'applicazione appena distribuita.  
 
-### <a name="to-review-the-deployment-status"></a>展開状態を確認するには  
+### <a name="to-review-the-deployment-status"></a>Per esaminare lo stato di distribuzione  
 
-1.  Configuration Manager コンソールで、**[監視]** > **[展開]** の順に選択します。  
+1.  Nella console di Configuration Manager scegliere **Monitoraggio** > **Distribuzioni**.  
 
-3.  展開の一覧から、 **Contoso アプリケーション**を選択します。  
+3.  Selezionare **Applicazione Contoso**dall'elenco delle distribuzioni.  
 
-4.  **[ホーム]** タブの **[展開]** グループで、**[ステータスの表示]** を選択します。  
+4.  Nella scheda **Home** scegliere **Visualizza stato** nel gruppo **Distribuzione**.  
 
-5.  アプリケーション展開に関する詳細な状態の更新を確認するには、次のタブのいずれかを選択します。  
+5.  Selezionare una delle schede seguenti per visualizzare più aggiornamenti di stato sulla distribuzione delle applicazioni:  
 
-    -   **[成功]**: 指定された PC にアプリケーションが正常にインストールされました。  
+    -   **Operazione riuscita**: l'applicazione è stata installata correttamente nei PC indicati.  
 
-    -   **[進行中]**: アプリケーションのインストールはまだ終了していません。  
+    -   **In corso**: l'installazione dell'applicazione non è ancora terminata.  
 
-    -   **[エラー]**: 指定された PC にアプリケーションをインストールしているときにエラーが発生しました。 エラーに関する詳細情報も表示されます。  
+    -   **Errore**: si è verificato un errore durante l'installazione dell'applicazione nei PC indicati. Vengono visualizzate anche altre informazioni sull'errore.  
 
-    -   **[要件が満たされていません]** - 指定されたデバイスにアプリケーションをインストールしようとしましたが、構成した要件を満たしていなかったため (この例では Windows 10 を実行していないため)、インストールしませんでした。  
+    -   **Requisiti non soddisfatti**: non è stato effettuato alcun tentativo di installazione nei dispositivi indicati perché non soddisfano i requisiti configurati (in questo esempio, perché non eseguono Windows 10).  
 
-    -   **[不明]**: Configuration Manager が展開の状態を報告できませんでした。 後でもう一度確認してください。  
+    -   **Sconosciuto**: Configuration Manager non è riuscito a segnalare lo stato della distribuzione. Ricontrollare in seguito.  
 
 > [!TIP]  
->  アプリケーションの展開を監視するいくつかの方法があります。 詳細については、「[アプリケーションの監視](/sccm/apps/deploy-use/monitor-applications-from-the-console)」を参照してください。  
+>  Esistono diversi modi in cui è possibile monitorare le distribuzioni di applicazioni. Per informazioni dettagliate, vedere [Monitorare le applicazioni](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
 
-## <a name="end-user-experience"></a>エンド ユーザー エクスペリエンス  
+## <a name="end-user-experience"></a>Esperienza utente finale  
 
-Configuration Manager で管理され、Windows 10 が実行されている PC を持つユーザーに、Contoso アプリケーションをインストールする必要があることを示すメッセージが表示されます。 このインストールを承諾すると、アプリケーションがインストールされます。  
+Gli utenti con PC gestiti da Configuration Manager che eseguono Windows 10 visualizzano un messaggio che informa della necessità di installare l'applicazione Contoso. Una volta accettata l'installazione, l'applicazione viene installata.  

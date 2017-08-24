@@ -1,5 +1,5 @@
 ---
-title: "レポート | Microsoft Docs"
+title: Creazione di report | Microsoft Docs
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,24 +17,24 @@ manager: angrobe
 ms.openlocfilehash: cebc48180144ae0d711ff09d16be7c37ec237cfa
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="reporting-in-system-center-configuration-manager"></a>System Center Configuration Manager のレポート
+# <a name="reporting-in-system-center-configuration-manager"></a>Creazione di report in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager のレポート機能には、Configuration Manager コンソールで Microsoft SQL Server Reporting Services のレポート機能を使用するための一連のツールとリソースが搭載されています。  
+La creazione di report in System Center Configuration Manager offre un set di strumenti e risorse che consentono di usare le stesse funzionalità avanzate di SQL Server Reporting Services.  
 
-## <a name="reporting-topics"></a>レポートに関するトピック  
- 次のトピックは、Configuration Manager のレポートの管理において役立ちます。  
+## <a name="reporting-topics"></a>Argomenti sulla creazione di report  
+ Gli argomenti seguenti consentono di gestire la creazione di report in Configuration Manager:  
 
--   [レポートの概要](introduction-to-reporting.md)  
+-   [Introduzione alla creazione di report](introduction-to-reporting.md)  
 
--   [レポートの計画](planning-for-reporting.md)  
+-   [Pianificazione della creazione di report](planning-for-reporting.md)  
 
--   [レポートの構成](configuring-reporting.md)  
+-   [Configurare la creazione di report](configuring-reporting.md)  
 
--   [レポートの操作とメンテナンス](operations-and-maintenance-for-reporting.md)  
+-   [Operazioni e manutenzione per la creazione di report](operations-and-maintenance-for-reporting.md)  
 
--   [レポートのセキュリティとプライバシー](security-and-privacy-for-reporting.md)  
+-   [Sicurezza e privacy per la creazione di report](security-and-privacy-for-reporting.md)  

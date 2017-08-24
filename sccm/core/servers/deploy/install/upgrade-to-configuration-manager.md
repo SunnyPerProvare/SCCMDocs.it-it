@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager へのアップグレード| Microsoft Docs"
-description: "System Center 2012 Configuration Manager を実行しているサイトおよび階層から適切に一括アップグレードを実行するための手順を説明します。"
+title: Eseguire l'aggiornamento a System Center Configuration Manager | Microsoft Docs
+description: Passaggi per eseguire l'aggiornamento sul posto da un sito e da una gerarchia che esegue System Center 2012 Configuration Manager.
 ms.custom: na
 ms.date: 6/6/2017
 ms.prod: configuration-manager
@@ -17,43 +17,43 @@ manager: angrobe
 ms.openlocfilehash: 1166b739e1e8d667172d97883f484fdbc3a142c1
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="upgrade-to-system-center-configuration-manager"></a>System Center Configuration Manager へのアップグレード
+# <a name="upgrade-to-system-center-configuration-manager"></a>Eseguire l'aggiornamento a System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center 2012 Configuration Manager を実行しているサイトおよび階層から System Center Configuration Manager にアップグレードする、一括アップグレードを実行できます。  
+È possibile eseguire l'aggiornamento sul posto a System Center Configuration Manager da un sito e da una gerarchia che esegue System Center 2012 Configuration Manager.  
 
- System Center 2012 Configuration Manager からアップグレードする前に、正常なアップグレードを妨げる可能性のある特定の構成を該当するサイトから削除し、複数のサイトが関係している場合は、特定のアップグレード順序に従う必要があります。  
+ Prima di eseguire l'aggiornamento da System Center 2012 Configuration Manager, è necessario preparare i siti rimuovendo le configurazioni specifiche che possono impedire l'aggiornamento e osservare la sequenza di aggiornamento quando sono coinvolti più siti.  
 
  > [!TIP]
- > System Center Configuration Manager のサイトと階層のインフラストラクチャの管理において、*アップグレード*、*更新*、および*インストール* という用語は 3 つの異なる概念を説明するものです。 各用語の使用方法については、「[サイトと階層のインフラストラクチャでのアップグレード、更新、およびインストールについて](/sccm/core/understand/upgrade-update-install)」を参照してください。
+ > Quando si gestisce l'infrastruttura del sito e della gerarchia di System Center Configuration Manager, i termini *upgrade*, *aggiornamento* e *installazione* vengono usati per descrivere tre concetti distinti. Per informazioni su come viene usato ogni termine, vedere [Informazioni su upgrade, aggiornamento e installazione](/sccm/core/understand/upgrade-update-install).
 
-##  <a name="bkmk_path"></a> 一括アップグレード パス  
+##  <a name="bkmk_path"></a> Percorsi di aggiornamento sul posto  
 
-**バージョン 1702 へのアップグレード**   
-バージョン 1702 基準メディアがある場合は、次のバージョンを System Center Configuration Manager バージョン 1702 の正規ライセンス版にアップグレードできます。   
--     System Center Configuration Manager バージョン 1702 の評価版のインストール
--     System Center 2012 Configuration Manager Service Pack 1
--     System Center 2012 Configuration Manager Service Pack 2
+**Eseguire l'aggiornamento alla versione 1702**   
+Quando è presente il supporto di base della versione 1702, è possibile aggiornare i seguenti prodotti a una versione con licenza completa di System Center Configuration Manager versione 1702:   
+-     L'installazione di una valutazione di System Center Configuration Manager versione 1702
+-     System Center 2012 Configuration Manager con Service Pack 1
+-     System Center 2012 Configuration Manager con Service Pack 2
 -     System Center 2012 R2 Configuration Manager
--     System Center 2012 R2 Configuration Manager Service Pack 1
+-     System Center Configuration Manager 2012 R2 con Service Pack 1
 
-**バージョン 1606 へのアップグレード**  
-2016 年 12 月 15 日に、バージョン 1606 の基準メディアが再リリースされ、追加のアップグレード シナリオのサポートが追加されました。 この新しいリリースでは、次のバージョンを System Center Configuration Manager バージョン 1606 の正規ライセンス版にアップグレードできます。  
--   System Center Configuration Manager バージョン 1606 の評価版
--   System Center Configuration Manager のリリース候補版のインストール  
--   System Center 2012 Configuration Manager Service Pack 1  
--   System Center 2012 Configuration Manager Service Pack 2  
+**Aggiornare alla versione 1606**  
+Il 15 dicembre 2016 è stato rilasciato nuovamente il supporto di base della versione 1606, per aggiungere il supporto di scenari di aggiornamento supplementari. La nuova versione supporta l'aggiornamento dei seguenti prodotti a una versione con licenza completa di System Center Configuration Manager versione 1606:  
+-   L'installazione di una valutazione di System Center Configuration Manager versione 1606
+-   Installazione di una versione finale candidata di System Center Configuration Manager  
+-   System Center 2012 Configuration Manager con Service Pack 1  
+-   System Center 2012 Configuration Manager con Service Pack 2  
 -   System Center 2012 R2 Configuration Manager  
--   System Center 2012 R2 Configuration Manager Service Pack 1  
+-   System Center Configuration Manager 2012 R2 con Service Pack 1  
 
-2016 年 12 月 15 日より前にダウンロードしたバージョン 1606 基準メディアを使用する場合は、System Center Configuration Manager バージョン 1606 の正規ライセンス版にアップグレードできるのは次のバージョンのみです。
--   System Center Configuration Manager バージョン 1606 の評価版
--   System Center 2012 Configuration Manager Service Pack 2
--   System Center 2012 R2 Configuration Manager Service Pack 1
+Se si usano supporti di base della versione 1606 scaricati prima del 15 dicembre 2016, è possibile aggiornare solo i seguenti componenti a una versione con licenza completa di System Center Configuration Manager versione 1606:
+-   L'installazione di una valutazione di System Center Configuration Manager versione 1606
+-   System Center 2012 Configuration Manager con Service Pack 2
+-   System Center Configuration Manager 2012 R2 con Service Pack 1
 
 <!-- Version 1511 has now dropped out of support
 **Upgrade to version 1511**  
@@ -68,334 +68,334 @@ When you have version 1511 baseline media, you can upgrade the following to a fu
 
 
 > [!TIP]  
->  System Center 2012 Configuration Manager のバージョンから Current Branch にアップグレードするときには、アップグレード プロセスを効率化できることがあります。 詳細については、次をご覧ください。  
+>  Se si esegue l'aggiornamento da una versione di System Center 2012 Configuration Manager a Current Branch il processo di aggiornamento potrebbe risultare semplificato. Per altre informazioni, vedere  
 >   
->  -   [System Center Configuration Manager の更新プログラム](../../../../core/servers/manage/updates.md)の「[基準バージョンと更新プログラムのバージョン](../../../../core/servers/manage/updates.md#bkmk_Baselines)」セクション  
->  -   [System Center Configuration Manager の CD.Latest フォルダー](../../../../core/servers/manage/the-cd.latest-folder.md)  
+>  -   La sezione [Versioni di base e di aggiornamento](../../../../core/servers/manage/updates.md#bkmk_Baselines) in [Aggiornamenti per System Center Configuration Manager](../../../../core/servers/manage/updates.md)  
+>  -   [Cartella CD.Latest per System Center Configuration Manager](../../../../core/servers/manage/the-cd.latest-folder.md)  
 
- **次はサポートされていません。**  
--   System Center Configuration Manager の Technical Preview から正規ライセンス版インストールへのアップグレードはサポートされていません。  Technical Preview バージョンは Technical Preview の新しいバージョンにのみアップグレードできます。  
+ **Le operazioni seguenti non sono supportate:**  
+-   Non è supportato l'aggiornamento di una versione Technical Preview per System Center Configuration Manager a un'installazione con licenza completa.  Una versione Technical Preview può essere aggiornata solo a una versione successiva di Technical Preview.  
 
--   Technical Preview から正規ライセンス版への移行はサポートされていません。  
+-   La migrazione da una versione Technical Preview a una versione con licenza completa non è supportata.  
 
-##  <a name="bkmk_checklist"></a> アップグレードのチェックリスト  
- 次のチェック リストは、System Center Configuration Manager への適切なアップグレードの計画に役立ちます。  
+##  <a name="bkmk_checklist"></a> Eseguire l'aggiornamento degli elenchi di controllo  
+ Gli elenchi di controllo seguenti possono aiutare a pianificare un aggiornamento a System Center Configuration Manager.  
 
-### <a name="before-you-upgrade"></a>アップグレードする前に  
+### <a name="before-you-upgrade"></a>Prima dell'aggiornamento  
 
-**System Center 2012 Configuration Manager 環境を確認し**、問題を解決する (詳細は KB4018655 にあり): [Configuration Manager クライアントが繰り返し発生する再試行タスクに起因して 5 時間おきに再インストールし、不注意なクライアント アップグレードを引き起こす可能性があります](https://support.microsoft.com/help/4018655)。
+**Esaminare l'ambiente di System Center Configuration Manager 2012** e risolvere i problemi come descritto in dettaglio nell'articolo KB4018655: [Configuration Manager clients reinstall every five hours because of a recurring retry task and may cause an inadvertent client upgrade](https://support.microsoft.com/help/4018655) (Il client di Configuration Manager viene reinstallato ogni cinque ore a causa di un nuovo tentativo ricorrente e potrebbe causare un upgrade involontario del client).
 
-System Center Configuration Manager へのアップグレードに必要な**サポート対象構成をコンピューター環境が満たしていることを確認する**:  
+**Assicurarsi che l'ambiente informatico soddisfi le configurazioni supportate** necessarie per eseguire l'aggiornamento a System Center Configuration Manager:  
 
-サイト システムの役割をホストするために使うサーバー オペレーティング システムについて確認します。  
+Esaminare i sistemi operativi server usati per ospitare i ruoli del sistema del sito:  
 
--   System Center 2012 Configuration Manager でサポートされている一部の古いオペレーティング システムは System Center Configuration Manager でサポートされていないため、アップグレードする前に、これらのオペレーティング システム上のサイト システムの役割を再配置するか削除する必要があります。 「[サイト システム サーバーでサポートされるオペレーティング システム](../../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md)」の文書を参照してください。   
--   Configuration Manager の前提条件チェッカーでは、サイト サーバーやリモート サイト システムでのサイト システムの役割の前提条件は検証されません。  
+-   Alcuni sistemi operativi meno recenti supportati da System Center 2012 Configuration Manager non sono supportati da System Center Configuration Manager e i ruoli del sistema del sito in questi sistemi operativi devono essere rilocati o rimossi prima dell'aggiornamento. Consultare la documentazione [Sistemi operativi supportati per i server del sistema del sito](../../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md).   
+-   Il controllo dei prerequisiti per Configuration Manager non verifica i prerequisiti per i ruoli del sistema del sito sul server del sito o in sistemi del sito remoti  
 
-サイト システムの役割をホストする各コンピューターについて、必要な前提条件を確認します。  
+Esaminare i prerequisiti richiesti in ciascun computer che ospita un ruolo del sistema del sito:  
 
--   たとえば、System Center Configuration Manager では、オペレーティング システムを展開するために Windows 10 アセスメント & デプロイメント キット (Windows ADK) を使います。 セットアップを実行する前に、サイト サーバーと、SMS プロバイダーのインスタンスを実行する各コンピューターに Windows 10 ADK をダウンロードしてインストールする必要があります。  
+-   Ad esempio, per distribuire un sistema operativo, System Center Configuration Manager usa Windows 10 Assessment and Deployment Kit (Windows ADK). Prima di eseguire l'installazione, è necessario scaricare e installare Windows 10 ADK nel server del sito e in ciascun computer in cui è in esecuzione un'istanza del provider SMS.  
 
-サポートされているプラットフォームおよび前提条件の構成の全般的な情報については、「 [Supported configurations for System Center Configuration Manager](../../../../core/plan-design/configs/supported-configurations.md)」を参照してください。  
+Per informazioni generali sulle piattaforme e sulle configurazioni dei prerequisiti supportate, vedere [Supported configurations for System Center Configuration Manager](../../../../core/plan-design/configs/supported-configurations.md).  
 
-Configuration Manager と一緒に Windows ADK を使用する方法の詳細については、「[System Center Configuration Manager のオペレーティング システムの展開のインフラストラクチャ要件](../../../../osd/plan-design/infrastructure-requirements-for-operating-system-deployment.md)」を参照してください。  
+Per informazioni sull'uso di Windows ADK con Configuration Manager, vedere [Infrastructure requirements for operating system deployment in System Center Configuration Manager](../../../../osd/plan-design/infrastructure-requirements-for-operating-system-deployment.md) (Requisiti dell'infrastruttura per la distribuzione del sistema operativo in System Center Configuration Manager).  
 
-**サイトと階層の状態を確認して、未解決の問題がないことを確認する:**  
-サイトをアップグレードする前に、サイト サーバー、サイト データベース サーバー、およびリモート コンピューターにインストールされているサイト システムの役割で、運用上のすべての問題を解決します。 運用上の問題があると、サイトのアップグレードが失敗する可能性があります。  
+**Esaminare lo stato del sito e della gerarchia e verificare che non siano presenti problemi non risolti:**  
+Prima di aggiornare un sito, risolvere tutti i problemi operativi per il server del sito, il server del database del sito e i ruoli del sistema del sito installati sui computer remoti. Un aggiornamento del sito può avere esito negativo a causa di problemi operativi esistenti.  
 
-**サイト、サイト データベース サーバー、リモートのサイト システムの役割をホストするコンピューターのオペレーティング システムに適用できる、重要な更新プログラムすべてをインストールする:**  
-サイトをアップグレードする前に、該当する各サイト システムの重要な更新プログラムすべてをインストールします。 更新のインストール時に再起動が必要な場合は、サービス パックの更新を開始する前に該当するコンピューターを再起動します。  
+**Installare tutti gli aggiornamenti critici disponibili per i sistemi operativi dei computer che ospitano il sito, il server di database del sito e i ruoli del sistema del sito remoto:**  
+Prima di aggiornare un sito, installare eventuali aggiornamenti critici per ogni sistema del sito applicabile. Se un aggiornamento installato richiede un riavvio, riavviare i computer interessati prima di iniziare l'aggiornamento del Service Pack.  
 
-詳細については、「 [Windows Update](http://go.microsoft.com/fwlink/p/?LinkId=105851)」を参照してください。  
+Per altre informazioni, vedere [Windows Update](http://go.microsoft.com/fwlink/p/?LinkId=105851).  
 
-**System Center Configuration Manager でサポートされていないサイト システムの役割をアンインストールする:**  
-次のサイト システムの役割は、System Center Configuration Manager では使用されなくなったため、System Center 2012 Configuration Manager からアップグレードする前にアンインストールする必要があります。  
+**Disinstallare i ruoli del sistema del sito non supportati da System Center Configuration Manager:**  
+I ruoli del sistema del sito seguenti non vengono più usati in System Center Configuration Manager e devono essere disinstallati prima di eseguire l'aggiornamento da System Center 2012 Configuration Manager:  
 
--   帯域外管理ポイント  
--   システム正常性検証ツール ポイント  
+-   Punto di gestione fuori banda  
+-   Punto di Convalida integrità sistema  
 
-**プライマリ サイトの管理ポイントのデータベース レプリカを無効にする:**  
-Configuration Manager では、管理ポイントのデータベース レプリカが有効になっているプライマリ サイトを正常にアップグレードすることはできません。 次の操作を行う前に、データベースのレプリケーションを無効にしてください。  
+**Disabilitare le repliche di database per i punti di gestione nei siti primari:**  
+Configuration Manager non può aggiornare un sito primario che ha una replica del database per i punti di gestione abilitati. Disabilitare la replica di database prima di:  
 
--   データベースのアップグレードをテストするためにサイト データベースのバックアップを作成する  
--   実稼働サイトを System Center Configuration Manager にアップグレードする  
+-   Creare un backup del database del sito per verificare l'aggiornamento del database  
+-   Eseguire l'aggiornamento del sito di produzione a System Center Configuration Manager  
 
-詳細については、次をご覧ください。  
--   System Center 2012 Configuration Manager: 「[管理ポイントのデータベース レプリカの構成](https://technet.microsoft.com/library/hh846234.aspx)」  
--   System Center Configuration Manager: 「[Database replicas for management points for System Center Configuration Manager](../../../../core/servers/deploy/configure/database-replicas-for-management-points.md)」 (System Center Configuration Manager の管理ポイントのデータベース レプリカ)  
+Per altre informazioni, vedere  
+-   System Center 2012 Configuration Manager: [Configurare le repliche di database per i punti di gestione](https://technet.microsoft.com/library/hh846234.aspx)  
+-   System Center Configuration Manager: [Database replicas for management points for System Center Configuration Manager](../../../../core/servers/deploy/configure/database-replicas-for-management-points.md) (Repliche di database per i punti di gestione per System Center Configuration Manager)  
 
-**NLB を使用するソフトウェアの更新ポイントを再構成する:**  
-Configuration Manager では、ネットワーク負荷分散 (NLB) クラスターを使用してソフトウェアの更新ポイントをホストしているサイトは、アップグレードできません。  
+**Riconfigurare i punti di aggiornamento software che usano NLB:**  
+Configuration Manager non può aggiornare un sito che usa un cluster Bilanciamento carico di rete per ospitare i punti di aggiornamento software.  
 
-ソフトウェアの更新ポイントに NLB クラスターを使用している場合、PowerShell を使用して NLB クラスターを削除してください (System Center 2012 Configuration Manager SP1 以降、Configuration Manager に NLB クラスターを構成するためのオプションはありません)。  
+Se si usano i cluster NLB per i punti di aggiornamento software, usare PowerShell per rimuovere il cluster NLB. A partire da System Center 2012 Configuration Manager SP1, non esistono opzioni nella console di Configuration Manager per configurare un cluster Bilanciamento carico di rete  
 
-**サイトのアップグレード時に各サイトですべてのサイト メンテナンス タスクを無効にする:**  
-System Center Configuration Manager にアップグレードする前に、アップグレード プロセスがアクティブになっている間にそのサイトで実行される可能性があるサイトのメンテナンス タスクをすべて無効にします。 次のタスクが含まれますが、これらのタスクに限定されません。  
+**Disabilitare tutte le attività di manutenzione del sito per l'intera durata dell'aggiornamento del sito:**  
+Prima di eseguire l'aggiornamento a System Center Configuration Manager, disabilitare le eventuali attività di manutenzione che possono essere in esecuzione mentre è in corso il processo di aggiornamento. Queste comprendono, ma non sono limitate alle seguenti attività:  
 
--   サイト サーバーのバックアップ  
--   期限切れのクライアント操作を削除  
--   期限切れの探索データの削除  
+-   Backup server sito  
+-   Elimina operazioni client obsolete  
+-   Elimina dati di individuazione obsoleti  
 
-アップグレード プロセス中にサイト データベースのメンテナンス タスクが実行されると、サイトのアップグレードが失敗する可能性があります。  
+Quando un'attività di manutenzione del database del sito è in esecuzione durante il processo di aggiornamento, potrebbe non essere possibile aggiornare il sito.  
 
-タスクを無効にする前に、サイトのアップグレードが完了した後で構成を復元できるように、タスクのスケジュールを記録してください。  
+Prima di disattivare un'attività, registrare la pianificazione dell'attività in modo da poter ripristinare la sua configurazione al termine dell'aggiornamento del sito.  
 
-サイトのメンテナンス タスクについて詳しくは、次をご覧ください。  
+Per altre informazioni sulle attività di manutenzione del sito, vedere:  
 
--   System Center 2012 Configuration Manager: 「[Configuration Manager のメンテナンス タスクの計画](https://technet.microsoft.com/library/gg712686.aspx)」  
--   System Center Configuration Manager: 「[System Center Configuration Manager のメンテナンス タスクのリファレンス](../../../../core/servers/manage/reference-for-maintenance-tasks.md)」  
+-   System Center 2012 Configuration Manager: [Pianificazione di attività di manutenzione per Configuration Manager](https://technet.microsoft.com/library/gg712686.aspx)  
+-   System Center 2012 Configuration Manager: [Reference for maintenance tasks for System Center Configuration Manager](../../../../core/servers/manage/reference-for-maintenance-tasks.md) (Riferimento per attività di manutenzione per System Center Configuration Manager)  
 
-**セットアップ前提条件チェッカーを実行する**:  
-サイトをアップグレードする前に、セットアップとは別に **前提条件チェッカー** を実行して、サイトが前提条件を満たしていることを検証できます。 後でサイトをアップグレードしたときに、前提条件チェッカーが再度実行されます。  
+**Eseguire il controllo dei prerequisiti di installazione**:  
+Prima di aggiornare un sito, è possibile eseguire il **controllo dei prerequisiti** in modo indipendente dal programma di installazione per convalidare che il sito soddisfa i prerequisiti. In seguito, quando si aggiorna il sito, viene nuovamente eseguito il controllo dei prerequisiti.  
 
-2016 年 10 月リリースのバージョン 1606 の基準メディアを使用する場合、個別の前提条件チェックにより、System Center Configuration Manager の Current Branch と Long-Term Servicing Branch (LTSB) の両方にアップグレードするためにサイトが評価されます。 LTSB でサポートされていない機能がいくつかあるため、次のようなエントリが *ConfigMgrPrereq.log* に表示される場合があります。
- - 情報: サイトが LTSB エディションではありません。
- - LTSB エディションでサポートされていないサイト システムの役割 '資産インテリジェンス同期ポイント';    エラー;    Configuration Manager は '資産インテリジェンス同期ポイント' がインストールされていることを検出しました。 資産インテリジェンスは LTSB エディションでサポートされていません。 続行する前に、資産インテリジェンス同期ポイント サイト システムの役割をアンインストールする必要があります。
+Se si usa il supporto di base per la versione 1606 di ottobre 2016, il controllo dei prerequisiti indipendente valuta il sito per l'aggiornamento sia a Current Branch sia a Long-Term Servicing Branch (LTSB) di System Center Configuration Manager. Poiché alcune funzionalità non sono supportate da LTSB, è possibile che in *ConfigMgrPrereq.log* appaiano voci simili alle seguenti:
+ - INFO: The site is a LTSB edition. (INFORMAZIONI: il sito è un'edizione LTSB).
+ - Unsupported site system role 'Asset Intelligence synchronization point' for the LTSB edition ;    Error;    Configuration Manager has detected that the 'Asset Intelligence synchronization point' is installed. (Ruolo del sistema del sito 'Punto di sincronizzazione di Asset Intelligence' non supportato per l'edizione LTSB;    Errore;    Configuration Manager ha rilevato l'installazione di 'Punto di sincronizzazione di Asset Intelligence'). Asset Intelligence is not supported on the LTSB edition. (Asset Intelligence non è supportato nell'edizione LTSB.) You must uninstall the Asset Intelligence synchronization point site system role before you can continue. (Prima di continuare, è necessario disinstallare il ruolo del sistema del sito Punto di sincronizzazione di Asset Intelligence.)
 
-Current Branch にアップグレードする予定の場合は、LTSB エディションに関するエラーは無視してかまいません。 これらは、LTSB にアップグレードする予定の場合にのみ当てはまります。
+Se si prevede di eseguire l'aggiornamento a Current Branch, è possibile ignorare gli errori per l'edizione LTSB. Tali errori sono rilevanti solo se si prevede di eseguire l'aggiornamento a LTSB.
 
-後で Configuration Manager のセットアップを実行してアップグレードを行うときに、前提条件チェックが再度実行され、インストール対象として選択した System Center Configuration Manager のブランチに基づいてサイトが評価されます。 Current Branch にアップグレードする場合は、LTSB でサポートされていない機能のチェックは実行されません。
+In seguito, quando si esegue l'installazione di Configuration Manager per applicare l'aggiornamento, il controllo dei prerequisiti verrà eseguito nuovamente e valuterà il sito in base al ramo di System Center Configuration Manager che si sceglie di installare (Current Branch o LTSB). Se si sceglie di eseguire l'aggiornamento a Current Branch, il controllo delle funzionalità non supportate da LTSB non viene eseguito.
 
-詳細については、「[System Center Configuration Manager の前提条件チェッカー](/sccm/core/servers/deploy/install/prerequisite-checker)」および「[System Center Configuration Manager の前提条件の確認の一覧](/sccm/core/servers/deploy/install/list-of-prerequisite-checks)」を参照してください。  
+Per altre informazioni, vedere [Controllo dei prerequisiti](/sccm/core/servers/deploy/install/prerequisite-checker) e [Elenco dei controlli dei prerequisiti per System Center Configuration Manager](/sccm/core/servers/deploy/install/list-of-prerequisite-checks).  
 
-**System Center Configuration Manager の前提条件ファイルと再頒布可能ファイルをダウンロードする:**    
-**セットアップ ダウンローダー** を使って、System Center Configuration Manager の前提条件の再頒布可能ファイル、言語パック、製品の最新の更新プログラムをダウンロードします。  
+**Scaricare i file dei prerequisiti e i file ridistribuibili per System Center Configuration Manager:**    
+Usare il **downloader di installazione** per scaricare i file ridistribuibili dei prerequisiti, i Language Pack e gli ultimi aggiornamenti del prodotto per System Center Configuration Manager.  
 
-詳細については、「[セットアップ ダウンローダー](/sccm/core/servers/deploy/install/setup-downloader)」を参照してください。  
+Per informazioni, vedere [Downloader di installazione](/sccm/core/servers/deploy/install/setup-downloader).  
 
-**サーバーとクライアントの言語の管理を計画する**  
-サイトのアップグレード時には、アップグレード中に選択した言語パックのバージョンのみがインストールされます。  
+**Pianificare la gestione delle lingue di server e client**:  
+Quando si aggiorna un sito, l'aggiornamento del sito consente di installare solo le versioni di Language Pack selezionate durante l'aggiornamento.  
 
--   セットアップでは、サイトの現在の言語構成を確認してから、事前にダウンロードした前提条件ファイルが保存されているフォルダー内の使用可能な言語パックを識別します。  
--   その後で、現在のサーバー言語パックとクライアント言語パックの選択を確認したり、言語のサポートを追加または削除するように選択を変更したりできます。  
--   セットアップの実行時に使用できる言語パック (ダウンロードした前提条件ファイルと一緒に取得したもの) のみを選択することができます。  
+-   Il programma di installazione esamina la configurazione della lingua corrente del sito, quindi identifica i Language Pack disponibili nella cartella in cui sono stati memorizzati in precedenza i file dei prerequisiti.  
+-   È possibile dunque confermare la selezione dei Language Pack di server e client correnti oppure modificare le selezioni per aggiungere o rimuovere il supporto per le lingue.  
+-   È possibile selezionare solo quei Language Pack che sono disponibili quando si esegue il programma di installazione (ottenuto con i file dei prerequisiti scaricati).  
 
 > [!NOTE]  
->  System Center 2012 Configuration Manager の言語パックを使用して、System Center Configuration Manager サイトで言語を有効にすることはできません。  
+>  Non è possibile usare i Language Pack di System Center 2012 Configuration Manager per abilitare le lingue per un sito di System Center Configuration Manager.  
 
-言語パックの詳細については、「[System Center Configuration Manager の言語パック](../../../../core/servers/deploy/install/language-packs.md)」を参照してください。  
+Per altre informazioni sui Language Pack, vedere [Language Pack in System Center Configuration Manager](../../../../core/servers/deploy/install/language-packs.md).  
 
-**サイトのアップグレードに関する考慮事項を確認する**:  
-サイトをアップグレードすると、一部の機能と構成が既定の構成にリセットされます。 この点と、関連する変更に備えるには、「  [アップグレード時の考慮事項](#bkmk_considerations)」の情報をご確認ください。  
+**Esaminare le considerazioni per gli aggiornamenti del sito**:  
+Quando si aggiorna un sito, alcune funzionalità e configurazioni vengono ripristinati a una configurazione predefinita. Per prepararsi a queste modifiche e ad altre correlate, esaminare le informazioni in  [Considerazioni sull'aggiornamento](#bkmk_considerations).  
 
-**中央管理サイトとプライマリ サイトのサイト データベースのバックアップを作成する:**  
-サイトをアップグレードする前に、サイト データベースをバックアップして、ディザスター リカバリーに使用するバックアップを正常に作成できることを確認します。  
+**Creare un backup del database del sito nel sito di amministrazione centrale e nei siti primari:**  
+Prima di aggiornare un sito, eseguire il backup del database del sito per assicurarsi di disporre di un backup effettuato correttamente da usare in caso di ripristino di emergenza.  
 
-「[System Center Configuration Manager のバックアップと回復](../../../../protect/understand/backup-and-recovery.md)」を参照してください。  
+Vedere [Backup e ripristino per System Center Configuration Manager](../../../../protect/understand/backup-and-recovery.md).  
 
-**カスタマイズされた Configuration.mof ファイルをバックアップする**:  
-ハードウェア インベントリで使用するデータ クラスを定義するためにカスタマイズされた Configuration.mof ファイルを使用する場合は、このファイルのバックアップを作成してから、サイトをアップグレードします。 アップグレード後には、このファイルをサイトに復元します。 このファイルの使用の詳細については、「[System Center Configuration Manager でのハードウェア インベントリの拡張方法](../../../../core/clients/manage/inventory/extend-hardware-inventory.md)」を参照してください。  
+**Eseguire il backup di un file Configuration.mof personalizzato**:  
+Se si usa un file Configuration.mof personalizzato per definire le classi di dati usate con l'inventario hardware, creare un backup del file prima di aggiornare il sito. Quindi, dopo l'aggiornamento, ripristinare il file nel sito. Per altre informazioni sull'uso del file, vedere [Come estendere l'inventario hardware in System Center Configuration Manager](../../../../core/clients/manage/inventory/extend-hardware-inventory.md).  
 
-**最新のサイト データベース バックアップのコピーで、データベースのアップグレード処理をテストする:**  
-Configuration Manager の中央管理サイトやプライマリ サイトをアップグレードする前に、サイト データベースのコピーでサイト データベースのアップグレード処理をテストします。  
+**Verificare il processo di aggiornamento del database in una copia del backup più recente del database del sito:**  
+Prima di effettuare l'aggiornamento di un sito di amministrazione centrale o sito primario di Configuration Manager, verificare il processo di aggiornamento del database del sito su una copia del database del sito.  
 
--   サイトのアップグレード時にサイト データベースが変更される可能性があるため、サイト データベースのアップグレード処理をテストしておく必要があります  
--   データベースのアップグレード テストは必須ではありませんが、テストによって、実稼働データベースが影響を受ける前に、アップグレードの問題を特定することができます  
--   サイト データベースのアップグレードに失敗すると、サイト データベースが運用不可能になり、機能を復元するにはサイトの回復が必要になることがあります  
--   サイト データベースは階層内のサイト間で共有されますが、各サイトをアップグレードする前に、該当する各サイトのデータベースをテストする計画を立ててください  
--   プライマリ サイトで管理ポイントにデータベース レプリカを使う場合、サイト データベースのバックアップを作成する前にレプリケーションを無効にします  
+-   È necessario testare il processo di aggiornamento del database del sito perché, quando si aggiorna un sito, il database del sito potrebbe essere modificato  
+-   Nonostante non sia obbligatorio, il test di aggiornamento permette di identificare i problemi per l'aggiornamento prima che influiscano sul database di produzione  
+-   Un aggiornamento non riuscito del database del sito può rendere inutilizzabile il database del sito e potrebbe richiedere un ripristino del sito per il relativo ripristino delle funzionalità  
+-   Nonostante il database del sito sia condiviso tra i siti nella gerarchia, pianificare un test del database in ciascun sito applicabile prima di aggiornare tale sito  
+-   Se si usano le repliche di database per i punti di gestione in un sito primario, disabilitare la replica prima di creare il backup del database del sito  
 
-Configuration Manager では、セカンダリ サイトのバックアップとセカンダリ サイト データベースのテスト アップグレードのいずれもサポートされていません。  
+Configuration Manager non supporta né il backup di siti secondari, né l'aggiornamento di prova del database di siti secondari.  
 
-実稼働サイト データベースでテスト データベースのアップグレードを実行することはサポートされていません。 実行するとサイト データベースがアップグレードされ、サイトが機能しなくなる可能性があります。  
+L'esecuzione di un aggiornamento del database di test nel database del sito di produzione non è supportata. Questa operazione consente di aggiornare il database del sito e potrebbe rendere inutilizzabile il sito.  
 
-詳細については、「 [サイト データベースのアップグレードをテストする](#bkmk_test)」をご覧ください。  
+Per altre informazioni, vedere [Testare l'aggiornamento del database del sito](#bkmk_test).  
 
-**サイト システムの役割をホストするサイト サーバーと各コンピューターを再起動する**:  
-これは、更新プログラムの最後のインストールや前提条件で保留中の操作がないことを確認するために行われる、会社固有の内部プロセスです。  
+**Riavviare il server del sito e ogni computer che ospita un ruolo di sistema del sito**:  
+Questa operazione ha lo scopo di garantire che non restino in sospeso azioni di un'installazione recente di aggiornamenti o dei prerequisiti. Si tratta di un processo interno specifico dell'organizzazione.  
 
-**サイトをアップグレードする**:  
-まず、階層内の最上位サイトで、System Center Configuration Manager ソース メディアから Setup.exe を実行します。  
+**Aggiornare i siti**:  
+A partire dal sito principale della gerarchia, eseguire Setup.exe dal supporto di origine di System Center Configuration Manager.  
 
-最上位サイトのアップグレードが完了したら、各子サイトのアップグレードを開始できます。 各サイトのアップグレードが完了してから、次のサイトのアップグレードを開始します。  
+Al termine degli aggiornamenti del sito di livello superiore è possibile iniziare l'aggiornamento di ogni sito figlio. Completare l'aggiornamento di ogni sito prima di iniziare l'aggiornamento del sito successivo  
 
-階層内のすべてのサイトが System Center Configuration Manager にアップグレードされるまで、階層はバージョンが混在したモードで動作します。  
+Finché tutti i siti della gerarchia non sono stati aggiornati a System Center Configuration Manager, la gerarchia funziona in modalità mista.  
 
-アップグレードを実行する方法については、「[サイトをアップグレードする](#bkmk_upgrade)」を参照してください。  
+Per informazioni su come eseguire l'aggiornamento, vedere [Aggiornare i siti](#bkmk_upgrade).  
 
-### <a name="after-you-upgrade"></a>アップグレードの後に  
-**スタンドアロンの Configuration Manager コンソールをアップグレードする**:  
-既定では、中央管理サイトまたはプライマリ サイトをアップグレードする際、インストール時にサイト サーバーにインストールされている Configuration Manager コンソールもアップグレードされます。 ただし、サイト サーバー以外のコンピューターにインストールされている各コンソールは、手動でアップグレードする必要があります。  
-
-> [!TIP]  
->  アップグレードを開始する前に、開いているコンソールを閉じてください。  
-
-詳細については、「[Install System Center Configuration Manager consoles (System Center Configuration Manager コンソールのインストール)](../../../../core/servers/deploy/install/install-consoles.md)」をご覧ください。  
-
-**プライマリ サイトで管理ポイント用のデータベース レプリカを再構成する:**  
-プライマリ サイトで管理ポイント用のデータベース レプリカを使用する場合、データベース レプリカをアンインストールしてから、サイトをアップグレードする必要があります。 プライマリ サイトをアップグレードしたら、管理ポイント用のデータベース レプリカを再構成します。   
-詳しくは、「  [Database replicas for management points for System Center Configuration Manager](../../../../core/servers/deploy/configure/database-replicas-for-management-points.md)」をご覧ください。  
-
-**アップグレードの前に無効にしたデータベース メンテナンス タスクを再構成する:**  
-アップグレードの前にサイトのデータベースの [System Center Configuration Manager のメンテナンス タスクのリファレンス](../../../../core/servers/manage/reference-for-maintenance-tasks.md)を無効にした場合、アップグレードの前に使用していたのと同じ設定を使用して、サイトでこれらのタスクを再構成します。  
-
-**クライアントをアップグレードする**:  
-すべてのサイトを System Center Configuration Manager にアップグレードした後、クライアントのアップグレードを計画します。  
-
-クライアントをアップグレードすると、現在のクライアント ソフトウェアはアンインストールされ、新しいクライアント ソフトウェア バージョンがインストールされます。 クライアントのアップグレードには、Configuration Manager がサポートするどの方法でも使うことができます。  
+### <a name="after-you-upgrade"></a>Dopo l'aggiornamento  
+**Aggiornare le console autonome di Configuration Manager**:  
+Per impostazione predefinita, quando si aggiorna un sito di amministrazione centrale o un sito primario, l'installazione aggiorna anche la console di Configuration Manager installata sul server del sito. Tuttavia, occorre aggiornare manualmente ciascuna console installata su un computer diverso dal server del sito.  
 
 > [!TIP]  
->  最上位サイトの階層をアップグレードすると、その階層内の各配布ポイントにあるクライアント インストール パッケージも更新されます。 プライマリ サイトをアップグレードすると、そのプライマリ サイトから使用できるクライアント アップグレード パッケージは更新されます。  
+>  Chiudere una console aperta prima di iniziare l'aggiornamento.  
 
-既存のクライアントをアップグレードする方法と新しいクライアントをインストールする方法については、「[System Center Configuration Manager で Windows コンピューター用クライアントをアップグレードする方法](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md)」をご覧ください。  
+Per altre informazioni, vedere [Install System Center Configuration Manager consoles](../../../../core/servers/deploy/install/install-consoles.md) (Installare console di System Center Configuration Manager).  
 
-##  <a name="bkmk_considerations"></a> アップグレード時の考慮事項  
-**自動アクション**:  
-System Center Configuration Manager にアップグレードすると、自動的に次のアクションが行われます。  
+**Riconfigurare le repliche di database per i punti di gestione nei siti primari:**  
+Se si usano le repliche di database per i punti di gestione nei siti primari, è necessario disinstallare le repliche del database prima di aggiornare il sito. Dopo l'aggiornamento di un sito primario riconfigurare la replica di database per i punti di gestione.   
+Per altre informazioni, vedere  [Database replicas for management points for System Center Configuration Manager](../../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
--   すべてのサイト システムの役割の再インストールなど、サイトのリセットが実行されます。  
--   サイトが階層の最上位サイトの場合、その階層内の各配布ポイントでクライアント インストール パッケージが更新されます。 また、Windows アセスメント & デプロイメント キット 10 に含まれている新しい Windows PE バージョンを使うように、サイトで既定のブート イメージが更新されます。 ただし、アップグレードでは、イメージの展開で使用するための既存のメディアはアップグレードされません。  
--   サイトがプライマリ サイトの場合、そのサイトのクライアント アップグレード パッケージが更新されます。  
+**Riconfigurare eventuali attività di manutenzione del database disabilitate prima dell'aggiornamento:**  
+Se si sono disabilitate le [informazioni di riferimento per le attività di manutenzione per System Center Configuration Manager](../../../../core/servers/manage/reference-for-maintenance-tasks.md) in relazione al database, riconfigurare tali attività nel sito usando le stesse impostazioni presenti prima dell'aggiornamento.  
 
-**アップグレード後の管理ユーザーの手動操作**   
-サイトをアップグレードしたら、必ず次の操作を実行してください。  
+**Aggiornare i client**:  
+Dopo che tutti i siti sono stati aggiornati a System Center Configuration Manager, pianificare l'aggiornamento dei client.  
 
--   各プライマリ サイトに割り当てられているクライアントがアップグレードされ、新しいバージョンのクライアント ソフトウェアがインストールされていることを確認します。  
--   サイトに接続し、サイト サーバーのリモート コンピューターで実行されている各 Configuration Manager コンソールをアップグレードします。  
--   管理ポイント用にデータベース レプリカを使うプライマリ サイトで、データベース レプリカを再構成します。  
--   サイトのアップグレード後は、CD および DVD の ISO ファイルや USB フラッシュ ドライブ、Windows To Go の展開で使用されたかハードウェア ベンダーに提供された事前設定メディアなどの、物理メディアを手動でアップグレードする必要があります。 サイトのアップグレードでは、既定のブート イメージが更新されますが、これらのメディア ファイルや外部で使用されたデバイスを Configuration Manager にアップグレードすることはできません。  
--   Windows PE の元の (古い) バージョンを必要としないときに、既定以外のブート イメージの更新を計画してください。  
-
-**構成と設定に影響がある操作**   
-サイトを System Center Configuration Manager にアップグレードすると、一部の構成と設定はアップグレード後に無効になるか、新しい既定の構成に設定されます。 保持されない設定や変化する設定を次の表に示します。サイトのアップグレード時の設定を計画するのに役立つ詳細も提供します。  
-
--   **ソフトウェア センター:**  
-    次のソフトウェア センター項目が既定値にリセットされます。  
-    -   [**勤務先情報** ] は、月曜日から金曜日の **午前 5 時** から **午後 10 時** Monday から Friday.  
-    -   [ **コンピューターのメンテナンス** ] の値は [ **コンピューターがプレゼンテーション モードのときはソフトウェア センターを停止する**] に設定されます。  
-    -   [ **リモート コントロール** ] の値は、そのコンピューターに割り当てられているクライアント設定の値に設定されます。  
--   **ソフトウェア更新プログラムの概要作成スケジュール：**  
-     ソフトウェア更新プログラムやソフトウェア更新プログラム グループ用のカスタムの概要スケジュールは、1 時間という既定値にリセットされます。 アップグレードが完了した後に、カスタムの概要値を目的の頻度にリセットしてください。  
-
-##  <a name="bkmk_test"></a> サイト データベースのアップグレードをテストする  
-次の情報は、System Center 2012 Configuration Manager などの以前のバージョンを System Center Configuration Manager にアップグレードする場合にのみ適用されます。
-
-サイトをアップグレードする前に、そのサイトのデータベースのコピーでアップグレードをテストします。  
-
-データベースでアップグレードをテストするために、まず、サイト データベースのコピーを Configuration Manager サイトをホストしていない SQL Server インスタンスに復元します。 データベースのコピーをホストするのに使用している SQL Server のバージョンが、データベースのコピーのソースである Configuration Manager のバージョンがサポートしている SQL Server のバージョンである必要があります。  
-
-次に、サイト データベースを復元した後、SQL Server コンピューターで、System Center Configuration Manager 用のソース メディア フォルダーから、**/TESTDBUPGRADE** コマンド ライン オプションを使って Configuration Manager のセットアップを実行します。  
-
--   サイト データベースのバックアップの作成方法と復元方法については、「[セットアップに使用されるコマンドライン オプション](../../../../core/servers/deploy/install/command-line-options-for-setup.md)」をご覧ください。  
--   **/TESTDBUPGRADE** コマンド ライン オプションの詳細については、「[セットアップに使用されるコマンドライン オプション](../../../../core/servers/deploy/install/command-line-options-for-setup.md)」にある表をご覧ください。  
--   サポートされている SQL Server のバージョンの詳細については、「[System Center Configuration Manager の SQL Server バージョンのサポート](../../../../core/plan-design/configs/support-for-sql-server-versions.md)」トピックを参照してください。  
+Quando si aggiorna un client, il software client corrente viene disinstallato e viene installata la nuova versione del software client. Per aggiornare i client, è possibile usare qualsiasi metodo supportato da Configuration Manager.  
 
 > [!TIP]  
->  Microsoft Intune と Configuration Manager を統合する場合:  
+>  Quando si aggiorna il sito di livello superiore di una gerarchia, viene aggiornato anche il pacchetto di installazione del client in ogni punto di distribuzione presente nella gerarchia. Quando si aggiorna un sito primario, viene aggiornato il pacchetto di aggiornamento del client disponibile da tale sito.  
+
+Per informazioni su come aggiornare i client esistenti e su come installare i nuovi client, vedere [Come aggiornare i client per i computer Windows in System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
+
+##  <a name="bkmk_considerations"></a> Considerazioni sull'aggiornamento  
+**Azioni automatiche**:  
+Quando si esegue l'aggiornamento a System Center Configuration Manager, le azioni seguenti sono automatiche:  
+
+-   Il sito esegue una reimpostazione del sito che include una reinstallazione di tutti i ruoli del sistema del sito.  
+-   Se il sito è il sito di livello superiore di una gerarchia, questo aggiorna il pacchetto di installazione del client in ogni punto di distribuzione presente nella gerarchia. Il sito aggiorna anche le immagini di avvio predefinite per usare la nuova versione di Windows PE inclusa con Windows Assessment and Deployment Kit 10. Tuttavia, l'aggiornamento non aggiorna il supporto esistente da usare per la distribuzione dell'immagine.  
+-   Se il sito è un sito primario, questo aggiorna il pacchetto di aggiornamento del client per tale sito.  
+
+**Azioni manuali per l'utente amministratore dopo un aggiornamento**   
+Dopo l'aggiornamento di un sito, verificare che vengano eseguite le seguenti azioni:  
+
+-   Accertarsi che venga eseguito l'aggiornamento e l'installazione della nuova versione del software per i client assegnati a ogni sito primario  
+-   Aggiornare ogni console di Configuration Manager che si connette al sito e che viene eseguita in un computer remoto dal server del sito  
+-   Nei siti primari in cui si usano repliche di database per i punti di gestione, riconfigurare le repliche di database  
+-   Dopo l'aggiornamento del sito, è necessario aggiornare manualmente i supporti fisici, come i file ISO per CD e DVD o unità flash USB, oppure i supporti pre-installati usati per le distribuzioni Windows To Go o resi disponibili per i fornitori di hardware. L'aggiornamento del sito aggiorna le immagini d'avvio predefinite. Non aggiorna però questi file multimediali o i dispositivi usati esternamente a Configuration Manager  
+-   Aggiornare le immagini d'avvio non predefinite quando non è necessaria la versione originale (precedente) di Windows PE.  
+
+**Azioni che influiscono su configurazioni e impostazioni**   
+Quando un sito viene aggiornato a System Center Configuration Manager, alcune configurazioni e impostazioni non vengono mantenute dopo l'aggiornamento oppure vengono sostituite da nuove configurazioni predefinite. La tabella seguente include le impostazioni che non vengono mantenute o che vengono modificate e fornisce dettagli per la relativa pianificazione durante l'aggiornamento di un sito:  
+
+-   **Software Center:**  
+    I seguenti elementi di Software Center vengono reimpostati sui relativi valori predefiniti:  
+    -   **Informazioni di lavoro** viene reimpostato sull'orario di ufficio: dal lunedì al venerdì dalle **05.00** alle **22.00** .  
+    -   Il valore per **Manutenzione computer** è impostato su **Sospendi le attività di Software Center quando il computer si trova in modalità presentazione**.  
+    -   Il valore per **Controllo remoto** è impostato sul valore delle impostazioni client assegnate al computer.  
+-   **Pianificazioni dell'esecuzione del riepilogo degli aggiornamenti software:**  
+     Le pianificazioni di riepilogo personalizzate per gli aggiornamenti software o i gruppi di aggiornamenti software vengono reimpostate sul valore predefinito di 1 ora. Al termine dell'aggiornamento ripristinare i valori di riepilogo personalizzati sulla frequenza necessaria.  
+
+##  <a name="bkmk_test"></a> Testare l'aggiornamento del database del sito  
+Le informazioni seguenti si applicano solo quando si aggiorna un versione precedente, ad esempio da System Center 2012 Configuration Manager a System Center Configuration Manager.
+
+Prima di aggiornare un sito, testare una copia del database di tale sito per l'aggiornamento.  
+
+Per testare il database per un aggiornamento, ripristinare prima una copia del database del sito in un'istanza di SQL Server che non ospita un sito di Configuration Manager. La versione di SQL Server che si usa per ospitare la copia del database deve essere una versione di SQL Server supportata dalla versione di Configuration Manager, che corrisponde all'origine della copia del database.  
+
+Dopo aver ripristinato il database del sito, nel computer con SQL Server eseguire il programma di installazione di Configuration Manager dalla cartella dei supporti di origine per System Center Configuration Manager con l'opzione della riga di comando **/TESTDBUPGRADE**.  
+
+-   Per informazioni su come creare e ripristinare un backup di un database del sito, vedere [Command-line options for Setup](../../../../core/servers/deploy/install/command-line-options-for-setup.md) (Opzioni della riga di comando per l'installazione).  
+-   Per informazioni sull'opzione della riga di comando **/TESTDBUPGRADE**, vedere la tabella in [Command-line options for Setup](../../../../core/servers/deploy/install/command-line-options-for-setup.md) (Opzioni della riga di comando per l'installazione).  
+-   Per informazioni sulle versioni di SQL Server supportate, vedere l'argomento [Support for SQL Server versions for System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md) (Supporto per le versioni di SQL Server per System Center Configuration Manager).  
+
+> [!TIP]  
+>  Integrazione di Microsoft Intune con Configuration Manager:  
 >   
->  5 日以上前のサイト データベースのコピーに対してデータベース アップグレードのテストを実行すると、次のいずれかのメッセージを受け取ることがあります:  
+>  quando si esegue un aggiornamento del database di test nella copia del database del sito che risale a 5 o più giorni fa, è possibile ricevere uno dei messaggi seguenti:  
 >   
->  -   警告: アップグレードするとクラウドへの完全同期が実行されます。  
->  -   エラー: データベースをアップグレードするとクラウドへの完全同期が実行されます。  
+>  -   WARN: Upgrade will force full sync to cloud.  
+>  -   ERROR: Database upgrade will force full sync to cloud.  
 >   
-> どちらも、アップグレード テストの失敗や問題を示すものではないため、データベース アップグレードのテスト中には無視してかまいません。 これは、実際のアップグレード中に **Cloud** データベース レプリケーション グループからのデータが Microsoft Intune と同期される可能性があることを示しています。  
+> Entrambi i messaggi possono essere ignorati durante il test di un aggiornamento del database, perché non indicano un errore o un problema con l'aggiornamento di prova. Indicano piuttosto che, durante l'aggiornamento effettivo, i dati del gruppo di replica di database **Cloud** potrebbero essere sincronizzati con Microsoft Intune.  
 
-アップグレードを計画している各中央管理サイトとプライマリ サイトで、以下の手順に従います。  
+Utilizzare la procedura seguente in ogni sito di amministrazione centrale e sito primario che si pianifica di aggiornare.  
 
-#### <a name="to-test-a-site-database-for-upgrade"></a>サイト データベースのアップグレードをテストするには  
+#### <a name="to-test-a-site-database-for-upgrade"></a>Per testare un database del sito per l'aggiornamento  
 
-1.  サイト データベースのコピーを作成してから、サイト データベースと同じエディションを使用しており、Configuration Manager サイトをホストしていない SQL Server インスタンスにこのコピーを復元します。 たとえば、サイト データベースで SQL Server Enterprise Edition のインスタンスを実行している場合、同様に SQL Server Enterprise Edition を実行している SQL Server インスタンスにデータベースを復元します。  
+1.  Creare una copia del database del sito, ripristinare tale copia in un'istanza di SQL Server che usa la stessa edizione del database del sito e che non ospita un sito di Configuration Manager. Ad esempio, se il sito del database esegue un'istanza dell'edizione Enterprise di SQL Server, assicurarsi di ripristinare il database in un'istanza di SQL Server che esegue anche l'edizione Enterprise di SQL Server.  
 
-2.  データベースのコピーを復元した後で、新しいバージョンの System Center Configuration Manager のソース メディアからセットアップを実行します。 セットアップを実行する際は、 **/TESTDBUPGRADE** コマンド ライン オプションを使います。 データベースのコピーをホストしている SQL Server インスタンスが既定のインスタンスでない場合は、コマンド ライン引数を指定してサイト データベースのコピーをホストしているインスタンスを特定することも必要になります。  
+2.  Dopo aver ripristinato la copia del database, eseguire il programma di installazione dal supporto di System Center Configuration Manager. Quando si esegue l'installazione, usare l'opzione della riga di comando **/TESTDBUPGRADE** . Se l'istanza di SQL Server che ospita la copia del database non è quella predefinita, occorre anche fornire gli argomenti della riga di comando per identificare l'istanza che ospita la copia del database del sito.  
 
-     たとえば、SMS_ABC というデータベース名のサイト データベースをアップグレードすることを計画しているとします。 このサイト データベースのコピーを、DBTest というインスタンス名のサポートされている SQL Server インスタンスに復元します。 サイト データベースのこのコピーのアップグレードをテストするには、次のコマンド ラインを使います: **Setup.exe /TESTDBUPGRADE DBtest\CM_ABC**  
+     Ad esempio, si pianifica di aggiornare un database del sito con il nome database SMS_ABC. Si ripristina una copia di questo database del sito in un'istanza supportata di SQL Server con il nome istanza DBTest. Per testare un aggiornamento di questa copia del database del sito, usare la seguente riga di comando: **Setup.exe /TESTDBUPGRADE DBtest\CM_ABC**  
 
-     Setup.exe は、System Center Configuration Manager のソース メディアの **SMSSETUP\BIN\X64** にあります。  
+     È possibile trovare Setup.exe nel percorso seguente del supporto di origine per System Center Configuration Manager: **SMSSETUP\BIN\X64**.  
 
-3.  データベースのアップグレード テストを実行する SQL Server インスタンスで、システム ドライブのルート内の ConfigMgrSetup.log を確認し、進行状況と成功状態を監視します。  
+3.  Nell'istanza di SQL Server in cui si esegue il test di aggiornamento del database, monitorare ConfigMgrSetup.log nella radice dell'unità di sistema per l'avanzamento e il completamento:  
 
-    -   テスト アップグレードが失敗した場合、サイト データベースのアップグレードの失敗に関連する問題を解決し、サイト データベースの新しいバックアップを作成してから、サイト データベースの新しいコピーのアップグレードをテストします。  
-    -   プロセスが成功したら、データベース コピーを削除できます。  
+    -   se l'aggiornamento test ha esito negativo, risolvere eventuali problemi relativi al fallimento dell'aggiornamento del database del sito, creare un nuovo backup del database del sito, quindi testare l'aggiornamento della nuova copia del database del sito.  
+    -   Una volta completato il processo in modo corretto, è possibile eliminare la copia del database.  
 
         > [!NOTE]  
-        >  テスト アップグレードに使用したサイト データベースのコピーを復元して、任意のサイトのサイト データベースとして使用することはサポートされていません。  
+        >  Non è supportato il ripristino della copia del database del sito che si utilizza per l'aggiornamento test utilizzato a sua volta come database del sito in qualsiasi sito.  
 
-サイト データベースのコピーのアップグレードが成功したら、Configuration Manager サイトとそのサイト データベースのアップグレードに進みます。  
+Dopo che una copia del database del sito è stata aggiornata, procedere con l'aggiornamento del sito di Configuration Manager e dei relativi database.  
 
-##  <a name="bkmk_upgrade"></a> サイトをアップグレードする  
-サイトのアップグレード前の構成を完了して、データベースのコピーでサイト データベースのアップグレードをテストし、インストールを計画しているサービス パック バージョンの前提条件ファイルと言語パックをダウンロードしたら、Configuration Manager サイトをアップグレードできるようになります。  
+##  <a name="bkmk_upgrade"></a> Aggiornare i siti  
+Dopo aver completato le configurazioni di pre-aggiornamento del sito, testato l'aggiornamento del database del sito su una copia del database e scaricato i file di prerequisiti e i Language Pack per la versione Service Pack che si pianifica di installare, è possibile aggiornare il sito di Configuration Manager.  
 
-階層内のサイトをアップグレードする際、まず、階層の最上位サイトをアップグレードします。 この最上位サイトは、中央管理サイトまたはスタンドアロンのプライマリ サイトのいずれかです。 中央管理サイトのアップグレードが完了した後で、任意の順序で子プライマリ サイトをアップグレードできます。 プライマリ サイトをアップグレードした後で、そのサイトの子セカンダリ サイトをアップグレードするか、セカンダリ サイトをアップグレードする前に他のプライマリ サイトをアップグレードできます。  
+Quando si aggiorna un sito in una gerarchia, si aggiorna innanzitutto il sito di livello superiore della gerarchia. Questo sito di livello superiore è un sito di amministrazione centrale o un sito primario autonomo. Una volta completato l'aggiornamento di un sito di amministrazione centrale, è possibile aggiornare siti primari figlio in qualsiasi ordine si desideri. Dopo aver aggiornato un sito primario, è possibile aggiornare i siti figlio secondari di tale sito oppure aggiornare i siti primari aggiuntivi prima di aggiornare eventuali siti secondari.  
 
-中央管理サイトやプライマリ サイトをアップグレードするには、System Center Configuration Manager のソース メディアからセットアップを実行します。 ただし、セカンダリ サイトをアップグレードする際、セットアップは実行しません。 代わりに、プライマリ親サイトのアップグレードが完了した後で、Configuration Manager コンソールを使用してセカンダリ サイトをアップグレードします。  
+Per aggiornare un sito di amministrazione centrale o un sito primario, eseguire il programma di installazione dal supporto di origine di System Center Configuration Manager. Tuttavia, non si esegue l'installazione per aggiornare siti secondari. Usare piuttosto la console di Configuration Manager per aggiornare un sito secondario dopo aver completato l'aggiornamento del relativo sito padre primario.  
 
-サイトをアップグレードする前に、サイトのアップグレードが完了するまで、サイト サーバーにインストールされている Configuration Manager コンソールを閉じます。 また、サイト サーバー以外のコンピューターで実行されている各 Configuration Manager コンソールも閉じます。 サイトのアップグレードが完了した後で、コンソールを再接続できます。 ただし、Configuration Manager コンソールを新しいバージョンの Configuration Manager にアップグレードするまで、新しいバージョンの Configuration Manager で使用できる一部のオブジェクトと情報をコンソールに表示できません。  
+Prima di aggiornare un sito, chiudere la console di Configuration Manager installata sul server del sito fino a quando l'aggiornamento del sito non è terminato. Chiudere anche tutte le console di Configuration Manager in esecuzione in computer diversi dal server del sito. Una volta completato l'aggiornamento del sito, è possibile riconnettere la console. Finché una console di Configuration Manager non viene aggiornata alla nuova versione di Configuration Manager, tale console non visualizzerà comunque alcuni oggetti e informazioni disponibili nella nuova versione di Configuration Manager.  
 
-Configuration Manager サイトをアップグレードするには、次の手順に従います。  
+Seguire queste procedure per aggiornare i siti di Configuration Manager:  
 
-#### <a name="to-upgrade-a-central-administration-site-or-primary-site"></a>中央管理サイトまたはプライマリ サイトをアップグレードするには  
+#### <a name="to-upgrade-a-central-administration-site-or-primary-site"></a>Per aggiornare un sito di amministrazione centrale o primario  
 
-1.  セットアップを実行するユーザーが、次のセキュリティ権限を持っていることを確認します。  
+1.  Verificare che l'utente che esegue l'installazione disponga dei seguenti privilegi di protezione:  
 
-    -   サイト サーバー コンピューターのローカル管理者権限  
-    -   サイトがリモートの場合は、そのリモート サイト データベース サーバーのローカル管理者権限    </br></br>
+    -   Diritti di amministratore locale sul computer del server del sito.  
+    -   Diritti di amministratore locale sul server di database del sito remoto per il sito, se è remoto.    </br></br>
 
-2.  サイト サーバー コンピューターでエクスプローラーを開き、**&lt;ConfigMgSourceMedia\>\SMSSETUP\BIN\X64** に移動します。  
+2.  Nel computer del server del sito aprire Esplora risorse e passare a **&lt;ConfigMgSourceMedia\>\SMSSETUP\BIN\X64**.  
 
-3.  **Setup.exe**をダブルクリックします。 Configuration Manager のセットアップ ウィザードが起動します。  
+3.  Fare doppio clic su **Setup.exe**. Si aprirà la finestra dell'installazione guidata di System Center Configuration Manager.  
 
-4.  [ **開始する前に** ] ページで [ **次へ**] をクリックします。  
+4.  Nella pagina **Prima di iniziare** fare clic su **Avanti**.  
 
-5.  [ **はじめに** ] ページで [ **Configuration Manager サイトをアップグレードする**] を選択してから、[ **次へ**] をクリックします。  
+5.  Nella pagina **Riquadro attività iniziale** , selezionare **Eseguire l'aggiornamento di questo sito Configuration Manager**, quindi fare clic su **Avanti**.  
 
-6.  [ **プロダクト キー** ] ページで [ **次へ**] をクリックします。  
+6.  Nella pagina **Codice Product Key** fare clic su **Avanti**.  
 
-     以前に Configuration Manager 評価版をインストールした場合、[**この製品の製品版をインストール**] を選択し、Configuration Manager の完全インストール用のプロダクト キーを入力して、サイトを完全なバージョンに変換できます。  
+     Se in precedenza è stata installata la versione di valutazione di Configuration Manager, è possibile selezionare **Installa versione con licenza di questo prodotto**, immettere il codice Product Key per l'installazione completa di Configuration Manager per convertire il sito alla versione completa.  
 
-     System Center Configuration Manager については、2016 年 10 月リリースのバージョン 1606 基準メディア以降、ソフトウェア アシュアランス契約の有効期限の日付を指定できます。 ライセンス契約の**ソフトウェア アシュアランスの有効期限**を通知する便利なアラームとして、この日付を指定することもできます。 セットアップ時に入力しなかった場合は、後で Configuration Manager コンソール内から指定できます。
+     A partire dalla versione di ottobre 2016 del supporto di base 1606 per System Center Configuration Manager, è possibile specificare la data di scadenza del contratto Software Assurance. È anche possibile specificare la **data di scadenza di Software Assurance** del contratto di licenza come utile promemoria per l'utente. Se non si immette questa data durante l'installazione, è possibile specificarla in un secondo momento dalla console di Configuration Manager.
 
      >  [!NOTE]   
-     >  Microsoft では、お客様が入力した有効期限の日付を確認していません。また、ライセンスを検証する場合もこの日付を使用しません。  お客様は有効期限を通知するアラームとして、この日付を使用することができます。 Configuration Manager ではオンラインで新しいソフトウェア更新プログラムが提供されていないか定期的に確認します。このような追加の更新プログラムを取得するためにはソフトウェア アシュアランス ライセンスが最新の状態になっている必要があります。このため有効期限を通知するアラーム機能は便利です。    
+     >  Microsoft non convalida la data di scadenza immessa e non userà tale data per la convalida della licenza.  È possibile invece usarla come promemoria della data di scadenza. Configuration Manager infatti verifica periodicamente la presenza di nuovi aggiornamenti software disponibili online. È necessario che lo stato di licenza di Software Assurance sia regolare per poter usufruire di questi aggiornamenti aggiuntivi.    
 
-     詳細については、「[System Center Configuration Manager のライセンスとブランチ](/sccm/core/understand/learn-more-editions)」を参照してください。
+     Per altre informazioni, vedere [Licensing and branches for System Center Configuration Manager](/sccm/core/understand/learn-more-editions) (Licenze e branch per System Center Configuration Manager).
 
-7.  [ **マイクロソフト ソフトウェア ライセンス条項** ] ページで、ライセンス条項を読んで同意し、[ **次へ**] をクリックします。  
+7.  Nella pagina **Condizioni di licenza software Microsoft** leggere e accettare le condizioni di licenza e fare clic su **Avanti**.  
 
-8.  [ **必須ライセンス** ] ページで、必須ソフトウェアのライセンス条項を読んで同意し、[ **次へ**] をクリックします。 ソフトウェアがダウンロードされ、必要に応じて、サイト システムまたはクライアントに自動的にインストールされます。 次のページに進む前に、すべてのチェック ボックスをオンにする必要があります。  
+8.  Nella pagina **Licenze prerequisite** leggere e accettare le condizioni di licenza per i prerequisiti software, quindi fare clic su **Avanti**. Il programma di installazione scarica e installa automaticamente il software sui client o sui sistemi del sito secondo necessità. Prima di procedere alla pagina successiva, è necessario selezionare tutte le caselle di controllo.  
 
-9. [ **必須ファイルのダウンロード** ] ページで、前提条件の最新の再頒布可能ファイル、言語パック、および製品の最新の更新プログラムをインターネットからダウンロードするか、以前にダウンロードしたファイルを使用するかを指定し、[ **次へ**] をクリックします。 セットアップ ダウンローダーを使用して既にファイルをダウンロードしている場合は、[ **ダウンロード済みのファイルを使用する** ] を選択して、ダウンロード先フォルダーを指定します。 詳細については、「[セットアップ ダウンローダー](/sccm/core/servers/deploy/install/setup-downloader)」を参照してください。
+9. Nella pagina **Download prerequisiti** specificare se il programma di installazione scaricherà i file ridistribuibili di prerequisiti più recenti, Language Pack e gli aggiornamenti del prodotto più recenti da Internet o se utilizzerà i file scaricati in precedenza, quindi fare clic su **Avanti**. Se i file sono stati scaricati in precedenza tramite Setup Downloader, selezionare **Usa file scaricati precedentemente** e specificare la cartella di download. Per altre informazioni, vedere [Setup Downloader](/sccm/core/servers/deploy/install/setup-downloader) (Downloader di installazione).
 
     > [!NOTE]  
-    >  前にダウンロードしたファイルを使用する場合は、ダウンロード先フォルダーに、最新バージョンのファイルが含まれていることを確認してください。  
+    >  Quando si usano i file scaricati in precedenza, verificare che il percorso alla cartella di download contenga la versione più recente dei file.  
 
-10. [サーバーの言語の選択] ページで、サイトに現在インストールされている言語の一覧を表示します。 **** このサイトで Configuration Manager コンソールとレポートに使用できるようにする追加の言語を選択するか、このサイトでサポートする必要がなくなった言語をクリアして、[**次へ**] をクリックします。 既定では英語が選択され、選択を解除することはできません。  
-
-    > [!IMPORTANT]  
-    >  Configuration Manager の各バージョンで、以前のバージョンの Configuration Manager の言語パックは使用できません。 アップグレードする Configuration Manager サイトで言語のサポートを有効にするには、その新しいバージョンの言語パック バージョンを使用する必要があります。 たとえば、System Center 2012 Configuration Manager から System Center Configuration Manager へのアップグレード中に、System Center Configuration Manager バージョンの言語パックが、ダウンロードした前提条件ファイルで使用できない場合、その言語のサポートをインストールすることはできません。  
-
-11. [クライアント言語の選択] ページで、サイトに現在インストールされている言語の一覧を表示します。 **** このサイトでクライアント コンピューターに使用できるようにする追加の言語を選択するか、このサイトでサポートする必要がなくなった言語をクリアします。 モバイル デバイス クライアントのすべてのクライアント言語を有効にするかどうかを指定して、[ **次へ**] をクリックします。 既定では英語が選択され、選択を解除することはできません。  
+10. Nella pagina **Selezione della lingua server** , visualizzare l'elenco delle lingue installate al momento per il sito. Selezionare le lingue aggiuntive disponibili in questo sito per la console di Configuration Manager e per i report oppure deselezionare le lingue che non si vuole più supportare nel sito e fare clic su **Avanti**. La lingua inglese è selezionata per impostazione predefinita e non può essere rimossa.  
 
     > [!IMPORTANT]  
-    >  Configuration Manager の各バージョンで、以前のバージョンの Configuration Manager の言語パックは使用できません。 アップグレードする Configuration Manager サイトで言語のサポートを有効にするには、その新しいバージョンの言語パック バージョンを使用する必要があります。 たとえば、System Center 2012 Configuration Manager から System Center Configuration Manager へのアップグレード中に、System Center Configuration Manager バージョンの言語パックが、ダウンロードした前提条件ファイルで使用できない場合、その言語のサポートをインストールすることはできません。  
+    >  Nessuna versione di Configuration Manager può usare i Language Pack di una versione precedente di Configuration Manager. Per abilitare il supporto per un lingua in un sito di Configuration Manager che viene aggiornato, è necessario usare la versione del Language Pack per quella nuova versione. Ad esempio, durante l'aggiornamento da System Center 2012 Configuration Manager a System Center Configuration Manager, se la versione di System Center Configuration Manager di un Language Pack non è disponibile nei file di prerequisiti scaricati, non sarà possibile installare il supporto per tale lingua.  
 
-12. [ **設定の概要** ] ページで、[ **次へ** ] をクリックして前提条件チェッカーを起動し、サイトをアップグレードするサーバーの準備ができているかどうかを確認します。  
+11. Nella pagina **Selezione della lingua client** , visualizzare l'elenco delle lingue installate al momento per il sito. Selezionare le lingue aggiuntive disponibili su questo sito per i computer client oppure deselezionare le lingue che non si desidera più supportare nel sito. Specificare se si desidera abilitare tutte le lingue client per i client dei dispositivi mobili, quindi fare clic su **Avanti**. La lingua inglese è selezionata per impostazione predefinita e non può essere rimossa.  
 
-13. [ **インストールの前提条件チェック** ] ページに問題が何も表示されていない場合は、[ **次へ** ] をクリックして、プライマリ サイトとサイト システムの役割をアップグレードします。 一覧に問題が表示されている場合は、その問題をクリックして解決方法を確認します。 セットアップを続行する前に、一覧内でステータスが [エラー] になっているすべての問題を解決します。 **** 問題を解決したら、[ **前提条件チェックの実行** ] をクリックして、もう一度前提条件チェックを実行します。 システム ドライブのルートにある ConfigMgrPrereq.log ファイルを開いて、前提条件チェッカーの結果を確認することもできます。 ログ ファイルには、ユーザー インターフェイスに表示されていない情報が含まれていることがあります。 インストールの前提条件チェックの規則と説明の一覧については、「[前提条件チェッカー](/sccm/core/servers/deploy/install/list-of-prerequisite-checks)」を参照してください。  
+    > [!IMPORTANT]  
+    >  Nessuna versione di Configuration Manager può usare i Language Pack di una versione precedente di Configuration Manager. Per abilitare il supporto per un lingua in un sito di Configuration Manager che viene aggiornato, è necessario usare la versione del Language Pack per quella nuova versione. Ad esempio, durante l'aggiornamento da System Center 2012 Configuration Manager a System Center Configuration Manager, se la versione di System Center Configuration Manager di un Language Pack non è disponibile nei file di prerequisiti scaricati, non sarà possibile installare il supporto per tale lingua.  
 
-[アップグレード] ページに、進行状況の全体的なステータスが表示されます。 **** コア サイト サーバーとサイト システムのインストールが完了したら、ウィザードを閉じることができます。 サイトの構成がバックグラウンドで続行されます。  
+12. Nella pagina **Riepilogo impostazione** , fare clic su **Avanti** per avviare il Controllo prerequisiti e verificare la preparazione del server all'aggiornamento del sito.  
 
-#### <a name="to-upgrade-a-secondary-site"></a>セカンダリ サイトをアップグレードするには  
+13. Nella pagina **Controllo installazione prerequisiti** , in assenza di segnalazioni di anomalie, fare clic su **Avanti** per aggiornare il sito e i ruoli del sistema del sito. Quando il controllo prerequisiti rileva un problema, fare clic su un elemento nell'elenco per informazioni dettagliate sulla relativa modalità di risoluzione. Risolvere tutte le anomalie associate agli elementi nell'elenco con uno stato di **Errore** prima di procedere con l'installazione. Dopo aver risolto il problema, fare clic su **Esegui controllo** per riavviare il controllo dei prerequisiti. È inoltre possibile aprire il file ConfigMgrPrereq.log nella radice dell'unità di sistema per esaminare i risultati del controllo dei prerequisiti. Il file di log può contenere informazioni aggiuntive che non vengono visualizzate nell'interfaccia utente. Per un elenco delle regole e delle descrizioni dei prerequisiti di installazione, vedere [List of Prerequisite Checks for System Center Configuration Manager](/sccm/core/servers/deploy/install/list-of-prerequisite-checks) (Elenco dei controlli dei prerequisiti per System Center Configuration Manager).  
 
-1.  セットアップを実行する管理ユーザーが、次のセキュリティ権限を持っていることを確認します。  
+Nella pagina **Aggiorna** il programma di installazione consente di visualizzare lo stato di avanzamento generale. Quando il programma di installazione completa l'installazione del sistema del sito e del server del sito di base, è possibile chiudere la procedura guidata. La configurazione del sito continua in background.  
 
-    -   セカンダリ サイト コンピューターのローカル管理者権限  
-    -   親プライマリ サイトのインフラストラクチャ管理者または完全な権限を持つ管理者のセキュリティ ロール  
-    -   セカンダリ サイトのサイト データベースのシステム管理者 (SA) の権限  
+#### <a name="to-upgrade-a-secondary-site"></a>Per aggiornare un sito secondario  
+
+1.  Verificare che l'utente amministratore che esegue il programma di installazione disponga dei seguenti privilegi di protezione:  
+
+    -   Diritti di amministratore locale sul computer del sito secondario  
+    -   Ruolo di protezione Amministratore infrastruttura o Amministratore completo sul sito primario padre  
+    -   Diritti di amministratore di sistema nel database del sito secondario  
     </br>
-2.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
+2.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
 
-3.  [ **管理** ] ワークスペースで [ **サイトの構成**] を展開して、[ **サイト**] をクリックします。  
+3.  Nell'area di lavoro **Amministrazione** , espandere **Configurazione sito**, quindi fare clic su **Siti**.  
 
-4.  アップグレードするセカンダリ サイトを選択し、[ **ホーム** ] タブの [ **サイト** ] グループで、[ **アップグレード**] をクリックします。  
+4.  Selezionare il sito secondario che si desidera aggiornare e quindi, nella scheda **Home** del gruppo **Sito** , fare clic su **Aggiorna**.  
 
-5.  [はい] をクリックして決定を確認し、セカンダリ サイトのアップグレードを開始します。 ****  
+5.  Fare clic su **Sì** per confermare la decisione e per avviare l'aggiornamento del sito secondario.  
 
-セカンダリ サイトのアップグレードは、バックグラウンドで進行します。 アップグレードが完了した後で、Configuration Manager コンソールでステータスを確認できます。 ステータスを確認するには、セカンダリ サイト サーバーを選択して、[ **ホーム** ] タブの [ **サイト** ] グループにある [ **インストール ステータスの表示**] をクリックします。  
+L'aggiornamento del sito secondario procede in background. Dopo aver completato l'aggiornamento, è possibile confermare lo stato della console di Configuration Manager. Per confermare lo stato, selezionare il server del sito secondario, quindi nella scheda **Home** del gruppo **Sito** fare clic su **Mostra stato installazione**.  
 
-##  <a name="BKMK_PostUpgrade"></a> アップグレード後のタスクを実行する  
-サイトを新しいサービス パックにアップグレードした後で、サイトのアップグレードまたは再構成を終了するために、追加のタスクを完了することが必要になる場合があります。 このようなタスクには、Configuration Manager クライアントまたは Configuration Manager コンソールのアップグレード、管理ポイントのデータベース レプリカの再有効化、サービス パックのアップグレード後は保持されない、使用する Configuration Manager 機能の設定の復元などがあります。  
+##  <a name="BKMK_PostUpgrade"></a> Eseguire le attività successive all'aggiornamento  
+Dopo aver aggiornato un sito a un nuovo Service Pack, si potrebbe dover completare delle attività aggiuntive per completare l'aggiornamento o riconfigurare il sito. Potrebbe essere ad esempio necessario l'aggiornamento dei client di Configuration Manager o delle console di Configuration Manager, tramite la riabilitazione delle repliche di database per i punti di gestione oppure il ripristino delle impostazioni per le funzionalità di Configuration Manager che si usano e che non sono state mantenute dopo l'aggiornamento del Service Pack.  
 
-**セカンダリ サイトの既知の問題:**  
-- **バージョン 1511 にアップグレードする場合:** セカンダリ サイトのクライアントがセカンダリ サイトから管理ポイント (プロキシ管理ポイント) を検索できるようにするには、セカンダリ サイトの配布ポイントも含む境界グループに管理ポイントを手動で追加します。  
+**Problemi noti per i siti secondari:**  
+- **Durante l'aggiornamento alla versione 1511:** per consentire ai client nei siti secondari di trovare il punto di gestione dal sito secondario, vale a dire dal punto di gestione proxy, aggiungere manualmente il punto di gestione a gruppi di limiti che includono anche i punti di distribuzione nel sito secondario.  
 
-- **バージョン 1606 以降にアップグレードする場合:** プロキシ管理ポイントは、セカンダリ サイトの配布ポイントを含む境界グループに自動的に追加されます。
+- **Durante l'aggiornamento alla versione 1606 o successive:** i punti di gestione proxy vengono aggiunti automaticamente ai gruppi di limiti che includono i punti di distribuzione nel sito secondario.

@@ -1,6 +1,6 @@
 ---
-title: "シナリオ例 - Windows Embedded クライアントの展開 | Microsoft Docs"
-description: "Windows Embedded デバイスで System Center Configuration Manager クライアントを展開および管理するシナリオ例について説明します。"
+title: 'Scenario di esempio: distribuire i client Windows Embedded | Microsoft Docs'
+description: Scenario di esempio per la distribuzione e la gestione dei client di System Center Configuration Manager in dispositivi con Windows Embedded.
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -17,164 +17,164 @@ manager: angrobe
 ms.openlocfilehash: c535bc62497b5ff0b60ca266c28630d890af3604
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="example-scenario-for-deploying-and-managing-system-center-configuration-manager-clients-on-windows-embedded-devices"></a>Windows Embedded デバイスで System Center Configuration Manager クライアントを展開および管理するシナリオ例
+# <a name="example-scenario-for-deploying-and-managing-system-center-configuration-manager-clients-on-windows-embedded-devices"></a>Scenario di esempio per la distribuzione e la gestione dei client di System Center Configuration Manager in dispositivi con Windows Embedded
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-このシナリオでは、Configuration Manager で書き込みフィルター対応 Windows Embedded デバイスを管理する方法について説明します。埋め込みデバイスが書き込みフィルターをサポートしていない場合、標準の Configuration Manager クライアントとして動作し、これらの手順は適用されません。  
+Questo scenario illustra come è possibile gestire i dispositivi con Windows Embedded abilitati per i filtri di scrittura con System Center Configuration Manager. Se i dispositivi integrati non supportano i filtri di scrittura, funzionano come client standard di Configuration Manager e queste procedure non sono applicabili.  
 
-大正ワイナリーは、観光案内所のオープンを予定していて、インタラクティブな案内を表示する Windows Embedded キオスクを導入する必要があります。 新しい観光案内所の建物は IT 部門の近くにはないため、キオスクをリモートから管理する必要があります。 案内を表示するソフトウェアに加えて、これらのデバイスでは、企業のセキュリティ ポリシーに準拠するために、最新のマルウェア対策保護ソフトウェアを実行する必要があります。 キオスクは、観光案内所が営業している間、ダウンタイムなしの年中無休で実行する必要があります。  
+Coho Vineyard & Winery sta per aprire un centro visite e deve installare dei chioschi multimediali con Windows Embedded per eseguire delle presentazioni interattive. L'edificio del nuovo centro visite non si trova vicino al reparto IT, per cui i chioschi devono essere gestiti in remoto. Oltre al software per eseguire le presentazioni, questi dispositivi dovranno eseguire un software di protezione antimalware aggiornato, in conformità con le politiche di sicurezza dell'azienda. I chioschi devono essere in funzione 7 giorni alla settimana senza tempi di inattività durante l'orario di apertura del centro visite.  
 
- 大正ワイナリーでは、既に Configuration Manager を実行してネットワーク上のデバイスを管理しています。 Configuration Manager は、Endpoint Protection を実行し、ソフトウェア更新プログラムとアプリケーションをインストールするように構成されています。 ただし、IT 部門はこれまで Windows Embedded デバイスを管理したことはないため、Configuration Manager 管理者の加藤さんは、会社の受付ロビーにある 2 台のキオスクを管理するテストを実行する予定です。   
+ Coho usa già Configuration Manager per gestire i dispositivi nella rete. Configuration Manager è configurato per eseguire Endpoint Protection e per installare gli aggiornamenti di software e applicazioni. Tuttavia, poiché il team IT non ha mai gestito dispositivi con Windows Embedded in precedenza, Jane, amministratore di Configuration Manager, esegue un progetto pilota per gestire due chioschi multimediali che si trovano nella sala d'attesa della reception.   
 
- 書き込みフィルターが有効にされたこれらの Windows Embedded デバイスを管理するために、加藤さんは次の手順に従って、構成マネージャー クライアントをインストールし、Endpoint Protection を使用してクライアントを保護して、インタラクティブな案内ソフトウェアをインストールします。  
+ Per gestire questi dispositivi con Windows Embedded che hanno i filtri di scrittura abilitati, Jane esegue i passaggi seguenti per installare il client di Configuration Manager, proteggere il client usando Endpoint Protection e installare il software per la presentazione interattiva.  
 
-1.  Windows Embedded デバイスで書き込みフィルターを使用する方法と、Configuration Manager では、自動的に書き込みフィルターを無効にしてから再度有効にすることで、簡単にソフトウェアのインストールを保持できることを確認します。  
+1.  Jane legge in che modo i dispositivi con Windows Embedded usano i filtri di scrittura e come Configuration Manager può semplificare questa operazione disabilitando e riabilitando automaticamente i filtri di scrittura per salvare in modo permanente un'installazione software.  
 
-     詳細については、「[System Center Configuration Manager での Windows Embedded デバイスへのクライアント展開の計画](../../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md)」をご覧ください。  
+     Per altre informazioni, vedere [Planning for client deployment to Windows Embedded devices in System Center Configuration Manager](../../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md) (Pianificazione della distribuzione client a dispositivi con Windows Embedded in System Center Configuration Manager).  
 
-2.  構成マネージャー クライアントをインストールする前に、Windows Embedded デバイス用に新しいクエリ ベースのデバイス コレクションを作成します。 会社ではコンピューターの識別に標準の命名規則を使用しているため、加藤さんはコンピューター名の最初の 6 文字 ( **WEMDVC** ) で Windows Embedded デバイスを一意に識別できます。 加藤さんは、このコレクションを作成するために、次の WQL クエリを使用します。 **select SMS_R_System.NetbiosName from SMS_R_System where SMS_R_System.NetbiosName like "WEMDVC%"**  
+2.  Prima di installare il client di Configuration Manager, Jane crea una nuova raccolta dispositivi basata su query per i dispositivi con Windows Embedded. Poiché l'azienda usa formati di denominazione standard per identificare i computer, Jane può identificare i dispositivi con Windows Embedded con le prime sei lettere del nome del computer: **WEMDVC**. Usa la seguente query WQL per creare questa raccolta: **select SMS_R_System.NetbiosName from SMS_R_System where SMS_R_System.NetbiosName like "WEMDVC%"**  
 
-     このコレクションを使用して、他のデバイスとは異なる構成オプションで Windows Embedded デバイスを管理できます。 このコレクションは、再起動の制御、Endpoint Protection へのクライアント設定の展開、インタラクティブな案内アプリケーションの展開に使用されます。  
+     Questa raccolta consente di gestire i dispositivi con Windows Embedded con diverse opzioni di configurazione da altri dispositivi. Utilizzerà questa raccolta per controllare i riavvii, per distribuire Endpoint Protection con le impostazioni client e per distribuire l'applicazione per le presentazioni interattive.  
 
-     「[System Center Configuration Manager でコレクションを作成する方法](../../../core/clients/manage/collections/create-collections.md)」をご覧ください。  
+     Vedere [How to create collections in System Center Configuration Manager](../../../core/clients/manage/collections/create-collections.md) (Come creare raccolte in System Center Configuration Manager).  
 
-3.  コレクションのメンテナンス期間を構成して、案内アプリケーションとアップグレードのインストールに必要な再起動が観光案内所の営業時間中に発生しないようにします。 営業時間は、月曜日から日曜日の 9:00 ～ 18:00 です。 メンテナンス期間は、毎日 18:30 ～ 6:00 に構成します。  
+3.  Jane configura la raccolta per una finestra di manutenzione per assicurarsi che i riavvii richiesti per l'installazione dell'applicazione per le presentazioni ed eventuali aggiornamenti non si verifichino durante gli orari di apertura del centro visite. Gli orari di apertura saranno dalle 9:00 alle 18:00, da lunedì a domenica. Configura la finestra di manutenzione per ogni giorno, dalle 18:30 alle 06:00.  
 
-4.  詳細については、「[System Center Configuration Manager でメンテナンス期間を使用する方法](../../../core/clients/manage/collections/use-maintenance-windows.md)」をご覧ください。  
+4.  Per altre informazioni, vedere [How to use maintenance windows in System Center Configuration Manager](../../../core/clients/manage/collections/use-maintenance-windows.md) (Come usare le finestre di manutenzione in Configuration Manager).  
 
-5.  さらに、次の設定で [ **はい** ] を選択することで、Endpoint Protection をインストールするカスタム デバイス クライアント設定を構成し、このカスタム クライアント設定を Windows Embedded デバイス コレクションに展開します。  
+5.  Jane configura quindi un'impostazione client di dispositivi personalizzata per installare il client di Endpoint Protection selezionando **Sì** per le seguenti impostazioni, quindi distribuisce questa impostazione client personalizzata nella raccolta dispositivi con Windows Embedded:  
 
-    -   **[Endpoint Protection クライアントをクライアント コンピューターにインストールする]**  
+    -   **Installare il client Endpoint Protection nei computer client**  
 
-    -   **[書き込みフィルターのある Windows Embedded デバイスに対し、Endpoint Protection クライアントのインストールをコミットする (再起動が必要)]**  
+    -   **Per i dispositivi con Windows Embedded con filtri di scrittura, confermare l'installazione del client di Endpoint Protection (richiesto riavvio)**  
 
-    -   **[メンテナンス期間外の Endpoint Protection クライアントのインストールと再起動を許可する]**  
+    -   **Consentire l'installazione del client di Endpoint Protection e i riavvii al di fuori delle finestre di manutenzione**  
 
-     構成マネージャー クライアントをインストールするときに、これらの設定によって Endpoint Protection クライアントがインストールされ、オーバーレイへの書き込みだけではなく、インストールの一部としてオペレーティング システムに保持されます。 会社のセキュリティ ポリシーでは、マルウェア対策ソフトウェアのインストールが常に必要で、キオスクを再起動する場合に、わずかな時間であっても、キオスクが保護されない状態になるリスクを避けたいと加藤さんは考えています。  
-
-    > [!NOTE]  
-    >  Endpoint Protection クライアントのインストールに必要な再起動は、1 回限りの実行で、デバイスのセットアップ期間中、観光案内所の営業前に実行されます。 定期的なアプリケーションまたはソフトウェア定義の更新プログラムの展開とは異なり、次回、同じデバイスに Endpoint Protection クライアントがインストールされるのは、会社が次のバージョンの Configuration Manager にアップグレードするときになるでしょう。  
-
-     詳細については、「[System Center Configuration Manager での Endpoint Protection の構成](../../../protect/deploy-use/configure-endpoint-protection.md)」をご覧ください。  
-
-6.  クライアントの構成設定の準備ができたため、加藤さんは、構成マネージャー クライアントのインストールを準備します。 クライアントをインストールする前に、Windows Embedded デバイスの書き込みフィルターを手動で無効にする必要があります。 キオスクに付属する OEM ドキュメントを読んで、指示に従って書き込みフィルターを無効にします。  
-
-     加藤さんは、会社の標準の命名規則に従ってデバイスの名前を変更し、クライアント ソース ファイルがあるマップされたドライブから、次のコマンドを指定して CCMSetup を実行し、クライアントを手動でインストールします。 **CCMSetup.exe /MP:mpserver.cohovineyardandwinery.com SMSSITECODE=CO1**  
-
-     このコマンドで、クライアントをインストールし、イントラネット FQDN **mpserver.cohovineyardandwinery.com** を持つ管理ポイントにクライアントを割り当て、 **CO1** という名前のプライマリ サイトにクライアントを割り当てます。  
-
-     クライアントのインストールと、サイトへのステータスの返信には少し時間がかかります。 クライアントが正常にインストールされ、サイトに割り当てられて、Windows Embedded デバイス用に作成したコレクションにクライアントとして表示されることを確認するまで、しばらく待機します。  
-
-     追加の確認として、デバイスのコントロール パネルで Configuration Manager のプロパティを確認し、サイトで管理される標準の Windows コンピューターと比較します。 たとえば、[ **コンポーネント** ] タブの [ **ハードウェア インベントリ エージェント** ] には [ **有効**] が表示され、[ **操作** ] タブには [ **アプリケーション展開の評価サイクル** ] や [ **探索データ収集サイクル** ] などの 11 個の使用可能な操作が表示されることを確認します。  
-
-     クライアントのインストールと割り当てが正常に完了し、管理ポイントからクライアント ポリシーを受信したことを確認してから、OEM からの指示に従って、書き込みフィルターを手動で有効にします。  
-
-     詳細については、次をご覧ください。  
-
-    -   [System Center Configuration Manager でクライアントを Windows コンピューターに展開する方法](../../../core/clients/deploy/deploy-clients-to-windows-computers.md)  
-
-    -   [System Center Configuration Manager でクライアントをサイトに割り当てる方法](../../../core/clients/deploy/assign-clients-to-a-site.md)  
-
-7.  構成マネージャー クライアントが Windows Embedded デバイスにインストールされたので、標準の Windows クライアントと同じ方法でデバイスを管理できることを確認します。 たとえば、Configuration Manager コンソールから、リモート コントロールを使用してデバイスをリモート管理したり、デバイスのクライアント ポリシーを開始したり、クライアントのプロパティとハードウェア インベントリを表示したりできます。  
-
-     これらのデバイスは Active Directory ドメインに参加しているため、信頼されたクライアントとして手動でデバイスを承認する必要はなく、Configuration Manager コンソールから、デバイスが承認されていることを確認します。  
-
-     詳細については、「 [How to manage clients in System Center Configuration Manager](../../../core/clients/manage/manage-clients.md)」をご覧ください。  
-
-8.  インタラクティブな案内ソフトウェアをインストールするために、加藤さんは、 **ソフトウェアの展開ウィザード** を実行して、必要なアプリケーションを構成します。 ウィザードの [ **ユーザー側の表示と操作** ] ページの、[ **Windows Embedded デバイスに対してフィルター処理を書き込む** ] セクションで、既定のオプション [ **メンテナンスの期限または期間中の変更を確定する (再起動が必要)** ] をそのまま使用します。  
-
-     書き込みフィルターでこの既定のオプションを使用することで、再起動後もアプリケーションは保持され、キオスクを使用する訪問者は常にアプリケーションを使用できます。 毎日のメンテナンス期間は、インストールのための再起動と、更新を実行するための安全な期間です。  
-
-     加藤さんは、アプリケーションを Windows Embedded デバイス コレクションに展開します。  
-
-     詳細については、「[System Center Configuration Manager でアプリケーションを展開する方法](../../../apps/deploy-use/deploy-applications.md)」を参照してください。  
-
-9. Endpoint Protection の定義ファイルの更新を構成するために、加藤さんは、ソフトウェア更新プログラムを使用し、自動展開規則の作成ウィザードを実行します。 [ **定義ファイルの更新** ] テンプレートを選択して、ウィザードで、Endpoint Protection に適切な設定を指定します。  
-
-     ウィザードの [ **ユーザー側の表示と操作** ] ページには、次の設定があります。  
-
-    -   **期限に達したときの操作**: **[ソフトウェアのインストール]** チェック ボックスはオフになっています。  
-
-    -   **Windows Embedded デバイス用の書き込みフィルター処理**: **[メンテナンスの期限または期間中の変更を確定する (再起動が必要)]** チェック ボックスはオフになっています。  
-
-     加藤さんは既定の設定をそのまま使用します。 また、これらの 2 つのオプションをこの構成にすると、メンテナンス期間のインストールとコミットまで待機せずに、Endpoint Protection のソフトウェア更新プログラムの定義を日中にオーバーレイにインストールできます。 この構成は、最新のマルウェア対策保護を実行するという企業のセキュリティ ポリシーに最も適合します。  
+     Quando viene installato il client di Configuration Manager, queste impostazioni installano il client di Endpoint Protection, garantendo cosi che sarà salvato in modo permanente nel sistema operativo come parte dell'installazione e non solo scritto sull'overlay. Le politiche di sicurezza dell'azienda richiedono che il software antimalware sia sempre installato e Jane non vuole correre il rischio che i chioschi non siano protetti nel breve periodo di tempo del riavvio.  
 
     > [!NOTE]  
-    >  アプリケーションのソフトウェア インストールとは異なり、Endpoint Protection のソフトウェア更新プログラムの定義は、1 日に複数回など、頻繁に発生することがあります。 ソフトウェア更新プログラムの定義は、通常は小さなファイルです。 こうした種類のセキュリティ関連の展開では、メンテナンス期間まで待機するよりも、常にオーバーレイにインストールする方が、多くの場合、有益です。 構成マネージャー クライアントは、デバイスが再起動されると、すぐにソフトウェア定義更新プログラムを再インストールします。この操作で評価チェックが開始され、次回のスケジュールされた評価まで待機しないためです。  
+    >  I riavvii richiesti per installare il client di Endpoint Protection avvengono solo una volta, che avviene durante l'installazione dei dispositivi e prima che il centro visite sia operativo. Diversamente dalla distribuzione periodica degli aggiornamenti di definizioni per applicazioni o software, il client di Endpoint Protection sarà installato nuovamente nello stesso dispositivo quando l'azienda eseguirà l'aggiornamento alla nuova versione di Configuration Manager.  
 
-     加藤さんは、自動展開規則用に、Windows Embedded デバイス コレクションを選択します。  
+     Per altre informazioni, vedere [Configuring Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/configure-endpoint-protection.md) (Configurazione di Endpoint Protection in System Center Configuration Manager).  
 
-     詳細については、次を参照してください:  
-                  「[System Center Configuration Manager での Endpoint Protection の構成](../../../protect/deploy-use/configure-endpoint-protection.md)」の「手順 3: Configuration Manager ソフトウェアの更新プログラムを構成して、クライアント コンピューターに定義の更新を配信する」  
+6.  Dopo aver definito le impostazioni di configurazione per il client, Jane prepara l'installazione dei client di Configuration Manager. Prima di installare i client, deve disabilitare manualmente il filtro di scrittura sui dispositivi con Windows Embedded. Legge la documentazione OEM che accompagna i chioschi e segue le istruzioni per disabilitare i filtri di scrittura.  
 
-10. 加藤さんは、オーバーレイのすべての変更を定期的にコミットするように、メンテナンス タスクを構成することにしました。 このタスクで、ソフトウェア定義更新プログラムの展開をサポートし、累積して、デバイスが再起動するたびに再度インストールする必要がある更新プログラムの数を減らすことができます。 経験上、この方法で、マルウェア対策プログラムを効率よく実行できます。  
+     Jane rinomina il dispositivo per usare il formato di denominazione standard dell'azienda, quindi installa il client manualmente eseguendo CCMSetup con il comando seguente da un'unità mappata che contiene i file di origine client: **CCMSetup.exe /MP:mpserver.cohovineyardandwinery.com SMSSITECODE=CO1**  
+
+     Questo comando installa il client, assegna il client al punto di gestione che ha l'intranet FQDN di **mpserver.cohovineyardandwinery.com**e assegna il client al sito primario denominato **CO1**.  
+
+     Jane sa che occorre sempre un po' di tempo per l'installazione dei client e per reinviare il loro stato al sito. Quindi aspetta un po' prima di confermare l'installazione corretta dei client, la loro assegnazione al sito e la loro visualizzazione come client nella raccolta da lei creata per i dispositivi con Windows Embedded.  
+
+     Per essere più sicura, controlla le proprietà di Configuration Manager nel Pannello di controllo nei dispositivi e le confronta con i computer Windows standard gestiti dal sito. Ad esempio, nella scheda **Componenti** , l' **Agente di inventario hardware** visualizza **Abilitato**e nella scheda **Azioni** , sono disponibili 11 azioni che includono **Ciclo di valutazione distribuzione applicazione** e **Ciclo di recupero dati di rilevamento**.  
+
+     Sicura che i client sono stati correttamente installati, assegnati e avendo ricevuto i criteri client dal punto di gestione, Jane abilita manualmente i filtri di scrittura seguendo le istruzioni OEM.  
+
+     Per altre informazioni, vedere:  
+
+    -   [How to deploy clients to Windows computers in System Center Configuration Manager](../../../core/clients/deploy/deploy-clients-to-windows-computers.md) (Come distribuire i client nei computer Windows in System Center Configuration Manager)  
+
+    -   [How to assign clients to a site in System Center Configuration Manager](../../../core/clients/deploy/assign-clients-to-a-site.md) (Come assegnare i client a un sito in System Center Configuration Manager)  
+
+7.  Dopo aver installato il client di Configuration Manager nei dispositivi con Windows Embedded, Jane conferma di poterli gestire nello stesso modo in cui gestisce i client Windows standard. Dalla console di Configuration Manager può ad esempio gestire i client in remoto usando il controllo remoto, avviare criteri client e visualizzare le proprietà client e l'inventario hardware.  
+
+     Questi dispositivi sono associati a un dominio di Active Directory. Jane non deve pertanto approvarli manualmente come client attendibili, ma ne conferma l'approvazione dalla console di Configuration Manager.  
+
+     Per altre informazioni, vedere [How to manage clients in System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
+
+8.  Per installare il software per le presentazioni interattive, Jane esegue la **Distribuzione guidata del software** e configura un'applicazione richiesta. Nella pagina **Esperienza utente** della procedura guidata, nella sezione **Gestione filtri di scrittura per dispositivi con Windows Embedded** , accetta l'opzione predefinita che seleziona **Invia modifiche alla scadenza o in una finestra di manutenzione (riavvio necessario)**.  
+
+     Jane mantiene questa opzione predefinita per i filtri di scrittura per assicurarsi che l'applicazione rimanga permanente dopo un riavvio e sia quindi sempre disponibile per i visitatori che utilizzano i chioschi. La finestra di manutenzione quotidiana fornisce un periodo di tempo sicuro durante si possono effettuare i riavvii per l'installazione ed eventuali aggiornamenti.  
+
+     Jane distribuisce l'applicazione nella raccolta dispositivi con Windows Embedded.  
+
+     Per altre informazioni, vedere [How to deploy applications with System Center Configuration Manager](../../../apps/deploy-use/deploy-applications.md) (Come distribuire le applicazioni con System Center Configuration Manager).  
+
+9. Per configurare gli aggiornamenti delle definizioni per Endpoint Protection, Jane utilizza gli aggiornamenti software ed esegue la Creazione guidata delle regole di distribuzione automatica. Seleziona il modello **Aggiornamenti delle definizioni** per il popolamento preliminare della procedura guidata con le impostazioni appropriate per Endpoint Protection.  
+
+     Queste impostazioni includono i seguenti elementi nella pagina **Esperienza utente** della procedura guidata:  
+
+    -   **Comportamento scadenza**: la casella di controllo **Installazione software** non è selezionata.  
+
+    -   **Gestione filtri di scrittura per dispositivi con Windows Embedded**: la casella di controllo **Invia modifiche alla scadenza o in una finestra di manutenzione (riavvio necessario)** non è selezionata.  
+
+     Jane mantiene queste impostazioni predefinite. Insieme, queste due opzioni con questa configurazione consentono l'installazione di tutte le definizioni di aggiornamento software per Endpoint Protection nella sovrapposizione durante il giorno e nessuna attesa per l'installazione e l'invio durante la finestra di manutenzione. Questa configurazione soddisfa al meglio i criteri di sicurezza dell'azienda per i computer con protezione antimalware aggiornata.  
 
     > [!NOTE]  
-    >  これらのソフトウェア更新プログラムの定義は、Embedded デバイスで、変更のコミットをサポートする別の管理タスクが実行されていた場合、自動的にイメージにコミットされます。 たとえば、新しいバージョンのインタラクティブな案内ソフトウェアをインストールすると、ソフトウェア更新プログラムの定義の変更もコミットされます。 または、毎月、メンテナンス期間中にインストールする標準のソフトウェア更新プログラムをインストールすると、ソフトウェア更新プログラムの定義の変更もコミットされます。 ただし、このシナリオでは、標準のソフトウェア更新プログラムが実行されず、インタラクティブな案内ソフトウェアが頻繁に更新されない場所では、ソフトウェア定義更新プログラムが自動的にイメージにコミットされるまで、数か月かかることがあります。  
+    >  A differenza delle installazioni software per applicazioni, le definizioni di aggiornamento software per Endpoint Protection possono verificarsi molto spesso, anche più volte al giorno. Sono spesso file di piccole dimensioni. Per questi tipi di distribuzione relativi alla sicurezza, può essere spesso utile installare sempre nella sovrapposizione piuttosto che aspettare fino alla finestra di manutenzione. Il client di Configuration Manager reinstallerà rapidamente gli aggiornamenti delle definizioni software se il dispositivo si riavvia, perché questa azione avvia un controllo di valutazione e non aspetta fino alla valutazione pianificata successiva.  
 
-     加藤さんは、最初に、名前以外に設定がないカスタム タスク シーケンスを作成します。 次に、タスク シーケンスの作成ウィザードを実行します。  
+     Jane seleziona la raccolta dispositivi con Windows Embedded per la regola di distribuzione automatica.  
 
-    1.  [ **新しいタスク シーケンスの作成** ] ページで [ **新しいカスタム タスク シーケンスを作成する** ] を選択し、[ **次へ** ] をクリックします。  
+     Per ulteriori informazioni, vedere  
+                  Passaggio 3: Configure Configuration Manager Software Updates to Deliver Definition Updates to Client Computers (Configurare gli aggiornamenti software di Configuration Manager per inviare gli aggiornamenti delle definizioni ai computer client) in [Configuring Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/configure-endpoint-protection.md) (Configurazione di Endpoint Protection in System Center Configuration Manager)  
 
-    2.  **[タスク シーケンス情報]** ページで、加藤さんはタスク シーケンスの名前に「 **Maintenance task to commit changes on embedded devices** 」と入力し、 **[次へ]** をクリックします。  
+10. Jane decide di configurare un'attività di manutenzione che invia periodicamente tutte le modifiche nella sovrapposizione. Questa attività serve per supportare le definizioni di aggiornamento software e per ridurre il numero di aggiornamenti che si sono accumulati e che devono essere installati di nuovo ogni volta che il dispositivo si riavvia. Nella sua esperienza, in questo modo i programmi antimalware funzionano in modo più efficiente.  
 
-    3.  [ **概要** ] ページで、[ **次へ** ] を選択し、ウィザードを完了します。  
+    > [!NOTE]  
+    >  Queste definizioni di aggiornamento software verrebbero automaticamente inviate al'immagine se i dispositivi con Windows Embedded eseguissero un'altra attività di gestione che supportasse l'invio delle modifiche. Ad esempio, anche l'installazione di una nuova versione del software per le presentazioni interattivi invierebbe le modifiche per le definizioni di aggiornamento software. In alternativa, anche l'installazione degli aggiornamenti software standard in ogni mese di installazione durante la finestra di manutenzione potrebbe inviare le modifiche per le definizioni di aggiornamento software. Tuttavia, in questo scenario in cui non vengono eseguiti gli aggiornamenti software standard e il software per le presentazioni interattive probabilmente non viene aggiornato molto spesso, potrebbe passare dei mesi prima che gli aggiornamenti delle definizioni software vengano inviati automaticamente all'immagine.  
 
-     加藤さんは、このカスタム タスク シーケンスを Windows Embedded デバイス コレクションに展開し、毎月実行するスケジュールを構成します。 展開設定の一部として、再起動後に変更を保持するために、[ **メンテナンスの期限または期間中の変更を確定する (再起動が必要)** ] チェック ボックスを選択します。 この展開を構成するために、作成したカスタム タスク シーケンスを選択し、[ **ホーム** ] タブの [ ****展開 ] グループで、[ **展開** ] をクリックして、ソフトウェアの展開ウィザードを開始します。  
+     Jane crea prima una sequenza attività personalizzata che non presenta impostazioni diverse dal nome. Esegue la Creazione guidata della sequenza attività:  
 
-    1.  [ **全般** ] ページで、Windows Embedded デバイス コレクションを選択して、[ **次へ** ] をクリックします。  
+    1.  Nella pagina **Crea una nuova sequenza attività** , seleziona **Crea una nuova sequenza attività personalizzata**, quindi fa clic su **Avanti**.  
 
-    2.  [ **展開設定** ] ページで、[ **目的** ] に [ **必須** ] を選択して、[ **次へ** ] をクリックします。  
+    2.  Nella pagina **Informazioni sequenza di attività** immette **Maintenance task to commit changes on embedded devices** come nome della sequenza di attività e quindi fa clic su **Avanti**.  
 
-    3.  [ **スケジュール** ] ページで、[ **新規** ] をクリックして、メンテナンス期間中の週ごとのスケジュールを指定し、[ **次へ** ] をクリックします。  
+    3.  Nella pagina **Riepilogo** , seleziona **Avanti**e completa la procedura guidata.  
 
-    4.  それ以上は変更せずに、ウィザードを完了します。  
+     Jane quindi distribuisce questa sequenza attività personalizzata nella raccolta dispositivi con Windows Embedded e configura la pianificazione in modo che venga eseguita ogni mese. Come parte delle impostazioni di distribuzione, seleziona la casella di controllo **Invia modifiche alla scadenza o in una finestra di manutenzione (riavvio necessario)** per rendere permanenti le modifiche dopo un riavvio. Per configurare questa distribuzione, seleziona la sequenza attività personalizzata che ha appena creato, quindi nella scheda **Home** del gruppo **Distribuzione** , fa clic su **Distribuisci** per avviare la Distribuzione guidata del software:  
 
-     詳細については、次を参照してください:  
-                  [System Center Configuration Manager でのタスクを自動化するためのタスク シーケンスの管理](../../../osd/deploy-use/manage-task-sequences-to-automate-tasks.md)  
+    1.  Nella pagina **Generale** , seleziona la raccolta dispositivi con Windows Embedded, quindi fa clic su **Avanti**.  
 
-11. キオスクを自動的に実行するために、加藤さんは、デバイスに次の設定を構成するスクリプトを記述します。  
+    2.  Nella pagina **Impostazioni distribuzione** , seleziona lo **Scopo** di **Richiesto**, quindi fa clic su **Avanti**.  
 
-    -   パスワードなしのゲスト アカウントを使用した自動ログオン  
+    3.  Nella pagina **Pianificazione** , fa clic su **Nuovo** per indicare una pianificazione settimanale durante la finestra di manutenzione, quindi fa clic su **Avanti**.  
 
-    -   起動時に対話型プレゼンテーション ソフトウェアを自動実行する。  
+    4.  Completa la procedura guidata senza ulteriori modifiche.  
 
-     加藤さんは、パッケージとプログラムを使用して、このスクリプトを Windows Embedded デバイス コレクションに展開します。 ソフトウェアの展開ウィザードを実行するときに、もう一度 [ **メンテナンスの期限または期間中の変更を確定する (再起動が必要)** ] チェック ボックスをオンにして、再起動後も変更が維持されるようにします。  
+     Per ulteriori informazioni, vedere  
+                  [Manage task sequences to automate tasks in System Center Configuration Manager](../../../osd/deploy-use/manage-task-sequences-to-automate-tasks.md) (Gestire le sequenze di attività per automatizzare le attività in System Center Configuration Manager).  
 
-     詳細については、「[System Center Configuration Manager のパッケージとプログラム](../../../apps/deploy-use/packages-and-programs.md)」を参照してください。  
+11. Per l'esecuzione automatica dei chioschi, Raffaella scrive uno script per configurare i dispositivi per le seguenti impostazioni:  
 
-12. 翌朝、加藤さんは Windows Embedded デバイスを見て、 次の点を確認します。  
+    -   Accedere automaticamente, utilizzando un account guest senza password.  
 
-    -   キオスクがゲスト アカウントを使用して自動ログオンされている。  
+    -   Eseguire automaticamente il software per la presentazione interattiva all'avvio.  
 
-    -   対話型プレゼンテーション ソフトウェアが実行中である。  
+     Raffaella utilizza pacchetti e programmi per distribuire questo script nella raccolta di dispositivi Windows Embedded. Quando esegue la Distribuzione guidata del software, Raffaella seleziona nuovamente la casella di controllo **Invia modifiche alla scadenza o in una finestra di manutenzione (riavvio necessario)** per rendere permanenti le modifiche dopo un riavvio.  
 
-    -   Endpoint Protection クライアントがインストールされ、最新のソフトウェア更新プログラム定義がある。  
+     Per altre informazioni, vedere [Pacchetti e programmi in System Center Configuration Manager](../../../apps/deploy-use/packages-and-programs.md).  
 
-    -   メンテナンス期間中にデバイスが再起動した。  
+12. Il mattino seguente, Raffaella controlla i dispositivi Windows Embedded. Conferma quanto segue:  
 
-     詳細については、次をご覧ください。  
+    -   Il chiosco viene automaticamente connesso utilizzando l'account guest.  
 
-    -   [System Center Configuration Manager で Endpoint Protection を監視する方法](../../../protect/deploy-use/monitor-endpoint-protection.md)  
+    -   Il software di presentazione interattiva è in esecuzione.  
 
-    -   [System Center Configuration Manager でアプリケーションを監視する](/sccm/apps/deploy-use/monitor-applications-from-the-console)  
+    -   Il client Endpoint Protection è installato e dispone delle definizioni di aggiornamento software più recenti.  
 
-13. 加藤さんはキオスクを監視し、キオスクが正常に管理されていることを上司に報告します。 その結果、ビジター センター用に 20 台のキオスクを注文することになりました。  
+    -   Il dispositivo è stato riavviato durante la finestra di manutenzione.  
 
-     構成マネージャー クライアントを手動インストールする場合、書き込みフィルターを手動で無効にしてから再度有効にする必要があります。それを避けるために、加藤さんは構成マネージャー クライアントのインストールとサイトの割り当てが既に含まれているカスタマイズしたイメージを注文に確実に含めます。 さらに、デバイス名は会社の命名形式に従って付けます。  
+     Per altre informazioni, vedere:  
 
-     キオスクは、ビジター センターがオープンする 1 週間前に納品されます。 この間、キオスクはネットワークに接続され、キオスク用のすべてのデバイス管理は自動実行されるため、ローカル管理者は必要ありません。 加藤さんは、必要に応じて次のようにキオスクが機能していることを確認します。  
+    -   [How to monitor Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/monitor-endpoint-protection.md) (Come monitorare Endpoint Protection in System Center Configuration Manager).  
 
-    -   キオスク上のクライアントが、サイトの割り当てを完了し、Active Directory ドメイン サービスから信頼されたルート キーをダウンロードしている。  
+    -   [Monitor applications with System Center Configuration Manager](/sccm/apps/deploy-use/monitor-applications-from-the-console) (Monitorare le applicazioni con System Center Configuration Manager)  
 
-    -   キオスク上のクライアントが、自動的に Windows Embedded デバイス コレクションに追加され、メンテナンス期間で構成されている。  
+13. Raffaella monitora i chioschi e ne segnala la corretta gestione al responsabile. Di conseguenza, vengono ordinati 20 chioschi per il centro visite.  
 
-    -   Endpoint Protection クライアントがインストールされ、マルウェア対策保護用の最新のソフトウェア更新プログラム定義がある。  
+     Per evitare di dover installare manualmente il client di Configuration Manager, che necessita la disabilitazione manuale e quindi la riabilitazione dei filtri di scrittura, Jane verifica che l'ordine includa un'immagine personalizzata comprensiva già dell'installazione e dell'assegnazione del sito del client di Configuration Manager. Inoltre, i dispositivi vengono denominati in base al formato dei nomi aziendali.  
 
-    -   自動的に対話型プレゼンテーション ソフトウェアがインストールされ、実行されていて、訪問者が使用できる状態である。  
+     I chioschi vengono consegnati al centro visitate una settimana prima dell'apertura. Durante questo periodo, i chioschi vengono connessi alla rete, tutta la relativa gestione dei dispositivi è automatica e non sono necessari amministratori locali. Raffaella conferma che i chioschi funzionano come richiesto:  
 
-14. この初期セットアップ後、更新プログラムのために再起動が必要になる状況は、ビジター センターを閉鎖する場合のみです。  
+    -   I client nei chioschi completano l'assegnazione del sito e scaricano la chiave radice attendibile da Servizi di dominio Active Directory.  
+
+    -   I client nei chioschi vengono automaticamente aggiunti alla raccolta di dispositivi Windows Embedded e vengono configurati con la finestra di manutenzione.  
+
+    -   Il client Endpoint Protection è installato e dispone delle definizioni di aggiornamento software più recenti per la protezione antimalware.  
+
+    -   Il software di presentazione interattiva è installato e viene eseguito automaticamente, pronto per i visitatori.  
+
+14. Al termine dell'installazione iniziale eventuali riavvii che potrebbero essere necessari per gli aggiornamenti si verificano solo quando il centro visite è chiuso.  

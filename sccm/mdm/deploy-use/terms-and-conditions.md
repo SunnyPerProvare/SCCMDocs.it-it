@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager での使用条件 | Microsoft Docs"
-description: "System Center Configuration Manager のユーザー グループに使用条件ポリシーを展開します。"
+title: Termini e condizioni in System Center Configuration Manager | Microsoft Docs
+description: Distribuire le condizioni a gruppi di utenti in System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -17,107 +17,107 @@ manager: angrobe
 ms.openlocfilehash: 20be68496099a67ad2d475067f073da2cef16c86
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="add-terms-and-conditions-with-system-center-configuration-manager"></a>System Center Configuration Manager での使用条件の追加
+# <a name="add-terms-and-conditions-with-system-center-configuration-manager"></a>Aggiungere termini e condizioni con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager の使用条件をユーザー グループに展開すると、デバイスの登録、会社のリソースへのアクセス、会社のポータルの使用によるデバイスとユーザーへの影響を説明できます。 ユーザーは、会社のポータルを使用して登録したり作業にアクセスしたりする前に、使用条件に同意する必要があります。  
+È possibile distribuire le condizioni di System Center Configuration Manager a gruppi di utenti per spiegare in che modo la registrazione dei dispositivi, l'accesso alle risorse di lavoro e l'uso del Portale aziendale influiscono su dispositivi e utenti. Gli utenti dovranno quindi accettare i termini e le condizioni prima di poter usare il portale aziendale per registrare le app e accedere al lavoro.  
 
- ## <a name="working-with-terms-and-conditions-policies-in-system-center-configuration-manager"></a>System Center Configuration Manager での使用条件ポリシーの扱い  
- 複数の使用条件セットを作成および展開できます。 また、同じ使用条件のさまざまな言語のバージョンを作成し、適切なグループに展開することもできます。  
+ ## <a name="working-with-terms-and-conditions-policies-in-system-center-configuration-manager"></a>Uso dei criteri di termini e condizioni in System Center Configuration Manager  
+ È possibile creare e distribuire più set di criteri di termini e condizioni. È anche possibile creare versioni degli stessi termini e condizioni in lingue diverse e distribuirle ai gruppi appropriati.  
 
-## <a name="to-create-a-terms-and-conditions"></a>使用条件を作成するには  
+## <a name="to-create-a-terms-and-conditions"></a>Per creare termini e condizioni  
 
-1.  Configuration Manager コンソールで、 **[資産とコンプライアンス]** > **[概要]** > **[コンプライアンス設定]** > **[使用条件]**と移動します。  
+1.  Nella console di Configuration Manager passare a **Asset e conformità** > **Panoramica** > **Impostazioni di conformità** > **Termini e condizioni**.  
 
-2.  **[使用条件の作成]** をクリックして、新しい使用条件を作成します。  
+2.  Fare clic su **Crea termini e condizioni** per creare nuovi termini e condizioni.  
 
-3.  **[全般]** ページで、以下の情報を指定します。  
+3.  Nella pagina **Generale** specificare le informazioni seguenti:  
 
-    -   **[名前]** - Configuration Manager コンソールに表示される一意の名前  
+    -   **Nome**: nome univoco visualizzato nella console di Configuration Manager  
 
-    -   **[説明]** - Configuration Manager コンソールで使用条件を識別するための詳細  
+    -   **Descrizione**: dettagli che consentono di identificare le condizioni nella console di Configuration Manager  
 
-     **[次へ]**をクリックします。  
+     Fare clic su **Avanti**.  
 
-4.  **[条件]** ページで、次の情報を指定します。  
+4.  Nella pagina **Condizioni** specificare le informazioni seguenti:  
 
-    -   **[タイトル]** - 会社のポータルでユーザーに表示されるタイトル  
+    -   **Titolo** - Titolo visualizzato agli utenti nel portale aziendale  
 
-    -   **[条件に関するテキスト]** - 会社のポータルでユーザーに表示される使用条件  
+    -   **Testo per le condizioni** - Termini e condizioni visualizzati agli utenti nel portale aziendale  
 
-    -   **[ユーザーによる同意の意味を説明するテキスト]** - ユーザーに表示される同意に関するラベル **例**: "使用条件に同意します。"  
+    -   **Testo in cui vengono spiegate le implicazioni dell'accettazione da parte dell'utente** : etichetta visualizzata agli utenti relativa all'accettazione. **Esempio**: "Accetto le condizioni".  
 
-     **[次へ]**をクリックします。  
+     Fare clic su **Avanti**.  
 
-5.  新しい使用条件を作成するウィザードを完了します。 [資産とコンプライアンス] ワークスペースの [使用条件] ノードに新しい使用条件が表示されます。  
+5.  Completare la procedura guidata per creare i nuovi termini e condizioni. I nuovi termini e condizioni vengono visualizzati nel nodo Termini e condizioni dell'area di lavoro Asset e conformità.  
 
-## <a name="to-deploy-a-terms-and-conditions"></a>使用条件を展開するには  
+## <a name="to-deploy-a-terms-and-conditions"></a>Per distribuire termini e condizioni  
 
-1.  Configuration Manager コンソールで、 **[資産とコンプライアンス]** > **[概要]** > **[コンプライアンス設定]** > **[使用条件]**と移動します。  
+1.  Nella console di Configuration Manager passare ad **Asset e conformità** > **Panoramica** > **Impostazioni di conformità** > **Termini e condizioni**.  
 
-2.  **[使用条件]** 一覧で、展開する項目を選択して、 **[展開]**をクリックします。  
+2.  Nell'elenco **Termini e condizioni** selezionare l'elemento da distribuire e quindi fare clic su **Distribuisci**.  
 
-3.  **[参照]** を使用して、使用条件の展開先となる **[コレクション]** を選択し、 **[OK]**をクリックします。  
+3.  Fare clic su**Sfoglia** per selezionare la **raccolta** in cui si vogliono distribuire i termini e le condizioni, quindi fare clic su **OK**.  
 
-     対象デバイスが会社のポータルにアクセスすると、展開した使用条件が表示されます。 ユーザーは、これらの使用条件に同意しないと、会社のリソースへのアクセスできません。  
+     Quando i dispositivi di destinazione accedono all'app Portale aziendale, verranno visualizzati i termini e le condizioni distribuiti. Gli utenti devono accettare questi termini prima di poter accedere alle risorse aziendali.  
 
     > [!NOTE]  
-    >  特定のユーザーが属する複数のユーザー コレクションに同じ条件セットを展開する場合、そのユーザーが会社のポータルを開くと、複数の同じ条件がユーザーに表示されます。 ユーザーが同意または拒否できるのはすべての条項に関してのみであるため、ユーザーが同意と拒否の両方を行って条件に関してあいまいな状態になるという危険はありません。 使用条件への同意レポートには、ユーザーごとにそれぞれの条件セットに対して 1 行ずつしか含まれません。レポートにエラーは含まれません。  
+    >  Se si distribuisce un set di condizioni in più raccolte di utenti a cui appartiene un utente, tale utente visualizzerà più copie di condizioni identiche all'apertura dell'app Portale aziendale. Poiché gli utenti possono solo accettare o rifiutare tutte le condizioni, non vi è alcun rischio di trovarsi in uno stato di accettazione ambiguo in cui l'utente ha sia accettato che rifiutato le condizioni. Il report di accettazione di termini e condizioni includerà una sola riga per ogni set di condizioni per ogni utente, quindi nel report non possono esserci errori.  
 
-## <a name="to-monitor-terms-and-conditions"></a>使用条件を監視するには  
+## <a name="to-monitor-terms-and-conditions"></a>Per monitorare termini e condizioni  
 
-1.  Configuration Manager コンソールで使用条件の展開を監視できます。 Configuration Manager コンソールで **[監視]** > **[概要]** > **[展開]**に移動します。  
+1.  È possibile monitorare le distribuzioni di termini e condizioni nella console di Configuration Manager. Nel riquadro di spostamento della console di Configuration Manager passare a **Monitoraggio** > **Panoramica** > **Distribuzioni**.  
 
-2.  使用条件の展開を 展開一覧から選択します。  
+2.  Selezionare la distribuzione di termini e condizioni dall'elenco delle distribuzioni.  
 
-     概要領域には、以下の統計情報が表示されます。  
+     L'area di riepilogo visualizza le statistiche seguenti:  
 
-    -   **[対応]** - ユーザーが最新バージョンの使用条件に同意しました  
+    -   **Conforme** : gli utenti hanno accettato la versione più recente di termini e condizioni  
 
-    -   **エラー**  
+    -   **Erroree**  
 
-    -   **[非対応]** - ユーザーが最新のバージョンではない使用条件に同意しました  
+    -   **Non conforme** : gli utenti hanno accettato una versione precedente di termini e condizioni  
 
-    -   **[不明]** - 登録済みデバイスのない使用条件を含めて、ユーザーが使用条件に同意したことはありません  
+    -   **Sconosciuto** : gli utenti non hanno accettato termini e condizioni, inclusi quelli senza un dispositivo registrato  
 
-3.  使用条件の展開を選択してから、 **[構成基準の概要]** を選択すると、各ユーザーの展開ステータスが表示されます。  
+3.  Selezionare una distribuzione di termini e condizioni, quindi scegliere **Esegui riepilogo** per visualizzare lo stato di distribuzione dei singoli utenti.  
 
-     [展開ステータス] 画面でステータスのタブを選択すると、そのステータスであるユーザーが表示されます。 階層全体のデータを更新するには、 **[構成基準の概要]** をクリックします。 コンソールのデータを更新するには、 **[更新]** をクリックします  
+     Nella schermata di stato della distribuzione è possibile selezionare le schede di stato per visualizzare gli utenti con lo stato specificato. È possibile fare clic su **Esegui riepilogo** per aggiornare i dati in tutta la gerarchia. Fare clic su **Aggiorna** per aggiornare i dati nella console  
 
-## <a name="to-view--a-terms-and-conditions-report"></a>使用条件のレポートを表示するには  
+## <a name="to-view--a-terms-and-conditions-report"></a>Per visualizzare un report Termini e condizioni  
 
-1.  Configuration Manager コンソールで、 **[監視]** > **[概要]** > **[レポート]** > **[レポート]**に移動します。  
+1.  Nella console di Configuration Manager passare a **Monitoraggio** > **Panoramica** > **Creazione report** > **Report**.  
 
-2.  **[使用条件の同意]** を選択して、 **[実行]**をクリックします。 使用条件への同意レポートが開きます。 このレポートには、使用条件が展開された各ユーザーが表示されます。 フィールドは次のとおりです。  
+2.  Selezionare **Accettazione di termini e condizioni** , quindi fare clic su **Esegui**. Verrà aperto il report Accettazione di termini e condizioni. Il report visualizza ogni utente a cui sono stati distribuiti i termini e le condizioni. I campi includono:  
 
-    -   使用条件名  
+    -   Nome di termini e condizioni  
 
-    -   ユーザー名  
+    -   Nome utente  
 
-    -   同意済みのバージョン  
+    -   Versione accettata  
 
-    -   同意日  
+    -   Data di accettazione  
 
-    -   最新の利用条件に同意済み  
+    -   Ultima accettazione  
 
-## <a name="updates-and-version-control-for-terms-and-conditions"></a>使用条件の更新およびバージョン管理  
- 既存の使用条件を編集する際は、その使用条件を展開するときの動作を選択できます。 既存の使用条件を更新するには、次の手順に従います。  
+## <a name="updates-and-version-control-for-terms-and-conditions"></a>Aggiornamenti e controllo della versione per termini e condizioni  
+ Quando si modificano termini e condizioni esistenti, è possibile scegliere il comportamento durante la distribuzione di termini e condizioni. Usare la procedura seguente per aggiornare i termini e le condizioni esistenti.  
 
-### <a name="how-to-work-with-multiple-versions-of-terms-and-conditions"></a>使用条件の複数のバージョンを使用する方法  
+### <a name="how-to-work-with-multiple-versions-of-terms-and-conditions"></a>Come gestire più versioni di termini e condizioni  
 
-1.  Configuration Manager コンソールで、 **[資産とコンプライアンス]** > **[概要]** > **[コンプライアンス設定]** > **[使用条件]**と移動します。  
+1.  Nella console di Configuration Manager passare a **Asset e conformità** > **Panoramica** > **Impostazioni di conformità** > **Termini e condizioni**.  
 
-2.  編集する使用条件インスタンスを選択してダブルクリックし、開きます。  
+2.  Selezionare l'istanza di termini e condizioni da modificare, quindi fare doppio clic per aprirla.  
 
-3.  **[全般]** ページまたは **[条件]** ページでコンテンツを変更して必要な編集を行えます。  
+3.  È possibile modificare il contenuto nella pagina **Generale** o **Condizioni** per apportare le necessarie modifiche.  
 
-4.  **[条件]** ページで、新しいバージョンにおいては使用条件をすべてのユーザーが同意する必要があるか、あるいは新規ユーザーにのみ新しいバージョンを表示するかどうかを指定できます。  
+4.  Nella pagina **Condizioni** è possibile specificare se questa nuova versione dei termini e delle condizioni deve essere accettata da tutti gli utenti oppure se verrà visualizzata solo per i nuovi utenti.  
 
-     使用条件に対して重要な変更を行うときは常にバージョン番号を大きくし、同意を求めることをお勧めします。 誤植の修正や書式設定の変更などを行った場合は、現在のバージョン番号をそのままにします。
+     È consigliabile incrementare il numero di versione e richiedere l'accettazione ogni volta che si apportano modifiche significative a termini e condizioni. Non modificare il numero di versione corrente se, ad esempio, si correggono errori di digitazione o si modifica la formattazione.
 
 > [!div class="button"]
-[< 前のステップ](configure-intune-subscription.md)  [次のステップ >](create-service-connection-point.md)
+[< Passaggio precedente](configure-intune-subscription.md)  [Passaggio successivo >](create-service-connection-point.md)

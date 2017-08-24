@@ -1,6 +1,6 @@
 ---
-title: "推奨ハードウェア | Microsoft Docs"
-description: "基本的な展開だけでなく、System Center Configuration Manager 環境を拡張するために役立つハードウェアの推奨事項を確認します。"
+title: Hardware consigliato | Microsoft Docs
+description: Ottenere consigli su hardware per ridimensionare l'ambiente di System Center Configuration Manager, oltre una distribuzione di base.
 ms.custom: na
 ms.date: 05/04/2017
 ms.prod: configuration-manager
@@ -18,166 +18,166 @@ manager: angrobe
 ms.openlocfilehash: 8dac6df60b07461d6410d305723b3f03fb09fa16
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="recommended-hardware-for-system-center-configuration-manager"></a>System Center Configuration Manager の推奨ハードウェア
+# <a name="recommended-hardware-for-system-center-configuration-manager"></a>Hardware consigliato per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-以下の推奨事項は、サイト、サイト システム、およびクライアントのごく基本的な展開以上のものをサポートするために、System Center Configuration Manager 環境を拡張する場合に役立つガイドラインです。 考えられるすべてのサイトと階層構成について説明することを意図したものではありません。  
+I consigli seguenti sono linee guida che consentono di ridimensionare l'ambiente di System Center Configuration Manager per supportare una distribuzione più avanzata di siti, sistemi del sito e client. Queste raccomandazioni non intendono coprire tutte le possibili configurazioni di siti e gerarchie.  
 
- 以下の各セクションの情報は、既定の構成で利用できる Configuration Manager 機能を使用するクライアントとサイトについて、その処理負荷に対応できるようにハードウェアを計画する場合のガイドとして使用してください。  
+ Usare le informazioni delle sezioni seguenti come guida per la pianificazione dell'hardware che può soddisfare i carichi di elaborazione per i client e i siti che usano le funzionalità di Configuration Manager disponibili con le configurazioni predefinite.  
 
 
-##  <a name="bkmk_ScaleSieSystems"></a> サイト システム  
- このセクションでは、最大数のクライアントをサポートし、大部分、あるいはすべての Configuration Manager 機能を使用する展開のための Configuration Manager サイト システムのお勧めのハードウェア構成を示します。 展開でサポートするクライアントが最大数よりも少なく、使用可能な機能をすべて使用するわけではない場合、必要なコンピューター リソースはより少なくて済む場合があります。 一般的に、システム全体のパフォーマンスを制限する主な要因を順に挙げます。  
+##  <a name="bkmk_ScaleSieSystems"></a> Sistemi del sito  
+ Questa sezione illustra le configurazioni hardware consigliate per i sistemi del sito di Configuration Manager per le distribuzioni che supportano il numero massimo di client e usano la maggior parte o tutte le funzionalità di Configuration Manager. Le distribuzioni che supportano meno del numero massimo di client e che non usano tutte le funzionalità disponibili possono richiedere meno risorse del computer. In generale, i fattori chiave che limitano le prestazioni dell'intero sistema includono i seguenti, nell'ordine:  
 
-1.  ディスク I/O のパフォーマンス  
+1.  Prestazioni di I/O su disco  
 
-2.  使用可能なメモリ  
+2.  Memoria disponibile  
 
 3.  CPU  
 
-最適なパフォーマンスを得るには、すべてのデータ ドライブを RAID 10 構成にし、1 Gbps イーサネット ネットワークを使用します。  
+Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità dati e una rete Ethernet da 1 Gbps.  
 
-###  <a name="bkmk_ScaleSiteServer"></a> サイト サーバー  
+###  <a name="bkmk_ScaleSiteServer"></a> Server del sito  
 
-|スタンドアロン プライマリ サイト|CPU (コア)|メモリ (GB)|SQL Server のメモリの割り当て (%)|  
+|Sito primario autonomo|CPU (core)|Memoria (GB)|Allocazione di memoria per SQL Server (%)|  
 |-------------------------------|---------------|---------------|----------------------------------------|  
-|同じサーバー上でデータベース サイトの役割を持つスタンドアロン プライマリ サイト サーバー<sup>1</sup>|16|96|80|  
-|リモート サイトのデータベースを使用するスタンドアロン プライマリ サイト サーバー|8|16|-|  
-|スタンドアロン プライマリ サイトのリモート データベース サーバー|16|72|90|  
-|同じサーバー上でデータベース サイトの役割を持つ中央管理サイト サーバー<sup>1</sup>|20|128|80|  
-|リモート サイトのデータベースを使用する中央管理サイト サーバー|8|16|-|  
-|中央管理サイトのリモート データベース サーバー|16|96|90|  
-|同じサーバー上でデータベース サイトの役割を持つ子プライマリ サイト|16|96|80|  
-|リモート サイトのデータベースを使用する子プライマリ サイト サーバー|8|16|-|  
-|子プライマリ サイトのリモート データベース サーバー|16|72|90|  
-|セカンダリ サイト サーバー|8|16|-|  
+|Server del sito primario autonomo con un ruolo del sito del database nello stesso server<sup>1</sup>|16|96|80|  
+|Server del sito primario autonomo con un database del sito remoto|8|16|-|  
+|Server di database remoto per un sito primario autonomo|16|72|90|  
+|Server del sito di amministrazione centrale con un ruolo del sito del database nello stesso server<sup>1</sup>|20|128|80|  
+|Server del sito di amministrazione centrale con un database del sito remoto|8|16|-|  
+|Server di database remoto per un sito di amministrazione centrale|16|96|90|  
+|Sito primario figlio con ruolo del sito del database nello stesso server|16|96|80|  
+|Server del sito primario figlio con un database del sito remoto|8|16|-|  
+|Server di database remoto per un sito primario figlio|16|72|90|  
+|Server del sito secondario|8|16|-|  
 
- <sup>1</sup> サイト サーバーと SQL Server が同じコンピューターにインストールされている場合、展開はサイトとクライアントの最大の [Sizing and scale numbers](/sccm/core/plan-design/configs/size-and-scale-numbers) をサポートします。 ただし、この構成により [System Center Configuration Manager の高可用性オプション](/sccm/protect/understand/high-availability-options) (SQL Server クラスターの使用など) が制限されることがあります。 また、SQL Server と Configuration Manager サイト サーバーの両方を同じコンピューターで実行する場合、その両方をサポートするためには高い I/O 要件が必要になるため、大規模な展開を使用するユーザーはリモート SQL Server コンピューターでの構成を使用することをお勧めします。  
+ <sup>1</sup> Quando il server del sito e SQL Server sono installati nello stesso computer, la distribuzione supporta i valori massimi di [ridimensionamento](/sccm/core/plan-design/configs/size-and-scale-numbers) per siti e client. Questa configurazione può però limitare le [opzioni di disponibilità elevata per System Center Configuration Manager](/sccm/protect/understand/high-availability-options) come l'uso di un cluster di SQL Server. A causa dei più elevati requisiti di I/O necessari per supportare SQL Server e il server del sito di Configuration Manager durante l'esecuzione di entrambi i server nello stesso computer, si consiglia ai clienti con grandi distribuzioni di usare una configurazione con un computer SQL Server remoto.  
 
-###  <a name="bkmk_RemoteSiteSystem"></a> リモート サイト システム サーバー  
- 以下のガイダンスは、1 つのサイト システムの役割を保有しているコンピューター用です。 複数のサイト システムの役割を同じコンピューターにインストールする場合は、調整を計画します。  
+###  <a name="bkmk_RemoteSiteSystem"></a> Server di sistema del sito remoti  
+ Le indicazioni seguenti sono destinate ai computer che contengono un solo ruolo del sistema del sito. Pianificare delle modifiche quando si installano più ruoli del sistema del sito nello stesso computer.  
 
-|サイト システムの役割|CPU (コア)|メモリ (GB)|ディスク領域 (GB)|  
+|Ruolo del sistema del sito|CPU (core)|Memoria (GB)|Spazio su disco (GB)|  
 |----------------------|---------------|---------------|--------------------|  
-|管理ポイント|4|8|50|  
-|配布ポイント|2|8|オペレーティング システムで必要とされ、展開するコンテンツを保存するために使用する|  
-|サイト システム コンピューター上の Web サービスと Web サイトによるアプリケーション カタログ|4|16|50|  
-|ソフトウェアの更新ポイント<sup>1</sup>|8|16|オペレーティング システムで必要とされ、展開する更新プログラムを保存するために使用する|  
-|その他すべてのサイト システムの役割|4|8|50|  
+|Punto di gestione|4|8|50|  
+|Punto di distribuzione|2|8|Come richiesto dal sistema operativo e per archiviare il contenuto distribuito|  
+|Catalogo applicazioni, con servizi Web e sito Web sul computer del sistema del sito|4|16|50|  
+|Punto di aggiornamento software<sup>1</sup>|8|16|Come richiesto dal sistema operativo e per archiviare gli aggiornamenti distribuiti|  
+|Tutti gli altri ruoli del sistema del sito|4|8|50|  
 
- <sup>1</sup> ソフトウェアの更新ポイントをホストするコンピューターには、IIS アプリケーション プールの次の構成が必要です。  
+ <sup>1</sup> Il computer che ospita un punto di aggiornamento software richiede le configurazioni seguenti per i pool di applicazioni di IIS:  
 
--   **WsusPool キューの長さ** を **2000**に増やす  
+-   Aumentare la **lunghezza della coda WsusPool** a **2000**.  
 
--   **WsusPool プライベート メモリの制限** を 4 倍に増やすか、**0** (無制限) に設定する  
+-   Aumentare il **limite di memoria privata WsusPool** di 4 volte oppure impostarlo su **0** (illimitato).  
 
-###  <a name="bkmk_DiskSpace"></a> サイト システムのディスク領域  
- ディスク割り当てと構成によって、Configuration Manager のパフォーマンスが向上します。 Configuration Manager 環境はそれぞれ異なるため、実装することの価値が以下のガイダンスとは異なる場合もあります。  
+###  <a name="bkmk_DiskSpace"></a> Spazio su disco per i sistemi del sito  
+ La configurazione e l'allocazione dei dischi contribuisce alle prestazioni di Configuration Manager. Dal momento che ogni ambiente di Configuration Manager è diverso, i valori implementati possono variare rispetto alle indicazioni seguenti.  
 
- 最高のパフォーマンスを実現するには、個々の専用 RAID ボリュームに各オブジェクトを配置します。 また、最高のパフォーマンスを実現するには、すべてのデータ ボリューム (Configuration Manager およびそのデータベース ファイル) に RAID 10 を使用します。  
+ Per ottenere migliori prestazioni, posizionare ogni oggetto in un volume RAID dedicato separato. Per tutti i volumi di dati (Configuration Manager e relativi file di database), usare RAID 10 per ottenere le migliori prestazioni.  
 
-|データの使用|最小限のディスク領域|クライアント数 25,000|クライアント数 50,000|クライアント数 100,000|クライアント数 150,000|クライアント数 700,000 (中央管理サイト)|  
+|Utilizzo dei dati|Spazio minimo su disco|25.000 client|50.000 client|100.000 client|150.000 client|700.000 client (sito di amministrazione centrale)|  
 |----------------|------------------------|--------------------|--------------------|---------------------|---------------------|-----------------------------------------------------|  
-|オペレーティング システム|オペレーティング システムのガイダンスを参照してください。|オペレーティング システムのガイダンスを参照してください。|オペレーティング システムのガイダンスを参照してください。|オペレーティング システムのガイダンスを参照してください。|オペレーティング システムのガイダンスを参照してください。|オペレーティング システムのガイダンスを参照してください。|  
-|Configuration Manager のアプリケーションおよびログ ファイル|25 GB|50 GB|100 GB|200 GB|300 GB|200 GB|  
-|サイト データベース .mdf ファイル|25,000 クライアントごとに 75 GB|75 GB|150 GB|300 GB|500 GB|2 TB|  
-|サイト データベース .ldf ファイル|25,000 クライアントごとに 25 GB|25 GB|50 GB|100 GB|150 GB|100 GB|  
-|一時データベース ファイル (.mdf および .ldf)|必要に応じて|必要に応じて|必要に応じて|必要に応じて|必要に応じて|必要に応じて|  
-|コンテンツ (共有されている配布ポイント)|必要に応じて <sup>1</sup>|必要に応じて <sup>1</sup>|必要に応じて <sup>1</sup>|必要に応じて <sup>1</sup>|必要に応じて <sup>1</sup>|必要に応じて <sup>1</sup>|  
+|Sistema operativo|Consultare le informazioni disponibili per il sistema operativo.|Consultare le informazioni disponibili per il sistema operativo.|Consultare le informazioni disponibili per il sistema operativo.|Consultare le informazioni disponibili per il sistema operativo.|Consultare le informazioni disponibili per il sistema operativo.|Consultare le informazioni disponibili per il sistema operativo.|  
+|Applicazione e file di log di Configuration Manager|25 GB|50 GB|100 GB|200 GB|300 GB|200 GB|  
+|File con estensione MDF del database del sito|75 GB ogni 25.000 client|75 GB|150 GB|300 GB|500 GB|2 TB|  
+|File con estensione LDF del database del sito|25 GB ogni 25.000 client|25 GB|50 GB|100 GB|150 GB|100 GB|  
+|File di database temporaneo (con estensione MDF e LDF)|Secondo le necessità|Secondo le necessità|Secondo le necessità|Secondo le necessità|Secondo le necessità|Secondo le necessità|  
+|Contenuto (condivisioni del punto di distribuzione)|Secondo le necessità<sup>1</sup>|Secondo le necessità<sup>1</sup>|Secondo le necessità<sup>1</sup>|Secondo le necessità<sup>1</sup>|Secondo le necessità<sup>1</sup>|Secondo le necessità<sup>1</sup>|  
 
- <sup>1</sup> ディスク領域の指標には、サイト サーバーまたは配布ポイントのコンテンツ ライブラリに格納されるコンテンツに必要な領域は含まれません。 コンテンツ ライブラリの計画については、[コンテンツ ライブラリ](../../../core/plan-design/hierarchy/the-content-library.md)のトピックを参照してください。  
+ <sup>1</sup> Le indicazioni relative allo spazio su disco non includono lo spazio richiesto per il contenuto che si trova nella raccolta contenuto nel server del sito o nel punto di distribuzione. Per informazioni sulla pianificazione della raccolta contenuto, vedere [Raccolta contenuto](../../../core/plan-design/hierarchy/the-content-library.md).  
 
- ディスク領域の要件を計画する場合は、前述のガイダンスに加え、次のガイドラインを考慮してください。  
+ Oltre alle informazioni aggiuntive precedenti, prendere in considerazione le linee guida seguenti quando si pianificano i requisiti per lo spazio su disco:  
 
--   各クライアントには、約 5 MB の領域が必要です。  
+-   Ogni client richiede circa 5 MB di spazio.  
 
--   プライマリ サイトの一時データベースのサイズを計画する場合、サイト データベース .mdf ファイルの 25% から 30% の合計サイズを計画します。 サイト サーバーのパフォーマンスや、短期および長期にわたって受信するデータのサイズに応じて、実際のサイズは大幅に小さく、または大きくなる可能性があります。  
+-   Durante la pianificazione della dimensione del database temporaneo per un sito primario, prevedere una dimensione combinata compresa tra il 25% e il 30% del file con estensione MDF del database del sito. Le dimensioni effettive possono essere sensibilmente inferiori o superiori, a seconda dalle prestazioni del server del sito e del volume di dati in ingresso durante periodi di tempo lunghi e brevi.  
 
     > [!NOTE]  
-    >  サイトで 50,000 以上のクライアントを使用している場合は、4 つ以上の一時データベースの .mdf ファイルを使用するよう計画してください。  
+    >  Quando sono disponibili 50.000 o più client in un sito, prevedere l'uso di quattro o più file mdf del database temporaneo.  
 
--   中央管理サイトの一時データベース サイズは、通常、プライマリ サイトのサイズよりも大幅に小さくなります。  
+-   Le dimensioni del database temporaneo per un sito di amministrazione centrale sono in genere molto inferiori rispetto a quelle di un sito primario.  
 
--   セカンダリ サイト データベースのサイズは、次のように制限されます。  
+-   Le dimensioni del database del sito secondario sono limitate nel seguente modo:  
 
     -   SQL Server 2012 Express: 10 GB  
 
     -   SQL Server 2014 Express: 10 GB  
 
-##  <a name="bkmk_ScaleClient"></a> クライアント  
- このセクションでは、Configuration Manager クライアント ソフトウェアを使用して管理するコンピューター用の推奨ハードウェア構成を示します。  
+##  <a name="bkmk_ScaleClient"></a> Client  
+ Questa sezione illustra le configurazioni hardware consigliate per i computer gestiti con il software client di Configuration Manager.  
 
-### <a name="client-for-windows-computers"></a>Windows コンピューターのクライアント  
- 組み込みオペレーティング システムなど、Configuration Manager で管理する Windows ベースのコンピューターの最小要件は次のとおりです。  
+### <a name="client-for-windows-computers"></a>Client per i computer Windows  
+ Di seguito sono indicati i requisiti hardware minimi per i computer basati su Windows gestiti con Configuration Manager, inclusi i sistemi operativi Embedded:  
 
--   **プロセッサとメモリ:** コンピューターのオペレーティング システムのプロセッサと RAM に関する要件を参照してください。  
+-   **Processore e memoria**: vedere i requisiti per il processore e la RAM specifici del sistema operativo del computer.  
 
--   **ディスク領域:** 500 MB の空きディスク領域。Configuration Manager クライアントのキャッシュには、5 GB の空きディスク領域をお勧めします。 次に示すように、カスタマイズした設定を使用して Configuration Manager クライアントをインストールすると、必要とされるディスク領域が少なくなります。  
+-   **Spazio su disco:** 500 MB di spazio disponibile su disco, con 5 GB consigliati per la cache del client di Configuration Manager. Se si usano le impostazioni personalizzate per installare il client di Configuration Manager, è necessario meno spazio:  
 
-    -   CCMSetup のコマンドライン プロパティ /skipprereq を使用して、クライアントには不要なファイルがインストールされないようにします。 たとえば、クライアントがアプリケーション カタログを使用しない場合は、**CCMSetup.exe /skipprereq:silverlight.exe** を実行します。  
+    -   Usare la proprietà della riga di comando CCMSetup /skipprereq per evitare di installare i file non necessari per il clent. Ad esempio, eseguire **CCMSetup.exe /skipprereq:silverlight.exe** se il client non usa il Catalogo applicazioni.  
 
-    -   Client.msi のプロパティ SMSCACHESIZE を使用して、既定の 5120 MB よりも小さいキャッシュ ファイルを設定します。 最小サイズは 1 MB です。 たとえば、 **CCMSetup.exe SMSCachesize=2** は、サイズが 2 MB のキャッシュを作成します。  
+    -   Usare la proprietà Client. msi SMSCACHESIZE per impostare un file di cache inferiore a quello predefinito di 5120 MB. La dimensione minima è 1 MB. Ad esempio, **CCMSetup.exe SMSCachesize=2** crea una cache di 2 MB.  
 
-    これらのクライアント インストール設定の詳細については、「[System Center Configuration Manager のクライアント インストール プロパティについて](../../../core/clients/deploy/about-client-installation-properties.md)」を参照してください。  
+    Per altre informazioni su queste impostazioni di installazione del client, vedere [Informazioni sulle proprietà di installazione del client in System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
     > [!TIP]  
-    >  一般に、標準の Windows コンピューターよりもディスク サイズが小さい Windows Embedded デバイスの場合は、最小のディスク領域を使用するクライアントのインストールが実用的です。  
+    >  L'installazione del client con lo spazio minimo su disco è utile per i dispositivi Windows Embedded, che in genere hanno dimensioni di disco inferiori a quelle dei computer Windows standard.  
 
 
 
- Configuration Manager のオプション機能のための追加的な最小ハードウェア要件は、次のとおりです。  
+ Di seguito sono indicati altri requisiti hardware minimi per la funzionalità facoltativa in Configuration Manager.  
 
--   **オペレーティング システムの展開:** 384 MB の RAM  
+-   **Distribuzione del sistema operativo:** 384 MB di RAM  
 
--   **ソフトウェア センター:** 500 MHz のプロセッサ  
+-   **Software Center:** processore da 500 MHz  
 
--   **リモート コントロール:** Pentium 4 ハイパー スレッド 3 GHz (シングル コア) または同等の CPU。最適な結果を得るには少なくとも 1 GB の RAM が必要です。  
+-   **Controllo remoto:** Pentium 4 Hyper-Threaded 3 GHz (core singolo) o CPU comparabile, con almeno un 1 GB di RAM per un'esperienza ottimale  
 
-### <a name="client-for-linux-and-unix"></a>Linux および UNIX 用のクライアント  
- 以下は、Configuration Manager で管理する Linux および UNIX サーバーの最小要件です。  
+### <a name="client-for-linux-and-unix"></a>Client per Linux e UNIX  
+ Di seguito sono indicati i requisiti minimi per i server Linux e UNIX gestiti con Configuration Manager.  
 
-|要件|説明|  
+|Requisito|Dettagli|  
 |-----------------|-------------|  
-|プロセッサとメモリ|コンピューターのオペレーティング システムのプロセッサと RAM に関する要件を参照してください。|  
-|ディスク領域|500MB の空きディスク領域。Configuration Manager クライアントのキャッシュには、5 GB の空きディスク領域をお勧めします。|  
-|ネットワーク接続|Configuration Manager のクライアント コンピューターには、管理を可能にするための、Configuration Manager サイト システムへのネットワーク接続が必要です。|  
+|Processore e memoria|Consultare i requisiti per il processore e la RAM specifici del sistema operativo del computer.|  
+|Spazio su disco|500 MB di spazio disponibile su disco, con 5 GB consigliati per la cache del client di Configuration Manager.|  
+|Connettività di rete|I computer client di Configuration Manager devono avere una connettività di rete con i sistemi del sito di Configuration Manager per abilitare la gestione.|  
 
-##  <a name="bkmk_ScaleConsole"></a> Configuration Manager コンソール  
- 次の表に示された要件は、Configuration Manager コンソールを実行する各コンピューターに適用されます。  
+##  <a name="bkmk_ScaleConsole"></a> Console di Configuration Manager  
+ I requisiti riportati nella tabella seguente si applicano a ogni computer che esegue la console di Configuration Manager.  
 
- **最小ハードウェア構成:**  
+ **Configurazione hardware minima:**  
 
--   Intel i3 または同等の CPU  
+-   Intel i3 o CPU comparabile  
 
--   2 GB の RAM  
+-   2 GB di RAM  
 
--   2 GB のディスク領域  
+-   2 GB di spazio su disco  
 
-|DPI 設定|最小解像度|  
+|Impostazione DPI|Risoluzione minima|  
 |-----------------|------------------------|  
 |96/100%|1024 x 768|  
 |120/125%|1280 x 960|  
 |144/150%|1600 x 1200|  
 |196/200%|2500 x 1600|  
 
- **PowerShell のサポート:**  
+ **Supporto per PowerShell:**  
 
- Configuration Manager コンソールを実行するコンピューターに PowerShell のサポートをインストールすると、そのコンピューターで Configuration Manager を管理するために PowerShell のコマンドレットを実行できるようになります。
+ Quando si installa il supporto per PowerShell in un computer che esegue la console di Configuration Manager, è possibile eseguire i cmdlet di PowerShell in tale computer per gestire Configuration Manager.
 
- - PowerShell 3.0 以降がサポートされています。
+ - È supportato PowerShell 3.0 o versione successiva
 
-PowerShell のほかに、Windows Management Framework (WMF) Version 3.0 以降もサポートされます。   
+Oltre a PowerShell, è supportato anche Windows Management Framework (WMF) 3.0 o versione successiva.   
 
 
-##  <a name="bkmk_ScaleLab"></a> ラボ展開  
- Configuration Manager のラボ展開とテストの展開には、次の最小ハードウェア推奨事項を使用します。 これらの推奨事項はすべてのサイトの種類に適用され、最大 100 のクライアントで使用する場合のものです。  
+##  <a name="bkmk_ScaleLab"></a> Distribuzioni di lab  
+ Seguire questi consigli in termini di requisiti hardware minimi per le distribuzioni di lab e di prova di Configuration Manager. Questi consigli si applicano a tutti i tipi di sito, fino a un massimo di 100 client:  
 
-|ロール|CPU (コア)|メモリ (GB)|ディスク領域 (GB)|  
+|Ruolo|CPU (core)|Memoria (GB)|Spazio su disco (GB)|  
 |----------|---------------|-------------------|-----------------------|  
-|サイトとデータベース サーバー|2 - 4|7 - 12|100|  
-|サイト システム サーバー|1 - 4|2 - 4|50|  
-|クライアント|1 - 2|1 - 3|30|  
+|Server del sito e di database|2 - 4|7 - 12|100|  
+|Server del sistema del sito|1 - 4|2 - 4|50|  
+|Client|1 - 2|1 - 3|30|  

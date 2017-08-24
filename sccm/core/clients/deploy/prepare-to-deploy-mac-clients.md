@@ -1,6 +1,6 @@
 ---
-title: "Mac コンピューターにクライアント ソフトウェアを展開するための準備 | Microsoft ドキュメント"
-description: "Configuration Manager クライアントを Mac コンピューターに展開する前の構成タスク。"
+title: Preparare la distribuzione del software client in computer Mac | Microsoft Docs
+description: "Attività di configurazione che precedono la distribuzione del client di Configuration Manager in computer Mac."
 ms.custom: na
 ms.date: 05/04/2017
 ms.prod: configuration-manager
@@ -17,20 +17,20 @@ manager: angrobe
 ms.openlocfilehash: b3bb72f81812705b4654e268025074402e89a7cb
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="prepare-to-deploy-client-software-to-macs"></a>Mac コンピューターにクライアント ソフトウェアを展開するための準備
+# <a name="prepare-to-deploy-client-software-to-macs"></a>Preparare la distribuzione del software client in computer Mac
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-[Configuration Manager クライアントを Mac コンピューターに展開](/sccm/core/clients/deploy/deploy-clients-to-macs)する準備ができていることを確認するには、以下の手順に従ってください。 
+Seguire questa procedura per assicurarsi di essere pronti a [distribuire il client di Configuration Manager in computer Mac](/sccm/core/clients/deploy/deploy-clients-to-macs). 
 
-## <a name="mac-prerequisites"></a>Mac の前提条件
+## <a name="mac-prerequisites"></a>Prerequisiti Mac
 
-Configuration Manager メディアでは、Mac クライアント インストール パッケージは提供されません。 [Microsoft ダウンロード センター](http://go.microsoft.com/fwlink/?LinkID=525184)から、**追加のオペレーティング システム用のクライアント**をダウンロードします。  
+Il pacchetto di installazione del client per Mac non viene fornito con i supporti di Configuration Manager. Scaricare i **client per altri sistemi operativi** dall'[Area download Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184).  
 
-**サポートされるバージョン:**  
+**Versioni supportate:**  
 
 -   **Mac OS X 10.6** (Snow Leopard) 
 
@@ -48,146 +48,146 @@ Configuration Manager メディアでは、Mac クライアント インスト�
 
 -   **Mac OS X 10.12** (macOS Sierra)  
 
-## <a name="certificate-requirements"></a>証明書の要件
-Mac コンピューターにクライアントをインストールして管理するには、公開キー基盤 (PKI) 証明書が必要です。 PKI 証明書は、相互認証と暗号化データ転送を使用して、Mac コンピューターと Configuration Manager サイト間の通信を保護します。 Configuration Manager では、Microsoft 証明書サービスを使用して、エンタープライズ証明機関 (CA) と、Configuration Manager 登録ポイントおよび登録プロキシ ポイント サイト システムの役割に、ユーザー クライアント証明書を要求してインストールできます。 または、証明書が Configuration Manager の要件を満たしている場合、Configuration Manager とは独立して、コンピューター証明書を要求してインストールできます。   
+## <a name="certificate-requirements"></a>Requisiti del certificato
+Per installare e gestire i client per computer Mac sono necessari i certificati di infrastruttura a chiave pubblica (PKI). I certificati PKI proteggono la comunicazione tra i computer Mac e il sito di Configuration Manager usando l'autenticazione manuale e i trasferimenti di dati crittografati. Configuration Manager può chiedere e installare un certificato client utente usando i Servizi certificati Microsoft con un'autorità di certificazione dell'organizzazione (CA) e il punto di registrazione di Configuration Manager e i ruoli del sistema del sito del punto proxy di registrazione. In alternativa, è possibile richiedere e installare un certificato del computer indipendentemente da Configuration Manager se il certificato soddisfa i requisiti per Configuration Manager.   
   
-Configuration Manager の Mac クライアントは常に証明書失効確認を実行します。 この機能を無効にすることはできません。  
+I client Mac di Configuration Manager eseguono sempre il controllo della revoca del certificato. Questa funzione non può essere disabilitata.  
   
-Mac クライアントで、CRL の場所を特定できないことが原因でサーバー証明書の証明書失効ステータスを確認できない場合、クライアントは Configuration Manager サイト システムに正常に接続できなくなります。 特に、Mac クライアントが発行側の証明機関とは別のフォレストにある場合、CRL の設計を確認して、サイト システム サーバーに接続するために、Mac クライアントが CRL 配布ポイント (CDP) の場所を特定し、接続できるようにしてください。  
+Se i client Mac non riescono a confermare lo stato di revoca del certificato per un certificato del server poiché non riescono a individuare il CRL, non potranno connettersi ai sistemi del sito di Configuration Manager. Per i client Mac che si trovano in una foresta diversa rispetto a quella dell'autorità di certificazione emittente, controllare la struttura del CRL per verificare che i client Mac siano in grado di individuare e connettersi a un punto di distribuzione dell'elenco di revoche di certificati (CDP) per la connessione dei server del sistema del sito.  
 
-Mac コンピューターに構成マネージャー クライアントをインストールする前に、クライアント証明書をインストールする方法を決定します。  
+Prima di installare il client di Configuration Manager in un computer Mac, stabilire come installare il certificato client:  
 
--   [CMEnroll ツール](/sccm/core/clients/deploy/deploy-clients-to-macs#install-the-client-and-then-enroll-the-client-certificate-on-the-mac) を使用して Configuration Manager 登録を使用する。 登録プロセスでは自動証明書更新がサポートされていないため、インストールされている証明書が期限切れになる前に、Mac コンピューターを再登録する必要があります。  
+-   Usare la registrazione di Configuration Manager tramite lo [strumento CMEnroll](/sccm/core/clients/deploy/deploy-clients-to-macs#install-the-client-and-then-enroll-the-client-certificate-on-the-mac). Il processo di registrazione non supporta il rinnovo automatico del certificato, di conseguenza è necessario registrare nuovamente i computer Mac prima della scadenza del certificato installato.  
 
--   [Configuration Manager とは独立した証明書の要求とインストールの方法を使用する](/sccm/core/clients/deploy/deploy-clients-to-macs#use-a-certificate-request-and-installation-method-that-is-independent-from-configuration-manager)。  
+-   [Usare una richiesta di certificato e un metodo di installazione indipendente da Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-macs#use-a-certificate-request-and-installation-method-that-is-independent-from-configuration-manager).  
 
-Mac クライアントの証明書の要件と、Mac コンピューターのサポートに必要なその他の PKI 証明書の詳細については、「[System Center Configuration Manager での PKI 証明書の要件](../../../core/plan-design/network/pki-certificate-requirements.md)」をご覧ください。  
+Per altre informazioni sui requisiti del certificato del client Mac e altri certificati PKI necessari per supportare i computer Mac, vedere [PKI certificate requirements for System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md) (Requisiti dei certificati PKI per System Center Configuration Manager).  
 
-Mac クライアントは、クライアントを管理する Configuration Manager サイトに自動的に割り当てられます。 Mac クライアントは、通信がイントラネットに制限されている場合でも、インターネット専用クライアントとしてインストールされます。 割り当てられているサイトのサイト システムの役割 (管理ポイントおよび配布ポイント) がインターネットからのクライアント接続を許可するように構成されている場合に、それらのサイト システムと通信します。 Mac コンピューターは、割り当てられたサイト以外のサイト システムの役割と通信しません。  
+I client Mac vengono assegnati automaticamente al sito di Configuration Manager che li gestisce. I client Mac vengono installati come client solo Internet, anche se la comunicazione è limitata alla rete Intranet. In base a questa configurazione client, le comunicazioni avverranno con i ruoli del sistema del sito (punti di gestione e punti di distribuzione) nel sito assegnato quando questi ruoli del sistema del sito vengono configurati per consentire le connessioni client dalla rete Internet. I computer Mac non comunicano con i ruoli del sistema del sito al di fuori del sito assegnato.  
 
 > [!IMPORTANT]  
->  Configuration Manager の Mac クライアントを使用して、[データベース レプリカ](../../../core/servers/deploy/configure/database-replicas-for-management-points.md)を使用するように構成されている管理ポイントに接続することはできません。  
+>  Il client Mac di Configuration Manager non può essere usato per connettersi a un punto di gestione configurato per usare una [replica di database](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
 
-## <a name="deploy-a-web-server-certificate-to-site-system-servers"></a>Web サーバー証明書をサイト システム サーバーに展開する  
-これらのサイト システムに証明書がない場合は、次のサイト システムの役割があるコンピューターに Web サーバー証明書を展開します。  
+## <a name="deploy-a-web-server-certificate-to-site-system-servers"></a>Distribuire un certificato server Web nei server di sistema del sito  
+Se i sistemi del sito non hanno un certificato server Web, distribuirlo nei computer con questi ruoli del sistema del sito:  
 
--   管理ポイント  
+-   Punto di gestione  
 
--   配布ポイント  
+-   Punto di distribuzione  
 
--   登録ポイント  
+-   Punto di registrazione  
 
--   登録プロキシ ポイント  
+-   Punto proxy di registrazione  
 
-Web サーバー証明書には、サイト システム プロパティで指定されるインターネット FQDN が含まれていなければなりません。 サーバーはインターネットからアクセスできない場合でも Mac コンピューターをサポートできます。 インターネットベースのクライアント管理が不要な場合、インターネット FQDN にイントラネット FQDN 値を指定できます。  
+Il certificato del server Web deve contenere l'FQDN Internet specificato nelle proprietà del sistema del sito. Il server non deve essere accessibile da Internet per supportare i computer Mac. Se non è richiesta la gestione client basata su Internet, è possibile specificare il valore FQDN intranet per FQDN Internet.  
 
-管理ポイント、配布ポイント、および登録プロキシ ポイントの Web サーバー証明書に、サイト システムのインターネット FQDN 値を指定します。 
+Specificare il valore FQDN Internet del sistema del sito nel certificato server Web per il punto di gestione, il punto di distribuzione e il punto proxy di registrazione. 
 
-この Web サーバー証明書を作成してインストールする展開の例については、「[IIS を実行するサイト システム用の Web サーバー証明書の展開](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_webserver2008_cm2012)」をご覧ください。  
+Per una distribuzione di esempio che crea e installa questo certificato server Web, vedere [Deploying the Web Server Certificate for Site Systems that Run IIS](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_webserver2008_cm2012) (Distribuire il certificato del server Web per sistemi del sito che eseguono IIS).  
 
 
-## <a name="deploy-a-client-authentication-certificate-to-site-system-servers"></a>クライアント認証証明書をサイト システム サーバーに展開する  
- これらのサイト システムに証明書がない場合は、クライアント認証証明書を、次のサイト システムの役割をホストするコンピューターに展開します。  
+## <a name="deploy-a-client-authentication-certificate-to-site-system-servers"></a>Distribuire un certificato di autenticazione client nei server di sistema del sito  
+ Se i sistemi del sito non hanno un certificato di autenticazione client, distribuirlo nei computer con questi ruoli del sistema del sito:  
 
--   管理ポイント  
+-   Punto di gestione  
 
--   配布ポイント  
+-   Punto di distribuzione  
 
- 管理ポイントのクライアント証明書を作成してインストールする展開の例については、「[Windows コンピューター用のクライアント証明書の展開](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_client2008_cm2012)」をご覧ください。  
+ Per una distribuzione di esempio che crea e installa il certificato client per i punti di gestione, vedere [Deploying the Client Certificate for Windows Computers](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_client2008_cm2012) (Distribuzione del certificato client per computer Windows)  
 
- 配布ポイントのクライアント証明書を作成してインストールする展開の例については、「[配布ポイント用のクライアント証明書の展開](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_clientdistributionpoint2008_cm2012)」をご覧ください。  
+ Per una distribuzione di esempio che crea e installa il certificato client per i punti di gestione, vedere [Deploying the Client Certificate for Distribution Points](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_clientdistributionpoint2008_cm2012) (Distribuzione del certificato client per punti di distribuzione).  
 
 >[!IMPORTANT]
->  Mac OS Sierra を実行しているデバイスにクライアントを展開するには、管理ポイント証明書のサブジェクト名を正しく構成する必要があります。たとえば、管理ポイント サーバーの FQDN を指定します。
+>  Per distribuire il client in dispositivi che eseguono macOS Sierra, il nome soggetto del certificato del punto di gestione deve essere configurato correttamente, ad esempio usando il nome FQDN del server del punto di gestione.
 
-## <a name="prepare-the-client-certificate-template-for-macs"></a>Mac 用のクライアント証明書テンプレートを準備する  
+## <a name="prepare-the-client-certificate-template-for-macs"></a>Preparare il modello di certificato client per i computer Mac  
 
- 証明書テンプレートには、Mac コンピューターに証明書を登録するユーザー アカウントに対する **読み取り** と **登録** の権限が必要です。  
+ Il modello di certificato deve disporre delle autorizzazioni di **lettura** e **registrazione** per l'account utente che registrerà il certificato nel computer Mac.  
 
- 「[Mac コンピューター用のクライアント証明書の展開](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_MacClient_SP1)」をご覧ください。  
+ Vedere [Deploying the Client Certificate for Mac Computers](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_MacClient_SP1) (Distribuzione del certificato client per computer Mac).  
 
-## <a name="configure-the-management-point-and-distribution-point"></a>管理ポイントおよび配布ポイントを構成する  
- 次のオプションを指定して、管理ポイントを構成します。  
+## <a name="configure-the-management-point-and-distribution-point"></a>Configurare il punto di gestione e il punto di distribuzione  
+ Configurare i punti di gestione per le seguenti opzioni:  
 
 -   HTTPS  
 
--   インターネットからのクライアント接続を許可する。 この構成値は、Mac コンピューターの管理に必要です。 ただし、インターネットからサイト システム サーバーにアクセスする必要があるということではありません。  
+-   Consentire le connessioni client da Internet. Questo valore di configurazione è necessario per gestire computer Mac. Tuttavia, non significa che i server del sistema del sito devono essere accessibile da Internet.  
 
--   モバイル デバイスおよび Mac コンピューターでこの管理ポイントを使用できるようにする  
+-   Consenti ai dispositivi mobili e ai computer Mac l'utilizzo del punto di gestione  
 
- クライアントのインストールに配布ポイントは必要ありませんが、クライアントをインストールした後で、これらのコンピューターにソフトウェアを展開する場合は、インターネットからのクライアント接続を許可するように配布ポイントを構成する必要があります。  
+ Nonostante i punti di distribuzione non siano necessari per l'installazione del client, è necessario configurarli per consentire le connessioni client da Internet se si vuole distribuire il software in questi computer dopo aver installato il client.  
 
  
-### <a name="to-configure-management-points-and-distribution-points-to-support-macs"></a>管理ポイントと配布ポイントで Mac のサポートを構成するには  
+### <a name="to-configure-management-points-and-distribution-points-to-support-macs"></a>Per configurare i punti di gestione e i punti di distribuzione per supportare i computer Mac  
 
-この手順を開始する前に、管理ポイントおよび配布ポイントを実行するサイト システム サーバーがインターネット FQDN を指定して構成されていることを確認してください。 このようなサーバーがインターネットベースのクライアント管理をサポートしない場合、インターネット FQDN 値としてイントラネット FQDN を指定できます。 
+Prima di iniziare questa procedura, assicurarsi che il server del sistema del sito su cui sono in esecuzione il punto di gestione e di distribuzione siano configurati con un FQDN Internet. Se questi server non supportano la gestione client basata su Internet, è possibile specificare il valore FQDN Intranet come valore FQDN Internet. 
 
-これらのサイト システムの役割はプライマリ サイト内にある必要があります。  
+Questi ruoli del sistema del sito devono trovarsi in un sito primario.  
 
 
-1.  Configuration Manager コンソールで、**[管理]** > **[サイトの構成]** > **[サーバーとサイト システムの役割]** の順に選択し、適切なサイト システムの役割があるサーバーを選択します。  
+1.  Nella console di Configuration Manager selezionare **Amministrazione** > **Configurazione del sito** > **Server e ruoli del sistema del sito** e scegliere il server con i ruoli del sistema del sito corretti.  
 
-3.  詳細ウィンドウで、**[管理ポイント]** を右クリックし、**[役割のプロパティ]** を選択して、**[管理ポイントのプロパティ]** ダイアログ ボックスで次のオプションを構成します。  
+3.  Nel riquadro dei dettagli fare clic con il pulsante destro del mouse su **Punto di gestione**, scegliere **Proprietà ruolo** e configurare le opzioni seguenti nella finestra di dialogo **Proprietà punto di gestione**:  
 
-    1.  **[HTTPS]** を選択します。  
+    1.  Scegliere **HTTPS**.  
 
-    2.  **[インターネットのみのクライアント接続を許可する]** または **[イントラネットとインターネット両方のクライアント接続を許可する]** を選択します。 これらのオプションには、インターネットまたはイントラネット FQDN が必要です。  
+    2.  Selezionare **Consenti solo connessione client Internet** o **Consenti connessione client Internet e Intranet**. Per queste opzioni è necessario un valore FQDN Internet o Intranet.  
 
-    3.  **[モバイル デバイスおよび Mac コンピューターでこの管理ポイントを使用できるようにする]** を選択します。  
+    3.  Selezionare **Consenti ai dispositivi mobili e ai computer Mac l'utilizzo del punto di gestione**.  
 
-4.  詳細ウィンドウで、**[配布ポイント]** を右クリックし、**[役割のプロパティ]** をクリックして、**[配布ポイントのプロパティ]** ダイアログ ボックスで次のオプションを構成します。  
+4.  Nel riquadro dei dettagli fare clic con il pulsante destro del mouse su **Punto di distribuzione**, scegliere **Proprietà ruolo** e configurare le opzioni seguenti nella finestra di dialogo **Proprietà punto di distribuzione**:  
 
-    -   **[HTTPS]** を選択します。  
+    -   Scegliere **HTTPS**.  
 
-    -   **[インターネットのみのクライアント接続を許可する]** または **[イントラネットとインターネット両方のクライアント接続を許可する]** を選択します。 これらのオプションには、インターネットまたはイントラネット FQDN が必要です。  
+    -   Selezionare **Consenti solo connessione client Internet** o **Consenti connessione client Internet e Intranet**. Per queste opzioni è necessario un valore FQDN Internet o Intranet.  
 
-    -   **[証明書をインポートする]** を選択し、エクスポートされているクライアント配布ポイント証明書ファイルを参照して、パスワードを指定します。  
+    -   Fare clic su **Importa certificato**, selezionare il file del certificato del punto di distribuzione client esportato e specificare la password.  
 
-5.  Mac で使用するプライマリ サイトのすべての管理ポイントと配布ポイントについて、手順 2 ～ 4 を繰り返します。  
+5.  Ripetere i passaggi da 2 a 4 per tutti i punti di gestione e i punti di distribuzione dei siti primari che verranno usati con i computer Mac.  
 
-## <a name="configure-the-enrollment-proxy-point-and-the-enrollment-point"></a>登録プロキシ ポイントおよび登録ポイントを構成する  
- これらのサイト システムの役割は同じサイトにインストールする必要がありますが、同じサイト システム サーバーや同じ Active Directory フォレストにインストールする必要はありません。  
+## <a name="configure-the-enrollment-proxy-point-and-the-enrollment-point"></a>Configurare il punto proxy di registrazione e il punto di registrazione  
+ È necessario installare entrambi questi ruoli del sistema del sito nello stesso sito, ma non occorre installarli nello stesso server del sistema del sito o nella stessa foresta Active Directory.  
 
- サイト システムの役割の配置と考慮事項について詳しくは、「[System Center Configuration Manager のサイト システム サーバーとサイト システムの役割の計画](../../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md)」の「[サイト システムの役割](../../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md#bkmk_planroles)」をご覧ください。  
+ Per altre informazioni sul posizionamento del ruolo del sistema del sito e relative considerazioni, vedere [Site system roles](../../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md#bkmk_planroles) (Ruoli del sistema del sito) in [Plan for site system servers and site system roles for System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md) (Pianificare i server e i ruoli del sistema del sito per System Center Configuration Manager).  
 
- これらの手順では、サイト システム サーバーで Mac コンピューターのサポートを構成します。   
+ Queste procedure consentono di configurare i ruoli del sistema del sito per supportare i computer Mac.   
 
--   [新しいサイト システム サーバー](#new-site-system-server)  
+-   [Nuovo server di sistema del sito](#new-site-system-server)  
 
--   [既存のサイト システム サーバー](#existing-site-system-server)  
+-   [Server di sistema del sito esistente](#existing-site-system-server)  
 
-###  <a name="new-site-system-server"></a>(新しいサイト システム サーバーの場合)  
+###  <a name="new-site-system-server"></a>nuovo server del sistema del sito  
 
-1.  Configuration Manager コンソールで、**[管理]** >  **[サイトの構成]** > **[サーバーとサイト システムの役割]** の順に選択します。  
+1.  Nella console di Configuration Manager selezionare **Amministrazione** >  **Configurazione del sito** > **Server e ruoli del sistema del sito**  
 
-3.  **[ホーム]** タブの **[作成]** グループで、**[サイト システム サーバーの作成]** を選択します。  
+3.  Nella scheda **Home**, nel gruppo **Crea**, selezionare **Crea server di sistema sito**.  
 
-4.  **[全般]** ページで、サイト システムの全般設定を指定します。  インターネット FQDN に値が指定されていることを確認します。 サーバーにインターネットからアクセスできない場合は、イントラネット FQDN を使用します。  
+4.  Nella pagina **Generale** specificare le impostazioni generali per il sistema del sito.  Assicurarsi di aver specificato un valore FQDN Internet. Se il server non è accessibile da Internet, usare il valore FQDN Intranet.  
 
-5.  **[システムの役割の選択]** ページの利用可能な役割の一覧で、**[登録プロキシ ポイント]** および **[登録ポイント]** を選択します。  
+5.  Nella pagina **Selezione ruolo del sistema** selezionare **Punto proxy di registrazione** e **Punto di registrazione** dall'elenco dei ruoli disponibili.  
 
-6.  **[登録プロキシ ポイント]** ページで、設定を確認し、必要な変更を加えます。  
+6.  Nella pagina **Punto proxy di registrazione** rivedere le impostazioni e apportare eventuali modifiche necessarie.  
 
-7.  **[登録ポイントの設定]** ページで、設定を確認し、必要な変更を加えます。 その後、ウィザードを完了します。  
+7.  Nella pagina **Enrollment Point Settings** (Impostazioni punto di registrazione) rivedere le impostazioni e apportare eventuali modifiche necessarie. Completare la procedura guidata.  
 
-### <a name="existing-site-system-server"></a>既存のサイト システム サーバー  
+### <a name="existing-site-system-server"></a>server del sistema del sito esistente  
 
-1.  Configuration Manager コンソールで、**[管理]** >  **[サイトの構成]** > **[サーバーとサイト システムの役割]** の順に選択し、Mac のサポートに使用するサーバーを選択します。  
+1.  Nella console di Configuration Manager selezionare **Amministrazione** >  **Configurazione del sito** > **Server e ruoli del sistema del sito** e scegliere il server che si vuole usare per supportare i computer Mac.  
 
-3.  **[ホーム]** タブの **[作成]** グループで、**[サイト システムの役割の追加]** を選択します。  
+3.  Nella scheda **Home**, nel gruppo **Crea**, selezionare **Aggiungi ruoli del sistema del sito**.  
 
-4.  **[全般]** ページで、サイト システムの全般設定を指定し、 **[次へ]**をクリックします。 インターネット FQDN に値が指定されていることを確認します。 サーバーにインターネットからアクセスできない場合は、イントラネット FQDN を使用します。   
+4.  Nella pagina **Generale** specificare le impostazioni generali per il sistema del sito e quindi fare clic su **Avanti**. Assicurarsi di aver specificato un valore FQDN Internet. Se il server non è accessibile da Internet, usare il valore FQDN Intranet.   
 
-5.  **[システムの役割の選択]** ページの利用可能な役割の一覧で、**[登録プロキシ ポイント]** および **[登録ポイント]** を選択します。  
+5.  Nella pagina **Selezione ruolo del sistema** scegliere **Punto proxy di registrazione** e **Punto di registrazione** dall'elenco dei ruoli disponibili.  
 
-6.  **[登録プロキシ ポイント]** ページで、設定を確認し、必要な変更を加えます。  
+6.  Nella pagina **Punto proxy di registrazione** rivedere le impostazioni e apportare eventuali modifiche necessarie.  
 
-7.  **[登録ポイントの設定]** ページで、設定を確認し、必要な変更を加えます。 その後、ウィザードを完了します。  
+7.  Nella pagina **Enrollment Point Settings** (Impostazioni punto di registrazione) rivedere le impostazioni e apportare eventuali modifiche necessarie. Completare la procedura guidata.  
 
-## <a name="install-the-reporting-services-point"></a>レポート サービス ポイントをインストールする  
- Mac のレポートを実行する場合は、[レポート サービス ポイントをインストール](../../../core/servers/manage/configuring-reporting.md)します。  
+## <a name="install-the-reporting-services-point"></a>Installare il punto di Reporting Services  
+ [Installare il punto di Reporting Services](../../../core/servers/manage/configuring-reporting.md) se si vuole eseguire report per i computer Mac.  
 
-### <a name="next-steps"></a>次のステップ
+### <a name="next-steps"></a>Passaggi successivi
 
-[Configuration Manager クライアントを Mac コンピューターに展開する](/sccm/core/clients/deploy/deploy-clients-to-macs)。  
+[Distribuire il client di Configuration Manager in computer Mac](/sccm/core/clients/deploy/deploy-clients-to-macs).  

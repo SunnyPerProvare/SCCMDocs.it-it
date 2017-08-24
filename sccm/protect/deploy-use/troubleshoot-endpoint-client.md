@@ -1,6 +1,6 @@
 ---
-title: "Windows Defender または Endpoint Protection クライアントのトラブルシューティング | Microsoft Docs"
-description: "Windows Defender および Endpoint Protection の問題をトラブルシューティングする方法について説明します。"
+title: Risoluzione dei problemi di Windows Defender o del client Endpoint Protection | Microsoft Docs
+description: Informazioni su come risolvere i problemi con Windows Defender ed Endpoint Protection.
 ms.custom: na
 ms.date: 01/03/2017
 ms.prod: configuration-manager
@@ -18,301 +18,301 @@ manager: angrobe
 ms.openlocfilehash: 1b096e71f5131214fb4e235e84d0b7f63e566831
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="troubleshooting-windows-defender-or-endpoint-protection-client"></a>Windows Defender または Endpoint Protection クライアントのトラブルシューティング
+# <a name="troubleshooting-windows-defender-or-endpoint-protection-client"></a>Risoluzione dei problemi di Windows Defender o del client Endpoint Protection
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-Windows Defender または Endpoint Protection で問題が発生した場合は、サポートについて組織のセキュリティ管理者に問い合わせてください。 また、次の問題のトラブルシューティングを試すこともできます。  
+Se si verificano problemi con Windows Defender o Endpoint Protection, chiedere assistenza all'amministratore della protezione. È anche possibile provare a risolvere i problemi seguenti:  
 
--   [Windows Defender または Endpoint Protection の更新](#update-windows-defender-or-endpoint-protection)  
--   [Windows Defender または Endpoint Protection サービスの開始](#starting-windows-defender-or-endpoint-protection-service)  
--   [インターネット接続の問題](#internet-connection-issues)  
--   [検出された脅威を修復できない](#detected-threat-cant-be-remediated)  
--   [Endpoint Protection クライアントのインストール](#install-the-endpoint-protection-client)  
+-   [Aggiornamento di Windows Defender o Endpoint Protection](#update-windows-defender-or-endpoint-protection)  
+-   [Avvio del servizio di Windows Defender o Endpoint Protection](#starting-windows-defender-or-endpoint-protection-service)  
+-   [Problemi di connessione a Internet](#internet-connection-issues)  
+-   [Minaccia rilevata che non è possibile correggere](#detected-threat-cant-be-remediated)  
+-   [Installazione del client Endpoint Protection](#install-the-endpoint-protection-client)  
 
-##  <a name="update-windows-defender-or-endpoint-protection"></a>Windows Defender または Endpoint Protection の更新  
- Windows Defender または Endpoint Protection は、ウイルスおよびスパイウェアの定義を最新の状態に維持するために、自動的に Microsoft Update と連携して動作します。  
+##  <a name="update-windows-defender-or-endpoint-protection"></a>Aggiornamento di Windows Defender o Endpoint Protection  
+ Windows Defender o Endpoint Protection interagisce automaticamente con Microsoft Update garantendo in tal modo che le definizioni di virus e spyware siano sempre aggiornate.  
 
- **現象**  
+ **Sintomi**  
 
- この資料では、次のケースも含め、自動更新に関するよくある問題を扱います。  
+ Questo articolo illustra i problemi più comuni relativi agli aggiornamenti automatici, incluse le situazioni seguenti:  
 
--   更新が失敗したというエラー メッセージが表示される。  
+-   Vengono visualizzati messaggi di errore per indicare che gli aggiornamenti non sono riusciti.  
 
--   更新プログラムを確認するときに、ウイルスおよびスパイウェア定義の更新を確認、ダウンロード、またはインストールできないというエラー メッセージが表示される。  
+-   Durante la verifica della disponibilità degli aggiornamenti viene visualizzato un messaggio di errore in cui si informa che non è possibile verificare, scaricare o installare gli aggiornamenti delle definizioni di virus e spyware.  
 
--   インターネットに接続しているのに、更新に失敗する。  
+-   Gli aggiornamenti non riescono anche se si è connessi a Internet.  
 
--   更新プログラムがスケジュールどおりに自動的にインストールされない。  
+-   Gli aggiornamenti non vengono installati automaticamente come pianificato.  
 
- **原因**  
+ **Causa**  
 
- 更新に関する問題の最も一般的な原因は、インターネット接続の問題です。 ただし、他の Web サイトを閲覧できるのでインターネットには接続されているという場合は、Windows Internet Explorer で設定が競合して問題を起こしている可能性があります。  
+ Le cause più comuni dei problemi di aggiornamento sono correlate a problemi di connettività Internet. Se però si sa di essere connessi a Internet perché si riesce a esplorare altri siti Web, il problema potrebbe dipendere da conflitti nelle impostazioni di Windows Internet Explorer.  
 
 > [!IMPORTANT]  
->  以下の手順を実行するには、Internet Explorer を終了する必要があります。 そのため、手順を印刷するか、書き留めるか、または別のファイルにコピーしてください。また、後でアクセスできるようにこのトピックをお気に入りに登録してください。  
+>  Per completare questa procedura, è necessario chiudere Internet Explorer. Di conseguenza, stampare o annotare queste istruzioni oppure copiarle in un altro file e quindi aggiungere un segnalibro a questo argomento per potervi accedere in seguito.  
 
-### <a name="step-1-reset-your-internet-explorer-settings"></a>手順 1: Internet Explorer の設定をリセットする  
+### <a name="step-1-reset-your-internet-explorer-settings"></a>Passaggio 1: reimpostare le impostazioni di Internet Explorer  
 
-1.  Internet Explorer を含め、開いているすべてのプログラムを終了します。  
+1.  Chiudere tutti i programmi aperti, incluso Internet Explorer.  
 
     > [!NOTE]  
-    >  Internet Explorer でこれらの設定をリセットすると、一時ファイル、Cookie、閲覧履歴、オンライン パスワードが削除されます。 お気に入りは削除されません。  
+    >  La reimpostazione di Internet Explorer implica l'eliminazione dei file temporanei, dei cookie, della cronologia di esplorazione e delle password online, ma non dei Preferiti.  
 
-2.  **[スタート]** をクリックし、 **inetcpl.cpl**を検索して、 **Enter**キーを押します。  
+2.  Fare clic su **Start** , cercare **inetcpl.cpl**e quindi premere **INVIO**.  
 
-3.  **[インターネット オプション]** ダイアログ ボックスで、 **[詳細設定]** タブをクリックします。  
+3.  Nella finestra di dialogo **Opzioni Internet** fare clic sulla scheda **Avanzate** .  
 
-4.  **[Internet Explorer の設定をリセット]**の下の **[リセット]**をクリックし、もう一度 **[リセット]** をクリックします。  
+4.  In **Reimposta Internet Explorer**fare clic su **Reimposta**e quindi di nuovo su **Reimposta** .  
 
-5.  Internet Explorer の設定のリセットが完了するまで待ってから、 **[OK]**をクリックします。  
+5.  Attendere che Internet Explorer completi la reimpostazione, quindi fare clic su **OK**.  
 
-6.  Internet Explorer を開きます。  
+6.  Aprire Internet Explorer.  
 
-7.  Microsoft Security Essentials を開き、 **[更新]** タブをクリックし、 **[更新]**をクリックします。  
+7.  Aprire Microsoft Security Essentials, fare clic sulla scheda **Aggiornamento** e quindi su **Aggiorna**.  
 
-8.  問題が解決しない場合は、次の手順に進みます。  
+8.  Se il problema persiste, procedere con il passaggio successivo.  
 
-### <a name="step-2-set-internet-explorer-as-the-default-browser"></a>手順 2: Internet Explorer を既定のブラウザーとして設定する  
+### <a name="step-2-set-internet-explorer-as-the-default-browser"></a>Passaggio 2: impostare Internet Explorer come browser predefinito  
 
-1.  Internet Explorer を含め、開いているすべてのプログラムを終了します。  
+1.  Chiudere tutti i programmi aperti, incluso Internet Explorer.  
 
-2.  **[スタート]** をクリックし、 **inetcpl.cpl**を検索して、 **Enter**キーを押します。  
+2.  Fare clic su **Start** , cercare **inetcpl.cpl**e quindi premere **INVIO**.  
 
-3.  **[インターネット オプション]** ダイアログ ボックスで、 **[プログラム]** タブをクリックします。  
+3.  Nella finestra di dialogo **Opzioni Internet** fare clic sulla scheda **Programmi** .  
 
-4.  **[既定の Web ブラウザー]**の下の **[既定に設定する]**をクリックします。  
+4.  In **Browser predefinito**fare clic su **Predefinito**.  
 
-5.  **[OK]**をクリックします。  
+5.  Fare clic su **OK**.  
 
-6.  Windows Defender または Endpoint Protection を開きます。 **[更新]** タブをクリックして、 **[更新]**をクリックします。  
+6.  Aprire Windows Defender o Endpoint Protection. Fare clic sulla scheda **Aggiornamento** e quindi su **Aggiorna**.  
 
-7.  問題が解決しない場合は、次の手順に進みます。  
+7.  Se il problema persiste, procedere con il passaggio successivo.  
 
-### <a name="step-3-ensure-that-the-date-and-time-are-set-correctly-on-your-computer"></a>手順 3: コンピューターの日付と時刻が正しく設定されていることを確認する  
+### <a name="step-3-ensure-that-the-date-and-time-are-set-correctly-on-your-computer"></a>Passaggio 3: verificare che data e ora siano impostate correttamente nel computer  
 
-1.  Windows Defender または Endpoint Protection を開きます。  
+1.  Aprire Windows Defender o Endpoint Protection.  
 
-2.  受け取ったエラー メッセージにコード 0x80072f8f が含まれている場合、問題の原因はおそらく、コンピューターに設定されている日付と時刻が不正確なことです。  
+2.  Se il messaggio di errore visualizzato contiene il codice 0x80072f8f, è molto probabile che il problema dipenda dall'impostazione errata della data o dell'ora nel computer.  
 
-3.  コンピューターの日付と時刻の設定を再設定するには、「 [診断ツール Fix it : デスクトップ アイコンが動かないなど一般的なシステムの問題](http://go.microsoft.com/fwlink/?LinkId=155579) (http://go.microsoft.com/fwlink/?LinkId=155579)」にある手順を実行してください。  
+3.  Per reimpostare data e ora del computer, eseguire la procedura per [correggere collegamenti sul desktop interrotti ed eseguire attività comuni di manutenzione del sistema](http://go.microsoft.com/fwlink/?LinkId=155579) (http://go.microsoft.com/fwlink/?LinkId=155579).  
 
-### <a name="step-4-rename-the-software-distribution-folder-on-your-computer"></a>手順 4: コンピューターにあるソフトウェア配布フォルダーの名前を変更する  
+### <a name="step-4-rename-the-software-distribution-folder-on-your-computer"></a>Passaggio 4: rinominare la cartella SoftwareDistribution nel computer  
 
-1. 自動更新サービスを停止します。  
+1. Arrestare il servizio Aggiornamenti automatici nel modo seguente:  
 
-    1.  **[スタート]** をクリックし、 **services.msc**を検索して、 **[OK]**をクリックします。  
+    1.  Fare clic su **Start** , cercare **services.msc**e quindi fare clic su **OK**.  
 
-    2.  **[自動更新サービス]**を右クリックし、 **[停止**] をクリックします。  
+    2.  Fare clic con il pulsante destro del mouse sul servizio **Aggiornamenti automatici**, quindi scegliere **Arresta**.  
 
-    3.  [サービス] スナップインを最小化します。  
+    3.  Ridurre a icona lo snap-in Servizi.  
 
-2.  **SoftwareDistribution** ディレクトリの名前を、次のようにして変更します。  
+2.  Rinominare la directory **SoftwareDistribution** nel modo seguente:  
 
-    1.  **[スタート]** をクリックし、  **cmd**を検索して、 **[OK]**をクリックします。  
+    1.  Fare clic su **Start** , cercare  **cmd**e quindi fare clic su **OK**.  
 
-    2.  「 **cd %windir%**」と入力し、 **Enter**キーを押します。  
+    2.  Digitare **cd %windir%**e quindi premere **INVIO**.  
 
-    3.  「 **ren SoftwareDistribution SDTemp**」と入力し、 **Enter**キーを押します。  
+    3.  Digitare **ren SoftwareDistribution SDTemp**e quindi premere **INVIO**.  
 
-    4.  「 **exit**」と入力し、 **Enter**キーを押します。  
+    4.  Digitare **exit**e quindi premere **INVIO**.  
 
-3.  次のようにして、自動更新サービスを開始します。  
+3.  Avviare il servizio Aggiornamenti automatici nel modo seguente:  
 
-    1.  [サービス] スナップインを最大化します。  
+    1.  Ingrandire lo snap-in Servizi.  
 
-    2.  **[自動更新サービス]**を右クリックし、 **[開始]**をクリックします。  
+    2.  Fare clic con il pulsante destro del mouse sul servizio **Aggiornamenti automatici**, quindi scegliere **Avvia**.  
 
-    3.  [サービス] スナップイン ウィンドウを閉じます。  
+    3.  Chiudere la finestra dello snap-in Servizi.  
 
-### <a name="step-5-reset-the-microsoft-antivirus-update-engine-on-your-computer"></a>手順 5: コンピューターの Microsoft ウイルス対策更新エンジンをリセットする  
+### <a name="step-5-reset-the-microsoft-antivirus-update-engine-on-your-computer"></a>Passaggio 5: reimpostare il motore di aggiornamento dell'antivirus Microsoft nel computer  
 
-1.  **[スタート]** をクリックし、  **cmd**を検索して **[OK]**をクリックした後、 **[コマンド プロンプト]**を右クリックし、 **[管理者として実行]**を選びます。  
+1.  Fare clic su **Start** , cercare  **cmd**, fare clic su **OK**e quindi fare clic con il pulsante destro del mouse su **Prompt dei comandi**e scegliere **Esegui come amministratore**.  
 
-2.  **[コマンド プロンプト]** ウィンドウに次のコマンドを入力し、各コマンドを入力した後に **Enter** キーを押します。  
+2.  Nella finestra **Prompt dei comandi** digitare i comandi seguenti e premere **INVIO** dopo ogni comando:  
 
      **Cd\\**  
 
-     **Cd program files\windows defender**  
+     **Cd programmi\windows defender**  
 
      **Mpcmdrun -RemoveDefinitions -all**  
 
-     **終了**  
+     **File**  
 
-3.  コンピューターを再起動する  
+3.  Riavviare il computer.  
 
-4.  Windows Defender または   
-          Endpoint Protection で、**[更新]** タブをクリックし、**[更新]** をクリックします。  
+4.  Aprire Windows Defender o  
+          Endpoint Protection, fare clic sulla scheda **Aggiorna** e su **Aggiorna**.  
 
-5.  問題が解決しない場合は、次の手順に進みます。  
+5.  Se il problema persiste, procedere con il passaggio successivo.  
 
-### <a name="step-6-manually-install-the-virus-and-spyware-definition-updates"></a>手順 6: ウイルスおよびスパイウェア定義の更新を手動でインストールする  
+### <a name="step-6-manually-install-the-virus-and-spyware-definition-updates"></a>Passaggio 6: installare manualmente gli aggiornamenti delle definizioni di virus e spyware  
 
--   32 ビット Windows オペレーティング システムを実行している場合は、次の URL から手動で最新の更新プログラムをダウンロードします: [http://go.microsoft.com/fwlink/?LinkID=87342](http://go.microsoft.com/fwlink/?LinkID=87342) (http://go.microsoft.com/fwlink/?LinkID=87342)。  
+-   Se si esegue un sistema operativo Windows a 32 bit, è possibile scaricare manualmente gli aggiornamenti più recenti all'indirizzo [http://go.microsoft.com/fwlink/?LinkID=87342](http://go.microsoft.com/fwlink/?LinkID=87342) (http://go.microsoft.com/fwlink/?LinkID=87342).  
 
--   64 ビット Windows オペレーティング システムを実行している場合は、次の URL から手動で最新の更新プログラムをダウンロードします: [http://go.microsoft.com/fwlink/?LinkID=87341](http://go.microsoft.com/fwlink/?LinkID=87341) (http://go.microsoft.com/fwlink/?LinkID=87341)。  
+-   Se si esegue un sistema operativo Windows a 64 bit, è possibile scaricare manualmente gli aggiornamenti più recenti all'indirizzo [http://go.microsoft.com/fwlink/?LinkID=87341](http://go.microsoft.com/fwlink/?LinkID=87341) (http://go.microsoft.com/fwlink/?LinkID=87341).  
 
--   [ **実行**] をクリックします。 最新の更新プログラムが、お使いのコンピューターに手動でインストールされます。  
+-   Fare clic su **Esegui**. Gli aggiornamenti più recenti vengono installati manualmente nel computer.  
 
 
-### <a name="step-7-contact-support"></a>手順 7: サポートに問い合わせる  
+### <a name="step-7-contact-support"></a>Passaggio 7: contattare il supporto  
 
--   これらの手順を実行しても問題が解決しない場合は、サポートにお問い合わせください。 詳細については「 [カスタマー サポート](http://go.microsoft.com/fwlink/?LinkID=196174) (http://go.microsoft.com/fwlink/?LinkID=196174)」をご覧ください。  
+-   Se la procedura non ha consentito di risolvere il problema, contattare il supporto tecnico. Per altre informazioni, vedere [Supporto tecnico](http://go.microsoft.com/fwlink/?LinkID=196174) (http://go.microsoft.com/fwlink/?LinkID=196174).  
 
-##  <a name="starting-windows-defender-or-endpoint-protection-service"></a>Windows Defender または Endpoint Protection サービスの開始  
- **現象**  
+##  <a name="starting-windows-defender-or-endpoint-protection-service"></a>Avvio del servizio di Windows Defender o Endpoint Protection  
+ **Sintomo**  
 
- "**Windows Defender または Endpoint Protection は、プログラムのサービスが停止しているためコンピューターを監視していません。今すぐサービスを再起動してください**" というメッセージが表示されます。 
+ Viene visualizzato il messaggio seguente: **Il computer non è monitorato da Windows Defender or Endpoint Protection perché il servizio del programma è stato arrestato. È necessario riavviarlo.** 
 
- **解決方法**  
+ **Soluzione**  
 
-### <a name="step-1-restart-your-computer"></a>手順 1: コンピューターを再起動する  
+### <a name="step-1-restart-your-computer"></a>Passaggio 1: riavviare il computer.  
 
--   すべてのアプリケーションを閉じて、コンピューターを再起動します。  
+-   Chiudere tutte le applicazioni e riavviare il computer.  
 
-### <a name="step-2-make-sure-the-windows-defender-or-endpoint-protection-service-is-set-to-automatic-and-is-started"></a>手順 2: "Windows Defender" または "Endpoint Protection サービス" が自動に設定され、開始していることを確認する  
+### <a name="step-2-make-sure-the-windows-defender-or-endpoint-protection-service-is-set-to-automatic-and-is-started"></a>Passaggio 2: verificare che il servizio "Windows Defender" o "Endpoint Protection" sia impostato su Automatico e che sia avviato.  
 
-1.  **[スタート]** をクリックし、 **services.msc**を検索して、 **Enter**キーを押します。  
+1.  Fare clic su **Start** , cercare **services.msc**e quindi premere **INVIO**.  
 
-2.  [ **Microsoft Antimalware Service**] を探します。 それを右クリックして [ **プロパティ** ] を選択するか、それをダブルクリックしてサービスを開きます。  
+2.  Cercare **Microsoft Antimalware Service**. Farvi clic con il pulsante destro del mouse e scegliere **Proprietà** o farvi doppio clic per aprire il servizio.  
 
-3.  [**スタートアップの種類**] が [**自動**] に設定されていることを確認します。  
+3.  Verificare che**Tipo di avvio**sia impostato su**Automatico**.  
 
-4.  [ **開始** ] ボタンをクリックして、サービスを開始します。 [ **開始** ] ボタンが使用できない場合は、[ **停止** ] ボタンをクリックしてから [ **開始** ] ボタンをクリックして、サービスを再開させます。  
+4.  Fare clic sul pulsante **Avvia** per avviare il servizio. Se il pulsante **Avvia** non è disponibile, fare clic sul pulsante **Arresta** , quindi fare clic sul pulsante **Avvia** per riavviare il servizio.  
 
-5.  このプロセスの間に表示されるエラーは必ずメモしておき、オンラインで問い合わせるときに、そのエラー情報を含めるようにします。  
+5.  Annotare gli eventuali errori che possono verificarsi durante questo processo e inviare una richiesta online includendo le informazioni sull'errore.  
 
-### <a name="step-3-remove-any-existing-internet-security-programs"></a>手順 3: 既存のすべてのインターネット セキュリティ プログラムを削除する  
+### <a name="step-3-remove-any-existing-internet-security-programs"></a>Passaggio 3: rimuovere eventuali programmi esistenti per la sicurezza in Internet  
 
-1.  **[スタート]** をクリックし、 **appwiz.cpl**を検索して、 **Enter**キーを押します。  
+1.  Fare clic su **Start** , cercare **appwiz.cpl**e quindi premere **INVIO**.  
 
-2.  インストールされているプログラムの一覧で、サードパーティのすべてのインターネット セキュリティ プログラムをアンインストールします。*  
+2.  Nell'elenco dei programmi installati disinstallare tutti i programmi per la sicurezza in Internet di terze parti.*  
 
-3.  コンピューターを再起動して、Windows Defender または   
-          Endpoint Protection をもう一度インストールしてみてください。  
+3.  Riavviare il computer e riprovare a installare Windows Defender o  
+          Endpoint Protection.  
 
 > [!NOTE]  
->  一部のインターネット セキュリティ アプリケーションは、完全にはアンインストールされません。 完全に削除するには、それらのセキュリティ アプリケーション用のクリーンアップ ユーティリティをダウンロードして実行しなければならない場合があります。  
+>  Alcune applicazioni per la sicurezza in Internet non vengono disinstallate completamente. È possibile che sia necessario scaricare ed eseguire un'utilità di pulitura per rimuovere completamente l'applicazione di sicurezza precedente.  
 
 > [!CAUTION]  
->  インターネット セキュリティ プログラムを削除すると、コンピューターは保護されなくなります。 既存のインターネット セキュリティ プログラムを削除した後、   
->       Endpoint Protection のインストールに問題がある場合は、Windows Defender または   
->       Endpoint Protection サポートにお問い合わせください。このためには、ケース オンラインを送信します (詳細については、「[How to Submit a Case Online](http://www.microsoft.com/en-ph/security_essentials/Support/8c9074b6-1558-4d14-bc39-d294ced11096.aspx)」 (ケース オンラインの送信方法) を参照してください)。  
+>  Quando si rimuovono i programmi per la sicurezza in Internet, il computer non sarà protetto. Se si verificano problemi durante l'installazione di   
+>       Endpoint Protection dopo aver rimosso i programmi di sicurezza Internet esistenti, contattare l'assistenza di Windows Defender o  
+>       Endpoint Protection inviando un caso online. Per altre informazioni, vedere [How to Submit a Case Online](http://www.microsoft.com/en-ph/security_essentials/Support/8c9074b6-1558-4d14-bc39-d294ced11096.aspx) (Come inviare un caso online).  
 
-### <a name="step-4-uninstallreinstall-endpoint-protection"></a>手順 4: Endpoint Protection のアンインストール/再インストール  
+### <a name="step-4-uninstallreinstall-endpoint-protection"></a>Passaggio 4: disinstallare/reinstallare Endpoint Protection  
 
-1.  **[スタート]** をクリックし、 **appwiz.cpl**を検索して、 **Enter**キーを押します。  
+1.  Fare clic su **Start** , cercare **appwiz.cpl**e quindi premere **INVIO**.  
 
-2.  インストールされているプログラムの一覧で、 **[Endpoint Protection]**をクリックし、アンインストールします。  
+2.  Nell'elenco dei programmi installati fare clic su **Endpoint Protection**e quindi disinstallarlo.  
 
-3.  必要ならメッセージに従ってコンピューターを再起動し、Endpoint Protection をもう一度インストールしてみてください。  
+3.  Se richiesto, riavviare il computer e quindi riprovare a installare Endpoint Protection.  
 
-##  <a name="internet-connection-issues"></a>インターネット接続の問題  
- お使いのコンピューターが Windows Update から最新の更新プログラムを受け取っていることを確認するには、インターネットに接続する必要があります。  
+##  <a name="internet-connection-issues"></a>Problemi di connessione a Internet  
+ Per essere certi che il computer riceva gli aggiornamenti più recenti da Windows Update, è necessario essere connessi a Internet.  
 
-### <a name="step-1-verify-that-your-computer-is-connected-to-the-internet"></a>手順 1: お使いのコンピューターがインターネットに接続されていることを確認する  
+### <a name="step-1-verify-that-your-computer-is-connected-to-the-internet"></a>Passaggio 1: verificare che il computer sia connesso a Internet  
 
-1.  **[スタート]**をクリックし、 **ncpa.cpl**を検索して、 **Enter**キーを押します。  
+1.  Fare clic su **Start**, cercare **ncpa.cpl**e quindi premere **INVIO**.  
 
-2.  接続名を右クリックし、 **[状態]**をクリックします。  
+2.  Fare clic con il pulsante destro del mouse sul nome della connessione, quindi scegliere **Stato**.  
 
-3.  お使いのコンピューターが接続されている場合、Windows XP では、接続の状態として **[接続]**、 **[有効]**、または **[認証に成功]** と表示されます。 Windows Vista および Windows 7 では、 **[IPv4]** の状態が **[インターネット]**と表示されます。  
+3.  Se il computer è connesso, in Windows XP lo stato della connessione sarà indicato come **Connesso**, **Abilitato**o **Autenticazione riuscita** . In Windows Vista e Windows 7 lo stato di **IPv4** verrà visualizzato come **Internet**.  
 
-4.  コンピューターが接続されていない場合は、接続名を右クリックし、 **[接続]**、 **[有効にする]**、 **[認証]**、または **[修復]**をクリックします。  
+4.  Se il computer non sembra connesso, fare clic con il pulsante destro del mouse sul nome della connessione, quindi fare clic su **Connetti**, **Abilita**, **Autentica**o **Ripristina**.  
 
-### <a name="step-3-restart-your-computer"></a>手順 3: コンピューターを再起動する  
+### <a name="step-3-restart-your-computer"></a>Passaggio 3: riavviare il computer  
 
--   開いているプログラムをすべて閉じて、コンピューターを再起動します。  
+-   Chiudere eventuali programmi aperti e riavviare il computer.  
 
-### <a name="step-4-if-you-still-cant-connect-to-the-internet-check-your-connections"></a>手順 4: まだインターネットに接続できない場合は、接続を確認する  
+### <a name="step-4-if-you-still-cant-connect-to-the-internet-check-your-connections"></a>Passaggio 4: se non è ancora possibile connettersi a Internet, controllare le connessioni  
 
-1.  ダイヤルアップ接続を使用している場合は、電話ケーブルが壁のジャックとモデムにしっかり接続されていることを確認します。  
+1.  Se si usa una connessione remota, assicurarsi che il cavo telefonico sia ben collegato alla presa a muro e al modem.  
 
-2.  ケーブル モデムを使用している場合は、モデムへのケーブル接続と、モデムからお使いのコンピューターへの接続がしっかりとできていることを確認します。  
+2.  Se si usa un modem via cavo, assicurarsi che la connessione via cavo al modem e quella tra il modem e il computer siano corrette.  
 
-3.  ケーブル モデムまたは DSL ルーターを使用している場合は、ルーターへの接続と、コンピューターへの接続がしっかりとできていることを確認します。 プラグを抜き、ルーターとモデムをオフにしてみます。 数分待ってから、まずモデムにプラグを接続します。1 分待ってから、ルーターにプラグを接続します。コンピューターを再起動します。  
+3.  Se si usa un modem via cavo o un router DSL, assicurarsi che le connessioni al router e al computer siano corrette. Provare a scollegare e spegnere il router e il modem. Attendere qualche minuto, quindi collegare prima il modem, attendere un minuto, collegare il router e infine riavviare il computer.  
 
-##  <a name="detected-threat-cant-be-remediated"></a>検出された脅威を修復できない  
- Windows Defender または   
-      Endpoint Protection が、ファイル名の拡張子が .zip である圧縮ファイル内やネットワーク共有内に隠れている潜在的な脅威を検出すると、その脅威を検疫または削除して対処しようとします。  
+##  <a name="detected-threat-cant-be-remediated"></a>Minaccia rilevata che non è possibile correggere  
+ Quando Windows Defender o  
+      Endpoint Protection rileva una minaccia potenziale all'interno di un file compresso con estensione zip o all'interno di una condivisione di rete, prova a metterla in quarantena o a rimuoverla.  
 
-### <a name="remove-or-scan-the-file"></a>ファイルを削除またはスキャンする  
+### <a name="remove-or-scan-the-file"></a>Rimuovere o analizzare il file  
 
--   検出された脅威が .zip ファイル内にあった場合は、.zip ファイルの場所に移動し、そのファイルを削除するか、ファイルを右クリックして **[Windows Defender でスキャン]** または **[Endpoint Protection でスキャン]**を選択してスキャンを実行します。 Windows Defender または Endpoint Protection によってファイル内でさらに脅威が検出された場合は、それらの脅威について通知され、適切な操作を選択できます。  
+-   Se la minaccia viene rilevata in un file zip, individuare il file quindi rimuoverlo o analizzarlo facendovi clic con il pulsante destro del mouse e selezionando **Analizza con Windows Defender** o **Analizza con Endpoint Protection**. Se Windows Defender o Endpoint Protection rileva altre minacce nel file, l'utente viene avvisato in modo da poter scegliere l'azione appropriata.  
 
--   検出された脅威がネットワーク共有内にあった場合は、ネットワーク共有の場所に移動し、ファイルを右クリックして **[Windows Defender でスキャン]** または **[Endpoint Protection でスキャン]**を選択してスキャンを実行します。 Windows Defender または Endpoint Protection によってネットワーク共有内でさらに脅威が検出された場合は、それらの脅威について通知され、適切な操作を選択できます。  
+-   Se la minaccia viene rilevata in una condivisione di rete, individuare la condivisione di rete e analizzarla facendovi clic con il pulsante destro del mouse e selezionando **Analizza con Windows Defender** o **Analizza con Endpoint Protection**. Se Windows Defender o Endpoint Protection rileva altre minacce nella condivisione di rete, l'utente viene avvisato in modo da poter scegliere l'azione appropriata.  
 
--   ファイルの出所が明確でない場合、最も良い対処方法はコンピューターをフル スキャンすることです フル スキャンは完了までに時間がかかる場合がありますが、Windows Defender または Endpoint Protection で感染源を探し、除去できます。  
+-   Se non si è certi dell'origine del file, una delle soluzioni migliori è eseguire una scansione completa del computer. L'analisi completa può richiedere un po' di tempo ma consente a Windows Defender o Endpoint Protection di cercare l'origine dell'infezione ed eliminarla.  
 
-##  <a name="install-the-endpoint-protection-client"></a>Endpoint Protection クライアントのインストール  
+##  <a name="install-the-endpoint-protection-client"></a>Installazione del client Endpoint Protection  
 
 > [!NOTE]  
->  Windows Defender は、Windows 10 PC のオペレーティング システムと共にインストールされます。  
+>  Windows Defender viene installato con il sistema operativo nei PC Windows 10.  
 
- **現象**  
+ **Sintomi**  
 
- インストールが不明な理由で失敗するか、0x80070643、0X8007064A、0x8004FF2E、0x8004FF01、0x8004FF07、0x80070002、0x8007064C、0x8004FF00、0x80070001、0x80070656、0x8004FF40、0xC0000156、0x8004FF41、0x8004FF0B、0x8004FF11、0x80240022、0x8004FF04、0x80070660、0x800106B5、0x80070715、0x80070005、0x8004EE00、0x8007003、0x800B0100、0x8007064E、0x8007007E などのエラー コードのエラー メッセージが表示されます。  
+ L'installazione non riesce per motivi sconosciuti oppure viene visualizzato un messaggio di errore con codice di errore, ad esempio 0x80070643, 0X8007064A, 0x8004FF2E, 0x8004FF01, 0x8004FF07, 0x80070002, 0x8007064C, 0x8004FF00, 0x80070001, 0x80070656, 0x8004FF40, 0xC0000156, 0x8004FF41, 0x8004FF0B, 0x8004FF11, 0x80240022, 0x8004FF04, 0x80070660, 0x800106B5, 0x80070715, 0x80070005, 0x8004EE00, 0x8007003, 0x800B0100, 0x8007064E o 0x8007007E.  
 
- コンピューターが Windows XP Service Pack 2 (SP2) を実行している場合は、以下のようなエラー メッセージが表示される場合があります。  
+ Se nel computer è in esecuzione Windows XP Service Pack 2 (SP2), verrà visualizzato uno o più messaggi di errore seguenti:  
 
--   インストールを完了するために必要なフィルター マネージャー ロールアップ パッケージがインストール ウィザードで見つかりません。  
+-   L'installazione guidata non dispone di un pacchetto di rollup di gestione filtri necessario per completare l'installazione.  
 
--   KB914882 セットアップ エラー、お使いのコンピューターにインストールされている言語が更新プログラムの言語と異なるため、Windows XP のファイルをセットアップで更新できません。  
+-   KB914882 Errore di installazione: impossibile aggiornare i file di Windows XP poiché la lingua installata nel sistema è diversa dalla lingua dell'aggiornamento.  
 
- **原因**  
+ **Causa**  
 
- Endpoint Protection は、他のセキュリティ プログラムが実行されているコンピューターにはインストールできません。 他のセキュリティ プログラムを削除しても、それらが完全にはアンインストールされない場合があります。 Endpoint Protection をインストールするには、正規品の Windows オペレーティング システムを実行している必要があります。  
+ Non è possibile installare Endpoint Protection in un computer in cui sono in esecuzione altri programmi di sicurezza. Talvolta gli altri programmi di sicurezza non vengono disinstallati completamente, sebbene vengano rimossi. Per installare Endpoint Protection, è necessario usare una versione originale del sistema operativo Windows.  
 
- **解決方法**  
+ **Soluzione**  
 
 > [!IMPORTANT]  
->  この問題の解決の途中で、コンピューターを再起動する必要があります。 このページにブックマークを設定して ([お気に入り] に追加して)、このトピックを簡単に再表示できるようにするか、印刷して簡単に参照できるようにしてください。  
+>  Poiché durante la risoluzione di questo problema sarà necessario riavviare il computer, creare un segnalibro per tale pagina aggiungendola ai Preferiti in modo da ritrovare l'argomento più facilmente oppure stamparla come riferimento.  
 
-### <a name="step-1-remove-any-existing-security-programs"></a>手順 1: 既存のすべてのセキュリティ プログラムを削除する  
-**エンドポイント保護のみ**
+### <a name="step-1-remove-any-existing-security-programs"></a>Passaggio 1: rimuovere eventuali programmi di sicurezza esistenti  
+**Solo Endpoint Protection**
 
-1.  既存のすべてのインターネット セキュリティ プログラムを完全にアンインストールします。  
+1.  Disinstallare completamente eventuali programmi di sicurezza Internet esistenti.  
 
-2.  コンピューターを再起動する  
+2.  Riavviare il computer.  
 
-3.  もう一度 Endpoint Protection をインストールします。 これで問題が解決しない場合は、次の手順に進みます。  
+3.  Installare di nuovo Endpoint Protection. Se il problema non viene risolto, continuare con il passaggio successivo.  
 
-### <a name="step-2-ensure-that-the-windows-installer-service-is-running"></a>手順 2: Windows インストーラー サービスが実行されていることを確認する  
+### <a name="step-2-ensure-that-the-windows-installer-service-is-running"></a>Passaggio 2: accertarsi che il servizio Windows Installer sia in esecuzione  
 
-1.  **[スタート]** をクリックし、 **services.msc**を検索して、 **Enter**キーを押します。  
+1.  Fare clic su **Start** , cercare **services.msc**e quindi premere **INVIO**.  
 
-2.  [ **Windows Installer**] を右クリックし、[ **開始**] をクリックします。 [ **開始** ] ボタンが使用できず、[ **停止** ] および [ **再開** ] ボタンが使用可能である場合は、このサービスが既に開始されていることを意味しています。  
+2.  Fare clic con il pulsante destro del mouse su **Windows Installer**, quindi scegliere **Avvia**. Se **Avvia** non è disponibile mentre sono disponibili le opzioni **Arresta** e **Riavvia** , significa che il servizio è già avviato.  
 
-3.  [ **サービス** ] ページで [ **ファイル** ] メニューの [ **終了**] をクリックします。  
+3.  Nella pagina **Servizi** scegliere **Esci** dal menu **File**.  
 
-4.  [**スタート**] ボタンをクリックして [**コマンド プロンプト**] を検索します。 [ **Command Prompt**] を右クリックし、[ **管理者として実行**] をクリックします。  
+4.  Fare clic sul pulsante **Start** e cercare **Prompt dei comandi**. Fare clic con il pulsante destro del mouse su **Prompt dei comandi**, quindi scegliere **Esegui come amministratore**.  
 
-5.  「 **MSIEXEC /REGSERVER**」と入力し、 **Enter**キーを押します。  
+5.  Digitare **MSIEXEC /REGSERVER**, quindi premere **INVIO**.  
 
     > [!NOTE]  
-    >  このコマンドが成功したか失敗したかは、表示されません。  
+    >  Non verrà indicato se il comando è riuscito o meno.  
 
-6.  もう一度 Endpoint Protection をインストールします。 これで問題が解決しない場合は、次の手順に進みます。  
+6.  Installare di nuovo Endpoint Protection. Se il problema non viene risolto, continuare con il passaggio successivo.  
 
-### <a name="step-3-start-windows-in-selective-startup-mode"></a>手順 3: スタートアップのオプションを選択するモードで Windows を起動する  
+### <a name="step-3-start-windows-in-selective-startup-mode"></a>Passaggio 3: avviare Windows in modalità Avvio selettivo  
 
-1.  **[スタート]** をクリックし、 **msconfig**を検索して、 **Enter**キーを押します。  
+1.  Fare clic su **Start** , cercare **msconfig**e quindi premere **INVIO**.  
 
-2.  [ **全般** ] タブで [ **スタートアップのオプションを選択**] をクリックし、[ **スタートアップの項目を読み込む** ] チェック ボックスをオフにします。  
+2.  Nella scheda **Generale** , fare clic su **Avvio selettivo**e deselezionare la casella di controllo **Carica elementi di avvio** .  
 
-3.  [ **サービス** ] タブで [ **Microsoft のサービスをすべて隠す** ] チェック ボックスをオンにし、一覧に残っているサービスのすべてのチェック ボックスをオフにします。  
+3.  Nella scheda **Servizi** , selezionare la casella di controllo **Nascondi tutti i servizi Microsoft** , quindi deselezionare tutte le caselle di controllo dei servizi rimaste nell'elenco.  
 
-4.  [ **OK**] をクリックし、[ **再起動** ] をクリックして、コンピューターを再起動します。  
+4.  Fare clic su **OK**, quindi su **Riavvia** per riavviare il computer.  
 
-5.  もう一度 Endpoint Protection をインストールしてみます。  
+5.  Riprovare a installare Endpoint Protection.  
 
 
 
-### <a name="see-also"></a>関連項目  
- [Endpoint Protection クライアントのよく寄せられる質問](../../protect/deploy-use/endpoint-protection-client-faq.md)   
+### <a name="see-also"></a>Vedere anche  
+ [Endpoint Protection client frequently asked questions](../../protect/deploy-use/endpoint-protection-client-faq.md) (Domande frequenti relative al client Endpoint Protection)   
 
- [Endpoint Protection クライアント ヘルプ](../../protect/deploy-use/endpoint-protection-client-help.md)
+ [Endpoint Protection Client Help](../../protect/deploy-use/endpoint-protection-client-help.md) (Guida del client Endpoint Protection)

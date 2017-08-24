@@ -1,6 +1,6 @@
 ---
-title: "Mac クライアントの維持 | Microsoft ドキュメント"
-description: "Configuration Manager の Mac クライアントのメンテナンス タスク"
+title: Gestire i client Mac| Microsoft Docs
+description: "Attività di manutenzione per i client Mac di Configuration Manager."
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -17,145 +17,145 @@ manager: angrobe
 ms.openlocfilehash: 3bf6651f58dc0c2aa4773f77115c3fbcd4a33221
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="maintain-mac-clients"></a>Mac クライアントを維持する
-*適用対象: System Center Configuration Manager (Current Branch)*
+# <a name="maintain-mac-clients"></a>Gestire i client Mac
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-ここでは、Mac クライアントをアンインストールし、その証明書を更新するための手順を示します。
+Di seguito sono illustrate le procedure per disinstallare i client Mac e rinnovarne i certificati.
 
-##  <a name="uninstalling-the-mac-client"></a>Mac クライアントをアンインストールする  
+##  <a name="uninstalling-the-mac-client"></a>Disinstallazione del client Mac  
 
-1.  Mac コンピューターで、ターミナル ウィンドウを開き、**macclient.dmg** が置かれているフォルダーに移動します。  
+1.  In un computer Mac aprire una finestra terminale e spostarsi nella cartella che contiene il file **macclient.dmg**.  
 
-2.  ツール フォルダーに移動し、次のコマンドラインを入力します。  
+2.  Spostarsi nella cartella Strumenti e immettere la seguente riga di comando:  
 
      **./CMUninstall -c**  
 
     > [!NOTE]  
-    >  **-c** プロパティは、クライアントのアンインストールで、クライアントのクラッシュ ログとログ ファイルも削除するように指示します。 クライアントを後で再インストールする場合に混乱が生じるのを避けるためにも、この処置をお勧めします。  
+    >  La proprietà **-c** indica alla disinstallazione del client di rimuovere anche i registri di arresto anomalo e i file di registro del client. È consigliabile usare questa opzione per evitare confusione nel caso in cui il client sia poi reinstallato.  
 
-3.  必要に応じて、Configuration Manager が使用していたクライアント認証証明書を手動で削除するか、失効させます。 CMUnistall では、この証明書は削除または失効されません。  
+3.  Se necessario, rimuovere manualmente il certificato di autenticazione client usato da Configuration Manager o revocarlo. CMUnistall non rimuove né revoca questo certificato.  
 
-##  <a name="renewing-the-mac-client-certificate"></a>Mac クライアント証明書の更新  
- Mac クライアント証明書を更新する方法は、次の 2 通りあります。  
+##  <a name="renewing-the-mac-client-certificate"></a>Rinnovo del certificato del client Mac  
+ Per rinnovare il certificato del client Mac, usare uno dei seguenti metodi:  
 
--   [証明書の更新ウィザード](#renew-certificate-wizard)  
+-   [Rinnovo guidato del certificato](#renew-certificate-wizard)  
 
--   [証明書を手動で更新する](#renew-certificate-manually)  
+-   [Rinnovo manuale del certificato](#renew-certificate-manually)  
 
-###  <a name="renew-certificate-wizard"></a>証明書の更新ウィザード  
+###  <a name="renew-certificate-wizard"></a>Rinnovo guidato del certificato  
 
-1.  ccmclient.plist ファイルで "*文字列*" として次の値を構成して、証明書の更新ウィザードがいつ開くかを制御します。  
+1.  Configurare i valori seguenti come *stringhe* nel file ccmclient.plist che specifica quando aprire il Rinnovo guidato del certificato:  
 
- -   **RenewalPeriod1**: ユーザーが証明書を更新できる 1 番目の更新期間を秒単位で指定します。 既定値は 3,888,000 秒 (45 日) です。 期間は既定値に戻されるため、300 より小さい値に構成しないでください。 
+ -   **RenewalPeriod1**: specifica, in secondi, il primo periodo di rinnovo in cui gli utenti possono rinnovare il certificato. Il valore predefinito è 3888000 secondi (45 giorni). Non configurare un valore inferiore a 300, poiché il periodo sarà ripristinato sul valore predefinito. 
 
- -   **RenewalPeriod2**: ユーザーが証明書を更新できる 2 番目の更新期間を秒単位で指定します。 既定値は 259,200 秒 (3 日) です。 この値を 300 秒以上、**RenewalPeriod1** の値以下に設定した場合は、その値が使われます。 **RenewalPeriod1** の値が 3 日より大きい場合は、 **RenewalPeriod2**の値として 3 日が使われます。  **RenewalPeriod1** の値が 3 日より小さい場合は、 **RenewalPeriod2** が **RenewalPeriod1**と同じ値に設定されます。  
+ -   **RenewalPeriod2**: specifica, in secondi, il secondo periodo di rinnovo in cui gli utenti possono rinnovare il certificato. Il valore predefinito è 259200 secondi (3 giorni). Se il valore viene configurato, è superiore o uguale a 300 secondi ed è inferiore o uguale a **RenewalPeriod1**, il valore sarà usato. Se **RenewalPeriod1** è maggiore di 3 giorni, verrà usato un valore di 3 giorni per **RenewalPeriod2**.  Se **RenewalPeriod1** è minore di 3 giorni, **RenewalPeriod2** viene impostato sullo stesso valore di **RenewalPeriod1**.  
 
- -   **RenewalReminderInterval1**: 1 番目の更新期間中に、証明書の更新ウィザードがユーザーに表示される頻度を秒単位で指定します。 既定値は 86,400 秒 (1 日) です。 **RenewalReminderInterval1** を 300 秒以上、 **RenewalPeriod1**の値未満に設定した場合は、その値が使われます。 それ以外の場合は、既定値の 1 日が使われます。  
+ -   **RenewalReminderInterval1**: specifica, in secondi, la frequenza con la quale la procedura guidata di rinnovo certificato verrà presentata agli utenti durante il primo periodo di rinnovo. Il valore predefinito è 86.400 secondi (1 giorno). Se **RenewalReminderInterval1** è superiore a 300 secondi e inferiore al valore configurato per **RenewalPeriod1**, verrà usato il valore configurato. In caso contrario, verrà usato il valore predefinito di 1 giorno.  
 
- -   **RenewalReminderInterval2**: 2 番目の更新期間中に、証明書の更新ウィザードがユーザーに表示される頻度を秒単位で指定します。 既定値は 28,800 秒 (8 時間) です。 **RenewalReminderInterval2** を 300 秒以上、 **RenewalReminderInterval1** の値以下、且つ **RenewalPeriod2**の値以下に設定した場合は、その値が使われます。 それ以外の場合は、8 時間が使われます。  
+ -   **RenewalReminderInterval2**: specifica, in secondi, la frequenza con la quale la procedura guidata di rinnovo del certificato verrà presentata agli utenti durante il secondo periodo di rinnovo. Il valore predefinito è 28.800 secondi (8 ore). Se **RenewalReminderInterval2** è superiore a 300 secondi, inferiore o uguale a **RenewalReminderInterval1** e inferiore o uguale a **RenewalPeriod2**, verrà usato il valore configurato. In caso contrario, verrà usato un valore di 8 ore.  
 
-     **例:** すべて既定値のままにすると、証明書が失効する 45 日前から、24 時間に 1 回の割合でウィザードが開きます。  証明書が失効する 3 日前になると、8 時間に 1 回ウィザードが開くようになります。  
+     **Esempio** : se vengono mantenuti i valori predefiniti, 45 giorni prima della scadenza del certificato la procedura guidata verrà avviata ogni 24 ore.  Entro 3 giorni del certificato in scadenza, la procedura guidata si aprirà ogni 8 ore.  
 
-     **例:** 1 回目の更新期間を 20 日に設定するには、次のコマンドライン (またはスクリプト) を使用します。  
+     **Esempio:** usare la riga di comando seguente o uno script per impostare il primo periodo di rinnovo su 20 giorni.  
 
      `sudo defaults write com.microsoft.ccmclient RenewalPeriod1 1728000`  
 
-2.  証明書の更新ウィザードが開いたときには、通常、 **[ユーザー名]** フィールドと **[サーバー名]** フィールドに既に値が挿入されており、ユーザーはパスワードを入力するだけで証明書を更新できます。  
+2.  Quando si apre il Rinnovo guidato del certificato, i campi **Nome utente** e **Nome server** vengono solitamente prepopolati e l'utente deve soltanto immettere una password per rinnovare il certificato.  
 
     > [!NOTE]  
-    >  ウィザードが表示されなかった場合や、間違ってウィザードを閉じてしまった場合は、 **Configuration Manager** の環境設定ページで **[更新]** をクリックして、ウィザードを開いてください。  
+    >  Se la procedura guidata non si apre oppure se questa viene chiusa in modo accidentale, fare clic su **Rinnova** dalla pagina delle preferenze **Configuration Manager** per aprire la procedura guidata.  
 
-###  <a name="renew-certificate-manually"></a>証明書を手動で更新する  
- Mac クライアント証明書の一般的な有効期間は 1 年間です。 Configuration Manager への登録時に必要なユーザー証明書は、自動的に更新されません。そのため、次の手順に従って証明書を手動で更新する必要があります。  
+###  <a name="renew-certificate-manually"></a>Rinnovo manuale del certificato  
+ Il periodo di validità tipico per il certificato client Mac è 1 anno. Configuration Manager non rinnova automaticamente il certificato utente richiesto durante la registrazione, perciò è necessario usare la procedura seguente per rinnovare il certificato manualmente.  
 
 > [!IMPORTANT]  
->  証明書が期限切れになった場合、Mac クライアントのアンインストール、再インストール、および再登録を行う必要があります。  
+>  Se il certificato scade, è necessario disinstallare, reinstallare e quindi registrare nuovamente il client Mac.  
 
- この手順で SMSID が削除されます。SMSID は、同じ Mac コンピューターの新しい証明書を要求するために必要です。 クライアント SMSID を削除して置き換えると、Configuration Manager コンソールからクライアントが削除された後に、インベントリなどの保存されているクライアント履歴も削除されます。  
+ Questa procedura rimuove l'SMSID, necessario per richiedere un nuovo certificato per lo stesso computer Mac. Quando si rimuove e sostituisce l'SMSID del client, tutte le cronologie client archiviate, come l'inventario, vengono eliminate dopo aver eliminato il client dalla console di Configuration Manager.  
 
-1.  ユーザー証明書を更新する必要がある Mac コンピューターのデバイス コレクションを作成します。  
+1.  Creare e popolare una raccolta di dispositivi per i computer Mac che devono rinnovare i certificati utente.  
 
     > [!WARNING]  
-    >  Configuration Manager は、Mac コンピューター用に登録されている証明書の有効期間を監視しません。 Configuration Manager とは関係なく有効期間を監視して、このコレクションに追加する Mac コンピューターを特定する必要があります。  
+    >  Configuration Manager non monitora il periodo di validità del certificato che registra per i computer Mac. È necessario monitorarlo indipendentemente da Configuration Manager per identificare i computer Mac da aggiungere a questa raccolta.  
 
-2.  [資産とコンプライアンス **** ] ワークスペースで、構成項目の作成ウィザード ****を開始します。  
+2.  Nell'area di lavoro **Asset e conformità** , avviare la **Creazione guidata dell'elemento di configurazione**.  
 
-3.  **[全般]** ページで、以下の情報を指定します。  
+3.  Nella pagina **Generale** specificare le informazioni seguenti:  
 
-    -   **[名前]:Mac の SMSID の削除**  
+    -   **Nome:Rimuovere SMSID per Mac**  
 
-    -   **[種類]:Mac OS X**  
+    -   **Tipo:Mac OS X**  
 
-4.  **[サポートされているプラットフォーム]** ページで、すべての Mac OS X バージョンが選択されていることを確認します。  
+4.  Nella pagina **Piattaforme supportate**, assicurarsi che siano selezionate tutte le versioni di Mac OS X.  
 
-5.  **[設定]** ページで **[新規作成]** を選択し、**[設定の作成]** ダイアログ ボックスで次の情報を指定します。  
+5.  Nella pagina **Impostazioni** scegliere **Nuovo**. Nella finestra di dialogo **Crea impostazione** specificare le informazioni seguenti:  
 
-    -   **[名前]:Mac の SMSID の削除**  
+    -   **Nome:Rimuovere SMSID per Mac**  
 
-    -   **[設定の種類]:スクリプト**  
+    -   **Tipo di impostazione:Script**  
 
-    -   **[データ型]:文字列**  
+    -   **Tipo di dati: stringa**  
 
-6.  **[設定の作成]** ダイアログ ボックスの **[検索スクリプト]** で **[スクリプトの追加]** を選択し、SMSID が構成されている Mac コンピューターを検出するスクリプトを指定します。  
+6.  Nella finestra di dialogo **Crea impostazione**, per **Script di individuazione** scegliere **Aggiungi script** per specificare uno script che individui i computer Mac con un SMSID configurato.  
 
-7.  [探索スクリプトの編集 **** ] ダイアログ ボックスで、次のシェル スクリプトを入力します。  
+7.  Nella finestra di dialogo **Modifica script di individuazione** , immettere il seguente script della shell:  
 
     ```  
     defaults read com.microsoft.ccmclient SMSID  
     ```  
 
-8.  **[OK]** を選択して、**[探索スクリプトの編集]** ダイアログ ボックスを閉じます。  
+8.  Fare clic su **OK** per chiudere la finestra di dialogo **Modifica script di individuazione** .  
 
-9. **[設定の作成]** ダイアログ ボックスの **[修復スクリプト (オプション)]** で、**[スクリプトの追加]** を選択して、Mac コンピューターで見つかった SMSID を削除するスクリプトを指定します。  
+9. Nella finestra di dialogo **Crea impostazione**, per **Script di monitoraggio e aggiornamento (facoltativo)** scegliere **Aggiungi script** per specificare uno script che rimuova l'SMSID quando viene rilevato in computer Mac.  
 
-10. [ **修復スクリプトの作成** ] ダイアログ ボックスで、次のシェル スクリプトを入力します。  
+10. Nella finestra di dialogo **Crea script di monitoraggio e aggiornamento** , immettere il seguente script della shell:  
 
     ```  
     defaults delete com.microsoft.ccmclient SMSID  
     ```  
 
-11. **[OK]** を選択して **[修復スクリプトの作成]** ダイアログ ボックスを閉じます。  
+11. Fare clic su **OK** per chiudere la finestra di dialogo **Crea script di monitoraggio e aggiornamento**.  
 
-12. ウィザードの [コンプライアンス規則 **** ] ページで [新規作成 ****] をクリックし、[規則の作成 **** ] ダイアログ ボックスで次の情報を指定します。  
+12. Nella pagina **Regole di conformità** della procedura guidata fare clic su **Nuovo**, quindi nella finestra di dialogo **Crea regola** specificare le informazioni seguenti:  
 
-    -   **[名前]:Mac の SMSID の削除**  
+    -   **Nome:Rimuovere SMSID per Mac**  
 
-    -   **[選択した設定]:** **[参照]** を選択し、前に指定した探索スクリプトを選びます。  
+    -   **Impostazione selezionata:** fare clic su **Sfoglia** e selezionare lo script di individuazione specificato in precedenza.  
 
-    -   **[次の値]** フィールドに「**存在しないドメインと既定のペア (com.microsoft.ccmclient, SMSID)**」と入力します。  
+    -   Nel campo **i seguenti valori** immettere **Il dominio/coppia predefinita di (com.microsoft.ccmclient, SMSID) non esiste**.  
 
-    -   オプション [ **この設定が対応していない場合に指定した修復スクリプトを実行する** ] を有効にします。  
+    -   Abilitare l'opzione **Eseguire lo script di monitoraggio e aggiornamento specificato quando l'impostazione non è conforme**.  
 
-13. 構成項目の作成ウィザードを完了します。  
+13. Completare la Creazione guidata dell'elemento di configurazione.  
 
-14. 作成した構成項目を含む構成基準を作成し、それを手順 1 で作成したデバイス コレクションに展開します。  
+14. Creare una linea di base di configurazione che contenga l'elemento di configurazione appena creato e distribuirlo nella raccolta di dispositivi creata nel passaggio 1.  
 
-     構成基準の作成方法と展開方法の詳細については、「[System Center Configuration Manager で構成基準を作成する方法](../../../compliance/deploy-use/create-configuration-baselines.md)」および「[System Center Configuration Manager で構成基準を展開する方法](../../../compliance/deploy-use/deploy-configuration-baselines.md)」をご覧ください。  
+     Per altre informazioni su come creare e distribuire le linee di base della configurazione, vedere [How to create configuration baselines in System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-baselines.md) (Come creare linee di base di configurazione in System Center Configuration Manager) e [How to deploy configuration baselines in System Center Configuration Manager](../../../compliance/deploy-use/deploy-configuration-baselines.md) (Come distribuire linee di base di configurazione in System Center Configuration Manager).  
 
-15. SMSID を削除した Mac コンピューターで、次のコマンドを実行して新しい証明書をインストールします。  
+15. Nei computer Mac con l'SMSID rimosso, eseguire il comando seguente per installare un nuovo certificato:  
 
     ```  
     sudo ./CMEnroll -s <enrollment_proxy_server_name> -ignorecertchainvalidation -u <'user name'>  
     ```  
 
-     プロンプトが表示されたら、コマンドを実行するスーパー ユーザー アカウントのパスワードを指定し、Active Directory ユーザー アカウントのパスワードを指定します。  
+     Se richiesto, fornire la password per l'account utente con privilegi avanzati per eseguire il comando, quindi la password per l'account utente di Active Directory.  
 
-16. Mac コンピューターで、登録する証明書を Configuration Manager に制限するには、ターミナル ウィンドウを開き、次のように変更します。  
+16. Per limitare il certificato registrato in Configuration Manager, sul computer Mac, aprire una finestra terminale e apportare le modifiche seguenti:  
 
-    a.  コマンド **sudo /Applications/Utilities/Keychain\ Access.app/Contents/MacOS/Keychain\ Access**を入力します。  
+    a.  Immettere il comando **sudo /Applications/Utilities/Keychain\ Access.app/Contents/MacOS/Keychain\ Access**  
 
-    b.  **[キーチェーン アクセス]** ダイアログの **[キーチェーン]** セクションで、**[システム]** を選択し、**[カテゴリ]** セクションの **[キー]** を選択します。  
+    b.  Nella finestra di dialogo **Keychain Access** (Accesso portachiavi) scegliere **System** (Sistema) nella sezione **Keychains** (Portachiavi) e quindi **Keys** (Chiavi) nella sezione **Category** (Categoria).  
 
-    c.  キーを展開してクライアント証明書を表示します。 インストールした秘密キーの証明書を特定したら、そのキーをダブルクリックします。  
+    c.  Espandere le chiavi per visualizzare i certificati client. Dopo aver identificato il certificato con una chiave privata appena installata, fare doppio clic sulla chiave.  
 
-    d.  **[アクセス制御]** タブで、**[アクセスを許可する前に確認する]** を選択します。  
+    d.  Nella scheda **Access Control** (Controllo di accesso) selezionare **Confirm before allowing access** (Conferma prima di consentire l'accesso).  
 
-    e.  **/Library/Application Support/Microsoft/CCM** を参照し、**[CCMClient]** を選択して **[追加]** を選択します。  
+    e.  Passare a **/Library/Application Support/Microsoft/CCM**, selezionare **CCMClient** (CCMClient) e fare clic su **Add** (Aggiungi).  
 
-    f.  **[変更を保存]** をクリックし、**[キーチェーン アクセス]** ダイアログ ボックスを閉じます。  
+    f.  Fare clic su **Save Changes** (Salva modifiche) e chiudere la finestra di dialogo **Keychain Access** (Accesso portachiavi).  
 
-17. Mac コンピューターを再起動します。  
+17. Riavviare il computer Mac.  
 

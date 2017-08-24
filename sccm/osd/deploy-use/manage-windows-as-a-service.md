@@ -1,6 +1,6 @@
 ---
-title: "サービスとしての Windows の管理 - Configuration Manager | Microsoft Docs"
-description: "Configuration Manager を使用して、サービスとしての Windows の状態を確認したり、展開リングを形成するサービス プランを作成して、Windows 10 クライアントのサポートの終了が近づいたときにアラートを表示したりします。"
+title: Gestire Windows distribuito come servizio - Configuration Manager | Microsoft Docs
+description: Visualizzare lo stato di Windows distribuito come servizio usando Configuration Manager, definire piani di manutenzione per formare anelli di distribuzione e visualizzare avvisi quando i client Windows 10 si avvicinano alla scadenza del supporto.
 ms.custom: na
 ms.date: 03/26/2017
 ms.prod: configuration-manager
@@ -17,265 +17,265 @@ manager: angrobe
 ms.openlocfilehash: 2c2c0f81736c1b00ea487ae1261803a8105bb5e4
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>System Center Configuration Manager を使用して、サービスとしての Windows を管理する
+# <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Gestire Windows come servizio con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
-
-
- System Center Configuration Manager では、環境内のサービスとしての Windows の状態を確認したり、展開リングを形成するサービス プランを作成して、新しいビルドがリリースされたときに、Windows 10 の現在のブランチ システムが最新の状態であることを確認したりできます。また、Windows 10 クライアントの Current Branch (CB) または Current Branch for Business (CBB) について、サポートの終了が近づいた場合にアラートを表示することもできます。  
-
- Windows 10 サービス オプションの詳細については、「[更新プログラムおよびアップグレードに関する Windows 10 のサービス オプション](https://technet.microsoft.com/library/mt598226\(v=vs.85\).aspx)」を参照してください。  
-
- サービスとしての Windows を管理する場合は、次のセクションを参考にします。
-
-##  <a name="BKMK_Prerequisites"></a> 必要条件  
- Windows 10 サービス ダッシュボードにデータを表示するには、次の操作を行う必要があります。  
-
--   ソフトウェアの更新管理のために、Windows 10 コンピューターで、Windows Server Update Services (WSUS) の Configuration Manager ソフトウェア更新プログラムを使用する必要があります。 コンピューターで、Windows Update for Business (または Windows Insider) を使用してソフトウェアの更新管理を行っている場合、そのコンピューターは Windows 10 サービス プランでは評価されません。 詳細については、「 [Integration with Windows Update for Business in Windows 10](../../sum/deploy-use/integrate-windows-update-for-business-windows-10.md)」をご覧ください。  
-
--   ソフトウェアの更新ポイントとサイト サーバーに、WSUS 4.0 を [修正プログラム 3095113](https://support.microsoft.com/kb/3095113) と共にインストールする必要があります。 これにより、ソフトウェア更新プログラムの分類に **アップグレード** が追加されます。 詳細については、「[Prerequisites for software updates](../../sum/plan-design/prerequisites-for-software-updates.md)」 (ソフトウェア更新プログラムの前提条件) を参照してください。  
-
--   コンピューターを Windows 10 Anniversary Update、および以降のバージョンにアップグレードするために、ソフトウェア更新ポイントとサイト サーバーに WSUS 4.0 を [修正プログラム 3159706](https://support.microsoft.com/kb/3159706) と共にインストールする必要があります。 この修正プログラムをインストールするには、サポート記事で紹介されている手順を手動で実行する必要があります。 詳細については、[エンタープライズ モビリティおよびセキュリティ ブログ](https://blogs.technet.microsoft.com/enterprisemobility/2016/08/05/update-your-configmgr-1606-sup-servers-to-deploy-the-windows-10-anniversary-update/)を参照してください。
-
--   定期探索を有効にします。 Windows 10 サービス ダッシュボードに表示されるデータは、探索を使用して検出されます。 詳細については、「 [Configure Heartbeat Discovery](../../core/servers/deploy/configure/configure-discovery-methods.md#a-namebkmkconfighbdisca-configure-heartbeat-discovery)」をご覧ください。  
-
-     次の Windows 10 のブランチとビルドの情報が検出されて、次の属性に格納されます。  
-
-    -   **オペレーティング システムの準備ブランチ**: オペレーティング システムのブランチを指定します。 たとえば、**0** CB = (アップグレードを延期しない)、**1** = CBB (アップグレードを延期する)、**2** = Long Term Servicing Branch (LTSB) などです。
-
-    -   **オペレーティング システムのビルド**: オペレーティング システムのビルドを指定します。 たとえば、**10.0.10240** (RTM) または **10.0.10586** (バージョン 1511) などです。  
-
--   Windows 10 サービス ダッシュボードにデータが表示されるようにするには、サービス接続ポイントをインストールし、 **オンライン、固定接続** モード用に構成する必要があります。 オフライン モードでは、Configuration Manager サービス更新を取得するまで、ダッシュボードにデータ更新が表示されません。   
-     詳細については、「[About the service connection point](../../core/servers/deploy/configure/about-the-service-connection-point.md)」 (サービスの接続ポイントについて) を参照してください。  
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
--   Configuration Manager コンソールを実行するコンピューター上に、Internet Explorer 9 以降をインストールする必要があります。  
+ In System Center Configuration Manager è possibile visualizzare lo stato di Windows distribuito come servizio nell'ambiente corrente, creare piani di manutenzione per formare anelli di distribuzione, verificare che i sistemi di rami di Windows 10 correnti siano mantenuti aggiornati quando vengono rilasciate nuove build e visualizzare avvisi quando i client Windows 10 si avvicinano alla scadenza del supporto per la build di Current Branch (CB) o Current Branch for Business (CBB).  
 
--   ソフトウェア更新プログラムが構成および同期されている必要があります。 Windows 10 の機能のアップグレードを Configuration Manager コンソールで使用するには、**アップグレード** 分類を選択し、ソフトウェア更新プログラムを同期する必要があります。 詳細については、「[Prepare for software updates management](../../sum/get-started/prepare-for-software-updates-management.md)」 (ソフトウェア更新管理の準備) を参照してください。  
+ Per altre informazioni sulle opzioni di manutenzione di Windows 10, vedere le  [opzioni di manutenzione relative agli aggiornamenti di Windows 10](https://technet.microsoft.com/library/mt598226\(v=vs.85\).aspx).  
 
-##  <a name="BKMK_ServicingDashboard"></a> Windows 10 サービス ダッシュボード  
- Windows 10 サービス ダッシュボードは、その環境の Windows 10 コンピューターに関する情報、アクティブなサービス プラン、コンプライアンス情報などを提供します。 Windows 10 サービス ダッシュボードのデータは、サービス接続ポイントがインストールされていることに依存します。 ダッシュボードには、次のタイルがあります。  
+ Usare le sezioni seguenti per gestire Windows come servizio.
 
--   **Windows 10 の使用状況のタイル**: Windows 10 のパブリック ビルドの内訳を提供します。 Windows Insider のビルドは、そのサイトにまだ認識されていないすべてのビルドと同様、 **[その他]** として一覧表示されます。 サービス接続ポイントによって、Windows のビルドに関する情報を示すメタデータがダウンロードされ、その後、そのデータが探索データと比較されます。  
+##  <a name="BKMK_Prerequisites"></a> Prerequisiti  
+ Per visualizzare i dati nel dashboard di manutenzione di Windows 10 è necessario seguire questa procedura:  
 
--   **Windows 10 のリングのタイル**: Windows 10 の内訳をブランチと準備状態ごとに提供します。 LTSB セグメントは、LTSB のすべてのバージョンになります (これに対し、最初のタイルは、 Windows 10 LTSB 2015 など、特定のバージョンの内訳を示します)。 **Release Ready** セグメントは CB、 **Business Ready** セグメントは CBB に対応します。  
+-   I computer Windows 10 devono usare gli aggiornamenti software di Configuration Manager con Windows Server Update Services (WSUS) per la gestione degli aggiornamenti software. Se la gestione degli aggiornamenti software avviene tramite Windows Update per Business o Windows Insider, il computer non viene valutato nei piani di manutenzione di Windows 10. Per altre informazioni, vedere [Integration with Windows Update for Business in Windows 10](../../sum/deploy-use/integrate-windows-update-for-business-windows-10.md).  
 
--   **サービス プランの作成のタイル**: サービス プランを作成する簡単な方法を提供します。 名前、コレクション (サイズの小さい順に上位 10 コレクションのみが表示される)、展開パッケージ (最近変更された 10 パッケージのみが表示される)、および準備状態を指定します。 既定値は、その他の設定に使用されます。 **[詳細設定]** をクリックしてサービス プランの作成ウィザードを起動すると、すべてのサービス プランの設定を構成できます。  
+-   Installare WSUS 4.0 con l' [hotfix 3095113](https://support.microsoft.com/kb/3095113) nei punti di aggiornamento software e nei server del sito. Questo consente di aggiungere la classificazione degli aggiornamenti software **Aggiornamenti** . Per altre informazioni, vedere [Prerequisiti per aggiornamenti software](../../sum/plan-design/prerequisites-for-software-updates.md).  
 
--   **有効期限切れのタイル**: Windows 10 のビルドが有効期限を過ぎているデバイスの割合がパーセントで表示されます。 Configuration Manager では、サービス接続ポイントによってダウンロードされたメタデータから割合を決定し、探索データと比較します。 有効期限を過ぎたビルドは、セキュリティ更新プログラムを含む、毎月の累積的な更新プログラムを受信しなくなります。 このカテゴリのコンピューターは、次のビルド バージョンにアップグレードする必要があります。 Configuration Manager は、次の整数へ丸めます。 たとえば、10,000 台のコンピューターがあり、その 1 台についてのみビルドの有効期限が切れている場合、タイルには 1% が表示されます。  
+-   È necessario che WSUS 4.0 con [hotfix 3159706](https://support.microsoft.com/kb/3159706) sia installato nei punti di aggiornamento software e nel server del sito per eseguire l'aggiornamento dei computer a Windows 10 Anniversary Update e alle versioni successive. Per installare l'hotfix è necessario eseguire i passaggi manuali descritti nell'articolo del supporto tecnico. Per altre informazioni, vedere [Enterprise Mobility and Security Blog](https://blogs.technet.microsoft.com/enterprisemobility/2016/08/05/update-your-configmgr-1606-sup-servers-to-deploy-the-windows-10-anniversary-update/) (Blog sulla sicurezza e la mobilità aziendale).
 
--   **もうすぐ有効期限のタイル**: **有効期限切れ** のタイルと似ており、ビルドの有効期限の終わりが近い (約 4 か月以内) コンピューターの割合が表示されます。 Configuration Manager は、次の整数へ丸めます。  
+-   Abilitare Individuazione heartbeat. I dati visualizzati nel dashboard di manutenzione di Windows 10 vengono rilevati con l'individuazione. Per altre informazioni, vedere [Configure Heartbeat Discovery](../../core/servers/deploy/configure/configure-discovery-methods.md#a-namebkmkconfighbdisca-configure-heartbeat-discovery).  
 
--   **アラート タイル**: アクティブなアラートが表示されます。  
+     Le informazioni riportate di seguito sul ramo e la build di Windows 10 vengono rilevate e memorizzate negli attributi seguenti:  
 
--   **サービス プランの監視のタイル**: 作成したサービス プランとそれぞれに対するコンプライアンスのグラフが表示されます。 これにより、サービス プランの展開の現在の状態の概要をすばやく確認できます。 前の展開リングがコンプライアンスに対する期待を満たす場合は、サービス プラン ルールが自動的にトリガーされることを待たずに、後のサービス プラン (展開リング) を選択し、 **[今すぐ展開]** をクリックすることができます。  
+    -   **Ramo per la conformità del sistema operativo**: specifica il ramo del sistema operativo. Ad esempio, **0** = CB (Non rinviare gli aggiornamenti), **1** = CBB (Rinvia gli aggiornamenti), **2** = Long Term Servicing Branch (LTSB)
 
--   **Windows 10 ビルドのタイル**: 表示は、現在リリースされている Windows 10 ビルドの概要を提供する固定イメージのタイム ラインであり、ビルドがいつ別の状態に移行するかについて、一般的なヒントを提供します。  
+    -   **Build del sistema operativo**: specifica la build del sistema operativo. Ad esempio, **10.0.10240** (RTM) o **10.0.10586** (versione 1511)  
+
+-   Installare e configurare il punto di connessione del servizio per la modalità **Online, connessione permanente** , per poter visualizzare i dati nel dashboard di manutenzione di Windows 10. In modalità offline gli aggiornamenti dei dati non vengono visualizzati nel dashboard fino a quando non si ottengono aggiornamenti di manutenzione di Configuration Manager.   
+     Per altre informazioni, vedere [Informazioni sul punto di connessione del servizio](../../core/servers/deploy/configure/about-the-service-connection-point.md).  
+
+
+-   Verificare che nel computer che esegue la console di Configuration Manager sia installato Internet Explorer 9 o versione successiva.  
+
+-   Assicurarsi che gli aggiornamenti software siano configurati e sincronizzati nella console. Per rendere disponibili gli eventuali aggiornamenti delle funzionalità di Windows 10 nella console di Configuration Manager, è necessario selezionare la classificazione **Aggiornamenti** e sincronizzare gli aggiornamenti software. Per altre informazioni, vedere [Prerequisiti per aggiornamenti software](../../sum/get-started/prepare-for-software-updates-management.md).  
+
+##  <a name="BKMK_ServicingDashboard"></a> Dashboard di manutenzione di Windows 10  
+ Il dashboard di manutenzione di Windows 10 fornisce informazioni sui computer Windows 10 nell'ambiente, piani di manutenzione attivi, informazioni di conformità e così via. I dati disponibili nel dashboard di manutenzione di Windows 10 variano a seconda che il punto di connessione del servizio sia installato o meno. Il dashboard include i riquadri seguenti:  
+
+-   **Riquadro Utilizzo di Windows 10**: fornisce un riepilogo delle build pubbliche di Windows 10. Le build di Windows Insider sono elencate come **altro** insieme ad altre eventuali build che non sono note al sito. Il punto di connessione del servizio scarica i metadati contenenti informazioni sulle build di Windows, dati che vengono messi a confronto con i dati di individuazione.  
+
+-   **Riquadro Anelli di Windows 10**: fornisce un riepilogo di Windows 10 in base ai rami e allo stato di conformità. Il segmento LTSB include tutte le versioni LTSB, mentre il primo riquadro riepiloga le versioni specifiche, ad esempio Windows 10 LTSB 2015. Il segmento **Release Ready** corrisponde a CB, mentre il segmento **Business Ready** corrisponde a CBB.  
+
+-   **Riquadro Crea piano di manutenzione**: offre un modo rapido per creare un piano di manutenzione. Specificare il nome e la raccolta, tenendo presente che vengono visualizzate solo le prime dieci raccolte per dimensioni, a partire dalla più piccola. Specificare anche lo stato di conformità e il pacchetto di distribuzione, tenendo presente che vengono visualizzati solo i primi dieci pacchetti modificati più di recente. Per le altre impostazioni vengono usati i valori predefiniti. Fare clic su **Impostazioni avanzate** per avviare la procedura guidata Crea piano di manutenzione in cui è possibile configurare tutte le impostazioni del piano di servizio.  
+
+-   **Riquadro Scaduta**: visualizza la percentuale di dispositivi presenti in una build di Windows 10 che ha superato la scadenza. Configuration Manager determina tale percentuale dai metadati scaricati dal punto di connessione del servizio messi a confronto con i dati di individuazione. Una build che ha superato la scadenza non riceve più gli aggiornamenti cumulativi mensili, inclusi gli aggiornamenti della sicurezza. I computer in questa categoria devono essere aggiornati alla versione successiva della build. Configuration Manager arrotonda al numero intero successivo. Ad esempio, se si hanno 10.000 computer e soltanto uno si trova in una build scaduta, il riquadro restituirà 1%.  
+
+-   **Riquadro Scade a breve**: visualizza la percentuale di computer presenti in una build in procinto di scadere nei quattro mesi successivi, analogamente al riquadro **Scaduta** . Configuration Manager arrotonda al numero intero successivo.  
+
+-   **Riquadro Avvisi**: visualizza gli avvisi attivi.  
+
+-   **Riquadro Monitoraggio piano di manutenzione**: visualizza i piani di manutenzione creati e un grafico della conformità per ognuno. Offre così una rapida panoramica dello stato attuale delle distribuzioni del piano di manutenzione. Se un anello di distribuzione precedente soddisfa le previsioni di conformità, è possibile selezionare un piano di manutenzione o un anello di distribuzione successivo e fare clic su **Distribuisci ora** , anziché attendere l'attivazione automatica delle regole del piano di manutenzione.  
+
+-   **Riquadro Build di Windows 10**: visualizza l'immagine fissa di una sequenza temporale che fornisce una panoramica generale delle build di Windows 10 attualmente rilasciate e del momento in cui passeranno a stati diversi.  
 
 > [!IMPORTANT]  
->  Windows 10 サービス ダッシュボードに表示される情報 (Windows 10 のバージョンのサポート ライフサイクルなど) は、利便性のために、社内で内部的に使用するためにのみ提供されます。 更新プログラムのコンプライアンス対応を確認する場合に、この情報のみに依存しないでください。 示された情報の正確性を確認してください。  
+>  Le informazioni visualizzate nel dashboard di manutenzione di Windows 10, ad esempio il ciclo di vita del supporto per le versioni di Windows 10, vengono fornite per agevolare l'utente e sono destinate solo all'uso interno all'azienda. Non fare affidamento esclusivamente su queste informazioni per accertare la conformità dell'aggiornamento. Verificare l'accuratezza delle informazioni fornite.  
 
-## <a name="servicing-plan-workflow"></a>サービス プラン ワークフロー  
- Configuration Manager の Windows 10 サービス プランは、ソフトウェア更新プログラムの自動展開ルールにとても似ています。 サービス プランを作成する場合は、Configuration Manager によって評価される次の条件を含めます。  
+## <a name="servicing-plan-workflow"></a>Flusso di lavoro del piano di manutenzione  
+ I piani di manutenzione di Windows 10 in Configuration Manager sono molto simili alle regole di distribuzione automatica degli aggiornamenti software. Creare un piano di manutenzione con i criteri seguenti, che verrà valutato da Configuration Manager:  
 
--   **アップグレード分類**: **アップグレード** 分類に含まれる更新プログラムのみが評価されます。  
+-   **Classificazione Aggiornamenti**: vengono valutati solo gli aggiornamenti presenti nella classificazione **Aggiornamenti** .  
 
--   **準備状態**: サービス プランで定義されている準備状態が、アップグレードの準備状態と比較されます。 アップグレードのメタデータは、サービス接続ポイントが更新プログラムをチェックするときに取得されます。  
+-   **Stato di conformità**: lo stato di conformità definito nel piano di manutenzione viene confrontato con lo stato di conformità per l'aggiornamento. I metadati per l'aggiornamento vengono recuperati quando il punto di connessione del servizio verifica la disponibilità di aggiornamenti.  
 
--   **時間遅延**: サービス プランで、 **[Microsoft が新しいアップグレードを公開してから何日後に環境に展開されるようにするか]** として指定する日数です。 Configuration Manager では、現在の日付が、リリース日に構成された日数を加算したよりも後かどうかによって、アップグレードを展開に含めるかどうかを評価します。  
+-   **Differimento**: numero di giorni specificato per l'impostazione **Dopo quanti giorni dalla pubblicazione di un nuovo aggiornamento di Microsoft si vuole eseguire la distribuzione nell'ambiente** nel piano di manutenzione. Configuration Manager valuta se includere un aggiornamento nella distribuzione, se la data corrente è successiva alla data di rilascio più il numero di giorni configurato.  
 
- アップグレードが条件を満たしている場合、サービス プランによってアップグレードが展開パッケージに追加され、配布ポイントに配布され、サービス プランで構成した設定に基づいてコレクションに展開されます。  Windows 10 サービス ダッシュボードのサービス プランの監視のタイルで展開を監視することができます。 詳細については、「[Monitor software updates](../../sum/deploy-use/monitor-software-updates.md)」 (ソフトウェア更新プログラムの監視) を参照してください。  
+ Quando un aggiornamento soddisfa i criteri, il piano di manutenzione aggiunge l'aggiornamento al pacchetto di distribuzione, distribuisce il pacchetto nei punti di distribuzione e distribuisce l'aggiornamento nella raccolta in base alle impostazioni configurate nel piano di manutenzione.  È possibile monitorare le distribuzioni nel riquadro piano di monitoraggio del piano del servizio, nel dashboard di manutenzione di Windows 10. Per altre informazioni, vedere [Monitorare gli aggiornamenti software](../../sum/deploy-use/monitor-software-updates.md).  
 
-##  <a name="BKMK_ServicingPlan"></a> Windows 10 サービス プラン  
- Windows 10 CB を展開するとき、1 つ以上のサービス プランを作成して、環境に必要な展開リングを定義し、その後 Windows 10 サービス ダッシュボードで監視することができます。   
-サービス プランは、 **アップグレード** ソフトウェア更新分類のみを使用し、Windows 10 の累積的な更新プログラムを使用しません。 これらの更新プログラムは、ソフトウェア更新プログラムのワークフローを使用して展開する必要があります。  サービス プランに対するエンド ユーザー エクスペリエンスは、サービス プランで構成する設定を含め、ソフトウェア更新プログラムの場合と同じです。  
-
-> [!NOTE]  
->  タスク シーケンスを使用して、Windows 10 の各ビルドに対して、アップグレードを展開することができますが、必要な手動処理が多くなります。 更新されたソース ファイルを、オペレーティング システム アップグレード パッケージとしてインポートした後、タスク シーケンスを作成して、適切な一連のコンピューターに展開する必要があります。 ただし、タスク シーケンスは、展開前や展開後のアクションなどの追加のカスタマイズされたオプションを提供します。  
-
- 基本的なサービス プランは、Windows 10 サービス ダッシュボードから作成できます。 名前、コレクション (サイズの小さい順に上位 10 コレクションのみが表示される)、展開パッケージ (最近変更された 10 パッケージのみが表示される)、および準備状態を指定した後、他の設定については既定値を使用して、Configuration Manager によってサービス プランが作成されます。 また、サービス プランの作成ウィザードを開始して、すべての設定を構成することもできます。 サービス プランの作成ウィザードを使用してサービス プランを作成するには、次の手順を使用します。  
+##  <a name="BKMK_ServicingPlan"></a> Piano di manutenzione di Windows 10  
+ Quando si distribuisce Windows 10 CB, è possibile creare uno o più piani di manutenzione per definire gli anelli di distribuzione per l'ambiente usato e monitorarli successivamente nel dashboard di manutenzione di Windows 10.   
+I piani di manutenzione usano solo la classificazione degli aggiornamenti software **Aggiornamenti** e non gli aggiornamenti cumulativi per Windows 10. Per tali aggiornamenti è ancora necessario eseguire la distribuzione usando il flusso di lavoro degli aggiornamenti software.  Il piano di manutenzione e gli aggiornamenti software offrono la stessa esperienza all'utente finale, incluse le impostazioni configurate nel piano di manutenzione.  
 
 > [!NOTE]  
->  Configuration Manager バージョン 1602 より、危険度の高い展開の動作を管理することができます。 危険度の高い展開とは、展開が自動的にインストールされますが、望ましくない結果が生じる可能性がある展開です。 たとえば、Windows 10 を展開する **必須** 目的のタスク シーケンスは、危険度の高い展開と見なされます。 詳細については、「[危険度の高い展開を管理するための設定](../../protect/understand/settings-to-manage-high-risk-deployments.md)」を参照してください。  
+>  È possibile usare una sequenza di attività per distribuire un aggiornamento per ogni build di Windows 10, ma questo richiede un maggiore intervento manuale. Sarebbe necessario importare i file di origine aggiornati come un pacchetto di aggiornamento del sistema operativo e quindi creare e distribuire la sequenza di attività per il set di computer appropriato. Tuttavia, una sequenza di attività offre altre opzioni personalizzate, ad esempio le azioni di pre-distribuzione e post-distribuzione.  
 
-#### <a name="to-create-a-windows-10-servicing-plan"></a>Windows 10 サービス プランを作成するには  
+ È possibile creare un piano di manutenzione di base dal dashboard di manutenzione di Windows 10. Dopo aver specificato il nome, la raccolta (vengono visualizzate solo le prime dieci raccolte per dimensioni, a partire dalla più piccola), il pacchetto di distribuzione (vengono visualizzati solo i primi dieci pacchetti modificati più di recente) e lo stato di conformità, Configuration Manager crea il piano di manutenzione con valori predefiniti per le altre impostazioni. È anche possibile avviare la procedura guidata Crea piano di manutenzione per configurare tutte le impostazioni. Usare la procedura seguente per creare un piano di manutenzione con la procedura guidata Crea piano di manutenzione.  
 
-1.  Configuration Manager コンソールで、 **[ソフトウェア ライブラリ]** をクリックします。  
+> [!NOTE]  
+>  A partire dalla versione 1602 di Configuration Manager, è possibile gestire il comportamento relativo alle distribuzioni ad alto rischio. Una distribuzione ad alto rischio viene installata automaticamente e può causare risultati imprevisti. Ad esempio, una sequenza di attività con scopo impostato su **Obbligatorio** e che distribuisce Windows 10 viene considerata una distribuzione ad alto rischio. Per altre informazioni, vedere [Impostazioni per gestire distribuzioni ad alto rischio](../../protect/understand/settings-to-manage-high-risk-deployments.md).  
 
-2.  [ソフトウェア ライブラリ] ワークスペースで **[Windows 10 サービス]**を展開し、 **[サービス プラン]**をクリックします。  
+#### <a name="to-create-a-windows-10-servicing-plan"></a>Per creare un piano di manutenzione di Windows 10  
 
-3.  **[ホーム]** タブの **[作成]** グループで、 **[サービス プランの作成]**をクリックします。 サービス プランの作成ウィザードが開きます。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-4.  [ **全般** ] ページで、次の設定を構成します。  
+2.  Nell'area di lavoro Raccolta software espandere **Manutenzione di Windows 10**e quindi fare clic su **Piani di manutenzione**.  
 
-    -   **名前**: サービス プランの名前を指定します。 名前は、一意であり、規則の目的を示し、Configuration Manager サイト内の他の規則と区別できるものでなければなりません。  
+3.  Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea piano di manutenzione**. Verrà avviata la procedura guidata Crea piano di manutenzione.  
 
-    -   **説明**: サービス プランの説明を指定します。 この説明は、サービス プランの概要と、Configuration Manager サイト内の他のプランと区別し、特定するのに役立つその他の関連情報を示すものにする必要があります。 説明フィールドは省略可能で、256 文字以内で指定する必要があります。既定値は空白です。  
+4.  Nella pagina **Generale** è possibile configurare le seguenti impostazioni:  
 
-5.  [サービス プラン] ページで、次の設定を構成します。  
+    -   **Nome**: specificare il nome per il piano di manutenzione. Il nome deve essere univoco, descrivere l'obiettivo della regola e contribuire a differenziarla dalle altre presenti nel sito di Configuration Manager.  
 
-    -   **ターゲット コレクション**: サービス プランに使用するターゲット コレクションを指定します。 コレクションのメンバーは、サービス プランで定義された Windows 10 アップグレードを受信します。  
+    -   **Descrizione**: specificare una descrizione per il piano di manutenzione. La descrizione deve fornire una panoramica del piano di manutenzione e qualsiasi altra informazione rilevante per identificare e differenziare il piano dagli altri nel sito di Configuration Manager. Il campo della descrizione è facoltativo, ha un limite di 256 caratteri e un valore vuoto per impostazione predefinita.  
+
+5.  Nella pagina Piano di manutenzione è possibile configurare le impostazioni seguenti:  
+
+    -   **Raccolta di destinazione**: specifica la raccolta di destinazione da usare per il piano di manutenzione. I membri della raccolta ricevono gli aggiornamenti di Windows 10 definiti nel piano di manutenzione.  
 
         > [!NOTE]  
-        >  Configuration Manager バージョン 1602 より、危険度の高い展開 (サービス プランなど) を行う際には、サイトのプロパティで構成された展開検証設定に適合するカスタム コレクションのみが **[コレクションの選択]** ウィンドウに表示されます。
+        >  A partire dalla versione 1602 di Configuration Manager, quando si esegue una distribuzione ad alto rischio, ad esempio quella di un piano di manutenzione, la finestra **Seleziona raccolta** visualizza soltanto le raccolte personalizzate che soddisfano le impostazioni di verifica della distribuzione configurate nelle proprietà del sito.
         >    
-        > 危険度の高い展開は、常にカスタム コレクション、作成されたコレクション、および組み込みの **不明なコンピューター** コレクションに制限されています。 危険度の高い展開を作成する際、 **すべてのシステム**などの組み込みのコレクションは選択できません。 **[メンバー数がサイトの最小サイズ構成を超えるコレクションを非表示にする]** をオフにすると、構成済みの最大サイズよりクライアント数が少ないすべてのカスタム コレクションが表示されます。 詳細については、「[危険度の高い展開を管理するための設定](../../protect/understand/settings-to-manage-high-risk-deployments.md)」を参照してください。  
+        > Le distribuzioni ad alto rischio sono sempre limitate alle raccolte personalizzate (quelle create dall'utente) e alla racconta predefinita **Computer sconosciuti** . Quando si crea una distribuzione ad alto rischio, non è possibile selezionare una raccolta predefinita quale **Tutti i sistemi**. Deselezionare **Nascondi le raccolte con un numero di membri maggiore della configurazione delle dimensioni minime del sito** per visualizzare tutte le raccolte personalizzate che contengono un numero di client inferiore rispetto alla dimensione massima configurata. Per altre informazioni, vedere [Impostazioni per gestire distribuzioni ad alto rischio](../../protect/understand/settings-to-manage-high-risk-deployments.md).  
         >  
-        > 展開の検証の設定は、コレクションの現在のメンバーシップに基づきます。 サービス プランを展開した後に、危険度の高い展開の設定に基づいてコレクションのメンバーシップが再評価されることはありません。  
+        > Le impostazioni di verifica della distribuzione sono basate sull'appartenenza attuale della raccolta. Dopo aver distribuito il piano di manutenzione, l'appartenenza alla raccolta non viene rivalutata per le impostazioni di distribuzione ad alto rischio.  
         >  
-        > たとえば、**[既定サイズ]** を 100、**[最大サイズ]** を 1000 に設定します。 危険度の高い展開の作成時に、 **[コレクションの選択]** ウィンドウには、含まれるクライアント数が 100 未満のコレクションのみが表示されます。 **[メンバー数がサイトの最小サイズ構成を超えるコレクションを非表示にする]** の設定をオフにすると、含まれるクライアント数が 1000 未満のコレクションがウィンドウに表示されます。  
+        > Ad esempio, si supponga di impostare **Dimensione predefinita** su 100 e **Dimensione massima** su 1000. Quando si crea una distribuzione ad alto rischio, nella finestra **Seleziona raccolta** verranno visualizzate solo le raccolte che contengono meno di 100 client. Se si deseleziona l'impostazione **Nascondi le raccolte con un numero di membri maggiore della configurazione delle dimensioni minime del sito**, nella finestra vengono visualizzate le raccolte che includono meno di 1000 client.  
         >
-        > サイトの役割を含むコレクションを選択すると、次のことが適用されます。    
+        > Quando si seleziona una raccolta che include un ruolo del sito, sono valide le condizioni seguenti:    
         >   
-        >    - コレクションにサイト システム サーバーが含まれていて、展開の検証の設定で、サイト システム サーバーが含まれるコレクションをブロックするように構成されていると、エラーが発生し続行することができません。    
-        >    - コレクションにサイト システム サーバーが含まれていて、展開の検証の設定で、サイト システム サーバーが含まれている場合に警告するように構成されていると、コレクションのサイズが既定の値を超えている場合、またはコレクションにサーバーが含まれている場合は、ソフトウェアの展開ウィザードに危険度が高いことを通知する警告が表示されます。 この場合、危険度の高い展開を作成することに同意する必要があります。これにより、監査ステータス メッセージが作成されます。  
+        >    - Se la raccolta contiene un server di sistema del sito e le impostazioni di verifica della distribuzione sono state configurate in modo da bloccare le raccolte con server di sistema del sito, si verifica un errore e la procedura si arresta.    
+        >    - Se la raccolta include un server di sistema del sito e nelle impostazioni di verifica della distribuzione configurate dall'utente viene riportata la presenza di tali server di sistema del sito, se la raccolta supera la dimensione predefinita oppure se la raccolta include un server, nella distribuzione guidata del software verrà visualizzato un messaggio sul rischio elevato dell'operazione. È necessario accettare di creare una distribuzione ad alto rischio, quindi viene creato un messaggio di stato relativo al controllo.  
 
-6.  [展開リング] ページで、次の設定を構成します。  
+6.  Nella pagina Anello di distribuzione configurare le impostazioni seguenti:  
 
-    -   **サービス プランを適用する Windows の準備状態を指定する**: 次のいずれかを選択します。  
+    -   **Specificare lo stato di conformità di Windows a cui applicare questo piano di manutenzione**: selezionare una delle opzioni riportate di seguito.  
 
-        -   **Release Ready (Current Branch)**: CB サービス モデルの機能の更新プログラムは、Microsoft によってリリースされるとすぐに使用できるようになります。
+        -   **Release Ready (Current Branch)**: nel modello di manutenzione CB, gli aggiornamenti delle funzionalità sono disponibili non appena vengono rilasciati da Microsoft.
 
-        -   **Business Ready (Current Branch for Business)**: CBB サービス ブランチは、通常、大規模な配置に対して使用します。 CBB サービス ブランチの Windows 10 クライアントは、わずかに時間をおいて、CB サービス ブランチの Windows 10 クライアントの場合と同じ Windows 10 のビルドを受け取ります。
+        -   **Business Ready (Current Branch for Business)**: il ramo di manutenzione CBB viene in genere usato per distribuzioni di grandi dimensioni. I client Windows 10 nel ramo di manutenzione CBB ricevono la stessa build di Windows 10 di quelli nel ramo CB, ma in un secondo momento.
 
-        サービス ブランチと最適なオプションの詳細については、「[サービス ブランチ](https://technet.microsoft.com/itpro/windows/manage/waas-overview#servicing-branches)」を参照してください。
+        Per altre informazioni sui rami di manutenzione e sulle opzioni più adatte alle proprie esigenze, vedere [Rami di manutenzione](https://technet.microsoft.com/itpro/windows/manage/waas-overview#servicing-branches).
 
-    -   **Microsoft が新しいアップグレードを公開してから何日後に環境に展開されるようにするか**: この設定で指定した日数をリリース日に加えて得られた日付よりも、現在の日付が後である場合、Configuration Manager はアップグレードを展開に含めるかどうかを評価します。
+    -   **Dopo quanti giorni dalla pubblicazione di un nuovo aggiornamento di Microsoft si vuole eseguire la distribuzione nell'ambiente**: Configuration Manager valuta se includere un aggiornamento nella distribuzione se la data corrente è successiva alla data di rilascio del numero di giorni configurato per questa impostazione.
 
-    -   Configuration Manager バージョン 1602 より前では、**[プレビュー]** をクリックすると、準備状態に関連付けられている Windows 10 更新プログラムが表示されます。  
+    -   Per le versioni precedenti alla versione 1602 di Configuration Manager, fare clic su **Anteprima** per visualizzare gli aggiornamenti di Windows 10 associati allo stato di conformità.  
 
-    詳細については、「[サービス ブランチ](https://technet.microsoft.com/itpro/windows/manage/waas-overview#servicing-branches)」を参照してください。
-7.  Configuration Manager バージョン 1602 以降では、[アップグレード] ページで、サービス プランに追加されるアップグレードをフィルター処理する検索条件を構成します。 指定された条件を満たすアップグレードだけが、関連付けられている展開に追加されます。  
+    Per altre informazioni, vedere [Rami di manutenzione](https://technet.microsoft.com/itpro/windows/manage/waas-overview#servicing-branches).
+7.  A partire dalla versione 1602 di Configuration Manager, nella pagina Aggiornamenti configurare i criteri di ricerca per filtrare gli aggiornamenti che verranno aggiunti al piano di manutenzione. Verranno aggiunti alla distribuzione associata solo gli aggiornamenti che soddisfano i criteri specificati.  
 
-     **[プレビュー]** をクリックすると、指定条件に適合するアップグレードが表示されます。  
+     Fare clic su **Anteprima** per visualizzare gli aggiornamenti che soddisfano i criteri specificati.  
 
-8.  [展開スケジュール] ページで、次の設定を構成します。  
+8.  Nella pagina Pianificazione della distribuzione configurare le seguenti impostazioni:  
 
-    -   **スケジュールの評価**: Configuration Manager で、使用可能な時間およびインストール期限の時間を、UTC または Configuration Manager コンソールを実行するコンピューターのローカル時刻のどちらを使用して計算するかを指定します。  
+    -   **Pianificazione valutazione**: specificare se Configuration Manager valuta il tempo disponibile e le scadenze dell'installazione in base all'ora UTC o all'ora locale del computer su cui è in esecuzione la console di Configuration Manager.  
 
         > [!NOTE]  
-        >  ローカル時刻を選択し、**[ソフトウェアが使用可能な時間]** または **[インストールの期限]** で **[直ちに]** を選択した場合は、Configuration Manager コンソールを実行しているコンピューターの現在の時刻を使用して、更新プログラムを利用可能にする時間またはクライアントにインストールする時間が評価されます。 クライアントのタイム ゾーンが異なる場合は、クライアントの時刻が評価時刻になったときにこれらのアクションが実行されます。  
+        >  Quando si seleziona l'ora locale e quindi si sceglie **Appena possibile** per **Tempo disponibile software** o **Scadenza installazione**, per valutare quando sono disponibili aggiornamento o quando vengono installati in un client, viene usata l'ora corrente del computer che esegue la console di Configuration Manager. Se il client si trova in un fuso orario diverso, verranno eseguite le azioni seguenti quando l'ora del client raggiunge quella impostata per la valutazione.  
 
-    -   **ソフトウェアが使用可能な時間**: 次の設定のいずれかを選んで、いつ、クライアントでソフトウェア更新プログラムを実行可能にするかを指定します。  
+    -   **Tempo disponibile software**: selezionare una delle seguenti impostazioni per specificare quando gli aggiornamenti del software saranno disponibili per i client:  
 
-        -   **直ちに**: 展開に含まれるソフトウェア更新プログラムを直ちにクライアント コンピューターで使用可能にします。 この設定を選択して展開を作成すると、Configuration Manager でクライアント ポリシーが更新されます。 その後、クライアントが次回のクライアント ポリシー ポーリング サイクルで展開を認識し、インストールに使用できるソフトウェア更新プログラムを取得できます。  
+        -   **Appena possibile**: selezionare questa impostazione per rendere disponibili il prima possibile gli aggiornamenti software inclusi nella distribuzione per i computer client. Quando si crea la distribuzione con questa impostazione selezionata, Configuration Manager aggiorna i criteri client. Quindi, al successivo ciclo di polling dei criteri client, ai client viene comunicata la distribuzione e possono ottenere gli aggiornamenti disponibili per l'installazione.  
 
-        -   **指定した時間経過後**: 展開に含まれるソフトウェア更新プログラムを、特定の日時にクライアント コンピューターで使用可能にします。 この設定を有効にして展開を作成すると、Configuration Manager でクライアント ポリシーが更新されます。 その後、クライアントが次回のクライアント ポリシー ポーリング サイクルで展開を認識します。 ただし、展開のソフトウェア更新プログラムは、構成された日付と時刻になるまで、インストールに使用できません。  
+        -   **Orario specifico**: selezionare questa impostazione per rendere disponibili gli aggiornamenti software inclusi nella distribuzione per i computer client in una data e a un orario specifici. Quando si crea la distribuzione con questa impostazione attivata, Configuration Manager aggiorna i criteri client. Quindi, al successivo ciclo di polling dei criteri client, ai client viene comunicata la distribuzione. Tuttavia, gli aggiornamenti del software nella distribuzione non saranno disponibili per l'installazione prima della data e dell'orario configurati.  
 
-    -   **インストールの期限**: 次の設定のいずれかを選んで、展開のソフトウェア更新プログラムのインストール期限を指定します。  
+    -   **Scadenza installazione**: selezionare una delle seguenti impostazioni per specificare la scadenza per l'installazione degli aggiornamenti software nella distribuzione:  
 
-        -   **直ちに**: 展開のソフトウェア更新プログラムを直ちに自動インストールします。  
+        -   **Appena possibile**: selezionare questa impostazione per installare automaticamente gli aggiornamenti software nella distribuzione appena possibile.  
 
-        -   **指定した時間経過後**: 展開のソフトウェア更新プログラムを特定の日時に自動インストールします。 Configuration Manager は、構成された **[指定した時間経過後]** の間隔を **[ソフトウェアが使用可能な時間]** に加えて、ソフトウェア更新プログラムのインストール期限を決定します。  
+        -   **Orario specifico**: selezionare questa impostazione per installare automaticamente gli aggiornamenti software nella distribuzione in una data e a un orario specifici. Configuration Manager determina la scadenza per installare gli aggiornamenti software aggiungendo l'intervallo **Orario specifico** configurato a **Tempo disponibile software**.  
 
             > [!NOTE]  
-            >  実際のインストール期限は、表示される期限の時刻に最大 2 時間の任意の時間が加えられた時刻になります。 そのようにすることで、ターゲット コレクションのすべてのクライアント コンピューターで、同時に展開の更新プログラムがインストールされないようにしています。  
+            >  L'orario effettivo di scadenza dell'installazione corrisponde all'ora di scadenza visualizzata più una quantità di tempo casuale di massimo 2 ore. Ciò consente di ridurre il potenziale impatto di un'installazione simultanea degli aggiornamenti nella distribuzione da parte di tutti i computer client nella raccolta di destinazione.  
             >   
-            >  **[コンピューター エージェント]** クライアント設定で **[期限のランダム化を無効にする]** を構成して、必要な更新プログラムのインストールの遅延のランダム化を無効にできるようになっています。 詳細については、「 [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent)」をご覧ください。  
+            >  È possibile configurare l'impostazione **Disabilitare sequenza casuale scadenza** del client **Agente computer** per disabilitare il ritardo della sequenza casuale di installazione per gli aggiornamenti richiesti. Per ulteriori informazioni, vedere [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
 
-9. [ユーザー側の表示と操作] ページで、次の設定を構成します。  
+9. Nella pagina Esperienza utente, è possibile configurare le seguenti impostazioni:  
 
-    -   **ユーザーへの通知**: 構成された **[ソフトウェアが使用可能な時間]** に、クライアント コンピューターでソフトウェア センターに更新プログラムの通知を表示するかどうか、またユーザーへの通知をクライアント コンピューターで表示するかどうかを指定します。  
+    -   **Notifiche utente**: specificare se visualizzare la notifica degli aggiornamenti in Software Center nel computer client in base al **Tempo disponibile software** configurato e se visualizzare le notifiche utente nei computer client.  
 
-    -   **期限に達したときの操作**:更新プログラムの展開の期限に達したときに実行する操作を指定します。 展開の更新プログラムをインストールするかどうかを指定します。 また、構成されたメンテナンス期間に関係なく、更新プログラムのインストール後に、システムの再起動を実行するかどうかを指定します。 メンテナンス期間について詳しくは、「[メンテナンス期間を使用する方法](../../core/clients/manage/collections/use-maintenance-windows.md)」を参照してください。  
+    -   **Comportamento scadenza**: specificare il comportamento che deve verificarsi quando si raggiunge la data di scadenza per la distribuzione degli aggiornamenti. Specificare se installare gli aggiornamenti nella distribuzione. Specificare anche se eseguire un riavvio del sistema dopo l'installazione dell'aggiornamento, indipendentemente da una finestra di manutenzione configurata. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
-    -   **デバイスの再起動**: 更新プログラムをインストールした後にサーバーおよびワークステーションでシステムの再起動を抑制するかどうか、またインストールを完了するためにシステムの再起動が必要かどうかを指定します。  
+    -   **Comportamento riavvio dispositivo**: specificare se evitare un riavvio del sistema in server e workstation dopo l'installazione degli aggiornamenti e se è richiesto un riavvio del sistema per completare l'installazione.  
 
-    -   **Windows Embedded デバイスに対してフィルター処理を書き込む**: 書き込みフィルターが有効にされた Windows Embedded デバイスに更新プログラムを展開するときに、更新プログラムを一時オーバーレイにインストールし、変更を後でコミットするか、インストール期限またはメンテナンス期間中に変更をコミットするかを指定できます。 インストールの期限またはメンテナンス期間中に変更をコミットする場合は、再起動が必要になります。再起動すると、デバイスに変更が保持されます。  
-
-        > [!NOTE]  
-        >  更新プログラムを Windows Embedded デバイスに展開する場合、デバイスが、メンテナンス期間が構成されたコレクションのメンバーであることを確認します。  
-
-10. [展開パッケージ] ページで、既存の展開パッケージを選択するか、または、次の設定を構成して新しい展開パッケージを作成します。  
-
-    1.  **名前**: 展開パッケージの名前を指定します。 これは、パッケージの内容を説明する一意の名前にする必要があります。 使用できる文字数は最大で 50 文字です。  
-
-    2.  **説明**: 展開パッケージに関する情報を示す説明を指定します。 説明に使用できる文字数は、最大で 127 文字です。  
-
-    3.  **パッケージ ソース**: ソフトウェア更新プログラムのソース ファイルの場所を指定します。  ソースの場所へのネットワーク パス (例: **\\\server\sharename\path**) を入力するか、 **[参照]** をクリックして、該当するネットワークの場所を見つけます。 次のページに進む前に、展開パッケージのソース ファイル用の共有フォルダーを作成する必要があります。  
+    -   **Gestione filtri di scrittura per dispositivi con Windows Embedded**: quando si distribuiscono aggiornamenti in dispositivi con Windows Embedded abilitati per i filtri di scrittura, è possibile specificare di installare l'aggiornamento nella sovrapposizione temporanea e confermare le modifiche in seguito oppure alla scadenza dell'installazione o all'interno di una finestra di manutenzione. Quando si confermano le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario il riavvio per mantenere le modifiche nel dispositivo.  
 
         > [!NOTE]  
-        >  指定する展開パッケージのソースの場所を他のソフトウェア展開パッケージで使用することはできません。  
+        >  Quando si distribuisce un aggiornamento in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta con una finestra di manutenzione configurata.  
+
+10. Nella pagina Pacchetto di distribuzione selezionare un pacchetto di distribuzione esistente o configurare le seguenti impostazioni per creare un nuovo pacchetto di distribuzione:  
+
+    1.  **Nome**: specificare il nome del pacchetto di distribuzione. Deve essere un nome univoco che descrive il contenuto del pacchetto. Deve essere lungo massimo 50 caratteri.  
+
+    2.  **Descrizione**: specificare una descrizione che fornisca informazioni sul pacchetto di distribuzione. La descrizione deve contenere un massimo di 127 caratteri.  
+
+    3.  **Origine pacchetto**: specifica il percorso dei file di origine dell'aggiornamento software.  Digitare un percorso di rete per il percorso di origine, ad esempio **\\\server\nomecondivisione\percorso**oppure fare clic su **Sfoglia** per trovare il percorso di rete. Prima di procedere alla pagina successiva, è necessario creare la cartella condivisa per i file di origine del pacchetto di distribuzione.  
+
+        > [!NOTE]  
+        >  Il percorso di origine del pacchetto di distribuzione specificato non può essere usato da un altro pacchetto di distribuzione software.  
 
         > [!IMPORTANT]  
-        >  SMS プロバイダー コンピューター アカウントと、ウィザードを実行してソフトウェア更新プログラムをダウンロードするユーザーには、ダウンロード先に対する **書き込み** NTFS アクセス許可が必要です。 ソフトウェア更新プログラムのソース ファイルを攻撃者が改ざんするリスクを減らすため、ダウンロード先へのアクセスを注意深く制限する必要があります。  
+        >  L'account computer del provider SMS e l'utente che esegue la procedura guidata per scaricare gli aggiornamenti software devono disporre entrambi delle autorizzazioni NTFS di **Scrittura** nel percorso download. È necessario limitare con attenzione l'accesso al percorso download per ridurre il rischio di manomissioni da parte di utenti malintenzionati dei file origine degli aggiornamenti software.  
 
         > [!IMPORTANT]  
-        >  Configuration Manager によって展開パッケージが作成された後で、展開パッケージのプロパティで、パッケージ ソースの場所を変更できます。 ソースの場所を変更する場合、最初に、元のパッケージ ソースから新しいパッケージ ソースの場所にコンテンツをコピーする必要があります。  
+        >  È possibile modificare il percorso di origine del pacchetto nelle proprietà del pacchetto di distribuzione dopo che Configuration Manager ha creato il pacchetto di distribuzione. Ma in tal caso, è prima necessario copiare il contenuto dall'origine del pacchetto originale nel nuovo percorso di origine del pacchetto.  
 
-    4.  **送信の優先順位**: 展開パッケージの送信の優先順位を指定します。 Configuration Manager は、展開パッケージを配布ポイントに送信するときに、展開パッケージの送信の優先順位を使用します。 展開パッケージは優先順位に従って送信されます。[高]、[中]、[低] の順です。 パッケージの優先順位が同じ場合は、作成された順に送信されます。 バックログがない場合、パッケージは優先順位に関係なく直ちに処理されます。  
+    4.  **Priorità di invio**: specificare la priorità di invio per il pacchetto di distribuzione. Configuration Manager usa la priorità di invio quando invia il pacchetto di distribuzione ai punti di distribuzione. I pacchetti di distribuzione vengono inviati in ordine di priorità: Alta, Media o Bassa. I pacchetti con priorità identiche vengono inviati nell'ordine in cui sono stati creati. Se non esiste nessun backlog, il pacchetto eseguirà l'elaborazione immediatamente indipendentemente dalla relativa priorità.  
 
-11. [配布ポイント] ページで、更新ファイルをホストする配布ポイントまたは配布ポイント グループを指定します。 配布ポイントの詳細については、「[配布ポイントの構成](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_configs)」を参照してください。
+11. Nella pagina Punti di distribuzione specificare i punti di distribuzione o i gruppi di punti di distribuzione che ospiteranno i file di aggiornamento. Per altre informazioni, vedere [Configurare un punto di distribuzione](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_configs).
 
     > [!NOTE]  
-    >  このページは、ソフトウェア更新プログラムの新しい展開パッケージを作成する場合にのみ、使用することができます。  
+    >  Questa pagina è disponibile solo quando si crea un nuovo pacchetto di distribuzione di aggiornamento software.  
 
-12. [ダウンロード場所] ページで、更新ファイルをインターネットとローカル ネットワークのどちらからダウンロードするかを指定します。 次の設定を構成します。  
+12. Nella pagina Percorso download specificare se scaricare i file di aggiornamento da Internet o dalla rete locale. Configurare le seguenti impostazioni:  
 
-    -   **インターネットからソフトウェア更新プログラムをダウンロードする**: 更新プログラムを、指定したインターネット上の場所からダウンロードします。 既定では、この設定は有効になっています。  
+    -   **Scarica aggiornamenti software da Internet**: selezionare questa impostazione per scaricare gli aggiornamenti da un percorso specificato in Internet. Questa opzione è attivata per impostazione predefinita.  
 
-    -   **ネットワーク上の場所からソフトウェア更新プログラムをダウンロードする**: 更新プログラムを、ローカル ディレクトリまたは共有フォルダーからダウンロードします。 ウィザードを実行するコンピューターからインターネットにアクセスできない場合は、この設定が役立ちます。 インターネット アクセスが可能な任意のコンピューターで更新プログラムを事前にダウンロードして、ウィザードを実行しているコンピューターからアクセス可能なローカル ネットワーク上の場所に保存することができます。  
+    -   **Scarica aggiornamenti software da un percorso sulla rete locale**: selezionare questa impostazione per scaricare gli aggiornamenti da una directory locale o una cartella condivisa. Questa impostazione è utile quando il computer che esegue la procedura guidata non dispone di accesso a Internet. I computer con accesso a Internet possono scaricare preventivamente gli aggiornamenti e archiviarli in un percorso di rete locale accessibile al computer che esegue la procedura guidata.  
 
-13. [言語の選択] ページで、選択した更新プログラムをダウンロードする言語を選択します。 更新プログラムは、選択した言語で利用できる場合にのみダウンロードされます。 言語固有でない更新プログラムは、常にダウンロードされます。 既定では、ソフトウェアの更新ポイントのプロパティで構成した言語がウィザードで選択されます。 次のページに進む前に、言語を少なくとも 1 つ選択する必要があります。 更新プログラムでサポートされていない言語のみを選択した場合、更新プログラムのダウンロードは失敗します。  
+13. Nella pagina Selezione lingua selezionare le lingue per cui vengono scaricati gli aggiornamenti selezionati. Gli aggiornamenti vengono scaricati solo se sono disponibili nelle lingue selezionate. Gli aggiornamenti non specifici per la lingua vengono sempre scaricati. Per impostazione predefinita, la procedura guidata consente di selezionare le lingue configurate nelle proprietà del punto di aggiornamento software. Prima di procedere alla pagina successiva, è necessario selezionare almeno una lingua. Quando si selezionano solo lingue non supportate da un aggiornamento, il download dell'aggiornamento avrà esito negativo.  
 
-14. [概要] ページで設定を確認し、 **[次へ]** をクリックして、サービス プランを作成します。  
+14. Nella pagina Riepilogo rivedere le impostazioni e fare clic su **Avanti** per creare il piano di manutenzione.  
 
- ウィザードの完了後、サービス プランが実行されます。 指定された条件に一致する更新プログラムがソフトウェア更新プログラム グループに追加されて、更新プログラムがサイト サーバーのコンテンツ ライブラリにダウンロードされ、構成された配布ポイントに配布されて、ターゲット コレクション内のクライアントに展開されます。  
+ Dopo aver completato la procedura guidata, verrà eseguito il piano di manutenzione. Gli aggiornamenti che soddisfano i criteri specificati vengono aggiunti a un gruppo di aggiornamenti software, scaricati nella raccolta contenuto, nel server del sito, e distribuiti ai punti di distribuzione configurati. Il gruppo di aggiornamenti software viene quindi distribuito ai client inclusi nella raccolta di destinazione.  
 
-##  <a name="BKMK_ModifyServicingPlan"></a> サービス プランの変更  
-Windows 10 サービス ダッシュボードから基本的なサービス プランを作成した後、または既存のサービス プランの設定を変更する必要がある場合、サービス プランのプロパティに移動することができます。
+##  <a name="BKMK_ModifyServicingPlan"></a> Modificare un piano di manutenzione  
+Dopo aver creato un piano di manutenzione di base dal dashboard di manutenzione di Windows 10 oppure se è necessario modificare le impostazioni per un piano di manutenzione esistente, è possibile passare alle proprietà del piano di manutenzione.
 
 > [!NOTE]
-> サービス プランを作成する場合、ウィザードで提供されていないサービス プランのプロパティの設定を構成することができます。 ウィザードでは、ダウンロード設定、展開設定、および警告設定に対して既定値を使用します。  
+> È possibile configurare le impostazioni nelle proprietà per il piano di manutenzione che non sono disponibili nella procedura guidata usata per la creazione del piano di manutenzione. La procedura guidata usa valori predefiniti per le impostazioni di download, le impostazioni di distribuzione e gli avvisi.  
 
-サービス プランのプロパティを変更するには、次の手順に従います。  
+Per modificare le proprietà di un piano di manutenzione, seguire la procedura riportata di seguito.  
 
-#### <a name="to-modify-the-properties-of-a-servicing-plan"></a>サービス プランのプロパティを変更するには  
+#### <a name="to-modify-the-properties-of-a-servicing-plan"></a>Per modificare le proprietà di un piano di manutenzione  
 
-1.  Configuration Manager コンソールで、 **[ソフトウェア ライブラリ]** をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ソフトウェア ライブラリ] ワークスペースで、 **[Windows 10 サービス]**を展開し、 **[サービス プラン]**をクリックしてから、変更するサービス プランを選択します。  
+2.  Nell'area di lavoro Raccolta software espandere **Manutenzione di Windows 10**, fare clic su **Piani di manutenzione**e quindi selezionare il piano di manutenzione che si vuole modificare.  
 
-3.  **[ホーム]** タブで、 **[プロパティ]** をクリックし、選択したサービス プランのプロパティを開きます。
+3.  Nella scheda **Home** fare clic su **Proprietà** per aprire le proprietà del piano di manutenzione selezionato.
 
-    次の設定は、ウィザードで構成されていない、サービス プランのプロパティで使用できます。
+    Le impostazioni seguenti sono disponibili nelle proprietà del piano di manutenzione non configurate nella procedura guidata:
 
-    **展開設定**: [展開設定] タブで、次の設定を構成します。  
+    **Impostazioni distribuzione**: nella scheda Impostazioni distribuzione configurare le impostazioni seguenti:  
 
-    -   **展開の種類**: ソフトウェア更新プログラムの展開の種類を指定します。 構成されたインストール期限までにソフトウェア更新プログラムがクライアントで自動的にインストールされる必須のソフトウェア更新プログラムの展開を作成するには、[ **必須** ] を選択します。 ユーザーがソフトウェア センターから入手できるオプションのソフトウェア更新プログラムの展開を作成するには、[ **利用可能** ] を選択します。  
+    -   **Tipo di distribuzione**: specificare il tipo di distribuzione per la distribuzione degli aggiornamenti software. Selezionare **Richiesto** per creare una distribuzione degli aggiornamenti software obbligatoria in cui gli aggiornamenti software vengano automaticamente installati nei client prima della scadenza di un'installazione configurata. Selezionare **Disponibile** per creare una distribuzione degli aggiornamenti software aggiuntiva che gli utenti possano installare da Software Center.  
 
         > [!IMPORTANT]  
-        >  ソフトウェア更新プログラムの展開を作成した後に展開の種類を変更することはできません。  
+        >  Dopo aver creato la distribuzione degli aggiornamenti software, non è possibile modificare successivamente il tipo di distribuzione.  
 
         > [!NOTE]  
-        >  **[必須]** として展開されているソフトウェア更新プログラム グループは、バック グラウンドでダウンロードされ、BITS 設定に従います (構成されている場合)。  
-        > ただし、 **[利用可能]** として展開されているソフトウェア更新プログラム グループは、フォア グラウンドでダウンロードされ、BITS 設定を無視します。  
+        >  Un gruppo di aggiornamenti software distribuito come **Richiesto** verrà scaricato in background e rispetterà le impostazioni BITS, se configurate.  
+        > I gruppi di aggiornamenti software distribuiti come **Disponibile** verranno invece scaricati in primo piano e ignoreranno le impostazioni BITS.  
 
-    -   **展開が必要なときに、Wake-on-LAN を使用してクライアントを起動する**: 期限になったら Wake On LAN を有効にして、展開の 1 つまたは複数のソフトウェア更新プログラムを必要とするコンピューターにウェイクアップ パケットを送信するかどうかを指定します。 スリープ モードのコンピューターは、ソフトウェア更新プログラムのインストールを開始できるように、インストール期限になるとスリープ解除されます。 展開のソフトウェア更新プログラムを必要としないクライアントは起動されません。 既定では、この設定は無効になっており、[ **展開の種類** ] が [ **必須** ] に設定されている場合にのみ使用することができます。  
+    -   **Usa riattivazione LAN per riattivare i client per le distribuzioni richieste**: specificare se abilitare la riattivazione LAN alla scadenza per inviare pacchetti di riattivazione ai computer che richiedono uno o più aggiornamenti software nella distribuzione. Tutti i computer in modalità sospensione all'ora di scadenza dell'installazione verranno riattivati in modo che si possa avviare l'installazione degli aggiornamenti software. I client in modalità sospensione che non richiedono aggiornamenti software nella distribuzione non vengono avviati. Per impostazione predefinita, questa impostazione non viene abilitata ed è disponibile solo quando **Tipo di distribuzione** è impostato su **Richiesto**.  
 
         > [!WARNING]  
-        >  このオプションを使用する前に、コンピューターおよびネットワークを Wake On Lan 用に構成する必要があります。  
+        >  Prima di usare questa opzione, i computer e le reti devono essere configurati per riattivazione LAN.  
 
-    -   **詳細レベル**: クライアント コンピューターによって報告される状態メッセージの詳細レベルを指定します。  
+    -   **Livello dettaglio**: specificare il livello di dettaglio per i messaggi di stato segnalati dai computer client.  
 
-    **ダウンロードの設定**: [ダウンロードの設定] タブで、次の設定を構成します。  
+    **Impostazioni download**: nella scheda Impostazioni download configurare le impostazioni seguenti:  
 
-    - クライアントが低速ネットワークに接続している場合、または、代替のコンテンツの場所を使用している場合に、クライアントでソフトウェア更新プログラムをダウンロードしてインストールするかどうかを指定します。  
+    - Specificare se il client scaricherà e installerà gli aggiornamenti software durante una connessione a una rete lenta o mentre usa un percorso di fallback per il contenuto.  
 
-    - ソフトウェア更新プログラムのコンテンツが優先配布ポイントにない場合に、クライアントでソフトウェア更新プログラムを代替の配布ポイントからダウンロードしてインストールするかどうかを指定します。  
+    - Specificare se il client dovrà scaricare e installare gli aggiornamenti software da un punto di distribuzione di fallback nel caso in cui il contenuto per tali aggiornamenti non fosse disponibile su un punto di distribuzione preferito.  
 
-    -   **同じサブネットにある他のクライアントとのコンテンツの共有を許可する**: コンテンツのダウンロードで BranchCache の使用を有効にするかどうかを指定します。 BranchCache について詳しくは、「[コンテンツ管理の基本的な概念](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache)」を参照してください。  
+    -   **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'uso di BranchCache per il download del contenuto. Per altre informazioni su BranchCache, vedere [Concetti di base per la gestione dei contenuti](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
 
-    -   配布ポイントでソフトウェア更新プログラムを利用できない場合に、クライアントで、Microsoft Update からソフトウェア更新プログラムをダウンロードするかどうかを指定します。
+    -   Specificare se far scaricare ai client gli aggiornamenti software da Microsoft Update nel caso in cui gli aggiornamenti non fossero disponibili nei punti di distribuzione.
         > [!IMPORTANT]
-        > Windows 10 のサービス更新プログラムに対して、この設定を使用しないでください。 Configuration Manager (最小バージョン 1610 の場合) では Microsoft Update から Windows 10 のサービス更新プログラムをダウンロードできません。
+        > Non usare questa impostazione per gli aggiornamenti di manutenzione di Windows 10. Almeno fino alla versione 1610 di Configuration Manager non sarà possibile scaricare gli aggiornamenti di manutenzione di Windows 10 da Microsoft Update.
 
-    -   クライアントで従量制のインターネット接続を使用している場合に、インストール期限後にクライアントでのダウンロードを許可するかどうかを指定します。 インターネット プロバイダーは、従量制インターネット接続を使用しているときに送受信したデータ量に基づいて課金することがあります。   
+    -   Specificare se consentire ai client di eseguire il download dopo una scadenza dell'installazione quando usano connessioni Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati in entrata e in uscita quando si usa una connessione Internet a consumo.   
 
-    **アラート**: [アラート] タブで、Configuration Manager および System Center Operations Manager がこの展開のアラートを生成する方法を構成します。 アラートを構成できるのは、[展開設定] ページで [ **展開の種類** ] が [ **必須** ] に設定されている場合のみです。  
+    **Avvisi**: nella pagina Avvisi configurare la modalità in cui Configuration Manager e System Center Operations Manager genereranno gli avvisi relativi alla distribuzione. È possibile configurare gli avvisi solo quando **Tipo di distribuzione** è impostato su **Richiesta** nella pagina Impostazioni distribuzione.  
 
     > [!NOTE]  
-    >  ソフトウェア更新プログラムに関する最新のアラートは、[ **ソフトウェア ライブラリ** ] ワークスペースの [ **ソフトウェア更新プログラム** ] ノードで確認することができます。  
+    >  È possibile riesaminare gli avvisi recenti sugli aggiornamenti software dal nodo **Aggiornamenti software** nell'area di lavoro **Raccolta software** .  

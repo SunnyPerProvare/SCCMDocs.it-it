@@ -1,5 +1,5 @@
 ---
-title: "Endpoint Protection の計画 | Microsoft Docs"
+title: Pianificare Endpoint Protection | Microsoft Docs
 ms.custom: na
 ms.date: 03/07/2017
 ms.prod: configuration-manager
@@ -16,102 +16,102 @@ manager: angrobe
 ms.openlocfilehash: 6c4273dae99ec8db2cf827f463b973e876d0d35b
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="planning-for-endpoint-protection-in-system-center-configuration-manager"></a>System Center Configuration Manager での Endpoint Protection の計画
+# <a name="planning-for-endpoint-protection-in-system-center-configuration-manager"></a>Pianificazione di Endpoint Protection in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-System Center Configuration Manager の Endpoint Protection を使用して、Configuration Manager 階層内のクライアント コンピューターのマルウェア対策ポリシーと Windows ファイアウォールのセキュリティを管理できます。  
+Endpoint Protection in System Center Configuration Manager consente di gestire i criteri antimalware e la sicurezza di Windows Firewall per i computer client nella gerarchia di Configuration Manager.  
 
 > [!IMPORTANT]  
->  Configuration Manager 階層内のクライアントの管理に Endpoint Protection を使用するにはライセンスが必要です。  
+>  Per gestire i client nella gerarchia di Configuration Manager è necessario avere la licenza per l'uso di Endpoint Protection.  
 
-Configuration Manager で Endpoint Protection を使用すると、次のようなメリットがあります。  
+L'uso di Endpoint Protection con Configuration Manager offre i vantaggi seguenti:  
 
--   マルウェア対策ポリシーと Windows ファイアウォールの設定を構成し、選択したコンピューターのグループに対する Windows Defender Advanced Threat Protection を管理します。  
+-   Configurare criteri antimalware e impostazioni di Windows Firewall e gestire Windows Defender Advanced Threat Protection per gruppi di computer selezionati  
 
--   Configuration Manager ソフトウェア更新プログラムを使用して最新のマルウェア対策の定義ファイルをダウンロードし、クライアント コンピューターを最新の状態に保ちます。  
+-   Usare gli aggiornamenti software di Configuration Manager per scaricare i file definizioni antimalware più recenti e mantenere aggiornati i computer client  
 
--   クライアント コンピューターでマルウェアが検出された場合は、電子メールによる通知送信、コンソール内の監視機能の使用、およびレポートの表示を行うことで管理ユーザーに通知することができます。  
+-   Inviare notifiche di posta elettronica, usare il monitoraggio integrato nella console e visualizzare report per mantenere gli utenti amministratori informati quando viene rilevato malware nei computer client  
 
-Windows 10 コンピューターでは、Endpoint Protection 管理のために追加のクライアントは不要です。 Windows 8.1 およびそれ以前のコンピューターでは、Endpoint Protection をインストールすると、Configuration Manager クライアントに加え、独自のクライアントもインストールされます。 Endpoint Protection クライアントには、次の機能があります。  
+I computer Windows 10 non richiedono client aggiuntivi per la gestione di Endpoint Protection. Nei computer con Windows 8.1 e versioni precedenti, viene installato il client di Endpoint Protection oltre al client di Configuration Manager. Il client di Endpoint Protection ha le funzionalità seguenti:  
 
--   マルウェアとスパイウェアの検出と修復  
+-   Rilevamento e correzione di spyware e malware  
 
--   ルートキットの検出と修復  
+-   Rilevamento e correzione di rootkit  
 
--   重大な脆弱性の評価、および定義とエンジンの自動更新  
+-   Valutazione delle vulnerabilità critiche e aggiornamenti automatici del motore e delle definizioni  
 
--   ネットワーク検査システム経由のネットワークの脆弱性の検出  
+-   Rilevamento delle vulnerabilità di rete con Network Inspection System  
 
--   Cloud Protection Service との統合によりマルウェアを Microsoft に報告。 このサービスに加入すると、コンピューターで不明なマルウェアが検出された場合に、Endpoint Protection クライアントまたは Windows Defender がマルウェア プロテクション センターから最新の定義をダウンロードできます。  
-
-> [!NOTE]  
->  Endpoint Protection クライアントは、Hyper-V を実行しているサーバーと、サポートされているオペレーティング システムを搭載したゲスト バーチャル マシンにインストールできます。 CPU の過剰使用を避けるため、Endpoint Protection のアクションには複数の保護サービスが同時に実行されないように遅延をランダムに発生させる機能が組み込まれています。  
-
-  さらに、Configuration Manager の Endpoint Protection を使用すると、Configuration Manager コンソールで Windows ファイアウォールの設定を管理することができます。  
-
- 「[シナリオ例: System Center Configuration Manager でSystem Center Endpoint Protection を使用してマルウェアからコンピューターを保護する](../deploy-use/scenarios-endpoint-protection.md)」は、Endpoint Protection および Windows ファイアウォールを構成および管理する方法を示しています。  
-
-## <a name="managing-malware-with-endpoint-protection"></a>Endpoint Protection によるマルウェアの管理  
-
-Configuration Manager の Endpoint Protection を使用すれば、Endpoint Protection クライアント構成用の設定を含むマルウェア対策ポリシーを作成することができます。 その後、このマルウェア対策ポリシーをクライアント コンピューターに展開し、**[監視]** ワークスペースの **[Endpoint Protection のステータス]** ノードで監視するか、Configuration Manager レポートを使って監視できます。  
-
- 追加情報:  
-
--   [System Center Configuration Manager での Endpoint Protection 用のマルウェア対策ポリシーの作成および展開](../deploy-use/endpoint-antimalware-policies.md) - 構成可能な設定の一覧を使用してマルウェア対策ポリシーを作成、展開、および監視します。  
-
--   [System Center Configuration Manager での Endpoint Protection の監視](../deploy-use/monitor-endpoint-protection.md) - アクティビティ レポート、感染したクライアント コンピューターなどを監視します。   
-
--   [System Center Configuration Manager での Endpoint Protection のためのマルウェア対策ポリシーとファイアウォール設定の管理](../deploy-use/endpoint-antimalware-firewall.md) - [マルウェア対策](../deploy-use/endpoint-antimalware-firewall.md#manage-antimalware-policies)または[ファイアウォール](../deploy-use/endpoint-antimalware-firewall.md#manage-windows-firewall-policies)のポリシーの優先順位の変更、[クライアント コンピューターで検出されたマルウェアの](../deploy-use/endpoint-antimalware-firewall.md#remediate-detected-malware)、その他のタスクを実行できます。
-
-## <a name="managing-windows-firewall-with-endpoint-protection"></a>Endpoint Protection による Windows ファイアウォールの管理  
- Configuration Manager の Endpoint Protection には、クライアント コンピューター上の Windows ファイアウォールの基本管理機能が備わっています。 各ネットワーク プロファイルごとに、次の設定を構成できます。  
-
--   Windows ファイアウォールを有効または無効にする。  
-
--   許可されたプログラムの一覧にあるプログラムも含め、着信接続をブロックする。  
-
--   Windows ファイアウォールが新しいプログラムをブロックしたときにユーザーに通知する。  
+-   Integrazione con Cloud Protection Service per segnalare malware a Microsoft. Se si partecipa a questo servizio, il client di Endpoint Protection o Windows Defender può scaricare le definizioni più recenti da Malware Protection Center se in un computer viene rilevato malware non identificato.  
 
 > [!NOTE]  
->  Endpoint Protection は Windows ファイアウォールの管理のみをサポートします。  
+>  Il client di Endpoint Protection può essere installato in un server che esegue Hyper-V e nelle macchine virtuali guest con sistemi operativi supportati. Per evitare un utilizzo eccessivo della CPU, le azioni di Endpoint Protection hanno un ritardo casuale predefinito che impedisce l'esecuzione contemporanea dei servizi.  
 
-  Endpoint Protection 用の Windows ファイアウォール ポリシーを作成および展開する方法の詳細については、「[System Center Configuration Manager の Endpoint Protection 用 Windows ファイアウォール ポリシーを作成および展開する方法](../deploy-use/create-windows-firewall-policies.md)」をご覧ください。  
+  Endpoint Protection in Configuration Manager consente anche di gestire le impostazioni di Windows Firewall nella console di Configuration Manager.  
+
+ [Example scenario: Using System Center Endpoint Protection to protect computers from malware in System Center Configuration Manager](../deploy-use/scenarios-endpoint-protection.md) (Scenario di esempio: uso di Endpoint Protection in System Center per proteggere i computer da malware in System Center Configuration Manager) illustra come si può configurare e gestire Endpoint Protection e Windows Firewall.  
+
+## <a name="managing-malware-with-endpoint-protection"></a>Gestione del malware con Endpoint Protection  
+
+Endpoint Protection in Configuration Manager consente di creare criteri antimalware che contengono impostazioni per le configurazioni del client di Endpoint Protection. È quindi possibile distribuire tali criteri antimalware nei computer client e monitorarli nel nodo **Stato di Endpoint Protection** dell'area di lavoro **Monitoraggio** oppure usando i report di Configuration Manager.  
+
+ Altre informazioni:  
+
+-   [Creare e distribuire criteri antimalware per Endpoint Protection in System Center Configuration Manager](../deploy-use/endpoint-antimalware-policies.md): creare, distribuire e monitorare criteri antimalware con un elenco di impostazioni da configurare  
+
+-   [Monitorare Endpoint Protection in System Center Configuration Manager](../deploy-use/monitor-endpoint-protection.md): monitoraggio dei report sull'attività, dei computer client infetti e altro.   
+
+-   [Gestire criteri antimalware e impostazioni del firewall per Endpoint Protection in System Center Configuration Manager](../deploy-use/endpoint-antimalware-firewall.md): è possibile modificare la priorità dei criteri per [antimalware](../deploy-use/endpoint-antimalware-firewall.md#manage-antimalware-policies) o [firewall](../deploy-use/endpoint-antimalware-firewall.md#manage-windows-firewall-policies), [correggere i malware trovati nei computer client](../deploy-use/endpoint-antimalware-firewall.md#remediate-detected-malware) e altre attività
+
+## <a name="managing-windows-firewall-with-endpoint-protection"></a>Gestione di Windows Firewall con Endpoint Protection  
+ Endpoint Protection in Configuration Manager offre funzionalità di gestione di base per Windows Firewall nei computer client. Per ogni profilo di rete è possibile configurare le impostazioni seguenti:  
+
+-   Abilitare o disabilitare Windows Firewall.  
+
+-   Bloccare le connessioni in ingresso, comprese quelle nell'elenco dei programmi consentiti.  
+
+-   Notificare all'utente quando Windows Firewall blocca un nuovo programma.  
+
+> [!NOTE]  
+>  Endpoint Protection supporta solo la gestione di Windows Firewall.  
+
+  Per altre informazioni su come creare e distribuire i criteri di Windows Firewall per Endpoint Protection, vedere [Come creare e distribuire criteri di Windows Firewall per Endpoint Protection in System Center Configuration Manager](../deploy-use/create-windows-firewall-policies.md).  
 
 ## <a name="windows-defender-advanced-threat-protection"></a>Windows Defender Advanced Threat Protection
 
-Configuration Manager のバージョン 1606 (Current Branch) 以降、Endpoint Protection を使用して、Windows Defender Advanced Threat Protection (ATP) を管理および監視できるようになりました。 Windows Defender ATP は、企業が自社のネットワークに対する高度な攻撃を検出して調査し、対応するのに役立つ新しいサービスです。 「[Windows Defender Advanced Threat Protection](../deploy-use/windows-defender-advanced-threat-protection.md)」をご覧ください。
+A partire dalla versione 1606 di Configuration Manager (Current Branch), Endpoint Protection consente di gestire e monitorare Windows Defender Advanced Threat Protection (ATP). Windows Defender ATP è un nuovo servizio che consente alle aziende di rilevare, analizzare e rispondere agli attacchi avanzati sulle reti. Vedere [Windows Defender Advanced Threat Protection](../deploy-use/windows-defender-advanced-threat-protection.md).
 
-## <a name="endpoint-protection-workflow"></a>Endpoint Protection のワークフロー  
- 次の図を使用して、Endpoint Protection を Configuration Manager 階層に実装するワークフローの理解に役立ててください。  
+## <a name="endpoint-protection-workflow"></a>Flusso di lavoro di Endpoint Protection  
+ Vedere il diagramma seguente per capire il flusso di lavoro per l'implementazione di Endpoint Protection nella gerarchia di Configuration Manager.  
 
- ![Endpoint Protection のワークフロー](../media/Endpoint-Protection-Workflow.gif)
+ ![Flusso di lavoro di Endpoint Protection](../media/Endpoint-Protection-Workflow.gif)
 
-## <a name="endpoint-protection-client-for-mac-computers-and-linux-servers"></a>Mac コンピューターと Linux サーバー用の Endpoint Protection クライアント  
- System Center には、Linux コンピューターと Mac コンピューター用の Endpoint Protection クライアントが付属しています。 Configuration Manager にはこれらのクライアントが付属していないため、[Microsoft ボリューム ライセンス サービス センター](https://www.microsoft.com/licensing/servicecenter/default.aspx)から次の製品をダウンロードする必要があります。  
+## <a name="endpoint-protection-client-for-mac-computers-and-linux-servers"></a>Client di Endpoint Protection per computer Mac e server Linux  
+ System Center include un client di Endpoint Protection per Linux e per i computer Mac. Questi client non vengono installati con Configuration Manager. È necessario invece scaricare i prodotti seguenti da [Microsoft Volume Licensing Service Center](https://www.microsoft.com/licensing/servicecenter/default.aspx).  
 
 > [!IMPORTANT]  
->  Mac 用と Linux 用の Endpoint Protection インストール ファイルをダウンロードするには、Microsoft ボリューム ライセンスを購入する必要があります。  
+>  Per scaricare i file di installazione di Endpoint Protection per Linux e Mac occorre essere titolari di un contratto multilicenza Microsoft.  
 
- これらの製品は、Configuration Manager コンソールから管理することができません。 ただし、System Center Operations Manager 管理パックがインストール ファイルに付属しているため、Operations Manager を使用して Linux 用のクライアントを管理することができます。  
+ Questi prodotti non possono essere gestiti dalla console di Configuration Manager. Con i file di installazione, tuttavia, viene fornito un Management Pack di System Center Operations Manager, che consente di gestire il client per Linux usando Operations Manager.  
 
- Linux コンピューターと Mac コンピューター用の Endpoint Protection クライアントをインストールして管理する方法については、 **Documentation** フォルダーに配置されたこれらの製品に付属のマニュアルを参照してください。
+ Per altre informazioni su come installare e gestire i client di Endpoint Protection per i computer Mac e Linux, usare la documentazione di accompagnamento di questi prodotti, disponibile nella cartella **Documentazione** .
 
-## <a name="best-practices-for-endpoint-protection-in-configuration-manager"></a>Configuration Manager の Endpoint Protection の推奨する運用方法  
- System Center 2012 Configuration Manager の Endpoint Protection に関する次のベスト プラクティスを使用してください。  
+## <a name="best-practices-for-endpoint-protection-in-configuration-manager"></a>Procedure consigliate per Endpoint Protection in Configuration Manager  
+ Usare le procedure consigliate seguenti per Endpoint Protection in System Center 2012 Configuration Manager.  
 
-### <a name="configure-custom-client-settings-for-endpoint-protection"></a>Endpoint Protection のカスタム クライアント設定を構成する  
- Endpoint Protection のクライアント設定を構成する場合、既定のクライアント設定は、階層内のすべてのコンピューターに設定が適用されてしまうため、使用しないでください。 その代わり、カスタム クライアント設定を構成して、階層内のコンピューターのコレクションに割り当てます。  
+### <a name="configure-custom-client-settings-for-endpoint-protection"></a>Configurare le impostazioni client personalizzate per Endpoint Protection  
+ Quando si configurano le impostazioni client per Endpoint Protection, non usare le impostazioni client predefinite perché applicano le impostazioni a tutti i computer nella gerarchia. Al contrario, configurare le impostazioni client personalizzate e assegnare queste impostazioni a raccolte di computer nella gerarchia.  
 
- カスタム クライアント設定を構成するときには、次の項目を実行できます。  
+ Quando si configurano impostazioni client personalizzate, è possibile eseguire le operazioni seguenti:  
 
--   組織内のさまざまな部分に応じてマルウェア対策とセキュリティ設定をカスタマイズする。  
--   階層全体に展開する前に、コンピューターの小さなグループで Endpoint Protection を実行して、効果をテストする。  
--   時間をかけて、さらに多くのクライアントをコレクションに追加して、Endpoint Protection クライアントを段階的に展開する。  
+-   Personalizzare le impostazioni antimalware e sicurezza per le diverse parti dell'organizzazione.  
+-   Testare gli effetti dell'esecuzione Endpoint Protection in un piccolo gruppo di computer prima di distribuirlo all'intera gerarchia.  
+-   Aggiungere successivamente più client per cadenzare la distribuzione del client di Endpoint Protection.  
 
-### <a name="distributing-definition-updates-by-using-software-updates"></a>ソフトウェア更新プログラムを使用した定義ファイルの更新の配布  
- Configuration Manager のソフトウェア更新プログラムを使用して定義ファイルの更新を配布する場合は、他のソフトウェア更新プログラムを含まないパッケージに定義ファイルの更新を配置することを検討します。 これによって、定義ファイルの更新パッケージのサイズが小さくなり、配布ポイントへより短時間でレプリケートすることができます。
+### <a name="distributing-definition-updates-by-using-software-updates"></a>Distribuire gli aggiornamenti delle definizioni tramite gli aggiornamenti software  
+ Se si usano gli aggiornamenti software di Configuration Manager per distribuire gli aggiornamenti delle definizioni, è consigliabile inserirli in un pacchetto che non contenga altri aggiornamenti software. In questo modo le dimensioni del pacchetto di aggiornamento definizione più piccoli che consente la replica nei punti di distribuzione più rapidamente.

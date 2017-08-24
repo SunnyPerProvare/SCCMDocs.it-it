@@ -1,6 +1,6 @@
 ---
 title: Technical Preview 1705 | Microsoft Docs
-description: "System Center Configuration Manager の Technical Preview バージョン 1705 で使用できる機能について説明します。"
+description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1705 per System Center Configuration Manager."
 ms.custom: na
 ms.date: 06/02/2017
 ms.prod: configuration-manager
@@ -16,19 +16,19 @@ manager: angrobe
 ms.openlocfilehash: b977a79baec73999caa21648adcb6fcfec4a4935
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1705-for-system-center-configuration-manager"></a>System Center Configuration Manager の Technical Preview 1705 の機能
+# <a name="capabilities-in-technical-preview-1705-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1705 per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Technical Preview)*
+*Si applica a: System Center Configuration Manager (Technical Preview)*
 
-この記事では、System Center Configuration Manager の Technical Preview バージョン 1705 で使用できる機能について説明します。 このバージョンをインストールして更新し、新機能を Configuration Manager の Technical Preview サイトに追加できます。 このバージョンの Technical Preview をインストールする前に、「[System Center Configuration Manager の Technical Preview](../../core/get-started/technical-preview.md)」を確認して、Technical Preview の使用に関する一般的な要件と制限、バージョン間の更新方法、および Technical Preview の機能に関するフィードバックを提供する方法について理解してください。    
+Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1705 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare [Technical Preview per System Center Configuration Manager](../../core/get-started/technical-preview.md) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
 
-**この Technical Preview の既知の問題:**
--   **Operations Manager Suite コネクタがアップグレードされない。** OMS コネクタが構成されている Technical Preview の以前のバージョンからアップグレードすると、そのコネクタはアップグレードされず、コンソールで使用できなくなります。 アップグレード後に、[Azure サービス ウィザードを使用して](capabilities-in-technical-preview-1705.md#use-azure-services-wizard-to-configure-a-connection-to-oms)、OMS ワークスペースへの接続を再確立する必要があります。
--   **Surface ドライバーが正常に同期しない。** Technical Preview の Configuration Manager コンソールの**新機能**には Surface ドライバーのサポートが記載されていますが、この機能はまだ期待どおりに動作しません。
--   **Windows Update for Business 遅延ポリシーを作成できない。** Technical Preview の Configuration Manager コンソールの**新機能**には Windows Update for Business 遅延ポリシーを構成する機能が記載されていますが、ウィザードは起動せず、ポリシーを構成することはできません。
+**Problemi noti di questa versione Technical Preview:**
+-   **Il connettore della suite Operations Manager Suite non viene aggiornato**. Quando si esegue l'aggiornamento da una versione Technical Preview precedente nella quale era configurato il connettore OMS, tale connettore non viene aggiornato e non è più disponibile nella console. Dopo l'aggiornamento, è necessario [usare la Procedura guidata per i servizi di Azure](capabilities-in-technical-preview-1705.md#use-azure-services-wizard-to-configure-a-connection-to-oms) e ristabilire la connessione all'area di lavoro OMS.
+-   **La sincronizzazione dei driver di Microsoft Surface non riesce**. Anche se il supporto per i driver di Microsoft Surface è indicato in **Novità** nella console di Configuration Manager della Technical Preview, questa funzionalità non funziona ancora come previsto.
+-   **Impossibile creare i criteri di rinvio di Windows Update for Business** Anche se la possibilità di configurare i criteri di rinvio di Windows Update for Business è indicata in **Novità** nella console di Configuration Manager per la Technical Preview, la procedura guidata non si apre e non è possibile configurare alcun criterio.
 
 
 <!--  Known Issues Template
@@ -37,7 +37,7 @@ ms.lasthandoff: 08/07/2017
     Workaround details.
 -->
 
-**このバージョンでお試しいただける新機能を次に示します。**  
+**Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
 <!--  Rough Section Template
 ##  FEATURE
@@ -49,253 +49,253 @@ ms.lasthandoff: 08/07/2017
  -  Task 2              
 -->
 
-## <a name="update-reset-tool"></a>更新のリセット ツール  
-コンソール内の更新プログラムにダウンロードやレプリケートの問題がある場合に、Configuration Manager Update Reset Tool (**CMUpdateReset.exe**) を使用して問題を解決することができます。 このツールは、Technical Preview バージョン 1705 に付属しています。 このツールは、Technical Preview のインストール後、Technical Preview サイトのサイト サーバーの ***\cd.latest\SMSSETUP\TOOLS*** フォルダー内にあります。
+## <a name="update-reset-tool"></a>Strumento di reimpostazione dell'aggiornamento  
+È possibile usare lo Strumento di reimpostazione dell'aggiornamento **CMUpdateReset.exe** per risolvere i problemi quando gli aggiornamenti nella console mostrano problemi di download o replica. Questo strumento è incluso nella versione Technical Preview 1705. È reperibile nel server del sito della Technical Preview dopo aver installato l'anteprima nella cartella ***\cd.latest\SMSSETUP\TOOLS***.
 
-このツールは、Technical Preview バージョン 1606 以降で使用できます。 この後方互換のサポートは、Technical Preview の更新シナリオの範囲でツールが使用できるようにするためと、次の Technical Preview が使用可能になるまで待たなくても済むように提供されています。
+È possibile usare questo strumento con le versioni Technical Preview 1606 o successive. Poiché include il supporto per le versioni precedenti, lo strumento può essere usato con numerosi scenari di aggiornamento per Technical Preview, senza dover attendere la disponibilità della versione Technical Preview successiva.
 
-このツールは、コンソール内の更新プログラムがまだインストールされておらず、エラー状態のときに使用することができます。 エラー状態は、更新プログラムのダウンロードは進行中だが、スタックして極端に長い時間 (同様のサイズの更新パッケージのこれまでの所要時間よりも数時間も長い) かかっていることを意味している場合があります。 また、更新プログラムの子プライマリ サイトへのレプリケートの失敗を意味している場合もあります。  
+È possibile usare questo strumento quando un aggiornamento nella console non è ancora installato e il relativo stato è Non riuscito. Uno stato Non riuscito può indicare che il download dell'aggiornamento è ancora in corso ma risulta bloccato e sta impiegando troppo tempo, ad esempio molte ore in più rispetto alle previsioni cronologiche per i pacchetti di aggiornamento di dimensioni simili. Può anche trattarsi di un errore nella replica dell'aggiornamento nei siti primari figlio.  
 
-ツールを実行する際には、指定した更新プログラムに対して実行します。 既定では、このツールで正常にインストールまたはダウンロードされた更新プログラムが削除されることはありません。  
+Lo strumento viene eseguito nell'aggiornamento specificato. Per impostazione predefinita, lo strumento non elimina gli aggiornamenti scaricati o installati correttamente.  
 
-### <a name="prerequisites"></a>必要条件
-ツールの実行に使用するアカウントには、次のアクセス許可が必要です。
--   中央管理サイトと階層の各プライマリ サイトのサイト データベースへの**読み取り**と**書き込み**アクセス許可。 これらのアクセス許可を設定するため、各サイトの Configuration Manager データベースで、ユーザー アカウントを **db_datawriter** および **db_datareader** の[固定データベース ロール](/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles)のメンバーとして追加できます。 このツールは、セカンダリ サイトとは対話しません。
--   階層の最上位サイトの**ローカル管理者**。
--   サービス接続ポイントをホストするコンピューターの**ローカル管理者**。
+### <a name="prerequisites"></a>Prerequisiti
+L'account usato per eseguire lo strumento richiede le autorizzazioni seguenti:
+-   **Lettura** e **Scrittura** per il database del sito del sito di amministrazione centrale e per ogni sito primario della gerarchia. Per impostare queste autorizzazioni, aggiungere l'account utente come membro dei [ruoli predefiniti del database ](/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles)**db_datawriter** e **db_datareader** nel database di Configuration Manager di ogni sito. Lo strumento non interagisce con i siti secondari.
+-   **Amministratore locale** nel sito di livello superiore della gerarchia.
+-   **Amministratore locale** nel computer che ospita il punto di connessione del servizio.
 
-リセットする更新プログラム パッケージの GUID が必要になります。 GUID の取得には、次の手順を実行します。
--   コンソールで、**[管理]** > **[更新とサービス]** の順に移動し、表示ウィンドウでいずれかの列の見出し (**[状態]** など) を右クリックして、**[パッケージ GUID]** を選択します。 これによりその列が表示に追加され、列には更新プログラム パッケージの GUID が示されます。
+È necessario il GUID del pacchetto di aggiornamento da reimpostare. Per ottenere il GUID:
+-   Nella console passare a **Amministrazione** > **Aggiornamenti e manutenzione** e quindi nel riquadro informazioni fare clic con il pulsante destro del mouse sull'intestazione di una delle colonne, ad esempio **Stato**, quindi selezionare **GUID pacchetto**. La colonna viene aggiunta alla visualizzazione e mostra il GUID del pacchetto di aggiornamento.
 
 > [!TIP]  
-> GUID をコピーするには、リセットする更新プログラム パッケージの行を選択し、CTRL + C キーを使用してその行をコピーします。 コピーした選択をテキスト エディターに貼り付けると、ツールを実行する際に、GUID のみをコピーしてコマンド ライン パラメーターとして使用できます。
+> Per copiare il GUID, selezionare la riga del pacchetto di aggiornamento da ripristinare e quindi copiarla premendo CTRL+C. Copiando la selezione in un editor di testo, è possibile copiare solo il GUID per usarlo come parametro della riga di comando quando si esegue lo strumento.
 
-### <a name="run-the-tool"></a>ツールを実行します。    
-このツールは、階層の最上位サイトで実行する必要があります。
+### <a name="run-the-tool"></a>Eseguire lo strumento    
+Lo strumento deve essere eseguito nel sito di livello superiore della gerarchia.
 
-ツールを実行する際に、コマンド ライン パラメーターを使用して、階層の最上位サイトの SQL Server、サイト データベース名、およびリセットする更新プログラム パッケージの GUID を指定します。 ツールは、更新プログラムの状態に基づいてアクセスする必要がある追加のサーバーを識別します。   
+Quando si esegue lo strumento, usare i parametri della riga di comando per specificare l'istanza di SQL Server del sito di livello superiore della gerarchia, il nome del database del sito e il GUID del pacchetto di aggiornamento da reimpostare. Lo strumento identifica quindi i server aggiuntivi a cui deve accedere, in base allo stato degli aggiornamenti.   
 
-更新プログラム パッケージが*ダウンロード後*の状態にある場合、ツールはパッケージをクリーンアップしません。 オプションとして、強制削除パラメーター (このトピックで後述するコマンド ライン パラメーターを参照) を使用して、正常にダウンロードされた更新プログラムの削除を強制できます。
+Se il pacchetto di aggiornamento è nella fase *successiva al download*, lo strumento non esegue la pulizia del pacchetto. In alternativa, è possibile forzare la rimozione di un aggiornamento scaricato correttamente tramite il parametro per l'eliminazione forzata. I parametri della riga di comando vengono descritti più avanti in questo argomento.
 
-ツールの実行後:
--   パッケージが削除されたら、最上位層サイトの SMS_Executive サービスを再起動してから、更新プログラムを確認してパッケージを再度ダウンロードします。
--   パッケージが削除されていない場合は、特に何もする必要はありません。更新プログラムによって再初期化され、レプリケーションまたはインストールが再開されます。
+Dopo l'esecuzione dello strumento:
+-   Se è stato eliminato un pacchetto, riavviare il servizio SMS_Executive dei siti di livello superiore e quindi cercare gli aggiornamenti per scaricare nuovamente il pacchetto.
+-   Se il pacchetto non è stato eliminato non è necessaria alcuna azione, poiché l'aggiornamento reinizializza e riavvia la replica o l'installazione.
 
-**コマンド ライン パラメーター**  
+**Parametri della riga di comando:**  
 
-| パラメーター        |説明                 |  
+| Parametro        |Descrizione                 |  
 |------------------|----------------------------|  
-|**-S &lt;最上位層サイトの SQL Server の FQDN>** | *必須* <br> 階層の最上位層サイトのサイト データベースをホストする SQL Server の FQDN を指定する必要があります。    |  
-| **-D &lt;データベース名>**                        | *必須* <br> 最上位層サイト データベースの名前を指定する必要があります。  |  
-| **-P &lt;パッケージ GUID>**                         | *必須* <br> リセットする更新プログラム パッケージの GUID を指定する必要があります。   |  
-| **-I &lt;SQL Server インスタンス名>**             | *省略可能* <br> サイト データベースをホストする SQL Server のインスタンスを識別するには、これを使用します。 |
-| **-FDELETE**                              | *省略可能* <br> 正常にダウンロードした更新プログラム パッケージの削除を強制するには、これを使用します。 |  
- **例:**  
- 一般的なシナリオで、ダウンロードに関する問題のある更新プログラムをリセットするとします。 SQL Server の FQDN が *server1.fabrikam.com* で、サイト データベースが *CM_XYZ*、パッケージ GUID が *61F16B3C-F1F6-4F9F-8647-2A524B0C802C* の場合、  次を実行します: ***CMUpdateReset.exe-s server1.fabrikam.com-d CM_XYZ-p 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
+|**-S &lt;FQDN dell'istanza di SQL Server del sito di livello superiore>** | *Richiesto* <br> Specificare il FQDN dell'istanza di SQL Server che ospita il database del sito per il sito di livello superiore della gerarchia.    |  
+| **-D &lt;Nome database>**                        | *Richiesto* <br> Specificare il nome del database dei siti di livello superiore.  |  
+| **-P &lt;GUID pacchetto>**                         | *Richiesto* <br> Specificare il GUID del pacchetto di aggiornamento da reimpostare.   |  
+| **-I &lt;Nome istanza SQL Server>**             | *Facoltativa* <br> Identifica l'istanza di SQL Server che ospita il database del sito. |
+| **-FDELETE**                              | *Facoltativa* <br> Consente di forzare l'eliminazione di un pacchetto di aggiornamento scaricato correttamente. |  
+ **Esempi:**  
+ In uno scenario tipico, si vuole reimpostare un aggiornamento che presenta problemi di download. L'FQDN di SQL Server è *server1.fabrikam.com*, il database del sito è *CM_XYZ* e il GUID del pacchetto è *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Eseguire: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 
- より極端なシナリオで、問題のある更新プログラム パッケージの削除を強制するとします。 SQL Server の FQDN が *server1.fabrikam.com* で、サイト データベースが *CM_XYZ*、パッケージ GUID が *61F16B3C-F1F6-4F9F-8647-2A524B0C802C* の場合、  次を実行します: ***CMUpdateReset.exe  -FDELETE -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
+ In uno scenario più complesso, si vuole forzare l'eliminazione del pacchetto di aggiornamento che crea problemi. L'FQDN di SQL Server è *server1.fabrikam.com*, il database del sito è *CM_XYZ* e il GUID del pacchetto è *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Eseguire: ***CMUpdateReset.exe  -FDELETE -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 
-### <a name="test-the-tool-with-the-technical-preview"></a>Technical Preview でツールをテストする  
-このツールは、Technical Preview バージョン 1606 以降で使用できます。 この後方互換のサポートは、Technical Preview のより多くの更新シナリオでツールが使用できるようにするためと、Technical Preview の次のバージョンが使用可能になるまで待たなくても済むように提供されています。
+### <a name="test-the-tool-with-the-technical-preview"></a>Provare lo strumento con la Technical Preview  
+È possibile usare questo strumento con le versioni Technical Preview 1606 o successive. Poiché include il supporto per le versioni precedenti, lo strumento può essere usato con numerosi scenari di aggiornamento per Technical Preview, senza dover attendere la disponibilità della versione Technical Preview successiva.
 
-更新プログラムの前提条件の確認を完了する前に、Technical Preview の更新プログラム パッケージでツールを実行します。 前提条件の確認が完了した状態は、**[管理]** > **[更新とサービス]** でパッケージが次のいずれかの状態で識別できます。  
--   **前提条件チェックに合格しました**
--   **前提条件チェックに合格しましたが警告が発生しました**
--   **前提条件チェックに合格しませんでした**
-
-
-## <a name="high-dpi-console-support"></a>高 DPI コンソールのサポート
-
-このリリースでは、高 DPI デバイス (Surface Book など) で表示したときに、Configuration Manager コンソールのスケーリング方法と、UI のさまざまな部分を表示する方法に修正すべき問題があります。
+Eseguire lo strumento in un pacchetto di aggiornamento di una versione Technical Preview prima che l'aggiornamento completi il controllo dei prerequisiti. Il completamento del controllo dei prerequisiti è indicato da uno degli stati seguenti del pacchetto in **Amministrazione** > **Aggiornamenti e manutenzione**:  
+-   **Controllo prerequisiti superato**
+-   **Controllo prerequisiti superato con avviso**
+-   **Controllo prerequisiti non riuscito**
 
 
-## <a name="peer-cache-improvements"></a>ピア キャッシュの改善
-この Technical Preview から、ピア キャッシュはピアからのダウンロード要求を認証するために[ネットワーク アクセス アカウントを使用しなくなりました](/sccm/core/plan-design/hierarchy/client-peer-cache)。
+## <a name="high-dpi-console-support"></a>Supporto per console con DPI elevato
+
+In questa versione sono state risolte le problematiche legate a come la console di Configuration Manager ridimensiona e visualizza diverse parti dell'interfaccia utente su dispositivi con DPI elevato, ad esempio un Surface Book.
 
 
-## <a name="improvements-for-sql-server-always-on-availability-groups"></a>SQL Server Always On 可用性グループの機能強化  
-このリリースでは、Configuration Manager で使用する SQL Server Always On 可用性グループで非同期コミット レプリカを使用できるようになりました。  これにより、オフサイトの (リモート) バックアップとして使用する追加のレプリカを可用性グループに追加して、それらをディザスター リカバリー シナリオで使用することができます。  
+## <a name="peer-cache-improvements"></a>Miglioramenti della peer cache
+A partire da questa Technical Preview, Peer Cache [non usa l'account di accesso alla rete](/sccm/core/plan-design/hierarchy/client-peer-cache) per autenticare le richieste di download dai peer.
 
--   Configuration Manager は、同期レプリカを復旧するために非同期コミット レプリカの使用をサポートしています。  これを実行する方法については、バックアップと回復に関するトピックで[サイト データベースの回復オプション](/sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption)を参照してください。
 
--   このリリースでは、非同期コミット レプリカをサイト データベースとして使用するためのフェールオーバーはサポートされていません。
+## <a name="improvements-for-sql-server-always-on-availability-groups"></a>Miglioramenti per i gruppi di disponibilità Always On di SQL Server  
+Con questa versione è ora possibile usare le repliche con commit asincrono nei gruppi di disponibilità Always On di SQL Server usati con Configuration Manager.  Ciò significa che è possibile aggiungere repliche aggiuntive ai gruppi di disponibilità da usare come backup remoti, e quindi usarli in caso di ripristino di emergenza.  
+
+-   Configuration Manager supporta l'uso della replica con commit asincrono per ripristinare la replica sincrona.  Vedere le [opzioni di ripristino del database del sito](/sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) nell'argomento Backup e ripristino per informazioni su come eseguire questa operazione.
+
+-   Questa versione non supporta il failover per l'uso della replica con commit asincrono come database del sito.
 > [!CAUTION]  
-> Configuration Manager では、非同期コミット レプリカが最新のものかどうかを確認するために状態を検証せず、また、[このようなレプリカは意図的に非同期にできる](https://msdn.microsoft.com/library/ff877884(SQL.120).aspx(d=robot)#Availability%20Modes)ため、非同期コミット レプリカをサイト データベースとして使用すると、サイトとデータの整合性が危険にさらされる場合があります。  
+> Poiché Configuration Manager non convalida lo stato della replica con commit asincrono per verificare che sia corrente, e [per comportamento normale del prodotto, una replica di questo tipo può non essere sincronizzata](https://msdn.microsoft.com/library/ff877884(SQL.120).aspx(d=robot)#Availability%20Modes), l'uso di una replica con commit asincrono come database del sito può mettere a rischio l'integrità dei dati del sito.  
 
--   可用性グループでは、使用する SQL Server のバージョンでサポートされているのと同じ数と種類のレプリカを使用できます    (以前のサポートでは、同期コミット レプリカは 2 つに制限されていました)。
+-   In un gruppo di disponibilità è possibile usare lo stesso numero e tipo di repliche supportate dalla versione di SQL Server in uso.   In precedenza, il supporto era limitato a due repliche con commit sincrono.
 
-### <a name="configure-an-asynchronous-commit-replica"></a>非同期コミット レプリカを構成する
-非同期レプリカを[ Configuration Manager で使用する可用性グループ](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database)に追加するために、同期レプリカの構成に必要な構成スクリプトを実行する必要はありません  (これは、その非同期レプリカをサイト データベースとして使用するためのサポートがないためです)。セカンダリ レプリカを可用性グループに追加する方法については、[SQL Server のドキュメント](https://msdn.microsoft.com/library/hh213247(v=sql.120).aspx(d=robot))を参照してください。
+### <a name="configure-an-asynchronous-commit-replica"></a>Configurare una replica con commit asincrono
+Per aggiungere una replica asincrona a un [gruppo di disponibilità usato con Configuration Manager](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database), non è necessaria eseguire gli script di configurazione necessari per configurare una replica sincrona, perché non viene offerto supporto per l'uso di tale replica asincrona come database del sito. Per altre informazioni sull'aggiunta di repliche secondarie ai gruppi di disponibilità, vedere la [documentazione di SQL Server](https://msdn.microsoft.com/library/hh213247(v=sql.120).aspx(d=robot)).
 
-### <a name="use-the-asynchronous-replica-to-recover-your-site"></a>非同期レプリカを使用してサイトを回復する
-非同期レプリカを使用してサイト データベースを回復する前に、サイト データベースへの追加の書き込みを防止するために、アクティブなプライマリ サイトを停止する必要があります。 サイトの停止後、[手動で回復したデータベース](/sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption)の代わりに、非同期レプリカを使用することができます。
+### <a name="use-the-asynchronous-replica-to-recover-your-site"></a>Usare la replica asincrona per il ripristino del sito
+Prima di usare una replica asincrona per ripristinare il database del sito, è necessario arrestare il sito primario attivo per evitare altre operazioni di scrittura nel database del sito. Dopo aver arrestato il sito, è possibile usare una replica asincrona al posto di un [database ripristinato manualmente](/sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption).
 
-サイトを停止するには、[階層のメンテナンス ツール](/sccm/core/servers/manage/hierarchy-maintenance-tool-preinst.exe)を使用して、サイト サーバーの主要なサービスを停止します。 次のコマンド ラインを使用します: **Preinst.exe/stopsite**   
+Per arrestare il sito, è possibile usare lo[Strumento di manutenzione gerarchia](/sccm/core/servers/manage/hierarchy-maintenance-tool-preinst.exe) per interrompere i servizi principali nel server del sito. Usare la riga di comando: **Preinst.exe /stopsite**   
 
-サイトを停止することは、サイト サーバーでサイト コンポーネント マネージャー サービス (sitecomp) に続いて SMS_Executive サービスを停止することと同じです。
+Arrestare il sito equivale ad arrestare il servizio Gestione componenti del sito (sitecomp) e poi il servizio SMS_Executive service, nel server del sito.
 
 > [!TIP]  
-> パッシブのプライマリ レプリカ ([サイト サーバーの役割の高可用性](#site-server-role-high-availability)としてこの Technical Preview で導入) を使用する場合、パッシブ レプリカを停止する必要はありません。 アクティブのプライマリ サイトのみを停止する必要があります。
+> Se si usa la replica primaria passiva, introdotta in questa versione Technical Preview come [disponibilità elevata per il ruolo del server del sito](#site-server-role-high-availability), non è necessario arrestare la replica passiva. È necessario arrestare solo il sito primario attivo.
 
 
 
-## <a name="improved-user-notifications-for-office-365-updates"></a>Office 365 更新プログラムのユーザーへの通知の改善
-クライアントが Office 365 更新プログラムをインストールする場合に、Office クイック実行ユーザー エクスペリエンスを活用するように改善されました。 これには、ポップアップとアプリ内通知、およびカウントダウン エクスペリエンスが含まれます。 以前のリリースでは、Office 365 更新プログラムがクライアントに送信されると、開いていた Office アプリケーションが警告なしで自動的に閉じられていました。 この更新により、Office アプリケーションが予期せずに閉じられることはなくなります。
+## <a name="improved-user-notifications-for-office-365-updates"></a>Notifiche utente migliorate per gli aggiornamenti di Office 365
+Sono stati apportati miglioramenti per usare l'esperienza utente a portata di clic di Office quando un client installa un aggiornamento di Office 365. I miglioramenti includono le notifiche a comparsa e in-app e un conto alla rovescia. In precedenza, quando un aggiornamento di Office 365 veniva inviato a un client, le applicazioni di Office aperte venivano chiuse automaticamente senza preavviso. Dopo l'aggiornamento, le applicazioni di Office non verranno chiuse in modo imprevisto.
 
-### <a name="prerequisites"></a>必要条件
-この更新プログラムは、Office 365 ProPlus クライアントに適用されます。
+### <a name="prerequisites"></a>Prerequisiti
+Questo aggiornamento si applica ai client di Office 365 ProPlus.
 
-### <a name="known-issues"></a>既知の問題
-クライアントが初めて Office 365 の更新割り当てを評価し、その更新プログラムの期限が過去にスケジュールされている場合、今すぐにスケジュールされている場合、または 30 分以内にスケジュールされている場合、Office 365 のユーザー エクスペリエンスに一貫性がなくなる場合があります。 たとえば、クライアントが更新プログラムに対して 30 分間のカウント ダウン ダイアログを受け取った場合でも、実際の適用はカウント ダウンが終わる前に開始できます。 この動作を回避するには、次を考慮してください。
-- 現在の時刻から 60 分以上先にスケジュールされた期限付きで Office 365 の更新プログラムを展開します。
-- コレクションに対して勤務時間外にメンテナンス期間を設定するか、展開に対して適用猶予期間を設定します。
+### <a name="known-issues"></a>Problemi noti
+Quando un client valuta l'assegnazione di un aggiornamento di Office 365 per la prima volta e l'aggiornamento ha una scadenza pianificata nel passato, pianificata immediatamente o pianificata entro 30 minuti, l'esperienza utente di Office 365 può risultare incoerente. Il client potrebbe ad esempio visualizzare una finestra di dialogo con un conto alla rovescia di 30 minuti per l'aggiornamento, ma l'imposizione effettiva potrebbe avviarsi prima della fine del conto alla rovescia. Per evitare questo comportamento, considerare quanto segue:
+- Distribuire l'aggiornamento di Office 365 con una scadenza pianificata dopo più di 60 minuti rispetto all'ora corrente.
+- Configurare una finestra di manutenzione durante le ore non lavorative per la raccolta o un periodo di tolleranza per l'imposizione della distribuzione.
 
-### <a name="try-it-out"></a>試してみましょう。
-次のタスクを試した後、どのように動作したかについて、リボンの **[ホーム]** タブから **[フィードバック]** を送信してください。
-- 現在の時刻から 60 分以上先の時間に設定した期限付きで Office 365 更新プログラムをクライアントに展開します。 クライアントで新しい動作を確認します。
-
-
-## <a name="configure-and-deploy-windows-defender-application-guard-policies"></a>Windows Defender Application Guard ポリシーの構成と展開
-
-[Windows Defender Application Guard](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) は、信頼できない Web サイトをオペレーティング システムの他の部分からはアクセスできない安全な分離コンテナーで開くことでユーザーを保護する Windows の新機能です。 この Technical Preview では、設定する Configuration Manager のコンプライアンス設定を使用して、この機能を構成し、コレクションに展開するためのサポートが追加されました。
-この機能は、Windows 10 Creators Update (コードネーム: RS2) の 64 ビット バージョンのプレビューでリリースされます。 この機能を今すぐテストするには、この更新プログラムのプレビュー バージョンを使用している必要があります。
+### <a name="try-it-out"></a>Prova subito!
+Provare a completare le attività seguenti e quindi inviare **Feedback** dalla scheda **Home** della barra multifunzione per comunicarci come è andata:
+- Distribuire l'aggiornamento di Office 365 a un client con una scadenza impostata dopo almeno 60 minuti rispetto all'ora corrente. Osservare il nuovo comportamento nel client.
 
 
-### <a name="before-you-start"></a>アップグレードを開始する前に
+## <a name="configure-and-deploy-windows-defender-application-guard-policies"></a>Configurare e distribuire i criteri di Windows Defender Application Guard
 
-Windows Defender Application Guard ポリシーを作成して展開するには、ネットワーク分離ポリシーを使用して、ポリシーを展開する Windows 10 デバイスを構成する必要があります。 詳細については、後述のブログ記事を参照してください。
-この機能は、最新の Windows 10 Insider Build でのみ動作します。 これをテストするには、クライアントが最新の Windows 10 Insider Build で実行されている必要があります。
-
-### <a name="try-it-out"></a>試してみましょう。
-
-ブログ記事を読み、Windows Defender Application Guard に関する基本を確実に理解してください。
-
-ポリシーを作成し、使用可能な設定を参照するには、次の手順を実行します。
-
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** を選択します。
-2.  **[資産とコンプライアンス]** ワークスペースで、**[概要]** > **[Endpoint Protection]** > **[Windows Defender Application Guard]** の順に選択します。
-3.  **[ホーム]** タブの **[作成]** グループで、**[Windows Defender Application Guard ポリシーの作成]** をクリックします。
-4.  ブログ記事を参照として使用して、使用可能な設定を参照および構成して、機能を試すことができます。
-5.  完了したら、ウィザードを終了し、1 つ以上の Windows 10 デバイスにポリシーを展開します。
-
-### <a name="further-reading"></a>参考資料
-
-Windows Defender Application Guard の詳細については、[このブログ記事]( https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#BmJGKPfSjHHzsMmI.97)を参照してください。
-また、Windows Defender Application Guard のスタンドアロン モードの詳細については、[このブログ記事](https://techcommunity.microsoft.com/t5/Windows-Insider-Program/Windows-Defender-Application-Guard-Standalone-mode/td-p/66903)を参照してください。
+[Windows Defender Application Guard](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) è una nuova funzionalità di Windows che consente di proteggere gli utenti con l'apertura di siti Web non attendibili in un contenitore protetto isolato non è accessibile da altre parti del sistema operativo. In questa versione Technical Preview, è stato aggiunto il supporto per configurare questa funzionalità usando le impostazioni di conformità di Configuration Manager configurate dall'utente e quindi distribuite in una raccolta.
+Questa funzionalità verrà rilasciata in anteprima per la versione a 64 bit di Windows 10 Creators Update (nome in codice: RS2). Per provare ora questa funzionalità è necessario usare una versione di anteprima dell'aggiornamento.
 
 
+### <a name="before-you-start"></a>Prima di iniziare
+
+Per creare e distribuire i criteri di Windows Defender Application Guard, configurare i dispositivi Windows 10 in cui vengono distribuiti i criteri con un criterio di isolamento rete. Per altre informazioni, vedere il blog di blog indicato più avanti.
+Questa funzionalità funziona solo con le build correnti di Windows 10 Insider. Per provarla, i client devono eseguire una build recente di Windows 10 Insider.
+
+### <a name="try-it-out"></a>Prova subito!
+
+Verificare di avere letto il post di blog per comprendere le nozioni di base relative a Windows Defender Application Guard.
+
+Per creare un criterio e per individuare le impostazioni disponibili:
+
+1.  Nella console di Configuration Manager scegliere **Asset e conformità**.
+2.  Nell'area di lavoro **Asset e conformità** scegliere **Panoramica** > **Endpoint Protection** > **Windows Defender Application Guard**.
+3.  Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea i criteri di Windows Defender Application Guard**.
+4.  Usando il post di blog come riferimento, è possibile selezionare e configurare le impostazioni disponibili per provare la funzionalità.
+5.  Al termine, completare la procedura guidata e distribuire il criterio in uno o più dispositivi Windows 10.
+
+### <a name="further-reading"></a>Letture di approfondimento
+
+Per altre informazioni su Windows Defender Application Guard, vedere [questo post di blog]( https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#BmJGKPfSjHHzsMmI.97).
+Per altre informazioni sulla modalità autonoma di Windows Defender Application Guard vedere [questo post di blog](https://techcommunity.microsoft.com/t5/Windows-Insider-Program/Windows-Defender-Application-Guard-Standalone-mode/td-p/66903).
 
 
-## <a name="new-capabilities-for-azure-ad-and-cloud-management"></a>Azure AD の新機能とクラウド管理
-
-このリリースでは、次のシナリオをサポートするために、クラウド サービスで Azure AD を使用するように構成できます。
-
-- インターネットから手動で Configuration Manager クライアントをインストールして、Configuration Manager サイトに割り当てる。
-- Intune を使用して、インターネット上で Configuration Manager クライアントをデバイスに展開する。
-
-### <a name="advantages"></a>長所
-
-クラウド サービスと Azure AD を使用することで、クライアント認証証明書を使用する必要がなくなります。
-
-コレクションおよびその他の Configuration Manager の操作で使用するサイト内で Azure AD ユーザーを検出できます。
-
-### <a name="before-you-start"></a>アップグレードを開始する前に
-
-- Azure AD テナントが必要です。
-- デバイスで、Windows 10 が実行され、Azure AD が参加している必要があります。  参加している Azure AD に加え、クライアントもドメインに参加できます。
-- 管理ポイントのサイト システムの役割に対する[既存の前提条件](/sccm/core/plan-design/configs/site-and-site-system-prerequisites)に加え、**ASP.NET 4.5** (およびこれと一緒に自動的に選択されるその他のオプション) が、このサイト システムの役割をホストするコンピューターで有効になっていることを確認する必要があります。
-- Microsoft Intune を使用して、Configuration Manager クライアントを展開するには:
-    - 動作中の Intune テナント (Configuration Manager と Intune を接続する必要はありません) が必要です。
-    - Intune で、Configuration Manager クライアントを含むアプリを作成して展開している必要があります。 この方法について詳しくは、「Intune に登録されている MDM 管理対象 Windows デバイスへのクライアントのインストール方法」を参照してください。
-- Configuration Manager を使用して、クライアントを展開するには:
-    - HTTPS モード用に少なくとも 1 つの管理ポイントを構成する必要があります。
-    - クラウド管理ゲートウェイを設定する必要があります。
 
 
-### <a name="set-up-the-cloud-management-gateway"></a>クラウド管理ゲートウェイを設定する
+## <a name="new-capabilities-for-azure-ad-and-cloud-management"></a>Nuove funzionalità per la gestione di Azure AD e del cloud
 
-クライアントが証明書を使用せずにインターネットから Configuration Manager サイトにアクセスできるように、クラウド管理ゲートウェイを設定します。
+In questa versione è possibile configurare i servizi cloud affinché usino Azure AD a supporto dello scenario seguente:
 
-この方法についてのヘルプは、次のトピックにあります。
+- Installare manualmente il client di Configuration Manager da Internet e assegnarlo a un sito di Configuration Manager.
+- Usare Intune per distribuire il client di Configuration Manager ai dispositivi via Internet.
 
-- [Configuration Manager でクラウド管理ゲートウェイを計画する](/sccm/core/clients/manage/plan-cloud-management-gateway)
-- [Configuration Manager のクラウド管理ゲートウェイを設定する](/sccm/core/clients/manage/setup-cloud-management-gateway)
-- [Configuration Manager でクラウド管理ゲートウェイを監視する](/sccm/core/clients/manage/monitor-clients-cloud-management-gateway)
+### <a name="advantages"></a>Vantaggi
 
-### <a name="set-up-the-azure-services-app-in-configuration-manager-cloud-services"></a>Configuration Manager Cloud Services で Azure サービス アプリを設定する
+L'utilizzo dei servizi cloud e di Azure AD evita l'impiego dei certificati di autenticazione client.
 
-これにより、Configuration Manager サイトを Azure AD に接続します。これは、このセクションの他のすべての操作の前提条件です。 手順は次のとおりです。
+È possibile individuare gli utenti di Azure AD che possono quindi essere usati nelle raccolte e in altre operazioni di Configuration Manager.
 
-1.  Configuration Manager コンソールの **[管理]** ワークスペースで、**[クラウド サービス]** を展開して、**[Azure サービス]** をクリックします。
-2.  **[ホーム]** タブの **[Azure サービス]** グループで、**[Azure サービスの構成]** をクリックします。
-3.  Azure サービス ウィザードの **[Azure サービス]** ページで、**[クラウド管理]** を選択して、クライアントが Azure AD を使用して、階層で認証できるようにします。
-4.  ウィザードの **[全般]** ページで、Azure サービスの名前と説明を指定します。
-5.  ウィザードの **[アプリ]** ページで、リストからご使用の Azure 環境を選択し、**[参照]** をクリックして Azure サービスの構成に使用されるサーバーとクライアント アプリを選択します。
-    - **[サーバー アプリ]** ウィンドウで、使用するサーバー アプリを選択し、**[OK]** をクリックします。 サーバー アプリとは、Azure アカウントの構成 (クライアントのテナント ID、クライアント ID、シークレット キーなど) を格納する Azure Web アプリです。 利用可能なサーバー アプリがない場合は、次のいずれかを使用します。
-        - **作成**: 新しいセッションを作成するには、**[作成]** をクリックします。 アプリとテナントのフレンドリ名を指定します。 次に、Azure にサインインすると、Configuration Manager によって、Azure で Web アプリと、Web アプリで使用するクライアント ID やシークレット キーが作成されます。 その後、Azure Portal からこれらを表示できます。
-        - **インポート**: Azure サブスクリプションに既に存在する Web アプリを使用するには、**[インポート]** をクリックします。 アプリとテナントのフレンドリ名を指定し、Configuration Manager で使用する Azure Web アプリのテナント ID、クライアント ID、シークレット キーを指定します。 情報を確認した後、**[OK]** をクリックして続行します。 このオプションは、この Technical Preview では現在使用できません。
-    - クライアント アプリに同じプロセスを繰り返します。
+### <a name="before-you-start"></a>Prima di iniziare
 
-  アプリケーションのインポートを使用して、ポータルで適切なアクセス許可を設定する場合には、*ディレクトリ データの読み取り*アプリケーションのアクセス許可を付与する必要があります。 アプリケーションでアクセス許可が自動的に作成されるアプリケーションの作成を使用した場合でも、Azure ポータルでアプリケーションに承諾を与える必要があります。
-6.  ウィザードの **[検出]** ページで、オプションで **[Azure Active Directory ユーザーの探索を有効にする]**、**[設定]** の順にクリックします。
-**[Azure AD ユーザー探索設定]** ダイアログ ボックスで、検出を実行するスケジュールを設定します。 Azure AD の新規または変更されたアカウントのみをチェックする差分探索を有効にすることもできます。
-7.  ウィザードを完了します。
-
-この時点で、Configuration Manager サイトが Azure AD に接続されています。
+- È necessario disporre di un tenant di Azure AD.
+- I dispositivi devono eseguire Windows 10 ed essere aggiunti ad Azure AD.  Oltre che ad Azure AD, i client possono essere anche aggiunti al dominio.
+- Oltre ai [prerequisiti esistenti](/sccm/core/plan-design/configs/site-and-site-system-prerequisites) per il ruolo del sistema del sito del punto di gestione, è anche necessario verificare che **ASP.NET 4.5** e qualsiasi altra opzione selezionata automaticamente insieme a questa siano abilitate nel computer che ospita questo ruolo del sistema del sito.
+- Per usare Microsoft Intune per distribuire il client di Configuration Manager:
+    - È necessario disporre di un tenant di Intune funzionante. Non è necessario che Configuration Manager e Intune siano connessi.
+    - In Intune, è stata creata e distribuita un'app che contiene il client di Configuration Manager. Per altre informazioni, vedere Come installare i client nei dispositivi Windows gestiti da MDM di Intune.
+- Per usare Configuration Manager per distribuire il client:
+    - Almeno un punto di gestione deve essere configurato per la modalità HTTPS.
+    - Configurare un gateway di gestione cloud.
 
 
-### <a name="install-the-cm-client-from-the-internet"></a>インターネットから CM クライアントをインストールする
+### <a name="set-up-the-cloud-management-gateway"></a>Configurare il gateway di gestione cloud
 
-開始する前に、クライアント インストール ソース ファイルが、クライアントをインストールするデバイスのローカルに保存されていることを確認します。
-次に、次のインストール コマンド ラインを使用して (例の値は、独自の値に置き換えてください)、「[System Center Configuration Manager でクライアントを Windows コンピューターに展開する方法](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#a-namebkmkmanuala-how-to-install-clients-manually)」の手順に従います。
+Configurare il gateway di gestione cloud per consentire ai client di accedere al sito di Configuration Manager da Internet senza certificati.
+
+Per informazioni su come eseguire questa operazione, leggere gli argomenti seguenti:
+
+- [Pianificare il gateway di gestione cloud in Configuration Manager](/sccm/core/clients/manage/plan-cloud-management-gateway).
+- [Configurare il gateway di gestione cloud per Configuration Manager](/sccm/core/clients/manage/setup-cloud-management-gateway).
+- [Monitorare il gateway di gestione cloud in Configuration Manager](/sccm/core/clients/manage/monitor-clients-cloud-management-gateway).
+
+### <a name="set-up-the-azure-services-app-in-configuration-manager-cloud-services"></a>Configurare l'applicazione Servizi di Azure in Servizi cloud di Configuration Manager
+
+In questo modo il sito di Configuration Manager viene connesso ad Azure AD; si tratta di un prerequisito per tutte le altre operazioni di questa sezione. Per eseguire questa operazione:
+
+1.  Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e quindi fare clic su **Servizi di Azure**.
+2.  Nella scheda **Home**, nel gruppo **Servizi di Azure**, fare clic su **Configura i servizi di Azure**.
+3.  Nella pagina **Servizi di Azure** della procedura guidata per i servizi di Azure, selezionare **Gestione cloud** per consentire ai client di autenticarsi nella gerarchia usando Azure AD.
+4.  Nella pagina **Generale** della procedura guidata specificare un nome e una descrizione per il servizio di Azure.
+5.  Nella pagina **App** della procedura guidata selezionare l'ambiente di Azure dall'elenco, quindi fare clic su **Sfoglia** per selezionare le applicazioni server e client da usare per configurare il servizio di Azure:
+    - Nella finestra **Server App** (App server) selezionare l'app server che si vuole usare e quindi fare clic su **OK**. Le app server sono app Web di Azure che contengono le configurazioni per l'account Azure, inclusi ID del tenant, ID client e una chiave privata per i client. Se non è disponibile un'app server, usare una delle opzioni seguenti:
+        - **Crea**: per creare una nuova app server, fare clic su **Crea**. Specificare un nome descrittivo per l'app e il tenant. Quindi, dopo avere effettuato l'accesso ad Azure, Configuration Manager crea l'app Web in Azure, inclusi l'ID Client e la chiave privata da usare con l'app Web. In un secondo momento, è possibile visualizzare queste informazioni dal portale di Azure.
+        - **Importa**: per usare un'app Web già esistente nella sottoscrizione di Azure, fare clic su **Importa**. Specificare un nome descrittivo per l'app e il tenant, quindi specificare ID tenant, ID client e chiave privata per l'app Web di Azure che si vuole rendere disponibile per l'uso con Configuration Manager. Dopo aver verificato le informazioni, fare clic su **OK** per continuare. Al momento questo opzione non è disponibile in questa versione Technical Preview.
+    - Ripetere la procedura per l'applicazione client.
+
+  È necessario concedere all'applicazione l'autorizzazione *Lettura dati directory* quando si importa l'applicazione, per impostare le autorizzazioni corrette nel portale. Se si usa la creazione dell'applicazione, le autorizzazioni vengono create automaticamente con l'applicazione, ma è necessario concedere il consenso all'applicazione nel portale di Azure.
+6.  Nella pagina **Individuazione** della procedura guidata, selezionare **Abilita l'individuazione utente di Azure Active Directory** e quindi fare clic su **Impostazioni**.
+Nella finestra di dialogo **Impostazioni di individuazione utenti di Azure AD** configurare una pianificazione per quando si verifica l'individuazione. È anche possibile abilitare l'individuazione differenziale che verifica solo gli account nuovi o modificati in Azure AD.
+7.  Completare la procedura guidata.
+
+A questo punto il sito di Configuration Manager è connesso ad Azure AD.
+
+
+### <a name="install-the-cm-client-from-the-internet"></a>Installare il client di Configuration Manager da Internet
+
+Prima di iniziare, verificare che i file di origine dell'installazione client vengano archiviati localmente nel dispositivo nel quale viene installato il client.
+Usare le istruzioni in [Come distribuire i client nei computer Windows in System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#a-namebkmkmanuala-how-to-install-clients-manually) con la riga di comando per l'installazione seguente, sostituendo con valori personalizzati i valori dell'esempio:
 
 **ccmsetup.exe /NoCrlCheck /Source:C:\CLIENT  CCMHOSTNAME=SCCMPROXYCONTOSO.CLOUDAPP.NET/CCM_Proxy_ServerAuth/72457598037527932 SMSSiteCode=HEC AADTENANTID=780433B5-E05E-4B7D-BFD1-E8013911E543 AADTENANTNAME=contoso  AADCLIENTAPPID=<GUID> AADRESOURCEURI=https://contososerver**
 
-- **/NoCrlCheck**: 管理ポイントまたはクラウド管理ゲートウェイが非公開のサーバー証明書を使用する場合、クライアントが CRL の場所に到達できない場合があります。
-- **/Source**: ローカル フォルダー: クライアントのインストール ファイルの場所。
-- **CCMHOSTNAME**: インターネット管理ポイントの名前。 これを見つけるには、管理対象クライアントのコマンド プロンプトから **gwmi -namespace root\ccm\locationservices -class SMS_ActiveMPCandidate** を実行します。
-- **SMSMP**: ルックアップ管理ポイントの名前。イントラネットを指定することもできます。
-- **SMSSiteCode**: Configuration Manager サイトのサイト コード。
-- **AADTENANTID**、**AADTENANTNAME**: Configuration Manager にリンクした Azure AD テナントの ID と名前。 これを見つけるには、Azure AD に参加しているデバイスで、コマンド プロンプトから dsregcmd.exe/status を実行します。
-- **AADCLIENTAPPID**: Azure AD のクライアント アプリ ID。 これを見つけるには、「[リソースにアクセスできる Azure Active Directory アプリケーションとサービス プリンシパルをポータルで作成する](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-application-id-and-authentication-key)」を参照してください。
-- **AADResourceUri**: 搭載された Azure AD サーバー アプリの識別子 URI。
+- **/NoCrlCheck**: se il punto di gestione o il gateway di gestione cloud usa un certificato server non pubblico, il cliente potrebbe non raggiungere il percorso CRL.
+- **/Source**: cartella locale:  posizione dei file di installazione del client.
+- **CCMHOSTNAME**: nome del punto di gestione Internet. È possibile trovarlo eseguendo **gwmi - namespace root\ccm\locationservices-classe SMS_ActiveMPCandidate** da un prompt dei comandi in un client gestito.
+- **SMSMP**: il nome del punto di gestione di ricerca; può trattarsi della rete Intranet.
+- **SMSSiteCode**: il codice del sito del sito di Configuration Manager.
+- **AADTENANTID**, **AADTENANTNAME**: il nome e l'ID del tenant di Azure AD connesso a Configuration Manager. È possibile trovarlo eseguendo dsregcmd.exe /status da un prompt dei comandi su dispositivo aggiunto ad Azure AD.
+- **AADCLIENTAPPID**: ID dell'app client di Azure AD. Per informazioni su come trovarlo, vedere [Usare il portale per creare un'applicazione Azure Active Directory e un'entità servizio che possano accedere alle risorse](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-application-id-and-authentication-key).
+- **AADResourceUri**: URI di identificazione dell'applicazione server di Azure AD caricata.
 
-## <a name="use-azure-services-wizard-to-configure-a-connection-to-oms"></a>Azure サービス ウィザードを使用して、OMS への接続を構成する
-Technical Preview リリース 1705 からは、**Azure サービス ウィザード**を使用して、Configuration Manager から Operations Management Suite (OMS) のクラウド サービスへの接続を構成します。 ウィザードは、前のワークフローを置き換えてこの接続を構成します。
+## <a name="use-azure-services-wizard-to-configure-a-connection-to-oms"></a>Usare la Procedura guidata Servizi di Azure per configurare una connessione a OMS
+A partire dalla versione Technical Preview 1705, la **Procedura guidata Servizi di Azure** viene usata per configurare la connessione da Configuration Manager al servizio cloud Operations Management Suite (OMS). La procedura guidata sostituisce i precedenti flussi di lavoro per la configurazione della connessione.
 
--   ウィザードは、Configuration Manager (OMS など)、ビジネス向け Windows ストア (WSfB)、および Azure Active Directory (Azure AD) 用にクラウド サービスを構成するために使用されます。  
+-   Viene usata per configurare i servizi cloud per Configuration Manager, ad esempio OMS, Windows Store per le aziende (WSfB) e Azure Active Directory (Azure AD).  
 
--   Configuration Manager は、[ログ分析](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite)や[アップグレードの準備](/sccm/core/clients/manage/upgrade/upgrade-analytics)などの機能のために OMS に接続します。
+-   Configuration Manager si connette a OMS per funzionalità quali [Log Analytics](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) o [Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics).
 
-### <a name="prerequisites-for-the-oms-connector"></a>OMS コネクタの前提条件
-OMS への接続を構成するための前提条件は、[Current Branch バージョン 1702 のドキュメント](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite#prerequisites)に記載されているものと変わりません。 ここではその情報を再掲します。  
+### <a name="prerequisites-for-the-oms-connector"></a>Prerequisiti per il connettore OMS
+I prerequisiti per configurare una connessione a OMS sono identici a quelli [indicati per la versione Current Branch 1702](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite#prerequisites). Tali informazioni viene ripetute di seguito:  
 
--   Configuration Manager のアクセス許可を OMS に提供します。
+-   Fornire l'autorizzazione di Configuration Manager a OMS.
 
--   OMS コネクタは、[オンライン モード](/sccm/core/servers/deploy/configure/about-the-service-connection-point#a-namebkmkmodesa-modes-of-operation)の[サービス接続ポイント](/sccm/core/servers/deploy/configure/about-the-service-connection-point)をホストするコンピューターにインストールする必要があります。
+-   OMS Connector deve essere installato nel computer che ospita un [punto di connessione del servizio](/sccm/core/servers/deploy/configure/about-the-service-connection-point) che si trova in [modalità online](/sccm/core/servers/deploy/configure/about-the-service-connection-point#a-namebkmkmodesa-modes-of-operation).
 
--   サービス接続ポイントには、OMS 用の Microsoft Monitoring Agent、および OMS コネクタをインストールする必要があります。 エージェントと OMS コネクタは、同じ **OMS ワークスペース**を使用するように構成する必要があります。 エージェントをインストールする場合は、OMS ドキュメントの「[エージェントのダウンロードとインストール](/azure/log-analytics/log-analytics-sccm#download-and-install-the-agent)」を参照してください。
--   コネクタとエージェントをインストールしたら、Configuration Manager データを使用するように OMS を構成する必要があります。 そのためには、OMS ポータルで [Configuration Manager コレクションをインポート](/azure/log-analytics/log-analytics-sccm#import-collections)します。
+-   Nel punto di connessione del servizio, insieme a OMS Connector è necessario installare Microsoft Monitoring Agent per OMS. L'agente e OMS Connector devono essere configurati per l'uso della stessa **area di lavoro OMS**. Per installare l'agente, vedere [Scaricare e installare l'agente](/azure/log-analytics/log-analytics-sccm#download-and-install-the-agent) nella documentazione relativa a OMS.
+-   Dopo aver installato l'agente e OMS Connector, è necessario configurare OMS per l'uso dei dati di Configuration Manager. A questo scopo, [importare le raccolte di Configuration Manager](/azure/log-analytics/log-analytics-sccm#import-collections) nel portale di OMS.
 
-### <a name="use-the-azure-services-wizard-to-configure-the-connection-to-oms"></a>Azure サービス ウィザードを使用して、OMS への接続を構成する
+### <a name="use-the-azure-services-wizard-to-configure-the-connection-to-oms"></a>Usare la Procedura guidata Servizi di Azure per configurare la connessione a OMS
 
-1.  コンソールで、**[管理]** > **[概要]** > **[クラウド サービス]** > **[Azure サービス]** の順に移動し、リボンの **[ホーム]** タブから **[Azure サービスの構成]** を選択して、**Azure サービス ウィザード**を開始します。
+1.  Nella console passare ad **Amministrazione** > **Panoramica** > **Servizi cloud** > **Servizi di Azure** e quindi scegliere **Configura i servizi di Azure** dalla scheda **Home** della barra multifunzione per avviare la **Procedura guidata per i servizi di Azure**.
 
-2.  **[Azure サービス]** ページで、Operation Management Suite クラウド サービスを選択します。 **[Azure サービス名]** にフレンドリ名を入力し、任意で説明を入力して、**[次へ]** をクリックします。
+2.  Nella pagina **Servizi di Azure** selezionare il servizio cloud Operations Management Suite. Specificare un nome descrittivo per **Nome del servizio Azure** e una descrizione facoltativa, quindi fare clic su **Avanti**.
 
-3.  **[アプリ]** ページで、ご使用の Azure 環境を指定します (Technical Preview では、パブリック クラウドのみがサポートされます)。 次に、**[参照]** をクリックして [サーバー アプリ] ウィンドウを開きます。
+3.  Nella pagina **App** specificare l'ambiente Azure (la versione Technical Preview supporta solo cloud pubblici). Fare clic su **Sfoglia** per aprire la finestra dell'app server.
 
-4.  Web アプリを選択します。
+4.  Selezionare un'app Web:
 
-    -   **インポート**: Azure サブスクリプションに既に存在する Web アプリを使用するには、**[インポート]** をクリックします。 アプリとテナントのフレンドリ名を指定し、Configuration Manager で使用する Azure Web アプリのテナント ID、クライアント ID、シークレット キーを指定します。 情報を**確認**した後、**[OK]** をクリックして続行します。   
+    -   **Importa**: per usare un'app Web già esistente nella sottoscrizione di Azure, fare clic su **Importa**. Specificare un nome descrittivo per l'app e il tenant, quindi specificare ID tenant, ID client e chiave privata per l'app Web di Azure che si vuole rendere disponibile per l'uso con Configuration Manager. Dopo aver fatto clic su **Verifica** per verificare le informazioni, fare clic su **OK** per continuare.   
 
     > [!NOTE]   
-    > このプレビューで OMS を構成すると、OMS は Web アプリの*インポート*機能のみをサポートします。 新しい Web アプリの作成はサポートされません。 同様に、OMS に既存のアプリを再利用することはできません。
+    > Quando si configura OMS con questa versione di anteprima, OMS supporta solo la funzione di *importazione*  di un'app Web. La creazione di una nuova app Web non è supportata. Analogamente, non è possibile usare un'app già esistente per OMS.
 
-5.  その他の手順をすべて正常に完了すると、**[OMS Connection Configuration]\(OMS 接続構成\)** 画面の情報が、自動的にこのページに表示されます。 接続設定の情報は、**[Azure サブスクリプション]**、**[Azure リソース グループ]**、および **[Operations Management Suite ワークスペース]** に表示されます。
+5.  Se tutte le altre procedure sono state eseguite correttamente, le informazioni della schermata di **configurazione della connessione OMS** vengono automaticamente visualizzate. Le informazioni relative alle impostazioni di connessione vengono visualizzate in **Sottoscrizione Azure**, **Gruppo di risorse di Azure** e **Area di lavoro di Operations Management Suite**.
 
-6.  ウィザードは、入力した情報を使用して、OMS サービスに接続します。 OMS と同期するデバイス コレクションを選択し、**[追加]** をクリックします。
+6.  La procedura guidata esegue la connessione al servizio OMS usando le informazioni immesse dall'utente. Selezionare le raccolte di dispositivi da sincronizzare con OMS e quindi fare clic su **Aggiungi**.
 
-7.  **[概要]** 画面で、**[次へ]** の接続設定を確認します。 **[進行状況]** 画面に接続状態が表示され、**[完了]** をクリックします。
+7.  Verificare le impostazioni di connessione nella schermata **Riepilogo** e selezionare **Avanti**. Nella schermata **Avanzamento** viene visualizzato lo stato della connessione e quindi **Completata**.
 
-8.  ウィザードが完了すると、Configuration Manager コンソールに**クラウド サービスの種類**として **Operation Management Suite** を構成したことが示されます。
+8.  Al termine della procedura guidata, nella console di Configuration Manager viene indicato che **Operation Management Suite** è stato configurato come **Tipo di servizio cloud**.

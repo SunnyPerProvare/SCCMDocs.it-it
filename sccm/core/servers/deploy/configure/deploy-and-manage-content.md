@@ -1,6 +1,6 @@
 ---
-title: "コンテンツの展開 | Microsoft Docs"
-description: "System Center Configuration Manager の配布ポイントをインストールした後に、その配布ポイントにコンテンツを展開する方法について説明します。"
+title: Distribuire il contenuto | Microsoft Docs
+description: "Ecco come è possibile iniziare a distribuire contenuto ai punti di distribuzione per System Center Configuration Manager dopo averli installati."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,499 +17,499 @@ manager: angrobe
 ms.openlocfilehash: 36b08285ef78d0acb9ba9c44abe2d57e311d44b3
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="deploy-and-manage-content-for-system-center-configuration-manager"></a>System Center Configuration Manager でのコンテンツの展開および管理
+# <a name="deploy-and-manage-content-for-system-center-configuration-manager"></a>Distribuire e gestire contenuto per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager の配布ポイントをインストールしたら、その配布ポイントへのコンテンツの展開を開始できます。 通常、コンテンツはネットワーク経由で配布ポイントに転送しますが、他の方法を使用して配布ポイントにコンテンツを転送することもできます。 コンテンツを配布ポイントに転送した後は、配布ポイントのコンテンツを更新、再配布、削除、および検証できます。  
+È possibile iniziare a distribuire contenuto ai punti di distribuzione per System Center Configuration Manager dopo averli installati. In genere, il contenuto viene trasferito ai punti di distribuzione in rete, ma esistono altre opzioni per inviare il contenuto ai punti di distribuzione. Dopo che il contenuto è stato trasferito in un punto di distribuzione, è possibile aggiornare, ridistribuire, rimuovere e convalidare il contenuto nei punti di distribuzione.  
 
-##  <a name="bkmk_distribute"></a> コンテンツの配布  
- 通常、コンテンツをクライアント コンピューターで使用できるようにするには、コンテンツを配布ポイントに配布します。 (特定の展開のオンデマンド コンテンツ配布を使用する場合は例外です。)コンテンツを配布するとき、Configuration Manager は、コンテンツ ファイルをパッケージに保存してから配布ポイントに配布します。 配布できるコンテンツには、次のような種類があります。  
+##  <a name="bkmk_distribute"></a> Distribuire il contenuto  
+ In genere, il contenuto viene distribuito ai punti di distribuzione in modo che sia disponibile per i computer client. Un'eccezione a questo comportamento si verifica quando si usa la distribuzione del contenuto su richiesta per una distribuzione specifica.  Quando si distribuisce il contenuto, Configuration Manager archivia i file di contenuto in un pacchetto e distribuisce il pacchetto al punto di distribuzione. È possibile distribuire diversi tipi di contenuto, tra cui:  
 
--   アプリケーションの展開の種類  
+-   Tipi di distribuzioni delle applicazioni  
 
--   パッケージ  
+-   Pacchetti  
 
--   展開パッケージ  
+-   Pacchetti di distribuzione  
 
--   ドライバー パッケージ  
+-   Pacchetti driver  
 
--   オペレーティング システム イメージ  
+-   Immagini del sistema operativo  
 
--   オペレーティング システム インストーラー  
+-   Programmi di installazione del sistema operativo  
 
--   ブート イメージ  
+-   Immagini d'avvio  
 
--   タスク シーケンス  
+-   Sequenze attività  
 
-アプリケーションの展開の種類などのソース ファイルを含むパッケージまたは展開パッケージを作成する場合は、パッケージが作成されるサイトがパッケージ コンテンツ ソースのサイト所有者になります。 Configuration Manager により、オブジェクトに指定されているソース ファイル パスからパッケージ コンテンツ ソースを所有するサイト サーバーのコンテンツ ライブラリにソース ファイルがコピーされます。  次に、Configuration Manager により、情報が追加のサイトにレプリケートされます。 (詳細については、「[コンテンツ ライブラリ](../../../../core/plan-design/hierarchy/the-content-library.md)」をご覧ください。)  
+Quando si crea un pacchetto che contiene i file di origine, ad esempio un tipo di distribuzione di un'applicazione o un pacchetto di distribuzione, il sito in cui il pacchetto viene creato diventa il proprietario del sito o un tipo di distribuzione di applicazioni, il sito in cui viene creato il pacchetto diventa il sito proprietario dell'origine contenuto del pacchetto. Configuration Manager copia i file di origine dal percorso del file di origine specificato per l'oggetto nella raccolta contenuto nel server del sito che ha la proprietà dell'origine contenuto del pacchetto.  Configuration Manager replica quindi le informazioni nei siti aggiuntivi. Per altre informazioni sulla raccolta contenuto, vedere la pagina relativa alla [Raccolta contenuto](../../../../core/plan-design/hierarchy/the-content-library.md).  
 
-コンテンツを配布ポイントに配布するには、次の手順に従います。  
+Utilizzare la procedura seguente per distribuire contenuto nei punti di distribuzione.  
 
-#### <a name="to-distribute-content-on-distribution-points"></a>コンテンツを配布ポイントに配布するには  
+#### <a name="to-distribute-content-on-distribution-points"></a>Per distribuire contenuto nei punti di distribuzione  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ソフトウェア ライブラリ **** ] ワークスペースで、配布するコンテンツの種類に応じて、次のいずれかの手順を選択します。  
+2.  Nell'area di lavoro **Raccolta software** , selezionare uno dei seguenti passaggi per il tipo di contenuto che si desidera distribuire:  
 
-    -   **アプリケーション**: **[アプリケーション管理]** > **[アプリケーション]** の順に展開して、配布するアプリケーションを選択します。  
+    -   **Applicazioni**: espandere **Gestione applicazioni** > **Applicazioni** e selezionare le applicazioni da distribuire.  
 
-    -   **パッケージ**: **[アプリケーション管理]** >  **[パッケージ]** の順に展開して、配布するパッケージを選択します。  
+    -   **Pacchetti**: espandere **Gestione applicazioni** >  **Pacchetti** e selezionare i pacchetti da distribuire.  
 
-    -   **展開パッケージ**: **[ソフトウェア更新プログラム]** >  **[展開パッケージ]** の順に展開して、配布する展開パッケージを選択します。  
+    -   **Pacchetti di distribuzione**: espandere **Aggiornamenti software** >  **Pacchetti di distribuzione** e selezionare i pacchetti di distribuzione da distribuire.  
 
-    -   **ドライバー パッケージ**: **[オペレーティング システム]** >  **[ドライバー パッケージ]** の順に展開して、配布するドライバー パッケージを選択します。  
+    -   **Pacchetti driver**: espandere **Sistemi operativi** >  **Pacchetti driver** e selezionare i pacchetti driver da distribuire.  
 
-    -   **オペレーティング システム イメージ**: **[オペレーティング システム]** >  **[オペレーティング システム イメージ]** の順に展開して、配布するオペレーティング システム イメージを選択します。  
+    -   **Immagini del sistema operativo**: espandere **Sistemi operativi** >  **Immagini del sistema operativo** e selezionare le immagini del sistema operativo da distribuire.  
 
-    -   **オペレーティング システム インストーラー**: **[オペレーティング システム]** > **[オペレーティング システム インストーラー]** の順に展開して、配布するオペレーティング システム インストーラーを選択します。  
+    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi** > **Programmi di installazione sistema operativo** e selezionare i programmi di installazione del sistema operativo da distribuire.  
 
-    -   **ブート イメージ**: **[オペレーティング システム]** >  **[ブート イメージ]** の順に展開して、配布するブート イメージを選択します。  
+    -   **Immagini d'avvio**: espandere **Sistemi operativi** >  **Immagini d'avvio** e selezionare le immagini di avvio da distribuire.  
 
-    -   **タスク シーケンス**: **[オペレーティング システム]** >  **[タスク シーケンス]** の順に展開して、配布するタスク シーケンスを選択します。 タスク シーケンスには、コンテンツは含まれませんが、配布される関連コンテンツの依存関係が含まれます。  
-
-        > [!NOTE]  
-        >  タスク シーケンスを変更する場合は、コンテンツを再配布する必要があります。  
-
-3.  [ホーム **** ] タブの [展開 **** ] グループで、[コンテンツの配布 ****] をクリックします。 コンテンツの配布ウィザードが開きます。  
-
-4.  **[全般]** ページで、表示されているコンテンツが配布するコンテンツであることを確認し、選択されたコンテンツに関連付けられているコンテンツの依存関係を Configuration Manager が検出し、依存関係を配布に追加するかどうかを選択して、**[次へ]** をクリックします。  
-
-    > [!NOTE]  
-    >  [コンテンツに依存する項目を検出してこの配布に追加する **** ] の設定を構成できるのは、コンテンツの種類がアプリケーションである場合のみです。 Configuration Manager では、タスク シーケンスのこの設定は自動的に構成され、変更することはできません。  
-
-5.  表示される場合は、[コンテンツ **** ] タブで、表示されているコンテンツが配布対象のコンテンツであることを確認して、[次へ ****] をクリックします。  
-
-    > [!NOTE]  
-    >  [コンテンツ **** ] ページは、ウィザードの [全般 **** ] ページで [関連コンテンツの依存関係を検出してこの配布に追加する **** ] が選択されている場合にのみ表示されます。  
-
-6.  [コンテンツの配布先 **** ] ページで [追加 ****] をクリックし、次のいずれかを選択して、該当の手順に従います。  
-
-    -   **コレクション**:[ユーザー コレクション **** ] または [デバイス コレクション ****] を選択し、1 つまたは複数の配布ポイント グループに関連付けられているコレクションをクリックして、[OK ****] をクリックします。  
+    -   **Sequenze di attività**: espandere **Sistemi operativi** >  **Sequenze di attività** e selezionare la sequenza di attività da distribuire. Anche se le sequenze attività non hanno contenuto, presentano delle dipendenze contenuto associate che vengono distribuite.  
 
         > [!NOTE]  
-        >  配布ポイント グループに関連付けられているコレクションのみが表示されます。 コレクションと配布ポイント グループの関連付けの詳細については、「[System Center Configuration Manager の配布ポイントのインストールと構成](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md)」トピックの「[配布ポイント グループの管理](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage)」をご覧ください。  
+        >  Se si modifica la sequenza attività, è necessario ridistribuire il contenuto.  
 
-    -   **配付ポイント**:既存の配布ポイントを選択して、[OK ****] をクリックします。 コンテンツを既に受信した配布ポインは表示されません。  
+3.  Nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Distribuisci contenuto**. Viene visualizzata la Distribuzione guidata contenuto.  
 
-    -   **配布ポイント グループ**:既存の配布ポイント グループを選択して、[OK ****] をクリックします。 コンテンツを既に受信した配布ポイント グループは表示されません。  
-
-    コンテンツの配布先の追加が完了したら、[次へ ****] をクリックします。  
-
-7.  [概要 **** ] ページで、操作を続ける前に配布の設定を見直します。 選択した配布先にコンテンツを配布するには、[次へ ****] をクリックします。  
-
-8.  [進行状況] ページに、配布の進行状況が表示されます。 ****  
-
-9. [確認 **** ] ページに、コンテンツがポイントに正常に割り当てられたかどうかが表示されます。 コンテンツの配布を監視するには、「[配布したコンテンツを System Center Configuration Manager で監視する](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md)」をご覧ください。  
-
-##  <a name="bkmk_prestage"></a> 事前設定されたコンテンツの使用  
- 次の手順で、アプリケーションおよびパッケージの種類のコンテンツ ファイルを事前設定することができます。  
-
--   Configuration Manager コンソールで、必要なコンテンツを選択してから、**事前設定コンテンツ ファイルの作成ウィザード**を使用して、選択したコンテンツのファイルと関連メタデータを含む事前設定コンテンツ ファイル (圧縮ファイル) を作成します。  
-
--   その結果、サイト サーバー、セカンダリ サイト、または配布ポイントでコンテンツを手動でインポートできるようになります。  
-
--   事前設定コンテンツ ファイルをサイト サーバーにインポートする場合、コンテンツ ファイルはサイト サーバーのコンテンツ ライブラリに追加され、サイト サーバー データベースに登録されます。  
-
--   事前設定コンテンツ ファイルを配布ポイントにインポートする場合、コンテンツ ファイルは配布ポイントのコンテンツ ライブラリに追加され、コンテンツが配布ポイントで使用可能になったことを伝えるステータス メッセージがサイト サーバーに送信されます。  
-
-**事前設定されたコンテンツに関する制限事項と考慮事項:**  
-
--   **配布ポイントがサイト サーバーにある場合は**、事前設定コンテンツの配布ポイントを有効にしないでください。 代わりに、「[サイト サーバーに置かれた配布ポイントでコンテンツを事前設定する方法](#bkmk_dpsiteserver)」の手順を使用してください。  
-
--   **配布ポイントをプル配布ポイントとして構成する場合**、事前設定コンテンツの配布ポイントを有効にしないでください。 配布ポイントの事前設定コンテンツの構成は、プル配布ポイントの構成よりも優先されます。 事前設定コンテンツ用に構成されたプル配布ポイントは、ソース配布ポイントからコンテンツをプルしません。また、サイト サーバーからコンテンツを受信しません。  
-
--   **配布ポイントのコンテンツを事前設定する前に**、コンテンツ ライブラリを配布ポイントに作成する必要があります。 少なくとも 1 回コンテンツをネットワーク経由で配布してから、配布ポイントのコンテンツを事前設定してください。  
-
--   **パッケージ ソース パスが長い (140 文字を超えるなど) パッケージのコンテンツを事前設定すると**、Extract Content コマンドライン ツールはそのパッケージのコンテンツをコンテンツ ライブラリに抽出できないことがあります。  
-
-コンテンツ ファイルを事前設定するタイミングの詳細については、「[コンテンツ管理でのネットワーク帯域幅の管理](/sccm/core/plan-design/hierarchy/manage-network-bandwidth)」トピックの「*Prestaged content*」 (事前設定コンテンツ) をご覧ください。  
-
-コンテンツを事前設定するには、次の手順に従います。  
-
-###  <a name="BKMK_CreatePrestagedContentFile"></a> 手順 1: 事前設定コンテンツ ファイルを作成する  
- Configuration Manager コンソールで選択するコンテンツのファイルと関連メタデータを含む事前設定コンテンツ ファイル (圧縮ファイル) を作成することができます。 事前設定コンテンツ ファイルを作成するには、次の手順に従います。  
-
-##### <a name="to-create-a-prestaged-content-file"></a>事前設定コンテンツ ファイルを作成するには  
-
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
-
-2.  [ソフトウェア ライブラリ **** ] ワークスペースで、事前設定するコンテンツの種類に応じて、次のいずれかの手順を選択します。  
-
-    -   **アプリケーション**:[アプリケーション管理 ****] を展開し、[アプリケーション ****] をクリックして、事前設定するアプリケーションを選択します。  
-
-    -   **パッケージ**:[アプリケーション管理 ****] を展開し、[パッケージ ****] をクリックして、事前設定するパッケージを選択します。  
-
-    -   **ドライバー パッケージ**:[オペレーティング システム ****] を展開し、[ドライバー パッケージ ****] をクリックして、事前設定するドライバー パッケージを選択します。  
-
-    -   **オペレーティング システム イメージ**:[オペレーティング システム ****] を展開し、[オペレーティング システム イメージ ****] をクリックして、事前設定するオペレーティング システム イメージを選択します。  
-
-    -   **オペレーティング システム インストーラー**:[オペレーティング システム ****] を展開し、[オペレーティング システム インストーラー ****] をクリックして、事前設定するオペレーティング システム インストーラーを選択します。  
-
-    -   **ブート イメージ**:[オペレーティング システム ****] を展開し、[ブート イメージ ****] をクリックして、事前設定するブート イメージを選択します。  
-
-    -   **タスク シーケンス**:[オペレーティング システム ****] を展開し、[タスク シーケンス ****] をクリックして、事前設定するタスク シーケンスを選択します。  
-
-3.  [ホーム **** ] タブの [展開 **** ] グループで、[事前設定コンテンツ ファイルの作成 ****] をクリックします。 事前設定コンテンツ ファイルの作成ウィザードが開きます。  
+4.  Nella pagina **Generale** verificare che il contenuto in elenco sia il contenuto che si intende distribuire, scegliere se si vuole che Configuration Manager rilevi le dipendenze contenuto associate al contenuto selezionato e aggiunga le dipendenze alla distribuzione e fare clic su **Avanti**.  
 
     > [!NOTE]  
-    >  **アプリケーションの場合:** **[ホーム]** タブの **[アプリケーション]** グループで、**[事前設定コンテンツ ファイルの作成]** をクリックします。  
+    >  È presente l'opzione per configurare l'impostazione **Rileva le dipendenze contenuto associate e aggiungile alla distribuzione** solo per il tipo di contenuto dell'applicazione. Configuration Manager configura automaticamente questa impostazione per le sequenze di attività e l'impostazione non può essere modificata.  
+
+5.  Nella scheda **Contenuto** , se visualizzata, verificare che il contenuto in elenco sia il contenuto che si desidera distribuire, quindi fare clic su **Avanti**.  
+
+    > [!NOTE]  
+    >  La pagina **Contenuto** viene visualizzata solo quando l'impostazione **Rileva le dipendenze contenuto associate e aggiungile alla distribuzione** viene selezionata nella pagina **Generale** della procedura guidata.  
+
+6.  Nella pagina **Destinazione contenuto** , fare clic su **Aggiungi**, scegliere uno dei seguenti elementi, quindi seguire i relativi passaggi:  
+
+    -   **Raccolte**: selezionare **Raccolte utenti** o **Raccolte dispositivi**, fare clic sulla raccolta associata a uno o più gruppi di punti di distribuzione, quindi fare clic su **OK**.  
+
+        > [!NOTE]  
+        >  Vengono visualizzate solo le raccolte associate a un gruppo di punti di distribuzione. Per altre informazioni su come associare le raccolte ai gruppi di punti di distribuzione, vedere [Manage distribution point groups](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage) (Gestire i gruppi di punti di distribuzione) in [Install and configure distribution points for System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) (Installare e configurare i punti di distribuzione per System Center Configuration Manager).  
+
+    -   **Punto di distribuzione**: selezionare un punto di distribuzione esistente, quindi fare clic su **OK**. Non vengono visualizzati i punti di distribuzione che hanno ricevuto il contenuto in precedenza.  
+
+    -   **Gruppo di punti di distribuzione**: selezionare un gruppo di punti di distribuzione esistente, quindi fare clic su **OK**. Non vengono visualizzati i gruppi di punti di distribuzione che hanno ricevuto il contenuto in precedenza.  
+
+    Dopo aver aggiunto le destinazioni del contenuto, fare clic su **Avanti**.  
+
+7.  Nella pagina **Riepilogo** , rivedere le impostazioni per la distribuzione prima di continuare. Per distribuire il contenuto nelle destinazioni selezionate, fare clic su **Avanti**.  
+
+8.  La pagina **Avanzamento** visualizza l'avanzamento della distribuzione.  
+
+9. La pagina **Conferma** visualizza se il contenuto è stato correttamente assegnato ai punti. Per monitorare la distribuzione del contenuto, vedere [Monitor content you have distributed with System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md) (Monitorare il contenuto distribuito con System Center Configuration Manager).  
+
+##  <a name="bkmk_prestage"></a> Usare il contenuto pre-installazione  
+ È possibile pre-installare i file di contenuto per applicazioni e tipi di pacchetti:  
+
+-   Nella console di Configuration Manager si seleziona il contenuto necessario e si usa la **Creazione guidata file di contenuto pre-installazione** per creare un file di contenuto pre-installazione compresso che contiene i file e i metadati associati per il contenuto selezionato.  
+
+-   Quindi, è possibile importare manualmente il contenuto in un server del sito, in un sito secondario o in un punto di distribuzione.  
+
+-   Quando si importa il file di contenuto pre-installato in un server del sito, i file di contenuto vengono aggiunti alla raccolta contenuto nel server del sito e quindi registrati nel database del server del sito.  
+
+-   Quando si importa il file di contenuto pre-installato in un punto di distribuzione, i file di contenuto vengono aggiunti alla raccolta contenuto nel punto di distribuzione e un messaggio di stato viene inviato al server del sito che informa il sito che il contenuto è disponibile nel punto di distribuzione.  
+
+**Limitazioni e considerazioni sui contenuti pre-installazione:**  
+
+-   **Quando il punto di distribuzione si trova sul server del sito**, non abilitare il punto di distribuzione per il contenuto pre-installazione. Usare invece la procedura descritta in [How to prestage content on a distribution point on a site server](#bkmk_dpsiteserver) (Come pre-installare il contenuto in un punto di distribuzione in un server del sito).  
+
+-   **Quando il punto di distribuzione è configurato come un punto di distribuzione pull**, non abilitarlo per il contenuto pre-installazione. La configurazione del contenuto di pre-installazione per un punto di distribuzione sostituisce la configurazione del punto di distribuzione pull. Un punto di distribuzione pull che è configurato per contenuto pre-installato non esegue il pull del contenuto dal punto di distribuzione di origine e non riceve contenuto dal server del sito.  
+
+-   **È necessario creare la raccolta contenuto nel punto di distribuzione prima di poter pre-installare il contenuto in tale punto**. Distribuire il contenuto nella rete almeno una volta prima di pre-installarlo nel punto di distribuzione.  
+
+-   **Quando si pre-installa il contenuto per un pacchetto con un percorso di origine lungo** (ad esempio più di 140 caratteri), lo strumento della riga di comando Estrai contenuto potrebbe non riuscire a estrarre correttamente il contenuto per tale pacchetto nella raccolta contenuto.  
+
+Per informazioni sugli scenari di pre-installazione dei file di contenuto, vedere *Prestaged content* (Contenuto preinstallazione) nell'argomento [Manage network bandwidth for content management](/sccm/core/plan-design/hierarchy/manage-network-bandwidth) (Gestire la larghezza di banda di rete per la gestione dei contenuti).  
+
+Utilizzare le sezioni seguenti per pre-installare il contenuto.  
+
+###  <a name="BKMK_CreatePrestagedContentFile"></a> Passaggio 1: Creare un file di contenuto pre-installazione  
+ È possibile creare un file di contenuto pre-installazione compresso contenente i file e i metadati associati per il contenuto selezionato nella console di Configuration Manager. Utilizzare la procedura seguente per creare un file di contenuto pre-installato.  
+
+##### <a name="to-create-a-prestaged-content-file"></a>Per creare un file di contenuto pre-installato  
+
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+
+2.  Nell'area di lavoro **Raccolta software** selezionare uno dei seguenti passaggi per il tipo di contenuto che si desidera pre-installare:  
+
+    -   **Applicazioni**: espandere **Gestione applicazioni**, fare clic su **Applicazioni**, quindi selezionare le applicazioni che si desiderano pre-installare.  
+
+    -   **Pacchetti**: espandere **Gestione applicazioni**, fare clic su **Pacchetti**, quindi selezionare i pacchetti che si desiderano pre-installare.  
+
+    -   **Pacchetti driver**: espandere **Sistemi operativi**, fare clic su **Pacchetti driver**, quindi selezionare i pacchetti driver che si desiderano pre-installare.  
+
+    -   **Immagini del sistema operativo**: espandere **Sistemi operativi**, fare clic su **Immagini del sistema operativo**, quindi selezionare le immagini del sistema operativo che si desiderano pre-installare.  
+
+    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi**, fare clic su **Programmi di installazione sistema operativo**, quindi selezionare i programmi di installazione del sistema operativo che si desiderano pre-installare.  
+
+    -   **Immagini d'avvio**: espandere **Sistemi operativi**, fare clic su **Immagini d'avvio**, quindi selezionare le immagini d'avvio che si desiderano pre-installare.  
+
+    -   **Sequenze attività**: Espandere **Sistemi operativi**, fare clic su **Sequenze di attività**e quindi selezionare la sequenza di attività che si desidera pre-installare.  
+
+3.  Nella scheda **Home** del gruppo **Distribuzione** , fare clic su **Crea file di contenuto di pre-installazione**. Si aprirà la Creazione guidata file di contenuto pre-installazione.  
+
+    > [!NOTE]  
+    >  **Per le applicazioni**: nella scheda **Home** del gruppo **Applicazione** fare clic su **Crea file di contenuto di pre-installazione**.  
     >   
-    >  **パッケージの場合:** **[ホーム]** タブの &lt;*PackageName*> グループで、**[事前設定コンテンツ ファイルの作成]** をクリックします。  
+    >  **Per i pacchetti**: nella scheda **Home** nel gruppo &lt;*Nome pacchetto*> fare clic su **Crea file di contenuto di pre-installazione**.  
 
-4.  [全般 **** ] ページで、[参照 ****] をクリックして事前設定コンテンツ ファイルの場所を選択し、ファイルの名前を指定して [保存 ****] をクリックします。 この事前設定コンテンツ ファイルをプライマリ サイト サーバー、セカンダリ サイト サーバー、または配布ポイントで使用して、コンテンツおよびメタデータをインポートします。  
+4.  Nella pagina **Generale** , fare clic su **Sfoglia**, scegliere il percorso per il file di contenuto pre-installato e specificare il relativo nome, quindi fare clic su **Salva**. È possibile utilizzare questo file di contenuto pre-installato su server di siti primari, server di siti secondari o punti di distribuzione per importare il contenuto e i metadati.  
 
-5.  アプリケーションの場合、**[すべての依存関係をエクスポート]** を選択して、Configuration Manager がアプリケーションに関連付けられた依存関係を検出し、事前設定コンテンツ ファイルに追加するよう指定します。 既定では、この設定が選択されています。  
+5.  Per le applicazioni selezionare **Esporta tutte le dipendenze** affinché Configuration Manager rilevi e aggiunga le dipendenze associate all'applicazione al file di contenuto pre-installazione. Questa opzione è selezionata per impostazione predefinita.  
 
-6.  [管理者コメント ****] に、事前設定コンテンツ ファイルに関するコメント (任意指定) を入力し、[次へ ****] をクリックします。  
+6.  In **Commenti amministratore**, immettere i commenti facoltativi sul file di contenuto pre-installato, quindi fare clic su **Avanti**.  
 
-7.  [コンテンツ **** ] ページで、表示されているコンテンツが事前設定ファイルに追加するコンテンツであることを確認して、[次へ ****] をクリックします。  
+7.  Nella pagina **Contenuto** verificare che il contenuto in elenco corrisponda a quello che si desidera aggiungere al file di contenuto pre-installato, quindi fare clic su **Avanti**.  
 
-8.  [コンテンツの場所 **** ] ページで、事前設定コンテンツ ファイル用のコンテンツ ファイルの取得元の配布ポイントを指定します。 複数の配布ポイントを選択して、コンテンツを取得することができます。 配布ポイントの一覧が [コンテンツの場所] セクションに表示されます。 [コンテンツ **** ] 列に、選択されたパッケージまたはアプリケーションのうち、それぞれの配布ポイントで使用可能なパッケージまたはアプリケーションの数が表示されます。 Configuration Manager では、一覧の先頭の配布ポイントを始めとして、選択されたコンテンツが取得され、一覧の下の方に向かって順番に、事前設定コンテンツ ファイルに必要な残りのコンテンツが取得されます。 配布ポイントの優先順位を変更するには、[上へ移動 **** ] または [下へ移動 **** ] をクリックします。 選択したコンテンツ全部を一覧内の配布ポイントでそろえることができない場合は、コンテンツを含む配布ポイントを一覧に追加するか、または、ウィザードを終了して、コンテンツを少なくとも 1 つの配布ポイントに配布してからウィザードを再始動する必要があります。  
+8.  Nella pagina **Posizioni contenuto** specificare i punti di distribuzione dai quali recuperare i file di contenuto per il file di contenuto pre-installato. È possibile selezionare più di un punto di distribuzione per recuperare il contenuto. I punti di distribuzione sono elencati nella sezione Posizioni contenuto. Nella colonna **Contenuto** viene visualizzata la quantità di applicazioni o pacchetti selezionati disponibili in ogni punto di distribuzione. Configuration Manager inizia a recuperare il contenuto selezionato partendo dal primo punto di distribuzione nell'elenco e prosegue nell'elenco per recuperare il restante contenuto necessario per il file di contenuto pre-installazione. Fare clic su **Sposta su** o **Sposta giù** per modificare l'ordine di priorità dei punti di distribuzione. Quando i punti di distribuzione dell'elenco non contengono tutto il contenuto selezionato, è necessario aggiungere punti di distribuzione all'elenco che includano il contenuto oppure uscire dalla procedura guidata, distribuire il contenuto ad almeno un punto di distribuzione e quindi riavviare la procedura.  
 
-9. [要約 **** ] ページで、詳細を確認します。 前のページに戻って変更を加えることができます。 [次へ **** ] をクリックして、事前設定コンテンツ ファイルを作成します。  
+9. Nella pagina **Riepilogo** confermare i dettagli. È possibile tornare alle pagine precedenti e apportare modifiche. Fare clic su **Avanti** per creare il file di contenuto pre-installato.  
 
-10. [進捗状況 **** ] ページに、事前設定コンテンツ ファイルに追加されているコンテンツが表示されます。  
+10. Nella pagina **Avanzamento** viene visualizzato il contenuto che si sta aggiungendo al file di contenuto pre-installato.  
 
-11. [完了 **** ] ページで、事前設定コンテンツ ファイルが正常に作成されたことを確認して、[閉じる ****] をクリックします。  
+11. Nella pagina **Completamento** verificare che il file di contenuto pre-installato sia stato creato correttamente, quindi fare clic su **Chiudi**.  
 
-###  <a name="BKMK_AssignContentToDistributionPoint"></a> 手順 2: コンテンツを配布ポイントに割り当てる  
- コンテンツ ファイルを事前設定したら、コンテンツを配布ポイントに割り当てます。  
+###  <a name="BKMK_AssignContentToDistributionPoint"></a> Passaggio 2: Assegnare il contenuto ai punti di distribuzione  
+ Dopo aver pre-installato il file di contenuto, assegnare il contenuto ai punti di distribuzione.  
 
 > [!NOTE]  
->  事前設定コンテンツ ファイルを使用してサイト サーバーのコンテンツ ライブラリを回復する場合、および配布ポイントのコンテンツ ファイルを事前設定する必要がない場合は、この手順を省略することができます。  
+>  Quando si utilizza un file di contenuto pre-installato per recuperare la raccolta contenuto su un server del sito, e non è necessario pre-installare i file di contenuto in un punto di distribuzione, è possibile ignorare questa procedura.  
 
- 事前設定コンテンツ ファイルのコンテンツを配布ポイントに割り当てるには、次の手順に従います。  
+ Utilizzare la procedura seguente per assegnare il contenuto nel file di contenuto pre-installato ai punti di distribuzione.  
 
 > [!IMPORTANT]  
->  事前設定の対象となる配布ポイントが事前設定の配布ポイントとして構成されていること、またはコンテンツがネットワークを使用して配布ポイントに配布されることを確認してください。  
+>  Verificare che i punti di distribuzione da pre-installare siano configurati come punti di distribuzione di pre-installazione o che il contenuto venga distribuito ai punti di distribuzione usando la rete.  
 
-##### <a name="to-assign-the-content-to-distribution-points"></a>コンテンツを配布ポイントに割り当てるには  
+##### <a name="to-assign-the-content-to-distribution-points"></a>Per assegnare il contenuto ai punti di distribuzione  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ソフトウェア ライブラリ **** ] ワークスペースで、事前設定コンテンツ ファイルの作成時に選択したコンテンツの種類に応じて、次のいずれかの手順を選択します。  
+2.  Nell'area di lavoro **Raccolta software** selezionare uno dei seguenti passaggi per il tipo di contenuto selezionato al momento della creazione del file di contenuto pre-installato:  
 
-    -   **アプリケーション**:[アプリケーション管理 ****] を展開し、[アプリケーション ****] をクリックして、事前設定したアプリケーションを選択します。  
+    -   **Applicazioni**: espandere **Gestione applicazioni**, fare clic su **Applicazioni**, quindi selezionare le applicazioni pre-installate.  
 
-    -   **パッケージ**:[アプリケーション管理 ****] を展開し、[パッケージ ****] をクリックして、事前設定したパッケージを選択します。  
+    -   **Pacchetti**: espandere **Gestione applicazioni**, fare clic su **Pacchetti**, quindi selezionare i pacchetti pre-installati.  
 
-    -   **展開パッケージ**:[ソフトウェア更新プログラム ****] を展開し、[展開パッケージ ****] をクリックして、事前設定した展開パッケージを選択します。  
+    -   **Pacchetti di distribuzione**: espandere **Aggiornamenti software**, fare clic su **Pacchetti di distribuzione**, quindi selezionare i pacchetti di distribuzione pre-installati.  
 
-    -   **ドライバー パッケージ**:[オペレーティング システム ****] を展開し、[ドライバー パッケージ ****] をクリックして、事前設定したドライバー パッケージを選択します。  
+    -   **Pacchetti driver**: espandere **Sistemi operativi**, fare clic su **Pacchetti driver**, quindi selezionare i pacchetti driver pre-installati.  
 
-    -   **オペレーティング システム イメージ**:[オペレーティング システム ****] を展開し、[オペレーティング システム イメージ ****] をクリックして、事前設定したオペレーティング システム イメージを選択します。  
+    -   **Immagini del sistema operativo**: espandere **Sistemi operativi**, fare clic su **Immagini del sistema operativo**, quindi selezionare le immagini del sistema operativo pre-installate.  
 
-    -   **オペレーティング システム インストーラー**:[オペレーティング システム ****] を展開し、[オペレーティング システム インストーラー ****] をクリックして、事前設定したオペレーティング システム インストーラーを選択します。  
+    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi**, fare clic su **Programmi di installazione sistema operativo**, quindi selezionare i programmi di installazione del sistema operativo pre-installati.  
 
-    -   **ブート イメージ**:[オペレーティング システム ****] を展開し、[ブート イメージ ****] をクリックして、事前設定したブート イメージを選択します。  
+    -   **Immagini d'avvio**: espandere **Sistemi operativi**, fare clic su **Immagini d'avvio**, quindi selezionare le immagini d'avvio pre-installate.  
 
-3.  [ホーム **** ] タブの [展開 **** ] グループで、[コンテンツの配布 ****] をクリックします。 コンテンツの配布ウィザードが開きます。  
+3.  Nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Distribuisci contenuto**. Viene visualizzata la Distribuzione guidata contenuto.  
 
-4.  **[全般]** ページで、表示されているコンテンツが事前設定したコンテンツであることを確認し、選択されたコンテンツに関連付けられているコンテンツの依存関係を Configuration Manager が検出し、依存関係を配布に追加するかどうかを選択して、**[次へ]** をクリックします。  
-
-    > [!NOTE]  
-    >  [コンテンツに依存する項目を検出してこの配布に追加する **** ] の設定を構成できるのは、コンテンツの種類がアプリケーションである場合のみです。 Configuration Manager では、タスク シーケンスのこの設定は自動的に構成され、変更することはできません。  
-
-5.  表示される場合は、[コンテンツ **** ] ページで、表示されているコンテンツが配布対象のコンテンツであることを確認して、[次へ ****] をクリックします。  
+4.  Nella pagina **Generale** verificare che il contenuto in elenco corrisponda al contenuto pre-installazione, scegliere se si vuole che Configuration Manager rilevi le dipendenze contenuto associate al contenuto selezionato e aggiunga le dipendenze alla distribuzione e fare clic su **Avanti**.  
 
     > [!NOTE]  
-    >  [コンテンツ **** ] ページは、ウィザードの [全般 **** ] ページで [関連コンテンツの依存関係を検出してこの配布に追加する **** ] が選択されている場合にのみ表示されます。  
+    >  È presente l'opzione per configurare l'impostazione **Rileva le dipendenze contenuto associate e aggiungile alla distribuzione** solo per il tipo di contenuto dell'applicazione. Configuration Manager configura automaticamente questa impostazione per le sequenze di attività e l'impostazione non può essere modificata.  
 
-6.  [コンテンツの配布先 **** ] ページで [追加 ****] をクリックし、事前設定対象の配布ポイントを含む次のいずれかを選択して、該当の手順に従います。  
+5.  Nella pagina **Contenuto** , se visualizzata, verificare che il contenuto in elenco corrisponda a quello che si desidera distribuire, quindi fare clic su **Avanti**.  
 
-    -   **コレクション**:[ユーザー コレクション **** ] または [デバイス コレクション ****] を選択し、1 つまたは複数の配布ポイント グループに関連付けられているコレクションをクリックして、[OK ****] をクリックします。  
+    > [!NOTE]  
+    >  La pagina **Contenuto** viene visualizzata solo quando l'impostazione **Rileva le dipendenze contenuto associate e aggiungile alla distribuzione** viene selezionata nella pagina **Generale** della procedura guidata.  
+
+6.  Nella pagina **Destinazione contenuto** fare clic su **Aggiungi**, scegliere uno dei seguenti elementi, che include i punti di distribuzione da pre-installare, quindi seguire il passaggio associato:  
+
+    -   **Raccolte**: selezionare **Raccolte utenti** o **Raccolte dispositivi**, fare clic sulla raccolta associata a uno o più gruppi di punti di distribuzione, quindi fare clic su **OK**.  
 
         > [!NOTE]  
-        >  配布ポイント グループに関連付けられているコレクションのみが表示されます。  詳細については、「[System Center Configuration Manager の配布ポイントのインストールと構成](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md)」トピックの「[配布ポイント グループの管理](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage)」をご覧ください。  
+        >  Vengono visualizzate solo le raccolte associate a un gruppo di punti di distribuzione.  Per altre informazioni, vedere [Manage distribution point groups](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage) (Gestire i gruppi di punti di distribuzione) nell'argomento [Install and configure distribution points for System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md)(Installare e configurare i punti di distribuzione per System Center Configuration Manager).  
 
-    -   **配付ポイント**:既存の配布ポイントを選択して、[OK ****] をクリックします。 コンテンツを既に受信した配布ポインは表示されません。  
+    -   **Punto di distribuzione**: selezionare un punto di distribuzione esistente, quindi fare clic su **OK**. Non vengono visualizzati i punti di distribuzione che hanno ricevuto il contenuto in precedenza.  
 
-    -   **配布ポイント グループ**:既存の配布ポイント グループを選択して、[OK ****] をクリックします。 コンテンツを既に受信した配布ポイント グループは表示されません。  
+    -   **Gruppo di punti di distribuzione**: selezionare un gruppo di punti di distribuzione esistente, quindi fare clic su **OK**. Non vengono visualizzati i gruppi di punti di distribuzione che hanno ricevuto il contenuto in precedenza.  
 
-    コンテンツの配布先の追加が完了したら、[次へ ****] をクリックします。  
+    Dopo aver aggiunto le destinazioni del contenuto, fare clic su **Avanti**.  
 
-7.  [概要 **** ] ページで、操作を続ける前に配布の設定を見直します。 選択した配布先にコンテンツを配布するには、[次へ ****] をクリックします。  
+7.  Nella pagina **Riepilogo** , rivedere le impostazioni per la distribuzione prima di continuare. Per distribuire il contenuto nelle destinazioni selezionate, fare clic su **Avanti**.  
 
-8.  [進行状況] ページに、配布の進行状況が表示されます。 ****  
+8.  La pagina **Avanzamento** visualizza l'avanzamento della distribuzione.  
 
-9. [確認 **** ] ページは、コンテンツが配布ポイントに正常に割り当てられたかどうかを表示します。 コンテンツの配布を監視するには、「[配布したコンテンツを System Center Configuration Manager で監視する](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md)」をご覧ください。  
+9. La pagina **Conferma** visualizza se il contenuto è stato correttamente assegnato ai punti di distribuzione oppure no. Per monitorare la distribuzione del contenuto, vedere [Monitor content you have distributed with System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md) (Monitorare il contenuto distribuito con System Center Configuration Manager).  
 
-###  <a name="BKMK_ExportContentFromPrestagedContentFile"></a> 手順 3: 事前設定コンテンツ ファイルからコンテンツを抽出する  
- 事前設定コンテンツ ファイルを作成し、そのコンテンツを配布ポイントに割り当てたら、サイト サーバーまたは配布ポイントのコンテンツ ライブラリにコンテンツ ファイルを解凍することができます。 通常は、事前設定コンテンツ ファイルを USB ドライブなどのポータブル ドライブにコピーするか、またはコンテンツを DVD などのメディアに書き込んでから、コンテンツが必要なサイト サーバーまたは配布ポイントで使用可能にします。  
+###  <a name="BKMK_ExportContentFromPrestagedContentFile"></a> Passaggio 3: Estrarre il contenuto dal file di contenuto pre-installazione  
+ Dopo aver creato il file di contenuto pre-installazione e aver assegnato il contenuto ai punti di distribuzione, è possibile estrarre i file di contenuto nella raccolta contenuto nel server del sito o in un punto di distribuzione. In genere, il file di contenuti in versione di preproduzione viene copiato in un'unità portatile, ad esempio un'unità USB, oppure il contenuto viene masterizzato in un supporto, ad esempio un DVD, ed è disponibile nel percorso del server del sito o nel punto di distribuzione che richiede il contenuto.  
 
- Extract Content コマンド ライン ツールを使用してコンテンツ ファイルを事前設定コンテンツ ファイルから手動でエクスポートするには、次の手順に従います。  
+ Utilizzare la procedura seguente per esportare manualmente i file di contenuto dal file di contenuto pre-installazione utilizzando lo strumento della riga di comando Estrai contenuto.  
 
 > [!IMPORTANT]  
->  Extract Content コマンドライン ツールを実行すると、事前設定コンテンツ ファイルを作成するときに一時ファイルが作成されます。 次に、ファイルは対象フォルダーにコピーされ、一時ファイルは削除されます。 この一時ファイル用に十分なディスク領域を用意する必要があります。領域がない場合、プロセスは失敗します。 一時ファイルは次の場所に作成されます。  
+>  Quando si esegue lo strumento della riga di comando Estrai contenuto, lo strumento crea un file temporaneo durante la creazione del file di contenuto pre-installazione. Quindi, il file viene copiato nella cartella di destinazione e il file temporaneo viene eliminato. È necessario disporre di spazio su disco sufficiente per il file temporaneo, altrimenti il processo non verrà completato. Il file temporaneo viene creato nel percorso seguente:  
 >   
->  -   事前設定コンテンツ ファイル用の対象フォルダーに指定したフォルダーと同じフォルダーに一時ファイルが作成されます。  
+>  -   Il file temporaneo viene creato nella stessa cartella specificata come cartella di destinazione per il file di contenuti in versione di preproduzione.  
 
 > [!IMPORTANT]  
->  Extract Content コマンド ライン ツールを実行するユーザーには、事前設定コンテンツの抽出元のコンピューターに対する**管理者**権限が必要です。  
+>  L'utente che esegue lo strumento della riga di comando Estrai contenuto deve essere in possesso dei diritti di **Amministratore** nel computer da cui viene estratto il contenuto pre-installazione.  
 
-##### <a name="to-extract-the-content-files-from-the-prestaged-content-file"></a>コンテンツ ファイルを事前設定コンテンツ ファイルから抽出するには  
+##### <a name="to-extract-the-content-files-from-the-prestaged-content-file"></a>Per estrarre i file di contenuto dal file di contenuto pre-installazione  
 
-1.  事前設定コンテンツ ファイルをコンテンツの抽出元のコンピューターにコピーします。  
+1.  Copiare il file di contenuto pre-installazione nel computer da cui si desidera estrarre il contenuto.  
 
-2.  Extract Content コマンド ライン ツールを &lt;*ConfigMgrInstallationPath*>\bin\\&lt;*platform*> から事前設定コンテンツ ファイルの抽出元のコンピューターにコピーします。  
+2.  Copiare lo strumento della riga di comando Estrai contenuto da &lt;*PercorsoInstallazioneConfigMgr*>\bin\\&lt;*piattaforma*> nel computer dal quale si intende estrarre il file di contenuto pre-installazione.  
 
-3.  コマンド プロンプトを表示して、事前設定コンテンツ ファイルおよび Extract Content ツールがあるフォルダーの場所に移動します。  
+3.  Aprire il prompt dei comandi e cercare il percorso della cartella del file di contenuto pre-installazione e dello strumento Estrai contenuto.  
 
     > [!NOTE]  
-    >  サイト サーバー、セカンダリ サイト サーバー、または配布ポイントで 1 つまたは複数の事前設定ファイルを抽出することができます。  
+    >  È possibile estrarre uno o più file contenuto pre-installazione in un server del sito, un server del sito secondario o un punto di distribuzione.  
 
-4.  ファイルを 1 つインポートするには、**extractcontent /P:**&lt;*PrestagedFileLocation*>**\\**&lt;*PrestagedFileName*> **/S** と入力します。  
+4.  Digitare **extractcontent /P:**&lt;*PercorsoFilePre-installazione*>**\\**&lt;*NomeFilePre-installazione*> **/S** per importare un unico file.  
 
-     すべての事前設定ファイルを特定のフォルダーにインポートするには、**extractcontent /P:**&lt;*PrestagedFileLocation*> **/S** と入力します。  
+     Digitare **extractcontent /P:**&lt;*PercorsoFilePre-installazione*> **/S** per importare tutti i file pre-installazione nella cartella specificata.  
 
-     たとえば、**extractcontent /P:D:\PrestagedFiles\MyPrestagedFile.pkgx /S** と入力する場合、`D:\PrestagedFiles\` は PrestagedFileLocation、`MyPrestagedFile.pkgx` は事前設定されたファイル名で、`/S` は Configuration Manager に対して、現在の配布ポイントにあるものより新しいコンテンツ ファイルのみを抽出することを通知します。  
+     Ad esempio, digitare **extractcontent /P:D:\PrestagedFiles\MyPrestagedFile.pkgx /S** in cui `D:\PrestagedFiles\` è il PercorsoFilePre-installazione, `MyPrestagedFile.pkgx` è il nome del file pre-installazione e `/S` informa Configuration Manager di estrarre solo i file contenuto più recenti rispetto a quelli attualmente nel punto di distribuzione.  
 
-     事前設定コンテンツ ファイルをサイト サーバーに抽出する場合、コンテンツ ファイルはサイト サーバーのコンテンツ ライブラリに追加され、コンテンツが使用可能であるか使用不可であるかがサイト サーバー データベースに登録されるようになります。 事前設定コンテンツ ファイルを配布ポイントに抽出する場合、コンテンツ ファイルは配布ポイントのコンテンツ ライブラリに追加され、状態メッセージが配布ポイントから親プライマリ サイト サーバーに送信されて、コンテンツが使用可能であるか使用不可であるかがサイト データベースに登録されるようになります。  
+     Quando si estrae il file di contenuto pre-installato in un server del sito, i file di contenuto vengono aggiunti alla raccolta contenuto nel server del sito e quindi la disponibilità del contenuto viene registrata nel database del server del sito. Quando si esporta il file di contenuto pre-installato in un punto di distribuzione, i file di contenuto vengono aggiunti alla raccolta contenuto nel punto di distribuzione, il punto di distribuzione invia un messaggio di stato al server del sito primario padre e quindi la disponibilità del contenuto viene registrata nel database del sito.  
 
     > [!IMPORTANT]  
-    >  次のシナリオでは、コンテンツが新しいバージョンに更新されたときに、事前設定コンテンツ ファイルから抽出されたコンテンツを更新する必要があります。  
+    >  Nello scenario seguente è necessario aggiornare il contenuto che è stato estratto da un file di contenuto pre-installato quando il contenuto viene aggiornato a una versione più recente:  
     >   
-    >  1.  バージョン 1 のパッケージの事前設定コンテンツ ファイルを作成します。  
-    >  2.  バージョン 2 のパッケージを作成するため、ソース ファイルを更新します。  
-    >  3.  事前設定コンテンツ ファイル (バージョン 1 のパッケージ) を配布ポイントから抽出します。  
+    >  1.  È possibile creare un file di contenuto pre-installazione per la versione 1 di un pacchetto.  
+    >  2.  È possibile aggiornare i file di origine per il pacchetto con la versione 2.  
+    >  3.  È possibile estrarre il file di contenuto pre-installazione (versione 1 del pacchetto) in un punto di distribuzione.  
     >   
-    > Configuration Manager は配布ポイントにバージョン 2 のパッケージを自動的に配布しません。 新しいバージョンのファイルを含む新しい事前設定コンテンツ ファイルを作成し、コンテンツを抽出して、変更されたファイルが配布されるように、または、パッケージ内のすべてのファイルが再配布されるように、配布ポイントを更新する必要があります。  
+    > Configuration Manager non distribuisce automaticamente il pacchetto versione 2 nel punto di distribuzione. È necessario creare un nuovo file di contenuto pre-installazione che contiene la nuova versione file e quindi estrarre il contenuto, aggiornare il punto di distribuzione per distribuire i file che sono stati modificati o ridistribuire tutti i file nel pacchetto.  
 
-###  <a name="bkmk_dpsiteserver"></a> サイト サーバーに置かれた配布ポイントでコンテンツを事前設定する方法  
- 配布ポイントがサイト サーバーにインストールされている場合は、コンテンツを適切に事前設定するには、次の手順に従う必要があります。 これは、コンテンツ ファイルが既にコンテンツ ライブラリに含まれているためです。  
+###  <a name="bkmk_dpsiteserver"></a> Come pre-installare il contenuto in un punto di distribuzione situato in un server del sito  
+ Quando viene installato un punto di distribuzione in un server del sito, è necessario utilizzare la seguente procedura per pre-installare correttamente il contenuto. Questa situazione si verifica perché i file di contenuto sono già nella raccolta contenuto.  
 
- 配布ポイントで事前設定コンテンツが有効でない場合、または配布ポイントがサイト サーバーに設けられていない場合は、このトピックの「[事前設定されたコンテンツの使用](#bkmk_prestage)」セクションをご覧ください。  
+ Quando il punto di distribuzione non è abilitato per la pre-installazione del contenuto o quando non si trova su un server del sito, vedere la sezione [Usare il contenuto pre-installazione](#bkmk_prestage) in questo argomento.  
 
-##### <a name="to-prestage-content-on-distribution-points-located-on-a-site-server"></a>サイト サーバーに置かれた配布ポイントでコンテンツを事前設定するには  
+##### <a name="to-prestage-content-on-distribution-points-located-on-a-site-server"></a>Per pre-installare il contenuto nei punti di distribuzione situati in un server del sito  
 
-1.  以下の手順に従い、配布ポイントで事前設定コンテンツが有効になっていることを確認します。  
+1.  Utilizzare la seguente procedura per verificare che il punto di distribuzione non sia abilitato per il contenuto pre-installato.  
 
-    1.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
+    1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
 
-    2.  [管理] **** ワークスペースで、[配布ポイント] ****をクリックし、サイト サーバーに置かれた配布ポイントを選択します。  
+    2.  Nell'area di lavoro **Amministrazione** fare clic su **Punti di distribuzione**, quindi selezionare il punto di distribuzione situato nel server del sito.  
 
-    3.  **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
+    3.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 
-    4.  [全般] **** タブで、[事前設定されたコンテンツ用にこの配布ポイントを有効にする] **** チェックボックスをオンにします。  
+    4.  Nella scheda **Generale** verificare che la casella di controllo **Abilita questo punto di distribuzione per il contenuto pre-installato** non sia selezionata.  
 
-2.  このトピックの「[手順 1: 事前設定コンテンツ ファイルを作成する](#BKMK_CreatePrestagedContentFile)」セクションを使用して、事前設定コンテンツ ファイルを作成します。  
+2.  Creare il file di contenuto pre-installazione come descritto nella sezione [Passaggio 1: Creare un file di contenuto pre-installazione](#BKMK_CreatePrestagedContentFile) in questo argomento.  
 
-3.  このトピックの「[手順 2: コンテンツを配布ポイントに割り当てる](#BKMK_AssignContentToDistributionPoint)」セクションを使用して、コンテンツを配布ポイントに割り当てます。  
+3.  Assegnare il contenuto al punto di distribuzione come descritto nella sezione [Passaggio 2: Assegnare il contenuto ai punti di distribuzione](#BKMK_AssignContentToDistributionPoint) in questo argomento.  
 
-4.  このトピックの「[手順 3: 事前設定コンテンツ ファイルからコンテンツを抽出する](#BKMK_ExportContentFromPrestagedContentFile)」セクションを使用して、サイト サーバー上で事前設定コンテンツ ファイルからコンテンツを抽出します。  
+4.  Nel server del sito estrarre il contenuto dal file di contenuto pre-installazione come descritto nella sezione [Passaggio 3: Estrarre il contenuto dal file di contenuto pre-installazione](#BKMK_ExportContentFromPrestagedContentFile) in questo argomento.  
 
     > [!NOTE]  
-    >  配布ポイントがセカンダリ サイトにある場合は、少なくとも 10 分待ってから、親プライマリ サイトへ接続している Configuration Manager コンソールを使用して、セカンダリ サイト上の配布ポイントへコンテンツを割り当てます。  
+    >  Quando il punto di distribuzione si trova su un sito secondario, attendere almeno 10 minuti e assegnare il contenuto al punto di distribuzione nel sito secondario usando una console di Configuration Manager connessa al sito primario padre.  
 
-##  <a name="bkmk_manage"></a> 配布したコンテンツの管理  
- コンテンツを管理するために次のオプションを使用できます。  
- - [コンテンツの更新](#update-content)
- - [コンテンツの再配布](#redistribute-content)
- - [コンテンツの削除](#remove-content)
- - [コンテンツの検証](#validate-content)
+##  <a name="bkmk_manage"></a> Gestire il contenuto distribuito  
+ Per gestire il contenuto sono disponibili le opzioni seguenti:  
+ - [Aggiornare il contenuto](#update-content)
+ - [Ridistribuire il contenuto](#redistribute-content)
+ - [Rimuovere il contenuto](#remove-content)
+ - [Convalidare il contenuto](#validate-content)
 
-### <a name="update-content"></a>コンテンツの更新
-新しいファイルを追加するか、既存のファイルを新しいバージョンに置き換えることによって展開のソース ファイルの場所が更新された場合は、**[配布ポイントの更新]** 操作または **[コンテンツの更新]** 操作を使用して配布ポイントにあるコンテンツ ファイルを更新することができます。  
--   コンテンツ ファイルは、ソース ファイル パスからパッケージ コンテンツ ソースを所有するサイトのコンテンツ ライブラリにコピーされます。  
--   パッケージのバージョンがインクリメントされます。  
--   サイト サーバーと配布ポイントにあるコンテンツ ライブラリの各インスタンスは、変更されたファイルのみについて更新されます。  
+### <a name="update-content"></a>Aggiornare il contenuto
+Quando il percorso del file di origine per una distribuzione viene aggiornato aggiungendo nuovi file o sostituendo i file esistenti con una versione più recente, è possibile aggiornare i file di contenuto nei punti di distribuzione usando l'azione **Aggiorna punti di distribuzione** oppure **Aggiorna contenuto**:  
+-   I file di contenuto vengono copiati dal percorso del file di origine alla raccolta contenuto nel sito proprietario dell'origine contenuto del pacchetto  
+-   La versione del pacchetto viene incrementata  
+-   Ogni istanza della raccolta contenuto nei server del sito e nei punti di distribuzione viene aggiornata solo con i file che sono stati modificati  
 
 > [!WARNING]  
->  アプリケーションのパッケージ バージョンは常に 1 です。 アプリケーションの展開の種類のコンテンツを更新すると、Configuration Manager は、その展開の種類用に新しいコンテンツ ID を作成し、パッケージはその新しいコンテンツ ID を参照します。  
+>  La versione pacchetto per le applicazioni è sempre 1. Quando si aggiorna il contenuto per un tipo di distribuzione applicazione, Configuration Manager crea un nuovo ID contenuto per il tipo di distribuzione e il pacchetto fa riferimento al nuovo ID contenuto.  
 
-#### <a name="to-update-content-on-distribution-points"></a>配布ポイントのコンテンツを更新するには  
+#### <a name="to-update-content-on-distribution-points"></a>Per aggiornare il contenuto nei punti di distribuzione  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ソフトウェア ライブラリ **** ] ワークスペースで、配布するコンテンツの種類に応じて、次のいずれかの手順を選択します。  
+2.  Nell'area di lavoro **Raccolta software** , selezionare uno dei seguenti passaggi per il tipo di contenuto che si desidera distribuire:  
 
-    -   **アプリケーション**: **[アプリケーション管理]** > **[アプリケーション]** の順に展開して、配布するアプリケーションを選択します。 [展開の種類 **** ] タブをクリックして、更新する展開の種類を選択します。  
+    -   **Applicazioni**: espandere **Gestione applicazioni** > **Applicazioni** e selezionare le applicazioni da distribuire. Fare clic sulla scheda **Tipi di distribuzione** , quindi selezionare il tipo di distribuzione che si desidera aggiornare.  
 
-    -   **パッケージ**: **[アプリケーション管理]** > **[パッケージ]** の順に展開して、更新するパッケージを選択します。  
+    -   **Pacchetti**: espandere **Gestione applicazioni** > **Pacchetti** e selezionare i pacchetti da aggiornare.  
 
-    -   **展開パッケージ**: **[ソフトウェア更新プログラム]** > **[展開パッケージ]** の順に展開して、更新する展開パッケージを選択します。  
+    -   **Pacchetti di distribuzione**: espandere **Aggiornamenti software** > **Pacchetti di distribuzione** e selezionare i pacchetti di distribuzione da aggiornare.  
 
-    -   **ドライバー パッケージ**: **[オペレーティング システム]** > **[ドライバー パッケージ]** の順に展開して、更新するドライバー パッケージを選択します。  
+    -   **Pacchetti driver**: espandere **Sistemi operativi** > **Pacchetti driver** e selezionare i pacchetti driver da aggiornare.  
 
-    -   **オペレーティング システム イメージ**: **[オペレーティング システム]** > **[オペレーティング システム イメージ]** の順に展開して、更新するオペレーティング システム イメージを選択します。  
+    -   **Immagini del sistema operativo**: espandere **Sistemi operativi** > **Immagini del sistema operativo** e selezionare le immagini del sistema operativo da aggiornare.  
 
-    -   **オペレーティング システム インストーラー**: **[オペレーティング システム]** > **[オペレーティング システム インストーラー]** の順に展開して、更新するオペレーティング システム インストーラーを選択します。  
+    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi** > **Programmi di installazione sistema operativo** e selezionare le immagini del sistema operativo da aggiornare.  
 
-    -   **ブート イメージ**: **[オペレーティング システム]** >  **[ブート イメージ]** の順に展開して、更新するブート イメージを選択します。  
+    -   **Immagini d'avvio**: espandere **Sistemi operativi** >  **Immagini d'avvio** e selezionare le immagini d'avvio da aggiornare.  
 
-3.  [ホーム **** ] タブの [展開 **** ] グループで、[配布ポイントの更新 ****] をクリックし、[OK **** ] をクリックしてコンテンツの更新を確定します。  
-
-    > [!NOTE]  
-    >  アプリケーションのコンテンツを更新するには、[展開の種類 **** ] タブをクリックし、展開の種類を右クリックして [コンテンツの更新 ****] をクリックし、[OK **** ] をクリックしてコンテンツを最新の内容に更新する操作を確定します。  
+3.  Nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Aggiorna punti di distribuzione**, quindi fare clic su **OK** per confermare che si desidera aggiornare il contenuto.  
 
     > [!NOTE]  
-    >  ブート イメージのコンテンツを更新する場合は、配布ポイントの管理ウィザードを開きます。 [概要 **** ] ページで情報を確認し、ウィザードを完了してコンテンツを更新します。  
+    >  Per aggiornare il contenuto per applicazioni, fare clic sulla scheda **Tipi di distribuzione** , fare clic con il tasto destro del mouse sul tipo di distribuzione, fare clic su **Aggiorna contenuto**, quindi fare clic su **OK** per confermare che si desidera aggiornare il contenuto.  
 
-### <a name="redistribute-content"></a>コンテンツの再配布
-パッケージを再配布してパッケージ内のすべてのコンテンツ ファイルを配布ポイントまたは配布ポイント グループにコピーして、既存のファイルを上書きすることができます。  
+    > [!NOTE]  
+    >  Quando si aggiorna il contenuto per immagini di avvio, verrà aperto la gestione guidata punti di distribuzione. Rivedere le informazioni sulla pagina **Riepilogo** , quindi completare la procedura guidata per aggiornare il contenuto.  
 
- この操作は、パッケージ内のコンテンツ ファイルを修復するか、または初回配布が失敗した場合にコンテンツを再送信するときに使用します。 パッケージは、次の場所から再配布することができます。  
+### <a name="redistribute-content"></a>Ridistribuire il contenuto
+È possibile ridistribuire un pacchetto per copiare tutti i file di contenuto del pacchetto nei punti di distribuzione oppure nei gruppi di punti di distribuzione, sovrascrivendo quindi i file esistenti.  
 
--   パッケージのプロパティ  
--   配布ポイントのプロパティ  
--   配布ポイント グループのプロパティ  
+ Usare questa operazione per ripristinare i file di contenuto del pacchetto o per inviare di nuovo il contenuto quando la distribuzione iniziale non riesce. È possibile ridistribuire un pacchetto da:  
+
+-   Proprietà del pacchetto  
+-   Proprietà dei punti di distribuzione  
+-   Proprietà del gruppo di punti di distribuzione.  
 
 
-#### <a name="to-redistribute-content-from-package-properties"></a>パッケージ プロパティを使用してコンテンツを再配布するには  
+#### <a name="to-redistribute-content-from-package-properties"></a>Per ridistribuire il contenuto dalle proprietà del pacchetto  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ソフトウェア ライブラリ **** ] ワークスペースで、配布するコンテンツの種類に応じて、次のいずれかの手順を選択します。  
+2.  Nell'area di lavoro **Raccolta software** , selezionare uno dei seguenti passaggi per il tipo di contenuto che si desidera distribuire:  
 
-    -   **アプリケーション**: **[アプリケーション管理]** >  **[アプリケーション]** の順に展開して、再配布するアプリケーションを選択します。  
+    -   **Applicazioni**: espandere **Gestione applicazioni** >  **Applicazioni** e selezionare le applicazioni da ridistribuire.  
 
-    -   **パッケージ**: **[アプリケーション管理]** > **[パッケージ]** の順に展開して、再配布するパッケージを選択します。  
+    -   **Pacchetti**: espandere **Gestione applicazioni** > **Pacchetti** e selezionare il pacchetto da ridistribuire.  
 
-    -   **展開パッケージ**: **[ソフトウェア更新プログラム]** >  **[展開パッケージ]** の順に展開して、再配布する展開パッケージを選択します。  
+    -   **Pacchetti di distribuzione**: espandere **Aggiornamenti software** >  **Pacchetti di distribuzione** e selezionare il pacchetto di distribuzione da ridistribuire.  
 
-    -   **ドライバー パッケージ**: **[オペレーティング システム]** > **[ドライバー パッケージ]** の順に展開して、再配布するドライバー パッケージを選択します。  
+    -   **Pacchetti driver**: espandere **Sistemi operativi** > **Pacchetti driver** e selezionare i pacchetti driver da ridistribuire.  
 
-    -   **オペレーティング システム イメージ**: **[オペレーティング システム]** > **[オペレーティング システム イメージ]** の順に展開して、再配布するオペレーティング システム イメージを選択します。  
+    -   **Immagini del sistema operativo**: espandere **Sistemi operativi** > **Immagini del sistema operativo** e selezionare le immagini del sistema operativo da ridistribuire.  
 
-    -   **オペレーティング システム インストーラー**: **[オペレーティング システム]** > **[オペレーティング システム インストーラー]** の順に展開して、再配布するオペレーティング システム インストーラーを選択します。  
+    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi** > **Programmi di installazione sistema operativo** e selezionare l'immagine del sistema operativo da ridistribuire.  
 
-    -   **ブート イメージ**: **[オペレーティング システム]** >  **[ブート イメージ]** の順に展開して、再配布するブート イメージを選択します。  
+    -   **Immagini d'avvio**: espandere **Sistemi operativi** >  **Immagini d'avvio** e selezionare l'immagine d'avvio da ridistribuire.  
 
-3.  **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
+3.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 
-4.  [コンテンツの場所 **** ] タブをクリックし、コンテンツを再配布する配布ポイントまたは配布ポイント グループを選択して、[再配布 ****] をクリックし、[OK ****] をクリックします。  
+4.  Fare clic sulla scheda **Posizioni contenuto** , selezionare il punto di distribuzione o il gruppo di punti di distribuzione in cui si desidera ridistribuire il contenuto, fare clic su **Ridistribuisci**, quindi su **OK**.  
 
-#### <a name="to-redistribute-content-from-distribution-point-properties"></a>配布ポイント プロパティを使用してコンテンツを再配布するには  
+#### <a name="to-redistribute-content-from-distribution-point-properties"></a>Per ridistribuire il contenuto dalle proprietà del punto di distribuzione  
 
-1.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
 
-2.  [管理 **** ] ワークスペースで [配布ポイント ****] をクリックして、コンテンツを再配信する配布ポイントを選択します。  
+2.  Nell'area di lavoro **Amministrazione** fare clic su **Punti di distribuzione**e quindi selezionare il punto di distribuzione in cui si desidera ridistribuire il contenuto.  
 
-3.  **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
+3.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 
-4.  [コンテンツ **** ] タブをクリックし、再配布するコンテンツを選択して、[再配布 ****] をクリックし、[OK ****] をクリックします。  
+4.  Fare clic sulla scheda **Contenuto** , selezionare il contenuto da ridistribuire, fare clic su **Ridistribuisci**, quindi su **OK**.  
 
-#### <a name="to-redistribute-content-from-distribution-point-group-properties"></a>配布ポイント グループ プロパティを使用してコンテンツを再配布するには  
+#### <a name="to-redistribute-content-from-distribution-point-group-properties"></a>Per ridistribuire il contenuto dalle proprietà del gruppo di punti di distribuzione  
 
-1.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
 
-2.  [管理 **** ] ワークスペースで [配布ポイント ****] をクリックして、コンテンツを再配信する配布ポイント グループを選択します。  
+2.  Nell'area di lavoro **Amministrazione** fare clic su **Gruppi di punti di distribuzione**e quindi selezionare il gruppo di punti di distribuzione in cui si desidera ridistribuire il contenuto.  
 
-3.  **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
+3.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 
-4.  [コンテンツ **** ] タブをクリックし、再配布するコンテンツを選択して、[再配布 ****] をクリックし、[OK ****] をクリックします。  
+4.  Fare clic sulla scheda **Contenuto** , selezionare il contenuto da ridistribuire, fare clic su **Ridistribuisci**, quindi su **OK**.  
 
     > [!IMPORTANT]  
-    >  パッケージ内のコンテンツが配布ポイント グループ内のすべての配布ポイントに再配布されます。  
+    >  Il contenuto del pacchetto viene ridistribuito a tutti i punti di distribuzione nel gruppo di punti di distribuzione.  
 
 
-#### <a name="use-the-sdk-to-force-replication-of-content"></a>SDK を使用してコンテンツのレプリケーションを強制する
-Configuration Manager SDK の **RetryContentReplication** Windows Management Instrumentation (WMI) クラス メソッドを使用して、配布マネージャーに対して、ソースの場所からコンテンツ ライブラリにコンテンツをコピーするように強制できます。  
+#### <a name="use-the-sdk-to-force-replication-of-content"></a>Usare l'SDK per forzare la replica del contenuto
+È possibile usare il metodo **RetryContentReplication** della classe Strumentazione gestione Windows (WMI) dall'SDK di Configuration Manager per forzare la gestione della distribuzione a copiare il contenuto dal percorso di origine alla raccolta contenuto.  
 
-このメソッドを使用するのは、コンテンツの通常のレプリケーションに問題が発生した後にコンテンツを再配布する必要があり、レプリケーションを強制する場合のみです (通常、コンソールの監視ノードを使用して確認します)。   
+Usare solo questo metodo per forzare la replica quando è necessario ridistribuire il contenuto dopo che si sono verificati problemi con la normale replica del contenuto, che in genere si verificano usando il nodo di monitoraggio della console.   
 
-この SDK オプションの詳細については、MSDN.Microsoft.com の「[RetryContentReplication Method in Class SMS_CM_UpdatePackages](https://msdn.microsoft.com/library/mt762092(CMSDK.16).aspx)」(クラス SMS_CM_UpdatePackages の RetryContentReplication メソッド) を参照してください。
+Per altre informazioni su questa opzione SDK, vedere [RetryContentReplication Method in Class SMS_CM_UpdatePackages](https://msdn.microsoft.com/library/mt762092(CMSDK.16).aspx) (Metodo RetryContentReplication Method nella classe SMS_CM_UpdatePackages) su MSDN.Microsoft.com.
 
-### <a name="remove-content"></a>コンテンツの削除
-配布ポイントでコンテンツが不要になった場合は、コンテンツ ファイルを削除することができます。  
+### <a name="remove-content"></a>Rimuovere il contenuto
+Quando non è più richiesto contenuto nei punti di distribuzione, è possibile rimuovere i file di contenuto nel punto di distribuzione.  
 
--   パッケージのプロパティ  
--   配布ポイントのプロパティ  
--   配布ポイント グループのプロパティ  
+-   Proprietà del pacchetto  
+-   Proprietà dei punti di distribuzione  
+-   Proprietà del gruppo di punti di distribuzione.  
 
-ただし、コンテンツが同じ配布ポイントに配布済みの別のパッケージに関連付けられている場合、そのコンテンツを削除することはできません。  
+Quando, tuttavia, il contenuto è associato a un altro pacchetto che è stato distribuito nello stesso punto di distribuzione, non è possibile rimuovere il contenuto.  
 
-#### <a name="to-remove-package-content-files-from-distribution-points"></a>コンテンツ ファイルを配布ポイントから削除するには  
+#### <a name="to-remove-package-content-files-from-distribution-points"></a>Per rimuovere i file di contenuto del pacchetto dai punti di distribuzione  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ソフトウェア ライブラリ **** ] ワークスペースで、削除するコンテンツの種類に応じて、次のいずれかの手順を選択します。  
+2.  Nell'area di lavoro **Raccolta software** selezionare uno dei seguenti passaggi per il tipo di contenuto che si desidera eliminare:  
 
-    -   **アプリケーション**: **[アプリケーション管理]** > **[アプリケーション]** の順に展開して、削除するアプリケーションを選択します。  
+    -   **Applicazioni**: espandere **Gestione applicazioni** > **Applicazioni** e selezionare le applicazioni da rimuovere.  
 
-    -   **パッケージ**: **[アプリケーション管理]** > **[パッケージ]** の順に展開して、削除するパッケージを選択します。  
+    -   **Pacchetti**: espandere **Gestione applicazioni** > **Pacchetti** e selezionare il pacchetto da rimuovere.  
 
-    -   **展開パッケージ**: **[ソフトウェア更新プログラム]** > **[展開パッケージ]** の順に展開して、削除する展開パッケージを選択します。  
+    -   **Pacchetti di distribuzione**: espandere **Aggiornamenti software** > **Pacchetti di distribuzione** e selezionare il pacchetto di distribuzione da rimuovere.  
 
-    -   **ドライバー パッケージ**: **[オペレーティング システム]** > **[ドライバー パッケージ]** の順に展開して、削除するドライバー パッケージを選択します。  
+    -   **Pacchetti driver**: espandere **Sistemi operativi** > **Pacchetti driver** e selezionare i pacchetti driver da rimuovere.  
 
-    -   **オペレーティング システム イメージ**: **[オペレーティング システム]** > **[オペレーティング システム イメージ]** の順に展開して、削除するオペレーティング システム イメージを選択します。  
+    -   **Immagini del sistema operativo**: espandere **Sistemi operativi** > **Immagini del sistema operativo** e selezionare le immagini del sistema operativo da rimuovere.  
 
-    -   **オペレーティング システム インストーラー**: **[オペレーティング システム]** > **[オペレーティング システム インストーラー]** の順に展開して、削除するオペレーティング システム インストーラーを選択します。  
+    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi** > **Programmi di installazione sistema operativo** e selezionare il programma di installazione del sistema operativo da rimuovere.  
 
-    -   **ブート イメージ**: **[オペレーティング システム]** > **[ブート イメージ]** の順に展開して、削除するブート イメージを選択します。  
+    -   **Immagini d'avvio**: espandere **Sistemi operativi** > **Immagini d'avvio** e selezionare l'immagine d'avvio da rimuovere.  
 
-3.  **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
+3.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 
-4.  [コンテンツの場所 **** ] タブをクリックし、コンテンツを削除する配布ポイントまたは配布ポイント グループを選択して、[削除 ****] をクリックし、[OK ****] をクリックします。  
+4.  Fare clic sulla scheda **Posizioni contenuto** , selezionare il punto di distribuzione o il gruppo di punti di distribuzione da cui si desidera rimuovere il contenuto, fare clic su **Rimuovi**, quindi su **OK**.  
 
-#### <a name="to-remove-package-content-from-distribution-point-properties"></a>配布ポイント プロパティを使用してコンテンツを削除するには  
+#### <a name="to-remove-package-content-from-distribution-point-properties"></a>Per rimuovere il contenuto del pacchetto dalle proprietà del punto di distribuzione  
 
-1.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
 
-2.  [管理 **** ] ワークスペースで [配布ポイント ****] をクリックして、コンテンツを削除する配布ポイントを選択します。  
+2.  Nell'area di lavoro **Amministrazione** fare clic su **Punti di distribuzione**e quindi selezionare il punto di distribuzione da cui si desidera eliminare il contenuto.  
 
-3.  **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
+3.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 
-4.  [コンテンツ **** ] タブをクリックし、削除するコンテンツを選択して、[削除 ****] をクリックし、[OK ****] をクリックします。  
+4.  Fare clic sulla scheda **Contenuto** , selezionare il contenuto da rimuovere, fare clic su **Rimuovi**, quindi su **OK**.  
 
-#### <a name="to-remove-content-from-distribution-point-group-properties"></a>配布ポイント グループ プロパティを使用してコンテンツを削除するには  
+#### <a name="to-remove-content-from-distribution-point-group-properties"></a>Per rimuovere il contenuto dalle proprietà del gruppo di punti di distribuzione  
 
-1.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
 
-2.  [管理 **** ] ワークスペースで [配布ポイント ****] をクリックして、コンテンツを削除する配布ポイント グループを選択します。  
+2.  Nell'area di lavoro **Amministrazione** fare clic su **Gruppi di punti di distribuzione**e quindi selezionare il gruppo di punti di distribuzione da cui si desidera rimuovere il contenuto.  
 
-3.  **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
+3.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 
-4.  [コンテンツ **** ] タブをクリックし、削除するコンテンツを選択して、[削除 ****] をクリックし、[OK ****] をクリックします。  
-
-
-### <a name="validate-content"></a>コンテンツの検証
-コンテンツの検証プロセスは、配布ポイントにあるコンテンツ ファイルの整合性を検証します。 コンテンツの検証は、スケジュールに従って有効にするか、配布ポイントとパッケージのプロパティから手動で開始することができます。  
-
- コンテンツの検証プロセスの開始時に、Configuration Manager は、配布ポイントのコンテンツ ファイルを確認し、ファイルのハッシュが配布ポイント上のファイルには予期されていない場合、Configuration Manager は **[監視]** ワークスペースで確認できるステータス メッセージを作成します。  
-
- コンテンツ検証スケジュールの構成の詳細については、「[System Center Configuration Manager の配布ポイントのインストールと構成](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md)」トピックの「[配布ポイントの構成](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs)」をご覧ください。  
+4.  Fare clic sulla scheda **Contenuto** , selezionare il contenuto da rimuovere, fare clic su **Rimuovi**, quindi su **OK**.  
 
 
-#### <a name="to-initiate-content-validation-for-all-content-on-a-distribution-point"></a>配布ポイントにあるすべてのコンテンツの検証を開始するには  
+### <a name="validate-content"></a>Convalidare il contenuto
+Il processo di convalida del contenuto consente di verificare l'integrità dei file nei punti di distribuzione. È possibile abilitare la convalida del contenuto in base a una pianificazione oppure è possibile avviare manualmente la convalida del contenuto dalle proprietà dei pacchetti e punti di distribuzione.  
 
-1.  Configuration Manager コンソールで、[ **管理**] をクリックします。  
+ Quando il processo di convalida del contenuto viene avviato, Configuration Manager verifica i file di contenuto nei punti di distribuzione e se l'hash del file non è previsto per i file nel punto di distribuzione crea un messaggio di stato che è possibile verificare nell'area di lavoro **Monitoraggio**.  
 
-2.  [管理 **** ] ワークスペースで [配布ポイント ****] をクリックし、コンテンツを検証する配布ポイントを選択します。  
+ Per altre informazioni sulla configurazione della pianificazione di convalida del contenuto, vedere [Distribution point configurations](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs) (Configurazioni dei punti di distribuzione) nell'argomento [Install and configure distribution points for System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) (Installare e configurare i punti di distribuzione per System Center Configuration Manager).  
 
-3.  **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
 
-4.  [コンテンツ **** ] タブで、コンテンツを検証するパッケージを選択し、[検証 ****]、[OK ****]、[OK ****] の順にクリックします。 配布ポイントのパッケージで、コンテンツの検証プロセスが開始します。  
+#### <a name="to-initiate-content-validation-for-all-content-on-a-distribution-point"></a>Per avviare la convalida del contenuto per tutti i contenuti in un punto di distribuzione  
 
-5.  コンテンツの検証プロセスの結果を見るには、[監視 **** ] ワークスペースをクリックして [配布ステータス ****] を展開し、[コンテンツのステータス **** ] ノードをクリックします。 パッケージの種類 (アプリケーション、ソフトウェアの更新パッケージ、ブート イメージなど) ごとにコンテンツが表示されます。 コンテンツのステータスを監視する方法の詳細については、「[配布したコンテンツを System Center Configuration Manager で監視する](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md)」をご覧ください。  
+1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
 
-#### <a name="to-initiate-content-validation-for-a-package"></a>パッケージでコンテンツの検証を開始するには  
+2.  Nell'area di lavoro **Amministrazione** fare clic su **Punti di distribuzione**e quindi selezionare il gruppo di punti di distribuzione in cui si desidera convalidare il contenuto.  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+3.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 
-2.  [ソフトウェア ライブラリ **** ] ワークスペースで、検証するタイプのコンテンツに次のような手順のいずれかを選択します。  
+4.  Nella scheda **Contenuto** selezionare il pacchetto in cui si desidera convalidare il contenuto, fare clic su **Convalida**, quindi su **OK**e infine di nuovo su **OK**. Il processo di convalida contenuto viene avviato per il pacchetto nel punto di distribuzione.  
 
-    -   **アプリケーション**: **[アプリケーション管理]** > **[アプリケーション]** の順に展開して、検証するアプリケーションを選択します。  
+5.  Per visualizzare i risultati del processo di convalida contenuto, nell'area di lavoro **Monitoraggio** espandere **Stato distribuzione**e fare clic sul nodo **Stato contenuto** . Viene visualizzato il contenuto per ogni tipo di pacchetto (ad esempio, applicazione, pacchetto di aggiornamento software e immagine di avvio). Per altre informazioni sul monitoraggio dello stato del contenuto, vedere [Monitor content you have distributed with System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md) (Monitorare il contenuto distribuito con System Center Configuration Manager).  
 
-    -   **パッケージ**: **[アプリケーション管理]** > **[パッケージ]** の順に展開して、検証するパッケージを選択します。  
+#### <a name="to-initiate-content-validation-for-a-package"></a>Per avviare la convalida del contenuto per un pacchetto  
 
-    -   **展開パッケージ**: **[ソフトウェア更新プログラム]** > **[展開パッケージ]** の順に展開して、検証する展開パッケージを選択します。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-    -   **ドライバー パッケージ**: **[オペレーティング システム]** > **[ドライバー パッケージ]** の順に展開して、検証するドライバー パッケージを選択します。  
+2.  Nell'area di lavoro **Raccolta software** selezionare uno dei seguenti passaggi per il tipo di contenuto che si desidera convalidare:  
 
-    -   **オペレーティング システム イメージ**: **[オペレーティング システム]** > **[オペレーティング システム イメージ]** の順に展開して、検証するオペレーティング システム イメージを選択します。  
+    -   **Applicazioni**: espandere **Gestione applicazioni** > **Applicazioni** e selezionare le applicazioni da convalidare.  
 
-    -   **オペレーティング システム インストーラー**: **[オペレーティング システム]** >  **[オペレーティング システム インストーラー]** の順に展開して、検証するオペレーティング システム インストーラーを選択します。  
+    -   **Pacchetti**: espandere **Gestione applicazioni** > **Pacchetti** e selezionare il pacchetto da convalidare.  
 
-    -   **ブート イメージ**: **[オペレーティング システム]** > **[ブート イメージ]** の順に展開して、事前設定するブート イメージを選択します。  
+    -   **Pacchetti di distribuzione**: espandere **Aggiornamenti software** > **Pacchetti di distribuzione** e selezionare il pacchetto di distribuzione da convalidare.  
 
-3.  **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。  
+    -   **Pacchetti driver**: espandere **Sistemi operativi** > **Pacchetti driver** e selezionare i pacchetti driver da convalidare.  
 
-4.  [コンテンツの場所 **** ] タブで、コンテンツを検証する配布ポイントまたは配布ポイント グループを選択し、[検証 ****]、[OK ****]、[OK ****] の順にクリックします。 選択した配布ポイントまたは配布ポイント グループで、コンテンツの検証プロセスが開始します。  
+    -   **Immagini del sistema operativo**: espandere **Sistemi operativi** > **Immagini del sistema operativo** e selezionare le immagini del sistema operativo da convalidare.  
 
-5.  コンテンツの検証プロセスの結果を見るには、[監視 **** ] ワークスペースをクリックして [配布ステータス ****] を展開し、[コンテンツのステータス **** ] ノードをクリックします。 パッケージの種類 (アプリケーション、ソフトウェアの更新パッケージ、ブート イメージなど) ごとにコンテンツが表示されます。 コンテンツのステータスを監視する方法の詳細については、「[配布したコンテンツを System Center Configuration Manager で監視する](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md)」をご覧ください。  
+    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi** >  **Programmi di installazione sistema operativo** e selezionare l'immagine del sistema operativo da convalidare.  
+
+    -   **Immagini d'avvio**: espandere **Sistemi operativi** > **Immagini d'avvio** e selezionare l'immagine d'avvio da pre-installare.  
+
+3.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
+
+4.  Nella scheda **Percorsi contenuto** selezionare il punto di distribuzione o il gruppo di punti di distribuzione in cui si desidera convalidare il contenuto, fare clic su **Convalida**, quindi su **OK**e infine di nuovo su **OK**. Il processo di convalida contenuto viene avviato per il contenuto nel punto di distribuzione selezionato o nel gruppo di punti di distribuzione.  
+
+5.  Per visualizzare i risultati del processo di convalida contenuto, nell'area di lavoro **Monitoraggio** espandere **Stato distribuzione**e fare clic sul nodo **Stato contenuto** . Viene visualizzato il contenuto per ogni tipo di pacchetto (ad esempio, applicazione, pacchetto di aggiornamento software e immagine di avvio). Per altre informazioni sul monitoraggio dello stato del contenuto, vedere [Monitor content you have distributed with System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md) (Monitorare il contenuto distribuito con System Center Configuration Manager).  

@@ -1,6 +1,6 @@
 ---
-title: "クライアントの監視 - Configuration Manager で Windows Analytics を使用する | Microsoft Docs"
-description: "Windows Analytics は、Operations Management Suite 上で実行するソリューションのセットで、環境内のデバイスによってレポートされる Windows 利用統計情報を利用して、環境の現在の状態に有益な洞察を導くことができます。"
+title: 'Monitorare i client: usare Windows Analytics con Configuration Manager | Microsoft Docs'
+description: "Windows Analytics è un set di soluzioni eseguite in Operations Management Suite, che consentono di ottenere indicazioni preziose sullo stato corrente dell'ambiente sfruttando i dati di telemetria di Windows segnalati dai dispositivi nell'ambiente."
 ms.custom: na
 ms.date: 07/31/2017
 ms.prod: configuration-manager
@@ -17,48 +17,48 @@ manager: angrobe
 ms.openlocfilehash: adabe8f475eb12dd44005ec07344e8565be20582
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-windows-analytics-with-configuration-manager"></a>Configuration Manager で Windows Analytics を使用する
+# <a name="use-windows-analytics-with-configuration-manager"></a>Usare Windows Analytics con Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-[Windows Analytics](https://www.microsoft.com/en-us/WindowsForBusiness/windows-analytics) は、[Operations Management Suite](/azure/operations-management-suite/operations-management-suite-overview) 上で実行するソリューションのセットです。 このソリューションでは、環境の現在の状態に洞察を形成することができます。 環境内のデバイスでは、Windows の利用統計情報がレポートされます。 このデータは、[Operations Management Suite の Web ポータル](https://mms.microsoft.com)のソリューションによって、アクセスおよび分析することができます。 [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics) の場合、データは Upgrade Readiness と Configuration Manager を接続することによって、Configuration Manager の監視ノードで直接利用することもできます。
+[Windows Analytics](https://www.microsoft.com/en-us/WindowsForBusiness/windows-analytics) è un set di soluzioni eseguite in [Operations Management Suite](/azure/operations-management-suite/operations-management-suite-overview). Le soluzioni consentono di ottenere indicazioni sullo stato corrente dell'ambiente. I dispositivi dell'ambiente segnalano i dati di telemetria di Windows. È possibile accedere a questi dati e analizzarli tramite le soluzioni del [portale Web di Operations Management Suite](https://mms.microsoft.com). Nel caso di [Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics) i dati possono anche essere resi direttamente disponibili nel nodo di monitoraggio della console di Configuration Manager connettendo Preparazione aggiornamenti a Configuration Manager.
 
-Windows Analytics によって使用される Windows 利用統計情報は、Configuration Manager サイト サーバーに直接転送されることはありません。 クライアント コンピューターは、Windows 利用統計情報を利用統計情報のサービスに送信します。 その後、関連するデータは、組織の OMS ワークスペースのいずれかでホストされている Windows Analytics ソリューションに転送されます。 Configuration Manager では、コンテキスト内リンクを持つ Web ポータルの関連するデータにユーザーを誘導したり、Configuration Manager に接続しているソリューションの一部であるデータを直接表示したりすることができます。 また、Operation Management Suite の Web ポータルからデータを直接クエリすることもできます。
+I dati di telemetria di Windows usati da Windows Analytics non vengono trasferiti direttamente al server del sito di Configuration Manager. I computer client inviano i dati di telemetria di Windows al servizio di telemetria. I dati pertinenti vengono quindi trasferiti alle soluzioni di Windows Analytics ospitate in una delle aree di lavoro di OMS dell'organizzazione. Configuration Manager può quindi indirizzare ai dati pertinenti nel portale Web con collegamenti contestuali o visualizzare direttamente i dati che fanno parte delle soluzioni connesse a Configuration Manager. È anche possibile eseguire query dirette sui dati dal portale Web di Operation Management Suite.
 
 >[!Important]
->Configuration Manager サイト サーバーから Microsoft にレポートされる、[Configuration Manager の診断と利用状況データ](../../plan-design/diagnostics/diagnostics-and-usage-data.md)は、Windows Analytics と Windows 利用統計情報とは完全に区別されています。
+>I [dati di utilizzo e di diagnostica di Configuration Manager](../../plan-design/diagnostics/diagnostics-and-usage-data.md), segnalati a Microsoft dal server del sito di Configuration Manager sono completamente distinti dai dati di telemetria di Windows Analytics e di Windows.
 
-## <a name="configure-clients-to-report-data-to-windows-analytics"></a>Windows Analytics にデータをレポートするようにクライアントを構成する
+## <a name="configure-clients-to-report-data-to-windows-analytics"></a>Configurare i client per segnalare i dati a Windows Analytics
 
-クライアント デバイスで Windows Analytics にデータをレポートするために、デバイスは組織の Windows Analytics データをホストする、Operations Management Suite ワークスペースに関連付けられている業務用 ID で構成される必要があります。 また、デバイスは、使用する特定のソリューションに適切な利用統計情報のレベルで、利用統計情報をレポートするように構成される必要もあります。 
+I dispositivi client, per poter segnalare i dati a Windows Analytics, devono essere configurati con una chiave ID commerciale associata all'area di lavoro di Operations Management Suite che ospita i dati di Windows Analytics per l'organizzazione. I dispositivi devono anche essere configurati per segnalare i dati di telemetria a un livello di telemetria appropriato per la soluzione o le soluzioni specifiche che si vogliono usare. 
 
-### <a name="configure-windows-analytics-client-settings"></a>Windows Analytics クライアント設定の構成
-Windows Analytics を構成するには、Configuration Manager コンソールで、**[管理]** > **[クライアント設定]** を選択し、**[Create Custom Device Client Settings]\(カスタム デバイス クライアント設定の作成\)** をダブルクリックして、**[Windows Analytics]** を選択します。  
+### <a name="configure-windows-analytics-client-settings"></a>Configurare le impostazioni client di Windows Analytics
+Per configurare Windows Analytics, nella console di Configuration Manager scegliere **Amministrazione** > **Impostazioni client**, fare doppio clic su **Create Custom Device Client Settings** (Crea impostazioni client del dispositivo personalizzate), quindi selezionare **Windows Analytics**.  
 
-**[Windows Analytics]** 設定タブに移動した後に、以下を構成します。
-  -  **商用 ID**  
-商用 ID キーは、管理するデバイスから組織の Windows Analytics データをホストする OMS ワークスペースに情報をマップします。 使用する商用 ID キーを Upgrade Readiness で既に構成している場合は、その ID を使用します。 まだ商用 ID キーがない場合は、「[Generate your commercial ID key (商用 ID キーを生成する)]( https://technet.microsoft.com/itpro/windows/deploy/upgrade-readiness-get-started#generate-your-commercial-id-key)」をご覧ください。
+Dopo l'accesso alla scheda delle impostazioni di **Windows Analytics**, configurare quanto segue:
+  -  **ID commerciale**  
+L'ID commerciale consente di associare le informazioni dai dispositivi gestiti all'area di lavoro OMS che ospita i dati Windows Analytics dell'organizzazione. Se è già stata configurata una chiave ID commerciale per l'uso con Upgrade Readiness, usare tale ID. Se non è ancora disponibile una chiave ID commerciale, vedere [Generate your commercial ID key]( https://technet.microsoft.com/itpro/windows/deploy/upgrade-readiness-get-started#generate-your-commercial-id-key) (Generare l'ID commerciale).
 
-  -  **Windows 10 デバイスの利用統計情報のレベル**   
-Windows 10 の利用統計情報の各レベルで収集される情報については、「[Configure Windows telemetry in your organization (組織の利用統計情報の構成)](https://technet.microsoft.com/itpro/windows/manage/configure-windows-telemetry-in-your-organization#telemetry-levels)」をご覧ください。
+  -  **Livello di telemetria nei dispositivi Windows 10**   
+Per informazioni sulle informazioni raccolte da ogni livello di telemetria di Windows 10, vedere [Configure Windows telemetry in your organization](https://technet.microsoft.com/itpro/windows/manage/configure-windows-telemetry-in-your-organization#telemetry-levels) (Configurare i livelli di telemetria dell'organizzazione).
 
-  -  **Windows 7、8、8.1 デバイスでの商用データ収集のオプトイン**   
-オプトインしたときにこれらのオペレーティング システムから収集されるデータについては、Microsoft のサイトから [Windows 7、Windows 8、Windows 8.1 の利用統計情報のイベントとフィールドに関する pdf ファイル](https://go.microsoft.com/fwlink/?LinkID=822965)をダウンロードして参照してください。
+  -  **Acconsentire esplicitamente alla raccolta dei dati commerciali in dispositivi Windows 7, 8 e 8.1**   
+Per informazioni sui dati raccolti da questi sistemi operativi dopo il consenso esplicito, scaricare il file PDF sui [campi e gli eventi di telemetria per la valutazione di Windows 7, Windows 8 e Windows 8.1](https://go.microsoft.com/fwlink/?LinkID=822965) da Microsoft.
 
-  -  **インターネット エクスプ ローラーのデータ収集を構成する**  
-Windows 8.1 以前のバージョンが動作しているデバイスでは、Internet Explorer で収集されるデータによって、Upgrade Readiness が Web アプリケーションの非互換性を検出できるため、Windows 10 へのスムーズなアップグレードが妨げられる可能性が排除されます。 Internet Explorer のデータ収集は、インターネット ゾーンごとに有効にできます。 インターネット ゾーンの詳細については、「[About URL Security Zones (セキュリティ ゾーンについて)](https://msdn.microsoft.com/library/ms537183(v=vs.85).aspx)」をご覧ください。
+  -  **Configurare la raccolta dati di Internet Explorer**  
+Nei dispositivi che eseguono Windows 8.1 o versioni precedenti la raccolta dati di Internet Explorer consente a Preparazione aggiornamenti di rilevare incompatibilità di applicazioni Web che potrebbero impedire un aggiornamento semplice e rapido a Windows 10. La raccolta dati di Internet Explorer può essere abilitata per ogni area Internet. Per altre informazioni sulle aree Internet, vedere [About URL Security Zones](https://msdn.microsoft.com/library/ms537183(v=vs.85).aspx) (Informazioni sulle aree di sicurezza degli URL).
 
-## <a name="use-upgrade-readiness-to-identify-windows-10-compatibility-issues"></a>Upgrade Readiness を使用して Windows 10 の互換性の問題を特定する
+## <a name="use-upgrade-readiness-to-identify-windows-10-compatibility-issues"></a>Usare Preparazione aggiornamenti per identificare i problemi di compatibilità con Windows 10
 
-Upgrade Readiness (旧称 Upgrade Analytics) を使用すると、デバイスの準備と Windows 10 との互換性を分析できます。 この評価ではスムーズなアップグレードが可能です。 Configuration Manager と Upgrade Readiness を接続した後、Configuration Manager コンソールからこのクライアントのアップグレードの互換性データに直接アクセスできます。 その後、デバイス リストからアップグレードまたは修復対象のデバイスを指定できます。
+Preparazione aggiornamenti (precedentemente denominato Upgrade Analytics) consente di analizzare la conformità e la compatibilità dei dispositivi con Windows 10. Questa valutazione facilita l'esecuzione degli aggiornamenti. Dopo avere connesso Configuration Manager a Preparazione aggiornamenti, è possibile accedere a questi dati di compatibilità dell'aggiornamento dei client direttamente nella console di Configuration Manager. Sarà quindi possibile impostare i dispositivi di destinazione dell'aggiornamento o della correzione dall'elenco dei dispositivi.
 
-Upgrade Readiness を構成および接続する方法の詳細については、[Upgrade Readiness](../../clients/manage/upgrade/upgrade-analytics.md)に関するページを参照してください。
+Per altre informazioni e dettagli su come configurare e connettersi a Preparazione aggiornamenti, vedere [Preparazione aggiornamenti](../../clients/manage/upgrade/upgrade-analytics.md).
 
-## <a name="use-windows-analytics-to-identify-gaps-in-windows-information-protection-policies"></a>Windows Analytics を使用して Windows 情報保護ポリシー内のギャップを識別する
+## <a name="use-windows-analytics-to-identify-gaps-in-windows-information-protection-policies"></a>Usare Windows Analytics per identificare le lacune nei criteri di Windows Information Protection
 
-[Windows 情報保護](https://docs.microsoft.com/en-us/windows/threat-protection/windows-information-protection/protect-enterprise-data-using-wip) (WIP) ポリシーで構成される Windows 10 バージョン 1703 以降のデバイスは、WIP ポリシー アプリケーション規則で構成されない環境内の会社のデータにアクセスするアプリケーションの利用統計情報をレポートします。 これらは、環境内のユーザーは生産性を保持するために必要ですが、アクセスがブロックされている可能性があるアプリケーションです。そのため、会社のデータにアクセスしている知識は、Configuration Manager の Windows 情報保護ポリシーのメンテナンスに役立つ場合があります。 
+I dispositivi con Windows 10 versione 1703 e successive configurati con un criterio di [Windows Information Protection](https://docs.microsoft.com/en-us/windows/threat-protection/windows-information-protection/protect-enterprise-data-using-wip) (WIP) segnalano i dati di telemetria nelle applicazioni che accedono ai dati aziendali dell'ambiente, ma che non sono tenute in considerazione nelle regole di applicazione dei criteri WIP. Si tratta di applicazioni che tendenzialmente devono mantenere la produttività per gli utenti dell'ambiente, ma a cui viene bloccato l'accesso, quindi sapere che accedono ai dati aziendali può essere utile nella manutenzione dei criteri di Windows Information Protection in Configuration Manager. 
 
-この Windows 情報保護データには、この [Operations Management Suite クエリ](https://go.microsoft.com/fwlink/?linkid=849952)を使用してアクセスできます。
+Questi dati di Windows Information Protection sono accessibili tramite questa [query di Operations Management Suite](https://go.microsoft.com/fwlink/?linkid=849952).

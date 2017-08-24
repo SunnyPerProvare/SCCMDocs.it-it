@@ -1,6 +1,6 @@
 ---
-title: "Endpoint Protection の構成 | Microsoft Docs"
-description: "Configuration Manager を設定して Windows Defender のマルウェア定義を更新および配布する方法について説明します。"
+title: Configurare Endpoint Protection | Microsoft Docs
+description: Informazioni su come configurare Configuration Manager per aggiornare e distribuire le definizioni dei malware per Windows Defender.
 ms.custom: na
 ms.date: 02/14/2017
 ms.prod: configuration-manager
@@ -17,28 +17,28 @@ manager: angrobe
 ms.openlocfilehash: 6917644d6719a1ca636713aa5aebf277927123c8
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="configure-endpoint-protection"></a>Endpoint Protection の構成
+# <a name="configure-endpoint-protection"></a>Configurare Endpoint Protection
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Endpoint Protection を使用して構成マネージャー クライアント コンピューターのセキュリティとマルウェアを管理するには、事前にこのトピックの構成手順を実行する必要があります。  
+Prima di poter usare Endpoint Protection per gestire la sicurezza e i malware nei computer client di Configuration Manager, è necessario eseguire i passaggi di configurazione descritti in questo argomento.  
 
-## <a name="how-to-configure-endpoint-protection-in-configuration-manager"></a>Configuration Manager の Endpoint Protection の構成方法  
- Configuration Manager の Endpoint Protection には、外部依存関係と製品内部の依存関係があります。  
+## <a name="how-to-configure-endpoint-protection-in-configuration-manager"></a>Come configurare Endpoint Protection in Configuration Manager  
+ Endpoint Protection in Configuration Manager ha relazioni esterne e relazioni all'interno del prodotto.  
 
-### <a name="steps-to-configure-endpoint-protection-in-configuration-manager"></a>Configuration Manager で Endpoint Protection を構成する手順  
- 次の表に、Endpoint Protection の構成に関する手順、説明、および参照情報を示します。  
+### <a name="steps-to-configure-endpoint-protection-in-configuration-manager"></a>Passaggi per la configurazione di Endpoint Protection in Configuration Manager  
+ Usare la tabella seguente per passaggi, dettagli e altre informazioni su come configurare Endpoint Protection.  
 
 > [!IMPORTANT]  
->  Windows 10 コンピューターの Endpoint Protection を管理する場合、Windows Defender のマルウェア定義ファイルを更新し、配布するように Configuration Manager を構成する必要があります。 Windows Defender は Windows 10 に含まれていますが、SCEPInstall をインストールする必要があります。また、Endpoint Protection のカスタム クライアント設定が必要です (以下の**手順 5**)。  
+>  Se si gestisce Endpoint Protection per i computer Windows 10, è necessario configurare Configuration Manager per aggiornare e distribuire le definizioni dei malware per Windows Defender. Windows Defender è incluso in Windows 10 ma è necessario che sia installato SCEPInstall e le impostazioni client personalizzate per Endpoint Protection (**Passaggio 5** sotto) sono comunque necessarie.  
 
-|手順|説明|  
+|Passaggi|Dettagli|  
 |-----------|-------------|  
-|**手順 1:** [Endpoint Protection ポイント サイト システムの役割を作成する](endpoint-protection-site-role.md)|Endpoint Protection を使用するには、事前に Endpoint Protection ポイント サイト システムの役割をインストールしておく必要があります。 これは、1 つのサイト システム サーバーのみにインストールします。また、中央管理サイトまたはスタンドアロンのプライマリ サイトの階層の最上位にインストールしなければなりません。 |  
-|**手順 2:** [Endpoint Protection のアラートを構成する](endpoint-configure-alerts.md)|マルウェア感染などの特定のイベントが発生すると、管理者にアラートが通知されます。 アラートは、 **[監視]** ワークスペースの **[アラート]** ノードに表示されます。必要に応じて、指定のユーザーに電子メールで送信することもできます。 |  
-|**手順 3:** [Endpoint Protection クライアントの定義ファイルの更新ソースを構成する](endpoint-definition-updates.md)|Endpoint Protection は、さまざまなソースを使用して定義ファイルの更新をダウンロードするように構成できます。 |  
-|**手順 4:** [既定のマルウェア対策ポリシーを構成してカスタムのマルウェア対策ポリシーを作成する](endpoint-antimalware-policies.md)|既定のマルウェア対策ポリシーは、Endpoint Protection クライアントがインストールされると適用されます。 展開されているカスタムのポリシーは、クライアント展開の 60 分以内に既定で適用されます。 Endpoint Protection クライアントを展開する前に、マルウェア対策ポリシーを構成していることを確認します。 |  
-|**手順 5:** [Endpoint Protection のカスタム クライアント設定を構成する](endpoint-protection-configure-client.md)|カスタム クライアント設定を使用して、階層内のコンピューターのコレクションに Endpoint Protection 設定を構成します。<br /><br /> メモ: 階層内のすべてのコンピューターに適用する場合を除き、既定の Endpoint Protection クライアント設定は構成しないでください。 |  
+|**Passaggio 1:** [Creare un ruolo del sistema del sito del punto di Endpoint Protection](endpoint-protection-site-role.md)|Prima di poter usare Endpoint Protection, è necessario installare il ruolo del sistema del sito Punto di Endpoint Protection. Il ruolo deve essere installato in un solo server di sistema del sito, al livello superiore della gerarchia in un sito di amministrazione centrale o un sito primario autonomo. |  
+|**Passaggio 2:** [Configurare gli avvisi per Endpoint Protection](endpoint-configure-alerts.md)|Gli avvisi informano l'amministratore quando si verificano eventi specifici, ad esempio un'infezione causata da un malware. Gli avvisi vengono visualizzati nel nodo **Avvisi** dell'area di lavoro **Monitoraggio** oppure possono essere inviati via posta elettronica a utenti specifici. |  
+|**Passaggio 3:** [Configurare le origini degli aggiornamenti delle definizioni per i client di Endpoint Protection](endpoint-definition-updates.md)|È possibile configurare Endpoint Protection per usare più origini per il download degli aggiornamenti delle definizioni. |  
+|**Passaggio 4:** [Configurare il criterio antimalware predefinito e creare criteri antimalware personalizzati](endpoint-antimalware-policies.md)|Il criterio antimalware predefinito viene applicato quando viene installato il client di Endpoint Protection. Eventuali criteri personalizzati distribuiti vengono applicati per impostazione predefinita, entro 60 minuti dalla distribuzione del client. Verificare di aver configurato i criteri antimalware prima di distribuire il client Endpoint Protection. |  
+|**Passaggio 5:** [Configurare impostazioni client personalizzate per Endpoint Protection](endpoint-protection-configure-client.md)|Usare impostazioni client personalizzate per configurare le impostazioni di Endpoint Protection per le raccolte di computer nella gerarchia.<br /><br /> Nota: configurare le impostazioni client predefinite per Endpoint Protection solo se si è certi di voler applicare tali impostazioni a tutti i computer nella gerarchia. |  

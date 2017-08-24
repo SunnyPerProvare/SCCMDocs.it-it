@@ -1,6 +1,6 @@
 ---
-title: "オペレーティング システム以外の展開用タスク シーケンスの作成 | Microsoft Docs"
-description: "ソフトウェアの配布、ドライバーの更新、ユーザー状態の編集などのオペレーティング システムの展開に関連していないタスク シーケンスを作成します。"
+title: "Creare una sequenza di attività per distribuzioni non di sistema operativo | Microsoft Docs"
+description: "Creare sequenze di attività non correlate alla distribuzione di sistemi operativi ad esempio distribuzione del software, aggiornamento di driver, modifica degli stati utente e così via."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,40 +17,40 @@ manager: angrobe
 ms.openlocfilehash: b4b04907f2cd48d81e864e46ca47c14a0b98a9f7
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-a-task-sequence-for-non-operating-system-deployments-with-system-center-configuration-manager"></a>System Center Configuration Manager でオペレーティング システム以外の展開用タスク シーケンスを作成する
+# <a name="create-a-task-sequence-for-non-operating-system-deployments-with-system-center-configuration-manager"></a>Creare una sequenza di attività per le distribuzioni del sistema non operativo con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager のタスク シーケンスは、お客様の環境でさまざまなタスクを自動化するために使用します。 これらのタスクは、主にオペレーティング システムの展開のために設計され、テストされます。  Configuration Manager には、[アプリケーションのインストール](../../apps/understand/introduction-to-application-management.md)、[ソフトウェアの更新プログラムのインストール](../../sum/understand/software-updates-introduction.md)、[構成の設定](../../compliance/understand/ensure-device-compliance.md)、またはカスタム オートメーションなどのシナリオに使用する主要なテクノロジとなる、他の数多くの機能があります。 Microsoft System Center の他の自動化テクノロジとして、 [Orchestrator](https://technet.microsoft.com/library/hh237242.aspx) と [Service Management Automation](https://technet.microsoft.com/library/dn469260.aspx) などもご検討ください。  
+Le sequenze di attività in System Center Configuration Manager consentono di automatizzare una serie di attività all'interno dell'ambiente. Queste attività sono progettate e testate principalmente per la distribuzione di sistemi operativi.  Configuration Manager ha molte altre funzionalità che è consigliabile usare come tecnologia principale per scenari quali [installazione dell'applicazione](../../apps/understand/introduction-to-application-management.md), [installazione degli aggiornamenti software](../../sum/understand/software-updates-introduction.md), [configurazione delle impostazioni](../../compliance/understand/ensure-device-compliance.md) o automazione personalizzata. È consigliabile anche considerare altre tecnologie di automazione di Microsoft System Center, come ad esempio [Orchestrator](https://technet.microsoft.com/library/hh237242.aspx) e [Service Management Automation](https://technet.microsoft.com/library/dn469260.aspx) .  
 
-タスク シーケンスの機能には柔軟性があり、タスク シーケンスを使用して、クライアント設定の構成、ソフトウェアの配布、ドライバーの更新、ユーザー状態の編集など、オペレーティング システムの展開とは独立した他のタスクを実行できます。 カスタム タスク シーケンスを作成して、タスクをいくつでも追加できます。 Configuration Manager では、オペレーティング システム以外の展開用のカスタム タスク シーケンスの使用がサポートされています。 ただし、タスク シーケンスで好ましくない結果や矛盾する結果が生じる場合は、操作を簡略化する方法を考えてください。 より簡単なステップを使用するか、操作を複数のタスク シーケンスに分けるか、あるいは段階的にタスク シーケンスを作成してテストすることで、これを行うことができます。
+La potenza delle sequenze di attività risiede nella loro flessibilità e nel modo in cui è possibile usarle per configurare le impostazioni client, distribuire software, aggiornare i driver, modificare stati utente ed eseguire altre attività indipendenti dalla distribuzione del sistema operativo. È possibile creare una sequenza di attività personalizzata per aggiungere qualsiasi numero di attività. L'uso di sequenze di attività personalizzate per la distribuzione non del sistema operativo è supportato in Configuration Manager. Tuttavia, se una sequenza di attività genera risultati indesiderati o incoerenti, considerare i possibili modi per semplificare l'operazione. È possibile farlo usando la procedura più semplice, dividendo le azioni tra più sequenze di attività, oppure con un approccio graduale alla creazione e al test della sequenza di attività.
 
- オペレーティング システム以外の展開用のカスタム タスク シーケンスの使用では、以下のステップがサポートされています。  
+ La procedura seguente è supportata in una sequenza di attività personalizzata di distribuzione non del sistema operativo:  
 
--   [準備の確認](../understand/task-sequence-steps.md#BKMK_CheckReadiness)  
+-   [Verifica conformità](../understand/task-sequence-steps.md#BKMK_CheckReadiness)  
 
--   [ネットワーク フォルダーへの接続](../understand/task-sequence-steps.md#BKMK_ConnectToNetworkFolder)  
+-   [Connessione a una cartella di rete](../understand/task-sequence-steps.md#BKMK_ConnectToNetworkFolder)  
 
--   [パッケージ コンテンツのダウンロード](../understand/task-sequence-steps.md#BKMK_DownloadPackageContent)  
+-   [Scaricare il contenuto del pacchetto](../understand/task-sequence-steps.md#BKMK_DownloadPackageContent)  
 
--   [アプリケーションのインストール](../understand/task-sequence-steps.md#BKMK_InstallApplication)  
+-   [Installa applicazione](../understand/task-sequence-steps.md#BKMK_InstallApplication)  
 
--   [パッケージのインストール](../understand/task-sequence-steps.md#BKMK_InstallPackage)  
+-   [Installa pacchetto](../understand/task-sequence-steps.md#BKMK_InstallPackage)  
 
--   [ソフトウェア更新プログラムのインストール](../understand/task-sequence-steps.md#BKMK_InstallSoftwareUpdates)  
+-   [Installa aggiornamenti software](../understand/task-sequence-steps.md#BKMK_InstallSoftwareUpdates)  
 
--   [コンピューターの再起動](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer)  
+-   [Riavvia computer](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer)  
 
--   [コマンド ラインの実行](../understand/task-sequence-steps.md#BKMK_RunCommandLine)  
+-   [Esegui riga di comando](../understand/task-sequence-steps.md#BKMK_RunCommandLine)  
 
--   [PowerShell スクリプトの実行](../understand/task-sequence-steps.md#BKMK_RunPowerShellScript)  
+-   [Esegui script PowerShell](../understand/task-sequence-steps.md#BKMK_RunPowerShellScript)  
 
--   [動的変数の設定](../understand/task-sequence-steps.md#BKMK_SetDynamicVariables)  
+-   [Imposta variabili dinamiche](../understand/task-sequence-steps.md#BKMK_SetDynamicVariables)  
 
--   [タスク シーケンス変数の設定](../understand/task-sequence-steps.md#BKMK_SetTaskSequenceVariable)  
+-   [Imposta variabile della sequenza di attività](../understand/task-sequence-steps.md#BKMK_SetTaskSequenceVariable)  
 
-## <a name="next-steps"></a>次のステップ
-[タスク シーケンスの展開](manage-task-sequences-to-automate-tasks.md#a-namebkmkdeploytsa-deploy-a-task-sequence)
+## <a name="next-steps"></a>Passaggi successivi
+[Distribuire la sequenza di attività](manage-task-sequences-to-automate-tasks.md#a-namebkmkdeploytsa-deploy-a-task-sequence)

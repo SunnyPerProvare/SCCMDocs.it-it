@@ -1,6 +1,6 @@
 ---
-title: "クライアントで管理されているデバイスのコンプライアンスを管理するための一般的なタスク - Configuration Manager | Microsoft Docs"
-description: "いくつかの一般的なシナリオを使用して、System Center Configuration Manager のコンプライアンス設定について説明します。"
+title: "Attività comuni di gestione della conformità per dispositivi gestiti da client - Configuration Manager | Microsoft Docs"
+description: "Informazioni sulle impostazioni di conformità di System Center Configuration Manager in alcuni scenari comuni."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,95 +17,95 @@ manager: angrobe
 ms.openlocfilehash: 2012ab5e55da8d707fd668e0163b42fe7d56c72f
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="common-tasks-for-managing-compliance-on-devices-with-the-system-center-configuration-manager-client"></a>System Center Configuration Manager クライアントでデバイスのコンプライアンスを管理するための一般的なタスク
+# <a name="common-tasks-for-managing-compliance-on-devices-with-the-system-center-configuration-manager-client"></a>Attività comuni per la gestione della conformità nei dispositivi con il client System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-このトピックのシナリオでは、一般的なシナリオに従って作業することで、System Center Configuration Manager コンプライアンス設定を使用する方法の概要を説明します。  
+Gli scenari presentati in questo argomento forniscono un'introduzione all'uso delle impostazioni di conformità di System Center Configuration Manager usando alcuni scenari comuni che potrebbero verificarsi.  
 
- 「[System Center Configuration Manager クライアントを使用して管理されているデバイスの構成項目](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md)」には、コンプライアンス設定に関する知識を既にお持ちの方を対象とした、使用するすべての機能に関する詳細なドキュメントが記載されています。  
+ Se si ha già familiarità con le impostazioni di conformità, la documentazione dettagliata su tutte le funzionalità disponibili è reperibile nella sezione [Configuration items for devices managed with the System Center Configuration Manager client](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md) (Elementi di configurazione per i dispositivi gestiti con il client di System Center Configuration Manager).  
 
- 作業を開始する前に、「[コンプライアンス設定を使ってみる](../../compliance/get-started/get-started-with-compliance-settings.md)」をお読みになり、いくつかの基本的なコンプライアンス設定を確認してください。また、[コンプライアンス設定の計画と構成](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md)に関するページをお読みになり、必要な前提条件の実装方法をご確認してください。  
+ Prima di iniziare, leggere [Get started with compliance settings](../../compliance/get-started/get-started-with-compliance-settings.md) (Introduzione alle impostazioni di conformità) per apprendere alcune nozioni sulle impostazioni di conformità e [Plan for and configure compliance settings](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md) (Pianificare e configurare le impostazioni di conformità) per implementare i prerequisiti necessari.  
 
-## <a name="general-information-for-each-scenario"></a>各シナリオ共通の情報  
- 各シナリオでは、特定のタスクを実行する構成項目を作成します。 構成項目の作成ウィザードを開き、次の手順に従います。  
+## <a name="general-information-for-each-scenario"></a>Informazioni generali per ogni scenario  
+ In ogni scenario verrà creato un elemento di configurazione che esegue un'attività specifica. Per aprire la Creazione guidata dell'elemento di configurazione, usare la procedura seguente:  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[コンプライアンス設定]** > **[構成項目]** の順にクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Elementi di configurazione**.  
 
-3.  [ホーム **** ] タブの [作成 **** ] グループで、[構成項目の作成 ****] をクリックします。  
+3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
 
-4.  次のように構成項目の作成ウィザードの **[全般]** タブで、構成項目の名前と説明を指定し、このトピックの各シナリオに適した構成項目の種類を選択します。  
+4.  Nella scheda **Generale** della Creazione guidata dell'elemento di configurazione mostrata sotto, specificare un nome e una descrizione per l'elemento di configurazione, quindi scegliere il tipo di elemento di configurazione appropriato per ogni scenario di questo argomento.  
 
-     ![構成項目の作成ウィザードの全般ページが表示されます。](/sccm/compliance/plan-design/media/Compliance-Settings-Wizard---1.png)  
+     ![Mostra la pagina generale della creazione guidata dell'elemento di configurazione.](/sccm/compliance/plan-design/media/Compliance-Settings-Wizard---1.png)  
 
-## <a name="scenarios-for-windows-10-devices-managed-with-the-configuration-manager-client"></a>Configuration Manager クライアントを使用して管理されている Windows 10 デバイスのシナリオ  
+## <a name="scenarios-for-windows-10-devices-managed-with-the-configuration-manager-client"></a>Scenari per dispositivi Windows 10 gestiti con il client di Configuration Manager  
 
-### <a name="scenario-disable-the-use-of-bluetooth-on-windows-10-devices"></a>シナリオ: Windows 10 デバイスで Bluetooth の使用を無効にする  
- このシナリオでは、セキュリティ部門は会社の機密情報を社外に送信する手段としてデバイスの Bluetooth 機能が使用される可能性があると考えています。 最近になってすべての PC を Windows 10 にアップグレードしており、この機会にこれらのデバイスで Bluetooth 機能を無効にすることにしました。  
+### <a name="scenario-disable-the-use-of-bluetooth-on-windows-10-devices"></a>Scenario: Disabilitare l'uso di Bluetooth in dispositivi Windows 10  
+ In questo scenario il reparto di sicurezza ha identificato la funzionalità Bluetooth dei dispositivi quale mezzo che potrebbe essere usato per trasmettere informazioni aziendali riservate all'esterno dell'azienda. Di recente tutti i PC sono stati aggiornati a Windows 10 e si decide di disabilitare la funzionalità Bluetooth su questi dispositivi.  
 
-1.  構成項目の作成ウィザードの **[全般]** ページで、構成項目の種類として **[Windows 10]** を選択し、 **[次へ]**をクリックします。  
+1.  Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **Windows 10** , quindi fare clic su **Avanti**.  
 
-2.  ウィザードの **[サポートされているプラットフォーム]** ページで、すべての Windows 10 プラットフォームを選択します。  
+2.  Nella pagina **Piattaforme supportate** della procedura guidata, selezionare tutte le piattaforme Windows 10.  
 
-3.  **[デバイス設定]** ページで、 **[デバイス]**を選択し、 **[次へ]**をクリックします。  
+3.  Nella pagina **Impostazioni dispositivo** selezionare **Dispositivo**, quindi fare clic su **Avanti**.  
 
-4.  **[デバイス]** ページで、 **[Bluetooth]** の値として **[禁止]**を選択します。  
+4.  Nella pagina **Dispositivo** selezionare **Non consentito** come valore per **Bluetooth**.  
 
-5.  **[対応していない設定を修復する]** を選択して、変更がすべての Windows 10 デバイスに確実に適用されるようにします。  
+5.  Selezionare **Monitora e aggiorna impostazioni non conformi** per assicurarsi che la modifica venga applicata a tutti i dispositivi Windows 10.  
 
-6.  ウィザードを完了して構成項目を作成します。  
+6.  Completare la procedura guidata per creare l'elemento di configurazione.  
 
- これで、「[System Center Configuration Manager での構成基準の作成と展開に関する一般的なタスク](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md)」トピックの情報を使用して、作成した構成をデバイスに簡単に展開できるようになります。  
+ È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione con System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
 
-## <a name="scenarios-for-windows-desktop-and-server-computers-managed-with-the-configuration-manager-client"></a>Configuration Manager クライアントを使用して管理されている Windows デスクトップおよびサーバー コンピューターを対象としたシナリオ  
- Configuration Manager クライアントを実行している Mac コンピューターでは、コンプライアンスを評価するためのオプションが 2 つあります。  
+## <a name="scenarios-for-windows-desktop-and-server-computers-managed-with-the-configuration-manager-client"></a>Scenari per computer desktop e server di Windows gestiti con il client di Configuration Manager  
+ Nei computer Mac che eseguono il client di Configuration Manager è possibile eseguire la valutazione di conformità in due modi:  
 
--   Mac OS X の設定 (plist) ファイルを評価します。  
+-   Valutare un file di preferenze (plist) di Mac OS X.  
 
--   カスタム スクリプトを使用し、そのスクリプトから返される結果を評価します。  
+-   Usare uno script personalizzato e valutare i risultati restituiti dallo script.  
 
- 詳細については、「[System Center Configuration Manager クライアントを使用して管理されている Mac OS X デバイスの構成項目を作成する方法](../../compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md)」を参照してください。  
+ Per altre informazioni, vedere [Come creare elementi di configurazione per dispositivi Mac OS X gestiti con il client di System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md).  
 
-### <a name="scenario-remediate-an-incorrect-registry-value-on-windows-desktop-computers"></a>シナリオ: Windows デスクトップ コンピューターで正しくないレジストリ値を修復する  
- このシナリオでは、Windows 8.1 を実行している管理対象の一部のコンピューターで、重要な基幹業務アプリが正しく実行されていません。 調査の結果、その原因は一部のコンピューターで **HKEY_LOCAL_MACHINE\SOFTWARE\Woodgrove\LOB App\Configuration\Configuration1** というレジストリ キーの値が **0** に設定されているためと判明します。 基幹業務アプリを正常に実行するには、この値を **1**に設定する必要があります。  
+### <a name="scenario-remediate-an-incorrect-registry-value-on-windows-desktop-computers"></a>Scenario: Correggere un valore non corretto del Registro di sistema nei computer desktop Windows  
+ In questo scenario si scopre che un'importante app line-of-business non viene eseguita correttamente in alcuni computer gestiti che eseguono Windows 8.1. Dopo alcune indagini, si scopre che il problema è causato da una chiave del Registro di sistema denominata **HKEY_LOCAL_MACHINE\SOFTWARE\Woodgrove\LOB App\Configuration\Configuration1** , che in alcuni computer è impostata su un valore di **0** . Affinché l'app line-of-business venga eseguita correttamente, questo valore deve essere impostato su **1**.  
 
- この手順では、レジストリ キーの値を監視し、正しくない値が見つかった場合には自動的に修復する構成項目を作成します。  
+ In questa procedura verrà creato un elemento di configurazione che consente di monitorare e risolvere automaticamente i valori delle chiavi del Registro di sistema non corretti trovati.  
 
-1.  構成項目の作成ウィザードの **[全般]** ページで、構成項目の種類として **[Windows デスクトップおよびサーバー (カスタム)]** を選択し、 **[次へ]**をクリックします。  
+1.  Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **Desktop e server di Windows (personalizzato)** , quindi fare clic su **Avanti**.  
 
-2.  ウィザードの **[サポートされているプラットフォーム]** ページで、 **[Windows 8.1]** を選択します (これで、構成項目は対象となるコンピューターにのみ適用されます)。  
+2.  Nella pagina **Piattaforme supportate** della procedura guidata selezionare **Windows 8.1** (per verificare che l'elemento di configurazione si applichi solo ai computer interessati).  
 
-3.  **[設定]** ページで、 **[新規]** をクリックして新しい設定を作成します。  
+3.  Nella pagina **Impostazioni** fare clic su **Nuova** per creare una nuova impostazione.  
 
-4.  **[設定の作成]** ダイアログ ボックスの **[全般]** タブで、次のように構成します。  
+4.  Nella scheda **Generale** della finestra di dialogo **Crea impostazione** configurare quanto segue:  
 
-    -   **[名前]** > **[設定例]**  
+    -   **Nome** > **Impostazione di esempio**  
 
-    -   **[設定の種類]** > **[レジストリ値]**  
+    -   **Tipo di impostazione** > **Valore del Registro di sistema**  
 
-    -   **[データ型]** > **[整数]** (値に数値のみが含まれているため)  
+    -   **Tipo di dati** > **Numero intero** (perché il valore contiene solo un numero)  
 
-    -   **[ハイブ]** > **HKEY_LOCAL_MACHINE**  
+    -   **Hive** > **HKEY_LOCAL_MACHINE**  
 
-    -   **[キー]** > **SOFTWARE\Woodgrove\LOB App\Configuration\Configuration1**  
+    -   **Chiave** > **SOFTWARE\Woodgrove\LOB App\Configuration\Configuration1**  
 
-    -   **[値]** > **1** (必須の値)  
+    -   **Valore** > **1** (il valore richiesto)  
 
-5.  **[設定の作成]** ダイアログ ボックスの **[コンプライアンス規則]** タブで、 **[新規]**をクリックし、 **[規則の作成]** ダイアログ ボックスで次のように構成します。  
+5.  Nella scheda **Regole di conformità** della finestra di dialogo **Crea impostazione** fare clic su **Nuova**, quindi nella finestra di dialogo **Crea regola** configurare quanto segue:  
 
-    -   **[名前]** > **[規則の例]**  
+    -   **Nome** > **Regola di esempio**  
 
-    -   **[選択した設定]** - 選択した設定が **[設定例]**であることを確認します。  
+    -   **Impostazione selezionata** : verificare che l'impostazione selezionata sia **Impostazione di esempio**.  
 
-    -   **[規則の種類]** > **[値]**  
+    -   **Tipo di regola** > **Valore**  
 
-    -   **[この設定は次の規則に対応する必要があります]** - 設定名が正しいことを確認して、設定値が **[1]**に等しくなければならないことを指定するオプションを構成します。  
+    -   **L'impostazione deve essere conforme alla seguente regola** : verificare che il nome dell'impostazione sia corretto e configurare l'opzione per specificare che il valore dell'impostazione deve essere uguale **1**.  
 
-    -   **[サポートされている場合は対応していない規則を修復する]** – レジストリ キー値が正しくない場合に Configuration Manager が正しい値にリセットするようにするには、このボックスをオンにします。  
+    -   **Monitora e aggiorna le regole non conformi, se supportato**: selezionare questa casella per garantire che Configuration Manager reimposti il valore della chiave del Registro di sistema sul valore corretto nel caso in cui sia errato.  
 
-6.  ウィザードを完了して構成項目を作成します。  
+6.  Completare la procedura guidata per creare l'elemento di configurazione.  
 
- これで、「[構成基準の作成と展開に関する一般的なタスク](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md)」トピックの情報を使用して、作成した構成をデバイスに簡単に展開できるようになります。  
+ È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  

@@ -1,6 +1,6 @@
 ---
-title: "サイト階層を設計する - Configuration Manager | Microsoft Docs"
-description: "System Center Configuration Manager で使用できるトポロジと管理オプションを理解することで、サイト階層を計画することができます。"
+title: Progettare una gerarchia di siti - Configuration Manager | Microsoft Docs
+description: "Comprendendo le topologie disponibili e le opzioni di gestione di System Center Configuration Manager è possibile pianificare la gerarchia del sito."
 ms.custom: na
 ms.date: 6/16/2017
 ms.prod: configuration-manager
@@ -18,170 +18,170 @@ manager: angrobe
 ms.openlocfilehash: 4710b1b89eb50cb7bcf4c4ee50c12a96b6561bc9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="design-a-hierarchy-of-sites-for-system-center-configuration-manager"></a>System Center Configuration Manager のサイト階層の設計
+# <a name="design-a-hierarchy-of-sites-for-system-center-configuration-manager"></a>Progettare una gerarchia di siti per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-新しい System Center Configuration Manager 階層の最初のサイトをインストールする前に、Configuration Manager で使用可能なトポロジ、利用可能なサイトの種類と相互の関係、各種のサイトで提供される管理のスコープを理解しておくことをお勧めします。
-次に、インストールする必要のあるサイトの数を減らすためのコンテンツ管理オプションを検討し、それから現在のビジネス ニーズに対して効率的に機能し、将来の成長の管理のために拡張できるトポロジを計画します。  
+Prima di installare il primo sito di una nuova gerarchia di System Center Configuration Manager, è consigliabile sapere quali sono le topologie disponibili per Configuration Manager, quali tipi di sito sono disponibili e che relazioni hanno tra loro, nonché l'ambito di gestione previsto da ogni tipo di sito.
+Quindi, dopo aver considerato le opzioni di gestione del contenuto che consentono di ridurre il numero di siti da installare, è possibile pianificare una topologia che soddisfi in modo efficiente le attuali esigenze aziendali e possa espandersi in un secondo tempo per gestire la crescita futura.  
 
 > [!NOTE]
-> Configuration Manager の新規インストールを計画するときは、[リリース ノート]( /sccm/core/servers/deploy/install/release-notes)でアクティブなバージョンでの現在の問題の詳細を確認してください。 リリース ノートは、Configuration Manager のすべてのブランチに適用されます。  ただし、[Technical Preview ブランチ]( /sccm/core/get-started/technical-preview)を使用する場合は、Technical Preview の各バージョンのドキュメントで、そのブランチにのみ固有の問題を確認してください。  
+> Quando si pianifica una nuova installazione di Configuration Manager, è necessario conoscere le [note sulla versione]( /sccm/core/servers/deploy/install/release-notes) in cui sono descritti nel dettaglio i problemi delle versioni attive. Le note sulla versione si applicano a tutti i rami di Configuration Manager.  Tuttavia, quando si usa il ramo [Technical Preview]( /sccm/core/get-started/technical-preview), nella documentazione si troveranno solo i problemi specifici di tale ramo per ciascuna versione della Technical Preview.  
 
-##  <a name="bkmk_topology"></a> 階層トポロジ  
- 階層トポロジの範囲は、単一のスタンドアロンのプライマリ サイトから、階層の最上位 (上位層) にある中央管理サイトに接続されているプライマリ サイトおよびセカンダリ サイトのグループに及びます。   通常、階層で使用するサイトの種類と数を決定するうえで重要となるのは、次のような、サポートする必要があるデバイスの数と種類です。   
+##  <a name="bkmk_topology"></a> Topologia di gerarchia  
+ Le topologie di gerarchia variano da un singolo sito primario autonomo a un gruppo di siti primari e secondari connessi con un sito di amministrazione centrale come sito di livello superiore della gerarchia.   Gli elementi determinanti per stabilire il tipo e il numero di siti da usare in una gerarchia sono in genere il numero e il tipo di dispositivi che è necessario supportare, come indicato di seguito:   
 
- **スタンドアロンのプライマリ サイト:** 1 つのプライマリ サイトですべてのデバイスおよびユーザーの管理をサポートできる場合には、スタンドアロン プライマリ サイトを使用します (「[サイジングとスケールの数値](/sccm/core/plan-design/configs/size-and-scale-numbers)」をご覧ください)。 このトポロジは、会社の複数の地理的な場所を 1 つのプライマリ サイトで正常にサービスできる場合にも有効です。  ネットワーク トラフィックを管理する場合、優先管理ポイントと、慎重に計画されたコンテンツ インフラストラクチャを使用できます (「[System Center Configuration Manager でのコンテンツ管理の基本的な概念](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)」を参照してください)。  
+ **Sito primario autonomo**: usare un sito primario autonomo quando un singolo sito primario è in grado di supportare la gestione di tutti i dispositivi e tutti gli utenti (vedere la sezione relativa ai [numeri di ridimensionamento e scalabilità](/sccm/core/plan-design/configs/size-and-scale-numbers)). Questa topologia funziona anche quando le diverse aree geografiche delle società possono essere gestite correttamente da un singolo sito primario.  Per semplificare la gestione del traffico di rete, è possibile usare punti di gestione preferiti e un'infrastruttura di contenuto accuratamente pianificata (vedere [Concetti di base per la gestione dei contenuti in System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)).  
 
- このトポロジの利点は次のとおりです。  
+ I vantaggi di questa topologia includono:  
 
--   管理オーバーヘッドが簡略化される。  
+-   Carico amministrativo semplificato.  
 
--   クライアント サイトの割り当てと、使用可能なリソースとサービスの検出が簡略化される。  
+-   Assegnazione semplificata del sito client e individuazione dei servizi e delle risorse disponibili.  
 
--   サイト間におけるデータベース レプリケーションによって生じる可能性がある遅延を解消する。
+-   Eliminazione dei possibili ritardi introdotti dalla replica di database tra siti.
 
--   スタントアロンのプライマリ階層を、中央管理サイトを使用した、より大きな階層に拡張することもできる。 このようにすると、新しいプライマリ サイトをインストールして、展開の規模を大きくできます。  
+-   Opzione per espandere una gerarchia con singolo sito primario autonomo in una gerarchia più ampia con un sito di amministrazione centrale. In questo modo sarà quindi possibile installare nuovi siti primari per espandere la distribuzione.  
 
 
-**1 つ以上の子プライマリ サイトが含まれる中央管理サイト:** このトポロジは、すべてのデバイスとユーザーの管理をサポートするのに複数のプライマリ サイトが必要な場合に使用します。  これは、複数のプライマリ サイトを使用する必要がある場合には必須です。 このトポロジの利点は次のとおりです。  
+**Sito di amministrazione centrale con uno o più siti primari figlio:** usare questa topologia quando sono necessari più siti primari per supportare la gestione di tutti gli utenti e i dispositivi.  È obbligatoria quando è necessario usare più di un singolo sito primario. I vantaggi di questa topologia includono:  
 
 
--   階層の規模を拡張するために、最大で 25 のプライマリ サイトがサポートされる。  
+-   Supporta fino a 25 siti primari, consentendo di espandere la gerarchia.  
 
--   常に中央管理サイトを使用する (サイトを再インストールする場合を除く)。 これは永続的なオプションです。 子プライマリ サイトを切り離して、スタンドアロンのプライマリ サイトにすることはできません。
+-   Si userà sempre il sito di amministrazione centrale, se non si reinstallano i siti. Questa è un'opzione permanente. Non è possibile scollegare un sito primario figlio per renderlo un sito primario autonomo.
 
- 次のセクションは、どんな状況で、特定のサイトを使用するか、または追加のサイトの代わりに、コンテンツ管理オプションを使用するかを理解するのに役立ちます。  
+ Le informazioni nelle sezioni seguenti possono essere utili per capire quando usare un sito specifico o l'opzione di gestione dei contenuti al posto di un sito aggiuntivo.  
 
-##  <a name="BKMK_ChooseCAS"></a> 中央管理サイトを使用する場合の判別  
- 中央管理サイトは、階層全体の設定を構成して、階層内のすべてのサイトとオブジェクトを監視する場所です。 このサイトの種類では、クライアントを直接管理しませんが、階層全体のサイトやクライアントの構成を含め、サイト間のデータ レプリケーションを調整します。  
+##  <a name="BKMK_ChooseCAS"></a> Determinare quando usare un sito di amministrazione centrale  
+ Usare un sito di amministrazione centrale per configurare le impostazioni a livello di gerarchia e per monitorare tutti i siti e gli oggetti nella gerarchia. Questo tipo di sito non gestisce i client direttamente ma coordina la replica dei dati tra i siti, che include la configurazione di siti e client in tutta la gerarchia.  
 
-**以下の情報を参考にして、中央管理サイトをインストールするかどうかを判別できます。**  
+**Le informazioni seguenti possono essere utili per decidere quando installare un sito di amministrazione centrale:**  
 
--   中央管理サイトは、階層の最上位のサイトです。  
+-   Il sito di amministrazione centrale è il sito di livello superiore nella gerarchia.  
 
--   複数のプライマリ サイトが含まれる階層を構成する場合は、中央管理サイトをインストールする必要があります。 複数のプライマリ サイトがすぐに必要な場合は、まず中央管理サイトをインストールします。 既にプライマリ サイトがある状態で中央管理サイトをインストールする場合は、中央管理サイトをインストールするために、[スタンドアロン プライマリ サイトを展開する](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand)必要があります。 
+-   Quando si configura una gerarchia con più di un sito primario, è necessario installare un sito di amministrazione centrale. Se servono due o più siti primari immediatamente, installare innanzitutto il sito di amministrazione centrale. Quando si ha già un sito primario e quindi si vuole installare un sito di amministrazione centrale, è necessario [espandere il sito primario autonomo](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand) per installare il sito di amministrazione centrale. 
 
--   中央管理サイトは、プライマリ サイトのみ子サイトとしてサポートします。  
+-   Il sito di amministrazione centrale supporta solo i siti primari come siti figlio.  
 
--   中央管理サイトにクライアントを割り当てることはできません。  
+-   Al sito di amministrazione centrale non è possibile assegnare client.  
 
--   中央管理サイトは、管理ポイントや配布ポイントなどのクライアントを直接サポートするサイト システムの役割はサポートしていません。  
+-   Il sito di amministrazione centrale non supporta i ruoli del sistema del sito che supportano direttamente i client, come punti di gestione e punti di distribuzione.  
 
--   中央管理サイトに接続された Configuration Manager コンソールを使用している場合、階層内のすべてのクライアントを管理して、任意の子サイトに対してサイト管理タスクを実行できます。 これには、子プライマリ サイトまたはセカンダリ サイトにおける管理ポイントや他のサイト システムの役割のインストールが含まれる場合があります。  
+-   È possibile gestire tutti i client nella gerarchia ed eseguire attività di gestione del sito per qualsiasi sito figlio quando si usa una console di Configuration Manager connessa al sito di amministrazione centrale. Ciò può includere l'installazione di punti di gestione o altri ruoli del sistema del sito in un sito primario figlio o in siti secondari.  
 
--   中央管理サイトを使用する場合、中央管理サイトは、ご使用の階層内のすべてのサイトのサイト データを表示できる唯一の場所です。 このデータには、インベントリ データやステータス メッセージなどの情報が含まれます。  
+-   Quando si usa un sito di amministrazione centrale, tale sito è l'unico punto da cui è possibile visualizzare i dati del sito da tutti i siti nella gerarchia. Questi dati includono informazioni quali dati di inventario e messaggi di stato.  
 
--   個々のサイトで実行する探索方法を割り当てて、中央管理サイトから階層全体の探索処理を構成できます。  
+-   È possibile configurare le operazioni di individuazione in tutta la gerarchia dal sito di amministrazione centrale mediante l'assegnazione di metodi di individuazione da eseguire nei singoli siti.  
 
--   別々のセキュリティ ロール、セキュリティ スコープ、およびコレクションを異なる管理ユーザーに割り当てて、階層全体のセキュリティを管理できます。 この構成は、階層内の各サイトに適用されます。  
+-   È possibile gestire la protezione in tutta la gerarchia mediante l'assegnazione di raccolte, ambiti di protezione e ruoli di sicurezza differenti a diversi utenti amministratori. Queste configurazioni si applicano a ogni sito nella gerarchia.  
 
--   ファイル レプリケーションとデータベース レプリケーションを構成し、階層内のサイト間の通信を制御できます。 これには、サイト データのデータベース レプリケーションのスケジュール設定と、サイト間のファイルベースのデータの転送に使用する帯域幅の管理が含まれます。  
+-   È possibile configurare la replica di file e di database per controllare la comunicazione tra siti all'interno della gerarchia. Ciò include la pianificazione della replica di database per i dati del sito e la gestione della larghezza di banda per il trasferimento tra siti dei dati basati su file.  
 
-##  <a name="BKMK_ChoosePriimary"></a> プライマリ サイトを使用する場合の判別  
- プライマリ サイトは、クライアントを管理するために使用します。 プライマリ サイトは、中央管理サイトの下の子プライマリ サイトとしてインストールするか、新しいサイトの 1 番目のサイトとしてインストールすることができます。 階層の 1 番目のサイトとしてインストールされたプライマリ サイトでは、スタンドアロン プライマリ サイトが作成されます。 子プライマリ サイトもスタンドアロン プライマリサイトも、その子としてセカンダリ サイトを持つことができます。  
+##  <a name="BKMK_ChoosePriimary"></a> Determinare quando usare un sito primario  
+ Utilizzare i siti primari per gestire i client. È possibile installare un sito primario come sito primario figlio al di sotto di un sito di amministrazione centrale oppure come primo sito di una nuova gerarchia. Un sito primario che viene installato come primo sito di una gerarchia crea un sito primario autonomo. Sia i siti primari figlio sia i siti primari autonomi supportano siti secondari come siti figlio del sito primario.  
 
- 次のような場合にプライマリ サイトの使用を検討します。  
+ Si consiglia di usare un sito primario per uno dei motivi seguenti:  
 
--   デバイスとユーザーを管理するため。  
+-   Per gestire dispositivi e utenti.  
 
--   1 つの階層で管理できるデバイスの数を増やすため。  
+-   Per aumentare il numero di dispositivi che è possibile gestire con una singola gerarchia.  
 
--   展開の管理用に追加の接続ポイントを提供するため。  
+-   Per fornire un punto di connettività aggiuntivo per l'amministrazione della distribuzione.  
 
--   組織の管理要件を満たすため。 たとえば、リモートの場所にプライマリ サイトをインストールして、低帯域幅のネットワーク経由で展開コンテンツの転送を管理できます。 ただし、System Center Configuration Manager では、データを配布ポイントに転送するときのネットワーク帯域幅を調整するオプションを使用できます。 そのコンテンツ管理機能を使用すれば、追加のサイトをインストールしなくて済みます。  
+-   Per soddisfare i requisiti di gestione dell'organizzazione. Ad esempio, è possibile installare un sito primario in una posizione remota per gestire il trasferimento del contenuto di distribuzione attraverso una rete a larghezza di banda ridotta. Con System Center Configuration Manager è tuttavia possibile usare opzioni per limitare l'uso della larghezza di banda di rete in fase di trasferimento dei dati a un punto di distribuzione. Questa funzionalità di gestione dei contenuti può sostituire la necessità di installare ulteriori siti.  
 
 
-**以下の情報は、プライマリ サイトをいつインストールするかを決めるのに役立ちます。**  
+**Le informazioni seguenti possono essere utili per decidere quando installare un sito primario:**  
 
--   プライマリ サイトをスタンドアロン プライマリ サイトにすることも、大規模な階層内の子プライマリ サイトにすることもできます。 中央管理サイトのある階層にプライマリ サイトを含める場合は、これらのサイト間でデータベースのレプリケーションが行われます。 大量のクライアントとデバイスがあり、1 つのプライマリ サイトでは管理しきれない場合を除き、スタンドアロン プライマリ サイトをインストールすることを検討してください。  スタンドアロンのプライマリ サイトがインストールされたら、展開を拡大するために新しい中央管理サイトに報告するように拡張できます。  
+-   Un sito primario può essere un sito primario autonomo o un sito primario figlio in una gerarchia più grande. Quando un sito primario è membro di una gerarchia con un sito di amministrazione centrale, i siti utilizzano la replica database per replicare i dati tra i siti. Ad eccezione del caso in cui non sia necessario supportare più client e dispositivi rispetto a un singolo sito primario, considerare l'installazione di un sito primario autonomo.  Dopo l'installazione di un sito primario autonomo, è possibile espanderlo in modo che faccia riferimento a un nuovo sito di amministrazione centrale per potenziare la distribuzione.  
 
--   プライマリ サイトの親になれるのは、中央管理サイトだけです。  
+-   Un sito primario supporta solo un sito di amministrazione centrale come sito padre.  
 
--   プライマリ サイトの子になれるのは、セカンダリ サイトだけで、複数のセカンダリ子サイトをサポートすることもできます。  
+-   Un sito primario supporta solo siti secondari come siti figlio e può supportare anche più siti figlio secondari.  
 
--   プライマリ サイトは、割り当てられたクライアントのすべてのクライアント データを処理します。  
+-   I siti primari sono responsabili dell'elaborazione di tutti i dati client dei client ad essi assegnati.  
 
--   プライマリ サイトは、データベース レプリケーションを使用して中央管理サイトと直接通信します (新しいサイトをインストールすると、自動的に構成されます)。  
+-   I siti primari usano la replica di database per comunicare direttamente con il relativo sito di amministrazione centrale (configurato automaticamente quando viene installato un nuovo sito).  
 
-##  <a name="BKMK_ChooseSecondary"></a> セカンダリ サイトを使用する場合の判別  
- セカンダリ サイトは、低帯域幅のネットワーク経由で展開コンテンツとクライアント データの転送を管理するために使用します。  
+##  <a name="BKMK_ChooseSecondary"></a> Determinare quando usare un sito secondario  
+ Utilizzare i siti secondari per gestire il trasferimento dei dati client e del contenuto di distribuzione su reti a larghezza di banda ridotta.  
 
- セカンダリ サイトは、中央管理サイトまたはセカンダリ サイトの直接の親プライマリ サイトから管理します。 セカンダリ サイトは、プライマリ サイトに接続されている必要があります。また、セカンダリ サイトを別の親サイトに移動するには、セカンダリ サイトをアンインストールして新しいプライマリ サイトの下に子サイトとして再インストールする必要があります。
+ Un sito secondario viene gestito da un sito di amministrazione centrale o dal sito primario padre diretto del sito secondario. I siti secondari devono essere collegati a un sito primario e non possono essere spostati in un sito padre differente senza prima disinstallarli e successivamente reinstallarli come siti figlio del nuovo sito primario.
 
-ただし、2 つのピアのセカンダリ サイト間でコンテンツをルーティングでき、展開コンテンツのファイルベースのレプリケーションを管理するのに役立ちます。 セカンダリ サイトは、クライアント データをプライマリ サイトに転送するために、ファイルベースのレプリケーションを使用します。 親プライマリ サイトと通信するために、データベース レプリケーションも使用します。  
+È comunque possibile distribuire contenuto tra due siti secondari peer per gestire la replica basata su file del contenuto della distribuzione. Per trasferire i dati client a un sito primario, il sito secondario utilizza la replica basata su file. Un sito secondario usa anche la replica di database per comunicare con il relativo sito primario padre.  
 
- 次の条件のいずれかが当てはまる場合は、セカンダリ サイトのインストールを検討します。  
+ Si consiglia di installare un sito secondario in presenza di una delle seguenti condizioni:  
 
--   管理ユーザーのローカル接続ポイントは必要ありません。  
+-   Non è necessario un punto di connettività locale per un utente amministratore.  
 
--   階層内の下位サイトへの展開コンテンツの転送を管理する必要があります。  
+-   È necessario gestire il trasferimento del contenuto della distribuzione ai siti di livello inferiore nella gerarchia.  
 
--   階層内の上位サイトに送信されるクライアント情報を管理する必要があります。  
+-   È necessario gestire le informazioni client inviate ai siti di livello superiore nella gerarchia.  
 
- セカンダリ サイトをインストールしないことを希望しており、リモートの場所にクライアントがある場合は、Windows BranchCache を使用すること、または帯域幅の制御とスケジューリングに対応した配布ポイントをインストールすることを検討します。 これらのコンテンツ管理オプションはセカンダリ サイトに関係なく使用でき、インストールが必要なサイトとサーバーの数を削減するのに役立ちます。 Configuration Manager でのコンテンツ管理オプションの詳細については、「[コンテンツ管理オプションを使用する場合の判別](#BKMK_ChooseSecondaryorDP)」をご覧ください。  
+ Se non si vuole installare un sito secondario e si dispone di client in sedi remote, prendere in considerazione l'uso di Windows BranchCache o l'installazione di punti di distribuzione abilitati per la pianificazione e il controllo della larghezza di banda. È possibile usare queste opzioni di gestione dei contenuti con o senza siti secondari, riducendo così il numero di siti e server da installare. Per informazioni sulle opzioni di gestione dei contenuti in Configuration Manager, vedere [Determinare quando usare le opzioni di gestione dei contenuti](#BKMK_ChooseSecondaryorDP).  
 
 
-**以下の情報を参考にして、セカンダリ サイトをインストールするかどうかを判別できます。**  
+**Le informazioni seguenti possono essere utili per decidere quando installare un sito secondario:**  
 
--   セカンダリ サイトでは、SQL Server のローカル インスタンスが使用できない場合、サイトのインストール時に SQL Server Express が自動的にインストールされます。  
+-   Se un'istanza locale di SQL Server non è disponibile, i siti secondari installano automaticamente SQL Server Express durante l'installazione del sito.  
 
--   セカンダリ サイトのインストールは、コンピューター上でセットアップを直接実行するのではなく、Configuration Manager コンソールから開始されます。  
+-   L'installazione del sito secondario viene avviata dalla console di Configuration Manager, invece di eseguire il programma di installazione direttamente in un computer.  
 
--   セカンダリ サイトは、サイト データベース内の情報の一部を使用します。それにより、親プライマリ サイトとセカンダリ サイト間のデータベースのレプリケーションによって複製されるデータ量が削減されます。  
+-   I siti secondari usano un subset delle informazioni nel database del sito in modo da ridurre la quantità di dati replicati dalla replica di database tra il sito primario padre e il sito secondario.  
 
--   セカンダリ サイトは、共通の親プライマリ サイトを持つ他のセカンダリ サイトへの、ファイルベースのコンテンツのルーティングをサポートします。  
+-   I siti secondari supportano il routing del contenuto basato su file in altri siti secondari che dispongono di un sito primario padre comune.  
 
--   セカンダリ サイトのインストール時に、管理ポイントと配布ポイントが自動的に展開されて、セカンダリ サイト サーバーに配置されます。  
+-   Le installazioni dei siti secondari distribuiscono automaticamente un punto di gestione e un punto di distribuzione ubicati sul server del sito secondario.  
 
-##  <a name="BKMK_ChooseSecondaryorDP"></a> コンテンツ管理オプションを使用する場合の判別  
- リモートのネットワークの場所にクライアントがある場合、プライマリ サイトまたはセカンダリ サイトの代わりにコンテンツ管理オプションを使用することを検討します。 Windows BranchCache を使用するか、帯域幅制御に配布ポイントを構成するか、または配布ポイントにコンテンツを手動でコピー (コンテンツを事前準備) すると、多くの場合、サイトをインストールする必要がなくなります。  
+##  <a name="BKMK_ChooseSecondaryorDP"></a> Determinare quando usare le opzioni di gestione dei contenuti  
+ Se si dispone di client in percorsi di rete remoti, considerare l'utilizzo di una o più opzioni di gestione dei contenuti piuttosto che di un sito primario o secondario. È spesso possibile evitare la necessità di installare un sito usando Windows BranchCache, configurando i punti di distribuzione per il controllo della larghezza di banda o copiando manualmente il contenuto nei punti di distribuzione (preinstallazione del contenuto).  
 
 
-**次のいずれかの条件が当てはまる場合は、別のサイトをインストールするのではなく、配布ポイントを展開することを検討します。**  
+**Considerare la distribuzione di un punto di distribuzione piuttosto che l'installazione di un altro sito in presenza di una delle condizioni seguenti:**  
 
--   ネットワーク帯域幅が、リモートの場所のクライアント コンピューターが管理ポイントと通信してクライアント ポリシーをダウンロードしたり、インベントリ、レポート ステータス、および探索情報を送信するのに十分である。  
+-   La larghezza di banda della rete è sufficiente per consentire ai computer client in remoto di comunicare con un punto di gestione per scaricare i criteri client e inviare informazioni di individuazione, di inventario e relative allo stato dei report.  
 
--   バックグラウンド インテリジェント転送サービス (BITS) では、ネットワーク要件に対応する十分な帯域幅制御は提供されません。  
+-   Il Servizio trasferimento intelligente in background (BITS) non garantisce un controllo della larghezza di banda adeguato ai requisiti della rete.  
 
- Configuration Manager でのコンテンツ管理オプションの詳細については、「[System Center Configuration Manager でのコンテンツ管理の基本的な概念](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)」をご覧ください。  
+ Per altre informazioni sulle opzioni di gestione dei contenuti in Configuration Manager, vedere [Fundamental concepts for content management in System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md) (Concetti di base per la gestione dei contenuti in System Center Configuration Manager).  
 
-##  <a name="bkmk_beyond"></a> 階層トポロジ以外  
- 最初の階層トポロジに加え、階層内の別のサイトでどのようなサービスまたは機能が使用できるか (サイト システムの役割)、インフラストラクチャ内で階層規模の構成や機能をどのように管理するかも検討してください。 次の一般的な考慮事項は別のトピックで説明します。 これらは、階層の設計によって影響を与えたり、受けたりする可能性があるため、重要です。  
+##  <a name="bkmk_beyond"></a> Oltre la topologia di gerarchia  
+ Oltre alla topologia di gerarchia iniziale, valutare quali servizi o funzionalità saranno disponibili dai diversi siti della gerarchia (ruoli del sistema del sito) e come verranno gestite nell'infrastruttura le funzionalità e le configurazioni valide per l'intera gerarchia. Le considerazioni comuni seguenti sono trattate in argomenti separati. Si tratta di considerazioni importanti perché possono influenzare la progettazione della gerarchia o esserne influenzate:  
 
--   [System Center Configuration Manager を使用したコンピューターおよびデバイスの管理を行う](/sccm/core/clients/manage/manage-clients)準備をする場合、管理するデバイスがオンプレミスまたはクラウドに配置されているか、あるいはユーザーが所有するデバイス (BYOD) が含まれるかどうかを検討します。  さらに、Configuration Manager によって直接、または Microsoft Intune との統合によって管理できる Windows 10 コンピューターなどの、複数の管理オプションによってサポートされるデバイスを管理する方法を検討します。  
+-   Quando si prepara la [gestione di computer e dispositivi con System Center Configuration Manager](/sccm/core/clients/manage/manage-clients), valutare se i dispositivi gestiti si trovano nell'infrastruttura locale, nel cloud o includono dispositivi di proprietà degli utenti (BYOD).  Valutare anche come verranno gestiti i dispositivi supportati da più opzioni di gestione, ad esempio i computer Windows 10 che possono essere gestiti direttamente da Configuration Manager o tramite l'integrazione in Microsoft Intune.  
 
--   利用可能なネットワーク インフラストラクチャが、リモートの場所の間のデータ フローにどのような影響を及ぼすかを理解します (「[System Center Configuration Manager のネットワーク環境の準備](/sccm/core/plan-design/network/configure-firewalls-ports-domains)」をご覧ください)。 また、管理対象のユーザーとデバイスが配置されている地理的な場所、およびユーザーやデバイスが対象のインフラストラクチャにアクセスするときに会社のドメインとインターネットのどちらを使用するかを検討します。  
+-   Per sapere in che modo l'infrastruttura di rete disponibile può influire sul flusso di dati tra le sedi remote, vedere [Prepare your network environment for System Center Configuration Manager](/sccm/core/plan-design/network/configure-firewalls-ports-domains) (Preparare l'ambiente di rete per System Center Configuration Manager). Considerare anche la posizione geografica degli utenti e dei dispositivi da gestire e se l'accesso all'infrastruttura avviene dal dominio aziendale o da Internet.  
 
--   管理対象デバイスに展開する情報 (ファイルとアプリ) を効率的に配布するためのコンテンツ インフラストラクチャを計画します (「[System Center Configuration Manager のコンテンツ インフラストラクチャとコンテンツの管理](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」をご覧ください)。  
+-   Pianificare un'infrastruttura di contenuto per distribuire in modo efficiente le informazioni (file e applicazioni) ai dispositivi gestiti (vedere [Manage content and content infrastructure for System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md) (Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager)).  
 
--   使用する予定の [System Center Configuration Manager の特徴と機能](../../../core/plan-design/changes/features-and-capabilities.md)、必要とされるサイト システムの役割または Windows インフラストラクチャ、ネットワークやサーバー リソースを最も効率的に使用するために複数のサイト階層内のどのサイトにそれらの特徴や機能を展開するかを決定します。  
+-   Determinare quali [funzionalità di System Center Configuration Manager](../../../core/plan-design/changes/features-and-capabilities.md) si intende usare, i ruoli del sistema del sito o l'infrastruttura di Windows necessaria e in quali siti di una gerarchia a più siti si possono distribuire per ottimizzare l'uso delle risorse di rete e server.  
 
--   PKI の使用を含む、データとデバイスのセキュリティを検討します。 「[System Center Configuration Manager での PKI 証明書の要件](../../../core/plan-design/network/pki-certificate-requirements.md)」を参照してください。  
+-   Considerare la sicurezza per i dati e i dispositivi, incluso l'uso di un'infrastruttura PKI. Vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
 
 
-**サイト固有の構成については、次のリソースを確認ください。**  
+**Esaminare le risorse seguenti per le configurazioni specifiche del sito:**  
 
--   [System Center Configuration Manager の SMS プロバイダーの計画](../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md)  
+-   [Plan for the SMS Provider for System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md) (Pianificare il provider SMS per System Center Configuration Manager)  
 
--   [System Center Configuration Manager のサイト データベースの計画](../../../core/plan-design/hierarchy/plan-for-the-site-database.md)  
+-   [Plan for the site database for System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-the-site-database.md) (Pianificare il database del sito per System Center Configuration Manager)  
 
--   [System Center Configuration Manager のサイト システム サーバーとサイト システムの役割の計画](../../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md)  
+-   [Plan for site system servers and site system roles for System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md) (Pianificare i server e i ruoli del sistema del sito per System Center Configuration Manager)  
 
--   [System Center Configuration Manager でのセキュリティの計画](../../../core/plan-design/security/plan-for-security.md)  
+-   [Plan for security in System Center Configuration Manager](../../../core/plan-design/security/plan-for-security.md) (Pianificare la sicurezza in System Center Configuration Manager)  
 
--   [Managing network bandwidth](../../../core/plan-design/hierarchy/manage-network-bandwidth.md) (サイト内のコンテンツを展開するとき)  
+-   [Managing network bandwidth](../../../core/plan-design/hierarchy/manage-network-bandwidth.md) durante la distribuzione dei contenuti all'interno di un sito  
 
 
-**複数のサイトと階層にまたがる構成について考慮します。**  
+**Prendere in considerazione configurazioni che si estendono a siti e gerarchie:**  
 
--   サイトおよび階層のための [System Center Configuration Manager の高可用性オプション](/sccm/protect/understand/high-availability-options)
+-   [Opzioni di disponibilità elevata per System Center Configuration Manager](/sccm/protect/understand/high-availability-options) per siti e gerarchie
 
--   [System Center Configuration Manager 向けの Active Directory スキーマの拡張](../../../core/plan-design/network/extend-the-active-directory-schema.md)および、[System Center Configuration Manager のサイト データを発行](../../../core/servers/deploy/configure/publish-site-data.md)するためのサイトの構成  
+-   [Estendere lo schema di Active Directory per System Center Configuration Manager](../../../core/plan-design/network/extend-the-active-directory-schema.md) e configurare i siti per [pubblicare i dati del sito per System Center Configuration Manager](../../../core/servers/deploy/configure/publish-site-data.md)  
 
--   [System Center Configuration Manager のサイト間でのデータの転送](../../../core/servers/manage/data-transfers-between-sites.md)  
+-   [Trasferimenti di dati tra siti in System Center Configuration Manager](../../../core/servers/manage/data-transfers-between-sites.md)  
 
--   [System Center Configuration Manager のロール ベース管理の基礎](../../../core/understand/fundamentals-of-role-based-administration.md)
+-   [Fundamentals of role-based administration for System Center Configuration Manager](../../../core/understand/fundamentals-of-role-based-administration.md) (Nozioni di base sull'amministrazione basata su ruoli per System Center Configuration Manager)

@@ -6,22 +6,20 @@ ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f0a78038-ea22-4826-9c07-1771b7dd2e8d
-caps.latest.revision: 18
-caps.handback.revision: 0
+caps.latest.revision: "18"
+caps.handback.revision: "0"
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 23b1d24e908d04b64c3bbfa518793a44e696d468
 ms.openlocfilehash: 50aea2afaf34974ca92ac58b6569bff56403a9ab
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="apply-settings-to-ios-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Applicare le impostazioni alle app iOS con i criteri di configurazione app in System Center Configuration Manager
 
@@ -40,7 +38,7 @@ Per usare un criterio di configurazione delle app in Configuration Manager, anzi
 
 I criteri di configurazione delle app sono attualmente disponibili solo per i dispositivi che eseguono iOS 8 e versioni successive e per i tipi di applicazioni seguenti:
 
-- **Pacchetto app iOS (file*.ipa)**
+- **Pacchetto app iOS (file* .ipa)**
 - **Pacchetto app iOS nell'App Store**
 
 Per altre informazioni sui tipi di installazione delle app, vedere l'[introduzione alla gestione delle applicazioni](/sccm/apps/understand/introduction-to-application-management).
@@ -140,4 +138,3 @@ Quando si crea un file di configurazione di app per dispositivi mobili, è possi
   <string>{{udidlast4digits}}</string>
 </dict>
 ```
-

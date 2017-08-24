@@ -1,6 +1,6 @@
 ---
-title: "クラウドベースの配布ポイント | Microsoft Docs"
-description: "System Center Configuration Manager でクラウドベースの配布ポイントを使用する際の構成および制限事項について説明します。"
+title: Punto di distribuzione basato su cloud | Microsoft Docs
+description: Informazioni sulle configurazioni e le limitazioni per l'uso di un punto di distribuzione basato sul cloud con System Center Configuration Manager.
 ms.custom: na
 ms.date: 3/27/2017
 ms.prod: configuration-manager
@@ -17,197 +17,197 @@ manager: angrobe
 ms.openlocfilehash: 8caf3319d93b98680ed4a719a8db714c7e4e96ce
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-a-cloud-based-distribution-point-with-system-center-configuration-manager"></a>System Center Configuration Manager でのクラウド ベースの配布ポイントの使用
+# <a name="use-a-cloud-based-distribution-point-with-system-center-configuration-manager"></a>Usare un punto di distribuzione basato sul cloud con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-クラウドベースの配布ポイントとは、Microsoft Azure でホストされている System Center Configuration Manager 配布ポイントです。 次の情報は、クラウド ベースの配布ポイントを使用する際の構成および制限事項について理解するのに役立ちます。
+Un punto di distribuzione basato sul cloud è un punto di distribuzione di System Center Configuration Manager ospitato in Microsoft Azure. Le informazioni seguenti hanno lo scopo di illustrare le configurazioni e le limitazioni relative all'uso di un punto di distribuzione basato sul cloud.
 
-プライマリ サイトのインストールが完了し、クラウド ベースの配布ポイントをインストールする準備ができたら、[Azure でのクラウドベースの配布ポイントのインストール](../../../core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure.md)に関する記事をご覧ください。
-
-
-## <a name="plan-to-use-a-cloud-based-distribution-point"></a>クラウドベースの配布ポイントの使用の計画
-クラウドベースの配布ポイントを使用すると、次のことができます。  
-
--   **クライアント設定を構成**し、ユーザーとデバイスがコンテンツにアクセスできるようにします。  
-
--   配布ポイントへの**コンテンツの転送を管理するプライマリ サイトを指定**します。  
-
--   配布ポイントに格納するコンテンツの量と配布ポイントからクライアントが転送できるコンテンツの量に、**しきい値を指定**します。  
+Se dopo aver installato un sito primario si è pronti a installare un punto di distribuzione basato sul cloud, vedere [Installare punti di distribuzione basati sul cloud in Azure](../../../core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure.md).
 
 
-配布ポイントに格納されたコンテンツの合計量が、指定したストレージ容量のしきい値に近づくか、クライアントが転送したデータの量がしきい値に近づくと、Configuration Manager からアラートが送信されます。  
+## <a name="plan-to-use-a-cloud-based-distribution-point"></a>Pianificare l'uso di un punto di distribuzione basato sul cloud
+Quando si usa una distribuzione basata sul cloud:  
 
-クラウドベースの配布ポイントは、オンプレミスの配布ポイントでも提供されるさまざまな機能をサポートします。  
+-   **Configurare le impostazioni client** per consentire l'accesso al contenuto a utenti e dispositivi.  
 
--   クラウドベースの配布ポイントは、個別に、または、配布ポイント グループのメンバーとして管理します。  
+-   **Specificare un sito primario per gestire il trasferimento del contenuto** al punto di distribuzione.  
 
--   クラウドベースの配布ポイントを、代替のコンテンツの場所として使用できます。  
-
--   イントラネットとインターネットの両方にクライアントを配置できます。  
-
-
-クラウドベースの配布ポイントのその他の利点は、次のとおりです。  
-
--   クラウドベースの配布ポイントに送信されるコンテンツは、Configuration Manager が Azure に送信する前に Configuration Manager によって暗号化されます。  
-
--   Azure では、クライアントによるコンテンツ要求の需要の変化に合わせて、クラウド サービスの規模を調節できます。このとき、追加の配布ポイントをインストールして準備する必要はありません。  
-
--   クラウドベースの配布ポイントは、Windows BranchCache が構成されているクライアントによるコンテンツのダウンロードをサポートしています。  
+-   **Specificare le soglie** per la quantità di contenuti da archiviare nel punto di distribuzione e la quantità di contenuti di cui i client possono eseguire il trasferimento dal punto di distribuzione.  
 
 
-クラウドベースの配布ポイントには、次の制限があります。  
+In base alle soglie configurate, Configuration Manager può generare degli avvisi per l'utente quando la quantità combinata di contenuto archiviato nel punto di distribuzione si avvicina alla quantità di archiviazione specificata oppure quando i dati trasferiti dai client si avvicinano alle soglie definite.  
 
--  バージョン 1610 と修正プログラム KB4010155 を使用する前に、クラウドベースの配布ポイントを使用して、ソフトウェア更新プログラム パッケージをホストすることはできません。 この問題は、バージョン 1702 以降で修正されています。  
+I punti di distribuzione basati sul cloud supportano diverse funzionalità, che sono offerte anche dai punti di distribuzione locali:  
 
--   クラウドベースの配布ポイントを、PXE やマルチキャストを有効にした環境で使用することはできません。  
+-   I punti di distribuzione basati sul cloud sono gestiti singolarmente o come membri di gruppi di punti di distribuzione.  
 
--   展開オプション [ **実行中のタスク シーケンスでコンテンツが必要になったときにローカルにダウンロードする**] を使用して展開されたタスク シーケンスの場合、クライアントにはコンテンツの場所としてクラウドベースの配布ポイントが提示されません。 ただし、[ **タスク シーケンスを開始する前にすべてのコンテンツをローカルにダウンロードする** ] オプションを使用して展開するタスク シーケンスでは、有効なコンテンツの場所としてクラウドベースの配布ポイントを使用できます。  
+-   È possibile usare un punto di distribuzione basato sul cloud come percorso di fallback per il contenuto.  
 
--   クラウドベースの配布ポイントからパッケージを実行することはできません。 すべてのコンテンツは、クライアントによってダウンロードされ、その後、ローカルで実行する必要があります。  
-
--   クラウドベースの配布ポイントから、アプリケーションの仮想化プログラムを使って、アプリケーションをストリーミングすることはできません。  
-
--   クラウドベースの配布ポイントにコンテンツを事前設定することはできません。 配布ポイントを管理するプライマリ サイトの配布マネージャーが、配布ポイントにすべてのコンテンツを転送します。  
-
--   クラウドベースの配布ポイントは、プル配布ポイントとして構成できません。  
-
-##  <a name="BKMK_PrereqsCloudDP"></a> クラウドベースの配布ポイントの前提条件  
- クラウドベースの配布ポイントを使用するための前提条件は、次のとおりです。  
-
--   Azure のサブスクリプション (このトピックの「[サブスクリプションと証明書について](#BKMK_CloudDPCerts)」をご覧ください)。
-
--   Configuration Manager プライマリ サイト サーバーから Azure のクラウド サービスへの通信用の管理証明書 (自己署名または PKI) (このトピックの「[サブスクリプションと証明書について](#BKMK_CloudDPCerts)」をご覧ください)。
-
--   Configuration Manager クライアントが、クラウドベースの配布ポイントへの接続と、この配布ポイントからの HTTPS を使用したコンテンツのダウンロードに使用するサービス証明書 (PKI)。  
-
--  デバイスまたはユーザーがクラウドベースの配布ポイントのコンテンツにアクセスするには、**[クラウド サービス]** のクライアント設定で [**クラウド配布ポイントへのアクセスを許可する**] が [**はい**] に設定されている必要があります。 既定では、この値は [ **いいえ**] に設定されています。  
-
--   クライアントがクラウド サービスの名前を解決できなければなりません。これには、ドメイン ネーム システム (DNS) 名前空間の DNS エイリアスと CNAME レコードが必要です。  
-
--   クライアントは、クラウドベースの配布ポイントを使用するためにインターネットにアクセスできなければなりません。  
-
-##  <a name="BKMK_CloudDPCost"></a> クラウドベースの配布にかかるコスト  
- クラウドベースの配布ポイントを使用する場合、データ記憶域と Configuration Manager クライアントが実行するダウンロード転送のコストについて計画を立てます。  
-
- Configuration Manager には、コストの管理とデータ アクセスの監視を支援するためのオプションがあります。  
-
--   クラウド サービスに格納されるコンテンツの量を制御および監視することができます。  
-
--   Configuration Manager を構成して、クライアント ダウンロードの**しきい値**に達するか、月ごとの制限を超えたときに、アラートを送信することができます。  
-
--   また、ピア キャッシュ (Windows BranchCache) を使用して、クライアントによるクラウドベースの配布ポイントからのデータ転送の数を減らすことができます。 BranchCache 用に構成された Configuration Manager クライアントは、クラウドベースの配布ポイントを使用してコンテンツを転送できます。  
+-   Si riceve supporto per client basati su Internet e intranet.  
 
 
-**オプション:**  
+I punti di distribuzione basati sul cloud offrono i seguenti vantaggi aggiuntivi:  
 
--   **クラウドのクライアント設定**: 階層内のクラウドベースのすべての配布ポイントへのアクセスを制御するには、 **[クライアント設定]**を使用します。  
+-   Configuration Manager esegue la crittografia del contenuto destinato a un punto di distribuzione basato sul cloud prima di inviarlo ad Azure.  
 
-     [ **クライアント設定**] では、[ **クラウド設定** ] カテゴリにより、[ **クラウド配布ポイントへのアクセスを許可する**] がサポートされます。 既定では、この設定は [ **いいえ** ] に設定されています。 ユーザーとデバイスの両方でこの設定を有効にできます。  
+-   In Azure è possibile ridimensionare manualmente il servizio cloud per soddisfare le esigenze mutevoli in termini di richieste di contenuto da parte dei client, senza la necessità di installare ed effettuare il provisioning di punti di distribuzione aggiuntivi.  
 
--   **データ転送のしきい値**: 配布ポイントに格納するデータ量のしきい値、およびクライアントが配布ポイントからダウンロードするデータ量のしきい値を構成できます。  
+-   Il punto di distribuzione basato su cloud supporta il download del contenuto da parte dei client configurati per Windows BranchCache.  
 
-     クラウドベースの配布ポイントのしきい値には、以下のものがあります。  
 
-    -   **記憶域のアラートしきい値**:記憶域のアラートしきい値では、クラウドベースの配布ポイントに格納するデータ量またはコンテンツ量の上限を設定します。 Configuration Manager は、残りの空き領域が指定のレベルに達したときに警告アラートを生成できます。  
+Un punto di distribuzione basato su cloud presenta le limitazioni seguenti:  
 
-    -   **転送のアラートしきい値**:転送のアラートしきい値を使用すると、30 日間に配布ポイントからクライアントに転送されたコンテンツの量を監視できます。 転送のアラートしきい値では、過去 30 日間のデータ転送を監視して、転送が定義された値に達すると、警告アラートと重大なアラートを生成することができます。  
+-  Se non si usa la versione 1610 con l'hotfix KB4010155, non è possibile usare un punto di distribuzione basato su cloud per ospitare i pacchetti di aggiornamento software. Questo problema viene risolto a partire dalla versione 1702 e successive.  
+
+-   Non è possibile usare un punto di distribuzione basato sul cloud per distribuzioni abilitate per PXE o per il multicast.  
+
+-   Ai client non viene offerto un punto di distribuzione basato su cloud come un percorso contenuto per una sequenza di attività che viene distribuita usando l'opzione di distribuzione **Scaricare il contenuto localmente quando necessario eseguendo la sequenza di attività**. Tuttavia, le sequenze di attività distribuite usando l'opzione di distribuzione di **Scarica tutto il contenuto localmente prima di avviare la sequenza di attività** possono usare un punto di distribuzione basato su cloud come un percorso contenuto valido.  
+
+-   Un punto di distribuzione basato su cloud non supporta pacchetti eseguiti dal punto di distribuzione. Tutto il contenuto deve essere scaricato dal client e quindi eseguito in locale.  
+
+-   Un punto di distribuzione basato su cloud non supporta lo streaming di applicazioni usando Application Virtualization o programmi simili.  
+
+-   Un punto di distribuzione basato su cloud non supporta contenuto pre-installazione. La gestione distribuzione del sito primario che gestisce il punto di distribuzione trasferisce tutto il contenuto al punto di distribuzione.  
+
+-   Il punto di distribuzione basato su cloud non può essere configurato come punto di distribuzione pull.  
+
+##  <a name="BKMK_PrereqsCloudDP"></a> Prerequisiti dei punti di distribuzione basati sul cloud  
+ Un punto di distribuzione basato su cloud richiede i seguenti prerequisiti per l'uso:  
+
+-   Una sottoscrizione di Azure (vedere [Informazioni sulle sottoscrizioni e sui certificati](#BKMK_CloudDPCerts) in questo argomento).
+
+-   Un certificato di gestione autofirmato o di infrastruttura a chiave pubblica (PKI) per la comunicazione da un server del sito primario di Configuration Manager al servizio cloud in Azure (vedere [Informazioni sulle sottoscrizioni e sui certificati](#BKMK_CloudDPCerts) in questo argomento).
+
+-   Un certificato di servizio (PKI) usato dai client di Configuration Manager per connettersi ai punti di distribuzione basati su cloud e scaricarne il relativo contenuto usando HTTPS.  
+
+-  Perché un dispositivo o un utente possa accedere al contenuto da un punto di distribuzione basato sul cloud, è necessario che l'opzione **Consentire accesso al punto di distribuzione cloud** sia impostata su **Sì** nell'impostazione client per **Servizi cloud** per tale dispositivo o utente. Per impostazione predefinita, questo valore è configurato su **No**.  
+
+-   Un client deve poter risolvere il nome del servizio cloud, che richiede un alias DNS (Domain Name System) e un record CNAME nello spazio dei nomi DNS.  
+
+-   Un client deve essere in grado di accedere a Internet per usare il punto di distribuzione basato su cloud.  
+
+##  <a name="BKMK_CloudDPCost"></a> Costo dell'uso della distribuzione basata sul cloud  
+ Quando si usa un punto di distribuzione basato sul cloud, pianificare i costi dell'archiviazione dei dati e dei download per i trasferimenti eseguiti dai client di Configuration Manager.  
+
+ Configuration Manager include opzioni per il controllo dei costi e il monitoraggio dell'accesso ai dati:  
+
+-   È possibile controllare e monitorare la quantità dei contenuti archiviati in un servizio cloud.  
+
+-   È possibile configurare Configuration Manager in modo che avvisi l'utente quando le **soglie** per i download del client raggiungono o superano i limiti mensili.  
+
+-   Inoltre, è possibile usare il peer caching (Windows BranchCache) per ridurre il numero di trasferimenti di dati dai punti di distribuzione basati sul cloud eseguiti dai client. I client di Configuration Manager configurati per BranchCache possono trasferire il contenuto usando i punti di distribuzione basati sul cloud.  
+
+
+**Opzioni:**  
+
+-   **Impostazioni client per il cloud**: è possibile controllare l'accesso a tutti i punti di distribuzione basati sul cloud in una gerarchia usando **Impostazioni client**.  
+
+     In **Impostazioni client**la categoria **Impostazioni cloud** supporta l'impostazione **Consentire accesso al punto di distribuzione cloud**. Per impostazione predefinita, questa impostazione è impostata su **No**. È possibile abilitare questa impostazione per utenti e dispositivi.  
+
+-   **Soglie per i trasferimenti di dati**: è possibile specificare le soglie per la quantità di dati da archiviare nel punto di distribuzione e per la quantità di dati che i client possono scaricare dal punto di distribuzione.  
+
+     Le soglie per i punti di distribuzione basati sul cloud includono le seguenti caratteristiche:  
+
+    -   **Soglia di avviso di archiviazione**: Una soglia di avviso di archiviazione imposta un limite massimo per la quantità di dati o contenuto da archiviare nel punto di distribuzione basato sul cloud. Configuration Manager può generare un avviso quando lo spazio libero rimanente raggiunge il livello specificato.  
+
+    -   **Soglia di avviso di trasferimento**: Una soglia di avviso di trasferimento consente di monitorare la quantità di contenuto trasferita dal punto di distribuzione ai client per un periodo di 30 giorni. La soglia di avviso di trasferimento monitora il trasferimento dei dati per i 30 giorni precedenti e può generare un avviso e un avviso critico quando i trasferimenti raggiungono i valori definiti dall'utente.  
 
         > [!IMPORTANT]  
-        >  Configuration Manager は、データ転送を監視しますが、指定の転送のアラートしきい値を超えるデータ転送は停止しません。  
+        >  Configuration Manager monitora il trasferimento dei dati, ma non lo interrompe quando viene superata la soglia di avviso di trasferimento specificata.  
 
- 配布ポイントのインストール時にクラウドベースの各配布ポイントにしきい値を指定できます。または、配布ポイントのインストール後にクラウドベースの各配布ポイントのプロパティを編集することもできます。  
+ È possibile specificare delle soglie per ogni punto di distribuzione basato sul cloud durante l'installazione del punto di distribuzione oppure è possibile modificare le proprietà di ogni punto di distribuzione basato sul cloud dopo l'installazione.  
 
--   **アラート**: 指定したデータ転送のしきい値に基づいてクラウドベースの各配布ポイントとの間のデータ転送に関してアラートを生成するように Configuration Manager を構成できます。 これらのアラートを使用してデータ転送を監視し、クラウド サービスを停止するタイミングを判断したり、配布ポイントに格納するコンテンツを調整したり、クラウドベースの配布ポイントを使用できるクライアントを変更したりできます。  
+-   **Avvisi**: è possibile configurare Configuration Manager in modo che generi avvisi sul trasferimento dei dati da e verso ogni punto di distribuzione basato sul cloud, a seconda delle soglie di trasferimento dei dati specificate. Questi avvisi consentono di monitorare i trasferimenti dei dati e di decidere quando arrestare il servizio cloud, modificare il contenuto archiviato nel punto di distribuzione o modificare i client che possono usare i punti di distribuzione basati sul cloud.  
 
-     クラウドベースの配布ポイントを監視するプライマリ サイトは 1 時間ごとに Azure からトランザクション データをダウンロードし、それをサイト サーバーの CloudDP-&lt;ServiceName\>.log に保存します。 Configuration Manager はこの情報をストレージと比較して評価し、各クラウド ベースの配布ポイントにクォータを転送します。 警告アラートまたは重大なアラートに指定されている量にデータ転送が達した場合または超えた場合、Configuration Manager が該当するアラートを生成します。  
+     In un ciclo orario, il sito primario che monitora il punto di distribuzione basato sul cloud scarica i dati di transazione da Azure e li archivia in CloudDP-&lt;NomeServizio\>.log nel server del sito. Configuration Manager valuta quindi queste informazioni in rapporto alle quote di trasferimento e archiviazione per ogni punto di distribuzione basato sul cloud. Quando il trasferimento dei dati raggiunge o supera il volume specificato per gli avvisi o gli avvisi critici, Configuration Manager genera l'avviso appropriato.  
 
     > [!WARNING]  
-    >  データ転送の情報は Azure から 1 時間ごとにダウンロードされるため、Configuration Manager がデータにアクセスしてアラートを生成する前に、データ使用量が警告または重大のしきい値を超える場合があります。  
+    >  Dato che le informazioni sui trasferimenti dei dati vengono scaricate da Azure ogni ora, l'utilizzo di quei dati potrebbe superare una soglia di avviso o critica prima che Configuration Manager possa accedere ai dati e generare un avviso.  
 
     > [!NOTE]  
-    >  クラウドベースの配布ポイントのアラートは、Azure からの使用量の統計情報によって異なります。また、アラートが利用できるようになるまでに、最大 24 時間かかる場合があります。 Azure で使用量の統計情報が更新される頻度を含め、Azure の記憶域の分析の詳細については、MSDN ライブラリの「[Storage Analytics](http://go.microsoft.com/fwlink/p/?LinkID=275111)」を参照してください。  
+    >  Gli avvisi per un punto di distribuzione basato sul cloud dipendono dalle statistiche di utilizzo di Azure, che possono richiedere fino a 24 ore per diventare disponibili. Per informazioni su Storage Analytics per Azure, incluse informazioni sulla frequenza con cui Azure aggiorna le statistiche di utilizzo, vedere [Storage Analytics](http://go.microsoft.com/fwlink/p/?LinkID=275111) in MSDN Library.  
 
 
--   **「Stop or start the cloud service on demand」 (クラウド サービスをオンデマンドで停止または開始する)**: クライアントがサービスを連続して使用するのを防ぐために、このオプションを使用して、クラウド サービスをいつでも停止できます。 クラウド サービスを停止するとすぐに、クライアントでは、サービスから追加のコンテンツをダウンロードできなくなります。 また、クラウド サービスを再開して、クライアントのアクセスを復元できます。 たとえば、データがしきい値に達したら、クラウド サービスを停止できます。  
+-   **Arrestare o avviare il servizio cloud su richiesta**: è possibile usare l'opzione per arrestare un servizio cloud in qualsiasi momento per impedire ai client di usare il servizio in modo continuo. Quando si arresta il servizio cloud, viene immediatamente impedito ai client di scaricare contenuto aggiuntivo dal servizio. È inoltre possibile riavviare il servizio cloud per ripristinare l'accesso per i client. È ad esempio possibile arrestare un servizio cloud quando vengono raggiunte le soglie dei dati.  
 
-     クラウド サービスを停止しても、クラウド サービスでは、配布ポイントのコンテンツは削除されません。また、サイト サーバーからクラウドベースの配布ポイントに追加のコンテンツが転送できなくなることはありません。  
+     Quando si arresta un servizio cloud, tale servizio non elimina il contenuto dal punto di distribuzione e non impedisce al server del sito di trasferire contenuto aggiuntivo nel punto di distribuzione basato sul cloud.  
 
-     クラウド サービスを停止するには、Configuration Manager コンソールの [**管理**] ワークスペースにある [**Cloud Services**] の [**クラウド配布ポイント**] ノードで、配布ポイントを選択します。 次に、[**サービスの停止**] をクリックして、Azure で実行されているクラウド サービスを停止します。  
+     Per arrestare un servizio cloud, nella console di Configuration Manager selezionare il punto di distribuzione nel nodo **Punti di distribuzione del cloud** in **Servizi cloud** nell'area di lavoro **Amministrazione** . Scegliere quindi **Arresta servizio** per arrestare il servizio cloud eseguito in Azure.  
 
-##  <a name="BKMK_CloudDPCerts"></a> クラウドベースの配布ポイントのサブスクリプションと証明書について  
- クラウドベースの配布ポイントで、Configuration Manager による配布ポイントをホストするクラウド サービスの管理を有効にし、クライアントが配布ポイントのコンテンツにアクセスできるようにするには、証明書が必要です。 これらの証明書の概要を次に示します。 詳細については、「[System Center Configuration Manager での PKI 証明書の要件](../../../core/plan-design/network/pki-certificate-requirements.md)」をご覧ください。  
+##  <a name="BKMK_CloudDPCerts"></a> Informazioni sulle sottoscrizioni e sui certificati per i punti di distribuzione basati sul cloud  
+ I punti di distribuzione basati sul cloud richiedono dei certificati per abilitare Configuration Manager per la gestione del servizio cloud che ospita il punto di distribuzione e per l'accesso al contenuto dal punto di distribuzione da parte dei client. Di seguito sono riportate informazioni generali su questi certificati. Per maggiori dettagli, vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
 
- **証明書**  
+ **Certificati**  
 
--   **サイト サーバーから配布ポイントへの通信用の管理証明書**: この管理証明書は、Azure 管理 API と Configuration Manager の間の信頼を確立します。 これは、コンテンツの展開、クラウド サービスの開始と停止などを行うときに、Configuration Manager から Azure API を呼び出すための認証です。 Azure では、利用者が自分の管理証明書を作成できます。この証明書は、自己署名証明書か、証明機関 (CA) によって発行される証明書のいずれかです。  
+-   **Certificato di gestione per la comunicazione tra il server del sito e il punto di distribuzione**: il certificato di gestione stabilisce relazioni di trust tra l'API di gestione di Azure e Configuration Manager. Questa autenticazione consente a Configuration Manager di chiamare l'API di Azure quando si eseguono attività quali la distribuzione del contenuto o l'avvio e l'arresto del servizio cloud. Azure consente di creare propri certificati di gestione, nella forma di un certificato autofirmato o di certificati rilasciati da un'autorità di certificazione (CA):  
 
-    -   Configuration Manager で Azure を構成するときに、管理証明書の .cer ファイルを Azure に送信します。 .cer ファイルは、管理証明書の秘密キーが含まれているファイルです。 クラウドベースの配布ポイントをインストールする前に、この証明書を Azure にアップロードする必要があります。 この証明書によって、Configuration Manager は Azure API にアクセスできるようになります。  
+    -   Fornire ad Azure il file con estensione cer del certificato di gestione quando si configura Azure per Configuration Manager. Il file .cer contiene la chiave pubblica per il certificato di gestione. Prima di installare un punto di distribuzione basato sul cloud, è necessario caricare questo certificato in Azure. Questo certificato consente a Configuration Manager di accedere all'API di Azure.  
 
-    -   クラウドベースの配布ポイントをインストールするときに、管理証明書の .pfx ファイルを Configuration Manager に送信します。 .pfx ファイルには管理証明書の公開キーが含まれています。 Configuration Manager はサイト データベースにこの証明書を格納します。 .pfx ファイルに秘密キーが含まれるため、その証明書を Configuration Manager データベースにインポートするためにパスワードを指定する必要があります。  
+    -   Trasmettere il file .pfx del certificato di gestione a Configuration Manager quando si installa il punto di distribuzione basato sul cloud. Il file .pfx contiene la chiave privata per il certificato di gestione. Configuration Manager archivia questo certificato nel database del sito. Dal momento che il file .pfx contiene la chiave privata, è necessario immettere la password per importare questo file del certificato nel database di Configuration Manager.  
 
-    自己署名証明書を作成する場合、まず .cer ファイルとして証明書をエクスポートしてから、それを .pfx ファイルとして改めてエクスポートする必要があります。  
+    Se si crea un certificato autofirmato, è necessario prima di tutto esportare il certificato come file CER e quindi esportarlo nuovamente come file PFX.  
 
-    必要に応じて、Azure SDK 1.7 のバージョン 1 の **.publishsettings** ファイルを指定できます。 .publishsettings ファイルの詳細については、Azure のドキュメントをご覧ください。  
+    Facoltativamente, è possibile specificare un file con estensione **publishsettings** versione 1 di Azure SDK 1.7. Per informazioni sui file con estensione publishsettings, vedere la documentazione di Azure.  
 
-    詳細については、MSDN ライブラリの Azure プラットフォーム セクションにある[管理証明書の作成方法](http://go.microsoft.com/fwlink/p/?LinkId=220281)に関する記事と [Azure サブスクリプションへの管理証明書の追加方法](http://go.microsoft.com/fwlink/p/?LinkId=241722)に関する記事をご覧ください。  
+    Per altre informazioni, vedere [Come creare un certificato di gestione](http://go.microsoft.com/fwlink/p/?LinkId=220281) e [Come aggiungere un certificato di gestione a una sottoscrizione di Azure](http://go.microsoft.com/fwlink/p/?LinkId=241722) nella sezione dedicata alla piattaforma Azure in MSDN Library.  
 
--   **クライアントから配布ポイントへの通信用のサービス証明書**: Configuration Manager のクラウドベースの配布ポイント サービス証明書は、Configuration Manager クライアントとクラウドベースの配布ポイントの間の信頼を確立し、クライアントが配布ポイントからダウンロードするデータを HTTPS を使用して Secure Socket Layer (SSL) で保護します。  
+-   **Certificato di servizio per la comunicazione tra client e punto di distribuzione**: il certificato di servizio del punto di distribuzione basato sul cloud di Configuration Manager stabilisce relazioni di trust tra i client di Configuration Manager e il punto di distribuzione basato sul cloud e protegge i dati che i client scaricano da quest'ultimo usando Secure Socket Layer (SSL) su HTTPS.  
 
     > [!IMPORTANT]  
-    >  サービス証明書のサブジェクトの共通名は、ドメイン内で固有でなければなりません。ドメインに参加しているデバイスと同じ名前にすることはできません。  
+    >  Il nome comune nella casella Soggetto certificato del certificato di servizio deve essere univoco nel dominio e non deve corrispondere ad alcun dispositivo appartenente a un dominio.  
 
-   この証明書の展開の例については、「[System Center Configuration Manager PKI 証明書の展開手順の例: Windows Server 2008 証明機関](/sccm/core/plan-design/network/example-deployment-of-pki-certificates)」トピックの「**クラウドベースの配布ポイント用のサービス証明書の展開**」セクションをご覧ください。  
+   Per un esempio di distribuzione di questo certificato, vedere la sezione **Distribuzione del certificato di servizio per i punti di distribuzione basati sul cloud** nell'argomento [Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
-##  <a name="bkmk_Tasks"></a> クラウドベースの配布ポイントの一般的な管理タスク  
+##  <a name="bkmk_Tasks"></a> Attività di gestione comuni per i punti di distribuzione basati sul cloud  
 
--   **サイト サーバーからクラウドベースの配布ポイントへの通信**: クラウドベースの配布ポイントをインストールする場合は、クラウド サービスへのコンテンツの転送を管理する 1 つのプライマリ サイトを割り当てる必要があります。 これは、配布ポイント サイト システムの役割を特定のサイトにインストールする場合と同じです。  
+-   **Comunicazione tra il server del sito e il punto di distribuzione basato sul cloud**: quando si installa un punto di distribuzione basato sul cloud, è necessario assegnare un sito primario per gestire il trasferimento del contenuto al servizio cloud. Ciò equivale a installare il ruolo del sistema del sito del punto di distribuzione in un sito specifico.  
 
--   **クライアントからクラウドベースの配布ポイントへの通信**: デバイスまたはデバイスのユーザーのクライアント設定でクラウドベースの配布ポイントを有効にすると、そのデバイスはクラウドベースの配布ポイントを有効なコンテンツの場所として受信できます。  
+-   **Comunicazione tra il client e il punto di distribuzione basato sul cloud**: quando un dispositivo o un utente di un dispositivo viene configurato con l'impostazione client che consente l'utilizzo di un punto di distribuzione basato sul cloud, il dispositivo può ricevere tale punto di distribuzione come percorso del contenuto valido:  
 
-    -   クライアントが使用できるコンテンツの場所を評価するときに、クラウドベースの配布ポイントはリモート配布ポイントと見なされます。  
+    -   Il punto di distribuzione basato sul cloud viene considerato come un punto di distribuzione remoto quando un client valuta i percorsi del contenuto disponibili.  
 
-    -   社内の配布ポイントを使用できない場合、イントラネットのクライアントのみがフォールバックとしてクラウドベースの配布ポイントを使用します。  
+    -   I client nella intranet usano i punti di distribuzione basati su cloud solo come un'opzione di fallback se non sono disponibili punti di distribuzione locali.  
 
-    クラウドベースの配布ポイントを Azure の特定の領域にインストールしても、クラウドベースの配布ポイントを使用するクライアントは、Azure に領域があることを認識しないので、クラウドベースの配布ポイントを無作為に選択します。
+    Anche se si installano punti di distribuzione basati su cloud in specifiche aree di Azure, i client che usano i punti di distribuzione basati sul cloud non sono a conoscenza delle aree di Azure e selezionano in modo non deterministico un punto di distribuzione basato sul cloud.
 
-したがって、クラウドベースの配布ポイントを複数の領域にインストールし、クライアントがコンテンツのある場所として複数のクラウドベースの配布ポイントを受け取った場合は、クライアントが自分と同じ Azure 領域にあるクラウドベースの配布ポイントを使うとは限りません。  
+Ciò significa che se si installano punti di distribuzione basati sul cloud in più aree e un client riceve più punti di distribuzione basati sul cloud come percorsi del contenuto, il client potrebbe non usare un punto di distribuzione basato sul cloud della stessa area di Azure del client.  
 
-クラウドベースの配布ポイントを使用できるクライアントは、コンテンツの場所の要求で、次のシーケンスを使用します。  
+I client che usano i punti di distribuzione basati sul cloud usano la sequenza seguente per le richieste di percorso del contenuto:  
 
-1.  クラウドベースの配布ポイントを使用するように構成されているクライアントは、まず、優先配布ポイントからコンテンツを取得しようとします。  
+1.  Un client configurato per l'utilizzo di punti di distribuzione basati su cloud tenta sempre prima di ottenere il contenuto da un punto di distribuzione preferito.  
 
-2.  優先配布ポイントを使用できない場合は、クライアントはリモート配布ポイントを使用します (リモート配布ポイントが使用可能で、その使用が許可されている場合)。  
+2.  In assenza di un punto di distribuzione preferito, il client usa un punto di distribuzione remoto eventualmente disponibile se la distribuzione supporta questa opzione.  
 
-3.  優先配布ポイントまたはリモート配布ポイントを使用できない場合、クライアントは代わりにクラウドベースの配布ポイントのコンテンツを取得できます。  
+3.  In assenza di un punto di distribuzione preferito o remoto disponibile, il client può cercare di ottenere il contenuto da un punto di distribuzione basato su cloud.  
 
 
 
-  クライアントがコンテンツの場所としてクラウドベースの配布ポイントを使用する場合、クライアントは、Configuration Manager アクセス トークンを使用してクラウドベースの配布ポイントに対して自身を認証します。 クライアントが Configuration Manager クラウドベースの配布ポイント証明書を信頼している場合、クライアントは要求されたコンテンツをダウンロードできます。  
+  Quando un client usa un punto di distribuzione basato su cloud come un percorso del contenuto, si autentica a tale punto di distribuzione usando un token di accesso di Configuration Manager. Se il client considera attendibile il certificato del punto di distribuzione basato su cloud di Configuration Manager, può scaricare il contenuto richiesto.  
 
--   **クラウドベースの配布ポイントの監視**: クラウドベースの各配布ポイントに展開するコンテンツを監視できます。配布ポイントをホストしているクラウド サービスを監視できます。  
+-   **Monitorare i punti di distribuzione basati sul cloud**: è possibile monitorare il contenuto distribuito a ciascun punto di distribuzione basato sul cloud e il servizio cloud che ospita il punto di distribuzione.  
 
-    -   **コンテンツ**: クラウドベースの配布ポイントに展開するコンテンツは、オンプレミスの配布ポイントに展開するコンテンツと同じ方法で監視します。  
+    -   **Contenuto**: è possibile monitorare il contenuto distribuito in un punto di distribuzione basato sul cloud nello stesso modo con cui si distribuisce il contenuto nei punti di distribuzione locali.  
 
-    -   **クラウド サービス**: Configuration Manager は Azure サービスを定期的にチェックし、サービスがアクティブでない場合やサブスクリプションや証明書に関する問題がある場合に、アラートを生成します。 また、Configuration Manager コンソールの [**管理**] ワークスペースでは、[**クラウド サービス**] の [**クラウド配布ポイント**] ノードで、配布ポイントの詳細を表示することもできます。 この場所から、配布ポイントに関する概要を表示したり、 配布ポイントを選択してそのプロパティを編集したりできます。  
+    -   **Servizio cloud**: Configuration Manager controlla periodicamente il servizio di Azure e genera un avviso se il servizio non è attivo o se vengono rilevati problemi relativi alla sottoscrizione o al certificato. È anche possibile visualizzare i dettagli sul punto di distribuzione nel nodo **Punti di distribuzione del cloud** in **Servizi cloud** nell'area di lavoro **Amministrazione** della console di Configuration Manager. Da questa posizione è possibile visualizzare informazioni di livello generale sul punto di distribuzione. Si può anche selezionare un punto di distribuzione e quindi modificarne le proprietà.  
 
-    クラウド ベースの配布ポイントのプロパティを編集するときに、次のことができます。  
+    Quando si modificano le proprietà di un punto di distribuzione basato sul cloud, è possibile:  
 
-    -   ストレージとアラートのデータしきい値を調整できます。  
+    -   Adattare le soglie dei dati per l'archiviazione e gli avvisi.  
 
-    -   オンプレミスの配布ポイントで行っているように、コンテンツを管理することができます。  
+    -   Gestire il contenuto come per un punto di distribuzione locale.  
 
-    さらに、クラウドベースの配布ポイントごとに、クラウドベースの配布ポイントをインストールするときに指定するサブスクリプション ID、サービス名、およびその他の関連情報を表示することもできます (ただし、編集することはできません)。  
+    Per ogni punto di distribuzione basato sul cloud, è infine possibile visualizzare, ma non modificare, l'ID sottoscrizione, il nome servizio e altri dettagli correlati specificati durante l'installazione della distribuzione basata su cloud.  
 
--   **クラウドベースの配布ポイントのバックアップと回復**: 階層内のクラウドベースの配布ポイントを使用する場合は、次の情報を使用して、配布ポイントのバックアップまたは回復を計画します。  
+-   **Eseguire backup e ripristino dei punti di distribuzione basati sul cloud**: quando si usa un punto di distribuzione basato sul cloud nella gerarchia, usare le informazioni seguenti per pianificare il backup o il ripristino del punto di distribuzione:  
 
-    -   定義済みの [**サイト サーバーのバックアップ**] メンテナンス タスクを使用すると、Configuration Manager によって自動的にクラウド ベースの配布ポイントの構成が組み込まれます。  
+    -   Quando si usa l'attività di manutenzione predefinita **Backup server sito**, Configuration Manager include automaticamente le configurazione per il punto di distribuzione basato sul cloud.  
 
-    -   ベスト プラクティスとして、クラウドベースの配布ポイントで使用する管理証明書とサービス証明書の両方のコピーをバックアップおよび保存することをお勧めします。 クラウドベースの配布ポイントを管理している Configuration Manager プライマリ サイトを別のコンピューターに復元する場合に、証明書を引き続き使用するためには、証明書を再インポートする必要があります。  
+    -   È consigliabile eseguire il backup e salvare una copia sia del certificato di gestione che del certificato di servizio in uso con un punto di distribuzione basato sul cloud. Se il sito primario di Configuration Manager che gestisce il punto di distribuzione basato sul cloud viene ripristinato in un computer diverso, è necessario importare nuovamente i certificati prima di continuare a usarli.  
 
--   **クラウドベースの配布ポイントのアンインストール**: クラウドベースの配布ポイントをアンインストールするには、Configuration Manager コンソールで配布ポイントを選び、[**削除**] を選びます。  
+-   **Disinstallare un punto di distribuzione basato sul cloud**: per eseguire la disinstallazione, selezionare il punto di distribuzione nella console di Configuration Manager e quindi scegliere **Elimina**.  
 
-    階層からクラウドベースの配布ポイントを削除すると、Configuration Manager によって Azure のクラウド サービスからコンテンツが削除されます。  
+    Quando un punto di distribuzione basato sul cloud viene eliminato da una gerarchia, Configuration Manager rimuove il contenuto dal servizio cloud in Azure.  

@@ -1,6 +1,6 @@
 ---
-title: "デバイスの登録 | Microsoft Docs"
-description: "System Center Configuration Manager でのオンプレミス モバイル デバイス管理の対象となるデバイスを登録する方法について説明します。"
+title: Registrare i dispositivi | Microsoft Docs
+description: Informazioni sui metodi per registrare i dispositivi per la gestione di dispositivi mobili locale in System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -17,25 +17,25 @@ manager: angrobe
 ms.openlocfilehash: 4abaef35969ef1a5340ae8ca8aa5699cd3942642
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="enroll-devices-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>System Center Configuration Manager でのオンプレミス モバイル デバイス管理の対象となるデバイスの登録
+# <a name="enroll-devices-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Registrare i dispositivi per la gestione di dispositivi mobili locale in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager のオンプレミス モバイル デバイス管理を使用してコンピューターとデバイスを管理するには、Configuration Manager がデバイスと通信して管理タスクを実行できるように、デバイスを登録する必要があります。 Configuration Manager には、デバイスを登録する 2 つの方法があります。  
+Per gestire i computer e i dispositivi con la gestione di dispositivi mobili locale di System Center Configuration Manager, è necessario registrare i dispositivi in modo che Configuration Manager possa comunicare con i dispositivi ed eseguire le attività di gestione. Configuration Manager offre due metodi per la registrazione dei dispositivi:  
 
--   **ユーザー登録** - この方法では、ユーザーが自分のデバイスで登録プロセスを開始します。 ユーザー登録を正常に行うには、信頼されたルート証明書がデバイスにインストールされている必要があります。また、ユーザーは登録のために Configuration Manager によってプロビジョニングされている必要があります。  デバイスを登録するために、ユーザーは作業の資格情報を提供するだけで、そのデバイスは管理の対象として登録されます。  
+-   **Registrazione utente** : in questo metodo gli utenti avviano il processo di registrazione nei propri dispositivi. Per la corretta esecuzione della registrazione utente è necessario che nel dispositivo sia installato un certificato radice trusted e che sia stato effettuato il provisioning dell'utente per la registrazione da Configuration Manager.  Per registrare un dispositivo, l'utente fornisce semplicemente le credenziali di lavoro e il dispositivo viene registrato per la gestione.  
 
-     詳細については、「[System Center Configuration Manager でのオンプレミス モバイル デバイス管理の対象となるデバイスをユーザーが登録する方法](../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md)」をご覧ください。  
+     Per altre informazioni, vedere [How users enroll devices with On-premises Mobile Device Management in System Center Configuration Manager](../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md) (Come eseguire la registrazione utente dei dispositivi con la gestione di dispositivi mobili locale in System Center Configuration Manager)  
 
--   **一括登録** - この方法では、デバイスのユーザーが登録を開始する必要はありません。 代わりに、Configuration Manager で一括登録パッケージが作成され、デバイス上に配置され、開かれます。 パッケージが開かれると、デバイスを登録するために必要な情報が提供されます。  
+-   **Registrazione in blocco** : in questo metodo l'utente del dispositivo non deve avviare la registrazione. Viene invece creato un pacchetto di registrazione in blocco in Configuration Manager che viene immesso nel dispositivo e aperto. All'apertura il pacchetto fornisce le informazioni necessarie per registrare il dispositivo.  
 
-     詳細については、「[System Center Configuration Manager オンプレミス モバイル デバイス管理を使ったデバイスの一括登録の方法](../../mdm/deploy-use/bulk-enroll-devices-on-premises-mdm.md)」をご覧ください。  
+     Per altre informazioni, vedere [How to bulk-enroll devices with On-premises Mobile Device Management in System Center Configuration Manager](../../mdm/deploy-use/bulk-enroll-devices-on-premises-mdm.md) (Come eseguire la registrazione in blocco dei dispositivi con la gestione di dispositivi mobili locale in System Center Configuration Manager)  
 
  > [!NOTE]  
->  Configuration Manager の現在のブランチでは、次のオペレーティング システムを実行しているデバイスをオンプレミス モバイル デバイス管理で登録することができます。  
+>  Il Current Branch di Configuration Manager supporta la registrazione nella gestione dispositivi mobili locale per i dispositivi che eseguono i sistemi operativi seguenti:  
 >   
 >  -   Windows 10 Enterprise  
 > -   Windows 10 Pro  

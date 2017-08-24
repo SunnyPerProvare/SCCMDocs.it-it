@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager の VPN プロファイル | Microsoft Docs"
-description: "System Center Configuration Manager の VPN プロファイルを使用して、VPN 設定を組織内のユーザーに展開する方法について説明します。"
+title: Profili VPN in System Center Configuration Manager | Microsoft Docs
+description: Di seguito viene illustrato come usare i profili VPN in System Center Configuration Manager per distribuire impostazioni VPN agli utenti dell'organizzazione.
 ms.custom: na
 ms.date: 11/27/2016
 ms.prod: configuration-manager
@@ -18,43 +18,43 @@ manager: angrobe
 ms.openlocfilehash: e07a80c1a59043b74cda7219f78c5fef66989ba8
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="vpn-profiles-in-system-center-configuration-manager"></a>System Center Configuration Manager の VPN プロファイル
+# <a name="vpn-profiles-in-system-center-configuration-manager"></a>Profili VPN in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-System Center Configuration Manager (ConfigMgr または SCCM とも呼ばれます) の VPN プロファイルを使用して、VPN 設定を組織内のユーザーに展開します。 これらの設定を展開して、企業ネットワーク上のリソースに接続するために必要なエンド ユーザーの作業を最小化します。  
+Usare i profili VPN in System Center Configuration Manager (noto anche come ConfigMgr o SCCM) per distribuire impostazioni VPN agli utenti dell'organizzazione. La distribuzione di queste impostazioni consente di ridurre al minimo le operazioni che l'utente finale deve eseguire per connettersi alle risorse nella rete aziendale.  
 
- たとえば、Windows RT オペレーティング システムを実行するすべてのデバイスに対して、企業ネットワーク上のファイル共有に接続するために必要な設定をプロビジョニングするとします。 企業ネットワークに接続するために必要な設定が含まれている VPN プロファイルを作成した後、階層内で Windows RT を実行するデバイスを持つすべてのユーザーにこのプロファイルを展開することができます。 Windows RT デバイスのユーザーには利用可能なネットワークの一覧で VPN 接続が表示されるため、最小限の作業でこのネットワークに接続できます。  
+ Si supponga, ad esempio, di voler effettuare il provisioning, per tutti i dispositivi che eseguono il sistema operativo Windows RT, delle impostazioni necessarie per connettersi a una condivisione file nella rete aziendale. È possibile creare un profilo VPN contenente le impostazioni necessarie per connettersi alla rete aziendale e quindi distribuire questo profilo a tutti gli utenti della gerarchia che hanno dispositivi Windows RT. Gli utenti dei dispositivi Windows RT visualizzano la connessione VPN nell'elenco delle reti disponibili e possono connettersi facilmente alla rete.  
 
- VPN プロファイルを作成するときに、System Center Configuration Manager 証明書プロファイルを使用してプロビジョニングされた、サーバー検証用の証明書、クライアント認証用の証明書などの幅広いセキュリティ設定を含めることができます。 証明書プロファイルの詳細については、「[System Center Configuration Manager の証明書プロファイル](introduction-to-certificate-profiles.md)」を参照してください。  
+ Quando si crea un profilo VPN, è possibile includere un'ampia gamma di impostazioni di protezione, inclusi i certificati per la convalida server e l'autenticazione client per i quali è stato eseguito il provisioning usando profili certificato in Configuration Manager. Per altre informazioni sui profili certificato, vedere [Profili certificato in System Center Configuration Manager](introduction-to-certificate-profiles.md).  
 
- 以下のセクションでは、Configuration Manager を使用している場合に、VPN プロファイルを使用して構成できるデバイスについて説明します。
+ Le sezioni seguenti spiegano quali dispositivi è possibile configurare con profili VPN se si usa Configuration Manager.
 
- [モバイル デバイスの VPN プロファイル](/sccm/mdm/deploy-use/create-vpn-profiles)に関する記事を参照して、Microsoft Intune で Configuration Manager を使用する場合に構成できるデバイスを確認してください。  
+ Per controllare quali dispositivi è possibile configurare quando si usa Configuration Manager con Microsoft Intune, vedere [Profili VPN nei dispositivi mobili](/sccm/mdm/deploy-use/create-vpn-profiles).  
 
-## <a name="vpn-profiles-when-using-configuration-manager"></a>Configuration Manager を使用する場合の VPN プロファイル  
- 次の表では、さまざまなデバイス プラットフォームに対して構成できる VPN プロファイルについて説明します。  
+## <a name="vpn-profiles-when-using-configuration-manager"></a>Profili VPN usando Configuration Manager  
+ Nella tabella seguente vengono descritti i profili VPN che possono essere configurati per diverse piattaforme per dispositivi.  
 
-|接続の種類|Windows 8.1|Windows RT|Windows RT 8.1|Windows 10|  
+|Tipo di connessione|Windows 8.1|Windows RT|Windows RT 8.1|Windows 10|  
 |---------------------|-----------------|----------------|--------------------|----------------|  
-|**Cisco AnyConnect**|いいえ|いいえ|いいえ|×|  
-|**Pulse Secure**|○|×|[はい]|○|  
-|**F5 Edge Client**|○|×|[はい]|○|  
-|**Dell SonicWALL Mobile Connect**|○|×|[はい]|○|  
-|**チェック ポイント モバイル VPN**|○|×|[はい]|○|  
-|**Microsoft SSL (SSTP)**|○|[はい]|○|×|  
-|**Microsoft 自動**|○|[はい]|○|×|  
-|**IKEv2**|○|[はい]|○|いいえ|  
-|**PPTP**|○|[はい]|○|いいえ|  
-|**L2TP**|○|[はい]|○|いいえ|  
+|**Cisco AnyConnect**|No|No|No|No|  
+|**Pulse Secure**|Sì|No|Yes|Sì|  
+|**F5 Edge Client**|Sì|No|Yes|Sì|  
+|**Dell SonicWALL Mobile Connect**|Sì|No|Yes|Sì|  
+|**Check Point Mobile VPN**|Sì|No|Yes|Sì|  
+|**Microsoft SSL (SSTP)**|Sì|Sì|Sì|No|  
+|**Microsoft Automatico**|Sì|Sì|Sì|No|  
+|**IKEv2**|Sì|Sì|Sì|No|  
+|**PPTP**|Sì|Sì|Sì|No|  
+|**L2TP**|Sì|Sì|Sì|No|  
 
-### <a name="next-steps"></a>次のステップ  
- Configuration Managerで VPN プロファイルの計画、構成、操作、およびメンテナンスを行うときに、次のトピックを参考にしてください。  
+### <a name="next-steps"></a>Passaggi successivi  
+ Usare gli argomenti seguenti per pianificare, configurare, far funzionare e gestire i profili VPN in Configuration Manager.  
 
--   [System Center Configuration Manager の VPN プロファイルの前提条件](../plan-design/prerequisites-for-wifi-vpn-profiles.md)  
+-   [Prerequisiti per i profili VPN in System Center Configuration Manager](../plan-design/prerequisites-for-wifi-vpn-profiles.md)  
 
--   [System Center Configuration Manager の VPN プロファイルのセキュリティとプライバシー](../plan-design/security-and-privacy-for-wifi-vpn-profiles.md)
+-   [Sicurezza e privacy per i profili VPN in System Center Configuration Manager](../plan-design/security-and-privacy-for-wifi-vpn-profiles.md)

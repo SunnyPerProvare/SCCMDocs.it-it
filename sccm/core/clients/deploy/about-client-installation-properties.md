@@ -1,6 +1,6 @@
 ---
-title: "クライアントのインストール プロパティ | Microsoft Docs"
-description: "System Center Configuration Manager のクライアント インストール プロパティについて説明します。"
+title: "Proprietà di installazione del client | Microsoft Docs"
+description: "Informazioni sulle proprietà di installazione del client in System Center Configuration Manager."
 ms.custom: na
 ms.date: 01/04/2017
 ms.prod: configuration-manager
@@ -17,134 +17,134 @@ manager: angrobe
 ms.openlocfilehash: 36bcbbca4fdee3e95d293c436a105a41a6e3953e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="about-client-installation-properties-in-system-center-configuration-manager"></a>System Center Configuration Manager のクライアント インストール プロパティについて
+# <a name="about-client-installation-properties-in-system-center-configuration-manager"></a>Informazioni sulle proprietà di installazione del client in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager CCMSetup.exe コマンドを使用して、Configuration Manager クライアントを手動でインストールします。  
+Usare il comando CCMSetup.exe di System Center Configuration Manager per installare manualmente il client di Configuration Manager.  
 
-##  <a name="aboutCCMSetup"></a> CCMSetup.exe について  
- CCMSetup.exe コマンドは、クライアントのインストールに必要なファイルを管理ポイントまたはソースの場所からダウンロードします。 次のようなファイルが含まれます。  
+##  <a name="aboutCCMSetup"></a> Informazioni su CCMSetup.exe  
+ Il comando CCMSetup.exe consente di scaricare i file necessari per installare il client da un punto di gestione o da un percorso di origine. Questi file possono includere:  
 
--   クライアント ソフトウェアをインストールする Windows インストーラー パッケージ Client.msi。  
+-   Il pacchetto Client.msi di Windows Installer che consente di installare il software client.  
 
--   Microsoft バックグラウンド インテリジェント転送サービス (BITS) インストール ファイル。  
+-   I file di installazione del Servizio trasferimento intelligente in background (BITS) di Microsoft.  
 
--   Windows インストーラー インストール ファイル。  
+-   I file installazione di Windows Installer.  
 
--   Configuration Manager クライアントの更新プログラムまたは修正プログラム。  
+-   Aggiornamenti e correzioni per il client di Configuration Manager.  
 
 > [!NOTE]  
->  Configuration Manager では、Client.msi ファイルを直接実行することはできません。  
+>  Non è possibile eseguire il file Client.msi direttamente in Configuration Manager.  
 
- CCMSetup.exe には、インストールをカスタマイズするための[コマンド ライン プロパティ](#ccmsetup-exe-command-line-properties)が用意されています。 CCMSetup.exe コマンド ラインで Client.msi の動作を変更するプロパティを指定することもできます。  
+ CCMSetup.exe fornisce [proprietà della riga di comando](#ccmsetup-exe-command-line-properties) per la personalizzazione dell'installazione. È inoltre possibile specificare proprietà per la modifica del comportamento di Client.msi nella riga di comando CCMSetup.exe.  
 
 > [!IMPORTANT]  
->  Client.msi のプロパティを指定する前に、CCMSetup のプロパティを指定します。  
+>  Prima di specificare le proprietà per Client.msi, specificare le proprietà di CCMSetup.  
 
- CCMSetup.exe およびそのサポート ファイルは、Configuration Manager サイト サーバーの Configuration Manager インストール フォルダーの **[クライアント]** フォルダーにあります。 このフォルダーは **&lt;サイト サーバー名\>\SMS_&lt;サイト コード\>\Client** としてネットワークで共有されます。  
+ CCMSetup.exe e i relativi file di supporto si trovano nel server del sito di Configuration Manager nella cartella **Client** della cartella di installazione di Configuration Manager. La cartella è condivisa in rete in **&lt;nome server del sito\>\SMS_&lt;codice sito\>\Client**.  
 
- コマンド プロンプトで、CCMSetup.exe コマンドは次の形式を使用します。  
+ Al prompt dei comandi, il comando CCMSetup.exe usa il seguente formato:  
 
  `CCMSetup.exe [<Ccmsetup properties>] [<client.msi setup properties>]`  
 
- 例:  
+ Esempio:  
 
  'CCMSetup.exe /mp:SMSMP01 /logon SMSSITECODE=S01 FSP=SMSFSP01`  
 
- この例では次が実行されます。  
+ Questo comando di esempio esegue le azioni seguenti:  
 
--   配布ポイントの一覧を要求し、クライアント インストール ファイルをダウンロードするために SMSMP01 という名前の管理ポイントを指定します。  
+-   Specifica il punto di gestione denominato SMSMP01 per richiedere un elenco di punti di distribuzione per il download dei file di installazione del client.  
 
--   クライアントのバージョンが既にコンピューターに存在している場合にインストールを停止するように指定します。  
+-   Specifica che è necessario interrompere l'installazione se nel computer esiste già una versione del client.  
 
--   クライアントをサイト コード S01 に割り当てるように client.msi で指定します。  
+-   Indica a client.msi di assegnare il client al codice del sito S01.  
 
--   SMSFP01 というフォールバック ステータス ポイントを使用するように client.msi で指定します。  
+-   Indica a client.msi di usare il punto di stato di fallback denominato SMSFP01.  
 
 > [!NOTE]  
->  プロパティにスペースを含める場合は、引用符で囲みます。  
+>  Se una proprietà contiene spazi, racchiuderla tra virgolette.  
 
 
 > [!IMPORTANT]  
->  Configuration Manager 用に Active Directory スキーマを拡張した場合は、多くのクライアント インストール プロパティが Active Directory Domain Services に発行され、Configuration Manager クライアントによって自動的に読み取られます。 Active Directory ドメイン サービスに発行されるクライアント インストールのプロパティの一覧は、「 [System Center Configuration Manager で Active Directory ドメイン サービスに発行されたクライアント インストールのプロパティについて](about-client-installation-properties-published-to-active-directory-domain-services.md)」を参照してください。  
+>  Se lo schema di Active Directory è stato esteso per Configuration Manager, molte proprietà di installazione client vengono pubblicate in Active Directory Domain Services e lette automaticamente dal client di Configuration Manager. Per un elenco delle proprietà di installazione client pubblicate in Servizi di dominio Active Directory, vedere [Informazioni sulle proprietà di installazione client pubblicate in Servizi di dominio Active Directory in System Center Configuration Manager](about-client-installation-properties-published-to-active-directory-domain-services.md).  
 
-##  <a name="ccmsetupexe-command-line-properties"></a>CCMSetup.exe のコマンド ライン プロパティ  
+##  <a name="ccmsetupexe-command-line-properties"></a>Proprietà della riga di comando CCMSetup.exe  
 
 ### <a name=""></a>/?  
 
-CCMSetup.exe のコマンド ライン プロパティを表示する **[CCMSetup]** のダイアログ ボックスを開きます。  
+Apre la finestra di dialogo **CCMSetup** in cui vengono visualizzate le proprietà della riga di comando per ccmsetup.exe.  
 
-例: **ccmsetup.exe /?**  
+Esempio: **ccmsetup.exe /?**  
 
-### <a name="sourceltpath"></a>/source:&lt;パス\>  
+### <a name="sourceltpath"></a>/source:&lt;percorso\>  
 
- ファイルのダウンロード場所を指定します。 ローカルまたは UNC パスを使用します。 ファイルはサーバー メッセージ ブロック (SMB) プロトコルを使用してダウンロードされます。  **/source** を使用するには、クライアント インストール用の Windows ユーザー アカウントに、その場所に対する読み取りアクセス許可が必要です。
+ Specifica il percorso da cui scaricare i file. È possibile usare un percorso locale o UNC. I file vengono scaricati usando il protocollo SMB (Server Message Block).  Per usare **/source**, l'account utente Windows usato per l'installazione client deve disporre delle autorizzazioni di lettura per il percorso.
 
 > [!NOTE]  
->  コマンド ラインで **/source** プロパティを複数回使用して、ダウンロードの代替場所を指定することができます。  
+>  È possibile usare più volte la proprietà **/source** in una riga di comando per specificare percorsi alternativi per il download.  
 
- 例: **ccmsetup.exe /source:"\\\computer\folder"**  
+ Esempio: **ccmsetup.exe /source:"\\\computer\cartella"**  
 
-### <a name="mpltcomputer"></a>/mp:&lt;コンピューター\>
+### <a name="mpltcomputer"></a>/mp:&lt;computer\>
 
- インストール ファイルの最も近い配布ポイントを探せるように、コンピューターが接続するソース管理ポイントを指定します。 配布ポイントがない、またはコンピューターが 4 時間経っても配布ポイントからファイルをダウンロードできない場合は、クライアントは指定された管理ポイントからファイルをダウンロードします。  
+ Specifica un punto di gestione di origine per consentire ai computer di connettersi e individuare il punto di distribuzione più vicino per i file di installazione. Se non sono presenti punti di distribuzione oppure i computer non sono in grado di scaricare i file dai punti di distribuzione dopo 4 ore, i client scaricano i file dal punto di gestione specificato.  
 
 > [!IMPORTANT]  
->  このプロパティは、ダウンロード ソースを見つけるためのコンピューターの最初の管理ポイントを指定するために使用され、任意のサイト内の任意の管理ポイントを指定できます。 クライアントを管理ポイントに*割り当てる*ことはありません。   
+>  Questa proprietà viene usata per specificare un punto di gestione iniziale che consente ai computer di individuare un'origine per il download. Può trattarsi di un punto di gestione qualsiasi in un sito qualsiasi. Non implica l'*assegnazione* del client a un punto di gestione.   
 
- クライアント接続におけるサイト システムの役割の構成によって、コンピューターは HTTP または HTTPS 接続でファイルをダウンロードします。 BITS スロットルが構成されている場合は、ダウンロードで使用されます。 すべての配布ポイントおよび管理ポイントが HTTPS クライアント接続のみに構成されている場合は、クライアント コンピューターに有効なクライアント証明書があることを確認します。  
+ I computer scaricano i file tramite una connessione HTTP o HTTPS, a seconda della configurazione del ruolo del sistema del sito per le connessioni client. Il download usa la limitazione BITS, se configurata. Se tutti i punti di distribuzione e di gestione sono configurati solo per le connessioni client HTTPS, verificare che il computer client disponga di un certificato client valido.  
 
-**/mp** コマンドライン プロパティを使用すると、複数の管理ポイントを指定し、コンピューターが接続に失敗しても、次の管理ポイントを試すように構成できます。 複数の管理ポイントは、値をセミコロンで区切って指定します。
+È possibile usare la proprietà della riga di comando **/mp** per specificare più punti di gestione e fare in modo che, se il computer non riesce a connettersi al primo, vengano eseguiti tentativi di connessione con gli altri punti di gestione. Quando si specificano più punti di gestione, è necessario separare i valori tramite punto e virgola.
 
-クライアントが HTTPS を使用して管理ポイントに接続する場合、通常はコンピューター名ではなく FQDN を指定する必要があります。 値は、管理ポイントの PKI 証明書のサブジェクトまたはサブジェクトの別名と一致している必要があります。 Configuration Manager は、証明書のコンピューター名を使用してイントラネットでの接続をサポートしますが、セキュリティのベスト プラクティスとして、FQDN が推奨されます。
+Se il client si connette a un punto di gestione mediante HTTPS, in genere è necessario specificare l'FQDN anziché il nome computer. Il valore deve corrispondere al soggetto o al nome alternativo soggetto del certificato PKI del punto di gestione. Nonostante Configuration Manager supporti l'uso di un nome computer nel certificato per le connessioni sulla Intranet, per sicurezza è consigliabile inserire un FQDN.
 
-コンピューター名を使用する場合の例: `ccmsetup.exe /mp:SMSMP01`  
+Esempio di uso del nome computer: `ccmsetup.exe /mp:SMSMP01`  
 
-FQDN を使用する場合の例: `ccmsetup.exe /mp:smsmp01.contoso.com`  
+Esempio di uso dell'FQDN: `ccmsetup.exe /mp:smsmp01.contoso.com`  
 
-### <a name="retryltminutes"></a>/retry:&lt;分\>
+### <a name="retryltminutes"></a>/retry:&lt;minuti\>
 
-CCMSetup.exe がインストール ファイルのダウンロードに失敗した場合の再試行間隔です。  CCMSetup は、**downloadtimeout** プロパティで指定された制限に達するまで再試行し続けます。  
+L'intervallo tra i tentativi se CCMSetup.exe non riesce a scaricare i file di installazione.  CCMSetup continua a tentare fino a quando non raggiunge il limite specificato nella proprietà **downloadtimeout** .  
 
-例: `ccmsetup.exe /retry:20`  
+Esempio: `ccmsetup.exe /retry:20`  
 
 ### <a name="noservice"></a>/noservice
 
-CCMSetup がサービスとして実行 (既定) されるのを防ぎます。 CCMSetup がサービスとして実行されると、コンピューターのローカル システム アカウントとの関連で実行されます。ローカル システム アカウントには、インストールに必要なネットワーク リソースにアクセスする十分な権利がない場合があります。 **/noservice** を使用すると、CCMSetup.exe は、インストールを開始するために使用するユーザー アカウントの関連で実行されます。 また、スクリプトを使用して、**/service** プロパティで CCMSetup.exe を実行すると、CCMSetup.exe はサービスが開始されると終了し、インストールの詳細を正しくレポートしないことがあります。   
+Impedisce l'esecuzione di CCMSetup come servizio, ovvero l'impostazione predefinita. Quando CCMSetup viene eseguito come servizio, l'esecuzione avviene nell'ambito dell'account di sistema locale del computer, che potrebbe disporre di diritti insufficienti per l'accesso alle risorse di rete richieste per l'installazione. Con **/noservice**, CCMSetup.exe viene eseguito nel contesto dell'account utente usato per avviare l'installazione. Se inoltre si usa uno script per l'esecuzione di CCMSetup.exe con la proprietà **/service**, CCMSetup.exe viene chiuso dopo l'avvio del servizio e potrebbe non segnalare correttamente i dettagli di installazione.   
 
-例: `ccmsetup.exe /noservice`  
+Esempio: `ccmsetup.exe /noservice`  
 
 ### <a name="service"></a>/service
 
-CCMSetup がローカル システム アカウントを使用してサービスとして実行されることを指定します。  
+Specifica che CCMSetup deve essere eseguito come un servizio che usa l'account di sistema locale.  
 
-例: `ccmsetup.exe /service`  
+Esempio: `ccmsetup.exe /service`  
 
 ### <a name="uninstall"></a>/uninstall
 
-クライアント ソフトウェアをアンインストールすることを指定します。 詳細については、「 [How to manage clients in System Center Configuration Manager](../manage/manage-clients.md)」をご覧ください。  
+Specifica che il software client deve essere disinstallato. Per altre informazioni, vedere [How to manage clients in System Center Configuration Manager](../manage/manage-clients.md).  
 
-例: `ccmsetup.exe /uninstall`  
+Esempio: `ccmsetup.exe /uninstall`  
 
 ### <a name="logon"></a>/logon
 
-クライアントの任意のバージョンが既にインストールされている場合にクライアント インストールを停止するように指定します。  
+Specifica che l'installazione del client deve essere interrotta se una versione del client è già installata.  
 
-例: `ccmsetup.exe /logon`  
+Esempio: `ccmsetup.exe /logon`  
 
 ### <a name="forcereboot"></a>/forcereboot
 
- インストールを完了するためにクライアント コンピューターの再起動が必要な場合に、CCMSetup でクライアント コンピューターを強制的に再起動することを指定します。 これが指定されていないと、CCMSetup は再起動が必要なときに終了し、次回手動で再起動した後に続行します。  
+ Specifica che, se necessario, CCMSetup deve forzare il riavvio del computer client per completare l'installazione. Se non è specificata, CCMSetup viene chiuso quando è necessario un riavvio e continua dopo il successivo riavvio manuale.  
 
- 例: `CCMSetup.exe /forcereboot`  
+ Esempio: `CCMSetup.exe /forcereboot`  
 
-### <a name="bitspriorityltpriority"></a>/BITSPriority:&lt;優先順位\>
+### <a name="bitspriorityltpriority"></a>/BITSPriority:&lt;priorità\>
 
- クライアント インストール ファイルが HTTP 接続を介してダウンロードされるときのダウンロードの優先順位を指定します。 使用できる値は次のとおりです。  
+ Specifica la priorità di download quando vengono scaricati i file di installazione client tramite una connessione HTTP. I possibili valori sono i seguenti:  
 
 -   FOREGROUND  
 
@@ -154,429 +154,429 @@ CCMSetup がローカル システム アカウントを使用してサービス
 
 -   LOW  
 
- 既定値は NORMAL です。  
+ Il valore predefinito è NORMAL.  
 
- 例: `ccmsetup.exe /BITSPriority:HIGH`  
+ Esempio: `ccmsetup.exe /BITSPriority:HIGH`  
 
-### <a name="downloadtimeoutltminutes"></a>/downloadtimeout:&lt;分\>
+### <a name="downloadtimeoutltminutes"></a>/downloadtimeout:&lt;minuti\>
 
-CCMSetup がインストール ファイルのダウンロードの試行を開始してから停止するまでの時間 (分単位) です。 既定値は **1440** 分 (1 日) です。  
+L'intervallo di tempo in minuti in cui CCMSetup tenta di scaricare i file di installazione prima di interrompersi. Il valore predefinito è **1440** minuti (1 giorno).  
 
-例: `ccmsetup.exe /downloadtimeout:100`  
+Esempio: `ccmsetup.exe /downloadtimeout:100`  
 
 ### <a name="usepkicert"></a>/UsePKICert
 
- 指定されるとクライアントは、利用可能であれば、クライアントの認証を含んだ PKI 証明書を使用します。 有効な証明書が見つからない場合、クライアントは、HTTP 接続と自己署名証明書を使用します。これはこのプロパティを使用しない場合の動作でもあります。
+ Quando viene specificato, il client usa un certificato PKI che include l'autenticazione del client, se disponibile. Se non viene trovato un certificato valido, il client usa una connessione HTTP e un certificato autofirmato, che è il comportamento adottato quando non si usa questa proprietà.
 
 > [!NOTE]  
->  クライアントをインストールし、クライアントの証明書を引き続き使用する場合には、このプロパティを指定する必要はありません。 これらのシナリオには、クライアント プッシュおよびソフトウェアの更新ポイント ベースを使用したクライアントのインストールが含まれます。 しかし、手動でクライアントをインストールするときは、このプロパティを指定し、 **/mp** プロパティを使用して HTTPS クライアント接続のみを許可するように構成された管理ポイントを指定する必要があります。 また、インターネット通信のみのクライアントをインストールする場合も、(インターネットベースの管理ポイントおよびサイト コードと共に) CCMALWAYSINF=1 プロパティを使って、このプロパティを指定する必要があります。 インターネット ベースのクライアント管理の詳細については、「[System Center Configuration Manager でのエンドポイント間の通信](../../plan-design/hierarchy/communications-between-endpoints.md)」の「[インターネットや信頼されていないフォレストからのクライアント通信に関する考慮事項](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan)」を参照してください。  
+>  In alcuni scenari non è necessario specificare questa proprietà quando si installa un client e si usa comunque un certificato client. Tali scenari includono l'installazione di un client mediante installazione client basata sul punto di aggiornamento software e installazione push client. È tuttavia necessario specificare questa proprietà se si esegue l'installazione manuale di un client e si usa la proprietà **/mp** per specificare un punto di gestione configurato per accettare solo connessioni client HTTPS. È inoltre necessario specificare questa proprietà quando viene installato un client solo per la comunicazione Internet, usando la proprietà CCMALWAYSINF=1 (oltre alle proprietà per il punto di gestione basato su Internet e al codice del sito). Per altre informazioni sulla gestione client basata su Internet, vedere [Considerazioni per le comunicazioni client da Internet o da una foresta non trusted](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan) in [Comunicazioni tra gli endpoint in System Center Configuration Manager](../../plan-design/hierarchy/communications-between-endpoints.md).  
 
- 例: `CCMSetup.exe /UsePKICert`  
+ Esempio: `CCMSetup.exe /UsePKICert`  
 
 ### <a name="nocrlcheck"></a>/NoCRLCheck
 
- PKI 証明書を使用して HTTPS で通信するときは、クライアントが証明書失効リスト (CRL) を確認しないように指定します。  
+ Specifica che un client non deve verificare l'elenco di revoche di certificati (CRL) in caso di comunicazione tramite HTTPS con un certificato PKI.  
 
- 指定しない場合、クライアントは HTTPS 接続を確立する前に CRL を確認します。  
+ Quando non è specificata, il client controlla l'elenco di revoche di certificati prima di stabilire una connessione HTTPS.  
 
- クライアントの CRL チェックの詳細については、「 [Plan for Security 」 の「 System Center Configuration Manager](../../plan-design/security/plan-for-security.md#BKMK_PlanningForCRLs) 」 の「[Plan for security 」 の「 System Center Configuration Manager](../../plan-design/security/plan-for-security.md)」を参照してください。  
+ Per altre informazioni sul controllo CRL client, vedere [Planning for PKI certificate revocation](../../plan-design/security/plan-for-security.md#BKMK_PlanningForCRLs) in[Plan for security in System Center Configuration Manager](../../plan-design/security/plan-for-security.md).  
 
- 例: `CCMSetup.exe /UsePKICert /NoCRLCheck`  
+ Esempio: `CCMSetup.exe /UsePKICert /NoCRLCheck`  
 
-### <a name="configltconfiguration-file"></a>/config:&lt;構成ファイル\>
+### <a name="configltconfiguration-file"></a>/config:&lt;file di configurazione\>
 
-クライアント インストールのプロパティを含むテキスト ファイルの名前を指定します。
+Specificare il nome di un file di testo contenente le proprietà di installazione client.
 
-- **/noservice** CCMSetup プロパティを指定しない場合、このファイルは CCMSetup フォルダーに置く必要があります。このフォルダーは、32 ビット版と 64 ビット版のいずれのオペレーティング システムでも %Windir%\\Ccmsetup にあります。
-- **/noservice** プロパティを指定する場合、このファイルは CCMSetup.exe を実行するフォルダーと同じフォルダーに存在する必要があります。  
+- Se non si specifica la proprietà **/noservice** di CCMSetup, questo file deve trovarsi nella cartella CCMSetup, ovvero %Windir%\\Ccmsetup per sistemi operativi a 32 e a 64 bit.
+- Se viene specificata la proprietà **/noservice** , questo file deve essere posizionato nella stessa cartella da cui è stato eseguito CCMSetup.exe.  
 
-例: `CCMSetup.exe /config:&lt;Configuration File Name.txt\>`  
+Esempio: `CCMSetup.exe /config:&lt;Configuration File Name.txt\>`  
 
-サイト サーバー コンピューターの &lt;Configuration Manager ディレクトリ\>\\bin\\&lt;プラットフォーム\> フォルダーにある mobileclienttemplate.tcf ファイルを使用して、正しいファイル形式を提供します。 このファイルには、セクションに関するコメントと、その使用方法に関する情報も含まれています。 **Install=INSTALL=ALL**というテキストに続く [Client Install] セクションに、クライアント インストールのプロパティを指定します。  
+Usare il file mobileclienttemplate.tcf nella cartella &lt;directory di Configuration Manager\>\\bin\\&lt;piattaforma\> del computer del server del sito per specificare il formato corretto del file. Questo file contiene inoltre commenti relativi alle sezioni e alle modalità di utilizzo. Specificare le proprietà di installazione cliente nella sezione [Client Install], dopo il testo seguente: **Install=INSTALL=ALL**.  
 
-[Client Install] セクション エントリの例: `Install=INSTALL=ALL SMSSITECODE=ABC SMSCACHESIZE=100`  
+Voce della sezione [Client Install] di esempio: `Install=INSTALL=ALL SMSSITECODE=ABC SMSCACHESIZE=100`  
 
-### <a name="skipprereqltfilename"></a>/skipprereq:&lt;ファイル名\>
+### <a name="skipprereqltfilename"></a>/skipprereq:&lt;nome file\>
 
- Configuration Manager クライアントがインストールされた場合は、指定した前提条件のプログラムを CCMSetup.exe がインストールしないように指定します。 このプロパティは複数値の入力をサポートします。 個々の値を区切るには、セミコロン文字 (;) を使用します。  
+ Specifica che CCMSetup.exe non deve installare il programma definito come prerequisito se il client di Configuration Manager è installato. Questa proprietà supporta l'immissione di valori multipli. Usare il punto e virgola (;) per separare i valori.  
 
 
- 例: `CCMSetup.exe /skipprereq:silverlight.exe` または `CCMSetup.exe /skipprereq:dotnetfx40_client_x86_x64.exe;Silverlight.exe`  
+ Esempi: `CCMSetup.exe /skipprereq:silverlight.exe` o `CCMSetup.exe /skipprereq:dotnetfx40_client_x86_x64.exe;Silverlight.exe`  
 
 ### <a name="forceinstall"></a>/forceinstall
 
- 既存のクライアントがアンインストールされてから、新しいクライアントがインストールされることを指定します。  
+ Specificare che tutti i client esistenti verranno disinstallati e sarà installato un nuovo client.  
 
-### <a name="excludefeaturesltfeature"></a>/ExcludeFeatures:&lt;機能\>
+### <a name="excludefeaturesltfeature"></a>/ExcludeFeatures:&lt;funzionalità\>
 
-クライアントをインストールするときに、指定した機能を CCMSetup.exe がインストールしないように指定します。  
+Specifica che CCMSetup.exe non installerà la funzionalità indicata se il client è installato.  
 
-例: `CCMSetup.exe /ExcludeFeatures:ClientUI` は、クライアントにソフトウェア センターをインストールしません。  
+Esempio: `CCMSetup.exe /ExcludeFeatures:ClientUI` non installerà Software Center nel client.  
 
 > [!NOTE]  
->  このリリースでは、 **ClientUI** が、 **/ExcludeFeatures** プロパティでサポートされる唯一の値です。  
+>  Per questa versione, **ClientUI** è l'unico valore supportato con la proprietà **/ExcludeFeatures** .  
 
-##  <a name="ccmsetupReturnCodes"></a> CCMSetup.exe のリターン コード  
- CCMSetup.exe コマンドは、完了すると次のリターン コードを提供します。 問題を解決するには、クライアント コンピューターで ccmsetup.log ファイルを確認して、リターン コードのコンテキストと詳細を確認します。  
+##  <a name="ccmsetupReturnCodes"></a> Codici restituiti di CCMSetup.exe  
+ Il comando CCMSetup.exe fornisce i seguenti codici restituiti quando viene completato. Per la risoluzione dei problemi, consultare il file ccmsetup.log nel computer client per il contesto e i dettagli aggiuntivi sui codici restituiti.  
 
-|リターン コード|意味|  
+|Codice restituito|Significato|  
 |-----------------|-------------|  
-|0|成功|  
-|6|エラー|  
-|7|再起動が必要です|  
-|8|セットアップは既に実行されています|  
-|9|前提条件の評価エラー|  
-|10|セットアップのマニフェスト ハッシュ検証エラー|  
+|0|Operazione completata|  
+|6|Errore|  
+|7|Riavvio richiesto|  
+|8|Installazione già in esecuzione|  
+|9|Errore di valutazione dei prerequisiti|  
+|10|Errore di convalida dell'hash manifesto di installazione|  
 
-##  <a name="clientMsiProps"></a> Client.msi のプロパティ  
- 次のプロパティを使って、client.msi のインストールの動作を変更することができます。 クライアント プッシュ インストール方式を使用する場合は、[ **クライアント プッシュ インストールのプロパティ** ] ダイアログ ボックスの [ **クライアント** ] タブでプロパティを指定することもできます。  
+##  <a name="clientMsiProps"></a> Proprietà Client.msi  
+ Le proprietà seguenti possono modificare il comportamento dell'installazione di client.msi. Se si utilizza il metodo di installazione push del client, è anche possibile specificare le proprietà nella scheda **Client** della finestra di dialogo **Proprietà installazione push client** .  
 
 ### <a name="ccmadmins"></a>CCMADMINS  
 
-クライアント設定およびポリシーへのアクセスを許可する 1 つまたは複数の Windows ユーザー アカウントまたはグループを指定します。 これは、Configuration Manager 管理者に、クライアント コンピューターに対するローカル管理者資格情報がない場合に役立ちます。 セミコロンで区切って、アカウントの一覧を指定します。  
+Specifica uno o più gruppi o account utente di Windows per ottenere l'accesso ai criteri e le impostazioni del client. Questa opzione è utile quando l'amministratore di Configuration Manager non dispone di credenziali amministrative locali nel computer client. Specificare un elenco di account separati da un punto e virgola.  
 
-例: `CCMSetup.exe CCMADMINS="Domain\Account1;Domain\Group1"`  
+Esempio: `CCMSetup.exe CCMADMINS="Domain\Account1;Domain\Group1"`  
 
 ### <a name="ccmallowsilentreboot"></a>CCMALLOWSILENTREBOOT
 
-クライアント インストール後に、必要に応じてコンピューターを再起動できるように指定します。  
+Specifica che il computer può eseguire il riavvio dopo l'installazione del client, se necessario.  
 
 > [!IMPORTANT]  
->  ユーザーがログオンしている場合でもコンピューターは警告なしに再起動します。  
+>  Il computer verrà riavviato senza preavviso anche se un utente è connesso.  
 
-例: **CCMSetup.exe  CCMALLOWSILENTREBOOT**  
+Esempio: **CCMSetup.exe  CCMALLOWSILENTREBOOT**  
 
 ### <a name="ccmalwaysinf"></a>CCMALWAYSINF
 
- クライアントが常にインターネットベースであり、イントラネットには接続しないことを指定するには、「1」に設定します。 クライアントの接続の種類に **[常にインターネット]**と表示されます。  
+ Impostare su 1 per specificare che il client sarà sempre basato su Internet e non si connetterà mai a Intranet. Il tipo di connessione del client visualizza **Sempre Internet**.  
 
- このプロパティは、インターネットベースの管理ポイントの FQDN を指定する CCMHOSTNAME と共に使用する必要があります。 このプロパティはまた、CCMSetup プロパティ /UsePKICert およびサイト コードと共に使用する必要があります。  
+ Questa proprietà deve essere usata insieme a CCMHOSTNAME, che specifica l'FQDN del punto di gestione basato su Internet. Va inoltre usata insieme alla proprietà CCMSetup /UsePKICert e al codice del sito.  
 
- インターネット ベースのクライアント管理の詳細については、「[System Center Configuration Manager でのエンドポイント間の通信](../../plan-design/hierarchy/communications-between-endpoints.md)」の「[インターネットや信頼されていないフォレストからのクライアント通信に関する考慮事項](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan)」を参照してください。  
+ Per altre informazioni sulla gestione client basata su Internet, vedere [Considerazioni per le comunicazioni client da Internet o da una foresta non trusted](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan) in [Comunicazioni tra gli endpoint in System Center Configuration Manager](../../plan-design/hierarchy/communications-between-endpoints.md).  
 
- 例: `CCMSetup.exe /UsePKICert  CCMALWAYSINF=1 CCMHOSTNAME=SERVER3.CONTOSO.COM SMSSITECODE=ABC`  
+ Esempio: `CCMSetup.exe /UsePKICert  CCMALWAYSINF=1 CCMHOSTNAME=SERVER3.CONTOSO.COM SMSSITECODE=ABC`  
 
 ### <a name="ccmcertissuers"></a>CCMCERTISSUERS
 
- Configuration Manager サイトが信頼する、信頼されたルート証明機関の一覧である証明書発行元一覧を指定します。  
+ Specifica l'elenco delle autorità di certificazione, ovvero un elenco di autorità di certificazione radice attendibili (CA) ritenuti attendibili dal sito di Configuration Manager.  
 
- 証明書発行者リストと、これをクライアントが証明書選択プロセスで使用する方法の詳細については、「 [Plan for Security 」 の「 System Center Configuration Manager](../../plan-design/security/plan-for-security.md#BKMK_PlanningForClientCertificateSelection) 」 の「 [Plan for security 」 の「 System Center Configuration Manager](../../plan-design/security/plan-for-security.md)」を参照してください。  
+ Per altre informazioni sull'elenco delle autorità di certificazione e sulle relative modalità d'uso da parte dei client durante il processo di selezione dei certificati, vedere [Planning for PKI client certificate selection](../../plan-design/security/plan-for-security.md#BKMK_PlanningForClientCertificateSelection) in [Plan for security in System Center Configuration Manager](../../plan-design/security/plan-for-security.md).  
 
- ルート CA 証明書のオブジェクトの属性では、大文字と小文字が区別されます。 属性はコンマ (,) またはセミコロン (;) で区切ることができます。 区切り文字を使用すると、複数のルート CA 証明書を指定することができます。 例:  
+ Si tratta di una corrispondenza con distinzione tra maiuscole e minuscole per gli attributi del soggetto presenti nel certificato CA radice. Gli attributi possono essere separati da virgola (,) o punto e virgola (;). È possibile specificare più certificati CA radice mediante una barra di separazione. Esempio:  
 
  `CCMCERTISSUERS=”CN=Contoso Root CA; OU=Servers; O=Contoso, Ltd; C=US &#124; CN=Litware Corporate Root CA; O=Litware, Inc.”`  
 
 > [!TIP]  
->  サイト サーバー コンピューターの &lt;Configuration Manager ディレクトリ\>\bin\\&lt;プラットフォーム\> フォルダーで mobileclient.tcf ファイルを参照して、サイト用に構成された **CertificateIssuers=&lt;文字列\>** をコピーします。  
+>  Fare riferimento al file mobileclient.tcf nella cartella &lt;directory di Configuration Manager\>\bin\\&lt;piattaforma\> del computer del server del sito per copiare il valore **CertificateIssuers=&lt;stringa\>** configurato per il sito.  
 
 ### <a name="ccmcertsel"></a>CCMCERTSEL
 
- クライアントに HTTPS 通信用の複数の証明書 (クライアント認証機能を含む有効な証明書) がある場合の証明書の選択条件を指定します。  
+ Specifica i criteri di selezione del certificato se il client dispone di più di un certificato per la comunicazione HTTPS (un certificato valido che include la funzionalità di autenticazione client).  
 
- サブジェクト名またはサブジェクトの別名の完全一致を検索 (**Subject:** を使用) することも、部分一致を検索 (**SubjectStr:** を使用) することもできます。 例:  
+ È possibile cercare una corrispondenza esatta (usare **Subject:**) o una corrispondenza parziale (usare **SubjectStr:)** in Nome soggetto o Nome alternativo soggetto. Esempi:  
 
- `CCMCERTSEL="Subject:computer1.contoso.com"` と指定すると、サブジェクト名またはサブジェクトの別名でコンピューター名 "computer1.contoso.com" と完全に一致する証明書を検索します。  
+ `CCMCERTSEL="Subject:computer1.contoso.com"` esegue la ricerca di un certificato con una corrispondenza esatta al nome computer "computer1.contoso.com" in Nome soggetto o in Nome alternativo soggetto.  
 
- `CCMCERTSEL="SubjectStr:contoso.com"` と指定すると、サブジェクト名またはサブジェクトの別名で "contoso.com" を含む証明書を検索します。  
+ `CCMCERTSEL="SubjectStr:contoso.com"` esegue la ricerca di un certificato che contiene "contoso.com" in Nome soggetto o in Nome alternativo soggetto.  
 
- サブジェクト名またはサブジェクトの別名の属性でオブジェクト ID (OID) または識別名の属性を使用することもできます。たとえば、次のようになります。  
+ È inoltre possibile usare l'identificatore di oggetto (OID) o gli attributi del nome distinto negli attributi Nome oggetto o Nome alternativo oggetto, ad esempio:  
 
- `CCMCERTSEL="SubjectAttr:2.5.4.11 = Computers"` と指定すると、オブジェクト ID として表される組織単位属性および指定したコンピューターを検索します。  
+ `CCMCERTSEL="SubjectAttr:2.5.4.11 = Computers"` esegue la ricerca dell'attributo dell'unità organizzativa espresso come un identificatore di oggetto e denominato Computers.  
 
- `CCMCERTSEL="SubjectAttr:OU = Computers"` と指定すると、識別名として表される組織単位属性および指定したコンピューターを検索します。  
+ `CCMCERTSEL="SubjectAttr:OU = Computers"` esegue la ricerca dell'attributo dell'unità organizzativa espresso come un nome distinto e denominato Computers.  
 
 > [!IMPORTANT]  
->  [サブジェクト名] ボックスを使用する場合、**Subject:** では大文字と小文字が区別され、**SubjectStr:** では区別されません。  
+>  Se si usa la casella Nome soggetto, **Subject:** distingue tra maiuscole e minuscole, mentre **SubjectStr:** non esegue la distinzione.  
 >   
->  [サブジェクトの別名] ボックスを使用する場合、**Subject:** と **SubjectStr:** では大文字と小文字は区別されません。  
+>  Se si usa la casella Nome alternativo soggetto, **Subject:** e **SubjectStr:** non distinguono tra maiuscole e minuscole.  
 
- 証明書の選択に使用できる属性の完全な一覧は、「 [PKI 証明書の選択条件としてサポートされている属性値](#BKMK_attributevalues)」に記載されています。  
+ L'elenco completo degli attributi che è possibile usare per la selezione dei certificati è disponibile in [Valori attributi supportati per i criteri di selezione del certificato PKI](#BKMK_attributevalues).  
 
- 1 つ以上の証明書が検索で一致し、プロパティ CCMFIRSTCERT が「1」に設定されている場合は、有効期限の最も長い証明書が選択されます。  
+ Se più di un certificato corrisponde alle ricerca e la proprietà CCMFIRSTCERT è stata impostata su 1, viene selezionato il certificato con il periodo di validità più lungo.  
 
 ### <a name="ccmcertstore"></a>CCMCERTSTORE
 
- HTTPS 用のクライアント証明書が、コンピューター ストアの既定の **個人**用証明書ストアにない場合の代替の証明書ストアの名前を指定します。  
+ Specifica un nome archivio certificati alternativo se il certificato client per HTTPS non si trova nell'archivio certificati predefinito di **Personale** nell'archivio del computer.  
 
- 例: `CCMSetup.exe /UsePKICert CCMCERTSTORE="ConfigMgr"`  
+ Esempio: `CCMSetup.exe /UsePKICert CCMCERTSTORE="ConfigMgr"`  
 
 ### <a name="ccmdebuglogging"></a>CCMDEBUGLOGGING
 
-  デバッグ ログを有効にします。 設定できる値は 0 (オフ、既定) または 1 (オン) です。 この場合、クライアントでは、トラブルシューティングのための低レベルの情報がログ出力されます。 実稼働サイトではこのプロパティを使用しないことをお勧めします。これは、このプロパティを使用すると、過度のログ記録が実行され、ログ ファイル内で適切な情報を見つけることが困難になる可能性があるためです。 デバッグ ログを有効にするには、CCMENABLELOGGING も TRUE に設定する必要があります。  
+  Consente la registrazione debug. I valori possono essere impostati su 0 (disattivata, predefinita) o 1 (attivata). In questo modo il client registra le informazioni di basso livello per la risoluzione dei problemi. Come procedura consigliata, evitare l'utilizzo di questa proprietà nei siti di produzione perché potrebbe causare un numero eccessivo di registrazioni, che renderebbe difficile l'individuazione di informazioni rilevanti nei file di log. Anche CCMENABLELOGGING deve essere impostata su TRUE per consentire la registrazione debug.  
 
-  例: `CCMSetup.exe CCMDEBUGLOGGING=1`  
+  Esempio: `CCMSetup.exe CCMDEBUGLOGGING=1`  
 
 ### <a name="ccmenablelogging"></a>CCMENABLELOGGING
 
-  既定では、ログ記録を有効にするように TRUE に設定されています。 ログ ファイルは、Configuration Manager クライアントのインストール フォルダー内の **Logs** フォルダーに保存されます。 既定では、このフォルダーは %Windir%\CCM\Logs にあります。  
+  Per impostazione predefinita, è impostata su TRUE per attivare la registrazione. I file di log vengono archiviati nella cartella **Logs** della cartella di installazione del client di Configuration Manager. Per impostazione predefinita, questa cartella è %Windir%\CCM\Logs.  
 
-  例: `CCMSetup.exe CCMENABLELOGGING=TRUE`  
+  Esempio: `CCMSetup.exe CCMENABLELOGGING=TRUE`  
 
 ### <a name="ccmevalinterval"></a>CCMEVALINTERVAL  
 
- クライアントの正常性評価ツール (ccmeval.exe) を実行する頻度です。 **1** ～ **1440** 分で設定できます。 既定では 1 日に 1 回実行されます。  
+ La frequenza con cui eseguire lo strumento di valutazione dell'integrità del client (ccmeval.exe). Può essere un valore compreso tra **1** e **1440** minuti. Per impostazione predefinita, la valutazione viene eseguita una volta al giorno.  
 
 ### <a name="ccmevalhour"></a>CCMEVALHOUR
 
- クライアントの正常性評価ツール (ccmeval.exe) を実行する時刻です。**0** (午前) ～ **23** (午後 11 時) で指定します。 既定では午前 0 時に実行されます。  
+ L'ora in cui eseguire lo strumento di valutazione dell'integrità del client (ccmeval.exe); può essere un valore compreso tra **0** (mezzanotte) e **23** (23.00). Per impostazione predefinita, la valutazione viene eseguita a mezzanotte.  
 
 ### <a name="ccmfirstcert"></a>CCMFIRSTCERT
 
- 「1」に設定されている場合は、このプロパティはクライアントが最も有効期限の長い PKI  証明書を選択するように指定します。 この設定は、IPsec 実施でネットワーク アクセス保護を使用している場合に必要になることがあります。  
+ Se impostata su 1, questa proprietà specifica che il client deve selezionare il certificato PKI con il periodo di validità più lunga. Questa impostazione potrebbe essere necessaria se si usa Protezione accesso alla rete con l'imposizione IPsec.  
 
- 例: `CCMSetup.exe /UsePKICert CCMFIRSTCERT=1`  
+ Esempio: `CCMSetup.exe /UsePKICert CCMFIRSTCERT=1`  
 
 ### <a name="ccmhostname"></a>CCMHOSTNAME
 
- クライアントがインターネット経由で管理される場合の、インターネットベースの管理ポイントの FQDN を指定します。  
+ Specifica l'FQDN del punto di gestione basato su Internet, se il client viene gestito in Internet.  
 
- SMSSITECODE=AUTO のインストール プロパティでこのオプションを指定しないでください。 インターネットベースのクライアントはインターネットベースのサイトに直接割り当てる必要があります。  
+ Non specificare questa opzione con la proprietà di installazione SMSSITECODE=AUTO. I client basati su Internet devono essere assegnati direttamente ai relativi siti basati su Internet.  
 
- 例: `CCMSetup.exe  /UsePKICert/ CCMHOSTNAME="SMSMP01.corp.contoso.com"`  
+ Esempio: `CCMSetup.exe  /UsePKICert/ CCMHOSTNAME="SMSMP01.corp.contoso.com"`  
 
 ### <a name="ccmhttpport"></a>CCMHTTPPORT
 
- HTTP を介してサイト システム サーバーと通信するときにクライアントが使用するポートを指定します。 既定でポート 80 に設定されています。  
+ Specifica la porta che il client deve usare durante la comunicazione su HTTP con i server del sistema del sito. Per impostazione predefinita, è impostata la porta 80.  
 
- 例: `CCMSetup.exe CCMHTTPPORT=80`  
+ Esempio: `CCMSetup.exe CCMHTTPPORT=80`  
 
 ### <a name="ccmhttpsport"></a>CCMHTTPSPORT
 
-HTTPS を介してサイト システム サーバーと通信するときにクライアントが使用するポートを指定します。 既定でポート 443 に設定されています。  
+Specifica la porta che il client deve usare durante la comunicazione su HTTPS con i server del sistema del sito. Per impostazione predefinita, è impostata la porta 443.  
 
-例: `CCMSetup.exe /UsePKICert CCMHTTPSPORT=443`  
+Esempio: `CCMSetup.exe /UsePKICert CCMHTTPSPORT=443`  
 
 ### <a name="ccminstalldir"></a>CCMINSTALLDIR
 
- Configuration Manager クライアント ファイルがインストールされるフォルダーを指定します。既定では *%Windir%*\CCM です。 ファイルのインストール場所に関係なく、Ccmcore.dll ファイルは常に *%Windir%\System32* フォルダーにインストールされます。 また、64 ビット オペレーティング システムでは、Configuration Manager ソフトウェア開発キット (SDK) からの Configuration Manager クライアント API の 32 ビット版を使用する 32 ビット アプリケーションをサポートするために、必ず、Ccmcore.dll ファイルのコピーが *%Windir%*\SysWOW64 フォルダーにインストールされます。  
+ Identifica la cartella in cui sono installati i file del client di Configuration Manager, per impostazione predefinita *%Windir%*\CCM. Indipendentemente dalla posizione in cui sono installati questi file, il file Ccmcore.dll viene sempre installato nella cartella *%Windir%\System32*. Inoltre, nei sistemi operativi a 64 bit viene sempre installata una copia del file Ccmcore.dll nella cartella *%Windir%*\SysWOW64 per il supporto di applicazioni a 32 bit che usano la versione a 32 bit delle API client di Configuration Manager dall'SDK (Software Developer Kit) di Configuration Manager.  
 
- 例: `CCMSetup.exe CCMINSTALLDIR="C:\ConfigMgr"`  
+ Esempio: `CCMSetup.exe CCMINSTALLDIR="C:\ConfigMgr"`  
 
 ### <a name="ccmloglevel"></a>CCMLOGLEVEL
 
-Configuration Manager ログ ファイルに記録する詳細レベルを指定します。 0 ～ 3 の整数を指定します。0 が最も詳細なログ出力で、3 はエラーのみがログに出力されます。 既定値は 1 です。  
+Specifica il livello di dettagli da scrivere nei file di log di Configuration Manager. Specificare un numero intero da 0 a 3, dove 0 è la registrazione più dettagliata e 3 registra solo gli errori. Il valore predefinito è 1.  
 
-例: `CCMSetup.exe CCMLOGLEVEL=3`  
+Esempio: `CCMSetup.exe CCMLOGLEVEL=3`  
 
 ### <a name="ccmlogmaxhistory"></a>CCMLOGMAXHISTORY
 
-Configuration Manager ログ ファイルのサイズが 250000 バイト (または CCMLOGMAXSIZE プロパティで指定された値) になると、バックアップとして名前が変更され、新しいログ ファイルが作成されます。  
+Quando un file di log di Configuration Manager raggiunge una dimensione di 250000 byte (o il valore specificato dalla proprietà CCMLOGMAXSIZE), viene rinominato come file di backup e un nuovo file di log viene creato.  
 
-このプロパティでは、保持する以前のバージョンのログ ファイルの数を指定します。 既定値は 1 です。 このプロパティを 0 に設定すると、ログ ファイルは保持されません。  
+Questa proprietà specifica il numero di versioni precedenti del file di log da conservare. Il valore predefinito è 1. Se il valore è impostato su 0, non viene mantenuto alcun file di log precedente.  
 
-例: `CCMSetup.exe CCMLOGMAXHISTORY=0`  
+Esempio: `CCMSetup.exe CCMLOGMAXHISTORY=0`  
 
 ### <a name="ccmlogmaxsize"></a>CCMLOGMAXSIZE
 
-ログ ファイルの最大サイズ (バイト単位) です。 ログ ファイルが指定されたサイズに達すると、履歴ファイルとして名前が変更され、新しいファイルが作成されます。 このプロパティは、10000 バイト以上に設定する必要があります。 既定値は 250000 バイトです。  
+La dimensione massima del file di log in byte. Quando un file di log raggiunge la dimensione specificata, viene rinominato come un file di cronologia e viene creato un nuovo file. Questa proprietà deve essere impostata almeno su 10000 byte. Il valore predefinito è 250000 byte.  
 
-例: `CCMSetup.exe CCMLOGMAXSIZE=300000`  
+Esempio: `CCMSetup.exe CCMLOGMAXSIZE=300000`  
 
 ### <a name="disablesiteopt"></a>DISABLESITEOPT
 
- TRUE に設定すると、クライアント コンピューターの管理者資格情報を持つエンド ユーザーが、クライアントのコントロール パネルの **Configuration Manager** で、Configuration Manager の割り当て済みサイトを変更することができなくなります。  
+ Se è impostata su TRUE, questa proprietà non consente agli utenti finali con credenziali amministrative nel computer client di modificare il sito assegnato al client di Configuration Manager in **Configuration Manager** nel Pannello di controllo del client.  
 
- 例: **CCMSetup.exe DISABLESITEOPT=TRUE**  
+ Esempio: **CCMSetup.exe DISABLESITEOPT=TRUE**  
 
 ### <a name="disablecacheopt"></a>DISABLECACHEOPT
 
-「TRUE」 に設定すると、クライアント コンピューターの管理者資格情報を持つエンドユーザーが、クライアント コンピューターのコントロール パネルで Configuration Manager を使用して、Configuration Manager クライアントのプログラム クライアントのキャッシュ フォルダーの設定を変更することができなくなります。  
+Se è impostata su TRUE, questa proprietà non consente agli utenti finali con credenziali amministrative nel computer client di modificare le impostazioni della cartella cache client per il client di  Configuration Manager tramite Configuration Manager nel Pannello di controllo del computer client.  
 
-例: `CCMSetup.exe DISABLECACHEOPT=TRUE`  
+Esempio: `CCMSetup.exe DISABLECACHEOPT=TRUE`  
 
 ### <a name="dnssuffix"></a>DNSSUFFIX
 
- クライアント用に、DNS で発行されている管理ポイントを検索する DNS ドメインを指定します。 管理ポイントが特定されると、その管理ポイントは、階層内のその他の管理ポイントについて、クライアントに通知します。 つまり、DNS 発行によって特定される管理ポイントは、クライアントのサイトに存在する必要はなく、階層内のすべての管理ポイントが対象となります。  
+ Specifica un dominio DNS che i client usano per individuare i punti di gestione pubblicati in DNS. Una volta individuato un punto di gestione, tale punto fornisce informazioni al client in merito ad altri punti di gestione nella gerarchia. Ciò significa che il punto di gestione individuato usando la pubblicazione DNS non deve provenire dal sito del client, ma può essere un qualsiasi punto di gestione nella gerarchia.  
 
 > [!NOTE]  
->  このプロパティは、発行された管理ポイントとクライアントが同じドメインにある場合、指定する必要はありません。 この場合、DNS での管理ポイントの検索で、クライアントのドメインが自動的に使用されます。  
+>  Non è necessario specificare questa proprietà se il client si trova nello stesso dominio del punto di gestione pubblicato. In questo caso il dominio del client viene usato automaticamente per la ricerca nel DNS dei punti di gestione.  
 
- Configuration Manager クライアントに対するサービスの場所の検索方法として DNS 発行を使用することの詳細については、「[クライアントが System Center Configuration Manager のサイト リソースやサービスを検索する方法を理解する](../../plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md)」の「[サービスの場所とクライアントが割り当て済み管理ポイントを特定する方法](../../plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#BKMK_Plan_Service_Location)」を参照してください。  
+ Per altre informazioni sulla pubblicazione DNS come metodo di posizione del servizio per i client di Configuration Manager, vedere [Posizione del servizio e modo in cui i client determinano il relativo punto di gestione assegnato](../../plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#BKMK_Plan_Service_Location) in [Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager](../../plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
 
 > [!NOTE]  
->  既定では、DNS 発行は Configuration Manager で無効になっています。  
+>  Per impostazione predefinita, la pubblicazione DNS non è abilitata in Configuration Manager.  
 
- 例: `CCMSetup.exe SMSSITECODE=ABC DNSSUFFIX=contoso.com`  
+ Esempio: `CCMSetup.exe SMSSITECODE=ABC DNSSUFFIX=contoso.com`  
 
 ### <a name="fsp"></a>FSP
 
-Configuration Manager クライアント コンピューターによって送信される状態メッセージを受信して処理するフォールバック ステータス ポイントを指定します。  
+Specifica il punto di stato di fallback che riceve ed elabora i messaggi di stato inviati dai computer client di Configuration Manager.  
 
-フォールバック ステータス ポイントの詳細については、「[Determine if you need a fallback status point](/sccm/core/clients/deploy/plan#determine-if-you-need-a-fallback-status-point)」 (フォールバック ステータス ポイントが必要かどうかを確認する) をご覧ください。  
+Per altre informazioni sul punto di stato di fallback, vedere [Stabilire se è necessario un punto di stato di fallback](/sccm/core/clients/deploy/plan#determine-if-you-need-a-fallback-status-point).  
 
-例: `CCMSetup.exe FSP=SMSFP01`  
+Esempio: `CCMSetup.exe FSP=SMSFP01`  
 
 ### <a name="ignoreappvversioncheck"></a>IGNOREAPPVVERSIONCHECK
 
- クライアントがインストールされる前に、Microsoft Application Virtualization (App-V) の必要最小バージョンが存在するかどうかを確認しないことを指定します。  
+ Specifica che la presenza della versione minima richiesta di Microsoft Application Virtualization (App-V) non viene verificata prima di installare il client.  
 
 > [!IMPORTANT]  
->  App-V をインストールせずに Configuration Manager クライアントをインストールすると、仮想アプリケーションを展開することはできません。  
+>  Se si installa il client di Configuration Manager senza installare App-V, non è possibile distribuire applicazioni virtuali.  
 
- 例: `CCMSetup.exe IGNOREAPPVVERSIONCHECK=TRUE`  
+ Esempio: `CCMSetup.exe IGNOREAPPVVERSIONCHECK=TRUE`  
 
 ### <a name="notifyonly"></a>NOTIFYONLY
 
-クライアントで見つかった問題について、クライアントのステータスで報告しますが、修復はしないことを指定します。  
+Specifica che lo stato del client segnalerà, ma non correggerà, i problemi rilevati con il client.  
 
-例: `CCMSetup.exe NOTIFYONLY=TRUE`  
+Esempio: `CCMSetup.exe NOTIFYONLY=TRUE`  
 
-詳細については、「 [How to configure client status in System Center Configuration Manager](configure-client-status.md)」をご覧ください。  
+Per ulteriori informazioni, vedere [How to configure client status in System Center Configuration Manager](configure-client-status.md).  
 
 ### <a name="resetkeyinformation"></a>RESETKEYINFORMATION
 
- Configuration Manager クライアントに間違った Configuration Manager の信頼されたルート キーがあり、信頼された管理ポイントに接続して新しい信頼されたルート キーを取得できない場合は、このプロパティを使用して古い信頼されたルート キーを手動で削除する必要があります。 この状況は、クライアントを 1 つのサイト階層から別のサイト階層に移動したときに発生する場合があります。 このプロパティは、HTTP および HTTPS クライアント接続を使用するクライアントに適用されます。  
+ Se un client di Configuration Manager ha la chiave radice attendibile di Configuration Manager errata e non può contattare un punto di gestione attendibile per ricevere la nuova chiave radice attendibile, è necessario rimuovere manualmente la vecchia chiave radice attendibile usando questa proprietà. Questa situazione può verificarsi quando si sposta un client da una gerarchia del sito a un'altra. Questa proprietà viene applicata ai client che usano la comunicazione client HTTP e HTTPS.  
 
- 例: `CCMSetup.exe RESETKEYINFORMATION=TRUE`  
+ Esempio: `CCMSetup.exe RESETKEYINFORMATION=TRUE`  
 
 ### <a name="sitereassign"></a>SITEREASSIGN
 
-[SMSSITECODE](#smssitecode)=AUTO と共に使用して、クライアント アップグレードの自動サイト再割り当てを有効にします。
+Consente la riassegnazione automatica del sito per gli aggiornamenti client se usata con [SMSSITECODE](#smssitecode)=AUTO.
 
-例: `CCMSetup.exe SMSSITECODE=AUTO SITEREASSIGN=TRUE`
+Esempio: `CCMSetup.exe SMSSITECODE=AUTO SITEREASSIGN=TRUE`
 
 ### <a name="smscachedir"></a>SMSCACHEDIR
 
-一時ファイルを保存するクライアント コンピューターのクライアントキャッシュ フォルダーの場所を指定します。 既定では、 *%Windir \ccmcache*にあります。  
+Specifica il percorso della cartella cache client nel computer client in cui vengono archiviati i file temporanei. Per impostazione predefinita, il percorso è *%Windir \ccmcache*.  
 
-例: `CCMSetup.exe SMSCACHEDIR="C:\Temp"`  
+Esempio: `CCMSetup.exe SMSCACHEDIR="C:\Temp"`  
 
-このプロパティを SMSCACHEFLAGS プロパティと共に使用すると、クライアント キャッシュ フォルダーの場所を制御できます。  
+Questa proprietà può essere usata insieme alla proprietà SMSCACHEFLAGS per controllare il percorso della cartella cache del client.  
 
-例: `CCMSetup.exe SMSCACHEDIR=Cache SMSCACHEFLAGS=MAXDRIVE` は、最も空き容量の大きいクライアント ディスク ドライブにクライアント キャッシュ フォルダーをインストールします。  
+Esempio: `CCMSetup.exe SMSCACHEDIR=Cache SMSCACHEFLAGS=MAXDRIVE` consente di installare la cartella cache del client nell'unità disco del client più grande.  
 
 ### <a name="smscacheflags"></a>SMSCACHEFLAGS
 
-クライアント キャッシュ フォルダーのインストールの詳細を指定します。 SMSCACHEFLAGS プロパティは、単独で、またはセミコロンで区切った組み合わせで使用できます。 このプロパティを指定しない場合、クライアント キャッシュ フォルダーは SMSCACHEDIR プロパティに従ってインストールされ、フォルダーは圧縮されず、SMSCACHESIZE の値は MB 単位のフォルダー サイズとして使用されます。  
+Specifica ulteriori dettagli di installazione per la cartella cache client. È possibile usare le proprietà SMSCACHEFLAGS singolarmente o combinate, separate da punti e virgola. Se questa proprietà non viene specificata, la cartella cache client viene installata in base alla proprietà SMSCACHEDIR, la cartella non viene compressa e il valore di SMSCACHESIZE viene usato come dimensione in MB della cartella.  
 
-既存のクライアントをアップグレードすると、この設定は無視されます。  
+Questa impostazione viene ignorata quando si aggiorna un client esistente.  
 
-［プロパティ］:  
+Proprietà:  
 
--   PERCENTDISKSPACE: フォルダー サイズを合計ディスク領域に対する割合として指定します。 このプロパティを指定する場合は、SMSCACHESIZE プロパティを使用する割合値として指定する必要もあります。  
+-   PERCENTDISKSPACE: specifica la dimensione della cartella come percentuale dello spazio totale su disco. Se si specifica questa proprietà, è necessario specificare anche la proprietà SMSCACHESIZE come valore di percentuale da usare.  
 
--   PERCENTFREEDISKSPACE: フォルダー サイズをディスク空き領域に対する割合として指定します。 このプロパティを指定する場合は、SMSCACHESIZE プロパティを使用する割合値として指定する必要もあります。 たとえば、ディスクに 10 MB の空き領域があり、SMSCACHESIZE を 50 に指定した場合、フォルダー サイズは 5 MB に設定されます。 このプロパティを PERCENTDISKSPACE プロパティと共に使用することはできません。  
+-   PERCENTFREEDISKSPACE: specifica la dimensione della cartella come percentuale dello spazio libero su disco. Se si specifica questa proprietà, è necessario specificare anche la proprietà SMSCACHESIZE come valore di percentuale da usare. Ad esempio, se nel disco sono disponibili 10 MB di spazio e SMSCACHESIZE viene specificata su 50, la dimensione della cartella è impostata su 5 MB. È impossibile usare questa proprietà con la proprietà PERCENTDISKSPACE.  
 
--   MAXDRIVE: 利用できる最も大きいディスクにフォルダーをインストールすることを指定します。 この値は、パスが SMSCACHEDIR プロパティと共に指定されている場合は無視されます。  
+-   MAXDRIVE: specifica che la cartella deve essere installata nel disco più grande disponibile. Questo valore verrà ignorato se è stato specificato un percorso con la proprietà SMSCACHEDIR.  
 
--   MAXDRIVESPACE: 空き領域が最も大きいディスク ドライブにフォルダーをインストールするように指定します。 この値は、パスが SMSCACHEDIR プロパティと共に指定されている場合は無視されます。  
+-   MAXDRIVESPACE: specifica che la cartella deve essere installata nell'unità disco con più spazio libero. Questo valore verrà ignorato se è stato specificato un percorso con la proprietà SMSCACHEDIR.  
 
--   NTFSONLY: NTFS ディスク ドライブにのみフォルダーをインストールするように指定します。 この値は、パスが SMSCACHEDIR プロパティと共に指定されている場合は無視されます。  
+-   NTFSONLY: specifica che la cartella può essere installata solo in unità disco NTFS. Questo valore verrà ignorato se è stato specificato un percorso con la proprietà SMSCACHEDIR.  
 
--   COMPRESS: フォルダーを圧縮形式で保持するように指定します。  
+-   COMPRESS: specifica che la cartella deve essere archiviata in formato compresso.  
 
--   FAILIFNOSPACE: フォルダーをインストールするための領域が十分にない場合にクライアント ソフトウェアを削除するように指定します。  
+-   FAILIFNOSPACE: specifica che il software client deve essere rimosso se non è disponibile spazio sufficiente per installare la cartella.  
 
-例: `CCMSetup.exe SMSCACHEFLAGS=NTFSONLY;COMPRESS`  
+Esempio: `CCMSetup.exe SMSCACHEFLAGS=NTFSONLY;COMPRESS`  
 
 
 ### <a name="smscachesize"></a>SMSCACHESIZE
 
 > [!IMPORTANT]
-> Configuration Manager バージョン 1606 以降では、新しいクライアント設定でクライアント キャッシュ フォルダーのサイズを指定できます。 これらのクライアント設定を追加すると、SMSCACHESIZE を使用して、クライアント キャッシュのサイズを指定する client.msi プロパティとして効果的に置き換えられます。 詳細については、「[キャッシュ サイズに関するクライアント設定](about-client-settings.md#client-cache-settings)」を参照してください。  
+> A partire da Configuration Manager versione 1606, sono disponibili nuove impostazioni client per specificare le dimensioni della cartella cache del client. Queste nuove impostazioni client sostituiscono in modo efficace l'uso di SMSCACHESIZE come proprietà di client.msi per specificare le dimensioni della cache del client. Per altre informazioni, vedere [le impostazioni client per le dimensioni della cache](about-client-settings.md#client-cache-settings).  
 
-1602 より前では、PERCENTDISKSPACE プロパティまたは PERCENTFREEDISKSPACE プロパティと共に使用する場合は、SMSCACHESIZE はクライアント キャッシュ フォルダーのサイズをメガバイト (MB) 単位またはパーセント単位で指定します。 このプロパティを設定しない場合は、フォルダーは既定の最大サイズの 5120 MB に設定されます。 指定できる最小値は 1 MB です。  
-
-> [!NOTE]  
->  ダウンロードが必要な新しいパッケージが原因でフォルダーが最大サイズを超えた場合で、フォルダーを消去して十分な領域を空けることができない場合は、パッケージのダウンロードは失敗し、プログラムまたはアプリケーションは実行されません。  
-
-既存のクライアントをアップグレードしたり、クライアントがソフトウェア更新プログラムをダウンロードしたりしたときは、この設定は無視されます。  
-
-例: `CCMSetup.exe SMSCACHESIZE=100`  
+Per la versione 1602 e le versioni precedenti SMSCACHESIZE specifica le dimensioni della cartella della cache del client in megabyte (MB) o sotto forma di percentuale, se viene usata con la proprietà PERCENTDISKSPACE o PERCENTFREEDISKSPACE. Se questa proprietà non viene impostata, per impostazione predefinita la cartella presenta una dimensione massima di 5120 MB. Il valore più basso che è possibile specificare è 1 MB.  
 
 > [!NOTE]  
->  クライアントをインストールする場合、SMSCACHESIZE プロパティまたは SMSCACHEFLAGS プロパティを使用して以前よりも小さいキャッシュ サイズを設定することはできません。 小さいサイズを設定しようとすると、値は無視され、キャッシュ サイズには以前の設定値が自動的に設定されます。  
+>  Se a causa di un nuovo pacchetto che deve essere scaricato la cartella supera la dimensione massima e non può essere ripulita per creare spazio sufficiente, il download del pacchetto ha esito negativo e il programma o l'applicazione non vengono eseguiti.  
+
+Questa impostazione viene ignorata quando si aggiorna un client esistente e quando il client scarica gli aggiornamenti software.  
+
+Esempio: `CCMSetup.exe SMSCACHESIZE=100`  
+
+> [!NOTE]  
+>  Se si reinstalla un client, è impossibile usare le proprietà di installazione SMSCACHESIZE o SMSCACHEFLAGS per ridurre la dimensione della cache rispetto a prima. Se si tenta di eseguire questa operazione, il valore viene ignorato e la dimensione della cache viene impostata automaticamente sulla dimensione precedente.  
 
 ### <a name="smsconfigsource"></a>SMSCONFIGSOURCE
 
-Configuration Manager インストーラーで構成設定を確認する場所と順序を指定します。 このプロパティは、各文字が特定の構成ソースを定義する 1 つまたは複数の文字で構成される文字列です。 R、P、M、および U の文字の値を単独で、または組み合わせて使用します。  
+Specifica il percorso e l'ordine in cui il programma di installazione di Configuration Manager verifica le impostazioni di configurazione. La proprietà è una stringa contenente uno o più caratteri, ognuno dei quali definisce un'origine di configurazione specifica. Usare i valori dei caratteri R, P, M e U, singolarmente o combinati:  
 
--   R: レジストリで構成設定を確認します。  
+-   R: cerca le impostazioni di configurazione nel Registro di sistema.  
 
-   詳しくは、[レジストリ内のクライアント インストール プロパティの保存に関する情報](https://technet.microsoft.com/library/gg712298.aspx#BKMK_Provision)をご覧ください。  
+   Per altre informazioni, vedere le [informazioni sull'archiviazione delle proprietà di installazione del client nel Registro di sistema](https://technet.microsoft.com/library/gg712298.aspx#BKMK_Provision).  
 
--   P: コマンド プロンプトで指定したインストール プロパティで構成設定を確認します。  
+-   P: cerca le impostazioni di configurazione nelle proprietà di installazione fornite al prompt dei comandi.  
 
--   M: 古いクライアントを Configuration Manager クライアント ソフトウェアでアップグレードするときに既存の設定を確認します。  
+-   M: verifica le impostazioni esistenti durante l'aggiornamento di un client precedente con il software client di Configuration Manager.  
 
--   U: インストールしたクライアントを新しいバージョンにアップグレードします (さらに、割り当てられたサイト コードを使用します)。  
+-   U: aggiorna il client installato a una versione più recente (e usa il codice sito assegnato).  
 
- 既定では、クライアント インストールでは `PU` が使用され、最初にインストール プロパティ、次に既存の設定がチェックされます。  
+ Per impostazione predefinita, l'installazione client usa `PU` per cercare innanzitutto le proprietà di installazione e quindi le impostazioni esistenti.  
 
- 例: `CCMSetup.exe SMSCONFIGSOURCE=RP`  
+ Esempio: `CCMSetup.exe SMSCONFIGSOURCE=RP`  
 
 ### <a name="smsdirectorylookup"></a>SMSDIRECTORYLOOKUP
 
- クライアントが Windows Internet Name Service (WINS) を使用して HTTP 接続を許可する管理ポイントを検索できるようにするかどうかを指定します。 Active Directory ドメイン サービスまたは DNS に管理ポイントが見つからないとき、クライアントはこの方法を使用します。  
+ Specifica se il client può usare Windows Internet Name Service (WINS) per trovare un punto di gestione che accetti le connessioni HTTP. I client usano questo metodo quando non riescono a trovare un punto di gestione in Servizi di dominio Active Directory o in DNS.  
 
- このプロパティは、クライアントが名前解決に WINS を使用するかどうかに影響しません。  
+ Questa proprietà non influisce sull'uso di WINS da parte del client per la risoluzione dei nomi.  
 
- このプロパティでは 2 つの異なるモードを構成できます。  
+ È possibile configurare due diverse modalità per questa proprietà:  
 
--   NOWINS: これはこのプロパティでは最も安全な設定であり、クライアントが WINS で管理ポイントを探すのを防ぎます。  この設定を使用する場合は、クライアントには、Active Directory ドメイン サービスといったイントラネット上、または DNS 公開の使用などで管理ポイントを探す代替の方法が用意されている必要があります。  
+-   NOWINS: si tratta dell'impostazione più sicura per questa proprietà che impedisce ai client di trovare un punto di gestione in WINS.  Quando si usa questa impostazione, i client devono usare un metodo alternativo per individuare un punto di gestione in Intranet, come ad esempio Servizi di dominio Active Directory o tramite la pubblicazione DNS.  
 
--   WINSSECURE (既定): このモードでは、HTTP 通信を使用するクライアントは、WIN を使用して管理ポイントを探すことができます。 しかし、クライアントは管理ポイントへ接続する前に信頼されたルート キーを持っている必要があります。 詳細については、「 [Plan for Security 」の「 System Center Configuration Manager](../../plan-design/security/plan-for-security.md#BKMK_PlanningForRTK) 」の「 [Plan for security 」の「 System Center Configuration Manager](../../plan-design/security/plan-for-security.md)」を参照してください。  
+-   WINSSECURE (predefinita): in questa modalità un client che usa la comunicazione HTTP può usare WINS per trovare un punto di gestione. Tuttavia, il client deve disporre di una copia della chiave radice attendibile prima di potersi connettere al punto di gestione. Per altre informazioni, vedere [Planning for the Trusted Root Key](../../plan-design/security/plan-for-security.md#BKMK_PlanningForRTK) in [Plan for security in System Center Configuration Manager](../../plan-design/security/plan-for-security.md).  
 
 
- 例: `CCMSetup.exe SMSDIRECTORYLOOKUP=NOWINS`  
+ Esempio: `CCMSetup.exe SMSDIRECTORYLOOKUP=NOWINS`  
 
 ### <a name="smsmp"></a>SMSMP
 
-Configuration Manager クライアントが使用する最初の管理ポイントを指定します。  
+Specifica un punto di gestione iniziale usato dal client di Configuration Manager.  
 
 > [!IMPORTANT]  
->  管理ポイントが HTTPS でのクライアント接続のみを受け入れる場合、管理ポイント名の先頭に https:// を付加する必要があります。  
+>  Se il punto di gestione accetta solo connessioni client su HTTPS, è necessario aggiungere al nome del punto di gestione il prefisso https://.  
 
-例: `CCMSetup.exe SMSMP=smsmp01.contoso.com`
+Esempio: `CCMSetup.exe SMSMP=smsmp01.contoso.com`
 
-例: `CCMSetup.exe SMSMP=https://smsmp01.contoso.com`  
+Esempio: `CCMSetup.exe SMSMP=https://smsmp01.contoso.com`  
 
 ### <a name="smspublicrootkey"></a>SMSPUBLICROOTKEY
 
- Configuration Manager の信頼されたルート キーを Active Directory Domain Services から取得できない場合は、Configuration Manager の信頼されたルート キーを指定します。 このプロパティは、HTTP および HTTPS クライアント接続を使用するクライアントに適用されます。 詳細については、「 [Plan for Security 」の「 System Center Configuration Manager](../../plan-design/security/plan-for-security.md#BKMK_PlanningForRTK) 」の「 [Plan for security 」の「 System Center Configuration Manager](../../plan-design/security/plan-for-security.md)」を参照してください。  
+ Specifica la chiave radice attendibile di Configuration Manager quando non può essere recuperata da Servizi di dominio Active Directory. Questa proprietà viene applicata ai client che usano la comunicazione client HTTP e HTTPS. Per altre informazioni, vedere [Planning for the Trusted Root Key](../../plan-design/security/plan-for-security.md#BKMK_PlanningForRTK) in [Plan for security in System Center Configuration Manager](../../plan-design/security/plan-for-security.md).  
 
- 例: `CCMSetup.exe SMSPUBLICROOTKEY=&lt;key\>`  
+ Esempio: `CCMSetup.exe SMSPUBLICROOTKEY=&lt;key\>`  
 
 ### <a name="smsrootkeypath"></a>SMSROOTKEYPATH
 
- Configuration Manager の信頼されたルート キーを再インストールするために使用します。 信頼されたルート キーを含むファイルの完全なパスとファイル名を指定します。 このプロパティは、HTTP および HTTPS クライアント接続を使用するクライアントに適用されます。 詳細については、「 [Plan for Security 」の「 System Center Configuration Manager](../../plan-design/security/plan-for-security.md#BKMK_PlanningForRTK) 」の「 [Plan for security 」の「 System Center Configuration Manager](../../plan-design/security/plan-for-security.md)」を参照してください。  
+ Consente di reinstallare la chiave radice attendibile di Configuration Manager. Specifica il percorso completo e il nome file di un file che contiene la chiave radice attendibile. Questa proprietà viene applicata ai client che usano la comunicazione client HTTP e HTTPS. Per altre informazioni, vedere [Planning for the Trusted Root Key](../../plan-design/security/plan-for-security.md#BKMK_PlanningForRTK) in [Plan for security in System Center Configuration Manager](../../plan-design/security/plan-for-security.md).  
 
- 例: CCMSetup.exe SMSROOTKEYPATH=&lt;完全なパスとファイル名\>`  
+ Esempio: 'CCMSetup.exe SMSROOTKEYPATH=&lt;percorso e nome file completi\>`  
 
 ### <a name="smssigncert"></a>SMSSIGNCERT
 
- サイト サーバーのエクスポートされる自己署名した証明書の完全なパスと .cer ファイル名を指定します。  
+ Specifica il percorso completo e il nome file con estensione cer del certificato autofirmato esportato nel server del sito.  
 
- この証明書は、 **SMS** 証明書ストアに保存されています。サブジェクト名は **Site Server** 、フレンドリ名は **Site Server Signing Certificate**です。  
+ Il certificato viene archiviato nell'archivio certificati **SMS** e dispone del Nome oggetto **Server del sito** e del nome descrittivo **Certificato di firma del server del sito**.  
 
- 例: **CCMSetup.exe /UsePKICert SMSSIGNCERT=&lt;完全なパスとファイル名\>**  
+ Esempio: **CCMSetup.exe /UsePKICert SMSSIGNCERT=&lt;percorso e nome file completi\>**  
 
 ### <a name="smssitecode"></a>SMSSITECODE
 
- Configuration Manager クライアントを割り当てる Configuration Manager サイトを指定します。 3 文字のサイト コードか、または AUTO を指定できます。 AUTO が指定された場合、またはこのプロパティが指定されなかった場合は、クライアントは、Active Directory Domain Services または指定した管理ポイントからの Configuration Manager サイト割り当てを判断しようと試みます。 クライアントのアップグレードに対して AUTO を有効にするには、[SITEREASSIGN](#sitereassign) を TRUE に設定する必要もあります。    
+ Specifica il sito di Configuration Manager al quale assegnare il client di Configuration Manager. Può trattarsi di un codice del sito con tre caratteri o della parola AUTO. Se si specifica AUTO o se questa proprietà non viene specificata, il client prova a stabilire la relativa assegnazione sito di Configuration Manager da Active Directory Domain Services o da un punto di gestione specificato. Per abilitare la proprietà AUTO per gli aggiornamenti client, è necessario anche impostare [SITEREASSIGN](#sitereassign) su TRUE.    
 
 > [!NOTE]  
->  インターネットベースの管理ポイント (CCMHOSTNAME) も指定する場合、AUTO を使用しないでください。 この場合、クライアントをそのサイトに直接割り当てる必要があります。  
+>  Non usare AUTO se si specifica anche il punto di gestione basato su Internet (CCMHOSTNAME). In questo caso è necessario assegnare direttamente il client al relativo sito.  
 
- 例: `CCMSetup.exe SMSSITECODE=XZY`  
+ Esempio: `CCMSetup.exe SMSSITECODE=XZY`  
 
-##  <a name="BKMK_attributevalues"></a> PKI 証明書の選択条件としてサポートされている属性値  
- Configuration Manager は、PKI 証明書の選択条件として次の属性値をサポートしています。  
+##  <a name="BKMK_attributevalues"></a> Valori attributi supportati per i criteri di selezione del certificato PKI  
+ Configuration Manager supporta i valori seguenti di attributi per i criteri di selezione del certificato PKI:  
 
-|OID 属性|識別名属性|属性の定義|  
+|Attributo OID|Attributo del nome distinto|Definizione di attributo|  
 |-------------------|----------------------------------|--------------------------|  
-|0.9.2342.19200300.100.1.25|DC|ドメイン要素|  
-|1.2.840.113549.1.9.1|E または E-mail|電子メール アドレス|  
-|2.5.4.3|CN|共通名|  
-|2.5.4.4|SN|サブジェクト名|  
-|2.5.4.5|SERIALNUMBER|シリアル番号|  
-|2.5.4.6|C|国番号|  
-|2.5.4.7|L|地域|  
-|2.5.4.8|S または ST|州または都道府県|  
-|2.5.4.9|STREET|住所|  
-|2.5.4.10|O|組織名|  
-|2.5.4.11|OU|組織単位|  
-|2.5.4.12|T または Title|タイトル|  
-|2.5.4.42|G または GN または GivenName|名前|  
-|2.5.4.43|I または Initials|イニシャル|  
-|2.5.29.17|(値なし)|サブジェクト代替名|  
+|0.9.2342.19200300.100.1.25|DC|Componente del dominio|  
+|1.2.840.113549.1.9.1|E o E-mail|Indirizzo di posta elettronica|  
+|2.5.4.3|CN|Nome comune|  
+|2.5.4.4|SN|Nome oggetto|  
+|2.5.4.5|SERIALNUMBER|Numero di serie|  
+|2.5.4.6|C|Codice paese|  
+|2.5.4.7|L|Località|  
+|2.5.4.8|S o ST|Nome di provincia o stato|  
+|2.5.4.9|STREET|Indirizzo|  
+|2.5.4.10|O|Nome organizzazione|  
+|2.5.4.11|OU|Unità organizzativa|  
+|2.5.4.12|T o Title|Titolo|  
+|2.5.4.42|G o GN o GivenName|Nome specificato|  
+|2.5.4.43|I o Initials|Iniziali|  
+|2.5.29.17|(nessun valore)|Nome alternativo soggetto|  

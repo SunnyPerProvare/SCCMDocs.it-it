@@ -1,6 +1,6 @@
 ---
-title: "リモート コントロールのセキュリティとプライバシー | Microsoft Docs"
-description: "System Center Configuration Manager のリモート コントロールのセキュリティとプライバシーの情報を確認します。"
+title: Privacy e sicurezza per il controllo remoto | Microsoft Docs
+description: Informazioni sulla sicurezza e la privacy per il controllo remoto in System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -18,46 +18,46 @@ manager: angrobe
 ms.openlocfilehash: 03b8ede7fa4f4c02ffb551bb28fe2db234d39b12
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-remote-control-in-system-center-configuration-manager"></a>System Center Configuration Manager のリモート コントロールのセキュリティとプライバシー
+# <a name="security-and-privacy-for-remote-control-in-system-center-configuration-manager"></a>Sicurezza e privacy per il controllo remoto in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-このトピックには、System Center 2012 Configuration Manager のリモート コントロールのセキュリティとプライバシーの情報が含まれています。  
+In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy per il controllo remoto in System Center 2012 Configuration Manager.  
 
-##  <a name="BKMK_Security_HardwareInventory"></a> リモート コントロールのセキュリティのベスト プラクティス  
- ここでは、リモート コントロールを使用してクライアント コンピューターを管理するときのセキュリティのベスト プラクティスについて説明します。  
+##  <a name="BKMK_Security_HardwareInventory"></a> Procedure di sicurezza consigliate per il controllo remoto  
+ Usare le seguenti procedure di sicurezza consigliate quando si gestiscono computer client mediante il controllo remoto.  
 
-|セキュリティのベスト プラクティス|説明|  
+|Procedura di sicurezza consigliata|Altre informazioni|  
 |----------------------------|----------------------|  
-|Kerberos 認証ではなく NTLM 認証が使用されていたら、リモート コンピューターに接続しない。|Kerberos 認証ではなく NTLM 認証が使用されて、リモート コントロール セッションが認証されていることを Configuration Manager が検出すると、リモート コンピューターの ID が検証できないという警告が表示されます。 そのリモート コントロール セッションを続けないでください。 NTLM 認証は Kerberos よりも弱い認証プロトコルで、再生攻撃やなりすましに対して脆弱です。|  
-|リモート コントロール ビューアーでは、クリップボードの共有を無効にしてください。|クリップボードが実行可能ファイルやテキストなどのオブジェクトをサポートすると、接続を開始するコンピューターでプログラムを実行するリモート コントロール セッション中に、ホスト コンピューターのユーザーに使用される可能性があります。|  
-|コンピューターをリモートで管理する場合は、特権アカウントのパスワードを入力しない。|キーボード入力を監視するソフトウェアによって、パスワードが捕捉される可能性があります。 また、クライアント コンピューターで実行されているプログラムが、リモート コントロール ユーザーを想定したプログラムではない場合は、そのプログラムによってパスワードがキャプチャされている可能性があります。 アカウントおよびパスワードが必要な場合は、エンド ユーザーが入力するようにしてください。|  
-|リモート コントロール セッション中は、キーボードとマウスをロックする。|Configuration Manager がリモート コントロール接続の終了を検出すると、Configuration Manager は自動的にキーボードとマウスをロックし、ユーザーがオープンなリモート コントロール セッションを制御できなくなります。 ただ、直ちに検出されないことがあり、リモート コントロール サービスが終了した場合は、検出されません。<br /><br /> 操作を選択する **リモートのキーボードとマウス** で、 **ConfigMgr リモート コントロール** ウィンドウです。|  
-|ソフトウェア センターのリモート コントロール設定をユーザーに構成させない。|クライアント設定 [ **ユーザーはソフトウェア センターでポリシー設定または通知設定を変更できる** ] を無効にして、ユーザーが盗み見られないようにします。<br /><br /> この設定はコンピューターに対するもので、ログオン ユーザーに対するものではありません。|  
-|[ **ドメイン** ] Windows ファイアウォールのプロファイルを有効にします。|クライアント設定を有効にする **クライアントのファイアウォール例外プロファイルでリモート制御を有効にする** クリックして、 **ドメイン** イントラネット コンピューター用に Windows ファイアウォールです。|  
-|リモート コントロール セッション中にログオフし、別のユーザーとしてログオンする場合は、リモート コントロール セッションの接続を切断する前に、ログオフしていることを確認してください。|このシナリオでログオフしないと、セッションがオープンのまま残ります。|  
-|ユーザーにローカルの管理者権限を与えない。|ユーザーにローカルの管理者権限を与えると、リモート コントロール セッションが乗っ取られたり、資格情報が侵害される可能性があります。|  
-|グループ ポリシーまたは Configuration Manager のいずれかを使用してリモート アシスタンス設定を構成し、両方は使用しない。|Configuration Manager およびグループ ポリシーを使用して、リモート アシスタンス設定に対する変更を構成することができます。 クライアントでグループ ポリシーが更新されると、既定では、サーバーで変更されたポリシーのみが変更され、プロセスが最適化されます。 Configuration Manager によりローカル セキュリティ ポリシーの設定が変更されますが、これは、グループ ポリシーの更新が適用されない限り、上書きされない可能性があります。<br /><br /> 両方の場所でポリシーを設定すると、矛盾が生じる可能性があります。 リモート アシスタンス設定を構成するには、いずれかの方法を選択してください。|  
-|クライアント設定 [ **リモート コントロールのアクセス許可をユーザーに要求する** ] を有効にする。|リモート コントロール セッションの確認をユーザーに要求するこのクライアント設定を回避する方法はありますが、この設定を有効にすると、ユーザーが機密情報の作業中に盗み見られるリスクが低減されます。<br /><br /> また、リモート コントロール セッション中に表示されるアカウント名を確認し、アカウントが認証されない可能性があれば接続を切断するように、ユーザーを教育します。|  
-|アクセス許可のあるユーザーの一覧を制限する。|ローカルの管理者権限は、リモート コントロールを使用できるユーザーには不要です。|  
+|Al momento di connettersi a un computer remoto, non continuare la procedura se viene usata l'autenticazione NTLM anziché l'autenticazione Kerberos.|Se Configuration Manager rileva che la sessione di controllo remoto viene autenticata con NTLM anziché Kerberos, un prompt segnala che non è possibile verificare l'identità del computer remoto. Non continuare la sessione di controllo remoto. NTLM è un protocollo di autenticazione più debole rispetto a Kerberos ed è vulnerabile agli attacchi di riproduzione e rappresentazione.|  
+|Non abilitare la condivisione degli Appunti nel visualizzatore controllo remoto.|Gli Appunti supportano oggetti quali file eseguibili e testo. L'utente potrebbe quindi usarli nel computer host durante la sessione di controllo remoto per eseguire un programma nel computer di origine.|  
+|Quando si amministra un computer in remoto, non immettere password di account con privilegi.|Eventuale software in grado di osservare l'input da tastiera potrebbe infatti acquisire le password. Questa violazione potrebbe avvenire anche tramite l'esecuzione nel computer client di un programma diverso da quello presupposto dall'utente del controllo remoto. Se sono richiesti account e password, l'utente finale deve immetterli.|  
+|Durante una sessione di controllo remoto bloccare la tastiera e il mouse.|Se Configuration Manager rileva che la connessione di controllo remoto è terminata, blocca automaticamente la tastiera e il mouse per impedire a un utente di assumere il controllo della sessione di controllo remoto aperta. Tale rilevamento, però, potrebbe non essere immediato e comunque non si verifica se il servizio di controllo remoto è stato arrestato.<br /><br /> Selezionare l'azione **Blocca tastiera e mouse remoti** nella finestra **Controllo remoto di Configuration Manager** .|  
+|Non consentire agli utenti di configurare le impostazioni di controllo remoto in Software Center.|Non abilitare l'impostazione client **Gli utenti possono modificare le impostazioni di criteri o notifiche in Software Center** per evitare che gli utenti vengano controllati.<br /><br /> Questa impostazione si riferisce al computer e non all'utente connesso.|  
+|Abilitare il profilo di Windows Firewall **Dominio** .|Abilitare l'impostazione client **Abilitare controllo remoto nei client Profili delle eccezioni firewall** e quindi selezionare il profilo di Windows Firewall **Dominio** per i computer della Intranet.|  
+|Se ci si disconnette durante una sessione di controllo remoto e si riaccede con un account utente diverso, assicurarsi di eseguire la disconnessione prima di disconnettere la sessione di controllo remoto.|In questo scenario, se non si esegue la disconnessione, la sessione rimane aperta.|  
+|Non concedere diritti di amministratore locale agli utenti.|Se si concedono diritti di amministratore locale agli utenti, questi ultimi potrebbero assumere il controllo della sessione di controllo remoto o compromettere le credenziali dell'amministratore.|  
+|Per configurare le impostazioni di Assistenza remota, usare Criteri di gruppo o Configuration Manager, ma non entrambi.|È possibile usare Configuration Manager e Criteri di gruppo per apportare modifiche di configurazione alle impostazioni di Assistenza remota. Con l'aggiornamento di Criteri di gruppo nel client, per impostazione predefinita la procedura viene ottimizzata con la modifica dei soli criteri modificati nel server. Configuration Manager modifica le impostazioni nei criteri di sicurezza locali, che potrebbero essere sovrascritti solo se viene forzato l'aggiornamento di Criteri di gruppo.<br /><br /> Se si impostano i criteri in entrambe le posizioni si potrebbero ottenere risultati incoerenti. Per configurare le impostazioni di Assistenza remota, scegliere uno di questi metodi.|  
+|Abilitare l'impostazione client **Richiedere all'utente l'autorizzazione di controllo remoto**.|Anche se esistono metodi alternativi a questa impostazione per richiedere all'utente di confermare una sessione remota, abilitare questa impostazione per ridurre la possibilità che gli utenti vengano controllati mentre eseguono attività riservate.<br /><br /> Inoltre, invitare gli utenti a verificare il nome dell'account visualizzato durante la sessione di controllo remoto e a disconnettere la sessione se si sospetta che l'account non sia autorizzato.|  
+|Limitare l'elenco dei visualizzatori autorizzati.|Per usare il controllo remoto non sono necessari diritti di amministratore locale.|  
 
-### <a name="security-issues-for-remote-control"></a>リモート コントロールのセキュリティの問題  
- リモート コントロールを使用するクライアント コンピューターの管理では、次のセキュリティの問題があります。  
+### <a name="security-issues-for-remote-control"></a>Problemi di sicurezza per il controllo remoto  
+ La gestione dei computer client tramite controllo remoto presenta i problemi di sicurezza seguenti:  
 
--   リモート コントロールの監査メッセージを信頼性があるものとは考えない。  
+-   Non considerare affidabili i messaggi di controllo di controllo remoto.  
 
-     リモート コントロール セッションを開始してから、代替資格情報を使用してログオンした場合、監査メッセージを送信するのは元のアカウントで、代替資格情報を使用するアカウントではありません。  
+     Se si avvia una sessione di controllo remoto e quindi si accede con credenziali alternative, i messaggi di controllo vengono inviati dall'account originale e non dall'account che usa le credenziali alternative.  
 
-     Configuration Manager コンソールのインストールではなく、リモート コントロールのバイナリ ファイルをコピーしてから、コマンド プロンプトでリモート コントロールを実行すると、監査メッセージは送信されません。  
+     Non vengono inviati messaggi di controllo se anziché installare la console di Configuration Manager si copiano i file binari per il controllo remoto e quindi si esegue il controllo remoto dal prompt dei comandi.  
 
-##  <a name="BKMK_Privacy_HardwareInventory"></a> リモート コントロールのプライバシー情報  
- リモート コントロールを使用すると、Configuration Manager クライアント コンピューターでアクティブなセッションを表示することや、場合によってはそれらのコンピューターに保存されたあらゆる情報を表示することが可能です。 既定では、リモート コントロールは無効になっています。  
+##  <a name="BKMK_Privacy_HardwareInventory"></a> Informazioni sulla privacy per il controllo remoto  
+ Il controllo remoto consente di visualizzare le sessioni attive nei computer client di Configuration Manager e, potenzialmente, tutte le informazioni archiviate in tali computer. Per impostazione predefinita, il controllo remoto non è abilitato.  
 
- リモート コントロールは、リモート コントロール セッションの開始前に明確に通知してユーザーの同意を得るように構成することができますが、ユーザーに許可を得たり気付かれたりすることなくユーザーを監視するように構成することもできます。 "表示のみ" アクセス レベルを構成して、リモート コントロールやフル コントロールでは何も変更できないようにすることができます。 リモート コントロール セッションで接続中の管理者のアカウントが表示されるので、コンピューターに接続しているユーザーを識別することができます。  
+ È possibile configurare il controllo remoto in modo da visualizzare in modo evidente un messaggio di preavviso e ottenere il consenso dall'utente prima di iniziare una sessione, ma è anche possibile monitorare gli utenti senza la loro autorizzazione e senza che ne siano consapevoli. È possibile configurare il livello di accesso di sola visualizzazione, in modo che non sia possibile eseguire modifiche durante il controllo remoto, o di controllo completo. Nella sessione di controllo remoto viene visualizzato l'account dell'amministratore connesso, per consentire agli utenti di identificare chi si connette al loro computer.  
 
- 既定では、Configuration Manager は、ローカルの Administrators グループにリモート コントロール権限を付与します。  
+ Per impostazione predefinita, Configuration Manager concede l'autorizzazione di controllo remoto al gruppo Administrators locale.  
 
- リモート コントロールを構成する前に、プライバシー要件について検討してください。  
+ Prima di configurare il controllo remoto, prendere in considerazione i requisiti in vigore relativi alla privacy.  

@@ -1,6 +1,6 @@
 ---
-title: "構成基準に関する一般的なタスク - Configuration Manager | Microsoft Docs"
-description: "System Center Configuration Manager の構成基準を作成して展開する方法について説明します。"
+title: "Attività comuni per le linee di base di configurazione - Configuration Manager | Microsoft Docs"
+description: Informazioni su come creare e distribuire linee di base di configurazione in System Center Configuration Manager.
 ms.custom: na
 ms.date: 07/12/2017
 ms.prod: configuration-manager
@@ -18,70 +18,70 @@ manager: angrobe
 ms.openlocfilehash: 5bf4457af6bedf7bc9cd73c879f1857209c0725d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="common-tasks-for-creating-and-deploying-configuration-baselines-with-system-center-configuration-manager"></a>System Center Configuration Manager での構成基準の作成と展開に関する一般的なタスク
+# <a name="common-tasks-for-creating-and-deploying-configuration-baselines-with-system-center-configuration-manager"></a>Attività comuni per la creazione e la distribuzione di linee base di configurazione con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-このトピックには、System Center Configuration Manager の構成基準を作成および展開する方法を習得するのに役立つ一般的なシナリオが含まれます。  
+Questo argomento descrive alcuni scenari comuni per scoprire come creare e distribuire le linee di base di configurazione di System Center Configuration Manager.  
 
- 「[構成基準の作成](../../compliance/deploy-use/create-configuration-baselines.md)」と「[構成基準の展開](../../compliance/deploy-use/deploy-configuration-baselines.md)」のトピックには、コンプライアンス設定に関する知識を既にお持ちの方を対象とした、使用するすべての機能に関する詳細なドキュメントがあります。  
+ Gli utenti che hanno già familiarità con le impostazioni di conformità possono trovare la documentazione dettagliata su tutte le funzionalità usate negli argomenti [Creare linee di base di configurazione](../../compliance/deploy-use/create-configuration-baselines.md) e [Distribuire linee di base di configurazione](../../compliance/deploy-use/deploy-configuration-baselines.md).  
 
- 作業を開始する前に、「[System Center Configuration Manager のコンプライアンス設定を使ってみる](../../compliance/get-started/get-started-with-compliance-settings.md)」をお読みになり、いくつかの基本的なコンプライアンス設定を確認してください。また、[コンプライアンス設定の計画と構成](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md)に関するページをお読みになり、必要な前提条件の実装方法を確認してください。  
+ Prima di iniziare, leggere [Get started with compliance settings in System Center Configuration Manager](../../compliance/get-started/get-started-with-compliance-settings.md) (Introduzione alle impostazioni di conformità in System Center Configuration Manager) per apprendere alcune nozioni sulle impostazioni di conformità e [Plan for and configure compliance settings](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md) (Pianificare e configurare le impostazioni di conformità) per implementare i prerequisiti necessari.  
 
-## <a name="create-a-configuration-baseline"></a>構成基準の作成  
- この例では、Configuration Manager クライアントを実行している Windows 10 PC のみを対象に構成項目を作成しました。  
+## <a name="create-a-configuration-baseline"></a>Creare una linea di base di configurazione  
+ In questo esempio è stato creato un elemento di configurazione solo per i PC con Windows 10 che eseguono il client di Configuration Manager.  
 
- この構成項目では、Windows 10 PC で 6 文字以上のパスワードが求められるように指定します。 構成項目には、" **Windows 10 パスワード適用**" という名前が付けられます。  
+ Questo elemento di configurazione impone una password obbligatoria di almeno 6 caratteri nei PC Windows 10. L'elemento di configurazione è denominato **Windows 10 Password Enforcement**.  
 
-次の手順では、この構成項目を構成基準に追加して、展開用に準備する方法について説明します。  
+Usare la procedura seguente per apprendere come aggiungere questo elemento di configurazione a una linea di base di configurazione per prepararlo per la distribuzione.  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[コンプライアンス設定]** > **[構成基準]** の順にクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Linee di base di configurazione**.  
 
-3.  **ホーム** ] タブで、 **作成** グループで、[ **構成基準の作成**です。  
+3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea linea di base di configurazione**.  
 
-4.  **[構成基準の作成]** ダイアログ ボックスで、次の設定を構成します。  
+4.  Nella finestra di dialogo **Crea linea di base di configurazione** configurare le impostazioni seguenti:  
 
-    -   **名前** - **Windows 10 パスワード** (または任意の別の名前)  
+    -   **Nome** - Immettere **Password Windows 10** (o un altro nome a scelta).  
 
-5.  **[追加]** > **[構成項目]** の順にクリックします。  
+5.  Fare clic su **Aggiungi** > **Elementi di configurazione**.  
 
-6.  **[構成項目の追加]** ダイアログ ボックスで、前に作成した **[Windows 10 パスワード適用]** 構成項目を選択し、 **[追加]**をクリックします。  
+6.  Nella finestra di dialogo **Aggiungi elementi di configurazione** selezionare l'elemento di configurazione **Windows 10 Password Enforcement** creato in precedenza e quindi fare clic su **Aggiungi**.  
 
-7.  [OK] をクリックして **[構成項目の追加]** ダイアログ ボックスを閉じて、**[構成基準の作成]** ダイアログ ボックスに戻ります。
+7.  Fare clic su OK per chiudere la finestra di dialogo **Aggiungi elementi di configurazione** e tornare alla finestra di dialogo **Crea linea di base di configurazione**.
 
-8.  **[OK]** をクリックして、 **[構成基準の作成]** ダイアログ ボックスを閉じます。  
+8.  Fare clic su **OK** per chiudere la finestra di dialogo **Crea linea di base di configurazione** .  
 
- これで、Configuration Manager コンソールの **[構成基準]** ノードに、構成基準が表示されます。  
+ È ora possibile visualizzare la linea di base di configurazione nel nodo **Linee di base di configurazione** nella console di Configuration Manager.  
 
-## <a name="deploy-the-configuration-baseline"></a>構成基準の展開  
- この例では、前の手順で作成した構成基準をコンピューターのコレクションに展開します。  
+## <a name="deploy-the-configuration-baseline"></a>Distribuire la linea di base di configurazione  
+ In questo esempio viene descritto come distribuire la linea di base di configurazione creata nella procedura precedente in una raccolta di computer.  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[コンプライアンス設定]** > **[構成基準]** の順にクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Linee di base di configurazione**.  
 
-3.  構成基準の一覧から、 **[Windows 10 パスワード]**を選択します。  
+3.  Nell'elenco di linee di base di configurazione selezionare **Password Windows 10**.  
 
-4.  [ **ホーム** ] タブの [ **展開** ] グループで、[ **展開**] をクリックします。  
+4.  Nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Distribuisci**.  
 
-5.  **[構成基準の展開]** ダイアログ ボックスで、次の設定を構成します。  
+5.  Nella finestra di dialogo **Distribuisci linee di base di configurazione** configurare le impostazioni seguenti:  
 
-    -   **選択した構成基準** - **[Windows 10 パスワード]** 構成基準が、この一覧に自動的に追加されたことを確認します。  
+    -   **Linee di base di configurazione selezionate** - Assicurarsi che la linea di base di configurazione **Password Windows 10** sia stata aggiunta automaticamente all'elenco.  
 
-    -   **サポートされている場合は対応していない規則を修復する** - このチェック ボックスをオンにすると、対象デバイスに正しい設定が存在しない場合に、Configuration Manager によって修復されます。  
+    -   **Monitora e aggiorna le regole non conformi, se supportato** - Selezionare questa casella di controllo per assicurarsi che, in caso di assenza nei dispositivi di destinazione, le impostazioni corrette vengano monitorate e aggiornate da Configuration Manager.  
 
-    -   **コレクション** - **[参照]** をクリックして、構成基準の対応状況を評価および修復するコンピューターのコレクションを選択します。 この例では、構成基準は、組み込みの **[すべてのデスクトップ クライアントおよびサーバー クライアント]** コレクションに展開されました。  
+    -   **Raccolta** - Fare clic su **Sfoglia** per scegliere la raccolta di computer in cui la linea di base di configurazione viene valutata e monitorata e aggiornata per la conformità. In questo esempio, la linea di base di configurazione è stata distribuita nella raccolta predefinita **Tutti i client desktop e di server** .  
 
         > [!TIP]  
-        >  選択したコレクションに Windows 10 を実行していないコンピューターまたはデバイスが含まれていても、問題はありません。 サポートされているプラットフォームを、作成した構成項目で構成してあれば、Windows 10 PC のみの対応状況が評価されます。  
+        >  Non occorre preoccuparsi se la raccolta scelta contiene computer o dispositivi che non eseguono Windows 10. Se nell'elemento di configurazione creato sono state configurate le piattaforme supportate, solo i PC Windows 10 vengono valutati per la conformità.  
 
-    -   必要な場合は、構成基準を評価するスケジュールを構成します。 それ以外の場合は、既定の **7 日間**にしておきます。  
+    -   Se necessario, configurare la pianificazione per la valutazione della linea di base di configurazione. In caso contrario, usare il valore predefinito di **7 giorni**.  
 
-7.  **[OK]** をクリックして **[構成基準の展開]** ダイアログ ボックスを閉じると、展開が作成されます。  
+7.  Fare clic su **OK** per chiudere la finestra di dialogo **Distribuisci linee di base di configurazione** e creare la distribuzione.  
 
- この展開のコンプライアンスに関する統計情報の概要を確認するには、 **[監視]** ワークスペースで **[展開]**をクリックします。 画面の下部に、 **[コンプライアンスに関する統計情報]** グラフが表示されます。  
+ Per esaminare rapidamente le statistiche di conformità per questa distribuzione, nell'area di lavoro **Monitoraggio** fare clic su **Distribuzioni**. Nella parte inferiore della schermata è visualizzato un grafico **Statistiche conformità**.  
 
-## <a name="next-steps"></a>次のステップ 
+## <a name="next-steps"></a>Passaggi successivi 
 
-構成基準を監視する方法の詳細については、[コンプライアンス設定の監視](../../compliance/deploy-use/monitor-compliance-settings.md)に関するページを参照してください。  
+Per informazioni più dettagliate su come monitorare le linee di base di configurazione, vedere [Monitorare le impostazioni di conformità](../../compliance/deploy-use/monitor-compliance-settings.md).  

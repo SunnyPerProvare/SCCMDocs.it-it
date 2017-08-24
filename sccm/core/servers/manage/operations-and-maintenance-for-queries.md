@@ -1,6 +1,6 @@
 ---
-title: "クエリの操作とメンテナンス | Microsoft Docs"
-description: "System Center Configuration Manager でのクエリに関するトピックの一覧です。 操作とメンテナンスが中心です。"
+title: Operazioni e manutenzione per le query | Microsoft Docs
+description: Vedere un elenco di argomenti sulle query in System Center Configuration Manager. Si tratta specificatamente di manutenzione e operazioni.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,20 +18,20 @@ manager: angrobe
 ms.openlocfilehash: 82648626882ddd23db0e40cfb18621a5953a1786
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="operations-and-maintenance-for-queries-in-system-center-configuration-manager"></a>System Center Configuration Manager でのクエリの操作とメンテナンス
+# <a name="operations-and-maintenance-for-queries-in-system-center-configuration-manager"></a>Operazioni e manutenzione per le query in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager でのクエリの操作とメンテナンス情報については、このセクションの次のトピックを参照してください。  
+Leggere gli argomenti seguenti in questa sezione per informazioni su operazioni e manutenzione per le query in System Center Configuration Manager.  
 
-## <a name="in-this-section"></a>このセクションの内容  
+## <a name="in-this-section"></a>In questa sezione  
 
--   [System Center Configuration Manager でクエリを作成する方法](../../../core/servers/manage/create-queries.md)  
+-   [Come creare query in System Center Configuration Manager](../../../core/servers/manage/create-queries.md)  
 
--   [System Center Configuration Manager でクエリを管理する方法](../../../core/servers/manage/manage-queries.md)  
+-   [Come gestire query in System Center Configuration Manager](../../../core/servers/manage/manage-queries.md)  
 
-## <a name="see-also"></a>関連項目  
- [System Center Configuration Manager のクエリのテクニカル リファレンス](../../../core/servers/manage/queries-technical-reference.md)
+## <a name="see-also"></a>Vedere anche  
+ [Riferimento tecnico per le query per System Center Configuration Manager](../../../core/servers/manage/queries-technical-reference.md)

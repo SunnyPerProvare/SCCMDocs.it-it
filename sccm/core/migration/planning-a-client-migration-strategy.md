@@ -1,6 +1,6 @@
 ---
-title: "クライアント移行計画 | Microsoft Docs"
-description: "ソース階層からクライアントを System Center Configuration Manager の移行先階層に移行するタスクについて説明します。"
+title: Pianificare la migrazione dei client | Microsoft Docs
+description: "Informazioni sulle attività di migrazione dei client da una gerarchia di origine a una gerarchia di destinazione di System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/30/2016
 ms.prod: configuration-manager
@@ -17,87 +17,87 @@ manager: angrobe
 ms.openlocfilehash: b52ca4059dfeed08cabf1f75319da40d6499622f
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-a-client-migration-strategy-in-system-center-configuration-manager"></a>System Center Configuration Manager でのクライアント移行戦略の計画
+# <a name="plan-a-client-migration-strategy-in-system-center-configuration-manager"></a>Pianificare una strategia di migrazione client in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-ソース階層のクライアントを System Center Configuration Manager 移行先階層に移行するには、2 つのタスクを行う必要があります。 クライアントに関連付けられているオブジェクトを移行してから、ソース階層のクライアントを移行先階層に再割り当てする必要があります。 クライアントを移行するときに使用できるように、まずオブジェクトを移行します。 クライアントに関連付けられているオブジェクトを移行するには、移行ジョブを使用します。 クライアントに関連付けられているオブジェクトの移行方法については、「[System Center 2012 Configuration Manager の移行ジョブ戦略の計画](../../core/migration/planning-a-migration-job-strategy.md)」を参照してください。  
+Per eseguire la migrazione dei client dalla gerarchia di origine a una gerarchia di destinazione di System Center Configuration Manager, è necessario effettuare due attività. È necessario migrare gli oggetti associati al client e quindi reinstallare o riassegnare i client dalla gerarchia di origine alla gerarchia di destinazione. Migrare innanzitutto gli oggetti in modo che siano disponibili al momento della migrazione dei client. Gli oggetti associati al client vengono migrati mediante processi di migrazione. Per informazioni sulla migrazione degli oggetti associati al client, vedere [Pianificazione di una strategia di processo di migrazione in System Center Configuration Manager](../../core/migration/planning-a-migration-job-strategy.md).  
 
- 移行先階層へのクライアントの移行を計画する際には、以下のセクションを参考にしてください。  
+ Utilizzare le seguenti sezioni per pianificare la migrazione dei client nella gerarchia di destinazione.  
 
--   [移行先階層へのクライアントの移行を計画する](#Planning_for_Client_Agent_Migration)  
+-   [Pianificare la migrazione dei client nella gerarchia di destinazione](#Planning_for_Client_Agent_Migration)  
 
--   [移行時にクライアントに保持されるデータの処理の計画](#Planning_for_Client_Data_Migration)  
+-   [Pianificare la gestione dei dati conservati nei client durante la migrazione](#Planning_for_Client_Data_Migration)  
 
--   [移行時のインベントリとコンプライアンス対応データを計画する](#Planning_for_Inventory_data_migration)  
+-   [Pianificare i dati di inventario e di conformità durante la migrazione](#Planning_for_Inventory_data_migration)  
 
-##  <a name="Planning_for_Client_Agent_Migration"></a> 移行先階層へのクライアントの移行を計画する  
- ソース階層からクライアントを移行すると、移行先階層の製品バージョンに一致するように、クライアント コンピューターのクライアント ソフトウェアがアップグレードされます。  
+##  <a name="Planning_for_Client_Agent_Migration"></a> Pianificare la migrazione dei client nella gerarchia di destinazione  
+ Quando si esegue la migrazione dei client da una gerarchia di origine, il software client nel computer client viene aggiornato in base alla versione prodotto della gerarchia di destinazione.  
 
--   **Configuration Manager 2007 のソース階層:** サポートされているバージョンの Configuration Manager を実行しているソース階層のクライアントを移行すると、クライアント ソフトウェアは移行先階層のクライアント バージョンにアップグレードされます。  
+-   **Gerarchia di origine di Configuration Manager 2007:** quando si esegue la migrazione dei client da una gerarchia di origine che esegue una versione supportata di Configuration Manager, il software client esegue l'aggiornamento alla versione client per la gerarchia di destinazione.  
 
--    **System Center 2012 Configuration Manager 以降のソース階層:** 同じ製品バージョンの階層間でクライアントを移行する場合、クライアント ソフトウェアは変更またはアップグレードされません。 代わりに、クライアントがソース階層から移行先階層内のサイトに再割り当てされます。  
+-   **Gerarchia di origine di System Center 2012 Configuration Manager o versione successiva:** quando si esegue la migrazione dei client tra gerarchie della stessa versione di prodotto, non vengono eseguite modifiche o aggiornamenti al software client. Il client esegue invece la riassegnazione dalla gerarchia di origine a un sito della gerarchia di destinazione.  
 
     > [!NOTE]  
-    >  階層の製品バージョンが、移行先階層への移行でサポートされていない場合、ソース階層のすべてのサイトとクライアントを互換性のある製品バージョンにアップグレードします。 ソース階層をサポートされる製品バージョンにアップグレードした後で、階層間の移行を実行できます。 詳細については、「[System Center Configuration Manager での移行の前提条件](../../core/migration/prerequisites-for-migration.md)」の「[移行がサポートされている Configuration Manager のバージョン](../../core/migration/prerequisites-for-migration.md#BKMK_SupportedMigrationVersions)」をご覧ください。  
+    >  Quando la versione prodotto di una gerarchia non è supportata per la migrazione alla gerarchia di destinazione, aggiornare a una versione prodotto compatibile tutti i siti e i client nella gerarchia di origine. Dopo che la gerarchia di origine è stata aggiornata alla versione prodotto supportata, è possibile eseguire la migrazione tra le gerarchie. Per altre informazioni, vedere [Versioni di Configuration Manager supportate per la migrazione](../../core/migration/prerequisites-for-migration.md#BKMK_SupportedMigrationVersions) in [Prerequisiti per la migrazione in System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md).  
 
-クライアントの移行を計画する際には、次の情報を参考にしてください。  
+Per pianificare la migrazione client, utilizzare le seguenti informazioni:  
 
--   ソース サイトのクライアントを移行先サイトにアップグレードまたは再割り当てする場合、移行先階層でクライアント展開がサポートされているクライアント展開方法を使用できます。 標準的なクライアントの展開方法には、クライアント プッシュ インストール、ソフトウェア配布、グループ ポリシー、ソフトウェアの更新に基づいたクライアントのインストールなどがあります。 詳細については、「[System Center Configuration Manager でのクライアントのインストール方法](../../core/clients/deploy/plan/client-installation-methods.md)」を参照してください。  
+-   Per aggiornare o riassegnare i client da un sito di origine a un sito di destinazione, utilizzare qualsiasi metodo di distribuzione client supportato per la distribuzione dei client nella gerarchia di destinazione. I metodi di distribuzione client tipici includono l'installazione push client, la distribuzione software, i criteri di gruppo e l'installazione client basata su aggiornamento software. Per altre informazioni, vedere [Metodi di installazione client in System Center Configuration Manager](../../core/clients/deploy/plan/client-installation-methods.md).  
 
--   ソース階層のクライアント ソフトウェアを実行するデバイスが、移行先階層の最小ハードウェア要件を満たし、移行先階層の Configuration Manager のバージョンでサポートされているオペレーティング システムを実行していることを確認します。  
+-   Verificare che il dispositivo che esegue il software client nella gerarchia di origine soddisfi i requisiti hardware minimi ed esegua un sistema operativo supportato dalla versione di Configuration Manager nella gerarchia di destinazione.  
 
--   クライアントを移行する前に、移行ジョブを実行して、移行先階層でクライアントによって使用される情報を移行します。  
+-   Prima della migrazione di un client, eseguire un processo di migrazione delle informazioni che il client userà nella gerarchia di destinazione.  
 
--   アップグレードするクライアントには、展開の実行履歴が保持されます。 これにより、移行先階層で展開が不要に再実行されなくなります。  
+-   I client che vengono aggiornati mantengono la cronologia di esecuzione per le distribuzioni. In questo modo si evitano riesecuzioni non necessarie delle distribuzioni nella gerarchia di destinazione.  
 
-    -   Configuration Manager 2007 クライアントには、公開通知の実行履歴が保持されます。  
+    -   Per i client di Configuration Manager 2007, viene mantenuta la cronologia di esecuzione degli annunci.  
 
-    -   System Center 2012 Configuration Manager または System Center Configuration Manager のクライアントでは、展開の実行履歴が保持されます。  
+    -   Per i client System Center 2012 Configuration Manager o System Center Configuration Manager, viene mantenuta la cronologia di esecuzione delle distribuzioni.  
 
--   ソース階層内のサイトからクライアントを移行する際には、ユーザーが自由に順番を指定できます。 ただし、一度に多数のクライアントを移行するのではなく、段階的に少数のクライアントを移行することをお勧めします。 段階別に移行を行うことで、新たにアップグレードされた各クライアントが初期の全インベントリとコンプライアンス対応のデータを割り当てられたサイトに送信する際に、必要となるネットワーク帯域幅とサーバー処理量が低減されます。  
+-   È possibile migrare i client da siti della gerarchia di origine nell'ordine desiderato. È tuttavia consigliabile optare per una migrazione a più fasi di quantità limitate di client, invece che per un'unica migrazione di ampie quantità di client. Una migrazione a più fasi consente di ridurre i requisiti di larghezza di banda di rete e l'elaborazione del server quando i nuovi client aggiornati inviano tutti i dati di conformità e di inventario iniziali al sito assegnato.  
 
--   Configuration Manager 2007 クライアントを移行すると、クライアント コンピューターから既存のクライアント ソフトウェアがアンインストールされて、新しいクライアント ソフトウェアがインストールされます。  
+-   Quando si esegue la migrazione dei client Configuration Manager 2007, il software client esistente viene disinstallato dal computer client e viene installato il software client nuovo.  
 
--   Configuration Manager では、App-V クライアント バージョン4.6 SP1 以降のバージョンの App-V クライアントがインストールされた Configuration Manager 2007 クライアントは移行できません。  
+-   Configuration Manager non può eseguire la migrazione di un client Configuration Manager 2007 in cui è installato il client App-V, se la versione del client App-V non è 4.6 SP1 o successiva.  
 
-クライアントの移行プロセスは、Configuration Manager コンソールの [**管理**] ワークスペースにある [**移行**] ノードで監視できます。  
+È possibile monitorare il processo di migrazione client nel nodo **Migrazione** dell'area di lavoro **Amministrazione** nella console di Configuration Manager.  
 
-クライアントを移行先階層に移行した後は、ソース階層を使用してそのデバイスを管理できなくなるため、ソース階層からクライアントを削除することを検討する必要があります。 これは階層の移行時に必須ではありませんが、移行済みクライアントがソース階層レポートに表示されたり、移行中に 2 つの階層のリソースが不正確にカウントされたりするのを防止できます。 たとえば、移行済みクライアントがソース サイトのデータベースに残っている場合、ソフトウェア更新プログラム レポートを実行すると、そのコンピューターが現在は移行先階層で管理されているにもかかわらず、誤って管理対象外リソースとして表示されることがあります。  
+Dopo la migrazione del client nella gerarchia di destinazione, non è più possibile gestire il dispositivo usando la gerarchia di origine ed è necessario valutare la rimozione del client dalla gerarchia di origine. Benché non si tratti di un requisito relativo alla migrazione tra gerarchie, questo consente di impedire il rilevamento di un client migrato in un report della gerarchia di origine o un conteggio errato delle risorse tra le due gerarchie durante la migrazione. Quando ad esempio un client migrato rimane nel database del sito di origine, è possibile eseguire un report degli aggiornamenti software che rileva erroneamente il computer come risorsa non gestita, sebbene il computer sia ora gestito dalla gerarchia di destinazione.  
 
-##  <a name="Planning_for_Client_Data_Migration"></a> 移行時にクライアントに保持されるデータの処理の計画  
-ソース階層のクライアントを移行先階層に移行すると、デバイスに保持される情報と、移行後にデバイスで使用できなくなる情報があります。  
+##  <a name="Planning_for_Client_Data_Migration"></a> Pianificare la gestione dei dati conservati nei client durante la migrazione  
+Quando si esegue la migrazione di un client dalla gerarchia di origine alle gerarchia di destinazione, alcune informazioni vengono conservate nel dispositivo, mentre altre informazioni non sono più disponibili nel dispositivo dopo la migrazione.  
 
-以下の情報はクライアント デバイスに保持されます。  
+Le seguenti informazioni vengono conservate nel dispositivo client:  
 
--   一意識別子 (GUID) - これにより、クライアントが Configuration Manager データベース内の該当情報に関連付けられます。  
+-   Identificatore univoco (GUID), che associa un client alle relative informazioni nel database di Configuration Manager.  
 
--   開示通知履歴または展開履歴 - これにより、移行先階層での不要な開示情報または展開の再実行が防止されます。  
+-   La cronologia degli annunci o delle distribuzioni, che impedisce ai client di rieseguire inutilmente gli annunci o le distribuzioni nella gerarchia di destinazione.  
 
-以下の情報はクライアント デバイスに保持されません。  
+Le seguenti informazioni non vengono conservate nel dispositivo client:  
 
--   クライアントのキャッシュ内のファイル。 クライアントでソフトウェアのインストールのためにこれらのファイルが必要となる場合は、移行先階層から再度ダウンロードされます。  
+-   I file nella cache del client. Se il client richiede tali file per l'installazione del software, li scarica nuovamente dalla gerarchia di destinazione.  
 
--   まだ実行されていない開示通知または展開に関する、ソース階層の情報。 移行後にクライアントで開示通知または展開を実行する必要がある場合は、これらを移行先階層内のクライアントに再展開する必要があります。  
+-   Le informazioni della gerarchia di origine relative a tutti gli annunci o le distribuzioni non ancora eseguite. Se si desidera che il client esegua gli annunci o le distribuzioni dopo la migrazione, è necessario rieseguire la distribuzione al client nella gerarchia di destinazione.  
 
--   インベントリに関する情報。 クライアントの移行後にクライアントが、移行先階層内の割り当てられたサイトにこの情報を再送信し、新しいクライアント データが生成されます。  
+-   Le informazioni relative all'inventario. Il client reinvia queste informazioni al sito assegnato nella gerarchia di destinazione al termine della migrazione del client e della generazione dei nuovi dati del client.  
 
--   コンプライアンス対応データ。 クライアントの移行後にクライアントが、移行先階層内の割り当てられたサイトにこの情報を再送信し、新しいクライアント データが生成されます。  
+-   Dati di conformità. Il client reinvia queste informazioni al sito assegnato nella gerarchia di destinazione al termine della migrazione del client e della generazione dei nuovi dati del client.  
 
-クライアントの移行時に、Configuration Manager クライアント レジストリに保存されている情報とファイル パスは保持されません。 移行後、これらの設定を再び適用します。 標準設定には以下が含まれます。  
+Quando un client esegue la migrazione, le informazioni archiviate nel Registro di sistema del client di Configuration Manager e il percorso del file non vengono mantenuti. Dopo la migrazione, è necessario applicare nuovamente tali impostazioni. Le impostazioni tipiche includono:  
 
--   電源設定  
+-   Combinazioni risparmio energia  
 
--   ログ設定  
+-   Impostazioni di registrazione  
 
--   ローカル ポリシー設定  
+-   Impostazioni del criterio locale  
 
-さらに、一部のアプリケーションの再インストールが必要な場合もあります。  
+Inoltre, potrebbe essere necessario reinstallare alcune applicazioni.  
 
-##  <a name="Planning_for_Inventory_data_migration"></a> 移行時のインベントリとコンプライアンス対応データを計画する  
-移行先階層にクライアントを移行するときに、クライアントのインベントリとコンプライアンス対応データは保存されません。 代わりに、割り当てられたサイトにクライアントから情報が初めて送信されたときに、この情報が移行先階層で再作成されます。 必要とされるネットワーク帯域幅とサーバーの処理量を低減するため、一度に多数のクライアントを移行する代わりに、段階的に少数のクライアントを移行するよう考慮してください。  
+##  <a name="Planning_for_Inventory_data_migration"></a> Pianificare i dati di inventario e di conformità durante la migrazione  
+I dati di inventario e di conformità del client non vengono salvati quando si esegue la migrazione di un client nella gerarchia di destinazione. Queste informazioni vengono invece ricreate nella gerarchia di destinazione quando un client invia le proprie informazioni al sito assegnato. Per ridurre i requisiti di larghezza di banda di rete e l'elaborazione del server, valutare una migrazione a più fasi di quantità limitate di client, anziché un'unica migrazione di ampie quantità di client.  
 
- また、ソース階層からハードウェア インベントリのカスタム設定を移行することはできません。 これらは、移行とは別に移行先階層に導入する必要があります。 カスタム ハードウェア インベントリを拡張する方法については、「[Configuration Manager でハードウェア インベントリを構成する方法](../../core/clients/manage/inventory/configure-hardware-inventory.md)」を参照してください。  
+ Non è inoltre possibile eseguire la migrazione di personalizzazioni per l'inventario hardware da una gerarchia di origine. È necessario introdurre tali personalizzazioni nella gerarchia di destinazione indipendentemente dalla migrazione. Per informazioni su come estendere l'inventario hardware, vedere [Come configurare l'inventario hardware in System Center Configuration Manager](../../core/clients/manage/inventory/configure-hardware-inventory.md).  

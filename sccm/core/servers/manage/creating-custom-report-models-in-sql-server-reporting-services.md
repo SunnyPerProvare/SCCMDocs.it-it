@@ -1,6 +1,6 @@
 ---
-title: "カスタム レポートの作成 | Microsoft Docs"
-description: "ビジネス要件に適したレポート モデルを定義し、レポート モデルを Configuration Manager に展開します。"
+title: Creare report personalizzati | Microsoft Docs
+description: "È possibile definire modelli di report adeguati ai requisiti aziendali e quindi distribuire tali modelli in Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,151 +18,151 @@ manager: angrobe
 ms.openlocfilehash: 9951dd9333ebef00c7acd5d72b20a02382e3206c
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="creating-custom-report-models-for-system-center-configuration-manager-in-sql-server-reporting-services"></a>SQL Server Reporting Services での System Center Configuration Manager のカスタム レポート モデルの作成
+# <a name="creating-custom-report-models-for-system-center-configuration-manager-in-sql-server-reporting-services"></a>Creazione di modelli di report personalizzati per System Center Configuration Manager in SQL Server Reporting Services
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-サンプルのレポート モデルは System Center Configuration Manager に含まれていますが、それぞれの業務要件に適したレポート モデルを定義し、そのレポート モデルを Configuration Manager に展開して、新しいモデルベースのレポートの作成時に使用できます。 次の表に、基本レポート モデルを作成して展開するための手順を示します。  
+In Configuration Manager sono inclusi modelli di report di esempio, ma è possibile definire anche modelli di report che soddisfino requisiti aziendali specifici e quindi distribuire i modelli di report in Configuration Manager per usarli quando si creano nuovi report basati su modelli. Nella seguente tabella vengono illustrati i passaggi per creare e distribuire un modello di report di base.  
 
 > [!NOTE]  
->  詳細なレポート モデルを作成する手順については、このトピックの「 [SQL Server Reporting Services で詳細レポート モデルを作成する手順](#AdvancedReportModel) 」セクションを参照してください。  
+>  Per i passaggi relativi alla creazione di un modello di report più avanzato, vedere la sezione [Passaggi per la creazione di un modello di report avanzato in SQL Server Reporting Services](#AdvancedReportModel) di questo argomento.  
 
-|手順|説明|説明|  
+|Passaggio|Descrizione|Altre informazioni|  
 |----------|-----------------|----------------------|  
-|SQL Server Business Intelligence Development Studio がインストールされていることを確認する|レポート モデルの設計と作成には、SQL Server Business Intelligence Development Studio を使用します。 カスタム レポート モデルを作成するコンピューターに、SQL Server Business Intelligence Development Studio がインストールされていることを確認します。|SQL Server Business Intelligence Development Studio の詳細については、SQL Server 2008 のドキュメントを参照してください。|  
-|レポート モデル プロジェクトを作成する|レポート モデル プロジェクトには、データ ソースの定義 (.ds ファイル)、データ ソース ビューの定義 (.dsv ファイル)、およびレポート モデル (.smdl ファイル) が含まれます。|詳細については、このトピックの「 [レポート モデル プロジェクトを作成するには](#BKMK_CreateReportModelProject) 」セクションを参照してください。|  
-|レポート モデルのデータ ソースを定義する|レポート モデル プロジェクトを作成したら、ビジネス データの抽出元のデータ ソースを定義する必要があります。 通常、これは Configuration Manager サイト データベースです。|詳細については、このトピックの「 [レポート モデル用のデータ ソースを定義するには](#BKMK_DefineReportModelDataSource) 」セクションを参照してください。|  
-|レポート モデルのデータ ソース ビューを定義する|レポート モデル プロジェクトで使用するデータ ソースを定義したら、次の手順で、プロジェクトのデータ ソース ビューを定義します。 データ ソース ビューは、1 つまたは複数のデータ ソースを基にした論理データ モデルです。 データ ソース ビューは、テーブルやビューなど、基盤となるデータ ソースに含まれる物理オブジェクトへのアクセスをカプセル化します。 SQL Server Reporting Services は、レポート モデルをデータ ソース ビューから生成します。<br /><br /> データ ソース ビューにより、指定したデータが分かりやすく表示されるため、モデルの設計プロセスが容易になります。 データ ソース ビュー内では、基盤となるデータ ソースを変更することなく、テーブルおよびフィールドの名前を変更したり、集計フィールドや派生テーブルを追加したりできます。 効率的なモデルを作成するには、使用するテーブルのみをデータ ソース ビューに追加します。|詳細については、このトピックの「 [レポート モデル用のデータ ソース ビューを定義するには](#BKMK_DefineReportModelDataSourceView) 」セクションを参照してください。|  
-|レポート モデルを作成する|レポート モデルはデータベースの最上部に位置するレイヤーであり、ビジネスのエンティティ、フィールドおよび役割を定義します。 モデルが公開されると、レポート ビルダーを使用してレポートを作成できるようになります。その際、データベース構造やクエリに関する知識は不要で、クエリを作成する必要もありません。 モデルは、フレンドリ名でグループ化されている一連の関連レポート項目で構成されており、これらのビジネス項目間の関係や計算が定義されています。 モデルは、セマンティック モデル定義言語 (SMDL) と呼ばれる XML 言語を使用して定義されます。 レポート モデルのファイル名拡張子は .smdl です。|詳細については、このトピックの「 [レポート モデルを作成するには](#BKMK_CreateReportModel) 」セクションを参照してください。|  
-|レポート モデルを発行する|作成したモデルを使用してレポートを構築するには、このモデルをレポート サーバーにパブリッシュする必要があります。 公開時には、データ ソースおよびデータ ソース ビューがモデルに含まれます。|詳細については、このトピックの「 [SQL Reporting Services 用にレポート モデルを公開するには](#BKMK_PublishReportModel) 」セクションを参照してください。|  
-|レポート モデルを Configuration Manager に展開する|**レポートの作成ウィザード** で、カスタム レポート モデルを使用してモデル ベースのレポートを作成するには、先に Configuration Manager にレポート モデルを展開しておく必要があります。|詳細については、このトピックの「 [カスタム レポート モデルを Configuration Manager に展開するには](#BKMK_DeployReportModel) 」セクションを参照してください。|  
+|Verificare che sia installato SQL Server Business Intelligence Development Studio|I modelli di report sono progettati e creati utilizzando SQL Server Business Intelligence Development Studio. Verificare che SQL Server Business Intelligence Development Studio sia installato nel computer in cui viene creato il modello di report personalizzato.|Per ulteriori informazioni su SQL Server Business Intelligence Development Studio, vedere la documentazione di SQL Server 2008.|  
+|Creare un progetto modello di report|Un progetto modello di report contiene la definizione dell'origine dei dati (un file DS), la definizione di una vista origine dati (un file DSV) e il modello di report (un file SMDL).|Per altre informazioni, vedere la sezione [Per creare il progetto modello di report](#BKMK_CreateReportModelProject) in questo argomento.|  
+|Definire un'origine dati per un modello di report|Dopo aver creato un progetto modello di report, è necessario definire un'origine dati da cui estrarre i dati aziendali. In genere è il database del sito di Configuration Manager.|Per altre informazioni, vedere la sezione [Per definire l'origine dati per il modello di report](#BKMK_DefineReportModelDataSource) in questo argomento.|  
+|Definire una vista origine dati per un modello di report|Al termine della definizione delle origini dati utilizzate nel progetto modello di report, il passaggio successivo consiste nella definizione di una vista origine dati per il progetto. Una vista origine dati è un modello di dati logico basato su uno o più origini dati. Le viste origine dati incapsulano l'accesso agli oggetti fisici, ad esempio tabelle e viste, contenuti in origini dati sottostanti. SQL Server Reporting Services genera il modello di report dalla vista origine dati.<br /><br /> Le viste origine dati facilitano il processo di progettazione del modello, offrendo una rappresentazione utile dei dati specificati. Senza modificare l'origine dati sottostante, è possibile rinominare campi e tabelle, nonché aggiungere campi aggregati e tabelle derivate in una vista origine dati. Per un modello efficiente, aggiungere alla vista origine dati solo le tabelle che si desidera utilizzare.|Per altre informazioni, vedere la sezione [Per definire la vista dell'origine dati per il modello di report](#BKMK_DefineReportModelDataSourceView) in questo argomento.|  
+|Creare un modello di report|Un modello di report è un livello superiore di un database che identifica i ruoli, i campi e le entità aziendali. Se è stata eseguita la pubblicazione, utilizzando questi modelli gli utenti di Generatore report possono sviluppare report anche se non hanno familiarità con le strutture del database o se non sono in grado di comprendere e scrivere query. I modelli sono composti da set di elementi report correlati raggruppati con un nome descrittivo, rapporti predefiniti tra gli elementi aziendali e calcoli predefiniti. I modelli vengono definiti utilizzando un linguaggio XML denominato Semantic Model Definition Language (SMDL). L'estensione del nome file per i file del modello di report è SMDL.|Per altre informazioni, vedere la sezione [Per creare il modello di report](#BKMK_CreateReportModel) in questo argomento.|  
+|Pubblicare un modello di report|Per creare un report utilizzando il modello appena creato, è necessario pubblicarlo in un server di report. In fase di pubblicazione, l'origine dati e la vista origine dati sono incluse nel modello.|Per altre informazioni, vedere la sezione [Per pubblicare il modello di report per l'utilizzo in SQL Server Reporting Services](#BKMK_PublishReportModel) in questo argomento.|  
+|Distribuire il modello di report in Configuration Manager|Prima di usare un modello di report personalizzato in **Creazione guidata report** per creare un report basato su modello, è necessario distribuire il modello di report in Configuration Manager.|Per altre informazioni, vedere la sezione [Per distribuire il modello di report personalizzato in Configuration Manager](#BKMK_DeployReportModel) in questo argomento.|  
 
-## <a name="steps-for-creating-a-basic-report-model-in-sql-server-reporting-services"></a>SQL Server Reporting Services で基本レポート モデルを作成する手順  
- 以下の手順に従って、サイト内のユーザーが Configuration Manager データベースの単一のビューのデータに基づいて、特定のモデルベースのレポートを作成する際に使用できる基本レポート モデルを作成できます。 サイト内のクライアント コンピューターに関する情報をレポートの作成者に示す、レポート モデルを作成します。 この情報は、Configuration Manager データベースの [**v_R_System**] ビューから取得します。  
+## <a name="steps-for-creating-a-basic-report-model-in-sql-server-reporting-services"></a>Passaggi per la creazione di un modello di report di base in SQL Server Reporting Services  
+ Usare le procedure seguenti per creare un modello di report di base che gli utenti del sito possono usare per compilare report basati su modello specifici in base ai dati presenti in una singola vista del database di Configuration Manager. Creare un modello di report che fornisca informazioni sui computer client nel sito all'autore del report. Queste informazioni provengono dalla vista **v_R_System** nel database di Configuration Manager.  
 
- これらの手順を実行するコンピューターに SQL Server Business Intelligence Development がインストールされていること、また、このコンピューターからネットワーク接続を介してレポート サービス ポイント サーバーにアクセスできることを確認します。 SQL Server Business Intelligence Development Studio の詳細については、SQL Server 2008 のドキュメントを参照してください。  
+ Verificare che nel computer in cui vengono eseguite tali procedure sia installato SQL Server Business Intelligence Development Studio e che il computer disponga della connettività di rete al server del punto di Reporting Services. Per informazioni dettagliate su SQL Server Business Intelligence Development Studio, vedere la documentazione di SQL Server 2008.  
 
-###  <a name="BKMK_CreateReportModelProject"></a> レポート モデルを作成するには  
+###  <a name="BKMK_CreateReportModelProject"></a> Per creare il modello di report  
 
-1.  デスクトップで、 **[スタート]**、 **[Microsoft SQL Server 2008]**、 **[SQL Server Business Intelligence Development Studio]**の順にクリックします。  
+1.  Sul desktop fare clic su **Start**, quindi su **Microsoft SQL Server 2008**e selezionare **SQL Server Business Intelligence Development Studio**.  
 
-2.  **[SQL Server Business Intelligence Development Studio]** を Microsoft Visual Studio で開いてから、 **[ファイル]**、 **[新規作成]**、 **[プロジェクト]**の順にクリックします。  
+2.  In seguito all'apertura di **SQL Server Business Intelligence Development Studio** in Microsoft Visual Studio, fare clic su **File**, quindi su **Nuovo**e selezionare **Progetto**.  
 
-3.  **[新しいプロジェクト]** ダイアログ ボックスの **[テンプレート]** リストで **[レポート モデル プロジェクト]** を選択します。  
+3.  Nella finestra di dialogo **Nuovo progetto** selezionare **Progetto modello di report** nell'elenco **Modelli** .  
 
-4.  [ **名前** ] ボックスに、このレポート モデルの名前を指定します。 この例では、「 **Simple_Model**」と入力します。  
+4.  Nella casella **Nome** specificare un nome per questo modello di report. Per questo esempio, digitare **Modello_Semplificato**.  
 
-5.  レポート モデル プロジェクトを作成するには、[ **OK** ] をクリックします。  
+5.  Per creare il progetto di modello di report, fare clic su **OK**.  
 
-6.  **Simple_Model** ソリューションが **[ソリューション エクスプローラー]**に表示されます。  
-
-    > [!NOTE]  
-    >  **[ソリューション エクスプローラー]** ウィンドウが表示されない場合は、 **[表示]**、 **[ソリューション エクスプローラー]**の順にクリックします。  
-
-###  <a name="BKMK_DefineReportModelDataSource"></a> レポート モデル用のデータ ソースを定義するには  
-
-1.  **SQL Server Business Intelligence Development Studio** の **[ソリューション エクスプローラー]**ウィンドウで **[データ ソース]** を右クリックし、 **[新しいデータ ソースの追加]**を選択します。  
-
-2.  **[データ ソース ウィザードへようこそ]** ページで **[次へ]**をクリックします。  
-
-3.  **[接続の定義方法を選択します]** ページで **[既存の接続または新しい接続に基づいてデータ ソースを作成する]** が選択されていることを確認し、 **[新規作成]**をクリックします。  
-
-4.  [ **接続マネージャー** ] ダイアログ ボックスで、データ ソースの次の接続プロパティを指定します。  
-
-    -   **サーバー名**: Configuration Manager サイト データベース サーバーの名前を入力するか、一覧から選択します。 既定のインスタンスではなく、名前が付けられたインスタンスを使用している場合、&lt;*データベース サーバー*>\\&lt;*インスタンス名*> の形式で入力します。  
-
-    -   [ **Windows 認証を使用する** ] を選択します。  
-
-    -   [**データベース名の選択または入力**] リストで、Configuration Manager サイト データベースの名前を選択します。  
-
-5.  データベース接続が正常に確立されたことを確認するには、[ **接続テスト** ] をクリックします。  
-
-6.  接続が正常に確立されたら、 **[OK]** をクリックして **[接続マネージャー]** ダイアログ ボックスを閉じます。 接続が正常に確立されない場合は、入力した情報が正しいことを確認して、[ **接続テスト** ] を再度クリックします。  
-
-7.  **[接続の定義方法を選択します]** ページで、 **[既存の接続または新しい接続に基づいてデータ ソースを作成する]** が選択されていて、直前に指定したデータ ソースが **[データ接続]**ボックスで選択された状態になっていることを確認し、 **[次へ]**をクリックします。  
-
-8.  **[データ ソース名]**にデータ ソースの名前を指定し、 **[完了]**をクリックします。 この例では、「 **Simple_Model**」と入力します。  
-
-9. これで、 **[ソリューション エクスプローラー]** の **[データ ソース]** ノードの下に、データ ソース **Simple_Model.ds** が表示されます。  
+6.  La soluzione **Modello_Semplificato** viene visualizzata in **Esplora soluzioni**.  
 
     > [!NOTE]  
-    >  既存のデータ ソースのプロパティを編集するには、 **[ソリューション エクスプローラー]** ウィンドウの **[データ ソース]** フォルダーでデータ ソースをダブルクリックし、データ ソースのプロパティをデータ ソース デザイナーに表示します。  
+    >  Se il riquadro **Esplora soluzioni** non viene visualizzato, fare clic su **Visualizza**, quindi su **Esplora soluzioni**.  
 
-###  <a name="BKMK_DefineReportModelDataSourceView"></a> レポート モデル用のデータ ソース ビューを定義するには  
+###  <a name="BKMK_DefineReportModelDataSource"></a> Per definire la vista dell'origine dati per il modello di report  
 
-1.  **[ソリューション エクスプローラー]**で **[データ ソース ビュー]** を右クリックし、 **[新しいデータ ソース ビューの追加]**を選択します。  
+1.  Nel riquadro **Esplora soluzioni** di **SQL Server Business Intelligence Development Studio**fare clic con il pulsante destro del mouse su **Origini dati** per selezionare **Aggiungi nuova origine dati**.  
 
-2.  **[データ ソース ビュー ウィザードへようこそ]** ページで **[次へ]**をクリックします。 [ **データ ソースの選択** ] ページが表示されます。  
+2.  Nella pagina **Creazione guidata origine dati** fare clic su **Avanti**.  
 
-3.  **[リレーショナル データ ソース]** ウィンドウで、 **[Simple_Model]** データ ソースが選択されていることを確認し、 **[次へ]**をクリックします。  
+3.  Nella pagina **Selezione metodo di definizione connessione** verificare che **Crea un'origine dati basata su una connessione nuova o esistente** sia selezionato, quindi fare clic su **Nuovo**.  
 
-4.  **[テーブルとビューの選択]** ページの **[使用可能なオブジェクト]** リストで、レポート モデルで使用するビュー **[v_R_System (dbo)]**を選択します。  
+4.  Nella finestra di dialogo **Gestione connessione** specificare le proprietà di connessione seguenti per l'origine dati:  
+
+    -   **Nome server**: digitare il nome del server di database del sito di Configuration Manager oppure selezionarlo nell'elenco. Se si usa un'istanza denominata anziché l'istanza predefinita, digitare &lt;*server database* >\\&lt;*nome istanza*>.  
+
+    -   Selezionare **Usa autenticazione di Windows**.  
+
+    -   Nell'elenco **Selezionare o immettere un nome di database** selezionare il nome del database del sito di Configuration Manager.  
+
+5.  Per verificare la connessione al database, fare clic su **Verifica connessione**.  
+
+6.  Se la connessione ha esito positivo, fare clic su **OK** per chiudere la finestra di dialogo **Gestione connessione** . Se non è possibile effettuare la connessione, verificare la correttezza delle informazioni immesse, quindi fare di nuovo clic su **Verifica connessione** .  
+
+7.  Nella pagina **Selezione metodo di definizione connessione** verificare che **Crea un'origine dati basata su una connessione nuova o esistente** sia selezionato, assicurarsi che l'origine dati appena specificata sia selezionata in **Connessioni dati**e infine fare clic su **Avanti**.  
+
+8.  In **Nome origine dati**specificare un nome per l'origine dati, quindi fare clic su **Fine**. Per questo esempio, digitare **Modello_Semplificato**.  
+
+9. L'origine dati **Modello_Semplificato.ds** viene ora visualizzata in **Esplora soluzioni** sotto il nodo **Origini dati** .  
+
+    > [!NOTE]  
+    >  Per modificare le proprietà di un'origine dati esistente, fare doppio clic sull'origine dati nella cartella **Origini dati** del riquadro **Esplora soluzioni** per visualizzare le proprietà delle origini dati in Progettazione origine dati.  
+
+###  <a name="BKMK_DefineReportModelDataSourceView"></a> Per definire la vista dell'origine dati per il modello di report  
+
+1.  In **Esplora soluzioni**fare clic con il pulsante destro del mouse su **Viste origine dati** per selezionare **Aggiungi nuova vista origine dati**.  
+
+2.  Nella pagina **Creazione guidata vista origine dati** fare clic su **Avanti**. Verrà visualizzata la pagina **Selezione origine dati** .  
+
+3.  Nella finestra **Origini dati relazionali** verificare che l'origine dati **Modello_Semplificato** sia selezionata, quindi fare clic su **Avanti**.  
+
+4.  Nella pagina **Selezione tabelle e viste** selezionare la seguente vista dall'elenco **Oggetti disponibili** per l'uso nel modello di report: **v_R_System (dbo)**.  
 
     > [!TIP]  
-    >  **[使用可能なオブジェクト]** リストでビューを見つけやすいように、リスト上部の見出しで **[名前]** をクリックして、オブジェクトをアルファベット順に並べ替えます。  
+    >  Per agevolare l'individuazione delle viste nell'elenco **Oggetti disponibili** , fare clic sull'intestazione **Nome** nella parte superiore dell'elenco per disporre gli oggetti in ordine alfabetico.  
 
-5.  ビューを選択した後、 **>** をクリックして、オブジェクトを **[含まれるオブジェクト]** を選択します。  
+5.  Dopo avere selezionato la vista, fare clic su **>** per trasferire l'oggetto nell'elenco **Oggetti inclusi** .  
 
-6.  **[名前の一致]** ページが表示された場合、既定値をそのまま使用し、 **[次へ]**をクリックします。  
+6.  Se viene visualizzata la pagina **Corrispondenza nomi** , accettare le selezioni predefinite, quindi fare clic su **Avanti**.  
 
-7.  必要なオブジェクトを選択したら、[ **次へ** ] をクリックして、データ ソース ビューの名前を指定します。 この例では、「 **Simple_Model**」と入力します。  
+7.  Dopo avere selezionato gli oggetti necessari, fare clic su **Avanti**, quindi specificare un nome per la vista dell'origine dati. Per questo esempio, digitare **Modello_Semplificato**.  
 
-8.  **[完了]**をクリックします。 **Simple_Model.dsv** データ ソース ビューが、 **[ソリューション エクスプローラー]** の **[データ ソース ビュー]**フォルダーに表示されます。  
+8.  Fare clic su **Fine**. La vista dell'origine dati **Modello_Semplificato.dsv** viene visualizzata nella cartella **Viste origine dati** di **Esplora soluzioni**.  
 
 ###  <a name="BKMK_CreateReportModel"></a> To create the report model  
 
-1.  **[ソリューション エクスプローラー]**で **[レポート モデル]** を右クリックし、 **[新しいレポート モデルの追加]**を選択します。  
+1.  In **Esplora soluzioni**fare clic con il pulsante destro del mouse su **Modelli di report** per selezionare **Aggiungi nuovo modello di report**.  
 
-2.  **[レポート モデル ウィザードへようこそ]** ページで **[次へ]**をクリックします。  
+2.  Nella pagina **Creazione guidata modello report** fare clic su **Avanti**.  
 
-3.  **[データ ソース ビューの選択]** ページの **[使用可能なデータ ソース ビュー]** リストでデータ ソース ビューを選択し、 **[次へ]**をクリックします。 この例では、[ **Simple_Model.dsv** ] を選択します。  
+3.  Nella pagina **Selezione vista origine dati** selezionare la vista dell'origine dati dall'elenco **Viste origine dati disponibili** , quindi fare clic su **Avanti**. Per questo esempio, selezionare **Modello_Semplificato.dsv**.  
 
-4.  **[レポート モデル生成ルールの選択]** ページで既定値をそのまま使用し、 **[次へ]**をクリックします。  
+4.  Nella pagina **Selezionare regole generazione modello di report** accettare i valori predefiniti, quindi fare clic su **Avanti**.  
 
-5.  **[モデルの統計の収集]** ページで **[生成の前にモデルの統計を更新する]** が選択されていることを確認し、 **[次へ]**をクリックします。  
+5.  Nella pagina **Raccolta statistiche modello** verificare che **Aggiorna statistiche modello prima di generare** sia selezionato, quindi fare clic su **Avanti**.  
 
-6.  [ **ウィザードの完了** ] ページで、レポート モデルの名前を指定します。 この例では、「 **Simple_Model** 」と表示されていることを確認します。  
+6.  Nella pagina **Completamento procedura guidata** specificare un nome per il modello di report. Per questo esempio, verificare che **Modello_Semplificato** venga visualizzato.  
 
-7.  ウィザードを完了してレポート モデルを作成するには、[ **実行** ] をクリックします。  
+7.  Per completare la procedura guidata e creare il modello di report, fare clic su **Esegui**.  
 
-8.  ウィザードを終了するには、[ **完了** ] をクリックします。 レポート モデルがデザイン ウィンドウに表示されます。  
+8.  Per uscire dalla procedura guidata, fare clic su **Fine**. Il modello di report viene visualizzato nella finestra di progettazione.  
 
-###  <a name="BKMK_PublishReportModel"></a> SQL Reporting Services 用にレポート モデルを公開するには  
+###  <a name="BKMK_PublishReportModel"></a> Per pubblicare il modello di report per l'utilizzo in SQL Server Reporting Services  
 
-1.  **[ソリューション エクスプローラー]**で、レポート モデルを右クリックして、 **[展開]**を選択します。 この例では、「 **Simple_Model** 」というレポート モデルを使用します。  
+1.  In **Esplora soluzioni**fare clic con il pulsante destro del mouse sul modello di report, quindi selezionare **Distribuisci**. Per questo esempio, il modello di report è **Modello_Semplificato.smdl**.  
 
-2.  [ **SQL Server Business Intelligence Development Studio** ] ウィンドウの左下隅で展開ステータスを確認します。 展開が完了したら、[ **配置正常終了** ] と表示されます。 展開に失敗すると、[ **出力** ] ウィンドウに失敗の原因が表示されます。 これで新しいレポート モデルが SQL Server Reporting Services の Web サイトから使用可能になります。  
+2.  Esaminare lo stato della distribuzione nell'angolo inferiore sinistro della finestra **SQL Server Business Intelligence Development Studio** . Al termine della distribuzione, verrà visualizzato il messaggio **Distribuzione completata** . Se la distribuzione non riesce, il motivo dell'errore verrà visualizzato nella finestra **Output** . Il nuovo modello di report è ora disponibile nel sito Web di SQL Server Reporting Services.  
 
-3.  **[ファイル]**、 **[すべて保存]**の順にクリックして、 **SQL Server Business Intelligence Development Studio**を閉じます。  
+3.  Fare clic su **File**, quindi su **Salva tutto**e infine chiudere **SQL Server Business Intelligence Development Studio**.  
 
 ###  <a name="BKMK_DeployReportModel"></a> To deploy the custom report model to Configuration Manager  
 
-1.  レポート モデル プロジェクトを作成したフォルダーを検索します。 例: *USERPROFILE*%\Documents\Visual Studio 2008\Projects\\*&lt;プロジェクト名\>*  
+1.  Individuare la cartella in cui è stato creato il progetto di modello di report. Ad esempio, %*PROFILOUTENTE*%\Documents\Visual Studio 2008\Projects\\*&lt;Nome progetto\>.*  
 
-2.  レポート モデル プロジェクト ファルダから次のファイルを、コンピューター上の一時ファルダにコピーします。  
+2.  Copiare i seguenti file dalla cartella del progetto di modello di report in una cartella temporanea nel computer:  
 
-    -   *&lt;モデル名\>* **.dsv**  
+    -   *&lt;Nome modello\>* **.dsv**  
 
-    -   *&lt;モデル名\>* **.smdl**  
+    -   *&lt;Nome modello\>* **.smdl**  
 
-3.  メモ帳などのテキスト エディターを使用して前のファイルを開きます。  
+3.  Aprire i file precedenti utilizzando un editor di testo, ad esempio Blocco note.  
 
-4.  *&lt;モデル名\>***.dsv** というファイルで、次のように記述された最初の行を見つけます。  
+4.  Nel file *&lt;Nome modello\>***.dsv** individuare la prima riga del file, simile alla seguente:  
 
      **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine"\>**  
 
-     この行を次のように編集します。  
+     Modificare la riga come segue:  
 
      **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="RelationalDataSourceView"\>**  
 
-5.  ファイルの内容をすべてを Windows クリップボードにコピーします。  
+5.  Copiare l'intero contenuto del file negli Appunti di Windows.  
 
-6.  ファイル *&lt;モデル名\>***.dsv** を閉じます。  
+6.  Chiudere il file *&lt;Nome modello\>***.dsv**.  
 
-7.  *&lt;モデル名\>***.smdl** というファイルで、次のように記述された最後の 3 行を見つけます。  
+7.  Nel file *&lt;Nome modello\>***.smdl** individuare le ultime tre righe del file, simili alle seguenti:  
 
      `</Entity>`  
 
@@ -170,116 +170,116 @@ ms.lasthandoff: 08/07/2017
 
      `</SemanticModel>`  
 
-8.  ファイル *&lt;モデル名\>***.dsv** の内容を、ファイルの最後の行 (**&lt;SemanticModel\>**) の直前に貼り付けます。  
+8.  Incollare il contenuto del file *&lt;Nome modello\>***.dsv** direttamente prima dell'ultima riga del file (**&lt;SemanticModel\>**).  
 
-9. ファイル *&lt;モデル名\>***.smdl** を保存して閉じます。  
+9. Salvare e chiudere il file *&lt;Nome modello\>***.smdl**.  
 
-10. ファイル *&lt;モデル名\>***.smdl** を、Configuration Manager サイト サーバー上の フォルダー *%programfiles%*\Microsoft Configuration Manager \AdminConsole\XmlStorage\Other にコピーします。  
+10. Copiare il file *&lt;Nome modello\>***.smdl** nella cartella *%programmi%*\Microsoft Configuration Manager \AdminConsole\XmlStorage\Other nel server del sito di Configuration Manager.  
 
     > [!IMPORTANT]  
-    >  レポート モデル ファイルを Configuration Manager サイト サーバーにコピーした後は、まず Configuration Manager コンソールを終了し再起動しないと、**レポートの作成ウィザード**でレポート モデルを使用できません。  
+    >  Dopo aver copiato il file del modello di report nel server del sito di Configuration Manager, sarà necessario chiudere e riavviare la console di Configuration Manager prima di usare il modello di report in **Creazione guidata report**.  
 
-##  <a name="AdvancedReportModel"></a> SQL Server Reporting Services で詳細レポート モデルを作成する手順  
- 以下の手順に従って、サイト内のユーザーが Configuration Manager データベースの複数のビューのデータに基づいて、特定のモデルベースのレポートを作成する際に使用できる詳細レポート モデルを作成できます。 クライアント コンピューターとそれらのコンピューターにインストールされているオペレーティング システムに関する情報をレポート作成者に示す、レポート モデルを作成します。 この情報は、Configuration Manager データベースの次のビューから取得します。  
+##  <a name="AdvancedReportModel"></a> Passaggi per la creazione di un modello di report avanzato in SQL Server Reporting Services  
+ Usare le procedure seguenti per creare un modello di report avanzato che gli utenti del sito possono usare per compilare report basati su modello specifici in base ai dati presenti in più viste del database di Configuration Manager. Creare un modello di report che fornisca all'autore del report informazioni sui computer client e sul sistema operativo installato in tali computer. Queste informazioni provengono dalle seguenti viste del database di Configuration Manager:  
 
--   **V_R_System**: 検出されたコンピューターと Configuration Manager クライアントに関する情報が含まれています。  
+-   **V_R_System**: contiene informazioni sui computer individuati e sul client di Configuration Manager.  
 
--   **V_GS_OPERATING_SYSTEM**: クライアント コンピューターにインストールされているオペレーティング システムに関する情報が含まれています。  
+-   **V_GS_OPERATING_SYSTEM**: contiene informazioni sul sistema operativo installato nel computer client.  
 
- 前述のビューから選択した項目は 1 つのリストにまとめられ、フレンドリ名が与えられ、その後、特定のレポートに含めることができるようにレポート ビルダーでレポートの作成者に表示されます。  
+ Gli elementi selezionati nelle visualizzazioni precedenti vengono consolidati in un unico elenco, vengono associati a nomi descrittivi e quindi forniti all'autore del report in Generatore report per l'inclusione in report specifici.  
 
- これらの手順を実行するコンピューターに SQL Server Business Intelligence Development がインストールされていること、また、このコンピューターからネットワーク接続を介してレポート サービス ポイント サーバーにアクセスできることを確認します。 SQL Server Business Intelligence Development Studio の詳細については、SQL Server のドキュメントを参照してください。  
+ Verificare che nel computer in cui vengono eseguite tali procedure sia installato SQL Server Business Intelligence Development Studio e che il computer disponga della connettività di rete al server del punto di Reporting Services. Per informazioni dettagliate su SQL Server Business Intelligence Development Studio, vedere la documentazione di SQL Server.  
 
 #### <a name="to-create-the-report-model-project"></a>To create the report model project  
 
-1.  デスクトップで、 **[スタート]**、 **[Microsoft SQL Server 2008]**、 **[SQL Server Business Intelligence Development Studio]**の順にクリックします。  
+1.  Sul desktop fare clic su **Start**, quindi su **Microsoft SQL Server 2008**e selezionare **SQL Server Business Intelligence Development Studio**.  
 
-2.  **[SQL Server Business Intelligence Development Studio]** を Microsoft Visual Studio で開いてから、 **[ファイル]**、 **[新規作成]**、 **[プロジェクト]**の順にクリックします。  
+2.  In seguito all'apertura di **SQL Server Business Intelligence Development Studio** in Microsoft Visual Studio, fare clic su **File**, quindi su **Nuovo**e selezionare **Progetto**.  
 
-3.  **[新しいプロジェクト]** ダイアログ ボックスの **[テンプレート]** リストで **[レポート モデル プロジェクト]** を選択します。  
+3.  Nella finestra di dialogo **Nuovo progetto** selezionare **Progetto modello di report** nell'elenco **Modelli** .  
 
-4.  [ **名前** ] ボックスに、このレポート モデルの名前を指定します。 この例では、「 **Advanced_Model**」と入力します。  
+4.  Nella casella **Nome** specificare un nome per questo modello di report. Per questo esempio, digitare **Modello_Avanzato**.  
 
-5.  レポート モデル プロジェクトを作成するには、[ **OK** ] をクリックします。  
+5.  Per creare il progetto di modello di report, fare clic su **OK**.  
 
-6.  **Advanced_Model** ソリューションが **[ソリューション エクスプローラー]**に表示されます。  
-
-    > [!NOTE]  
-    >  **[ソリューション エクスプローラー]** ウィンドウが表示されない場合は、 **[表示]**、 **[ソリューション エクスプローラー]**の順にクリックします。  
-
-#### <a name="to-define-the-data-source-for-the-report-model"></a>レポート モデル用のデータ ソースを定義するには  
-
-1.  **SQL Server Business Intelligence Development Studio** の **[ソリューション エクスプローラー]**ウィンドウで **[データ ソース]** を右クリックし、 **[新しいデータ ソースの追加]**を選択します。  
-
-2.  **[データ ソース ウィザードへようこそ]** ページで **[次へ]**をクリックします。  
-
-3.  **[接続の定義方法を選択します]** ページで **[既存の接続または新しい接続に基づいてデータ ソースを作成する]** が選択されていることを確認し、 **[新規作成]**をクリックします。  
-
-4.  [ **接続マネージャー** ] ダイアログ ボックスで、データ ソースの次の接続プロパティを指定します。  
-
-    -   **サーバー名**: Configuration Manager サイト データベース サーバーの名前を入力するか、一覧から選択します。 既定のインスタンスではなく、名前が付けられたインスタンスを使用している場合、&lt;*データベース サーバー*>\\&lt;*インスタンス名*> の形式で入力します。  
-
-    -   [ **Windows 認証を使用する** ] を選択します。  
-
-    -   [**データベース名の選択または入力**] リストで、Configuration Manager サイト データベースの名前を選択します。  
-
-5.  データベース接続が正常に確立されたことを確認するには、[ **接続テスト** ] をクリックします。  
-
-6.  接続が正常に確立されたら、 **[OK]** をクリックして **[接続マネージャー]** ダイアログ ボックスを閉じます。 接続が正常に確立されない場合は、入力した情報が正しいことを確認して、[ **接続テスト** ] を再度クリックします。  
-
-7.  **[接続の定義方法を選択します]** ページで、 **[既存の接続または新しい接続に基づいてデータ ソースを作成する]** が選択されていて、直前に指定したデータ ソースが **[データ接続]** リスト ボックスで選択された状態になっていることを確認し、 **[次へ]**をクリックします。  
-
-8.  **[データ ソース名]**にデータ ソースの名前を指定し、 **[完了]**をクリックします。 この例では、「 **Advanced_Model**」と入力します。  
-
-9. これで、 **[ソリューション エクスプローラー]** の **[データ ソース]** ノードの下に、データ ソース **Advanced_Model.ds** が表示されます。  
+6.  La soluzione **Modello_Avanzato** viene visualizzata in **Esplora soluzioni**.  
 
     > [!NOTE]  
-    >  既存のデータ ソースのプロパティを編集するには、 **[ソリューション エクスプローラー]** ウィンドウの **[データ ソース]** フォルダーでデータ ソースをダブルクリックし、データ ソースのプロパティをデータ ソース デザイナーに表示します。  
+    >  Se il riquadro **Esplora soluzioni** non viene visualizzato, fare clic su **Visualizza**, quindi su **Esplora soluzioni**.  
 
-#### <a name="to-define-the-data-source-view-for-the-report-model"></a>レポート モデル用のデータ ソース ビューを定義するには  
+#### <a name="to-define-the-data-source-for-the-report-model"></a>Per definire l'origine dati per il modello di report  
 
-1.  **[ソリューション エクスプローラー]**で **[データ ソース ビュー]** を右クリックし、 **[新しいデータ ソース ビューの追加]**を選択します。  
+1.  Nel riquadro **Esplora soluzioni** di **SQL Server Business Intelligence Development Studio**fare clic con il pulsante destro del mouse su **Origini dati** per selezionare **Aggiungi nuova origine dati**.  
 
-2.  **[データ ソース ビュー ウィザードへようこそ]** ページで **[次へ]**をクリックします。 [ **データ ソースの選択** ] ページが表示されます。  
+2.  Nella pagina **Creazione guidata origine dati** fare clic su **Avanti**.  
 
-3.  **[リレーショナル データ ソース]** ウィンドウで、 **[Advanced_Model]** データ ソースが選択されていることを確認し、 **[次へ]**をクリックします。  
+3.  Nella pagina **Selezione metodo di definizione connessione** verificare che **Crea un'origine dati basata su una connessione nuova o esistente** sia selezionato, quindi fare clic su **Nuovo**.  
 
-4.  **[テーブルとビューの選択]** ページの **[使用可能なオブジェクト]** リストで、レポート モデルで使用する以下のビューを選択します。  
+4.  Nella finestra di dialogo **Gestione connessione** specificare le proprietà di connessione seguenti per l'origine dati:  
 
-    -   **[[v_R_System (dbo)]]**  
+    -   **Nome server**: digitare il nome del server di database del sito di Configuration Manager oppure selezionarlo nell'elenco. Se si usa un'istanza denominata anziché l'istanza predefinita, digitare &lt;*server database* >\\&lt;*nome istanza*>.  
+
+    -   Selezionare **Usa autenticazione di Windows**.  
+
+    -   Nell'elenco **Selezionare o immettere un nome di database** selezionare il nome del database del sito di Configuration Manager.  
+
+5.  Per verificare la connessione al database, fare clic su **Verifica connessione**.  
+
+6.  Se la connessione ha esito positivo, fare clic su **OK** per chiudere la finestra di dialogo **Gestione connessione** . Se non è possibile effettuare la connessione, verificare la correttezza delle informazioni immesse, quindi fare di nuovo clic su **Verifica connessione** .  
+
+7.  Nella pagina **Selezione metodo di definizione connessione** verificare che **Crea un'origine dati basata su una connessione nuova o esistente** sia selezionato, assicurarsi che l'origine dati appena specificata sia selezionata nella casella di riepilogo **Connessioni dati** e infine fare clic su **Avanti**.  
+
+8.  In **Nome origine dati**specificare un nome per l'origine dati, quindi fare clic su **Fine**. Per questo esempio, digitare **Modello_Avanzato**.  
+
+9. L'origine dati **Modello_Avanzato.ds** viene visualizzata in **Esplora soluzioni** sotto il nodo **Origini dati** .  
+
+    > [!NOTE]  
+    >  Per modificare le proprietà di un'origine dati esistente, fare doppio clic sull'origine dati nella cartella **Origini dati** del riquadro **Esplora soluzioni** per visualizzare le proprietà delle origini dati in Progettazione origine dati.  
+
+#### <a name="to-define-the-data-source-view-for-the-report-model"></a>Per definire la vista dell'origine dati per il modello di report  
+
+1.  In **Esplora soluzioni**fare clic con il pulsante destro del mouse su **Viste origine dati** per selezionare **Aggiungi nuova vista origine dati**.  
+
+2.  Nella pagina **Creazione guidata vista origine dati** fare clic su **Avanti**. Verrà visualizzata la pagina **Selezione origine dati** .  
+
+3.  Nella finestra **Origini dati relazionali** verificare che l'origine dati **Modello_Avanzato** sia selezionata, quindi fare clic su **Avanti**.  
+
+4.  Nella pagina **Selezione tabelle e viste** selezionare le viste seguenti dall'elenco **Oggetti disponibili** per l'utilizzo nel modello di report:  
+
+    -   **v_R_System (dbo)**  
 
     -   **v_GS_OPERATING_SYSTEM (dbo)**  
 
-     各ビューを選択した後、 **>** をクリックして、オブジェクトを **[含まれるオブジェクト]** を選択します。  
+     Dopo avere selezionato ogni vista, fare clic su **>** per trasferire l'oggetto nell'elenco **Oggetti inclusi** .  
 
     > [!TIP]  
-    >  **[使用可能なオブジェクト]** リストでビューを見つけやすいように、リスト上部の見出しで **[名前]** をクリックして、オブジェクトをアルファベット順に並べ替えます。  
+    >  Per agevolare l'individuazione delle viste nell'elenco **Oggetti disponibili** , fare clic sull'intestazione **Nome** nella parte superiore dell'elenco per disporre gli oggetti in ordine alfabetico.  
 
-5.  **[名前の一致]** ダイアログ ボックスが表示された場合、既定値をそのまま使用し、 **[次へ]**をクリックします。  
+5.  Se viene visualizzata la finestra di dialogo **Corrispondenza nomi** , accettare le selezioni predefinite, quindi fare clic su **Avanti**.  
 
-6.  必要なオブジェクトを選択したら、[ **次へ** ] をクリックして、データ ソース ビューの名前を指定します。 この例では、「 **Advanced_Model**」と入力します。  
+6.  Dopo avere selezionato gli oggetti necessari, fare clic su **Avanti**, quindi specificare un nome per la vista dell'origine dati. Per questo esempio, digitare **Modello_Avanzato**.  
 
-7.  **[完了]**をクリックします。 **Advanced_Model.dsv** データ ソース ビューが、 **[ソリューション エクスプローラー]** の **[データ ソース ビュー]**フォルダーに表示されます。  
+7.  Fare clic su **Fine**. La vista dell'origine dati **Modello_Avanzato.dsv** viene visualizzata nella cartella **Viste origine dati** di **Esplora soluzioni**.  
 
-#### <a name="to-define-relationships-in-the-data-source-view"></a>データ ソース ビュー内の各関係を定義するには  
+#### <a name="to-define-relationships-in-the-data-source-view"></a>Per definire le relazioni nella vista dell'origine dati  
 
-1.  **[ソリューション エクスプローラー]**で **Advanced_Model.dsv** をダブルクリックして、デザイン ウィンドウを開きます。  
+1.  In **Esplora soluzioni**fare doppio clic su **Modello_Avanzato.dsv** per aprire la finestra di progettazione.  
 
-2.  **[v_R_System]** ウィンドウのタイトル バーを右クリックし、 **[テーブルの置き換え]**を選択してから、 **[新しい名前付きクエリの使用]**をクリックします。  
+2.  Fare clic con il pulsante destro del mouse sulla barra del titolo della finestra **v_R_System** per selezionare **Sostituisci tabella**, quindi fare clic su **Con nuova query denominata**.  
 
-3.  **[名前付きクエリの作成]** ダイアログ ボックスで、 **[テーブルの追加]** アイコンをクリックします (通常は、リボンの最後のアイコン)。  
+3.  Nella finestra di dialogo **Crea query denominata** fare clic sull'icona **Aggiungi tabella** . In genere è l'ultima icona sulla barra multifunzione.  
 
-4.  **[テーブルの追加]** ダイアログ ボックスで **[ビュー]** タブをクリックして、一覧から **[V_GS_OPERATING_SYSTEM]** を選択し、 **[追加]**をクリックします。  
+4.  Nella finestra di dialogo **Aggiungi tabella** fare clic sulla scheda **Viste** , selezionare **V_GS_OPERATING_SYSTEM** dall'elenco, quindi fare clic su **Aggiungi**.  
 
-5.  **[閉じる]** をクリックして **[テーブルの追加]** ダイアログ ボックスを閉じます。  
+5.  Fare clic su **Chiudi** per chiudere la finestra di dialogo **Aggiungi tabella** .  
 
-6.  [ **名前付きクエリの作成** ] ダイアログ ボックスで、次の項目を指定します。  
+6.  Nella finestra di dialogo **Crea query denominata** specificare le seguenti informazioni:  
 
-    -   **名前** : クエリの名前を指定します。 この例では、「 **Advanced_Model**」と入力します。  
+    -   **Nome:** specificare il nome per la query. Per questo esempio, digitare **Modello_Avanzato**.  
 
-    -   **説明** : クエリの説明を指定します。 この例では、「 **Reporting Services レポート モデルの例**」という説明を入力します。  
+    -   **Descrizione:** specificare una descrizione per la query. Per questo esempio, digitare **Esempio di modello di report di Reporting Services**.  
 
-7.  [ **v_R_System** ] ウィンドウで、オブジェクトの一覧からレポート モデルに表示する以下の項目を選択します。  
+7.  Nella finestra **v_R_System** selezionare gli elementi seguenti dall'elenco di oggetti da visualizzare nel modello di report:  
 
     -   **ResourceID**  
 
@@ -309,7 +309,7 @@ ms.lasthandoff: 08/07/2017
 
     -   **Operating_System_Name_and0**  
 
-8.  [ **v_GS_OPERATING_SYSTEM** ] ボックスで、オブジェクトの一覧からレポート モデルに表示する以下の項目を選択します。  
+8.  Nella casella **v_GS_OPERATING_SYSTEM** selezionare gli elementi seguenti dall'elenco di oggetti da visualizzare nel modello di report:  
 
     -   **ResourceID**  
 
@@ -333,79 +333,79 @@ ms.lasthandoff: 08/07/2017
 
     -   **WindowsDirectory0**  
 
-9. これらのビューのオブジェクトを 1 つのリストとしてレポート作成者に表示するには、結合を使用して、2 つのリストまたはビューの関係を指定する必要があります。 両方のビューに表示されるオブジェクトの **ResourceID**を使って、2 つのビューを結合することができます。  
+9. Per presentare gli oggetti in queste viste come un unico elenco per l'autore del report, sarà necessario specificare una relazione tra le due tabelle o viste, utilizzando un join. È possibile unire le due viste utilizzando l'oggetto **ResourceID**, che viene visualizzato in entrambe le visualizzazioni.  
 
-10. **[v_R_System]** ウィンドウで、 **ResourceID** オブジェクトをクリックしたまま **[v_GS_OPERATING_SYSTEM]** ウィンドウの **ResourceID** オブジェクトにドラッグします。  
+10. Nella finestra **v_R_System** fare clic sull'oggetto **ResourceID** e, tenendo premuto il pulsante del mouse, trascinarlo sull'oggetto **ResourceID** nella finestra **v_GS_OPERATING_SYSTEM** .  
 
-11. [ **OK** ] をクリックします。  
+11. Fare clic su **OK**.  
 
-12. **[v_R_System]** ウィンドウから **[Advanced_Model]** ウィンドウに切り替わり、このウィンドウに **v_R_System** および **v_GS_OPERATING_SYSTEM** ビューのレポート モデルに必要なオブジェクトがすべて含まれます。 これでデータ ソース ビュー デザイナーから [ **v_GS_OPERATING_SYSTEM** ] ウィンドウを削除することができます。 **[v_GS_OPERATING_SYSTEM]** ウィンドウのタイトル バーを右クリックして、 **[DSV からテーブルを削除]**を選択します。 **[オブジェクトの削除]** ダイアログ ボックスで、 **[OK]** をクリックして削除を確定します。  
+12. La finestra **Modello_Avanzato** sostituirà la finestra **v_R_System** e conterrà tutti gli oggetti necessari per il modello di report dalle viste **v_R_System** e **v_GS_OPERATING_SYSTEM** . È ora possibile eliminare la finestra **v_GS_OPERATING_SYSTEM** dalla finestra di progettazione delle viste di origine dati. Fare clic con il pulsante destro del mouse sulla barra del titolo della finestra **v_GS_OPERATING_SYSTEM** per selezionare **Elimina tabella da vista origine dati**. Nella finestra di dialogo **Elimina oggetti** fare clic su **OK** per confermare l'eliminazione.  
 
-13. **[ファイル]**をクリックして、 **[すべて保存]**をクリックします。  
+13. Fare clic su **File**, quindi su **Salva tutto**.  
 
 #### <a name="to-create-the-report-model"></a>To create the report model  
 
-1.  **[ソリューション エクスプローラー]**で **[レポート モデル]** を右クリックし、 **[新しいレポート モデルの追加]**を選択します。  
+1.  In **Esplora soluzioni**fare clic con il pulsante destro del mouse su **Modelli di report** per selezionare **Aggiungi nuovo modello di report**.  
 
-2.  **[レポート モデル ウィザードへようこそ]** ページで **[次へ]**をクリックします。  
+2.  Nella pagina **Creazione guidata modello report** fare clic su **Avanti**.  
 
-3.  **[データ ソース ビューの選択]** ページの **[使用可能なデータ ソース ビュー]** リストでデータ ソース ビューを選択し、 **[次へ]**をクリックします。 この例では、[ **Simple_Model.dsv** ] を選択します。  
+3.  Nella pagina **Selezione vista origine dati** selezionare la vista dell'origine dati dall'elenco **Viste origine dati disponibili** , quindi fare clic su **Avanti**. Per questo esempio, selezionare **Modello_Semplificato.dsv**.  
 
-4.  **[レポート モデル生成ルールの選択]** ページで既定値をそのまま使用し、 **[次へ]**をクリックします。  
+4.  Nella pagina **Selezionare regole generazione modello di report** non modificare i valori predefiniti, quindi fare clic su **Avanti**.  
 
-5.  **[モデルの統計の収集]** ページで **[生成の前にモデルの統計を更新する]** が選択されていることを確認し、 **[次へ]**をクリックします。  
+5.  Nella pagina **Raccolta statistiche modello** verificare che **Aggiorna statistiche modello prima di generare** sia selezionato, quindi fare clic su **Avanti**.  
 
-6.  [ **ウィザードの完了** ] ページで、レポート モデルの名前を指定します。 この例では、「 **Advanced_Model** 」と表示されていることを確認します。  
+6.  Nella pagina **Completamento procedura guidata** specificare un nome per il modello di report. Per questo esempio, verificare che **Modello_Avanzato** venga visualizzato.  
 
-7.  ウィザードを完了してレポート モデルを作成するには、[ **実行** ] をクリックします。  
+7.  Per completare la procedura guidata e creare il modello di report, fare clic su **Esegui**.  
 
-8.  ウィザードを終了するには、[ **完了** ] をクリックします。  
+8.  Per uscire dalla procedura guidata, fare clic su **Fine**.  
 
-9. レポート モデルがデザイン ウィンドウに表示されます。  
+9. Il modello di report viene visualizzato nella finestra di progettazione.  
 
-#### <a name="to-modify-object-names-in-the-report-model"></a>レポート モデルのオブジェクト名を変更するには  
+#### <a name="to-modify-object-names-in-the-report-model"></a>Per modificare i nomi degli oggetti nel modello di report  
 
-1.  **[ソリューション エクスプローラー]**で、レポート モデルを右クリックして、 **[ビュー デザイナー]**を選択します。 この例では、[ **Advanced_Model.smdl** ] を選択します。  
+1.  In **Esplora soluzioni**fare clic con il pulsante destro del mouse su un modello di report, quindi scegliere **Visualizza finestra di progettazione**. Per questo esempio, selezionare **Modello_Avanzato.dsv**.  
 
-2.  レポート モデル デザイン ビューで、オブジェクト名を右クリックして、[ **名前の変更** ] をクリックします。  
+2.  Nella vista di progettazione del modello di report fare clic con il pulsante destro del mouse su qualsiasi nome di oggetto, quindi scegliere **Rinomina**.  
 
-3.  選択したオブジェクトの新しい名前を入力して、Enter キーを押します。 たとえば、オブジェクトを **Windows Service Pack のバージョン** が分かるように、オブジェクトを " **CSD_Version_0**" という名前に変更することができます。  
+3.  Digitare un nuovo nome per l'oggetto selezionato e quindi premere INVIO. È ad esempio possibile rinominare l'oggetto **CSD_Version_0** come **Versione del Service Pack di Windows**.  
 
-4.  オブジェクトの名前の変更が完了したら、 **[ファイル]**をクリックして **[すべて保存]**をクリックします。  
+4.  Dopo avere rinominato gli oggetti, fare clic su **File**, quindi su **Salva tutto**.  
 
-#### <a name="to-publish-the-report-model-for-use-in-sql-server-reporting-services"></a>SQL Reporting Services 用にレポート モデルを公開するには  
+#### <a name="to-publish-the-report-model-for-use-in-sql-server-reporting-services"></a>Per pubblicare il modello di report per l'utilizzo in SQL Server Reporting Services  
 
-1.  **[ソリューション エクスプローラー]**で、 **Advanced_Model.smdl** を右クリックして、 **[展開]**を選択します。  
+1.  In **Esplora soluzioni**fare clic con il pulsante destro del mouse su **Modello_Avanzato.dsv** , quindi scegliere **Distribuisci**.  
 
-2.  [ **SQL Server Business Intelligence Development Studio** ] ウィンドウの左下隅で展開ステータスを確認します。 展開が完了したら、[ **配置正常終了** ] と表示されます。 展開に失敗すると、[ **出力** ] ウィンドウに失敗の原因が表示されます。 これで新しいレポート モデルが SQL Server Reporting Services の Web サイトから使用可能になります。  
+2.  Esaminare lo stato della distribuzione nell'angolo inferiore sinistro della finestra **SQL Server Business Intelligence Development Studio** . Al termine della distribuzione, verrà visualizzato il messaggio **Distribuzione completata** . Se la distribuzione non riesce, il motivo dell'errore verrà visualizzato nella finestra **Output** . Il nuovo modello di report è ora disponibile nel sito Web di SQL Server Reporting Services.  
 
-3.  **[ファイル]**、 **[すべて保存]**の順にクリックして、 **SQL Server Business Intelligence Development Studio**を閉じます。  
+3.  Fare clic su **File**, quindi su **Salva tutto**e infine chiudere **SQL Server Business Intelligence Development Studio**.  
 
 #### <a name="to-deploy-the-custom-report-model-to-configuration-manager"></a>To deploy the custom report model to Configuration Manager  
 
-1.  レポート モデル プロジェクトを作成したフォルダーを検索します。 例: *USERPROFILE*%\Documents\Visual Studio 2008\Projects\\*&lt;プロジェクト名\>*  
+1.  Individuare la cartella in cui è stato creato il progetto di modello di report. Ad esempio, %*PROFILOUTENTE*%\Documents\Visual Studio 2008\Projects\\*&lt;Nome progetto\>.*  
 
-2.  レポート モデル プロジェクト ファルダから次のファイルを、コンピューター上の一時ファルダにコピーします。  
+2.  Copiare i seguenti file dalla cartella del progetto di modello di report in una cartella temporanea nel computer:  
 
-    -   *&lt;モデル名\>* **.dsv**  
+    -   *&lt;Nome modello\>* **.dsv**  
 
-    -   *&lt;モデル名\>* **.smdl**  
+    -   *&lt;Nome modello\>* **.smdl**  
 
-3.  メモ帳などのテキスト エディターを使用して前のファイルを開きます。  
+3.  Aprire i file precedenti utilizzando un editor di testo, ad esempio Blocco note.  
 
-4.  *&lt;モデル名\>***.dsv** というファイルで、次のように記述された最初の行を見つけます。  
+4.  Nel file *&lt;Nome modello\>***.dsv** individuare la prima riga del file, simile alla seguente:  
 
      **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine"\>**  
 
-     この行を次のように編集します。  
+     Modificare la riga come segue:  
 
      **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="RelationalDataSourceView"\>**  
 
-5.  ファイルの内容をすべてを Windows クリップボードにコピーします。  
+5.  Copiare l'intero contenuto del file negli Appunti di Windows.  
 
-6.  ファイル *&lt;モデル名\>***.dsv** を閉じます。  
+6.  Chiudere il file *&lt;Nome modello\>***.dsv**.  
 
-7.  *&lt;モデル名\>***.smdl** というファイルで、次のように記述された最後の 3 行を見つけます。  
+7.  Nel file *&lt;Nome modello\>***.smdl** individuare le ultime tre righe del file, simili alle seguenti:  
 
      `</Entity>`  
 
@@ -413,11 +413,11 @@ ms.lasthandoff: 08/07/2017
 
      `</SemanticModel>`  
 
-8.  ファイル *&lt;モデル名\>***.dsv** の内容を、ファイルの最後の行 (**&lt;SemanticModel\>**) の直前に貼り付けます。  
+8.  Incollare il contenuto del file *&lt;Nome modello\>***.dsv** direttamente prima dell'ultima riga del file (**&lt;SemanticModel\>**).  
 
-9. ファイル *&lt;モデル名\>***.smdl** を保存して閉じます。  
+9. Salvare e chiudere il file *&lt;Nome modello\>***.smdl**.  
 
-10. ファイル *&lt;モデル名\>***.smdl** を、Configuration Manager サイト サーバー上の フォルダー *%programfiles%*\Microsoft Configuration Manager\AdminConsole\XmlStorage\Other にコピーします。  
+10. Copiare il file *&lt;Nome modello\>***.smdl** nella cartella *%programmi%*\Microsoft Configuration Manager\AdminConsole\XmlStorage\Other nel server del sito di Configuration Manager.  
 
     > [!IMPORTANT]  
-    >  レポート モデル ファイルを Configuration Manager サイト サーバーにコピーした後は、まず Configuration Manager コンソールを終了し再起動しないと、**レポートの作成ウィザード**でレポート モデルを使用できません。  
+    >  Dopo aver copiato il file del modello di report nel server del sito di Configuration Manager, sarà necessario chiudere e riavviare la console di Configuration Manager prima di usare il modello di report in **Creazione guidata report**.  

@@ -1,6 +1,6 @@
 ---
-title: "オンプレミス モバイル デバイス管理の対象となるデータとデバイスの保護 "
-description: "Configuration Manager でオンプレミス モバイル デバイス管理のデータとデバイスを保護します。"
+title: 'Proteggere dati e dispositivi per la gestione dei dispositivi mobili locale '
+description: Proteggere dati e dispositivi per la gestione dei dispositivi mobili locale in Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -18,18 +18,18 @@ manager: angrobe
 ms.openlocfilehash: 88ab415ed3617ae5385636ad23bd02809979b55a
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="protect-data-and-devices-in-on-premises-mobile-device-management"></a>オンプレミス モバイル デバイス管理でのデータとデバイスの保護
+# <a name="protect-data-and-devices-in-on-premises-mobile-device-management"></a>Proteggere dati e dispositivi nella gestione dei dispositivi mobili locale
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-インフラストラクチャとデータの両方が公開や悪意のある攻撃から保護されるように、ユーザーが組織のリソースに安全にアクセスできるようにします。
+Si vuole che gli utenti possano accedere in modo sicuro alle risorse aziendali, affinché sia l'infrastruttura che i dati siano protetti da esposizione o attacchi dannosi.
 
-組織のリソースを保護するには、ハイブリッド MDM の展開 (下記参照) と同じガイダンスに従います。
+Per proteggere le risorse aziendali, seguire le stesse linee guida per le distribuzioni MDM ibride (elencate di seguito):
 
-- [Wi-Fi プロファイルの作成](create-wifi-profiles.md)
-- [PFX 証明書プロファイルの作成](create-pfx-certificate-profiles.md)
-- [VPN プロファイルの作成](create-vpn-profiles.md)
-- [電子メール プロファイルの作成](create-exchange-activesync-profiles.md)
+- [Creare profili Wi-Fi](create-wifi-profiles.md)
+- [Come creare i profili certificato PFX in Configuration Manager](create-pfx-certificate-profiles.md)
+- [Come creare profili VPN in Configuration Manager](create-vpn-profiles.md)
+- [Creare profili di posta elettronica](create-exchange-activesync-profiles.md)

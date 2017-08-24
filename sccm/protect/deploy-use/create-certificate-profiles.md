@@ -1,6 +1,6 @@
 ---
-title: "SCEP 証明書プロファイルの作成方法 | Microsoft Docs"
-description: "証明書プロファイルを使用して、System Center Configuration Manager で必要な証明書で、管理されているデバイスをプロビジョニングする方法について説明します。"
+title: Come creare i profili certificato SCEP | Microsoft Docs
+description: Informazioni su come usare i profili certificato per eseguire il provisioning dei certificati necessari ai dispositivi gestiti in System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/28/2017
 ms.prod: configuration-manager
@@ -18,178 +18,178 @@ manager: angrobe
 ms.openlocfilehash: 1e00804d27ecef2aadd8bfa395db1919c46243ee
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-certificate-profiles"></a>証明書プロファイルの作成
+# <a name="create-certificate-profiles"></a>Creare i profili certificato
 
-*適用対象: System Center Configuration Manager (Current Branch)*
-
-
-Configuration Manager (SCCM) で証明書プロファイルを使用して、会社のリソースにアクセスするために必要な証明書で、管理されているデバイスをプロビジョニングします。 証明書プロファイルを作成する前に、[System Center Configuration Manager の証明書インフラストラクチャの設定](certificate-infrastructure.md)の手順に従って、証明書インフラストラクチャを設定します。  
-
-このトピックでは、信頼されたルートおよび SCEP 証明書プロファイルを作成する方法について説明します。 PFX 証明書プロファイルを作成する場合は、「[PFX 証明書プロファイルを作成する方法](../../protect/deploy-use/create-pfx-certificate-profiles.md)」をご覧ください。
-
-証明書プロファイルを作成するには:
-
-1.  証明書プロファイルの作成ウィザードを開始します。
-1.  証明書の全般的な情報を指定します。
-1.  信頼された証明機関 (CA) 証明書を構成します。  
-1.  SCEP 証明書情報を構成します (SCEP 証明書に対してのみ)。  
-1.  証明書プロファイルの対応プラットフォームを指定します。
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-## <a name="start-the-create-certificate-profile-wizard"></a>証明書プロファイルの作成ウィザードを開始する  
+Usare i profili certificato in Configuration Manager (SCCM) per effettuare il provisioning dei certificati necessari ai dispositivi gestiti per accedere alle risorse aziendali. Prima di creare i profili certificato, configurare l'infrastruttura di certificazione come descritto in [Set up certificate infrastructure for System Center Configuration Manager](certificate-infrastructure.md) (Configurare l'infrastruttura di certificazione per System Center Configuration Manager).  
 
-1.  System Center Configuration Manager コンソールで、[ **資産とコンプライアンス** ] をクリックします。  
+Questo argomento descrive come creare profili certificato SCEP e radice attendibile. Se si vuole creare profili certificato PFX, vedere [Creare profili certificato PFX](../../protect/deploy-use/create-pfx-certificate-profiles.md) .
 
-2.  [ **資産とコンプライアンス** ] ワークスペースで、[ **コンプライアンス設定** ]、[ **会社のリソースへのアクセス** ] の順に展開してから、[ **証明書プロファイル** ] をクリックします。  
+Per creare un profilo certificato:
 
-3.  [ **ホーム** ] タブの [ **作成** ] グループで、[ **証明書プロファイルの作成** ] をクリックします。  
-
-## <a name="provide-general-information-about-the-certificate-profile"></a>証明書プロファイルの全般的な情報を指定する  
-
-証明書プロファイルの作成ウィザードの [ **全般** ] ページで、次の情報を指定します。  
-
--   **名前**: 証明書プロファイルの固有な名前を入力します。 最大 256 文字を使用できます。  
-
--   **説明**: System Center Configuration Manager コンソールで証明書プロファイルを区別しやすくなるように、簡単な説明と他の関連情報を入力します。 最大 256 文字を使用できます。  
-
--   **作成する証明書プロファイルの種類を指定します**: 次の証明書プロファイルの種類のいずれかを選択します。  
-
--   **信頼された証明機関証明書**: ユーザーまたはデバイスが他のデバイスを認証する必要があり、信頼されたルート証明機関 (CA) 証明書または中間 CA 証明書を展開して証明書チェーンを形成したい場合に、この種類を選択します。 たとえば、リモート認証ダイヤルイン ユーザー サービス (RADIUS) サーバーや仮想プライベート ネットワーク (VPN) サーバーなどのデバイスで認証する場合が当てはまります。 また、SCEP 証明書プロファイルを作成する前に、信頼された証明機関証明書を構成する必要があります。 この場合は、信頼された CA 証明書は、ユーザーまたはデバイスに証明書を発行する証明機関の信頼されたルート証明書でなければなりません。  
-
--   **SCEP (Simple Certificate Enrollment Protocol) 設定**: Simple Certificate Enrollment Protocol とネットワーク デバイス登録サービスの役割を使用して、デバイスまたはユーザーの証明書を要求する場合は、この証明書プロファイルの種類を選択します。
-
--   **Personal Information Exchange -- PKCS #12 (PFX) 設定 -- インポート**: PFX 証明書をインポートするには、これを選びます。 PFX 証明書の作成の詳細については、「[Import PFX certificate profiles](/sccm/mdm/deploy-use/import-pfx-certificate-profiles.md)」(PFX 証明書プロファイルをインポートする) を参照してください。
-
--   **Personal Information Exchange -- PKCS #12 (PFX) 設定 -- 作成**: 証明機関を使用して PFX 証明書を処理する場合に選択します。 PFX 証明書の作成の詳細については、「[PFX 証明書プロファイルを作成する方法](/sccm/mdm/deploy-use/create-pfx-certificate-profiles.md)」をご覧ください。
+1.  Avviare la Creazione guidata profilo certificato.
+1.  Fornire informazioni generali sul certificato.
+1.  Configurare un certificato dell'autorità di certificazione (CA) attendibile.  
+1.  Configurare le informazioni sul certificato SCEP (solo per i certificati SCEP).  
+1.  Specificare le piattaforme supportate per il profilo certificato.
 
 
-## <a name="configure-a-trusted-ca-certificate"></a>信頼された証明機関証明書を構成する  
+## <a name="start-the-create-certificate-profile-wizard"></a>Avviare la Creazione guidata profilo certificato  
+
+1.  Nella console di System Center Configuration Manager fare clic su **Asset e conformità**.  
+
+2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**, **Accesso risorse aziendali**e quindi fare clic su **Profili certificati**.  
+
+3.  Nella scheda **Home** del gruppo **Crea** fare clic su **Crea profilo certificato**.  
+
+## <a name="provide-general-information-about-the-certificate-profile"></a>Fornire informazioni generali sul profilo certificato  
+
+Nella pagina **Generale** della Creazione guidata profilo certificato specificare le informazioni seguenti:  
+
+-   **Nome**: immettere un nome univoco per il profilo certificato. È possibile usare un massimo di 256 caratteri.  
+
+-   **Descrizione**: digitare una descrizione che offra una panoramica del profilo certificato e altre informazioni rilevanti per facilitarne l'identificazione nella console di System Center Configuration Manager. È possibile usare un massimo di 256 caratteri.  
+
+-   **Specificare il tipo di profilo del certificato che si desidera creare**: scegliere uno tipi di profilo certificato seguenti:  
+
+-   **Certificato CA attendibile**: selezionare questo tipo di profilo certificato se si vuole distribuire un certificato CA radice attendibile o un certificato CA intermedio per formare una catena di certificati attendibili quando l'utente o il dispositivo deve autenticare un altro dispositivo. Ad esempio, il dispositivo può essere un server RADIUS (Remote Authentication Dial-In User Service) o un server di rete privata virtuale (VPN). È anche necessario configurare un profilo certificato CA attendibile prima di creare un profilo certificato SCEP. In questo caso, il certificato CA attendibile deve essere un certificato radice trusted per la CA che rilascerà il certificato per l'utente o il dispositivo.  
+
+-   **Impostazioni di Simple Certificate Enrollment Protocol (SCEP)**: selezionare questo tipo di profilo certificato se si desidera richiedere un certificato per un utente o un dispositivo utilizzando il Simple Certificate Enrollment Protocol e il servizio del ruolo del servizio Registrazione dispositivi di rete.
+
+-   **Scambio informazioni personali - Impostazioni PKCS #12 (PFX) - Importa**: selezionare questa opzione per importare un certificato PFX. Per altre informazioni sulla creazione del certificato PFX, vedere [Importare profili certificato PFX](/sccm/mdm/deploy-use/import-pfx-certificate-profiles.md).
+
+-   **Personal Information Exchange - Impostazioni PKCS #12 (PFX) - Crea**: selezionare questa opzione per elaborare i certificati PFX usando un'autorità di certificazione. Per altre informazioni sulla creazione del certificato PFX, vedere [Creare profili certificato PFX](/sccm/mdm/deploy-use/create-pfx-certificate-profiles.md).
+
+
+## <a name="configure-a-trusted-ca-certificate"></a>Configurare un certificato CA attendibile  
 
 > [!IMPORTANT]  
->  SCEP 証明書プロファイルを作成する前に、少なくとも 1 つの信頼された証明機関証明書を構成する必要があります。    
+>  Prima di creare un profilo certificato SCEP è necessario configurare almeno un profilo certificato CA attendibile.    
 >  
->  証明書を展開後に次のいずれかの値を変更すると、新しい証明書が要求されます。
->  -  キー格納プロバイダー
->  -  証明書テンプレート名
->  -  証明書の種類
->  -  サブジェクト名の形式
->  -  サブジェクト代替名
->  -  証明書の有効期間
->  -  キー使用法
->  -  キーのサイズ
->  -  拡張キー使用法
->  -  ルート CA 証明書
+>  Se si modifica uno di questi valori dopo aver distribuito il certificato, viene richiesto un nuovo certificato:
+>  -  Provider di archiviazione chiavi
+>  -  Nome modello di certificato
+>  -  Tipo di certificato
+>  -  Formato del nome soggetto
+>  -  Nome alternativo soggetto
+>  -  Periodo di validità del certificato
+>  -  Utilizzo chiavi
+>  -  Dimensione chiavi
+>  -  Utilizzo chiavi avanzato
+>  -  Certificato CA radice
 
-1.  証明書プロファイルの作成ウィザードの [ **信頼された証明機関証明書** ] ページで、次の情報を指定します。  
+1.  Nella pagina **Certificato CA attendibile** della Creazione guidata profilo certificato specificare le informazioni seguenti:  
 
- -   **証明書ファイル**: [ **インポート** ] をクリックし、使用したい証明書ファイルを見つけます。  
+ -   **File certificato**: fare clic su **Importa** e selezionare il percorso al file del certificato che si desidera utilizzare.  
 
- -   **保存先ストア**: デバイスに証明書ストアが複数ある場合に、この証明書の保存先を指定します。 ストアが 1 つのみのデバイスの場合、この設定は無視されます。  
+ -   **Archivio di destinazione**: per i dispositivi che dispongono di più archivi di certificati, selezionare dove archiviare il certificato. Per i dispositivi con un solo archivio, questa impostazione viene ignorata.  
 
-2.  [ **証明書の拇印** ] 値を使用して、正しい証明書がインポートされたことを確認します。  
+2.  Usare il valore **Identificazione personale certificato** per accertarsi di aver importato il certificato corretto.  
 
 
-## <a name="configure-scep-certificate-information-only-for-scep-certificates"></a>SCEP 証明書情報を構成する (SCEP 証明書に対してのみ)  
+## <a name="configure-scep-certificate-information-only-for-scep-certificates"></a>Configurare le informazioni sul certificato SCEP (solo per i certificati SCEP)  
 
-1.  証明書プロファイルの作成ウィザードの **[SCEP サーバー]** ページで、SCEP 経由で証明書を発行する NDES サーバーの URL を指定します。 証明書登録ポイント サイト システム サーバーの構成に基づいて NDES URL を自動的に割り当てることも、手動で URL を追加することもできます。  
+1.  Nella pagina **Server SCEP** della Creazione guidata profilo certificato specificare gli URL per i server NDES che emetteranno i certificati tramite SCEP. È possibile scegliere di assegnare automaticamente un URL NDES in base alla configurazione del server del sistema del sito del punto di registrazione certificati o aggiungere manualmente gli URL.  
 
-2.  証明書プロファイルの作成ウィザードの **[SCEP 登録]** ページで情報を指定します。
+2.  Completare la pagina **Registrazione SCEP** della Creazione guidata profilo certificato.
 
- -  **再試行回数**: ネットワーク デバイス登録サービスを実行しているサーバーに、デバイスが証明書の要求を自動的に再試行する回数を指定します。 この設定は、CA マネージャーが証明書の要求を事前に承認する必要がある場合に便利です。 この設定は、通常、厳重なセキュリティを施行している環境や、エンタープライズ CA ではなくスタンドアロン CA がある環境で使用します。 また、発行元 CA が証明書要求を処理する前に証明書要求オプションを確認するテスト目的で、この設定を使用することもあります。 この設定は、[ **再試行の待ち時間 (分)** ] 設定と共に使用してください。  
+ -  **Tentativi**: specificare il numero di tentativi di richiesta certificato inviati automaticamente dal dispositivo al server che esegue il servizio Registrazione dispositivi di rete. Questa impostazione supporta lo scenario in cui un CA manager deve approvare una richiesta di certificato prima di essere accettata. Questa impostazione viene in genere usata per gli ambienti ad alta protezione o se si dispone di una CA emittente autonoma invece di una CA globale (enterprise). È anche possibile usare questa impostazione a scopo di test, in modo da poter ispezionare le opzioni di richiesta certificato prima che la richiesta certificato venga elaborata dalla CA emittente. Usare questa impostazione con l'opzione **Intervallo tra tentativi (minuti)** .  
 
- -   **再試行の待ち時間 (分)**: 発行元 CA が証明書要求を処理する前に CA マネージャーの承認を必要とするときの登録の再試行間隔 (分) を指定します。 テスト目的で CA マネージャーの承認を受けるようにする場合は、小さな値を指定して、証明書要求が承認されてからデバイスが証明書要求を再試行するまでの時間を短くします。 ただし、実稼働ネットワークでマネージャーの承認を使用する場合、CA マネージャーが保留中の承認を確認し、承認するか拒否するかを判断する処理に十分な時間をかけるようにするには、高い値を指定します。  
+ -   **Intervallo tra tentativi (minuti)**: specificare l'intervallo in minuti tra ogni tentativo di registrazione quando si utilizza l'approvazione del responsabile CA prima che la richiesta certificato venga elaborata dalla CA emittente. Se si usa l'approvazione responsabile a scopo di test, potrebbe essere necessario specificare un valore basso in modo da non dover attendere troppo tempo prima di un nuovo tentativo di richiesta certificato dopo che questa è stata approvata. Tuttavia, se si usa l'approvazione responsabile in una rete di produzione, potrebbe essere necessario specificare un valore più elevato per fornire all'amministratore della CA il tempo sufficiente per verificare e approvare o negare le approvazioni in sospeso.  
 
- -   **更新しきい値 (%)**: 証明書の有効期間の残りがどの程度 (%) になったら、デバイスが更新を要求するかを指定します。  
+ -   **Soglia rinnovo (%)**: specificare la percentuale di durata residua del certificato prima che il dispositivo richieda il rinnovo del certificato.  
 
- -   **キー格納プロバイダー (KSP)**: 証明書のキーを格納する場所を指定します。 次のいずれかの値を選択します。  
+ -   **Provider di archiviazione chiavi (KSP)**: specificare dove verrà archiviata la chiave per il certificato. Scegliere tra uno dei seguenti valori:  
 
-   -   **トラステッド プラットフォーム モジュール (TPM) にインストールする (存在する場合)**: TPM にキーをインストールします。 TPM が存在しない場合、キーはソフトウェア キーの格納プロバイダーにインストールされます。  
+   -   **Installa in TPM (Trusted Platform Module) se presente**: installa la chiave nel modulo TPM. Se il TPM non è presente, la chiave verrà installata nel provider di archiviazione per la chiave software.  
 
-   -   **トラステッド プラットフォーム モジュール (TPM) にインストールする (それ以外は失敗)**: TPM にキーをインストールします。 TPM モジュールが存在しない場合、インストールは失敗します。  
+   -   **Installa in TPM (Trusted Platform Module) in caso di errore**: installa la chiave nel modulo TPM. Se il modulo TPM non è presente, l'installazione non riuscirà.  
 
-   -   **Windows Hello for Business にインストールする (それ以外は失敗)**: このオプションは、Windows 10 のデスクトップとモバイル デバイス用に使用できます。 このオプションは、キーを **Windows Hello for Business** に登録します。「[System Center Configuration Manager における Windows Hello for Business の設定](../../protect/deploy-use/windows-hello-for-business-settings.md)」をご覧ください。 また、このオプションを使用すると、これらのデバイスに証明書を発行する前には、デバイスの登録中に **[多要素認証が必要]** となるようにできます。 詳しくは、「 [多要素認証を使用して Windows デバイスを保護する](https://technet.microsoft.com/library/dn889751.aspx) 」をご覧ください。
+   -   **Install to Windows Hello for Business otherwise fail** (Installa in Windows Hello per le aziende oppure genera errore): questa opzione è disponibile per i dispositivi Windows 10 Desktop e Mobile. Registra la chiave in **Windows Hello per aziende**, come descritto in [Impostazioni di Windows Hello per le aziende in System Center Configuration Manager](../../protect/deploy-use/windows-hello-for-business-settings.md). Questa opzione consente inoltre di **richiedere l'autenticazione a più fattori** durante la registrazione dei dispositivi prima di rilasciare certificati per i dispositivi. Per altre informazioni, vedere [Proteggere i dispositivi Windows con l'autenticazione a più fattori](https://technet.microsoft.com/library/dn889751.aspx) .
 
    > [!NOTE]  
    > 
-   > ユーザーが Windows Hello for Business の PIN を作成すると、Windows は、Configuration Manager がリッスンする通知を送信します。 これにより、Configuration Manager が、Windows Hello の PIN を作成したユーザーをすぐに認識できるようになります。 その後、Windows Hello が証明書プロファイルでのキー記憶域プロバイダーとして使用される場合に、Configuration Manager はそれらのユーザーに対して新しい証明書を発行することもできます。  
+   > Quando un utente crea un PIN di Windows Hello per le aziende, Windows invia una notifica per la quale Configuration Manager è in ascolto. Ciò consente a Configuration Manager di venire rapidamente a conoscenza di quali utenti hanno creato un PIN di Windows Hello. Configuration Manager può quindi anche rilasciare nuovi certificati a tali utenti se Windows Hello viene usato come provider di archiviazione chiavi in un profilo di certificato.  
 
-   -   **ソフトウェア キー格納プロバイダーにインストールする**: ソフトウェア キー格納プロバイダーにキーをインストールします。  
+   -   **Installa nel provider di archiviazione chiavi software**: installa la chiave nel provider di archiviazione per la chiave software.  
 
- -   **証明書登録用のデバイス**: 証明書プロファイルをユーザー コレクションに展開する場合は、証明書の登録をユーザーのプライマリ デバイスだけで可能にするか、ユーザーがログインするすべてのデバイスで可能にするかを指定します。 証明書プロファイルをデバイス コレクションに展開する場合は、証明書登録をデバイスのプライマリ ユーザーだけに許可するか、デバイスにログオンしているすべてのユーザーに許可するかを指定します。  
+ -   **Dispositivi per registrazione certificato**: se il profilo certificato viene distribuito in una raccolta utenti, scegliere se consentire la registrazione certificato solo sul dispositivo primario dell'utente o su tutti i dispositivi in cui l'utente esegue l'accesso. Se il profilo certificato viene distribuito in una raccolta dispositivi, scegliere se consentire la registrazione certificato solo per l'utente primario del dispositivo o per tutti gli utenti che accedono al dispositivo.  
 
-3.  証明書プロファイルの作成ウィザードの [ **証明書のプロパティ** ] ページで、次の情報を指定します。  
+3.  Nella pagina **Proprietà certificato** della Creazione guidata profilo certificato specificare le informazioni seguenti:  
 
- -   **証明書テンプレート名**: [ **参照** ] をクリックして、ネットワーク デバイス登録サービスが使用するように構成され、発行元 CA に追加されている証明書テンプレートの名前を選択します。 証明書テンプレートを参照するには、System Center Configuration Manager コンソールを実行するために使用するユーザー アカウントが、証明書テンプレートに対する読み取りアクセス許可を持っている必要があります。 [ **参照** ] を使用できない場合は、証明書テンプレートの名前を入力します。  
+ -   **Nome modello certificato**: fare clic su **Sfoglia** per selezionare il nome di un modello del certificato configurato per essere utilizzato dal servizio Registrazione dispositivi di rete e che è stato aggiunto a una CA emittente. Per selezionare modelli di certificato, l'account utente usato per eseguire la console di System Center Configuration Manager deve disporre di autorizzazioni in lettura al modello di certificato. In alternativa, se non è possibile usare **Sfoglia**, digitare il nome del modello certificato.  
 
  > [!IMPORTANT]
  >   
- >  証明書テンプレート名に、ASCII 以外の文字 (漢字など) が含まれていると、証明書が展開されません。 証明書が正しく展開されるように、CA の証明書テンプレートのコピーを作成して、ASCII 文字だけの名前に変更してください。  
+ >  Se il nome del modello di certificato contiene caratteri non ASCII (ad esempio, i caratteri dell'alfabeto cinese), il certificato non verrà distribuito. Per garantire la distribuzione del certificato, è necessario creare in primo luogo una copia del modello del certificato nella CA e rinominare la copia usando caratteri ASCII.  
 
-   次に、[参照] を使って証明書テンプレートを選択する場合と、証明書テンプレートの名前を入力する場合の注意事項を示します。  
+   Tenere presente quanto segue, a seconda del fatto che si selezioni il percorso al modello di certificato o si digiti il nome del certificato:  
 
- -   [参照] を使って証明書テンプレートの名前を選択した場合は、ページ内のフィールドが、そのテンプレートにある値で自動的に埋められます。 場合によっては、別の証明書テンプレートを選択しないと、これらの値を変更できないことがあります。  
+ -   Se si seleziona il percorso per scegliere il nome del modello di certificato, alcuni campi nella pagina vengono popolati automaticamente dal modello del certificato. In alcuni casi, non è possibile modificare questi valori, a meno che non si scelga un modello di certificato diverso.  
 
- -   証明書テンプレートの名前を入力する場合は、ネットワーク デバイス登録サービスを実行しているサーバーのレジストリに登録されている証明書テンプレートの名前と正確に同じ名前でなければなりません。 必ず、証明書テンプレートの表示名ではなく、証明書テンプレート自体の名前を入力してください。  
+ -   Se si digita il nome del modello del certificato, assicurarsi che il nome corrisponda esattamente a uno dei modelli del certificato elencati nel registro di sistema del servizio che esegue il servizio Registrazione dispositivi di rete. Accertarsi di specificare il nome del modello del certificato e non il nome visualizzato del modello del certificato.  
 
-   証明書テンプレートの名前を調べるには、HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MSCEP というレジストリ キーを開きます。 証明書テンプレートは、[ **EncryptionTemplate** ]、[ **GeneralPurposeTemplate** ]、および [ **SignatureTemplate** ] の値として登録されています。 既定では、3 つの証明書テンプレートのすべての値は [ **IPSECIntermediateOffline** ] です。これは、[ **IPsec (オフライン要求)** ] のテンプレートの表示名にマップされます。  
+   Per trovare i nomi dei modelli di certificato, individuare la seguente chiave: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\MSCEP. I modelli di certificato verranno visualizzati come i valori per **EncryptionTemplate**, **GeneralPurposeTemplate**e **SignatureTemplate**. Per impostazione predefinita, il valore per i tre modelli di certificato è **IPSECIntermediateOffline**, che è associato al nome visualizzato del modello **IPSec (Offline request)**.  
 
    > [!WARNING]  
    > 
-   >  証明書テンプレート名を選択するのではなく入力した場合は、System Center Configuration Manager によって証明書テンプレートの内容が検証されないので、証明書テンプレートでサポートされていないオプションを選択してしまう可能性があります。この場合は、証明書要求に失敗します。 この問題が発生すると、証明書署名要求 (CSR) のテンプレート名とチャレンジが一致しないという w3wp.exe のエラーメッセージが、CPR.log ファイルに記録されます。  
+   >  Poiché System Center Configuration Manager non è in grado di verificare i contenuti del modello di certificato quando si digita il nome del modello del certificato anziché eseguire una ricerca, potrebbe essere possibile selezionare opzioni che non sono supportate dal modello di certificato e che causano la mancata esecuzione della richiesta certificato. In questo caso, verrà visualizzato un messaggio di errore per w3wp.exe nel file CPR.log per segnalare che il nome modello in CSR e la richiesta di verifica non corrispondono.  
    >   
-   >  [ **GeneralPurposeTemplate** ] 値に指定した証明書テンプレートの名前を入力すると、証明書プロファイルの [ **キーの暗号化** ] オプションと [ **キーの暗号化とデジタル署名** ] オプションを選択する必要があります。 ただし、この証明書プロファイルで [ **キーの暗号化** ] オプションのみを有効にする場合は、[ **EncryptionTemplate** ] キーの証明書テンプレート名を指定します。 同様に、この証明書プロファイルで [ **デジタル署名** ] オプションのみを有効にする場合は、[ **SignatureTemplate** ] キーの証明書テンプレート名を指定します。  
+   >  Quando si digita il nome del modello di certificato specificato per il valore **GeneralPurposeTemplate** , è necessario selezionare le opzioni **Crittografia chiave** e **Firma digitale** per il profilo certificato. Tuttavia, se si desidera abilitare solo l'opzione **Crittografia chiave** in questo profilo certificato, specificare il nome modello del certificato per la chiave **EncryptionTemplate** . Analogamente, se si desidera abilitare solo l'opzione **Forma digitale** in questo profilo certificato, specificare il nome modello del certificato per la chiave **SignatureTemplate** .  
 
- -   **証明書の種類**: この証明書をデバイスとユーザーのどちらに展開するかを指定します。  
- -   **サブジェクト名の形式**: 一覧から、System Center Configuration Manager が証明書要求のサブジェクト名をどのように自動生成するかを指定します。 証明書がユーザー用の場合、サブジェクト名にユーザーのメール アドレスを追加することもできます。 
+ -   **Tipo di certificato**: selezionare se il certificato verrà distribuito a un dispositivo o un utente.  
+ -   **Formato nome soggetto**: dall'elenco, selezionare in che modo System Center Configuration Manager crei automaticamente il nome soggetto nella richiesta certificato. Se il certificato è per un utente, è anche possibile includere l'indirizzo di posta elettronica dell'utente nel nome del soggetto. 
     
    > [!NOTE]  
    > 
-   > **[IMEI 番号]** または **[シリアル番号]** を選択することで、同じユーザーが所有するさまざまなデバイスを区別できます。 たとえば、デバイスで共通名を共有できますが、IMEI 番号やシリアル番号は共有できません。 デバイスが IMEI やシリアル番号をレポートしない場合、証明書は共通名で発行されます。
+   > La selezione di **Codice IMEI**  o di **Numero di serie** consente di distinguere i diversi dispositivi appartenenti allo stesso utente. Tali dispositivi, ad esempio, potrebbero condividere il nome comune, ma non il codice IMEI o il numero di serie. Se il dispositivo non ha un codice IMEI o un numero di serie, il certificato viene emesso con il nome comune.
 
- -   **サブジェクトの別名**: System Center Configuration Manager が証明書要求のサブジェクトの別名 (SAN) をどのように自動生成するかを指定します。 たとえば、ユーザー証明書の種類を選択した場合は、サブジェクトの別名にユーザー プリンシパル名 (UPN) を含めることができます。  クライアント証明書を Windows ポリシー サーバーでの認証に使用する場合は、サブジェクトの別名を UPN に設定する必要があります。  
+ -   **Nome alternativo oggetto**: specificare in che modo System Center Configuration Manager crea automaticamente i valori per il nome alternativo oggetto (SAN) nella richiesta certificato. Ad esempio, se si seleziona un tipo di certificato utente, è possibile includere il nome dell'entità utente (UPN) nel nome alternativo oggetto.  Se il certificato client verrà usato per eseguire l'autenticazione in un server dei criteri di rete, è necessario impostare il nome alternativo oggetto sul nome dell'entità utente.  
 
    > [!NOTE]  
-   >  - iOS デバイスでサポートされている SCEP 証明書のサブジェクト名の形式とサブジェクトの別名は限られています。 サポートされていない形式を指定すると、証明書は iOS デバイスに登録されません。 iOS デバイスに展開する SCEP 証明書プロファイルを構成する場合は、[ **サブジェクト名の形式** ] を [ **共通名** ] に、[ **サブジェクトの別名** ] を [ **DNS 名** ]、[ **電子メール アドレス** ]、または [ **UPN** ] に設定してください。  
+   >  - I dispositivi iOS supportano formati del nome soggetto e nomi alternativi oggetto limitati nei certificati SCEP. Se si specifica un formato non supportato, i certificati non verranno registrati su dispositivi iOS. Quando si configura un profilo certificato SCEP da distribuire nei dispositivi iOS, usare il **Nome comune** per il **Formato del nome soggetto**e **Nome DNS**, **Indirizzo di posta elettronica** o **UPN** per il **Nome alternativo oggetto**.  
 
- -   **証明書の有効期間**: 発行元 CA で certutil - setreg Policy\EditFlags +EDITF_ATTRIBUTEENDDATE コマンドを実行してカスタム有効期間を設定できるようにした場合は、証明書が失効するまでの期間を指定します。 このコマンドの詳細については、[System Center Configuration Manager の証明書インフラストラクチャ](../../protect/deploy-use/certificate-infrastructure.md)のトピックをご覧ください。  
+ -   **Periodo di validità del certificato**: se il comando certutil - setreg Policy\EditFlags +EDITF_ATTRIBUTEENDDATE è stato eseguito nella CA emittente, che consente un periodo di validità personalizzato, è possibile specificare la quantità di tempo rimanente prima della scadenza del certificato. Per altre informazioni sui profili certificato, vedere [Certificate infrastructure in System Center Configuration Manager](../../protect/deploy-use/certificate-infrastructure.md) (Infrastruttura di certificazione in System Center Configuration Manager).  
 
-   指定した証明書テンプレートの有効期限よりも小さい値を指定できますが、大きい値は指定できません。 たとえば、証明書テンプレートで証明書の有効期限が 2 年になっている場合は、この値を 1 年することはできますが、5 年にすることはできません。 また、発行元の CA の証明書の残りの有効期限よりも小さい値を指定する必要があります。  
+   È possibile specificare un valore inferiore, ma non superiore rispetto al periodo di validità nel modello di certificato indicato. Ad esempio, se il periodo di validità del certificato nel modello di certificato è di due anni, è possibile specificare un valore di un anno ma non un valore di cinque anni. Inoltre, il valore deve essere inferiore rispetto al periodo di validità rimanente del certificato della CA emittente.  
 
- -   **キー使用法**: 証明書のキー使用法のオプションを指定します。 次のオプションから選択できます。  
+ -   **Utilizzo chiave**: specificare le opzioni di utilizzo della chiave per il certificato. È possibile scegliere una delle opzioni seguenti:  
 
-        -   **キーの暗号化**: キーが暗号化されている場合だけキーを交換できます。  
+        -   **Crittografia chiave**: consentire lo scambio di chiavi solo quando la chiave viene crittografata.  
 
-        -   **デジタル署名**: キーがデジタル署名で保護されている場合だけ、キーを交換できます。  
+        -   **Firma digitale**: consentire lo scambio di chiavi soltanto se una firma digitale consente di proteggere la chiave.  
 
-   [ **参照** ] を使って証明書テンプレートを選択した場合は、別の証明書テンプレートを選択しないと、これらの設定を変更できないことがあります。  
+   Se è stato selezionato un modello di certificato usando **Sfoglia**, potrebbe non essere possibile modificare queste impostazioni senza selezionare un modello di certificato diverso.  
 
-   選択した証明書テンプレートには、上記のキー使用法オプションの 1 つまたは両方が構成されている必要があります。 構成されていないと、 **CSR のキー使用法とチャレンジが一致しない** というメッセージが証明書の登録ポイントのログ ファイル ( **Crp.log** ) に記録されます。  
-
-
-   -   **キー サイズ (ビット)**: ビット単位のキーのサイズを選択します。  
-
-   -   **拡張キー使用法**: [ **選択** ] をクリックして、証明書の使用目的に対応する値を追加します。 ほとんどの場合、ユーザーまたはデバイスがサーバーに対して認証できるように、証明書には [ **クライアント認証** ] が必要です。 ただし、必要に応じてその他のキー使用法を追加できます。  
+   Il modello di certificato selezionato deve essere configurato con una o entrambe le due opzioni di utilizzo della chiave sopra riportate. In caso contrario, verrà visualizzato il messaggio **Utilizzo chiave in CSR e richiesta di verifica non corrispondono** nel file di registro del punto di registrazione certificati, **Reg.cert**.  
 
 
-   -   **ハッシュ アルゴリズム**: この証明書で使用するハッシュ アルゴリズムの種類を 1 つ選択します。 接続しているデバイスをサポートするセキュリティの最も強力なレベルを選択します。  
+   -   **Dimensione chiave (bits)**: selezionare la dimensione della chiave in bit.  
+
+   -   **Utilizzo chiave esteso**: fare clic su **Seleziona** per aggiungere valori per lo scopo designato del certificato. Nella maggior parte dei casi il certificato richiederà l' **Autenticazione Client** in modo che l'utente o il dispositivo possa eseguire l'autenticazione a un server. È comunque possibile aggiungere altri utilizzi di chiavi secondo necessità.  
+
+
+   -   **Algoritmo hash**: selezionare uno dei tipi di algoritmo hash disponibili da utilizzare con il certificato. Selezionare il livello di sicurezza più avanzato supportato dai dispositivi che verranno connessi.  
 
    > [!NOTE]  
    > 
-   >  **SHA-2** では、SHA-256、SHA-384、および SHA-512 をサポートします。 **SHA-3** では、SHA-3 のみをサポートします。  
+   >  **SHA-2** supporta SHA-256, SHA-384 e SHA-512. **SHA-1** supporta solo SHA-3.  
 
-   -   **ルート CA 証明書**: [選択] をクリックして、 **** 既に構成してユーザーまたはデバイスに展開しているルート CA 証明書プロファイルを選択します。 この CA 証明書は、この証明書プロファイルで構成している証明書を発行する CA のルート証明書である必要があります。  
+   -   **Certificato CA radice**: fare clic su **Seleziona** per scegliere un profilo del certificato CA radice precedentemente configurato e distribuito all'utente o al dispositivo. Questo certificato CA deve essere il certificato radice per l'autorità di certificazione che rilascerà il certificato che si sta configurando in questo profilo certificato.  
 
    > [!IMPORTANT]  
-   >  ユーザーまたはデバイスに展開されていないルート CA 証明書を指定すると、System Center Configuration Manager が、この証明書プロファイルで構成している証明書要求を開始しません。  
+   >  Se si specifica un certificato CA radice non distribuito all'utente o al dispositivo, System Center Configuration Manager non avvierà la richiesta certificato in fase di configurazione in questo profilo certificato.  
 
 
-##  <a name="specify-supported-platforms-for-the-certificate-profile"></a>証明書プロファイルの対応プラットフォームを指定する  
+##  <a name="specify-supported-platforms-for-the-certificate-profile"></a>Specificare le piattaforme supportate per il profilo certificato  
 
-1. 証明書プロファイルの作成ウィザードの [ **サポートされているプラットフォーム** ] ページで、証明書プロファイルをインストールするオペレーティング システムを選択します。 すべての使用可能なオペレーティング システムに証明書プロファイルをインストールするには、[ **すべて選択** ] を選択します。
-2. ウィザードの [ **概要** ] ページを確認して、[ **完了** ] を選びます。 
+1. Nella pagina **Piattaforme supportate** della Creazione guidata profilo certificato, selezionare i sistemi operativi in cui si desidera installare il profilo certificato. In alternativa, fare clic su **Seleziona tutto** per installare il profilo certificato su tutti i sistemi operativi disponibili.
+2. Rivedere le impostazioni nella pagina **Riepilogo** della procedura guidata e scegliere **Fine**. 
  
  
-新しい証明書プロファイルが [ **資産とコンプライアンス** ] ワークスペースの [ **証明書プロファイル** ] ノードに表示され、「[How to deploy profiles in System Center Configuration Manager](deploy-wifi-vpn-email-cert-profiles.md)」(System Center Configuration Manager でプロファイルを展開する方法) で説明されているように、ユーザーまたはデバイスに展開できるようになります。  
+Il nuovo profilo certificato viene visualizzato nel nodo **Profili certificato** nell'area di lavoro **Asset e conformità** e può essere distribuito agli utenti o ai dispositivi come descritto in [How to deploy profiles in System Center Configuration Manager](deploy-wifi-vpn-email-cert-profiles.md)(Come distribuire profili in System Center Configuration Manager).  

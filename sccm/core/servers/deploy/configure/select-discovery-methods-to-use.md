@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager に使用する探索方法の選択 | Microsoft Docs"
-description: "使用する方法とそれらを実行するサイトの選択に関する考慮事項を確認します。"
+title: Selezionare i metodi di individuazione per Configuration Manager | Microsoft Docs
+description: Considerazioni sui metodi da usare e sui siti in cui eseguirli.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,112 +17,112 @@ manager: angrobe
 ms.openlocfilehash: 4b6be888be2ad6c1f5e7c0be33d9830bb870114e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="select-discovery-methods-to-use-for-system-center-configuration-manager"></a>System Center Configuration Manager に使用する探索方法の選択
+# <a name="select-discovery-methods-to-use-for-system-center-configuration-manager"></a>Selezionare i metodi di individuazione per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Center Configuration Manager の探索を正常かつ効率的に使用するには、使用する方法とそれらを実行するサイトについて検討する必要があります。  
+Per usare in modo efficace l'individuazione di System Center Configuration Manager, è necessario analizzare i metodi da usare e i siti in cui eseguirli.  
 
- 探索によって大量のネットワーク トラフィックが発生し、生成された探索データ レコード (DDR) の処理に大量の CPU リソースが消費される可能性があるので、目的に合った探索方法だけを使用してください。 始めは 1 つまたは 2 つの探索方法だけを使用するようにして、後で追加的な方法を慎重に有効にして、環境での探索レベルを拡張してください。 このトピックの情報は、情報に基づいて判断するのに役立ちます。  
+ Poiché l'individuazione può generare un ampio volume di traffico sulla rete e i record dei dati di individuazione risultanti possono causare un uso significativo di risorse della CPU durante l'elaborazione, è consigliabile usare solo i metodi di individuazione necessari per soddisfare gli obiettivi. Si potrebbe iniziare a usare solo uno o due metodi di individuazione, quindi abilitare in seguito metodi aggiuntivi in modo controllato per estendere il livello di individuazione nel relativo ambiente. Le informazioni contenute in questo argomento consentono di prendere decisioni informate.  
 
- 各探索方法の詳細については、「[System Center Configuration Manager の探索方法について](../../../../core/servers/deploy/configure/about-discovery-methods.md)」を参照してください。  
+ Per informazioni sui vari metodi di individuazione, vedere [About discovery methods for System Center Configuration Manager](../../../../core/servers/deploy/configure/about-discovery-methods.md) (Informazioni sui metodi di individuazione per System Center Configuration Manager).  
 
-## <a name="select-methods-to-discover-different-things"></a>使用する探索方法の決定  
- Configuration Manager で管理することになるクライアント コンピューターやユーザー リソースを見つけるには、適切な探索方法を有効にしなければなりません。 さまざまな探索方法を使って、各種リソースと、そのリソースに関する他の情報を見つけることができます。 使用する探索方法によって、検出されるリソースの種類、および探索プロセスで使用される Configuration Manager サービスとエージェントが決まります。 また、リソースに関するどのような情報を検出できるかも、探索方法によって異なります。  
+## <a name="select-methods-to-discover-different-things"></a>Selezionare i metodi per individuare elementi diversi  
+ Per individuare computer client o risorse utente potenziali di Configuration Manager, è necessario abilitare i metodi di individuazione appropriati. È possibile usare diverse combinazioni di metodi di individuazione per individuare risorse diverse e per ottenere informazioni aggiuntive su tali risorse. I metodi di individuazione usati determinano il tipo di risorse che viene individuato e i servizi e gli agenti di Configuration Manager usati nel processo di individuazione. È inoltre possibile determinare il tipo di informazioni sulle risorse che è possibile individuare.  
 
-### <a name="discover-computers"></a>コンピュータの検出   
-コンピューターを見つけたい場合は、**Active Directory システム探索**、または**ネットワーク探索**を使用できます。  
+### <a name="discover-computers"></a>Individua computer   
+Se si vuole individuare computer, è possibile usare **individuazione sistema Active Directory** o **individuazione di rete**.  
 
- たとえば、Configuration Manager クライアントをプッシュ インストールする前に、クライアントをインストール可能なリソースを見つけるために、Active Directory システムの探索を実行します。 この方法を使用すると、リソースだけでなく、リソースの基本的な情報と、Active Directory ドメイン サービスにある、リソースの詳しい情報を検出することもできます。 この情報は、クライアント設定の割り当てやコンテンツの展開で使用する複雑なクエリとコレクションを構築するのに便利です。
+ Ad esempio, se si vuole individuare risorse che possano installare il client di Configuration Manager prima di usare l'installazione push client, è possibile eseguire l'individuazione sistema Active Directory. L'uso di questo metodo non solo si individua la risorsa, ma anche informazioni di base ed estese sulla risorsa da Active Directory Domain Services. Tali informazioni potrebbero essere utili nella creazione di query e raccolte complesse da utilizzare per l'assegnazione di impostazioni client o distribuzione di contenuto.
 
-または、ネットワーク探索でリソースのオペレーティング システム (後でクライアントをプッシュ インストールするときに必要) を検出するオプションを指定してから、探索を実行することもできます。 ネットワーク探索では、他の探索方法では見つからないネットワーク トポロジの情報を得ることができます。 ただし、この方法では、Active Directory 環境に関する情報は何も得られません。
+In alternativa, si potrebbe eseguire l'individuazione di rete e usare le relative opzioni per individuare il sistema operativo delle risorse (necessario per usare in seguito l'installazione push client). L'individuazione di rete offre informazioni sulla topologia di rete che non è possibile ottenere con altri metodi di individuazione. Questo metodo non offre tuttavia nessuna informazione sull'ambiente di Active Directory.
 
- **定期探索**と呼ばれる方法もあります。 定期探索だけを使って、プッシュ方式以外の方法でインストールされたクライアントを見つけることも可能です。 ただし、他の探索方法とは異なり、定期探索では、アクティブな Configuration Manager クライアントのないコンピューターを見つけることはできません。 そのレコードの基礎ではなく、既存のデータベース レコードを維持するための情報の限られたセットが返されます。 したがって、定期探索で返された情報は、複雑なクエリやコレクションの構築用には不十分な場合があります。  
+ È disponibile anche un metodo denominato **individuazione heartbeat**. È possibile usare l'individuazione heartbeat solo per forzare l'individuazione di client installati da metodi diversi dall'installazione push client. Diversamente da altri metodi di individuazione, l'individuazione heartbeat non può individuare computer che non hanno un client attivo di Configuration Manager. Questa individuazione restituisce un set limitato di informazioni con lo scopo di mantenere un record di database esistente, anziché essere la base di tale record. Le informazioni fornite dall'individuazione heartbeat potrebbero non essere sufficienti per creare query o raccolte complesse.  
 
- **Active Directory グループの探索**方法で、特定のグループのメンバーシップを探索するときに、システムまたはコンピューターの限られた情報を検出することができます。 これは、コンピューターの完全な探索の代わりにはなりませんが、基本的な情報を得ることができます。 ただし、この情報は、クライアントのプッシュ インストール用に使うのには不十分です。  
+ Se si usa l'**individuazione gruppo Active Directory** per individuare l'appartenenza di un gruppo specifico, è possibile individuare informazioni limitate sul sistema o sul computer. Questa individuazione non sostituisce un'individuazione completa di computer, ma può offrire informazioni di base. Tali informazioni sono insufficienti per l'installazione push client.  
 
-### <a name="discover-users"></a>ユーザーを探索する   
-ユーザーに関する情報を見つけたい場合は、**Active Directory ユーザー探索**を使用します。 Active Directory システム探索と同様に、この方法は、Active Directory からユーザーを検出します。 これには拡張された Active Directory 情報だけでなく、基本的な情報も含まれています。 この情報は、前述したコンピューターの探索の場合と同じように、複雑なクエリとコレクションを構築するのに使えます。  
+### <a name="discover-users"></a>Individuare utenti   
+Se si vuole individuare informazioni sugli utenti, è possibile usare **individuazione utente Active Directory**. Simile all'individuazione sistema Active Directory, questo metodo individua gli utenti da Active Directory. E include informazioni di base, oltre a informazioni più dettagliate su Active Directory. È possibile utilizzare queste informazioni per creare query e raccolte complesse simili a quelle per i computer.  
 
-### <a name="discover-group-information"></a>グループの情報を探索する   
-グループとグループのメンバーシップに関する情報が必要な場合は、**Active Directory グループ探索**を使用できます。 この方法では、セキュリティ グループ用のリソース レコードが作成されます。  
+### <a name="discover-group-information"></a>Individuare informazioni sui gruppi   
+Se si vuole individuare informazioni sui gruppi e le appartenenze ai gruppi, usare l'**individuazione gruppo Active Directory**. Questo metodo di individuazione consente di creare record di risorse per i gruppi di protezione.  
 
- この探索方法を使って、特定の Active Directory グループを検索し、そのグループ、およびネストされているグループのメンバーを見つけることができます。 また、Active Directory の特定の場所でグループを検索したり、Active Directory ドメイン サービスの特定の場所にある各子コンテナーを繰り返し検索することもできます。  
+ È possibile usare questo metodo per eseguire la ricerca di un gruppo Active Directory specifico per individuare i membri di tale gruppo, oltre a tutti gli eventuali gruppi annidati nel gruppo. È anche possibile utilizzare questo metodo per effettuare la ricerca di gruppi in un percorso Active Directory e una ricerca ricorsiva di ogni contenitore figlio di tale percorso nei Servizi di dominio Active Directory.  
 
- この探索方法では、配布グループのメンバーシップを検索することもできます。 ユーザーとコンピューターの両方のグループの関係がわかります。  
+ Questo metodo di individuazione può inoltre effettuare la ricerca dell'appartenenza di gruppi di distribuzione. Ciò consente di identificare le relazioni di gruppo di utenti e computer.  
 
- グループを探索するときに、そのメンバーに関する限られた情報を検出することもできます。 ただし、Active Directory システムまたはユーザーの探索方法は置き換えられません。 通常、複雑なクエリやコレクションの構築、またはクライアント プッシュ インストールの基礎として使用するには不十分です。  
+ Quando si individua un gruppo, è inoltre possibile individuare informazioni limitate sui relativi membri. Questa individuazione non sostituisce comunque i metodi di individuazione sistema o utente Active Directory. È in genere sufficiente per compilare query complesse e raccolte o servire come base di un'installazione push client.  
 
-### <a name="discover-infrastructure"></a>インフラストラクチャを探索する   
-ネットワーク インフラストラクチャを探索する方法には、**Active Directory フォレスト探索**と**ネットワーク探索**の 2 通りあります。  
+### <a name="discover-infrastructure"></a>Individuare infrastrutture   
+Sono disponibili due metodi per individuare l'infrastruttura di rete, ovvero **individuazione foresta Active Directory** e **individuazione di rete**.  
 
- Active Directory フォレストの探索では、Active Directory のフォレストで、サブネットと Active Directory サイトの構成に関する情報を検索します。 これらの構成は、Configuration Manager に、境界の場所として自動的に挿入されます。  
+ Usare l'individuazione foresta Active Directory per effettuare la ricerca in una foresta di Active Directory di informazioni sulle subnet e sulle configurazioni del sito di Active Directory. Queste configurazioni possono essere quindi immesse automaticamente in Configuration Manager come percorsi di limite.  
 
- ネットワーク トポロジを検出したい場合は、ネットワーク探索方法を使います。 他の探索方法では、Active Directory Domain Services に関係のある情報が返され、クライアントのネットワークでの現在の場所が識別されますが、ネットワークのサブネットやルーターのトポロジに基づいたインフラストラクチャの情報は返されません。  
+ Quando si desidera individuare la topologia di rete, utilizzare l'individuazione di rete. Mentre altri metodi di individuazione restituiscono informazioni relative a Active Directory Domain Services e possono identificare il percorso di rete corrente di un client, non offrono informazioni sull'infrastruttura basate sulle subnet e sulla topologia del router della rete.  
 
-##  <a name="bkmk_shared"></a> 探索データは複数のサイトで共有される  
- 探索データがいったん Configuration Manager のデータベースに挿入されると、すぐに階層内のすべてのサイトで共有されます。 一般的に階層内の複数のサイトで同じ情報を検出しても意味がないので、1 つの探索方法を 1 つのサイトで実行するように設定することを検討してください。 その方が、1 つの方法の複数のインスタンスを異なる複数のサイトで実行するよりも有効です。  
+##  <a name="bkmk_shared"></a> I dati di individuazione vengono condivisi tra i siti  
+ Dopo che Configuration Manager aggiunge i dati di individuazione a un database, questi vengono rapidamente condivisi in tutti i siti della gerarchia. Poiché l'individuazione delle stesse informazioni in più siti della gerarchia non offre nessun vantaggio, impostare un'istanza singola di ogni metodo di individuazione in un singolo sito. È consigliabile eseguire questa operazione invece di eseguire più istanze di un singolo metodo in siti diversi.  
 
- ただし、環境によっては、同じ方法の探索をサイトごとに別々の構成とスケジュールにして、複数のサイトで定期的に実行すると便利な場合があります。 たとえば、ネットワーク探索を使用するときに、WAN 経由ですべてのネットワークの場所の検出を実行する代わりに、各サイトがローカルネットワークを検出するように指定することができます。
+ Tuttavia, per alcuni ambienti può essere utile assegnare lo stesso metodo di individuazione da eseguire in più siti, con configurazioni e pianificazioni distinte. Ad esempio, quando si usa l'individuazione di rete, potrebbe essere necessario impostare ogni sito per individuare la propria rete locale, anziché provare a individuare tutti i percorsi di rete in una WAN.
 
-同じ探索方法の複数のインスタンスを異なるサイトで実行するように構成しない場合は、各サイトの構成を慎重に計画します。 複数のサイトでネットワークまたは Active Directory から同じリソースを探索することを避ける必要があります。 これにより、追加のネットワーク帯域幅が消費され、重複する DDR が作成されます。
+Se si configurano più istanze degli stessi metodi di individuazione da eseguire in siti diversi, pianificare attentamente la configurazione di ogni sito. Evitare che due o più siti individuino le stesse risorse dalla rete o da Active Directory. Questo metodo può usare larghezza di banda di rete aggiuntiva e creare record dei dati di individuazione duplicati.
 
-次の表に、探索方法ごとに実行可能な場所を示します。  
+La tabella seguente identifica in quali siti è possibile configurare i vari metodi di individuazione.  
 
-|探索方法|実行可能な場所|  
+|Metodo di individuazione|Percorsi supportati|  
 |----------------------|-------------------------|  
-|Active Directory フォレストの探索|中央管理サイト<br /><br /> プライマリ サイト|  
-|Active Directory グループの探索|プライマリ サイト|  
-|Active Directory システムの探索|プライマリ サイト|  
-|Active Directory ユーザー検出|プライマリ サイト|  
-|定期探索<sup>1</sup>|プライマリ サイト|  
-|ネットワーク探索|プライマリ サイト<br /><br /> セカンダリ サイト|  
+|Individuazione foresta Active Directory|Sito di amministrazione centrale<br /><br /> Sito primario|  
+|Individuazione gruppo Active Directory|Sito primario|  
+|Individuazione sistema Active Directory|Sito primario|  
+|individuazione utenti di Active Directory|Sito primario|  
+|Individuazione heartbeat<sup>1</sup>|Sito primario|  
+|Individuazione rete|Sito primario<br /><br /> Sito secondario|  
 
- <sup>1</sup> セカンダリ サイトでは定期探索を実行できませんが、クライアントから定期探索の DDR を受信することはできます。  
+ <sup>1</sup> I siti secondari non sono in grado di configurare l'individuazione heartbeat, ma possono ricevere i record dei dati di individuazione heartbeat da un client.  
 
- セカンダリ サイトでネットワーク探索を実行するか、定期探索の DDR を受信すると、DDR がファイルベースのレプリケーションによって、その親プライマリ サイトに転送されます。 これは、DDR を処理できるのは、プライマリ サイトと中央管理サイトだけだからです。 DDR がどのように処理されるかについては、「[探索データ レコードについて](../../../../core/servers/deploy/configure/run-discovery.md#BKMK_DDRs)」を参照してください。  
+ Quando i siti secondari eseguono l'individuazione di rete o ricevono i DDR dell'individuazione heartbeat, trasferiscono tali DDR mediante replica basata su file nel relativo sito primario padre. Infatti, solo i siti primari e i siti di amministrazione centrale possono elaborare i record dei dati di individuazione. Per altre informazioni su come vengono elaborati i record dei dati di individuazione, vedere [About Discovery Data Records](../../../../core/servers/deploy/configure/run-discovery.md#BKMK_DDRs) (Informazioni sui record dei dati di individuazione).  
 
-## <a name="considerations-for-different-discovery-methods"></a>さまざまな探索方法に関する考慮事項  
- 各サイト サーバーおよびネットワーク環境が異なるため、探索の初期構成を制限することをお勧めします。 その後で、各サイト サーバーで生成される探索データを処理する機能を厳密に監視します。  
+## <a name="considerations-for-different-discovery-methods"></a>Considerazioni per i vari metodi di individuazione  
+ Poiché ogni ambiente di rete e server del sito è diverso, è consigliabile limitare le configurazioni iniziali per l'individuazione. Monitorare quindi attentamente la capacità di ogni server del sito di elaborare i dati di individuazione generati.  
 
-**Active Directory** システムの探索、Active Directory ユーザーの探索、または Active Directory グループの探索方法を使用する場合:  
+Quando si usa un metodo di individuazione **Active Directory** per sistemi, utenti o gruppi:  
 
--   ドメイン コントローラーと高速ネットワークで接続されているサイトで実行します。  
+-   Eseguire l'individuazione in un sito che dispone di una connessione di rete veloce ai controller di dominio.  
 
--   Active Directory のレプリケーション トポロジを確認し、探索時に最新の情報にアクセスできるようにします。  
+-   Prendere in considerazione la topologia di replica di Active Directory per garantire all'individuazione l'accesso alle informazioni più recenti.  
 
--   探索のスコープを構成して、検出する必要のある Active Directory の場所とグループだけが探索されるようにします。  
+-   Valutare l'ambito della configurazione dell'individuazione e limitare l'individuazione solo ai gruppi e ai percorsi di Active Directory da individuare.  
 
-**ネットワーク探索**を使用する場合:  
+Se si usa l'**individuazione di rete**:  
 
--   初めてネットワーク探索を実行するときは、ネットワーク トポロジだけが識別されるように構成します。  
+-   Per individuare la topografia di rete, utilizzare una configurazione iniziale limitata.  
 
--   ネットワーク トポロジを検出したら、もっと詳しく探索したい領域の中央に位置する特定のサイトで、ネットワーク探索を実行します。  
+-   Dopo aver individuato la topografia di rete, impostare l'individuazione di rete per l'esecuzione in siti specifici centrali rispetto alle aree di rete che si vuole individuare in modo più completo.  
 
-**定期探索**では、実行するサイトを指定しないので、実行場所の計画をたてるときに考慮する必要はありません。  
+Poiché l'**individuazione heartbeat** non viene eseguita in un sito specifico, non è necessario prenderla in considerazione in fase di pianificazione generale per stabilire dove eseguire l'individuazione.  
 
-##  <a name="bkmk_best"></a> 探索のベスト プラクティス  
-探索で最適な結果を得るために、次のことをお勧めします。
+##  <a name="bkmk_best"></a> Procedure consigliate per l'individuazione  
+Per ottenere risultati ottimali con l'individuazione, è consigliabile eseguire quanto segue:
 
- - **[Active Directory グループの探索] を実行する前に [Active Directory システムの探索] および [Active Directory ユーザーの探索] を実行する**  
+ - **Prima di eseguire l'individuazione gruppo Active Directory, eseguire l'individuazione sistema Active Directory e l'individuazione utente Active Directory.**  
 
- [Active Directory グループの探索] で、グループのメンバーとして以前に探索されていないユーザーまたはコンピューターが特定されるときに、そのユーザーまたはコンピューターの基本情報の探索が試行されます。 [Active Directory グループの探索] はこの種類の探索用に最適化されていないため、このプロセスによって実行速度が低下する可能性があります。 さらに、[Active Directory グループの探索] では、ユーザーおよびコンピューターに関する基本情報のみが探索され、完全なユーザーまたはコンピューターの探索レコードは作成されません。 [Active Directory システムの探索] および [Active Directory ユーザーの探索] を実行すると、オブジェクトの種類ごとに追加の Active Directory 属性を使用できます。 結果として、[Active Directory グループの探索] がより効率的に実行されます。  
+ In caso di individuazione di un computer o di un utente non individuato precedentemente come membro di un gruppo, l'individuazione gruppo Active Directory tenta di individuare dettagli di base relativi all'utente o al computer. Poiché l'individuazione gruppo Active Directory non è ottimizzata per questo tipo di individuazione, il processo può comprometterne la velocità di esecuzione. L'individuazione gruppo Active Directory individua solo i dettagli di base relativi agli utenti e ai computer individuati, ma non crea un record di individuazione utente o computer completo. Quando si esegue l'individuazione sistema Active Directory e l'individuazione utente Active Directory, sono disponibili gli attributi di Active Directory aggiuntivi relativi a ogni oggetto. Di conseguenza, l'individuazione gruppo Active Directory risulta più efficiente.  
 
-- **[Active Directory グループの探索] を設定する場合、Configuration Manager で使用するグループのみを指定する**  
+- **Quando viene impostata l'individuazione gruppo Active Directory, è sufficiente specificare solo i gruppi usati con Configuration Manager.**  
 
- [Active Directory グループの探索] でリソースの使用を制御するには、Configuration Manager で使用する Active Directory グループのみを指定します。 これは、[Active Directory グループの探索] が、ユーザー、コンピューター、および入れ子のグループについて、探索する各グループを再帰的に検索するためです。 入れ子の各グループの検索で [Active Directory グループの探索] の範囲を拡張できますが、パフォーマンスは低下します。 さらに、[Active Directory グループの探索] で差分探索を設定すると、この探索方法では、各グループの変更が監視されます。 この方法では、不要なグループを検索する必要があるときに、パフォーマンスがさらに低下します。  
+ Per controllare l'uso delle risorse da parte dell'individuazione gruppo Active Directory, specificare solo i gruppi usati con Configuration Manager. L'individuazione gruppo Active Directory, infatti, esegue ricerche ricorsive in ogni gruppo individuato relativamente a utenti, computer e gruppi nidificati. La ricerca di ogni gruppo annidato può espandere l'ambito dell'individuazione gruppo Active Directory e ridurre le prestazioni. Se si configura anche l'individuazione differenziale per l'individuazione gruppo Active Directory, questo metodo di individuazione consente di monitorare le modifiche di ogni gruppo. Le prestazioni vengono ulteriormente ridotte quando il metodo deve eseguire ricerche di gruppi non necessari.  
 
-- **完全探索は長い間隔、差分探索は短い頻度で探索方法を設定する**  
+- **Impostare metodi di individuazione con un intervallo maggiore tra le individuazioni complete e un periodo più frequente per le individuazioni differenziali.**  
 
- 差分探索は完全探索サイクルよりも使用リソースが少なく、Active Directory で新規または変更されたリソースを特定できるため、完全探索サイクルの頻度を 1 週間に 1 度以下に減らすことができます。 [Active Directory システムの探索]、[Active Directory ユーザーの探索]、および [Active Directory グループの探索] の差分探索によって、Active Directory オブジェクトのほぼすべての変更が特定されます。また、リソースの正確な探索データが維持されます。  
+ Poiché l'individuazione differenziale usa un numero inferiore di risorse rispetto a un ciclo di individuazione completa e può identificare risorse nuove o modificate in Active Directory, è possibile ridurre la frequenza dei cicli di individuazione completa a esecuzioni settimanali o meno frequenti. L'individuazione differenziale per l'individuazione sistema Active Directory, l'individuazione utente Active Directory e l'individuazione gruppo Active Directory identificano quasi tutte le modifiche apportate agli oggetti Active Directory e possono mantenere dati accurati di individuazione per le risorse.  
 
-- **Active Directory ドメイン コントローラーに最も近いネットワークの場所にあるプライマリ サイトで Active Directory の探索方法を実行する**  
+- **Eseguire i metodi di individuazione Active Directory in un sito primario che abbia un percorso di rete molto vicino al controller di dominio di Active Directory.**  
 
- Active Directory の探索のパフォーマンスを改善するには、ドメイン コントローラーに対する高速なネットワーク接続があるプライマリ サイトで探索を実行することが推奨されます。 複数のサイトで同じ Active Directory の探索方法を実行する場合、重複を防ぐように各探索方法を設定してください。 これまでのバージョンの Configuration Manager とは異なり、探索データは複数のサイトで共有されます。 そのため、複数のサイトで同じ情報を探索する必要はありません。 詳細については、「[探索データは複数のサイトで共有される](../../../../core/servers/deploy/configure/select-discovery-methods-to-use.md#bkmk_shared)」を参照してください。  
+ Per migliorare le prestazioni dell'individuazione Active Directory, è consigliabile eseguire l'individuazione in un sito primario che abbia una connessione di rete veloce ai controller di dominio. Se si esegue lo stesso metodo di individuazione Active Directory in più siti, è consigliabile impostare ogni metodo di individuazione per evitare sovrapposizione. A differenza delle versioni precedenti di Configuration Manager, i dati di individuazione vengono condivisi tra i siti. Non è quindi necessaria l'individuazione delle stesse informazioni in più siti. Per altre informazioni, vedere [I dati di individuazione vengono condivisi tra i siti](../../../../core/servers/deploy/configure/select-discovery-methods-to-use.md#bkmk_shared).  
 
-- **探索データから境界を自動的に作成する予定の場合は、1 つのサイトでのみ [Active Directory フォレストの探索] を実行する**  
+- **Se si prevede di creare automaticamente limiti dai dati di individuazione, è consigliabile eseguire l'individuazione foresta Active Directory in un unico sito.**  
 
- 階層内の複数のサイトで [Active Directory フォレストの探索] を実行する場合、1 つのサイトで境界を自動的に作成するオプションのみを有効にすることが推奨されます。 [Active Directory フォレストの探索] は各サイトで実行し、境界を作成するため、Configuration Manager ではこのような境界を 1 つの境界オブジェクトに結合できません。 複数のサイトで境界を自動的に作成するように [Active Directory フォレストの探索] を構成すると、Configuration Manager コンソールで境界オブジェクトが重複する結果になる可能性があります。  
+ Se l'individuazione foresta Active Directory viene eseguita in più siti di una gerarchia, è consigliabile attivare solo le opzioni per la creazione automatica dei limiti in un unico sito. Quando l'individuazione foresta Active Directory viene eseguita in tutti i siti e crea i limiti, infatti, Configuration Manager non può unire tali limiti in un unico oggetto limite. Se l'individuazione foresta Active Directory viene configurata per la creazione automatica dei limiti in più siti, possono essere generati oggetti limite duplicati nella console di Configuration Manager.  

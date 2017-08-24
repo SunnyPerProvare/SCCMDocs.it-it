@@ -1,6 +1,6 @@
 ---
-title: "電源管理の概要 | Microsoft Docs"
-description: "System Center Configuration Manager の電源管理の概要について説明します。"
+title: Introduzione al risparmio energia | Microsoft Docs
+description: Introduzione al risparmio energia in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,33 +18,33 @@ manager: angrobe
 ms.openlocfilehash: f46c9479021c814b1102d72c7d493f21a7243bf1
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="introduction-to-power-management-in-system-center-configuration-manager"></a>System Center Configuration Manager の電源管理の概要
+# <a name="introduction-to-power-management-in-system-center-configuration-manager"></a>Introduzione al risparmio energia in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager の電源管理は、組織内のコンピューターの電力消費量を監視し、削減するという、多くの組織が抱えているニーズに対応することができます。 この機能は、Windows に組み込まれている電源管理機能を利用して、組織内のコンピューターに適切で一貫性のある設定を適用します。 業務時間内と業務時間外でそれぞれ異なる電源設定をコンピューターに適用できます。 たとえば業務時間外には、より制限された電源プランを適用することが可能です。 コンピューターを常にオンにしておく必要がある場合は、電源管理設定の適用から除外できます。  
+Il risparmio energia in System Center Configuration Manager soddisfa l'esigenza di molte organizzazioni di monitorare e ridurre il consumo di energia dei computer. Questa funzione per applica impostazioni pertinenti e coerenti ai computer dell'organizzazione sfruttando le funzionalità di risparmio energia di Windows. È possibile applicare ai computer impostazioni di risparmio energia diverse durante le ore lavorative e le ore non lavorative. È possibile, ad esempio, applicare una combinazione per il risparmio di energia più restrittiva durante l'orario non lavorativo. Nei casi in cui i computer devono rimanere sempre accesi, è possibile evitare l'attivazione delle impostazioni di risparmio energia.  
 
- Configuration Manager の電源管理には、組織における電力消費量やコンピューターの電源設定を分析するのに役立つ複数のレポート機能が含まれています。 また、こうしたレポートは、電源管理にかかわる問題のトラブルシューティングにも利用できます。  
+ La funzionalità di risparmio energia in Configuration Manager include diversi report per agevolare l'analisi dei consumi e delle impostazioni di risparmio energia per i computer nell'organizzazione. È anche possibile usare i report per risolvere i problemi relativi al risparmio energia.  
 
- 電源管理の構成と使用のワークフローの詳細については、「[Administrator checklist for power management in System Center Configuration Manager](../../../../core/clients/manage/power/administrator-checklist-for-power-management.md)」(System Center Configuration Manager での電源管理の管理者チェックリスト) を参照してください。  
-
-> [!IMPORTANT]  
->  Configuration Manager の電源管理は仮想マシンではサポートされていません。 仮想マシンには電源プランを適用できません。また仮想マシンの電源データをレポートすることもできません。  
-
-## <a name="the-power-management-workflow"></a>電源管理のワークフロー  
- Configuration Manager で電源管理を計画し、実装するには、次の 3 つの段階を使用します。  
-
-### <a name="monitoring-and-planning-phase"></a>監視および計画段階  
- 電源管理は、Configuration Manager のハードウェア インベントリを使用してサイト内のコンピューターの使用状況と電源設定に関するデータを収集します。 このデータを分析して、これらのコンピューターに最適な電源管理設定を特定するのに利用できる各種のレポートがあります。 たとえば、電源管理ワークフローの監視および計画段階では、[電源機能] レポートに含まれるデータに基づいてコレクションを作成し、このデータを使って電源管理できないコンピューターを特定することができます。 **** これにより、これらのコンピューターを電源管理対象から排除できます。  
+ Per un flusso di lavoro dettagliato della configurazione e dell'uso del risparmio energia, vedere [Administrator checklist for power management in System Center Configuration Manager](../../../../core/clients/manage/power/administrator-checklist-for-power-management.md) (Elenco di controllo amministratore per il risparmio energia in System Center Configuration Manager).  
 
 > [!IMPORTANT]  
->  クライアント コンピューターの電源データを収集して分析するまでは、サイト内のコンピューターに電源プランを適用しないでください。 既存の設定について調査を行わずに新しい電源管理設定を適用すると、電力消費量が増える結果になる可能性があります。  
+>  Il risparmio energia di Configuration Manager non è supportato per le macchine virtuali. Non è possibile applicare combinazioni per il risparmio di energia alle macchine virtuali, né ottenere da queste dati o report relativi al risparmio energia.  
 
-### <a name="enforcement-phase"></a>実施段階  
- 電源管理を使用すると、サイト内のコンピューターのコレクションに適用できる電源プランを作成することができます。 これらの電源プランは、複数のコンピューター上で Windows の電源管理設定を構成します。 Configuration Manager に付属の電源プランを使用するか、カスタムの電源プランを構成することができます。 監視および計画段階で収集された電源データは、コンピューターに電源プランを適用した後の省電力効果を評価するための基準として使用できます。 詳細については、「[Administrator checklist for power management in System Center Configuration Manager](../../../../core/clients/manage/power/administrator-checklist-for-power-management.md)」(System Center Configuration Manager での電源管理の管理者チェックリスト) を参照してください。  
+## <a name="the-power-management-workflow"></a>Flusso di lavoro del risparmio energia  
+ Per pianificare e implementare il risparmio energia in Configuration Manager, eseguire le tre fasi seguenti.  
 
-### <a name="compliance-phase"></a>対応評価段階  
- 対応評価段階では、組織における電力の使用状況と電力コストの削減効果を評価するためのレポートを実行します。 コンピューターが生成する CO2 量の改善状態を説明するレポートも実行できます。 コンピューターに電源設定が正しく適用されているかどうかを確認したり、電源管理機能の問題のトラブルシューティングをするために役立つレポートを作成することもできます。  
+### <a name="monitoring-and-planning-phase"></a>Fase di monitoraggio e pianificazione  
+ Il risparmio energia usa l'inventario hardware di Configuration Manager per raccogliere dati sull'utilizzo dei computer presenti presso il sito e sulle impostazioni per il risparmio energia attive per i computer stessi. Per analizzare questi dati e determinare le impostazioni di risparmio energia ottimali per i computer sono disponibili numerosi report. Ad esempio, durante la fase di monitoraggio e pianificazione del flusso di lavoro della funzionalità di risparmio energia è possibile creare raccolte basate sui dati del report **Funzionalità alimentazione** e usare tali dati per identificare i computer che non dispongono della funzionalità di risparmio energia. È quindi possibile escludere questi computer dalla gestione del risparmio energia.  
+
+> [!IMPORTANT]  
+>  Per applicare combinazioni per il risparmio di energia ai computer del sito attendere di aver raccolto e analizzato i dati relativi al risparmio energia dei computer client. Se si applicano nuove impostazioni di risparmio energia ai computer senza prima esaminare le impostazioni esistenti, si potrebbe riscontrare un aumento del consumo di energia.  
+
+### <a name="enforcement-phase"></a>Fase di imposizione  
+ Il risparmio energia consente di creare combinazioni per il risparmio di energia che sarà possibile applicare alle raccolte di computer del sito. Queste combinazioni eseguono la configurazione delle impostazioni di risparmio energia di Windows nei computer. È possibile usare le combinazioni per il risparmio di energia incluse in Configuration Manager oppure è possibile configurare combinazioni personalizzate. È possibile usare i dati relativi al risparmio energia raccolti durante la fase di monitoraggio e pianificazione come linea di base per la valutazione del risparmio energia dopo l'applicazione di una combinazione per il risparmio di energia ai computer. Per altre informazioni, vedere [Administrator checklist for power management in System Center Configuration Manager](../../../../core/clients/manage/power/administrator-checklist-for-power-management.md) (Elenco di controllo amministratore per il risparmio energia in System Center Configuration Manager).  
+
+### <a name="compliance-phase"></a>Fase di verifica della conformità  
+ Nella fase di verifica della conformità è possibile eseguire report che consentono di valutare il consumo di energia e il risparmio sui costi dell'energia all'interno dell'organizzazione. È anche possibile eseguire report che descrivono i miglioramenti relativi alla quantità di CO2 generata dai computer. Sono disponibili anche report che consentono di verificare la corretta applicazione delle impostazioni del risparmio energia ai computer e di risolvere i problemi della funzionalità di risparmio energia.  

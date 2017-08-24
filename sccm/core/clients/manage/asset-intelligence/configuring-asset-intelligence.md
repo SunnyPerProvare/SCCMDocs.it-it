@@ -6,23 +6,20 @@ ms.date: 2/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 08e0382d-de05-4a76-ba5c-7223173f7066
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 8a5dc7361da34f3e6b926acd35c72c0c0767ce70
-ms.openlocfilehash: 27566be49a673bebca6ac3621e692fad65523ca4
-ms.contentlocale: it-it
-ms.lasthandoff: 12/30/2016
-
-
+ms.openlocfilehash: d2704e0f93ad9748f7eb06d714b3754463cb3bdb
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="configure-asset-intelligence-in-system-center-configuration-manager"></a>Configurare Asset Intelligence in System Center Configuration Manager
 
@@ -226,7 +223,7 @@ Asset Intelligence abbina i prodotti specificati nel resoconto delle licenze gen
 
 4.  Nel gruppo **Impostazioni** della scheda **Home** scegliere **Manutenzione sito**. Selezionare un'attività e scegliere **Modifica** per modificare le impostazioni. 
 
-      È consigliabile impostare il periodo di tempo su orari non di punta per il sito. Il periodo di tempo è l'intervallo di tempo in cui è possibile eseguire l'attività. È definito dagli orari specificati in **Avvia dopo** e **Ultima ora di avvio** nella finestra di dialogo **Attività Proprietà** .  
+    È consigliabile impostare il periodo di tempo su orari non di punta per il sito. Il periodo di tempo è l'intervallo di tempo in cui è possibile eseguire l'attività. È definito dagli orari specificati in **Avvia dopo** e **Ultima ora di avvio** nella finestra di dialogo **Attività Proprietà** .  
 
     È possibile avviare immediatamente l'attività selezionando il giorno corrente e impostando **Avvia dopo** su un orario di un paio di minuti successivo all'ora corrente.  
 
@@ -234,4 +231,3 @@ Asset Intelligence abbina i prodotti specificati nel resoconto delle licenze gen
 
     > [!NOTE]  
     >  Se l'esecuzione dell'attività non riesce al primo tentativo, Configuration Manager esegue altri tentativi fino a quando l'attività non viene eseguita correttamente o fino alla scadenza del periodo di tempo impostato per l'esecuzione dell'attività.  
-

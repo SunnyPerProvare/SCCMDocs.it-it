@@ -1,6 +1,6 @@
 ---
-title: "インターネットベースのクライアント管理 | Microsoft Docs"
-description: "System Center Configuration Manager でインターネット ベースのクライアントを管理する計画を作成します。"
+title: Gestione client basata su Internet | Microsoft Docs
+description: Creare una pianificazione per gestire client basati su Internet in System Center Configuration Manager.
 ms.custom: na
 ms.date: 05/16/2017
 ms.prod: configuration-manager
@@ -18,135 +18,135 @@ manager: angrobe
 ms.openlocfilehash: 90c30bfb22735f73422f1547301552bf42022bb9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-for-internet-based-client-management-in-system-center-configuration-manager"></a>System Center Configuration Manager でインターネット ベースのクライアント管理を計画する
+# <a name="plan-for-internet-based-client-management-in-system-center-configuration-manager"></a>Pianificare la gestione client basata su Internet in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-インターネット ベースのクライアント管理 (IBCM とも呼ばれています) では、企業ネットワークに接続されておらず、標準的なインターネットに接続されている System Center Configuration Manager クライアントを管理できます。 この管理方法には、便利な点がいくつかあります。たとえば、仮想プライベート ネットワーク (VPN) を設置する必要がないのでコストを削減でき、ソフトウェア更新プログラムを滞りなく展開することができます。  
+La gestione client basata su Internet consente di gestire i client di System Center Configuration Manager se non sono connessi alla rete aziendale, ma a una connessione Internet standard. Tale disposizione presenta diversi vantaggi che includono la riduzione dei costi associata alla possibilità di non dover eseguire reti private virtuali (VPN) e di poter distribuire aggiornamenti software in modo tempestivo.  
 
- 公衆ネットワーク上のクライアント コンピューターの管理には、高いセキュリティが求められるので、インターネット ベースのクライアント管理では、クライアントとその接続先サイト システム サーバーで PKI 証明書を使用する必要があります。 PKI 証明書を使用することにより、独立した機関によって接続が相互承認され、サイト システムが送受信するデータが SSL (Secure Sockets Layer) で暗号化されるようになります。  
+ Dati i requisiti di protezione più elevati per la gestione di computer client su una rete pubblica, la gestione client basata su Internet richiede che i client e i server del sistema del sito ai quali si collegano utilizzino certificati PKI. Ciò garantisce che le connessioni vengano autenticate da un'autorità indipendente e che i dati provenienti da e diretti a questi sistemi del sito vengano crittografati tramite Secure Sockets Layer (SSL).  
 
- 次のセクションの情報を、インターネットベースのクライアント管理を計画するときの参考にしてください。  
+ Usare le sezioni seguenti per la pianificazione della gestione client basata su Internet.  
 
-##  <a name="features-that-are-not-supported-on-the-internet"></a>インターネットでサポートされない機能  
- クライアント管理機能の中には、インターネットでの使用に適していないものがあります。クライアントをインターネット上で管理する場合は、そのような機能はサポートされません。 サポートされない機能は、主に Active Directory ドメイン サービスに依存する機能や、ネットワーク探索や Wake On LAN (WOL) など、公衆ネットワークに適していない機能です。  
+##  <a name="features-that-are-not-supported-on-the-internet"></a>Funzionalità non supportate su Internet  
+ Non tutte le funzionalità di gestione client sono adatte a Internet e, pertanto, non sono supportate quando i client vengono gestiti su Internet. Le funzionalità non supportate per la gestione su Internet in genere si basano su Servizi di dominio Active Directory o non sono adatte a una rete pubblica, come individuazione rete e riattivazione LAN (WOL).  
 
- クライアントをインターネット上で管理する場合は、次の機能がサポートされません。  
+ Le caratteristiche seguenti non sono supportate quando i client sono gestiti su Internet:  
 
--   クライアントのプッシュ インストールやソフトウェア更新プログラムに基づいたクライアントの展開など、インターネット上でのクライアントの展開。 代わりに、クライアントを手動でインストールしてください。  
+-   Distribuzione di client su Internet, ad esempio la distribuzione client basata su aggiornamento software e push client. Usare invece l'installazione client manuale.  
 
--   サイトの自動割り当て  
+-   Assegnazione automatica del sito.  
 
--   Wake On LAN  
+-   Riattivazione LAN.  
 
--   オペレーティング システムの展開。 ただし、オペレーティング システムを展開しないタスク シーケンスは展開することができます。たとえば、クライアントでスクリプトやメンテナンス タスクを実行するタスク シーケンスがあります。  
+-   Distribuzione del sistema operativo. Tuttavia, è possibile distribuire le sequenze attività che non distribuiscono un sistema operativo, come ad esempio sequenze che eseguono script e attività di manutenzione sui client  
 
--   リモート コントロール  
+-   Controllo remoto.  
 
--   ユーザーへのソフトウェアの展開。ただし、インターネット ベースの管理ポイントで Windows 認証 (Kerberos または NTLM) 方式で Active Directory ドメイン サービスのユーザーを認証できる場合は除きます。 これには、インターネット ベースの管理ポイントが、ユーザー アカウントのあるフォレストを信頼している場合が当てはまります。  
+-   Distribuzione software agli utenti a meno che il punto di gestione basato su Internet sia in grado di autenticare l'utente in Servizi di dominio Active Directory tramite l'autenticazione di Windows (Kerberos o NTLM). Questo è possibile quando il punto di gestione basato su Internet considera attendibile la foresta in cui risiede l'account utente.  
 
- また、インターネット ベースのクライアント管理では、ローミングをサポートしません。 ローミングによって、クライアントが常に一番近い配布ポイントを見つけて、コンテンツをダウンロードできるようになります。 しかし、インターネット上で管理されるクライアントは、割り当てられているサイトのサイト システムがインターネット FQDN を使用するように構成され、サイト システムの役割がインターネットからのクライアント接続を受け入れる場合に、そのサイト システムと通信します。 クライアントは、帯域幅や物理的な場所に関係なく、インターネット ベースのサイト システムのいずれかを無作為に選択します。  
+ La gestione client basata su Internet, inoltre, non supporta il roaming. Il roaming consente ai client di individuare sempre i punti di distribuzione più vicini per scaricare il contenuto. I client gestiti su Internet comunicano con i sistemi del sito dal relativo sito assegnato quando tali sistemi sono configurati per l'utilizzo di un FQDN Internet e i ruoli del sistema del sito consentono connessioni client da Internet. I client selezionano in modo non deterministico uno dei sistemi del sito basati su Internet, indipendentemente dalla posizione fisica o dalla larghezza di banda.  
 
- インターネットからの接続を受け付けるように構成したソフトウェアの更新ポイントがある場合は、インターネット上にある Configuration Manager のインターネット ベースのクライアントは、必ずこのソフトウェアの更新ポイントをスキャンして、どのソフトウェア更新プログラムが必要かを判断します。 ただし、これらのクライアントがインターネット上にある場合は、インターネット ベースの配布ポイントからではなく、まず Microsoft Update からソフトウェア更新プログラムをダウンロードしようとします。 Microsoft Update からダウンロードできなかった場合だけ、クライアントに割り当てられているサイトのインターネットベースの配布ポイントからダウンロードします。 インターネット ベースのクライアント管理用に構成されていないクライアントは、Microsoft Update からはソフトウェア更新プログラムをダウンロードせず、常に Configuration Manager の配布ポイントを使用します。  
+ Se si dispone di un punto di aggiornamento software configurato per accettare le connessioni a Internet, i client basati su Internet di Configuration Manager eseguono l'analisi sempre rispetto a questo punto per determinare gli aggiornamenti software necessari. Tuttavia, i client su Internet provano a scaricare prima gli aggiornamenti software da Microsoft Update piuttosto che da un punto di distribuzione basato su Internet. Solo in caso di errore, proveranno quindi a scaricare gli aggiornamenti software richiesti da un punto di distribuzione basato su Internet. I client non configurati per la gestione client basata su Internet non provano mai a scaricare gli aggiornamenti software da Microsoft Update, ma usano sempre i punti di distribuzione di Configuration Manager.  
 
-##  <a name="considerations-for-client-communications-from-the-internet-or-untrusted-forest"></a>インターネットや信頼されていないフォレストからのクライアント通信に関する考慮事項  
- プライマリ サイトにインストールされた次のサイト システムの役割では、インターネットや信頼されていないフォレストなどの信頼されていない場所にあるクライアントからの接続がサポートされます (セカンダリ サイトでは信頼されていない場所からのクライアント接続はサポートされません)。  
+##  <a name="considerations-for-client-communications-from-the-internet-or-untrusted-forest"></a>Considerazioni per le comunicazioni client da Internet o da una foresta non trusted  
+ I seguenti ruoli del sistema del sito installati nei siti primari supportano connessioni da client che si trovano in percorsi non attendibili, come Internet o una foresta non trusted (i siti secondari non supportano le connessioni client da percorsi non attendibili):  
 
--   アプリケーション カタログ Web サイト ポイント  
+-   Punto per siti Web del Catalogo applicazioni  
 
--   Configuration Manager ポリシー モジュール  
+-   Modulo criteri di Configuration Manager  
 
--   配布ポイント (クラウドベースの配布ポイントでは HTTPS が必要)  
+-   Punto di distribuzione (HTTPS è richiesto dai punti di distribuzione basati sul cloud)  
 
--   登録プロキシ ポイント  
+-   Punto proxy di registrazione  
 
--   フォールバック ステータス ポイント  
+-   Punto di stato di fallback  
 
--   管理ポイント  
+-   Punto di gestione  
 
--   ソフトウェアの更新ポイント  
+-   Punto di aggiornamento software  
 
- **インターネットに接続するサイト システムについて:**   
-クライアントのフォレストと、サイト システム サーバーのフォレスト間の信頼を確立する必要はありませんが、インターネットに接続するサイト システムを含むフォレストがユーザー アカウントを含むフォレストを信頼している状態で、**[クライアント ポリシー]** のクライアント設定 **[インターネット クライアントからのユーザー ポリシー要求を有効にする]** を有効にした場合は、この構成でインターネット上のデバイスのユーザーベース ポリシーがサポートされます。  
+ **Informazioni sui sistemi del sito con connessione internet:**   
+Sebbene non sia richiesto un trust tra la foresta di un client e quella di un server del sistema del sito, quando la foresta che contiene il sistema del sito con connessione Internet considera attendibile la foresta che contiene gli account utente, questa configurazione supporta criteri basati sull'utente per i dispositivi su Internet se si abilita l'impostazione client **Abilitare le richieste dei criteri utente dai client Internet** di **Criteri client**.  
 
- たとえば、次のような場合に、インターネット ベースのクライアント管理がインターネット上のデバイス用のユーザー ポリシーを使用します。  
+ Ad esempio, le configurazioni seguenti illustrano quando la gestione client basata su Internet supporta criteri utente per i dispositivi su Internet:  
 
--   インターネット ベースの管理ポイントが、ユーザーを認証する読み取り専用ドメイン コントローラーが存在する境界ネットワークにあり、介在するファイアウォールで Active Directory パケットを許可する。  
+-   Il punto di gestione basato su Internet si trova nella rete perimetrale in cui risiede un controller di dominio di sola lettura per autenticare l'utente e un firewall consente pacchetti di Active Directory.  
 
--   ユーザー アカウントがフォレスト A (イントラネット) にあり、インターネット ベースの管理ポイントがフォレスト B (境界ネットワーク) にある。 フォレスト B がフォレスト A を信頼しており、介在するファイアウォールが認証パケットを許可する。  
+-   L'account utente si trova nella Foresta A (intranet) e il punto di gestione basato su Internet si trova nella Foresta B (la rete perimetrale). La Foresta B considera attendibile la Foresta A e un firewall consente i pacchetti di autenticazione.  
 
--   ユーザー アカウントとインターネット ベースの管理ポイントがフォレスト A (イントラネット) にある。 管理ポイントは、Web プロキシ サーバー (Forefront Threat Management Gateway など) を使用してインターネットに発行される。  
-
-> [!NOTE]  
->  Kerberos 認証に失敗すると、自動的に NTLM 認証が試みられます。  
-
- 上の例に示すように、インターネット ベースのサイト システムを Web プロキシ サーバー (ISA Server や Forefront Threat Management Gateway など) を使用してインターネットに発行する場合は、それらのサイト システムをイントラネットに配置することができます。 これらのサイト システムは、インターネットからのクライアント接続のみ、またはインターネットとイントラネットの両方を受け付けるように構成できます。 Web プロキシ サーバーを使用する場合は、SSL (Secure Sockets Layer) から SSL へのブリッジングまたは SSL トンネリングを構成できます。ブリッジングの方が安全です。  
-
--   **SSL から SSL へのブリッジング:**   
-    インターネットベースのクライアント管理でプロキシ Web サーバーを使用する場合は、認証と SSL 終了を使用する SSL から SSL へのブリッジングを構成することをお勧めします。 クライアント コンピューターは、コンピューター認証によって、モバイル デバイス レガシ クライアントは、ユーザー認証によって認証されなければなりません。 Configuration Manager によって登録されるモバイル デバイスは、SSL ブリッジングをサポートしていません。  
-
-     プロキシ Web サーバーで SSL 終了を使用する利点は、インターネットからのパケットが内部ネットワークに転送される前に検査されることです。 プロキシ Web サーバーはクライアントからの接続を認証してから終了します。次に、インターネット ベースのサイト システムに認証済みの新しい接続を開きます。 Configuration Manager クライアントでプロキシ Web サーバーが使用される場合、クライアント ID (クライアント GUID) はパケット ペイロード内に安全に格納されるので、管理ポイントではプロキシ Web サーバーはクライアントとは見なされません。 HTTP から HTTPS、または HTTPS から HTTP へのブリッジングは Configuration Manager ではサポートされていません。  
-
--   **トンネリング**:   
-    プロキシ Web サーバーが SSL ブリッジングの要件をサポートできない場合や、Configuration Manager によって登録されたモバイル デバイスに対してインターネット サポートを構成する場合は、SSL トンネリングもサポートされます。 ただし、この方法は、安全性が低くなります。これは、インターネットからの SSL パケットが SSL 終了なしにサイト システムに転送されるので、悪意のあるコンテンツがないかどうかを検査できないためです。 SSL トンネリングを使用する場合は、プロキシ Web サーバーに証明書は必要ありません。  
-
-##  <a name="planning-for-internet-based-clients"></a>インターネット ベースのクライアントの計画  
- インターネット上で管理することになるクライアント コンピューターを、イントラネットとインターネットの両方で管理できるようにするか、それともインターネット専用として構成するかを決める必要があります。 このクライアントの管理オプションは、クライアントをインストールするときしか構成できません。 選択したオプションを変更したい場合は、クライアントを再インストールする必要があります。  
+-   L'account utente e il punto di gestione basato su Internet si trovano nella Foresta A (intranet). Il punto di gestione viene pubblicato su Internet usando un server Web proxy, ad esempio Forefront Threat Management Gateway.  
 
 > [!NOTE]  
->  インターネットを利用できる管理ポイントを構成する場合は、管理ポイントに接続されるクライアントが利用可能な管理ポイントの一覧を更新すると、インターネットを利用できるようになります。  
+>  Se l'autenticazione Kerberos ha esito negativo, sarà automaticamente tentata l'autenticazione NTLM.  
+
+ Come mostrato nell'esempio precedente, è possibile posizionare i sistemi del sito basati su Internet nella intranet quando vengono pubblicati su Internet usando un server Web proxy, come ISA Server e Forefront Threat Management Gateway. Questi sistemi del sito possono essere configurati per connessioni client solo da Internet o per connessioni client da Internet e intranet. Quando si usa un server Web proxy, è possibile configurarlo per il bridging Secure Sockets Layer (SSL) a SSL (più sicuro) o tunneling SSL:  
+
+-   **Bridging SSL a SSL:**   
+    La configurazione consigliata quando si usano server Web proxy per la gestione client basata su Internet è il bridging SSL a SSL, che usa la terminazione SSL con l'autenticazione. I computer client devono essere autenticati usando l'autenticazione computer e i client legacy di dispositivi mobili vengono autenticati usando l'autenticazione utente. I dispositivi mobili che vengono registrati da Configuration Manager non supportano il bridging SSL.  
+
+     Il vantaggio della terminazione SSL sul server Web proxy è che i pacchetti provenienti da Internet sono soggetti alla verifica prima di essere inoltrati alla rete interna. Il server Web proxy autentica la connessione dal client, la termina, quindi apre una nuova connessione autenticata ai sistemi del sito basati su Internet. Quando i client di Configuration Manager usano un server Web proxy, l'identità client (GUID client) viene contenuta in modo protetto all'interno del payload dei pacchetti in modo che il punto di gestione non consideri il server Web proxy come il client. Il bridging HTTP a HTTPS o HTTPS a HTTP non è supportato in Configuration Manager.  
+
+-   **Tunneling**:   
+    Se il server Web proxy non può supportare i requisiti per il bridging SSL o se si vuole configurare il supporto Internet per i dispositivi mobili registrati da Configuration Manager, è supportato il tunneling SSL. Si tratta di un'opzione meno sicura perché i pacchetti SSL provenienti da Internet vengono inoltrati ai sistemi del sito senza terminazione SSL e, pertanto, non possono essere verificati per l'eventuale presenza di contenuto dannoso. Quando si usa il tunneling SSL, non sono previsti requisiti di certificato per il server Web proxy.  
+
+##  <a name="planning-for-internet-based-clients"></a>Pianificazione dei client basati su Internet  
+ È necessario decidere se i computer client che saranno gestiti su Internet debbano essere configurati per la gestione sulla intranet e su Internet o solo per la gestione client basata su Internet. L'opzione di gestione client può essere configurata solo durante l'installazione di un computer client. Se si cambia idea, sarà necessario reinstallare il client.  
+
+> [!NOTE]  
+>  Se si configura un punto di gestione con Internet, i client che si connettono al punto di gestione potranno usare Internet dopo aver aggiornato l'elenco di punti di gestione disponibili.  
 
 > [!TIP]  
->  インターネット専用クライアント管理の構成をインターネットだけに制限する必要はありません。その構成をイントラネットでも使用できます。  
+>  Non si dovrà limitare la configurazione esclusivamente alla gestione client basata su Internet in modo da poterla usare anche sulla intranet.  
 
- インターネット専用クライアントとして構成されたクライアントは、インターネットからのクライアント接続を受け入れるサイト システムだけと通信します。 この構成は、遠隔地の売場専用コンピューターなど、企業のイントラネットに接続することのないコンピューターに適しています。 また、クライアント接続を HTTPS のみに制限したい場合 (ファイアウォールとセキュリティ ポリシーを採用する場合など) や、インターネット ベースのサイト システムを境界ネットワークにインストールし、Configuration Manager クライアントを使用してこれらのサーバーを管理したい場合にも適しています。  
+ I client configurati solo per la gestione basata su Internet comunicano esclusivamente con i sistemi del sito configurati per le connessioni client da Internet. Questa configurazione sarebbe ideale per i computer che non vengono mai connessi alla intranet aziendale, ad esempio computer POS in sedi remote. Potrebbe anche essere appropriata se si vuole limitare la comunicazione client solo a HTTPS (ad esempio per supportare firewall e criteri di sicurezza limitati), se si installano sistemi del sito basati su Internet in una rete perimetrale e se si vuole gestire tali server usando il client di Configuration Manager.  
 
- インターネット上のワークグループ クライアントを管理する場合は、これらのクライアントをインターネット専用としてインストールする必要があります。  
+ Quando si desidera gestire client di un gruppo di lavoro su Internet, è necessario installarli con una configurazione limitata a Internet.  
 
 > [!NOTE]  
->  モバイル デバイス クライアントは、イントーネット ベースの管理ポイントを使用するように構成すると、自動的にインターネット専用になります。  
+>  I client dei dispositivi mobili vengono configurati automaticamente solo per Internet quando sono configurati per l'utilizzo di un punto di gestione basato su Internet.  
 
- その他のクライアント コンピューターは、インターネットとイントラネットの両用に構成することができます。 このように構成すると、クライアントが接続されるネットワークが変わると、インターネット ベースのクライアント管理とイントラネット クライアント管理が自動的に切り替わります。 イントラネットのクライアント接続用に構成された管理ポイントに接続できた場合は、Configuration Manager のすべての管理機能に対応しているイントラネット クライアントとして管理されます。 イントラネットのクライアント接続用に構成されている管理ポイントに接続できなかった場合は、インターネット ベースの管理ポイントに接続しようとします。この管理ポイントに接続できると、クライアントに割り当てられているサイトのインターネット ベースのサイト システムによって管理されるようになります。  
+ È possibile configurare altri computer client per la gestione client Internet e intranet. Possono passare automaticamente dalla gestione client basata su Internet a quella basata sulla intranet e viceversa quando rilevano una modifica della rete. Se questi client possono rilevare e connettersi a un punto di gestione configurato per le connessioni client sull'intranet, vengono gestiti come client intranet con piene funzionalità di gestione di Configuration Manager. Se i client non sono in grado di rilevare o di connettersi a un punto di gestione configurato per le connessioni client sulla intranet, cercano di connettersi a un punto di gestione basato su Internet e, se vi riescono, vengono gestiti come sistemi del sito basati su Internet nel rispettivo sito assegnato.  
 
- インターネット ベースのクライアント管理とイントラネット クライアント管理が自動的に切り替わることの長所は、クライアント コンピューターがイントラネットに接続しているときは常に Configuration Manager のすべての機能を使用することができ、インターネットに接続したときも、主要な管理機能によって引き続き管理されているという点です。 また、インターネット上で開始したダウンロードをイントラネットに接続したときに再開したり、その逆も行えます。  
+ Il vantaggio di un passaggio automatico tra la gestione client basata su Internet e una gestione client basata sull'intranet è che i computer client possono usare automaticamente tutte le funzionalità di Configuration Manager quando si connettono all'intranet e continuano a essere gestiti per le funzioni di gestione essenziali quando sono connessi a Internet. Inoltre, un download iniziato su Internet può riprendere senza problemi sulla intranet e viceversa.  
 
-##  <a name="prerequisites-for-internet-based-client-management"></a>インターネット ベースのクライアント管理の前提条件  
- Configuration Manager でインターネット ベースのクライアント管理を行うには、次の条件を満たしている必要があります。  
+##  <a name="prerequisites-for-internet-based-client-management"></a>Prerequisiti per la gestione client basata su Internet  
+ La gestione client basata su Internet in Configuration Manager presenta le dipendenze esterne seguenti:  
 
--   インターネット上で管理されるクライアントは、インターネットに接続できる必要があります。  
+-   I client che verranno gestiti su Internet devono disporre di una connessione a Internet.  
 
-     Configuration Manager は、既存のインターネット サービス プロバイダー (ISP) 接続を使用します。一時的な接続と常時接続のどちらでもかまいません。 モバイル デバイス クライアントはインターネットに直接接続する必要があります。コンピューター クライアントはインターネットに直接接続するか、プロキシ Web サーバー経由で接続することができます。  
+     Configuration Manager usa connessioni esistenti del Provider di servizi Internet (ISP) a Internet, che possono essere di natura permanente o temporanea. I dispositivi mobili client devono disporre di una connessione diretta a Internet, mentre i computer client possono usufruire di una connessione Internet diretta oppure di una connessione tramite server Web proxy.  
 
--   インターネット ベースのクライアント管理で使用するサイト システムは、インターネットに接続可能で、Active Directory ドメインになければなりません。  
+-   I sistemi del sito che supportano la gestione client basata su Internet devono disporre della connettività a Internet e devono trovarsi in un dominio Active Directory.  
 
-     インターネット ベースのサイト システムとサイト サーバーの Active Directory フォレストに信頼関係は必要ありません。 ただし、インターネット ベースの管理ポイントが Windows 認証を使用してユーザーを認証できる場合は、ユーザー ポリシーを使用することができます。 Windows 認証できない場合は、コンピューター ポリシーだけを使用できます。  
+     I sistemi del sito basati su Internet non richiedono una relazione di trust con la foresta Active Directory del server del sito. Tuttavia, quando il punto di gestione basato su Internet è in grado di autenticare l'utente usando l'autenticazione di Windows, sono supportati criteri utente. Se l'autenticazione di Windows ha esito negativo, sono supportati solo i criteri computer.  
 
     > [!NOTE]  
-    >  ユーザー ポリシーを使用するには、クライアント設定の [ **クライアント ポリシー** ] で次の 2 つを [ **TRUE** ] に設定する必要があります。  
+    >  Per supportare i criteri utente è inoltre necessario impostare **True** per le due impostazioni client **Criteri client** :  
     >   
-    >  -   **クライアント上でのユーザー ポリシーのポーリングを有効にする**  
-    > -   **インターネット クライアントからのユーザー ポリシー要求を有効にする**  
+    >  -   **Abilitare il polling dei criteri utente sui client**  
+    > -   **Abilitare le richieste dei criteri utente dai client Internet**  
 
-     インターネット ベースのアプリケーション カタログ Web サービス ポイントも、ユーザーのコンピューターがインターネット上にあるときに、そのユーザーを認証するために Windows 認証を必要とします。 この要件は、ユーザー ポリシーとは独立しています。  
+     Un punto per siti Web del Catalogo applicazioni basato su Internet richiede inoltre l'autenticazione di Windows per autenticare gli utenti quando il relativo computer si trova su Internet. Questo requisito è indipendente dai criteri utente.  
 
--   クライアントが必要とし、インターネットとインターネット ベースのサイト システム サーバーで管理する証明書を展開して管理できる公開キー基盤 (PKI) が必要です。  
+-   È necessario disporre di un'infrastruttura a chiave pubblica (PKI) di supporto che possa distribuire e gestire i certificati richiesti dai client e gestiti su Internet e sui server del sistema del sito basati su Internet.  
 
-     PKI 証明書の詳細については、「[System Center Configuration Manager での PKI 証明書の要件](/sccm/core/plan-design/network/pki-certificate-requirements)」をご覧ください。  
+     Per altre informazioni sui certificati PKI, vedere [PKI certificate requirements for System Center Configuration Manager](/sccm/core/plan-design/network/pki-certificate-requirements) (Requisiti dei certificati PKI per System Center Configuration Manager).  
 
--   インターネット ベースのクライアント管理をサポートするサイト システムのインターネット完全修飾ドメイン名 (FQDN) を公開 DNS サーバーのホスト エントリとして登録する必要があります。  
+-   il nome di dominio completo (FQDN) Internet dei sistemi del sito che supportano la gestione client basata su Internet deve essere registrato come voce host sui server DNS pubblici.  
 
--   介在するファイアウォールまたはプロキシ サーバーは、インターネット ベースのサイト システムに関連付けられたクライアント接続を許可する必要があります。  
+-   I firewall o server proxy devono consentire la comunicazione client associata ai sistemi sito basati su Internet.  
 
-     クライアント接続の要件:  
+     Requisiti di comunicazione client:  
 
-    -   HTTP 1.1 をサポートしていること  
+    -   Supporto HTTP 1.1  
 
-    -   マルチパート MIME 添付ファイルの HTTP コンテンツ タイプ (multipart/mixed および application/octet-stream) を許可すること  
+    -   Autorizzazione al tipo di contenuto HTTP di allegati MIME multiparte (multiparte/misto e applicazione/flusso di ottetti)  
 
-    -   インターネット ベースの管理ポイントで次の動詞を使用できること  
+    -   Autorizzazione ai seguenti verbi per il punto di gestione basato su Internet:  
 
         -   HEAD  
 
@@ -158,7 +158,7 @@ ms.lasthandoff: 08/07/2017
 
         -   PROPFIND  
 
-    -   インターネット ベースの配布ポイントで次の動詞を使用できること  
+    -   Autorizzazione ai seguenti verbi per il punto di distribuzione basato su Internet:  
 
         -   HEAD  
 
@@ -166,19 +166,19 @@ ms.lasthandoff: 08/07/2017
 
         -   PROPFIND  
 
-    -   インターネット ベースのフォールバック ステータス ポイントで次の動詞を使用できること  
+    -   Autorizzazione ai seguenti verbi per il punto di stato di fallback basato su Internet:  
 
         -   POST  
 
-    -   インターネット ベースのアプリケーション カタログ Web サイト ポイントで次の動詞を使用できること  
+    -   Autorizzazione ai seguenti verbi per il punto per siti Web del Catalogo applicazioni basato su Internet:  
 
         -   POST  
 
         -   GET  
 
-    -   インターネット ベースの管理ポイントで次の HTTP ヘッダーを使用できること  
+    -   Autorizzazione alle seguenti intestazioni HTTP per il punto di gestione basato su Internet:  
 
-        -   Range:  
+        -   Intervallo:  
 
         -   CCMClientID:  
 
@@ -188,10 +188,10 @@ ms.lasthandoff: 08/07/2017
 
         -   CCMClientTimestampsSignature:  
 
-    -   インターネット ベースの配布ポイントで次の HTTP ヘッダーを使用できること  
+    -   Autorizzazione alla seguente intestazione HTTP per il punto di distribuzione basato su Internet:  
 
-        -   Range:  
+        -   Intervallo:  
 
-     これらの条件を満たす構成については、ファイアウォールまたはプロキシ サーバーのドキュメントをご覧ください。  
+     Per informazioni sulla configurazione richiesta per supportare tali requisiti, consultare la documentazione sul server proxy o firewall.  
 
-     インターネットからのクライアント接続にソフトウェアの更新ポイントを使用する場合は、Windows Server Update Services (WSUS) のドキュメントをご覧ください。 たとえば、Windows Server 2003 の WSUS については、セキュリティ設定の展開の付録「 [付録 D: セキュリティ設定](http://go.microsoft.com/fwlink/p/?LinkId=143368)」を参照してください。
+     Per i requisiti di comunicazione simili richiesti quando si usa il punto di aggiornamento software per le connessioni client da Internet, vedere la documentazione per Windows Server Update Services (WSUS). Ad esempio, per WSUS in Windows Server 2003, vedere [Appendice D: impostazioni di sicurezza](http://go.microsoft.com/fwlink/p/?LinkId=143368), l'appendice relativa alla distribuzione per le impostazioni di sicurezza.

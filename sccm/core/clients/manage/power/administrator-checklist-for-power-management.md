@@ -1,26 +1,25 @@
 ---
 title: Elenco di controllo amministratore per il risparmio energia | Microsoft Docs
-description: Usare l&quot;elenco di controllo amministratore per pianificare e implementare il risparmio energia in System Center Configuration Manager.
+description: Usare l'elenco di controllo amministratore per pianificare e implementare il risparmio energia in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 94e42cbe-9df8-4228-a04e-0ad7626180ca
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
 ms.openlocfilehash: e6a7a0b853be930b558cdd739b90285ebb8538e7
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="administrator-checklist-for-power-management-in-system-center-configuration-manager"></a>Elenco di controllo amministratore per il risparmio energia in System Center Configuration Manager
 
@@ -80,9 +79,3 @@ Questo elenco di controllo amministratore fornisce le procedure consigliate per 
 |----------|-------------|  
 |Se nei computer della gerarchia non sono in modalità sospensione o ibernazione, eseguire il report **Report errore sospensione** per visualizzare le possibili cause.|Il **Report errore sospensione** visualizza un elenco di cause comuni che hanno impedito ai computer di entrare in stato di sospensione o di ibernazione e il numero di computer interessati da ogni causa per un periodo di tempo specificato. Per altre informazioni, vedere [How to monitor and plan for power management](monitor-and-plan-for-power-management.md) (Come monitorare e pianificare il risparmio energia ).|  
 |Se a un computer sono applicate più combinazioni per il risparmio di energia, viene applicata la combinazione meno restrittiva. Eseguire il report **Computer con più combinazioni per il risparmio di energia** per visualizzare i computer a cui sono applicate più combinazioni di risparmio di energia.|Vedere **Computer con più combinazioni per il risparmio di energia** nell'argomento [Come monitorare e pianificare il risparmio energia](monitor-and-plan-for-power-management.md).|  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-

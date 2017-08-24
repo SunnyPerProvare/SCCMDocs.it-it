@@ -1,6 +1,6 @@
 ---
-title: "レポートのベスト プラクティス | Microsoft Docs"
-description: "System Center Configuration Manager のレポート機能の使用に関する役立つヒントをいくつか示します。"
+title: Procedure consigliate per i report | Microsoft Docs
+description: "Suggerimenti utili sull'uso delle funzionalità per la creazione di report di System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,23 +18,23 @@ manager: angrobe
 ms.openlocfilehash: 759258999f3eaa810803a6a7f856f00fe7771a9e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="best-practices-for-reporting-in-system-center-configuration-manager"></a>System Center Configuration Manager のレポートのベスト プラクティス
+# <a name="best-practices-for-reporting-in-system-center-configuration-manager"></a>Procedure consigliate per la creazione di report in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager のレポートに関する以下のベスト プラクティスを使用してください。  
+Usare le seguenti procedure consigliate per la creazione di report in System Center Configuration Manager:  
 
-## <a name="for-best-performance-install-the-reporting-services-point-on-a-remote-site-system-server"></a>パフォーマンスを最大化するためにレポート サービス ポイントをリモート サイト システム サーバーにインストールする  
- レポート サービス ポイントはサイト サーバーかリモート サイト システムにインストールできますが、リモート サイト システム サーバーにインストールすることでパフォーマンスが向上します。  
+## <a name="for-best-performance-install-the-reporting-services-point-on-a-remote-site-system-server"></a>Per ottenere prestazioni ottimali, installare il punto di Reporting Services in un server di sistema del sito remoto  
+ Benché sia possibile installare il punto di Reporting Services nel server del sito o in un sistema del sito remoto, l'installazione del punto di Reporting Services in un server di sistema del sito remoto garantisce prestazioni migliori.  
 
-## <a name="optimize-sql-server-reporting-services-queries"></a>SQL Server Reporting Services のクエリを最適化する  
- 通常、レポートの遅延はクエリの実行と結果の取得にかかる時間に起因します。 Microsoft SQL Server を使用している場合は、クエリ アナライザーやプロファイラーなどのツールをクエリの最適化に役立てることができます。  
+## <a name="optimize-sql-server-reporting-services-queries"></a>Ottimizzare le query di SQL Server Reporting Services  
+ I ritardi di reporting sono in genere causati dal tempo necessario per eseguire le query e recuperare risultati. Se si utilizza Microsoft SQL Server, strumenti come Analizzatore query e Profiler consentono di ottimizzare le query.  
 
-## <a name="schedule-report-subscription-processing-to-run-outside-standard-office-hours"></a>レポートのサブスクリプションの処理を標準業務時間外に実行するようにスケジュールする  
- 可能な場合は、レポートのサブスクリプション処理を通常の業務時間外に実行するようにスケジュールを設定し、Configuration Manager サイト データベース サーバーの CPU の処理負荷を最小化します。 これにより、予定外のレポート要求に対する可用性も向上されます。  
+## <a name="schedule-report-subscription-processing-to-run-outside-standard-office-hours"></a>Pianificare l'elaborazione delle sottoscrizioni report per l'esecuzione in orari non lavorativi  
+ Se possibile, pianificare l'elaborazione delle sottoscrizioni report per l'esecuzione in orari non lavorativi al fine di ridurre al minimo l'elaborazione della CPU nel server di database del sito di Configuration Manager. In questo modo è inoltre possibile incrementare la disponibilità per le richieste di report impreviste.  
 
-## <a name="next-steps"></a>次のステップ
-[レポートの構成](configuring-reporting.md)
+## <a name="next-steps"></a>Passaggi successivi
+[Configurare la creazione di report](configuring-reporting.md)

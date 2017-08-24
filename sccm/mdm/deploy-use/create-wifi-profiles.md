@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager で Wi-Fi プロファイルを作成する | Microsoft Docs"
-description: "Configuration Manager の Wi-Fi プロファイルを使用して、ワイヤレス ネットワーク設定を組織内のモバイル デバイス ユーザーに展開する方法について説明します。"
+title: Creare profili Wi-Fi in System Center Configuration Manager | Microsoft Docs
+description: Informazioni su come usare i profili Wi-Fi in Configuration Manager per distribuire impostazioni di rete wireless agli utenti di dispositivi mobili nell'organizzazione.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -18,30 +18,30 @@ manager: angrobe
 ms.openlocfilehash: 362bcbd368fd49979c554cd009b3ba72f20d5fbd
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-wi-fi-profiles-for-mobile-devices-in-system-center-configuration-manager"></a>System Center Configuration Manager でモバイル デバイスの Wi-Fi プロファイルを作成する方法
+# <a name="how-to-create-wi-fi-profiles-for-mobile-devices-in-system-center-configuration-manager"></a>Come creare profili Wi-Fi per dispositivi mobili in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager の Wi-Fi プロファイルを使用して、ワイヤレス ネットワーク設定を組織内のモバイル デバイス ユーザーに展開します。 これらの設定を展開して、ユーザーが Wi-Fi 接続に簡単に接続できるようにします。  
+Usare profili Wi-Fi in System Center Configuration Manager per distribuire impostazioni di rete wireless agli utenti di dispositivi mobili nell'organizzazione. Distribuendo queste impostazioni si semplifica la procedura di connessione alla rete Wi-Fi per gli utenti.  
 
-Wi-Fi プロファイルを使用して、次のモバイル デバイスの種類を構成できます。  
+Con i profili Wi-Fi è possibile configurare i tipi di dispositivi mobili seguenti:  
 
--   Windows Phone 8.1 を実行するデバイス  
+-   Dispositivi che eseguono Windows Phone 8.1  
 
--   Windows 10 デスクトップまたは Windows 10 Mobile を実行するデバイス  
+-   Dispositivi che eseguono Windows 10 Desktop o Mobile  
 
--   iOS 5、iOS 6、iOS 7 および iOS 8 を実行する iPhone デバイス  
+-   Dispositivi IPhone che eseguono iOS 5, iOS 6, iOS 7 e iOS 8  
 
--   iOS 5、iOS 6、iOS 7 および iOS 8 を実行する iPad デバイス  
+-   Dispositivi iPad che eseguono iOS 5, iOS 6, iOS 7 e iOS 8  
 
--   バージョン 4 以降を実行する Android デバイス
+-   Dispositivi Android che eseguono la versione 4 o successiva
 
 > [!IMPORTANT]  
->  プロファイルを Android、iOS、Windows Phone、および登録されている Windows 8.1 以降の各デバイスに展開するには、これらのデバイスを Microsoft Intune に登録する必要があります。 デバイスの登録方法については、「[管理するデバイスを Intune に登録する](https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune)」を参照してください。  
+>  Per distribuire i profili nei dispositivi Android, iOS, Windows Phone e nei dispositivi registrati Windows 8.1 o versioni successive, tali dispositivi devono essere registrati in Microsoft Intune. Per informazioni su come registrare i dispositivi, vedere [Registrare i dispositivi per la gestione in Intune](https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune).  
 
-「[Wi-Fi プロファイルの作成](../../protect/deploy-use/create-wifi-profiles.md#create-a-wi-fi-profile)」では、Configuration Manager で Wi-Fi プロファイルを使用して、ワイヤレス ネットワーク設定をユーザーに展開する方法の概要を説明しています。
+La sezione [Creare un profilo Wi-Fi](../../protect/deploy-use/create-wifi-profiles.md#create-a-wi-fi-profile) contiene informazioni generali su come usare i profili Wi-Fi in Configuration Manager per distribuire le impostazioni di rete wireless agli utenti.
 
-Wi-Fi プロファイルの展開については、[Wi-Fi、VPN、電子メール、および証明書プロファイルの展開](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md)に関する記事を参照してください。
+Per informazioni sulla distribuzione dei profili Wi-Fi, vedere [Distribuire profili in System Center Configuration Manager](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md).

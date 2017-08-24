@@ -1,6 +1,6 @@
 ---
-title: "証明書プロファイルの概要 | Microsoft Docs"
-description: "System Center Configuration Manager の証明書プロファイルと Active Directory 証明書サービスの使用方法について説明します。"
+title: Introduzione ai profili certificato | Microsoft Docs
+description: Informazioni sul funzionamento dei profili certificato in System Center Configuration Manager con Servizi certificati Active Directory.
 ms.custom: na
 ms.date: 07/25/2017
 ms.prod: configuration-manager
@@ -17,54 +17,54 @@ manager: angrobe
 ms.openlocfilehash: 7b1c0e449f3d1ef42e279e8707df6bf1df163b3f
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="introduction-to-certificate-profiles-in-system-center-configuration-manager"></a>System Center Configuration Manager における証明書プロファイルの概要
+# <a name="introduction-to-certificate-profiles-in-system-center-configuration-manager"></a>Introduzione ai profili certificato in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
-
-
-証明書プロファイルは、ユーザーが会社のリソースにシームレスにアクセスできるように、Active Directory 証明書サービスとネットワーク デバイス登録サービスの役割を使用して、管理対象のデバイスの認証証明書をプロビジョニングします。 たとえば、証明書プロファイルを作成し、展開して、ユーザーが VPN 接続およびワイヤレス接続を開始するために必要な証明書を提供することができます。 
-
-証明書プロファイルでは、Wi-Fi ネットワークや VPN サーバーなどの会社のリソースにアクセスできるように、ユーザー デバイスを自動的に構成でき、証明書を手動でインストールしたり帯域外プロセスを使用する必要がありません。 エンタープライズ公開キー基盤 (PKI) でサポートされているさらに安全な設定を使用できるため、証明書プロファイルは会社のリソースをセキュリティで保護した状態で維持するためにも役立ちます。 たとえば、管理対象のデバイスに必要な証明書がプロビジョニングされるため、すべての Wi-Fi 接続と VPN 接続にサーバー認証を要求できます。   
-
-証明書プロファイルが提供する管理機能:  
-
--   iOS、Windows 8.1、Windows RT 8.1、Windows 10 Desktop および Mobile、Android を実行するデバイスにおける、エンタープライズ証明機関 (CA) の証明書の登録と更新。 これらの証明書を Wi-Fi 接続と VPN 接続に使用できます。  
-
--   サーバー認証が必要な場合に VPN 接続のデバイスと Wi-Fi 接続のデバイスで信頼関係のチェーンを構成するための、信頼されたルート CA 証明書と中間 CA 証明書の展開。  
-
--   インストールされている証明書を監視してレポートします。  
-
-**例:** すべての従業員が、企業内の複数の場所で Wi-Fi ホットスポットに接続できる必要があります。 Wi-Fi に接続するために必要な証明書を展開し、証明書を参照する Wi-Fi プロファイルを展開し、シームレスなユーザー接続を可能にします。  
-
-**例:** PKI を使用中の場合に、セキュリティを損なうことなく、ユーザーの個人のデバイスから会社のリソースへのアクセスを可能にする証明書をプロビジョニングする方法として、セキュリティで保護されたさらに柔軟なメソッドに移行する必要がある場合。 特定のデバイス プラットフォーム用にサポートされている設定とプロトコルを使用して、証明書プロファイルを構成します。 デバイスは、インターネットに接続された登録サーバーに対してこれらの証明書を自動的に要求することができます。 それから、デバイスが会社のリソースにアクセスできるように、これらの証明書を使用するように VPN プロファイルを構成します。  
-
-## <a name="types-of-certificate-profiles"></a>証明書プロファイルの種類  
- 次の 3 種類の証明書プロファイルがあります。  
-
--   **信頼された CA 証明書** - デバイスがサーバーを認証する必要があるときに信頼できる証明書チェーンを形成するために、信頼されたルート CA または中間 CA 証明書を展開することができます。  
-
--   **Simple Certificate Enrollment Protocol (SCEP)** - Windows Server 2012 R2 を実行するサーバーで、SCEP プロトコルおよびネットワーク デバイス登録サービスを使用して、デバイス用やユーザー用の証明書を要求することができます。
-
-    **Simple Certificate Enrollment Protocol (SCEP)** の証明書プロファイルを作成するには、最初に**信頼された証明機関証明書**の証明書プロファイルを作成します。
-
--   **Personal information Exchange (.pfx)** - デバイスまたはユーザーの .pfx (別名、PKCS #12) 証明書を要求できます。
-
-    要求を処理するために既存の証明書から[証明書をインポート](/sccm/mdm/deploy-use/import-pfx-certificate-profiles.md)するか、[証明機関を定義](/sccm/mdm/deploy-use/create-pfx-certificate-profiles.md)して、PFX の証明書プロファイルを作成できます。
-
-    リリース 1706 以降、**Personal Information Exchange (.pfx)** 証明書の証明機関として Microsoft または Entrust を使用できます。
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-## <a name="requirements-and-supported-platforms"></a>要件とサポートされるプラットフォーム  
-SCEP を使用する証明書プロファイルを展開するためには、中央管理サイトまたはプライマリ サイトで、サイト システム サーバーに証明書登録ポイントをインストールする必要があります。 また、Active Directory 証明書サービスの役割が配置され、証明書を必要とするデバイスからアクセス可能な NDES が動作している Windows Server 2012 R2 サーバーに、NDES 用のポリシー モジュール、つまり Configuration Manager ポリシー モジュールをインストールする必要があります。 Microsoft Intune によって登録されるデバイスでは、たとえば、スクリーン サブネット (境界ネットワークとも呼ばれます) などで、インターネットから NDES にアクセスできる必要があります。  
+I profili certificato vengono usati con Servizi certificati Active Directory e il ruolo Servizio registrazione dispositivi di rete per effettuare il provisioning dei certificati di autenticazione per i dispositivi gestiti, in modo che gli utenti possano accedere facilmente alle risorse aziendali. Ad esempio, è possibile creare e distribuire profili certificato per fornire i certificati di cui gli utenti hanno bisogno per avviare connessioni VPN e wireless. 
 
-PFX 証明書には、中央管理サイトまたはプライマリ サイトのサイト システム サーバー上にある証明書登録ポイントも必要です。  また、証明書の証明機関 (CA) を指定して、関連するアクセス資格情報を指定する必要もあります。  バージョン 1706 以降、証明機関として Microsoft または Entrust のいずれかを指定できます。  
+I profili certificato possono configurare automaticamente i dispositivi utente per accedere alle risorse aziendali, quali reti Wi-Fi e server VPN, senza dover installare manualmente i certificati o usare un processo fuori banda. I profili certificato possono inoltre mantenere sicure le risorse aziendali perché vengono usate più impostazioni di sicurezza supportate dall'infrastruttura a chiave pubblica (PKI) dell'azienda. Ad esempio, è possibile richiedere l'autenticazione server per tutte le connessioni Wi-Fi e VPN perché è stato effettuato il provisioning dei certificati richiesti nei dispositivi gestiti.   
 
-Configuration Manager で証明書を展開するためのネットワーク デバイス登録サービスとポリシー モジュールのしくみについては、「[ポリシー モジュールとネットワーク デバイス登録サービスの使用](http://go.microsoft.com/fwlink/p/?LinkId=328657)」を参照してください。  
+I profili di certificato forniscono le seguenti funzionalità di gestione:  
 
-Configuration Manager では、要件、デバイスの種類、オペレーティング システムにも応じて、異なる証明書ストアに証明書を展開することがサポートされています。 次のデバイスとオペレーティング システムがサポートされています。  
+-   Registrazione e rinnovo dei certificati di un autorità di certificazione aziendale (CA) per i dispositivi che eseguono iOS, Windows 8.1, Windows RT 8.1, Windows 10 Desktop e Mobile e Android. Questi certificati possono poi essere usati per le connessioni Wi-Fi e VPN.  
+
+-   Distribuzione di certificati CA radice attendibili e certificati CA intermedi per configurare una catena di certificati nei dispositivi per le connessioni VPN e Wi-Fi quando è richiesta l'autenticazione del server.  
+
+-   Monitoraggio e creazione di report per i certificati installati.  
+
+**Esempio:** Tutti i dipendenti devono potersi connettere agli hotspot Wi-Fi in più sedi aziendali. Distribuzione dei certificati necessari per la connessione Wi-Fi e distribuzione dei profili Wi-Fi che fanno riferimento al certificato per consentire agli utenti di connettersi senza problemi.  
+
+**Esempio:** Si dispone di una PKI e si desidera spostare a un metodo più flessibile e sicuro di provisioning di certificati che consente agli utenti accedere alle risorse aziendali dai loro dispositivi personali senza compromettere la protezione. Configurare i profili certificato con le impostazioni e i protocolli supportati per la piattaforma per dispositivi specifica. I dispositivi possono quindi richiedere automaticamente questi certificati a un server di registrazione con connessione Internet. Configurare quindi i profili VPN per usare questi certificati, in modo che il dispositivo possa accedere alle risorse aziendali.  
+
+## <a name="types-of-certificate-profiles"></a>Tipi di profili certificato  
+ Esistono tre tipi di profilo certificato:  
+
+-   **Certificato CA attendibile**: consente di distribuire un certificato della CA radice attendibile o un certificato CA intermedio in modo da formare una catena di certificati quando il dispositivo deve eseguire l'autenticazione a un server.  
+
+-   **Simple Certificate Enrollment Protocol (SCEP)**: consente di richiedere un certificato per un dispositivo o un utente usando il protocollo SCEP e il servizio Registrazione dispositivi di rete in un server che esegue Windows Server 2012 R2.
+
+    Per creare un profilo certificato di tipo **Simple Certificate Enrollment Protocol (SCEP)** creare prima un profilo certificato **Certificato CA attendibile**.
+
+-   **Personal Information Exchange (PFX)**: consente di richiedere un certificato PFX (noto anche come PKCS #12) per un dispositivo o un utente.
+
+    Per l'elaborazione delle richieste, è possibile creare profili certificato PFX tramite [importazione delle credenziali](/sccm/mdm/deploy-use/import-pfx-certificate-profiles.md) da certificati esistenti o tramite [definizione di una CA](/sccm/mdm/deploy-use/create-pfx-certificate-profiles.md).
+
+    A partire dalla versione 1706, è possibile usare Microsoft o Entrust come CA per i certificati di **scambio informazioni personali (PFX, Personal Information Exchange)**.
+
+
+## <a name="requirements-and-supported-platforms"></a>Requisiti e piattaforme supportate  
+Per distribuire i profili certificato che usano SCEP, è necessario installare il punto di registrazione del certificato in un server del sistema del sito nel sito di amministrazione centrale o in un sito primario. È anche necessario installare un modulo criteri per il servizio Registrazione dispositivi di rete (NDES), il Modulo criteri di Configuration Manager, in un server che esegue Windows Server 2012 R2 con il ruolo Servizi certificati Active Directory e NDES attivo e accessibile per i dispositivi che richiedono i certificati. Per i dispositivi registrati da Microsoft Intune, NDES deve essere accessibile da Internet, ad esempio in una rete perimetrale.  
+
+I certificati PFX richiedono anche un punto di registrazione del certificato in un server del sistema del sito di amministrazione centrale o in un sito primario.  È anche necessario specificare la CA per il certificato e specificare le credenziali di accesso pertinenti.  A partire dalla versione 1706, è possibile specificare Microsoft o Entrust come CA.  
+
+Per altre informazioni sul modo in cui il servizio Registrazione dispositivi di rete supporta moduli criteri per consentire la distribuzione di certificati da parte di Configuration Manager, vedere [Uso di un modulo criteri con il servizio Registrazione dispositivi di rete](http://go.microsoft.com/fwlink/p/?LinkId=328657).  
+
+Configuration Manager supporta la distribuzione dei certificati in più archivi certificati, a seconda dei requisiti, del tipo di dispositivo e del sistema operativo. Sono supportati i dispositivi e i sistemi operativi seguenti:  
 
 -   Windows RT 8.1  
 
@@ -72,36 +72,36 @@ Configuration Manager では、要件、デバイスの種類、オペレーテ�
 
 -   Windows Phone 8.1  
 
--   Windows 10 Desktop および Mobile  
+-   Windows 10 Desktop e Mobile  
 
 -   iOS  
 
 -   Android  
 
 > [!IMPORTANT]  
->  プロファイルを Android、iOS、Windows Phone、および登録されている Windows 8.1 以降の各デバイスに展開するには、これらのデバイスを [Microsoft Intune に登録する](https://technet.microsoft.com/en-us/library/dn646962.aspx)必要があります。   
+>  Per distribuire i profili nei dispositivi Android, iOS, Windows Phone e nei dispositivi registrati Windows 8.1 o versioni successive, tali dispositivi devono essere [registrati in Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).   
 
-System Center Configuration Manager の典型的なシナリオとして、接続に EAP-TLS、EAP-TTLS、および PEAP の認証プロトコル、IKEv2、L2TP/IPsec、および Cisco IPsec VPN のトンネリング プロトコルを使用する場合に、Wi-Fi サーバーと VPN サーバーを認証するために、信頼されるルート CA 証明書をインストールするというものがあります。  
+Uno scenario tipico per System Center Configuration Manager è di installare i certificati CA radice trusted per autenticare i server Wi-Fi e VPN quando la connessione usa i protocolli di autenticazione EAP-TLS, EAP-TTLS e PEAP e i protocolli di tunneling VPN IKEv2, L2TP/IPsec e Cisco IPsec.  
 
-デバイスが SCEP 証明書プロファイルを使用して証明書を要求するためには、そのデバイスにエンタープライズ ルート CA 証明書がインストールされていなければなりません。  
+È necessario garantire che un certificato CA radice aziendale sia installato nel dispositivo prima che il dispositivo possa richiedere i certificati usando un profilo certificato SCEP.  
 
-さまざまな環境や接続要件に合わせてカスタマイズされた証明書を要求するように、SCEP 証明書プロファイルにさまざまな設定を指定できます。 **証明書プロファイルの作成ウィザード** には、登録パラメーター用のページが 2 つあります。 1 つ目の [ **SCEP 登録** ] には、登録要求の設定と証明書のインストール先の設定が含まれています。 もう 1 つの [ **証明書のプロパティ** ] は、要求する証明書自体を説明するページです。  
+È possibile specificare una serie di impostazioni in un profilo certificato SCEP per richiedere certificati personalizzati per diversi ambienti o i requisiti di connettività. La **Creazione guidata profilo certificato** contiene due pagine per i parametri di registrazione. Il primo, **Registrazione SCEP**, contiene le impostazioni per la richiesta di registrazione e la posizione in cui installare il certificato. Il secondo, **Proprietà certificato**, descrive il certificato richiesto stesso.  
 
-## <a name="deploying-certificate-profiles"></a>証明書プロファイルの展開  
- 証明書プロファイルを展開すると、プロファイル内の証明書ファイルがクライアント デバイスにインストールされます。 SCEP パラメーターも展開されて、SCEP 要求がクライアント デバイス上で処理されます。 証明書プロファイルをユーザー コレクションまたはデバイス コレクションに展開して、各証明書の保存先のストアを指定できます。 適用規則によって、証明書をデバイスにインストールできるかどうかが決まります。 証明書プロファイルをユーザー コレクションに展開する場合は、ユーザーとデバイスのアフィニティによって、ユーザーのどのデバイスに証明書をインストールするのかが決まります。 ユーザー証明書が含まれた証明書プロファイルをデバイス コレクションに展開すると、既定では、証明書はユーザーの各プライマリ デバイスにインストールされます。 この動作を変更して、**証明書プロファイルの作成ウィザード** の **[SCEP 登録]** のページにあるユーザーの任意のデバイス上に証明書をインストールできます。 また、デバイスがワークグループ コンピューターの場合、デバイスにユーザー証明書は展開されません。  
+## <a name="deploying-certificate-profiles"></a>Distribuzione di profili certificato  
+ Quando si distribuisce un profilo certificato, i file certificato contenuti nel profilo vengono installati nei dispositivi client. Verranno distribuiti anche tutti i parametri SCEP e le richieste SCEP verranno elaborate nel dispositivo client. È possibile distribuire i profili certificato nelle raccolte utenti o dispositivi e specificare l'archivio di destinazione per ogni certificato. Le regole di applicabilità determinano se i certificati possono essere installati nel dispositivo. Quando i profili certificato vengono distribuiti nelle raccolte utenti, l'affinità dispositivo utente stabilisce quale dei dispositivi degli utenti installerà i certificati. Quando i profili certificato che contengono i certificati utente vengono distribuiti nelle raccolte dispositivi, per impostazione predefinita i certificati verranno installati in tutti i dispositivi primari degli utenti. Nella pagina **Registrazione SCEP** della **Creazione guidata profilo certificato** è possibile modificare questo comportamento per installare il certificato in tutti i dispositivi degli utenti. Inoltre, i certificati utente non verranno distribuiti nei dispositivi se sono computer del gruppo di lavoro.  
 
-## <a name="monitoring-certificate-profiles"></a>証明書プロファイルの監視  
+## <a name="monitoring-certificate-profiles"></a>Monitoraggio dei profili certificato  
 
-コンプライアンスの結果やレポートを表示し、証明書プロファイルの展開を監視できます。 これらの手法の説明は、「[証明書プロファイルを監視する方法](/sccm/protect/deploy-use/monitor-certificate-profiles)」にあります。
+È possibile monitorare le distribuzioni dei profili certificato visualizzando i risultati o i report di conformità. Questi approcci sono descritti in [Come monitorare i profili certificato](/sccm/protect/deploy-use/monitor-certificate-profiles).
 
 
-## <a name="automatic-revocation-of-certificates"></a>証明書の自動失効  
- System Center Configuration Manager で証明書プロファイルを使用して展開したユーザー証明書とデバイス証明書は、次のような場合に自動的に失効します。  
+## <a name="automatic-revocation-of-certificates"></a>Revoca automatica dei certificati  
+ System Center Configuration Manager revoca automaticamente i certificati utente e computer che sono stati distribuiti usando profili certificato nelle seguenti circostanze:  
 
--   デバイスが System Center Configuration Manager の管理下のインベントリから削除された場合。  
+-   Il dispositivo è stato ritirato dalla gestione di System Center Configuration Manager.  
 
--   デバイスの特定のコンテンツがワイプされた場合。  
+-   Il dispositivo è stato cancellato in modo selettivo.  
 
--   デバイスが System Center Configuration Manager の階層からブロックされた場合。  
+-   Il dispositivo è stato bloccato dalla gerarchia di System Center Configuration Manager.  
 
- 証明書を失効させるために、サイト サーバーが、証明書の発行元の証明機関に失効コマンドを送信します。 この失効の理由は、「 **運用停止** 」です。  
+ Per revocare i certificati, il server del sito invia un comando di revoca all'autorità di certificazione emittente. Il motivo della revoca è **Termine operazione**.  

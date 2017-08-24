@@ -1,6 +1,6 @@
 ---
-title: "高可用性 | Microsoft Docs"
-description: "利用可能なサービスを高いレベルで維持するためのオプションを利用し、System Center Configuration Manager を展開する方法について説明します。"
+title: "Disponibilità elevata | Microsoft Docs"
+description: "Informazioni su come distribuire System Center Configuration Manager tramite opzioni che consentono di mantenere un livello elevato di disponibilità dei servizi."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,247 +17,247 @@ manager: angrobe
 ms.openlocfilehash: d3e9afb90cdc85bc7299626b642c52be659e3bdf
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="high-availability-options-for-system-center-configuration-manager"></a>System Center Configuration Manager の高可用性オプション
+# <a name="high-availability-options-for-system-center-configuration-manager"></a>Opzioni di disponibilità elevata per System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
-
-
-
-利用可能なサービスを高いレベルで維持するためのオプションを利用し、System Center Configuration Manager を展開できます。   
-
-高可用性をサポートするオプション:   
-
--   重要なサービスをクライアントに提供するサイト システム サーバーの複数のインスタンスをサイトがサポートする。  
-
--   中央管理サイトおよびプライマリ サイトが、サイト データベースのバックアップをサポートする。 サイト データベースにサイトおよびクライアントのすべての構成が含まれていて、中央管理サイトがある階層内のサイト間で共有される。  
-
--   組み込みのサイト回復オプションを使用すると、サーバーのダウンタイムを減らすことができ、中央管理サイトを持つ階層の場合に回復が簡略化される詳細設定オプションがある。  
-
--   クライアントは、管理者が操作しなくても、よくある問題を自動的に修復できる。  
-
--   サイトが最新のデータを送信しなかったクライアントに関するアラートを生成し、管理者に潜在的な問題を警告する。  
-
--   Configuration Manager には、サーバーまたはクライアントの操作が問題になる前に、問題および傾向を識別できるいくつかの組み込みレポートがある。  
-
- Configuration Manager は、リアルタイムでサービスを行わないため、データの処理の多少の遅延は、通常、予期されることです。 したがって、サービスが一時的に中断されている場合に、重大な問題が発生している可能性はかなり低くなります。 高可用性を考慮してサイトおよび階層を構成すると、ダウンタイムが最小化され、操作の独立性が維持されて、高いレベルのサービスが提供されます。  
-
- たとえば、Configuration Manager クライアントは、通常、設定されている操作のスケジュールと構成、およびサイトにデータを送信する処理のスケジュールによって自律的に動作します。  
-
--   クライアントがサイトに接続できない場合は、サイトに接続できるまで、送信するデータをキャッシュします。  
-
--   サイトに接続できないクライアントは、サイトに接続して新しいポリシーを取得できるようになるまで、最後に認識したスケジュールおよびキャッシュされた情報 (実行またはインストールする必要がある、以前にダウンロードされたアプリケーションなど) を使用して動作します。  
-
--   サイトは、サイト システムおよびクライアントのステータスが定期的に更新されることを監視し、それらが登録されない場合にアラートを生成します。  
-
--   組み込みレポートを使用すると、実行中の操作、および過去の操作と傾向を把握できます。 Configuration Manager はまた、実行中の操作のほぼリアルタイムの情報を提供する、状態に基づいたメッセージをサポートしています。  
-
-  このトピックの情報は、次の記事の情報とともに使用します。
--   [推奨ハードウェア](../../core/plan-design/configs/recommended-hardware.md)
--   [サイト システム サーバーのサポートされるオペレーティング システム](../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md)  
-
--   [サイトとサイト システムの前提条件](../../core/plan-design/configs/site-and-site-system-prerequisites.md)
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-##  <a name="bkmk_snh"></a> サイトと階層の高可用性  
- **SQL Server クラスターを使用したサイト データベースのホスティング:**  
 
- 中央管理サイトまたはプライマリ サイトのデータベースに SQL Server クラスターを使用する場合は、SQL Server に組み込まれているフェールオーバーのサポートを使用します。  
+È possibile distribuire System Center Configuration Manager tramite opzioni che consentono di mantenere un elevato livello di disponibilità dei servizi.   
 
- セカンダリ サイトは、SQL Server クラスターを使用できず、サイト データベースのバックアップまたは復元はサポートされません。 セカンダリ サイトを回復するには、親プライマリ サイトからそのセカンダリ サイトを再インストールします。  
+Opzioni che supportano una disponibilità elevata:   
 
- **SQL Server AlwaysOn 可用性グループを使用したサイト データベースのホスティング:**  
+-   I siti supportano più istanze del server del sistema del sito che forniscono importanti servizi ai client.  
 
- バージョン 1602 以降では、高可用性と障害復旧ソリューションとして、SQL Server AlwaysOn 可用性グループを使用して、プライマリ サイトと中央管理サイトでサイト データベースをホストできます。 詳細については、「[System Center Configuration Manager 用の高可用性サイト データベースの SQL Server AlwaysOn](../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md)」を参照してください。  
+-   I siti di amministrazione centrale e primari supportano il backup del database del sito. Il database del sito contiene tutte le configurazioni per siti e client e viene condiviso tra i siti di una gerarchia che contengono un sito di amministrazione centrale.  
 
- **中央管理サイトおよび 1 つまたは複数の子プライマリ サイトを持つサイトの階層を展開する:**  
+-   Le opzioni di ripristino del sito incorporate possono ridurre il tempo di inattività del server e includere opzioni avanzate che semplificano il ripristino quando si dispone di una gerarchia con un sito di amministrazione centrale.  
 
- この構成では、サイトが冗長なネットワークのセグメントを管理する場合に、フォールト トレランスを提供できます。 また、この構成では、別のサイトで利用できる共有データベースの情報を使用して、回復するサイトのサイト データベースを再構築する追加の回復オプションを利用できます。 このオプションを使用すると、エラーが発生したサイト データベースの失敗したバックアップまたは利用できないバックアップの代わりにすることができます。  
+-   I client possono correggere automaticamente problemi tipici senza intervento amministrativo.  
 
- **中央管理サイトおよびプライマリ サイトで定期的にバックアップを作成する:**  
+-   I siti generano avvisi relativi ai client che non riescono a inviare dati recenti, che informano gli amministratori di potenziali problemi.  
 
- 定期的にサイトのバックアップを作成してテストすると、サイトを最小の時間で回復することを経験し、サイトを回復するために必要なデータがあることを確認できます。  
+-   Configuration Manager include diversi report predefiniti che consentono di identificare i problemi e le tendenze prima che abbiano un impatto negativo sul funzionamento dei server o dei client.  
 
- **複数のサイト システムの役割のインスタンスのインストール:**  
+ Configuration Manager non offre un servizio in tempo reale e occorre aspettarsi una certa latenza dei dati. Pertanto, è insolito che la maggior parte degli scenari che comportano un'interruzione temporanea del servizio costituiscano un problema critico. Quando si sono configurati i siti e le gerarchia con un'alta disponibilità, il tempo di inattività può essere ridotto al minimo, l'autonomia di funzionamento mantenuta e un alto livello di servizio fornito.  
 
- 重要なサイト システムの役割のインスタンスを複数インストールすると (管理ポイント、配布ポイントなど) は、特定のサイト システム サーバーがオフラインの場合にクライアントが使用する冗長な接続ポイントを用意できます。  
+ Ad esempio, i client di Configuration Manager in genere funzionano in maniera autonoma tramite pianificazioni e configurazioni note delle operazioni, nonché tramite pianificazioni per l'invio di dati al sito per l'elaborazione.  
 
- **サイトでの複数の SMS プロバイダーのインスタンスのインストール:** SMS プロバイダーは、1 つ以上の Configuration Manager コンソールの管理のための接続ポイントとなります。 複数の SMS プロバイダーをインストールすると、サイトおよび階層を管理するための冗長な接続ポイントを提供できます。  
+-   Quando i client non riescono a contattare il sito, memorizzano nella cache i dati e li inviano solo quando riescono a contattare il sito.  
 
-##  <a name="bkmk_ssr"></a> サイト システムの役割の高可用性  
- 管理者は、各サイトにサイト システムの役割を展開して、そのサイトでクライアントが使用するサービスを提供します。 サイト データベースには、サイトおよびすべてのクライアントの構成情報が含まれています。 1 つまたは複数の利用可能なオプションを使用して、サイト データベースの高可用性を向上させたり、必要な場合にサイトおよびサイト データベースの回復を行なったりします。  
+-   I client che non riescono a contattare il sito continuano a funzionare usando le ultime pianificazioni conosciute e le informazioni memorizzate nella cache, ad esempio un'applicazione precedentemente scaricata che devono eseguire o installare, finché non riescono a contattare il sito e a ricevere nuovi criteri.  
 
- **重要なサイト システムの役割の冗長化:**  
+-   Il sito monitora i sistemi e i client del sito per aggiornamenti di stato periodici e può generare avvisi quando questi non riescono a effettuare la registrazione.  
 
--   アプリケーション カタログ Web サービス ポイント  
+-   I report incorporati forniscono informazioni sulle operazioni in corso, nonché su operazioni storiche e tendenze. Configuration Manager supporta anche messaggi basati sullo stato che forniscono informazioni quasi in tempo reale sulle operazioni in corso.  
 
--   アプリケーション カタログ Web サイト ポイント  
+  Usare le informazioni di questo argomento con quelle contenute negli articoli relativi a:
+-   [Hardware consigliato](../../core/plan-design/configs/recommended-hardware.md)
+-   [Sistemi operativi supportati per i server del sistema del sito](../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md)  
 
--   配布ポイント  
-
--   管理ポイント  
-
--   ソフトウェアの更新ポイント  
-
--   状態移行ポイント  
-
- レポート サービス ポイントの役割のインスタンスを複数インストールすると、サイトおよびクライアントでのレポート処理を冗長にできます。
-
- PowerShell を使用してソフトウェア更新ポイントのサイト システムの役割を Windows ネットワーク負荷分散 (NLB) クラスターにインストールすると、フェールオーバーのサポートを提供できます。  
+-   [Prerequisiti del sito e del sistema del sito](../../core/plan-design/configs/site-and-site-system-prerequisites.md)
 
 
- **組み込みのサイト バックアップ:**  
+##  <a name="bkmk_snh"></a> Disponibilità elevata per siti e gerarchie  
+ **Usare un cluster SQL Server per ospitare il database del sito:**  
 
- Configuration Manager には、組み込みのバックアップ タスクが含まれており、定期的なスケジュールでサイトおよび重要な情報をバックアップするために使用できます。 また、Configuration Manager セットアップ ウィザードは、サイトを稼動状態に復元するためのサイトの復元アクションをサポートしています。  
+ Quando si utilizza un cluster SQL Server per il database su un sito di amministrazione centrale o primario, si utilizza il supporto di failover integrato in SQL Server.  
 
- **Active Directory Domain Services および DNS への発行:**  
+ I siti secondari non possono utilizzare un cluster SQL Server e non supportano il backup o ripristino del database del sito. Ripristinare un sito secondario reinstallando il sito secondario dal relativo sito primario padre.  
 
- 各サイトを構成して、サイト システム サーバーおよびサービスに関するデータを Active Directory Domain Services および DNS に発行できます。 これにより、クライアントは、ネットワーク上の最もアクセスしやすいサーバーを識別したり、重要なサービスを提供する新しいサイト システム サーバー (管理ポイントなど) が利用可能になったときにそれを識別したりできます。  
+ **Usare un gruppo di disponibilità SQL Server AlwaysOn per ospitare il database del sito:**  
 
- **SMS プロバイダーおよび Configuration Manager コンソール:**  
+ A partire dalla versione 1602, è possibile usare gruppi di disponibilità SQL Server AlwaysOn per ospitare il database del sito nei siti primari e nel sito di amministrazione centrale come soluzione a disponibilità elevata e di ripristino di emergenza. Per altre informazioni, vedere [SQL Server AlwaysOn for a highly available site database for System Center Configuration Manager](../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md) (SQL Server AlwaysOn per database del sito a disponibilità elevata per System Center Configuration Manager).  
 
- Configuration Manager は、Configuration Manager コンソールが複数のアクセス ポイントを使用できるように、複数の SMS プロバイダーをそれぞれ別のコンピューターにインストールすることをサポートしています。 これにより、1 つの SMS プロバイダーのコンピューターがオフラインであっても、Configuration Manager のサイトおよびクライアントを表示および再構成する機能を維持できます。  
+ **Distribuire una gerarchia di siti con un sito di amministrazione centrale e uno o più siti primari figlio:**  
 
- Configuration Manager コンソールをサイトに接続すると、そのサイトの SMS プロバイダーのインスタンスに接続されます。 SMS プロバイダーのインスタンスはランダムに選択されます。 選択した SMS プロバイダーが利用できない場合は、次のオプションがあります。  
+ Questa configurazione può fornire una tolleranza d'errore quando i siti gestiscono segmenti di rete con sovrapposizione. Inoltre, questa configurazione offre un'opzione di ripristino aggiuntiva per utilizzare le informazioni nel database condiviso disponibile su un altro sito per ricreare il database del sito sul sito ripristinato. È possibile usare questa opzione per sostituire un backup non riuscito o non disponibile del database di un sito non funzionante.  
 
--   コンソールをサイトに再接続します。 新しい各接続要求は、SMS プロバイダーのインスタンスにランダムに割り当てられるため、新しい接続が利用可能なインスタンスに割り当てられる可能性があります。  
+ **Creare backup regolari in siti di amministrazione centrale e primari:**  
 
--   コンソールを別の Configuration Manager サイトに接続して、その接続から構成を管理します。 この場合、構成の変更が多少遅れます (5 分以内)。 サイトの SMS プロバイダーがオンラインに戻ったら、Configuration Manager コンソールを管理するサイトに直接再接続します。  
+ Quando si crea e testa il backup di un sito regolare, è possibile assicurarsi di avere i dati necessari per il ripristino del sito e l'esperienza per ripristinare un sito in una quantità minima di tempo.  
 
- 管理ユーザーが使用できるように、Configuration Manager コンソールを複数のコンピューターにインストールできます。 各 SMS プロバイダーは、複数の Configuration Manager コンソールからの接続をサポートしています。  
+ **Installare più istanze dei ruoli del sistema del sito:**  
 
- **管理ポイント:**  
+ Quando si installano più istanze di ruoli del sistema del sito critici come il punto di gestione e di distribuzione, si forniscono punti di contatto ridondanti per i client nel caso in cui un server del sistema del sito specifico non sia in linea.  
 
- 各プライマリ サイトに複数の管理ポイントをインストールして、それらのサイトが Active Directory インフラストラクチャおよび DNS にサイト データを発行できるようにします。  
+ **Installare più istanze del provider SMS in un sito:** il provider SMS fornisce il punto di contatto amministrativo per una o più console di Configuration Manager. Quando si installano più provider SMS, è possibile fornire ridondanza per i punti di contatto per l'amministrazione del sito e della gerarchia.  
 
- 複数の管理ポイントを使用すると、複数のクライアントによって使用される各管理ポイントを負荷分散できます。 また、管理ポイントに 1 つまたは複数のデータベースのレプリカをインストールして、管理ポイントの CPU に負荷がかかる操作を減らしたり、この重要なサイト システムの役割の利用可能性を向上させることができます。  
+##  <a name="bkmk_ssr"></a> Disponibilità elevata per ruoli del sistema del sito  
+ In ogni sito, si distribuiscono i ruoli del sistema del sito per fornire i servizi che si desidera che i client utilizzino in tale sito. Il database del sito contiene le informazioni di configurazione per il sito e per tutti i client. Utilizzare una o più delle opzioni disponibili per fornire elevata disponibilità al database del sito, nonché il ripristino del sito e del database del sito se necessario.  
 
- セカンダリ サイトに 1 つの管理ポイントのみをインストールするには、セカンダリ サイト サーバーに配置する必要があります。セカンダリ サイトの管理ポイントは、高可用構成を持つと見なされません。  
+ **Ridondanza per ruoli del sistema del sito importanti:**  
+
+-   Punto per servizi Web del Catalogo applicazioni  
+
+-   Punto per siti Web del Catalogo applicazioni  
+
+-   Punto di distribuzione  
+
+-   Punto di gestione  
+
+-   Punto di aggiornamento software  
+
+-   Punto di migrazione stato  
+
+ È possibile installare più istanze del ruolo del punto di Reporting Services per garantire ridondanza per la creazione di report su siti e client.
+
+ È possibile usare PowerShell per installare il ruolo del sistema del sito del punto di aggiornamento software in un cluster Bilanciamento del carico di rete Windows e offrire il supporto per il failover  
+
+
+ **Backup del sito incorporato:**  
+
+ Configuration Manager include un'attività di backup predefinita che permette di eseguire il backup del sito e delle informazioni critiche in base a una pianificazione regolare. Inoltre, l'Installazione guidata di Configuration Manager supporta azioni di ripristino del sito per ripristinare il normale funzionamento del sito.  
+
+ **Pubblicazione in Active Directory Domain Services e DNS:**  
+
+ È possibile configurare ciascun sito per pubblicare dati sui server del sistema del sito e servizi nei Servizi di dominio Active Directory e in DNS. Ciò consente ai client di identificare il server più accessibile in rete e di individuare quando sono disponibili nuovi server del sistema del sito che possono fornire servizi importanti, come i punti gestione.  
+
+ **Provider SMS e console di Configuration Manager:**  
+
+ Configuration Manager supporta l'installazione di più provider SMS, ognuno in un computer separato, per garantire più punti di accesso per la console di Configuration Manager. In questo modo, se un computer del provider SMS è offline, è possibile mantenere la capacità di visualizzare e riconfigurare i siti e i client di Configuration Manager.  
+
+ Quando una console di Configuration Manager si connette a un sito, si connette a un'istanza del provider SMS nel sito. L'istanza del provider SMS viene selezionata in modo non deterministico. Se il provider SMS selezionato non è disponibile, è possibile scegliere tra le opzioni seguenti:  
+
+-   Riconnettere la console al sito. A ogni nuova richiesta di connessione viene assegnata in modo non deterministico un'istanza del provider SMS ed è possibile che alla nuova connessione venga assegnata un'istanza disponibile.  
+
+-   Connettere la console a un sito di Configuration Manager diverso e gestire la configurazione da questa connessione. Questo introduce un leggero ritardo di modifiche alla configurazione di non più di pochi minuti. Quando il provider SMS per il sito è online, è possibile riconnettere la console di Configuration Manager direttamente al sito che si vuole gestire.  
+
+ È possibile installare la console di Configuration Manager in più computer per permetterne l'uso agli utenti amministratori. Ogni provider SMS supporta le connessioni da più console di Configuration Manager.  
+
+ **Punto di gestione:**  
+
+ Installare più punti di gestione su ciascun sito primario e abilitare i siti alla pubblicazione dei dati del sito sull'infrastruttura di Active Directory e in DNS.  
+
+ Più punti di gestione consentono di bilanciare il carico dell'utilizzo di un unico punto di gestione da parte di più client. Inoltre, è possibile installare uno o più repliche di database affinché i punti di gestione diminuiscano le operazioni con utilizzo elevato di CPU del punto di gestione e aumentino la disponibilità di questo ruolo del sistema del sito critico.  
+
+ Poiché è possibile installare solo un punto di gestione in un sito secondario, che si deve trovare sul server del sito secondario, si considera che i punti di gestione sui siti secondari non abbiano una configurazione a elevata disponibilità.  
 
 > [!NOTE]  
->  オンプレミスのモバイル デバイス管理で管理されているデバイスは、プライマリ サイトの 1 つだけの管理ポイントに接続します。 管理ポイントは、登録時に Configuration Manager によってモバイル デバイスに割り当てられ、その後は変更されません。 複数の管理ポイントをインストールして、モバイル デバイスに対して複数を有効にすると、管理ポイントはモバイル デバイスのクライアントにランダムに割り当てられます。  
+>  I dispositivi mobili gestiti in locale si connettono solo a un punto di gestione nel sito primario. Il punto di gestione viene assegnato da Configuration Manager al dispositivo mobile durante la registrazione e in seguito non cambia. Quando si installano più punti di gestione e se ne abilita più di uno per i dispositivi mobili, il punto di gestione assegnato a un client del dispositivo mobile non è deterministico.  
 >   
->  モバイル デバイス クライアントが使用している管理ポイントが利用できなくなった場合は、この管理ポイントの問題を解決するか、モバイル デバイスに対して有効にされている稼働状態の管理ポイントに割り当てることができるように、モバイル デバイスをワイプして再登録する必要があります。  
+>  Se il punto di gestione usato da un client del dispositivo mobile non è più disponibile, occorre risolvere il problema del punto di gestione oppure cancellare il dispositivo mobile e registrarlo di nuovo in modo che possa essere assegnato a un punto di gestione operativo abilitato per i dispositivi mobili.  
 
- **配布ポイント:**  
+ **Punto di distribuzione:**  
 
- 複数の配布ポイントをインストールし、コンテンツを複数の配布ポイントに展開します。 コンテンツの場所の境界グループが重なるように構成すると、各サブネット上のクライアントが複数の配布ポイントから展開にアクセスできるようになります。 さらに、コンテンツの代替の場所として 1 つまたは複数の配布ポイントを構成することを検討してください。  
+ Installare più punti di distribuzione e distribuire il contenuto in più punti di distribuzione. È possibile configurare gruppi di limiti sovrapposti per percorso di contenuto per assicurarsi che i client su ciascuna subnet possano accedere a una distribuzione da due o più punti di distribuzione. Infine, è possibile configurare uno o più punti di distribuzione come posizioni di fallback per il contenuto.  
 
- コンテンツのフォールバック場所に関する一般的な情報については、「[System Center Configuration Manager のコンテンツ インフラストラクチャとコンテンツの管理](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)」を参照してください。  
+ Per altre informazioni sui percorsi di fallback, vedere [Manage content and content infrastructure for System Center Configuration Manager](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md) (Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager).  
 
- **アプリケーション カタログ Web サービス ポイントとアプリケーション カタログ Web サイト ポイント:**  
+ **Punto per servizi Web del Catalogo applicazioni e punto per siti Web del Catalogo applicazioni:**  
 
- 各サイト システムの役割のインスタンスは複数インストールできます。最適なパフォーマンスにするには、それぞれ 1 つを同じサイト システムのコンピューターに展開します。  
+ È possibile installare più istanze di ogni ruolo di sistema del sito e, per ottenere migliori prestazioni, distribuire un'istanza per ogni ruolo nello stesso computer di sistema del sito.  
 
- 各アプリケーション カタログ サイト システムの役割は、階層内のこのサイト サーバーの役割の場所に関係なく、そのサイト システムの役割の他のインスタンスと同じ情報を提供します。 そのため、クライアントがアプリケーション カタログを要求するときに、[既定のアプリケーション カタログ Web サイト ポイント] デバイス クライアント設定が [自動的に検出] に構成してある場合、クライアントは使用可能なインスタンスに振り向けられます。 クライアントの現在のネットワークの場所に基づき、ローカルのアプリケーション カタログ サイト システム サーバーに優先権が与えられます。  
+ Ogni ruolo di sistema del sito del Catalogo applicazioni fornisce le stesse informazioni rispetto alle altre istanze di tale ruolo, indipendentemente dalla posizione del ruolo di sistema del sito nella gerarchia. Pertanto, quando un client richiede il Catalogo applicazioni e l'impostazione Punto per siti Web del Catalogo applicazioni predefinito del client del dispositivo è stata impostata su Rileva automaticamente, sarà possibile indirizzare il client a un'istanza disponibile usando preferibilmente i server di sistema del sito locali del Catalogo applicazioni, in base alla posizione di rete corrente del client.  
 
- クライアント設定および自動検出の動作のしくみの詳細については、「[System Center Configuration Manager のクライアント設定について](../../core/clients/deploy/about-client-settings.md)」トピックの「[コンピューター エージェント](../../core/clients/deploy/about-client-settings.md#computer-agent)」セクションを参照してください。  
+ Per altre informazioni su questa impostazione del client e sul funzionamento del rilevamento automatico, vedere la sezione [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent) (Agente computer) nell'argomento [About Client Settings in Configuration Manager](../../core/clients/deploy/about-client-settings.md) (Informazioni sulle impostazioni client in Configuration Manager).  
 
-##  <a name="bkmk_client"></a> クライアントの高可用性  
- **クライアントの操作が独立している:**  
+##  <a name="bkmk_client"></a> Disponibilità elevata per i client  
+ **Le operazioni dei client sono autonome:**  
 
- Configuration Manager クライアントの独立性を実現する機能には次のものがあります。  
+ L'autonomia del client di Configuration Manager include quanto segue:  
 
--   クライアントは特定のサイト システム サーバーとの持続的な接続を要求しません。 クライアントは、認識されている構成を使用して、スケジュールに事前に構成されているアクションを実行します。  
+-   I client non richiedono un contatto continuo con qualsiasi server del sistema del sito specifico. Utilizzano configurazioni note per eseguire azioni preconfigurate in base a una pianificazione.  
 
--   クライアントは、利用可能なサイト システムの役割の任意のインスタンスを使用してサービスを受けることができ、利用可能なサーバーが見つかるまで既知のサーバーへの接続を試みます。  
+-   I client possono utilizzare qualsiasi istanza disponibile di un ruolo del sistema del sito che fornisca servizi ai client ed esse tenteranno di contattare i server conosciuti fino a quando non viene individuato un server disponibile.  
 
--   クライアントは、サイト システム サーバーに直接接続していなくても、インベントリ、ソフトウェアの展開、および同様のスケジュールされたアクションを実行できます。  
+-   I client possono eseguire inventari, distribuzioni software e analoghe azioni pianificate indipendenti dal contatto diretto con i server del sistema del sito.  
 
--   フォールバック ステータス ポイントを使用するように構成されているクライアントは、管理ポイントと通信できない場合、フォールバック ステータス ポイントに詳細を送信できます。  
+-   I client configurati per l'utilizzo di un punto di stato di fallback possono inviare dettagli al punto di stato di fallback quando non riescono a comunicare con un punto di gestione.  
 
- **クライアントがそれ自体を修復できる:**  
+ **I client sono in grado di ripristinarsi da soli:**  
 
- クライアントは、管理者が直接に介入しなくても、ほとんどの一般的な問題を自動的に修復します。  
+ I client correggono automaticamente i problemi più comuni senza un intervento amministrativo diretto:  
 
--   クライアントは、定期的にそれ自体のステータスを自己評価し、修復手順および修復用のソース ファイルのローカル キャッシュを使用して、よくある問題を修復するための対応を行います。  
+-   periodicamente, i client valutano autonomamente il proprio stato e intraprendono azioni per correggere problemi comuni utilizzando una cache locale di passaggi correttivi e file di origine per i ripristini.  
 
--   クライアントがサイトへのステータス情報の送信に失敗すると、サイトがアラートを生成することがあります。 これらのアラートを受け取った管理ユーザーは、クライアントの通常の動作を復元するための対応を直ちに行なうことができます。  
+-   Quando un client non riesce a inviare informazioni al proprio sito, il sito può generare un avviso. Gli utenti amministratori che ricevono questi avvisi possono richiedere un intervento immediato per ripristinare il normale funzionamento del client.  
 
- **クライアントが今後使用する情報をキャッシュする:**  
+ **I client memorizzano nella cache informazioni da usare in futuro:**  
 
- クライアントは、管理ポイントと通信するときに、次の情報を取得およびキャッシュできます。  
+ Quando un client comunica con un punto di gestione, il client può ottenere e memorizzare nella cache le informazioni seguenti:  
 
--   クライアント設定  
+-   Impostazioni client.  
 
--   クライアントのスケジュール。  
+-   Pianificazioni client.  
 
--   クライアントへのインストールがスケジュールされているソフトウェアのダウンロードおよびソフトウェアの展開に関する情報 (展開にこの操作が構成されている場合)。  
+-   Informazioni su distribuzioni software e un download del software che il client ha pianificato di installare, quando la distribuzione è configurata per queste azioni.  
 
- クライアントは管理ポイントに接続できない場合、ステータス、状態、およびサイトに報告するクライアントの情報をローカルにキャッシュし、管理ポイントとの接続が確立された後にこのデータを転送します。  
+ Se non riescono a contattare un punto di gestione, i client memorizzano nella cache locale lo stato e le informazioni client che inviano al sito e trasferiscono questi dati dopo aver stabilito un contatto con un punto di gestione.  
 
- **クライアントがフォールバック ステータス ポイントにステータスを送信できる:**  
+ **Il client può inviare lo stato a un punto di stato di fallback:**  
 
- フォールバック ステータス ポイントを使用するようにクライアントを構成すると、クライアントが操作に関する重要な詳細情報を送信する接続ポイントが追加されます。 フォールバック ステータス ポイントを使用するように構成されているクライアントは、管理ポイントと通信できない場合でも、フォールバック ステータス ポイントのサイト システムの役割に操作のステータスを送信します。  
+ Quando si configura un client per l'uso di un punto di stato di fallback, si fornisce un punto aggiuntivo di contatto per consentire al client di inviare dettagli importanti sul proprio funzionamento. i client configurati per utilizzare un punto di stato di fallback continuano a inviare lo stato delle operazioni a quel ruolo del sistema del sito anche quando il client non riesce a comunicare con un punto di gestione.  
 
- **クライアントのデータおよびクライアントの識別の集中管理:**  
+ **Gestione centrale dei dati client e identità client:**  
 
- 各クライアントの識別に関する重要な情報は、個々のクライアントではなくサイト データベースで保持され、そのデータが特定のコンピューターまたはユーザーに関連付けられます。 その意味:  
+ Il database del sito, anziché il client singolo, mantiene informazioni importanti sull'identità di ogni client e associa tali dati a un computer o a un utente specifico. Ciò significa che:  
 
--   クライアントがインストールされているコンピューターの履歴レコードに影響を与えずに、コンピューター上のクライアントのソース ファイルをアンインストールおよび再インストールできます。  
+-   I file di origine del client in un computer possono essere disinstallati e reinstallati senza influire sui record cronologici del computer in cui è installato il client.  
 
--   クライアント コンピューターでエラーが発生しても、データベースに格納されている情報の整合性には影響しません。 この情報は報告のために引き続き使用できます。  
+-   Eventuali errori di un computer client non compromettono l'integrità delle informazioni archiviate nel database. Queste informazioni possono rimanere disponibili per la creazione di report.  
 
-##  <a name="bkmk_nonHAoptions"></a> 利用可能性が高くないサイトおよびサイト システムの役割のオプション  
- いくつかのサイト システムは、サイトまたは階層で複数のインスタンスをサポートしていません。 この情報は、オフラインになるこれらのサイト システムを準備するのに役立ちます。  
+##  <a name="bkmk_nonHAoptions"></a> Opzioni per siti e ruoli del sistema del sito non a disponibilità elevata  
+ Alcuni sistemi del sito non supportano istanze multiple in un sito o nella gerarchia. Queste informazioni consentono di prepararsi per i casi in cui i sistemi del sito passano in modalità offline.  
 
- **サイト サーバー (サイト):**  
+ **Server del sito (sito):**  
 
- Configuration Manager は、Windows Server クラスターまたは NLB クラスターの各サイトへのサイト サーバーのインストールをサポートしていません。  
+ Configuration Manager non supporta l'installazione del server del sito per ogni sito in un cluster di Windows Server o in un cluster Bilanciamento carico di rete.  
 
- サイト サーバーでエラーが発生した場合、またはサイト サーバーが動作しない場合に備えるには、次の情報を使用します。  
+ Le seguenti informazioni consentono la preparazione per situazioni di errore o di mancata operatività di un server del sito:  
 
--   組み込みのバックアップ タスクを使用して、サイトのバックアップを定期的に作成します。 テスト環境で、バックアップからサイトを復元する訓練を定期的に行ないます。  
+-   Per creare regolarmente un backup del sito, utilizzare l'attività di backup incorporato. In un ambiente di prova, esercitarsi regolarmente nel ripristino di siti da un backup.  
 
--   中央管理サイトを持つ階層内に複数の Configuration Manager プライマリ サイトを展開して冗長な構成にします。 サイトでエラーが発生したら、Windows グループ ポリシーまたはログオン スクリプトを使用して、クライアントを稼動状態のサイトに再割り当てすることを検討してください。  
+-   Distribuire più siti primari di Configuration Manager in una gerarchia con un sito di amministrazione centrale per creare ridondanza. In caso di errore del sito, valutare l'utilizzo dei Criteri di gruppo di Windows o degli script di accesso per riassegnare i client a un sito funzionante.  
 
--   階層内に中央管理サイトがある場合は、階層内の別のサイトからサイト データベースを回復するオプションを使用して、中央管理サイトまたは子プライマリ サイトを回復できます。  
+-   Se è disponibile una gerarchia con un sito di amministrazione centrale, sarà possibile ripristinare il sito di amministrazione centrale o un sito primario figlio utilizzando l'opzione per il ripristino di un database del sito da un altro sito nella gerarchia.  
 
--   セカンダリ サイトは復元できません。再インストールする必要があります。  
+-   I siti secondari non possono essere ripristinati e devono essere reinstallati.  
 
- **資産インテリジェンス同期ポイント (階層):**  
+ **Punto di sincronizzazione di Asset Intelligence (gerarchia):**  
 
- このサイト システムの役割は、重要ではないと見なされており、Configuration Manager のオプションの機能を提供します。 サイト システムがオフラインになった場合は、次のいずれかのオプションを使用します。  
+ Questo ruolo di sistema del sito non è considerato cruciale e rappresenta una funzionalità facoltativa in Configuration Manager. Se questo sistema non risulta più in linea, utilizzare una delle seguenti opzioni:  
 
--   サイト システムがオフラインになった理由を解決します。  
+-   Risolvere la causa della mancata presenza online del sistema del sito.  
 
--   現在のサーバーから役割をアンインストールし、新しいサーバーに役割をインストールします。  
+-   Disinstallare il ruolo dal server corrente e installare il ruolo in un nuovo server.  
 
- **Endpoint Protection ポイント (階層):**  
+ **Punto di Endpoint Protection (gerarchia):**  
 
- このサイト システムの役割は、重要ではないと見なされており、Configuration Manager のオプションの機能を提供します。 サイト システムがオフラインになった場合は、次のいずれかのオプションを使用します。  
+ Questo ruolo di sistema del sito non è considerato cruciale e rappresenta una funzionalità facoltativa in Configuration Manager. Se questo sistema non risulta più in linea, utilizzare una delle seguenti opzioni:  
 
--   サイト システムがオフラインになった理由を解決します。  
+-   Risolvere la causa della mancata presenza online del sistema del sito.  
 
--   現在のサーバーから役割をアンインストールし、新しいサーバーに役割をインストールします。  
+-   Disinstallare il ruolo dal server corrente e installare il ruolo in un nuovo server.  
 
- **登録ポイント (サイト):**  
+ **Punto di registrazione (sito):**  
 
- このサイト システムの役割は、重要ではないと見なされており、Configuration Manager のオプションの機能を提供します。 サイト システムがオフラインになった場合は、次のいずれかのオプションを使用します。  
+ Questo ruolo di sistema del sito non è considerato cruciale e rappresenta una funzionalità facoltativa in Configuration Manager. Se questo sistema non risulta più in linea, utilizzare una delle seguenti opzioni:  
 
--   サイト システムがオフラインになった理由を解決します。  
+-   Risolvere la causa della mancata presenza online del sistema del sito.  
 
--   現在のサーバーから役割をアンインストールし、新しいサーバーに役割をインストールします。  
+-   Disinstallare il ruolo dal server corrente e installare il ruolo in un nuovo server.  
 
- **登録プロキシ ポイント (サイト):**  
+ **Punto proxy di registrazione (sito):**  
 
- このサイト システムの役割は、重要ではないと見なされており、Configuration Manager のオプションの機能を提供します。 ただし、このサイト システムの役割の複数のインスタンスを階層内の単一のサイトおよび複数のサイトにインストールできます。 サイト システムがオフラインになった場合は、次のいずれかのオプションを使用します。  
+ Questo ruolo di sistema del sito non è considerato cruciale e rappresenta una funzionalità facoltativa in Configuration Manager. Tuttavia, è possibile installare più istanze di questo ruolo di sistema del sito in un sito e in più siti nella gerarchia. Se questo sistema non risulta più in linea, utilizzare una delle seguenti opzioni:  
 
--   サイト システムがオフラインになった理由を解決します。  
+-   Risolvere la causa della mancata presenza online del sistema del sito.  
 
--   現在のサーバーから役割をアンインストールし、新しいサーバーに役割をインストールします。  
+-   Disinstallare il ruolo dal server corrente e installare il ruolo in un nuovo server.  
 
- サイトに複数の登録プロキシ サーバーがある場合、サーバー名に DNS エイリアスを使用します。 この構成を使用すると、ユーザーがモバイル デバイスを登録するときに、DNS ラウンド ロビンによって、多少のフォールト トレランスおよび負荷分散が提供されます。  
+ Quando si dispone di più server proxy di registrazione in un sito, è possibile utilizzare un alias DNS per il nome del server. Quando si utilizza questa configurazione, round robin DNS fornisce tolleranza d'errore e bilanciamento del carico parziali per la fase di registrazione dei dispositivi mobili da parte degli utenti.  
 
- **フォールバック ステータス ポイント (サイトまたは階層):**  
+ **Punto di stato di fallback (sito o gerarchia):**  
 
- このサイト システムの役割は、重要ではないと見なされており、Configuration Manager のオプションの機能を提供します。 サイト システムがオフラインになった場合は、次のいずれかのオプションを使用します。  
+ Questo ruolo di sistema del sito non è considerato cruciale e rappresenta una funzionalità facoltativa in Configuration Manager. Se questo sistema non risulta più in linea, utilizzare una delle seguenti opzioni:  
 
--   サイト システムがオフラインになった理由を解決します。  
+-   Risolvere la causa della mancata presenza online del sistema del sito.  
 
--   現在のサーバーから役割をアンインストールし、新しいサーバーに役割をインストールします。 クライアントのインストール時にクライアントがフォールバック ステータス ポイントに割り当てられるため、新しいサイト システム サーバーを使用するように既存のクライアントを変更する必要があります。  
+-   Disinstallare il ruolo dal server corrente e installare il ruolo in un nuovo server. Poiché il punto di stato di fallback viene assegnato ai client durante l'installazione, sarà necessario modificare i client esistenti in modo che utilizzino il nuovo server di sistema del sito.  
 
-### <a name="see-also"></a>関連項目  
- [System Center Configuration Manager のサポートされている構成](../../core/plan-design/configs/supported-configurations.md)
+### <a name="see-also"></a>Vedere anche  
+ [Supported configurations for System Center Configuration Manager](../../core/plan-design/configs/supported-configurations.md) (Configurazioni supportate per System Center Configuration Manager)

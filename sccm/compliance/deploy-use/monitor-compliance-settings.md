@@ -1,6 +1,6 @@
 ---
-title: "コンプライアンス設定を監視する | Microsoft Docs"
-description: "構成基準のコンプライアンスのステータスを表示するには、このトピックの 1 つ以上の手順を使用します。"
+title: "Monitorare le impostazioni di conformità | Microsoft Docs"
+description: "Usare una o più delle procedure descritte in questo argomento per visualizzare lo stato di conformità della linea di base di configurazione."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,94 +18,94 @@ manager: angrobe
 ms.openlocfilehash: 75cd7e811262633d81d978265f21ec7ed3b61a58
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="monitor-compliance-settings-in-system-center-configuration-manager"></a>System Center Configuration Manager でコンプライアンス設定を監視する
+# <a name="monitor-compliance-settings-in-system-center-configuration-manager"></a>Monitorare le impostazioni di conformità in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-階層のデバイスに System Center Configuration Manager 構成基準を展開した後は、このトピックの 1 つ以上の手順を使用して、構成基準のコンプライアンス ステータスを表示することができます。
+Dopo aver distribuito le linee di base di configurazione di System Center Configuration Manager nei dispositivi della gerarchia, è possibile usare una o più delle procedure di questo argomento per visualizzare lo stato di conformità della linea di base di configurazione:
 
 > [!NOTE]  
->  コンプライアンス設定レポートの評価基準フィールド (クライアント側のレポートでは [制約] ****) に、基盤となるサービス モデリング言語 (SML) が表示されます。 これは、Configuration Manager コンソールに構成アイテムを作成した管理者が SML に精通していない場合、検証条件を把握するのを妨げる可能性があります。 この場合は、Configuration Manager コンソールの **[監視]** ワークスペースを使用して、構成アイテムおよび評価基準のプロパティを表示します。  
+>  I campi dei criteri di convalida nei report delle impostazioni di conformità (l'equivalente del report sul lato client è **Vincoli**) visualizzano il linguaggio SML (Service Modeling Language) sottostante. Ciò può rendere difficile la comprensione dei criteri di convalida per gli amministratori che hanno creato l'elemento di configurazione nella console di Configuration Manager e non conoscono il linguaggio SML. In questo caso usare l'area di lavoro **Monitoraggio** nella console di Configuration Manager per visualizzare le proprietà dell'elemento di configurazione e i relativi criteri di convalida.  
 
-##  <a name="view-compliance-results-in-the-configuration-manager-console"></a>Configuration Manager コンソールでのコンプライアンス結果の表示  
- Configuration Manager コンソールで、展開した構成基準のコンプライアンスの詳細を表示するには、この手順に従います。  
+##  <a name="view-compliance-results-in-the-configuration-manager-console"></a>Visualizzare i risultati di conformità nella console di Configuration Manager  
+ Usare questa procedura per visualizzare i dettagli sulla conformità delle linee di base di configurazione nella console di Configuration Manager.  
 
-### <a name="view-compliance-results-in-the-configuration-manager-console"></a>Configuration Manager コンソールでのコンプライアンス結果の表示  
+### <a name="view-compliance-results-in-the-configuration-manager-console"></a>Visualizzare i risultati di conformità nella console di Configuration Manager  
 
-1.  Configuration Manager コンソールで、**[監視]** > **[展開]** の順にクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Monitoraggio** > **Distribuzioni**.  
 
-3.  [展開] **** の一覧で、コンプライアンス情報を表示する構成基準の展開を選択します。  
+3.  Nell'elenco **Distribuzioni** selezionare la distribuzione della linea di base di configurazione per la quali si vuole esaminare le informazioni sulla conformità.  
 
-4.  メイン ページでは、構成基準の展開のコンプライアンスについて概要を確認することができます。 詳細を表示するには構成基準の展開を選択し、[ホーム] **** タブの [展開] **** グループで、[ステータスの表示] **** をクリックして [展開のステータス] **** ページを開きます。  
+4.  È possibile riesaminare le informazioni di riepilogo sulla conformità della distribuzione della linea di base di configurazione nella pagina principale. Per visualizzare informazioni più dettagliate, selezionare la distribuzione della linea di base di configurazione e quindi nel gruppo **Distribuzione** nella scheda **Home** fare clic su **Visualizza stato** per aprire la pagina **Stato distribuzione** .  
 
-     [展開のステータス] **** ページには次のタブがあります。  
+     La pagina **Stato distribuzione** contiene le seguenti schede:  
 
-    -   **対応**: 影響を受けた資産の数に基づいて、構成基準のコンプライアンスを表示します。 ルールをクリックして、そのルールに準拠するすべてのユーザーとデバイスを含む [資産とコンプライアンス] **** ワークスペースの[ユーザー] **** または [デバイス] **** のノードの下に一時ノードを作成できます。 [資産の詳細] **** ウィンドウはその構成基準に準拠するユーザーやデバイスを表示します。 一覧のユーザーまたはデバイスをダブルクリックすると、追加の情報が表示されます。  
+    -   **Conforme**: visualizza la conformità della linea di base di configurazione in base al numero degli asset interessati. È possibile fare clic su una regola per creare un nodo temporaneo nel nodo **Utenti** o **Dispositivi** dell'area di lavoro **Asset e conformità** che contiene tutti gli utenti o i dispositivi conformi a questa regola. Il riquadro **Dettagli asset** visualizza utenti o dispositivi che sono conformi alla linea di base di configurazione. Fare doppio clic su un dispositivo o su un utente presente nell'elenco per visualizzare informazioni aggiuntive.  
 
         > [!IMPORTANT]  
-        >  クライアント デバイスで検知されていない、または該当しない構成アイテム ルールは評価されませんが、ルールは対応という結果を戻します。  
+        >  Una regola dell'elemento di configurazione non viene valutata se non è rilevata o non è applicabile in un dispositivo client. Tuttavia, la regola viene restituita come conforme.  
 
-    -   **エラー**: 影響を受けた資産の数に基づいて、選択した構成基準の展開におけるすべてのエラーの一覧を表示します。 ルールをクリックして、そのルールでエラーとなったすべてのユーザーとデバイスを含む [資産とコンプライアンス] **** ワークスペースの [ユーザー] **** または [デバイス] **** のノードの下に一時ノードを作成できます。 ユーザーまたはデバイスを選択すると、[資産の詳細] **** ウィンドウは選択された問題に影響を受けているユーザーやデバイスを表示します。 一覧のユーザーまたはデバイスをダブルクリックすると、問題につていの追加の情報が表示されます。  
+    -   **Errore**: visualizza un elenco di tutti gli errori relativi alla distribuzione della linea di base di configurazione, in base al numero di asset interessati. È possibile fare clic su una regola per creare un nodo temporaneo nel nodo **Utenti** o **Dispositivi** dell'area di lavoro **Asset e conformità** che contiene tutti gli utenti o tutti i dispositivi che hanno generato errori con questa regola. Quando si seleziona un utente o un dispositivo, il riquadro **Dettagli asset** visualizza gli utenti o i dispositivi interessati dal problema selezionato. Fare doppio clic su un dispositivo o su un utente presente nell'elenco per visualizzare informazioni aggiuntive sul problema.  
 
-    -   **非対応**: 影響を受けた資産の数に基づいて、その構成基準内のすべてのコンプライアンス非対応のルールの一覧を表示します。 ルールをクリックして、そのルールのコンプライアンスに非対応となったすべてのユーザーとデバイスを含む [資産とコンプライアンス] **** ワークスペースの [ユーザー] **** または [デバイス] **** のノードの下に一時ノードを作成できます。 ユーザーまたはデバイスを選択すると、[資産の詳細] **** ウィンドウは選択された問題に影響を受けているユーザーやデバイスを表示します。 一覧のユーザーまたはデバイスをダブルクリックすると、問題について追加の情報が表示されます。  
+    -   **Non conforme**: visualizza un elenco di tutte le regole non conformi all'interno della linea di base di configurazione, in base al numero di asset interessati. È possibile fare clic su una regola per creare un nodo temporaneo nel nodo **Utenti** o **Dispositivi** dell'area di lavoro **Asset e conformità** che contiene tutti gli utenti o i dispositivi non conformi a questa regola. Quando si seleziona un utente o un dispositivo, il riquadro **Dettagli asset** visualizza gli utenti o i dispositivi interessati dal problema selezionato. Fare doppio clic su un utente o su un dispositivo presente nell'elenco per visualizzare informazioni aggiuntive sul problema.  
 
-    -   **不明**: 選択した構成基準の展開に対するコンプライアンスが報告されなかったすべてのユーザーとデバイスの一覧が、現在のデバイスのクライアント ステータスと共に表示されます。  
+    -   **Sconosciuto**: visualizza un elenco di tutti gli utenti o di tutti i dispositivi che non sono conformi alla distribuzione della linea di base di configurazione selezionata e lo stato del client dei dispositivi.  
 
-5.  [展開のステータス] **** ページで、展開された構成基準のコンプライアンスについての詳細を確認できます。 [展開] **** ノードの下に一時ノードが作成されるため、後から再度この情報をすばやく確認できます。  
+5.  Nella pagina **Stato distribuzione** è possibile esaminare le informazioni dettagliate sulla conformità della linea di base di configurazione distribuita. Viene creato un nodo temporaneo nel nodo **Distribuzioni** che consente di ritrovare rapidamente queste informazioni.  
 
-##  <a name="view-compliance-results-by-using-reports"></a>レポートを使用してコンプライアンス結果を表示する  
- Configuration Manager のコンプライアンス設定には、無数の組み込みレポートが含まれており、構成アイテム、構成基準、および展開についての情報監視に便利です。 これらのレポートには、[コンプライアンスおよび設定管理] ****のカテゴリがあります。  
+##  <a name="view-compliance-results-by-using-reports"></a>Visualizzare i risultati di conformità usando i report  
+ Le impostazioni di conformità in Configuration Manager includono una serie di report predefiniti che consentono di monitorare le informazioni relative a elementi di configurazione, linee di base di configurazione e distribuzioni. Tali report dispongono della categoria report di **Gestione conformità e impostazioni**.  
 
 > [!IMPORTANT]  
->  コンプライアンス設定でレポートの**%**[デバイス フィルター] **と [ユーザー フィルター] パラメーターを指定するときは必ず、ワイルドカード (** ) 文字を使ってください。  
+>  È necessario usare un carattere jolly (**%**) quando si usano i parametri **Filtro dispositivo** e Filtro utente nei report delle impostazioni di conformità.  
 
- Configuration Manager でのレポートの構成方法に関して詳しくは、「[System Center Configuration Manager のレポート](../../core/servers/manage/reporting.md)」を参照してください。  
+ Per altre informazioni sulle modalità di configurazione dei report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md)  
 
-##  <a name="view-compliance-results-on-a-configuration-manager-windows-client-computer"></a>Configuration Manager の Windows クライアント コンピューターでコンプライアンス結果を表示する
+##  <a name="view-compliance-results-on-a-configuration-manager-windows-client-computer"></a>Visualizzare i risultati di conformità in un computer client Windows di Configuration Manager
 
 > [!NOTE]  
->  ドメインのゲスト アカウントでログオンしている場合、Configuration Manager Windows クライアントの情報は表示できません。    
+>  Non è possibile visualizzare informazioni relative al client Windows di Configuration Manager se si è connessi con un account Guest del dominio.    
 
-1.  クライアント コンピューターのコントロール パネルで [Configuration Manager] **** に移動し、ダブルクリックしてプロパティを開きます。  
+1.  Passare a **Configuration Manager** nel Pannello di controllo del computer client e quindi fare doppio clic per aprirne le relative proprietà.  
 
-2.  [構成] **** タブをクリックし、展開された構成基準の一覧を表示します。  
+2.  Fare clic sulla scheda **Configurazioni** e visualizzare l'elenco delle linee di base di configurazione distribuite.  
 
-3.  各構成基準の [コンプライアンス対応状態] **** を表示します。  
+3.  Visualizzare lo **stato di conformità** per ogni linea di base di configurazione:  
 
     > [!IMPORTANT]  
-    >  評価結果は、クライアントに 15 分間キャッシュされます。 15 分以内に再評価を開始すると、新たに評価した結果ではなく、このキャッシュのコンプライアンス結果が返されます。 このため、クライアントで対応評価の結果に影響する変更を行った場合は、15 分以上待ってから再評価を開始してください。  
+    >  I risultati della valutazione vengono memorizzati nella cache del client per 15 minuti. Se si avvia una nuova valutazione entro l'intervallo di 15 minuti, anziché una nuova valutazione vengono restituiti i risultati di conformità memorizzati nella cache. Pertanto, se nel client si apporta una modifica che potrebbe influire sui risultati della valutazione della conformità, attendere più di 15 minuti prima di avviare una nuova valutazione.  
 
-    -   **対応**: クライアント コンピューターは、評価された構成基準に対応しています。  
+    -   **Conforme**: il computer client è conforme alla linea di base di configurazione valutata.  
 
-    -   **非対応**: クライアント コンピューターは、評価された構成基準に対応していません。  
+    -   **Non conforme**: il computer client non è conforme alla linea di base di configurazione valutata.  
 
-    -   **不明**: クライアント コンピューターは構成基準をまだ評価していません。 対応評価スケジュールとは別に評価を開始する場合は、評価する構成基準を選択し、[評価] ****をクリックします。  
+    -   **Sconosciuto**: la linea di base di configurazione del computer client non è ancora stata valutata. Se si vuole avviare una valutazione non compresa nella pianificazione della valutazione della conformità, selezionare le linee di base di configurazione da valutare e quindi fare clic su **Valuta**.  
 
         > [!NOTE]  
-        >  クライアント コンピューターにローカルな管理者資格がある場合は、評価された各構成基準の詳細を表示し、どの構成項目がコンプライアンス非対応状態かを判別できます。 これを行うには、構成基準を選択して、 **[レポートの表示]**をクリックします。  
+        >  Se si dispone di credenziali di amministratore locale nel computer client, è possibile visualizzare i dettagli di ogni linea di base di configurazione valutata per determinare l'elemento di configurazione associato a uno stato non conforme. A tale scopo, selezionare la linea di base di configurazione e quindi fare clic su **Visualizza report**.  
 
-4.  **[OK]**をクリックします。  
+4.  Fare clic su **OK**.  
 
-##  <a name="create-collections-based-on-configuration-baseline-compliance"></a>構成基準のコンプライアンスに基づいてコレクションを作成する  
- 指定したコンプライアンスのデバイスに基づいて、Configuration Manager コレクションを作成するには次の手順に従います。 次のコンプライアンス状態に基づいて、コレクションを作成することができます。  
+##  <a name="create-collections-based-on-configuration-baseline-compliance"></a>Creare raccolte basate sulla conformità della linea di base di configurazione  
+ Usare la procedura seguente per creare una raccolta di Configuration Manager in base a dispositivi con una conformità specificata. È possibile creare raccolte basate sugli stati di conformità seguenti:  
 
--   **対応**  
+-   **Conforme**  
 
--   **エラー**  
+-   **Erroree**  
 
 -   **Non-compliant**  
 
--   **不明**  
+-   **Sconosciuto**  
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[コンプライアンス設定]** > **[構成基準]** の順にクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Linee di base di configurazione**.  
 
-3.  [構成基準] **** の一覧で、コレクションを作成する構成基準を選択します。  
+3.  Nell'elenco **Linee di base di configurazione** selezionare la linea di base di configurazione da cui si vuole creare una raccolta.  
 
-4.  [展開] **** タブの [展開] ****グループで、[新しいコレクションの作成] **** をクリックし、ドロップダウン リストから作成するコレクションに適用するコンプライアンスのレベルを選択します。  
+4.  Nel **gruppo di distribuzione** della scheda **Distribuzione**fare clic su **Crea nuova raccolta** e quindi nell'elenco a discesa selezionare il livello di conformità per il quale si vuole creare una raccolta.  
 
-5.  構成項目の展開がユーザーか、デバイスかによって、ユーザー コレクションの作成ウィザード **** またはデバイス コレクションの作成ウィザード **** が開きます。 ウィザードは自動的にコレクションを作成するための正しい値を挿入しますが、これらの値は編集することができます。  
+5.  Viene avviata la **Creazione guidata raccolta utenti** o **Creazione guidata raccolta dispositivi** , a seconda se l'elemento di configurazione viene distribuito a utenti o dispositivi. La procedura guidata viene automaticamente popolata con i valori corretti per creare la raccolta. È tuttavia possibile modificare questi valori.  
 
-6.  ウィザードを完了すると、[資産とコンプライアンス] **** ワークスペースの [ユーザー コレクション] **** または [デバイス コレクション] **** ノードにコレクションが表示されます。  
+6.  Dopo aver completato la procedura guidata, la raccolta visualizza il nodo **Raccolte utenti** o **Raccolte dispositivi** nell'area di lavoro **Asset e conformità** .  

@@ -1,6 +1,6 @@
 ---
-title: "PKI 証明書の展開 | Microsoft Docs"
-description: "ステップバイステップの例に従って、System Center Configuration Manager で使用される PKI 証明書を作成および展開する方法について説明します。"
+title: Distribuire certificati PKI | Microsoft Docs
+description: "È disponibile un esempio dettagliato che fornisce informazioni su come creare e distribuire i certificati PKI usati in System Center Configuration Manager."
 ms.custom: na
 ms.date: 02/14/2017
 ms.prod: configuration-manager
@@ -17,761 +17,761 @@ manager: angrobe
 ms.openlocfilehash: b15f85b4483bbae2444d4e73d2e2aa0b3979d9ab
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="step-by-step-example-deployment-of-the-pki-certificates-for-system-center-configuration-manager-windows-server-2008-certification-authority"></a>System Center Configuration Manager PKI 証明書の展開手順の例: Windows Server 2008 証明機関
+# <a name="step-by-step-example-deployment-of-the-pki-certificates-for-system-center-configuration-manager-windows-server-2008-certification-authority"></a>Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-このステップバイステップの展開例では、Windows Server 2008 の証明機関 (CA) を使用し、System Center Configuration Manager で使用される公開キー基盤 (PKI) 証明書を作成および展開する方法について説明します。 これらの手順は企業の証明機関 (CA) および証明書テンプレートを使用します。 これらの手順は、テスト ネットワークでの概念実証としてのみ適しています。  
+Questo esempio dettagliato di distribuzione usa un'autorità di certificazione (CA) Windows Server 2008 e contiene procedure che illustrano come creare e distribuire i certificati di infrastruttura a chiave pubblica (PKI) usati in System Center Configuration Manager. Queste procedure utilizzano modelli di certificato e una CA globale (enterprise). I passaggi sono adatti esclusivamente a una rete di test, come un modello di prova.  
 
- 必要な証明書の実装方法は 1 つではないので、運用環境で必要な証明書を展開するための手順と推奨される運用方法については、特定の PKI 展開のドキュメントを参照してください。 証明書の要件の詳細については、「[System Center Configuration Manager での PKI 証明書の要件](../../../core/plan-design/network/pki-certificate-requirements.md)」をご覧ください。  
+ Dal momento che non esiste un singolo metodo di distribuzione per i certificati richiesti, consultare la documentazione di distribuzione PKI specifica per le procedure richieste e consigliate di distribuzione dei certificati richiesti per un ambiente di produzione. Per altre informazioni sui requisiti dei certificati, vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
 
 > [!TIP]  
->  このトピックの説明は、「テスト ネットワークの要件」セクションで説明されていないオペレーティング システムにも適用できます。 ただし、Windows Server 2012 で、発行元 CA を実行する場合、証明書テンプレートのバージョンは求められません。 代わりに、テンプレートのプロパティの **[互換性]** タブでバージョンを指定します。  
+>  È possibile adattare le istruzioni riportate in questo argomento per sistemi operativi diversi da quelli documentati nella sezione Requisiti della rete di test. Tuttavia, se si esegue la CA emittente su Windows Server 2012, non viene richiesta la versione del modello di certificato. Al contrario, specificarla nella scheda **Compatibilità** delle proprietà del modello:  
 >   
->  -   **証明機関**: **Windows Server 2003**  
-> -   **証明書の受信者**: **Windows XP / Server 2003**  
+>  -   **Autorità di certificazione**: **Windows Server 2003**  
+> -   **Destinatario certificato**: **Windows XP / Server 2003**  
 
-## <a name="in-this-section"></a>このセクションの内容  
- 以降のセクションで説明する例のステップバイステップの手順では、System Center Configuration Manager で使用できる次の証明書を作成して展開します。  
+## <a name="in-this-section"></a>In questa sezione  
+ Le sezioni seguenti comprendono istruzioni dettagliate di esempio per creare e distribuire i certificati seguenti che possono essere usati in System Center Configuration Manager:  
 
- [テスト ネットワークの要件](#BKMK_testnetworkenvironment)  
+ [Requisiti della rete di test](#BKMK_testnetworkenvironment)  
 
- [証明書の概要](#BKMK_overview2008)  
+ [Panoramica dei certificati](#BKMK_overview2008)  
 
- [IIS を実行するサイト システム用の Web サーバー証明書の展開](#BKMK_webserver2008_cm2012)  
+ [Distribuire il certificato del server Web per sistemi del sito che eseguono IIS](#BKMK_webserver2008_cm2012)  
 
- [クラウドベースの配布ポイント用のサービス証明書の展開](#BKMK_clouddp2008_cm2012)  
+ [Distribuire il certificato di servizio per i punti di distribuzione basati su cloud](#BKMK_clouddp2008_cm2012)  
 
- [Windows コンピューター用のクライアント証明書の展開](#BKMK_client2008_cm2012)  
+ [Distribuire il certificato client per computer Windows](#BKMK_client2008_cm2012)  
 
- [配布ポイント用のクライアント証明書の展開](#BKMK_clientdistributionpoint2008_cm2012)  
+ [Distribuire il certificato client per punti di distribuzione](#BKMK_clientdistributionpoint2008_cm2012)  
 
- [モバイル デバイス用の登録証明書の展開](#BKMK_mobiledevices2008_cm2012)  
+ [Distribuire il certificato di registrazione per i dispositivi mobili](#BKMK_mobiledevices2008_cm2012)  
 
- [AMT 用の証明書の展開](#BKMK_AMT2008_cm2012)  
+ [Distribuire i certificati per AMT](#BKMK_AMT2008_cm2012)  
 
- [Mac コンピューター用のクライアント証明書の展開](#BKMK_MacClient_SP1)  
+ [Distribuire il certificato client per computer Mac](#BKMK_MacClient_SP1)  
 
-##  <a name="BKMK_testnetworkenvironment"></a> テスト ネットワークの要件  
- 手順には次の要件があります。  
+##  <a name="BKMK_testnetworkenvironment"></a> Requisiti della rete di test  
+ Nelle istruzioni dettagliate sono richiesti i seguenti requisiti:  
 
--   テスト ネットワークでは、Windows Server 2008 で Active Directory ドメイン サービスが動作しており、これが単一のドメイン、単一のフォレストとしてインストールされていること。  
+-   Sulla rete di test è in esecuzione il ruolo Servizi di dominio Active Directory con Windows Server 2008 e la rete è installata come un dominio singolo, una foresta singola.  
 
--   Active Directory 証明書サービスの役割がインストールされており、エンタープライズ ルート証明機関 (CA) として構成されている Windows Server 2008 Enterprise Edition を実行するメンバー サーバーがあること。  
+-   Si dispone di un server membro su cui è in esecuzione Windows Server 2008 Enterprise Edition, in cui è installato il ruolo Servizi certificati Active Directory e che è configurato come CA radice dell'organizzazione (enterprise).  
 
--   1 台のコンピューターに Windows Server 2008 (Standard Edition か Enterprise Edition、R2 以降) がインストールされ、そのコンピューターがメンバー サーバーとして指定されており、インターネット インフォメーション サービス (IIS) がインストールされていること。 このコンピューターは System Center Configuration Manager サイト システム サーバーになります。イントラネットでクライアント接続をサポートする場合は、イントラネット完全修飾ドメイン名 (FQDN) で構成し、System Center Configuration Manager で登録されたモバイル デバイスとインターネットのクライアントをサポートする必要がある場合は、インターネット FQDN で構成します。  
+-   È disponibile un computer in cui sono installati Windows Server 2008 (Standard Edition o Enterprise Edition, R2 o versioni successive) e Internet Information Services (IIS) e che è designato come un server membro. Questo computer è il server del sistema del sito di System Center Configuration Manager che sarà configurato con un nome di dominio completo (FQDN) Intranet per supportare le connessioni client nella Intranet e con un FQDN Internet se è necessario supportare dispositivi mobili registrati da System Center Configuration Manager e client su Internet.  
 
--   最新の Service Pack がインストールされた Windows Vista クライアントがあり、コンピューターが ASCII 文字のコンピューター名で設定され、ドメインに参加していること。 このコンピューターは、System Center Configuration Manager クライアント コンピューターになります。  
+-   Si dispone di un client Windows Vista in cui è installato il Service Pack più recente, configurato con un nome computer comprendente caratteri ASCII e associato al dominio. Questo computer è un computer client di System Center Configuration Manager.  
 
--   ルート ドメイン管理者のアカウントまたはエンタープライズ管理者のアカウントでサインインでき、そのアカウントを使ってこの展開例のすべての手順を実行できること。  
+-   È possibile accedere con un account amministratore di dominio radice o un account amministratore di dominio organizzazione che dovrà essere usato per tutte le procedure descritte in questo esempio di distribuzione.  
 
-##  <a name="BKMK_overview2008"></a> 証明書の概要  
- 次の表では、System Center Configuration Manager に必要な PKI 証明書の種類の一覧を示し、それぞれの使用方法を説明しています。  
+##  <a name="BKMK_overview2008"></a> Panoramica dei certificati  
+ Nella tabella seguente vengono elencati i tipi di certificati PKI che potrebbero essere richiesti per Center Configuration Manager e le informazioni sul loro uso.  
 
-|証明書の要件|証明書の説明|  
+|Requisito del certificato|Descrizione del certificato|  
 |-----------------------------|-----------------------------|  
-|IIS を実行するサイト システム用のWeb サーバー証明書の展開|この証明書は、データの暗号化およびクライアントに対するサーバーの認証に使用されます。 System Center Configuration Manager の外部から、インターネット インフォメーション サービス (IIS) を実行しており System Center Configuration Manager で HTTPS を使用するように設定されているサイト システム サーバーにインストールする必要があります。<br /><br /> この証明書の設定およびインストール手順は、このトピックの「[IIS を実行するサイト システム用の Web サーバー証明書の展開](#BKMK_webserver2008_cm2012) 」を参照してください。|  
-|クラウドベースの配布ポイントに接続するクライアント用のサービス証明書|この証明書の構成およびインストール手順については、このトピックの「[クラウドベースの配布ポイント用のサービス証明書の展開](#BKMK_clouddp2008_cm2012) 」を参照してください。<br /><br /> **重要:** この証明書は、Windows Azure 管理証明書と併用されます。 この管理証明書の詳細については、MSDN ライブラリの Windows Azure プラットフォーム セクションの「[Windows Azure の管理証明書を作成する方法](http://go.microsoft.com/fwlink/p/?LinkId=220281)」および「[Windows Azure サブスクリプションへの管理証明書の追加方法](http://go.microsoft.com/fwlink/?LinkId=241722)」を参照してください。|  
-|Windows コンピューター用のクライアント証明書|この証明書は、HTTPS を使用するように設定されたサイト システムに対する System Center Configuration Manager クライアント コンピューターの認証に使用されます。 管理ポイントおよび状態移行ポイントが HTTPS を使用するように設定されたときに動作状況を監視するためにも使用されます。 System Center Configuration Manager の外部からコンピューターにインストールする必要があります。<br /><br /> この証明書の設定およびインストール手順は、このトピックの「[Windows コンピューター用のクライアント証明書の展開](#BKMK_client2008_cm2012)」を参照してください。|  
-|配布ポイント用のクライアント証明書|この証明書には、次の 2 つの目的があります。<br /><br /> 証明書は、配布ポイントがステータス メッセージを 管理ポイントに送信する前に、HTTPS が有効な管理ポイントに対する配布ポイントの認証に使用されます。<br /><br /> [ **クライアントの PXE サポートを有効にする** ]の配布ポイントのオプションがオンになっていると、オペレーティング システムの展開中に HTTPS が有効な管理ポイントに接続できるように、PXE ブートを実行するコンピューターに証明書が送信されます。<br /><br /> この証明書を設定しインストールする手順については、このトピックの「[配布ポイント用のクライアント証明書の展開](#BKMK_clientdistributionpoint2008_cm2012)」を参照してください。|  
-|モバイル デバイス用の登録証明書|この証明書は、HTTPS を使用するように設定されたサイト システムに対する System Center Configuration Manager モバイル デバイス クライアントの認証に使用されます。 System Center Configuration Manager でのモバイル デバイス登録の一環としてインストールする必要があり、構成済みの証明書テンプレートをモバイル デバイス クライアント設定として選択します。<br /><br /> この証明書を設定する手順については、このトピックの「[モバイル デバイス用の登録証明書の展開](#BKMK_mobiledevices2008_cm2012)」を参照してください。|  
-|Intel AMT 用証明書|Intel AMT ベースのコンピューターの帯域外管理に関する証明書には 3 つあります。<ul><li>Active Management Technology (AMT) プロビジョニング証明書</li><li>AMT Web サーバー証明書</li><li>必要に応じて、802.1X 有線または無線ネットワークのクライアント認証証明書</li></ul>AMT プロビジョニング証明書は、System Center Configuration Manager の外部から帯域外サービス ポイント コンピューターにインストールする必要があります。その後、帯域外サービス ポイントのプロパティでインストールした証明書を選択します。 AMT Web サーバー証明書およびクライアント認証証明書は AMT プロビジョニングおよび管理の間にインストールされます。帯域外管理コンポーネントのプロパティで構成した証明書テンプレートを選択します。<br /><br /> これらの証明書を設定する手順については、このトピックの「[AMT 用の証明書の展開](#BKMK_AMT2008_cm2012)」を参照してください。|  
-|Mac コンピューター用のクライアント証明書|System Center Configuration Manager の登録を使用し、構成済みの証明書テンプレートをモバイル デバイス クライアント設定として選択するときに、Mac コンピューターからこの証明書を要求してインストールすることができます。<br /><br /> この証明書を構成する手順については、このトピックの「[Mac コンピューター用のクライアント証明書の展開](#BKMK_MacClient_SP1)」を参照してください。|  
+|Certificato del server Web per i sistemi del sito che eseguono IIS|Questo certificato viene utilizzato per crittografare dati e per l'autenticazione tra server e client. Deve essere installato esternamente da System Center Configuration Manager nei server dei sistemi del sito che eseguono Internet Information Services (IIS) e che sono configurati in System Center Configuration Manager per usare HTTPS.<br /><br /> Per i passaggi relativi alla configurazione e installazione di questo certificato, vedere [Distribuire il certificato del server Web per sistemi del sito che eseguono IIS](#BKMK_webserver2008_cm2012) in questo argomento.|  
+|Certificato di servizio per i client per la connessione ai punti di distribuzione basati su cloud|Per i passaggi relativi alla configurazione e installazione di questo certificato, vedere [Distribuire il certificato di servizio per i punti di distribuzione basati su cloud](#BKMK_clouddp2008_cm2012) in questo argomento.<br /><br /> **Importante** : questo certificato viene usato in combinazione con il certificato di gestione di Windows Azure. Per altre informazioni sul certificato di gestione, vedere [Come creare un certificato di gestione per Windows Azure](http://go.microsoft.com/fwlink/p/?LinkId=220281) e [Come aggiungere un certificato di gestione a una sottoscrizione Windows Azure](http://go.microsoft.com/fwlink/?LinkId=241722) nella sezione della piattaforma Windows Azure di MSDN Library.|  
+|Certificato client per computer Windows|Questo certificato è usato per l'autenticazione tra i computer client di System Center Configuration Manager e i sistemi del sito che sono configurati per usare HTTPS. Può inoltre essere usato per il monitoraggio dello stato operativo dei punti di gestione e dei punti di migrazione stato quando sono configurati per l'uso di HTTPS. Deve essere installato esternamente da System Center Configuration Manager nei computer.<br /><br /> Per i passaggi relativi alla configurazione e installazione di questo certificato, vedere [Distribuire il certificato client per computer Windows](#BKMK_client2008_cm2012) in questo argomento.|  
+|Certificato client per punti di distribuzione|Questo certificato ha due scopi:<br /><br /> Il certificato viene utilizzato per l'autenticazione tra il punto di distribuzione e un punto di gestione abilitato HTTPS prima che il punto di distribuzione invii dei messaggi di stato.<br /><br /> Quando l'opzione del punto di distribuzione **Abilita supporto PXE per i client** è selezionata, il certificato viene inviato ai computer con avvio PXE in modo che possano connettersi a un punto di gestione abilitato HTTPS durante la distribuzione del sistema operativo.<br /><br /> Per i passaggi relativi alla configurazione e installazione di questo certificato, vedere [Distribuire il certificato client per punti di distribuzione](#BKMK_clientdistributionpoint2008_cm2012) in questo argomento.|  
+|Certificato di registrazione per dispositivi mobili|Questo certificato è usato per l'autenticazione tra i computer client dei dispositivi mobili di System Center Configuration Manager e i sistemi del sito che sono configurati per usare HTTPS. Deve essere installato come parte della registrazione dei dispositivi mobili in System Center Configuration Manager ed è necessario scegliere il modello di certificato configurato come impostazione client dei dispositivi mobili.<br /><br /> Per i passaggi relativi alla configurazione di questo certificato, vedere [Distribuire il certificato di registrazione per i dispositivi mobili](#BKMK_mobiledevices2008_cm2012) in questo argomento.|  
+|Certificati per Intel AMT|Alla gestione fuori banda per i computer basati su Intel AMT sono correlati tre certificati:<ul><li>Un certificato di provisioning AMT (Active Management Technology)</li><li>Un certificato server Web AMT</li><li>Facoltativamente, un certificato di autenticazione client per reti cablate o wireless 802.1X</li></ul>È necessario installare il certificato di provisioning AMT esternamente da System Center Configuration Manager, nel computer del punto di servizio fuori banda, e scegliere il certificato installato nelle proprietà del punto di servizio fuori banda. Il certificato del server Web AMT e il certificato di autenticazione client vengono installati durante la gestione e il provisioning AMT e, successivamente, è necessario scegliere i modelli di certificato configurati nelle proprietà del componente di gestione fuori banda.<br /><br /> Per i passaggi relativi alla configurazione di questi certificati, vedere [Distribuire i certificati per AMT](#BKMK_AMT2008_cm2012) in questo argomento.|  
+|Certificato client per computer Mac|È possibile richiedere e installare questo certificato da un computer Mac quando si usa la registrazione di System Center Configuration Manager e scegliere il modello di certificato configurato come impostazione client dei dispositivi mobili.<br /><br /> Per i passaggi relativi alla configurazione di questo certificato, vedere [Distribuire il certificato client per computer Mac](#BKMK_MacClient_SP1) in questo argomento.|  
 
-##  <a name="BKMK_webserver2008_cm2012"></a> IIS を実行するサイト システム用の Web サーバー証明書の展開  
- この証明書の展開には次の手順が含まれています。  
+##  <a name="BKMK_webserver2008_cm2012"></a> Distribuire il certificato del server Web per sistemi del sito che eseguono IIS  
+ La distribuzione di questo certificato prevede le procedure seguenti:  
 
--   証明機関で Web サーバー証明書テンプレートを作成および発行する  
+-   Creare ed emettere il modello di certificato del server Web nell'autorità di certificazione  
 
--   Web サーバー証明書を要求する  
+-   Richiedere il certificato del server Web  
 
--   IIS が Web サーバー証明書を使用するように構成する  
+-   Configurare IIS per l'uso del certificato del server Web  
 
-###  <a name="BKMK_webserver22008"></a> 証明機関で Web サーバー証明書テンプレートを作成および発行する  
- この手順により、System Center Configuration Manager サイト システムの証明書テンプレートを作成し、それを証明機関に追加します。  
+###  <a name="BKMK_webserver22008"></a> Creare ed emettere il modello di certificato del server Web nell'autorità di certificazione  
+ Questa procedura crea un modello di certificato per i sistemi del sito di System Center Configuration Manager e lo aggiunge all'autorità di certificazione.  
 
-##### <a name="to-create-and-issue-the-web-server-certificate-template-on-the-certification-authority"></a>証明機関で Web サーバー証明書テンプレートを作成および発行するには  
+##### <a name="to-create-and-issue-the-web-server-certificate-template-on-the-certification-authority"></a>Per creare ed emettere il modello di certificato del server Web nell'autorità di certificazione  
 
-1.  IIS を実行する System Center Configuration Manager サイト システムをインストールするために、メンバー サーバーを含む **ConfigMgr IIS Servers** というセキュリティ グループを作成します。  
+1.  Creare un gruppo di sicurezza denominato **Server IIS di ConfigMgr** che contenga i server membro per l'installazione dei sistemi del sito di System Center Configuration Manager che eseguiranno IIS.  
 
-2.  証明書サービスがインストールされているメンバー サーバーの証明機関のコンソールで **[証明書テンプレート]** を右クリックし、**[管理]** を選択して **[証明書テンプレート]** コンソールを読み込みます。  
+2.  Nel server membro in cui è installato Servizi certificati, nella console Autorità di certificazione, fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console **Modelli di certificato**.  
 
-3.  [結果] ウィンドウで、**[テンプレート表示名]** 列に **[Web サーバー]** と表示されているエントリを右クリックし、**[テンプレートの複製]** を選択します。  
+3.  Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Server Web** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
 
-4.  **[テンプレートの複製]** ダイアログ ボックスで、**[Windows 2003 Server Enterprise Edition]** が選択されていることを確認してから、**[OK]** を選択します。  
+4.  Nella finestra di dialogo **Duplica modello** verificare che sia selezionato **Windows 2003 Server, Enterprise Edition**, quindi scegliere **OK**.  
 
     > [!IMPORTANT]  
-    >  [ **Windows 2008 Server Enterprise Edition** ] を選択しないでください。  
+    >  Non selezionare **Windows 2008 Server, Enterprise Edition**.  
 
-5.  **[新しいテンプレートのプロパティ]** ダイアログ ボックスの **[全般]** タブで、「**ConfigMgr Web サーバー証明書**」など、Configuration Manager のサイト システムで使用される Web 証明書を生成するテンプレート名を入力します。  
+5.  Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Certificato server Web ConfigMgr** per generare i certificati Web che saranno usati nei sistemi del sito di Configuration Manager.  
 
-6.  **[サブジェクト名]** タブを選択し、**[要求に含まれる]** が選択されていることを確認します。  
+6.  Scegliere la scheda **Nome soggetto** e verificare che **Inserisci nella richiesta** sia selezionato.  
 
-7.  **[セキュリティ]** タブを選択し、**[Domain Admins]** および **[Enterprise Admins]** セキュリティ グループから **[登録]** アクセス許可を削除します。  
+7.  Scegliere la scheda **Protezione** e quindi rimuovere l'autorizzazione **Registrazione** dai gruppi di sicurezza **Domain Admins** ed **Enterprise Admins**.  
 
-8.  **[追加]** を選択して、テキスト ボックスに「**ConfigMgr IIS Servers**」と入力し、**[OK]** を選択します。  
+8.  Scegliere **Aggiungi**, immettere **Server IIS ConfigMgr** nella casella di testo, quindi scegliere **OK**.  
 
-9. このグループに対して **[登録]** アクセス許可を選択し、**[読み取り]** アクセス許可をオフにしません。  
+9. Scegliere l'autorizzazione **Registrazione** per questo gruppo e non deselezionare l'autorizzazione **Lettura**.  
 
-10. **[OK]** を選択して、**[証明書テンプレート]** コンソールを閉じます。  
+10. Scegliere **OK** e quindi chiudere la console **Modelli di certificato**.  
 
-11. [証明機関] コンソールで、**[証明書テンプレート]** を右クリックし、**[新規作成]** を選択して **[発行する証明書テンプレート]** を選択します。  
+11. Nella console Autorità di certificazione fare clic con il pulsante destro del mouse su **Modelli di certificato**, scegliere **Nuovo** e quindi **Modello di certificato da emettere**.  
 
-12. **[証明書テンプレートの選択]** ダイアログ ボックスで、先ほど作成した新しいテンプレート **[ConfigMgr Web サーバー証明書]** を選択し、**[OK]** をクリックします。  
+12. Nella finestra di dialogo **Attivazione modelli di certificato** scegliere il nuovo modello appena creato, **Certificato server Web ConfigMgr**, quindi scegliere **OK**.  
 
-13. これ以上証明書を作成して発行する必要がない場合は、**[証明機関]** を閉じます。  
+13. Se non è necessario creare ed emettere altri certificati, chiudere **Autorità di certificazione**.  
 
-###  <a name="BKMK_webserver32008"></a> Web サーバー証明書を要求する  
- この手順では、サイト システム サーバーのプロパティで設定されるイントラネットおよびインターネット FQDN を指定し、Web サーバー証明書を IIS を実行するメンバー サーバーにインストールできます。  
+###  <a name="BKMK_webserver32008"></a> Richiedere il certificato del server Web  
+ Questa procedura consente di specificare i valori FQDN Intranet e Internet che saranno configurati nelle proprietà del server del sistema del sito, quindi permette di installare il certificato del server Web nel server membro che esegue IIS.  
 
-##### <a name="to-request-the-web-server-certificate"></a>Web サーバー証明書を要求するには  
+##### <a name="to-request-the-web-server-certificate"></a>Per richiedere il certificato del server Web  
 
-1.  IIS を実行するメンバー サーバーを再起動し、構成した **[読み取り]** および **[登録]** のアクセス許可を使用して、コンピューターが作成した証明書テンプレートにアクセスできることを確認します。  
+1.  Riavviare il server membro che esegue IIS per assicurarsi che il computer possa accedere al modello di certificato creato usando le autorizzazioni **Lettura** e **Registrazione** configurate.  
 
-2.  **[スタート]**、**[ファイル名を指定して実行]** の順に選択し、「**mmc.exe**」と入力します。 空のコンソールで、**[ファイル]** を選択し、次に **[スナップインの追加と削除]** を選択します。  
+2.  Fare clic su **Start**, scegliere **Esegui** e quindi digitare **mmc.exe.** Nella console vuota scegliere **File**, quindi **Aggiungi/Rimuovi snap-in**.  
 
-3.  **[スナップインの追加と削除]** ダイアログ ボックスで、**[利用できるスナップイン]** リストから **[証明書]** を選択し、**[追加]** を選択します。  
+3.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **Certificati** dall'elenco **Snap-in disponibili**, quindi scegliere **Aggiungi**.  
 
-4.  **[証明書スナップイン]** ダイアログ ボックスで **[コンピューター アカウント]** を選択し、**[次へ]** を選択します。  
+4.  Nella finestra di dialogo **Snap-in certificati** scegliere **Account computer**, quindi scegliere **Avanti**.  
 
-5.  **[コンピューターの選択]** ダイアログ ボックスで、**[ローカル コンピューター: (このコンソールを実行しているコンピューター)]** が選択されていることを確認して、**[完了]** を選択します。  
+5.  Nella finestra di dialogo **Seleziona computer** verificare che l'opzione **Computer locale: (computer in cui è in esecuzione la console)** sia selezionata, quindi scegliere **Fine**.  
 
-6.  **[スナップインの追加と削除]** ダイアログ ボックスで、**[OK]** を選択します。  
+6.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **OK**.  
 
-7.  コンソールで、**[証明書 (ローカル コンピューター)]** を展開し、**[個人]** を選択します。  
+7.  Nella console espandere **Certificati (computer locale)**, quindi scegliere **Personale**.  
 
-8.  **[証明書]** を右クリックして、**[すべてのタスク]** を選択し、次に **[新しい証明書の要求]** を選択します。  
+8.  Fare clic con il pulsante destro del mouse su **Certificati**, scegliere **Tutte le attività**, quindi **Richiedi nuovo certificato**.  
 
-9. **[開始する前に]** ページで、**[次へ]** を選択します。  
+9. Nella pagina **Prima di iniziare** scegliere **Avanti**.  
 
-10. **[証明書の登録ポリシーの選択]** ページを表示する場合は、**[次へ]** を選択します。  
+10. Se viene visualizzata la pagina **Seleziona criteri di registrazione certificato**, scegliere **Avanti**.  
 
-11. **[証明書の要求]** ページで、使用可能な証明書の一覧から **[ConfigMgr Web サーバー証明書]** を見つけて、**[この証明書の登録には詳細情報が必要です] を選択します。**設定を構成するにはここをクリックします。  
+11. Nella pagina **Richiedi certificati** identificare **Certificato server Web ConfigMgr** nell'elenco dei certificati disponibili e quindi scegliere **Sono necessarie ulteriori informazioni per registrare il certificato. Per configurare le impostazioni, fare clic qui**.  
 
-12. **[証明書のプロパティ]** ダイアログ ボックスの **[サブジェクト]** タブでは、**[サブジェクト名]** を一切変更しないでください。 つまり、[ **サブジェクト名** ] の [ **値** ] ボックスは空欄のままにしておきます。 その代わりに、**[名前の変更]** セクションの **[種類]** ドロップダウン リストで、**[DNS]** を選択します。  
+12. Nella finestra di dialogo **Proprietà certificato** della scheda **Soggetto** non apportare alcuna modifica in **Nome soggetto**. Ciò significa che la casella **Valore** per la sezione **Nome oggetto** rimane vuota. Al contrario, nella sezione **Nome alternativo** fare clic sull'elenco a discesa **Tipo**, quindi scegliere **DNS**.  
 
-13. **[値]** ボックスで、System Center Configuration Manager サイト システムのプロパティで指定する FQDN 値を指定し、**[OK]** を選択して **[証明書のプロパティ]** ダイアログ ボックスを閉じます。  
+13. Nella casella **Valore** specificare i valori FQDN che saranno indicati nelle proprietà del sistema del sito di System Center Configuration Manager e scegliere **OK** per chiudere la finestra di dialogo **Proprietà certificato**.  
 
-     例:  
+     Esempi:  
 
-    -   サイト システムがイントラネット経由のクライアント接続のみを許可する場合は、サイト システム サーバーのイントラネット FQDN は **server1.internal.contoso.com** になります。「**server1.internal.contoso.com**」と入力し、**[追加]** を選択します。  
+    -   Se il sistema del sito accetterà solo connessioni client da intranet e l'FQDN intranet del server del sistema del sito è **server1.internal.contoso.com**, immettere **server1.internal.contoso.com**, quindi scegliere **Aggiungi**.  
 
-    -   サイト システムがイントラネットからとインターネットからのクライアント接続を許可する場合は、 サイト システム サーバーのイントラネット FQDN は **server1.internal.contoso.com** で、サイト システム サーバーのインターネット FQDN は **server.contoso.com**となります。  
+    -   Se il sistema del sito accetterà connessioni client da intranet e Internet e l'FQDN intranet del server del sistema del sito è **server1.internal.contoso.com** e l'FQDN Internet del server del sistema del sito è **server.contoso.com**:  
 
-        1.  「**server1.internal.contoso.com**」と入力し、**[追加]** を選択します。  
+        1.  Immettere **server1.internal.contoso.com**, quindi scegliere **Aggiungi**.  
 
-        2.  「**server.contoso.com**」と入力し、**[追加]** を選択します。  
+        2.  Immettere **server.contoso.com**, quindi scegliere **Aggiungi**.  
 
         > [!NOTE]  
-        >  System Center Configuration Manager の FQDN は任意の順番で指定できます。 しかし、モバイル デバイスやプロキシ Web サーバーなど、証明書を使用するすべてのデバイスが、サブジェクトの別名 (SAN) の証明書や SAN に複数の値が存在する証明書も使用できるのか確認します。 証明書における SAN の値についてデバイスの対応が限られている場合は、FQDN の順序を変更したり、または [サブジェクト] の値を代わりに使用したりする必要があることもあります。  
+        >  È possibile specificare gli FQDN per System Center Configuration Manager in qualsiasi ordine. Tuttavia, controllare che tutti i dispositivi che useranno il certificato, come dispositivi mobili e server Web proxy, possano usare un nome alternativo del soggetto (SAN) del certificato e più valori nel SAN. Se i dispositivi hanno un supporto limitato per i valori SAN nei certificati, potrebbe essere necessario cambiare l'ordine degli FQDN oppure utilizzare in alternativa il valore soggetto.  
 
-14. **[証明書の要求]** ページで、使用可能な証明書の一覧から **[ConfigMgr Web サーバー証明書]** を選択し、**[登録]** を選択します。  
+14. Nella pagina **Richiedi certificati** scegliere **Certificato server Web ConfigMgr** dall'elenco dei certificati disponibili, quindi scegliere **Registrazione**.  
 
-15. **[証明書のインストール結果]** ページで、証明書がインストールされるのを待ち、**[完了]** を選択します。  
+15. Nella pagina **Risultati installazione certificati** attendere il completamento dell'installazione del certificato, quindi scegliere **Fine**.  
 
-16. [ **証明書 (ローカル コンピューター)** ] を閉じます。  
+16. Chiudere **Certificati (computer locale)**.  
 
-###  <a name="BKMK_webserver42008"></a> IIS が Web サーバー証明書を使用するように構成する  
- この手順により、インストールした証明書を IIS の [ **既定の Web サイト** ]にバインドします。  
+###  <a name="BKMK_webserver42008"></a> Configurare IIS per l'uso del certificato del server Web  
+ Questa procedura consente di associare il certificato installato nel **Sito Web predefinito**di IIS.  
 
-##### <a name="to-set-up-iis-to-use-the-web-server-certificate"></a>IIS が Web サーバー証明書を使用するように設定するには  
+##### <a name="to-set-up-iis-to-use-the-web-server-certificate"></a>Per configurare IIS per l'uso del certificato del server Web  
 
-1.  インストールした IIS のあるメンバー サーバーで、**[スタート]**、**[プログラム]**、**[管理ツール]**、**[インターネット インフォメーション サービス (IIS) マネージャー]** の順に選択します。  
+1.  Nel server membro in cui è installato IIS fare clic su **Start**, scegliere **Programmi**, **Strumenti di amministrazione**, quindi **Gestione Internet Information Services (IIS)**.  
 
-2.  **[サイト]** を展開し、**[既定の Web サイト]** を右クリックして、**[バインドの編集]** を選択します。  
+2.  Espandere **Siti**, fare clic con il pulsante destro del mouse su **Sito Web predefinito**, quindi scegliere **Modifica binding**.  
 
-3.  **[https]** エントリを選択して、**[編集]** を選択します。  
+3.  Scegliere la voce **https**, quindi scegliere **Modifica**.  
 
-4.  **[サイト バインドの編集]** ダイアログ ボックスで、ConfigMgr Web サーバー証明書テンプレートを使用して、要求した証明書を選択し、**[OK]** を選択します。  
+4.  Nella finestra di dialogo **Modifica binding sito** selezionare il certificato richiesto usando il modello Certificati server Web ConfigMgr, quindi scegliere **OK**.  
 
     > [!NOTE]  
-    >  正しい証明書が不明な場合は、証明書を 1 つ選択して、**[表示]** を選択します。 これにより、選択した証明書の詳細を、証明書スナップインの証明書と比較することができます。 たとえば、証明書スナップインには、証明書の要求に使用された証明書テンプレートが表示されます。 次に、ConfigMgr Web サーバー証明書テンプレートで要求された証明書の証明書拇印を **[サイト バインドの編集]** ダイアログ ボックスで現在選択されている証明書の証明書拇印と比較できます。  
+    >  Se non si è certi di quale sia il certificato corretto, sceglierne uno e quindi scegliere **Visualizza**. In questo modo è possibile confrontare i dettagli del certificato selezionato con i certificati nello snap-in Certificati. Ad esempio, lo snap-in Certificati mostra il modello di certificato che è stato usato per richiedere il certificato. È possibile quindi confrontare l'identificazione personale del certificato richiesto usando il modello Certificati server Web ConfigMgr con l'identificazione personale del certificato attualmente selezionato nella finestra di dialogo **Modifica binding sito**.  
 
-5.  **[サイト バインドの編集]** ダイアログ ボックスで **[OK]** を選択し、次に **[閉じる]** を選択します。  
+5.  Scegliere **OK** nella finestra di dialogo **Modifica binding sito**, quindi scegliere **Chiudi**.  
 
-6.  **インターネット インフォメーション サービス (IIS) マネージャー** を閉じます。  
+6.  Chiudere **Gestione Internet Information Services (IIS)**.  
 
- これで、メンバー サーバーに System Center Configuration Manager の Web サーバー証明書が設定されました。  
+ A questo punto, il server membro è configurato con un certificato server Web di System Center Configuration Manager.  
 
 > [!IMPORTANT]  
->  System Center Configuration Manager サイト システム サーバーをこのコンピューターにインストールするときは、必ずサイト システムのプロパティで、証明書を要求するときに指定したものと同じ FQDN を指定します。  
+>  Quando si installa il server del sistema del sito di System Center Configuration Manager in questo computer, assicurarsi di specificare nelle proprietà del sistema del sito gli stessi FQDN indicati al momento della richiesta del certificato.  
 
-##  <a name="BKMK_clouddp2008_cm2012"></a> クラウドベースの配布ポイント用のサービス証明書の展開  
+##  <a name="BKMK_clouddp2008_cm2012"></a> Distribuire il certificato di servizio per i punti di distribuzione basati su cloud  
 
-この証明書の展開には次の手順が含まれています。  
+La distribuzione di questo certificato prevede le procedure seguenti:  
 
--   [証明機関でカスタム Web サーバー証明書テンプレートを作成および発行する](#BKMK_clouddpcreating2008)  
+-   [Creare ed emettere il modello del certificato del server Web personalizzato nell'autorità di certificazione](#BKMK_clouddpcreating2008)  
 
--   [カスタム Web サーバー証明書を要求する](#BKMK_clouddprequesting2008)  
+-   [Richiedere il certificato del server Web personalizzato](#BKMK_clouddprequesting2008)  
 
--   [クラウドベースの配布ポイント用にカスタム Web サーバー証明書をエクスポートする](#BKMK_clouddpexporting2008)  
+-   [Esportare il certificato del server Web personalizzato per i punti di distribuzione basati su cloud](#BKMK_clouddpexporting2008)  
 
-###  <a name="BKMK_clouddpcreating2008"></a> 証明機関でカスタム Web サーバー証明書テンプレートを作成および発行する  
- この手順では、Web サーバー証明書テンプレートに基づいてカスタム証明書テンプレートを作成します。 この証明書は System Center Configuration Manager のクラウドベースの配布ポイント用であり、プライベート キーをエクスポート可能にする必要があります。 証明書テンプレートを作成したら、証明機関に追加します。  
+###  <a name="BKMK_clouddpcreating2008"></a> Creare ed emettere il modello del certificato del server Web personalizzato nell'autorità di certificazione  
+ Questa procedura consente di creare un modello di certificato personalizzato basato sul modello del certificato del server Web. Il certificato è valido per i punti di distribuzione di System Center Configuration Manager basati sul cloud. La chiave privata deve essere esportabile. Dopo aver creato il modello di certificato, viene aggiunto all'autorità di certificazione.  
 
 > [!NOTE]  
->  この手順では、IIS を実行するサイト システム用に作成した Web サーバー証明書テンプレートとは別の証明書テンプレートを使用します。 どちらの証明書にもサーバー認証機能が必要ですが、クラウドベースの配布ポイント用の証明書では、サブジェクト名のカスタム定義値を入力する必要があり、秘密キーをエクスポートする必要があります。 セキュリティのベスト プラクティスとして、必要でない限りは、証明書テンプレートが秘密キーをエクスポートできるように設定するべきではありません。 クラウドベースの配布ポイントではこの設定が必要です。証明書を証明書ストアから選択するのではなく、ファイルとしてインポートする必要があるからです。  
+>  In questa procedura viene usato un modello di certificato diverso dal modello di certificato del server Web che è stato creato per i sistemi del sito che eseguono IIS. Sebbene entrambi i certificati richiedano la funzionalità di autenticazione server, il certificato per i punti di distribuzione basati su cloud richiede di immettere un valore definito in modo personalizzato per il nome del soggetto e la chiave privata deve essere esportata. Come procedura consigliata di sicurezza, non configurare i modelli di certificato per consentire l'esportazione della chiave privata, a meno che questa configurazione non sia necessaria. Il punto di distribuzione basato su cloud richiede questa configurazione in quanto è necessario importare il certificato come file, anziché sceglierlo dall'archivio certificati.  
 >   
->  この証明書用に新しい証明書テンプレートを作成すると、秘密キーをエクスポート可能な証明書を要求できるコンピューターを制限することができます。 運用ネットワークでは、この証明書に対して次のような変更を加えることもご検討ください。  
+>  Quando si crea un nuovo modello di certificato per questo certificato, è possibile limitare il numero dei computer che possono richiedere un certificato che consenta l'esportazione della chiave privata. In una rete di produzione, è inoltre possibile aggiungere le seguenti modifiche per questo certificato:  
 >   
->  -   セキュリティを強化するため、証明書をインストールする承認が必要です。  
-> -   証明書の有効期間を長くします。 有効期間が切れる前には毎回証明書をエクスポートおよびインポートする必要があるため、有効期間を長くすると、この手順を繰り返す回数を減らすことができます。 ただし、有効期間を長くすると、攻撃者が秘密キーを解読して証明書を盗み出す時間を長く与えることになり、証明書のセキュリティが低下します。  
-> -   IIS で使用している標準の Web サーバー証明書とこの証明書を区別できるように、証明書のサブジェクトの別名 (SAN) にはカスタム値を使用します。  
+>  -   Richiedere l'approvazione per installare il certificato per una maggiore sicurezza.  
+> -   Aumentare il periodo di validità del certificato. Poiché è necessario esportare e importare il certificato ogni volta che scade, un aumento del periodo di validità riduce la frequenza di ripetizione di questa procedura. Tuttavia, l'aumento del periodo di validità riduce anche la sicurezza del certificato, perché fornisce un tempo maggiore all'autore di un attacco per decrittografare la chiave privata e rubare il certificato.  
+> -   Utilizzare un valore personalizzato nel nome alternativo del soggetto (SAN) del certificato per distinguere questo certificato dai certificati del server Web standard che si utilizzano con IIS.  
 
-##### <a name="to-create-and-issue-the-custom-web-server-certificate-template-on-the-certification-authority"></a>証明機関でカスタム Web サーバー証明書テンプレートを作成および発行するには  
+##### <a name="to-create-and-issue-the-custom-web-server-certificate-template-on-the-certification-authority"></a>Per creare ed emettere il modello del certificato del server Web personalizzato nell'autorità di certificazione  
 
-1.  クラウドベースの配布ポイントを管理する System Center Configuration Manager プライマリ サイト サーバーをインストールするために、メンバー サーバーを含む **ConfigMgr Site Servers** というセキュリティ グループを作成します。  
+1.  Creare un gruppo di sicurezza denominato **Server del sito di ConfigMgr** che contenga i server membro per installare i server del sito primario di System Center Configuration Manager che gestiranno i punti di distribuzione basati su cloud.  
 
-2.  証明機関コンソールを実行しているメンバー サーバーで **[証明書テンプレート]** を右クリックし、**[管理]** を選択して、証明書テンプレート管理コンソールを読み込みます。  
+2.  Nel server membro su cui è in esecuzione la console Autorità di certificazione fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console di gestione Modelli di certificato.  
 
-3.  [結果] ウィンドウで、**[テンプレート表示名]** 列に **[Web サーバー]** と表示されているエントリを右クリックし、**[テンプレートの複製]** を選択します。  
+3.  Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Server Web** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
 
-4.  **[テンプレートの複製]** ダイアログ ボックスで、**[Windows 2003 Server Enterprise Edition]** が選択されていることを確認してから、**[OK]** を選択します。  
+4.  Nella finestra di dialogo **Duplica modello** verificare che sia selezionato **Windows 2003 Server, Enterprise Edition**, quindi scegliere **OK**.  
 
     > [!IMPORTANT]  
-    >  [ **Windows 2008 Server Enterprise Edition** ] を選択しないでください。  
+    >  Non selezionare **Windows 2008 Server, Enterprise Edition**.  
 
-5.  **[新しいテンプレートのプロパティ]** ダイアログ ボックスの **[全般]** タブで、**「ConfigMgr クラウド ベースの配布ポイント証明書」** など、クラウド ベースの配布ポイントの Web サーバーの証明書を生成するテンプレート名を入力します。  
+5.  Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Certificato del punto di distribuzione basato su cloud di ConfigMgr** per generare i certificati del server Web per i punti di distribuzione basati su cloud.  
 
-6.  **[要求処理]** タブを選択し、**[秘密キーのエクスポートを許可する]** を選択します。  
+6.  Scegliere la scheda **Gestione richiesta**, quindi scegliere **Rendi la chiave privata esportabile**.  
 
-7.  **[セキュリティ]** タブを選択し、**[Enterprise Admins]** セキュリティ グループから **[登録]** アクセス許可を削除します。  
+7.  Scegliere la scheda **Sicurezza** e quindi rimuovere l'autorizzazione **Registrazione** dal gruppo di sicurezza **Enterprise Admins**.  
 
-8.  **[追加]** を選択して、テキスト ボックスに「**ConfigMgr Site Server**」と入力し、**[OK]** を選択します。  
+8.  Scegliere **Aggiungi**, immettere **Server del sito di ConfigMgr** nella casella di testo, quindi scegliere **OK**.  
 
-9. このグループに対して [ **登録** ] アクセス許可を選択し、[ **読み取り** ] をオフにしません。  
+9. Selezionare l'autorizzazione **Registrazione** per questo gruppo e non cancellare l'autorizzazione **Lettura** .  
 
-10. **[OK]** を選択して、**[証明書テンプレート]** コンソールを閉じます。  
+10. Scegliere **OK** e quindi chiudere la console **Modelli di certificato**.  
 
-11. [証明機関] コンソールで、**[証明書テンプレート]** を右クリックし、**[新規作成]** を選択して **[発行する証明書テンプレート]** を選択します。  
+11. Nella console Autorità di certificazione fare clic con il pulsante destro del mouse su **Modelli di certificato**, scegliere **Nuovo** e quindi **Modello di certificato da emettere**.  
 
-12. **[証明書テンプレートの選択]** ダイアログ ボックスで、先ほど作成した新しいテンプレート **[ConfigMgr クラウドベースの配布ポイント証明書]** を選択し、**[OK]** を選択します。  
+12. Nella finestra di dialogo **Attivazione modelli di certificato** scegliere il nuovo modello appena creato, **Certificato del punto di distribuzione basato su cloud di ConfigMgr**, quindi scegliere **OK**.  
 
-13. これ以上証明書を作成して発行する必要がない場合は、**[証明機関]** を閉じます。  
+13. Se non è necessario creare ed emettere altri certificati, chiudere **Autorità di certificazione**.  
 
-###  <a name="BKMK_clouddprequesting2008"></a> カスタム Web サーバー証明書を要求する  
- この手順では、カスタム Web サーバー証明書を要求し、サイト サーバーを実行するメンバー サーバーにインストールします。  
+###  <a name="BKMK_clouddprequesting2008"></a> Richiedere il certificato del server Web  
+ Questa procedura richiede e installa il certificato del server Web personalizzato nel server membro in cui sarà in esecuzione il server del sito.  
 
-##### <a name="to-request-the-custom-web-server-certificate"></a>カスタム Web サーバー証明書を要求するには  
+##### <a name="to-request-the-custom-web-server-certificate"></a>Per richiedere il certificato del server Web  
 
-1.  **[ConfigMgr Site Servers]** セキュリティ グループを作成および構成したら、メンバー サーバーを再起動します。これによって、コンピューターは、構成した **[読み取り]** および **[登録]** のアクセス許可を使用して、作成した証明書テンプレートにアクセスできるようになります。  
+1.  Riavviare il server membro dopo aver creato e configurato il gruppo di sicurezza **Server del sito di ConfigMgr** per garantire che il computer possa accedere al modello di certificato creato usando le autorizzazioni **Lettura** e **Registrazione** configurate.  
 
-2.  **[スタート]**、**[ファイル名を指定して実行]** の順に選択し、「**mmc.exe**」と入力します。 空のコンソールで、**[ファイル]** を選択し、次に **[スナップインの追加と削除]** を選択します。  
+2.  Fare clic su **Start**, scegliere **Esegui** e quindi digitare **mmc.exe.** Nella console vuota scegliere **File**, quindi **Aggiungi/Rimuovi snap-in**.  
 
-3.  **[スナップインの追加と削除]** ダイアログ ボックスで、**[利用できるスナップイン]** リストから **[証明書]** を選択し、**[追加]** を選択します。  
+3.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **Certificati** dall'elenco **Snap-in disponibili**, quindi scegliere **Aggiungi**.  
 
-4.  **[証明書スナップイン]** ダイアログ ボックスで **[コンピューター アカウント]** を選択し、**[次へ]** を選択します。  
+4.  Nella finestra di dialogo **Snap-in certificati** scegliere **Account computer**, quindi scegliere **Avanti**.  
 
-5.  **[コンピューターの選択]** ダイアログ ボックスで、**[ローカル コンピューター: (このコンソールを実行しているコンピューター)]** が選択されていることを確認して、**[完了]** を選択します。  
+5.  Nella finestra di dialogo **Seleziona computer** verificare che l'opzione **Computer locale: (computer in cui è in esecuzione la console)** sia selezionata, quindi scegliere **Fine**.  
 
-6.  **[スナップインの追加と削除]** ダイアログ ボックスで、**[OK]** を選択します。  
+6.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **OK**.  
 
-7.  コンソールで、**[証明書 (ローカル コンピューター)]** を展開し、**[個人]** を選択します。  
+7.  Nella console espandere **Certificati (computer locale)**, quindi scegliere **Personale**.  
 
-8.  **[証明書]** を右クリックして、**[すべてのタスク]** を選択し、次に **[新しい証明書の要求]** を選択します。  
+8.  Fare clic con il pulsante destro del mouse su **Certificati**, scegliere **Tutte le attività**, quindi **Richiedi nuovo certificato**.  
 
-9. **[開始する前に]** ページで、**[次へ]** を選択します。  
+9. Nella pagina **Prima di iniziare** scegliere **Avanti**.  
 
-10. **[証明書の登録ポリシーの選択]** ページを表示する場合は、**[次へ]** を選択します。  
+10. Se viene visualizzata la pagina **Seleziona criteri di registrazione certificato**, scegliere **Avanti**.  
 
-11. **[証明書の要求]** ページの使用可能な証明書の一覧から **[ConfigMgr クラウド ベースの配布ポイント証明書]** を見つけて、**[この証明書の登録には詳細情報が必要です]** を選択します。設定を構成するにはここを選択します。  
+11. Nella pagina **Richiedi certificati** identificare il **Certificato del punto di distribuzione basato su cloud di ConfigMgr** dall'elenco dei certificati disponibili e quindi scegliere **Sono necessarie ulteriori informazioni per registrare il certificato. Per configurare le impostazioni, fare clic qui**.  
 
-12. **[証明書のプロパティ]** ダイアログ ボックスの **[サブジェクト]** タブで、**[サブジェクト名]** の **[種類]** として **[共通名]** を選択します。  
+12. Nella finestra di dialogo **Proprietà certificato**, nella scheda **Soggetto**, per **Nome soggetto** scegliere **Nome comune** come **Tipo**.  
 
-13. [ **値** ] ボックスに、任意のサービス名と、FQDN 形式のドメイン名を入力します。 例: **clouddp1.contoso.com**。  
-
-    > [!NOTE]  
-    >  名前空間内でサービス名は一意にします。 このサービス名を、Windows Azure から自動生成される ID (GUID) および IP アドレスに対応付けるために、DNS を使用してエイリアス (CNAME レコード) を作成します。  
-
-14. **[追加]** を選択し、**[OK]** を選択して、**[証明書のプロパティ]** ダイアログ ボックスを閉じます。  
-
-15. **[証明書の要求]** ページで、使用可能な証明書の一覧から **[ConfigMgr クラウドベースの配布ポイント証明書]** を選択し、**[登録]** を選択します。  
-
-16. **[証明書のインストール結果]** ページで、証明書がインストールされるのを待ち、**[完了]** を選択します。  
-
-17. [ **証明書 (ローカル コンピューター)** ] を閉じます。  
-
-###  <a name="BKMK_clouddpexporting2008"></a> クラウドベースの配布ポイント用にカスタム Web サーバー証明書をエクスポートする  
- この手順では、カスタム Web サーバー証明書をファイルにエクスポートして、クラウドベースの配布ポイントを作成するときに証明書をインポートできるようにします。  
-
-##### <a name="to-export-the-custom-web-server-certificate-for-cloud-based-distribution-points"></a>クラウドベースの配布ポイント用に Web サーバー証明書をエクスポートするには  
-
-1.  **[証明書 (ローカル コンピューター)]** コンソールで、インストールした証明書を右クリックし、**[すべてのタスク]**、**[エクスポート]** の順に選択します。  
-
-2.  証明書のエクスポート ウィザードで、**[次へ]** を選択します。  
-
-3.  **[秘密キーのエクスポート]** ページで、**[はい]** を選択し、秘密キーをエクスポートしてから、**[次へ]** を選択します。  
+13. Nella casella **Valore** , specificare la scelta del nome del servizio e il nome del dominio utilizzando un formato FQDN. Ad esempio, **clouddp1.contoso.com**.  
 
     > [!NOTE]  
-    >  このオプションが使用できない場合、その証明書は秘密キーをエクスポートするオプションなしで作成されています。 この場合、証明書を必要な形式でエクスポートできません。 秘密キーをエクスポートできるように証明書テンプレートを設定して、再び証明書を要求する必要があります。  
+    >  Rendere il nome del servizio univoco nello spazio dei nomi. Si utilizzerà il DNS per creare un alias (record CNAME) per il mapping del nome di questo servizio su un identificatore generato automaticamente (GUID) e un indirizzo IP di Windows Azure.  
 
-4.  **[エクスポート ファイルの形式]** ページで **[Personal Information Exchange – PKCS #12 (.PFX)]** オプションが選択されていることを確認します。  
+14. Scegliere **Aggiungi**, quindi scegliere **OK** per chiudere la finestra di dialogo **Proprietà certificato**.  
 
-5.  **[パスワード]** ページで、エクスポートした証明書とその秘密キーを保護するために強力なパスワードを指定し、**[次へ]** を選択します。  
+15. Nella pagina **Richiedi certificati** scegliere **Certificato del punto di distribuzione basato su cloud di ConfigMgr** dall'elenco dei certificati disponibili, quindi scegliere **Registrazione**.  
 
-6.  **[エクスポートするファイル]** ページで、エクスポートするファイルの名前を指定し、**[次へ]** を選択します。  
+16. Nella pagina **Risultati installazione certificati** attendere il completamento dell'installazione del certificato, quindi scegliere **Fine**.  
 
-7.  ウィザードを閉じるには、**[証明書のエクスポート ウィザード]** ページで **[完了]** を選択し、確認ダイアログ ボックスで **[OK]** を選択します。  
+17. Chiudere **Certificati (computer locale)**.  
 
-8.  [ **証明書 (ローカル コンピューター)** ] を閉じます。  
+###  <a name="BKMK_clouddpexporting2008"></a> Esportare il certificato del server Web personalizzato per i punti di distribuzione basati su cloud  
+ Questa procedura consente di esportare il certificato del server Web personalizzato in un file in modo da importarlo al momento della creazione di un punto di distribuzione basato su cloud.  
 
-9. ファイルをセキュリティで保護して保存し、System Center Configuration Manager コンソールからアクセスできることを確認します。  
+##### <a name="to-export-the-custom-web-server-certificate-for-cloud-based-distribution-points"></a>Per esportare il certificato del server Web personalizzato per i punti di distribuzione basati su cloud  
 
- これで、クラウドベースの配布ポイントを作成するときに、証明書をインポートできるようになりました。  
+1.  Nella console **Certificati (computer locale)** fare clic con il pulsante destro del mouse sul certificato appena installato, scegliere **Tutte le attività**, quindi scegliere **Esporta**.  
 
-##  <a name="BKMK_client2008_cm2012"></a> Windows コンピューター用のクライアント証明書の展開  
- この証明書の展開には次の手順が含まれています。  
+2.  Nell'Esportazione guidata certificati scegliere **Avanti**.  
 
--   証明機関でワークステーション認証証明書テンプレートを作成および発行する  
+3.  Nella pagina **Esportazione della chiave privata con il certificato** scegliere **Sì, esporta la chiave privata**, quindi scegliere **Avanti**.  
 
--   グループ ポリシーを使用してワークステーション認証テンプレートの自動登録を構成する  
+    > [!NOTE]  
+    >  Se questa opzione non è disponibile, il certificato è stato creato senza l'opzione per esportare la chiave privata. In questo scenario, non è possibile esportare il certificato nel formato richiesto. È necessario configurare il modello di certificato per consentire l'esportazione della chiave privata e richiedere di nuovo il certificato.  
 
--   ワークステーション認証証明書を自動登録し、コンピューターへのインストールを確認する  
+4.  Nella pagina **Formato file di esportazione** assicurarsi che sia selezionata l'opzione **Scambio di informazioni personali - PKCS #12 (.PFX)**.  
 
-###  <a name="BKMK_client02008"></a> 証明機関でワークステーション認証証明書テンプレートを作成および発行する  
- この手順により、System Center Configuration Manager クライアント コンピューターの証明書テンプレートを作成し、それを証明機関に追加します。  
+5.  Nella pagina **Password** specificare una password complessa per proteggere il certificato esportato con la relativa chiave privata, quindi scegliere **Avanti**.  
 
-##### <a name="to-create-and-issue-the-workstation-authentication-certificate-template-on-the-certification-authority"></a>証明機関でワークステーション認証証明書テンプレートを作成および発行するには  
+6.  Nella pagina **File da esportare** specificare il nome del file da esportare, quindi scegliere **Avanti**.  
 
-1.  証明機関コンソールを実行しているメンバー サーバーで **[証明書テンプレート]** を右クリックし、**[管理]** を選択して、証明書テンプレート管理コンソールを読み込みます。  
+7.  Per chiudere la procedura guidata, scegliere **Fine** nella pagina **Esportazione guidata certificato**, quindi scegliere **OK** nella finestra di conferma.  
 
-2.  結果ウィンドウで、**[テンプレート表示名]** 列に **[ワークステーション認証]** と表示されているエントリを右クリックし、**[テンプレートの複製]** を選択します。  
+8.  Chiudere **Certificati (computer locale)**.  
 
-3.  **[テンプレートの複製]** ダイアログ ボックスで、**[Windows 2003 Server Enterprise Edition]** が選択されていることを確認してから、**[OK]** を選択します。  
+9. Archiviare il file in modo protetto e assicurarsi che sia possibile accedervi dalla console di System Center Configuration Manager.  
+
+ Il certificato è ora pronto per essere importato quando si crea un punto di distribuzione basato su cloud.  
+
+##  <a name="BKMK_client2008_cm2012"></a> Distribuire il certificato client per computer Windows  
+ La distribuzione di questo certificato prevede le procedure seguenti:  
+
+-   Creare ed emettere il modello del certificato di autenticazione della workstation nell'autorità di certificazione  
+
+-   Configurare la registrazione automatica del modello di autenticazione della workstation usando i criteri di gruppo  
+
+-   Registrare automaticamente il certificato di autenticazione della workstation e verificarne l'installazione nei computer  
+
+###  <a name="BKMK_client02008"></a> Creare ed emettere il modello del certificato di autenticazione della workstation nell'autorità di certificazione  
+ Questa procedura crea un modello di certificato per i computer client di System Center Configuration Manager e lo aggiunge all'autorità di certificazione.  
+
+##### <a name="to-create-and-issue-the-workstation-authentication-certificate-template-on-the-certification-authority"></a>Per creare ed emettere il modello del certificato di autenticazione della workstation nell'autorità di certificazione  
+
+1.  Nel server membro su cui è in esecuzione la console Autorità di certificazione fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console di gestione Modelli di certificato.  
+
+2.  Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Autenticazione workstation** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
+
+3.  Nella finestra di dialogo **Duplica modello** verificare che sia selezionato **Windows 2003 Server, Enterprise Edition**, quindi scegliere **OK**.  
 
     > [!IMPORTANT]  
-    >  [ **Windows 2008 Server Enterprise Edition** ] を選択しないでください。  
+    >  Non selezionare **Windows 2008 Server, Enterprise Edition**.  
 
-4.  **[新しいテンプレートのプロパティ]** ダイアログ ボックスの **[全般]** タブで、「**ConfigMgr クライアント証明書**」など、Configuration Manager クライアント コンピューターで使用されるクライアント証明書を生成するテンプレート名を入力します。  
+4.  Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Certificato client di ConfigMgr** per generare i certificati client che saranno usati sui computer client di Configuration Manager.  
 
-5.  **[セキュリティ]** タブを選択し、**[ドメイン コンピューター]** グループを選択して、**[読み取り]** と **[自動登録]** の追加のアクセス許可を選択します。 **[登録]** をオフにしないでください。  
+5.  Scegliere la scheda **Sicurezza**, selezionare il gruppo **Computer del dominio**, quindi selezionare le autorizzazioni aggiuntive **Lettura** e **Registrazione automatica**. Non deselezionare **Registrazione**.  
 
-6.  **[OK]** を選択して、**[証明書テンプレート]** コンソールを閉じます。  
+6.  Scegliere **OK** e quindi chiudere la console **Modelli di certificato**.  
 
-7.  [証明機関] コンソールで、**[証明書テンプレート]** を右クリックし、**[新規作成]** を選択して **[発行する証明書テンプレート]** を選択します。  
+7.  Nella console Autorità di certificazione fare clic con il pulsante destro del mouse su **Modelli di certificato**, scegliere **Nuovo** e quindi **Modello di certificato da emettere**.  
 
-8.  **[証明書テンプレートの選択]** ダイアログ ボックスで、先ほど作成した新しいテンプレート **[ConfigMgr クライアント証明書]** を選択し、**[OK]** を選択します。  
+8.  Nella finestra di dialogo **Attivazione modelli di certificato** scegliere il nuovo modello appena creato, **Certificato client di ConfigMgr**, quindi scegliere **OK**.  
 
-9. これ以上証明書を作成して発行する必要がない場合は、**[証明機関]** を閉じます。  
+9. Se non è necessario creare ed emettere altri certificati, chiudere **Autorità di certificazione**.  
 
-###  <a name="BKMK_client12008"></a> グループ ポリシーを使用してワークステーション認証テンプレートの自動登録を構成する  
- この手順により、コンピューターにクライアント証明書を自動登録するグループ ポリシーを設定します。  
+###  <a name="BKMK_client12008"></a> Configurare la registrazione automatica del modello di autenticazione della workstation usando i criteri di gruppo  
+ Questa procedura consente di configurare i criteri di gruppo per registrare automaticamente il certificato client sui computer.  
 
-##### <a name="to-set-up-autoenrollment-of-the-workstation-authentication-template-by-using-group-policy"></a>グループ ポリシーを使用してワークステーション認証テンプレートの自動登録を設定するには  
+##### <a name="to-set-up-autoenrollment-of-the-workstation-authentication-template-by-using-group-policy"></a>Per configurare la registrazione automatica del modello di autenticazione della workstation usando i criteri di gruppo  
 
-1.  ドメイン コントローラーで、**[開始]**、**[管理ツール]**、**[グループ ポリシー管理]** の順に選択します。  
+1.  Nel controller di dominio fare clic su **Start**, scegliere **Strumenti di amministrazione**, quindi **Gestione criteri di gruppo**.  
 
-2.  ドメインに移動して、ドメインを右クリックし、**[このドメインに GPO を作成し、このコンテナーにリンクする]** を選択します。  
-
-    > [!NOTE]  
-    >  この手順では、Active Directory ドメイン サービスでインストールされる既定のドメイン ポリシーを編集するのではなく、カスタム設定の新しいグループ ポリシーを推奨される方法で作成します。 このグループ ポリシーをドメイン レベルで割り当てると、ドメイン内のすべてのコンピューターに適用されます。 運用環境では、選択したコンピューターにのみ登録されるように自動登録を制限することができます。 グループ ポリシーを組織単位レベルで割り当てることも、ドメイン グループ ポリシーがグループ内のコンピューターにのみ適用されるように、セキュリティ グループを使用してドメイン グループ ポリシーをフィルタリングすることもできます。 自動登録を制限する場合は、管理ポイントとして設定されているサーバーを必ず含めてください。  
-
-3.  **[新しい GPO]** ダイアログ ボックスに、「**自動登録証明書**」など、新しいグループ ポリシーの名前を入力し、**[OK]** を選択します。  
-
-4.  結果ウィンドウの **[リンクされたグループ ポリシー オブジェクト]** タブで、新しいグループのポリシーを右クリックし、**[編集]** を選択します。  
-
-5.  **[グループ ポリシー管理エディター]** で、**[コンピューターの構成]** の下にある **[ポリシー]** を展開し、**[Windows の設定]** / **[セキュリティ設定]** / **[公開キーのポリシー]** の順に移動します。  
-
-6.  **[証明書サービス クライアント - 自動登録]** という名前のオブジェクトの種類を右クリックして、**[プロパティ]** を選択します。  
-
-7.  **[構成モデル]** のドロップダウン リストから、**[有効]**、**[期限切れの証明書と保留中の証明書を更新し、失効した証明書を削除する]**、**[証明書テンプレートを使用する証明書を更新する]** を順に選択し、**[OK]** を選択します。  
-
-8.  **[グループ ポリシー管理]**を閉じます。  
-
-###  <a name="BKMK_client22008"></a> ワークステーション認証証明書を自動登録し、コンピューターへのインストールを確認する  
- この手順により、クライアント証明書をコンピューターにインストールし、インストールを確認します。  
-
-##### <a name="to-automatically-enroll-the-workstation-authentication-certificate-and-verify-its-installation-on-the-client-computer"></a>ワークステーション認証証明書を自動登録し、クライアント コンピューターへのインストールを確認するには  
-
-1.  ワークステーション コンピューターを再起動し、少し待ってからサインインします。  
+2.  Passare al dominio in questione, fare clic con il pulsante destro del mouse su di esso, quindi scegliere **Crea un oggetto Criteri di gruppo in questo dominio e crea qui un collegamento**.  
 
     > [!NOTE]  
-    >  証明書の自動登録の正常な完了を保証するには、コンピューターを再起動するのが最も確実です。  
+    >  Questo passaggio consente di utilizzare la procedura consigliata per creare nuovi criteri di gruppo per le impostazioni personalizzate piuttosto che modificare i criteri dominio predefiniti installati con i Servizi di dominio Active Directory. Quando si assegnano questi criteri di gruppo al livello di dominio, i criteri verranno applicati a tutti i computer nel dominio. In un ambiente di produzione, è possibile limitare la registrazione automatica in modo che venga eseguita solo nei computer selezionati. È possibile assegnare i criteri di gruppo a livello di unità organizzativa oppure filtrare i criteri di gruppo di dominio con un gruppo di sicurezza, in modo che vengano applicati solo ai computer del gruppo. Se si limita la registrazione automatica, ricordarsi di includere il server configurato come punto di gestione.  
 
-2.  管理者特権があるアカウントでサインインします。  
+3.  Nella finestra di dialogo **Nuovo oggetto Criteri di gruppo** immettere un nome come **Registrazione automatica certificati** per i nuovi criteri di gruppo e scegliere **OK**.  
 
-3.  検索ボックスで「**mmc.exe.**」と入力し、**Enter** キーを押します。  
+4.  Nel riquadro dei risultati, nella scheda **Oggetti Criteri di gruppo collegati**, fare clic con il pulsante destro del mouse sui nuovi criteri di gruppo, quindi scegliere **Modifica**.  
 
-4.  空の管理コンソールで、**[ファイル]** を選択し、次に **[スナップインの追加と削除]** を選択します。  
+5.  Nella finestra di dialogo **Editor Gestione Criteri di gruppo** espandere **Criteri** in **Configurazione computer**, quindi passare a **Impostazioni Windows** / **Impostazioni di protezione** / **Criteri chiave pubblica**.  
 
-5.  **[スナップインの追加と削除]** ダイアログ ボックスで、**[利用できるスナップイン]** リストから **[証明書]** を選択し、**[追加]** を選択します。  
+6.  Fare clic con il pulsante destro del mouse sul tipo di oggetto denominato **Client Servizi certificati - Registrazione automatica**, quindi scegliere **Proprietà**.  
 
-6.  **[証明書スナップイン]** ダイアログ ボックスで **[コンピューター アカウント]** を選択し、**[次へ]** を選択します。  
+7.  Dall'elenco a discesa **Modello configurazione** scegliere **Attivato**, **Rinnova i certificati scaduti, aggiorna quelli in sospeso e rimuovi i certificati revocati**, **Aggiorna i certificati che utilizzano modelli di certificato**, quindi scegliere **OK**.  
 
-7.  **[コンピューターの選択]** ダイアログ ボックスで、**[ローカル コンピューター: (このコンソールを実行しているコンピューター)]** が選択されていることを確認して、**[完了]** を選択します。  
+8.  Chiudere **Gestione criteri di gruppo**.  
 
-8.  **[スナップインの追加と削除]** ダイアログ ボックスで、**[OK]** を選択します。  
+###  <a name="BKMK_client22008"></a> Registrare automaticamente il certificato di autenticazione della workstation e verificarne l'installazione nei computer  
+ Questa procedura consente di installare il certificato del client nei computer e verifica l'installazione.  
 
-9. コンソールで **[証明書 (ローカル コンピューター)]**、**[個人]** の順に展開して、**[証明書]** を選択します。  
+##### <a name="to-automatically-enroll-the-workstation-authentication-certificate-and-verify-its-installation-on-the-client-computer"></a>Per registrare automaticamente il certificato di autenticazione della workstation e verificare la sua installazione nel computer client  
 
-10. 結果ウィンドウで、**[使用目的]** 列に **[クライアント認証]** と表示されている証明書があること、**[証明書テンプレート]** 列に **[ConfigMgr クライアント証明書]** が表示されていることを確認します。  
+1.  Riavviare il computer della workstation e attendere alcuni minuti prima di effettuare l'accesso.  
 
-11. [ **証明書 (ローカル コンピューター)** ] を閉じます。  
+    > [!NOTE]  
+    >  Il riavvio di un computer è il metodo più affidabile per un registrazione automatica dei certificati corretta.  
 
-12. 管理ポイントとして設定されるサーバーもクライアント証明書も持っているかを確認するメンバー サーバーについて、手順 1 ～ 11 を繰り返します。  
+2.  Accedere con un account che abbia privilegi amministrativi.  
 
- これで、コンピューターに System Center Configuration Manager のクライアント証明書が設定されました。  
+3.  Nella casella di ricerca digitare **mmc.exe**, quindi premere **INVIO**.  
 
-##  <a name="BKMK_clientdistributionpoint2008_cm2012"></a> 配布ポイント用のクライアント証明書の展開  
+4.  Nella console di gestione vuota scegliere **File**, quindi **Aggiungi/Rimuovi snap-in**.  
+
+5.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **Certificati** dall'elenco **Snap-in disponibili**, quindi scegliere **Aggiungi**.  
+
+6.  Nella finestra di dialogo **Snap-in certificati** scegliere **Account computer**, quindi scegliere **Avanti**.  
+
+7.  Nella finestra di dialogo **Seleziona computer** verificare che l'opzione **Computer locale: (computer in cui è in esecuzione la console)** sia selezionata, quindi scegliere **Fine**.  
+
+8.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **OK**.  
+
+9. Nella console espandere **Certificati (computer locale)**, espandere **Personale**, quindi scegliere **Certificati**.  
+
+10. Nel riquadro dei risultati verificare che sia presente un certificato con **Autenticazione client** nella colonna **Scopo designato** e **Certificato client di ConfigMgr** nella colonna **Modello di certificato**.  
+
+11. Chiudere **Certificati (computer locale)**.  
+
+12. Ripetere i passaggi da 1 a 11 per il server membro per verificare che anche il server che verrà configurato come punto di gestione disponga di un certificato client.  
+
+ A questo punto, il computer è configurato con un certificato client di System Center Configuration Manager.  
+
+##  <a name="BKMK_clientdistributionpoint2008_cm2012"></a> Distribuire il certificato client per punti di distribuzione  
 
 > [!NOTE]  
->  この証明書は、PXE ブートを使用しないメディア イメージにも使用できます。これは、証明書の要件が同じためです。  
+>  Questo certificato può essere utilizzato anche per le immagini di supporto che non utilizzano l'avvio PXE, perché i requisiti del certificato sono gli stessi.  
 
- この証明書の展開には次の手順が含まれています。  
+ La distribuzione di questo certificato prevede le procedure seguenti:  
 
--   カスタムのワークステーション認証証明書テンプレートを作成して証明機関に発行する  
+-   Creare ed emettere un modello di certificato di autenticazione della workstation personalizzato nell'autorità di certificazione  
 
--   カスタムのワークステーション認証証明書を要求する  
+-   Richiedere il certificato di autenticazione della workstation personalizzato  
 
--   配布ポイント用にクライアント証明書をエクスポートする  
+-   Esportare il certificato client per i punti di distribuzione  
 
-###  <a name="BKMK_clientdistributionpoint02008"></a> カスタムのワークステーション認証証明書テンプレートを作成して証明機関に発行する  
- この手順では、秘密キーをエクスポートできるように System Center Configuration Manager 配布ポイントのカスタム証明書テンプレートを作成して、証明書テンプレートを証明機関に追加します。  
+###  <a name="BKMK_clientdistributionpoint02008"></a> Creare ed emettere un modello di certificato di autenticazione della workstation personalizzato nell'autorità di certificazione  
+ Questa procedura crea un modello di certificato personalizzato per i punti di distribuzione di System Center Configuration Manager che consente l'esportazione della chiave privata e l'aggiunta del modello di certificato all'autorità di certificazione.  
 
 > [!NOTE]  
->  この手順では、クライアント コンピューター用に作成した証明書テンプレートとは別の証明書テンプレートを使用します。 どちらの証明書もクライアント認証機能を必要としますが、配布ポイント用の証明書では、秘密キーがエクスポートできる必要があります。 セキュリティのベスト プラクティスとして、必要でない限りは、証明書テンプレートが秘密キーをエクスポートできるように設定するべきではありません。 配布ポイントではこの設定が必要です。証明書を証明書ストアから選択するのではなく、ファイルとしてインポートする必要があるからです。  
+>  In questa procedura viene usato un modello di certificato diverso dal modello di certificato che è stato creato per i computer client. Sebbene entrambi i certificati richiedano la funzionalità di autenticazione client, il certificato per i punti di distribuzione richiede l'esportazione della chiave privata. Come procedura consigliata di sicurezza, non configurare i modelli di certificato per consentire l'esportazione della chiave privata, a meno che questa configurazione non sia necessaria. Il punto di distribuzione richiede questa configurazione in quanto è necessario importare il certificato come file, anziché sceglierlo dall'archivio certificati.  
 >   
->  この証明書用に新しい証明書テンプレートを作成すると、秘密キーをエクスポート可能な証明書を要求できるコンピューターを制限することができます。 例としている展開では、IIS を実行する System Center Configuration Manager サイト システム サーバー用に以前作成したセキュリティ グループが対象になります。 IIS サイト システムの役割を配布するネットワークでは、配布ポイントを実行するサーバー用に新しいセキュリティ グループを作成して、それらのサイト システム サーバーのみに証明書を制限することを考慮します。 次のような変更を加えることも考慮します。  
+>  Quando si crea un nuovo modello di certificato per questo certificato, è possibile limitare il numero dei computer che possono richiedere un certificato che consenta l'esportazione della chiave privata. Nel nostro esempio di distribuzione questo sarà il gruppo di sicurezza precedentemente creato per i server del sistema del sito di System Center Configuration Manager che eseguono IIS. In una rete di produzione che distribuisce i ruoli del sistema del sito IIS, creare un nuovo gruppo di protezione per i server su cui sono in esecuzione i punti di distribuzione in modo che sia possibile limitare il certificato solo a questi server del sistema del sito. È possibile anche aggiungere le seguenti modifiche per questo certificato:  
 >   
->  -   セキュリティを強化するため、証明書をインストールする承認が必要です。  
-> -   証明書の有効期間を長くします。 有効期間が切れる前には毎回証明書をエクスポートおよびインポートする必要があるため、有効期間を長くすると、この手順を繰り返す回数を減らすことができます。 ただし、有効期間を長くすると、攻撃者が秘密キーを解読して証明書を盗み出す時間を長く与えることになり、証明書のセキュリティが低下します。  
-> -   証明書のサブジェクトまたはサブジェクトの別名 (SAN) にカスタム値を使用して、標準のクライアント証明書とこの証明書を区別できます。 この方法は複数の配布ポイントで同じ証明書を使用する場合に特に有用です。  
+>  -   Richiedere l'approvazione per installare il certificato per una maggiore sicurezza.  
+> -   Aumentare il periodo di validità del certificato. Poiché è necessario esportare e importare il certificato ogni volta che scade, un aumento del periodo di validità riduce la frequenza di ripetizione di questa procedura. Tuttavia, l'aumento del periodo di validità riduce anche la sicurezza del certificato, perché fornisce un tempo maggiore all'autore di un attacco per decrittografare la chiave privata e rubare il certificato.  
+> -   Utilizzare un valore personalizzato nel campo Oggetto del certificato o Nome alternativo del soggetto (SAN) per identificare questo certificato dai certificati client standard. Può essere particolarmente utile se si utilizza lo stesso certificato per più punti di distribuzione.  
 
-##### <a name="to-create-and-issue-the-custom-workstation-authentication-certificate-template-on-the-certification-authority"></a>カスタムのワークステーション認証証明書テンプレートを作成して証明機関に発行するには  
+##### <a name="to-create-and-issue-the-custom-workstation-authentication-certificate-template-on-the-certification-authority"></a>Per creare ed emettere il modello di certificato di autenticazione della workstation personalizzato nell'autorità di certificazione  
 
-1.  証明機関コンソールを実行しているメンバー サーバーで **[証明書テンプレート]** を右クリックし、**[管理]** を選択して、証明書テンプレート管理コンソールを読み込みます。  
+1.  Nel server membro su cui è in esecuzione la console Autorità di certificazione fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console di gestione Modelli di certificato.  
 
-2.  結果ウィンドウで、**[テンプレート表示名]** 列に **[ワークステーション認証]** と表示されているエントリを右クリックし、**[テンプレートの複製]** を選択します。  
+2.  Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Autenticazione workstation** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
 
-3.  **[テンプレートの複製]** ダイアログ ボックスで、**[Windows 2003 Server Enterprise Edition]** が選択されていることを確認してから、**[OK]** を選択します。  
+3.  Nella finestra di dialogo **Duplica modello** verificare che sia selezionato **Windows 2003 Server, Enterprise Edition**, quindi scegliere **OK**.  
 
     > [!IMPORTANT]  
-    >  [ **Windows 2008 Server Enterprise Edition** ] を選択しないでください。  
+    >  Non selezionare **Windows 2008 Server, Enterprise Edition**.  
 
-4.  **[新しいテンプレートのプロパティ]** ダイアログ ボックスの **[全般]** タブで、「**ConfigMgr クライアントの配布ポイント証明書**」など、配布ポイントのクライアント認証証明書を生成するテンプレート名を入力します。  
+4.  Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Certificato del punto di distribuzione di ConfigMgr** per generare i certificati di autenticazione client per i punti di distribuzione.  
 
-5.  **[要求処理]** タブを選択し、**[秘密キーのエクスポートを許可する]** を選択します。  
+5.  Scegliere la scheda **Gestione richiesta**, quindi scegliere **Rendi la chiave privata esportabile**.  
 
-6.  **[セキュリティ]** タブを選択し、**[Enterprise Admins]** セキュリティ グループから **[登録]** アクセス許可を削除します。  
+6.  Scegliere la scheda **Sicurezza** e quindi rimuovere l'autorizzazione **Registrazione** dal gruppo di sicurezza **Enterprise Admins**.  
 
-7.  **[追加]** を選択して、テキスト ボックスに「**ConfigMgr IIS Servers**」と入力し、**[OK]** を選択します。  
+7.  Scegliere **Aggiungi**, immettere **Server IIS ConfigMgr** nella casella di testo, quindi scegliere **OK**.  
 
-8.  このグループに対して [ **登録** ] アクセス許可を選択し、[ **読み取り** ] をオフにしません。  
+8.  Selezionare l'autorizzazione **Registrazione** per questo gruppo e non cancellare l'autorizzazione **Lettura** .  
 
-9. **[OK]** を選択して、**[証明書テンプレート]** コンソールを閉じます。  
+9. Scegliere **OK** e quindi chiudere la console **Modelli di certificato**.  
 
-10. [証明機関] コンソールで、**[証明書テンプレート]** を右クリックし、**[新規作成]** を選択して **[発行する証明書テンプレート]** を選択します。  
+10. Nella console Autorità di certificazione fare clic con il pulsante destro del mouse su **Modelli di certificato**, scegliere **Nuovo** e quindi **Modello di certificato da emettere**.  
 
-11. **[証明書テンプレートの選択]** ダイアログ ボックスで、先ほど作成した新しいテンプレート **[ConfigMgr クライアントの配布ポイント証明書]** を選択し、**[OK]** を選択します。  
+11. Nella finestra di dialogo **Attivazione modelli di certificato** scegliere il nuovo modello appena creato, **Certificato del punto di distribuzione di ConfigMgr**, quindi scegliere **OK**.  
 
-12. これ以上証明書を作成して発行する必要がない場合は、**[証明機関]** を閉じます。  
+12. Se non è necessario creare ed emettere altri certificati, chiudere **Autorità di certificazione**.  
 
-###  <a name="BKMK_clientdistributionpoint12008"></a> カスタムのワークステーション認証証明書を要求する  
- この手順では、まずカスタムのクライアント証明書を要求し、次に IIS を実行しかつ配布ポイントとして設定されるメンバー サーバーにインストールします。  
+###  <a name="BKMK_clientdistributionpoint12008"></a> Richiedere il certificato di autenticazione della workstation personalizzato  
+ Questa procedura richiede e installa il certificato client personalizzato nel server membro in cui è in esecuzione IIS e che verrà configurato come punto di distribuzione.  
 
-##### <a name="to-request-the-custom-workstation-authentication-certificate"></a>カスタムのワークステーション認証証明書を要求するには  
+##### <a name="to-request-the-custom-workstation-authentication-certificate"></a>Per richiedere il certificato di autenticazione della workstation personalizzato  
 
-1.  **[スタート]**、**[ファイル名を指定して実行]** の順に選択し、「**mmc.exe**」と入力します。 空のコンソールで、**[ファイル]** を選択し、次に **[スナップインの追加と削除]** を選択します。  
+1.  Fare clic su **Start**, scegliere **Esegui** e quindi digitare **mmc.exe.** Nella console vuota scegliere **File**, quindi **Aggiungi/Rimuovi snap-in**.  
 
-2.  **[スナップインの追加と削除]** ダイアログ ボックスで、**[利用できるスナップイン]** リストから **[証明書]** を選択し、**[追加]** を選択します。  
+2.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **Certificati** dall'elenco **Snap-in disponibili**, quindi scegliere **Aggiungi**.  
 
-3.  **[証明書スナップイン]** ダイアログ ボックスで **[コンピューター アカウント]** を選択し、**[次へ]** を選択します。  
+3.  Nella finestra di dialogo **Snap-in certificati** scegliere **Account computer**, quindi scegliere **Avanti**.  
 
-4.  **[コンピューターの選択]** ダイアログ ボックスで、**[ローカル コンピューター: (このコンソールを実行しているコンピューター)]** が選択されていることを確認して、**[完了]** を選択します。  
+4.  Nella finestra di dialogo **Seleziona computer** verificare che l'opzione **Computer locale: (computer in cui è in esecuzione la console)** sia selezionata, quindi scegliere **Fine**.  
 
-5.  **[スナップインの追加と削除]** ダイアログ ボックスで、**[OK]** を選択します。  
+5.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **OK**.  
 
-6.  コンソールで、**[証明書 (ローカル コンピューター)]** を展開し、**[個人]** を選択します。  
+6.  Nella console espandere **Certificati (computer locale)**, quindi scegliere **Personale**.  
 
-7.  **[証明書]** を右クリックして、**[すべてのタスク]** を選択し、次に **[新しい証明書の要求]** を選択します。  
+7.  Fare clic con il pulsante destro del mouse su **Certificati**, scegliere **Tutte le attività**, quindi **Richiedi nuovo certificato**.  
 
-8.  **[開始する前に]** ページで、**[次へ]** を選択します。  
+8.  Nella pagina **Prima di iniziare** scegliere **Avanti**.  
 
-9. **[証明書の登録ポリシーの選択]** ページを表示する場合は、**[次へ]** を選択します。  
+9. Se viene visualizzata la pagina **Seleziona criteri di registrazione certificato**, scegliere **Avanti**.  
 
-10. **[証明書の要求]** ページで、使用可能な証明書の一覧から **[ConfigMgr クライアントの配布ポイント証明書]** を選択し、**[登録]** を選択します。  
+10. Nella pagina **Richiedi certificati** scegliere **Certificato del punto di distribuzione di ConfigMgr** dall'elenco dei certificati disponibili, quindi scegliere **Registrazione**.  
 
-11. **[証明書のインストール結果]** ページで、証明書がインストールされるのを待ち、**[完了]** を選択します。  
+11. Nella pagina **Risultati installazione certificati** attendere il completamento dell'installazione del certificato, quindi scegliere **Fine**.  
 
-12. 結果ウィンドウで、**[使用目的]** 列に **[クライアント認証]** と表示されている証明書があること、**[証明書テンプレート]** 列に **[ConfigMgr クライアントの配布ポイント証明書]** が表示されていることを確認します。  
+12. Nel riquadro dei risultati verificare che sia presente un certificato con **Autenticazione client** nella colonna **Scopo designato** e **Certificato del punto di distribuzione di ConfigMgr** nella colonna **Modello di certificato**.  
 
-13. [ **証明書 (ローカル コンピューター)** ] を閉じないでください。  
+13. Non chiudere **Certificati (computer locale)**.  
 
-###  <a name="BKMK_exportclientdistributionpoint22008"></a> 配布ポイント用にクライアント証明書をエクスポートする  
- この手順では、カスタムのワークステーション認証証明書をファイルにエクスポートして、配布ポイントのプロパティにインポートできるようにします。  
+###  <a name="BKMK_exportclientdistributionpoint22008"></a> Esportare il certificato client per i punti di distribuzione  
+ Questa procedura consente di esportare il certificato di autenticazione della workstation personalizzato in un file, in modo che possa essere importato nelle proprietà del punto di distribuzione.  
 
-##### <a name="to-export-the-client-certificate-for-distribution-points"></a>配布ポイント用にクライアント証明書をエクスポートするには  
+##### <a name="to-export-the-client-certificate-for-distribution-points"></a>Per esportare il certificato client per i punti di distribuzione  
 
-1.  **[証明書 (ローカル コンピューター)]** コンソールで、インストールした証明書を右クリックし、**[すべてのタスク]**、**[エクスポート]** の順に選択します。  
+1.  Nella console **Certificati (computer locale)** fare clic con il pulsante destro del mouse sul certificato appena installato, scegliere **Tutte le attività**, quindi scegliere **Esporta**.  
 
-2.  証明書のエクスポート ウィザードで、**[次へ]** を選択します。  
+2.  Nell'Esportazione guidata certificati scegliere **Avanti**.  
 
-3.  **[秘密キーのエクスポート]** ページで、**[はい]** を選択し、秘密キーをエクスポートしてから、**[次へ]** を選択します。  
+3.  Nella pagina **Esportazione della chiave privata con il certificato** scegliere **Sì, esporta la chiave privata**, quindi scegliere **Avanti**.  
 
     > [!NOTE]  
-    >  このオプションが使用できない場合、その証明書は秘密キーをエクスポートするオプションなしで作成されています。 この場合、証明書を必要な形式でエクスポートできません。 秘密キーをエクスポートできるように証明書テンプレートを設定して、再び証明書を要求する必要があります。  
+    >  Se questa opzione non è disponibile, il certificato è stato creato senza l'opzione per esportare la chiave privata. In questo scenario, non è possibile esportare il certificato nel formato richiesto. È necessario configurare il modello di certificato per consentire l'esportazione della chiave privata e richiedere di nuovo il certificato.  
 
-4.  **[エクスポート ファイルの形式]** ページで **[Personal Information Exchange – PKCS #12 (.PFX)]** オプションが選択されていることを確認します。  
+4.  Nella pagina **Formato file di esportazione** assicurarsi che sia selezionata l'opzione **Scambio di informazioni personali - PKCS #12 (.PFX)**.  
 
-5.  **[パスワード]** ページで、エクスポートした証明書とその秘密キーを保護するために強力なパスワードを指定し、**[次へ]** を選択します。  
+5.  Nella pagina **Password** specificare una password complessa per proteggere il certificato esportato con la relativa chiave privata, quindi scegliere **Avanti**.  
 
-6.  **[エクスポートするファイル]** ページで、エクスポートするファイルの名前を指定し、**[次へ]** を選択します。  
+6.  Nella pagina **File da esportare** specificare il nome del file da esportare, quindi scegliere **Avanti**.  
 
-7.  ウィザードを閉じるには、**[証明書のエクスポート ウィザード]** ページで **[完了]** を選択し、確認ダイアログ ボックスで **[OK]** を選択します。  
+7.  Per chiudere la procedura guidata, scegliere **Fine** nella pagina **Esportazione guidata certificato**, quindi scegliere **OK** nella finestra di conferma.  
 
-8.  [ **証明書 (ローカル コンピューター)** ] を閉じます。  
+8.  Chiudere **Certificati (computer locale)**.  
 
-9. ファイルをセキュリティで保護して保存し、System Center Configuration Manager コンソールからアクセスできることを確認します。  
+9. Archiviare il file in modo protetto e assicurarsi che sia possibile accedervi dalla console di System Center Configuration Manager.  
 
- これで、配布ポイントを設定するときに証明書をインポートできるようになりました。  
+ A questo punto, il certificato è pronto per essere importato durante la configurazione del punto di distribuzione.  
 
 > [!TIP]  
->  PXE ブートを使用しないオペレーティング システム展開用にメディア イメージを設定する場合、およびイメージをインストールするタスク シーケンスが HTTPS クライアント接続を必須とする管理ポイントに接続する必要がある場合に、同じ証明書ファイルを使用できます。  
+>  È possibile usare lo stesso file del certificato quando si configurano le immagini di supporto per la distribuzione di un sistema operativo che non usa l'avvio PXE e la sequenza attività per installare l'immagine deve contattare un punto di gestione che richieda connessioni client HTTPS.  
 
-##  <a name="BKMK_mobiledevices2008_cm2012"></a> モバイル デバイス用の登録証明書の展開  
- この証明書の展開では、1 つの手順登録証明書テンプレートを作成し、証明機関に発行します。  
+##  <a name="BKMK_mobiledevices2008_cm2012"></a> Distribuire il certificato di registrazione per i dispositivi mobili  
+ Questa distribuzione del certificato dispone di una sola procedura per creare ed emettere il modello del certificato di registrazione nell'autorità di certificazione.  
 
-### <a name="create-and-issue-the-enrollment-certificate-template-on-the-certification-authority"></a>登録証明書テンプレートを作成して証明機関に発行する  
- この手順では、System Center Configuration Manager モバイル デバイス向けの登録証明書テンプレートを作成し、証明機関に追加します。  
+### <a name="create-and-issue-the-enrollment-certificate-template-on-the-certification-authority"></a>Creare ed emettere il modello di certificato di registrazione nell'autorità di certificazione  
+ Questa procedura crea un modello di certificato di registrazione per i dispositivi mobili di System Center Configuration Manager e lo aggiunge all'autorità di certificazione.  
 
-##### <a name="to-create-and-issue-the-enrollment-certificate-template-on-the-certification-authority"></a>登録証明書テンプレートを作成して証明機関に発行するには  
+##### <a name="to-create-and-issue-the-enrollment-certificate-template-on-the-certification-authority"></a>Per creare ed emettere il modello di certificato di registrazione nell'autorità di certificazione  
 
-1.  System Center Configuration Manager でモバイル デバイスを登録するユーザーが含まれるセキュリティ グループを作成します。  
+1.  Creare un gruppo di sicurezza che contenga gli utenti che registreranno i dispositivi mobili in System Center Configuration Manager.  
 
-2.  証明書サービスがインストールされているメンバー サーバーの [証明機関] コンソールで **[証明書テンプレート]** を右クリックし、**[管理]** を選択して、証明書テンプレート管理コンソールを読み込みます。  
+2.  Nel server membro in cui è installato Servizi certificati, nella console Autorità di certificazione, fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console di gestione Modelli di certificato.  
 
-3.  結果ウィンドウで、**[テンプレート表示名]** 列に **[認証されたセッション]** と表示されているエントリを右クリックし、**[テンプレートの複製]** を選択します。  
+3.  Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Sessione autenticata** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
 
-4.  **[テンプレートの複製]** ダイアログ ボックスで、**[Windows 2003 Server Enterprise Edition]** が選択されていることを確認してから、**[OK]** を選択します。  
+4.  Nella finestra di dialogo **Duplica modello** verificare che sia selezionato **Windows 2003 Server, Enterprise Edition**, quindi scegliere **OK**.  
 
     > [!IMPORTANT]  
-    >  [ **Windows 2008 Server Enterprise Edition** ] を選択しないでください。  
+    >  Non selezionare **Windows 2008 Server, Enterprise Edition**.  
 
-5.  **[新しいテンプレートのプロパティ]** ダイアログ ボックスの **[全般]** タブで、「**ConfigMgr モバイル デバイス登録証明書**」など、System Center Configuration Manager によって管理されるモバイル デバイスの登録証明書を生成するテンプレート名を入力します。  
+5.  Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Certificato di registrazione del dispositivo mobile di ConfigMgr** per generare i certificati di registrazione per i dispositivi mobili che saranno gestiti da System Center Configuration Manager.  
 
-6.  **[サブジェクト名]** タブを選択して、**[Active Directory の情報から構築する]** が選択されていることを確認し、**[サブジェクト名の形式:]** で **[共通名]** を選択し、**[サブジェクトの別名にこの情報を含める]** の **[ユーザー プリンシパル名 (UPN)]** をオフにします。  
+6.  Scegliere la scheda **Nome soggetto**, verificare che l'opzione **Crea in base alle informazioni di Active Directory** sia selezionata, selezionare **Nome comune** per **Formato del nome soggetto** e deselezionare **Nome entità utente (UPN)** in **Includere le seguenti informazioni nel nome soggetto alternativo**.  
 
-7.  **[セキュリティ]** タブを選択し、登録するモバイル デバイスを所有しているユーザーが含まれるセキュリティ グループを選択し、**[登録]** の追加のアクセス許可を選択します。 [ **読み取り** ] をオフにしないでください。  
+7.  Scegliere la scheda **Sicurezza**, scegliere il gruppo di sicurezza che contiene gli utenti che devono registrare i dispositivi mobili, quindi scegliere l'autorizzazione aggiuntiva **Registrazione**. Non deselezionare **Lettura**.  
 
-8.  **[OK]** を選択して、**[証明書テンプレート]** コンソールを閉じます。  
+8.  Scegliere **OK** e quindi chiudere la console **Modelli di certificato**.  
 
-9. [証明機関] コンソールで、**[証明書テンプレート]** を右クリックし、**[新規作成]** を選択して **[発行する証明書テンプレート]** を選択します。  
+9. Nella console Autorità di certificazione fare clic con il pulsante destro del mouse su **Modelli di certificato**, scegliere **Nuovo** e quindi **Modello di certificato da emettere**.  
 
-10. **[証明書テンプレートの選択]** ダイアログ ボックスで、先ほど作成した新しいテンプレート **[ConfigMgr モバイル デバイス登録証明書]** を選択し、**[OK]** を選択します。  
+10. Nella finestra di dialogo **Attivazione modelli di certificato** scegliere il nuovo modello appena creato, **Certificato di registrazione del dispositivo mobile di ConfigMgr**, quindi scegliere **OK**.  
 
-11. これ以上証明書を作成して発行する必要がない場合は、[証明機関] コンソールを閉じます。  
+11. Se non è necessario creare ed emettere altri certificati, chiudere la console Autorità di certificazione.  
 
- これで、クライアント設定でモバイル デバイス登録プロファイルを設定するときに、モバイル デバイス登録証明書テンプレートを選択できるようになりました。  
+ A questo punto, il modello di certificato di registrazione del dispositivo mobile è pronto per essere selezionato durante la configurazione di un profilo di registrazione del dispositivo mobile nelle impostazioni client.  
 
-##  <a name="BKMK_AMT2008_cm2012"></a> AMT 用の証明書の展開  
- この証明書の展開には次の手順が含まれています。  
+##  <a name="BKMK_AMT2008_cm2012"></a> Distribuire i certificati per AMT  
+ La distribuzione di questo certificato prevede le procedure seguenti:  
 
--   AMT プロビジョニング証明書を作成、発行、インストールする  
+-   Creare, emettere e installare il certificato di provisioning AMT  
 
--   AMT ベース コンピューター用の Web サーバー証明書を作成し発行する  
+-   Creare ed emettere il certificato del server Web per computer basati su AMT  
 
--   802.1X AMT ベース コンピューター用のクライアント認証証明書を作成し発行する  
+-   Creare ed emettere i certificati di autenticazione client per computer basati su AMT 802.1X  
 
-###  <a name="BKMK_AMTprovisioning2008"></a> AMT プロビジョニング証明書を作成、発行、インストールする  
- AMT ベースのコンピューターに内部ルート証明機関の証明書の拇印が設定されている場合、内部証明機関のプロビジョニング証明書を作成できます。 この条件に当てはまらず、外部証明機関を利用する必要がある場合、AMT プロビジョニング証明書を発行した企業からの指示に従います。この場合、通常はその企業の公開 Web サイトに証明書を要求します。 選択した外部 CA に応じた詳細な手順は、次の Intel vPro Expert Center でも確認できます。[Microsoft vPro Manageability Web サイト](http://go.microsoft.com/fwlink/?LinkId=132001)。  
+###  <a name="BKMK_AMTprovisioning2008"></a> Creare, emettere e installare il certificato di provisioning AMT  
+ Creare il certificato di provisioning con l'autorità di certificazione (CA) interna quando i computer basati su AMT sono configurati con l'identificazione personale del certificato della CA radice interna. Se non è possibile e occorre usare un'autorità di certificazione esterna, seguire le istruzioni della società che ha emesso il certificato di provisioning AMT. In questo caso, è spesso necessario richiedere il certificato sul sito Web pubblico della società. È inoltre possibile trovare istruzioni dettagliate per la CA esterna prescelta nel [sito Web Intel vPro Expert Center: Microsoft vPro Manageability](http://go.microsoft.com/fwlink/?LinkId=132001).  
 
 > [!IMPORTANT]  
->  外部 CA は Intel AMT プロビジョニング オブジェクト識別子をサポートしない場合があります。 その場合、**Intel(R) Client Setup Certificate** の OU 属性を指定してください。  
+>  Le CA esterne potrebbero non supportare l'identificatore di oggetto provisioning Intel AMT. In questo caso, fornire l'attributo OU del **certificato di installazione client di Intel(R)**.  
 
- 外部 CA に AMT プロビジョニング証明書を要求する場合、帯域外サービス ポイントをホストするメンバー サーバー上のコンピューター個人用証明書ストアに証明書をインストールしてください。  
+ Quando si richiede un certificato di provisioning AMT da una CA esterna, installare il certificato nell'archivio certificati personale del computer sul server membro che ospiterà il punto di servizio fuori banda.  
 
-##### <a name="to-request-and-issue-the-amt-provisioning-certificate"></a>AMT プロビジョニング証明書を要求および発行するには  
+##### <a name="to-request-and-issue-the-amt-provisioning-certificate"></a>Per richiedere ed emettere il certificato di provisioning AMT  
 
-1.  帯域外サービス ポイントを実行するサイト システム サーバーのコンピューター アカウントが含まれるセキュリティ グループを作成します。  
+1.  Creare un gruppo di sicurezza che contenga gli account computer dei server del sistema del sito che eseguiranno il punto di servizio fuori banda.  
 
-2.  証明書サービスがインストールされているメンバー サーバーの証明機関のコンソールで **[証明書テンプレート]** を右クリックし、**[管理]** を選択して **[証明書テンプレート]** コンソールを読み込みます。  
+2.  Nel server membro in cui è installato Servizi certificati, nella console Autorità di certificazione, fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console **Modelli di certificato**.  
 
-3.  [結果] ウィンドウで、**[テンプレート表示名]** 列に **[Web サーバー]** と表示されているエントリを右クリックし、**[テンプレートの複製]** を選択します。  
+3.  Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Server Web** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
 
-4.  **[テンプレートの複製]** ダイアログ ボックスで、**[Windows 2003 Server Enterprise Edition]** が選択されていることを確認してから、**[OK]** を選択します。  
+4.  Nella finestra di dialogo **Duplica modello** verificare che sia selezionato **Windows 2003 Server, Enterprise Edition**, quindi scegliere **OK**.  
 
     > [!IMPORTANT]  
-    >  [ **Windows 2008 Server Enterprise Edition** ] を選択しないでください。  
+    >  Non selezionare **Windows 2008 Server, Enterprise Edition**.  
 
-5.  **[新しいテンプレートのプロパティ]** ダイアログ ボックスの **[全般]** タブで、「**ConfigMgr AMT プロビジョニング**」など AMT プロビジョニング証明書テンプレートのテンプレート名を入力します。  
+5.  Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Provisioning AMT di ConfigMgr** per il modello del certificato di provisioning AMT.  
 
-6.  **[サブジェクト名]** タブを選択して、**[Active Directory の情報から構築する]** を選択し、**[共通名]** を選択します。  
+6.  Scegliere la scheda **Nome soggetto**, scegliere **Crea in base alle informazioni di Active Directory**, quindi scegliere **Nome comune**.  
 
-7.  **[拡張機能]** タブを選択して、**[アプリケーション ポリシー]** が選択されていることを確認し、**[編集]** を選択します。  
+7.  Scegliere la scheda **Estensioni**, assicurarsi che sia selezionato **Criteri di applicazione**, quindi scegliere **Modifica**.  
 
-8.  **[アプリケーション ポリシー拡張の編集]** ダイアログ ボックスで、**[追加]** を選択します。  
+8.  Nella finestra di dialogo **Modifica estensione criteri di applicazione** scegliere **Aggiungi**.  
 
-9. **[アプリケーション ポリシーの追加]** ダイアログ ボックスで、**[新規]** を選択します。  
+9. Nella finestra di dialogo **Aggiunta criterio di applicazione** scegliere **Nuovo**.  
 
-10. **[新しいアプリケーションのポリシー]** ダイアログ ボックスで、[**名前**] フィールドに「**AMT プロビジョニング**」と入力し、次の [**オブジェクト識別子**] の番号を入力します: **2.16.840.1.113741.1.2.3**。  
+10. Nella finestra di dialogo **Nuovo criterio di applicazione** immettere **Provisioning AMT** nel campo **Nome**, quindi immettere il numero seguente per **Identificatore oggetto**: **2.16.840.1.113741.1.2.3**.  
 
-11. **[OK]** を選択して、次に **[アプリケーション ポリシーの追加]** ダイアログ ボックスの **[OK]** を選択します。  
+11. Scegliere **OK**, quindi **OK** nella finestra di dialogo **Aggiunta criterio di applicazione**.  
 
-12. **[アプリケーション ポリシー拡張の編集]** ダイアログ ボックスで、**[OK]** を選択します。  
+12. Scegliere **OK** nella finestra di dialogo **Modifica estensione criteri di applicazione**.  
 
-13. これにより、**[新しいテンプレートのプロパティ]** ダイアログ ボックスに、**アプリケーション ポリシー**の記述として、次が表示されます: **サーバー認証**と **AMT プロビジョニング**。  
+13. Nella finestra di dialogo **Proprietà nuovo modello** verrà visualizzato quanto segue come descrizione di **Criteri di applicazione**: **Autenticazione server** e **Provisioning AMT**.  
 
-14. **[セキュリティ]** タブを選択し、**[Domain Admins]** および **[Enterprise Admins]** セキュリティ グループから **[登録]** アクセス許可を削除します。  
+14. Scegliere la scheda **Protezione** e quindi rimuovere l'autorizzazione **Registrazione** dai gruppi di sicurezza **Domain Admins** ed **Enterprise Admins**.  
 
-15. **[追加]** を選択し、帯域外サービス ポイントのサイト システムの役割用のコンピューター アカウントが含まれるセキュリティ グループの名前を入力して、**[OK]** を選択します。  
+15. Scegliere **Aggiungi**, immettere il nome di un gruppo di sicurezza che contenga l'account computer per il ruolo del sistema del sito del punto di servizio fuori banda, quindi scegliere **OK**.  
 
-16. このグループに対して **[登録]** アクセス許可を選択し、**[読み取り]** アクセス許可をオフにしません。  
+16. Scegliere l'autorizzazione **Registrazione** per questo gruppo e non deselezionare l'autorizzazione **Lettura**.  
 
-17. **[OK]** を選択して、**[証明書テンプレート]** コンソールを閉じます。  
+17. Scegliere **OK** e quindi chiudere la console **Modelli di certificato**.  
 
-18. **[証明機関]** で、**[証明書テンプレート]** を右クリックし、**[新規作成]** を選択して **[発行する証明書テンプレート]** を選択します。  
+18. In **Autorità di certificazione** fare clic con il pulsante destro del mouse su **Modelli di certificato**, scegliere **Nuovo** e quindi **Modello di certificato da emettere**.  
 
-19. **[証明書テンプレートの選択]** ダイアログ ボックスで、先ほど作成した新しいテンプレート **[ConfigMgr AMT プロビジョニング]** を選択し、**[OK]** を選択します。  
+19. Nella finestra di dialogo **Attivazione modelli di certificato** scegliere il nuovo modello appena creato, **Provisioning AMT di ConfigMgr**, quindi scegliere **OK**.  
 
     > [!NOTE]  
-    >  手順 18 または 19 を完了できない場合は、Windows Server 2008 Enterprise Edition を使用していることを確認してください。 Windows Server Standard Edition と Certificate Services を使用してもテンプレートは設定できますが、Windows Server 2008 Enterprise Edition を使用しない限り、更新した証明書テンプレートを使用して証明書を展開することはできません。  
+    >  Se non è possibile completare i passaggi 18 o 19, controllare che si stia usando Enterprise Edition di Windows Server 2008. Nonostante si possano configurare modelli con Windows Server Standard Edition e Servizi certificati, non è possibile distribuire certificati usando modelli di certificati modificati a meno che non si stia usando Windows Server 2008 Enterprise Edition.  
 
-20. [ **証明機関** ] を閉じないでください。  
+20. Non chiudere **Autorità di certificazione**.  
 
- これで、内部 CA からの AMT プロビジョニング証明書を帯域外サービス ポイントのコンピューターにインストールする準備ができました。  
+ Il certificato di provisioning AMT dalla CA interna è ora pronto per essere installato nel computer del punto di servizio fuori banda.  
 
-##### <a name="to-install-the-amt-provisioning-certificate"></a>AMT プロビジョニング証明書をインストールするには  
+##### <a name="to-install-the-amt-provisioning-certificate"></a>Per installare il certificato di provisioning AMT  
 
-1.  IIS を実行するメンバー サーバーを再起動して、構成されたアクセス許可で証明書テンプレートにアクセスできることを確認します。  
+1.  Riavviare il server membro in cui è in esecuzione IIS, per assicurarsi che possa accedere al modello di certificato con l'autorizzazione configurata.  
 
-2.  **[スタート]**、**[ファイル名を指定して実行]** の順に選択し、「**mmc.exe**」と入力します。 空のコンソールで、**[ファイル]** を選択し、次に **[スナップインの追加と削除]** を選択します。  
+2.  Fare clic su **Start**, scegliere **Esegui** e quindi digitare **mmc.exe.** Nella console vuota scegliere **File**, quindi **Aggiungi/Rimuovi snap-in**.  
 
-3.  **[スナップインの追加と削除]** ダイアログ ボックスで、**[利用できるスナップイン]** リストから **[証明書]** を選択し、**[追加]** を選択します。  
+3.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **Certificati** dall'elenco **Snap-in disponibili**, quindi scegliere **Aggiungi**.  
 
-4.  **[証明書スナップイン]** ダイアログ ボックスで **[コンピューター アカウント]** を選択し、**[次へ]** を選択します。  
+4.  Nella finestra di dialogo **Snap-in certificati** scegliere **Account computer**, quindi scegliere **Avanti**.  
 
-5.  **[コンピューターの選択]** ダイアログ ボックスで、**[ローカル コンピューター: (このコンソールを実行しているコンピューター)]** が選択されていることを確認して、**[完了]** を選択します。  
+5.  Nella finestra di dialogo **Seleziona computer** verificare che l'opzione **Computer locale: (computer in cui è in esecuzione la console)** sia selezionata, quindi scegliere **Fine**.  
 
-6.  **[スナップインの追加と削除]** ダイアログ ボックスで、**[OK]** を選択します。  
+6.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **OK**.  
 
-7.  コンソールで、**[証明書 (ローカル コンピューター)]** を展開し、**[個人]** を選択します。  
+7.  Nella console espandere **Certificati (computer locale)**, quindi scegliere **Personale**.  
 
-8.  **[証明書]** を右クリックして、**[すべてのタスク]** を選択し、次に **[新しい証明書の要求]** を選択します。  
+8.  Fare clic con il pulsante destro del mouse su **Certificati**, scegliere **Tutte le attività**, quindi **Richiedi nuovo certificato**.  
 
-9. **[開始する前に]** ページで、**[次へ]** を選択します。  
+9. Nella pagina **Prima di iniziare** scegliere **Avanti**.  
 
-10. **[証明書の登録ポリシーの選択]** ページを表示する場合は、**[次へ]** を選択します。  
+10. Se viene visualizzata la pagina **Seleziona criteri di registrazione certificato**, scegliere **Avanti**.  
 
-11. **[証明書の要求]** ページで、使用可能な証明書の一覧から **[AMT プロビジョニング]** を選択し、**[登録]** を選択します。  
+11. Nella pagina **Richiedi certificati** selezionare **Provisioning AMT** dall'elenco dei certificati disponibili, quindi scegliere **Registrazione**.  
 
-12. **[証明書のインストール結果]** ページで、証明書がインストールされるのを待ち、**[完了]** を選択します。  
+12. Nella pagina **Risultati installazione certificati** attendere il completamento dell'installazione del certificato, quindi scegliere **Fine**.  
 
-13. [ **証明書 (ローカル コンピューター)** ] を閉じます。  
+13. Chiudere **Certificati (computer locale)**.  
 
- これで、内部 CA からの AMT プロビジョニング証明書がインストールされ、帯域外サービス ポイントのプロパティで選択できるようになりました。  
+ A questo punto, il certificato di provisioning AMT dalla CA interna è installato e pronto per essere selezionato nelle proprietà del punto di servizio fuori banda.  
 
-### <a name="create-and-issue-the-web-server-certificate-for-amt-based-computers"></a>AMT ベース コンピューター用の Web サーバー証明書を作成し発行する  
- AMT ベースのコンピューターの Web サーバー証明書を準備するには、次の手順に従います。  
+### <a name="create-and-issue-the-web-server-certificate-for-amt-based-computers"></a>Creare ed emettere il certificato del server Web per computer basati su AMT  
+ Utilizzare la procedura seguente per la preparazione dei certificati server Web per computer basati su AMT.  
 
-##### <a name="to-create-and-issue-the-web-server-certificate-template"></a>Web サーバー証明書テンプレートを作成および発行するには  
+##### <a name="to-create-and-issue-the-web-server-certificate-template"></a>Per creare ed emettere il modello di certificato del server Web  
 
-1.  AMT プロビジョニング中に System Center Configuration Manager が作成する AMT コンピューター アカウントを追加する、空のセキュリティ グループを作成します。  
+1.  Creare un gruppo di sicurezza vuoto che contenga gli account computer AMT creati da System Center Configuration Manager durante il provisioning AMT.  
 
-2.  証明書サービスがインストールされているメンバー サーバーの証明機関のコンソールで **[証明書テンプレート]** を右クリックし、**[管理]** を選択して **[証明書テンプレート]** コンソールを読み込みます。  
+2.  Nel server membro in cui è installato Servizi certificati, nella console Autorità di certificazione, fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console **Modelli di certificato**.  
 
-3.  [結果] ウィンドウで、**[テンプレート表示名]** 列に **[Web サーバー]** と表示されているエントリを右クリックし、**[テンプレートの複製]** を選択します。  
+3.  Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Server Web** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
 
-4.  **[テンプレートの複製]** ダイアログ ボックスで、**[Windows 2003 Server Enterprise Edition]** が選択されていることを確認してから、**[OK]** を選択します。  
-
-    > [!IMPORTANT]  
-    >  [ **Windows 2008 Server Enterprise Edition** ] を選択しないでください。  
-
-5.  **[新しいテンプレートのプロパティ]** ダイアログ ボックスの **[全般]** タブで、「**ConfigMgr AMT Web サーバー証明書**」など、AMT コンピューターで帯域外管理に使用される Web 証明書を生成するテンプレート名を入力します。  
-
-6.  **[サブジェクト名]** タブで **[Active Directory の情報から構築する]** を選択し、**[サブジェクト名の形式]** で **[共通名]** を選択し、サブジェクトの別名の **[ユーザー プリンシパル名 (UPN)]** をオフにします。  
-
-7.  **[セキュリティ]** タブを選択し、**[Domain Admins]** および **[Enterprise Admins]** セキュリティ グループから **[登録]** アクセス許可を削除します。  
-
-8.  **[追加]** を選択し、AMT プロビジョニング用に作成したセキュリティ グループの名前を入力し、**[OK]** を選択します。  
-
-9. このセキュリティ グループに対して、**[読み取り]** と **[登録]** の **[許可]** アクセス許可を選択します。  
-
-10. **[OK]** を選択して、**[証明書テンプレート]** コンソールを閉じます。  
-
-11. **[証明機関]** コンソールで、**[証明書テンプレート]** を右クリックし、**[新規作成]** を選択して **[発行する証明書テンプレート]** を選択します。  
-
-12. **[証明書テンプレートの選択]** ダイアログ ボックスで、先ほど作成した新しいテンプレート **[ConfigMgr AMT Web サーバー証明書]** を選択し、**[OK]** を選択します。  
-
-13. これ以上証明書を作成して発行する必要がない場合は、**[証明機関]** を閉じます。  
-
- これで、AMT Web サーバー テンプレートを使用して、Web サーバー証明書で AMT ベースのコンピューターを設定できるようになりました。 帯域外管理コンポーネントのプロパティで、この証明書テンプレートを選択します。  
-
-### <a name="create-and-issue-the-client-authentication-certificates-for-8021x-amt-based-computers"></a>802.1X AMT ベース コンピューター用のクライアント認証証明書を作成し発行する  
- AMT ベースのコンピューターで 802.1X 認証の有線または無線ネットワーク向けのクライアント証明書を使用する場合、次の手順に従います。  
-
-##### <a name="to-create-and-issue-the-client-authentication-certificate-template-on-the-ca"></a>CA でクライアント認証証明書テンプレートを作成および発行するには  
-
-1.  証明書サービスがインストールされているメンバー サーバーの証明機関のコンソールで **[証明書テンプレート]** を右クリックし、**[管理]** を選択して **[証明書テンプレート]** コンソールを読み込みます。  
-
-2.  結果ウィンドウで、**[テンプレート表示名]** 列に **[ワークステーション認証]** と表示されているエントリを右クリックし、**[テンプレートの複製]** を選択します。  
+4.  Nella finestra di dialogo **Duplica modello** verificare che sia selezionato **Windows 2003 Server, Enterprise Edition**, quindi scegliere **OK**.  
 
     > [!IMPORTANT]  
-    >  [ **Windows 2008 Server Enterprise Edition** ] を選択しないでください。  
+    >  Non selezionare **Windows 2008 Server, Enterprise Edition.**  
 
-3.  **[新しいテンプレートのプロパティ]** ダイアログ ボックスの **[全般]** タブで、「**ConfigMgr AMT 802.1X クライアント認証証明書**」など、AMT コンピューターで帯域外管理に使用されるクライアント証明書を生成するテンプレート名を入力します。  
+5.  Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Certificato server Web di ConfigMgr** per generare i certificati Web che saranno usati per la gestione fuori banda sui computer AMT.  
 
-4.  **[サブジェクト名]** タブで **[Active Directory の情報から構築する]** を選択し、**[サブジェクト名の形式]** で **[共通名]** を選択します。 サブジェクトの別名の **[DNS 名]** チェック ボックスをオフにして、**[ユーザー プリンシパル名 (UPN)]** を選択します。  
+6.  Scegliere la scheda **Nome soggetto**, scegliere **Crea in base alle informazioni di Active Directory**, quindi scegliere **Nome comune** per **Formato del nome soggetto** e deselezionare **Nome entità utente (UPN)** per il nome soggetto alternativo.  
 
-5.  **[セキュリティ]** タブを選択し、**[Domain Admins]** および **[Enterprise Admins]** セキュリティ グループから **[登録]** アクセス許可を削除します。  
+7.  Scegliere la scheda **Protezione** e quindi rimuovere l'autorizzazione **Registrazione** dai gruppi di sicurezza **Domain Admins** ed **Enterprise Admins**.  
 
-6.  **[追加]** を選択し、帯域外管理コンポーネントのプロパティで指定する、AMT ベースのコンピューターのコンピューター アカウントが含まれるセキュリティ グループの名前を入力して、**[OK]** を選択します。  
+8.  Scegliere **Aggiungi**, immettere il nome del gruppo di sicurezza creato per il provisioning AMT, quindi scegliere **OK**.  
 
-7.  このセキュリティ グループに対して、 [ **読み取り** ] と [ **登録** ] の [ **許可** ] アクセス許可を選択します。  
+9. Scegliere le seguenti autorizzazioni **Consenti** per questo gruppo di sicurezza: **Lettura** e **Registrazione**.  
 
-8.  **[OK]** を選択し、**[証明書テンプレート]** 管理コンソールの **[certtmpl - [証明書テンプレート]]** を閉じます。  
+10. Scegliere **OK** e quindi chiudere la console **Modelli di certificato**.  
 
-9. **[証明機関]** 管理コンソールで、**[証明書テンプレート]** を右クリックし、**[新規作成]** を選択して **[発行する証明書テンプレート]** を選択します。  
+11. Nella console **Autorità di certificazione** fare clic con il pulsante destro del mouse su **Modelli di certificato**, scegliere **Nuovo** e quindi **Modello di certificato da emettere**.  
 
-10. **[証明書テンプレートの選択]** ダイアログ ボックスで、先ほど作成した新しいテンプレート **[ConfigMgr AMT 802.1X クライアント認証証明書]** を選択し、**[OK]** を選択します。  
+12. Nella finestra di dialogo **Attivazione modelli di certificato** scegliere il nuovo modello appena creato, **Certificato server Web di ConfigMgr**, quindi scegliere **OK**.  
 
-11. これ以上証明書を作成して発行する必要がない場合は、**[証明機関]** を閉じます。  
+13. Se non è necessario creare ed emettere altri certificati, chiudere **Autorità di certificazione**.  
 
- これで、AMT ベース コンピューターが 802.1X クライアント認証用に使用できるよう、クライアント認証証明書テンプレートを使用して証明書を発行する準備が整いました。 帯域外管理コンポーネントのプロパティで、この証明書テンプレートを選択します。  
+ A questo punto, il modello di server Web AMT è pronto per la configurazione dei computer basati su AMT con i certificati del server Web. Scegliere questo modello di certificato nelle proprietà del componente della gestione fuori banda.  
 
-##  <a name="BKMK_MacClient_SP1"></a> Mac コンピューター用のクライアント証明書の展開  
+### <a name="create-and-issue-the-client-authentication-certificates-for-8021x-amt-based-computers"></a>Creare ed emettere i certificati di autenticazione client per computer basati su AMT 802.1X  
+ Utilizzare la procedura seguente se i computer basati su AMT utilizzeranno i certificati client per reti cablate o wireless autenticate 802.1 X.  
 
-この証明書の展開では、1 つの手順登録証明書テンプレートを作成し、証明機関に発行します。  
+##### <a name="to-create-and-issue-the-client-authentication-certificate-template-on-the-ca"></a>Per creare ed emettere il modello di certificato di autenticazione client nella CA  
 
-###  <a name="BKMK_MacClient_CreatingIssuing"></a>Mac クライアント証明書テンプレートを作成して証明機関に発行する  
- この手順では、Mac コンピューターの System Center Configuration Manager 用にカスタム証明書テンプレートを作成し、その証明書テンプレートを証明機関に追加します。  
+1.  Nel server membro in cui è installato Servizi certificati, nella console Autorità di certificazione, fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console **Modelli di certificato**.  
+
+2.  Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Autenticazione workstation** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
+
+    > [!IMPORTANT]  
+    >  Non selezionare **Windows 2008 Server, Enterprise Edition.**  
+
+3.  Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Certificato di autenticazione client 802.1X AMT di ConfigMgr** per generare i certificati client che saranno usati per la gestione fuori banda nei computer AMT.  
+
+4.  Scegliere la scheda **Nome soggetto**, scegliere **Crea in base alle informazioni di Active Directory**, quindi scegliere **Nome comune** per **Formato del nome soggetto**. Deselezionare **Nome DNS** per il nome soggetto alternativo, quindi scegliere **Nome entità utente (UPN)**.  
+
+5.  Scegliere la scheda **Protezione** e quindi rimuovere l'autorizzazione **Registrazione** dai gruppi di sicurezza **Domain Admins** ed **Enterprise Admins**.  
+
+6.  Scegliere **Aggiungi**, immettere il nome del gruppo di sicurezza che verrà specificato nelle proprietà del componente della gestione fuori banda per contenere gli account dei computer basati su AMT, quindi scegliere **OK**.  
+
+7.  Selezionare le seguenti autorizzazioni **Consenti** per questo gruppo di protezione: **Lettura** e **Registrazione**.  
+
+8.  Scegliere **OK**, quindi chiudere la console di gestione **Modelli di certificato**, **certtmpl - [Modelli di certificato]**.  
+
+9. Nella console di gestione **Autorità di certificazione** fare clic con il pulsante destro del mouse su **Modelli di certificato**, scegliere **Nuovo** e quindi **Modello di certificato da emettere**.  
+
+10. Nella finestra di dialogo **Attivazione modelli di certificato** scegliere il nuovo modello appena creato, **Certificato di autenticazione client 802.1X AMT di ConfigMgr**, quindi scegliere **OK**.  
+
+11. Se non è necessario creare ed emettere altri certificati, chiudere **Autorità di certificazione**.  
+
+ Il modello di certificato di autenticazione client è ora pronto per emettere certificati ai computer basati su AMT che possono essere utilizzati per l'autenticazione client 802.1 X. Scegliere questo modello di certificato nelle proprietà del componente della gestione fuori banda.  
+
+##  <a name="BKMK_MacClient_SP1"></a> Distribuire il certificato client per computer Mac  
+
+Questa distribuzione del certificato dispone di una sola procedura per creare ed emettere il modello del certificato di registrazione nell'autorità di certificazione.  
+
+###  <a name="BKMK_MacClient_CreatingIssuing"></a> Creare ed emettere un modello di certificato client Mac nell'autorità di certificazione  
+ Questa procedura crea un modello di certificato personalizzato per i computer Mac di System Center Configuration Manager e lo aggiunge all'autorità di certificazione.  
 
 > [!NOTE]  
->  Windows クライアント コンピューター用または配布ポイント用に作成した証明書テンプレートがある場合でも、この手順では別の証明書テンプレートを使用します。  
+>  Questa procedura utilizza un modello di certificato differente dal modello di certificato che potrebbe essere stato creato per i computer client di Windows o per i punti di distribuzione.  
 >   
->  この証明書用に新しい証明書テンプレートを作成すると、証明書要求を権限があるユーザーのみに制限できます。  
+>  Quando si crea un nuovo modello di certificato per questo certificato, è possibile limitare la richiesta di certificato agli utenti autorizzati.  
 
-##### <a name="to-create-and-issue-the-mac-client-certificate-template-on-the-certification-authority"></a>Mac クライアント証明書テンプレートを作成して証明機関に発行するには  
+##### <a name="to-create-and-issue-the-mac-client-certificate-template-on-the-certification-authority"></a>Per creare ed emettere il modello di certificato client Mac nell'autorità di certificazione  
 
-1.  System Center Configuration Manager を使用して証明書を Mac コンピューターに登録する管理ユーザー用に、そのユーザー アカウントを含むセキュリティ グループを作成します。  
+1.  Creare un gruppo di sicurezza che contenga gli account utente per gli utenti amministratori che registreranno il certificato nel computer Mac usando System Center Configuration Manager.  
 
-2.  証明機関コンソールを実行しているメンバー サーバーで **[証明書テンプレート]** を右クリックし、**[管理]** を選択して、証明書テンプレート管理コンソールを読み込みます。  
+2.  Nel server membro su cui è in esecuzione la console Autorità di certificazione fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console di gestione Modelli di certificato.  
 
-3.  結果ウィンドウで、**[テンプレート表示名]** 列に **[認証されたセッション]** と表示されているエントリを右クリックし、**[テンプレートの複製]** を選択します。  
+3.  Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Sessione autenticata** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
 
-4.  **[テンプレートの複製]** ダイアログ ボックスで、**[Windows 2003 Server Enterprise Edition]** が選択されていることを確認してから、**[OK]** を選択します。  
+4.  Nella finestra di dialogo **Duplica modello** verificare che sia selezionato **Windows 2003 Server, Enterprise Edition**, quindi scegliere **OK**.  
 
     > [!IMPORTANT]  
-    >  [ **Windows 2008 Server Enterprise Edition** ] を選択しないでください。  
+    >  Non selezionare **Windows 2008 Server, Enterprise Edition**.  
 
-5.  **[新しいテンプレートのプロパティ]** ダイアログ ボックスの **[全般]** タブで、「**ConfigMgr Mac クライアント証明書**」など Mac クライアント証明書を生成するテンプレート名を入力します。  
+5.  Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Certificato client Mac di ConfigMgr** per generare i certificati client Mac.  
 
-6.  **[サブジェクト名]** タブを選択して、**[Active Directory の情報から構築する]** が選択されていることを確認し、**[サブジェクト名の形式:]** で **[共通名]** を選択し、**[サブジェクトの別名にこの情報を含める]** の **[ユーザー プリンシパル名 (UPN)]** をオフにします。  
+6.  Scegliere la scheda **Nome soggetto**, verificare che l'opzione **Crea in base alle informazioni di Active Directory** sia selezionata, scegliere **Nome comune** per **Formato del nome soggetto** e deselezionare **Nome entità utente (UPN)** in **Includere le seguenti informazioni nel nome soggetto alternativo**.  
 
-7.  **[セキュリティ]** タブを選択し、**[Domain Admins]** および **[Enterprise Admins]** セキュリティ グループから **[登録]** アクセス許可を削除します。  
+7.  Scegliere la scheda **Protezione** e quindi rimuovere l'autorizzazione **Registrazione** dai gruppi di sicurezza **Domain Admins** ed **Enterprise Admins**.  
 
-8.  **[追加]** を選択し、手順 1 で作成したセキュリティ グループを指定して、**[OK]** を選択します。  
+8.  Scegliere **Aggiungi**, specificare il gruppo di sicurezza creato nel passaggio 1, quindi scegliere **OK**.  
 
-9. このグループに対して **[登録]** アクセス許可を選択し、**[読み取り]** アクセス許可をオフにしません。  
+9. Scegliere l'autorizzazione **Registrazione** per questo gruppo e non deselezionare l'autorizzazione **Lettura**.  
 
-10. **[OK]** を選択して、**[証明書テンプレート]** コンソールを閉じます。  
+10. Scegliere **OK** e quindi chiudere la console **Modelli di certificato**.  
 
-11. [証明機関] コンソールで、**[証明書テンプレート]** を右クリックし、**[新規作成]** を選択して **[発行する証明書テンプレート]** を選択します。  
+11. Nella console Autorità di certificazione fare clic con il pulsante destro del mouse su **Modelli di certificato**, scegliere **Nuovo** e quindi **Modello di certificato da emettere**.  
 
-12. **[証明書テンプレートの選択]** ダイアログ ボックスで、先ほど作成した新しいテンプレート **[ConfigMgr Mac クライアント証明書]** を選択し、**[OK]** を選択します。  
+12. Nella finestra di dialogo **Attivazione modelli di certificato** scegliere il nuovo modello appena creato, **Certificato client Mac di ConfigMgr**, quindi scegliere **OK**.  
 
-13. これ以上証明書を作成して発行する必要がない場合は、**[証明機関]** を閉じます。  
+13. Se non è necessario creare ed emettere altri certificati, chiudere **Autorità di certificazione**.  
 
- これで、登録するクライアント設定を構成するときに、Mac クライアント証明書テンプレートを選択できるようになりました。
+ A questo punto, il modello di certificato client Mac è pronto per essere selezionato durante la configurazione delle impostazioni client per la registrazione.

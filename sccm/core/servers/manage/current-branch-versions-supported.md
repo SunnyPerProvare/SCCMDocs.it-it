@@ -1,6 +1,6 @@
 ---
-title: "Current Branch バージョン | Microsoft Docs"
-description: "System Center Configuration Manager のバージョン履歴を確認し、提供サービスのフェーズについて説明します。"
+title: Versioni Current Branch | Microsoft Docs
+description: Informazioni sulla cronologia delle versioni di System Center Configuration Manager e sulle fasi del servizio offerto.
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
@@ -18,37 +18,37 @@ robots: noindex,nofollow
 ms.openlocfilehash: 1c02d2c51964fed960ffab42175762c1b04e6445
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="support-for-system-center-configuration-manager-current-branch-versions"></a>System Center Configuration Manager の Current Branch バージョンのサポート
+# <a name="support-for-system-center-configuration-manager-current-branch-versions"></a>Supporto per le versioni di System Center Configuration Manager Current Branch
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Microsoft は、System Center Configuration Manager の Current Branch に対し、年に数回の更新プログラムのリリースを予定しています。 更新プログラムの各バージョンは、一般公開 (GA) リリース日から 12 か月間サポートされます。 この 12 か月間にわたりテクニカル サポートが提供されます。 ただし、当社のサポート体制は、最新の Current Branch バージョンの利用状況に応じて 2 種類のサービス提供フェーズのいずれかが適用されるしくみに変わりました。  
+Microsoft prevede di rilasciare diversi aggiornamenti per System Center Configuration Manager Current Branch ogni anno. Il supporto di ogni versione aggiornata dura 12 mesi dalla data di rilascio con disponibilità generale (GA). Il supporto tecnico viene garantito per l'intero periodo di 12 mesi. Tuttavia, la struttura di supporto è ora dinamica e si evolve in due fasi di assistenza distinte che dipendono dalla disponibilità della versione Current Branch più recente.  
 
--   セキュリティ更新プログラムと重要な更新プログラムのサービス提供フェーズ - Configuration Manager の最新の Current Branch を実行している場合は、セキュリティ更新プログラムと重要な更新プログラムの両方が提供されます。  
+-   Fase di manutenzione Aggiornamenti della sicurezza e critici: quando si esegue la versione Current Branch più recente di Configuration Manager si ricevono sia gli aggiornamenti critici che gli aggiornamenti di sicurezza.  
 
--   セキュリティ更新プログラム (のみ) のサービス提供フェーズ - 新しい Current Branch バージョンがリリースされると、前の Current Branch バージョンに対するサポートは、12 か月間のサポート ライフサイクルの残りの期間中、"セキュリティ更新プログラムのみ" に降格されます (図 1 を参照)。  
+-   Fase di manutenzione Aggiornamenti della sicurezza (solo): dopo il rilascio di una nuova versione Current Branch, il supporto per i branch precedenti viene limitato agli aggiornamenti della sicurezza per il resto del ciclo di vita di 12 mesi del supporto (illustrato nella figura 1).  
 
  ![CM&#95;Servicing&#95;support&#95;timeline](../../../core/servers/manage/media/CM_Servicing_support_timeline.png "CM_Servicing_support_timeline")  
-図 1 Current Branch のサービス提供サポートのリリース サイクルの重複部分の例
+Figura 1. Esempio di sovrapposizione del ciclo di rilascio per il supporto della manutenzione della versione Current Branch.
 
 > [!NOTE]  
->  Current Branch の最新バージョンは常に、セキュリティ更新プログラムと重要な更新プログラムのサービス提供フェーズとなります。 すなわち、重要な更新プログラムの発行に値するコード障害が発生した場合、修正プログラムを受け取るためには Current Branch の最新バージョンがインストールされている必要があります。 その他のサポートされている Current Branch バージョンでは、セキュリティ更新プログラムを受信できるだけとなります。 Current Branch バージョンの 12 か月間のライフ サイクルが有効期限切れになると、すべてのサポートが終了します。 その時点で、ユーザーは、サポートされている Current Branch バージョンに更新する必要があります。  
+>  La versione Current Branch più recente è sempre nella fase di manutenzione Aggiornamenti della protezione e critici. Ciò significa che, nel caso in cui venga rilevato un errore del codice che richiede un aggiornamento critico, è necessario che sia installata la versione Current Branch più recente per ricevere una correzione. Tutte le altre versioni Current Branch supportate sono idonee a ricevere gli aggiornamenti della sicurezza. Il supporto termina completamente allo scadere del ciclo di vita di 12 mesi della versione Current Branch corrente. A quel punto i clienti devono eseguire un aggiornamento a una versione Current Branch supportata.  
 
- **バージョン履歴**  
+ **Cronologia delle versioni**  
 
-|バージョン|公開日|サポート終了日|  
+|Versione|Data di disponibilità|Data di fine supporto|  
 |-------------|-----------------------|----------------------|  
-|1706|2017 年 7 月 31 日|2018 年 7 月 31 日|
-|1702|2017 年 3 月 27 日|2018 年 3 月 27 日|
-|1610|2016 年 11 月 18 日|2017 年 11 月 18 日|
-|1606|2016 年 7 月 22 日| 2017 年 7 月 22 日|
-|1602|2016 年 3 月 11 日|2017 年 3 月 11 日|
-|1511|2015 年 12 月 8 日|2016 年 12 月 8 日|  
+|1706|31 luglio 2017|31 luglio 2018|
+|1702|27 marzo 2017|27 marzo 2018|
+|1610|18 novembre 2016|18 novembre 2017|
+|1606|22 luglio 2016| 22 luglio 2017|
+|1602|11 marzo 2016|11 marzo 2017|
+|1511|8 dicembre 2015|8 dicembre 2016|  
 
 
 
 
-バージョン番号と、コンソール内の更新プログラムまたはベースラインとして入手可能かどうかについては、「[Baseline and update versions](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions)」(ベースラインと更新プログラムのバージョン) を参照してください。
+Per informazioni sui numeri di versione e la disponibilità come aggiornamento nella console o versione di base, vedere [Versioni di base e di aggiornamento](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions).

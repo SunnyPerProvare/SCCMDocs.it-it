@@ -1,6 +1,6 @@
 ---
-title: "クライアント アップグレードの除外 | Windows | System Center Configuration Manager"
-description: "Windows クライアントを System Center Configuration Manager のアップグレードから除外する方法について説明します。"
+title: Escludere gli aggiornamenti dei client | Windows | System Center Configuration Manager
+description: Informazioni su come evitare l'aggiornamento di client Windows in System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -16,39 +16,39 @@ manager: angrobe
 ms.openlocfilehash: de5602179f3ac55b51133b8280a0143f1b0ff30e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-exclude-upgrading-clients-for-windows-computers-in-system-center-configuration-manager"></a>System Center Configuration Manager で Windows コンピューター用クライアントをアップグレードから除外する方法
+# <a name="how-to-exclude-upgrading-clients-for-windows-computers-in-system-center-configuration-manager"></a>Come evitare l'aggiornamento dei client per i computer Windows in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-バージョン 1610 より、クライアントのコレクションを更新されたクライアントのバージョンの自動インストールから除外できるようになりました。 これは、ソフトウェアの更新に基づいたアップグレード、ログオン スクリプト、およびグループ ポリシーなどのその他の方法とともに、自動アップグレードに適用されます。 これは、クライアントをアップグレードする際により注意が必要なコンピューターのコレクションに使用できます。 除外されるコレクション内にあるクライアントは、更新されたクライアント ソフトウェアのインストールの要求を無視します。
+A partire dalla versione 1610, è possibile impedire che una raccolta di client installi automaticamente le versioni aggiornate. Questa funzione si applica sia all'aggiornamento automatico sia ad altri metodi, ad esempio all'aggiornamento basato sull'aggiornamento software, agli script di accesso e ai criteri di gruppo. Questa opzione può essere usata per una raccolta di computer che richiede particolare attenzione durante l'aggiornamento del client. I client che appartengono a una raccolta esclusa ignorano le richieste di aggiornamento del software client.
 
-## <a name="configure-exclusion-for-automatic-upgrades"></a>自動アップグレードからの除外を構成する
+## <a name="configure-exclusion-for-automatic-upgrades"></a>Configurare l'esclusione per gli aggiornamenti automatici
 
-1. Configuration Manager コンソールで、**[管理]** > **[サイトの構成]** > **[サイト]** の順に選択し、**[階層設定]** をクリックします。
+1. Nella console di Configuration Manager accedere a **Amministrazione** > **Configurazione del sito** > **Siti** e fare clic su **Impostazioni gerarchia**.
 
-2. **[クライアント アップグレード]** タブをクリックします。
+2. Fare clic sulla scheda **Aggiornamento client**.
 
-3. **[指定したクライアントをアップグレードから除外する]** チェック ボックスをクリックして、[除外コレクション] で除外するコレクションを選択します。 除外するコレクションを 1 つだけ選択できます。
+3. Selezionare la casella di controllo **Exclude specified clients from upgrade** (Escludi dall'aggiornamento i client specificati) e, in Exclusion collection (Raccolta di esclusione) selezionare la raccolta da escludere. È possibile selezionare per l'esclusione solo una singola raccolta.
 
-4.  [**OK**] をクリックしてコンソールを閉じ、構成を保存します。 クライアントがポリシーを更新すると、除外されるコレクション内のクライアントに、クライアント ソフトウェアの更新プログラムが自動的にインストールされなくなります。 詳細については、「[Windows コンピューター用クライアントをアップグレードする方法](upgrade-clients-for-windows-computers.md)」を参照してください。
+4.  Fare clic su **OK** per chiudere e salvare la configurazione. Dopo che i client avranno aggiornato i criteri, i client appartenenti alla raccolta esclusa non installeranno più automaticamente gli aggiornamenti per il software client. Per altre informazioni, vedere [Come aggiornare i client per i computer Windows in System Center Configuration Manager](upgrade-clients-for-windows-computers.md).
 
-![自動アップグレード除外の設定](media/automatic_upgrade_exclusion.png)
+![Impostazioni per l'esclusione dall'aggiornamento automatico](media/automatic_upgrade_exclusion.png)
 
 
 
 >[!NOTE]
->ユーザー インターフェイスにどの方法でもクライアントがアップグレードされないことが示されますが、これらの設定を無効にするために使用できる 2 つの方法があります。 クライアント プッシュ インストールと手動クライアント インストールを使用すると、この設定を無効にできます。 詳細については、次のセクションを参照してください。
+>Anche se l'interfaccia utente indica che i client non verranno aggiornati, esistono due metodi che è possibile usare per sostituire queste impostazioni. L'installazione push del client e l'installazione manuale del client consentono di sostituire questa configurazione. Per altre informazioni, vedere la sezione seguente.
 
-## <a name="how-to-upgrade-a-client-that-is-in-an-excluded-collection"></a>除外されるコレクション内にあるクライアントをアップグレードする方法
+## <a name="how-to-upgrade-a-client-that-is-in-an-excluded-collection"></a>Come aggiornare un client in una raccolta esclusa
 
-コレクションが除外されるように設定されている限り、そのコレクションのメンバーは、除外を無効にする 2 つの方法のいずれかでクライアント ソフトウェアを更新することしかできません。
- - **クライアント プッシュ インストール**: クライアント プッシュ インストールを使用して、除外されるコレクション内にあるクライアントをアップグレードすることができます。 これは管理者の意図と見なされるために許可され、除外からコレクション全体を削除しなくてもクライアントをアップグレードすることができます。       
+Se una raccolta è configurata per l'esclusione, i membri di tale raccolta possono aggiornare il software client solo tramite uno dei due metodi che sostituiscono l'esclusione:
+ - **Installazione push client**: è possibile usare l'installazione push del client per eseguire l'aggiornamento di un client che appartiene a una raccolta esclusa. Questa operazione è consentita in quanto richiesta dall'amministratore e permette di aggiornare i client lasciando invariata l'esclusione dell'intera raccolta.       
 
- - **手動クライアント インストール**: ccmsetup で、コマンド ライン スイッチ ***/ignoreskipupgrade*** を使用すると、除外されるコレクション内のクライアントを手動でアップグレードすることができます。
+ - **Installazione client manuale**: è possibile aggiornare manualmente i client che appartengono a una raccolta esclusa usando la seguente opzione della riga di comando con ccmsetup: ***/ignoreskipupgrade***.
 
-  このスイッチを使用しないで除外されるコレクションのメンバーであるクライアントを手動でアップグレードしようとすると、クライアントに新しいクライアント ソフトウェアがインストールされません。 詳細については、「[Configuration Manager クライアントの手動インストール方法](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Manual)」をご覧ください。
+  Se si tenta di aggiornare manualmente un client che fa parte della raccolta esclusa senza usare questa opzione, il client non installa il nuovo software client. Per altre informazioni, vedere [Come installare manualmente i client di Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Manual).
 
-クライアント インストール方法の詳細については、「[System Center Configuration Manager でクライアントを Windows コンピューターに展開する方法](/sccm/core/clients/deploy/deploy-clients-to-windows-computers)」をご覧ください。
+Per altre informazioni su questi metodi di installazione del client, vedere [Come distribuire i client nei computer Windows in System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers).

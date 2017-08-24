@@ -1,6 +1,6 @@
 ---
-title: "パブリケーションの管理 | Microsoft Docs"
-description: "System Center Updates Publisher を使用して、ソフトウェア更新プログラムのグループをパブリケーションとして管理します"
+title: Gestire le pubblicazioni | Microsoft Docs
+description: Gestire gruppi di aggiornamenti software come una pubblicazione con System Center Updates Publisher
 ms.custom: na
 ms.date: 4/29/2017
 ms.prod: configuration-manager
@@ -18,88 +18,88 @@ robots: NOINDEX, NOFOLLOW
 ms.openlocfilehash: ddea7af935d5be880b96e383401061f8aa11e6da
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-publications-in-updates-publisher"></a>Updates Publisher でパブリケーションを管理する
+# <a name="manage-publications-in-updates-publisher"></a>Gestire le pubblicazioni in Updates Publisher
 
-*適用対象: System Center Updates Publisher*
+*Si applica a: System Center Updates Publisher*
 
-パブリケーションを使用することで、更新プログラムとバンドルのグループを単一オブジェクトとして管理できます。 これには、管理サーバーに更新プログラムを公開して、Updates Publisher の他のインストールと共に使用するグループとしてパブリケーションをエクスポートすることも含まれます。
+È possibile usare le pubblicazioni per gestire gruppi di aggiornamenti e aggregazioni come un singolo oggetto. Sono incluse la pubblicazione degli aggiornamenti in un server di gestione e l'esportazione della pubblicazione come gruppo per l'uso con un'altra installazione di Updates Publisher.
 
-## <a name="create-publications"></a>パブリケーションを作成する
-次の 2 つの方法でパブリケーションを作成します。
+## <a name="create-publications"></a>Creare le pubblicazioni
+Le pubblicazioni vengono create in due modi:
 
--   **[更新プログラム] ワークスペース**で更新プログラムとバンドルを管理するときに、その時点で作成される新しいパブリケーションにそれらを[割り当てる](/sccm/sum/tools/manage-updates-with-updates-publisher#assign-updates-and-bundles-to-a-publication)ことができます。
+-   Quando si gestiscono aggregazioni e aggiornamenti nell'**area di lavoro Aggiornamenti**, è possibile [assegnarli](/sccm/sum/tools/manage-updates-with-updates-publisher#assign-updates-and-bundles-to-a-publication) a una nuova pubblicazione creata sul momento.
 
--   **[パブリケーション] ワークスペース**で、リボンの **[パブリケーション]** タブにある **[作成]** ボタンを使用できます。 このメソッドでは、将来使用するパブリケーションを作成できます。 その後、更新プログラムを割り当てるときに、このパブリケーションを使用できます。
+-   Nell'**area di lavoro Pubblicazioni** è possibile usare il pulsante **Crea** nella scheda **Pubblicazione** della barra multifunzione. Questo metodo consente di creare una pubblicazione per un uso futuro. Successivamente, quando si assegnano gli aggiornamenti, è possibile usare questa pubblicazione.
 
-## <a name="rename-a-publication"></a>パブリケーションの名前を変更する
-パブリケーションの名前を変更するには、**[パブリケーション] ワークスペース**からパブリケーションを選択し、リボンの **[パブリケーション]** タブで **[編集]** を選択します。
+## <a name="rename-a-publication"></a>Rinominare una pubblicazione
+Per rinominare una pubblicazione, selezionarla nell'**area di lavoro Pubblicazioni**, quindi, nella scheda **Pubblicazione** della barra multifunzione, scegliere **Modifica**.
 
-## <a name="change-the-publication-type-of-updates-in-a-publication"></a>パブリケーションの更新プログラムでパブリケーションの種類を変更する
-**[パブリケーション] ワークスペース**から、パブリケーションに割り当てられている更新プログラムとバンドルの**パブリケーションの種類**を変更できます。
+## <a name="change-the-publication-type-of-updates-in-a-publication"></a>Modificare il tipo di pubblicazione degli aggiornamenti in una pubblicazione
+Nell'**area di lavoro Pubblicazioni** e possibile modificare il **tipo di pubblicazione** delle aggregazioni e degli aggiornamenti assegnati a una pubblicazione.
 
-1. 変更する更新プログラムを含むパブリケーションを選択し、1 つまたは複数の更新プログラムかバンドルを **[All &lt;publication name> member updates]\(すべての <パブリケーション名> メンバー更新プログラム)** の一覧から選択します。
+1. Selezionare la pubblicazione contenente gli aggiornamenti da modificare, quindi selezionare uno o più aggiornamenti o aggregazioni dall'elenco **All &lt;publication name> member updates** (Tutti gli aggiornamenti membri di <nome pubblicazione>).
 
-2. 次に、**[ホーム]** タブで以下のオプションのいずれかを選択します。 使用できるオプションは、選択した更新プログラムのパブリケーションの種類によって異なります。
+2. Quindi, nella scheda **Home**, scegliere una delle opzioni seguenti. Le opzioni disponibili dipendono dal tipo di pubblicazione degli aggiornamenti selezionato.
 
-  -   **自動**
-  -   **コンテンツ全体**
-  -   **メタデータのみ**
+  -   **Automatic** (Automatica)
+  -   **Full Content** (Contenuto completo)
+  -   **Metadata only** (Solo metadati)
 
-変更後は、新しい値を確認するためにパブリケーションの表示を更新する必要がある場合があります。
+Dopo aver apportato una modifica, potrebbe essere necessario aggiornare la visualizzazione della pubblicazione per esaminare i nuovi valori.
 
-別のパブリケーションの種類については、「[Assign updates and bundles to a publication (パブリケーションに更新プログラムとバンドルを割り当てる)](/sccm/sum/tools/manage-updates-with-updates-publisher#assign-updates-and-bundles-to-a-publication)」をご覧ください。
+Per informazioni sui differenti tipi di pubblicazione, vedere [Assign updates to a publication](/sccm/sum/tools/manage-updates-with-updates-publisher#assign-updates-and-bundles-to-a-publication) (Assegnare aggiornamenti a una pubblicazione).
 
 > [!TIP]    
-> バンドルのパブリケーションの種類を設定すると、バンドル内のすべてのソフトウェア更新プログラムは、バンドルのパブリケーションの種類と共に公開されます。
+> Quando si imposta il tipo di pubblicazione di un'aggregazione, tutti gli aggiornamenti software in essa contenuti vengono pubblicati con il tipo di pubblicazione dell'aggregazione stessa.
 
-## <a name="remove-updates-from-a-publication"></a>パブリケーションから更新プログラムを削除する
-パブリケーションから更新プログラムまたはバンドルを削除するには、**[パブリケーション] ワークスペース**で変更するパブリケーションを選択し、次に削除する更新プログラムまたはバンドルを選択します。 次に、リボンの **[ホーム]** タブで **[削除]** を選択します。
+## <a name="remove-updates-from-a-publication"></a>Rimuovere gli aggiornamenti da una pubblicazione
+Per rimuovere aggiornamenti o aggregazioni da una pubblicazione, nell'**area di lavoro Pubblicazioni** selezionare la pubblicazione da modificare, quindi selezionare gli aggiornamenti e le aggregazioni da rimuovere. Quindi, nella scheda **Home** della barra multifunzione, scegliere **Rimuovi**.
 
-パブリケーションから更新プログラムを削除した後、これらのプログラムは Updates Publisher のリポジトリで引き続き使用できます。
+Dopo la rimozione da una pubblicazione, gli aggiornamenti rimangono disponibili nel repository di Updates Publisher.
 
-## <a name="publish-publications"></a>パブリケーションを管理する
-更新プログラムとバンドルを公開するとき、これらの更新プログラムとバンドルに関する情報 (メタデータ) と、場合によっては更新プログラムのバイナリ (コンテンツ全体) が、デバイスへの展開のために Updates Publisher によって更新サーバーに追加されます。
+## <a name="publish-publications"></a>Pubblicare pubblicazioni
+Quando si pubblicano aggiornamenti e aggregazioni, Updates Publisher aggiunge informazioni sugli aggiornamenti e le aggregazioni (metadati) e, se possibile, i file binari degli aggiornamenti (contenuto completo) a un server di aggiornamento per la distribuzione ai dispositivi.
 
-発行に関するオプションを設定する前に、Updates Publisher の [[更新サーバー]](/sccm/sum/tools/updates-publisher-options#update-server) オプションを構成する必要があります。 この構成オプションを開くには、**[更新プログラム] ワークスペース** &gt; **[概要]** に移動し、**[Configure WSUS and Signing Certificate]\(WSUS と署名証明書の構成)** を選択します。 また、Updates Publisher オプションの更新サーバー ページに移動できます。
+Per poter eseguire la pubblicazione, è prima necessario configurare l'opzione [Server di aggiornamento](/sccm/sum/tools/updates-publisher-options#update-server) per Updates Publisher. Per aprire questa opzione di configurazione, passare all'**area di lavoro Aggiornamenti** &gt; **Panoramica** e selezionare **Configure WSUS and Signing Certificate** (Configura WSUS e certificato di firma). È inoltre possibile passare alla pagina Server di aggiornamento nelle opzioni di Updates Publisher.
 
 > [!NOTE]   
-> Updates Publisher では、375 メガバイト (MB) 以下のサイズの更新プログラムのみを公開できます。
+> Updates Publisher può pubblicare soltanto aggiornamenti di dimensioni pari o inferiori a 375 megabyte (MB).
 
-### <a name="to-publish-a-publication"></a>パプリケーションを公開するには
+### <a name="to-publish-a-publication"></a>Per pubblicare una pubblicazione
 
-1.  **[パブリケーション] ワークスペース**に移動し、公開またはエクスポートする更新プログラムとバンドルのグループを含むパブリケーションを選択します。 次に、リボンの **[ホーム]** タブから **[公開]** を選択します。
+1.  Passare all'**area di lavoro Pubblicazioni** quindi selezionare una pubblicazione contenente il gruppo di aggiornamenti e aggregazioni che si vogliono pubblicare o esportare. Scegliere quindi **Pubblica** nella scheda **Home** della barra multifunzione.
 
-2.  **[公開]** ウィザードの **[選択]** ページで、新しく証明書を発行してすべての更新プログラムを署名することを選択できますが、パブリケーションの種類は変更できません。
+2.  Nella pagina **Seleziona** della **Pubblicazione guidata** è possibile scegliere di firmare tutti gli aggiornamenti con un nuovo certificato di pubblicazione, ma non è possibile modificare il tipo di pubblicazione.
 
-3.  ウィザードを完了します。
+3.  Completare la procedura guidata.
 
-  公開に失敗した場合は UpdatesPublisher.log ファイルへのリンクが表示され、詳しい情報を確認できます。
+  Se la pubblicazione ha esito negativo, viene visualizzato un collegamento al file UpdatesPublisher.log in cui sono disponibili maggiori informazioni.
 
-## <a name="export-a-publication"></a>パブリケーションをエクスポートする
-Updates Publisher のリポジトリからパブリケーションをエクスポートできます。 これにより、そのパブリケーションに割り当てられている更新プログラムとバンドルがエクスポートされ、更新プログラム カタログが作成されます。 作成後、このカタログを Updates Publisher の別のインスタンスに[追加](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs)および[インポート](/sccm/sum/tools/updates-publisher-catalogs#mport-updates)できます。 また、パブリケーションの一部ではない[更新プログラムのエクスポート](/sccm/sum/tools/manage-updates-with-updates-publisher#export-updates)もできます。
+## <a name="export-a-publication"></a>Esportare una pubblicazione
+È possibile esportare una pubblicazione dal repository di Updates Publisher. Con questa operazione vengono esportati gli aggiornamenti e le aggregazioni assegnati alla pubblicazione e viene creato un catalogo di aggiornamenti. È quindi possibile [aggiungere](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs) e [importare](/sccm/sum/tools/updates-publisher-catalogs#mport-updates) tale catalogo in un'altra istanza di Updates Publisher. È anche possibile [esportare aggiornamenti](/sccm/sum/tools/manage-updates-with-updates-publisher#export-updates) che non sono parte di una pubblicazione.
 
-パブリケーションをエクスポートするには、**[パブリケーション] ワークスペース**に移動し、エクスポートする更新プログラムを含むパブリケーションを選択します。 一度に 1 つのパブリケーションを選択できます。
+Per esportare una pubblicazione, passare all'**area di lavoro Pubblicazioni** e selezionare la pubblicazione contenente gli aggiornamenti che si vogliono esportare. È possibile selezionare una sola pubblicazione alla volta.
 
-パブリケーションを選択したら、リボンの **[ホーム]** タブから **[エクスポート]** を選択し、次にカタログのエクスポートのパスとファイル名を入力します。
+Dopo aver selezionato la pubblicazione, scegliere **Esporta** nella scheda **Home** della barra multifunzione e specificare un percorso e un nome file per l'esportazione del catalogo.
 
-エクスポートの一部として依存するソフトウェア更新プログラムをエクスポート (インクルード) するオプションもあります。
+È anche possibile esportare (includere) aggiornamenti software dipendenti come parte dell'esportazione.
 
-## <a name="rename-a-publication"></a>パブリケーションの名前を変更する
-パブリケーションの名前を変更するには、**[パブリケーション] ワークスペース**からパブリケーションを選択し、リボンの **[パブリケーション]** タブから **[編集]** を選択します。
+## <a name="rename-a-publication"></a>Rinominare una pubblicazione
+Per rinominare una pubblicazione, selezionarla nell'**area di lavoro Pubblicazioni**, quindi scegliere **Modifica** dalla scheda **Pubblicazione** della barra multifunzione.
 
-## <a name="delete-a-publication"></a>パブリケーションを削除する
-パブリケーションを削除するには、**[パブリケーション] ワークスペース**からパブリケーションを選択し、リボンの **[パブリケーション]** タブから **[削除]** を選択します。
+## <a name="delete-a-publication"></a>Eliminare una pubblicazione
+Per eliminare una pubblicazione, selezionarla nell'**area di lavoro Pubblicazioni**, quindi scegliere **Elimina** dalla scheda **Pubblicazione** della barra multifunzione.
 
-Updates Publisher からパブリケーションを削除した後、そのパブリケーションに含まれていた更新プログラムは Updates Publisher のリポジトリで引き続き使用できます。
+Dopo la rimozione della pubblicazione da Updates Publisher, gli aggiornamenti che erano contenuti nella pubblicazione rimangono disponibili nel repository di Updates Publisher.
 
-## <a name="expire-or-reactivate-updates-and-bundles"></a>更新プログラムとバンドルの期限切れ設定または再アクティブ化
-**[更新プログラム] ワークスペース**を使用して更新プログラムとバンドルを選択し、期限切れにするか再アクティブ化することができます。 更新プログラムとバンドルを必要に応じて選択し、期限切れにするか再アクティブ化することができます。
+## <a name="expire-or-reactivate-updates-and-bundles"></a>Impostare come scaduti o riattivare aggiornamenti e aggregazioni
+È possibile usare l'**area di lavoro Aggiornamenti** per selezionare e quindi impostare come scaduti oppure riattivare aggiornamenti e aggregazioni. È possibile impostare come scaduti e quindi riattivare aggiornamenti e aggregazioni il numero di volte desiderato.
 
--   **更新プログラムまたはバンドルを期限切れにするには**、[更新プログラム] ワークスペースで 1 つまたは複数の更新プログラムかバンドルを選択し、次に **[ホーム]** タブから **[期限切れ]** を選択します。 更新プログラムまたはバンドルを Configuration Manager に期限切れとして公開するまでは、再アクティブ化できます。
+-   **Per impostare come scaduti aggiornamenti o aggregazioni**, nell'area di lavoro Aggiornamenti selezionare uno o più aggiornamenti o aggregazioni non scaduti, quindi scegliere **Expire** (Imposta come scaduto) dalla scheda **Home**. Le aggregazioni o gli aggiornamenti pubblicati come scaduti in Configuration Manager possono essere riattivati.
 
-    Configuration Manager からカスタム更新プログラムまたはバンドルを取り除く (削除する) 前に期限切れの設定を行い、次に Configuration Manager に対してこの期限切れの状態を公開する必要があります。 Configuration Manager の更新プログラムやバンドルが期限切れになった後は、更新プログラムやバンドルを展開または再アクティブ化することはできません。
+    Prima di rimuovere (eliminare) da Configuration Manager un'aggregazione o un aggiornamento personalizzato, è necessario impostarlo come scaduto e quindi pubblicare lo stato Scaduto in Configuration Manager. Dopo che le aggregazioni o gli aggiornamenti sono scaduti in Configuration Manager, non è più possibile distribuirli o riattivarli.
 
--   **更新プログラムまたはバンドルを再アクティブ化するには**、[更新プログラム] ワークスペースで期限切れにする更新プログラムを 1 つまたは複数選択し、次にリボンの **[ホーム]** タブから **[再アクティブ化]** を選択します。 期限切れの更新プログラムが Configuration Manager に期限切れとしてすでに公開済みの場合は、再アクティブ化できません。
+-   **Per riattivare aggiornamenti o aggregazioni**, nell'area di lavoro Aggiornamenti selezionare uno o più aggiornamenti scaduti, quindi scegliere **Reactivate** (Riattiva) dalla scheda **Home** della barra multifunzione. Se l'aggiornamento scaduto era stato precedentemente pubblicato come scaduto in Configuration Manager, non è possibile riattivarlo.

@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager の使用に関するヘルプの検索 | Microsoft Docs"
-description: "リソースを検索して System Center Configuration Manager の詳細情報を参照します。"
+title: Reperire informazioni sull'uso di System Center Configuration Manager | Microsoft Docs
+description: Ricerca di informazioni su System Center Configuration Manager.
 ms.custom: na
 ms.date: 2/8/2017
 ms.prod: configuration-manager
@@ -18,59 +18,59 @@ manager: angrobe
 ms.openlocfilehash: 72fe220cb9a40d6a20164ace1db8542a91221f55
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="find-help-for-using-system-center-configuration-manager"></a>System Center Configuration Manager の使用に関するヘルプの検索
+# <a name="find-help-for-using-system-center-configuration-manager"></a>Reperire informazioni sull'uso di System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager の詳しい情報は、次のリソースで参照できます。  
+Usare le risorse seguenti per ottenere altre informazioni su System Center Configuration Manager:  
 
--   [情報とサポート](#bkmk_Info)  
+-   [Informazioni e supporto](#bkmk_Info)  
 
-    -   [ドキュメント ライブラリを検索する](#BKMK_SearchTips)  
+    -   [Ricerca nella libreria della documentazione](#BKMK_SearchTips)  
 
-    -   [System Center Configuration Manager チームのブログ](#BKMK_ProductGroupBlog)  
-    -   [サポート オプションとコミュニティ リソース](#BKMK_SupportOptions)
+    -   [Blog del team di System Center Configuration Manager](#BKMK_ProductGroupBlog)  
+    -   [Opzioni di supporto e risorse per la community](#BKMK_SupportOptions)
 
-  ユーザー補助機能については、「[System Center Configuration Manager のユーザー補助機能](../../core/understand/accessibility-features.md)」をご覧ください。
+  Per informazioni sull'accessibilità, vedere [Funzionalità di accesso facilitato in System Center Configuration Manager](../../core/understand/accessibility-features.md).
 
-##  <a name="bkmk_Info"></a> 情報とサポート  
- Configuration Manager の詳細情報については、次のリソースをご覧ください。  
+##  <a name="bkmk_Info"></a> Informazioni e supporto  
+ Usare le risorse seguenti per altre informazioni su Configuration Manager.  
 
--   **最新の System Center Configuration Manager 製品ドキュメントにアクセスするには:** TechNet の [System Center Configuration Manager のドキュメント ライブラリ](http://go.microsoft.com/fwlink/p/?LinkId=691974)を使用します。
+-   **Per accedere alla documentazione più recente del prodotto System Center Configuration Manager:** usare la [libreria della documentazione di System Center Configuration Manager](http://go.microsoft.com/fwlink/p/?LinkId=691974) su TechNet.
 
--   **ドキュメントに関するフィードバックを提供するには:** [「System Center Configuration Manager Feedback (System Center Configuration Manager に関するフィードバック)」の [Documentation (ドキュメント)]](https://configurationmanager.uservoice.com/forums/300492-ideas/category/112371-documentation) のところで **UserVoice** を使用してフィードバックを送信します。  
+-   **Per inviare commenti e suggerimenti sulla documentazione:** accedere con **User Voice** alla pagina del [feedback su System Center Configuration Manager (documentazione)](https://configurationmanager.uservoice.com/forums/300492-ideas/category/112371-documentation).  
 
--   **ドキュメントのアーカイブ コピーをダウンロードするには:** 次の TechNet ギャラリーにアクセスします。
+-   **Per scaricare una copia archiviata della documentazione:** accedere alla raccolta TechNet:
 
-    - [バージョン 1602](https://gallery.technet.microsoft.com/documentation-for-system-ea90eaf1)
-    - [バージョン 1511](https://gallery.technet.microsoft.com/documentation-for-system-ea90eaf1)
+    - [Versione 1602](https://gallery.technet.microsoft.com/documentation-for-system-ea90eaf1)
+    - [Versione 1511](https://gallery.technet.microsoft.com/documentation-for-system-ea90eaf1)
 
-###  <a name="BKMK_SearchTips"></a> ドキュメント ライブラリを検索する  
- 必要な情報を検索するときに、以下の検索のヒントをご覧ください。  
+###  <a name="BKMK_SearchTips"></a> Ricerca nella libreria della documentazione  
+ Usare i seguenti suggerimenti per la ricerca per trovare le informazioni necessarie:  
 
--   お好みの検索エンジンを使用して System Center Configuration Manager のコンテンツを検索する場合、**SCCM** と **Docs** という 2 つの語句を含めると、検索結果を現在のコンテンツ ライブラリに限定できます。
+-   Quando si usa il motore di ricerca preferito per cercare contenuto relativo a System Center Configuration Manager, è possibile limitare i risultati della ricerca alla raccolta di contenuto corrente, includendo i due termini seguenti, **SCCM** e **Documentazione**.
 
--   ユーザー インターフェイス (UI) やオンライン ドキュメントに表示されているものと同じ検索語句を使用します。コミュニティのコンテンツで使われているような非公式の用語や略語は使用しないでください。 たとえば、「MP」ではなく「管理ポイント」、「DT」ではなく「展開の種類」、「SUM」ではなく「ソフトウェア更新プログラム」のように検索します。  
+-   Usare termini di ricerca corrispondenti a quelli visualizzati nell'interfaccia utente e nella documentazione online, anziché termini non ufficiali o abbreviazioni che possono essere presenti nei contenuti della community. Ad esempio, cercare "punto di gestione" anziché "PG", "tipo di distribuzione" anziché "TD" e "aggiornamenti software" anziché "AS".  
 
--   TechNet 内のページまたはヘルプ ファイル内で検索する (Ctrl キーを押しながら F1 キーを押して、**[検索]** ボックスに検索用語を入力するなど) 場合、結果には折りたたまれたセクションのテキストは含まれません。 折りたたまれたセクションのテキストを検索するには、ページを検索する前にセクションを展開します。 このためには、ページの上端にある **[すべて展開]** ボタンを選択するか、セクションのタイトルをダブルクリックします。 すべてのセクションを展開した場合は、そのページの全セクションのテキストが検索されます。  
+-   Quando si esegue una ricerca in una pagina di TechNet o nel file della Guida (premendo ad esempio CTRL+F1 e immettendo i termini di ricerca nella casella **Cerca**), i risultati escludono il testo contenuto nelle sezioni compresse. Per cercare testo contenuto nelle sezioni compresse, espandere le sezioni prima di cercare nella pagina. Per eseguire questa operazione, è possibile selezionare il pulsante **Espandi tutto** nella parte superiore della pagina oppure fare doppio clic su eventuali sezioni compresse. Quando tutte le sezioni sono espanse, una ricerca nella pagina può quindi eseguire la ricerca in tutte le sezioni in quella pagina.  
 
--   ヘルプ ファイルにあるトピックを検索するには、F1 キーを押し、**[検索]** ダイアログ ボックスに見つけたい語句を入力します。 ヘルプ ファイルには **[すべて展開]** ボタンがないので、検索を開始する前に、折りたたまれている個々のセクションを手動で展開してください。  
+-   Per cercare un argomento nel file della Guida, premere F1 e quindi immettere i termini di ricerca nella finestra di dialogo **Cerca**. Il file della Guida non supporta l'opzione **Espandi tutto** ed è necessario espandere manualmente le singole sezioni compresse prima di poter trovare il testo in tali sezioni.  
 
--   可能な限り、ダウンロードしたドキュメントではなく、TechNet オンライン ライブラリを使用してください。 TechNet には最新の情報が掲載されています。ダウンロードしたドキュメントには探している情報が含まれていなかったり、オンラインに訂正や追加情報が掲載されている可能性があります。  
+-   Se possibile, usare la Libreria TechNet online anziché la documentazione scaricata. TechNet contiene le informazioni più aggiornate. È possibile che le informazioni desiderate non si trovino nella documentazione scaricata o che nella versione online siano disponibili correzioni o informazioni aggiuntive.  
 
--   ローカルに保存した方がドキュメントを簡単に早く検索できる場合は、TechNet で複数のトピックを選択してローカルに保存することができます。 最初に、TechNet にサインインします。 次に、ローカル保存するページの上部で、**[エクスポート]** (**[印刷]** の横) を選択します。 [ **ページの複数のセットをエクスポート** ] バナーが表示されます。ここで保存するページを追加し、削除できます。 次に **[ページの管理]** をクリックしてそれらをエクスポートします。 詳細については、バナーの **[ヘルプ]** を選択してください。  
+-   Se si considera più semplice e pratico eseguire ricerche nella documentazione archiviata in locale, è possibile selezionare vari argomenti in TechNet e salvarli in locale. In primo luogo, accedere a TechNet, e quindi nella parte superiore della pagina da salvare in locale scegliere **Esporta**, vicino a **Stampa**. Verrà quindi visualizzato il banner **Esporta più insiemi di pagine** e sarà possibile aggiungere e rimuovere le pagine desiderate. Scegliere **Gestisci pagine** per esportarle. Per altre informazioni, scegliere **Guida** nel banner.  
 
-###  <a name="BKMK_ProductGroupBlog"></a> System Center Configuration Manager チームのブログ  
- Configuration Manager のエンジニアリング チームとパートナー チームは、「[System Center Configuration Manager Team Blog](http://go.microsoft.com/fwlink/?LinkId=191941)」 (System Center Configuration Manager チームのブログ) を使用して、Configuration Manager と関連技術に関する技術情報やその他のニュースを提供しています。 ブログの記事は、製品ドキュメントとサポート情報を補足するものです。  
+###  <a name="BKMK_ProductGroupBlog"></a> Blog del team di System Center Configuration Manager  
+ I team di progettazione e i team associati di Configuration Manager usano [System Center Configuration Manager Team Blog (Blog del team di System Center Configuration Manager)](http://go.microsoft.com/fwlink/?LinkId=191941) per offrire informazioni tecniche e altre notizie su Configuration Manager e le relative tecnologie. I post di questo blog integrano le informazioni di supporto e la documentazione relativa al prodotto.  
 
-###  <a name="BKMK_SupportOptions"></a> サポート オプションとコミュニティ リソース  
- 次のリンクは、サポート オプションとコミュニティ リソースに関する情報を提供します。  
+###  <a name="BKMK_SupportOptions"></a> Opzioni di supporto e risorse per la community  
+ I seguenti collegamenti forniscono informazioni sulle opzioni di supporto e sulle risorse per la community:  
 
--   [Microsoft サポート](http://go.microsoft.com/fwlink/?LinkId=243064)  
+-   [Supporto tecnico Microsoft](http://go.microsoft.com/fwlink/?LinkId=243064)  
 
--   [Configuration Manager コミュニティ: System Center Configuration Manager (Current Branch) サバイバル ガイド](http://social.technet.microsoft.com/wiki/contents/articles/33035.system-center-configuration-manager-current-branch-survival-guide.aspx )  
+-   [Community di Configuration Manager: System Center Configuration Manager (Current Branch) Survival Guide](http://social.technet.microsoft.com/wiki/contents/articles/33035.system-center-configuration-manager-current-branch-survival-guide.aspx ) (Guida essenziale di System Center Configuration Manager Current Branch)  
 
--   [Configuration Manager フォーラム ページ](https://social.technet.microsoft.com/Forums/en-US/home?category=ConfigMgrCB)  
+-   [Pagina dei forum di Configuration Manager](https://social.technet.microsoft.com/Forums/en-US/home?category=ConfigMgrCB)  

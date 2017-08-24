@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager のプライバシーに関する声明 - Configuration Manager コマンドレット ライブラリ | Microsoft Docs"
-description: "System Center Configuration Manager コマンドレット ライブラリに関連するデータを Microsoft が収集して使用する方法について説明します。"
+title: Informativa sulla privacy di System Center Configuration Manager - Libreria di cmdlet di Configuration Manager | Microsoft Docs
+description: Informazioni su come Microsoft raccoglie e usa i dati relativi alla libreria di cmdlet di System Center Configuration Manager.
 ms.custom: na
 ms.date: 1/3/2017
 ms.prod: configuration-manager
@@ -18,34 +18,34 @@ manager: angrobe
 ms.openlocfilehash: 3936075555cc0bb370ea6e42c7e720b864d565f7
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="system-center-configuration-manager-privacy-statement---configuration-manager-cmdlet-library"></a>System Center Configuration Manager のプライバシーに関する声明 - Configuration Manager コマンドレット ライブラリ
+# <a name="system-center-configuration-manager-privacy-statement---configuration-manager-cmdlet-library"></a>Informativa sulla privacy di System Center Configuration Manager - Libreria di cmdlet di Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-このプライバシーに関する声明は、System Center Configuration Manager Cmdlet Library の機能に適用されます。  
+Questa informativa sulla privacy riguarda le funzionalità di System Center Configuration Manager Cmdlet Library.  
 
-## <a name="usage-data"></a>使用状況データ  
- **この機能のデータ:**   
-System Center Configuration Manager コマンドレット ライブラリを利用すると、Windows PowerShell のコマンドレットおよびスクリプトを使用して Configuration Manager 階層を管理できます。 コマンドレット ライブラリは、傾向および使用パターンを識別することを目的に、ライブラリのコマンドレットのお客様による使用方法に関する情報を収集します。 また、コマンドレット ライブラリは、コマンドレットの使用時に発生したエラーの種類と数も収集します。  
+## <a name="usage-data"></a>Dati di utilizzo  
+ **Scopo della funzionalità**   
+La libreria di cmdlet di System Center Configuration Manager consente di usare i cmdlet e gli script di Windows PowerShell per gestire una gerarchia di Configuration Manager. Oltre a raccogliere informazioni sul modo in cui vengono usati i cmdlet della libreria per individuare le tendenze e i modelli di utilizzo, la libreria di cmdlet raccoglie anche i tipi e i numeri di errori riscontrati durante l'uso dei cmdlet.  
 
- **収集、処理、または送信される情報:**   
-収集される使用状況データには、コマンドレットの開始、停止、および終了、非推奨のコマンドレットの実行、コマンドレットに関する Systems Management Server (SMS) プロバイダーの操作のアクティビティ メトリックスが含まれます。 この情報は、個人を特定するものではありません。  収集されるエラー情報には、コマンドレットから返されるエラーのほか、例外エラーの詳細が含まれます。 エラーの詳細レポートには、お客様のコンピューターに接続されているデバイスのシリアル番号など、個人を特定できる情報が意図せず含まれる場合があります。 コマンドレット ライブラリは、エラー レポートに含まれる情報のフィルター処理および匿名化を行い個人の特定が可能な情報を削除してから、当該レポートをマイクロソフトに送信します。  
+ **Informazioni raccolte, elaborate o trasmesse**   
+I dati di utilizzo raccolti includono quelli sull'avvio, l'arresto e l'interruzione di cmdlet e sull'esecuzione di metriche di attività e di cmdlet deprecati per le operazioni dei provider di Systems Management Server (SMS) correlate ai cmdlet. Si tratta di informazioni che non consentono di identificare l'utente.  Le informazioni sugli errori raccolte includono gli errori restituiti dai cmdlet e i dettagli relativi agli errori delle eccezioni. Alcune segnalazioni con i dettagli sugli errori potrebbero inavvertitamente contenere identificatori individuali, come il numero di serie di un dispositivo connesso al computer. La libreria dei cmdlet filtra e rende anonime le informazioni nelle segnalazioni errori, al fine di rimuovere gli identificatori individuali prima della trasmissione a Microsoft.  
 
- **情報の使用:**   
-マイクロソフトは、これらの情報をマイクロソフトが提供する製品およびサービスの品質、セキュリティ、および整合性の改善のために使用します。  
+ **Uso delle informazioni**   
+Microsoft usa queste informazioni per migliorare la qualità, la sicurezza e l'integrità dei prodotti e dei servizi offerti.  
 
- **選択または制御:**   
-この使用状況データ機能は既定で有効になっています。 System Center Configuration Manager コマンドレット ライブラリには、この機能を制御する 2 つのレジストリ キーがあります。  
+ **Scelta/controllo**   
+La funzionalità Dati di Utilizzo è abilitata per impostazione predefinita. La libreria di cmdlet di System Center Configuration Manager ha due chiavi del Registro di sistema che controllano questa funzionalità.  
 
- この機能を完全に停止するには、Windows イベント トレーシング (ETW) プロバイダーごとに 1 つずつある、次の 2 つのレジストリ キーの値を設定する必要があります。  
+ Per esprimere un rifiuto esplicito, l'utente deve configurare questi due valori delle chiavi del Registro di sistema, uno per ognuno dei provider di Event Tracing for Windows (ETW):  
 
--   HKLM\Software\Microsoft\ConfigMgr10\PowerShell\Microsoft.ConfigurationManagement.PowerShell.Provider:CeipLevel=0 (ドライブ プロバイダーの使用状況データの停止)  
+-   HKLM\Software\Microsoft\ConfigMgr10\PowerShell\Microsoft.ConfigurationManagement.PowerShell.Provider:CeipLevel=0 (consente di rifiutare in modo esplicito la funzionalità Dati di utilizzo per il provider dell'unità)  
 
--   HKLM\Software\Microsoft\ConfigMgr10\PowerShell\Microsoft.ConfigurationManagement.PowerShell.Cmdlets:CeipLevel=0 (コマンドレットの使用状況データの停止)  
+-   HKLM\Software\Microsoft\ConfigMgr10\PowerShell\Microsoft.ConfigurationManagement.PowerShell.Cmdlets:CeipLevel=0 (consente di rifiutare in modo esplicito la funzionalità Dati di utilizzo per i cmdlet)  
 
- 使用状況データ設定を変更する際は、コンピューターに応じて固有の変更を行います。  
+ Le modifiche alle impostazioni relative ai dati di utilizzo sono specifiche per il computer in cui vengono apportate.  
 
- 使用状況データ (収集) の構成方法の詳細については、[System Center Configuration Manager Cmdlet Library のドキュメント](https://technet.microsoft.com/en-us/library/dn958404.aspx)をご覧ください。   
+ Per dettagli su come configurare i dati di utilizzo (raccolta), vedere la [documentazione della libreria di cmdlet di System Center Configuration Manager](https://technet.microsoft.com/en-us/library/dn958404.aspx).   

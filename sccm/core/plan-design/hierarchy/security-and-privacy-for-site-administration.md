@@ -1,6 +1,6 @@
 ---
-title: "サイト管理のセキュリティとプライバシー | Microsoft Docs"
-description: "System Center Configuration Manager のサイト管理のセキュリティとプライバシーを最適化します。"
+title: Privacy e sicurezza per l'amministrazione dei siti | Microsoft Docs
+description: Ottimizzare sicurezza e privacy per l'amministrazione dei siti in System Center Configuration Manager.
 ms.custom: na
 ms.date: 3/1/2017
 ms.prod: configuration-manager
@@ -17,266 +17,266 @@ manager: angrobe
 ms.openlocfilehash: a60b8c103a303dcae0bd66f3060d5a8f17d1cef9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-site-administration-in-system-center-configuration-manager"></a>System Center Configuration Manager のサイト管理のセキュリティとプライバシー
+# <a name="security-and-privacy-for-site-administration-in-system-center-configuration-manager"></a>Sicurezza e privacy per l'amministrazione dei siti in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-このトピックには、System Center Configuration Manager のサイトと階層のセキュリティとプライバシーの情報が含まれています。
+Questo argomento include informazioni sulla sicurezza e la privacy per i siti e la gerarchia di System Center Configuration Manager.
 
-##  <a name="BKMK_Security_Sites"></a> サイトを管理するときのセキュリティのベスト プラクティス  
- ここでは、System Center Configuration Manager のサイトと階層をセキュリティで保護するときのベスト プラクティスについて説明します。  
+##  <a name="BKMK_Security_Sites"></a> Procedure di sicurezza consigliate per l'amministrazione del sito  
+ Usare le procedure di sicurezza consigliate seguenti per proteggere i siti e la gerarchia di System Center Configuration Manager.  
 
- **信頼されるソースからのみセットアップを実行し、セットアップ メディアとサイト サーバー間の通信チャネルをセキュリティで保護する**  
+ **Eseguire l'installazione solo da un'origine attendibile e proteggere il canale di comunicazione tra i supporti di installazione e il server del sito.**  
 
- 誰かにソース ファイルが改ざんされることを防ぐため、信頼されるソースからセットアップを実行します。 ファイルをネットワーク上に保存している場合は、ネットワークの場所をセキュリティで保護します。  
+ Per impedire la manomissione dei file di origine, eseguire l'installazione da un'origine attendibile. Se si archiviano i file in rete, proteggere il percorso di rete.  
 
- ネットワークの場所からセットアップを実行する場合、ファイルがネットワーク経由で転送されるときに攻撃者によって改ざんされるのを防ぐため、セットアップ ファイルのソースの場所とサイト サーバー間で IPsec またはサーバー メッセージ ブロック (SMB) 署名を使用します。  
+ Se si esegue l'installazione da un percorso di rete, per evitare che un utente malintenzionato manometta i file mentre vengono trasmessi in rete, usare la firma IPsec o Server Message Block (SMB) tra il percorso di origine dei file di installazione e il server del sito.  
 
- また、セットアップ ダウンローダーを使用してセットアップに必要なファイルをダウンロードする場合、これらのファイルが保存されている場所がセキュリティで保護されており、セットアップの実行時にこの場所の通信チャネルがセキュリティで保護されることを確認します。  
+ Inoltre, se si usa il downloader di installazione per scaricare i file necessari richiesti dall'installazione, assicurarsi di proteggere anche il percorso in cui tali file vengono memorizzati e proteggere il canale di comunicazione per questo percorso quando si esegue l'installazione.  
 
- **System Center Configuration Manager 向けに Active Directory スキーマを拡張し、Active Directory Domain Services にサイトを発行する**  
+ **Estendere lo schema di Active Directory per System Center Configuration Manager e pubblicare i siti in Active Directory Domain Services.**  
 
- スキーマ拡張は、System Center Configuration Manager の実行に必須ではありませんが、信頼されるソースから Configuration Manager のクライアントとサイト サーバーが情報を取得できるため、より安全な環境が構築されます。  
+ Le estensioni dello schema non sono necessarie per eseguire System Center Configuration Manager, ma creano un ambiente più sicuro perché i client e i server del sito di Configuration Manager possono recuperare le informazioni da un'origine attendibile.  
 
- クライアントが信頼されていないドメインに属している場合、クライアントのドメインに次のサイト システムの役割を展開します。  
+ Se i client si trovano in un dominio non attendibile, distribuire i ruoli del sistema del sito seguenti nei domini dei client:  
 
--   管理ポイント  
+-   Punto di gestione  
 
--   配布ポイント  
+-   Punto di distribuzione  
 
--   アプリケーション カタログ Web サイト ポイント  
-
-> [!NOTE]  
->  Configuration Manager の信頼されたドメインには、Kerberos 認証が必要です。 これは、サイト サーバーのフォレストと双方向のフォレストの信頼関係がない別のフォレストにクライアントが含まれている場合は、これらのクライアントが信頼されていないドメインに属すると見なされることを意味します。 この目的には、外部の信頼は十分ではありません。  
-
- **IPsec を使用して、サイト システム サーバーとサイト間の通信をセキュリティで保護する**  
-
- Configuration Manager はサイト サーバーと SQL Server を実行するコンピューター間の通信をセキュリティで保護しますが、Configuration Manager はサイト システムの役割と SQL Server 間の通信をセキュリティで保護しません。 一部のサイト システム (登録ポイントおよびアプリケーション カタログ Web サービス ポイント) のみ、サイト間の通信を行うように HTTPS 用に構成できます。  
-
- 追加の制御を使用してこれらのサーバー間チャネルを保護しない場合は、攻撃者がサイト システムに対してさまざまなスプーフィング攻撃や中間者攻撃を仕掛けることができてしまいます。 IPsec を使用できない場合は、SMB 署名を使用します。  
+-   Punto per siti Web del Catalogo applicazioni  
 
 > [!NOTE]  
->  サイト サーバーとパッケージ ソース サーバー間の通信チャネルをセキュリティで保護することが、特に重要です。 この通信には SMB が使用されます。 この通信をセキュリティで保護するために IPsec を使用できない場合は、SMB 署名を使用して、クライアントがファイルをダウンロードして実行する前に、それらのファイルが改ざんされないようにしてください。  
+>  Un dominio trusted per Configuration Manager richiede l'autenticazione Kerberos. Di conseguenza, se i client si trovano in un'altra foresta che non dispone di un trust tra foreste bidirezionale con la foresta del server del sito, i client vengono considerati in un dominio non attendibile. Un trust esterno non è sufficiente a questo scopo.  
 
- **サイト システムの通信用に Configuration Manager によって作成および管理されたセキュリティ グループを変更しない**  
+ **Utilizzare IPsec per proteggere le comunicazioni tra i server di sistema del sito e siti.**  
 
- セキュリティ グループ:  
+ Anche se Configuration Manager protegge le comunicazioni tra il server del sito e il computer in cui è in esecuzione SQL Server, Configuration Manager non protegge le comunicazioni tra i ruoli del sistema del sito e SQL Server. Solo alcuni sistemi del sito (il punto di registrazione e il punto per servizi Web del Catalogo applicazioni) possono essere configurati per HTTPS per le comunicazioni all'interno del sito.  
 
--   **SMS_SiteSystemToSiteServerConnection_MP_&lt;SiteCode\>**  
+ Se non si utilizzano controlli aggiuntivi per proteggere questi canali da server a server, degli utenti malintenzionati potrebbero utilizzare diversi attacchi di spoofing e man-in-the-middle contro i sistemi del sito. Utilizzare la firma SMB quando non è possibile utilizzare IPsec.  
 
--   **SMS_SiteSystemToSiteServerConnection_SMSProv_&lt;SiteCode\>**  
+> [!NOTE]  
+>  È particolarmente importante proteggere il canale di comunicazione tra il server del sito e il server di origine del pacchetto. Questa comunicazione utilizza SMB. Se non si può utilizzare IPsec per proteggere questa comunicazione, utilizzare la firma SMB per assicurarsi che i file non vengano manomessi prima che i client li scarichino e li eseguano.  
 
--   **SMS_SiteSystemToSiteServerConnection_Stat_&lt;SiteCode\>**  
+ **Non modificare i gruppi di sicurezza che Configuration Manager crea e gestisce per la comunicazione del sistema del sito.**  
 
-Configuration Manager は、これらのセキュリティ グループを自動的に作成して管理します。 これには、サイト システムの役割が削除された場合の、コンピューター アカウントの削除も含まれます。  
+ Gruppi di sicurezza:  
 
-サービスの継続性を確保し、最小限の権限を付与するため、これらのグループを手動で編集しないでください。  
+-   **SMS_SiteSystemToSiteServerConnection_MP_&lt;Codicesito\>**  
 
-**クライアントがグローバル カタログ サーバーで Configuration Manager の情報を照会できない場合、信頼されたルート キーのプロビジョニング プロセスを管理する**  
+-   **SMS_SiteSystemToSiteServerConnection_SMSProv_&lt;Codicesito\>**  
 
-クライアントがグローバル カタログ サーバーで Configuration Manager の情報を照会できない場合、クライアントは、信頼されたルート キーを使用して有効な管理ポイントを認証する必要があります。 信頼されたルート キーは、クライアントのレジストリに保存されており、グローバル ポリシーまたは手動の構成を使用して設定できます。  
+-   **SMS_SiteSystemToSiteServerConnection_Stat_&lt;Codicesito\>**  
 
-クライアントは、初めて管理ポイントと通信する前に信頼されたルート キーのコピーがない場合、最初に通信した管理ポイントを信頼します。 攻撃者がクライアントを承認されていない管理ポイントに誘導するリスクを軽減するため、信頼されたルート キーをクライアントに事前に準備することができます。 詳細については、「[信頼されたルート キーの計画](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForRTK)」を参照してください。  
+Configuration Manager crea e gestisce automaticamente questi gruppi di sicurezza. Ciò include la rimozione degli account computer quando viene rimosso un ruolo del sistema del sito.  
 
-**既定以外のポート番号を使用する**  
+Per garantire la continuità del servizio e dei privilegi minimi, non modificare manualmente questi gruppi.  
 
-既定以外のポート番号を使用すると、攻撃者が攻撃準備として環境内を探ることが難しくなるため、セキュリティを強化できます。 既定以外のポートを使用する場合は、Configuration Manager をインストールして階層内のすべてのサイトで一貫して使用する前に、これらのポートについて計画します。 クライアント要求ポートと Wake On LAN は、既定以外のポート番号を使用できる場合の例です。  
+**Se i client non possono eseguire la query al server di catalogo globale per ottenere informazioni su Configuration Manager, gestire il processo di provisioning della chiave radice attendibile.**  
 
-**サイト システムで役割の分離を使用する**  
+Se i client non possono eseguire la query al server di catalogo globale per ottenere informazioni su Configuration Manager, devono basarsi sulla chiave radice attendibile per autenticare i punti di gestione validi. La chiave radice attendibile viene memorizzata nel Registro di sistema client e può essere impostata tramite i criteri di gruppo o la configurazione manuale.  
 
-サイト システムの役割をすべて 1 台のコンピューターにインストールすることは可能ですが、この方法では単一障害点が発生するため、この方法が実稼働ネットワークで使用されることはあまりありません。  
+Se il client non dispone di una copia della chiave radice attendibile prima di contattare un punto di gestione per la prima volta, si affida al primo punto di gestione con cui comunica. Per ridurre il rischio di un errato indirizzamento dei client a un punto di gestione non autorizzato da parte di un utente malintenzionato, è possibile eseguire il pre-provisioning dei client utilizzando la chiave radice attendibile. Per altre informazioni, vedere [Pianificare la chiave radice attendibile](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForRTK).  
 
-**攻撃プロファイルを減らす**  
+**Utilizzare numeri di porta non predefiniti.**  
 
-各サイト サーバーの役割を複数のサーバーに分離すると、あるサイト システムの脆弱性に対する攻撃が別のサイト システムで利用される可能性が少なくなります。 多くのサイト システムの役割で、サイト システムにインターネット インフォメーション サービス (IIS) をインストールすることが必要ですが、これにより、攻撃対象が増えることになります。 ハードウェア経費を削減するためにサイト システムの役割を結合する必要がある場合は、IIS のサイト システムの役割を、IIS を必要とする他のサイト システムの役割とのみ結合します。  
+L'uso di numeri di porta non predefiniti può offrire un'ulteriore protezione perché rende più difficile l'esplorazione dell'ambiente da parte di utenti malintenzionati che preparano un attacco. Se si decide di usare porte non predefinite, pianificarle prima di installare Configuration Manager e usarle in modo coerente in tutti i siti della gerarchia. Le porte di richiesta client e la riattivazione LAN sono esempi in cui è possibile usare numeri di porta non predefiniti.  
+
+**Utilizzare la separazione dei ruoli nei sistemi del sito.**  
+
+Nonostante si possano installare tutti i ruoli del sistema del sito su un computer singolo, questa operazioni viene raramente utilizzata nelle reti di produzione perché crea un punto singolo di errore.  
+
+**Ridurre il profilo di attacco.**  
+
+L'isolamento di ogni ruolo del sistema del sito in un server diverso riduce la possibilità che un attacco alle vulnerabilità in un sistema del sito possa essere usato contro un sistema del sito differente. Molti ruoli del sistema del sito richiedono l'installazione di Internet Information Services (IIS) nel sistema del sito e questo aumenta la superficie di attacco. Se occorre combinare i ruoli del sistema del sito per ridurre il consumo hardware, combinare ruoli del sistema del sito IIS solo con altri ruoli che richiedono IIS.  
 
 > [!IMPORTANT]  
->  フォールバック ステータス ポイントの役割は例外です。 このサイト システムの役割は、クライアントから認証されていないデータを受け入れるため、フォールバック ステータス ポイントの役割を他の Configuration Manager サイト システムの役割に割り当てないことをお勧めします。  
+>  Il ruolo del punto di stato di fallback è un'eccezione. Poiché questo ruolo del sistema del sito accetta dati non autenticati dai client, è consigliabile non assegnare mai il ruolo del punto di stato di fallback ad altri ruoli del sistema del sito di Configuration Manager.  
 
 
-**Windows Server のセキュリティのベスト プラクティスに従って、すべてのサイト システムでセキュリティ構成ウィザードを実行する**  
+**Seguire le procedure di protezione ottimali per Windows Server ed eseguire la Configurazione guidata impostazioni di sicurezza su tutti i sistemi del sito.**  
 
-セキュリティ構成ウィザード (SCW) を使用して、ネットワーク上の任意のサーバーに適用できるセキュリティ ポリシーを作成できます。 System Center Configuration Manager テンプレートをインストールすると、SCW が Configuration Manager サイト システムの役割、サービス、ポート、およびアプリケーションを認識します。 SCW は、Configuration Manager に必要な通信を許可し、不要な通信をブロックします。  
+La Configurazione guidata impostazioni di sicurezza (SCW) consente di creare un criterio di protezione applicabile a qualsiasi server della rete. Dopo aver installato il modello di System Center Configuration Manager, Configurazione guidata impostazioni di sicurezza riconosce applicazioni, servizi, porte e ruoli del sistema del sito di Configuration Manager. Consente quindi la comunicazione richiesta per Configuration Manager e blocca le comunicazioni non richieste.  
 
-セキュリティ構成ウィザードは、System Center 2012 Configuration Manager のツールキットに含まれます。ツールキットは Microsoft ダウンロード センターからダウンロードできます。[System Center 2012 – Configuration Manager のコンポーネント アドオンと拡張機能](http://go.microsoft.com/fwlink/p/?LinkId=251931)。  
+Configurazione guidata impostazioni di sicurezza è inclusa nel toolkit per System Center 2012 Configuration Manager che è possibile scaricare dall'Area download Microsoft: [System Center 2012 - Configuration Manager Component Add-ons and Extensions](http://go.microsoft.com/fwlink/p/?LinkId=251931) (System Center 2012 - Componenti aggiuntivi ed estensioni di Configuration Manager).  
 
-**サイト システムに静的 IP アドレスを構成する**  
+**Configurare gli indirizzi IP statici per i sistemi del sito.**  
 
-静的 IP アドレスの方が、名前解決攻撃から保護するのが簡単です。  
+Gli indirizzi IP statici sono più facili da proteggere da attacchi di risoluzione del nome.  
 
-静的 IP アドレスを使用すると、IPsec の構成も簡単になります。 Configuration Manager でのサイト システム間での通信のセキュリティのベスト プラクティスは IPsec を使用することです。  
+Anche gli indirizzi IP statici semplificano la configurazione di IPsec. L'uso di IPsec è una procedura consigliata per la protezione della comunicazione tra i sistemi dei siti in Configuration Manager.  
 
-**サイト システム サーバーに他のアプリケーションをインストールしない**  
+**Non installare altre applicazioni sui server del sistema del sito.**  
 
-サイト システム サーバーに他のアプリケーションをインストールすると、Configuration Manager で攻撃対象が増え、互換性に関する問題が危険にさらされます。  
+Quando si installano altre applicazioni sui server del sistema del sito, si aumenta la superficie di attacco di Configuration Manager e si rischiano problemi di incompatibilità.  
 
-**サイト オプションとして署名を要求して暗号化を有効にする**  
+**Richiedere la firma e abilitare la crittografia come opzione del sito.**  
 
-サイトで署名オプションと暗号化オプションを有効にします。 SHA-256 ハッシュ アルゴリズムをすべてのクライアントがサポートしていることを確認し、オプション **[SHA-256 を必要とする]** を有効にします。  
+Abilitare le opzioni di firma e crittografia per il sito. Assicurarsi che tutti i client possano supportare l'algoritmo hash SHA-256, quindi abilitare l'opzione **Richiedi SHA-256**.  
 
-**Configuration Manager 管理ユーザーを制限および監視し、役割に基づいた管理権限を構成して、これらの管理ユーザーに最低限必要なアクセス権を付与する**  
+**Limitare e monitorare gli utenti amministratori di Configuration Manager e usare l'amministrazione basata su ruoli per garantire a tali utenti le autorizzazioni minime richieste.**  
 
-信頼できるユーザーにのみ Configuration Manager への管理アクセスを許可し、組み込みのセキュリティ ロールを使用するかセキュリティ ロールをカスタマイズして、これらのユーザーに最小限のアクセス許可を付与します。 アプリケーション、タスク シーケンス、ソフトウェア更新プログラム、構成項目、および構成基準を作成、変更、および展開できる管理ユーザーは、Configuration Manager 階層内のデバイスを制御する可能性があります。  
+Garantire accesso amministrativo a Configuration Manager solo agli utenti attendibili, quindi concedere loro le autorizzazioni minime tramite i ruoli di sicurezza incorporati oppure personalizzando i ruoli di sicurezza. Gli utenti amministratori che possono creare, modificare e distribuire le applicazioni, la sequenza di attività, gli aggiornamenti software, gli elementi e le linee di base della configurazione possono potenzialmente controllare i dispositivi della gerarchia di Configuration Manager.  
 
-管理ユーザーの割り当てと承認レベルを定期的に監査して、必要な変更を確認します。  
+Controllare periodicamente le assegnazioni degli utenti amministratori e il loro livello di autorizzazione per verificare le modifiche necessarie.  
 
-役割に基づいた管理の構成の詳細については、「 [Configure role-based administration for System Center Configuration Manager](../../../core/servers/deploy/configure/configure-role-based-administration.md)」を参照してください。  
+Per ulteriori informazioni sulla configurazione dell'amministrazione basata su ruoli, vedere [Configure role-based administration for System Center Configuration Manager](../../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
-**Configuration Manager のバックアップをセキュリティで保護し、バックアップ時と復元時に通信チャネルをセキュリティで保護する**  
+**Proteggere i backup di Configuration Manager e il canale di comunicazione quando si eseguono il backup e il ripristino.**  
 
-Configuration Manager のバックアップ時に、この情報には、攻撃者がなりすましに使用する可能性がある証明書や他の機密データが含まれています。  
+Quando si esegue il backup di Configuration Manager, queste informazioni includono i certificati e altri dati sensibili che potrebbero essere usati da un utente malintenzionato a fini di impersonificazione.  
 
-このデータをネットワーク経由で転送するときに SMB 署名または IPsec を使用し、バックアップの場所をセキュリティで保護します。  
+Utilizzare la firma SMB o IPsec quando si trasferiscono questi dati in rete e proteggere il percorso di backup.  
 
-**Configuration Manager コンソールからネットワークの場所にオブジェクトをエクスポートまたはインポートする場合は常に、ネットワークの場所とネットワーク チャネルをセキュリティで保護する**  
+**Quando si esportano o importano oggetti dalla console di Configuration Manager in un percorso di rete, proteggere il percorso stesso e il canale di rete.**  
 
-ネットワーク フォルダーにアクセスできるユーザーを制限します。  
+Limitare l'accesso alla cartella di rete.  
 
-ネットワークの場所とサイト サーバー間、および Configuration Manager コンソールを実行するコンピューターとサイト サーバー間で SMB 署名または IPsec を使用して、エクスポートしたデータが攻撃者によって改ざんされるのを防ぎます。 情報開示を防ぐため、IPsec を使用してネットワーク上のデータを暗号化します。  
+Usare la firma SMB o IPsec tra il percorso di rete e il server del sito e tra il computer su cui è in esecuzione la console di Configuration Manager e il server del sito per impedire a un eventuale utente malintenzionato di manomettere i dati esportati. Utilizzare IPsec per crittografare i dati sulla rete per impedire la divulgazione di informazioni.  
 
-**サイト システムが適切にアンインストールされない場合、またはサイト システムの機能が停止して復元できない場合に、このサーバーの Configuration Manager 証明書を他の Configuration Manager サーバーから手動で削除する**  
+**Se un sistema del sito non viene disinstallato correttamente o smette di funzionare e non può essere ripristinato, rimuovere manualmente i certificati di Configuration Manager per il server da altri server di Configuration Manager.**  
 
-元々サイト システムとサイト システムの役割で確立された PeerTrust を削除するには、他のサイト システム サーバーの**信頼されたユーザー**証明書ストアにある、障害が発生したサーバーの Configuration Manager 証明書を手動で削除します。 これは、サーバーを再フォーマットせずに再設定する場合に、特に重要です。  
+Per rimuovere il peer disponibile nell'elenco locale, originariamente stabilito con il sistema del sito e i ruoli del sistema del sito, rimuovere manualmente i certificati di Configuration Manager per il server che ha restituito l'errore nell'archivio certificati **Persone attendibili** su altri server del sistema del sito. Ciò è particolarmente importante se si riassegna il server senza riformattarlo.  
 
-これらの証明書の詳細については、「[System Center Configuration Manager の暗号化コントロールのテクニカル リファレンス](../../../protect/deploy-use/cryptographic-controls-technical-reference.md)」の「**サーバー通信の暗号化制御**」セクションをご覧ください。  
+Per altre informazioni su questi certificati, vedere la sezione **Controlli crittografici per la comunicazione tra server** in [Riferimento tecnico per i controlli crittografici per System Center Configuration Manager](../../../protect/deploy-use/cryptographic-controls-technical-reference.md).  
 
-**境界ネットワークとイントラネットをブリッジするインターネットベースのサイト システムを構成しない**  
+**Non configurare i sistemi del sito basati su Internet per effettuare il bridging della rete perimetrale e della intranet.**  
 
-境界ネットワークとイントラネットに接続するように、サイト システム サーバーをマルチホームに構成しないでください。 この構成により、インターネットベースのサイト システムが、インターネットとイントラネットからクライアント接続を受け入れることができるようになりますが、境界ネットワークとイントラネット間のセキュリティ境界が排除されてしまいます。  
+Non configurare i server del sistema del sito come multihomed in modo che si connettano alla rete perimetrale e alla Intranet. Nonostante questa configurazione consente ai sistemi del sito basati su Internet di accettare connessioni client da Internet e dalla intranet, essa elimina un limiti di protezione tra la rete perimetrale e la intranet.  
 
-**サイト システム サーバーが信頼されていないネットワーク (境界ネットワークなど) 上にある場合、サイト システムへの接続を開始するようにサイト サーバーを構成する**  
+**Se il server del sistema del sito si trova su una rete non attendibile (come una rete perimetrale), configurare il server del sito per avviare connessioni al sistema del sito.**  
 
-既定では、サイト システムは、データを転送するためにサイト サーバーへの接続を開始します。この接続は、信頼されていないネットワークから信頼されているネットワークに対して開始される場合に、セキュリティ上のリスクになる可能性があります。 サイト システムがインターネットから接続を受け入れる場合、または信頼されていないフォレストに配置されている場合、サイト システムおよびサイト システムの役割のインストール後にすべての接続が信頼されているネットワークから開始されるように、サイト システム オプション [ **サイト サーバーがこのサイト システムへの接続を開始する必要がある** ] を構成します。  
+Per impostazione predefinita, i sistemi del sito avviano connessioni al server del sito per il trasferimento di dati, il che può costituire un rischio di protezione quando la connessione viene avviata da una rete non attendibile a una attendibile. Quando i sistemi del sito accettano connessioni da Internet o risiedono in una foresta non trusted, configurare l'opzione del sistema del sito **Richiedi al server del sito di avviare le connessioni al sistema del sito** in modo che, dopo l'installazione del sistema del sito e di eventuali ruoli del sistema del sito, tutte le connessioni vengano avviate da una rete attendibile.  
 
-**インターネットベースのクライアント管理に Web プロキシ サーバーを使用する場合、認証終了を使用して SSL への SSL ブリッジングを使用する**  
+**Se si utilizza un server proxy Web per la gestione client basata su Internet, utilizzare il bridging SSL a SSL, utilizzando la terminazione con autenticazione.**  
 
- プロキシ Web サーバーで SSL ターミネーションを構成すると、インターネットからのパケットが内部ネットワークに転送される前に検査されます。 プロキシ Web サーバーはクライアントからの接続を認証してから終了します。次に、インターネット ベースのサイト システムに認証済みの新しい接続を開きます。  
+ Quando si configura la terminazione SSL sul server Web proxy, i pacchetti provenienti da Internet sono soggetti a verifica prima di essere inoltrati alla rete interna. Il server Web proxy autentica la connessione dal client, la termina, quindi apre una nuova connessione autenticata ai sistemi del sito basati su Internet.  
 
- Configuration Manager クライアント コンピューターがプロキシ Web サーバーが使用してインターネットベースのサイト システムに接続する場合、クライアント ID (クライアント GUID) はパケット ペイロード内に安全に格納されるので、管理ポイントではプロキシ Web サーバーはクライアントとは見なされません。 プロキシ Web サーバーが SSL ブリッジングの要件をサポートできない場合は、SSL トンネリングもサポートされます。 このオプションはセキュリティが劣ります。これは、インターネットからの SSL パケットが終了せずにサイト システムに転送されるため、悪意のあるコンテンツがないかどうかを検査できないためです。  
+ Quando i computer client di Configuration Manager usano un server Web proxy per collegarsi ai sistemi del sito basati su Internet, l'identità client (GUID del client) viene contenuta in modo protetto all'interno del payload dei pacchetti in modo che il punto di gestione non consideri il server Web proxy come client. Se il server Web proxy non può supportare i requisiti per il bridging SSL, viene supportato anche il tunneling SSL. Si tratta di un'opzione meno sicura perché i pacchetti SSL provenienti da Internet vengono inoltrati ai sistemi del sito senza terminazione e, pertanto, non possono essere verificati per l'eventuale presenza di contenuto dannoso.  
 
- プロキシ Web サーバーが SSL ブリッジングの要件をサポートできない場合は、SSL トンネリングを使用できます。 ただし、このオプションはセキュリティが劣ります。これは、インターネットからの SSL パケットが終了せずにサイト システムに転送されるため、悪意のあるコンテンツがないかどうかを検査できないためです。  
+ Se il server Web proxy non può supportare i requisiti per il bridging SSL, è possibile utilizzare il tunneling SSL. Tuttavia, si tratta di un'opzione meno sicura perché i pacchetti SSL provenienti da Internet vengono inoltrati ai sistemi del sito senza terminazione e, pertanto, non possono essere verificati per l'eventuale presenza di contenuto dannoso.  
 
 > [!WARNING]  
->  Configuration Manager で登録されているモバイル デバイスでは、SSL ブリッジングを使用することはできません。SSL トンネリングのみ使用する必要があります。  
+>  I dispositivi mobili registrati da Configuration Manager non possono usare il bridging SSL, ma devono usare solo il tunneling SSL.  
 
-**コンピューターをウェイク アップしてソフトウェアをインストールするようにサイトを構成する場合に使用する構成**  
+**Configurazioni da usare se si configura il sito in modo da riattivare i computer per installare il software.**  
 
--   従来のウェイク アップ パケットを使用する場合、サブネット向けブロードキャストではなくユニキャストを使用する  
+-   Se si utilizzano i tradizionali pacchetti di riattivazione, usare broadcast unicast anziché broadcast con riferimento a subnet.  
 
--   サブネット向けのブロードキャストを使用する必要がある場合は、サイト サーバーのみから、既定以外のポート番号のみで IP 向けのブロードキャストを許可するルートを構成する  
+-   Se è necessario usare broadcast con riferimento a subnet, configurare i router in modo che consentano broadcast con riferimento a IP provenienti solo dal server del sito e solo su un numero di porta non predefinito.  
 
-さまざまな Wake On LAN テクノロジの詳細については、「[System Center Configuration Manager でクライアントをウェイクアップする方法の計画](../../../core/clients/deploy/plan/plan-wake-up-clients.md)」を参照してください。
+Per altre informazioni sulle diverse tecnologie di riattivazione LAN, vedere [Pianificare la riattivazione dei client in System Center Configuration Manager](../../../core/clients/deploy/plan/plan-wake-up-clients.md).
 
-**電子メールによる通知を使用している場合は、SMTP メール サーバーへの認証アクセスを構成するようお勧めします。**  
+**Se si utilizza la notifica tramite posta elettronica, configurare l'accesso autenticato al server di posta SMTP.**  
 
-可能な限り、認証アクセスをサポートするメール サーバーを使用し、認証にサイト サーバーのコンピューター アカウントを使用することをお勧めします。 認証でユーザー アカウントを指定する必要がある場合は、少なくとも特権のあるアカウントを使用します。  
+Quando possibile, usare un server di posta elettronica che supporti l'accesso autenticato e l'account computer del server del sito per l'autenticazione. Se è necessario specificare un account utente per l'autenticazione, utilizzare un account che disponga dei privilegi minimi.  
 
-##  <a name="BKMK_Security_SiteServer"></a> サイト サーバーのセキュリティのベスト プラクティス  
- ここでは、Configuration Manager サイト サーバーをセキュリティで保護するときのベスト プラクティスについて説明します。  
+##  <a name="BKMK_Security_SiteServer"></a> Procedure di sicurezza consigliate per il server del sito  
+ Usare le seguenti procedure di sicurezza consigliate per proteggere il server del sito di Configuration Manager.  
 
- **ドメイン コントローラーの代わりに Configuration Manager をメンバー サーバーにインストールする**  
+ **Installare Configuration Manager in un server membro invece che in un controller di dominio.**  
 
- Configuration Manager のサイト サーバーとサイト システムは、ドメイン コントローラーにインストールする必要はありません。 ドメイン コントローラーは、ドメイン データベース以外のローカルのセキュリティ アカウント マネージメント (SAM) データベースを持っていません。 Configuration Manager をメンバー サーバーにインストールすると、ドメイン データベース内ではなくローカルの SAM データベース内で Configuration Manager アカウントを保持できます。  
+ Il server e i sistemi del sito di Configuration Manager non richiedono l'installazione in un controller di dominio. I controller di dominio non dispongono di un database Gestione account di protezione (SAM) locale diverso da quello del dominio. Quando si installa Configuration Manager in un server membro, è possibile mantenere gli account di Configuration Manager nel database SAM locale piuttosto che nel database del dominio.  
 
- これにより、ドメイン コントローラーの攻撃対象も減らすことができます。  
+ Questa pratica riduce inoltre la superficie di attacco nei controller di dominio.  
 
- **ネットワーク経由でセカンダリ サイト サーバーにファイルをコピーせずに、セカンダリ サイトをインストールする**  
+ **Installare i siti secondari, evitando di copiare i file sul server del sito secondario in rete.**  
 
- セットアップを実行してセカンダリ サイトを作成する際、親サイトからセカンダリ サイトにファイルをコピーするオプションを選択しないようにし、さらにネットワーク ソースの場所を使用しないでください。 ネットワーク経由でファイルをコピーすると、攻撃のタイミングは難しいですが、技術を持った攻撃者がセカンダリ サイトのインストール パッケージを乗っ取り、インストール前にファイルを改ざんする可能性があります。 ファイルの転送時に IPsec または SMB を使用すると、この攻撃を軽減できます。  
+ Quando si esegue l'installazione e si crea un sito secondario, non selezionare l'opzione per copiare i file dal sito padre al sito secondario e non usare un percorso di origine di rete. Quando si copiano dei file in rete, un utente malintenzionato esperto potrebbe assumere il controllo del pacchetto di installazione del sito secondario e manomettere i file prima che vengano installati, anche se la tempistica di questa attacco sarebbe difficile da definire. Questo attacco può essere ridotto utilizzando IPsec o SMB quando si trasferiscono i file.  
 
- ネットワーク経由でファイルをコピーする代わりに、セカンダリ サイト サーバーで、メディア フォルダーからローカル フォルダーにソース ファイルをコピーします。 次に、セカンダリ サイトを作成するセットアップの実行中に、[**インストール ソース ファイル**] ページで、[**セカンダリ サイト コンピューターで、次の場所にあるソース ファイルを使用する (最もセキュリティが高い)**] を選択し、このフォルダーを指定します。  
+ Anziché copiare i file in rete, nel server del sito secondario copiare i file di origine dalla cartella dei supporti a una cartella locale. In seguito, quando si esegue l'installazione per creare un sito secondario, nella pagina **File di origine dell'installazione** selezionare **Utilizza i file di origine nel seguente percorso del computer del sito secondario (più sicuro)** e specificare la cartella indicata.  
 
- 詳細については、「[セットアップ ウィザードを使用してサイトをインストールする](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md)」トピックの「[セカンダリ サイトのインストール](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_secondary)」をご覧ください。  
+ Per altre informazioni, vedere la sezione relativa all'installazione di un [sito secondario](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_secondary) nell'argomento sull'[installazione dei siti con System Center Configuration Manager](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md).  
 
-##  <a name="BKMK_Security_SQLServer"></a> SQL Server のセキュリティのベスト プラクティス  
- Configuration Manager では、SQL Server がバックエンド データベースとして使用されます。 データベースが侵害された場合、攻撃者は Configuration Manager をバイパスして SQL Server に直接アクセスし、Configuration Manager を通じて攻撃を行うことができます。 SQL Server に対する攻撃は、非常にリスクが高いと見なし、適切に減らしてください。  
+##  <a name="BKMK_Security_SQLServer"></a> Procedure di sicurezza consigliate per SQL Server  
+ Configuration Manager usa SQL Server come database back-end. Se il database è compromesso, gli utenti malintenzionati potrebbero escludere Configuration Manager e accedere a SQL Server direttamente per lanciare attacchi tramite Configuration Manager. Gli attacchi contro SQL Server sono molto rischiosi e devono essere ridotti in modo appropriato.  
 
- ここでは、Configuration Manager 用の SQL Server をセキュリティで保護するときのベスト プラクティスについて説明します。  
+ Usare le procedure di sicurezza consigliate seguenti per proteggere SQL Server per Configuration Manager.  
 
- **別の SQL Server アプリケーションを実行するのに、Configuration Manager サイト データベース サーバーを使用しない**  
+ **Non usare il server del database del sito di Configuration Manager per l'esecuzione di altre applicazioni di SQL Server.**  
 
- Configuration Manager サイト データベース サーバーへのアクセスが増えると、Configuration Manager データのリスクが増加します。 Configuration Manager サイト データベースが侵害された場合、同じ SQL Server コンピューター上の他のアプリケーションも危険にさらされます。  
+ Quando si aumenta l'accesso al server del database del sito di Configuration Manager, aumenta il rischio per i dati di Configuration Manager. Se il database del sito di Configuration Manager è compromesso, anche altre applicazioni nello stesso computer di SQL Server possono essere a rischio.  
 
- **Windows 認証を使用するように SQL Server を構成する**  
+ **Configurare SQL Server per utilizzare l'autenticazione di Windows.**  
 
- Configuration Manager は Windows アカウントと Windows 認証を使用してサイト データベースにアクセスしますが、SQL Server 混在モードを使用するように SQL Server を構成することも可能です。 SQL Server 混在モードでは、追加の SQL サインインでデータベースにアクセスできますが、これは不要であり、攻撃対象を増やすことになります。  
+ Nonostante Configuration Manager acceda al database del sito tramite un account Windows e l'autenticazione di Windows, è comunque possibile configurare SQL Server perché usi la modalità mista di SQL Server. La modalità mista di SQL Server consente ulteriori accessi SQL per accedere al database che non sono necessari e aumentano la superficie di attacco.  
 
- **セカンダリ サイトで使用する SQL Server Express に最新のソフトウェア更新プログラムが適用されるように、追加の手順を実行する**  
+ **Eseguire passaggi aggiuntivi per assicurarsi che i siti secondari che utilizzano SQL Server Express dispongano degli ultimi aggiornamenti software.**  
 
- プライマリ サイトがインストールされると、Configuration Manager は、Microsoft ダウンロード センターから SQL Server Express をダウンロードし、プライマリ サイト サーバーにファイルをコピーします。 セカンダリ サイトをインストールし、SQL Server Express をインストールするオプションを選択している場合、Configuration Manager は以前にダウンロードしたバージョンをインストールします。新しいバージョンが利用可能であるかどうかは確認されません。 セカンダリ サイトに最新バージョンが適用されていることを確認するには、次のいずれかのタスクを実行します。  
+ Quando si installa un sito primario, Configuration Manager scarica SQL Server Express dall'Area download Microsoft e copia i file nel server del sito primario. Quando si installa un sito secondario e si seleziona l'opzione che installa SQL Server Express, Configuration Manager installa la versione precedentemente scaricata e non verifica se sono disponibili nuove versioni. Per assicurarsi che il sito secondario includa le versioni più recenti, eseguire una delle operazioni seguenti:  
 
--   セカンダリ サイトのインストール後に、セカンダリ サイト サーバーで Windows Update を実行します。  
+-   Dopo aver installato il sito secondario, eseguire Windows Update nel server del sito secondario.  
 
--   セカンダリ サイトのインストール前に、セカンダリ サイト サーバーを実行するコンピューターに SQL Server Express を手動でインストールし、最新バージョンおよびソフトウェア更新プログラムをインストールしていることを確認します。 次に、セカンダリ サイトをインストールし、既存の SQL Server インスタンスを使用するオプションを選択します。  
+-   Prima di installare il sito secondario, installare manualmente SQL Server Express sul computer che eseguirà il server del sito secondario e assicurarsi di installare la versione più recente ed eventuali aggiornamenti software. Quindi installare il sito secondario e selezionare l'opzione per l'uso di un'istanza di SQL Server esistente.  
 
-これらのサイトおよびインストールされているすべてのバージョンの SQL Server に対して Windows Update を定期的に実行し、最新のソフトウェア更新プログラムが適用されていることを確認します。  
+Eseguire periodicamente Windows Update per questi siti e tutte le versioni installate di SQL Server per assicurarsi che dispongano degli aggiornamenti software più recenti.  
 
-**SQL Server のベスト プラクティスに従う**  
+**Seguire le procedure ottimali per SQL Server.**  
 
-使用するバージョンの SQL Server のベスト プラクティスに従います。 ただし、Configuration Manager に関する次の要件を考慮します。  
+Identificare e seguire le procedure ottimali per la versione di SQL Server. Tuttavia, prendere in considerazione i seguenti requisiti per Configuration Manager:  
 
--   サイト サーバーのコンピューター アカウントが、SQL Server を実行しているコンピューターの管理者グループのメンバーである必要があります。 "管理者プリンシパルを明示的にプロビジョニングする" という SQL Server の推奨事項に従う場合、サイト サーバーでセットアップを実行する際に使用するアカウントが SQL ユーザー グループのメンバーである必要があります。  
+-   L'account computer del server del sito deve essere membro del gruppo Administrators sul computer su cui è in esecuzione SQL Server. Se si segue il suggerimento di SQL Server di "eseguire il provisioning di tutte le entità admin esplicitamente", l'account che si usa per eseguire l'installazione nel server del sito deve essere membro del gruppo di utenti SQL.  
 
--   ドメイン ユーザー アカウントを使用して SQL Server をインストールする場合、Active Directory ドメイン サービスに発行されるサービス プリンシパル名 (SPN) にサイト サーバーのコンピューター アカウントが構成されていることを確認します。 SPN がない場合、Kerberos 認証が失敗して Configuration Manager のセットアップが失敗します。  
+-   Se si installa SQL Server utilizzando un account utente di dominio, assicurarsi che l'account computer del server del sito sia configurato per un nome dell'entità di servizio (SPN) che viene pubblicato nei Servizi di dominio Active Directory. Senza SPN, l'autenticazione Kerberos e l'installazione di Configuration Manager avranno esito negativo.  
 
-##  <a name="BKMK_Security_IIS"></a> IIS を実行するサイト システムのセキュリティのベスト プラクティス  
-Configuration Manager の複数のサイト システムの役割に IIS が必要です。 IIS をセキュリティで保護するプロセスにより、Configuration Manager が正しく動作するようになるため、セキュリティ攻撃のリスクが軽減されます。 これを実際に行うと、IIS が必要なサーバーの数が最小限に抑えられます。 たとえば、クライアント ベースをサポートするために必要な数の管理ポイントだけを実行し、インターネットベースのクライアント管理のために高可用性とネットワーク分離を考慮します。  
+##  <a name="BKMK_Security_IIS"></a> Procedure di sicurezza consigliate per i sistemi del sito che eseguono IIS  
+Diversi ruoli del sistema del sito in Configuration Manager richiedono IIS. Il processo di protezione di IIS consente a Configuration Manager di funzionare correttamente e riduce il rischio di attacchi alla sicurezza. Quando è possibile, ridurre al minimo il numero di server che richiedono IIS. Ad esempio, eseguire solo il numero di punti di gestione richiesti per il supporto della base client, prendendo in considerazione l'alta disponibilità e l'isolamento di rete per la gestione client basata su Internet.  
 
- ここでは、IIS を実行するサイト システムをセキュリティで保護するときのベスト プラクティスについて説明します。  
+ Utilizzare le seguenti procedure di protezione ottimali per proteggere i sistemi del sito che su cui è in esecuzione IIS.  
 
- **不要な IIS 機能を無効にする**  
+ **Disabilitare le funzioni IIS non necessarie.**  
 
- インストールするサイト システムの役割に最小限の IIS 機能をインストールします。 詳細については、「[サイトとサイト システムの前提条件](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)」をご覧ください。  
+ Installare solo le funzionalità IIS minime per il ruolo del sistema del sito che si installa. Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](../../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
 
- **HTTPS を要求するようにサイト システムの役割を構成する**  
+ **Configurare i ruoli del sistema del sito per richiedere HTTPS.**  
 
- クライアントは、HTTPS ではなく HTTP を使用してサイト システムに接続する場合、Windows 認証を使用しますが、Kerberos 認証ではなく NTLM 認証を使用するように切り替わることがあります。 NTLM 認証を使用すると、クライアントが偽のサーバーに接続する可能性があります。  
+ Quando i client si collegano a un sistema del sito utilizzando HTTP invece di HTTP, utilizzano l'autenticazione Windows che potrebbe cercare di utilizzare l'autenticazione NTLM invece dell'autenticazione Kerberos. Quando viene utilizzata l'autenticazione NTLM, i client potrebbero connettersi a un server non autorizzato.  
 
- このセキュリティのベスト プラクティスの例外は、配布ポイントです。これは、配布ポイントが HTTPS 接続用に構成されていると、パッケージ アクセス アカウントが機能しないからです。 パッケージ アクセス アカウントはコンテンツに対する承認を提供します。これにより、コンテンツにアクセスできるユーザーを制限することができます。 詳細については、「[コンテンツ管理について推奨する運用方法](../../../core/plan-design/hierarchy/security-and-privacy-for-content-management.md#BKMK_Security_ContentManagement)」を参照してください。  
+ L'eccezione a questa procedura di protezione ottimale potrebbero essere i punti di distribuzione perché gli account di accesso al pacchetto non funzionano quando il punto di distribuzione è configurato per HTTPS. Gli account di accesso al pacchetto forniscono l'autorizzazione al contenuto, in modo che è possibile limitare gli utenti che possono accedere al contenuto. Per altre informazioni, vedere [Procedure di sicurezza consigliate per la gestione del contenuto](../../../core/plan-design/hierarchy/security-and-privacy-for-content-management.md#BKMK_Security_ContentManagement).  
 
-**次のサイト システムの役割に対して IIS で証明書信頼リスト (CTL) を構成します。**  
+**Configurare un elenco di certificati attendibili (CTL) in IIS per i ruoli del sistema del sito.**  
 
-サイト システムの役割 :  
+Ruoli del sistema del sito:  
 
--   HTTPS 用に構成されている配布ポイント  
+-   Un punto di distribuzione configurato per HTTPS  
 
--   HTTPS 用に構成され、モバイル デバイスのサポートが有効な管理ポイント
+-   Un punto di gestione configurato per HTTPS e abilitato per il supporto di dispositivi mobili
 
-証明書信頼リスト (CTL) は、信頼されるルート証明機関の定義済みリストです。 CTL をグループ ポリシーと公開キー基盤 (PKI) の展開と組み合わせて使用すると、ネットワーク上で構成されている既存の信頼されたルート証明機関を補うことができます。ネットワーク上の既存のルート証明機関には、Microsoft Windows と一緒に自動的にインストールされるものや、Windows エンタープライズ ルート証明機関によって追加されるものなどがあります。 一方、CTL が IIS で構成されている場合、CTL はこれらの信頼されたルート証明機関のサブセットを定義します。  
+Un elenco di certificati attendibili (CTL) è un elenco definito di autorità di certificazione radice attendibile. Quando si usa un elenco scopi consentiti ai certificati con Criteri di gruppo e una distribuzione di infrastruttura a chiave pubblica (PKI), l'elenco scopi consentiti ai certificati consente di integrare le autorità di certificazione radice attendibili esistenti configurate nella rete, ad esempio le autorità installate automaticamente con Microsoft Windows o aggiunte tramite le autorità di certificazione radice dell'organizzazione di Windows. Tuttavia, se configurato in IIS, l'elenco scopi consentiti ai certificati definisce un sottoinsieme delle autorità di certificazione radice attendibili.  
 
-このサブセットによりセキュリティ管理が強化されます。その理由は、CTL によって、受け付けられるクライアント証明書が CTL にリストされている証明機関から発行されたもののみに制限されるためです。 たとえば、Windows には、VeriSign や Thawte など、有名なサードパーティ証明機関が数多く付属しています。
+Questo sottoinsieme fornisce più controllo sulla protezione perché il CTL limita i certificati client accettati solo a quelli che vengono emessi dall'elenco delle autorità di certificazione nel CTL. Ad esempio, Windows include diversi certificati di autorità di certificazione di terze parti come VeriSign e Thawte.
 
-既定では、IIS を実行するコンピューターは、これらの既知の証明機関へチェーンされている証明書を信頼します。 リストされているサイト システムの役割に対して CTL を使用して IIS を構成しない場合、これらの証明機関から発行されたクライアント証明書を持つデバイスはどれも、有効な Configuration Manager クライアントとして受け入れられます。 IIS をこれらの証明機関を含んでいない CTL を使用して構成すると、証明書がこれらの証明機関へチェーンされている場合にクライアント接続が拒否されます。 ただし、リストされているサイト システムの役割で Configuration Manager クライアントが受け入れられるようにするには、Configuration Manager クライアントによって使用される証明機関を指定した CTL を使用して IIS を構成する必要があります。  
+Per impostazione predefinita, il computer su cui è in esecuzione IIS ritiene attendibili i certificati concatenati a queste autorità di certificazione ben note. Quando IIS non viene configurato con un elenco scopi consentiti ai certificati per i ruoli del sistema del sito in elenco, tutti i dispositivi che hanno un certificato client emesso da tali autorità di certificazione vengono accettati come client validi di Configuration Manager. Se IIS viene configurato con un CTL che non comprendeva queste autorità di certificazione, le connessioni client vengono rifiutate se il certificato è concatenato a tali autorità. Tuttavia, affinché i client di Configuration Manager vengano accettati per i ruoli del sistema del sito in elenco, occorre configurare IIS con un elenco scopi consentiti che specifichi le autorità di certificazione usate dai client di Configuration Manager.  
 
 > [!NOTE]  
->  IIS で CTL を構成することが必要になるのは、リストされているサイト システムの役割のみです。 Configuration Manager が管理ポイントに使用する証明書発行者リストは、クライアント コンピューターが HTTPS 管理ポイントに接続するときに同じ機能を提供します。  
+>  Solo i ruoli del sistema del sito in elenco richiedono la configurazione di un elenco scopi consentiti ai certificati in IIS. L'elenco delle autorità che emettono certificati usato da Configuration Manager per i punti di gestione offre la stessa funzionalità per i computer client quando si collegano ai punti di gestione HTTPS.  
 
-IIS で信頼された証明機関のリストを構成する方法の詳細については、IIS のドキュメントを参照してください。  
+Per ulteriori informazioni su come configurare un elenco di autorità di certificazione attendibili in IIS, consultare la documentazione IIS.  
 
-**IIS と共にサイト サーバーをコンピューター上に配置しない**  
+**Non inserire il server del sito su un computer con IIS.**  
 
-役割を分離すると、攻撃プロファイルを減らし、回復性を向上できます。 また、サイト サーバーのコンピューター アカウントは、通常、すべてのサイト システムの役割 (および、クライアント プッシュ インストールを使用している場合は、Configuration Manager クライアント) で管理者特権を持っています。  
+La separazione dei ruoli consente di ridurre il profilo di attacco e di migliorare la capacità di ripristino. L'account computer del server del sito in genere ha anche privilegi amministrativi su tutti i ruoli del sistema del sito, e possibilmente sui client di Configuration Manager se si usa l'installazione push client.  
 
-**Configuration Manager に専用の IIS サーバーを使用する**  
+**Usare server IIS dedicati per Configuration Manager.**  
 
-Configuration Manager でも使用される IIS サーバーに複数の Web ベース アプリケーションをホストできますが、これにより、攻撃対象が大幅に増える可能性があります。 アプリケーションが正しく構成されていないと、攻撃者によって Configuration Manager サイト システムの制御が奪われて、階層全体の制御が奪われてしまう可能性があります。  
+Sebbene sia possibile ospitare più applicazioni basate su Web sui server IIS che sono usati anche da Configuration Manager, tale pratica può significativamente aumentare la superficie di attacco. Un'applicazione configurata male potrebbe consentire a un utente malintenzionato di prendere il controllo di un sistema del sito di Configuration Manager e quindi anche della gerarchia.  
 
-他の Web ベース アプリケーションを Configuration Manager サイト システムで実行する必要がある場合、Configuration Manager サイト システムにカスタム Web サイトを作成します。  
+Se è necessario eseguire altre applicazioni basate su Web nei sistemi del sito di Configuration Manager, creare un sito Web personalizzato per i sistemi del sito di Configuration Manager.  
 
-**カスタム Web サイトを使用する**  
+**Usare un sito Web personalizzato.**  
 
-IIS を実行するサイト システムでは、IIS に既定の Web サイトではなくカスタム Web サイトを使用するように Configuration Manager を構成できます。 サイト システムで他の Web アプリケーションを実行する場合は、カスタム Web サイトを使用する必要があります。 この設定は、特定のサイト システムの設定ではなく、サイト全体の設定です。  
+Per i sistemi del sito su cui è in esecuzione IIS, è possibile configurare Configuration Manager per usare un sito Web personalizzato invece del sito Web predefinito per IIS. Per poter eseguire altre applicazioni Web sul sistema del sito, è necessario usare un sito Web personalizzato. Questa impostazione si applica all'intero sito anziché al sistema del sito specifico.  
 
-サイト システムで他の Web アプリケーションを実行する場合は、セキュリティの強化に加えて、カスタム Web サイトを使用する必要があります。  
+Oltre a fornire una protezione aggiuntiva, è necessario utilizzare un sito Web personalizzato se si eseguono altre applicazioni Web sul sistema del sito.  
 
-**配布ポイントの役割のインストール後に、既定の Web サイトをカスタム Web サイトに切り替える場合、既定の仮想ディレクトリを削除する**  
+**Se si passa dal sito Web predefinito a un sito Web personalizzato dopo aver installato tutti i ruoli del punto di distribuzione, rimuovere le directory virtuali predefinite.**  
 
-既定の Web サイトの使用からカスタム Web サイトの使用に変更した場合、Configuration Manager により、以前の仮想ディレクトリが削除されることはありません。 既定の Web サイトの下に Configuration Manager によって作成された、仮想ディレクトリを削除します。  
+Quando si passa dall'uso del sito Web predefinito all'uso di un sito Web personalizzato, Configuration Manager non rimuove le vecchie directory virtuali. Rimuovere le directory virtuali create in origine da Configuration Manager nel sito Web predefinito.  
 
-たとえば、配布ポイントで削除する仮想ディレクトリは、次のとおりです。  
+Ad esempio, le directory virtuali da rimuovere per un punto di distribuzione sono le seguenti:  
 
 -   SMS_DP_SMSPKG$  
 
@@ -286,81 +286,81 @@ IIS を実行するサイト システムでは、IIS に既定の Web サイト
 
 -   NOCERT_SMS_DP_SMSSIG$  
 
-**IIS Server のベスト プラクティスに従う**  
+**Seguire le procedure ottimali per IIS Server.**  
 
-使用するバージョンの IIS Server のベスト プラクティスに従います。 ただし、特定のサイト システムの役割に対して Configuration Manager が持つ要件を考慮に入れます。 詳細については、「[サイトとサイト システムの前提条件](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)」をご覧ください。  
+Identificare e seguire le procedure ottimali per la versione di IIS Server. Tuttavia, prendere in considerazione tutti i requisiti che Configuration Manager possiede per i ruoli del sistema del sito specifico. Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](../../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
 
-##  <a name="BKMK_Security_ManagementPoint"></a> 管理ポイントのセキュリティのベスト プラクティス  
- 管理ポイントは、デバイスと Configuration Manager の間の基本インターフェイスです。 管理ポイントおよび管理ポイントを実行しているサーバーに対する攻撃は、非常にリスクが高いと見なし、適切に減らす必要があります。 管理ポイントの動作を注意深く監視し、ベスト プラクティスに従ってください。  
+##  <a name="BKMK_Security_ManagementPoint"></a> Procedure di sicurezza consigliate per il punto di gestione  
+ I punti di gestione sono l'interfaccia primaria tra i dispositivi e Configuration Manager. Gli attacchi contro il punto di gestione e il server su cui è in esecuzione sono molto rischiosi e devono essere ridotti in modo appropriato. Applicare tutte le procedure di protezione ottimali appropriate e monitorare eventuali attività inconsuete.  
 
- 次に、Configuration Manager で管理ポイントをセキュリティで保護するときのベスト プラクティスについて説明します。  
+ Usare le procedure di sicurezza consigliate seguenti per proteggere un punto di gestione in Configuration Manager.  
 
-**管理ポイントに Configuration Manager クライアントをインストールするときに、このクライアントをその管理ポイントのサイトに割り当てる**  
+**Quando si installa un client di Configuration Manager sul punto di gestione, assegnarlo al sito di tale punto di gestione.**  
 
- 管理ポイントのサイト システムにある Configuration Manager クライアントを管理ポイントのサイト以外のサイトには割り当てないでください。  
+ Evitare lo scenario in cui un client di Configuration Manager che si trova sul sistema del sito di un punto di gestione venga assegnato a un sito diverso da quello del punto di gestione.  
 
- 以前のバージョンから System Center Configuration Manager に移行する場合、できるだけ早く管理ポイント上のクライアント ソフトウェアを System Center Configuration Manager に移行します。  
+ Se si esegue la migrazione da una versione precedente a System Center Configuration Manager, eseguire appena possibile la migrazione del software client nel punto di gestione di System Center Configuration Manager.  
 
-##  <a name="BKMK_Security_FSP"></a> フォールバック ステータス ポイントのセキュリティのベスト プラクティス  
- ここでは、Configuration Manager でフォールバック ステータス ポイントをインストールするときのセキュリティのベスト プラクティスについて説明します。  
+##  <a name="BKMK_Security_FSP"></a> Procedure di sicurezza consigliate per il punto di stato di fallback  
+ Usare le procedure di sicurezza consigliate seguenti se si installa un punto di stato di fallback in Configuration Manager.  
 
- フォールバック ステータス ポイントをインストールするときのセキュリティの注意事項については、「 [Determine Whether You Require a Fallback Status Point](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md#determine-if-you-need-a-fallback-status-point)」を参照してください。  
+ Per ulteriori informazioni sulla protezione quando si installa un punto di stato di fallback, vedere [Determine Whether You Require a Fallback Status Point](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md#determine-if-you-need-a-fallback-status-point).  
 
 
-**他のサイト システムの役割は、サイト システムで実行しない。また、ドメイン コントローラーにステータス フォールバック ポイントをインストールしない**  
+**Non eseguire altri ruoli del sistema del sito nel sistema del sito e non installare il punto di stato di fallback in un controller di dominio.**  
 
- フォールバック ステータス ポイントは、任意のコンピューターから認証されていない通信を受け入れるように設計されているため、このサイト システムの役割を他のサイト システムの役割と共に実行したり、ドメイン コントローラー上で実行すると、そのサーバーのリスクが大幅に増加します。  
+ Poiché il punto di stato di fallback è progettato per accettare comunicazioni non autenticate da qualsiasi computer, l'esecuzione di questo ruolo del sistema del sito con altri ruoli oppure su un controller di dominio aumenta in modo notevole il rischio su tale server.  
 
-**Configuration Manager でのクライアント通信に PKI 証明書を使用する場合、クライアントをインストールする前にフォールバック ステータス ポイントをインストールする**  
+**Quando si usano i certificati PKI per la comunicazione client in Configuration Manager, installare il punto di stato di fallback prima di installare i client.**  
 
- Configuration Manager サイト システムが HTTP クライアント通信を受け入れない場合、PKI 関連の証明書の問題のために、クライアントが管理対象かどうかがわからないことがあります。 ただし、クライアントがフォールバック ステータス ポイントに割り当てられている場合、これらの証明書の問題はフォールバック ステータス ポイントによってレポートされます。  
+ Se i sistemi del sito di Configuration Manager non accettano la comunicazione client HTTP, è possibile che non si sappia che i client non sono gestiti a causa di problemi di certificato relativi alla PKI. Tuttavia, se i client sono assegnati a un punto di stato di fallback, questi problemi di certificato vengono segnalati dal punto di stato di fallback.  
 
- セキュリティ上の理由から、クライアントのインストール後に、フォールバック ステータス ポイントをクライアントに割り当てることはできません。 代わりに、この役割は、クライアントのインストール時にのみ割り当てることができます。  
+ Per ragioni di sicurezza, non è possibile assegnare un punto di stato di fallback ai client dopo l'installazione. Questo ruolo può essere assegnato solo durante l'installazione del client.  
 
-**境界ネットワークでのフォールバック ステータス ポイントの使用を避ける**  
+**È consigliabile evitare l'utilizzo del punto di stato di fallback nella rete perimetrale.**  
 
- 仕様により、フォールバック ステータス ポイントは任意のクライアントからデータを受け入れます。 境界ネットワークにフォールバック ステータス ポイントを配置すると、インターネット ベース クライアントのトラブルシューティングに役立つ場合がありますが、トラブルシューティングの利点と、一般からアクセス可能なネットワークでサイト システムが認証されていないデータを受け入れるリスクとのバランスを取る必要があります。  
+ Per impostazione predefinita, il punto di stato di fallback accetta dati da qualsiasi client. Anche se un punto di stato di fallback nella rete perimetrale può agevolare la risoluzione dei problemi di client basati su Internet, è necessario bilanciare i vantaggi offerti dalla risoluzione dei problemi e il rischio di un sistema del sito che accetta dati non autenticati in una rete accessibile pubblicamente.  
 
- 境界ネットワークまたは信頼されていないネットワークにフォールバック ステータス ポイントをインストールする場合、フォールバック ステータス ポイントがサイト サーバーへの接続を開始する既定の設定を使用せずに、サイト サーバーがデータ転送を開始するように構成します。  
+ Se si installa il punto di stato di fallback nella rete perimetrale o in una rete non attendibile, configurare il server del sito in modo che avvii i trasferimenti di dati invece di usare l'impostazione predefinita che consente al punto di stato di fallback di avviare una connessione al server del sito.  
 
-##  <a name="BKMK_SecurityIssues_Clients"></a> サイト管理に関するセキュリティの問題  
- Configuration Manager に関する次のセキュリティの問題を確認します。  
+##  <a name="BKMK_SecurityIssues_Clients"></a> Problemi di sicurezza per l'amministrazione del sito  
+ Esaminare i problemi di sicurezza seguenti per Configuration Manager:  
 
--   Configuration Manager には、ネットワークの攻撃に Configuration Manager を使用する承認された管理ユーザーに対する防御がありません。 承認されていない管理ユーザーは、セキュリティ上、高いリスクであり、次のような戦略を含むさまざまな攻撃を仕掛ける可能性があります。  
+-   Configuration Manager non dispone di difese contro un utente amministratore autorizzato che usa Configuration Manager per attaccare la rete. Gli utenti amministratori non autorizzati rappresentano un rischio elevato per la sicurezza e potrebbero eseguire numerosi attacchi, inclusi i seguenti:  
 
-    -   ソフトウェア開発を使用して、企業内のすべての Configuration Manager クライアント コンピューターに悪意のあるソフトウェアを自動的にインストールして実行する。  
+    -   Usare la distribuzione di software per installare automaticamente ed eseguire malware in ogni computer client di Configuration Manager dell'organizzazione.  
 
-    -   リモート コントロールを使用して、クライアントのアクセス許可なしに Configuration Manager クライアントをリモートで制御する。  
+    -   Usare il controllo remoto per assumere il controllo di un client di Configuration Manager senza autorizzazioni.  
 
-    -   ポーリング間隔を短縮してインベントリの量が膨大になるように構成し、クライアントとサーバーへのサービス拒否攻撃を行う。  
+    -   Configurare intervalli di polling rapidi e quantità ingenti di inventario per creare attacchi di tipo Denial of Service contro i client e i server.  
 
-    -   階層内のいずれかのサイトを使用して、別のサイトの Active Directory データにデータを書き込む。  
+    -   Utilizzare un sito nella gerarchia per scrivere dati nei dati di Active Directory di un altro sito.  
 
-    サイト階層はセキュリティの境界です。 サイトが管理境界のみになるように考えてください。  
+    La gerarchia del sito è il limite di sicurezza. Considerare i siti solo come limiti di gestione.  
 
-    管理ユーザーのすべてのアクティビティを監査し、定期的に監査ログを調べます。 すべての Configuration Manager 管理ユーザーについて、採用前に経歴を確認し、定期的に勤務状況を再確認することが必要です。  
+    Controllare tutte le attività degli utenti amministrativi ed esaminare periodicamente i registri di controllo. Eseguire un'indagine obbligatoria della storia personale di ogni utente amministratore di Configuration Manager prima dell'assunzione e ripetere periodicamente tali indagini come condizione obbligatoria per il mantenimento dell'impiego.  
 
--   登録ポイントが侵害された場合、攻撃者が認証用の証明書を取得して、モバイル デバイスを登録しているユーザーの資格情報を盗み出す可能性があります。  
+-   Se il punto di registrazione è compromesso, un utente malintenzionato potrebbe ottenere i certificati per l'autenticazione e rubare le credenziali di utenti che registrano il proprio dispositivo mobile.  
 
-    登録ポイントは証明機関と通信します。また、Active Directory オブジェクトを作成、変更、および削除することができます。 境界ネットワークに登録ポイントをインストールしないでください。また、常に異常なアクティビティを監視してください。  
+    Il punto di registrazione comunica con un'autorità di certificazione e può creare, modificare ed eliminare gli oggetti di Active Directory. Non installare mai il punto di registrazione nella rete perimetrale e monitorare sempre le attività insolite.  
 
--   インターネットベースのクライアント管理にユーザー ポリシーを許可したり、インターネット上にあるユーザー用にアプリケーション カタログ Web サイト ポイントを構成したりすると、攻撃プロファイルが増加します。  
+-   Se si consentono i criteri utente per la gestione client basata su Internet o si configura il punto per siti Web del Catalogo applicazioni per gli utenti quando si trovano in Internet, si incrementa la superficie di attacco.  
 
-    クライアントとサーバー間の接続に PKI 証明書を使用するだけでなく、これらの構成では Windows 認証が必要ですが、Kerberos ではなく NTLM 認証を使用するように切り替わることがあります。 NTLM 認証は、なりすましや再生攻撃に対して脆弱です。 インターネット上のユーザーを正しく認証するためには、インターネットベースのサイト システム サーバーからドメイン コントローラーへの接続を許可する必要があります。  
+    Oltre a utilizzare i certificati PKI per le connessioni tra client e server, queste configurazioni necessitano dell'autenticazione di Windows, che potrebbe eseguire il fallback all'utilizzo dell'autenticazione NTLM invece di Kerberos. L'autenticazione NTLM è vulnerabile agli attacchi di riproduzione e di rappresentazione. Per autenticare correttamente un utente su Internet, è necessario consentire una connessione dal server di sistema del sito basato su Internet a un controller di dominio.  
 
--   Admin$ 共有がサイト システム サーバーで必要です。  
+-   La condivisione Admin$ è necessaria per i server di sistema del sito.  
 
-    Configuration Manager サイト サーバーでは、サイト システムのサービスへの接続とサービスの実行に Admin$ 共有を使用します。 Admin$ 共有は無効化したり削除したりしないでください。  
+    Il server del sito di Configuration Manager usa la condivisione Admin$ per la connessione e l'esecuzione di operazioni di servizio nei sistemi del sito. Non disabilitare o rimuovere la condivisione Admin$.  
 
--   Configuration Manager は、名前解決サービスを使用して他のコンピューターに接続します。この名前解決サービスを、スプーフィング、改ざん、否認、情報開示、サービス拒否、権限の昇格などのセキュリティ攻撃から保護することは困難です。  
+-   I servizi di risoluzione dei nomi usati da Configuration Manager per connettersi ad altri computer sono difficili da proteggere da attacchi alla sicurezza quali spoofing, manomissioni, ripudio, diffusione di informazioni, Denial of Service ed elevazione dei privilegi.  
 
-    名前解決に使用する DNS と WINS のバージョンのセキュリティのベストプラクティスに従います。  
+    Identificare e seguire le procedure di protezione ottimali per la versione di DNS e WINS utilizzata per la risoluzione dei nomi.  
 
-##  <a name="BKMK_Privacy_Cliients"></a> 探索のプライバシー情報  
- 探索によって、ネットワーク リソースのレコードが作成され、System Center Configuration Manager データベースに保存されます。 探索データ レコードには、IP アドレス、オペレーティング システム、コンピューター名などのコンピューター情報が含まれます。 Active Directory 探索方法を Active Directory ドメイン サービスに保存されている情報を探索するように構成することもできます。  
+##  <a name="BKMK_Privacy_Cliients"></a> Informazioni sulla privacy per l'individuazione  
+ L'individuazione crea i record delle risorse di rete e li archivia nel database di System Center Configuration Manager. I record di dati di individuazione contengono informazioni sui computer, ad esempio gli indirizzi IP, i sistemi operativi e i nomi dei computer. I metodi di individuazione di Active Directory possono essere configurati anche per rilevare eventuali informazioni memorizzate in Servizi di dominio Active Directory.  
 
- 既定で有効になっている探索方法は定期探索だけですが、この方法では System Center Configuration Manager クライアント ソフトウェアが既にインストールされているコンピューターのみ探索されます。  
+ L'unico metodo di individuazione abilitato per impostazione predefinita è l'individuazione heartbeat, ma tale metodo consente solo di individuare computer in cui è già installato il software client di System Center Configuration Manager.  
 
- 探索情報がマイクロソフトに送信されることはありません。 代わりに Configuration Manager データベースに格納されます。 情報は、90 日ごとに実行されるサイトの保守タスク **[期限切れの探索データの削除]** によって削除されるまでデータベースに保持されます。  
+ Le informazioni di individuazione non vengono inviate a Microsoft. Le informazioni di individuazione sono archiviate nel database di Configuration Manager. Le informazioni vengono conservate nel database fino all'eliminazione prevista ogni 90 giorni dall'attività di manutenzione del sito **Elimina dati di individuazione obsoleti**.  
 
- 追加の探索方法を構成したり、Active Directory 探索を拡張したりする前に、プライバシー要件を検討してください。  
+ Prima di configurare i metodi di rilevamento aggiuntivi o estendere l'individuazione di Active Directory, valutare i requisiti relativi alla privacy.  

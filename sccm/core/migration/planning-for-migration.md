@@ -1,6 +1,6 @@
 ---
-title: "移行の計画 | Microsoft Docs"
-description: "System Center Configuration Manager の移行先階層にデータを移行する前に、サイトと階層について学んでください。"
+title: Pianificare la migrazione | Microsoft Docs
+description: Leggere le informazioni su siti e gerarchie prima di eseguire la migrazione di dati nella gerarchia di destinazione di System Center Configuration Manager.
 ms.custom: na
 ms.date: 1/12/2017
 ms.prod: configuration-manager
@@ -18,42 +18,42 @@ manager: angrobe
 ms.openlocfilehash: fffef1e95e1dfa03971f140a6e5a7fff9bfe5e27
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-for-migration-to-system-center-configuration-manager"></a>System Center Configuration Manager の移行の計画
+# <a name="plan-for-migration-to-system-center-configuration-manager"></a>Pianificare la migrazione a System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-データを System Center Configuration Manager 移行先階層に移行する前に、Configuration Manager のサイトと階層を把握しておく必要があります。 サイトと階層の詳細については、「[System Center Configuration Manager の基本](../../core/understand/fundamentals.md)」を参照してください。  
+Prima di eseguire la migrazione dei dati in una gerarchia di destinazione di System Center Configuration Manager, è importante avere una certa familiarità con i siti e le gerarchie in Configuration Manager. Per altre informazioni su siti e gerarchie, vedere [Nozioni fondamentali su System Center Configuration Manager](../../core/understand/fundamentals.md).  
 
- 移行先階層にする System Center Configuration Manager 階層をインストールしてから、サポートされるソース階層からデータを移行する必要があります。  
+ È necessario installare una gerarchia di System Center Configuration Manager come gerarchia di destinazione, prima di eseguire la migrazione di dati da una gerarchia di origine supportata.  
 
- 移行先階層をインストールしたら、移行先階層で使用する管理機能を設定してから、データの移行を開始します。  
+ Dopo l'installazione della gerarchia di destinazione, configurare le funzionalità e le funzioni di gestione che si vuole usare nella gerarchia di destinazione prima di avviare la migrazione dei dati.  
 
- さらに、状況に応じて、ソース階層と移行先階層で重複が発生した場合についても計画する必要があります。 たとえば、移行先階層と同じネットワークの場所または境界を使用するようにソース階層が設定されている場合に、移行先階層に新しいクライアントをインストールして、自動サイト割り当てを使用するとします。 このシナリオでは、新しくインストールした Configuration Manager クライアントが、いずれかの階層から参加するサイトを選択できるため、クライアントがソース階層に誤って割り当てられる可能性があります。 そのため、移行先階層内の新しい各クライアントは、自動サイト割り当てを使用せずに、その階層内の特定のサイトに割り当てるように計画してください。  
+ Potrebbe inoltre essere necessario pianificare la sovrapposizione tra la gerarchia di origine e la gerarchia di destinazione. È possibile, ad esempio, configurare la gerarchia di origine per l'uso degli stessi limiti o percorsi di rete della gerarchia di destinazione e quindi installare nuovi client nella gerarchia di destinazione e usare l'assegnazione sito automatica. In questo scenario, dal momento che un client Configuration Manager appena installato può selezionare un sito di qualsiasi gerarchia, potrebbe verificarsi un'assegnazione errata alla gerarchia di origine. Pianificare quindi l'assegnazione di ogni nuovo client nella gerarchia di destinazione a un sito specifico di tale gerarchia e non usare l'assegnazione sito automatica.  
 
- サイトの割り当ての詳細については、「[異なるバージョンの Configuration Manager 間の相互運用性](../../core/plan-design/hierarchy/interoperability-between-different-versions.md)」の「[クライアントのサイト割り当てに関する考慮事項](../../core/plan-design/hierarchy/interoperability-between-different-versions.md#BKMK_SupConfigSiteAssignment)」を参照してください。  
+ Per altre informazioni sulle assegnazioni del sito, vedere [Considerazioni sull'assegnazione sito dei client](../../core/plan-design/hierarchy/interoperability-between-different-versions.md#BKMK_SupConfigSiteAssignment) in [Interoperabilità tra versioni diverse di System Center Configuration Manager](../../core/plan-design/hierarchy/interoperability-between-different-versions.md).  
 
-## <a name="plan-topics"></a>計画に関するトピック  
- サポートされるソース階層を System Center Configuration Manager 移行先階層に移行する方法を計画する際には、次のトピックを参照してください。
+## <a name="plan-topics"></a>Argomenti sulla pianificazione  
+ Usare gli argomenti seguenti per pianificare la migrazione di una gerarchia di origine supportata in una gerarchia di destinazione di System Center Configuration Manager:
 
--   [System Center Configuration Manager での移行の前提条件](../../core/migration/prerequisites-for-migration.md)  
+-   [Prerequisiti per la migrazione in System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md)  
 
--   [System Center Configuration Manager での移行計画の管理者チェックリスト](../../core/migration/administrator-checklists-for-migration-planning.md)  
+-   [Elenchi di controllo per gli amministratori per la pianificazione della migrazione in System Center Configuration Manager](../../core/migration/administrator-checklists-for-migration-planning.md)  
 
--   [データを System Center Configuration Manager に移行するかどうかの判断](../../core/migration/determine-whether-to-migrate-data.md)  
+-   [Determinare se eseguire la migrazione dei dati a System Center Configuration Manager](../../core/migration/determine-whether-to-migrate-data.md)  
 
--   [System Center Configuration Manager でのソース階層戦略の計画](../../core/migration/planning-a-source-hierarchy-strategy.md)  
+-   [Pianificare una strategia per la gerarchia di origine in System Center Configuration Manager](../../core/migration/planning-a-source-hierarchy-strategy.md)  
 
--   [System Center Configuration Manager での移行計画の管理者チェックリスト](../../core/migration/administrator-checklists-for-migration-planning.md)  
+-   [Elenchi di controllo per gli amministratori per la pianificazione della migrazione in System Center Configuration Manager](../../core/migration/administrator-checklists-for-migration-planning.md)  
 
--   [System Center Configuration Manager でのクライアント移行戦略の計画](../../core/migration/planning-a-client-migration-strategy.md)  
+-   [Pianificare una strategia di migrazione client in System Center Configuration Manager](../../core/migration/planning-a-client-migration-strategy.md)  
 
--   [System Center Configuration Manager のコンテンツ展開移行戦略の計画](../../core/migration/planning-a-content-deployment-migration-strategy.md)  
+-   [Pianificare una strategia di migrazione per la distribuzione del contenuto in System Center Configuration Manager](../../core/migration/planning-a-content-deployment-migration-strategy.md)  
 
--   [Configuration Manager オブジェクトの System Center Configuration Manager への移行の計画](../../core/migration/planning-for-the-migration-of-objects.md)  
+-   [Pianificare la migrazione degli oggetti di Configuration Manager a System Center Configuration Manager](../../core/migration/planning-for-the-migration-of-objects.md)  
 
--   [System Center Configuration Manager での移行アクティビティの監視の計画](../../core/migration/planning-to-monitor-migration-activity.md)  
+-   [Pianificare il monitoraggio dell'attività di migrazione in System Center Configuration Manager](../../core/migration/planning-to-monitor-migration-activity.md)  
 
--   [System Center Configuration Manager での移行完了の計画](../../core/migration/planning-to-complete-migration.md)  
+-   [Pianificare il completamento della migrazione in System Center Configuration Manager](../../core/migration/planning-to-complete-migration.md)  

@@ -1,6 +1,6 @@
 ---
-title: "オペレーティング システムの展開の監視 | Microsoft Docs"
-description: "オペレーティング システムの展開オブジェクトを監視するため、Configuration Manager コンソールにはアラート、レポート、およびさまざまなステータス インジケーターが用意されています。"
+title: Monitorare le distribuzioni del sistema operativo | Microsoft Docs
+description: Per monitorare gli oggetti di distribuzione del sistema operativo, la console di Configuration Manager offre avvisi, report e diversi indicatori di stato.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,79 +18,79 @@ manager: angrobe
 ms.openlocfilehash: 154c0a286e6b9ccedc7545eb010967ac00d35407
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="monitor-operating-system-deployments-in-system-center-configuration-manager"></a>System Center Configuration Manager のオペレーティング システムの展開の監視
+# <a name="monitor-operating-system-deployments-in-system-center-configuration-manager"></a>Monitorare le distribuzioni del sistema operativo in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Configuration Manager コンソールの次の機能を使用して、オペレーティング システムの展開オブジェクトを監視できます。  
+Per monitorare gli oggetti di distribuzione del sistema operativo, la console di Configuration Manager offre i metodi descritti di seguito.  
 
 
-##  <a name="BKMK_OSDAlerts"></a> オペレーティング システムの展開のアラート  
- タスク シーケンスの展開設定でアラートを構成して、構成されている割合 (%) よりも展開のコンプライアンス レベルが低い場合に管理ユーザーに通知できます。  
+##  <a name="BKMK_OSDAlerts"></a> Avvisi per le distribuzioni del sistema operativo  
+ È possibile configurare un avviso nelle impostazioni di distribuzione della sequenza di attività per inviare notifiche agli utenti amministratori quando i livelli di conformità per la distribuzione sono inferiori alla percentuale configurata.  
 
- アラートの設定を構成すると、指定されているアラート条件に一致した場合に、Configuration Manager でアラートが生成されます。 次の場所で、タスク シーケンスの展開に関するアラートを確認することができます。  
+ Dopo aver configurato le impostazioni degli avvisi, Configuration Manager genera un avviso se si verificano le condizioni specificate. È possibile esaminare gli avvisi di distribuzione della sequenza di attività nei percorsi seguenti:  
 
-1.  最新のアラートを確認するには、 **[ソフトウェア ライブラリ]** ワークスペースの **[オペレーティング システム]** ノードを使用します。  
+1.  Gli avvisi recenti si trovano nel nodo **Sistemi operativi** dell'area di lavoro **Raccolta software** .  
 
-2.  構成されているアラートを管理するには、[監視 **** ] ワークスペースの [アラート **** ] ノードを使用します。  
+2.  Gli avvisi configurati possono essere gestiti nel nodo **Avvisi** dell'area di lavoro **Monitoraggio** .  
 
-##  <a name="BKMK_TSDeployStatus"></a> タスク シーケンスの展開ステータス  
- タスク シーケンスを展開した後、展開ステータスを監視できます。 タスク シーケンスの展開ステータスを監視するには、次の手順に従います。  
+##  <a name="BKMK_TSDeployStatus"></a> Stato di distribuzione della sequenza di attività  
+ Dopo aver distribuito una sequenza di attività, è possibile monitorare lo stato di distribuzione. Usare la procedura seguente per monitorare lo stato della distribuzione per una sequenza di attività.  
 
-#### <a name="to-monitor-deployment-status"></a>展開ステータスを監視するには  
+#### <a name="to-monitor-deployment-status"></a>Per monitorare lo stato di distribuzione  
 
-1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
+1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
-2.  [監視] ワークスペースで、[展開 ****] をクリックします。  
+2.  Nell'area di lavoro Monitoraggio fare clic su **Distribuzioni**.  
 
-3.  展開ステータスを監視するタスク シーケンスをクリックします。  
+3.  Fare clic sulla sequenza di attività per cui si vuole monitorare lo stato di distribuzione.  
 
-4.  [ホーム **** ] タブの [展開 **** ] グループで、[ステータスの表示 ****] をクリックします。  
+4.  Nella scheda **Home** fare clic su **Visualizza stato** nel gruppo **Distribuzione**.  
 
-##  <a name="BKMK_TSReports"></a> オペレーティング システムの展開レポート  
- 使用可能な定義済みのオペレーティング システムの展開レポートが数多く用意されています。 レポートは複数のカテゴリに分類され、状態移行とタスク シーケンスの展開に関する特定の情報のレポートに使用できます。 事前に構成されたレポートを使用するだけでなく、企業のニーズに応じて、ソフトウェア更新プログラムのカスタム レポートを作成することもできます。 詳しくは、「[レポートの操作とメンテナンス](../../core/servers/manage/operations-and-maintenance-for-reporting.md)」を参照してください。  
+##  <a name="BKMK_TSReports"></a> Report sulla distribuzione del sistema operativo  
+ Sono disponibili numerosi report di distribuzione del sistema operativo predefiniti. Sono organizzati in diverse categorie e possono essere usati per fornire informazioni specifiche sullo stato della migrazione e sulle distribuzioni di sequenze di attività. Oltre a usare i report preconfigurati, è anche possibile creare report degli aggiornamenti software personalizzati in base alle esigenze dell'azienda. Per altre informazioni, vedere [Operazioni e manutenzione per la creazione di report](../../core/servers/manage/operations-and-maintenance-for-reporting.md).  
 
-##  <a name="BKMK_MonitorContent"></a> コンテンツの監視  
- Configuration Manager コンソールでコンテンツを監視して、関連する配布ポイントについて、すべての種類のパッケージのステータスを確認できます。 たとえば、パッケージのコンテンツのコンテンツ検証ステータス、特定の配布ポイント グループに割り当てられているコンテンツのステータス、配布ポイントに割り当てられているコンテンツの状態、各配布ポイントのオプション機能 (コンテンツ検証、PXE、マルチキャスト) のステータスなどを確認できます。  
+##  <a name="BKMK_MonitorContent"></a> Monitoraggio del contenuto  
+ È possibile monitorare il contenuto nella console di Configuration Manager per verificare lo stato di tutti i tipi di pacchetti in relazione ai punti di distribuzione associati. Sono inclusi lo stato di convalida del contenuto del pacchetto, lo stato del contenuto assegnato a un gruppo di punti di distribuzione specifico, lo stato del contenuto assegnato a un punto di distribuzione e lo stato di funzionalità facoltative per ogni punto di distribuzione (convalida contenuto, PXE e multicast).  
 
-###  <a name="BKMK_ContentStatus"></a> コンテンツのステータスの監視  
- [監視 **** ] ワークスペースの [コンテンツのステータス **** ] ノードには、コンテンツ パッケージについての情報が表示されます。 パッケージに関する全般情報、パッケージの配布ステータス、およびパッケージに関する詳細なステータス情報を確認することができます。 コンテンツのステータスを表示するには、次の手順に従います。  
+###  <a name="BKMK_ContentStatus"></a> Monitoraggio dello stato del contenuto  
+ Il nodo **Stato componente** dell'area di lavoro **Monitoraggio** fornisce informazioni sui pacchetti contenuto. È possibile esaminare le informazioni generali sul pacchetto, lo stato di distribuzione del pacchetto e informazioni dettagliate sullo stato del pacchetto. Usare la procedura seguente per visualizzare lo stato del contenuto.  
 
-#### <a name="to-monitor-content-status"></a>コンテンツのステータスを監視するには  
+#### <a name="to-monitor-content-status"></a>Per monitorare lo stato del contenuto  
 
-1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
+1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
-2.  [監視] ワークスペースで、[配布ステータス ****] を展開して、[コンテンツのステータス ****] をクリックします。 パッケージが表示されます。  
+2.  Nell'area di lavoro Monitoraggio, espandere **Stato distribuzione**, quindi fare clic su **Stato contenuto**. Vengono visualizzati i pacchetti.  
 
-3.  詳細なステータス情報を確認するパッケージを選択します。  
+3.  Selezionare il pacchetto di cui visualizzare informazioni dettagliate sullo stato.  
 
-4.  [ホーム **** ] タブで [ステータスの表示 ****] をクリックします。 パッケージのステータスの詳細な情報が表示されます。  
+4.  Nella scheda **Home** fare clic su **Visualizza stato**. Vengono visualizzate informazioni dettagliate sullo stato per il pacchetto.  
 
-###  <a name="BKMK_DPGroupStatus"></a> 配布ポイント グループのステータス  
- [監視 **** ] ワークスペースの [配布ポイント グループのステータス **** ] ノードには、配布ポイント グループについての情報が表示されます。 配布ポイント グループに関する全般情報 (配布ポイント グループのステータスやコンプライアンス対応率など) に加え、配布ポイント グループの詳細なステータス情報も確認することができます。 次の手順に従って、配布ポイント グループのステータスを確認します。  
+###  <a name="BKMK_DPGroupStatus"></a> Stato del gruppo di punti di distribuzione  
+ Il nodo **Stato gruppo di punti di distribuzione** nell'area di lavoro **Monitoraggio** fornisce informazioni sui gruppi di punti di distribuzione. È possibile esaminare informazioni generali sul gruppo di punti di distribuzione, quali lo stato, il grado di conformità e le informazioni dettagliate sullo stato. Usare la procedura seguente per visualizzare lo stato del gruppo di punti di distribuzione.  
 
-#### <a name="to-monitor-distribution-point-group-status"></a>配布ポイント グループのステータスを監視するには  
+#### <a name="to-monitor-distribution-point-group-status"></a>Per monitorare lo stato del gruppo di punti di distribuzione  
 
-1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
+1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
-2.  [監視] ワークスペースで、[配布ステータス ****] を展開して、[配布ポイント グループのステータス ****] をクリックします。 すると、配布ポイント グループが表示されます。  
+2.  Nell'area di lavoro Monitoraggio, espandere **Stato distribuzione**, quindi fare clic su **Stato gruppo di punti di distribuzione**. Vengono visualizzati i gruppi di punti di distribuzione.  
 
-3.  詳細なステータス情報を確認する配布ポイント グループを選択します。  
+3.  Selezionare il gruppo di punti di distribuzione di cui visualizzare informazioni dettagliate sullo stato.  
 
-4.  [ホーム **** ] タブで [ステータスの表示 ****] をクリックします。 配布ポイント グループの詳細なステータス情報が表示されます。  
+4.  Nella scheda **Home** fare clic su **Visualizza stato**. Vengono visualizzate le informazioni dettagliate sullo stato per il gruppo di punti di distribuzione.  
 
-###  <a name="BKMK_DPConfigStatus"></a> 配布ポイントの構成ステータス  
- [監視 **** ] ワークスペースの [配布ポイントの構成ステータス **** ] ノードには、配布ポイントについての情報が表示されます。 PXE、マルチキャスト、コンテンツの検証など、配布ポイントでどの属性が有効になっているかを確認できます。 また、配布ポイントの詳細なステータス情報も見ることができます。 次の手順に従って、配布ポイント グループの構成ステータスを確認します。  
+###  <a name="BKMK_DPConfigStatus"></a> Stato di configurazione dei punti di distribuzione  
+ Il nodo **Stato di configurazione dei punti di distribuzione** nell'area di lavoro **Monitoraggio** fornisce informazioni sul punto di distribuzione. È possibile esaminare gli attributi abilitati per il punto di distribuzione, come PXE, Multicast e convalida del contenuto. È inoltre possibile visualizzare informazioni dettagliate sullo stato per il punto di distribuzione. Usare la procedura seguente per visualizzare lo stato di configurazione del punto di distribuzione.  
 
-#### <a name="to-monitor-distribution-point-configuration-status"></a>配布ポイントの構成ステータスを監視するには  
+#### <a name="to-monitor-distribution-point-configuration-status"></a>Per monitorare lo stato di configurazione del punto di distribuzione  
 
-1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
+1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
-2.  [監視] ワークスペースで、[配布ステータス ****] を展開して、[配布ポイントの構成ステータス ****] をクリックします。 すると、配布ポイントが表示されます。  
+2.  Nell'area di lavoro Monitoraggio, espandere **Stato distribuzione**, quindi fare clic su **Stato di configurazione dei punti di distribuzione**. Vengono visualizzati i punti di distribuzione.  
 
-3.  配布ポイント ステータス情報を確認する配布ポイントを選択します。  
+3.  Selezionare il punto di distribuzione per il quale si desidera visualizzare le informazioni sullo stato.  
 
-4.  [結果] ウィンドウで、[詳細 **** ] タブをクリックします。 すると、配布ポイントのステータス情報が表示されます。  
+4.  Nel riquadro dei risultati fare clic sulla scheda **Dettagli** . Verranno visualizzate le informazioni sullo stato per il punto di distribuzione.  

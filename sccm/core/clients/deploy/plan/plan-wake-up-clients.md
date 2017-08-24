@@ -1,6 +1,6 @@
 ---
-title: "クライアントをウェイク アップする | Microsoft Docs"
-description: "System Center Configuration Manager でクライアントをウェイク アップする方法を計画します。"
+title: Riattivare i client | Microsoft Docs
+description: Pianificare la riattivazione dei client in System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -17,82 +17,82 @@ manager: angrobe
 ms.openlocfilehash: 20f595a5b0634a627dff9ba6feeb848754615f2c
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-how-to-wake-up-clients-in-system-center-configuration-manager"></a>System Center Configuration Manager でクライアントをウェイク アップする方法を計画します
+# <a name="plan-how-to-wake-up-clients-in-system-center-configuration-manager"></a>Pianificare la riattivazione dei client in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
- Configuration Manager では、必要なソフトウェア (ソフトウェア更新プログラムやアプリケーションなど) をインストールするときにコンピューターをスリープ モードから復帰させるために、従来のウェイクアップ パケットと AMT 電源オン コマンドの 2 つの Wake On LAN テクノロジがサポートされます。  
+ Configuration Manager supporta due tecnologie LAN (Local Area Network) per riattivare computer in modalità sospensione quando si vuole installare software necessario, ad esempio aggiornamenti software e applicazioni: i pacchetti di riattivazione tradizionali e i comandi di accensione AMT.  
 
-ウェイクアップ プロキシ クライアント設定を使用して、従来のウェイクアップ パケット方式を補うことができます。 ウェイクアップ プロキシは、ピアツーピア プロトコルと選択されたコンピューターを使用して、サブネットの他のコンピューターが起動状態かどうかを確認し、必要に応じて起動できます。 サイトで Wake On LAN が構成され、クライアントでウェイクアップ プロキシが構成されている場合、処理は次のようになります。  
+È possibile integrare il metodo tradizionale di riattivazione pacchetti usando le impostazioni client proxy di riattivazione. Il proxy di riattivazione usa un protocollo peer-to-peer e computer selezionati per controllare se nella subnet sono attivi altri computer e per riattivarli se necessario. Quando il sito è configurato per la riattivazione LAN e i client sono configurati per il proxy di riattivazione, il processo funziona nel modo seguente:  
 
-1.  Configuration Manager クライアントがインストールされていて、スリープ中ではないサブネットのコンピューターが、サブネットのその他のコンピューターが起動状態かどうかを確認します。 確認は、互いに TCP/IP ping コマンドを 5 秒ごとに送信して行います。  
+1.  I computer con il client di Configuration Manager e che non sono in stato di sospensione nella subnet controllano se nella subnet ci sono altri computer riattivati. A tal fine si inviano tra di loro un comando ping TCP/IP ogni 5 secondi.  
 
-2.  その他のコンピューターから応答がない場合、スリープ中と判断します。 起動状態のコンピューターは、サブネットの*管理コンピューター*になります。  
+2.  Se non esiste alcuna risposta da altri computer, questi verranno considerati in stato di sospensione. I computer riattivati diventano *computer di gestione* per la subnet.  
 
-     スリープ以外の理由 (たとえば、電源オフ、ネットワークからの削除、プロキシ ウェイクアップ クライアント設定が適用されていないなど) でコンピューターが応答しない可能性もあるため、毎日ローカル時刻の 午後 2 時に、コンピューターにウェイクアップ パケットが送信されます。 応答しないコンピューターは、以降、スリープ状態ではないと判断され、ウェイクアップ プロキシで起動されなくなります。  
+     Poiché è possibile che un computer non risponda per un motivo che non sia collegato alla sospensione (ad esempio, è spento, rimosso dalla rete o non è più applicata l'impostazione client di riattivazione proxy), ai computer viene inviato un pacchetto di riattivazione ogni giorno alle 14.00. ora locale. I computer che non rispondono non verranno più considerati in stato di sospensione e non verranno riattivati da proxy di riattivazione.  
 
-     ウェイクアップ プロキシをサポートするには、サブネットごとに少なくとも 3 台のコンピューターが起動状態である必要があります。 この目的のため、3 台のコンピューターがサブネットの*ガーディアンのコンピューター*として、無作為に選択されます。 対象のコンピューターは、一定の非アクティブ期間が経過した後でスリープまたはハイバネーションに移行する電源ポリシーが構成されているかどうかに関係なく、起動状態が継続されます。 ガーディアンのコンピューターでは、メンテナンス作業などで発生するシャットダウンまたは再起動のコマンドは実行されます。 シャットダウンまたは再起動が実行された場合、残りのガーディアンのコンピューターは、サブネットに 3 台のガーディアンのコンピューターが存在する状態を維持するため、サブネットの別のコンピューターをウェイク・アップします。  
+     Per il supporto dei proxy di riattivazione, devono essere attivi almeno tre computer per ogni subnet. Per ottenere questo risultato, tre computer vengono scelti in modo non deterministico come *computer tutori* della subnet. Ciò significa che rimangono attivi, nonostante siano presenti criteri di risparmio energia configurati in modalità di sospensione o di ibernazione dopo un periodo di inattività. I computer tutori rispettano i comandi di arresto o di riavvio, ad esempio, in seguito ad attività di manutenzione. Se ciò accade, i computer tutori rimanenti riattivano un altro computer nella subnet in modo che la subnet stessa continui ad avere tre computer tutori.  
 
-3.  管理コンピューターは、スリープ中のコンピューターへのトラフィックを管理コンピューターにリダイレクトするように、ネットワーク スイッチに通知します。  
+3.  I computer di gestione chiedono al commutatore di rete di reindirizzare il traffico di rete dei computer in sospensione verso sé stessi.  
 
-     このリダイレクトは、スリープ状態のコンピューターの MAC アドレスをソース アドレスとして使用するイーサネット フレームをブロードキャストする、マネージャー コンピューターが行います。 これにより、ネットワーク スイッチは、マネージャー コンピューターが配置されているのと同じポートにスリープ状態のコンピューターが移動したかのように動作します。 また、マネージャー コンピューターは、スリープ状態のコンピューターで ARP キャッシュ内のエントリが常に最新の状態になるように、ARP パケットを送信します。 さらに、マネージャー コンピューターは、スリープ状態のコンピューターに代わって ARP 要求に応答し、スリープ状態のコンピューターの MAC アドレスで応答します。  
+     Il reindirizzamento avviene mediante la trasmissione dal parte del computer di gestione di un frame Ethernet che usa l'indirizzo MAC del computer in sospensione come indirizzo di origine. In questo modo il commutatore di rete si comporta come se il computer in sospensione sia stato spostato sulla stessa porta su cui si trova il computer di gestione. Il computer di gestione invia anche pacchetti ARP per i computer in sospensione per mantenere la voce nella cache ARP. Il computer di gestione risponderà anche alle richieste ARP per conto del computer in sospensione e con l'indirizzo MAC del computer in sospensione.  
 
     > [!WARNING]  
-    >  この処理の間、スリープ状態のコンピューターの IP と MAC 間のマッピングは変更されません。 ウェイクアップ プロキシは、別のネットワーク アダプターで登録されたポートが異なるネットワーク アダプターで使用されていることをネットワーク スイッチに通知することで機能します。 ただし、この動作は MAC フラップと呼ばれ、標準のネットワーク運用では異常となります。 ネットワーク監視ツールには、この動作を検出して、問題が発生したと見なすものもあります。 そのため、ウェイクアップ プロキシを使用すると、これらの監視ツールがアラートを生成したりポートをシャットダウンする可能性があります。  
+    >  Durante questo processo, il mapping da indirizzo IP a indirizzo MAC per il computer in sospensione rimane lo stesso. Il proxy di riattivazione informa il commutatore di rete che una scheda di rete differente sta usando la porta registrata da un altra scheda di rete. Tuttavia, questo comportamento è noto come flap MAC ed è insolito per operazioni di rete standard. Alcuni strumenti di monitoraggio della rete cercano questo comportamento e possono presumere che qualcosa non vada. Di conseguenza, questi strumenti di monitoraggio sono in grado di generare avvisi o chiudere le porte quando si usa il proxy di riattivazione.  
     >   
-    >  使用するネットワーク監視ツールとサービスで MAC フラップを許可していない場合は、ウェイクアップ プロキシを使用しないでください。  
+    >  Non usare il proxy di riattivazione se gli strumenti e i servizi di monitoraggio di rete e servizi non consentono i flap MAC.  
 
-4.  マネージャー コンピューターがスリープ状態のコンピューターの新しい TCP 接続要求を検出し、その要求が、スリープ状態のコンピューターがスリープ状態になる前にリッスンしていたポートに対するものである場合、マネージャー コンピューターはスリープ状態のコンピューターにウェイクアップ パケットを送信してから、このコンピューターへのトラフィックのリダイレクトを停止します。  
+4.  Quando un computer di gestione visualizza una nuova richiesta di connessione TCP per un computer in sospensione e la richiesta è su una porta su cui tale computer era in ascolto prima di andare in sospensione, il computer di gestione invia un pacchetto di riattivazione, quindi smette di reindirizzare il traffico per questo computer.  
 
-5.  スリープ状態のコンピューターが、ウェイクアップ パケットを受信して起動します。 送信元コンピューターは接続を自動的に再試行し、コンピューターが起動して応答できるようになります。  
+5.  Il computer in sospensione riceve il pacchetto di riattivazione e viene riattivato. Il computer di invio ritenta automaticamente la connessione e questa volta, il computer viene riattivato ed è in grado di rispondere.  
 
- ウェイクアップ プロキシには、次の要件と制限があります。  
+ Il proxy di riattivazione presenta i prerequisiti e le limitazioni seguenti:  
 
 > [!IMPORTANT]  
->  別のチームがネットワーク インフラストラクチャとネットワーク サービスを担当している場合は、このチームに通知して、評価期間とテスト期間はこのチームを含めるようにします。 たとえば、802.1X ネットワーク アクセス制御を使用しているネットワークでは、ウェイクアップ プロキシは動作しないため、ネットワーク サービスの中断が生じる可能性があります。 また、ウェイクアップ プロキシのために、一部のネットワーク監視ツールでは、他のコンピューターを起動するトラフィックを検出すると、アラートを生成する可能性があります。  
+>  Se un team separato è responsabile dell'infrastruttura di rete e dei servizi di rete, inviare una notifica e includere tale team nel periodo di valutazione e verifica. Ad esempio, in una rete che usa il controllo accesso alla rete mediante 802.1 X, il proxy di attivazione non funziona e può causare l'interruzione del servizio di rete. Il proxy di riattivazione potrebbe inoltre causare la generazione di avvisi da parte di alcuni strumenti di monitoraggio della rete quando viene rilevato il traffico per la riattivazione di altri computer.  
 
--   サポートされるクライアントは、Windows 7、Windows 8、Windows Server 2008 R2、Windows Server 2012 です。  
+-   I client supportati sono Windows 7, Windows 8, Windows Server 2008 R2, Windows Server 2012.  
 
--   バーチャル マシンで実行されるゲスト オペレーティング システムはサポートされません。  
+-   Non sono supportati i sistemi operativi guest in esecuzione su una macchina virtuale.  
 
--   クライアント設定を使ってクライアントでウェイクアップ プロキシが有効になっている必要があります。 ウェイクアップ プロキシ処理はハードウェア インベントリに依存しませんが、クライアントでハードウェア インベントリが有効になっており、少なくとも 1 つのハードウェア インベントリが送信されていない限り、クライアントはウェイクアップ プロキシ サービスのインストールをレポートしません。  
+-   I client devono essere abilitati per il proxy di riattivazione tramite le impostazioni client. Nonostante il funzionamento del proxy di riattivazione non dipenda dall'inventario hardware, i client non riportano l'installazione del servizio del proxy di riattivazione a meno che non siano abilitati per l'inventario hardware e non ne abbiano inviato almeno uno.  
 
--   ネットワーク アダプター (および、場合によっては BIOS) が有効になっており、ネットワーク アダプターにウェイクアップ パケットが構成されている必要があります。 ネットワーク アダプターにウェイクアップ パケットが構成されていない場合や、この設定が無効になっている場合は、Configuration Manager がウェイクアップ プロキシを有効にするクライアント設定を受信すると、この設定が自動的にコンピューターに構成されて有効になります。  
+-   Le schede di rete (ed eventualmente il BIOS) devono essere abilitate e configurate per i pacchetti di riattivazione. Se la scheda di rete non è configurata per i pacchetti di riattivazione oppure questa impostazione è disabilitata, Configuration Manager la configurerà e abiliterà automaticamente per un computer quando riceve l'impostazione client per abilitare il proxy di riattivazione.  
 
--   コンピューターに複数のネットワーク アダプターがある場合、どのアダプターをウェイクアップ プロキシに使用するのか構成することはできません。アダプターは無作為に選択されます。 ただし、選択されたアダプターは SleepAgent<DOMAIN\>@SYSTEM_0.log ファイルに記録されます。  
+-   Se un computer dispone di più di una scheda di rete, non è possibile configurare la scheda da usare per il proxy di riattivazione; la scelta è non deterministica. La scheda selezionata viene tuttavia registrata nel file SleepAgent_<DOMAIN\>@SYSTEM_0.log.  
 
--   ネットワークで ICMP エコー要求を許可 (少なくともサブネット内) する必要があります。 ICMP Ping コマンドの送信に使用する、5 秒間隔を構成することはできません。  
+-   La rete deve consentire le richieste echo ICMP (almeno all'interno della subnet). Non è possibile configurare l'intervallo di 5 secondi usato per inviare i comandi ping ICMP.  
 
--   通信は暗号化されず、認証されません。また、IPsec はサポートされません。  
+-   La comunicazione non è crittografata né autenticate e IPsec non è supportato.  
 
--   次のネットワーク構成はサポートされません。  
+-   Non sono supportate le seguenti configurazioni di rete:  
 
-    -   ポート認証を使用する 802.1X  
+    -   802.1X con autenticazione della porta  
 
-    -   ワイヤレス ネットワーク  
+    -   Reti wireless  
 
-    -   MAC アドレスを特定のポートとバインドするネットワーク スイッチ  
+    -   Commutatori di rete che associano indirizzi MAC a porte specifiche  
 
-    -   IPv6 のみのネットワーク  
+    -   Reti solo IPv6  
 
-    -   24 時間未満の DHCP リース期間  
+    -   Durata dei lease DHCP inferiore a 24 ore  
 
-スケジュールに従ってソフトウェアをインストールするときにコンピューターをウェイクアップしたい場合は、各プライマリ サイトでウェイクアップ パケットを使用するよう構成する必要があります。  
+Se si vogliono riattivare i computer per un'installazione software pianificata, è necessario configurare ogni sito primario all'uso dei pacchetti di riattivazione.  
 
- ウェイクアップ プロキシを使用するには、プライマリ サイトを構成することに加えて、電源管理のウェイクアップ プロキシ クライアント設定も展開する必要があります。  
+ Per usare i pacchetti di riattivazione, è necessario distribuire le impostazioni client del proxy di riattivazione di Risparmio energia oltre alla configurazione del sito primario.  
 
-サブネット向けのブロードキャスト パケットとユニキャスト パケットのどちらを使用するか、さらにどの UDP ポート番号を使用するかも決める必要があります。 既定では、従来のウェイクアップ パケットは UDP 9 番ポートを使用して送信されます。ただし、介在するルーターとファイアウォールが別のポートをサポートしている場合は、そのポートを選択してセキュリティを強化することができます。  
+È necessario anche decidere se usare pacchetti di broadcast diretti a subnet oppure pacchetti unicast, nonché il numero di porta UDP da usare. Per impostazione predefinita, i pacchetti di riattivazione tradizionali vengono trasmessi usando la porta UDP 9 ma, per una maggior sicurezza, è possibile selezionare una porta alternativa per il sito se supportata dai router e firewall coinvolti.  
 
-### <a name="choose-between-unicast-and-subnet-directed-broadcast-for-wake-on-lan"></a>Wake-on-LAN におけるユニキャストとサブネット向けブロードキャストの比較  
- 従来のウェイクアップ パケットでコンピューターをウェイクアップする場合は、ユニキャスト パケットとサブネット向けのブロードキャスト パケットのどちらを送信するかを決める必要があります。 ウェイクアップ プロキシを使用する場合、ユニキャスト パケットを使用する必要があります。 そうでない場合は、どの送信方法を選択するか判断するときに、次の表をご覧ください。  
+### <a name="choose-between-unicast-and-subnet-directed-broadcast-for-wake-on-lan"></a>Scegliere tra il broadcast unicast e con riferimento a subnet per la riattivazione LAN  
+ Se si è scelto di riattivare i computer inviando pacchetti di riattivazione tradizionali, occorre decidere se trasmettere pacchetti unicast o pacchetti di broadcast con riferimento a subnet. Se si usa il proxy di riattivazione, è necessario usare pacchetti unicast. In caso contrario, usare la tabella seguente per determinare quale metodo di trasmissione scegliere.  
 
-|送信方法|長所|短所|  
+|Metodo di trasmissione|Vantaggio|Svantaggio|  
 |-------------------------|---------------|------------------|  
-|ユニキャスト|パケットが、サブネット上のすべてのコンピューターにではなく、1 台のコンピューターに直接送信されるので、サブネット向けのブロードキャストより安全です。<br /><br /> ルーターを再構成しなくてもよい場合があります (ARP キャッシュを構成しなければならない可能性があります)。<br /><br /> サブネット向けのブロードキャスト送信よりも、使用するネットワーク帯域幅が小さくて済みます。<br /><br /> IPv4 と IPv6 でサポートされています。|最後に実行された定期ハードウェア インベントリの後で、送信先コンピューターのサブネット アドレスが変更された場合は、ウェイクアップアップ パケットが、そのコンピューターを見つけられなくなります。<br /><br /> UDP パケットを転送するために、スイッチを構成しなければならない場合があります。<br /><br /> ネットワーク アダプターによっては、ユニキャストのウェイクアップ パケットに応答しないスリープ モードを持っている場合があります。|  
-|サブネット向けブロードキャスト|コンピューターの IP アドレスが同じサブネット内で頻繁に変わる場合は、ユニキャストよりも成功率が高くなります。<br /><br /> スイッチの再構成は必要ありません。<br /><br /> コンピューターのアダプターのすべてのスリープ モードに対応している可能性が高くなります。これは、元々、サブネット向けブロードキャストが、ウェイクアップ パケットの送信方法だったからです。|ユニキャストより安全性が低くなります。これは、攻撃者が偽のソース アドレスからサブネット向けブロードキャスト アドレスに ICMP エコー要求の連続ストリームを送信可能なためです。 この場合は、すべてのホストがそのソース アドレスに応答することになります。 ルーターでサブネット向けブロードキャストが許可される場合は、セキュリティを強化するために、次のように構成することをお勧めします。<br /><br /> -   Configuration Manager サイト サーバーからは指定した UDP ポート番号を使用する IP 向けのブロードキャストのみを許可するようにルーターを構成します。<br />-   既定以外の指定したポート番号を使用するように Configuration Manager を構成します。<br /><br /> サブネット向けのブロードキャストを有効にするために、すべての中間ルーターの再構成が必要になることがあります。<br /><br /> ユニキャストよりも、必要なネットワーク帯域幅が大きくなります。<br /><br /> IPv4 だけがサポートされています。IPv6 はサポートされていません。|  
+|Unicast|Soluzione più sicura dei broadcast con riferimento a subnet perché il pacchetto viene inviato direttamente a un computer invece che a tutti i computer su una subnet.<br /><br /> Potrebbe non richiedere la riconfigurazione di router (potrebbe essere necessario configurare la cache ARP).<br /><br /> Consuma meno larghezza di banda di rete rispetto alle trasmissioni di broadcast con riferimento a subnet.<br /><br /> Supportato con IPv4 e IPv6.|I pacchetti di riattivazione non trovano i computer di destinazione che hanno modificato i relativi indirizzi di subnet dopo l'ultima pianificazione dell'inventario hardware.<br /><br /> I commutatori potrebbero dover essere configurati per inoltrare pacchetti UDP.<br /><br /> Alcune schede di rete potrebbero non rispondere ai pacchetti di riattivazione in tutti gli stati di sospensione quando usano unicast come metodo di trasmissione.|  
+|Broadcast con riferimento a subnet|Maggiore percentuale di successo rispetto a unicast se si dispone di computer che cambiano spesso l'indirizzo IP nella stessa subnet.<br /><br /> Non è necessaria nessuna riconfigurazione del commutatore.<br /><br /> Elevata percentuale di compatibilità con schede di computer per tutti gli stati di sospensione, perché i broadcast con riferimento a subnet erano il metodo di trasmissione originale per l'invio di pacchetti di riattivazione.|Soluzione meno sicuro rispetto all'utilizzo di unicast, poiché un utente malintenzionato potrebbe inviare flussi continui di richieste echo di Internet Control Message Protocol (ICMP) da un indirizzo di origine falsificato all'indirizzo di broadcast con riferimento a subnet. Ciò provocherebbe la risposta di tutti gli host a tale indirizzo di origine. Se i router sono configurati per consentire trasmissioni con riferimento a subnet, per motivi di sicurezza è consigliabile la configurazione aggiuntiva:<br /><br /> Configurare i router per consentire solo broadcast diretti IP dal server del sito di Configuration Manager, usando un numero di porta UDP specificato.<br />Configurare Configuration Manager per l'uso del numero di porta non predefinito specificato.<br /><br /> Potrebbe essere richiesta la riconfigurazione di tutti i router coinvolti per abilitare broadcast con riferimento a subnet.<br /><br /> Usa una larghezza di banda di rete maggiore rispetto a trasmissioni unicast.<br /><br /> Supportato solo con IPv4 e non con IPv6.|  
 
 > [!WARNING]  
->  サブネット向けブロードキャストを使用するときは、セキュリティ上のリスクを伴うことに注意してください。攻撃者は、偽のソース アドレスからブロードキャスト アドレスに ICMP (Internet Control Message Protocol) エコー要求の連続ストリームを送信することが可能です。これにより、すべてのホストがそのソース アドレスに応答することになります。 この種のサービス拒否攻撃のことをスマーフ攻撃といいます。通常、サブネット向けブロードキャストを有効にしないことで防止できます。
+>  Esistono rischi per la sicurezza associati ai broadcast con riferimento a subnet: un utente malintenzionato potrebbe inviare flussi continui di richieste echo di Internet Control Message Protocol (ICMP) da un indirizzo di origine falsificato all'indirizzo di broadcast con riferimento a subnet, determinando la risposta di tutti gli host a tale indirizzo di origine. Questo tipo di attacco Denial of Service è comunemente denominato attacco smurf e viene in genere limitato non abilitando le broadcast con riferimento a subnet.

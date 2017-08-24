@@ -1,6 +1,6 @@
 ---
-title: "条件付きアクセス | Microsoft Docs"
-description: "System Center Configuration Manager で条件付きアクセスを使用して、電子メールおよびその他のサービスをセキュリティで保護する方法について説明します。"
+title: Accesso condizionale | Microsoft Docs
+description: Informazioni su come usare l'accesso condizionale in System Center Configuration Manager per proteggere la posta elettronica e altri servizi.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -17,31 +17,31 @@ manager: angrobe
 ms.openlocfilehash: d6933a331bb229f7e378e8f0bfa511f6b0553ae9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="manage-access-to-services-in-system-center-configuration-manager"></a>System Center Configuration Manager でサービスへのアクセスを管理する
+# <a name="manage-access-to-services-in-system-center-configuration-manager"></a>Gestire l'accesso ai servizi in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
-
-
-## <a name="conditional-access-in-system-center-configuration-manager"></a>System Center Configuration Manager での条件付きアクセス
-**条件付きアクセス**を使用すると、Microsoft Intune に登録されているデバイスで、指定する条件に基づいて電子メールやその他のサービスをセキュリティで保護できます。  
-
- **System Center Configuration Manager で管理され**、コンプライアンスが評価される PC の条件付きアクセスに関する詳細は、「[System Center Configuration Manager で管理されている PC の O365 サービスへのアクセスを管理する](../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md)」を参照してください。  
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
- 条件付きアクセスの一般的なフローは、次のようになります。  
+## <a name="conditional-access-in-system-center-configuration-manager"></a>Accesso condizionale in System Center Configuration Manager
+Usare l' **accesso condizionale** per proteggere la posta elettronica e altri servizi nei dispositivi registrati in Microsoft Intune, in base alle condizioni specificate.  
+
+ Per informazioni sull'**accesso condizionale nei computer gestiti con System Center Configuration Manager** e valutati per la conformità, vedere [Gestire l'accesso ai servizi di O365 per i PC gestiti da System Center Configuration Manager](../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
+
+
+ Lo schema seguente illustra come funziona l'accesso condizionale:  
 
  ![ConditionalAccess4](media/ConditionalAccess4.png)  
 
- 条件付きアクセスを使用すると、次のサービスへのアクセスを管理できます。  
+ Usare l'accesso condizionale per gestire l'accesso ai seguenti servizi:  
 
--   Microsoft Exchange On-premises  
+-   Microsoft Exchange locale  
 
 -   Microsoft Exchange Online  
 
--   Exchange Online Dedicated  
+-   Exchange Online dedicato  
 
 -   SharePoint Online  
 
@@ -49,133 +49,133 @@ ms.lasthandoff: 08/07/2017
 
 -   Dynamics CRM Online
 
- 条件付きアクセスを実装するには、Configuration Manager で次の 2 種類のポリシーを構成します。  
+ Per implementare l'accesso condizionale vengono configurati due tipi di criteri in Configuration Manager:  
 
--   **コンプライアンス ポリシー** 。ユーザー コレクションに展開できるオプションのポリシーで、次のような設定を評価します。  
+-   **I criteri di conformità** sono criteri facoltativi che è possibile distribuire alle raccolte dell'utente per valutare impostazioni come:  
 
-    -   パスコード  
+    -   Passcode  
 
-    -   暗号化  
+    -   Crittografia  
 
-    -   デバイスが脱獄またはルート化されているかどうか  
+    -   Se il dispositivo è jailbroken o rooted  
 
-    -   Configuration Manager または Intune ポリシーでデバイス上の電子メールを管理するかどうか  
+    -   Se la posta elettronica sul dispositivo è gestita da criteri di Configuration Manager o Intune  
 
-     **コンプライアンス ポリシーがデバイスに展開されていない場合、適用可能なすべての条件付きアクセス ポリシーでデバイスが準拠デバイスとして扱われます**。  
+     **Se non vengono distribuiti i criteri di conformità in un dispositivo, qualsiasi criterio di accesso condizionale considera il dispositivo conforme**.  
 
--   **条件付きアクセス ポリシー**。このポリシーは特定のサービス用に構成され、どの Azure Active Directory セキュリティ ユーザー グループまたは Configuration Manager ユーザー コレクションを対象とするか、などを定義します。  
+-   I **criteri di accesso condizionale** sono configurati per un particolare servizio e definiscono delle regole, ad esempio quali gruppi utenti di sicurezza di Azure Active Directory o raccolte utenti di Configuration Manager verranno usati come destinazione o per i quali viene applicata un'esenzione.  
 
-     Configuration Manager コンソールから、オンプレミスの Exchange 条件付きアクセス ポリシーを構成します。 ただし、Exchange Online または SharePoint Online のポリシーを構成する場合は、そのポリシーを構成するための Intune 管理コンソールが開きます。  
+     Configurare un criterio di accesso condizionale per Exchange locale dalla console di Configuration Manager. Tuttavia, quando si configura un criterio di Exchange Online o SharePoint Online, verrà visualizzata la console di amministrazione di Intune nella quale è possibile configurare il criterio.  
 
-     その他の Intune または Configuration Manager ポリシーとは異なり、条件付きアクセス ポリシーは展開しません。 その代わり、このポリシーを 1 回構成すると、すべての対象ユーザーに適用されます。  
+     A differenza degli altri criteri di Intune o Configuration Manager, i criteri di accesso condizionale non vengono distribuiti, ma configurati una sola volta prima di essere applicati a tutti gli utenti di destinazione.  
 
- 構成した条件をデバイスが満たしていない場合、デバイスの登録と、デバイスが準拠デバイスとなることを妨げている問題の修正を行うプロセスがユーザーに案内されます。  
+ Se i dispositivi non soddisfano le condizioni, l'utente viene guidato nel processo di registrazione del dispositivo e di risoluzione del problema che impedisce la conformità del dispositivo.  
 
-条件付きアクセスの使用を開始する**前に**、次の該当する**要件**を満たしていることを確認してください。  
+**Prima** di iniziare a usare l'accesso condizionale, verificare che i **requisiti** richiesti siano soddisfatti:  
 
-## <a name="requirements-for-exchange-online-using-the-shared-multi-tenant-environment"></a>Exchange Online (共有マルチテナント環境を使用) の要件
-Exchange Online への条件付きのアクセスでは、次を実行するデバイスがサポートされます。
--   Windows 8.1 以降 (Intune に登録されている場合)
--   Windows 7.0 または Windows 8.1 (ドメインに参加している場合)
--   Windows Phone 8.1 以降
--   iOS 7.1 以降
--   Android 4.0 以降、Samsung KNOX Standard 4.0 以降
+## <a name="requirements-for-exchange-online-using-the-shared-multi-tenant-environment"></a>Requisiti per Exchange Online (con un ambiente condiviso multi-tenant)
+L'accesso condizionale a Exchange Online supporta i dispositivi che eseguono:
+-   Windows 8.1 e versioni successive (se registrati in Intune)
+-   Windows 7.0 o Windows 8.1 (se aggiunto a un dominio)
+-   Windows Phone 8.1 e versioni successive
+-   iOS 7.1 e versioni successive
+-   Android 4.0 e versioni successive, Samsung KNOX Standard 4.0 e versioni successive
 
- **補足**:
--   デバイスをワークプレース参加させる必要があります。ワークプレース参加させると、デバイスは Azure Active Directory Device Registration Service (AAD DRS) に登録されます。<br />     
-- ドメインに参加した PC は、グループ ポリシーまたは MSI によって自動的に Azure Active Directory に登録されるはずです。
+ **Inoltre**:
+-   I dispositivi devono essere aggiunti all'area di lavoro, che registra il dispositivo con Azure Active Directory Device Registration Service (AAD DRS).<br />     
+- I PC aggiunti a un dominio devono essere registrati automaticamente in Azure Active Directory tramite i criteri di gruppo o MSI.
 
-  このトピックの「 **PC の条件付きアクセス** 」セクションに、PC の条件付きアクセスを有効にするためのすべての要件が説明されています。<br />     
-  AAD DRS は、Intune や Office 365 のお客様に対して自動的にアクティブ化されます。 ADFS Device Registration Service をデプロイ済みのお客様には、オンプレミスの Active Directory で登録されたデバイスは表示されません。
--   Exchange Online を含む Office 365 サブスクリプション (E3 など) を使用する必要があります。ユーザーには Exchange Online のライセンスが必要です。
--   オプションの **Exchange Server コネクタ**により、Configuration Manager が Microsoft Exchange Online に接続されて、Configuration Manager コンソールでデバイス情報を監視できるようになります (「[System Center Configuration Manager と Exchange によるモバイル デバイスの管理](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)」を参照してください)。
-コンプライアンス ポリシーまたは条件付きアクセス ポリシーを使用するうえでコネクタを使用する必要はありませんが、条件付きアクセスの影響を評価するためのレポートの実行に必要です。
+  La sezione **Accesso condizionale per i PC** in questo argomento descrive tutti i requisiti necessari per abilitare l'accesso condizionale per un PC.<br />     
+  Il servizio AAD DRS verrà attivato automaticamente per i clienti di Intune e Office 365. I clienti che hanno già distribuito il servizio di registrazione dei dispositivi di ADFS non visualizzeranno i dispositivi registrati in Active Directory locale.
+-   È necessario usare una sottoscrizione a Office 365 che include Exchange Online (ad esempio E3) e gli utenti devono avere una licenza per Exchange Online.
+-   Il **connettore Exchange Server** è facoltativo e consente di connettere Configuration Manager a Microsoft Exchange Online e di monitorare le informazioni dei dispositivi tramite la console di Configuration Manager (vedere [Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)).
+Non è necessario usare il connettore per i criteri di conformità o i criteri di accesso condizionale, ma è obbligatorio eseguire i report per valutare l'impatto dell'accesso condizionale.
 
-## <a name="requirements-for-exchange-online-dedicated"></a>Exchange Online Dedicated の要件
-Exchange Online Dedicated への条件付きのアクセスでは、次を実行するデバイスがサポートされます。
--   Windows 8 以降 (Intune に登録されている場合)
--   Windows 7.0 または Windows 8.1 (ドメインに参加している場合)
+## <a name="requirements-for-exchange-online-dedicated"></a>Requisiti per Exchange Online dedicato
+L'accesso condizionale di Exchange Online dedicato supporta i dispositivi che eseguono:
+-   Windows 8 e versioni successive (se registrati in Intune)
+-   Windows 7.0 o Windows 8.1 (se aggiunto a un dominio)
 
-  新しい Exchange Online 専用環境にあるテナント専用のドメイン参加 PC への条件付きアクセス
--   Windows Phone 8 以降
--   Exchange ActiveSync (EAS) 電子メール クライアントを使用する iOS デバイス
--   Android 4 以降
--   **従来の Exchange Online Dedicated 環境**のテナントの場合:    
+  Accesso condizionale ai PC aggiunti al dominio soltanto per i tenant del nuovo ambiente Exchange Online dedicato.
+-   Windows Phone 8 e versioni successive
+-   Dispositivi iOS che usano i client di posta elettronica di Exchange ActiveSync (EAS)
+-   Android 4 e versioni successive.
+-   Per i tenant nell'**ambiente legacy Exchange Online dedicato**:    
 
-  Configuration Manager を Microsoft Exchange On-premises に接続する **Exchange Server コネクタ**を使用する必要があります。 これにより、モバイル デバイスを管理して、条件付きアクセスを使用できるようになります (「[System Center Configuration Manager と Exchange によるモバイル デバイスの管理](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)」を参照してください)。
--   **新しい Exchange Online Dedicated 環境**のテナントの場合:     
-  オプションの **Exchange Server コネクタ**により、Configuration Manager が Microsoft Exchange Online に接続されて、デバイス情報を管理できるようになります (「[System Center Configuration Manager と Exchange によるモバイル デバイスの管理](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)」を参照してください)。 コンプライアンス ポリシーまたは条件付きアクセス ポリシーを使用するうえでコネクタを使用する必要はありませんが、条件付きアクセスの影響を評価するためのレポートの実行に必要です。  
+  È necessario usare il **connettore Exchange Server** che connette Configuration Manager a Microsoft Exchange locale. Ciò consente di gestire i dispositivi mobili e di abilitare l'accesso condizionale (vedere [Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)).
+-   Per i tenant nel **nuovo ambiente Exchange Online dedicato**:     
+  Il **connettore Exchange Server** facoltativo consente di connettere Configuration Manager a Microsoft Exchange Online e facilita la gestione delle informazioni dei dispositivi (vedere [Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)). Non è necessario usare il connettore per i criteri di conformità o i criteri di accesso condizionale, ma è obbligatorio eseguire i report per valutare l'impatto dell'accesso condizionale.  
 
-## <a name="requirements-for-exchange-on-premises"></a>Exchange On-premises の要件
-Exchange On-premises に対する条件付きアクセスでは、次のデバイスをサポートします。
--   Windows 8 以降 (Intune に登録されている場合)
--   Windows Phone 8 以降
--   iOS のネイティブ電子メール アプリ
--   Android 4 以降のネイティブ電子メール アプリ
--   Microsoft Outlook アプリはサポートされていません (Android および iOS)。
+## <a name="requirements-for-exchange-on-premises"></a>Requisiti per Exchange locale
+L'accesso condizionale a Exchange locale supporta:
+-   Windows 8 e versioni successive (se registrati in Intune)
+-   Windows Phone 8 e versioni successive
+-   App di posta elettronica nativa in iOS
+-   App di posta elettronica nativa in Android versione 4 o successiva
+-   L'app Microsoft Outlook non è supportata (Android e iOS).
 
-**補足**:
+**Inoltre**:
 
--  Exchange のバージョンは、Exchange 2010 以降である必要があります。 Exchange Server クライアント アクセス サーバー (CAS) アレイがサポートされています。
+-  La versione di Exchange deve essere Exchange 2010 o successiva. È supportato un array del server Accesso client di Exchange Server.
 
 > [!TIP]
-> Exchange 環境が CAS サーバー構成にある場合は、CAS サーバーのいずれかを指すようにオンプレミスの Exchange コネクタを構成する必要があります。
-- Configuration Manager を Microsoft Exchange On-premises に接続する **Exchange Server コネクタ**を使用する必要があります。 これにより、モバイル デバイスを管理して、条件付きアクセスを使用できるようになります (「[System Center Configuration Manager と Exchange によるモバイル デバイスの管理](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)」を参照してください)。
-  - 最新バージョンの **On-Premises Exchange Connector**を使用していることを確認してください。 オンプレミスの Exchange コネクタは、Configuration Manager コンソールから構成する必要があります。 詳細な手順の説明については、「[System Center Configuration Manager と Exchange によるモバイル デバイスの管理](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)」を参照してください。
-  - コネクタは、System Center Configuration Manager のプライマリ サイトにのみ構成する必要があります。</li><li>このコネクタは、Exchange CAS 環境をサポートします。 <br />        コネクタを構成する際には、Exchange CAS サーバーのいずれかと通信するように設定する必要があります。
+> Se l'ambiente di Exchange si trova in una configurazione con server CAS, sarà necessario configurare On-Premises Exchange Connector in modo che punti a uno dei server CAS.
+- È necessario usare il **connettore Exchange Server** che connette Configuration Manager a Microsoft Exchange locale. Ciò consente di gestire i dispositivi mobili e di abilitare l'accesso condizionale (vedere [Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)).
+  - Assicurarsi di usare la versione più recente di **Exchange Connector locale**. On-Premises Exchange Connector deve essere configurato tramite la console di Configuration Manager. Per una procedura dettagliata, vedere [Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).
+  - Il connettore deve essere configurato solo nel sito primario di System Center Configuration Manager.</li><li>Questo connettore supporta l'ambiente CAS di Exchange. <br />        Quando si configura il connettore, è necessario impostarlo in modo che comunichi con uno dei server CAS di Exchange.
 
-- Exchange ActiveSync は、証明書ベースの認証またはユーザーの資格情報のエントリで構成できます。
+- È possibile configurare Exchange ActiveSync con l'autenticazione basata su certificati o tramite l'immissione di credenziali utente.
 
 
-## <a name="requirements-for-skype-for-business-online"></a>Skype for Business Online の要件
-SharePoint Online への条件付きアクセスでは、次を実行するデバイスがサポートされます。
- -   iOS 7.1 以降
- -   Android 4.0 以降
- -   Samsung KNOX Standard 4.0 以降
+## <a name="requirements-for-skype-for-business-online"></a>Requisiti per Skype for Business Online
+L'accesso condizionale a SharePoint Online supporta i dispositivi che eseguono:
+ -   iOS 7.1 e versioni successive
+ -   Android 4.0 e versioni successive
+ -   Samsung KNOX Standard 4.0 o versioni successive
 
-**さらに**、Skype for Business Online の先進認証を有効にする必要があります。 この [接続フォーム](https://connect.microsoft.com/office/Survey/NominationSurvey.aspx?SurveyID=17299&ProgramID=8715) に必要事項を記入して、最新の認証プログラムに登録します。
+**Inoltre,** è necessario abilitare l'autenticazione moderna per Skype for Business Online. Compilare il [modulo di connessione](https://connect.microsoft.com/office/Survey/NominationSurvey.aspx?SurveyID=17299&ProgramID=8715) per effettuare la registrazione nel programma di autenticazione moderna.
 
-すべてのエンドユーザーが Skype for Business Online を使用している必要があります。 Skype for Business Online と Skype for Business オンプレミスの両方が含まれている展開の場合は、条件付きアクセス ポリシーはオンプレミスの展開を使用するエンドユーザーに適用されません。
+Tutti gli utenti finali devono usare Skype for Business Online. Se si ha una distribuzione con Skype for Business Online e Skype for Business locale, i criteri di accesso condizionale non verranno applicati agli utenti finali inclusi nella distribuzione locale.
 
-## <a name="requirements-for-sharepoint-online"></a>SharePoint Online の要件
-SharePoint Online への条件付きアクセスでは、次を実行するデバイスがサポートされます。
- -   Windows 8.1 以降 (Intune に登録されている場合)
- -   Windows 7.0 または Windows 8.1 (ドメインに参加している場合)
- -   Windows Phone 8.1 以降
- -   iOS 7.1 以降
- -   Android 4.0 以降、Samsung KNOX Standard 4.0 以降
+## <a name="requirements-for-sharepoint-online"></a>Requisiti per SharePoint Online
+L'accesso condizionale a SharePoint Online supporta i dispositivi che eseguono:
+ -   Windows 8.1 e versioni successive (se registrati in Intune)
+ -   Windows 7.0 o Windows 8.1 (se aggiunto a un dominio)
+ -   Windows Phone 8.1 e versioni successive
+ -   iOS 7.1 e versioni successive
+ -   Android 4.0 e versioni successive, Samsung KNOX Standard 4.0 e versioni successive
 
- **補足**:
- -   デバイスをワークプレース参加させる必要があります。ワークプレース参加させると、デバイスは Azure Active Directory Device Registration Service (AAD DRS) に登録されます。
+ **Inoltre**:
+ -   I dispositivi devono essere aggiunti all'area di lavoro, che registra il dispositivo con Azure Active Directory Device Registration Service (AAD DRS).
 
- ドメインに参加した PC は、グループ ポリシーまたは MSI によって自動的に Azure Active Directory に登録されるはずです。 このトピックの「 **PC の条件付きアクセス** 」セクションに、PC の条件付きアクセスを有効にするためのすべての要件が説明されています。
+ I PC aggiunti a un dominio devono essere registrati automaticamente in Azure Active Directory tramite i criteri di gruppo o MSI. La sezione **Accesso condizionale per i PC** in questo argomento descrive tutti i requisiti necessari per abilitare l'accesso condizionale per un PC.
 
- AAD DRS は、Intune や Office 365 のお客様に対して自動的にアクティブ化されます。 ADFS Device Registration Service をデプロイ済みのお客様には、オンプレミスの Active Directory で登録されたデバイスは表示されません。
- -   SharePoint Online サブスクリプションが必要です。ユーザーには、SharePoint Online のライセンスが必要です。
+ Il servizio AAD DRS verrà attivato automaticamente per i clienti di Intune e Office 365. I clienti che hanno già distribuito il servizio di registrazione dei dispositivi di ADFS non visualizzeranno i dispositivi registrati in Active Directory locale.
+ -   Una sottoscrizione a SharePoint Online è obbligatoria e gli utenti devono avere una licenza per SharePoint Online.
 
- ### <a name="conditional-access-for-pcs"></a>PC の条件付きアクセス
+ ### <a name="conditional-access-for-pcs"></a>Accesso condizionale per i PC
 
- PC が Office デスクトップ アプリケーションを実行して **Exchange Online** と **SharePoint Online** にアクセスする場合、次の要件を満たす PC に対して条件付きアクセスをセットアップできます。
- -   Windows 7.0 または Windows 8.1 を実行している PC であること。
- -   ドメインに参加しているか、ドメイン対応の PC であること。
+ È possibile configurare l'accesso condizionale per i PC che eseguono le applicazioni desktop di Office al fine di accedere a **Exchange Online** e **SharePoint Online** , se i PC soddisfano i requisiti seguenti:
+ -   Il PC deve eseguire Windows 7.0 o Windows 8.1.
+ -   Il PC deve essere aggiunto a un dominio oppure conforme.
 
- 準拠するためには、PC は Intune に登録済みで、ポリシーに準拠している必要があります。
+ Affinché sia ritenuto conforme, il PC deve essere registrato in Intune e rispettare i criteri.
 
- ドメインに参加する PC の場合、Azure Active Directory に [デバイスを自動的に登録](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/) するように設定する必要があります。
- -   [Office 365 の最新の認証が有効化](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/)されていて、最新の Office 更新プログラムがすべて適用されている必要があります。<br />     最新の認証により、Active Directory Authentication Library (ADAL) ベースのサインインが Office 2013 Windows クライアントに導入され、 **多要素認証**および **証明書ベースの認証**などのより強力なセキュリティが有効になります。
- -   最新ではない認証プロトコルをブロックするように ADFS 要求規則を設定します。  
+ Per i PC aggiunti a un dominio, è necessario impostare il dispositivo in modo che [venga registrato automaticamente](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/) con Azure Active Directory.
+ -   [L'autenticazione moderna di Office 365 deve essere attivata](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/)ed è necessario disporre di tutti gli aggiornamenti di Office più recenti.<br />     L'autenticazione moderna garantisce accesso basato su Active Directory Authentication Library (ADAL) ai client di Office 2013 Windows e offre migliore opzioni di sicurezza, ad esempio, l' **autenticazione a più fattori**e l' **autenticazione basata sui certificati**.
+ -   Configurare le regole delle attestazioni ADFS per bloccare i protocolli di autenticazione non moderni.  
 
-## <a name="next-steps"></a>次のステップ  
- 必要なシナリオのコンプライアンス ポリシーと条件付きアクセス ポリシーを構成する方法については、次のトピックを参照してください。  
+## <a name="next-steps"></a>Passaggi successivi  
+ Leggere i seguenti argomenti per informazioni su come configurare i criteri di conformità e i criterio di accesso condizionale per lo scenario richiesto:  
 
--   [System Center Configuration Manager でのデバイス コンプライアンス ポリシーの管理](../../protect/deploy-use/device-compliance-policies.md)  
+-   [Gestire i criteri di conformità del dispositivo in System Center Configuration Manager](../../protect/deploy-use/device-compliance-policies.md)  
 
--   [System Center Configuration Manager でのメール アクセスの管理](../../protect/deploy-use/manage-email-access.md)  
+-   [Gestire l'accesso alla posta elettronica in System Center Configuration Manager](../../protect/deploy-use/manage-email-access.md)  
 
--   [System Center Configuration Manager での SharePoint Online アクセスの管理](../../protect/deploy-use/manage-sharepoint-online-access.md)  
+-   [Gestire l'accesso a SharePoint Online in System Center Configuration Manager](../../protect/deploy-use/manage-sharepoint-online-access.md)  
 
--   [Skype for Business Online のアクセスの管理](../../protect/deploy-use/manage-skype-for-business-online-access.md)  
+-   [Gestire l'accesso a Skype for Business Online](../../protect/deploy-use/manage-skype-for-business-online-access.md)  
 
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>Vedere anche  
 
- [System Center Configuration Manager のコンプライアンス設定を使ってみる](../../compliance/get-started/get-started-with-compliance-settings.md)
+ [Introduzione alle impostazioni di conformità in System Center Configuration Manager](../../compliance/get-started/get-started-with-compliance-settings.md)

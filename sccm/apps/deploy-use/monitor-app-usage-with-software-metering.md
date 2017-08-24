@@ -1,5 +1,5 @@
 ---
-title: "ソフトウェア使用状況測定でアプリの使用状況を監視する | Microsoft Docs"
+title: Monitorare l'uso dell'app con la misurazione del software | Microsoft Docs
 description: 
 ms.custom: na
 ms.date: 10/06/2016
@@ -17,162 +17,162 @@ manager: angrobe
 ms.openlocfilehash: eddf20bebd80028336503957dfc4c3d1dbbb23f2
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="software-metering-in-system-center-configuration-manager"></a>System Center Configuration Manager のソフトウェア使用状況測定
+# <a name="software-metering-in-system-center-configuration-manager"></a>Controllo del software in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-このトピックには、System Center Configuration Manager のソフトウェア使用状況測定を使用するときに実行する可能性がある、すべての操作の参照が含まれています。
+Questo argomento contiene informazioni di riferimento per tutte le operazioni eseguibili quando si usa il controllo del software di System Center Configuration Manager.
 
 > [!IMPORTANT]
->  ソフトウェア使用状況測定は、ファイル名の末尾が **.exe**の Windows PC デスクトップ アプリを監視するときに使用されます。 Windows モダン アプリ (Windows 8 で使用されるアプリなど) は監視されません。
+>  Il controllo del software viene usato per monitorare le app desktop in PC Windows con un nome di file che termina con **.exe**. La misurazione del software non consente di monitorare app di Windows moderne, come quelle usate da Windows 8.
 
-##  <a name="prerequisites-for-software-metering"></a>ソフトウェア使用状況測定の前提条件
-ソフトウェア使用状況測定には外部依存関係はありません。依存関係は製品内にのみ存在します。
+##  <a name="prerequisites-for-software-metering"></a>Prerequisiti per il controllo del software
+Il controllo del software non ha dipendenze esterne, ma solo dipendenze all'interno del prodotto.
 
-|依存関係|説明|
+|Dipendenza|Altre informazioni|
 |----------------|----------------------|
-|ソフトウェア使用状況測定のクライアント設定|ソフトウェア使用状況測定を使用するには、クライアント設定 **[クライアントのソフトウェア使用状況の測定を有効にする]** が有効で、コンピューターに展開されている必要があります。 ソフトウェア使用状況測定の設定を階層内のすべてのコンピューターに展開したり、カスタム設定をコンピューター グループに展開したりできます。 このトピックの「**ソフトウェア使用状況測定の構成**」を参照してください。|
-|レポート サービス ポイント|ソフトウェア使用状況の測定レポートを表示するには、事前にレポート サービス ポイントを構成する必要があります。 詳細については、「[System Center Configuration Manager のレポート](../../core/servers/manage/reporting.md)」を参照してください。|
+|Impostazioni client per il controllo del software|Per usare il controllo del software, l'impostazione client **Abilitare controllo software nei client** deve essere abilitata e distribuita nei computer. È possibile distribuire le impostazioni di controllo del software a tutti i computer nella gerarchia oppure distribuire impostazioni personalizzate a gruppi di computer. Vedere **Configurare il controllo del software** in questo argomento.|
+|Punto di Reporting Services.|Prima di poter visualizzare i report di controllo del software, è necessario configurare un punto di Reporting Services. Per altre informazioni, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).|
 
-##  <a name="configure-software-metering"></a>ソフトウェア使用状況測定の構成
- この手順に従って、ソフトウェア使用状況の測定に既定のクライアント設定を構成し、階層内のすべてのコンピューターに適用します。 これらの設定を一部のコンピューターのみに適用する場合は、カスタム クライアント デバイス設定を作成して、ソフトウェア使用状況測定を使用するコンピューターを含むコレクションに展開します。 カスタムのデバイス設定の作成方法について詳しくは、「[Configure client settings](../../core/clients/deploy/configure-client-settings.md)」 (クライアント設定の構成) を参照してください。
+##  <a name="configure-software-metering"></a>Configurare il controllo del software
+ Questa procedura consente di configurare le impostazioni client predefinite per il controllo del software e applicarle a tutti i computer nella gerarchia. Per applicare queste impostazioni solo ad alcuni computer, creare un'impostazione client di dispositivo personalizzata e distribuirla in una raccolta contenente i computer in cui si vuole usare il controllo del software. Per altre informazioni su come creare le impostazioni personalizzate del dispositivo, vedere [Configurare le impostazioni client](../../core/clients/deploy/configure-client-settings.md).
 
-1.  Configuration Manager コンソールで、**[管理]** > **[クライアント設定]** > **[既定のクライアント設定]**の順にクリックします。
+1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Impostazioni client** > **Impostazioni client predefinite**.
 
-2.  **[ホーム]** タブの **[プロパティ]** グループで、 **[プロパティ]**をクリックします。
+2.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.
 
-3.  **既定の設定の** ダイアログ ボックスで、をクリックして **ソフトウェア使用状況測定**です。
+3.  Nella finestra di dialogo **Impostazioni predefinite** fare clic su **Controllo del software**.
 
-4.  [デバイスの設定] **** 一覧で、次を構成します。
+4.  Nell'elenco **Impostazioni dispositivo** configurare le impostazioni seguenti:
 
-    -   **クライアントのソフトウェア使用状況の測定を有効にする**: **[True]** を選択して、ソフトウェア使用状況測定を有効にします。
+    -   **Abilitare controllo software nei client**: selezionare **True** per abilitare il controllo del software.
 
-    -   **[データ コレクション スケジュール]**:どのくらいの頻度を構成するクライアント コンピューターからソフトウェア使用状況データを収集します。 既定値を使用してすべて **7 日間**  をクリックしてまたは **スケジュール** カスタム スケジュールを指定します。
+    -   **Pianifica raccolta dati**: configurare la frequenza con cui verranno raccolti i dati dal controllo del software nei computer client. Usare il valore predefinito **7 giorni** oppure fare clic su **Pianifica** per configurare una pianificazione personalizzata.
 
-5.  [OK] **** をクリックして [既定の設定] **** ダイアログ ボックスを閉じます。
+5.  Fare clic su **OK** per chiudere la finestra di dialogo **Impostazioni dispositivo** .
 
- クライアント コンピューターは、次にクライアント ポリシーをダウンロードするときに、これらの設定で構成されます。 1 つのクライアントのポリシーの取得を開始する場合は、「[Manage clients](../../core/clients/manage/manage-clients.md)」 (クライアントの管理) を参照してください。
+ I computer client vengono configurati con queste impostazioni al successivo download dei criteri client. Per iniziare il recupero dei criteri per un singolo client, vedere [Gestire i client](../../core/clients/manage/manage-clients.md).
 
-##  <a name="create-software-metering-rules"></a>ソフトウェア使用状況測定規則の作成
- ソフトウェア使用状況測定規則の作成ウィザードを使って Configuration Manager サイトの新しいソフトウェア使用状況測定規則を作成します。
+##  <a name="create-software-metering-rules"></a>Creare regole di controllo software
+ Usare la Creazione guidata regola controllo software per creare una nuova regola di controllo software per il sito di Configuration Manager.
 
-1.  Configuration Manager コンソールで、**[資産とコンプライアンス]** > **[ソフトウェア使用状況の測定]** の順にクリックします。
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Controllo software**.
 
-3.  **ホーム** ] タブで、 **作成** グループで、[ **ソフトウェア使用状況測定規則の作成**です。
+3.  Nel gruppo **Crea** della scheda **Home** fare clic su **Crea regola di controllo software**.
 
-4.  ソフトウェア使用状況測定規則の作成ウィザードの **[全般]** ページで、次の情報を指定します。
+4.  Nella pagina **Generale** della Creazione guidata regola controllo software specificare le informazioni seguenti:
 
-    -   名前 - ソフトウェア使用状況測定規則の名前。****  一意でわかりやすい名前にする必要があります。
-
-        > [!NOTE]
-        >  ソフトウェア メータリングの規則は、規則に含まれるファイル名が異なるのであれば同じ名前を使用できます。
-
-    -   ファイル名 - 使用状況を測定するプログラム ファイルの名前。****  クリックして **参照** を表示する、 **開く**  ダイアログ ボックスを使用するプログラム ファイルを選択できます。
+    -   **Nome** - Nome della regola di controllo software. Deve essere univoco e descrittivo.
 
         > [!NOTE]
-        >  [ファイル名] フィールドに実行可能なファイル名を入力しても、そのファイルが存在するかどうか、または必要なヘッダー情報がそのファイルに含まれているかどうかはチェックされません。 **** なるべく、[参照] ボタンを使用して使用状況を測定する実行可能ファイルを指定するようにしてください。 ****
-        >
-        >  ファイル名にはワイルドカード文字は使用できません。
-        >
-        >  [元のファイル名] に値を指定している場合、このボックスは任意指定です。 ****
+        >  Le regole di controllo software possono avere lo stesso nome se il nome di file contenuto nelle regole è diverso.
 
-    -   元のファイル名 - 使用状況を測定する実行可能なファイルの名前。****  この名前は、ファイル名そのものではなくファイルのヘッダーに含まれる情報と一致するので、名前を変更した実行可能ファイルを元の名前で使用状況測定する場合に役立ちます。
+    -   **Nome file** - Nome del file di programma da controllare. È possibile fare clic su **Sfoglia** per visualizzare la finestra di dialogo **Apri** in cui è possibile selezionare il file di programma da usare.
 
         > [!NOTE]
-        >  元のファイル名にはワイルドカード文字は使用できません。
+        >  Se si digita il nome del file eseguibile nella casella **Nome file** , non vengono effettuati controlli per determinare se il file esiste già o se contiene le informazioni di intestazione necessarie. Quando possibile, fare clic su **Sfoglia** e selezionare il file eseguibile da controllare.
         >
-        >  [ファイル名] に値を指定している場合、このボックスは任意指定です。 ****
+        >  I caratteri jolly non sono consentiti nel nome di file.
+        >
+        >  Questa casella è facoltativa se si specifica un valore per **Nome file originale** .
 
-    -   バージョン -使用状況を測定する実行可能ファイルのバージョン。****  ワイルドカード文字 (*) を任意の文字列の代わりに使用できます。または、ワイルドカード文字 (?) を任意の 1 文字の代わりに使用できます。 すべてのバージョンの実行可能ファイルの使用状況を測定するには、既定値 (\*) を使用します。
+    -   **Nome file originale** - Nome del file eseguibile da controllare. Questo nome corrisponde alle informazioni nell'intestazione del file, e non al nome del file stesso, quindi può essere utile nei casi in cui il file eseguibile è stato rinominato ma si vuole controllarlo in base al nome originale.
 
-    -   言語 - 使用状況を測定する実行可能ファイルの言語。****  既定値は使用しているオペレーティング システムの現在の設定言語です。 使用状況を測定する実行可能ファイルを [参照] ボタンをクリックして選択する場合、そのファイルのヘッダーに言語情報が存在すれば、このボックスは自動的に入力されます。 **** ファイルのすべての言語バージョンの使用状況を測定するには、ドロップダウン リストで [任意] を選択します。 ****
+        > [!NOTE]
+        >  I caratteri jolly non sono consentiti nel nome di file originale.
+        >
+        >  Questa casella è facoltativa se si specifica un valore per **Nome file** .
 
-    -   説明 - ソフトウェア使用状況測定規則の説明 (任意指定)。**** 
+    -   **Versione** - Versione del file eseguibile da controllare. È possibile usare il carattere jolly (*) per rappresentare qualsiasi stringa di caratteri e il carattere (?) per rappresentare qualsiasi carattere singolo. Per controllare tutte le versioni di un file eseguibile, usare il valore predefinito (\*).
 
-    -   **このソフトウェアの使用状況測定規則を次のクライアントに適用** – 使用状況測定規則で指定されたサイトに割り当てられているクライアントを階層内のすべてのクライアントにソフトウェアを適用するかどうかを **サイト**  ボックスの一覧です。
+    -   **Lingua** - Lingua del file eseguibile da controllare. Il valore predefinito corrisponde alle impostazioni locali correnti del sistema operativo in uso. Se si seleziona un file eseguibile da controllare facendo clic sul pulsante **Sfoglia** , questa casella viene compilata automaticamente se sono presenti informazioni sulla lingua nell'intestazione del file. Per controllare tutte le versioni localizzate di un file, selezionare **Qualsiasi** nell'elenco a discesa.
 
-5.  続行するには、[ **次へ**] をクリックします。
+    -   **Descrizione** - Descrizione facoltativa della regola di controllo software.
 
-6.  設定を確認して確定し、ウィザードを完了してソフトウェア使用状況測定規則を作成します。 新しいソフトウェア メータリングの規則が表示される、 **ソフトウェア使用状況測定** 内のノード、 **資産とコンプライアンス** ワークスペース。
+    -   **Applica questa regola di controllo software ai client seguenti** - Selezionare se si desidera applicare la regola di controllo software a tutti i client nella gerarchia o ai client assegnati al sito specificato nell'elenco **Sito** .
 
-##  <a name="configure-automatic-software-metering-rules"></a>自動ソフトウェア使用状況測定規則の構成
- Configuration Manager では、ソフトウェア使用状況の測定を構成して、サイト データベースに保持されている最新の利用状況インベントリ データから無効になったソフトウェア使用状況測定規則を自動的に生成できます。 このインベントリ データを構成して、指定した割合のコンピューターで使用されるアプリケーションのみに測定規則が作成されるように構成できます。 サイトで許可する自動的に生成されるソフトウェア メータリング規則の最大数も指定できます。
+5.  Per continuare, fare clic su **Avanti**.
+
+6.  Verificare e confermare le impostazioni, quindi completare la procedura guidata per creare la regola di controllo software. La nuova regola di controllo software viene visualizzata nel nodo **Controllo del software** dell'area di lavoro **Asset e conformità** .
+
+##  <a name="configure-automatic-software-metering-rules"></a>Configurare regole di controllo software automatiche
+ È possibile configurare il controllo del software in Configuration Manager per generare automaticamente regole di controllo software disabilitate dai dati di inventario di utilizzo recenti disponibili nel database del sito. È possibile configurare questi dati di inventario in modo che le regole di controllo software vengano create solo per le applicazioni usate in una percentuale specificata di computer. È anche possibile specificare il numero massimo di regole di controllo software generate automaticamente consentite nel sito.
 
 > [!NOTE]
->  既定では、自動的に作成されたソフトウェア使用状況測定規則は、無効になっています。 これらの規則から使用状況データを収集するには、規則を有効にする必要があります。
+>  Per impostazione predefinita, le regole di controllo software create automaticamente sono disabilitate. Prima di poter iniziare a raccogliere dati di utilizzo con queste regole, è necessario abilitarle.
 
-1.  Configuration Manager コンソールで、**[資産とアプライアンス]** > **[ソフトウェア使用状況の測定]** の順にクリックしてから、**[ホーム]** タブの **[設定]** グループで、**[ソフトウェア使用状況測定規則のプロパティ]** をクリックします。
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Controllo software** e quindi nella scheda **Home** fare clic su **Proprietà di controllo software** nel gruppo **Impostazioni**.
 
-3.  [ソフトウェア使用状況測定規則のプロパティ] をクリックして、次を構成します。 ****
+3.  Nella finestra di dialogo **Proprietà di controllo software** configurare le impostazioni seguenti:
 
-    -   **[データの保管日数]** - ソフトウェア使用状況測定規則で生成されたデータがサイト データベースに保持される期間を指定します。 既定値は **90** 日です。
+    -   **Conservazione dati (in giorni)** - Specifica la quantità di tempo per cui vengono conservati nel database del sito i dati generati dalle regole di controllo software. Il valore predefinito è **90** giorni.
 
-    -   [ **最新の使用状況インベントリ データから、無効にした使用状況測定規則を自動的に作成する**] を有効にします。
+    -   Abilitare l'opzione **v**.
 
-    -   **[階層内でプログラムを使用する必要のあるコンピューターの割合 (%) が次の値に達すると、ソフトウェア使用状況測定規則が自動的に作成されるようにする]** - 既定値は [10] パーセントです。 ****
+    -   **Specificare la percentuale di computer nella gerarchia che deve utilizzare un programma prima che venga creata automaticamente una regola di controllo software** - Il valore predefinito è **10** %.
 
-    -   **[階層内にあるソフトウェア使用状況測定規則が次の数に達すると、規則の自動作成を無効にする]** - 既定値は [100] 規則です。 ****
+    -   **Specificare il numero di regole di controllo software che deve essere superato nella gerarchia prima che venga disabilitata la creazione automatica delle regole** - Il valore predefinito è **100** regole.
 
-4.  [] **** をクリックして [既定の設定] **** ダイアログ ボックスを閉じます。
+4.  Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà di controllo software** .
 
-##  <a name="manage-software-metering-rules"></a>ソフトウェア使用状況測定規則の管理
- **資産とコンプライアンス** ワークスペースで、 **ソフトウェア使用状況測定**, 使用状況測定規則を管理するソフトウェアを選択し、管理タスクを選択しています。
+##  <a name="manage-software-metering-rules"></a>Gestire le regole di controllo software
+ Nell'area di lavoro **Asset e conformità** selezionare **Controllo del software**, selezionare la regola di controllo software da gestire e quindi selezionare un'attività di gestione.
 
- 次の表で、管理タスクに関する詳細と、各タスクを選択する前に必要となる追加情報について説明します。
+ Per altre informazioni sulle attività di gestione che potrebbero richiedere alcune informazioni prima della relativa selezione, usare la seguente tabella.
 
-|管理タスク|説明|
+|Attività di gestione|Dettagli|
 |---------------------|-------------|
-|**有効化**<br /><br /> **無効化**|ソフトウェア使用状況測定規則の有効化または無効化 この設定はに従ってクライアント コンピュータにダウンロード、 **クライアント ポリシーのポーリング間隔** で、 **クライアント ポリシー** (既定では 60 分ごと) のクライアント設定のセクションです。<br /><br /> 「[Configure client settings](../../core/clients/deploy/configure-client-settings.md)」 (クライアント設定の構成) を参照してください。|
+|**Abilita**<br /><br /> **Disabilita**|Abilita o disabilita una regola di controllo software. Questa impostazione viene scaricata nei computer client in base all'intervallo specificato in **Intervallo di polling dei criteri client** nella sezione **Criteri client** delle impostazioni del client (per impostazione predefinita, ogni 60 minuti).<br /><br /> Vedere [Configurare le impostazioni client](../../core/clients/deploy/configure-client-settings.md).|
 
-##  <a name="monitor-software-metering"></a>ソフトウェア使用状況測定の監視
- Configuration Manager のソフトウェア使用状況の測定機能には、ソフトウェア使用状況測定操作に関する情報を監視できる複数の組み込みレポートが含まれています。 これらのレポートは、 **ソフトウェア使用状況測定**に分類されています。
+##  <a name="monitor-software-metering"></a>Monitorare il controllo del software
+ Il controllo del software in Configuration Manager include vari report incorporati che consentono di monitorare le informazioni sulle operazioni di controllo del software. Tali report dispongono della categoria report di **Controllo del software**.
 
- Configuration Manager でのレポートの構成方法に関して詳しくは、「[System Center Configuration Manager のレポート](../../core/servers/manage/reporting.md)」を参照してください。
+ Per altre informazioni sulle modalità di configurazione dei report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).
 
- また、ソフトウェア使用状況の測定機能によって Configuration Manager データベースに格納されたデータを使用して、クエリとコレクションを作成することもできます。
+ È anche possibile creare query e raccolte in base ai dati archiviati nel database di Configuration Manager dal controllo del software.
 
- Configuration Manager のコレクションについて詳しくは、「[コレクションの概要](/sccm/core/clients/manage/collections/introduction-to-collections)」を参照してください。
+ Per altre informazioni sulle raccolte in Configuration Manager, vedere [Introduzione alle raccolte](/sccm/core/clients/manage/collections/introduction-to-collections).
 
- Configuration Manager のクエリについて詳しくは、「[クエリの概要](/sccm/core/servers/manage/introduction-to-queries)」を参照してください。
+ Per altre informazioni sulle query in Configuration Manager, vedere [Introduzione alle query](/sccm/core/servers/manage/introduction-to-queries).
 
-##  <a name="security-and-privacy-for-software-metering"></a>ソフトウェア使用状況測定のセキュリティとプライバシー
+##  <a name="security-and-privacy-for-software-metering"></a>Sicurezza e privacy per il controllo del software
 
-### <a name="security-issues-for-software-metering"></a>ソフトウェア使用状況の測定に関するセキュリティの問題
- 攻撃者は、ソフトウェア使用状況測定のクライアント設定が無効化されていても管理ポイントが受け付けてしまう、無効なソフトウェア使用状況測定情報を Configuration Managerに送ってくる可能性があります。 これにより多くの使用状況測定規則が階層内全体でレプリケートされ、ネットワークおよび Configuration Manager サイト サーバーでサービス拒否攻撃を引き起こす可能性があります。
+### <a name="security-issues-for-software-metering"></a>Problemi di sicurezza per il controllo del software
+ Un utente malintenzionato potrebbe inviare informazioni di controllo del software non valide a Configuration Manager e tali informazioni verranno accettate dal punto di gestione anche quando l'impostazione del client di controllo del software è disabilitata. Ciò potrebbe comportare la replica di un numero elevato di regole di controllo in tutta la gerarchia, causando un attacco Denial of Service nella rete e nei server del sito di Configuration Manager.
 
- 攻撃者が無効なソフトウェア使用状況測定データを作成できるため、ソフトウェア使用状況測定情報は必ず正しいと考えないでください。
+ Poiché un utente malintenzionato può creare dati di controllo del software non validi, non considerare autorevoli le informazioni di controllo del software.
 
- ソフトウェア使用状況の測定は、クライアント設定として既定で有効になっています。
+ Il controllo del software è abilitato per impostazione predefinita come impostazione client.
 
-###  <a name="privacy-information-for-software-metering"></a>ソフトウェア使用状況の測定に関するプライバシー情報
- ソフトウェア メータリングにより、クライアント コンピューターでのアプリケーションの使用状況が監視されます。 既定では、ソフトウェア使用状況の測定は有効になっています。 どのアプリケーションの使用状況を監視するかを構成する必要があります。 使用状況測定情報は Configuration Manager データベースに格納されます。 情報は管理ポイントへの転送中に暗号化されますが、暗号化された形式で Configuration Manager データベースに格納されるわけではありません。
+###  <a name="privacy-information-for-software-metering"></a>Informazioni sulla privacy per il controllo del software
+ Il controllo software esegue il monitoraggio dell'utilizzo delle applicazioni nei computer client. Il controllo del software è abilitato per impostazione predefinita. È necessario configurare le applicazioni da controllare. Le informazioni di controllo del software sono archiviate nel database di Configuration Manager. Le informazioni vengono crittografate durante il trasferimento a un punto di gestione, ma non vengono archiviate in forma crittografata nel database di Configuration Manager.
 
- この情報は、サイト メンテナンス タスクによって削除されるまで、データベースに保存されます。 **期限切れのソフトウェア使用状況測定データの削除** (5 日ごと) および **期限切れのソフトウェア メータリング概要データの削除** (270 日ごと)。 削除間隔は構成できます。 使用状況測定情報がマイクロソフトに送信されることはありません。
+ Le informazioni vengono conservate nel database fino alla relativa eliminazione nell'ambito delle attività di manutenzione **Elimina dati di controllo software obsoleti** (ogni 5 giorni) ed **Elimina dati di riepilogo di controllo software obsoleti** (ogni 270 giorni). È possibile configurare l'intervallo di eliminazione. Le informazioni relative al controllo non vengono inviate a Microsoft.
 
- ソフトウェア使用状況の測定を構成する前に、プライバシー要件について検討してください。
+ Prima di configurare il controllo del software, considerare i requisiti sulla privacy.
 
-## <a name="example-scenario-for-using-software-metering"></a>ソフトウェア使用状況測定の使用のシナリオ例
- このセクションでは、次のビジネス要件の解決に役立つソフトウェア使用状況測定規則の例を作成します。
+## <a name="example-scenario-for-using-software-metering"></a>Scenario di esempio per l'uso della misurazione del software
+ In questa sezione si creerà un regola di misurazione del software che consente di risolvere i dubbi sui requisiti aziendali seguenti:
 
--   社内にある特定のアプリのコピーの数を調べる
+-   Determinare il numero di copie di una particolare app presenti nell'azienda
 
--   アプリケーションの未使用のコピーを検出する
+-   Individuare le eventuali copie non utilizzate di un'app
 
--   特定のアプリケーションを定期的に使用しているユーザーを調べる
+-   Determinare quali utenti usano regolarmente una particolare app
 
- Woodgrove Bank では、標準のオフィス生産性スイートとして Microsoft Office 2010 を導入しました。 しかし、レガシ アプリケーションをサポートするために、一部のコンピューターでは引き続き Microsoft Office Word 2003 を実行する必要があります。 IT 部門は、レガシ アプリケーションが使用されなくなった場合に、これらの Word 2003 を削除することによって、サポートおよびライセンス管理のコストを削減したいと思っています。 また、ヘルプ デスクも、レガシ アプリケーションを使用しているユーザーを特定したいと思っています。
+ Woodgrove Bank ha distribuito Microsoft Office 2010 come famiglia standard di prodotti di produttività per l'ufficio. Per supportare un'applicazione legacy, tuttavia, alcuni computer devono continuare a eseguire Microsoft Office Word 2003. Il reparto IT vuole ridurre i costi di licenza e supporto rimuovendo le copie di Word 2003, se l'applicazione legacy non viene più usata. Anche l'help desk vuole identificare gli utenti che usano l'applicazione legacy.
 
- John は Woodgrove Bank の IT システム マネージャーです。Configuration Manager でソフトウェア使用状況測定を使用して、これらのビジネス目標を達成します。 彼は次の操作を実行します。
+ Giorgio è responsabile dei sistemi IT di Woodgrove Bank e usa il controllo del software in Configuration Manager per raggiungere questi obiettivi aziendali. Esegue le azioni seguenti:
 
-- John は、ソフトウェア使用状況測定の前提条件を確認し、レポート サービス ポイントがインストールされていて機能していることを確認します。
-- ソフトウェア使用状況測定の既定のクライアント設定を構成します。<br>ソフトウェア使用状況測定を有効にし、7 日に 1 回という既定のデータ コレクション スケジュールを使用します。<br>John は、ソフトウェア インベントリのクライアント設定 **[これらのファイルの種類をインベントリ対象とする]**を構成して、ソフトウェア インベントリが、拡張子 .exe を持つファイルに対してインベントリを実行するように構成します。<br>レガシ アプリケーションを監視するために、 **woodgrove.exe**という名前の新しいソフトウェア メータリング規則を追加します。
-- 7 日後、クライアント コンピューターによって **woodgrove.exe** 実行可能ファイルの使用状況データのレポートが開始されます。
-- John は、Configuration Manager レポートの **[メータリングされたソフトウェア プログラムすべてのインストール ベース]** を使用して、どのコンピューターにアプリケーション **woodgrove.exe** がロードされたのかを調べます。
-- 6 か月後、 Woods は、ソフトウェア使用状況測定規則と過去 6 か月以内の日付を指定して、[指定した日以降、インストール済みのメータリングされたプログラムが実行されていないコンピューター] レポートを実行します。 **** このレポートでは、6 か月以内にこのプログラムを実行しなかった 120 台のコンピューターが特定されます。
-- John は、特定のコンピューターでレガシ アプリケーションが不要であることを確認するためにさらにいくつかの確認を行います。 その後、レガシ アプリケーションおよび Word 2003 のコピーをこれらのコンピューターからアンインストールします。<br>John は、レポート " **メータリングされた特定ソフトウェア プログラムを実行しているユーザー** " を実行し、レガシ アプリケーションを使用し続けているユーザーのリストをヘルプ デスクに提供します。
-- ソフトウェア使用状況測定レポートを週次で確認し続け、必要に応じて改善策を取ります。
+- Giorgio verifica i prerequisiti per la misurazione del software e conferma che il punto di Reporting Services è installato e funzionante.
+- Giorgio configura le impostazioni client predefinite per la misurazione del software:<br>Abilita la misurazione del software e usa la pianificazione di raccolta dati predefinita, una volta ogni sette giorni.<br>Configura l'inventario software in modo da eseguire l'inventario dei file con estensione exe, configurando l'impostazione dell'agente client inventario software **Tipi di file da includere nell'inventario**.<br>Aggiunge una nuova regola di misurazione del software, denominata **woodgrove.exe**, per monitorare l'applicazione legacy.
+- Giorgio aspetta sette giorni, dopo di che i computer client iniziano a inviare report sui dati di utilizzo per il file eseguibile **woodgrove.exe** .
+- Giorgio usa il report di Configuration Manager **Installare la base per tutti i programmi di controllo software** per visualizzare i computer in cui è caricata l'applicazione **woodgrove.exe**.
+- Dopo sei mesi, Giorgio esegue il report **Computer che hanno installato un programma di controllo ma non hanno eseguito il programma da una data specificata**, specificando la regola di misurazione del software e una data di sei mesi nel passato. Questo report identifica 120 computer che non hanno eseguito il programma negli ultimi sei mesi.
+- John effettua ulteriori controlli per verificare che l'applicazione legacy non sia necessaria nei computer identificati. Quindi, disinstalla l'applicazione legacy e la copia di Word 2003 da questi computer.<br>Giorgio esegue il report **Utenti che hanno eseguito un programma di controllo software specifico** per fornire all'help desk un elenco di utenti che continuano a usare l'applicazione legacy.
+- John continua a controllare i report di misurazione del software ogni settimana e, se necessario, esegue azioni correttive.
 
- この一連のアクションの結果として、不要になったアプリケーションを削除することで、IT サポートとライセンスのコストが削減されます。 さらに、ヘルプ デスクは、必要としていた、レガシ アプリケーションを実行するユーザーの一覧を入手することができました。
+ Come risultato di questa linea di azione, i costi di licenza e di supporto IT si riducono, grazie alla rimozione delle applicazioni non più necessarie. Inoltre, ora l'help desk ha a disposizione l'elenco degli utenti che eseguono l'applicazione legacy di cui aveva bisogno.

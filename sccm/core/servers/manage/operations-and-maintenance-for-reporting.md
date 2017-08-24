@@ -1,6 +1,6 @@
 ---
-title: "レポートの操作とメンテナンス | Microsoft Docs"
-description: "System Center Configuration Manager でのレポートおよびレポートのサブスクリプションの管理の詳細について説明します。"
+title: Operazioni e manutenzione per la creazione di report | Microsoft Docs
+description: Informazioni dettagliate sulla gestione di report e sottoscrizioni report in System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,346 +17,346 @@ manager: angrobe
 ms.openlocfilehash: df572cd0c64c82e25164430a53e1b893b3ba3cf5
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="operations-and-maintenance-for-reporting-in-system-center-configuration-manager"></a>System Center Configuration Manager でのレポートの操作とメンテナンス
+# <a name="operations-and-maintenance-for-reporting-in-system-center-configuration-manager"></a>Operazioni e manutenzione per la creazione di report in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager にレポートのためのインフラストラクチャを準備した後、レポートおよびレポートのサブスクリプションを管理するために通常行う多くの操作があります。  
+Dopo aver definito l'infrastruttura per la creazione di report in System Center Configuration Manager, è in genere necessario eseguire alcune operazioni per la gestione di report e di sottoscrizioni report.  
 
-##  <a name="BKMK_ManageReports"></a> Configuration Manager レポートの管理  
- Configuration Manager には、400 を超える事前定義のレポートがあり、組織内のユーザー、ハードウェア インベントリとソフトウェア インベントリ、ソフトウェア更新プログラム、アプリケーション、サイトのステータス、およびその他の Configuration Manager 操作に関する情報を収集、整理、および提示するために役立ちます。 事前定義のレポートは、そのまま使用するか、要件に合うようにレポートを変更できます。 カスタム モデル ベースのレポートおよび SQL ベースのレポートを作成して、要件に適合させることもできます。 次のセクションを使用して、Configuration Manager レポートを管理します。  
+##  <a name="BKMK_ManageReports"></a> Gestire i report di Configuration Manager  
+ Configuration Manager offre oltre 400 report predefiniti che consentono di raccogliere, organizzare e presentare informazioni su utenti, inventario software e hardware, aggiornamenti software, applicazioni, stato del sito e altre operazioni di Configuration Manager all'interno dell'azienda. È possibile utilizzare i report predefiniti come sono oppure è possibile modificare un report in base alle proprie esigenze. È anche possibile creare report personalizzati \-basati su modello e basati su SQL\- secondo le necessità. Usare le sezioni seguenti per gestire i report in Configuration Manager.  
 
-###  <a name="BKMK_RunReport"></a> Configuration Manager レポートの実行  
- Configuration Manager でのレポートは SQL Server Reporting Services に保存し、レポートに表示されるデータは、Configuration Manager サイト データベースから取得します。 Configuration Manager コンソールで、またはレポート マネージャーは、web ブラウザーでアクセスするを使用してレポートを表示できます。 レポートは、SQL Server Reporting Services を実行しているコンピューターにアクセスできるコンピューターで開くことができます。また、レポートを表示するための十分な権限がある必要があります。 レポートを実行すると、レポートのタイトル、説明、およびカテゴリが、ローカルのオペレーティング システムの言語で表示されます。  
+###  <a name="BKMK_RunReport"></a> Eseguire un report di Configuration Manager  
+ Report in Configuration Manager vengono archiviati in SQL Server Reporting Services e i dati visualizzati nel report vengono recuperati dal database del sito Configuration Manager. È possibile accedere a report nella console di Configuration Manager o tramite Gestione Report, che è accessibile in un browser web. I report possono essere aperti in qualsiasi computer autorizzato ad accedere al computer che esegue SQL Server Reporting Services ed è necessario di disporre di diritti sufficienti per la visualizzazione dei report. Quando si esegue un report, il titolo, la descrizione e la categoria del report vengono visualizzati nella lingua del sistema operativo locale.  
 
 > [!NOTE]  
->  英語以外の言語では、レポートに文字が正しく表示されないことがあります。  この場合は、Web ブラウザーでレポート マネージャーを開くか、リモートの管理コンソールを使ってください。  
+>  In alcune lingue, i caratteri potrebbero non essere visualizzati correttamente nei report.  In questo caso, i report possono essere visualizzati tramite la versione Web di Gestione report o tramite la console di amministrazione remota.  
 
 > [!WARNING]  
->  レポートを実行するには、**サイト**の**読み取り**権限アクセス許可と特定のオブジェクト用に構成された**レポートの実行**アクセス許可が必要です。  
+>  Per eseguire i report, è necessario disporre di diritti di **Lettura** per l'autorizzazione **Sito** e per l'autorizzazione **Esegui report** configurata per oggetti specifici.  
 
 > [!IMPORTANT]    
-> レポートを正常に実行するには、レポート サービス ポイント アカウントとは異なるドメインのユーザーに対して双方向の信頼が確立されている必要があります。
+> Per poter eseguire correttamente i report, deve essere presente un trust bidirezionale per gli utenti di un dominio diverso da quello dell'account al punto Servicies Reporting.
 
 > [!NOTE]  
->  レポート マネージャーは、Web ベースでレポートへのアクセスおよび管理を行うツールであり、HTTP 接続を使用してリモートの場所にある単一のレポート サーバー インスタンスを管理するために使用します。 レポート マネージャーは、たとえば、レポートの表示、レポートのプロパティの変更、および関連付けられているレポートのサブスクリプションの管理などの操作タスクに使用できます。 このトピックでは、レポート マネージャーでレポートの表示およびレポートのプロパティの変更を行う手順を説明しますが、レポート マネージャーが提供するその他のオプションの詳細については、SQL Server 2008 Books Online の「[レポート マネージャー](http://go.microsoft.com/fwlink/p/?LinkId=224916)」を参照してください。  
+>  Gestione report è uno strumento Web di accesso e gestione di report che consente di amministrare una singola istanza di un server di report in un percorso remoto su una connessione HTTP. È possibile utilizzare Gestione report per attività operative, ad esempio, per visualizzare i report, modificare le proprietà del report e gestire sottoscrizioni di report associate. Questo argomento include i passaggi necessari per visualizzare un report e modificare le proprietà dei report in Gestione report, ma per ulteriori informazioni sulle altre opzioni disponibili in Gestione report, vedere [Gestione report](http://go.microsoft.com/fwlink/p/?LinkId=224916) nella documentazione online di SQL Server 2008.  
 
- Configuration Manager レポートを実行するのにには、次の手順を使用します。  
+ Utilizzare le procedure seguenti per eseguire un report di Configuration Manager.  
 
-##### <a name="to-run-a-report-in-the-configuration-manager-console"></a>Configuration Manager コンソールでレポートを実行するには  
+##### <a name="to-run-a-report-in-the-configuration-manager-console"></a>Per eseguire un report nella console di Configuration Manager  
 
-1.  Configuration Manager コンソールで、**[監視]** をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
-2.  **[監視]** ワークスペースで、**[レポート]** を展開し、**[レポート]** をクリックして使用可能なレポートの一覧を表示します。  
+2.  Nell'area di lavoro **Monitoraggio** espandere **Creazione di report**, quindi fare clic su **Report** per elencare i report disponibili.  
 
     > [!IMPORTANT]  
-    >  このバージョンの Configuration Managerでは、**[すべてのコンテンツ]** レポートにはアプリケーションではなくパッケージのみ表示されます。  
+    >  In questa versione di Configuration Manager, i report **Tutto il contenuto** visualizzano solo pacchetti, non applicazioni.  
 
     > [!TIP]  
-    >  レポートが表示されない場合は、レポート サービス ポイントがインストールおよび構成されていることを確認します。 詳しくは、「[レポートの構成](configuring-reporting.md)」を参照してください。  
+    >  Se non viene elencato alcun report, verificare che il punto di Reporting Services sia installato e configurato. Per altre informazioni, vedere [Configurazione della creazione di report](configuring-reporting.md).  
 
-3.  実行するレポートを選択し、**[ホーム]** タブの **[レポート グループ]** セクションで、**[実行]** をクリックしてレポートを開きます。  
+3.  Selezionare il report che si desidera eseguire e quindi, nella sezione **Gruppo Report** della scheda **Home** , fare clic su **Esegui** per aprire il report.  
 
-4.  必須のパラメーターがある場合は、パラメーターを指定して、**[レポートの表示]** をクリックします。  
+4.  Se sono previsti parametri obbligatori, specificare i parametri, quindi fare clic su **Visualizza report**.  
 
-#### <a name="to-run-a-report-in-a-web-browser"></a>Web ブラウザーでレポートを実行するには  
+#### <a name="to-run-a-report-in-a-web-browser"></a>Per eseguire un report in un browser Web  
 
-1.  Web ブラウザーで、レポート マネージャーの URL を入力します (例: **http:\/\/Server1\/Reports**)。 レポート マネージャーの URL を指定できます、 **レポート マネージャーの URL**  ページで Reporting Services 構成マネージャー。  
+1.  Nel Web browser specificare l'URL di Gestione report, ad esempio, **http:\/\/Server1\/Reports**. È possibile determinare l'URL di gestione di Report sul **URL gestione Report** pagina in Gestione configurazione Reporting Services.  
 
-2.  レポート マネージャーで、Configuration Manager の レポート フォルダー (例: **ConfigMgr\_CAS**) をクリックします。  
-
-    > [!TIP]  
-    >  レポートが表示されない場合は、レポート サービス ポイントがインストールおよび構成されていることを確認します。 詳しくは、「[レポートの構成](configuring-reporting.md)」を参照してください。  
-
-3.  実行するレポートのレポート カテゴリをクリックして、レポートのリンクをクリックします。 レポート マネージャーでレポートが開きます。  
-
-4.  必須のパラメーターがある場合は、パラメーターを指定して、[レポートの表示] をクリックします。 ****  
-
-###  <a name="BKMK_ModifyReportProperties"></a> Configuration Manager レポートのプロパティの変更  
- Configuration Manager コンソールでは、レポート名や説明などのレポートのプロパティを表示できますが、プロパティを変更するには、レポート マネージャーを使用します。 Configuration Manager レポートのプロパティを変更するには、次の手順に従います。  
-
-#### <a name="to-modify-report-properties-in-report-manager"></a>レポート マネージャーでレポート プロパティを変更するには  
-
-1.  Web ブラウザーで、レポート マネージャーの URL を入力します (例: **http:\/\/Server1\/Reports**)。 レポート マネージャーの URL を指定できます、 **レポート マネージャーの URL**  ページで Reporting Services 構成マネージャー。  
-
-2.  レポート マネージャーで、Configuration Manager の レポート フォルダー (例: **ConfigMgr\_CAS**) をクリックします。  
+2.  In Gestione report, fare clic sulla cartella dei report per Configuration Manager, ad esempio, **ConfigMgr\_CAS**.  
 
     > [!TIP]  
-    >  レポートが表示されない場合は、レポート サービス ポイントがインストールおよび構成されていることを確認します。 詳しくは、「[レポートの構成](configuring-reporting.md)」を参照してください。  
+    >  Se non viene elencato alcun report, verificare che il punto di Reporting Services sia installato e configurato. Per altre informazioni, vedere [Configurazione della creazione di report](configuring-reporting.md).  
 
-3.  プロパティを変更するレポートのレポート カテゴリをクリックして、レポートのリンクをクリックします。 レポート マネージャーでレポートが開きます。  
+3.  Fare clic sulla categoria di report per il report che si desidera eseguire e quindi fare clic sul collegamento per il report. Il report verrà aperto in Gestione Report.  
 
-4.  [プロパティ] タブをクリックします。 **** レポート名および説明を変更できます。  
+4.  Se sono previsti parametri obbligatori, specificare i parametri, quindi fare clic su **Visualizza report**.  
 
-5.  終了したら、[適用] をクリックします。 **** レポートのプロパティがレポート サーバーに保存され、Configuration Manager コンソールはレポートの更新されたレポートのプロパティを取得します。  
+###  <a name="BKMK_ModifyReportProperties"></a> Modificare le proprietà di un report di Configuration Manager  
+ Nella console di Configuration Manager è possibile visualizzare le proprietà di un report, ad esempio il nome e la descrizione del report. Per modificare le proprietà, usare invece Gestione report. Usare la procedura seguente per modificare le proprietà di un report di Configuration Manager.  
 
-###  <a name="BKMK_EditReport"></a> Configuration Manager レポートの編集  
- 既存の Configuration Manager レポートでは必要な情報が取得されない場合、または希望するレイアウトまたは設計ではない場合は、レポート ビルダーでレポートを編集できます。  
+#### <a name="to-modify-report-properties-in-report-manager"></a>Per modificare le proprietà dei report in Gestione report  
+
+1.  Nel Web browser specificare l'URL di Gestione report, ad esempio, **http:\/\/Server1\/Reports**. È possibile determinare l'URL di gestione di Report sul **URL gestione Report** pagina in Gestione configurazione Reporting Services.  
+
+2.  In Gestione report, fare clic sulla cartella dei report per Configuration Manager, ad esempio, **ConfigMgr\_CAS**.  
+
+    > [!TIP]  
+    >  Se non viene elencato alcun report, verificare che il punto di Reporting Services sia installato e configurato. Per altre informazioni, vedere [Configurazione della creazione report](configuring-reporting.md)  
+
+3.  Fare clic sulla categoria di report per il report di cui si desidera modificare le proprietà, quindi fare clic sul collegamento per il report. Il report verrà aperto in Gestione Report.  
+
+4.  Fare clic sulla scheda **Proprietà** . È possibile modificare il nome e la descrizione del report.  
+
+5.  Al termine, fare clic su **Applica**. Le proprietà del report vengono salvate nel server di report e le proprietà aggiornate del report vengono recuperate dalla console di Configuration Manager.  
+
+###  <a name="BKMK_EditReport"></a> Modificare un report di Configuration Manager  
+ Se un report esistente di Configuration Manager non recupera le informazioni necessarie oppure non visualizza il layout o la struttura interessati, è possibile modificare il report in Generatore report.  
 
 > [!NOTE]  
->  既存のレポートを複製するには、そのレポートを開いて [名前を付けて保存] をクリックし、別のレポートとして保存します。 ****  
+>  È anche possibile scegliere di clonare un report esistente aprendolo per la modifica e facendo clic su **Salva con nome** per salvarlo come nuovo report.  
 
 > [!IMPORTANT]  
->  ユーザー アカウントは、変更するレポートに関連付けられている特定のオブジェクトに対する [サイトの変更 **** ] アクセス許可と [レポートの変更 **** ] アクセス許可を持っている必要があります。  
+>  L'account utente deve disporre dell'autorizzazione di **modifica del sito** e **Modifica report** negli oggetti specifici associati al report che si desidera modificare.  
 
 > [!IMPORTANT]  
->  Configuration Manager を新しいバージョンにアップグレードすると、新しいレポートによって事前定義のレポートが上書きされます。 定義済みレポートを変更した場合は、レポートをバックアップしてから新しいバージョンをインストールし、その後 Reporting Services でレポートを復元してください。 事前定義のレポートを大幅に変更している場合は、代わりに新しいレポートを作成することを検討してください。 サイトをアップグレードする前に作成した新しいレポートは上書きされません。  
+>  Quando Configuration Manager viene aggiornato a una versione più recente, i report predefiniti vengono sovrascritti dai nuovi report. Se si modifica un report predefinito, è necessario eseguire il backup del report prima di installare la nuova versione, quindi ripristinare il report in Reporting Services. Se si apportano modifiche significative a un report predefinito, è consigliabile creare invece un nuovo report. I nuovi report creati prima dell'aggiornamento di un sito non verranno sovrascritti.  
 
- Configuration Manager レポートのプロパティを編集するには、次の手順に従います。  
+ Seguire la procedura seguente per modificare le proprietà di un report di Configuration Manager.  
 
-#### <a name="to-edit-report-properties"></a>レポートのプロパティを編集するには  
+#### <a name="to-edit-report-properties"></a>Per modificare le proprietà dei report  
 
-1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
+1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
-2.  [ **監視** ] ワークスペースで、[ **レポート**] を展開し、[ **レポート** ] をクリックして使用可能なレポートの一覧を表示します。  
+2.  Nell'area di lavoro **Monitoraggio** espandere **Creazione di report**, quindi fare clic su **Report** per elencare i report disponibili.  
 
-3.  変更するレポートを選択し、[ **ホーム** ] タブの [ **レポート グループ** ] セクションで、[ **編集**] をクリックします。 プロンプトが表示されたら、ユーザー アカウントとパスワードを入力し、[OK] をクリックします。 **** レポート ビルダーがコンピューターにインストールされていない場合は、インストールするように求められます。 [実行] をクリックしてレポート ビルダーをインストールします。これは、レポートを変更および作成するために必要です。 ****  
+3.  Selezionare il report che si desidera modificare e quindi, nel gruppo **Gruppo Report** della scheda **Home** , fare clic su **Esegui**. Se richiesto, immettere l'account utente e la password e quindi fare clic su **OK**. Se Generatore report non è installato nel computer, ne verrà richiesta l'installazione. Fare clic su **Esegui** per installare Generatore report, necessario per la modifica e la creazione di report.  
 
-4.  レポート ビルダーで、該当するレポート設定を変更し、[保存] をクリックしてレポートをレポート サーバーに保存します。 ****  
+4.  Modificare le impostazioni di report appropriate in Generatore report, quindi fare clic su **Salva** per salvare il report nel server di report.  
 
-###  <a name="BKMK_CreateModelBasedReport"></a> モデル ベースのレポートの作成  
- モデル ベースのレポートでは、レポートに含める項目を対話方式で選択できます。 カスタム レポート モデルの作成について詳しくは、「[SQL Server Reporting Services での System Center Configuration Manager のカスタム レポート モデルの作成](creating-custom-report-models-in-sql-server-reporting-services.md)」を参照してください。  
-
-> [!IMPORTANT]  
->  新しいレポートを作成するには、ユーザー アカウントが [サイトの変更 **** ] アクセス許可を持っている必要があります。 ユーザーは、自分が [レポートの変更 **** ] アクセス許可を持っているフォルダーにのみレポートを作成できます。  
-
- モデル ベースの Configuration Manager レポートを作成するには、次の手順のようにします。  
-
-#### <a name="to-create-a-model-based-report"></a>モデル ベースのレポートを作成するには  
-
-1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
-
-2.  [ **監視** ] ワークスペースで、[ **レポート** ] を展開し、[ **レポート**] をクリックします。  
-
-3.  [ **ホーム** ] タブの [ **作成** ] セクションで、[ **レポートの作成** ] をクリックして **レポートの作成ウィザード**を開きます。  
-
-4.  [情報] ページで、次の設定を構成します。 ****  
-
-    -   **種類**: **[モデル ベースのレポート]** を選択し、レポート ビルダーで Reporting Services モデルを使用して、レポートを作成します。  
-
-    -   [名前]:****レポートの名前を指定します。  
-
-    -   **説明**:レポートの説明を指定します。  
-
-    -   **サーバー**:このレポートを作成しているレポート サーバーの名前を表示します。  
-
-    -   **パス**:[参照] をクリックして、レポートを格納するフォルダーを指定します。 ****  
-
-     [次へ] をクリックします。 ****  
-
-5.  [モデルの選択] ページで、このレポートを作成するために使用する利用可能なモデルを一覧から選択します。 **** レポート モデルを選択すると、[プレビュー] セクションに、選択したレポート モデルで利用可能な SQL Server のビューおよびエンティティが表示されます。 ****  
-
-6.  [サマリー **** ] ページで、設定を確認します。 **[前へ]** をクリックして設定を変更するか、**[次へ]** をクリックして Configuration Managerでレポートを作成します。  
-
-7.  [ **確認** ] ページで、[ **閉じる** ] をクリックしてウィザードを終了し、レポートの設定を構成するレポート ビルダーを開きます。 プロンプトが表示されたら、ユーザー アカウントとパスワードを入力し、[OK] をクリックします。 **** レポート ビルダーがコンピューターにインストールされていない場合は、インストールするように求められます。 [実行] をクリックしてレポート ビルダーをインストールします。これは、レポートを変更および作成するために必要です。 ****  
-
-8.  Microsoft レポート ビルダーで、レポートのレイアウトの作成、利用可能な SQL Server のビューでのデータの選択、レポートへのパラメーターの追加などを行います。 レポート ビルダーを使用した新しいレポートの作成の詳細については、レポート ビルダーのヘルプを参照してください。  
-
-9. [実行] をクリックして、レポートを実行します。 **** 想定した情報がレポートに表示されていることを確認します。 必要な場合は、[デザイン] をクリックして設計ビューに戻り、レポートを変更します。 ****  
-
-10. [保存] をクリックして、レポートをレポート サーバーに保存します。 **** 実行してで新しいレポートを変更、 **レポート** 内のノード、 **監視** ワークスペース。  
-
-###  <a name="BKMK_CreateSQLBasedReport"></a> SQL ベースのレポートの作成  
- SQL ベースのレポートでは、レポートの SQL ステートメントに基づいてデータを取得できます。  
+###  <a name="BKMK_CreateModelBasedReport"></a> Creare un report basato su modello  
+ Un report basato su modello consente di selezionare in modo interattivo gli elementi da includere nel report. Per altre informazioni su come creare modelli di report personalizzati, vedere [Creazione di modelli di report personalizzati per System Center Configuration Manager in SQL Server Reporting Services](creating-custom-report-models-in-sql-server-reporting-services.md).  
 
 > [!IMPORTANT]  
->  カスタム レポートの SQL 文を作成する場合、SQL Server テーブルを直接参照しないでください。 代わりに、サイト データベースからレポート SQL Server ビュー \(v\_ から始まるビュー名\) を参照します。 サイト データベースから、公開されているストアド プロシージャ \(sp\_ から始まるストアド プロシージャ名\) を参照することもできます。  
+>  Per creare un nuovo report, l'account utente deve disporre di autorizzazioni di modifica del sito **** . L'utente può creare un report solo nelle cartelle per cui dispone di autorizzazioni di tipo **Modifica report** .  
+
+ Seguire le procedure seguenti per creare un report di Configuration Manager basato su modello.  
+
+#### <a name="to-create-a-model-based-report"></a>Per creare un report basato su modello  
+
+1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
+
+2.  Nell'area di lavoro **Monitoraggio** espandere **Creazione di report** , quindi fare clic su **Report**.  
+
+3.  Nella sezione **Crea** della scheda **Home** fare clic su **Crea report** per aprire la **Creazione guidata report**.  
+
+4.  Nella pagina **Informazioni** è possibile configurare le impostazioni seguenti:  
+
+    -   **Tipo:** selezionare **Report basato su modello** per creare un report in Generatore report usando un modello di Reporting Services.  
+
+    -   **Nome**: specificare un nome per il report.  
+
+    -   **Descrizione**: specificare una descrizione per il report.  
+
+    -   **Server**: visualizza il nome del server di report in cui si sta creando il report.  
+
+    -   **Percorso**: fare clic su **Sfoglia** per specificare una cartella in cui si desidera archiviare il report.  
+
+     Fare clic su **Avanti**.  
+
+5.  Nella pagina **Selezione modello** selezionare un modello disponibile dall'elenco utilizzato per creare questo report. Quando si seleziona il modello di report, nella sezione **Anteprima** vengono visualizzate le viste e le entità di SQL Server rese disponibili dal modello di report selezionato.  
+
+6.  Nella pagina **Riepilogo** esaminare le impostazioni. Fare clic su **Indietro** per modificare le impostazioni oppure su **Avanti** per creare il report in Configuration Manager.  
+
+7.  Nella pagina **Conferma** fare clic su **Chiudi** per uscire dalla procedura guidata, quindi aprire Generatore report per configurare le impostazioni del report. Se richiesto, immettere l'account utente e la password e quindi fare clic su **OK**. Se Generatore report non è installato nel computer, ne verrà richiesta l'installazione. Fare clic su **Esegui** per installare Generatore report, necessario per la modifica e la creazione di report.  
+
+8.  In Generatore report Microsoft è possibile creare il layout del report, selezionare i dati nelle viste SQL Server disponibili, aggiungere parametri al report e così via. Per ulteriori informazioni sull'utilizzo di Generatore report per creare un nuovo report, vedere la Guida in linea di Generatore report.  
+
+9. Fare clic su **Esegui** per eseguire il report. Verificare che il report fornisca le informazioni previste. Fare clic su **Struttura** per tornare alla visualizzazione Struttura e modificare il report, se necessario.  
+
+10. Fare clic su **Salva** per salvare il report nel server di report. È possibile eseguire e modificare il nuovo report nel nodo **Report** nell'area di lavoro **Monitoraggio** .  
+
+###  <a name="BKMK_CreateSQLBasedReport"></a> Creare un report basato su SQL  
+ Un report basato su SQL consente di recuperare i dati che si basano su un'istruzione SQL di report.  
 
 > [!IMPORTANT]  
->  新しいレポートを作成するには、ユーザー アカウントが [サイトの変更 **** ] アクセス許可を持っている必要があります。 ユーザーは、自分が [レポートの変更 **** ] アクセス許可を持っているフォルダーにのみレポートを作成できます。  
+>  Quando si crea un'istruzione SQL per un report personalizzato, è necessario non fare riferimento direttamente alle tabelle SQL Server. Fare invece riferimento alle viste di SQL Server per la creazione di report \(nomi di viste che iniziano con v\_\) dal database del sito. È anche possibile fare riferimento a stored procedure pubbliche \(nomi di stored procedure che iniziano con sp\_\) dal database del sito.  
 
- SQL ベースの Configuration Manager レポートを作成するには、次の手順のようにします。  
+> [!IMPORTANT]  
+>  Per creare un nuovo report, l'account utente deve disporre di autorizzazioni di modifica del sito **** . L'utente può creare un report solo nelle cartelle per cui dispone di autorizzazioni di tipo **Modifica report** .  
 
-#### <a name="to-create-a-sql-based-report"></a>SQL ベースのレポートを作成するには  
+ Seguire le procedure seguenti per creare un report di Configuration Manager basato su SQL.  
 
-1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
+#### <a name="to-create-a-sql-based-report"></a>Per creare un report basato su SQL  
 
-2.  [ **監視** ] ワークスペースで、[ **レポート**] を展開し、[ **レポート**] をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
-3.  [ **ホーム** ] タブの [ **作成** ] セクションで、[ **レポートの作成** ] をクリックして **レポートの作成ウィザード**を開きます。  
+2.  Nell'area di lavoro **Monitoraggio** espandere **Creazione di report**, quindi fare clic su **Report**.  
 
-4.  [情報] ページで、次の設定を構成します。 ****  
+3.  Nella sezione **Crea** della scheda **Home** fare clic su **Crea report** per aprire la **Creazione guidata report**.  
 
-    -   **種類**: **[SQL ベースのレポート]** を選択し、レポート ビルダーで SQL ステートメントを使用してレポートを作成します。  
+4.  Nella pagina **Informazioni** è possibile configurare le impostazioni seguenti:  
 
-    -   [名前]:****レポートの名前を指定します。  
+    -   **Tipo**: selezionare **Report basato su SQL** per creare un report in Generatore report usando un'istruzione SQL.  
 
-    -   **説明**:レポートの説明を指定します。  
+    -   **Nome**: specificare un nome per il report.  
 
-    -   **サーバー**:このレポートを作成しているレポート サーバーの名前を表示します。  
+    -   **Descrizione**: specificare una descrizione per il report.  
 
-    -   **パス**:[参照] をクリックして、レポートを格納するフォルダーを指定します。 ****  
+    -   **Server**: visualizza il nome del server di report in cui si sta creando il report.  
 
-     [次へ] をクリックします。 ****  
+    -   **Percorso**: fare clic su **Sfoglia** per specificare una cartella in cui si desidera archiviare il report.  
 
-5.  [サマリー **** ] ページで、設定を確認します。 **[前へ]** をクリックして設定を変更するか、**[次へ]** をクリックして Configuration Managerでレポートを作成します。  
+     Fare clic su **Avanti**.  
 
-6.  [ **確認** ] ページで、[ **閉じる** ] をクリックしてウィザードを終了し、レポートの設定を構成するレポート ビルダーを開きます。 プロンプトが表示されたら、ユーザー アカウントとパスワードを入力し、[OK] をクリックします。 **** レポート ビルダーがコンピューターにインストールされていない場合は、インストールするように求められます。 [実行] をクリックしてレポート ビルダーをインストールします。これは、レポートを変更および作成するために必要です。 ****  
+5.  Nella pagina **Riepilogo** esaminare le impostazioni. Fare clic su **Indietro** per modificare le impostazioni oppure su **Avanti** per creare il report in Configuration Manager.  
 
-7.  Microsoft レポート ビルダーで、レポートの SQL ステートメントの指定、SQL Server のビューで利用可能な列を使用した SQL ステートメントの作成、レポートへのパラメーターの追加などを行います。  
+6.  Nella pagina **Conferma** fare clic su **Chiudi** per uscire dalla procedura guidata, quindi aprire Generatore report per configurare le impostazioni del report. Se richiesto, immettere l'account utente e la password e quindi fare clic su **OK**. Se Generatore report non è installato nel computer, ne verrà richiesta l'installazione. Fare clic su **Esegui** per installare Generatore report, necessario per la modifica e la creazione di report.  
 
-8.  [実行] をクリックして、レポートを実行します。 **** 想定した情報がレポートに表示されていることを確認します。 必要な場合は、[デザイン] をクリックして設計ビューに戻り、レポートを変更します。 ****  
+7.  In Generatore report Microsoft è possibile specificare l'istruzione SQL per il report oppure creare l'istruzione SQL utilizzando le colonne presenti nelle viste SQL Server disponibili, quindi aggiungere parametri al report e così via.  
 
-9. [保存] をクリックして、レポートをレポート サーバーに保存します。 **** [ **監視** ] ワークスペースの [ **レポート** ] ノードで、新しいレポートを実行できます。  
+8.  Fare clic su **Esegui** per eseguire il report. Verificare che il report fornisca le informazioni previste. Fare clic su **Struttura** per tornare alla visualizzazione Struttura e modificare il report, se necessario.  
 
-##  <a name="BKMK_ManageReportSubscriptions"></a> レポートのサブスクリプションの管理  
- SQL Server Reporting Services のレポートのサブスクリプションを使用すると、電子メールまたはファイル共有を介して、指定したレポートをスケジュールした間隔で自動的に配信するように構成できます。 System Center 2012 Configuration Manager の**サブスクリプションの作成ウィザード**を使用して、レポートのサブスクリプションを構成します。  
+9. Fare clic su **Salva** per salvare il report nel server di report. È possibile eseguire il nuovo report nel nodo **Report** nell'area di lavoro **Monitoraggio** .  
 
-###  <a name="BKMK_ReportSubscriptionFileShare"></a> レポートのサブスクリプションを作成して、レポートをファイル共有に配信する  
- レポートのサブスクリプションを作成して、レポートをファイル共有に配信する場合、レポートは指定したファイル共有に指定された形式でコピーされます。 一度にサブスクライブおよび配信を要求できるレポートは 1 つのみです。  
+##  <a name="BKMK_ManageReportSubscriptions"></a> Gestire le sottoscrizioni report  
+ Le sottoscrizioni report in SQL Server Reporting Services consentono di configurare l'individuazione automatica dei report specificati tramite posta elettronica o in una condivisione file a intervalli pianificati. Usare la **Creazione guidata sottoscrizione** in System Center 2012 Configuration Manager per configurare le sottoscrizioni report.  
 
- レポート サーバーでホストおよび管理されるレポートとは異なり、共有フォルダーに配信されたレポートは静的なファイルです。 レポートに定義されている対話機能は、ファイル システムにファイルとして格納されているレポートでは動作しません。 対話機能は、静的な要素として表されます。 レポートにグラフが含まれている場合は、既定の表示が使用されます。 レポートが別のレポートにリンクしている場合は、リンクは静的なテキストとして表示されます。 配信されるレポートの対話機能を維持するには、電子メールでの配信を代わりに使用します。 メールでの配信について詳しくは、このトピックの後半にある「 [レポートのサブスクリプションを作成してメールでレポートを配信する](#BKMK_ReportSubscriptionEmail) 」をご覧ください。  
+###  <a name="BKMK_ReportSubscriptionFileShare"></a> Creare una sottoscrizione report per recapitare un report a una condivisione file  
+ Quando si crea una sottoscrizione report per il recapito di un report in una condivisione file, il report viene copiato nel formato specificato e salvato nella condivisione file specificata. È possibile effettuare la sottoscrizione e richiedere il recapito per un solo report alla volta.  
 
- ファイル共有での配信を使用してサブスクリプションを作成する場合は、既存のフォルダーを配信先フォルダーとして指定する必要があります。 レポート サーバーは、ファイル システムにフォルダーを作成しません。 指定するフォルダーは、ネットワーク接続を使用してアクセスできる必要があります。 サブスクリプションに配信先フォルダーを指定する場合は、UNC パスを使用し、フォルダー パスの末尾にバックスラッシュを含めないでください。 たとえば、配信先フォルダーの正しい UNC パスは \\\\&lt;servername\>\\reportfiles\\operations\\2011 のようになります。  
+ A differenza dei report ospitati e gestiti da un server di report, i report recapitati a una cartella condivisa sono file statici. Le funzionalità interattive definite per il report non funzionano per i report archiviati come file nel file system. Le funzionalità di interazione vengono rappresentate come elementi statici. Se il report include grafici, verrà utilizzata la presentazione predefinita. Se il report è collegato tramite un altro report, verrà eseguito il rendering del collegamento come testo statico. Se si desidera conservare le funzionalità interattive in un report recapitato, utilizzare invece il recapito tramite posta elettronica. Per altre informazioni sul recapito di posta elettronica, vedere la sezione [Creare una sottoscrizione report per il recapito di un report tramite posta elettronica](#BKMK_ReportSubscriptionEmail) più avanti in questo argomento.  
 
- レポートは、さまざまなファイル形式 (MHTML、Excel など) で表示できます。 特定のファイル形式でレポートを保存するには、サブスクリプションを作成するときに、表示形式を選択します。 たとえば、Excel を選択すると、Microsoft Excel ファイルとしてレポートが保存されます。 サポートされている任意の表示形式を選択できますが、ファイルで表示したときの見やすさは形式によって異なります。  
+ Quando si crea una sottoscrizione che utilizza il recapito in una condivisione file, è necessario specificare una cartella esistente come cartella di destinazione. Il server di report non crea le cartelle nel file system. La cartella specificata deve essere accessibile tramite una connessione di rete. Quando si specifica la cartella di destinazione in una sottoscrizione, utilizzare un percorso UNC e non includere barre rovesciate finali nel percorso della cartella. Ad esempio, un percorso UNC valido per la cartella di destinazione è: \\\\&lt;nomeserver\>\\filereport\\operazioni\\2011.  
 
- レポートのサブスクリプションを作成してレポートをファイル共有に配信するには、次の手順に従います。  
+ È possibile eseguire il rendering di report in diversi formati di file, ad esempio MHTML o Excel. Per salvare il report in un formato di file specifico, selezionare il formato di rendering durante la creazione della sottoscrizione. Ad esempio, se si sceglie Excel, il report verrà salvato come file di Microsoft Excel. Sebbene sia possibile selezionare qualsiasi formato di rendering supportato, alcuni formati funzionano meglio di altri durante il rendering in un file.  
 
-#### <a name="to-create-a-report-subscription-to-deliver-a-report-to-a-file-share"></a>レポートのサブスクリプションを作成して、レポートをファイル共有に配信するには  
+ Utilizzare la procedura seguente per creare una sottoscrizione report per il recapito di un report in una condivisione file.  
 
-1.  Configuration Manager コンソールで、[監視] をクリックします。 ****  
+#### <a name="to-create-a-report-subscription-to-deliver-a-report-to-a-file-share"></a>Per creare una sottoscrizione report per il recapito di un report in una condivisione file  
 
-2.  [ **監視** ] ワークスペースで、[ **レポート** ] を展開し、[ **レポート** ] をクリックして使用可能なレポートの一覧を表示します。 レポート フォルダーを選択すると、そのフォルダーに関連付けられているレポートのみを表示できます。  
+1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
-3.  サブスクリプションに追加するレポートを選択し、[ **ホーム** ] タブの [ **レポート グループ** ] セクションで、[ **サブスクリプションの作成** ] をクリックして、 **サブスクリプションの作成ウィザード**を開きます。  
+2.  Nell'area di lavoro **Monitoraggio** espandere **Creazione di report** , quindi fare clic su **Report** per elencare i report disponibili. È possibile selezionare una cartella di report per elencare solo i report associati alla cartella.  
 
-4.  [サブスクリプションの配信] ページで、次の設定を構成します。 ****  
+3.  Selezionare sul report da aggiungere alla sottoscrizione, quindi nella sezione **Gruppo Report** della scheda **Home** fare clic su **Crea sottoscrizione** per aprire la **Creazione guidata sottoscrizione**.  
 
-    -   レポートの配信手段:[Windows ファイル共有] を選択して、レポートをファイル共有に配信します。 ****  
+4.  Nella pagina **Recapito sottoscrizione** è possibile configurare le impostazioni seguenti:  
 
-    -   **ファイル名**:レポートのファイル名を指定します。 既定では、レポート ファイルにはファイル名拡張子は含まれません。 表示形式に基づいてそのレポートにファイル名拡張子を自動的に追加するには、[ファイル作成時に拡張子を追加する] を選択します。 ****  
+    -   Report recapitato da: selezionare **Condivisione file di Windows** per recapitare il report in una condivisione file.  
 
-    -   **パス**: このレポートを配信する既存のフォルダーへの UNC パス \(例: \\\\&lt;サーバー名\>\\&lt;サーバー共有\>\\&lt;レポート フォルダー\>\) を指定します。  
+    -   **Nome file**: specificare il nome del file per il report. Per impostazione predefinita, il file di report non include alcuna estensione di nome file. Selezionare **Aggiungi estensione file al momento della creazione** per aggiungere automaticamente un'estensione di nome file al report in base al formato di rendering.  
+
+    -   **Percorso**: specificare un percorso UNC per una cartella esistente a cui si vuole recapitare il report\(, ad esempio \\\\&lt;nome server\>\\&lt;condivisione server \>\\&lt;cartella report\>\).  
 
         > [!NOTE]  
-        >  このページでこの後に指定するユーザーは、このサーバー共有にアクセスできて、配信先フォルダーに対する [書き込み] アクセス許可がある必要があります。  
+        >  Il nome utente specificato in un secondo momento in questa pagina deve avere accesso alla condivisione server e deve disporre delle autorizzazioni di scrittura per la cartella di destinazione.  
 
-    -   **表示形式**:レポート ファイルの形式を次のいずれかの形式から選択してください。  
+    -   **Formato rendering**: Selezionare uno dei formati seguenti per il file di report:  
 
-        -   **レポート データを含む XML ファイル**:XML (Extensible Markup Language) 形式でレポートを保存します。  
+        -   **File XML con dati report**: salva il report in formato Extensible Markup Language.  
 
-        -   **CSV \(コンマ区切り\)**: コンマ区切り形式でレポートを保存します。  
+        -   **File CSV \(delimitato da virgole\)**: salva il report in un formato con valori \-delimitati\- da virgole.  
 
-        -   **TIFF ファイル**:TIFF (Tagged Image File Format) 形式でレポートを保存します。  
+        -   **File TIFF**: salva il report in formato TIFF (Tagged Image File Format).  
 
-        -   **Acrobat \(PDF\) ファイル**: Acrobat PDF (Portable Document Format) 形式でレポートを保存します。  
+        -   **File Acrobat \(PDF\)**: salva il report in formato Acrobat PDF (Portable Document Format).  
 
-        -   **HTML 4.0**:HTML 4.0 をサポートするブラウザーでのみ表示可能な Web ページとしてレポートを保存します。 Internet Explorer 5 以降のバージョンは HTML 4.0 をサポートしています。  
+        -   **HTML 4.0**: salva il report come pagina Web visualizzabile solo in browser che supportano HTML 4.0. Internet Explorer 5 e le versioni successive supportano HTML 4.0.  
 
             > [!NOTE]  
-            >  レポートにイメージが含まれている場合、HTML 4.0 形式ではそれらはファイルに含められません。  
+            >  Se nel report sono presenti immagini, il formato HTML 4.0 non le includerà nel file.  
 
-        -   **MHTML \(Web アーカイブ\)**: 多くの Web ブラウザーで表示できる MIME HTML 形式 \(mhtml\) でレポートを保存します。  
+        -   **File MHTML \(archivio Web\)**: salva il report in formato MIME HTML \(mhtml\), visualizzabile in molti Web browser.  
 
-        -   **RPL レンダラー**: RPL \(Report Page Layout\) 形式でレポートを保存します。  
+        -   **Renderer RPL**: salva il report in formato RPL \(Report Page Layout\).  
 
-        -   **Excel**:Microsoft Excel のスプレッドシートとしてレポートを保存します。  
+        -   **Excel**: salva il rapporto come foglio di calcolo di Microsoft Excel.  
 
-        -   **Word**:Microsoft Word のドキュメントとしてレポートを保存します。  
+        -   **Word**: salva il report come documento di Microsoft Word.  
 
-    -   **ユーザー名**:配信先のファイル共有およびフォルダーに対してアクセス許可がある Windows ユーザー アカウントを指定します。 このユーザー アカウントは、このサーバー共有にアクセスできて、配信先フォルダーに対する [書き込み] アクセス許可がある必要があります。  
+    -   **Nome utente**: specifica un account utente di Windows con autorizzazioni per l'accesso alla condivisione di server e alla cartella di destinazione. L'account utente deve avere accesso a questa condivisione di server e deve disporre dell'autorizzazione di scrittura per la cartella di destinazione.  
 
-    -   **パスワード**:Windows ユーザー アカウントのパスワードを指定します。 **[パスワードの確認入力]** にパスワードを再入力します。  
+    -   **Password**: specificare la password per l'account utente di Windows. In **Conferma password** digitare nuovamente la password.  
 
-    -   配信先フォルダーに同じ名前のファイルが存在する場合の動作を構成するには、次のいずれかのオプションを選択します。  
+    -   Selezionare una delle seguenti opzioni per configurare il comportamento quando esiste un file con lo stesso nome nella cartella di destinazione:  
 
-        -   **既存のファイルを新しいバージョンで上書きする**:レポート ファイルが既に存在する場合は、新しいバージョンでそれを上書きすることを指定します。  
+        -   **Sovrascrivi un file esistente con una versione più recente**: specifica che quando il file di report esiste già, tale file verrà sovrascritto dalla nuova versione.  
 
-        -   **既存のファイルを上書きしない**:レポート ファイルが既に存在する場合は、何も動作を行なわないことを指定します。  
+        -   **Non sovrascrivere un file esistente**: specifica che quando il file di report esiste già non verrà eseguita alcuna azione.  
 
-        -   **新しいバージョンが追加されるとき、ファイル名の数値を増やす**:レポート ファイルが既に存在している場合、別のバージョンと区別するために、新しいレポートのファイル名に番号が追加されます。  
+        -   **Incrementa i nomi di file quando vengono aggiunte versioni più recenti**: specifica che quando il file di report esiste già verrà aggiunto un numero al nome file del nuovo report, per distinguerlo dalle altre versioni.  
 
-    -   **説明**:レポートのサブスクリプションの説明を指定します。  
+    -   **Descrizione**: specifica la descrizione per la sottoscrizione report.  
 
-     [次へ] をクリックします。 ****  
+     Fare clic su **Avanti**.  
 
-5.  [サブスクリプションのスケジュール] ページで、レポートのサブスクリプションに次のいずれかの配信スケジュール オプションを選択します。 ****  
+5.  Nella pagina **Pianificazione della sottoscrizione** selezionare una delle opzioni seguenti della pianificazione di recapito per la sottoscrizione report:  
 
-    -   **共有スケジュールを使用する**:共有スケジュールは以前に定義されたスケジュールで、他のレポートのサブスクリプションで使用することができます。 このチェック ボックスをオンして、指定された共有スケジュールがあればリストからそのスケジュールを選択します。  
+    -   **Usa pianificazione condivisa**: una pianificazione condivisa è una pianificazione definita in precedenza che può essere utilizzata da altre sottoscrizioni report. Selezionare questa casella di controllo e quindi selezionare una pianificazione condivisa nell'elenco, se disponibile.  
 
-    -   **新しいスケジュールを作成する**:このレポートを実行するスケジュール (このサブスクリプションの間隔、開始日時、および終了日を含む) を構成します。  
+    -   **Crea nuova pianificazione**: configurare la pianificazione in base a cui viene eseguito questo report, specificando intervallo, ora e data di inizio e data di fine per la sottoscrizione.  
 
-6.  [サブスクリプションのパラメーター] ページで、無人で実行するときに使用されるこのレポートのパラメーターを指定します。 **** レポートにパラメーターがない場合、このページは表示されません。  
+6.  Nella pagina **Parametri sottoscrizione** specificare i parametri per questo report che verranno utilizzati per l'esecuzione automatica. Quando non sono presenti parametri per il report, questa pagina non viene visualizzata.  
 
-7.  [概要] ページで、レポートのサブスクリプションの設定を確認します。 **** [ **前へ** ] をクリックして設定を変更するか、[ **次へ** ] をクリックしてレポート サブスクリプションを作成します。  
+7.  Nella pagina **Riepilogo** verificare le impostazioni della sottoscrizione report. Fare clic su **Indietro** per modificare le impostazioni oppure su **Avanti** per creare la sottoscrizione report.  
 
-8.  [ **完了** ] ページで [ **閉じる** ] をクリックして、ウィザードを閉じます。 レポートのサブスクリプションが正常に作成されたことを確認します。 [ **監視** ] ワークスペースの [ **レポート** ] の下にある [ **サブスクリプション** ] ノードで、レポート サブスクリプションの表示と変更を行うことができます。  
+8.  Nella pagina **Completamento** fare clic su **Chiudi** per uscire dalla procedura guidata. Verificare se è stata creata correttamente la sottoscrizione report. È possibile visualizzare e modificare le sottoscrizioni report nel nodo **Sottoscrizioni** sotto **Creazione di report** nell'area di lavoro **Monitoraggio** .  
 
-###  <a name="BKMK_ReportSubscriptionEmail"></a> レポートのサブスクリプションを作成して電子メールでレポートを配信する  
- レポートのサブスクリプションを作成して、電子メールでレポートを配信すると、構成した受信者に電子メールが送信され、レポートは添付ファイルとして含められます。 レポート サーバーは、電子メールのアドレスを検証せず、メール サーバーから電子メールのアドレスを取得しません。 使用する電子メール アドレスを前もって知っている必要があります。 既定では、組織内または外部の有効な電子メール アカウントにレポートを電子メールで送信できます。 次のいずれか、または両方の電子メール配信オプションを選択できます。  
+###  <a name="BKMK_ReportSubscriptionEmail"></a> Creare una sottoscrizione report per recapitare un report tramite posta elettronica  
+ Quando si crea una sottoscrizione report per il recapito di un report tramite posta elettronica, un messaggio di posta elettronica verrà inviato ai destinatari configurati e il report verrà incluso come allegato. Il server di report non convalida gli indirizzi di posta elettronica né ottiene gli indirizzi di posta elettronica da un server di posta elettronica. È necessario conoscere in anticipo gli indirizzi di posta elettronica che si desidera utilizzare. Per impostazione predefinita, è possibile inviare tramite posta elettronica i report a qualsiasi account di posta elettronica valido interno o esterno all'organizzazione. È possibile selezionare una o entrambe le seguenti opzioni di recapito tramite posta elettronica:  
 
--   通知、および生成されたレポートへのハイパーリンクの送信。  
+-   Inviare una notifica e un collegamento ipertestuale al report generato.  
 
--   埋め込みのレポートまたは添付したレポートの送信。 表示形式とブラウザーによって、レポートが埋め込まれるか、添付されるかが決まります。 ブラウザーが HTML 4.0 および MHTML をサポートしていて、MHTML \(Web アーカイブ\) 表示形式を選択した場合、レポートはメッセージの一部として埋め込まれます。 その他すべての表示形式 \(CSV、PDF、Word など\) では、レポートが添付ファイルとして配信されます。 Reporting Services は、レポートを送信する前に、添付ファイルまたはメッセージのサイズをチェックしません。 添付ファイルまたはメッセージのサイズが、メール サーバーで許可される上限を超えていると、そのレポートは配信されません。  
+-   Inviare un report collegato o incorporato. Il formato di rendering e il browser determinano se il report è incorporato o collegato. Se il browser supporta HTML 4.0 e MHTML e si seleziona il formato di rendering MHTML \(archivio Web\), il report verrà incorporato come parte del messaggio. Tutti gli altri formati di rendering \(CSV, PDF, Word e così via\) recapitano i report come allegati. Reporting Services non controlla la dimensione dell'allegato o del messaggio prima di inviare il report. Se l'allegato o messaggio supera il limite massimo consentito dal server di posta elettronica, il report non verrà recapitato.  
 
 > [!IMPORTANT]  
->  [電子メール] 配信オプションを利用可能にするには、Reporting Services で電子メールの設定を構成する必要があります。 **** Reporting Services での電子メール設定の構成の詳細については、SQL Server Books Online の「 [電子メール配信用のレポート サーバーの構成](http://go.microsoft.com/fwlink/p/?LinkId=226668) 」を参照してください。  
+>  È necessario configurare le impostazioni di posta elettronica in Reporting Services per rendere disponibile l'opzione di recapito **Posta elettronica** . Per ulteriori informazioni sulla configurazione delle impostazioni di posta elettronica in Reporting Services, vedere [Configurazione di un server di report per il recapito tramite posta elettronica](http://go.microsoft.com/fwlink/p/?LinkId=226668) nella documentazione online di SQL Server.  
 
- レポートのサブスクリプションを作成し、電子メールを使用してレポートを配信するには、次の手順に従います。  
+ Utilizzare la procedura seguente per creare una sottoscrizione report per recapitare un report tramite posta elettronica.  
 
-#### <a name="to-create-a-report-subscription-to-deliver-a-report-by-email"></a>レポートのサブスクリプションを作成して、電子メールでレポートを配信するには  
+#### <a name="to-create-a-report-subscription-to-deliver-a-report-by-email"></a>Per creare una sottoscrizione report per il recapito di un report tramite posta elettronica  
 
--   Configuration Manager コンソールで、[監視] をクリックします。 ****  
+-   Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
--   [ **監視** ] ワークスペースで、[ **レポート** ] を展開し、[ **レポート** ] をクリックして使用可能なレポートの一覧を表示します。 レポート フォルダーを選択すると、そのフォルダーに関連付けられているレポートのみを表示できます。  
+-   Nell'area di lavoro **Monitoraggio** espandere **Creazione di report** , quindi fare clic su **Report** per elencare i report disponibili. È possibile selezionare una cartella di report per elencare solo i report associati alla cartella.  
 
--   サブスクリプションに追加するレポートを選択し、[ **ホーム** ] タブの [ **レポート グループ** ] セクションで、[ **サブスクリプションの作成** ] をクリックして、 **サブスクリプションの作成ウィザード**を開きます。  
+-   Selezionare sul report da aggiungere alla sottoscrizione, quindi nella sezione **Gruppo Report** della scheda **Home** fare clic su **Crea sottoscrizione** per aprire la **Creazione guidata sottoscrizione**.  
 
--   [サブスクリプションの配信] ページで、次の設定を構成します。 ****  
+-   Nella pagina **Recapito sottoscrizione** è possibile configurare le impostazioni seguenti:  
 
-    -   **レポートの配信手段**: 電子メール メッセージの添付ファイルとしてレポートを配信するには、**[電子メール]** を選択します。  
+    -   **Report recapitato da**: selezionare **Posta elettronica** per recapitare il report come allegato in un messaggio di posta elettronica.  
 
-    -   **宛先**:レポートの送信先である有効な電子メール アドレスを指定します。  
+    -   **A**: specificare un indirizzo di posta elettronica valido a cui inviare questo report.  
 
         > [!NOTE]  
-        >  セミコロンで各電子メール アドレスを区切って、複数の電子メール受信者を入力できます。  
+        >  È possibile immettere più destinatari di posta elettronica separando ogni indirizzo di posta elettronica con un punto e virgola.  
 
-    -   **CC**:レポートのコピーを送信する電子メール アドレスを任意に指定します。  
+    -   **Cc**: facoltativamente, specificare un indirizzo di posta elettronica a cui inviare in copia questo report.  
 
-    -   **Bcc**:必要に応じて、レポートを BCC で送信する電子メール アドレスを指定します。  
+    -   **Ccn**: facoltativamente, specificare un indirizzo di posta elettronica a cui inviare in copia nascosta questo report.  
 
-    -   **返信先**:受信者が電子メール メッセージに返信する場合に使用する返信先のアドレスを指定します。  
+    -   **Rispondi a**: specificare l'indirizzo di risposta da utilizzare se il destinatario risponde al messaggio di posta elettronica.  
 
-    -   **件名**:サブスクリプション電子メール メッセージの件名を指定します。  
+    -   **Oggetto**: specificare un oggetto per il messaggio di posta elettronica di sottoscrizione.  
 
-    -   **優先順位**:この電子メール メッセージの優先順位フラグを選択します。 [ **低**]、[ **標準**]、または  [ **高**] を選択します。 この優先順位の設定は、Microsoft Exchange で電子メールの重要度を示すフラグを設定するために使用されます。  
+    -   **Priorità**: selezionare il flag di priorità per il messaggio di posta elettronica. Selezionare **Bassa**, **Normale**o **Alta**. L'impostazione di priorità viene utilizzata da Microsoft Exchange per impostare un flag che indica la rilevanza del messaggio di posta elettronica.  
 
-    -   **コメント**:サブスクリプション電子メール メッセージの本文に追加するテキストを指定します。  
+    -   **Commento**: specificare il testo da aggiungere al corpo del messaggio di posta elettronica di sottoscrizione.  
 
-    -   **説明**:レポートのサブスクリプションについて説明を入力します。  
+    -   **Descrizione**: specificare la descrizione per la sottoscrizione report.  
 
-    -   **リンクを含める**:電子メール メッセージの本文に、サブスクライブされるレポートの URL を含めます。  
+    -   **Includi collegamento**: include un URL per il report sottoscritto nel corpo del messaggio di posta elettronica.  
 
-    -   **レポートを含める**: 電子メール メッセージにレポートを添付するように指定します。 レポートを添付する形式は、**[表示形式]** リストで指定します。  
+    -   **Includi report**: specificare che il report venga allegato al messaggio di posta elettronica. Il formato in cui verrà allegato il report viene specificato nell'elenco **Formato rendering** .  
 
-    -   **表示形式**: 添付するレポートの形式を次のいずれかの形式から選択してください。  
+    -   **Formato rendering**: selezionare uno dei formati seguenti per il report allegato:  
 
-        -   **レポート データを含む XML ファイル**: XML (Extensible Markup Language) 形式でレポートを保存します。  
+        -   **File XML con dati report**: salva il report in formato Extensible Markup Language.  
 
-        -   **CSV \(コンマ区切り\)**: コンマ区切り形式でレポートを保存します。  
+        -   **File CSV \(delimitato da virgole\)**: salva il report in un formato con valori \-delimitati\- da virgole.  
 
-        -   **TIFF ファイル**:TIFF (Tagged Image File Format) 形式でレポートを保存します。  
+        -   **File TIFF**: salva il report in formato TIFF (Tagged Image File Format).  
 
-        -   **Acrobat \(PDF\) ファイル**: Acrobat PDF (Portable Document Format) 形式でレポートを保存します。  
+        -   **File Acrobat \(PDF\)**: salva il report in formato Acrobat PDF (Portable Document Format).  
 
-        -   **MHTML \(Web アーカイブ\)**: 多くの Web ブラウザーで表示できる MIME HTML 形式 \(mhtml\) でレポートを保存します。  
+        -   **File MHTML \(archivio Web\)**: salva il report in formato MIME HTML \(mhtml\), visualizzabile in molti Web browser.  
 
-        -   **Excel**: Microsoft Excel のスプレッドシートとしてレポートを保存します。  
+        -   **Excel**: salva il rapporto come foglio di calcolo di Microsoft Excel.  
 
-        -   **Word**: Microsoft Word のドキュメントとしてレポートを保存します。  
+        -   **Word**: salva il report come documento di Microsoft Word.  
 
--   **[サブスクリプションのスケジュール]** ページで、レポートのサブスクリプションに次のいずれかの配信スケジュール オプションを選択します。  
+-   Nella pagina **Pianificazione della sottoscrizione** selezionare una delle opzioni seguenti della pianificazione di recapito per la sottoscrizione report:  
 
-    -   **共有スケジュールを使用する**:共有スケジュールは以前に定義されたスケジュールで、他のレポートのサブスクリプションで使用することができます。 このチェック ボックスをオンして、指定された共有スケジュールがあればリストからそのスケジュールを選択します。  
+    -   **Usa pianificazione condivisa**: una pianificazione condivisa è una pianificazione definita in precedenza che può essere utilizzata da altre sottoscrizioni report. Selezionare questa casella di controllo e quindi selezionare una pianificazione condivisa nell'elenco, se disponibile.  
 
-    -   **新しいスケジュールを作成する**: このレポートを実行するスケジュール (このサブスクリプションの間隔、開始日時、および終了日を含む) を構成します。  
+    -   **Crea nuova pianificazione**: configurare la pianificazione in base a cui viene eseguito questo report, specificando intervallo, ora e data di inizio e data di fine per la sottoscrizione.  
 
--   **[サブスクリプションのパラメーター]** ページで、無人で実行するときに使用されるこのレポートのパラメーターを指定します。 レポートにパラメーターがない場合、このページは表示されません。  
+-   Nella pagina **Parametri sottoscrizione** specificare i parametri per questo report che verranno utilizzati per l'esecuzione automatica. Quando non sono presenti parametri per il report, questa pagina non viene visualizzata.  
 
--   [概要] ページで、レポートのサブスクリプションの設定を確認します。 **** [ **前へ** ] をクリックして設定を変更するか、[ **次へ** ] をクリックしてレポート サブスクリプションを作成します。  
+-   Nella pagina **Riepilogo** verificare le impostazioni della sottoscrizione report. Fare clic su **Indietro** per modificare le impostazioni oppure su **Avanti** per creare la sottoscrizione report.  
 
--   [ **完了** ] ページで [ **閉じる** ] をクリックして、ウィザードを閉じます。 レポートのサブスクリプションが正常に作成されたことを確認します。 **[監視 ]** ワークスペースの **[レポート]** の下にある **[サブスクリプション]** ノードで、レポート サブスクリプションの表示と変更を行うことができます。  
+-   Nella pagina **Completamento** fare clic su **Chiudi** per uscire dalla procedura guidata. Verificare se è stata creata correttamente la sottoscrizione report. È possibile visualizzare e modificare le sottoscrizioni report nel nodo **Sottoscrizioni** sotto **Creazione di report** nell'area di lavoro **Monitoraggio** .  

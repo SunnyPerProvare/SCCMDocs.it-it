@@ -1,6 +1,6 @@
 ---
-title: "ソフトウェア インベントリの構成 | Microsoft Docs"
-description: "System Center Configuration Manager でソフトウェア インベントリを構成し、でソフトウェア インベントリからフォルダーを除外します。"
+title: Configurare l'inventario software | Microsoft Docs
+description: Configurare l'inventario software ed escludere cartelle dall'inventario software in Configuration Manager.
 ms.custom: na
 ms.date: 02/22/2017
 ms.prod: configuration-manager
@@ -18,41 +18,41 @@ manager: angrobe
 ms.openlocfilehash: e60cec71c425e5e42d450cbeee366528d4b42405
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-configure-software-inventory-in-system-center-configuration-manager"></a>System Center Configuration Manager でソフトウェア インベントリを構成する方法
+# <a name="how-to-configure-software-inventory-in-system-center-configuration-manager"></a>Come configurare l'inventario software in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
- この手順により、ソフトウェア インベントリの既定のクライアント設定を構成し、階層内のすべてのデバイスに適用します。 いくつかのコンピューターにのみこれらの設定を適用するには、カスタムのデバイス クライアント設定を作成し、ソフトウェア インベントリを使用するコンピューターが含まれるコレクションにそれを割り当てます。 カスタムのデバイス設定の作成方法の詳細については、「[System Center Configuration Manager でクライアント設定を構成する方法](../../../../core/clients/deploy/configure-client-settings.md)」を参照してください。  
+ Questa procedura consente di configurare le impostazioni client predefinite per l'inventario software e applicarle a tutti i computer nella gerarchia. Per applicare queste impostazioni solo ad alcuni computer, creare un'impostazione client di dispositivo personalizzata e assegnarla a una raccolta contenente i computer in cui si vuole usare l'inventario software. Per altre informazioni su come creare impostazioni dispositivo personalizzate, vedere [How to configure client settings in System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md) (Come configurare le impostazioni client in System Center Configuration Manager).  
 
-## <a name="to-configure-software-inventory"></a>ソフトウェア インベントリを構成するには  
+## <a name="to-configure-software-inventory"></a>Per configurare l'inventario software  
 
-1.  Configuration Manager コンソールで、[**管理**] > [**クライアント設定**] > [**既定のクライアント設定**] の順に選択します。  
+1.  Nella console di Configuration Manager selezionare **Amministrazione** > **Impostazioni client** **Impostazioni client predefinite**.  
 
-4.  **[ホーム]** タブの **[プロパティ]** グループで、**[プロパティ]** を選択します。  
+4.  Nella scheda **Home**, nel gruppo **Proprietà**, scegliere **Proprietà**.  
 
-5.  [**既定の設定**] ダイアログ ボックスで、[**ソフトウェア インベントリ**] を選択します。  
+5.  Nella finestra di dialogo **Impostazioni predefinite** scegliere **Inventario software**.  
 
-6.  [デバイスの設定] **** 一覧で、次の値を構成します。  
+6.  Nell'elenco **Impostazioni dispositivo** configurare i valori seguenti:  
 
-    -   **クライアントのソフトウェア インベントリを有効にする** - ドロップダウン リストから、**[True]** を選択します。  
+    -   **Abilitare inventario software nei client**: selezionare **Vero** dall'elenco a discesa.  
 
-    -   **ソフトウェア インベントリおよびファイル収集をスケジュールする** - クライアントがソフトウェア インベントリとファイルを収集する間隔を構成します。   
+    -   **Pianificare inventario software e raccolta file**: consente di configurare l'intervallo di raccolta di file e inventario software da parte dei client.   
 
-7.  必要なクライアント設定を構成します。 構成できるソフトウェア インベントリ クライアント設定の一覧については、「[System Center Configuration Manager のクライアント設定について](../../../../core/clients/deploy/about-client-settings.md)」トピックの「[ソフトウェア インベントリ](../../../../core/clients/deploy/about-client-settings.md#software-inventory)」セクションをご覧ください。  
+7.  Configurare le impostazioni client necessarie. Per un elenco delle impostazioni client dell'inventario software che è possibile configurare, vedere la sezione [Software Inventory](../../../../core/clients/deploy/about-client-settings.md#software-inventory) (Inventario software) nell'argomento [About client settings in System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
 
- クライアント コンピューターは、次にクライアント ポリシーをダウンロードするときに、これらの設定で構成されます。 1 つのクライアントのポリシーの取得を開始する場合は、「 [How to manage clients in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md)」を参照してください。  
+ I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero criteri per un singolo client, vedere [How to manage clients in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
 
 
-## <a name="to-exclude-folders-from-software-inventory"></a>ソフトウェア インベントリからフォルダーを除外するには  
+## <a name="to-exclude-folders-from-software-inventory"></a>Per escludere cartelle dall'inventario software  
 
-1.  Notepad.exe を使用して、 **Skpswi.dat**という名前の空のファイルを作成します。  
+1.  Usando Notepad.exe, creare un file vuoto denominato **Skpswi.dat**.  
 
-2.  **Skpswi.dat** ファイルを右クリックして、 **[プロパティ]**をクリックします。 SkpSwi.dat ファイルのプロパティで、[非表示] 属性を選択します。 ****  
+2.  Fare clic con il pulsante destro del mouse sul file **Skpswi.dat** e quindi scegliere **Proprietà**. Nelle proprietà per il file Skpswi.dat selezionare l'attributo **Hidden** .  
 
-3.  ソフトウェア インベントリから除外する各クライアントのハード ドライブまたはフォルダーのルートに Skpswi.dat ファイルを配置します。 ****  
+3.  Inserire il file **Skpswi.dat** nella radice di ogni disco rigido o struttura di cartelle del client che si vuole escludere dall'inventario software.  
 
 > [!NOTE]  
->  このファイルがクライアント コンピューターのドライブから削除されない限り、ソフトウェア インベントリによってクライアントのドライブが以後インベントリされることはありません。
+>  L'inventario software non effettua l'inventario dell'unità del client a meno che questo file non venga eliminato dall'unità nel computer client.

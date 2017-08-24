@@ -1,6 +1,6 @@
 ---
-title: "プル配布ポイント | Microsoft Docs"
-description: "System Center Configuration Manager でのプル配布ポイントの使用に関する構成と制限事項について説明します。"
+title: Punto di distribuzione pull | Microsoft Docs
+description: Informazioni sulle configurazioni e le limitazioni per l'uso di un punto di distribuzione pull con System Center Configuration Manager.
 ms.custom: na
 ms.date: 2/14/2017
 ms.prod: configuration-manager
@@ -17,95 +17,95 @@ manager: angrobe
 ms.openlocfilehash: db5039ff6cb93e3099b096196d49a1f06c315a6b
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-a-pull-distribution-point-with-system-center-configuration-manager"></a>System Center Configuration Manager でのプル配布ポイントの使用
+# <a name="use-a-pull-distribution-point-with-system-center-configuration-manager"></a>Usare un punto di distribuzione pull basato sul cloud con System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-System Center Configuration Manager のプル配布ポイントは、サイト サーバーからソース配布ポイントにコンテンツをプッシュすることによってではなく、クライアントのようにソースの場所からコンテンツをダウンロードすることによって配布コンテンツを取得する標準的な配布ポイントです。  
+Un punto di distribuzione pull per System Center Configuration Manager è un punto di distribuzione standard che consente di ottenere il contenuto distribuito scaricandolo da una posizione di origine, ad esempio un client, anziché eseguire il push del contenuto nella posizione dal server del sito.  
 
- 1 つのサイトの多くの配布ポイントにコンテンツを展開する場合、プル配布ポイントを使用すると、サイト サーバーの処理負荷を減らし、各配布ポイントにコンテンツを転送する速度を向上させることができます。 つまり、サイト サーバーの配布マネージャー プロセスから、各配布ポイントへのコンテンツの転送プロセスによる負荷を取り除きます。  
+ Quando si distribuisce contenuto in un ampio numero di punti di distribuzione in un sito, i punti di distribuzione pull possono ridurre il carico di elaborazione sul server del sito e velocizzare il trasferimento del contenuto a ciascun punto di distribuzione. Questa efficienza viene ottenuta ripartendo il carico del processo di trasferimento del contenuto a ogni punto di distribuzione dal processo di gestione della distribuzione al server del sito.  
 
--   配布ポイントは個別にプル配布ポイントとして構成することができます。  
+-   È possibile configurare singoli punti di distribuzione come punti di distribuzione pull.  
 
--   それぞれのプル配布ポイントには、デプロイの取得元として少なくとも 1 つのソース配布ポイントを指定する必要があります (プル配布ポイントがコンテンツを取得できるのは、ソース配布ポイントとして指定された配布ポイントからだけです)。  
+-   Per ogni punto di distribuzione pull è necessario specificare uno o più punti di distribuzione di origine da cui ottenere le distribuzioni (un punto di distribuzione pull può ricevere contenuto solo da un punto di distribuzione specificato come punto di distribuzione di origine).  
 
--   コンテンツをプル配布ポイントに配布するとき、サイト サーバーはプル配布ポイントに通知を送ります。通知を受け取ったプル配布ポイントは、ソース配布ポイントからコンテンツのダウンロード (転送) を開始します。 各プル配布ポイントが個別にコンテンツの転送を受け持ち、既にコンテンツのコピーを持っている配布ポイントからコンテンツをダウンロードします。  
+-   Quando si distribuisce contenuto in un punto di distribuzione pull, il server del sito invia una notifica al punto di distribuzione pull che quindi avvia il download (trasferimento) del contenuto da un punto di distribuzione di origine. Un punto di distribuzione pull gestisce individualmente il trasferimento del contenuto, scaricandolo da un altro punto di distribuzione che contiene già una copia del contenuto.  
 
-プル配布ポイントは、通常の Configuration Manager 配布ポイントと同じ構成と機能をサポートします。 たとえば、マルチキャストと PXE を構成でき、コンテンツの検証、オンデマンドによるコンテンツの配布にも対応しています。 プル配布ポイントは、クライアントからの HTTP または HTTPS 通信、他の配布ポイントと同じ証明書オプションをサポートし、個別または配布ポイントのメンバーとして管理できます。  
+I punti di distribuzione pull supportano le stesse configurazioni e funzionalità dei normali punti di distribuzione di Configuration Manager. Ad esempio, un punto di distribuzione configurato come un punto di distribuzione pull supporta l'utilizzo di configurazioni multicast e PXE, convalida contenuto e distribuzione di contenuto su richiesta. Un punto di distribuzione pull supporta comunicazioni HTTP o HTTPS da client, supporta le stesse opzioni relative ai certificati di altri punti di distribuzione e può essere gestito individualmente o come un membro di un gruppo di punti di distribuzione.  
 
 > [!IMPORTANT]
-> プル配布ポイントは HTTP と HTTPS による通信をサポートしていますが、Configuration Manager を使用するときは、HTTP 用に構成されているソース配布ポイントだけを指定することができます。 Configuration Manager SDK を使用して、HTTPS 用に構成されているソース配布ポイントを指定することができます。  
+> Anche se un punto di distribuzione pull supporta le comunicazioni su HTTP e HTTPS, quando si usa Configuration Manager è possibile specificare solo punti di distribuzione di origine configurati per HTTP. È possibile usare Configuration Manager SDK per specificare un punto di distribuzione di origine configurato per HTTPS.  
 
- **コンテンツをプル配布ポイントに配布するときは、次の処理が順番に行われます。**  
+ **La sequenza di eventi seguente si verifica durante la distribuzione del contenuto a un punto di distribuzione pull:**  
 
--   プル配付ポイントへのコンテンツの配布を開始するときは、まず、サイト サーバーの Package Transfer Manager がサイト データベースを調べ、該当するコンテンツがソース配付ポイントにあるかどうかを確認します。 ソース配布ポイントにコンテンツがあるかどうかを確認できない場合は、その後 20 分おきに確認を繰り返します。  
+-   Non appena si distribuisce contenuto a un punto di distribuzione pull, sul server del sito, Package Transfer Manager esegue la verifica del database del sito per confermare se il contenuto è disponibile in un punto di distribuzione di origine. Se questa conferma non è possibile, il controllo viene ripetuto ogni 20 minuti finché il contenuto non diventa disponibile.  
 
--   Package Transfer Manager が、ソース配付ポイントにコンテンツがあることを確認できたら、プル配布ポイントにコンテンツをダウンロードするように指示します。 プル配布ポイントは、この通知を受信すると、ソース配布ポイントからコンテンツのダウンロードを試行します。  
+-   Quando il Package Transfer Manager conferma la disponibilità del contenuto, viene inviata una notifica al punto di distribuzione pull con la richiesta di scaricare il contenuto. Quando riceve questa notifica, il punto di distribuzione pull tenta di scaricare il contenuto dai relativi punti di distribuzione di origine.  
 
--   プル配布ポイントは、コンテンツのダウンロードを完了すると、そのステータスを管理ポイントに送信します。 しかし、60 分経っても、このステータスを管理ポイントが受信しなかった場合は、Package Transfer Manager が稼働状態に戻り、プル配布ポイントがコンテンツのダウンロードを完了したかどうかを確認します。 コンテンツのダウンロードが進行中の場合は、Package Transfer Manager は、60 分後にプル配布ポイントをもう一度確認するまで休止状態に入ります。 この一連の動作が、プル配布ポイントがコンテンツの転送を完了するまで繰り返されます。  
+-   Al termine del download del contenuto, lo stato del punto di distribuzione pull viene inviato a un punto di gestione. Se però dopo 60 minuti questo stato non viene ricevuto, viene riattivato Package Transfer Manager e viene eseguita una verifica sul punto di distribuzione pull per controllare che il contenuto sia stato scaricato. Se il download del contenuto è in corso, Package Transfer Manager rimane inattivo per 60 minuti prima di eseguire nuovamente una verifica con il punto di distribuzione pull. Questo ciclo continua fino a quando il punto di distribuzione pull non ha completato il trasferimento del contenuto.  
 
-**プル配布ポイントの構成** は、配布ポイントをインストールするときか、インストールした後で、配布ポイント サイト システムの役割のプロパティを編集することによって行います。  
+**È possibile configurare un punto di distribuzione pull** quando si installa il punto di distribuzione o dopo averlo installato modificando le proprietà del ruolo del sistema del sito del punto di distribuzione.  
 
-プル配布ポイントの構成は、配布ポイントのプロパティを編集することで**削除できます**。 プル配布ポイントの構成を削除すると、通常の配布ポイントの動作に戻り、その後の配布ポイントへのコンテンツの転送はサイト サーバーが制御することになります。  
+**È possibile rimuovere la configurazione come punto di distribuzione pull** modificando le proprietà del punto di distribuzione. Quando si rimuove la configurazione del punto di distribuzione pull, il punto di distribuzione torna al normale funzionamento e i successivi trasferimenti di contenuto al punto di distribuzione vengono gestiti dal server del sito.  
 
-## <a name="limitations-for-pull-distribution-points"></a>プル配布ポイントの制限  
+## <a name="limitations-for-pull-distribution-points"></a>Limitazioni per i punti di distribuzione pull  
 
--   クラウドベースの配布ポイントは、プル配布ポイントとして構成できません。  
+-   Il punto di distribuzione basato su cloud non può essere configurato come punto di distribuzione pull.  
 
--   サイト サーバーの配布ポイントは、プル配布ポイントとして構成できません。  
+-   Un punto di distribuzione in un server del sito non può essere configurato come punto di distribuzione pull.  
 
--   **事前設定コンテンツの構成は、プル配布ポイントの構成よりも優先されます。** 事前設定済みコンテンツ用に構成されているプル配布ポイントは、コンテンツを待ちます。 ソース配布ポイントからコンテンツをプルしません。また、事前設定コンテンツが構成されている標準の配布ポイントと同様に、サイト サーバーからコンテンツを受信しません。  
+-   **La configurazione del contenuto di pre-installazione sostituisce la configurazione del punto di distribuzione pull**. Un punto di distribuzione pull configurato per il contenuto pre-installazione rimane in attesa del contenuto. Non abilita il pull di contenuto dal punto di distribuzione di origine e, analogamente a un punto di distribuzione standard con configurazione contenuto pre-installazione, non riceve contenuto dal server del sito.  
 
--   プル配布ポイントは、コンテンツを転送するときに、**転送率の制限の構成を使用しません** 。 事前にインストールされた配布ポイントをプル配布ポイントに構成する場合、転送率の制限の構成は保存されますが、使用されません。 後でプル配布ポイント構成を削除した場合は、前と同じ転送率の制限が使われるようになります。  
+-   **Un punto di distribuzione pull non usa le configurazioni per i limiti di velocità** durante il trasferimento del contenuto. Se si configura un punto di distribuzione installato in precedenza per farlo diventare un punto di distribuzione pull, le configurazioni per i limiti di velocità vengono salvate ma non usate. Se in un secondo momento si rimuove la configurazione del punto di distribuzione pull, vengono implementate le configurazioni del limite di velocità configurate in precedenza.  
 
     > [!NOTE]  
-    >  配布ポイントをプル配布ポイントとして構成すると、配布ポイントのプロパティの [ **転送率の制限** ] タブは表示されません。  
+    >  Se un punto di distribuzione è configurato come un punto di distribuzione pull, la scheda **Limiti di velocità** non è visibile nelle proprietà del punto di distribuzione.  
 
--   プル配布ポイントは、コンテンツを配布するときに **[再試行の設定]** を使用しません。 各サイトで、[**ソフトウェアの配布コンポーネントのプロパティ** ] の一部として [ **再試行の設定** ] を構成できます。 これらのプロパティを表示または構成するには、Configuration Manager コンソールの [**管理**] ワークスペースで、[**サイトの構成**] を展開し、[**サイト**] を選択します。 次に、結果ウィンドウでサイトを選択し、**[ホーム]** タブで **[サイト コンポーネントの構成]** を選択します。 最後に、**[ソフトウェアの配布]** を選択します。  
+-   Un punto di distribuzione pull non usa l'opzione **Impostazioni tentativi** per la distribuzione del contenuto. **Impostazioni tentativi** può essere configurata come parte di **Proprietà componente distribuzione software** per ogni sito. Per visualizzare o configurare queste proprietà, nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Configurazione del sito**, quindi selezionare **Siti**. Selezionare un sito nel riquadro dei risultati e quindi selezionare **Configura componenti del sito** nella scheda **Home**. Infine selezionare **Distribuzione software**.  
 
--   リモート フォレストにあるソース配布ポイントからコンテンツを転送するには、プル配布ポイントのあるコンピューターに Configuration Manager クライアントがインストールされていなければなりません。 ソース配付ポイントにアクセスに使用するネットワーク アクセス アカウントを構成する必要があります。  
+-   Per trasferire contenuto da un punto di distribuzione di origine in una foresta remota, nel computer che ospita il punto di distribuzione pull deve essere installato un client di Configuration Manager. Un account di accesso alla rete che può accedere al punto di distribuzione di origine deve essere configurato per l'utilizzo.  
 
--   プル配布ポイントとして構成し、Configuration Manager クライアントを実行するコンピューターでは、クライアントのバージョンが、プル配布ポイントをインストールする Configuration Manager サイトと同じバージョンでなければなりません。 これは、プル配布ポイントと Configuration Manager クライアントの両方に共通する CCMFramework を使用するプル配布ポイントの場合の要件です。  
+-   In un computer configurato come un punto di distribuzione pull e che esegue un client di Configuration Manager la versione del client deve essere identica a quella del sito di Configuration Manager che installa il punto di distribuzione pull. Di conseguenza, è necessario usare il componente CCMFramework comune al punto di distribuzione pull e al client di Configuration Manager.  
 
-## <a name="about-source-distribution-points"></a>ソース配布ポイントについて  
- プル配布ポイントを構成するときは、ソース配布ポイントを 1 つまたは複数指定する必要があります。  
+## <a name="about-source-distribution-points"></a>Informazioni sui punti di distribuzione di origine  
+ Quando si configura il punto di distribuzione pull, è necessario specificare uno o più punti di distribuzione di origine:  
 
--   このとき、ソース配付ポイントになることができる配付ポイントだけが表示されます。  
+-   Vengono visualizzati solo i punti di distribuzione che sono qualificati come punti di distribuzione di origine.  
 
--   プル配布ポイントは、他のプル配布ポイントのソース配布ポイントとして指定できます。  
+-   Un punto di distribuzione pull può essere specificato come un punto di distribuzione di origine per un altro punto di distribuzione pull.  
 
--   Configuration Manager を使用するときソース配布ポイントとして指定できるのは、HTTP をサポートする配布ポイントだけです。  
+-   Quando si usa la console di Configuration Manager, solo i punti di distribuzione che supportano HTTP possono essere specificati come punti di distribuzione di origine.  
 
--   Configuration Manager SDK を使用して、HTTPS 用に構成されているソース配布ポイントを指定することができます。 HTTPS 用に構成されているソース配布ポイントを使用するには、プル配布ポイントが Configuration Manager クライアントを実行するコンピューターに併置されている必要があります。  
+-   È possibile usare Configuration Manager SDK per specificare un punto di distribuzione di origine configurato per HTTPS. Per usare un punto di distribuzione di origine configurato per HTTPS, il percorso del punto di distribuzione pull deve essere condiviso in un computer che esegue il client di Configuration Manager.  
 
-プル配布ポイントのソース配布ポイント リストに登録されている各配布ポイントには優先順位を割り当てることができます。  
+È possibile assegnare una priorità a ogni punto di distribuzione in un elenco di punti di distribuzione di origine con punti di distribuzione pull:  
 
--   各ソース配布ポイントに別の優先順位を割り当てるか、複数のソース配布ポイントを同じ優先順位に割り当てることができます。  
+-   È possibile assegnare una priorità separata per ogni punto di distribuzione di origine o assegnare la stessa priorità a più punti di distribuzione di origine.  
 
--   優先順位によって、プル配布ポイントがソース配布ポイントのコンテンツを要求する順序が決まります。  
+-   La priorità determina l'ordine secondo cui il punto di distribuzione pull richiede contenuto dai relativi punti di distribuzione di origine.  
 
--   プル配布ポイントは、まず優先順位が最も低いソース配布ポイントに接続します。  同じ優先順位のソース配布ポイントが複数ある場合、プル配布ポイントはその優先順位を共有するソース配布ポイントのいずれかをランダムに選択します。  
+-   Inizialmente viene contattato il punto di distribuzione di origine con il valore di priorità più basso.  Se esistono più punti di distribuzione di origine con la stessa priorità, viene selezionato in modo non deterministico uno dei punti di distribuzione di origine che condividono tale priorità.  
 
--   選択されたソースでコンテンツを取得できない場合、プル配布ポイントは優先順位が同じ別の配布ポイントからコンテンツのダウンロードを試行します。  
+-   Se il contenuto non è disponibile nell'origine selezionata, il punto di distribuzione pull prova a scaricare il contenuto da un altro punto di distribuzione con la stessa priorità.  
 
--   優先順位が同じ配布ポイントのいずれにもコンテンツがない場合は、次に大きい優先順位を持つ配布ポイントからのダウンロードを試みます。この操作をコンテンツが見つかるまで繰り返し、どの配付ポイントにもコンテンツが見つからなかった場合は、30 分間休止してから再開します。  
+-   Se nessuno dei punti di distribuzione con una priorità specifica dispone del contenuto, il punto di distribuzione pull tenta di scaricare il contenuto da un punto di distribuzione a cui è stato assegnato il valore di priorità successivo più alto, finché il contenuto non viene individuato o il punto di distribuzione pull passa in modalità di sospensione per 30 minuti prima di iniziare nuovamente il processo.  
 
-プル配布ポイントがソース配布ポイントからコンテンツをダウンロードすると、そのプル配布ポイントは、 **[配布ポイントの使用状況の概要]** レポートの **[アクセスしたクライアント数 (固有)]** 列でクライアントとしてカウントされます。  
+Un punto di distribuzione pull che scarica contenuto da un punto di distribuzione di origine viene conteggiato come un client nella colonna **Client a cui è stato effettuato l'accesso (univoco)** del report **Riepilogo di utilizzo dei punti di distribuzione** .  
 
- 既定では、プル配布ポイントは、ソース配布ポイントからのコンテンツの転送に、プル配布ポイントの **コンピューターのアカウント** を使用します。 ただし、プル配布ポイントが、リモート フォレストにあるソース配布ポイントからコンテンツを転送する場合、プル配布ポイントは常にネットワーク アクセス アカウントを使用します。 このためには、コンピューターに Configuration Manager クライアントをインストールし、使用するネットワーク アクセス アカウントを構成して、ソース配布ポイントへのアクセス権を設定する必要があります。  
+ Per impostazione predefinita, un punto di distribuzione pull usa l' **account computer** per trasferire il contenuto da un punto di distribuzione di origine. Tuttavia, quando il punto di distribuzione pull trasferisce il contenuto da un punto di distribuzione di origine ubicato in una foresta remota, usa sempre l'account di accesso alla rete. Questo processo richiede che il client di Configuration Manager sia installato nel computer e che un account di accesso alla rete sia configurato per l'uso e possa accedere al punto di distribuzione di origine.  
 
-## <a name="about-content-transfers"></a>コンテンツの転送について  
- コンテンツの転送を管理するために、プル配布ポイントは、Configuration Manager クライアント ソフトウェアの **CCMFramework** コンポーネントを使用します。  
+## <a name="about-content-transfers"></a>Informazioni sui trasferimenti di contenuto  
+ Per gestire il trasferimento del contenuto, i punti di distribuzione pull usano il componente **CCMFramework** del software client di Configuration Manager.  
 
--   このフレームワークは、配布ポイントをプル配布ポイントとして構成するときに **Pulldp.msi** によってインストールされます。 フレームワークは、Configuration Manager クライアントを必要としません。  
+-   Questo framework viene installato da **Pulldp.msi** quando si configura il punto di distribuzione come punto di distribuzione pull. Non richiede l'installazione del client di Configuration Manager.  
 
--   プル配布ポイントのインストール後に、そのコンピューターで CCMExec サービスが実行されていないと、プル配付ポイントが正常に機能しません。  
+-   Al termine dell'installazione del punto di distribuzione pull, il servizio CCMExec nel computer del punto di distribuzione deve essere operativo per il funzionamento del punto di distribuzione pull.  
 
--   プル配布ポイントがコンテンツを転送するときに、 **バックグラウンド インテリジェント転送サービス** (BITS) を使用してコンテンツが転送され、配布ポイントのコンピューターの **datatransferservice.log** と **pulldp.log** に操作が記録されます。  
+-   L'operazione di trasferimento del contenuto viene eseguita usando il **Servizio trasferimento intelligente in background** (BITS) e registrata nei file **datatransferservice.log** e **pulldp.log** del computer del punto di distribuzione.  
 
-## <a name="see-also"></a>関連項目  
- [System Center Configuration Manager でのコンテンツ管理の基本的な概念](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management)   
+## <a name="see-also"></a>Vedere anche  
+ [Concetti di base per la gestione dei contenuti in System Center Configuration Manager](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management)   

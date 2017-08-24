@@ -1,6 +1,6 @@
 ---
-title: "バーチャル ハード ディスクを管理するためのタスク シーケンスの使用 | Microsoft Docs"
-description: "Configuration Manager から VHD を作成および変更し、アプリケーションとソフトウェア更新プログラムを追加して、VHD を System Center Virtual Machine Manager (VMM) に発行します。"
+title: "Usare una sequenza di attività per gestire dischi rigidi virtuali | Microsoft Docs"
+description: "È possibile creare e modificare un disco rigido virtuale, aggiungere applicazioni e aggiornamenti software e pubblicare il disco rigido virtuale in System Center Virtual Machine Manager (VMM) da Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,21 +17,21 @@ manager: angrobe
 ms.openlocfilehash: f77af4b8fcb193ed44511c0e5eea7290f55dbbf8
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-a-task-sequence-to-manage-virtual-hard-disks-in-system-center-configuration-manager"></a>タスク シーケンスによる System Center Configuration Manager でのバーチャル ハード ディスクの管理
+# <a name="use-a-task-sequence-to-manage-virtual-hard-disks-in-system-center-configuration-manager"></a>Usare una sequenza di attività per gestire dischi rigidi virtuali in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager では、Configuration Manager コンソールから、バーチャル ハード ディスク (VHD) を管理し、作成した VHD をデータセンターに統合できます。 具体的には、Configuration Manager コンソールから VHD を作成および変更し、アプリケーションとソフトウェア更新プログラムを VHD に追加して、VHD を System Center Virtual Machine Manager (VMM) に発行することができます。  
+In System Center Configuration Manager è possibile gestire dischi rigidi virtuali e integrare quelli creati nel data center dalla console di Configuration Manager. In particolare, è possibile creare e modificare un disco rigido virtuale, aggiungere applicazioni e aggiornamenti software al disco e pubblicare il disco in System Center Virtual Machine Manager (VMM) dalla console di Configuration Manager.  
 
- 次の手順に従って、Configuration Manager で VHD を管理します。
+ Usare le seguenti sezioni per gestire dischi rigidi virtuali in Configuration Manager.
 
-## <a name="prerequisites"></a>必要条件  
- 開始する前に、次の前提条件を確認します。  
+## <a name="prerequisites"></a>Prerequisiti  
+ Prima di iniziare, verificare che i seguenti prerequisiti siano soddisfatti:  
 
--   VHD を管理するコンピューターは、次のオペレーティング システムのいずれかを実行する必要があります。  
+-   Il computer da cui si gestiscono i dischi rigidi virtuali deve eseguire uno dei seguenti sistemi operativi:  
 
     -   Windows 8.1 x64  
 
@@ -43,287 +43,287 @@ System Center Configuration Manager では、Configuration Manager コンソー�
 
     -   Windows Server 2012 R2  
 
--   BIOS で仮想化を有効にし、Configuration Manager コンソールを実行して VHD を管理するコンピューターに Hyper-V をインストールする必要があります。 また、ベスト プラクティスとして、バーチャル ハード ディスクをテストし、問題を解決しやすくするために、Hyper-V 管理ツールを使用することをおすすめします。 たとえば、smsts.log ファイルを監視して Hyper-V のタスク シーケンスの進行状況を追跡するには、Hyper-V 管理ツールをインストールする必要があります。 Hyper-V の要件の詳細については、「 [Hyper-V をインストールするための前提条件](http://technet.microsoft.com/library/cc731898.aspx)」を参照してください。  
+-   La virtualizzazione deve essere abilitata nel BIOS e Hyper-V deve essere installato sul computer da cui si esegue la console di Configuration Manager per gestire i dischi rigidi virtuali. Inoltre, è consigliabile installare gli strumenti di gestione di Hyper-V per facilitare la verifica e risolvere problemi dei dischi rigidi virtuali. Ad esempio, per monitorare il file di registro smsts.log per tenere traccia dello stato di avanzamento della sequenza attività in Hyper-V, è necessario che gli strumenti di gestione Hyper-V siano installati. Per ulteriori informazioni sui requisiti di Hyper-V, vedere [Prerequisiti di installazione di Hyper-V](http://technet.microsoft.com/library/cc731898.aspx).  
 
     > [!IMPORTANT]  
-    >  VHD を作成するプロセスにはプロセッサの時間とメモリが消費されます。 そのため、サイト サーバーにインストールされていない Configuration Manager コンソールから、VHD を管理することが推奨されます。  
+    >  Il processo per creare un disco rigido virtuale utilizza risorse del processore. Di conseguenza, si consiglia di gestire i dischi rigidi virtuali da un console di Configuration Manager che non è installata sul server del sito.  
 
--   サイト サーバーからリモート コンピューターの VHD を管理するときに、サイト サーバーには VHD ファイルを含むフォルダーに対する [書き込み **** ] アクセス許可が必要です。  
+-   Il server del sito deve disporre delle autorizzazioni di accesso in **scrittura** alla cartella che conterrà il file VHD quando si gestiscono dischi rigidi virtuali da un computer remoto rispetto al server del sito.  
 
--   VHD を管理するコンピューターに、十分な空きディスク領域があることを確認します。 VHD のハード ディスク領域の要件は、インストールするオペレーティング システムとアプリケーションによって異なります。  
+-   Verificare di disporre di spazio libero su disco sufficiente nel computer da cui si gestiscono i dischi rigidi virtuali. I requisiti di spazio del disco rigido virtuale variano a seconda del sistema operativo e delle applicazioni installate.  
 
--   VHD を管理するコンピューターに十分なメモリがあることを確認してください。 VHD を作成するプロセスでは、2 GB のメモリを消費するようにバーチャル マシンが構成されています。  
+-   Verificare di disporre di memoria sufficiente nel computer da cui si gestiscono i dischi rigidi virtuali. Durante il processo di creazione del disco rigido virtuale, la macchina virtuale è configurata per utilizzare 2 GB di memoria.  
 
--   VHD を VMM にアップロードするコンピューターに、System Center Virtual Machine Manager (VMM) コンソールをインストールします。 VHD を管理するコンピューターとは別のコンピューターに VMM コンソールをインストールできます。つまり、VHD を VMM にインポートするために、Hyper-V をインストールする必要はありません。  
+-   Installare la console di System Center Virtual Machine Manager (VMM) sul computer da cui si carica il disco rigido virtuale in VMM. È possibile installare la console VMM in un computer separato da cui si gestiscono i dischi rigidi virtuali. Questo significa che per importare il disco rigido virtuale in VMM non è necessario che Hyper-V sia installato.  
 
     > [!NOTE]  
-    >  Configuration Manager コンソールが開いているときに VMM コンソールをインストールした場合、VMM コンソールのインストールが完了した後に、Configuration Manager コンソールを再起動する必要があります。 そうしないと、Configuration Manager は正常に VMM 管理サーバーに接続して VHD をアップロードすることができません。  
+    >  Se si installa la console VMM mentre la console di Configuration Manager è aperta, al termine dell'installazione della console VMM è necessario riavviare la console di Configuration Manager. In caso contrario, Configuration Manager non è in grado di collegarsi al server di gestione VMM per caricare un disco rigido virtuale.  
 
-##  <a name="BKMK_CreateVHDSteps"></a> VHD を作成する手順  
- VHD を作成するには、まず、VHD を作成するタスク シーケンスを作成してから、バーチャル ハード ディスクの作成ウィザードで、そのタスク シーケンスを使います。 次に、その手順を詳しく説明します。  
+##  <a name="BKMK_CreateVHDSteps"></a> Passaggi per la creazione di un disco rigido virtuale  
+ Per creare un disco rigido virtuale è necessario creare una sequenza di attività che contiene i passaggi per creare il disco rigido virtuale e quindi utilizzare tale sequenza nella Creazione guidata disco rigido virtuale. Le sezioni seguenti forniscono i passaggi per la creazione del disco rigido virtuale.  
 
-###  <a name="BKMK_CreateTS"></a> VHD のタスク シーケンスを作成する  
- VHD を作成するステップを含むタスク シーケンスを作成する必要があります。 タスク シーケンスの作成ウィザードには、VHD の作成に使用するステップを作成する [既存のイメージ パッケージをバーチャル ハード ディスクにインストールする **** ] オプションがあります。 たとえば、[Windows PE での再起動]、[ディスクのフォーマットとパーティション作成]、[オペレーティング システムの適用]、および [コンピューターのシャットダウン] の必要なステップが追加されます。 フルバージョンのオペレーティング システムでは、VHD を作成できません。 また、Configuration Manager は、バーチャル マシンをシャットダウンしてからパッケージを完了するまで待つ必要があります。 ウィザードの既定では、バーチャル マシンをシャットダウンするまで 5 分間待ちます。 タスク シーケンスの作成後は、必要に応じてステップを追加することができます。  
+###  <a name="BKMK_CreateTS"></a> Creare una sequenza attività per il disco rigido virtuale  
+ È necessario creare una sequenza attività contenente i passaggi per creare il disco rigido virtuale. In Creazione guidata della sequenza attività, è disponibile l'opzione **Installa un pacchetto immagine esistente in un disco rigido virtuale** che consente di creare i passaggi da utilizzare per creare il disco rigido virtuale. Ad esempio, la procedura guidata aggiunge i seguenti passaggi obbligatori: Riavvia in Windows PE, Formato e disco partizione, Applica sistema operativo e Arresta computer. Non è possibile creare il disco rigido virtuale nel sistema operativo completo. Configuration Manager deve inoltre rimanere in attesa finché la macchina virtuale non viene arrestata prima di completare il pacchetto. Per impostazione predefinita, la procedura guidata rimane in attesa 5 minuti prima di arrestare la macchina virtuale. Dopo aver creato la sequenza attività, è possibile aggiungere ulteriori passaggi, se richiesto.  
 
 > [!IMPORTANT]  
->  次の手順では、[既存のイメージ パッケージをバーチャル ハード ディスクにインストールする **** ] オプションを使用してタスク シーケンスを作成します。その結果、VHD を正常に作成するために必要なステップが自動的に含まれます。 既存のタスク シーケンスを使用する場合、または手動でタスク シーケンスを作成する場合、タスク シーケンスの終了時に [コンピューターのシャットダウン] ステップを追加してください。 このステップがない場合、一時的なバーチャル マシンは削除されず、VHD を作成するプロセスは完了しません。 ただし、ウィザードは完了し、成功とレポートされます。  
+>  La seguente procedura consente di creare la sequenza attività utilizzando l'opzione **Installa un pacchetto immagine esistente in un disco rigido virtuale** , che consente di includere automaticamente i passaggi richiesti per creare il disco rigido virtuale. Se si sceglie di utilizzare una sequenza attività esistente o di creare manualmente una sequenza attività, accertarsi di aggiungere il passaggio Arresta computer alla fine della sequenza attività. Senza questo passaggio, la macchina virtuale temporanea non viene eliminata e il processo di creazione del disco rigido virtuale non viene completato. La procedura guidata viene, tuttavia, correttamente completata.  
 
- 次の手順に従って、VHD を作成するタスク シーケンスを作成します。  
+ Utilizzare la seguente procedura per creare la sequenza attività per creare il disco rigido virtuale:  
 
-#### <a name="to-create-the-task-sequence-to-create-the-vhd"></a>VHD を作成するタスク シーケンスを作成するには  
+#### <a name="to-create-the-task-sequence-to-create-the-vhd"></a>Per creare la sequenza attività per creare il disco rigido virtuale  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス** ] をクリックします。  
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
 
-3.  [ホーム **** ] タブの [作成 **** ] グループで [タスク シーケンスの作成 **** ] をクリックして、タスク シーケンスの作成ウィザードを起動します。  
+3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea sequenza di attività** per avviare la Creazione guidata della sequenza di attività.  
 
-4.  [新しいタスク シーケンスの作成 **** ] ページで、[既存のイメージ パッケージをバーチャル ハード ディスクにインストールする ****] をクリックしてから、[次へ ****] をクリックします。  
+4.  Nella pagina **Crea una nuova sequenza attività** fare clic su **Installa un pacchetto immagine esistente in un disco rigido virtuale**, quindi fare clic su **Avanti**.  
 
-5.  [タスク シーケンス情報 **** ] ページで次の設定を指定し、[次へ ****] をクリックします。  
+5.  Nella pagina **Informazioni sequenza di attività** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   **タスク シーケンス名**:タスク シーケンスを識別する名前を指定します。  
+    -   **Nome sequenza di attività**: specificare un nome che identifichi la sequenza di attività.  
 
-    -   **説明**: タスク シーケンスの説明を指定します。  
+    -   **Descrizione**: specificare una descrizione della sequenza di attività.  
 
-    -   **ブート イメージ**:展開先コンピューターにオペレーティング システムをインストールするブート イメージを指定します。 詳細については、「[ブート イメージの管理](../get-started/manage-boot-images.md)」を参照してください。  
+    -   **Immagine di avvio**: specificare l'immagine di avvio che installa il sistema operativo nel computer di destinazione. Per altre informazioni, vedere la sezione relativa alla [gestione delle immagini di avvio](../get-started/manage-boot-images.md).  
 
-6.  [Windows のインストール] **** ページで次の設定を指定し、[次へ] ****をクリックします。  
+6.  Nella pagina **Installa Windows** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   **イメージ パッケージ**: インストールするオペレーティング システムを含むパッケージを指定します。  
+    -   **Pacchetto immagine**: specificare il pacchetto che contiene l'immagine del sistema operativo da installare.  
 
-    -   **イメージ**: オペレーティング システム イメージ パッケージに複数のイメージがある場合は、インストールするオペレーティング システム イメージのインデックスを指定します。  
+    -   **Immagine**: se il pacchetto dell'immagine del sistema operativo contiene più immagini, specificare l'indice dell'immagine del sistema operativo da installare.  
 
-    -   **プロダクト キー**: インストールする Windows オペレーティング システムのプロダクト キーを指定します。 エンコードされたボリューム ライセンス キーと標準のプロダクト キーを指定できます。 エンコードされていないプロダクト キーを使用する場合は、5 桁ごとにハイフン (-) で区切る必要があります。 例: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
+    -   **Codice Product Key**: specificare il codice Product Key per il sistema operativo Windows da installare. È possibile specificare i codici Product Key per contratti multilicenza codificati e i codici Product Key standard. Se si usa un codice Product Key non codificato, ogni gruppo di 5 caratteri deve essere separato da un trattino (-). Ad esempio: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
 
-    -   **サーバー ライセンス モード**: サーバー ライセンスが **[接続クライアント数]**と **[同時使用ユーザー数]**のいずれか、または決められていないかを指定します。 サーバー ライセンスが [同時使用ユーザー数] ****の場合は、サーバー接続の最大数も指定します。  
+    -   **Modalità di gestione licenze del server**: specificare che la licenza del server è **Per postazione**, **Per server**o che non è specificata alcuna licenza. Se la licenza del server è **Per server**, specificare anche il numero massimo di connessioni al server.  
 
-    -   オペレーティング システム イメージが展開されたときに使用される管理者アカウントの処理方法を指定します。  
+    -   Specificare come gestire l'account amministratore usato quando viene distribuita l'immagine del sistema operativo.  
 
-        -   **ローカルの管理者パスワードをランダムに生成し、サポートされているすべてのプラットフォームのアカウントを無効にする (推奨)**: この設定を使用すると、ローカル管理者アカウントのパスワードがウィザードによってランダムに生成され、オペレーティング システム イメージを展開するときにアカウントが無効になります。  
+        -   **Genera in modo casuale la password dell'amministratore locale e disattiva l'account su tutte le piattaforme supportate (consigliato)**: usare questa impostazione per creare una password casuale per l'account amministratore locale e disattivare l'account quando l'immagine del sistema operativo viene distribuita.  
 
-        -   **アカウントを有効にし、ローカル管理者パスワードを指定する**: この設定を使用すると、オペレーティング システム イメージが展開されたすべてのコンピューターでローカルの管理者アカウントに特定のパスワードが使用されます。  
+        -   **Attiva l'account e specifica la password dell'amministratore locale**: usare questa impostazione per usare una password specifica per l'account amministratore locale in tutti i computer in cui viene distribuita l'immagine del sistema operativo.  
 
-7.  [ネットワーク の構成] **** ページで次の設定を指定してから、[次へ] ****をクリックします。  
+7.  Nella pagina **Configura rete** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   **ワークグループに参加**:展開先コンピューターをワークグループに追加するかどうかを指定します。  
+    -   **Aggiunta a un gruppo di lavoro**: specificare se aggiungere il computer di destinazione a un gruppo di lavoro.  
 
-    -   **ドメインに参加**:展開先コンピューターをドメインに追加するかどうかを指定します。 [ドメイン] ****にドメインの名前を指定します。  
+    -   **Aggiunta a un dominio**: specificare se aggiungere il computer di destinazione a un dominio. In **Dominio**specificare il nome del dominio.  
 
         > [!IMPORTANT]  
-        >  ローカル フォレストではドメインを参照できますが、リモート フォレストではドメイン名を指定する必要があります。  
+        >  È possibile cercare i domini nella foresta locale, ma è necessario specificare il nome di dominio per una foresta remota.  
 
-         組織単位 (OU) も指定することができます。 OU の LDAP X.500 識別名を指定するオプションの設定です。コンピューター アカウントがまだ存在しない場合に作成するのに使用されます。  
+         È inoltre possibile specificare un'unità organizzativa. Si tratta di un'impostazione facoltativa che specifica il nome distinto LDAP X.500 dell'unità organizzativa in cui creare l'account computer se non esiste già.  
 
-    -   **アカウント**: 指定したドメインに参加するアクセス許可を持つアカウントの、ユーザー名とパスワードを指定します。 例: *domain\user* または *%variable%*。  
+    -   **Account**: specificare il nome utente e la password per l'account con le autorizzazioni per l'aggiunta al dominio specificato. Ad esempio: *dominio\utente* o *%variabile%*.  
 
-8.  [**Configuration Manager のインストール**] ページで、インストール先コンピューターにインストールする Configuration Manager クライアント パッケージを指定してから、[**次へ**] をクリックします。  
+8.  Nella pagina **Installa Configuration Manager** specificare il pacchetto client di Configuration Manager da installare nel computer di destinazione e quindi fare clic su **Avanti**.  
 
-9. [アプリケーションのインストール] **** ページで、展開先コンピューターにインストールするアプリケーションを指定してから、[次へ] ****をクリックします。 複数のアプリケーションを指定する場合は、特定のアプリケーションのインストールに失敗したときにタスク シーケンスを続行するかどうかも指定することができます。  
+9. Nella pagina **Installa applicazioni** specificare le applicazioni da installare nel computer di destinazione e quindi fare clic su **Avanti**. Se si specificano più applicazioni, è possibile specificare che la sequenza di attività continui anche se l'installazione di un'applicazione specifica non riesce.  
 
-10. ウィザードを完了します。  
+10. Completare la procedura guidata.  
 
-###  <a name="BKMK_CreateVHD"></a> VHD を作成する  
- VHD 作成用のタスク シーケンスを作成したら、バーチャル ハード ディスクの作成ウィザードを使用して VHD を作成します。  
+###  <a name="BKMK_CreateVHD"></a> Creare un disco rigido virtuale  
+ Dopo aver creato una sequenza di attività per il disco rigido virtuale, utilizzare la Creazione guidata disco rigido virtuale per creare il disco rigido virtuale.  
 
 > [!IMPORTANT]  
->  この手順を実行する前に、このトピックの冒頭に記載されている前提条件を満たすことを確認します。  
+>  Prima di eseguire questa procedura, verificare che siano soddisfatti i prerequisiti elencati all'inizio di questo argomento.  
 
- 次の手順に従って、VHD を作成します。  
+ Utilizzare la seguente procedura per creare un disco rigido virtuale.  
 
-#### <a name="to-create-a-vhd"></a>VHD を作成するには  
+#### <a name="to-create-a-vhd"></a>Per creare un disco rigido virtuale  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ソフトウェア ライブラリ **** ] ワークスペースで [オペレーティング システム ****] を展開して、[バーチャル ハード ディスク ****] をクリックします。  
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Dischi rigidi virtuali**.  
 
-3.  [ホーム **** ] タブの [作成 **** ] グループで、[バーチャル ハード ディスクの作成 **** ] をクリックして、バーチャル ハード ディスクの作成ウィザードを開始します。  
-
-    > [!NOTE]  
-    >  VHD を管理している、または [**バーチャル ハード ディスクの作成**] オプションが有効になっていない Configuration Manager コンソールを実行しているコンピューターに、Hyper-V をインストールする必要があります。 Hyper-V の要件の詳細については、「 [Hyper-V をインストールするための前提条件](http://technet.microsoft.com/library/cc731898.aspx)」を参照してください。  
-
-    > [!TIP]  
-    >  VHD を整理するために、[バーチャル ハード ディスク **** ] ノード以下に新しいフォルダーを作成するか、既存のフォルダーを選択して、フォルダーから [バーチャル ハード ディスクの作成 **** ] をクリックします。  
-
-4.  [全般 **** ] ページで、次の設定を指定して [次へ ****] をクリックします。  
-
-    -   **名前**: VHD 固有の名前を指定します。  
-
-    -   **バージョン**: VHD のバージョン番号を指定します。 この設定は省略可能です。  
-
-    -   **コメント**: VHD の説明を指定します。  
-
-    -   **パス**: ウィザードが VHD ファイルを作成する場所のパスとファイル名を指定します。  
-
-         UNC 形式で有効なネットワーク パスを入力する必要があります。 例: **\\\servername\\<sharename\>\\<filename\>.vhd**  
-
-        > [!WARNING]  
-        >  VHD を作成するために、Configuration Manager には指定されたパスへの**書き込み**アクセス許可が必要です。 Configuration Manager がこのパスへのアクセスに失敗すると、サイト サーバーの distmgr.log ファイルに関連するエラーが記録されます。  
-
-5.  [タスク シーケンスの選択 **** ] ページで、前のセクションで指定したタスク シーケンスを選択し、[次へ ****] をクリックします。  
-
-6.  [配布ポイント **** ] ページで、タスク シーケンスに必要なコンテンツがある配布ポイントを 1 つまたは複数選択し、[次へ ****] をクリックします。  
-
-7.  **[カスタマイズ]** ページで、 **[次へ]**をクリックします。 このページで何か設定しても、VHD を作成するプロセスによって無視されます。  
-
-8.  設定を確認し、[次へ ****] をクリックします。 VHD が作成されます。  
-
-    > [!TIP]  
-    >  VHD を作成するプロセスが完了するまでにかかる時間は変わる可能性があります。 ウィザードがこのプロセスを実行しているときに、次のログ ファイルで、進行状況を追跡することができます。 ログは、既定で、Configuration Manager コンソールを実行するコンピューターの %*ProgramFiles(x86)*%\Microsoft Configuration Manager\AdminConsole\AdminUILog にあります。  
-    >   
-    >  -   **CreateTSMedia.log**: ウィザードでタスク シーケンス メディアの作成時に、このログに情報が書き込まれます。 スタンドアロン メディアを作成するときは、このログ ファイルを確認して、ウィザードの進行状況を追跡します。  
-    > -   **DeployToVHD.log**: VHD を作成するプロセスの実行中に、このログに情報が書き込まれます。 スタンドアロン メディアを作成したら、すべてのステップについてこのログ ファイルを確認して、ウィザードの進行状況を追跡します。  
-    >   
-    >  また、オペレーティング システムのインストールが起動するときに、Hyper-V マネージャーを開き (Hyper-V 管理ツールをコンピューターにインストールした場合)、ウィザードによって作成された一時的なバーチャル マシンに接続して、実行しているタスク シーケンスを確認できます。 バーチャル マシンから、smsts.log ファイルを監視して、タスク シーケンスの進行状況を追跡できます。 問題があってタスク シーケンスのステップを完了できない場合、このログ ファイルを使用して問題を解決できます。 smsts.log ファイルは、ハード ディスクをフォーマットする前は x: \windows\temp\smstslog\smsts.log にあり、フォーマット後は c:\\_SMSTaskSequence\Logs\Smstslog\ にあります。 タスク シーケンスのステップが完了したら、5 分間 (既定) 経った後にバーチャル マシンがシャットダウンされ、削除されます。  
-
- Configuration Manager が VHD を作成した後、VHD は [**ソフトウェア ライブラリ**] ワークスペースの [**オペレーティング システムの展開**] の下にある Configuration Manager コンソールの [**仮想ハード ドライブ**] ノードに配置されます。  
-
-> [!NOTE]  
->  Configuration Manager が、VHD のソースの場所に接続して、VHD のサイズを取得します。 Configuration Manager が VHD ファイルにアクセスできない場合、VHD の [**サイズ (KB)**] 列に "**0**" が表示されます。  
-
-##  <a name="BKMK_ModifyVHDSteps"></a> 既存の VHD を変更する手順  
- VHD を変更するには、まず、VHD を変更するのに必要なステップを含むタスク シーケンスを作成します。 次に、バーチャル ハード ディスクの変更ウィザードで、そのタスク シーケンスを選択します。 VHD がバーチャル マシンにアタッチされ、VHD でタスク シーケンスが実行されて、VHD ファイルが変更されます。 次に、その手順を詳しく説明します。  
-
-###  <a name="BKMK_ModifyTS"></a> VHD を変更するタスク シーケンスを作成する  
- 既存の VHD を変更するには、まず、タスク シーケンスを作成する必要があります。 次に、このタスク シーケンスを変更するのに必要なステップだけを選択します。 たとえば、VHD にアプリケーションを追加したい場合は、タスク シーケンスを作成してから、[アプリケーションのインストール] ステップだけを追加します。  
-
- VHD を変更するタスク シーケンスを作成するには、次の手順に従います。  
-
-#### <a name="to-create-a-custom-task-sequence-to-modify-the-vhd"></a>VHD を変更するタスク シーケンスを作成するには  
-
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
-
-2.  [ **ソフトウェア ライブラリ** ] ワークスペースで [ **オペレーティング システム**] を展開して、[ **タスク シーケンス** ] をクリックします。  
-
-3.  [ホーム **** ] タブの [作成 **** ] グループで [タスク シーケンスの作成 **** ] をクリックして、タスク シーケンスの作成ウィザードを起動します。  
-
-4.  **[新しいタスク シーケンスの作成]** ページで **[新しいカスタム タスク シーケンスを作成する]**を選択し、 **[次へ]**をクリックします。  
-
-5.  [タスク シーケンス情報 **** ] ページで次の設定を指定し、[次へ ****] をクリックします。  
-
-    -   **タスク シーケンス名**:タスク シーケンスを識別する名前を指定します。  
-
-    -   **説明**: タスク シーケンスの説明を指定します。  
-
-    -   **ブート イメージ**:展開先コンピューターにオペレーティング システムをインストールするブート イメージを指定します。 詳細については、「[ブート イメージの管理](../get-started/manage-boot-images.md)」を参照してください。  
-
-6.  ウィザードを完了します。  
-
- カスタム タスク シーケンスにステップを追加するには、次の手順に従います。  
-
-#### <a name="to-add-task-sequence-steps-to-the-custom-task-sequence"></a>カスタム タスク シーケンスにステップを追加するには  
-
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
-
-2.  [ソフトウェア ライブラリ] **** ワークスペースの [オペレーティング システム] ****を展開して [タスク シーケンス] ****をクリックし、前の手順で作成したカスタム タスク シーケンスを選択します。  
-
-3.  [ホーム **** ] タブの [タスク シーケンス **** ] グループの [編集 **** ] をクリックし、タスク シーケンス エディターを開きます。  
-
-4.  VHD を変更するステップを追加します。  
-
-5.  [OK] をクリックして、タスク シーケンス エディターを閉じます。 ****  
-
-###  <a name="BKMK_ModifyVHD"></a> VHD を変更する  
- VHD 変更用のタスク シーケンスを作成したら、バーチャル ハード ディスクの変更ウィザードを使用して VHD を変更します。  
-
- VHD を変更するには、次の手順に従います。  
-
-#### <a name="to-modify-a-vhd"></a>VHD を変更するには  
-
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
-
-2.  [ソフトウェア ライブラリ **** ] ワークスペースの [オペレーティング システム ****] を展開して [バーチャル ハード ディスク ****] をクリックし、変更する VHD を選択します。  
-
-3.  [ホーム **** ] タブの [バーチャル ハード ディスク **** ] グループの [バーチャル ハード ディスクの変更 **** ] をクリックし、バーチャル ハード ディスクの変更ウィザードを開始します。  
+3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea disco rigido virtuale** per avviare la Creazione guidata disco rigido virtuale.  
 
     > [!NOTE]  
-    >  VHD を管理している、または [**バーチャル ハード ディスクの変更**] オプションが有効になっていない Configuration Manager コンソールを実行しているコンピューターに、Hyper-V をインストールする必要があります。 Hyper-V の要件の詳細については、「 [Hyper-V をインストールするための前提条件](http://technet.microsoft.com/library/cc731898.aspx)」を参照してください。  
-
-4.  [全般 **** ] ページで、次の設定を確認して [次へ ****] をクリックします。  
-
-    -   **名前**: VHD 固有の名前を指定します。  
-
-    -   **バージョン**: VHD のバージョン番号を指定します。 この設定は省略可能です。  
-
-    -   **コメント**: VHD の説明を指定します。  
-
-    -   **パス**: VHD ファイルのパスとファイル名を指定します。 この設定は変更できません。  
-
-        > [!WARNING]  
-        >  VHD を作成するために、Configuration Manager には指定されたパスへの**書き込み**アクセス許可が必要です。 Configuration Manager がこのパスへのアクセスに失敗すると、サイト サーバーの distmgr.log ファイルに関連するエラーが記録されます。  
-
-5.  [タスク シーケンスの選択 **** ] ページで、前のセクションで作成したカスタム タスク シーケンスを指定して [次へ ****] をクリックします。  
-
-6.  [配布ポイント **** ] ページで、タスク シーケンスに必要なコンテンツがある配布ポイントを 1 つまたは複数選択し、[次へ ****] をクリックします。  
-
-7.  **[カスタマイズ]** ページで、 **[次へ]**をクリックします。 このページで何か設定しても、VHD を変更するプロセスによって無視されます。  
-
-8.  設定を確認し、[次へ ****] をクリックします。 VHD が変更されます。  
+    >  Hyper-V deve essere installato sul computer che esegue la console di Configuration Manager da cui si gestiscono i dischi rigidi virtuali, in caso contrario l'opzione **Crea disco rigido virtuale** non viene abilitata. Per ulteriori informazioni sui requisiti di Hyper-V, vedere [Prerequisiti di installazione di Hyper-V](http://technet.microsoft.com/library/cc731898.aspx).  
 
     > [!TIP]  
-    >  VHD の変更が完了するまでの時間は、状況によって異なります。 ウィザードがこのプロセスを実行しているときに、次のログ ファイルで、進行状況を追跡することができます。 ログは、既定で、Configuration Manager コンソールを実行するコンピューターの %*ProgramFiles(x86)*%\Microsoft Configuration Manager\AdminConsole\AdminUILog にあります。  
+    >  Per organizzare i dischi rigidi virtuali, creare una nuova cartella o selezionare una cartella esistente nel nodo **Dischi rigidi virtuali** , quindi fare clic su **Crea disco rigido virtuale** dalla cartella.  
+
+4.  Nella pagina **Generale** specificare le seguenti impostazioni, quindi fare clic su **Avanti**.  
+
+    -   **Nome**: specificare un nome univoco per il disco rigido virtuale.  
+
+    -   **Versione**: specificare un numero di versione per il disco rigido virtuale. Si tratta di un'impostazione facoltativa.  
+
+    -   **Commento**: specificare una descrizione per il disco rigido virtuale.  
+
+    -   **Percorso**: specificare il percorso e il nome file usati dalla procedura guidata per creare il file VHD.  
+
+         È necessario immettere un percorso di rete valido nel formato UNC. Ad esempio: **\\\nomeserver\\<nomecondivisione\>\\<nomefile\>.vhd**.  
+
+        > [!WARNING]  
+        >  Configuration Manager deve avere autorizzazioni di accesso in **scrittura** al percorso specificato per creare il disco rigido virtuale. Se Configuration Manager non è in grado di accedere al percorso, l'errore associato verrà registrato nel file distmgr.log sul server del sito.  
+
+5.  Nella pagina **Sequenza attività** specificare la sequenza attività descritta nella sezione precedente, quindi fare clic su **Avanti**.  
+
+6.  Nella pagina **Punti di distribuzione** selezionare uno o più punti di distribuzione che includono il contenuto richiesto dalla sequenza attività e quindi fare clic su **Avanti**.  
+
+7.  Nella pagina **Personalizzazione** fare clic su **Avanti**. Il processo per creare il disco rigido virtuale ignora eventuali impostazioni specificate in questa pagina.  
+
+8.  Verificare le impostazioni e fare clic su **Avanti**. La procedura guidata crea il disco rigido virtuale.  
+
+    > [!TIP]  
+    >  Il tempo necessario per completare il processo di creazione del disco rigido virtuale può variare. Durante l'elaborazione del processo, è possibile monitorare i seguenti file di log per tenere traccia dello stato di avanzamento. Per impostazione predefinita, i log si trovano nel computer che esegue la console di Configuration Manager in %*ProgramFiles(x86)*%\Microsoft Configuration Manager\AdminConsole\AdminUILog.  
     >   
-    >  -   **CreateTSMedia.log**: ウィザードでタスク シーケンス メディアの作成時に、このログに情報が書き込まれます。 スタンドアロン メディアを作成するときは、このログ ファイルを確認して、ウィザードの進行状況を追跡します。  
-    > -   **DeployToVHD.log**: VHD を変更するプロセスの実行中に、このログに情報が書き込まれます。 スタンドアロン メディアを作成したら、すべてのステップについてこのログ ファイルを確認して、ウィザードの進行状況を追跡します。  
+    >  -   **CreateTSMedia.log**: le informazioni vengono scritte in questo log durante la creazione del supporto della sequenza di attività. Esaminare il file di log per tenere traccia dello stato di avanzamento della procedura guidata durante la creazione del supporto autonomo.  
+    > -   **DeployToVHD.log**: le informazioni vengono scritte in questo log durante l'elaborazione del processo di creazione del disco rigido virtuale. Esaminare il file di log per tenere traccia dello stato di avanzamento della procedura guidata durante la creazione del supporto autonomo.  
     >   
-    >  また、Hyper-V マネージャーを開き (Hyper-V 管理ツールをコンピューターにインストール済みの場合)、ウィザードによって作成された一時的なバーチャル マシンに接続して、実行されているタスク シーケンスを確認できます。 バーチャル マシンから、smsts.log ファイルを監視して、タスク シーケンスの進行状況を追跡できます。 問題があってタスク シーケンスのステップを完了できない場合、このログ ファイルを使用して問題を解決できます。 smsts.log ファイルは、ハード ディスクをフォーマットする前は x: \windows\temp\smstslog\smsts.log にあり、フォーマット後は c:\\_SMSTaskSequence\Logs\Smstslog\ にあります。 タスク シーケンスのステップが完了したら、5 分間 (既定) 経った後にバーチャル マシンがシャットダウンされ、削除されます。  
+    >  Inoltre, all'avvio dell'installazione del sistema operativo, è possibile aprire la console di gestione di Hyper-V (se nel computer sono stati installati gli strumenti di gestione Hyper-V) e collegarsi alla macchina virtuale temporanea creata dalla procedura guidata per vedere la sequenza attività in esecuzione. Dalla macchina virtuale, è possibile monitorare il file Smsts log per tenere traccia dello stato di avanzamento della sequenza attività. Se si verificano problemi durante il completamento di un passaggio della sequenza attività, è possibile utilizzare questo file di log per risolvere il problema. Il file smsts.log si trova in x:\windows\temp\smstslog\smsts.log prima della formattazione del disco rigido e in c:\\_SMSTaskSequence\Logs\Smstslog\ dopo la formattazione. Al termine dei passaggi della sequenza attività, la macchina virtuale viene arrestata dopo 5 minuti (per impostazione predefinita) ed eliminata.  
 
-##  <a name="BKMK_ApplyUpdates"></a> ソフトウェア更新プログラムを VHD に適用する  
- 使用している VHD のオペレーティング システムに適用できる新しいソフトウェア更新プログラムは、定期的にリリースされます。 適用できるソフトウェア更新プログラムは、指定したスケジュールで VHD に適用できます。 Configuration Manager は、指定するスケジュールで、選択したソフトウェア更新プログラムを VHD に適用します。  
-
- VHD の作成時点で適用されたソフトウェア更新プログラムなど、VHD に関する情報はサイト データベースに保管されます。 最初の作成以降、VHD に適用されたソフトウェア更新プログラムもサイト データベースに保管されます。 ソフトウェア更新プログラムを VHD に適用するウィザードを開始すると、その VHD にまだ適用していない適用可能なソフトウェア更新プログラムの一覧が選択対象として取得されます。  
-
- 選択したソフトウェア更新プログラムの 1 つ以上にエラーが発生しても、[**エラー時に続行する**] 設定を選択して、Configuration Manager がソフトウェア更新プログラムの適用を続行するようにできます。  
+ Dopo la creazione del disco rigido virtuale da parte di Configuration Manager, il disco si trova nel nodo **Dischi rigidi virtuali** nella console di Configuration Manager sotto il nodo **Distribuzione del sistema operativo** nell'area di lavoro **Raccolta software**.  
 
 > [!NOTE]  
->  ソフトウェア更新プログラムはサイト サーバーのコンテンツ ライブラリからコピーされます。  
+>  Configuration Manager recupera la dimensione del disco rigido virtuale connettendosi al percorso di origine del disco rigido virtuale. Se Configuration Manager non è in grado di accedere al file del disco rigido virtuale, viene visualizzato **0** nella colonna **Dimensione (KB)** per il disco rigido virtuale.  
 
- 次の手順に従って、ソフトウェア更新プログラムを VHD に適用します。  
+##  <a name="BKMK_ModifyVHDSteps"></a> Passaggi per la modifica di un disco rigido virtuale esistente  
+ Per modificare un disco rigido virtuale, è necessario creare una sequenza di attività con i passaggi necessari per modificare il disco rigido virtuale. Selezionare quindi la sequenza di attività nella Modifica guidata disco rigido virtuale. La procedura guidata collega il disco rigido virtuale alla macchina virtuale, esegue la sequenza di attività nel disco rigido virtuale e quindi aggiorna il file VHD. Le sezioni seguenti forniscono i passaggi per modificare il disco rigido virtuale.  
 
-#### <a name="to-apply-software-updates-to-a-vhd"></a>ソフトウェア更新プログラムを VHD に適用するには  
+###  <a name="BKMK_ModifyTS"></a> Creare una sequenza di attività per modificare il disco rigido virtuale  
+ Per modificare un disco rigido virtuale esistente, è innanzitutto necessario creare una sequenza di attività. Scegliere solo i passaggi necessari per modificare la sequenza di attività. Ad esempio, se si intende aggiungere un'applicazione al disco rigido virtuale, creare una sequenza di attività personalizzata e quindi aggiungere soltanto il passaggio Installa applicazione.  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+ Utilizzare la seguente procedura per creare la sequenza di attività per creare il disco rigido virtuale.  
 
-2.  [ソフトウェア ライブラリ **** ] ワークスペースで [オペレーティング システム ****] を展開して、[バーチャル ハード ディスク ****] をクリックします。  
+#### <a name="to-create-a-custom-task-sequence-to-modify-the-vhd"></a>Creare una sequenza di attività personalizzata per modificare il disco rigido virtuale  
 
-3.  ソフトウェア更新プログラムを適用する VHD を選択します。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-4.  [ホーム **** ] タブの [バーチャル ハード ディスク **** ] グループで、[更新のスケジュール **** ] をクリックしてウィザードを開始します。  
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
 
-5.  [更新プログラムの選択 **** ] ページで、VHD に適用するソフトウェア更新プログラムを選択し、[次へ ****] をクリックします。  
+3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea sequenza di attività** per avviare la Creazione guidata della sequenza di attività.  
 
-6.  **[スケジュールの設定]** ページで、次の設定を指定して、 **[次へ]**をクリックします。  
+4.  Nella pagina **Crea una nuova sequenza attività** , selezionare **Crea una nuova sequenza attività personalizzata**, quindi fare clic su **Avanti**.  
 
-    1.  **スケジュール**: ソフトウェア更新プログラムを VHD に適用するスケジュールを指定します。  
+5.  Nella pagina **Informazioni sequenza di attività** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
 
-    2.  **エラー時に続行する**: このオプションを選択すると、エラーが発生した場合でも、イメージにソフトウェア更新プログラムがそのまま適用されます。  
+    -   **Nome sequenza di attività**: specificare un nome che identifichi la sequenza di attività.  
 
-7.  **[概要]** ページで、情報を確認して **[次へ]**をクリックします。  
+    -   **Descrizione**: specificare una descrizione della sequenza di attività.  
 
-8.  [完了] ページで、オペレーティング システム イメージにソフトウェア更新プログラムが正常に適用されたことを確認します。 ****  
+    -   **Immagine di avvio**: specificare l'immagine di avvio che installa il sistema operativo nel computer di destinazione. Per altre informazioni, vedere la sezione relativa alla [gestione delle immagini di avvio](../get-started/manage-boot-images.md).  
 
-##  <a name="BKMK_ImportToVMM"></a> VHD を System Center Virtual Machine Manager にインポートする  
- System Center VMM は、仮想化されたデータセンターの管理ソリューションです。仮想化ホスト、ネットワーキング、および記憶域リソースを構成および管理できます。バーチャル マシンとサービスを作成して、作成したプライベート クラウドに展開することができます。 Configuration Manager で VHD を作成したら、VMM を使用して VHD をインポートおよび管理できます。  
+6.  Completare la procedura guidata.  
+
+ Utilizzare la seguente procedura per aggiungere i passaggi della sequenza di attività alla sequenza di attività personalizzata.  
+
+#### <a name="to-add-task-sequence-steps-to-the-custom-task-sequence"></a>Aggiungere i passaggi della sequenza di attività alla sequenza di attività personalizzata  
+
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+
+2.  Nell'area di lavoro **Raccolta software** , espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**e quindi selezionare la sequenza di attività personalizzata creata nella procedura precedente.  
+
+3.  Nella scheda **Home** del gruppo **Sequenza attività** , fare clic su **Modifica** per avviare l'editor della sequenza attività.  
+
+4.  Aggiungere i passaggi della sequenza di attività da utilizzare per modificare il disco rigido virtuale.  
+
+5.  Fare clic su **OK** per uscire dall'editor della sequenza attività.  
+
+###  <a name="BKMK_ModifyVHD"></a> Modificare un disco rigido virtuale  
+ Dopo aver creato una sequenza di attività per il disco rigido virtuale, utilizzare la Modifica guidata disco rigido virtuale per modificare il disco rigido virtuale.  
+
+ Utilizzare la seguente procedura per modificare un disco rigido virtuale.  
+
+#### <a name="to-modify-a-vhd"></a>Modificare un disco rigido virtuale  
+
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+
+2.  Nell'area di lavoro **Raccolta software** , espandere **Sistemi operativi**, quindi fare clic su **Dischi rigidi virtuali**e selezionare quindi il disco rigido virtuale da modificare.  
+
+3.  Nella scheda **Home** del gruppo **Disco rigido virtuale** , fare clic su **Modifica disco rigido virtuale** per avviare la Modifica guidata disco rigido virtuale.  
+
+    > [!NOTE]  
+    >  Hyper-V deve essere installato sul computer che esegue la console di Configuration Manager da cui si gestiscono i dischi rigidi virtuali, in caso contrario l'opzione **Modifica disco rigido virtuale** non viene abilitata. Per ulteriori informazioni sui requisiti di Hyper-V, vedere [Prerequisiti di installazione di Hyper-V](http://technet.microsoft.com/library/cc731898.aspx).  
+
+4.  Nella pagina **Generale** confermare le seguenti impostazioni, quindi fare clic su **Avanti**.  
+
+    -   **Nome**: specifica il nome univoco per il disco rigido virtuale.  
+
+    -   **Versione**: specifica il numero di versione per il disco rigido virtuale. Si tratta di un'impostazione facoltativa.  
+
+    -   **Commento**: specifica la descrizione per il disco rigido virtuale.  
+
+    -   **Percorso**: specifica il percorso e il nome file in cui si trova il file VHD. È impossibile modificare questa impostazione.  
+
+        > [!WARNING]  
+        >  Configuration Manager deve avere autorizzazioni di accesso in **scrittura** al percorso specificato per creare il disco rigido virtuale. Se Configuration Manager non è in grado di accedere al percorso, l'errore associato verrà registrato nel file distmgr.log sul server del sito.  
+
+5.  Nella pagina **Sequenza attività** specificare la sequenza di attività descritta creata nella sezione precedente, quindi fare clic su **Avanti**.  
+
+6.  Nella pagina **Punti di distribuzione** selezionare uno o più punti di distribuzione che includono il contenuto richiesto dalla sequenza attività e quindi fare clic su **Avanti**.  
+
+7.  Nella pagina **Personalizzazione** fare clic su **Avanti**. Il processo per modificare il disco rigido virtuale ignora eventuali impostazioni specificate in questa pagina.  
+
+8.  Verificare le impostazioni e fare clic su **Avanti**. La procedura guidata crea il disco rigido virtuale modificato.  
+
+    > [!TIP]  
+    >  Il tempo necessario per completare il processo di modifica del disco rigido virtuale può variare. Durante l'elaborazione del processo, è possibile monitorare i seguenti file di log per tenere traccia dello stato di avanzamento. Per impostazione predefinita, i log si trovano nel computer che esegue la console di Configuration Manager in %*ProgramFiles(x86)*%\Microsoft Configuration Manager\AdminConsole\AdminUILog.  
+    >   
+    >  -   **CreateTSMedia.log**: le informazioni vengono scritte in questo log durante la creazione del supporto della sequenza di attività. Esaminare il file di log per tenere traccia dello stato di avanzamento della procedura guidata durante la creazione del supporto autonomo.  
+    > -   **DeployToVHD.log**: la procedura guidata scrive le informazioni in questo registro durante l'elaborazione del processo di modifica del disco rigido virtuale. Esaminare il file di log per tenere traccia dello stato di avanzamento della procedura guidata durante la creazione del supporto autonomo.  
+    >   
+    >  Inoltre, è possibile aprire la console di gestione di Hyper-V (se nel computer sono stati installati gli strumenti di gestione Hyper-V) e connettersi alla macchina virtuale temporanea creata dalla procedura guidata per vedere la sequenza di attività in esecuzione. Dalla macchina virtuale, è possibile monitorare il file Smsts log per tenere traccia dello stato di avanzamento della sequenza attività. Se si verificano problemi durante il completamento di un passaggio della sequenza attività, è possibile utilizzare questo file di log per risolvere il problema. Il file smsts.log si trova in x:\windows\temp\smstslog\smsts.log prima della formattazione del disco rigido e in c:\\_SMSTaskSequence\Logs\Smstslog\ dopo la formattazione. Al termine dei passaggi della sequenza attività, la macchina virtuale viene arrestata dopo 5 minuti (per impostazione predefinita) ed eliminata.  
+
+##  <a name="BKMK_ApplyUpdates"></a> Applicare aggiornamenti software a un disco rigido virtuale  
+ Periodicamente, vengono rilasciati nuovi aggiornamenti software applicabili al sistema operativo nel disco rigido virtuale. È possibile applicare gli aggiornamenti software a un disco rigido virtuale in base a una pianificazione specificata. Nella pianificazione specificata, Configuration Manager consente di applicare gli aggiornamenti software selezionati al disco rigido virtuale.  
+
+ Le informazioni relative al disco rigido virtuale vengono archiviate nel database del sito, inclusi gli aggiornamenti software applicati al momento della creazione del disco rigido virtuale. Nel database del sito vengono archiviati anche gli aggiornamenti software applicati al disco rigido virtuale da quando è stato inizialmente creato. Quando si avvia la procedura guidata per applicare gli aggiornamenti software al disco rigido virtuale, viene recuperato un elenco di aggiornamenti software validi e selezionabili che non sono ancora stati applicati al disco rigido virtuale.  
+
+ È possibile selezionare l'impostazione **Continua in caso di errore** per consentire a Configuration Manager di continuare ad applicare aggiornamenti software anche in presenza di un errore durante l'applicazione di uno o più degli aggiornamenti software selezionati.  
+
+> [!NOTE]  
+>  Gli aggiornamenti software vengono copiati dalla raccolta contenuto nel server del sito.  
+
+ Utilizzare la seguente procedura per applicare gli aggiornamenti software al disco rigido virtuale.  
+
+#### <a name="to-apply-software-updates-to-a-vhd"></a>Per applicare gli aggiornamenti software a un disco rigido virtuale  
+
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Dischi rigidi virtuali**.  
+
+3.  Selezionare il disco rigido virtuale a cui applicare gli aggiornamenti software.  
+
+4.  Nella scheda **Home** del gruppo **Disco rigido virtuale** , fare clic su **Pianifica aggiornamenti** per avviare la procedura guidata.  
+
+5.  Nella pagina **Scegli aggiornamenti** selezionare gli aggiornamenti software da applicare al disco rigido virtuale, quindi fare clic su **Avanti**.  
+
+6.  Nella pagina **Imposta pianificazione** specificare le seguenti impostazioni e quindi fare clic su **Avanti**.  
+
+    1.  **Pianificazione**: specificare la pianificazione per l'applicazione degli aggiornamenti software al disco rigido virtuale.  
+
+    2.  **Continua in caso di errore**: selezionare questa opzione per continuare ad applicare gli aggiornamenti software all'immagine anche quando si verifica un errore.  
+
+7.  Nella pagina **Riepilogo** verificare le informazioni e quindi fare clic su **Avanti**.  
+
+8.  Nella pagina **Completamento** verificare che gli aggiornamenti software siano stati applicati correttamente all'immagine del sistema operativo.  
+
+##  <a name="BKMK_ImportToVMM"></a> Importare il disco rigido virtuale in System Center Virtual Machine Manager  
+ System Center VMM è una soluzione di gestione per il data center virtualizzato che consente di configurare e gestire l'host di virtualizzazione, la rete e le risorse di archiviazione per creare e distribuire macchine virtuali e servizi nei cloud privati creati. Dopo aver creato un disco rigido virtuale in Configuration Manager, è possibile importare e gestire il disco rigido virtuale usando VMM.  
 
 > [!TIP]  
->  VHD を VMM にアップロードする前に、VMM コンソールが VMM 管理サーバーに正常に接続していることを確認します。  
+>  Prima di caricare un disco rigido virtuale in VMM, verificare che la console VMM sia in grado di connettersi al server di gestione di VMM.  
 
- 次の手順に従って、VHD を VMM にインポートします。  
+ Utilizzare la seguente procedura per importare un disco rigido virtuale in VMM.  
 
-#### <a name="to-import-a-vhd-to-vmm"></a>VHD を VMM にインポートするには  
+#### <a name="to-import-a-vhd-to-vmm"></a>Per importare un disco rigido virtuale in VMM  
 
-1.  Configuration Manager コンソールで、[ソフトウェア ライブラリ] ****をクリックします。  
+1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  [ソフトウェア ライブラリ **** ] ワークスペースで [オペレーティング システム ****] を展開して、[バーチャル ハード ディスク ****] をクリックします。  
+2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Dischi rigidi virtuali**.  
 
-3.  [ホーム **** ] タブの [バーチャル ハード ディスク **** ] グループで、[Virtual Machine Manager にアップロード **** ] を Virtual Machine Manager にアップロード ウィザードを開始します。  
+3.  Nella scheda **Home** del gruppo **Disco rigido virtuale** , fare clic su **Carica in Virtual Machine Manager** per avviare il caricamento guidato in Virtual Machine Manager.  
 
-4.  [全般 **** ] ページで、次の設定を構成してから、[次へ ****] をクリックします。  
+4.  Nella pagina **Generale** configurare le seguenti impostazioni, quindi fare clic su **Avanti**.  
 
-    -   **VMM サーバー名**: VMM 管理サーバーをインストールするコンピューターの FQDN を指定します。 VMM 管理サーバーに接続され、サーバーのライブラリ共有がダウンロードされます。  
+    -   **Nome del server VMM**: specificare l'FQDN del computer in cui è installato il server di gestione VMM. La procedura guidata si connette al server di gestione VMM per scaricare le condivisioni di libreria per il server.  
 
-    -   **VMM ライブラリ共有**: ドロップダウン リストから VMM ライブラリ共有を指定します。  
+    -   **Condivisione di libreria VMM**: specificare la condivisione di libreria VMM nell'elenco a discesa.  
 
-    -   **暗号化されていない転送を使用する**: 暗号化を使用せずに、VHD ファイルを VMM 管理サーバーに転送するには、この設定を選択します。  
+    -   **Utilizzare trasferimento non crittografato**: selezionare questa opzione per trasferire il file VHD nel server di gestione VMM senza usare la crittografia.  
 
-5.  [概要] ページで設定を確認し、ウィザードを完了します。 VHD のアップロードにかかる時間は、VHD ファイルのサイズと、VMM 管理サーバーに対するネットワーク帯域幅によって変わります。  
+5.  Nella pagina di riepilogo, verificare le impostazioni, quindi completare la procedura guidata. Il tempo richiesto per caricare il disco rigido virtuale può variare in base alle dimensioni del file VHD e alla larghezza di banda di rete per il server di gestione VMM.  

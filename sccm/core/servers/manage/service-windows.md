@@ -6,22 +6,20 @@ ms.date: 1/11/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ca4886d4-7173-46be-8dcd-1657d5b0deb9
-caps.latest.revision: 4
-caps.handback.revision: 0
+caps.latest.revision: "4"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 0d0735c170820259ac8bb6706aac7cc5569a1628
 ms.openlocfilehash: d06a2a955ff59fa84bb844033fe31874fc735087
-ms.lasthandoff: 01/12/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 #  <a name="service-windows-for-site-servers"></a>Intervalli di servizio per i server del sito
 
@@ -44,4 +42,3 @@ Quando è configurato un intervallo di servizio:
 1.  Nella console di Configuration Manager aprire **Amministrazione** > **Configurazione del sito** > **Siti** e quindi selezionare il server del sito in cui si vuole configurare un intervallo di servizio.  
 
 2.  Successivamente, modificare le **Proprietà** del server del sito e selezionare la scheda **Intervallo di servizio** in cui è possibile impostare uno o più intervalli di servizio per il server del sito.  
-

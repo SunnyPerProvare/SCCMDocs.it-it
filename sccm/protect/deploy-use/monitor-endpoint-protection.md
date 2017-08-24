@@ -6,22 +6,19 @@ ms.date: 03/13/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f4a1335c-bb3d-493e-a124-83a32a107dc8
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 0fa837c68eb073d2ceaf48c938137a94141a102e
-ms.openlocfilehash: 99e266e44f718d97c2a6e61e8e6816752751ed7b
-ms.contentlocale: it-it
-ms.lasthandoff: 01/24/2017
-
-
+ms.openlocfilehash: b5771f4faebc06076bdbf84727848c881fc1dfb4
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="how-to-monitor-endpoint-protection-status"></a>Come monitorare lo stato di Endpoint Protection
 
@@ -83,4 +80,3 @@ ms.lasthandoff: 01/24/2017
 |**È consentito**|Un utente amministratore selezionato per consentire al software che contiene l'esecuzione di malware.|  
 |**Nessuna azione**|Endpoint Protection non ha eseguito alcuna azione sul malware. Ciò può verificarsi se il computer viene riavviato dopo che viene rilevato software dannoso e il malware non viene rilevato; ad esempio, se una rete connessa unità in cui malware viene rilevato non è riconnesse al riavvio del computer.|  
 |**Bloccato**|Endpoint Protection ha bloccato l'esecuzione del malware. Ciò può verificarsi se viene rilevato un processo nel computer che contengono malware.|
-

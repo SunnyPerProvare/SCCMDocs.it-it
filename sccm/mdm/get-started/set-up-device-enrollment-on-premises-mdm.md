@@ -1,6 +1,6 @@
 ---
-title: "デバイス登録のセットアップ | Microsoft Docs"
-description: "System Center Configuration Manager でのオンプレミス モバイル デバイス管理の対象となるデバイスを登録できるアクセス許可をユーザーに付与します。"
+title: Configurare la registrazione dei dispositivi |Microsoft Docs
+description: Concedere autorizzazioni agli utenti per registrare i dispositivi per la gestione dei dispositivi mobili locale in System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
@@ -17,73 +17,73 @@ manager: angrobe
 ms.openlocfilehash: 16d4106d486d821b7ce92a1de65ebb04469d18de
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="set-up-device-enrollment-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>System Center Configuration Manager でのオンプレミスのモバイル デバイス管理のデバイス登録の設定
+# <a name="set-up-device-enrollment-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Impostare la registrazione dei dispositivi per la gestione dei dispositivi mobili (MDM) locale in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-ユーザーが System Center Configuration Manager のオンプレミス モバイル デバイス管理に自分のデバイスを登録できるようにするには、そのためのアクセス許可をユーザーに付与する必要があります。 ユーザーにアクセス許可を付与してデバイスを登録するには、以下のタスクを実行します。
+Per consentire agli utenti di registrare i propri dispositivi per la gestione dei dispositivi mobili locale di System Center Configuration Manager, è necessario concedere loro le autorizzazioni appropriate. Per concedere agli utenti le autorizzazioni per la registrazione dei dispositivi, eseguire le attività seguenti.
 
--   [ユーザーが最新のデバイスを登録できるようにするための登録プロファイルを作成する](#bkmk_createProf)  
+-   [Creare un profilo di registrazione che consenta agli utenti di registrare i dispositivi moderni](#bkmk_createProf)  
 
--   [登録されているデバイスの追加のクライアント設定のセットアップ](#bkmk_addClient)  
+-   [Configurare altre impostazioni client per i dispositivi registrati](#bkmk_addClient)  
 
--   [ユーザーが最新のデバイス登録プロファイルを受信できるようにする](#bkmk_enableUsers)  
+-   [Consentire agli utenti di ricevere il profilo di registrazione dei dispositivi moderni](#bkmk_enableUsers)  
 
--   [登録するデバイスにルート証明書を格納する](#bkmk_storeCert)  
+-   [Archiviare il certificato radice nei dispositivi da registrare](#bkmk_storeCert)  
 
-##  <a name="bkmk_createProf"></a> ユーザーが最新のデバイスを登録できるようにするための登録プロファイルを作成する  
- 最新のデバイスをユーザーが登録するのに必要な設定をプッシュするため、新しい登録プロファイルを既定のクライアント設定に追加できます。これは、Configuration Manager サイトで検出されるすべてのユーザーに適用されます。  
+##  <a name="bkmk_createProf"></a> Creare un profilo di registrazione che consenta agli utenti di registrare i dispositivi moderni  
+ Per eseguire il push delle impostazioni necessarie per consentire agli utenti di registrare i dispositivi moderni, è possibile aggiungere un nuovo profilo di registrazione alle impostazioni client predefinite, che viene applicato a tutti gli utenti individuati nel sito di Configuration Manager.  
 
-1.  Configuration Manager コンソールで、**[管理]** > **[概要]** > **[クライアント設定]**の順にクリックして **[既定のクライアント設定]** を開き、**[登録]** を選択します。  
+1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Panoramica** > **Impostazioni client**, aprire **Impostazioni client predefinite** e selezionare **Registrazione**.  
 
-2.  [デバイスの設定] で、最新のデバイスのポーリング間隔を指定します。  
+2.  In Impostazioni dispositivo specificare l'intervallo di polling per i dispositivi moderni.  
 
-3.  [ユーザー設定] の **[ユーザーが最新のデバイスを登録できるようにする]** で **[はい]**を選びます。  
+3.  In Impostazioni utente selezionare **Sì** per **Consenti agli utenti di registrare i dispositivi moderni**.  
 
-4.  **[最新のデバイス登録プロファイル]** の横にある **[プロファイルの設定...]** をクリックし、**[作成...]** をクリックします。  
+4.  Accanto a **Profilo di registrazione per dispositivi moderni**, fare clic su **Imposta profilo** e quindi su **Crea**.  
 
-5.  [登録プロファイルの作成] で登録プロファイルの名前を入力し、登録プロファイルを持つユーザーが使用する管理サイト コードを選びます。 **[OK]** を何回かクリックして、[既定の設定] ページを終了します。  
+5.  In Crea profilo di registrazione digitare un nome per il profilo di registrazione e scegliere il codice del sito di gestione che gli utenti con il profilo di registrazione dovranno usare. Fare clic su **OK** più volte per uscire dalla pagina Impostazioni predefinite.  
 
 > [!NOTE]  
->  検出されたユーザーのサブセットに登録プロファイルを展開する場合は、ユーザーのコレクションを使用し、そのコレクションに展開するためのカスタム クライアント設定を作成できます。 カスタム クライアント設定を作成する方法については、「 [How to configure client settings in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md)」をご覧ください。  
+>  Se si vuole distribuire il profilo di registrazione a un sottoinsieme degli utenti individuati, è possibile usare una raccolta di utenti e creare impostazioni client personalizzate per eseguire la distribuzione in tale raccolta. Per informazioni sulla creazione di impostazioni client personalizzate, vedere [How to configure client settings in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md)  
 
-##  <a name="bkmk_addClient"></a> 登録されているデバイスの追加のクライアント設定のセットアップ  
- 最新のデバイスの登録プロファイルをセットアップするだけでなく、登録時に、デバイスを構成する他のクライアント設定をセットアップすることができます。  クライアント設定をセットアップする方法については、「[System Center Configuration Manager でクライアント設定を構成する方法](../../core/clients/deploy/configure-client-settings.md)」を参照してください。  
+##  <a name="bkmk_addClient"></a> Configurare altre impostazioni client per i dispositivi registrati  
+ Oltre a configurare il profilo di registrazione per dispositivi moderni, è possibile usare altre impostazioni client per configurare i dispositivi quando vengono registrati.  Per informazioni sulla configurazione delle impostazioni client, vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md).  
 
- オンプレミス モバイル デバイス管理では使用できないクライアント設定があります。 Configuration Manager の現在のブランチでは、オンプレミス モバイル デバイス管理について、次のクライアント設定がサポートされています。  
+ Non tutte le impostazioni client sono disponibili per la gestione dei dispositivi mobili locale. Current Branch di Configuration Manager supporta solo le configurazioni seguenti per la gestione dei dispositivi mobili locale:  
 
--   登録 - これらの設定は、管理対象デバイスの登録プロファイルを指定します。 登録プロファイルをセットアップする方法の詳細については、「 [ユーザーが最新のデバイスを登録できるようにするための登録プロファイルを作成する](#bkmk_createProf)」を参照してください。  
+-   Registrazione: queste impostazioni specificano il profilo di registrazione per i dispositivi gestiti. Per altre informazioni sull'impostazione di un profilo di registrazione, vedere [Creare un profilo di registrazione che consenta agli utenti di registrare i dispositivi moderni](#bkmk_createProf).  
 
--   クライアント ポリシー - これらの設定は、デバイスにクライアント ポリシーをダウンロードする頻度を指定します。 また、ポリシーのポーリングを使用した対象ユーザーの設定を有効にすることができます。 クライアント ポリシー設定の詳細については、「[System Center Configuration Manager のクライアント設定について](../../core/clients/deploy/about-client-settings.md)」の「クライアント ポリシー」セクションを参照してください。  
+-   Criteri client: queste impostazioni specificano la frequenza di download dei criteri client nel dispositivo. È anche possibile abilitare le impostazioni per l'assegnazione del polling dei criteri agli utenti. Per altre informazioni sulle impostazioni dei criteri client, vedere la sezione Criteri client in [Informazioni sulle impostazioni client in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md).  
 
--   ソフトウェアの展開 - この設定は、ソフトウェアの展開用にクライアント デバイスを評価する間隔を設定します。 ソフトウェア展開の設定の詳細については、「[System Center Configuration Manager のクライアント設定について](../../core/clients/deploy/about-client-settings.md)」の「ソフトウェアの展開」セクションを参照してください。  
+-   Distribuzione software: questa impostazione definisce l'intervallo per la valutazione dei dispositivi client per le distribuzioni software. Per altre informazioni sulle impostazioni di distribuzione software, vedere la sezione Distribuzione software in [Informazioni sulle impostazioni client in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md)  
 
     > [!NOTE]  
-    >  オンプレミス モバイル デバイス管理の場合は、ソフトウェア展開の設定は、既定のクライアント設定としてのみ使用できます。 ソフトウェア展開の設定は、Configuration Manager の現在のブランチのカスタム クライアント設定では使用できません。  
+    >  Per la gestione dei dispositivi mobili locale, le impostazioni di distribuzione software possono essere usate solo come impostazioni client predefinite. Le impostazioni di distribuzione software non possono essere usate con le impostazioni client personalizzate in Current Branch di Configuration Manager.  
 
-##  <a name="bkmk_enableUsers"></a> ユーザーが最新のデバイス登録プロファイルを受信できるようにする  
- ユーザーは、変更されたクライアント設定をオンプレミス モバイル デバイス管理の登録プロファイルによって受信するために、Active Directory の探索方法で検出される必要があります。 必要とする全員が登録プロファイルを取得できるように、Active Directory ユーザーの探索を実行します。 ユーザーの検出方法の手順については、「 [Run discovery for System Center Configuration Manager](../../core/servers/deploy/configure/run-discovery.md)」をご覧ください。  
+##  <a name="bkmk_enableUsers"></a> Consentire agli utenti di ricevere il profilo di registrazione dei dispositivi moderni  
+ Per fare in modo che ricevano le impostazioni client modificate con il profilo di registrazione per la gestione dei dispositivi mobili locale, è necessario che gli utenti vengano individuati tramite il metodo di individuazione Active Directory. Per assicurarsi che il profilo di registrazione venga ottenuto da tutti gli utenti che ne hanno bisogno, eseguire l'individuazione degli utenti di Active Directory. Per informazioni sulla procedura di individuazione degli utenti, vedere [Run discovery for System Center Configuration Manager](../../core/servers/deploy/configure/run-discovery.md).  
 
-##  <a name="bkmk_storeCert"></a> 登録するデバイスにルート証明書を格納する  
- ドメインに参加しているデバイスを持つユーザーは、サイト システムの役割をホストするサーバーとの信頼された通信のための必要なルート証明書を既に持っていると考えられます。これは、Active Directory を使用したドメイン参加プロセスの一部としてルートが発行されているためです。 ドメインに参加していないコンピューターとモバイル デバイスは、デバイスにルート証明書を手動でインストールして、登録を実行できるようにする必要があります。 これらのデバイスが必要なルート証明書を自動的に持つことはありません。  
+##  <a name="bkmk_storeCert"></a> Archiviare il certificato radice nei dispositivi da registrare  
+ È probabile che gli utenti con dispositivi appartenenti a un dominio abbiano già il certificato radice richiesto per la comunicazione attendibile con i server che ospitano i ruoli del sistema del sito, perché la radice è stata rilasciata come parte del processo di aggiunta al dominio con Active Directory. Per i dispositivi mobili non appartenenti a un dominio sarà necessario installare manualmente il certificato radice nel dispositivo per consentire la registrazione. Questi dispositivi non avranno automaticamente il certificato radice richiesto.  
 
- エクスポートされた証明書ファイルを用意して、デバイスに手動でインストールできるようにする必要があります。 これは、メール、OneDrive、SD カード、USB メモリ、またはニーズに最適な方法を使用して実行できます。  
+ È necessario fornire al dispositivo il file del certificato esportato per l'installazione manuale. Questa operazione può essere eseguita tramite posta elettronica, OneDrive, una scheda SD, un'unità USB o qualsiasi metodo adatto alle proprie esigenze.  
 
- デバイスで使用するルート証明書は、「[Web サーバー証明書と同じルートの証明書をエクスポートする](../../mdm/get-started/set-up-certificates-on-premises-mdm.md#bkmk_exportCert)」でエクスポートした証明書です。  
+ Il certificato radice da usare nei dispositivi è quello esportato in [Esportare il certificato con la stessa radice del certificato del server Web](../../mdm/get-started/set-up-certificates-on-premises-mdm.md#bkmk_exportCert).  
 
-1.  登録するデバイスで、ルート証明書ファイルを検索し、ダブルクリックします。  
+1.  Nel dispositivo da registrare individuare il file del certificato radice e fare doppio clic su di esso.  
 
-2.  [証明書] ウィンドウで **[証明書のインストール...]** をクリックします。  
+2.  Nella finestra Certificato fare clic su **Installa certificato**.  
 
-3.  証明書のインポート ウィザードで **[ローカル コンピューター]**を選び、 **[次へ]**をクリックします。  
+3.  Nell'Importazione guidata certificati selezionare **Computer locale**e fare clic su **Avanti**.  
 
-4.  [ユーザー アカウント コントロール] ウィンドウで **[はい]**をクリックします。  
+4.  Nella finestra Controllo dell'account utente fare clic su **Sì**.  
 
-5.  **[証明書をすべて次のストアに配置する]**を選び、 **[参照]**をクリックします。  
+5.  Selezionare **Colloca tutti i certificati nel seguente archivio**e quindi fare clic su **Sfoglia**.  
 
-6.  **[信頼されたルート証明機関]**をクリックして、 **[OK]**をクリックし、 **[次へ]**をクリックします。  
+6.  Fare clic su **Autorità di certificazione radice attendibili**, fare clic su **OK**e quindi fare clic su **Avanti**.  
 
-7.  **[完了]**をクリックします。  
+7.  Fare clic su **Fine**.  

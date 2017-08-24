@@ -1,6 +1,6 @@
 ---
-title: "セキュリティの基礎 | Microsoft Docs"
-description: "System Center Configuration Manager のセキュリティ層について説明します。"
+title: Nozioni fondamentali sulla sicurezza | Microsoft Docs
+description: Di seguito sono riportate informazioni sui livelli di protezione per System Center Configuration Manager.
 ms.custom: na
 ms.date: 12/30/2016
 ms.prod: configuration-manager
@@ -17,55 +17,55 @@ manager: angrobe
 ms.openlocfilehash: df3198885259b1db4a1aadee0db6512a1a2d4911
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="fundamentals-of-security-for-system-center-configuration-manager"></a>System Center Configuration Manager のセキュリティの基礎
+# <a name="fundamentals-of-security-for-system-center-configuration-manager"></a>Nozioni fondamentali sulla sicurezza di System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager のセキュリティは、複数の階層で構成されています。 オペレーティング システムとネットワークの両方に、Windows セキュリティ機能によって最初の層が提供されます。この層には、以下のものが含まれます。  
+La sicurezza di System Center Configuration Manager è costituita da diversi livelli. Il primo livello è fornito dalle funzionalità di sicurezza di Windows per il sistema operativo e per la rete e include:  
 
--   Configuration Manager コンポーネント間でファイルを転送するためのファイル共有。  
+-   Condivisione di file per il trasferimento di file tra componenti di Configuration Manager.  
 
--   ファイルとレジストリ キーの保護に役立つアクセス制御リスト (ACL)。  
+-   Elenchi di controllo di accesso (ACL) per agevolare la protezione dei file e delle chiavi del Registro di sistema.  
 
--   通信の保護に役立つインターネット プロトコル セキュリティ (IPsec)。  
+-   Internet Protocol Security (IPSec) per proteggere le comunicazioni.  
 
--   セキュリティ ポリシーを設定するためのグループ ポリシー。  
+-   Criteri di gruppo per impostare criteri di sicurezza.  
 
--   Configuration Manager コンソールなど、配布されたアプリケーションの分散コンポーネント オブジェクト モデル (DCOM) アクセス許可。  
+-   Autorizzazioni DCOM (Distributed Component Object Model) per applicazioni distribuite, ad esempio la console di Configuration Manager.  
 
--   セキュリティ プリンシパルを保存するための Active Directory Domain Services。  
+-   Active Directory Domain Services per archiviare le entità di protezione.  
 
--   Configuration Manager セットアップ中に作成された一部のグループを含む、Windows アカウント セキュリティ。  
+-   Protezione account di Windows, inclusi alcuni gruppi creati durante la configurazione di Configuration Manager.  
 
-さらにファイアウォールや侵入検出などのセキュリティ コンポーネントを使用することで、環境全体を防御することができます。 業界標準の公開キー基盤 (PKI) 実装で発行される証明書により、認証、署名および暗号化が可能になります。  
+Altri componenti di sicurezza, come firewall e rilevamento intrusioni, contribuiscono alla difesa per l'intero ambiente. I certificati emessi dalle implementazioni di infrastruttura a chiave pubblica (PKI) standard per il settore consentono di offrire autenticazione, firma e crittografia.  
 
-Windows Server とネットワーク インフラストラクチャによって提供されるセキュリティだけでなく、いくつかの方法で、Configuration Manager によって Configuration Manager コンソールとそのリソースへのアクセスが制御されます。 既定では、Configuration Manager コンソールがインストールされているコンピューター上でコンソールを実行するために必要なファイルおよびレジストリ キーへのアクセス権は、ローカル管理者のみにあります。  
+Oltre alla sicurezza fornita da Windows Server e dall'infrastruttura di rete, Configuration Manager controlla l'accesso alla console di Configuration Manager e alle relative risorse in diversi modi. Per impostazione predefinita, solo gli amministratori locali hanno i diritti per i file e per le chiavi del Registro di sistema necessari per l'esecuzione della console di Configuration Manager nei computer in cui è installata.  
 
-次のセキュリティ階層は、Windows Management Instrumentation (WMI) によるアクセスに基づいています。これは SMS プロバイダーに特有のものです。 SMS プロバイダーは、サイト データベースの情報を照会するためのユーザー アクセスを付与する Configuration Manager コンポーネントです。 既定では、プロバイダーへのアクセスは、ローカルの SMS 管理グループのメンバーに限定されています。 このグループには最初のうち、Configuration Manager をインストールしたユーザーのみが含まれています。 他のアカウントに Common Information Model (CIM) リポジトリおよび SMS プロバイダーへのアクセス許可を与えるには、SMS 管理グループに他のアカウントを追加します。  
+Il livello successivo di protezione si basa sull'accesso tramite Windows Management Instrumentation (WMI), in particolare sul provider SMS. Il provider SMS è un componente di Configuration Manager che concede a un utente l'accesso per eseguire query nel database del sito per informazioni. Per impostazione predefinita, l'accesso al provider è limitato ai membri del gruppo SMS Admins locale. Questo gruppo contiene inizialmente solo l'utente che ha installato Configuration Manager. Per concedere altre autorizzazioni account al repository Common Information Model (CIM) e al provider SMS, aggiungere altri account al gruppo SMS Admins.  
 
-最後のセキュリティ階層は、サイト データベース内のオブジェクトに対するアクセス許可に基づいています。 既定では、Configuration Manager をインストールする際に使用したローカル システム アカウントおよびユーザー アカウントは、サイト データベース内のすべてのオブジェクトを管理できます。 Configuration Manager コンソールで、ロール ベース管理を使用すると、追加の管理ユーザーに対してアクセス許可を付与したり、制限したりすることができます。  
+Il livello di protezione finale si basa sulle autorizzazioni per gli oggetti nel database del sito. Per impostazione predefinita, l'account di sistema locale e l'account utente usato per l'installazione di Configuration Manager possono amministrare tutti gli oggetti nel database di sito. È possibile concedere e limitare le autorizzazioni per altri utenti amministrativi nella console di Configuration Manager usando l'amministrazione basata su ruoli.  
 
 
 
-## <a name="role-based-administration"></a>役割に基づいた管理  
- Configuration Manager では、ロール ベース管理を使用して、オブジェクト (コレクション、展開、サイトなど) を保護できます。 この管理モデルは、階層内のすべてのサイトのセキュリティのアクセス権の設定およびサイトの設定を一元的に定義および管理します。 セキュリティ ロールは、管理ユーザーとグループのアクセス許可に割り当てられます。 アクセス許可は、クライアント設定の作成または変更に使用されるアクセス許可など、さまざまな Configuration Manager オブジェクトの種類に関連しています。 セキュリティ スコープは、管理ユーザーが管理を担当する特定のオブジェクトのインスタンス (Microsoft Office をインストールするアプリケーションなど) をグループ化します。 セキュリティ ロール、セキュリティ スコープ、およびコレクションの組み合わせによって、管理ユーザーが表示および管理できるオブジェクトが定義されます。 Configuration Manager は、一般的な管理タスクのためにいくつかの既定のセキュリティ ロールをインストールします。 ただし、独自のセキュリティ ロールを作成して、特定のビジネスの要件をサポートすることができます。  
+## <a name="role-based-administration"></a>Amministrazione basata su ruoli  
+ Configuration Manager usa l'amministrazione basata su ruoli per consentire la protezione di oggetti quali raccolte, distribuzioni e siti. Questo modello di amministrazione definisce e gestisce centralmente le impostazioni di accesso di protezione a livello di gerarchia per tutti i siti e le impostazioni del sito. I ruoli di sicurezza vengono assegnati a utenti con privilegi amministrativi e alle autorizzazioni per i gruppi. Le autorizzazioni sono collegate a diversi tipi di oggetto di Configuration Manager, ad esempio le autorizzazioni usate per creare o modificare le impostazioni client. Gli ambiti di sicurezza raggruppano istanze specifiche di oggetti che un utente amministratore ha la responsabilità di gestire, ad esempio un'applicazione che installa Microsoft Office. La combinazione di ruoli di sicurezza, ambiti di sicurezza e raccolte consente di definire gli oggetti che possono essere visualizzati e gestiti da un utente amministrativo. Configuration Manager installa alcuni ruoli di sicurezza predefiniti per le attività di gestione comuni. È comunque possibile creare ruoli di sicurezza personalizzati per supportare requisiti aziendali specifici.  
 
- 詳細については、「[Configure role-based administration for System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md)」(System Center Configuration Manager の役割ベースの管理の構成) を参照してください。  
+ Per altre informazioni, vedere [Configurare l'amministrazione basata su ruoli per System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
-## <a name="securing-client-endpoints"></a>クライアント エンドポイントの保護  
- サイト システムの役割へのクライアント通信は、自己署名入り証明書、または PKI 証明書を使用して保護されます。 PKI 証明書は、Configuration Manager がインターネット上にあると見なしたコンピューター クライアントと、モバイル デバイス クライアントに対して使用する必要があります。 PKI 証明書では HTTPS を使用して、クライアント エンドポイントを保護します。 クライアントが接続するサイト システムの役割は、HTTPS または HTTP を使用してクライアント通信を行うように構成できます。 クライアント コンピューターは、使用可能な最も安全な方法を使用して常に通信を行います。 クライアント コンピューターは、HTTP 通信を許可するサイト システムの役割がある場合にのみ、安全性が劣るイントラネットでの HTTP による通信方法を代替で使用します。  
+## <a name="securing-client-endpoints"></a>Protezione degli endpoint client  
+ Le comunicazioni dei client con i ruoli del sistema del sito vengono protette tramite certificati autofirmati o tramite certificati PKI. È necessario usare un certificato PKI per i computer client rilevati da Configuration Manager come presenti su Internet e per i client di dispositivi mobili. Il certificato PKI usa HTTPS per proteggere gli endpoint client. I ruoli del sistema del sito a cui si connettono i client possono essere configurati per la comunicazione client di tipo HTTPS o HTTP. I computer client comunicano sempre usando il metodo più sicuro disponibile. I computer client passano all'uso del metodo di comunicazione meno sicuro, ovvero HTTP su Intranet, solo se sono disponibili ruoli del sistema del sito che consentono le comunicazioni HTTP.  
 
- 詳細については、「[System Center Configuration Manager の暗号化コントロールのテクニカル リファレンス](../../protect/deploy-use/cryptographic-controls-technical-reference.md)」を参照してください。  
+ Per altre informazioni, vedere [Riferimento tecnico per i controlli crittografici per System Center Configuration Manager](../../protect/deploy-use/cryptographic-controls-technical-reference.md).  
 
-## <a name="configuration-manager-accounts-and-groups"></a>Configuration Manager のアカウントとグループ  
- Configuration Manager では、ほとんどのサイト操作にローカル システム アカウントを使用します。 いくつかの管理タスクでは、追加のアカウントを作成して管理する必要がある場合があります。 いくつかの既定のグループと SQL Server の役割がセットアップ時に作成されます。 既定のグループと SQL Server の役割には、コンピューターまたはユーザー アカウントを手動で追加する必要がある場合があります。  
+## <a name="configuration-manager-accounts-and-groups"></a>Account e gruppi di Configuration Manager  
+ Configuration Manager usa l'account di sistema locale per la maggior parte delle operazioni del sito. Per alcune attività di gestione potrebbe essere necessario creare e gestire altri account. Durante l'installazione vengono creati diversi gruppi predefiniti e ruoli di SQL Server. Potrebbe essere necessario aggiungere manualmente account computer o account utente ai gruppi e ai ruoli di SQL Server predefiniti.  
 
- 詳細については、「[System Center Configuration Manager で使用されるアカウント](../../core/plan-design/hierarchy/accounts.md)」を参照してください。  
+ Per altre informazioni, vedere [Account usati in System Center Configuration Manager](../../core/plan-design/hierarchy/accounts.md).  
 
-## <a name="privacy"></a>プライバシー  
- 多くのクライアントを効果的に管理できるため、エンタープライズ管理製品には多くの利点がありますが、このソフトウェアが組織のユーザーのプライバシーに影響を与える可能性について注意する必要があります。 System Center Configuration Manager にはデータを収集してデバイスを監視するための多くのツールが備わっています。 一部のツールではプライバシーの問題が生じる可能性があります。  
+## <a name="privacy"></a>Privacy  
+ Benché i prodotti di gestione aziendale offrano molti vantaggi, grazie alla capacità effettiva di gestire un numero elevato di client, è necessario essere consapevoli del modo in cui tale software potrebbe influire sulla privacy degli utenti dell'organizzazione. System Center Configuration Manager include molti strumenti per la raccolta dei dati e il monitoraggio dei dispositivi. Alcuni strumenti potrebbero avere implicazioni a livello di privacy.  
 
- たとえば、構成マネージャー クライアントをインストールすると、既定で多数の管理設定が有効になります。 これにより、クライアント ソフトウェアから情報が Configuration Manager サイトに送信されます。 クライアント情報は Configuration Manager データベースに格納され、Microsoft に送信されることはありません。 System Center Configuration Manager を実装する前に、プライバシー要件について検討してください。  
+ Ad esempio, quando si installa il client di Configuration Manager, vengono abilitate per impostazione predefinita molte impostazioni di gestione. Il software client invia pertanto informazioni al sito di Configuration Manager. Le informazioni sul client vengono archiviate nel database di Configuration Manager e non vengono inviate a Microsoft. Prima di implementare System Center Configuration Manager, considerare i requisiti relativi alla privacy.  

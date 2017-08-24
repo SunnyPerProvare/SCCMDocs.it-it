@@ -6,21 +6,20 @@ ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b1970688-0cd2-404f-a17f-9e2aa4a78758
-caps.latest.revision: 11
-caps.handback.revision: 0
+caps.latest.revision: "11"
+caps.handback.revision: "0"
 author: brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 3bf44f850722afdb8dfe5922c8ceff11c9b56d08
-ms.openlocfilehash: 36e5307449bd843156307598ccdde717b4b59be3
-
-
+ms.openlocfilehash: 11f5d0c3c61d675a8182e985f82e6af363b34592
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="set-up-your-system-center-configuration-manager-lab"></a>Configurare un ambiente lab per System Center Configuration Manager
 
@@ -28,7 +27,7 @@ ms.openlocfilehash: 36e5307449bd843156307598ccdde717b4b59be3
 
 Le linee guida disponibili in questo argomento consentono di configurare un ambiente lab per la valutazione di Configuration Manager tramite la simulazione di attività reali.  
 
-##  <a name="a-namebkmklabcorea-core-components"></a><a name="BKMK_LabCore"></a> Componenti di base  
+##  <a name="BKMK_LabCore"></a> Componenti di base  
  L'impostazione dell'ambiente per System Center Configuration Manager richiede alcuni componenti di base per supportare l'installazione di Configuration Manager.    
 
 -   **L'ambiente lab usa Windows Server 2012 R2**, in cui verrà installato System Center Configuration Manager.  
@@ -81,7 +80,7 @@ Sebbene non sia necessario per questa esercitazione, è possibile esaminare [Sup
 
 Dopo aver installato tutti questi componenti, sono necessari passaggi aggiuntivi da eseguire per configurare l'ambiente di Windows per Configuration Manager:  
 
-###  <a name="a-namebkmklabadprepa-prepare-active-directory-content-for-the-lab"></a><a name="BKMK_LabADPrep"></a> Preparare il contenuto di Active Directory per l'ambiente lab  
+###  <a name="BKMK_LabADPrep"></a> Preparare il contenuto di Active Directory per l'ambiente lab  
  Per questo ambiente lab verrà creato un gruppo di sicurezza e quindi vi verrà aggiunto un utente di dominio.  
 
 -   Gruppo di sicurezza: **Evaluation**  
@@ -96,7 +95,7 @@ Dopo aver installato tutti questi componenti, sono necessari passaggi aggiuntivi
 
 Nelle procedure successive sono elencati gli altri passaggi necessari per consentire ai client di Configuration Manager di eseguire query su Active Directory Domain Services per individuare le risorse del sito.  
 
-###  <a name="a-namebkmkcreatesysmgmtlaba-create-the-system-management-container"></a><a name="BKMK_CreateSysMgmtLab"></a> Creare il contenitore System Management  
+###  <a name="BKMK_CreateSysMgmtLab"></a> Creare il contenitore System Management  
  Configuration Manager non crea automaticamente il contenitore System Management necessario in Active Directory Domain Services quando viene esteso lo schema. Pertanto, sarà necessario crearlo per l'ambiente lab. Questo passaggio è richiesto per [installare ADSI Edit](https://technet.microsoft.com/en-us/library/cc773354\(WS.10\).aspx#BKMK_InstallingADSIEdit)  
 
  Assicurarsi di avere eseguito l'accesso con un account che disponga dell'autorizzazione **Crea tutti gli oggetti figlio** nel contenitore **System** in Servizi di dominio Active Directory.  
@@ -113,7 +112,7 @@ Nelle procedure successive sono elencati gli altri passaggi necessari per consen
 
 5.  Fare clic su **Fine** per completare la procedura.  
 
-###  <a name="a-namebkmksetsecpermlaba-set-security-permissions-for-the-system-management-container"></a><a name="BKMK_SetSecPermLab"></a> Impostare le autorizzazioni di sicurezza per il contenitore System Management  
+###  <a name="BKMK_SetSecPermLab"></a> Impostare le autorizzazioni di sicurezza per il contenitore System Management  
  Concedere all'account computer del server del sito le autorizzazioni necessarie per pubblicare le informazioni del sito nel contenitore. Anche per questa attività verrà usato ADSI Edit.  
 
 > [!IMPORTANT]  
@@ -133,7 +132,7 @@ Nelle procedure successive sono elencati gli altri passaggi necessari per consen
 
      Per altre informazioni su questa procedura, vedere [Extend the Active Directory schema for System Center Configuration Manager](../../core/plan-design/network/extend-the-active-directory-schema.md) (Estendere lo schema di Active Directory per System Center Configuration Manager)  
 
-###  <a name="a-namebkmkextadschlaba-extend-the-active-directory-schema-using-extadschexe"></a><a name="BKMK_ExtADSchLab"></a> Estendere lo schema di Active Directory usando extadsch.exe  
+###  <a name="BKMK_ExtADSchLab"></a> Estendere lo schema di Active Directory usando extadsch.exe  
  Per questo ambiente lab verrà esteso lo schema di Active Directory in quanto ciò consente di usare tutte le caratteristiche e le funzionalità di Configuration Manager con il minimo carico amministrativo. L'estensione dello schema di Active Directory è una configurazione a livello di foresta eseguita solo una volta per foresta. L'estensione dello schema in modo permanente modifica il set di classi e attributi nella configurazione di Active Directory di base. Questa azione è irreversibile. L'estensione dello schema consente a Configuration Manager di accedere ai componenti che ne consentono un funzionamento efficiente all'interno dell'ambiente lab.  
 
 > [!IMPORTANT]  
@@ -151,7 +150,7 @@ Nelle procedure successive sono elencati gli altri passaggi necessari per consen
 
      Per altre informazioni su questa procedura, vedere [Extend the Active Directory schema for System Center Configuration Manager](../../core/plan-design/network/extend-the-active-directory-schema.md) (Estendere lo schema di Active Directory per System Center Configuration Manager).  
 
-###  <a name="a-namebkmkothertaskslaba-other-required-tasks"></a><a name="BKMK_OtherTasksLab"></a> Altre attività necessarie  
+###  <a name="BKMK_OtherTasksLab"></a> Altre attività necessarie  
  È inoltre necessario completare le attività seguenti prima dell'installazione.  
 
  **Creare una cartella per archiviare tutti i download**  
@@ -164,7 +163,7 @@ Nelle procedure successive sono elencati gli altri passaggi necessari per consen
 
 ##### <a name="to-install-net-and-activate-windows-communication-foundation"></a>Per installare .NET e attivare Windows Communication Foundation:  
 
-1.  Aprire **Server Manager**e quindi passare a **Gestisci**. Fare clic su **Aggiungi ruoli e funzionalità** per aprire l' **Aggiungi ruoli e funzionalità Wizard.**.  
+1.  Aprire **Server Manager**e quindi passare a **Gestisci**. Fare clic su **Aggiungi ruoli e funzionalità** per aprire l' **Aggiungi ruoli e funzionalità Wizard**.  
 
 2.  Verificare le informazioni nel pannello **Prima di iniziare** e quindi fare clic su **Avanti**.  
 
@@ -344,7 +343,7 @@ Per impostazione predefinita IIS impedisce l'accesso a diversi tipi di estension
 
 4.  Digitare **.msi** nella finestra di dialogo e quindi fare clic su **OK**.  
 
-###  <a name="a-namebkmkinstallcmlaba-installing-configuration-manager"></a><a name="BKMK_InstallCMLab"></a> Installazione di Configuration Manager  
+###  <a name="BKMK_InstallCMLab"></a> Installazione di Configuration Manager  
 Verrà seguita la procedura illustrata in [Determine when to use a primary site](../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md#BKMK_ChoosePriimary) (Stabilire quando usare un sito primario) per gestire direttamente i client. In questo modo l'ambiente lab potrà supportare la gestione della [scalabilità del sistema del sito](/sccm/core/plan-design/configs/size-and-scale-numbers) dei dispositivi potenziali.  
 Durante questo processo verrà installata anche la console di Configuration Manager, che da questo momento in poi verrà usata per gestire i dispositivi in valutazione.  
 
@@ -370,7 +369,7 @@ Prima di iniziare l'installazione, avviare il [controllo dei prerequisiti](/sccm
     |Passaggio 15: **Impostazioni di comunicazione client**|Verificare che l'opzione **Tutti i ruoli del sistema del sito accettano solo le comunicazioni HTTPS dai client** non sia selezionata|  
     |Passaggio 16: **Ruoli del sistema del sito**|Immettere il nome FQDN e verificare che l'opzione **Tutti i ruoli del sistema del sito accettano solo le comunicazioni HTTPS dai client** sia deselezionata.|  
 
-###  <a name="a-namebkmkenablepublaba-enable-publishing-for-the-configuration-manager-site"></a><a name="BKMK_EnablePubLab"></a> Attivare la pubblicazione per il sito di Configuration Manager  
+###  <a name="BKMK_EnablePubLab"></a> Attivare la pubblicazione per il sito di Configuration Manager  
 Ogni sito di Configuration Manager pubblica informazioni specifiche nel contenitore System Management all'interno della relativa partizione di dominio nello schema di Active Directory. I canali bidirezionali per la comunicazione tra Active Directory e Configuration Manager devono essere aperti per gestire il traffico. Si abiliterà inoltre l'individuazione della foresta per determinare alcuni componenti di Active Directory e dell'infrastruttura di rete.  
 
 ##### <a name="to-configure-active-directory-forests-for-publishing"></a>Per configurare le foreste Active Directory per la pubblicazione:  
@@ -398,9 +397,3 @@ Ogni sito di Configuration Manager pubblica informazioni specifiche nel contenit
 3.  Nell'area di lavoro **Amministrazione** , fare clic su **Foreste Active Directory**.  
 
 4.  Nella scheda **Pubblicazione** all'interno delle proprietà del sito selezionare la foresta connessa e quindi fare clic su **OK** per salvare la configurazione.
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-

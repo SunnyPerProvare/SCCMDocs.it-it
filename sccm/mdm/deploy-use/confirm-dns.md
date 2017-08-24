@@ -1,6 +1,6 @@
 ---
-title: "System Center Configuration Manager を使用したドメイン名の要件の確認 | Microsoft Docs"
-description: "System Center Configuration Manager を使用してドメイン名の要件を確認します。"
+title: Confermare i requisiti del nome di dominio tramite System Center Configuration Manager | Microsoft Docs
+description: Confermare i requisiti del nome di dominio tramite System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/21/2017
 ms.prod: configuration-manager
@@ -18,37 +18,37 @@ manager: angrobe
 ms.openlocfilehash: 35b24294073956a6bdb14cae07705f56d31e00a9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="confirm-domain-name-requirements-with-system-center-configuration-manager-and-microsoft-intune"></a>System Center Configuration Manager と Microsoft Intune を使用したドメイン名の要件の確認
+# <a name="confirm-domain-name-requirements-with-system-center-configuration-manager-and-microsoft-intune"></a>Confermare i requisiti del nome di dominio con System Center Configuration Manager e Microsoft Intune
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-必要に応じて、Configuration Manager 外部の依存関係を満たすため、次の手順を実行します。
+Se necessario, eseguire i passaggi seguenti per soddisfare le dipendenze esterne a Configuration Manager:
 
-1. デバイスを登録するには、各ユーザーに Intune ライセンスが割り当てられている必要があります。 Intune ライセンスをユーザーに割り当てるには、パブリックに解決できるユーザー プリンシパル名 (UPN) (たとえば、johndoe@contoso.com) または Azure Active Directory で構成された代替ログイン ID を各ユーザーが持っている必要があります。 代替ログイン ID を構成すると、たとえば UPN が NetBIOS 形式 (CONTOSO\johndoe など) の場合でも、ユーザーが電子メール アドレスでサインインできるようになります。
+1. Ogni utente deve avere assegnata una licenza Intune per registrare i dispositivi. Per essere associato a una licenza di Intune, ogni utente deve avere un nome entità utente (UPN) che può essere risolto pubblicamente, ad esempio johndoe@contoso.com o un ID di accesso alternativo configurato in Azure Active Directory. La configurazione di un ID di accesso alternativo consente agli utenti di accedere con un indirizzo di posta elettronica, ad esempio, anche se il loro UPN è in formato NetBIOS (ad esempio, CONTOSO\davidemilano).
 
-  - 会社がパブリックに解決できる UPN (つまり johndoe@contoso.com) を使用している場合、それ以上の構成は必要ありません。
-  - 会社が解決できない UPN (つまり CONTOSO\johndoe) を使用している場合、[Azure Active Directory で代替 ID を構成する](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-get-started-custom/#pages-under-the-section-sync)必要があります。
+  - Se l'azienda usa UPN risolvibili pubblicamente, ad esempio johndoe@contoso.com, non sono necessarie altre configurazioni.
+  - Se la società usa un UPN non risolvibile, ad esempio CONTOSO\davidemilano, è necessario [configurare un ID alternativo in Azure Active Directory](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-get-started-custom/#pages-under-the-section-sync).
 
-2.  Active Directory Federation Services (AD FS) を展開および構成する (オプション)
+2.  Distribuire e configurare Active Directory Federation Services (AD FS). Facoltativo
 
-     シングル サインオンをセットアップすると、ユーザーは会社の資格情報を使用してサインインし、Intune のサービスにアクセスできます。
+     Quando viene configurato l'accesso Single Sign-On, gli utenti possono usare le credenziali aziendali per accedere ai servizi di Intune.
 
-     詳細については、以下のトピックを参照してください。
-    -   [シングル サインオンを準備する](http://go.microsoft.com/fwlink/?LinkID=271124)
-    -   [チェックリスト: AD FS 2.0 を使用してシングル サインオンを実装および管理する](http://go.microsoft.com/fwlink/?LinkID=271125)
+     Per altre informazioni, vedere i seguenti argomenti:
+    -   [Preparazione dell'accesso Single Sign-On](http://go.microsoft.com/fwlink/?LinkID=271124)
+    -   [Pianificare e distribuire AD FS 2.0 per l'uso con l'accesso Single Sign-On](http://go.microsoft.com/fwlink/?LinkID=271125)
 
-3.  ディレクトリ同期の展開と構成
+3.  Distribuire e configurare la sincronizzazione directory.
 
-     ディレクトリ同期を使用すると、同期したユーザー アカウントで Intune を設定できます。 同期したユーザー アカウントとセキュリティ グループは、Intune に追加されます。 Configuration Manager MDM と Microsoft Intune をセットアップするときに、デバイスを登録できない一般的な原因は、ディレクトリ同期が有効になっていないことです。
+     La sincronizzazione della directory consente di popolare Intune con gli account utente sincronizzati. I gruppi di sicurezza e gli account utente sincronizzati vengono aggiunti a Intune. La mancata abilitazione di Sincronizzazione della directory è una causa comune dell'impossibilità di registrare i dispositivi quando si configura la gestione dei dispositivi mobili per Configuration Manager con Microsoft Intune.
 
-     詳しくは、Active Directory ドキュメント ライブラリの「 [ディレクトリ統合](http://go.microsoft.com/fwlink/?LinkID=271120) 」をご覧ください。
+     Per altre informazioni, vedere [Integrazione di directory](http://go.microsoft.com/fwlink/?LinkID=271120) nella libreria della documentazione di Active Directory.
 
-4.  省略可能で推奨されない手順: Active Directory フェデレーション サービスを使用していない場合は、ユーザーの Microsoft Online パスワードをリセットします。
+4.  Facoltativo, non consigliato: se non si usa Active Directory Federation Services, reimpostare le password di Microsoft Online degli utenti.
 
-     AD FS を使用していない場合、各ユーザーの Microsoft Online パスワードを設定する必要があります。
+     Se non si usa ADFS, è necessario impostare una password di Microsoft Online per ciascun utente.
 
 > [!div class="button"]
-[< 前のステップ](create-mdm-collection.md)  [次のステップ >](configure-intune-subscription.md)
+[< Passaggio precedente](create-mdm-collection.md)  [Passaggio successivo >](configure-intune-subscription.md)

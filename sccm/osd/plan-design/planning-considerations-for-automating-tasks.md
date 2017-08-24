@@ -1,26 +1,25 @@
 ---
-title: "Considerazioni di pianificazione per l&quot;automazione delle attività | Microsoft Docs"
+title: "Considerazioni di pianificazione per l'automazione delle attività | Microsoft Docs"
 description: "Pianificare prima di automatizzare le attività in System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fc497a8a-3c54-4529-8403-6f6171a21c64
-caps.latest.revision: 13
-caps.handback.revision: 0
+caps.latest.revision: "13"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
 ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="planning-considerations-for-automating-tasks-in-system-center-configuration-manager"></a>Considerazioni sulla pianificazione per l'automazione delle attività in System Center Configuration Manager
 
@@ -28,7 +27,7 @@ ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
 
 È possibile creare sequenze di attività per automatizzare le attività nell'ambiente di System Center Configuration Manager. Queste attività vanno dall'acquisizione di un sistema operativo in un computer di riferimento alla distribuzione del sistema operativo in uno o più computer di destinazione. Le azioni della sequenza di attività sono definite nei singoli passaggi della sequenza. Quando si esegue la sequenza di attività, le azioni di ogni passaggio vengono eseguite a livello di riga di comando nel contesto Sistema locale senza l'intervento dell'utente. Per pianificare l'automatizzazione delle attività in Configuration Manager, vedere le sezioni seguenti.
 
-##  <a name="a-namebkmktsstepsactionsa-task-sequence-steps-and-actions"></a><a name="BKMK_TSStepsActions"></a> Azioni e passaggi della sequenza di attività  
+##  <a name="BKMK_TSStepsActions"></a> Azioni e passaggi della sequenza di attività  
  I passaggi sono i componenti di base di una sequenza di attività. Possono contenere i comandi che configurano e acquisiscono il sistema operativo di un computer di riferimento oppure possono contenere i comandi che installano il sistema operativo, i driver, il client di Configuration Manager e il software nel computer di destinazione. I comandi di un passaggio della sequenza di attività vengono definiti tramite le azioni del passaggio. Esistono due tipi di azioni. Un'azione che viene definita usando una stringa della riga di comando viene definita azione personalizzata. Un'azione predefinita da Configuration Manager viene definita azione integrata. Una sequenza di attività è in grado di eseguire qualsiasi combinazione di azioni predefinite e personalizzate.  
 
  I passaggi della sequenza di attività possono anche includere condizioni che controllano il comportamento del passaggio, ad esempio interrompere o continuare la sequenza di attività in caso di errore. Le condizioni vengono aggiunte al passaggio includendo una variabile della sequenza di attività al passaggio. Ad esempio, è possibile usare la variabile **SMSTSLastActionRetCode** per verificare la condizione del passaggio precedente. È possibile aggiungere variabili a un singolo passaggio o a un gruppo di passaggi.  
@@ -40,7 +39,7 @@ ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
 
  Per altre informazioni sui passaggi che possono essere aggiunti a una sequenza di attività, vedere [Passaggi della sequenze di attività](../understand/task-sequence-steps.md).  
 
-##  <a name="a-namebkmktsgroupsa-task-sequence-groups"></a><a name="BKMK_TSGroups"></a> Gruppi di sequenze di attività  
+##  <a name="BKMK_TSGroups"></a> Gruppi di sequenze di attività  
  I **gruppi** sono più passaggi all'interno di una sequenza di attività. Un gruppo di sequenze attività è composto da un nome, una descrizione facoltativa e qualsiasi condizione facoltativa valutata come un'unità prima che la sequenza di attività continui con il passaggio successivo. I gruppi possono essere nidificati uno nell'altro e un gruppo può contenere un insieme di passaggi e sottogruppi. I gruppi sono utili per combinare più passaggi che condividono una condizione comune.  
 
 > [!IMPORTANT]  
@@ -69,7 +68,7 @@ ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
 
  È necessario assegnare un nome ai gruppi sequenza di attività, anche se non è necessario che il nome del gruppo sia univoco. È inoltre possibile fornire una descrizione facoltativa per il gruppo sequenza di attività.  
 
-##  <a name="a-namebkmktsvariablesa-task-sequence-variables"></a><a name="BKMK_TSVariables"></a> Variabili della sequenza di attività  
+##  <a name="BKMK_TSVariables"></a> Variabili della sequenza di attività  
  Le variabili della sequenza di attività sono un set di coppie di nome e valore che specificano le impostazioni di configurazione e distribuzione del sistema operativo per le attività di configurazione di computer, sistema operativo e stato utente in un computer client di Configuration Manager. Le variabili della sequenza di attività forniscono un meccanismo per configurare e personalizzare i passaggi in una sequenza di attività.  
 
  Quando si esegue una sequenza di attività, molte impostazioni della sequenza di attività vengono archiviate come variabili di ambiente. È possibile visualizzare o modificare i valori delle variabili incorporate della sequenza di attività ed è possibile creare nuove variabili della sequenza di attività per personalizzare la modalità di esecuzione di una sequenza di attività in un computer di destinazione.  
@@ -86,7 +85,7 @@ ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
 
  Ad esempio, si potrebbe avere una sequenza di attività che include un passaggio di sequenza di attività **Aggiunta a dominio o gruppo di lavoro**. La sequenza di attività può essere distribuita in più raccolte, in cui l'appartenenza della raccolta viene determinata dall'appartenenza al dominio. In questo caso è possibile specificare una variabile con ambito raccolta della sequenza di attività per ogni nome di dominio della raccolta e usare tale variabile della sequenza di attività per specificare il nome di dominio appropriato nella sequenza di attività.  
 
-###  <a name="a-namebkmktscreatevariablesa-create-task-sequence-variables"></a><a name="BKMK_TSCreateVariables"></a> Creare variabili della sequenza di attività  
+###  <a name="BKMK_TSCreateVariables"></a> Creare variabili della sequenza di attività  
  È possibile aggiungere nuove variabili della sequenza di attività per personalizzare e controllare i passaggi in una sequenza di attività. Ad esempio, è possibile creare una variabile della sequenza di attività per sostituire un'impostazione per un passaggio predefinito della sequenza di attività. È anche possibile creare una variabile personalizzata della sequenza di attività da usare con le condizioni, le righe di comando o i passaggi personalizzati nella sequenza di attività. Quando si crea una variabile della sequenza di attività, la variabile della sequenza di attività e il valore associato viene mantenuto nell'ambiente della sequenza di attività anche quando la sequenza riavvia il computer di destinazione. La variabile e il relativo valore possono essere usati all'interno della sequenza di attività in ambienti con sistemi operativi diversi. Ad esempio, possono essere usati in un sistema operativo Windows completo e in ambiente Windows PE.  
 
  Nella tabella seguente vengono descritti i metodi per creare una variabile della sequenza di attività e vengono fornite altre informazioni sull'utilizzo.  
@@ -148,7 +147,7 @@ ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
 
 -   Non è previsto un limite massimo di variabili della sequenza di attività che possono essere create. Tuttavia, il numero di variabili è limitato dalle dimensioni dell'ambiente della sequenza di attività. Il limite di dimensione totale per l'ambiente della sequenza di attività è 32 MB.  
 
-###  <a name="a-namebkmktsenvironmentvariablesa-access-environment-variables"></a><a name="BKMK_TSEnvironmentVariables"></a> Accedere alle variabili di ambiente  
+###  <a name="BKMK_TSEnvironmentVariables"></a> Accedere alle variabili di ambiente  
  Dopo aver specificato la variabile della sequenza di attività e il relativo valore tramite uno dei metodi descritti nella sezione precedente, è possibile usare il valore della variabile di ambiente nelle proprie sequenze attività. È possibile accedere ai valori predefiniti per le variabili della sequenza di attività predefinite, specificare un nuovo valore per una variabile predefinita oppure usare una variabile della sequenza di attività personalizzata in uno script o una riga di comando.  
 
  Nella tabella seguente vengono descritte le operazioni della sequenza di attività eseguibili accedendo alle variabili di ambiente della sequenza di attività.  
@@ -160,7 +159,7 @@ ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
 |Valutare una condizione del passaggio|È possibile usare variabili di ambiente della sequenza di attività personalizzate o predefinite come parte di una condizione del gruppo o del passaggio della sequenza di attività. Il valore della variabile di ambiente verrà valutato prima dell'esecuzione del gruppo o del passaggio della sequenza di attività.<br /><br /> Per aggiungere una condizione che valuti un valore della variabile, effettuare le seguenti operazioni:<br /><br /> 1.  Selezionare il passaggio o il gruppo a cui si desidera aggiungere la condizione.<br />2.  Nella scheda **Opzioni** del passaggio o del gruppo, scegliere **Variabile sequenza attività** dal menu a discesa **Aggiungi condizione**.<br />3.  Nella finestra di dialogo **Variabile della sequenza di attività** specificare il nome della variabile, la condizione in corso di verifica e il valore della variabile.|  
 |Fornire informazioni per uno script personalizzato|Le variabili della sequenza di attività possono essere lette e scritte usando l'oggetto COM Microsoft.SMS.TSEnvironment durante l'esecuzione della sequenza di attività.<br /><br /> L'esempio seguente illustra un file script di Visual Basic che esegue una query della variabile della sequenza di attività **_SMSTSLogPath** per ottenere la posizione corrente del registro. Lo script imposta inoltre una variabile personalizzata.<br /><br /> <br /><br /> **dim osd: set env = CreateObject("Microsoft.SMS.TSEnvironment")**<br /><br /> <br /><br /> **dim logPath**<br /><br /> <br /><br /> **' È possibile eseguire una query sull'ambiente per ottenere una variabile esistente.**<br /><br /> **logPath = env("_SMSTSLogPath")**<br /><br /> <br /><br /> **' È anche possibile impostare una variabile nell'ambiente OSD.**<br /><br /> **env("MyCustomVariable") = "varname"**<br /><br /> <br /><br /> Per altre informazioni su come usare le variabili della sequenza di attività negli script, consultare la documentazione dell'SDK|  
 
-###  <a name="a-namebkmkcomputercollectionvariablesa-computer-and-collection-variables"></a><a name="BKMK_ComputerCollectionVariables"></a> Variabili di computer e raccolta  
+###  <a name="BKMK_ComputerCollectionVariables"></a> Variabili di computer e raccolta  
  È possibile configurare le sequenze attività da eseguire contemporaneamente su più computer o raccolte. È possibile specificare informazioni con ambito computer o raccolta univoche, come specificare un codice Product Key per il sistema operativo univoco oppure associare tutti i membri di una raccolta a un dominio specificato.  
 
  È possibile assegnare variabili della sequenza di attività a un singolo computer o una singola raccolta. Quando si avvia l'esecuzione della sequenza di attività sul computer o sulla raccolta di destinazione, i valori specificati vengono applicati a tale computer o raccolta.  
@@ -172,7 +171,7 @@ ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
 
  Per altre informazioni sulla creazione delle variabili della sequenza di attività per computer e raccolte, vedere [Creare variabili della sequenza di attività per computer e raccolte](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_CreateTSVariables).  
 
-###  <a name="a-namebkmktsmediavariablesa-task-sequence-media-variables"></a><a name="BKMK_TSMediaVariables"></a> Variabili dei supporti per sequenza di attività  
+###  <a name="BKMK_TSMediaVariables"></a> Variabili dei supporti per sequenza di attività  
  È possibile specificare variabili per le sequenze attività che vengono eseguite dal supporto. Quando si usa un supporto per la distribuzione del sistema operativo, al momento della creazione del supporto devono essere aggiunte le variabili della sequenza di attività e specificati i relativi valori. Le variabili e i valori correlati vengono memorizzati nel supporto.  
 
 > [!NOTE]  
@@ -183,14 +182,14 @@ ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
 > [!TIP]  
 >  La sequenza di attività scrive l'ID del pacchetto e la riga di comando di preavvio, incluso il valore per eventuali variabili della sequenza di attività, nel file di log CreateTSMedia.log nel computer che esegue la console di Configuration Manager. È possibile rivedere questo file di registro per verificare il valore per le variabili della sequenza di attività.  
 
-##  <a name="a-namebkmktscreatea-create-a--task-sequence"></a><a name="BKMK_TSCreate"></a> Creare una sequenza di attività  
+##  <a name="BKMK_TSCreate"></a> Creare una sequenza di attività  
  È possibile creare sequenze attività usando la Creazione guidata della sequenza di attività. La procedura guidata consente di creare sequenze attività predefinite che eseguono attività specifiche o sequenze attività personalizzate che possono eseguire molte attività differenti.  
 
  Ad esempio, è possibile creare sequenze attività che generano e acquisiscono un'immagine del sistema operativo di un computer di riferimento, installano un'immagine del sistema operativo esistente su un computer di destinazione oppure creano una sequenza di attività personalizzata che esegue un'attività personalizzata. È possibile usare sequenze attività personalizzate per eseguire distribuzioni del sistema operativo specializzate.  
 
  Per altre informazioni su come creare sequenze di attività, vedere [Creare sequenze di attività](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_CreateTaskSequence).  
 
-##  <a name="a-namebkmktsedita-edit-a-task-sequence"></a><a name="BKMK_TSEdit"></a> Modificare una sequenza di attività  
+##  <a name="BKMK_TSEdit"></a> Modificare una sequenza di attività  
  È possibile modificare la sequenza di attività tramite l'**editor delle sequenze di attività**. L'editor può apportare le seguenti modifiche alla sequenza di attività:  
 
 -   È possibile aggiungere o rimuovere i passaggi della sequenza di attività.  
@@ -208,7 +207,7 @@ ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
 
  Per altre informazioni su come modificare una sequenza di attività, vedere [Modificare una sequenza di attività](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_ModifyTaskSequence).  
 
-##  <a name="a-namebkmktsdeploya-deploy-a-task-sequence"></a><a name="BKMK_TSDeploy"></a> Distribuire una sequenza di attività  
+##  <a name="BKMK_TSDeploy"></a> Distribuire una sequenza di attività  
  È possibile distribuire una sequenza di attività nei computer di destinazione che si trovano in qualsiasi raccolta di Configuration Manager. Ciò include la raccolta **Tutti i computer sconosciuti** usata per distribuire i sistemi operativi per computer sconosciuti. Tuttavia, non è possibile distribuire una sequenza di attività alle raccolte di utenti.  
 
 > [!IMPORTANT]  
@@ -230,7 +229,7 @@ ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
 
  Per altre informazioni su come distribuire sequenze di attività, vedere [Distribuire una sequenza di attività](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
 
-##  <a name="a-namebkmktsexportimporta-export-and-import-a-task-sequences"></a><a name="BKMK_TSExportImport"></a> Esportare e importare sequenze di attività  
+##  <a name="BKMK_TSExportImport"></a> Esportare e importare sequenze di attività  
  Configuration Manager consente di esportare e importare le sequenze di attività. Quando si esporta una sequenza di attività, è possibile includere gli oggetti cui fa riferimento tale sequenza. Questi includono un'immagine del sistema operativo, un'immagine di avvio, un pacchetto dell'agente client, un pacchetto driver e applicazioni con dipendenze.  
 
 > [!NOTE]  
@@ -238,7 +237,7 @@ ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
 
  Per altre informazioni sull'esportazione e importazione delle sequenze attività, vedere [Esportare e importare sequenze di attività](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_ExportImport).  
 
-##  <a name="a-namebkmktsruna-run-a-task-sequence"></a><a name="BKMK_TSRun"></a> Eseguire una sequenza di attività  
+##  <a name="BKMK_TSRun"></a> Eseguire una sequenza di attività  
  Per impostazione predefinita, le sequenze attività sono sempre eseguite usando l'account di sistema locale. Il passaggio della riga di comando della sequenza di attività consente di eseguire la sequenza di attività come un account diverso. Quando si esegue la sequenza di attività, il client di Configuration Manager controlla la presenza di pacchetti con riferimenti prima di avviare i passaggi della sequenza di attività. Se un pacchetto con riferimenti non è convalidato o non è disponibile in un punto di distribuzione, la sequenza di attività restituisce un errore per il passaggio della sequenza di attività associato.  
 
  Se una sequenza di attività distribuita viene configurata per il download e l'esecuzione, tutti i pacchetti e le applicazioni dipendenti vengono scaricati nella cache client di Configuration Manager. I pacchetti e le applicazioni necessari vengono ottenuti dai punti di distribuzione e, se la dimensione della cache client di Configuration Manager è eccessivamente ridotta oppure non è possibile individuare il pacchetto o l'applicazione, la sequenza di attività ha esito negativo e viene generato un messaggio di stato. È anche possibile specificare che il client scaricherà il contenuto solo quando richiesto quando si seleziona **Scaricare il contenuto localmente quando necessario eseguendo la sequenza di attività**. Si può anche usare l'opzione **Esegui programma dal punto di distribuzione** per specificare che il client installerà i file direttamente dal punto di distribuzione, senza scaricarli prima nella cache. L'opzione **Esegui programma dal punto di distribuzione** è disponibile solo se l'impostazione **Copia il contenuto del pacchetto in una condivisione pacchetto nei punti di distribuzione** dei pacchetti con riferimenti è abilitata nella scheda **Accesso dati** delle proprietà **Pacchetto**.  
@@ -255,7 +254,7 @@ ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
 > [!NOTE]  
 >  Prima di eseguire una sequenza di attività, un client di Configuration Manager verifica la presenza di possibili dipendenze in tutte le sequenze di attività e la disponibilità di tali dipendenze in un punto di distribuzione. Se il client trova un oggetto eliminato da cui dipende la sequenza di attività, il client genera un errore e non esegue la sequenza di attività.  
 
-###  <a name="a-namebkmkrunprograma-run-a-program-before-the-task-sequence-is-run"></a><a name="BKMK_RunProgram"></a> Eseguire un programma prima dell'esecuzione della sequenza di attività  
+###  <a name="BKMK_RunProgram"></a> Eseguire un programma prima dell'esecuzione della sequenza di attività  
  È possibile selezionare un programma che viene eseguito prima dell'esecuzione della sequenza di attività. Per specificare un programma da eseguire prima, aprire la finestra di dialogo **Proprietà** per la sequenza di attività e selezionare la scheda **Avanzate** per impostare le opzioni seguenti:  
 
 > [!IMPORTANT]  
@@ -274,13 +273,13 @@ ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
 
  Se l'esecuzione su un client del programma selezionato non riesce, la sequenza di attività non viene eseguita.  
 
-##  <a name="a-namebkmktsmaintenancewindowa-use-a-maintenance-window-to-specify-when-a-task-sequence-can-run"></a><a name="BKMK_TSMaintenanceWindow"></a> Usare una finestra di manutenzione per specificare quando è possibile eseguire una sequenza di attività  
+##  <a name="BKMK_TSMaintenanceWindow"></a> Usare una finestra di manutenzione per specificare quando è possibile eseguire una sequenza di attività  
  È possibile specificare quando la sequenza di attività può essere eseguita definendo una finestra di manutenzione per la raccolta contenente i computer di destinazione. Le finestre di manutenzione vengono configurate con una data di inizio, un'ora di inizio e di fine e un criterio di ricorrenza. Inoltre, quando si imposta la pianificazione della finestra di manutenzione, è possibile specificare che la finestra di manutenzione si applica solo alle sequenze attività. Per altre informazioni, vedere [Come usare le finestre di manutenzione](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
 > [!IMPORTANT]  
 >  Quando si configura una finestra di manutenzione per l'esecuzione di una sequenza di attività, dopo l'avvio la sequenza di attività continua a essere eseguita anche se la finestra di manutenzione viene chiusa. La sequenza di attività verrà completata correttamente oppure avrà esito negativo.  
 
-##  <a name="a-namebkmktsnetworkaccessaccounta-task-sequences-and-the-network-access-account"></a><a name="BKMK_TSNetworkAccessAccount"></a> Sequenze di attività e account di accesso alla rete  
+##  <a name="BKMK_TSNetworkAccessAccount"></a> Sequenze di attività e account di accesso alla rete  
  Anche se le sequenze di attività vengono eseguite solo nel contesto dell'account di sistema locale, potrebbe essere necessario configurare l'account di accesso alla rete nelle circostanze seguenti:  
 
 -   Se l'account di accesso alla rete non viene configurato correttamente, la sequenza di attività avrà esito negativo se prova ad accedere ai pacchetti di Configuration Manager nei punti di distribuzione per completare l'attività. Per altre informazioni sull'account di accesso alla rete, vedere [Account di accesso alla rete](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#a-namebkmknaaa-network-access-account).  
@@ -290,7 +289,7 @@ ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
 
 -   Quando si usa un'immagine di avvio per iniziare una distribuzione di un sistema operativo, Configuration Manager usa l'ambiente Windows PE, che non è un sistema operativo completo. L'ambiente Windows PE usa un nome casuale generato automaticamente che non è membro di nessun dominio. Se non si configura correttamente l'account di accesso alla rete, è possibile che il computer non abbia le autorizzazioni obbligatorie per accedere ai pacchetti di Configuration Manager necessari per completare la sequenza di attività.  
 
-##  <a name="a-namebkmktscreatemediaa-create-media-for-task-sequences"></a><a name="BKMK_TSCreateMedia"></a> Creare supporti per le sequenze di attività  
+##  <a name="BKMK_TSCreateMedia"></a> Creare supporti per le sequenze di attività  
  È possibile scrivere le sequenze attività e le dipendenze e i file correlati in diversi tipi di supporto. È inclusa la scrittura su supporti rimovibili, ad esempio un set di DVD o CD o una unità flash USB per i supporti di acquisizione, autonomi e di avvio, o la scrittura in un file di formato Windows Imaging (WIM) per i supporti pre-installati.  
 
  È possibile creare i tipi di supporto seguenti:  
@@ -323,9 +322,3 @@ ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
  Quando si esegue una sequenza di attività usando il supporto, l'architettura chip del computer specificata, contenuta nel supporto, non verrà riconosciuta e l'esecuzione della sequenza di attività verrà tentata anche se l'architettura specificata non corrisponde a quella effettivamente installata nel computer di destinazione. Se l'architettura chip contenuta nel supporto non corrisponde all'architettura chip installata nel computer di destinazione, l'installazione non riesce.  
 
  Per altre informazioni su come distribuire sistemi operativi usando i supporti, vedere [Creare supporti per le sequenze di attività](../deploy-use/create-task-sequence-media.md).  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
-

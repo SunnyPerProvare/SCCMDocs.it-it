@@ -1,6 +1,6 @@
 ---
-title: "カスタム データベース ファイルの場所 | Microsoft Docs"
-description: "SQL Server データベース ファイルのカスタムの場所を指定する方法について説明します。"
+title: Percorsi personalizzati dei file del database | Microsoft Docs
+description: Di seguito viene spiegato come specificare percorsi personalizzati per i file di database di SQL Server.
 ms.custom: na
 ms.date: 10/06/2016
 ms.reviewer: na
@@ -17,28 +17,28 @@ manager: angrobe
 ms.openlocfilehash: cfac2c03c1b71b40c68d8acd5fbd96c5e98caaa9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="custom-locations-for-system-center-configuration-manager-site-database-files"></a>System Center Configuration Manager のサイト データベース ファイルのカスタムの場所
+# <a name="custom-locations-for-system-center-configuration-manager-site-database-files"></a>Percorsi personalizzati per i file di database del sito di System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
- System Center Configuration Manager は、SQL Server データベース ファイルのカスタムの場所をサポートしています。  
+ System Center Configuration Manager supporta percorsi personalizzati per i file di database di SQL Server.  
 
 > [!NOTE]  
->  既定以外のファイルの場所を指定するオプションは、SQL Server クラスターを使用する場合は使用できません。  
+>  L'opzione per specificare percorsi file non predefiniti non è disponibile quando si usa un cluster SQL Server.  
 
- 新しいプライマリ サイトまたは中央管理サイトの**セットアップ中**に、次のことができます。  
+ **Durante l'installazione** di un nuovo sito primario o di un sito di amministrazione centrale, è possibile:  
 
--   **サイト データベースの既定以外のファイルの場所の指定**: Configuration Manager のセットアップによって、これらの場所を使用してサイト データベースが作成されます。  
+-   **Specificare percorsi file non predefiniti per il database del sito**: il programma di installazione di Configuration Manager crea quindi il database del sito usando questi percorsi.  
 
--   **カスタムのファイルの場所を使用する、事前に作成した SQL Server データベースの使用の指定**: Configuration Manager のセットアップでは、事前に作成したデータベースとその構成済みのファイルの場所を使用します。  
+-   **Specificare l'uso di un database di SQL Server creato in precedenza con percorsi file personalizzati**: il programma di installazione di Configuration Manager usa tale database con i relativi percorsi configurati in precedenza.  
 
-**セットアップ後に**、サイト データベース ファイルの場所を変更できます。 これには、次のようにサイトを停止して、SQL Server でファイルの場所を編集する必要があります。  
+**Al termine dell'installazione**, è possibile modificare il percorso dei file di database del sito. A questo scopo, è necessario arrestare il sito e modificare il percorso file in SQL Server:  
 
--   Configuration Manager サイト サーバーで、**SMS_Executive** サービスを停止します。  
+-   Nel server del sito di Configuration Manager interrompere il servizio **SMS_Executive**.  
 
--   該当するバージョンの SQL Server のドキュメントを参照し、説明に従ってユーザー データベースを移動します。 たとえば、SQL Server 2014 を使用する場合は、TechNet の「 [ユーザー データベースの移動](https://technet.microsoft.com/library/ms345483\(v=sql.120\).aspx) 」をご覧ください。  
+-   Per istruzioni su come spostare un database utente, consultare la documentazione per la versione di SQL Server in uso. Ad esempio, se si usa SQL Server 2014, vedere [Spostare database utente](https://technet.microsoft.com/library/ms345483\(v=sql.120\).aspx) su TechNet.  
 
--   データベース ファイルの移動が完了したら、Configuration Manager サイト サーバーで **SMS_Executive** サービスを再起動します。  
+-   Al termine dello spostamento dei file di database, è necessario riavviare il servizio **SMS_Executive** sul server del sito di Configuration Manager.  

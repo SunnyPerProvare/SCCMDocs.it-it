@@ -1,6 +1,6 @@
 ---
-title: "Linux/UNIX クライアントを監視する - Configuration Manager | Microsoft Docs"
-description: "System Center Configuration Manager で Linux および UNIX サーバーのクライアントを監視します。"
+title: Monitorare client Linux e UNIX - Configuration Manager | Microsoft Docs
+description: Monitorare i client su server Linux e UNIX in System Center Configuration Manager.
 ms.custom: na
 ms.date: 08/04/2017
 ms.prod: configuration-manager
@@ -17,38 +17,38 @@ manager: angrobe
 ms.openlocfilehash: 62843bd544217734c4566d656a7c3a35bd5613cb
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.contentlocale: ja-JP
+ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-monitor-clients-for-linux-and-unix-servers-in-system-center-configuration-manager"></a>System Center Configuration Manager で Linux および UNIX サーバーのクライアントを監視する方法
+# <a name="how-to-monitor-clients-for-linux-and-unix-servers-in-system-center-configuration-manager"></a>Come monitorare i client per i server Linux e UNIX in System Center Configuration Manager
 
-*適用対象: System Center Configuration Manager (Current Branch)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
-Windows ベースのクライアントからの情報を表示する場合と同じ方法を使用して、Linux および UNIX サーバーからの情報を System Center Configuration Manager コンソールで表示できます。  
+È possibile visualizzare le informazioni dei server Linux e UNIX nella console di System Center Configuration Manager usando gli stessi metodi usati per visualizzare informazioni dei client basati su Windows.  
 
- 表示できる情報は次のとおりです。  
+ Le informazioni che è possibile visualizzare includono:  
 
--   クライアントからの状態の詳細 (Configuration Manager コンソール ダッシュボード)  
+-   Dettagli sullo stato dei client, nei dashboard della console di Configuration Manager  
 
--   クライアントについての詳細 (既定の Configuration Manager レポート)  
+-   Dettagli sui client nei report di Configuration Manager predefiniti  
 
--   インベントリの詳細 (リソース エクスプローラー)  
+-   Dettagli sull'inventario in Esplora inventario risorse  
 
- 以下のセクションでは、リソース エクスプローラーとレポートからこれらの詳細情報を取得する方法について説明します。  
+ Le sezioni seguenti descrivono come ottenere queste informazioni dettagliate da Esplora inventario risorse e dai report.  
 
-##  <a name="BKMK_UseResourceExpforLnU"></a> リソース エクスプローラーを使用して Linux および UNIX サーバーのインベントリを表示する  
+##  <a name="BKMK_UseResourceExpforLnU"></a> Usare Esplora inventario risorse per visualizzare l'inventario per i server Linux e UNIX  
 
- Configuration Manager クライアントがハードウェア インベントリを Configuration Manager サイトに送信した後、リソース エクスプローラーを使用してこの情報を表示できます。 Linux および UNIX の Configuration Manager クライアントでは、インベントリの新しいクラスやビューをリソース エクスプローラーに追加しません。 Linux および UNIX のインベントリ データは、既存の WMI クラスにマップされます。 リソース エクスプローラーを使用して、Windows ベースの分類で Linux および UNIX サーバーのインベントリの詳細を表示できます。  
+ Dopo che un client di Configuration Manager invia l'inventario hardware al sito di Configuration Manager, è possibile usare Esplora inventario risorse per visualizzare queste informazioni. Il client di Configuration Manager per Linux e UNIX non aggiunge nuove classi o visualizzazioni per l'inventario in Esplora inventario risorse. I dati di inventario di Linux e UNIX sono mappati a classi WMI esistenti. È possibile visualizzare i dettagli sull'inventario per i server Linux e UNIX nelle classificazioni basate su Windows usando Esplora inventario risorse.  
 
- たとえば、Linux および UNIX サーバーにある、ネイティブにインストールされているプログラムすべての一覧を収集できます。 ネイティブにインストールされているプログラムの例として、Linux の **.rpms** または Solaris の **.pkgs** があります。 インベントリが Linux または UNIX クライアントによって送信された後、ネイティブにインストールされている Linux または UNIX のすべてのプログラムの一覧は、Configuration Manager コンソールのリソース エクスプローラーで表示できます。  
+ Ad esempio, è possibile raccogliere l'elenco di tutti i programmi installati in modo nativo presenti nei server Linux e UNIX. Esempi di programmi installati in modo nativo includono **.rpms** in Linux o **.pkgs** in Solaris. Dopo che un inventario è stato inviato da un client Linux o UNIX, è possibile visualizzare l'elenco di tutti i programmi Linux o UNIX installati in modo nativo in Esplora inventario risorse nella console di Configuration Manager.  
 
- リソース エクスプローラーを使用する方法については、「[System Center Configuration Manager でリソース エクスプローラーを使用してハードウェア インベントリを表示する方法](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md)」を参照してください。  
+ Per informazioni su come usare Esplora inventario risorse, vedere [Come usare Esplora inventario risorse per visualizzare l'inventario hardware in System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md).  
 
-##  <a name="BKMK_UseReportsforLnU"></a> レポートを使用して Linux および UNIX サーバーの情報を表示する方法  
- Configuration Manager のレポートには、Windows ベースのコンピューターからの情報と共に、Linux および UNIX サーバーからの情報が含まれています。 Linux および UNIX のデータをレポートに統合するために、追加の構成は必要ありません。  
+##  <a name="BKMK_UseReportsforLnU"></a> Come usare i report per visualizzare informazioni per i server Linux e UNIX  
+ I report per Configuration Manager includono informazioni dei server Linux e UNIX, insieme a informazioni dei computer basati su Windows. Non sono necessarie configurazioni aggiuntive per integrare i dati di Linux e UNIX nei report.  
 
- たとえば、オペレーティング システム バージョンのカウントという名前のレポートを実行すると、さまざまなオペレーティング システムと各オペレーティング システムを実行しているクライアントの数の一覧が表示されます。 レポートは、さまざまなオペレーティング システムで実行されている各 Configuration Manager クライアントから送信されたハードウェア インベントリ情報に基づいています。  
+ Ad esempio, se si esegue il report relativo al numero di versioni del sistema operativo, vengono visualizzati l'elenco dei diversi sistemi operativi e il numero dei client che eseguono ogni sistema operativo. Il report è basato sulle informazioni dell'inventario hardware inviate dai diversi client di Configuration Manager che eseguono sistemi operativi diversi.  
 
- Linux および UNIX サーバーのデータに固有のカスタム レポートを作成することもできます。 ハードウェア インベントリ クラス **[オペレーティング システム]** の **[キャプション]** プロパティは、レポート クエリで特定のオペレーティング システムを識別するために使用できる便利な属性です。  
+ È anche possibile creare report personalizzati specifici dei dati dei server Linux e UNIX. La proprietà **Didascalia** della classe di inventario hardware **Sistema operativo** è un attributo utile che è possibile usare per identificare sistemi operativi specifici nella query del report.  
 
- Configuration Manager でのレポートに関して詳しくは、「[System Center Configuration Manager のレポート](../../../core/servers/manage/reporting.md)」を参照してください。  
+ Per informazioni sui report in Configuration Manager, vedere [Creazione di report in System Center Configuration Manager](../../../core/servers/manage/reporting.md).  
