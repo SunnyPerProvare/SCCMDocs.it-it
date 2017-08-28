@@ -4,23 +4,21 @@ description: "Informazioni sulle funzionalità disponibili in Technical Preview 
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 63e1df5e-637c-4b07-b7ec-95340f43a805
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
 ms.openlocfilehash: c22e29da8036d69db917205f28a19a69281a64db
-ms.contentlocale: it-it
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="capabilities-in-technical-preview-1608-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1608 per System Center Configuration Manager
 
@@ -51,7 +49,7 @@ Alle proprietà dei software di inventario è stato aggiunto un campo che consen
 
 ### <a name="filter-the-software-display"></a>Filtrare la visualizzazione del software
 Dopo aver definito le relazioni padre-figlio, è possibile filtrare la visualizzazione per mostrare solo i software padre o i software che non presentano relazioni definite. In questo modo vengono nascosti tutti i software impostati come figli di un altro software di inventario. A tale scopo, procedere nel seguente modo:
-   1.    Sulla barra di ricerca, scegliere **Aggiungi criteri**
+   1.   Sulla barra di ricerca, scegliere **Aggiungi criteri**
    2. Selezionare **Software padre**, cambiare il valore dei criteri su **è vuoto** e quindi fare clic su **Cerca**.
 
 Ora vengono visualizzati solo i software padre o i software che non presentano relazioni definite. I software che sono soltanto elementi figlio di un altro titolo non vengono visualizzati.
@@ -63,5 +61,4 @@ Il visualizzatore può disattivare questo comportamento se preferisce digitare i
 
 > [!NOTE]
 >
-> I tasti speciali, ad esempio ~!#@$%,, non verranno tradotti correttamente.
-
+> I tasti speciali, ad esempio ~!#@$%, non verranno tradotti correttamente.

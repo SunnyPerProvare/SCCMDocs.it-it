@@ -1,26 +1,24 @@
 ---
 title: Predichiarare dispositivi con i numeri di serie IMEI o iOS | Microsoft Docs
-description: "Predichiarare i dispositivi di proprietà dell&quot;azienda con numero di serie IMEI o iOS."
+description: "Predichiarare i dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS."
 ms.custom: na
-ms.date: 03/24/2017
+ms.date: 08/15/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ddb4c68e-e7f7-475a-89e2-7379a86e44c4
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: nathbarn
 ms.author: nathbarn
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5eed004bd38a567dfdd4e392300be656a7abe3f7
-ms.openlocfilehash: c692fad43807e54cecbd7ab60284ea740d60617d
-ms.contentlocale: it-it
-ms.lasthandoff: 05/25/2017
-
+ms.openlocfilehash: 7d139a2c74c0f29604f2f3d9b8e2739364633f17
+ms.sourcegitcommit: db7b7ec347638efd05cdba474e8a8f8535516116
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/16/2017
 ---
 # <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Predichiarare dispositivi con i numeri di serie IMEI o iOS
 
@@ -30,19 +28,22 @@ ms.lasthandoff: 05/25/2017
 
 Se si caricano numeri di serie di dispositivi iOS di proprietà dell'azienda, è necessario che siano associati a un profilo di registrazione aziendale. Per fare in modo che risultino di proprietà dell'azienda, i dispositivi devono anche essere registrati tramite il programma di registrazione dispositivi di Apple o Apple Configurator.
 
+>[!NOTE]
+>I dispositivi Android, esclusi i dispositivi Samsung Knox Standard, devono avere una scheda SIM per essere predichiarati e registrati come dispositivi di proprietà dell'azienda con un codice IMEI.
+
 ## <a name="how-to-predeclare-corporate-owned-devices"></a>Come predichiarare i dispositivi di proprietà dell'azienda
 
-1.    Nella console di Configuration Manager fare clic su **Asset e conformità** > **Panoramica** > **Tutti i dispositivi di proprietà dell'azienda** > **Windows**Predeclared devices (Dispositivi predichiarati).
+1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Panoramica** > **Tutti i dispositivi di proprietà dell'azienda** > **Windows**Predeclared devices (Dispositivi predichiarati).
 
 2.  Fare clic su **Create Predeclared Device** (Crea dispositivi predichiarati). Verrà avviata la procedura guidata per la creazione di dispositivi predichiarati.
 
-3.    Specificare come si vogliono aggiungere le informazioni sul dispositivo:
+3.  Specificare come si vogliono aggiungere le informazioni sul dispositivo:
 
-     -    **Caricare un file CSV contenente numeri IMEI o numeri di serie e dettagli**
+     -  **Caricare un file CSV contenente numeri IMEI o numeri di serie e dettagli**
 
         Per questa opzione, fare clic su **Sfoglia** per specificare il file con estensione csv contenente le informazioni per predichiarare i dispositivi di proprietà dell'azienda. Il file con estensione csv deve essere formattato correttamente. Per altre informazioni, vedere [Formato per il caricamento di file con estensione csv](#format-for-uploading-csv-files).
 
-     -    **Aggiungere manualmente i numeri IMEI o i numeri di serie e i dettagli**
+     -  **Aggiungere manualmente i numeri IMEI o i numeri di serie e i dettagli**
 
         Per immettere manualmente le informazioni, digitare il codice IMEI o il numero di serie iOS e i dettagli per i dispositivi. Prima di continuare, correggere eventuali errori o avvisi.
 
@@ -67,10 +68,10 @@ Il file con estensione csv da usare per identificare i dispositivi in base al co
 | Numero IMEI  | Numero di serie iOS  | OS | Dettagli |
 |------------ |---------------|-----|-----|
 | 123456789012345    |   | WINDOWS | Dispositivo Windows di proprietà dell'azienda|
-|   | A1B2C3D4E5C6 | IOS |     Dispositivo iOS di proprietà dell'azienda|
-| 223456789012345 | E6D5C4B3A210 |   IOS |     Altro dispositivo iOS|
-| 323456789012345 |        |   IOS |     Terzo dispositivo iOS|
-| 123456789012346 |         |   ANDROID |     Dispositivo Android dell'azienda|
+|   | A1B2C3D4E5C6 | IOS |  Dispositivo iOS di proprietà dell'azienda|
+| 223456789012345 | E6D5C4B3A210 |   IOS |  Altro dispositivo iOS|
+| 323456789012345 |        |   IOS |    Terzo dispositivo iOS|
+| 123456789012346 |         |   ANDROID |   Dispositivo Android dell'azienda|
 
 Non includere una riga di intestazione nel file CSV. L'esempio seguente visualizza gli stessi dati di esempio in formato CSV:
 
@@ -87,4 +88,3 @@ Le colonne nel file con estensione csv accettano i valori seguenti:
 | Colonna 1 | Colonna 2 | Colonna 3 | Colonna 4 |
 |---|---|---|---|
 |Codice IMEI senza spazi | Numero di serie iOS | IOS, WINDOWS o ANDROID | Dettagli dispositivo facoltativi (limite di 1024 caratteri) |
-

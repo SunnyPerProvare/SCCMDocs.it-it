@@ -2,26 +2,24 @@
 title: "Funzionalità deprecate | Documentazione Microsoft"
 description: "Informazioni su funzionalità, prodotti e sistemi operativi che System Center Configuration Manager non supporta più."
 ms.custom: na
-ms.date: 06/27/2017
+ms.date: 08/16/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: d8c8b44c-1e8a-42b6-bab4-23c72a0a6169
-caps.latest.revision: 15
-caps.handback.revision: 0
+caps.latest.revision: "15"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
+ms.openlocfilehash: 8ac7009014a4652a36acf69ebfe9ccab3ba8ecbd
+ms.sourcegitcommit: 3ce56c7350411d8cc3d3cb9b4054f9ada9b0ed54
 ms.translationtype: HT
-ms.sourcegitcommit: ef42d1483053e9a6c502f4ebcae5a231aa6ba727
-ms.openlocfilehash: 98fa323cb94013d875e2cea41b80fff8cc75b6b2
-ms.contentlocale: it-it
-ms.lasthandoff: 07/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/17/2017
 ---
 # <a name="removed-and-deprecated-features-for-system-center-configuration-manager"></a>Funzionalità rimosse e deprecate per System Center Configuration Manager
 
@@ -71,7 +69,7 @@ Per altre informazioni, vedere:
 |**Sistemi operativi**|**Primo avviso funzionalità deprecata**|**Supporto rimosso**|  
 |-|-|-|  
 |Windows XP|10 luglio 2015|Versione 1511|  
-|Windows XP Embedded|10 luglio 2015|Versione 1702|  
+|Windows XP Embedded <br><br> Include tutti i [sistemi operativi Embedded basati su XP](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#windows-embedded-computers).|10 luglio 2015|Versione 1702|  
 |Windows Server 2003|10 luglio 2015|Versione 1511|  
 |Windows Server 2003 R2|10 luglio 2015|Versione 1511|  
 |Windows Vista|10 luglio 2015|Versione 1511|  
@@ -102,9 +100,10 @@ Se è necessario aggiornare la versione di SQL Server, è consigliabile eseguire
 |Gestione fuori banda in System Center 2012 Configuration Manager|16 ottobre 2015|Versione 1511|
 |Sequenze attività: <br /> - OSDPreserveDriveLetter  <br /><br /> Durante la distribuzione del sistema operativo, per impostazione predefinita l'installazione di Windows ora stabilisce qual è la lettera di unità migliore da usare (in genere C:). Se si vuole specificare un'unità diversa da usare, è possibile modificare il percorso nella sequenza di passaggi dell'attività Applica sistema operativo. Passare all'impostazione **Selezionare il percorso in cui applicare questo sistema operativo**, selezionare **Lettera unità logica specifica** e scegliere l'unità che si vuole usare. |20 giugno 2016 |Versione 1606 |
 |Sequenze attività: <br /> - Converti il disco selezionato in disco dinamico <br /> - Installa strumenti di distribuzione |18 novembre 2016|Il supporto di queste sequenze di attività termina con il primo aggiornamento rilasciato dopo il 01/06/2017.|
-|Software Center ha un aspetto nuovo e moderno. Le app che venivano visualizzate solo nel Catalogo applicazioni dipendente da Silverlight (app disponibili per gli utenti) vengono ora visualizzate in Software Center nella scheda **Applicazioni**. È ancora possibile accedere al Catalogo applicazioni con il collegamento disponibile nella scheda **Stato dell'installazione** di Software Center.<br><br>Nei prossimi mesi la versione precedente di Software Center non sarà più disponibile.<br><br>È possibile configurare i client per l'uso del nuovo Software Center abilitando l'impostazione client **Agente computer** > **Usa il nuovo Software Center**.<br><br>Per altre informazioni su Software Center, vedere [Pianificare e configurare la gestione delle applicazioni in System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/plan-design/plan-for-and-configure-application-management).|13 dicembre 2016|Il supporto per la versione precedente di Software Center termina con il primo aggiornamento rilasciato dopo il 1° gennaio 2018.|
+|Software Center ha un aspetto nuovo e moderno. Nei prossimi mesi la versione precedente di Software Center non sarà più disponibile.<br><br>È possibile configurare i client per l'uso del nuovo Software Center abilitando l'impostazione client **Agente computer** > **Usa il nuovo Software Center**.<br><br>Per altre informazioni su Software Center, vedere [Pianificare e configurare la gestione delle applicazioni in System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/plan-design/plan-for-and-configure-application-management).|13 dicembre 2016|Il supporto per la versione precedente di Software Center termina con il primo aggiornamento rilasciato dopo il 1° gennaio 2018.|
+|A partire dalla nuova esperienza di Software Center nella versione 1511, le app che venivano visualizzate solo nel Catalogo applicazioni (app disponibili per gli utenti) vengono ora visualizzate in Software Center. </br></br>Con questa nuova importante funzionalità del Catalogo applicazioni ora inclusa in Software Center, l'esperienza del Catalogo applicazioni basata sul Web non sarà più disponibile nei prossimi mesi.|11 agosto 2017| Il supporto per l'esperienza utente del sito Web Catalogo applicazioni terminerà con il primo aggiornamento rilasciato dopo il 1° giugno 2018|
 |Gestione dei dischi rigidi virtuali in Configuration Manager. </br></br>Ciò include la rimozione delle opzioni per creare un nuovo disco rigido virtuale o per gestire un disco rigido virtuale con una sequenza di attività e la rimozione del nodo Dischi rigidi virtuali dalla console di Configuration Manager. </br></br>Dopo la rimozione di questo supporto, i dischi rigidi virtuali esistenti non verranno eliminati, ma non saranno più accessibili dalla console di Configuration Manager.  |6 gennaio 2017 |Il supporto per dischi rigidi virtuali termina con il primo aggiornamento rilasciato dopo il 01/06/2017.|
-|Strumento di valutazione dell'aggiornamento di System Center Configuration Manager. </br></br>Lo strumento di valutazione dell'aggiornamento dipende da System Center Configuration Manager e da Application Compatibility Toolkit (ACT) 6.x. La versione finale di ACT è stata fornita in Windows 10 v1511 ADK. Dal momento che non saranno pubblicati altri aggiornamenti di ACT, il supporto per lo strumento di valutazione dell'aggiornamento verrà sospeso. </br></br>Lo strumento di valutazione dell'aggiornamento verrà sostituito dalla funzionalità [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics). L'avviso relativo alla deprecazione è stato aggiunto alla [pagina di download per UAT](https://www.microsoft.com/download/details.aspx?id=37145) in data 9/12/2016. |9/12/2016  | 11 luglio 2017 |  
+|Strumento di valutazione dell'aggiornamento di System Center Configuration Manager. </br></br>Lo strumento di valutazione dell'aggiornamento dipende da System Center Configuration Manager e da Application Compatibility Toolkit (ACT) 6.x. La versione finale di ACT è stata fornita in Windows 10 v1511 ADK. Dal momento che non saranno pubblicati altri aggiornamenti di ACT, il supporto per lo strumento di valutazione dell'aggiornamento verrà sospeso. </br></br>Lo strumento di valutazione dell'aggiornamento verrà sostituito dalla funzionalità [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics). L'avviso relativo alla deprecazione è stato aggiunto alla [pagina di download per UAT](https://www.microsoft.com/download/details.aspx?id=37145) in data 9/12/2016. |9/12/2016  | 11 luglio 2017 |
 
 
 <br></br>
@@ -121,4 +120,3 @@ Dettagli aggiuntivi sulle funzionalità rimosse con la versione 1511 di System C
  System Center Configuration Manager ha rimosso il supporto per la protezione accesso alla rete. Questa funzionalità è stata deprecata in Windows Server 2012 R2 ed è stata rimossa da Windows 10.  
 
  Per alternative a Protezione accesso alla rete, vedere la sezione *Funzionalità deprecata* di [Panoramica dei criteri di rete e dei servizi di accesso](https://technet.microsoft.com/library/hh831683.aspx).
-

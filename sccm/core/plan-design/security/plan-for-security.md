@@ -6,23 +6,20 @@ ms.date: 01/04/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2a216814-ca8c-4d2e-bcef-dc00966a3c9f
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: af06fb10d905e3fe447c6cd6ed35dac10488161f
-ms.openlocfilehash: 1bf519ad4593f6a08d7dc393f9fab91c70b51b25
-ms.contentlocale: it-it
-ms.lasthandoff: 01/05/2017
-
-
+ms.openlocfilehash: 6145cb69c69dba1eb1b9842079ee1a33686bb18a
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="plan-for-security-in-system-center-configuration-manager"></a>Pianificare la sicurezza in System Center Configuration Manager
 
@@ -292,9 +289,9 @@ Seguire le procedure seguenti per eseguire il pre-provisioning e verificare la c
 
 7.  Nella finestra di dialogo **Editor oggetti per TrustedRootKey** scegliere **Istanze**.  
 
-8.  Nella nuova finestra **Risultato query**, in cui vengono visualizzate le istanze di **TrustedRootKey**, fare doppio clic su **TrustedRootKey=@**.  
+8.  Nella nuova finestra di **Risultato query** in cui vengono visualizzate le istanze di **TrustedRootKey** fare doppio clic su **TrustedRootKey=@**.  
 
-9. Nella sezione **Proprietà** della finestra di dialogo **Editor oggetti perTrustedRootKey=@**, scorrere in basso fino a **TrustedRootKey CIM_STRING**. La stringa nella colonna destra è la chiave radice attendibile. Verificarne la corrispondenza con il valore **SMSPublicRootKey** nel file *&lt;directory di Configuration Manager\>***\bin\mobileclient.tcf**.  
+9. Nella finestra di dialogo **Editor oggetti per TrustedRootKey=@** , nella sezione **Proprietà** , scorrere in basso fino a **TrustedRootKey CIM_STRING**. La stringa nella colonna destra è la chiave radice attendibile. Verificarne la corrispondenza con il valore **SMSPublicRootKey** nel file *&lt;directory di Configuration Manager\>***\bin\mobileclient.tcf**.  
 
 ##  <a name="BKMK_PlanningForSigningEncryption"></a> Pianificare firma e crittografia  
  Quando si usano certificati PKI per tutte le comunicazioni dei client, non è necessario pianificare la firma e la crittografia per proteggere la comunicazione dei dati dei client. Se tuttavia si configura qualsiasi sistema del sito che esegue IIS per poter consentire le connessioni client HTTP, è necessario stabilire la modalità di protezione della comunicazione client per il sito.  
@@ -310,4 +307,3 @@ Seguire le procedure seguenti per eseguire il pre-provisioning e verificare la c
 
 ### <a name="see-also"></a>Vedere anche
 [Riferimento tecnico per i controlli crittografici per System Center Configuration Manager](../../../protect/deploy-use/cryptographic-controls-technical-reference.md).  
-

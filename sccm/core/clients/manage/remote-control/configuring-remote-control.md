@@ -6,23 +6,20 @@ ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: dudeso
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 45affc27-aa11-4249-9493-082ac23a3a3d
-caps.latest.revision: 4
-caps.handback.revision: 0
+caps.latest.revision: "4"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9206b82eca02877c30eebf146d42bcca7290eb42
-ms.openlocfilehash: 20c28a625adb69f239b9c0e7673e57dd39e8d561
-ms.contentlocale: it-it
-ms.lasthandoff: 12/30/2016
-
-
+ms.openlocfilehash: 3a386c23c81f413d7d161780bdc0ab3a5b9eccae
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="configuring-remote-control-in-system-center-configuration-manager"></a>Configurazione del controllo remoto in System Center Configuration Manager
 
@@ -54,7 +51,7 @@ Per attivare la traduzione della tastiera, in **Controllo remoto di Configuratio
 
 > [!NOTE]
 >
-> I tasti speciali, ad esempio ~!#@$%,, non verranno tradotti correttamente.
+> I tasti speciali, ad esempio ~!#@$%, non verranno tradotti correttamente.
 
 
 ## <a name="keyboard-shortcuts-for-the-remote-control-viewer"></a>Tasti di scelta rapida per il visualizzatore controllo remoto
@@ -69,4 +66,3 @@ Per attivare la traduzione della tastiera, in **Controllo remoto di Configuratio
 |ALT+CANC|Visualizza il menu di Windows.|  
 |CTRL+ALT+Segno di sottrazione (sul tastierino numerico)|Copia la finestra attiva del computer locale negli Appunti del computer remoto.|  
 |CTRL+ALT+Segno di addizione (sul tastierino numerico)|Copia l'intera area della finestra del computer locale negli Appunti del computer remoto.|  
-

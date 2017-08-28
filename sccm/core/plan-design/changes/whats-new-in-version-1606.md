@@ -1,24 +1,24 @@
 ---
-title: "Novità in System Center Configuration Manager aggiornamento 1606 | Microsoft Docs"
+title: "Novità in System Center Configuration Manager versione 1606 | Microsoft Docs"
 description: "Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1606 di System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/30/2016
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: df2e57b9-6445-4067-98e7-ace85d4e6aa6
-caps.latest.revision: 40
+caps.latest.revision: "40"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-translationtype: Human Translation
-ms.sourcegitcommit: 34809ddf7819eab5deb3995cd8138c7b38cd2f9a
 ms.openlocfilehash: 9fdff6049d6e5cde1032864e5d7aa8df71e53686
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="what39s-new-in-version-1606-of-system-center-configuration-manager"></a>Novità della versione 1606 di System Center Configuration Manager
 
@@ -35,7 +35,7 @@ L'aggiornamento 1606 per System Center Configuration Manager è disponibile come
 
 
 
-## <a name="a-nameupdatesandservicingaupdates-and-servicing"></a><a name="updatesandservicing"></a>Aggiornamenti e manutenzione
+## <a name="updatesandservicing"></a>Aggiornamenti e manutenzione
 
 ### <a name="changes-for-the-updates-and-servicing-node"></a>Modifiche per il nodo Aggiornamenti e manutenzione
 Di seguito sono riportate le modifiche del nodo Aggiornamenti e manutenzione nella console di Configuration Manager:
@@ -81,10 +81,10 @@ Dopo l'installazione dell'aggiornamento 1606, quando nel sito verrà installato 
 
 
 
-## <a name="a-nameaccessibilitya-accessibility"></a><a name="accessibility"></a> Accessibilità
+## <a name="accessibility"></a> Accessibilità
 Per spostarsi tra i vari nodi di un'area di lavoro, è ora possibile immettere la prima lettera del nome di un nodo. Quando si preme il tasto, il cursore si sposta sul nodo successivo che inizia con tale lettera. Se si usa un'utilità per la lettura dello schermo, verrà letto il nome del nodo. Per altre informazioni sulle opzioni di accessibilità, vedere [Funzionalità di accessibilità di System Center Configuration Manager](../../../core/understand/accessibility-features.md).
 
-## <a name="a-nameadministrationaadministration"></a><a name="administration"></a>Amministrazione
+## <a name="administration"></a>Amministrazione
 Di seguito sono riportate le modifiche del nodo Amministrazione nella console di Configuration Manager:
 ### <a name="oms-connector"></a>Connettore OMS
 
@@ -225,9 +225,3 @@ Per informazioni dettagliate, vedere [Attestazione dell'integrità per System Ce
 
 ## <a name="remote-control"></a>Controllo remoto
 Offre agli utenti la possibilità di accettare o rifiutare il trasferimento di file prima di trasferire il contenuto dagli Appunti condivisi in una sessione di controllo remoto. Gli utenti devono solo concedere l'autorizzazione una sola volta per sessione e il visualizzatore non ha la possibilità di concedere l'autorizzazione per procedere con il trasferimento dei file. È possibile trovare questa nuova impostazione nell'area di lavoro **Amministrazione**. Passare a **Impostazioni client** e quindi aprire il pannello **Strumenti remoti** in **Impostazioni predefinite**.
-
-
-
-<!--HONumber=Dec16_HO5-->
-
-

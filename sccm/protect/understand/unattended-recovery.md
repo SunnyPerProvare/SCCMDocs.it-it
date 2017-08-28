@@ -6,8 +6,7 @@ ms.date: 6/5/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 828c31d1-3d70-4412-b1a8-c92e7e504d39
@@ -15,18 +14,15 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: f7cd9c71287d62c9f5d36e2f032bc2a6065572ae
 ms.openlocfilehash: b5a1a1d165a6888bc26e809666d2331ff3c24d68
-ms.contentlocale: it-it
-ms.lasthandoff: 06/06/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
-
 # <a name="unattended-site-recovery-for-configuration-manager"></a>Ripristino automatico del sito per Configuration Manager   
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
-Per eseguire un [ripristino automatico](/sccm/protect/understand/recover-sites#site-recovery-procedures) di un sito di amministrazione centrale o di un sito primario di Configuration Manager, è possibile creare uno script di installazione automatica e usare il programma di installazione con l'opzione di comando **/script**. Lo script fornisce lo stesso tipo di informazioni richieste dall'Installazione guidata, ma non prevede impostazioni predefinite. Per le chiavi di installazione applicabili al tipo di ripristino che si usa, è necessario specificare tutti i valori.
+*Si applica a: System Center Configuration Manager (Current Branch)* Per eseguire un [ripristino automatico](/sccm/protect/understand/recover-sites#site-recovery-procedures) di un sito di amministrazione centrale o di un sito primario di Configuration Manager, è possibile creare uno script di installazione automatica e usare il programma di installazione con l'opzione di comando **/script**. Lo script fornisce lo stesso tipo di informazioni richieste dall'Installazione guidata, ma non prevede impostazioni predefinite. Per le chiavi di installazione applicabili al tipo di ripristino che si usa, è necessario specificare tutti i valori.
 
  Per usare l'opzione di installazione da riga di comando /script, è necessario creare un file di inizializzazione e specificarne il nome dopo l'opzione di installazione da riga di comando /script. Il nome del file non è rilevante, purché l'estensione del nome file sia **INI**. Quando si fa riferimento a file di inizializzazione dell'installazione dalla riga di comando, è necessario specificare il percorso completo del file. Se ad esempio il file di inizializzazione dell'installazione è denominato *setup.ini* e viene archiviato nella cartella *C:\setup*, la riga di comando sarà:
 
@@ -386,4 +382,3 @@ Per eseguire un [ripristino automatico](/sccm/protect/understand/recover-sites#s
     -   **Richiesto:** no
     -   **Valori:** &lt;*Timeout*>
     -   **Dettagli:** specifica il valore di timeout massimo (in minuti) per la connessione di un sito primario al sito di amministrazione centrale. Se ad esempio un sito primario non riesce a connettersi al sito di amministrazione centrale, tale sito primario proverà nuovamente a connettersi al sito di amministrazione centrale in base a CASRetryInterval finché non viene raggiunto il periodo di WaitForCASTimeout. È possibile specificare un valore compreso tra 0 e 100.
-

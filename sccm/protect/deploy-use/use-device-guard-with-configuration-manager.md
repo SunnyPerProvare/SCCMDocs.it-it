@@ -6,25 +6,21 @@ ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: dudeso
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5e5d854c-9cc1-4dd8-b33f-0fcac675b395
-caps.latest.revision: 13
-caps.handback.revision: 0
+caps.latest.revision: "13"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
+ms.openlocfilehash: 3921748d3c99c2a35b670f3ca121dc7ab92d43bc
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: HT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
-ms.openlocfilehash: 4bb1f4a068563a5fe6f384708e10269dcd3229da
-ms.contentlocale: it-it
-ms.lasthandoff: 07/29/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/07/2017
 ---
-
-
 # <a name="device-guard-management-with-configuration-manager"></a>Gestione di Device Guard con Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -97,6 +93,9 @@ Se si aggiunge attendibilità per file e cartelle specifici in un criterio di De
     - Rendere attendibili le app incluse in un'immagine di distribuzione del sistema operativo. 
 7.  Fare clic su **Avanti** e completare la procedura guidata.
 
+>[!IMPORTANT]
+>L'inclusione di file o cartelle attendibili è supportata solo nei PC client che eseguono la versione 1706 o versioni successive del client di Configuration Manager. Se un criterio di Device Guard comprende regole di inclusione e il criterio viene quindi distribuito a un PC client che esegue una versione precedente nel client di Configuration Manager, l'applicazione del criterio avrà esito negativo. Per risolvere il problema, aggiornare questi client precedenti. I criteri che non comprendono regole di inclusione possono comunque essere applicati alle versioni precedenti del client di Configuration Manager.
+
 ## <a name="how-to-deploy-a-device-guard-policy"></a>Procedura: Distribuire un criterio di Device Guard
 1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.
 2.  Nell'area di lavoro **Asset e conformità** espandere **Endpoint Protection**e quindi fare clic su **Criteri di Device Guard**.
@@ -130,7 +129,6 @@ In questo caso, l'esecuzione del software potrebbe ancora essere consentita anch
 - Quando si usa Configuration Manager per abilitare l'integrità del codice configurabile nei PC client con criteri di Device Guard, il criterio non impedisce agli utenti con diritti di amministratore locale di eludere il criterio di Device Guard o di eseguire altrimenti software non attendibile. 
 - L'unico modo per impedire agli utenti con diritti di amministratore locale di disabilitare l'integrità del codice configurabile consiste nel distribuire un criterio binario firmato, operazione possibile con Criteri di gruppo, ma non attualmente supportata in Configuration Manager.
 - La configurazione di Configuration Manager come programma di installazione gestito nei PC client usa criteri di AppLocker. AppLocker è usato solo per identificare i programmi di installazione gestiti e qualsiasi imposizione avviene con l'integrità del codice configurabile. 
-
 
 
 

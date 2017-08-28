@@ -2,23 +2,21 @@
 title: Nuova versione 1706 | Microsoft Docs
 description: "Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1706 di System Center Configuration Manager."
 ms.custom: na
-ms.date: 07/31/2017
+ms.date: 08/11/2017
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ac034143-003e-4629-aac2-99eaffef4db1
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
+ms.openlocfilehash: 30bd5f1244534511e5cde8ee0e1a8c74819b1634
+ms.sourcegitcommit: 9a6f8e028fb5eb2e752da70f42a5b548339bd8f4
 ms.translationtype: HT
-ms.sourcegitcommit: afe0ecc4230733fa76e41bf08df5ccfb221da7c8
-ms.openlocfilehash: c686b1674f4ead702fa2b4329df6356a558726f6
-ms.contentlocale: it-it
-ms.lasthandoff: 08/04/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="what39s-new-in-version-1706-of-system-center-configuration-manager"></a>Novità della versione 1706 di System Center Configuration Manager
 
@@ -207,7 +205,7 @@ L'inventario hardware ora raccoglie informazioni sull'attivazione di Avvio prote
 Questa versione introduce la possibilità di espandere e comprimere i gruppi di sequenze di attività. È possibile espandere o comprimere singoli gruppi oppure espandere o comprimere tutti i gruppi in una sola volta.
 
 ### <a name="reload-boot-images-with-current-windows-pe-version"></a>Ricaricare immagini di avvio con la versione corrente di Windows PE
-Quando si esegue **Aggiorna punti di distribuzione** su un'immagine d'avvio selezionata, ora è possibile scegliere di ricaricare nell'immagine d'avvio la versione più recente di Windows PE (dalla directory di installazione di Windows ADK). Per altre informazioni, vedere [Aggiornare il contenuto nei punti di distribuzione](/sccm/osd/get-started/manage-boot-images.md#update-distribution-points-with-the-boot-image).
+Quando si esegue **Aggiorna punti di distribuzione** su un'immagine d'avvio selezionata, ora è possibile scegliere di ricaricare nell'immagine d'avvio la versione più recente di Windows PE (dalla directory di installazione di Windows ADK). Per altre informazioni, vedere [Aggiornare il contenuto nei punti di distribuzione](/sccm/osd/get-started/manage-boot-images#update-distribution-points-with-the-boot-image).
 
 ## <a name="software-updates"></a>Aggiornamenti software
 
@@ -226,7 +224,7 @@ In questa versione è stato considerevolmente migliorato il tempo di download pe
 #### <a name="to-manage-surface-driver-updates"></a>Per gestire gli aggiornamenti dei driver di Surface
 
 1. Abilitare la sincronizzazione per i driver di Microsoft Surface. Usare la procedura in [Configurare le classificazioni e i prodotti per la sincronizzazione](/sccm/sum/get-started/configure-classifications-and-products) e selezionare la casella di controllo **Includi i driver di Microsoft Surface e gli aggiornamenti del firmware** nella scheda **Classificazioni** per abilitare i driver di Surface.
-2. [Sincronizzare i driver di Microsoft Surface](/sccm/sum/get-started/synchronize-software-updates.md).
+2. [Sincronizzare i driver di Microsoft Surface](/sccm/sum/get-started/synchronize-software-updates).
 3. [Distribuire i driver di Microsoft Surface sincronizzati](/sccm/sum/deploy-use/deploy-software-updates)
 
 ### <a name="configure-windows-update-for-business-deferral-policies"></a>Configurare i criteri di rinvio di Windows Update for Business
@@ -257,6 +255,12 @@ In questa versione sono stati aggiornati i valori per l'impostazione **Consenti 
 
 Per altre informazioni, vedere [Elementi di configurazione per dispositivi Android for Work](/sccm/mdm/deploy-use/create-configuration-items-for-android-for-work-devices-managed-without-the-client).
 
+### <a name="android-and-ios-enrollment-restrictions"></a>Restrizioni di registrazione di Android e iOS
+<!-- 1290826 -->
+Con questa versione, è ora specificare che gli utenti non possono registrare dispositivi Android o iOS personali. Le nuove impostazioni per la restrizione dei dispositivi permettono di limitare la registrazione dei dispositivi Android ai soli dispositivi predichiarati. Per i dispositivi iOS, è possibile bloccare la registrazione di tutti i dispositivi tranne quelli registrati tramite Device Enrollment Program di Apple, Apple Configurator o l'account del manager di registrazione dispositivi di Intune.
+- Per altre informazioni sulle restrizioni di registrazione per Android, vedere [Configurare la gestione dei dispositivi Android](/sccm/mdm/deploy-use/enroll-hybrid-android).
+- Per altre informazioni sulle restrizioni di registrazione per iOS, vedere [Configurare le restrizioni di registrazione per iOS](/sccm/mdm/deploy-use/enroll-hybrid-ios-mac#configure-enrollment-restrictions).
+
 ## <a name="protect-devices"></a>Proteggere i dispositivi
 
 ### <a name="include-trust-for-specific-files-and-folders-in-a-device-guard-policy"></a>Includere attendibilità per file e cartelle specifici in un criterio di Device Guard
@@ -270,4 +274,3 @@ Ora è possibile aggiungere facoltativamente attendibilità per file e cartelle 
 - Rendere attendibili le app incluse in un'immagine di distribuzione del sistema operativo
 
 Per altre informazioni, vedere [Gestione di Device Guard con Configuration Manager](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager).
-

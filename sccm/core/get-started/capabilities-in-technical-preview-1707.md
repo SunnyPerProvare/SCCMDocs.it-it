@@ -2,10 +2,9 @@
 title: Technical Preview 1707 | Microsoft Docs
 description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1707 per System Center Configuration Manager."
 ms.custom: na
-ms.date: 07/28/2017
+ms.date: 08/14/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -14,12 +13,11 @@ ms.assetid: cb405ba0-8792-4ab7-988b-2f835f3a9550
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
+ms.openlocfilehash: 7ee2fd78c6c502394016ba077d42714041ad01c6
+ms.sourcegitcommit: 10f17229c5a359f040cb7f8f5e7bd868a34ac086
 ms.translationtype: HT
-ms.sourcegitcommit: 6e890862fd02786b675e2b7abaca7ede7c0e977a
-ms.openlocfilehash: 91fd850f055a7e892a54487307109a291e336696
-ms.contentlocale: it-it
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/15/2017
 ---
 # <a name="capabilities-in-technical-preview-1707-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1707 per System Center Configuration Manager
 
@@ -33,6 +31,17 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 -   **Issue Name**. Details
     Workaround details.
 -->
+
+**Problemi noti di questa versione Technical Preview:**
+-   **L'aggiornamento alla versione Technical Preview 1707 ha esito negativo se il server del sito è in modalità passiva**. Quando si esegue la versione Technical Preview 1706 ed è presente un [server del sito primario in modalità passiva](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), è necessario disinstallare il server del sito in modalità passiva prima di poter aggiornare il sito Technical Preview alla versione 1707. Sarà possibile reinstallare il server del sito in modalità passiva quando nel sito è in esecuzione la versione 1707.
+
+  Per disinstallare il server del sito in modalità passiva:
+  1. Nella console passare ad **Amministrazione** > **Panoramica** > **Configurazione del sito** > **Server e ruoli del sistema del sito** e quindi selezionare il server del sito in modalità passiva.
+  2. Nel riquadro **Ruoli sistema del sito** fare clic con il pulsante destro del mouse sul ruolo **Server del sito** e quindi scegliere **Rimuovi ruolo**.
+  3. Fare clic con il pulsante destro del mouse sul server del sito in modalità passiva e quindi scegliere **Elimina**.
+  4. Dopo la disinstallazione del server del sito, nel server del sito primario attivo riavviare il servizio **CONFIGURATION_MANAGER_UPDATE**.
+
+
 
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
@@ -89,13 +98,13 @@ Per altre informazioni su Windows Defender Application Guard, vedere [questo pos
 
 Nell'ultima versione Technical Preview è stata introdotta una nuova funzionalità che consente di [creare ed eseguire script di PowerShell dalla console di Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1706#create-and-run-powershell-scripts-from-the-configuration-manager-console).
 La funzionalità è stata espansa in questa versione Technical Preview. Configuration Manager ora legge lo script di PowerShell e visualizza tutti i parametri nella procedura guidata Crea script. È possibile specificare nella procedura guidata un valore per il parametro che verrà usato durante l'esecuzione dello script. In alternativa, è possibile omettere il parametro. In questo caso è necessario specificare un valore per il parametro quando si esegue lo script.
+In questa versione Technical Preview è necessario specificare gli eventuali parametri richiesti dagli script. Nelle versioni future la definizione dei parametri degli script diventerà facoltativa.
 
 ### <a name="try-it-out"></a>Prova subito!
 
-1. Seguire le istruzioni per [creare ed eseguire script di PowerShell dalla console di Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1706#create-and-run-powershell-scripts-from-the-configuration-manager-console). 
+1. Seguire le istruzioni per [creare ed eseguire script di PowerShell dalla console di Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1706#create-and-run-powershell-scripts-from-the-configuration-manager-console).
 2. Nella nuova pagina **Parametri script** della **procedura guidata Crea script** scegliere un parametro e quindi fare clic su **Modifica**.
 3. Specificare un valore di parametro per il parametro selezionato e quindi fare clic su **OK**.
 4. Completare la procedura guidata.
 
 Quando viene eseguito lo script, verranno usati i valori dei parametri configurati.
-

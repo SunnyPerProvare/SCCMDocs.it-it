@@ -2,27 +2,24 @@
 title: Distribuire i client Windows | Microsoft Docs
 description: Informazioni su come distribuire i client ai computer Windows in System Center Configuration Manager.
 ms.custom: na
-ms.date: 04/23/2017
+ms.date: 08/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 341f0d0b-f907-44cf-9e10-e1b41fc15f82
-caps.latest.revision: 13
-caps.handback.revision: 0
+caps.latest.revision: "13"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9555a16d97224a1cf49a426ab225468b07403f60
-ms.openlocfilehash: 0e5e624fdfc2b5ee5b497d1063bd4e2d15df578b
-ms.contentlocale: it-it
-ms.lasthandoff: 12/30/2016
-
-
+ms.openlocfilehash: 9ac54136b93ee366c16cafe89036a79e808980dc
+ms.sourcegitcommit: 06aef618f72c700f8a716a43fb8eedf97c62a72b
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/21/2017
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-system-center-configuration-manager"></a>Come distribuire i client nei computer Windows in System Center Configuration Manager
 
@@ -58,13 +55,10 @@ I file di log client forniscono informazioni più dettagliate per la risoluzione
 6.  Specificare se si vuole installare il client nei controller di dominio.  
 
 7.  Nella scheda **Account** , specificare uno o più account affinché Configuration Manager li usi durante la connessione al computer per l'installazione del software client. Fare clic sull'icona **Crea**, immettere **Nome utente** e **Password** (non più di 38 caratteri), confermare la password e quindi fare clic su **OK**. È necessario specificare almeno un account di installazione push client, che deve disporre dei diritti di amministratore locale su ogni computer su cui si desidera installare il client. Se non si specifica un account di installazione push client, Configuration Manager prova a usare l'account del computer del sistema del sito, che provoca l'errore del push client tra domini.  
-
-    
     > [!NOTE]  
     >  Se si desidera usare il metodo di installazione push client da un sito secondario, l'account deve essere specificato nel sito secondario che avvia il push client.  
     >   
     >  Per altre informazioni sull'account di installazione push client, vedere la procedura successiva, "Per usare l'Installazione guidata push client".  
-
 8.  Completare la scheda **Proprietà di installazione**.
 
      Le [proprietà di installazione client](../../../core/clients/deploy/about-client-installation-properties.md) specificate in questa scheda vengono pubblicate in Active Directory Domain Services se lo schema viene esteso per Configuration Manager e lette dalle installazioni client in cui è in esecuzione CCMSetup senza proprietà di installazione.  
@@ -172,7 +166,7 @@ L'aggiornamento software per il client di Configuration Manager non viene automa
 
 -   Se lo schema di Active Directory viene esteso per Configuration Manager ed è selezionata l'opzione **Publish this site in Active Directory Domain Services** (Pubblica questo sito in Active Directory Domain Services) nella scheda **Avanzate** della finestra di dialogo **Proprietà sito**, i computer client eseguono automaticamente una ricerca in Active Directory Domain Services per individuare le proprietà di installazione. Per altre informazioni sulle proprietà di installazione pubblicate, vedere [Informazioni sulle proprietà di installazione client pubblicate in Servizi di dominio Active Directory](../../../core/clients/deploy/about-client-installation-properties-published-to-active-directory-domain-services.md).  
 
--   Se lo schema di Active Directory non è stato esteso, è possibile usare la procedura in questo argomento per archiviare le proprietà di installazione nel Registro di sistema dei computer: [Come eseguire il provisioning delle proprietà di installazione client (Criteri di gruppo e installazione client basata su aggiornamento software).](#BKMK_Provision). Queste proprietà di installazione verranno usate durante l'installazione del client.  
+-   Se lo schema di Active Directory non è stato esteso, è possibile usare la procedura in questo argomento per archiviare le proprietà di installazione nel Registro di sistema dei computer: [Come eseguire il provisioning delle proprietà di installazione client (Criteri di gruppo e installazione client basata su aggiornamento software)](#BKMK_Provision). Queste proprietà di installazione verranno usate durante l'installazione del client.  
 
 Per informazioni sull'utilizzo dei Criteri di gruppo in Servizi di dominio Active Directory per l'installazione del software, fare riferimento alla documentazione di Windows Server.  
 
@@ -296,8 +290,8 @@ Per garantire che il dispositivo rimanga in uno stato gestito dopo l'installazio
     > [!IMPORTANT]  
     >  Non specificare un codice sito di Configuration Manager per il client nelle proprietà della riga di comando CCMSetup.exe.  
 
-2.  In un prompt dei comandi, digitare **net stop ccmexec** per accertarsi che il servizio **Host agenti di SMS** (Ccmexec.exe) non sia in esecuzione sul computer dell'immagine master.  
-
+2.  In un prompt dei comandi, digitare **net stop ccmexec** per accertarsi che il servizio **Host agenti di SMS** (Ccmexec.exe) non sia in esecuzione sul computer dell'immagine master.
+3.  Eliminare il file **SMSCFG.INI** dalla cartella **Windows** nel computer di riferimento.  
 3.  Rimuovere i certificati memorizzati nell'archivio locale del computer dell'immagine master.  Ad esempio, se si usano certificati di infrastruttura a chiave pubblica (PKI), è necessario rimuovere i certificati nell'archivio **Personale** per **Computer** e **Utente** prima di creare l'immagine del computer.
 
 4.  Se i client non saranno installati nella stessa gerarchia di Configuration Manager del computer con immagine master, rimuovere la chiave radice attendibile dal computer con immagine master.  
@@ -470,7 +464,7 @@ Controllare i prerequisiti e quindi seguire le istruzioni della sezione [Come in
 
 5.  Assegnare l'oggetto Criteri di gruppo ai computer per i quali si intende eseguire il provisioning delle proprietà di installazione client di Configuration Manager.  
 
- Per informazioni sui Criteri di gruppo di Windows, consultare la documentazione di Windows Server.  
+Per informazioni sui Criteri di gruppo di Windows, consultare la documentazione di Windows Server.  
 
-### <a name="see-also"></a>Vedere anche
-[Metodi di installazione client in System Center Configuration Manager](../../../core/clients/deploy/plan/client-installation-methods.md)
+## <a name="next-steps"></a>Passaggi successivi
+Per altre informazioni su come installare il client di Configuration Manager, vedere [Metodi di installazione client in System Center Configuration Manager](../../../core/clients/deploy/plan/client-installation-methods.md).
