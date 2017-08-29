@@ -2,7 +2,7 @@
 title: "Supporto per le funzionalità di Windows | Microsoft Docs"
 description: "Informazioni su quali funzionalità di Windows e di rete sono supportate in System Center Configuration Manager."
 ms.custom: na
-ms.date: 3/30/2017
+ms.date: 8/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: e040552dab21ba9a71e06a78f6acc2ffe1b0eb61
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: be9b7e84fecfa7a07c411c3d46168e5485e0dfab
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/28/2017
 ---
 # <a name="support-for-windows-features-and-networks-in-system-center-configuration-manager"></a>Supporto per le funzionalità e le reti Windows in System Center Configuration Manager
 
@@ -49,7 +49,7 @@ e viene memorizzato nella cache dei client. In tal modo, client successivi sulla
 -   **Configurare i client:**    
     -   I client che possono supportare BranchCache devono essere configurati per la modalità cache distribuita di BranchCache.  
     -   L'impostazione del sistema operativo per le impostazioni client BITS deve essere abilitata per supportare BranchCache.   <br /> <br />
-        
+
     Per informazioni su come configurare i client per il supporto di BranchCache, vedere la sezione [Configure clients](https://technet.microsoft.com/itpro/windows/manage/waas-branchcache#configure-clients-for-branchcache) (Configurare i client) in [Configure BranchCache for Windows 10 updates](https://technet.microsoft.com/itpro/windows/manage/waas-branchcache) (Configurare BranchCache per gli aggiornamenti di Windows 10).
 
 
@@ -80,9 +80,11 @@ Configuration Manager offre il supporto per i client in gruppi di lavoro.
 ##  <a name="bkmmk_datadedup"></a> Deduplicazione dati  
 Configuration Manager supporta l'uso della deduplicazione dati con punti di distribuzione nei sistemi operativi seguenti:  
 
+-   Windows Server 2016
+-   Windows Server 2012 R2  
 -   Windows Server 2012  
 
--   Windows Server 2012 R2  
+
 
 > [!IMPORTANT]  
 >  Non è possibile contrassegnare i file di origine del pacchetto host per la deduplicazione dei dati perché la deduplicazione dati usa reparse point e Configuration Manager non supporta l'uso di un percorso di origine del contenuto con file archiviati nei reparse point.  

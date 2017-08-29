@@ -14,11 +14,11 @@ caps.latest.revision: "4"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: f539e2d282b56e56a9c58c773788325b27ea6b37
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 9c50f6633a5ca04b62f4c3b06119fb1fbcab2643
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/28/2017
 ---
 # <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Numeri di ridimensionamento e scalabilità per System Center Configuration Manager
 
@@ -56,18 +56,9 @@ I numeri del supporto riportati di seguito si basano sull'uso dell'hardware cons
 
 -   Un sito di amministrazione centrale supporta fino a 25 siti primari figlio.  
 
-**Punto per siti Web del Catalogo applicazioni:**  
-
--   È possibile installare più istanze del punto di sito Web Catalogo applicazioni nei siti primari.  
-
-    > [!TIP]  
-    >  Come procedura consigliata, installare il punto di sito Web Catalogo applicazioni e il punto di servizio Web Catalogo applicazioni nello stesso sistema del sito quando offrono servizi ai client che si trovano nella intranet.  
-
-    -   Per migliorare le prestazioni, prevedere di supportare fino a 50.000 client per ogni istanza.  
-
-    -   Ogni istanza di questo ruolo del sistema del sito supporta il numero massimo di client supportati dalla gerarchia.  
 
 ## <a name="bkmk_roles"></a> Site system roles    
+
 
 **Punto per servizi Web del Catalogo applicazioni:**  
 
@@ -79,6 +70,18 @@ I numeri del supporto riportati di seguito si basano sull'uso dell'hardware cons
     -   Per migliorare le prestazioni, prevedere di supportare fino a 50.000 client per ogni istanza.  
 
     -   Ogni istanza di questo ruolo del sistema del sito supporta il numero massimo di client supportati dalla gerarchia.  
+
+**Punto per siti Web del Catalogo applicazioni:**  
+
+-   È possibile installare più istanze del punto di sito Web Catalogo applicazioni nei siti primari.  
+
+    > [!TIP]  
+    >  Come procedura consigliata, installare il punto di sito Web Catalogo applicazioni e il punto di servizio Web Catalogo applicazioni nello stesso sistema del sito quando offrono servizi ai client che si trovano nella intranet.  
+
+    -   Per migliorare le prestazioni, prevedere di supportare fino a 50.000 client per ogni istanza.  
+
+    -   Ogni istanza di questo ruolo del sistema del sito supporta il numero massimo di client supportati dalla gerarchia.  
+
 
 **Punto di distribuzione:**  
 
