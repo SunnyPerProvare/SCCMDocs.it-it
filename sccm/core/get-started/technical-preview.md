@@ -2,7 +2,7 @@
 title: Technical Preview per Configuration Manager | Microsoft Docs
 description: "Informazioni sulla versione Technical Preview che consente di testare nuove funzionalità in System Center Configuration Manager."
 ms.custom: na
-ms.date: 08/11/2017
+ms.date: 08/25/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "157"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 6d7bac392cf5a4ba01b25758fd91f1003b153589
-ms.sourcegitcommit: 398e30ec703218c4b3680bbb055d686807ca7f1d
+ms.openlocfilehash: 0cdbccc0147cb1f4d5130863b9610d0b190d6658
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 08/28/2017
 ---
 # <a name="technical-preview-for-system-center-configuration-manager"></a>Technical Preview per System Center Configuration Manager
 
@@ -84,7 +84,7 @@ I prodotti e tecnologie seguenti sono supportati da questo ramo di Configuration
 
  Per usare la Technical Preview è innanzitutto necessario installare una **versione di base** della build Technical Preview. Dopo l'installazione di una versione di base, sarà quindi possibile usare gli **aggiornamenti nella console** per aggiornare l'installazione con la versione di anteprima più recente.     In genere, le nuove versioni Technical Preview sono disponibili ogni mese.
 
-Ogni versione di anteprima è supportata finché non sono disponibili fino a tre versioni successive. Pertanto, quando viene rilasciata la versione 1702 la versione 1610 non è più supportata, mentre rimangono supportate le versioni 1611, 1612 e 1701. Quando una linea di base non rientra più nel supporto (come nel caso della versione 1610), è ancora disponibile il supporto per l'installazione di un nuovo sito Technical Preview (fino a quando non è disponibile una nuova versione di base), a condizione che tale istallazione venga aggiornata a una versione supportata. Durante l'aggiornamento, se non viene visualizzata la versione più recente disponibile nella console, eseguire l'aggiornamento alla versione più recente offerta e quindi ripetere il processo fino a quando non è possibile installare la versione più recente della Technical Preview.
+Ogni versione di anteprima è supportata finché non sono disponibili fino a tre versioni successive. Pertanto, quando viene rilasciata la versione 1708, la versione 1704 non è più supportata, mentre rimangono supportate le versioni 1705, 1706 e 1707. Quando una linea di base non rientra più nel supporto (come nel caso della versione 1703), è ancora disponibile il supporto per l'installazione di un nuovo sito Technical Preview (fino a quando non è disponibile una nuova versione di base), a condizione che tale istallazione venga aggiornata a una versione supportata. Durante l'aggiornamento, se non viene visualizzata la versione più recente disponibile nella console, eseguire l'aggiornamento alla versione più recente offerta e quindi ripetere il processo fino a quando non è possibile installare la versione più recente della Technical Preview.
 
 > [!TIP]  
 >  Quando si installa un aggiornamento per la Technical Preview, si aggiorna l'installazione di anteprima alla nuova versione Technical Preview.    Un'installazione Technical Preview non prevede mai la possibilità di eseguire l'aggiornamento a un'installazione del ramo corrente, né di ricevere gli aggiornamenti dalla versione ramo corrente.  
@@ -93,8 +93,9 @@ Ogni versione di anteprima è supportata finché non sono disponibili fino a tre
 È possibile installare una versione di base per un massimo di 1 anno dopo il rilascio. Tuttavia, quando si installa un nuovo sito Technical Preview, è consigliabile usare l'ultima versione di base disponibile.
 -  **Technical Preview 1703**: Configuration Manager Technical Preview 1703 è disponibile sia come aggiornamento nella console per Configuration Manager Technical Preview, sia come nuova versione di base sul [sito Web TechNet Evaluation Center](http://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
 
--  **Technical Preview 1610**: Configuration Manager Technical Preview 1610 è disponibile sia come aggiornamento nella console per Configuration Manager Technical Preview, sia come versione di base. Se sono disponibili i supporti per l'installazione della versione 1610, è consigliabile scaricare la versione 1703 e installare invece questa versione.
-
+<!-- out of support. Use baseline 1703
+-  **Technical Preview 1610** - The Configuration Manager Technical Preview 1610 was available as both an in-console update for the Configuration Manager Technical Preview, and as a baseline version. If you have media for installing 1610, we recommend you download version 1703 and install that version instead.
+-->
 
 
 
@@ -113,10 +114,10 @@ Ogni versione di anteprima è supportata finché non sono disponibili fino a tre
 
  |Funzionalità |Versione Technical Preview |Versione Current Branch|  
  |----------------|---------------------|--------------------|
- |Supporto della peer cache del client per i file di installazione rapida per Windows 10 e Office 365|[Tech Preview 1707](capabilities-in-technical-preview-1707.md#client-peer-cache-support-for-express-installation-files-for-windows-10-and-office-365)|![Non aggiunta](media/Red_X.gif)|
- |Dashboard del dispositivo Surface|[Tech Preview 1707](capabilities-in-technical-preview-1707.md#surface-device-dashboard)|![Non aggiunta](media/Red_X.gif)|
- |Configurare e distribuire i criteri di Windows Defender Application Guard|[Tech Preview 1707](capabilities-in-technical-preview-1707.md#configure-and-deploy-windows-defender-application-guard-policies)|![Non aggiunta](media/Red_X.gif)|
- |Aggiungere i parametri quando si distribuiscono gli script di PowerShell da Configuration Manager|[Tech Preview 1707](capabilities-in-technical-preview-1707.md#add-parameters-when-you-deploy-powershell-scripts-from-configuration-manager)|![Non aggiunta](media/Red_X.gif)|
+ |Miglioramenti per specificare i parametri degli script quando si distribuiscono gli script di PowerShell da Configuration Manager <!-- 1236459 -->|[Tech Preview 1708](capabilities-in-technical-preview-1708.md#improvements-for-specifying-script-parameters-when-you-deploy-powershell-scripts-from-configuration-manager)|![Non aggiunta](media/Red_X.gif)|
+ |Informazioni dettagliate sulla gestione <!-- 1353967 --> |[Tech Preview 1708](capabilities-in-technical-preview-1708.md#management-insights)|![Non aggiunta](media/Red_X.gif)|
+ |Riavviare i computer dalla console di Configuration Manager <!-- 1356283 --> |[Tech Preview 1708](capabilities-in-technical-preview-1708.md#restart-computers-from-the-configuration-manager-console)|![Non aggiunta](media/Red_X.gif)|
+ |Personalizzazione di Software Center <!-- 1351224 --> |[Tech Preview 1708](capabilities-in-technical-preview-1708.md#software-center-customization)|![Non aggiunta](media/Red_X.gif)|
 
 
 ## <a name="capabilities-delivered-in-previous-technical-previews"></a>Funzionalità disponibili nelle Technical Preview precedenti
@@ -124,6 +125,10 @@ Ogni versione di anteprima è supportata finché non sono disponibili fino a tre
 
  |Funzionalità |Versione Technical Preview |Versione Current Branch|  
  |----------------|---------------------|--------------------|
+ |Supporto della peer cache del client per i file di installazione rapida per Windows 10 e Office 365|[Tech Preview 1707](capabilities-in-technical-preview-1707.md#client-peer-cache-support-for-express-installation-files-for-windows-10-and-office-365)|![Non aggiunta](media/Red_X.gif)|
+ |Dashboard del dispositivo Surface|[Tech Preview 1707](capabilities-in-technical-preview-1707.md#surface-device-dashboard)|![Non aggiunta](media/Red_X.gif)|
+ |Configurare e distribuire i criteri di Windows Defender Application Guard|[Tech Preview 1707](capabilities-in-technical-preview-1707.md#configure-and-deploy-windows-defender-application-guard-policies)|![Non aggiunta](media/Red_X.gif)|
+ |Aggiungere i parametri quando si distribuiscono gli script di PowerShell da Configuration Manager|[Tech Preview 1707](capabilities-in-technical-preview-1707.md#add-parameters-when-you-deploy-powershell-scripts-from-configuration-manager)|![Non aggiunta](media/Red_X.gif)|
  |Nuove impostazioni dei criteri di gestione delle applicazioni mobili|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#new-mobile-application-management-policy-settings)|![Non aggiunta](media/Red_X.gif)|
  |Gruppi di limiti migliorati per i punti di aggiornamento software|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#improved-boundary-groups-for-software-update-points)|[Versione 1706](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points)|
  |Disponibilità elevata per il ruolo del server del sito|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#site-server-role-high-availability) |![Non aggiunta](media/Red_X.gif)|
@@ -139,7 +144,7 @@ Ogni versione di anteprima è supportata finché non sono disponibili fino a tre
  |Configurare i criteri di rinvio di Windows Update for Business |[Tech Preview 1706](capabilities-in-technical-preview-1706.md#configure-windows-update-for-business-deferral-policies)|[Versione 1706](/sccm/sum/deploy-use/integrate-windows-update-for-business-windows-10#configure-windows-update-for-business-deferral-policies)|
  |Restrizioni di registrazione per iOS|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#android-and-ios-enrollment-restrictions)|[Versione 1706](/sccm/mdm/deploy-use/enroll-hybrid-ios-mac#configure-enrollment-restrictions)|
  |Restrizioni di registrazione per Android|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#android-and-ios-enrollment-restrictions)|[Versione 1706](/sccm/mdm/deploy-use/enroll-hybrid-android#enable-android-enrollment)|
- |Criteri per la gestione dell’applicazione Android for Work per il copia e incolla|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#android-for-work-application-management-policy-for-copy-paste)|[Versione 1706](/sccm/mdm/deploy-use/create-configuration-items-for-android-for-work-devices-managed-without-the-client#android-for-work-configuration-item-settings-reference)|
+ |Criteri per la gestione dell'applicazione Android for Work per il copia e incolla|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#android-for-work-application-management-policy-for-copy-paste)|[Versione 1706](/sccm/mdm/deploy-use/create-configuration-items-for-android-for-work-devices-managed-without-the-client#android-for-work-configuration-item-settings-reference)|
  |Nuove impostazioni dell’elemento di configurazione di Windows|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#new-windows-configuration-item-settings)|[Versione 1706](/sccm/mdm/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client)|
  |Nuove regole per i criteri di conformità dei dispositivi|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#new-device-compliance-policy-rules)|![Non aggiunta](media/Red_X.gif)|
  |Valutazione dell’Attestazione dell'integrità dei dispositivi per i criteri di conformità per l'accesso condizionale|[Tech Preview 1706](capabilities-in-technical-preview-1706.md#device-health-attestation-assessment-for-compliance-policies-for-conditional-access)|![Non aggiunta](media/Red_X.gif)|

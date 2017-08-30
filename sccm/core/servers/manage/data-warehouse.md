@@ -2,7 +2,7 @@
 title: Data warehouse | Microsoft Docs
 description: Punto di servizio e database del data warehouse per System Center Configuration Manager
 ms.custom: na
-ms.date: 7/31/2017
+ms.date: 8/25/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: eedbf12d3bf628666efc90c85a8dfab37e4dc9ab
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 744614d7e1ec97a4d4b4646c45cb41d734c6be34
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/28/2017
 ---
 #  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>Punto di servizio del data warehouse per System Center Configuration Manager
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -49,8 +49,8 @@ Quando viene installato, il ruolo del sistema del sito installa e configura il d
 - Il computer in cui si installa il ruolo del sistema del sito richiede .NET Framework 4.5.2 o versioni successive.
 - L'account del computer in cui si installa il ruolo del sistema del sito viene usato per sincronizzare i dati con il database del data warehouse. L'account richiede le autorizzazioni seguenti:  
   - **Amministratore** nel computer che ospiterà il database del data warehouse.
-  - **DB_owner** per il database del data warehouse.
-  - **DB_reader** ed **execute** per il database del sito dei siti di livello superiore.
+  - Autorizzazione **DB_Creator** nel database del data warehouse.
+  - **DB_owner** o **DB_reader** con autorizzazioni di **esecuzione** nel database siti di primo livello.
 - Il database del data warehouse richiede l'uso di SQL Server 2012 o versione successiva, edizione Standard, Enterprise o Datacenter.
 - Per ospitare il database del sito sono supportate le configurazioni di SQL Server seguenti:  
   - Istanza predefinita

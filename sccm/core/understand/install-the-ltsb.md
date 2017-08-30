@@ -2,7 +2,7 @@
 title: Installare un sito usando il supporto di base 1606 | Microsoft Docs
 description: Installare o aggiornare Long-Term Servicing Branch per System Center Configuration Manager.
 ms.custom: na
-ms.date: 05/01/2017
+ms.date: 08/25/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 39653604ba5fd8e1fe9dd4d42889221d983f9bec
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 7e7b2fa4114b3bc7c63653ba036a3f5345ce017d
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/28/2017
 ---
 # <a name="install-and-upgrade-with-the-version-1606-baseline-media-for-system-center-configuration-manager"></a>Eseguire installazioni e aggiornamenti con il supporto di base della versione 1606 per System Center Configuration Manager
 
@@ -125,8 +125,11 @@ Quando si esegue l'aggiornamento da System Center Configuration Manager 2012, us
 
 ### <a name="in-place-upgrade-paths-for-the-1606-baseline-media"></a>Percorsi di aggiornamento sul posto per il supporto di base della versione 1606
 È possibile usare il supporto di base della versione 1606 per aggiornare a una versione con licenza di System Center Configuration Manager i prodotti seguenti:
-- System Center 2012 Configuration Manager con Service Pack 2.
-- System Center Configuration Manager 2012 R2 con Service Pack 1.
+- System Center Configuration Manager 2012 R2 con Service Pack 1
+- System Center 2012 R2 Configuration Manager con Service Pack
+- System Center 2012 Configuration Manager con Service Pack 2
+- System Center 2012 Configuration Manager con Service Pack 1
+
 
 È anche possibile usare questo supporto per aggiornare una versione di valutazione senza licenza di Current Branch a una versione con licenza completa di Current Branch.
 
