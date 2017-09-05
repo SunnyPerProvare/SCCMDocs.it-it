@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 6049ec2369e0a97b21ce6523ba8448335385ab9a
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 675ebf053de98c6ad93a53ae218696012aef96f7
+ms.sourcegitcommit: 5b4fd2d36f06be5bcc7f8ebbfb92c48b7240085d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/30/2017
 ---
 # <a name="task-sequence-action-variables-in-system-center-configuration-manager"></a>Variabili di azione delle sequenze di attività in System Center Configuration Manager
 
@@ -187,15 +187,6 @@ Le variabili di azione delle sequenze di attività specificano le impostazioni d
 |SMSConnectNetworkFolderPassword<br /><br /> (input)|Specifica la password di rete usata per connettersi alla condivisione di rete.|  
 |SMSConnectNetworkFolderPath<br /><br /> (input)|Specifica il percorso di rete per la connessione.<br /><br /> Esempio:<br /><br /> **"\\\servername\sharename"**|  
 
-###  <a name="BKMK_ConvertDisk"></a> Variabili di azione della sequenza di attività Converti il disco selezionato in disco dinamico  
- La variabile per questa azione specifica il numero del disco fisico da convertire da disco di base in disco dinamico. Per altre informazioni sul passaggio della sequenza di attività associato a queste variabili, vedere [Converti il disco selezionato in disco dinamico](task-sequence-steps.md#BKMK_ConvertDisktoDynamic).  
-
-#### <a name="details"></a>Dettagli  
-
-|Nome variabile azione|Descrizione|  
-|--------------------------|-----------------|  
-|OSDConvertDiskIndex<br /><br /> (input)|Specifica il numero del disco fisico che viene convertito.|  
-
 ###  <a name="BKMK_EnableBitLocker"></a> Variabili di azione della sequenza di attività Attiva BitLocker  
  Le variabili per questa azione specificano le opzioni relative a password di ripristino e chiave di avvio usate per abilitare BitLocker nel computer di destinazione. Per altre informazioni sul passaggio della sequenza di attività associato a queste variabili, vedere [Attiva BitLocker](task-sequence-steps.md#BKMK_EnableBitLocker).  
 
@@ -276,7 +267,7 @@ Le variabili di azione delle sequenze di attività specificano le impostazioni d
 |OSDStateStorePath<br /><br /> (output)|Percorso UNC della cartella nel punto di migrazione stato in cui è archiviato lo stato utente.|  
 
 ###  <a name="BKMK_RestartComputer"></a> Variabili di azione della sequenza di attività Riavvia computer  
- Le variabili per questa azione specificano le informazioni usate per riavviare il computer di destinazione. Per altre informazioni sul passaggio della sequenza di attività associato a queste variabili, vedere [Riavvia computer](task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer).  
+ Le variabili per questa azione specificano le informazioni usate per riavviare il computer di destinazione. Per altre informazioni sul passaggio della sequenza di attività associato a queste variabili, vedere [Riavvia computer](task-sequence-steps.md#BKMK_RestartComputer).  
 
 #### <a name="details"></a>Dettagli  
 
