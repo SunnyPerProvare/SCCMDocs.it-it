@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: e0726febc4c36a26c5e067914734838bf2681e6c
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 18a987141e212158424924402859799ba42f8eae
+ms.sourcegitcommit: 5b4fd2d36f06be5bcc7f8ebbfb92c48b7240085d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/30/2017
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Passaggi della sequenza di attività in System Center Configuration Manager
 
@@ -551,31 +551,6 @@ Questo passaggio della sequenza di attività può essere eseguito solo in Window
 
 -   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
 
-##  <a name="BKMK_ConvertDisktoDynamic"></a> Converti il disco selezionato in disco dinamico  
- Usare il passaggio **Converti il disco selezionato in disco dinamico** della sequenza di attività per convertire un disco fisico da un tipo di disco di base a un tipo di disco dinamico.  
-
- Questo passaggio viene eseguito in un sistema operativo standard o in Windows PE. Per altre informazioni sulle variabili della sequenza di attività per questa azione, vedere [Convert Disk to Dynamic Task Sequence Action Variables](task-sequence-action-variables.md#BKMK_ConvertDisk).  
-
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
-
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
-
--   Disabilitare il passaggio.  
-
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
-
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
-
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
-
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
-
- **Numero disco**  
- Numero del disco fisico che verrà convertito.  
-
 ##  <a name="BKMK_DisableBitLocker"></a> Disattiva BitLocker  
  Usare il passaggio **Disattiva BitLocker** della sequenza di attività per disabilitare la crittografia BitLocker nell'unità attuale del sistema operativo o in un'unità specificata. Questa azione lascia che le protezioni con chiave siano visibili in testo non crittografato nel disco rigido, ma non decrittografa i contenuti dell'unità. Questa azione viene quindi completata quasi istantaneamente.  
 
@@ -874,35 +849,6 @@ Questo passaggio viene eseguito in un sistema operativo standard o in Windows PE
  **Se l'installazione di un'applicazione non riesce, continuare installando le altre applicazioni dell'elenco**  
  Questa impostazione specifica che il passaggio procederà in caso di errore di installazione di una singola applicazione. Se si specifica questa impostazione, la sequenza di attività continuerà indipendentemente da eventuali errori di installazione restituiti. Se non si specifica questa impostazione e si verifica un errore di installazione, il passaggio della sequenza di attività si interromperà immediatamente.  
 
-##  <a name="BKMK_InstallDeploymentTools"></a> Installa strumenti di distribuzione  
- Usare il passaggio **Installa strumenti di distribuzione** della sequenza di attività per installare il pacchetto di Configuration Manager contenente gli strumenti di distribuzione Sysprep.  
-
-### <a name="details"></a>Dettagli  
- Nella scheda **Proprietà** per questo passaggio è possibile configurare le impostazioni illustrate in questa sezione.  
-
- È anche possibile usare la scheda **Opzioni** per eseguire le operazioni seguenti:  
-
--   Disabilitare il passaggio.  
-
--   Specificare se la sequenza di attività continua in caso di errore durante l'esecuzione del passaggio.  
-
--   Specificare le condizioni che devono essere soddisfatte per l'esecuzione del passaggio.  
-
- **Nome**  
- Nome breve definito dall'utente, che descrive l'azione eseguita in questo passaggio.  
-
- **Descrizione**  
- Informazioni più dettagliate sull'azione eseguita in questo passaggio.  
-
- **Pacchetto Sysprep**  
- Questa impostazione specifica il pacchetto di Configuration Manager contenente gli strumenti di distribuzione Sysprep per i sistemi operativi seguenti:  
-
--   Windows XP SP3  
-
--   Windows XP X64 SP2  
-
--   Windows Server 2003 SP2  
-
 ##  <a name="BKMK_InstallPackage"></a> Installa pacchetto
 
  Usare il passaggio **Installa pacchetto** della sequenza di attività per installare il software come parte della sequenza di attività. Quando si esegue questo passaggio, l'installazione inizia immediatamente, senza attendere il termine dell'intervallo di polling dei criteri.  
@@ -1068,6 +1014,9 @@ In Configuration Manager versione 1606 è stata inserita la nuova variabile di s
 Usare il passaggio **Prepara client ConfigMgr per l'acquisizione** per rimuovere il client di Configuration Manager o configurarlo nel computer di riferimento e prepararlo per l'acquisizione nell'ambito del processo di creazione dell'immagine.
 
 A partire da Configuration Manager versione 1610 questo passaggio rimuove completamente il client di Configuration Manager, invece di rimuovere solo le informazioni chiave. Quando la sequenza di attività distribuisce l'immagine del sistema operativo acquisita, verrà installato ogni volta un nuovo client di Configuration Manager.  
+
+> [!Note]  
+>  Il client viene rimosso solo durante la sequenza di attività **Crea e acquisisci un'immagine del sistema operativo di riferimento**. Il cliente non viene rimosso usando altri metodi di acquisizione, ad esempio supporti di acquisizione o una sequenza di attività personalizzata.
 
 Prima di Configuration Manager versione 1610 questo passaggio eseguiva le attività seguenti:  
 

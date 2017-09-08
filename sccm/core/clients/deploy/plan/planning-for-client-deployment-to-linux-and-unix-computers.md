@@ -2,7 +2,7 @@
 title: Pianificazione della distribuzione client in computer Linux e UNIX | Microsoft Docs
 description: Pianificazione della distribuzione del client in computer Linux e UNIX in System Center Configuration Manager.
 ms.custom: na
-ms.date: 04/23/2017
+ms.date: 08/30/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.openlocfilehash: 367ffb919a1adb9a0530f7357a0fcf1e6636af08
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: c5385ec5d7e41812df5c2a33d528614547819157
+ms.sourcegitcommit: 5b4fd2d36f06be5bcc7f8ebbfb92c48b7240085d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/30/2017
 ---
 # <a name="planning-for-client-deployment-to-linux-and-unix-computers-in-system-center-configuration-manager"></a>Pianificazione della distribuzione del client in computer Linux e UNIX in System Center Configuration Manager
 
@@ -51,14 +51,6 @@ ms.lasthandoff: 08/07/2017
 ###  <a name="BKMK_ClientDeployExternalforLnU"></a> Dipendenze esterne a Configuration Manager:  
  Nella tabella seguente vengono descritti i sistemi UNIX e Linux e le dipendenze dei pacchetti necessari.  
 
- **Red Hat Enterprise Linux ES versione 4**  
-
-|Pacchetto necessario|Descrizione|Versione minima|  
-|----------------------|-----------------|---------------------|  
-|glibc|Librerie standard C|2.3.4-2|  
-|Openssl|Librerie OpenSSL; Secure Network Communications Protocol|0.9.7a-43.1|  
-|PAM|Moduli di autenticazione plug-in|0.77-65.1|  
-
  **Red Hat Enterprise Linux Server versione 5.1 (Tikanga)**  
 
 |Pacchetto necessario|Descrizione|Versione minima|  
@@ -75,15 +67,6 @@ ms.lasthandoff: 08/07/2017
 |Openssl|Librerie OpenSSL; Secure Network Communications Protocol|1.0.0-4|  
 |PAM|Moduli di autenticazione plug-in|1.1.1-4|  
 
- **Solaris 9 SPARC**  
-
-|Pacchetto necessario|Descrizione|Versione minima|  
-|----------------------|-----------------|---------------------|  
-|Patch richiesta del sistema operativo|Problemi di memoria PAM|112960-48|  
-|SUNWlibC|Sun Workshop Compilers Bundled libC (sparc)|5.9, REV=2002.03.18|  
-|SUNWlibms|Forte Developer Bundled Shared libm (sparc)|5.9, REV=2001.12.10|  
-|Openssl|SMCosslg (sparc)<br /><br /> Sun non offre una versione di OpenSSL per Solaris 9 SPARC. È disponibile una versione di Sunfreeware.|0.9.7g|  
-|PAM|Moduli di autenticazione plug-in<br /><br /> SUNWcsl, Core Solaris, (Shared Libs) (sparc)|11.9.0,REV=2002.04.06.15.27|  
 
  **Solaris 10 SPARC**  
 
@@ -132,15 +115,6 @@ ms.lasthandoff: 08/07/2017
 |SUNWcsr|Core Solaris, (Root)|11.11, REV=2009.11.11|  
 |SUNWopenssl-libraries|OpenSSL Libraries (Usr)|11.11.0, REV=2010.05.25.01.00|  
 
- **SUSE Linux Enterprise Server 9 (i586)**  
-
-|Pacchetto necessario|Descrizione|Versione minima|  
-|----------------------|-----------------|---------------------|  
-|Service Pack 4|SUSE Linux Enterprise Server 9||  
-|OS Patch lib gcc-41.rpm|Libreria condivisa standard|41-4.1.2_20070115-0.6|  
-|OS Patch lib stdc++-41.rpm|Libreria condivisa standard|41-4.1.2_20070115-0.6|  
-|Openssl|Librerie OpenSSL; Secure Network Communications Protocol|0.9.7d-15.35|  
-|PAM|Moduli di autenticazione plug-in|0.77-221-11|  
 
  **SUSE Linux Enterprise Server 10 SP1 (i586)**  
 
@@ -173,13 +147,6 @@ ms.lasthandoff: 08/07/2017
 |Openssl|Librerie OpenSSL; Secure Network Communications Protocol|0.9.8 o 1.0|  
 |PAM|Moduli di autenticazione plug-in|0.99.6.2-3.14|  
 
- **IBM AIX 5L 5.3**  
-
-|Pacchetto necessario|Descrizione|Versione minima|  
-|----------------------|-----------------|---------------------|  
-|Versione del sistema operativo|Versione del sistema operativo|AIX 5.3, Technology Level 6, Service Pack 5|  
-|xlC.rte|XL C/C++ Runtime|9.0.0.2|  
-|openssl.base|Librerie OpenSSL; Secure Network Communications Protocol|0.9.8.4|  
 
  **IBM AIX 6.1**  
 
@@ -197,33 +164,6 @@ ms.lasthandoff: 08/07/2017
 |xlC.rte|XL C/C++ Runtime||  
 |OpenSSL/openssl.base|Librerie OpenSSL; Secure Network Communications Protocol||  
 
- **HP-UX 11i v2 IA 64**  
-
-|Pacchetto necessario|Descrizione|Versione minima|  
-|----------------------|-----------------|---------------------|  
-|HPUXBaseOS|Sistema operativo di base|B.11.23|  
-|HPUXBaseAux|HP-UX Base OS Auxiliary|B.11.23.0706|  
-|HPUXBaseAux.openssl|Librerie OpenSSL; Secure Network Communications Protocol|A.00.09.07l.003|  
-|PAM|Moduli di autenticazione plug-in|PAM fa parte dei componenti principali del sistema operativo di HP-UX. Non ci sono altre dipendenze.|  
-
- **HP-UX 11i v2 PA-RISC**  
-
-|Pacchetto necessario|Descrizione|Versione minima|  
-|----------------------|-----------------|---------------------|  
-|HPUX11i-OE|HP-UX Foundation Operating Environment|B.11.23.0706|  
-|OS-Core.MinimumRuntime.CORE-SHLIBS|Librerie compatibili con gli strumenti di sviluppo|B.11.23|  
-|HPUXBaseAux|HP-UX Base OS Auxiliary|B.11.23.0706|  
-|HPUXBaseAux.openssl|Librerie OpenSSL; Secure Network Communications Protocol|A.00.09.071.003|  
-|PAM|Moduli di autenticazione plug-in|PAM fa parte dei componenti principali del sistema operativo di HP-UX. Non ci sono altre dipendenze.|  
-
- **HP-UX 11i v3 PA-RISC**  
-
-|Pacchetto necessario|Descrizione|Versione minima|  
-|----------------------|-----------------|---------------------|  
-|HPUX11i-OE|HP-UX Foundation Operating Environment|B.11.31.0709|  
-|OS-Core.MinimumRuntime.CORE2-SHLIBS|Librerie emulatore specifico IA|B.11.31|  
-|openssl/Openssl.openssl|Librerie OpenSSL; Secure Network Communications Protocol|A.00.09.08d.002|  
-|PAM|Moduli di autenticazione plug-in|PAM fa parte dei componenti principali del sistema operativo di HP-UX. Non ci sono altre dipendenze.|  
 
  **HP-UX 11i v3 IA64**  
 
@@ -285,13 +225,8 @@ ms.lasthandoff: 08/07/2017
 ##  <a name="BKMK_NoSHA-256"></a> Informazioni sui sistemi operativi Linux e UNIX che non supportano SHA-256  
  I sistemi operativi Linux e UNIX seguenti supportati come client per Configuration Manager sono stati rilasciati con le versioni di OpenSSL che non supportano SHA-256:  
 
--   Red Hat Enterprise Linux versione 4 (x86/x64)  
+-   Solaris versione 10 (SPARC/x86)  
 
--   Solaris versione 9 (SPARC) e Solaris versione 10 (SPARC/x86)  
-
--   SUSE Linux Enterprise Server versione 9 (x86)  
-
--   Versione di HP-UX 11iv2 (PA-SIRIACO/IA64)  
 
  Per gestire questi sistemi operativi con Configuration Manager, è necessario installare il client di Configuration Manager per Linux e UNIX con un'opzione della riga di comando che indichi al client di ignorare la convalida di SHA-256. I client di Configuration Manager eseguiti in queste versioni del sistema operativo operano in una modalità meno sicura rispetto ai client che supportano SHA-256. Questa modalità meno sicura dell'operazione presenta il seguente comportamento:  
 
