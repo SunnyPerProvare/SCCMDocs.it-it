@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: e54c2cd1c3e83609bff6a8cb64fb3c23b26a4eaa
-ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
+ms.openlocfilehash: 4e818ffd943208eab323b1558f825bd87f3ddc4c
+ms.sourcegitcommit: 13599667ea77c16db1aebe64f8a6748c268f0b45
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 09/11/2017
 ---
 # <a name="release-notes-for-system-center-configuration-manager"></a>Note sulla versione per System Center Configuration Manager
 
@@ -148,17 +148,6 @@ Quando si distribuisce il client in computer Windows e tutte le versioni sono at
 **Soluzione alternativa** Il problema è causato da una versione danneggiata di Silverlight installata in precedenza. Per risolvere il problema, provare a eseguire lo strumento seguente sul computer interessato: [https://support.microsoft.com/help/17588/fix-problems-that-block-programs-from-being-installed-or-removed](https://support.microsoft.com/help/17588/fix-problems-that-block-programs-from-being-installed-or-removed)
 
 ## <a name="operating-system-deployment"></a>Distribuzione del sistema operativo  
-
-### <a name="if-the-boot-image-contains-drivers-the-image-fails-to-reload-the-current-windows-pe-version-from-the-windows-assessment-and-deployment-kit-adk"></a>Se l'immagine di avvio contiene driver, l'immagine non riesce a ricaricare la versione di Windows PE da Windows Assessment and Deployment Kit (ADK)
-<!-- 495087 -->
-È possibile usare Aggiornamento guidato punti di distribuzione per aggiornare i punti di distribuzione con un'immagine di avvio archiviata insieme alla versione più recente di Windows PE dalla directory di installazione di Windows Assessment and Deployment Kit (ADK). Per aggiornare, aprire Aggiornamento guidato punti di distribuzione e selezionare **Ricarica questa immagine di avvio con la versione corrente di Windows PE da Windows ADK**.
-
-Se l'immagine di avvio contiene driver, l'aggiornamento non riuscirà. La procedura guidata ricarica l'immagine da Windows ADK, visualizza una finestra di dialogo contenente un'eccezione che l'utente può ignorare e quindi visualizza una schermata di operazione riuscita. Tuttavia, i componenti più recenti del client di Configuration Manager non verranno aggiunti all'immagine di avvio. L'immagine di avvio non viene aggiornata nel punto di distribuzione
-
-**Soluzione alternativa**: eseguire l'Aggiornamento guidato punti di distribuzione due volte.
-
-1. Eseguire la procedura guidata con l'opzione **Ricarica questa immagine di avvio con la versione corrente di Windows PE da Windows ADK** selezionata. In questo modo, si otterrà la versione più recente di Windows PE.
-2. Eseguire di nuovo la procedura guidata con l'opzione **Ricarica questa immagine di avvio con la versione corrente di Windows PE da Windows ADK** non selezionata. In questo modo, verranno recuperati i file binari del client più recenti e l'immagine di avvio nel punto di distribuzione verrà aggiornata.
 
 ### <a name="servicing-plans-create-a-lot-of-duplicate-software-update-groups-and-deployments-by-default"></a>I piani di manutenzione creano molte distribuzioni e molti gruppi di aggiornamento software duplicati per impostazione predefinita  
 Per impostazione predefinita, la procedura guidata Crea piano di manutenzione viene attualmente eseguita dopo ogni sincronizzazione degli aggiornamenti software. A ogni esecuzione, la procedura guidata crea un nuovo gruppo di aggiornamento software e una nuova distribuzione. Se una sincronizzazione degli aggiornamenti software viene eseguita molte volte al giorno, ad esempio, la procedura guidata Crea piano di manutenzione crea più distribuzioni e gruppi di aggiornamento software, probabilmente identici, ogni giorno.  

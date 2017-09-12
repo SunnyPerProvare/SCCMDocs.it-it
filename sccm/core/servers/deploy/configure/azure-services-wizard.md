@@ -14,11 +14,11 @@ caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 22203b358830903cf2e531c0532ae3111b8265fc
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 3046003f000c8abde28a5b6e3bcb88b159be5357
+ms.sourcegitcommit: 2a1328da3facb20b0c78f3b12adbb5fdbe0dcc11
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Configurare i servizi di Azure da usare con Configuration Manager
 
@@ -30,7 +30,7 @@ Questa procedura guidata offre un'esperienza di configurazione comune perché us
 
 Usando la procedura guidata Configura i servizi di Azure, vengono configurati i servizi di Azure seguenti:
 -   **Gestione cloud**   
-    [Consente ai client di eseguire l'autenticazione usando Azure Active Directory]() (Azure AD). È anche possibile [configurare l'individuazione utenti di Azure AD](/sccm/core/servers/deploy/configure/configure-discovery-methods#azureaadisc).
+    [Consente ai client di eseguire l'autenticazione usando Azure Active Directory](/sccm/core/clients/deploy/deploy-clients-cmg-azure) (Azure AD). È anche possibile [configurare l'individuazione utenti di Azure AD](/sccm/core/servers/deploy/configure/configure-discovery-methods#azureaadisc).
 -   **OMS Connector**
     [Connette a Operations Manager Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) (OMS) e sincronizza i dati, ad esempio le raccolte, con Log Analytics di OMS.
 -   **Preparazione aggiornamenti**
@@ -85,7 +85,7 @@ L'app Web per i servizi di Azure connette il sito di Configuration Manager ad Az
 
 6.  Nella pagina **Individuazione** della procedura guidata fare clic su **Abilita l'individuazione utente di Azure Active Directory** e quindi fare clic su **Impostazioni**.
 Nella finestra di dialogo **Impostazioni di individuazione utenti di Azure AD** configurare una pianificazione per quando si verifica l'individuazione. È anche possibile abilitare l'individuazione differenziale che verifica solo gli account nuovi o modificati in Azure AD. Altre informazioni sull'[individuazione utenti di Azure AD](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc).
- 
+
  7. Completare la procedura guidata.
 
 A questo punto il sito di Configuration Manager è connesso ad Azure AD.
