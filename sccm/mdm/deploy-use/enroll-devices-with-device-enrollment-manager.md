@@ -2,7 +2,7 @@
 title: Registrare i dispositivi usando il manager di registrazione dispositivi - Configuration Manager | Microsoft Docs
 description: "Registrare i dispositivi di proprietà dell'azienda usando l'account del manager di registrazione dispositivi con System Center Configuration Manager."
 ms.custom: na
-ms.date: 08/15/2017
+ms.date: 09/08/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "8"
 author: nathbarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: c90ecca1ee46523d16fc1cf11495e40707631e03
-ms.sourcegitcommit: db7b7ec347638efd05cdba474e8a8f8535516116
+ms.openlocfilehash: dcc35fb6ebe385d07a3b60e8968e06dec8ad60af
+ms.sourcegitcommit: 40f2a4e3cc546e6bfd10f195a8e87af2b0780928
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/16/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="enroll-devices-with-device-enrollment-manager-with-configuration-manager"></a>Registrare i dispositivi usando il manager di registrazione dispositivi con Configuration Manager
 
@@ -40,7 +40,7 @@ Le limitazioni seguenti si applicano ai dispositivi gestiti usando un account de
 -  Per distribuire le app aziendali ai dispositivi gestiti con il manager di registrazione dispositivi, distribuire l'app Portale aziendale come **Installazione richiesta** all'account utente del manager di registrazione dispositivi. Il manager di registrazione dispositivi può quindi avviare l'app Portale aziendale per installare altre app.
 - Per migliorare le prestazioni, nell'app Portale aziendale viene visualizzato solo il dispositivo locale. La gestione remota di altri dispositivi DEM è possibile solo dalla console di Configuration Manager e se ne può occupare l'amministratore
 - Il sito Web del portale aziendale non è disponibile per gli account del manager di registrazione dispositivi. Usare l'app Portale aziendale.
-- (Solo iOS) Se si usa il manager di registrazione dispositivi per registrare i dispositivi iOS, non è possibile usare Apple Configurator o Apple Device Enrollment Program (DEP) per registrare i dispositivi.
+- Se si usa il manager di registrazione dispositivi per registrare i dispositivi iOS, non è possibile usare Apple Configurator o Apple Device Enrollment Program (DEP) per registrare i dispositivi. (solo iOS) 
 
  **Esempi di scenario con il manager di registrazione dispositivi:**   
 Un ristorante vuole adottare tablet POS per il personale di sala e monitor per gli ordini per il personale di cucina. I dipendenti non hanno quindi bisogno di accedere a dati aziendali o di effettuare l'accesso come utente. L'amministratore di Intune crea un account di manager di registrazione dispositivi e registra i dispositivi di proprietà dell'azienda con tale account. In alternativa, l'amministratore potrebbe concedere le credenziali di manager di registrazione dispositivi a un responsabile del ristorante, per consentirgli di registrare e gestire i dispositivi.  

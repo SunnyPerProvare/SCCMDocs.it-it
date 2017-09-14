@@ -14,11 +14,11 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: dab99748902df0fad32a1e2adad0c05e0dd8bdc9
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: c8110d9f5fec9027d34570623c32a7474e01b9af
+ms.sourcegitcommit: 2a1328da3facb20b0c78f3b12adbb5fdbe0dcc11
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="checklist-for-installing-update-1706-for-system-center-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1706 di System Center Configuration Manager
 
@@ -62,7 +62,6 @@ La prima volta che si usa una console di Configuration Manager dopo l'aggiorname
 > - I **collegamenti di replica** tra il sito di amministrazione centrale e i siti primari figlio non risultano aggiornati. Questa condizione è segnalata dallo stato di installazione del pacchetto di aggiornamento impostato come Completato con avviso per Monitoraggio dell'inizializzazione della replica. Nel nodo Monitoraggio della console, questa condizione viene visualizzata come *Configurazione collegamento in corso*.
 
 
-
 ## <a name="checklist"></a>Elenco di controllo
 
 **Verificare che tutti i siti eseguano una versione di System Center Configuration Manager che supporta l'aggiornamento alla versione 1706:**   
@@ -86,9 +85,9 @@ Questa installazione consente di impostare il server del sistema del sito in uno
 
 Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).
 
-**Controllare la versione di Windows Assessment and Deployment Kit (ADK) per Windows 10**: la versione di Windows 10 ADK deve essere 1607 o successiva. Se è necessario aggiornare l'ADK, eseguire questa operazione prima di iniziare l'aggiornamento di Configuration Manager. In questo modo, le immagini di avvio predefinite vengono aggiornate automaticamente alla versione più recente di Windows PE. Le immagini di avvio personalizzate devono essere aggiornate manualmente.
+**Controllare la versione di Windows Assessment and Deployment Kit (ADK) per Windows 10**: la versione di Windows 10 ADK deve essere 1703 o successiva. (Per ulteriori informazioni sulle versioni supportate di Windows ADK, vedere [Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk)) Se è necessario aggiornare l'ADK Windows, eseguire questa operazione prima di iniziare l'aggiornamento di Configuration Manager. In questo modo, le immagini di avvio predefinite vengono aggiornate automaticamente alla versione più recente di Windows PE. Le immagini di avvio personalizzate devono essere aggiornate manualmente.
 
-Se si aggiorna il sito prima di aggiornare l'ADK, vedere il blog [Configuration Manager e Windows ADK per Windows 10, versione 1607](https://blogs.technet.microsoft.com/enterprisemobility/2016/09/09/configuration-manager-and-the-windows-adk-for-windows-10-version-1607/) per uno script che può essere usato per rigenerare le immagini di avvio.
+Se si aggiorna il sito prima di aggiornare l'ADK Windows, vedere [Aggiornamento dei punti di distribuzione con l'immagine d'avvio](/sccm/osd/get-started/manage-boot-images#update-distribution-points-with-the-boot-image) per miglioramenti al processo in Configuration Manager versione 1706.
 
 **Esaminare lo stato del sito e della gerarchia e verificare che non ci siano errori non risolti:** prima di aggiornare un sito, risolvere tutti i problemi operativi per il server del sito, il server di database del sito e i ruoli del sistema del sito installati nei computer remoti. Un aggiornamento del sito può avere esito negativo a causa di problemi operativi esistenti.
 

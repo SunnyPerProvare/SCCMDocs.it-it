@@ -2,7 +2,7 @@
 title: Predichiarare dispositivi con i numeri di serie IMEI o iOS | Microsoft Docs
 description: "Predichiarare i dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS."
 ms.custom: na
-ms.date: 08/15/2017
+ms.date: 09/01/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -14,11 +14,11 @@ caps.latest.revision: "3"
 author: nathbarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: 7d139a2c74c0f29604f2f3d9b8e2739364633f17
-ms.sourcegitcommit: db7b7ec347638efd05cdba474e8a8f8535516116
+ms.openlocfilehash: 424f04b2b3ad4c7ef91f884bbf5bae3580ea6b85
+ms.sourcegitcommit: cd1f9c58e55f1c9a19acd743ec6a8824c39fd3a1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/16/2017
+ms.lasthandoff: 09/05/2017
 ---
 # <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Predichiarare dispositivi con i numeri di serie IMEI o iOS
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 08/16/2017
 Se si caricano numeri di serie di dispositivi iOS di proprietà dell'azienda, è necessario che siano associati a un profilo di registrazione aziendale. Per fare in modo che risultino di proprietà dell'azienda, i dispositivi devono anche essere registrati tramite il programma di registrazione dispositivi di Apple o Apple Configurator.
 
 >[!NOTE]
->I dispositivi Android, esclusi i dispositivi Samsung Knox Standard, devono avere una scheda SIM per essere predichiarati e registrati come dispositivi di proprietà dell'azienda con un codice IMEI.
+>I dispositivi Android, esclusi i dispositivi Samsung Knox Standard, devono essere associati a un numero di telefono per essere predichiarati e registrati come dispositivi di proprietà dell'azienda con un codice IMEI.
 
 ## <a name="how-to-predeclare-corporate-owned-devices"></a>Come predichiarare i dispositivi di proprietà dell'azienda
 

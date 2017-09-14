@@ -2,7 +2,7 @@
 title: Strumento di connessione del servizio | Microsoft Docs
 description: Lo strumento consente di connettersi al servizio cloud di Configuration Manager per caricare manualmente le informazioni sull'utilizzo.
 ms.custom: na
-ms.date: 4/7/2017
+ms.date: 09/06/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "11"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 0da80521bf223a765c3731f8ad59623d85a4c9fa
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 8039ee0c704bbe570ec3e45ba648f779923087c6
+ms.sourcegitcommit: 2a1328da3facb20b0c78f3b12adbb5fdbe0dcc11
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Usare lo strumento di connessione del servizio per System Center Configuration Manager
 
@@ -81,7 +81,7 @@ Quando si esegue il comando seguente, lo strumento prepara un file CAB che conti
 È anche necessario copiare la cartella ServiceConnectionTool con tutto il contenuto nell'unità USB o renderla comunque disponibile nel computer da usare per i passaggi 3 e 4.  
 
 ### <a name="overview"></a>Panoramica
-**I passaggi principali per l'uso dello strumento di connessione del servizio sono tre:**  
+#### <a name="there-are-three-primary-steps-to-using-the-service-connection-tool"></a>I passaggi principali per l'uso dello strumento di connessione del servizio sono tre  
 
 1.  **Preparazione**: questo passaggio viene eseguito nel computer che ospita il punto di connessione del servizio. Quando si esegue lo strumento, i dati di utilizzo vengono inseriti in un file CAB e archiviati in un'unità USB o in una posizione di trasferimento alternativa specificata.  
 
@@ -91,15 +91,28 @@ Quando si esegue il comando seguente, lo strumento prepara un file CAB che conti
 
 A partire dalla versione 1606, mentre si è connessi a Microsoft è possibile caricare più file con estensione cab contemporaneamente, ognuno da una gerarchia diversa, e specificare un server proxy e un utente per il server proxy.   
 
-**Per caricare più file con estensione cab:**
+#### <a name="to-upload-multiple-cab-files"></a>Per caricare più file con estensione cab
  -  Inserire i singoli file con estensione cab da esportare da gerarchie diverse nella stessa cartella. Il nome di ogni file deve essere univoco ed è possibile rinominarli manualmente se necessario.
  -  Quando si esegue il comando per caricare i dati in Microsoft, specificare la cartella che contiene i file con estensione cab. (Prima dell'aggiornamento 1606, era possibile caricare i dati da una sola gerarchia alla volta e lo strumento richiedeva di specificare il nome del file con estensione cab nella cartella).
  -  Quando in seguito si esegue l'attività di importazione nel punto di connessione del servizio di una gerarchia, lo strumento importerà automaticamente solo i dati della gerarchia specifica.  
 
-**Per specificare un server proxy:**  
+#### <a name="to-specify-a-proxy-server"></a>Per specificare un server proxy
 È possibile usare i parametri facoltativi seguenti per specificare un server proxy (ulteriori informazioni sull'uso di questi parametri sono disponibili nella sezione Opzioni della riga di comando in questo argomento):
   - **-proxyserveruri [FQDN_of_proxy_sever]**  Usare questo parametro per specificare il server proxy da usare per la connessione.
   -  **-proxyusername [username]**  Usare questo parametro quando è necessario specificare un utente per il server proxy.
+
+#### <a name="specify-the-type-of-updates-to-download"></a>Specificare il tipo di aggiornamenti da scaricare
+A partire dalla versione 1706, è stato modificato il comportamento di download di strumenti predefinito e lo strumento supporta le opzioni per controllare i file da scaricare.
+-   Per impostazione predefinita, lo strumento consente di scaricare solo l'aggiornamento più recente disponibile adeguato alla versione del sito. Non scarica gli aggiornamenti rapidi.
+
+Per modificare questo comportamento, utilizzare uno dei parametri seguenti per impostare i file che vengono scaricati. La versione del sito è determinata dai dati nel file CAB che viene caricata quando viene eseguito lo strumento.
+-   **-downloadall** Questa opzione consente di scaricare tutti gli elementi, inclusi aggiornamenti e aggiornamenti rapidi, indipendentemente dalla versione del sito.
+-   **-downloadhotfix** Questa opzione consente di scaricare tutti gli aggiornamenti rapidi indipendentemente dalla versione del sito.
+-   **-downloadsiteversion** Questa opzione consente di scaricare aggiornamenti e aggiornamenti rapidi con una versione più recente rispetto alla versione del sito.
+
+Riga di comando di esempio che utilizza *- downloadsiteversion*:
+- **serviceconnectiontool.exe -connect  *-downloadsiteversion* -usagedatasrc D:\USB -updatepackdest D:\USB\UpdatePacks**
+
 
 
 

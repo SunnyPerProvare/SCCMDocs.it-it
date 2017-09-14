@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: cc678c1133b1944f55bcad309cf9ede9f0660b57
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 5668ba3ead3b7415508f9ecf02f2e119c3cd9cc6
+ms.sourcegitcommit: 2a1328da3facb20b0c78f3b12adbb5fdbe0dcc11
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="manage-boot-images-with-system-center-configuration-manager"></a>Gestire le immagini d'avvio con System Center Configuration Manager
 
@@ -49,11 +49,10 @@ Prima della versione 1702, Configuration Manager aggiorna l'immagine di avvio (b
 Quando si esegue l'aggiornamento da Configuration Manager 2012 a Configuration Manager CB tramite il processo di installazione, Configuration Manager rigenera le immagini di avvio predefinite. Ciò include la nuova versione di Windows PE dalla versione aggiornata di Windows ADK, la nuova versione del client di Configuration Manager e tutte le personalizzazioni rimangono invariate. Le immagini di avvio personalizzate non vengono modificate.
 
 ### <a name="update-distribution-points-with-the-boot-image"></a>Aggiornare i punti di distribuzione con l'immagine d'avvio
-Quando si usa l'azione **Aggiorna punti di distribuzione** dal nodo **Immagini di avvio** nella console di Configuration Manager, Configuration Manager aggiorna le immagini di avvio predefinite con i componenti client, i driver, le personalizzazioni e così via.    
+Quando si usa l'azione **Aggiorna punti di distribuzione** dal nodo **Immagini d'avvio** nella console di Configuration Manager, Configuration Manager aggiorna le immagini d'avvio predefinite con i componenti client, i driver, le personalizzazioni e così via.    
 
 A partire dal Configuration Manager versione 1706, è possibile scegliere di ricaricare nell'immagine d'avvio la versione più recente di Windows PE (dalla directory di installazione di Windows ADK). La pagina **Generale** dell'Aggiornamento guidato punti di distribuzione offre informazioni sulla versione di Windows ADK installata nel server del sito, sulla versione di Windows ADK dalla quale è stato usato Windows PE nell'immagine d'avvio e sulla versione del client di Configuration Manager. È possibile usare queste informazioni per decidere se ricaricare l'immagine d'avvio. Inoltre la nuova colonna **Versione client** aggiunta alla visualizzazione delle immagini d'avvio nel nodo **Immagini d'avvio** visualizza la versione del client di Configuration Manager usata da ogni immagine d'avvio.    
 
-Le immagini di avvio personalizzate non vengono modificate.
 
 ##  <a name="BKMK_BootImageCustom"></a> Personalizzare un'immagine d'avvio  
  È possibile personalizzare o [modificare un'immagine d'avvio](#BKMK_ModifyBootImages) dalla console di Configuration Manager basata su una versione di Windows PE dalla versione supportata di Windows ADK. Quando un sito viene aggiornato con una nuova versione e viene installata una nuova versione di Windows ADK, le immagini di avvio personalizzate (non nel percorso dell'immagine di avvio predefinita) non vengono aggiornate con la nuova versione di Windows ADK. In questo caso, non sarà possibile personalizzare le immagini d'avvio nella console di Configuration Manager. Tuttavia, continueranno a funzionare come prima dell'aggiornamento.  

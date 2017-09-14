@@ -2,7 +2,7 @@
 title: Introduzione ai profili certificato | Microsoft Docs
 description: Informazioni sul funzionamento dei profili certificato in System Center Configuration Manager con Servizi certificati Active Directory.
 ms.custom: na
-ms.date: 07/25/2017
+ms.date: 09/11/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,18 +14,18 @@ caps.latest.revision: "7"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 7b1c0e449f3d1ef42e279e8707df6bf1df163b3f
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: e269b5836648d0d227e91a017512c16217e42646
+ms.sourcegitcommit: 13599667ea77c16db1aebe64f8a6748c268f0b45
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/11/2017
 ---
 # <a name="introduction-to-certificate-profiles-in-system-center-configuration-manager"></a>Introduzione ai profili certificato in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-I profili certificato vengono usati con Servizi certificati Active Directory e il ruolo Servizio registrazione dispositivi di rete per effettuare il provisioning dei certificati di autenticazione per i dispositivi gestiti, in modo che gli utenti possano accedere facilmente alle risorse aziendali. Ad esempio, è possibile creare e distribuire profili certificato per fornire i certificati di cui gli utenti hanno bisogno per avviare connessioni VPN e wireless. 
+I profili certificato vengono usati con Servizi certificati Active Directory e il ruolo Servizio registrazione dispositivi di rete per effettuare il provisioning dei certificati di autenticazione per i dispositivi gestiti, in modo che gli utenti possano accedere facilmente alle risorse aziendali. Ad esempio, è possibile creare e distribuire profili certificato per fornire i certificati di cui gli utenti hanno bisogno per avviare connessioni VPN e wireless.
 
 I profili certificato possono configurare automaticamente i dispositivi utente per accedere alle risorse aziendali, quali reti Wi-Fi e server VPN, senza dover installare manualmente i certificati o usare un processo fuori banda. I profili certificato possono inoltre mantenere sicure le risorse aziendali perché vengono usate più impostazioni di sicurezza supportate dall'infrastruttura a chiave pubblica (PKI) dell'azienda. Ad esempio, è possibile richiedere l'autenticazione server per tutte le connessioni Wi-Fi e VPN perché è stato effettuato il provisioning dei certificati richiesti nei dispositivi gestiti.   
 
@@ -52,7 +52,7 @@ I profili di certificato forniscono le seguenti funzionalità di gestione:
 
 -   **Personal Information Exchange (PFX)**: consente di richiedere un certificato PFX (noto anche come PKCS #12) per un dispositivo o un utente.
 
-    Per l'elaborazione delle richieste, è possibile creare profili certificato PFX tramite [importazione delle credenziali](/sccm/mdm/deploy-use/import-pfx-certificate-profiles.md) da certificati esistenti o tramite [definizione di una CA](/sccm/mdm/deploy-use/create-pfx-certificate-profiles.md).
+    Per l'elaborazione delle richieste, è possibile creare profili certificato PFX tramite [importazione delle credenziali](/sccm/mdm/deploy-use/import-pfx-certificate-profiles) da certificati esistenti o tramite [definizione di una CA](/sccm/mdm/deploy-use/create-pfx-certificate-profiles).
 
     A partire dalla versione 1706, è possibile usare Microsoft o Entrust come CA per i certificati di **scambio informazioni personali (PFX, Personal Information Exchange)**.
 

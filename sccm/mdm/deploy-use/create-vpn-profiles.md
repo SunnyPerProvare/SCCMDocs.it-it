@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: e4a53caab7d76b604a3fee7dcfc4dc48f22b0fb0
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 23ff28189c8010c21ed8b23c35598746a4f09fe7
+ms.sourcegitcommit: 13599667ea77c16db1aebe64f8a6748c268f0b45
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/11/2017
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Profili VPN nei dispositivi mobili in System Center Configuration Manager
 
@@ -37,16 +37,16 @@ Usare profili VPN in System Center Configuration Manager per distribuire imposta
 
  |Tipo di connessione|iOS e MacOS X|Android|Windows 8.1|Windows RT|Windows RT 8.1|Windows Phone 8.1|Windows 10 Desktop e Mobile|  
  |---------------------|----------------------|-------------|-----------------|----------------|--------------------|-----------------------|-----------------------------------|  
- |Cisco AnyConnect|Sì|Sì|No|No|No|No|Sì (URI OMA)|
+ |Cisco AnyConnect|Sì|Sì|No|No|No|No|Sì|
  |Cisco (IPSec)|Solo iOS|No|No|No|No|No|No|  
  |Pulse Secure|Sì|Sì|Sì|No|Yes|Sì|Sì|  
  |F5 Edge Client|Yes|Sì|Sì|No|Yes|Sì|Yes|  
  |Dell SonicWALL Mobile Connect|Sì|Sì|Sì|No|Yes|Sì|Sì|  
  |VPN mobile Check Point|Sì|Sì|Sì|No|Yes|Sì|Sì|  
  |Microsoft SSL (SSTP)|No|No|Yes|Sì|Sì|No|No|  
- |Microsoft Automatico|No|No|Yes|Sì|Sì|No|Sì (URI OMA)|  
- |IKEv2|Sì (Criteri personalizzati)|No|Yes|Sì|Sì|Sì|Sì (URI OMA)|  
- |PPTP|Sì|No|Yes|Sì|Sì|No|Sì (URI OMA)|  
+ |Microsoft Automatico|No|No|Yes|Sì|Sì|No|Sì|  
+ |IKEv2|Sì (criteri personalizzati iOS 9 e versioni successive)|No|Yes|Sì|Sì|Sì|Sì|  
+ |PPTP|Sì|No|Yes|Sì|Sì|No|Sì|  
  |L2TP|Sì|No|Yes|Sì|Sì|No|Sì (URI OMA)|  
 
 ## <a name="create-vpn-profiles"></a>Creare profili VPN
