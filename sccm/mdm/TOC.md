@@ -55,8 +55,12 @@
 ### [App di Windows Store per le aziende](deploy-use/windows-store-for-business.md)
 
 ## [Gestire una sottoscrizione di Intune](deploy-use/manage-intune-subscriptions.md)
-
 ## [Modificare l'autorità MDM](deploy-use/change-mdm-authority.md)
+## [Avviare la migrazione da MDM ibrido a Intune standalone](deploy-use/migrate-hybridmdm-to-intunesa.md) 
+### [Importare i dati di Configuration Manager in Microsoft Intune](deploy-use/migrate-import-data.md)
+### [Preparare Intune per la migrazione degli utenti](deploy-use/migrate-prepare-intune.md)
+### [Modificare l'autorità MDM per utenti specifici (autorità MDM mista)](deploy-use/migrate-mixed-authority.md)
+### [Modificare l'autorità MDM](deploy-use/migrate-change-mdm-authority.md)
 
 ## Gestire l'accesso alle risorse
 ### [Creare profili Wi-Fi](deploy-use/create-wifi-profiles.md)
