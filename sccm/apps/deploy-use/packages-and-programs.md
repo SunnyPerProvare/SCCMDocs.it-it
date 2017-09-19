@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: caad0507-9913-415a-b13d-d36f8f0a1b80
 caps.latest.revision: "8"
 caps.handback.revision: "0"
-author: robstackmsft
-ms.author: robstack
+author: mattbriggs
+ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 6146bcf4e5aa9df6fe0b8cf71898e488ecf217cc
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 05dd67bab32c4ac5adfb03b6dd149886955a32e1
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="packages-and-programs-in-system-center-configuration-manager"></a>Pacchetti e programmi in System Center Configuration Manager
 
@@ -48,7 +48,7 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 
 ### <a name="create-a-package-and-program-using-the-create-package-and-program-wizard"></a>Creare un pacchetto e un programma tramite la Creazione guidata pacchetto e programma  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software**  > **Gestione applicazioni** > **Pacchetti**.  
+1.  Nella console di Configuration Manager scegliere **Raccolta software ** > **Gestione applicazioni** > **Pacchetti**.  
 
 3.  Nel gruppo **Crea** della scheda **Home** scegliere **Crea pacchetto**.  
 
@@ -136,7 +136,7 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
              Per impostazione predefinita, il valore è impostato su 120 minuti.  
 
             > [!IMPORTANT]  
-            >  Se si usano finestre di manutenzione per la raccolta in cui viene eseguito il programma, può verificarsi un conflitto se il valore di **Tempo di esecuzione massimo consentito**  è maggiore della finestra di manutenzione pianificata. Se il tempo di esecuzione massimo è invece impostato su **Sconosciuto**, il programma viene avviato durante la finestra di manutenzione e l'esecuzione prosegue nel modo necessario dopo il termine della finestra di manutenzione. Se l'utente imposta il tempo di esecuzione massimo su una durata specifica maggiore della durata di qualsiasi finestra di manutenzione disponibile, il programma non viene eseguito.  
+            >  Se si usano finestre di manutenzione per la raccolta in cui viene eseguito il programma, può verificarsi un conflitto se il valore di **Tempo di esecuzione massimo consentito ** è maggiore della finestra di manutenzione pianificata. Se il tempo di esecuzione massimo è invece impostato su **Sconosciuto**, il programma viene avviato durante la finestra di manutenzione e l'esecuzione prosegue nel modo necessario dopo il termine della finestra di manutenzione. Se l'utente imposta il tempo di esecuzione massimo su una durata specifica maggiore della durata di qualsiasi finestra di manutenzione disponibile, il programma non viene eseguito.  
 
              Se il valore impostato è **Sconosciuto**, Configuration Manager imposta un limite massimo di esecuzione di 12 ore (720 minuti).  
 
@@ -182,7 +182,7 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 
 ## <a name="create-a-package-and-program-from-a-package-definition-file"></a>Per creare un pacchetto e un programma da un file di definizione del pacchetto  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software**  > **Gestione applicazioni** > **Pacchetti**.  
+1.  Nella console di Configuration Manager scegliere **Raccolta software ** > **Gestione applicazioni** > **Pacchetti**.  
 
 3.  Nel gruppo **Crea** della scheda **Home** scegliere **Crea pacchetto da definizione**.  
 
@@ -198,7 +198,7 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 
 ##  <a name="deploy-packages-and-programs"></a>Distribuire pacchetti e programmi  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software**  > **Gestione applicazioni** > **Pacchetti**.  
+1.  Nella console di Configuration Manager scegliere **Raccolta software ** > **Gestione applicazioni** > **Pacchetti**.  
 
 2.  Selezionare il pacchetto che si vuole distribuire. Nel gruppo **Distribuzione** della scheda **Home** scegliere **Distribuisci**.  
 
