@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: b88ab3799027c78a8c605e934b247097b31e1d21
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 57292b1c6f6e8b6be91eace06dbf12d788522e0b
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="use-pxe-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Usare PXE per distribuire Windows in rete con System Center Configuration Manager
 
@@ -46,7 +46,7 @@ Per usare PXE per distribuire un sistema operativo, è necessario avere immagini
 
 -   Per abilitare PXE in un'immagine d'avvio, selezionare **Distribuire questa immagine d'avvio dal punto di distribuzione che supporta PXE** nella scheda **Origine dati** nelle proprietà dell'immagine d'avvio.
 
--   Se si modificano le proprietà per l'immagine d'avvio, ridistribuirla nei punti di distribuzione. Per altre informazioni, vedere [Distribuire il contenuto](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).
+-   Se si modificano le proprietà per l'immagine d'avvio, ridistribuirla nei punti di distribuzione. Per altre informazioni, vedere [Distribuire il contenuto](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute).
 
 ##  <a name="BKMK_PXEExclusionList"></a> Creare un elenco di esclusione per le distribuzioni PXE
 Quando si distribuiscono sistemi operativi con PXE, è possibile creare un elenco di esclusione in ogni punto di distribuzione. Aggiungere gli indirizzi MAC all'elenco di esclusione dei computer che si vuole vengano ignorati dal punto di distribuzione. I computer elencati non riceveranno le sequenze di attività di distribuzione usate da Configuration Manager per la distribuzione PXE.

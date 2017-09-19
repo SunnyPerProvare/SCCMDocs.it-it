@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 4b3668094d576b1b8710f08b384aa2f7c5eb0cca
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 3a8e2759812dae2a328cd09efdc13f8534d14379
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="create-a-task-sequence-to-capture-and-restore-user-state-in-system-center-configuration-manager"></a>Creare una sequenza di attività per acquisire e ripristinare lo stato utente in System Center Configuration Manager
 
@@ -56,7 +56,7 @@ ms.lasthandoff: 08/07/2017
 
     -   Nella casella **Intervallo tra tentativi (in secondi)** specificare quanti secondi la sequenza attività attenderà prima di riprovare ad acquisire i dati.  
 
-    -   Selezionare la casella di controllo **Se l'account del computer non riesce a connettersi a un archivio stato, usare l'account di accesso alla rete** per specificare se usare l'[account di accesso alla rete](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#a-namebkmknaaa-network-access-account) di Configuration Manager per connettersi allo stato utente.  
+    -   Selezionare la casella di controllo **Se l'account del computer non riesce a connettersi a un archivio stato, usare l'account di accesso alla rete** per specificare se usare l'[account di accesso alla rete](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#bkmk_NAA) di Configuration Manager per connettersi allo stato utente.  
 
      Nella scheda **Opzioni** specificare le seguenti opzioni:  
 
@@ -141,7 +141,7 @@ ms.lasthandoff: 08/07/2017
 
     -   Selezionare **Continua se non è possibile ripristinare dei file** se si desidera che il passaggio **Ripristina stato utente** proceda anche in caso di impossibilità di ripristinare un file.  
 
-         Se lo stato utente viene archiviato tramite collegamenti locali e il ripristino ha esito negativo, l'utente amministratore potrà eliminare manualmente i collegamenti reali creati per l'archiviazione dei dati. In alternativa, la sequenza attività può eseguire lo strumento USMTUtils. Se si utilizza USMTUtils per eliminare il collegamento reale, aggiungere un passaggio [Riavvia computer](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer) dopo l'esecuzione di USMTUtils.  
+         Se lo stato utente viene archiviato tramite collegamenti locali e il ripristino ha esito negativo, l'utente amministratore potrà eliminare manualmente i collegamenti reali creati per l'archiviazione dei dati. In alternativa, la sequenza attività può eseguire lo strumento USMTUtils. Se si utilizza USMTUtils per eliminare il collegamento reale, aggiungere un passaggio [Riavvia computer](../understand/task-sequence-steps.md#BKMK_RestartComputer) dopo l'esecuzione di USMTUtils.  
 
     -   Selezionare **Abilita la registrazione dettagliata** per specificare la quantità di informazioni da scrivere nei file di log in caso di errore.  
 

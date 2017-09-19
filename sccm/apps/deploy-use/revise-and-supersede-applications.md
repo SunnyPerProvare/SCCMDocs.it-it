@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: 30170d70-489f-47f7-bebf-9ed0115db26b
 caps.latest.revision: "7"
 caps.handback.revision: "0"
-author: robstackmsft
-ms.author: robstack
+author: mattbriggs
+ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 28bea9210c9c58dabbb00a995e78cfedd1738291
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: c0a43ac7b529444b33edf8afbf52911127226f88
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="revise-and-supersede-applications-in-system-center-configuration-manager"></a>Rivedere e sostituire le applicazioni in System Center Configuration Manager
 
@@ -32,7 +32,7 @@ In questo argomento verrà illustrato come rivedere le versioni delle applicazio
 
 ### <a name="to-display-an-application-revision-history"></a>Per visualizzare la cronologia delle revisioni di un'applicazione  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software**  > **Gestione applicazioni** > **Applicazioni** e quindi scegliere l'applicazione.  
+1.  Nella console di Configuration Manager scegliere **Raccolta software ** > **Gestione applicazioni** > **Applicazioni** e quindi scegliere l'applicazione.  
 
 3.  Nella scheda **Home**, nel gruppo **Applicazione** scegliere **Cronologia revisioni** per aprire la finestra di dialogo **Cronologia revisione applicazione**.  
 
@@ -98,7 +98,7 @@ In questo argomento verrà illustrato come rivedere le versioni delle applicazio
 
 ### <a name="to-specify-a-supersedence-relationship"></a>Per specificare una relazione di sostituzione  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software**  > **Gestione applicazioni** > **Applicazioni** e quindi scegliere l'applicazione che sostituisce un'altra applicazione.  
+1.  Nella console di Configuration Manager scegliere **Raccolta software ** > **Gestione applicazioni** > **Applicazioni** e quindi scegliere l'applicazione che sostituisce un'altra applicazione.  
 
 3.  Nel gruppo **Proprietà** della scheda **Home** scegliere **Proprietà** per aprire la finestra di dialogo **Proprietà** <nome applicazione>.  
 

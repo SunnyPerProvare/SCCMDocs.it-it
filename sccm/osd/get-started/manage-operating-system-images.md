@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 6953c3834ca303b949f22436010a87b3da9688dc
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 9edefdbe77085d157b524904a514a2b5c472b1be
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="manage-operating-system-images-with-system-center-configuration-manager"></a>Gestire le immagini del sistema operativo con System Center Configuration Manager
 
@@ -81,7 +81,7 @@ Per informazioni sui passaggi necessari per creare un'immagine del sistema opera
  È ora possibile distribuire l'immagine del sistema operativo nei punti di distribuzione.  
 
 ##  <a name="BKMK_DistributeBootImages"></a> Distribuire immagini del sistema operativo nei punti di distribuzione  
- Le immagini del sistema operativo vengono distribuite nei punti di distribuzione allo stesso modo in cui vengono distribuiti gli altri contenuti. Nella maggior parte dei casi, è necessario distribuire l'immagine del sistema operativo almeno in un punto di distribuzione prima di distribuire il sistema operativo. Per informazioni sui passaggi necessari per distribuire un'immagine del sistema operativo, vedere [Distribute content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).  
+ Le immagini del sistema operativo vengono distribuite nei punti di distribuzione allo stesso modo in cui vengono distribuiti gli altri contenuti. Nella maggior parte dei casi, è necessario distribuire l'immagine del sistema operativo almeno in un punto di distribuzione prima di distribuire il sistema operativo. Per informazioni sui passaggi necessari per distribuire un'immagine del sistema operativo, vedere [Distribute content](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute).  
 
 ##  <a name="BKMK_OSImagesApplyUpdates"></a> Applicare aggiornamenti software a un'immagine del sistema operativo  
  Periodicamente, vengono rilasciati nuovi aggiornamenti software applicabili al sistema operativo nell'immagine del sistema operativo. Prima di poter applicare aggiornamenti software a un'immagine, è necessario che l'infrastruttura degli aggiornamenti software sia già predisposta, che gli aggiornamenti software siano stati sincronizzati correttamente e che gli aggiornamenti software siano stati scaricati nella raccolta contenuto nel server del sito. Per altre informazioni, vedere [Distribuire gli aggiornamenti software](../../sum/deploy-use/deploy-software-updates.md).  

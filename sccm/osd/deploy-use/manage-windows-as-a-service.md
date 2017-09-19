@@ -14,11 +14,11 @@ caps.latest.revision: "26"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 2c2c0f81736c1b00ea487ae1261803a8105bb5e4
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: fe02981433482ebf6880feec3e1822e6e8f4550f
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Gestire Windows come servizio con System Center Configuration Manager
 
@@ -40,7 +40,7 @@ ms.lasthandoff: 08/07/2017
 
 -   È necessario che WSUS 4.0 con [hotfix 3159706](https://support.microsoft.com/kb/3159706) sia installato nei punti di aggiornamento software e nel server del sito per eseguire l'aggiornamento dei computer a Windows 10 Anniversary Update e alle versioni successive. Per installare l'hotfix è necessario eseguire i passaggi manuali descritti nell'articolo del supporto tecnico. Per altre informazioni, vedere [Enterprise Mobility and Security Blog](https://blogs.technet.microsoft.com/enterprisemobility/2016/08/05/update-your-configmgr-1606-sup-servers-to-deploy-the-windows-10-anniversary-update/) (Blog sulla sicurezza e la mobilità aziendale).
 
--   Abilitare Individuazione heartbeat. I dati visualizzati nel dashboard di manutenzione di Windows 10 vengono rilevati con l'individuazione. Per altre informazioni, vedere [Configure Heartbeat Discovery](../../core/servers/deploy/configure/configure-discovery-methods.md#a-namebkmkconfighbdisca-configure-heartbeat-discovery).  
+-   Abilitare Individuazione heartbeat. I dati visualizzati nel dashboard di manutenzione di Windows 10 vengono rilevati con l'individuazione. Per altre informazioni, vedere [Configure Heartbeat Discovery](../../core/servers/deploy/configure/configure-discovery-methods.md#BKMK_ConfigHBDisc).  
 
      Le informazioni riportate di seguito sul ramo e la build di Windows 10 vengono rilevate e memorizzate negli attributi seguenti:  
 

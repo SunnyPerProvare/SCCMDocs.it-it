@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 23ff28189c8010c21ed8b23c35598746a4f09fe7
-ms.sourcegitcommit: 13599667ea77c16db1aebe64f8a6748c268f0b45
+ms.openlocfilehash: 5b5385cebe7952e519d59a239983733dd93e661e
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/11/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Profili VPN nei dispositivi mobili in System Center Configuration Manager
 
@@ -52,7 +52,7 @@ Usare profili VPN in System Center Configuration Manager per distribuire imposta
 ## <a name="create-vpn-profiles"></a>Creare profili VPN
 Per informazioni generali sulla creazione di profili VPN, vedere [Come creare profili VPN in System Center Configuration Manager](../../protect/deploy-use/create-vpn-profiles.md).
 
-###   <a name="windows-10-vpn-features-available-when-using-configuration-manager-with-intune"></a>Funzionalità VPN di Windows 10 disponibili quando si usa Configuration Manager con Intune  
+## <a name="windows-10-vpn-features-available-when-using-configuration-manager-with-intune"></a>Funzionalità VPN di Windows 10 disponibili quando si usa Configuration Manager con Intune  
 
 
 > [!NOTE]  
@@ -157,7 +157,7 @@ Per informazioni generali sulla creazione di profili VPN, vedere [Come creare pr
 
 **Distribuisci**: per altre informazioni sulla distribuzione dei profili VPN, vedere [Distribuire profili Wi-Fi, VPN, di posta elettronica e di certificato](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md).
 
-### <a name="next-steps"></a>Passaggi successivi  
+## <a name="next-steps"></a>Passaggi successivi  
  Usare gli argomenti seguenti per pianificare, configurare, far funzionare e gestire i profili VPN in Configuration Manager.  
 
 -   [Prerequisiti per i profili VPN in System Center Configuration Manager](../../protect/plan-design/prerequisites-for-wifi-vpn-profiles.md)  

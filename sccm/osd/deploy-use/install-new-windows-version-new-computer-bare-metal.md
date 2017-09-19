@@ -14,11 +14,11 @@ caps.latest.revision: "8"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 584dad7d8b05a2da9f7a66b73028ae99ff1a594f
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 63a26ff688ca2ec0c121a93a6c96bba2f76776e8
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="install-a-new-version-of-windows-on-a-new-computer-bare-metal-with-system-center-configuration-manager"></a>Installare una nuova versione di Windows in un nuovo computer (bare metal) con System Center Configuration Manager
 
@@ -44,7 +44,7 @@ Per informazioni su come aggiornare un computer esistente con una nuova versione
 
     -   Per altre informazioni su come personalizzare un'immagine di avvio, vedere [Personalizzare immagini di avvio](../get-started/customize-boot-images.md).  
 
-    -   Distribuire l'immagine d'avvio nei punti di distribuzione. Per altre informazioni, vedere [Distribuire contenuto](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).  
+    -   Distribuire l'immagine d'avvio nei punti di distribuzione. Per altre informazioni, vedere [Distribuire contenuto](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute).  
 
 2.  **Preparare un'immagine del sistema operativo**  
 
@@ -52,7 +52,7 @@ Per informazioni su come aggiornare un computer esistente con una nuova versione
 
     -   Per altre informazioni su come creare un'immagine del sistema operativo, vedere [Gestire immagini del sistema operativo](../get-started/manage-operating-system-images.md).
 
-    -   Distribuire l'immagine del sistema operativo nei punti di distribuzione. Per altre informazioni, vedere [Distribuire contenuto](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).
+    -   Distribuire l'immagine del sistema operativo nei punti di distribuzione. Per altre informazioni, vedere [Distribuire contenuto](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute).
 
 3.  **Creare una sequenza di attività per distribuire sistemi operativi nella rete**  
 

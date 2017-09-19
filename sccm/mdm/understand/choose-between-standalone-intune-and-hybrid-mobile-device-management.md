@@ -14,18 +14,18 @@ caps.latest.revision: "10"
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 26c36df77c21254c7ad2b8a45906bd3706f9ec65
-ms.sourcegitcommit: 06aef618f72c700f8a716a43fb8eedf97c62a72b
+ms.openlocfilehash: 5c9e80fc5bc3f0629e1c27a4928b8a51cfe1ee7e
+ms.sourcegitcommit: 948644072bd158b156f782a4376bcd50fac7c73a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="choose-between-microsoft-intune-standalone-and-hybrid-mobile-device-management-with-system-center-configuration-manager"></a>Scegliere tra Microsoft Intune autonomo e la gestione di dispositivi mobili ibridi con System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 Una delle domande più frequenti sulla Gestione di dispositivi mobili con Microsoft Intune è: "È preferibile integrare Intune e Configuration Manager (gestione dei dispositivi mobili ibrida) o eseguire Intune autonomo nella configurazione che prevede solo il cloud?" Per rispondere a questa domanda, è necessario confrontare attentamente le due opzioni.
-
+ 
 ## <a name="intune-standalone"></a>Intune autonomo
 Intune autonomo è la topologia di distribuzione consigliata da Microsoft. Intune autonomo è una soluzione di gestione di dispositivi mobili solo nel cloud gestita tramite una console Web a cui è possibile accedere da qualsiasi parte del mondo. I data center di Intune si trovano in America del Nord, in Europa e in Asia. Dato che Intune è un servizio cloud, è possibile distribuire la gestione Intune nei dispositivi in un intervallo di tempo relativamente breve.
 

@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: f44fa4ef0946d3500d15db536333adab571a5f64
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="planning-considerations-for-automating-tasks-in-system-center-configuration-manager"></a>Considerazioni sulla pianificazione per l'automazione delle attività in System Center Configuration Manager
 
@@ -282,7 +282,7 @@ ms.lasthandoff: 08/07/2017
 ##  <a name="BKMK_TSNetworkAccessAccount"></a> Sequenze di attività e account di accesso alla rete  
  Anche se le sequenze di attività vengono eseguite solo nel contesto dell'account di sistema locale, potrebbe essere necessario configurare l'account di accesso alla rete nelle circostanze seguenti:  
 
--   Se l'account di accesso alla rete non viene configurato correttamente, la sequenza di attività avrà esito negativo se prova ad accedere ai pacchetti di Configuration Manager nei punti di distribuzione per completare l'attività. Per altre informazioni sull'account di accesso alla rete, vedere [Account di accesso alla rete](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#a-namebkmknaaa-network-access-account).  
+-   Se l'account di accesso alla rete non viene configurato correttamente, la sequenza di attività avrà esito negativo se prova ad accedere ai pacchetti di Configuration Manager nei punti di distribuzione per completare l'attività. Per altre informazioni sull'account di accesso alla rete, vedere [Account di accesso alla rete](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#bkmk_NAA).  
 
     > [!NOTE]  
     >  L'account di accesso alla rete non viene mai usato come contesto di sicurezza per eseguire programmi, installare applicazioni, installare aggiornamenti oppure eseguire sequenze attività. L'account di accesso alla rete viene tuttavia usato per l'accesso alle risorse associate in rete.  

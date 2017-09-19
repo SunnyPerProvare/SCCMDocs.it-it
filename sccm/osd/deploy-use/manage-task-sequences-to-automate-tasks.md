@@ -14,11 +14,11 @@ caps.latest.revision: "10"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 2f3d66362c49d28a52d7f9c535eb0b3b4cc4eaf7
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: c9d94ffb61ed7a7fa40a01eedc763a16a8df30cb
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-system-center-configuration-manager"></a>Gestire le sequenze di attività per automatizzare le attività in System Center Configuration Manager
 
@@ -196,7 +196,7 @@ Verrà visualizzato il messaggio di notifica seguente quando l'utente finale apr
 
 8.  Completare la procedura guidata.  
 
- È possibile pre-installare il contenuto a cui viene fatto riferimento nella sequenza di attività. Configuration Manager crea un file di contenuto pre-installato e compresso, contenente i file, le relative dipendenze e i metadati associati per il contenuto selezionato. Quindi, è possibile importare manualmente il contenuto in un server del sito, in un sito secondario o in un punto di distribuzione. Per altre informazioni su come pre-installare i file di contenuto, vedere [Prestage content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkprestagea-use-prestaged-content) (Pre-installare il contenuto).  
+ È possibile pre-installare il contenuto a cui viene fatto riferimento nella sequenza di attività. Configuration Manager crea un file di contenuto pre-installato e compresso, contenente i file, le relative dipendenze e i metadati associati per il contenuto selezionato. Quindi, è possibile importare manualmente il contenuto in un server del sito, in un sito secondario o in un punto di distribuzione. Per altre informazioni su come pre-installare i file di contenuto, vedere [Prestage content](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_prestage) (Pre-installare il contenuto).  
 
 ##  <a name="BKMK_DeployTS"></a> Distribuire una sequenza di attività  
  Usare la seguente procedura per distribuire una sequenza di attività ai computer in una raccolta.  
@@ -464,7 +464,7 @@ Se si vuole che le variabili con ambito computer e raccolta non siano visibili n
 |**Copia**|Crea una copia della sequenza di attività selezionata. Questa azione può risultare utile quando si desidera creare una nuova sequenza di attività basata su una sequenza di attività esistente.<br /><br /> Quando si copia una sequenza di attività in una cartella, la copia viene elencata in tale cartella fino all'aggiornamento del nodo sequenza di attività.  Dopo l'aggiornamento, la copia viene visualizzata nella cartella principale.|  
 |**Disabilitato**|Disattiva la sequenza di attività in modo che non possa essere eseguita nei computer. Le sequenze attività disattivate possono essere distribuite ai computer, ma questi non le eseguono finché non vengono attivate.|  
 |**Attiva**|Attiva la sequenza di attività in modo che possa essere eseguita. Dopo l'attivazione non è necessario ridistribuire una sequenza di attività già distribuita.|  
-|**Crea file di contenuto pre-installazione**|Avvia la Creazione guidata file di contenuto pre-installazione per pre-installare il contenuto della sequenza di attività. Per informazioni su come creare un file di contenuto pre-installato, vedere [Prestage content](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkprestagea-use-prestaged-content) (Pre-installare il contenuto).|  
+|**Crea file di contenuto pre-installazione**|Avvia la Creazione guidata file di contenuto pre-installazione per pre-installare il contenuto della sequenza di attività. Per informazioni su come creare un file di contenuto pre-installato, vedere [Prestage content](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_prestage) (Pre-installare il contenuto).|  
 |**Sposta**|Sposta la sequenza di attività selezionata in un'altra cartella.|  
 
 ## <a name="next-steps"></a>Passaggi successivi
