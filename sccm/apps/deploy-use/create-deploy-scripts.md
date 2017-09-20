@@ -2,7 +2,7 @@
 title: Creare ed eseguire script con Configuration Manager | Microsoft Docs
 description: Creare ed eseguire script in dispositivi client con Configuration Manager.
 ms.custom: na
-ms.date: 08/09/2017
+ms.date: 09/15/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
 caps.latest.revision: "14"
 caps.handback.revision: "0"
-author: robstackmsft
-ms.author: robstack
+author: lleonard-msft
+ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: ed84f7900eee5c04728d0e4d1b46027c36327bec
-ms.sourcegitcommit: b41d3e5c7f0c87f9af29e02de3e6cc9301eeafc4
+ms.openlocfilehash: e6b29cd85504742e8638a55db2f6c4ecc8ab3e55
+ms.sourcegitcommit: 5ca89204716750eaaceb01bba40b35b85c7122ba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/18/2017
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Creare ed eseguire script di PowerShell dalla console di Configuration Manager
 
@@ -44,9 +44,9 @@ Per eseguire gli script, i client Configuration Manager devono avere in esecuzio
 
 Per usare gli script, l'utente deve essere membro del ruolo di sicurezza appropriato di Configuration Manager.
 
-- Per importare e creare script: l'account deve avere autorizzazioni di **creazione** per **script SMS** nel ruolo di sicurezza **Gestione impostazioni di conformità**.
-- Per approvare o rifiutare script: l'account deve avere autorizzazioni di **approvazione** per **script SMS** nel ruolo di sicurezza **Gestione impostazioni di conformità**.
-- Per eseguire script: l'account deve avere autorizzazioni di **esecuzione script** per **Raccolte** nel ruolo di sicurezza **Gestione impostazioni di conformità**.
+- Per importare e creare script: l'account deve avere autorizzazioni di **creazione** per **script SMS** nel ruolo di sicurezza **Amministratore completo**.
+- Per approvare o rifiutare script: l'account deve avere autorizzazioni di **approvazione** per **script SMS** nel ruolo di sicurezza **Amministratore completo**.
+- Per eseguire script: l'account deve avere autorizzazioni di** esecuzione script** per **Raccolte** nel ruolo di sicurezza **Gestione impostazioni di conformità**.
 
 Per altre informazioni sui ruoli di sicurezza di Configuration Manager, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](/sccm/core/understand/fundamentals-of-role-based-administration).
 
@@ -70,7 +70,7 @@ Per impostazione predefinita, gli utenti non possono approvare uno script da lor
     - **Importa**: importare uno script di PowerShell nella console. Lo script viene visualizzato nel campo **Script**.
     - **Cancella**: rimuove lo script corrente dal campo Script.
     - **Script**: visualizza lo script attualmente importato. È possibile modificare lo script in questo campo in base alle esigenze.
-5. Completare la procedura guidata. Il nuovo script viene visualizzato nell'elenco **Script** con stato **In attesa di approvazione** . Prima di poter eseguire questo script nei dispositivi client, è necessario approvarlo.
+5. Completare la procedura guidata. Il nuovo script viene visualizzato nell'elenco **Script** con stato **In attesa di approvazione **. Prima di poter eseguire questo script nei dispositivi client, è necessario approvarlo.
 
 ### <a name="script-examples"></a>Esempi di script
 
@@ -78,9 +78,9 @@ Di seguito sono riportati alcuni esempi che illustrano gli script che è possibi
 
 #### <a name="create-a-folder"></a>Crea una cartella
 
-*New-Item "c:\scripts" -type folder name* 
- 
- 
+*New-Item "c:\scripts" -type folder name*
+
+
 #### <a name="create-a-file"></a>Creare un file
 
 *New-Item c:\scripts\new_file.txt -type file name*

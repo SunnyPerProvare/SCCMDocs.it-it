@@ -2,7 +2,7 @@
 title: Aggiornamenti nella console | Microsoft Docs
 description: System Center Configuration Manager si sincronizza con il cloud Microsoft per ottenere aggiornamenti installabili all'interno della console.
 ms.custom: na
-ms.date: 06/13/2017
+ms.date: 09/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "36"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 2bbc8935bee306ed0bc312cc43b8f5374a8df7ff
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 10ddbcc19da8c5fc6451f62500f17790a0349389
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="install-in-console-updates-for-system-center-configuration-manager"></a>Installare gli aggiornamenti nella console per System Center Configuration Manager
 
@@ -105,6 +105,9 @@ Prima di installare un aggiornamento, si consiglia di eseguire il controllo dei 
 -   I file di aggiornamento vengono replicati in altri siti prima dell'installazione dell'aggiornamento.  
 
 -   Il controllo dei prerequisiti viene eseguito di nuovo automaticamente quando si sceglie di installare l'aggiornamento.  
+
+> [!NOTE]
+> Quando si avvia un controllo dei prerequisiti e quindi si visualizza lo stato, la fase **Installazione** risulta attiva, anche se l'installazione dell'aggiornamento non è effettivamente in corso. Viene visualizzata la fase Installazione perché alcune attività, ad esempio l'estrazione dei file binari necessari per eseguire il controllo, fanno parte della fase Installazione.  
 
 Successivamente, quando si installa l'aggiornamento, è possibile configurarlo in modo che ignori gli avvisi del controllo dei prerequisiti.  
 
@@ -288,7 +291,7 @@ Le attività di post-installazione includono:
 Quando l'installazione di un aggiornamento non riesce, esaminare i commenti nella console per individuare le possibili soluzioni per gli errori e gli avvisi. Per altre informazioni, è anche possibile visualizzare ConfigMgrPrereq.log nel server del sito. Prima di riprovare l'installazione di un aggiornamento, è necessario correggere gli errori ed è consigliabile correggere anche gli avvisi.  
 
 > [!TIP]  
-> In caso di problemi di download o di replica di un aggiornamento, è possibile usare lo [strumento di reimpostazione dell'aggiornamento](/sccm/core/servers/manage/update-reset-tool). Questo strumento è disponibile nei siti che eseguono la versione 1706 o successiva. 
+> In caso di problemi di download o di replica di un aggiornamento, è possibile usare lo [strumento di reimpostazione dell'aggiornamento](/sccm/core/servers/manage/update-reset-tool). Questo strumento è disponibile nei siti che eseguono la versione 1706 o successiva.
 
 Quando si è pronti per ripetere l'installazione di un aggiornamento, selezionare l'aggiornamento non riuscito e quindi scegliere un'opzione applicabile. Il nuovo tentativo di installazione dell'aggiornamento varia a seconda del nodo da cui viene riprovato e dal tipo di tentativo usato.  
 

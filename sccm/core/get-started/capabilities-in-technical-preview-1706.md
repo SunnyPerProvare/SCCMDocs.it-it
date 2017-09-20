@@ -2,7 +2,7 @@
 title: Technical Preview 1706 | Microsoft Docs
 description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1706 per System Center Configuration Manager."
 ms.custom: na
-ms.date: 06/30/2017
+ms.date: 09/15/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.reviewer: na
@@ -13,11 +13,11 @@ ms.assetid: ca3b4714-2a16-495e-8a17-1d87991d5556
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: d45f504dfe0a4c7852b0e2c8ff60d54005346c02
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 5633047669f9730446159781c4ac0b1248178bf4
+ms.sourcegitcommit: 5ca89204716750eaaceb01bba40b35b85c7122ba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/18/2017
 ---
 # <a name="capabilities-in-technical-preview-1706-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1706 per System Center Configuration Manager
 
@@ -39,7 +39,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
     - **Blocca il debug USB nel dispositivo**
     - **Blocca app da origini sconosciute**
 
-        Ad esempio, se gli amministratori impostano **Blocca il debug USB nel dispositivo**  su **true**, tutti i dispositivi che non hanno attivato l'USB in esecuzione sono contrassegnati come non conformi.
+        Ad esempio, se gli amministratori impostano **Blocca il debug USB nel dispositivo ** su **true**, tutti i dispositivi che non hanno attivato l'USB in esecuzione sono contrassegnati come non conformi.
 
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
@@ -272,7 +272,7 @@ I prerequisiti per la [connessione a Preparazione aggiornamenti](/sccm/core/clie
 Dopo aver configurato i prerequisiti, si è pronti a usare la procedura guidata per creare la connessione.
 
 ### <a name="use-the-azure-services-wizard-to-configure-upgrade-readiness"></a>Usare la procedura guidata dei servizi di Azure per configurare Preparazione aggiornamenti
-1.  Nella console passare ad **Amministrazione** > **Panoramica** > **Servizi cloud** > **Servizi di Azure** e quindi scegliere **Configura i servizi di Azure** dalla scheda **Home** della barra multifunzione per avviare la **Procedura guidata per i servizi di Azure**.
+1.  Nella console passare ad **Amministrazione** > **Panoramica** > **Servizi cloud** > **Servizi di Azure** e quindi scegliere **Configura i servizi di Azure** dalla scheda** Home** della barra multifunzione per avviare la **Procedura guidata per i servizi di Azure**.
 
 2.  Nella pagina **Servizi di Azure** selezionare **Connettore Upgrade Readiness** e quindi fare clic su **Avanti**.
 
@@ -328,8 +328,8 @@ In Configuration Manager, è possibile distribuire script ai dispositivi client 
 
 Per usare gli script, l'utente deve essere membro del ruolo di sicurezza appropriato di Configuration Manager.
 
-- **Per importare e creare script**: l'account deve disporre delle autorizzazioni **Create** per **script SMS** nel ruolo di sicurezza **Gestione impostazioni di conformità**.
-- **Per approvare o rifiutare script**: l'account deve disporre delle autorizzazioni **Approve** per **script SMS** nel ruolo di sicurezza **Gestione impostazioni di conformità**.
+- **Per importare e creare script**: l'account deve avere autorizzazioni di **creazione** per **script SMS** nel ruolo di sicurezza **Amministratore completo**.
+- **Per approvare o rifiutare script**: l'account deve avere autorizzazioni di **approvazione** per **script SMS** nel ruolo di sicurezza **Amministratore completo**.
 - **Per eseguire script**: l'account deve disporre delle autorizzazioni **Run Script** per **script SMS** nel ruolo di sicurezza **Gestione impostazioni di conformità**.
 
 Per altre informazioni sui ruoli di sicurezza di Configuration Manager, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](/sccm/core/understand/fundamentals-of-role-based-administration).
@@ -357,7 +357,7 @@ Per consentire agli utenti di approvare i propri script:
     - **Importa**: importare uno script di PowerShell nella console. Lo script viene visualizzato nel campo **Script**.
     - **Elimina**: rimuove lo script corrente dal campo **Script**.
     - **Script**: visualizza lo script attualmente importato. È possibile modificare lo script in questo campo in base alle esigenze.
-5. Completare la procedura guidata. Il nuovo script viene visualizzato nell'elenco **Script** con stato **In attesa di approvazione** . Prima di poter eseguire questo script nei dispositivi client, è necessario approvarlo.
+5. Completare la procedura guidata. Il nuovo script viene visualizzato nell'elenco **Script** con stato **In attesa di approvazione **. Prima di poter eseguire questo script nei dispositivi client, è necessario approvarlo.
 
 
 #### <a name="approve-or-deny-a-script"></a>Approvare o rifiutare uno script
