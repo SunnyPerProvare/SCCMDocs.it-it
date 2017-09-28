@@ -2,7 +2,7 @@
 title: Monitorare l'uso dell'app con la misurazione del software | Microsoft Docs
 description: 
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 09/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "8"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: d7bc0bebeb0355156553376a3535ed76d5e44835
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 87bafd8ce28d58993666057b6c5bfd8bdc0c4ed9
+ms.sourcegitcommit: 51654bf8b5615eb99084d0a20d18ca3fccfa83a1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="software-metering-in-system-center-configuration-manager"></a>Controllo del software in System Center Configuration Manager
 
@@ -86,7 +86,7 @@ Il controllo del software non ha dipendenze esterne, ma solo dipendenze all'inte
         >
         >  Questa casella è facoltativa se si specifica un valore per **Nome file** .
 
-    -   **Versione** - Versione del file eseguibile da controllare. È possibile usare il carattere jolly (*) per rappresentare qualsiasi stringa di caratteri e il carattere (?) per rappresentare qualsiasi carattere singolo. Per controllare tutte le versioni di un file eseguibile, usare il valore predefinito (\*).
+    -   **Versione** - Versione del file eseguibile da controllare. È possibile usare il carattere jolly (&#42;) per rappresentare qualsiasi stringa di caratteri o il carattere jolly (? ) per rappresentare qualsiasi carattere singolo. Per controllare tutte le versioni di un file eseguibile, usare il valore predefinito (&#42;).
 
     -   **Lingua** - Lingua del file eseguibile da controllare. Il valore predefinito corrisponde alle impostazioni locali correnti del sistema operativo in uso. Se si seleziona un file eseguibile da controllare facendo clic sul pulsante **Sfoglia** , questa casella viene compilata automaticamente se sono presenti informazioni sulla lingua nell'intestazione del file. Per controllare tutte le versioni localizzate di un file, selezionare **Qualsiasi** nell'elenco a discesa.
 

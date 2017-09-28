@@ -2,7 +2,7 @@
 title: Gestire i punti di distribuzione | Microsoft Docs
 description: Ospitare il contenuto (file e software) distribuito a utenti e dispositivi tramite punti di distribuzione. Ecco come installarli e configurarli.
 ms.custom: na
-ms.date: 2/14/2017
+ms.date: 09/18/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,16 +14,16 @@ caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 4c94e4de5bbfe621492e8682c9424a48eb38196d
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 0213b48c24461cbab5a9acab720064e0e26fa568
+ms.sourcegitcommit: 474e6ddbaaeac4ba17d8172321e08deeb0140d0a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="install-and-configure-distribution-points-for-system-center-configuration-manager"></a>Installare e configurare punti di distribuzione per System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
- 
+
 È possibile installare punti di distribuzione di System Center Configuration Manager per ospitare il contenuto (file e software) distribuito a utenti e dispositivi. È anche possibile creare gruppi di punti di distribuzione per semplificare la gestione dei punti di distribuzione e la distribuzione di contenuto ai punti di distribuzione stessi.  
 
  Quando si *installa un nuovo punto di distribuzione* tramite l'installazione guidata o si *gestiscono le proprietà di un punto di distribuzione esistente* modificando tali proprietà, è possibile configurare la maggior parte delle impostazioni dei punti di distribuzione. Alcune impostazioni sono disponibili solo durante l'installazione o la modifica, ma non in entrambi i casi:  
@@ -45,7 +45,8 @@ ms.lasthandoff: 08/07/2017
     -   **Configurare le pianificazioni per i trasferimenti di dati ai punti di distribuzione**  
 
 ##  <a name="bkmk_install"></a> Installare un punto di distribuzione  
- Prima che il contenuto possa essere reso disponibile nei computer client, è necessario designare un server del sistema del sito come punto di distribuzione. È possibile aggiungere il ruolo del sito del punto di distribuzione a un nuovo server del sistema del sito oppure aggiungere il ruolo del sito a un server del sistema del sito esistente.  
+Prima che il contenuto possa essere reso disponibile nei computer client, è necessario designare un server del sistema del sito come punto di distribuzione. È inoltre necessario assegnare un punto di distribuzione ad almeno un [gruppo di limiti](/sccm/core/servers/deploy/configure/boundary-groups#distribution-points) prima che i computer client locali possano usare tale punto di distribuzione come percorso di origine per il contenuto. È possibile aggiungere il ruolo del sito del punto di distribuzione a un nuovo server del sistema del sito oppure aggiungere il ruolo del sito a un server del sistema del sito esistente.
+
 
  Quando si installa un nuovo punto di distribuzione, si usa un'installazione guidata che illustra le impostazioni disponibili. Prima di iniziare, si tenga presente quanto segue:  
 
@@ -339,7 +340,7 @@ Per visualizzare i risultati del processo di convalida del contenuto, nell'area 
 >  Anche se la pianificazione della convalida del contenuto viene specificata usando l'ora locale per il computer, la pianificazione viene visualizzata nella console di Configuration Manager in formato UTC.  
 
 ### <a name="boundary-group"></a>Gruppo di limiti  
-Gestire i gruppi di limiti per i quali viene assegnato il punto di distribuzione. È possibile associare gruppi di limiti a un punto di distribuzione. Durante la distribuzione del contenuto, i client devono trovarsi in un gruppo di limiti associato al punto di distribuzione per usarlo come percorso di origine per il contenuto.
+Gestire i gruppi di limiti per i quali viene assegnato il punto di distribuzione. Pianificare l'aggiunta del punto di distribuzione ad almeno un gruppo di limiti. Durante la distribuzione del contenuto, i client devono trovarsi in un gruppo di limiti associato a un punto di distribuzione per usare tale punto di distribuzione come percorso di origine per il contenuto.
 
 Inoltre:
 

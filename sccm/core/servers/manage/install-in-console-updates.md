@@ -14,11 +14,11 @@ caps.latest.revision: "36"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 10ddbcc19da8c5fc6451f62500f17790a0349389
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 5302b5712e33c753d0193a32498bc02a2241428c
+ms.sourcegitcommit: 474e6ddbaaeac4ba17d8172321e08deeb0140d0a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="install-in-console-updates-for-system-center-configuration-manager"></a>Installare gli aggiornamenti nella console per System Center Configuration Manager
 
@@ -106,8 +106,8 @@ Prima di installare un aggiornamento, si consiglia di eseguire il controllo dei 
 
 -   Il controllo dei prerequisiti viene eseguito di nuovo automaticamente quando si sceglie di installare l'aggiornamento.  
 
-> [!NOTE]
-> Quando si avvia un controllo dei prerequisiti e quindi si visualizza lo stato, la fase **Installazione** risulta attiva, anche se l'installazione dell'aggiornamento non è effettivamente in corso. Viene visualizzata la fase Installazione perché alcune attività, ad esempio l'estrazione dei file binari necessari per eseguire il controllo, fanno parte della fase Installazione.  
+> [!NOTE]   
+> Quando si avvia un controllo dei prerequisiti e quindi si visualizza lo stato, la fase **Installazione** risulta attiva, anche se l'installazione dell'aggiornamento non è effettivamente in corso. Per eseguire il controllo dei prerequisiti, il processo di aggiornamento estrae il pacchetto dalla raccolta contenuto e lo inserisce in una cartella di gestione temporanea in cui è possibile accedere ai controlli dei prerequisiti correnti.  Questo stesso processo viene eseguito quando si installa un aggiornamento. Per questo motivo, la fase Installazione risulta "In corso". Solo il passaggio *Estrai aggiornamento* viene visualizzato nella categoria Installazione.  
 
 Successivamente, quando si installa l'aggiornamento, è possibile configurarlo in modo che ignori gli avvisi del controllo dei prerequisiti.  
 
