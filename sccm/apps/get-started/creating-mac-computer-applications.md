@@ -171,7 +171,7 @@ Usare la procedura che segue per creare e distribuire un'applicazione per comput
 11. Scegliere **Aggiungi** per aprire la finestra di dialogo **Creazione requisito** e aggiungere un nuovo requisito.  
 
     > [!NOTE]  
-    >  È anche possibile aggiungere nuovi requisiti nella scheda **Requisiti** della finestra di dialogo *Proprietà di\>*** <nome del tipo di distribuzione**.  
+    >  È anche possibile aggiungere nuovi requisiti nella scheda **Requisiti** della finestra di dialogo *Proprietà di\>* **<nome del tipo di distribuzione**.  
 
 12. Dall'elenco a discesa **Categoria** , selezionare che questo requisito riguarda un dispositivo.  
 

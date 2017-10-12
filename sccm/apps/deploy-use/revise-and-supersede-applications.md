@@ -32,7 +32,7 @@ In questo argomento verrà illustrato come rivedere le versioni delle applicazio
 
 ### <a name="to-display-an-application-revision-history"></a>Per visualizzare la cronologia delle revisioni di un'applicazione  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software ** > **Gestione applicazioni** > **Applicazioni** e quindi scegliere l'applicazione.  
+1.  Nella console di Configuration Manager scegliere **Raccolta software**  > **Gestione applicazioni** > **Applicazioni** e quindi scegliere l'applicazione.  
 
 3.  Nella scheda **Home**, nel gruppo **Applicazione** scegliere **Cronologia revisioni** per aprire la finestra di dialogo **Cronologia revisione applicazione**.  
 
@@ -98,7 +98,7 @@ In questo argomento verrà illustrato come rivedere le versioni delle applicazio
 
 ### <a name="to-specify-a-supersedence-relationship"></a>Per specificare una relazione di sostituzione  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software ** > **Gestione applicazioni** > **Applicazioni** e quindi scegliere l'applicazione che sostituisce un'altra applicazione.  
+1.  Nella console di Configuration Manager scegliere **Raccolta software**  > **Gestione applicazioni** > **Applicazioni** e quindi scegliere l'applicazione che sostituisce un'altra applicazione.  
 
 3.  Nel gruppo **Proprietà** della scheda **Home** scegliere **Proprietà** per aprire la finestra di dialogo **Proprietà** <nome applicazione>.  
 
