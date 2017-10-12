@@ -1,18 +1,18 @@
 ---
 title: Pianificare il gateway di gestione cloud | Microsoft Docs
 description: 
-ms.date: 06/07/2017
+ms.date: 10/06/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: d3e658714c30a1eba64f94e248d5e11095ca1dcb
-ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
+ms.openlocfilehash: c3d036eb91d16ed95c26bbf2bcce1e37851f90a2
+ms.sourcegitcommit: 8ac9c2c9ba1fdcbb7cc8d5be898586865fcf67c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 10/07/2017
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
@@ -46,9 +46,9 @@ Per autenticare i computer e crittografare le comunicazioni tra i diversi livell
 
     -   Distribuzione client
     -   Assegnazione automatica al sito
-    -   Criteri utente
     -   Catalogo applicazioni, incluse le richieste di approvazione software
     -   Distribuzione completa del sistema operativo
+    -   Sequenze di attività (tutte)
     -   Console di Configuration Manager
     -   Strumenti remoti
     -   Sito Web di Reporting
@@ -61,7 +61,7 @@ Per autenticare i computer e crittografare le comunicazioni tra i diversi livell
 ## <a name="cost-of-cloud-management-gateway"></a>Costo del gateway di gestione cloud
 
 >[!IMPORTANT]
->Le informazioni sui costi specificate di seguito sono puramente stime. Altre variabili di ambiente possono influire sul costo complessivo dell'uso del gateway di gestione cloud.
+>Le informazioni sui costi seguenti sono puramente stime. Altre variabili di ambiente possono influire sul costo complessivo dell'uso del gateway di gestione cloud.
 
 Il gateway di gestione cloud usa le funzionalità di Microsoft Azure seguenti, che vengono addebitate all'account di sottoscrizione di Azure:
 
@@ -78,7 +78,7 @@ Il gateway di gestione cloud usa le funzionalità di Microsoft Azure seguenti, c
 
 -   Trasferimento dati in uscita
 
-    -   Il flusso dati non compreso nel servizio viene addebitato. Vedere i [dettagli sui prezzi per la larghezza di banda di Azure](https://azure.microsoft.com/en-us/pricing/details/bandwidth/) per determinare i costi potenziali.
+    -   Il flusso dati non compreso nel servizio viene addebitato. Vedere i [dettagli sui prezzi per la larghezza di banda di Azure](https://azure.microsoft.com/pricing/details/bandwidth/) per determinare i costi potenziali.
 
     -   Per una stima, supporre circa 100 MB per client/mese per client basati su Internet che eseguono l'aggiornamento dei criteri ogni ora.
 
@@ -105,20 +105,20 @@ Usare questo ruolo per semplificare la gestione client basata su Internet esegue
 
 ### <a name="how-does-the-cloud-management-gateway-work"></a>Come funziona il gateway di gestione cloud?
 
-- Il punto di connessione del gateway di gestione cloud assicura una connessione coerente e a prestazioni elevate tra Internet e il gateway di gestione cloud.
+- Il punto di connessione del gateway di gestione cloud consente una connessione coerente e a prestazioni elevate tra Internet e il gateway di gestione cloud.
 - Configuration Manager pubblica le impostazioni nel gateway di gestione cloud, incluse le informazioni sulla connessione e le impostazioni di protezione.
 - Il gateway di gestione cloud autentica le richieste del client di Configuration Manager e le inoltra al punto di connessione del gateway di gestione cloud. Queste richieste vengono inoltrate ai ruoli della rete aziendale in base ai mapping di URL.
 
 ### <a name="how-is-the-cloud-management-gateway-deployed"></a>Come viene distribuito il gateway di gestione cloud?
 
-Il gestore del servizio cloud presente nel punto di connessione del servizio gestisce tutte le attività di distribuzione del gateway di gestione cloud. Esegue inoltre il monitoraggio e l'invio di informazioni sull'integrità del servizio e di registrazione da Azure AD.
+Il gestore del servizio cloud presente nel punto di connessione del servizio gestisce tutte le attività di distribuzione del gateway di gestione cloud. Esegue inoltre il monitoraggio e l'invio di informazioni sull'integrità del servizio e di registrazione da Azure AD. Verificare che il punto di connessione del servizio sia in [modalità online](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_modes).
 
 #### <a name="certificate-requirements"></a>Requisiti del certificato
 
 Per proteggere il gateway di gestione cloud sono necessari i certificati seguenti:
 
 - **Certificato di gestione**: può trattarsi di qualsiasi certificato, inclusi i certificati autofirmati. È possibile usare un certificato pubblico caricato in Azure AD o un certificato in formato [PFX con chiave privata](/sccm/mdm/deploy-use/create-pfx-certificate-profiles) importato in Configuration Manager per l'autenticazione con Azure AD.
-- **Certificato del servizio Web**: è consigliabile usare un certificato di un'autorità di certificazione pubblica per ottenere attendibilità nativa dai client. Il record CName deve essere creato nel registro DNS pubblico. I certificati con caratteri jolly non sono supportati.
+- **Certificato del servizio Web**: è consigliabile usare un certificato di un'autorità di certificazione pubblica per ottenere attendibilità nativa dai client. Creare il record CName nel registrar DNS pubblico. I certificati con caratteri jolly non sono supportati.
 - **Certificati dell'autorità di certificazione radice o subordinata**: il gateway di gestione cloud deve eseguire una convalida completa della catena sui certificati PKI del client. Se per l'emissione dei certificati PKI del client si usa un'autorità di certificazione dell'organizzazione e la relativa autorità di certificazione radice o subordinata non è disponibile in Internet, è necessario caricarla nel gateway di gestione cloud.
 
 #### <a name="deployment-process"></a>Processo di distribuzione
@@ -131,6 +131,9 @@ La distribuzione si articola in due fasi:
 - Impostare il gateway di gestione cloud sul server di Azure AD e configurare gli endpoint, i gestori HTTP e i servizi in Internet Information Services (IIS)
 
 Se si modifica la configurazione del gateway di gestione cloud, viene avviata una distribuzione di configurazione nel gateway di gestione cloud stesso.
+
+### <a name="where-do-i-set-up-the-cloud-management-gateway"></a>Dove viene configurato il gateway di gestione cloud?
+È possibile creare il gateway di gestione cloud nel sito di livello superiore della gerarchia. Se si tratta di un sito di amministrazione centrale, è possibile creare punti di connessione del gateway di gestione cloud nei siti primari figlio.
 
 ### <a name="how-does-the-cloud-management-gateway-help-ensure-security"></a>In che modo il gateway di gestione cloud consente di garantire la protezione?
 
@@ -150,7 +153,7 @@ Il gateway di gestione cloud consente di garantire la protezione nei modi seguen
     - Esegue l'autenticazione SSL reciproca con il gateway di gestione cloud usando certificati interni.
     - Inoltra le richieste HTTP in base ai mapping di URL.
     - Segnala lo stato della connessione per visualizzare lo stato di integrità del servizio di amministrazione.
-    - Genera un report sul traffico per ciascun endpoint ogni 5 minuti.
+    - Genera un report sul traffico per ogni endpoint ogni cinque minuti.
 
 - Protegge il client degli endpoint di pubblicazione di Configuration Manager con ruoli quali gli endpoint dell'host del punto di gestione e del punto di aggiornamento software in IIS per gestire le richieste client. Ogni endpoint pubblicato del gateway di gestione cloud ha un mapping di URL.
 L'URL esterno è quello usato dal client per comunicare con il gateway di gestione cloud.
@@ -164,7 +167,7 @@ Tutti gli URL esterni pubblicati vengono caricati automaticamente nel gateway di
 
 ### <a name="what-ports-are-used-by-the-cloud-management-gateway"></a>Quali porte vengono usate dal gateway di gestione cloud?
 
-- Nella rete locale non è necessaria alcuna porta in ingresso. La distribuzione del gateway di gestione cloud determina la creazione automatica di una serie di gateway di gestione cloud.
+- Nessuna porta in ingresso è necessaria per la rete locale. La distribuzione del gateway di gestione cloud determina la creazione automatica di una serie di gateway di gestione cloud.
 - Oltre alla 443, per il punto di connessione del gateway di gestione cloud sono necessarie alcune porte in uscita.
 
 |||||
@@ -179,7 +182,7 @@ Tutti gli URL esterni pubblicati vengono caricati automaticamente nel gateway di
 
 - Se possibile, configurare il gateway di gestione cloud, il punto di connessione del gateway di gestione cloud e il server del sito di Configuration Manager nella stessa area di rete per ridurre la latenza.
 - Attualmente la connessione tra il client di Configuration Manager e il gateway di gestione cloud non è in grado di riconoscere l'area.
-- Per ottenere la disponibilità elevata, è consigliabile avere almeno due istanze del gateway di gestione cloud e due punti di connessione del gateway di gestione cloud per sito
+- Per ottenere la disponibilità elevata, è consigliabile avere almeno due istanze virtuali del gateway di gestione cloud e due punti di connessione del gateway di gestione cloud per sito
 - È possibile scalare il gateway di gestione cloud per supportare più client mediante l'aggiunta di più istanze di macchine virtuali. Il bilanciamento del carico delle macchine virtuali viene eseguito dall'apposito servizio di Azure AD.
 - Creare altri punti di connessione del gateway di gestione cloud per distribuire il carico tra di essi. Il gateway di gestione cloud gestisce il traffico verso i propri punti di connessione mediante un approccio 'round robin'.
 - Nella versione 1702 il numero di client supportati per istanza di macchina virtuale del gateway di gestione cloud è 6000. Quando il carico di lavoro del canale del gateway di gestione cloud è molto elevato, la richiesta verrà comunque gestita, ma con tempi più lunghi del normale.

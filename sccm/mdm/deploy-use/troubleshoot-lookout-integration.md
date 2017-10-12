@@ -14,11 +14,11 @@ caps.latest.revision:
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.openlocfilehash: 4fd2d3b8aae6a2f42e7c6a87723d16368be30984
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: d353f47671a0c1e67c34bb9641fa9dd007b9f8be
+ms.sourcegitcommit: c145e515843a0f37c2e5ca5dbd22072a219d06b4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/03/2017
 ---
 # <a name="troubleshoot-lookout-integration-with-intune"></a>Risolvere i problemi di integrazione di Lookout con Intune
 
@@ -34,7 +34,7 @@ Lookout MTP consente l'accesso solo agli utenti di un gruppo di Azure AD configu
 
 * Posta elettronica: enterprisesupport@lookout.com
 * Accedere alla [console di MTP](http://aad.lookout.com) e passare al modulo **Support** (Supporto).
-* Accedere a: https://enterprise.support.lookout.com/hc/en-us/requests e creare una richiesta di supporto.
+* Accedere a: https://enterprise.support.lookout.com/hc/requests e creare una richiesta di supporto.
 
 ### <a name="unable-to-sign-in"></a>L'accesso non è riuscito
 Il seguente errore può apparire quando l'utente amministratore globale di Azure AD non ha accettato la configurazione iniziale di Lookup.
@@ -73,7 +73,7 @@ Se lo stato il dispositivo è disconnesso, Lookout MTP non ha ricevuto comunicaz
 Dal modulo **Devices** (Dispositivi) della console di Lookout MTP, l'amministratore può selezionare il dispositivo e scegliere di eliminarlo.   Quando il proprietario del dispositivo torna ad aprire l'app Lookout for Work e tocca **Activate** (Attiva), il dispositivo esegue una risincronizzazione completa.
 
 ### <a name="the-owner-of-the-device-is-no-longer-using-this-device"></a>Il proprietario del dispositivo non usa più il dispositivo
-È necessario cancellare i dati del dispositivo e richiedere al nuovo utente di eseguire la registrazione come descritto in [questo argomento](https://docs.microsoft.com/en-us/sccm/mdm/deploy-use/wipe-lock-reset-devices#full-wipe).
+È necessario cancellare i dati del dispositivo e richiedere al nuovo utente di eseguire la registrazione come descritto in [questo argomento](https://docs.microsoft.com/sccm/mdm/deploy-use/wipe-lock-reset-devices#full-wipe).
 
 
 È anche possibile scegliere il modulo **Devices** (Dispositivi) della console di Lookout MTP e scegliere **Delete** (Elimina).

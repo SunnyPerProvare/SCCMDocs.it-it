@@ -2,7 +2,7 @@
 title: Definizioni malware di Endpoint Protection | Microsoft Docs
 description: Informazioni su come configurare gli aggiornamenti software di Configuration Manager per recapitare gli aggiornamenti delle definizioni ai computer client.
 ms.custom: na
-ms.date: 02/14/2017
+ms.date: 10/06/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "21"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: ca40c2c745ea516b56b637249b892cd44e570a9d
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: d2c29ea4c2b49142c6e63e2b5e829271098eac70
+ms.sourcegitcommit: 8ac9c2c9ba1fdcbb7cc8d5be898586865fcf67c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/07/2017
 ---
 #  <a name="using-configuration-manager-software-updates-to-deliver-definition-updates"></a>Utilizzo degli aggiornamenti Software di Configuration Manager per distribuire gli aggiornamenti delle definizioni
 
@@ -68,15 +68,15 @@ ms.lasthandoff: 08/07/2017
 
 13. Fare clic su **OK** per chiudere la finestra di dialogo **Criteri di ricerca** e quindi fare clic su **Avanti**.
 
-14. Nell'elenco **Filtri proprietà** selezionare la casella di controllo **Sostituito** .
+14. Facoltativamente, è possibile filtrare gli aggiornamenti sostituiti.   A tale scopo, procedere nel seguente modo:
+  1.  Nell'elenco **Filtri proprietà** selezionare la casella di controllo **Sostituito** .
+  2.  Nell'elenco **Criteri di ricerca** fare clic su **<elementi da trovare\>**. Nella finestra di dialogo **Criteri di ricerca** selezionare quindi **No** nell'elenco **Specificare il valore da cercare**.  <br><br>
 
-15. Nell'elenco **Criteri di ricerca** fare clic su **<elementi da trovare\>**. Nella finestra di dialogo **Criteri di ricerca** selezionare quindi **No** nell'elenco **Specificare il valore da cercare**.
+15. Fare clic su **OK** per chiudere la finestra di dialogo **Criteri di ricerca** e quindi fare clic su **Avanti**.
 
-16. Fare clic su **OK** per chiudere la finestra di dialogo **Criteri di ricerca** e quindi fare clic su **Avanti**.
+16. Nella pagina **Pianificazione valutazione** della procedura guidata selezionare l'opzione **** per consentire l'esecuzione della regola in base a una pianificazione e quindi configurare la pianificazione in base a cui scaricare gli aggiornamenti delle definizioni. Impostare la regola in modo che venga almeno eseguita due ore dopo ogni sincronizzazione del punto di aggiornamento software. Fare clic su **Avanti**.
 
-17. Nella pagina **Pianificazione valutazione** della procedura guidata selezionare l'opzione **** per consentire l'esecuzione della regola in base a una pianificazione e quindi configurare la pianificazione in base a cui scaricare gli aggiornamenti delle definizioni. Impostare la regola in modo che venga almeno eseguita due ore dopo ogni sincronizzazione del punto di aggiornamento software. Fare clic su **Avanti**.
-
-18. Nella pagina **Pianificazione della distribuzione** della procedura guidata configurare le impostazioni seguenti:
+17. Nella pagina **Pianificazione della distribuzione** della procedura guidata configurare le impostazioni seguenti:
 
     -   **Tempo basato su**: selezionare **UTC** per fare in modo che tutti i client nella gerarchia installino le definizioni più aggiornate contemporaneamente. Il tempo di installazione effettivo può variare all'interno di una finestra di due ore. Questa è l'impostazione consigliata.
 
@@ -87,28 +87,28 @@ ms.lasthandoff: 08/07/2017
         > [!NOTE]
         >  Le scadenze degli aggiornamenti software variano all'interno di un periodo di due ore, per impedire che tutti i client richiedano un aggiornamento contemporaneamente.
 
-19. Fare clic su **Avanti**.
+18. Fare clic su **Avanti**.
 
-20. Nella pagina **Esperienza utente** della procedura guidata selezionare **Nascondi in Software Center e nascondi tutte le notifiche** nell'elenco **Notifiche utente**.   In questo modo, gli aggiornamenti delle definizioni verranno installati in modo invisibile all'utente. Fare clic su **Avanti**.
+19. Nella pagina **Esperienza utente** della procedura guidata selezionare **Nascondi in Software Center e nascondi tutte le notifiche** nell'elenco **Notifiche utente**.   In questo modo, gli aggiornamenti delle definizioni verranno installati in modo invisibile all'utente. Fare clic su **Avanti**.
 
-21. Nella pagina **Avvisi** della procedura guidata non è necessario configurare avvisi. Endpoint Protection in Configuration Manager genera avvisi che potrebbero essere necessari. Fare clic su **Avanti**.
+20. Nella pagina **Avvisi** della procedura guidata non è necessario configurare avvisi. Endpoint Protection in Configuration Manager genera avvisi che potrebbero essere necessari. Fare clic su **Avanti**.
 
-22. Nella pagina **Impostazioni download** della procedura guidata selezionare il comportamento di download degli aggiornamenti software necessario e quindi fare clic su **Avanti**.
+21. Nella pagina **Impostazioni download** della procedura guidata selezionare il comportamento di download degli aggiornamenti software necessario e quindi fare clic su **Avanti**.
 
-23. Nella pagina **Pacchetto di distribuzione** della procedura guidata selezionare un pacchetto di distribuzione esistente o crearne uno nuovo per contenere i file degli aggiornamenti software associati alla regola.
+22. Nella pagina **Pacchetto di distribuzione** della procedura guidata selezionare un pacchetto di distribuzione esistente o crearne uno nuovo per contenere i file degli aggiornamenti software associati alla regola.
 
     > [!NOTE]
     >  È consigliabile inserire gli aggiornamenti delle definizioni in un pacchetto che non contenga altri aggiornamenti software. In questo modo, le dimensioni del pacchetto di aggiornamenti delle definizioni resteranno contenute, consentendo una replica più veloce nei punti di distribuzione.
 
-24. Nella pagina **Punti di distribuzione** della procedura guidata selezionare uno o più punti di distribuzione in cui verrà copiato il contenuto del pacchetto e quindi fare clic su **Avanti**.
+23. Nella pagina **Punti di distribuzione** della procedura guidata selezionare uno o più punti di distribuzione in cui verrà copiato il contenuto del pacchetto e quindi fare clic su **Avanti**.
 
-25. Nella pagina **Percorso download** della procedura guidata selezionare **Scarica aggiornamenti software da Internet**e quindi fare clic su **Avanti**.
+24. Nella pagina **Percorso download** della procedura guidata selezionare **Scarica aggiornamenti software da Internet**e quindi fare clic su **Avanti**.
 
-26. Nella pagina **Selezione lingua** della procedura guidata selezionare ogni versione linguistica degli aggiornamenti da scaricare e quindi fare clic su **Avanti**.
+25. Nella pagina **Selezione lingua** della procedura guidata selezionare ogni versione linguistica degli aggiornamenti da scaricare e quindi fare clic su **Avanti**.
 
-27. Completare la Creazione guidata delle regole di distribuzione automatica.
+26. Completare la Creazione guidata delle regole di distribuzione automatica.
 
-28. Verificare che la nuova regola venga visualizzata nel nodo **Regole di distribuzione automatica** della console di Configuration Manager.
+27. Verificare che la nuova regola venga visualizzata nel nodo **Regole di distribuzione automatica** della console di Configuration Manager.
 
 
 > [!div class="button"]

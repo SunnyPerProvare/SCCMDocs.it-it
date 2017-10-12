@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: e6b29cd85504742e8638a55db2f6c4ecc8ab3e55
-ms.sourcegitcommit: 5ca89204716750eaaceb01bba40b35b85c7122ba
+ms.openlocfilehash: 4c90617890ba3751a7215e9ac54042d64cc1a227
+ms.sourcegitcommit: 96b79fa091f44e8e6ac5652f6cbbb4b873a8bad9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/18/2017
+ms.lasthandoff: 10/09/2017
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Creare ed eseguire script di PowerShell dalla console di Configuration Manager
 
@@ -46,7 +46,7 @@ Per usare gli script, l'utente deve essere membro del ruolo di sicurezza appropr
 
 - Per importare e creare script: l'account deve avere autorizzazioni di **creazione** per **script SMS** nel ruolo di sicurezza **Amministratore completo**.
 - Per approvare o rifiutare script: l'account deve avere autorizzazioni di **approvazione** per **script SMS** nel ruolo di sicurezza **Amministratore completo**.
-- Per eseguire script: l'account deve avere autorizzazioni di** esecuzione script** per **Raccolte** nel ruolo di sicurezza **Gestione impostazioni di conformità**.
+- Per eseguire script: l'account deve avere autorizzazioni di **esecuzione script** per **Raccolte** nel ruolo di sicurezza **Gestione impostazioni di conformità**.
 
 Per altre informazioni sui ruoli di sicurezza di Configuration Manager, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](/sccm/core/understand/fundamentals-of-role-based-administration).
 
@@ -59,6 +59,9 @@ Per impostazione predefinita, gli utenti non possono approvare uno script da lor
 3. Nell'elenco dei siti selezionare il sito e quindi scegliere la scheda **Home** nel gruppo **Siti** e fare clic su **Impostazioni gerarchia**.
 4. Nella scheda **Generale** della finestra di dialogo **Proprietà delle impostazioni di gerarchia** deselezionare la casella di controllo **Do not allow script authors to approve their own scripts** (Non consentire agli autori di script di approvare i propri script).
 
+>[!IMPORTANT]
+>Come procedura consigliata, non consentire a un autore di script di approvare i propri script. Questa operazione deve essere consentita solo in un ambiente di prova. Valutare con attenzione il potenziale impatto della modifica di questa impostazione in un ambiente di produzione.
+
 ## <a name="import-and-edit-a-script"></a>Importare e modificare uno script
 
 1. Nella console di Configuration Manager fare clic su **Raccolta software**.
@@ -70,7 +73,7 @@ Per impostazione predefinita, gli utenti non possono approvare uno script da lor
     - **Importa**: importare uno script di PowerShell nella console. Lo script viene visualizzato nel campo **Script**.
     - **Cancella**: rimuove lo script corrente dal campo Script.
     - **Script**: visualizza lo script attualmente importato. È possibile modificare lo script in questo campo in base alle esigenze.
-5. Completare la procedura guidata. Il nuovo script viene visualizzato nell'elenco **Script** con stato **In attesa di approvazione **. Prima di poter eseguire questo script nei dispositivi client, è necessario approvarlo.
+5. Completare la procedura guidata. Il nuovo script viene visualizzato nell'elenco **Script** con stato **In attesa di approvazione** . Prima di poter eseguire questo script nei dispositivi client, è necessario approvarlo.
 
 ### <a name="script-examples"></a>Esempi di script
 
@@ -108,6 +111,9 @@ Dopo che uno script è stato approvato, può essere eseguito su una raccolta a s
 
 >[!IMPORTANT]
 >All'esecuzione dello script viene assegnato un periodo di un'ora. Se lo script non viene eseguito in questo periodo di tempo, ad esempio se il PC è spento, è necessario eseguirlo nuovamente.
+
+>[!IMPORTANT]
+>Lo script viene eseguito come account del computer o di sistema sui computer client di destinazione. Questo account ha un accesso alla rete molto limitato. L'accesso dello script a sistemi e posizioni remoti deve essere eseguito tenendo conto di questo aspetto.
 
 ## <a name="next-steps"></a>Passaggi successivi
 

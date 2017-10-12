@@ -2,7 +2,7 @@
 title: Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando System Center Configuration Manager | Microsoft Docs
 description: Proteggere i dati del dispositivo con cancellazione completa, cancellazione selettiva, blocco remoto o reimpostazione passcode usando System Center Configuration Manager.
 ms.custom: na
-ms.date: 03/27/2017
+ms.date: 09/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: 770da7bd-02dd-474a-9604-93ff1ea0c1e4
 caps.latest.revision: "18"
 caps.handback.revision: "0"
-author: nathbarn
-ms.author: nathbarn
+author: dougeby
+ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 351fdc6328dd0859d60e00b128963df738e69f81
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: ea92d7b4656a04f312f04c19cac6b17df931c9c5
+ms.sourcegitcommit: db079cd7322e7d4926b2df0ccb37e752c570d902
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-system-center-configuration-manager"></a>Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando System Center Configuration Manager
 
@@ -179,6 +179,9 @@ Se un utente dimentica il passcode, è possibile aiutarlo rimuovendo il passcode
 |Windows RT 8.1 |Non supportata.|  
 |PC con Windows 8.1 |Non supportata.|  
 
+> [!Note]    
+> È necessario eseguire l'operazione di reimpostazione del passcode dal sito di livello superiore nell'ambiente in uso. Ad esempio, se si usa un sito di amministrazione centrale è possibile eseguire l'azione solo in tale sito. Se si usa un sito primario autonomo è possibile eseguire l'azione solo in tale sito.
+
 #### <a name="to-reset-the-passcode-on-a-mobile-device-remotely-in-configuration-manager"></a>Per reimpostare il passcode su un dispositivo mobile in modalità remota in Configuration Manager  
 
 1. Nella console di Configuration Manager selezionare **Asset e conformità** e scegliere **Dispositivi**. In alternativa, è possibile scegliere **Raccolte dispositivi** e selezionare una raccolta.  
@@ -206,6 +209,9 @@ Se un utente perde il dispositivo, è possibile bloccare il dispositivo in modal
 |Windows Phone 8 e Windows Phone 8.1|Supportata.|  
 |Windows RT 8.1 |Funzionalità supportata se l'utente corrente del dispositivo è lo stesso utente che ha registrato il dispositivo.|  
 |Windows 8.1|Funzionalità supportata se l'utente corrente del dispositivo è lo stesso utente che ha registrato il dispositivo.|  
+
+> [!Note]    
+> È necessario eseguire l'operazione di blocco remoto dal sito di livello superiore nell'ambiente in uso. Ad esempio, se si usa un sito di amministrazione centrale è possibile eseguire l'azione solo in tale sito. Se si usa un sito primario autonomo è possibile eseguire l'azione solo in tale sito.
 
 #### <a name="to-lock-a-mobile-device-remotely-through-the-configuration-manager-console"></a>Per bloccare un dispositivo mobile in modalità remota tramite la console di Configuration Manager  
 

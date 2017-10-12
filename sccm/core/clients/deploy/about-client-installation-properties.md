@@ -14,11 +14,11 @@ caps.latest.revision: "15"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 5148fe852e4d63e1cfd2d5b9c62369155dbecb89
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: ef515da67a7293de60a7678dee69e9785d339352
+ms.sourcegitcommit: 96b79fa091f44e8e6ac5652f6cbbb4b873a8bad9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/09/2017
 ---
 # <a name="about-client-installation-properties-in-system-center-configuration-manager"></a>Informazioni sulle proprietà di installazione del client in System Center Configuration Manager
 
@@ -179,7 +179,7 @@ Esempio: `ccmsetup.exe /downloadtimeout:100`
 
  Quando non è specificata, il client controlla l'elenco di revoche di certificati prima di stabilire una connessione HTTPS.  
 
- Per altre informazioni sul controllo CRL client, vedere [Planning for PKI certificate revocation](../../plan-design/security/plan-for-security.md#BKMK_PlanningForCRLs) in[Plan for security in System Center Configuration Manager](../../plan-design/security/plan-for-security.md).  
+ Per altre informazioni sul controllo CRL client, vedere [Pianificare revoche di certificati PKI](../../plan-design/security/plan-for-security.md#BKMK_PlanningForCRLs) in [Pianificare la sicurezza in System Center Configuration Manager](../../plan-design/security/plan-for-security.md).  
 
  Esempio: `CCMSetup.exe /UsePKICert /NoCRLCheck`  
 
@@ -332,7 +332,7 @@ Esempio: **CCMSetup.exe  CCMALLOWSILENTREBOOT**
 
  Non specificare questa opzione con la proprietà di installazione SMSSITECODE=AUTO. I client basati su Internet devono essere assegnati direttamente ai relativi siti basati su Internet.  
 
- Esempio: `CCMSetup.exe  /UsePKICert/ CCMHOSTNAME="SMSMP01.corp.contoso.com"`  
+ Esempio: `CCMSetup.exe  /UsePKICert CCMHOSTNAME="SMSMP01.corp.contoso.com"`  
 
 ### <a name="ccmhttpport"></a>CCMHTTPPORT
 
@@ -402,7 +402,7 @@ Esempio: `CCMSetup.exe DISABLECACHEOPT=TRUE`
 
 Specifica il punto di stato di fallback che riceve ed elabora i messaggi di stato inviati dai computer client di Configuration Manager.  
 
-Per altre informazioni sul punto di stato di fallback, vedere [Stabilire se è necessario un punto di stato di fallback](/sccm/core/clients/deploy/plan#determine-if-you-need-a-fallback-status-point).  
+Per altre informazioni sul punto di stato di fallback, vedere [Stabilire se è necessario un punto di stato di fallback](/sccm/core/clients/deploy/plan/determine-the-site-system-roles-for-clients#determine-if-you-need-a-fallback-status-point).  
 
 Esempio: `CCMSetup.exe FSP=SMSFP01`  
 
