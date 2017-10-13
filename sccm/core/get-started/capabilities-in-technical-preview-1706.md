@@ -39,7 +39,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
     - **Blocca il debug USB nel dispositivo**
     - **Blocca app da origini sconosciute**
 
-        Ad esempio, se gli amministratori impostano **Blocca il debug USB nel dispositivo ** su **true**, tutti i dispositivi che non hanno attivato l'USB in esecuzione sono contrassegnati come non conformi.
+        Ad esempio, se gli amministratori impostano **Blocca il debug USB nel dispositivo**  su **true**, tutti i dispositivi che non hanno attivato l'USB in esecuzione sono contrassegnati come non conformi.
 
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
@@ -272,7 +272,7 @@ I prerequisiti per la [connessione a Preparazione aggiornamenti](/sccm/core/clie
 Dopo aver configurato i prerequisiti, si è pronti a usare la procedura guidata per creare la connessione.
 
 ### <a name="use-the-azure-services-wizard-to-configure-upgrade-readiness"></a>Usare la procedura guidata dei servizi di Azure per configurare Preparazione aggiornamenti
-1.  Nella console passare ad **Amministrazione** > **Panoramica** > **Servizi cloud** > **Servizi di Azure** e quindi scegliere **Configura i servizi di Azure** dalla scheda** Home** della barra multifunzione per avviare la **Procedura guidata per i servizi di Azure**.
+1.  Nella console passare ad **Amministrazione** > **Panoramica** > **Servizi cloud** > **Servizi di Azure** e quindi scegliere **Configura i servizi di Azure** dalla scheda **Home** della barra multifunzione per avviare la **Procedura guidata per i servizi di Azure**.
 
 2.  Nella pagina **Servizi di Azure** selezionare **Connettore Upgrade Readiness** e quindi fare clic su **Avanti**.
 
@@ -357,7 +357,7 @@ Per consentire agli utenti di approvare i propri script:
     - **Importa**: importare uno script di PowerShell nella console. Lo script viene visualizzato nel campo **Script**.
     - **Elimina**: rimuove lo script corrente dal campo **Script**.
     - **Script**: visualizza lo script attualmente importato. È possibile modificare lo script in questo campo in base alle esigenze.
-5. Completare la procedura guidata. Il nuovo script viene visualizzato nell'elenco **Script** con stato **In attesa di approvazione **. Prima di poter eseguire questo script nei dispositivi client, è necessario approvarlo.
+5. Completare la procedura guidata. Il nuovo script viene visualizzato nell'elenco **Script** con stato **In attesa di approvazione** . Prima di poter eseguire questo script nei dispositivi client, è necessario approvarlo.
 
 
 #### <a name="approve-or-deny-a-script"></a>Approvare o rifiutare uno script

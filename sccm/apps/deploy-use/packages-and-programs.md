@@ -48,7 +48,7 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 
 ### <a name="create-a-package-and-program-using-the-create-package-and-program-wizard"></a>Creare un pacchetto e un programma tramite la Creazione guidata pacchetto e programma  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software ** > **Gestione applicazioni** > **Pacchetti**.  
+1.  Nella console di Configuration Manager scegliere **Raccolta software**  > **Gestione applicazioni** > **Pacchetti**.  
 
 3.  Nel gruppo **Crea** della scheda **Home** scegliere **Crea pacchetto**.  
 
@@ -136,7 +136,7 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
              Per impostazione predefinita, il valore è impostato su 120 minuti.  
 
             > [!IMPORTANT]  
-            >  Se si usano finestre di manutenzione per la raccolta in cui viene eseguito il programma, può verificarsi un conflitto se il valore di **Tempo di esecuzione massimo consentito ** è maggiore della finestra di manutenzione pianificata. Se il tempo di esecuzione massimo è invece impostato su **Sconosciuto**, il programma viene avviato durante la finestra di manutenzione e l'esecuzione prosegue nel modo necessario dopo il termine della finestra di manutenzione. Se l'utente imposta il tempo di esecuzione massimo su una durata specifica maggiore della durata di qualsiasi finestra di manutenzione disponibile, il programma non viene eseguito.  
+            >  Se si usano finestre di manutenzione per la raccolta in cui viene eseguito il programma, può verificarsi un conflitto se il valore di **Tempo di esecuzione massimo consentito**  è maggiore della finestra di manutenzione pianificata. Se il tempo di esecuzione massimo è invece impostato su **Sconosciuto**, il programma viene avviato durante la finestra di manutenzione e l'esecuzione prosegue nel modo necessario dopo il termine della finestra di manutenzione. Se l'utente imposta il tempo di esecuzione massimo su una durata specifica maggiore della durata di qualsiasi finestra di manutenzione disponibile, il programma non viene eseguito.  
 
              Se il valore impostato è **Sconosciuto**, Configuration Manager imposta un limite massimo di esecuzione di 12 ore (720 minuti).  
 
@@ -182,7 +182,7 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 
 ## <a name="create-a-package-and-program-from-a-package-definition-file"></a>Per creare un pacchetto e un programma da un file di definizione del pacchetto  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software ** > **Gestione applicazioni** > **Pacchetti**.  
+1.  Nella console di Configuration Manager scegliere **Raccolta software**  > **Gestione applicazioni** > **Pacchetti**.  
 
 3.  Nel gruppo **Crea** della scheda **Home** scegliere **Crea pacchetto da definizione**.  
 
@@ -198,7 +198,7 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 
 ##  <a name="deploy-packages-and-programs"></a>Distribuire pacchetti e programmi  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software ** > **Gestione applicazioni** > **Pacchetti**.  
+1.  Nella console di Configuration Manager scegliere **Raccolta software**  > **Gestione applicazioni** > **Pacchetti**.  
 
 2.  Selezionare il pacchetto che si vuole distribuire. Nel gruppo **Distribuzione** della scheda **Home** scegliere **Distribuisci**.  
 
