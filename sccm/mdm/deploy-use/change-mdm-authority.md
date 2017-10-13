@@ -1,6 +1,6 @@
 ---
 title: "Cambiare l'autorità MDM | Microsoft Docs"
-description: "Informazioni su come cambiare l'autorità MDM da Configuration Manager (ibrido) in Intune autonomo e viceversa."
+description: "Informazioni su come cambiare l'autorità MDM da Configuration Manager (ibrido) a Intune autonomo"
 keywords: 
 author: dougeby
 manager: angrobe
@@ -9,14 +9,17 @@ ms.topic: article
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: cc397ab5-125f-4f17-905b-fab980194f49
-ms.openlocfilehash: d24e6e736397a4612db7b47e997d8cb1f97c4de9
-ms.sourcegitcommit: 948644072bd158b156f782a4376bcd50fac7c73a
+ms.openlocfilehash: 489c01f92d42ed12ac5464307a16713ca898d251
+ms.sourcegitcommit: 8ac9c2c9ba1fdcbb7cc8d5be898586865fcf67c0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 10/07/2017
 ---
 # <a name="change-your-mdm-authority"></a>Cambiare l'autorità MDM
 A partire dalla versione 1610 di Configuration Manager, è possibile cambiare l'autorità MDM senza bisogno di contattare il supporto tecnico Microsoft e senza dover annullare e ripetere la registrazione dei dispositivi gestiti esistenti. Questo argomento descrive i passaggi per modificare un tenant esistente di Microsoft Intune configurato dalla console di Configuration Manager (ibrido) a Intune autonomo.
+
+> [!Note]    
+> Se si vuole modificare un tenant di Microsoft Intune esistente, con l'autorità MDM impostata su Intune, a Configuration Manager (ibrido), vedere [Cambiare l'autorità MDM](https://docs.microsoft.com/intune-classic/deploy-use/change-mdm-authority).
 
 > [!Important]    
 > Questo argomento riguarda la modifica dell'autorità MDM quando non è stata eseguita la migrazione di utenti in precedenza. Per cambiare l'autorità MDM dopo aver eseguito la [migrazione di un subset di utenti](migrate-hybridmdm-to-intunesa.md), vedere [Cambiare l'autorità MDM](migrate-change-mdm-authority.md).
