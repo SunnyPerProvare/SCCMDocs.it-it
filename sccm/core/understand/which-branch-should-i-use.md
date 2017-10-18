@@ -108,9 +108,9 @@ LTSB si basa su Current Branch 1606, con le limitazioni seguenti:
 - È possibile convertire l'installazione LTSB a un'installazione Current Branch. La conversione a Current Branch è supportata prima o dopo la scadenza del supporto per LTSB.
 
   Per eseguire la conversione, è necessario disporre di un contratto Software Assurance attivo con Microsoft. Per altre informazioni, vedere i seguenti collegamenti:
-  - [Upgrade the Long-Term Servicing Branch to the Current Branch](convert-to-current-branch.md) (Aggiornare Long-Term Servicing Branch a Current Branch)
-  - [Licensing and branches for System Center Configuration Manager](learn-more-editions.md) (Licenze e rami per System Center Configuration Manager)
-  - La sezione[Baseline and update versions](/sccm/core/servers/manage/updates#baseline-and-update-versions) (Versioni di base e di aggiornamento) in [Updates for Configuration Manager](/sccm/core/servers/manage/updates) (Aggiornamenti per System Center Configuration Manager)
+  - [Aggiornare Long-Term Servicing Branch a Current Branch](convert-to-current-branch.md)
+  - [Licenze e rami per System Center Configuration Manager](learn-more-editions.md)
+  - La sezione[Versioni di base e di aggiornamento](/sccm/core/servers/manage/updates#baseline-and-update-versions) in [Aggiornamenti per System Center Configuration Manager](/sccm/core/servers/manage/updates)
 - Non è possibile convertire LTSB in Technical Preview. Le Technical Preview sono installazioni distinte che non richiedono una licenza.
 -   Non è possibile aggiornare una copia di valutazione di Current Branch a un'installazione LTSB.
 
