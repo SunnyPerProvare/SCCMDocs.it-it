@@ -48,7 +48,7 @@ Per consentire agli utenti di registrare i propri dispositivi per la gestione de
 5.  In Crea profilo di registrazione digitare un nome per il profilo di registrazione e scegliere il codice del sito di gestione che gli utenti con il profilo di registrazione dovranno usare. Fare clic su **OK** più volte per uscire dalla pagina Impostazioni predefinite.  
 
 > [!NOTE]  
->  Se si vuole distribuire il profilo di registrazione a un sottoinsieme degli utenti individuati, è possibile usare una raccolta di utenti e creare impostazioni client personalizzate per eseguire la distribuzione in tale raccolta. Per informazioni sulla creazione di impostazioni client personalizzate, vedere [How to configure client settings in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md)  
+>  Se si vuole distribuire il profilo di registrazione a un sottoinsieme degli utenti individuati, è possibile usare una raccolta di utenti e creare impostazioni client personalizzate per eseguire la distribuzione in tale raccolta. Per informazioni sulla creazione di impostazioni client personalizzate, vedere [Come configurare le impostazioni client in System Center Configuration Manage](../../core/clients/deploy/configure-client-settings.md)  
 
 ##  <a name="bkmk_addClient"></a> Configurare altre impostazioni client per i dispositivi registrati  
  Oltre a configurare il profilo di registrazione per dispositivi moderni, è possibile usare altre impostazioni client per configurare i dispositivi quando vengono registrati.  Per informazioni sulla configurazione delle impostazioni client, vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md).  
