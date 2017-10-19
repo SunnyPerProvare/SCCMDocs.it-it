@@ -97,7 +97,7 @@ Per System Center Configuration Manager versione 1706, questo livello include i 
 
 - Tipi di punto di distribuzione e di punto di gestione e informazioni di base sulla configurazione (protetto, pre-installato, PXE, multicast, stato di SSL, punti di distribuzione pull/peer, abilitato per MDM, abilitato per SSL e così via)
 
-- ***[Nuovo] *** Elenco di estensioni con hash per le pagine delle proprietà e le procedure guidate della console di amministrazione
+- ***[Nuovo]***  Elenco di estensioni con hash per le pagine delle proprietà e le procedure guidate della console di amministrazione
 
 - Informazioni sull'installazione:
      - Build, tipo di installazione, Language Pack, funzionalità abilitate   
@@ -135,7 +135,7 @@ Per System Center Configuration Manager versione 1706, questo livello include i 
 
    - Statistiche sull'approvazione delle applicazioni e frequenza di utilizzo
 
-   - ***[Nuovo] *** Statistiche sulle dimensioni del contenuto delle applicazioni
+   - ***[Nuovo]***  Statistiche sulle dimensioni del contenuto delle applicazioni
 
    - Informazioni sulla distribuzione delle applicazioni (uso dell'installazione rispetto alla disinstallazione, obbligatorietà dell'approvazione, abilitazione o disabilitazione dell'interazione con l'utente, dipendenza, sostituzione e numero di utilizzi della funzionalità relativa al comportamento dell'installazione)  
 
@@ -155,9 +155,9 @@ Per System Center Configuration Manager versione 1706, questo livello include i 
 
    - Numero di applicazioni a cui fa riferimento una sequenza di attività
 
-   - ***[Nuovo] *** Numero di personalizzazioni distinte per catalogo applicazioni
+   - ***[Nuovo]***  Numero di personalizzazioni distinte per catalogo applicazioni
 
-   - ***[Nuovo] *** Numero di applicazioni Office 365 create tramite il dashboard
+   - ***[Nuovo]***  Numero di applicazioni Office 365 create tramite il dashboard
 
    - Numero di pacchetti per tipo  
 
@@ -165,7 +165,7 @@ Per System Center Configuration Manager versione 1706, questo livello include i 
 
    - Numero di licenze per applicazioni con licenza Windows 10  
 
-   - ***[New] *** Numero dei tipi di distribuzione di Windows Installer per impostazione di disinstallazione del contenuto
+   - ***[New]***  Numero dei tipi di distribuzione di Windows Installer per impostazione di disinstallazione del contenuto
 
    - Numero di app di Windows Store per le aziende e statistiche di sincronizzazione, inclusi il riepilogo dei tipi di app, lo stato delle app con licenza e il numero di app con licenza online e offline  
 
