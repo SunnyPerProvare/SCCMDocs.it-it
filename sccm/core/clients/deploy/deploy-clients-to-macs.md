@@ -125,7 +125,7 @@ Per automatizzare le operazioni per registrare molti client, usare lo [strumento
 
         -   'dominio\nome'. Ad esempio: 'contoso\mnorth'  
 
-        -   'user@domain'. Ad esempio: 'mnorth@contoso.com'  
+        -   'user@domain'.  Ad esempio: 'mnorth@contoso.com'  
 
             > [!IMPORTANT]  
             >  Se si usa un indirizzo di posta elettronica per compilare il campo **Nome utente**, il nome di dominio dell'indirizzo di posta elettronica e il nome predefinito del server del punto proxy di registrazione vengono usati da Configuration Manager per compilare automaticamente il campo **Nome server**. Se il nome di dominio e il nome del server non corrispondono al nome del server del punto proxy di registrazione, comunicare agli utenti il nome corretto da usare durante la registrazione dei computer Mac.  
@@ -157,7 +157,7 @@ Usare questa procedura per automatizzare l'installazione del client e la richies
 
     -   'dominio\nome'. Ad esempio: 'contoso\mnorth'  
 
-    -   'user@domain'. Ad esempio: 'mnorth@contoso.com'  
+    -   'user@domain'.  Ad esempio: 'mnorth@contoso.com'  
 
      Il nome utente e la relativa password devono corrispondere a un account utente Active Directory a cui sono concesse la autorizzazioni di Lettura e Registrazione nel modello di certificato del client Mac.  
 
