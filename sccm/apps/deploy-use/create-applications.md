@@ -433,7 +433,7 @@ La tabella seguente contiene script di esempio di Visual Basic (VB) che è possi
 
 5.  Nella finestra di dialogo *Proprietà\>***<Nome tipo di distribuzione**, nella scheda **Pubblicazione**, selezionare gli elementi nell'applicazione virtuale da pubblicare.  
 
-6.  Scegliere **OK** per chiudere la finestra di dialogo *Proprietà\>* ** <nome tipo distribuzione**.  
+6.  Scegliere **OK** per chiudere la finestra di dialogo *Proprietà\>*  **<nome tipo distribuzione**.  
 
 7.  Scegliere **OK** per chiudere la finestra di dialogo **Proprietà** *<nome applicazione\>*.  
 
