@@ -121,7 +121,7 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
  Un report basato su modello consente di selezionare in modo interattivo gli elementi da includere nel report. Per altre informazioni su come creare modelli di report personalizzati, vedere [Creazione di modelli di report personalizzati per System Center Configuration Manager in SQL Server Reporting Services](creating-custom-report-models-in-sql-server-reporting-services.md).  
 
 > [!IMPORTANT]  
->  Per creare un nuovo report, l'account utente deve disporre di autorizzazioni di modifica del sito **** . L'utente può creare un report solo nelle cartelle per cui dispone di autorizzazioni di tipo **Modifica report** .  
+>  Per creare un nuovo report, l'account utente deve disporre di autorizzazioni di **modifica del sito** . L'utente può creare un report solo nelle cartelle per cui dispone di autorizzazioni di tipo **Modifica report** .  
 
  Seguire le procedure seguenti per creare un report di Configuration Manager basato su modello.  
 
@@ -166,7 +166,7 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
 >  Quando si crea un'istruzione SQL per un report personalizzato, è necessario non fare riferimento direttamente alle tabelle SQL Server. Fare invece riferimento alle viste di SQL Server per la creazione di report \(nomi di viste che iniziano con v\_\) dal database del sito. È anche possibile fare riferimento a stored procedure pubbliche \(nomi di stored procedure che iniziano con sp\_\) dal database del sito.  
 
 > [!IMPORTANT]  
->  Per creare un nuovo report, l'account utente deve disporre di autorizzazioni di modifica del sito **** . L'utente può creare un report solo nelle cartelle per cui dispone di autorizzazioni di tipo **Modifica report** .  
+>  Per creare un nuovo report, l'account utente deve disporre di autorizzazioni di **modifica del sito** . L'utente può creare un report solo nelle cartelle per cui dispone di autorizzazioni di tipo **Modifica report** .  
 
  Seguire le procedure seguenti per creare un report di Configuration Manager basato su SQL.  
 
