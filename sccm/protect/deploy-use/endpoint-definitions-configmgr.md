@@ -74,7 +74,7 @@ ms.lasthandoff: 10/07/2017
 
 15. Fare clic su **OK** per chiudere la finestra di dialogo **Criteri di ricerca** e quindi fare clic su **Avanti**.
 
-16. Nella pagina **Pianificazione valutazione** della procedura guidata selezionare l'opzione **** per consentire l'esecuzione della regola in base a una pianificazione e quindi configurare la pianificazione in base a cui scaricare gli aggiornamenti delle definizioni. Impostare la regola in modo che venga almeno eseguita due ore dopo ogni sincronizzazione del punto di aggiornamento software. Fare clic su **Avanti**.
+16. Nella pagina **Pianificazione valutazione** della procedura guidata selezionare l'opzione per consentire **l'esecuzione della regola in base a una pianificazione** e quindi configurare la pianificazione in base a cui scaricare gli aggiornamenti delle definizioni. Impostare la regola in modo che venga almeno eseguita due ore dopo ogni sincronizzazione del punto di aggiornamento software. Fare clic su **Avanti**.
 
 17. Nella pagina **Pianificazione della distribuzione** della procedura guidata configurare le impostazioni seguenti:
 
