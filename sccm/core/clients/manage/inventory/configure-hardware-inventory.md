@@ -21,7 +21,7 @@ ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-configure-hardware-inventory-in-system-center-configuration-manager"></a>How to configure hardware inventory in System Center Configuration Manager
+# <a name="how-to-configure-hardware-inventory-in-system-center-configuration-manager"></a>Come configurare l'inventario hardware in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
