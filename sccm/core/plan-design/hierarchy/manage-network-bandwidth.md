@@ -1,5 +1,6 @@
 ---
-title: Gestire la larghezza di banda della rete per il contenuto | Microsoft Docs
+title: Gestire la larghezza di banda della rete per il contenuto
+titleSuffix: Configuration Manager
 description: Configurare la pianificazione, la limitazione della larghezza di banda della rete e il contenuto pre-installato per System Center Configuration Manager.
 ms.custom: na
 ms.date: 2/6/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: d9dff97126c34a726677de60dd7647370c553b6e
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 5431f23c16ed452223ad931266adad4c20739124
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="manage-network-bandwidth-for-content"></a>Gestire la larghezza di banda della rete per il contenuto
 Per gestire più facilmente la larghezza di banda della rete usata per il processo di gestione del contenuto di System Center Configuration Manager, è possibile usare i controlli predefiniti per la pianificazione e la limitazione della larghezza di banda della rete. È inoltre possibile usare contenuto pre-installato. Le sezioni seguenti includono informazioni più dettagliate su queste opzioni.

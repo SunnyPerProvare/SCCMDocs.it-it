@@ -1,5 +1,6 @@
 ---
-title: "Creare supporti per sequenza di attività con System Center Configuration Manager | Microsoft Docs"
+title: "Crea supporto per sequenza di attività"
+titleSuffix: Configuration Manager
 description: "È possibile creare supporti per sequenza di attività, ad esempio un CD, per distribuire un sistema operativo in un computer di destinazione nell'ambiente di Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: bd5448d70c2d465347de840cb197d4c33075c90a
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: d3ba78ae32f62a74b73d7b1387d11265a9e41f77
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="create-task-sequence-media-with-system-center-configuration-manager"></a>Creare supporti per sequenza di attività con System Center Configuration Manager
 

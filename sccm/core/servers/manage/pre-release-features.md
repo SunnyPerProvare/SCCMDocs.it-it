@@ -1,5 +1,6 @@
 ---
-title: "Funzionalità di versioni non definitive| Microsoft Docs"
+title: "Funzionalità di versioni non definitive"
+titleSuffix: Configuration Manager
 description: "Funzionalità di versioni non definitive in System Center Configuration Manager"
 ms.custom: na
 ms.date: 7/31/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "36"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 7b594daeed81ef2d991ad06489f9184a69804117
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 6d7ec308aa465f2b715ce51b8c6bbbe59faaf2cb
+ms.sourcegitcommit: b36f8c8b06e4b2e13f8c1500a82af79a071ab4f6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/20/2017
 ---
 # <a name="pre-release-features-in-system-center-configuration-manager"></a>Funzionalità di versioni non definitive in System Center Configuration Manager
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -50,7 +51,7 @@ Se dopo aver dato il consenso a un sito primario autonomo si espande la gerarchi
 |------------------|---------------------|---------------------|
 | Creare ed eseguire script di PowerShell dalla console di Configuration Manager |  [Versione 1706](/sccm/apps/deploy-use/create-deploy-scripts)|![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Gestione di Device Guard con Configuration Manager |  [Versione 1702](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)|![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Controllare l'esecuzione di file eseguibili prima di installare un'applicazione  |   [Versione 1702](/sccm/apps/deploy-use/deploy-applications#how-to-check-for-running-executable-files-before-installing-an-application) |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+| Controllare l'esecuzione di file eseguibili prima di installare un'applicazione  |   [Versione 1702](/sccm/apps/deploy-use/deploy-applications#how-to-check-for-running-executable-files-before-installing-an-application) |[Versione 1706](/sccm/apps/deploy-use/deploy-applications#how-to-check-for-running-executable-files-before-installing-an-application)|
 | Punto di servizio del data warehouse  |  [Versione 1702](/sccm/core/servers/manage/data-warehouse) |[Versione 1706](/sccm/core/servers/manage/data-warehouse)|
 | Peer cache per la distribuzione del contenuto ai client |  [Versione 1610](/sccm/core/plan-design/hierarchy/client-peer-cache) |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Gateway di gestione cloud |  [Versione 1610](/sccm/core/clients/manage/plan-cloud-management-gateway) |![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|

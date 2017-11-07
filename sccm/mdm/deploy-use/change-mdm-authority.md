@@ -1,19 +1,20 @@
 ---
-title: "Cambiare l'autorità MDM | Microsoft Docs"
+title: "Cambiare l'autorità MDM"
+titleSuffix: Configuration Manager
 description: "Informazioni su come cambiare l'autorità MDM da Configuration Manager (ibrido) a Intune autonomo"
 keywords: 
 author: dougeby
 manager: angrobe
-ms.date: 09/14/2017
+ms.date: 10/04/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: cc397ab5-125f-4f17-905b-fab980194f49
-ms.openlocfilehash: 489c01f92d42ed12ac5464307a16713ca898d251
-ms.sourcegitcommit: 8ac9c2c9ba1fdcbb7cc8d5be898586865fcf67c0
+ms.openlocfilehash: cbf45c5f9f04affc65243fdc4c8410d4ff033c1e
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="change-your-mdm-authority"></a>Cambiare l'autorità MDM
 A partire dalla versione 1610 di Configuration Manager, è possibile cambiare l'autorità MDM senza bisogno di contattare il supporto tecnico Microsoft e senza dover annullare e ripetere la registrazione dei dispositivi gestiti esistenti. Questo argomento descrive i passaggi per modificare un tenant esistente di Microsoft Intune configurato dalla console di Configuration Manager (ibrido) a Intune autonomo.
@@ -75,7 +76,7 @@ Quando si usano dispositivi iOS, è necessario configurare il certificato APN in
     In the [Azure portal](https://azure.portal.com), choose **More Services** &gt; **Monitoring + Management** &gt; **Intune**. On the **Intune** blade, choose **Device enrollment** &gt; **Apple Enrollment** &gt; **Apple MDM Push Certificate**, and then select **Download your CSR** to download and save the .csr file locally.   
     <br/>
     **Microsoft Intune administration console**   -->
-   Nella [console di amministrazione di Microsoft Intune](http://manage.microsoft.com) passare ad **Amministrazione** &gt; **Gestione dei dispositivi mobili** &gt; **iOS e Mac OS X** &gt; **Carica un certificato APN** e poi scegliere **Scarica la richiesta di certificato APN**. Salvare il file della richiesta di firma del certificato (estensione csr) in locale.
+   Nella [console di amministrazione di Microsoft Intune](http://manage.microsoft.com) passare ad **Amministrazione** &gt; **Gestione dei dispositivi mobili** &gt; **iOS e Mac OS X** &gt; **Carica un certificato APN** e poi scegliere **Scarica la richiesta di certificato APN**. Salvare il file della richiesta di firma del certificato (estensione csr) in locale.    
    > [!IMPORTANT]    
    > Scaricare una nuova richiesta di firma del certificato. Non usare un file esistente o l'operazione avrà esito negativo.
 

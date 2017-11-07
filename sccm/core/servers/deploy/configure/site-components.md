@@ -1,5 +1,6 @@
 ---
-title: Componenti del sito per Configuration Manager | Microsoft Docs
+title: Componenti del sito
+titleSuffix: Configuration Manager
 description: Informazioni su come configurare i componenti del sito per modificare il comportamento dei ruoli del sistema del sito e la creazione di report sullo stato del sito.
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "9"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 83550fbf0ef1f9adb0bb2c51a4f3c26a7500d352
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 5998d853723f50302d0572a54b073292035ed382
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="site-components-for-system-center-configuration-manager"></a>Componenti del sito per System Center Configuration Manager
 

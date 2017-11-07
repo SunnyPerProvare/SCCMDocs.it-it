@@ -1,5 +1,6 @@
 ---
-title: Sicurezza e privacy per gli aggiornamenti software | Microsoft Docs
+title: Sicurezza e privacy per gli aggiornamenti software
+titleSuffix: Configuration Manager
 description: "Seguire queste procedure consigliate per gli aggiornamenti software ed esaminare le informazioni sulla modalità di gestione delle informazioni sulla privacy di Configuration Manager."
 keywords: 
 author: dougeby
@@ -11,11 +12,11 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 41d6d5d8-ba84-4efb-b105-4d1eed239824
-ms.openlocfilehash: 4b4f045138abc14b6e93b3b990c5f3a8b4f2f952
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 753f0c106a2f41b9991b8e3da72ad3784573d8f9
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="security-and-privacy-for-software-updates-in-system-center-configuration-manager"></a>Sicurezza e privacy per gli aggiornamenti software in System Center Configuration Manager
 

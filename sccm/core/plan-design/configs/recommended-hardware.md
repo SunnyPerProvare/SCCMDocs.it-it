@@ -1,5 +1,6 @@
 ---
-title: Hardware consigliato | Microsoft Docs
+title: Hardware consigliato
+titleSuffix: Configuration Manager
 description: Ottenere consigli su hardware per ridimensionare l'ambiente di System Center Configuration Manager, oltre una distribuzione di base.
 ms.custom: na
 ms.date: 05/04/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 0619da4cba35d6163761a90e28b39c1976f61b48
-ms.sourcegitcommit: 96b79fa091f44e8e6ac5652f6cbbb4b873a8bad9
+ms.openlocfilehash: 696dd4e1812954e78eca55881bd992e304caba32
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="recommended-hardware-for-system-center-configuration-manager"></a>Hardware consigliato per System Center Configuration Manager
 

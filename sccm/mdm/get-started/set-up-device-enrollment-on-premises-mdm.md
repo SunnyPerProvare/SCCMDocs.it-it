@@ -1,5 +1,6 @@
 ---
-title: Configurare la registrazione dei dispositivi |Microsoft Docs
+title: 'Impostare la registrazione dei dispositivi '
+titleSuffix: Configuration Manager
 description: Concedere autorizzazioni agli utenti per registrare i dispositivi per la gestione dei dispositivi mobili locale in System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
@@ -11,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9ffaea91-1379-4b86-9953-b25e152f56a9
 caps.latest.revision: "10"
-author: Mtillman
-ms.author: mtillman
+author: dougeby
+ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 16d4106d486d821b7ce92a1de65ebb04469d18de
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 50aef3a2e523353d488a53eed0b346ddfef42478
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="set-up-device-enrollment-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Impostare la registrazione dei dispositivi per la gestione dei dispositivi mobili (MDM) locale in System Center Configuration Manager
 
@@ -48,7 +49,7 @@ Per consentire agli utenti di registrare i propri dispositivi per la gestione de
 5.  In Crea profilo di registrazione digitare un nome per il profilo di registrazione e scegliere il codice del sito di gestione che gli utenti con il profilo di registrazione dovranno usare. Fare clic su **OK** più volte per uscire dalla pagina Impostazioni predefinite.  
 
 > [!NOTE]  
->  Se si vuole distribuire il profilo di registrazione a un sottoinsieme degli utenti individuati, è possibile usare una raccolta di utenti e creare impostazioni client personalizzate per eseguire la distribuzione in tale raccolta. Per informazioni sulla creazione di impostazioni client personalizzate, vedere [Come configurare le impostazioni client in System Center Configuration Manage](../../core/clients/deploy/configure-client-settings.md)  
+>  Se si vuole distribuire il profilo di registrazione a un sottoinsieme degli utenti individuati, è possibile usare una raccolta di utenti e creare impostazioni client personalizzate per eseguire la distribuzione in tale raccolta. Per informazioni sulla creazione di impostazioni client personalizzate, vedere [How to configure client settings in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md)  
 
 ##  <a name="bkmk_addClient"></a> Configurare altre impostazioni client per i dispositivi registrati  
  Oltre a configurare il profilo di registrazione per dispositivi moderni, è possibile usare altre impostazioni client per configurare i dispositivi quando vengono registrati.  Per informazioni sulla configurazione delle impostazioni client, vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md).  

@@ -1,5 +1,6 @@
 ---
-title: Sostituire un computer esistente e trasferire le impostazioni | Microsoft Docs
+title: Sostituire un computer esistente e trasferire le impostazioni
+titleSuffix: Configuration Manager
 description: In Configuration Manager, scegliere un metodo di distribuzione, ad esempio supporti di avvio, multicast o Software Center, per sostituire un computer esistente con uno nuovo.
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "6"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 08e9603944e378593598d70c1c11c8a1b1f2f13b
-ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
+ms.openlocfilehash: efa6ad5bd5358139b3da23b226041f8599dc9454
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="replace-an-existing-computer-and-transfer-settings-with-system-center-configuration-manager"></a>Sostituire un computer esistente e trasferire le impostazioni con System Center Configuration Manager
 

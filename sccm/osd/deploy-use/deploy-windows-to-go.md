@@ -1,5 +1,6 @@
 ---
-title: Distribuire Windows to Go con System Center Configuration Manager | Microsoft Docs
+title: Distribuire Windows to Go
+titleSuffix: Configuration Manager
 description: "Informazioni su come eseguire il provisioning di Windows To Go in System Center Configuration Manager per creare un'area di lavoro Windows To Go avviata da un'unità esterna."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: a8b1a42c43438553cfbb62328bed933378bb344c
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 91e3fa4aba93dc3012fe1e702f50c4f9438a69e8
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="deploy-windows-to-go-with-system-center-configuration-manager"></a>Distribuire Windows to Go con System Center Configuration Manager
 
@@ -222,7 +223,7 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
     > [!NOTE]  
     >  L'account computer del server del sito deve disporre dei diritti di accesso in **Lettura** alla cartella di origine.  
 
-2.  Copiare il file supporto pre-installato creato nella sezione [Creare supporti pre-installati](#BKMK_CreatePrestagedMedia) nella cartella di origine del pacchetto.  
+2.  Copiare il file supporto pre-installato creato nella sezione [Create prestaged media](#BKMK_CreatePrestagedMedia) nella cartella di origine del pacchetto.  
 
 3.  Copiare lo strumento Windows To Go Creator (WTGCreator.exe) nella cartella di origine del pacchetto. Lo strumento è disponibile in qualsiasi server del sito primario nel percorso seguente: <*CartellaInstallazioneConfigMgr*>\OSD\Tools\WTG\Creator.  
 
@@ -281,7 +282,7 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
  Windows To Go attiva BitLocker in un'unità di avvio esterne senza utilizzare TPM. Pertanto, è necessario utilizzare uno strumento separato per configurare BitLocker nell'unità di Windows To Go. Per attivare BitLocker, è necessario aggiungere un'azione alla sequenza attività dopo il passaggio **Imposta Windows e ConfigMgr** .  
 
 > [!NOTE]  
->  BitLocker per Windows To Go richiede una passphrase. Nel passaggio [Creare supporti pre-installati](#BKMK_CreatePrestagedMedia) è possibile impostare la passphrase come parte di un comando di preavvio utilizzando la variabile OSDBitLockerPIN.  
+>  BitLocker per Windows To Go richiede una passphrase. Nel passaggio [Create prestaged media](#BKMK_CreatePrestagedMedia) è possibile impostare la passphrase come parte di un comando di preavvio utilizzando la variabile OSDBitLockerPIN.  
 
  Utilizzare la seguente procedura per aggiornare la sequenza attività di Windows 8 per attivare BitLocker per Windows To Go.  
 
@@ -410,7 +411,7 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
     2.  **Raccolta**: fare clic su **Sfoglia** per selezionare la raccolta che include tutti i dispositivi per cui un utente potrebbe eseguire il provisioning di Windows To Go.  
 
         > [!IMPORTANT]  
-        >  Se il supporto preinstallato creato nella sezione [Creare supporti pre-installati](#BKMK_CreatePrestagedMedia) utilizza la variabile SMSTSPreferredAdvertID, è possibile distribuire la sequenza attività nella raccolta **Tutti i sistemi** e specificare l'impostazione **Solo Windows PE (nascosto)** nella pagina **Contenuto** . Poiché la sequenza attività è nascosta, sarà disponibile solo per il supporto.  
+        >  Se il supporto preinstallato creato nella sezione [Create prestaged media](#BKMK_CreatePrestagedMedia) utilizza la variabile SMSTSPreferredAdvertID, è possibile distribuire la sequenza attività nella raccolta **Tutti i sistemi** e specificare l'impostazione **Solo Windows PE (nascosto)** nella pagina **Contenuto** . Poiché la sequenza attività è nascosta, sarà disponibile solo per il supporto.  
 
     3.  **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta**: selezionare questa opzione se si vuole archiviare il contenuto del pacchetto nel gruppo di punti di distribuzione predefinito della raccolta. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, l'opzione non sarà disponibile.  
 
@@ -421,7 +422,7 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
     -   **Rendi disponibile per**: specificare se la sequenza di attività è disponibile per i client di Configuration Manager, i supporti o PXE.  
 
         > [!IMPORTANT]  
-        >  Usare l'impostazione **Solo supporti e PXE (nascosto)** per le distribuzioni sequenza di attività automatiche. Selezionare **Consenti distribuzione automatica del sistema operativo** e impostare la variabile SMSTSPreferredAdvertID come parte del supporto preinstallato affinché il computer venga avviato automaticamente con la distribuzione Windows To Go senza alcuna interazione da parte dell'utente in presenza di un'unità Windows To Go. Per ulteriori informazioni sulle impostazioni relative ai supporti preinstallati, vedere la sezione [Creare supporti pre-installati](#BKMK_CreatePrestagedMedia) .  
+        >  Usare l'impostazione **Solo supporti e PXE (nascosto)** per le distribuzioni sequenza di attività automatiche. Selezionare **Consenti distribuzione automatica del sistema operativo** e impostare la variabile SMSTSPreferredAdvertID come parte del supporto preinstallato affinché il computer venga avviato automaticamente con la distribuzione Windows To Go senza alcuna interazione da parte dell'utente in presenza di un'unità Windows To Go. Per ulteriori informazioni sulle impostazioni relative ai supporti preinstallati, vedere la sezione [Create prestaged media](#BKMK_CreatePrestagedMedia) .  
 
 7.  Nella pagina **Pianificazione** configurare le informazioni seguenti e quindi fare clic su **Avanti**.  
 
@@ -459,7 +460,7 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
  Dopo la distribuzione del pacchetto Windows To Go e della sequenza attività per Windows 8, Windows To Go Creator sarà disponibile all'utente. L'utente può accedere al catalogo del software (o al Software Center, se Windows To Go Creator è stato distribuito nei dispositivi) ed eseguire il programma Windows To Go Creator. Al termine del download del pacchetto di Creator, viene visualizzata un'icona lampeggiante sulla barra delle applicazioni. Quando l'utente fa clic sull'icona, viene visualizzata una finestra di dialogo in cui è possibile selezionare l'unità Windows To Go di cui eseguire il provisioning (a meno che non venga utilizzata l'opzione della riga di comando /drive). Se l'unità non soddisfa i requisiti per Windows To Go o se l'unità non dispone di spazio sufficiente per l'installazione dell'immagine, verrà visualizzato un messaggio di errore. Nella pagina di conferma l'utente può verificare l'unità e l'immagine che verranno applicate. Durante la configurazione e la pre-installazione del contenuto nell'unità Windows To Go, viene visualizzata una finestra di dialogo di avanzamento. Al termine della pre-installazione, viene chiesto di riavviare il computer dall'unità Windows To Go.  
 
 > [!NOTE]  
->  Se nella sezione [Creare un pacchetto Windows To Go Creator](#BKMK_CreatePackage) non è stato abilitato il reindirizzamento dell'avvio nella riga di comando del programma di creazione nella sezione, è possibile che l'utente debba eseguire manualmente l'avvio dall'unità Windows To Go ad ogni riavvio del sistema.  
+>  Se nella sezione [Create a Windows To Go Creator package](#BKMK_CreatePackage) non è stato abilitato il reindirizzamento dell'avvio nella riga di comando del programma di creazione nella sezione, è possibile che l'utente debba eseguire manualmente l'avvio dall'unità Windows To Go ad ogni riavvio del sistema.  
 
 ###  <a name="BKMK_ConfigureStageDrive"></a> Configuration Manager consente di configurare e preparare l'unità Windows To Go  
  Quando il computer viene riavviato dall'unità Windows To Go, l'unità esegue il riavvio in Windows PE ed esegue la connessione al punto di gestione per ottenere i criteri necessari per il completamento della distribuzione del sistema operativo. Configuration Manager configura e prepara l'unità Windows To Go. Quando Configuration Manager completa la preparazione dell'unità, l'utente può riavviare il computer per finalizzare il processo di provisioning, ad esempio mediante l'unione a un dominio o l'installazione di applicazioni. Questo processo è lo stesso per tutti i supporti preinstallati.  

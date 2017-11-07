@@ -1,5 +1,6 @@
 ---
-title: Comunicazioni tra gli endpoint | Microsoft Docs
+title: Comunicazioni tra gli endpoint
+titleSuffix: Configuration Manager
 description: "Informazioni sulle modalità di comunicazione dei componenti e sistemi del sito di System Center Configuration Manager in una rete."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "10"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: cd94f9ccc7e196b30e5dc7ae9368d073b7cff5d2
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 712274456f4a48032e2ff8c1b4fc8b4b072d4536
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="communications-between-endpoints-in-system-center-configuration-manager"></a>Comunicazioni tra gli endpoint in System Center Configuration Manager
 

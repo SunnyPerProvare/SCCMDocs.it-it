@@ -1,5 +1,6 @@
 ---
-title: Come creare elementi di configurazione | Microsoft Docs
+title: Come creare elementi di configurazione
+titleSuffix: Configuration Manager
 description: "È possibile creare e distribuire configurazioni sia ai dispositivi gestiti da System Center Configuration Manager, sia a quelli registrati con Microsoft Intune."
 ms.custom: na
 ms.date: 03/28/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 6a7839e11a30b069718a97a7ee3c02a3cf4d6964
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 5cccd8308b35d54914200c8665eb15a55f153127
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-create-configuration-items-in-system-center-configuration-manager"></a>Come creare elementi di configurazione in System Center Configuration Manager
 

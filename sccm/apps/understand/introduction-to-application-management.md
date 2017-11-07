@@ -1,5 +1,6 @@
 ---
-title: Introduzione alla gestione delle applicazioni | Documentazione Microsoft
+title: Introduzione alla gestione delle applicazioni
+titleSuffix: Configuration Manager
 description: Individuare le informazioni di necessarie per gestire e distribuire applicazioni di System Center Configuration Manager.
 ms.custom: na
 ms.date: 12/23/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "18"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: d92b9098eb89b8a09c39a1df13acffe694234096
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: a8a66169f3c187f8fa0319548ddde23b399811f3
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="introduction-to-application-management-in-system-center-configuration-manager"></a>Introduzione alla gestione delle applicazioni in System Center Configuration Manager
 

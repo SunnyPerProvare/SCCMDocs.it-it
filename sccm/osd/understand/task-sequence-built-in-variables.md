@@ -1,5 +1,6 @@
 ---
-title: "Variabili predefinite della sequenza di attività | Microsoft Docs"
+title: "Variabili predefinite della sequenza di attività"
+titleSuffix: Configuration Manager
 description: "Le variabili predefinite della sequenza di attività offrono informazioni sull'ambiente in cui è in esecuzione la sequenza di attività. Sono disponibili nel corso dell'intera sequenza di attività."
 ms.custom: na
 ms.date: 03/26/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 09e1105521f5e72830c2816d04e16690064f4f64
-ms.sourcegitcommit: 40f2a4e3cc546e6bfd10f195a8e87af2b0780928
+ms.openlocfilehash: d584c6db85a5466e76a79f398e635ba93f8081ff
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="task-sequence-built-in-variables-in-system-center-configuration-manager"></a>Variabili predefinite della sequenza di attività in System Center Configuration Manager
 

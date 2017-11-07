@@ -1,5 +1,6 @@
 ---
-title: Proteggere le app usando i criteri di gestione delle applicazioni mobili | Microsoft Docs
+title: Proteggere le app usando i criteri di gestione delle applicazioni mobili
+titleSuffix: Configuration Manager
 description: "Modificare la funzionalità delle app distribuite in modo che soddisfino i criteri aziendali di conformità e di sicurezza."
 ms.custom: na
 ms.date: 03/05/2017
@@ -12,14 +13,14 @@ ms.topic: article
 ms.assetid: 28115475-e563-4e16-bf30-f4c9fe704754
 caps.latest.revision: "18"
 caps.handback.revision: "0"
-author: mtillman
-ms.author: mtillman
+author: dougeby
+ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 50c137f159b0ef631f7173b8eec190182ce41cee
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 12633eced1850b718bf7cad019cd943305a7d9fb
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="protect-apps-using-mobile-application-management-policies-in-system-center-configuration-manager"></a>Proteggere le app usando i criteri di gestione delle applicazioni mobili in System Center Configuration Manager
 

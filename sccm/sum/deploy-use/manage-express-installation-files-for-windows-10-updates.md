@@ -1,5 +1,6 @@
 ---
-title: Gestire i file di installazione rapida per gli aggiornamenti di Windows 10 | Microsoft Docs
+title: Gestire i file di installazione rapida per gli aggiornamenti di Windows 10
+titleSuffix: Configuration Manager
 description: "Configuration Manager supporta l'installazione rapida dei file per Windows 10, garantendo download più contenuti e tempi di installazione più rapidi per i client."
 keywords: 
 author: dougeby
@@ -11,11 +12,11 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: b8d8af88-e8ac-4deb-921b-975e2d2afd80
-ms.openlocfilehash: baffb5f026bd63c50f878214e71d2c9e9b8b51c2
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 1ec69b5679f726f20da4ff0f63d9271e5d06cee3
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="manage-express-installation-files-for-windows-10-updates"></a>Gestire i file di installazione rapida per gli aggiornamenti di Windows 10
 A partire dalla versione 1702, Configuration Manager supporta i file di installazione rapida per gli aggiornamenti di Windows 10. Se si usa una versione supportata di Windows 10, è possibile usare le impostazioni di Configuration Manager per scaricare solo le differenze tra l'aggiornamento cumulativo di Windows 10 del mese corrente e l'aggiornamento cumulativo del mese precedente. Senza i file di installazione rapida, Configuration Manager scarica ogni mese l'aggiornamento cumulativo completo di Windows 10, inclusi tutti gli aggiornamenti dei mesi precedenti. Grazie ai file di installazione rapida sono possibili download più brevi e tempi di installazione più rapidi per i client.

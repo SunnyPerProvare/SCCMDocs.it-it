@@ -1,5 +1,6 @@
 ---
-title: Personalizzare le immagini d'avvio - Configuration Manager | Microsoft Docs
+title: 'Personalizzare le immagini di avvio '
+titleSuffix: Configuration Manager
 description: Informazioni su diversi modi di usare Configuration Manager o lo strumento da riga di comando Gestione e manutenzione immagini distribuzione (DISM) per personalizzare un'immagine d'avvio.
 ms.custom: na
 ms.date: 01/23/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: ab2ecb64c9c80b4effed79ba08769c99473db0c4
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 4c1d721c9fb0b01f15f1f0468bc797ffffb9e345
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="customize-boot-images-with-system-center-configuration-manager"></a>Personalizzare le immagini d'avvio con System Center Configuration Manager
 

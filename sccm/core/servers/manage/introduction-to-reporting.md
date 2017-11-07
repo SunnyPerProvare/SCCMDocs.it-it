@@ -1,5 +1,6 @@
 ---
-title: Introduzione alla creazione di report | Microsoft Docs
+title: Introduzione ai report
+titleSuffix: Configuration Manager
 description: Informazioni sui set di strumenti e risorse disponibili per la gestione della creazione di report in Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "7"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 5846ca3c91626491b03b36dd17b454bb9382a8dc
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: eab08e56ac133f412dd70386002eabb29ecb7115
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="introduction-to-reporting-in-system-center-configuration-manager"></a>Introduzione ai report in System Center Configuration Manager
 

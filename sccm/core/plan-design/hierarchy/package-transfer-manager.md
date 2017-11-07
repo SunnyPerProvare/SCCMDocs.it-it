@@ -1,5 +1,6 @@
 ---
-title: Package Transfer Manager | Microsoft Docs
+title: Package Transfer Manager
+titleSuffix: Configuration Manager
 description: Informazioni su come Package Transfer Manager in System Center Configuration Manager trasferisce il contenuto da un server del sito ai punti di distribuzione remoti.
 ms.custom: na
 ms.date: 2/8/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 54e54409a1792c7e28620a5e3cea3e8d8695c7d4
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 7cc724404411ff2ef4897e1bb422f523f357f8eb
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="package-transfer-manager-in-system-center-configuration-manager"></a>Package Transfer Manager in System Center Configuration Manager
 

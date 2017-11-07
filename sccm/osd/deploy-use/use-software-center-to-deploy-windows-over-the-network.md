@@ -1,5 +1,6 @@
 ---
-title: Usare Software Center per distribuire Windows in rete | Microsoft Docs
+title: Usare Software Center per distribuire Windows in rete
+titleSuffix: Configuration Manager
 description: "È possibile distribuire un sistema operativo in Software Center per aggiornare un computer esistente con una nuova versione di Windows o eseguire l'aggiornamento di Windows alla versione più recente."
 ms.custom: na
 ms.date: 6/16/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "5"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 8988409c68b7f69439ed03872c316b2139d25616
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: b9fe1248c59b8093b5e69780ff6f08e798408714
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="use-software-center-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Usare Software Center per distribuire Windows in rete con System Center Configuration Manager
 

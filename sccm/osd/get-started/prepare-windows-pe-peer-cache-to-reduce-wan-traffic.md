@@ -1,5 +1,6 @@
 ---
-title: Preparare la peer cache di Windows PE per ridurre il traffico WAN | Microsoft Docs
+title: Preparare la peer cache di Windows PE per ridurre il traffico WAN
+titleSuffix: Configuration Manager
 description: "La peer cache di Windows PE viene usata in Windows PE per ottenere il contenuto da un peer locale e ridurre al minimo il traffico della rete WAN se non c'è nessun punto di distribuzione locale."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "11"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 814c6133a30b1116d05aaeafddb0dfb7fe2a390e
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: bb0ed6809d1350c4ce28e20d1a83082a51c2e687
+ms.sourcegitcommit: 1132886e07d0c0a87dcc7eeef4577dd8d8840023
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/01/2017
 ---
 # <a name="prepare-windows-pe-peer-cache-to-reduce-wan-traffic-in-system-center-configuration-manager"></a>Preparare la peer cache di Windows PE per ridurre il traffico della rete WAN in System Center Configuration Manager
 
@@ -26,7 +27,7 @@ ms.lasthandoff: 08/07/2017
 
 Quando si distribuisce un nuovo sistema operativo in System Center Configuration Manager, i computer che eseguono la sequenza di attività possono usare la peer cache di Windows PE per ottenere contenuto da un peer locale (un'origine peer cache) anziché scaricarlo da un punto di distribuzione. In tal modo il traffico WAN viene ridotto al minimo negli scenari con le filiali, in cui non esiste un punto di distribuzione locale.  
 
- La peer cache di Windows PE è simile a [Windows BranchCache](http://technet.microsoft.com/library/mt617255\(TechNet.10\).aspx#bkmk_branchcache), ma funziona in Ambiente preinstallazione di Windows (Windows PE). Se si avvia la sequenza di attività dal contesto del sistema operativo, ad esempio Software Center nel client, la peer cache di Windows PE non viene usata. Per descrivere i client che usano la peer cache di Windows PE vengono usati i termini seguenti:  
+ La peer cache di Windows PE è simile a [Windows BranchCache](http://technet.microsoft.com/library/mt617255\(TechNet.10\).aspx#bkmk_branchcache), ma funziona in Ambiente preinstallazione di Windows (Windows PE). Per descrivere i client che usano la peer cache di Windows PE vengono usati i termini seguenti:  
 
 -   Un **client peer cache** è un computer configurato per utilizzare Peer cache di Windows PE.  
 

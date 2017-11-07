@@ -1,5 +1,6 @@
 ---
-title: Supporto requisiti internazionali | Microsoft Docs
+title: Supporto internazionale
+titleSuffix: Configuration Manager
 description: "Configurare System Center Configuration Manager per la conformità a requisiti internazionali specifici."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 3bab51be96445f766e8f5bbf54eee854e5d09cee
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: b3ff505c4e5a9eedc3a89fbfc5a54825d5849308
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="international-support-in-system-center-configuration-manager"></a>Supporto internazionale in System Center Configuration Manager
 
