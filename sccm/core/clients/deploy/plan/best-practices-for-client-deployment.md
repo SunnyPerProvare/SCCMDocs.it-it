@@ -1,5 +1,6 @@
 ---
-title: Procedure consigliate per la distribuzione client | Microsoft Docs
+title: Procedure consigliate per la distribuzione di client
+titleSuffix: Configuration Manager
 description: Apprendere le procedure consigliate per la distribuzione client in System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/23/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "11"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 22f0981022f50d316b2572a720ae3c818daf0d43
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 7e369b81d57183b4d1a7e646ae0fd13b7804a38d
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="best-practices-for-client-deployment-in-system-center-configuration-manager"></a>Procedure consigliate per la distribuzione di client in System Center Configuration Manager
 
@@ -28,7 +29,7 @@ ms.lasthandoff: 09/15/2017
 ## <a name="use-software-update-based-client-installation-for-active-directory-computers"></a>Utilizzare l'installazione client basata su aggiornamento software per i computer Active Directory  
  Questo metodo di distribuzione client usa tecnologie Windows esistenti, si integra con l'infrastruttura di Active Directory, richiede la configurazione minima in Configuration Manager, è il più semplice da configurare per i firewall ed è il più sicuro. L'uso di gruppi di protezione e di filtri WMI per la configurazione dei criteri di gruppo consente di controllare in modo flessibile su quali computer installare il client di Configuration Manager.  
 
- Per altre informazioni, vedere [Come installare i client di Configuration Manager usando l'Installazione basata sull'aggiornamento software](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientSUP).  
+ Per altre informazioni, vedere [How to Install Configuration Manager Clients by Using Software Update-Based Installation](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientSUP).  
 
 ## <a name="extend-the-active-directory-schema-and-publish-the-site-so-that-you-can-run-ccmsetup-without-command-line-options"></a>Estendere lo schema di Active Directory e pubblicare il sito in modo che sia possibile eseguire CCMSetup senza opzioni di riga di comando  
  Quando si estende lo schema di Active Directory per Configuration Manager e il sito viene pubblicato su Servizi di dominio Active Directory, molte proprietà di installazione client vengono pubblicate in Servizi di dominio Active Directory. Se un computer è in grado di rilevare le proprietà di installazione del client, può usarle durante la distribuzione del client di Configuration Manager. Poiché queste informazioni vengono generate automaticamente, viene eliminato il rischio di errori umani associato all'immissione manuale delle proprietà di installazione.  
@@ -74,6 +75,6 @@ ms.lasthandoff: 09/15/2017
 ## <a name="use-file-based-write-filters-for-windows-embedded-devices"></a>Usare filtri di scrittura basati su file per i dispositivi Windows Embedded 
  I dispositivi incorporati che utilizzano i filtri di scrittura avanzati (EWF) sono soggetti alle risincronizzazioni dei messaggi di stato. Se si dispone solo di pochi dispositivi incorporati che utilizzano filtri di scrittura avanzati, tale evento potrebbe passare inosservato. Tuttavia, in caso di risincronizzazione delle informazioni di numerosi dispositivi integrati, come l'invio dell'inventario completo piuttosto che l'inventario differenziale, potrebbe verificarsi un significativo aumento dei pacchetti di rete e un maggiore carico di elaborazione della CPU sul server del sito.  
 
- Se è possibile scegliere il tipo di filtro di scrittura da abilitare, scegliere i filtri di scrittura basati su file. Configurare quindi le eccezioni per il mantenimento dello stato del client e dei dati di inventario tra riavvii dei dispositivi per la massima efficienza della rete e della CPU nel client di Configuration Manager. Per altre informazioni sui filtri di scrittura, vedere   [Pianificazione della distribuzione del client in dispositivi con Windows Embedded in System Center Configuration Manager](../../../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md).  
+ Se è possibile scegliere il tipo di filtro di scrittura da abilitare, scegliere i filtri di scrittura basati su file. Configurare quindi le eccezioni per il mantenimento dello stato del client e dei dati di inventario tra riavvii dei dispositivi per la massima efficienza della rete e della CPU nel client di Configuration Manager. Per altre informazioni sui filtri di scrittura, vedere   [Planning for client deployment to Windows Embedded devices in System Center Configuration Manager](../../../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md).  
 
  Per altre informazioni sul numero massimo di client con Windows Embedded supportati da un sito primario, vedere [Supported operating sysetms for clients and devices](../../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md) (Sistemi operativi supportati per client e dispositivi).  

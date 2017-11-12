@@ -1,8 +1,9 @@
 ---
-title: Technical Preview per Configuration Manager | Microsoft Docs
+title: Versioni di Technical Preview
+titleSuffix: Configuration Manager
 description: "Informazioni sulla versione Technical Preview che consente di testare nuove funzionalità in System Center Configuration Manager."
 ms.custom: na
-ms.date: 09/28/2017
+ms.date: 10/30/2017
 ms.prod: configuration-manager
 ms.reviewer: nab
 ms.suite: na
@@ -14,11 +15,11 @@ caps.latest.revision: "157"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 429e20185bd23519f78c37ded39f2638d0c80ced
-ms.sourcegitcommit: 8ac9c2c9ba1fdcbb7cc8d5be898586865fcf67c0
+ms.openlocfilehash: 0f6fb329dae1dda18bbb1869dc77872a2a6a1b98
+ms.sourcegitcommit: 5437b2823bada8f8c9e67940f584953b9d190628
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/07/2017
+ms.lasthandoff: 10/31/2017
 ---
 # <a name="technical-preview-for-system-center-configuration-manager"></a>Technical Preview per System Center Configuration Manager
 
@@ -39,7 +40,7 @@ ms.lasthandoff: 10/07/2017
 > [!IMPORTANT]     
 >  La Technical Preview viene concessa in licenza per essere usata esclusivamente in un ambiente lab.  Microsoft potrebbe non fornire supporto tecnico e alcune funzionalità potrebbero non essere disponibili nel software di anteprima. Inoltre, il software di anteprima potrebbe essere caratterizzato da standard di sicurezza, privacy, accessibilità, disponibilità e affidabilità ridotti o diversi rispetto al software commercializzato.  
 
- Per la maggior parte dei prerequisiti di prodotto, usare le informazioni disponibili in [Supported configurations for System Center Configuration Manager](../../core/plan-design/configs/supported-configurations.md) (Configurazioni supportate per System Center Configuration Manager). Per le versioni Technical Preview si applicano le seguenti eccezioni:  
+ Per la maggior parte dei prerequisiti di prodotto, usare le informazioni disponibili in [Configurazioni supportate per System Center Configuration Manager](../../core/plan-design/configs/supported-configurations.md). Per le versioni Technical Preview si applicano le seguenti eccezioni:  
 
 -   Ogni installazione rimane attiva per 90 giorni prima di diventare inattiva.  
 
@@ -93,10 +94,6 @@ Ogni versione di anteprima è supportata finché non sono disponibili fino a tre
 È possibile installare una versione di base per un massimo di 1 anno dopo il rilascio. Tuttavia, quando si installa un nuovo sito Technical Preview, è consigliabile usare l'ultima versione di base disponibile.
 -  **Technical Preview 1703**: Configuration Manager Technical Preview 1703 è disponibile sia come aggiornamento nella console per Configuration Manager Technical Preview, sia come nuova versione di base sul [sito Web TechNet Evaluation Center](http://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
 
-<!-- out of support. Use baseline 1703
--  **Technical Preview 1610** - The Configuration Manager Technical Preview 1610 was available as both an in-console update for the Configuration Manager Technical Preview, and as a baseline version. If you have media for installing 1610, we recommend you download version 1703 and install that version instead.
--->
-
 
 
 ##  <a name="BKMK_TPFeedback"></a> Invio di commenti e suggerimenti  
@@ -110,19 +107,26 @@ Ogni versione di anteprima è supportata finché non sono disponibili fino a tre
 
 
 ##  <a name="bkmk_tpCaps"></a> Funzionalità disponibili nelle Technical Preview più recente  
- Di seguito sono elencate le funzionalità disponibili in ogni versione Technical Preview di Configuration Manager.  Le funzionalità disponibili a partire da una versione Technical Preview rimangono disponibili nelle versioni successive. Analogamente, le funzionalità che sono state aggiunte alla versione System Center Configuration Manager (Current Branch) rimangono disponibili nelle versioni Technical Preview successive.  Fare clic sul contenuto di ogni versione di anteprima per visualizzare altre informazioni su una funzionalità specifica.  
+Di seguito sono elencate le funzionalità disponibili in ogni versione Technical Preview di Configuration Manager.  Le funzionalità disponibili a partire da una versione Technical Preview rimangono disponibili nelle versioni successive. Analogamente, le funzionalità che sono state aggiunte alla versione System Center Configuration Manager (Current Branch) rimangono disponibili nelle versioni Technical Preview successive.  Fare clic sul contenuto di ogni versione di anteprima per visualizzare altre informazioni su una funzionalità specifica.  
 
  |Funzionalità |Versione Technical Preview |Versione Current Branch|  
  |----------------|---------------------|--------------------|
- |Esperienza del profilo VPN migliorata nella console di Configuration Manager <!-- 1313282 --> | [Tech Preview 1709](capabilities-in-technical-preview-1709.md) |![Non aggiunta](media/Red_X.gif)    |
- |Co-gestione per dispositivi Windows 10|[Tech Preview 1709](capabilities-in-technical-preview-1709.md#co-management-for-windows-10-devices)|![Non aggiunta](media/Red_X.gif)    |
-
-
+ |Telemetria di Windows 10 per l'integrità del dispositivo di Windows Analytics<!--1356148 --> | [Technical Preview 1710](capabilities-in-technical-preview-1710.md#limit-windows-10-enhanced-telemetry-to-only-send-data-relevant-to-windows-analytics-device-health) |![Non aggiunta](media/Red_X.gif)    |
+ |Miglioramenti alle icone di Software Center <!-- 1356194 --> | [Technical Preview 1710](capabilities-in-technical-preview-1710.md#software-center-no-longer-distorts-icons-larger-than-250x250) |![Non aggiunta](media/Red_X.gif)    |
+ |Controllare la conformità da Software Center per i dispositivi cogestiti<!-- 1356374 -->| [Technical Preview 1710](capabilities-in-technical-preview-1710.md#check-compliance-from-software-center-for-co-managed-devices)|![Non aggiunta](media/Red_X.gif)    |
+ |Supporto limitato per i certificati CNG<!-- 1356191 -->| [Technical Preview 1710](capabilities-in-technical-preview-1710.md#limited-support-for-cng-certificates)|![Non aggiunta](media/Red_X.gif)    |
+ |Supporto per Exploit Guard <!--1355468 --> | [Technical Preview 1710](capabilities-in-technical-preview-1710.md#support-for-exploit-guard) |![Non aggiunta](media/Red_X.gif)    |
+ |Descrizioni migliorate per i riavvii in sospeso del computer <!-- 1356283  -->| [Technical Preview 1710](capabilities-in-technical-preview-1710.md)|![Non aggiunta](media/Red_X.gif)    |
+ |Modifiche ai criteri di Device Guard <!-- 1355092  -->| [Technical Preview 1710](capabilities-in-technical-preview-1710.md)|![Non aggiunta](media/Red_X.gif)    |
+ |Configurare e distribuire criteri di Windows Defender Application Guard <!-- 1351960  -->| [Technical Preview 1710](capabilities-in-technical-preview-1710.md)|![Non aggiunta](media/Red_X.gif)    |
+ 
 ## <a name="capabilities-delivered-in-previous-technical-previews"></a>Funzionalità disponibili nelle Technical Preview precedenti
  Quando tutte le funzionalità di una versione di Technical Preview sono disponibili nella versione minima supportata del Current Branch, i dettagli per tale versione di anteprima vengono rimossi dalla tabella seguente.  
 
  |Funzionalità |Versione Technical Preview |Versione Current Branch|  
  |----------------|---------------------|--------------------|
+ |Esperienza del profilo VPN migliorata nella console di Configuration Manager <!-- 1313282 --> | [Tech Preview 1709](capabilities-in-technical-preview-1709.md) |![Non aggiunta](media/Red_X.gif)    |
+ |Co-gestione per dispositivi Windows 10|[Tech Preview 1709](capabilities-in-technical-preview-1709.md#co-management-for-windows-10-devices)|![Non aggiunta](media/Red_X.gif)    |
  |Miglioramenti per specificare i parametri degli script quando si distribuiscono gli script di PowerShell da Configuration Manager <!-- 1236459 -->|[Tech Preview 1708](capabilities-in-technical-preview-1708.md#improvements-for-specifying-script-parameters-when-you-deploy-powershell-scripts-from-configuration-manager)|![Non aggiunta](media/Red_X.gif)|
  |Informazioni dettagliate sulla gestione <!-- 1353967 --> |[Tech Preview 1708](capabilities-in-technical-preview-1708.md#management-insights)|![Non aggiunta](media/Red_X.gif)|
  |Riavviare i computer dalla console di Configuration Manager <!-- 1356283 --> |[Tech Preview 1708](capabilities-in-technical-preview-1708.md#restart-computers-from-the-configuration-manager-console)|![Non aggiunta](media/Red_X.gif)|
@@ -272,3 +276,4 @@ Ogni versione di anteprima è supportata finché non sono disponibili fino a tre
 ## <a name="see-also"></a>Vedere anche  
 [What's new in System Center Configuration Manager](/sccm/core/plan-design/changes/whats-new-incremental-versions) (Novità di System Center Configuration Manager)  
  [Introduction to System Center Configuration Manager](../../core/understand/introduction.md) (Introduzione a System Center Configuration Manager)
+

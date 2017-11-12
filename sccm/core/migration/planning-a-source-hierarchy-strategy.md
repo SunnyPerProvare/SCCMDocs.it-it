@@ -1,5 +1,6 @@
 ---
-title: Strategia per la gerarchia di origine | Microsoft Docs
+title: Strategia per la gerarchia di origine
+titleSuffix: Configuration Manager
 description: Configurare una gerarchia di origine e raccogliere i dati da un sito di origine prima di configurare un processo di migrazione di System Center Configuration Manager.
 ms.custom: na
 ms.date: 1/3/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 0619de32f859f512ee1c9f5a9c83ef8d04a256ca
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: deebf706c885dfb1f0838c64df0d201274eee3d8
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="plan-a-source-hierarchy-strategy-in-system-center-configuration-manager"></a>Pianificare una strategia per la gerarchia di origine in System Center Configuration Manager
 

@@ -1,5 +1,6 @@
 ---
-title: Aggiornare le installazioni di valutazione | Documentazione Microsoft
+title: Aggiornare installazioni di valutazione
+titleSuffix: Configuration Manager
 description: Informazioni su come eseguire l'aggiornamento di un'installazione di valutazione a installazione completa di System Center Configuration Manager.
 ms.custom: na
 ms.date: 2/7/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 8f951805c2fc25059965c15c94934c0f8546735c
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 942ac0a1d7681cb1efb06ff477a27a7c5c57654b
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="upgrade-an-evaluation-installation-of-system-center-configuration-manager-to-a-full-installation"></a>Aggiornare un'installazione di valutazione di System Center Configuration Manager a un'installazione completa
 

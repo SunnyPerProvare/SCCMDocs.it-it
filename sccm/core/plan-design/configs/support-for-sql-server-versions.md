@@ -1,8 +1,9 @@
 ---
-title: Versioni di SQL Server supportate | Microsoft Docs
+title: Versioni di SQL Server supportate
+titleSuffix: Configuration Manager
 description: Requisiti di configurazione e della versione di SQL Server per l'hosting di un database del sito di System Center Configuration Manager.
 ms.custom: na
-ms.date: 09/21/2017
+ms.date: 10/10/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +15,11 @@ caps.latest.revision: "21"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 0e6613873c09b5e5df4f25ce0dbc16c289ccbd41
-ms.sourcegitcommit: b13fa2885acaa21f16c48df789f1edacb5a4f7cc
+ms.openlocfilehash: 740a37478b4159fb9dcbfd9eaceeeaa307edd745
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="supported-sql-server-versions-for-system-center-configuration-manager"></a>Versioni di SQL Server supportate per System Center Configuration Manager
 
@@ -103,6 +104,12 @@ Il supporto per uno specifico Service Pack di SQL Server include gli aggiornamen
 -   sito primario  
 -   sito secondario
 
+### <a name="sql-server-2012-sp4-standard-enterprise"></a>SQL Server 2012 SP4: Standard, Enterprise  
+ È possibile usare questa versione di SQL Server senza una versione di aggiornamento cumulativo minima per i seguenti elementi:  
+
+-   sito di amministrazione centrale  
+-   sito primario  
+-   sito secondario  
 
 ### <a name="sql-server-2012-sp3-standard-enterprise"></a>SQL Server 2012 SP3 - Standard, Enterprise  
  È possibile usare questa versione di SQL Server senza una versione di aggiornamento cumulativo minima per i seguenti elementi:  

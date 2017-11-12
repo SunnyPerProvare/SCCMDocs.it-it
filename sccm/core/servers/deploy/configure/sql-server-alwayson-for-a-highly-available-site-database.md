@@ -1,5 +1,6 @@
 ---
-title: Always On di SQL Server | Microsoft Docs
+title: SQL Server Always On
+titleSuffix: Configuration Manager
 description: "Pianificare l'uso di un gruppo di disponibilità Always On di SQL Server con SCCM."
 ms.custom: na
 ms.date: 09/22/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "16"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 3e275f6203a9e0b9210bfbadbf9addf64f6533d8
-ms.sourcegitcommit: 8faf42135a8dc9c384407e64f3f8ba204fb15847
+ms.openlocfilehash: 24eaa33f1f9b333894817f089149e2cbed35df75
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparare l'uso di gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
@@ -75,7 +76,7 @@ Per altre informazioni vedere [Creare un endpoint del mirroring del database per
 -   Prima della versione 1706 erano consentite fino a due repliche secondarie sincrone.
 -   A partire dalla versione 1706, in un gruppo di disponibilità è possibile usare lo stesso numero e tipo di repliche supportate dalla versione di SQL Server in uso.
 
-    Per ripristinare la replica sincrona, è possibile usare la replica con commit asincrono. Vedere le [opzioni di ripristino del database del sito]( /sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) nell'argomento Backup e ripristino per informazioni su come eseguire questa operazione.
+-   A partire dalla versione 1706, per ripristinare la replica sincrona è possibile usare la replica con commit asincrono. Vedere le [opzioni di ripristino del database del sito]( /sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) nell'argomento Backup e ripristino per informazioni su come eseguire questa operazione.
     > [!CAUTION]  
     > Configuration Manager non supporta il failover per l'uso della replica con commit asincrono come database del sito.
 Poiché Configuration Manager non convalida lo stato della replica con commit asincrono per verificare che sia corrente, e [per comportamento normale del prodotto, una replica di questo tipo può non essere sincronizzata]( https://msdn.microsoft.com/library/ff877884(SQL.120).aspx(d=robot)#Availability%20Modes), l'uso di una replica con commit asincrono come database del sito può mettere a rischio l'integrità dei dati del sito.

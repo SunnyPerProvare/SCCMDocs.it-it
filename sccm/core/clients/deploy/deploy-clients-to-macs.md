@@ -1,5 +1,6 @@
 ---
-title: Distribuire i client Mac| Microsoft Docs
+title: Distribuire i client Mac
+titleSuffix: Configuration Manager
 description: Informazioni su come distribuire i client a computer Mac in System Center Configuration Manager.
 ms.custom: na
 ms.date: 05/04/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "12"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: af6faf4cd317452f635ec30e74a3aa2e14f1662a
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 1b7f20a48e0e7219d933c367fb9f0315fc287dfd
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-deploy-clients-to-macs"></a>How to deploy clients to Macs
 
@@ -125,7 +126,7 @@ Per automatizzare le operazioni per registrare molti client, usare lo [strumento
 
         -   'dominio\nome'. Ad esempio: 'contoso\mnorth'  
 
-        -   'user@domain'.  Ad esempio: 'mnorth@contoso.com'  
+        -   'user@domain'. Ad esempio: 'mnorth@contoso.com'  
 
             > [!IMPORTANT]  
             >  Se si usa un indirizzo di posta elettronica per compilare il campo **Nome utente**, il nome di dominio dell'indirizzo di posta elettronica e il nome predefinito del server del punto proxy di registrazione vengono usati da Configuration Manager per compilare automaticamente il campo **Nome server**. Se il nome di dominio e il nome del server non corrispondono al nome del server del punto proxy di registrazione, comunicare agli utenti il nome corretto da usare durante la registrazione dei computer Mac.  
@@ -157,7 +158,7 @@ Usare questa procedura per automatizzare l'installazione del client e la richies
 
     -   'dominio\nome'. Ad esempio: 'contoso\mnorth'  
 
-    -   'user@domain'.  Ad esempio: 'mnorth@contoso.com'  
+    -   'user@domain'. Ad esempio: 'mnorth@contoso.com'  
 
      Il nome utente e la relativa password devono corrispondere a un account utente Active Directory a cui sono concesse la autorizzazioni di Lettura e Registrazione nel modello di certificato del client Mac.  
 

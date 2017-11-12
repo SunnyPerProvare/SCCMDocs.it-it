@@ -1,5 +1,6 @@
 ---
-title: Sicurezza e privacy per System Center Configuration Manager | Microsoft Docs
+title: Risorse relative a sicurezza e privacy
+titleSuffix: Configuration Manager
 description: Trovare risorse in materia di sicurezza e privacy per System Center Configuration Manager.
 ms.custom: na
 ms.date: 1/3/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "9"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: de9df79c7adc24b415fd1be6e45a42aec7e16f9a
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: bb915f40325922854040ea79179b969c779af63a
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="security-and-privacy-for-system-center-configuration-manager"></a>Sicurezza e privacy per System Center Configuration Manager
 
@@ -32,7 +33,7 @@ Questo articolo include le risorse per la sicurezza e la privacy per System Cent
 
 -   [Sicurezza e privacy per la distribuzione del sistema operativo in System Center Configuration Manager](../../../osd/plan-design/security-and-privacy-for-operating-system-deployment.md)  
 
--   [Security and privacy for application management in System Center Configuration Manager](../../../apps/plan-design/security-and-privacy-for-application-management.md) (Sicurezza e privacy per la gestione delle applicazioni in System Center Configuration Manager)  
+-   [Sicurezza e privacy per la gestione delle applicazioni in System Center Configuration Manager](../../../apps/plan-design/security-and-privacy-for-application-management.md)  
 
 -   [Sicurezza e privacy per gli aggiornamenti software in System Center Configuration Manager](../../../sum/plan-design/security-and-privacy-for-software-updates.md)  
 
@@ -42,7 +43,7 @@ Questo articolo include le risorse per la sicurezza e la privacy per System Cent
 
 -   [Security and privacy for collections in System Center Configuration Manager](../../../core/clients/manage/collections/security-and-privacy-for-collections.md) (Sicurezza e privacy per le raccolte in System Center Configuration Manager)  
 
--   [Security and privacy for queries in System Center Configuration Manager](../../../core/servers/manage/security-and-privacy-for-queries.md) (Sicurezza e privacy per le query in System Center Configuration Manager)  
+-   [Sicurezza e privacy per le query in System Center Configuration Manager](../../../core/servers/manage/security-and-privacy-for-queries.md)  
 
 -   [Security and privacy for power management in System Center Configuration Manager](../../../core/clients/manage/power/security-and-privacy-for-power-management.md) (Sicurezza e privacy per il risparmio energia in System Center Configuration Manager)  
 

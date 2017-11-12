@@ -1,5 +1,6 @@
 ---
-title: "Riferimento per le attività di manutenzione | Microsoft Docs"
+title: "Informazioni di riferimento per le attività di manutenzione"
+titleSuffix: Configuration Manager
 description: "Leggere le informazioni dettagliate su ogni attività di manutenzione del sito di System Center Configuration Manager in cui le attività sono abilitate per impostazione predefinita."
 ms.custom: na
 ms.date: 3/8/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: a2d4420c2274a9b1ceb47ffd267849fdb5a55a61
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 6cff26b689b3fb1139d235295530faa9d30f9bf6
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="reference-for-maintenance-tasks-for-system-center-configuration-manager"></a>Informazioni di riferimento per le attività di manutenzione per System Center Configuration Manager
 
@@ -253,7 +254,7 @@ Questa attività funziona solo nelle risorse che sono client di Configuration Ma
 -   **Sito primario**: abilitato    
 -   Sito secondario: non disponibile  
 
-**Valuta membri raccolta**: configurare Valutazione appartenenza alla raccolta come componente del sito. Per informazioni sui componenti del sito, vedere [Site components for System Center Configuration Manager](../../../core/servers/deploy/configure/site-components.md).  
+**Valuta membri raccolta**: configurare Valutazione appartenenza alla raccolta come componente del sito. Per informazioni sui componenti del sito, vedere [Componenti del sito per System Center Configuration Manager](../../../core/servers/deploy/configure/site-components.md).  
 
 -   Sito di amministrazione centrale: non disponibile    
 -   **Sito primario**: abilitato    

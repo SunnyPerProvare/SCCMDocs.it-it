@@ -1,5 +1,6 @@
 ---
-title: Distribuire i client Windows | Microsoft Docs
+title: Distribuire client Windows
+titleSuffix: Configuration Manager
 description: Informazioni su come distribuire i client ai computer Windows in System Center Configuration Manager.
 ms.custom: na
 ms.date: 08/20/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: f03102c170e1e7de3a11349f4a66380c4291dcac
-ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
+ms.openlocfilehash: 31b8ffc12c483f5c10063a305101de5ca98cbd8b
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-system-center-configuration-manager"></a>Come distribuire i client nei computer Windows in System Center Configuration Manager
 
@@ -309,7 +310,7 @@ Per garantire che il dispositivo rimanga in uno stato gestito dopo l'installazio
 
 -   Il client deve essere installato manualmente su ciascun computer del gruppo di lavoro. Durante l'installazione, l'utente connesso deve disporre dei diritti di amministratore locale.  
 
--   Per accedere alle risorse nel dominio del server del sito di Configuration Manager, è necessario configurare l'account di accesso di rete per il sito. Specificare questo account come una proprietà del componente di distribuzione software. Per altre informazioni, vedere [Site components for System Center Configuration Manager](../../../core/servers/deploy/configure/site-components.md).  
+-   Per accedere alle risorse nel dominio del server del sito di Configuration Manager, è necessario configurare l'account di accesso di rete per il sito. Specificare questo account come una proprietà del componente di distribuzione software. Per altre informazioni, vedere [Componenti del sito per System Center Configuration Manager](../../../core/servers/deploy/configure/site-components.md).  
 
  Limitazioni:  
 

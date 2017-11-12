@@ -1,5 +1,6 @@
 ---
-title: Altre informazioni sulle licenze e Current Branch | Microsoft Docs
+title: Altre informazioni sulle licenze e i rami
+titleSuffix: Configuration Manager
 description: Usare questo argomento per informazioni sui requisiti di licenza per le opzioni di installazione disponibili con la versione di ottobre 2016 di System Center Configuration Manager, che include Current Branch versione 1606, Long-Term Servicing Branch (LTSB) e l'installazione di valutazione di Current Branch.
 ms.custom: na
 ms.date: 10/12/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 90e16b316872cb370c9c2e645f46ac12afab7107
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 88cc85a98b9281ec07ead766c415bebe46c5a82c
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="licensing-and-branches-for-system-center-configuration-manager"></a>Licenze e rami per System Center Configuration Manager
 

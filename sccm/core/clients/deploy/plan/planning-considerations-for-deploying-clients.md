@@ -1,5 +1,6 @@
 ---
-title: Pianificazione della distribuzione client | Microsoft Docs
+title: Pianificazione della distribuzione di client
+titleSuffix: Configuration Manager
 description: Pianificare la distribuzione di client e preparare l'infrastruttura in System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/23/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "3"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 824cc9650cdc5cd7ac30e6dedb608fa8ef63b0ff
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: ed4fd972ab817aee574b7e84f75956a31ab3203a
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="planning-considerations-for-deploying-clients-in-system-center-configuration-manager"></a>Considerazioni sulla pianificazione dei client in System Center Configuration Manager
 

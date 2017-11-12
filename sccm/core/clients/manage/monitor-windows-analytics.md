@@ -1,5 +1,6 @@
 ---
-title: 'Monitorare i client: usare Windows Analytics con Configuration Manager | Microsoft Docs'
+title: Monitorare i client con Windows Analytics
+titleSuffix: Configuration Manager
 description: "Windows Analytics è un set di soluzioni eseguite in Operations Management Suite, che consentono di ottenere indicazioni preziose sullo stato corrente dell'ambiente sfruttando i dati di telemetria di Windows segnalati dai dispositivi nell'ambiente."
 ms.custom: na
 ms.date: 07/31/2017
@@ -14,32 +15,32 @@ caps.latest.revision: "23"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: adabe8f475eb12dd44005ec07344e8565be20582
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 4d8c0eef8c85645ceb6f12aaf776ce1b1f82cbdd
+ms.sourcegitcommit: d025a2cbd1ed82f42f67255c97b913f2163b3baf
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/02/2017
 ---
 # <a name="use-windows-analytics-with-configuration-manager"></a>Usare Windows Analytics con Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-[Windows Analytics](https://www.microsoft.com/en-us/WindowsForBusiness/windows-analytics) è un set di soluzioni eseguite in [Operations Management Suite](/azure/operations-management-suite/operations-management-suite-overview). Le soluzioni consentono di ottenere indicazioni sullo stato corrente dell'ambiente. I dispositivi dell'ambiente segnalano i dati di telemetria di Windows. È possibile accedere a questi dati e analizzarli tramite le soluzioni del [portale Web di Operations Management Suite](https://mms.microsoft.com). Nel caso di [Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics) i dati possono anche essere resi direttamente disponibili nel nodo di monitoraggio della console di Configuration Manager connettendo Preparazione aggiornamenti a Configuration Manager.
+[Windows Analytics](https://www.microsoft.com/WindowsForBusiness/windows-analytics) è un set di soluzioni eseguite in [Operations Management Suite](/azure/operations-management-suite/operations-management-suite-overview). Queste soluzioni consentono di ottenere indicazioni sullo stato corrente dell'ambiente. I dispositivi presenti nell'ambiente forniscono dati di telemetria di Windows a cui è possibile accedere e che possono essere analizzati tramite le soluzioni del [portale Web di Operations Management Suite](https://mms.microsoft.com). Nel caso di [Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics) i dati possono anche essere resi direttamente elaborabili nel nodo di monitoraggio della console di Configuration Manager connettendo Preparazione aggiornamenti a Configuration Manager.
 
-I dati di telemetria di Windows usati da Windows Analytics non vengono trasferiti direttamente al server del sito di Configuration Manager. I computer client inviano i dati di telemetria di Windows al servizio di telemetria. I dati pertinenti vengono quindi trasferiti alle soluzioni di Windows Analytics ospitate in una delle aree di lavoro di OMS dell'organizzazione. Configuration Manager può quindi indirizzare ai dati pertinenti nel portale Web con collegamenti contestuali o visualizzare direttamente i dati che fanno parte delle soluzioni connesse a Configuration Manager. È anche possibile eseguire query dirette sui dati dal portale Web di Operation Management Suite.
+I dati di telemetria di Windows usati da Windows Analytics non vengono trasferiti direttamente al server del sito di Configuration Manager. I computer client inviano dati di telemetria di Windows al servizio di telemetria di Windows. I dati pertinenti vengono quindi trasferiti alle soluzioni Windows Analytics ospitate in una delle aree di lavoro OMS dell'organizzazione. Configuration Manager può quindi indirizzare gli utenti ai dati pertinenti nel portale Web con collegamenti contestuali o visualizzare direttamente i dati che fanno parte delle soluzioni connesse a Configuration Manager. È anche possibile eseguire query dirette sui dati dal portale Web di Operation Management Suite.
 
 >[!Important]
 >I [dati di utilizzo e di diagnostica di Configuration Manager](../../plan-design/diagnostics/diagnostics-and-usage-data.md), segnalati a Microsoft dal server del sito di Configuration Manager sono completamente distinti dai dati di telemetria di Windows Analytics e di Windows.
 
 ## <a name="configure-clients-to-report-data-to-windows-analytics"></a>Configurare i client per segnalare i dati a Windows Analytics
 
-I dispositivi client, per poter segnalare i dati a Windows Analytics, devono essere configurati con una chiave ID commerciale associata all'area di lavoro di Operations Management Suite che ospita i dati di Windows Analytics per l'organizzazione. I dispositivi devono anche essere configurati per segnalare i dati di telemetria a un livello di telemetria appropriato per la soluzione o le soluzioni specifiche che si vogliono usare. 
+Per poter segnalare i dati a Windows Analytics, i dispositivi client devono essere configurati con una chiave ID commerciale associata all'area di lavoro di Operations Management Suite che ospita i dati di Windows Analytics per l'organizzazione. I dispositivi devono anche essere configurati per segnalare i dati di telemetria a un livello di telemetria appropriato per la soluzione o le soluzioni specifiche che si vogliono usare. 
 
 ### <a name="configure-windows-analytics-client-settings"></a>Configurare le impostazioni client di Windows Analytics
 Per configurare Windows Analytics, nella console di Configuration Manager scegliere **Amministrazione** > **Impostazioni client**, fare doppio clic su **Create Custom Device Client Settings** (Crea impostazioni client del dispositivo personalizzate), quindi selezionare **Windows Analytics**.  
 
 Dopo l'accesso alla scheda delle impostazioni di **Windows Analytics**, configurare quanto segue:
-  -  **ID commerciale**  
+  -  **Chiave ID commerciale**  
 L'ID commerciale consente di associare le informazioni dai dispositivi gestiti all'area di lavoro OMS che ospita i dati Windows Analytics dell'organizzazione. Se è già stata configurata una chiave ID commerciale per l'uso con Upgrade Readiness, usare tale ID. Se non è ancora disponibile una chiave ID commerciale, vedere [Generate your commercial ID key]( https://technet.microsoft.com/itpro/windows/deploy/upgrade-readiness-get-started#generate-your-commercial-id-key) (Generare l'ID commerciale).
 
   -  **Livello di telemetria nei dispositivi Windows 10**   

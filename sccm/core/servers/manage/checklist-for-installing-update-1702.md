@@ -1,5 +1,6 @@
 ---
-title: Elenco di controllo per la versione 1702 | System Center Configuration Manager
+title: Elenco di controllo per la versione 1702
+titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di System Center Configuration Manager alla versione 1702.
 ms.custom: na
 ms.date: 06/06/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "7"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 0c2e685961ceed920611bb9b8e611ba8512b2e6f
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 83a249f860d8523bd211d65b32fe85724df95fca
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="checklist-for-installing-update-1702-for-system-center-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1702 di System Center Configuration Manager
 

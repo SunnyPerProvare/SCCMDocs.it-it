@@ -1,5 +1,6 @@
 ---
-title: Elenco di controllo per la versione 1610 | System Center Configuration Manager
+title: Elenco di controllo per la versione 1610
+titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di System Center Configuration Manager alla versione 1610.
 ms.custom: na
 ms.date: 6/6/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "7"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 54b243fd33ed13b8ccde48fa5e2525204455d96c
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: b6451acbb17b849e8d291fa33d2cb47b16a4439f
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="checklist-for-installing-update-1610-for-system-center-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1610 di System Center Configuration Manager
 

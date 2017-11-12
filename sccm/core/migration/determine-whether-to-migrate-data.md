@@ -1,5 +1,6 @@
 ---
-title: Scegliere quali dati migrare | Microsoft Docs
+title: Scegliere di che cosa eseguire la migrazione
+titleSuffix: Configuration Manager
 description: Informazioni su quali dati possono e non possono essere migrati a System Center Configuration Manager.
 ms.custom: na
 ms.date: 12/29/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 9dc5f6c9f58e1fc33b2dc9dd76737ae23af81993
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 05d9bdb5b5e66b59d252fd5f6c82a2e1f3ed131a
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="determine-whether-to-migrate-data-to-system-center-configuration-manager"></a>Stabilire se eseguire la migrazione dei dati a System Center Configuration Manager
 

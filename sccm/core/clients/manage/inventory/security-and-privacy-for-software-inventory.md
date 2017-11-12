@@ -1,5 +1,6 @@
 ---
-title: Privacy e sicurezza per l'inventario software | Microsoft Docs
+title: Privacy e sicurezza per l'inventario software
+titleSuffix: Configuration Manager
 description: Informazioni sulla sicurezza e la privacy per l'inventario software in System Center Configuration Manager.
 ms.custom: na
 ms.date: 2/22/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 7652e46d2168e2de623fa8e6d5b8663701764244
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 6e784bc131b9006ba441c1fc32d67469e01bacad
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="security-and-privacy-for-software-inventory-in-system-center-configuration-manager"></a>Sicurezza e privacy per l'inventario software in System Center Configuration Manager
 

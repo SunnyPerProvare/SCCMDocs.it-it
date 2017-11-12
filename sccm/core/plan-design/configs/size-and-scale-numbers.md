@@ -1,5 +1,6 @@
 ---
-title: Ridimensionamento e scala | Microsoft Docs
+title: "Ridimensionamento e scalabilità"
+titleSuffix: Configuration Manager
 description: Identificare il numero di ruoli del sistema del sito e di siti necessari per supportare i dispositivi nell'ambiente System Center Configuration Manager.
 ms.custom: na
 ms.date: 07/24/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "4"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 9c50f6633a5ca04b62f4c3b06119fb1fbcab2643
-ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
+ms.openlocfilehash: c0277fed7db5803aa2b2246ca879640136dce02a
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Numeri di ridimensionamento e scalabilità per System Center Configuration Manager
 
@@ -54,7 +55,6 @@ I numeri del supporto riportati di seguito si basano sull'uso dell'hardware cons
 
 -   I siti secondari non supportano siti figlio.  
 
--   Un sito di amministrazione centrale supporta fino a 25 siti primari figlio.  
 
 
 ## <a name="bkmk_roles"></a> Site system roles    

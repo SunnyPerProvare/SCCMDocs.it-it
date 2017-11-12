@@ -1,5 +1,6 @@
 ---
-title: "Proprietà di installazione del client | Microsoft Docs"
+title: "Proprietà di installazione del client"
+titleSuffix: Configuration Manager
 description: "Informazioni sulle proprietà di installazione del client in System Center Configuration Manager."
 ms.custom: na
 ms.date: 01/04/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "15"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: ef515da67a7293de60a7678dee69e9785d339352
-ms.sourcegitcommit: 96b79fa091f44e8e6ac5652f6cbbb4b873a8bad9
+ms.openlocfilehash: 903a415a936bc62aad5c889d5d8f6572ba9759c1
+ms.sourcegitcommit: 5437b2823bada8f8c9e67940f584953b9d190628
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 10/31/2017
 ---
 # <a name="about-client-installation-properties-in-system-center-configuration-manager"></a>Informazioni sulle proprietà di installazione del client in System Center Configuration Manager
 
@@ -53,7 +54,7 @@ Usare il comando CCMSetup.exe di System Center Configuration Manager per install
 
  Esempio:  
 
- 'CCMSetup.exe /mp:SMSMP01 /logon SMSSITECODE=S01 FSP=SMSFSP01`  
+      'CCMSetup.exe /mp:SMSMP01 /logon SMSSITECODE=S01 FSP=SMSFSP01`  
 
  Questo comando di esempio esegue le azioni seguenti:  
 

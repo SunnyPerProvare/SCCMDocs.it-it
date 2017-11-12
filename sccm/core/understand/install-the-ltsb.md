@@ -1,5 +1,6 @@
 ---
-title: Installare un sito usando il supporto di base 1606 | Microsoft Docs
+title: 'Installare un sito usando il supporto di base della versione 1606 '
+titleSuffix: Configuration Manager
 description: Installare o aggiornare Long-Term Servicing Branch per System Center Configuration Manager.
 ms.custom: na
 ms.date: 09/06/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 247fbe5313c17be906802acfaa6952ab3358122e
-ms.sourcegitcommit: a17f5dece340a70cedbec03d19938dab90ae60b1
+ms.openlocfilehash: 13f483a31e5f74af549fd201e53079ae894227ae
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="install-and-upgrade-with-the-version-1606-baseline-media-for-system-center-configuration-manager"></a>Eseguire installazioni e aggiornamenti con il supporto di base della versione 1606 per System Center Configuration Manager
 

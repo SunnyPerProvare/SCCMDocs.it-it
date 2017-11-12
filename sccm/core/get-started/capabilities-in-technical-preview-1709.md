@@ -1,5 +1,6 @@
 ---
-title: Technical Preview 1709 | Microsoft Docs
+title: Technical Preview 1709
+titleSuffix: Configuration Manager
 description: "Informazioni sulle funzionalità disponibili in Technical Preview versione 1709 per System Center Configuration Manager."
 ms.custom: na
 ms.date: 09/28/2017
@@ -13,11 +14,11 @@ ms.assetid: a3ef6bdc-a204-4c4c-a02f-2bd03f35183e
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 3348bc91e6810c873d50cb4efd3efb9fbd024bd3
-ms.sourcegitcommit: 96b79fa091f44e8e6ac5652f6cbbb4b873a8bad9
+ms.openlocfilehash: 90e31c26204323e33560270044ebac7dfe135684
+ms.sourcegitcommit: 1573a1bd0bd58fefb1ea651b3ea8d6fd53eff546
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 10/17/2017
 ---
 # <a name="capabilities-in-technical-preview-1709-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1709 per System Center Configuration Manager
 
@@ -43,8 +44,8 @@ L'articolo illustra le funzionalità disponibili nella versione 1709 di Technica
 
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
-## <a name="improved-vpn-profile-experience-in-configuration-manager-console----1313282---"></a>Esperienza del profilo VPN migliorata nella console di Configuration Manager <!-- 1313282 -->
-
+## <a name="improved-vpn-profile-experience-in-configuration-manager-console"></a>Esperienza del profilo VPN migliorata nella console di Configuration Manager
+<!-- 1313282 -->
 In questa versione sono state aggiornate la procedura guidata di creazione del profilo VPN e le pagine delle proprietà per visualizzare le impostazioni appropriate per la piattaforma selezionata. In particolare:
 
 - Ogni piattaforma ha un proprio flusso di lavoro, vale a dire che i nuovi profili VPN contengono solo l'impostazione supportata dalla piattaforma.
@@ -80,8 +81,7 @@ Quando si selezionano piattaforme diverse, si noti che vengono visualizzate solo
 
 ## <a name="co-management-for-windows-10-devices"></a>Co-gestione per dispositivi Windows 10    
 <!-- 1350871 -->
-Molti clienti vogliono gestire i dispositivi Windows 10 nello stesso modo in cui gestiscono i dispositivi mobili usando una soluzione semplice, a costi contenuti e basata su cloud. Tuttavia, la transizione dalla gestione tradizionale a una gestione moderna può essere complessa. La co-gestione è una soluzione in cui i dispositivi Windows 10 possono essere gestiti contemporaneamente da Intune e Configuration Manager, nonché aggiunti ad Active Directory (AD) e Azure Active Directory (Azure AD) in modo che la modernizzazione avvenga gradualmente. È una soluzione che costituisce un ponte tra la gestione tradizionale e quella moderna e che consente di eseguire la transizione mediante un approccio per fasi.  
-
+Molti clienti vogliono gestire i dispositivi Windows 10 nello stesso modo in cui gestiscono i dispositivi mobili usando una soluzione semplice, a costi contenuti e basata su cloud. Tuttavia, la transizione dalla gestione tradizionale a una gestione moderna può essere complessa. A partire da Windows 10, versione 1607 (nota anche come Aggiornamento dell'anniversario) è possibile aggiungere un dispositivo Windows 10 ad Active Directory (AD) locale e ad Azure AD basata sul cloud AD allo stesso tempo (Azure AD ibrida). La co-gestione sfrutta questo miglioramento e consente di gestire i dispositivi Windows 10 contemporaneamente usando sia Configuration Manager che Intune. È una soluzione che costituisce un ponte tra la gestione tradizionale e quella moderna e che consente di eseguire la transizione mediante un approccio per fasi. 
 
 ### <a name="prerequisites"></a>Prerequisiti
 Prima di poter abilitare la co-gestione, è necessario soddisfare i prerequisiti seguenti. Esistono prerequisiti generali e prerequisiti diversi per client di Configuration Manager esistenti e per dispositivi non client.
@@ -210,7 +210,6 @@ Nella sezione precedente i dispositivi Windows 10 sono stati preparati per la co
     - **Produzione**: quando si seleziona questa impostazione, tutti i dispositivi Windows 10 supportati vengono abilitati per la co-gestione. Configurare **Exclusion group** (Gruppo di esclusione) con una o più raccolte. I dispositivi che sono membri di una raccolta nel gruppo vengono esclusi dalla co-gestione. 
 5. Nella pagina di attivazione scegliere **Pilota** o **Tutti**, a seconda delle impostazioni configurate nella pagina della gestione temporanea, per abilitare la registrazione automatica in Intune e fare clic su **Avanti**. Quando si sceglie **Pilota**, vengono registrati automaticamente in Intune solo i client di Configuration Manager che sono membri del gruppo pilota. Ciò consente di abilitare la co-gestione inizialmente su un subset di client per testarla e implementarla mediante un approccio per fasi. 
 6. Nella pagina dei carichi di lavoro scegliere se passare i carichi di lavoro di Configuration Manager a Intune e fare clic su **Avanti**. Usare i dispositivi di scorrimento per selezionare se passare il carico di lavoro per il gruppo di pilota o per tutti i client Windows 10, a seconda delle impostazioni configurate nella pagina della gestione temporanea. 
-
 7. Per abilitare la co-gestione, completare la procedura guidata.  
 
 <!--### Modify your co-management settings

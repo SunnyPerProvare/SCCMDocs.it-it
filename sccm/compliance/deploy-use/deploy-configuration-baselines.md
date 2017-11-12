@@ -1,5 +1,6 @@
 ---
-title: Distribuire linee di base di configurazione | Microsoft Docs
+title: Distribuire linee di base di configurazione
+titleSuffix: Configuration Manager
 description: Distribuire le linee di base di configurazione per definire le relative distribuzioni e aggiungere o rimuovere le linee di base dalle distribuzioni.
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: b9c46766b953016d852c21317db72b45e23f1ee7
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: e61314c5c10f4a4c9eda1f0a292cb5a9c72b32bb
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-deploy-configuration-baselines-in-system-center-configuration-manager"></a>Come distribuire linee di base di configurazione in System Center Configuration Manager
 

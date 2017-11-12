@@ -1,5 +1,6 @@
 ---
-title: Domande frequenti relative al client di Endpoint Protection | Microsoft Docs
+title: Domande frequenti relative al client Endpoint Protection
+titleSuffix: Configuration Manager
 description: Risposte alle domande frequenti su Windows Defender e su Endpoint Protection.
 ms.custom: na
 ms.date: 02/14/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "15"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: b88bc5f734b85527b81e5848deb0617db4c8dfbc
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: de813a38d6278a60189667165bf4911bd314f14a
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="endpoint-protection-client-frequently-asked-questions"></a>Domande frequenti relative al client Endpoint Protection
 
@@ -62,7 +63,7 @@ Queste domande frequenti sono destinate a utenti di computer il cui amministrato
     |Monitorizza attività di file e programmi nel computer|Questa opzione consente di monitorare i file e programmi in esecuzione nel computer e quindi genera avvisi per le eventuali azioni eseguite da tali file e programmi e le azioni eseguite su di essi. Si tratta di un aspetto importante, perché il software dannoso può sfruttare le vulnerabilità nei programmi installati per eseguire software dannoso o indesiderato all'insaputa dell'utente. Ad esempio, un programma spyware può attivarsi automaticamente in background all'avvio di un programma usato di frequente. Windows Defender mantiene monitorati i programmi e genera avvisi se rileva attività sospette.|  
     |Abilitare monitoraggio comportamento|Questa opzione consente di monitorare raccolte di comportamenti per individuare modelli sospetti che potrebbero non essere rilevati dai metodi di rilevamento antivirus tradizionali.|  
 
-    |Abilita Network Inspection System|Questa opzione consente di proteggere il computer dagli exploit "zero day" di vulnerabilità note, riducendo il periodo di tempo tra l'individuazione di una vulnerabilità e l'applicazione di un aggiornamento.|  
+    |Abilita Network Inspection System|Questa opzione consente di proteggere il computer dagli exploit zero-day di vulnerabilità note, riducendo il periodo di tempo tra l'individuazione di una vulnerabilità e l'applicazione di un aggiornamento.|  
 
 -   **Opzioni di analisi**: è possibile usare Windows Defender per eseguire un'analisi al fine di rilevare potenziali minacce, come ad esempio virus, spyware e altro software dannoso, che potrebbero compromettere la sicurezza del computer. È inoltre possibile pianificare le analisi periodicamente e rimuovere il software dannoso rilevato durante un'analisi.  
 
@@ -218,7 +219,7 @@ Per rimuovere facilmente e velocemente tutti gli elementi indesiderati o potenzi
 |Analizza tutti i download|Questa opzione consente di monitorare i file e i programmi scaricati, inclusi i file scaricati automaticamente tramite Windows Internet Explorer e Microsoft Outlook® Express, ad esempio i controlli ActiveX® e i programmi di installazione software. Questi file possono essere scaricati, installati o eseguiti dal browser stesso. Software dannoso, tra cui virus, spyware e altro software potenzialmente indesiderato, può essere incluso in questi file e installato all'insaputa dell'utente.<br /><br /> Con l'opzione di protezione in tempo reale, Windows Defender mantiene costantemente monitorato il computer e controlla l'eventuale presenza di file o programmi dannosi che potrebbero essere stati scaricati. Questa funzionalità di monitoraggio significa che Windows Defender non deve rallentare l'esperienza di esplorazione o per la posta elettronica richiedendo un controllo di tutti i file o programmi da scaricare.|  
 |Monitoraggio dell'attività di file e programmi nel computer|Questa opzione consente di monitorare i file e programmi in esecuzione nel computer e quindi genera avvisi per le eventuali azioni eseguite da tali file e programmi e le azioni eseguite su di essi. Si tratta di un aspetto importante, perché il software dannoso può sfruttare le vulnerabilità nei programmi installati per eseguire software dannoso o indesiderato all'insaputa dell'utente. Ad esempio, un programma spyware può attivarsi automaticamente in background all'avvio di un programma usato di frequente. Windows Defender mantiene monitorati i programmi e genera avvisi se rileva attività sospette.|  
 |Abilita monitoraggio del comportamento|Questa opzione consente di monitorare raccolte di comportamenti per individuare modelli sospetti che potrebbero non essere rilevati dai metodi di rilevamento antivirus tradizionali.|  
-|Abilita Network Inspection System|Questa opzione consente di proteggere il computer dagli exploit "zero day" di vulnerabilità note, riducendo il periodo di tempo tra l'individuazione di una vulnerabilità e l'applicazione di un aggiornamento.|  
+|Abilita Network Inspection System|Questa opzione consente di proteggere il computer dagli exploit zero-day di vulnerabilità note, riducendo il periodo di tempo tra l'individuazione di una vulnerabilità e l'applicazione di un aggiornamento.|  
 
 ### <a name="to-turn-off-real-time-protection"></a>Per disattivare la protezione in tempo reale  
 

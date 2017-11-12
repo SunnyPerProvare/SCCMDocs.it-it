@@ -1,5 +1,6 @@
 ---
-title: Trasferimenti di dati | Microsoft Docs
+title: Trasferimenti di dati
+titleSuffix: Configuration Manager
 description: Informazioni su come Configuration Manager sposta i dati tra i siti e come gestire il trasferimento dei dati in rete.
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "12"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: bf0fdc8d4b4a72760b2cfb91231378a17df01594
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 29e15b9ebe01e9e266df24267bf402e3d07de095
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="data-transfers-between-sites-in-system-center-configuration-manager"></a>Trasferimenti di dati tra siti in System Center Configuration Manager
 
@@ -150,7 +151,7 @@ Da un punto di vista operativo, le viste distribuite non sono visibili a un uten
 Finché il tipo di dati di un collegamento di replica è abilitato per le viste distribuite, il sito primario figlio non replica i dati al sito di amministrazione centrale. Non appena vengono disattivate le viste distribuite per un tipo di dati, il sito primario figlio riprende la replica dei dati al sito di amministrazione centrale come parte della normale replica di dati. Prima che questi dati diventino disponibili nel sito di amministrazione centrale, i gruppi di replica che li contengono devono comunque essere reinizializzati tra il sito primario e il sito di amministrazione centrale. Allo stesso modo, dopo aver disinstallato un sito primario abilitato per le viste distribuite, il sito di amministrazione centrale deve completare la reinizializzazione dei suoi dati affinché i dati che erano abilitati alle viste distribuite siano accessibili al suo interno.  
 
 > [!IMPORTANT]  
-> Quando si usano le viste distribuite in un collegamento di replica nella gerarchia del sito, è necessario disabilitare le viste distribuite per tutti i collegamenti di replica prima di disinstallare un sito primario. Per ulteriori informazioni, vedere [Disinstallare un sito primario configurato con viste distribuite](../../../core/servers/deploy/install/uninstall-sites-and-hierarchies.md#BKMK_UninstallPrimaryDistViews).  
+> Quando si usano le viste distribuite in un collegamento di replica nella gerarchia del sito, è necessario disabilitare le viste distribuite per tutti i collegamenti di replica prima di disinstallare un sito primario. Per ulteriori informazioni, vedere [Uninstall a primary site that is configured with distributed views](../../../core/servers/deploy/install/uninstall-sites-and-hierarchies.md#BKMK_UninstallPrimaryDistViews).  
 
 #### <a name="prerequisites-and-limitations-for-distributed-views"></a>Prerequisiti e limitazioni per le viste distribuite  
 

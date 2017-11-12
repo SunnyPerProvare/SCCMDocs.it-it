@@ -1,5 +1,6 @@
 ---
-title: Configurare le porte di comunicazione client | Microsoft Docs
+title: Configurare le porte di comunicazione client
+titleSuffix: Configuration Manager
 description: Impostare le porte di comunicazione client in System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/23/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: a181bd78f1925fa2f17aa4071ea81f58ae1570af
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: caec28f9e791bcbc2c67b63c9ff8886f9b750bca
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-configure-client-communication-ports-in-system-center-configuration-manager"></a>Come configurare porte di comunicazione client in System Center Configuration Manager
 

@@ -1,5 +1,6 @@
 ---
-title: Strumento di manutenzione gerarchia | Microsoft Docs
+title: Strumento di manutenzione gerarchia
+titleSuffix: Configuration Manager
 description: "Informazioni sulle finalità dello strumento di manutenzione gerarchia e motivi per usarlo. Include informazioni di riferimento alle opzioni della riga di comando."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: f3ddeaadfb1418aeeaacdca47768600c86b59083
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 96e5166498406259600849e9adffcdfb200e8ec1
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="hierarchy-maintenance-tool-preinstexe-for-system-center-configuration-manager"></a>Strumento di manutenzione gerarchia (Preinst.exe) per System Center Configuration Manager
 

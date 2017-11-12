@@ -1,5 +1,6 @@
 ---
-title: Dati di diagnostica per la versione 1602 | Microsoft Docs
+title: Dati di diagnostica per la versione 1602
+titleSuffix: Configuration Manager
 description: Informazioni sui livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1602.
 ms.custom: na
 ms.date: 12/29/2016
@@ -33,11 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 3e50327678d29fa2c1fed4ac0fd63738e65776cb
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: d25acac574a04fbf27b70d29d50c5d70e2c78355
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1602-of-system-center-configuration-manager"></a>Livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1602
 

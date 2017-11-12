@@ -1,5 +1,6 @@
 ---
-title: Testare gli aggiornamenti client in una raccolta di pre-produzione | Microsoft Docs
+title: Testare gli aggiornamenti client in una raccolta di pre-produzione
+titleSuffix: Configuration Manager
 description: Testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager.
 ms.custom: na
 ms.date: 05/04/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 5b6e60e7c6225e37dd345e99c703505e346cd0a4
-ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
+ms.openlocfilehash: e301c3df57d3f625157015692374e512e00dfc60
+ms.sourcegitcommit: 1132886e07d0c0a87dcc7eeef4577dd8d8840023
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 11/01/2017
 ---
 # <a name="how-to-test-client-upgrades-in-a-pre-production-collection-in-system-center-configuration-manager"></a>Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager
 
@@ -39,8 +40,10 @@ ms.lasthandoff: 09/14/2017
 3.  Alzare il nuovo client al livello di produzione.  
 
 ##  <a name="to-configure-automatic-client-upgrades-to-use-a-pre-production-collection"></a>Per configurare gli aggiornamenti automatici del client per usare una raccolta di pre-produzione  
+> [!IMPORTANT]
+> La distribuzione di client di pre-produzione non è supportata per i computer di gruppi di lavoro poiché non possono usare l'autenticazione necessaria per il punto di distribuzione per accedere al pacchetto client di pre-produzione.  Quando viene promosso a client di produzione, riceveranno il client più recente.
 
-1. [Impostare una raccolta](..\collections\create-collections.md) che contiene i computer nei quali si vuole distribuire il client di pre-produzione. Non includere i computer del gruppo lavoro nelle raccolte di pre-produzione, poiché non possono usare l'autenticazione necessaria per il punto di distribuzione per accedere al pacchetto client di pre-produzione.   
+1. [Impostare una raccolta](..\collections\create-collections.md) che contiene i computer nei quali si vuole distribuire il client di pre-produzione.   
 
 1.  Nella console di Configuration Manager aprire **Amministrazione** > **Configurazione del sito** > **Siti** e scegliere **Impostazioni gerarchia**.  
 

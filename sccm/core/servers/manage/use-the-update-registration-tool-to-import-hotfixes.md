@@ -1,5 +1,6 @@
 ---
-title: Strumento di registrazione dell'aggiornamento | Microsoft Docs
+title: Strumento di registrazione dell'aggiornamento
+titleSuffix: Configuration Manager
 description: Informazioni su quando e come usare lo strumento di registrazione dell'aggiornamento per importare manualmente un aggiornamento nella console di Configuration Manager.
 ms.custom: na
 ms.date: 3/27/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "8"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 35a4c201f73469fdfaa5bb8629e91886f7ae8751
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 2f63fba399a9d53376667056bb4032d92d6a6cd6
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="use-the-update-registration-tool-to-import-hotfixes-to-system-center-configuration-manager"></a>Usare lo strumento di registrazione dell'aggiornamento per importare hotfix in System Center Configuration Manager
 

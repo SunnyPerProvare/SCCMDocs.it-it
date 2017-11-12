@@ -1,5 +1,6 @@
 ---
-title: Gestire i punti di distribuzione | Microsoft Docs
+title: Gestire punti di distribuzione
+titleSuffix: Configuration Manager
 description: Ospitare il contenuto (file e software) distribuito a utenti e dispositivi tramite punti di distribuzione. Ecco come installarli e configurarli.
 ms.custom: na
 ms.date: 09/18/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 0213b48c24461cbab5a9acab720064e0e26fa568
-ms.sourcegitcommit: 474e6ddbaaeac4ba17d8172321e08deeb0140d0a
+ms.openlocfilehash: b9b2fdcff572127e9e78d7e7acba89bc4c6759a2
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="install-and-configure-distribution-points-for-system-center-configuration-manager"></a>Installare e configurare punti di distribuzione per System Center Configuration Manager
 

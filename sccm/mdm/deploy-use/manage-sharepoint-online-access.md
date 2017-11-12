@@ -1,5 +1,6 @@
 ---
-title: Gestire l'accesso a SharePoint Online | Microsoft Docs
+title: Gestire l'accesso a SharePoint Online
+titleSuffix: Configuration Manager
 description: Informazioni su come usare i criteri di accesso condizionale di SharePoint Online in System Center Configuration Manager per gestire l'accesso a OneDrive.
 ms.custom: na
 ms.date: 03/05/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: c564c1fc25c5156a2d9ddfa1b4123024c658bf61
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 2c1d7cd3462a54a064ec47d0b375ee4cdb25a4b4
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="manage-sharepoint-online-access-in-system-center-configuration-manager"></a>Gestire l'accesso a SharePoint Online in System Center Configuration Manager
 
@@ -163,9 +164,9 @@ Le applicazioni desktop di Office possono accedere a SharePoint Online nei PC ch
 
 4.  In **Browser access** (Accesso al browser) per SharePoint Online e OneDrive for Business è possibile scegliere di consentire l'accesso a Exchange Online esclusivamente tramite i browser supportati: Safari (iOS) e Chrome (Android). Non sarà possibile accedere da altri browser.  Vengono applicate anche le restrizioni di piattaforma selezionate per l'accesso all'applicazione per OneDrive.
 
-    Nei dispositivi **Android** è necessario che gli utenti abilitino l'accesso al browser.  A tale scopo, l'utente finale deve abilitare l'opzione "Abilita l'accesso al browser" nel dispositivo registrato, come segue:
+    Nei dispositivi **Android** è necessario che gli utenti abilitino l'accesso al browser.  A tale scopo, l'utente finale deve abilitare l'opzione "Abilita l'accesso al browser" nel dispositivo registrato come segue:
     1.  Avviare l' **app Portale aziendale**.
-    2.  Passare alla pagina **Impostazioni** facendo clic sui punti di sospensione (â€¦) o sul tasto di menu.
+    2.  Passare alla pagina **Impostazioni** facendo clic sui punti di sospensione (...) o sul tasto di menu.
     3.  Scegliere il pulsante **Abilita l'accesso al browser** .
     4.  Nel browser Chrome disconnettersi da Office 365 e riavviare Chrome.
 

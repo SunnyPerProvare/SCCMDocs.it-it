@@ -1,5 +1,6 @@
 ---
-title: Pubblicazione dei siti ed estensione dello schema di Active Directory | Microsoft Docs
+title: Pubblicazione e schema di Active Directory
+titleSuffix: Configuration Manager
 description: Estendere lo schema di Active Directory per System Center Configuration Manager per semplificare il processo di distribuzione e configurazione dei client.
 ms.custom: na
 ms.date: 2/6/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 58beef440db8e019a06ce7c4c8eaabc8e85ce954
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 747d194d8244d42d557bc442f09035808f6eb2f0
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="prepare-active-directory-for-site-publishing"></a>Preparare Active Directory per la pubblicazione di siti
 

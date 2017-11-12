@@ -1,5 +1,6 @@
 ---
-title: "Modalità di registrazione dei dispositivi con la gestione di dispositivi mobili locale da parte degli utenti - Configuration Manager | Microsoft Docs"
+title: "Modalità di registrazione dei dispositivi nella gestione di dispositivi mobili locale "
+titleSuffix: Configuration Manager
 description: Verificare il modo in cui gli utenti registrano i dispositivi con la gestione dei dispositivi mobili locale in System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
@@ -12,14 +13,14 @@ ms.topic: get-started-article
 ms.assetid: 59004b34-b64f-4d77-898c-07bf3dc75430
 caps.latest.revision: "9"
 caps.handback.revision: "0"
-author: Mtillman
-ms.author: mtillman
+author: dougeby
+ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 8c7438c2cc0bc66654eb3e74de10553df53181d9
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: c63cf121c75d5920e51987236f33707afcc08c6b
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-users-enroll-devices-with-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Modalità di registrazione dei dispositivi con la gestione di dispositivi mobili locale da parte degli utenti in System Center Configuration Manager
 

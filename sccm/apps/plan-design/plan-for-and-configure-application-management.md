@@ -1,5 +1,6 @@
 ---
-title: Pianificare e configurare la gestione delle applicazioni | Documentazione Microsoft
+title: Pianificare e configurare la gestione delle applicazioni
+titleSuffix: Configuration Manager
 description: Implementare e configurare le dipendenze necessarie per la distribuzione di applicazioni in System Center Configuration Manager.
 ms.custom: na
 ms.date: 02/09/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "13"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 1519ec79eb6b1da6b9666b2ce12a46553116b364
-ms.sourcegitcommit: c145e515843a0f37c2e5ca5dbd22072a219d06b4
+ms.openlocfilehash: 66317bea84adbddf2d2e94c30a4a72e19229439b
+ms.sourcegitcommit: 18ac58374d2d513fe2a197c80f7c8c6890a7d612
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/03/2017
+ms.lasthandoff: 10/16/2017
 ---
 # <a name="plan-for-and-configure-application-management-in-system-center-configuration-manager"></a>Pianificare e configurare la gestione delle applicazioni in System Center Configuration Manager
 
@@ -31,22 +32,22 @@ Usare le informazioni incluse in questo articolo per implementare le dipendenze 
 |Dipendenza|Altre informazioni|  
 |------------------|----------------------|  
 |Internet Information Services (IIS) è richiesto nei server del sistema del sito che eseguono il punto per siti Web del Catalogo applicazioni, il punto per servizi Web del Catalogo applicazioni, il punto di gestione e il punto di distribuzione.|Per altre informazioni su questo requisito, vedere [Configurazioni supportate](../../core/plan-design/configs/supported-configurations.md).|  
-|Dispositivi mobili registrati da Configuration Manager|Quando si firma un'applicazione con codice per distribuirla nei dispositivi mobili, non usare un certificato generato tramite un modello della versione 3 (**Windows Server 2008, Enterprise Edition**). Questo modello di certificato crea un certificato non compatibile con le applicazioni di Configuration Manager per dispositivi mobili.<br /><br /> Se si usano i Servizi certificati Active Directory per firmare con codice applicazioni per dispositivi mobili, non usare un modello di certificato della versione 3.|  
-|Se si vuole creare automaticamente le affinità utente dispositivo, i client devono essere configurati per il controllo degli eventi di accesso.|Il client Configuration Manager legge gli eventi di accesso di tipo **Riuscito** dal registro eventi di sicurezza del PC per determinare le affinità utente-dispositivo automatiche.  Questi eventi vengono abilitati dai due criteri di controllo seguenti:<br>**Controlla eventi di accesso account**<br>**Controlla eventi di accesso**<br>Per creare automaticamente relazioni tra utenti e dispositivi, verificare che queste due impostazioni siano attivate nei computer client. Per configurare queste impostazioni, è possibile usare i criteri di gruppo di Windows.|  
+|Dispositivi mobili registrati da Configuration Manager|Per firmare un'applicazione con codice per distribuirla nei dispositivi mobili, non usare un certificato generato tramite un modello della versione 3 (**Windows Server 2008, Enterprise Edition**). Questo modello di certificato crea un certificato non compatibile con le applicazioni di Configuration Manager per dispositivi mobili.<br /><br /> Se si usano i Servizi certificati Active Directory per firmare con codice applicazioni per dispositivi mobili, non usare un modello di certificato della versione 3.|  
+|Se si vuole creare automaticamente le affinità utente dispositivo, i client devono essere configurati per il controllo degli eventi di accesso.|Il client di Configuration Manager legge gli eventi di accesso di tipo **Riuscito** dal registro eventi di sicurezza del PC per determinare le affinità utente-dispositivo automatiche.  Questi eventi vengono abilitati dai due criteri di controllo seguenti:<br>**Controlla eventi di accesso account**<br>**Controlla eventi di accesso**<br>Per creare automaticamente relazioni tra utenti e dispositivi, verificare che queste due impostazioni siano attivate nei computer client. Per configurare queste impostazioni, è possibile usare i criteri di gruppo di Windows.|  
 
 ## <a name="configuration-manager-dependencies"></a>Dipendenze di Configuration Manager   
 
 |Dipendenza|Altre informazioni|  
 |------------------|----------------------|  
-|Punto di gestione|I client contattano un punto di gestione per scaricare i criteri client, individuare il contenuto e connettersi al Catalogo applicazioni.<br /><br /> Se i client non possono accedere a un punto di gestione, non potranno utilizzare il Catalogo applicazioni.|  
+|Punto di gestione|I client contattano un punto di gestione per scaricare i criteri client, individuare il contenuto e connettersi al Catalogo applicazioni.<br /><br /> Se i client non possono accedere a un punto di gestione, non potranno usare il Catalogo applicazioni.|  
 |Punto di distribuzione|Prima di poter distribuire le applicazioni ai client, è necessario disporre di almeno un punto di distribuzione nella gerarchia. Per impostazione predefinita, durante un'installazione standard nel server del sito è attivato un ruolo del sito del punto di distribuzione. Il numero e la posizione dei punti di distribuzione varia in base ai requisiti specifici dell'azienda.<br /><br /> Per altre informazioni su come installare i punti di distribuzione e gestire il contenuto, vedere [Gestire il contenuto e l'infrastruttura del contenuto](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).|  
-|Impostazioni client|Esistono numerose impostazioni client che controllano la modalità di installazione delle applicazioni nel client e l'esperienza dell'utente nel client. Queste impostazioni client includono:<br /><br /><ul><li>Agente computer</li><li>Riavvio del computer</li><li>Distribuzione software</li><li>Affinità dispositivi e utenti</li></ul> Per altre informazioni sulle impostazioni client, vedere [Informazioni sulle impostazioni client](../../core/clients/deploy/about-client-settings.md).<br /><br /> Per informazioni su come configurare le impostazioni client, vedere [Come configurare le impostazioni client](../../core/clients/deploy/configure-client-settings.md).|  
-|Per il Catalogo applicazioni:<br /><br /> Account utente rilevati|Gli utenti devono essere rilevati da Configuration Manager prima di poter visualizzare e richiedere le applicazioni dal Catalogo applicazioni. Per altre informazioni, vedere [Eseguire l'individuazione](/sccm/core/servers/deploy/configure/run-discovery).|  
-|App-V 4.6 SP1 o client successivo per l'esecuzione di applicazioni virtuali|Per poter creare applicazioni virtuali in Configuration Manager, è necessario che nei computer sia installato un client App-V 4.6 SP1 o versione successiva.<br /><br /> Per poter distribuire applicazioni virtuali è necessario anche aggiornare il client App-V con l'aggiornamento rapido descritto nell'[articolo 2645225](http://go.microsoft.com/fwlink/p/?LinkId=237322) della Knowledge Base.|  
+|Impostazioni client|Esistono numerose impostazioni client che controllano la modalità di installazione delle applicazioni nel client e l'esperienza dell'utente nel client. Queste impostazioni client includono:<br /><br /><ul><li>Agente computer</li><li>Riavvio del computer</li><li>Distribuzione software</li><li>Affinità utente-dispositivo</li></ul> Per altre informazioni sulle impostazioni client, vedere [Informazioni sulle impostazioni client](../../core/clients/deploy/about-client-settings.md).<br /><br /> Per altre informazioni su come configurare le impostazioni client, vedere [Come configurare le impostazioni client](../../core/clients/deploy/configure-client-settings.md).|  
+|Account utente individuati per il Catalogo applicazioni |Prima che gli utenti possano visualizzare e richiedere applicazioni dal Catalogo applicazioni, Configuration Manager deve individuare gli account utente. Per altre informazioni, vedere [Eseguire l'individuazione](/sccm/core/servers/deploy/configure/run-discovery).|  
+|App-V 4.6 SP1 o client successivo per l'esecuzione di applicazioni virtuali|Per creare applicazioni virtuali in Configuration Manager, è necessario che nei computer sia installato un client App-V 4.6 SP1 o versione successiva.<br /><br /> Per poter distribuire applicazioni virtuali è necessario anche aggiornare il client App-V con l'aggiornamento rapido descritto nell'[articolo 2645225](http://go.microsoft.com/fwlink/p/?LinkId=237322) della Knowledge Base.|  
 |Punto per servizi Web del Catalogo applicazioni|Il punto per servizi Web del Catalogo applicazioni è un ruolo del sistema del sito che fornisce informazioni sul software disponibile nella Raccolta software del sito Web del Catalogo applicazioni.<br /><br /> Per altre informazioni su come configurare il ruolo del sistema del sito, vedere [Configurare Software Center e il Catalogo applicazioni (solo PC Windows)](/sccm/apps/plan-design/plan-for-and-configure-application-management#configure-software-center-and-the-application-catalog-windows-pcs-only) in questo articolo.|  
 |Punto per siti Web del Catalogo applicazioni|Il punto del sito Web del Catalogo applicazioni è un ruolo del sistema del sito che offre agli utenti un elenco del software disponibile.<br /><br /> Per altre informazioni su come configurare il ruolo del sistema del sito, vedere [Configurare Software Center e il Catalogo applicazioni (solo PC Windows)](/sccm/apps/plan-design/plan-for-and-configure-application-management#configure-software-center-and-the-application-catalog-windows-pcs-only) in questo articolo.|  
-|Punto di Reporting Services|Per usare i report in Configuration Manager per la gestione delle applicazioni, è necessario installare e configurare prima un punto di Reporting Services.<br /><br /> Per altre informazioni, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).|  
-|Autorizzazioni di sicurezza per la gestione delle applicazioni|È necessario disporre delle seguenti autorizzazioni di sicurezza per gestire le applicazioni.<br /><br /> Il ruolo sicurezza **Autore applicazioni** include le autorizzazioni elencate in precedenza, necessarie per creare, modificare e disattivare le applicazioni in Configuration Manager.<br /><br /> **Per distribuire le applicazioni:**<br /><br /> Il ruolo sicurezza **Gestione distribuzione applicazioni** include le autorizzazioni elencate precedentemente, necessarie per distribuire le applicazioni in Configuration Manager.<br /><br /> Il ruolo sicurezza **Amministratore applicazione** dispone di tutte le autorizzazioni da entrambi i ruoli sicurezza: **Autore applicazioni** e **Gestione distribuzione applicazioni**.<br /><br /> Per altre informazioni, vedere [Configurare un'amministrazione basata su ruoli](../../core/servers/deploy/configure/configure-role-based-administration.md).|  
+|Punto di Reporting Services|Per usare i report in Configuration Manager per la gestione delle applicazioni, è prima necessario installare e configurare un punto di Reporting Services.<br /><br /> Per altre informazioni, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).|  
+|Autorizzazioni di sicurezza per la gestione delle applicazioni|Per gestire le applicazioni, sono necessarie le autorizzazioni di sicurezza seguenti:<br /><br /> Il ruolo sicurezza **Autore applicazioni** include le autorizzazioni elencate in precedenza, necessarie per creare, modificare e disattivare le applicazioni in Configuration Manager.<br /><br /> **Per distribuire le applicazioni:**<br /><br /> Il ruolo sicurezza **Gestione distribuzione applicazioni** include le autorizzazioni elencate precedentemente, necessarie per distribuire le applicazioni in Configuration Manager.<br /><br /> Il ruolo sicurezza **Amministratore applicazione** dispone di tutte le autorizzazioni da entrambi i ruoli sicurezza: **Autore applicazioni** e **Gestione distribuzione applicazioni**.<br /><br /> Per altre informazioni, vedere [Configurare un'amministrazione basata su ruoli](../../core/servers/deploy/configure/configure-role-based-administration.md).|  
 
 ##  <a name="configure-software-center-and-the-application-catalog-windows-pcs-only"></a>Configurare Software Center e il Catalogo applicazioni (solo PC Windows)  
 
@@ -59,7 +60,7 @@ Usare le informazioni incluse in questo articolo per implementare le dipendenze 
     > [!IMPORTANT]  
     >  Anche se non è più necessario connettersi al Catalogo applicazioni, occorre comunque configurare il punto per siti Web del Catalogo applicazioni e il punto per servizi Web del Catalogo applicazioni, come indicato nella sezione successiva.  
 
--   **Precedente Software Center e il Catalogo applicazioni** : per impostazione predefinita, gli utenti continuano a connettersi alla versione precedente di Software Center e al Catalogo applicazioni (è necessario il Web browser abilitato per Silverlight) per cercare le applicazioni disponibili.  
+-   **Software Center precedente e Catalogo applicazioni**: per impostazione predefinita, gli utenti continuano a connettersi alla versione precedente di Software Center e al Catalogo applicazioni (è necessario un Web browser abilitato per Silverlight) per cercare le applicazioni disponibili.  
 
  Indipendentemente dalla versione che si sceglie di usare, Software Center viene installato automaticamente quando si installa il client di Configuration Manager nei PC Windows.  
 
@@ -67,7 +68,7 @@ Usare le informazioni incluse in questo articolo per implementare le dipendenze 
     >  La versione di Software Center visualizzata dagli utenti si basa sulle impostazioni client di Configuration Manager. Questo offre la flessibilità necessaria per controllare la versione usata in base alle impostazioni client personalizzate che vengono distribuite in una raccolta. 
 
     > [!IMPORTANT]
-    > Nei prossimi mesi, verrà pertanto rimossa la versione precedente di Software Center che non sarà disponibile per l'uso.
+    > Nei prossimi mesi verrà pertanto rimossa la versione precedente di Software Center, che non sarà più disponibile.
     > È possibile configurare i client per l'uso del nuovo Software Center abilitando l'impostazione client **Agente computer** > **Usa il nuovo Software Center**. 
 
 ## <a name="steps-to-install-and-configure-the-application-catalog-and-software-center"></a>Passaggi per installare e configurare il Catalogo applicazioni e Software Center  
@@ -77,10 +78,10 @@ Usare le informazioni incluse in questo articolo per implementare le dipendenze 
 
 |Passaggi|Dettagli|Altre informazioni|  
 |-----------|-------------|----------------------|  
-|**Passaggio 1:** se si intende utilizzare le connessioni HTTPS, assicurarsi di aver distribuito un certificato server Web ai server del sistema del sito.|Distribuire un certificato server Web ai server del sistema del sito che eseguiranno il punto per siti Web del Catalogo applicazioni e il punto per servizi Web del Catalogo applicazioni.<br /><br /> Se si vuole che i client usino il Catalogo applicazione da Internet, distribuire anche un certificato server Web ad almeno un server del sistema del sito del punto di gestione e configurarlo per le connessioni client da Internet.|Per altre informazioni sui requisiti del certificato, vedere [Requisiti dei certificati PKI](../../core/plan-design/network/pki-certificate-requirements.md).|  
-|**Passaggio 2:** se si intende utilizzare un certificato PKI del client per le connessioni ai punti di gestione, distribuire un certificato di autenticazione client ai computer client.|Anche se i client non usano un certificato PKI del client per connettersi al Catalogo applicazioni, è necessario che si connettano a un punto di gestione prima di poter usare il Catalogo applicazioni. È necessario distribuire un certificato di autenticazione client ai computer client nei seguenti scenari:<br /><br /><ul><li>Tutti i punti di gestione in Intranet accettano solo connessioni client HTTPS.</li><li>I client eseguiranno la connessione al Catalogo applicazioni da Internet.</li></ul>|Per altre informazioni sui requisiti del certificato, vedere [Requisiti dei certificati PKI](../../core/plan-design/network/pki-certificate-requirements.md).|  
+|**Passaggio 1:** se si usano connessioni HTTPS, assicurarsi di aver distribuito un certificato del server Web ai server del sistema del sito.|Distribuire un certificato server Web ai server del sistema del sito che eseguiranno il punto per siti Web del Catalogo applicazioni e il punto per servizi Web del Catalogo applicazioni.<br /><br /> Se si vuole che i client usino il Catalogo applicazioni da Internet, distribuire anche un certificato server Web ad almeno un server del sistema del sito del punto di gestione e configurarlo per le connessioni client da Internet.|Per altre informazioni sui requisiti del certificato, vedere [Requisiti dei certificati PKI](../../core/plan-design/network/pki-certificate-requirements.md).|  
+|**Passaggio 2:** se si usa un certificato PKI client per le connessioni ai punti di gestione, distribuire un certificato di autenticazione client ai computer client.|Anche se i client non usano un certificato PKI del client per connettersi al Catalogo applicazioni, è necessario che si connettano a un punto di gestione prima di poter usare il Catalogo applicazioni. È necessario distribuire un certificato di autenticazione client ai computer client nei seguenti scenari:<br /><br /><ul><li>Tutti i punti di gestione in Intranet accettano solo connessioni client HTTPS.</li><li>I client eseguono la connessione al Catalogo applicazioni da Internet.</li></ul>|Per altre informazioni sui requisiti del certificato, vedere [Requisiti dei certificati PKI](../../core/plan-design/network/pki-certificate-requirements.md).|  
 |**Passaggio 3:** installare e configurare il punto per servizi Web del Catalogo applicazioni e il sito Web del Catalogo applicazioni.|È necessario installare entrambi i ruoli del sistema del sito nello stesso sito. Non è necessario installarli nello stesso server del sistema del sito o nella stessa foresta Active Directory. Il punto per servizi Web del Catalogo applicazioni deve trovarsi tuttavia nella stessa foresta del database del sito.|Per altre informazioni sul posizionamento dei ruoli di sistema del sito, vedere [Pianificare i server e i ruoli di sistema del sito](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).<br /><br /> Per configurare il punto di servizi Web del Catalogo applicazioni e il punto di siti Web del Catalogo applicazioni, vedere **Passaggio 3: Installare e configurare i ruoli del sistema del sito del Catalogo applicazioni**.|  
-|**Passaggio 4** : Configurare le impostazioni client per il Catalogo applicazioni e Software Center.|Configurare le impostazioni client predefinite se si desidera che tutti gli utenti abbiano la stessa impostazione. In caso contrario, configurare le impostazioni client personalizzate per raccolte specifiche.|Per altre informazioni sulle impostazioni client, vedere [Informazioni sulle impostazioni client](../../core/clients/deploy/about-client-settings.md).<br /><br /> Per informazioni su come configurare queste impostazioni client, vedere: **Passaggio 4: Configurare le impostazioni client per il Catalogo applicazioni e Software Center**.|  
+|**Passaggio 4** : Configurare le impostazioni client per il Catalogo applicazioni e Software Center.|Configurare le impostazioni client predefinite se si desidera che tutti gli utenti abbiano la stessa impostazione. In caso contrario, configurare le impostazioni client personalizzate per raccolte specifiche.|Per altre informazioni sulle impostazioni client, vedere [Informazioni sulle impostazioni client](../../core/clients/deploy/about-client-settings.md).<br /><br /> Per altre informazioni su come configurare queste impostazioni client, vedere: **Passaggio 4: Configurare le impostazioni client per il Catalogo applicazioni e Software Center**.|  
 |**Passaggio 5** : Verificare che il Catalogo applicazioni sia operativo.|È possibile usare direttamente il Catalogo applicazioni da un browser o da Software Center.|Vedere **Passaggio 5: Verificare che il Catalogo applicazioni sia operativo**.|  
 
 ## <a name="supplemental-procedures-to-install-and-configure-the-application-catalog-and-software-center"></a>Procedure aggiuntive per installare e configurare il Catalogo applicazioni e Software Center  
@@ -105,7 +106,7 @@ Usare le informazioni incluse in questo articolo per implementare le dipendenze 
 
 5.  Nella pagina **Selezione ruolo del sistema** selezionare **Punto per servizi Web del Catalogo applicazioni** e **Punto per siti Web del Catalogo applicazioni** dall'elenco dei ruoli disponibili e quindi scegliere **Avanti**.  
 
-6.  Completa la procedura guidata.  
+6.  Completare i passaggi rimanenti.  
 
 ####  <a name="to-install-and-configure-the-application-catalog-site-systems-existing-site-system-server"></a>Per installare e configurare i sistemi del sito del Catalogo applicazioni: server del sistema del sito esistente  
 
@@ -120,7 +121,7 @@ Usare le informazioni incluse in questo articolo per implementare le dipendenze 
 
 5.  Nella pagina **Selezione ruolo del sistema** selezionare **Punto per servizi Web del Catalogo applicazioni** e **Punto per siti Web del Catalogo applicazioni** dall'elenco dei ruoli disponibili e quindi scegliere **Avanti**.  
 
-6.  Completa la procedura guidata.  
+6.  Completare i passaggi rimanenti.  
 
 7. Verificare l'installazione di questi ruoli del sistema del sito utilizzando i messaggi di stato e riesaminando i file di log:  
 
@@ -133,7 +134,7 @@ Usare le informazioni incluse in questo articolo per implementare le dipendenze 
     Per altre informazioni, cercare i file di log **awebsvcMSI.log** e **portlwebMSI.log**.  
 
 ###  <a name="step-4-configure-the-client-settings-for-the-application-catalog-and-software-center"></a>Passaggio 4: Configurare le impostazioni client per il Catalogo applicazioni e Software Center  
- Questa procedura consente di configurare le impostazioni client predefinite per il Catalogo applicazioni e Software Center che verranno applicate a tutti i dispositivi nella gerarchia. Se si vuole applicare queste impostazioni solo ad alcuni dispositivi, è possibile creare un'impostazione client personalizzata e distribuirla a una raccolta che contenga i dispositivi a cui sono destinate le impostazioni specifiche. Per altre informazioni su come creare un'impostazione client personalizzata, vedere la sezione [How to Create and Deploy Custom Client Settings](../../core/clients/deploy/configure-client-settings.md#create-and-deploy-custom-client-settings) (Come creare e distribuire impostazioni client personalizzate) nell'articolo [How to configure client settings in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md) (Come configurare impostazioni client in System Center Configuration Manager).  
+ Questa procedura consente di configurare le impostazioni client predefinite per il Catalogo applicazioni e Software Center applicabili a tutti i dispositivi nella gerarchia. Se si vogliono applicare queste impostazioni solo ad alcuni dispositivi, è possibile creare un'impostazione client personalizzata e distribuirla a una raccolta che contenga i dispositivi con le impostazioni specifiche. Per altre informazioni su come creare un'impostazione personalizzata per dispositivi, vedere la sezione [Creare e distribuire impostazioni client personalizzate](../../core/clients/deploy/configure-client-settings.md#create-and-deploy-custom-client-settings) in [Come configurare le impostazioni client in System Center Configuration Manager](../../core/clients/deploy/configure-client-settings.md).  
 
 1.  Nella console di Configuration Manager selezionare **Amministrazione** > **Impostazioni client** > **Impostazioni client predefinite**.  
 
@@ -143,41 +144,41 @@ Usare le informazioni incluse in questo articolo per implementare le dipendenze 
 
     1.  Gruppo**Agente computer** :  
 
-        -   **Punto per siti Web del Catalogo applicazioni predefinito**  
+        -   **Punto per siti Web del Catalogo applicazioni predefinito**.  
 
-        -   **Aggiungere il sito Web del Catalogo applicazioni predefinito all'area siti attendibili di Internet Explorer**  
+        -   **Aggiungere il sito Web del Catalogo applicazioni predefinito all'area siti attendibili di Internet Explorer**.  
 
-        -   **Nome organizzazione visualizzato in Software Center**  
+        -   **Nome organizzazione visualizzato in Software Center**.  
 
             > [!TIP]  
             >  Per specificare il nome dell'organizzazione visualizzato nel Catalogo applicazioni e configurare il tema del sito Web, usare la scheda **Personalizzazione** nelle proprietà del sito Web del Catalogo applicazioni.  
 
-        -   **Usa il nuovo Software Center**: impostare su **Sì** se si vuole usare il nuovo Software Center che consente agli utenti di cercare e installare le app disponibili senza dover accedere al Catalogo applicazioni (che richiede un Web browser abilitato per Silverlight).  
+        -   **Usa il nuovo Software Center**. Impostare su **Sì** se si vuole usare il nuovo Software Center, che consente agli utenti di cercare e installare le app disponibili senza dover accedere al Catalogo applicazioni, che richiede un Web browser abilitato per Silverlight.  
 
-        -   **Autorizzazioni di installazione**  
+        -   **Autorizzazioni di installazione**.  
 
-        -   **Mostra notifiche per nuove distribuzioni**  
+        -   **Mostra notifiche per nuove distribuzioni**.  
 
     2.  Gruppo**Risparmio energia** :  
 
-        -   **Consentire agli utenti di escludere il dispositivo usato dal risparmio energia**  
+        -   **Consentire agli utenti di escludere il dispositivo usato dal risparmio energia**.  
 
     3.  Gruppo**Strumenti remoti** :  
 
-        -   **Gli utenti possono modificare le impostazioni di criteri o notifiche in Software Center**  
+        -   **Gli utenti possono modificare le impostazioni di criteri o notifiche in Software Center**.  
 
     4.  Gruppo**Affinità dispositivi e utenti** :  
 
-        -   **Consentire all'utente di definire i dispositivi primari**  
+        -   **Consentire all'utente di definire i dispositivi primari**.  
 
     > [!NOTE]  
-    >  Per altre informazioni sulle impostazioni client, vedere [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
+    >  Per ulteriori informazioni sulle impostazioni client, vedere [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md).  
 
 5.  Scegliere **OK** per chiudere la finestra di dialogo **Impostazioni client predefinite**.  
 
- I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per iniziare il recupero dei criteri per un singolo client, vedere [Come gestire i client](../../core/clients/manage/manage-clients.md).
+I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per iniziare il recupero dei criteri per un singolo client, vedere [Come gestire i client](../../core/clients/manage/manage-clients.md).
 
-#### <a name="how-to-customize-software-center-branding"></a>Come personalizzare Software Center
+#### <a name="to-customize-software-center-branding"></a>Per personalizzare Software Center
 
 In Software Center la personalizzazione viene applicata secondo le regole seguenti:
 

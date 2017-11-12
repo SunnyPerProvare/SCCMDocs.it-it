@@ -1,5 +1,6 @@
 ---
-title: Simulare le distribuzioni di applicazioni | Microsoft Docs
+title: Simulare le distribuzioni di applicazioni
+titleSuffix: Configuration Manager
 description: Valutare il metodo di individuazione, i requisiti e le dipendenze per un tipo di distribuzione senza installare l'applicazione.
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 7fe8818170906d2a741f407edca0aae838f1643a
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: ecd641a14188e0247d10e0fac613ea760abb00d1
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="simulate-application-deployments-with-system-center-configuration-manager"></a>Simulare distribuzioni di applicazioni con System Center Configuration Manager
 

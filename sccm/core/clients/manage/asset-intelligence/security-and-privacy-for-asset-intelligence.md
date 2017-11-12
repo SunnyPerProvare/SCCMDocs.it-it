@@ -1,5 +1,6 @@
 ---
-title: Privacy e sicurezza per Asset Intelligence | Microsoft Docs
+title: Privacy e sicurezza per Asset Intelligence
+titleSuffix: Configuration Manager
 description: Informazioni sulla sicurezza e la privacy per Asset Intelligence in System Center Configuration Manager.
 ms.custom: na
 ms.date: 2/22/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: b12054cce52e2b83715a083d78a62e06b5127a2f
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 6d33053f360d05a4efdb6da5e405d12fd3f0d89b
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="security-and-privacy-for-asset-intelligence-in-system-center-configuration-manager"></a>Sicurezza e privacy per Asset Intelligence in System Center Configuration Manager
 

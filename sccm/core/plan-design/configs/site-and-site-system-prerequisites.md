@@ -1,5 +1,6 @@
 ---
-title: Prerequisiti del sito | Microsoft Docs
+title: Prerequisiti del sito
+titleSuffix: Configuration Manager
 description: Informazioni su come configurare un computer Windows come un server di sistema del sito di System Center Configuration Manager.
 ms.custom: na
 ms.date: 8/25/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 09749a3045ca6eebf1363b6e53cd8607b5f32578
-ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
+ms.openlocfilehash: 8e55af275a2c585273602f9b9308eaed03679ae4
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="site-and-site-system-prerequisites-for-system-center-configuration-manager"></a>Prerequisiti del sito e del sistema del sito per System Center Configuration Manager
 

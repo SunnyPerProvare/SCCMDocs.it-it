@@ -1,5 +1,6 @@
 ---
-title: Riferimento per l'installazione | Microsoft Docs
+title: Informazioni di riferimento per l'installazione
+titleSuffix: Configuration Manager
 description: Esaminare le informazioni di riferimento seguenti che consentono di preparare l'installazione di un sito o di una gerarchia di Configuration Manager.
 ms.custom: na
 ms.date: 4/18/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "22"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 739461a6cca0fd67431093524c1e8158afd80d0f
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: b7228da1623b5caf1679455e535e282ecf20724a
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="reference-for-system-center-configuration-manager-setup"></a>Informazioni di riferimento per l'installazione di System Center Configuration Manager
 

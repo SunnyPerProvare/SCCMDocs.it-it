@@ -1,8 +1,8 @@
 ---
-title: Informativa sulla privacy per System Center Configuration Manager - Altre informazioni | Microsoft Docs
+title: 'Informativa sulla privacy per System Center Configuration Manager: altre informazioni'
 description: Informazioni su come Microsoft raccoglie e usa i dati da un'implementazione di System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/30/2016
+ms.date: 10/13/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -34,11 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.openlocfilehash: ef7b3656f9b4a31e07227aa4e864448d0dd1fcdc
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 28caf163507692ad7d7b3cfa85536a88d94584ec
+ms.sourcegitcommit: 18ac58374d2d513fe2a197c80f7c8c6890a7d612
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/16/2017
 ---
 # <a name="additional-information-about-privacy-for-system-center-configuration-manager"></a>Altre informazioni sulla privacy per System Center Configuration Manager
 

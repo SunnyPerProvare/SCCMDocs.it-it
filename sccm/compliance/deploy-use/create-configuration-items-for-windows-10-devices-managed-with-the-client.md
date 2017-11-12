@@ -1,5 +1,6 @@
 ---
-title: Creare elementi di configurazione per Windows 10 gestito da client - Configuration Manager | Microsoft Docs
+title: 'Creare elementi di configurazione per i computer Windows 10 gestiti tramite client '
+titleSuffix: Configuration Manager
 description: Usare l'elemento di configurazione Windows 10 in System Center Configuration Manager per gestire le impostazioni dei computer Windows 10 gestiti dal client di Configuration Manager.
 ms.custom: na
 ms.date: 03/28/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: be1a88341b08c454537279b27a27ce4fb90998de
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 4f22ab22ec666c55962231bf92a42b25c4a7c127
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-create-configuration-items-for-windows-10-devices-managed-with-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Windows 10 gestiti con il client di System Center Configuration Manager
 Usare l'elemento di configurazione **Windows 10** in System Center Configuration Manager per gestire le impostazioni dei computer che eseguono Windows 10 gestiti dal client di Configuration Manager.  

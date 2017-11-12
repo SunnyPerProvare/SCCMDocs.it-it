@@ -1,5 +1,6 @@
 ---
-title: Trovare le risorse del sito | Microsoft Docs
+title: Trovare risorse del sito
+titleSuffix: Configuration Manager
 description: Informazioni su come e quando i client di System Center Configuration Manager usano la posizione del servizio per trovare le risorse del sito.
 ms.custom: na
 ms.date: 2/7/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "10"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 1c9e7ada6a8aa228b30e58865baae0f6e529e6af
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: e64b2c4242903143b677189e3bd4c8f32ebace20
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="learn-how-clients-find-site-resources-and-services-for-system-center-configuration-manager"></a>Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager
 
@@ -173,7 +174,7 @@ Per pubblicare punti di gestione in DNS, devono verificarsi le due condizioni se
 > [!IMPORTANT]  
 >  La pubblicazione DNS in Configuration Manager non supporta uno spazio dei nomi indipendente. Se si ha uno spazio dei nomi indipendente, è possibile pubblicare manualmente i punti di gestione in DNS o usare uno degli altri metodi alternativi di individuazione del servizio documentati in questa sezione.  
 
-**Quando i server DNS supportano gli aggiornamenti automatici**, è possibile configurare Configuration Manager per la pubblicazione automatica dei punti di gestione della Intranet in DNS oppure per la pubblicazione manuale di tali record in DNS. Quando i punti di gestione vengono pubblicati in DNS, il nome FQDN Intranet e il numero di porta corrispondenti sono pubblicati nel record di individuazione del servizio (SRV). La pubblicazione DNS in un sito viene configurata nelle proprietà del componente del punto di gestione dei siti. Per altre informazioni, vedere [Site components for System Center Configuration Manager](../../../core/servers/deploy/configure/site-components.md) (Componenti del sito per System Center Configuration Manager).  
+**Quando i server DNS supportano gli aggiornamenti automatici**, è possibile configurare Configuration Manager per la pubblicazione automatica dei punti di gestione della Intranet in DNS oppure per la pubblicazione manuale di tali record in DNS. Quando i punti di gestione vengono pubblicati in DNS, il nome FQDN Intranet e il numero di porta corrispondenti sono pubblicati nel record di individuazione del servizio (SRV). La pubblicazione DNS in un sito viene configurata nelle proprietà del componente del punto di gestione dei siti. Per altre informazioni, vedere [Componenti del sito per System Center Configuration Manager](../../../core/servers/deploy/configure/site-components.md).  
 
 **Quando la zona DNS è impostata su "Secure only" (Solo protetti) per gli aggiornamenti dinamici**, solo il primo punto di gestione da pubblicare in DNS riesce a eseguire correttamente l'operazione con le autorizzazioni predefinite.
 

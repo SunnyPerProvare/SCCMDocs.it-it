@@ -1,5 +1,6 @@
 ---
-title: Bloccare i client | Microsoft Docs
+title: Blocco dei client
+titleSuffix: Configuration Manager
 description: Bloccare l'accesso client per la protezione del sistema tramite System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/23/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "8"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: b1d191485308a49c50f48e4b3a89c2fb96940d28
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 6c2f6e5a6b25ab9f5f4397a46a717cc68ccf8556
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="determine-whether-to-block-clients-in-system-center-configuration-manager"></a>Determinare se bloccare o meno i client in System Center Configuration Manager
 

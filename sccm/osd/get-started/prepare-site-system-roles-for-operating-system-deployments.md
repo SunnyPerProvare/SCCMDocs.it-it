@@ -1,5 +1,6 @@
 ---
-title: Preparare i ruoli del sistema del sito per le distribuzioni del sistema operativo | Microsoft Docs
+title: Preparare i ruoli del sistema del sito per le distribuzioni del sistema operativo
+titleSuffix: Configuration Manager
 description: Prima di distribuire sistemi operativi in System Center Configuration Manager, configurare i ruoli di sistema del sito.
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 11c0f169afebdb071fefb5ce300fd1ae3481a94f
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: c07172bec1032b021c2d7b7ccaabe33c96b930d2
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="prepare-site-system-roles-for-operating-system-deployments-with-system-center-configuration-manager"></a>Preparare i ruoli del sistema del sito per le distribuzioni del sistema operativo con System Center Configuration Manager
 
@@ -67,7 +68,7 @@ Per distribuire i sistemi operativi in System Center Configuration Manager, è n
 
 2.  Selezionare il punto di distribuzione da configurare, quindi nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 
-3.  Nella pagina delle proprietà per il punto di distribuzione fare clic sulla scheda **PXE** . e selezionare **Abilita supporto PXE per i client** per abilitare PXE nel punto di distribuzione.  
+3.  Per abilitare PXE nel punto di distribuzione, nella pagina delle proprietà del punto di distribuzione fare clic sulla scheda **PXE** e selezionare **Abilita supporto PXE per i client**.  
 
 4.  Fare clic su **Sì** nella finestra di dialogo **Controllare le porte richieste per PXE** per confermare che si vuole abilitare PXE. Configuration Manager configura automaticamente le porte predefinite in un firewall di Windows. Se si usa un altro firewall, è necessario configurare manualmente le porte.  
 

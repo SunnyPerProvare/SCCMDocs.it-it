@@ -1,5 +1,6 @@
 ---
-title: Ottenere Configuration Manager | Documentazione Microsoft
+title: Ottenere i supporti di installazione
+titleSuffix: Configuration Manager
 description: Dove trovare il supporto di installazione per le nuove installazioni di System Center Configuration Manager.
 ms.custom: na
 ms.date: 1/11/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: be02514591881049fabc00baae9de70a8380aa9a
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 0b03f33642d543e362cba38c464713e077fa6b07
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="where-to-get-installation-media-for-system-center-configuration-manager"></a>Dove ottenere il supporto di installazione per System Center Configuration Manager
 

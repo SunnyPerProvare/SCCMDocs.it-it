@@ -1,5 +1,6 @@
 ---
-title: Requisiti dei certificati PKI | Microsoft Docs
+title: Requisiti dei certificati PKI
+titleSuffix: Configuration Manager
 description: Cercare i requisiti dei certificati PKI che potrebbero essere necessari a System Center Configuration Manager.
 ms.custom: na
 ms.date: 04/24/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "17"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: ee4062a97d2653467145c74fe0c42a60186f85a5
-ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
+ms.openlocfilehash: f5afa9fd9823cfbaa305b4d4e88f89be7004bd60
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="pki-certificate-requirements-for-system-center-configuration-manager"></a>Requisiti dei certificati PKI per System Center Configuration Manager
 

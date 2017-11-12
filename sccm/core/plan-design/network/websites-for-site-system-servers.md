@@ -1,5 +1,6 @@
 ---
-title: Siti Web per i server del sistema del sito | Microsoft Docs
+title: Siti Web per i sistemi del sito
+titleSuffix: Configuration Manager
 description: Questa sezione contiene informazioni sui siti Web predefiniti e personalizzati per i server del sistema del sito in System Center Configuration Manager.
 ms.custom: na
 ms.date: 2/8/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 886ff3b8e867fc340c79648a57feae81653b0ccd
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 638201618d8d9ca086171a882adcc47f1c621c1d
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="websites-for-site-system-servers-in-system-center-configuration-manager"></a>Siti Web per i server del sistema del sito in System Center Configuration Manager
 

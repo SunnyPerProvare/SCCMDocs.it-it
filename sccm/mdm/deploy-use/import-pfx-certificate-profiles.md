@@ -1,5 +1,6 @@
 ---
-title: Creare profili certificato PFX importando i dettagli dei certificati | Microsoft Docs
+title: Creare profili certificato PFX importando i dettagli dei certificati
+titleSuffix: Configuration Manager
 description: Informazioni su come usare i file PFX in System Center Configuration Manager per generare i certificati specifici dell'utente che supportano lo scambio di dati crittografati.
 ms.custom: na
 ms.date: 04/04/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: c8346d04c7cd9761291824f5d30f09fab9acbcf9
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 25c6927698e409ff3b0c3f846e2cc567a6f458ab
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-create-pfx-certificate-profiles-by-importing-certificate-details"></a>Creare profili certificato PFX importando i dettagli dei certificati
 

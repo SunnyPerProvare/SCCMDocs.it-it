@@ -1,5 +1,6 @@
 ---
-title: Configurare le app Android for Work con i criteri di configurazione delle app | Microsoft Docs
+title: Configurare le app Android for Work con i criteri di configurazione delle app
+titleSuffix: Configuration Manager
 description: Questa operazione consente di evitare problemi di configurazione sui dispositivi che eseguono Android for Work distribuendo i criteri di configurazione delle app agli utenti prima che gli utenti eseguano le app.
 ms.custom: na
 ms.date: 09/12/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: NathBarn
 ms.author: NathBarn
 manager: angrobe
-ms.openlocfilehash: bd8388689a49873860fa9951b7d522f9d96fc11f
-ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
+ms.openlocfilehash: 79d1b3fed3baa74c8ad195925ccda35713cb8865
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="apply-settings-to-android-for-work-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Applicare le impostazioni alle app Android for Work con i criteri di configurazione delle app in System Center Configuration Manager
 
