@@ -1,5 +1,6 @@
 ---
-title: Modificare l'infrastruttura | Microsoft Docs
+title: Modificare l'infrastruttura
+titleSuffix: Configuration Manager
 description: Informazioni su come apportare modifiche o eseguire azioni che interessano l'infrastruttura di Configuration Manager distribuita.
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: a5228c4984347be4b115bfa5563791fa2fb7319c
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 5bf39d5d20d94b4dda666741c5887edfbc82ca0f
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="modify-your-system-center-configuration-manager-infrastructure"></a>Modificare l'infrastruttura di System Center Configuration Manager
 
@@ -175,7 +176,7 @@ Ad esempio, considerare uno scenario in cui si installa la console di Configurat
 
 
 > [!IMPORTANT]  
->  Prima di spostare un database contenente una o più repliche di database per i punti di gestione, è necessario rimuovere innanzitutto le repliche di database. Dopo aver completato lo spostamento del database, è possibile riconfigurare le repliche di database. Per altre informazioni, vedere [Repliche di database per i punti di gestione per System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).   
+>  Prima di spostare un database contenente una o più repliche di database per i punti di gestione, è necessario rimuovere innanzitutto le repliche di database. Dopo aver completato lo spostamento del database, è possibile riconfigurare le repliche di database. Per altre informazioni, vedere [Database replicas for management points for System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
 ##  <a name="bkmk_SPN"></a> Gestire il nome dell'entità servizio (SPN) per il server di database del sito  
 È possibile scegliere l'account che esegue i servizi di SQL per il database del sito:  

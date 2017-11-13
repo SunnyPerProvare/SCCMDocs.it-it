@@ -1,5 +1,6 @@
 ---
-title: Scegliere il ramo da usare | Microsoft Docs
+title: Scegliere il ramo da usare
+titleSuffix: Configuration Manager
 description: Informazioni sulle differenze tra i rami disponibili di System Center Configuration Manager.
 ms.custom: na
 ms.date: 05/02/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 26356a80bd8c78d4517253bae73e53d8d8f3a73a
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 047ffc0953db4a4cc5d543d880136ce61fa99fa7
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="which-branch-of-configuration-manager-should-i-use"></a>Scelta del ramo di Configuration Manager da usare
 
@@ -108,9 +109,9 @@ LTSB si basa su Current Branch 1606, con le limitazioni seguenti:
 - È possibile convertire l'installazione LTSB a un'installazione Current Branch. La conversione a Current Branch è supportata prima o dopo la scadenza del supporto per LTSB.
 
   Per eseguire la conversione, è necessario disporre di un contratto Software Assurance attivo con Microsoft. Per altre informazioni, vedere i seguenti collegamenti:
-  - [Aggiornare Long-Term Servicing Branch a Current Branch](convert-to-current-branch.md)
-  - [Licenze e rami per System Center Configuration Manager](learn-more-editions.md)
-  - La sezione[Versioni di base e di aggiornamento](/sccm/core/servers/manage/updates#baseline-and-update-versions) in [Aggiornamenti per System Center Configuration Manager](/sccm/core/servers/manage/updates)
+  - [Upgrade the Long-Term Servicing Branch to the Current Branch](convert-to-current-branch.md) (Aggiornare Long-Term Servicing Branch a Current Branch)
+  - [Licensing and branches for System Center Configuration Manager](learn-more-editions.md) (Licenze e rami per System Center Configuration Manager)
+  - La sezione[Baseline and update versions](/sccm/core/servers/manage/updates#baseline-and-update-versions) (Versioni di base e di aggiornamento) in [Updates for Configuration Manager](/sccm/core/servers/manage/updates) (Aggiornamenti per System Center Configuration Manager)
 - Non è possibile convertire LTSB in Technical Preview. Le Technical Preview sono installazioni distinte che non richiedono una licenza.
 -   Non è possibile aggiornare una copia di valutazione di Current Branch a un'installazione LTSB.
 
@@ -149,5 +150,4 @@ Visualizzando le informazioni sulla versione per un sito di Configuration Manage
 Per controllare la versione del sito, nella console passare a **Informazioni su System Center Configuration Manager** nell'angolo in alto a sinistra della console dove viene visualizzata la **Versione sito**. Per un elenco completo delle versioni del sito, vedere []().
 
 **Ramo**  
-Per verificare il ramo del sito (LTSB o Current Branch), nella console passare ad **Amministrazione** > **Configurazione del sito** > **Siti** e aprire **Impostazioni gerarchia**. Se è disponibile un'opzione per la conversione in Current Branch e tale opzione è attiva, il sito esegue la versione LTSB. Se il sito esegue Current Branch, questa opzione è disabilitata.
-Per informazioni sulle diverse versioni di Configuration Manager, vedere "Versioni di base e di aggiornamento" nell'argomento [Aggiornamenti per System Center Configuration Manager](/sccm/core/servers/manage/updates).
+Per verificare il ramo del sito (LTSB o Current Branch), nella console passare ad **Amministrazione** > **Configurazione del sito** > **Siti** e aprire **Impostazioni gerarchia**. Se è disponibile un'opzione per la conversione in Current Branch e tale opzione è attiva, il sito esegue la versione LTSB. Se il sito esegue Current Branch, questa opzione è disabilitata. Per informazioni sulle diverse versioni di Configuration Manager, vedere "Versioni di base e di aggiornamento" nell'argomento [Aggiornamenti per System Center Configuration Manager](/sccm/core/servers/manage/updates).
