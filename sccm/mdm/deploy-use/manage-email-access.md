@@ -15,11 +15,11 @@ caps.latest.revision: "24"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 8ab177067d0308b863274a7ae05574374b0af4ba
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: a83c2030de8a146dad7bf2258e8a983c8ab6c45e
+ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="manage-email-access-in-system-center-configuration-manager"></a>Gestire l'accesso alla posta elettronica in System Center Configuration Manager
 
@@ -39,7 +39,7 @@ Usare l'accesso condizionale di System Center Configuration Manager per gestire 
 
 -   Android 4.0 e versioni successive, Samsung KNOX Standard 4.0 e versioni successive  
 
--   iOS 7.1 e versioni successive  
+-   iOS 9.0 e versioni successive  
 
 -   Windows Phone 8.1 e versioni successive  
 
@@ -93,13 +93,13 @@ I browser non supportati verranno bloccati. Non sono supportate le app OWA per i
 
 -   Android 4.0 e versioni successive, Samsung KNOX Standard 4.0 e versioni successive  
 
--   iOS 7.1 e versioni successive  
+-   iOS 9.0 e versioni successive  
 
 -   Windows Phone 8.1 e versioni successive  
 
 -   L'applicazione **Posta elettronica** su Windows 8.1 e versioni successive  
 
- L'app Outlook per iOS e Android e la versione desktop di Outlook 2013 e versioni precedenti sono supportate solo per Exchange Online.  
+ L'app Outlook per iOS e Android e la versione desktop di Outlook 2013 e versioni successive sono supportate solo per Exchange Online.  
 
  **Exchange Connector locale** tra Configuration Manager ed Exchange è necessario per il funzionamento dell'accesso condizionale.  
 

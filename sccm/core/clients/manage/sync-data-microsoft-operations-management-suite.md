@@ -15,11 +15,11 @@ caps.latest.revision: "9"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: bbb76fda4ef831f358923946b3c16b821194bf6b
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 166f7c73f2050657a85bd5160f74c40cfd87fd7f
+ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/13/2017
 ---
 #  <a name="sync-data-from-configuration-manager-to-the-microsoft-operations-management-suite"></a>Sincronizzazione dei dati da Configuration Manager a Microsoft Operations Management Suite
 
@@ -90,7 +90,7 @@ A partire dalla versione 1702, è possibile usare OMS Connector per la connessio
 
 ### <a name="install-the-oms-connector"></a>Installare OMS Connector  
 1. Nella console di Configuration Manager configurare la [gerarchia per l'uso di funzionalità di versioni non definitive](/sccm/core/servers/manage/pre-release-features) e quindi abilitare l'uso di OMS Connector.  
-
+0
 2. Passare quindi ad **Amministrazione** > **Servizi cloud** > **OMS Connector**. Nella barra multifunzione fare clic su "Creare una connessione a Operations Management Suite". Verrà visualizzata la **Connessione guidata a Operations Management Suite**. Selezionare **Avanti**.  
 
 
@@ -134,13 +134,13 @@ Dopo aver collegato Configuration Manager a OMS, è possibile aggiungere o rimuo
       &lt;setting name="FairFaxArmResourceId" serializeAs="String"> &lt;value>https://management.usgovcloudapi.net/&lt;/value>  
       &lt;/setting>
 
-  Modificare il valore del nome dell'impostazione *FairFaxAuthorityResource* in modo che sia uguale a "https://login.microsoftonline.com/"
+  Modificare il valore del nome dell'impostazione *FairFaxAuthorityResource* in modo che sia uguale a "https://login.microsoftonline.us/"
 
   - **Originale:** &lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
     &lt;value>&lt;/value>
 
     - **Modificato:** &lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
-    &lt;value>https://login.microsoftonline.com/&lt;/value>
+    &lt;value>https://login.microsoftonline.us/&lt;/value>
 
 2.  Dopo aver salvato il file con le due modifiche, riavviare la console di Configuration Manager nello stesso computer e quindi usare la console per installare il connettore OMS. Per installare il connettore, usare le informazioni in [Sincronizzazione dei dati da Configuration Manager a Microsoft Operations Management Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) e selezionare l'**Area di lavoro di Operations Management Suite** che si trova nel cloud di Microsoft Azure per enti pubblici.
 

@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 12633eced1850b718bf7cad019cd943305a7d9fb
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 4eedd96fd399cf9577da8069bd0c8d5702f50d7b
+ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="protect-apps-using-mobile-application-management-policies-in-system-center-configuration-manager"></a>Proteggere le app usando i criteri di gestione delle applicazioni mobili in System Center Configuration Manager
 
@@ -30,7 +30,7 @@ I criteri di gestione delle applicazioni di System Center Configuration Manager 
 
 -   Dispositivi che eseguono Android 4 e versioni successive  
 
--   Dispositivi che eseguono iOS 7 e versioni successive  
+-   Dispositivi che eseguono iOS 9 e versioni successive  
 
 È anche possibile usare i criteri di gestione delle app mobili per proteggere le app su dispositivi non gestiti da Intune. Con questa nuova funzionalità è possibile applicare i criteri di gestione delle app mobili ad app che si connettono ai servizi di Office 365. Questa funzionalità non è supportata per le app che si connettono a Exchange o SharePoint locale.  
 
