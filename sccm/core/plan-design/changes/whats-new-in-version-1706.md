@@ -13,11 +13,11 @@ ms.assetid: ac034143-003e-4629-aac2-99eaffef4db1
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 9b3248f30470ee8250efcbf171642ea476627d68
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 2889de0709096aa481ca6203c5ab2bac1f064d5e
+ms.sourcegitcommit: c4a1bafcd004638d264a93d307c70d8b6f7fe023
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="what39s-new-in-version-1706-of-system-center-configuration-manager"></a>Novità della versione 1706 di System Center Configuration Manager
 
@@ -189,10 +189,6 @@ Per altre informazioni, vedere [Creare ed eseguire script di PowerShell dalla co
 A partire da questa versione, è possibile usare tre nuove impostazioni di criteri di gestione delle applicazioni per dispositivi mobili (MAM):
 
 - **Blocca acquisizione schermo (solo per dispositivi Android):** specifica che le funzionalità di acquisizione schermo del dispositivo vengono bloccate quando si usa questa app.
-
-- **Disabilita la sincronizzazione dei contatti:** impedisce all'app di salvare i dati nell'app dei contatti nativa del dispositivo.
-
-- **Disabilita stampa:** impedisce all'app di stampare dati aziendali o dell'istituto di istruzione.
 
 Vedere [Proteggere le app usando i criteri di gestione delle applicazioni mobili in System Center Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/protect-apps-using-mam-policies) per provare le nuove impostazioni dei criteri di protezione dell'app.
 

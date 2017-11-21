@@ -1,5 +1,6 @@
 ---
-title: Assistenza a un gruppo di server | Documentazione Microsoft
+title: Assistenza a un gruppo di server
+titleSuffix: Configuration Manager
 description: "La console di System Center Configuration Manager invia avvisi e stati per monitorare gli aggiornamenti e la conformità."
 keywords: 
 author: dougeby
@@ -11,19 +12,18 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 304a83ea-0f72-437d-9688-2e6e0c7526dd
-ms.openlocfilehash: ae09a02dd5d67113b9a7e2ce146c844efa4caf55
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 12382015f2b673103c3c0d8fc9c0cbf29511a434
+ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/17/2017
 ---
->[!IMPORTANT]
->Questa è una funzionalità di versione non definitiva che è disponibile in Configuration Manager 1606 e 1610. Le funzionalità di versioni non definitive sono incluse nel prodotto a scopo di test preliminare in un ambiente di produzione, ma non devono essere considerate pronte per l'ambiente di produzione. Per rendere disponibile questa funzionalità è necessario attivarla. Per altre informazioni, vedere la sezione relativa all'[abilitazione delle funzionalità facoltative dagli aggiornamenti](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
-
-
 # <a name="service-a-server-group"></a>Assistenza a un gruppo di server
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
+
+>[!IMPORTANT]
+>Le funzionalità di versioni non definitive sono incluse nel Current Branch a scopo di test preliminare in un ambiente di produzione. Queste funzionalità sono completamente supportate ma sono ancora in fase di sviluppo e, fino a quando non vengono spostate dalla categoria Versioni non definitive, possono essere soggette a modifiche. Per rendere disponibile questa funzionalità è necessario attivarla. Per altre informazioni, vedere la sezione relativa all'[abilitazione delle funzionalità facoltative dagli aggiornamenti](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
 
 A partire da System Center Configuration Manager versione 1606, è possibile configurare le impostazioni di un gruppo di server per una raccolta per definire il numero, la percentuale o l'ordine con cui i computer nella raccolta installeranno gli aggiornamenti software. È anche possibile configurare gli script pre e post distribuzione di PowerShell per eseguire azioni personalizzate.
 

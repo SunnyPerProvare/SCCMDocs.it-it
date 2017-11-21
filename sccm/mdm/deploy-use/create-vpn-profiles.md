@@ -3,7 +3,7 @@ title: Profili VPN
 titleSuffix: Configuration Manager
 description: Profili VPN nei dispositivi mobili in System Center Configuration Manager.
 ms.custom: na
-ms.date: 07/26/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 40446ce656bd446f890b9b1349ab0b95742cadb8
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: b60a1b9e85b00cbaba54db4ea4cd92a1038c3fcf
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Profili VPN nei dispositivi mobili in System Center Configuration Manager
 
@@ -71,8 +71,8 @@ Per informazioni generali sulla creazione di profili VPN, vedere [Come creare pr
 > [!IMPORTANT]
 > Si consiglia di proteggere tutti gli elenchi di app associate che si compilano per l'uso nella configurazione della VPN per app. Se l'elenco viene modificato da un utente non autorizzato e viene importato nell'elenco di app della VPN per app, si autorizza potenzialmente l'accesso alla VPN da parte di applicazioni che non devono potervi accedere. Un modo per proteggere gli elenchi di app consiste nell'usare un elenco di controllo di accesso (ACL).
 
-
-1.  Nella pagina **Metodo di autenticazione** della procedura guidata specificare:  
+1. Nella pagina **Piattaforme supportate** della **Creazione guidata profilo VPN** selezionare i sistemi operativi in cui il profilo VPN verrà installato o scegliere **Seleziona tutto** per installare il profilo VPN in tutti i sistemi operativi disponibili.  
+2.  Nella pagina **Metodo di autenticazione** della procedura guidata specificare:  
 
     -   **Metodo di autenticazione**: selezionare il tipo di metodo di autenticazione che verrà usato dalla connessione VPN. I metodi disponibili variano a seconda del tipo di connessione come illustrato in questa tabella.  
 
@@ -112,46 +112,13 @@ Per informazioni generali sulla creazione di profili VPN, vedere [Come creare pr
 
          Se è supportato dalla versione di Windows che esegue Configuration Manager _e_ dal metodo di autorizzazione selezionati, è possibile scegliere **Configura** per aprire la finestra di dialogo delle proprietà di Windows e configurare le proprietà del metodo di autenticazione.  Se l'opzione **Configura** è disabilitata, usare modi diversi per configurare le proprietà del metodo di autenticazione.
 
-2.  Nella pagina **Impostazioni proxy** della **Creazione guidata profilo VPN** selezionare la casella **Configura impostazioni proxy per questo profilo VPN** se la connessione VPN in uso utilizza un server proxy. Quindi, specificare le informazioni relative al server proxy. Per altre informazioni, vedere la documentazione di Windows Server.  
+3.  Nella pagina **Impostazioni proxy** della **Creazione guidata profilo VPN** selezionare la casella **Configura impostazioni proxy per questo profilo VPN** se la connessione VPN in uso utilizza un server proxy. Quindi, specificare le informazioni relative al server proxy. Per altre informazioni, vedere la documentazione di Windows Server.  
 
     > [!NOTE]  
     >  Nei computer Windows 8.1 il profilo VPN non visualizzerà le informazioni sul proxy finché l'utente non si connette alla rete VPN usando tale computer.  
 
 
-3. Configurare altre impostazioni DNS (se necessario).  
- Nella pagina **Configura connessione VPN automatica** è possibile configurare quanto segue:  
-
-    -   **Abilita VPN su richiesta**: usare questa opzione per configurare altre impostazioni DNS per i dispositivi Windows Phone 8.1. Questa impostazione si applica solo ai dispositivi Windows Phone 8.1 e deve essere abilitata solo nei profili VPN che verranno distribuiti a dispositivi Windows Phone 8.1.
-
-    -   **DNS Suffix list** (Elenco suffissi DNS) (solo per i dispositivi Windows Phone 8.1): consente di configurare i domini che stabiliranno una connessione VPN. Per ogni dominio specificato, aggiungere il suffisso DNS, l'indirizzo del server DNS e una delle azioni su richiesta seguenti:  
-
-        -   **Non stabilire mai**: non viene mai aperta una connessione VPN.  
-
-        -   **Stabilisci se necessario**: viene aperta una connessione VPN solo se il dispositivo deve connettersi alle risorse.  
-
-        -   **Stabilisci sempre**: viene sempre aperta la connessione VPN.  
-
-    -   **Unisci**: eventuali suffissi DNS configurati vengono copiati nell'**Elenco reti attendibili**.  
-
-    -   **Elenco reti attendibili** (solo per i dispositivi Windows Phone 8.1): viene specificato un suffisso DNS per ogni riga. Se il dispositivo è in una rete attendibile, la connessione VPN non verrà aperta.  
-
-    -   **Elenco ricerca suffissi** (solo per i dispositivi Windows Phone 8.1): viene specificato un suffisso DNS per ogni riga. Per cercare ogni suffisso DNS durante la connessione a un sito Web verrà usato un nome breve.  
-
-     Ad esempio, è possibile specificare i suffissi DNS **domain1.contoso.com** e **domain2.contoso.com** e quindi passare all'URL **http://mywebsite**. Verranno quindi cercati i seguenti indirizzi:  
-
-    -   **http://mywebsite.domain1.contoso.com**  
-
-    -   **http://mywebsite.domain2.contoso.com**  
-
-    > [!NOTE]  
-    >  Solo per i dispositivi Windows Phone 8.1  
-    >   
-    >  Quando l'opzione *Invia tutto il traffico di rete tramite la connessione VPN* è selezionata *e* la connessione VPN usa il tunneling completo, tale connessione viene aperta automaticamente mediante il primo profilo di dispositivo. Per aprire una connessione con un profilo diverso, impostare il profilo desiderato come predefinito.  
-    >   
-    >  Se l'opzione *Invia tutto il traffico di rete tramite la connessione VPN* *non* è selezionata *e* la connessione VPN usa lo split tunneling, le connessioni VPN vengono aperte automaticamente per le route configurate o i suffissi DNS specifici delle connessione.  
-
-
-4. Nella pagina **Piattaforme supportate** della **Creazione guidata profilo VPN** selezionare i sistemi operativi in cui il profilo VPN verrà installato o scegliere **Seleziona tutto** per installare il profilo VPN in tutti i sistemi operativi disponibili.  
+4. Configurare altre impostazioni DNS (se necessario).  
 
 5. Completa la procedura guidata. Il nuovo profilo VPN viene visualizzato nel nodo **Profilo VPN** dell'area di lavoro **Asset e conformità**.  
 

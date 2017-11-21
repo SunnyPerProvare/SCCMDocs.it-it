@@ -1,5 +1,6 @@
 ---
-title: Installare e configurare un punto di aggiornamento software | Microsoft Docs
+title: installare e configurare un punto di aggiornamento software
+titleSuffix: Configuration Manager
 description: "I siti primari richiedono un punto di aggiornamento software nel sito di amministrazione centrale per la valutazione della conformità degli aggiornamenti software e per la distribuzione degli aggiornamenti software nei client."
 keywords: 
 author: dougeby
@@ -11,11 +12,11 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: b099a645-6434-498f-a408-1d438e394396
-ms.openlocfilehash: 7d369384d133c90a15e01df50ac53992d61f3873
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: c17dd40175bac5ecc4361e905f009f1ed5c2f5a4
+ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="install-and-configure-a-software-update-point"></a>installare e configurare un punto di aggiornamento software  
 
@@ -69,12 +70,12 @@ ms.lasthandoff: 08/07/2017
 ### <a name="configure-ssl-communications-to-wsus"></a>Configurare le comunicazioni SSL in WSUS  
  È possibile configurare la comunicazione SSL nella pagina **Generale** della procedura guidata o nella scheda **Generale** nelle proprietà del punto di aggiornamento software.  
 
- Per altre informazioni su come usare SSL, vedere [Decidere se configurare WSUS per l'uso di SSL](../plan-design/plan-for-software-updates.md#BKMK_WSUSandSSL).  
+ Per altre informazioni su come usare SSL, vedere [Decide whether to configure WSUS to use SSL](../plan-design/plan-for-software-updates.md#BKMK_WSUSandSSL).  
 
 ### <a name="wsus-server-connection-account"></a>Account di connessione al server WSUS  
  È possibile configurare un account che il server del sito utilizzerà per connettersi a WSUS in esecuzione nel punto di aggiornamento software. Se non si configura questo account, Configuration Manager si connette a WSUS tramite l'account computer del server del sito. Configurare l'account di connessione al server WSUS nella pagina **Impostazioni proxy e account** della procedura guidata o nella scheda **Impostazioni proxy e account** nelle proprietà del punto di aggiornamento software.  È possibile configurare l'account nelle pagine della procedura guidata a seconda della versione di Configuration Manager in uso.  
 
- Per altre informazioni sugli account di Configuration Manager, vedere [Account usati in System Center Configuration Manager](../../core/plan-design/hierarchy/accounts.md).  
+ Per altre informazioni sugli account di Configuration Manager, vedere [Accounts used in System Center Configuration Manager](../../core/plan-design/hierarchy/accounts.md) (Account usati in System Center Configuration Manager).  
 
 ## <a name="synchronization-source"></a>Origine di sincronizzazione  
  È possibile configurare l'origine sincronizzazione upstream per la sincronizzazione degli aggiornamenti software nella pagina **Origine sincronizzazione** della procedura guidata oppure nella scheda **Impostazioni di sincronizzazione** in Proprietà del componente del punto di aggiornamento software. Le opzioni per l'origine di sincronizzazione variano a seconda del sito.  
