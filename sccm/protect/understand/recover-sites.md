@@ -3,7 +3,7 @@ title: Ripristino del sito
 titleSuffix: Configuration Manager
 description: Informazioni su come ripristinare i siti in System Center Configuration Manager.
 ms.custom: na
-ms.date: 6/5/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 96785ea5abcb4ae67952ad8243c36bf6b238daca
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 497860c9b5698271d7ca6e4683e99350100f596f
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 #  <a name="recover-a-configuration-manager-site"></a>Ripristinare un sito di Configuration Manager
 
@@ -30,6 +30,12 @@ Eseguire un ripristino del sito di Configuration Manager dopo che si verifica un
 Le sezioni in questo argomento sono utili per il ripristino di un sito di Configuration Manager. Per creare un backup, vedere [Backup di Configuration Manager](/sccm/protect/understand/backup-and-recovery).
 
 ## <a name="considerations-before-recovering-a-site"></a>Considerazioni prima del recupero di un sito
+> [!Important]  
+> Queste informazioni si applicano solo agli scenari di ripristino sito.  Se si sta aggiornando l'infrastruttura locale e non ripristinando attivamente un sito in cui si è verificato un errore, esaminare le informazioni negli argomenti seguenti:
+> - [Aggiornare l'infrastruttura locale](/sccm/core/servers/manage/upgrade-on-premises-infrastructure)
+> - [Modificare l'infrastruttura](/sccm/core/servers/manage/modify-your-infrastructure)
+
+
 **È necessario usare la stessa versione ed edizione di SQL Server,** ad esempio non è supportato il ripristino di un database eseguito in SQL Server 2014 in SQL Server 2016. Analogamente non è supportato il ripristino di un database del sito eseguito nella Standard Edition di SQL Server 2016 alla Enterprise Edition di SQL Server 2016.
 -   SQL Server non deve essere impostato sulla **modalità utente singolo**.
 -   Assicurarsi che i file MDF e LDF siano validi. Quando si ripristina un sito, non viene eseguita alcuna verifica dello stato dei file da ripristinare.
@@ -124,7 +130,7 @@ Dopo il ripristino di un database del sito da un backup, Configuration Manager t
 Usare una delle seguenti procedure per ripristinare il server del sito e il database del sito.
 
 ### <a name="to-start-a-site-recovery-in-the-setup-wizard"></a>Per avviare un ripristino del sito nell'Installazione guidata
-1.  Copiare la cartella [CD.Latest](/sccm/core/servers/manage/the-cd.latest-folde) in un percorso esterno alla cartella di installazione di Configuration Manager.
+1.  Copiare la cartella [CD.Latest](/sccm/core/servers/manage/the-cd.latest-folder) in un percorso esterno alla cartella di installazione di Configuration Manager.
 Dalla copia della cartella CD.Latest eseguire l'Installazione guidata di Configuration Manager.
 
 2.  Nella pagina **Riquadro attività iniziale** selezionare **Ripristina un sito**, quindi fare clic su **Avanti**.
