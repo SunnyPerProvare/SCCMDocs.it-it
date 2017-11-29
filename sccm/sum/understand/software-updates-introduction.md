@@ -1,21 +1,22 @@
 ---
-title: Introduzione agli aggiornamenti software | Documentazione Microsoft
+title: Introduzione agli aggiornamenti software
+titleSuffix: Configuration Manager
 description: Informazioni di base sugli aggiornamenti software in System Center Configuration Manager.
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 10/30/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: e9778b13-c8a3-40eb-8655-34ac8ce9cdaa
-ms.openlocfilehash: 2904b904bbaf155f016f55fbd36af80308a42d76
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 66aa73e5c1aae68feeacb0eabe6233845289d104
+ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="introduction-to-software-updates-in-system-center-configuration-manager"></a>Introduzione agli aggiornamenti software in System Center Configuration Manager
 
@@ -254,7 +255,7 @@ Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiorn
 ##  <a name="BKMK_DeploymentProcess"></a> Processo di distribuzione degli aggiornamenti software  
  Dopo aver distribuito gli aggiornamenti software oppure quando viene eseguita una regola di distribuzione automatica e vengono distribuiti gli aggiornamenti software, viene aggiunto un criterio di assegnazione distribuzione ai criteri del computer per il sito. Gli aggiornamenti software vengono scaricati dal percorso download, Internet o dalla cartella di rete condivisa nell'origine del pacchetto. Gli aggiornamenti software vengono copiati dall'origine del pacchetto nella raccolta contenuto nel server del sito, quindi nella raccolta contenuto nel punto di distribuzione.  
 
- Quando un computer client nella raccolta di destinazione per la distribuzione riceve dei criteri del computer, l'Agente client aggiornamenti software avvia un'analisi di valutazione. L'agente client scarica il contenuto per gli aggiornamenti software richiesti da un punto di distribuzione nella cache del client locale poco dopo aver ricevuto la distribuzione, ma attende fin dopo l'impostazione di **Tempo disponibile software** per la distribuzione prima che gli aggiornamenti software siano disponibili per l'installazione. Gli aggiornamenti software nelle distribuzioni facoltative (distribuzioni che non hanno una scadenza dell'installazione) non vengono scaricati fino a quando un utente non avvia manualmente l'installazione.  
+ Quando un computer client nella raccolta di destinazione per la distribuzione riceve dei criteri del computer, l'Agente client aggiornamenti software avvia un'analisi di valutazione. L'agente client scarica il contenuto per gli aggiornamenti software richiesti da un punto di distribuzione nella cache del client locale in base all'impostazione **Tempo disponibile software** per la distribuzione e quindi gli aggiornamenti software sono disponibili per l'installazione. Gli aggiornamenti software nelle distribuzioni facoltative (distribuzioni che non hanno una scadenza dell'installazione) non vengono scaricati fino a quando un utente non avvia manualmente l'installazione.  
 
  Una volta trascorsa la scadenza configurata, l'Agente client aggiornamenti software esegue un'analisi per verificare che gli aggiornamenti software siano ancora necessari. Quindi controlla la cache locale sul computer client per verificare che i file di origine degli aggiornamenti software siano ancora disponibili. Infine, il client installa gli aggiornamenti software. Se il contenuto è stato eliminato dalla cache client per far spazio a un'altra distribuzione, il client scarica nuovamente gli aggiornamenti software dal punto di distribuzione nella cache client. Gli aggiornamenti software vengono sempre scaricati nella cache del client, indipendentemente dalla dimensione massima della cache client configurata. Al termine dell'installazione, l'agente client verifica che gli aggiornamenti software non siano più necessari e invia un messaggio di stato al punto di gestione per indicare che gli aggiornamenti software sono ora installati sul client.  
 

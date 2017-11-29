@@ -1,21 +1,22 @@
 ---
-title: Gestire gli aggiornamenti di Office 365 ProPlus | Microsoft Docs
+title: Gestire gli aggiornamenti di Office 365 ProPlus
+titleSuffix: Configuration Manager
 description: Configuration Manager sincronizza gli aggiornamenti del client di Office 365 dal catalogo di Windows Server Update Services nel server del sito per rendere disponibili gli aggiornamenti per la distribuzione ai client.
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 05/31/2017
+ms.date: 10/04/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
-ms.openlocfilehash: 902d7f7216ca7bb585afae587a6706e2332da9d3
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: a1ac97e60bc35ee3e98212cf17e33ed2b73301b9
+ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Gestire Office 365 ProPlus con Configuration Manager
 
@@ -46,7 +47,7 @@ Il dashboard di Gestione client di Office 365 presenta sotto forma di grafico le
 Per visualizzare il dashboard di Gestione client di Office 365, nella console di Configuration Manager passare a **Raccolta software** > **Panoramica** > **Gestione client di Office 365**. Nella parte superiore del dashboard, usare l'impostazione a discesa **Raccolta** per filtrare i dati del dashboard in base ai membri di una raccolta specifica.
 
 ### <a name="display-data-in-the-office-365-client-management-dashboard"></a>Visualizzare dati nel dashboard di gestione client di Office 365
-I dati visualizzati nel dashboard di gestione client di Office 365 provengono dall'inventario hardware. Perché i dati vengano visualizzati nel dashboard, è necessario abilitare l'inventario hardware e selezionare la classe **Configurazioni di Office 365 ProPlus** di tale inventario.
+I dati visualizzati nel dashboard di gestione client di Office 365 provengono dall'inventario hardware. Abilitare l'inventario hardware e selezionare la classe **Configurazioni di Office 365 ProPlus** di tale inventario per visualizzare i dati nel dashboard.
 #### <a name="to-display-data-in-the-office-365-client-management-dashboard"></a>Per visualizzare dati nel dashboard di gestione client di Office 365
 1. Abilitare l'inventario hardware, se non è ancora stato fatto. Per altri dettagli, vedere [Configurare l'inventario hardware](\sccm\core\clients\manage\configure-hardware-inventory).
 2. Nella console di Configuration Manager passare a **Amministrazione** > **Impostazioni client** > **Impostazioni client predefinite**.  
@@ -80,7 +81,7 @@ Per le versioni di Configuration Manager precedenti, è necessario eseguire la p
 3. Nella pagina **Impostazioni applicazione** specificare il nome e la descrizione per l'app, immettere il percorso di download per i file e quindi fare clic su **Avanti**. Il percorso deve essere specificato nel formato &#92;&#92;*server*&#92;*condivisione*.
 4. Nella pagina **Import Client Settings** (Importa impostazioni client) scegliere se importare le impostazioni del client di Office 365 da un file di configurazione XML esistente o se specificare manualmente le impostazioni, quindi fare clic su **Avanti**.  
 
-    Se già si dispone di un file di configurazione, immettere il percorso del file e andare al passaggio 7. Si noti che è necessario specificare il percorso nel formato &#92;&#92;*server*&#92;*share*&#92;*nomedelfile*.XML.
+    Se già si dispone di un file di configurazione, immettere il percorso del file e andare al passaggio 7. È necessario specificare il percorso nel formato &#92;&#92;*server*&#92;*condivisione*&#92;*nomefile*.XML.
     > [!IMPORTANT]    
     > Il file di configurazione XML deve contenere solo [lingue supportate dal client Office 365 ProPlus](https://technet.microsoft.com/library/cc179219&#40;v=office.16&#41;.aspx).
 
@@ -104,7 +105,7 @@ Eseguire i passaggi seguenti per distribuire gli aggiornamenti di Office 365 con
 1.  [Verificare i requisiti](https://technet.microsoft.com/library/mt628083.aspx) per l'uso di Configuration Manager per la gestione degli aggiornamenti del client di Office 365 nella sezione **Requisiti necessari per gestire gli aggiornamenti client di Office 365 utilizzando Configuration Manager** dell'argomento.  
 
 2.  [Configurare i punti di aggiornamento software](../get-started/configure-classifications-and-products.md) per sincronizzare gli aggiornamenti del client di Office 365. Impostare gli **aggiornamenti** per la classificazione e selezionare il **client di Office 365** per il prodotto. Sincronizzare gli aggiornamenti software dopo aver configurato i punti di aggiornamento software per l'uso della classificazione **Aggiornamenti**.
-3.  Abilitare i client di Office 365 per la ricezione di aggiornamenti da Configuration Manager. È possibile eseguire questa operazione usando le impostazioni client di Configuration Manager o Criteri di gruppo. Per abilitare il client usare uno dei metodi seguenti:   
+3.  Abilitare i client di Office 365 per la ricezione di aggiornamenti da Configuration Manager. Usare le impostazioni client di Configuration Manager o Criteri di gruppo per abilitare il client.   
 
     **Metodo 1**: a partire dalla versione 1606 di Configuration Manager è possibile usare l'impostazione del client di Configuration Manager per la gestione dell'agente client di Office 365. Dopo aver configurato questa impostazione e distribuito gli aggiornamenti di Office 365, l'agente client di Configuration Manager comunica con l'agente client di Office 365 al fine di scaricare gli aggiornamenti di Office 365 da un punto di distribuzione e installarli. Configuration Manager esegue l'inventario delle impostazioni client di Office 365 ProPlus.    
 
@@ -122,7 +123,7 @@ Eseguire i passaggi seguenti per distribuire gli aggiornamenti di Office 365 con
 > È necessario scaricare e distribuire gli aggiornamenti nelle stesse lingue configurate nei client Office 365. Si supponga, ad esempio, di avere un client Office 365 configurato con le lingue en-us e de-de. Si supponga quindi di scaricare e distribuire nel server del sito solo il contenuto en-us di un aggiornamento di Office 365. Quando l'utente avvia l'installazione di questo aggiornamento da Software Center, l'operazione si blocca durante il download del contenuto.   
 
 ## <a name="restart-behavior-and-client-notifications-for-office-365-updates"></a>Comportamento di riavvio e notifiche client per gli aggiornamenti di Office 365
-Quando si distribuisce un aggiornamento a un client di Office 365, il comportamento di riavvio e le notifiche client sono diversi a seconda della versione di Configuration Manager in uso. La tabella seguente offre informazioni sull'esperienza dell'utente finale quando il client riceve un aggiornamento di Office 365:
+Quando si distribuisce un aggiornamento a un client di Office 365, il comportamento di riavvio e le notifiche client sono diversi a seconda della versione di Configuration Manager in uso. La tabella seguente fornisce informazioni sull'esperienza dell'utente finale quando il client riceve un aggiornamento di Office 365:
 
 |Versione di Configuration Manager |Esperienza utente finale|  
 |----------------|---------------------|
@@ -131,9 +132,22 @@ Quando si distribuisce un aggiornamento a un client di Office 365, il comportame
 |1610 con aggiornamento <br/>1702|Viene impostato un flag di riavvio e l'aggiornamento viene installato dopo il riavvio del computer.|
 |1706|Il client riceve notifiche popup e in-app, nonché una finestra di dialogo con il conto alla rovescia prima dell'installazione dell'aggiornamento.|
 
+> [!Important]
+> In Configuration Manager versione 1706 si noti quanto segue:
+>
+>- Viene visualizzata un'icona di notifica nell'area di notifica sulla barra delle applicazioni per le app obbligatorie la cui scadenza è entro 48 ore e per cui il contenuto dell'aggiornamento è stato scaricato. 
+>- Viene visualizzata una finestra di dialogo con un conto alla rovescia per le app obbligatorie la cui scadenza è entro 7,5 ore e per cui l'aggiornamento è stato scaricato. L'utente può posticipare la finestra di dialogo del conto alla rovescia fino a tre volte prima della scadenza. Se viene posticipato, il conto alla rovescia viene visualizzato di nuovo dopo due ore. Se non viene posticipato, viene eseguito un conto alla rovescia di 30 minuti e, al termine, l'aggiornamento viene installato.
+>- Potrebbe non venire visualizzata una notifica popup fino a quando l'utente non fa clic sull'icona nell'area di notifica. Inoltre, se nell'area di notifica c'è poco spazio, l'icona di notifica potrebbe non essere visibile a meno che l'utente non apra o espanda l'area. 
+>- La notifica e la finestra di dialogo del conto alla rovescia potrebbero venire visualizzate mentre l'utente non sta usando il dispositivo, ad esempio quando il dispositivo è bloccato durante la notte, quindi è possibile che venga forzata la chiusura delle app di Office in esecuzione nel dispositivo per installare l'aggiornamento. Prima di chiudere l'app, Office salva i relativi dati per evitarne la perdita. 
+>- Se la scadenza è nel passato o se l'impostazione prevede l'avvio il prima possibile, è possibile che venga forzata la chiusura delle app di Office in esecuzione senza alcuna notifica. 
+>- Se l'utente installa un aggiornamento di Office prima della scadenza, quando viene raggiunta la scadenza Configuration Manager verifica che l'aggiornamento sia installato. Se l'aggiornamento non viene rilevato nel dispositivo, viene installato. 
+>- La barra di notifica in-app non viene visualizzata in un'app di Office che è in esecuzione prima del download dell'aggiornamento. Dopo il download dell'aggiornamento, la notifica in-app viene visualizzata solo per le app aperte successivamente.
+>- Per gli aggiornamenti di Office attivati da un intervallo di servizio o pianificati per l'orario non di ufficio, è possibile che venga forzata la chiusura delle app di Office in esecuzione senza alcuna notifica. 
+
+
 
 ## <a name="add-languages-for-office-365-update-downloads"></a>Aggiungere lingue per i download degli aggiornamenti di Office 365
-A partire da Configuration Manager versione 1610, è possibile aggiungere il supporto per Configuration Manager per scaricare gli aggiornamenti in qualsiasi lingua supportata da Office 365, indipendentemente dal fatto che tali lingue siano supportate in Configuration Manager.    
+A partire da Configuration Manager versione 1610, è possibile aggiungere il supporto per Configuration Manager per scaricare gli aggiornamenti in qualsiasi lingua supportata da Office 365, indipendentemente dal fatto che tale lingua sia supportata in Configuration Manager.    
 
 > [!IMPORTANT]  
 > La configurazione di lingue aggiuntive per l'aggiornamento di Office 365 è un'impostazione a livello di sito. Dopo l'aggiunta delle lingue in base alla procedura seguente, tutti gli aggiornamenti di Office 365 vengono scaricati in queste lingue, oltre che nelle lingue selezionate nella pagina **Selezione lingua** del Download guidato degli aggiornamenti software o della Distribuzione guidata degli aggiornamenti software.

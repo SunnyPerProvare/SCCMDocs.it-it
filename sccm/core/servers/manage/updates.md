@@ -3,7 +3,7 @@ title: Aggiornamenti
 titleSuffix: Configuration Manager
 description: Informazioni su un metodo di manutenzione nella console denominato **Aggiornamenti e manutenzione** che semplifica l'individuazione e l'installazione di aggiornamenti consigliati.
 ms.custom: na
-ms.date: 07/31/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: bca724f15dc18d7273bbca122b6428b4704a5d43
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: ecd458cc5f86a65926d44481c894228bae5f5fbe
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="updates-for-system-center-configuration-manager"></a>Aggiornamenti per System Center Configuration Manager
 
@@ -75,12 +75,13 @@ Le versioni seguenti di Configuration Manager sono disponibili come versione di 
 
 |Versione |Data di disponibilità|[Data di fine supporto](/sccm/core/servers/manage/current-branch-versions-supported) |Versione di base|Aggiornamento nella console|  
 |-------------|-----------|------------|--------------|------------------------|  
+|[1710](/sccm/core/plan-design/changes/whats-new-in-version-1710)<br /><br /> 5.00.8577.1000|20 novembre 2017|20 novembre 2018|No|Sì|
 |[1706](/sccm/core/plan-design/changes/whats-new-in-version-1706)<br /><br /> 5.00.8540.1000|31 luglio 2017|31 luglio 2018|No|Sì|
 |[1702](/sccm/core/plan-design/changes/whats-new-in-version-1702)<br /><br /> 5.00.8498.1000|27 marzo 2017| 27 marzo 2018|Sì|Sì|
 |[1610](/sccm/core/plan-design/changes/whats-new-in-version-1610)<br /><br /> 5.00.8458.1000|18 novembre 2016| 18 novembre 2017|No|Sì|
 |[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606)<br /><br /> 5.00.8412.1000|22 luglio 2016| 22 luglio 2017|No|Sì|
 |[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606) con aggiornamento rapido cumulativo 1606 (KB3186654) </br></br>5.00.8412.1307 *(nota 1)* |12 ottobre 2016| 12 ottobre 2017|Sì|No|
-| 1602<br /><br /> 5.00.8355.1000|11 marzo 2016| 11 marzo 2017|No|Sì| 
+| 1602<br /><br /> 5.00.8355.1000|11 marzo 2016| 11 marzo 2017|No|Sì|
 | 1511 <br /><br /> 5.00.8325.1000|8 dicembre 2015| 8 dicembre 2016|Sì|No|  
 
 

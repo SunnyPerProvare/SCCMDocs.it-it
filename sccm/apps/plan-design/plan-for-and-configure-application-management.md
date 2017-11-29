@@ -3,7 +3,7 @@ title: Pianificare e configurare la gestione delle applicazioni
 titleSuffix: Configuration Manager
 description: Implementare e configurare le dipendenze necessarie per la distribuzione di applicazioni in System Center Configuration Manager.
 ms.custom: na
-ms.date: 02/09/2017
+ms.date: 11/07/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "13"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 66317bea84adbddf2d2e94c30a4a72e19229439b
-ms.sourcegitcommit: 18ac58374d2d513fe2a197c80f7c8c6890a7d612
+ms.openlocfilehash: cd06d3ee2ea14c9ff1b9cf09980c2b25a5263db9
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="plan-for-and-configure-application-management-in-system-center-configuration-manager"></a>Pianificare e configurare la gestione delle applicazioni in System Center Configuration Manager
 
@@ -185,6 +185,26 @@ In Software Center la personalizzazione viene applicata secondo le regole seguen
 1. Se il ruolo del server del sito punto per siti Web del Catalogo applicazioni non è installato, Software Center visualizzerà il nome dell'organizzazione specificato nell'impostazione **Nome organizzazione visualizzato in Software Center** del client **Agente computer**. Per istruzioni, vedere [Come configurare le impostazioni client](https://docs.microsoft.com/sccm/core/clients/deploy/configure-client-settings).
 2. Se il ruolo del server del sito punto per siti Web del Catalogo applicazioni è installato, Software Center visualizzerà il nome dell'organizzazione e il colore specificati nelle proprietà del ruolo del server del sito punto per siti Web del Catalogo applicazioni. Per altre informazioni, vedere [Configuration options for Application Catalog website point](https://docs.microsoft.com/sccm/core/servers/deploy/configure/configuration-options-for-site-system-roles#BKMK_ApplicationCatalog_Website) (Opzioni di configurazione per il punto per siti Web del Catalogo applicazioni).
 3. Se una sottoscrizione di Microsoft Intune è configurata e connessa a Configuration Manager, Software Center visualizzerà il nome dell'organizzazione, il colore e il logo aziendale specificati nelle proprietà della sottoscrizione di Intune. Per ulteriori informazioni, vedere [Configuring the Microsoft Intune subscription](https://docs.microsoft.com/sccm/mdm/deploy-use/setup-hybrid-mdm#step-3-configure-intune-subscription).
+
+#### <a name="to-manually-set-software-center-branding"></a>Per impostare manualmente la personalizzazione di Software Center
+<!-- 1351224 -->
+Con la versione 1710, è possibile aggiungere manualmente elementi di personalizzazione aziendale e specificare la visibilità delle schede in Software Center. È possibile aggiungere il nome specifico della società per Software Center, impostare un tema di colori per la configurazione di Software Center, impostare il logo della società e impostare le schede visibili per i dispositivi client.
+
+1. Nella console di **Configuration Manager** scegliere **Amministrazione** > **Impostazioni client**. Fare clic sull'istanza di impostazione client desiderata.
+2. Nella scheda **Home**, nel gruppo **Proprietà**, scegliere **Proprietà**.
+3. Nella finestra di dialogo **Impostazioni predefinite** scegliere **Software Center**.
+4. Selezionare **Sì** per **scegliere le nuove impostazioni per specificare informazioni sulla società**, in modo da abilitare le impostazioni di personalizzazione di Software Center.
+5. Digitare il **nome della società**.
+6. Selezionare la **combinazione colori per Software Center**.
+7. Fare clic su **Sfoglia** per accedere al logo per Software Center. Il logo deve essere di 400 x 100 pixel, nel formato JPEG o PNG e con dimensioni massime di 750 KB.
+8. Selezionare **SÌ** per rendere visibili le schede in Software Center per i dispositivi client. È necessario che sia visibile almeno una scheda:
+
+    -  Scheda Enable Applications (Abilita applicazioni)
+    -  Scheda Abilita aggiornamenti
+    -  Scheda Enable Operating Systems (Abilita sistemi operativi)
+    -  Scheda Enable Installation Status (Abilita stato installazione)
+    -  Scheda Enable Device compliance (Abilita conformità dispositivo)
+    -  Scheda Enable Options (Abilita opzioni)
 
 > [!IMPORTANT]  
 >  La personalizzazione di Software Center viene sincronizzata con il servizio Intune ogni 14 giorni. È possibile quindi che le modifiche apportate in Intune vengano visualizzate in Configuration Manager con un certo ritardo.

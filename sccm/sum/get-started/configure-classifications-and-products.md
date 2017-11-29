@@ -1,21 +1,22 @@
 ---
-title: Configurare le classificazioni e i prodotti per la sincronizzazione | Microsoft Docs
+title: configurare le classificazioni e i prodotti per la sincronizzazione
+titleSuffix: Configuration Manager
 description: Seguire questi passaggi per configurare le classificazioni e i prodotti per la sincronizzazione nella console di Configuration Manager.
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 11/20/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
-ms.openlocfilehash: 2da61e6e06850b36543b9fd41bd9a7d2368006fb
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: f36ff74b794e57b51742c40d10bd25a9cb4a13a5
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/21/2017
 ---
 #  <a name="configure-classifications-and-products-to-synchronize"></a>configurare le classificazioni e i prodotti per la sincronizzazione  
 
@@ -52,16 +53,16 @@ ms.lasthandoff: 08/07/2017
     >       
 
     > [!NOTE]    
-    > A partire da Configuration Manager versione 1706, è anche possibile selezionare la casella di controllo **Includi i driver di Microsoft Surface e gli aggiornamenti del firmware** per sincronizzare i driver di Microsoft Surface. Tutti i punti di aggiornamento software devono eseguire Windows Server 2016 per sincronizzare correttamente i driver di Surface.     
-    >    
-    > Si tratta di una funzionalità di versione non definitiva. Le funzionalità di versioni non definitive sono incluse nel prodotto a scopo di test preliminare in un ambiente di produzione, ma non devono essere considerate pronte per l'ambiente di produzione. Per rendere disponibile questa funzionalità è necessario attivarla. Per altre informazioni, vedere la sezione relativa all'[abilitazione delle funzionalità facoltative dagli aggiornamenti](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
+    > A partire da Configuration Manager versione 1706, è possibile selezionare la casella di controllo **Includi i driver di Microsoft Surface e gli aggiornamenti del firmware** per sincronizzare i driver di Microsoft Surface. Tutti i punti di aggiornamento software devono eseguire Windows Server 2016 per sincronizzare correttamente i driver di Surface. Se si abilita un punto di aggiornamento software in un computer che esegue Windows Server 2012 dopo aver abilitato i driver per Surface, i risultati dell'analisi per gli aggiornamenti dei driver non saranno accurati. Questo comportamento causa la visualizzazione di dati di conformità non corretti nella console di Configuration Manager e nei report di Configuration Manager.  
+    > 
+    > La casella di controllo **Includi i driver di Microsoft Surface e gli aggiornamenti del firmware** è sempre disponibile in Configuration Manager versione 1710. Tuttavia, si tratta di una funzionalità in versione non definitiva in Configuration Manager 1706 ed è necessario attivarla perché sia disponibile. Le funzionalità di versioni non definitive sono incluse nel Current Branch a scopo di test preliminare in un ambiente di produzione. Queste funzionalità sono completamente supportate ma sono ancora in fase di sviluppo e, fino a quando non vengono spostate dalla categoria Versioni non definitive, possono essere soggette a modifiche. Per altre informazioni, vedere la sezione relativa all'[abilitazione delle funzionalità facoltative dagli aggiornamenti](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
 
 5.  Nella scheda **Prodotti** specificare i prodotti per cui si desidera sincronizzare gli aggiornamenti software e quindi fare clic su **Chiudi**.  
 
     > [!NOTE]  
     >  I metadati per ogni aggiornamento software definiscono i prodotti per i quali l'aggiornamento è applicabile. Un prodotto è un'edizione specifica di un sistema operativo o di un'applicazione, ad esempio Windows Server 2012. Una famiglia di prodotti è il sistema operativo o l'applicazione di base da cui derivano i singoli prodotti. Un esempio di famiglia di prodotti è Windows, di cui Windows Server 2012 è membro. È possibile specificare una famiglia di prodotti o singoli prodotti all'interno di una famiglia di prodotti. Il tempo necessario per sincronizzare gli aggiornamenti software è direttamente proporzionale al numero di prodotti selezionati.  
     >   
-    >  Se gli aggiornamenti software sono applicabili a più prodotti e almeno uno dei prodotti è selezionato per la sincronizzazione, tutti i prodotti verranno visualizzati nella console di Configuration Manager, anche se alcuni prodotti non sono stati selezionati. Se, ad esempio, Windows Server 2012 è l'unico sistema operativo selezionato e se un aggiornamento software si applica a Windows 8 e a Windows Server 2012, entrambi i prodotti verranno visualizzati nella console di Configuration Manager.  
+    >  Se gli aggiornamenti software sono applicabili a più prodotti e almeno uno dei prodotti è selezionato per la sincronizzazione, tutti i prodotti verranno visualizzati nella console di Configuration Manager, anche se alcuni non sono stati selezionati. Se, ad esempio, Windows Server 2012 è l'unico sistema operativo selezionato e se un aggiornamento software si applica a Windows 8 e a Windows Server 2012, entrambi i prodotti vengono visualizzati nella console di Configuration Manager.  
 
     > [!IMPORTANT]  
     >  Configuration Manager archivia un elenco di prodotti e di famiglie di prodotti tra cui è possibile scegliere quando si installa per la prima volta il punto di aggiornamento software. È possibile che i prodotti e le famiglie di prodotti pubblicati dopo il rilascio di Configuration Manager non siano disponibili per la selezione finché non si completa la sincronizzazione degli aggiornamenti software, che aggiorna l'elenco di prodotti e famiglie di prodotti disponibili tra cui è possibile scegliere.  

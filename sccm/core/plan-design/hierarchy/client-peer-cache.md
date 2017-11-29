@@ -3,7 +3,7 @@ title: Peer cache per i client
 titleSuffix: Configuration Manager
 description: Usare la peer cache per i percorsi di origine del contenuto del client quando si distribuiscono contenuti con System Center Configuration Manager.
 ms.custom: na
-ms.date: 7/31/2017
+ms.date: 11/20/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -15,11 +15,11 @@ caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 20438f51a67fb29da21c879620870caf3328121d
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 2bf8f0e5a2636ffd92f8ba1898cc4f1b250f925f
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 10/12/2017
 A partire da System Center Configuration Manager versione 1610, è possibile usare la **peer cache** per gestire la distribuzione del contenuto ai client in posizioni remote. La peer cache è una soluzione integrata di Configuration Manager che consente ai client di condividere i contenuti con altri client direttamente dalla cache locale.   
 
 > [!TIP]  
-> Introdotti con la versione 1610, la peer cache e il dashboard Origini dati del client sono funzionalità di versioni non definitive. Per abilitarle, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/pre-release-features).
+> Questa funzionalità è stata introdotta per la prima volta nella versione 1610 come [versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1710, questa funzionalità non è più in versione non definitiva.
 
 ## <a name="overview"></a>Panoramica
 Un client Peer Cache è un client Gestione configurazione che è in grado di usare Peer Cache. Un client Peer Cache che ha del contenuto che può condividere con altri client è un'origine di Peer Cache.

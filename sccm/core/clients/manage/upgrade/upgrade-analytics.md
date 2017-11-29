@@ -1,5 +1,6 @@
 ---
-title: Upgrade Readiness | System Center Configuration Manager
+title: Preparazione aggiornamenti
+titleSuffix: Configuration Manager
 description: "Integrare Upgrade Readiness con Configuration Manager. Accedere ai dati di compatibilità dell'aggiornamento nella console di amministrazione. Definire i dispositivi di destinazione per l'aggiornamento o la correzione."
 keywords: 
 author: mattbriggs
@@ -11,115 +12,63 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-client
 ms.assetid: 68407ab8-c205-44ed-9deb-ff5714451624
-ms.openlocfilehash: b1f4cd4a6f19a02d2b2dc3f9a841aeeb2a1403dd
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: df2950551e527788aeb01d57cdbf01ad19817ccd
+ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="integrate-upgrade-readiness-with-system-center-configuration-manager"></a>Integrare Upgrade Readiness con System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Preparazione aggiornamenti (precedentemente denominato Upgrade Analytics) consente di valutare e analizzare la conformità dei dispositivi con Windows 10. Integrare Upgrade Readiness con Configuration Manager per accedere ai dati di compatibilità dell'aggiornamento dei client nella console di amministrazione di Configuration Manager. È possibile specificare come destinazione i dispositivi per l'aggiornamento o la correzione dall'elenco dei dispositivi.
+Preparazione aggiornamenti (in precedenza Upgrade Analytics) fa parte di [Windows Analytics](https://www.microsoft.com/WindowsForBusiness/windows-analytics) e consente di valutare e analizzare la conformità dei dispositivi nell'ambiente per un aggiornamento a Windows 10. È possibile configurare la versione specifica. Lo strumento Preparazione aggiornamenti può essere integrato con Configuration Manager per accedere ai dati di compatibilità dell'aggiornamento dei client nella console di amministrazione di Configuration Manager. È possibile specificare come destinazione i dispositivi per l'aggiornamento o la correzione usando raccolte dinamiche create in base a questi dati.
 
-Upgrade Readiness è una soluzione di Microsoft Operations Management Suite (OMS). Per altre informazioni su Upgrade Readiness, vedere in [Get started with Upgrade Readiness](https://technet.microsoft.com/itpro/windows/deploy/manage-windows-upgrades-with-upgrade-readiness) (Introduzione a Upgrade Readiness).
+Preparazione aggiornamenti è una soluzione che viene eseguita in [Operations Management Suite (OMS)](/azure/operations-management-suite/operations-management-suite-overview). Per altre informazioni su Preparazione aggiornamenti, vedere [Manage Windows upgrades with Upgrade Readiness](/windows/deployment/upgrade/manage-windows-upgrades-with-upgrade-readiness) (Gestire gli aggiornamenti di Windows con Preparazione aggiornamenti).
 
 ## <a name="configure-clients"></a>Configurare i client
 
-È necessario eseguire varie operazioni di configurazione per garantire che i client siano in grado di offrire dati a Upgrade Readiness:
+Come tutte le soluzioni di Windows Analytics, Preparazione aggiornamenti si basa sui dati di telemetria di Windows. Perché Preparazione aggiornamenti possa ricevere dati di telemetria sufficienti, devono essere soddisfatti i prerequisiti seguenti:
 
--  Configurare le impostazioni di telemetria client, come descritto in [Configurare la telemetria di Windows nell'organizzazione](https://technet.microsoft.com/itpro/windows/manage/configure-windows-telemetry-in-your-organization).
--  Installare gli aggiornamenti descritti nella sezione *Deploy the compatibility update and related KBs* (Distribuire l'aggiornamento di compatibilità e i KB associati) di [Get started with Upgrade Readiness](https://technet.microsoft.com/itpro/windows/deploy/manage-windows-upgrades-with-upgrade-readiness) (Introduzione a Preparazione aggiornamenti).
+- Tutti i client devono essere configurati con una **chiave ID commerciale**. 
+- Nei client Windows 10 è necessario configurare la telemetria in modo da segnalare almeno dati di telemetria di livello di base.
+-  Nei client che eseguono versioni precedenti di Windows devono essere installati gli elementi della knowledge base specifici descritti in [Get started with Upgrade Readiness](/windows/deployment/upgrade/upgrade-readiness-get-started#deploy-the-compatibility-update-and-related-kbs) (Introduzione a Preparazione aggiornamenti). Nei client deve essere anche abilitata la telemetria in **Impostazioni client**.
 
-    > [!NOTE]
-    > È possibile scaricare uno script per automatizzare molte attività di installazione client. Per informazioni sullo script, vedere la sezione *Run the Upgrade Readiness deployment script* (Eseguire lo script di distribuzione di Upgrade Readiness) di [Get started with Upgrade Readiness](https://technet.microsoft.com/itpro/windows/deploy/manage-windows-upgrades-with-upgrade-readiness) (Introduzione a Upgrade Readiness).
+La chiave ID commerciale e la telemetria di Windows possono essere configurate in **Impostazioni client**. Per altre informazioni, vedere [Usare Windows Analytics con Configuration Manager](../monitor-windows-analytics.md).
 
-## <a name="connect-to-upgrade-readiness"></a>Connettersi a Preparazione aggiornamenti
+>[!NOTE]
+>In caso di problemi per cui Preparazione aggiornamenti non riceve i dati di telemetria dai dispositivi nell'ambiente nel modo previsto, è possibile risolvere alcuni di questi problemi usando lo [script di distribuzione di Preparazione aggiornamenti](/windows/deployment/upgrade/upgrade-readiness-deployment-script). Tuttavia, nella maggior parte degli ambienti in cui vengono distribuiti gli elementi della knowledge base corretti, sarà sufficiente configurare la chiave ID commerciale e la telemetria in **Impostazioni client**.
 
-### <a name="prerequisites"></a>Prerequisiti
+## <a name="connect-configuration-manager-to-upgrade-readiness"></a>Connettere Configuration Manager a Preparazione aggiornamenti
 
-A partire da Current Branch versione 1706, la Procedura guidata per i servizi di Azure viene usata per semplificare il processo di configurazione dei servizi di Azure usati con Configuration Manager. Per usare la procedura guidata, è necessario configurare un'app web di Azure. Per altre informazioni, vedere [Procedura guidata per i servizi di Azure](/sccm/core/servers/deploy/configureazure-services-wizard).
+A partire da Current Branch versione 1706, viene usata la [Procedura guidata per i servizi di Azure](../../../servers/deploy/configure/azure-services-wizard.md) per semplificare il processo di configurazione dei servizi di Azure usati con Configuration Manager. Per connettere Configuration Manager a Preparazione aggiornamenti, è necessario creare la registrazione di un'app Azure AD di tipo *App Web/API* nel [portale di Azure](https://portal.azure.com). Per altre informazioni su come creare la registrazione di un'app, vedere [Registrare l'applicazione nel tenant di Azure Active Directory](/azure/active-directory/active-directory-app-registration). Nel **portale di Azure** sarà anche necessario concedere alla nuova app Web registrata autorizzazioni di *Collaboratore* per il gruppo di risorse che contiene l'area di lavoro OMS che ospita i dati di Preparazione aggiornamenti. La **Procedura guidata per i servizi di Azure** userà questa registrazione dell'app per consentire a Configuration Manager di comunicare in modo sicuro con Azure AD e connettere l'infrastruttura ai dati di Preparazione aggiornamenti.
+
+>[!IMPORTANT]
+>Le autorizzazioni di *Collaboratore* devono essere concesse all'app stessa e non a un'identità utente di Azure AD. Il motivo è che è l'app registrata, e non un utente di Azure AD, ad accedere ai dati per conto dell'infrastruttura di Configuration Manager. A tale scopo, durante l'assegnazione dell'autorizzazione è necessario cercare il nome della registrazione dell'app nel pannello **Aggiungi utenti**. Questo processo è lo stesso che deve essere eseguito per [concedere a Configuration Manager autorizzazioni per OMS](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#provide-configuration-manager-with-permissions-to-oms) per le connessioni a [Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm). È necessario completare questi passaggi prima che la registrazione dell'app venga importata in Configuration Manager con la *Procedura guidata per i servizi di Azure*.
 
 ### <a name="use-the-azure-wizard-to-create-the-connection"></a>Usare la procedura guidata per Azure per creare la connessione
 
-1.  Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e quindi fare clic su **Servizi di Azure**.
-2.  Nella scheda **Home**, nel gruppo **Servizi di Azure**, fare clic su **Configura i servizi di Azure**.
-3.  Digitare un nome descrittivo nella pagina Servizi di Azure. È anche possibile digitare una descrizione. Selezionare quindi **Connettore Upgrade Readiness** e fare clic su **Avanti**.
-4.  Nella pagina App specificare l'ambiente di Azure. Fare clic su **Sfoglia** per configurare un'app server.
-5.  Fare clic su **Importa** per connettersi all'app Web in Azure.
-    -  Digitare il **nome del tenant di Azure AD**.
-    -  Digitare l'**ID del tenant di Azure AD**.
-    -  Digitare il **nome applicazione**.
-    -  Digitare l'**ID client**.
-    -  Digitare la **chiave privata**.
-    -  Selezionare la data per **Scadenza della chiave privata**.
-    -  Digitare un URL per **URI ID applicazione**.
-    -  Fare clic su **Verifica** e su **OK**.
+Seguire le istruzioni incluse in [Configurare i servizi di Azure da usare con Configuration Manager](../../../servers/deploy/configure/azure-services-wizard.md) per creare una connessione a Preparazione aggiornamenti importando la registrazione dell'app Web creata sopra. 
 
-6.  Nella pagina Configurazione specificare la connessione a Preparazione aggiornamenti. Selezionare i seguenti valori:  
-    -  Sottoscrizioni Azure
-    -  Gruppo di risorse di Azure
-    -  Area di lavoro di Windows Analytics
-8.  Fare clic su **Avanti**. È possibile esaminare la connessione nella pagina Riepilogo. 
+Nella pagina *Configurazione* vengono immessi automaticamente i valori seguenti se l'importazione dell'app Web è riuscita e sono state assegnate le autorizzazioni corrette nel **portale di Azure**. 
+-  Sottoscrizioni Azure
+-  Gruppo di risorse di Azure
+-  Area di lavoro di Windows Analytics
 
-## <a name="complete-upgrade-readiness-tasks"></a>Completare le attività di Upgrade Readiness  
+Saranno disponibili più di un gruppo di risorse o di un'area di lavoro solo se l'app Web Azure AD registrata ha autorizzazioni di *Collaboratore* per più di un gruppo di risorse o se il gruppo di risorse selezionato contiene più di un'area di lavoro OMS.
+ 
+## <a name="view-and-use-upgrade-readiness-information-in-configuration-manager"></a>Visualizzare e usare le informazioni di Preparazione aggiornamenti in Configuration Manager
 
-Dopo aver creato la connessione, eseguire queste attività, come descritto in [Get started with Upgrade Readiness](https://technet.microsoft.com/itpro/windows/deploy/manage-windows-upgrades-with-upgrade-readiness) (Introduzione a Preparazione aggiornamenti).  
-
-1. Aggiungere il servizio UpgradeReadiness all'area di lavoro OMS.  
-2. Generare un ID commerciale.  
-3. Effettuare la sottoscrizione a Upgrade Readiness.   
-
-## <a name="use-the-upgrade-readiness-deployment-script"></a>Usare lo script di distribuzione di Upgrade Readiness  
-
-È possibile automatizzare molte attività di Upgrade Readiness e risolvere i problemi di condivisione con lo **script di distribuzione di Microsoft Upgrade Readiness**.  
-Lo script di distribuzione di Upgrade Readiness esegue le operazioni seguenti:  
-
-- Imposta la chiave ID commerciale e le chiavi CommercialDataOptIn e RequestAllAppraiserVersions.  
-- Verifica che i computer degli utenti siano in grado di inviare dati a Microsoft.  
-- Controlla se il computer è in attesa di riavvio.   
-- Verifica che sia installata la versione più recente del pacchetto KB 10.0.x. È richiesta la versione 10.0.14913 o una versione successiva.  
-- Se abilitata, attiva la modalità dettagliata per la risoluzione dei problemi.  
-- Avvia la raccolta dei dati di telemetria necessari a Microsoft per valutare il grado di preparazione dell'organizzazione per l'aggiornamento.  
-- Se abilitato, visualizza lo stato dello script in una finestra di comando, che offre visibilità sui problemi (esito positivo o negativo per ogni passaggio) e/o sulle operazioni di scrittura nel file di log.  
-
-## <a name="to-run-the-upgrade-readiness-deployment-script"></a>Per eseguire lo script di distribuzione di Upgrade Readiness:  
-
-1. Scaricare lo [script di distribuzione di Upgrade Readiness](https://go.microsoft.com/fwlink/?LinkID=822966&clcid=0x409) ed estrarre UpgradeReadiness.zip. I file nella cartella **Diagnostics** sono necessari solo se si prevede di eseguire lo script in modalità di risoluzione dei problemi.  
-2. Modificare i seguenti parametri in RunConfig.bat:  
-- Percorso di archiviazione per le informazioni del registro. Esempio: %SystemDrive%\URDiagnostics. È possibile archiviare le informazioni del registro in una condivisione file remota o in una directory locale. Se lo script non può creare il file di registro per il percorso specificato, lo crea nell'unità che include la directory di Windows.  
-- Chiave ID commerciale.  
-- Per impostazione predefinita, lo script invia informazioni di registro sia alla console sia al file di registro. Per modificare il comportamento predefinito, usare una delle opzioni seguenti:  
-    - logMode = 0 - Registrazione solo nella console  
-    - logMode = 1 - Registrazione nel file e nella console  
-    - logMode = 2 - Registrazione solo nel file  
-    - Per la risoluzione dei problemi, impostare **isVerboseLogging** su **$true** per generare informazioni di registro che possono facilitare la diagnosi dei problemi. Per impostazione predefinita, **isVerboseLogging** è impostata su **$false**. Per usare questa modalità, verificare che la cartella Diagnostics sia installata nella stessa directory dello script.  
-    - Notificare agli utenti se è necessario riavviare il computer. Per impostazione predefinita, questa opzione è disattivata.  
-
-3. Dopo aver completato la modifica dei parametri in RunConfig.bat, eseguire lo script come amministratore.  
-
-
-## <a name="view-microsoft-upgrade-readiness-properties-in-configuration-manager"></a>Visualizzare le proprietà di Microsoft Upgrade Readiness in Configuration Manager  
-
-1.  Nella console di Configuration manager, passare a **Servizi cloud** e selezionare **Connettore OMS** per aprire la pagina **OMS Connection Properties** (Proprietà connessione OMS).  
-
-2.  In questa pagina sono disponibili due schede:
-  * La scheda **Azure Active Directory** visualizza **Tenant**, **ID client** e **Client secret key expiration** (Scadenza chiave privata del client) e consente la **Verifica** della **Chiave privata del client** se è scaduta.
-  * La scheda **Upgrade Readiness** visualizza **Sottoscrizione Azure**, **Gruppo di risorse di Azure** e **Area di lavoro di Operations Management Suite**.
-
-## <a name="view-and-use-the-upgrade-information"></a>Visualizzare e usare le informazioni sull'aggiornamento
-
-Dopo il completamento dell'integrazione di Upgrade Readiness con Configuration Manager, è possibile visualizzare l'analisi di compatibilità dell'aggiornamento dei client ed eseguire le azioni necessarie.
+Dopo aver integrato Preparazione aggiornamenti con Configuration Manager, è possibile visualizzare l'analisi della conformità agli aggiornamenti dei client.
 
 1. Nella console di Configuration Manager, scegliere **Monitoraggio** > **Panoramica** > **Upgrade Readiness**.
 2. Esaminare i dati, che includono lo stato di preparazione per l'aggiornamento e la percentuale di dispositivi Windows che eseguono report di telemetria.
 3. È possibile filtrare il dashboard per visualizzare i dati di dispositivi appartenenti a raccolte specifiche.
-4. È anche possibile visualizzare i dispositivi in uno stato di conformità specifico e creare una raccolta dinamica per tali dispositivi, in modo da poterli aggiornare quando sono pronti o da portarli allo stato di conformità desiderato.
+4. È possibile visualizzare i dispositivi in uno stato di conformità specifico e creare una raccolta dinamica per tali dispositivi, per poterli aggiornare quando sono pronti o in modo da intervenire per correggere i dispositivi per cui è stato bloccato l'aggiornamento.
 
-## <a name="create-a-connection-to-upgrade-readiness-1702-and-earlier"></a>Creare una connessione a Preparazione aggiornamenti (1702 e versioni successive)
+## <a name="using-the-upgrade-readiness-connector-version-1702-and-earlier"></a>Uso del connettore di Preparazione aggiornamenti (versione 1702 e precedenti)
 
-Prima del ramo 1706 di Configuration Manager, per creare una connessione a Preparazione aggiornamenti, erano necessari i passaggi seguenti.
+In Configuration Manager 1702 o versioni precedenti è necessario completare un insieme diverso di passaggi e requisiti per creare una connessione a Preparazione aggiornamenti.
 
 ### <a name="prerequisites"></a>Prerequisiti
 

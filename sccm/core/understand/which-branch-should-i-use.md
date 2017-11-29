@@ -15,11 +15,11 @@ caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 047ffc0953db4a4cc5d543d880136ce61fa99fa7
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: a1d9144db864d261c13992a2ef4d01223d927d88
+ms.sourcegitcommit: c4a1bafcd004638d264a93d307c70d8b6f7fe023
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="which-branch-of-configuration-manager-should-i-use"></a>Scelta del ramo di Configuration Manager da usare
 
@@ -147,7 +147,7 @@ Per altre informazioni, vedere [Technical Preview per System Center Configuratio
 Visualizzando le informazioni sulla versione per un sito di Configuration Manager, è anche possibile visualizzare il ramo.
 
 **Versione**   
-Per controllare la versione del sito, nella console passare a **Informazioni su System Center Configuration Manager** nell'angolo in alto a sinistra della console dove viene visualizzata la **Versione sito**. Per un elenco completo delle versioni del sito, vedere []().
+Per controllare la versione del sito, nella console passare a **Informazioni su System Center Configuration Manager** nell'angolo in alto a sinistra della console dove viene visualizzata la **Versione sito**. Per un elenco delle versioni del sito, vedere [Versioni di base e di aggiornamento](/sccm/core/servers/manage/updates#bkmk_Baselines).
 
 **Ramo**  
 Per verificare il ramo del sito (LTSB o Current Branch), nella console passare ad **Amministrazione** > **Configurazione del sito** > **Siti** e aprire **Impostazioni gerarchia**. Se è disponibile un'opzione per la conversione in Current Branch e tale opzione è attiva, il sito esegue la versione LTSB. Se il sito esegue Current Branch, questa opzione è disabilitata. Per informazioni sulle diverse versioni di Configuration Manager, vedere "Versioni di base e di aggiornamento" nell'argomento [Aggiornamenti per System Center Configuration Manager](/sccm/core/servers/manage/updates).

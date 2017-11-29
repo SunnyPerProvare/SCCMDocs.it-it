@@ -3,7 +3,7 @@ title: Gestire i client
 titleSuffix: Configuration Manager
 description: Informazioni su come gestire i client in System Center Configuration Manager.
 ms.custom: na
-ms.date: 04/23/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "17"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: d62138f573745a16634e06aeb9301a248f707cae
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: ae1bc53cf15b2a1746656667f7bf546742432c11
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Come gestire i client in System Center Configuration Manager
 
@@ -51,7 +51,7 @@ Tenere presente che, a seconda del tipo di dispositivo, alcune di queste opzioni
     -   **Aggiungere il dispositivo a una raccolta nuova o esistente**  
 
          Aggiungere il dispositivo a una raccolta con una regola diretta.  
-         
+
     -   **Installare e reinstallare il client usando l'Installazione push client guidata**  
 
          Installare e reinstallare il client di Configuration Manager per ripristinarlo o riconfigurarlo nei computer che eseguono Windows. Include le opzioni di configurazione del sito e le proprietà di client.msi impostate per l'installazione push client.  
@@ -185,6 +185,21 @@ Tenere presente che, a seconda del tipo di dispositivo, alcune di queste opzioni
 
          Le attività di notifica client vengono visualizzate nel nodo **Operazioni client** dell'area di lavoro **Monitoraggio** .  
 
+
+## <a name="restart-clients"></a>Riavviare i client
+A partire dalla versione 1710, è possibile usare la console di Configuration Manager per identificare i dispositivi client che richiedono il riavvio e quindi usare un'azione di notifica client per riavviarli.
+
+Per identificare i dispositivi in attesa di riavvio, passare ad **Asset e conformità** > **Dispositivi** e selezionare una raccolta con i dispositivi che potrebbero richiedere un riavvio. Dopo aver selezionato una raccolta, è possibile visualizzare lo stato per ogni dispositivo nel riquadro dei dettagli, in una nuova colonna denominata **Riavvio in sospeso**. Ogni dispositivo ha un valore **Sì** o **No**.
+
+**Per creare la notifica client per riavviare un dispositivo:**
+1.  Individuare il dispositivo da riavviare nel nodo Dispositivi della console.
+2.  Fare clic con il pulsante destro del mouse sul dispositivo, scegliere **Notifica client** e quindi selezionare **Riavvia**. Verrà visualizzata una finestra di informazioni sul riavvio. Fare clic su **OK** per riavviare la richiesta.
+
+Quando la notifica viene ricevuta da un client, viene visualizzata una finestra di notifica di **Software Center** per informare l'utente del riavvio. Per impostazione predefinita, il riavvio viene eseguito dopo 90 minuti. È possibile modificare il tempo di riavvio configurando le [impostazioni del client](/sccm/core/clients/deploy/configure-client-settings). Le impostazioni per il comportamento del riavvio sono disponibili nella scheda [Riavvio del computer](/sccm/core/clients/deploy/about-client-settings#computer-restart) delle impostazioni predefinite.
+
+
+
+
 ##  <a name="BKMK_ClientCache"></a> Configurare la cache del client per i client di Configuration Manager  
 La cache client archivia i file temporanei per l'installazione di applicazioni e programmi nei client. Gli aggiornamenti software usano anche la cache client, ma non sono limitati dalla dimensione della cache configurata e tenteranno sempre di eseguire il download nella cache. È possibile configurare le impostazioni della cache client, ad esempio le dimensioni e il percorso, quando si installa manualmente il client di Configuration Manager, quando si usa l'installazione push client oppure dopo aver installato il client.
 
@@ -257,8 +272,8 @@ Per altre informazioni sull'uso di queste proprietà della riga di comando di CC
 5.  Per eliminare i file nella cartella della cache, scegliere **Elimina file**.  
 
     > [!NOTE]
-    > 
-    > La cartella della cache è una normale cartella di Windows, pertanto è possibile automatizzare l'eliminazione del contenuto della cartella usando uno script, tramite un'utilità o con il cmdlet PowerShell `Remove-Item`. 
+    >
+    > La cartella della cache è una normale cartella di Windows, pertanto è possibile automatizzare l'eliminazione del contenuto della cartella usando uno script, tramite un'utilità o con il cmdlet PowerShell `Remove-Item`.
 
 
 ### <a name="to-configure-client-cache-size-in-client-settings"></a>Per configurare la dimensione della cache del client in Impostazioni client
@@ -273,6 +288,8 @@ A partire dalla versione 1606, è possibile modificare la dimensione della carte
  3. Scegliere **Impostazioni della cache del client**, scegliere **Sì** per **Configurare le dimensioni della cache del client**, quindi usare l'impostazione in **MB** o la **percentuale del disco**. La cache viene adeguata alla dimensione che risulta inferiore.
 
      Il client di Configuration Manager configurerà la dimensione della cache con queste impostazioni al successivo download dei criteri client.
+
+
 
 ##  <a name="BKMK_UninstalClient"></a> Disinstallare il client di Configuration Manager  
  È possibile disinstallare il software client di Windows Configuration Manager da un computer usando **CCMSetup.exe** con la proprietà **/Uninstall**. Eseguire CCMSetup.exe in un singolo computer dal prompt dei comandi oppure distribuire un pacchetto e programma per disinstallare il client da una raccolta di computer.  
@@ -331,7 +348,7 @@ A partire da Configuration Manager versione 1610, è possibile specificare un el
 È possibile avviare il recupero dei criteri tramite:
 
 
-- [Notifica client](#initiate-client-policy-retrieval-using-client-notification) 
+- [Notifica client](#initiate-client-policy-retrieval-using-client-notification)
 - [La scheda **Azioni** nel client](#manually-initiate-client-policy-retrieval-on-the-actions-tab-of-the-configuration-manager-client)
 - [Uno script](#manually-initiate-client-policy-retrieval-by-script)
 

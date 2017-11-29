@@ -1,42 +1,41 @@
 ---
-title: Configurare il gateway di gestione cloud | Documentazione Microsoft
+title: Configurare Cloud Management Gateway
+titleSuffix: Configuration Manager
 description: 
-author: robstackmsft
-ms.author: robstack
+author: arob98
+ms.author: angrobe
 manager: angrobe
-ms.date: 05/01/2017
+ms.date: 09/26/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
-ms.openlocfilehash: 84b617b3e83636ab4578174ef40e786dcf1178cd
-ms.sourcegitcommit: 06aef618f72c700f8a716a43fb8eedf97c62a72b
+ms.openlocfilehash: 7463cd7199098b21843fd5b99ed284a12ff91e00
+ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Configurare il gateway di gestione cloud per Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch)*
-
-A partire dalla versione 1610, il processo di configurazione del gateway di gestione cloud in Configuration Manager include i passaggi seguenti:
+*Si applica a: System Center Configuration Manager (Current Branch)* Il processo di configurazione di Cloud Management Gateway in Configuration Manager include i passaggi seguenti:
 
 ## <a name="step-1-configure-required-certificates"></a>Passaggio 1: Configurare i certificati richiesti
 
 > [!TIP]  
 > Prima di richiedere un certificato, verificare che il nome di dominio di Azure desiderato, ad esempio GraniteFalls.CloudApp.Net, sia univoco. A tale scopo, accedere al [portale di Microsoft Azure](https://manage.windowsazure.com), fare clic su **Nuovo**, selezionare **Servizio cloud** e quindi **Creazione personalizzata**. Nel campo **URL** digitare il nome di dominio desiderato assicurandosi di non fare clic sul segno di spunta per creare il servizio. Il portale verificherà se il nome di dominio è disponibile o se è già in uso in un altro servizio.
 
-## <a name="option-1-preferred---use-the-server-authentication-certificate-from-a-public-and-globally-trusted-certificate-provider-like-verisign"></a>Opzione 1 (consigliata): Usare il certificato di autenticazione server di un provider di certificati pubblico e globalmente attendibile, ad esempio VeriSign
+### <a name="option-1-preferred---use-the-server-authentication-certificate-from-a-public-and-globally-trusted-certificate-provider-like-verisign"></a>Opzione 1 (consigliata): Usare il certificato di autenticazione server di un provider di certificati pubblico e globalmente attendibile, ad esempio VeriSign
 
-Quando si usa questo metodo, i client considereranno automaticamente attendibile il certificato e non è necessario creare manualmente un certificato SSL personalizzato.
+Quando si usa questo metodo, i client considereranno automaticamente attendibile il certificato e non è necessario creare un certificato SSL personalizzato.
 
 1. Creare un record di nome canonico (CNAME) nel DNS (Domain Name Service) pubblico dell'organizzazione per creare un alias per il servizio gateway di gestione cloud con un nome descrittivo che verrà usato nel certificato pubblico.
-Ad esempio, Contoso denomina il proprio servizio gateway di gestione cloud **GraniteFalls**, che in Azure diventerà **GraniteFalls.CloudApp.Net**. Nello spazio dei nomi contoso.com del DNS pubblico di Contoso l'amministratore DNS crea un nuovo record CNAME **GraniteFalls.Contoso.com** per il nome host effettivo, **GraniteFalls.CloudApp.net**.
+Ad esempio, Contoso denomina il proprio servizio Cloud Management Gateway **GraniteFalls**, che in Azure diventerà **GraniteFalls.CloudApp.Net**. Nello spazio dei nomi contoso.com del DNS pubblico di Contoso l'amministratore DNS crea un nuovo record CNAME **GraniteFalls.Contoso.com** per il nome host effettivo, **GraniteFalls.CloudApp.net**.
 2. Richiede quindi un certificato di autenticazione server da un provider pubblico usando il nome comune dell'alias CNAME.
 Ad esempio, Contoso usa **GraniteFalls.Contoso.com** per il nome comune del certificato.
 3. Creare il servizio gateway di gestione cloud nella console di Configuration Manager usando questo certificato.
-    - Nella pagina **Impostazioni** della Creazione guidata gateway di gestione cloud, quando si aggiunge il certificato server per il servizio cloud (dal **file Certificate**), la procedura guidata estrae il nome host dal nome comune del certificato come nome del servizio e quindi lo aggiunge a **cloudapp.net** (o **usgovcloudapp.net** per il cloud di Azure Governo degli Stati Uniti) come nome di dominio completo del servizio per creare il servizio in Azure.
+    - Nella pagina **Impostazioni** della procedura guidata di creazione di Cloud Management Gateway, quando si aggiunge il certificato del server per il servizio cloud (da **File di certificato**), la procedura guidata estrae il nome host dal nome comune del certificato come nome del servizio e quindi lo aggiunge a **cloudapp.net** (o **usgovcloudapp.net** per il cloud Azure US Government) come nome di dominio completo (FQDN) del servizio per creare il servizio in Azure.
 Ad esempio, quando si crea il gateway di gestione cloud di Contoso, il nome host **GraniteFalls** viene estratto dal nome comune del certificato, così che il servizio effettivo viene creato in Azure come **GraniteFalls.CloudApp.net**.
 
 ### <a name="option-2---create-a-custom-ssl-certificate-for-cloud-management-gateway-in-the-same-way-as-for-a-cloud-based-distribution-point"></a>Opzione 2: È possibile creare un certificato SSL personalizzato per il gateway di gestione cloud esattamente come si farebbe per un punto di distribuzione basato su cloud
@@ -48,17 +47,17 @@ Ad esempio, quando si crea il gateway di gestione cloud di Contoso, il nome host
 
 ## <a name="step-2-export-the-client-certificates-root"></a>Passaggio 2: Esportare la radice del certificato client
 
-Il modo più semplice per ottenere l'esportazione della radice dei certificati client utilizzati nella rete è aprire un certificato client in uno dei computer appartenenti a un dominio che ne abbia uno e copiarlo.
+Il modo più semplice per esportare la radice dei certificati client usati nella rete è aprire un certificato client in uno dei computer appartenenti a un dominio in cui sia presente e copiarlo.
 
-> [!NOTE] 
+> [!NOTE]
 >
 > I certificati client sono richiesti su qualsiasi computer che si intende gestire con il gateway di gestione cloud e sul server di sistema del sito che ospita il punto di connessione del gateway di gestione. Se è necessario aggiungere un certificato client a uno di tali computer, vedere [Distribuzione del certificato client per computer Windows](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_client2008_cm2012).
 
 1.  Nella finestra Esegui digitare **mmc** e premere INVIO.
 
-2.  Nel menu File fare scegliere **Aggiungi/Rimuovi snap-in**.
+2.  Dal menu file scegliere **Aggiungi/Rimuovi snap-in**.
 
-3.  Nella finestra di dialogo Aggiungi/Rimuovi snap-in scegliere **Certificati** > **Aggiungi &gt;** > **Account computer** > **Avanti** > **Computer locale** > **Fine**. 
+3.  Nella finestra di dialogo Aggiungi/Rimuovi snap-in scegliere **Certificati** > **Aggiungi &gt;** > **Account computer** > **Avanti** > **Computer locale** > **Fine**.
 
 4.  Passare a **Certificati** &gt; **Personale** &gt; **Certificati**.
 
@@ -66,10 +65,10 @@ Il modo più semplice per ottenere l'esportazione della radice dei certificati c
 
 6.  Nella scheda Dettagli scegliere **Copia su file**.
 
-7.  Completare l'Esportazione guidata certificati utilizzando il formato di certificato predefinito. Prendere nota del nome e percorso del certificato radice creato. Sarà necessario configurare il gateway di gestione cloud in un [passaggio successivo](#step-4-set-up-cloud-management-gateway).
+7.  Completare l'Esportazione guidata certificati utilizzando il formato di certificato predefinito. Prendere nota del nome e percorso del certificato radice creato. Queste informazioni sono necessarie per configurare Cloud Management Gateway in un [passaggio successivo](#step-4-set-up-cloud-management-gateway).
 
 >[!NOTE]
->Se il certificato client è stato rilasciato da un'autorità di certificazione subordinata, sarà necessario ripetere questo passaggio per ogni certificato presente nella catena.
+>Se il certificato client è stato rilasciato da un'autorità di certificazione subordinata, è necessario ripetere questo passaggio per ogni certificato presente nella catena.
 
 ## <a name="step-3-upload-the-management-certificate-to-azure"></a>Passaggio 3: Caricare il certificato di gestione in Azure
 
@@ -122,7 +121,7 @@ Per consentire a Configuration Manager di accedere all'API di Azure e configurar
 
 5. Se si intende monitorare il traffico del gateway di gestione cloud con una soglia di 14 giorni, selezionare la casella di controllo per attivare l'avviso di soglia. Specificare quindi la soglia e le percentuali in corrispondenza delle quali verranno generati i diversi livelli di avviso. Al termine scegliere **Avanti**.
 
-6. Verificare le impostazioni e scegliere **Avanti**. Configuration Manager avvia la configurazione del servizio. Una volta eseguita la procedura guidata, saranno necessari da 5 a 15 minuti per completare il provisioning del servizio in Azure. Controllare la colonna **Stato** per il nuovo gateway di gestione cloud configurato per determinare quando il servizio è pronto.
+6. Verificare le impostazioni e scegliere **Avanti**. Configuration Manager avvia la configurazione del servizio. Una volta eseguita la procedura guidata, saranno necessari da 5 a 15 minuti per completare il provisioning del servizio in Azure. Controllare la colonna **Stato** per la nuova istanza di Cloud Management Gateway per determinare quando il servizio è pronto.
 
 ## <a name="step-5-configure-primary-site-for-client-certification-authentication"></a>Passaggio 5: Configurare il sito primario per l'autenticazione con certificati client
 
@@ -141,7 +140,7 @@ Il punto di connessione del gateway di gestione cloud è un nuovo ruolo del sist
 
 ## <a name="step-7-configure-roles-for-cloud-management-gateway-traffic"></a>Passaggio 7: Configurare i ruoli per il traffico del gateway di gestione cloud
 
-L'ultimo passaggio della configurazione del gateway di gestione cloud consiste nel configurare i ruoli del sistema del sito per accettare il traffico del gateway di gestione cloud. Per Cloud Management Gateway sono supportati solo i ruoli punto di aggiornamento software e punto di gestione. È necessario configurare separatamente ogni ruolo.
+L'ultimo passaggio della configurazione del gateway di gestione cloud consiste nel configurare i ruoli del sistema del sito per accettare il traffico del gateway di gestione cloud. Per Cloud Management Gateway sono supportati solo i ruoli punto di aggiornamento software e punto di gestione. È necessario configurare ogni ruolo separatamente.
 
 1. Nella console di Configuration Manager passare ad **Amministrazione** > **Configurazione del sito** > **Server e ruoli di sistema del sito**.
 
@@ -155,7 +154,7 @@ L'ultimo passaggio della configurazione del gateway di gestione cloud consiste n
 
 Quando il gateway di gestione cloud e i ruoli del sistema del sito sono configurati completamente e in esecuzione, i client ottengono automaticamente la posizione del servizio gateway di gestione cloud alla successiva richiesta di percorso. Per ricevere la posizione del servizio gateway di gestione cloud, i client devono trovarsi nella rete aziendale. Il ciclo di polling per le richieste di percorso è di 24 ore. Se non si vuole attendere la richiesta di percorso della normale pianificazione, è possibile forzare la richiesta riavviando il servizio host agenti di SMS (ccmexec.exe) nel computer.
 
-Dopo che la posizione del servizio gateway di gestione cloud è stata configurata sul client, il servizio è in grado di determinare automaticamente se si trova sulla intranet o in Internet. Se il client può contattare il controller di dominio o il punto di gestione locale, userà tale elemento per la comunicazione con Configuration Manager. In caso contrario, riterrà che Configuration Manager si trova in Internet e per comunicare userà la posizione del servizio gateway di gestione cloud.
+Dopo che la posizione del servizio gateway di gestione cloud è stata configurata sul client, il servizio è in grado di determinare automaticamente se si trova sulla intranet o in Internet. Se il client può contattare il controller di dominio o il punto di gestione locale, lo userà per comunicare con Configuration Manager. In caso contrario, riterrà che Configuration Manager si trova in Internet e per comunicare userà la posizione del servizio Cloud Management Gateway.
 
 >[!NOTE]
 > È possibile forzare il client perché usi sempre il gateway di gestione cloud indipendentemente dal fatto che si trovi nella intranet o in Internet. A questo scopo, impostare nel computer client la chiave del Registro di sistema seguente:\

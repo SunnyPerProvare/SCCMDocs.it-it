@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 98f9f44373b854b61714c21105a28b3240b4a7f7
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 48530c177a03b66dbc126025ca61e0078bc89d9f
+ms.sourcegitcommit: 5ec9f8c312688bf7f4de4d6007b121d743b80c4d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="create-a-task-sequence-to-capture-an-operating-system-in-system-center-configuration-manager"></a>Creare una sequenza di attività per acquisire un sistema operativo in System Center Configuration Manager
 
@@ -171,6 +171,9 @@ Quando si usa una sequenza di attività per distribuire un sistema operativo in 
 9. Usare questo passaggio solo se il client di Configuration Manager è installato nel computer di riferimento.  
 
      Fare clic su **Aggiungi**, fare clic su **Immagini**e quindi su [Prepara client ConfigMgr per l'acquisizione](../understand/task-sequence-steps.md#BKMK_PrepareConfigMgrClientforCapture). Questo passaggio della sequenza di attività prepara il client di Configuration Manager nel computer di riferimento per l'acquisizione come parte del processo di creazione dell'immagine.  
+
+    > [!Note]  
+    >  La sequenza di attività non supporta la disinstallazione del client di Configuration Manager.
 
 10. Fare clic su **Aggiungi**, fare clic su **Immagini**e quindi su [Prepara Windows per l'acquisizione](../understand/task-sequence-steps.md#BKMK_PrepareWindowsforCapture). Questa azione della sequenza di attività esegue Sysprep e quindi riavvia il computer nell'immagine di avvio di Windows PE specificata per la sequenza di attività. Per il corretto completamento di questa azione non è necessario che il computer di riferimento sia aggiunto a un dominio.  
 

@@ -3,7 +3,7 @@ title: Impostazioni client
 titleSuffix: Configuration Manager
 description: Scegliere le impostazioni client tramite la console di System Center Configuration Manager.
 ms.custom: na
-ms.date: 08/01/2017
+ms.date: 11/17/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: f34479d6cf0c1153615c612480f204b71a8d84cb
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 46429a02debaaaa90562b9586af57e43a9aab92c
+ms.sourcegitcommit: b74c1beaabbb628fdf5d6948fa9a6ad719fd5035
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Informazioni sulle impostazioni client in System Center Configuration Manager
 
@@ -71,7 +71,7 @@ Abilita BranchCache nei computer client.
 - **Configurare la dimensione della cache client**
 
   Nei computer Windows la cache client archivia i file temporanei usati per installare applicazioni e programmi. Scegliere **Sì** e quindi specificare:
-    - **Dimensioni massime della cache** (MB). 
+    - **Dimensioni massime della cache** (MB).
     - **Dimensioni massime della cache** (percentuale del disco).
 La cache client può raggiungere la dimensione massima consentita in MB o in percentuale del disco, adeguandosi **al valore che risulta inferiore**. Se questa opzione è impostata su **No**, il valore predefinito è 5.120 MB.
 
@@ -288,6 +288,8 @@ Abilita la peer cache per i client di Configuration Manager. Specificare quindi 
  Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione in System Center Configuration Manager](../../../core/clients/manage/collections/use-maintenance-windows.md).  
 
 ##  <a name="endpoint-protection"></a>Endpoint Protection  
+>  [!Tip]   
+> Oltre alle informazioni seguenti, è possibile trovare altri dettagli sull'uso delle impostazioni client di Endpoint Protection in [Scenario di esempio: uso di System Center Endpoint Protection per proteggere i computer dal malware in System Center Configuration Manager](/sccm/protect/deploy-use/scenarios-endpoint-protection).
 
 -   **Gestire il client Endpoint Protection nei computer client**  
 

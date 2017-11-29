@@ -3,9 +3,9 @@ title: "Gestire le sequenze di attività per automatizzare le attività"
 titleSuffix: Configuration Manager
 description: "È possibile creare, modificare, distribuire, importare ed esportare sequenze di attività per gestirle nell'ambiente System Center Configuration Manager."
 ms.custom: na
-ms.date: 03/24/2017
+ms.date: 11/15/2017
 ms.prod: configuration-manager
-ms.reviewer: na
+ms.reviewer: nac
 ms.suite: na
 ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
@@ -15,11 +15,11 @@ caps.latest.revision: "10"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 0174a95f1d3a487cab66d8152a3de70d91b07635
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 44e6afbfac3ef1e8318991854c8fdd22ead4c6ed
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-system-center-configuration-manager"></a>Gestire le sequenze di attività per automatizzare le attività in System Center Configuration Manager
 
@@ -446,6 +446,22 @@ Se si vuole che le variabili con ambito computer e raccolta non siano visibili n
 5.  È inoltre possibile specificare la priorità in base alla quale Configuration Manager valuterà le variabili della sequenza di attività.  
 
 6.  Dopo aver aggiunto tutte le variabili alla raccolta, fare clic su **OK**.  
+
+## <a name="add-child-task-sequences-to-a-task-sequence"></a>Aggiungere sequenze di attività figlio a una sequenza di attività
+
+A partire da Configuration Manager versione 1710, è possibile aggiungere un nuovo passaggio della sequenza di attività che esegue un'altra sequenza di attività. Viene così creata una relazione padre-figlio tra le sequenze di attività. In questo modo è possibile creare più sequenze di attività modulari riusabili.
+
+Quando si aggiunge una sequenza di attività figlio a una sequenza di attività, tenere presente quanto segue:
+
+ - Le sequenze di attività padre e figlio sono di fatto combinate in un unico criterio eseguito dal client.
+ - L'ambiente è globale. Ad esempio, se una variabile viene impostata dalla sequenza di attività padre e quindi modificata dalla sequenza di attività figlio, la variabile resta modificata nelle fasi successive. Analogamente, se la sequenza di attività figlio crea una nuova variabile, la variabile è disponibile per i passaggi rimanenti della sequenza di attività padre.
+ - I messaggi di stato vengono inviati con la procedura normale per un'operazione sequenza di attività singola.
+ - Le sequenze di attività scrivono voci nel file smsts.log. Le nuove voci di registro evidenziano l'avvio di una sequenza di attività figlio.
+
+### <a name="to-add-a-child-task-sequence-to-a-task-sequence"></a>Per aggiungere una sequenza di attività figlio a una sequenza di attività
+
+1. Nell'editor della sequenza di attività fare clic su **Aggiungi**, selezionare **Generale**, quindi fare clic su **Run Task Sequence** (Esegui sequenza di attività).
+2. Fare clic su **Sfoglia** per selezionare la sequenza di attività figlio.  
 
 ##  <a name="BKMK_AdditionalActionsTS"></a> Azioni aggiuntive per la gestione delle sequenze di attività  
  È possibile gestire le sequenze di attività usando le azioni aggiuntive disponibili quando si seleziona la sequenza di attività.  

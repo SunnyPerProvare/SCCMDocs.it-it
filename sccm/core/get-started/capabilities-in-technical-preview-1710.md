@@ -3,7 +3,7 @@ title: Technical Preview 1710 | Microsoft Docs
 titleSuffix: Configuration Manager
 description: "Informazioni sulle funzionalità disponibili nella Technical Preview versione 1710 per System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/30/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.reviewer: na
@@ -14,11 +14,11 @@ ms.assetid: f4706a58-1f11-4eab-b1eb-3d1a0da02d0f
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 813fdc40c4a0eb7c2dd3c1831bac1ba1667fe247
-ms.sourcegitcommit: 5437b2823bada8f8c9e67940f584953b9d190628
+ms.openlocfilehash: 309d677c0b8c692548d649346bb35bfa9d2a81f3
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="capabilities-in-technical-preview-1710-for-system-center-configuration-manager"></a>Funzionalità nella Technical Preview 1710 per System Center Configuration Manager
 
@@ -52,6 +52,19 @@ L'articolo illustra le funzionalità disponibili nella Technical Preview version
  -  Task 1
  -  Task 2              
 -->
+
+## <a name="improvements-for-deploying-powershell-scripts-from-configuration-manager"></a>Miglioramenti per la distribuzione di script di PowerShell da Configuration Manager
+Con questa versione gli script di PowerShell distribuiti supportano ora i miglioramenti seguenti: 
+- **Ambiti di protezione**.  Vengono ora usati ambiti di protezione per controllare la creazione e l'esecuzione degli script. Questo avviene tramite l'assegnazione di tag che rappresentano gruppi di utenti. Per altre informazioni sull'uso degli ambiti di protezione, vedere [Configurare l'amministrazione basata su ruoli per System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).
+- **Monitoraggio in tempo reale**. Il monitoraggio dell'esecuzione di uno script avviene ora in tempo reale, durante l'esecuzione dello script.
+- **Convalida dei parametri**. Ogni parametro nello script ha una finestra di dialogo **Proprietà parametri script**, in cui è possibile aggiungere la convalida per il parametro. Dopo aver aggiunto la convalida, verranno restituiti errori quando si immette un valore che non soddisfa i requisiti di convalida per il parametro.
+
+La distribuzione di script di PowerShell è stata introdotta per la prima volta nella versione [Technical Preview 1706](/sccm/core/get-started/capabilities-in-technical-preview-1706#create-and-run-powershell-scripts-from-the-configuration-manager-console). Miglioramenti aggiuntivi sono stati quindi introdotti nella versione [Technical Preview 1707](/sccm/core/get-started/capabilities-in-technical-preview-1707#add-parameters-when-you-deploy-powershell-scripts-from-configuration-manager) e quindi nella versione [Technical Preview 1708](/sccm/core/get-started/capabilities-in-technical-preview-1708#improvements-for-specifying-script-parameters-when-you-deploy-powershell-scripts-from-configuration-manager).
+
+
+### <a name="try-it-out"></a>Prova subito!
+
+Per provare la funzionalità Esegui script, vedere [Creare ed eseguire script](../../apps/deploy-use/create-deploy-scripts.md).
 
 
 
@@ -116,7 +129,7 @@ I dispositivi gestiti devono eseguire Windows 10 1709 Fall Creators Update o ver
 Dopo aver creato i criteri di Exploit Guard, usare la procedura guidata Deploy Exploit Guard Policy (Distribuzione criterio di Exploit Guard) per distribuirli. A tale scopo, aprire la console di Configuration Manager, passare ad **Asset e conformità** > **Endpoint Protection** e fare clic su **Deploy Exploit Guard Policy** (Distribuzione criterio di Exploit Guard).
 
 ## <a name="limited-support-for-cng-certificates"></a>Supporto limitato per i certificati CNG
-<!-- 1356191 --> 
+<!-- 1356191 -->
 A partire da questa versione è possibile usare i modelli di certificato [delle API CNG (Cryptography Next Generation)](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx) per gli scenari seguenti:
 
 - Registrazione e comunicazione dei client con un punto di gestione HTTPS.   
@@ -184,13 +197,13 @@ Per consentire a un dispositivo con Windows Defender SmartScreen l'esecuzione di
 ## <a name="configure-and-deploy-windows-defender-application-guard-policies----1351960---"></a>Configurare e distribuire criteri di Windows Defender Application Guard <!-- 1351960 -->
 
 [Windows Defender Application Guard](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) è una nuova funzionalità di Windows che consente di proteggere gli utenti con l'apertura di siti Web non attendibili in un contenitore protetto isolato non è accessibile da altre parti del sistema operativo. In questa versione Technical Preview, è stato aggiunto il supporto per configurare questa funzionalità usando le impostazioni di conformità di Configuration Manager configurate dall'utente e quindi distribuite in una raccolta. Questa funzionalità verrà rilasciata in anteprima per la versione a 64 bit di Windows 10 Creators Update (nome in codice: RS2). Per provare ora questa funzionalità è necessario usare una versione di anteprima dell'aggiornamento.
- 
+
 ### <a name="before-you-start"></a>Prima di iniziare
 Per creare e distribuire i criteri di Windows Defender Application Guard, configurare i dispositivi Windows 10 in cui vengono distribuiti i criteri con un criterio di isolamento rete. Per altre informazioni, vedere il post di blog indicato più avanti. Questa funzionalità funziona solo con le build correnti di Windows 10 Insider. Per provarla, i client devono eseguire una build recente di Windows 10 Insider.
 
 ### <a name="try-it-out"></a>Prova subito!
 
-Per comprendere le nozioni di base relative a Windows Defender Application Guard, leggere [il post di blog]((https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97)).
+Per comprendere le nozioni di base relative a Windows Defender Application Guard, leggere [il post di blog](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97).
 
 Per creare un criterio e per individuare le impostazioni disponibili:
 1. Nella console di **Configuration Manager** scegliere **Asset e conformità**.
@@ -202,7 +215,7 @@ Per creare un criterio e per individuare le impostazioni disponibili:
     > [!NOTE]
     > I PC Windows 10 archiviano solo un elenco di isolamento rete nel client. In questa versione è possibile creare due tipi diversi di elenchi di isolamento rete, uno da Windows Information Protection e uno da Windows Defender Application Guard, e distribuirli al client. Se si distribuiscono entrambi i criteri, questi elenchi di isolamento rete devono corrispondere. Se si distribuiscono elenchi che non corrispondono allo stesso client, la distribuzione avrà esito negativo.
 
-    Altre informazioni su come specificare le definizioni di rete sono disponibili nella [documentazione di Windows Information Protection](https://docs.microsoft.com/windows/threat-protection/windows-information-protection/create-wip-policy-using-sccm). 
+    Altre informazioni su come specificare le definizioni di rete sono disponibili nella [documentazione di Windows Information Protection](https://docs.microsoft.com/windows/threat-protection/windows-information-protection/create-wip-policy-using-sccm).
 
 6. Al termine, completare la procedura guidata e distribuire il criterio in uno o più dispositivi Windows 10.
 

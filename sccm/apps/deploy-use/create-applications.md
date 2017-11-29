@@ -3,7 +3,7 @@ title: Creare applicazioni
 titleSuffix: Configuration Manager
 description: Creare e distribuire applicazioni e tipi di distribuzione con System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/07/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 6896a4905b9eecf520dae2c887100df472963356
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: f680b692f3ae92fb8a5e8b6640ed053ceedba436
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="create-applications-with-system-center-configuration-manager"></a>Creare applicazioni con System Center Configuration Manager
 
@@ -119,7 +119,7 @@ La nuova applicazione viene visualizzata nel nodo **Applicazioni** della console
 
     -   **Parole chiave**: immettere un elenco di parole chiave nella lingua selezionata nell'elenco a discesa **Lingua selezionata** . Queste parole chiave permetteranno agli utenti di Software Center di cercare l'applicazione.  
 
-    -   **Icona**: scegliere **Sfoglia** per selezionare un'icona per l'applicazione tra le icone disponibili. Se non si specifica un'icona, verrà usata un'icona predefinita per questa applicazione.  
+    -   **Icona**: scegliere **Sfoglia** per selezionare un'icona per l'applicazione tra le icone disponibili. Se non si specifica un'icona, verrà usata un'icona predefinita per questa applicazione. È ora possibile impostare un'icona con dimensioni fino a 512x512 pixel.
 
     -   **Visualizza come app in primo piano ed evidenziala nel portale aziendale**: selezionare questa opzione per visualizzare l'app in primo piano nel portale aziendale.  
 
