@@ -3,7 +3,7 @@ title: Versioni di SQL Server supportate
 titleSuffix: Configuration Manager
 description: Requisiti di configurazione e della versione di SQL Server per l'hosting di un database del sito di System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/10/2017
+ms.date: 11/30/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35e237b6-9f7b-4189-90e7-8eca92ae7d3d
 caps.latest.revision: "21"
-author: Brenduns
-ms.author: brenduns
+author: mestew
+ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 740a37478b4159fb9dcbfd9eaceeeaa307edd745
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 7006d6cd03da53daf0f6cb59cc4ef83e7e800a1e
+ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/04/2017
 ---
 # <a name="supported-sql-server-versions-for-system-center-configuration-manager"></a>Versioni di SQL Server supportate per System Center Configuration Manager
 
@@ -95,8 +95,6 @@ Il supporto per uno specifico Service Pack di SQL Server include gli aggiornamen
 -   sito primario  
 -   sito secondario
 
-
-
 ### <a name="sql-server-2014-sp1-standard-enterprise"></a>SQL Server 2014 SP1 - Standard, Enterprise  
  È possibile usare questa versione di SQL Server senza una versione di aggiornamento cumulativo minima per i seguenti elementi:  
 
@@ -136,8 +134,6 @@ Quando è supportata dalla versione di Configuration Manager in uso, questa vers
 -   sito di amministrazione centrale  
 -   sito primario
 -   sito secondario
-
-
 
 ### <a name="sql-server-2016-express-sp1"></a>SQL Server 2016 Express SP1  
 È possibile usare questa versione di SQL Server senza una versione di aggiornamento cumulativo minima per i seguenti elementi:

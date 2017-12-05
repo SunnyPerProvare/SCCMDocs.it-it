@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: 68dc6acd-5848-47a4-b4c1-ffa40e47890b
 caps.latest.revision: "16"
 caps.handback.revision: "0"
-author: Brenduns
-ms.author: brenduns
+author: mestew
+ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 6cff26b689b3fb1139d235295530faa9d30f9bf6
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 3f67bddcb7233b62769271871354c86c5440e320
+ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/04/2017
 ---
 # <a name="reference-for-maintenance-tasks-for-system-center-configuration-manager"></a>Informazioni di riferimento per le attività di manutenzione per System Center Configuration Manager
 
@@ -254,7 +254,7 @@ Questa attività funziona solo nelle risorse che sono client di Configuration Ma
 -   **Sito primario**: abilitato    
 -   Sito secondario: non disponibile  
 
-**Valuta membri raccolta**: configurare Valutazione appartenenza alla raccolta come componente del sito. Per informazioni sui componenti del sito, vedere [Componenti del sito per System Center Configuration Manager](../../../core/servers/deploy/configure/site-components.md).  
+**Valuta membri raccolta**: configurare Valutazione appartenenza alla raccolta come componente del sito. Per informazioni sui componenti del sito, vedere [Site components for System Center Configuration Manager](../../../core/servers/deploy/configure/site-components.md).  
 
 -   Sito di amministrazione centrale: non disponibile    
 -   **Sito primario**: abilitato    

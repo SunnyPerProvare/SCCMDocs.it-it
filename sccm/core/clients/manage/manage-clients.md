@@ -15,11 +15,11 @@ caps.latest.revision: "17"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: ae1bc53cf15b2a1746656667f7bf546742432c11
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: 8afb217524d5c2236fb07b13cb42ca50ae200183
+ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/04/2017
 ---
 # <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Come gestire i client in System Center Configuration Manager
 
@@ -269,12 +269,7 @@ Per altre informazioni sull'uso di queste proprietà della riga di comando di CC
 
 2.  Nella scheda **Cache** impostare le proprietà per lo spazio e il percorso. Il percorso predefinito è *%windir%*\ccmcache.  
 
-5.  Per eliminare i file nella cartella della cache, scegliere **Elimina file**.  
-
-    > [!NOTE]
-    >
-    > La cartella della cache è una normale cartella di Windows, pertanto è possibile automatizzare l'eliminazione del contenuto della cartella usando uno script, tramite un'utilità o con il cmdlet PowerShell `Remove-Item`.
-
+3.  Per eliminare i file nella cartella della cache, scegliere **Elimina file**.  
 
 ### <a name="to-configure-client-cache-size-in-client-settings"></a>Per configurare la dimensione della cache del client in Impostazioni client
 
