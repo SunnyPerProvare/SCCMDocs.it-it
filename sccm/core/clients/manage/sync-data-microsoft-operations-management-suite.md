@@ -109,7 +109,7 @@ A partire dalla versione 1702, è possibile usare OMS Connector per la connessio
 Dopo aver collegato Configuration Manager a OMS, è possibile aggiungere o rimuovere raccolte e visualizzare le proprietà della connessione OMS.
 
 ### <a name="verify-the-oms-connector-properties"></a>Verificare le proprietà di OMS Connector
-1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Servizi cloud** e quindi selezionare **OMS Connector** per aprire la pagina **Connessione OMS ****.
+1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Servizi cloud** e quindi selezionare **OMS Connector** per aprire la pagina **Connessione OMS**.
 2.  In questa pagina sono disponibili due schede:
   - **Azure Active Directory:**   
     Questa scheda include le informazioni relative a **Tenant**, **ID client** e **Scadenza della chiave privata del client** e consente inoltre di verificare se la chiave privata del client è scaduta.
