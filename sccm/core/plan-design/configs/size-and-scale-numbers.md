@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c5a42100-2f60-4952-b495-918025ea6559
 caps.latest.revision: "4"
-author: Brenduns
-ms.author: brenduns
+author: mestew
+ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: c0277fed7db5803aa2b2246ca879640136dce02a
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: bda1ab737a3af5e13f180771cc17c9850165906c
+ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/04/2017
 ---
 # <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Numeri di ridimensionamento e scalabilità per System Center Configuration Manager
 
@@ -147,7 +147,10 @@ Un sito di amministrazione centrale supporta un numero totale di dispositivi che
  Ad esempio, in una gerarchia è possibile supportare 700.000 desktop, fino a 25.000 Mac e Windows CE 7.0 e fino a 300.000 dispositivi basati su cloud quando si integra Microsoft Intune, per un totale di 1.025.000 dispositivi. Se si supportano dispositivi gestiti tramite software MDM locale, il totale per la gerarchia è 825.000 dispositivi.  
 
 > [!IMPORTANT]  
->  In una gerarchia in cui il sito di amministrazione centrale usa un'edizione Standard di SQL Server, la gerarchia supporta un massimo di 50.000 desktop e dispositivi. L'edizione di SQL Server in uso in un sito primario autonomo non limita la capacità di tale sito di supportare fino al numero dichiarato di client.  
+>  In una gerarchia in cui il sito di amministrazione centrale usa un'edizione Standard di SQL Server, la gerarchia supporta un massimo di 50.000 desktop e dispositivi. Per supportare più di 50.000 desktop e dispositivi è necessario usare un'edizione Enterprise di SQL Server. Questo requisito si applica solo a un sito di amministrazione centrale e non si applica a un sito primario autonomo o a un sito primario figlio in cui l'edizione di SQL Server in uso non limita la capacità del sito di supportare il numero dichiarato di client.   
+
+
+ L'edizione di SQL Server in uso in un sito primario autonomo non limita la capacità di tale sito di supportare fino al numero dichiarato di client.  
 
 
 ###  <a name="bkmk_chipri"></a> Sito primario figlio  

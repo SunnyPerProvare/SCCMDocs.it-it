@@ -3,7 +3,7 @@ title: Preparare la distribuzione del software client in computer Mac
 titleSuffix: Configuration Manager
 description: "Attività di configurazione che precedono la distribuzione del client di Configuration Manager in computer Mac."
 ms.custom: na
-ms.date: 05/04/2017
+ms.date: 11/28/2017
 ms.prod: configuration-manager
 ms.reviewer: aaroncz
 ms.suite: na
@@ -15,17 +15,17 @@ caps.latest.revision: "12"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: b878c7b0328e89ff7b12bf44167fd12444a0cba4
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 1d096111250af4061c94e71f8dc602ccae2d4607
+ms.sourcegitcommit: 1dd051d8548a19b724bb8f9e6a2278a4901ed916
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="prepare-to-deploy-client-software-to-macs"></a>Preparare la distribuzione del software client in computer Mac
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Seguire questa procedura per assicurarsi di essere pronti a [distribuire il client di Configuration Manager in computer Mac](/sccm/core/clients/deploy/deploy-clients-to-macs). 
+Seguire questa procedura per assicurarsi di essere pronti a [distribuire il client di Configuration Manager in computer Mac](/sccm/core/clients/deploy/deploy-clients-to-macs).
 
 ## <a name="mac-prerequisites"></a>Prerequisiti Mac
 
@@ -33,9 +33,9 @@ Il pacchetto di installazione del client per Mac non viene fornito con i support
 
 **Versioni supportate:**  
 
--   **Mac OS X 10.6** (Snow Leopard) 
+-   **Mac OS X 10.6** (Snow Leopard)
 
--   **Mac OS X 10.7** (Lion) 
+-   **Mac OS X 10.7** (Lion)
 
 -   **Mac OS X 10.8** (Mountain Lion)
 
@@ -49,11 +49,13 @@ Il pacchetto di installazione del client per Mac non viene fornito con i support
 
 -   **Mac OS X 10.12** (macOS Sierra)  
 
+-   **Mac OS X 10.13** (macOS High Sierra )  
+
 ## <a name="certificate-requirements"></a>Requisiti del certificato
 Per installare e gestire i client per computer Mac sono necessari i certificati di infrastruttura a chiave pubblica (PKI). I certificati PKI proteggono la comunicazione tra i computer Mac e il sito di Configuration Manager usando l'autenticazione manuale e i trasferimenti di dati crittografati. Configuration Manager può chiedere e installare un certificato client utente usando i Servizi certificati Microsoft con un'autorità di certificazione dell'organizzazione (CA) e il punto di registrazione di Configuration Manager e i ruoli del sistema del sito del punto proxy di registrazione. In alternativa, è possibile richiedere e installare un certificato del computer indipendentemente da Configuration Manager se il certificato soddisfa i requisiti per Configuration Manager.   
-  
+
 I client Mac di Configuration Manager eseguono sempre il controllo della revoca del certificato. Questa funzione non può essere disabilitata.  
-  
+
 Se i client Mac non riescono a confermare lo stato di revoca del certificato per un certificato del server poiché non riescono a individuare il CRL, non potranno connettersi ai sistemi del sito di Configuration Manager. Per i client Mac che si trovano in una foresta diversa rispetto a quella dell'autorità di certificazione emittente, controllare la struttura del CRL per verificare che i client Mac siano in grado di individuare e connettersi a un punto di distribuzione dell'elenco di revoche di certificati (CDP) per la connessione dei server del sistema del sito.  
 
 Prima di installare il client di Configuration Manager in un computer Mac, stabilire come installare il certificato client:  
@@ -83,7 +85,7 @@ Se i sistemi del sito non hanno un certificato server Web, distribuirlo nei comp
 
 Il certificato del server Web deve contenere l'FQDN Internet specificato nelle proprietà del sistema del sito. Il server non deve essere accessibile da Internet per supportare i computer Mac. Se non è richiesta la gestione client basata su Internet, è possibile specificare il valore FQDN intranet per FQDN Internet.  
 
-Specificare il valore FQDN Internet del sistema del sito nel certificato server Web per il punto di gestione, il punto di distribuzione e il punto proxy di registrazione. 
+Specificare il valore FQDN Internet del sistema del sito nel certificato server Web per il punto di gestione, il punto di distribuzione e il punto proxy di registrazione.
 
 Per una distribuzione di esempio che crea e installa questo certificato server Web, vedere [Deploying the Web Server Certificate for Site Systems that Run IIS](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_webserver2008_cm2012) (Distribuire il certificato del server Web per sistemi del sito che eseguono IIS).  
 
@@ -119,10 +121,10 @@ Per una distribuzione di esempio che crea e installa questo certificato server W
 
  Nonostante i punti di distribuzione non siano necessari per l'installazione del client, è necessario configurarli per consentire le connessioni client da Internet se si vuole distribuire il software in questi computer dopo aver installato il client.  
 
- 
+
 ### <a name="to-configure-management-points-and-distribution-points-to-support-macs"></a>Per configurare i punti di gestione e i punti di distribuzione per supportare i computer Mac  
 
-Prima di iniziare questa procedura, assicurarsi che il server del sistema del sito su cui sono in esecuzione il punto di gestione e di distribuzione siano configurati con un FQDN Internet. Se questi server non supportano la gestione client basata su Internet, è possibile specificare il valore FQDN Intranet come valore FQDN Internet. 
+Prima di iniziare questa procedura, assicurarsi che il server del sistema del sito su cui sono in esecuzione il punto di gestione e di distribuzione siano configurati con un FQDN Internet. Se questi server non supportano la gestione client basata su Internet, è possibile specificare il valore FQDN Intranet come valore FQDN Internet.
 
 Questi ruoli del sistema del sito devono trovarsi in un sito primario.  
 

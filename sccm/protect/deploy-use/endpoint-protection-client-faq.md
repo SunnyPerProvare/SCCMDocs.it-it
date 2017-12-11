@@ -15,11 +15,11 @@ caps.latest.revision: "15"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: de813a38d6278a60189667165bf4911bd314f14a
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: a3fb0bc39f1606f1a65b5623c9567819b1a0c52e
+ms.sourcegitcommit: 5d46ed593b1cc461ea3f6ff6917bcd272b095ed7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="endpoint-protection-client-frequently-asked-questions"></a>Domande frequenti relative al client Endpoint Protection
 
@@ -63,7 +63,7 @@ Queste domande frequenti sono destinate a utenti di computer il cui amministrato
     |Monitorizza attività di file e programmi nel computer|Questa opzione consente di monitorare i file e programmi in esecuzione nel computer e quindi genera avvisi per le eventuali azioni eseguite da tali file e programmi e le azioni eseguite su di essi. Si tratta di un aspetto importante, perché il software dannoso può sfruttare le vulnerabilità nei programmi installati per eseguire software dannoso o indesiderato all'insaputa dell'utente. Ad esempio, un programma spyware può attivarsi automaticamente in background all'avvio di un programma usato di frequente. Windows Defender mantiene monitorati i programmi e genera avvisi se rileva attività sospette.|  
     |Abilitare monitoraggio comportamento|Questa opzione consente di monitorare raccolte di comportamenti per individuare modelli sospetti che potrebbero non essere rilevati dai metodi di rilevamento antivirus tradizionali.|  
 
-    |Abilita Network Inspection System|Questa opzione consente di proteggere il computer dagli exploit zero-day di vulnerabilità note, riducendo il periodo di tempo tra l'individuazione di una vulnerabilità e l'applicazione di un aggiornamento.|  
+    |Abilita Network Inspection System|Questa opzione consente di proteggere il computer dagli exploit "zero day" delle vulnerabilità note, riducendo il periodo di tempo tra l'individuazione di una vulnerabilità e l'applicazione di un aggiornamento.|  
 
 -   **Opzioni di analisi**: è possibile usare Windows Defender per eseguire un'analisi al fine di rilevare potenziali minacce, come ad esempio virus, spyware e altro software dannoso, che potrebbero compromettere la sicurezza del computer. È inoltre possibile pianificare le analisi periodicamente e rimuovere il software dannoso rilevato durante un'analisi.  
 

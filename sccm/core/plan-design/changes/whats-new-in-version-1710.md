@@ -10,14 +10,14 @@ ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bc6c3e5f-b9e2-400e-9d9d-446ff93c520c
-author: Brenduns
-ms.author: brenduns
+author: mestew
+ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 33a5bff1e202822ce3ec5755958d34af461957e9
-ms.sourcegitcommit: 536f7295e9ea361f1f9ead6c25f3685deb041ad8
+ms.openlocfilehash: 83bd5fc972bc0bef07b206e160463db71837e827
+ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/04/2017
 ---
 # <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Novità della versione 1710 di System Center Configuration Manager
 
@@ -28,8 +28,8 @@ L'aggiornamento 1710 per System Center Configuration Manager (Current Branch) è
 > [!TIP]  
 > Per installare un nuovo sito, è necessario usare una versione base di Configuration Manager.  
 >  Sono disponibili altre informazioni su:    
->   - [Installing new sites](https://technet.microsoft.com/library/mt590197.aspx) (Installare nuovi siti)  
->   - [Installing updates at sites](https://technet.microsoft.com/library/mt607046.aspx) (Installare aggiornamenti nei siti)  
+>   - [Installing new sites](/sccm/core/servers/deploy/install/installing-sites) (Installare nuovi siti)  
+>   - [Installing updates at sites](/sccm/core/servers/manage/updates) (Installare aggiornamenti nei siti)  
 >   - [Baseline and update versions](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions) (Versioni di base e di aggiornamento)  
 
 Le sezioni seguenti offrono informazioni dettagliate sulle modifiche e le nuove funzionalità introdotte nella versione 1710 di Configuration Manager.  
@@ -60,13 +60,13 @@ A partire da questa versione, Peer cache non è più una funzionalità in versio
 <!-- 1350871 -->
 A partire da Windows 10, versione 1607 (nota anche come Aggiornamento dell'anniversario) è possibile aggiungere un dispositivo Windows 10 ad Active Directory (AD) locale e ad Azure AD basata sul cloud AD allo stesso tempo (Azure AD ibrida). La co-gestione sfrutta questo miglioramento e consente di gestire i dispositivi Windows 10 contemporaneamente usando sia Configuration Manager che Intune. È una soluzione che costituisce un ponte tra la gestione tradizionale e quella moderna e che consente di eseguire la transizione mediante un approccio per fasi. Per i dettagli, vedere [Co-gestione per dispositivi Windows 10](/sccm/core/clients/manage/co-management-overview).
 
-### <a name="restart-computers-form-the-configuration-manager-console-----1356283---"></a>Riavviare i computer dalla console di Configuration Manager  <!-- 1356283 -->
+### <a name="restart-computers-from-the-configuration-manager-console-----1356283---"></a>Riavviare i computer dalla console di Configuration Manager <!-- 1356283 -->
 A partire da questa versione, è possibile usare la console di Configuration Manager per identificare i dispositivi client che richiedono il riavvio e quindi usare un'azione di notifica client per riavviarli.
 
 Vedere [Come gestire i client in System Center Configuration Manager](/sccm/core/clients/manage/manage-clients#restart-clients)
 
 
-<!--  ## Compliance settings  -->
+<!-- ## Compliance settings -->
 
 
 ## <a name="application-management"></a>Gestione delle applicazioni
@@ -130,6 +130,10 @@ Per altre informazioni, vedere [Come configurare le impostazioni client in Syste
 
 
 ## <a name="mobile-device-management"></a>Gestione dispositivi mobili
+
+### <a name="actions-for-non-compliance"></a>Azioni per la mancata conformità 
+<!--1321366 -->    
+Ora è possibile configurare una sequenza in ordine temporale delle azioni applicate ai dispositivi che non soddisfano la conformità. Ad esempio, è possibile segnalare agli utenti i dispositivi non conformi inviando notifiche via posta elettronica o contrassegnando tali dispositivi come non conformi. Per informazioni dettagliate, vedere [Configurare azioni per la mancata conformità](/sccm/mdm/deploy-use/actions-for-noncompliance).
 
 ### <a name="windows-10-arm64-device-support"></a>Supporto per dispositivi ARM64 Windows 10
 <!-- 1355000 -->

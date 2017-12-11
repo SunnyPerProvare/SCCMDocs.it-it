@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 02d3ca5ed494c20266125686f26b66cebcc7c2a2
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: 40a2d91baf8c02cdda96e9520ce155032272ebdd
+ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Passaggi della sequenza di attività in System Center Configuration Manager
 
@@ -538,22 +538,6 @@ Questo passaggio della sequenza di attività può essere eseguito solo in Window
 
  **Verifica che il sistema operativo corrente da aggiornare sia**  
  Selezionare questa impostazione per verificare se il sistema operativo installato nel computer client soddisfa i requisiti specificati. Per impostazione predefinita, questa impostazione è selezionata con un valore **CLIENT**.  
-
-##  <a name="child-task-sequence"></a>Sequenza di attività figlio
-
-A partire da Configuration Manager versione 1710, è possibile aggiungere un nuovo passaggio della sequenza di attività che esegue un'altra sequenza di attività. Viene così creata una relazione padre-figlio tra le sequenze di attività. Con un sequenza di attività figlio, è possibile creare sequenze di attività modulari e riutilizzabili.
-
-Quando si aggiunge una sequenza di attività figlio a una sequenza di attività, tenere presente quanto segue:
-
- - Le sequenze di attività padre e figlio sono di fatto combinate in un unico criterio eseguito dal client.
- - L'ambiente è globale. Ad esempio, se una variabile viene impostata dalla sequenza di attività padre e quindi modificata dalla sequenza di attività figlio, la variabile resta modificata nelle fasi successive. Analogamente, se la sequenza di attività figlio crea una nuova variabile, la variabile è disponibile per i passaggi rimanenti della sequenza di attività padre.
- - I messaggi di stato vengono inviati con la procedura normale per un'operazione sequenza di attività singola.
- - Le sequenze di attività scrivono voci nel file smsts.log. Le nuove voci di registro evidenziano l'avvio di una sequenza di attività figlio.
-
-### <a name="details"></a>Dettagli
-
-1. Nell'editor della sequenza di attività fare clic su **Aggiungi**, selezionare **Generale**, quindi fare clic su **Run Task Sequence** (Esegui sequenza di attività).
-2. Fare clic su **Sfoglia** per selezionare la sequenza di attività figlio.  
 
 ##  <a name="BKMK_ConnectToNetworkFolder"></a> Connetti alla cartella di rete  
  Usare l'azione **Connetti alla cartella di rete** della sequenza di attività per creare una connessione a una cartella di rete condivisa.  
@@ -1423,6 +1407,22 @@ Prima di Configuration Manager versione 1610 questo passaggio eseguiva le attivi
 
 > [!IMPORTANT]  
 >  PowerShell 1.0 non supporta i criteri di esecuzione Non definito e Ignora.  
+
+##  <a name="child-task-sequence"></a> Esegui la sequenza di attività
+
+A partire da Configuration Manager versione 1710, è possibile aggiungere un nuovo passaggio della sequenza di attività che esegue un'altra sequenza di attività. Viene così creata una relazione padre-figlio tra le sequenze di attività. Con un sequenza di attività figlio, è possibile creare sequenze di attività modulari e riutilizzabili.
+
+Quando si aggiunge una sequenza di attività figlio a una sequenza di attività, tenere presente quanto segue:
+
+ - Le sequenze di attività padre e figlio sono di fatto combinate in un unico criterio eseguito dal client.
+ - L'ambiente è globale. Ad esempio, se una variabile viene impostata dalla sequenza di attività padre e quindi modificata dalla sequenza di attività figlio, la variabile resta modificata nelle fasi successive. Analogamente, se la sequenza di attività figlio crea una nuova variabile, la variabile è disponibile per i passaggi rimanenti della sequenza di attività padre.
+ - I messaggi di stato vengono inviati con la procedura normale per un'operazione sequenza di attività singola.
+ - Le sequenze di attività scrivono voci nel file smsts.log. Le nuove voci di registro evidenziano l'avvio di una sequenza di attività figlio.
+
+### <a name="details"></a>Dettagli
+
+1. Nell'editor della sequenza di attività fare clic su **Aggiungi**, selezionare **Generale**, quindi fare clic su **Run Task Sequence** (Esegui sequenza di attività).
+2. Fare clic su **Sfoglia** per selezionare la sequenza di attività figlio.  
 
 ##  <a name="BKMK_SetDynamicVariables"></a> Imposta variabili dinamiche  
  Usare il passaggio **Imposta variabili dinamiche** della sequenza di attività per eseguire le operazioni seguenti:  
