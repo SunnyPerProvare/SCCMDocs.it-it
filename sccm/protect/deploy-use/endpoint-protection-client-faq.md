@@ -3,7 +3,7 @@ title: Domande frequenti relative al client Endpoint Protection
 titleSuffix: Configuration Manager
 description: Risposte alle domande frequenti su Windows Defender e su Endpoint Protection.
 ms.custom: na
-ms.date: 02/14/2017
+ms.date: 12/09/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e3aaa9d2-a40e-42b1-ad75-5a115351729e
 caps.latest.revision: "15"
-author: NathBarn
-ms.author: nathbarn
+author: arob98
+ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: a3fb0bc39f1606f1a65b5623c9567819b1a0c52e
-ms.sourcegitcommit: 5d46ed593b1cc461ea3f6ff6917bcd272b095ed7
+ms.openlocfilehash: 2656a5c40dbd2916ef36268936a4e2163ebde14d
+ms.sourcegitcommit: 372171a5cd8d143d6d47b651018cda0c91cad67c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="endpoint-protection-client-frequently-asked-questions"></a>Domande frequenti relative al client Endpoint Protection
 
@@ -203,7 +203,7 @@ Per rimuovere facilmente e velocemente tutti gli elementi indesiderati o potenzi
 
 ##  <a name="what-is-real-time-protection"></a>Cos'è la protezione in tempo reale?  
 
- La protezione in tempo reale consente a Windows Defender monitorare costantemente il computer e segnalare la presenza di potenziali minacce, quali virus e spyware che tentano l'installazione o l'esecuzione nel computer. Dato che questa funzionalità è un elemento importante del modo in cui Windows Defender protegge il computer, assicurarsi che la protezione in tempo reale sia sempre attivata. Se la protezione in tempo reale viene disattivata, Windows Defender lo segnala e imposta lo stato del computer su "A rischio".  
+ La protezione in tempo reale consente a Windows Defender monitorare costantemente il computer e segnalare la presenza di potenziali minacce, quali virus e spyware che tentano l'installazione o l'esecuzione nel computer. Dato che questa funzionalità è un elemento importante del modo in cui Windows Defender protegge il computer, assicurarsi che la protezione in tempo reale sia sempre attivata. Se la protezione in tempo reale viene disattivata, Windows Defender lo segnala e imposta lo stato del computer su **A rischio**.  
 
  Se la protezione in tempo reale rileva una minaccia o una potenziale minaccia, Windows Defender visualizza una notifica. È quindi possibile scegliere una delle opzioni seguenti:  
 

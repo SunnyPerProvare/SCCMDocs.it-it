@@ -3,7 +3,7 @@ title: Distribuire applicazioni
 titleSuffix: Configuration Manager
 description: Creare un tipo di distribuzione o simulare la distribuzione di un'applicazione usando System Center Configuration Manager.
 ms.custom: na
-ms.date: 7/31/2017
+ms.date: 12/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 31c8a2e212de8c112b68d68e108db3463516142f
-ms.sourcegitcommit: b36f8c8b06e4b2e13f8c1500a82af79a071ab4f6
+ms.openlocfilehash: 97d1ac775a3b38f63372f0ab01243dfdfeb4edb5
+ms.sourcegitcommit: 52b956cfe32c3f06ae68d6ba6fc3244ce5a66325
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="deploy-applications-with-system-center-configuration-manager"></a>Distribuire le applicazioni con System Center Configuration Manager
 
@@ -171,8 +171,7 @@ Per una distribuzione ad alto rischio, ad esempio una sequenza di attività che 
 ## <a name="how-to-check-for-running-executable-files-before-installing-an-application"></a>Come controllare l'esecuzione di file eseguibili prima di installare un'applicazione
 
 >[!Tip]
->Introdotta con la versione 1702, questa è una funzionalità di versione non definitiva. Per abilitarla, vedere [Funzionalità di versioni non definitive in System Center Configuration Manager](https://docs.microsoft.com/sccm/core/servers/manage/pre-release-features).
-> A partire dalla versione 1706, questa funzionalità non è più una funzionalità di versione non definitiva.
+> Questa funzionalità è stata introdotta per la prima volta nella versione 1702 come [funzionalità in versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1706, questa funzionalità non è più una funzionalità di versione non definitiva.
 
 Nella finestra di dialogo **Proprietà** di un tipo di distribuzione, nella scheda **Comportamento installazione**, è possibile specificare uno o più file eseguibili che, se in esecuzione, bloccano l'installazione del tipo di distribuzione. L'utente deve chiudere il file eseguibile in esecuzione, che in alternativa può essere chiuso automaticamente per le distribuzioni con scopo richiesto, prima dell'installazione del tipo di distribuzione. Per configurare questa impostazione:
 

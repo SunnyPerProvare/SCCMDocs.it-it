@@ -3,7 +3,7 @@ title: Creare ed eseguire script
 titleSuffix: Configuration Manager
 description: Creare ed eseguire script di PowerShell in dispositivi client.
 ms.custom: na
-ms.date: 11/20/2017
+ms.date: 11/29/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,31 +16,31 @@ caps.handback.revision: "0"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: angrobe
-ms.openlocfilehash: 964f6d39c4c1afc82ff4336821740923d27cd569
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: 1472f697ae8b82e6268433aa6398fcc10a429994
+ms.sourcegitcommit: 5f4a584d4a833b0cc22bd8c47da7dd55aced97fa
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Creare ed eseguire script di PowerShell dalla console di Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-L'esecuzione di script di PowerShell con System Center Configuration Manager è stata integrata in modo ancora migliore. Il vantaggio di PowerShell è che consente di creare script automatici sofisticati, intuitivi e condivisi con una vasta community. Gli script semplificano la creazione di strumenti personalizzati per amministrare il software e consentono di eseguire rapidamente attività pratiche, anche impegnative, in modo più semplice e uniforme.
+>[!TIP]
+>Introdotta con la versione 1706, la possibilità di eseguire script di PowerShell è una funzionalità in versione non definitiva. Per abilitare gli script, vedere [Funzionalità di versioni non definitive in System Center Configuration Manager](/sccm/core/servers/manage/pre-release-features).
+
+L'esecuzione di script di PowerShell con System Center Configuration Manager è stata integrata in modo ancora migliore. Il vantaggio di PowerShell è che consente di creare script automatici sofisticati, intuitivi e condivisi con una vasta community. Gli script semplificano la creazione di strumenti personalizzati per amministrare il software e consentono di eseguire rapidamente attività pratiche, anche impegnative, in modo più semplice e coerente.
 
 Grazie a questa integrazione in System Center Configuration Manager, è possibile usare la funzionalità *Esegui script* per:
 
-- Creare e modificare script da usare con Configuration Manager.
-- Gestire l'utilizzo degli script tramite ruoli e ambiti di protezione  
+- Creare e modificare script da usare con System Center Configuration Manager.
+- Gestire l'utilizzo degli script tramite ruoli e ambiti di protezione. 
 - Eseguire gli script in raccolte o singoli PC Windows gestiti in locale.
 - Ottenere rapidi risultati degli script aggregati dai dispositivi client.
 - Monitorare l'esecuzione degli script e visualizzare i risultati restituiti dall'output degli script.
 
->[!IMPORTANT]
+>[!WARNING]
 >Considerando la potenza degli script, è consigliabile usarli con attenzione e solo se intenzionalmente. Sono state integrate altre misure di sicurezza per supportare l'utente finale, come ruoli e ambiti segregati. Verificare l'accuratezza degli script prima di eseguirli e accertarsi che provengano da un'origine attendibile, per impedirne l'esecuzione accidentale. Prestare attenzione ai caratteri estesi o ad altri problemi di offuscamento e abituarsi a proteggere gli script.
-
->[!TIP]
->Introdotti con la versione 1706, gli script di PowerShell sono una funzionalità in versione non definitiva. Per abilitare gli script, vedere [Funzionalità di versioni non definitive in System Center Configuration Manager](/sccm/core/servers/manage/pre-release-features).
 
 ## <a name="prerequisites"></a>Prerequisiti
 
@@ -49,7 +49,7 @@ Grazie a questa integrazione in System Center Configuration Manager, è possibil
 - Per usare gli script, l'utente deve essere membro del ruolo di sicurezza appropriato di Configuration Manager.
 - Per importare e creare script, l'account deve avere autorizzazioni **Crea** per **Script SMS** nel ruolo di sicurezza **Amministratore completo**.
 - Per approvare o rifiutare script, l'account deve avere autorizzazioni **Approva** per **Script SMS** nel ruolo di sicurezza **Amministratore completo**.
-- Per eseguire script: l'account deve avere autorizzazioni di **esecuzione script** per **Raccolte** nel ruolo di sicurezza **Gestione impostazioni di conformità**.
+- Per eseguire script: l'account deve avere autorizzazioni di **esecuzione script** per **Raccolte** nel ruolo di sicurezza **Amministratore completo**.
 
 Per altre informazioni sui ruoli di sicurezza di Configuration Manager, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](/sccm/core/understand/fundamentals-of-role-based-administration).
 
@@ -58,7 +58,7 @@ Per altre informazioni sui ruoli di sicurezza di Configuration Manager, vedere [
 La funzionalità Esegui script supporta attualmente:
 
 - Linguaggi di scripting: PowerShell
-- Tipi di parametro: intero e stringa
+- Tipi di parametro: intero, stringa ed elenco
 
 ## <a name="run-script-authors-and-approvers"></a>Autori e responsabili dell'approvazione di script
 
@@ -120,79 +120,83 @@ Ognuno dei parametri di script è associato a una finestra di dialogo per l'aggi
 
 Ogni parametro nello script ha una finestra di dialogo **Proprietà parametri script**, in cui è possibile aggiungere la convalida per il parametro. Dopo aver aggiunto la convalida, verranno restituiti errori quando si immette un valore che non soddisfa i requisiti di convalida per il parametro.
 
-#### <a name="example-firstname"></a>Esempio: FirstName
+#### <a name="example-firstname"></a>Esempio: *FirstName*
 
-In questo esempio è possibile impostare le proprietà del parametro stringa *FirstName*. Notare il campo facoltativo per **Errore personalizzato**. Questo campo è utile per l'aggiunta di indicazioni per l'utente riguardo al campo specifico e di indicazioni per l'utente riguardo all'interazione con il parametro di stringa *FirstName* in questo caso.
+In questo esempio è possibile impostare le proprietà del parametro stringa *FirstName*.
 
 ![Parametri di script - Stringa](./media/run-scripts/RS-parameters-string.png)
+
+
+La sezione di convalida della finestra di dialogo **Proprietà dei parametri dello script** contiene i campi seguenti:
+
+- **Lunghezza minima** - Numero minimo di caratteri del campo *FirstName*.
+- **Lunghezza massima** - Numero massimo di caratteri del campo *FirstName*.
+- **RegEx** - abbreviazione di *Espressione regolare*. Per altre informazioni sull'uso di espressioni regolari, vedere la sezione successiva *Uso della convalida con espressioni regolari*.
+- **Errore personalizzato** - Utile per aggiungere un messaggio di errore personalizzato che sostituirà qualsiasi messaggio di errore di convalida del sistema.
+
+#### <a name="using-regular-expression-validation"></a>Uso della convalida con espressioni regolari
+
+Un'espressione regolare è una forma di programmazione compatta per controllare una stringa di caratteri rispetto a una convalida codificata. Ad esempio, si potrebbe verificare se manca un carattere alfabetico maiuscolo nel campo *FirstName* inserendo `[^A-Z]` nel campo *RegEx*.
+
+L'elaborazione delle espressioni regolari per questa finestra di dialogo è supportata da .NET Framework. Per informazioni sull'uso delle espressioni regolari, vedere [Espressioni regolari di .NET](https://docs.microsoft.com/dotnet/standard/base-types/regular-expressions). 
+
 
 ## <a name="script-examples"></a>Esempi di script
 
 Ecco alcuni esempi che mostrano gli script che è possibile usare con questa funzionalità.
 
-### <a name="create-a-folder"></a>Crea una cartella
+### <a name="create-a-new-folder-and-file"></a>Creare una nuova cartella e un file
+
+Questo script crea una nuova cartella e un file in tale cartella in base ai nomi specificati.
 
 ``` powershell
-New-Item "c:\scripts" -type folder name
-```
-
-### <a name="create-a-file"></a>Creare un file
-
-```powershell
-New-Item "c:\scripts\new_file.txt" -type file name
-```
-
-### <a name="ping-a-given-computer"></a>Effettuare il ping di un computer specifico
-
-Questo script usa una stringa come parametro per un'operazione di *ping*.
-
-``` powershell
-Param
-(
- [String][Parameter(Mandatory=$True, Position=1)] $Computername
+Param(
+[Parameter(Mandatory=$True)]
+[string]$FolderName,
+[Parameter(Mandatory=$True)]
+[string]$FileName,
 )
 
-Ping $Computername
+New-Item $FolderName -type directory
+New-Item $FileName -type file
 ```
 
-### <a name="get-battery-status"></a>Ottenere lo stato della batteria
+### <a name="get-os-version"></a>Recuperare la versione del sistema operativo
 
-Questo script usa WMI per eseguire query sul computer in modo da determinarne lo stato della batteria.
+Questo script usa WMI per richiedere la versione del sistema operativo al computer.
 
 ``` powershell
-Write-Output (Get-WmiObject -Class Win32_Battery).BatteryStatus
-
+Write-Output (Get-WmiObject -Class Win32_operatingSystem).Caption
 ```
 
 ## <a name="run-a-script"></a>Esegui uno script
 
-Dopo che uno script è stato approvato, può essere eseguito su una raccolta a scelta dell'utente. Una volta avviata l'esecuzione, lo script viene eseguito rapidamente in un sistema ad alta priorità e viene completato entro un'ora. I risultati dello script vengono restituiti tramite un sistema di messaggi di stato più lento.
+Dopo l'approvazione, uno script può essere eseguito su un singolo dispositivo o su una raccolta. Una volta avviata l'esecuzione, lo script viene eseguito rapidamente in un sistema ad alta priorità con timeout di un'ora. I risultati dello script vengono quindi restituiti tramite un sistema di messaggi di stato.
+
+Per selezionare una raccolta di destinazioni per lo script:
 
 1. Nella console di Configuration Manager fare clic su **Asset e conformità**.
 2. Nell'area di lavoro Asset e conformità fare clic su **Raccolte dispositivi**.
 3. Nell'elenco **Raccolte dispositivi** fare clic sulla raccolta di dispositivi in cui si desidera eseguire lo script.
-4. Nella scheda **Home** nel gruppo **Tutti i sistemi** fare clic su **Esegui script**.
+4. Selezionare una raccolta a scelta e fare clic su **Esegui script**.
 5. Nella pagina **Script** della procedura guidata **Esegui Script** scegliere uno script dall'elenco. Vengono visualizzati solo gli script approvati.
 6. Fare clic su **Avanti** e completare la procedura guidata.
 
 >[!IMPORTANT]
->Se lo script non viene eseguito entro il periodo di tempo di un'ora, ad esempio perché il client di destinazione è spento, è necessario eseguirlo di nuovo.
+>Se lo script non viene eseguito, ad esempio perché il client di destinazione è spento entro il periodo di tempo di un'ora, è necessario eseguirlo di nuovo.
 
 ### <a name="target-machine-execution"></a>Esecuzione nel computer di destinazione
+
 Lo script viene eseguito come account di *sistema* o *computer* nei client di destinazione. Questo account ha accesso di rete limitato. L'accesso dello script a posizioni e sistemi remoti deve essere eseguito di conseguenza.
 
-## <a name="work-flow-and-monitoring"></a>Flusso di lavoro e monitoraggio
+## <a name="script-monitoring"></a>Monitoraggio dello script
 
-Ecco l'aspetto della funzionalità Esegui script come flusso di lavoro di creazione, approvazione, esecuzione e monitoraggio.
+Dopo aver avviato l'esecuzione di uno script in una raccolta di dispositivi, usare la procedura seguente per monitorare l'operazione. A partire dalla versione 1710, è possibile monitorare uno script in tempo reale durante la sua esecuzione ed è anche possibile restituire un report per un'esecuzione della funzionalità Esegui script specifica. <br>
 
-![Esegui script - Flusso di lavoro](./media/run-scripts/RS-run-scripts-work-flow.png)
-
-### <a name="script-monitoring"></a>Monitoraggio dello script
-
-Dopo aver avviato l'esecuzione di uno script in una raccolta di dispositivi, usare la procedura seguente per monitorare l'operazione. A partire dalla versione 1710, è possibile monitorare uno script in tempo reale durante la sua esecuzione ed è anche possibile restituire un report per un'esecuzione della funzionalità Esegui script specifica.
+![Monitoraggio dello script - Stato di esecuzione dello script](./media/run-scripts/RS-monitoring-three-bar.png)
 
 1. Nella console di Configuration Manager fare clic su **Monitoraggio**.
-2. Nell'area di lavoro **Monitoraggio** fare clic su **Stato script**. ![Monitoraggio dello script - Stato di esecuzione dello script](./media/run-scripts/RS-monitoring-three-bar.png)
+2. Nell'area di lavoro **Monitoraggio** fare clic su **Stato script**.
 3. Nell'elenco **Stato script** sono visualizzati i risultati per ogni script eseguito nei dispositivi client. Un codice di uscita dello script uguale a **0** indica in genere che lo script è stato eseguito correttamente.
 
 ## <a name="see-also"></a>Vedere anche

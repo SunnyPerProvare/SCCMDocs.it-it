@@ -15,11 +15,11 @@ caps.latest.revision: "9"
 author: aaroncz
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: ea8eead4706472a02f216b432ea9f2e6bdf23f66
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: f0feba771dcc75d84cd1233fea562472ff6c1158
+ms.sourcegitcommit: 8c6e9355846ff6a73c534c079e3cdae09cf13c45
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="use-a-pull-distribution-point-with-system-center-configuration-manager"></a>Usare un punto di distribuzione pull basato sul cloud con System Center Configuration Manager
 
@@ -105,8 +105,10 @@ Un punto di distribuzione pull che scarica contenuto da un punto di distribuzion
 -   Questo framework viene installato da **Pulldp.msi** quando si configura il punto di distribuzione come punto di distribuzione pull. Non richiede l'installazione del client di Configuration Manager.  
 
 -   Al termine dell'installazione del punto di distribuzione pull, il servizio CCMExec nel computer del punto di distribuzione deve essere operativo per il funzionamento del punto di distribuzione pull.  
+<!--sms.503672 -Clarified BITS use-->
+-   Quando il punto di distribuzione pull trasferisce il contenuto, il trasferimento viene eseguito tramite il **Servizio trasferimento intelligente in background** (BITS) incluso nel sistema operativo Windows. Un punto di distribuzione pull non richiede l'installazione della funzionalità facoltativa di estensione del server IIS BITS.
 
--   L'operazione di trasferimento del contenuto viene eseguita usando il **Servizio trasferimento intelligente in background** (BITS) e registrata nei file **datatransferservice.log** e **pulldp.log** del computer del punto di distribuzione.  
+-  Il punto di distribuzione pull registra le operazioni all'interno di **datatransferservice.log** e **pulldp.log** nel computer del punto di distribuzione.
 
 ## <a name="see-also"></a>Vedere anche  
  [Concetti di base per la gestione dei contenuti in System Center Configuration Manager](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management)   

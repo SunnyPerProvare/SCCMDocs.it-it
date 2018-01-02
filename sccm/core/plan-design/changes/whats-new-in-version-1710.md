@@ -13,11 +13,11 @@ ms.assetid: bc6c3e5f-b9e2-400e-9d9d-446ff93c520c
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 83bd5fc972bc0bef07b206e160463db71837e827
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 8431ebffc6d1aa463c5622bd67db8a140c0cfe69
+ms.sourcegitcommit: 2dc9c83e57e9734ffc4a93f79cd71285036eeb8b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Novità della versione 1710 di System Center Configuration Manager
 
@@ -58,7 +58,7 @@ A partire da questa versione, Peer cache non è più una funzionalità in versio
 
 ### <a name="co-management-for-windows-10-devices"></a>Co-gestione per dispositivi Windows 10    
 <!-- 1350871 -->
-A partire da Windows 10, versione 1607 (nota anche come Aggiornamento dell'anniversario) è possibile aggiungere un dispositivo Windows 10 ad Active Directory (AD) locale e ad Azure AD basata sul cloud AD allo stesso tempo (Azure AD ibrida). La co-gestione sfrutta questo miglioramento e consente di gestire i dispositivi Windows 10 contemporaneamente usando sia Configuration Manager che Intune. È una soluzione che costituisce un ponte tra la gestione tradizionale e quella moderna e che consente di eseguire la transizione mediante un approccio per fasi. Per i dettagli, vedere [Co-gestione per dispositivi Windows 10](/sccm/core/clients/manage/co-management-overview).
+Negli aggiornamenti precedenti di Windows 10 è già possibile aggiungere un dispositivo Windows 10 ad Active Directory (AD) locale e ad Azure AD basata sul cloud allo stesso tempo (Azure AD ibrida). A partire da Configuration Manager versione 1710, la co-gestione sfrutta questo miglioramento e consente di gestire contemporaneamente i dispositivi Windows 10 versione 1709 (noto anche come Fall Creators Update) usando sia Configuration Manager sia Intune. È una soluzione che costituisce un ponte tra la gestione tradizionale e quella moderna e che consente di eseguire la transizione mediante un approccio per fasi. Per i dettagli, vedere [Co-gestione per dispositivi Windows 10](/sccm/core/clients/manage/co-management-overview).
 
 ### <a name="restart-computers-from-the-configuration-manager-console-----1356283---"></a>Riavviare i computer dalla console di Configuration Manager <!-- 1356283 -->
 A partire da questa versione, è possibile usare la console di Configuration Manager per identificare i dispositivi client che richiedono il riavvio e quindi usare un'azione di notifica client per riavviarli.
@@ -165,7 +165,6 @@ In questa versione sono state aggiornate la procedura guidata di creazione del p
 - Quando la piattaforma è impostata su **Android**, **Android for Work** o **Windows Phone 8.1**, la pagina **Piattaforme supportate** non è necessaria e non viene visualizzata.
 - Il flusso di lavoro basato su client di Configuration Manager è stato combinato con i flussi di lavoro di Windows 10 basato su client dei dispositivi mobili ibridi (MDM), visto che supportano le stesse impostazioni.
 - Ogni flusso di lavoro di piattaforma include solo le impostazioni appropriate per il flusso di lavoro.  Ad esempio, il flusso di lavoro Android contiene le impostazioni appropriate per Android; le impostazioni appropriate per iOS e Windows 10 Mobile non vengono più visualizzate nel flusso di lavoro Android.
-- Per i dispositivi Windows 8.1, i tipi di connessione gestiti solo dal client di Configuration Manager (non supportati da Intune) sono contrassegnati in modo chiaro.
 - La pagina VPN automatico è obsoleta ed è stata rimossa.
 
 Queste modifiche vengono applicate ai nuovi profili VPN.  

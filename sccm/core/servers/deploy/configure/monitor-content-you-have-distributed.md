@@ -3,7 +3,7 @@ title: Monitoraggio del contenuto
 titleSuffix: Configuration Manager
 description: Informazioni su come monitorare il contenuto distribuito usando la console di Configuration Manager.
 ms.custom: na
-ms.date: 4/17/2017
+ms.date: 12/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "5"
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 5b1c0401c0b1ce2aa8765ccfb8898b90cf7a5c93
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 62d783735e64b6f3f11dae9af6ac5a7584d689ef
+ms.sourcegitcommit: 52b956cfe32c3f06ae68d6ba6fc3244ce5a66325
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="monitor-content-you-have-distributed-with-system-center-configuration-manager"></a>Monitorare il contenuto distribuito con System Center Configuration Manager
 
@@ -155,7 +155,8 @@ Usare la procedura seguente per visualizzare lo stato di configurazione del punt
 A partire dalla versione 1610, è possibile usare il dashboard **Origini dati del client** per informazioni sull'uso di [Peer Cache](/sccm/core/plan-design/hierarchy/client-peer-cache) nell'ambiente. Questo dashboard inizierà a visualizzare i dati dopo che il contenuto è stato scaricato dai client e tale informazione viene segnalata al sito. Questa operazione può richiedere al massimo 24 ore.
 
 > [!TIP]  
-> La **peer cache client** e il dashboard 	**Origini dati del client** sono funzionalità di versioni non definitive introdotte nella versione 1610. È necessario abilitare la peer cache client prima che il dashboard Origini dati del client sia visibile nella console. Per abilitare la peer cache client, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease). Per la visualizzazione dei dati possono essere necessarie fino a 24 ore dopo l'abilitazione.
+> La **peer cache client** e il dashboard **Origini dati del client** sono [funzionalità in versione non definitiva](/sccm/core/servers/manage/pre-release-features) introdotte per la prima volta nella versione 1610. A partire dalla versione 1710, queste funzionalità non sono più in versione non definitiva. È necessario abilitare la peer cache client prima che il dashboard Origini dati del client sia visibile nella console.
+
 
 Nella console passare a **Monitoraggio** > **Stato distribuzione** > **Origini dati del client**. In questa posizione è possibile selezionare un periodo di tempo da applicare al dashboard. Nella visualizzazione è quindi possibile selezionare il gruppo di limiti o il pacchetto per il quale visualizzare le informazioni. Quando si esaminano le informazioni, passare il puntatore sulla superficie per vedere altri dettagli relativi ai diversi contenuti o origini dei criteri.
 

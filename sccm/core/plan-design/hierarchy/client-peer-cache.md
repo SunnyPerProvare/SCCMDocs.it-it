@@ -3,7 +3,7 @@ title: Peer cache per i client
 titleSuffix: Configuration Manager
 description: Usare la peer cache per i percorsi di origine del contenuto del client quando si distribuiscono contenuti con System Center Configuration Manager.
 ms.custom: na
-ms.date: 11/20/2017
+ms.date: 12/07/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -15,11 +15,11 @@ caps.latest.revision: "3"
 author: aaroncz
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 60f70d3e24f6290fb022b9bd8ca1512b0ed3d719
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: cadc62ab21ac8cd43120a5baa79dd635a12b4069
+ms.sourcegitcommit: 2dc9c83e57e9734ffc4a93f79cd71285036eeb8b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
 
@@ -36,7 +36,7 @@ Un client Peer Cache è un client Gestione configurazione che è in grado di usa
  -  Per condividere il contenuto come origine di Peer Cache, un client Peer Cache:
     -  Deve essere aggiunto a un dominio. Tuttavia, un client che non è aggiunto a un dominio può ottenere contenuto da un'origine di Peer Cache non aggiunta al dominio.
     -  Deve essere un membro del gruppo di limiti attuali del client che cerca il contenuto. Un client Peer Cache in un gruppo di limiti adiacenti non è incluso nel pool dei percorsi di origine del contenuto disponibili quando un client usa il fallback per cercare contenuti da un gruppo di limiti adiacente. Per altre informazioni sui gruppi di limiti correnti e adiacenti, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups##a-namebkmkboundarygroupsa-boundary-groups).
- - Qualsiasi tipo di contenuto conservato nella cache di un client di Configuration Manager può essere reso disponibile ad altri client tramite la peer cache.
+ - Qualsiasi tipo di contenuto conservato nella cache di un client di Configuration Manager può essere reso disponibile ad altri client tramite la peer cache, inclusi i file di Office 365 e i file per installazione rapida.<!--SMS.500850-->
  -  La peer cache non sostituisce l'uso di altre soluzioni come BranchCache, ma si affianca a esse per offrire più opzioni ed estendere le tradizionali soluzioni di distribuzione di contenuti, come i punti di distribuzione. Questa soluzione personalizzata è indipendente da BranchCache e quindi funziona anche se non si abilita o si usa Windows BranchCache.
 
 ### <a name="operations"></a>Operazioni

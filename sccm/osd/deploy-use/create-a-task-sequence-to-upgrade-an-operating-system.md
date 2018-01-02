@@ -3,7 +3,7 @@ title: "Creare una sequenza di attività per aggiornare un sistema operativo"
 titleSuffix: Configuration Manager
 description: "Usare le sequenze di attività in System Center Configuration Manager per aggiornare automaticamente un sistema operativo da Windows 7 o versione successiva a Windows 10."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "12"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 2787c8a692321a49cf287fc2f09858690360dc25
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 002acbcff01105e612e8c090606a6aa5d45a014b
+ms.sourcegitcommit: 52b956cfe32c3f06ae68d6ba6fc3244ce5a66325
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-operating-system-in-system-center-configuration-manager"></a>Creare una sequenza di attività per aggiornare un sistema operativo in System Center Configuration Manager
 
@@ -78,7 +78,7 @@ Usare le sequenze di attività in System Center Configuration Manager per aggior
 ## <a name="configure-pre-cache-content"></a>Configurare la pre-cache del contenuto
 A partire dalla versione 1702, per le distribuzioni di sequenze di attività disponibili è possibile scegliere di usare la funzionalità di memorizzazione anticipata nella cache del contenuto. In questo modo, prima che gli utenti installino il contenuto, i client scaricheranno solo il contenuto pertinente.
 > [!TIP]  
-> Introdotta con la versione 1702, la pre-cache è una funzionalità di versione non definitiva. Per abilitarla, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/pre-release-features).
+> Questa funzionalità è stata introdotta per la prima volta nella versione 1702 come [funzionalità in versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1706, questa funzionalità non è più una funzionalità di versione non definitiva.
 
 Si supponga ad esempio di voler distribuire una sequenza di attività di aggiornamento sul posto di Windows 10, di volere una sola sequenza di attività per tutti gli utenti e di avere più architetture e/o lingue. Nelle versioni precedenti la 1702, se si crea una distribuzione disponibile, il contenuto viene scaricato quando l'utente fa clic su **Installa** in Software Center. Ciò prolunga il tempo che precede l'avvio dell'installazione. Inoltre, tutto il contenuto a cui viene fatto riferimento nella sequenza di attività viene scaricato. compreso il pacchetto di aggiornamento del sistema operativo per tutte le lingue e per tutte le architetture. Se le dimensioni di ciascun pacchetto sono circa tre GB, il pacchetto di download può avere dimensioni notevoli.
 

@@ -5,17 +5,17 @@ description: Informazioni su come preparare Intune in Azure per la migrazione de
 keywords: 
 author: dougeby
 manager: dougeby
-ms.date: 09/14/2017
+ms.date: 12/05/2017
 ms.topic: article
 ms.prod: configmgr-hybrid
 ms.service: 
 ms.technology: 
 ms.assetid: db97ae9e-34f4-4e10-a282-cd211f612bb4
-ms.openlocfilehash: 7addb69ff0336b82d0e59e2288110ebb7c074af3
-ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
+ms.openlocfilehash: 226586f0ee42cdad98b1d74f25421685d85e0dcf
+ms.sourcegitcommit: 8c6e9355846ff6a73c534c079e3cdae09cf13c45
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="prepare-intune-for-user-migration"></a>Preparare Intune per la migrazione degli utenti 
 
@@ -51,17 +51,20 @@ Se è stata eseguita la fase di [importazione dei dati di Configuration Manager 
 - [Assegnare app](https://docs.microsoft.com/intune/get-started-apps) 
 
 ## <a name="terms-and-conditions-policy"></a>Criteri relativi a termini e condizioni
-Come per gli altri criteri a livello di tenant, per i criteri relativi a termini e condizioni viene eseguita automaticamente la migrazione a Intune una volta abilitata l'autorità mista per il tenant.  È tuttavia necessario assegnare i termini e le condizioni a un gruppo che contiene gli utenti di cui è stata eseguita la migrazione per creare report accurati relativi all'accettazione per gli utenti di cui è stata eseguita la migrazione e per assicurarsi che i termini e le condizioni vengano gestiti correttamente per le registrazioni dei dispositivi o gli aggiornamenti di termini e condizioni futuri. Gli utenti non dovranno accettare di nuovo le condizioni, a meno che non vengano apportate modifiche ai criteri nella console di Configuration Manager. Per informazioni dettagliate, vedere [Assegnare termini e condizioni](https://docs.microsoft.com/intune/terms-and-conditions-create#assign-terms-and-conditions).
+Come per gli altri criteri a livello di tenant, per i criteri relativi a termini e condizioni viene eseguita automaticamente la migrazione a Intune una volta abilitata l'autorità mista per il tenant.  È tuttavia necessario assegnare i termini e le condizioni a un gruppo che contiene gli utenti di cui è stata eseguita la migrazione per creare report accurati relativi all'accettazione per gli utenti di cui è stata eseguita la migrazione e per assicurarsi che i termini e le condizioni vengano gestiti correttamente per le registrazioni dei dispositivi o gli aggiornamenti di termini e condizioni futuri. Gli utenti non devono accettare di nuovo le condizioni, a meno che non vengano apportate modifiche ai criteri nella console di Configuration Manager. Per informazioni dettagliate, vedere [Assegnare termini e condizioni](https://docs.microsoft.com/intune/terms-and-conditions-create#assign-terms-and-conditions).
 
 ## <a name="configure-the-exchange-connector"></a>Configurare Exchange Connector
-Se si usa Exchange e si ha un'istanza di Exchange Connector in Configuration Manager, è necessario configurare la versione locale di Exchange Connector in Intune. Per informazioni dettagliate, vedere [Configurare Intune On-Premises Exchange Connector in Microsoft Intune in Azure](https://docs.microsoft.com/intune/exchange-connector-install)
+Se si usa Exchange e si ha un'istanza di Exchange Connector locale in Configuration Manager, è necessario [configurare la versione locale di Exchange Connector in Intune](https://docs.microsoft.com/intune/exchange-connector-install). Considerare inoltre le informazioni nelle sezioni seguenti per eseguire la migrazione a Intune Exchange Connector e per garantire il corretto funzionamento dell'accesso condizionale dopo la migrazione.
 
-> [!Important]
-> Per il corretto funzionamento dell'accesso condizionale dopo la migrazione degli utenti e per fare in modo che gli utenti continuino ad avere accesso al server di posta elettronica, verificare quanto segue:
-> - Se l'impostazione del livello di accesso predefinito di Exchange ActiveSync (DefaultAccessLevel) è Blocca o Quarantena, i dispositivi potrebbero perdere l'accesso alla posta elettronica. 
-> - Se Exchange Connector è installato in Configuration Manager e il **livello di accesso quando un dispositivo mobile non è gestito da una regola** ha un valore **Consenti accesso**, è necessario installare la [versione locale di Exchange Connector](https://docs.microsoft.com/en-us/intune/conditional-access-exchange-create#configure-exchange-on-premises-access) in Intune prima di eseguire la migrazione degli utenti. Configurare l'impostazione del livello di accesso predefinito in Intune nel pannello **Exchange locale** in **Impostazioni avanzate dell'accesso a Exchange ActiveSync**. Per informazioni dettagliate, vedere [Configurare l'accesso locale a Exchange](https://docs.microsoft.com/intune/conditional-access-exchange-create#configure-exchange-on-premises-access).
-> - Usare la stessa configurazione per entrambi i connettori. L'ultimo connettore configurato sovrascrive le impostazioni dell'organizzazione di ActiveSync scritte in precedenza dall'altro connettore. Se si configurano i connettori in modo diverso, potrebbero verificarsi modifiche impreviste dell'accesso condizionale.
-> - Rimuovere gli utenti dall'accesso condizionale in Configuration Manager una volta eseguita la migrazione alla versione autonoma di Intune.
+### <a name="powershell-scripts-to-help-you-migrate-to-the-intune-exchange-connector"></a>Script di PowerShell per facilitare la migrazione a Intune Exchange Connector 
+Sono disponibili script di PowerShell per preparare la transizione dei dispositivi di Exchange da Configuration Manager Exchange Connector a Intune Exchange Connector. Anche se l'esecuzione di questi script è facoltativa, si consiglia di eseguirli in modo da rimuovere i dispositivi inattivi da Exchange, che impediscono a Intune di individuare i dispositivi non necessari. L'esecuzione degli script garantisce che i dispositivi individuati mediante Exchange possano essere uniti ai dispositivi registrati in Intune nel modo più lineare possibile. Eseguire questi script prima di configurare Intune Exchange Connector. Gli script di PowerShell fanno parte dell'installazione dello strumento di importazione dati di Intune usato per [importare i dati di Configuration Manager in Microsoft Intune](migrate-import-data.md) nell'articolo successivo. Per informazioni dettagliate e per scaricare gli script, visitare la pagina di GitHub dello [strumento di importazione dati di Microsoft Intune](https://github.com/ConfigMgrTools/Intune-Data-Importer).
+
+### <a name="steps-to-ensure-conditional-access-works-properly-after-user-migration"></a>Passaggi per garantire il corretto funzionamento dell'accesso condizionale dopo la migrazione degli utenti
+Per il corretto funzionamento dell'accesso condizionale dopo la migrazione degli utenti e per fare in modo che gli utenti continuino ad avere accesso al server di posta elettronica, verificare quanto segue:
+- Se l'impostazione del livello di accesso predefinito di Exchange ActiveSync (DefaultAccessLevel) è Blocca o Quarantena, i dispositivi potrebbero perdere l'accesso alla posta elettronica. 
+- Se Exchange Connector è installato in Configuration Manager e il **livello di accesso quando un dispositivo mobile non è gestito da una regola** ha un valore **Consenti accesso**, è necessario installare la [versione locale di Exchange Connector](https://docs.microsoft.com/en-us/intune/conditional-access-exchange-create#configure-exchange-on-premises-access) in Intune prima di eseguire la migrazione degli utenti. Configurare l'impostazione del livello di accesso predefinito in Intune nel pannello **Exchange locale** in **Impostazioni avanzate dell'accesso a Exchange ActiveSync**. Per informazioni dettagliate, vedere [Configurare l'accesso locale a Exchange](https://docs.microsoft.com/intune/conditional-access-exchange-create#configure-exchange-on-premises-access).
+- Usare la stessa configurazione per entrambi i connettori. L'ultimo connettore configurato sovrascrive le impostazioni dell'organizzazione di ActiveSync scritte in precedenza dall'altro connettore. Se si configurano i connettori in modo diverso, potrebbero verificarsi modifiche impreviste dell'accesso condizionale.
+- Rimuovere gli utenti dall'accesso condizionale in Configuration Manager una volta eseguita la migrazione alla versione autonoma di Intune.
 
 ## <a name="configure-the-microsoft-intune-certificate-connector"></a>Configurare Connettore di certificati di Microsoft Intune
 Se si usa il servizio Registrazione dispositivi di rete (NDES) per l'emissione di certificati tramite SCEP, è necessario configurare Connettore di certificati di Microsoft Intune. Il computer che ospita NDES Connector in Intune non può essere lo stesso computer che ospita NDES Connector in Configuration Manager. Per informazioni dettagliate, vedere [Configurare e gestire i certificati SCEP con Intune](https://docs.microsoft.com/en-us/intune/certificates-scep-configure). 

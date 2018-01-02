@@ -3,7 +3,7 @@ title: Data warehouse
 titleSuffix: Configuration Manager
 description: Punto di servizio e database del data warehouse per System Center Configuration Manager
 ms.custom: na
-ms.date: 8/25/2017
+ms.date: 12/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision:
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 2e6ac983e5ca63dacb77f2e26515d7123748d64d
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 4d420ce623c834401383231d00e3f361342f2d2e
+ms.sourcegitcommit: 52b956cfe32c3f06ae68d6ba6fc3244ce5a66325
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 12/06/2017
 ---
 #  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>Punto di servizio del data warehouse per System Center Configuration Manager
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -27,9 +27,7 @@ ms.lasthandoff: 12/04/2017
 A partire dalla versione 1702 è possibile usare il punto di servizio del data warehouse per archiviare e creare report di dati cronologici a lungo termine per la distribuzione di Configuration Manager.
 
 > [!TIP]
-> Il punto di servizio del data warehouse è una funzionalità di versione non definitiva introdotta con la versione 1702. Per abilitarla, vedere [Usare le funzionalità di versioni non definitive](/sccm/core/servers/manage/pre-release-features).
-
-> A partire dalla versione 1706, questa funzionalità non è più una funzionalità di versione non definitiva.
+> Questa funzionalità è stata introdotta per la prima volta nella versione 1702 come [funzionalità in versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1706, questa funzionalità non è più una funzionalità di versione non definitiva.
 
 Il data warehouse supporta fino a 2 TB di dati, con timestamp per il rilevamento delle modifiche. L'archiviazione dei dati viene eseguita tramite sincronizzazioni automatizzate dal database del sito di Configuration Manager al database del data warehouse. Queste informazioni diventano quindi accessibili dal punto di Reporting Services. I dati sincronizzati con il database del data warehouse vengono mantenuti per tre anni. Periodicamente, un'attività predefinita rimuove i dati che hanno superato i tre anni.
 
