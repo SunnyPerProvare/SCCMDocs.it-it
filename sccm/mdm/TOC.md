@@ -44,15 +44,15 @@
 ## [Sincronizzare dispositivi registrati in Intune](deploy-use/sync-intune-device.md)
 
 ## [Gestire le applicazioni](deploy-use/management-tasks-applications.md)
-### [Creare applicazioni iOS](deploy-use/creating-ios-applications.md)
+### [Creazione di applicazioni iOS](deploy-use/creating-ios-applications.md)
 ### [Criteri di configurazione delle app iOS](deploy-use/configure-ios-apps-with-app-configuration-policies.md)
 ### [App iOS acquistate con Volume Purchase Program](deploy-use/manage-volume-purchased-ios-apps.md)
-### [Creare applicazioni Windows Phone](deploy-use/creating-windows-phone-applications.md)
+### [Creazione di applicazioni Windows Phone](deploy-use/creating-windows-phone-applications.md)
 ### [Creazione di applicazioni Android](deploy-use/creating-android-applications.md)
 ### [Criteri di configurazione delle app Android](deploy-use/configure-android-apps-with-app-configuration-policies.md)
 ### [Criteri di gestione delle applicazioni mobili](deploy-use/protect-apps-using-mam-policies.md)
 ### [Criteri di Managed Browser](deploy-use/manage-internet-access-using-managed-browser-policies.md)
-### [App di Windows Store per le aziende](deploy-use/windows-store-for-business.md)
+### [App di Microsoft Store per le aziende](deploy-use/windows-store-for-business.md)
 
 ## [Gestire una sottoscrizione di Intune](deploy-use/manage-intune-subscriptions.md)
 ## [Modificare l'autorità MDM](deploy-use/change-mdm-authority.md)

@@ -11,10 +11,10 @@
 # Distribuire e usare
 
 ## [Creare applicazioni](deploy-use/create-applications.md)
-### [Creare applicazioni per computer Mac](get-started/creating-mac-computer-applications.md)
+### [Creazione di applicazioni per computer Mac](get-started/creating-mac-computer-applications.md)
 ### [Creare applicazioni Windows](get-started/creating-windows-applications.md)
 ### [Creare applicazioni server Linux e UNIX](get-started/creating-linux-and-unix-server-applications.md)
-### [Creare applicazioni Windows Embedded](get-started/creating-windows-embedded-applications.md)
+### [Creazione di applicazioni Windows Embedded](get-started/creating-windows-embedded-applications.md)
 ### [Creare condizioni globali](deploy-use/create-global-conditions.md)
 ### [Pacchetti e programmi](deploy-use/packages-and-programs.md)
 
@@ -31,7 +31,7 @@
 ## Gestire le applicazioni
 ### [Attività di gestione](deploy-use/management-tasks-applications.md)
 ### [Affinità utente dispositivo](deploy-use/link-users-and-devices-with-user-device-affinity.md)
-### [Applicazioni acquistate con Volume Purchase Program da Windows Store per le aziende](deploy-use/manage-apps-from-the-windows-store-for-business.md)
+### [App acquistate con Volume Purchase Program da Microsoft Store per le aziende](deploy-use/manage-apps-from-the-windows-store-for-business.md)
 ### [Ambienti virtuali App-V](deploy-use/create-app-v-virtual-environments.md)
 
 ## Aggiornare e ritirare applicazioni
