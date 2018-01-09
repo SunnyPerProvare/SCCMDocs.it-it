@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: b9b22655-b8c1-461f-8047-3a7e906f647a
 caps.latest.revision: "12"
 caps.handback.revision: "0"
-author: Dougeby
-ms.author: dougeby
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: e0996f57d7d9fbcb9926c16f718b65073c78b3bc
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: b70e8ecd32957f19b9738d14c94c7e54b0312ea5
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="manage-operating-system-upgrade-packages-with-system-center-configuration-manager"></a>Gestire i pacchetti di aggiornamento del sistema operativo con System Center Configuration Manager
 
@@ -47,7 +47,7 @@ Un pacchetto di aggiornamento in System Center Configuration Manager contiene i 
     > [!IMPORTANT]  
     >  Limitare l'accesso ai file di origine dell'installazione per impedire manomissioni indesiderate.  
 
-5.  Nella pagina **Generale** specificare le seguenti informazioni e quindi fare clic su **Avanti**. Queste informazioni sono utili per scopi di identificazione quando sono presenti più programmi di installazione del sistema operativo.  
+5.  On the **Generale** specificare le seguenti informazioni e quindi fare clic su **Avanti**. Queste informazioni sono utili per scopi di identificazione quando sono presenti più programmi di installazione del sistema operativo.  
 
     -   **Nome**: specificare il nome del programma di installazione del sistema operativo.  
 

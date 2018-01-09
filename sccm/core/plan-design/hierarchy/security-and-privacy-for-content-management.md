@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5f38b726-dc00-433a-ba05-5b7dbb0d8e99
 caps.latest.revision: "8"
-author: aaroncz
+author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 33a4ac18b95fbafeb0451a7ba8c2e1c757866eda
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: 67d91f9a6b82e1f00aa8f7ab9314dfc0df686d96
+ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="security-and-privacy-for-content-management-for-system-center-configuration-manager"></a>Sicurezza e privacy per la gestione dei contenuti per System Center Configuration Manager
 
@@ -31,7 +31,7 @@ Questo argomento contiene informazioni sulla sicurezza e la privacy per la gesti
 
 -   [Sicurezza e privacy per gli aggiornamenti software in System Center Configuration Manager](/sccm/sum/plan-design/security-and-privacy-for-software-updates)  
 
--   [Sicurezza e privacy per la distribuzione del sistema operativo in System Center Configuration Manager](../../../osd/plan-design/security-and-privacy-for-operating-system-deployment.md)  
+-   [Security and privacy for operating system deployment in System Center Configuration Manager](../../../osd/plan-design/security-and-privacy-for-operating-system-deployment.md) (Sicurezza e privacy per la distribuzione del sistema operativo in System Center Configuration Manager)  
 
 ##  <a name="BKMK_Security_ContentManagement"></a> Procedure di sicurezza consigliate per la gestione del contenuto  
  Utilizzare le seguenti procedure ottimali di protezione per la gestione dei contenuti:  

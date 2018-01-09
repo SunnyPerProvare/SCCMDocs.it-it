@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: 84802d55-112e-4f7f-9a48-74a80d91a0f4
 caps.latest.revision: "10"
 caps.handback.revision: "0"
-author: Dougeby
-ms.author: dougeby
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 43b9f954d6cca162606136c9b64a72daebee7f3d
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: f03f5d0e8c6d4653e25e50d615d5d50e00d9cda0
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="manage-drivers-in-system-center-configuration-manager"></a>Gestire i driver in System Center Configuration Manager
 
@@ -77,7 +77,7 @@ System Center Configuration Manager include un catalogo di driver che è possibi
 ###  <a name="BKMK_PackageActions"></a> Azioni aggiuntive per i pacchetti driver  
  Durante la selezione di uno o più pacchetti driver dal nodo **Pacchetti driver** è possibile eseguire azioni aggiuntive per gestire i pacchetti driver. Le azioni includono le seguenti:  
 
-|Azione|Descrizione|  
+|Action|Descrizione|  
 |------------|-----------------|  
 |**Crea file di contenuto di pre-installazione**|Crea file che possono essere utilizzati per importare manualmente il contenuto e i metadati associati. Utilizzare il contenuto pre-installazione quando si dispone di larghezza di banda di rete bassa tra il server del sito e i punti di distribuzione in cui è archiviato il pacchetto driver.|  
 |**Eliminazione**|Rimuove il pacchetto driver dal nodo **Pacchetti driver** .|  
@@ -231,7 +231,7 @@ System Center Configuration Manager include un catalogo di driver che è possibi
 ###  <a name="BKMK_DriverActions"></a> Azioni aggiuntive per i driver di dispositivo  
  Durante la selezione di uno o più driver di dispositivo dal nodo **Driver** è possibile eseguire azioni aggiuntive per gestire i driver di dispositivo. Le azioni includono le seguenti:  
 
-|Azione|Descrizione|  
+|Action|Descrizione|  
 |------------|-----------------|  
 |**Categorizza**|Consente di cancellare, gestire o impostare una categoria amministrativa per i driver di dispositivo selezionati.|  
 |**Eliminazione**|Rimuove il driver di dispositivo dal nodo **Driver** e dai punti di distribuzione associati.|  

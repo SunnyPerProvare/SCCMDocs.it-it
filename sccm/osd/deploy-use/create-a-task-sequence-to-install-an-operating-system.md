@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 217c8a0e-5112-420e-a325-2a6d75326290
 caps.latest.revision: "13"
-author: Dougeby
-ms.author: dougeby
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 47210939c66bb31d173c7e406a66c764d5008879
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 433a1778213b357c6c41eb20e4b975b2e682050d
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="create-a-task-sequence-to-install-an-operating-system-in-system-center-configuration-manager"></a>Creare una sequenza di attività per installare un sistema operativo in System Center Configuration Manager
 
@@ -65,9 +65,9 @@ Usare le sequenze di attività in System Center Configuration Manager per instal
 
 6.  Nella pagina **Installa Windows** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   **Pacchetto immagine**: specificare il pacchetto che contiene l'immagine del sistema operativo da installare. Per altre informazioni, vedere [Gestire le immagini del sistema operativo](../get-started/manage-operating-system-images.md).  
+    -   **Pacchetto immagine**: specificare il pacchetto che contiene l'immagine del sistema operativo da installare. Per altre informazioni, vedere [Manage operating system images](../get-started/manage-operating-system-images.md) (Gestire le immagini del sistema operativo).  
 
-    -   **Immagine**: se il pacchetto immagine del sistema operativo contiene più immagini, specificare l'indice dell'immagine del sistema operativo da installare.  
+    -   **Immagine**: se il pacchetto dell'immagine del sistema operativo contiene più immagini, specificare l'indice dell'immagine del sistema operativo da installare.  
 
     -   **Creare partizioni e formattare il computer di destinazione prima di installare il sistema operativo**: specificare se si desidera che la sequenza di attività partizioni e formatti il computer di destinazione prima dell'installazione del sistema operativo.  
 
@@ -125,16 +125,16 @@ Usare le sequenze di attività in System Center Configuration Manager per instal
 
 |Nome del passaggio della sequenza di attività di Creazione guidata della sequenza di attività|Nome del passaggio equivalente dell'editor delle sequenze di attività|  
 |---------------------------------------------------------|-----------------------------------------------|  
-|Archiviazione dello stato utente richiesta|Richiedi archiviazione stati|  
-|Acquisizione file e impostazioni utente|Acquisisci stato utente|  
-|Archiviazione dello stato utente di rilascio|Rilascia archiviazione stati|  
+|Richiedi archiviazione stato utente|Richiedi archiviazione stati|  
+|Acquisisci file utente e impostazioni|Acquisisci stato utente|  
+|Rilascia archiviazione stato utente|Rilascia archiviazione stati|  
 |Riavvia in Windows PE|Riavvia in Windows PE o usando il disco rigido|  
 |Disco di partizione 0|Formato e disco partizione|  
-|Ripristinare file e impostazioni utente|Ripristina stato utente|  
+|Ripristina file utente e impostazioni|Ripristina stato utente|  
 
 |Passaggio o gruppo di sequenze di attività|Descrizione|  
 |---------------------------------|-----------------|  
-|Acquisire i File e impostazioni - **(nuovo gruppo di sequenze attività)**|Creare un gruppo di sequenze di attività. Un gruppo di sequenze di attività consente di mantenere simile passaggi della sequenza attività per una migliore organizzazione e il controllo degli errori.<br /><br /> Questo gruppo contiene i passaggi necessari per l'acquisizione di file e impostazioni dal sistema operativo del computer di riferimento.|  
+|Acquisire i File e impostazioni - **(nuovo gruppo di sequenze attività)**|Creare un gruppo di sequenze di attività. Un gruppo di sequenze di attività consente di mantenere assieme i passaggi delle sequenze di attività per una migliore organizzazione e un maggiore controllo degli errori.<br /><br /> Questo gruppo contiene i passaggi necessari per l'acquisizione di file e impostazioni dal sistema operativo del computer di riferimento.|  
 |Acquisisci impostazioni Windows|Usare questo passaggio della sequenza di attività per identificare le impostazioni di Microsoft Windows per l'acquisizione dal computer di riferimento. È possibile acquisire il nome computer, informazioni sull'utente e sull'organizzazione e le impostazioni di fuso orario.|  
 |Acquisisci impostazioni di rete|Usare questo passaggio della sequenza di attività per acquisire le impostazioni di rete dal computer di riferimento. È possibile acquisire l'appartenenza al gruppo di lavoro o dominio del computer di riferimento e impostazione delle informazioni relative alla scheda di rete.|  
 |Acquisire i file utente e impostazioni - **(nuovo gruppo sequenza attività secondarie)**|Creare un gruppo di sequenze di attività all'interno di un gruppo di sequenze di attività. Questo sottogruppo contiene i passaggi necessari per acquisire dati dello stato utente. Analogamente al gruppo iniziale aggiunto, questo sottogruppo tiene uniti i passaggi delle sequenze di attività per una migliore organizzazione e un maggiore controllo degli errori.|  
@@ -155,4 +155,4 @@ Usare le sequenze di attività in System Center Configuration Manager per instal
 |Ripristina file utente e impostazioni - **(Nuovo sottogruppo di sequenze di attività)**|Creare un altro gruppo secondario di sequenze attività. Questo sottogruppo contiene i passaggi necessari per ripristinare i file utente e le impostazioni.|  
 |Richiedi archiviazione stato utente|Utilizzare questo passaggio della sequenza attività per richiedere l'accesso a un punto di migrazione stato archiviazione i dati dello stato utente.|  
 |Ripristina file utente e impostazioni|Usare questo passaggio della sequenza di attività per avviare l'Utilità di migrazione stato utente e ripristinare lo stato utente e le impostazioni in un computer di destinazione.|  
-|Archiviazione dello stato utente di rilascio|Usare questo passaggio della sequenza di attività per segnalare al punto di migrazione stato che i dati dello stato utente non sono più necessari.|  
+|Rilascia archiviazione stato utente|Usare questo passaggio della sequenza di attività per segnalare al punto di migrazione stato che i dati dello stato utente non sono più necessari.|  

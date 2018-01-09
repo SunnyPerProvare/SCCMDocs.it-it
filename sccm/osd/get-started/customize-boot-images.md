@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: 9cbfc406-d009-446d-8fee-4938de48c919
 caps.latest.revision: "15"
 caps.handback.revision: "0"
-author: Dougeby
-ms.author: dougeby
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 4c1d721c9fb0b01f15f1f0468bc797ffffb9e345
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 184768e87406051508c8dcacfa63db5ff85c3732
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="customize-boot-images-with-system-center-configuration-manager"></a>Personalizzare le immagini d'avvio con System Center Configuration Manager
 
@@ -208,7 +208,7 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 5.  Dopo avere montato l'immagine di avvio, usare DISM per aggiungere componenti facoltativi all'immagine di avvio. In Windows PE 3.1, ad esempio, i componenti facoltativi si trovano in <*PercorsoInstallazione*>\Windows AIK\Tools\PETools\amd64\WinPE_FPs\\.  
 
     > [!NOTE]
-    >  Questa procedura usa il seguente percorso per i componenti facoltativi: C:\Programmi\Windows AIK\Tools\PETools\amd64\WinPE_FPs. Il percorso da usare potrebbe essere diverso a seconda delle opzioni di installazione e della versione scelte per Windows AIK.  
+    >  Questa procedura utilizza il seguente percorso per i componenti facoltativi: C:\Programmi\Windows AIK\Strumenti\StrumentiPE\amd64\WinPE_FPs. Il percorso da usare potrebbe essere diverso a seconda delle opzioni di installazione e della versione scelte per Windows AIK.  
 
      Digitare quanto segue per installare i componenti facoltativi:  
 

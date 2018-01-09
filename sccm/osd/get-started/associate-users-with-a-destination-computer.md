@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: 07c3c6d9-f056-4c4d-bc70-ede5ca933807
 caps.latest.revision: "9"
 caps.handback.revision: "0"
-author: Dougeby
-ms.author: dougeby
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 4c0231057c2ac154b050cc7020eb1fbb4ed93228
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: a6aa06da33cbc537db30c7c885d9ca449ff7221c
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="associate-users-with-a-destination-computer-in-system-center-configuration-manager"></a>Associare gli utenti a un computer di destinazione in System Center Configuration Manager
 
@@ -39,7 +39,7 @@ Quando si utilizza System Center Configuration Manager per la distribuzione del 
 ## <a name="how-to-specify-a-user-when-you-deploy-operating-systems"></a>Come specificare un utente durante la distribuzione dei sistemi operativi  
  Nella seguente tabella sono elencate le azioni che consentono di integrare l'affinità utente dispositivo nelle distribuzioni del sistema operativo. È possibile integrare l'affinità utente-dispositivo nelle distribuzioni PXE, nelle distribuzioni dei supporti di avvio e nelle distribuzioni dei supporti pre-installati.  
 
-|Azione|Altre informazioni|  
+|Action|Altre informazioni|  
 |------------|----------------------|  
 |Creare una sequenza attività che includa la variabile **SMSTSAssignUsersMode**|Aggiungere la variabile **SMSTSAssignUsersMode** all'inizio della sequenza di attività usando il passaggio della sequenza di attività  [Set Task Sequence Variable](../../osd/understand/task-sequence-steps.md#BKMK_SetTaskSequenceVariable) . Questa variabile specifica la modalità di gestione delle informazioni utente da parte della sequenza attività.<br /><br /> Impostare la variabile su uno dei seguenti valori:<br /><br /> <br /><br /> **Automatica**: la sequenza attività crea automaticamente una relazione tra l'utente e il computer di destinazione, quindi distribuisce il sistema operativo.<br /><br /> **In sospeso**: la sequenza attività crea una relazione tra l'utente e il computer di destinazione, ma attende l'approvazione dell'utente amministratore prima di distribuire il sistema operativo.<br /><br /> **Disattivata**: la sequenza attività non associa un utente al computer di destinazione e continua a distribuire il sistema operativo.<br /><br /> <br /><br /> È inoltre possibile impostare la variabile su un computer o una raccolta. Per altre informazioni sulle variabili predefinite, vedere [Task sequence built-in variables](../../osd/understand/task-sequence-built-in-variables.md) (Variabili predefinite della sequenza di attività).|  
 |Creare un comando di preavvio che raccoglie le informazioni utente|Il comando di preavvio può essere uno script di Visual Basic (VB) con una casella di input oppure un'applicazione HTML (HTA) che convalida i dati utente immessi.<br /><br /> Il comando di preavvio deve impostare la variabile **SMSTSUdaUsers** utilizzata durante l'esecuzione della sequenza attività. Questa variabile può essere impostata su un computer, una raccolta o una variabile della sequenza attività. Quando si aggiungono più utenti, usare il seguente formato: *dominio\utente1, dominio\utente2, dominio\utente3*.|  

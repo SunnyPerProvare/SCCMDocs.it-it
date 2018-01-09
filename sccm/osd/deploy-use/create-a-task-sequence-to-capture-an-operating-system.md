@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: 25e4ac68-0e78-4bbe-b8fc-3898b372c4e8
 caps.latest.revision: "19"
 caps.handback.revision: "0"
-author: Dougeby
-ms.author: dougeby
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 48530c177a03b66dbc126025ca61e0078bc89d9f
-ms.sourcegitcommit: 5ec9f8c312688bf7f4de4d6007b121d743b80c4d
+ms.openlocfilehash: c376a6b600e775f532410ad467b99cda1fbfc575
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="create-a-task-sequence-to-capture-an-operating-system-in-system-center-configuration-manager"></a>Creare una sequenza di attività per acquisire un sistema operativo in System Center Configuration Manager
 
@@ -63,7 +63,7 @@ Quando si usa una sequenza di attività per distribuire un sistema operativo in 
 
 5.  Nella pagina **Informazioni sequenza di attività** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   **Nome sequenza di attività**: specificare un nome che identifichi la sequenza di attività.  
+    -   **Nome sequenza di attività**: specificare un nome che identifica la sequenza di attività.  
 
     -   **Descrizione**: specificare una descrizione dell'attività eseguita dalla sequenza di attività, ad esempio una descrizione del sistema operativo creato dalla sequenza di attività.  
 

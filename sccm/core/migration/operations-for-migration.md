@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c28e3492-851a-40fc-ba13-67ebc2d8b41a
 caps.latest.revision: "6"
-author: aaroncz
+author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 53ff3a7ec3d1ede5fe098bee383aee2412deaad1
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: 286be682da590ca7a03717d29ff9b3714d4fac42
+ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="operations-for-migrating-to-system-center-configuration-manager"></a>Operazioni per la migrazione a System Center Configuration Manager
 
@@ -163,7 +163,7 @@ Per la migrazione in System Center Configuration Manager, è possibile eseguire 
 
 2.  Nell'area di lavoro **Amministrazione** espandere **Migrazione**e quindi scegliere **Processi di migrazione**.  
 
-3.  Scegliere il processo di migrazione da modificare. Nella scheda **Home**, nel gruppo **Proprietà**, scegliere **Proprietà**.  
+3.  Scegliere il processo di migrazione da modificare. Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
 
 4.  Nelle proprietà del processo di migrazione selezionare la scheda **Impostazioni**, modificare il tempo di esecuzione per il processo di migrazione e quindi scegliere **OK**.  
 
