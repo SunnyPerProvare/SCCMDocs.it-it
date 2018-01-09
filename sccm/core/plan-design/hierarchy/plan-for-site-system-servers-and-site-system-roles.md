@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 0a7415ba-2c53-4433-983e-780e92aa662f
 caps.latest.revision: "11"
-author: aaroncz
+author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: ee47f96dd40d31a4783c4d175c66e741c216046a
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: b4894e4122231e3a8a45e5b3fb687dd3fd00ad08
+ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="plan-for-site-system-servers-and-site-system-roles-for-system-center-configuration-manager"></a>Pianificare i server e i ruoli del sistema del sito per System Center Configuration Manager
 
@@ -102,7 +102,7 @@ Dopo l'installazione di un sito, è possibile spostare la posizione di alcuni ru
 
 -   **Punto di Reporting Services.** Ruolo del sistema del sito che si integra con SQL Server Reporting Services per creare e gestire rapporti per Configuration Manager. Questo ruolo è supportato nei siti primari e nel sito di amministrazione centrale ed è possibile installarne più istanze in un sito supportato. Per altre informazioni, vedere [Pianificazione per la creazione di report in System Center Configuration Manager](../../../core/servers/manage/planning-for-reporting.md).  
 
--   **Punto di connessione del servizio.** Ruolo del sistema del sito usato per gestire i dispositivi mobili con Microsoft Intune e MDM locale. Questo ruolo carica anche i dati di utilizzo dal sito ed è necessario per rendere disponibili gli aggiornamenti per Configuration Manager nella console di Configuration Manager. Una gerarchia supporta una sola istanza di questo ruolo, che deve trovarsi nel sito di livello superiore della gerarchia, ovvero un sito di amministrazione centrale o il sito primario autonomo. Se si espande il sito primario autonomo in una gerarchia più ampia, è necessario disinstallare questo ruolo dal sito primario per poterlo quindi installare nel sito di amministrazione centrale. Per ulteriori informazioni, vedere [Informazioni sul punto di connessione del servizio in System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
+-   **Punto di connessione del servizio.** Ruolo del sistema del sito usato per gestire i dispositivi mobili con Microsoft Intune e MDM locale. Questo ruolo carica anche i dati di utilizzo dal sito ed è necessario per rendere disponibili gli aggiornamenti per Configuration Manager nella console di Configuration Manager. Una gerarchia supporta una sola istanza di questo ruolo, che deve trovarsi nel sito di livello superiore della gerarchia, ovvero un sito di amministrazione centrale o il sito primario autonomo. Se si espande il sito primario autonomo in una gerarchia più ampia, è necessario disinstallare questo ruolo dal sito primario per poterlo quindi installare nel sito di amministrazione centrale. Per ulteriori informazioni, vedere [About the service connection point in System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
 
 -   **Punto di aggiornamento software.** Ruolo del sistema del sito che si integra con Windows Server Update Services (WSUS) per fornire aggiornamenti software ai client di Configuration Manager. Questo ruolo è supportato in tutti i siti:  
 

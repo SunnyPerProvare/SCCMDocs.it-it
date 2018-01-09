@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ff6e7267-302a-4563-815e-cdc0d1a4b60f
 caps.latest.revision: "12"
-author: Dougeby
-ms.author: dougeby
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 4b10aab0674e4066b399c636ecf2226ae109260e
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: a26fc3daf17aefe24a46ece561fc2ceaf5284ffb
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="create-prestaged-media-with-system-center-configuration-manager"></a>Creare supporti pre-installati con System Center Configuration Manager
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 10/12/2017
 I supporti preinstallati in System Center Configuration Manager sono file WIM (Windows Imaging Format) che possono essere installati in un computer bare metal dal produttore o in un centro di gestione temporanea aziendale non connesso all'ambiente di Configuration Manager.  
 Il supporto pre-installato contiene l'immagine di avvio usata per avviare il computer di destinazione e l'immagine del sistema operativo applicata al computer di destinazione. È anche possibile specificare applicazioni, pacchetti e pacchetti driver da includere come parte del supporto pre-installato. La sequenza di attività che distribuisce il sistema operativo non è inclusa nel supporto. Il supporto pre-installato viene applicato al disco rigido di un nuovo computer prima che il computer venga inviato all'utente finale. Usare i supporti preinstallati per gli scenari di distribuzione del sistema operativo seguenti:  
 
--   [Creare un'immagine per un OEM in modalità produttore computer o per un rivenditore locale](../../osd/deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
+-   [Creare un'immagine per un OEM presso un produttore computer o un deposito locale](../../osd/deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
 
 -   [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)  
 
@@ -111,7 +111,7 @@ Il supporto pre-installato contiene l'immagine di avvio usata per avviare il com
     > [!IMPORTANT]  
     >  L'architettura dell'immagine di avvio distribuita deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86.  
 
-    -   Nella casella **Immagine di avvio** specificare l'immagine di avvio per avviare il computer di destinazione. Per altre informazioni, vedere la sezione relativa alla [gestione delle immagini di avvio](../get-started/manage-boot-images.md).  
+    -   Nella casella **Immagine di avvio** specificare l'immagine di avvio per avviare il computer di destinazione. Per altre informazioni, vedere [Manage boot images](../get-started/manage-boot-images.md) (Gestire le immagini d'avvio).  
 
     -   Nella casella **Punto di distribuzione** specificare il punto di distribuzione in cui si trova l'immagine di avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
 
@@ -124,7 +124,7 @@ Il supporto pre-installato contiene l'immagine di avvio usata per avviare il com
 
 10. Nella pagina **Immagini** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
 
-    -   Nella casella **Pacchetto immagine** specificare l'immagine del sistema operativo. Per altre informazioni, vedere [Gestire le immagini del sistema operativo](../get-started/manage-operating-system-images.md).  
+    -   Nella casella **Pacchetto immagine** specificare l'immagine del sistema operativo. Per altre informazioni, vedere [Manage operating system images](../get-started/manage-operating-system-images.md) (Gestire le immagini del sistema operativo).  
 
     -   Se il pacchetto contiene più immagini del sistema operativo, nella casella **Pacchetto immagine** specificare l'immagine da distribuire.  
 

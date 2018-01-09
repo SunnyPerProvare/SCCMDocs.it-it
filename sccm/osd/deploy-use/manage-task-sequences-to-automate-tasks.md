@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a1f099f1-e9b5-4189-88b3-f53e3b4e4add
 caps.latest.revision: "10"
-author: Dougeby
-ms.author: dougeby
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 44e6afbfac3ef1e8318991854c8fdd22ead4c6ed
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: b3071905a368ff9bc8e932d91f9b1e7d707b106b
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-system-center-configuration-manager"></a>Gestire le sequenze di attività per automatizzare le attività in System Center Configuration Manager
 
@@ -221,7 +221,7 @@ Verrà visualizzato il messaggio di notifica seguente quando l'utente finale apr
     > [!NOTE]  
     >  Se l'opzione **Distribuisci** non disponibile, la sequenza di attività presenta un riferimento non valido.  Correggere il riferimento e quindi tentare nuovamente la distribuzione della sequenza di attività.  
 
-5.  Nella pagina **Generale** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
+5.  On the **Generale** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
 
     -   **Sequenza di attività**: specificare la sequenza di attività da distribuire. Per impostazione predefinita, in questa casella viene visualizzata la sequenza di attività selezionata.  
 

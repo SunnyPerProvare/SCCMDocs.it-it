@@ -14,11 +14,11 @@ ms.assetid: 2e68dc12-6776-437a-9138-45cd7d4bf9cf
 author: erikje
 ms.author: erikje
 manager: angrobe
-ms.openlocfilehash: e970dff4ea295694fcc5cf80e238baf2c9d081b5
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: b740c422a71e625ccc110a043028cf986cdffb20
+ms.sourcegitcommit: ed8b2438ef85c9160741ef61f9171be41dd1ae0a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/17/2017
 ---
 # <a name="capabilities-in-technical-preview-1711-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1711 per System Center Configuration Manager
 
@@ -64,7 +64,7 @@ In questa anteprima tecnica è stato migliorato il passaggio Esegui la sequenza 
  - Integrazione con la verifica della distribuzione.
  - Il passaggio Esegui la sequenza di attività può ora essere usato a più livelli di sequenze di attività e non solo in un'unica relazione padre/figlio. Poiché le relazioni a più livelli aggiungono complessità, usarle con attenzione. Queste relazioni vengono comunque controllate per individuare i riferimenti circolari.
 
-### <a name="try-it-out"></a>Prova subito!  
+### <a name="try-it-out"></a>Verifica  
 
 Provare a completare le attività seguenti e quindi inviare **Feedback** dalla scheda **Home** della barra multifunzione per comunicarci come è andata:
 
@@ -75,7 +75,7 @@ Provare a completare le attività seguenti e quindi inviare **Feedback** dalla s
 
 Con questa anteprima è possibile consentire a un utente finale di interagire con un'applicazione durante l'esecuzione della sequenza di attività. Ad esempio, è possibile eseguire un processo di installazione che chiede all'utente finale diverse opzioni. Nei programmi di installazione di alcune applicazioni non è possibile disattivare le richieste all'utente, in quanto il processo di installazione può richiedere valori di configurazione specifici noti solo all'utente. Questa funzionalità consente di gestire questi scenari di installazione.
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 
 Provare a completare le attività seguenti e quindi usare **Commenti e suggerimenti** nella scheda **Home** della barra multifunzione per informare Microsoft sull'andamento della procedura:
 
@@ -109,20 +109,6 @@ Durante l'avanzamento della sequenza di attività, l'interfaccia di installazion
 1. Creare o modificare un'applicazione.
 2. Distribuire l'applicazione in un client.
 3. Installare l'applicazione da Software Center. Verrà visualizzata l'interfaccia di installazione dell'applicazione. L'utente finale deve seguire la procedura guidata di installazione dell'applicazione per installare correttamente l'applicazione.
-
-## <a name="new-compliance-policy-options-for-windows-10"></a>Nuovi criteri di conformità per Windows 10
-Di seguito sono indicati i nuovi criteri di conformità che è possibile configurare per i dispositivi Windows 10.
-- **Require Firewall** (Richiedi firewall).  Specifica se in un dispositivo deve essere abilitato un firewall per il monitoraggio di tutte le reti.
-- **Require User Account Control** (Richiedi Controllo account utente). Specifica se in un dispositivo deve essere abilitata la funzionalità Controllo account utente.
-- **Defender**:
-  - **Require Windows Defender Antivirus** (Richiedi Windows Defender Antivirus).  Specifica che in un dispositivo deve essere abilitato Windows Defender Antivirus.
-  - **Windows Defender Antivirus version** (Versione di Windows Defender Antivirus).  Specifica la versione minima delle definizioni di spyware che deve essere installata in un dispositivo.
-  - **Require current Windows Defender Antivirus signature** (Richiedi firma di Windows Defender Antivirus aggiornata). Consente di verificare che la firma di Windows Defender Antivirus sia aggiornata in un dispositivo.
-  - **Richiedi la protezione in tempo reale**.  Specifica se in un dispositivo deve essere abilitata la protezione in tempo reale di Windows Defender Antivirus.
-- **Valid operating system builds** (Build del sistema operativo valide).  Specifica i requisiti minimi e massimi relativi alle build del sistema operativo.  
-
-Usare la Creazione guidata criteri di conformità per configurare questi criteri e selezionare queste nuove opzioni quando si aggiunge una regola ai criteri configurati.  
-Altre informazioni su come [creare](/sccm/mdm/deploy-use/create-compliance-policy#create-a-compliance-policy) e [distribuire](/sccm/mdm/deploy-use/create-compliance-policy#deploy-a-compliance-policy) criteri di conformità.
 
 
 

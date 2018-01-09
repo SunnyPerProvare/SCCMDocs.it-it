@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: c6b9ccd2-78d9-4f0e-b25a-70d0866300ba
 caps.latest.revision: "21"
 caps.handback.revision: "0"
-author: Dougeby
-ms.author: dougeby
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 533b3942136255dd396df81529dad100d4db0a95
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: ef9ee10c94cea3e9d8437a8d8b3df8427d0cc524
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="create-stand-alone-media-with-system-center-configuration-manager"></a>Creare supporti autonomi con System Center Configuration Manager
 
@@ -156,7 +156,7 @@ Prima di eseguire la Creazione guidata del supporto per la sequenza di attività
 > [!NOTE]  
 >  Per creare supporti autonomi, è necessario utilizzare sempre la procedura guidata supporti sequenza di attività.  
 
-|Gruppo sequenza attività o del passaggio|Descrizione|  
+|Passaggio o gruppo di sequenze di attività|Descrizione|  
 |---------------------------------|-----------------|  
 |Acquisire i File e impostazioni - **(nuovo gruppo di sequenze attività)**|Creare un gruppo di sequenze di attività. Un gruppo di sequenze di attività consente di mantenere simile passaggi della sequenza attività per una migliore organizzazione e il controllo degli errori.|  
 |Acquisisci impostazioni Windows|Utilizzare questo passaggio della sequenza attività per identificare le impostazioni di Microsoft Windows che sono state acquisite dal sistema operativo esistente nel computer di destinazione prima della ricostruzione. È possibile acquisire il nome del computer, utente e informazioni sull'organizzazione e le impostazioni di fuso orario.|  
