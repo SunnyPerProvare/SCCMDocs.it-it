@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: b60a1b9e85b00cbaba54db4ea4cd92a1038c3fcf
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: 1d98cd234b2444873f1ffa5819af74d507dfa9c1
+ms.sourcegitcommit: ba23ff90709a5fde1a63c650ab0d848f441afc43
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Profili VPN nei dispositivi mobili in System Center Configuration Manager
 
@@ -38,17 +38,17 @@ Usare profili VPN in System Center Configuration Manager per distribuire imposta
 
  |Tipo di connessione|iOS e MacOS X|Android|Windows 8.1|Windows RT|Windows RT 8.1|Windows Phone 8.1|Windows 10 Desktop e Mobile|  
  |---------------------|----------------------|-------------|-----------------|----------------|--------------------|-----------------------|-----------------------------------|  
- |Cisco AnyConnect|Sì|Sì|No|No|No|No|Sì|
+ |Cisco AnyConnect|Sì|Sì|No|No|No|No|No|
  |Cisco (IPSec)|Solo iOS|No|No|No|No|No|No|  
- |Pulse Secure|Sì|Sì|Sì|No|Yes|Sì|Sì|  
- |F5 Edge Client|Yes|Sì|Sì|No|Yes|Sì|Yes|  
- |Dell SonicWALL Mobile Connect|Sì|Sì|Sì|No|Yes|Sì|Sì|  
- |VPN mobile Check Point|Sì|Sì|Sì|No|Yes|Sì|Sì|  
- |Microsoft SSL (SSTP)|No|No|Yes|Sì|Sì|No|No|  
- |Microsoft Automatico|No|No|Yes|Sì|Sì|No|Sì|  
- |IKEv2|Sì (criteri personalizzati iOS 9 e versioni successive)|No|Yes|Sì|Sì|Sì|Sì|  
- |PPTP|Sì|No|Yes|Sì|Sì|No|Sì|  
- |L2TP|Sì|No|Yes|Sì|Sì|No|Sì (URI OMA)|  
+ |Pulse Secure|Sì|Sì|Sì|No|Sì|Sì|Sì|  
+ |F5 Edge Client|Sì|Sì|Sì|No|Sì|Sì|Sì|  
+ |Dell SonicWALL Mobile Connect|Sì|Sì|Sì|No|Sì|Sì|Sì|  
+ |VPN mobile Check Point|Sì|Sì|Sì|No|Sì|Sì|Sì|  
+ |Microsoft SSL (SSTP)|No|No|Sì|Sì|Sì|No|No|  
+ |Microsoft Automatico|No|No|Sì|Sì|Sì|No|Sì|  
+ |IKEv2|Sì (criteri personalizzati iOS 9 e versioni successive)|No|Sì|Sì|Sì|Sì|Sì|  
+ |PPTP|Sì|No|Sì|Sì|Sì|No|Sì|  
+ |L2TP|Sì|No|Sì|Sì|Sì|No|Sì (URI OMA)|  
 
 ## <a name="create-vpn-profiles"></a>Creare profili VPN
 Per informazioni generali sulla creazione di profili VPN, vedere [Come creare profili VPN in System Center Configuration Manager](../../protect/deploy-use/create-vpn-profiles.md).
@@ -120,7 +120,7 @@ Per informazioni generali sulla creazione di profili VPN, vedere [Come creare pr
 
 4. Configurare altre impostazioni DNS (se necessario).  
 
-5. Completa la procedura guidata. Il nuovo profilo VPN viene visualizzato nel nodo **Profilo VPN** dell'area di lavoro **Asset e conformità**.  
+5. Completare la procedura guidata. Il nuovo profilo VPN viene visualizzato nel nodo **Profilo VPN** dell'area di lavoro **Asset e conformità**.  
 
 
 **Distribuisci**: per altre informazioni sulla distribuzione dei profili VPN, vedere [Distribuire profili Wi-Fi, VPN, di posta elettronica e di certificato](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md).

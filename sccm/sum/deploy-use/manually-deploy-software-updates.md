@@ -12,11 +12,11 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 57184274-5fea-4d79-a2b4-22e08ed26daf
-ms.openlocfilehash: 6aaa15ff4908fe7e71e0b9c14fc021a57ccbb727
-ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
+ms.openlocfilehash: becab57c5f04bb67512d665175038f6c477b65b1
+ms.sourcegitcommit: e13bb2c86c40a88e5f4602beb1d31e4adc90e099
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 01/12/2018
 ---
 #  <a name="BKMK_ManualDeploy"></a> Distribuire manualmente gli aggiornamenti software  
 
@@ -226,16 +226,16 @@ ms.lasthandoff: 11/17/2017
         > [!NOTE]  
         >  L'orario di scadenza dell'installazione effettivo corrisponde all'orario specifico configurato più una quantità di tempo casuale di massimo 2 ore. Ciò consente di ridurre il potenziale impatto di un'installazione simultanea degli aggiornamenti software nella distribuzione da parte di tutti i computer client nella raccolta di destinazione.  
         >   
-        >  È possibile configurare l'impostazione **Disabilitare sequenza casuale scadenza** del client **Agente computer** per disabilitare il ritardo della sequenza casuale di installazione per gli aggiornamenti software richiesti. Per altre informazioni, vedere [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
+        >  È possibile configurare l'impostazione **Disabilitare sequenza casuale scadenza** del client **Agente computer** per disabilitare il ritardo della sequenza casuale di installazione per gli aggiornamenti software richiesti. Per ulteriori informazioni, vedere [Computer Agent](../../core/clients/deploy/about-client-settings.md#computer-agent).  
 
 8.  Nella pagina Esperienza utente, è possibile configurare le seguenti impostazioni:  
 
     -   **Notifiche utente**: specificare se visualizzare la notifica degli aggiornamenti software in Software Center sul computer client in base al **Tempo disponibile software** configurato e se visualizzare le notifiche utente sui computer client. Quando **Tipo di distribuzione** è impostato su **Disponibile** nella pagina Impostazioni distribuzione, non è possibile selezionare **Nascondi in Software Center e nascondi tutte le notifiche**.  
 
-    -   **Comportamento scadenza**: *disponibile solo quando **Tipo di distribuzione** *è impostato su **Richiesto**  *nella pagina Impostazioni distribuzione.*   
+    -   **Comportamento scadenza**: disponibile solo quando **Tipo di distribuzione** è impostato su **Richiesto**  nella pagina Impostazioni distribuzione.   
     specificare il comportamento che deve verificarsi quando si raggiunge la data di scadenza per la distribuzione degli aggiornamenti software. Specificare se installare gli aggiornamenti software nella distribuzione. Inoltre, specificare se eseguire un riavvio del sistema dopo l'installazione dell'aggiornamento software indipendentemente da una finestra di manutenzione configurata. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
-    -   **Comportamento riavvio dispositivo**: *disponibile solo quando **Tipo di distribuzione** *è impostato su **Richiesto** *nella pagina Impostazioni distribuzione.*    
+    -   **Comportamento riavvio dispositivo**: disponibile solo quando **Tipo di distribuzione** è impostato su **Richiesto** nella pagina Impostazioni distribuzione.    
     specificare se evitare un riavvio del sistema su server e workstation dopo l'installazione degli aggiornamenti software e se è richiesto un riavvio del sistema per completare l'installazione.  
 
         > [!IMPORTANT]  

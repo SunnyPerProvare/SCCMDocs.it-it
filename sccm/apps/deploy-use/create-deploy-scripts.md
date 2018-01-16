@@ -3,7 +3,7 @@ title: Creare ed eseguire script
 titleSuffix: Configuration Manager
 description: Creare ed eseguire script di PowerShell in dispositivi client.
 ms.custom: na
-ms.date: 11/29/2017
+ms.date: 01/05/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,16 +13,16 @@ ms.topic: article
 ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
 caps.latest.revision: "14"
 caps.handback.revision: "0"
-author: BrucePerlerMS
-ms.author: bruceper
+author: mestew
+ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 1472f697ae8b82e6268433aa6398fcc10a429994
-ms.sourcegitcommit: 5f4a584d4a833b0cc22bd8c47da7dd55aced97fa
+ms.openlocfilehash: b00dfb875ca032032a9782e9950247eb3fceb124
+ms.sourcegitcommit: 9de3d74030b7c3313c34b5cbe2dbe6e18a48c043
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Creare ed eseguire script di PowerShell dalla console di Configuration Manager
+# <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Creare ed eseguire gli script di PowerShell dalla console di Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -75,9 +75,9 @@ Gli script devono essere approvati dal ruolo *responsabile dell'approvazione di 
 1. Nella console di Configuration Manager fare clic su **Raccolta software**.
 2. Nell'area di lavoro **Raccolta software** fare clic su **Script**.
 3. Nell'elenco **Script** scegliere lo script che si desidera approvare o rifiutare e quindi scegliere la scheda **Home** nel gruppo **Script**, quindi fare clic su **Approve/Deny** (Approva/Rifiuta).
-4. Nella finestra di dialogo **Approva o rifiuta script** selezionare **Approva** o **Rifiuta** per lo script e, facoltativamente, immettere un commento sulla decisione.  Se si rifiuta uno script, questo non può essere eseguito sui dispositivi client. <br>
+4. Nella finestra di dialogo **Approva o rifiuta script** selezionare **Approva** o **Rifiuta** per lo script. Facoltativamente, immettere un commento sulla decisione.  Se si rifiuta uno script, questo non può essere eseguito sui dispositivi client. <br>
 ![Script - Approvazione](./media/run-scripts/RS-approval.png)
-5. Completare la procedura guidata. Nell'elenco **Script** la colonna **Stato dell'approvazione** cambia a seconda dell'azione eseguita.
+1. Completare la procedura guidata. Nell'elenco **Script** la colonna **Stato dell'approvazione** cambia a seconda dell'azione eseguita.
 
 ### <a name="allow-users-to-approve-their-own-scripts"></a>Consentire agli utenti di approvare i propri script
 
@@ -106,7 +106,11 @@ La funzionalità Esegui script usa gli ambiti di protezione, una caratteristica 
     - **Importa**: importare uno script di PowerShell nella console. Lo script viene visualizzato nel campo **Script**.
     - **Cancella**: rimuove lo script corrente dal campo Script.
     - **Script**: visualizza lo script attualmente importato. È possibile modificare lo script in questo campo in base alle esigenze.
-1. Completare la procedura guidata. Il nuovo script viene visualizzato nell'elenco **Script** con stato **In attesa di approvazione** . Prima di poter eseguire questo script nei dispositivi client, è necessario approvarlo.
+5. Completare la procedura guidata. Il nuovo script viene visualizzato nell'elenco **Script** con stato **In attesa di approvazione** . Prima di poter eseguire questo script nei dispositivi client, è necessario approvarlo. 
+
+> [!IMPORTANT]
+    >  Evitare di creare uno script per il riavvio del dispositivo o il riavvio dell'agente di Configuration Manager quando si usa la funzionalità Esegui script. Questa operazione potrebbe causare uno stato di riavvio continuo. Se necessario, sono disponibili miglioramenti delle funzionalità di notifica client che supportano il riavvio dei dispositivi, a partire da Configuration Manager versione 1710. La [colonna Riavvio in sospeso](/sccm/core/clients/manage/manage-clients#Restart-clients) può essere utile per identificare i dispositivi che richiedono un riavvio. 
+<!--SMS503978--Script reboot warning-->
 
 ## <a name="script-parameters"></a>Parametri di script
 *Introdotti con la versione 1710*  

@@ -14,11 +14,11 @@ ms.assetid: ca3b4714-2a16-495e-8a17-1d87991d5556
 author: erikje
 ms.author: erikje
 manager: angrobe
-ms.openlocfilehash: d7819dd71a37bc581b629ac180f657134495f50c
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: cfb14ebb7b4f7eb9a008ad4464978778e57514a6
+ms.sourcegitcommit: d029b373113051634ed030545348a458eb7b25f4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="capabilities-in-technical-preview-1706-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1706 per System Center Configuration Manager
 
@@ -180,7 +180,7 @@ La scheda **Content Library** (Raccolta contenuto):
 -   Visualizzare lo **Stato** per il contenuto che sincronizza dal server del sito Attivo al server del sito in modalità Passivo.
 -   È possibile selezionare il contenuto con uno stato di **Non riuscito** e quindi scegliere **Sync selected items** (Sincronizza elementi selezionati) dalla barra multifunzione. Questa azione tenta di sincronizzare nuovamente il contenuto dall'origine del contenuto al server del sito in modalità Passivo. Durante il recupero, lo Stato è visualizzato come **In corso** e dopo la sincronizzazione viene visualizzato come **Operazione riuscita**.
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 Provare a completare le attività seguenti e quindi inviare **Feedback** dalla scheda **Home** della barra multifunzione per comunicarci come è andata:
 -   È possibile installare un sito primario nella modalità Passivo.
 -   È possibile usare la console per alzare di livello il server del sito in modalità Passivo per rendere il server del sito modalità Attivo e confermare la modifica dello stato di entrambi i server del sito.
@@ -196,7 +196,7 @@ Ora è possibile aggiungere facoltativamente attendibilità per file e cartelle 
 2.  Rendere attendibili le app line-of-business che non possono essere distribuite con Configuration Manager
 3.  Rendere attendibili le app incluse in un'immagine di distribuzione del sistema operativo.
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 
 1.  Durante la creazione di un criterio di Device Guard, nella scheda Inclusioni della procedura guidata per la creazione di criteri di Device Guard fare clic su **Aggiungi**.
 2.  Nella finestra di dialogo **Aggiungi file o cartella attendibile** specificare le informazioni sul file o sulla cartella che si desidera considerare attendibile. È possibile specificare un percorso di file o cartella locale oppure connettersi a un dispositivo remoto per cui si dispone dell'autorizzazione per connettersi e specificare un percorso di file o cartella nel dispositivo.
@@ -304,7 +304,7 @@ Le nuove impostazioni consentono di eseguire le funzionalità descritte in [Conf
 
 Se si rimuove la connessione, non viene annullata la registrazione dei dispositivi, ma non è possibile registrarne di nuovi.
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 
 1. Configurare la sezione seguente di impostazioni client (in Servizi cloud) tramite le informazioni contenute in [Come configurare le impostazioni client in System Center Configuration Manager](/sccm/core/clients/deploy/configure-client-settings).
     -   **Registra automaticamente i nuovi dispositivi Windows 10 aggiunti al dominio con Azure Active Directory** impostato su **Sì** (impostazione predefinita) o **No**.
@@ -345,7 +345,7 @@ Per consentire agli utenti di approvare i propri script:
 4. Nella scheda **Generale** della finestra di dialogo **Proprietà delle impostazioni di gerarchia** deselezionare la casella di controllo **Do not allow script authors to approve their own scripts** (Non consentire agli autori di script di approvare i propri script).
 
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 
 #### <a name="import-and-edit-a-script"></a>Importare e modificare uno script
 
@@ -408,7 +408,7 @@ Usare la procedura seguente per abilitare l'opzione per il supporto IPv6 per PXE
 ### <a name="prerequisites"></a>Prerequisiti
 Tutti i punti di aggiornamento software devono eseguire Windows Server 2016.
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 Provare a completare le attività seguenti e quindi inviare **Feedback** dalla scheda **Home** della barra multifunzione per comunicarci come è andata:
 1. Abilitare la sincronizzazione per i driver di Microsoft Surface. Usare la procedura in [Configurare le classificazioni e i prodotti per la sincronizzazione](/sccm/sum/get-started/configure-classifications-and-products) e selezionare **Includi i driver di Microsoft Surface e gli aggiornamenti del firmware** nella scheda **Classificazioni** per abilitare i driver di Surface.
 2. [Sincronizzare i driver di Microsoft Surface](/sccm/sum/get-started/synchronize-software-updates.md).
@@ -462,10 +462,10 @@ Quando si aggiunge un ruolo di punto di registrazione certificato in Configurati
 **Problema noto**: nella Technical Preview 1706, i certificati PFX non vengono emessi per le autorità di certificazione di Microsoft. Ciò non influenza i certificati PFX importati o i profili SCEP.
 
 
-## <a name="cisco-ipsec-support-for-macos-vpn-profiles"></a>Supporto Cisco (IPsec) per i profili VPN di MacOS
+## <a name="cisco-ipsec-support-for-ios-vpn-profiles"></a>Supporto Cisco (IPSec) per i profili VPN iOS
 <!-- 1321367 -->
 
-È possibile creare un profilo VPN di MacOS con Cisco (IPsec) come tipo di connessione. Per altre informazioni, vedere [Creare profili VPN](https://docs.microsoft.com/en-us/sccm/mdm/deploy-use/create-vpn-profiles#create-vpn-profiles).
+È possibile creare un profilo VPN iOS con Cisco (IPSec) come tipo di connessione. Per altre informazioni, vedere [Creare profili VPN](https://docs.microsoft.com/en-us/sccm/mdm/deploy-use/create-vpn-profiles#create-vpn-profiles).
 
 
 ## <a name="new-windows-configuration-item-settings"></a>Nuove impostazioni degli elementi di configurazione di Windows

@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 55d49c388b4ea60627f72ffe61796c70de6f9416
-ms.sourcegitcommit: a5f8b5cfdabf0298e4302e24210e725a06a9de82
+ms.openlocfilehash: e8121480f3a9d61ba0a04667407a305119d80e12
+ms.sourcegitcommit: ba23ff90709a5fde1a63c650ab0d848f441afc43
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/30/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-system-center-configuration-manager"></a>Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando System Center Configuration Manager
 
@@ -171,17 +171,17 @@ I dati e le app attualmente supportati dalla cancellazione selettiva EFS sono:
 ##  <a name="passcode-reset"></a>Reimpostazione del passcode  
 Se un utente dimentica il passcode, è possibile aiutarlo rimuovendo il passcode da un dispositivo oppure forzando l'uso di un nuovo passcode temporaneo su un dispositivo. La tabella seguente illustra il funzionamento della reimpostazione del passcode su diverse piattaforme per dispositivi mobili.  
 
-|Piattaforma|Reimpostazione del passcode|  
-|--------------|--------------------|  
-|iOS|Funzionalità supportata per cancellare il passcode da un dispositivo. Non implica la creazione di un nuovo passcode temporaneo.|
-|macOS| Non supportata.|
-|Android|Funzionalità supportata; implica la creazione di un passcode temporaneo.|
-|Android for Work | Non supportata.|
-|PC con Windows 10|Non supportata.|  
-|Windows 10 Mobile|Funzionalità supportata; esclude i dispositivo aggiunti ad Azure AD.|
-|Windows Phone 8.1|Supportata.|  
-|Windows RT 8.1 |Non supportata.|  
-|PC con Windows 8.1 |Non supportata.|  
+| Piattaforma                              | Reimpostazione del passcode                                                                               |
+|---------------------------------------|----------------------------------------------------------------------------------------------|
+| iOS                                   | Funzionalità supportata per cancellare il passcode da un dispositivo. Non implica la creazione di un nuovo passcode temporaneo. |
+| macOS                                 | Non supportata.                                                                               |
+| Android                               | Supportata nelle versioni precedenti ad Android 7.0. Crea un passcode temporaneo.                |
+| Android for Work                      | Non supportata.                                                                               |
+| PC con Windows 10                        | Non supportata.                                                                               |
+| Windows 10 Mobile                     | Funzionalità supportata; esclude i dispositivo aggiunti ad Azure AD.  |
+| Windows Phone 8 e Windows Phone 8.1 | Supportata.                                                                                   |
+| Windows RT 8.1                        | Non supportata.                                                                               |
+| PC con Windows 8.1                       | Non supportata.                                                                               |
 
 > [!Note]    
 > È necessario eseguire l'operazione di reimpostazione del passcode dal sito di livello superiore nell'ambiente in uso. Ad esempio, se si usa un sito di amministrazione centrale è possibile eseguire l'azione solo in tale sito. Se si usa un sito primario autonomo è possibile eseguire l'azione solo in tale sito.
