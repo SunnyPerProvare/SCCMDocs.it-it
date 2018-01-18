@@ -3,7 +3,7 @@ title: SQL Server Always On
 titleSuffix: Configuration Manager
 description: "Pianificare l'uso di un gruppo di disponibilità Always On di SQL Server con SCCM."
 ms.custom: na
-ms.date: 11/20/2017
+ms.date: 12/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "16"
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 42d5a059e11dffc7890ec78ce7361ebfe905a050
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 7efd0c76a0723a98661b0861eb16298eee524f35
+ms.sourcegitcommit: f1535281b2c3fecff773b722c3f7590bf6ba10a0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparare l'uso di gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
@@ -78,7 +78,7 @@ Per altre informazioni vedere [Creare un endpoint del mirroring del database per
 
 -   A partire dalla versione 1706, per ripristinare la replica sincrona è possibile usare la replica con commit asincrono. Vedere le [opzioni di ripristino del database del sito]( /sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) nell'argomento Backup e ripristino per informazioni su come eseguire questa operazione.
     > [!CAUTION]  
-    > Configuration Manager non supporta il failover per l'uso della replica con commit asincrono come database del sito.
+    > Configuration Manager non supporta il [failover](https://go.microsoft.com/fwlink/?linkid=626885) per l'uso della replica con commit asincrono come database del sito.
 Poiché Configuration Manager non convalida lo stato della replica con commit asincrono per verificare che sia corrente, e [per comportamento normale del prodotto, una replica di questo tipo può non essere sincronizzata]( https://msdn.microsoft.com/library/ff877884(SQL.120).aspx(d=robot)#Availability%20Modes), l'uso di una replica con commit asincrono come database del sito può mettere a rischio l'integrità dei dati del sito.
 
 Ogni membro di replica deve:

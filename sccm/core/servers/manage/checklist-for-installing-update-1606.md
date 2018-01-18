@@ -15,11 +15,11 @@ caps.latest.revision: "7"
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 640267b1ff16ba3cc31296187e3e3b3bbe670faa
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: ce41852584f11d881c24c201867e13124595eba8
+ms.sourcegitcommit: 2867fd119256ec670fc5ae65cdc8a80d39f9b4d4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 12/20/2017
 ---
 # <a name="checklist-for-installing-update-1606-for-system-center-configuration-manager"></a>Elenco di controllo per installare l'aggiornamento 1606 di System Center Configuration Manager
 
@@ -100,7 +100,9 @@ Se si usano cluster NLB per i punti di aggiornamento software, usare Windows Pow
 
 Quando un'attività di manutenzione del database del sito viene eseguita durante l'installazione dell'aggiornamento, quest'ultima potrebbe avere esito negativo. Prima di disabilitare un'attività, registrarne la pianificazione per poter ripristinare la sua configurazione dopo l'installazione dell'aggiornamento.  
 
-Per altre informazioni, vedere [Attività di manutenzione per System Center Configuration Manager](../../../core/servers/manage/maintenance-tasks.md) e [Informazioni di riferimento per le attività di manutenzione per System Center Configuration Manager](../../../core/servers/manage/reference-for-maintenance-tasks.md).  
+Per altre informazioni, vedere [Attività di manutenzione per System Center Configuration Manager](../../../core/servers/manage/maintenance-tasks.md) e [Informazioni di riferimento per le attività di manutenzione per System Center Configuration Manager](../../../core/servers/manage/reference-for-maintenance-tasks.md). 
+
+**Disattivare provvisoriamente eventuali software antivirus sui server System Center Configuration Manager:** prima di aggiornare un sito, verificare di aver sospeso il software antivirus sui server Configuration Manager. <!--SMS.503481--> 
 
  **Creare un backup del database del sito nel sito di amministrazione centrale e nei siti primari:** prima di aggiornare un sito, eseguire il backup del database del sito per assicurarsi di avere un backup corretto da usare in caso di ripristino di emergenza.   
 

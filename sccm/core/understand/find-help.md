@@ -3,7 +3,7 @@ title: Ottenere informazioni
 titleSuffix: Configuration Manager
 description: Ricerca di informazioni su System Center Configuration Manager.
 ms.custom: na
-ms.date: 2/8/2017
+ms.date: 12/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,61 +13,61 @@ ms.topic: article
 ms.assetid: 86810629-cf2a-43e8-86a2-847444119fc1
 caps.latest.revision: "19"
 caps.handback.revision: "0"
-author: aaroncz
+author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 205f59db7d0d830ab7fe31aee929d59da3d0aae1
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: 73c057af033a91535d79c743e05df83601112626
+ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="find-help-for-using-system-center-configuration-manager"></a>Reperire informazioni sull'uso di System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Usare le risorse seguenti per ottenere altre informazioni su System Center Configuration Manager:  
+Questo articolo specifica diverse risorse per reperire informazioni sull'uso di Configuration Manager.  
 
--   [Informazioni e supporto](#bkmk_Info)  
+Per informazioni sull'accessibilità, vedere [Funzionalità di accessibilità in System Center Configuration Manager](../../core/understand/accessibility-features.md).
 
-    -   [Ricerca nella libreria della documentazione](#BKMK_SearchTips)  
 
-    -   [Blog del team di System Center Configuration Manager](#BKMK_ProductGroupBlog)  
-    -   [Opzioni di supporto e risorse per la community](#BKMK_SupportOptions)
-
-  Per informazioni sull'accessibilità, vedere [Funzionalità di accesso facilitato in System Center Configuration Manager](../../core/understand/accessibility-features.md).
-
-##  <a name="bkmk_Info"></a> Informazioni e supporto  
+##  <a name="bkmk_Info"></a> Documentazione del prodotto  
  Usare le risorse seguenti per altre informazioni su Configuration Manager.  
 
--   **Per accedere alla documentazione più recente del prodotto System Center Configuration Manager:** usare la [libreria della documentazione di System Center Configuration Manager](http://go.microsoft.com/fwlink/p/?LinkId=691974) su TechNet.
+-   Per accedere alla documentazione più recente del prodotto, iniziare dall'[indice](https://docs.microsoft.com/sccm/)
 
--   **Per inviare commenti e suggerimenti sulla documentazione:** accedere con **User Voice** alla pagina del [feedback su System Center Configuration Manager (documentazione)](https://configurationmanager.uservoice.com/forums/300492-ideas/category/112371-documentation).  
+-   Per offrire commenti e suggerimenti sulla documentazione, accedere a [UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/category/112371-documentation)  
 
--   **Per scaricare una copia archiviata della documentazione:** accedere alla raccolta TechNet:
-
-    - [Versione 1602](https://gallery.technet.microsoft.com/documentation-for-system-ea90eaf1)
-    - [Versione 1511](https://gallery.technet.microsoft.com/documentation-for-system-ea90eaf1)
 
 ###  <a name="BKMK_SearchTips"></a> Ricerca nella libreria della documentazione  
  Usare i seguenti suggerimenti per la ricerca per trovare le informazioni necessarie:  
 
--   Quando si usa il motore di ricerca preferito per cercare contenuto relativo a System Center Configuration Manager, è possibile limitare i risultati della ricerca alla raccolta di contenuto corrente, includendo i due termini seguenti, **SCCM** e **Documentazione**.
+-   Quando si usa il motore di ricerca preferito per cercare contenuto relativo a Configuration Manager, è possibile limitare i risultati della ricerca alla raccolta di contenuto corrente, includendo i due termini seguenti, **SCCM** e **Docs**.
 
--   Usare termini di ricerca corrispondenti a quelli visualizzati nell'interfaccia utente e nella documentazione online, anziché termini non ufficiali o abbreviazioni che possono essere presenti nei contenuti della community. Ad esempio, cercare "punto di gestione" anziché "PG", "tipo di distribuzione" anziché "TD" e "aggiornamenti software" anziché "AS".  
+-   Usare termini di ricerca che corrispondano alla terminologia nell'interfaccia utente e nella documentazione online. Evitare termini non ufficiali o abbreviazioni che possono trovarsi nei contenuti della community. Ad esempio, cercare "punto di gestione" anziché "PG", "tipo di distribuzione" anziché "TD" e "aggiornamenti software" anziché "AS".  
 
--   Quando si esegue una ricerca in una pagina di TechNet o nel file della Guida (premendo ad esempio CTRL+F1 e immettendo i termini di ricerca nella casella **Cerca**), i risultati escludono il testo contenuto nelle sezioni compresse. Per cercare testo contenuto nelle sezioni compresse, espandere le sezioni prima di cercare nella pagina. Per eseguire questa operazione, è possibile selezionare il pulsante **Espandi tutto** nella parte superiore della pagina oppure fare doppio clic su eventuali sezioni compresse. Quando tutte le sezioni sono espanse, una ricerca nella pagina può quindi eseguire la ricerca in tutte le sezioni in quella pagina.  
+-   Per eseguire una ricerca all'interno di un articolo che si sta visualizzando su docs.microsoft.com, selezionare CTRL+F e immettere i termini di ricerca nella casella **Trova nella pagina** del browser. 
 
--   Per cercare un argomento nel file della Guida, premere F1 e quindi immettere i termini di ricerca nella finestra di dialogo **Cerca**. Il file della Guida non supporta l'opzione **Espandi tutto** ed è necessario espandere manualmente le singole sezioni compresse prima di poter trovare il testo in tali sezioni.  
+-   Ogni articolo in docs.microsoft.com include i campi seguenti per agevolare la ricerca del contenuto:
+    - **Cerca** nell'angolo superiore destro. Per cercare in tutti gli articoli immettere i termini in questo campo. Gli articoli nella raccolta di Configuration Manager includono automaticamente l'ambito "ConfigMgr".
+    - **Filtra** sopra il sommario a sinistra. Per eseguire una ricerca nel sommario corrente immettere i termini in questo campo. Il campo consente di individuare le corrispondenze solo con termini che vengono visualizzati nei titoli degli articoli. 
 
--   Se possibile, usare la Libreria TechNet online anziché la documentazione scaricata. TechNet contiene le informazioni più aggiornate. È possibile che le informazioni desiderate non si trovino nella documentazione scaricata o che nella versione online siano disponibili correzioni o informazioni aggiuntive.  
 
--   Se si considera più semplice e pratico eseguire ricerche nella documentazione archiviata in locale, è possibile selezionare vari argomenti in TechNet e salvarli in locale. In primo luogo, accedere a TechNet, e quindi nella parte superiore della pagina da salvare in locale scegliere **Esporta**, vicino a **Stampa**. Verrà quindi visualizzato il banner **Esporta più insiemi di pagine** e sarà possibile aggiungere e rimuovere le pagine desiderate. Scegliere **Gestisci pagine** per esportarle. Per altre informazioni, scegliere **Guida** nel banner.  
+## <a name="product-feedback"></a>Commenti e suggerimenti sul prodotto
+Per segnalare errori del prodotto potenziali è possibile usare l'[app Hub di Feedback](https://support.microsoft.com/en-us/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app) incorporata in Windows 10. Quando si sceglie **Aggiungi nuovo feedback**, assicurarsi di selezionare la categoria **Enterprise Management** e di scegliere una delle sottocategorie seguenti:
+ - Configuration Manager Client
+ - Console di Configuration Manager
+ - Distribuzione del sistema operativo di Configuration Manager
+ - Server di Configuration Manager
 
-###  <a name="BKMK_ProductGroupBlog"></a> Blog del team di System Center Configuration Manager  
- I team di progettazione e i team associati di Configuration Manager usano [System Center Configuration Manager Team Blog (Blog del team di System Center Configuration Manager)](http://go.microsoft.com/fwlink/?LinkId=191941) per offrire informazioni tecniche e altre notizie su Configuration Manager e le relative tecnologie. I post di questo blog integrano le informazioni di supporto e la documentazione relativa al prodotto.  
+Continuare a usare la [pagina UserVoice](http://configurationmanager.uservoice.com/) per votare nuove idee sulle funzionalità di Configuration Manager.
 
-###  <a name="BKMK_SupportOptions"></a> Opzioni di supporto e risorse per la community  
+
+##  <a name="BKMK_ProductGroupBlog"></a> Blog del team di Configuration Manager  
+ I team di progettazione e i team associati di Configuration Manager usano il blog [Enterprise Mobility + Security](https://cloudblogs.microsoft.com/enterprisemobility/?product=system-center-configuration-manager) per offrire informazioni tecniche e altre notizie su Configuration Manager e le relative tecnologie. I post di questo blog integrano le informazioni di supporto e la documentazione relativa al prodotto.  
+
+
+##  <a name="BKMK_SupportOptions"></a> Opzioni di supporto e risorse per la community  
  I seguenti collegamenti forniscono informazioni sulle opzioni di supporto e sulle risorse per la community:  
 
 -   [Supporto tecnico Microsoft](http://go.microsoft.com/fwlink/?LinkId=243064)  
@@ -75,3 +75,4 @@ Usare le risorse seguenti per ottenere altre informazioni su System Center Confi
 -   [Community di Configuration Manager: System Center Configuration Manager (Current Branch) Survival Guide](http://social.technet.microsoft.com/wiki/contents/articles/33035.system-center-configuration-manager-current-branch-survival-guide.aspx ) (Guida essenziale di System Center Configuration Manager Current Branch)  
 
 -   [Pagina dei forum di Configuration Manager](https://social.technet.microsoft.com/Forums/en-US/home?category=ConfigMgrCB)  
+    <!-- NOTE: the above URL requires "en-US" for the category to work -->

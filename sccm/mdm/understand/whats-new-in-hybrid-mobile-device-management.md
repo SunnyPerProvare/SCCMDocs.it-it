@@ -3,7 +3,7 @@ title: "Novità nella gestione di dispositivi mobili ibrida"
 titleSuffix: Configuration Manager
 description: "Informazioni sulle nuove funzionalità di gestione dei dispositivi mobili disponibili per le distribuzioni ibride con Configuration Manager e Intune."
 ms.custom: na
-ms.date: 11/29/2017
+ms.date: 01/04/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 189e737eca5dee5bca3f0748cd1b4d944f868565
-ms.sourcegitcommit: 4af1da9c18f5bdff31426cf1d58c7d949372292d
+ms.openlocfilehash: 243daf8626e329214ce1b94f109d19773bbc57c5
+ms.sourcegitcommit: 2da6b06818371e93f28e36cadf3a154d50ce5bf4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con System Center Configuration Manager e Microsoft Intune
 
@@ -40,6 +40,13 @@ Ogni sezione di questo articolo elenca le funzionalità ibride in tre categorie 
 |**Novità di Microsoft Intune** | In generale, tutte le funzionalità elencate in questa categoria dovrebbero funzionare con tutte le versioni di Configuration Manager, incluse le versioni di System Center 2012 R2 Configuration Manager, poiché richiedono solo il servizio Intune e non richiedono altre funzionalità di Configuration Manager.|
 |**Novità di Configuration Manager Technical Preview**| Tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Technical Preview specificata. Per provare queste funzionalità, è necessario installare la versione di Technical Preview specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Technical Preview per System Center Configuration Manager](../../core/get-started/technical-preview.md).|
 |**Novità di Configuration Manager (Current Branch)**| Tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Configuration Manager (Current Branch) specificata, ad esempio la versione 1511 o 1602. Se si usa una versione precedente di Configuration Manager per la distribuzione ibrida, è necessario eseguire l'aggiornamento alla versione di Configuration Manager (Current Branch) specificata nella descrizione della funzionalità. Per altre informazioni, vedere l'articolo relativo agli [aggiornamenti a System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|
+
+## <a name="december-2017"></a>Dicembre 2017
+
+### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
+
+- **Distribuzioni di applicazioni disponibili ora supportate per Android Enterprise**    
+  È ora possibile distribuire le app Android Enterprise, in precedenza Android for Work, con stato **Disponibile**, oltre che **Richiesto**. Per informazioni dettagliate, vedere [Creare applicazioni Android con System Center Configuration Manager](/sccm/mdm/deploy-use/creating-android-applications).
 
 
 ## <a name="november-2017"></a>Novembre 2017
@@ -374,9 +381,9 @@ Nella versione 1702 di Configuration Manager (Current Branch) sono disponibili a
 
   Per altre informazioni sulle app iOS acquistate tramite Volume Purchase Program, vedere [Gestire le app iOS acquistate tramite Volume Purchase Program](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
 
-- **Supporto per app line-of-business in Windows Store per le aziende**
+- **Supporto per app line-of-business in Microsoft Store per le aziende**
 
-  È ora possibile sincronizzare app line-of-business personalizzate da Windows Store per le aziende.
+  È ora possibile sincronizzare app line-of-business personalizzate da Microsoft Store per le aziende.
 
 - **Nuovi strumenti di monitoraggio Mobile Threat Defense**
 

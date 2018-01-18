@@ -3,7 +3,7 @@ title: Configurare le impostazioni client
 titleSuffix: Configuration Manager
 description: Selezionare le impostazioni client in System Center Configuration Manager.
 ms.custom: na
-ms.date: 04/23/2017
+ms.date: 12/29/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,20 +12,20 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 95e9858a-bad4-4651-9e61-2e31dc5050fa
 caps.latest.revision: "5"
-author: arob98
-ms.author: angrobe
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 20a8f91d10d98542f08e440bcfbc1a6f98a51932
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: c777e800d154b060040363aefbc611e284f233b4
+ms.sourcegitcommit: f1535281b2c3fecff773b722c3f7590bf6ba10a0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="how-to-configure-client-settings-in-system-center-configuration-manager"></a>Come configurare le impostazioni client in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile gestire tutte le impostazioni client in System Center Configuration Manager da **Amministrazione** > **Impostazioni client**. Modificare le impostazioni predefinite quando si desidera configurare le impostazioni per tutti gli utenti e i dispositivi nella gerarchia per cui non sono applicate impostazioni personalizzate. Se si desidera applicare impostazioni diverse solo alcuni utenti o dispositivi, creare delle impostazioni personalizzate e distribuirle alle raccolte.  
+È possibile gestire tutte le impostazioni client in System Center Configuration Manager da **Amministrazione** > **Impostazioni client**. Modificare le impostazioni predefinite quando si desidera configurare le impostazioni per tutti gli utenti e i dispositivi nella gerarchia per cui non sono applicate impostazioni personalizzate. Per applicare impostazioni diverse solo ad alcuni utenti o dispositivi, creare impostazioni personalizzate e distribuirle alle raccolte.  
 
 Per informazioni su ogni impostazione client, vedere [Informazioni sulle impostazioni client in Configuration Manager](../../../core/clients/deploy/about-client-settings.md).
 
@@ -63,25 +63,14 @@ Quando queste impostazioni personalizzate vengono distribuite, sostituiscono le 
 
 9. Nella finestra di dialogo **Seleziona raccolta** selezionare la raccolta appropriata e quindi scegliere **OK**. È possibile controllare la raccolta selezionata facendo clic sulla scheda **Distribuzioni** nel riquadro dei dettagli.  
 
-10. Visualizzare l'ordine dell'impostazione client personalizzata appena creata. Quando sono presenti più impostazioni client personalizzate, vengono applicate in base al numero d'ordine. Se sono presenti conflitti, l'impostazione con il numero d'ordine più basso sostituisce le altre impostazioni. Per modificare il numero d'ordine, nel gruppo **Impostazioni client** della scheda **Home** scegliere **Sposta elemento in alto** o **Sposta elemento in basso**.  
+10. Visualizzare l'ordine dell'impostazione client personalizzata creata. Quando sono presenti più impostazioni client personalizzate, vengono applicate in base al numero d'ordine. Se sono presenti conflitti, l'impostazione con il numero d'ordine più basso sostituisce le altre impostazioni. Per modificare il numero d'ordine, nel gruppo **Impostazioni client** della scheda **Home** scegliere **Sposta elemento in alto** o **Sposta elemento in basso**.  
 
  I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero dei criteri per un singolo client, vedere la sezione [Avviare il recupero criteri per un client di Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval) in [Come gestire i client in System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
 
-## <a name="limit-windows-10-enhanced-telemetry-to-only-send-data-relevant-to-windows-analytics-device-health"></a>Limitare la telemetria avanzata di Windows 10 al solo invio dei dati pertinenti a Integrità del dispositivo di Windows Analytics
-<!-- 1356148 -->
 
-Con l'aggiornamento 1710 è possibile impostare il livello di raccolta dei dati di telemetria di Windows 10 su **Enhanced (Limited)** (Avanzato - Limitato). Questa impostazione consente di ottenere informazioni utili sui dispositivi presenti nell'ambiente in uso senza che i dispositivi segnalino tutti i dati nel livello di telemetria **Avanzato** con Windows 10 1709 o versione successiva.
-
-Il livello di telemetria Enhanced (Limited) (Avanzato - Limitato) include metriche del livello di base e un subset di dati raccolti dal livello **Avanzato** pertinenti per Windows Analytics. Per altre informazioni sui livelli di telemetria, vedere [Livelli di telemetria](https://docs.microsoft.com/windows/configuration/configure-windows-telemetry-in-your-organization#telemetry-levels).
-
-1.  Nella console di Configuration Manager selezionare **Amministrazione** > **Impostazioni client** > **Impostazioni client predefinite**.  
-
-2.  Nella scheda **Home** scegliere **Proprietà**.  
-
-3.  Aprire **Servizi cloud** e impostare la telemetria di Windows 10 su **Avanzato**.
 
 ##  <a name="view-client-settings"></a>Visualizzare le impostazioni client  
- Una volta distribuite più impostazioni client allo stesso dispositivo, utente o gruppo degli utenti, la definizione delle priorità e la combinazione delle impostazioni possono essere complesse. Per visualizzare le impostazioni client:  
+ Quando vengono distribuite più impostazioni client allo stesso dispositivo, utente o gruppo di utenti, la definizione delle priorità e la combinazione delle impostazioni risultano complesse. Per visualizzare le impostazioni client:  
 
 1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Dispositivi** > **Utenti** o **Raccolte utenti**.  
 

@@ -15,11 +15,11 @@ caps.latest.revision: "7"
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: e7c460be4e8c2f88aceba4076e1a364b99c78574
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: d7b3f6d058e17e12ca910f43f7a9cbe98d128bee
+ms.sourcegitcommit: 2867fd119256ec670fc5ae65cdc8a80d39f9b4d4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 12/20/2017
 ---
 # <a name="checklist-for-installing-update-1702-for-system-center-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1702 di System Center Configuration Manager
 
@@ -130,6 +130,8 @@ Prima di installare l'aggiornamento , disabilitare le eventuali attività di man
 Quando un'attività di manutenzione del database del sito viene eseguita durante l'installazione dell'aggiornamento, quest'ultima potrebbe avere esito negativo. Prima di disabilitare un'attività, registrarne la pianificazione per poter ripristinare la sua configurazione dopo l'installazione dell'aggiornamento.
 
 Per altre informazioni, vedere [Attività di manutenzione per System Center Configuration Manager](/sccm/core/servers/manage/maintenance-tasks) e [Informazioni di riferimento per le attività di manutenzione per System Center Configuration Manager](/sccm/core/servers/manage/reference-for-maintenance-tasks).
+
+**Disattivare provvisoriamente eventuali software antivirus sui server System Center Configuration Manager:** prima di aggiornare un sito, verificare di aver sospeso il software antivirus sui server Configuration Manager. <!--SMS.503481--> 
 
 **Creare un backup del database del sito nel sito di amministrazione centrale e nei siti primari:** prima di aggiornare un sito, eseguire il backup del database del sito per assicurarsi di avere un backup corretto da usare in caso di ripristino di emergenza.
 

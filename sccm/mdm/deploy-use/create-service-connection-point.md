@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 9ae26c55cf92c954a54311e2e698353bbe359a83
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: ee038d8579d63f2afbf0b677181dd06751403ba0
+ms.sourcegitcommit: 0a6b2c53ff4445b5d4f3638fdb0b489d54e333d3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="create-a-service-connection-point-with-system-center-configuration-manager-and-microsoft-intune"></a>Creare un punto di connessione del servizio con System Center Configuration Manager e Microsoft Intune
 
@@ -38,7 +38,7 @@ Dopo avere creato la sottoscrizione, sarà quindi possibile installare il ruolo 
 
 1.  Nella console di Configuration Manager fare clic su **Amministrazione**.
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Siti**, quindi fare clic su **Server e ruoli del sistema del sito**.
+2.  Nell'area di lavoro **Amministrazione** espandere **Configurazione del sito**, quindi fare clic su **Server e ruoli del sistema del sito**.
 
 3.  Aggiungere il ruolo del **punto di connessione del servizio** a un server del sistema del sito nuovo o esistente usando il passaggio associato:
 

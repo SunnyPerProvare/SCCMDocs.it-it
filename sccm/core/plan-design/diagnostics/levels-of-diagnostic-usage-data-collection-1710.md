@@ -33,11 +33,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.openlocfilehash: ce5239340032db7deb5bcb20d00aba77c9b140e2
-ms.sourcegitcommit: da27d37cc4e4e06cf23758846cdd7acb617f744b
+ms.openlocfilehash: 1129da43f9c50d21f2ce8392721c77a4e614e410
+ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1710-of-system-center-configuration-manager"></a>Livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1710
 
@@ -168,7 +168,7 @@ Per System Center Configuration Manager versione 1710, questo livello include qu
 
    - Numero di tipi di distribuzione di Windows Installer in base alle impostazioni di disinstallazione del contenuto
 
-   - Numero di app di Windows Store per le aziende e statistiche di sincronizzazione, inclusi il riepilogo dei tipi di app, lo stato delle app con licenza e il numero di app con licenza online e offline  
+   - Numero di app di Microsoft Store per le aziende e statistiche di sincronizzazione, inclusi il riepilogo dei tipi di app, lo stato delle app con licenza e il numero di app con licenza online e offline  
 
    - Tipo e durata della finestra di manutenzione  
 
@@ -377,7 +377,7 @@ Per System Center Configuration Manager versione 1710, questo livello include qu
 
     - Numero di distribuzioni di sequenze di attività che usano l'opzione di pre-download del contenuto
 
-    - Numero utilizzi del passaggio della sequenza di attività
+    - Numero uilizzi del passaggio della sequenza di attività
 
     - Versione di Windows ADK installata
 
@@ -519,4 +519,4 @@ Per System Center Configuration Manager versione 1710, questo livello include qu
 
 - Tipo di criteri di accesso condizionale EAS (blocco o quarantena) per i dispositivi gestiti da Intune
 
-- Dettagli delle applicazioni di Windows Store per le aziende (elenco non aggregato di applicazioni sincronizzate, inclusi l'ID dell'app, lo stato online o offline e il numero totale di licenze acquistate)
+- Dettagli delle applicazioni di Microsoft Store per le aziende, tra cui l'elenco non aggregato di applicazioni sincronizzate, che include l'ID dell'app, lo stato online o offline e il numero totale di licenze acquistate

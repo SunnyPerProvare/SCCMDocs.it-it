@@ -15,11 +15,11 @@ caps.latest.revision: "6"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 2ec4f4fdd1e351379922302e81af88e311a37c8e
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: c512cba550e405c866204af981aba75639665de2
+ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="create-android-applications-with-system-center-configuration-manager"></a>Creare applicazioni Android con System Center Configuration Manager
 
@@ -48,7 +48,7 @@ Sono supportate le azioni di distribuzione seguenti:
 |Tipo di dispositivo|Azioni supportate|
 |-|-|
 |Android|**Disponibile**, **Richiesto** L'utente deve acconsentire all'installazione e alla disinstallazione.|
-|Android for Work | **Richiesto** |
+|Android for Work |**Disponibile**, **Richiesto** |
 
 ## <a name="approve-and-deploy-android-for-work-apps"></a>Approvare e distribuire le applicazioni Android for Work
 Gli amministratori di Configuration Manager possono anche approvare le app nel [sito Web Play for Work](https://play.google.com/work) e distribuirle in dispositivi Android for Work gestiti.
@@ -65,3 +65,5 @@ Attenersi alla procedura seguente per approvare le applicazioni nello store di P
 8. Passare a **Raccolta software** > **Panoramica** > **Gestione applicazioni** > **Applicazioni**, scegliere un'applicazione Android for Work e distribuire come di consueto.
 
 Per eseguire la sincronizzazione delle app Play for Work con Configuration Manager, è necessario prima approvare almeno un'app sul sito Web Play for Work.
+
+Le app distribuite come **Disponibile** appaiono nell'app di Google Play con badge aziendale anziché nel portale aziendale. Ciò consente di distribuire le app da un'origine attendibile (l'app di Google Play con badge aziendale è un'origine attendibile) e non è necessario consentire le app da origini non attendibili.

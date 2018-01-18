@@ -3,21 +3,21 @@ title: Riferimento tecnico per i controlli crittografici
 titleSuffix: Configuration Manager
 description: Questo argomento illustra come la firma e la crittografia consentono di impedire agli autori di attacchi la lettura dei dati in System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/5/2017
+ms.date: 12/8/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
 ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
-author: arob98
-ms.author: angrobe
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: ebaff93d346b53afea8770fbe0634112bcecf82d
-ms.sourcegitcommit: 372171a5cd8d143d6d47b651018cda0c91cad67c
+ms.openlocfilehash: 2c1ed6f4c93f74719ab3fe5d723f7dc01eb1ede7
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="cryptographic-controls-technical-reference"></a>Riferimento tecnico per i controlli crittografici
 
@@ -277,8 +277,8 @@ System Center Configuration Manager usa la firma e la crittografia per protegger
 
  Quando un punto di gestione autentica per la prima volta un client usando il certificato client autofirmato, questo meccanismo fornisce un livello minimo di protezione poiché qualsiasi computer può generare un certificato autofirmato. In questo scenario il processo di identificazione del client deve essere aumentato mediante l'approvazione. Solo i computer attendibili devono essere approvati, automaticamente da Configuration Manager o manualmente da un utente amministratore. Per altre informazioni, vedere [Comunicazioni tra gli endpoint in System Center Configuration Manager](../../core/plan-design/hierarchy/communications-between-endpoints.md).  
 
-## <a name="to-make-configuration-manager-servers-more-secure"></a>Per migliorare la sicurezza dei server di Configuration Manager  
-Per migliorare la sicurezza dei server di Configuration Manager, eseguire le operazioni seguenti:
+## <a name="about-ssl-vulnerabilities"></a>Informazioni sulle vulnerabilità di SSL
+Per migliorare la sicurezza dei client e server di Configuration Manager, eseguire le operazioni seguenti:
 
 -   Abilitare TLS 1.2
 
@@ -286,5 +286,5 @@ Per migliorare la sicurezza dei server di Configuration Manager, eseguire le ope
 -   Disabilitare SSL 3.0, TLS 1.0 e TLS 1.1 
 -   Riordinare i pacchetti di crittografia relativi a TLS 
 
-Per altre informazioni, vedere l'articolo della Knowledge Base seguente: [Come limitare l'utilizzo di determinati algoritmi e protocolli crittografici in Schannel.dll](https://support.microsoft.com/en-us/kb/245030/). Queste procedure non influiscono sulle funzionalità di Configuration Manager.
+Per altre informazioni, vedere [Come limitare l'utilizzo di determinati algoritmi e protocolli crittografici in Schannel.dll](https://support.microsoft.com/en-us/kb/245030/) e [Prioritizing Schannel Cipher Suites](https://msdn.microsoft.com/en-us/library/windows/desktop/bb870930.aspx) (Definizione delle priorità dei pacchetti di crittografia in Schannel). Queste procedure non influiscono sulle funzionalità di Configuration Manager.
 

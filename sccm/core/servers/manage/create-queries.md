@@ -3,7 +3,7 @@ title: Creare query
 titleSuffix: Configuration Manager
 description: Questo argomento illustra come creare e importare query in System Center Configuration Manager. Include query di esempio e suggerimenti.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/11/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: 868049d3-3209-47ec-b34a-9cc26941893a
 caps.latest.revision: "5"
 caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: cbd9710cec365323e754d2109c8c61c29a4c301f
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 32400ebcd834e3b98bf0f1ff6a1f6b41d8e12076
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="how-to-create-queries-in-system-center-configuration-manager"></a>Come creare query in System Center Configuration Manager
 
@@ -51,16 +51,16 @@ Usare questo argomento per informazioni su come creare o importare query in Syst
 
 6.  Selezionare **Modifica istruzione query** per aprire la finestra di dialogo *&lt;Nome query\>***Proprietà istruzione**.  
 
-7.  Nella scheda **Generale** della finestra di dialogo *&lt;Nome query\>***Proprietà istruzione** specificare gli attributi restituiti da questa query e la relativa modalità di visualizzazione. Fare clic sull'icona **Nuovo** per aggiungere un nuovo attributo. È anche possibile selezionare **Mostra linguaggio query** per immettere o modificare la query direttamente in WMI Query Language (WQL). Per esempi di query WMI, vedere la sezione [Example WQL queries](#BKMK_Example) in questo argomento.  
+7.  Nella scheda **Generale** della finestra di dialogo *&lt;Nome query\>* **Proprietà istruzione** specificare gli attributi restituiti da questa query e la relativa modalità di visualizzazione. Fare clic sull'icona **Nuovo** per aggiungere un nuovo attributo. È anche possibile selezionare **Mostra linguaggio query** per immettere o modificare la query direttamente in WMI Query Language (WQL). Per esempi di query WMI, vedere la sezione [Example WQL queries](#BKMK_Example) in questo argomento.  
 
     > [!TIP]  
-    > È possibile usare la documentazione di riferimento MSDN seguente per creare query WQL personalizzate:  
+    > È possibile utilizzare la seguente documentazione di riferimento MSDN consentono di costruire le query WQL:  
     >   
     > -   [WQL (SQL per WMI)](http://go.microsoft.com/fwlink/p/?LinkId=256653)  
     > -   [Clausola WHERE](http://go.microsoft.com/fwlink/p/?LinkId=256654)  
     > -   [Operatori WQL](http://go.microsoft.com/fwlink/p/?LinkId=256655)  
 
-8.  Nella scheda **Criteri** della finestra di dialogo *&lt;Nome query\>***Proprietà istruzione** specificare i criteri usati per definire i risultati della query. Ad esempio, è possibile restituire solo le risorse con un codice di sito **XYZ** nei risultati della query. È possibile configurare più criteri per una query.  
+8.  Nella scheda **Criteri** della finestra di dialogo *&lt;Nome query\>* **Proprietà istruzione** specificare i criteri usati per definire i risultati della query. Ad esempio, è possibile restituire solo le risorse con un codice di sito **XYZ** nei risultati della query. È possibile configurare più criteri per una query.  
 
     > [!IMPORTANT]  
     > Se si crea una query che non contiene alcun criterio, verranno restituiti tutti i dispositivi presenti nella raccolta **Tutti i sistemi** .  
@@ -178,6 +178,10 @@ Usare uno dei valori seguenti per *&lt;ID dispositivo\>*:
 |Android|11|  
 |Intel System On Chip (SOC)|12|  
 |Server UNIX e Linux|13|  
+|Apple macOS (MDM)|14|
+|Microsoft HoloLens (MDM)|15|
+|Microsoft Surface Hub (MDM)|16|
+|Android for Work|17|
 
  Ad esempio, se si vuole che la query restituisca solo i computer Mac, usare la query seguente:  
 

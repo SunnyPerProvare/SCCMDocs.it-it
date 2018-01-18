@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
 caps.latest.revision: "26"
 caps.handback.revision: "0"
-author: Dougeby
-ms.author: dougeby
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 40a2d91baf8c02cdda96e9520ce155032272ebdd
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: 77ce50cf363c9429f9ef38aa2acf5b898bc8052d
+ms.sourcegitcommit: b97aa456b392d817bc9723cbd5c0ce6602e7ae34
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/28/2017
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Passaggi della sequenza di attività in System Center Configuration Manager
 
@@ -760,7 +760,7 @@ Questo passaggio viene eseguito in un sistema operativo standard o in Windows PE
  **Volume**  
  Informazioni specifiche sulla partizione o sul volume da creare, incluse le informazioni seguenti:  
 
--   Nome  
+-   Name  
 
 -   Spazio su disco rimanente  
 
@@ -1477,7 +1477,7 @@ Quando si aggiunge una sequenza di attività figlio a una sequenza di attività,
 
 -   **Marca e modello**: usare questa categoria delle regole per valutare i valori relativi a marca e modello di un computer. La regola restituisce true solo se entrambi i valori restituiscono true.   
 
-    A partire da Configuration Manager versione 1610 è possibile usare asterischi (*****) e un punto interrogativo (**?**) come caratteri jolly, dove ***** corrisponde a più caratteri e **?** corrisponde a un solo carattere. Ad esempio, la stringa "DELL*900?" corrisponde a DELL-ABC-9001 e a DELL9009.
+    A partire da Configuration Manager versione 1610 è possibile usare un asterisco (**&#42;**) e un punto interrogativo (**?**) come caratteri jolly, dove **&#42;** corrisponde a più caratteri e **?** corrisponde a un solo carattere. Ad esempio, la stringa "DELL*900?" corrisponde a DELL-ABC-9001 e a DELL9009. 
 
 -   **Variabile della sequenza di attività**: usare questa categoria delle regole per aggiungere una variabile della sequenza di attività, una condizione e un valore da valutare. La regola restituisce true quando il valore impostato per la variabile soddisfa la condizione specificata.  
 
@@ -1520,7 +1520,7 @@ Questo passaggio può essere eseguito in un sistema operativo standard o in Wind
  **Valore**  
  Valore associato alla variabile della sequenza di attività. Il valore può essere un'altra variabile della sequenza di attività con la sintassi %<varname\>%.  
 
-## <a name="hide-task-sequence-progress"></a>Nascondere l’avanzamento della sequenza di attività
+## <a name="hide-task-sequence-progress"></a>Nascondere l'avanzamento della sequenza di attività
 <!-- 1354291 -->
 Con la versione 1706 è possibile controllare quando visualizzare lo stato della sequenza di attività per gli utenti finali tramite una nuova variabile. Nella sequenza di attività usare il passaggio **Imposta variabile della sequenza attività** per impostare il valore per la variabile **TSDisableProgressUI** per nascondere o visualizzare lo stato della sequenza di attività. È possibile usare più volte il passaggio Imposta variabile della sequenza di attività in una sequenza di attività per modificare il valore della variabile. Ciò consente di visualizzare o nascondere l'avanzamento dello stato della sequenza di attività in varie sezioni della sequenza di attività.
 

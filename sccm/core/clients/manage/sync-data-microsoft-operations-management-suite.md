@@ -15,11 +15,11 @@ caps.latest.revision: "9"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 166f7c73f2050657a85bd5160f74c40cfd87fd7f
-ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
+ms.openlocfilehash: bfe500c160bf2ddffd060baabb44cda81337e1cc
+ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 01/02/2018
 ---
 #  <a name="sync-data-from-configuration-manager-to-the-microsoft-operations-management-suite"></a>Sincronizzazione dei dati da Configuration Manager a Microsoft Operations Management Suite
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/13/2017
 
 È possibile usare la **Procedura guidata Servizi di Azure** per configurare la connessione da Configuration Manager al servizio cloud Operations Management Suite (OMS). A partire dalla versione 1706, la procedura guidata sostituisce i precedenti flussi di lavoro per la configurazione della connessione. Per le versioni precedenti, vedere [Sincronizzazione dei dati da Configuration Manager a Microsoft Operations Management Suite (versione 1702 e precedenti)](#Sync-data-from-Configuration-Manager-to-the-Microsoft-Operations-Management-Suite-(1702-and-earlier)).
 
--   Viene usata per configurare i servizi cloud per Configuration Manager, ad esempio OMS, Windows Store per le aziende (WSfB) e Azure Active Directory (Azure AD).  
+-   La procedura guidata viene usata per configurare i servizi cloud per Configuration Manager, come ad esempio OMS, Microsoft Store per le aziende e Azure Active Directory (Azure AD).  
 
 -   Configuration Manager si connette a OMS per funzionalità quali [Log Analytics](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) o [Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics).
 
@@ -109,7 +109,7 @@ A partire dalla versione 1702, è possibile usare OMS Connector per la connessio
 Dopo aver collegato Configuration Manager a OMS, è possibile aggiungere o rimuovere raccolte e visualizzare le proprietà della connessione OMS.
 
 ### <a name="verify-the-oms-connector-properties"></a>Verificare le proprietà di OMS Connector
-1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Servizi cloud** e quindi selezionare **OMS Connector** per aprire la pagina **Connessione OMS**.
+1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Servizi cloud** e quindi selezionare **OMS Connector** per aprire la pagina **Connessione OMS ****.
 2.  In questa pagina sono disponibili due schede:
   - **Azure Active Directory:**   
     Questa scheda include le informazioni relative a **Tenant**, **ID client** e **Scadenza della chiave privata del client** e consente inoltre di verificare se la chiave privata del client è scaduta.

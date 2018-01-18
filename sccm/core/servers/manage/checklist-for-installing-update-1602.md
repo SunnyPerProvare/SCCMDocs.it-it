@@ -16,11 +16,11 @@ author: mestew
 ms.author: mstewart
 manager: angrobe
 robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 6c13a6b2d1413788cef2796af322a777b2a4682c
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: deef7ed1bbfef5c388d9fe00fbfc5c839e108527
+ms.sourcegitcommit: 2867fd119256ec670fc5ae65cdc8a80d39f9b4d4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 12/20/2017
 ---
 # <a name="checklist-for-installing-update-1602-for-system-center-configuration-manager"></a>Elenco di controllo per l'aggiornamento di System Center Configuration Manager dalla versione 1511 alla versione 1602
 
@@ -52,7 +52,7 @@ La prima volta che si usa una console di Configuration Manager dopo l'aggiorname
 
 -   Punto di gestione  
 
--   Punto di connessione del servizio  
+-   punto di connessione del servizio  
 
 Questa installazione consente di impostare il server del sistema del sito in uno stato di riavvio in sospeso e segnala gli errori al visualizzatore di stato dei componenti di Configuration Manager. Inoltre, le applicazioni .NET sul server possono presentare errori casuali finché il server non viene riavviato.  
 
@@ -92,7 +92,9 @@ Per altre informazioni, vedere [Repliche di database per i punti di gestione per
 
 Quando un'attività di manutenzione del database del sito viene eseguita durante l'installazione dell'aggiornamento, quest'ultima potrebbe avere esito negativo. Prima di disabilitare un'attività, registrarne la pianificazione per poter ripristinare la sua configurazione dopo l'installazione dell'aggiornamento.  
 
- Per altre informazioni, vedere [Attività di manutenzione per System Center Configuration Manager](../../../core/servers/manage/maintenance-tasks.md) e [Informazioni di riferimento per le attività di manutenzione per System Center Configuration Manager](../../../core/servers/manage/reference-for-maintenance-tasks.md).  
+ Per altre informazioni, vedere [Attività di manutenzione per System Center Configuration Manager](../../../core/servers/manage/maintenance-tasks.md) e [Informazioni di riferimento per le attività di manutenzione per System Center Configuration Manager](../../../core/servers/manage/reference-for-maintenance-tasks.md). 
+
+**Disattivare provvisoriamente eventuali software antivirus sui server System Center Configuration Manager:** prima di aggiornare un sito, verificare di aver sospeso il software antivirus sui server Configuration Manager. <!--SMS.503481--> 
 
  **Creare un backup del database del sito nel sito di amministrazione centrale e nei siti primari:** prima di aggiornare un sito, eseguire il backup del database del sito per assicurarsi di avere un backup corretto da usare in caso di ripristino di emergenza.   
 
