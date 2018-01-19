@@ -3,7 +3,7 @@ title: Nuova versione 1710 | Microsoft Docs
 titleSuffix: Configuration Manager
 description: "Ottenere informazioni dettagliate sulle modifiche e le nuove funzionalità introdotte nella versione 1710 di System Center Configuration Manager."
 ms.custom: na
-ms.date: 11/20/2017
+ms.date: 1/08/2018
 ms.reviewer: na
 ms.suite: na
 ms.technology: configmgr-other
@@ -13,11 +13,11 @@ ms.assetid: bc6c3e5f-b9e2-400e-9d9d-446ff93c520c
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 8431ebffc6d1aa463c5622bd67db8a140c0cfe69
-ms.sourcegitcommit: 2dc9c83e57e9734ffc4a93f79cd71285036eeb8b
+ms.openlocfilehash: f944d4625e2e67a82098bf3b4373ea5f0ed70619
+ms.sourcegitcommit: 9de3d74030b7c3313c34b5cbe2dbe6e18a48c043
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Novità della versione 1710 di System Center Configuration Manager
 
@@ -49,6 +49,9 @@ A partire da questa versione, Peer cache non è più una funzionalità in versio
 
 ### <a name="cloud-distribution-point-support-for-azure-government-cloud------sms491428---"></a>Supporto per punti di distribuzione cloud per il cloud di Azure per enti pubblici   <!-- sms491428 -->
 È ora possibile usare [punti di distribuzione basati sul cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) nel cloud di Azure per enti pubblici.   
+
+### <a name="inventory-default-unit-revision----sms503697---"></a>Revisione dell'unità predefinita di inventario <!-- sms503697 -->
+Poiché i moderni dispositivi includono unità disco rigido con dimensioni in gigabyte (GB), terabyte (TB) e scale di dimensioni maggiori, in questa versione l'unità predefinita (SMS_Units) usata in molte visualizzazioni viene modificata da megabyte (MB) a GB. Ad esempio, il valore v_gs_LogicalDisk.FreeSpace riporta ora GB come GB.
 
 
 <!-- ## Migration  -->
@@ -129,7 +132,7 @@ Per altre informazioni, vedere [Come configurare le impostazioni client in Syste
 <!-- ## Inventory  -->
 
 
-## <a name="mobile-device-management"></a>Gestione dispositivi mobili
+## <a name="mobile-device-management"></a>Gestione di dispositivi mobili
 
 ### <a name="actions-for-non-compliance"></a>Azioni per la mancata conformità 
 <!--1321366 -->    
@@ -145,7 +148,7 @@ Gli scenari supportati includono le operazioni seguenti:
 - [Registrare i dispositivi](../../../mdm/deploy-use/enroll-hybrid-windows.md)
 - [Eseguire azioni di cancellazione remota complete e selettive](../../../mdm/deploy-use/wipe-lock-reset-devices.md)
 - [Gestire le impostazioni tramite linee di base ed elementi di configurazione](../../../mdm/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md)
-- [Gestire i criteri di conformità](../../../mdm/deploy-use/device-compliance-policies.md)
+- [Gestire i criteri di conformità](../../../mdm/deploy-use/device-compliance-policies.md) e [l'accesso condizionale](../../../protect/deploy-use/manage-access-to-services.md)
 - Gestire l'accesso alle risorse aziendali tramite:
    - [Profili certificato](../../../mdm/deploy-use/create-pfx-certificate-profiles.md)
    - [Profili VPN in Configuration Manager](../../../mdm/deploy-use/create-vpn-profiles.md)
@@ -153,6 +156,9 @@ Gli scenari supportati includono le operazioni seguenti:
    - [Profili di posta elettronica](../../../mdm/deploy-use/create-exchange-activesync-profiles.md)
 - [Configurare Windows Hello per criteri aziendali](../../../mdm/deploy-use/windows-hello-for-business-settings.md)
 - [Gestire le applicazioni](../../../mdm/deploy-use/management-tasks-applications.md)
+
+> [!NOTE]
+> La distribuzione delle applicazioni .appxbundle compilate per architetture multiple potrebbe non funzionare in questi dispositivi, e questo scenario non è supportato al momento.
 
 ### <a name="improved-vpn-profile-experience-in-configuration-manager-console"></a>Esperienza del profilo VPN migliorata nella console di Configuration Manager 
 <!-- 1318232 -->
