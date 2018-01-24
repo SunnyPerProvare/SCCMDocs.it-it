@@ -29,7 +29,7 @@ ms.lasthandoff: 01/04/2018
 
 Lo strumento interessa solo il contenuto presente nel punto di distribuzione che viene specificato quando si esegue lo strumento stesso. Quest'ultimo non può rimuovere contenuto dalla raccolta contenuto nel server del sito.
 
-Lo strumento **ContentLibraryCleanup.exe** è disponibile nella cartella *%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* nel server del sito in un sito di amministrazione centrale o in un sito primario.
+Lo strumento **ContentLibraryCleanup.exe** è disponibile nella cartella \*%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* nel server del sito in un sito di amministrazione centrale o in un sito primario.
 
 ## <a name="requirements"></a>requisiti  
  Lo strumento può essere eseguito solo in un singolo punto di distribuzione alla volta.  
