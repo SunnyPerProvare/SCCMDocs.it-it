@@ -15,6 +15,7 @@
 ### [Gestire Long-Term Servicing Branch](understand/manage-the-ltsb.md)
 ### [Aggiornare Long-Term Servicing Branch a Current Branch](understand/convert-to-current-branch.md)
 ##  [Scelta del ramo di Configuration Manager da usare](understand/which-branch-should-i-use.md)
+##  [Configuration Manager e Windows as a Service](understand/configuration-manager-and-windows-as-service.md)
 ##  [Client di interoperabilità estesa](understand/interoperability-client.md)
 ##  [Licenze per System Center Configuration Manager](understand/learn-more-editions.md)
 ##  [Usare i servizi cloud](understand/use-cloud-services.md)
@@ -40,7 +41,7 @@
 ##   [Configurazioni supportate](plan-design/configs/supported-configurations.md)
 ###  [Numero di ridimensionamento e scalabilità](plan-design/configs/size-and-scale-numbers.md)
 ###  [Prerequisiti del sito e del sistema del sito](plan-design/configs/site-and-site-system-prerequisites.md)
-###  [Sistemi operativi supportati per i server del sistema del sito](plan-design/configs/supported-operating-systems-for-site-system-servers.md)
+###  [Sistemi operativi supportati per i server del sistema del sito di System Center Configuration Manager](plan-design/configs/supported-operating-systems-for-site-system-servers.md)
 ###  [Sistemi operativi supportati per client e dispositivi](plan-design/configs/supported-operating-systems-for-clients-and-devices.md)
 ###  [Supporto per Windows 10 come client](plan-design/configs/support-for-windows-10.md)
 ###  [Sistemi operativi supportati per le console](plan-design/configs/supported-operating-systems-consoles.md)
@@ -106,12 +107,13 @@
 
 <!-- Only show the current plus three, i.e., four total) -->
 ##   [Technical Preview](get-started/technical-preview.md)
+###  [Funzionalità della versione 1801](get-started/capabilities-in-technical-preview-1801.md)
 ###  [Funzionalità della versione 1712](get-started/capabilities-in-technical-preview-1712.md)
 ###  [Funzionalità della versione 1711](get-started/capabilities-in-technical-preview-1711.md)
 ###  [Funzionalità della versione 1710](get-started/capabilities-in-technical-preview-1710.md)
-###  [Funzionalità della versione 1709](get-started/capabilities-in-technical-preview-1709.md)
 
 <!-- No longer in support
+###  [Capabilities in 1709](get-started/capabilities-in-technical-preview-1709.md)
 ###  [Capabilities in 1708](get-started/capabilities-in-technical-preview-1708.md)
 ###  [Capabilities in 1707](get-started/capabilities-in-technical-preview-1707.md)
 ###  [Capabilities in 1706](get-started/capabilities-in-technical-preview-1706.md)
@@ -163,7 +165,7 @@
 #### [Controlli dei prerequisiti](servers/deploy/install/list-of-prerequisite-checks.md)
 ###  [Installazione di siti](servers/deploy/install/installing-sites.md)
 #### [Preparare l'installazione di siti](servers/deploy/install/prepare-to-install-sites.md)
-#### [Prerequisiti per l'installazione di siti](servers/deploy/install/prerequisites-for-installing-sites.md)
+#### [Prerequisiti per l'installazione di un sito](servers/deploy/install/prerequisites-for-installing-sites.md)
 #### [Usare l'installazione guidata](servers/deploy/install/use-the-setup-wizard-to-install-sites.md)
 #### [Usare una riga di comando](servers/deploy/install/use-a-command-line-to-install-sites.md)
 ##### [Opzioni della riga di comando](servers/deploy/install/command-line-options-for-setup.md)
@@ -197,7 +199,7 @@
 ###  [Configurare SQL Server Always On](servers/deploy/configure/configure-aoag.md)
 ###  [Usare un cluster di SQL Server](servers/deploy/configure/use-a-sql-server-cluster-for-the-site-database.md)
 ###  [Percorsi personalizzati per i file di database](servers/deploy/configure/custom-locations-for-site-database-files.md)
-###  [Configurare l'amministrazione basata su ruoli](servers/deploy/configure/configure-role-based-administration.md)
+###  [Configurare un'amministrazione basata su ruoli](servers/deploy/configure/configure-role-based-administration.md)
 ###  [Configurare i servizi di Azure](servers/deploy/configure/azure-services-wizard.md)
 ##   Informazioni di riferimento tecnico
 ###  [Account](plan-design/hierarchy/accounts.md)
