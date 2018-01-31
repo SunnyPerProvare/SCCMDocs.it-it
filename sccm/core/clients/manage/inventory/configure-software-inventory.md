@@ -7,12 +7,13 @@ ms.date: 01/03/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: f86559de-092a-4ce8-9b43-5d7530e0b763
-caps.latest.revision: "5"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: andredm7
 ms.author: andredm
 manager: angrobe
@@ -44,7 +45,7 @@ Questa procedura consente di configurare le impostazioni client predefinite per 
 
 7.  Configurare le impostazioni client necessarie. La sezione [Inventario software](../../../../core/clients/deploy/about-client-settings.md#software-inventory) nell'argomento [Informazioni sulle impostazioni client in System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md) contiene un elenco delle impostazioni client.  
 
- I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero criteri per un singolo client, vedere [How to manage clients in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
+ I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero criteri per un singolo client, vedere [Come gestire i client in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
 
  > [!TIP]  
         >   Il codice di errore 80041006 in inventoryprovider.log significa che il provider WMI ha esaurito la memoria. Ciò significa che è stato raggiunto il limite di quota di memoria per un provider e il provider di inventario non può continuare.
