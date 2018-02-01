@@ -7,20 +7,21 @@ ms.date: 6/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bc2282d5-0571-465b-9528-a555855eaacd
-caps.latest.revision: "18"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 145fe172665310caa48d8f152ad46d72df4168dd
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 9651694530d1258100c9c564bfc59447ac454a96
+ms.sourcegitcommit: ac20475ae9c1ea5ca3632cb6a44440c316f171f4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="about-the-service-connection-point-in-system-center-configuration-manager"></a>Informazioni sul punto di connessione del servizio in System Center Configuration Manager
 
@@ -84,7 +85,7 @@ Per usare Configuration Manager Service Manager, nella console passare a **Monit
 -   Il responsabile della distribuzione nel server del sito usa l'account di installazione del sistema del sito per trasferire gli aggiornamenti dal punto di connessione del servizio.
 
 ##  <a name="bkmk_urls"></a> Requisiti per l'accesso a Internet  
-Per abilitare l'operazione, il computer che ospita il punto di connessione del servizio ed eventuali firewall tra il computer e Internet deve passare le comunicazioni tramite la **porta TCP 443** e la **porta TCP 443** ai percorsi Internet seguenti. Il punto di connessione del servizio supporta anche l'uso di un proxy Web (con o senza autenticazione) per accedere a questi percorsi.  Se è necessario configurare un account proxy Web, vedere [Supporto dei server proxy in System Center Configuration Manager](/sccm/core/plan-design/network/proxy-server-support).
+Per abilitare l'operazione, il computer che ospita il punto di connessione del servizio ed eventuali firewall tra il computer e Internet deve passare le comunicazioni tramite la porta in uscita **TCP 443** per HTTPS e la porta in uscita **TCP 80** per HTTP ai percorsi Internet seguenti. Il punto di connessione del servizio supporta anche l'uso di un proxy Web (con o senza autenticazione) per accedere a questi percorsi.  Se è necessario configurare un account proxy Web, vedere [Supporto dei server proxy in System Center Configuration Manager](/sccm/core/plan-design/network/proxy-server-support).
 
 **Aggiornamenti e manutenzione**  
 
