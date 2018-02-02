@@ -7,19 +7,20 @@ ms.date: 8/30/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 87f4e041-67df-4c61-aa98-7444faffe565
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 412bddaa604c053662a605115acdabe76a2cb03c
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: c740e9b23cb2968463e8843b5f3cdcbaba7c4d91
+ms.sourcegitcommit: 645cd5a324bdd299906efa27eaca5885eafc9e9c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 01/16/2018
 ---
 # <a name="supported-operating-systems-for-clients-and-devices-for-system-center-configuration-manager"></a>Sistemi operativi supportati per client e dispositivi per System Center Configuration Manager
 
@@ -61,7 +62,7 @@ ms.lasthandoff: 12/04/2017
 
 -   **Windows 8.1** (x86, x64) - Professional, Enterprise    
 
--   **Windows 8** (x86, x64) - Professional, Enterprise    
+<!---   **Windows 8** (x86, x64): Professional, Enterprise  -removed Jan 12,2018 sms505863-->
 
 -   **Windows 7 con SP1** (x86, x64) - Professional, Enterprise e Ultimate    
 
@@ -111,11 +112,11 @@ I file **WBEMDISP.DLL** e **WBEMDISP.TLB** devono essere presenti e registrati n
 
 -   **Windows Embedded 8.1 Industry** (x86, x64)    
 
--   **Windows Embedded 8 Industry** (x86, x64)    
+   <!----   **Windows Embedded 8 Industry** (x86, x64)  -removed Jan 12,2018 sms505863-->
 
 -   **Windows Embedded 8 Standard** (x86, x64)    
 
--   **Windows Embedded 8 Pro** (x86, x64)    
+<!---   **Windows Embedded 8 Pro** (x86, x64)    -removed Jan 12,2018 sms505863-->
 
 -   **Windows Thin PC** (x86, x64)    
 
@@ -196,7 +197,7 @@ I sistemi operativi seguenti sono basati su Windows XP Embedded e sono supportat
 ##  <a name="linux-and-unix-servers"></a>Server Linux e UNIX  
  Per gestire i server Linux e UNIX è possibile usare il client di Configuration Manager per Linux e UNIX.  
 
- I pacchetti di installazione client per Linux e UNIX non vengono forniti con i supporti di Configuration Manager. Scaricare i **client per sistemi operativi aggiuntivi** dall'[Area download Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184). Oltre ai pacchetti di installazione client, il download del client include lo script che gestisce l'installazione del client in ogni computer.  
+ I pacchetti di installazione del client per Linux e UNIX non sono inclusi con i supporti di Configuration Manager. Scaricare i **client per altri sistemi operativi** dall'[Area download Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184). Oltre ai pacchetti di installazione client, il download del client include lo script che gestisce l'installazione del client in ogni computer.  
 
 **Requisiti e limitazioni:**  
 

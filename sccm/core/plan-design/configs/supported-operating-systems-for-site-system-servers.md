@@ -7,19 +7,20 @@ ms.date: 06/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 17905b4c-3895-4ad4-a69c-5e0d0fc5a8c3
-caps.latest.revision: "44"
+caps.latest.revision: 
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: e7606e087e2540b49e8aa23c09d09831651ee48b
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 03618b541f8f00ccab69fa4ebcef81ffc146010c
+ms.sourcegitcommit: 645cd5a324bdd299906efa27eaca5885eafc9e9c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 01/16/2018
 ---
 # <a name="supported-operating-systems-for-system-center-configuration-manager-site-system-servers"></a>Sistemi operativi supportati per i server dei sistemi del sito di System Center Configuration Manager
 
@@ -29,7 +30,7 @@ ms.lasthandoff: 12/04/2017
 L'articolo illustra in dettaglio le versioni di Windows che è possibile usare per ospitare un sito di System Center Configuration Manager o un ruolo del sistema del sito.
 
 
-Usare le informazioni di questo argomento con quelle contenute negli articoli relativi a:
+Usare le informazioni di questo articolo con quelle contenute negli articoli seguenti:
 -   [Recommended hardware for Configuration Manager](../../../core/plan-design/configs/recommended-hardware.md) (Hardware consigliato per Configuration Manager)
 -   [Prerequisiti del sito e del sistema del sito per Configuration Manager](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)
 -   [Numeri di ridimensionamento e scalabilità per Configuration Manager](../../../core/plan-design/configs/size-and-scale-numbers.md)
@@ -73,7 +74,7 @@ A partire dalla versione 1606 con l'hotfix rollup di KB3186654 (o dalla versione
 
 -   Punto di Reporting Services  
 
--   Punto di connessione del servizio  
+-   punto di connessione del servizio  
 
 -   Server di database del sito  
 
@@ -120,7 +121,7 @@ A partire dalla versione 1606 con l'hotfix rollup di KB3186654 (o dalla versione
 
 -   Punto di Reporting Services  
 
--   Punto di connessione del servizio  
+-   punto di connessione del servizio  
 
 -   Server di database del sito  
 
@@ -167,7 +168,7 @@ A partire dalla versione 1606 con l'hotfix rollup di KB3186654 (o dalla versione
 
 -   Punto di Reporting Services  
 
--   Punto di connessione del servizio  
+-   punto di connessione del servizio  
 
 -   Server di database del sito  
 
@@ -221,7 +222,7 @@ A partire dalla versione 1606 con l'hotfix rollup di KB3186654 (o dalla versione
 
 -   Punto di Reporting Services  
 
--   Punto di connessione del servizio  
+-   punto di connessione del servizio  
 
 -   Server di database del sito  
 
@@ -271,16 +272,18 @@ Questo sistema operativo non è supportato per i server del sito o ruoli del sis
 
     -   I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
-## <a name="windows-8-x86-x64-professional-and-enterprise"></a>Windows 8 (x86, x64) - Professional e Enterprise
-**Server del sistema del sito:**  
+<!--## Windows 8 (x86, x64): Professional and Enterprise
+**Site system servers:**  
 
--   Punto di distribuzione  
+-   Distribution point  
 
-    -   I punti di distribuzione in questo sistema operativo non sono supportati per PXE.  
+    -   Distribution points on this operating system are not supported for PXE.  
 
-    -   I punti di distribuzione in questa versione del sistema operativo non supportano il multicast.  
+    -   Distribution points on this operating system version do not support Multicast.  
 
-    -   I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+    -   Distribution points support several different configurations that each have different requirements. In some cases, these configurations support installation not only on servers, but on client operating systems. For more information about the options that are available for distribution points, see [Manage content and content infrastructure for System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+   
+    -  - -removed Jan 12,2018 sms505863-->
 
 ## <a name="windows-7-with-sp1-x86-x64-professional-enterprise-and-ultimate"></a>Windows 7 con SP1 (x86, x64) - Professional, Enterprise e Ultimate  
 **Server del sistema del sito:**  

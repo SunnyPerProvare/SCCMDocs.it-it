@@ -7,19 +7,20 @@ ms.date: 12/07/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 86cd5382-8b41-45db-a4f0-16265ae22657
-caps.latest.revision: "3"
+caps.latest.revision: 
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: ed1da87da42ffdbf0bb869e6a64b99e216f1b3c2
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: 424f4030f2dd2a337a29d48ca831fa3a791de610
+ms.sourcegitcommit: e121d8d3dd82b9f2dde2cb5206cbee602ab8e107
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
 
@@ -35,43 +36,43 @@ Un client Peer Cache è un client Gestione configurazione che è in grado di usa
  -  Le impostazioni client possono essere usate per abilitare i client per l'uso della peer cache.
  -  Per condividere il contenuto come origine di Peer Cache, un client Peer Cache:
     -  Deve essere aggiunto a un dominio. Tuttavia, un client che non è aggiunto a un dominio può ottenere contenuto da un'origine di Peer Cache non aggiunta al dominio.
-    -  Deve essere un membro del gruppo di limiti attuali del client che cerca il contenuto. Un client Peer Cache in un gruppo di limiti adiacenti non è incluso nel pool dei percorsi di origine del contenuto disponibili quando un client usa il fallback per cercare contenuti da un gruppo di limiti adiacente. Per altre informazioni sui gruppi di limiti correnti e adiacenti, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups##a-namebkmkboundarygroupsa-boundary-groups).
- - Qualsiasi tipo di contenuto conservato nella cache di un client di Configuration Manager può essere reso disponibile ad altri client tramite la peer cache, inclusi i file di Office 365 e i file per installazione rapida.<!--SMS.500850-->
- -  La peer cache non sostituisce l'uso di altre soluzioni come BranchCache, ma si affianca a esse per offrire più opzioni ed estendere le tradizionali soluzioni di distribuzione di contenuti, come i punti di distribuzione. Questa soluzione personalizzata è indipendente da BranchCache e quindi funziona anche se non si abilita o si usa Windows BranchCache.
+    -  Deve essere un membro del gruppo di limiti attuali del client che cerca il contenuto. Quando un client usa il fallback per cercare contenuto da un gruppo di limiti vicino, nell'elenco dei percorsi di origine contenuto non è incluso un client peer cache di un gruppo di limiti vicino. Per altre informazioni sui gruppi di limiti correnti e adiacenti, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups##a-namebkmkboundarygroupsa-boundary-groups).
+ - Il client di Configuration Manager conserva ogni tipo di contenuto nella cache che può essere usato da altri client tramite peer cache, ad esempio file di Office 365 e file di installazione rapida.<!--SMS.500850-->
+ -  La peer cache non sostituisce l'uso di altre soluzioni, come BranchCache. Viene infatti usata insieme ad altre soluzioni per aumentare il numero delle possibili soluzioni tradizionali di distribuzione del contenuto, ad esempio i punti di distribuzione. La peer cache è una soluzione personalizzata che non dipende da BranchCache.  Se si non abilita o non si usa Windows BranchCache, la peer cache funziona comunque.
 
 ### <a name="operations"></a>Operazioni
 
-Dopo aver distribuito le impostazioni client che abilitano la peer cache a una raccolta, i membri di tale raccolta possono fungere da origine di contenuto peer per altri client nello stesso gruppo di limiti:
+Per abilitare la peer cache, distribuire le impostazioni client a una raccolta. I membri di tale raccolta agiscono quindi da origine contenuto peer per altri client all'interno dello stesso gruppo di limiti.
  -  Un client che agisce come origine contenuto peer invia un elenco di contenuti disponibili che ha memorizzato nella cache al suo punto di gestione.
- -  Quindi, quando il client successivo in tale gruppo di limiti richiede quel contenuto, ogni origine peer cache con quel contenuto viene restituita come una potenziale origine del contenuto con i punti di distribuzione e altri percorsi di origine del contenuto in tale gruppo di limiti.
- -  In base al normale processo operativo, il client in cerca del contenuto seleziona un'origine del contenuto dal pool di origini specificato e continua nel tentativo di ottenere il contenuto.
+ -  Quando il client successivo in tale gruppo di limiti richiede il contenuto, ogni origine di peer cache contenente il contenuto e online viene restituita nell'elenco delle possibili origini contenuto. Questo elenco include anche i punti di distribuzione e altri percorsi di origine contenuto in tale gruppo di limiti.
+ -  Nel processo normale, il client che cerca il contenuto seleziona un'origine dall'elenco specificato. A questo punto il client tenta di ottenere il contenuto.
 
 > [!NOTE]
-> Se si verifica il fallback a un gruppo di limiti adiacente per il contenuto, i percorsi di origine del contenuto della peer cache del gruppo di limiti adiacente non vengono aggiunti al pool di potenziali percorsi di origine del contenuto del client.  
+> Se il client esegue il fallback a un gruppo di limiti vicino per il contenuto, i percorsi di origine contenuto di peer cache del gruppo di limiti vicino non vengono aggiunti all'elenco di possibili percorsi di origine contenuto.  
 
 
-Anche se è possibile fare in modo che tutti i client partecipino come origine di peer cache, è consigliabile scegliere solo i client più adatti a essere origini di peer cache.  L'idoneità di un client può essere valutata in base a tipo di chassis, spazio su disco, connettività di rete e altri requisiti del client. Per altre informazioni utili per scegliere i client più adatti da usare per la peer cache, vedere [questo blog scritto da un consulente Microsoft](https://blogs.technet.microsoft.com/setprice/2016/06/29/pe-peer-cache-custom-reporting-examples/).
+È consigliabile scegliere solo i client più adatti come origini di peer cache. Valutare l'idoneità dei client in base ad attributi come il tipo di chassis, lo spazio su disco e la connettività di rete. Per altre informazioni utili per scegliere i client più adatti da usare per la peer cache, vedere [questo blog scritto da un consulente Microsoft](https://blogs.technet.microsoft.com/setprice/2016/06/29/pe-peer-cache-custom-reporting-examples/).
 
 **Accesso limitato a un'origine di peer cache**  
-A partire dalla versione 1702, il computer di origine della peer cache rifiuta le richieste di contenuti quando soddisfa una delle condizioni seguenti:  
+A partire dalla versione 1702, il computer di origine della peer cache rifiuta le richieste di contenuto quando soddisfa una delle condizioni seguenti:  
   -  È in modalità di batteria in esaurimento.
   -  Il carico della CPU supera l'80% nel momento in cui il contenuto viene richiesto.
   -  L'I/O disco ha un valore di *AvgDiskQueueLength* superiore a 10.
   -  Non vi sono più connessioni disponibili al computer.   
 
-È possibile configurare queste impostazioni tramite la classe WMI del server di configurazione client per la funzionalità dell'origine peer (*SMS_WinPEPeerCacheConfig*) quando si usa System Center Configuration Manager SDK.
+Configurare queste impostazioni usando la classe WMI del server di configurazione client per la funzionalità dell'origine peer (*SMS_WinPEPeerCacheConfig*) in Configuration Manager SDK.
 
-Quando il computer rifiuta una richiesta di contenuto, il computer richiedente continuerà a cercare il contenuto da origini alternative nel pool dei percorsi di origine del contenuto disponibili.   
+Quando il computer rifiuta una richiesta di contenuto, il computer richiedente continua a cercare il contenuto dall'elenco di percorsi di origine contenuto disponibili.   
 
 
 
-### <a name="monitoring"></a>monitoring   
+### <a name="monitoring"></a>Monitoraggio   
 Per capire come viene usata la peer cache, è possibile visualizzare il dashboard Origini dati del client. Vedere [Dashboard Origini dati del client](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard).
 
 A partire dalla versione 1702, è possibile usare tre report per visualizzare l'uso della peer cache. Nella console passare a **Monitoraggio** > **Creazione di report** > **Report**. Tutti i report hanno un tipo di **contenuto di distribuzione software**:
 1.  **Rifiuto di contenuto di origine di peer cache**:  
-Usare questo report per visualizzare informazioni sulla frequenza con cui le origini di peer cache in un gruppo di limiti hanno rifiutato una richiesta di contenuto.
- - **Problema noto**: quando si esegue il drill-down in risultati come *MaxCPULoad* o *MaxDiskIO*, è possibile che venga visualizzato un errore per segnalare che il report o i dettagli non possono essere trovati. Per risolvere questo problema, usare i due report seguenti che mostrano direttamente i risultati.
+Usare questo report per visualizzare informazioni sulla frequenza con cui le origini di peer cache in un gruppo di limiti rifiutano una richiesta di contenuto.
+ - **Problema noto**: quando si esegue il drill-down in risultati come *MaxCPULoad* o *MaxDiskIO*, è possibile che venga visualizzato un errore per segnalare che il report o i dettagli non possono essere trovati. Per risolvere questo problema, usare i due report seguenti che illustrano direttamente i risultati.
 
 2. **Peer cache source content rejection by condition** (Rifiuto di contenuto di origine di peer cache - per condizione):  
 Usare questo report per visualizzare i dettagli relativi al rifiuto per un tipo di rifiuto o un gruppo di limiti specificato. È possibile specificare quanto segue:
@@ -79,11 +80,11 @@ Usare questo report per visualizzare i dettagli relativi al rifiuto per un tipo 
   - **Problema noto**: non è possibile selezionare i parametri disponibili, ma è necessario immetterli manualmente. Immettere i valori per *Nome del gruppo di limiti* e *Rejection Type* (Tipo di rifiuto) come mostrato nel primo report. Ad esempio, per *Rejection Type* (Tipo di rifiuto) è possibile immettere *MaxCPULoad* o *MaxDiskIO*.
 
 3. **Peer cache source content rejection details** (Rifiuto di contenuto di origine di peer cache - dettagli):   
-  Usare questo report per visualizzare informazioni sul contenuto richiesto al momento del rifiuto.
+  Usare questo report per visualizzare informazioni sul contenuto richiesto dal client al momento del rifiuto.
 
- - **Problema noto**: non è possibile selezionare i parametri disponibili, ma è necessario immetterli manualmente. Immettere il valore per *Rejection Type* (Tipo di rifiuto) come visualizzato nel primo report (Rifiuto di contenuto di origine di peer cache) e quindi immettere il valore di *ID risorsa* per l'origine di contenuto di cui visualizzare altre informazioni.  Per trovare l'ID risorsa dell'origine di contenuto:  
+ - **Problema noto**: non è possibile selezionare i parametri disponibili, ma è necessario immetterli manualmente. Immettere il valore per *Rejection Type* (Tipo di rifiuto) come visualizzato nel report **Rifiuto di contenuto di origine di peer cache**. Immettere quindi il valore per *ID risorsa* per l'origine contenuto sulla quale si vogliono più informazioni.  Per trovare l'ID risorsa dell'origine di contenuto:  
 
-    1. Trovare il nome del computer visualizzato come *Origine di peer cache* nei risultati del secondo report, ossia Peer cache source content rejection by condition (Rifiuto di contenuto di origine di peer cache - per condizione).  
+    1. Trovare il nome del computer visualizzato come *Origine di peer cache* nei risultati del report **Rifiuto di contenuto di origine di peer cache per condizione**.  
     2. Passare quindi ad **Asset e conformità** > **Dispositivi** e cercare il nome del computer. Usare il valore della colonna ID risorsa.  
 
 
@@ -92,19 +93,14 @@ Usare questo report per visualizzare i dettagli relativi al rifiuto per un tipo 
 
 -   I client possono trasferire contenuti solo dai client della peer cache che si trovano nel relativo gruppo di limiti corrente.
 
--   Prima della versione 1706, ogni sito in cui i client usano la peer cache doveva essere configurato con un [account di accesso alla rete](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account). A partire dalla versione 1706 tale account non è più necessario, con un'eccezione:  se un client usa la peer cache per ottenere ed eseguire una sequenza di attività da Software Center e la sequenza di attività riavvia il client in WinPE.  In questo scenario, quando si trova in WinPE, il client richiede ancora l'account di accesso alla rete, per poter ottenere contenuto accedendo alla peer cache di origine.
+-   Prima della versione 1706, ogni sito in cui i client usano la peer cache doveva essere configurato con un [account di accesso alla rete](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account). A partire dalla versione 1706 tale account non è più necessario, con un'eccezione,  vale a dire quando un client con peer cache abilitata esegue una sequenza di attività da Software Center e la sequenza di attività riavvia un'immagine d'avvio. In questo scenario per il client è ancora necessario un account di accesso alla rete. Quando il client si trova in Windows PE, usa l'account di accesso alla rete per ottenere il contenuto dall'origine di peer cache.
 
-    Quando è obbligatorio, l'account di accesso alla rete viene usato dal computer di origine della peer cache per autenticare le richieste di download dai peer. A questo scopo richiede solo le autorizzazioni utente di dominio.
+    Quando necessario, il computer di origine della peer cache usa l'account di accesso alla rete per autenticare le richieste di download dai peer. Per tale scopo, a questo account sono richieste solo le autorizzazioni utente di dominio.
 
--   Poiché il limite corrente di un'origine del contenuto della peer cache è determinato dall'ultimo invio dell'inventario hardware di tale client, un client che si sposti in un percorso di rete in un gruppo di limiti diverso potrebbe comunque essere considerato un membro del suo gruppo di limiti precedente ai fini della peer cache. Di conseguenza, a un client potrebbe essere offerta un'origine del contenuto della peer cache che non si trova nel suo immediato percorso di rete. È consigliabile escludere dalla partecipazione all'origine della peer cache i client soggetti a questa configurazione.
+-   L'ultimo invio dell'inventario hardware del client determina il limite corrente di un'origine contenuto della peer cache. Un client che si sposta in un gruppo di limiti diverso potrebbe comunque essere un membro del suo gruppo di limiti precedente ai fini della peer cache. Di conseguenza, a un client potrebbe essere offerta un'origine contenuto della peer cache che non si trova nel suo immediato percorso di rete. È consigliabile escludere dalla partecipazione all'origine della peer cache i client soggetti a questa configurazione.
+-    A partire dalla versione 1706, il client di peer cache verifica che l'origine contenuto della peer cache sia online prima di tentare di scaricare il contenuto. <!--sms.498675-->
 
 ## <a name="to-configure-client-peer-cache-client-settings"></a>Per configurare le impostazioni del client relative alla peer cache del client
-1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Impostazioni client** e aprire l'oggetto impostazioni client del dispositivo che si vuole usare. È possibile anche modificare l'oggetto Impostazioni client predefinite.
-2.  Nell'elenco delle impostazioni disponibili selezionare **Client Cache Settings** (Impostazioni cache client).
-3.  Impostare **Abilita il client di Configuration Manager nell'intero sistema operativo per condividere i contenuti** su **Sì**.
-4.  Configurare le impostazioni seguenti per definire le porte da usare per la peer cache:  
-  -  **Porta per la trasmissione di rete iniziale**
-  -  **Abilita HTTPS per la comunicazione peer del client**
-  -  **Porta per il download di contenuto da peer (HTTP/HTTPS)**
+Per informazioni sulla configurazione delle impostazioni client, vedere [Impostazioni della cache dei client](/sccm/core/clients/deploy/about-client-settings#client-cache-settings). Per altre informazioni, vedere [Come configurare le impostazioni client](/sccm/core/clients/deploy/configure-client-settings).
 
-In ogni computer abilitato per la peer cache, se Windows Firewall è in uso verrà configurato da Configuration Manager per consentire l'uso delle porte configurate.
+Nei client con peer cache abilitata che usano Windows Firewall, Configuration Manager configura le porte del firewall specificate nelle impostazioni client.

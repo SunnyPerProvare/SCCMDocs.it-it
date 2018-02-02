@@ -7,20 +7,21 @@ ms.date: 11/07/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-app
+ms.technology:
+- configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
-caps.latest.revision: "14"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: f680b692f3ae92fb8a5e8b6640ed053ceedba436
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: d7073b397cdf7b233f8264bd07019303a77a610f
+ms.sourcegitcommit: 2f6a13d208dcd8aa59c88f107791f9c4388e78e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="create-applications-with-system-center-configuration-manager"></a>Creare applicazioni con System Center Configuration Manager
 
@@ -337,7 +338,16 @@ La tabella seguente contiene script di esempio di Visual Basic (VB) che è possi
         > [!IMPORTANT]  
         >  Potrebbe verificarsi un conflitto se il **Tempo di esecuzione massimo consentito** è maggiore della finestra di manutenzione pianificata. Se l'utente imposta il tempo di esecuzione massimo consentito su una durata superiore a quella di qualsiasi finestra di manutenzione disponibile, quel tipo di distribuzione non sarà eseguito.  
 
-2.  **Tempo previsto di installazione (minuti)**: specificare il tempo previsto necessario per l'installazione del tipo di distribuzione. Viene visualizzato agli utenti di Software Center.  
+    -   **Tempo previsto di installazione (minuti)**: specificare il tempo previsto necessario per l'installazione del tipo di distribuzione. Viene visualizzato agli utenti di Software Center.  
+
+    -   **Specify specific reboot behavior** (Specificare il comportamento di riavvio specifico): specificare un'azione post-installazione. Sono disponibili le seguenti opzioni:  
+
+        -   **Determinare il comportamento in base ai codici restituiti**: gestire i riavvi in base ai codici configurati nella scheda Codici restituiti.  Software Center visualizzerà che **potrebbe essere necessario un riavvio**.  Se un utente esegue l'accesso durante l'installazione, verrà chiesto di procedere in base alla configurazione dell'esperienza utente per la distribuzione.  
+
+        -   **Nessuna azione specifica**: non è necessaria un'azione specifica dopo aver eseguito l'installazione.  Software Center segnalerà che non è necessario eseguire il riavvio.  
+        -   **Il programma di installazione software potrebbe forzare il riavvio del dispositivo	**: Configuration Manager non controlla o esegue un riavvio, ma l'installazione attale potrebbe eseguire il riavvio senza alcun avviso.  Usare questa impostazione per impedire la segnalazione di errori di installazione di Configuration Manager quando il programma di installazione esegue un riavvio.  Software Center visualizzerà che **potrebbe essere necessario un riavvio**.  
+
+        -   **Il client Configuration Manager forzerà il riavvio obbligatorio del dispositivo**: Configuration Manager forzerà il riavvio di un dispositivo al termine dell'installazione.  Software Center segnalerà che è necessario eseguire il riavvio.  Se un utente esegue l'accesso durante l'installazione, verrà chiesto di procedere in base alla configurazione dell'esperienza utente per la distribuzione.
 
 ## <a name="specify-requirements-for-the-deployment-type"></a>Specificare i requisiti per il tipo di distribuzione  
 

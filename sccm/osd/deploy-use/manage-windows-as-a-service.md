@@ -7,26 +7,27 @@ ms.date: 03/26/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-osd
+ms.technology:
+- configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: da1e687b-28f6-43c4-b14a-ff2b76e60d24
-caps.latest.revision: "26"
+caps.latest.revision: 
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 3848d0d6a9f3b5d778879c598bf859fb1e8a7ac7
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+ms.openlocfilehash: a67d75f27cbc2d53cc5d8c418e25232d88b4f067
+ms.sourcegitcommit: db9978135d7a6455d83dbe4a5175af2bdeaeafd8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Gestire Windows come servizio con System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
- In System Center Configuration Manager è possibile visualizzare lo stato di Windows distribuito come servizio nell'ambiente corrente, creare piani di manutenzione per formare anelli di distribuzione, verificare che i sistemi di rami di Windows 10 correnti siano mantenuti aggiornati quando vengono rilasciate nuove build e visualizzare avvisi quando i client Windows 10 si avvicinano alla scadenza del supporto per la build di Current Branch (CB) o Current Branch for Business (CBB).  
+ In System Center Configuration Manager è possibile visualizzare lo stato di Windows distribuito come servizio nell'ambiente corrente, creare piani di manutenzione per formare anelli di distribuzione, verificare che i sistemi di rami correnti di Windows 10 siano aggiornati quando vengono rilasciate nuove build e visualizzare avvisi quando i client Windows 10 si avvicinano alla scadenza del supporto per la build di Current Branch (CB) o Current Branch for Business (CBB).  
 
  Per altre informazioni sulle opzioni di manutenzione di Windows 10, vedere le  [opzioni di manutenzione relative agli aggiornamenti di Windows 10](https://technet.microsoft.com/library/mt598226\(v=vs.85\).aspx).  
 
@@ -50,7 +51,7 @@ ms.lasthandoff: 12/12/2017
     -   **Build del sistema operativo**: specifica la build del sistema operativo. Ad esempio, **10.0.10240** (RTM) o **10.0.10586** (versione 1511)  
 
 -   Installare e configurare il punto di connessione del servizio per la modalità **Online, connessione permanente** , per poter visualizzare i dati nel dashboard di manutenzione di Windows 10. In modalità offline gli aggiornamenti dei dati non vengono visualizzati nel dashboard fino a quando non si ottengono aggiornamenti di manutenzione di Configuration Manager.   
-     Per altre informazioni, vedere [Informazioni sul punto di connessione del servizio](../../core/servers/deploy/configure/about-the-service-connection-point.md).  
+      Per altre informazioni, vedere [Informazioni sul punto di connessione del servizio](../../core/servers/deploy/configure/about-the-service-connection-point.md).  
 
 
 -   Verificare che nel computer che esegue la console di Configuration Manager sia installato Internet Explorer 9 o versione successiva.  
@@ -280,3 +281,6 @@ Per modificare le proprietà di un piano di manutenzione, seguire la procedura r
 
     > [!NOTE]  
     >  È possibile riesaminare gli avvisi recenti sugli aggiornamenti software dal nodo **Aggiornamenti software** nell'area di lavoro **Raccolta software** .  
+
+**Per altre informazioni:** <br/>
+[Nozioni di base su Configuration Manager come servizio e Windows distribuito come servizio](/sccm/core/understand/configuration-manager-and-windows-as-service.md)

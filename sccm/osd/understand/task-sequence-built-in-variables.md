@@ -3,24 +3,25 @@ title: "Variabili predefinite della sequenza di attività"
 titleSuffix: Configuration Manager
 description: "Le variabili predefinite della sequenza di attività offrono informazioni sull'ambiente in cui è in esecuzione la sequenza di attività. Sono disponibili nel corso dell'intera sequenza di attività."
 ms.custom: na
-ms.date: 03/26/2017
+ms.date: 01/12/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-osd
+ms.technology:
+- configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 02bc6bd4-ca53-4e22-8b80-d8ee5fe72567
-caps.latest.revision: "15"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: e29efd4de847a861afa75a7a10868cad30e4cf97
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+ms.openlocfilehash: 29b2ae2a9a8ee41d11fbf7e032ef8262411f3dd0
+ms.sourcegitcommit: e121d8d3dd82b9f2dde2cb5206cbee602ab8e107
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="task-sequence-built-in-variables-in-system-center-configuration-manager"></a>Variabili predefinite della sequenza di attività in System Center Configuration Manager
 
@@ -81,8 +82,8 @@ ms.lasthandoff: 12/12/2017
 |SMSTSDriverRequestResolveTimeOut|Usare questa variabile per specificare il numero di secondi di attesa della risoluzione dei nomi HTTP a una richiesta di catalogo dei driver durante la procedura sequenza di attività Applica automaticamente i driver. Se la connessione richiede più tempo rispetto all'impostazione del timeout, la richiesta viene annullata. L'impostazione predefinita del timeout è di 60 secondi.|
 |SMSTSDriverRequestSendTimeOut|Usare questa variabile per specificare il numero di secondi da usare quando si invia una richiesta di catalogo dei driver durante la procedura sequenza di attività Applica automaticamente i driver. Se richiede più tempo rispetto all'impostazione del timeout, la richiesta viene annullata. L'impostazione predefinita del timeout è di 60 secondi.|
 |SMSTSErrorDialogTimeout|Quando si verifica un errore in una sequenza di attività, viene visualizzata una finestra di dialogo che viene ignorata automaticamente dopo un numero di secondi specificato da questa variabile. Per impostazione predefinita, la finestra di dialogo viene ignorata automaticamente dopo **900** secondi (15 minuti).|  
-| TSDisableProgressUI | Usare questa variabile per visualizzare o nascondere lo stato della sequenza di attività in sezioni diverse della sequenza stessa. | 
-|TSErrorOnWarning|Usare questa variabile per specificare se il motore della sequenza di attività considera un avviso come un errore rilevato durante il passaggio della sequenza di attività relativo all'installazione dell'applicazione. La sequenza di attività imposta la variabile _TSAppInstallStatus su **Avviso** quando una o più applicazioni o una dipendenza richiesta non viene installata perché non è stato raggiunto un requisito. Quando si imposta la variabile TSErrorOnWarning su **True** e la variabile _TSAppInstallStatus è impostata su Avviso, l'avviso viene considerato come un errore. Il comportamento predefinito è **False** .| 
+| TSDisableProgressUI | <!-- 1354291 --> A partire da Configuration Manager versione 1706 usare questa variabile per determinare se lo stato della sequenza di attività viene visualizzato agli utenti finali. Impostare questa variabile più volte in una sequenza di attività per nascondere o visualizzare lo stato in momenti diversi. Per nascondere lo stato della sequenza di attività impostare il valore di questa variabile su **True**. Per visualizzare lo stato della sequenza di attività impostare il valore di questa variabile su **False**. | 
+| TSErrorOnWarning |Usare questa variabile per specificare se il motore della sequenza di attività considera un avviso come un errore rilevato durante il passaggio della sequenza di attività relativo all'installazione dell'applicazione. La sequenza di attività imposta la variabile _TSAppInstallStatus su **Avviso** quando una o più applicazioni o una dipendenza richiesta non viene installata perché non è stato raggiunto un requisito. Quando si imposta la variabile TSErrorOnWarning su **True** e la variabile _TSAppInstallStatus è impostata su Avviso, l'avviso viene considerato come un errore. Il comportamento predefinito è **False** .| 
 |SMSTSLanguageFolder|usare questa variabile per modificare la lingua di visualizzazione di un'immagine di avvio indipendente dalla lingua.|  
 |SMSTSLocalDataDrive|Specifica la posizione del computer di destinazione in cui vengono archiviati i file temporanei durante l'esecuzione della sequenza di attività.<br /><br /> Questa variabile deve essere impostata prima dell'inizio della sequenza di attività, ad esempio impostando una variabile raccolta. Dopo aver avviato la sequenza di attività, Configuration Manager definisce la variabile _SMSTSMDataPath.|  
 |SMSTSMP|Usare questa variabile per specificare l'URL o l'indirizzo IP del punto di gestione di Configuration Manager.|  
