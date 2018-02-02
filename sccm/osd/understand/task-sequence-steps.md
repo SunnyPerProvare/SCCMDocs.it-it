@@ -17,11 +17,11 @@ caps.handback.revision:
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 695d21eb065f4d89143644dad28bfdb711392ab9
-ms.sourcegitcommit: e121d8d3dd82b9f2dde2cb5206cbee602ab8e107
+ms.openlocfilehash: 158817547d40f09fb8bd30ebedd5aea6420a8571
+ms.sourcegitcommit: aee9ac45c15f27d8cf827890edcae94c03f5fd5e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Passaggi della sequenza di attività in System Center Configuration Manager
 
@@ -536,7 +536,7 @@ Questo passaggio viene eseguito in un sistema operativo standard o in Windows PE
 
  -   **Cache del client di Configuration Manager**: usare questa opzione per archiviare il contenuto nella cache del client. Il client fa da origine di peer cache per gli altri client peer cache. Per altre informazioni, vedere [Prepare Windows PE peer cache to reduce WAN traffic](../get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md) (Preparare la peer cache di Windows PE per ridurre il traffico della rete WAN)  
 
- -   **Percorso personalizzato**  
+ -    **Percorso personalizzato**: il motore di esecuzione della sequenza di attività scarica il pacchetto nella directory di lavoro della sequenza di attività e quindi lo sposta nel percorso specificato con questa opzione. Il motore di esecuzione della sequenza di attività aggiunge il percorso con l'ID pacchetto. 
    
 **Salvare il percorso come variabile**  
  È possibile salvare il percorso come variabile utilizzabile in un altro passaggio della sequenza di attività. Configuration Manager aggiunge un suffisso numerico al nome della variabile. Se ad esempio si specifica la variabile %*mycontent*% come variabile personalizzata, questa variabile diventa la radice in cui viene archiviato tutto il contenuto di riferimento. Il contenuto può essere costituito da più pacchetti. Quando si fa riferimento alla variabile, aggiungere un suffisso numerico. Per il primo pacchetto, ad esempio, fare riferimento alla variabile %*mycontent01*%. Quando si fa riferimento alla variabile in passaggi successivi, ad esempio in **Aggiorna sistema operativo**, viene usato %*mycontent02*% o %*mycontent03*%, dove il numero corrisponde all'ordine di elenco dei pacchetti nel passaggio **Scarica contenuto pacchetto**.  
