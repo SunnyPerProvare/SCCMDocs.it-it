@@ -3,24 +3,25 @@ title: Prerequisiti per la creazione di report
 titleSuffix: Configuration Manager
 description: Individuare le diverse dipendenze che influiscono sull'uso della creazione di report in System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 01/29/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9cc508a5-5023-4833-b776-ae9a6971138f
-caps.latest.revision: "5"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 09f6ebd47070c63d238a74242d4b04b84c95ef49
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 3feafa8a20bedfba381c29a5d7fe80a47517b6ab
+ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="prerequisites-for-reporting-in-system-center-configuration-manager"></a>Prerequisiti per la creazione di report in System Center Configuration Manager
 
@@ -34,7 +35,7 @@ La creazione di report in System Center Configuration Manager ha dipendenze este
 |Prerequisito|Altre informazioni|  
 |------------------|----------------------|  
 |SQL Server Reporting Services|Prima di poter usare la creazione di report in Configuration Manager, è necessario installare e configurare SQL Server Reporting Services.<br /><br /> Per informazioni sulla pianificazione e la distribuzione di Reporting Services nell'ambiente, vedere la sezione [Reporting Services](http://go.microsoft.com/fwlink/p/?LinkId=212032) nella documentazione online di SQL Server 2008.|  
-|Dipendenze del ruolo del sistema del sito per computer che eseguono il punto di Reporting Services.|[Configurazioni supportate per System Center Configuration Manager](../../../core/plan-design/configs/supported-configurations.md)|  
+|Dipendenze del ruolo del sistema del sito per computer che eseguono il punto di Reporting Services.|[Supported configurations for System Center Configuration Manager](../../../core/plan-design/configs/supported-configurations.md) (Configurazioni supportate per System Center Configuration Manager)|  
 
 ## <a name="dependencies-internal-to-configuration-manager"></a>Dipendenze interne a Configuration Manager  
  La tabella seguente elenca le dipendenze per la creazione di report in Configuration Manager.  
@@ -49,17 +50,19 @@ La creazione di report in System Center Configuration Manager ha dipendenze este
  Nella seguente tabella vengono elencate le versioni di SQL Server supportate dal punto di Reporting Services.  
 
 |Versione di SQL Server|Punto di Reporting Services|  
-|------------------------|------------------------------|  
-|SQL Server 2008 SP2 con aggiornamento cumulativo 9 o successivo<br /><br /> Standard<br />Enterprise<br />Datacenter|Sì|  
-|SQL Server 2008 SP3 con aggiornamento cumulativo 4 o successivo<br /><br /> Standard<br />Enterprise<br />Datacenter|Sì|  
-|SQL Server 2008 R2 con SP1 e aggiornamento cumulativo 6 o successivo<br /><br /> Standard<br />Enterprise<br />Datacenter|Sì|  
-|SQL Server 2008 R2 con SP2<br /><br /> Standard<br />Enterprise<br />Datacenter|Sì|  
-|SQL Server Express 2008 R2 con SP1 e aggiornamento cumulativo 4 o successivo|Non supportato|  
-|SQL Server Express 2008 R2 con SP2|Non supportato|  
-|SQL Server 2012 e con aggiornamento cumulativo 2 o successivo<br /><br /> Standard<br />Enterprise|Sì|  
-|SQL Server 2012 con SP1 e nessun aggiornamento cumulativo<br /><br /> Standard<br />Enterprise|Sì|  
-|SQL Server 2014<br /><br /> Standard<br />Enterprise|Sì|
+|------------------------|------------------------------|
+|SQL Server 2017 con aggiornamento cumulativo 2 o successivo<br /><br /> Standard<br />Enterprise|Sì, a partire da Configuration Manager versione 1710|  
+|SQL Server 2016 con SP1<br /><br /> Standard<br />Enterprise|Sì| 
 |SQL Server 2016<br /><br /> Standard<br />Enterprise|Sì|
-|SQL Server 2016 con SP1<br /><br /> Standard<br />Enterprise|Sì|
+|SQL Server 2014 con SP2<br /><br /> Standard<br />Enterprise|Sì|
+|SQL Server 2014 con SP1<br /><br /> Standard<br />Enterprise|Sì|
+|SQL Server 2012 con SP4 <br /><br /> Standard<br />Enterprise|Sì|  
+|SQL Server 2012 con SP3 <br /><br /> Standard<br />Enterprise|Sì|  
+|SQL Server 2008 R2 con SP3<br /><br /> Standard<br />Enterprise<br />Datacenter|Sì, per le versioni supportate di Configuration Manager precedenti alla 1702.|  
+|SQL Server Express 2008 R2 con SP3|Non supportato| 
+
+
+
+
 ## <a name="next-steps"></a>Passaggi successivi
 [Operazioni e manutenzione per la creazione di report](operations-and-maintenance-for-reporting.md)

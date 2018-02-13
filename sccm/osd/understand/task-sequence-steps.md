@@ -17,11 +17,11 @@ caps.handback.revision:
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 158817547d40f09fb8bd30ebedd5aea6420a8571
-ms.sourcegitcommit: aee9ac45c15f27d8cf827890edcae94c03f5fd5e
+ms.openlocfilehash: 5320d7747f7e2c6164da8c1801e631b749935d6d
+ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Passaggi della sequenza di attività in System Center Configuration Manager
 
@@ -1313,7 +1313,7 @@ Nell'editor della sequenza di attività fare clic su **Aggiungi**, selezionare *
  Fare clic su **Sfoglia** e selezionare il pacchetto di installazione del client di Configuration Manager da usare in questo passaggio.  
 
  **Usa il pacchetto client di pre-produzione se disponibile**  
- Se è disponibile un pacchetto client di pre-produzione, la sequenza di attività usa tale pacchetto invece del pacchetto client di produzione. Il client di pre-produzione è una versione più recente per il testing nell'ambiente di produzione. Fare clic su **Sfoglia** e selezionare il pacchetto di installazione del client di pre-produzione da usare in questo passaggio.  
+ Se è disponibile un pacchetto client di pre-produzione e il computer è un membro della raccolta di distribuzione pilota, la sequenza di attività usa tale pacchetto invece del pacchetto client di produzione. Il client di pre-produzione è una versione più recente per il testing nell'ambiente di produzione. Fare clic su **Sfoglia** e selezionare il pacchetto di installazione del client di pre-produzione da usare in questo passaggio.  
 
  **Proprietà di installazione**  
  L'assegnazione sito e la configurazione predefinita vengono specificate automaticamente dall'azione della sequenza di attività. È possibile usare questo campo per specificare eventuali proprietà di installazione aggiuntive da usare quando si installa il client. Per immettere più proprietà di installazione, separarle con uno spazio.  

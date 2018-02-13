@@ -6,18 +6,19 @@ ms.custom: na
 ms.date: 05/02/2017
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 409e26e1-7716-4f1d-a0ee-34feabf20792
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: aa8d80cf9c036e63dc74ffe78bc8d5b060d6053e
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: cf46bb32994ddb8a1fa3b9de0dbffc94228ad7fd
+ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Novità della versione 1702 di System Center Configuration Manager
 
@@ -35,13 +36,13 @@ L'aggiornamento 1702 per System Center Configuration Manager (Current Branch) è
 Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1702 di Configuration Manager.  
 
 ## <a name="deprecated-features-and-operating-systems"></a>Funzionalità e sistemi operativi deprecati
-Informazioni sulle modifiche apportate al supporto tecnico prima dell'implementazione in [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/removed-and-deprecated-features).
+Informazioni sulle modifiche apportate al supporto prima dell'implementazione in [Elementi rimossi e deprecati](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated).
 
 Nella versione 1702 viene eliminato il supporto per i prodotti seguenti:
-- **SQL Server 2008 R2**, per i server di database del sito. Il [primo avviso](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-support-for-sql-server-versions-as-a-site-database) relativo al supporto deprecato risale al 10 luglio 2015. Questa versione di SQL Server rimane supportata quando si usa una versione di Configuration Manager precedente la 1702.
-- **Windows Server 2008 R2**, per i server del sistema del sito e per la maggior parte dei ruoli del sistema del sito. Il [primo avviso](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems) relativo al supporto deprecato risale al 10 luglio 2015. Questa versione di Windows rimane supportata quando si usa una versione di Configuration Manager precedente la 1702.  
-- **Windows Server 2008**, per i server del sistema del sito e per la maggior parte dei ruoli del sistema del sito. Il [primo avviso](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems) relativo al supporto deprecato risale al 10 luglio 2015.
-- **Windows XP Embedded**, come sistema operativo client. Il [primo avviso](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems) relativo alla deprecazione risale al 10 luglio 2015. Questa versione di Windows rimane supportata quando si usa una versione di Configuration Manager precedente la 1702.
+- **SQL Server 2008 R2**, per i server di database del sito. Il [primo avviso](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#deprecated-support-for-sql-server-versions-as-a-site-database) relativo al supporto deprecato risale al 10 luglio 2015. Questa versione di SQL Server rimane supportata quando si usa una versione di Configuration Manager precedente la 1702.
+- **Windows Server 2008 R2**, per i server del sistema del sito e per la maggior parte dei ruoli del sistema del sito. Il [primo avviso](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#deprecated-server-operating-systems) relativo al supporto deprecato risale al 10 luglio 2015. Questa versione di Windows rimane supportata quando si usa una versione di Configuration Manager precedente la 1702.  
+- **Windows Server 2008**, per i server del sistema del sito e per la maggior parte dei ruoli del sistema del sito. Il [primo avviso](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#deprecated-server-operating-systems) relativo al supporto deprecato risale al 10 luglio 2015.
+- **Windows XP Embedded**, come sistema operativo client. Il [primo avviso](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-client#deprecated-client-operating-systems) relativo alla deprecazione risale al 10 luglio 2015. Questa versione di Windows rimane supportata quando si usa una versione di Configuration Manager precedente la 1702.
 
 
 
@@ -221,7 +222,7 @@ A partire da questa versione, quando si aggiorna la versione di Windows ADK e qu
 
 ## <a name="software-updates"></a>Aggiornamenti software
 
-### <a name="deploy-office-365-apps-to-clients"></a>Distribuire le app di Office 365 ai client
+### <a name="deploy-office-365-apps-to-clients"></a>Distribuire le app di Office 365 sui client
 A partire dalla versione 1702, nel dashboard Gestione client di Office 365 è possibile avviare il programma di installazione di Office 365, che consente di configurare le impostazioni di installazione di Office 365, scaricare file dalle reti di distribuzione del contenuto (CDN) e distribuire i file come applicazione in Configuration Manager. Per informazioni dettagliate, vedere [Gestire gli aggiornamenti di Office 365 ProPlus](/sccm/sum/deploy-use/manage-office-365-proplus-updates#deploy-office-365-apps).
 
 > [!IMPORTANT]

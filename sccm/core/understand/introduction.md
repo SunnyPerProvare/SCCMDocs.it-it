@@ -7,19 +7,20 @@ ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3343eccf-bf09-41cd-9e68-03e893c7f904
-caps.latest.revision: "16"
+caps.latest.revision: 
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 76dfa18cb7f794be9102bf045cd4212adc7ad56f
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: b63386f69ea05a610868de9bc85ff606d4ade73d
+ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="introduction-to-system-center-configuration-manager"></a>Introduzione a System Center Configuration Manager
 
@@ -72,7 +73,7 @@ Usare gli argomenti seguenti e le sezioni aggiuntive in questo argomento per alt
 -   [Fundamentals of System Center Configuration Manager](../../core/understand/fundamentals.md) (Nozioni fondamentali su System Center Configuration Manager)  
 -   [Evaluate System Center Configuration Manager by building your own lab environment](/sccm/core/get-started/set-up-your-lab) (Valutare System Center Configuration Manager creando un proprio ambiente lab)
 -   [Find help for using System Center Configuration Manager](../../core/understand/find-help.md) (Reperire informazioni sull'uso di System Center Configuration Manager)  
--   [Removed and deprecated features for System Center Configuration Manager](../../core/plan-design/changes/removed-and-deprecated-features.md) (Funzionalità rimosse e deprecate per System Center Configuration Manager)  
+-   [Elementi rimossi e deprecati per System Center Configuration Manager](../../core/plan-design/changes/deprecated/removed-and-deprecated.md)  
 
 ##  <a name="BKMK_Console"></a> Console di Configuration Manager  
  Dopo aver installato Configuration Manager usare la console di Configuration Manager per configurare siti e client e per eseguire e monitorare le attività di gestione. Questa console è il principale punto di amministrazione e consente di gestire più siti.  

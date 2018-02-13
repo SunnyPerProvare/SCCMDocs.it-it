@@ -6,19 +6,20 @@ ms.date: 05/02/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 3ae68fa6-8b30-45dd-9d12-50bb67cb4a9d
-caps.latest.revision: "51"
+caps.latest.revision: 
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: fb8b7dd27d890750fb93f02d38c0fd9d6c0feca6
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 6e0da4f8c42bb0b2275566eba35b1e06b2028c1b
+ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="what39s-changed-in-system-center-configuration-manager-from-system-center-2012-configuration-manager"></a>Novità in System Center Configuration Manager rispetto a System Center 2012 Configuration Manager
 
@@ -81,7 +82,7 @@ Si noti che la gestione fuori banda in System Center 2012 Configuration Manager 
 ##  <a name="bkmk_out"></a> Funzionalità obsolete  
  Alcune funzionalità, ad esempio il [supporto nativo per i computer basati sulla tecnologia Intel AMT (Active Management Technology)](#bkmk_AMT), sono state rimosse dalla console di Configuration Manager, mentre altre funzionalità, come Protezione accesso alla rete, sono state rimosse completamente. Inoltre, alcuni prodotti Microsoft precedenti come Windows Vista, Windows Server 2008 e SQL Server 2008 non sono più supportati.  
 
- Per un elenco delle funzionalità deprecate, vedere [Funzionalità rimosse e deprecate per System Center Configuration Manager](../../../core/plan-design/changes/removed-and-deprecated-features.md).  
+ Per un elenco delle funzionalità deprecate, vedere [Elementi rimossi e deprecati per System Center Configuration Manager](../../../core/plan-design/changes/deprecated/removed-and-deprecated.md).  
 
  Per informazioni dettagliate su prodotti, configurazioni e sistemi operativi supportati, vedere [Configurazioni supportate per System Center Configuration Manager](../../../core/plan-design/configs/supported-configurations.md).  
 
@@ -148,7 +149,7 @@ Tenere presente le seguenti modifiche apportate alle impostazioni di conformità
 
 -   Supporto per la gestione delle impostazioni nei computer Mac OS X che possono essere registrati con Microsoft Intune o gestiti con il client di Configuration Manager. Vedere [Come creare elementi di configurazione per dispositivi iOS e Mac OS X gestiti senza il client System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client.md).  
 
-## <a name="protect-data-and-site-infrastructure"></a>Proteggere dati e infrastruttura del sito  
+## <a name="protect-data-and-site-infrastructure"></a>Proteggere dati e infrastruttura e del sito  
 System Center Configuration Manager consente di eseguire l'integrazione con Windows Hello for Business (in precedenza Microsoft Passport for Work), un metodo di accesso alternativo che usa Active Directory o un account Azure Active Directory per sostituire una password, una smart card o una smart card virtuale nei dispositivi che eseguono Windows 10. Vedere [Impostazioni di Windows Hello for Business in System Center Configuration Manager](../../../protect/deploy-use/windows-hello-for-business-settings.md).
 
 ## <a name="mobile-device-management-with-microsoft-intune"></a>Gestione dei dispositivi mobili con Microsoft Intune  

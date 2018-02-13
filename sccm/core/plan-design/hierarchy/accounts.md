@@ -7,20 +7,21 @@ ms.date: 2/9/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 72d7b174-f015-498f-a0a7-2161b9929198
-caps.latest.revision: "7"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 518be0c1cb4c361d8802ed70779d192725eb8feb
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: 1b8248cbbade7d46d1a1ad41edd704b5ad8d49aa
+ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="accounts-used-in-system-center-configuration-manager"></a>Account usati in System Center Configuration Manager
 
@@ -29,7 +30,7 @@ ms.lasthandoff: 01/04/2018
 Usare le informazioni seguenti per identificare i gruppi di Windows e gli account usati in System Center Configuration Manager, le relative modalità d'uso ed eventuali requisiti.  
 
 ## <a name="windows-groups-that-configuration-manager-creates-and-uses"></a>Gruppi Windows creati e usati da Configuration Manager  
- Configuration Manager crea automaticamente e, in molti casi, gestisce automaticamente i gruppi di Windows seguenti.  
+ Configuration Manager crea automaticamente e, in molti casi, gestisce automaticamente i gruppi di Windows seguenti:  
 
 > [!NOTE]  
 >  Quando Configuration Manager crea un gruppo in un computer appartenente a un dominio, il gruppo è un gruppo di sicurezza locale. Se il computer è un controller di dominio, il gruppo è un gruppo locale di dominio condiviso da tutti i controller di dominio del dominio.  
@@ -72,7 +73,7 @@ Nella seguente tabella sono elencati dettagli aggiuntivi per questo gruppo:
 |------------|----------------------|  
 |Tipo e percorso|Questo è un gruppo di sicurezza locale creato in ogni computer che ha un provider SMS.<br /><br /> Quando si disinstalla un sito, questo gruppo non viene rimosso automaticamente. Deve essere eliminato manualmente.|  
 |Appartenenze|Configuration Manager gestisce automaticamente l'appartenenza a gruppi. Per impostazione predefinita, ogni utente amministratore di una gerarchia e l'account computer del server del sito appartengono al gruppo SMS Admins in ciascun computer del provider SMS in un sito.|  
-|Autorizzazioni|I diritti e le autorizzazioni SMS Admins vengono impostati nello snap-in MMC del controllo WMI. Per impostazione predefinita, al gruppo SMS Admins vengono concessi **Enable Account** e **Remote Enable** nello spazio dei nomi Root\SMS. Agli utenti autenticati, invece, vengono concesse le autorizzazioni **Esegui metodi**, **Scrittura provider** e **Abilita account**.<br /><br /> Gli utenti amministratori che usano una console di Configuration Manager remota richiedono autorizzazioni DCOM per l'attivazione remota sul computer del server di sito e sul computer del provider SMS. È consigliabile concedere questi diritti a SMS Admins per semplificare l'amministrazione anziché concedere questi diritti direttamente a utenti o a gruppi. Per ulteriori informazioni, vedere la sezione [Configure DCOM permissions for remote Configuration Manager consoles](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole) nell'argomento [Modify your System Center Configuration Manager infrastructure](../../../core/servers/manage/modify-your-infrastructure.md) .|  
+|Autorizzazioni|I diritti e le autorizzazioni SMS Admins vengono impostati nello snap-in MMC del controllo WMI. Per impostazione predefinita, al gruppo SMS Admins vengono concessi **Enable Account** e **Remote Enable** nello spazio dei nomi Root\SMS. Agli utenti autenticati, invece, vengono concesse le autorizzazioni **Esegui metodi**, **Scrittura provider** e **Abilita account**.<br /><br /> Gli utenti amministratori che usano una console di Configuration Manager remota richiedono autorizzazioni DCOM per l'attivazione remota sul computer del server di sito e sul computer del provider SMS. È consigliabile concedere questi diritti a SMS Admins per semplificare l'amministrazione anziché concedere questi diritti direttamente a utenti o a gruppi. Per altre informazioni, vedere la sezione [Configurare le autorizzazioni DCOM per le console remote di Configuration Manager](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole) nell'articolo [Modificare l'infrastruttura di System Center Configuration Manager](../../../core/servers/manage/modify-your-infrastructure.md).|  
 
 ### <a name="smssitesystemtositeserverconnectionmpltsitecode"></a>SMS_SiteSystemToSiteServerConnection_MP_&lt;codicesito\>  
  I punti di gestione di Configuration Manager remoti rispetto al server del sito usano questo gruppo per connettersi database del sito. Questo gruppo consente l'accesso del punto di gestione alle cartelle della posta in arrivo nel server del sito e nel database del sito.  
@@ -245,6 +246,8 @@ Nella seguente tabella sono elencati dettagli aggiuntivi per questo gruppo:
 
 ### <a name="reporting-services-point-account"></a>Account punto di Reporting Services  
  SQL Server Reporting Services usa l'**account punto di Reporting Services** per recuperare i dati per i report di Configuration Manager dal database del sito. La password e l'account utente Windows specificati vengono crittografati e archiviati nel database di SQL Server Reporting Services.  
+>[!NOTE]
+>L'account specificato deve disporre delle autorizzazioni di Accesso locale nel computer che ospita il database di Reporting Services.
 
 ### <a name="remote-tools-permitted-viewer-accounts"></a>Account visualizzatori autorizzati di strumenti remoti  
  Gli account specificati come **Visualizzatori autorizzati** per il controllo remoto sono un elenco di utenti a cui è consentito usare le funzionalità di strumenti remoti nei client.  
@@ -255,7 +258,7 @@ Nella seguente tabella sono elencati dettagli aggiuntivi per questo gruppo:
  Questo account richiede le autorizzazioni amministrative locali nei sistemi del sito che verranno installati e configurati dagli amministratori. Inoltre, questo account deve avere il diritto **Accedi al computer dalla rete** dei criteri di sicurezza nei sistemi del sito che verranno installati e configurati dagli amministratori.  
 
 > [!TIP]  
->  Se sono presenti numerosi controller di dominio e questi account verranno usati nei domini, verificare che gli account siano stati replicati prima di configurare il sistema del sito.  
+>  Se sono presenti numerosi controller di dominio e questi account vengono usati nei domini, verificare che gli account siano stati replicati prima di configurare il sistema del sito.  
 >   
 >  Quando si specifica un account locale in ogni sistema del sito da gestire, questa configurazione è più sicura dell'utilizzo di account di dominio poiché limita il danno che gli utenti malintenzionati possono causare se l'account viene compromesso. Gli account di dominio sono comunque più semplici da gestire. Valutare i vantaggi e gli svantaggi in termini di sicurezza ed efficienza per l'amministrazione.  
 
