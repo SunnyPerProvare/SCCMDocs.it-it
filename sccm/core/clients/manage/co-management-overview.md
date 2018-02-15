@@ -10,20 +10,23 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: 
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: 4b582d5fbd9e2e916c439b149e117f1a65da98bf
-ms.sourcegitcommit: 5f4a584d4a833b0cc22bd8c47da7dd55aced97fa
+ms.openlocfilehash: 0cc11a05013fd9c25ee98ec35adcbe822d8a21fb
+ms.sourcegitcommit: 389c4e5b4e9953b74c13b1689195f99c526fa737
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="co-management-for-windows-10-devices"></a>Co-gestione per dispositivi Windows 10    
 <!-- 1350871 -->
 Molti clienti vogliono gestire i dispositivi Windows 10 nello stesso modo in cui gestiscono i dispositivi mobili usando una soluzione semplice, a costi contenuti e basata su cloud. Tuttavia, la transizione dalla gestione tradizionale a una gestione moderna può essere complessa. Negli aggiornamenti precedenti di Windows 10 è già possibile aggiungere un dispositivo Windows 10 ad Active Directory (AD) locale e ad Azure AD basata sul cloud allo stesso tempo (Azure AD ibrida). A partire da Configuration Manager versione 1710, la co-gestione sfrutta questo miglioramento e consente di gestire contemporaneamente i dispositivi Windows 10 versione 1709 (noto anche come Fall Creators Update) usando sia Configuration Manager sia Intune. È una soluzione che costituisce un ponte tra la gestione tradizionale e quella moderna e che consente di eseguire la transizione mediante un approccio per fasi. 
 
-I percorsi principali per realizzare la co-gestione sono due.  Uno consiste nella co-gestione fornita da Configuration Manager, in cui i dispositivi Windows 10 gestiti da Configuration Manager e aggiunti ad Azure AD ibrido vengono registrati in Intune. Il secondo avviene quando i dispositivi sottoposti a provisioning da Intune e registrati in Intune e quindi installati con il client di Configuration Manager raggiungono uno stato di co-gestione.  
+I percorsi principali per realizzare la co-gestione sono due.  Uno consiste nella co-gestione fornita da Configuration Manager, in cui i dispositivi Windows 10 gestiti da Configuration Manager e aggiunti ad Azure AD ibrido vengono registrati in Intune. Il secondo avviene quando i dispositivi sottoposti a provisioning da Intune e registrati in Intune e quindi installati con il client di Configuration Manager raggiungono uno stato di co-gestione.
 
 ## <a name="prerequisites"></a>Prerequisiti
 Prima di poter abilitare la co-gestione, è necessario soddisfare i prerequisiti seguenti. Esistono prerequisiti generali e prerequisiti diversi per i dispositivi con il client di Configuration Manager e i dispositivi in cui non è installato il client.
+
+> [!IMPORTANT]
+> I dispositivi mobili Windows 10 non supportano la co-gestione.
 
 ### <a name="general-prerequisites"></a>Prerequisiti generali
 Di seguito sono elencati i prerequisiti generali per abilitare la co-gestione:  
