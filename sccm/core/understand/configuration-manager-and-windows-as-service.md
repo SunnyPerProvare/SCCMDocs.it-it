@@ -16,11 +16,11 @@ caps.latest.revision:
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 40894c4ebb562e5c979f1226349ff91c38516618
-ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
+ms.openlocfilehash: 6d93be3ec04396c9980b039617c673985090cdc6
+ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="keep-windows-10-up-to-date-in-the-enterprise-using-configuration-manager"></a>Aggiornare Windows 10 nell'organizzazione usando Configuration Manager
 
@@ -36,7 +36,7 @@ System Center Configuration Manager offre un controllo completo sugli aggiorname
 |[Ciclo di vita del supporto](/sccm/core/servers/manage/current-branch-versions-supported)|Illustra il nuovo modello di supporto e manutenzione.|
 |[Elementi rimossi e deprecati](/sccm//core/plan-design/changes/deprecated/removed-and-deprecated)|Anticipa informazioni sulle future modifiche che potrebbero influire sull'uso di Configuration Manager.|
 |[Configuration Manager come servizio](/sccm/core/servers/manage/updates)|Illustra il semplice metodo nella console per applicare gli aggiornamenti delle funzionalità in Configuration Manager.|
-|[Ottenere gli aggiornamenti disponibili](/core/servers/manage/install-in-console-updates#get-available-updates)|Illustra due modalità per ottenere nuovi aggiornamenti delle funzionalità di Configuration Manager.|
+|[Ottenere gli aggiornamenti disponibili](/sccm/core/servers/manage/install-in-console-updates.md#get-available-updates)|Illustra due modalità per ottenere nuovi aggiornamenti delle funzionalità di Configuration Manager.|
 |[Elenco di controllo per l'aggiornamento](/sccm/core/servers/manage/install-in-console-updates#bkmk_beforeinstall)|Illustra gli elenchi di controllo per l'aggiornamento specifici della versione, se disponibili.| 
 |[Installare nuovi aggiornamenti delle funzionalità di Configuration Manager](/sccm/core/servers/manage/install-in-console-updates#bkmk_install)|Illustra la semplice procedura di installazione degli aggiornamenti delle funzionalità.|
 |[Supporto per Windows 10](/sccm/core/plan-design/configs/support-for-windows-10)|Offre una matrice di supporto per le versioni di Windows 10 (e ADK).|
