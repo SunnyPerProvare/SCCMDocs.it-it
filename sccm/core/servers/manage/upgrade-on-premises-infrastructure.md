@@ -3,30 +3,31 @@ title: Aggiornare l'infrastruttura locale
 titleSuffix: Configuration Manager
 description: Informazioni su come aggiornare l'infrastruttura, ad esempio SQL Server e il sistema operativo del sito di sistemi del sito.
 ms.custom: na
-ms.date: 06/05/2017
+ms.date: 02/15/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8ca970dd-e71c-404f-9435-d36e773a0db2
-caps.latest.revision: "7"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 3296fe01ebe7d3343a174ffd18483156683b69f7
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 8e17ffad2b972119c92e449bef8f086b950b106c
+ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="upgrade-on-premises-infrastructure-that-supports-system-center-configuration-manager"></a>Aggiornare l'infrastruttura locale che supporta System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Le informazioni disponibili in questo argomento consentono di aggiornare l'infrastruttura server che esegue System Center Configuration Manager.  
+Le informazioni disponibili in questo articolo consentono di aggiornare l'infrastruttura server che esegue System Center Configuration Manager.  
 
  - Per eseguire l'aggiornamento a System Center Configuration Manager da una versione precedente di Configuration Manager, vedere [Aggiornamenti per System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).
 
@@ -43,9 +44,7 @@ Le informazioni disponibili in questo argomento consentono di aggiornare l'infra
     - A partire da Configuration Manager versione 1602, è anche supportato l'aggiornamento da Windows Server 2008 R2 a Windows Server 2012 R2 ([vedere dettagli aggiuntivi](#bkmk_from2008r2)).
 
     > [!WARNING]  
-    >  Prima di eseguire l'aggiornamento a Windows Server 2012 R2, *è necessario disinstallare WSUS 3.2* dal server.  
-    >   
-    >  Per informazioni su questo passaggio critico, vedere la sezione "Funzionalità nuove e modificate" in [Panoramica di Windows Server Update Services](https://technet.microsoft.com/library/hh852345.aspx), nella documentazione di Windows Server.  
+    >  Prima di eseguire l'aggiornamento a un sistema operativo diverso, *è necessario disinstallare WSUS* dal server. È possibile conservare il database WSUS e ricollegarlo dopo la reinstallazione di WSUS. Per informazioni su questo passaggio critico, vedere la sezione "Funzionalità nuove e modificate" in [Panoramica di Windows Server Update Services](https://technet.microsoft.com/library/hh852345.aspx), nella documentazione di Windows Server.  
 
 Per aggiornare un server, eseguire la procedura di aggiornamento indicata dal sistema operativo interessato dall'aggiornamento.  Vedere la documentazione seguente:
   -  [Opzioni di aggiornamento per Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) nella documentazione di Windows Server.  
@@ -57,6 +56,7 @@ Quando si esegue l'aggiornamento di Windows Server 2012 o Windows Server 2012 R2
 
 **Prima di eseguire l'aggiornamento:**  
 -   Rimuovere il client di System Center Endpoint Protection (SCEP). Windows Server 2016 è predefinito con Windows Defender, che sostituisce il client SCEP. La presenza del client SCEP può impedire un aggiornamento a Windows Server 2016.
+-   Rimuovere il ruolo WSUS dal server, se installato. È possibile conservare il database WSUS e ricollegarlo dopo la reinstallazione di WSUS.
 
 **Dopo aver eseguito l'aggiornamento:**
 -   Assicurarsi che Windows Defender sia abilitato, impostato per l'avvio automatico e in esecuzione.
@@ -93,7 +93,7 @@ Può succedere che, dopo aver aggiornato il server del sito o un server che ospi
 ### <a name="bkmk_2012r2"></a> Da Windows Server 2012 a Windows Server 2012 R2
 
 **Prima di eseguire l'aggiornamento:**
--  A differenza di altri scenari supportati, per questo scenario non sono previste altre considerazioni prima di eseguire l'aggiornamento.
+-   Rimuovere il ruolo WSUS dal server, se installato. È possibile conservare il database WSUS e ricollegarlo dopo la reinstallazione di WSUS.
 
 **Dopo aver eseguito l'aggiornamento:**
   - Assicurarsi che Servizi di distribuzione Windows sia avviato e in esecuzione per i ruoli del sistema del sito seguenti. Questo servizio viene arrestato durante l'aggiornamento:
