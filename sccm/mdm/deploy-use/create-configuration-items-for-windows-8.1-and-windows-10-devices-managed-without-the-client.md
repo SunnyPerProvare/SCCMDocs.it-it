@@ -7,12 +7,13 @@ ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 23e1e4dc-623a-4521-ad04-ae9482927097
-caps.latest.revision: "20"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: andredm7
 ms.author: andredm
 manager: angrobe
@@ -370,8 +371,8 @@ Queste impostazioni si riferiscono ai dispositivi che eseguono Windows 10 e vers
 |**Abilita SmartScreen**|Usare SmartScreen per controllare che i file scaricati dagli utenti non contengano codice dannoso.|  
 |**Consenti popup**|Consentire o disabilitare i popup del browser.|  
 |**Consenti cookie**|Consentire o disabilitare i cookie.|  
-|**Consenti riempimento automatico**|Consente l'uso della funzionalità di riempimento automatico del browser Edge.|  
-|**Consenti strumento per la gestione delle password**|Consentire l'uso della funzionalità dello strumento per la gestione delle password del browser Edge.|  
+|**Consenti riempimento automatico**|Consente l'uso della funzionalità di riempimento automatico del browser Microsoft Edge.|  
+|**Consenti strumento per la gestione delle password**|Consentire l'uso della funzionalità dello strumento per la gestione delle password del browser Microsoft Edge.|  
 |**Posizione elenco siti modalità Enterprise**|Specifica dove trovare l'elenco di siti Web che si aprono in modalità Enterprise. L'elenco non è modificabile dagli utenti.|
 |**Blocca l'accesso ai flag Informazioni su**|Impedire l'accesso dell'utente finale alla pagina about:flags in Edge contenente impostazioni sperimentali e per sviluppatori.|
 |**Override del prompt SmartScreen**|Consentire all'utente finale di ignorare gli avvisi del filtro SmartScreen relativi a siti Web potenzialmente dannosi.|
