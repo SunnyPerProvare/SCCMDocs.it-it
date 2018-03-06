@@ -7,19 +7,20 @@ ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7341cc6e-9e08-41e4-bcc6-6c1ff12e85ca
-caps.latest.revision: "10"
+caps.latest.revision: 
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 37ad3eb2d7e6796dcd88b2b01b8b0cea97bb41fe
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 84fe2fd0959051ea42e555cb484c95fb82ec8fb3
+ms.sourcegitcommit: 1378532fac2620ddcfd31061982f344a290c2e67
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="use-alerts-and-the-status-system-for-system-center-configuration-manager"></a>Usare gli avvisi e il sistema di stato per System Center Configuration Manager
 
@@ -118,7 +119,7 @@ Poiché il sistema di stato mantiene configurazioni separate per ogni sito è ne
 
 ##### <a name="to-modify-or-delete-a-status-filter-rule"></a>Per modificare o eliminare una regola di filtro dello stato  
 
-1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Configurazione del sito** >**Siti**, quindi selezionare il sito dove verrà configurato il sistema di stato.  
+1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Configurazione del sito** >**Siti**, quindi selezionare il sito dove si prevede di configurare il sistema di stato.  
 
 2.  Nella scheda **Home** , nel gruppo **Impostazioni** , fare clic su **Regole di filtro dello stato**.  
 
@@ -196,7 +197,7 @@ Poiché il sistema di stato mantiene configurazioni separate per ogni sito è ne
  Usare la tabella seguente per trovare informazioni su come configurare gli avvisi e le sottoscrizioni di avvisi in Configuration Manager:  
 
 
-|Azione|Altre informazioni|  
+|Action|Altre informazioni|  
 |------------|----------------------|  
 |Configurare gli avvisi di Endpoint Protection per una raccolta|Vedere **Come configurare gli avvisi per Endpoint Protection in Configuration Manager** in [Configurazione di Endpoint Protection in System Center Configuration Manager](../../../protect/deploy-use/configure-endpoint-protection.md)|  
 |Configurare gli avvisi di stato del client per una raccolta|Vedere [Come configurare lo stato del client in System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md).|  
@@ -219,9 +220,9 @@ Poiché il sistema di stato mantiene configurazioni separate per ogni sito è ne
     |**Rimanda**|Sospende il monitoraggio dell'avviso fino al raggiungimento della data specificata. In tale data lo stato dell'avviso viene aggiornato.<br /><br /> È possibile rimandare un avviso solo quando è abilitato.|  
     |**Crea sottoscrizione**|Apre la finestra di dialogo **Nuova sottoscrizione** dove è possibile creare una sottoscrizione e-mail all'avviso selezionato.|  
 
-##### <a name="to-configure-endpoint-protection-alerts-for-a-collection"></a>Per configurare gli avvisi di Endpoint Protection per una raccolta  
+<!--##### To configure Endpoint Protection alerts for a collection  
 
-1.  in sospeso  
+1.  pending  -->
 
 ##### <a name="to-configure-client-status-alerts-for-a-collection"></a>Per configurare gli avvisi di stato del client per una raccolta  
 

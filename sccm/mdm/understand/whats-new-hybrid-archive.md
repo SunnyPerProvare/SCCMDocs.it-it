@@ -3,23 +3,24 @@ title: "Archivio delle novità della gestione di dispositivi mobili ibrida"
 titleSuffix: Configuration Manager
 description: "Archivio di funzionalità di gestione dei dispositivi mobili precedenti disponibili per le distribuzioni ibride con System Center Configuration Manager e Intune."
 ms.custom: na
-ms.date: 06/30/2017
+ms.date: 02/21/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4c27b161-9eb7-4cdd-b469-d8eb27e71aea
-author: dougeby
-ms.author: dougeby
-manager: angrobe
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
 ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 23b43e85a0ad698a377f51ce4b0d70fe197e9344
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: d6b67cd820a618d6a96424362ff282cbf232f092
+ms.sourcegitcommit: 45ff3ffa040eada5656b17f47dcabd3c637bdb60
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="past-hybrid-features-with-system-center-configuration-manager-and-microsoft-intune"></a>Funzionalità ibride precedenti con System Center Configuration Manager e Microsoft Intune
 
@@ -34,6 +35,60 @@ Questo articolo illustra le funzionalità di gestione dei dispositivi mobili (MD
 |Categorie di funzionalità|
 |-|  
 |**Novità di Microsoft Intune**: in generale, tutte le funzionalità elencate in questa categoria devono funzionare con tutte le versioni di Configuration Manager, incluse le versioni di System Center 2012 R2 Configuration Manager, poiché richiedono solo il servizio Intune e non richiedono altre funzionalità di Configuration Manager.<br /><br /> **Novità di Configuration Manager Technical Preview**: tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Technical Preview specificata. Per provare queste funzionalità, è necessario installare la versione di Technical Preview specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Technical Preview per System Center Configuration Manager](../../core/get-started/technical-preview.md).<br /><br /> **Novità di Configuration Manager (Current Branch)**: tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Configuration Manager (Current Branch) specificata, ad esempio la versione 1511 o 1602. Se si usa una versione precedente di Configuration Manager per la distribuzione ibrida, è necessario eseguire l'aggiornamento alla versione di Configuration Manager (Current Branch) specificata nella descrizione della funzionalità. Per altre informazioni, vedere l'articolo relativo agli [aggiornamenti a System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|  
+
+
+
+## <a name="february-2017"></a>Febbraio 2017
+
+### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
+
+- **Modernizzazione del sito Web del portale aziendale**
+
+  Il sito Web del portale aziendale supporta app rivolte agli utenti che non hanno dispositivi gestiti. Il sito Web si allinea ad altri prodotti e servizi Microsoft usando una nuova combinazione di colori a contrasto, illustrazioni dinamiche e un "menu hamburger" che contiene i dettagli di contatto del supporto tecnico e le informazioni sui dispositivi gestiti esistenti. La pagina di destinazione è stata riorganizzata per evidenziare le app a disposizione degli utenti, con sequenze per le app in evidenza e aggiornate di recente. Nella pagina [UI updates](https://docs.microsoft.com/intune/whats-new-app-ui) (Aggiornamenti dell'interfaccia utente) sono disponibili immagini precedenti e successive all'aggiornamento.
+
+- **Nuovo indirizzo del server MDM per dispositivi Windows**
+
+  L'indirizzo del server MDM per la registrazione dei dispositivi Windows e Windows Phone è cambiato da manage.microsoft.com a enrollment.manage.microsoft.com. Comunicare agli utenti di usare enrollment.manage.microsoft.com come indirizzo del server MDM, se richiesto, durante la registrazione di un dispositivo Windows o Windows Phone. Questo aggiornamento richiede anche la sostituzione di qualsiasi CNAME in DNS che reindirizza EnterpriseEnrollment.contoso.com a manage.microsoft.com con un CNAME in DNS che reindirizzi EnterpriseEnrollment.contoso.com a EnterpriseEnrollment-s.manage.microsoft.com. Per altre informazioni su questa modifica, visitare http://aka.ms/intuneenrollsvrchange.
+
+### <a name="new-in-configuration-manager-technical-preview-1702"></a>Novità di Configuration Manager Technical Preview 1702
+
+- **Supporto di Android for Work**
+
+  È ora possibile gestire i dispositivi Android con Android for Work in ambienti ibridi MDM tramite Configuration Manager Technical Preview 1702. I dispositivi Android supportati possono ora essere registrati come dispositivi Android for Work, che crea un profilo di lavoro nel dispositivo a cui possono essere distribuite le app approvate in Play for Work. È possibile configurare e distribuire anche gli elementi di configurazione, i criteri di conformità e i profili di accesso alle risorse per questi dispositivi. Per altre informazioni, vedere [Supporto per Android for Work](/sccm/core/get-started/capabilities-in-technical-preview-1702#android-for-work-support).
+
+- **Impostazioni di conformità di app non conformi**
+
+  È ora possibile creare regole di app non conformi per app Android e iOS nei criteri di conformità. Se nei dispositivi sono installate le applicazioni specificate, queste vengono contrassegnate come "non conformi" e non hanno accesso alle risorse aziendali in base ai criteri di accesso condizionale in uso. Per altre informazioni, vedere [Miglioramento dei criteri di conformità dei dispositivi per l'accesso condizionale](/sccm/core/get-started/capabilities-in-technical-preview-1702#conditional-access-device-compliance-policy-improvements).
+
+- **Creazione e distribuzione del certificato PFX e supporto per S/MIME**
+
+  È ora possibile creare e distribuire i certificati PFX agli utenti in un ambiente ibrido. Questi certificati possono essere quindi usati per la crittografia S/MIME della posta elettronica e la decrittografia da parte di dispositivi che l'utente ha registrato. Per altre informazioni, vedere [Creare certificati PFX con il supporto di S/MIME](/sccm/core/get-started/capabilities-in-technical-preview-1702#create-pfx-certificates-with-s-mime-support).
+
+- **Supporto per impostazioni di configurazione iOS aggiuntive**
+   
+    Sono ora disponibili 42 impostazioni iOS aggiuntive che è possibile configurare come parte di un elemento di configurazione. La maggior parte delle impostazioni, 35 in tutto, è stata aggiunta per dispositivi iOS con supervisione. Per altre informazioni, vedere [Nuove impostazioni di conformità per dispositivi iOS](/sccm/core/get-started/capabilities-in-technical-preview-1702#new-compliance-settings-for-ios-devices).
+
+
+
+## <a name="january-2017"></a>Gennaio 2017
+
+### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
+
+- **Supporto di Android 7.1.1**
+
+  Intune ora supporta e gestisce in modo completo Android 7.1.1.
+
+- **Risolvere i problemi di inattività dei dispositivi iOS o di comunicazione tra la console di amministrazione e questi dispositivi**
+
+  Quando i dispositivi degli utenti perdono il contatto con Intune, è possibile assegnare loro nuove istruzioni per la risoluzione dei problemi, in modo che possano riottenere l'accesso alle risorse aziendali. Vedere [Devices are inactive, or the admin console cannot communicate with them](https://docs.microsoft.com/intune/troubleshoot/troubleshoot-device-enrollment-in-intune#devices-are-inactive-or-the-admin-console-cannot-communicate-with-them) (I dispositivi sono inattivi o la console di amministrazione non può comunicare con loro).
+
+### <a name="new-in-configuration-manager-technical-preview-1701"></a>Novità di Configuration Manager Technical Preview 1701
+
+- **Non è più necessario specificare le versioni di Android e iOS nella creazione guidata della gestione ibrida dei dispositivi mobili**
+
+  A partire dalla Technical Preview 1701 per la gestione ibrida dei dispositivi mobili, non è più necessario indicare versioni specifiche di Android e iOS quando si creano nuovi criteri e profili per i dispositivi gestiti in Intune. Con questa modifica, le distribuzioni ibride possono offrire il supporto più rapidamente per le nuove versioni di Android e iOS, senza attendere una nuova versione o un'estensione di Configuration Manager. Per altre informazioni, vedere [Non è più necessario specificare le versioni di Android e iOS nella creazione guidata](/sccm/core/get-started/capabilities-in-technical-preview-1701#android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm).
+
+
 
 ## <a name="december-2016"></a>Dicembre 2016
 
@@ -560,3 +615,24 @@ Non sono state introdotte nuove funzionalità ibride nella versione di giugno 20
 - **Blocco attivazione di iOS**
 
   A partire dalla versione 1602 di Configuration Manager (Current Branch) è possibile gestire il blocco attivazione iOS, una funzionalità dell'app Trova il mio iPhone per dispositivi iOS 7.1 e versioni successive. Blocco attivazione viene abilitato automaticamente quando si usa l'app Trova il mio iPhone in un dispositivo.  Per informazioni dettagliate, vedere [Gestire il blocco attivazione iOS con System Center Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock#bypass-activation-lock).  
+
+
+
+## <a name="notices"></a>Notifiche
+
+### <a name="system-center-2012-configuration-sp1-and-system-center-2012-r2-configuration-manager-rtm-support-for-hybrid-mobile-device-management-ending-on-april-10-2017"></a>System Center 2012 Configuration SP1 e System Center 2012 R2 Configuration Manager (RTM): il supporto per la gestione ibrida di dispositivi mobili termina il 10 aprile 2017
+*11 gennaio 2017*
+
+Il supporto per System Center 2012 Configuration Manager SP1 e System Center 2012 R2 Configuration Manager RTM è terminato il 12 luglio 2016. Per quanto riguarda la connessione di queste versioni al servizio Microsoft Intune per la gestione ibrida di dispositivi mobili, il supporto termina il 10 aprile 2017. Dopo tale data, la gestione ibrida di dispositivi mobili non sarà più disponibile con queste versioni. In pratica, i dispositivi gestiti non saranno più gestiti poiché il connettore Intune non si connetterà più al servizio Intune. I dati di Configuration Manager, ad esempio criteri e applicazioni, non verranno propagati a Intune e i dati dei dispositivi gestiti non verranno propagati a Configuration Manager finché non verrà eseguito un aggiornamento.
+
+Se si esegue una distribuzione ibrida con Configuration Manager 2012 SP1 o R2 RTM, è consigliabile eseguire l'aggiornamento a Configuration Manager (Current Branch) o al Service Pack supportato più recente per Configuration Manager 2012 (R2 SP1 o SP2) prima del 10 aprile 2017 per evitare l'interruzione del servizio.
+
+Risorse aggiuntive:
+-   [Eseguire l'aggiornamento a System Center Configuration Manager (Current Branch)](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager)
+-   [Pianificazione dell'aggiornamento a System Center 2012 R2 Configuration Manager SP1](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningR2SP1Upgrade)
+-   [Pianificazione dell'aggiornamento a System Center 2012 Configuration Manager SP2](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningSP2Upgrade)
+
+### <a name="windows-phone-8-company-portal-upload-deprecated"></a>Il caricamento del portale aziendale per Windows Phone 8 è deprecato
+*25 ottobre 2016*
+
+L'opzione che consente di caricare un'app Portale aziendale firmata è stata rimossa dalla console di Configuration Manager, poiché il supporto di Intune viene deprecato per Windows 8, Windows Phone 8 e Windows RT e il supporto per il portale aziendale per Windows Phone 8 termina in novembre.  I dispositivi Windows 8, Windows Phone 8 e Windows RT che sono già registrati continueranno a essere supportati, ma la registrazione di dispositivi aggiuntivi con queste piattaforme non sarà più supportata.
