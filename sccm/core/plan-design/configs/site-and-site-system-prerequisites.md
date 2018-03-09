@@ -3,7 +3,7 @@ title: Prerequisiti del sito
 titleSuffix: Configuration Manager
 description: Informazioni su come configurare un computer Windows come un server di sistema del sito di System Center Configuration Manager.
 ms.custom: na
-ms.date: 8/25/2017
+ms.date: 02/28/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,12 +15,12 @@ ms.assetid: 1392797b-76cb-46b4-a3e4-8f349ccaa078
 caps.latest.revision: 
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: cb1b81fc0765e6754c7dea9ce421e41fcd58a70e
-ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
+manager: dougeby
+ms.openlocfilehash: 6d1be6375dde2df51aafe076e5613647ecca3c4c
+ms.sourcegitcommit: d0fc79214bc35ca172fd2023dfa617b977ee865b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="site-and-site-system-prerequisites-for-system-center-configuration-manager"></a>Prerequisiti del sito e del sistema del sito per System Center Configuration Manager
 
@@ -50,7 +50,7 @@ ms.lasthandoff: 02/01/2018
 
     -   Nome del computer.  
 
-  Se è necessario modificare uno di questi elementi, occorre prima di tutto rimuovere il ruolo del sistema del sito dal computer e quindi reinstallarlo al termine della modifica. Se queste operazione influisce sul computer server del sito, è necessario disinstallare il sito e quindi reinstallarlo dopo aver completato la modifica.  
+  Se è necessario modificare uno di questi elementi, occorre prima di tutto rimuovere il ruolo del sistema del sito dal computer e quindi reinstallarlo al termine della modifica. Per le modifiche che influiscono sul computer server del sito, è necessario disinstallare il sito e quindi reinstallarlo dopo aver completato la modifica.  
 
 -   I ruoli del sistema del sito non sono supportati in un'istanza di un cluster Windows Server. L'unica eccezione è il server del database del sito.  
 
@@ -62,13 +62,13 @@ ms.lasthandoff: 02/01/2018
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive)
 
 -   Compressione differenziale remota  
 
 **Windows ADK:**  
 
--   Prima di installare o aggiornare un sito di amministrazione centrale o un sito primario, è necessario installare la versione di Windows ADK (Windows Assessment and Deployment Kit) richiesta dalla versione di Configuration Manager che si intende installare o aggiornare. Vedere [Windows ADK 10](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) nell'argomento Supporto per Windows 10 come client.  
+-   Prima di installare o aggiornare un sito di amministrazione centrale o un sito primario, è necessario installare la versione di Windows ADK (Windows Assessment and Deployment Kit) richiesta dalla versione di Configuration Manager che si intende installare o aggiornare. Vedere [Windows ADK 10](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) nell'articolo Supporto per Windows 10 come client.  
 
 -   Per altre informazioni su questo requisito, vedere [Requisiti dell'infrastruttura per la distribuzione del sistema operativo](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
@@ -83,7 +83,7 @@ ms.lasthandoff: 02/01/2018
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive)   
 
 -   Compressione differenziale remota  
 
@@ -115,7 +115,7 @@ ms.lasthandoff: 02/01/2018
 ###  <a name="bkmk_2012smsprovpreq"></a> Server del provider SMS  
 **Windows ADK:**  
 
--   Nel computer in cui si installa un'istanza del provider SMS deve essere installata la versione di Windows ADK richiesta dalla versione di Configuration Manager che si intende installare o aggiornare. Vedere [Windows ADK 10](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) nell'argomento Supporto per Windows 10 come client.
+-   Nel computer in cui si installa un'istanza del provider SMS deve essere installata la versione di Windows ADK richiesta dalla versione di Configuration Manager che si intende installare o aggiornare. Vedere [Windows ADK 10](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) nell'articolo Supporto per Windows 10 come client.
 
 -   Per altre informazioni su questo requisito, vedere [Requisiti dell'infrastruttura per la distribuzione del sistema operativo](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
@@ -124,7 +124,7 @@ ms.lasthandoff: 02/01/2018
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2:  
+-   .NET Framework 4.5.2 (o versioni successive):  
 
     -   ASP.NET 4.5  
 
@@ -159,7 +159,7 @@ ms.lasthandoff: 02/01/2018
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2:  
+-   .NET Framework 4.5.2 (o versioni successive):  
 
     -   ASP.NET 4.5:  
 
@@ -194,12 +194,12 @@ ms.lasthandoff: 02/01/2018
 ###  <a name="bkmk_2012AIpreq"></a> Punto di sincronizzazione di Asset Intelligence  
 **Funzionalità e ruoli di Windows Server:**  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive)  
 
 ###  <a name="bkmk_2012crppreq"></a> Punto di registrazione certificati  
 **Funzionalità e ruoli di Windows Server:**  
 
--   .NET Framework 4.5.2:  
+-   .NET Framework 4.5.2 (o versioni successive):  
 
     -   Attivazione HTTP  
 
@@ -261,7 +261,7 @@ ms.lasthandoff: 02/01/2018
 
 <!--sms.503672 -Clarified BITS use-->
 > [!NOTE]  
-> Quando il punto di distribuzione trasferisce il contenuto, il trasferimento viene eseguito tramite il **Servizio trasferimento intelligente in background** (BITS) incluso nel sistema operativo Windows. Il ruolo di punto di distribuzione non richiede l'installazione della funzionalità facoltativa di estensione del server IIS BITS, perché il client non carica informazioni in tale server.  
+> Quando il punto di distribuzione trasferisce il contenuto, il trasferimento viene eseguito tramite il **Servizio trasferimento intelligente in background** (BITS) incluso nel sistema operativo Windows. Il ruolo del punto di distribuzione non richiede l'installazione della funzionalità facoltativa di estensione del server IIS BITS, perché il client non carica informazioni in tale server.  
 
 ###  <a name="bkmk_2012EPPpreq"></a> Punto di Endpoint Protection  
 **Funzionalità e ruoli di Windows Server:**  
@@ -273,9 +273,9 @@ ms.lasthandoff: 02/01/2018
 
 -   .NET Framework 3.5 (o versioni successive)  
 
--   .NET Framework 4.5.2:  
+-   .NET Framework 4.5.2 (o versioni successive):  
 
-     Quando viene installato questo ruolo del sistema del sito, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Quando un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
+     Quando viene installato questo ruolo del sistema del sito, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Se un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
 
     -   Attivazione ASP.NET (e le opzioni selezionate automaticamente)  
 
@@ -313,9 +313,9 @@ ms.lasthandoff: 02/01/2018
 
 -   .NET Framework 3.5 (o versioni successive)  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive) 
 
-     Quando viene installato questo ruolo del sistema del sito, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Quando un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
+     Quando viene installato questo ruolo del sistema del sito, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Se un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
 
 **Configurazione di IIS:**  
 
@@ -359,7 +359,7 @@ ms.lasthandoff: 02/01/2018
 ###  <a name="bkmk_2012MPpreq"></a> Punto di gestione  
 **Funzionalità e ruoli di Windows Server:**  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive) 
 
 -   Estensioni del server BITS (e le opzioni selezionate automaticamente) o Servizio trasferimento intelligente in background (BITS) (e le opzioni selezionate automaticamente)  
 
@@ -382,11 +382,11 @@ ms.lasthandoff: 02/01/2018
 ###  <a name="bkmk_2012RSpoint"></a> Punto di Reporting Services  
 **Funzionalità e ruoli di Windows Server:**  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive) 
 
 **SQL Server Reporting Services:**  
 
--   Prima di installare il punto di Reporting Services, è necessario installare e configurare almeno un'istanza di SQL Server per supportare SQL Server Reporting Services.  
+-   Prima di installare il punto di Reporting Services, installare e configurare almeno un'istanza di SQL Server per supportare SQL Server Reporting Services.  
 
 -   L'istanza usata per SQL Server Reporting Services può essere la stessa usata per il database del sito.  
 
@@ -395,9 +395,9 @@ ms.lasthandoff: 02/01/2018
 ###  <a name="bkmk_SCPpreq"></a> Punto di connessione del servizio  
 **Funzionalità e ruoli di Windows Server:**  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive) 
 
-     Quando viene installato questo ruolo del sistema del sito, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Quando un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
+     Quando viene installato questo ruolo del sistema del sito, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Se un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
 
 **Visual C++ Redistributable:**  
 
@@ -410,7 +410,7 @@ ms.lasthandoff: 02/01/2018
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive) 
 
 È necessaria la configurazione predefinita di IIS.
 
@@ -432,14 +432,14 @@ Windows Server 2008 e Windows Server 2008 R2 sono ora in modalità di supporto "
 
 **Le indicazioni seguenti sono valide per tutti i requisiti di attivazione di Windows Communication Foundation (WCF):**  
 
--   È possibile configurare l'attivazione di WCF come parte della funzionalità .NET Framework di Windows nel server del sistema del sito. Ad esempio, in Windows Server 2008 R2, eseguire **Aggiunta guidata funzionalità** per installare funzionalità aggiuntive nel server. Nella pagina **Seleziona caratteristiche** espandere **Funzionalità di .NET Framework 3.5.1**, espandere **Attivazione WCF** e quindi selezionare le caselle di controllo per **Attivazione HTTP** e **Attivazione non HTTP** per abilitare queste opzioni.  
+-   È possibile configurare l'attivazione di WCF come parte della funzionalità .NET Framework di Windows nel server del sistema del sito. Ad esempio, in Windows Server 2008 R2, eseguire **Aggiunta guidata funzionalità** per installare funzionalità aggiuntive nel server. Nella pagina **Seleziona caratteristiche** espandere **Funzionalità di .NET Framework 3.5.1** e quindi **Attivazione WCF**. Selezionare le caselle di controllo per **Attivazione HTTP** e **Attivazione non HTTP** per abilitare queste opzioni.  
 
 ###  <a name="bkmk_2008sspreq"></a> Server del sito: sito di amministrazione centrale e sito primario  
 **.NET Framework:**  
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive) 
 
 **Funzionalità di Windows:**  
 
@@ -447,7 +447,7 @@ Windows Server 2008 e Windows Server 2008 R2 sono ora in modalità di supporto "
 
 **Windows ADK:**  
 
--   Prima di installare o aggiornare un sito di amministrazione centrale o un sito primario, è necessario installare la versione di Windows ADK richiesta dalla versione di Configuration Manager che si intende installare o aggiornare.  Vedere [Windows ADK 10](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) nell'argomento Supporto per Windows 10 come client.  
+-   Prima di installare o aggiornare un sito di amministrazione centrale o un sito primario, è necessario installare la versione di Windows ADK richiesta dalla versione di Configuration Manager che si intende installare o aggiornare.  Vedere [Windows ADK 10](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) nell'articolo Supporto per Windows 10 come client.  
 
 -   Per altre informazioni su questo requisito, vedere [Requisiti dell'infrastruttura per la distribuzione del sistema operativo](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
@@ -462,7 +462,7 @@ Windows Server 2008 e Windows Server 2008 R2 sono ora in modalità di supporto "
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive)  
 
 **Visual C++ Redistributable:**  
 
@@ -492,14 +492,14 @@ Windows Server 2008 e Windows Server 2008 R2 sono ora in modalità di supporto "
 ###  <a name="bkmk_2008smsprovpreq"></a> Server del provider SMS  
 **Windows ADK:**  
 
--   Nel computer in cui si installa un'istanza del provider SMS deve essere installata la versione di Windows ADK richiesta dalla versione di Configuration Manager che si intende installare o aggiornare. Vedere [Windows ADK 10](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) nell'argomento Supporto per Windows 10 come client.  
+-   Nel computer in cui si installa un'istanza del provider SMS deve essere installata la versione di Windows ADK richiesta dalla versione di Configuration Manager che si intende installare o aggiornare. Vedere [Windows ADK 10](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) nell'articolo Supporto per Windows 10 come client.  
 
 -   Per altre informazioni su questo requisito, vedere [Requisiti dell'infrastruttura per la distribuzione del sistema operativo](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
 ###  <a name="bkmk_2008acwspreq"></a> Punto per siti Web del Catalogo applicazioni  
 **.NET Framework:**  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive) 
 
 **Configurazione di IIS:**
 
@@ -530,7 +530,7 @@ Windows Server 2008 e Windows Server 2008 R2 sono ora in modalità di supporto "
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive) 
 
 **Attivazione di Windows Communication Foundation (WCF):**  
 
@@ -561,12 +561,12 @@ Windows Server 2008 e Windows Server 2008 R2 sono ora in modalità di supporto "
 ###  <a name="bkmk_2008AIpreq"></a> Punto di sincronizzazione di Asset Intelligence  
 **.NET Framework:**  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive) 
 
 ###  <a name="bkmk_2008crppreq"></a> Punto di registrazione certificati  
 **.NET Framework:**  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive) 
 
 -   Attivazione HTTP  
 
@@ -641,9 +641,9 @@ Quando si usa una configurazione personalizzata di IIS, è possibile rimuovere l
 ###  <a name="bkmk_2008Enrollpreq"></a> Punto di registrazione  
 **.NET Framework:**  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive) 
 
-     Se quando viene installato questo ruolo del sistema del sito nel server non è già installata una versione supportata di .NET Framework, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Quando un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
+     Se quando viene installato questo ruolo del sistema del sito nel server non è già installata una versione supportata di .NET Framework, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Se un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
 
 **Attivazione di Windows Communication Foundation (WCF):**  
 
@@ -670,7 +670,7 @@ Quando si usa una configurazione personalizzata di IIS, è possibile rimuovere l
 ###  <a name="bkmk_2008EnrollProxpreq"></a> Punto proxy di registrazione  
 **.NET Framework:**  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive) 
 
      Se quando viene installato questo ruolo del sistema del sito nel server non è già installata una versione supportata di .NET Framework, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Quando un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
 
@@ -708,7 +708,7 @@ Quando si usa una configurazione personalizzata di IIS, è possibile rimuovere l
 ###  <a name="bkmk_2008MPpreq"></a> Punto di gestione  
 **.NET Framework:**  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive)
 
 **Configurazione di IIS:**
 
@@ -749,11 +749,11 @@ Quando si usa una configurazione personalizzata di IIS, è possibile rimuovere l
 ###  <a name="bkmk_2008RSpoint"></a> Punto di Reporting Services  
 **.NET Framework:**  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive)  
 
 **SQL Server Reporting Services:**  
 
--   Prima di installare il punto di Reporting Services, è necessario installare e configurare almeno un'istanza di SQL Server per supportare SQL Server Reporting Services.  
+-   Prima di installare il punto di Reporting Services, installare e configurare almeno un'istanza di SQL Server per supportare SQL Server Reporting Services.  
 
 -   L'istanza usata per SQL Server Reporting Services può essere la stessa usata per il database del sito.  
 
@@ -762,9 +762,9 @@ Quando si usa una configurazione personalizzata di IIS, è possibile rimuovere l
 ###  <a name="bkmk_2008SCPpreq"></a> Punto di connessione del servizio  
 **.NET Framework:**  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive) 
 
-     Se quando viene installato questo ruolo del sistema del sito nel server non è già installata una versione supportata di .NET Framework, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Quando un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
+     Se quando viene installato questo ruolo del sistema del sito nel server non è già installata una versione supportata di .NET Framework, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Se un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
 
 **Visual C++ Redistributable:**  
 
@@ -777,7 +777,7 @@ Quando si usa una configurazione personalizzata di IIS, è possibile rimuovere l
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2  
+-   .NET Framework 4.5.2 (o versioni successive) 
 
 **Configurazione di IIS:**
 

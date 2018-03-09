@@ -3,23 +3,24 @@ title: Data warehouse
 titleSuffix: Configuration Manager
 description: Punto di servizio e database del data warehouse per System Center Configuration Manager
 ms.custom: na
-ms.date: 12/05/2017
+ms.date: 02/26/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aaf43e69-68b4-469a-ad58-9b66deb29057
 caps.latest.revision: 
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 4d420ce623c834401383231d00e3f361342f2d2e
-ms.sourcegitcommit: 52b956cfe32c3f06ae68d6ba6fc3244ce5a66325
+manager: dougeby
+ms.openlocfilehash: 954ec65bae15e087d6cf5afbcc8e0da1ebf83533
+ms.sourcegitcommit: be939893f0ceca4add8655ae2c24e42aa16aec38
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 02/27/2018
 ---
 #  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>Punto di servizio del data warehouse per System Center Configuration Manager
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -46,19 +47,20 @@ Quando viene installato, il ruolo del sistema del sito installa e configura il d
 ## <a name="prerequisites-for-the-data-warehouse-service-point"></a>Prerequisiti per il punto di servizio del data warehouse
 - Il ruolo del sistema del sito del data warehouse è supportato solo dal sito di livello superiore della gerarchia, che è un sito di amministrazione centrale o un sito primario autonomo.
 - Il computer in cui si installa il ruolo del sistema del sito richiede .NET Framework 4.5.2 o versioni successive.
+- Concedere ad **Account punto di Reporting Services** l'autorizzazione **db_datareader** per il database del data warehouse. 
 - L'account del computer in cui si installa il ruolo del sistema del sito viene usato per sincronizzare i dati con il database del data warehouse. L'account richiede le autorizzazioni seguenti:  
-  - **Amministratore** nel computer che ospiterà il database del data warehouse.
+  - **Amministratore** nel computer che ospita il database del data warehouse.
   - Autorizzazione **DB_Creator** nel database del data warehouse.
-  - **DB_owner** o **DB_reader** con autorizzazioni di **esecuzione** nel database siti di primo livello.
+  - **DB_owner** o **DB_reader** con autorizzazioni di **esecuzione** nel database del sito di primo livello.
 - Il database del data warehouse richiede l'uso di SQL Server 2012 o versione successiva, edizione Standard, Enterprise o Datacenter.
 - Per ospitare il database del sito sono supportate le configurazioni di SQL Server seguenti:  
   - Istanza predefinita
   - Istanza denominata
   - Gruppo di disponibilità Always On di SQL Server
   - Cluster di failover di SQL Server
--   Se il database del data warehouse è remoto rispetto al database del server del sito, è necessaria una licenza separata per ogni istanza di SQL Server che ospita il database.
 - Se si usano le [viste distribuite](/sccm/core/servers/manage/data-transfers-between-sites#bkmk_distviews), il ruolo del sistema del sito del punto di servizio del data warehouse deve essere installato nello stesso server che ospita il database dei siti di amministrazione centrale.
 
+Per informazioni sulle licenze di SQL Server per il database del data warehouse, vedere [Domande frequenti su prodotto e licenze](/sccm/core/understand/product-and-licensing-faq). <!-- sms500967 -->
 
 
 > [!IMPORTANT]  
@@ -70,9 +72,9 @@ Quando viene installato, il ruolo del sistema del sito installa e configura il d
 
 
 ## <a name="install-the-data-warehouse"></a>Installare il data warehouse
-Ogni gerarchia supporta un'unica istanza di questo ruolo, in qualsiasi sistema del sito di livello superiore. L'istanza di SQL Server che ospita il database del data warehouse può essere locale nel ruolo del sistema del sito o remota. Anche se il data warehouse funziona con il punto di Reporting Services installato nello stesso sito, non è necessario che i due ruoli del sistema del sito siano installati nello stesso server.   
+Ogni gerarchia supporta un'unica istanza di questo ruolo, in qualsiasi sistema del sito di livello superiore. L'istanza di SQL Server che ospita il database del data warehouse può essere locale nel ruolo del sistema del sito o remota. Il data warehouse funziona con il punto di Reporting Services installato nello stesso sito. Non è necessario installare i due ruoli del sistema del sito nello stesso server.   
 
-Per installare il ruolo, usare l'**Aggiunta guidata ruoli del sistema del sito** o la **Creazione guidata server del sistema sito**. Per altre informazioni, vedere [Installare ruoli del sistema del sito](/sccm/core/servers/deploy/configure/install-site-system-roles).  
+Per installare il ruolo, usare l'**Aggiunta guidata ruoli del sistema del sito** o la **Creazione guidata server del sistema sito**. Per altre informazioni, vedere [Installare i ruoli del sistema del sito](/sccm/core/servers/deploy/configure/install-site-system-roles).  
 
 Quando si installa il ruolo, Configuration Manager crea il database del data warehouse nell'istanza di SQL Server specificata dall'utente. Se si specifica il nome di un database esistente, come si farebbe se si [spostasse il database del data warehouse in un nuovo SQL Server](#move-the-data-warehouse-database), Configuration Manager non crea un nuovo database, ma usa invece quello specificato dall'utente.
 
@@ -81,41 +83,30 @@ Pagina **Selezione ruolo del sistema**:
 
 Pagina **Generale**:
 -   **Impostazioni di connessione del database del data warehouse di Configuration Manager**:
- - **Nome di dominio completo di SQL**:  
- Specificare il nome di dominio completo (FQDN, Full Qualified Domain Name) del server che ospita il database del punto di servizio del data warehouse.
- - **Nome istanza di SQL Server, se applicabile**:   
- Se non si usa un'istanza predefinita di SQL Server, è necessario specificare l'istanza.
- - **Nome database**:   
- Specificare il nome del database del data warehouse. Il nome del database non può essere costituito da più di 10 caratteri. La lunghezza del nome supportata verrà aumentata in una versione successiva.
- Configuration Manager crea il database del data warehouse con questo nome. Se si specifica un nome di database già esistente nell'istanza di SQL Server, Configuration Manager usa il database corrispondente.
- - **Porta di SQL Server usata per la connessione**:   
- Specificare il numero di porta TCP/IP configurato per l'istanza di SQL Server che ospita il database del data warehouse. Questa porta viene usata dal servizio di sincronizzazione del data warehouse per la connessione al database del data warehouse.  
+     - **Nome di dominio completo di SQL**: specificare il nome di dominio completo (FQDN, Full Qualified Domain Name) del server che ospita il database del punto di servizio del data warehouse.
+     - **Nome istanza di SQL Server, se applicabile**: se non si usa un'istanza predefinita di SQL Server, è necessario specificare l'istanza.
+     - **Nome database**: specificare il nome del database del data warehouse. Il nome del database non può essere costituito da più di 10 caratteri. La lunghezza del nome supportata verrà aumentata in una versione successiva.
+     Configuration Manager crea il database del data warehouse con questo nome. Se si specifica un nome di database già esistente nell'istanza di SQL Server, Configuration Manager usa il database corrispondente.
+     - **Porta di SQL Server usata per la connessione**: specificare il numero di porta TCP/IP usato dall'istanza di SQL Server che ospita il database del data warehouse. Questa porta viene usata dal servizio di sincronizzazione del data warehouse per la connessione al database del data warehouse.  
 
 Pagina **Pianificazione della sincronizzazione**:   
 - **Pianificazione della sincronizzazione**:
- - **Ora di inizio**:  
- Specificare l'ora in cui si vuole avviare la sincronizzazione del data warehouse.
- - **Criterio ricorrenza**:
-    - **Ogni giorno**: specificare che la sincronizzazione viene eseguita ogni giorno.
-    - **Ogni settimana**: specificare un solo giorno alla settimana e la ricorrenza settimanale per la sincronizzazione.
+    - **Ora di inizio**: specificare l'ora in cui si vuole avviare la sincronizzazione del data warehouse.
+    - **Criterio ricorrenza**:
+         - **Ogni giorno**: specificare che la sincronizzazione viene eseguita ogni giorno.
+         - **Ogni settimana**: specificare un solo giorno alla settimana e la ricorrenza settimanale per la sincronizzazione.
 
 ## <a name="reporting"></a>Reporting
-Dopo aver installato un punto di servizio del data warehouse, diversi report diventano disponibili nel punto di Reporting Services installato nello stesso sito. Se si installa il punto di servizio del data warehouse prima di installare un punto di Reporting Services, i report verranno aggiunti automaticamente quando in seguito si installerà il punto di Reporting Services.
+Dopo aver installato un punto di servizio del data warehouse, diversi report diventano disponibili nel punto di Reporting Services installato nello stesso sito. Se si installa il punto di servizio del data warehouse prima di installare un punto di Reporting Services, i report vengono aggiunti automaticamente quando in seguito si installa il punto di Reporting Services.
 
-Il ruolo del sistema del sito del data warehouse include i report seguenti, che hanno una categoria di **Data Warehouse**:
- - **Application Deployment - Historical** (Distribuzione applicazioni - Cronologia):   
- Visualizza i dettagli per la distribuzione di applicazioni per un'applicazione e un computer specifici.
+Il ruolo del sistema del sito del data warehouse include i report seguenti, che hanno una categoria **Data warehouse**:
+ - **Application Deployment - Historical** (Distribuzione applicazioni - Cronologia): visualizza i dettagli per la distribuzione di applicazioni per un'applicazione e un computer specifici.
  - **Endpoint Protection and Software Update Compliance - Historical** (Endpoint Protection e Conformità dell'aggiornamento software - Cronologia): visualizza i computer in cui mancano aggiornamenti software.  
- - **General Hardware Inventory - Historical** (Inventario generale hardware - Cronologia):   
- Visualizza tutto l'inventario dell'hardware per un computer specifico.
- - **General Software Inventory - Historical** (Inventario generale software - Cronologia):   
- Visualizza tutto l'inventario del software per un computer specifico.
- - **Infrastructure Health Overview - Historical** (Panoramica integrità infrastruttura - Cronologia):  
- Visualizza una panoramica dell'integrità dell'infrastruttura di Configuration Manager
- - **List of Malware Detected - Historical** (Elenco di malware rilevato - Cronologia):    
- Visualizza il malware che è stato rilevato nell'organizzazione.
- - **Software Distribution Summary - Historical** (Riepilogo distribuzione software - Cronologia):   
- Riepilogo della distribuzione del software per un annuncio e un computer specifici.
+ - **General Hardware Inventory - Historical** (Inventario generale hardware - Cronologia): visualizza tutto l'inventario dell'hardware per un computer specifico.
+ - **General Software Inventory - Historical** (Inventario generale software - Cronologia): visualizza tutto l'inventario del software per un computer specifico.
+ - **Infrastructure Health Overview - Historical** (Panoramica integrità infrastruttura - Cronologia): visualizza una panoramica dell'integrità dell'infrastruttura di Configuration Manager.
+ - **List of Malware Detected - Historical** (Elenco di malware rilevato - Cronologia): visualizza il malware che è stato rilevato nell'organizzazione.
+ - **Software Distribution Summary - Historical** (Riepilogo distribuzione software - Cronologia): riepilogo della distribuzione del software per un annuncio e un computer specifici.
 
 
 ## <a name="expand-an-existing-stand-alone-primary-into-a-hierarchy"></a>Espandere un sito primario autonomo esistente in una gerarchia
@@ -134,30 +125,27 @@ Per spostare il database del data warehouse in un nuovo SQL Server, procedere co
 > Dopo aver ripristinato il database nel nuovo server, assicurarsi che le autorizzazioni di accesso al database per il nuovo database del data warehouse siano le stesse del data warehouse originale.  
 
 2.  Usare la console di Configuration Manager per rimuovere il ruolo del sistema del sito del punto di servizio del data warehouse dal server corrente.
-3.  Reinstallare il punto di servizio del data warehouse e specificare il nome della nuova istanza di SQL Server e dell'istanza che ospita il database del data warehouse appena ripristinato.
+3.  Reinstallare il punto di servizio del data warehouse. Specificare il nome della nuova istanza di SQL Server e dell'istanza che ospita il database del data warehouse appena ripristinato.
 4.  Dopo l'installazione del ruolo del sistema del sito, lo spostamento è completato.
 
 ## <a name="troubleshooting-data-warehouse-issues"></a>Risoluzione dei problemi del data warehouse
-**File di log**:  
+**File di log**  
 Usare i log seguenti per analizzare i problemi dell'installazione del punto di servizio del data warehouse o della sincronizzazione dei dati:
  - *DWSSMSI.log* e *DWSSSetup.log*: questi log consentono di analizzare gli errori che si verificano durante l'installazione del punto di servizio del data warehouse.
  - *Microsoft.ConfigMgrDataWarehouse.log*: questo log consente di analizzare la sincronizzazione dei dati tra il database del sito e il database del data warehouse.
 
 **Errore di installazione**  
  L'installazione del punto di servizio del data warehouse non riesce nel server di sistema di un sito remoto se il data warehouse è il primo ruolo del sistema del sito installato in tale computer.  
-  - **Soluzione**:   
-    Verificare che il computer in cui si installa il punto di servizio del data warehouse ospiti già almeno un altro ruolo del sistema del sito.  
+  - **Soluzione**: verificare che il computer in cui si installa il punto di servizio del data warehouse ospiti già almeno un altro ruolo del sistema del sito.  
 
 
 **Problemi di sincronizzazione noti**:   
 La sincronizzazione non riesce e restituisce il messaggio seguente nel file *Microsoft.ConfigMgrDataWarehouse.log*: **"failed to populate schema objects"** (Impossibile popolare gli oggetti dello schema)  
- - **Soluzione**:  
-    Verificare che l'account del computer che ospita il ruolo del sistema del sito sia un **db_owner** nel database del data warehouse.
+ - **Soluzione**: verificare che l'account del computer che ospita il ruolo del sistema del sito sia un **db_owner** nel database del data warehouse.
 
 Non è possibile aprire i report del data warehouse quando il database del data warehouse e il punto di Reporting Services si trovano in sistemi del sito diversi.  
 
- - **Soluzione**:  
-    Concedere ad **Account punto di Reporting Services** l'autorizzazione **db_datareader** per il database del data warehouse.
+ - **Soluzione**: concedere ad **Account punto di Reporting Services** l'autorizzazione **db_datareader** per il database del data warehouse.
 
 Quando si apre un report del data warehouse, viene restituito l'errore seguente:
 
@@ -169,7 +157,7 @@ Quando si apre un report del data warehouse, viene restituito l'errore seguente:
 
     1. Aprire IIS, fare clic su **Certificati del server**, fare clic con il pulsante destro del mouse su **Crea certificato autofirmato** e quindi specificare il "nome descrittivo" del nome del certificato come **Certificato di identificazione SQL Server del data warehouse**. Selezionare l'archivio certificati come **Personale**.
     2. Aprire **Gestione configurazione SQL Server** in **Configurazione di rete SQL Server**, fare clic con il pulsante destro del mouse per selezionare **Proprietà** in **Protocolli per MSSQLSERVERR**. Quindi, nella scheda **Certificato** selezionare **Certificato di identificazione SQL Server del data warehouse** come certificato e salvare le modifiche.  
-    3. Aprire **Gestione configurazione SQL Server** in **Servizi di SQL Server**, riavviare **Servizio SQL Server** e **Servizio di creazione report**.
+    3. Aprire **Gestione configurazione SQL Server**. In **Servizi di SQL Server** riavviare **Servizio SQL Server** e **Servizio di creazione report**.
     4.  Aprire Microsoft Management Console (MMC), aggiungere lo snap-in per **Certificati** e quindi selezionare **Account del computer** per gestire il certificato per l'account del computer locale. Quindi, in MMC espandere la cartella **Personale** > **Certificati** ed esportare **Certificato di identificazione SQL Server del data warehouse** come file **Binario codificato DER x.509 (.CER)**.    
   2.    Nel computer che ospita SQL Server Reporting Services, aprire MMC e aggiungere lo snap-in per **Certificati**. Quindi selezionare per gestire i certificati per **account computer**. Nella cartella **Autorità di certificazione principale attendibili** importare **Certificato di identificazione SQL Server del data warehouse**.
 

@@ -3,30 +3,31 @@ title: Porte usate per le connessioni
 titleSuffix: Configuration Manager
 description: Informazioni sulle porte necessarie e personalizzabili usate da System Center Configuration Manager per le connessioni.
 ms.custom: na
-ms.date: 09/19/2017
+ms.date: 02/16/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c6777fb0-0754-4abf-8a1b-7639d23e9391
-caps.latest.revision: "8"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 0b6fa22a7bc3de7bb5bc0d26f8e35b51d55c5e72
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: 8db098f69180aac3785087af6ee305b3651094e5
+ms.sourcegitcommit: 1378532fac2620ddcfd31061982f344a290c2e67
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="ports-used-in-system-center-configuration-manager"></a>Porte usate in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager è un sistema client/server distribuito. Per natura distribuita di Configuration Manager si intende la possibilità di stabilire connessioni tra server del sito, sistemi del sito e client. Alcune connessioni usano porte non configurabili e altre supportano porte personalizzate che vengono specificate. È necessario verificare che le porte richieste siano disponibili se si usa una qualsiasi tecnologia di filtro delle porte, ad esempio firewall, router, server proxy o IPsec.  
+System Center Configuration Manager è un sistema client/server distribuito. Per natura distribuita di Configuration Manager si intende la possibilità di stabilire connessioni tra server del sito, sistemi del sito e client. Alcune connessioni usano porte non configurabili e altre supportano porte personalizzate che vengono specificate. Verificare che le porte richieste siano disponibili se si usa una qualsiasi tecnologia di filtro delle porte, ad esempio firewall, router, server proxy o IPsec.  
     
 > [!NOTE]  
 >  Se si supportano client basati su Internet usando il bridging SSL, oltre ai requisiti delle porte è necessario consentire anche ad alcune intestazioni e alcuni verbi HTTP di superare il firewall.   
@@ -114,7 +115,7 @@ Nelle sezioni seguenti vengono riportati i dettagli delle porte usate per la com
 ###  <a name="BKMK_PortsClient-ClientWakeUp"></a> Client -- &gt; Client  
  Oltre alle porte indicate nella tabella seguente, il proxy di riattivazione usa anche i messaggi di richiesta echo di Internet Control Message Protocol (ICMP) da un client all'altro quando questi sono configurati per il proxy di riattivazione.
 
-Questo tipo di comunicazione viene usata per verificare se l'altro computer è attivo nella rete. ICMP viene talvolta indicato come comandi ping TCP/IP. ICMP non dispone di un numero di protocollo UDP o TCP e pertanto non è elencato nella seguente tabella. Tuttavia, qualsiasi firewall basato su host presente nei computer client o negli altri dispositivi di rete all'interno del sottoinsieme deve consentire il traffico ICMP affinché la comunicazione del proxy di riattivazione venga eseguita correttamente.  
+Questo tipo di comunicazione viene usata per verificare se l'altro computer è attivo nella rete. ICMP viene talvolta indicato come comandi ping TCP/IP. ICMP non dispone di un numero di protocollo UDP o TCP e pertanto non è elencato nella tabella seguente. Tuttavia, qualsiasi firewall basato su host presente nei computer client o negli altri dispositivi di rete all'interno del sottoinsieme deve consentire il traffico ICMP affinché la comunicazione del proxy di riattivazione venga eseguita correttamente.  
 
 |Descrizione|UDP|TCP|  
 |-----------------|---------|---------|  
@@ -205,6 +206,13 @@ Questo tipo di comunicazione viene usata per verificare se l'altro computer è a
 |Descrizione|UDP|TCP|  
 |-----------------|---------|---------|  
 |Hypertext Transfer Protocol (HTTP)|--|80|  
+|Secure Hypertext Transfer Protocol (HTTPS)|--|443|
+
+La console di Configuration Manager usa l'accesso a Internet per le operazioni seguenti: 
+- Download degli aggiornamenti software da Microsoft Update per i pacchetti di distribuzione.
+- Elemento Commenti e suggerimenti nella barra multifunzione.
+- Collegamenti alla documentazione all'interno della console.
+<!--506823-->
 
 ###  <a name="BKMK_PortsConsole-RSP"></a> Console di Configuration Manager -- > Punto di Reporting Services  
 
@@ -338,7 +346,7 @@ Questo tipo di comunicazione viene usata per verificare se l'altro computer è a
 |Descrizione|UDP|TCP|  
 |-----------------|---------|---------|  
 |Secure Hypertext Transfer Protocol (HTTPS)|--|443|
-Per altre informazioni vedere i [requisiti di accesso Internet](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_urls) per il punto di connessione.
+Per altre informazioni, vedere i [requisiti di accesso Internet](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_urls) per il punto di connessione del servizio.
 
 ###  <a name="BKMK_PortsAppCatalogWebServicePoint_SiteServer"></a> Server del sito &lt; -- > Punto per servizi Web del Catalogo applicazioni  
 
@@ -689,12 +697,12 @@ Usare IPsec per proteggere il traffico tra il server del sito e i sistemi del si
 >  Prima di installare questi sistemi del sito, verificare che il servizio Registro di sistema remoto sia in esecuzione nel server di sistema del sito e di aver specificato un account di installazione sistema del sito se il sistema del sito si trova in una foresta Active Directory diversa senza una relazione di trust.  
 
 ###  <a name="BKMK_PortsClientInstall"></a> Porte usate dall'installazione client di Configuration Manager  
-Le porte usate durante l'installazione del client dipendono dal metodo di distribuzione client. Per un elenco di porte per ogni metodo di distribuzione client, vedere **Porte usate durante la distribuzione client di Configuration Manager** nell'argomento [Impostazioni di Windows Firewall e della porta per i computer client in System Center Configuration Manager](../../../core/clients/deploy/windows-firewall-and-port-settings-for-clients.md). Per informazioni su come configurare Windows Firewall nel client per la comunicazione durante e dopo l'installazione del client, vedere [Impostazioni di Windows Firewall e della porta per i client in System Center Configuration Manager](../../../core/clients/deploy/windows-firewall-and-port-settings-for-clients.md).  
+Le porte usate durante l'installazione del client dipendono dal metodo di distribuzione client. Per un elenco di porte per ogni metodo di distribuzione client, vedere **Porte usate durante la distribuzione client di Configuration Manager** nell'articolo [Impostazioni di Windows Firewall e delle porte per i client in System Center Configuration Manager](../../../core/clients/deploy/windows-firewall-and-port-settings-for-clients.md). Per informazioni su come configurare Windows Firewall nel client per la comunicazione durante e dopo l'installazione del client, vedere [Impostazioni di Windows Firewall e della porta per i client in System Center Configuration Manager](../../../core/clients/deploy/windows-firewall-and-port-settings-for-clients.md).  
 
 ###  <a name="BKMK_MigrationPorts"></a> Porte usate dalla migrazione  
 Il server del sito che esegue la migrazione usa diverse porte per connettersi ai siti applicabili nella gerarchia di origine per raccogliere i dati dal database di SQL Server dei siti di origine e per condividere i punti di distribuzione condivisi.  
 
- Per informazioni su queste porte, vedere la sezione [Configurazioni necessarie per la migrazione](../../../core/migration/prerequisites-for-migration.md#BKMK_Required_Configurations) nell'argomento [Prerequisiti per la migrazione in System Center Configuration Manager](../../../core/migration/prerequisites-for-migration.md).  
+ Per informazioni su queste porte, vedere la sezione [Configurazioni necessarie per la migrazione](../../../core/migration/prerequisites-for-migration.md#BKMK_Required_Configurations) nell'articolo [Prerequisiti per la migrazione in System Center Configuration Manager](../../../core/migration/prerequisites-for-migration.md).  
 
 ###  <a name="BKMK_ServerPorts"></a> Porte usate da Windows Server  
  Nella tabella seguente vengono elencate alcune porte chiave usate da Windows Server con le rispettive funzioni. Per un elenco completo dei requisiti delle porte di rete e dei servizi di Windows Server, vedere [Panoramica dei servizi e requisiti per le porte di rete per il sistema server Windows](http://go.microsoft.com/fwlink/p/?LinkID=123652).  

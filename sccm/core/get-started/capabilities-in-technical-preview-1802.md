@@ -15,11 +15,11 @@ ms.assetid: 4884a2d3-13ce-44e5-88c4-a66dc7ec6014
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1b5e8f744573680ab55fcfff26622e312206ca1a
-ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
+ms.openlocfilehash: 162c47d867e78498650da685327c0fe296aa2eda
+ms.sourcegitcommit: b1fa7be6a6fa5bb7c49e90c0e28a21ba8b41c842
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="capabilities-in-technical-preview-1802-for-system-center-configuration-manager"></a>Funzionalità della Technical Preview 1802 per System Center Configuration Manager
 
@@ -202,7 +202,7 @@ Il comportamento del fallback dei gruppi di limiti dei punti di gestione non cam
 ### <a name="known-issues"></a>Problemi noti
 - I processi di distribuzione dei sistemi operativi non sono a conoscenza dei gruppi di limiti.
 
-### <a name="troubleshooting"></a>Risoluzione dei problemi
+### <a name="troubleshooting"></a>Troubleshooting
 Nel log **LocationServices.log** sono presenti nuove voci. L'attributo **Locality** identifica uno degli stati seguenti:
 - 0: Sconosciuto
 - 1: il punto di gestione specificato si trova solo nel gruppo di limiti predefinito del sito per il fallback
@@ -293,7 +293,7 @@ Se si distribuiscono applicazioni come disponibili agli utenti, questi possono o
    - Windows 10
    - Aggiunto ad Azure AD, detto anche aggiunto a un dominio cloud
 - Per supportare i client basati su Internet:
-    - [Cloud Management Gateway](/sccm/core/clients/manage/plan-cloud-management-gateway) 
+    - [Gateway di gestione cloud](/sccm/core/clients/manage/plan-cloud-management-gateway) 
     - Abilitare l'impostazione client **Abilitare le richieste dei criteri utente dai client Internet** nel gruppo [Criteri client](/sccm/core/clients/deploy/about-client-settings#client-policy)
 - Per supportare i client nella rete aziendale:
     - Aggiungere il punto di distribuzione cloud a un gruppo di limiti usato dai client
@@ -318,9 +318,9 @@ Windows AutoPilot è una soluzione per l'onboarding e la configurazione di nuovi
 
 
 
-## <a name="improvements-to-configuration-manager-policies-for-windows-device-exploit-guard"></a>Miglioramenti ai criteri di Configuration Manager per Windows Device Exploit Guard
+## <a name="improvements-to-configuration-manager-policies-for-windows-defender-exploit-guard"></a>Miglioramenti ai criteri di Configuration Manager per Windows Defender Exploit Guard
 <!-- 1356220 -->
-Ulteriori impostazioni dei criteri per i componenti Riduzione della superficie di attacco e Accesso controllato alle cartelle sono stati aggiunti per Windows Device Exploit Guard in Configuration Manager.
+Ulteriori impostazioni dei criteri per i componenti Riduzione della superficie di attacco e Accesso controllato alle cartelle sono state aggiunte in Configuration Manager per [Windows Defender Exploit Guard](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/windows-defender-exploit-guard).
 
 **Nuove impostazioni per Accesso controllato alle cartelle**<br/>
 Sono disponibili due nuove opzioni per la configurazione del componente Accesso controllato alle cartelle: **Blocca solo i settori del disco** e **Controlla solo i settori del disco**. Queste due impostazioni consentono di abilitare Accesso controllato alle cartelle solo per i settori di avvio e non abilitano la protezione di cartelle specifiche o delle cartelle protette predefinite. 

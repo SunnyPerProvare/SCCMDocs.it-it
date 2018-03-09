@@ -5,18 +5,19 @@ description: Configuration Manager sincronizza gli aggiornamenti del client di O
 keywords: 
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.date: 12/28/2017
+manager: dougeby
+ms.date: 02/16/2018
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology: configmgr-sum
+ms.technology:
+- configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
-ms.openlocfilehash: b951e72635806c12bd0ec0dd66e382a767b99b43
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: 2f765df84b94524cf56f6d1d9e051157f1a325ef
+ms.sourcegitcommit: 45ff3ffa040eada5656b17f47dcabd3c637bdb60
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Gestire Office 365 ProPlus con Configuration Manager
 
@@ -30,7 +31,7 @@ Configuration Manager consente di gestire le app di Office 365 ProPlus nei modi 
 
 - [Distribuire gli aggiornamenti di Office 365](#deploy-office-365-updates): a partire da Configuration Manager versione 1602, è possibile gestire gli aggiornamenti del client di Office 365 usando il flusso di lavoro di Gestione aggiornamenti software. Quando pubblica un nuovo aggiornamento del client di Office 365 nella rete per la distribuzione di contenuti (CDN) di Office, Microsoft pubblica anche un pacchetto di aggiornamento per Windows Server Update Services (WSUS). Dopo che Configuration Manager ha sincronizzato l'aggiornamento del client di Office 365 dal catalogo di Windows Server Update Services nel server del sito, l'aggiornamento è disponibile per la distribuzione ai client.    
 
-- [Aggiungere lingue per i download di aggiornamento di Office 365](#add-languages-for-office-365-update-downloads): a partire da Configuration Manager versione 1610, è possibile aggiungere il supporto per Configuration Manager per scaricare gli aggiornamenti in tutte le lingue supportate da Office 365. Non è necessario che Configuration Manager supporti la lingua se è supportata da Office 365.  
+- [Aggiungere lingue per i download di aggiornamento di Office 365](#add-languages-for-office-365-update-downloads): a partire da Configuration Manager versione 1610, è possibile aggiungere il supporto per Configuration Manager per scaricare gli aggiornamenti in tutte le lingue supportate da Office 365. Non è necessario che Configuration Manager supporti la lingua se è supportata da Office 365. Prima di Configuration Manager versione 1610, è necessario scaricare e distribuire gli aggiornamenti nelle stesse lingue configurate nei client Office 365. 
 
 - [Modificare il canale di aggiornamento](#change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager): è possibile usare Criteri di gruppo per distribuire ai client di Office 365 la modifica del valore della chiave del Registro di sistema relativa al canale di aggiornamento.
 
@@ -98,6 +99,8 @@ Dopo la creazione e la distribuzione di applicazioni di Office 365 mediante il p
 
 
 ## <a name="deploy-office-365-updates"></a>Distribuire aggiornamenti di Office 365
+A partire da Configuration Manager versione 1706, gli aggiornamenti del client di Office 365 sono stati spostati nel nodo **Gestione client di Office 365** >**Aggiornamenti di Office 365**. Ciò non avrà impatto sulla configurazione delle regole di distribuzione automatica. 
+
 Eseguire i passaggi seguenti per distribuire gli aggiornamenti di Office 365 con Configuration Manager:
 
 1.  [Verificare i requisiti](https://technet.microsoft.com/library/mt628083.aspx) per l'uso di Configuration Manager per la gestione degli aggiornamenti del client di Office 365 nella sezione **Requisiti necessari per gestire gli aggiornamenti client di Office 365 usando Configuration Manager** dell'articolo.  
@@ -118,7 +121,7 @@ Eseguire i passaggi seguenti per distribuire gli aggiornamenti di Office 365 con
 4. [Distribuire gli aggiornamenti di Office 365](deploy-software-updates.md) ai client.   
 
 > [!Important]
-> È necessario scaricare e distribuire gli aggiornamenti nelle stesse lingue configurate nei client Office 365. Si supponga, ad esempio, di avere un client Office 365 configurato con le lingue en-us e de-de. Si supponga quindi di scaricare e distribuire nel server del sito solo il contenuto en-us di un aggiornamento di Office 365. Quando l'utente avvia l'installazione di questo aggiornamento da Software Center, l'operazione si blocca durante il download del contenuto.   
+> Prima di Configuration Manager versione 1610, è necessario scaricare e distribuire gli aggiornamenti nelle stesse lingue configurate nei client Office 365. Si supponga, ad esempio, di avere un client Office 365 configurato con le lingue en-us e de-de. Si supponga quindi di scaricare e distribuire nel server del sito solo il contenuto en-us di un aggiornamento di Office 365. Quando l'utente avvia l'installazione di questo aggiornamento da Software Center, l'operazione si blocca durante il download del contenuto per de-de.   
 
 ## <a name="restart-behavior-and-client-notifications-for-office-365-updates"></a>Comportamento di riavvio e notifiche client per gli aggiornamenti di Office 365
 Quando si distribuisce un aggiornamento a un client di Office 365, il comportamento di riavvio e le notifiche client sono diversi a seconda della versione di Configuration Manager in uso. La tabella seguente fornisce informazioni sull'esperienza dell'utente finale quando il client riceve un aggiornamento di Office 365:
@@ -131,7 +134,7 @@ Quando si distribuisce un aggiornamento a un client di Office 365, il comportame
 |1706|Il client riceve notifiche popup e in-app, nonché una finestra di dialogo con il conto alla rovescia prima dell'installazione dell'aggiornamento.|
 
 > [!Important]
-> In Configuration Manager versione 1706 si noti quanto segue:
+> A partire da Configuration Manager versione 1706, si noti quanto segue:
 >
 >- Viene visualizzata un'icona di notifica nell'area di notifica sulla barra delle applicazioni per le app obbligatorie la cui scadenza è entro 48 ore e per cui il contenuto dell'aggiornamento è stato scaricato. 
 >- Viene visualizzata una finestra di dialogo con un conto alla rovescia per le app obbligatorie la cui scadenza è entro 7,5 ore e per cui l'aggiornamento è stato scaricato. L'utente può posticipare la finestra di dialogo del conto alla rovescia fino a tre volte prima della scadenza. Se viene posticipato, il conto alla rovescia viene visualizzato di nuovo dopo due ore. Se non viene posticipato, viene eseguito un conto alla rovescia di 30 minuti e, al termine, l'aggiornamento viene installato.
