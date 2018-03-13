@@ -1,0 +1,88 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Documentazione di Microsoft Deployment Toolkit
+metadata:
+  document_id: bfb05467-f6ec-4cb2-b108-254972de2d06
+  title: Documentazione di Microsoft Deployment Toolkit
+  description: Microsoft Deployment Toolkit offre una raccolta unificata di strumenti, processi e linee guida per l'automazione delle distribuzioni di desktop e server.
+  keywords: freeware, strumento, processo, flusso di lavoro, automazione, implementazione, automatizzare, distribuzione
+  author: arob98
+  ms.author: angrobe
+  manager: angrobe
+  ms.date: 12/27/2017
+  ms.topic: landing-page
+  ms.devlang: na
+  ms.prod: configuration-manager
+  ms.openlocfilehash: 56462ae538a2336f94a1883d099ad7b45c714633
+  ms.sourcegitcommit: 32bbc006a41868a6d9a708db5f7b372d9c71d985
+  ms.translationtype: HT
+  ms.contentlocale: it-IT
+  ms.lasthandoff: 03/08/2018
+sections:
+- items:
+  - type: markdown
+    text: Microsoft Deployment Toolkit offre una raccolta unificata di strumenti, processi e linee guida per l'automazione delle distribuzioni di desktop e server.
+- items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 2
+    items:
+    - href: whats-new-in-mdt.md
+      html: "<p>Scoprire le novità.</p>"
+      image:
+        src: https://docs.microsoft.com/media/common/i_whats-new.svg
+      title: "Novità"
+    - href: release-notes.md
+      html: <p>Informazioni dettagliate sulle correzioni e i bug inclusi in questa versione.</p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_whats-new.svg
+      title: Note sulla versione
+    - href: samples-guide.md
+      html: <p>Impostazioni di configurazione di esempio per scenari di distribuzione specifici.</p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_code-samples.svg
+      title: Guida agli esempi
+    - href: user-driven-installation-developers-guide.md
+      html: <p>Personalizzare l'installazione guidata dall'utente per l'organizzazione.</p>
+      image:
+        src: https://docs.microsoft.com/media/common/i_architecture.svg
+      title: Guida per gli sviluppatori
+- title: Guide introduttive
+  items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: lite-touch-installation-guide.md
+      title: Installare tramite supporti di avvio
+      image:
+        src: https://docs.microsoft.com/media/common/i_get-started.svg
+    - href: user-driven-installation-guide.md
+      title: Distribuire con l'installazione guidata dall'utente
+      image:
+        src: https://docs.microsoft.com/media/common/i_get-started.svg
+    - href: sccm-guide.md
+      title: Distribuire in un nuovo computer
+      image:
+        src: https://docs.microsoft.com/media/common/i_get-started.svg
+- title: Risorse aggiuntive
+  items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: use-the-mdt.md
+      title: Eseguire distribuzioni con installazioni Lite Touch, automatizzate e guidate dall'utente.
+      image:
+        src: https://docs.microsoft.com/media/common/i_api-reference.svg
+    - href: toolkit-reference.md
+      title: Impostazioni di configurazione di aiuto con le distribuzioni.
+      image:
+        src: https://docs.microsoft.com/media/common/i_download-install.svg
+    - href: troubleshooting-reference.md
+      title: File di log, codici di errore e altri dettagli sulla risoluzione dei problemi.
+      image:
+        src: https://docs.microsoft.com/media/common/i_support.svg

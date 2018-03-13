@@ -3,24 +3,25 @@ title: Pianificare il database del sito
 titleSuffix: Configuration Manager
 description: Prendere in considerazione il database del sito e il ruolo del server del database del sito quando si pianifica la gerarchia di System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/08/20168
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 104fb4cc-6e83-40a3-8e6b-ac909fb9ec7d
-caps.latest.revision: "5"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 2db5658958cbeef0c3c49922b06d8ae288fbea37
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: 908ca61bc99db3ca93f46120a806cd9ae54c81f7
+ms.sourcegitcommit: b653342fb5d69a16e71b3548a7e9a2e47e54bf88
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="plan-for-the-site-database-for-system-center-configuration-manager"></a>Pianificare per il database del sito per System Center Configuration Manager
 
@@ -31,6 +32,12 @@ Il server di database del sito è un computer in cui viene eseguita una versione
 -   Per i siti di amministrazione centrale e i siti primari, è possibile installare SQL Server sul server del sito oppure su un computer diverso dal server del sito.  
 
 -   Per i siti secondari è possibile usare SQL Server Express anziché un'installazione completa di SQL Server. Il server database deve tuttavia essere eseguito nel server del sito secondario.  
+
+-  Per l'utilizzo del gruppo di disponibilità SQL, il modello di recupero del database deve essere impostato su FULL  
+
+-  Per l'utilizzo del gruppo di disponibilità non SQL, il modello di recupero del database deve essere impostato su SIMPLE  
+
+Altre informazioni sui modelli di recupero SQL sono disponibili in [Modelli di recupero (SQL Server)] (https://docs.microsoft.com/sql/relational-databases/backup-restore/recovery-models-sql-server).
 
 Per ospitare il database del sito è possibile usare le configurazioni di SQL Server seguenti:  
 
