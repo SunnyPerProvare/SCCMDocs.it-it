@@ -7,20 +7,21 @@ ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-client
+ms.technology:
+- configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 038e61f9-f49d-41d1-9a9f-87bec9e00d5d
-caps.latest.revision: "7"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: arob98
 ms.author: angrobe
 manager: angrobe
 ms.openlocfilehash: c4f3d8a9b043707340e56d3ae483ad66ca17dc10
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.sourcegitcommit: 52080ef1b0f9a27c123711ef274ac3ffe070e8e0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="planning-for-client-deployment-to-windows-embedded-devices-in-system-center-configuration-manager"></a>Pianificazione della distribuzione del client in dispositivi con Windows Embedded in System Center Configuration Manager
 
@@ -30,7 +31,7 @@ ms.lasthandoff: 10/12/2017
 
  Se si disabilitano i filtri, prestare attenzione a non disabilitare i driver di filtro. In genere questi driver vengono eseguiti automaticamente all'avvio del computer. La disabilitazione dei driver impedisce l'installazione del client o interferisce con l'orchestrazione dei filtri di scrittura che provoca l'errore delle operazioni dei client. I servizi associati a ogni tipo di filtro di scrittura che deve rimanere in esecuzione sono:  
 
-|Tipo di filtro di scrittura|Driver|Tipo|Descrizione|  
+|Tipo di filtro di scrittura|Driver|Type|Descrizione|  
 |-----------------------|------------|----------|-----------------|  
 |EWF|ewf|Kernel|Impementa il reindirizzamento I/O a livello di settore nei volumi protetti.|  
 |FBWF|fbwf|File system|Impementa il reindirizzamento I/O a livello di file nei volumi protetti.|  
