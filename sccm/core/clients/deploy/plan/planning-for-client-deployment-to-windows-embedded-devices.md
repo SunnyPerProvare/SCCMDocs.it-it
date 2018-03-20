@@ -65,7 +65,7 @@ ms.lasthandoff: 03/20/2018
 >
 > **Per i dispositivi che usano solo FBWF:** configurare le eccezioni seguenti per salvare lo stato del client e i dati dell'inventario tra i riavvii del dispositivo:  
 >   
->  -   CCMINSTALLDIR\\*.sdf  
+>  -   CCMINSTALLDIR\\\*.sdf  
 > -   CCMINSTALLDIR\ServiceData  
 > -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\CCM\StateSystem  
 >   
