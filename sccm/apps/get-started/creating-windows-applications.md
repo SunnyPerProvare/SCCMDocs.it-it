@@ -33,8 +33,8 @@ Oltre agli altri requisiti e alle procedure di System Center Configuration Manag
 
 |Tipo di dispositivo|Tipi di file supportati|  
 |-----------------|---------------------|  
-|Windows RT e Windows RT 8.1|*.appx, \*.appxbundle|  
-|Windows 8.1 e versioni successive registrato come dispositivo mobile|*.appx, \*.appxbundle|  
+|Windows RT e Windows RT 8.1|\*.appx, \*.appxbundle|  
+|Windows 8.1 e versioni successive registrato come dispositivo mobile|\*.appx, \*.appxbundle|  
 
  Sono supportate le azioni di distribuzione seguenti:  
 

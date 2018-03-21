@@ -55,7 +55,7 @@ Questo argomento fornisce una descrizione delle nozioni di base necessarie prima
  Configuration Manager consente di distribuire i tipi di app seguenti:  
 
 - Windows Installer (file *.msi)
-- Pacchetto app Windows (*.appx, *.appxbundle)
+- Pacchetto app Windows (\*.appx, \*.appxbundle)
 - Pacchetto app Windows (in Windows Store)
 - Microsoft Application Virtualization 4
 - Microsoft Application Virtualization  5
