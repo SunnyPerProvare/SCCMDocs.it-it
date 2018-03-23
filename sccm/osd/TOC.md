@@ -41,11 +41,12 @@
 ### [Usare supporti di avvio per distribuire Windows in rete](deploy-use/use-bootable-media-to-deploy-windows-over-the-network.md)
 ### [Usare i supporti autonomi per distribuire Windows senza usare la rete](deploy-use/use-stand-alone-media-to-deploy-windows-without-using-the-network.md)
 ### [Usare il multicast per distribuire Windows in rete](deploy-use/use-multicast-to-deploy-windows-over-the-network.md)
-### [Creare un'immagine per un OEM in modalità produttore computer o per un rivenditore locale](deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md)
+### [Creare un'immagine per un OEM presso un produttore computer o un deposito locale](deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md)
 ### [Distribuire Windows to Go](deploy-use/deploy-windows-to-go.md)
 
 ## [Gestire Windows come servizio](deploy-use/manage-windows-as-a-service.md)
 ## [Monitorare le distribuzioni del sistema operativo](deploy-use/monitor-operating-system-deployments.md)
+## [Creare una distribuzione in fasi per una sequenza di attività](deploy-use/create-phased-deployment-for-task-sequence.md)
 
 ## [Gestire le sequenze di attività per automatizzare le attività](deploy-use/manage-task-sequences-to-automate-tasks.md)
 ### [Creare una sequenza di attività per installare un sistema operativo](deploy-use/create-a-task-sequence-to-install-an-operating-system.md)
