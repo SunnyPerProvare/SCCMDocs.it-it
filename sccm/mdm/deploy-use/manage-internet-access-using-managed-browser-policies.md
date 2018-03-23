@@ -7,20 +7,21 @@ ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8e25e00c-c9a8-473f-bcb7-ea989f6ca3c5
-caps.latest.revision: "6"
-caps.handback.revision: "0"
+caps.latest.revision: ''
+caps.handback.revision: ''
 author: dougeby
 ms.author: dougeby
 manager: angrobe
 ms.openlocfilehash: 3aea2a65733a52ab532d451b21ae98fbc0f122c6
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.sourcegitcommit: 52080ef1b0f9a27c123711ef274ac3ffe070e8e0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="manage-internet-access-using-managed-browser-policies-with-system-center-configuration-manager"></a>Gestire l'accesso a Internet mediante criteri di Managed Browser con System Center Configuration Manager
 
@@ -66,7 +67,7 @@ In System Center Configuration Manager è possibile distribuire Intune Managed B
     > [!NOTE]  
     >  Il tipo di criterio Generale consente di modificare la funzionalità delle app distribuite per adeguarle ai criteri aziendali di conformità e sicurezza. Ad esempio, è possibile limitare le operazioni taglia, copia e incolla in un'app con restrizioni. Per altre informazioni sul tipo di criterio Generale, vedere [Proteggere le app usando i criteri di gestione delle applicazioni mobili](protect-apps-using-mam-policies.md).  
 
-6.  Completa la procedura guidata.  
+6.  Completare la procedura guidata.  
 
 Il nuovo criterio viene visualizzato nel nodo **Criteri di gestione delle applicazioni** dell'area di lavoro **Raccolta software** .  
 
@@ -114,7 +115,7 @@ Utilizzare le seguenti informazioni per ulteriori informazioni sui formati conse
     |http://www.contoso.com/images<br /><br /> Corrisponde a una singola cartella|www.contoso.com/images|www.contoso.com/images/dogs|  
     |http://www.contoso.com:80<br /><br /> Corrisponde a una singola pagina utilizzando un numero di porta|http://www.contoso.com:80||  
     |https://www.contoso.com<br /><br /> Corrisponde a una singola pagina protetta|https://www.contoso.com|http://www.contoso.com|  
-    |http://www.contoso.com/Images/*<br /><br /> Corrisponde a una singola cartella e a tutte le sottocartelle|www.contoso.com/images/dogs<br /><br /> www.contoso.com/images/cats|www.contoso.com/videos|  
+    |http://www.contoso.com/images/*<br /><br /> Corrisponde a una singola cartella e a tutte le sottocartelle|www.contoso.com/images/dogs<br /><br /> www.contoso.com/images/cats|www.contoso.com/videos|  
 
 -   Di seguito sono riportati esempi di alcuni input che non è possibile specificare:  
 
@@ -136,7 +137,7 @@ Utilizzare le seguenti informazioni per ulteriori informazioni sui formati conse
 
     -   http://www.contoso.com:*  
 
-    -   http://www.contoso.com:/*  
+    -   http://www.contoso.com: /*  
 
 > [!NOTE]  
 >  *.microsoft.com è sempre consentito.  
