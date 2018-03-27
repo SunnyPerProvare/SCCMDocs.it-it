@@ -1,23 +1,23 @@
 ---
 title: Pianificare gli aggiornamenti software
 titleSuffix: Configuration Manager
-description: "Una pianificazione per l'infrastruttura del punto di aggiornamento software è essenziale prima di usare gli aggiornamenti software in un ambiente di produzione di System Center Configuration Manager."
-keywords: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.date: 06/27/2017
+description: Una pianificazione per l'infrastruttura del punto di aggiornamento software è essenziale prima di usare gli aggiornamenti software in un ambiente di produzione di System Center Configuration Manager.
+keywords: ''
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: configuration-manager
-ms.service: 
+ms.service: ''
 ms.technology:
 - configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
-ms.openlocfilehash: e36048141400097950a7c24733f382acacb73131
-ms.sourcegitcommit: db9978135d7a6455d83dbe4a5175af2bdeaeafd8
+ms.openlocfilehash: b57a1b584ec40d67b263959ae52f694c486481d7
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="plan-for-software-updates-in-system-center-configuration-manager"></a>Pianificare gli aggiornamenti software in System Center Configuration Manager
 
@@ -137,7 +137,7 @@ Abilitare questa opzione in una raccolta di dispositivi o in un set di dispositi
  Il passaggio a un altro punto di aggiornamento software risponde con tutta probabilità alle richieste di tolleranza d'errore degli utenti. Per impostazione predefinita, Configuration Manager non supporta la configurazione di punti di aggiornamento software come cluster di bilanciamento del carico di rete. Prima di Configuration Manager versione 1702, è possibile usare Configuration Manager SDK per configurare un massimo di quattro punti di aggiornamento software in un cluster di bilanciamento del carico di rete. Tuttavia, a partire da Configuration Manager versione 1702, i punti di aggiornamento software non sono supportati come cluster di bilanciamento del carico di rete e gli aggiornamenti a Configuration Manager versione 1702 verranno bloccati se viene rilevata questa configurazione. Per altre informazioni sul cmdlet Set-CMSoftwareUpdatePoint di PowerShell, vedere [Set-CMSoftwareUpdatePoint](http://go.microsoft.com/fwlink/?LinkId=276834).
 
 ###  <a name="BKMK_SUPSecSite"></a> Punto di aggiornamento software in un sito secondario  
- Il punto di aggiornamento software è facoltativo in un sito secondario. Quando si installa un punto di aggiornamento software in un sito secondario, il database WSUS viene configurato come una replica del punto di aggiornamento software predefinito nel sito primario padre. È possibile installare un solo punto di aggiornamento software in un sito secondario. I dispositivi assegnati a un sito secondario sono configurati per l'utilizzo di un punto di aggiornamento software nel sito padre quando tale punto non è installato nel sito secondario. In genere, un punto di aggiornamento software viene installato in un sito secondario in presenza di una larghezza di banda della rete limitata tra i dispositivi assegnati al sito secondario e i punti di aggiornamento software nel sito primario padre, oppure quando il punto di aggiornamento software sta per raggiungere il limite di capacità. Dopo l'installazione e la configurazione di un punto di aggiornamento software in un sito secondario, vengono aggiornati dei criteri a livello di sito per i computer client assegnati a tale sito, che inizieranno a utilizzare il nuovo punto di aggiornamento software.  
+ Il punto di aggiornamento software è facoltativo in un sito secondario. È possibile installare un solo punto di aggiornamento software in un sito secondario. I dispositivi assegnati a un sito secondario sono configurati per l'utilizzo di un punto di aggiornamento software nel sito padre quando tale punto non è installato nel sito secondario. In genere, un punto di aggiornamento software viene installato in un sito secondario in presenza di una larghezza di banda della rete limitata tra i dispositivi assegnati al sito secondario e i punti di aggiornamento software nel sito primario padre, oppure quando il punto di aggiornamento software sta per raggiungere il limite di capacità. Dopo l'installazione e la configurazione di un punto di aggiornamento software in un sito secondario, vengono aggiornati dei criteri a livello di sito per i computer client assegnati a tale sito, che inizieranno a utilizzare il nuovo punto di aggiornamento software.  
 
 ##  <a name="BKMK_SUPInstallation"></a> Pianificare l'installazione del punto di aggiornamento software  
  Prima di creare un ruolo di sistema del sito del punto di aggiornamento software in Configuration Manager, è necessario prendere in considerazione diversi requisiti in base all'infrastruttura di Configuration Manager. Quando si configura il punto di aggiornamento software per comunicare tramite SSL, è particolarmente importante esaminare questa sezione perché sono necessari dei passaggi aggiuntivi per garantire il funzionamento corretto dei punti di aggiornamento software nella gerarchia. In questa sezione vengono fornite informazioni sui passaggi da effettuare per poter pianificare e preparare l'installazione del punto di aggiornamento software.  
@@ -172,7 +172,7 @@ Gli aggiornamenti software richiedono che su tutti i server del sistema del sito
  Quando un server WSUS è configurato come punto di aggiornamento software, non è più possibile usarlo come server WSUS autonomo. Se è necessario un server WSUS autonomo separato, non gestito da Configuration Manager, è necessario configurarlo in un server diverso.
 
 ####  <a name="BKMK_WSUSAsReplica"></a> Configurare WSUS come server di replica  
- Quando si crea un ruolo del sistema sito del punto di aggiornamento software in un server del sito primario, non è possibile usare un server WSUS configurato come una replica. Se il server WSUS viene configurato come server di replica, Configuration Manager non riesce a configurarlo e non è possibile completare neanche la sincronizzazione di WSUS. Se un punto di aggiornamento software viene creato in un sito secondario, Configuration Manager configura WSUS come server di replica di WSUS eseguito nel punto di aggiornamento software del sito primario padre. Il primo punto di aggiornamento software installato in un sito primario è il punto predefinito. I punti di aggiornamento software aggiuntivi nel sito sono configurati come repliche del punto di aggiornamento software predefinito.  
+ Quando si crea un ruolo del sistema sito del punto di aggiornamento software in un server del sito primario, non è possibile usare un server WSUS configurato come una replica. Se il server WSUS viene configurato come server di replica, Configuration Manager non riesce a configurarlo e non è possibile completare neanche la sincronizzazione di WSUS. Il primo punto di aggiornamento software installato in un sito primario è il punto predefinito. I punti di aggiornamento software aggiuntivi nel sito sono configurati come repliche del punto di aggiornamento software predefinito.  
 
 ####  <a name="BKMK_WSUSandSSL"></a> Decidere se configurare WSUS per l'uso di SSL  
  È possibile utilizzare il protocollo SSL per proteggere WSUS in esecuzione nel punto di aggiornamento software. WSUS utilizza SSL per l'autenticazione tra computer client e server WSUS downstream e il server WSUS. WSUS utilizza inoltre SSL per crittografare i metadati dell'aggiornamento software. Quando si sceglie di proteggere WSUS con SSL, è necessario preparare il server WSUS prima di installare il punto di aggiornamento software.  
