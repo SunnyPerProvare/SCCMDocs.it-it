@@ -12,15 +12,15 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 08f711ba-83bf-4b5f-9520-a0778c6ae7eb
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
 ms.openlocfilehash: a8a66169f3c187f8fa0319548ddde23b399811f3
-ms.sourcegitcommit: 52080ef1b0f9a27c123711ef274ac3ffe070e8e0
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="introduction-to-application-management-in-system-center-configuration-manager"></a>Introduzione alla gestione delle applicazioni in System Center Configuration Manager
 
@@ -55,7 +55,7 @@ Questo argomento fornisce una descrizione delle nozioni di base necessarie prima
  Configuration Manager consente di distribuire i tipi di app seguenti:  
 
 - Windows Installer (file *.msi)
-- Pacchetto app Windows (\*.appx, \*.appxbundle)
+- Pacchetto app Windows (*.appx, *.appxbundle)
 - Pacchetto app Windows (in Windows Store)
 - Microsoft Application Virtualization 4
 - Microsoft Application Virtualization  5
