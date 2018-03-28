@@ -92,7 +92,7 @@ Il nuovo criterio viene visualizzato nel nodo **Criteri di gestione delle applic
 
 Utilizzare le seguenti informazioni per ulteriori informazioni sui formati consentiti e i caratteri jolly, che è possibile utilizzare quando si specificano le URL negli elenchi consentiti e bloccati.  
 
--   È possibile utilizzare il carattere jolly asterisco '**\***' secondo le regole nell'elenco di modelli consentiti sottostante.  
+-   È possibile utilizzare il carattere jolly asterisco '**\\***' secondo le regole nell'elenco di modelli consentiti sottostante.  
 
 -   Assicurarsi che tutte le  URL abbiano con prefisso **http** o **https** quando immetterle nell'elenco.  
 
@@ -111,7 +111,7 @@ Utilizzare le seguenti informazioni per ulteriori informazioni sui formati conse
     |http://www.contoso.com<br /><br /> Corrisponde a una singola pagina|www.contoso.com|host.contoso.com<br /><br /> www.contoso.com/images<br /><br /> contoso.com/|  
     |http://contoso.com<br /><br /> Corrisponde a una singola pagina|contoso.com/|host.contoso.com<br /><br /> www.contoso.com/images<br /><br /> www.contoso.com|  
     |http://www.contoso.com/*<br /><br /> Corrisponde a tutte le URL a partire da www.contoso.com|www.contoso.com<br /><br /> www.contoso.com/images<br /><br /> www.contoso.com/videos/tvshows|host.contoso.com<br /><br /> host.contoso.com/images|  
-    |http://*.contoso.com/\*<br /><br /> Corrisponde a tutti i sottodomini in contoso.com|developer.contoso.com/resources<br /><br /> news.contoso.com/images<br /><br /> news.contoso.com/videos|contoso.host.com|  
+    |http://\*.contoso.com/\*<br /><br /> Corrisponde a tutti i sottodomini in contoso.com|developer.contoso.com/resources<br /><br /> news.contoso.com/images<br /><br /> news.contoso.com/videos|contoso.host.com|  
     |http://www.contoso.com/images<br /><br /> Corrisponde a una singola cartella|www.contoso.com/images|www.contoso.com/images/dogs|  
     |http://www.contoso.com:80<br /><br /> Corrisponde a una singola pagina utilizzando un numero di porta|http://www.contoso.com:80||  
     |https://www.contoso.com<br /><br /> Corrisponde a una singola pagina protetta|https://www.contoso.com|http://www.contoso.com|  
@@ -121,11 +121,11 @@ Utilizzare le seguenti informazioni per ulteriori informazioni sui formati conse
 
     -   *.com  
 
-    -   *.contoso/\*  
+    -   \*.contoso/\*  
 
     -   www.contoso.com/*images  
 
-    -   www.contoso.com/*images\*pigs  
+    -   www.contoso.com/\*images\*pigs  
 
     -   www.contoso.com/page*  
 
