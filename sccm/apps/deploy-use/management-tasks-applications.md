@@ -1,5 +1,5 @@
 ---
-title: "Attività di gestione per le applicazioni"
+title: Attività di gestione per le applicazioni
 titleSuffix: Configuration Manager
 description: Gestire le applicazioni e i tipi di distribuzione di System Center Configuration Manager.
 ms.custom: na
@@ -7,19 +7,20 @@ ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-app
+ms.technology:
+- configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c4041e21-21ff-4d95-ab05-14007e0047cf
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
 ms.openlocfilehash: 8d4cc2cd8de9626b6911dc50dbdec2ccdaada94c
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="management-tasks-for-system-center-configuration-manager-applications"></a>Attività di gestione per applicazioni di System Center Configuration Manager
 
@@ -47,7 +48,7 @@ Per altre informazioni sulla creazione di applicazioni e tipi di distribuzione, 
 |**Export**|Apre l'**Esportazione guidata applicazione** che consente di esportare le applicazioni selezionate in un file con estensione zip che è possibile archiviare o installare in un altro sito. Se si sceglie di esportare il contenuto dell'applicazione, verrà creata una cartella con il contenuto.<br /><br /> È anche possibile esportare le dipendenze dell'applicazione, le relazioni e le condizioni di sostituzione, il contenuto per l'applicazione e le relative dipendenze.<br /><br /> Il cmdlet di Windows PowerShell, **Export-CMApplication**, esegue la stessa funzione. Per altre informazioni, vedere [Export-CMApplication](http://go.microsoft.com/fwlink/p/?LinkID=258880) nella documentazione di riferimento dei cmdlet di System Center 2012 Configuration Manager SP1.|  
 |**Eliminazione**|Elimina l'applicazione attualmente selezionata.<br /><br /> Non è possibile eliminare un'applicazione se esistono altre applicazioni da essa dipendenti, se è presente una distribuzione attiva o se esistono sequenze attività da essa dipendenti.|  
 |**Simula distribuzione**|Apre la **Simulazione guidata distribuzione applicazione** in cui è possibile testare i risultati di una distribuzione di applicazione nei computer senza installare o disinstallare l'applicazione.<br /><br /> Vedere [Come simulare distribuzioni di applicazioni](../../apps/deploy-use/simulate-application-deployments.md).|  
-|**Distribuisci**|Apre la **Distribuzione guidata del software** in cui è possibile distribuire l'applicazione selezionata nelle raccolte di computer presenti nella gerarchia.<br /><br /> Vedere [Come distribuire le applicazioni](../../apps/deploy-use/deploy-applications.md).|  
+|**Distribuzione**|Apre la **Distribuzione guidata del software** in cui è possibile distribuire l'applicazione selezionata nelle raccolte di computer presenti nella gerarchia.<br /><br /> Vedere [Come distribuire le applicazioni](../../apps/deploy-use/deploy-applications.md).|  
 |**Distribuisci contenuto**|Apre la **Distribuzione guidata contenuto** in cui è possibile copiare il contenuto dell'applicazione selezionata nei punti di distribuzione presenti nella gerarchia.<br /><br /> Vedere [Gestire il contenuto e l'infrastruttura del contenuto](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).|  
 |**Visualizza relazioni**|Visualizza un diagramma grafico che indica le relazioni delle applicazioni selezionate con altre applicazioni. Scegliere una delle seguenti opzioni:<br><br><ul><li>**Dipendenza**: visualizza le applicazioni che dipendono dall'applicazione selezionata e le applicazioni da cui dipende l'applicazione.</li><li>**Sostituzione**: visualizza le applicazioni che l'applicazione selezionata sostituisce e le applicazioni che si sostituiscono all'applicazione selezionata.</li><li>**Condizioni globali**: visualizza le condizioni globali a cui fa riferimento l'applicazione.</li></ol><br /> Vedere [Come rivedere e sostituire le applicazioni](../../apps/deploy-use/revise-and-supersede-applications.md) e [Come creare condizioni globali](../../apps/deploy-use/create-global-conditions.md).|  
 

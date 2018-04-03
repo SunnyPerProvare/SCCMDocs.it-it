@@ -1,25 +1,26 @@
 ---
-title: "Funzionalità nella Technical Preview 1612"
+title: Funzionalità nella Technical Preview 1612
 titleSuffix: Configuration Manager
-description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1612 per System Center Configuration Manager."
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1612 per System Center Configuration Manager.
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bceab2e8-2f05-4a17-9ac8-a7a558670fb7
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: erikje
 ms.author: erikje
 manager: angrobe
 ms.openlocfilehash: 80cace2bec8cb9c39d5f3f00ea244b697e1d75c9
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1612 per System Center Configuration Manager
 
@@ -144,7 +145,7 @@ Per spostare il database del data warehouse in un nuovo SQL Server, procedere co
 
 È possibile esaminare i registri di Configuration Manager seguenti per verificare che il ruolo del sistema del sito sia stato reinstallato correttamente:  
 - **DWSSMSI.log** e **DWSSSetup.log**: usare questi registri per analizzare gli errori che si verificano durante l'installazione del punto di servizio Data warehouse.
--   **Microsoft.ConfigMgrDataWarehouse.log**: usare questo registro per analizzare la sincronizzazione dei dati tra il database del sito e il database del data warehouse database.
+-   **Microsoft.ConfigMgrDataWarehouse.log**: questo log consente di analizzare la sincronizzazione dei dati tra il database del sito e il database del data warehouse.
 
 
 ## <a name="content-library-cleanup-tool"></a>Strumento di pulizia della raccolta contenuto
@@ -156,7 +157,7 @@ Dopo aver installato la versione Technical Preview 1612, è possibile trovare il
 
 Lo strumento rilasciato con questa versione Technical Preview è destinato a sostituire le versioni precedenti di strumenti simili rilasciati per i prodotti Configuration Manager precedenti. Questa versione dello strumento smetterà di funzionare dopo il 1° marzo 2017. Fino a quel momento, tuttavia, verranno rilasciate nuove versioni Technical Preview, dato che questo strumento viene rilasciato nell'ambito di Current Branch o di un rilascio fuori programma pronto per la produzione.
 
-### <a name="requirements"></a>Requisiti  
+### <a name="requirements"></a>requisiti  
  - È possibile eseguire lo strumento direttamente nel computer che ospita il punto di distribuzione oppure in remoto da un altro server. Lo strumento può essere eseguito solo per un unico punto di distribuzione alla volta.
  - Per la gerarchia di Configuration Manager l'account utente che esegue lo strumento deve disporre direttamente di autorizzazioni di amministrazione basate sui ruoli equivalenti a quelle di un amministratore completo.  Lo strumento non funziona se all'account utente sono state concesse autorizzazioni in quanto membro di un gruppo di sicurezza di Windows con autorizzazioni di amministratore completo.
 
