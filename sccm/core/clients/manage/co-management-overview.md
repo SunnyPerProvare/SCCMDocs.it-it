@@ -1,20 +1,22 @@
 ---
 title: Co-gestione per dispositivi Windows 10
+titleSuffix: Configuration Manager
 description: Informazioni su come gestire dispositivi Windows 10 contemporaneamente tramite Configuration Manager e Microsoft Intune.
-keywords: 
-author: dougeby
-manager: angrobe
-ms.date: 11/20/2017
+keywords: ''
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: configuration-manager
-ms.service: 
-ms.technology: 
+ms.service: ''
+ms.technology: ''
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: 0cc11a05013fd9c25ee98ec35adcbe822d8a21fb
-ms.sourcegitcommit: 389c4e5b4e9953b74c13b1689195f99c526fa737
+ms.openlocfilehash: e4b8bd58d30cd87ffc461289edbfc5da9a684cda
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="co-management-for-windows-10-devices"></a>Co-gestione per dispositivi Windows 10    
 <!-- 1350871 -->
@@ -50,7 +52,7 @@ Di seguito sono elencati i prerequisiti generali per abilitare la co-gestione:
 - [Cloud Management Gateway](/sccm/core/clients/manage/manage-clients-internet#cloud-management-gateway) in Configuration Manager (quando si usa Intune per installare il client di Configuration Manager)
 
 ## <a name="workloads-you-can-switch-to-intune"></a>Carichi di lavoro che è possibile passare a Intune
-Dopo aver abilitato la co-gestione, Configuration Manager continua a gestire tutti i carichi di lavoro. Quando si è pronti, impostare Intune perché inizi a gestire i carichi di lavoro disponibili. È possibile fare in modo che Intune gestisca i carichi di lavoro seguenti.   
+Dopo aver abilitato la co-gestione, Configuration Manager continua a gestire tutti i carichi di lavoro. Quando si è pronti, impostare Intune perché inizi a gestire i carichi di lavoro disponibili. È possibile fare in modo che Intune gestisca i carichi di lavoro seguenti:   
 
 ### <a name="compliance-policies"></a>Criteri di conformità
 I criteri di conformità definiscono le regole e le impostazioni che un dispositivo deve avere per essere considerato conforme ai criteri di accesso condizionale. È anche possibile usare tali criteri per monitorare e correggere i problemi di conformità con i dispositivi, indipendentemente dall'accesso condizionale. Per altre informazioni, vedere [Criteri di conformità del dispositivo in System Center Configuration Manager](/sccm/mdm/deploy-use/device-compliance-policies).  
@@ -60,6 +62,10 @@ I criteri di Windows Update per le aziende consentono di configurare i criteri d
 
 ### <a name="resource-access-policies"></a>Criteri di accesso alle risorse
 I criteri di accesso alle risorse configurano le impostazioni relative a VPN, Wi-Fi, posta elettronica e certificati per i dispositivi. Per informazioni dettagliate, vedere [Distribuire profili di accesso alle risorse](/sccm/protect/deploy-use/deploy-wifi-vpn-email-cert-profiles).
+
+### <a name="endpoint-protection"></a>Endpoint Protection 
+<!-- 1357365 -->
+A partire da Configuration Manager 1802, è possibile eseguire la transizione del carico di lavoro di Endpoint Protection a Intune. Per altre informazioni, vedere [Passare i carichi di lavoro di Configuration Manager a Intune](/sccm/core/clients/manage/co-management-switch-workloads.md#Workloads-able-to-be-transitioned-to-Intune) e [Endpoint Protection](/sccm/protect/deploy-use/endpoint-protection).
 
 ## <a name="architectural-overview-for-co-management"></a>Panoramica dell'architettura per la co-gestione
 Il diagramma seguente offre una panoramica dell'architettura della co-gestione e illustra come questa si inserisce nelle infrastrutture di Configuration Manager e Intune esistenti.

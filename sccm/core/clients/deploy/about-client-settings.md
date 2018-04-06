@@ -1,9 +1,9 @@
 ---
 title: Impostazioni client
 titleSuffix: Configuration Manager
-description: Scegliere le impostazioni client tramite la console di System Center Configuration Manager.
+description: Informazioni sulle impostazioni predefinite e personalizzate per il controllo dei comportamenti client
 ms.custom: na
-ms.date: 01/05/2018
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,16 +12,16 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
-caps.latest.revision: 
-caps.handback.revision: 
+caps.latest.revision: 15
+caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: dddfde242a67a0b4a9311c0fb6f0b2f0e6742cc2
-ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
+manager: dougeby
+ms.openlocfilehash: 42b9364fc88acc3f403db8d2ca9243a117fd78bf
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Informazioni sulle impostazioni client in System Center Configuration Manager
 
@@ -114,18 +114,19 @@ Questa impostazione si applica agli utenti i cui computer si trovano nella Intra
 
 Impostare questa opzione su **Sì** se si vuole che gli utenti ricevano i criteri utente nei computer basati su Internet. Devono essere rispettati anche i requisiti seguenti:  
 
--   Il client e il sito devono essere configurati per la gestione client basata su Internet.
+-   Il client e il sito devono essere configurati per la [gestione client basata su Internet](/sccm/core/clients/manage/plan-internet-based-client-management) o per un [gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway).  
 
 -   L'impostazione **Abilitare i criteri utente nei client** deve essere **Sì**.  
 
--   Il punto di gestione basato su Internet deve eseguire l'autenticazione dell'utente tramite l'autenticazione di Windows (Kerberos o NTLM).  
+-   Il punto di gestione basato su Internet deve eseguire l'autenticazione dell'utente tramite l'autenticazione di Windows (Kerberos o NTLM). Per altre informazioni, vedere [Considerazioni per le comunicazioni client da Internet o da una foresta non attendibile](../../../core/plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan).  
+
+-   A partire dalla versione 1710 il gateway di gestione cloud autentica correttamente l'utente mediante Azure Active Directory. Per altre informazioni, vedere [Deploy user-available applications on Azure AD-joined devices](\sccm\apps\deploy-use\deploy-applications#deploy-user-available-applications-on-azure-ad-joined-devices) (Distribuire applicazioni disponibili per l'utente in dispositivi aggiunti ad Azure AD).  
 
 Se si imposta questa opzione su **No** o uno o più dei requisiti precedenti non vengono soddisfatti, un computer connesso a Internet riceve solo criteri computer. In questo scenario gli utenti possono comunque visualizzare, richiedere e installare applicazioni da un Catalogo applicazioni basato su Internet. Se questa impostazione corrisponde a **No**, ma **Abilitare i criteri utente nei client** corrisponde a **Sì**, gli utenti ricevono i criteri client solo quando il computer è connesso alla Intranet.  
 
-Per altre informazioni sulla gestione client in Internet, vedere [Considerazioni per le comunicazioni client da Internet o da una foresta non trusted](../../../core/plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan).  
-
 > [!NOTE]  
->  Le richieste di approvazione dell'applicazione da parte degli utenti non richiedono criteri utente o l'autenticazione dell'utente.  
+>  Per la gestione client basata su Internet, le richieste di approvazione dell'applicazione da parte degli utenti non richiedono criteri utente o l'autenticazione dell'utente. Il gateway di gestione cloud non supporta le richieste di approvazione dell'applicazione.   
+
 
 
 ## <a name="cloud-services"></a>Servizi cloud
@@ -228,7 +229,7 @@ Digitare il nome visualizzato dagli utenti in Software Center. Queste informazio
 
 ### <a name="use-new-software-center"></a>Usa il nuovo Software Center
 
-Se si imposta questa opzione su **Sì**, tutti i computer client useranno il nuovo Software Center. Software Center visualizza le applicazioni disponibili per gli utenti precedentemente accessibili solo nel Catalogo applicazioni. Il Catalogo applicazioni richiede Silverlight, che non è un prerequisito per Software Center.   
+Se si imposta questa opzione su **Sì**, tutti i computer client useranno il nuovo Software Center. Software Center visualizza le applicazioni disponibili per gli utenti precedentemente accessibili solo nel Catalogo applicazioni. Il Catalogo applicazioni richiede Silverlight, che non è un prerequisito per Software Center. A partire da Configuration Manager 1802, l'impostazione predefinita è **Sì**.  
 
 I ruoli del sistema del sito del punto per siti Web del Catalogo applicazioni e del punto per servizi Web del Catalogo applicazioni continuano a essere necessari per visualizzare le app disponibili per gli utenti in Software Center.  
 
@@ -322,6 +323,21 @@ Le impostazioni seguenti devono avere una durata più breve della finestra di ma
 
 Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione in System Center Configuration Manager](../../../core/clients/manage/collections/use-maintenance-windows.md).
 
+
+
+## <a name="delivery-optimization"></a>Ottimizzazione recapito
+
+<!-- 1324696 -->
+I gruppi di limiti di Configuration Manager consentono di definire e regolamentare la distribuzione del contenuto nella rete aziendale e negli uffici remoti. [Ottimizzazione recapito di Windows](/windows/deployment/update/waas-delivery-optimization) è una tecnologia peer-to-peer basata sul cloud per la condivisione di contenuti tra dispositivi Windows 10. A partire dalla versione 1802, è possibile configurare Ottimizzazione recapito in modo che usi i gruppi di limiti per la condivisione di contenuti tra peer.
+
+ > [!Note]
+ > Ottimizzazione recapito è disponibile solo nei client Windows 10
+
+### <a name="use-configuration-manager-boundary-groups-for-delivery-optimization-group-id"></a>Use Configuration Manager Boundary Groups for Delivery Optimization Group ID (Usare i gruppi di limiti di Configuration Manager per l'ID del gruppo di Ottimizzazione recapito)
+ Scegliere **Sì** per applicare l'identificatore del gruppo di limiti come identificatore di gruppo di Ottimizzazione recapito sul client. Quando il client comunica con il servizio cloud Ottimizzazione recapito, usa questo identificatore per individuare i peer con il contenuto desiderato. 
+
+
+
 ##  <a name="endpoint-protection"></a>Endpoint Protection  
 >  [!Tip]   
 > Oltre alle informazioni seguenti, è possibile trovare altri dettagli sull'uso delle impostazioni client di Endpoint Protection in [Scenario di esempio: uso di System Center Endpoint Protection per proteggere i computer dal malware in System Center Configuration Manager](/sccm/protect/deploy-use/scenarios-endpoint-protection).
@@ -330,11 +346,11 @@ Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le fin
 
 Scegliere **Sì** se si vogliono gestire i client di Endpoint Protection e di Windows Defender esistenti nei computer della gerarchia.  
 
-Scegliere questa opzione se il client di Endpoint Protection è già installato e si vuole gestirlo con Configuration Manager. Questa installazione separata include un processo con script che usa un'applicazione di Configuration Manager o un pacchetto e un programma.
+Scegliere questa opzione se il client di Endpoint Protection è già installato e si vuole gestirlo con Configuration Manager. Questa installazione separata include un processo con script che usa un'applicazione di Configuration Manager o un pacchetto e un programma. A partire da Configuration Manager 1802 non è più necessario che nei dispositivi Windows 10 sia installato l'agente Endpoint Protection. Per tali dispositivi deve essere comunque abilitata l'opzione **Gestire il client Endpoint Protection nei computer client**. <!--503654-->
 
 ### <a name="install-endpoint-protection-client-on-client-computers"></a>Installare il client Endpoint Protection nei computer client
 
-Scegliere **Sì** per installare e abilitare il client di Endpoint Protection nei computer client in cui non è già in esecuzione.  
+Scegliere **Sì** per installare e abilitare il client di Endpoint Protection nei computer client in cui non è già in esecuzione. A partire da Configuration Manager 1802 non è più necessario che nei client Windows 10 sia installato l'agente Endpoint Protection.  
 
 > [!NOTE]  
 >  Se il client di Endpoint Protection è già installato e si sceglie **No**, il client non viene disinstallato. Per disinstallare il client di Endpoint Protection, configurare l'impostazione del client **Gestire il client Endpoint Protection nei computer client** su **No**. In seguito distribuire un pacchetto e programma per disinstallare il client di Endpoint Protection.  
@@ -609,8 +625,14 @@ Immettere il nome dell'organizzazione visualizzato dagli utenti in Software Cent
 - **Combinazione colori per il Software Center** </br>
 Selezionare **Seleziona il colore** per definire il colore primario usato da Software Center.
 - **Seleziona un logo per il Software Center** </br>
-Selezionare **Sfoglia** per scegliere un'immagine da visualizzare in Software Center. Il logo deve essere un file JPEG, PNG o BMP di 400 x 100 pixel, con una dimensione massima di 750 KB. Il nome del file del logo non deve contenere spazi. <!--SMS.503731 space in filename, noticed BMP missing as filetype-->
+Selezionare **Sfoglia** per scegliere un'immagine da visualizzare in Software Center. Il logo deve essere un file JPEG, PNG o BMP di 400 x 100 pixel, con una dimensione massima di 750 KB. Il nome del file del logo non deve contenere spazi.  
+         
+### <a name="bkmk_HideUnapproved"></a> Nascondi le applicazioni non approvate nel Software Center
+A partire da Configuration Manager 1802, se questa opzione è abilitata le applicazioni disponibili per l'utente che richiedono l'approvazione sono nascoste in Software Center.   <!--1355146-->
 
+### <a name="bkmk_HideInstalled"></a> Nascondi le applicazioni installate in Software Center
+A partire da Configuration Manager 1802, se questa opzione è abilitata le applicazioni che sono già installate non compaiono più nella scheda Applicazioni. L'opzione abilitata è l'impostazione predefinita quando si installa o si esegue l'aggiornamento a Configuration Manager 1802.  Le applicazioni installate sono ancora visualizzabili nella scheda Stato installazione. <!--1357592-->   
+  
 ### <a name="software-center-tab-visibility"></a>Visibilità delle schede di Software Center
 Configurare le impostazioni aggiuntive di questo gruppo su **Sì** per rendere visibili in Software Center le schede seguenti:
 - **Applicazioni**

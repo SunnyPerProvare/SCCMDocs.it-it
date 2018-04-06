@@ -3,23 +3,24 @@ title: Cartella CD.Latest
 titleSuffix: Configuration Manager
 description: Informazioni sul nuovo processo di aggiornamento che offre aggiornamenti per il prodotto all'interno della console di Configuration Manager.
 ms.custom: na
-ms.date: 05/02/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8db92d67-5d9c-4e9c-80d0-ae6fa0dd4817
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 1dd176f80afa4a9edc5a14d538eef7989614e814
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+manager: dougeby
+ms.openlocfilehash: 9371762a3f6acb9df7e7138c693b0a529c81a2ff
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="the-cdlatest-folder-for-system-center-configuration-manager"></a>Cartella CD.Latest per System Center Configuration Manager
 
@@ -27,12 +28,12 @@ ms.lasthandoff: 12/04/2017
 
 In System Center Configuration Manager è disponibile un nuovo processo di aggiornamento che offre aggiornamenti per il prodotto all'interno della console di Configuration Manager. Per supportare questo nuovo metodo di aggiornamento di Configuration Manager viene creata una nuova cartella denominata **CD.Latest** che contiene una copia dei file di installazione di Configuration Manager per la versione aggiornata del sito.  
 
-A partire dall'aggiornamento 1606, la cartella CD.Latest contiene una cartella denominata **Redist** che contiene i file ridistribuibili usati e scaricati dal programma di installazione. Questi file corrispondono alla versione dei file di Configuration Manager della cartella CD.Latest. Quando si esegue l'installazione da una cartella CD.Latest, è necessario usare i file che corrispondono alla versione del programma di installazione. A tale scopo è possibile impostare il programma di installazione in modo che scarichi i file nuovi e aggiornati da Microsoft o usi i file della cartella Redist inclusa nella cartella CD.Latest.
+La cartella CD.Latest contiene una cartella denominata **Redist** che contiene i file ridistribuibili usati e scaricati dal programma di installazione. Questi file corrispondono alla versione dei file di Configuration Manager della cartella CD.Latest. Quando si esegue l'installazione da una cartella CD.Latest, è necessario usare i file che corrispondono alla versione del programma di installazione. A tale scopo è possibile impostare il programma di installazione in modo che scarichi i file nuovi e aggiornati da Microsoft o usi i file della cartella Redist inclusa nella cartella CD.Latest.
 
-Tuttavia il supporto di base, ad esempio la versione di base 1606 rilasciata a ottobre 2016, non include la cartella Redist. La cartella Redist viene creata solo dopo l'installazione di un aggiornamento nella console. Nel frattempo, usare la cartella Redist usata durante l'installazione di siti dal supporto di base.  
+Tuttavia il supporto di base, ad esempio la versione di base 1802 rilasciata a marzo 2018, non include la cartella Redist. La cartella Redist viene creata solo dopo l'installazione di un aggiornamento nella console. Nel frattempo, usare la cartella Redist usata durante l'installazione di siti dal supporto di base.  
 
 > [!TIP]
-> Se non è ancora stata installata la versione 1606, è necessario assicurarsi che i file redist usati siano aggiornati. Se i file redist non sono stati scaricati di recente, consentire al programma di installazione di scaricarli da Microsoft.   
+> Verificare che i file ridistribuibili usati siano aggiornati. Se i file ridistribuibili non sono stati scaricati di recente, pianificarne il download da Microsoft nel programma di installazione.   
 
  Di seguito sono riportati alcuni scenari di creazione o aggiornamento della cartella CD.Latest in un sito di amministrazione centrale o in un server del sito primario:  
 
@@ -40,7 +41,7 @@ Tuttavia il supporto di base, ad esempio la versione di base 1606 rilasciata a o
 
 -   Eseguire l'attività di backup predefinita di Configuration Manager. La cartella viene creata o aggiornata nel percorso della cartella di backup specificata.  
 
--  A partire dalla versione 1606, la cartella CD.Latest viene creata quando si installa un nuovo sito usando il supporto di base (come nella versione 1606 o 1702).
+-  La cartella CD.Latest viene creata quando si installa un nuovo sito usando il supporto di base, come ad esempio nella versione 1802.
 
 I file di origine della cartella CD.Latest sono supportati per le operazioni seguenti:  
 
