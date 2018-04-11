@@ -3,7 +3,7 @@ title: Passaggi della sequenza di attività
 titleSuffix: Configuration Manager
 description: Informazioni sui passaggi che è possibile aggiungere a una sequenza di attività di Configuration Manager.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 03/30/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,11 +17,11 @@ caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ad68209784b78da5c6e75745094ba8e6bc002c44
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 53929400b983a2191e60a7d42ae84062afd44e3a
+ms.sourcegitcommit: d8a4a53630351b3d677bbdc5d203e7d330472cba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Passaggi della sequenza di attività in System Center Configuration Manager
 
@@ -635,7 +635,7 @@ In caso di dischi rigidi di grandi dimensioni il processo di crittografia può r
 **Volume**  
  Informazioni specifiche sulla partizione o sul volume creato dalla sequenza di attività, inclusi gli attributi seguenti:  
 
--   Name  
+-   Nome  
 -   Spazio su disco rimanente  
    
 Per creare una nuova partizione, fare clic su **Nuovo** per aprire la finestra di dialogo **Proprietà della partizione** . Specificare il tipo e la dimensione della partizione e se si tratta di una partizione di avvio. Per modificare una partizione esistente, fare clic sulla partizione da modificare, quindi su Proprietà. Per altre informazioni su come configurare le partizioni del disco rigido, vedere uno degli articoli seguenti:  
@@ -711,6 +711,10 @@ Le condizioni seguenti influiscono sulle applicazioni installate dalla sequenza 
 -   Se il valore di una variabile include informazioni diverse dal nome dell'applicazione, la sequenza di attività non installa l'applicazione e continua l'esecuzione.  
 
 -   Se la sequenza di attività non trova una variabile con il nome di base specificato e il suffisso "01", non installa nessuna applicazione. 
+    
+> [!Important]  
+> Per questi valori viene fatta distinzione tra maiuscole e minuscole. Ad esempio, "installare" è diverso da "Installare". Se è necessario modificare il valore, l'editor della sequenza di attività non rileva una modifica della combinazione di maiuscole/minuscole. È necessario effettuare un'altra modifica allo stesso tempo, ad esempio, modificare la descrizione del passaggio.<!--509714-->   
+
    
 **Se l'installazione di un'applicazione non riesce, continuare installando le altre applicazioni dell'elenco**  
  Questa impostazione specifica che il passaggio continua in caso di errore di installazione di una singola applicazione. Se si specifica questa impostazione, la sequenza di attività continua indipendentemente da eventuali errori di installazione. Se non si specifica questa impostazione e l'installazione non riesce, il passaggio termina immediatamente.  
@@ -789,6 +793,10 @@ Nell'editor della sequenza di attività fare clic su **Aggiungi**, selezionare *
 -   Se l'ID del pacchetto include caratteri minuscoli, l'installazione del software ha esito negativo.  
 
 -   Se la sequenza di attività non trova una variabile con il nome di base specificato e il suffisso "001" non installa nessun pacchetto. La sequenza di attività continua.  
+    
+> [!Important]  
+> Per questi valori viene fatta distinzione tra maiuscole e minuscole. Ad esempio, "installare" è diverso da "Installare". Se è necessario modificare il valore, l'editor della sequenza di attività non rileva una modifica della combinazione di maiuscole/minuscole. È necessario effettuare un'altra modifica allo stesso tempo, ad esempio, modificare la descrizione del passaggio.<!--509714-->   
+
    
 **Se l'installazione di un pacchetto software non riesce, continuare con l'installazione degli altri pacchetti dell'elenco**  
  Questa impostazione specifica che il passaggio procederà in caso di errore di installazione di un singolo pacchetto software. Se si specifica questa impostazione, la sequenza di attività continua indipendentemente da eventuali errori di installazione. Se non si specifica questa impostazione e l'installazione non riesce, il passaggio termina immediatamente.  
