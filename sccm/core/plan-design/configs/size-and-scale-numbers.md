@@ -1,25 +1,26 @@
 ---
-title: "Ridimensionamento e scalabilità"
+title: Ridimensionamento e scalabilità
 titleSuffix: Configuration Manager
-description: Identificare il numero di ruoli del sistema del sito e di siti necessari per supportare i dispositivi nell'ambiente System Center Configuration Manager.
+description: Determinare il numero di ruoli del sistema del sito e di siti necessari per supportare i dispositivi nell'ambiente.
 ms.custom: na
-ms.date: 07/24/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c5a42100-2f60-4952-b495-918025ea6559
-caps.latest.revision: "4"
+caps.latest.revision: 4
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: bda1ab737a3af5e13f180771cc17c9850165906c
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+manager: dougeby
+ms.openlocfilehash: cc5ce67ffe7c18d4e7be4c9a74f2a0ca0ba0253c
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Numeri di ridimensionamento e scalabilità per System Center Configuration Manager
 
@@ -27,31 +28,34 @@ ms.lasthandoff: 12/04/2017
 
 
 
-Ogni distribuzione di System Center Configuration Manager ha un numero massimo di siti, di ruoli del sistema del sito e di dispositivi che può supportare. Questi numeri variano a seconda della struttura della gerarchia (i tipi e i numeri dei siti che vengono usati) e dei ruoli del sistema del sito che vengono distribuiti.  Le informazioni nelle aree seguenti consentono di identificare il numero di ruoli del sistema del sito e di siti necessari per supportare i dispositivi che si prevede di gestire con il proprio ambiente.
+Ogni distribuzione di Configuration Manager ha un numero massimo di siti, di ruoli del sistema del sito e di dispositivi che può supportare. Questi numeri variano a seconda della struttura della gerarchia: i tipi e i numeri dei siti che vengono usati e dei ruoli del sistema del sito che vengono distribuiti. Le informazioni in questo articolo consentono di determinare il numero di ruoli del sistema del sito e di siti necessari per supportare i dispositivi che si prevede di gestire.
 
 Usare le informazioni di questo argomento insieme a quelle contenute negli articoli seguenti:
 -   [Recommended hardware](../../../core/plan-design/configs/recommended-hardware.md) (Hardware consigliato)
 -   [Sistemi operativi supportati per i server del sistema del sito di System Center Configuration Manager](../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md)  
 -   [Sistemi operativi supportati per client e dispositivi](../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md)
--   [Prerequisiti del sito e del sistema del sito per System Center Configuration Manager](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)
+-   [Prerequisiti del sito e del sistema del sito](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)
 
 
-I numeri del supporto riportati di seguito si basano sull'uso dell'hardware consigliato per Configuration Manager e delle impostazioni predefinite per tutte le funzionalità di Configuration Manager disponibili. Quando non si usa l'hardware consigliato oppure si usano impostazioni personalizzate più aggressive (come l'esecuzione dell'inventario hardware o software con maggiore frequenza rispetto all'impostazione predefinita pari a una volta ogni sette giorni), le prestazioni dei sistemi del sito possono peggiorare e non corrispondere ai livelli di supporto dichiarati.
+I numeri del supporto si basano sull'uso dell'hardware consigliato per Configuration Manager. Si basano anche sulle impostazioni predefinite per tutte le funzionalità di Configuration Manager disponibili. Quando non si utilizza l'hardware consigliato o si adottano impostazioni personalizzate più aggressive, le prestazioni dei sistemi del sito possono peggiorare. I sistemi del sito potrebbero non soddisfare i livelli di supporto. Un esempio di impostazioni client più aggressive è eseguire l'inventario hardware o software più frequentemente di quanto definito dalle impostazioni predefinite, vale a dire una volta ogni sette giorni.
 
 ##  <a name="bkmk_SiteSystemScale"></a> Tipi di sito  
- **Sito di amministrazione centrale:**  
+
+### <a name="central-administration-site"></a>Sito di amministrazione centrale  
 
 -   Un sito di amministrazione centrale supporta fino a 25 siti primari figlio.  
 
-**Sito primario:**  
+
+### <a name="primary-site"></a>Sito primario  
 
 -   Ogni sito primario può supportare fino a 250 siti secondari.  
 
 -   Il numero di siti secondari per il sito primario si basa su connessioni WAN (Wide Area Network) continuamente connesse e affidabili. Per i percorsi contenenti meno di 500 client, considerare un punto di distribuzione anziché un sito secondario.  
 
- Per informazioni sul numero di client e di dispositivi che un sito primario può supportare, vedere la sezione [Numero di client per siti e gerarchie](#bkmk_clientnumbers) in questo argomento.  
+ Per informazioni sul numero di client e di dispositivi che un sito primario può supportare, vedere la sezione [Numero di client per siti e gerarchie](#bkmk_clientnumbers).  
 
-**Sito secondario:**  
+
+### <a name="secondary-site"></a>Sito secondario  
 
 -   I siti secondari non supportano siti figlio.  
 
@@ -60,7 +64,7 @@ I numeri del supporto riportati di seguito si basano sull'uso dell'hardware cons
 ## <a name="bkmk_roles"></a> Site system roles    
 
 
-**Punto per servizi Web del Catalogo applicazioni:**  
+### <a name="application-catalog-web-service-point"></a>Punto per servizi Web del Catalogo applicazioni  
 
 -   È possibile installare più istanze del punto di servizio Web Catalogo applicazioni nei siti primari.  
 
@@ -71,7 +75,8 @@ I numeri del supporto riportati di seguito si basano sull'uso dell'hardware cons
 
     -   Ogni istanza di questo ruolo del sistema del sito supporta il numero massimo di client supportati dalla gerarchia.  
 
-**Punto per siti Web del Catalogo applicazioni:**  
+
+### <a name="application-catalog-website-point"></a>Punto per siti Web del Catalogo applicazioni  
 
 -   È possibile installare più istanze del punto di sito Web Catalogo applicazioni nei siti primari.  
 
@@ -83,7 +88,30 @@ I numeri del supporto riportati di seguito si basano sull'uso dell'hardware cons
     -   Ogni istanza di questo ruolo del sistema del sito supporta il numero massimo di client supportati dalla gerarchia.  
 
 
-**Punto di distribuzione:**  
+### <a name="bkmk_cmg"></a>Gateway di gestione cloud
+
+- È possibile installare più istanze del gateway di gestione cloud nei siti primari o del sito di amministrazione centrale.  
+
+    > [!Tip]  
+    > Nella gerarchia, creare il gateway di gestione cloud nel sito di amministrazione centrale.  
+
+    - Un gateway di gestione cloud supporta da 1 a 16 istanze di macchina virtuale nel servizio cloud di Azure.  
+
+    - Ogni istanza di macchina virtuale del gateway di gestione cloud supporta 6.000 connessioni client simultanee. Quando il gateway di gestione cloud ha un carico elevato a causa di un numero di client maggiore di quello supportato, le richieste continuano a essere gestite ma potrebbero verificarsi ritardi.  
+
+Per altre informazioni, vedere [Prestazioni e scalabilità](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#performance-and-scale) del gateway di gestione cloud
+
+
+### <a name="cloud-management-gateway-connection-point"></a>Punto di connessione del gateway di gestione cloud
+
+- È possibile installare più istanze del punto di connessione del gateway di gestione cloud nei siti primari.  
+
+- Un punto di connessione del gateway di gestione cloud può supportare un gateway con fino a quattro istanze di macchine virtuali. Se il gateway di gestione cloud ha di più di quattro istanze di macchine virtuali, aggiungere un secondo punto di connessione per il bilanciamento del carico. Un gateway di gestione cloud con 16 istanze di macchine virtuali deve essere collegato a quattro punti di connessione gateway di gestione cloud.
+
+Per altre informazioni, vedere [Prestazioni e scalabilità](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#performance-and-scale) del gateway di gestione cloud
+
+
+### <a name="distribution-point"></a>Punto di distribuzione  
 
 -   Punti di distribuzione per sito:  
 
@@ -100,16 +128,17 @@ I numeri del supporto riportati di seguito si basano sull'uso dell'hardware cons
 -   Ogni punto di distribuzione supporta un totale combinato di massimo 10.000 pacchetti e applicazioni.  
 
 > [!WARNING]  
->  Il numero effettivo di client che un punto di distribuzione può supportare dipende dalla velocità della rete e dalla configurazione hardware del computer del punto di distribuzione.  
+>  Il numero effettivo di client che un punto di distribuzione può supportare dipende dalla velocità della rete e dalla configurazione hardware del server.  
 >   
->  Analogamente, il numero di punti di distribuzione pull che un punto di distribuzione di origine può supportare dipende dalla velocità della rete e dalla configurazione hardware del computer del punto di distribuzione di origine. Ma questo numero dipende anche dalla quantità di contenuto che è stato distribuito. Infatti, a differenza dei client che in genere accedono al contenuto in momenti diversi nel corso di una distribuzione, tutti i punti di distribuzione pull richiedono il contenuto nello stesso momento e possono chiedere tutto il contenuto disponibile, non solo quello loro applicabile, come farebbe un client. Quando un punto di distribuzione di origine presenta un carico di elaborazione eccessivo, si possono verificare ritardi imprevisti nella distribuzione del contenuto ai punti di distribuzione previsti nell'ambiente in uso.  
+>  Analogamente, il numero di punti di distribuzione pull che un punto di distribuzione di origine può supportare dipende dalla velocità della rete e dalla configurazione hardware del punto di distribuzione di origine. Ma questo numero dipende anche dalla quantità di contenuto che è stato distribuito. Questo accade perché, a differenza dei client che in genere accedono al contenuto in momenti diversi durante una distribuzione, tutti i punti di distribuzione pull richiedono contenuto nello stesso momento. I punti di distribuzione pull possono richiedere tutto il contenuto disponibile senza limitarsi al contenuto che è applicabile ad essi. Quando un punto di distribuzione di origine presenta un carico di elaborazione elevato, si possono verificare ritardi imprevisti nella distribuzione del contenuto ai punti di distribuzione di destinazione.  
 
 
-**Punto di stato di fallback:**  
+### <a name="fallback-status-point"></a>Punto di stato di fallback  
 
 -   Ogni punto di stato di fallback è in grado di supportare fino a 100.000 client.  
 
-**Punto di gestione:**  
+
+### <a name="management-point"></a>Punto di gestione  
 
 -   Ogni sito primario supporta fino a 15 punti di gestione.  
 
@@ -118,18 +147,22 @@ I numeri del supporto riportati di seguito si basano sull'uso dell'hardware cons
 
 -   Ciascun sito secondario supporta un unico punto di gestione che deve essere installato nel server del sito secondario.  
 
- Per informazioni sul numero di client e dispositivi che un punto di gestione può supportare, vedere la sezione [Punti di gestione](#bkmk_mp) in questo argomento.  
+ Per informazioni sul numero di client e dispositivi che un punto di gestione può supportare, vedere la sezione [Punti di gestione](#bkmk_mp).  
 
-**Punto di aggiornamento software:**  
 
--   Un punto di aggiornamento software installato nel server del sito può supportare fino a 25.000 client.  
+### <a name="software-update-point"></a>Punto di aggiornamento software  
+
+-   Un punto di aggiornamento software installato nel server del sito può supportare fino a 25.000 client.   
 
 -   Un punto di aggiornamento software installato in un computer remoto rispetto al server del sito può supportare fino a 150.000 client quando il computer remoto soddisfa i requisiti di Windows Server Update Services (WSUS) per il supporto di questo numero di client.  
 
 -   Per impostazione predefinita, Configuration Manager non supporta la configurazione di punti di aggiornamento software come cluster di Bilanciamento carico di rete. È possibile tuttavia usare l'SDK di Configuration Manager per configurare fino a quattro punti di aggiornamento software in un cluster di Bilanciamento carico di rete.  
 
+
+
 ##  <a name="bkmk_clientnumbers"></a> Numero di client per siti e gerarchie  
  Usare le informazioni seguenti per determinare quanti e quali tipi di client è possibile supportare in un sito o in una gerarchia.  
+
 
 ###  <a name="bkmk_cas"></a> Gerarchia con un sito di amministrazione centrale  
 Un sito di amministrazione centrale supporta un numero totale di dispositivi che comprende fino al numero di dispositivi elencati per i tre gruppi seguenti:  
@@ -144,21 +177,22 @@ Un sito di amministrazione centrale supporta un numero totale di dispositivi che
 
     -   300.000 dispositivi basati sul cloud  
 
- Ad esempio, in una gerarchia è possibile supportare 700.000 desktop, fino a 25.000 Mac e Windows CE 7.0 e fino a 300.000 dispositivi basati su cloud quando si integra Microsoft Intune, per un totale di 1.025.000 dispositivi. Se si supportano dispositivi gestiti tramite software MDM locale, il totale per la gerarchia è 825.000 dispositivi.  
+ Ad esempio, in una gerarchia è possibile supportare 700.000 desktop, fino a 25.000 dispositivi Mac e Windows CE 7.0 e fino a 300.000 dispositivi basati su cloud quando si integra Microsoft Intune. Questa gerarchia supporta un totale di 1.025.000 dispositivi. Se si supportano dispositivi gestiti tramite software MDM locale, il totale per questa gerarchia è 825.000 dispositivi.  
 
 > [!IMPORTANT]  
->  In una gerarchia in cui il sito di amministrazione centrale usa un'edizione Standard di SQL Server, la gerarchia supporta un massimo di 50.000 desktop e dispositivi. Per supportare più di 50.000 desktop e dispositivi è necessario usare un'edizione Enterprise di SQL Server. Questo requisito si applica solo a un sito di amministrazione centrale e non si applica a un sito primario autonomo o a un sito primario figlio in cui l'edizione di SQL Server in uso non limita la capacità del sito di supportare il numero dichiarato di client.   
+>  In una gerarchia in cui il sito di amministrazione centrale usa un'edizione Standard di SQL Server, la gerarchia supporta un massimo di 50.000 desktop e dispositivi. Per supportare più di 50.000 desktop e dispositivi è necessario usare un'edizione Enterprise di SQL Server. Questo requisito si applica solo a un sito di amministrazione centrale. Non si applica a un sito primario autonomo o un sito primario figlio. L'edizione di SQL Server in uso per un sito primario non limita la sua capacità di supportare il numero dichiarato di client.   
 
 
  L'edizione di SQL Server in uso in un sito primario autonomo non limita la capacità di tale sito di supportare fino al numero dichiarato di client.  
 
 
 ###  <a name="bkmk_chipri"></a> Sito primario figlio  
-Ogni sito primario figlio in una gerarchia con un sito di amministrazione centrale supporta le quantità seguenti:  
+Ogni sito primario figlio in una gerarchia con un sito di amministrazione centrale supporta il numero di client seguente:  
 
 -   Un totale di 150.000 client e dispositivi che non sono limitati a un gruppo o tipo specifico, a condizione di non superare il numero supportato per la gerarchia. Vedere anche il supporto per i [dispositivi integrati](#embedded).
 
-Ad esempio, un sito primario che supporta 25.000 computer che eseguono Mac e Windows CE 7.0, vale a dire il limite per una gerarchia, può quindi supportare 125.000 computer desktop aggiuntivi, raggiungendo un numero totale di dispositivi supportati pari al limite massimo dei siti figlio primari, ovvero 150.000.
+Ad esempio, un sito primario supporta 25.000 dispositivi Mac e Windows CE 7.0. Tale numero è il limite per la gerarchia. Questo sito primario può quindi supportare 125.000 computer desktop aggiuntivi. raggiungendo un numero totale di dispositivi supportati per il sito figlio primario di 150.000.
+
 
 ###  <a name="bkmk_pri"></a> Sito primario autonomo  
 Un sito primario autonomo supporta il numero seguente di dispositivi:  
@@ -178,13 +212,16 @@ Un sito primario autonomo supporta il numero seguente di dispositivi:
 
 Ad esempio, un sito primario autonomo che supporta 150.000 desktop e 10.000 Mac o Windows CE 7.0 può supportare solo 15.000 dispositivi aggiuntivi. Questi dispositivi possono essere basati sul cloud o gestiti con software MDM locale.  
 
+
 ### <a name="embedded"></a> Siti primari e dispositivi con Windows Embedded
-I siti primari supportano i dispositivi con Windows Embedded in cui sono abilitati i filtri di scrittura basati su file (FBWF). Se nei dispositivi integrati non sono abilitati filtri di scrittura, un sito primario può supportare un numero di dispositivi integrati non superiore al numero di dispositivi consentito per il sito. Del numero totale di dispositivi supportati da un sito primario, al massimo 10.000 possono essere dispositivi con Windows Embedded quando tali dispositivi sono configurati per le eccezioni riportate nella nota importante in [Pianificazione della distribuzione del client in dispositivi con Windows Embedded in System Center Configuration Manager](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices). Un sito primario supporta solo 3.000 dispositivi con Windows Embedded in cui è abilitato EWF e che non sono configurati per le eccezioni.
+I siti primari supportano i dispositivi con Windows Embedded in cui sono abilitati i filtri di scrittura basati su file (FBWF). Se nei dispositivi integrati non sono abilitati filtri di scrittura, un sito primario può supportare un numero di dispositivi integrati non superiore al numero di dispositivi consentito per il sito. Del numero totale di dispositivi supportati da un sito primario, un massimo di 10.000 dispositivi possono essere Windows Embedded. Questi dispositivi devono essere configurati per le eccezioni elencate nella nota importante in [Pianificazione della distribuzione del client in dispositivi con Windows Embedded](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices). Un sito primario supporta solo 3.000 dispositivi con Windows Embedded in cui è abilitato EWF e che non sono configurati per le eccezioni.
+
 
 ###  <a name="bkmk_sec"></a> Siti secondari  
-I siti secondari supportano le quantità seguenti:  
+I siti secondari supportano il numero di dispositivi seguente:  
 
 -   15.000 desktop (computer che eseguono Windows, Linux e UNIX)  
+
 
 ###  <a name="bkmk_mp"></a> Punti di gestione  
 Ogni punto di gestione può supportare il numero di dispositivi seguente:  
