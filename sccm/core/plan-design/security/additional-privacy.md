@@ -1,20 +1,22 @@
 ---
-title: 'Informativa sulla privacy per System Center Configuration Manager: altre informazioni'
-description: Informazioni su come Microsoft raccoglie e usa i dati da un'implementazione di System Center Configuration Manager.
+title: 'Informativa sulla privacy: informazioni aggiuntive'
+titleSuffix: Configuration Manager
+description: Informazioni su come Microsoft raccoglie e usa i dati da System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/13/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1fcc921f-085f-4b0b-9c53-1e0707211076
-caps.latest.revision: "5"
-caps.handback.revision: "0"
+caps.latest.revision: 5
+caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
+manager: dougeby
 translation.priority.ht:
 - cs-cz
 - de-de
@@ -34,11 +36,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 5332d02f4d128516f310a2edff897b4efc5b971b
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: eb557a29b1412e136023b3e6caddf358732659e9
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="additional-information-about-privacy-for-system-center-configuration-manager"></a>Altre informazioni sulla privacy per System Center Configuration Manager
 
@@ -57,18 +59,22 @@ Configuration Manager raccoglie i dati solo dal database di SQL Server del sito 
 
 Gli amministratori possono modificare il livello dei dati che vengono raccolti andando alla sezione **Dati di utilizzo** della console di Configuration Manager.
 
-Per altre informazioni, vedere gli articoli di approfondimento relativi alle impostazioni e ai livelli per i dati di utilizzo nell'articolo [Dati di diagnostica e di utilizzo per System Center Configuration Manager](http://go.microsoft.com/fwlink/?LinkID=626566).
+Per altre informazioni, vedere gli articoli di approfondimento relativi alle impostazioni e ai livelli per i dati di utilizzo nell'articolo [Dati di diagnostica e di utilizzo per System Center Configuration Manager](https://go.microsoft.com/fwlink/?LinkID=626566).
 
 
 ## <a name="customer-experience-improvement-program"></a>Analisi utilizzo software
+
+> [!Note]  
+> A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.
+
 Il programma Analisi utilizzo software raccoglie informazioni di base dalla console di Configuration Manager relative alla configurazione hardware e alla modalità di impiego del software e dei servizi per individuare tendenze e modelli di utilizzo. Vengono inoltre raccolte informazioni sul tipo e sul numero di errori rilevati, sulle prestazioni software e hardware e sulla velocità dei servizi. Non vengono raccolti nomi, indirizzi o altre informazioni che consentono l'identificazione personale degli utenti. Dai computer client non viene raccolta alcuna informazione per Analisi utilizzo software.
 
 Microsoft usa le informazioni raccolte per migliorare la qualità, l'affidabilità e le prestazioni dei propri software e servizi.
 
-Per dettagli sulle informazioni che vengono raccolte, elaborate o trasmesse dal programma Analisi utilizzo software, vedere la relativa [informativa sulla privacy](http://go.microsoft.com/fwlink/?LinkID=525211).
+Per dettagli sulle informazioni che vengono raccolte, elaborate o trasmesse dal programma Analisi utilizzo software, vedere la relativa [informativa sulla privacy](https://go.microsoft.com/fwlink/?LinkID=525211).
 
 ## <a name="operations-management-suite-connector"></a>Connettore Operations Management Suite
-Il connettore Microsoft Operations Management Suite consente di sincronizzare dati, ad esempio le raccolte, da System Center Configuration Manager a Microsoft Operations Management Suite. L'ID sottoscrizione e la chiave privata di Microsoft Azure vengono memorizzati nel database di Configuration Manager quando l'amministratore configura la funzionalità. Sia la chiave privata del client di Azure Active Directory che la chiave condivisa dell'area di lavoro di Microsoft Operations Management Suite vengono archiviate nel database di System Center Configuration Manager in locale. Tutte le comunicazioni tra System Center Configuration Manager e Microsoft Operations Management Suite utilizzano HTTPS. A Microsoft non vengono fornite informazioni aggiuntive sulle raccolte, a parte dati di telemetria casuali. Per dettagli sulle informazioni raccolte da Microsoft Operations Management Suite, vedere [Sicurezza dei dati di Log Analytics](http://go.microsoft.com/fwlink/?LinkId=823545).
+Il connettore Microsoft Operations Management Suite consente di sincronizzare dati, ad esempio le raccolte, da System Center Configuration Manager a Microsoft Operations Management Suite. L'ID sottoscrizione e la chiave privata di Microsoft Azure vengono memorizzati nel database di Configuration Manager quando l'amministratore configura la funzionalità. Sia la chiave privata del client di Azure Active Directory che la chiave condivisa dell'area di lavoro di Microsoft Operations Management Suite vengono archiviate nel database di System Center Configuration Manager in locale. Tutte le comunicazioni tra System Center Configuration Manager e Microsoft Operations Management Suite utilizzano HTTPS. A Microsoft non vengono fornite informazioni aggiuntive sulle raccolte, a parte dati di telemetria casuali. Per dettagli sulle informazioni raccolte da Microsoft Operations Management Suite, vedere [Sicurezza dei dati di Log Analytics](https://go.microsoft.com/fwlink/?LinkId=823545).
 
 ## <a name="asset-intelligence"></a>Asset Intelligence
 Asset Intelligence consente agli amministratori IT di definire, tenere traccia e gestire in modo proattivo la conformità agli standard di configurazione. Il controllo e i report sulla distribuzione e l'utilizzo di applicazioni fisiche e virtuali consentono alle organizzazioni di prendere decisioni aziendali più efficaci relativamente alle licenze software, nonché di garantire la conformità rispetto ai contratti di licenza. Dopo aver raccolto i dati sull'utilizzo dai client di Configuration Manager, gli amministratori possono usare diverse funzionalità per visualizzare tali dati, ad esempio le raccolte, le query e i report.
@@ -96,16 +102,16 @@ I report Microsoft Cloud Protection Service vengono utilizzati per migliorare il
 
 Microsoft Cloud Protection Service non raccoglie intenzionalmente informazioni personali. Eventuali informazioni personali raccolte da Microsoft Cloud Protection Service non verranno utilizzate da Microsoft per identificare o contattare l'utente.
 
-Altre informazioni relative ai dati raccolti sono disponibili nella documentazione del prodotto in [Endpoint Protection in System Center Configuration Manager](http://go.microsoft.com/fwlink/?LinkId=823547).
+Altre informazioni relative ai dati raccolti sono disponibili nella documentazione del prodotto in [Endpoint Protection in System Center Configuration Manager](https://go.microsoft.com/fwlink/?LinkId=823547).
 
 ## <a name="site-hierarchy--geographical-view-with-bing-maps"></a>Gerarchia dei siti: visualizzazione geografica con Bing Maps
 Gerarchia siti - Vista geografica consente di usare le mappe fornite da Microsoft Bing Maps per visualizzare la topologia dei server fisici di Configuration Manager. Per abilitare questa funzionalità, le informazioni sulla posizione fornite dall'utente vengono inviate dal server al servizio Web di Bing Maps.
 
-Microsoft usa le informazioni per il funzionamento e il miglioramento delle mappe di Microsoft Bing Maps e di altri siti e servizi Microsoft. Per altre informazioni, vedere l'[Informativa sulla privacy Microsoft](http://go.microsoft.com/fwlink/?LinkId=823548).
+Microsoft usa le informazioni per il funzionamento e il miglioramento delle mappe di Microsoft Bing Maps e di altri siti e servizi Microsoft. Per altre informazioni, vedere l'[Informativa sulla privacy Microsoft](https://go.microsoft.com/fwlink/?LinkId=823548).
 È possibile scegliere di non usare la visualizzazione geografica per la gerarchia dei siti. La vista Diagramma gerarchia consente di visualizzare la gerarchia e non usa il servizio Bing Maps.
 
 ## <a name="microsoft-intune-subscription"></a>Sottoscrizione di Microsoft Intune
-I clienti che hanno acquistato una sottoscrizione a Microsoft Intune possono usare Configuration Manager per gestire i propri dispositivi mobili connessi tramite Microsoft Intune. L'[Informativa sulla privacy dei Microsoft Online Services](http://go.microsoft.com/fwlink/?LinkId=262214) si applica ai servizi online Microsoft, incluso Microsoft Intune. Se i clienti dispongono anche di una sottoscrizione Microsoft Intune, è necessario leggere l'[informativa sulla privacy di Microsoft Online Services](http://go.microsoft.com/fwlink/?LinkId=262214) insieme alla presente informativa sulla privacy.
+I clienti che hanno acquistato una sottoscrizione a Microsoft Intune possono usare Configuration Manager per gestire i propri dispositivi mobili connessi tramite Microsoft Intune. L'[Informativa sulla privacy dei Microsoft Online Services](https://go.microsoft.com/fwlink/?LinkId=262214) si applica ai servizi online Microsoft, incluso Microsoft Intune. Se i clienti dispongono anche di una sottoscrizione Microsoft Intune, è necessario leggere l'[informativa sulla privacy di Microsoft Online Services](https://go.microsoft.com/fwlink/?LinkId=262214) insieme alla presente informativa sulla privacy.
 
 Tutte le comunicazioni con Microsoft utilizzano HTTPS. Per configurare la sottoscrizione a Microsoft Intune e scaricare la richiesta di firma del certificato (CSR) necessaria per la configurazione del supporto iOS, l'amministratore deve accedere a Microsoft Intune usando l'account e la password aziendali. Queste credenziali non vengono memorizzate in Configuration Manager. Tutte le altre comunicazioni con Microsoft Intune vengono autenticate mediante certificati PKI generati automaticamente da Microsoft Intune.
 

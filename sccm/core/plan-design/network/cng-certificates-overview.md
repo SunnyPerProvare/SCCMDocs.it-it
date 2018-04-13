@@ -1,24 +1,25 @@
 ---
 title: Panoramica dei certificati CNG
 titleSuffix: Configuration Manager
-description: Panoramica dei certificati CNG in Configuration Manager
+description: Informazioni sul supporto dei certificati Cryptography Next Generation (CNG) per i clienti e i server Configuration Manager.
 ms.custom: na
-ms.date: 11/20/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
-ms.assetid: 
-author: vhorne
-ms.author: victorh
-manager: angrobe
-ms.openlocfilehash: f5f5138270d4f14b76b2c41e41ec034a0c12a932
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.assetid: ''
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 271cc0e2753f1a65740187a4faf6875c1a018014
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="cng-certificates-overview"></a>Panoramica dei certificati CNG
 <!-- 1356191 --> 
@@ -28,11 +29,17 @@ Configuration Manager offre supporto limitato per la crittografia, ovvero solo p
 ## <a name="supported-scenarios"></a>Scenari supportati
 È possibile usare i modelli di certificato dell'[API di crittografia CNG (Cryptography Next Generation)](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx) per gli scenari seguenti:
 
-- Registrazione e comunicazione dei client con un punto di gestione HTTPS.   
-- Distribuzione di software e applicazioni con un punto di distribuzione HTTPS.   
-- Distribuzione del sistema operativo.  
-- Client messaging SDK (con l'aggiornamento più recente) e proxy ISV.   
-- Configurazione di Cloud Management Gateway.  
+- Registrazione e comunicazione dei client con un punto di gestione HTTPS   
+- Distribuzione di software e applicazioni con un punto di distribuzione HTTPS   
+- Distribuzione del sistema operativo  
+- Client messaging SDK (con l'aggiornamento più recente) e proxy ISV   
+- Configurazione di Cloud Management Gateway  
+
+A partire dalla versione 1802, è possibile usare i certificati CNG per i ruoli del server abilitati per HTTPS seguenti: <!-- 1357314 -->   
+- Punto di gestione
+- Punto di distribuzione
+- Punto di aggiornamento software
+- Punto di migrazione stato     
 
 > [!NOTE]
 > CNG è compatibile con le versioni precedenti di Crypto API (CAPI). I certificati CAPI continuano a essere supportati anche quando nel client è abilitato il supporto per CNG.
@@ -41,15 +48,19 @@ Configuration Manager offre supporto limitato per la crittografia, ovvero solo p
 
 Attualmente non sono supportati gli scenari seguenti:
 
-- I ruoli punto per servizi Web del Catalogo applicazioni, punto per siti Web del Catalogo applicazioni, punto di registrazione e punto proxy di registrazione non sono operativi se installati in modalità HTTPS con un certificato CNG associato al sito Web in Internet Information Services (IIS). Software Center non visualizza come disponibili le applicazioni e i pacchetti distribuiti in raccolte di utenti o di gruppi di utenti.
+- I ruoli del server seguenti non sono operativi se installati in modalità HTTPS con un certificato CNG associato al sito Web in Internet Information Services (IIS): 
+    - Servizio Web del Catalogo applicazioni
+    - Sito Web del Catalogo applicazioni
+    - Punto di registrazione  
+    - Punto proxy di registrazione  
 
-- Il punto di migrazione stato non è operativo se installato in modalità HTTPS con un certificato CNG associato al sito Web in IIS.
+- Software Center non visualizza come disponibili le applicazioni e i pacchetti distribuiti in raccolte di utenti o di gruppi di utenti.
 
 - Uso di certificati CNG per creare un punto di distribuzione cloud.
 
-- La comunicazione di NDES Policy Module con il punto di registrazione certificati non riesce se NDES Policy Module usa un certificato CNG come certificato di autenticazione client.
+- Se il modulo criteri NDES usa un certificato CNG per l'autenticazione client, la comunicazione con il punto di registrazione certificati non riesce.
 
-- La creazione di supporti per sequenze di attività non crea supporti di avvio se viene specificato un certificato CNG.
+- Se si specifica un certificato CNG durante la creazione dei supporti della sequenza di attività, la procedura guidata non riesce a creare supporti di avvio.
 
 ## <a name="to-use-cng-certificates"></a>Per usare certificati CNG
 
@@ -63,7 +74,7 @@ Per usare i certificati CNG, l'autorità di certificazione (CA) deve fornire i m
 
 - Scheda **Crittografia**
 
-    - **Categoria provider** deve corrispondere a **Provider di archiviazione chiavi** (obbligatorio).
+    - **Categoria provider** deve corrispondere a **Provider di archiviazione chiavi**. (obbligatorio).
 
 > [!NOTE]
 > I requisiti per l'ambiente o l'organizzazione possono essere diversi. Contattare l'esperto di PKI. L'aspetto importante da considerare è che un modello di certificato deve usare un provider di archiviazione chiavi per trarre vantaggio da CNG.

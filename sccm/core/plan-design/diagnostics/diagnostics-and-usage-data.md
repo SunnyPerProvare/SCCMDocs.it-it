@@ -3,61 +3,68 @@ title: Diagnostica e dati di utilizzo
 titleSuffix: Configuration Manager
 description: Informazioni sui dati di utilizzo e di diagnostica raccolti da System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/07/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 88ac4e55-d47b-4c94-b9c3-704c6a48b845
-caps.latest.revision: "9"
-caps.handback.revision: "0"
+caps.latest.revision: 9
+caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 16f45e7ab72cff486d7565fb2577a3b65ee9efaf
-ms.sourcegitcommit: da27d37cc4e4e06cf23758846cdd7acb617f744b
+manager: dougeby
+ms.openlocfilehash: 5f783f11f6fbabda2fd1d6f98748e945affa878e
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="diagnostics-and-usage-data-for-system-center-configuration-manager"></a>Dati di diagnostica e di utilizzo per System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager raccoglie dati di utilizzo e di diagnostica su se stesso che vengono usati da Microsoft per migliorare l'esperienza, la qualità e la sicurezza di installazione delle versioni future.  
+Configuration Manager raccoglie dati di utilizzo e di diagnostica su se stesso che vengono usati da Microsoft per migliorare l'esperienza, la qualità e la sicurezza di installazione delle versioni future.  
 
- I dati di utilizzo e di diagnostica sono abilitati per ogni gerarchia di System Center Configuration Manager. Essi consistono in query di SQL Server eseguite su base settimanale in ogni sito primario e nel sito di amministrazione centrale. Quando la gerarchia usa un sito di amministrazione centrale, i dati dai siti primari vengono quindi replicati in tale sito. Nel sito di livello superiore della gerarchia, il punto di connessione del servizio invia queste informazioni quando verifica la presenza di aggiornamenti. Se il punto di connessione del servizio è in modalità offline, le informazioni vengono trasferite tramite lo strumento di connessione del servizio.  
+ I dati di utilizzo e di diagnostica sono abilitati per ogni gerarchia di Configuration Manager. Essi consistono in query di SQL Server eseguite su base settimanale in ogni sito primario e nel sito di amministrazione centrale. Quando la gerarchia usa un sito di amministrazione centrale, i dati dai siti primari vengono quindi replicati in tale sito. Nel sito di livello superiore della gerarchia, il punto di connessione del servizio invia queste informazioni quando verifica la presenza di aggiornamenti. Se il punto di connessione del servizio è in modalità offline, le informazioni vengono trasferite tramite lo strumento di connessione del servizio.  
 
 > [!NOTE]  
 >  Configuration Manager raccoglie i dati solo dal database di SQL Server del sito e non direttamente dai client o dai server del sito.  
 
- Per altre informazioni, vedere l'[Informativa sulla privacy per System Center Configuration Manager](http://go.microsoft.com/fwlink/?LinkID=626527).  
+ Per altre informazioni, vedere l'[Informativa sulla privacy Microsoft](https://go.microsoft.com/fwlink/?LinkID=626527).  
 
- Altre informazioni sui dati di utilizzo e di diagnostica per System Center Configuration Manager sono disponibili negli articoli seguenti:  
+## <a name="articles"></a>Articoli
+ Altre informazioni sui dati di utilizzo e di diagnostica per Configuration Manager sono disponibili negli articoli seguenti:  
 
--   [Come vengono usati i dati di utilizzo e di diagnostica per System Center Configuration Manager](../../../core/plan-design/diagnostics/how-diagnostics-and-usage-data-is-used.md)  
+-   [Come vengono usati i dati di diagnostica e di utilizzo](../../../core/plan-design/diagnostics/how-diagnostics-and-usage-data-is-used.md)  
 
 -   Livelli di raccolta dati utilizzo e di diagnostica:
+    - [Dati di diagnostica per la versione 1802](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1802)  
     - [Dati di diagnostica per la versione 1710](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1710)  
     - [Dati di diagnostica per 1706](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1706)    
-    - [Dati di diagnostica per 1702](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1702)      
 
 <!--
+    - [Diagnostic data for 1702](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1702)      
     - [Diagnostic data for 1610](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1610)  
     - [Diagnostic data for  1606](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1606)    
     - [Diagnostic data for 1602](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1602)
     - [Diagnostic data for  1511](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1511)
 -->
 
--   [Come vengono raccolti i dati di utilizzo e di diagnostica da System Center Configuration Manager](../../../core/plan-design/diagnostics/how-diagnostics-and-usage-data-is-collected.md)  
+-   [Come vengono raccolti i dati di diagnostica e di utilizzo](../../../core/plan-design/diagnostics/how-diagnostics-and-usage-data-is-collected.md)  
 
--   [Come visualizzare dati di utilizzo e di diagnostica per System Center Configuration Manager](../../../core/plan-design/diagnostics/view-diagnostics-and-usage-data.md)  
+-   [Come visualizzare i dati di diagnostica e di utilizzo](../../../core/plan-design/diagnostics/view-diagnostics-and-usage-data.md)  
 
--   [Analisi utilizzo software per System Center Configuration Manager](../../../core/plan-design/diagnostics/customer-experience-improvement-program-ceip.md)  
+-   [Analisi utilizzo software](../../../core/plan-design/diagnostics/customer-experience-improvement-program-ceip.md)  
 
--   [Domande frequenti sui dati di utilizzo e di diagnostica per System Center Configuration Manager](../../../core/understand/frequently-asked-questions-about-diagnostics-and-usage-data.md)  
+     > [!Note]  
+     > A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.
+
+
+-   [Domande frequenti sui dati di diagnostica e di utilizzo](../../../core/understand/frequently-asked-questions-about-diagnostics-and-usage-data.md)  
 
 ## <a name="see-also"></a>Vedere anche  
- [Informazioni sul punto di connessione del servizio in System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md)
+ [Informazioni sul punto di connessione del servizio](../../../core/servers/deploy/configure/about-the-service-connection-point.md)

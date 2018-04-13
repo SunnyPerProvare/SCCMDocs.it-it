@@ -2,23 +2,24 @@
 title: Eseguire l'aggiornamento a System Center Configuration Manager
 description: Passaggi per eseguire l'aggiornamento sul posto da un sito e da una gerarchia che esegue System Center 2012 Configuration Manager.
 ms.custom: na
-ms.date: 6/6/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: c64e7483-b4bb-4738-95f4-ecdaeb6a2ba6
-caps.latest.revision: "21"
+caps.latest.revision: 21
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 770976309fbd5e8884dfec4bdaa29630ef1c02d0
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 72e11a04eb64d649749f2001ac4e3550c784132c
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="upgrade-to-system-center-configuration-manager"></a>Eseguire l'aggiornamento a System Center Configuration Manager
 
@@ -32,6 +33,14 @@ ms.lasthandoff: 12/04/2017
  > Quando si gestisce l'infrastruttura del sito e della gerarchia di System Center Configuration Manager, i termini *upgrade*, *aggiornamento* e *installazione* vengono usati per descrivere tre concetti distinti. Per informazioni su come viene usato ogni termine, vedere [Informazioni su upgrade, aggiornamento e installazione](/sccm/core/understand/upgrade-update-install).
 
 ##  <a name="bkmk_path"></a> Percorsi di aggiornamento sul posto  
+
+**Eseguire l'aggiornamento alla versione 1802**   
+Quando è presente il supporto di base della versione 1702, è possibile aggiornare i prodotti seguenti a una versione con la licenza completa di System Center Configuration Manager versione 1802:   
+-     L'installazione di una valutazione di System Center Configuration Manager versione 1802
+-     System Center 2012 Configuration Manager con Service Pack 1
+-     System Center 2012 Configuration Manager con Service Pack 2
+-     System Center 2012 R2 Configuration Manager
+-     System Center Configuration Manager 2012 R2 con Service Pack 1
 
 **Eseguire l'aggiornamento alla versione 1702**   
 Quando è presente il supporto di base della versione 1702, è possibile aggiornare i seguenti prodotti a una versione con licenza completa di System Center Configuration Manager versione 1702:   

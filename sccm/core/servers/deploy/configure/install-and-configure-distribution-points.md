@@ -1,31 +1,32 @@
 ---
 title: Gestire punti di distribuzione
 titleSuffix: Configuration Manager
-description: Ospitare il contenuto (file e software) distribuito a utenti e dispositivi tramite punti di distribuzione. Ecco come installarli e configurarli.
+description: Ospitare il contenuto distribuito a utenti e dispositivi tramite punti di distribuzione
 ms.custom: na
-ms.date: 09/18/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aebafaf9-b3d5-4a0f-9ee5-685758c037a1
-caps.latest.revision: "5"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: e7eab46d423ed37bde7ac5f325d6cd8175806302
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+caps.latest.revision: 5
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 1010e339c586922f818e1af1e193abba95dace7b
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="install-and-configure-distribution-points-for-system-center-configuration-manager"></a>Installare e configurare punti di distribuzione per System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile installare punti di distribuzione di System Center Configuration Manager per ospitare il contenuto (file e software) distribuito a utenti e dispositivi. È anche possibile creare gruppi di punti di distribuzione per semplificare la gestione dei punti di distribuzione e la distribuzione di contenuto ai punti di distribuzione stessi.  
+Installando i punti di distribuzione di Configuration Manager è possibile ospitare i file di contenuto da distribuire a utenti e dispositivi. È anche possibile creare gruppi di punti di distribuzione per semplificare la gestione dei punti di distribuzione e la distribuzione di contenuto agli stessi.  
 
  Quando si *installa un nuovo punto di distribuzione* tramite l'installazione guidata o si *gestiscono le proprietà di un punto di distribuzione esistente* modificando tali proprietà, è possibile configurare la maggior parte delle impostazioni dei punti di distribuzione. Alcune impostazioni sono disponibili solo durante l'installazione o la modifica, ma non in entrambi i casi:  
 
@@ -46,10 +47,10 @@ ms.lasthandoff: 12/04/2017
     -   **Configurare le pianificazioni per i trasferimenti di dati ai punti di distribuzione**  
 
 ##  <a name="bkmk_install"></a> Installare un punto di distribuzione  
-Prima che il contenuto possa essere reso disponibile nei computer client, è necessario designare un server del sistema del sito come punto di distribuzione. È inoltre necessario assegnare un punto di distribuzione ad almeno un [gruppo di limiti](/sccm/core/servers/deploy/configure/boundary-groups#distribution-points) prima che i computer client locali possano usare tale punto di distribuzione come percorso di origine per il contenuto. È possibile aggiungere il ruolo del sito del punto di distribuzione a un nuovo server del sistema del sito oppure aggiungere il ruolo del sito a un server del sistema del sito esistente.
+Prima che il contenuto possa essere reso disponibile nei computer client, è necessario designare un server del sistema del sito come punto di distribuzione. Assegnare un punto di distribuzione ad almeno un [gruppo di limiti](/sccm/core/servers/deploy/configure/boundary-groups#distribution-points) prima che i computer client locali possano usare tale punto di distribuzione come percorso di origine per il contenuto. Aggiungere il ruolo del sito del punto di distribuzione a un nuovo server del sistema del sito oppure a un server del sistema del sito esistente.
 
 
- Quando si installa un nuovo punto di distribuzione, si usa un'installazione guidata che illustra le impostazioni disponibili. Prima di iniziare, si tenga presente quanto segue:  
+ Quando si installa un nuovo punto di distribuzione, si usa un'installazione guidata che illustra le impostazioni disponibili. Prima di iniziare, tenere presente i prerequisiti seguenti:  
 
 -   È necessario disporre delle seguenti autorizzazioni di sicurezza per creare e configurare un punto di distribuzione:  
 
@@ -61,7 +62,7 @@ Prima che il contenuto possa essere reso disponibile nei computer client, è nec
 
     -   **Gestisci certificati per distribuzione sistema operativo** per l'oggetto **Sito**  
 
--   Internet Information Services (IIS) deve essere installato nel server che ospiterà il punto di distribuzione. Quando si installa il ruolo del sistema del sito, Configuration Manager può eseguire l'installazione e la configurazione di IIS.  
+-   Installare Internet Information Services (IIS) nel server che ospita il punto di distribuzione. Quando si installa il ruolo del sistema del sito, Configuration Manager può eseguire l'installazione e la configurazione di IIS.  
 
 Usare le procedure di base seguenti per installare o modificare un punto di distribuzione. Per informazioni dettagliate sulle opzioni di configurazione disponibili, vedere la sezione [Configurare un punto di distribuzione](#bkmk_configs) in questo argomento.  
 
@@ -161,6 +162,42 @@ Usare le procedure di base seguenti per installare o modificare un punto di dist
 
 3.  In **Gruppi di punti di distribuzione disponibili** selezionare i gruppi di punti di distribuzione a cui aggiungere i punti di distribuzione selezionati come membri e quindi scegliere **OK**.  
 
+
+
+## <a name="reassign-a-distribution-point"></a>Riassegnare un punto di distribuzione
+<!-- 1306937 -->
+Molti clienti hanno infrastrutture di Configuration Manager di grandi dimensioni e stanno diminuendo i siti primari o secondari per semplificare il proprio ambiente. Per distribuire il contenuto ai client gestiti, questi clienti devono comunque mantenere i punti di distribuzione nelle succursali. Questi punti di distribuzione spesso includono più terabyte di contenuto. La distribuzione di questo contenuto ai server remoti è dispendiosa in termini di tempo e larghezza di banda di rete. 
+
+A partire dalla versione 1802, questa funzionalità consente di riassegnare un punto di distribuzione a un altro sito primario senza ridistribuire il contenuto. Questa azione aggiorna l'assegnazione del sistema del sito mantenendo tutto il contenuto nel server. Se è necessario riassegnare più punti di distribuzione, eseguire prima questa azione su un singolo punto di distribuzione, quindi procedere con gli altri server uno alla volta.
+
+> [!IMPORTANT]
+> Il server di destinazione può ospitare solo il ruolo del punto di distribuzione. Se il server del sistema del sito ospita un altro ruolo del server di Configuration Manager, ad esempio il punto di migrazione stato, non sarà possibile riassegnare il punto di distribuzione. Non è possibile riassegnare un punto di distribuzione cloud. 
+
+Prima di riassegnare un punto di distribuzione, aggiungere l'account del computer del server del sito di destinazione al gruppo Administrator locale nel server del punto di distribuzione di destinazione. 
+
+Per riassegnare un punto di distribuzione, seguire questa procedura:
+1. Nella console di Configuration Manager connettersi al sito di amministrazione centrale. 
+2. Passare all'area di lavoro **Amministrazione** e selezionare il nodo **Punti di distribuzione**.
+3. Fare clic con il pulsante destro del mouse sul punto di distribuzione di destinazione e selezionare **Riassegna punto di distribuzione**. 
+4. Selezionare il server e il codice del sito di destinazione a cui si vuole riassegnare il punto di distribuzione. 
+
+Monitorare la riassegnazione come quando si aggiunge un nuovo ruolo. Il metodo più semplice consiste nell'aggiornare la visualizzazione della console dopo alcuni minuti. Aggiungere la colonna di codice del sito alla visualizzazione. Questo valore cambia quando Configuration Manager riassegna il server. Se si tenta di eseguire un'altra azione nel server di destinazione prima di aggiornare la visualizzazione della console, viene generato un errore "oggetto non trovato". Verificare che il processo sia stato completato e aggiornare la visualizzazione della console prima di avviare tutte le altre azioni nel server.
+
+Dopo aver riassegnato un punto di distribuzione, aggiornare il certificato del server. Il nuovo server del sito crittografa di nuovo questo certificato usando la chiave pubblica e lo archivia nel database del sito. Per altre informazioni, vedere l'impostazione **Create a self-signed certificate or import a public key infrastructure (PKI) client certificate for the distribution point** (Creare un certificato autofirmato o importare un certificato client di infrastruttura a chiave pubblica (PKI) per il punto di distribuzione) nella scheda [Generale](#general) delle proprietà del punto di distribuzione. 
+- Per i certificati PKI, non è necessario creare un nuovo certificato. Importare lo stesso file con estensione pfx e immettere la password.
+- Per i certificati autofirmati, rettificare la data o l'ora della scadenza per aggiornarli.
+Se non si aggiorna il certificato, il punto di distribuzione offre ancora contenuto, ma le funzioni seguenti non vengono eseguite:
+    - Messaggi di convalida del contenuto (il file distmgr.log non può decrittografare il certificato)
+    - Supporto PXE per i client 
+
+### <a name="tips"></a>Suggerimenti
+- Eseguire questa azione dal sito di amministrazione centrale. Questa procedura consente la replica nei siti primari.
+- Non distribuire il contenuto al server di destinazione e in seguito provare a riassegnarlo. La distribuzione di attività in corso potrebbe non riuscire durante il processo di riassegnazione. Riprovare in seguito.
+- Se il server è anche un client di Configuration Manager, assicurarsi di riassegnare anche il client al nuovo sito primario. Questo passaggio è particolarmente importante per i punti di distribuzione pull, che usano i componenti client per scaricare il contenuto.
+- Questo processo rimuove il punto di distribuzione dal gruppo di limiti predefinito del sito precedente. Se necessario, aggiungerlo manualmente al gruppo di limiti predefinito del nuovo sito. Tutte le altre assegnazioni di gruppi di limiti rimangono invariate.
+
+
+
 ##  <a name="bkmk_configs"></a> Configurare un punto di distribuzione  
  I singoli punti di distribuzione supportano un'ampia gamma di configurazioni diverse. Tuttavia, non tutti i tipi di punto di distribuzione supportano tutte le configurazioni. Ad esempio, i punti di distribuzione basati su cloud non supportano distribuzioni del contenuto abilitate per PXE o multicast. È possibile trovare informazioni sui limiti specifici negli argomenti seguenti:  
 
@@ -182,7 +219,7 @@ Le sezioni seguenti descrivono le configurazioni che è possibile selezionare qu
 
 -   **Specificare in che modo i computer client o i dispositivi mobili comunicano con questo punto di distribuzione:** esistono vantaggi e svantaggi associati all'uso di HTTP e HTTPS. Per altre informazioni, vedere le procedure di sicurezza consigliate per la gestione del contenuto in [Concetti di base per la gestione dei contenuti in System Center Configuration Manager](../../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
 
--   **Consenti connessione anonima dei client:** questa impostazione permette di specificare se il punto di distribuzione consentirà connessioni anonime dai client di Configuration Manager alla raccolta contenuto.  
+-   **Consenti connessione anonima dei client**: questa impostazione specifica se il punto di distribuzione consente connessioni anonime dai client di Configuration Manager alla raccolta contenuto.  
 
     > [!IMPORTANT]  
     >  Se non si usa questa impostazione, il ripristino di un'applicazione di Windows Installer in un client può non riuscire.  
@@ -216,7 +253,7 @@ Le sezioni seguenti descrivono le configurazioni che è possibile selezionare qu
 
      Per un esempio di distribuzione di questo certificato, vedere la sezione "Distribuzione del certificato client per punti di distribuzione" nell'argomento [Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
--   **Abilita questo punto di distribuzione per il contenuto pre-installato**: scegliere questa impostazione per abilitare il punto di distribuzione per i contenuti in versione di preproduzione. Quando questa impostazione è selezionata, è possibile configurare il comportamento per la distribuzione del contenuto. È possibile scegliere di eseguire sempre una delle operazioni seguenti:
+-   **Abilita questo punto di distribuzione per il contenuto pre-installato**: scegliere questa impostazione per abilitare il punto di distribuzione per i contenuti in versione di preproduzione. Quando questa impostazione è selezionata, è possibile configurare il comportamento per la distribuzione del contenuto. È possibile scegliere di eseguire sempre una delle azioni seguenti:
 
  - Pre-installare il contenuto nel punto di distribuzione.
  - Pre-installare il contenuto iniziale per il pacchetto ma usare il processo normale di distribuzione del contenuto quando sono disponibili aggiornamenti al contenuto.
@@ -248,13 +285,18 @@ Per ogni punto di distribuzione pull configurato, è necessario specificare uno 
 -   Usare i pulsanti freccia per modificare l'ordine in cui il punto di distribuzione pull contatta i punti di distribuzione di origine quando tenta di trasferire il contenuto. I punti di distribuzione con il valore più basso vengono contattati per primi.  
 
 ### <a name="pxe"></a>PXE  
-Specificare se abilitare PXE nel punto di distribuzione. Quando si abilita PXE, Configuration Manager installa i Servizi di distribuzione Windows nel server, se necessario. Servizi di distribuzione Windows è il servizio che esegue l'avvio PXE per installare i sistemi operativi. Dopo aver completato la procedura guidata per creare il punto di distribuzione, Configuration Manager installa un provider in Servizi di distribuzione Windows che usa le funzioni di avvio PXE.  
+Specificare se abilitare PXE nel punto di distribuzione. Quando si abilita PXE, Configuration Manager installa i Servizi di distribuzione Windows (WDS) nel server, se necessario. WDS è il servizio che esegue l'avvio di PXE per installare i sistemi operativi. Dopo aver completato la procedura guidata per creare il punto di distribuzione, Configuration Manager installa un provider in WDS che usa le funzioni di avvio di PXE. 
 
 Quando si sceglie **Abilita supporto PXE per i client**, configurare le impostazioni seguenti:  
 
--   **Consenti a questo punto di distribuzione di rispondere alle richieste PXE in ingresso**: specificare se abilitare Servizi di distribuzione Windows in modo che risponda alle richieste di servizio PXE. Usare questa casella per abilitare e disabilitare il servizio senza rimuovere la funzionalità PXE dal punto di distribuzione.  
+ > [!Note]  
+ > Fare clic su **Sì** nella finestra di dialogo **Controllare le porte richieste per PXE** per confermare che si vuole abilitare PXE. Configuration Manager configura automaticamente le porte predefinite nel firewall di Windows. Se si usa un altro firewall, è necessario configurare manualmente le porte.  
+ >   
+ > Se WDS e DHCP sono installati nello stesso server, è necessario configurare WDS per l'ascolto su una porta diversa. Per impostazione predefinita, DHCP è in ascolto sulla stessa porta. Per altre informazioni, vedere [Considerazioni in presenza di Servizi di distribuzione Windows e DHCP nello stesso server](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment#BKMK_WDSandDHCP).  
 
--   **Abilita supporto per computer sconosciuti**: specificare se si vuole abilitare il supporto per i computer non gestiti da Configuration Manager.  
+-   **Consenti a questo punto di distribuzione di rispondere alle richieste PXE in ingresso**: specificare se si vuole abilitare WDS in modo che risponda alle richieste di servizio PXE in ingresso. Usare questa casella per abilitare e disabilitare il servizio senza rimuovere la funzionalità PXE dal punto di distribuzione.  
+
+-   **Abilita supporto per computer sconosciuti**: specificare se si vuole abilitare il supporto per i computer non gestiti da Configuration Manager. 
 
 -   **Richiedi password quando i computer usano PXE**: per fornire maggiore sicurezza per le distribuzioni PXE, specificare una password complessa.  
 
@@ -279,9 +321,9 @@ Quando si sceglie **Abilita supporto PXE per i client**, configurare le impostaz
 > 2. Interagire con l'infrastruttura di Configuration Manager per determinare le azioni di distribuzione appropriate da eseguire.  
 
 ### <a name="multicast"></a>Multicast  
-Specificare se abilitare multicast nel punto di distribuzione. Quando si abilita il multicast, Configuration Manager installa i Servizi di distribuzione Windows nel server, se necessario.  
+Specificare se abilitare multicast nel punto di distribuzione. Quando si abilita il multicast, Configuration Manager installa Servizi di distribuzione Windows (WDS) nel server, se necessario.  
 
-Quando si seleziona la casella **Abilita multicast per inviare contemporaneamente dati a più client**, configurare le impostazioni seguenti:  
+Quando si seleziona **Abilita multicast per inviare contemporaneamente dati a più client**, configurare le impostazioni seguenti:  
 
 -   **Account di connessione multicast**: specificare l'account da usare quando si configurano le connessioni del database di Configuration Manager per il multicast.  
 
@@ -307,6 +349,8 @@ Quando si seleziona la casella **Abilita multicast per inviare contemporaneament
 
 > [!NOTE]  
 >  Le distribuzioni multicast risparmiano larghezza di banda inviando contemporaneamente i dati a più client di Configuration Manager anziché inviare una copia dei dati a ogni client in una connessione separata. Per altre informazioni sull'uso del multicast per la distribuzione di sistemi operativi, vedere [Use multicast to deploy Windows over the network with System Center Configuration Manager](../../../../osd/deploy-use/use-multicast-to-deploy-windows-over-the-network.md) (Usare il multicast per distribuire Windows in rete con System Center Configuration Manager).  
+
+
 
 ### <a name="group-relationships"></a>Relazioni del gruppo  
 
@@ -343,11 +387,7 @@ Per visualizzare i risultati del processo di convalida del contenuto, nell'area 
 ### <a name="boundary-group"></a>Gruppo di limiti  
 Gestire i gruppi di limiti per i quali viene assegnato il punto di distribuzione. Pianificare l'aggiunta del punto di distribuzione ad almeno un gruppo di limiti. Durante la distribuzione del contenuto, i client devono trovarsi in un gruppo di limiti associato a un punto di distribuzione per usare tale punto di distribuzione come percorso di origine per il contenuto.
 
-Inoltre:
-
-- Nelle versioni precedenti alla 1610 è possibile selezionare la casella **Allow clients to use this site system as a fallback source location for content** (Consenti ai client di usare il sistema del sito come percorso origine di fallback per il contenuto) per consentire ai client esterni a questi gruppi di limiti di eseguire il fallback e usare il punto di distribuzione come percorso di origine per il contenuto in assenza di altri punti di distribuzione disponibili. Per altre informazioni sui gruppi di limiti, vedere [Boundary groups for versions 1511, 1602, and 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606) (Gruppi di limiti per le versioni 1511, 1602 e 1606). Per informazioni sui punti di distribuzione preferiti, vedere [Concetti di base per la gestione dei contenuti in System Center Configuration Manager](../../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).
-
-- Con la versione 1610 o versioni successive è possibile configurare il gruppo di limiti *Relazioni* che definisce quando e in quali gruppi di limiti un client può eseguire il fallback per individuare il contenuto. Per altre informazioni, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
+Configurare il gruppo di limiti *Relazioni* che definisce quando e in quali gruppi di limiti un client può eseguire il fallback per individuare il contenuto. Per altre informazioni, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
 
 
 ### <a name="schedule"></a>Pianificazione  

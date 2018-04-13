@@ -1,9 +1,9 @@
 ---
 title: Opzioni della riga di comando per la configurazione
 titleSuffix: Configuration Manager
-description: Usare le informazioni in questo articolo per configurare gli script o per installare System Center Configuration Manager dalla riga di comando.
+description: Creare script di automazione per installare System Center Configuration Manager dalla riga di comando.
 ms.custom: na
-ms.date: 03/27/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,26 +12,26 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0da167f1-52cf-4dfd-8f73-833ca3eb8478
-caps.latest.revision: 
+caps.latest.revision: 3
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 3b2076087e13958be15dd5151961fa825e22a433
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+manager: dougeby
+ms.openlocfilehash: fede359c884ef8b4027935b2e3fb48a5b7543d26
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
-# <a name="command-line-options-for-setup-in-system-center-configuration-manager"></a>Opzioni della riga di comando per il programma di installazione in System Center Configuration Manager
+# <a name="command-line-options-for-setup-in-system-center-configuration-manager"></a>Opzioni della riga di comando per l'installazione in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
  Usare le informazioni seguenti per configurare gli script o installare System Center Configuration Manager dalla riga di comando.  
 
-##  <a name="bkmk_setup"></a> Opzioni della riga di comando per il programma di installazione  
+##  <a name="bkmk_setup"></a> Opzioni della riga di comando per l'installazione  
  **/DEINSTALL**  
- Consente di disinstallare il sito. È necessario eseguire il programma di installazione dal computer del server del sito.  
+ Consente di disinstallare il sito. Eseguire l'installazione dal computer del server del sito.  
 
  **/DONTSTARTSITECOMP**  
  Consente di installare un sito, ma impedisce l'avvio del servizio Gestione componenti del sito. Fino all'avvio del servizio Gestione componenti del sito, il sito non è attivo. Gestione componenti del sito si occupa dell'installazione e dell'avvio del servizio SMS_Executive, nonché di processi aggiuntivi nel sito. Al termine dell'installazione del sito, in seguito all'avvio del servizio Gestione componenti del sito verranno installati il servizio SMS_Executive e i processi aggiuntivi necessari per il funzionamento del sito.  
@@ -40,35 +40,35 @@ ms.lasthandoff: 12/04/2017
  Consente di nascondere l'interfaccia utente durante l'installazione. Usare questa opzione solo in combinazione con l'opzione **/SCRIPT**. Il file script di installazione automatica deve fornire tutte le opzioni necessarie. In caso contrario, l'installazione avrà esito negativo.  
 
  **/NOUSERINPUT**  
- Consente di disattivare l'input utente durante l'installazione, ma viene visualizzata l'Installazione guidata. Usare questa opzione solo in combinazione con l'opzione **/SCRIPT**. Il file script di installazione automatica deve fornire tutte le opzioni necessarie. In caso contrario, l'installazione avrà esito negativo.  
+ Disabilita l'input utente durante l'installazione, ma visualizza l'installazione guidata. Usare questa opzione solo in combinazione con l'opzione **/SCRIPT**. Il file script di installazione automatica deve fornire tutte le opzioni necessarie. In caso contrario, l'installazione avrà esito negativo.  
 
  **/RESETSITE**  
- Consente di eseguire una reimpostazione del sito per reimpostare gli account di servizio e di database per il sito. È necessario eseguire il programma di installazione da **<*Percorso di installazione di Configuration Manager*>\BIN\X64** nel server del sito. Per altre informazioni sulla reimpostazione del sito, vedere la sezione [Eseguire una reimpostazione del sito](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_reset) in [Modificare l'infrastruttura di System Center Configuration Manager](../../../../core/servers/manage/modify-your-infrastructure.md).  
+ Consente di eseguire una reimpostazione del sito per reimpostare gli account di servizio e di database per il sito. Eseguire il programma di installazione dal**<*percorso di installazione di Configuration Manager* >\BIN\X64** nel server del sito. Per altre informazioni sulla reimpostazione del sito, vedere la sezione [Eseguire una reimpostazione del sito](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_reset) in [Modificare l'infrastruttura di System Center Configuration Manager](../../../../core/servers/manage/modify-your-infrastructure.md).  
 
  **/TESTDBUPGRADE <*Nome istanza*>\\<*Nome database*>**  
- Consente di eseguire un test in un backup del database del sito per verificare che il database supporti l'aggiornamento. È necessario fornire il nome dell'istanza e il nome del database per il database del sito. Se viene specificato solo il nome del database, il programma di installazione usa il nome dell'istanza predefinita.  
+ Consente di eseguire un test in un backup del database del sito per verificare che il database supporti l'aggiornamento. Specificare il nome dell'istanza e il nome del database per il database del sito. Se si specifica solo il nome del database, il programma di installazione usa il nome dell'istanza predefinita.  
 
 > [!IMPORTANT]  
 >  Non eseguire questa opzione della riga di comando nel database del sito di produzione. L'esecuzione di questa opzione della riga di comando nel database del sito di produzione comporta l'aggiornamento del database del sito e potrebbe rendere inutilizzabile il sito.  
 
  **/UPGRADE**  
- Consente di eseguire l'aggiornamento automatico di un sito. Quando si usa **/UPGRADE**, è necessario specificare il codice Product Key, compresi i trattini (-). È anche necessario specificare il percorso dei file dei prerequisiti di installazione scaricati in precedenza.  
+ Consente di eseguire l'aggiornamento automatico di un sito. Quando si usa **/UPGRADE**, è necessario specificare il codice Product Key, compresi i trattini (-). È anche necessario specificare il percorso dei file di prerequisito dell'installazione scaricati in precedenza.  
 
  Esempio: `setupwpf.exe /UPGRADE xxxxx-xxxxx-xxxxx-xxxxx-xxxxx <path to external component files>`  
 
- Per altre informazioni sui file dei prerequisiti di installazione, vedere la sezione [Downloader di installazione](setup-downloader.md).  
+ Per altre informazioni sui file di prerequisito dell'installazione, vedere la sezione [Downloader di installazione](setup-downloader.md).  
 
- **/SCRIPT <*Percorso script installazione*>**  
- Consente di eseguire installazioni automatiche. Quando si usa l'opzione **/SCRIPT** è richiesto un file di inizializzazione dell'installazione. Per altre informazioni su come eseguire l'installazione automatica, vedere [Usare una riga di comando per installare i siti di System Center Configuration Manager](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md).  
+ **/SCRIPT <*percorso script installazione*>**  
+ Consente di eseguire installazioni automatiche. Quando si usa l'opzione **/SCRIPT** è necessario un file di inizializzazione dell'installazione. Per altre informazioni su come eseguire l'installazione automatica, vedere [Usare una riga di comando per Installare siti tramite la riga di comando](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md).  
 
  **/SDKINST <*FQDN provider SMS*>**  
- Consente di installare il provider SMS nel computer specificato. È necessario specificare il nome di dominio completo (FQDN) per il computer del provider SMS. Per altre informazioni sul provider SMS, vedere [Plan for the SMS Provider for System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md) (Pianificare il provider SMS per System Center Configuration Manager).  
+ Consente di installare il provider SMS nel computer specificato. Specificare il nome di dominio completo (FQDN) per il computer del provider SMS. Per altre informazioni sul provider SMS, vedere [Pianificare per il provider SMS](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
  **/SDKDEINST <*FQDN provider SMS*>**  
- Consente di disinstallare il provider SMS nel computer specificato. È necessario specificare l'FQDN per il computer del provider SMS.  
+ Consente di disinstallare il provider SMS nel computer specificato. Specificare l'FQDN per il computer del provider SMS.  
 
  **/MANAGELANGS <*Percorso script lingue*>**  
- Consente di gestire le lingue installate in un sito installato precedentemente. Per usare questa opzione, è necessario eseguire il programma di installazione da **<*Percorso di installazione di Configuration Manager*>\BIN\X64** nel server del sito e specificare il percorso del file script delle lingue che contiene le impostazioni relative alle lingue. Per altre informazioni sulle opzioni della lingua disponibili nel file script di configurazione della lingua, vedere la sezione [Opzioni della riga di comando per la gestione delle lingue](#bkmk_Lang) in questo argomento.  
+ Consente di gestire le lingue installate in un sito installato precedentemente. Per usare questa opzione, eseguire il programma di installazione dal **<*percorso di installazione di Configuration Manager*>\BIN\X64** nel server del sito. Specificare il percorso per il file script delle lingue che contiene le impostazioni delle lingue. Per altre informazioni sulle opzioni relative alle lingue disponibili nel file script di configurazione della lingua, vedere la sezione [Opzioni della riga di comando per la gestione delle lingue](#bkmk_Lang).  
 
 ##  <a name="bkmk_Lang"></a> Opzioni della riga di comando per la gestione delle lingue  
  **Identification**  
@@ -137,7 +137,7 @@ ms.lasthandoff: 12/04/2017
 
          1 = Già scaricato  
 
-    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa un valore pari a **0**, il programma di installazione eseguirà il download dei file.  
+    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa un valore pari a **0**, il programma di installazione esegue il download dei file.  
 
 -   **Nome chiave:** PrerequisitePath  
 
@@ -145,10 +145,10 @@ ms.lasthandoff: 12/04/2017
 
     -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
 
-    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp** , il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare i file scaricati in precedenza.  
+    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
 
 ##  <a name="bkmk_Unattended"></a> Chiavi di file script di installazione automatica  
- Usare le sezioni seguenti per creare lo script per l'installazione automatica. Gli elenchi mostrano le chiavi dello script di installazione disponibili, i relativi valori, se sono richieste, il tipo di installazione per cui vengono usate e una breve descrizione relativa alla chiave.  
+ Usare le sezioni seguenti per facilitare la creazione dello script per l'installazione automatica. Gli elenchi illustrano le chiavi dello script di installazione disponibili, i valori corrispondenti, se sono obbligatorie, il tipo di installazione per cui vengono usate e una breve descrizione di ogni chiave.  
 
 ### <a name="unattended-install-for-a-central-administration-site"></a>Installare automaticamente un sito di amministrazione centrale  
  Usare i dettagli seguenti per installare un sito di amministrazione centrale usando un file script di installazione automatica.  
@@ -177,7 +177,7 @@ ms.lasthandoff: 12/04/2017
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*>  *o*  Eval  
+    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
 
     -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
 
@@ -223,7 +223,7 @@ ms.lasthandoff: 12/04/2017
 
          1 = Già scaricato  
 
-    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa il valore **0**, il programma di installazione eseguirà il download dei file.  
+    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa un valore pari a **0**, il programma di installazione esegue il download dei file.  
 
 -   **Nome chiave:** PrerequisitePath  
 
@@ -231,7 +231,7 @@ ms.lasthandoff: 12/04/2017
 
     -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
 
-    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp** , il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare i file scaricati in precedenza.  
+    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
 
 -   **Nome chiave:** AdminConsole  
 
@@ -246,6 +246,8 @@ ms.lasthandoff: 12/04/2017
     -   **Dettagli:** specifica se installare la console di Configuration Manager.  
 
 -   **Nome chiave:** JoinCEIP  
+    > [!Note]  
+    > A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.
 
     -   **Richiesto:** sì  
 
@@ -317,10 +319,10 @@ ms.lasthandoff: 12/04/2017
 
     -   **Valori:** <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
 
-    -   **Dettagli:** specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito di amministrazione centrale.  
+    -   **Dettagli:** specifica il nome del database SQL Server da creare o del database SQL Server da usare per l'installazione del database del sito di amministrazione centrale.  
 
         > [!IMPORTANT]  
-        >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome database del sito.  
+        >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome del database del sito.  
 
 -   **Nome chiave:** SQLSSBPort  
 
@@ -378,15 +380,15 @@ ms.lasthandoff: 12/04/2017
 
          1 = Installare  
 
-    -   **Dettagli:** specifica se il punto di connessione del servizio userà un server proxy.  
+    -   **Dettagli:** specifica se il punto di connessione del servizio usa un server proxy.  
 
 -   **Nome chiave:** Nomeproxy  
 
     -   **Richiesta:** obbligatoria quando **UseProxy** è uguale a 1  
 
-    -   **Valori:** <*FQDN del server proxy*>  
+    -   **Valori:**  <*FQDN del server proxy*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server proxy che verrà usato dal ruolo del sistema del sito del punto di connessione del servizio.  
+    -   **Dettagli:** specifica il nome FQDN del server proxy usato dal punto di connessione del servizio.  
 
 -   **Nome chiave:** ProxyPort  
 
@@ -423,7 +425,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*>  *o*  Eval  
+    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
 
     -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
 
@@ -469,7 +471,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          1 = Già scaricato  
 
-    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa il valore **0**, il programma di installazione eseguirà il download dei file.  
+    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa un valore pari a **0**, il programma di installazione esegue il download dei file.  
 
 -   **Nome chiave:** PrerequisitePath  
 
@@ -477,7 +479,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
 
-    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp** , il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare i file scaricati in precedenza.  
+    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
 
 -   **Nome chiave:** AdminConsole  
 
@@ -492,6 +494,8 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
     -   **Dettagli:** specifica se installare la console di Configuration Manager.  
 
 -   **Nome chiave:** JoinCEIP  
+    > [!Note]  
+    > A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.
 
     -   **Richiesto:** sì  
 
@@ -618,7 +622,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
     -   **Dettagli:** specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito primario.  
 
         > [!IMPORTANT]  
-        >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome database del sito.  
+        >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome del database del sito.  
 
 -   **Nome chiave:** SQLSSBPort  
 
@@ -652,7 +656,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*FQDN del sito di amministrazione centrale*>  
 
-    -   **Dettagli:** specifica il sito di amministrazione centrale a cui si collegherà il sito primario quando verrà aggiunto alla gerarchia di Configuration Manager. Durante l'installazione, è necessario specificare il sito di amministrazione centrale.  
+    -   **Dettagli:** specifica il sito di amministrazione centrale a cui si collega il sito primario quando viene aggiunto alla gerarchia di Configuration Manager. Durante l'installazione, specificare il sito di amministrazione centrale.  
 
 -   **Nome chiave:** CASRetryInterval  
 
@@ -660,7 +664,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*Intervallo*>  
 
-    -   **Dettagli:** specifica l'intervallo (in minuti) tra i tentativi di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato per il valore **CASRetryInterval** e quindi tenta nuovamente di eseguire la connessione.  
+    -   **Dettagli:** specifica l'intervallo (in minuti) tra i tentativi di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato dall'utente per il valore **CASRetryInterval** e quindi tenta nuovamente di eseguire la connessione.  
 
 -   **Nome chiave:** WaitForCASTimeout  
 
@@ -704,15 +708,15 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          1 = Installare  
 
-    -   **Dettagli:** specifica se il punto di connessione del servizio userà un server proxy.  
+    -   **Dettagli:** specifica se il punto di connessione del servizio usa un server proxy.  
 
 -   **Nome chiave:** Nomeproxy  
 
     -   **Richiesta:** obbligatoria quando **UseProxy** è uguale a 1  
 
-    -   **Valori:** <*FQDN del server proxy*>  
+    -   **Valori:**  <*FQDN del server proxy*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server proxy che verrà usato dal ruolo del sistema del sito del punto di connessione del servizio.  
+    -   **Dettagli:** specifica il nome FQDN del server proxy usato dal punto di connessione del servizio.  
 
 -   **Nome chiave:** ProxyPort  
 
@@ -757,7 +761,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          4 = Ripristina solo SQL Server.  
 
-    -   **Dettagli:** specifica se il programma di installazione ripristinerà il server del sito, SQL Server o entrambi. Le chiavi associate sono necessarie quando si imposta il valore seguente per l'impostazione **ServerRecoveryOptions**:  
+    -   **Dettagli:** specifica se il programma di installazione ripristina il server del sito, SQL Server o entrambi. Le chiavi associate sono necessarie quando si imposta il valore seguente per l'impostazione **ServerRecoveryOptions**:  
 
         -   Valore = 1: è possibile specificare un valore per la chiave **SiteServerBackupLocation** per il ripristino del sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
 
@@ -815,7 +819,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Richiesto:** sì  
 
-    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*>  *o*  Eval  
+    -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
 
     -   **Dettagli:** specifica il codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
 
@@ -825,7 +829,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*Codice del sito*>  
 
-    -   **Dettagli:** specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. È necessario specificare il codice del sito usato dal sito prima dell'errore.
+    -   **Dettagli:** specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. Specificare il codice del sito usato dal sito prima dell'errore.
 
 -   **Nome chiave:** SiteName  
 
@@ -849,7 +853,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*FQDN del provider SMS*>  
 
-    -   **Dettagli:** specifica l'FQDN del server che ospiterà il provider SMS. È necessario specificare il server che ospitava il provider SMS prima dell'errore.  
+    -   **Dettagli:** specifica l'FQDN del server che ospita il provider SMS. Specificare il server che ospitava il provider SMS prima dell'errore.  
 
          Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito. Per altre informazioni sul provider SMS, vedere [Plan for the SMS Provider for System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md) (Pianificare il provider SMS per System Center Configuration Manager).  
 
@@ -863,7 +867,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          1 = Già scaricato  
 
-    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa un valore pari a **0**, il programma di installazione eseguirà il download dei file.  
+    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa un valore pari a **0**, il programma di installazione esegue il download dei file.  
 
 -   **Nome chiave:** PrerequisitePath  
 
@@ -871,7 +875,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
 
-    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp** , il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare i file scaricati in precedenza.  
+    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
 
 -   **Nome chiave:** AdminConsole  
 
@@ -886,6 +890,8 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
     -   **Dettagli:** specifica se installare la console di Configuration Manager.  
 
 -   **Nome chiave:** JoinCEIP  
+    > [!Note]  
+    > A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.
 
     -   **Richiesto:** sì  
 
@@ -905,7 +911,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*Nome dell'istanza di SQL Server*>  
 
-    -   **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server e che ospiterà il database del sito. È necessario specificare lo stesso server in cui era ospitato il database del sito prima dell'errore.  
+    -   **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server e che ospita il database del sito. Specificare lo stesso server in cui era ospitato il database del sito prima dell'errore.  
 
 -   **Nome chiave:** DatabaseName  
 
@@ -913,10 +919,10 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
 
-    -   **Dettagli:** specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito di amministrazione centrale. È necessario specificare lo stesso nome database usato prima dell'errore.  
+    -   **Dettagli:** specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.  
 
         > [!IMPORTANT]  
-        >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome database del sito.  
+        >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome del database del sito.  
 
 -   **Nome chiave:** SQLSSBPort  
 
@@ -924,7 +930,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*Numero della porta SSB*>  
 
-    -   **Dettagli:** specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. SSB è in genere configurato per usare la porta TCP 4022. È necessario specificare la stessa porta SSB usata prima dell'errore.  
+    -   **Dettagli:** specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. SSB è in genere configurato per usare la porta TCP 4022. Specificare la stessa porta SSB usata prima dell'errore.  
 
 -   **Nome chiave:** SQLDataFilePath  
 
@@ -974,15 +980,15 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          1 = Installare  
 
-    -   **Dettagli:** specifica se il punto di connessione del servizio userà un server proxy.  
+    -   **Dettagli:** specifica se il punto di connessione del servizio usa un server proxy.  
 
 -   **Nome chiave:** Nomeproxy  
 
     -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
 
-    -   **Valori:** <*FQDN del server proxy*>  
+    -   **Valori:**  <*FQDN del server proxy*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server proxy che verrà usato dal ruolo del sistema del sito del punto di connessione del servizio.  
+    -   **Dettagli:** specifica il nome FQDN del server proxy usato dal punto di connessione del servizio.  
 
 -   **Nome chiave:** ProxyPort  
 
@@ -993,7 +999,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
     -   **Dettagli:** specifica il numero della porta da usare per la porta del proxy.  
 
 ### <a name="unattended-recovery-for-a-primary-site"></a>Ripristinare automaticamente un sito primario  
- Usare i dettagli seguenti per ripristinare un sito primario usando un file script di installazione automatica.  
+ Usare i dettagli seguenti per recuperare un sito primario usando un file script di installazione automatica.  
 
 **Identification**  
 
@@ -1027,7 +1033,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          4 = Ripristina solo SQL Server.  
 
-    -   **Dettagli:** specifica se il programma di installazione ripristinerà il server del sito, SQL Server o entrambi. Le chiavi associate sono necessarie quando si imposta il valore seguente per l'impostazione **ServerRecoveryOptions**:  
+    -   **Dettagli:** specifica se il programma di installazione ripristina il server del sito, SQL Server o entrambi. Le chiavi associate sono necessarie quando si imposta il valore seguente per l'impostazione **ServerRecoveryOptions**:  
 
         -   Valore = 1: è possibile specificare un valore per la chiave **SiteServerBackupLocation** per il ripristino del sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
 
@@ -1085,7 +1091,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*Codice del sito*>  
 
-    -   **Dettagli:** specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. È necessario specificare il codice del sito usato dal sito prima dell'errore.
+    -   **Dettagli:** specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. Specificare il codice del sito usato dal sito prima dell'errore.
 
 -   **Nome chiave:** SiteName  
 
@@ -1109,7 +1115,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*FQDN del provider SMS*>  
 
-    -   **Dettagli:** specifica l'FQDN del server che ospiterà il provider SMS. È necessario specificare il server che ospitava il provider SMS prima dell'errore. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito. Per altre informazioni sul provider SMS, vedere [Plan for the SMS Provider for System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md) (Pianificare il provider SMS per System Center Configuration Manager).  
+    -   **Dettagli:** specifica l'FQDN del server che ospita il provider SMS. Specificare il server che ospitava il provider SMS prima dell'errore. Dopo l'installazione iniziale, configurare altri provider SMS per il sito. Per altre informazioni sul provider SMS, vedere [Pianificare per il provider SMS](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
 -   **Nome chiave:** PrerequisiteComp  
 
@@ -1121,7 +1127,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          1 = Già scaricato  
 
-    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa un valore pari a **0**, il programma di installazione eseguirà il download dei file.  
+    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa un valore pari a **0**, il programma di installazione esegue il download dei file.  
 
 -   **Nome chiave:** PrerequisitePath  
 
@@ -1129,7 +1135,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
 
-    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp** , il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare i file scaricati in precedenza.  
+    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.  
 
 -   **Nome chiave:** AdminConsole  
 
@@ -1144,6 +1150,8 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
     -   **Dettagli:** specifica se installare la console di Configuration Manager.  
 
 -   **Nome chiave:** JoinCEIP  
+    > [!Note]  
+    > A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.
 
     -   **Richiesto:** sì  
 
@@ -1163,20 +1171,20 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*Nome dell'istanza di SQL Server*>  
 
-    -   **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server e che ospiterà il database del sito. È necessario specificare lo stesso server in cui era ospitato il database del sito prima dell'errore.  
+    -   **Dettagli:** specifica il nome del server o il nome dell'istanza in cluster che esegue SQL Server e che ospita il database del sito. Specificare lo stesso server in cui era ospitato il database del sito prima dell'errore.  
 
 -   **Nome chiave:** DatabaseName  
 
     -   **Richiesto:** sì  
 
-    -   **Valori:**  <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>
+    -   **Valori:** <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>
 
     -   **Dettagli:**  
 
-         Specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito di amministrazione centrale. È necessario specificare lo stesso nome database usato prima dell'errore.  
+         Specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.  
 
         > [!IMPORTANT]  
-        >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome database del sito.  
+        >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome del database del sito.  
 
 -   **Nome chiave:** SQLSSBPort  
 
@@ -1184,7 +1192,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*Numero della porta SSB*>  
 
-    -   **Dettagli:** specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. In genere, SSB è configurato per usare la porta TCP 4022. È necessario specificare la stessa porta SSB usata prima dell'errore.  
+    -   **Dettagli:** specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. In genere, SSB è configurato per usare la porta TCP 4022. Specificare la stessa porta SSB usata prima dell'errore.  
 
 -   **Nome chiave:** SQLDataFilePath  
 
@@ -1210,7 +1218,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*Codice del sito per il sito di amministrazione centrale*>  
 
-    -   **Dettagli:** specifica il sito di amministrazione centrale a cui si collega il sito primario quando viene aggiunto alla gerarchia di Configuration Manager. Questa impostazione è necessaria se il sito primario era collegato a un sito di amministrazione centrale prima dell'errore. È necessario specificare il codice del sito usato dal sito di amministrazione centrale prima dell'errore.  
+    -   **Dettagli:** specifica il sito di amministrazione centrale a cui si collega il sito primario quando viene aggiunto alla gerarchia di Configuration Manager. Questa impostazione è necessaria se il sito primario era collegato a un sito di amministrazione centrale prima dell'errore. Specificare il codice del sito usato dal sito di amministrazione centrale prima dell'errore.  
 
 -   **Nome chiave:** CASRetryInterval  
 
@@ -1260,15 +1268,15 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          1 = Installare  
 
-    -   **Dettagli:** specifica se il punto di connessione del servizio userà un server proxy.  
+    -   **Dettagli:** specifica se il punto di connessione del servizio usa un server proxy.  
 
 -   **Nome chiave:** Nomeproxy  
 
     -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
 
-    -   **Valori:** <*FQDN del server proxy*>  
+    -   **Valori:**  <*FQDN del server proxy*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server proxy che verrà usato dal ruolo del sistema del sito del punto di connessione del servizio.  
+    -   **Dettagli:** specifica il nome FQDN del server proxy usato dal punto di connessione del servizio.  
 
 -   **Nome chiave:** ProxyPort  
 

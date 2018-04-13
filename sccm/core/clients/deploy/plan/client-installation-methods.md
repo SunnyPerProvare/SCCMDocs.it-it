@@ -1,38 +1,39 @@
 ---
 title: Metodo di installazione client
 titleSuffix: Configuration Manager
-description: Informazioni sui metodi di installazione client per System Center Configuration Manager.
+description: Informazioni sui metodi di installazione del client di Configuration Manager.
 ms.custom: na
-ms.date: 04/25/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-client
+ms.technology:
+- configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 51b5964b-374d-4abc-8619-414a9fffad2d
-caps.latest.revision: "9"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 4c600212c817e8b490e93938387b18c65baee042
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+caps.latest.revision: 9
+caps.handback.revision: 0
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 38f7d428149f4a4ac2b0bcb604031eca60a0fae5
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="client-installation-methods-in-system-center-configuration-manager"></a>Metodi di installazione client in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile usare diversi metodi per installare il software client di Configuration Manager. È possibile usare un metodo o una combinazione di metodi. Questo argomento presenta informazioni su ogni metodo e consente quindi di comprendere quale sia più appropriato per l'organizzazione.  
+È possibile usare diversi metodi per installare il software client di Configuration Manager. È possibile usare un metodo o una combinazione di metodi. In questo articolo viene descritto ogni metodo, in modo da acquisire quello che risulta più adatto per l'organizzazione.  
 
 ## <a name="client-push-installation"></a>Installazione push client  
 
- **Piattaforma client supportata:** Windows  
+**Piattaforma client supportata**: Windows  
 
- **Vantaggi**  
+#### <a name="advantages"></a>Vantaggi  
 
 -   Può essere utilizzato per installare il client in un singolo computer, una raccolta di computer o nei risultati di una query.  
 
@@ -40,55 +41,61 @@ ms.lasthandoff: 10/12/2017
 
 -   Utilizza automaticamente le proprietà di installazione del client definite nella scheda **Client** della finestra di dialogo **Proprietà installazione push client** .  
 
- **Svantaggi**  
+#### <a name="disadvantages"></a>Svantaggi  
 
 -   Può causare traffico di rete elevato quando si esegue il push in raccolte di grandi dimensioni.  
 
 -   Può essere usato solo nei computer individuati da Configuration Manager.  
 
--   Non può essere utilizzato per installare client in un gruppo di lavoro.  
+-   Non può essere usato per installare client in un gruppo di lavoro.  
 
 -   È necessario specificare un account di installazione push client che dispone di diritti amministrativi sul computer client previsto.  
 
--   È necessario che Windows Firewall sia configurato nei computer client con le eccezioni, in modo che l'installazione push client possa essere completata.  
+-   Windows Firewall deve essere configurato con eccezioni nei computer client.   
 
--   Non è possibile annullare l'installazione push client. Quando si usa questo metodo di installazione del client per un sito, Configuration Manager tenta di installare il client in tutte le risorse individuate e ritenta l'installazione in caso di errori fino a 7 giorni.  
+-   Non è possibile annullare l'installazione push client. Configuration Manager tenta di installare il client in tutte le risorse individuate. In caso di errore, ritenta l'esecuzione per un periodo fino a sette giorni.  
 
- Per altre informazioni su questo metodo di installazione, vedere [Come distribuire i client nei computer Windows in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md).  
+Per altre informazioni , vedere [Come installare i client con l'installazione push client](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_ClientPush).  
+
+
 
 ## <a name="software-update-point-based-installation"></a>Installazione basata sul punto di aggiornamento software  
- **Piattaforma client supportata:** Windows  
 
- **Vantaggi:**  
+**Piattaforma client supportata**: Windows  
+
+#### <a name="advantages"></a>Vantaggi  
 
 -   Può utilizzare l'infrastruttura di aggiornamenti software esistente per gestire il software client.  
 
--   Può installare automaticamente il software client nei nuovi computer se le impostazioni di Windows Server Update Services (WSUS) e dei Criteri di gruppo in Servizi di dominio Active Directory sono configuRati correttamente.  
+-   Se Windows Server Update Services (WSUS) e le impostazioni di Criteri di gruppo sono configurati correttamente in Active Directory Domain Services, WSUS può installare automaticamente il software client nei nuovi computer.  
 
 -   Non richiede l'individuazione dei computer prima di poter installare il client.  
 
 -   I computer possono leggere le proprietà di installazione client che sono state pubblicate in Servizi di dominio Active Directory.  
 
--   Reinstallerà il software client se è stato rimosso.  
+-   Se il client viene rimosso, questo metodo lo reinstalla.  
 
 -   Non richiede la configurazione e il mantenimento di un account di installazione per il computer client previsto.  
 
- **Svantaggi:**  
+#### <a name="disadvantages"></a>Svantaggi  
 
 -   Richiede un'infrastruttura per gli aggiornamenti software che sia funzionante come prerequisito.  
 
--   Deve utilizzare lo stesso server per l'installazione del client e gli aggiornamenti software e il server deve risiedere in un sito principale.  
+-   Deve usare lo stesso server per l'installazione del client e gli aggiornamenti software. Il server deve risiedere in un sito primario.  
 
--   Per installare nuovi client, è necessario configurare un oggetto Criteri di gruppo in Servizi di dominio Active Directory con la porta e il punto di aggiornamento software attivo del software.  
+-   Per installare nuovi client, è necessario configurare un oggetto Criteri di gruppo in Active Directory Domain Services con la porta e il punto di aggiornamento software attivo del software.  
 
 -   Se lo schema di Active Directory non viene esteso per Configuration Manager, è necessario usare le impostazioni di Criteri di gruppo per eseguire il provisioning dei computer con le proprietà di installazione client.  
 
- Per altre informazioni su questo metodo di installazione, vedere [Come distribuire i client nei computer Windows in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md).  
+Per altre informazioni, vedere [Come installare i client con l'installazione basata sull'aggiornamento software](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_ClientSUP).  
 
-## <a name="group-policy-installation"></a>Installazione tramite Criteri di gruppo  
- **Piattaforma client supportata:** Windows  
 
- **Vantaggi:**  
+
+## <a name="group-policy-installation"></a>Installazione con Criteri di gruppo  
+
+**Piattaforma client supportata**: Windows  
+
+#### <a name="advantages"></a>Vantaggi  
 
 -   Non richiede l'individuazione dei computer prima di poter installare il client.  
 
@@ -98,35 +105,41 @@ ms.lasthandoff: 10/12/2017
 
 -   Non richiede la configurazione e il mantenimento di un account di installazione per il computer client previsto.  
 
- **Svantaggi:**  
+#### <a name="disadvantages"></a>Svantaggi  
 
--   Può causare traffico di rete elevato se viene installato un numero elevato di client.  
+-   L'installazione di molti client può causare traffico di rete elevato.  
 
 -   Se lo schema di Active Directory non viene esteso per Configuration Manager, è necessario usare le impostazioni di Criteri di gruppo per aggiungere le proprietà di installazione del client ai computer presenti nel sito.  
 
- Per altre informazioni su questo metodo di installazione, vedere [Come distribuire i client nei computer Windows in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md).  
+Per altre informazioni, vedere [Come installare i client con Criteri di gruppo](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_ClientGP).  
+
+
 
 ## <a name="logon-script-installation"></a>Installazione tramite script di accesso  
- **Piattaforma client supportata:** Windows  
 
- **Vantaggi:**  
+**Piattaforma client supportata**: Windows  
+
+#### <a name="advantages"></a>Vantaggi  
 
 -   Non richiede l'individuazione dei computer prima di poter installare il client.  
 
 -   Supporta l'utilizzo di proprietà della riga di comando per CCMSetup.  
 
- **Svantaggi:**  
+#### <a name="disadvantages"></a>Svantaggi  
 
--   Può causare elevato traffico di rete se viene installato un numero di client elevato in un periodo di tempo breve.  
+-   L'installazione di molti client in un periodo di tempo breve può causare un traffico di rete elevato.  
 
--   Può richiedere molto tempo per l'installazione in tutti i computer client, se gli utenti non accedono spesso alla rete.  
+-   Se gli utenti non si collegano alla rete di frequente, l'installazione in tutti i computer client può richiedere molto tempo.  
 
- Per altre informazioni su questo metodo di installazione, vedere [Come distribuire i client nei computer Windows in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md).  
+Per altre informazioni , vedere [Come installare i client con gli script di accesso](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_ClientLogonScript).  
+
+
 
 ## <a name="manual-installation"></a>Installazione manuale  
- **Piattaforma client supportata:** Windows, UNIX/Linux, Mac OS X  
 
- **Vantaggi:**  
+**Piattaforma client supportata**: Windows, UNIX/Linux, Mac OS X  
+
+#### <a name="advantages"></a>Vantaggi  
 
 -   Non richiede l'individuazione dei computer prima di poter installare il client.  
 
@@ -134,14 +147,45 @@ ms.lasthandoff: 10/12/2017
 
 -   Supporta l'utilizzo di proprietà della riga di comando per CCMSetup.  
 
- **Svantaggi:**  
+#### <a name="disadvantages"></a>Svantaggi  
 
 -   Non prevede automazione, pertanto risulta dispendioso in termini di tempo.  
 
- Per altre informazioni su come installare manualmente il client in ciascuna piattaforma, vedere gli argomenti seguenti:  
+Per altre informazioni su come installare manualmente il client in ogni piattaforma, vedere gli articoli seguenti:  
 
--   [Come distribuire i client nei computer Windows in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md)  
+-   [Come distribuire i client nei computer Windows](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Manual)  
 
--   [Come distribuire i client nei server UNIX e Linux in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md)  
+-   [Come distribuire i client nei server UNIX e Linux](/sccm/core/clients/deploy/deploy-clients-to-unix-and-linux-servers)  
 
--   [How to deploy clients to Macs in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-macs.md) (Come distribuire i client nei computer Mac in System Center Configuration Manager)  
+-   [Come distribuire i client in computer Mac](/sccm/core/clients/deploy/deploy-clients-to-macs)  
+
+
+
+## <a name="microsoft-intune-mdm-installation"></a>Installazione MDM di Microsoft Intune
+
+**Piattaforma client supportata**: Windows 10
+
+#### <a name="advantages"></a>Vantaggi  
+
+-   Non richiede l'individuazione dei computer prima di poter installare il client.  
+
+-   Non richiede la configurazione e il mantenimento di un account di installazione per il computer client previsto.  
+
+-   Può usare l'autenticazione moderna con Azure Active Directory.  
+
+-   Può installare e assegnare i computer in Internet.  
+
+-   Può realizzare l'automatizzazione con Windows AutoPilot e Microsoft Intune per la co-gestione.  
+
+#### <a name="disadvantages"></a>Svantaggi  
+
+-   Richiede tecnologie aggiuntive al di fuori di Configuration Manager.  
+
+-   Richiede che il dispositivo abbia accesso a Internet, anche se non è basato su Internet.  
+
+Per altre informazioni, vedere gli articoli seguenti:  
+
+-   [Come installare i client nei dispositivi Windows gestiti da MDM di Intune](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#bkmk_mdm)  
+
+-   [Installare e assegnare client di Configuration Manager in dispositivi Windows 10 usando Azure AD per l'autenticazione](/sccm/core/clients/deploy/deploy-clients-cmg-azure)  
+

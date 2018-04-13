@@ -1,33 +1,35 @@
 ---
 title: Creare e distribuire criteri di Windows Defender Application Guard
-titleSuffix: Configuration Manager
+titleSuffix: System Center Configuration Manager
 description: Creare e distribuire criteri di Windows Defender Application Guard.
 ms.custom: na
-ms.date: 11/21/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 
-caps.latest.revision: "5"
-author: ErikjeMS
-ms.author: erikje
+ms.assetid: ''
+caps.latest.revision: 5
+author: mestew
+ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: db2508e5bbd1435fce432b6ef98d7968e68ea5ab
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: faa1a50b29fe4ba966812441243b81ee2d31b024
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/23/2018
 ---
-# <a name="create-and-deploy-windows-defender-application-guard-policy----1351960---"></a>Creare e distribuire criteri di Windows Defender Application Guard <!-- 1351960 -->
-
+# <a name="create-and-deploy-windows-defender-application-guard-policy"></a>Creare e distribuire criteri di Windows Defender Application Guard 
+*Si applica a: System Center Configuration Manager (Current Branch)*
+<!-- 1351960 -->
 È possibile creare e distribuire criteri di [Windows Defender Application Guard](https://docs.microsoft.com/windows/threat-protection/windows-defender-application-guard/wd-app-guard-overview) usando Endpoint Protection di Configuration Manager. Questi criteri consentono di proteggere gli utenti tramite l'apertura dei siti Web non attendibili in un contenitore isolato protetto e non accessibile da altre parti del sistema operativo.
 
 ## <a name="prerequisites"></a>Prerequisiti
 
-Per creare e distribuire criteri di Windows Defender Application Guard, è necessario usare la versione Fall Creators Update di Windows 10. Inoltre, i dispositivi Windows 10 in cui verranno distribuiti i criteri devono essere configurati con criteri di isolamento di rete. Per altre informazioni, vedere [Panoramica di Windows Defender Application Guard](https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-application-guard/wd-app-guard-overview). Questa funzionalità funziona solo con le build correnti di Windows 10 Insider. Per provarla, i client devono eseguire una build recente di Windows 10 Insider.
+Per creare e distribuire criteri di Windows Defender Application Guard, è necessario usare la versione Fall Creators Update di Windows 10 (1709). Inoltre, i dispositivi Windows 10 in cui verranno distribuiti i criteri devono essere configurati con criteri di isolamento di rete. Per altre informazioni, vedere [Panoramica di Windows Defender Application Guard](https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-application-guard/wd-app-guard-overview). 
 
 
 ## <a name="create-a-policy-and-to-browse-the-available-settings"></a>Creare un criterio e passare alle impostazioni disponibili:
@@ -35,7 +37,7 @@ Per creare e distribuire criteri di Windows Defender Application Guard, è neces
 1. Nella console di Configuration Manager scegliere **Asset e conformità**.
 2. Nell'area di lavoro **Asset e conformità** scegliere **Panoramica** > **Endpoint Protection** > **Windows Defender Application Guard**.
 3. Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea i criteri di Windows Defender Application Guard**.
-4. Usando il [post di blog](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#BmJGKPfSjHHzsMmI.97) come riferimento, è possibile selezionare e configurare le impostazioni disponibili.
+4. Usando l'[articolo](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-guard/configure-wd-app-guard) come riferimento, è possibile selezionare e configurare le impostazioni disponibili. Configuration Manager consente di definire impostazioni di criteri specifiche, vedere [Impostazioni per l'interazione degli host](#BKMK_HIS) e [Comportamento delle applicazioni](#BKMK_AppB).
 5. Nella pagina **Definizione di rete** specificare l'identità aziendale e definire il limite di rete aziendale.
 
     > [!NOTE]
@@ -48,7 +50,36 @@ Per creare e distribuire criteri di Windows Defender Application Guard, è neces
     > 
     > 
 
-6. Al termine, completare la procedura guidata e distribuire il criterio in uno o più dispositivi Windows 10.
+6. Al termine, completare la procedura guidata e distribuire i criteri in uno o più dispositivi Windows 10 1709.
+
+### <a name="bkmk_HIS"></a> Impostazioni per l'interazione degli host
+Configura le interazioni tra i dispositivi host e il contenitore Application Guard. Prima di Configuration Manager versione 1802, le impostazioni relative al comportamento delle applicazioni e all'interazione degli host si trovavano nella scheda **Impostazioni**.
+
+- **Appunti**: in Impostazioni prima di Configuration Manager 1802
+    - Tipo di contenuto consentito
+        - Testo
+        - Immagini
+- **Stampa:**
+    - Abilitazione della stampa in XPS
+    - Abilitazione della stampa in PDF
+    - Abilitazione della stampa nelle stampanti locali
+    - Abilitazione della stampa nelle stampanti di rete
+- **Grafica:** (a partire da Configuration Manager versione 1802)
+    - Accesso all'unità di elaborazione grafica virtuale
+- **File:** (a partire da Configuration Manager versione 1802)
+    - Salvataggio dei file scaricati nell'host
+
+### <a name="bkmk_ABS"></a> Impostazioni relative al comportamento delle applicazioni
+Consentono di configurare il comportamento delle applicazioni all'interno della sessione di Application Guard. Prima di Configuration Manager versione 1802, le impostazioni relative al comportamento delle applicazioni e all'interazione degli host si trovavano nella scheda **Impostazioni**.
+
+- **Contenuto:**
+   - I siti aziendali possono caricare contenuti non aziendali, ad esempio plug-in di terze parti.
+- **Altro:**
+    - Conserva i dati del browser generati dall'utente
+    - Controlla gli eventi di sicurezza nella sessione Application Guard isolata
+
+
 
 ## <a name="next-steps"></a>Passaggi successivi
-Per altre informazioni su Windows Defender Application Guard, vedere [questo post di blog](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#BmJGKPfSjHHzsMmI.97). Per altre informazioni sulla modalità autonoma di Windows Defender Application Guard vedere [questo post di blog](https://techcommunity.microsoft.com/t5/Windows-Insider-Program/Windows-Defender-Application-Guard-Standalone-mode/td-p/66903).
+Per altre informazioni su Windows Defender Application Guard: [Windows Defender Application Guard Overview](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-guard/wd-app-guard-overview) (Panoramica di Windows Defender Application Guard).
+[Windows Defender Application Guard FAQ](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-guard/faq-wd-app-guard) (Domande frequenti su Windows Defender Application Guard).

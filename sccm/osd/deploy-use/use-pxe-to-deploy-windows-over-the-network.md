@@ -1,46 +1,51 @@
 ---
-title: Usare PXE per distribuire Windows in rete
+title: Usare PXE per le distribuzioni del sistema operativo in rete
 titleSuffix: Configuration Manager
 description: Usare le distribuzioni del sistema operativo avviate da PXE per aggiornare il sistema operativo di un computer o per installare una nuova versione di Windows in un nuovo computer.
 ms.custom: na
-ms.date: 06/15/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-osd
+ms.technology:
+- configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: da5f8b61-2386-4530-ad54-1a5c51911f07
-caps.latest.revision: "19"
-caps.handback.revision: "0"
+caps.latest.revision: 19
+caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 1ae9c9385abe90a38169f5d539be944f03817007
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 310807547df9fdb2ccd4f0098eec6b0b7ccca996
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="use-pxe-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Usare PXE per distribuire Windows in rete con System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Le distribuzioni del sistema operativo avviate da Pre-Boot eXecution Environment (PXE) in System Center Configuration Manager consentono ai computer client di richiedere e distribuire sistemi operativi in rete. In questo scenario di distribuzione l'immagine del sistema operativo e le immagini d'avvio di Windows PE, sia x86 che x64, vengono inviate a un punto di distribuzione configurato per accettare le richieste di avvio PXE.
+Le distribuzioni del sistema operativo avviate da Pre-Boot eXecution Environment (PXE) in Configuration Manager consentono ai client di richiedere e distribuire sistemi operativi in rete. In questo scenario di distribuzione, l'immagine del sistema operativo e le immagini d'avvio vengono inviate a un punto di distribuzione avviato da PXE.
 
 > [!NOTE]  
 >  Quando si crea una distribuzione del sistema operativo destinata solo a computer BIOS x64, nel punto di distribuzione devono essere disponibili sia l'immagine di avvio x64 che l'immagine di avvio x86.
 
-È possibile usare distribuzioni del sistema operativo avviate da PXE negli scenari di distribuzione del sistema operativo seguenti:
+È possibile usare distribuzioni del sistema operativo avviate da PXE negli scenari seguenti:
 
 -   [Aggiornare un computer esistente con una nuova versione di Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
 
 -   [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)  
 
-Completare i passaggi in uno degli scenari di distribuzione del sistema operativo e quindi usare le sezioni seguenti per preparare le distribuzioni avviate da PXE.
+Eseguire i passaggi di uno degli scenari di distribuzione del sistema operativo e quindi usare le sezioni di questo articolo per preparare le distribuzioni avviate da PXE.
+
+
 
 ##  <a name="BKMK_Configure"></a> Configurare almeno un punto di distribuzione per accettare le richieste PXE
-Per distribuire i sistemi operativi ai client che eseguono richieste di avvio PXE, usare uno o più punti di distribuzioni configurati per rispondere alle richieste di avvio PXE. Per i passaggi relativi all'abilitazione di PXE per un punto di distribuzione, vedere [Configurazione dei punti di distribuzione per accettare le richieste PXE](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint).
+Per distribuire i sistemi operativi ai client di Configuration Manager che eseguono richieste di avvio PXE, è necessario configurare uno o più punti di distribuzioni per accettare le richieste PXE. Una volta configurato, il punto di distribuzione risponde alle richieste di avvio PXE e stabilisce l'azione appropriata da eseguire per la distribuzione. Per altre informazioni, vedere [Install or modify a distribution point](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#pxe) (Installare o modificare un punto di distribuzione).  
+
+
 
 ## <a name="prepare-a-pxe-enabled-boot-image"></a>Preparare un'immagine d'avvio che supporta PXE
 Per usare PXE per distribuire un sistema operativo, è necessario avere immagini d'avvio che supportano PXE sia x86 sia x64, distribuite in uno o più punti di distribuzione che supportano PXE. Usare le informazioni per abilitare PXE in un'immagine d'avvio e distribuirla nei punti di distribuzione:
@@ -49,8 +54,10 @@ Per usare PXE per distribuire un sistema operativo, è necessario avere immagini
 
 -   Se si modificano le proprietà per l'immagine d'avvio, ridistribuirla nei punti di distribuzione. Per altre informazioni, vedere [Distribuire il contenuto](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute).
 
+
+
 ##  <a name="BKMK_PXEExclusionList"></a> Creare un elenco di esclusione per le distribuzioni PXE
-Quando si distribuiscono sistemi operativi con PXE, è possibile creare un elenco di esclusione in ogni punto di distribuzione. Aggiungere gli indirizzi MAC all'elenco di esclusione dei computer che si vuole vengano ignorati dal punto di distribuzione. I computer elencati non riceveranno le sequenze di attività di distribuzione usate da Configuration Manager per la distribuzione PXE.
+Quando si distribuiscono sistemi operativi con PXE, è possibile creare un elenco di esclusione in ogni punto di distribuzione. Aggiungere gli indirizzi MAC all'elenco di esclusione dei computer che si vuole vengano ignorati dal punto di distribuzione. I computer elencati non ricevono le sequenze di attività di distribuzione usate da Configuration Manager per la distribuzione PXE.
 
 #### <a name="to-create-the-exclusion-list"></a>Per creare l'elenco di esclusione
 
@@ -69,11 +76,20 @@ Quando si distribuiscono sistemi operativi con PXE, è possibile creare un elenc
 
      Non è necessario riavviare il server dopo aver modificato il Registro di sistema.
 
+
+
+## <a name="manage-duplicate-hardware-identifiers"></a>Gestire gli identificatori di hardware duplicati
+Configuration Manager potrebbe riconoscere più computer come un unico dispositivo se presentano attributi SMBIOS duplicati o si usa una scheda di rete condivisa. È possibile limitare questi problemi con la gestione degli identificatori di hardware duplicati nelle impostazioni di gerarchia. Per altre informazioni, vedere [Gestire gli identificatori di hardware duplicati](/sccm/core/clients/manage/manage-clients#manage-duplicate-hardware-identifiers).
+
+
+
 ##  <a name="BKMK_RamDiskTFTP"></a>Dimensioni del blocco e della finestra TFTP RamDisk
-È possibile personalizzare le dimensioni del blocco TFTP RamDisk e, a partire da Configuration Manager versione 1606, le dimensioni della finestra per i punti di distribuzione abilitati per PXE. Se la rete è stata personalizzata, il download dell'immagine di avvio potrebbe non riuscire a causa di un errore di timeout perché le dimensioni del blocco o della finestra sono troppo grandi. La personalizzazione delle dimensioni della finestra e del blocco TFTP RamDisk consentono di ottimizzare il traffico TFTP quando si usa PXE per soddisfare requisiti di rete specifici. Testare le impostazioni personalizzate nel proprio ambiente per stabilire quale sia il metodo più efficiente. Per altre informazioni, vedere [Personalizzare le dimensioni della finestra e del blocco TFTP RamDisk nei punti di distribuzione abilitati per PXE](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_RamDiskTFTP).
+È possibile personalizzare le dimensioni della finestra e del blocco TFTP RamDisk per i punti di distribuzione abilitati per PXE. Se la rete è stata personalizzata, il download dell'immagine di avvio potrebbe non riuscire a causa di un errore di timeout, perché le dimensioni del blocco o della finestra sono eccessive. La personalizzazione delle dimensioni della finestra e del blocco TFTP RamDisk consentono di ottimizzare il traffico TFTP quando si usa PXE per soddisfare i requisiti di rete specifici. Per individuare la scelta più efficiente, è necessario testare le impostazioni personalizzate nel proprio ambiente. Per altre informazioni, vedere [Personalizzare le dimensioni della finestra e del blocco TFTP RamDisk nei punti di distribuzione abilitati per PXE](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_RamDiskTFTP).
+
+
 
 ## <a name="configure-deployment-settings"></a>Configurare le impostazioni di distribuzione
-Per usare la distribuzione del sistema operativo avviata da PXE, è necessario configurarla per rendere disponibile il sistema operativo per le richieste di avvio PXE. È possibile configurare i sistemi operativi disponibili nella pagina **Impostazioni di distribuzione** della Distribuzione guidata del software o nella scheda **Impostazioni di distribuzione** nelle proprietà della distribuzione. Per l'impostazione **Rendi disponibile per** , configurare uno degli elementi seguenti:
+Per usare la distribuzione del sistema operativo avviata da PXE, configurarla per rendere disponibile il sistema operativo per le richieste di avvio PXE. Configurare i sistemi operativi disponibili nella scheda **Impostazioni distribuzione** nelle proprietà di distribuzione. Per l'impostazione **Rendi disponibile per**, selezionare una delle opzioni seguenti:
 
 -   Client di Configuration Manager, supporti e PXE
 
@@ -81,24 +97,28 @@ Per usare la distribuzione del sistema operativo avviata da PXE, è necessario c
 
 -   Solo supporti e PXE (nascosto)
 
+
+
 ##  <a name="BKMK_Deploy"></a> Distribuire la sequenza di attività
 Distribuire il sistema operativo in una raccolta di destinazione. Per altre informazioni, vedere [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS). Quando si distribuiscono sistemi operativi tramite PXE, è possibile specificare se la distribuzione è obbligatoria o disponibile.
 
--   **Distribuzione richiesta**: le distribuzioni richieste usano PXE senza alcun intervento da parte dell'utente. L'utente non sarà in grado di ignorare l'avvio di PXE. Tuttavia, se l'utente annulla l'avvio di PXE prima della risposta del punto di distribuzione, il sistema operativo non verrà distribuito.
+-   **Distribuzione richiesta**: le distribuzioni richieste usano PXE senza alcun intervento da parte dell'utente. L'utente non può ignorare l'avvio PXE. Tuttavia, se l'utente annulla l'avvio di PXE prima della risposta del punto di distribuzione, il sistema operativo non viene distribuito.
 
--   **Distribuzione disponibile**: le distribuzioni disponibili richiedono che l'utente sia presente sul computer di destinazione, per poter premere il tasto F12 per continuare il processo di avvio PXE. Se l'utente non è presente per premere F12, il computer avvierà il sistema operativo corrente oppure verrà avviato dal dispositivo di avvio successivo disponibile.
+-   **Distribuzione disponibile**: le distribuzioni disponibili richiedono la presenza dell'utente al computer di destinazione. L'utente deve premere il tasto F12 per continuare il processo di avvio PXE. Se l'utente non è presente per premere F12, il computer esegue l'avvio nel sistema operativo corrente oppure dal dispositivo di avvio successivo disponibile.
 
-È possibile ridistribuire una distribuzione PXE richiesta cancellando lo stato dell'ultima distribuzione PXE assegnato a una raccolta di Configuration Manager o a un computer. Questa azione consente di reimpostare lo stato di quella distribuzione e reinstalla le distribuzioni richieste più recenti.
+È possibile ridistribuire una distribuzione PXE richiesta cancellando lo stato dell'ultima distribuzione PXE assegnato a una raccolta di Configuration Manager o a un computer. Per altre informazioni sull'azione **Cancella distribuzioni PXE richieste**, vedere [Gestire i client](/sccm/core/clients/manage/manage-clients#BKMK_ManagingClients_DevicesNode) o [Come gestire le raccolte di dispositivi](/sccm/core/clients/manage/collections/manage-collections#how-to-manage-device-collections). Questa azione consente di reimpostare lo stato di quella distribuzione e reinstalla le distribuzioni richieste più recenti.
 
 > [!IMPORTANT]
 > Il protocollo PXE non è sicuro. Assicurarsi che il server PXE e il client PXE si trovino su una rete fisicamente protetta, come ad esempio in un data center, per evitare accessi non autorizzati al sito.
 
+
+
 ##  <a name="how-is-the-boot-image-selected-for-clients-booting-with-pxe"></a>Come viene selezionata l'immagine di avvio per i client avviati con PXE?
-Quando un client viene avviato con PXE Configuration Manager rende disponibile per il client un'immagine di avvio. A partire dalla versione 1606, Configuration Manager usa un'immagine di avvio con un'architettura esattamente corrispondente. Se non è disponibile un'immagine di avvio con l'architettura esatta, Configuration Manager usa un'immagine di avvio con un'architettura compatibile. L'elenco seguente contiene informazioni dettagliate sulle modalità di selezione di un'immagine di avvio per i client avviati con PXE.
+Quando un client viene avviato con PXE Configuration Manager rende disponibile per il client un'immagine di avvio. Configuration Manager usa un'immagine di avvio con un'architettura esattamente corrispondente. Se non è disponibile un'immagine di avvio con l'architettura esatta, Configuration Manager usa un'immagine di avvio con un'architettura compatibile. L'elenco seguente contiene informazioni dettagliate sulle modalità di selezione di un'immagine di avvio per i client avviati con PXE.
 1. Configuration Manager cerca nel database del sito il record di sistema corrispondente all'indirizzo MAC o al SMBIOS del client che sta tentando di eseguire l'avvio.  
 
     > [!NOTE]
-    > Se un computer assegnato a un sito viene avviato in PXE per un sito diverso, i criteri non sono visibili per il computer. Ad esempio, se un client è già assegnato al sito A, il punto di gestione e il punto di distribuzione per il sito B non saranno in grado di accedere ai criteri dal sito A. Il client non riuscirà a completare l'avvio di PXE.
+    > Se un computer assegnato a un sito viene avviato in PXE per un sito diverso, i criteri non sono visibili per il computer. Ad esempio, se un client è già assegnato al sito A, il punto di gestione e il punto di distribuzione per il sito B non sono in grado di accedere ai criteri dal sito A. Il client non riuscirà a completare l'avvio di PXE.
 
 2. Configuration Manager cerca le sequenze di attività che vengono distribuite nel record di sistema menzionato nel passaggio 1.
 

@@ -3,7 +3,7 @@ title: 'Sincronizzare i dati in Microsoft Operations Management Suite '
 titleSuffix: Configuration Manager
 description: Sincronizzazione dei dati da System Center Configuration Manager a Microsoft Operations Management Suite.
 ms.custom: na
-ms.date: 7/31/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,15 +12,15 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 33bcf8b3-a6b6-4fc9-bb59-70a9621b2b0d
-caps.latest.revision: 
-author: mattbriggs
-ms.author: mabrigg
-manager: angrobe
-ms.openlocfilehash: 5cb0ffd29f1b3de110101093a6644335a8167108
-ms.sourcegitcommit: 45ff3ffa040eada5656b17f47dcabd3c637bdb60
+caps.latest.revision: 9
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.openlocfilehash: df57255108d0e5e8b8f5e4e8d73a392c4cf2faae
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/23/2018
 ---
 #  <a name="sync-data-from-configuration-manager-to-the-microsoft-operations-management-suite"></a>Sincronizzazione dei dati da Configuration Manager a Microsoft Operations Management Suite
 
@@ -44,7 +44,7 @@ I prerequisiti per configurare una connessione a OMS sono identici a quelli [ind
 
 ## <a name="use-the-azure-services-wizard-to-configure-the-connection-to-oms"></a>Usare la Procedura guidata Servizi di Azure per configurare la connessione a OMS
 
-1.  Nella console passare ad **Amministrazione** > **Panoramica** > **Servizi cloud** > **Servizi di Azure** e quindi scegliere **Configura i servizi di Azure** dalla scheda **Home** della barra multifunzione per avviare la **Procedura guidata per i servizi di Azure**.
+1.  Nella console andare ad **Amministrazione** > **Panoramica** > **Servizi cloud** > **Servizi di Azure**. Scegliere **Configura i servizi di Azure** dalla scheda **Home** della barra multifunzione per avviare la **procedura guidata per i servizi di Azure**.
 
 2.  Nella pagina **Servizi di Azure** selezionare il servizio cloud Operations Management Suite. Specificare un nome descrittivo per **Nome del servizio Azure** e una descrizione facoltativa, quindi fare clic su **Avanti**.
 
@@ -52,10 +52,10 @@ I prerequisiti per configurare una connessione a OMS sono identici a quelli [ind
 
 4.  Selezionare un'app Web:
 
-    -   **Importa**: per usare un'app Web già esistente nella sottoscrizione di Azure, fare clic su **Importa**. Specificare un nome descrittivo per l'app e il tenant, quindi specificare ID tenant, ID client e chiave privata per l'app Web di Azure che si vuole rendere disponibile per l'uso con Configuration Manager. Dopo aver fatto clic su **Verifica** per verificare le informazioni, fare clic su **OK** per continuare.   
+    -   **Importa**: per usare un'app Web già esistente nella sottoscrizione di Azure, fare clic su **Importa**. Specificare un nome descrittivo per l'app e il tenant. Indicare l'ID tenant, l'ID client e la chiave privata per l'app Web di Azure che si vuole usare con Configuration Manager. Dopo aver fatto clic su **Verifica** per verificare le informazioni, fare clic su **OK** per continuare.   
 
     > [!NOTE]   
-    > Quando si configura OMS con questa versione di anteprima, OMS supporta solo la funzione di *importazione*  di un'app Web. La creazione di una nuova app Web non è supportata. Analogamente, non è possibile usare un'app già esistente per OMS.
+    > Quando si configura OMS con questa versione di anteprima, OMS supporta solo la funzione di *importazione*  di un'app Web. La creazione di una nuova app Web non è supportata. Analogamente, non è possibile usare di nuovo un'app esistente per OMS.
 
 5.  Se tutte le altre procedure sono state eseguite correttamente, le informazioni della schermata di **configurazione della connessione OMS** vengono automaticamente visualizzate. Le informazioni relative alle impostazioni di connessione vengono visualizzate in **Sottoscrizione Azure**, **Gruppo di risorse di Azure** e **Area di lavoro di Operations Management Suite**.
 
@@ -70,11 +70,11 @@ I prerequisiti per configurare una connessione a OMS sono identici a quelli [ind
 
 *Si applica a: System Center Configuration Manager (versione 1702 e precedenti)*
 
-È possibile usare Microsoft Operations Management Suite (OMS) Connector per sincronizzare i dati, ad esempio le raccolte, da System Center Configuration Manager a OMS Log Analytics in Microsoft Azure. In questo modo i dati della distribuzione di Configuration Manager sono visibili in OMS.
+È possibile usare Microsoft Operations Management Suite (OMS) Connector per sincronizzare i dati, ad esempio le raccolte, da System Center Configuration Manager a OMS Log Analytics in Microsoft Azure. Il connettore rende visibili in OMS i dati della distribuzione di Configuration Manager.
 > [!TIP]
-> Il connettore OMS è una funzionalità di versione non definitiva. Per altre informazioni, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/pre-release-features).
+> A partire da Configuration Manager 1802, OMS Connector non è più una funzionalità di versione non definitiva. Per altre informazioni, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](/sccm/core/servers/manage/pre-release-features).
 
-A partire dalla versione 1702, è possibile usare OMS Connector per la connessione a un'area di lavoro OMS che si trova sul cloud di Microsoft Azure per enti pubblici. A questo scopo, prima di installare OMS Connector è necessario modificare un file di configurazione. Vedere la sezione [Usare OMS Connector con il cloud di Azure per enti pubblici](#fairfaxconfig) di questo argomento.
+A partire dalla versione 1702, è possibile usare OMS Connector per la connessione a un'area di lavoro OMS che si trova sul cloud di Microsoft Azure per enti pubblici. A questo scopo, prima di installare OMS Connector è necessario modificare un file di configurazione. Vedere la sezione [Usare OMS Connector con il cloud di Azure per enti pubblici](#fairfaxconfig) di questo articolo.
 
 ### <a name="prerequisites"></a>Prerequisiti
 - Prima di installare OMS Connector in Configuration Manager, è necessario fornire a Configuration Manager le autorizzazioni per OMS. In particolare, è necessario concedere l'*accesso di tipo Collaboratore* al *gruppo di risorse* di Azure che contiene l'area di lavoro OMS Log Analytics. Le procedure per eseguire questa operazione sono documentate nel contenuto di Log Analytics. Vedere [Fornire a Configuration Manager le autorizzazioni per accedere a OMS](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#provide-configuration-manager-with-permissions-to-oms) nella documentazione relativa a OMS.
@@ -92,14 +92,14 @@ A partire dalla versione 1702, è possibile usare OMS Connector per la connessio
 ### <a name="install-the-oms-connector"></a>Installare OMS Connector  
 1. Nella console di Configuration Manager configurare la [gerarchia per l'uso di funzionalità di versioni non definitive](/sccm/core/servers/manage/pre-release-features) e quindi abilitare l'uso di OMS Connector.  
 0
-2. Passare quindi ad **Amministrazione** > **Servizi cloud** > **OMS Connector**. Nella barra multifunzione fare clic su "Creare una connessione a Operations Management Suite". Verrà visualizzata la **Connessione guidata a Operations Management Suite**. Selezionare **Avanti**.  
+2. Passare quindi ad **Amministrazione** > **Servizi cloud** > **OMS Connector**. Sulla barra multifunzione fare clic su "Creare una connessione a Operations Management Suite". Questo passaggio apre la **Connessione guidata a Operations Management Suite**. Selezionare **Avanti**.  
 
 
 3.  Nella pagina **Generale** verificare di avere le informazioni seguenti e quindi scegliere **Avanti**.  
   - Configuration Manager registrato come uno strumento di gestione "Applicazione Web e/o API Web" e di avere [l'ID client della registrazione](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications).  
   - Una chiave client creata per lo strumento di gestione registrato in Azure Active Directory.  
 
-  - Nel portale di gestione di Azure aver specificato l'autorizzazione di accesso OMS per l'app Web registrata, come descritto in [Fornire a Configuration Manager le autorizzazioni per accedere a OMS](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#provide-configuration-manager-with-permissions-to-oms).  
+  - Nel portale di Azure fornire all'app Web registrata l'autorizzazione per accedere a OMS, come descritto in [Fornire a Configuration Manager le autorizzazioni per accedere a OMS](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#provide-configuration-manager-with-permissions-to-oms).  
 
 4.  Nella pagina di **Azure Active Directory** configurare le impostazioni di connessione a OMS specificando **Tenant**, **ID client** e **Chiave privata del client**, quindi scegliere **Avanti**.  
 
@@ -112,11 +112,13 @@ Dopo aver collegato Configuration Manager a OMS, è possibile aggiungere o rimuo
 ### <a name="verify-the-oms-connector-properties"></a>Verificare le proprietà di OMS Connector
 1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Servizi cloud** e quindi selezionare **OMS Connector** per aprire la pagina **Connessione OMS**.
 2.  In questa pagina sono disponibili due schede:
-  - **Azure Active Directory:**   
-    Questa scheda include le informazioni relative a **Tenant**, **ID client** e **Scadenza della chiave privata del client** e consente inoltre di verificare se la chiave privata del client è scaduta.
+  - **Azure Active Directory:** 
+  
+     Questa scheda include le informazioni relative a **Tenant**, **ID client** e **Scadenza della chiave privata del client** e consente inoltre di verificare se la chiave privata del client è scaduta.
 
   - **Proprietà della connessione OMS:**  
-    Questa scheda include le informazioni relative a **Sottoscrizione di Azure**, **Gruppo di risorse di Azure** e **Area di lavoro di Operations Management Suite**, nonché un elenco di **raccolte di dispositivi per cui OMS può recuperare i dati**. Usare i pulsanti **Aggiungi** e **Rimuovi** per modificare le raccolte consentite.
+
+     Questa scheda include le informazioni relative a **Sottoscrizione di Azure**, **Gruppo di risorse di Azure** e **Area di lavoro di Operations Management Suite**, nonché un elenco di **raccolte di dispositivi per cui OMS può recuperare i dati**. Usare i pulsanti **Aggiungi** e **Rimuovi** per modificare le raccolte consentite.
 
 ### <a name="fairfaxconfig"> </a> Usare OMS Connector con il cloud di Azure per enti pubblici
 

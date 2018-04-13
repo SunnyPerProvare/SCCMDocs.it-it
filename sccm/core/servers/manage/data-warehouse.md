@@ -3,7 +3,7 @@ title: Data warehouse
 titleSuffix: Configuration Manager
 description: Punto di servizio e database del data warehouse per System Center Configuration Manager
 ms.custom: na
-ms.date: 02/26/2018
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,15 +12,15 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aaf43e69-68b4-469a-ad58-9b66deb29057
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 954ec65bae15e087d6cf5afbcc8e0da1ebf83533
-ms.sourcegitcommit: be939893f0ceca4add8655ae2c24e42aa16aec38
+ms.openlocfilehash: 83bfc0e3d7bdf1ff8718c7c211c897e37b21a06b
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/23/2018
 ---
 #  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>Punto di servizio del data warehouse per System Center Configuration Manager
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -88,6 +88,7 @@ Pagina **Generale**:
      - **Nome database**: specificare il nome del database del data warehouse. Il nome del database non può essere costituito da più di 10 caratteri. La lunghezza del nome supportata verrà aumentata in una versione successiva.
      Configuration Manager crea il database del data warehouse con questo nome. Se si specifica un nome di database già esistente nell'istanza di SQL Server, Configuration Manager usa il database corrispondente.
      - **Porta di SQL Server usata per la connessione**: specificare il numero di porta TCP/IP usato dall'istanza di SQL Server che ospita il database del data warehouse. Questa porta viene usata dal servizio di sincronizzazione del data warehouse per la connessione al database del data warehouse.  
+     - **Account del punto di servizio del data warehouse**: a partire dalla versione 1802, specificare l'account usato da SQL Server Reporting Services per la connessione al database del data warehouse. 
 
 Pagina **Pianificazione della sincronizzazione**:   
 - **Pianificazione della sincronizzazione**:
@@ -96,8 +97,12 @@ Pagina **Pianificazione della sincronizzazione**:
          - **Ogni giorno**: specificare che la sincronizzazione viene eseguita ogni giorno.
          - **Ogni settimana**: specificare un solo giorno alla settimana e la ricorrenza settimanale per la sincronizzazione.
 
+
 ## <a name="reporting"></a>Reporting
 Dopo aver installato un punto di servizio del data warehouse, diversi report diventano disponibili nel punto di Reporting Services installato nello stesso sito. Se si installa il punto di servizio del data warehouse prima di installare un punto di Reporting Services, i report vengono aggiunti automaticamente quando in seguito si installa il punto di Reporting Services.
+
+>[!WARNING]
+>In Configuration Manager versione 1802, è stato aggiunto il supporto di credenziali alternative per il punto del data warehouse. <!--507334-->Se è stato eseguito l'aggiornamento da una versione precedente di Configuration Manager, è necessario specificare le credenziali usate da SQL Server Reporting Services per connettersi al database del data warehouse. Sarà possibile aprire i report del data warehouse solo quando verranno specificate le credenziali. Per specificare un account, passare ad **Amministrazione** >**Configurazione del sito** >**Server e ruoli del sistema del sito**. Fare clic sul server con il punto di servizio del data warehouse e quindi fare clic con il pulsante destro del mouse sul ruolo del punto di servizio del data warehouse. Selezionare **Proprietà** e quindi specificare l'**Account del punto di servizio del data warehouse**.
 
 Il ruolo del sistema del sito del data warehouse include i report seguenti, che hanno una categoria **Data warehouse**:
  - **Application Deployment - Historical** (Distribuzione applicazioni - Cronologia): visualizza i dettagli per la distribuzione di applicazioni per un'applicazione e un computer specifici.

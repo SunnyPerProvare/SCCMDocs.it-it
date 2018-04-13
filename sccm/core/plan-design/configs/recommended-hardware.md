@@ -3,7 +3,7 @@ title: Hardware consigliato
 titleSuffix: Configuration Manager
 description: Ottenere consigli su hardware per ridimensionare l'ambiente di System Center Configuration Manager, oltre una distribuzione di base.
 ms.custom: na
-ms.date: 05/04/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,16 +12,16 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5267f0af-34d3-47a0-9ab8-986c41276e6c
-caps.latest.revision: 
-caps.handback.revision: 
+caps.latest.revision: 26
+caps.handback.revision: 0
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 5def3fdef8e9182cb624640fa54ff2eae224e6a1
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 8d0883c7c2a735a2e651d61083d4d45570408ebb
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="recommended-hardware-for-system-center-configuration-manager"></a>Hardware consigliato per System Center Configuration Manager
 
@@ -75,7 +75,7 @@ Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità da
 
 -   Aumentare la **lunghezza della coda WsusPool** a **2000**.  
 
--   Aumentare il **limite di memoria privata WsusPool** di 4 volte oppure impostarlo su **0** (illimitato).  
+-   Aumentare il **limite di memoria privata WsusPool** di quattro volte oppure impostarlo su **0** (nessun limite).  
 
 ###  <a name="bkmk_DiskSpace"></a> Spazio su disco per i sistemi del sito  
  La configurazione e l'allocazione dei dischi contribuisce alle prestazioni di Configuration Manager. Dal momento che ogni ambiente di Configuration Manager è diverso, i valori implementati possono variare rispetto alle indicazioni seguenti.  
@@ -104,7 +104,7 @@ Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità da
 
 -   Le dimensioni del database temporaneo per un sito di amministrazione centrale sono in genere molto inferiori rispetto a quelle di un sito primario.  
 
--   Le dimensioni del database del sito secondario sono limitate nel seguente modo:  
+-   Le dimensioni del database del sito secondario hanno le limitazioni seguenti:  
 
     -   SQL Server 2012 Express: 10 GB  
 
@@ -120,7 +120,7 @@ Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità da
 
 -   **Spazio su disco:** 500 MB di spazio disponibile su disco, con 5 GB consigliati per la cache del client di Configuration Manager. Se si usano le impostazioni personalizzate per installare il client di Configuration Manager, è necessario meno spazio:  
 
-    -   Usare la proprietà della riga di comando CCMSetup /skipprereq per evitare di installare i file non necessari per il clent. Ad esempio, eseguire **CCMSetup.exe /skipprereq:silverlight.exe** se il client non usa il Catalogo applicazioni.  
+    -   Usare la proprietà della riga di comando CCMSetup /skipprereq per evitare di installare i file non necessari per il clent. Ad esempio, eseguire **CCMSetup.exe /skipprereq:silverlight.exe** se il client non usa il Catalogo applicazioni. A partire da Configuration Manager 1802, Silverlight non viene più installato automaticamente.  
 
     -   Usare la proprietà Client. msi SMSCACHESIZE per impostare un file di cache inferiore a quello predefinito di 5120 MB. La dimensione minima è 1 MB. Ad esempio, **CCMSetup.exe SMSCachesize=2** crea una cache di 2 MB.  
 

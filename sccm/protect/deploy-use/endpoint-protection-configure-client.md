@@ -3,32 +3,33 @@ title: Configurare il client Endpoint Protection
 titleSuffix: Configuration Manager
 description: Informazioni su come configurare le impostazioni client personalizzate per Endpoint Protection che possono essere distribuite alle raccolte di computer nella gerarchia.
 ms.custom: na
-ms.date: 02/14/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: e63f2394-6eb1-4a33-bec5-8377fc62a34e
-caps.latest.revision: "21"
-author: NathBarn
-ms.author: nathbarn
-manager: angrobe
-ms.openlocfilehash: de8f7411219446420a8c8bca00799d8d7d18fd2f
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+caps.latest.revision: 21
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.openlocfilehash: 22c56bac25cc6e3129f2e8478bbae9fa8782de9f
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="configure-custom-client-settings-for-endpoint-protection"></a>Configurare le impostazioni client personalizzate per Endpoint Protection
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Questa procedura consente di configurare impostazioni client personalizzate per Endpoint Protection, distribuibili nelle raccolte di computer nella gerarchia.
+Questa procedura consente di configurare impostazioni client personalizzate per Endpoint Protection, distribuibili alle raccolte di computer nella gerarchia.
 
 > [!IMPORTANT]
->  Configurare le impostazioni client predefinite per Endpoint Protection solo se si è certi di volerle applicare a tutti i computer nella gerarchia.
+>  Configurare le impostazioni client predefinite per Endpoint Protection solo se si è certi di volerle applicare a tutti i computer nella gerarchia. 
 
 ## <a name="to-enable-endpoint-protection-and-configure-custom-client-settings"></a>Per abilitare Endpoint Protection e configurare impostazioni client personalizzate
 
@@ -56,12 +57,12 @@ I computer client verranno configurati con queste impostazioni al successivo dow
 ## <a name="how-to-provision-the-endpoint-protection-client-in-a-disk-image-in-configuration-manager"></a>Come eseguire il provisioning del client Endpoint Protection in un'immagine disco in Configuration Manager
 È possibile installare il client di Endpoint Protection in un computer che si prevede di usare come origine immagine disco per la distribuzione del sistema operativo di Configuration Manager. In genere questo computer è denominato computer di riferimento. Dopo aver creato l'immagine del sistema operativo, è possibile usare la distribuzione del sistema operativo di Configuration Manager per distribuire nei computer client l'immagine che può contenere pacchetti software, incluso Endpoint Protection.
 
-Usare le procedure descritte in questo argomento per installare e configurare il client in Endpoint Protection in un computer di riferimento
+Usare le procedure descritte in questo articolo per installare e configurare il client di Endpoint Protection in un computer di riferimento
 
 ### <a name="prerequisites-for-installing-the-endpoint-protection-client-on-the-reference-computer"></a>Prerequisiti per l'installazione del client Endpoint Protection nel computer di riferimento
 Nell'elenco seguente sono inclusi i prerequisiti necessari per installare il software client di Endpoint Protection in un computer di riferimento.
 
--   È necessario accedere al pacchetto di installazione del client di Endpoint Protection, **scepinstall.exe**. Tale pacchetto è disponibile nella cartella **Client** della cartella di installazione di Microsoft System Center Configuration Manager nel server del sito.
+-   È necessario accedere al pacchetto di installazione del client di Endpoint Protection, **scepinstall.exe**. Tale pacchetto è disponibile nella cartella **Client** della cartella di installazione di Microsoft System Center Configuration Manager nel server del sito. In Windows 10 e Windows Server 2016 è installato Windows Defender. 
 
 -   Per verificare che il client di Endpoint Protection venga distribuito con la configurazione necessaria all'organizzazione, creare e quindi esportare i criteri antimalware. È quindi possibile specificare i criteri antimalware da usare quando si installa manualmente il client di Endpoint Protection. Per altre informazioni, vedere [How to Create and Deploy Antimalware Policies for Endpoint Protection in Configuration Manager](endpoint-antimalware-policies.md) (Come creare e distribuire criteri antimalware per Endpoint Protection in System Center Configuration Manager).
 
@@ -70,14 +71,16 @@ Nell'elenco seguente sono inclusi i prerequisiti necessari per installare il sof
 
 -   Se si vuole installare il client di Endpoint Protection con le definizioni più aggiornate, è necessario scaricarle dal [Microsoft Malware Protection Center](http://go.microsoft.com/fwlink/?LinkID=200965).
 
+>[!NOTE]
+> A partire da Configuration Manager 1802 non è più necessario che nei dispositivi Windows 10 sia installato l'agente di Endpoint Protection (SCEPInstall). Se è già installato nei dispositivi Windows 10, Configuration Manager lo rimuoverà. Gli amministratori possono rimuovere l'agente di Endpoint Protection nei dispositivi Windows 10 che eseguono almeno la versione client 1802. È possibile che SCEPInstall.exe sia ancora presente in alcuni computer in C:\Windows\ccmsetup. Non scaricarlo nelle nuove installazioni client. <!--503654-->
 ### <a name="how-to-install-the-endpoint-protection-client-software-on-the-reference-computer"></a>Come installare il software client Endpoint Protection nel computer di riferimento
-È possibile installare il client di Endpoint Protection in locale nel computer di riferimento a un prompt dei comandi. A tale scopo, è innanzitutto necessario ottenere il file di installazione **scepinstall.exe**. È inoltre possibile installare il client con un criterio antimalware preconfigurato o con un criterio antimalware esportato in precedenza.
+È possibile installare il client di Endpoint Protection in locale nel computer di riferimento a un prompt dei comandi. A tale scopo, è innanzitutto necessario ottenere il file di installazione **scepinstall.exe**. È anche possibile installare il client con criteri antimalware preconfigurati o criteri antimalware esportati in precedenza.
 
 ## <a name="to-install-the-endpoint-protection-client-from-a-command-prompt"></a>Per installare il client Endpoint Protection da un prompt dei comandi
 
 1.  Copiare **scepinstall.exe** dalla cartella **Client** nel supporto di installazione di System Center Configuration Manager nel computer in cui si vuole installare il software client di Endpoint Protection.
 
-2.  Aprire un prompt dei comandi con privilegi da amministratore, cercare la cartella in cui si trova **scepinstall.exe** e quindi eseguire il comando seguente aggiungendo eventuali proprietà aggiuntive della riga di comando:
+2.  Aprire un prompt dei comandi con privilegi di amministratore, cercare la cartella in cui si trova **scepinstall.exe** e quindi eseguire il comando seguente aggiungendo eventuali proprietà aggiuntive della riga di comando:
 
    ```
    scepinstall.exe
@@ -127,7 +130,7 @@ Dopo aver installato il client di Endpoint Protection nel computer di riferiment
 
 2.  Nella scheda **Home** della finestra di dialogo **System Center Endpoint Protection** verificare che **Protezione in tempo reale** sia impostato su **Attivato**.
 
-3.  Verificare che venga visualizzato **Aggiornato** per **Definizioni di virus e spyware**.
+3.  Verificare che venga visualizzato **Aggiornata** per **Virus and spyware definitions** (Definizioni di virus e spyware).
 
 4.  Per verificare che il computer di riferimento sia pronto per la creazione dell'immagine, in **Opzioni analisi**selezionare **Completo**e quindi **Avvia analisi**.
 
@@ -150,7 +153,7 @@ Per altre informazioni, vedere [Manage operating system images with System Cente
    ```
 
    > [!IMPORTANT]
-   >  Fare attenzione quando si esegue l'editor del Registro di sistema in questo modo: l'opzione -s in PsExec.exe esegue l'editor del Registro di sistema con privilegi LocalSystem.
+   >  Fare attenzione quando si esegue l'editor del Registro di sistema in questo modo. L'opzione -s in PsExec.exe esegue l'editor del Registro di sistema con privilegi LocalSystem.
 
 4.  Nell'editor del Registro di sistema cercare tutte le chiavi del Registro di sistema seguenti ed eliminarle.
 

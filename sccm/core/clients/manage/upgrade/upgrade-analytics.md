@@ -1,22 +1,23 @@
 ---
 title: Preparazione aggiornamenti
-titleSuffix: Configuration Manager
-description: "Integrare Upgrade Readiness con Configuration Manager. Accedere ai dati di compatibilità dell'aggiornamento nella console di amministrazione. Definire i dispositivi di destinazione per l'aggiornamento o la correzione."
-keywords: 
-author: mattbriggs
-ms.author: mabrigg
-manager: angerobe
-ms.date: 7/31/2017
+titleSuffix: System Center Configuration Manager
+description: Integrare Upgrade Readiness con Configuration Manager. Accedere ai dati di compatibilità dell'aggiornamento nella console di amministrazione. Definire i dispositivi di destinazione per l'aggiornamento o la correzione.
+keywords: ''
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: configuration-manager
-ms.service: 
-ms.technology: configmgr-client
+ms.service: ''
+ms.technology:
+- configmgr-client
 ms.assetid: 68407ab8-c205-44ed-9deb-ff5714451624
-ms.openlocfilehash: df2950551e527788aeb01d57cdbf01ad19817ccd
-ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
+ms.openlocfilehash: f9fec1723c5242485d23981bcb683e3a8e98bfd3
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="integrate-upgrade-readiness-with-system-center-configuration-manager"></a>Integrare Upgrade Readiness con System Center Configuration Manager
 
@@ -25,6 +26,10 @@ ms.lasthandoff: 11/17/2017
 Preparazione aggiornamenti (in precedenza Upgrade Analytics) fa parte di [Windows Analytics](https://www.microsoft.com/WindowsForBusiness/windows-analytics) e consente di valutare e analizzare la conformità dei dispositivi nell'ambiente per un aggiornamento a Windows 10. È possibile configurare la versione specifica. Lo strumento Preparazione aggiornamenti può essere integrato con Configuration Manager per accedere ai dati di compatibilità dell'aggiornamento dei client nella console di amministrazione di Configuration Manager. È possibile specificare come destinazione i dispositivi per l'aggiornamento o la correzione usando raccolte dinamiche create in base a questi dati.
 
 Preparazione aggiornamenti è una soluzione che viene eseguita in [Operations Management Suite (OMS)](/azure/operations-management-suite/operations-management-suite-overview). Per altre informazioni su Preparazione aggiornamenti, vedere [Manage Windows upgrades with Upgrade Readiness](/windows/deployment/upgrade/manage-windows-upgrades-with-upgrade-readiness) (Gestire gli aggiornamenti di Windows con Preparazione aggiornamenti).
+
+>[!WARNING]
+>Perché Preparazione aggiornamenti funzioni all'interno di Configuration Manager, è necessario eseguire l'aggiornamento a Configuration Manager versione 1802.  <!--507205--> Il connettore Preparazione aggiornamenti non funzionerà più nelle versioni di Configuration Manager precedenti alla 1802. 
+
 
 ## <a name="configure-clients"></a>Configurare i client
 
@@ -37,14 +42,14 @@ Come tutte le soluzioni di Windows Analytics, Preparazione aggiornamenti si basa
 La chiave ID commerciale e la telemetria di Windows possono essere configurate in **Impostazioni client**. Per altre informazioni, vedere [Usare Windows Analytics con Configuration Manager](../monitor-windows-analytics.md).
 
 >[!NOTE]
->In caso di problemi per cui Preparazione aggiornamenti non riceve i dati di telemetria dai dispositivi nell'ambiente nel modo previsto, è possibile risolvere alcuni di questi problemi usando lo [script di distribuzione di Preparazione aggiornamenti](/windows/deployment/upgrade/upgrade-readiness-deployment-script). Tuttavia, nella maggior parte degli ambienti in cui vengono distribuiti gli elementi della knowledge base corretti, sarà sufficiente configurare la chiave ID commerciale e la telemetria in **Impostazioni client**.
+>In caso di problemi per cui Preparazione aggiornamenti non riceve i dati di telemetria dai dispositivi nell'ambiente nel modo previsto, è possibile risolvere alcuni di questi problemi usando lo [script di distribuzione di Preparazione aggiornamenti](/windows/deployment/upgrade/upgrade-readiness-deployment-script). Tuttavia, nella maggior parte degli ambienti in cui vengono distribuiti gli elementi della knowledge base corretti, è sufficiente configurare la chiave ID commerciale e la telemetria in **Impostazioni client**.
 
 ## <a name="connect-configuration-manager-to-upgrade-readiness"></a>Connettere Configuration Manager a Preparazione aggiornamenti
 
 A partire da Current Branch versione 1706, viene usata la [Procedura guidata per i servizi di Azure](../../../servers/deploy/configure/azure-services-wizard.md) per semplificare il processo di configurazione dei servizi di Azure usati con Configuration Manager. Per connettere Configuration Manager a Preparazione aggiornamenti, è necessario creare la registrazione di un'app Azure AD di tipo *App Web/API* nel [portale di Azure](https://portal.azure.com). Per altre informazioni su come creare la registrazione di un'app, vedere [Registrare l'applicazione nel tenant di Azure Active Directory](/azure/active-directory/active-directory-app-registration). Nel **portale di Azure** sarà anche necessario concedere alla nuova app Web registrata autorizzazioni di *Collaboratore* per il gruppo di risorse che contiene l'area di lavoro OMS che ospita i dati di Preparazione aggiornamenti. La **Procedura guidata per i servizi di Azure** userà questa registrazione dell'app per consentire a Configuration Manager di comunicare in modo sicuro con Azure AD e connettere l'infrastruttura ai dati di Preparazione aggiornamenti.
 
 >[!IMPORTANT]
->Le autorizzazioni di *Collaboratore* devono essere concesse all'app stessa e non a un'identità utente di Azure AD. Il motivo è che è l'app registrata, e non un utente di Azure AD, ad accedere ai dati per conto dell'infrastruttura di Configuration Manager. A tale scopo, durante l'assegnazione dell'autorizzazione è necessario cercare il nome della registrazione dell'app nel pannello **Aggiungi utenti**. Questo processo è lo stesso che deve essere eseguito per [concedere a Configuration Manager autorizzazioni per OMS](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#provide-configuration-manager-with-permissions-to-oms) per le connessioni a [Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm). È necessario completare questi passaggi prima che la registrazione dell'app venga importata in Configuration Manager con la *Procedura guidata per i servizi di Azure*.
+>Le autorizzazioni di *Collaboratore* devono essere concesse all'app stessa e non a un'identità utente di Azure AD. Il motivo è che è l'app registrata, e non un utente di Azure AD, ad accedere ai dati per conto dell'infrastruttura di Configuration Manager. Per concedere le autorizzazioni, durante l'assegnazione dell'autorizzazione è necessario cercare il nome della registrazione dell'app nell'area **Aggiungi utenti**. Questo è lo stesso processo da seguire per [concedere a Configuration Manager autorizzazioni per OMS](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#provide-configuration-manager-with-permissions-to-oms) per le connessioni a [Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm). È necessario completare questi passaggi prima che la registrazione dell'app venga importata in Configuration Manager con la *Procedura guidata per i servizi di Azure*.
 
 ### <a name="use-the-azure-wizard-to-create-the-connection"></a>Usare la procedura guidata per Azure per creare la connessione
 
@@ -55,7 +60,7 @@ Nella pagina *Configurazione* vengono immessi automaticamente i valori seguenti 
 -  Gruppo di risorse di Azure
 -  Area di lavoro di Windows Analytics
 
-Saranno disponibili più di un gruppo di risorse o di un'area di lavoro solo se l'app Web Azure AD registrata ha autorizzazioni di *Collaboratore* per più di un gruppo di risorse o se il gruppo di risorse selezionato contiene più di un'area di lavoro OMS.
+Saranno disponibili più di un gruppo di risorse o di un'area di lavoro solo se l'app Web Azure AD registrata ha autorizzazioni di *Collaboratore* per più di un gruppo di risorse o se il gruppo di risorse selezionato ha più di un'area di lavoro OMS.
  
 ## <a name="view-and-use-upgrade-readiness-information-in-configuration-manager"></a>Visualizzare e usare le informazioni di Preparazione aggiornamenti in Configuration Manager
 

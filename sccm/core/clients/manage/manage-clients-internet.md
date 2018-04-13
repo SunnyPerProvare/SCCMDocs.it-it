@@ -1,25 +1,26 @@
 ---
-title: 'Gestire i client su Internet '
+title: Gestire i client su Internet
 titleSuffix: Configuration Manager
 description: Informazioni sulla gestione dei client con gateway di gestione cloud e sulla gestione basata su Internet in Configuration Manager.
-ms.date: 04/23/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-client
+ms.technology:
+- configmgr-client
 ms.assetid: c667d6af-80c4-485f-910c-896c0171fd00
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: c2650a2cdf7b1e6362688f48643d5ff37954d49b
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 31d43d855c1e7062e62a3d15fa5a79c4e4de915f
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="manage-clients-on-the-internet-with-configuration-manager"></a>Gestire i client in Internet con Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-In Configuration Manager, la maggior parte dei computer e dei server gestiti si trovano in genere fisicamente nella stessa rete interna privata o aziendale dei server del sistema del sito che eseguono le funzioni di gestione. È tuttavia possibile gestire i computer client all'esterno della rete aziendale se sono connessi a Internet senza che sia necessaria la connessione tramite reti private virtuali per raggiungere i server del sistema del sito.
+In Configuration Manager, la maggior parte dei computer e dei server gestiti si trovano in genere fisicamente nella stessa rete dei server del sistema del sito che eseguono le funzioni di gestione. Tuttavia, è possibile gestire i client esterni alla rete interna, quando sono connessi a internet. Questa possibilità non richiede che i client si connettano tramite VPN per raggiungere i server di sistema del sito.
 
 Configuration Manager offre due modi per gestire i client connessi a Internet:
 
@@ -27,46 +28,49 @@ Configuration Manager offre due modi per gestire i client connessi a Internet:
 
 -   Gestione client basata su Internet
 
+
 ## <a name="cloud-management-gateway"></a>Gateway di gestione cloud
 
-A partire dalla versione 1610, Configuration Manager introduce il gateway di gestione cloud. Questo nuovo metodo offre un modo per gestire i client basati su Internet usando una combinazione di un servizio cloud distribuito a Microsoft Azure e un nuovo ruolo del sistema del sito che comunica con il servizio. I client usano quindi il servizio per comunicare con Configuration Manager.
+Il gateway di gestione di cloud offre la gestione dei client basati su Internet. Usa una combinazione di un servizio cloud di Microsoft Azure e un nuovo ruolo del sistema del sito che comunica con il servizio. I client basati su Internet usano il servizio cloud per comunicare con Configuration Manager locale.
 
-Vantaggi:
+#### <a name="advantages"></a>Vantaggi  
 
--   Nessun investimento aggiuntivo in infrastrutture.
+-   Nessun investimento aggiuntivo in infrastrutture.  
 
--   Infrastruttura locale non esposta a Internet.
+-   Infrastruttura locale non esposta a Internet.  
 
--   Macchine virtuali cloud che eseguono il servizio completamente gestite da Azure e senza necessità di manutenzione.
+-   Macchine virtuali cloud che eseguono il servizio completamente gestite da Azure e senza necessità di manutenzione.  
 
--   Facilità di impostazione e configurazione nella console di Configuration Manager.
+-   Facilità di impostazione e configurazione nella console di Configuration Manager.  
 
-Svantaggi:
+#### <a name="disadvantages"></a>Svantaggi  
 
--   Costo di sottoscrizione al servizio cloud.
+-   Costo di sottoscrizione al servizio cloud.  
 
--   Invio dei dati di gestione tramite il servizio cloud.
+-   Invio dei dati di gestione tramite il servizio cloud.  
 
-Per altre informazioni, vedere [Plan for cloud management gateway](plan-cloud-management-gateway.md) (Pianificare il gateway di gestione cloud).
+Per altre informazioni, vedere [Plan for cloud management gateway](plan-cloud-management-gateway.md) (Pianificare il gateway di gestione cloud).  
+
+
 
 ## <a name="internet-based-client-management"></a>Gestione client basata su Internet
 
-Questo metodo si basa sui server del sistema del sito con connessione a Internet con cui i client comunicano ai fini della gestione. Questo metodo richiede che client e server del sistema del sito siano configurati per la gestione basata su Internet.
+Questo metodo si basa sui server del sistema del sito con connessione a Internet con cui i client comunicano ai fini della gestione. Richiede che client e server del sistema del sito siano configurati per la gestione basata su Internet.
 
-Vantaggi:
+#### <a name="advantages"></a>Vantaggi  
 
--   Nessuna dipendenza del servizio cloud.
+-   Nessuna dipendenza del servizio cloud.  
 
--   Nessun costo aggiuntivo associato alla sottoscrizione a un servizio cloud.
+-   Nessun costo aggiuntivo associato alla sottoscrizione a un servizio cloud.  
 
--   Controllo completo di server e ruoli che offrono il servizio.
+-   Controllo completo di server e ruoli che offrono il servizio.  
 
-Svantaggi:
+#### <a name="disadvantages"></a>Svantaggi  
 
--   Necessità di un investimento aggiuntivo in infrastrutture.
+-   Necessità di un investimento aggiuntivo in infrastrutture.  
 
--   Carico e costo operativo di un'infrastruttura aggiuntiva.
+-   Carico e costo operativo di un'infrastruttura aggiuntiva.  
 
--   Necessità di esporre l'infrastruttura a Internet.
+-   Necessità di esporre l'infrastruttura a Internet.  
 
-Per altre informazioni, vedere [Plan for Internet-based client management](plan-internet-based-client-management.md) (Pianificare la gestione client basata su Internet).
+Per altre informazioni, vedere [Pianificare la gestione client basata su Internet](plan-internet-based-client-management.md).  
