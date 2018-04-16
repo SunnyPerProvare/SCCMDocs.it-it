@@ -12,8 +12,8 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 23e1e4dc-623a-4521-ad04-ae9482927097
-caps.latest.revision: 
-caps.handback.revision: 
+caps.latest.revision: 20
+caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
@@ -374,13 +374,13 @@ Queste impostazioni si riferiscono ai dispositivi che eseguono Windows 10 e vers
 |**Consenti riempimento automatico**|Consente l'uso della funzionalità di riempimento automatico del browser Microsoft Edge.|  
 |**Consenti strumento per la gestione delle password**|Consentire l'uso della funzionalità dello strumento per la gestione delle password del browser Microsoft Edge.|  
 |**Posizione elenco siti modalità Enterprise**|Specifica dove trovare l'elenco di siti Web che si aprono in modalità Enterprise. L'elenco non è modificabile dagli utenti.|
-|**Blocca l'accesso ai flag Informazioni su**|Impedire l'accesso dell'utente finale alla pagina about:flags in Edge contenente impostazioni sperimentali e per sviluppatori.|
+|**Blocca l'accesso ai flag Informazioni su**|Impedire l'accesso dell'utente finale alla pagina about:flags in Microsoft Edge contenente impostazioni sperimentali e per sviluppatori.|
 |**Override del prompt SmartScreen**|Consentire all'utente finale di ignorare gli avvisi del filtro SmartScreen relativi a siti Web potenzialmente dannosi.|
 |**Override del prompt SmartScreen per i file**|Consentire all'utente finale di ignorare gli avvisi del filtro SmartScreen relativi al download di file potenzialmente dannosi.|
 |**Indirizzo IP localhost WebRtc**|Bloccare la visualizzazione dell'indirizzo IP localhost dell'utente quando si effettuano chiamate telefoniche tramite il protocollo Web RTC.|
 |**Motore di ricerca predefinito**|Specificare il motore di ricerca predefinito da usare. Gli utenti finali possono modificare questo valore in qualsiasi momento.|
 |**URL XML OpenSearch**|È possibile usare un file XML OpenSearch per creare un servizio di ricerca per Microsoft Edge.<br>Per altre informazioni, vedere [OpenSearch](https://msdn.microsoft.com/library/windows/desktop/dd940337).|
-|**Homepages (desktop only)** (Home page (solo desktop))|Aggiungere un elenco di siti da usare come home page nel browser Edge (solo desktop).|  
+|**Homepages (desktop only)** (Home page (solo desktop))|Aggiungere un elenco di siti da usare come home page nel browser Microsoft Edge (solo desktop).|  
 
 
 ### <a name="windows-defender"></a>Windows Defender

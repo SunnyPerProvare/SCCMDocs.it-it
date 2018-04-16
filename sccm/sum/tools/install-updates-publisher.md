@@ -67,7 +67,7 @@ Si supponga, ad esempio, di creare un aggiornamento software con un titolo in in
 Quando si pubblica un aggiornamento software, è possibile specificare la lingua del relativo file binario. È anche possibile specificare che il file binario è indipendente dalla lingua. Sono supportate le lingue seguenti:
 
 -   Arabo
--   Cinese (Hong Kong R.A.S)
+-   Cinese (RAS di Hong Kong)
 -   Cinese (tradizionale)
 -   Cinese (semplificato)
 -   Ceco

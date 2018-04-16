@@ -7,11 +7,12 @@ ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cd74e5f5-33f6-4566-8c9d-d6a93bfe71ed
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: mestew
 ms.author: mstewart
 manager: angrobe
@@ -39,7 +40,7 @@ In questo argomento vengono forniti dettagli tecnici sul supporto per le lingue 
 |Lingua server|ID impostazioni locali (LCID)|Codice di tre lettere|  
 |---------------------|------------------------|-----------------------|  
 |Inglese (predefinito)|0409|ITA|  
-|Cinese (tradizionale, Hong Kong SAR)|0c04|ZHH|  
+|Cinese (tradizionale, RAS di Hong Kong)|0c04|ZHH|  
 |Cinese (semplificato)|0804|CHS|  
 |Cinese (tradizionale, Taiwan)|0404|CHT|  
 |Ceco|0405|CSY|  
@@ -63,7 +64,7 @@ In questo argomento vengono forniti dettagli tecnici sul supporto per le lingue 
 |Lingua client|ID impostazioni locali (LCID)|Codice di tre lettere|  
 |---------------------|------------------------|-----------------------|  
 |Inglese (predefinito)|0409|ENG|  
-|Cinese (tradizionale, Hong Kong-R.A.S.)|0c04|ZHH|  
+|Cinese (tradizionale, RAS di Hong Kong)|0c04|ZHH|  
 |Cinese (semplificato)|0804|CHS|  
 |Cinese (tradizionale, Taiwan)|0404|CHT|  
 |Ceco|0405|CSY|  
