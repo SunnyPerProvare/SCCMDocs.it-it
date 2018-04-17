@@ -7,19 +7,20 @@ ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 78a0aecc-f775-451e-aa05-56377ec91b1f
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: c176955c3fcfe40f2089b84c50a982906b59f04d
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: c3dcb39b50293d5c221a1b8b13fcfbf8aa53ad83
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="how-to-configure-hardware-inventory-for-mobile-devices-enrolled-by-microsoft-intune-and-system-center-configuration-manager"></a>Come configurare l'inventario hardware per i dispositivi mobili registrati tramite Microsoft Intune e System Center Configuration Manager
 
@@ -27,7 +28,7 @@ ms.lasthandoff: 10/12/2017
 
 In Configuration Manager è possibile raccogliere l'inventario hardware nei dispositivi iOS, Android e Windows usando il connettore Microsoft Intune. Per informazioni su come configurare l'inventario hardware, vedere [Come estendere l'inventario hardware in System Center Configuration Manager](../../core/clients/manage/inventory/extend-hardware-inventory.md).  
 
- Per informazioni su come registrare i dispositivi in Microsoft Intune, vedere [Gestire i dispositivi mobili con Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).  
+ Per informazioni su come registrare i dispositivi in Microsoft Intune, vedere [Gestire i dispositivi mobili con Microsoft Intune](https://technet.microsoft.com/library/dn646962.aspx).  
 
 ## <a name="hardware-inventory-for-mobile-devices"></a>Inventario hardware per dispositivi mobili  
  Nelle tabelle seguenti sono elencate le classi di inventario disponibili per l'inventario hardware nelle piattaforme per dispositivi mobili più comuni.  
@@ -36,7 +37,7 @@ In Configuration Manager è possibile raccogliere l'inventario hardware nei disp
 
 |Classe di inventario hardware|iOS|  
 |------------------------------|---------|  
-|Nome|Device_ComputerSystem.DeviceName|  
+|Name|Device_ComputerSystem.DeviceName|  
 |ID univoco del dispositivo|Device_ComputerSystem.UDID|  
 |Numero di serie|Device_ComputerSystem.SerialNumber|  
 |Indirizzo di posta elettronica|Device_Email.OwnerEmailAddress|  
@@ -64,7 +65,7 @@ In Configuration Manager è possibile raccogliere l'inventario hardware nei disp
 
 |Classe di inventario hardware|Android|  
 |------------------------------|-------------|  
-|Nome|Non applicabile|  
+|Name|Non applicabile|  
 |ID univoco del dispositivo|Non applicabile|  
 |Numero di serie|Device_ComputerSystem.SerialNumber|  
 |Indirizzo di posta elettronica|Non applicabile|  
@@ -89,7 +90,7 @@ In Configuration Manager è possibile raccogliere l'inventario hardware nei disp
 
 |Classe di inventario hardware|Windows Phone 8 e Windows Phone 8.1|  
 |------------------------------|-------------------------------------------|  
-|Nome|Device_ComputerSystem.DeviceName|  
+|Name|Device_ComputerSystem.DeviceName|  
 |ID univoco del dispositivo|Device_ComputerSystem.DeviceClientID|  
 |Numero di serie|Non applicabile|  
 |Indirizzo di posta elettronica|Device_Email.OwnerEmailAddress|  
@@ -114,7 +115,7 @@ In Configuration Manager è possibile raccogliere l'inventario hardware nei disp
 
 |Classe di inventario hardware|Windows RT|  
 |------------------------------|----------------|  
-|Nome|Device_ComputerSystem.DeviceName|  
+|Name|Device_ComputerSystem.DeviceName|  
 |ID univoco del dispositivo|Device_ComputerSystem.DeviceName|  
 |Numero di serie|Non applicabile|  
 |Indirizzo di posta elettronica|Device_Email.OwnerEmailAddress|  

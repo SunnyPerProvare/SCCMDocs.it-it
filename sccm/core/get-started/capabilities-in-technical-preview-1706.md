@@ -1,11 +1,12 @@
 ---
 title: Technical Preview 1706
 titleSuffix: Configuration Manager
-description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1706 per System Center Configuration Manager."
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1706 per System Center Configuration Manager.
 ms.custom: na
 ms.date: 09/15/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -14,11 +15,11 @@ ms.assetid: ca3b4714-2a16-495e-8a17-1d87991d5556
 author: erikje
 ms.author: erikje
 manager: angrobe
-ms.openlocfilehash: cfb14ebb7b4f7eb9a008ad4464978778e57514a6
-ms.sourcegitcommit: d029b373113051634ed030545348a458eb7b25f4
+ms.openlocfilehash: 9b44f5659caca86150de68d43001c06d9d1a831f
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="capabilities-in-technical-preview-1706-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1706 per System Center Configuration Manager
 
@@ -106,7 +107,7 @@ Per installare un server del sito in modalità Passivo, usare **Creazione guidat
 
 -   Il computer che eseguirà il server del sito in modalità Passivo:
 
-    -   Deve soddisfare i [prerequisiti per l'installazione di un sito primario](https://docs.microsoft.com/en-us/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#primary-sites-and-the-central-administration-site).
+    -   Deve soddisfare i [prerequisiti per l'installazione di un sito primario](https://docs.microsoft.com/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#primary-sites-and-the-central-administration-site).
 
     -   Esegue l'installazione usando file di origine che corrispondono alla versione del server del sito in modalità Attivo.
 

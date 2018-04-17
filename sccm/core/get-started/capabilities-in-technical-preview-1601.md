@@ -1,26 +1,27 @@
 ---
-title: "Funzionalità nella Technical Preview 1601"
+title: Funzionalità nella Technical Preview 1601
 titleSuffix: Configuration Manager
-description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1601 per System Center Configuration Manager."
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1601 per System Center Configuration Manager.
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aae1cf2f-2c04-4f68-a03a-f4a925433c09
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: erikje
 ms.author: erikje
 manager: angrobe
 robots: noindex,nofollow
-ms.openlocfilehash: 70efb483ac15ba14497b884ed753032e8e48a4b5
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: b17a89ab08c99a1c3cd8a501e7d58d5b42a110a3
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="capabilities-in-technical-preview-1601-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1601 per System Center Configuration Manager
 
@@ -79,11 +80,11 @@ Nella Technical Preview 1601 è stato aggiunto il supporto delle funzionalità s
 
     -   Sottoscrizione di Microsoft Intune. La sottoscrizione di Microsoft Intune deve essere configurata nella console di Configuration Manager.  
 
-    -   [Prerequisiti per la registrazione automatica in Azure AD](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
+    -   [Prerequisiti per la registrazione automatica in Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
 
     Per usare l'opzione, è necessario creare un criterio di conformità in Configuration Manager con le regole specifiche descritte di seguito e impostare un criterio di accesso condizionale nella console di Intune.  Inoltre, per assicurarsi che l'accesso sia consentito solo ai PC conformi, è necessario impostare il requisito PC Windows per l'opzione **I dispositivi devono essere conformi**. Di seguito sono descritte le regole dei criteri di conformità applicabili ai PC gestiti da System Center Configuration Manager.  
 
-    -   **Richiedi registrazione in Azure Active Directory:** questa regola controlla se il dispositivo dell'utente è aggiunto all'area di lavoro in Azure AD e in caso contrario il dispositivo viene registrato automaticamente in Azure AD. La registrazione automatica è supportata solo in Windows 8.1. Per i PC con Windows 7, distribuire un file MSI per eseguire la registrazione automatica. Per altre informazioni, vedere [qui](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
+    -   **Richiedi registrazione in Azure Active Directory:** questa regola controlla se il dispositivo dell'utente è aggiunto all'area di lavoro in Azure AD e in caso contrario il dispositivo viene registrato automaticamente in Azure AD. La registrazione automatica è supportata solo in Windows 8.1. Per i PC con Windows 7, distribuire un file MSI per eseguire la registrazione automatica. Per altre informazioni, vedere [qui](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
 
     -   **Tutti gli aggiornamenti richiesti installati con una scadenza maggiore di X giorni:** questa regola controlla se il dispositivo dell'utente dispone di tutti gli aggiornamenti necessari **specificati nella regola Richiedi aggiornamenti automatici** entro la scadenza e il periodo di tolleranza specificati dall'utente e installa automaticamente eventuali aggiornamenti necessari in sospeso.  
 
@@ -183,7 +184,7 @@ Un client è online se è attualmente connesso a un ruolo del sistema del sito d
 
 -   È necessario avere distribuito un'applicazione iOS che supporta la configurazione dell'applicazione.  
 
-#### <a name="try-it-out"></a>Prova subito!  
+#### <a name="try-it-out"></a>Verifica  
  Una volta soddisfatti i prerequisiti sopra indicati, è necessario creare un'applicazione Configuration Manager che usa un tipo di distribuzione iOS. L'app usata deve supportare la configurazione dell'applicazione. Fare riferimento alla documentazione del fornitore dell'applicazione per informazioni su quali elementi specifici (coppie nome/valore), è possibile configurare.  
 
  Associare quindi i criteri di configurazione dell'app al tipo di distribuzione iOS durante la distribuzione di app. È anche possibile distribuire i criteri dal nodo **Criteri di configurazione dell'app**, selezionando un'app e una raccolta esistente come destinazione.  

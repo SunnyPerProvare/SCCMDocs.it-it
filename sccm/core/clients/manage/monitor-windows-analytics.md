@@ -1,25 +1,26 @@
 ---
 title: Monitorare i client con Windows Analytics
 titleSuffix: Configuration Manager
-description: "Windows Analytics è un set di soluzioni eseguite in Operations Management Suite, che consentono di ottenere indicazioni preziose sullo stato corrente dell'ambiente sfruttando i dati di telemetria di Windows segnalati dai dispositivi nell'ambiente."
+description: Windows Analytics è un set di soluzioni eseguite in Operations Management Suite, che consentono di ottenere indicazioni preziose sullo stato corrente dell'ambiente sfruttando i dati di telemetria di Windows segnalati dai dispositivi nell'ambiente.
 ms.custom: na
 ms.date: 01/02/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-client
+ms.technology:
+- configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: CF35CE87-3BA8-4A84-9BC8-ABCEA4666212
-caps.latest.revision: "23"
+caps.latest.revision: 23
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 6e0b6ec99755b89213b540f22315038911b8eb29
-ms.sourcegitcommit: f1535281b2c3fecff773b722c3f7590bf6ba10a0
+ms.openlocfilehash: 15b1d07f35f774f3ec8f082a86c90ecb989a438e
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="use-windows-analytics-with-configuration-manager"></a>Usare Windows Analytics con Configuration Manager
 
@@ -64,6 +65,6 @@ Per altre informazioni e dettagli su come configurare e connettersi a Preparazio
 
 ## <a name="use-windows-analytics-to-identify-gaps-in-windows-information-protection-policies"></a>Usare Windows Analytics per identificare le lacune nei criteri di Windows Information Protection
 
-I dispositivi con Windows 10 versione 1703 e successive configurati con criteri di [Windows Information Protection](https://docs.microsoft.com/en-us/windows/threat-protection/windows-information-protection/protect-enterprise-data-using-wip) segnalano i dati di telemetria nelle applicazioni che accedono ai dati aziendali dell'ambiente, ma che non sono incluse nelle regole di applicazione dei criteri di Windows Information Protection. Tali applicazioni possono essere necessarie agli utenti al fine di mantenere una produttività elevata ma Windows Information Protection ne blocca l'accesso. Le informazioni sull'accesso ai dati aziendali da parte degli utenti sono utili nella gestione dei criteri di Windows Information Protection in Configuration Manager. 
+I dispositivi con Windows 10 versione 1703 e successive configurati con criteri di [Windows Information Protection](https://docs.microsoft.com/windows/threat-protection/windows-information-protection/protect-enterprise-data-using-wip) segnalano i dati di telemetria nelle applicazioni che accedono ai dati aziendali dell'ambiente, ma che non sono incluse nelle regole di applicazione dei criteri di Windows Information Protection. Tali applicazioni possono essere necessarie agli utenti al fine di mantenere una produttività elevata ma Windows Information Protection ne blocca l'accesso. Le informazioni sull'accesso ai dati aziendali da parte degli utenti sono utili nella gestione dei criteri di Windows Information Protection in Configuration Manager. 
 
 Accedere ai dati di Windows Information Protection mediante la [query di Operations Management Suite](https://go.microsoft.com/fwlink/?linkid=849952) seguente.

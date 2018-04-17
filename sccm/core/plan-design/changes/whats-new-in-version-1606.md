@@ -1,25 +1,26 @@
 ---
-title: "Novità della versione 1606"
+title: Novità della versione 1606
 titleSuffix: Configuraton Manager
-description: "Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1606 di System Center Configuration Manager."
+description: Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1606 di System Center Configuration Manager.
 ms.custom: na
 ms.date: 12/30/2016
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: df2e57b9-6445-4067-98e7-ace85d4e6aa6
-caps.latest.revision: "40"
+caps.latest.revision: 40
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: e26519de8ce0b905fd52ca6ab0762a406d2f1e2c
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 9c948e0ff84c4741d77b9096e52d3abd765aba7b
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="what39s-new-in-version-1606-of-system-center-configuration-manager"></a>Novità della versione 1606 di System Center Configuration Manager
 
@@ -89,7 +90,7 @@ Per spostarsi tra i vari nodi di un'area di lavoro, è ora possibile immettere l
 Di seguito sono riportate le modifiche del nodo Amministrazione nella console di Configuration Manager:
 ### <a name="oms-connector"></a>Connettore OMS
 
-È ora possibile connettere le raccolte di Configuration Manager da System Center Configuration Manager a [Microsoft Operations Management Suite (OMS)](https://azure.microsoft.com/en-us/documentation/articles/operations-management-suite-overview/). In questo modo i dati, ad esempio le raccolte delle distribuzioni di Configuration Manager, sono visibili in OMS. Per altre informazioni, vedere [Sincronizzazione dei dati da Configuration Manager a Microsoft Operations Management Suite](../../../core/clients/manage/sync-data-microsoft-operations-management-suite.md).
+È ora possibile connettere le raccolte di Configuration Manager da System Center Configuration Manager a [Microsoft Operations Management Suite (OMS)](https://azure.microsoft.com/documentation/articles/operations-management-suite-overview/). In questo modo i dati, ad esempio le raccolte delle distribuzioni di Configuration Manager, sono visibili in OMS. Per altre informazioni, vedere [Sincronizzazione dei dati da Configuration Manager a Microsoft Operations Management Suite](../../../core/clients/manage/sync-data-microsoft-operations-management-suite.md).
 
 Il connettore OMS è una funzionalità di versione non definitiva. Per abilitarla, vedere [Usare le funzionalità di versioni non definitive degli aggiornamenti](../../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease).
 
@@ -108,7 +109,7 @@ Il sistema di gestione dei dispositivi mobili (MDM) locale supporta ora una nuov
 
 ### <a name="manage-apps-from-the-windows-store-for-business"></a>Gestire le app da Windows Store per le aziende
 
-In [Windows Store per le aziende](https://www.microsoft.com/business-store) è possibile trovare e acquistare app Windows per l'organizzazione, singolarmente o con Volume Purchase Program. Collegando lo store a Configuration Manager, è possibile sincronizzare l'elenco delle app acquistate, visualizzarle nella console di Configuration Manager e distribuirle come qualsiasi altra app.
+In [Windows Store per le aziende](https://www.microsoft.com/business-store) è possibile trovare e acquistare app Windows per l'organizzazione, singolarmente o con Volume Purchase Program. Collegando lo Store a Configuration Manager, è possibile sincronizzare l'elenco delle app acquistate, visualizzarle nella console di Configuration Manager e distribuirle come qualsiasi altra app.
 
 Per informazioni dettagliate, vedere [Gestire le app da Windows Store per le aziende con System Center Configuration Manager](../../../apps/deploy-use/manage-apps-from-the-windows-store-for-business.md).
 
@@ -208,7 +209,7 @@ Endpoint Protection facilita la gestione e il monitoraggio di Windows Defender A
 Per informazioni dettagliate, vedere [Windows Defender Advanced Threat Protection](../../../protect/deploy-use/windows-defender-advanced-threat-protection.md).
 
 ### <a name="device-categories"></a>Categorie di dispositivi
-È possibile creare categorie di dispositivi da usare per inserire automaticamente i dispositivi nelle raccolte di dispositivi quando si usa Configuration Manager con Microsoft Intune. Agli utenti verrà quindi richiesto di scegliere una categoria di dispositivo quando eseguono la registrazione di un dispositivo in Intune. È anche possibile modificare la categoria di un dispositivo dalla console di Configuration Manager.
+È possibile creare categorie di dispositivi da usare per inserire automaticamente i dispositivi nelle raccolte di dispositivi quando si usa Configuration Manager con Microsoft Intune. Agli utenti verrà quindi richiesto di scegliere una categoria di dispositivi quando eseguono la registrazione di un dispositivo in Intune. È anche possibile modificare la categoria di un dispositivo dalla console di Configuration Manager.
 
 Per informazioni dettagliate, vedere [Come classificare automaticamente i dispositivi in raccolte con System Center Configuration Manager](../../../core/clients/manage/collections/automatically-categorize-devices-into-collections.md).
 

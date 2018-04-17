@@ -1,25 +1,26 @@
 ---
-title: "Funzionalità nella Technical Preview 1609"
+title: Funzionalità nella Technical Preview 1609
 titleSuffix: Configuration Manager
-description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1609 per System Center Configuration Manager."
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1609 per System Center Configuration Manager.
 ms.custom: na
 ms.date: 01/23/2017
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.topic: article
 ms.assetid: e2a59116-b2e5-4dd2-90eb-0b8a5eb50b56
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: erikje
 ms.author: erikje
 manager: angrobe
-ms.openlocfilehash: e1cceae5f73d003be2fe64df9e6dbaa7badaf0c7
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: 4beca8479e5adbfa24b597769b792fd91bed9a2c
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="capabilities-in-technical-preview-1609-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1609 per System Center Configuration Manager
 
@@ -70,7 +71,7 @@ In questa versione [Integrazione di Windows Store per le aziende](/sccm/apps/dep
 - Ora è possibile avviare una sincronizzazione immediata tra Windows Store per le aziende e Configuration Manager.
 - È ora possibile modificare la chiave privata del client ottenuta da Azure Active Directory.
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 
 #### <a name="purchase-and-sync-a-paid-online-licensed-app"></a>Acquisto e sincronizzare di un'app con licenza online a pagamento
 
@@ -95,7 +96,7 @@ La procedura per creare e distribuire un'applicazione di Configuration Manager d
 
 Sono state aggiunte molte nuove impostazioni che è possibile usare negli elementi di configurazione relativi a diverse piattaforme di dispositivi.
 Si tratta di impostazioni che in precedenza esistevano nella configurazione autonoma di Microsoft Intune, rese ora disponibili per Intune con Configuration Manager.
-Per assistenza con queste impostazioni, aprire [Gestire impostazioni e funzionalità nei dispositivi con i criteri di Microsoft Intune](https://docs.microsoft.com/en-us/intune/deploy-use/manage-settings-and-features-on-your-devices-with-microsoft-intune-policies) e selezionare il sottoargomento relativo alle impostazioni per la piattaforma desiderata.
+Per assistenza con queste impostazioni, aprire [Gestire impostazioni e funzionalità nei dispositivi con i criteri di Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/manage-settings-and-features-on-your-devices-with-microsoft-intune-policies) e selezionare il sottoargomento relativo alle impostazioni per la piattaforma desiderata.
 
 
 ### <a name="new-settings-for-android-devices"></a>Nuove impostazioni per i dispositivi Android

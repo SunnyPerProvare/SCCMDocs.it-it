@@ -7,20 +7,21 @@ ms.date: 09/12/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9126d188-7780-45a4-b21d-7fcf4fad7da2
-caps.latest.revision: "0"
-caps.handback.revision: "0"
+caps.latest.revision: 0
+caps.handback.revision: 0
 author: NathBarn
 ms.author: NathBarn
 manager: angrobe
-ms.openlocfilehash: 79d1b3fed3baa74c8ad195925ccda35713cb8865
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 0b1d4993e6ddb2301121a1e32b1672425e919dea
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="apply-settings-to-android-for-work-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Applicare le impostazioni alle app Android for Work con i criteri di configurazione delle app in System Center Configuration Manager
 
@@ -35,7 +36,7 @@ ms.lasthandoff: 10/12/2017
 Se l'utente immette le impostazioni in modo errato, il carico di lavoro per la risoluzione ricade sul supporto tecnico e la distribuzione delle app risulta lenta. Per evitare questi problemi, è possibile usare criteri di configurazione delle app per distribuire le impostazioni necessarie agli utenti prima che questi eseguano l'app. Le impostazioni vengono associate a un utente in modo automatico. L'utente non deve eseguire nessuna operazione.
 Anziché distribuire i criteri di configurazione direttamente a utenti e dispositivi, si associano i criteri a un tipo di distribuzione quando si distribuisce l'app. Le impostazioni dei criteri vengono applicate ogni volta che l'app controlla se sono disponibili, in genere alla prima esecuzione dell'app stessa.
 
-I criteri di configurazione delle app per Android sono disponibili solo nei dispositivi che eseguono Android for Work e riguardano le app approvate per lo store Play for Work. Per informazioni dettagliate sulle app Android acquistate con Volume Purchase Program, vedere [Come distribuire app a dispositivi Android for Work con Intune](https://docs.microsoft.com/en-us/intune/deploy-use/android-for-work-apps).
+I criteri di configurazione delle app per Android sono disponibili solo nei dispositivi che eseguono Android for Work e riguardano le app approvate per lo store Play for Work. Per informazioni dettagliate sulle app Android acquistate con Volume Purchase Program, vedere [Come distribuire app a dispositivi Android for Work con Intune](https://docs.microsoft.com/intune/deploy-use/android-for-work-apps).
 
 Per altre informazioni sui tipi di installazione delle app, vedere l'[introduzione alla gestione delle applicazioni](/sccm/apps/understand/introduction-to-application-management).
 
