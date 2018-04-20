@@ -3,7 +3,7 @@ title: Gestire le sequenze di attività
 titleSuffix: Configuration Manager
 description: Creare, modificare, distribuire, importare ed esportare sequenze di attività per gestirle e automatizzarle nel proprio ambiente.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: nac
 ms.suite: na
@@ -15,12 +15,12 @@ ms.assetid: a1f099f1-e9b5-4189-88b3-f53e3b4e4add
 caps.latest.revision: 10
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 262bfa3991bbd95fad779da9520358d527a42b07
-ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
+manager: dougeby
+ms.openlocfilehash: 9ed5a94d644aa0bdb7d63c3b976da7dd566dfedd
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-system-center-configuration-manager"></a>Gestire le sequenze di attività per automatizzare le attività in System Center Configuration Manager
 
@@ -483,8 +483,12 @@ Se si vuole che le variabili con ambito computer e raccolta non siano visibili n
 6.  Dopo aver aggiunto tutte le variabili alla raccolta, fare clic su **OK**.  
 
 ## <a name="add-child-task-sequences-to-a-task-sequence"></a>Aggiungere sequenze di attività figlio a una sequenza di attività
+<!--1261338-->
+A partire da Configuration Manager versione 1710, è possibile aggiungere un nuovo passaggio della sequenza di attività che esegue un'altra sequenza di attività. Questo passaggio crea una relazione padre-figlio tra le sequenze di attività. Questo passaggio consente di creare più sequenze di attività modulari riusabili.  
 
-A partire da Configuration Manager versione 1710, è possibile aggiungere un nuovo passaggio della sequenza di attività che esegue un'altra sequenza di attività. Questo passaggio crea una relazione padre-figlio tra le sequenze di attività. Questo passaggio consente di creare più sequenze di attività modulari riusabili.
+> [!Note]  
+> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Abilitare le funzionalità facoltative degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
 
 Quando si aggiunge una sequenza di attività figlio a una sequenza di attività, tenere presente quanto segue:
 
