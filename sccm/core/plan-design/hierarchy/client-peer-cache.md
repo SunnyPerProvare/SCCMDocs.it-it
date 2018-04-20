@@ -3,7 +3,7 @@ title: Peer cache per i client
 titleSuffix: Configuration Manager
 description: Usare la peer cache per i percorsi di origine del contenuto del client quando si distribuiscono contenuti con System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/07/2017
+ms.date: 04/10/2018
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -12,24 +12,30 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 86cd5382-8b41-45db-a4f0-16265ae22657
-caps.latest.revision: 
+caps.latest.revision: 3
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 424f4030f2dd2a337a29d48ca831fa3a791de610
-ms.sourcegitcommit: e121d8d3dd82b9f2dde2cb5206cbee602ab8e107
+manager: dougeby
+ms.openlocfilehash: 99eef9faf6ac66f65d16020b703e3a64d9beb9d0
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-A partire da System Center Configuration Manager versione 1610, è possibile usare la **peer cache** per gestire la distribuzione del contenuto ai client in posizioni remote. La peer cache è una soluzione integrata di Configuration Manager che consente ai client di condividere i contenuti con altri client direttamente dalla cache locale.   
+<!--1101436-->
+Usare la **peer cache** per gestire la distribuzione di contenuti ai client in posizioni remote. La peer cache è una soluzione integrata di Configuration Manager che consente ai client di condividere i contenuti con altri client direttamente dalla cache locale.   
 
 > [!TIP]  
-> Questa funzionalità è stata introdotta per la prima volta nella versione 1610 come [versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1710, questa funzionalità non è più in versione non definitiva.
+> Questa funzionalità è stata introdotta per la prima volta nella versione 1610 come [versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1710, questa funzionalità non è più in versione non definitiva.  
+
+
+> [!Note]  
+> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Abilitare le funzionalità facoltative degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
 
 ## <a name="overview"></a>Panoramica
 Un client Peer Cache è un client Gestione configurazione che è in grado di usare Peer Cache. Un client Peer Cache che ha del contenuto che può condividere con altri client è un'origine di Peer Cache.
@@ -38,7 +44,7 @@ Un client Peer Cache è un client Gestione configurazione che è in grado di usa
     -  Deve essere aggiunto a un dominio. Tuttavia, un client che non è aggiunto a un dominio può ottenere contenuto da un'origine di Peer Cache non aggiunta al dominio.
     -  Deve essere un membro del gruppo di limiti attuali del client che cerca il contenuto. Quando un client usa il fallback per cercare contenuto da un gruppo di limiti vicino, nell'elenco dei percorsi di origine contenuto non è incluso un client peer cache di un gruppo di limiti vicino. Per altre informazioni sui gruppi di limiti correnti e adiacenti, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups##a-namebkmkboundarygroupsa-boundary-groups).
  - Il client di Configuration Manager conserva ogni tipo di contenuto nella cache che può essere usato da altri client tramite peer cache, ad esempio file di Office 365 e file di installazione rapida.<!--SMS.500850-->
- -  La peer cache non sostituisce l'uso di altre soluzioni, come BranchCache. Viene infatti usata insieme ad altre soluzioni per aumentare il numero delle possibili soluzioni tradizionali di distribuzione del contenuto, ad esempio i punti di distribuzione. La peer cache è una soluzione personalizzata che non dipende da BranchCache.  Se si non abilita o non si usa Windows BranchCache, la peer cache funziona comunque.
+ -  La peer cache non sostituisce l'uso di altre soluzioni, come BranchCache. Viene infatti usata insieme ad altre soluzioni per aumentare il numero delle possibili soluzioni tradizionali di distribuzione del contenuto, ad esempio i punti di distribuzione. La peer cache è una soluzione personalizzata che non dipende da BranchCache. Se si non abilita o non si usa Windows BranchCache, la peer cache funziona comunque.
 
 ### <a name="operations"></a>Operazioni
 
@@ -82,7 +88,7 @@ Usare questo report per visualizzare i dettagli relativi al rifiuto per un tipo 
 3. **Peer cache source content rejection details** (Rifiuto di contenuto di origine di peer cache - dettagli):   
   Usare questo report per visualizzare informazioni sul contenuto richiesto dal client al momento del rifiuto.
 
- - **Problema noto**: non è possibile selezionare i parametri disponibili, ma è necessario immetterli manualmente. Immettere il valore per *Rejection Type* (Tipo di rifiuto) come visualizzato nel report **Rifiuto di contenuto di origine di peer cache**. Immettere quindi il valore per *ID risorsa* per l'origine contenuto sulla quale si vogliono più informazioni.  Per trovare l'ID risorsa dell'origine di contenuto:  
+ - **Problema noto**: non è possibile selezionare i parametri disponibili, ma è necessario immetterli manualmente. Immettere il valore per *Rejection Type* (Tipo di rifiuto) come visualizzato nel report **Rifiuto di contenuto di origine di peer cache**. Immettere quindi il valore per *ID risorsa* per l'origine contenuto sulla quale si vogliono più informazioni. Per trovare l'ID risorsa dell'origine di contenuto:  
 
     1. Trovare il nome del computer visualizzato come *Origine di peer cache* nei risultati del report **Rifiuto di contenuto di origine di peer cache per condizione**.  
     2. Passare quindi ad **Asset e conformità** > **Dispositivi** e cercare il nome del computer. Usare il valore della colonna ID risorsa.  
@@ -93,7 +99,7 @@ Usare questo report per visualizzare i dettagli relativi al rifiuto per un tipo 
 
 -   I client possono trasferire contenuti solo dai client della peer cache che si trovano nel relativo gruppo di limiti corrente.
 
--   Prima della versione 1706, ogni sito in cui i client usano la peer cache doveva essere configurato con un [account di accesso alla rete](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account). A partire dalla versione 1706 tale account non è più necessario, con un'eccezione,  vale a dire quando un client con peer cache abilitata esegue una sequenza di attività da Software Center e la sequenza di attività riavvia un'immagine d'avvio. In questo scenario per il client è ancora necessario un account di accesso alla rete. Quando il client si trova in Windows PE, usa l'account di accesso alla rete per ottenere il contenuto dall'origine di peer cache.
+-   Prima della versione 1706, ogni sito in cui i client usano la peer cache doveva essere configurato con un [account di accesso alla rete](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account). A partire dalla versione 1706 tale account non è più necessario, con un'eccezione: vale a dire quando un client con peer cache abilitata esegue una sequenza di attività da Software Center e la sequenza di attività riavvia un'immagine d'avvio. In questo scenario per il client è ancora necessario un account di accesso alla rete. Quando il client si trova in Windows PE, usa l'account di accesso alla rete per ottenere il contenuto dall'origine di peer cache.
 
     Quando necessario, il computer di origine della peer cache usa l'account di accesso alla rete per autenticare le richieste di download dai peer. Per tale scopo, a questo account sono richieste solo le autorizzazioni utente di dominio.
 

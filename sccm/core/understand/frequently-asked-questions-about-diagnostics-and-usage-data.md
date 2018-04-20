@@ -1,59 +1,62 @@
 ---
-title: Domande frequenti sui dati di diagnostica
+title: Domande frequenti sui dati di diagnostica e di utilizzo
 titleSuffix: Configuration Manager
 description: Sono disponibili le domande frequenti sui dati di diagnostica e di utilizzo per System Center Configuration Manager.
 ms.custom: na
-ms.date: 2/8/2017
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3fe32aa2-d594-4ad0-a291-b8f5395ac50b
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 91be283558f051f90080ac2e2f7abc09317eac4a
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 5a8a34e14d0e4f187e520faf9b2e520945087097
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="frequently-asked-questions-about-diagnostics-and-usage-data-for-system-center-configuration-manager"></a>Domande frequenti sui dati di diagnostica e di utilizzo per System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Di seguito sono riportate le domande poste più di frequente sui dati di diagnostica e di utilizzo per System Center Configuration Manager:  
+Questo articolo fornisce le risposte alle domande frequenti sui dati di diagnostica e di utilizzo in Configuration Manager.
+
+## <a name="faqs"></a>Domande frequenti
 
 ###  <a name="bkmk_off"></a> Come si può disattivare la telemetria?  
-La telemetria non può essere disattivata. È comunque possibile scegliere il livello di dati di telemetria raccolti. È inoltre possibile usare un punto di connessione del servizio in modalità offline per gestire gli orari di invio dei dati di telemetria.
+La telemetria non può essere disattivata. È comunque possibile scegliere il livello di dati di telemetria raccolti. Per gestire gli orari di invio dei dati di telemetria, usare il punto di connessione del servizio in modalità offline.
 
-Configuration Manager Current Branch deve essere aggiornato a intervalli regolari per supportare le nuove versioni di Windows 10 e Microsoft Intune. Microsoft richiede almeno il livello base dei dati di diagnostica e utilizzo per mantenere aggiornato il prodotto, migliorare l'esperienza di aggiornamento e aumentare la qualità e la sicurezza del prodotto.
+Configuration Manager Current Branch deve essere aggiornato a intervalli regolari per supportare le nuove versioni di Windows 10 e Microsoft Intune. Microsoft richiede almeno il livello base dei dati di diagnostica e di utilizzo. Questi dati vengono usati per mantenere aggiornato il prodotto, migliorare l'esperienza di aggiornamento e aumentare la qualità e la sicurezza del prodotto.
 
 ###  <a name="bkmk_retention"></a> Qual è il periodo di conservazione dei dati?  
- I dati di diagnostica e utilizzo vengono conservati per un anno.  
+ I dati di diagnostica e di utilizzo vengono archiviati per un anno.  
 
 ###  <a name="bkmk_update"></a> I dati di diagnostica e utilizzo vengono inviati durante l'installazione o l'aggiornamento del prodotto?  
  No. I dati di diagnostica e di utilizzo vengono inviati solo dopo che il sito è installato e funzionante.  
 
 ###  <a name="bkmk_frequency"></a> Con quale frequenza vengono inviati i dati?  
- Le stored procedure SQL vengono eseguite ogni sette giorni (dalla data di installazione del sito). In modalità online, il punto di connessione del servizio viene configurato in modo da caricare i dati dopo l'esecuzione di query. In modalità offline, l'amministratore usa lo strumento di connessione del servizio per caricare i dati. Si tenga presente che i dati non sono disponibili per l'uso offline fino a sette giorni dopo l'installazione del sito.  
+ Le stored procedure SQL vengono eseguite ogni sette giorni dalla data di installazione del sito. In modalità online, il punto di connessione del servizio viene configurato in modo da caricare i dati dopo l'esecuzione di query. In modalità offline, l'amministratore usa lo strumento di connessione del servizio per caricare i dati. I dati non sono inizialmente disponibili per l'uso offline fino a sette giorni dopo l'installazione del sito.  
 
 ###  <a name="bkmk_network"></a> È possibile usare i dati per formare una mappa di rete?  
- Come illustrato nella descrizione dei livelli di raccolta dei dati di diagnostica e utilizzo per System Center Configuration Manager, i dettagli includono informazioni sul fuso orario provenienti da ciascun sito. Queste informazioni possono fornire indicazioni riguardo la georilevazione generale e la dispersione globale dei siti in una gerarchia. Non viene tuttavia raccolto alcun dettaglio relativo alla rete, ad esempio indirizzi IP o informazioni geografiche più dettagliate.
- - [Dati di diagnostica per la versione 1511](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1511)
- - [Dati di diagnostica per la versione 1602](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1602)
- - [Dati di diagnostica per 1606](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1606)
- - [Dati di diagnostica per 1610](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1610)
+ Come illustrato nella descrizione dei livelli dei dati di diagnostica e di utilizzo, i dettagli del sito includono informazioni sul fuso orario provenienti da ciascun sito. Queste informazioni possono fornire indicazioni riguardo la georilevazione generale e la dispersione globale dei siti in una gerarchia. Tali dati non includono dettagli relativi alla rete, ad esempio indirizzi IP o informazioni geografiche più dettagliate. Per altre informazioni, vedere l'elenco degli [articoli sui dati di diagnostica e di utilizzo](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data#articles) e individuare i livelli di raccolta dei dati di diagnostica e di utilizzo per la versione in uso.
 
 
 ###  <a name="bkmk_tables"></a> È possibile visualizzare i dati in tabelle personalizzate?  
- No. I dati di diagnostica e di utilizzo vengono raccolti con le stored procedure SQL per le tabelle di prodotti predefinite nel database (tutte precedute da **TEL_**). Come parte della query di rilevamento dello schema SQL, viene eseguito l'hashing di tutti i nomi di tabella per il confronto con i valori predefiniti noti. Questo può determinare l'esistenza di tabelle personalizzate nel database (lo schema di database viene esteso dall'impostazione predefinita), ma non dei dati contenuti all'interno di tali tabelle.  
+ No. Configuration Manager raccoglie i dati di diagnostica e di utilizzo tramite stored procedure SQL che vengono eseguite per tabelle di prodotti predefinite nel database. Tutte queste tabelle SQL sono precedute dal prefisso **TEL_**. Come parte della query di rilevamento dello schema SQL, viene eseguito l'hashing di tutti i nomi di tabella per il confronto con i valori predefiniti noti. Questo comportamento determina l'esistenza di tabelle personalizzate nel database. La presenza di tabelle personalizzate indica che lo schema di database viene esteso dall'impostazione predefinita. Non include i dati archiviati all'interno di tali tabelle.  
 
-###  <a name="bkmk_databases"></a> È possibile visualizzare nomi o dati di altri database?  
+###  <a name="bkmk_databases"></a> È possibile visualizzare nomi o dati di altri database? 
  No. Le stored procedure per raccogliere i dati sono limitate al database del sito.  
 
+### <a name="bkmk_gdpr"></a> Configuration Manager è soggetto al Regolamento generale sulla protezione dei dati (GDPR)?
+ No. Configuration Manager non è soggetto alla supervisione del GDPR. È un prodotto locale distribuibile, gestibili e utilizzabile direttamente. I dati di diagnostica e di utilizzo che Microsoft raccoglie migliorano l'esperienza, la qualità e la sicurezza di installazione delle versioni future. Questi dati sono soggetti alla supervisione del GDPR. Nessuna informazione di identificazione dell'utente finale (EUII) o identificatore di pseudonimo dell'utente finale (EUPI) viene raccolto e trasmesso a Microsoft. Per altre informazioni sul Regolamento generale sulla protezione dei dati, vedere il [Microsoft Trust Center sul GDPR](https://microsoft.com/gdpr). Per altre informazioni sui dati di Configuration Manager, vedere [Dati di diagnostica e di utilizzo](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data).
+
+
 ## <a name="see-also"></a>Vedere anche  
- [Diagnostica e dati di utilizzo per System Center Configuration Manager](../../core/plan-design/diagnostics/diagnostics-and-usage-data.md)
+ [Diagnostica e dati di utilizzo](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data)

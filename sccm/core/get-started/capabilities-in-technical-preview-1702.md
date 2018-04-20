@@ -1,7 +1,7 @@
 ---
-title: "Funzionalità nella Technical Preview 1702"
+title: Funzionalità nella Technical Preview 1702
 titleSuffix: Configuration Manager
-description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1702 per System Center Configuration Manager."
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1702 per System Center Configuration Manager.
 ms.custom: na
 ms.date: 02/24/2017
 ms.prod: configuration-manager
@@ -12,15 +12,15 @@ ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aedd608d-6db3-4ea5-851d-70f2dcda6bb5
-caps.latest.revision: 
+caps.latest.revision: 5
 author: erikje
 ms.author: erikje
 manager: angrobe
-ms.openlocfilehash: ed2a858c55cbf389a0e974f4699b5a9c548953ef
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: 94c025a75cd0aef62ee00c11b8ee5a113fba2bb1
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1702 per System Center Configuration Manager
 
@@ -42,7 +42,7 @@ Questa anteprima introduce nuove opzioni per l'invio di commenti e suggerimenti 
 -  Facendo clic con il pulsante destro del mouse su qualsiasi oggetto nella console.   
     ![Opzione con clic con il pulsante destro del mouse](./media/feedback-option.png)   
 
-Quando si seleziona **Commenti e suggerimenti** viene aperto il browser sul sito Web UserVoice di Configuration Manager, all'indirizzo https://configurationmanager.uservoice.com/forums/300492-ideas.
+Quando si seleziona **Commenti e suggerimenti**, il browser visualizza il sito Web UserVoice di Configuration Manager all'indirizzo https://configurationmanager.uservoice.com/forums/300492-ideas.
 ##  <a name="changes-for-updates-and-servicing"></a>Modifiche per Aggiornamenti e manutenzione
 Le modifiche seguenti sono state introdotte con questa versione di anteprima.
 
@@ -104,7 +104,7 @@ Azure AD archivia i dispositivi nell'unità organizzativa **AADDC Computers**.  
 Azure AD non ha un'unità organizzativa dove archiviare i gruppi. Al contrario, usare la stessa struttura generale delle query relative al sistema o agli utenti e configurare la query LDAP in modo che punti all'unità organizzativa contenente i gruppi da individuare.
 
 Per altre informazioni su Azure AD, vedere gli argomenti seguenti:  
- - [Azure Active Directory Domain Services](https://azure.microsoft.com/en-us/services/active-directory-ds) su azure.microsoft.com.
+ - [Azure Active Directory Domain Services](https://azure.microsoft.com/services/active-directory-ds) su azure.microsoft.com.
  - [Documentazione di Active Directory Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services) su docs.microsoft.com.
 
 ## <a name="conditional-access-device-compliance-policy-improvements"></a>Miglioramento dei criteri di conformità dei dispositivi per l'accesso condizionale
@@ -155,7 +155,7 @@ Il nuovo criterio viene visualizzato nel nodo **Criteri di conformità** dell'ar
 4. Al termine, fare clic su **OK**.
 
 ### <a name="monitor-the-compliance-policy"></a>Monitorare i criteri di conformità
-Dopo aver creato i criteri di conformità, è possibile monitorare i risultati di conformità nella console di Configuration Manager. Per informazioni dettagliate, vedere [Monitorare i criteri di conformità](https://docs.microsoft.com/en-us/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy).
+Dopo aver creato i criteri di conformità, è possibile monitorare i risultati di conformità nella console di Configuration Manager. Per informazioni dettagliate, vedere [Monitorare i criteri di conformità](https://docs.microsoft.com/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy).
 
 
 ## <a name="improvements-to-software-center-settings-and-notification-messages-for-high-impact-task-sequences"></a>Miglioramenti alle impostazioni e ai messaggi di notifica di Software Center per le sequenze di attività a impatto elevato
@@ -297,11 +297,11 @@ Quando si registra un dispositivo come Android for work, viene creato un profilo
 
 Android for Work è una piattaforma separata da Android, e sarà necessario decidere quale tipo di gestione usare per i dispositivi Android che supportano i profili di lavoro.
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 Le sezioni seguenti descrivono la gestione di Android for Work.
 
 #### <a name="enable-android-for-work-management"></a>Abilitare la gestione di Android for Work
-1. Creare un account di Google https://accounts.google.com/SignUp da usare come account amministratore di Android for Work che verrà associato a tutte le attività di gestione di Android for Work per il tenant di Intune. Potrebbe trattarsi di un account di Google condiviso tra gli amministratori che gestiscono i dispositivi Android. Si tratta dell'account Google usato dall'organizzazione per gestire e pubblicare applicazioni nella console di Play for Work. Questo account verrà usato per approvare le applicazioni nello store di Play for Work, quindi è consigliabile appuntarsi nome dell'account e password.
+1. Creare un account Google all'indirizzo https://accounts.google.com/SignUp da usare come account amministratore di Android for Work, che verrà associato a tutte le attività di gestione di Android for Work per il tenant di Intune. Potrebbe trattarsi di un account di Google condiviso tra gli amministratori che gestiscono i dispositivi Android. Si tratta dell'account Google usato dall'organizzazione per gestire e pubblicare applicazioni nella console di Play for Work. Questo account verrà usato per approvare le applicazioni nello store di Play for Work, quindi è consigliabile appuntarsi nome dell'account e password.
 2. Abilitare la registrazione di Android associando l'account Google al tenant di Intune gestito in Configuration Manager:
   1. Accedere ad **Amministrazione** > **Panoramica** > **Servizi cloud** > **Sottoscrizioni a Microsoft Intune** e selezionare la propria sottoscrizione Intune.
   2. Nella barra multifunzione fare clic su **Configura piattaforme** > **Android** e assicurarsi che l'opzione **Abilita registrazione Android** sia selezionata.
@@ -326,7 +326,7 @@ Quando l'associazione sarà stata completata, il nome dell'account e il nome del
 #### <a name="approve-and-deploy-android-for-work-apps"></a>Approvare e distribuire le applicazioni Android for Work
 Attenersi alla procedura seguente per approvare le applicazioni nello store di Play for Work, sincronizzarle con la console di Configuration Manager e quindi distribuirle ai dispositivi Android for Work gestiti. Per distribuire applicazioni a profili di lavoro degli utenti, è necessario approvarle in Play for Work e quindi sincronizzarle con la console di Configuration Manager.
 
-1. Aprire un browser e passare a: https://play.google.com/work.
+1. Aprire un browser e andare a: https://play.google.com/work.
 2. Accedere usando l'account di amministratore di Google associato al tenant di Intune.
 3. Cercare le applicazioni che si vuole distribuire nell'ambiente e fare clic su **Approva** per ognuna di esse.
 4. Nella console di Configuration Manager passare a **Amministratore** > **Panoramica** > **Servizi cloud** > **Android for Work** e fare clic su **Sincronizza**.

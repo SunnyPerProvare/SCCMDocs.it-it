@@ -3,69 +3,75 @@ title: Introduzione ai profili certificato
 titleSuffix: Configuration Manager
 description: Informazioni sul funzionamento dei profili certificato in System Center Configuration Manager con Servizi certificati Active Directory.
 ms.custom: na
-ms.date: 09/11/2017
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 41dcc259-f147-4420-bff2-b65bdf8cff77
-caps.latest.revision: "7"
-author: lleonard-msft
-ms.author: alleonar
-manager: angrobe
-ms.openlocfilehash: dc70aec1746f6e555011ba87c84811c1f8ea0620
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+caps.latest.revision: 7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 0e82c9704c0505c8c7ed9ef3d04260ca74026999
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="introduction-to-certificate-profiles-in-system-center-configuration-manager"></a>Introduzione ai profili certificato in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-I profili certificato vengono usati con Servizi certificati Active Directory e il ruolo Servizio registrazione dispositivi di rete per effettuare il provisioning dei certificati di autenticazione per i dispositivi gestiti, in modo che gli utenti possano accedere facilmente alle risorse aziendali. Ad esempio, è possibile creare e distribuire profili certificato per fornire i certificati di cui gli utenti hanno bisogno per avviare connessioni VPN e wireless.
+I profili certificato vengono usati con Servizi certificati Active Directory e il ruolo del servizio Registrazione dispositivi di rete (NDES). È possibile creare e distribuire certificati di autenticazione per i dispositivi gestiti, in modo che gli utenti possano accedere facilmente alle risorse aziendali. Ad esempio, è possibile creare e distribuire profili certificato per fornire i certificati di cui gli utenti hanno bisogno per connettersi a connessioni VPN e wireless.
 
-I profili certificato possono configurare automaticamente i dispositivi utente per accedere alle risorse aziendali, quali reti Wi-Fi e server VPN, senza dover installare manualmente i certificati o usare un processo fuori banda. I profili certificato possono inoltre mantenere sicure le risorse aziendali perché vengono usate più impostazioni di sicurezza supportate dall'infrastruttura a chiave pubblica (PKI) dell'azienda. Ad esempio, è possibile richiedere l'autenticazione server per tutte le connessioni Wi-Fi e VPN perché è stato effettuato il provisioning dei certificati richiesti nei dispositivi gestiti.   
+I profili certificato possono configurare automaticamente i dispositivi utente. Gli utenti accedono alle risorse aziendali, quali reti Wi-Fi e server VPN, senza installare manualmente i certificati o usare un processo fuori banda. I profili certificato contribuiscono a mantenere sicure le risorse aziendali perché vengono usate più impostazioni di sicurezza supportate dall'infrastruttura a chiave pubblica (PKI) dell'azienda. Ad esempio, è possibile richiedere l'autenticazione server per tutte le connessioni Wi-Fi e VPN perché i certificati richiesti sono stati distribuiti nei dispositivi gestiti.   
 
 I profili di certificato forniscono le seguenti funzionalità di gestione:  
 
 -   Registrazione e rinnovo dei certificati di un autorità di certificazione aziendale (CA) per i dispositivi che eseguono iOS, Windows 8.1, Windows RT 8.1, Windows 10 Desktop e Mobile e Android. Questi certificati possono poi essere usati per le connessioni Wi-Fi e VPN.  
 
--   Distribuzione di certificati CA radice attendibili e certificati CA intermedi per configurare una catena di certificati nei dispositivi per le connessioni VPN e Wi-Fi quando è richiesta l'autenticazione del server.  
+-   Distribuzione di certificati della CA radice attendibili e certificati della CA intermedi. Questi certificati configurano una catena di certificati nei dispositivi per le connessioni VPN e Wi-Fi quando è richiesta l'autenticazione del server.  
 
 -   Monitoraggio e creazione di report per i certificati installati.  
 
-**Esempio:** Tutti i dipendenti devono potersi connettere agli hotspot Wi-Fi in più sedi aziendali. Distribuzione dei certificati necessari per la connessione Wi-Fi e distribuzione dei profili Wi-Fi che fanno riferimento al certificato per consentire agli utenti di connettersi senza problemi.  
+**Esempio:** Tutti i dipendenti devono potersi connettere agli hotspot Wi-Fi in più sedi aziendali. Per consentire agli utenti di connettersi con facilità, distribuire per prima cosa i certificati necessari per la connessione Wi-Fi, quindi distribuire i profili Wi-Fi che fanno riferimento al certificato.  
 
-**Esempio:** Si dispone di una PKI e si desidera spostare a un metodo più flessibile e sicuro di provisioning di certificati che consente agli utenti accedere alle risorse aziendali dai loro dispositivi personali senza compromettere la protezione. Configurare i profili certificato con le impostazioni e i protocolli supportati per la piattaforma per dispositivi specifica. I dispositivi possono quindi richiedere automaticamente questi certificati a un server di registrazione con connessione Internet. Configurare quindi i profili VPN per usare questi certificati, in modo che il dispositivo possa accedere alle risorse aziendali.  
+**Esempio:** si dispone di un'infrastruttura a chiave pubblica (PKI) e si vuole passare a un metodo più flessibile e sicuro di distribuzione dei certificati. Gli utenti devono essere in grado di accedere alle risorse aziendali dai loro dispositivi personali senza compromettere la protezione. Configurare i profili certificato con le impostazioni e i protocolli supportati per la piattaforma per dispositivi specifica. I dispositivi possono quindi richiedere automaticamente questi certificati a un server di registrazione con connessione Internet. Configurare quindi i profili VPN per usare questi certificati, in modo che il dispositivo possa accedere alle risorse aziendali.  
+
+
 
 ## <a name="types-of-certificate-profiles"></a>Tipi di profili certificato  
  Esistono tre tipi di profilo certificato:  
 
--   **Certificato CA attendibile**: consente di distribuire un certificato della CA radice attendibile o un certificato CA intermedio in modo da formare una catena di certificati quando il dispositivo deve eseguire l'autenticazione a un server.  
+-   **Certificato CA attendibile**: consente di distribuire un certificato della CA radice attendibile o un certificato della CA intermedio. Questi certificati formano una catena di certificati quando il dispositivo deve eseguire l'autenticazione a un server.  
 
--   **Simple Certificate Enrollment Protocol (SCEP)**: consente di richiedere un certificato per un dispositivo o un utente usando il protocollo SCEP e il servizio Registrazione dispositivi di rete in un server che esegue Windows Server 2012 R2.
+-   **Simple Certificate Enrollment Protocol (SCEP)**: consente di richiedere un certificato per un dispositivo o un utente usando il protocollo SCEP. Questo tipo richiede il ruolo del servizio Registrazione dispositivi di rete (NDES) in un server che esegue Windows Server 2012 R2 o versione successiva.
 
-    Per creare un profilo certificato di tipo **Simple Certificate Enrollment Protocol (SCEP)** creare prima un profilo certificato **Certificato CA attendibile**.
+    Per creare un profilo certificato di tipo **Simple Certificate Enrollment Protocol (SCEP)**, creare prima un profilo **Certificato CA attendibile**.
 
--   **Personal Information Exchange (PFX)**: consente di richiedere un certificato PFX (noto anche come PKCS #12) per un dispositivo o un utente.
+-   **Scambio di informazioni personali (PFX)**: consente di richiedere un certificato PFX (noto anche come PKCS #12) per un dispositivo o un utente.<!--1321368-->  
 
     Per l'elaborazione delle richieste, è possibile creare profili certificato PFX tramite [importazione delle credenziali](/sccm/mdm/deploy-use/import-pfx-certificate-profiles) da certificati esistenti o tramite [definizione di una CA](/sccm/mdm/deploy-use/create-pfx-certificate-profiles).
 
-    A partire dalla versione 1706, è possibile usare Microsoft o Entrust come CA per i certificati di **scambio informazioni personali (PFX, Personal Information Exchange)**.
+    > [!Note]  
+    > Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Abilitare le funzionalità facoltative degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
+    A partire dalla versione 1706, è possibile usare Microsoft o Entrust come CA per i certificati di **scambio di informazioni personali (PFX)**.
 
 
 ## <a name="requirements-and-supported-platforms"></a>Requisiti e piattaforme supportate  
-Per distribuire i profili certificato che usano SCEP, è necessario installare il punto di registrazione del certificato in un server del sistema del sito nel sito di amministrazione centrale o in un sito primario. È anche necessario installare un modulo criteri per il servizio Registrazione dispositivi di rete (NDES), il Modulo criteri di Configuration Manager, in un server che esegue Windows Server 2012 R2 con il ruolo Servizi certificati Active Directory e NDES attivo e accessibile per i dispositivi che richiedono i certificati. Per i dispositivi registrati da Microsoft Intune, NDES deve essere accessibile da Internet, ad esempio in una rete perimetrale.  
+Per distribuire i profili certificato che usano SCEP, installare il punto di registrazione certificati in un server del sistema del sito. Installare anche un modulo criteri per il servizio Registrazione dispositivi di rete (NDES), il Modulo criteri di Configuration Manager, in un server che esegue Windows Server 2012 R2 o versione successiva. Questo server richiede il ruolo Servizi certificati Active Directory e NDES attivo e accessibile per i dispositivi che richiedono i certificati. Per i dispositivi registrati da Microsoft Intune, NDES deve essere accessibile da Internet, ad esempio in una rete perimetrale.  
 
-I certificati PFX richiedono anche un punto di registrazione del certificato in un server del sistema del sito di amministrazione centrale o in un sito primario.  È anche necessario specificare la CA per il certificato e specificare le credenziali di accesso pertinenti.  A partire dalla versione 1706, è possibile specificare Microsoft o Entrust come CA.  
+Anche i certificati PFX richiedono un punto di registrazione certificati. Specificare inoltre la CA per il certificato e le credenziali di accesso pertinenti. A partire dalla versione 1706, è possibile specificare Microsoft o Entrust come CA.  
 
 Per altre informazioni sul modo in cui il servizio Registrazione dispositivi di rete supporta moduli criteri per consentire la distribuzione di certificati da parte di Configuration Manager, vedere [Uso di un modulo criteri con il servizio Registrazione dispositivi di rete](http://go.microsoft.com/fwlink/p/?LinkId=328657).  
 
-Configuration Manager supporta la distribuzione dei certificati in più archivi certificati, a seconda dei requisiti, del tipo di dispositivo e del sistema operativo. Sono supportati i dispositivi e i sistemi operativi seguenti:  
+A seconda dei requisiti, Configuration Manager supporta la distribuzione dei certificati in più archivi certificati in diversi tipi di dispositivi e sistemi operativi. Sono supportati i dispositivi e i sistemi operativi seguenti:  
 
 -   Windows RT 8.1  
 
@@ -80,16 +86,16 @@ Configuration Manager supporta la distribuzione dei certificati in più archivi 
 -   Android  
 
 > [!IMPORTANT]  
->  Per distribuire i profili nei dispositivi Android, iOS, Windows Phone e nei dispositivi registrati Windows 8.1 o versioni successive, tali dispositivi devono essere [registrati in Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).   
+>  Per distribuire i profili nei dispositivi Android, iOS, Windows Phone e nei dispositivi registrati Windows 8.1 o versioni successive, tali dispositivi devono essere [registrati in Microsoft Intune](/intune/device-enrollment).   
 
-Uno scenario tipico per System Center Configuration Manager è di installare i certificati CA radice trusted per autenticare i server Wi-Fi e VPN quando la connessione usa i protocolli di autenticazione EAP-TLS, EAP-TTLS e PEAP e i protocolli di tunneling VPN IKEv2, L2TP/IPsec e Cisco IPsec.  
+Uno scenario tipico per Configuration Manager consiste nell'installazione di certificati della CA radice attendibili per autenticare i server Wi-Fi e VPN quando la connessione usa i protocolli di autenticazione EAP-TLS, EAP-TTLS e PEAP e i protocolli di tunneling VPN IKEv2, L2TP/IPsec e Cisco IPsec.  
 
-È necessario garantire che un certificato CA radice aziendale sia installato nel dispositivo prima che il dispositivo possa richiedere i certificati usando un profilo certificato SCEP.  
+Un certificato della CA radice aziendale deve essere installato nel dispositivo prima che il dispositivo possa richiedere i certificati usando un profilo certificato SCEP.  
 
-È possibile specificare una serie di impostazioni in un profilo certificato SCEP per richiedere certificati personalizzati per diversi ambienti o i requisiti di connettività. La **Creazione guidata profilo certificato** contiene due pagine per i parametri di registrazione. Il primo, **Registrazione SCEP**, contiene le impostazioni per la richiesta di registrazione e la posizione in cui installare il certificato. Il secondo, **Proprietà certificato**, descrive il certificato richiesto stesso.  
+È possibile specificare le impostazioni in un profilo certificato SCEP per richiedere certificati personalizzati per diversi ambienti o requisiti di connettività. La **Creazione guidata profilo certificato** ha due pagine per i parametri di registrazione. La prima, **Registrazione SCEP**, include le impostazioni per la richiesta di registrazione e la posizione in cui installare il certificato. Il secondo, **Proprietà certificato**, descrive il certificato richiesto stesso.  
 
 ## <a name="deploying-certificate-profiles"></a>Distribuzione di profili certificato  
- Quando si distribuisce un profilo certificato, i file certificato contenuti nel profilo vengono installati nei dispositivi client. Verranno distribuiti anche tutti i parametri SCEP e le richieste SCEP verranno elaborate nel dispositivo client. È possibile distribuire i profili certificato nelle raccolte utenti o dispositivi e specificare l'archivio di destinazione per ogni certificato. Le regole di applicabilità determinano se i certificati possono essere installati nel dispositivo. Quando i profili certificato vengono distribuiti nelle raccolte utenti, l'affinità dispositivo utente stabilisce quale dei dispositivi degli utenti installerà i certificati. Quando i profili certificato che contengono i certificati utente vengono distribuiti nelle raccolte dispositivi, per impostazione predefinita i certificati verranno installati in tutti i dispositivi primari degli utenti. Nella pagina **Registrazione SCEP** della **Creazione guidata profilo certificato** è possibile modificare questo comportamento per installare il certificato in tutti i dispositivi degli utenti. Inoltre, i certificati utente non verranno distribuiti nei dispositivi se sono computer del gruppo di lavoro.  
+ Quando si distribuisce un profilo certificato, i file certificato contenuti nel profilo vengono installati nei dispositivi client. Vengono distribuiti anche tutti i parametri SCEP e le richieste SCEP sono elaborate nel dispositivo client. È possibile distribuire i profili certificato nelle raccolte utenti o dispositivi e specificare l'archivio di destinazione per ogni certificato. Le regole di applicabilità determinano se i certificati possono essere installati nel dispositivo. Quando i profili certificato vengono distribuiti nelle raccolte utenti, l'affinità utente-dispositivo stabilisce quale dei dispositivi degli utenti installa i certificati. Quando i profili certificato che includono i certificati utente vengono distribuiti nelle raccolte dispositivi, per impostazione predefinita i certificati vengono installati in tutti i dispositivi primari degli utenti. Nella pagina **Registrazione SCEP** della **Creazione guidata profilo certificato** è possibile modificare questo comportamento per installare il certificato in tutti i dispositivi degli utenti. Se i dispositivi sono computer del gruppo di lavoro, i certificati utente non verranno distribuiti.  
 
 ## <a name="monitoring-certificate-profiles"></a>Monitoraggio dei profili certificato  
 

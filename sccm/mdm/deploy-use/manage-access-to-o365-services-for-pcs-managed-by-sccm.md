@@ -1,9 +1,9 @@
 ---
-title: Gestire l'accesso ai servizi di Office 365 per computer gestiti
+title: Gestire l'accesso ai servizi di O365
 titleSuffix: Configuration Manager
-description: Informazioni su come configurare l'accesso condizionale per i PC gestiti da System Center Configuration Manager.
+description: Informazioni su come configurare l'accesso condizionale ai servizi di Office 365 per i PC gestiti da System Center Configuration Manager.
 ms.custom: na
-ms.date: 01/10/2018
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,26 +12,26 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 34024741-edfa-4088-8599-d6bafc331e62
-caps.latest.revision: 
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: e1f50ea65236473f059ded6ef85c37646e929e53
-ms.sourcegitcommit: e121d8d3dd82b9f2dde2cb5206cbee602ab8e107
+caps.latest.revision: 15
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 1e02cb911397d5f1f837996318b12049d328c9c3
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Gestire l'accesso ai servizi di O365 per i PC gestiti da System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Questo articolo descrive come configurare l'accesso condizionale per i PC gestiti da Configuration Manager.  
+<!--1191496-->
+Configurare l'accesso condizionale ai servizi di Office 365 per i PC gestiti da Configuration Manager.  
 
-<!--
- >> [!Tip]  
-> This feature was first introduced in version 1602 as a [pre-release feature](/sccm/core/servers/manage/pre-release-features). Beginning with version 1702, this feature is no longer a pre-release feature.
--->
+> [!Note]  
+> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Abilitare le funzionalità facoltative degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
 
 Per informazioni sulla configurazione dell'accesso condizionale per dispositivi registrati e gestiti da Microsoft Intune, vedere [Gestire l'accesso ai servizi in System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md). Questo articolo riguarda anche i dispositivi che vengono aggiunti al dominio e la cui conformità non viene valutata.
 
@@ -95,15 +95,18 @@ Per informazioni sulla configurazione dell'accesso condizionale per dispositivi 
     - **Richiedi l'abilitazione di BitLocker nel dispositivo**
     - **Richiedi l'abilitazione dell'avvio sicuro nel dispositivo** 
     - **Richiedi l'abilitazione dell'integrità del codice nel dispositivo**
-    - **Richiedi l'abilitazione di antimalware ad esecuzione anticipata nel dispositivo**
+    - **Richiedi l'abilitazione di antimalware ad esecuzione anticipata nel dispositivo**  
 
->[!Tip]
-> I criteri di accesso condizionale per l'attestazione dell'integrità dei dispositivi sono stati introdotti nella versione 1710 come funzionalità di una versione non definitiva. Per abilitare questa funzionalità, vedere [Funzionalità di versioni non definitive](/sccm/core/servers/manage/pre-release-features). 
+    >[!Tip]  
+    > I criteri di accesso condizionale per l'attestazione dell'integrità dei dispositivi sono stati introdotti per la prima volta nella versione 1710 come [funzionalità di una versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1802, questa funzionalità non è più in versione non definitiva.<!--1235616-->  
+
+    > [!Note]  
+    > Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Abilitare le funzionalità facoltative degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
 
 ### <a name="step-2-evaluate-the-effect-of-conditional-access"></a>Passaggio 2: Valutare l'effetto dell'accesso condizionale  
- Eseguire il report di conformità dell'accesso condizionale. Si trova nella sezione Monitoraggio in Report > Gestione conformità e impostazioni. Il report indica lo stato di conformità di tutti i dispositivi.  Ai dispositivi segnalati come non conformi viene impedito l'accesso a Exchange Online e SharePoint Online.  
+ Eseguire il **report di conformità dell'accesso condizionale**, disponibile nell'area di lavoro **Monitoraggio** in **Report** > **Gestione conformità e impostazioni**. Il report indica lo stato di conformità di tutti i dispositivi. Ai dispositivi segnalati come non conformi viene impedito l'accesso a Exchange Online e SharePoint Online.  
 
- ![CA&#95;compliance&#95;report](media/CA_compliance_report.png)  
+ ![Console di Configuration Manager, area di lavoro Monitoraggio, Creazione di report, Report, Gestione conformità e impostazioni: Report di conformità dell'accesso condizionale](media/CA_compliance_report.png)  
 
 ### <a name="configure-active-directory-security-groups"></a>Configurare i gruppi di sicurezza di Active Directory  
  I criteri di accesso condizionale sono destinati a diversi gruppi di utenti in base ai tipi di criteri. Questi gruppi contengono gli utenti a cui sono destinati i criteri o che ne sono esenti. Quando a un utente viene destinato un criterio, ogni dispositivo in uso deve essere conforme per accedere al servizio.  
@@ -114,12 +117,12 @@ Per informazioni sulla configurazione dell'accesso condizionale per dispositivi 
 
 -   **Gruppi di destinazione**: gruppi di utenti a cui si applicano i criteri. Usare lo stesso gruppo per i criteri di conformità e di accesso condizionale.  
 
--   **Gruppi esentati**: gruppi di utenti che sono esentati dai criteri (facoltativo)  
+-   **Gruppi esentati**: gruppi di utenti esenti dai criteri (facoltativo).  
     Se un utente si trova in entrambi i gruppi, viene esentato dai criteri.  
 
      Solo i gruppi di destinazione dei criteri di accesso condizionale vengono valutati.  
 
-### <a name="step-3--create-a-conditional-access-policy-for-exchange-online-and-sharepoint-online"></a>Passaggio 3.  Creare criteri di accesso condizionale per Exchange Online e SharePoint Online  
+### <a name="step-3-create-a-conditional-access-policy-for-exchange-online-and-sharepoint-online"></a>Passaggio 3. Creare criteri di accesso condizionale per Exchange Online e SharePoint Online  
 
 1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
 

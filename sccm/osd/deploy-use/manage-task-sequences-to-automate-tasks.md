@@ -16,11 +16,11 @@ caps.latest.revision: 10
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 5ec9266f33b318ac9c42f86840ebd7ac59713bdf
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 262bfa3991bbd95fad779da9520358d527a42b07
+ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-system-center-configuration-manager"></a>Gestire le sequenze di attività per automatizzare le attività in System Center Configuration Manager
 
@@ -251,7 +251,14 @@ Viene visualizzato il messaggio di notifica seguente quando l'utente finale apre
         >     - Se la raccolta contiene un server  
 
     -   **Commenti (facoltativo):**: specificare informazioni aggiuntive che descrivono la distribuzione della sequenza di attività.  
-    - **Seleziona modello di distribuzione**: a partire da Configuration Manager versione 1802, è possibile salvare e specificare un modello di distribuzione per una sequenza di attività. <!--1357391-->
+    - **Seleziona modello di distribuzione**: a partire da Configuration Manager versione 1802,<!--1357391--> è possibile salvare e specificare un modello di distribuzione per una sequenza di attività.     
+
+         > [!IMPORTANT]
+         > In Configuration Manager versione 1802 alcuni elementi non vengono salvati nel modello.  <!--510610--> Quando si esegue la distribuzione guidata, assicurarsi di applicare gli elementi seguenti:
+         > - Installazione software 
+         > - Pianificazione 
+         > - Download anticipato del contenuto
+ 
 6.  Nella pagina **Impostazioni distribuzione** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
 
     -   **Scopo**: dall'elenco a discesa scegliere una delle opzioni seguenti:  

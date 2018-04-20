@@ -3,24 +3,25 @@ title: Distribuire applicazioni virtuali App-V
 titleSuffix: Configuration Manager
 description: Questo articolo descrive le considerazioni da tenere presenti quando si creano e distribuiscono applicazioni virtuali.
 ms.custom: na
-ms.date: 02/16/2017
+ms.date: 03/12/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-app
+ms.technology:
+- configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ddcad9f2-a542-4079-83ca-007d7cb44995
-caps.latest.revision: "11"
-caps.handback.revision: "0"
+caps.latest.revision: 11
+caps.handback.revision: 0
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: bf324f458c37fa137e24179eb4455fcbe75c855d
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 99c259a20a7e9c9f34d7b355e6fea5d4c6861392
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="deploy-app-v-virtual-applications-with-system-center-configuration-manager"></a>Distribuire applicazioni virtuali App-V con System Center Configuration Manager
 
@@ -46,7 +47,7 @@ Oltre agli altri requisiti e alle procedure di System Center Configuration Manag
 
 -   Quando si esegue la sequenziazione di un'applicazione, è necessario salvare il pacchetto in una posizione accessibile da Configuration Manager. È quindi possibile creare una distribuzione dell'applicazione che contiene l'applicazione virtuale.  
 
--   Configuration Manager non supporta l'uso della funzionalità di cache condivisa di sola lettura di App-V.  
+-   Configuration Manager non supporta l'uso della funzionalità di cache condivisa di sola lettura di App-V 4.6.  
 
 -   Configuration Manager supporta la funzionalità di archivio dei contenuti condivisi in App-V 5.  
 
@@ -66,7 +67,7 @@ Oltre agli altri requisiti e alle procedure di System Center Configuration Manag
      Per poter distribuire correttamente le applicazioni virtuali, è inoltre necessario aggiornare il client App-V 4.6 SP1 con l'hotfix descritto nell'articolo [2645225](http://go.microsoft.com/fwlink/p/?LinkId=237322) della Knowledge Base.  
 
 -   **App-V 5, App-V 5.0 SP1, App-V 5.0 SP2, App-V 5.0 SP3 e App-V 5.1:** per App-V 5.0 SP2 è necessario installare il [pacchetto hotfix 5](https://support.microsoft.com/en-us/kb/2963211) oppure usare App-V 5.0 SP3.  
--   **App-V 5.2**: questa versione è inclusa in Windows 10 Enterprise (aggiornamento dell'anniversario e versioni successive).
+-   **App-V 5.2**: questa versione è inclusa in Windows 10 Education (1607 e versioni successive), Windows 10 Enterprise (1607 e versioni successive) e Windows Server 2016.
 
 Per altre informazioni su App-V in Windows 10, vedere gli argomenti seguenti:
 
@@ -83,7 +84,7 @@ Per altre informazioni su App-V in Windows 10, vedere gli argomenti seguenti:
 
 3.   **Distribuzione**: la distribuzione è il processo con cui le applicazioni App-V vengono rese disponibili nei punti di distribuzione di Configuration Manager.
 
-4.   **Implementazione**: l'implementazione è il processo con cui l'applicazione viene resa disponibile nei computer client. Nell'infrastruttura App-V completa questo processo è noto come streaming.  
+4.   **Implementazione**: l'implementazione è il processo con cui l'applicazione viene resa disponibile nei computer client. Nell'infrastruttura App-V completa questo processo è noto come pubblicazione e streaming.  
 
 ##  <a name="configuration-manager-virtual-application-delivery-methods"></a>Metodi di recapito delle applicazioni virtuali di Configuration Manager  
 Configuration Manager supporta due metodi per il recapito di applicazioni virtuali ai client, ovvero recapito in streaming e recapito locale (download ed esecuzione).
@@ -100,7 +101,7 @@ Usare le informazioni nella tabella seguente per decidere se il recapito in stre
 |Questo metodo usa i protocolli di rete standard per lo streaming del contenuto del pacchetto dai punti di distribuzione.<br /><br /> I collegamenti ai programmi per le applicazioni virtuali richiedono una connessione al punto di distribuzione, in modo che il recapito dell'applicazione virtuale avvenga su richiesta.<br /><br /> Questo metodo funziona per i client con connessioni a banda larga ai punti di distribuzione.<br /><br /> Le applicazioni virtuali aggiornate distribuite in azienda sono disponibili poiché i client ricevono criteri che li informano che la versione corrente è stata sostituita e scaricano solo le modifiche dalla versione precedente.<br /><br /> Le autorizzazioni di accesso vengono definite nel punto di distribuzione per impedire agli utenti di accedere ad applicazioni o pacchetti non autorizzati.|Lo streaming delle applicazioni virtuali non viene eseguito fino a quando l'utente non esegue l'applicazione per la prima volta. In questo scenario, un utente potrebbe ricevere dei collegamenti ai programmi per le applicazioni virtuali e poi scollegarsi dalla rete prima di eseguire le applicazioni virtuali per la prima volta. Se l'utente tenta di eseguire l'applicazione virtuale mentre il client è offline, viene visualizzato un errore e l'utente non potrà eseguire l'applicazione virtualizzata perché un punto di distribuzione di Configuration Manager non è disponibile per lo streaming dell'applicazione. L'applicazione non sarà disponibile fino a quando l'utente non si riconnette alla rete e non esegue l'applicazione.<br /><br /> Per evitarlo, è possibile usare il metodo di recapito locale per il recapito dell'applicazione virtuale ai client oppure abilitare la gestione client basata su Internet per il recapito in streaming.|  
 
 ###  <a name="local-delivery-download-and-execute"></a>Recapito locale (download ed esecuzione)  
-Quando si usa questo metodo di recapito, il client di Configuration Manager scarica per prima cosa l'intero pacchetto dell'applicazione virtuale nella cache del client di Configuration Manager, quindi dà istruzione al client App-V di eseguire lo streaming dell'applicazione dalla cache di Configuration Manager nella cache di App-V. Se si distribuisce un'applicazione virtuale nei computer client e il contenuto non si trova nella cache di App-V, il client App-V esegue lo streaming del contenuto dell'applicazione dalla cache del client di Configuration Manager nella cache App-V ed esegue l'applicazione. Dopo l'esecuzione corretta dell'applicazione, è possibile configurare il client di Configuration Manager per eliminare tutte le versioni precedenti del pacchetto nel ciclo di eliminazione successivo oppure mantenerle nella cache del client di Configuration Manager.  
+Il metodo del download e dell'esecuzione è l'approccio più comune quando si usa Configuration Manager, dal momento che questo approccio simula strettamente la modalità di recapito degli altri formati di applicazioni con Configuration Manager. Quando si usa questo metodo di recapito, il client di Configuration Manager scarica per prima cosa l'intero pacchetto dell'applicazione virtuale nella cache del client di Configuration Manager, quindi dà istruzione al client App-V di eseguire lo streaming dell'applicazione dalla cache di Configuration Manager nella cache di App-V. Se si distribuisce un'applicazione virtuale nei computer client e il contenuto non si trova nella cache di App-V, il client App-V esegue lo streaming del contenuto dell'applicazione dalla cache del client di Configuration Manager nella cache App-V ed esegue l'applicazione. Dopo l'esecuzione corretta dell'applicazione, è possibile configurare il client di Configuration Manager per eliminare tutte le versioni precedenti del pacchetto nel ciclo di eliminazione successivo oppure mantenerle nella cache del client di Configuration Manager. Per mantenere il contenuto in locale, è possibile sfruttare i metodi di ottimizzazione per la distribuzione del contenuto dei pacchetti, quali BranchCache e PeerCache.
 
 Usare le informazioni nella tabella seguente per decidere se il recapito locale è il metodo ottimale per le specifiche esigenze:   
 

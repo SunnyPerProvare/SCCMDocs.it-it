@@ -1,26 +1,27 @@
 ---
-title: "Informazioni di riferimento per le attività di manutenzione"
+title: Informazioni di riferimento per le attività di manutenzione
 titleSuffix: Configuration Manager
-description: "Leggere le informazioni dettagliate su ogni attività di manutenzione del sito di System Center Configuration Manager in cui le attività sono abilitate per impostazione predefinita."
+description: Leggere le informazioni dettagliate su ogni attività di manutenzione del sito di System Center Configuration Manager in cui le attività sono abilitate per impostazione predefinita.
 ms.custom: na
 ms.date: 3/8/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 68dc6acd-5848-47a4-b4c1-ffa40e47890b
-caps.latest.revision: "16"
-caps.handback.revision: "0"
+caps.latest.revision: 16
+caps.handback.revision: 0
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 3f67bddcb7233b62769271871354c86c5440e320
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 21b5e47efd2678f78fe7b7c0e10524ec7141634d
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="reference-for-maintenance-tasks-for-system-center-configuration-manager"></a>Informazioni di riferimento per le attività di manutenzione per System Center Configuration Manager
 
@@ -105,7 +106,7 @@ Questo argomento fornisce informazioni dettagliate su ognuna delle attività di 
 -   **Sito primario**: abilitato    
 -   Sito secondario: non disponibile  
 
-**Elimina dati di individuazione obsoleti**: usare questa attività per eliminare i dati di individuazione obsoleti dal database. Questi dati possono includere i record risultanti dall'individuazione heartbeat, l'individuazione di rete e i metodi di individuazione di Active Directory Domain Services (Sistema, Utente e Gruppo). Quando questa attività viene eseguita in un sito, i dati associati a tale sito vengono eliminati e le modifiche vengono replicate in altri siti. Per informazioni sull'individuazione, vedere [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
+**Elimina dati di individuazione obsoleti**: usare questa attività per eliminare i dati di individuazione obsoleti dal database. Questi dati possono includere i record risultanti dall'individuazione heartbeat, l'individuazione di rete e i metodi di individuazione di Active Directory Domain Services (Sistema, Utente e Gruppo). Questa operazione rimuoverà anche i dispositivi obsoleti contrassegnati come non autorizzati. Quando questa attività viene eseguita in un sito, i dati associati a tale sito vengono eliminati e le modifiche vengono replicate in altri siti. Per informazioni sull'individuazione, vedere [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
 
 -   Sito di amministrazione centrale: non disponibile    
 -   **Sito primario**: abilitato    
@@ -222,7 +223,7 @@ Questa attività funziona solo nelle risorse che sono client di Configuration Ma
 -   **Sito primario**: non abilitato    
 -   Sito secondario: non disponibile  
 
-**Elimina avvisi obsoleti**: usare questa attività per eliminare dal database gli avvisi scaduti che sono archiviati da più tempo rispetto a un momento specificato. Per ulteriori informazioni, vedere [Use alerts and the status system for System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
+**Elimina avvisi obsoleti**: usare questa attività per eliminare dal database gli avvisi scaduti che sono archiviati da più tempo rispetto a un momento specificato. Per ulteriori informazioni, vedere [Usare gli avvisi e il sistema di stato per System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
 
 -   **Sito di amministrazione centrale**: abilitato    
 -   **Sito primario**: abilitato    
@@ -237,7 +238,7 @@ Questa attività funziona solo nelle risorse che sono client di Configuration Ma
 -   **Sito primario**: non abilitato    
 -   Sito secondario: non disponibile  
 
-**Elimina siti e subnet di individuazione foresta obsoleti**: usare questa attività per eliminare i dati relativi ai siti, alle subnet e ai domini di Active Directory che sono stati individuati dal metodo di individuazione foresta Active Directory negli ultimi 30 giorni. Questa operazione rimuove i dati di individuazione, ma non influisce sui limiti creati da tali dati. Per altre informazioni, vedere [Run discovery for System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
+**Elimina siti e subnet di individuazione foresta obsoleti**: usare questa attività per eliminare i dati relativi ai siti, alle subnet e ai domini di Active Directory che sono stati individuati dal metodo di individuazione foresta Active Directory negli ultimi 30 giorni. Questa operazione rimuove i dati di individuazione, ma non influisce sui limiti creati da tali dati. Per altre informazioni, vedere [Aggiornamenti per System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
 
 -   **Sito di amministrazione centrale**: abilitato    
 -   **Sito primario**: abilitato    

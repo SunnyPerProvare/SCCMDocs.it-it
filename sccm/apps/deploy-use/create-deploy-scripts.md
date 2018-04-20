@@ -17,11 +17,11 @@ caps.handback.revision: 0
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 29806161b29b87834c0cb4b1e478d92bff7a7b3c
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 19bb8b2c4e47dcc8a75db568e7f93541544a4566
+ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Creare ed eseguire gli script di PowerShell dalla console di Configuration Manager
 
@@ -70,10 +70,6 @@ La funzionalità Esegui script supporta attualmente:
 >[!WARNING]
 >Tenere presente che quando si usano i parametri si apre una superficie di attacco con il rischio potenziale di attacchi PowerShell injection. Per ovviare al problema, esistono vari modi e soluzioni alternative, ad esempio l'uso di espressioni regolari per convalidare l'input del parametro o l'uso di parametri predefiniti. Una procedura consigliata comune consiste nel non includere segreti negli script di PowerShell, ad esempio password e altro. [Informazioni sulla sicurezza degli script PowerShell](/sccm/apps/deploy-use/learn-script-security) <!--There are external tools available to validate your PowerShell scripts such as the [PowerShell Injection Hunter](https://www.powershellgallery.com/packages/InjectionHunter/1.0.0) tool. -->
 
-
-## <a name="group-policy-considerations-for-scripts"></a>Considerazioni su Criteri gruppo per gli script
-<!--While running scripts on devices, Configuration Manager sets policy to allow local scripts and remote signed scripts.--> 
-L'impostazione di criteri di esecuzione tramite Criteri di gruppo può non consentire l'esecuzione di script con Configuration Manager. Per informazioni sui criteri di esecuzione e su come vengono impostati, vedere l'articolo [About Execution Policies](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies) (Informazioni sui criteri di esecuzione). <!--507185-->
 
 ## <a name="run-script-authors-and-approvers"></a>Autori e responsabili dell'approvazione di script
 
@@ -275,9 +271,13 @@ Dopo aver avviato l'esecuzione di uno script in una raccolta di dispositivi, usa
 ## <a name="script-output"></a>Output dello script
 
 - A partire da Configuration Manager versione 1802, l'output dello script viene restituito con la formattazione JSON. Questo formato restituisce in modo coerente un output dello script leggibile. 
-- Gli script con un risultato sconosciuto o quelli in cui il client era offline, non vengono visualizzati nei grafici o nel set di dati. <!--507179-->
+- Gli script con un risultato sconosciuto o dove il client era offline, non vengono visualizzati nei grafici o nel set di dati. <!--507179-->
 - Evitare di restituire un output troppo grande poiché verrà troncato in corrispondenza di 4 KB. <!--508488-->
 - Alcune funzionalità con la formattazione dell'output dello script non sono disponibili quando si esegue Configuration Manager versione 1802 o successiva con una versione di livello inferiore del client. <!--508487-->
+    - Con un client di Configuration Manager precedente alla versione 1802 viene restituito un output di stringhe.
+    -  Con un client di Configuration Manager versione 1802 e successive viene restituita la formattazione JSON.
+        - Ad esempio, si può ottenere il risultato TEXT in una versione del client e "TEXT", ovvero con l'output racchiuso tra virgolette doppie, in un'altra versione. Questi risultati verranno inseriti nel grafico come due categorie diverse.
+        - Se questo comportamento costituisce un problema, prendere in considerazione l'esecuzione dello script su due raccolte diverse. Una con i client precedenti alla versione 1802 e un'altra con i client 1802 e versioni successive. In alternativa, è possibile convertire un oggetto enum in un valore stringa negli script in modo da visualizzarlo correttamente nella formattazione JSON. 
 - Convertire un oggetto enum in un valore stringa negli script in modo da visualizzarlo correttamente nella formattazione JSON. <!--508377--> ![Convertire un oggetto enum in un valore stringa](./media/run-scripts/enum-tostring-JSON.png)
 
 

@@ -1,26 +1,27 @@
 ---
 title: Monitorare i profili certificato
 titleSuffix: Configuration Manager
-description: "Informazioni su come monitorare lo stato di conformità dei profili certificato di System Center Configuration Manager."
+description: Informazioni su come monitorare lo stato di conformità dei profili certificato di System Center Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 98feaa06-64b1-4e86-a122-93017c97cd4f
-caps.latest.revision: "7"
-caps.handback.revision: "0"
+caps.latest.revision: 7
+caps.handback.revision: 0
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: eaefae0c51af91e4419ef15cf02b8250c3d2efd8
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 6b0ae2042c1c463bce53c0c1a7438cc7102cd66e
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="how-to-monitor-certificate-profiles-in-system-center-configuration-manager"></a>Come monitorare i profili certificato in System Center Configuration Manager
 
@@ -61,7 +62,7 @@ Per monitorare la conformità dei certificati SCEP, usare i [report](#view-compl
     |0x00000004|La registrazione deve essere rinviata.|  
     |0x00000010|Si è verificato un errore.|  
     |0x00000020|Lo stato di registrazione è sconosciuto.|  
-    |0x00000040|Le informazioni sullo stato sono state ignorate. Ciò può verificarsi se un'autorità di certificazione  (collegamento ipertestuale: http://msdn.microsoft.com/en-us/windows/ms721572" \l "_security_certification_authority_gly) non è valida o non è stata selezionata per il monitoraggio.|  
+    |0x00000040|Le informazioni sullo stato sono state ignorate. Ciò può verificarsi se un'autorità di certificazione (collegamento ipertestuale "http://msdn.microsoft.com/windows/ms721572" \l "_security_certification_authority_gly") non è valida o non è stata selezionata per il monitoraggio.|  
     |0x00000100|La registrazione è stata negata.|  
 
 ##  <a name="view-compliance-results-by-using-reports"></a>Visualizzare i risultati di conformità usando i report
