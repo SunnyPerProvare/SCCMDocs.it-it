@@ -2,7 +2,7 @@
 title: Pianificare il gateway di gestione cloud
 titleSuffix: Configuration Manager
 description: Pianificare e progettare il gateway di gestione di cloud (CMG) per semplificare la gestione dei client basati su Internet.
-ms.date: 03/22/2018
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-client
@@ -10,20 +10,26 @@ ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: dabc248c1788ecad4d7b25c0a1f592e0ddeef826
-ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
+ms.openlocfilehash: 2b207ffe95a078c955817d9251da3adbdf4de10d
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
-
+ 
+<!--1101764-->
 Il gateway di gestione cloud (CMG) consente di gestire i client di Configuration Manager in Internet in modo semplice. Distribuendo il gateway di gestione cloud (CMG) come servizio cloud in Microsoft Azure, è possibile gestire i client tradizionali che effettuano il roaming in Internet senza un'infrastruttura aggiuntiva. Inoltre non è necessario esporre l'infrastruttura locale a Internet. 
 
 > [!Tip]  
-> Questa funzionalità è stata introdotta per la prima volta nella versione 1610 come [versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1802, questa funzionalità non è più una funzionalità non definitiva.
+> Questa funzionalità è stata introdotta per la prima volta nella versione 1610 come [versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1802, questa funzionalità non è più in versione non definitiva.  
+
+
+> [!Note]  
+> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Abilitare le funzionalità facoltative degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
 
 Dopo aver definito i prerequisiti, la creazione del gateway di gestione cloud (CMG) prevede i tre passaggi seguenti nella console di Configuration Manager:
 1. Distribuire il servizio cloud Cloud Management Gateway (CMG) in Azure.
@@ -186,6 +192,7 @@ La tabella seguente elenca il supporto di Cloud Management Gateway (CMG) per le 
 | Protezione degli endpoint     | ![Supportato](media/green_check.png) |
 | Inventario hardware e software     | ![Supportato](media/green_check.png) |
 | Stato del client e notifiche     | ![Supportato](media/green_check.png) |
+| Esecuzione di script     | ![Supportato](media/green_check.png) |
 | Impostazioni di conformità     | ![Supportato](media/green_check.png) |
 | Installazione client</br>(con integrazione di Azure AD)     | ![Supportato](media/green_check.png)  (1706) |
 | Distribuzione del software (indirizzata a dispositivi)     | ![Supportato](media/green_check.png) |

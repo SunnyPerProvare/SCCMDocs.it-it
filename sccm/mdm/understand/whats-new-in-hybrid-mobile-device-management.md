@@ -3,7 +3,7 @@ title: Novità nella gestione di dispositivi mobili ibrida
 titleSuffix: Configuration Manager
 description: Informazioni sulle nuove funzionalità di gestione dei dispositivi mobili disponibili per le distribuzioni ibride con Configuration Manager e Intune.
 ms.custom: na
-ms.date: 03/28/2018
+ms.date: 04/02/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3c3d1c813c307e520b3a9709187937f0d3f732c7
-ms.sourcegitcommit: 27da4be015f1496b7b89ebddb517a2685f1ecf74
+ms.openlocfilehash: c6918983bca3e598fd99a8f7670ada3f7e43cfa6
+ms.sourcegitcommit: d8a4a53630351b3d677bbdc5d203e7d330472cba
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con Configuration Manager e Microsoft Intune
 
@@ -41,6 +41,24 @@ Ogni sezione di questo articolo elenca le funzionalità ibride in tre categorie 
 |**Novità di Microsoft Intune** | In generale, tutte le funzionalità elencate in questa categoria dovrebbero funzionare con tutte le versioni di Configuration Manager, incluse le versioni di System Center 2012 R2 Configuration Manager, poiché richiedono solo il servizio Intune e non richiedono altre funzionalità di Configuration Manager.|
 |**Novità di Configuration Manager Technical Preview**| Tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Technical Preview specificata. Per provare queste funzionalità, è necessario installare la versione di Technical Preview specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Technical Preview per System Center Configuration Manager](../../core/get-started/technical-preview.md).|
 |**Novità di Configuration Manager (Current Branch)**| Tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Configuration Manager (Current Branch) specificata, ad esempio la versione 1511 o 1602. Se si usa una versione precedente di Configuration Manager per la distribuzione ibrida, è necessario eseguire l'aggiornamento alla versione di Configuration Manager (Current Branch) specificata nella descrizione della funzionalità. Per altre informazioni, vedere l'articolo relativo agli [aggiornamenti a System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|
+
+
+
+## <a name="april-2018"></a>Aprile 2018
+
+### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
+
+#### <a name="user-experience-update-for-the-company-portal-app-for-ios"></a>Aggiornamento dell'esperienza utente per l'app Portale aziendale per iOS 
+<!--1412866-->
+È stato rilasciato un aggiornamento dell'esperienza utente principale per l'app Portale aziendale per iOS. L'aggiornamento include una riprogettazione visuale completa con un aspetto modernizzato. La funzionalità dell'app è stata mantenuta, ma migliorandone il livello di usabilità e accessibilità.  
+
+L'aggiornamento include anche:
+- Supporto per iPhone X.
+- Tempi di risposta più rapidi per l'avvio e il caricamento dell'app, per consentire agli utenti di risparmiare tempo.
+- Indicatori di stato aggiuntivi per offrire agli utenti informazioni sullo stato più aggiornate.
+- Miglioramenti della modalità di caricamento dei log, in modo che sia possibile segnalare eventuali problemi.  
+
+Per visualizzare l'aspetto aggiornato, vedere le [novità dell'interfaccia utente dell'app](/intune/whats-new-app-ui).
 
 
 

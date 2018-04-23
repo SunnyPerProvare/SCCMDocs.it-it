@@ -3,7 +3,7 @@ title: Nuova versione 1802
 titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1802 di Configuration Manager.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 04/11/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,20 +12,27 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5bd637b1-d7a1-411b-877a-c7aae9741173
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9c9ff975a58e7c56375fa7740a0a5bb6ebfa6341
-ms.sourcegitcommit: 27da4be015f1496b7b89ebddb517a2685f1ecf74
+ms.openlocfilehash: a667c34dc39ef0578ff840e5603080b09c67c63c
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="whats-new-in-version-1802-of-system-center-configuration-manager"></a>Novità della versione 1802 di System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 L'aggiornamento 1802 per Configuration Manager current branch è disponibile come aggiornamento nella console. Applicare questo aggiornamento ai siti con la versione 1702, 1706 o 1710. <!-- baseline only statement: -->Quando si installa un nuovo sito, è disponibile anche come versione di base.
+
+A parte le nuove funzionalità, questa versione include anche ulteriori modifiche, ad esempio correzioni di bug. Per altre informazioni, vedere [Riepilogo delle modifiche in System Center Configuration Manager Current Branch, versione 1802](https://support.microsoft.com/help/4101375).
+
+<!--
+The following additional updates to this release are also now available:
+- [Update rollup for System Center Configuration Manager current branch, version 1710](https://support.microsoft.com/help/4057517)
+-->
 
 > [!TIP]  
 > Per installare un nuovo sito, è necessario usare una versione base di Configuration Manager.  

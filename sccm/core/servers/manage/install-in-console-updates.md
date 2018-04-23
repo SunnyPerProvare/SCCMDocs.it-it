@@ -3,7 +3,7 @@ title: Aggiornamenti nella console
 titleSuffix: Configuration Manager
 description: Installare gli aggiornamenti in Configuration Manager dal cloud Microsoft
 ms.custom: na
-ms.date: 03/28/2018
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c14a3607-253b-41fb-8381-ae2d534a9022
 caps.latest.revision: 36
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 054bbd8e7b1dd3f5d565afe60eb7e3379cc7a9ee
-ms.sourcegitcommit: aed99ba3c5e9482199cb3fc5c92f6f3a160cb181
+ms.openlocfilehash: 9924346ccbd862aa4462075a3307b4ec40b955bc
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="install-in-console-updates-for-system-center-configuration-manager"></a>Installare gli aggiornamenti nella console per System Center Configuration Manager
 
@@ -311,7 +311,7 @@ Quando si è pronti per ripetere l'installazione di un aggiornamento, selezionar
 #### <a name="retry-installation-for-the-hierarchy"></a>Riprovare l'installazione per la gerarchia
 È possibile riprovare l'installazione di un aggiornamento per l'intera gerarchia quando l'aggiornamento è in uno degli stati seguenti:  
 
-  -   Controllo prerequisiti superato con uno o più avvisi e opzione per ignorare gli avvisi di controllo dei prerequisiti non impostata nella procedura guidata di aggiornamento. Il valore dell'aggiornamento per **Ignora avviso prerequisito** nel nodo **Aggiornamenti e manutenzione** è **No**.   
+  -   Controlli dei prerequisiti superati con uno o più avvisi e opzione per ignorare gli avvisi di controllo dei prerequisiti non impostata nella procedura guidata di aggiornamento. Il valore dell'aggiornamento per **Ignora avviso prerequisito** nel nodo **Aggiornamenti e manutenzione** è **No**.   
   -   Il prerequisito non è riuscito    
   -   L'installazione non è riuscita
   -   La replica del contenuto nel sito non è riuscita   
@@ -324,7 +324,7 @@ Passare ad **Amministrazione** > **Aggiornamenti e manutenzione**, selezionare l
 #### <a name="retry-installation-for-the-site"></a>Riprovare l'installazione per il sito  
  È possibile riprovare l'installazione di un aggiornamento in un sito specifico quando l'aggiornamento è in uno degli stati seguenti:  
 
-  -   Controllo prerequisiti superato con uno o più avvisi e opzione per ignorare gli avvisi di controllo dei prerequisiti non impostata nell'Aggiornamento guidato. Il valore dell'aggiornamento per **Ignora avviso prerequisito** nel nodo Aggiornamenti e manutenzione è **No**.  
+  -   Controlli dei prerequisiti superati con uno o più avvisi e opzione per ignorare gli avvisi di controllo dei prerequisiti non impostata nella procedura guidata di aggiornamento. Il valore dell'aggiornamento per **Ignora avviso prerequisito** nel nodo Aggiornamenti e manutenzione è **No**.  
   -   Il prerequisito non è riuscito    
   -   L'installazione non è riuscita    
 
@@ -369,10 +369,36 @@ Quando un aggiornamento include una o più funzionalità facoltative, è possibi
 
 Per visualizzare le funzionalità disponibili e il relativo stato, nella console passare ad **Amministrazione** > **Aggiornamenti e manutenzione** > **Funzionalità**.
 
-Quando una funzionalità non è facoltativa, viene installata automaticamente e non viene visualizzata nel nodo **Funzionalità** .  
+Quando una funzionalità non è facoltativa, viene installata automaticamente e non compare nel nodo **Funzionalità**.  
+
+> [!Important]  
+> In una gerarchia a più siti è possibile abilitare le funzionalità facoltative o di versioni non definitive solo dal sito di amministrazione centrale. Questo comportamento assicura che non ci siano conflitti all'interno della gerarchia. <!--507197-->
+ 
+
+Quando si abilita una nuova funzionalità o una funzionalità non definitiva, gestione gerarchie (HMAN) di Configuration Manager deve elaborare la modifica prima che tale funzionalità diventi disponibile. L'elaborazione della modifica è spesso immediata, ma possono essere necessari fino a 30 minuti, a seconda del ciclo di elaborazione HMAN. Dopo l'elaborazione della modifica è necessario riavviare la console prima di poter visualizzare i nuovi nodi correlati a tale funzionalità.
+
+#### <a name="list-of-optional-features"></a>Elenco delle funzionalità facoltative
+Le funzionalità seguenti sono facoltative nell'ultima versione di Configuration Manager:<!--505213-->  
+- [Accesso condizionale per i PC gestiti](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) <!--1191496-->
+- [Passport for Work](/sccm/protect/deploy-use/windows-hello-for-business-settings) (noto anche come *Windows Hello per le aziende*) <!--1245704-->
+- [VPN per Windows 10](/sccm/protect/deploy-use/vpn-profiles) <!--1283610-->
+- [Criteri di Windows Defender Exploit Guard](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy) <!--1355468-->
+- [Microsoft Operations Management Suite (OMS) Connector](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) <!--1258052-->
+- [Creazione di PFX](/sccm/protect/deploy-use/introduction-to-certificate-profiles) <!--1321368-->
+- [Peer cache per i client](/sccm/core/plan-design/hierarchy/client-peer-cache) <!--1101436-->
+- [Punto di servizio del data warehouse](/sccm/core/servers/manage/data-warehouse) <!--1277922-->
+- [Cloud Management Gateway](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway) <!--1101764-->
+- [Aggiornamenti dei driver di Surface](/sccm/sum/get-started/configure-classifications-and-products) <!--1098490-->
+- [Memorizzazione anticipata nella cache dei contenuti della sequenza di attività](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content) <!--1021244-->
+- [Eseguire il passaggio della sequenza di attività](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#add-child-task-sequences-to-a-task-sequence) <!--1261338-->
+- [Creare ed eseguire script](/sccm/apps/deploy-use/create-deploy-scripts) <!--1236459-->
+- [Valutazione dell'attestazione dell'integrità dei dispositivi per i criteri di conformità per l'accesso condizionale](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) <!--1235616-->
+- [Approvazione delle richieste di applicazioni degli utenti per dispositivo](/sccm/apps/deploy-use/deploy-applications#specify-deployment-settings) <!--1357015-->  
 
 
-Quando si abilita una nuova funzionalità o una funzionalità non definitiva, gestione gerarchie (HMAN) di Configuration Manager deve elaborare la modifica prima che tale funzionalità diventi disponibile. L'elaborazione della modifica è spesso immediata, ma possono essere necessari fino a 30 minuti, a seconda del ciclo di elaborazione HMAN. Dopo l'elaborazione della modifica è necessario riavviare la console prima di poter visualizzare la nuova interfaccia utente relativa a tale funzionalità.
+> [!Tip]  
+> Per altre informazioni sulle funzionalità che richiedono il consenso per l'abilitazione, vedere [Funzionalità di versioni non definitive](/sccm/core/servers/manage/pre-release-features).  
+> Per altre informazioni sulle funzionalità disponibili solo nel ramo Technical Preview, vedere [Technical Preview](/sccm/core/get-started/technical-preview).
 
 
 
