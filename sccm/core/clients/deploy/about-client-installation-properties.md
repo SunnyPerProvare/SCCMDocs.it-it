@@ -3,7 +3,7 @@ title: Proprietà di installazione del client
 titleSuffix: Configuration Manager
 description: Informazioni sulle proprietà della riga di comando ccmsetup per l'installazione del client di Configuration Manager.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 03/28/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.latest.revision: 15
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 057b078767a08574a806cb6af1cdb3812148a457
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 40e844fbb15a101574d9628648dde0db59c855c4
+ms.sourcegitcommit: aed99ba3c5e9482199cb3fc5c92f6f3a160cb181
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="about-client-installation-properties-in-system-center-configuration-manager"></a>Informazioni sulle proprietà di installazione del client in System Center Configuration Manager
 
@@ -78,7 +78,7 @@ Usare il comando CCMSetup.exe per disinstallare il client di Configuration Manag
 
 
 
-##  <a name="ccmsetupexe-command-line-properties"></a>Proprietà della riga di comando CCMSetup.exe  
+##  <a name="ccmsetupexe-command-line-properties"></a>Proprietà della riga di comando di CCMSetup.exe  
 
 ### <a name=""></a>/?  
 
@@ -250,7 +250,21 @@ Esempio: `CCMSetup.exe /ExcludeFeatures:ClientUI` non installa Software Center n
 
 
 
-##  <a name="clientMsiProps"></a> Proprietà Client.msi  
+## <a name="ccmsetupMsiProps"></a> Proprietà di Ccmsetup.msi  
+ Le proprietà seguenti possono modificare il comportamento dell'installazione di ccmsetup.msi.
+
+### <a name="ccmsetupcmd"></a>CCMSETUPCMD 
+
+Specifica le proprietà della riga di comando che vengono passate a ccmsetup.exe dopo l'installazione tramite ccmsetup.msi. Racchiudere altre proprietà tra virgolette. Usare questa proprietà quando si esegue il bootstrap del client di Configuration Manager tramite il metodo di installazione della gestione dei dispositivi mobili ibrida di Intune. 
+
+Esempio: `ccmsetup.msi CCMSETUPCMD="/mp:https://mp.contoso.com CCMHOSTNAME=mp.contoso.com"`
+
+ > [!Tip]
+ > Microsoft Intune limita la riga di comando a 1024 caratteri. 
+
+
+
+##  <a name="clientMsiProps"></a> Proprietà di Client.msi  
  Le proprietà seguenti possono modificare il comportamento dell'installazione di client.msi. Se si utilizza il metodo di installazione push del client, è anche possibile specificare le proprietà nella scheda **Client** della finestra di dialogo **Proprietà installazione push client** .  
 
 
@@ -282,16 +296,16 @@ Specifica l'identificatore de tenant di Azure AD. Questo tenant viene collegato 
 
 Esempio: `ccmsetup.exe AADTENANTID=607b7853-6f6f-4d5d-b3d4-811c33fdd49a`
 
+<!-- 
+### AADTENANTNAME
 
-### <a name="aadtenantname"></a>AADTENANTNAME
+Specifies the Azure AD tenant name. This tenant is linked to Configuration Manager when you [configure Azure services](/sccm/core/servers/deploy/configure/azure-services-wizard) for Cloud Management. To obtain the value for this property, use the following steps:
+- On a Windows 10 device that is joined to the same Azure AD tenant, open a command prompt.
+- Run the following command: `dsregcmd.exe /status`
+- In the Device State section, find the **TenantName** value. For example, `TenantName : Contoso`
 
-Specifica il nome del tenant di Azure AD. Questo tenant viene collegato a Configuration Manager quando si [configurano i servizi Azure](/sccm/core/servers/deploy/configure/azure-services-wizard) per la gestione cloud. Per ottenere il valore di questa proprietà procedere come segue:
-- In un dispositivo Windows 10 unito allo stesso tenant di Azure AD aprire un prompt dei comandi.
-- Eseguire il comando seguente: `dsregcmd.exe /status`
-- Nella sezione Stato dispositivo trovare il valore **TenantName**. Ad esempio: `TenantName : Contoso`
-
-Esempio: `ccmsetup.exe AADTENANTNAME=Contoso`
-
+Example: `ccmsetup.exe AADTENANTNAME=Contoso`
+-->
 
 ### <a name="ccmadmins"></a>CCMADMINS  
 
@@ -424,7 +438,7 @@ Esempio: `CCMSetup.exe /UsePKICert CCMHTTPSPORT=443`
 
 ### <a name="ccminstalldir"></a>CCMINSTALLDIR
 
- Identifica la cartella in cui sono installati i file del client di Configuration Manager, per impostazione predefinita *%Windir%*\CCM. Indipendentemente dalla posizione in cui sono installati questi file, il file Ccmcore.dll viene sempre installato nella cartella *%Windir%\System32*. In un sistema operativo a 64 bit una copia del file Ccmcore.dll viene sempre installata nella cartella *%Windir%*\SysWOW64. Questo file supporta le applicazioni a 32 bit che usano la versione a 32 bit delle API client di Configuration Manager SDK.  
+ Identifica la cartella in cui sono installati i file del client di Configuration Manager, per impostazione predefinita *%Windir%* \CCM. Indipendentemente dalla posizione in cui sono installati questi file, il file Ccmcore.dll viene sempre installato nella cartella *%Windir%\System32*. In un sistema operativo a 64 bit una copia del file Ccmcore.dll viene sempre installata nella cartella *%Windir%* \SysWOW64. Questo file supporta le applicazioni a 32 bit che usano la versione a 32 bit delle API client di Configuration Manager SDK.  
 
  Esempio: `CCMSetup.exe CCMINSTALLDIR="C:\ConfigMgr"`  
 
@@ -637,7 +651,7 @@ Esempio: `CCMSetup.exe SMSMP=https://smsmp01.contoso.com`
 
  Esempio: `CCMSetup.exe SMSSITECODE=XZY`  
 
-##  <a name="BKMK_attributevalues"></a> Valori attributi supportati per i criteri di selezione del certificato PKI  
+##  <a name="BKMK_attributevalues"></a> Valori di attributo supportati per i criteri di selezione del certificato PKI  
  Configuration Manager supporta i valori seguenti di attributi per i criteri di selezione del certificato PKI:  
 
 |Attributo OID|Attributo del nome distinto|Definizione di attributo|  

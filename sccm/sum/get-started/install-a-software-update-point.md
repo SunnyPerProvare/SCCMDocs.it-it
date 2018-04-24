@@ -1,22 +1,23 @@
 ---
 title: installare e configurare un punto di aggiornamento software
 titleSuffix: Configuration Manager
-description: "I siti primari richiedono un punto di aggiornamento software nel sito di amministrazione centrale per la valutazione della conformità degli aggiornamenti software e per la distribuzione degli aggiornamenti software nei client."
-keywords: 
+description: I siti primari richiedono un punto di aggiornamento software nel sito di amministrazione centrale per la valutazione della conformità degli aggiornamenti software e per la distribuzione degli aggiornamenti software nei client.
+keywords: ''
 author: dougeby
 ms.author: dougeby
 manager: angrobe
 ms.date: 05/30/2017
 ms.topic: article
 ms.prod: configuration-manager
-ms.service: 
-ms.technology: configmgr-sum
+ms.service: ''
+ms.technology:
+- configmgr-sum
 ms.assetid: b099a645-6434-498f-a408-1d438e394396
-ms.openlocfilehash: c17dd40175bac5ecc4361e905f009f1ed5c2f5a4
-ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
+ms.openlocfilehash: 19cc49355d931595f08f81685ca0549ad9cba4e5
+ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="install-and-configure-a-software-update-point"></a>installare e configurare un punto di aggiornamento software  
 
@@ -24,9 +25,9 @@ ms.lasthandoff: 11/17/2017
 
 
 > [!IMPORTANT]  
->  Prima di installare il ruolo del sistema sito del punto di aggiornamento software, è necessario verificare che il server soddisfi le dipendenze richieste e stabilisca l'infrastruttura del punto di aggiornamento software nel sito. Per altre informazioni su come pianificare gli aggiornamenti software e stabilire l'infrastruttura del punto di aggiornamento software, vedere [Plan for software updates](../plan-design/plan-for-software-updates.md) (Pianificare aggiornamenti software).  
+>  Prima di installare il ruolo del sistema del sito del punto di aggiornamento software, è necessario verificare che il server soddisfi le dipendenze richieste e stabilisca l'infrastruttura del punto di aggiornamento software nel sito. Per altre informazioni su come pianificare gli aggiornamenti software e stabilire l'infrastruttura del punto di aggiornamento software, vedere [Plan for software updates](../plan-design/plan-for-software-updates.md) (Pianificare aggiornamenti software).  
 
- Il punto di aggiornamento software è richiesto nel sito di amministrazione centrale e nei siti primari per abilitare la valutazione della conformità degli aggiornamenti software e per distribuire gli aggiornamenti software nei client. Il punto di aggiornamento software è facoltativo nei siti secondari. Il ruolo del sistema sito del punto di aggiornamento software deve essere creato in un server in cui è installato WSUS. Il punto di aggiornamento software interagisce con i servizi WSUS per configurare le impostazioni di aggiornamento software e per richiedere la sincronizzazione dei metadati degli aggiornamenti software. Nel caso di una gerarchia di Configuration Manager, installare e configurare il punto di aggiornamento software prima nel sito di amministrazione centrale, quindi nei siti primari figli e infine, facoltativamente, nei siti secondari. Nel caso di un sito primario autonomo, non un sito di amministrazione centrale, installare e configurare il punto di aggiornamento software prima nel sito primario e facoltativamente nei siti secondari. Alcune impostazioni sono disponibili solo quando si configura il punto di aggiornamento software in un sito di livello superiore. Esistono diverse opzioni che è necessario considerare in base a dove è installato il punto di aggiornamento software.  
+ Il punto di aggiornamento software è richiesto nel sito di amministrazione centrale e nei siti primari per abilitare la valutazione della conformità degli aggiornamenti software e per distribuire gli aggiornamenti software ai client. Il punto di aggiornamento software è facoltativo nei siti secondari. Il ruolo del sistema sito del punto di aggiornamento software deve essere creato in un server in cui è installato WSUS. Il punto di aggiornamento software interagisce con i servizi WSUS per configurare le impostazioni di aggiornamento software e per richiedere la sincronizzazione dei metadati degli aggiornamenti software. Nel caso di una gerarchia di Configuration Manager, installare e configurare il punto di aggiornamento software prima nel sito di amministrazione centrale, quindi nei siti primari figli e infine, facoltativamente, nei siti secondari. Nel caso di un sito primario autonomo, non un sito di amministrazione centrale, installare e configurare il punto di aggiornamento software prima nel sito primario e facoltativamente nei siti secondari. Alcune impostazioni sono disponibili solo quando si configura il punto di aggiornamento software in un sito di livello superiore. Esistono diverse opzioni che è necessario considerare in base a dove è installato il punto di aggiornamento software.  
 
 > [!IMPORTANT]  
 >  È possibile installare più di un punto di aggiornamento software in un sito. Il primo punto di aggiornamento software installato viene configurato come origine della sincronizzazione che sincronizza gli aggiornamenti da Microsoft Update o da un'origine di sincronizzazione upstream. Gli altri punti di aggiornamento software nel sito sono configurati come repliche del primo punto di aggiornamento software. Pertanto, alcune impostazioni non sono disponibili dopo aver installato e configurato il punto di aggiornamento software iniziale.  
@@ -34,7 +35,7 @@ ms.lasthandoff: 11/17/2017
 > [!IMPORTANT]  
 >  Non è supportata l'installazione del ruolo del sistema del sito per il punto di aggiornamento software in un server che è stato configurato e usato come server WSUS autonomo o l'uso di un punto di aggiornamento software per gestire direttamente i client WSUS. I server WSUS esistenti sono supportati solo come origini di sincronizzazione upstream per il punto di aggiornamento software attivo. Vedere [Sincronizza da un percorso di origine dati upstream](#BKMK_wsussync)
 
- È possibile aggiungere il ruolo del sistema sito del punto di aggiornamento software a un server del sistema del sito esistente oppure è possibile crearne uno nuovo. Nella pagina **Selezione ruolo del sistema** della **Creazione guidata server del sistema sito** o dell' **Aggiunta guidata ruoli del sistema del sito** , in base al fatto di aver aggiunto il ruolo del sistema sito o un server del sito nuovo o esistente, selezionare **Punto di aggiornamento software**e quindi configurare le impostazioni del punto di aggiornamento software nella procedura guidata. Le impostazioni sono diverse a seconda della versione di Configuration Manager che si usa. Per altre informazioni su come installare i ruoli del sistema del sito, vedere [Installare ruoli del sistema del sito](../../core/servers/deploy/configure/install-site-system-roles.md).  
+ È possibile aggiungere il ruolo del sistema sito del punto di aggiornamento software a un server del sistema del sito esistente oppure è possibile crearne uno nuovo. Nella pagina **Selezione ruolo del sistema** della **Creazione guidata server del sistema sito** o dell'**Aggiunta guidata ruoli del sistema del sito, a seconda che si aggiunga il ruolo del sistema del sito a un server del sito nuovo o esistente, selezionare **Punto di aggiornamento software** e quindi configurare le impostazioni del punto di aggiornamento software nella procedura guidata. Le impostazioni sono diverse a seconda della versione di Configuration Manager che si usa. Per altre informazioni su come installare i ruoli del sistema del sito, vedere [Installare ruoli del sistema del sito](../../core/servers/deploy/configure/install-site-system-roles.md).  
 
  Utilizzare le sezioni seguenti per informazioni sulle impostazioni del punto di aggiornamento software in un sito.  
 
@@ -43,7 +44,7 @@ ms.lasthandoff: 11/17/2017
 
 -   È necessario configurare il server proxy e quindi specificare quando utilizzare il server proxy per gli aggiornamenti software. Configurare le seguenti impostazioni:  
 
-    -   Configurare le impostazioni del server proxy nella pagina **Proxy** della procedura guidata o nella scheda **Proxy** in Proprietà sistema del sito. Le impostazioni del server proxy sono specifiche del sistema del sito, pertanto tutti i ruoli del sistema del sito utilizzano le impostazioni del server proxy specificato.  
+    -   Configurare le impostazioni del server proxy nella pagina **Proxy** della procedura guidata o nella scheda **Proxy** in Proprietà sistema del sito. Le impostazioni del server proxy sono specifiche del sistema del sito, pertanto tutti i ruoli del sistema del sito usano le impostazioni del server proxy specificate.  
 
     -   Specificare se usare un server proxy quando Configuration Manager sincronizza gli aggiornamenti software e scarica contenuti tramite una regola di distribuzione automatica. Configurare le impostazioni del server proxy nel punto di aggiornamento software nella pagina **Impostazioni proxy e account** della procedura guidata o nella scheda **Impostazioni proxy e account** in Proprietà punto di aggiornamento software.  
 
@@ -94,14 +95,14 @@ ms.lasthandoff: 11/17/2017
     > [!NOTE]  
     >  Se è presente un firewall tra il punto di aggiornamento software e Internet, potrebbe essere necessario configurarlo per accettare le porte HTTP e HTTPS usate per il sito Web WSUS. È inoltre possibile limitare l'accesso al firewall a determinati domini. Per altre informazioni sulla pianificazione di un firewall che supporta aggiornamenti software, vedere [Configure firewalls](../plan-design/plan-for-software-updates.md#BKMK_ConfigureFirewalls).  
 
--   **<a name="BKMK_wsussync"></a>Sincronizza da un percorso di origine dati upstream**: usare questa impostazione per sincronizzare i metadati degli aggiornamenti software dall'origine sincronizzazione upstream. I siti primari figlio e i siti secondari vengono configurati automaticamente per l'utilizzo dell'URL del sito padre per questa impostazione. È possibile sincronizzare gli aggiornamenti software da un server WSUS esistente. Specificare un URL, ad esempio https://WSUSServer:8531, dove 8531 è la porta utilizzata per connettersi al server WSUS.  
+-   **<a name="BKMK_wsussync"></a>Sincronizza da un percorso di origine dati upstream**: usare questa impostazione per sincronizzare i metadati degli aggiornamenti software dall'origine sincronizzazione upstream. I siti primari figlio e i siti secondari vengono configurati automaticamente per l'utilizzo dell'URL del sito padre per questa impostazione. È possibile sincronizzare gli aggiornamenti software da un server WSUS esistente. Specificare un URL, ad esempio https://WSUSServer:8531, dove 8531 è la porta usata per connettersi al server WSUS.  
 
 -   **Non sincronizzare da Microsoft Update o da origine dati upstream**: usare questa impostazione per sincronizzare manualmente gli aggiornamenti software quando il punto di aggiornamento software nel sito di livello superiore viene disconnesso da Internet. Per altre informazioni, vedere [Sincronizzare gli aggiornamenti software da un punto di aggiornamento software disconnesso](synchronize-software-updates-disconnected.md).  
 
 > [!NOTE]  
 >  Se è presente un firewall tra il punto di aggiornamento software e Internet, potrebbe essere necessario configurarlo per accettare le porte HTTP e HTTPS usate per il sito Web WSUS. È inoltre possibile limitare l'accesso al firewall a determinati domini. Per altre informazioni sulla pianificazione di un firewall che supporta aggiornamenti software, vedere [Configure firewalls](../plan-design/plan-for-software-updates.md#BKMK_ConfigureFirewalls).  
 
- È anche possibile configurare se creare gli eventi di reporting WSUS nella pagina **Origine di sincronizzazione** della procedura guidata oppure nella scheda **Impostazioni di sincronizzazione** in Proprietà del componente del punto di aggiornamento software. Configuration Manager non usa tali eventi. Pertanto, in genere si sceglie l'impostazione predefinita **Non creare eventi di reporting WSUS**.  
+ Nella pagina **Origine di sincronizzazione** della procedura guidata oppure nella scheda **Impostazioni di sincronizzazione** in Proprietà del componente del punto di aggiornamento software è anche possibile scegliere se creare eventi di reporting WSUS. Configuration Manager non usa tali eventi. Pertanto, in genere si sceglie l'impostazione predefinita **Non creare eventi di reporting WSUS**.  
 
 ## <a name="synchronization-schedule"></a>Pianificazione della sincronizzazione  
  Configurare la pianificazione della sincronizzazione nella pagina **Pianificazione della sincronizzazione** della procedura guidata o in Proprietà del componente del punto di aggiornamento software. Questa impostazione viene configurata solo nel punto di aggiornamento software nel sito di livello superiore.  
@@ -146,7 +147,10 @@ ms.lasthandoff: 11/17/2017
 > [!NOTE]  
 >  La pagina **Lingue** della procedura guidata è disponibile solo quando si installa il punto di aggiornamento software nel sito di amministrazione centrale. È possibile configurare le lingue del File di aggiornamento software nei siti figlio dalla scheda **Lingue** in Proprietà del componente del punto di aggiornamento software.  
 
+## <a name="third-party-updates"></a>Aggiornamenti di terze parti
+A partire da Configuration Manager versione 1802, è possibile abilitare gli aggiornamenti di terze parti per i client di Configuration Manager. Quando si abilitano gli aggiornamenti software di terze parti nelle proprietà del componente del punto di aggiornamento software, quest'ultimo scaricherà il certificato di firma usato da WSUS per gli aggiornamenti di terze parti. Questa opzione non è disponibile durante l'installazione del punto di aggiornamento software e deve essere configurata dopo l'installazione. Per abilitare le impostazioni client per gli aggiornamenti di terze parti, vedere l'articolo [Informazioni sulle impostazioni client](/sccm/core/clients/deploy/about-client-settings#Enable-third-party-software-updates).
+
 ## <a name="next-steps"></a>Passaggi successivi
-Il punto di aggiornamento software è stato installato dal sito più in alto della gerarchia di Configuration Manager. Ripetere le procedure descritte in questo argomento per installare il punto di aggiornamento software nei siti figlio.
+Il punto di aggiornamento software è stato installato dal sito più in alto della gerarchia di Configuration Manager. Ripetere le procedure descritte in questo articolo per installare il punto di aggiornamento software nei siti figlio.
 
 Dopo aver installato i punti di aggiornamento software, passare a [sincronizzare gli aggiornamenti software](synchronize-software-updates.md).

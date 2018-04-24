@@ -12,16 +12,16 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8ca970dd-e71c-404f-9435-d36e773a0db2
-caps.latest.revision: 
-caps.handback.revision: 
+caps.latest.revision: 7
+caps.handback.revision: 0
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 8e17ffad2b972119c92e449bef8f086b950b106c
-ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
+ms.openlocfilehash: 5c4403588872e426a9346e6c4c50f1853b75f4b9
+ms.sourcegitcommit: 27da4be015f1496b7b89ebddb517a2685f1ecf74
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="upgrade-on-premises-infrastructure-that-supports-system-center-configuration-manager"></a>Aggiornare l'infrastruttura locale che supporta System Center Configuration Manager
 
@@ -74,6 +74,8 @@ Quando si esegue l'aggiornamento di Windows Server 2012 o Windows Server 2012 R2
 -   Assicurarsi che ogni server che ospita un ruolo del sistema del sito continui a soddisfare tutti i [prerequisiti per i ruoli del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites) in esecuzione in tale server. Potrebbe essere necessario ad esempio reinstallare BITS, WSUS, o configurare impostazioni specifiche per IIS.
 
 -   Dopo aver ripristinato i prerequisiti mancanti, riavviare di nuovo il server per verificare che i servizi siano stati avviati e siano operativi.
+
+-   Se si sta aggiornando il server del sito primario, [eseguire una reimpostazione del sito](/sccm/core/servers/manage/modify-your-infrastructure#bkmk_reset).
 
 **Problema noto per le console remota di Configuration Manager:**  
 Può succedere che, dopo aver aggiornato il server del sito o un server che ospita un'istanza di SMS_Provider per Windows Server 2016, gli utenti amministratori non riescano a connettere una console di Configuration Manager al sito. Per risolvere questo problema, è necessario ripristinare manualmente le autorizzazioni per il gruppo SMS Admins in WMI. Le autorizzazioni devono essere impostate nel server del sito e in ogni server remoto che ospita un'istanza del provider SMS:

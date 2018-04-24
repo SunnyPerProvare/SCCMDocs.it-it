@@ -1,7 +1,7 @@
 ---
 title: Proteggere le app usando i criteri di gestione delle applicazioni mobili
 titleSuffix: Configuration Manager
-description: "Modificare la funzionalità delle app distribuite in modo che soddisfino i criteri aziendali di conformità e di sicurezza."
+description: Modificare la funzionalità delle app distribuite in modo che soddisfino i criteri aziendali di conformità e di sicurezza.
 ms.custom: na
 ms.date: 11/20/2017
 ms.prod: configuration-manager
@@ -12,16 +12,16 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 28115475-e563-4e16-bf30-f4c9fe704754
-caps.latest.revision: 
-caps.handback.revision: 
+caps.latest.revision: 18
+caps.handback.revision: 0
 author: dougeby
 ms.author: dougeby
 manager: angrobe
 ms.openlocfilehash: 3365f46026178d30c9bffa5078d251186d0ffba3
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="protect-apps-using-mobile-application-management-policies-in-system-center-configuration-manager"></a>Proteggere le app usando i criteri di gestione delle applicazioni mobili in System Center Configuration Manager
 

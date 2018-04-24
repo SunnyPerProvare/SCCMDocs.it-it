@@ -7,19 +7,20 @@ ms.date: 2/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7d8f530b-1a39-4a9d-a2f0-675b516da7e4
-caps.latest.revision: "9"
+caps.latest.revision: 9
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: b4acf5753c8629bcd0f4e2ef5a97bfcb570e9d24
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: 3ef93ae505c2af709a3bd1e6a0e7a278993a77ff
+ms.sourcegitcommit: 27da4be015f1496b7b89ebddb517a2685f1ecf74
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="use-a-pull-distribution-point-with-system-center-configuration-manager"></a>Usare un punto di distribuzione pull basato sul cloud con System Center Configuration Manager
 
@@ -45,14 +46,37 @@ I punti di distribuzione pull supportano le stesse configurazioni e funzionalit�
 
 -   Non appena si distribuisce contenuto a un punto di distribuzione pull, sul server del sito, Package Transfer Manager esegue la verifica del database del sito per confermare se il contenuto è disponibile in un punto di distribuzione di origine. Se questa conferma non è possibile, il controllo viene ripetuto ogni 20 minuti finché il contenuto non diventa disponibile.  
 
--   Quando il Package Transfer Manager conferma la disponibilità del contenuto, viene inviata una notifica al punto di distribuzione pull con la richiesta di scaricare il contenuto. Quando riceve questa notifica, il punto di distribuzione pull tenta di scaricare il contenuto dai relativi punti di distribuzione di origine.  
+-   Quando il Package Transfer Manager conferma la disponibilità del contenuto, viene inviata una notifica al punto di distribuzione pull con la richiesta di scaricare il contenuto. Se questa notifica non riesce, esegue nuovi tentativi in base a **Impostazioni dei tentativi** del componente di distribuzione software per i punti di distribuzione pull. Quando riceve questa notifica, il punto di distribuzione pull tenta di scaricare il contenuto dai relativi punti di distribuzione di origine.  
 
--   Al termine del download del contenuto, lo stato del punto di distribuzione pull viene inviato a un punto di gestione. Se però dopo 60 minuti questo stato non viene ricevuto, viene riattivato Package Transfer Manager e viene eseguita una verifica sul punto di distribuzione pull per controllare che il contenuto sia stato scaricato. Se il download del contenuto è in corso, Package Transfer Manager rimane inattivo per 60 minuti prima di eseguire nuovamente una verifica con il punto di distribuzione pull. Questo ciclo continua fino a quando il punto di distribuzione pull non ha completato il trasferimento del contenuto.  
+-   Mentre il punto di distribuzione pull scarica il contenuto, Package Transfer Manager esegue il polling dello stato del componente di distribuzione software in base alle **Impostazioni del polling di stato** per i punti di distribuzione pull.  Al termine del download del contenuto da parte del punto di distribuzione pull, lo stato viene inviato a un punto di gestione.
 
 **È possibile configurare un punto di distribuzione pull** quando si installa il punto di distribuzione o dopo averlo installato modificando le proprietà del ruolo del sistema del sito del punto di distribuzione.  
 
 **È possibile rimuovere la configurazione come punto di distribuzione pull** modificando le proprietà del punto di distribuzione. Quando si rimuove la configurazione del punto di distribuzione pull, il punto di distribuzione torna al normale funzionamento e i successivi trasferimenti di contenuto al punto di distribuzione vengono gestiti dal server del sito.  
 
+## <a name="to-configure-software-distribution-component-for-pull-distribution-points"></a>Per configurare il componente di distribuzione software per i punti di distribuzione pull
+
+1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Siti**.  
+
+2.  Selezionare il sito desiderato e quindi **Configura componenti del sito** > **Distribuzione software**
+
+3. Selezionare la scheda**Punto di distribuzione pull**.  
+
+4.  Nell'elenco **Impostazioni dei tentativi** configurare i valori seguenti:  
+
+    -   **Numero di tentativi**: numero di volte che Package Transfer Manager tenta di comunicare al punto di distribuzione pull di scaricare il contenuto.  Se questo numero viene superato, Package Transfer Manager annulla il trasferimento.
+
+    -   **Ritardo prima di riprovare (minuti)**: numero di minuti di attesa da parte di Package Transfer Manager tra un tentativo e il successivo. 
+
+5.  Nell'elenco **Impostazioni del polling di stato** configurare i valori seguenti:  
+
+    -   **Numero di polling**: numero di volte che Package Transfer Manager contatta il punto di distribuzione pull per recuperare lo stato del processo.  Se questo numero viene superato prima del completamento del processo, Package Transfer Manager annulla il trasferimento.
+
+    -   **Ritardo prima di riprovare (minuti)**: numero di minuti di attesa da parte di Package Transfer Manager tra un tentativo e il successivo. 
+    
+    > [!NOTE]  
+    >  Quando Package Transfer Manager annulla un processo perché il numero di nuovi tentativi di polling dello stato è stato superato, il punto di distribuzione pull continua a scaricare il contenuto.  Al termine, verrà inviato il messaggio di stato appropriato a Package Transfer Manager e la console rifletterà il nuovo stato.
+    
 ## <a name="limitations-for-pull-distribution-points"></a>Limitazioni per i punti di distribuzione pull  
 
 -   Il punto di distribuzione basato su cloud non può essere configurato come punto di distribuzione pull.  
@@ -61,12 +85,12 @@ I punti di distribuzione pull supportano le stesse configurazioni e funzionalit�
 
 -   **La configurazione del contenuto di pre-installazione sostituisce la configurazione del punto di distribuzione pull**. Un punto di distribuzione pull configurato per il contenuto pre-installazione rimane in attesa del contenuto. Non abilita il pull di contenuto dal punto di distribuzione di origine e, analogamente a un punto di distribuzione standard con configurazione contenuto pre-installazione, non riceve contenuto dal server del sito.  
 
--   **Un punto di distribuzione pull non usa le configurazioni per i limiti di velocità** durante il trasferimento del contenuto. Se si configura un punto di distribuzione installato in precedenza per farlo diventare un punto di distribuzione pull, le configurazioni per i limiti di velocità vengono salvate ma non usate. Se in un secondo momento si rimuove la configurazione del punto di distribuzione pull, vengono implementate le configurazioni del limite di velocità configurate in precedenza.  
+-   **Un punto di distribuzione pull non usa le configurazioni per la pianificazione o i limiti di velocità** durante il trasferimento del contenuto. Se si configura un punto di distribuzione installato in precedenza per farlo diventare un punto di distribuzione pull, le configurazioni per la pianificazione e i limiti di velocità vengono salvate ma non usate. Se in un secondo momento si rimuove la configurazione del punto di distribuzione pull, vengono implementate le configurazioni della pianificazione e dei limiti di velocità configurate in precedenza.  
 
     > [!NOTE]  
-    >  Se un punto di distribuzione è configurato come un punto di distribuzione pull, la scheda **Limiti di velocità** non è visibile nelle proprietà del punto di distribuzione.  
+    >  Se un punto di distribuzione è configurato come punto di distribuzione pull, le schede **Pianificazione** e **Limiti di velocità** non sono visibili nelle proprietà del punto di distribuzione.  
 
--   Un punto di distribuzione pull non usa l'opzione **Impostazioni tentativi** per la distribuzione del contenuto. **Impostazioni tentativi** può essere configurata come parte di **Proprietà componente distribuzione software** per ogni sito. Per visualizzare o configurare queste proprietà, nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Configurazione del sito**, quindi selezionare **Siti**. Selezionare un sito nel riquadro dei risultati e quindi selezionare **Configura componenti del sito** nella scheda **Home**. Infine selezionare **Distribuzione software**.  
+-   I punti di distribuzione pull non usano le impostazioni della scheda **Generale** delle **Proprietà componente distribuzione software** per ogni sito.  Ciò vale anche per **Impostazioni distribuzione simultanea** e **Impostazioni tentativi multicast**.  Usare la scheda **Punto di distribuzione pull** per configurare le impostazioni per i punti di distribuzione pull.
 
 -   Per trasferire contenuto da un punto di distribuzione di origine in una foresta remota, nel computer che ospita il punto di distribuzione pull deve essere installato un client di Configuration Manager. Un account di accesso alla rete che può accedere al punto di distribuzione di origine deve essere configurato per l'utilizzo.  
 

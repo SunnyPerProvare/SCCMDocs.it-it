@@ -5,35 +5,36 @@ description: Informazioni su come gestire e monitorare Windows Defender Advanced
 ms.custom: na
 ms.date: 03/07/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a5fc033e-828e-4e45-9097-bbbd0697ebdf
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: 561a03c7046accaa8e6d36407c75cbd4248188ce
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 84786d741eda2be24a7deb39478e68c68adc38fe
+ms.sourcegitcommit: aed99ba3c5e9482199cb3fc5c92f6f3a160cb181
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="windows-defender-advanced-threat-protection"></a>Windows Defender Advanced Threat Protection
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-A partire dalla versione 1606 di Configuration Manager (Current Branch), Endpoint Protection consente di gestire e monitorare Windows Defender Advanced Threat Protection (ATP). Windows Defender ATP è un nuovo servizio che consente alle aziende di rilevare, analizzare e rispondere agli attacchi avanzati sulle reti.  Altre informazioni su [Windows Defender ATP](http://aka.ms/technet-wdatp). I criteri di Configuration Manager possono aiutare a caricare e monitorare Windows 10, versione 1607 (build 14328) o versione successiva.
+A partire dalla versione 1606 di Configuration Manager (Current Branch), Endpoint Protection consente di gestire e monitorare [Windows Defender Advanced Threat Protection (ATP)](http://aka.ms/technet-wdatp). Windows Defender ATP consente alle aziende di rilevare e analizzare attacchi avanzati alle loro reti e di reagire in modo efficace.  I criteri di Configuration Manager o di Microsoft Intune semplificano il caricamento e il monitoraggio di Windows 10, versione 1607 (build 14328) o successiva.
 
-Windows Defender ATP è un servizio disponibile nel [Centro sicurezza PC Windows](https://securitycenter.windows.com). Tramite l'aggiunta e la distribuzione di un file di configurazione per il caricamento di client, Configuration Manager è in grado di monitorare lo stato di distribuzione e l'integrità dell'agente di Windows Defender ATP. Windows Defender ATP è supportato solo nei computer che eseguono il client di Configuration Manager. Non sono supportati la soluzione Gestione di dispositivi mobili locale e computer gestiti da MDM Intune (ibrido).
+Windows Defender ATP è un servizio disponibile in [Windows Defender Security Center](https://securitycenter.windows.com). Tramite l'aggiunta e la distribuzione di un file di configurazione per il caricamento di client, Configuration Manager è in grado di monitorare lo stato di distribuzione e l'integrità dell'agente di Windows Defender ATP. Windows Defender ATP è supportato nei PC che eseguono il client di Configuration Manager o che sono gestiti da Microsoft Intune. I computer gestiti tramite la gestione dei dispositivi mobili ibrida di Intune, tuttavia, non sono supportati.
 
  **Prerequisiti**  
 
 -   Sottoscrizione al servizio online Windows Defender Advanced Threat Protection  
 -   Computer cient che eseguono Windows 10, 1607 e versioni successive  
--   Computer client che eseguono Configuration Manager 1610 o l'agente client di versioni successive
+-   Computer client che eseguono l'agente client di Configuration Manager versione 1610 o successiva o gestiti da Microsoft Intune
 
 ## <a name="how-to-create-an-onboarding-configuration-file"></a>Come creare un file di configurazione per il caricamento  
 

@@ -17,11 +17,11 @@ caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 42b9364fc88acc3f403db8d2ca9243a117fd78bf
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: bd03457abdd5cc4464c10227626ba72637c96f90
+ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Informazioni sulle impostazioni client in System Center Configuration Manager
 
@@ -714,7 +714,7 @@ Se si vogliono raccogliere i file dai computer client, selezionare **Imposta fil
     -   **Interrompere la raccolta file quando le dimensioni totali dei file superano (KB)**: specificare le dimensioni del file (in KB) oltre le quali il client interrompe la raccolta dei file specificati.  
 
     > [!NOTE]  
-    >  Il server del sito raccoglie le cinque versioni modificate più recenti dei file raccolti e le archivia nella directory *&lt;directory di installazione di ConfigMgr\>*\Inboxes\Sinv.box\Filecol. Se dopo l'ultimo ciclo di inventario software un file non è stato modificato, non viene raccolto nuovamente.  
+    >  Il server del sito raccoglie le cinque versioni modificate più recenti dei file raccolti e le archivia nella directory *&lt;directory di installazione di ConfigMgr\>* \Inboxes\Sinv.box\Filecol. Se dopo l'ultimo ciclo di inventario software un file non è stato modificato, non viene raccolto nuovamente.  
     >   
     >  L'inventario software non raccoglie file di dimensioni superiori a 20 MB.  
     >   
@@ -801,8 +801,9 @@ Questa impostazione consente di configurare la porta locale per il listener HTTP
 
 Impostare questa opzione su **Sì** per consentire la configurazione delle impostazioni di installazione di Office 365. Questa opzione consente anche il download di file dalle reti per la distribuzione di contenuti (CDN) di Office e la distribuzione dei file come applicazione in Configuration Manager. Per altre informazioni, vedere [Gestire gli aggiornamenti di Office 365 ProPlus](/sccm/sum/deploy-use/manage-office-365-proplus-updates).
 
+### <a name="enable-third-party-software-updates"></a>Enable third party software updates (Abilita aggiornamenti software di terze parti) 
 
-
+Se questa opzione è impostata su **Sì**, i criteri per 'Consenti aggiornamenti firmati da un percorso del servizio di aggiornamento Microsoft nella rete Intranet' vengono impostati e il certificato di firma viene installato nell'archivio degli autori attendibili nel client. Questa impostazione client è stata aggiunta in Configuration Manager versione 1802.
 ## <a name="state-messaging"></a>Messaggistica di stato
 
 ### <a name="state-message-reporting-cycle-minutes"></a>Ciclo di segnalazione messaggi di stato (minuti)
