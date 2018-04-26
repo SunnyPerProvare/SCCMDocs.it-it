@@ -1,17 +1,18 @@
 ---
-title: "Creare un'immagine per un OEM in modalità produttore computer o per un rivenditore locale"
+title: Creare un'immagine per un OEM in modalità produttore computer o per un rivenditore locale
 titleSuffix: Configuration Manager
-description: "Usare distribuzioni con supporti pre-installati per ridurre il traffico di rete durante la distribuzione di un sistema operativo in un computer di cui non è stato effettuato il provisioning completo."
+description: Usare distribuzioni con supporti pre-installati per ridurre il traffico di rete durante la distribuzione di un sistema operativo in un computer di cui non è stato effettuato il provisioning completo.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-osd
+ms.technology:
+- configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a7d3df90-062d-4d57-9e9d-e137d3e7cd7f
-caps.latest.revision: "8"
+caps.latest.revision: 8
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
@@ -48,7 +49,7 @@ Questo metodo di distribuzione può ridurre il traffico di rete perché l'immagi
 -   **Solo supporti e PXE (nascosto)**  
 
 ## <a name="create-the-prestaged-media"></a>Creare supporti pre-installati  
- Creare il file del supporto pre-installato da inviare all'OEM o al rivenditore locale. Per ulteriori informazioni, vedere [Create prestaged media with System Center Configuration Manager](create-prestaged-media.md).  
+ Creare il file del supporto pre-installato da inviare all'OEM o al rivenditore locale. Per ulteriori informazioni, vedere [Creare supporti pre-installati con System Center Configuration Manager](create-prestaged-media.md).  
 
 ## <a name="send-the-prestaged-media-file-to-the-oem-or-local-depot"></a>Inviare il file del supporto pre-installato all'OEM o al rivenditore locale  
  Inviare i supporti all'OEM o al rivenditore locale per pre-installare i computer. Il file del supporto pre-installato viene applicato a un disco rigido formattato nel computer.  

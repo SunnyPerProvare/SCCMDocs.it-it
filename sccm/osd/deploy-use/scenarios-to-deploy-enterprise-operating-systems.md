@@ -7,11 +7,12 @@ ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-osd
+ms.technology:
+- configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f74fdb86-c7c2-447f-91f6-b42df6370d7f
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
@@ -50,7 +51,7 @@ In System Center Configuration Manager sono disponibili gli scenari seguenti di 
 
  La dimensione della cache predefinita nei client di Configuration Manager potrebbe essere insufficiente per la maggior parte delle distribuzioni dell'immagine del sistema operativo. Se si vuole scaricare l'immagine completa nella cache del client, è necessario correggere la dimensione della cache del client di Configuration Manager nei computer di destinazione in modo che possa accettare la dimensione dell'immagine distribuita.  
 
- Per ulteriori informazioni, vedere [Configure the Client Cache for Configuration Manager Clients](../../core/clients/manage/manage-clients.md#BKMK_ClientCache).  
+ Per ulteriori informazioni, vedere [Configurare la cache del client per i client di Configuration Manager](../../core/clients/manage/manage-clients.md#BKMK_ClientCache).  
 
 ## <a name="task-sequence-deployments"></a>Distribuzioni di sequenze attività  
  La sequenza di attività creata è in grado di distribuire l'immagine del sistema operativo in un computer client di Configuration Manager in uno dei modi seguenti:  

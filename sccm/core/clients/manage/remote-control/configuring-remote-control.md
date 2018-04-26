@@ -7,12 +7,13 @@ ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: dudeso
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 45affc27-aa11-4249-9493-082ac23a3a3d
-caps.latest.revision: "4"
-caps.handback.revision: "0"
+caps.latest.revision: 4
+caps.handback.revision: 0
 author: arob98
 ms.author: angrobe
 manager: angrobe
@@ -42,7 +43,7 @@ Per usare Assistenza remota o Desktop remoto è necessario installare e configur
 
     È possibile modificare il nome della società visualizzato nella finestra di dialogo **Controllo remoto di Configuration Manager** configurando un valore per **Nome organizzazione visualizzato in Software Center** nelle impostazioni client **Agente computer** .  
 
- I computer client vengono configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero criteri per un singolo client, vedere [How to manage clients in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
+ I computer client vengono configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero criteri per un singolo client, vedere [Come gestire i client in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
 
 #### <a name="enable-keyboard-translation"></a>Abilitare la traduzione della tastiera
 
