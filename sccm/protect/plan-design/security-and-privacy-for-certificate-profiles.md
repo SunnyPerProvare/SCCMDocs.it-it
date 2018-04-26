@@ -7,12 +7,13 @@ ms.date: 12/28/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3393db41-900a-44c5-b950-2d46a35a198c
-caps.latest.revision: "7"
-caps.handback.revision: "0"
+caps.latest.revision: 7
+caps.handback.revision: 0
 author: Nbigman
 ms.author: nbigman
 manager: angrobe
@@ -40,7 +41,7 @@ ms.lasthandoff: 10/12/2017
 ## <a name="privacy-information-for-certificate-profiles"></a>Informazioni sulla privacy per i profili certificato  
  È possibile utilizzare profili certificato per distribuire certificati da un'autorità di certificazione radice (CA) e client e quindi valutare se i dispositivi diventano conformi dopo che sono stati applicati i profili. Il punto di gestione invia informazioni sulla conformità al server del sito e System Center Configuration Manager memorizza queste informazioni nel database del sito. Informazioni sulla conformità includono proprietà certificato, ad esempio il nome oggetto e l'identificazione personale. Le informazioni vengono crittografate quando i dispositivi le inviano al punto di gestione, ma non vengono memorizzate in forma crittografata nel database del sito. Il database conserva le informazioni fino alla relativa eliminazione nell'ambito dell'attività di manutenzione del sito **Elimina dati di gestione configurazione obsoleti** che viene effettuata all'intervallo predefinito di 90 giorni. È possibile configurare l'intervallo di eliminazione. Le informazioni sulla conformità non vengono inviate a Microsoft.  
 
- I profili certificato usano le informazioni che Configuration Manager raccoglie eseguendo l'individuazione. Per ulteriori informazioni sulla privacy per individuazione, vedere la sezione **Informazioni sulla privacy per l'individuazione** in [Security and privacy for System Center Configuration Manager](../../core/plan-design/security/security-and-privacy.md).  
+ I profili certificato usano le informazioni che Configuration Manager raccoglie eseguendo l'individuazione. Per ulteriori informazioni sulla privacy per individuazione, vedere la sezione **Informazioni sulla privacy per l'individuazione** in [Protezione e privacy per System Center Configuration Manager](../../core/plan-design/security/security-and-privacy.md).  
 
 > [!NOTE]  
 >  I certificati che vengono rilasciati a utenti o dispositivi potrebbero consentire l'accesso a informazioni riservate.  
