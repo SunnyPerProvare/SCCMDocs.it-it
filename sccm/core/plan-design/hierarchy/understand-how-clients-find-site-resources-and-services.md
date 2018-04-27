@@ -7,19 +7,20 @@ ms.date: 2/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae72df4b-5f5d-4e19-9052-bda28edfbace
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: d0cbaf0b9f10926015cf203dbb28633976034162
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: 76d9d486bf0c07da3d81596b1b065fe6532b29fe
+ms.sourcegitcommit: e4ca9fb1fad2caaf61bb46e0a12f4d6b96f15513
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="learn-how-clients-find-site-resources-and-services-for-system-center-configuration-manager"></a>Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager
 
@@ -61,8 +62,8 @@ Quando un client viene assegnato per la prima volta a un sito primario, selezion
 
 Un client seleziona un punto di gestione con cui comunicare in base al relativo percorso di rete corrente e alle configurazioni del gruppo di limiti. Anche se ha un punto di gestione assegnato, questo potrebbe non essere il punto di gestione usato dal client.  
 
-    > [!NOTE]  
-    >  A client always uses the assigned management point for registration messages and certain policy messages, even when other communications are sent to a proxy or local management point.  
+   > [!NOTE]  
+   >  Un client usa sempre il punto di gestione assegnato per i messaggi di registrazione e per alcuni messaggi di criteri, anche quando vengono inviate altre comunicazioni a un punto di gestione proxy o locale.
 
 È possibile usare i punti di gestione preferiti. I punti di gestione preferiti sono punti di gestione del sito assegnato di un client associati a un gruppo di limiti che il client usa per individuare i server del sistema del sito. L'associazione di un punto di gestione preferito a un gruppo di limiti come server del sistema del sito è simile al modo in cui i punti di distribuzione o i punti di migrazione stato sono associati a un gruppo di limiti. Se si abilitano i punti di gestione preferiti per la gerarchia, quando un client usa un punto di gestione dal sito assegnato, verrà effettuato un tentativo di usare un punto di gestione preferito prima di altri punti di gestione dal sito assegnato.  
 

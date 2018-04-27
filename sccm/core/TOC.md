@@ -292,13 +292,13 @@
 ###  [Come gestire i client Linux e UNIX](clients/manage/manage-clients-for-linux-and-unix-servers.md)
 ###  [Sincronizzare i dati in OMS](clients/manage/sync-data-microsoft-operations-management-suite.md)
 ###  [Gestire i client Mac](clients/manage/maintain-mac-clients.md)
-### [Dashboard di co-gestione](clients/manage/co-management-dashboard.md)
 
 ### [Dashboard dei dispositivi Surface](clients/manage/surface-device-dashboard.md)
 
 ##   [Co-gestione per dispositivi Windows 10](clients/manage/co-management-overview.md)
 ###  [Preparare i dispositivi Windows 10 per la co-gestione](clients/manage/co-management-prepare.md)
 ###  [Passare i carichi di lavoro di Configuration Manager a Intune](clients/manage/co-management-switch-workloads.md)
+### [Dashboard di co-gestione](clients/manage/co-management-dashboard.md)
 
 ##   [Gestire i client su Internet](clients/manage/manage-clients-internet.md)
 ###  [Pianificare il gateway di gestione cloud](clients/manage/cmg/plan-cloud-management-gateway.md)
