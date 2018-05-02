@@ -17,11 +17,11 @@ caps.handback.revision: 0
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: b9699b2f4bd1f18890d25582be9a8d20778b64be
-ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
+ms.openlocfilehash: 7cfb969ab70c27859788732839f4715541e1b91e
+ms.sourcegitcommit: e4ca9fb1fad2caaf61bb46e0a12f4d6b96f15513
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Creare ed eseguire gli script di PowerShell dalla console di Configuration Manager
 
@@ -141,7 +141,7 @@ I tre ruoli di sicurezza usati per l'esecuzione di script non vengono creati per
          |Script SMS|Elimina|Sì|
          |Script SMS|Modifica|Sì|
 
-    **Nome del ruolo**: autori di script
+    **Nome del ruolo**: responsabile approvazione di script
     - **Descrizione**: queste autorizzazioni consentono a questo ruolo di approvare script, ma non di crearli o eseguirli. 
     - **Autorizzazioni:** verificare che siano impostate le autorizzazioni seguenti.
 
@@ -184,7 +184,8 @@ Nella finestra di dialogo **Crea script** fare clic su **Parametri script** in *
 Ognuno dei parametri di script è associato a una finestra di dialogo per l'aggiunta di altri dettagli e la convalida.
 
 >[!IMPORTANT]
-> Nei valori dei parametri non è consentito l'apostrofo. 
+> Nei valori dei parametri non è consentito l'apostrofo. </br></br>
+> Esiste un problema noto in Configuration Manager versione 1802, a causa del quale i parametri con spazi non vengono passati allo script correttamente. Se nel parametro viene usato uno spazio, solo il primo elemento nel parametro viene passato allo script e tutti gli elementi dopo lo spazio non vengono passati. Gli amministratori possono creare uno script apposito sostituendo gli spazi con caratteri alternativi e convertendoli o usando altri metodi.
 
 
 ### <a name="parameter-validation"></a>Convalida dei parametri

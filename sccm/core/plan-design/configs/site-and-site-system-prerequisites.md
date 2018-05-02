@@ -12,15 +12,15 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1392797b-76cb-46b4-a3e4-8f349ccaa078
-caps.latest.revision: 
+caps.latest.revision: 5
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 6d1be6375dde2df51aafe076e5613647ecca3c4c
-ms.sourcegitcommit: d0fc79214bc35ca172fd2023dfa617b977ee865b
+ms.openlocfilehash: ae0a36acf4203fb5c7601a2960c0b5bb0a52082e
+ms.sourcegitcommit: ac06e034cc60db7b1acade1f541e26b6cc50506e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="site-and-site-system-prerequisites-for-system-center-configuration-manager"></a>Prerequisiti del sito e del sistema del sito per System Center Configuration Manager
 
@@ -62,7 +62,8 @@ ms.lasthandoff: 02/28/2018
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2 (o versioni successive)
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1
+    - Per altre informazioni sulle versioni di .Net Framework, vedere [Versioni e dipendenze di .NET Framework](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)
 
 -   Compressione differenziale remota  
 
@@ -83,7 +84,8 @@ ms.lasthandoff: 02/28/2018
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2 (o versioni successive)   
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1
+    - Per altre informazioni sulle versioni di .Net Framework, vedere [Versioni e dipendenze di .NET Framework](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)
 
 -   Compressione differenziale remota  
 
@@ -124,9 +126,12 @@ ms.lasthandoff: 02/28/2018
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2 (o versioni successive):  
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1
+    - ASP.NET 4.5 
 
-    -   ASP.NET 4.5  
+    - Per altre informazioni sulle versioni di .Net Framework, vedere [Versioni e dipendenze di .NET Framework](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)  
+
+    
 
 **Configurazione di IIS:**  
 
@@ -159,7 +164,7 @@ ms.lasthandoff: 02/28/2018
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2 (o versioni successive):  
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1:  
 
     -   ASP.NET 4.5:  
 
@@ -194,12 +199,12 @@ ms.lasthandoff: 02/28/2018
 ###  <a name="bkmk_2012AIpreq"></a> Punto di sincronizzazione di Asset Intelligence  
 **Funzionalità e ruoli di Windows Server:**  
 
--   .NET Framework 4.5.2 (o versioni successive)  
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
 
 ###  <a name="bkmk_2012crppreq"></a> Punto di registrazione certificati  
 **Funzionalità e ruoli di Windows Server:**  
 
--   .NET Framework 4.5.2 (o versioni successive):  
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1:  
 
     -   Attivazione HTTP  
 
@@ -273,7 +278,7 @@ ms.lasthandoff: 02/28/2018
 
 -   .NET Framework 3.5 (o versioni successive)  
 
--   .NET Framework 4.5.2 (o versioni successive):  
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1:  
 
      Quando viene installato questo ruolo del sistema del sito, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Se un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
 
@@ -313,7 +318,7 @@ ms.lasthandoff: 02/28/2018
 
 -   .NET Framework 3.5 (o versioni successive)  
 
--   .NET Framework 4.5.2 (o versioni successive) 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
 
      Quando viene installato questo ruolo del sistema del sito, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Se un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
 
@@ -359,7 +364,7 @@ ms.lasthandoff: 02/28/2018
 ###  <a name="bkmk_2012MPpreq"></a> Punto di gestione  
 **Funzionalità e ruoli di Windows Server:**  
 
--   .NET Framework 4.5.2 (o versioni successive) 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
 
 -   Estensioni del server BITS (e le opzioni selezionate automaticamente) o Servizio trasferimento intelligente in background (BITS) (e le opzioni selezionate automaticamente)  
 
@@ -382,7 +387,7 @@ ms.lasthandoff: 02/28/2018
 ###  <a name="bkmk_2012RSpoint"></a> Punto di Reporting Services  
 **Funzionalità e ruoli di Windows Server:**  
 
--   .NET Framework 4.5.2 (o versioni successive) 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
 
 **SQL Server Reporting Services:**  
 
@@ -395,7 +400,7 @@ ms.lasthandoff: 02/28/2018
 ###  <a name="bkmk_SCPpreq"></a> Punto di connessione del servizio  
 **Funzionalità e ruoli di Windows Server:**  
 
--   .NET Framework 4.5.2 (o versioni successive) 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
 
      Quando viene installato questo ruolo del sistema del sito, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Se un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
 
@@ -410,7 +415,7 @@ ms.lasthandoff: 02/28/2018
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2 (o versioni successive) 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
 
 È necessaria la configurazione predefinita di IIS.
 
@@ -439,7 +444,7 @@ Windows Server 2008 e Windows Server 2008 R2 sono ora in modalità di supporto "
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2 (o versioni successive) 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
 
 **Funzionalità di Windows:**  
 
@@ -462,7 +467,7 @@ Windows Server 2008 e Windows Server 2008 R2 sono ora in modalità di supporto "
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2 (o versioni successive)  
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
 
 **Visual C++ Redistributable:**  
 
@@ -499,7 +504,7 @@ Windows Server 2008 e Windows Server 2008 R2 sono ora in modalità di supporto "
 ###  <a name="bkmk_2008acwspreq"></a> Punto per siti Web del Catalogo applicazioni  
 **.NET Framework:**  
 
--   .NET Framework 4.5.2 (o versioni successive) 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1
 
 **Configurazione di IIS:**
 
@@ -530,7 +535,7 @@ Windows Server 2008 e Windows Server 2008 R2 sono ora in modalità di supporto "
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2 (o versioni successive) 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
 
 **Attivazione di Windows Communication Foundation (WCF):**  
 
@@ -561,12 +566,12 @@ Windows Server 2008 e Windows Server 2008 R2 sono ora in modalità di supporto "
 ###  <a name="bkmk_2008AIpreq"></a> Punto di sincronizzazione di Asset Intelligence  
 **.NET Framework:**  
 
--   .NET Framework 4.5.2 (o versioni successive) 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1
 
 ###  <a name="bkmk_2008crppreq"></a> Punto di registrazione certificati  
 **.NET Framework:**  
 
--   .NET Framework 4.5.2 (o versioni successive) 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
 
 -   Attivazione HTTP  
 
@@ -641,7 +646,7 @@ Quando si usa una configurazione personalizzata di IIS, è possibile rimuovere l
 ###  <a name="bkmk_2008Enrollpreq"></a> Punto di registrazione  
 **.NET Framework:**  
 
--   .NET Framework 4.5.2 (o versioni successive) 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
 
      Se quando viene installato questo ruolo del sistema del sito nel server non è già installata una versione supportata di .NET Framework, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Se un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
 
@@ -670,7 +675,7 @@ Quando si usa una configurazione personalizzata di IIS, è possibile rimuovere l
 ###  <a name="bkmk_2008EnrollProxpreq"></a> Punto proxy di registrazione  
 **.NET Framework:**  
 
--   .NET Framework 4.5.2 (o versioni successive) 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1
 
      Se quando viene installato questo ruolo del sistema del sito nel server non è già installata una versione supportata di .NET Framework, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Quando un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
 
@@ -708,7 +713,7 @@ Quando si usa una configurazione personalizzata di IIS, è possibile rimuovere l
 ###  <a name="bkmk_2008MPpreq"></a> Punto di gestione  
 **.NET Framework:**  
 
--   .NET Framework 4.5.2 (o versioni successive)
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1
 
 **Configurazione di IIS:**
 
@@ -749,7 +754,7 @@ Quando si usa una configurazione personalizzata di IIS, è possibile rimuovere l
 ###  <a name="bkmk_2008RSpoint"></a> Punto di Reporting Services  
 **.NET Framework:**  
 
--   .NET Framework 4.5.2 (o versioni successive)  
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
 
 **SQL Server Reporting Services:**  
 
@@ -762,7 +767,7 @@ Quando si usa una configurazione personalizzata di IIS, è possibile rimuovere l
 ###  <a name="bkmk_2008SCPpreq"></a> Punto di connessione del servizio  
 **.NET Framework:**  
 
--   .NET Framework 4.5.2 (o versioni successive) 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
 
      Se quando viene installato questo ruolo del sistema del sito nel server non è già installata una versione supportata di .NET Framework, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Se un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
 
@@ -777,7 +782,7 @@ Quando si usa una configurazione personalizzata di IIS, è possibile rimuovere l
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2 (o versioni successive) 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
 
 **Configurazione di IIS:**
 

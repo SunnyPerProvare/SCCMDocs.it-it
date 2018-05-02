@@ -3,7 +3,7 @@ title: Client e dispositivi supportati
 titleSuffix: Configuration Manager
 description: Informazioni su quali sistemi operativi sono supportati da System Center Configuration Manager per client e dispositivi.
 ms.custom: na
-ms.date: 8/30/2017
+ms.date: 04/17/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,22 +12,22 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 87f4e041-67df-4c61-aa98-7444faffe565
-caps.latest.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 614226e60f9bcd7b8e3c1330f52a4847e89e0880
-ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
+caps.latest.revision: 5
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: d6befce522bcfef293f36def39405e9555cd3510
+ms.sourcegitcommit: e23350fe65ff99228274e465b24b5e163769f38f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="supported-operating-systems-for-clients-and-devices-for-system-center-configuration-manager"></a>Sistemi operativi supportati per client e dispositivi per System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
- System Center Configuration Manager supporta l'installazione di software client in un'ampia gamma di computer Windows, Mac, Linux e UNIX.  
+ Configuration Manager supporta l'installazione di software client in un'ampia gamma di computer Windows, Mac, Linux e UNIX.  
 
  **Requisiti e limitazioni per tutti i client:**  
 
@@ -43,6 +43,8 @@ ms.lasthandoff: 02/01/2018
 
 -  **Windows Server 2016** - Standard, Datacenter <sup>1</sup>
   - Questo sistema operativo è supportato a partire da Configuration Manager versione 1606 con l'hotfix rollup di KB3186654 o dalla versione 1606 di base rilasciata nell'ottobre del 2016.  
+
+-   **Windows Storage Server 2016**  
 
 -   **Windows Server 2012 R2** (x64) - Standard, Datacenter <sup>1</sup>    
 
@@ -65,6 +67,9 @@ ms.lasthandoff: 02/01/2018
 <!---   **Windows 8** (x86, x64): Professional, Enterprise  -removed Jan 12,2018 sms505863-->
 
 -   **Windows 7 con SP1** (x86, x64) - Professional, Enterprise e Ultimate    
+
+-   **Installazione Server Core di Windows Server, versione 1709** (x64) <sup>2</sup>
+  - Questo sistema operativo è supportato a partire dalla versione 1710.
 
 -   **Installazione dei componenti di base di Windows Server 2016** (x64) <sup>2</sup>
   - Questo sistema operativo è supportato a partire dalla versione 1606 con l'hotfix rollup di KB3186654 o dalla versione 1606 di base rilasciata nell'ottobre del 2016.
