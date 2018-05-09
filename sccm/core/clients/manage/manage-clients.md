@@ -2,24 +2,19 @@
 title: Gestire i client
 titleSuffix: Configuration Manager
 description: Informazioni su come gestire i client in System Center Configuration Manager.
-ms.custom: na
 ms.date: 12/21/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 3986a992-c175-4b6f-922e-fc561e3d7cb7
-caps.latest.revision: "17"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 2065fd0910b1d89df3f8296c87ede15b89331568
-ms.sourcegitcommit: 528b1ce79803fecd34937a790e9b5cde282d4caa
+manager: dougeby
+ms.openlocfilehash: 623d7b6a048b7728e40adb3655dc1017408fb1d7
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Come gestire i client in System Center Configuration Manager
 
@@ -278,7 +273,7 @@ Per altre informazioni sull'uso delle proprietà della riga di comando di CCMSet
 
 1.  Nel Pannello di controllo del computer client passare a **Configuration Manager** e fare doppio clic per aprire le proprietà.  
 
-2.  Nella scheda **Cache** impostare le proprietà per lo spazio e il percorso. Il percorso predefinito è *%windir%*\ccmcache.  
+2.  Nella scheda **Cache** impostare le proprietà per lo spazio e il percorso. Il percorso predefinito è *%windir%* \ccmcache.  
 
 3.  Per eliminare i file nella cartella della cache, scegliere **Elimina file**.  
 

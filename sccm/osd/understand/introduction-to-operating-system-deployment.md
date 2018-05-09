@@ -2,24 +2,19 @@
 title: Introduzione alla distribuzione di sistemi operativi
 titleSuffix: Configuration Manager
 description: Consente di comprendere i concetti prima di distribuire sistemi operativi nell'ambiente di Configuration Manager.
-ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: d9a1c545-8301-492c-832f-2c108ff93c77
-caps.latest.revision: "12"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 31f18ce9df3fcdb133589ce5214cef96372ee1b0
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 5dfb38cb005b04e761990a4cb513646daab25439
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="introduction-to-operating-system-deployment-in-system-center-configuration-manager"></a>Introduzione alla distribuzione del sistema operativo in System Center Configuration Manager
 

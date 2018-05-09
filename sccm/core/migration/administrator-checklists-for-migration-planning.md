@@ -2,25 +2,19 @@
 title: Elenchi di controllo per la migrazione
 titleSuffix: Configuration Manager
 description: Per pianificare una strategia di migrazione verso System Center Configuration Manager usare gli elenchi di controllo amministratore.
-ms.custom: na
 ms.date: 12/29/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 295fdf07-93cc-490c-acdd-ce3ee88cb36f
-caps.latest.revision: "7"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 2bf39fbf27020ed1f518e44cddd8e236c8ca762f
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 06e85a0b372aea34a041f050d311178967dc18b5
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="administrator-checklists-for-migration-planning-in-system-center-configuration-manager"></a>Elenchi di controllo amministratore per la pianificazione della migrazione in System Center Configuration Manager
 

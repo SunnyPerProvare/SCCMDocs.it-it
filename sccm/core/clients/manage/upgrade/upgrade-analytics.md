@@ -1,23 +1,20 @@
 ---
 title: Preparazione aggiornamenti
-titleSuffix: System Center Configuration Manager
+titleSuffix: Configuraton Manager
 description: Integrare Upgrade Readiness con Configuration Manager. Accedere ai dati di compatibilità dell'aggiornamento nella console di amministrazione. Definire i dispositivi di destinazione per l'aggiornamento o la correzione.
-keywords: ''
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
 ms.date: 03/22/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: ''
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.assetid: 68407ab8-c205-44ed-9deb-ff5714451624
-ms.openlocfilehash: f9fec1723c5242485d23981bcb683e3a8e98bfd3
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 4360fc34e06d4c62c137f8c956274104112d54a8
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="integrate-upgrade-readiness-with-system-center-configuration-manager"></a>Integrare Upgrade Readiness con System Center Configuration Manager
 
@@ -27,8 +24,10 @@ Preparazione aggiornamenti (in precedenza Upgrade Analytics) fa parte di [Window
 
 Preparazione aggiornamenti è una soluzione che viene eseguita in [Operations Management Suite (OMS)](/azure/operations-management-suite/operations-management-suite-overview). Per altre informazioni su Preparazione aggiornamenti, vedere [Manage Windows upgrades with Upgrade Readiness](/windows/deployment/upgrade/manage-windows-upgrades-with-upgrade-readiness) (Gestire gli aggiornamenti di Windows con Preparazione aggiornamenti).
 
+<!--
 >[!WARNING]
->Perché Preparazione aggiornamenti funzioni all'interno di Configuration Manager, è necessario eseguire l'aggiornamento a Configuration Manager versione 1802.  <!--507205--> Il connettore Preparazione aggiornamenti non funzionerà più nelle versioni di Configuration Manager precedenti alla 1802. 
+>For Upgrade Readiness to function within Configuration Manager, you must upgrade to Configuration Manager version 1802. The Upgrade Readiness Connector will no longer function in Configuration Manager versions earlier than 1802. 
+SMS.507205 Pulled 4/5/18 -->
 
 
 ## <a name="configure-clients"></a>Configurare i client

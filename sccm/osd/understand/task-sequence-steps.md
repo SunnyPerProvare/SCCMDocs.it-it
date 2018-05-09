@@ -2,26 +2,19 @@
 title: Passaggi della sequenza di attività
 titleSuffix: Configuration Manager
 description: Informazioni sui passaggi che è possibile aggiungere a una sequenza di attività di Configuration Manager.
-ms.custom: na
 ms.date: 03/30/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-osd
+ms.topic: conceptual
 ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
-caps.latest.revision: 26
-caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 53929400b983a2191e60a7d42ae84062afd44e3a
-ms.sourcegitcommit: d8a4a53630351b3d677bbdc5d203e7d330472cba
+ms.openlocfilehash: a678cbbd8500070e2d4056d6e424818e7000ef83
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Passaggi della sequenza di attività in System Center Configuration Manager
 
@@ -635,7 +628,7 @@ In caso di dischi rigidi di grandi dimensioni il processo di crittografia può r
 **Volume**  
  Informazioni specifiche sulla partizione o sul volume creato dalla sequenza di attività, inclusi gli attributi seguenti:  
 
--   Nome  
+-   Name  
 -   Spazio su disco rimanente  
    
 Per creare una nuova partizione, fare clic su **Nuovo** per aprire la finestra di dialogo **Proprietà della partizione** . Specificare il tipo e la dimensione della partizione e se si tratta di una partizione di avvio. Per modificare una partizione esistente, fare clic sulla partizione da modificare, quindi su Proprietà. Per altre informazioni su come configurare le partizioni del disco rigido, vedere uno degli articoli seguenti:  

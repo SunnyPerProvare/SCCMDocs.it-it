@@ -1,25 +1,20 @@
 ---
-title: "Funzionalità nella Technical Preview 1605"
+title: Funzionalità nella Technical Preview 1605
 titleSuffix: Configuration Manager
-description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1605 per System Center Configuration Manager."
-ms.custom: na
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1605 per System Center Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 2bafd028-1923-4463-9e3e-ee41bc0c437b
-caps.latest.revision: "36"
-author: erikje
-ms.author: erikje
-manager: angrobe
-ms.openlocfilehash: 795b7658f5da8f863f208f01896ae2d7823ff2a6
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 05d87b253f2387dd8428f4b9fadea3fe5f3a48e8
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1605-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1605 per System Center Configuration Manager
 
@@ -36,7 +31,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
  **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
 ##  <a name="BKMK_PerAppVPN"></a> VPN per app per dispositivi Windows 10  
- Per i dispositivi Windows 10 gestiti tramite Configuration Manager con Intune è possibile aggiungere un elenco di app che aprono automaticamente una connessione VPN che è stata configurata tramite la console di amministrazione di Configuration Manager. È possibile scegliere di limitare il traffico VPN per tali applicazioni oppure continuare a consentire tutto il traffico tramite la connessione VPN.  
+ Per i dispositivi Windows 10 gestiti usando Configuration Manager con Intune è possibile aggiungere un elenco di app che aprono automaticamente una connessione VPN configurata dalla console di amministrazione di Configuration Manager. È possibile scegliere di limitare il traffico VPN per tali applicazioni oppure continuare a consentire tutto il traffico tramite la connessione VPN.  
 
  **Requisiti**:  
 
@@ -72,7 +67,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
  Opzioni simili sono state aggiunte alla procedura guidata di distribuzione degli aggiornamenti software, alla procedura guidata di creazione delle regole di distribuzione automatica e alle pagine delle proprietà. Tuttavia non sono attualmente implementate in questa versione Technical Preview.  
 
 ##  <a name="BKMK_Remote"></a> Nuova esperienza per le azioni dei dispositivi remoti  
- È stata migliorata l'esperienza di esecuzione delle azioni dei dispositivi remoti dalla console di Configuration Manager.  
+ È stata migliorata l'esperienza di esecuzione di azioni dei dispositivi remoti dalla console di Configuration Manager.  
 Azioni comuni come **Ritira/cancella dati**, **Reimpostazione passcode**, **Blocco remoto** e **Bypass del blocco attivazione** sono adesso disponibili nel menu **Azioni remote dispositivo** accessibile dall'area di lavoro **Asset e conformità**.  
 
  ![Nuova schermata Azioni remote dispositivo](media/New-Remote-Device-Actions.png)  
@@ -120,7 +115,7 @@ Azioni comuni come **Ritira/cancella dati**, **Reimpostazione passcode**, **Bloc
 
 3.  In Windows Store per le aziende configurare Configuration Manager come strumento di gestione dello Store.  
 
-    1.  Aprire [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/managementtools) e, se viene chiesto, eseguire l'accesso.  
+    1.  Aprire [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/managementtools) ed eseguire l'accesso, se richiesto.  
 
     2.  Accettare le condizioni per l'utilizzo, se necessario.  
 
@@ -142,12 +137,12 @@ Azioni comuni come **Ritira/cancella dati**, **Reimpostazione passcode**, **Bloc
 
 8.  Al termine verrà visualizzato l'account configurato nell'elenco degli **account di Windows Store per le aziende** nella console di Configuration Manager.  
 
-### <a name="try-it-out"></a>Prova subito!  
+### <a name="try-it-out"></a>Verifica  
  Provare a completare l'operazione seguente e inviare le informazioni sul funzionamento della procedura utilizzando il modulo di feedback disponibile alla pagina del [programma dei commenti e suggerimenti di Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) sul sito Microsoft Connect:  
 
  Creare e distribuire un'applicazione di Configuration Manager da un archivio di Windows per app aziendali con licenza offline.  
 
-1.  Nell'area di lavoro **Raccolta software** della console di Configuration Manager espandere **Gestione applicazioni** e fare clic su **Informazioni di licenza per le app dello Store**.  
+1.  Nell'area di lavoro **Raccolta software** della console di Configuration Manager espandere **Gestione delle applicazioni** e fare clic su **Informazioni di licenza per le app dello Store**.  
 
 2.  Scegliere l'app che si vuole distribuire quindi nella scheda **Home** nel gruppo **Crea** fare clic su **Crea applicazione**.  
 
@@ -164,7 +159,7 @@ Azioni comuni come **Ritira/cancella dati**, **Reimpostazione passcode**, **Bloc
 
 -   Per le app iOS acquistate con Volume Purchase Program la scheda Volume Purchase Program di Apple è stata rimossa dalla finestra di dialogo **Browser pacchetto app per iOS** nella Creazione guidata applicazione. Per creare un'app iOS acquistata con Volume Purchase Program eseguire questi passaggi:  
 
-    1.  1.  Nell'area di lavoro **Raccolta software** della console di Configuration Manager espandere **Gestione applicazioni** e fare clic su **Informazioni di licenza per le app dello Store**.  
+    1.  1.  Nell'area di lavoro **Raccolta software** della console di Configuration Manager espandere **Gestione delle applicazioni** e fare clic su **Informazioni di licenza per le app dello Store**.  
 
     2.  2.  Scegliere l'app che si vuole distribuire quindi nella scheda **Home** nel gruppo **Crea** fare clic su **Crea applicazione**.  
 
@@ -259,7 +254,7 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
 
 2.  Dopo aver distribuito l'applicazione del portale aziendale e la relativa configurazione, verificare che la linea di base dell'applicazione e della configurazione siano compatibili per il dispositivo specificato utilizzando la sezione **Distribuzioni** della console di Configuration Manager. Il portale aziendale verrà visualizzato come **Portale aziendale (Technical Preview)** nel menu Start sul dispositivo.  
 
-### <a name="try-it-out"></a>Prova subito!  
+### <a name="try-it-out"></a>Verifica  
  Provare a completare le operazioni seguenti e inviare le informazioni sul funzionamento della procedura utilizzando il modulo di feedback disponibile alla pagina del [programma dei commenti e suggerimenti di Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) sul sito Microsoft Connect:  
 
 1.  Distribuire varie applicazioni con tipi di distribuzione supportati a una raccolta di utenti con scopo di distribuzione **Disponibile**. In questa versione Technical Preview le applicazioni che richiedono l'approvazione dell'amministratore non sono supportate e non saranno visualizzate nel portale aziendale.  
@@ -278,7 +273,7 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
 
  La versione Technical Preview 1605 per System Center Configuration Manager aggiunge la possibilità di aggiornare i computer del gruppo di server in un ordine specifico definito dall'utente, aggiunge il monitoraggio avanzato per visualizzare lo stato per i computer del gruppo di server e offre la possibilità di cancellare i blocchi di distribuzione, che si rivela utile quando i client non sono riusciti a installare gli aggiornamenti software e impediscono ad altri client di installare i loro aggiornamenti software.  
 
-### <a name="try-it-out"></a>Prova subito!  
+### <a name="try-it-out"></a>Verifica  
  Provare a completare le operazioni seguenti e inviare le informazioni sul funzionamento della procedura utilizzando il modulo di feedback disponibile alla pagina del [programma dei commenti e suggerimenti di Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) sul sito Microsoft Connect:  
 
 -   È possibile creare una raccolta che rappresenta un gruppo di server. Per questo test, è possibile configurare le regole di appartenenza alla raccolta in modo che nella raccolta siano presenti 2 macchine.   
@@ -338,7 +333,7 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
 
 1.  Nell'area di lavoro **Asset e conformità** fare clic su **Raccolte di dispositivi** e quindi fare clic sulla raccolta per cancellare i blocchi.  
 
-2.  Sulla scheda **Home**, nel gruppo **Distribuzione**, fare clic su **Cancellare i blocchi di distribuzione del gruppo di server**. Quando i client non sono riusciti a installare gli aggiornamenti software e impediscono ad altri client di installare i loro aggiornamenti software, i blocchi di distribuzione possono essere cancellati manualmente.  
+2.  Sulla scheda **Home**, nel gruppo **Distribuzione**, fare clic su **Cancellare i blocchi di distribuzione del gruppo di server**. Quando i client non sono riusciti a installare gli aggiornamenti software e impediscono ad altri client di installare i loro, i blocchi di distribuzione possono essere cancellati manualmente.  
 
 ##  <a name="BKMK_ATP"></a> Supporto del servizio Windows Defender Advanced Threat Protection  
  Windows Defender Advanced Threat Protection (ATP) è un nuovo servizio che consente alle aziende di rilevare, analizzare e rispondere agli attacchi avanzati sulle reti. Altre informazioni su [Windows Defender ATP](https://blogs.windows.com/windowsexperience/2016/03/01/announcing-windows-defender-advanced-threat-protection). Configuration Manager può essere d'aiuto per caricare e monitorare dispositivi client Windows 10 Anniversary Edition gestiti.  
@@ -423,7 +418,7 @@ In questa versione Technical Preview se il portale aziendale rimane aperto per p
 ##  <a name="BKMK_IMEI"></a> Pre-dichiarare i dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS  
  È ora possibile identificare i dispositivi di proprietà dell'azienda importando i relativi codici IMEI (International station Mobile Equipment Identity). È possibile caricare un file con valori separati da virgola (CSV) contenente i codici IMEI o immettere manualmente le informazioni relative ai dispositivi.  Possono essere importati i numeri di serie anche per i dispositivi iOS.  Le informazioni importate imposteranno la proprietà dei dispositivi registrati come "Aziendale".  È tuttavia necessaria una licenza di Intune per ogni utente che accede al servizio.  
 
-### <a name="try-it-out"></a>Prova subito!  
+### <a name="try-it-out"></a>Verifica  
  Provare a completare le operazioni seguenti e inviare le informazioni sul funzionamento della procedura utilizzando il modulo di feedback disponibile alla pagina del [programma dei commenti e suggerimenti di Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) sul sito Microsoft Connect:  
 
 -   Importare un set di numeri IMEI in un file .csv. Ogni riga può contenere il numero IMEI seguito da un campo di dettagli.  

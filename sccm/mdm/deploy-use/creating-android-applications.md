@@ -2,24 +2,19 @@
 title: Creare applicazioni Android
 titleSuffix: Configuration Manager
 description: Questo articolo descrive le considerazioni da tenere presenti quando si creano e distribuiscono applicazioni per i dispositivi Android.
-ms.custom: na
 ms.date: 07/31/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: e025c48c-1514-4ab7-836c-e0635aaa993a
-caps.latest.revision: "6"
-author: mattbriggs
-ms.author: mabrigg
-manager: angrobe
-ms.openlocfilehash: c512cba550e405c866204af981aba75639665de2
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 4c09216744b33412bf1840c20aad659c59b0f52b
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="create-android-applications-with-system-center-configuration-manager"></a>Creare applicazioni Android con System Center Configuration Manager
 
@@ -55,7 +50,7 @@ Gli amministratori di Configuration Manager possono anche approvare le app nel [
 
 Attenersi alla procedura seguente per approvare le applicazioni nello store di Play for Work, sincronizzarle con la console di Configuration Manager e quindi distribuirle ai dispositivi Android for Work gestiti. Per distribuire applicazioni a profili di lavoro degli utenti, è necessario approvarle in Play for Work e quindi sincronizzarle con la console di Configuration Manager.
 
-1. Aprire un browser e passare a: https://play.google.com/work.
+1. Aprire un browser e andare a: https://play.google.com/work.
 2. Accedere usando l'account di amministratore di Google associato al tenant di Intune.
 3. Cercare le app che si vuole distribuire nell'ambiente e scegliere **Approva** per ognuna di esse per renderle disponibili per Android for Work.
 4. Nella console di Configuration Manager passare a **Amministratore** > **Panoramica** > **Servizi cloud** > **Android for Work** e scegliere **Sincronizza**.

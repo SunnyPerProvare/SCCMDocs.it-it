@@ -1,24 +1,20 @@
 ---
 title: Technical Preview 1710 | Microsoft Docs
 titleSuffix: Configuration Manager
-description: "Informazioni sulle funzionalità disponibili nella Technical Preview versione 1710 per System Center Configuration Manager."
-ms.custom: na
+description: Informazioni sulle funzionalità disponibili nella Technical Preview versione 1710 per System Center Configuration Manager.
 ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: f4706a58-1f11-4eab-b1eb-3d1a0da02d0f
-author: erikje
-ms.author: erikje
-manager: angrobe
-ms.openlocfilehash: ed5f977df79114e1209cd3cc82d2e56e8e728c3d
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 730d14c5985c088d964761bb83043f3a34924486
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1710-for-system-center-configuration-manager"></a>Funzionalità nella Technical Preview 1710 per System Center Configuration Manager
 
@@ -62,7 +58,7 @@ Con questa versione gli script di PowerShell distribuiti supportano ora i miglio
 La distribuzione di script di PowerShell è stata introdotta per la prima volta nella versione [Technical Preview 1706](/sccm/core/get-started/capabilities-in-technical-preview-1706#create-and-run-powershell-scripts-from-the-configuration-manager-console). Miglioramenti aggiuntivi sono stati quindi introdotti nella versione [Technical Preview 1707](/sccm/core/get-started/capabilities-in-technical-preview-1707#add-parameters-when-you-deploy-powershell-scripts-from-configuration-manager) e quindi nella versione [Technical Preview 1708](/sccm/core/get-started/capabilities-in-technical-preview-1708#improvements-for-specifying-script-parameters-when-you-deploy-powershell-scripts-from-configuration-manager).
 
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 
 Per provare la funzionalità Esegui script, vedere [Creare ed eseguire script](../../apps/deploy-use/create-deploy-scripts.md).
 
@@ -75,7 +71,7 @@ Con questa versione è ora possibile impostare il livello della raccolta dei dat
 
 Il livello di telemetria Enhanced (Limited) (Avanzato - Limitato) include metriche del livello di base e un subset di dati raccolti dal livello **Avanzato** pertinenti per Windows Analytics. Per altre informazioni sui livelli di telemetria, vedere [Livelli di telemetria](https://docs.microsoft.com/windows/configuration/configure-windows-telemetry-in-your-organization#telemetry-levels).
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 Per configurare la raccolta di dati di telemetria di Windows 10 nei client, vedere [Come configurare le impostazioni client](/sccm/core/clients/deploy/configure-client-settings). Aprire la finestra **Servizi cloud** e impostare i dati di telemetria di Windows 10 su **Avanzato**.
 
 
@@ -84,7 +80,7 @@ Per configurare la raccolta di dati di telemetria di Windows 10 nei client, vede
 
 Con questa versione, Software Center non distorce più le icone maggiori di 250x250 pixel. In Software Center tali icone apparivano sfocate. È ora possibile impostare icone con dimensioni massime pari a 512x512 pixel. Tali icone verranno visualizzate senza distorsione.
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 Aggiungere un'icona per l'app in Software Center. Per provare subito, vedere [Creare applicazioni](/sccm/apps/deploy-use/create-applications).
 
 
@@ -169,7 +165,7 @@ A partire dall'aggiornamento Fall Creators Update per Windows versione 1709, i d
 
 Il riavvio è l'impostazione predefinita.
 
-#### <a name="try-it-out"></a>Prova subito!  
+#### <a name="try-it-out"></a>Verifica  
 
 Se si vuole disattivare il riavvio, seguire questa procedura:
 
@@ -185,7 +181,7 @@ Gli amministratori hanno ora la possibilità di consentire ai dispositivi blocca
 
 Perché il software possa essere considerato attendibile, i dispositivi devono eseguire Windows Defender SmartScreen.
 
-#### <a name="try-it-out"></a>Prova subito!  
+#### <a name="try-it-out"></a>Verifica  
 
 Per consentire a un dispositivo con Windows Defender SmartScreen l'esecuzione di software considerato attendibile, seguire questa procedura:
 
@@ -201,7 +197,7 @@ Per consentire a un dispositivo con Windows Defender SmartScreen l'esecuzione di
 ### <a name="before-you-start"></a>Prima di iniziare
 Per creare e distribuire i criteri di Windows Defender Application Guard, configurare i dispositivi Windows 10 in cui vengono distribuiti i criteri con un criterio di isolamento rete. Per altre informazioni, vedere il post di blog indicato più avanti. Questa funzionalità funziona solo con le build correnti di Windows 10 Insider. Per provarla, i client devono eseguire una build recente di Windows 10 Insider.
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 
 Per comprendere le nozioni di base relative a Windows Defender Application Guard, leggere [il post di blog](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97).
 

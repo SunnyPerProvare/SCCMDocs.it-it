@@ -1,26 +1,20 @@
 ---
-title: "Funzionalità nella Technical Preview 1606"
+title: Funzionalità nella Technical Preview 1606
 titleSuffix: Configuration Manager
-description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1606 per System Center Configuration Manager."
-ms.custom: na
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1606 per System Center Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 134a2f60-811e-4dc9-a8f5-1ce0018c5c12
-caps.latest.revision: 
-author: erikje
-ms.author: erikje
-manager: angrobe
-ms.openlocfilehash: 59a57e20a21aac7c650c25e13df0f3180c2110ea
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: f3ee48d60c46def5daef25a2f3654e8a79a0e9e1
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1606-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1606 per System Center Configuration Manager
 
@@ -39,11 +33,11 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
 ## <a name="dmp_category"></a> Categorizzazione automatica dei dispositivi in raccolte
-È possibile creare categorie di dispositivi da usare per inserire automaticamente i dispositivi nelle raccolte di dispositivi quando si usa Configuration Manager con Microsoft Intune. Agli utenti verrà quindi richiesto di scegliere una categoria di dispositivo quando eseguono la registrazione di un dispositivo in Intune. È anche possibile modificare la categoria di un dispositivo dalla console di Configuration Manager.
+È possibile creare categorie di dispositivi da usare per inserire automaticamente i dispositivi nelle raccolte di dispositivi quando si usa Configuration Manager con Microsoft Intune. Agli utenti verrà quindi richiesto di scegliere una categoria di dispositivo quando eseguono la registrazione di un dispositivo in Intune. È possibile modificare la categoria di un dispositivo dalla console di Configuration Manager.
 
 **Importante:** questa funzionalità può essere usata con la versione di Microsoft Intune di **giugno 2016**. Verificare che l'installazione sia aggiornata a questa versione prima di tentare queste procedure.
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 
 ### <a name="create-a-set-of-device-categories"></a>Creare un set di categorie di dispositivo
 1.  Nell'area di lavoro **Asset e conformità** della console di Configuration Manager espandere **Panoramica** e fare clic su **Raccolte di dispositivi**.
@@ -67,7 +61,7 @@ In alcuni casi è possibile concedere agli utenti più tempo per l'installazione
 Ad esempio, se un utente finale è appena tornato da una vacanza, potrebbe dover attendere un po' tempo mentre vengono installate le distribuzioni delle applicazioni scadute.
 Per risolvere il problema ora è possibile definire un periodo di tolleranza di imposizione distribuendo le impostazioni del client di Configuration Manager a una raccolta.
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 
 Per configurare il periodo di tolleranza eseguire le operazioni seguenti:
 
@@ -106,7 +100,7 @@ Letture di approfondimento:
  ##  <a name="dmp_onprem"></a> Punti di gestione dei dispositivi multipli per la gestione dei dispositivi mobili locale  
  Con la versione Technical Preview 1606, Gestione dispositivi mobili locali supporta una nuova funzionalità di Windows 10 Anniversary Update che configura automaticamente un dispositivo registrato affinché usi più di un punto di gestione periferiche. Questa funzionalità consente al dispositivo il fallback su un altro punto di gestione periferiche quando quello che usa di solito non è disponibile. La funzionalità è operativa solo nei PC in cui è stato installato Windows 10 Anniversary Update.  
 
-### <a name="try-it-out"></a>Prova subito!  
+### <a name="try-it-out"></a>Verifica  
 
 1.  Installare più di un punto di gestione dispositivi nella gerarchia.  
 
@@ -136,7 +130,7 @@ Per autenticare i computer e crittografare le comunicazioni tra i diversi livell
 - Supportato solo nella piattaforma cloud pubblica di Azure.
 
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 
 La procedura per distribuire il servizio proxy cloud include i passaggi seguenti:
 

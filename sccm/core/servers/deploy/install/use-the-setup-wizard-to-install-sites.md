@@ -1,24 +1,19 @@
 ---
 title: Installazione guidata
 titleSuffix: Configuration Manager
-ms.custom: na
 ms.date: 7/24/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 1f703376-5f2c-4fd2-8209-7028c931ddc7
-caps.latest.revision: "3"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 266b6ef8664b98d0bf15e20f8bf968b609dd607b
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: c15f59ababae6908a08c28d3ec8ad46075068d52
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-the-setup-wizard-to-install-system-center-configuration-manager-sites"></a>Usare l'installazione guidata per installare i siti di System Center Configuration Manager
 
@@ -79,7 +74,7 @@ Se si installa un sito di amministrazione centrale come parte di uno scenario di
       > [!NOTE]   
       > Microsoft non convalida la data di scadenza immessa e non userà tale data per la convalida della licenza. È possibile invece usarla come promemoria della data di scadenza. Configuration Manager verifica periodicamente online la disponibilità di nuovi aggiornamenti software. Per usufruire di questi aggiornamenti aggiuntivi, è necessario che lo stato della licenza di Software Assurance sia regolare.    
 
-      Per altre informazioni, vedere [Licenze e rami per System Center Configuration Manager](/sccm/core/understand/learn-more-editions).
+      Per altre informazioni, vedere [Licensing and branches for System Center Configuration Manager](/sccm/core/understand/learn-more-editions) (Licenze e branch per System Center Configuration Manager).
 
 5.  Nella pagina **Condizioni di licenza software Microsoft** leggere e accettare le condizioni di licenza.  
 

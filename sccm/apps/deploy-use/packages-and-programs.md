@@ -2,25 +2,19 @@
 title: Pacchetti e programmi
 titleSuffix: Configuration Manager
 description: Supportare le distribuzioni che usano pacchetti e programmi o applicazioni con System Center Configuration Manager.
-ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-app
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: caad0507-9913-415a-b13d-d36f8f0a1b80
-caps.latest.revision: "8"
-caps.handback.revision: "0"
-author: mattbriggs
-ms.author: mabrigg
-manager: angrobe
-ms.openlocfilehash: 7712721167edad5808c46827f68fc32a2b890bfd
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 6f34fd322e5f94550602d7883a0303d10059b702
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="packages-and-programs-in-system-center-configuration-manager"></a>Pacchetti e programmi in System Center Configuration Manager
 
@@ -217,7 +211,7 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 
         -   **Richiesto**: il pacchetto e il programma vengono distribuiti automaticamente in base alla pianificazione configurata. Tuttavia, un utente può tenere traccia dello stato di distribuzione del pacchetto e del programma e installarli prima della scadenza usando Software Center.  
 
-    -   **Invia pacchetti di riattivazione**: se lo scopo della distribuzione è impostato su **Richiesto** e l'opzione è selezionata, ai computer viene inviato un pacchetto di riattivazione prima dell'installazione della distribuzione al fine di riattivare i computer da sospensione alla scadenza dell'installazione. Prima di usare questa opzione, i computer devono essere configurati per la riattivazione LAN.  
+    -   **Invia pacchetti di riattivazione**: se lo scopo della distribuzione è impostato su **Richiesto** e l'opzione è selezionata, ai computer viene inviato un pacchetto di riattivazione prima dell'installazione della distribuzione al fine di riattivare i computer da sospensione alla scadenza dell'installazione. Prima di poter utilizzare questa opzione, i computer devono essere configurati per la riattivazione LAN.  
 
     -  **Consente a tutti i client che utilizzano una connessione di rete a consumo di scaricare il contenuto una volta raggiunta la scadenza dell'installazione. Se si abilita questa opzione, potrebbe essere addebitato un costo aggiuntivo**: selezionare se necessario.  
 
@@ -284,7 +278,7 @@ I pacchetti possono usare alcune nuove funzionalità di Configuration Manager, i
 |**Crea file di contenuto di pre-installazione**|Apre la **Creazione guidata file di contenuto pre-installazione**, che consente di creare un file che include il contenuto del pacchetto che può essere importato manualmente in un altro sito. Questa impostazione è utile nei casi in cui è disponibile larghezza di banda ridotta tra il server del sito e il punto di distribuzione.|  
 |**Crea programma**|Apre la **Creazione guidata programma**, che consente di creare un nuovo programma per il pacchetto.|  
 |**Export**|Apre l'**Esportazione guidata del pacchetto**, che consente di esportare il pacchetto selezionato e il suo contenuto in un file.<br /><br /> Per informazioni su come importare pacchetti e programmi, vedere [Creare pacchetti e programmi ](/sccm/apps/deploy-use/packages-and-programs#create-packages-and-programs) in questo argomento.|  
-|**Distribuisci**|Apre la **Distribuzione guidata del software**, che consente di distribuire il pacchetto e il programma selezionati in una raccolta. Per altre informazioni, vedere [Distribuire pacchetti e programmi](/sccm/apps/deploy-use/packages-and-programs#deploy-packages-and-programs) in questo argomento.|  
+|**Distribuzione**|Apre la **Distribuzione guidata del software**, che consente di distribuire il pacchetto e il programma selezionati in una raccolta. Per altre informazioni, vedere [Distribuire pacchetti e programmi](/sccm/apps/deploy-use/packages-and-programs#deploy-packages-and-programs) in questo argomento.|  
 |**Distribuisci contenuto**|Apre la **Distribuzione guidata contenuto**, che consente di inviare il contenuto associato al pacchetto e al programma a punti di distribuzione o gruppi di punti di distribuzione selezionati.|  
 |**Aggiorna punti di distribuzione**|Aggiorna i punti di distribuzione con il contenuto più recente per il pacchetto e il programma selezionati.|  
 

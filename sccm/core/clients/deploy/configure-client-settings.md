@@ -2,24 +2,19 @@
 title: Configurare le impostazioni client
 titleSuffix: Configuration Manager
 description: Selezionare le impostazioni client in System Center Configuration Manager.
-ms.custom: na
 ms.date: 12/29/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: 95e9858a-bad4-4651-9e61-2e31dc5050fa
-caps.latest.revision: "5"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: c777e800d154b060040363aefbc611e284f233b4
-ms.sourcegitcommit: f1535281b2c3fecff773b722c3f7590bf6ba10a0
+manager: dougeby
+ms.openlocfilehash: 0405769d3cfc7f77c4ab639ddc0f9ed0cd561366
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-configure-client-settings-in-system-center-configuration-manager"></a>Come configurare le impostazioni client in System Center Configuration Manager
 

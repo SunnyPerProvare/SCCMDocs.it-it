@@ -2,24 +2,19 @@
 title: Categorizzazione automatica dei dispositivi in raccolte
 titleSuffix: Configuration Manager
 description: Classificare automaticamente i dispositivi in raccolte con System Center Configuration Manager.
-ms.custom: na
 ms.date: 04/23/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 98b038b4-1a13-4228-bdb8-a12194e32b0e
-caps.latest.revision: "5"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 2a9b311b0abbeb56d9043410ecbeb54ec244fbef
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: fcffc48431045fab2b2f69e112258c844ad184bb
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="automatically-categorize-devices-into-collections-with-system-center-configuration-manager"></a>Classificare automaticamente i dispositivi in raccolte con System Center Configuration Manager
 
@@ -28,7 +23,7 @@ ms.lasthandoff: 10/12/2017
 È possibile creare categorie di dispositivi da usare per inserire automaticamente i dispositivi nelle raccolte di dispositivi quando si usa Configuration Manager con Microsoft Intune. Gli utenti dovranno quindi scegliere una categoria di dispositivi quando eseguono la registrazione di un dispositivo in Intune. È possibile modificare la categoria di un dispositivo dalla console di Configuration Manager.
 
 > [!IMPORTANT]  
-    >  Questa funzionalità può essere usata con la versione di Microsoft Intune di **giugno 2016** e versioni successive. Verificare che l'installazione sia aggiornata a questa versione prima di tentare queste procedure.
+    >  Questa funzionalità può essere usata con la versione di Microsoft Intune di **giugno 2016** e versioni successive. Verificare che l'installazione sia aggiornata a questa versione prima di tentare tali procedure.
 
 ## <a name="create-device-categories"></a>Creare categorie di dispositivi
 

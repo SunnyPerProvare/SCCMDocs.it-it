@@ -2,25 +2,19 @@
 title: Language Pack
 titleSuffix: Configuration Manager
 description: Informazioni sul supporto per le lingue disponibile in System Center Configuration Manager.
-ms.custom: na
 ms.date: 1/3/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: cd74e5f5-33f6-4566-8c9d-d6a93bfe71ed
-caps.latest.revision: 10
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: d7553cda2e9cc6bc1ff53afe1e357e767228db69
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: a198e15a1ef389d792acc73f2253aa4a704ac35a
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="language-packs-in-system-center-configuration-manager"></a>Language Pack in System Center Configuration Manager
 
@@ -64,7 +58,7 @@ In questo argomento vengono forniti dettagli tecnici sul supporto per le lingue 
 |Lingua client|ID impostazioni locali (LCID)|Codice di tre lettere|  
 |---------------------|------------------------|-----------------------|  
 |Inglese (predefinito)|0409|ENG|  
-|Cinese (tradizionale, RAS di Hong Kong)|0c04|ZHH|  
+|Cinese (tradizionale, Hong Kong-R.A.S.)|0c04|ZHH|  
 |Cinese (semplificato)|0804|CHS|  
 |Cinese (tradizionale, Taiwan)|0404|CHT|  
 |Ceco|0405|CSY|  

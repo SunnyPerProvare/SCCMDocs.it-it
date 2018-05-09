@@ -1,25 +1,20 @@
 ---
-title: "Pianificare e configurare le impostazioni di conformità"
+title: Pianificare e configurare le impostazioni di conformità
 titleSuffix: Configuration Manager
-description: "Informazioni sui prerequisiti e sulle attività di configurazione per l'uso delle impostazioni di conformità in System Center Configuration Manager."
-ms.custom: na
+description: Informazioni sui prerequisiti e sulle attività di configurazione per l'uso delle impostazioni di conformità in System Center Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-compliance
+ms.topic: conceptual
 ms.assetid: 9ea20b01-676a-4cc2-b328-0098a41b202e
-caps.latest.revision: "8"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 970ebabc8a275f46cf005c6f3571c62d64889ea8
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 84643f38b5dd0c42a611ca50aaae6ab6d9f52405
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="plan-for-and-configure-compliance-settings-in-system-center-configuration-manager"></a>Pianificare e configurare le impostazioni di conformità in System Center Configuration Manager
 

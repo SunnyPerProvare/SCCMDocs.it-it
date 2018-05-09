@@ -2,25 +2,19 @@
 title: Monitorare le distribuzioni del sistema operativo
 titleSuffix: Configuration Manager
 description: Per monitorare gli oggetti di distribuzione del sistema operativo, la console di Configuration Manager offre avvisi, report e diversi indicatori di stato.
-ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 08085d94-295c-432f-b5e3-9736bce0193b
-caps.latest.revision: "6"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 2540bc214530318c7efa75020ea0ea59ca5f6b85
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: a6e15f7bea1a600cc2cff2e400b2d793cabf1078
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="monitor-operating-system-deployments-in-system-center-configuration-manager"></a>Monitorare le distribuzioni del sistema operativo in System Center Configuration Manager
 

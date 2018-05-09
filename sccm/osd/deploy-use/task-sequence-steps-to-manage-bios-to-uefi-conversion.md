@@ -1,24 +1,20 @@
 ---
-title: "Passaggi della sequenza di attività per la gestione della conversione da BIOS a UEFI"
+title: Passaggi della sequenza di attività per la gestione della conversione da BIOS a UEFI
 titleSuffix: Configuration Manager
-description: "Informazioni su come personalizzare una sequenza di attività di distribuzione del sistema operativo per preparare una partizione FAT32 per la transizione a UEFI."
-ms.custom: na
+description: Informazioni su come personalizzare una sequenza di attività di distribuzione del sistema operativo per preparare una partizione FAT32 per la transizione a UEFI.
 ms.date: 03/24/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: bd3df04a-902f-4e91-89eb-5584b47d9efa
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: f2d53b7f525d4f827b78840a7f0d9482d203c08d
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 8c807f771d88701127c47d0290b6d8fc6bcb0f00
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>Passaggi della sequenza di attività per la gestione della conversione da BIOS a UEFI
 Molte delle nuove funzionalità di sicurezza offerte da Windows 10 richiedono dispositivi abilitati per UEFI. Alcuni PC Windows moderni supportano UEFI, ma usano un BIOS legacy. Per convertire un dispositivo da BIOS a UEFI, è necessario in genere accedere a ogni PC, ripartire il disco rigido e riconfigurare il firmware. Usando le sequenze di attività disponibili in Configuration Manager, è possibile preparare un disco rigido per la conversione da BIOS a UEFI, eseguire la conversione nell'ambito del processo di aggiornamento sul posto e raccogliere informazioni su UEFI nell'ambito dell'inventario hardware.

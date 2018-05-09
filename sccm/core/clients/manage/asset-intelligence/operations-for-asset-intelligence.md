@@ -1,27 +1,20 @@
 ---
 title: Usare Asset Intelligence
 titleSuffix: Configuration Manager
-description: "Eseguire attività con Asset Intelligence in System Center Configuration Manager."
-ms.custom: na
+description: Eseguire attività con Asset Intelligence in System Center Configuration Manager.
 ms.date: 2/22/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: e8159bd9-5c2b-4d25-82f9-78fcfd732ba9
-caps.latest.revision: 
-caps.handback.revision: 
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 7838f087c18a2cfad6ff487ff987e638906faf6a
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 7d12fb7f3c7e14df57ec23074de23bfcf53e6c4b
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-use-asset-intelligence-in-system-center-configuration-manager"></a>Come usare Asset Intelligence in System Center Configuration Manager
 
@@ -155,7 +148,7 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 6.  Nella pagina **Completamento** fare clic su **Chiudi** per uscire dalla procedura guidata.  
 
 ###  <a name="BKMK_SoftwareLabels"></a> Etichette software  
- Le etichette software di Asset Intelligence personalizzate consentono di creare filtri che è possibile usare per raggruppare i titoli software e visualizzarli nei report di Asset Intelligence. Ad esempio, è possibile creare un'etichetta software denominata shareware, associarla a diverse applicazioni e quindi eseguire un report che mostra tutti i titoli con l'etichetta software shareware. Lo stato di convalida è **Definito da utente** per tutte le etichette software personalizzate aggiunte al catalogo di Asset Intelligence.  
+ Le etichette di Asset Intelligence software personalizzati consentono di creare filtri che è possibile utilizzare per raggruppare i titoli di software e visualizzarli utilizzando i report di Asset Intelligence. Ad esempio, è possibile creare un'etichetta software denominata shareware, associarla a diverse applicazioni e quindi eseguire un report che mostra tutti i titoli con l'etichetta software shareware. Lo stato di convalida è **Definito da utente** per tutte le etichette software personalizzate aggiunte al catalogo di Asset Intelligence.  
 
  Attenersi alla procedura seguente per creare un'etichetta personalizzata definita dall'utente.  
 
@@ -267,7 +260,7 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 6.  Quando si ripristinano le informazioni di categorizzazione per software incluso nel catalogo di Asset Intelligence, lo stato di convalida cambia da **Definito da utente** a **Convalidato**. Quando si ripristina software non incluso nel catalogo, lo stato di convalida cambia da **Definito da utente** a **Senza categoria**.  
 
 ##  <a name="BKMK_RequestCatalogUpdate"></a> Richiedere un aggiornamento del catalogo per i titoli software senza categoria  
- Le informazioni sui titoli software senza categoria possono essere inviate a System Center Online per la ricerca e la categorizzazione. Dopo l'invio di un titolo software senza categoria, quando ci sono almeno 4 richieste di categorizzazione dei clienti per lo stesso titolo software, i ricercatori identificano, categorizzano e quindi rendono disponibili le informazioni di categorizzazione del titolo software per tutti i clienti che usano il servizio System Center Online. Microsoft assegna la massima priorità ai titoli di software con il maggior numero di richieste di categorizzazione. È improbabile che al software personalizzato e alle applicazioni line-of-business venga assegnata una categoria e la procedura consigliata prevede di non inviare questi titoli software a Microsoft per la categorizzazione.  
+ Per la ricerca e la categorizzazione, è possibile inviare informazioni di titolo di software senza categoria per System Center Online. Dopo l'invio di un titolo software senza categoria, quando ci sono almeno 4 richieste di categorizzazione dei clienti per lo stesso titolo software, i ricercatori identificano, categorizzano e quindi rendono disponibili le informazioni di categorizzazione del titolo software per tutti i clienti che usano il servizio System Center Online. Microsoft assegna la massima priorità ai titoli di software con il maggior numero di richieste di categorizzazione. È improbabile che al software personalizzato e alle applicazioni line-of-business venga assegnata una categoria e la procedura consigliata prevede di non inviare questi titoli software a Microsoft per la categorizzazione.  
 
  Quando le informazioni sui titoli software vengono inviate a System Center Online per la categorizzazione, si applicano le condizioni seguenti:  
 
@@ -310,7 +303,7 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
     >  Il software che viene inviato a System Center Online per la categorizzazione ha uno stato di convalida **In attesa** in un sito di amministrazione centrale, ma viene ancora visualizzato con uno stato di convalida **Senza categoria** nei siti primari figlio.  
 
 ##  <a name="BKMK_ResolveSoftwareDetails"></a> Risolvere i conflitti dei dettagli software  
- Dopo aver ricevuto da System Center Online nuovi dettagli di categorizzazione software aggiornati in conflitto con informazioni sui dettagli software esistenti, è possibile scegliere come risolvere il conflitto. Il software che presenta un conflitto corrente ha uno stato di convalida **Aggiornabile**. Dopo la risoluzione dei conflitti dei dettagli software, le informazioni di categorizzazione software vengono conservate nel catalogo di Asset Intelligence in base all'impostazione specificata. Un conflitto dei dettagli software non si verifica di nuovo per lo stesso valore di categorizzazione software a meno che il valore di System Center Online non cambi dopo la risoluzione del conflitto.  
+ Dopo la categorizzazione software appena aggiornato dettagli sono stati ricevuti da System Center Online che creano conflitti con informazioni software esistente, è possibile scegliere come risolvere il conflitto. Il software che presenta un conflitto corrente ha uno stato di convalida **Aggiornabile**. Dopo la risoluzione dei conflitti dei dettagli software, le informazioni di categorizzazione software vengono conservate nel catalogo di Asset Intelligence in base all'impostazione specificata. Un conflitto dei dettagli software non si verifica di nuovo per lo stesso valore di categorizzazione software a meno che il valore di System Center Online non cambi dopo la risoluzione del conflitto.  
 
  Attenersi alla procedura seguente per risolvere un conflitto dei dettagli software.  
 

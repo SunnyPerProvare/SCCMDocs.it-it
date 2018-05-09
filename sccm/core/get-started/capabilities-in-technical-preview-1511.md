@@ -1,26 +1,21 @@
 ---
-title: "Funzionalità nella Technical Preview 1511"
+title: Funzionalità nella Technical Preview 1511
 titleSuffix: Configuration Manager
-description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1511 per System Center Configuration Manager."
-ms.custom: na
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1511 per System Center Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 69473706-21b3-498b-a67e-670fdc988f0d
-caps.latest.revision: "5"
-author: erikje
-ms.author: erikje
-manager: angrobe
+author: aczechowski
 robots: noindex,nofollow
-ms.openlocfilehash: e12e67a3b0d182a8e3abd045c89e6b2bf3183054
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 8a805d6b7075d61b0e7669200670ac8434eccdf5
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1511-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1511 per System Center Configuration Manager
 
@@ -40,7 +35,7 @@ Per i computer connessi tramite WUfB, Configuration Manager non potrà segnalare
 
 -   Computer da gestire tramite [Windows Update for Business](https://technet.microsoft.com/library/mt622730\(v=vs.85\).aspx).  
 
-### <a name="try-it-out"></a>Prova subito!  
+### <a name="try-it-out"></a>Verifica  
  Prova a completare l'attività seguente e quindi usa le informazioni relative a commenti e suggerimenti nella parte superiore di questo argomento per comunicare i risultati:  
 
 1.  Disabilitare l'agente di Windows Update in modo che non esegua l'analisi rispetto a WSUS, se è stata precedentemente abilitata.   
@@ -60,7 +55,7 @@ Quando Microsoft pubblica un nuovo aggiornamento dei client per desktop di Offic
 
 **Prerequisiti per questo scenario:**  
 
-### <a name="try-it-out"></a>Prova subito!  
+### <a name="try-it-out"></a>Verifica  
  Prova a completare l'attività seguente e quindi usa le informazioni relative a commenti e suggerimenti nella parte superiore di questo argomento per comunicare i risultati:  
 
 1.  È possibile sincronizzare gli aggiornamenti di Office 365 per il server del sito di Configuration Manager e visualizzarli dalla console di Configuration Manager.  
@@ -103,7 +98,7 @@ Il processo generale per configurare e usare i gruppi di disponibilità include 
 
 -   Per questo scenario potrebbe essere necessario installare il **client nativo di SQL Server 2012** ([da SQL Server 2012 Feature Pack](http://www.microsoft.com/download/details.aspx?id=29065)) nel server del punto di gestione. In questo modo vengono evitati gli errori di connessione SQL (che vengono registrati in **mp_getauth.log** nel server del punto di gestione).  
 
-### <a name="try-it-out"></a>Prova subito!  
+### <a name="try-it-out"></a>Verifica  
 Prova a completare le attività seguenti, quindi usa le informazioni relative a commenti e suggerimenti nella parte superiore di questo argomento per comunicare i risultati:  
 
 -   Sono in grado di installare un sito primario che utilizza un server di database configurato per i gruppi di disponibilità SQL AlwaysOn  
@@ -158,7 +153,7 @@ Ora è possibile creare una raccolta che contiene i server in un cluster e quind
 
 -   L'opzione della sequenza di manutenzione nella pagina **Impostazioni cluster** è disabilitata e non è disponibile in questa release.  
 
-### <a name="try-it-out"></a>Prova subito!  
+### <a name="try-it-out"></a>Verifica  
 Prova a completare l'attività seguente e quindi usa le informazioni relative a commenti e suggerimenti nella parte superiore di questo argomento per comunicare i risultati:  
 
 -   Sono in grado di creare una raccolta che rappresenta un cluster di server. Per questo test, è possibile configurare le regole di appartenenza alla raccolta in modo che nella raccolta siano presenti 2 macchine.  

@@ -1,26 +1,20 @@
 ---
-title: "Proprietà di installazione client in Active Directory Domain Services"
+title: Proprietà di installazione client in Active Directory Domain Services
 titleSuffix: Configuration Manager
-description: "Usare le proprietà di installazione client pubblicate per Active Directory Domain Services in System Center Configuration Manager."
-ms.custom: na
+description: Usare le proprietà di installazione client pubblicate per Active Directory Domain Services in System Center Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 101d7d4d-92db-419d-b2ae-3c1c1dea68e9
-caps.latest.revision: "6"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: ece29d218140ffd28ac83a16e9999ba420f228a5
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 585aa6ea6874ac6d6a5264b0f75d8dbcf39ddd0a
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="about-client-installation-properties-published-to-active-directory-domain-services"></a>Informazioni sulle proprietà di installazione client pubblicate in Active Directory Domain Services
 
@@ -110,7 +104,7 @@ L'installazione client (CCMSetup) usa le proprietà pubblicate in Active Directo
 -   Non è stato eseguito il provisioning del computer con le proprietà di installazione utilizzando i Criteri di gruppo.  
 
 ## <a name="software-distribution-installation"></a>Installazione della distribuzione software  
- CCMSetup cerca le proprietà di installazione in Active Directory Domain Services nelle circostanze seguenti:  
+ CCMSetup cerca le proprietà di installazione nei Servizi di dominio Active Directory nelle seguenti circostanze:  
 
 -   Nessuna proprietà della riga di comando viene specificata dopo il comando CCMSetup.exe.  
 

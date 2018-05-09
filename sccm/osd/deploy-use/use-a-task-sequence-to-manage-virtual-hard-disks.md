@@ -1,25 +1,20 @@
 ---
-title: "Usare una sequenza di attività per gestire dischi rigidi virtuali"
+title: Usare una sequenza di attività per gestire dischi rigidi virtuali
 titleSuffix: Configuration Manager
-description: "È possibile creare e modificare un disco rigido virtuale, aggiungere applicazioni e aggiornamenti software e pubblicare il disco rigido virtuale in System Center Virtual Machine Manager (VMM) da Configuration Manager."
-ms.custom: na
+description: È possibile creare e modificare un disco rigido virtuale, aggiungere applicazioni e aggiornamenti software e pubblicare il disco rigido virtuale in System Center Virtual Machine Manager (VMM) da Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 0212b023-804a-4f84-b880-7a59cdb49c67
-caps.latest.revision: "5"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 89e30f81648aff16de2f7db55cbdda06cf69551d
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: d1963509bc4255e2a203e9ed562f5c51a3db0625
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-a-task-sequence-to-manage-virtual-hard-disks-in-system-center-configuration-manager"></a>Usare una sequenza di attività per gestire dischi rigidi virtuali in System Center Configuration Manager
 

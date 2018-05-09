@@ -1,25 +1,20 @@
 ---
 title: Technical Preview 1709
 titleSuffix: Configuration Manager
-description: "Informazioni sulle funzionalità disponibili in Technical Preview versione 1709 per System Center Configuration Manager."
-ms.custom: na
+description: Informazioni sulle funzionalità disponibili in Technical Preview versione 1709 per System Center Configuration Manager.
 ms.date: 09/28/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: a3ef6bdc-a204-4c4c-a02f-2bd03f35183e
-author: erikje
-ms.author: erikje
-manager: angrobe
-ms.openlocfilehash: f0acc5ae0d8207dce92c56a4c80e8321faf51393
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 74ffd06f8b9786d627dc7fd9cecb15215228313d
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1709-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1709 per System Center Configuration Manager
 
@@ -61,7 +56,7 @@ Queste modifiche vengono applicate ai nuovi profili VPN.
 
 Per ridurre al minimo i rischi relativi alla compatibilità, i profili VPN esistenti non vengono modificati.  Quando viene modificato un profilo esistente, le impostazioni vengono visualizzate come quando è stato creato il profilo.  
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 
 Creare un nuovo profilo VPN usando il processo consueto. Si noti che la prima pagina di opzioni della procedura guidata di creazione del profilo VPN è stata modificata.
 
@@ -155,7 +150,7 @@ Quando si hanno dispositivi Windows 10 che sono client di Configuration Manager,
 #### <a name="command-line-to-install-configuration-manager-client"></a>Riga di comando per installare il client di Configuration Manager
 Creare un'app in Intune per i dispositivi Windows 10 che non sono già client di Configuration Manager. Quando si crea l'app nelle sezioni successive, usare la riga di comando seguente:
 
-ccmsetup.msi CCMSETUPCMD="/mp:&#60;*URL dell'endpoint autorizzazione reciproca di Cloud Management Gateway*&#62;/ CCMHOSTNAME=&#60;*URL dell'endpoint autorizzazione reciproca di Cloud Management Gateway*&#62; SMSSiteCode=&#60;*Codice sito*&#62; SMSMP=https:&#47;/&#60;*FQDN del punto di gestione*&#62; AADTENANTID=&#60;*ID tenant AAD*&#62; AADTENANTNAME=&#60;*Nome tenant*&#62; AADCLIENTAPPID=&#60;*AppID del server per l'integrazione di AAD*&#62; AADRESOURCEURI=https:&#47;/&#60;*ID risorsa*&#62;"
+ccmsetup.msi CCMSETUPCMD="/mp:&#60;*URL dell'endpoint autorizzazione reciproca di Cloud Management Gateway*&#62;/ CCMHOSTNAME=&#60;*URL dell'endpoint autorizzazione reciproca di Cloud Management Gateway*&#62; SMSSiteCode=&#60;*Codice sito*&#62; SMSMP=https:&#47;/&#60;*FQDN del punto di gestione*&#62; AADTENANTID=&#60;*ID tenant AAD*&#62; AADTENANTNAME=&#60;*Nome tenant*&#62; AADCLIENTAPPID=&#60;*AppID del server per l'integrazione di AAD*&#62; AADRESOURCEURI=https:&#47;/&#60;*ID risorsa*& #62;"
 
 Ad esempio, se sono stati restituiti i valori seguenti:
 

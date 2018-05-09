@@ -2,22 +2,19 @@
 title: Distribuire gli aggiornamenti software
 titleSuffix: Configuration Manager
 description: Scegliere gli aggiornamenti software nella console di Configuration Manager per avviare manualmente il processo di distribuzione o distribuire automaticamente gli aggiornamenti.
-keywords: 
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
 ms.date: 02/16/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: 04536d51-3bf7-45e5-b4af-36ceed10583d
-ms.openlocfilehash: aad82bf225f7606007a5b69490e8f0e4d894b966
-ms.sourcegitcommit: 1378532fac2620ddcfd31061982f344a290c2e67
+ms.openlocfilehash: e6a825f0d4333dc551405e38db70f8417ee2b5ce
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 05/03/2018
 ---
 #  <a name="BKMK_SUMDeploy"></a> Distribuire gli aggiornamenti software  
 

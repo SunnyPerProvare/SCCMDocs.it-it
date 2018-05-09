@@ -2,25 +2,19 @@
 title: Prerequisiti per il risparmio energia
 titleSuffix: Configuration Manager
 description: Ottenere i prerequisiti per il risparmio energia in System Center Configuration Manager.
-ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 9c062f13-3c1f-4621-9cae-de0e322aa03f
-caps.latest.revision: "4"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 79cda9025c13f2cc76f67f89dba1fcdfdaa52ae2
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: c6630ef07c0b7947875ea2adac4e6612143aaee8
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="prerequisites-for-power-management-in-system-center-configuration-manager"></a>Prerequisiti per il risparmio energia in System Center Configuration Manager
 

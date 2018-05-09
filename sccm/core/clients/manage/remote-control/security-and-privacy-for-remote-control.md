@@ -2,25 +2,19 @@
 title: Privacy e sicurezza per il controllo remoto
 titleSuffix: Configuration Manager
 description: Informazioni sulla sicurezza e la privacy per il controllo remoto in System Center Configuration Manager.
-ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 272ee86b-d3d9-4fd9-b5c4-73e490e1a1e4
-caps.latest.revision: "6"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 4923aee0e55f42f679c6f17ea0fd760c1909f9ef
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: fc49a74fe4e257acceaea54d7c423709998a87bd
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="security-and-privacy-for-remote-control-in-system-center-configuration-manager"></a>Sicurezza e privacy per il controllo remoto in System Center Configuration Manager
 
@@ -29,7 +23,7 @@ ms.lasthandoff: 10/12/2017
 In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy per il controllo remoto in System Center 2012 Configuration Manager.  
 
 ##  <a name="BKMK_Security_HardwareInventory"></a> Procedure di sicurezza consigliate per il controllo remoto  
- Usare le seguenti procedure di sicurezza consigliate quando si gestiscono computer client mediante il controllo remoto.  
+ Utilizzare le seguenti procedure ottimali di protezione per gestire i computer client utilizzando il controllo remoto.  
 
 |Procedura di sicurezza consigliata|Altre informazioni|  
 |----------------------------|----------------------|  

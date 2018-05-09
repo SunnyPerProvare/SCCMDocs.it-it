@@ -2,25 +2,19 @@
 title: File generale di importazione delle licenze di Asset Intelligence di esempio
 titleSuffix: Configuration Manager
 description: Usare un file generale delle licenze di Asset Intelligence di esempio in System Center Configuration Manager.
-ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: e6258333-a783-440b-b1af-f8023b782fbc
-caps.latest.revision: "5"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 8537622a418a141abf2b564b6211604ea85f7bab
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: d4ce90c28a8af0714f07ad5450d82202a7d5a543
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="example-asset-intelligence-general-license-import-file-in-system-center-configuration-manager"></a>File generale di importazione delle licenze di Asset Intelligence di esempio in System Center Configuration Manager
 
@@ -28,7 +22,7 @@ ms.lasthandoff: 10/12/2017
 
 Le informazioni di esempio di questo argomento possono essere usate per creare un file di licenze software generale di esempio per importare le licenze software nel catalogo di Asset Intelligence tramite l'Importazione guidata licenze software. È possibile copiare e incollare la tabella seguente in un nuovo foglio di calcolo di Microsoft Excel e salvarlo con estensione di file CSV per usarlo come file generale di importazione delle licenze software di esempio a scopo di test. Quando si crea il file di importazione delle licenze, tutti i campi di intestazione sono necessari, mentre nel foglio di calcolo sono necessari solo i valori dei dati Name, Publisher, Version ed EffectiveQuantity. Per informazioni sull'importazione delle licenze nel catalogo di Asset Intelligence, vedere [Configuring Asset Intelligence in System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md) (Configurazione di Asset Intelligence in System Center Configuration Manager).  
 
-|Nome|Publisher|Version|Language|EffectiveQuantity|PONumber|ResellerName|DateOfPurchase|SupportPurchased|SupportExpirationDate|Comments|  
+|Name|Publisher|Version|Language|EffectiveQuantity|PONumber|ResellerName|DateOfPurchase|SupportPurchased|SupportExpirationDate|Comments|  
 |----------|---------------|-------------|--------------|-----------------------|--------------|------------------|--------------------|----------------------|---------------------------|--------------|  
 |Titolo software 1|Autore del software|1.01|Inglese|1|Numero acquisto|Nome rivenditore|10/10/2010|0|10/10/2012|Commento|  
 |Titolo software 2|Autore del software|1.02|Inglese|1|Numero acquisto|Nome rivenditore|10/10/2010|0|10/10/2012|Commento|  

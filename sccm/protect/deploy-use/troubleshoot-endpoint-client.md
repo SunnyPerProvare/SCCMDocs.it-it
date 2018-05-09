@@ -2,26 +2,19 @@
 title: Risoluzione dei problemi di Windows Defender o del client Endpoint Protection
 titleSuffix: Configuration Manager
 description: Informazioni su come risolvere i problemi con Windows Defender ed Endpoint Protection.
-ms.custom: na
 ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: d837253e-fcc2-422a-9e2c-c78b938dfd8c
-caps.latest.revision: 7
-caps.handback.revision: 0
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a8460cafce15e5fb97ace76983932841ec77412f
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 2a8f0e51e5808a691251e4d9acf38d70f2874508
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="troubleshooting-windows-defender-or-endpoint-protection-client"></a>Risoluzione dei problemi di Windows Defender o del client Endpoint Protection
 
@@ -117,7 +110,7 @@ Se si verificano problemi con Windows Defender o Endpoint Protection, chiedere a
 
     1.  Fare clic su **Start** , cercare  **cmd**e quindi fare clic su **OK**.  
 
-    2.  Digitare **cd %windir%**e quindi premere **INVIO**.  
+    2.  Digitare **cd %windir%** e quindi premere **INVIO**.  
 
     3.  Digitare **ren SoftwareDistribution SDTemp**e quindi premere **INVIO**.  
 

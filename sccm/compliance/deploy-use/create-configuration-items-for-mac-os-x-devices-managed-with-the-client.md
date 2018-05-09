@@ -2,25 +2,19 @@
 title: 'Creare elementi di configurazione per i computer Mac gestiti tramite client '
 titleSuffix: Configuration Manager
 description: Usare l'elemento di configurazione Mac OS X di System Center Configuration Manager per gestire le impostazioni dei dispositivi Mac OS X.
-ms.custom: na
 ms.date: 03/28/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-compliance
+ms.topic: conceptual
 ms.assetid: 722d5bf5-bedc-4dfc-b324-6eeb773874e9
-caps.latest.revision: "8"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 1947bc8907d00a2f6d78acee5f563fa9b7f6cf78
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: e6358c8e84d12c37418d7a1af459e775783efaa2
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-configuration-items-for-mac-os-x-devices-managed-with-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Mac OS X gestiti con il client di System Center Configuration Manager
 Usare l'elemento di configurazione **Mac OS X (personalizzato)** di System Center Configuration Manager per gestire le impostazioni dei dispositivi Mac OS X gestiti dal client di Configuration Manager.  
@@ -75,7 +69,7 @@ Usare l'elemento di configurazione **Mac OS X (personalizzato)** di System Cente
 11. Scegliere il **tipo di dati** che è il formato in cui la condizione restituisce i dati prima che vengano usati per valutare l'impostazione.  
   
     > [!NOTE]  
-    >  Il tipo di dati **Virgola mobile** supporta solo 3 cifre dopo il separatore decimale.  
+    >  Il **a virgola mobile** tipo di dati supporta solo 3 cifre dopo il separatore decimale.  
     >   
     >  Configuration Manager non supporta l'uso del tipo di dati **booleano** per le impostazioni script dell'elemento di configurazione Mac. Al contrario, impostare il tipo di dati su **Integer** e assicurarsi che lo script restituisca un valore intero.  
   
@@ -102,7 +96,7 @@ Usare l'elemento di configurazione **Mac OS X (personalizzato)** di System Cente
   
     -   Per il tipo di regola **Valore**specificare le informazioni seguenti:  
   
-        -   L'impostazione deve essere conforme alla seguente regola - Selezionare un operatore e un valore la cui conformità viene valutata in base all'impostazione selezionata. È possibile usare gli operatori seguenti:  
+        -   L'impostazione deve essere conforme alla seguente regola - Selezionare un operatore e un valore la cui conformità viene valutata in base all'impostazione selezionata. È possibile utilizzare gli operatori seguenti:  
   
             -   **È uguale a**  
   

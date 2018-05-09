@@ -1,25 +1,20 @@
 ---
 title: Configurare i siti
 titleSuffix: Configuration Manager
-description: "Consultare questo elenco di controllo per verificare di aver tenuto in considerazione le configurazioni più comuni che interessano sia i siti che le gerarchie."
-ms.custom: na
+description: Consultare questo elenco di controllo per verificare di aver tenuto in considerazione le configurazioni più comuni che interessano sia i siti che le gerarchie.
 ms.date: 2/7/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: 9efb4061-f642-48bd-8332-3357ff5b3118
-caps.latest.revision: "15"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 55daf30e3386e53f3711c07fa971750d6aa33423
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 8a74f998c7bae22d94f2471724c2d51de918dfc4
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-sites-and-hierarchies-for-system-center-configuration-manager"></a>Configurare siti e gerarchie per System Center Configuration Manager
 
@@ -36,11 +31,11 @@ Tenere presenti le note sulla configurazione seguenti. Tali note sono valide per
 
 -   Altre, come i gruppi di limiti e i gruppi di punti di distribuzione, devono essere configurate prima di poterle usare.  
 
-|Azione|Dettagli|  
+|Action|Dettagli|  
 |------------|-------------|  
 |Configurare l'amministrazione basata su ruoli|Separare le assegnazioni amministrative per controllare quali utenti amministratori possono visualizzare e gestire i diversi oggetti e dati nell'ambiente di Configuration Manager.<br /><br /> Le configurazioni per l'amministrazione basata su ruoli sono condivise con tutti i siti in una gerarchia.   <br/><br/>Per altre informazioni, vedere [Configurare l'amministrazione basata su ruoli per System Center Configuration Manager](../../../../core/servers/deploy/configure/configure-role-based-administration.md).|  
 |Pubblicare i dati del sito in Active Directory Domain Services|Facilitare ai client l'individuazione dei servizi e l'uso efficiente delle risorse del sito.<br /><br /> È necessario innanzitutto [estendere lo schema di Active Directory per System Center Configuration Manager](../../../../core/plan-design/network/extend-the-active-directory-schema.md) e quindi configurare individualmente ogni sito per [pubblicare i dati del sito per System Center Configuration Manager](../../../../core/servers/deploy/configure/publish-site-data.md).|  
-|Configurare un punto di connessione del servizio|Pianificare l'installazione e la configurazione di un punto di connessione del servizio nel sito di livello più alto della gerarchia. Per ulteriori informazioni, vedere [Informazioni sul punto di connessione del servizio in System Center Configuration Manager](../../../../core/servers/deploy/configure/about-the-service-connection-point.md).|  
+|Configurare un punto di connessione del servizio|Pianificare l'installazione e la configurazione di un punto di connessione del servizio nel sito di livello più alto della gerarchia. Per ulteriori informazioni, vedere [About the service connection point in System Center Configuration Manager](../../../../core/servers/deploy/configure/about-the-service-connection-point.md).|  
 |Aggiungere ruoli del sistema del sito|Installare uno o più ruoli aggiuntivi del sistema del sito per singoli siti.  Per altre informazioni, vedere [Aggiungere ruoli del sistema del sito per System Center Configuration Manager](../../../../core/servers/deploy/configure/add-site-system-roles.md).|  
 |Configurare i limiti e i gruppi di limiti del sito|Specificare i limiti che definiscono i percorsi di rete nella intranet in cui possono essere presenti i dispositivi da gestire. Configurare quindi gruppi di limiti in modo che i client in tali percorsi di rete possano trovare le risorse di Configuration Manager. Per altre informazioni, vedere [Definire i limiti del sito e i gruppi di limiti per System Center Configuration Manager](../../../../core/servers/deploy/configure/define-site-boundaries-and-boundary-groups.md).|  
 |Configurare gruppi di punti di distribuzione|Configurare gruppi logici di punti di distribuzione per semplificare la gestione delle distribuzioni. Per altre informazioni, vedere la sezione [Gestire i gruppi di punti di distribuzione](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage) dell'argomento [Installare e configurare punti di distribuzione per System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md).|  

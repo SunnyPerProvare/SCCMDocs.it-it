@@ -2,27 +2,21 @@
 title: Configurare l'inventario hardware
 titleSuffix: Configuration Manager
 description: Configurare l'inventario hardware per tutti i client o per una raccolta in System Center Configuration Manager.
-ms.custom: na
 ms.date: 02/22/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 0e45290e-f8f7-4335-801e-570225d12c2b
-caps.latest.revision: "5"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 91f17e4ab9f828576ac1b11076a008289ff588a0
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 7b282fdb2f7cf3a200950484e4da5b9505c5b71c
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="how-to-configure-hardware-inventory-in-system-center-configuration-manager"></a>How to configure hardware inventory in System Center Configuration Manager
+# <a name="how-to-configure-hardware-inventory-in-system-center-configuration-manager"></a>Come configurare l'inventario hardware in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -35,7 +29,7 @@ Questa procedura consente di configurare le impostazioni client predefinite per 
 
 1.  Nella console di Configuration Manager selezionare **Amministrazione** > **Impostazioni client** > **Impostazioni client predefinite**.  
 
-4.  Nella scheda **Home**, nel gruppo **Proprietà**, scegliere **Proprietà**.  
+4.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
 
 5.  Nella finestra di dialogo **Impostazioni predefinite** scegliere **Inventario hardware**.  
 
@@ -47,4 +41,4 @@ Questa procedura consente di configurare le impostazioni client predefinite per 
 
 7.  Configurare altre [impostazioni client di inventario hardware](../../../../core/clients/deploy/about-client-settings.md#hardware-inventory) necessarie.  
 
-I dispositivi client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero criteri per un singolo client, vedere [How to manage clients in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
+I dispositivi client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero criteri per un singolo client, vedere [Come gestire i client in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  

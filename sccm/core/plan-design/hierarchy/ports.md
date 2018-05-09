@@ -2,26 +2,19 @@
 title: Porte usate per le connessioni
 titleSuffix: Configuration Manager
 description: Informazioni sulle porte necessarie e personalizzabili usate da System Center Configuration Manager per le connessioni.
-ms.custom: na
 ms.date: 02/16/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: c6777fb0-0754-4abf-8a1b-7639d23e9391
-caps.latest.revision: 
-caps.handback.revision: 
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 8db098f69180aac3785087af6ee305b3651094e5
-ms.sourcegitcommit: 1378532fac2620ddcfd31061982f344a290c2e67
+manager: dougeby
+ms.openlocfilehash: dd9c3f9440f4215b82a0f9d63614f646772cc0fa
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ports-used-in-system-center-configuration-manager"></a>Porte usate in System Center Configuration Manager
 

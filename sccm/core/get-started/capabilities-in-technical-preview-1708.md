@@ -1,24 +1,20 @@
 ---
 title: Technical Preview 1708
 titleSuffix: Configuration Manager
-description: "Informazioni sulle funzionalità disponibili in Technical Preview 1708 per System Center Configuration Manager."
-ms.custom: na
+description: Informazioni sulle funzionalità disponibili in Technical Preview 1708 per System Center Configuration Manager.
 ms.date: 08/25/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 3c061ceb-3bdb-4d4f-8c60-344964bd416b
-author: erikje
-ms.author: erikje
-manager: angrobe
-ms.openlocfilehash: 84d3b10bf5eede1ce7557adb74a1b11a38fad777
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: b6764acf3ecc1aaad4a19c9d56880e7bd5692464
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1708-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1708 per System Center Configuration Manager
 
@@ -65,7 +61,7 @@ In [Technical Preview 1707](/sccm/core/get-started/capabilities-in-technical-pre
 
 In questa versione di Technical Preview è stata ampliata la capacità dei parametri degli script di rilevare i parametri obbligatori e facoltativi e chiedere di immetterli.
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 
 1. Seguire le istruzioni per [creare ed eseguire script di PowerShell dalla console di Configuration Manager](/sccm/apps/deploy-use/create-deploy-scripts).
 2. Nella nuova pagina **Parametri script** della **creazione guidata di script** scegliere un parametro e quindi modificare i valori.
@@ -95,7 +91,7 @@ Per creare la notifica client per riavviare un dispositivo:
 Quando la notifica viene ricevuta da un client, viene visualizzata una finestra di notifica di **Software Center** per informare l'utente del riavvio. Per impostazione predefinita, il riavvio viene eseguito dopo 90 minuti. È possibile modificare il tempo di riavvio configurando le [impostazioni del client](/sccm/core/clients/deploy/configure-client-settings). Le impostazioni per il comportamento del riavvio sono disponibili nella scheda [Riavvio del computer](/sccm/core/clients/deploy/about-client-settings#computer-restart) delle impostazioni predefinite.
 
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 Provare a completare le attività seguenti e quindi inviare **Feedback** dalla scheda **Home** della barra multifunzione per comunicarci come è andata:
 1.  Distribuire un'app o un aggiornamento a un dispositivo richiederà che il dispositivo venga riavviato per completare l'installazione.
 2.  Individuare il dispositivo nel nodo **Asset e conformità** > **Dispositivi** della console e verificare sia visualizzato **Sì** nella colonna **Riavvio in sospeso**. Prima che lo stato Riavvio in sospeso venga visualizzato nella console potrebbero passare fino a 20 minuti.
@@ -111,7 +107,7 @@ Provare a completare le attività seguenti e quindi inviare **Feedback** dalla s
 Per modificare Software Center:
 
 1. Nella console di **Configuration Manager** scegliere **Amministrazione** > **Impostazioni client**. Fare clic sull'istanza di impostazione client desiderata.
-2. Nella scheda **Home**, nel gruppo **Proprietà**, scegliere **Proprietà**.
+2. Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.
 3. Nella finestra di dialogo **Impostazioni predefinite** scegliere **Software Center**.
 4. Selezionare **Sì** per **scegliere le nuove impostazioni per specificare informazioni sulla società**, in modo da abilitare le impostazioni di personalizzazione di Software Center.
 5. Digitare il **nome della società**.

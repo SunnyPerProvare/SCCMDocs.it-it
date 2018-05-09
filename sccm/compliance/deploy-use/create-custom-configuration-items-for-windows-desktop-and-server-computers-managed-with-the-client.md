@@ -1,26 +1,20 @@
 ---
 title: 'Creare elementi di configurazione per i computer Windows gestiti tramite client '
 titleSuffix: Configuration Manager
-description: "È possibile gestire le impostazioni per i computer e i server Windows usando un elemento di configurazione personalizzato per computer desktop e server Windows."
-ms.custom: na
+description: È possibile gestire le impostazioni per i computer e i server Windows usando un elemento di configurazione personalizzato per computer desktop e server Windows.
 ms.date: 11/18/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-compliance
+ms.topic: conceptual
 ms.assetid: 1eb2fcaf-acac-4388-9b31-6cccafacaabe
-caps.latest.revision: "9"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: ed3aa1ce9e21c7c486cc40deb804a8687a1cd4f2
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: b2b2af6c022d854a6c6d623e3901abac70d42c7a
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione personalizzati per computer desktop e server Windows gestiti con il client di System Center Configuration Manager
 
@@ -235,7 +229,7 @@ Usare l'elemento di configurazione **personalizzato per computer desktop e serve
 
             -   **Includi sottocartelle** : abilitare questa opzione se si desidera effettuare la ricerca anche nelle sottocartelle nel percorso specificato.  
 
-            -   **Il file è associato a un'applicazione a 64 bit**: scegliere se effettuare la ricerca anche nel percorso dei file del sistema a 64 bit (*%windir%*\System32), oltre al percorso dei file del sistema a 32 bit (*%windir%*\Syswow64) nei client di Configuration Manager che eseguono una versione a 64 bit di Windows.  
+            -   **Il file è associato a un'applicazione a 64 bit**: scegliere se effettuare la ricerca anche nel percorso dei file del sistema a 64 bit (*%windir%* \System32), oltre al percorso dei file del sistema a 32 bit (*%windir%* \Syswow64) nei client di Configuration Manager che eseguono una versione a 64 bit di Windows.  
 
             -   **Query XPath** -specificare una valido XML path language (XPath) query completa che consente di valutare la conformità nei computer client.  
 

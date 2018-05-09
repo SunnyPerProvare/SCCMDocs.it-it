@@ -1,24 +1,20 @@
 ---
 title: Technical Preview 1707
 titleSuffix: Configuration Manager
-description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1707 per System Center Configuration Manager."
-ms.custom: na
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1707 per System Center Configuration Manager.
 ms.date: 08/14/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: cb405ba0-8792-4ab7-988b-2f835f3a9550
-author: erikje
-ms.author: erikje
-manager: angrobe
-ms.openlocfilehash: b7823ad6dc4c93eb2df935d46ac8479a0369abc2
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 375c743e1094f3b3f52090ae520ee9d8e86acbe0
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1707-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1707 per System Center Configuration Manager
 
@@ -78,7 +74,7 @@ Fare clic su una sezione del grafico dei **modelli Surface** per un elenco compl
 
 Per creare e distribuire i criteri di Windows Defender Application Guard, configurare i dispositivi Windows 10 in cui vengono distribuiti i criteri con un criterio di isolamento rete. Per informazioni dettagliate, vedere [questo post di blog](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#BmJGKPfSjHHzsMmI.97). Questa funzionalità funziona solo con le build correnti di Windows 10 Insider. Per provarla, i client devono eseguire una build recente di Windows 10 Insider.
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 
 #### <a name="to-create-a-policy-and-to-browse-the-available-settings"></a>Per creare un criterio e per individuare le impostazioni disponibili:
 
@@ -101,7 +97,7 @@ Nell'ultima versione Technical Preview è stata introdotta una nuova funzionalit
 La funzionalità è stata espansa in questa versione Technical Preview. Configuration Manager ora legge lo script di PowerShell e visualizza tutti i parametri nella procedura guidata Crea script. È possibile specificare nella procedura guidata un valore per il parametro che verrà usato durante l'esecuzione dello script. In alternativa, è possibile omettere il parametro. In questo caso è necessario specificare un valore per il parametro quando si esegue lo script.
 In questa versione Technical Preview è necessario specificare gli eventuali parametri richiesti dagli script. Nelle versioni future la definizione dei parametri degli script diventerà facoltativa.
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 
 1. Seguire le istruzioni per [creare ed eseguire script di PowerShell dalla console di Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1706#create-and-run-powershell-scripts-from-the-configuration-manager-console).
 2. Nella nuova pagina **Parametri script** della **procedura guidata Crea script** scegliere un parametro e quindi fare clic su **Modifica**.

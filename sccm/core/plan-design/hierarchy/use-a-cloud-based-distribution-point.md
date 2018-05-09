@@ -2,24 +2,19 @@
 title: Punto di distribuzione basato su cloud
 titleSuffix: Configuration Manager
 description: Informazioni sulle configurazioni e le limitazioni per l'uso di un punto di distribuzione basato sul cloud con System Center Configuration Manager.
-ms.custom: na
 ms.date: 3/27/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 3cd9c725-6b42-427d-9191-86e67f84e48c
-caps.latest.revision: "9"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 87c60ac597baa8726333e317f42924130dd1a685
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: fd3e8c58b358093ebf9d90478920c45e127e382e
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-a-cloud-based-distribution-point-with-system-center-configuration-manager"></a>Usare un punto di distribuzione basato sul cloud con System Center Configuration Manager
 

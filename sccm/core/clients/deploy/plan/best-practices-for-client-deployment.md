@@ -2,24 +2,19 @@
 title: Procedure consigliate per la distribuzione di client
 titleSuffix: Configuration Manager
 description: Apprendere le procedure consigliate per la distribuzione client in System Center Configuration Manager.
-ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: a933d69c-5feb-4b2b-84e8-56b3b64d5947
-caps.latest.revision: "11"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 7e369b81d57183b4d1a7e646ae0fd13b7804a38d
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 9c68a51202152e4b1418101412739b0d83f10203
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="best-practices-for-client-deployment-in-system-center-configuration-manager"></a>Procedure consigliate per la distribuzione di client in System Center Configuration Manager
 
@@ -29,7 +24,7 @@ ms.lasthandoff: 10/12/2017
 ## <a name="use-software-update-based-client-installation-for-active-directory-computers"></a>Utilizzare l'installazione client basata su aggiornamento software per i computer Active Directory  
  Questo metodo di distribuzione client usa tecnologie Windows esistenti, si integra con l'infrastruttura di Active Directory, richiede la configurazione minima in Configuration Manager, è il più semplice da configurare per i firewall ed è il più sicuro. L'uso di gruppi di protezione e di filtri WMI per la configurazione dei criteri di gruppo consente di controllare in modo flessibile su quali computer installare il client di Configuration Manager.  
 
- Per altre informazioni, vedere [How to Install Configuration Manager Clients by Using Software Update-Based Installation](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientSUP).  
+ Per altre informazioni, vedere [Come installare i client di Configuration Manager usando l'Installazione basata sull'aggiornamento software](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientSUP).  
 
 ## <a name="extend-the-active-directory-schema-and-publish-the-site-so-that-you-can-run-ccmsetup-without-command-line-options"></a>Estendere lo schema di Active Directory e pubblicare il sito in modo che sia possibile eseguire CCMSetup senza opzioni di riga di comando  
  Quando si estende lo schema di Active Directory per Configuration Manager e il sito viene pubblicato su Servizi di dominio Active Directory, molte proprietà di installazione client vengono pubblicate in Servizi di dominio Active Directory. Se un computer è in grado di rilevare le proprietà di installazione del client, può usarle durante la distribuzione del client di Configuration Manager. Poiché queste informazioni vengono generate automaticamente, viene eliminato il rischio di errori umani associato all'immissione manuale delle proprietà di installazione.  

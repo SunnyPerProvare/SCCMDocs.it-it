@@ -2,25 +2,19 @@
 title: Elenco di controllo per la versione 1702
 titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di System Center Configuration Manager alla versione 1702.
-ms.custom: na
 ms.date: 06/06/2017
-ms.reviewer: na
-ms.suite: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: b587779e-1bd3-4ee3-8146-8e31f53499bd
-caps.latest.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: d7b3f6d058e17e12ca910f43f7a9cbe98d128bee
-ms.sourcegitcommit: 2867fd119256ec670fc5ae65cdc8a80d39f9b4d4
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: db5ca29f093e27c2c572714dc4c85a630c774b15
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/20/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="checklist-for-installing-update-1702-for-system-center-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1702 di System Center Configuration Manager
 
@@ -39,7 +33,7 @@ Per ottenere l'aggiornamento per la versione 1702, è necessario usare un ruolo 
 
     -   Se il file dmpdownloader.log indica che il processo dmpdownloader è in stato di sospensione ed è in attesa di un intervallo prima di verificare la disponibilità di aggiornamenti, è possibile riavviare il servizio **SMS_Executive** sul server del sito per riavviare il download dei file di ridistribuzione dell'aggiornamento.
 
-    -   Un altro problema comune relativo al download si verifica quando alcune impostazioni del server proxy impediscono i download da <http://silverlight.dlservice.microsoft.com> e da <http://download.microsoft.com>.
+    -   Un altro problema di download comune si verifica quando le impostazioni del server proxy impediscono il download da <http://silverlight.dlservice.microsoft.com> e da <http://download.microsoft.com>.
 
 Per altre informazioni sull'installazione degli aggiornamenti, vedere [Aggiornamenti e manutenzione nella console](/sccm/core/servers/manage/updates#a-namebkmkinconsolea-in-console-updates-and-servicing).
 
@@ -97,7 +91,7 @@ Se si aggiorna il sito prima di aggiornare l'ADK, vedere il blog [Configuration 
 
 **Esaminare lo stato del sito e della gerarchia e verificare che non ci siano errori non risolti:** prima di aggiornare un sito, risolvere tutti i problemi operativi per il server del sito, il server di database del sito e i ruoli del sistema del sito installati nei computer remoti. Un aggiornamento del sito può avere esito negativo a causa di problemi operativi esistenti.
 
-Per ulteriori informazioni, vedere [Usare gli avvisi e il sistema di stato per System Center Configuration Manager](/sccm/core/servers/manage/use-alerts-and-the-status-system).
+Per ulteriori informazioni, vedere [Use alerts and the status system for System Center Configuration Manager](/sccm/core/servers/manage/use-alerts-and-the-status-system).
 
 **Esaminare la replica di file e dati tra siti:**   
 verificare che la replica di file e database tra siti sia funzionante e aggiornata. Eventuali ritardi o backlog in uno dei due ambiti possono complicare o compromettere l'aggiornamento.

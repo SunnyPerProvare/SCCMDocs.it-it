@@ -1,25 +1,20 @@
 ---
 title: Monitorare le applicazioni dalla console
 titleSuffix: Configuration Manager
-description: "Monitorare la distribuzione del software, inclusi gli aggiornamenti, le impostazioni di conformità e le applicazioni usando l'area di lavoro Monitoraggio in Configuration Manager."
-ms.custom: na
+description: Monitorare la distribuzione del software, inclusi gli aggiornamenti, le impostazioni di conformità e le applicazioni usando l'area di lavoro Monitoraggio in Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-app
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 784c295c-b8b8-4202-ab9f-665908d49d6d
-caps.latest.revision: "5"
-author: mattbriggs
-ms.author: mabrigg
-manager: angrobe
-ms.openlocfilehash: 015f4410f576fac90d913abfa30064b2eecb2a5b
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 4aed4ecda35fded9314ae54b6601deb6f8e07197
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="monitor-applications-from-the-system-center-configuration-manager-console"></a>Monitorare le applicazioni dalla console di System Center Configuration Manager
 

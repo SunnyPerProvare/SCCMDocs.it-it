@@ -1,22 +1,20 @@
 ---
 title: Configurare il Cloud Management Gateway
-titleSuffix: System Center Configuration Manager
+titleSuffix: Configuraton Manager
 description: Usare questa procedura dettagliata per configurare un Cloud Management Gateway (CMG).
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.date: 03/22/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: ''
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
-ms.openlocfilehash: fb2a44897064e88f7ab6fd4f4b293520f54f1db7
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 04c1b262704ec6458bd9773c28c43a50d8fc0840
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Configurare il gateway di gestione cloud per Configuration Manager
 
@@ -178,7 +176,7 @@ Questo comando visualizza tutti i punti di gestione basati su Internet rilevati 
 
 Dopo la creazione di un Cloud Management Gateway è possibile modificarne alcune impostazioni. Selezionare il Cloud Management Gateway nella console di Configuration Manager e fare clic su **Proprietà**. È possibile configurare le impostazioni seguenti:  
 
-- **Generale**  
+- **Generalee**  
 
     - **Certificato di gestione di Azure**: modificare il certificato di gestione di Azure per il Cloud Management Gateway. Questa opzione è utile quando si aggiorna il certificato prima della scadenza.  
 

@@ -1,26 +1,20 @@
 ---
 title: Gestire le immagini del sistema operativo
 titleSuffix: Configuration Manager
-description: "Informazioni sui metodi disponibili in Configuration Manager che è possibile usare per gestire le immagini del sistema operativo archiviate nei file Windows Imaging (WIM)."
-ms.custom: na
+description: Informazioni sui metodi disponibili in Configuration Manager che è possibile usare per gestire le immagini del sistema operativo archiviate nei file Windows Imaging (WIM).
 ms.date: 12/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: fab13949-371c-4a4c-978e-471db1e54966
-caps.latest.revision: "17"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: e0ddf9801430984efb63ac593d1f60b8fbfe0f59
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 3b0931671c05604a0115c14a5e7fc5d9c6767b7c
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-operating-system-images-with-system-center-configuration-manager"></a>Gestire le immagini del sistema operativo con System Center Configuration Manager
 

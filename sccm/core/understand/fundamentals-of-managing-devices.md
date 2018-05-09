@@ -2,24 +2,19 @@
 title: Nozioni fondamentali sulla gestione dei dispositivi
 titleSuffix: Configuration Manager
 description: Informazioni su come usare System Center Configuration Manager per gestire i dispositivi.
-ms.custom: na
 ms.date: 12/04/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 2bca3db9-115a-451d-8c93-f073ceefe0c7
-caps.latest.revision: "6"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: b8859537bd213928df3b4388ccbedb871e43c336
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 8d5fe709f403676c36d77e23e3ebe40a66101a44
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="fundamentals-of-managing-devices-with-system-center-configuration-manager"></a>Nozioni fondamentali sulla gestione dei dispositivi con System Center Configuration Manager
 

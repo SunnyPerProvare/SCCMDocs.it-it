@@ -2,20 +2,18 @@
 title: Eseguire la migrazione di dispositivi e utenti dalla soluzione MDM ibrida alla versione autonoma di Intune
 titleSuffix: Configuration Manager
 description: Informazioni su come eseguire la migrazione di dispositivi e utenti dalla soluzione MDM ibrida a Intune in Azure.
-keywords: 
-author: dougeby
-manager: angrobe
+author: aczechowski
+manager: dougeby
 ms.date: 09/12/2017
-ms.topic: article
-ms.prod: configmgr-hybrid
-ms.service: 
-ms.technology: 
+ms.topic: conceptual
+ms.prod: configuration-manager
+ms.technology: configmgr-hybrid
 ms.assetid: 1dd696ce-3e46-4dfa-a76d-592fe0f0320e
-ms.openlocfilehash: 30474f6dd0216078ab1ac1f4bd9f5044f1b174f0
-ms.sourcegitcommit: 8c6e9355846ff6a73c534c079e3cdae09cf13c45
+ms.openlocfilehash: 4e2471b06c1767bcf914000d626bb22b6ee2bd6b
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="migrate-hybrid-mdm-users-and-devices-to-intune-standalone"></a>Eseguire la migrazione di dispositivi e utenti dalla soluzione MDM ibrida alla versione autonoma di Intune
 

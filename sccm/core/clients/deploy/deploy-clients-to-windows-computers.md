@@ -2,26 +2,19 @@
 title: Distribuire i client in Windows
 titleSuffix: Configuration Manager
 description: Informazioni su come distribuire il client di Configuration Manager in computer Windows.
-ms.custom: na
 ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 341f0d0b-f907-44cf-9e10-e1b41fc15f82
-caps.latest.revision: 13
-caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3d7c3e9c9f2af8d612ef158897c281d422692268
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 5efca393afe2fc6441d074f987549228e7d0418f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-system-center-configuration-manager"></a>Come distribuire i client nei computer Windows in System Center Configuration Manager
 
@@ -184,7 +177,7 @@ Per informazioni sull'uso di Criteri di gruppo in Active Directory Domain Servic
 ##  <a name="BKMK_Manual"></a> Come installare manualmente i client  
  È possibile installare manualmente il software client nei computer aziendali usando il programma CCMSetup.exe. Questo programma e i relativi file di supporto si trovano nella cartella **Client** all'interno della cartella di installazione di Configuration Manager sul server del sito e sui punti di gestione nel sito. La cartella è condivisa in rete come  
 
- \\\\*&lt;<Nome server del sito\>*\SMS_*&lt;Codice del sito\>*\Client\  
+ \\\\*&lt;<Nome server del sito\>* \SMS_*&lt;Codice del sito\>* \Client\  
 
  dove *&lt;Nome server del sito\>* è il nome di uno dei server che ospitano un punto di gestione e *&lt;Codice del sito\>* è il codice del sito primario al quale il client è assegnato. Per eseguire CCMSetup.exe dalla riga di comando nel client, è necessario eseguire il mapping di un'unità di rete in questo percorso e quindi eseguire il comando.  
 
@@ -398,7 +391,7 @@ Quando il sito di Configuration Manager supporta la [gestione client basata su I
 
 -   Predisporre un meccanismo per questi client affinché possano temporaneamente connettersi alla Intranet tramite VPN. Installare quindi il client usando un metodo di installazione client appropriato.  
 
--   Usare un metodo di installazione indipendente da Configuration Manager. Ad esempio, creare un pacchetto dei file di origine dell'installazione client su un supporto rimovibile che può essere inviato agli utenti insieme alla istruzioni per l'installazione. I file di origine dell'installazione client si trovano nella cartella *&lt;PercorsoInstallazione\>*\Client nel server del sito e nei punti di gestione di Configuration Manager. Includere nel supporto uno script per la copia manuale sulla cartella client e da questa cartella, installare il client usando CCMSetup.exe e tutte le proprietà della riga di comando CCMSetup appropriate.  
+-   Usare un metodo di installazione indipendente da Configuration Manager. Ad esempio, creare un pacchetto dei file di origine dell'installazione client su un supporto rimovibile che può essere inviato agli utenti insieme alla istruzioni per l'installazione. I file di origine dell'installazione client si trovano nella cartella *&lt;PercorsoInstallazione\>* \Client nel server del sito e nei punti di gestione di Configuration Manager. Includere nel supporto uno script per la copia manuale sulla cartella client e da questa cartella, installare il client usando CCMSetup.exe e tutte le proprietà della riga di comando CCMSetup appropriate.  
 
 > [!NOTE]  
 >  Configuration Manager non supporta l'installazione di un client direttamente dal punto di gestione basato su Internet o dal punto di aggiornamento software basato su Internet.  
@@ -498,7 +491,7 @@ Quando il sito di Configuration Manager supporta la [gestione client basata su I
 
 
 
-##  <a name="BKMK_Provision"></a> Come effettuare il provisioning delle proprietà di installazione client (Criteri di gruppo e installazione client basata su aggiornamento software)  
+##  <a name="BKMK_Provision"></a> Come eseguire il provisioning delle proprietà di installazione client (Criteri di gruppo e installazione client basata su aggiornamento software)  
  È possibile usare Criteri di gruppo di Windows per effettuare il provisioning dei computer con le proprietà di installazione client di Configuration Manager. Queste proprietà vengono archiviate nel Registro di sistema del computer e lette al momento dell'installazione del software client. Questa procedura normalmente non è richiesta, ma potrebbe essere necessaria in alcuni scenari di installazione client, come i seguenti:  
 
 -   Si usano le impostazioni di Criteri di gruppo o i metodi di installazione client basata sull'aggiornamento software. Lo schema di Active Directory non è stato esteso a Configuration Manager.  

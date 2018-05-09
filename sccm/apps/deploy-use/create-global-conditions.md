@@ -1,26 +1,20 @@
 ---
 title: Creare condizioni globali
 titleSuffix: Configuration Manager
-description: "È possibile creare condizioni globali per specificare la modalità in cui un'applicazione viene resa disponibile e distribuita nei dispositivi client."
-ms.custom: na
+description: È possibile creare condizioni globali per specificare la modalità in cui un'applicazione viene resa disponibile e distribuita nei dispositivi client.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-app
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 2d5f871a-19dc-4bd3-a3ad-4230c7a69f1b
-caps.latest.revision: "7"
-caps.handback.revision: "0"
-author: mattbriggs
-ms.author: mabrigg
-manager: angrobe
-ms.openlocfilehash: 480e7a68308d458bc77ddb4956db2616eaaced97
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: dac47f55a1ad0d287e789d555d2f0a93b40f9376
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-global-conditions-in-system-center-configuration-manager"></a>Come creare condizioni globali in System Center Configuration Manager
 
@@ -102,7 +96,7 @@ In System Center Configuration Manager le condizioni globali sono regole che rap
 
         -   **Includi sottocartelle** : abilitare questa opzione se si desidera effettuare la ricerca anche nelle sottocartelle nel percorso specificato.  
 
-        -   **Il file o la cartella sono associati a un'applicazione a 64 bit**: scegliere se effettuare la ricerca anche nel percorso dei file del sistema a 64 bit (*%windir%*\system32), oltre al percorso dei file del sistema a 32 bit (*%windir%*\syswow64) nei client di Configuration Manager con una versione a 64 bit di Windows.  
+        -   **Il file o la cartella sono associati a un'applicazione a 64 bit**: scegliere se effettuare la ricerca anche nel percorso dei file del sistema a 64 bit (*%windir%* \system32), oltre al percorso dei file del sistema a 32 bit (*%windir%* \syswow64) nei client di Configuration Manager con una versione a 64 bit di Windows.  
 
             > [!NOTE]  
             >  Se nel percorso dei file del sistema a 64 e 32 bit sullo stesso computer a 64 bit esiste lo stesso file o cartella, la condizione globale individuerà più file.  
@@ -181,7 +175,7 @@ In System Center Configuration Manager le condizioni globali sono regole che rap
 
         -   **Includi sottocartelle** : abilitare questa opzione se si desidera effettuare la ricerca anche nelle sottocartelle nel percorso specificato.  
 
-        -   **Il file è associato a un'applicazione a 64 bit**: scegliere se effettuare la ricerca anche nel percorso dei file del sistema a 64 bit (*%windir%*\system32), oltre al percorso dei file del sistema a 32 bit (*%windir%*\syswow64) nei client di Configuration Manager con una versione a 64 bit di Windows.  
+        -   **Il file è associato a un'applicazione a 64 bit**: scegliere se effettuare la ricerca anche nel percorso dei file del sistema a 64 bit (*%windir%* \system32), oltre al percorso dei file del sistema a 32 bit (*%windir%* \syswow64) nei client di Configuration Manager con una versione a 64 bit di Windows.  
 
         -   **Query XPath** : specificare una query XPath valida e completa da utilizzare per valutare la conformità nei computer client.  
 

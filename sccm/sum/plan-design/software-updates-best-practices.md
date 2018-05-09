@@ -1,10 +1,20 @@
- ---
-
-titolo: Procedure consigliate per gli aggiornamenti software suffissoTitolo: "Configuration Manager" descrizione: "Usare queste procedure consigliate per gli aggiornamenti software in System Center Configuration Manager."
-parole chiave: autore: dougeby autore.ms: dougeby manager: angrobe data.ms: 10/06/2018 argomento.ms: articolo prod.ms: configuration-manager servizio.ms: tecnologia.ms:
- - configmgr-sum IDasset.ms: 6d20389a-9de2-4a64-bced-9fc4fa519174
-
-
+---
+title: Procedure consigliate per gli aggiornamenti software
+titleSuffix: Configuration Manager
+description: Usare queste procedure consigliate per gli aggiornamenti software in System Center Configuration Manager.
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.date: 10/06/2018
+ms.topic: conceptual
+ms.prod: configuration-manager
+ms.technology: configmgr-sum
+ms.assetid: 6d20389a-9de2-4a64-bced-9fc4fa519174
+ms.openlocfilehash: 0604c75aedfea5d82bd7d274c4a43edccb497f1e
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="best-practices-for-software-updates-in-system-center-configuration-manager"></a>Procedure consigliate per gli aggiornamenti software in System Center Configuration Manager
 

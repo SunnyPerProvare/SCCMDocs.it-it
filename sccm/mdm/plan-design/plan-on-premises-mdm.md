@@ -2,26 +2,19 @@
 title: Pianificare il software MDM locale
 titleSuffix: Configuration Manager
 description: Pianificare la gestione dei dispositivi mobili locale per gestire dispositivi mobili in System Center Configuration Manager.
-ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-hybrid
+ms.topic: conceptual
 ms.assetid: 02979fb8-ea7e-4ec6-b7e0-ecbfda73e52d
-caps.latest.revision: 9
-caps.handback.revision: 0
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: e1c6a5ccd003295d007e78f0745c30732e10c2df
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 10cddac80b9a7ea4bd912e2f52585cdcef7e70da
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="plan-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Pianificare la gestione di dispositivi mobili locale in System Center Configuration Manager
 
@@ -105,7 +98,7 @@ Prendere in considerazione i requisiti seguenti prima di preparare l'infrastrutt
 
 -   Pacchetto di provisioning della Configurazione guidata  
 
- Per altre informazioni, vedere [Configurare i certificati per le comunicazioni attendibili per la gestione dei dispositivi mobili locale in System Center Configuration Manager.](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)  
+ Per altre informazioni, vedere [Set up certificates for trusted communications for On-premises Mobile Device Management in System Center Configuration Manager](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)  
 
 ##  <a name="bkmk_enrollment"></a> Considerazioni sulla registrazione  
  Per abilitare la registrazione di dispositivi per la gestione dei dispositivi mobili locale, gli utenti devono avere l'autorizzazione alla registrazione e i dispositivi devono poter stabilire comunicazioni attendibili con i server di sistema del sito che ospitano i ruoli di sistema del sito necessari.  
@@ -120,4 +113,4 @@ Prendere in considerazione i requisiti seguenti prima di preparare l'infrastrutt
 
 -   [Impostare la registrazione dei dispositivi per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md)  
 
--   [Registrare i dispositivi per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/deploy-use/enroll-devices-on-premises-mdm.md)  
+-   [Registrare i dispositivi per la gestione di dispositivi mobili locale in System Center Configuration Manager](../../mdm/deploy-use/enroll-devices-on-premises-mdm.md)  

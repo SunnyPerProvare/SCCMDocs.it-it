@@ -2,24 +2,19 @@
 title: Configurare i client per trovare i punti di gestione usando la pubblicazione DNS
 titleSuffix: Configuration Manager
 description: Impostare i client per trovare i punti di gestione usando la pubblicazione DNS in System Center Configuration Manager.
-ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: 03cec407-0f9f-454f-a360-b005af738d29
-caps.latest.revision: "6"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: d2462c282b5b979177fda735847279a12208ba6d
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 3735e2cc8ac2f7e4a5c05b49783cad3981a04930
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-configure-client-computers-to-find-management-points-by-using-dns-publishing-in-system-center-configuration-manager"></a>Come configurare i computer client per trovare i punti di gestione usando la pubblicazione DNS in System Center Configuration Manager
 

@@ -2,24 +2,19 @@
 title: Sicurezza e privacy per l'amministrazione dei siti
 titleSuffix: Configuration Manager
 description: Ottimizzare sicurezza e privacy per l'amministrazione dei siti in System Center Configuration Manager.
-ms.custom: na
 ms.date: 3/1/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 1d58176e-abc0-4087-8583-ce70deb4dcf5
-caps.latest.revision: "8"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 2dd77a607e2ab87d9abf0ea46ca7c5565a8286b6
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 515385c6c6855e63dc32b522edff9cd2047331bd
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="security-and-privacy-for-site-administration-in-system-center-configuration-manager"></a>Sicurezza e privacy per l'amministrazione dei siti in System Center Configuration Manager
 

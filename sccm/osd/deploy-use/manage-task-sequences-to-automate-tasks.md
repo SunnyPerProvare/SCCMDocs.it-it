@@ -2,25 +2,19 @@
 title: Gestire le sequenze di attività
 titleSuffix: Configuration Manager
 description: Creare, modificare, distribuire, importare ed esportare sequenze di attività per gestirle e automatizzarle nel proprio ambiente.
-ms.custom: na
 ms.date: 04/10/2018
 ms.prod: configuration-manager
-ms.reviewer: nac
-ms.suite: na
-ms.technology:
-- configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-osd
+ms.topic: conceptual
 ms.assetid: a1f099f1-e9b5-4189-88b3-f53e3b4e4add
-caps.latest.revision: 10
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9ed5a94d644aa0bdb7d63c3b976da7dd566dfedd
-ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
+ms.openlocfilehash: 26d43b1ee065f3ae0b1221ca81e69f6cb1da6f6c
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-system-center-configuration-manager"></a>Gestire le sequenze di attività per automatizzare le attività in System Center Configuration Manager
 
@@ -335,7 +329,7 @@ Viene visualizzato il messaggio di notifica seguente quando l'utente finale apre
 
 10. Nella pagina **Punti di distribuzione** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   **Opzioni di distribuzione:**specificare una delle opzioni seguenti:  
+    -   **Opzioni di distribuzione:** specificare una delle opzioni seguenti:  
 
         > [!NOTE]  
         >  Quando si usa il multicast per distribuire un sistema operativo, il contenuto deve essere scaricato nei computer di destinazione quando necessario oppure prima dell'esecuzione della sequenza di attività.  

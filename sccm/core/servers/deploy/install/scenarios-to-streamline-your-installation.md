@@ -2,24 +2,19 @@
 title: Scenari di installazione
 titleSuffix: Configuration Manager
 description: Informazioni sulle tecniche di installazione di una nuova gerarchia di Configuration Manager durante l'aggiornamento di un sito.
-ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 35586a85-4af9-4c8b-925a-0e32dc8b7346
-caps.latest.revision: "6"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: c9fc7c502acca95ea19b6d7ba55f2aee79a929cd
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 77615ab53f715a5d3e5b2e21cda667e6f0a2bc0c
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="scenarios-to-streamline-your-installation-of-system-center-configuration-manager"></a>Scenari per semplificare l'installazione di System Center Configuration Manager
 
@@ -106,7 +101,7 @@ Seguire questa sequenza:
 
     Dopo questo passaggio, ogni sito primario eseguirà la versione 1606.  
 
-3.  **Impostare le finestre di manutenzione nei siti primari figlio.** Dopo aver aggiornato tutti i siti primari alla versione di base, pianificare la configurazione di finestre di manutenzione per controllare quando quei siti installano aggiornamenti dell'infrastruttura. Per altre informazioni, vedere [How to use maintenance windows in System Center Configuration Manager](../../../../core/clients/manage/collections/use-maintenance-windows.md) (Come usare le finestre di manutenzione in Configuration Manager).  Le finestre di manutenzione sono chiamate *intervalli di servizio* nella versione 1606.  
+3.  **Impostare le finestre di manutenzione nei siti primari figlio.** Dopo aver aggiornato tutti i siti primari alla versione di base, pianificare la configurazione di finestre di manutenzione per controllare quando quei siti installano aggiornamenti dell'infrastruttura. Per altre informazioni, vedere [Come usare le finestre di manutenzione in System Center Configuration Manager](../../../../core/clients/manage/collections/use-maintenance-windows.md).  Le finestre di manutenzione sono chiamate *intervalli di servizio* nella versione 1606.  
 
     -   Un sito primario figlio installa gli stessi aggiornamenti installati in un sito di amministrazione centrale.  
     -   I siti secondari non installano le nuove versioni automaticamente. È necessario aggiornarli manualmente dall'interno della console.  

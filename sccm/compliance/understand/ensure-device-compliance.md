@@ -1,25 +1,20 @@
 ---
-title: "Garantire la conformità dei dispositivi"
+title: Garantire la conformità dei dispositivi
 titleSuffix: Configuration Manager
-description: "Gestire la configurazione e la conformità dei dispositivi nell'organizzazione usando System Center Configuration Manager."
-ms.custom: na
+description: Gestire la configurazione e la conformità dei dispositivi nell'organizzazione usando System Center Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-compliance
+ms.topic: conceptual
 ms.assetid: 7568c9aa-b99e-4466-bfc8-0301aa376930
-caps.latest.revision: "8"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 27738aa8587d8930781bc5f70248c8c994227851
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 42b3925fa94ae1672e4241a3cddc66cdc1774aaf
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ensure-device-compliance-with-system-center-configuration-manager"></a>Garantire la conformità dei dispositivi con System Center Configuration Manager
 

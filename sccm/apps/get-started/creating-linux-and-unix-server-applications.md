@@ -2,24 +2,19 @@
 title: Creare applicazioni server Linux e UNIX
 titleSuffix: Configuration Manager
 description: Questo articolo descrive le considerazioni da tenere presenti quando si creano e distribuiscono applicazioni per i dispositivi Linux e UNIX.
-ms.custom: na
 ms.date: 04/13/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-app
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 79cd131a-1a24-4751-87c8-7f275e45d847
-caps.latest.revision: "7"
-author: mattbriggs
-ms.author: mabrigg
-manager: angrobe
-ms.openlocfilehash: 81a3ef6ee05a8f0f66ca1a70d56bc33017c66d9c
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 35ccc4944359b89bad3ccac52309a289f69933f7
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="create-linux-and-unix-server-applications-with-system-center-configuration-manager"></a>Creare applicazioni server Linux e UNIX con System Center Configuration Manager
 
@@ -57,7 +52,7 @@ Di seguito sono illustrate le principali differenze tra la distribuzione di pacc
 |-------------------|-------------|  
 |Usare solo le configurazioni destinate ai computer. Non usare le configurazioni destinate agli utenti.|Il client di Configuration Manager per Linux e UNIX non supporta le configurazioni destinate agli utenti.|  
 |Configurare i programmi per scaricare il software dal punto di distribuzione ed eseguire i programmi dalla cache del client locale.|Il client di Configuration Manager per Linux e UNIX non supporta l'esecuzione di software dal punto di distribuzione. Al contrario, è necessario configurare il software per scaricare il client e quindi eseguire l'installazione.<br /><br /> Per impostazione predefinita, dopo che il client per Linux e UNIX installa il software, tale software viene eliminato dalla cache del client. Tuttavia, i pacchetti configurati con l'opzione **Rendi permanente il contenuto nella cache client** non vengono eliminati dal client e rimangono nella cache dopo l'installazione del software.<br /><br /> Il client per Linux e UNIX non supporta le configurazioni per la cache del client e la dimensione massima di tale cache viene limitata solo dallo spazio libero su disco nel computer client.|  
-|Configurare l'account di accesso alla rete per l'accesso del punto di distribuzione|I computer Linux e UNIX sono progettati per essere utilizzati come computer del gruppo di lavoro. Per accedere ai pacchetti dal punto di distribuzione nel dominio del server del sito di Configuration Manager, è necessario configurare l'account di accesso alla rete per il sito. È necessario specificare questo account come una proprietà del componente di distribuzione software e configurare l'account prima di distribuire il software.<br /><br /> È possibile configurare più account di accesso alla rete in ogni sito. Il client per Linux e UNIX può utilizzare tutti gli account configurati come account di accesso alla rete.<br /><br /> Per altre informazioni, vedere [Componenti del sito per System Center Configuration Manager](../../core/servers/deploy/configure/site-components.md).|  
+|Configurare l'account di accesso alla rete per l'accesso del punto di distribuzione|I computer Linux e UNIX sono progettati per essere utilizzati come computer del gruppo di lavoro. Per accedere ai pacchetti dal punto di distribuzione nel dominio del server del sito di Configuration Manager, è necessario configurare l'account di accesso alla rete per il sito. È necessario specificare questo account come una proprietà del componente di distribuzione software e configurare l'account prima di distribuire il software.<br /><br /> È possibile configurare più account di accesso alla rete in ogni sito. Il client per Linux e UNIX può utilizzare tutti gli account configurati come account di accesso alla rete.<br /><br /> Per altre informazioni, vedere [Site components for System Center Configuration Manager](../../core/servers/deploy/configure/site-components.md).|  
 
  È possibile distribuire pacchetti e programmi nelle raccolte che contengono solo client Linux o UNIX o distribuirli in raccolte che contengono un insieme di tipi di client, ad esempio la **raccolta Tutti i sistemi**. I client non Linux e non UNIX, tuttavia, non installeranno il software o segnaleranno un errore.  
 

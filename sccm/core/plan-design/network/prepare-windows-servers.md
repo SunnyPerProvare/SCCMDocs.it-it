@@ -2,26 +2,19 @@
 title: Preparare server Windows
 titleSuffix: Configuration Manager
 description: Assicurarsi che un computer soddisfi i prerequisiti per l'uso come server del sito o server di sistema del sito per System Center Configuration Manager.
-ms.custom: na
 ms.date: 2/14/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 2aca914f-641e-4bc8-98d4-bbf0a2a5276f
-caps.latest.revision: 
-caps.handback.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: a55322868d45cf1d2b3004e21d641ca5299aa957
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 64b24d04769da7488eb7fefaa293444fbc851cfb
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="prepare-windows-servers-to-support-system-center-configuration-manager"></a>Preparare i server di Windows per il supporto di System Center Configuration Manager
 

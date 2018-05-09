@@ -1,25 +1,20 @@
 ---
 title: Nuova versione 1610
 titleSuffix: Configuration Manager
-description: "Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1610 di System Center Configuration Manager."
-ms.custom: na
+description: Le sezioni seguenti illustrano in dettaglio le modifiche e le nuove funzionalità introdotte nella versione 1610 di System Center Configuration Manager.
 ms.date: 11/23/2016
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: f7eb0803-3f8f-4ab6-825a-99ac11f5ba7d
-caps.latest.revision: "40"
-author: mestew
-ms.author: mstewart
-manager: angrobe
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
 ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: e3dac4ceb08c15c1eaeef0a6006ebcc6eccff49c
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 9bb046cd08e4e9d8cff6e34ea88ce8e582e2c863
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="what39s-new-in-version-1610-of-system-center-configuration-manager"></a>Novità della versione 1610 di System Center Configuration Manager
 
@@ -206,7 +201,7 @@ Il passaggio Prepara client ConfigMgr a questo punto rimuove completamente il cl
 ## <a name="lookout-integration-for-hybrid-implementations-to-protect-ios-and-android-devices"></a>Integrazione di Lookout nelle implementazioni ibride per la protezione di dispositivi iOS e Android
 Microsoft si integra con la soluzione di protezione dalle minacce Lookout per proteggere i dispositivi mobili iOS e Android mediante il rilevamento di malware, app rischiose e altre minacce nei dispositivi. La soluzione Lookout consente di determinare il livello di minaccia, che è configurabile. È possibile creare una regola dei criteri di conformità in System Center Configuration Manager per determinare la conformità del dispositivo in base alla valutazione dei rischi di Lookout. Tramite criteri di accesso condizionale, è possibile consentire o bloccare l'accesso alle risorse aziendali in base allo stato di conformità del dispositivo. Per informazioni sull'integrazione e sul suo funzionamento, vedere [Gestire l'accesso in base a dispositivo, rete e rischio dell'applicazione](/sccm/protect/deploy-use/manage-access-based-on-device-network-app-risk).
 
-Agli utenti dei dispositivi iOS non conformi verrà richiesto di effettuare la registrazione. Verrà inoltre richiesto di installare l'applicazione Lookout for Work, di attivare l'app e di correggere le minacce segnalate da Lookout for Work per poter accedere ai dati aziendali. Per altre informazioni, vedere [Configurare e distribuire l'app Lookout for Work](/sccm/protect/deploy-use/configure-and-deploy-lookout-for-work-apps).
+Agli utenti dei dispositivi iOS non conformi verrà richiesto di effettuare la registrazione. Verrà inoltre richiesto di installare l'applicazione Lookout for Work, di attivare l'app e di correggere le minacce segnalate da Lookout for Work per poter accedere ai dati aziendali. Vedere le informazioni su come [Configurare e distribuire l'app Lookout for Work](/sccm/protect/deploy-use/configure-and-deploy-lookout-for-work-apps).
 
 
 

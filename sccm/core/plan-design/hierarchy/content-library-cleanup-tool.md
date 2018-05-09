@@ -1,25 +1,20 @@
 ---
 title: Strumento di pulizia della raccolta contenuto
 titleSuffix: Configuration Manager
-description: "Usare lo strumento di pulizia della raccolta contenuto per rimuovere contenuto orfano non più associato a una distribuzione di System Center Configuration Manager."
-ms.custom: na
+description: Usare lo strumento di pulizia della raccolta contenuto per rimuovere contenuto orfano non più associato a una distribuzione di System Center Configuration Manager.
 ms.date: 4/7/2017
-ms.reviewer: na
-ms.suite: na
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 226cbbb2-9afa-4e2e-a472-be989c0f0e11
-caps.latest.revision: "4"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 334b79e675ea7804128b0feb9678de4ad06dbc93
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 5d83b23673d8eea6e98f21ea30b6b802eb7e5595
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="the-content-library-cleanup-tool-for-system-center-configuration-manager"></a>Strumento di pulizia della raccolta contenuto per System Center Configuration Manager
 
@@ -29,7 +24,7 @@ ms.lasthandoff: 01/04/2018
 
 Lo strumento interessa solo il contenuto presente nel punto di distribuzione che viene specificato quando si esegue lo strumento stesso. Quest'ultimo non può rimuovere contenuto dalla raccolta contenuto nel server del sito.
 
-Lo strumento **ContentLibraryCleanup.exe** è disponibile nella cartella \*%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* nel server del sito in un sito di amministrazione centrale o in un sito primario.
+Lo strumento **ContentLibraryCleanup.exe** è disponibile nella cartella *%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* nel server del sito in un sito di amministrazione centrale o in un sito primario.
 
 ## <a name="requirements"></a>requisiti  
  Lo strumento può essere eseguito solo in un singolo punto di distribuzione alla volta.  

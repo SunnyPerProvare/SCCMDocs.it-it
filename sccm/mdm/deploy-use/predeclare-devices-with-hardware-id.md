@@ -1,27 +1,22 @@
 ---
-title: Predichiarare dispositivi con i numeri di serie IMEI o iOS
+title: Predichiarare i dispositivi con i numeri di serie IMEI o iOS
 titleSuffix: Configuration Manager
-description: "Predichiarare i dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS."
-ms.custom: na
+description: Predichiarare i dispositivi di proprietà dell'azienda con numero di serie IMEI o iOS.
 ms.date: 09/01/2017
-ms.reviewer: na
-ms.suite: na
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: ddb4c68e-e7f7-475a-89e2-7379a86e44c4
-caps.latest.revision: "3"
-author: nathbarn
-ms.author: nathbarn
-manager: angrobe
-ms.openlocfilehash: a58c765833fe1ef65c2497fd1e2d079caa3f2ff3
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 86ef14c871f476df39923e01e47874702271a08d
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Predichiarare dispositivi con i numeri di serie IMEI o iOS
+# <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Predichiarare i dispositivi con i numeri di serie IMEI o iOS
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -72,7 +67,7 @@ Il file con estensione csv da usare per identificare i dispositivi in base al co
 |   | A1B2C3D4E5C6 | IOS |  Dispositivo iOS di proprietà dell'azienda|
 | 223456789012345 | E6D5C4B3A210 |   IOS |  Altro dispositivo iOS|
 | 323456789012345 |        |   IOS |    Terzo dispositivo iOS|
-| 123456789012346 |         |   ANDROID |   Dispositivo Android dell'azienda|
+| 123456789012346 |         |   ANDROID |   Dispositivo Android di proprietà dell'azienda|
 
 Non includere una riga di intestazione nel file CSV. L'esempio seguente visualizza gli stessi dati di esempio in formato CSV:
 

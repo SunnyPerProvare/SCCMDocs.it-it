@@ -1,25 +1,20 @@
 ---
-title: "Disponibilità elevata"
+title: Disponibilità elevata
 titleSuffix: Configuration Manager
-description: "Informazioni su come distribuire System Center Configuration Manager tramite opzioni che consentono di mantenere un livello elevato di disponibilità dei servizi."
-ms.custom: na
+description: Informazioni su come distribuire System Center Configuration Manager tramite opzioni che consentono di mantenere un livello elevato di disponibilità dei servizi.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: 1a38421d-24c1-4fef-bf6c-42fce53109ac
-caps.latest.revision: "4"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: bfc40f13f166a4f4aeda4a363ec633a54206dce4
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: a1011aa1b30661d756d457a38ebc770a61fac07f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="high-availability-options-for-system-center-configuration-manager"></a>Opzioni di disponibilità elevata per System Center Configuration Manager
 
@@ -56,7 +51,7 @@ Opzioni che supportano una disponibilità elevata:
 -   I report incorporati forniscono informazioni sulle operazioni in corso, nonché su operazioni storiche e tendenze. Configuration Manager supporta anche messaggi basati sullo stato che forniscono informazioni quasi in tempo reale sulle operazioni in corso.  
 
   Usare le informazioni di questo argomento con quelle contenute negli articoli relativi a:
--   [Hardware consigliato](../../core/plan-design/configs/recommended-hardware.md)
+-   [Recommended hardware](../../core/plan-design/configs/recommended-hardware.md) (Hardware consigliato)
 -   [Sistemi operativi supportati per i server del sistema del sito](../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md)  
 
 -   [Prerequisiti del sito e del sistema del sito](../../core/plan-design/configs/site-and-site-system-prerequisites.md)

@@ -1,24 +1,20 @@
 ---
 title: Technical Preview 1712 | Microsoft Docs
 titleSuffix: Configuration Manager
-description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1712 per System Center Configuration Manager."
-ms.custom: na
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1712 per System Center Configuration Manager.
 ms.date: 12/15/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 3ce372d6-bd93-4d4d-b612-5303f89c36f0
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 85f0b22b3dc067f6f07816ad36d23a090885f355
-ms.sourcegitcommit: ed8b2438ef85c9160741ef61f9171be41dd1ae0a
+manager: dougeby
+ms.openlocfilehash: 5ecaa025a9a9f0d85b7a2ef857e70c4d762fd1f5
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/17/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1712-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1712 per System Center Configuration Manager
 
@@ -145,7 +141,7 @@ Sono stati apportati i miglioramenti seguenti alla distribuzione del sistema ope
 
 ## <a name="windows-10-feedback-hub-app-integration"></a>Integrazione di app dell'hub di commenti e suggerimenti di Windows 10
 
-Il feedback degli utenti è così importante che ora è abilitato attraverso l'[app dell'hub di commenti e suggerimenti](https://support.microsoft.com/en-us/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app) incorporata in Windows 10. Quando si **aggiungono nuovi commenti e suggerimenti** assicurarsi di selezionare la categoria **Enterprise Management** e quindi scegliere una delle seguenti sottocategorie:
+Il feedback degli utenti è così importante che ora è abilitato attraverso l'[app dell'hub di commenti e suggerimenti](https://support.microsoft.com/en-us/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app) incorporata in Windows 10. Quando si sceglie **Aggiungi nuovo feedback**, assicurarsi di selezionare la categoria **Enterprise Management** e di scegliere una delle sottocategorie seguenti:
  - Configuration Manager Client
  - Console di Configuration Manager
  - Distribuzione del sistema operativo di Configuration Manager

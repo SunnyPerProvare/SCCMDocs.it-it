@@ -2,24 +2,19 @@
 title: Gruppi di limiti per le versioni 1511, 1602 e 1606
 titleSuffix: Configuration Manager
 description: Usare gruppi di limiti con Configuration Manager versioni 1511, 1602 e 1606.
-ms.custom: na
 ms.date: 2/8/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: dec1e0d7-5864-43a8-9f56-413923b3914e
-caps.latest.revision: "10"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: fdc23a24bae43e3196bededf23a66ab2325f2c75
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 7cdcb6306632df79fe69edd1d526afaf2321bad0
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="boundary-groups-for-system-center-configuration-manager-version-1511-1602-and-1606"></a>Gruppi di limiti per System Center Configuration Manager versioni 1511, 1602 e 1606
 
@@ -30,10 +25,10 @@ Le informazioni contenute in questo argomento si riferiscono specificamente all'
 Se si usa la versione 1610 o successiva, vedere [Configurare gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups) per informazioni sull'uso di gruppi di limiti riprogettati.  
 
 
-##  <a name="BKMK_BoundaryGroups"></a> Boundary groups  
+##  <a name="BKMK_BoundaryGroups"></a> Gruppi di limiti  
  I gruppi di limiti vengono creati per raggruppare logicamente i percorsi di rete correlati (limiti) e semplificare la gestione dell'infrastruttura. Prima di usare un gruppo di limiti è necessario assegnare i limiti ai gruppi di limiti. I client usano la configurazione del gruppo di limiti per:  
 
--   Assegnazione automatica al sito  
+-   Assegnazione automatica del sito  
 
 -   Percorso contenuto  
 

@@ -2,25 +2,19 @@
 title: Gestire l'accesso alla posta elettronica
 titleSuffix: Configuration Manager
 description: Informazioni su come usare l'accesso condizionale di System Center Configuration Manager per gestire l'accesso alla posta elettronica di Exchange.
-ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-hybrid
+ms.topic: conceptual
 ms.assetid: fa648e73-5fb8-4818-ab57-7466ffaf888e
-caps.latest.revision: 24
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: e36674d27757daab9ced4e7e8b51942a4929b5ff
-ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 52785e1f432e1a18d1e8264dc2c78134af9f006e
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-email-access-in-system-center-configuration-manager"></a>Gestire l'accesso alla posta elettronica in System Center Configuration Manager
 
@@ -253,7 +247,7 @@ I browser non supportati verranno bloccati. Non sono supportate le app OWA per i
 
     -   **I dispositivi devono essere conformi.** I PC devono essere registrati in Intune e conformi. Se un PC non è registrato, viene visualizzato un messaggio contenente le istruzioni su come eseguire la registrazione.  
 
-7.  In **Outlook Web Access (OWA)**è possibile scegliere di consentire l'accesso a Exchange Online esclusivamente attraverso i browser supportati: Safari (iOS) e Chrome (Android). Non sarà possibile accedere da altri browser. Vengono applicate anche le restrizioni di piattaforma selezionate per l'accesso all'applicazione per Outlook.
+7.  In **Outlook Web Access (OWA)** è possibile scegliere di consentire l'accesso a Exchange Online esclusivamente attraverso i browser supportati: Safari (iOS) e Chrome (Android). Non sarà possibile accedere da altri browser. Vengono applicate anche le restrizioni di piattaforma selezionate per l'accesso all'applicazione per Outlook.
 
     Nei dispositivi **Android** è necessario che gli utenti abilitino l'accesso al browser.  A tale scopo, l'utente finale deve abilitare l'opzione "Abilita l'accesso al browser" nel dispositivo registrato come segue:
      1. Avviare l' **app Portale aziendale**.

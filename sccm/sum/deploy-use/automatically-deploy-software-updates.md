@@ -2,22 +2,19 @@
 title: Distribuire automaticamente gli aggiornamenti software
 titleSuffix: Configuration Manager
 description: Distribuire gli aggiornamenti software automaticamente aggiungendo nuovi aggiornamenti a un gruppo di aggiornamento associato a una distribuzione attiva oppure usando ADR.
-keywords: ''
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
 ms.date: 03/22/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: ''
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
-ms.openlocfilehash: afa0bd21d23dc0be50d90452ad5dd5d909542279
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 3b267e122370cc12ecec2f42dcb1dfc62c45fe63
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 #  <a name="BKMK_AutoDeploy"></a> Distribuire automaticamente gli aggiornamenti software  
 
@@ -63,9 +60,9 @@ Use the following procedure to add software updates to an existing update group.
 
 3.  Nella pagina **Generale** è possibile configurare le seguenti impostazioni:  
 
-    -   **Nome:**specificare il nome per l'ADR. Il nome deve essere univoco, descrivere l'obiettivo della regola e contribuire a differenziarla dalle altre presenti nel sito di Configuration Manager.  
+    -   **Nome:** specificare il nome per l'ADR. Il nome deve essere univoco, descrivere l'obiettivo della regola e contribuire a differenziarla dalle altre presenti nel sito di Configuration Manager.  
 
-    -   **Descrizione:**specificare una descrizione per l'ADR. La descrizione deve fornire una panoramica della regola di distribuzione, nonché le altre informazioni rilevanti per differenziare la regola dalle altre. Il campo della descrizione è facoltativo, ha un limite di 256 caratteri e un valore vuoto per impostazione predefinita.  
+    -   **Descrizione:** specificare una descrizione per l'ADR. La descrizione deve fornire una panoramica della regola di distribuzione, nonché le altre informazioni rilevanti per differenziare la regola dalle altre. Il campo della descrizione è facoltativo, ha un limite di 256 caratteri e un valore vuoto per impostazione predefinita.  
 
     -   **Seleziona modello di distribuzione**: specificare se applicare un modello di distribuzione precedentemente salvato. È possibile configurare un modello di distribuzione che contiene più proprietà di distribuzione degli aggiornamenti comuni che possono essere usati durante la creazione delle ADR. Questi modelli consentono di garantire la coerenza tra le distribuzioni simili e risparmiare tempo.  
 

@@ -2,25 +2,19 @@
 title: Elenco di controllo per la versione 1610
 titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di System Center Configuration Manager alla versione 1610.
-ms.custom: na
 ms.date: 6/6/2017
-ms.reviewer: na
-ms.suite: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 7b411cb0-4fd1-41f2-a2f6-33738a5bde96
-caps.latest.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: c0746dc168394cda88bad682fc3ba185e83758f7
-ms.sourcegitcommit: 2867fd119256ec670fc5ae65cdc8a80d39f9b4d4
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 31367d3db55f64c375d451f2f08c8981ecfcb3d0
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/20/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="checklist-for-installing-update-1610-for-system-center-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1610 di System Center Configuration Manager
 
@@ -36,7 +30,7 @@ Per ottenere l'aggiornamento per la versione 1610, è necessario usare un ruolo 
 
     -   In genere, è anche possibile riavviare il servizio **SMS_Executive** nel server del sito per riavviare il download dei file di ridistribuzione dell'aggiornamento.
 
-    -   Un altro problema comune relativo al download si verifica quando alcune impostazioni del server proxy impediscono i download da <http://silverlight.dlservice.microsoft.com> e da <http://download.microsoft.com>.
+    -   Un altro problema di download comune si verifica quando le impostazioni del server proxy impediscono il download da <http://silverlight.dlservice.microsoft.com> e da <http://download.microsoft.com>.
 
 Per altre informazioni sull'installazione degli aggiornamenti, vedere [Aggiornamenti e manutenzione nella console](/sccm/core/servers/manage/updates#a-namebkmkinconsolea-in-console-updates-and-servicing).
 
@@ -83,7 +77,7 @@ Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](/s
 
 **Esaminare lo stato del sito e della gerarchia e verificare che non ci siano errori non risolti:** prima di aggiornare un sito, risolvere tutti i problemi operativi per il server del sito, il server di database del sito e i ruoli del sistema del sito installati nei computer remoti. Un aggiornamento del sito può avere esito negativo a causa di problemi operativi esistenti.
 
-Per ulteriori informazioni, vedere [Usare gli avvisi e il sistema di stato per System Center Configuration Manager](/sccm/core/servers/manage/use-alerts-and-the-status-system).
+Per ulteriori informazioni, vedere [Use alerts and the status system for System Center Configuration Manager](/sccm/core/servers/manage/use-alerts-and-the-status-system).
 
 **Esaminare la replica di file e dati tra siti:**   
 verificare che la replica di file e database tra siti sia funzionante e aggiornata. Eventuali ritardi o backlog in uno dei due ambiti possono complicare o compromettere l'aggiornamento.

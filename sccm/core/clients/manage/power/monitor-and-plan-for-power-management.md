@@ -2,26 +2,19 @@
 title: Monitorare e pianificare il risparmio energia
 titleSuffix: Configuration Manager
 description: Informazioni su come monitorare e pianificare il risparmio energia in System Center Configuration Manager.
-ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 507bf676-2679-4e4d-8831-3ffc9cf8557e
-caps.latest.revision: 
-caps.handback.revision: 
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: ce89941550d02ef80bf9f7e9bab83850dda9e981
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 70e6f4ddfa335a08bdf7039274b388b5a468311e
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-monitor-and-plan-for-power-management-in-system-center-configuration-manager"></a>Come monitorare e pianificare il risparmio energia in System Center Configuration Manager
 
@@ -69,7 +62,7 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 |**Data inizio**|Nell'elenco a discesa selezionare la data di inizio per il report.|  
 |**Data di fine (facoltativo)**|Nell'elenco a discesa selezionare una data di fine facoltativa per il report.|  
 |**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta da usare per il report.|  
-|**Tipo di dispositivo**|Nell'elenco a discesa selezionare il tipo di computer per cui creare un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili).|  
+|**Tipo di dispositivo**|Dall'elenco a discesa, selezionare il tipo di computer per cui si desidera un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili).|  
 
 #### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
  Per questo report non sono disponibili parametri nascosti che è possibile impostare.  
@@ -128,11 +121,11 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 |**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta da usare per il report.|  
 |**Data report**|Nell'elenco a discesa selezionare una data da usare per il report.|  
 |**Ora report**|Nell'elenco a discesa selezionare un'ora nella data specificata per l'esecuzione del report. I valori validi sono compresi tra **00** e **23**.|  
-|**Stato computer**|Nell'elenco a discesa selezionare lo stato del computer per cui eseguire il report. I valori validi sono **Tutti** (computer accesi o spenti), **Attivato** (computer accesi) e **Disattivato** (computer spenti, in sospensione o in ibernazione). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
-|**Tipo di dispositivo**|Nell'elenco a discesa selezionare il tipo di computer per cui creare un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
-|**Idoneo per essere sospeso**|Nell'elenco a discesa selezionare se si vogliono visualizzare i computer idonei per essere sospesi nel report. I valori validi sono **Tutti** (computer idonei e non idonei alla sospensione), **No** (computer non idonei alla sospensione) e **Sì** (computer idonei alla sospensione).|  
-|**Idoneo per la riattivazione da sospensione**|Nell'elenco a discesa selezionare se si vogliono visualizzare i computer idonei per la riattivazione da sospensione nel report. I valori validi sono **Tutti** (computer idonei e non idonei alla riattivazione da sospensione), **No** (computer non idonei alla riattivazione da sospensione) e **Sì** (computer idonei alla riattivazione da sospensione).|  
-|**Combinazione per il risparmio di energia**|Nell'elenco a discesa selezionare i tipi di combinazioni per il risparmio di energia da visualizzare nel report. I valori validi sono **Tutti** (computer senza alcuna combinazione di risparmio energia applicata; computer con una combinazione di risparmio energia applicata; computer esclusi dal risparmio energia), **Non specificato** (computer senza alcuna combinazione di risparmio energia applicata), **Definito** (computer con una combinazione di risparmio energia applicata) ed **Escluso** (computer esclusi dal risparmio energia).|  
+|**Stato computer**|Nell'elenco a discesa selezionare lo stato del computer per cui si desidera eseguire il report. I valori validi sono **Tutti** (computer accesi o spenti), **Attivato** (computer accesi) e **Disattivato** (computer spenti, in sospensione o in ibernazione). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
+|**Tipo di dispositivo**|Dall'elenco a discesa, selezionare il tipo di computer per cui si desidera un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
+|**Idoneo per essere sospeso**|Dall'elenco a discesa, selezionare se si desidera visualizzare i computer in grado di sospensione nel report. I valori validi sono **Tutti** (computer idonei e non idonei alla sospensione), **No** (computer non idonei alla sospensione) e **Sì** (computer idonei alla sospensione).|  
+|**Idoneo per la riattivazione da sospensione**|Dall'elenco a discesa, selezionare se si desidera visualizzare i computer in grado di riattivazione dalla modalità di sospensione nel report. I valori validi sono **Tutti** (computer idonei e non idonei alla riattivazione da sospensione), **No** (computer non idonei alla riattivazione da sospensione) e **Sì** (computer idonei alla riattivazione da sospensione).|  
+|**Combinazione per il risparmio di energia**|Dall'elenco a discesa, selezionare i tipi di piano di risparmio energia che si desidera visualizzare nel report. I valori validi sono **Tutti** (computer senza alcuna combinazione di risparmio energia applicata; computer con una combinazione di risparmio energia applicata; computer esclusi dal risparmio energia), **Non specificato** (computer senza alcuna combinazione di risparmio energia applicata), **Definito** (computer con una combinazione di risparmio energia applicata) ed **Escluso** (computer esclusi dal risparmio energia).|  
 |**Sistema operativo**|Nell'elenco a discesa selezionare i sistemi operativi dei computer da visualizzare nel report oppure selezionare **Tutto** per visualizzare tutti i sistemi operativi.|  
 
 #### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
@@ -178,7 +171,7 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 |**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta da usare per il report.|  
 |**Data report**|Nell'elenco a discesa selezionare una data per il report.|  
 |**Ora report**|Nell'elenco a discesa selezionare un'ora nella data specificata per l'esecuzione del report. I valori validi sono compresi tra **00** e **23**.|  
-|**Tipo di dispositivo**|Nell'elenco a discesa selezionare il tipo di computer per cui creare un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
+|**Tipo di dispositivo**|Dall'elenco a discesa, selezionare il tipo di computer per cui si desidera un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
 
 #### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
  Per questo report non sono disponibili parametri nascosti che è possibile impostare.  
@@ -196,7 +189,7 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 
 |Nome parametro|Descrizione|  
 |--------------------|-----------------|  
-|**Raccolta**|Nell'elenco a discesa selezionare una raccolta per il report.|  
+|**Raccolta**|Dall'elenco a discesa, selezionare una raccolta per il report.|  
 |**Motivo**|Nell'elenco a discesa selezionare il motivo per cui i computer sono stati esclusi dal risparmio energia. È possibile visualizzare tutti i computer esclusi (**Tutti**), i computer esclusi da un utente amministratore (**Escluso dall'amministratore**) e i computer esclusi da un utente di Software Center (**Escluso dall'utente**).|  
 
 #### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
@@ -224,7 +217,7 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 
 |Nome parametro|Descrizione|  
 |--------------------|-----------------|  
-|**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta per il report.|  
+|**Nome raccolta**|Dall'elenco a discesa, selezionare una raccolta per il report.|  
 
 #### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
  Per questo report non sono disponibili parametri nascosti che è possibile impostare.  
@@ -259,8 +252,8 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 |--------------------|-----------------|  
 |**Data inizio**|Nell'elenco a discesa selezionare una data di inizio per il report.|  
 |**Data fine**|Nell'elenco a discesa selezionare una data di fine per il report.|  
-|**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta per il report.|  
-|**Tipo di dispositivo**|Nell'elenco a discesa selezionare il tipo di computer per cui creare un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
+|**Nome raccolta**|Dall'elenco a discesa, selezionare una raccolta per il report.|  
+|**Tipo di dispositivo**|Dall'elenco a discesa, selezionare il tipo di computer per cui si desidera un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
 
 #### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
  I parametri nascosti seguenti possono essere specificati facoltativamente per modificare il comportamento di questo report.  
@@ -300,7 +293,7 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 
 |Nome parametro|Descrizione|  
 |--------------------|-----------------|  
-|**Raccolta**|Nell'elenco a discesa selezionare una raccolta per il report.|  
+|**Raccolta**|Dall'elenco a discesa, selezionare una raccolta per il report.|  
 |**Device Type**|Nell'elenco a discesa selezionare il tipo di computer per cui creare un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
 
 #### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
@@ -422,8 +415,8 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 |--------------------|-----------------|  
 |**Data di inizio report**|Nell'elenco a discesa selezionare una data di inizio per il report.|  
 |**Data di fine report**|Nell'elenco a discesa selezionare una data di fine per il report.|  
-|**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta per il report.|  
-|**Tipo di dispositivo**|Nell'elenco a discesa selezionare il tipo di computer per cui creare un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
+|**Nome raccolta**|Dall'elenco a discesa, selezionare una raccolta per il report.|  
+|**Tipo di dispositivo**|Dall'elenco a discesa, selezionare il tipo di computer per cui si desidera un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
 
 #### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
  I parametri nascosti seguenti possono essere specificati facoltativamente per modificare il comportamento di questo report.  
@@ -459,7 +452,7 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 
 |Nome parametro|Descrizione|  
 |--------------------|-----------------|  
-|**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta per il report.|  
+|**Nome raccolta**|Dall'elenco a discesa, selezionare una raccolta per il report.|  
 |**Tipo di dispositivo**|Nell'elenco a discesa selezionare il tipo di computer per cui creare un report. I valori validi sono **Tutti** (computer desktop e portatili), **Desktop** (solo computer desktop) e **Portatile** (solo computer portatili). Questi valori vengono restituiti solo per il periodo di reporting selezionato.|  
 
 #### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
@@ -497,7 +490,7 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 |--------------------|-----------------|  
 |**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta da usare per il report.|  
 |**Intervallo report (giorni)**|Specificare il numero di giorni per il report. Il valore predefinito è **7** giorni.|  
-|**Causa di insonnia**|Nell'elenco a discesa selezionare una delle cause che possono impedire ai computer di passare allo stato di sospensione o ibernazione.|  
+|**Causa di insonnia**|Dall'elenco a discesa, selezionare una delle cause che possono impedire ai computer di immissione di sospensione o ibernazione.|  
 
 #### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
  Per questo report non sono disponibili parametri nascosti che è possibile impostare.  
@@ -557,7 +550,7 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 
 |Nome parametro|Descrizione|  
 |--------------------|-----------------|  
-|**Raccolta**|Nell'elenco a discesa selezionare una raccolta per il report.|  
+|**Raccolta**|Dall'elenco a discesa, selezionare una raccolta per il report.|  
 |**Filtro visualizzazione**|Dall'elenco a discesa selezionare **Non supportato** per visualizzare solo i computer nella raccolta specificata che non sono idonei alla sospensione, ibernazione, riattivazione dalla modalità di sospensione o riattivazione dalla modalità di sospensione. Selezionare **Mostra tutto** per visualizzare tutti i computer nella raccolta specificata.|  
 
 #### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
@@ -583,7 +576,7 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 
 |Nome parametro|Descrizione|  
 |--------------------|-----------------|  
-|**Nome raccolta**|Nell'elenco a discesa selezionare una raccolta per il report.|  
+|**Nome raccolta**|Dall'elenco a discesa, selezionare una raccolta per il report.|  
 
 #### <a name="hidden-report-parameters"></a>Parametri nascosti del report  
  I parametri nascosti seguenti possono essere specificati facoltativamente per modificare il comportamento di questo report.  
@@ -608,7 +601,7 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 |Nome parametro|Descrizione|  
 |--------------------|-----------------|  
 |**Raccolta**|Nell'elenco a discesa selezionare una raccolta da usare per il report.|  
-|**GUID impostazione per il risparmio di energia**|Nell'elenco a discesa selezionare il GUID dell'impostazione di risparmio energia per cui creare il report. Per un elenco di tutte le impostazioni di risparmio energia e il relativo utilizzo, vedere [Impostazioni disponibili per le combinazioni per il risparmio di energia](../../../../core/clients/manage/power/create-and-apply-power-plans.md#BKMK_Plans) nell'argomento [Come creare e applicare combinazioni per il risparmio di energia in System Center Configuration Manager](../../../../core/clients/manage/power/create-and-apply-power-plans.md).|  
+|**GUID impostazione per il risparmio di energia**|Dall'elenco a discesa, selezionare del GUID in cui desidera ottenere un report. Per un elenco di tutte le impostazioni di risparmio energia e il relativo utilizzo, vedere [Impostazioni disponibili per le combinazioni per il risparmio di energia](../../../../core/clients/manage/power/create-and-apply-power-plans.md#BKMK_Plans) nell'argomento [Come creare e applicare combinazioni per il risparmio di energia in System Center Configuration Manager](../../../../core/clients/manage/power/create-and-apply-power-plans.md).|  
 |**Power Mode**|Nell'elenco a discesa selezionare il tipo di impostazioni di risparmio energia da visualizzare nei risultati del report. Selezionare **Alimentazione da rete elettrica** per visualizzare le impostazioni di risparmio energia configurate per quando il computer è collegato alla rete elettrica e **A batteria** per visualizzare le impostazioni di risparmio energia configurate per quando il computer è alimentato a batteria.|  
 |**Indice impostazione**|Nell'elenco a discesa selezionare il valore per il nome dell'impostazione di risparmio energia selezionata per cui creare il report. Ad esempio, per visualizzare tutti i computer con l'opzione **Disattiva disco rigido dopo** impostata su **10** minuti, selezionare **Disattiva disco rigido dopo** in **Nome impostazione per il risparmio di energia** e **10** in **Indice impostazione**.|  
 

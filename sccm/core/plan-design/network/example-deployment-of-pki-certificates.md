@@ -1,25 +1,20 @@
 ---
 title: Distribuire certificati PKI
 titleSuffix: Configuration Manager
-description: "È disponibile un esempio dettagliato che fornisce informazioni su come creare e distribuire i certificati PKI usati in System Center Configuration Manager."
-ms.custom: na
+description: È disponibile un esempio dettagliato che fornisce informazioni su come creare e distribuire i certificati PKI usati in System Center Configuration Manager.
 ms.date: 02/14/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: 3417ff88-7177-4a0d-8967-ab21fe7eba17
-caps.latest.revision: "11"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 092e3e752a27ab652f2b38c0ba43e6e2e26c99c8
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 0b34163bfb5aea716062882d4c2ebb1360bba2c9
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="step-by-step-example-deployment-of-the-pki-certificates-for-system-center-configuration-manager-windows-server-2008-certification-authority"></a>Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008
 

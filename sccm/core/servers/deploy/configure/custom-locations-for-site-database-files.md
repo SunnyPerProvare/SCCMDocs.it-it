@@ -2,24 +2,19 @@
 title: Percorsi personalizzati dei file di database
 titleSuffix: Configuration Manager
 description: Di seguito viene spiegato come specificare percorsi personalizzati per i file di database di SQL Server.
-ms.custom: na
 ms.date: 10/06/2016
-ms.reviewer: na
-ms.suite: na
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 500a9aa6-68aa-44eb-bf49-350c1314a697
-caps.latest.revision: "3"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 48a054490ecd2e26ae45c6c28b1feed6db151205
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 597ce060dc1fb37f1cc827da3e1c059958a91163
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="custom-locations-for-system-center-configuration-manager-site-database-files"></a>Percorsi personalizzati per i file di database del sito di System Center Configuration Manager
 

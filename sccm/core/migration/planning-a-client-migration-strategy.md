@@ -1,25 +1,20 @@
 ---
 title: Pianificare la migrazione dei client
 titleSuffix: Configuration Manager
-description: "Informazioni sulle attività di migrazione dei client da una gerarchia di origine a una gerarchia di destinazione di System Center Configuration Manager."
-ms.custom: na
+description: Informazioni sulle attività di migrazione dei client da una gerarchia di origine a una gerarchia di destinazione di System Center Configuration Manager.
 ms.date: 12/30/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 2e27b0b7-7bd3-45cd-bc99-9c991606c637
-caps.latest.revision: "6"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: f45685c669d70ae057fb57b6e9bfb50d5494e79e
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: a67fb2d070c971004418ba47c9eb56b6b0de3e5a
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="plan-a-client-migration-strategy-in-system-center-configuration-manager"></a>Pianificare una strategia di migrazione client in System Center Configuration Manager
 

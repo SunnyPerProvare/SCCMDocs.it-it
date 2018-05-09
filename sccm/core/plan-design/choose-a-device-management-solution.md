@@ -2,25 +2,19 @@
 title: 'Scegliere una soluzione di gestione dei dispositivi '
 titleSuffix: Configuration Manager
 description: Informazioni sulle soluzioni di System Center Configuration Manager disponibili per la gestione di PC, server e dispositivi.
-ms.custom: na
 ms.date: 12/08/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 24633725-791a-4df7-8dce-2c24c1a19a03
-caps.latest.revision: "14"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 311bdaf6cef45e2b52a14de07caf58c8846121a0
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 616bf5549c80c94b1dd5d27dc15ea693c86e2ca2
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="choose-a-device-management-solution-for-system-center-configuration-manager"></a>Scegliere una soluzione di gestione dei dispositivi per System Center Configuration Manager
 

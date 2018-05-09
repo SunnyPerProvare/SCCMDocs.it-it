@@ -1,26 +1,20 @@
 ---
-title: "Creare una sequenza di attività personalizzata"
+title: Creare una sequenza di attività personalizzata
 titleSuffix: Configuration Manager
-description: "Modificare una sequenza di attività personalizzate in System Center Configuration Manager per aggiungere passaggi alla sequenza di attività."
-ms.custom: na
+description: Modificare una sequenza di attività personalizzate in System Center Configuration Manager per aggiungere passaggi alla sequenza di attività.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: b9800a66-7541-47ca-8276-da8ef6cb6d1b
-caps.latest.revision: "6"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: add5ad2ed82e394b62613951fcaad6c38fee2465
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: e5a0e6d8066fc52bf64dd4e53eba4c4dc1c84aa6
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="create-a-custom-task-sequence-with-system-center-configuration-manager"></a>Creare una sequenza di attività personalizzata con System Center Configuration Manager
 

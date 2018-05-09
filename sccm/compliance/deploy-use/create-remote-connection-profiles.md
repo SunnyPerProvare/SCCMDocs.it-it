@@ -1,26 +1,20 @@
 ---
 title: Creare profili di connessione remota
 titleSuffix: Configuration Manager
-description: "Usare i profili di connessione remota di System Center Configuration Manager per consentire agli utenti di connettersi in modalità remota ai computer aziendali."
-ms.custom: na
+description: Usare i profili di connessione remota di System Center Configuration Manager per consentire agli utenti di connettersi in modalità remota ai computer aziendali.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-compliance
+ms.topic: conceptual
 ms.assetid: 8c6eabc4-5dda-4682-b03e-3a450e6ef65a
-caps.latest.revision: "8"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 8ca0b961f075f41984d6dbba7321c375940a8622
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: c0e94fd8669556223044403fc72216fcaaaa5e54
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="remote-connection-profiles-in-system-center-configuration-manager"></a>Profili di connessione remota in System Center Configuration Manager
 
