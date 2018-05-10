@@ -26,7 +26,7 @@ Prima di poter gestire un server Linux o UNIX con System Center Configuration Ma
 
  Lo script di installazione per il client di Configuration Manager per Linux e UNIX supporta le proprietà della riga di comando. Alcune proprietà della riga di comando sono obbligatori, mentre altri sono facoltativi. Ad esempio, quando si installa il client, è necessario specificare un punto di gestione dal sito utilizzato dal server Linux o UNIX per il contatto iniziale con il sito. Per l'elenco completo delle proprietà della riga di comando, vedere [Proprietà della riga di comando per l'installazione del client nei server Linux e UNIX](#BKMK_CmdLineInstallLnUClient).  
 
- Dopo aver installato il client, specificare le impostazioni client nella console di Configuration Manager per configurare l'agente client in modo analogo ai client basati su Windows. Per altre informazioni, vedere  [Client settings for Linux and UNIX servers](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ClientSettingsforLnU).  
+ Dopo aver installato il client, specificare le impostazioni client nella console di Configuration Manager per configurare l'agente client in modo analogo ai client basati su Windows. Per altre informazioni, vedere  [Impostazioni client per server Linux e UNIX](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ClientSettingsforLnU).  
 
 ##  <a name="BKMK_AboutInstallPackages"></a> Sui pacchetti di installazione Client e Universal Agent  
  Per installare il client per Linux e UNIX in una piattaforma specifica, è necessario usare il pacchetto di installazione client applicabile al computer in cui si installa il client. I pacchetti di installazione client applicabili sono inclusi in ogni download del client eseguito dall' [Area download Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184). Oltre ai pacchetti di installazione client, il download del client include lo script di **install** che gestisce l'installazione del client in ogni computer.  
@@ -111,7 +111,7 @@ Ogni pacchetto di installazione client contiene tutti i file necessari per compl
 
      Facoltativo. Specifica nome di dominio completo, i server del punto di stato di fallback che il client utilizza per inviare messaggi di stato.  
 
-     Per altre informazioni sul punto di stato di fallback, vedere [Determine Whether You Require a Fallback Status Point](/sccm/core/clients/deploy/plan/determine-the-site-system-roles-for-clients#determine-if-you-need-a-fallback-status-point) .  
+     Per altre informazioni sul punto di stato di fallback, vedere [Determinare se è richiesto un punto di stato di fallback](/sccm/core/clients/deploy/plan/determine-the-site-system-roles-for-clients#determine-if-you-need-a-fallback-status-point) .  
 
 
 -   **-dir &lt;directory\>**  
@@ -138,7 +138,7 @@ Ogni pacchetto di installazione client contiene tutti i file necessari per compl
 
 -   **-UsePKICert &lt;parametro\>**  
 
-     Facoltativo. Specifica il percorso e il nome completo per un certificato x. 509 PKI nel formato Public Key Certificate Standard (PKCS #12). Questo certificato viene utilizzato per l'autenticazione client. Se non è stato specificato un certificato durante l'installazione e si vuole aggiungere o modificare un certificato, usare l'utilità **certutil** . Per informazioni su certutil, consultare [How to manage certificates on the client for Linux and UNIX](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ManageLinuxCerts) .  
+     Facoltativo. Specifica il percorso e il nome completo per un certificato x. 509 PKI nel formato Public Key Certificate Standard (PKCS #12). Questo certificato viene utilizzato per l'autenticazione client. Se non è stato specificato un certificato durante l'installazione e si vuole aggiungere o modificare un certificato, usare l'utilità **certutil** . Per informazioni su certutil, consultare [Come gestire i certificati nel client per Linux e UNIX](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ManageLinuxCerts) .  
 
      Quando si usa **-UsePKICert**, è necessario specificare anche la password associata al file PKCS#12 usando il parametro della riga di comando **-certpw** .  
 
@@ -187,13 +187,13 @@ Ogni pacchetto di installazione client contiene tutti i file necessari per compl
 
 -   **-ignoreSHA256validation**  
 
-     Facoltativo. Specifica che l'installazione del client ignora la convalida di SHA-256. Usare questa opzione quando si installa il client in sistemi operativi non rilasciati con una versione di OpenSSL che supporta SHA-256. Per altre informazioni, vedere [About Linux and UNIX Operating Systems That do not Support SHA-256](../../../core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers.md#BKMK_NoSHA-256).  
+     Facoltativo. Specifica che l'installazione del client ignora la convalida di SHA-256. Usare questa opzione quando si installa il client in sistemi operativi non rilasciati con una versione di OpenSSL che supporta SHA-256. Per altre informazioni, vedere [Informazioni sui sistemi operativi Linux e UNIX che non supportano SHA-256](../../../core/clients/deploy/plan/planning-for-client-deployment-to-linux-and-unix-computers.md#BKMK_NoSHA-256).  
 
 -   **-signcertpath &lt;percorso file\>**  
 
      Facoltativo. Specifica il percorso completo e **. cer** nome file del certificato autofirmato esportato nel server del sito. Se non sono disponibili i certificati PKI, il server del sito di Configuration Manager genera automaticamente i certificati autofirmati.  
 
-     Questi certificati vengono utilizzati per convalidare che i criteri client scaricati dal punto di gestione sono stati inviati dal sito di destinazione. Se non è stato specificato un certificato autofirmato durante l'installazione o si vuole modificare il certificato, usare l'utilità **certutil** . Per informazioni su certutil, consultare [How to manage certificates on the client for Linux and UNIX](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ManageLinuxCerts) .  
+     Questi certificati vengono utilizzati per convalidare che i criteri client scaricati dal punto di gestione sono stati inviati dal sito di destinazione. Se non è stato specificato un certificato autofirmato durante l'installazione o si vuole modificare il certificato, usare l'utilità **certutil** . Per informazioni su certutil, consultare [Come gestire i certificati nel client per Linux e UNIX](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_ManageLinuxCerts) .  
 
      Il certificato può essere recuperato dall'archivio certificati **SMS** e ha il nome oggetto **Server del sito** e il nome descrittivo **Certificato di firma del server del sito**.  
 
@@ -232,4 +232,4 @@ Ogni pacchetto di installazione client contiene tutti i file necessari per compl
 
  Il client di Configuration Manager per Linux e UNIX contatta il punto di gestione nel momento in cui viene installato il client. Se il client non riesce a contattare il punto di gestione, il software client continuerà a provare fino a quando non riesce.  
 
- Per altre informazioni sulle modalità con cui i client individuano i punti di gestione, vedere [Locating Management Points](/sccm/core/clients/deploy/assign-clients-to-a-site#locating-management-points).
+ Per altre informazioni sulle modalità con cui i client individuano i punti di gestione, vedere [Individuazione dei punti di gestione](/sccm/core/clients/deploy/assign-clients-to-a-site#locating-management-points).
