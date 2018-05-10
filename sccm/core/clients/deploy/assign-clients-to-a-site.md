@@ -67,7 +67,7 @@ Se non è possibile completare l'assegnazione del client al sito, il software cl
 > [!NOTE]  
 >  Se un client di Configuration Manager ha più schede di rete e di conseguenza più indirizzi IP, l'indirizzo IP usato per l'assegnazione al sito di un client a scopo di valutazione viene assegnato in modo casuale.  
 
- Per informazioni su come configurare gruppi di limiti per l'assegnazione sito e un sito di fallback per l'assegnazione sito automatica, vedere [Define site boundaries and boundary groups for System Center Configuration Manager](../../../core/servers/deploy/configure/define-site-boundaries-and-boundary-groups.md).  
+ Per informazioni su come configurare gruppi di limiti per l'assegnazione sito e un sito di fallback per l'assegnazione sito automatica, vedere [Definire i limiti del sito e i gruppi di limiti per System Center Configuration Manager](../../../core/servers/deploy/configure/define-site-boundaries-and-boundary-groups.md).  
 
  I client di Configuration Manager che usano l'assegnazione al sito automatica tentano di individuare i gruppi limite del sito pubblicati in Servizi di dominio Active Directory. Se tale metodo ha esito negativo, se ad esempio lo schema Active Directory non è esteso per Configuration Manager oppure i client sono computer di un gruppo di lavoro, i client possono reperire le informazioni sui gruppi di limiti da un punto di gestione.  
 

@@ -2,24 +2,19 @@
 title: 'Operazioni e manutenzione per la creazione di report '
 titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulla gestione di report e sottoscrizioni report in System Center Configuration Manager.
-ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: b89bcfbf-f5b6-4fb1-bb5e-a5cc18ec0c78
-caps.latest.revision: "5"
-author: Dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 05a81cdfd46ba2bf0bea17b06bd72f79296b3930
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: fff4150d6b8b4529a6f63989447ee5acb725c92f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="operations-and-maintenance-for-reporting-in-system-center-configuration-manager"></a>Operazioni e manutenzione per la creazione di report in System Center Configuration Manager
 
@@ -122,7 +117,7 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
  Un report basato su modello consente di selezionare in modo interattivo gli elementi da includere nel report. Per altre informazioni su come creare modelli di report personalizzati, vedere [Creazione di modelli di report personalizzati per System Center Configuration Manager in SQL Server Reporting Services](creating-custom-report-models-in-sql-server-reporting-services.md).  
 
 > [!IMPORTANT]  
->  Per creare un nuovo report, l'account utente deve disporre di autorizzazioni di **modifica del sito**. L'utente può creare un report solo nelle cartelle per cui dispone di autorizzazioni di tipo **Modifica report**.  
+>  Per creare un nuovo report, l'account utente deve disporre di autorizzazioni di **modifica del sito** . L'utente può creare un report solo nelle cartelle per cui dispone di autorizzazioni di tipo **Modifica report** .  
 
  Seguire le procedure seguenti per creare un report di Configuration Manager basato su modello.  
 
@@ -167,7 +162,7 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
 >  Quando si crea un'istruzione SQL per un report personalizzato, è necessario non fare riferimento direttamente alle tabelle SQL Server. Fare invece riferimento alle viste di SQL Server per la creazione di report \(nomi di viste che iniziano con v\_\) dal database del sito. È anche possibile fare riferimento a stored procedure pubbliche \(nomi di stored procedure che iniziano con sp\_\) dal database del sito.  
 
 > [!IMPORTANT]  
->  Per creare un nuovo report, l'account utente deve disporre di autorizzazioni di **modifica del sito**. L'utente può creare un report solo nelle cartelle per cui dispone di autorizzazioni di tipo **Modifica report** .  
+>  Per creare un nuovo report, l'account utente deve disporre di autorizzazioni di **modifica del sito**. L'utente può creare un report solo nelle cartelle per cui dispone di autorizzazioni di tipo **Modifica report**.  
 
  Seguire le procedure seguenti per creare un report di Configuration Manager basato su SQL.  
 
