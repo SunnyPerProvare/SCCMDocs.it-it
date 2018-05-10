@@ -61,7 +61,7 @@ L'aggiornamento 1602 per System Center Configuration Manager è disponibile solo
 
 -   Gli aggiornamenti disponibili di Windows 10 vengono visualizzati ora solo nel nodo **Manutenzione di Windows 10** \ **Tutti gli aggiornamenti di Windows 10** della console di Configuration Manager. Questi aggiornamenti non vengono più visualizzati nel nodo **Aggiornamenti software** \ **Tutti gli aggiornamenti software** della console.  
 
--   Un piano di manutenzione è considerato una distribuzione ad alto rischio e nella finestra **Seleziona raccolta** vengono visualizzate soltanto le raccolte personalizzate che soddisfano le impostazioni di verifica della distribuzione configurate nelle proprietà del sito. Per altre informazioni, vedere [Settings to manage high-risk deployments for System Center Configuration Manager](../../../protect/understand/settings-to-manage-high-risk-deployments.md).  
+-   Un piano di manutenzione è considerato una distribuzione ad alto rischio e nella finestra **Seleziona raccolta** vengono visualizzate soltanto le raccolte personalizzate che soddisfano le impostazioni di verifica della distribuzione configurate nelle proprietà del sito. Per altre informazioni, vedere [Impostazioni per gestire le distribuzioni ad alto rischio per System Center Configuration Manager](../../../protect/understand/settings-to-manage-high-risk-deployments.md).  
 
 -   Gli utenti che avviano un pacchetto di aggiornamento di Windows 10 ricevono ora un messaggio che li informa che stanno per aggiornare il proprio sistema operativo.  
 
