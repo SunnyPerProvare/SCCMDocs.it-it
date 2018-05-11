@@ -69,7 +69,7 @@ Usare le sezioni seguenti per gestire la peer cache.
         > [!TIP]  
         >  I client useranno HTTPS per scaricare il contenuto quando è disponibile. Tuttavia, lo stesso numero di porta viene usato per HTTP o HTTPS.  
 
--   [Configure the Client Cache for Configuration Manager Clients](../../core/clients/manage/manage-clients.md#BKMK_ClientCache) nei client per garantire che dispongano di spazio sufficiente a contenere e archiviare le immagini distribuite. La peer cache di Windows PE non influisce sulla configurazione o sul comportamento della cache client.  
+-   [Configurare la cache del client per i client di Configuration Manager](../../core/clients/manage/manage-clients.md#BKMK_ClientCache) nei client per garantire che dispongano di spazio sufficiente a contenere e archiviare le immagini distribuite. La peer cache di Windows PE non influisce sulla configurazione o sul comportamento della cache client.  
 
 -   Le opzioni di distribuzione per la distribuzione della sequenza di attività devono essere configurate come Scarica contenuto localmente quando richiesto dalla sequenza di attività.  
 
