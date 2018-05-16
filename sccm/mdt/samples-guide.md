@@ -11,11 +11,11 @@ ms.assetid: 2ff0100c-b7ef-4e09-8c96-fc1898390b6d
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: fe61cecea2b2a4f4083933b937af90dfb61ea5bf
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 6b36da9f98749858829ab591571496532b26f290
+ms.sourcegitcommit: 7198ec49d9ce68c6d55bfb9e2d537b5442a132cb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="microsoft-deployment-toolkit-samples-guide"></a>Guida agli esempi di Microsoft Deployment Toolkit  
  Questa guida fa parte di Microsoft® Deployment Toolkit (MDT) 2013 ed è destinata ai team specializzati che eseguono la distribuzione dei sistemi operativi Windows e di Microsoft Office. In particolare, la guida offre esempi di impostazioni di configurazione per scenari di distribuzione specifici.  
@@ -1722,7 +1722,7 @@ IF ((Computer Model IS “Contoso 1950”) AND (operating system=2003 OR operati
 
 19. Nella pagina **Folders to Replicate** (Cartelle da replicare) fare clic su **Aggiungi** ed eseguire le operazioni seguenti:  
 
-    1.  Nella casella **Local Path of the folder to replicate** (Percorso locale della cartella da replicare) fare clic su **Sfoglia** per passare alla cartella *X:\\* Deployment (dove *X* è la lettera di unità nel server di distribuzione).  
+    1.  Nella casella **Local Path of the folder to replicate** (Percorso locale della cartella da replicare) fare clic su **Sfoglia** per passare alla cartella *X:\\*Deployment (dove *X* è la lettera di unità nel server di distribuzione).  
 
     2.  Selezionare l'opzione che consente di **usare il nome basato sul percorso**.  
 
@@ -3670,9 +3670,11 @@ Remove-item -path "DS002:\Task Sequences\Windows Vista Business Production Build
 -   ```  
     New-PSDrive -Name "DS002" -PSProvider MDTProvider -Root "D:\Production Deployment Share"  
     ```  
-
--   Update\-MDTDeploymentShare \-path "DS002:" \-Verbose  
-
+    
+-   ```
+    Update\-MDTDeploymentShare \-path "DS002:" \-Verbose  
+    ```
+    
 ###  <a name="CreateLinkedDeployShare"></a> Creazione di una condivisione di distribuzione collegata  
  I seguenti comandi di Windows PowerShell creano una condivisione di distribuzione collegata alla condivisione di distribuzione Production, che si trova nella condivisione \\\\*remote\_server\_name*\\Deployment$. Il profilo di selezione Everything viene usato per determinare il tipo di contenuto che verrà replicato nella condivisione di distribuzione collegata. Il contenuto della condivisione di distribuzione Production verrà unito al contenuto già esistente nella condivisione \\\\*remote\_server\_name*\\Deployment$.  
 
