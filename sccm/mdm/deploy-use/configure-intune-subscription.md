@@ -2,26 +2,19 @@
 title: Configurare la sottoscrizione di Intune
 titleSuffix: Configuration Manager
 description: Configurare la sottoscrizione di Intune tramite System Center Configuration Manager.
-ms.custom: na
 ms.date: 06/02/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-hybrid
+ms.topic: conceptual
 ms.assetid: 99de8fe7-560e-401a-8ab2-6d87d091be17
-caps.latest.revision: 
-caps.handback.revision: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 720ba9e11ea16f5318ba78504cfe455e1019ab3f
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 6ab10b0bc099aa58b1a0703bbc1c7b53c9de85cf
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-your-intune-subscription-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurare la sottoscrizione di Intune con System Center Configuration Manager e Microsoft Intune
 
@@ -66,7 +59,7 @@ La sottoscrizione di Intune esegue le operazioni seguenti:
 
   -   **Nome società**: specificare il nome della società.
 
-  -   **URL della documentazione sulla privacy**: se si pubblicano le informazioni sulla privacy della società in un collegamento accessibile da Internet, fornire un collegamento a cui gli utenti possano accedere dal portale aziendale, ad esempio http://www.contoso.com/CP_privacy.html. Le informazioni sulla privacy possono chiarire quali informazioni gli utenti condividono con la società.
+  -   **URL della documentazione sulla privacy**: se si pubblicano le informazioni sulla privacy della società in un collegamento accessibile tramite Internet, specificare un collegamento a cui gli utenti possono accedere dal portale aziendale, come ad esempio http://www.contoso.com/CP_privacy.html. Le informazioni sulla privacy possono chiarire quali informazioni gli utenti condividono con la società.
 
   -   **Combinazione colori per portale società**: Facoltativamente, modificare il colore predefinito blu per i portali società.
 

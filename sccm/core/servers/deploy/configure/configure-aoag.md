@@ -1,26 +1,20 @@
 ---
-title: "Configurare gruppi di disponibilità"
+title: Configurare gruppi di disponibilità
 titleSuffix: Configuration Manager
-description: "Configurare e gestire gruppi di disponibilità Always On di SQL Server con SCCM."
-ms.custom: na
+description: Configurare e gestire gruppi di disponibilità Always On di SQL Server con SCCM.
 ms.date: 7/31/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 7e4ec207-bb49-401f-af1b-dd705ecb465d
-caps.latest.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: d6b208da49e27775548ac6f544b7a7278b96d980
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 2baafa04c315ebc7512504f042c89615b7217b4c
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-sql-server-always-on-availability-groups-for-configuration-manager"></a>Configurare gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
@@ -89,14 +83,14 @@ Per completare la procedura, l'account usato per eseguire il programma di instal
 > Quando si usa Microsoft Intune con Configuration Manager in una configurazione ibrida, lo spostamento del database del sito da o verso un gruppo di disponibilità attiva la risincronizzazione dei dati con il cloud. Non è possibile evitare questa risincronizzazione.
 
 ### <a name="to-configure-a-site-to-use-the-availability-group"></a>Per configurare un sito per usare un gruppo di disponibilità
-1.  Eseguire il **programma di installazione di Configuration Manager** dalla **&lt;*cartella di installazione del sito di Configuration Manager* >\BIN\X64\setup.exe**.
+1.  Eseguire **Installazione di Configuration Manager** da **&lt;*cartella di installazione del sito di Configuration Manager*>\BIN\X64\setup.exe**.
 
 2.  Nella pagina **Riquadro attività iniziale** selezionare **Esegui una manutenzione del sito o reimposta il sito**, quindi fare clic su **Avanti**.
 
 3.  Selezionare l'opzione **Modifica la configurazione di SQL Server** , quindi fare clic su **Avanti**.
 
 4.  Riconfigurare quanto segue per il database del sito:
-    -   **Nome server SQL:** immettere il nome virtuale del **listener** del gruppo di disponibilità configurato al momento della creazione del gruppo di disponibilità. Il nome virtuale deve essere un nome DNS completo, ad esempio **&lt;*endpointServer*>.fabrikam.com**.  
+    -   **Nome server SQL:** immettere il nome virtuale del **listener** del gruppo di disponibilità configurato al momento della creazione del gruppo di disponibilità. Il nome virtuale deve essere un nome DNS completo, ad esempio ***&lt;Serverendpoint*>.fabrikam.com**.  
 
     -   **Istanza:** questo valore deve essere vuoto per specificare l'istanza predefinita per il *listener* del gruppo di disponibilità. Se il database del sito corrente viene eseguito in un'istanza denominata, questa istanza viene elencata e deve essere cancellata.
 
@@ -158,7 +152,7 @@ Per completare la procedura, l'account usato deve:
 
 4.  Nel server che ospiterà il database del sito, che sia la replica primaria o il server in cui è stato ripristinato il database del sito, modificare il modello di backup del database del sito da **Completo** a **Semplice**. Vedere [Visualizzazione o modifica del modello di recupero di un database](/sql/relational-databases/backup-restore/view-or-change-the-recovery-model-of-a-database-sql-server) nella documentazione di SQL Server.  
 
-5.  Eseguire il **programma di installazione di Configuration Manager** dalla **&lt;*cartella di installazione del sito di Configuration Manager>* \BIN\X64\setup.exe**.
+5.  Eseguire **Installazione di Configuration Manager** da **&lt;*cartella di installazione del sito di Configuration Manager>* \BIN\X64\setup.exe**.
 
 6.  Nella pagina **Riquadro attività iniziale** selezionare **Esegui una manutenzione del sito o reimposta il sito**, quindi fare clic su **Avanti**.  
 

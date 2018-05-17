@@ -2,30 +2,25 @@
 title: 'Registrare dispositivi iOS tramite Device Enrollment Program (DEP) '
 titleSuffix: Configuration Manager
 description: Abilitare la registrazione al programma DEP (Device Enrollment Program) per iOS per le distribuzioni ibride in Configuration Manager con Intune.
-ms.custom: na
 ms.date: 09/22/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 78d44adc-9b1c-4bc6-b72d-e93873916ea6
-caps.latest.revision: "9"
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 1d8a1765b599daa98014feeb3d88efe9a07cb907
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: a4a6d8d67060dbf7c5bc75892d2f231bce67df8f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ios-device-enrollment-program-dep-enrollment-for-hybrid-deployments-with-configuration-manager"></a>Registrazione al programma DEP (Device Enrollment Program) per iOS per le distribuzioni ibride con Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Le aziende possono acquistare dispositivi iOS tramite il programma DEP (Device Enrollment Program) di Apple e quindi gestirli tramite Microsoft Intune. Per gestire i dispositivi iOS di proprietà dell'azienda con il programma di registrazione dispositivi di Apple (DEP), le aziende devono completare i passaggi richiesti da Apple per partecipare al programma e acquistare i dispositivi attraverso il programma. I dettagli del processo sono disponibili in:  [https://deploy.apple.com](https://deploy.apple.com). I vantaggi del programma includono la configurazione dei dispositivi senza intervento dell'utente che non richiede la connessione USB di ogni dispositivo a un computer.  
+Le aziende possono acquistare dispositivi iOS tramite il programma DEP (Device Enrollment Program) di Apple e quindi gestirli tramite Microsoft Intune. Per gestire i dispositivi iOS di proprietà dell'azienda con il programma di registrazione dispositivi di Apple (DEP), le aziende devono completare i passaggi richiesti da Apple per partecipare al programma e acquistare i dispositivi attraverso il programma. I dettagli del processo sono disponibili all'indirizzo: [https://deploy.apple.com](https://deploy.apple.com). I vantaggi del programma includono la configurazione dei dispositivi senza intervento dell'utente che non richiede la connessione USB di ogni dispositivo a un computer.  
 
  Per registrare i dispositivi iOS di proprietà dell'azienda con DEP, è necessario un token DEP di Apple. Questo token consente a Intune di sincronizzare le informazioni sui dispositivi di proprietà dell'azienda che partecipano a DEP. Consente anche a Intune di caricare profili di registrazione in Apple e di assegnare dispositivi a tali profili.  
 
@@ -39,7 +34,7 @@ Le aziende possono acquistare dispositivi iOS tramite il programma DEP (Device E
 2.  **Creare una richiesta di token DEP**   
     Nella console di Configuration Manager, nell'area di lavoro **Amministrazione**, espandere **Configurazione della gerarchia**, espandere **Servizi Cloud** e fare clic su **Sottoscrizioni a Microsoft Intune**. Fare clic su **Crea richiesta token DEP** nella scheda **Home** , su **Sfoglia** per specificare il percorso di download per la richiesta del token DEP e quindi su **Download**. Salvare il file di richiesta di token DEP (con estensione pem) localmente. Il file con estensione pem viene usato per richiedere un token di trust (con estensione p7m) dal portale del programma di registrazione dispositivi di Apple.  
 3.  **Ottenere un token del programma di registrazione dispositivi**   
-    Andare nel [portale del programma di registrazione dispositivi](https://deploy.apple.com) (https://deploy.apple.com) e accedere con l'ID Apple aziendale. Questo ID Apple dovrà essere usato in futuro per rinnovare il token DEP.  
+    Passare al [portale di Device Enrollment Program](https://deploy.apple.com) (https://deploy.apple.com) e accedere con l'ID Apple aziendale. Questo ID Apple dovrà essere usato in futuro per rinnovare il token DEP.  
     1.  Nell'area di lavoro [portale del programma di registrazione dispositivi](https://deploy.apple.com), passare a **Programma di registrazione dispositivi** > **Gestisci server**e quindi fare clic sull'opzione **Aggiungi server MDM**.  
     ![Screenshot dell'aggiunta del server MDM nel portale di Apple Device Enrollment Program](../media/enrollment-program-token-add-server.png)
     2.  Immettere il **nome del server MDM**e quindi fare clic sull'opzione **Avanti**. Il nome del server viene fornito come riferimento per identificare il server MDM. Non è il nome o l'URL del server di Intune o di Configuration Manager.  
@@ -97,7 +92,7 @@ Le aziende possono acquistare dispositivi iOS tramite il programma DEP (Device E
 
 ## <a name="assign-dep-devices-for-management"></a>Assegnare dispositivi DEP per la gestione
 
-1. Andare nel [portale del programma di registrazione dispositivi](https://deploy.apple.com) (https://deploy.apple.com) e accedere con l'ID Apple aziendale.
+1. Passare al [portale di Device Enrollment Program](https://deploy.apple.com) (https://deploy.apple.com) e accedere con l'ID Apple aziendale.
 2. Passare a **Programma di distribuzione** > **Programma di registrazione dispositivi** > **Gestione dei dispositivi**. Specificare come **scegliere i dispositivi**, indicare le informazioni sul dispositivo e specificare i dettagli in base al **numero di serie**, al **numero di ordine**o **caricando un file CSV**. Quindi, selezionare **Assegna al server**, selezionare il <*NomeServer*> specificato al passaggio 3 e quindi fare clic su **OK**.  
 ![Schermata del portale di Apple Device Enrollment Program per l'aggiunta di dispositivi](../media/enrollment-program-token-specify-serial.png)
 

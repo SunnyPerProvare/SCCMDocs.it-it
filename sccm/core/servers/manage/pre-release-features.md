@@ -2,25 +2,19 @@
 title: Funzionalità di versioni non definitive
 titleSuffix: Configuration Manager
 description: Le funzionalità di versioni non definitive sono incluse nel Current Branch a scopo di test preliminare in un ambiente di produzione.
-ms.custom: na
-ms.date: 04/10/2018
+ms.date: 05/01/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 6bce416b-761d-4b23-bd33-5b7c30edb10d
-caps.latest.revision: 36
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6e3a6a8dd437238a9dd08b07494b51333283f41c
-ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
+ms.openlocfilehash: d4e9664832b37dd05f001404012acab80fd87a43
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="pre-release-features-in-system-center-configuration-manager"></a>Funzionalità di versioni non definitive in System Center Configuration Manager
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -50,7 +44,8 @@ Durante l'installazione di un aggiornamento che include funzionalità di version
 
  |Funzionalità          |Aggiunta come versione non definitiva | Aggiunta come funzionalità completa|  
 |------------------|---------------------|---------------------|
-|Distribuzioni in più fasi <!--1356837-->|[Versione 1802](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence.md)|![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+|Supporto per Cisco AnyConnect 4.0.07x e versioni successive per iOS<!--1357393-->|[Versione 1802](/sccm/mdm/deploy-use/create-vpn-profiles)|![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+|Distribuzioni in più fasi <!--1356837-->|[Versione 1802](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence)|![Non ancora](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Esegui il passaggio della sequenza di attività <!-- 1261338 --> |  [Versione 1710](/sccm/osd/understand/task-sequence-steps#child-task-sequence) |[Versione 1802](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#add-child-task-sequences-to-a-task-sequence)|
 | Windows Defender Exploit Guard <!-- 1355468 --> |  [Versione 1710](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy) |[Versione 1802](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy)|
 | Valutazione dell'attestazione dell'integrità dei dispositivi per i criteri di conformità dell'accesso condizionale <!-- 1235616 --> |  [Versione 1710](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) |[Versione 1802](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm)|

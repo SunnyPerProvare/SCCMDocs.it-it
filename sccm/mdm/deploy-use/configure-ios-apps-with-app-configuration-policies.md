@@ -2,25 +2,19 @@
 title: Configure iOS apps with app configuration policies
 titleSuffix: Configuration Manager
 description: Questa operazione consente di evitare problemi di configurazione sui dispositivi che eseguono iOS 8 o versione successiva distribuendo i criteri di configurazione delle app agli utenti prima che gli utenti eseguano le app.
-ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: f0a78038-ea22-4826-9c07-1771b7dd2e8d
-caps.latest.revision: "18"
-caps.handback.revision: "0"
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 905b0925f88395942c954561aa0828c15d3ba758
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: e5d00b1efd02d3b096a0b64033b450f0da949eeb
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="apply-settings-to-ios-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Applicare le impostazioni alle app iOS con i criteri di configurazione app in System Center Configuration Manager
 
@@ -39,7 +33,7 @@ Per usare un criterio di configurazione delle app in Configuration Manager, anzi
 
 I criteri di configurazione delle app sono attualmente disponibili solo per i dispositivi che eseguono iOS 8 e versioni successive e per i tipi di applicazioni seguenti:
 
-- **Pacchetto app iOS (file* .ipa)**
+- **Pacchetto app iOS (file *.ipa)**
 - **Pacchetto app iOS nell'App Store**
 
 Per altre informazioni sui tipi di installazione delle app, vedere l'[introduzione alla gestione delle applicazioni](/sccm/apps/understand/introduction-to-application-management).

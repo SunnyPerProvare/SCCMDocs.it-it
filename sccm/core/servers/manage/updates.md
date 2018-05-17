@@ -2,71 +2,65 @@
 title: Aggiornamenti e manutenzione
 titleSuffix: Configuration Manager
 description: Informazioni su un metodo di manutenzione nella console denominato Aggiornamenti e manutenzione che semplifica l'individuazione e l'installazione degli aggiornamenti consigliati.
-ms.custom: na
-ms.date: 03/28/2018
+ms.date: 05/01/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 3a832943-580a-4a40-b454-961d0854ac2b
-caps.latest.revision: 51
-caps.handback.revision: 0
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7660736dbacebb7167cb6bd19d7590d7f774e17c
-ms.sourcegitcommit: aed99ba3c5e9482199cb3fc5c92f6f3a160cb181
+ms.openlocfilehash: 9c2a9d7c754e7a1a02527c4c985d1b9db6bc7d14
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="updates-for-system-center-configuration-manager"></a>Aggiornamenti per System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager usa un metodo di manutenzione nella console denominato **Aggiornamenti e manutenzione**. Questo metodo nella console semplifica l'individuazione e l'installazione degli aggiornamenti consigliati per l'infrastruttura di Configuration Manager. La manutenzione nella console è integrata dagli aggiornamenti fuori programma, ad esempio hotfix per i clienti che devono risolvere problemi che potrebbero essere specifici dell'ambiente in uso.  
+Configuration Manager usa un metodo di manutenzione nella console denominato **Aggiornamenti e manutenzione**. Questo metodo nella console semplifica l'individuazione e l'installazione degli aggiornamenti consigliati per l'infrastruttura di Configuration Manager. La manutenzione nella console è integrata dagli aggiornamenti fuori programma, ad esempio hotfix per i clienti che devono risolvere problemi che potrebbero essere specifici dell'ambiente in uso.  
 
 > [!TIP]  
-> Quando si gestisce l'infrastruttura del sito e della gerarchia di System Center Configuration Manager, i termini *upgrade*, *aggiornamento* e *installazione* vengono usati per descrivere tre concetti distinti. Per informazioni su come viene usato ogni termine, vedere [Informazioni su upgrade, aggiornamento e installazione](/sccm/core/understand/upgrade-update-install).
+> I termini *upgrade*, *aggiornamento* e *installazione* vengono usati per descrivere tre concetti separati in Configuration Manager. Per altre informazioni su come viene usato ogni termine, vedere [Informazioni su upgrade, aggiornamento e installazione](/sccm/core/understand/upgrade-update-install).
 
 
- **Gli argomenti seguenti possono essere utili per capire come individuare e installare i diversi tipi di aggiornamento per System Center Configuration Manager:**  
+ **Gli argomenti seguenti possono essere utili per capire come individuare e installare i diversi tipi di aggiornamento per Configuration Manager:**  
 
--   [Install in-console updates for System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md) (Installare gli aggiornamenti nella console per System Center Configuration Manager)  
+-   [Installare gli aggiornamenti nella console](../../../core/servers/manage/install-in-console-updates.md)  
 
--   [Use the Service Connection Tool for System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md) (Usare lo strumento di connessione del servizio per System Center Configuration Manager)  
+-   [Usare lo strumento di connessione del servizio](../../../core/servers/manage/use-the-service-connection-tool.md)  
 
--   [Use the Update Registration Tool to import hotfixes to System Center Configuration Manager](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md) (Usare lo strumento di registrazione dell'aggiornamento per importare hotfix in System Center Configuration Manager)  
+-   [Usare lo strumento di registrazione dell'aggiornamento per importare gli hotfix](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md)  
 
--   [Use the Hotfix Installer to install updates for System Center Configuration Manager](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md) (Usare il programma di installazione degli aggiornamenti rapidi per installare gli aggiornamenti per System Center Configuration Manager)  
+-   [Usare il programma di installazione degli hotfix per installare gli aggiornamenti](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md)  
 
 
-Se si usa il ramo Technical Preview, vedere [Technical Preview per System Center Configuration Manager](/sccm/core/get-started/technical-preview) per informazioni aggiuntive specifiche relative a tale ramo.
+Per altre informazioni sul Technical Preview Branch, vedere [Technical Preview per System Center Configuration Manager](/sccm/core/get-started/technical-preview).
+
 
 
 ##  <a name="bkmk_Baselines"></a> Versioni di base e di aggiornamento  
- La prima versione di System Center Configuration Manager Current Branch è la 1511, ossia una versione di base. Le versioni di base più recenti includono la 1702 e la 1802:
 
--   Usare la versione di base più recente quando si installa un nuovo sito in una nuova gerarchia.  
+Usare la versione di base più recente quando si installa un nuovo sito in una nuova gerarchia. 
+- Si usa una versione di base anche per eseguire l'aggiornamento da System Center 2012 Configuration Manager.  
 
--   Per eseguire l'aggiornamento da System Center 2012 Configuration Manager, si usa una versione baseline. Dopo l'aggiornamento a System Center Configuration Manager, non è più possibile usare le versioni baseline per restare aggiornati, ma solo gli [aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates) per l'aggiornamento alla versione più recente.  
+- Dopo l'aggiornamento a Configuration Manager Current Branch, non usare le versioni di base per rimanere aggiornati. Usare invece solo [aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates) per eseguire l'aggiornamento alla versione più recente.  
 
--   Periodicamente vengono rilasciate altre versioni baseline. Quando si usa la versione baseline più recente per installare una nuova gerarchia, si evita di installare una versione non aggiornata di Configuration Manager, seguita da un aggiornamento aggiuntivo dell'infrastruttura per aggiornarla.  
+- Periodicamente vengono rilasciate altre versioni baseline. Quando si usa la versione baseline più recente per installare una nuova gerarchia, si evita di installare una versione non aggiornata o non supportata di Configuration Manager, seguita da un aggiornamento aggiuntivo dell'infrastruttura per aggiornarla.  
 
 Dopo avere installato una versione di base, altre versioni di Configuration Manager sono disponibili come aggiornamenti nella console. Gli aggiornamenti nella console aggiornano l'infrastruttura alla versione più recente di Configuration Manager.  
 
 -   Installare gli aggiornamenti nella console per aggiornare la versione del sito principale.  
 
--   Gli aggiornamenti installati nel sito di amministrazione centrale vengono installati automaticamente nei siti primari figlio, a meno che non siano bloccati da una finestra di manutenzione configurata nel sito primario.  
+-   Nei siti primari figlio vengono installati automaticamente gli stessi aggiornamenti installati nel sito di amministrazione centrale. Controllare questa tempistica usando una finestra di manutenzione nel sito primario.  
 
--   Si aggiornano manualmente i siti secondari a una nuova versione di aggiornamento dalla console.  
+-   Aggiornare manualmente i siti secondari a una nuova versione di aggiornamento dalla console.  
 
-Quando si installa un aggiornamento, questo archivia i file di installazione per la versione nel server del sito, in una cartella denominata CD.Latest. Per altre informazioni su questi file, vedere [Cartella CD.Latest per System Center Configuration Manager](../../../core/servers/manage/the-cd.latest-folder.md).  
+Quando si installa un aggiornamento, questo archivia i file di installazione per la versione nel server del sito, in una cartella denominata **CD.Latest**. Per altre informazioni su questi file, vedere [The CD.Latest folder](../../../core/servers/manage/the-cd.latest-folder.md) (Cartella CD.Latest).  
 
--   I file nella cartella CD.Latest vengono usati durante il ripristino sito e per installare siti aggiuntivi in una gerarchia che non esegue più una versione baseline.  
+-   Usare i file nella cartella CD.Latest per il ripristino del sito. Inoltre, quando nella gerarchia non è più in esecuzione una versione di base, usare questi file per installare altri siti.  
 
 -   Non è possibile usare i file di installazione della cartella CD.Latest per installare il primo sito di una nuova gerarchia oppure per aggiornare un sito da System Center 2012 Configuration Manager.  
 
@@ -87,25 +81,32 @@ Le versioni seguenti di Configuration Manager sono disponibili come versione di 
 | 1511 <br /><br /> 5.00.8325.1000|8 dicembre 2015| 8 dicembre 2016|Sì|No|  
 
 
-*(Nota 1)* I supporti di base per le versioni 1802 e 1702 sono disponibili in [Volume License Service Center](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) (VLSC) per Microsoft System Center 2016 o System Center Configuration Manager (Current Branch e Long-Term Servicing Branch). Ad esempio, in VLSC è possibile cercare *System Center Config Mgr (Current Branch e LTSB)*. Entrambi i supporti di base delle versioni 1802 e 1702 vengono restituiti e sono disponibili per il download.
+*(Nota 1)* Il supporto di base 1802 è disponibile nei seguenti rilasci del [Volume License Service Center](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) (VLSC):
+- System Center Config Mgr (Current Branch)
+- System Center 2016 Datacenter
+- System Center 2016 Standard. Ad esempio, cercare il VLSC per `System Center Config Mgr (current branch)`. Individuare il supporto di base 1802 nell'elenco dei file e scaricarlo per quella versione.
 
-Per controllare la versione del sito di Configuration Manager, nella console passare a **Informazioni su System Center Configuration Manager** nell'angolo in alto a sinistra, dove è visualizzata la nuova versione del sito e della console.  
+Per controllare la versione del sito di Configuration Manager, nella console passare a **Informazioni su System Center Configuration Manager** nell'angolo in alto a sinistra. Questa finestra di dialogo consente di visualizzare le versioni del sito e della console.  
 
  > [!Note]  
  > A partire dalla versione 1802, la versione della console è leggermente diversa da quella del sito. La versione secondaria della console ora corrisponde alla versione finale di Configuration Manager. Ad esempio, in Configuration Manager versione 1802 la versione iniziale del sito è 5.0.8634.1000 e la versione iniziale della console è 5.**1802**.1082.1700. Con i futuri hotfix della versione 1802, è possibile che i numeri di build (1082) e revisione (1700) cambino.
 
 
+
 ##  <a name="bkmk_inconsole"></a> Aggiornamenti e manutenzione nella console  
- Quando si usa un'installazione di System Center Configuration Manager pronta per l'ambiente di produzione, detta anche Current Branch, la maggior parte degli aggiornamenti da installare è disponibile mediante il canale Aggiornamenti e manutenzione. Questo metodo identifica, scarica e rende disponibili gli aggiornamenti applicabili alla versione e alla configurazione correnti dell'infrastruttura e include solo gli aggiornamenti consigliati da Microsoft a tutti i clienti.   
- Sono inclusi:  
+ Quando si usa un'installazione di Configuration Manager Current Branch pronta per l'ambiente di produzione, la maggior parte degli aggiornamenti è disponibile mediante il canale **Aggiornamenti e manutenzione**. Questo metodo identifica, scarica e rende disponibili gli aggiornamenti applicabili alla versione e alla configurazione correnti dell'infrastruttura. Include solo gli aggiornamenti consigliati da Microsoft a tutti i clienti.   
+
+ Questi aggiornamenti includono:  
 
 -   Nuove versioni, ad esempio 1702, 1706, 1710 o 1802.  
 
--   Aggiornamenti, che includono nuove funzionalità per la versione corrente.
+-   Aggiornamenti che includono nuove funzionalità per la versione corrente.
 
--   Hotfix, per la versione in uso di Configuration Manager e di cui è consigliata l'installazione a tutti i clienti.
+-   Hotfix per la versione in uso di Configuration Manager e di cui è consigliata l'installazione a tutti i clienti.
 
-Gli aggiornamenti nella console offrono maggiore stabilità e risolvono i problemi comuni. Sostituiscono i tipi di aggiornamento disponibili per le versioni precedenti del prodotto per quanto riguarda Service Pack, aggiornamenti cumulativi e hotfix applicabili a tutti i clienti, nonché l'estensione per Microsoft Intune. Questi aggiornamenti possono riguardare uno o più degli elementi seguenti:  
+Gli aggiornamenti nella console offrono maggiore stabilità e risolvono i problemi comuni. Sostituiscono i tipi di aggiornamento disponibili per le versioni precedenti del prodotto, come Service Pack, aggiornamenti cumulativi e hotfix applicabili a tutti i clienti, nonché l'estensione per Microsoft Intune. 
+
+Questi aggiornamenti nella console possono riguardare uno o più dei sistemi seguenti:  
 
 -   Server del sito di amministrazione centrale e dei siti primari  
 
@@ -117,42 +118,50 @@ Gli aggiornamenti nella console offrono maggiore stabilità e risolvono i proble
 
 -   Client di Configuration Manager  
 
-Configuration Manager individua nuovi aggiornamenti durante la sincronizzazione del ruolo del sistema del sito del punto di connessione del servizio con il servizio cloud di Microsoft e con l'Area download:  
+Configuration Manager individua automaticamente i nuovi aggiornamenti. Sincronizzare il punto di connessione del servizio Configuration Manager con il servizio Microsoft Cloud, tenendo presenti i comportamenti seguenti:  
 
--   Quando il punto di connessione del servizio è in modalità online, il sito si sincronizza con Microsoft ogni giorno per identificare automaticamente i nuovi aggiornamenti applicabili all'infrastruttura.  Per scaricare gli aggiornamenti e i file ridistribuibili per gli aggiornamenti, il computer che ospita il ruolo del sistema del sito Punto di connessione del servizio usa il contesto di **sistema** per accedere ai percorsi Internet seguenti: go.microsoft.com e download.microsoft.com. Per informazioni sui percorsi aggiuntivi ai quali si connette il punto di connessione del servizio, vedere [Internet access requirements](../../../core/servers/deploy/configure/about-the-service-connection-point.md#bkmk_urls) (Requisiti per l'accesso a Internet) in [About the service connection point in System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md) (Informazioni sul punto di connessione del servizio in System Center Configuration Manager).  
+-   Quando il punto di connessione del servizio è in modalità online, il sito si sincronizza con Microsoft ogni giorno. Individua automaticamente i nuovi aggiornamenti applicabili alla propria infrastruttura. Per scaricare gli aggiornamenti e i file ridistribuibili, il computer che ospita il ruolo del sistema del sito punto di connessione del servizio usa il contesto di **sistema** per accedere ai percorsi Internet seguenti: go.microsoft.com e download.microsoft.com. Per altre informazioni su ulteriori percorsi usati dal punto di connessione del servizio, vedere i [requisiti di accesso Internet](../../../core/servers/deploy/configure/about-the-service-connection-point.md#bkmk_urls).  
 
--   Quando il punto di connessione del servizio è in modalità offline, è necessario usare lo strumento di connessione del servizio per eseguire manualmente la sincronizzazione con il cloud Microsoft. Per altre informazioni, vedere [Usare lo strumento di connessione del servizio per System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md).  
+-   Quando il punto di connessione del servizio è in modalità offline, è necessario usare lo strumento di connessione del servizio per eseguire manualmente la sincronizzazione con Microsoft Cloud. Per altre informazioni, vedere [Usare lo strumento di connessione del servizio](../../../core/servers/manage/use-the-service-connection-tool.md).  
 
 -   Grazie agli aggiornamenti nella console non è necessario individuare e installare i singoli aggiornamenti, Service Pack e nuove funzionalità in modo indipendente.  
 
--   Vengono installati solo gli aggiornamenti nella console scelti e durante l'installazione di alcuni aggiornamenti è possibile selezionare le singole funzionalità da abilitare e usare. Per altre informazioni, vedere [Enable optional features from updates](../../../core/servers/manage/install-in-console-updates.md#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).  
+-   Installare solo gli aggiornamenti nella console scelti. Durante l'installazione di alcuni aggiornamenti, è possibile selezionare singole funzionalità da abilitare e utilizzare. Per altre informazioni, vedere [Enable optional features from updates](../../../core/servers/manage/install-in-console-updates.md#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).  
 
-Quando si installa un aggiornamento nella console:  
+Quando si installa un aggiornamento nella console, si verifica quanto segue:  
 
--   Viene eseguito automaticamente un controllo dei prerequisiti. È anche possibile eseguire questo controllo prima dell'avvio dell'installazione.  
+-   Viene eseguito automaticamente un controllo dei prerequisiti. È anche possibile eseguire questo controllo manualmente prima dell'avvio dell'installazione.  
 
--   L'installazione viene eseguita automaticamente nel sito di amministrazione centrale, se presente, e nei siti primari. È possibile controllare quando ogni server del sito primario può aggiornare l'infrastruttura usando gli [intervalli di servizio per i server del sito](../../../core/servers/manage/service-windows.md).  
+-   Viene installato nel sito di livello superiore dell'ambiente in uso. Questo sito corrisponde al sito di amministrazione centrale, ove presente. In una gerarchia, l'aggiornamento viene installato automaticamente nei siti primari. Controllare quando ogni server del sito primario può essere aggiornato usando gli [intervalli di servizio per i server del sito](../../../core/servers/manage/service-windows.md).  
 
--   Dopo l'aggiornamento di un server del sito, tutti i ruoli del sistema del sito interessati (incluse le istanze del provider SMS) vengono aggiornati automaticamente. Le console di Configuration Manager chiedono all'utente di aggiornare anche la console stessa dopo l'installazione dell'aggiornamento nel sito.  
+-   Dopo l'aggiornamento di un server del sito, tutti i ruoli di sistema del sito interessati vengono aggiornati automaticamente. Questi ruoli includono le istanze del provider SMS. Dopo l'installazione dell'aggiornamento nel sito, le console di Configuration Manager chiedono all'utente di aggiornare anche la console stessa.  
 
 -   Se un aggiornamento include il client di Configuration Manager, è possibile scegliere se testare l'aggiornamento in pre-produzione oppure applicare immediatamente l'aggiornamento a tutti i client.  
 
--   Dopo l'aggiornamento di un sito primario, i siti secondari non vengono aggiornati automaticamente. È invece necessario avviare l'aggiornamento del sito secondario.  
+-   Dopo l'aggiornamento di un sito primario, i siti secondari non vengono aggiornati automaticamente. È invece necessario avviare manualmente l'aggiornamento del sito secondario.  
 
 > [!NOTE]  
->  La versione per la produzione di Center Configuration Manager (Current Branch), Long Term Servicing Branch e la Technical Preview di System Center Configuration Manager sono versioni diverse. Di conseguenza, gli aggiornamenti relativi a un ramo non sono disponibili come aggiornamenti nella console per gli altri rami. Per altre informazioni sui rami disponibili, vedere [Which branch of Configuration Manager should I use?](/sccm/core/understand/which-branch-should-i-use) (Scelta del ramo di Configuration Manager da usare)
+>  Configuration Manager Current Branch, Long-Term Servicing Branch e Technical Preview Branch sono rilasci diversi. Di conseguenza, gli aggiornamenti relativi a un ramo non sono disponibili come aggiornamenti nella console per gli altri rami. Per altre informazioni sui rami disponibili, vedere [Which branch of Configuration Manager should I use?](/sccm/core/understand/which-branch-should-i-use) (Scelta del ramo di Configuration Manager da usare)
+
+
 
 ##  <a name="bkmk_outofband"></a> Hotfix fuori programma  
-Alcuni hotfix vengono rilasciati con disponibilità limitata per risolvere problemi specifici oppure sono applicabili a tutti i clienti, ma non possono essere installati usando il metodo nella console. Questi aggiornamenti sono rilasciati fuori programma e non vengono individuati dal servizio cloud Microsoft.  
+Alcuni rilasci di hotfix con disponibilità limitata per risolvere problemi specifici. Altri hotfix sono applicabili a tutti i clienti, ma non possono essere installati usando il metodo nella console. Questi aggiornamenti sono rilasciati fuori programma e non vengono individuati dal servizio cloud Microsoft.  
 
-Se si sta tentando di risolvere o correggere un problema relativo alla distribuzione di Configuration Manager, in genere è possibile trovare informazioni sugli hotfix fuori programma nei servizi di assistenza clienti Microsoft, in un articolo della Knowledge Base o nel [blog del team di System Center Configuration Manager](https://blogs.technet.microsoft.com/configmgrteam).  
+Se si sta tentando di risolvere o correggere un problema relativo alla distribuzione di Configuration Manager, in genere è possibile trovare informazioni sugli hotfix fuori programma nei servizi di assistenza clienti Microsoft, in un articolo della Knowledge Base o nel [blog del team di System Center Configuration Manager](https://blogs.technet.microsoft.com/configmgrteam). 
 
 Installare questi aggiornamenti manualmente, usando uno dei due metodi seguenti:  
 
--   **Strumento di registrazione dell'aggiornamento:** questo strumento importa manualmente l'hotfix nella console di Configuration Manager da cui è poi possibile installare l'aggiornamento come si farebbe con gli aggiornamenti nella console individuati automaticamente. Questo metodo è usato per gli aggiornamenti con la struttura di nome file seguente: **.update.exe**.  Il nome file completo per questo tipo di hotfix è simile a: **&lt;Prodotto\>-&lt;versione prodotto\>-&lt;ID articolo KB\>-ConfigMgr.Update.exe**.  
+-   **Strumento di registrazione dell'aggiornamento**: questo strumento importa manualmente l'hotfix nella console di Configuration Manager. Quindi installa l'aggiornamento come si installerebbero gli aggiornamenti nella console che vengono individuati automaticamente.  
 
-     Per altre informazioni, vedere [Use the Update Registration Tool to import hotfixes to System Center Configuration Manager](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md) (Usare lo strumento di registrazione dell'aggiornamento per importare hotfix in System Center Configuration Manager).  
+    - Questo metodo è usato per gli hotfix con la struttura di nome file seguente:  
+         `<Product>-<product version>-<KB article ID>-ConfigMgr.Update.exe`    
 
--   **Strumento di installazione di hotfix:** questo strumento consente di installare manualmente un hotfix che non è possibile installare usando il metodo nella console. Questo metodo è usato per gli aggiornamenti che hanno la struttura di nome file seguente: **&lt;Prodotto\>-&lt; versione prodotto\>-&lt;ID articolo KB\>-&lt;piattaforma\>-&lt;lingua\>.exe**.
+    - Per altre informazioni, vedere [Use the Update Registration Tool to import hotfixes](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md) (Usare lo strumento di registrazione dell'aggiornamento per importare gli hotfix).  
 
-     Per altre informazioni, vedere [Use the Hotfix Installer to install updates for System Center Configuration Manager](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md) (Usare il programma di installazione di hotfix per installare gli aggiornamenti per System Center Configuration Manager).
+-   **Programma di installazione degli hotfix:** usare questo strumento per installare manualmente un hotfix che non è possibile installare usando il metodo nella console.  
+
+    - Questo metodo è usato per gli aggiornamenti con la struttura di nome file seguente:   
+         `<Product>-<product version>-<KB article ID>-<platform>-<language>.exe`  
+
+    - Per altre informazioni, vedere [Use the Hotfix Installer to install updates](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md) (Usare il programma di installazione degli hotfix per installare gli aggiornamenti).  

@@ -2,25 +2,19 @@
 title: Creare e applicare combinazioni per il risparmio di energia
 titleSuffix: Configuration Manager
 description: Creare e applicare combinazioni per il risparmio di energia in System Center Configuration Manager.
-ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 738eddaa-52e2-467f-b453-821ef2884d47
-caps.latest.revision: "6"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: ec32a0b1591fffe77ace91f478e03302f429c957
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 4504f26f8f6288750d36028d8eb795ae0d839fbc
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-and-apply-power-plans-in-system-center-configuration-manager"></a>Come creare e applicare combinazioni per il risparmio di energia in System Center Configuration Manager
 
@@ -52,7 +46,7 @@ Le funzionalità di risparmio energia in System Center Configuration Manager con
 
 3.  Nell'elenco **Raccolte dispositivi** fare clic sulla raccolta a cui si vogliono applicare le impostazioni di risparmio energia e quindi nel gruppo **Proprietà** della scheda **Home** fare clic su **Proprietà**.  
 
-4.  Nella scheda **Risparmio energia** della finestra di dialogo **Proprietà***<nome raccolta\>* selezionare **Specifica impostazioni di risparmio energia per questa raccolta**.  
+4.  Nella scheda **Risparmio energia** della finestra di dialogo ***Proprietà* *<Nome raccolta\>* selezionare **Specifica impostazioni di risparmio energia per questa raccolta**.  
 
     > [!NOTE]  
     >  È anche possibile fare clic su **Sfoglia** e quindi copiare le impostazioni di risparmio energia da una raccolta selezionata alla raccolta selezionata.  
@@ -74,7 +68,7 @@ Le funzionalità di risparmio energia in System Center Configuration Manager con
     > [!NOTE]  
     >  Non è possibile modificare le combinazioni per il risparmio di energia predefinite.  
 
-8.  Nella finestra di dialogo **Proprietà***<Nome combinazione risparmio di energia\>*  configurare le impostazioni seguenti:  
+8.  Nella finestra di dialogo ***Proprietà* *<nome combinazione per il risparmio di energia\>* configurare le impostazioni seguenti:  
 
     -   **Nome:** specificare un nome per la combinazione per il risparmio di energia o usare il valore predefinito fornito.  
 
@@ -85,9 +79,9 @@ Le funzionalità di risparmio energia in System Center Configuration Manager con
         > [!IMPORTANT]  
         >  Le impostazioni abilitate vengono applicate ai computer quando viene applicata la combinazione per il risparmio di energia. Se si deseleziona la casella di controllo di un'impostazione di risparmio energia, il valore nel computer client non viene modificato quando viene applicata la combinazione per il risparmio di energia. La deselezione di una casella di controllo non consente di ripristinare l'impostazione di risparmio energia sul valore precedente prima dell'applicazione di una combinazione per il risparmio di energia.  
 
-9. Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà***<Nome combinazione risparmio energia\>*.  
+9. Fare clic su **OK** per chiudere la finestra di dialogo ***Proprietà* *<nome combinazione per il risparmio di energia\>*.  
 
-10. Fare clic su **OK** per chiudere la finestra di dialogo **Impostazioni** *<nome raccolta\>* e applicare la combinazione per il risparmio di energia.  
+10. Fare clic su **OK** per chiudere la finestra di dialogo ***Impostazioni* *<Nome raccolta\>* e applicare la combinazione per il risparmio di energia.  
 
 ##  <a name="BKMK_Plans"></a> Available power management plan settings  
  Nella tabella seguente sono elencate le impostazioni di risparmio energia disponibili in Configuration Manager. È possibile configurare impostazioni distinte per quando il computer è alimentato da rete elettrica o alimentato a batteria. A seconda della versione di Windows in uso, alcune impostazioni potrebbero non essere configurabili.  
@@ -95,7 +89,7 @@ Le funzionalità di risparmio energia in System Center Configuration Manager con
 > [!NOTE]  
 >  Le impostazioni di risparmio energia che non vengono configurate manterranno il valore corrente nei computer client.  
 
-|Nome|Descrizione|  
+|Name|Descrizione|  
 |----------|-----------------|  
 |**Disattiva schermo dopo (minuti)**|Specifica per quanto tempo, in minuti, il computer deve essere inattivo prima che venga disattivato lo schermo. Specificare il valore **0** se non si vuole disattivare lo schermo.|  
 |**Entra in sospensione dopo (minuti)**|Specifica per quanto tempo, in minuti, il computer deve essere inattivo prima che venga attivata la sospensione. Specificare il valore **0** se non si vuole attivare lo stato di sospensione per il computer.|  
@@ -107,8 +101,8 @@ Le funzionalità di risparmio energia in System Center Configuration Manager con
 |**Disattiva disco rigido dopo (minuti)**|Specifica per quanto tempo, in minuti, il disco rigido del computer deve essere inattivo prima che venga disattivato. Specificare il valore **0** se non si vuole disattivare il disco rigido del computer.|  
 |**Metti in stato di ibernazione dopo (minuti)**|Specifica per quanto tempo, in minuti, il computer deve essere inattivo prima che venga attivato lo stato di ibernazione. Specificare il valore **0** se non si vuole attivare lo stato di ibernazione per il computer.|  
 |**Azione per batteria in esaurimento**|Specifica l'azione che si verifica quando la batteria del computer raggiunge il livello di notifica di batteria in esaurimento specificato. Specifica l'azione che si verifica quando l'utente chiude il coperchio di un computer portatile. Valori possibili: **Non eseguire alcuna operazione**, **Sospendi**, **Iberna** e **Arresta**.|  
-|**Azione per batteria quasi scarica**|Specifica l'azione eseguita quando la batteria raggiunge il livello di notifica di batteria quasi scarica specificato. Specifica l'azione che si verifica quando l'utente chiude il coperchio di un computer portatile. I valori possibili includono: **Sospendi**, **Iberna** e **Arresta**.|  
+|**Azione per batteria quasi scarica**|Specifica l'azione da eseguita quando della batteria raggiunge il livello di notifica di batteria specificato. Specifica l'azione che si verifica quando l'utente chiude il coperchio di un computer portatile. I valori possibili includono: **Sospendi**, **Iberna** e **Arresta**.|  
 |**Consenti sospensione ibrida**|Impostando l'opzione su **Disattivato** o **Attivato** si specifica se Windows salva un file di ibernazione quando entra in stato di sospensione, che può essere usato per ripristinare lo stato del computer in caso di interruzione dell'alimentazione mentre è in stato di sospensione.<br /><br /> La sospensione ibrida è progettata per i computer desktop e, per impostazione predefinita, non è abilitata nei computer portatili. Nei computer che eseguono Windows 7 l'abilitazione della sospensione ibrida disabilita la funzionalità di ibernazione.|  
 |**Consentire lo stato di standby durante la sospensione dell'azione**|Impostando l'opzione su **Disattivato** o **Attivato** si consente lo stato di standby per il computer, che consuma un po' di energia, ma permette una riattivazione più veloce del computer. Se questa impostazione è impostata su **Disattivato**, il computer può solo entrare in stato ibernazione o essere spento.|  
 |**Inattività richiesta prima della sospensione (%)**|Specifica la percentuale del tempo di inattività per il tempo del processore del computer, prima che il computer possa entrare in stato di sospensione. Nei computer che eseguono Windows 7, questo valore è sempre impostato su **0**.|  
-|**Abilita timer riattivazione Windows per computer desktop**|Impostando questa opzione su **Abilitato** o **Disabilitato** è possibile abilitare il timer di Windows integrato usato dalla funzionalità di risparmio energia per riattivare un computer desktop. Quando un computer desktop viene riattivato tramite il timer di riattivazione di Windows, rimarrà attivo per 10 minuti per impostazione predefinita per consentire tempo sufficiente al computer per installare eventuali aggiornamenti o per ricevere criteri.<br /><br /> I timer di riattivazione non sono supportati nei computer portatili per evitare scenari in cui la riattivazione potrebbe essere eseguita quando non sono collegati alla rete elettrica.|  
+|**Abilita timer riattivazione Windows per computer desktop**|Impostando questa opzione su **Abilitato** o **Disabilitato** è possibile abilitare il timer di Windows integrato usato dalla funzionalità di risparmio energia per riattivare un computer desktop. Quando un computer desktop è riattivato mediante il timer di riattivazione Windows, rimarrà attivo per 10 minuti per impostazione predefinita per consentire l'ora del computer per installare gli aggiornamenti o per ricevere i criteri.<br /><br /> I timer di riattivazione non sono supportati nei computer portatili per evitare scenari in cui la riattivazione potrebbe essere eseguita quando non sono collegati alla rete elettrica.|  

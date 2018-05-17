@@ -1,25 +1,20 @@
 ---
-title: "Funzionalità nella Technical Preview 1701"
+title: Funzionalità nella Technical Preview 1701
 titleSuffix: Configuration Manager
-description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1701 per System Center Configuration Manager."
-ms.custom: na
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1701 per System Center Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 18598eaa-1131-44ff-8f8b-6093e87ac7a1
-caps.latest.revision: "5"
-author: erikje
-ms.author: erikje
-manager: angrobe
-ms.openlocfilehash: 90e5aa799516bf2a7d6715e12bb8f3d1b72737f3
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 894d268151f9c9dfb05ded812eb642f8025dc459
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1701-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1701 per System Center Configuration Manager
 
@@ -99,7 +94,7 @@ A partire da questa versione di anteprima, è possibile configurare punti di ges
 
 ### <a name="try-it-out"></a>Procedura
 
-- **Abilitare l'attestazione dell'integrità del dispositivo locale in un punto di gestione**<br>  Nella console di Configuration Manager passare al punto di gestione e aprire **Proprietà del componente del punto di gestione** e quindi fare clic sulla scheda **Opzioni avanzate**. Fare clic su **Aggiungi** e specificare l'URL locale, ad esempio https://10.10.10.10, per **URL del servizio di attestazione dell'integrità locale**.
+- **Abilitare l'attestazione dell'integrità del dispositivo locale in un punto di gestione**<br>  Nella console di Configuration Manager passare al punto di gestione e aprire **Proprietà del componente del punto di gestione** e quindi fare clic sulla scheda **Opzioni avanzate**. Fare clic su **Aggiungi** e specificare l'URL locale, ad esempio https://10.10.10.10), per **URL del servizio di attestazione dell'integrità locale**.
 - **Abilitare il reporting di attestazione dell'integrità del punto di gestione locale per l'agente client**<br>Nella console di Configuration Manager scegliere **Amministrazione** > **Impostazioni client** e fare doppio clic o creare nuove **Impostazioni dispositivo personalizzate**. Selezionare **Agente computer** e impostare **Usare il servizio di attestazione dell'integrità locale** su **Sì**. Se **Abilita le comunicazioni con il servizio di attestazione dell'integrità** è impostata su **Sì** e **Usare il servizio di attestazione dell'integrità locale** è impostata su **No**, il punto di gestione userà il servizio di attestazione dell'integrità del dispositivo basato sul cloud.
 
 ## <a name="use-the-oms-connector-for-microsoft-azure-government-cloud"></a>Usare il connettore OMS per il cloud di Microsoft Azure per enti pubblici

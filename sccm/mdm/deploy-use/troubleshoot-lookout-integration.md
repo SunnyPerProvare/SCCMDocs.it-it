@@ -2,24 +2,19 @@
 title: Risoluzione dei problemi di integrazione di Lookout
 titleSuffix: Configuration Manager
 description: Questo argomento descrive la risoluzione di problemi che possono verificarsi con l'integrazione di Lookout.
-ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: e36b98c7-d0f4-4dd6-bac3-6a6c4b4bf841
-caps.latest.revision: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 244d32e98ad863f6c9ea1747b4f786c3a1279fc0
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: ee978543248e70182e12a3d6234cfd12be80dc98
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="troubleshoot-lookout-integration-with-intune"></a>Risolvere i problemi di integrazione di Lookout con Intune
 
@@ -35,7 +30,7 @@ Lookout MTP consente l'accesso solo agli utenti di un gruppo di Azure AD configu
 
 * Posta elettronica: enterprisesupport@lookout.com
 * Accedere alla [console di MTP](http://aad.lookout.com) e passare al modulo **Support** (Supporto).
-* Accedere a: https://enterprise.support.lookout.com/hc/requests e creare una richiesta di supporto.
+* Passare a: https://enterprise.support.lookout.com/hc/requests e inoltrare una richiesta di supporto.
 
 ### <a name="unable-to-sign-in"></a>L'accesso non è riuscito
 Il seguente errore può apparire quando l'utente amministratore globale di Azure AD non ha accettato la configurazione iniziale di Lookup.

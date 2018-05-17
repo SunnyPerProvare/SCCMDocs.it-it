@@ -2,25 +2,19 @@
 title: Creare elementi di configurazione per dispositivi iOS e Mac OS X gestiti con Intune
 titleSuffix: Configuration Manager
 description: Usare l'elemento di configurazione iOS e Mac OS X di System Center Configuration Manager per gestire le impostazioni dei dispositivi iOS e Mac OS X.
-ms.custom: na
 ms.date: 03/28/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 613a48ac-c55d-4c4a-94ea-d3747a1b10cb
-caps.latest.revision: "15"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: d101ffc649928c1136386bc7979d4a37ad404af1
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 0a6925cdc1f3b3a5018cc4895820019d88254bd3
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-configuration-items-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Come creare elementi di configurazione per dispositivi iOS e Mac OS X gestiti con Intune
 Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configuration Manager per gestire le impostazioni per i dispositivi iOS e Mac OS X registrati in Microsoft Intune o gestiti localmente da Configuration Manager.  
@@ -243,7 +237,7 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
   
          Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app conformi e non conformi.  
   
-         **Esempio:** cercare l'app **Microsoft Word per iPad** nell'App Store. L'URL usato sarà **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
+         **Esempio:** cercare l'app **Microsoft Word per iPad** nell'App Store. L'URL da usare sarà **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
   
     -   **Modifica**: consente di modificare il nome, l'autore e l'URL dell'app selezionata.  
   
@@ -363,7 +357,7 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
   
         -   Copiare l'URL della pagina e usarlo come URL per specificare l'app da eseguire in modalità tutto schermo.  
   
-        -   **Esempio:** cercare **Microsoft Word per iPad**. L'URL usato sarà **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
+        -   **Esempio:** cercare **Microsoft Word per iPad**. L'URL da usare sarà **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
   
     -   **Tocco**: abilita o disabilita il touchscreen nel dispositivo.  
   

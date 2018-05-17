@@ -2,25 +2,19 @@
 title: Pianificare la sicurezza
 titleSuffix: Configuration Manager
 description: Procedure consigliate e altre informazioni sulla sicurezza in System Center Configuration Manager.
-ms.custom: na
 ms.date: 01/04/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 2a216814-ca8c-4d2e-bcef-dc00966a3c9f
-caps.latest.revision: "6"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 8f63d1b762b296cb6b6aa56480a5cddf7a3249dc
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 02ab0884b49a8b4ac6998b9994cec23f02f076ec
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="plan-for-security-in-system-center-configuration-manager"></a>Pianificare la sicurezza in System Center Configuration Manager
 
@@ -194,7 +188,7 @@ Dato il numero di opzioni e scelte di configurazione in Configuration Manager, s
      È anche possibile distribuire lo strumento di valutazione della conformità HTTPS di Configuration Manager (**cmHttpsReadiness.exe**) ai computer e usare i report per visualizzare il numero di computer in grado di usare un certificato client PKI con Configuration Manager.  
 
     > [!NOTE]  
-    >  Se il client Configuration Manager viene installato, lo strumento **cmHttpsReadiness.exe** viene installato nella cartella *%windir%***\CCM**. Quando si esegue questo strumento sui client, è possibile specificare le opzioni seguenti:  
+    >  Se il client Configuration Manager è installato, lo strumento **cmHttpsReadiness.exe** viene installato nella cartella *%windir%***\CCM**. Quando si esegue questo strumento sui client, è possibile specificare le opzioni seguenti:  
     >   
     >  -   /Store:&lt;name\>  
     > -   /Issuers:&lt;list\>  
@@ -250,7 +244,7 @@ Seguire le procedure seguenti per eseguire il pre-provisioning e verificare la c
 
 #### <a name="to-pre-provision-a-client-with-the-trusted-root-key-by-using-a-file"></a>Per eseguire il pre-provisioning di un client con la chiave radice attendibile tramite file  
 
-1.  In un editor di testo aprire il file *&lt;directory di Configuration Manager\>***\bin\mobileclient.tcf**.  
+1.  In un editor di testo aprire il file *&lt;directory di Configuration Manager \>***\bin\mobileclient.tcf**.  
 
 2.  Individuare la voce **SMSPublicRootKey=**, copiare la chiave da tale riga e chiudere il file senza apportare modifiche.  
 
@@ -258,14 +252,14 @@ Seguire le procedure seguenti per eseguire il pre-provisioning e verificare la c
 
 4.  Salvare il file e archiviarlo in un percorso in cui tutti i computer possano accedervi, ma in cui sia protetto da eventuali manomissioni.  
 
-5.  Installare il client usando un metodo di installazione che accetti le proprietà Client.msi e specificare la proprietà **SMSROOTKEYPATH=***&lt;percorso completo e nome file\>* di Client.msi.  
+5.  Installare il client usando un metodo di installazione che accetti le proprietà di Client.msi e specificare la proprietà **SMSROOTKEYPATH=***&lt;percorso completo e nome file\>* di Client.msi.  
 
     > [!IMPORTANT]  
     >  Quando si specifica la chiave radice attendibile per la sicurezza aggiuntiva durante l'installazione dei client, è anche necessario specificare il codice del sito usando la proprietà **SMSSITECODE=&lt;codice sito\>** di Client.msi.  
 
 #### <a name="to-pre-provision-a-client-with-the-trusted-root-key-without-using-a-file"></a>Per eseguire il pre-provisioning di un client con la chiave radice attendibile senza file  
 
-1.  In un editor di testo aprire il file *&lt;directory di Configuration Manager\>***\bin\mobileclient.tcf**.  
+1.  In un editor di testo aprire il file *&lt;directory di Configuration Manager \>***\bin\mobileclient.tcf**.  
 
 2.  Individuare la voce SMSPublicRootKey=, annotare la chiave da tale riga o copiarla negli Appunti, quindi chiudere il file senza apportare modifiche.  
 

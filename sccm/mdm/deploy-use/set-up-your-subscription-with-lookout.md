@@ -2,24 +2,19 @@
 title: Configurare la sottoscrizione con Lookout
 titleSuffix: Configuration Manager
 description: Questo argomento offre informazioni dettagliate su come configurare la protezione dalle minacce per il dispositivo di Lookout.
-ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 6087b279-ba05-4824-b5e3-3af14f3d3cfe
-caps.latest.revision: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 142926bc41a79adc8d8300e413022fb0e3566c5a
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 08bf88c0f6660c213c47a5ed283b3be0431056a2
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="set-up-your-subscription-for--lookout-device-threat-protection"></a>Configurare la sottoscrizione con la protezione dalle minacce per il dispositivo di Lookout
 
@@ -59,13 +54,13 @@ Il supporto di Lookout collaborerà con il contatto principale dell'utente per c
 
 ## <a name="configure-your-subscription-with-lookout-device-threat-protection"></a>Configurare la sottoscrizione con la protezione dalle minacce per il dispositivi di Lookout
 ### <a name="step-1-set-up-your-device-threat-protection"></a>Passaggio 1: Configurare la protezione dalle minacce per il dispositivo
-Dopo che il supporto di Lookout ha creato l'account aziendale di Lookout, è possibile accedere alla console di Lookout.   Lookout invierà al contatto principale dell'azienda un messaggio di posta elettronica contenente un collegamento all'URL di accesso:https://aad.lookout.com/les?action=consent
+Dopo che il supporto di Lookout ha creato l'account aziendale di Lookout, è possibile accedere alla console di Lookout.   Lookout invia al contatto principale dell'azienda un messaggio di posta elettronica contenente un collegamento all'URL di accesso: https://aad.lookout.com/les?action=consent
 
 Quando si accede per la prima volta alla console di Lookout, è necessario usare un account utente con il ruolo di Amministratore globale di Azure AD, poiché Lookout possa usare queste informazioni per registrare il tenant di Azure AD.   Per gli accessi successivi non è necessario che l'utente abbia questo livello di privilegi per Azure AD.  Al primo accesso viene visualizzata una pagina di consenso. Scegliere **Accetta** per completare la registrazione.
 
 ![screenshot della pagina di primo accesso della console di Lookout](media/lookout-initial-login.png)
 
-Dopo aver accettato e fornito il consenso , si verrà reindirizzati alla console di Lookout. Dopo aver eseguito la registrazione iniziale, è possibile accedere usando l'URL https://aad.lookout.com
+Dopo aver accettato e fornito il consenso , si verrà reindirizzati alla console di Lookout. Dopo aver eseguito la registrazione iniziale, è possibile accedere usando l'URL: https://aad.lookout.com
 
 Se si verificano problemi durante l'accesso, vedere l'[articolo dedicato alla risoluzione dei problemi]().
 

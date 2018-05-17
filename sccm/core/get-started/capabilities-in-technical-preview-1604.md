@@ -1,26 +1,21 @@
 ---
-title: "Funzionalità nella Technical Preview 1604"
+title: Funzionalità nella Technical Preview 1604
 titleSuffix: Configuration Manager
-description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1604 per System Center Configuration Manager."
-ms.custom: na
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1604 per System Center Configuration Manager.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 684a5559-9e6e-469b-86ae-e768e9f0c9ac
-caps.latest.revision: "8"
-author: erikje
-ms.author: erikje
-manager: angrobe
+author: aczechowski
 robots: noindex,nofollow
-ms.openlocfilehash: a6a3bb10b751768cd0e3987b30c80b5953e8eda5
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 113e22c33e9e8545c382373f3ba093dba3969939
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1604-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1604 per System Center Configuration Manager
 
@@ -39,13 +34,13 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
 -   È possibile tenere traccia del numero di licenze disponibili e del numero di licenze in uso nella console di Configuration Manager  
 
-### <a name="try-it-out"></a>Prova subito!  
+### <a name="try-it-out"></a>Verifica  
 
 ##### <a name="scenario-1-set-up-windows-store-for-business-synchronization"></a>Scenario 1: Configurare la sincronizzazione di Windows Store per le aziende  
 
 1.  In Azure Active Directory registrare Configuration Manager come strumento di gestione "Applicazione Web e/o API Web". Si riceverà un ID client che sarà necessario in seguito.  
 
-    1.  Nel nodo **Active Directory** di [https://manage.windowsazure.com](https://manage.windowsazure.com) selezionare Azure Active Directory e quindi fare clic su **Applicazioni** > **Aggiungi**.  
+    1.  Nel nodo **Active Directory** di [https://manage.windowsazure.com](https://manage.windowsazure.com) selezionare Azure Active Directory, quindi fare clic su **Applicazioni** > **Aggiungi**.  
 
     2.  Fare clic su **Aggiungi un'applicazione che l'organizzazione sta sviluppando**.  
 
@@ -63,7 +58,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
 3.  In Windows Store per le aziende configurare Configuration Manager come strumento di gestione dello Store.  
 
-    1.  Aprire [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/en-us/managementtools) e, se viene chiesto, eseguire l'accesso.  
+    1.  Aprire [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/en-us/managementtools) ed eseguire l'accesso, se richiesto.  
 
     2.  Accettare le condizioni per l'utilizzo, se necessario.  
 
@@ -136,7 +131,7 @@ Per capire come viene usata la peer cache, è possibile visualizzare il dashboar
 
 4.  Per consentire ai client di partecipare alla peer cache del client, impostare **Abilita il client di Configuration Manager nell'intero sistema operativo per condividere i contenuti** su **Sì**. È quindi possibile configurare le porte utilizzate dai client, incluso il fatto se saranno HTTP o HTTPS.  
 
-### <a name="try-it-out"></a>Prova subito!  
+### <a name="try-it-out"></a>Verifica  
  Provare a completare le attività seguenti e quindi usare il collegamento per l'invio di commenti e suggerimenti nella parte superiore di questo argomento per comunicare i risultati:  
 
 1.  Modificare le impostazioni client per specificare una nuova dimensione per la cache client e quindi confermare questa impostazione su un computer client.  

@@ -2,25 +2,19 @@
 title: Altre informazioni sulle licenze e i rami
 titleSuffix: Configuration Manager
 description: Usare questo argomento per informazioni sui requisiti di licenza per le opzioni di installazione disponibili con la versione di ottobre 2016 di System Center Configuration Manager, che include Current Branch versione 1606, Long-Term Servicing Branch (LTSB) e l'installazione di valutazione di Current Branch.
-ms.custom: na
 ms.date: 12/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 495b87ae-41a4-49ba-abe2-d4f7d22ac0d4
-caps.latest.revision: "0"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 8c5fcb718cf03a1e779212207d696cfa5fe9f0e2
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 8eb561d9867c6bde778ffd5fb6ef404395c359da
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="licensing-and-branches-for-system-center-configuration-manager"></a>Licenze e rami per System Center Configuration Manager
 
@@ -104,11 +98,11 @@ Usare i collegamenti seguenti per altri dettagli sulle licenze dei prodotti.
 
 - Termini per i contratti multilicenza Microsoft per i prodotti: [http://go.microsoft.com/fwlink/?LinkId=800052](http://go.microsoft.com/fwlink/?LinkId=800052).
 
-- I clienti che hanno acquistato contratti multilicenza possono ottenere un riepilogo delle proprie licenze qui: [https://www.microsoft.com/Licensing/servicecenter/default.aspx](https://www.microsoft.com/Licensing/servicecenter/default.aspx).  
+- I clienti che hanno acquistato contratti multilicenza possono ottenere un riepilogo delle proprie licenze qui:  [https://www.microsoft.com/Licensing/servicecenter/default.aspx](https://www.microsoft.com/Licensing/servicecenter/default.aspx).  
   Per una panoramica delle licenze, passare al menu **Licenze** e fare clic su **Riepilogo licenze**.
 
 **Video sul Centro servizi per contratti multilicenza:**
-- Video di formazione sul funzionamento del Centro servizi per contratti multilicenza: [https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx#tab=2](https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx#tab=2).
+- Video di formazione sul funzionamento del Centro servizi per contratti multilicenza: m[https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx#tab=2](https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx#tab=2).
 
 - Dove cercare il proprio contratto Software Assurance (a 43 secondi dall'inizio): [https://www.microsoft.com/showcase/video.aspx?uuid=fe1846cb-1d26-49fc-b064-57b25dcc31a0](https://www.microsoft.com/showcase/video.aspx?uuid=fe1846cb-1d26-49fc-b064-57b25dcc31a0).
 

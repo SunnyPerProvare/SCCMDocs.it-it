@@ -2,21 +2,19 @@
 title: Co-gestione per dispositivi Windows 10
 titleSuffix: Configuration Manager
 description: Informazioni su come gestire dispositivi Windows 10 contemporaneamente tramite Configuration Manager e Microsoft Intune.
-keywords: ''
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
 ms.date: 03/28/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: ''
-ms.technology: ''
+ms.technology: configmgr-client
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: 3d7ca4bb72f6f3f76855faac125385374347ba55
-ms.sourcegitcommit: d67c6246bb6027cd5501e772b0521f9272407c28
+ms.openlocfilehash: 3a667ae075ac688d4b49789ed88f858c2ff39397
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="co-management-for-windows-10-devices"></a>Co-gestione per dispositivi Windows 10    
  Con gli aggiornamenti precedenti di Windows 10 è già possibile aggiungere un dispositivo Windows 10 ad Active Directory (AD) locale e ad Azure AD basato sul cloud allo stesso tempo (Azure AD ibrida). A partire da Configuration Manager versione 1710, la co-gestione sfrutta questo miglioramento e consente di gestire contemporaneamente i dispositivi Windows 10 versione 1709 usando sia Configuration Manager che Intune. <!-- 1350871 -->
@@ -52,8 +50,11 @@ I percorsi principali per realizzare la co-gestione sono due. Uno consiste nella
 
 
 ### <a name="intune"></a>**Intune**
- - [Come configurare la sottoscrizione di Intune](/sccm/mdm/deploy-use/configure-intune-subscription) o https://docs.microsoft.com/en-us/intune/setup-steps
- - [Avviare la migrazione da MDM ibrido a Intune standalone](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa).
+ - [Come configurare la sottoscrizione di Intune](/sccm/mdm/deploy-use/configure-intune-subscription) o [Configurare Intune](/intune/setup-steps)  
+ - [Avviare la migrazione da MDM ibrido a Intune standalone](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa)  
+
+> [!Note]  
+> Se si ha un ambiente MDM ibrido, ovvero Intune integrato con Configuration Manager, non è possibile abilitare la co-gestione. È tuttavia possibile avviare la migrazione degli utenti a Intune autonomo e quindi abilitare i dispositivi Windows 10 ad essi associati per la co-gestione. Per altre informazioni sulla migrazione a Intune autonomo, vedere [Avviare la migrazione da MDM ibrido a Intune autonomo](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa).  
 
 
 ### <a name="enable-co-management"></a>Abilitare la co-gestione 

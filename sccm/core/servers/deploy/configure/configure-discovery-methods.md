@@ -2,25 +2,19 @@
 title: Configurare l'individuazione
 titleSuffix: Configuration Manager
 description: Configurare i metodi di individuazione per trovare le risorse da gestire dalla rete, Active Directory e Azure Active Directory.
-ms.custom: na
 ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 49505eb1-d44d-4121-8712-e0f3d8b15bf5
-caps.latest.revision: 5
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 825b9b250000e8353b1428cbee45f8fda9a30c35
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: e7ac10fdc08569e519468633f30548c5c76b5838
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-discovery-methods-for-system-center-configuration-manager"></a>Configurare i metodi di individuazione per System Center Configuration Manager
 
@@ -112,7 +106,7 @@ Usare le procedure seguenti per attivare l'individuazione foresta Active Directo
 
 -   Individuazione sistema Active Directory  
 
--   Individuazione utente Active Directory  
+-   individuazione utenti di Active Directory  
 
 > [!NOTE]  
 >  Le informazioni contenute in questa sezione non si applicano all'individuazione foresta Active Directory.  
@@ -183,6 +177,9 @@ Usare le procedure seguenti per attivare l'individuazione foresta Active Directo
 6.  Nella scheda **Pianificazione del polling** configurare la pianificazione del polling per l'individuazione completa e l'individuazione differenziale.  
 
 7.  Facoltativamente, nella scheda **Attributi di Active Directory** è possibile configurare attributi aggiuntivi di Active Directory per i computer che si desidera individuare. Sono inoltre elencati gli attributi oggetto predefiniti.  
+
+     > [!Tip]  
+     > Ad esempio, l'organizzazione usa l'attributo **Description** nell'account computer in Active Directory. Fare clic su **Personalizza** e aggiungere `Description` come attributo personalizzato. Quando il metodo di individuazione viene eseguito, questo attributo viene visualizzato nella scheda delle proprietà del dispositivo nella console di Configuration Manager.<!--513948-->
 
 8.  Facoltativamente, nella scheda **Opzioni** è possibile configurare le opzioni per escludere, tramite un filtro, dall'individuazione i record del computer non aggiornati.  
 
@@ -264,7 +261,7 @@ Per altre informazioni, vedere [Individuazione utenti di Azure AD](/sccm/core/se
 ##  <a name="BKMK_ConfigNetworkDisc"></a> Configurare l'individuazione di rete  
  Seguire le informazioni nelle sezioni riportate di seguito per configurare l'individuazione della rete.  
 
-###  <a name="BKMK_AboutConfigNetworkDisc"></a> Informazioni sulla configurazione dell'individuazione della rete  
+###  <a name="BKMK_AboutConfigNetworkDisc"></a> Informazioni sulla configurazione dell'individuazione di rete  
  Prima di configurare l'individuazione della rete, è necessario conoscere i concetti seguenti:  
 
 -   Livelli disponibili per l'individuazione della rete  

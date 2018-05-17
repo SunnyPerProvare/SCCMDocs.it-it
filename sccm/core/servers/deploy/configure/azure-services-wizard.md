@@ -2,25 +2,19 @@
 title: Configurare i servizi di Azure
 titleSuffix: Configuration Manager
 description: Connettere l'ambiente di Configuration Manager con i servizi di Azure per la gestione del cloud, Preparazione aggiornamenti, Microsoft Store per le aziende e Operations Management Suite.
-ms.custom: na
 ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: a26a653e-17aa-43eb-ab36-0e36c7d29f49
-caps.latest.revision: 0
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b86c73f3f5662a00ca0b7f80b0c785c37aff0b1a
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 7ff953d658c54c2cebbbfd29a6bba83fe65cc08e
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Configurare i servizi di Azure da usare con Configuration Manager
 
@@ -154,7 +148,7 @@ Quando si fa clic su **Importa** nella finestra di dialogo App server o nella pa
 - **ID client**
 - **Chiave privata**
 - **Scadenza della chiave privata**: selezionare una data futura nel calendario. 
-- **URI ID app**: questo valore deve essere univoco nel tenant di Azure AD. È incluso nel token di accesso usato dal client Configuration Manager per richiedere l'accesso al servizio. Per impostazione predefinita, questo valore è https://ConfigMgrService.  
+- **URI ID app**: questo valore deve essere univoco nel tenant di Azure AD. È incluso nel token di accesso usato dal client Configuration Manager per richiedere l'accesso al servizio. Per impostazione predefinita, questo valore è impostato su https://ConfigMgrService.  
 
 Dopo aver immesso le informazioni, fare clic su **Verifica**. Quindi fare clic su **OK** per chiudere la finestra di dialogo Importa le app. Questa azione torna a visualizzare la [pagina App](#azure-app-properties) della procedura guidata per i servizi di Azure o la [finestra di dialogo App server](#server-app-dialog).
 
@@ -162,8 +156,8 @@ Dopo aver immesso le informazioni, fare clic su **Verifica**. Quindi fare clic s
 
 Quando si fa clic su **Crea** nella finestra di dialogo App server viene visualizzata la finestra di dialogo Crea un'applicazione server. Questa pagina automatizza la creazione di un'app Web in Azure AD. Specificare le informazioni seguenti:
 - **Nome applicazione**: nome descrittivo per l'app.
-- **URL della home page**: questo valore non viene usato da Configuration Manager, ma è richiesto da Azure AD. Per impostazione predefinita, questo valore è https://ConfigMgrService.  
-- **URI ID app**: questo valore deve essere univoco nel tenant di Azure AD. È incluso nel token di accesso usato dal client Configuration Manager per richiedere l'accesso al servizio. Per impostazione predefinita, questo valore è https://ConfigMgrService.  
+- **URL della home page**: questo valore non viene usato da Configuration Manager, ma è richiesto da Azure AD. Per impostazione predefinita, questo valore è impostato su https://ConfigMgrService.  
+- **URI ID app**: questo valore deve essere univoco nel tenant di Azure AD. È incluso nel token di accesso usato dal client Configuration Manager per richiedere l'accesso al servizio. Per impostazione predefinita, questo valore è impostato su https://ConfigMgrService.  
 - **Periodo di validità della chiave privata**: fare clic sull'elenco a discesa e selezionare **1 anno** o **2 anni**. Il valore predefinito è 1 anno.
 
 Fare clic su **Accedi** per eseguire l'autenticazione in Azure come utente amministratore. Queste credenziali non vengono memorizzate in Configuration Manager. Questo utente tipo non richiede autorizzazioni in Configuration Manager e non deve necessariamente essere lo stesso account che esegue la procedura guidata per i servizi di Azure. Dopo l'autenticazione in Azure, nella pagina viene visualizzato il **Nome del tenant di Azure AD** come riferimento. 
@@ -201,7 +195,7 @@ Dopo aver immesso le informazioni, fare clic su **Verifica**. Quindi fare clic s
 
 Quando si fa clic su **Crea** nella finestra di dialogo App client viene visualizzata la finestra di dialogo Crea un'applicazione client. Questa pagina automatizza la creazione di un'app nativa in Azure AD. Specificare le informazioni seguenti:
 - **Nome applicazione**: nome descrittivo per l'app.
-- **URL di risposta**: questo valore non viene usato da Configuration Manager, ma è richiesto da Azure AD. Per impostazione predefinita, questo valore è https://ConfigMgrService. 
+- **URL di risposta**: questo valore non viene usato da Configuration Manager, ma è richiesto da Azure AD. Per impostazione predefinita, questo valore è impostato su https://ConfigMgrService. 
 
 Fare clic su **Accedi** per eseguire l'autenticazione in Azure come utente amministratore. Queste credenziali non vengono memorizzate in Configuration Manager. Questo utente tipo non richiede autorizzazioni in Configuration Manager e non deve necessariamente essere lo stesso account che esegue la procedura guidata per i servizi di Azure. Dopo l'autenticazione in Azure, nella pagina viene visualizzato il **Nome del tenant di Azure AD** come riferimento. 
 

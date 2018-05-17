@@ -1,26 +1,20 @@
 ---
 title: Strumento di manutenzione gerarchia
 titleSuffix: Configuration Manager
-description: "Informazioni sulle finalità dello strumento di manutenzione gerarchia e motivi per usarlo. Include informazioni di riferimento alle opzioni della riga di comando."
-ms.custom: na
+description: Informazioni sulle finalità dello strumento di manutenzione gerarchia e motivi per usarlo. Include informazioni di riferimento alle opzioni della riga di comando.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: cead6825-6113-4ba5-a381-ac3598dfee86
-caps.latest.revision: "7"
-caps.handback.revision: "0"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 02bd5bfe0fc4ccc976d95b944bd51e9f0a276db0
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 4dd1bf9b4085b6e1591d5841bfc307398505f5d1
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="hierarchy-maintenance-tool-preinstexe-for-system-center-configuration-manager"></a>Strumento di manutenzione gerarchia (Preinst.exe) per System Center Configuration Manager
 
@@ -49,7 +43,7 @@ Quando si esegue lo strumento di manutenzione gerarchia, è necessario usare la 
 
  **/DELJOB &lt;*CodiceSito*>**: usare questa opzione in un sito per eliminare tutti i processi o i comandi dal sito corrente nel sito di destinazione specificato.  
 
- **/DELSITE &lt;*CodiceSitoFiglioDaRimuovere*>**: usare questa opzione in un sito padre per eliminare i dati relativi ai siti figlio dal database del sito padre. In genere, è possibile utilizzare questa opzione se si rimuovono le autorizzazioni da un computer del server del sito prima che il sito sia stato disinstallato da tale computer.  
+ **/DELSITE&lt; *CodiceSitoFiglioDaRimuovere*>**: usare questa opzione in un sito padre per eliminare i dati relativi ai siti figlio dal database del sito padre. In genere, è possibile utilizzare questa opzione se si rimuovono le autorizzazioni da un computer del server del sito prima che il sito sia stato disinstallato da tale computer.  
 
 > [!NOTE]  
 >  L'opzione /DELSITE non disinstalla il sito nel computer specificato dal parametro ChildSiteCodeToRemove. Questa opzione rimuove solamente le informazioni sul sito dal database del sito di Configuration Manager.  

@@ -2,26 +2,19 @@
 title: Configurare lo stato del client
 titleSuffix: Configuration Manager
 description: Selezionare le impostazioni relative allo stato del client in System Center Configuration Manager.
-ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: a2275ba2-c83d-43e7-90ed-418963a707fe
-caps.latest.revision: 
-caps.handback.revision: 
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 5db52925515e65797a43ed35775460369f742f49
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 8f919e647ae252731d60a98e01485a01aae10698
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-configure-client-status-in-system-center-configuration-manager"></a>Come configurare lo stato del client in System Center Configuration Manager
 
@@ -78,7 +71,7 @@ Prima di poter monitorare lo stato del client di System Center Configuration Man
     > [!NOTE]  
     >  Non è possibile configurare avvisi per raccolte di utenti.  
 
-4.  Nella scheda **Avvisi** della finestra di dialogo **Proprietà***&lt;nome raccolta\>* fare clic su **Aggiungi**.  
+4.  Nella scheda **Avvisi** della finestra di dialogo ***Proprietà* *&lt;Nome raccolta\>* fare clic su **Aggiungi**.  
 
     > [!NOTE]  
     >  La scheda **Avvisi** viene visualizzata solo se il ruolo di sicurezza a cui si è associati dispone delle autorizzazioni per gli avvisi.  
@@ -93,7 +86,7 @@ Prima di poter monitorare lo stato del client di System Center Configuration Man
 
     -   **Genera avviso**: specificare la percentuale di soglia per l'avviso.  
 
-7.  Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà** *&lt;nome raccolta\>*.  
+7.  Fare clic su **OK** per chiudere la finestra di dialogo ***Proprietà* *&lt;Nome raccolta\>*.  
 
 ##  <a name="BKMK_3"></a> Per escludere i computer da monitoraggio e aggiornamento automatici  
 

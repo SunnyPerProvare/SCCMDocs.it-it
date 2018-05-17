@@ -1,24 +1,20 @@
 ---
 title: Technical Preview 1705
 titleSuffix: Configuration Manager
-description: "Informazioni sulle funzionalità disponibili nella versione Technical Preview 1705 per System Center Configuration Manager."
-ms.custom: na
+description: Informazioni sulle funzionalità disponibili nella versione Technical Preview 1705 per System Center Configuration Manager.
 ms.date: 06/02/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 00684289-d21a-45f8-b1e3-c5c787d73096
-author: erikje
-ms.author: erikje
-manager: angrobe
-ms.openlocfilehash: 60415539a645e40f1b097897d4b255924d61f389
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 49205ac1d1fc2dd20cbd4a0844632c5f3d181e45
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1705-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1705 per System Center Configuration Manager
 
@@ -151,7 +147,7 @@ Quando un client valuta l'assegnazione di un aggiornamento di Office 365 per la 
 - Distribuire l'aggiornamento di Office 365 con una scadenza pianificata dopo più di 60 minuti rispetto all'ora corrente.
 - Configurare una finestra di manutenzione durante le ore non lavorative per la raccolta o un periodo di tolleranza per l'imposizione della distribuzione.
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 Provare a completare le attività seguenti e quindi inviare **Feedback** dalla scheda **Home** della barra multifunzione per comunicarci come è andata:
 - Distribuire l'aggiornamento di Office 365 a un client con una scadenza impostata dopo almeno 60 minuti rispetto all'ora corrente. Osservare il nuovo comportamento nel client.
 
@@ -167,7 +163,7 @@ Questa funzionalità verrà rilasciata in anteprima per la versione a 64 bit di 
 Per creare e distribuire i criteri di Windows Defender Application Guard, configurare i dispositivi Windows 10 in cui vengono distribuiti i criteri con un criterio di isolamento rete. Per altre informazioni, vedere il blog di blog indicato più avanti.
 Questa funzionalità funziona solo con le build correnti di Windows 10 Insider. Per provarla, i client devono eseguire una build recente di Windows 10 Insider.
 
-### <a name="try-it-out"></a>Prova subito!
+### <a name="try-it-out"></a>Verifica
 
 Verificare di avere letto il post di blog per comprendere le nozioni di base relative a Windows Defender Application Guard.
 

@@ -2,26 +2,19 @@
 title: Creare ed eseguire script
 titleSuffix: Configuration Manager
 description: Creare ed eseguire script di PowerShell in dispositivi client.
-ms.custom: na
 ms.date: 04/10/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-app
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-app
+ms.topic: conceptual
 ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
-caps.latest.revision: 14
-caps.handback.revision: 0
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7cfb969ab70c27859788732839f4715541e1b91e
-ms.sourcegitcommit: e4ca9fb1fad2caaf61bb46e0a12f4d6b96f15513
+ms.openlocfilehash: fcf3bc335efc4c7436842b29d30c67c118ceb05d
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Creare ed eseguire gli script di PowerShell dalla console di Configuration Manager
 
@@ -116,43 +109,50 @@ I tre ruoli di sicurezza usati per l'esecuzione di script non vengono creati per
 1. Nella console di Configuration Manager passare a **Amministrazione** >**Protezione** >**Ruoli di protezione**
 2. Fare clic con il pulsante destro del mouse su un ruolo e selezionare **Copia**. Il ruolo copiato ha le autorizzazioni già assegnate. Verificare di includere solo le autorizzazioni desiderate. 
 3. Assegnare al ruolo personalizzato un **nome** e una **descrizione**. 
-4. Assegnare al ruolo di sicurezza le autorizzazioni indicate di seguito. 
+4. Assegnare al ruolo di sicurezza le autorizzazioni indicate di seguito.  
 
-    ### <a name="security-role-permissions"></a>**Autorizzazioni del ruolo di sicurezza**
+### <a name="security-role-permissions"></a>Autorizzazioni del ruolo di sicurezza  
 
-     **Nome del ruolo**: esecutori di script
-    - **Descrizione**: queste autorizzazioni consentono a questo ruolo solo di eseguire script precedentemente creati e approvati da altri ruoli. 
-    - **Autorizzazioni:** verificare che le autorizzazioni seguenti siano impostate su **Sì**.
-         |**Categoria**|**Autorizzazione**|**Stato**|
-         |---|---|---|
-         |Raccolta|Esegui script|Sì|
-         |Script SMS|Creazione|Sì|
-         |Script SMS|Lettura|Sì|
+**Nome del ruolo**: esecutori di script  
+- **Descrizione**: queste autorizzazioni consentono a questo ruolo solo di eseguire script precedentemente creati e approvati da altri ruoli.  
+- **Autorizzazioni:** verificare che le autorizzazioni seguenti siano impostate su **Sì**.  
 
-     **Nome del ruolo**: autori di script
-    - **Descrizione**: queste autorizzazioni consentono a questo ruolo di creare script, ma non di approvarli o eseguirli. 
-    - **Autorizzazioni**: verificare che siano impostate le autorizzazioni seguenti.
-    - 
-         |**Categoria**|**Autorizzazione**|**Stato**|
-         |---|---|---|
-         |Raccolta|Esegui script|No|
-         |Script SMS|Creazione|Sì|
-         |Script SMS|Lettura|Sì|
-         |Script SMS|Elimina|Sì|
-         |Script SMS|Modifica|Sì|
+|Categoria|Autorizzazione|Stato|
+|---|---|---|
+|Raccolta|Esegui script|Sì|
+|Sito|Lettura|Sì|
+|Script SMS|Creazione|Sì|
+|Script SMS|Lettura|Sì|
 
-    **Nome del ruolo**: responsabile approvazione di script
-    - **Descrizione**: queste autorizzazioni consentono a questo ruolo di approvare script, ma non di crearli o eseguirli. 
-    - **Autorizzazioni:** verificare che siano impostate le autorizzazioni seguenti.
 
-         |**Categoria**|**Autorizzazione**|**Stato**|
-         |---|---|---|
-         |Raccolta|Esegui script|No|
-         |Script SMS|Lettura|Sì|
-         |Script SMS|Approva|Sì|
-         |Script SMS|Modifica|Sì|
+**Nome del ruolo**: autori di script  
+- **Descrizione**: queste autorizzazioni consentono a questo ruolo di creare script, ma non di approvarli o eseguirli.  
+- **Autorizzazioni**: verificare che siano impostate le autorizzazioni seguenti.
+ 
+|Categoria|Autorizzazione|Stato|
+|---|---|---|
+|Raccolta|Esegui script|No|
+|Sito|Lettura|Sì|
+|Script SMS|Creazione|Sì|
+|Script SMS|Lettura|Sì|
+|Script SMS|Elimina|Sì|
+|Script SMS|Modifica|Sì|
+
+
+**Nome ruolo**: responsabile approvazione di script  
+- **Descrizione**: queste autorizzazioni consentono a questo ruolo di approvare script, ma non di crearli o eseguirli.  
+- **Autorizzazioni:** verificare che siano impostate le autorizzazioni seguenti.  
+
+|Categoria|Autorizzazione|Stato|
+|---|---|---|
+|Raccolta|Esegui script|No|
+|Sito|Lettura|Sì|
+|Script SMS|Lettura|Sì|
+|Script SMS|Approva|Sì|
+|Script SMS|Modifica|Sì|
+
      
-**Esempio di autorizzazioni Script SMS per il ruolo di autori di script**
+**Esempio di autorizzazioni Script SMS per il ruolo di autori di script**  
 
  ![Esempio di autorizzazioni Script SMS per il ruolo di autori di script](./media/run-scripts/script_authors_permissions.png)
 

@@ -2,26 +2,19 @@
 title: Creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti con Intune
 titleSuffix: Configuration Manager
 description: Usare l'elemento di configurazione Windows 10 in System Center Configuration Manager per gestire le impostazioni dei computer Windows 10.
-ms.custom: na
 ms.date: 07/31/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-hybrid
+ms.topic: conceptual
 ms.assetid: 23e1e4dc-623a-4521-ad04-ae9482927097
-caps.latest.revision: 20
-caps.handback.revision: 0
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 7f5a50ae6ea05af7e864cf94df3063d70bd737b4
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 639fabbe1e2f51194669fc1f196d88140193a727
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-configuration-items-for-windows-81-and-windows-10-devices-managed-without-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Windows 8.1 e Windows 10 gestiti senza il client System Center Configuration Manager
 
@@ -77,7 +70,7 @@ ms.lasthandoff: 10/12/2017
 ### <a name="password"></a>Password  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 10 e versioni successive.  
   
-|Impostazioni|Dettagli|  
+|Impostazione|Dettagli|  
 |-------------|-------------|  
 |**Richiedi impostazioni password nei dispositivi mobili**|Richiede una password nei dispositivi supportati.|  
 |**Lunghezza minima password (caratteri)**|La lunghezza minima della password.|  
@@ -115,7 +108,7 @@ ms.lasthandoff: 10/12/2017
 ### <a name="email-management"></a>Gestione della posta elettronica  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 8.1 e Windows 10.  
   
-|Impostazioni|Dettagli|  
+|Impostazione|Dettagli|  
 |-------------|-------------|  
 |**Posta elettronica IMAP e POP**|Consente la connessione agli account di posta elettronica che usano gli standard POP e IMAP.|  
 |**Tempo massimo di conservazione della posta elettronica**|Il tempo di conservazione della posta elettronica prima che venga eliminata dal server.|  
@@ -130,7 +123,7 @@ ms.lasthandoff: 10/12/2017
 ### <a name="store"></a>Archivio  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 10 e versioni successive.  
   
-|Impostazioni|Dettagli|  
+|Impostazione|Dettagli|  
 |-------------|-------------|  
 |**Archivio applicazioni**|Consente l'accesso all'archivio applicazioni sul dispositivo.|  
 |**Immettere una password per accedere all'archivio applicazioni**|Gli utenti devono immettere una password per accedere all'archivio applicazioni.|  
@@ -142,7 +135,7 @@ ms.lasthandoff: 10/12/2017
 ### <a name="browser"></a>Browser  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 8.1 e Windows 10.  
   
-|Impostazioni|Dettagli|  
+|Impostazione|Dettagli|  
 |-------------|-------------|  
 |**Consenti browser Web**|Consentire l'uso del Web browser nel dispositivo.|  
 |**Riempimento automatico**|L’utente può modificare le impostazioni di completamento automatico nel browser.|  
@@ -243,7 +236,7 @@ ms.lasthandoff: 10/12/2017
   
 2.  Nella finestra di dialogo **Connessione rete wireless** specificare le informazioni sulla connessione wireless seguenti, di cui viene eseguito il provisioning nei dispositivi mobili:  
   
-|Impostazioni|Altre informazioni|  
+|Impostazione|Altre informazioni|  
 |-------------|----------------------|  
 |**Nome rete (SSID)**|Immettere il nome della rete Wi-Fi.|  
 |**Connessione di rete**|Scegliere **Internet** o **Lavoro**.|  
@@ -294,7 +287,7 @@ ms.lasthandoff: 10/12/2017
   
 ### <a name="system-security"></a>Protezione del sistema  
   
-|Impostazioni|Dettagli|  
+|Impostazione|Dettagli|  
 |-------------|-------------|  
 |**Controllo dell'account utente**|Abilita o disabilita il controllo account utente di Windows sul dispositivo.|  
 |**Firewall di rete**|Attiva o disattiva Windows Firewall.<br /><br /> (solo Windows 8.1)|  
@@ -326,14 +319,14 @@ ms.lasthandoff: 10/12/2017
   
 Nella pagina **Elenco app consentite e bloccate** indicare le informazioni seguenti:  
   
-|Impostazioni|Altre informazioni|  
+|Impostazione|Altre informazioni|  
     |-------------|----------------------|  
     |**Elenco delle app bloccate**|Selezionare questa opzione per specificare un elenco di applicazioni che gli utenti non sono autorizzati a installare.|  
     |**Elenco delle app consentite**|Selezionare questa opzione per specificare un elenco di applicazioni che gli utenti sono autorizzati a installare. L'installazione di qualsiasi altra app viene bloccata.|  
-    |**Aggiungi**|Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, cercare l'app da usare nel Windows Store.<br /><br /> Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app consentite o bloccate.<br /><br /> **Esempio:** cercare l'app **Skype** nello store. L'URL usato è **http://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51**.|  
+    |**Aggiungi**|Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, cercare l'app da usare nel Windows Store.<br /><br /> Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app consentite o bloccate.<br /><br /> **Esempio:** cercare l'app **Skype** nello store. L'URL da usare è **http://www.windowsphone.com/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51**.|  
     |**Modifica**|Consente di modificare il nome, l'autore e l'URL dell'app selezionata.|  
     |**Rimuovi**|Elimina l'app selezionata dall'elenco.|  
-    |**Importa**|Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.|  
+    |**Importaa**|Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.|  
   
 ### <a name="windows-10-team"></a>Windows 10 Team  
  Queste impostazioni si riferiscono solo ai dispositivi che eseguono Windows 10 Team.  
@@ -345,7 +338,7 @@ Nella pagina **Elenco app consentite e bloccate** indicare le informazioni segue
 |**Finestra di manutenzione**|Configura la finestra durante la quale cui è possibile eseguire gli aggiornamenti del dispositivo. È possibile configurare l'ora di inizio della finestra e la durata (tra 1 e 5 ore).|
 |**Azure Operational Insights**|Azure Operational Insights, parte della suite Microsoft Operations Manager, raccoglie, archivia e analizza i dati dei file di log provenienti da dispositivi Windows 10 Team.<br>Per connettersi ad Azure Operational Insights, è necessario specificare un ID e una chiave dell'area di lavoro.| 
 |**Proiezione wireless Miracast**|Abilitare questa opzione per consentire al dispositivo Windows 10 Team di usare dispositivi abilitati per Miracast per attività di progetto.<br>Se questa opzione è abilitata, selezionare da **Scegli un canale Miracast** il canale Miracast usato per il contenuto del progetto.|
-|**Informazioni sulla riunione visualizzate nella schermata iniziale**|Se si abilita questa opzione, è possibile scegliere le informazioni da visualizzare nel riquadro **Riunioni** della **schermata iniziale**. È possibile:<br><br>- **Mostra solo organizzatore e ora**<br>- **Mostra organizzatore, ora e oggetto (l'oggetto è nascosto per le riunioni private)**|
+|**Informazioni sulla riunione visualizzate nella schermata iniziale**|Se si abilita questa opzione, è possibile scegliere le informazioni da visualizzare nel riquadro **Riunioni** della **schermata iniziale**. È possibile scegliere:<br><br>- **Mostra solo organizzatore e ora**<br>- **Mostra organizzatore, ora e oggetto (l'oggetto è nascosto per le riunioni private)**|
 |**URL dell'immagine di sfondo per la schermata di blocco**|Usare questa impostazione per visualizzare uno sfondo personalizzato nella **schermata iniziale** dei dispositivi Windows 10 Team dall'URL specificato.<br>L'immagine deve essere in formato PNG e l'URL deve iniziare con **https://**.| 
   
 ### <a name="windows-information-protection"></a>Windows Information Protection  
@@ -371,16 +364,16 @@ Queste impostazioni si riferiscono ai dispositivi che eseguono Windows 10 e vers
 |**Abilita SmartScreen**|Usare SmartScreen per controllare che i file scaricati dagli utenti non contengano codice dannoso.|  
 |**Consenti popup**|Consentire o disabilitare i popup del browser.|  
 |**Consenti cookie**|Consentire o disabilitare i cookie.|  
-|**Consenti riempimento automatico**|Consente l'uso della funzionalità di riempimento automatico del browser Microsoft Edge.|  
+|**Consenti riempimento automatico**|Consente l'uso della funzionalità di riempimento automatico del browser Edge.|  
 |**Consenti strumento per la gestione delle password**|Consentire l'uso della funzionalità dello strumento per la gestione delle password del browser Microsoft Edge.|  
 |**Posizione elenco siti modalità Enterprise**|Specifica dove trovare l'elenco di siti Web che si aprono in modalità Enterprise. L'elenco non è modificabile dagli utenti.|
-|**Blocca l'accesso ai flag Informazioni su**|Impedire l'accesso dell'utente finale alla pagina about:flags in Microsoft Edge contenente impostazioni sperimentali e per sviluppatori.|
+|**Blocca l'accesso ai flag Informazioni su**|Impedire l'accesso dell'utente finale alla pagina about:flags in Edge contenente impostazioni sperimentali e per sviluppatori.|
 |**Override del prompt SmartScreen**|Consentire all'utente finale di ignorare gli avvisi del filtro SmartScreen relativi a siti Web potenzialmente dannosi.|
 |**Override del prompt SmartScreen per i file**|Consentire all'utente finale di ignorare gli avvisi del filtro SmartScreen relativi al download di file potenzialmente dannosi.|
 |**Indirizzo IP localhost WebRtc**|Bloccare la visualizzazione dell'indirizzo IP localhost dell'utente quando si effettuano chiamate telefoniche tramite il protocollo Web RTC.|
 |**Motore di ricerca predefinito**|Specificare il motore di ricerca predefinito da usare. Gli utenti finali possono modificare questo valore in qualsiasi momento.|
 |**URL XML OpenSearch**|È possibile usare un file XML OpenSearch per creare un servizio di ricerca per Microsoft Edge.<br>Per altre informazioni, vedere [OpenSearch](https://msdn.microsoft.com/library/windows/desktop/dd940337).|
-|**Homepages (desktop only)** (Home page (solo desktop))|Aggiungere un elenco di siti da usare come home page nel browser Microsoft Edge (solo desktop).|  
+|**Homepages (desktop only)** (Home page (solo desktop))|Aggiungere un elenco di siti da usare come home page nel browser Edge (solo desktop).|  
 
 
 ### <a name="windows-defender"></a>Windows Defender

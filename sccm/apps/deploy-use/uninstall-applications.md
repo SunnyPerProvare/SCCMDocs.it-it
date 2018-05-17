@@ -2,26 +2,19 @@
 title: Disinstallare applicazioni
 titleSuffix: Configuration Manager
 description: Disinstallare le applicazioni usando System Center Configuration Manager
-ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-app
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-app
+ms.topic: conceptual
 ms.assetid: 0ea3edaa-27c6-4391-9896-cd97d9c5d06d
-caps.latest.revision: 
-caps.handback.revision: 
-author: mattbriggs
-ms.author: mabrigg
-manager: angrobe
-ms.openlocfilehash: 11b6f7ad65296131622b707fcb68d77183e3a288
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 7587fa6d96d6f8737921c9e5edae992cdd0ea614
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="uninstall-applications-with-system-center-configuration-manager"></a>Disinstallare le applicazioni con System Center Configuration Manager
 
@@ -65,7 +58,7 @@ Eseguire le azioni seguenti per disinstallare un'applicazione distribuita in pre
         > [!NOTE]  
         >  La pagina **Contenuto** viene visualizzata solo se si seleziona l'opzione **Specifica manualmente le informazioni sul tipo di distribuzione** nella pagina **Generale** della Creazione guidata tipo di distribuzione.  
 
-    -   Nella scheda **Programmi** della finestra di dialogo **<*nome tipo di distribuzione*> Proprietà** specificare la riga di comando da usare per disinstallare l'applicazione nel campo **Disinstalla programma**.  
+    -   Nella scheda **Programmi** della finestra di dialogo **Proprietà<*nome tipo di distribuzione>*** specificare la riga di comando da usare per disinstallare l'applicazione nel campo **Disinstalla programma**.  
 
 2.  Distribuire l'applicazione e selezionare l'azione di distribuzione **Disinstalla** nella pagina **Impostazioni di distribuzione** della Distribuzione guidata del software.  
 

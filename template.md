@@ -1,20 +1,25 @@
 ---
-title: TITOLO DELL'ARTICOLO | Microsoft Docs
-description: 
-keywords: 
-author: GITHUB USERNAME
-manager: ALIAS
-ms.date: 10/06/2016
-ms.topic: article
-ms.prod: 
-ms.service: 
-ms.technology: 
-ms.assetid: GET ONE FROM guidgenerator.com
-ms.openlocfilehash: a218011ded1ff3acc1dbd24471119b701f2cce23
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+title:
+- Titolo dell'articolo in 35 caratteri o meno
+titleSuffix: Configuration Manager
+description: ''
+ms.date: mm/dd/yyyy
+ms.prod: configuration-manager
+ms.technology: configmgr-other
+ms.topic: conceptual
+ms.assetid:
+- GET ONE FROM guidgenerator.com
+author:
+- GITHUB USERNAME
+ms.author:
+- ALIAS
+manager:
+- ALIAS
+ms.openlocfilehash: bb0a23b8870d31136967b1bc594580bcc2cd0cd9
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="metadata-and-markdown-template"></a>Modello di markdown e metadati
 
@@ -95,7 +100,7 @@ Se in un file markdown viene visualizzato un URL, questo verrà trasformato in u
 1. è
 1. un
 1. elenco
-1. ordinato  
+1. Elenco  
 
 
 #### <a name="ordered-list-with-an-embedded-list"></a>Elenco ordinato con elenco incorporato
@@ -107,23 +112,23 @@ Se in un file markdown viene visualizzato un URL, questo verrà trasformato in u
     1. Miss Scarlett
     1. Professor Plum
 1. ordinato
-1. incorporato
+1. elenco
 
 
 ### <a name="unordered-lists"></a>Elenchi non ordinati
 
 - Questo
-- è
-- un
+- è impostata su
+- a
 - elenco
-- puntato
+- elenco
 
 
 ##### <a name="unordered-list-with-an-embedded-lists"></a>Elenco non ordinato con elenco incorporato
 
 - Questo
 - elenco
-- puntato
+- elenco
     - Mrs. Peacock
     - Mr. Green
 - contiene  
@@ -137,9 +142,9 @@ Se in un file markdown viene visualizzato un URL, questo verrà trasformato in u
 
 ---
 
-## <a name="tables"></a>Tabelle
+## <a name="tables"></a>Tables
 
-| Le tabelle        | sono           | fantastiche  |
+| Tables        | sono           | fantastiche  |
 | ------------- |:-------------:| -----:|
 | Colonna 3      | allineata a destra | $ 1600 |
 | Colonna 2      | allineata al centro      |   $ 12 |

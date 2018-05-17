@@ -2,24 +2,19 @@
 title: Monitorare lo stato di Endpoint Protection
 titleSuffix: Configuration Manager
 description: Informazioni su come monitorare Endpoint Protection nella gerarchia di System Center Configuration Manager.
-ms.custom: na
 ms.date: 03/13/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: f4a1335c-bb3d-493e-a124-83a32a107dc8
-caps.latest.revision: "8"
-author: NathBarn
-ms.author: nathbarn
-manager: angrobe
-ms.openlocfilehash: 9e6356f8b3814ac49c26bfa4d319c3c9926a4382
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: f4e1ea4cb097381467774af9c3161079419d6840
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-monitor-endpoint-protection-status"></a>Come monitorare lo stato di Endpoint Protection
 
@@ -38,7 +33,7 @@ ms.lasthandoff: 10/12/2017
     > [!IMPORTANT]  
     >  Gli insiemi sono disponibili per la selezione nei seguenti casi:  
     >   
-    >  -   Quando si seleziona **Visualizza questa raccolta nel dashboard di Endpoint Protection** nella scheda **Avvisi** della finestra di dialogo *<nome raccolta\>***Proprietà**.  
+    >  -   Quando si seleziona **Visualizza questa raccolta nel dashboard di Endpoint Protection** nella scheda **Avvisi** della finestra di dialogo ***Proprietà* *<Nome raccolta\>*.  
     > -   Quando si distribuisce un criterio antimalware Endpoint Protection nella raccolta.  
     > -   Quando si abilitano e si distribuiscono le impostazioni client di Endpoint Protection nella raccolta.  
 

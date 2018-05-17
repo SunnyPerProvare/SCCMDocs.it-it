@@ -2,20 +2,19 @@
 title: Preparare Windows 10 per la co-gestione
 titleSuffix: Configuration Manager
 description: Informazioni su come preparare i dispositivi Windows 10 per la co-gestione.
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
 ms.date: 03/28/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: ''
-ms.technology: ''
+ms.technology: configmgr-client
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
-ms.openlocfilehash: 93a991cb3fd78e44f5ae4434a9845a57450e1025
-ms.sourcegitcommit: e4ca9fb1fad2caaf61bb46e0a12f4d6b96f15513
+ms.openlocfilehash: 8c025d7c7a1dc452cb96f937801656bc4d0cadab
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="prepare-windows-10-devices-for-co-management"></a>Preparare i dispositivi Windows 10 per la co-gestione
 È possibile abilitare la co-gestione nei dispositivi Windows 10 aggiunti ad Active Directory e Azure AD e registrati in Microsoft Intune e che siano client di Configuration Manager. Per i nuovi dispositivi Windows 10 e per i dispositivi già registrati in Intune, installare il client di Configuration Manager prima di attivare la co-gestione. Per i dispositivi Windows 10 che sono già client di Configuration Manager, è possibile registrare i dispositivi con Intune e abilitare la co-gestione dalla console di Configuration Manager.
@@ -30,7 +29,7 @@ Prima di poter abilitare la co-gestione, è necessario soddisfare i prerequisiti
 Di seguito sono elencati i prerequisiti generali per abilitare la co-gestione:  
 
 - Configuration Manager 1710 o versioni successive
-- Azure AD
+- [Integrazione con Azure AD per la Gestione cloud](/sccm/core/servers/deploy/configure/azure-services-wizard)
 - Licenza di EMS o Intune per tutti gli utenti
 - [Registrazione automatica in Azure AD](https://docs.microsoft.com/intune/windows-enroll#enable-windows-10-automatic-enrollment) abilitata
 - Sottoscrizione a Intune &#40; Autorità MDM impostata su **Intune**&#41;

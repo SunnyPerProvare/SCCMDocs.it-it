@@ -1,24 +1,19 @@
 ---
 title: Configuration Manager in Azure
 description: Informazioni sull'uso di Configuration Manager in un ambiente Azure.
-ms.custom: na
 ms.date: 03/27/2017
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: d24257d8-8136-47f4-8e0d-34021356dc37
-caps.latest.revision: "2"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: d73ab50e5fc9472a977951f6c2d5bbd3fd408c39
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 2b952e76fc21e3190430cdf34cb4a264918fd199
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager in Azure: domande frequenti
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -156,22 +151,22 @@ Sì, è completamente diversa. [Peer cache](/sccm/core/plan-design/hierarchy/cli
 È difficile da stabilire poiché ogni ambiente è diverso. L'approccio migliore è quello di calcolare il prezzo per il proprio ambiente mediante il calcolatore prezzi di Microsoft Azure: https://azure.microsoft.com/pricing/calculator/
 
 ## <a name="additional-resources"></a>Risorse aggiuntive
-**Nozioni fondamentali:** http://azure.microsoft.com/documentation/articles/fundamentals-introduction-to-azure/
+**Nozioni di base:** http://azure.microsoft.com/documentation/articles/fundamentals-introduction-to-azure/
 
 **Tipi di VM di Azure:**
- - Dimensioni delle macchine virtuali in Azure: https://azure.microsoft.com/documentation/articles/virtual-machines-size-specs/  
- - Prezzi delle VM: http://azure.microsoft.com/pricing/details/virtual-machines/  
- - Prezzi di Archiviazione di Azure: http://azure.microsoft.com/pricing/details/storage/
+ - Dimensioni delle macchine virtuali di Azure: https://azure.microsoft.com/documentation/articles/virtual-machines-size-specs/  
+ - Prezzi delle macchine virtuali: http://azure.microsoft.com/pricing/details/virtual-machines/  
+ - Prezzi per l'archiviazione: http://azure.microsoft.com/pricing/details/storage/
 
 **Considerazioni sulle prestazioni dei dischi:**    
- - Introduzione ai dischi Premium: http://azure.microsoft.com/blog/2014/12/11/introducing-premium-storage-high-performance-storage-for-azure-virtual-machine-workloads/  
- - Informazioni più dettagliate sui dischi Premium: http://azure.microsoft.com/documentation/articles/storage-premium-storage-preview-portal/   
- - Raccolta di grafici per gli obiettivi di prestazioni e scalabilità per Archiviazione di Azure: https://azure.microsoft.com/documentation/articles/storage-scalability-targets/  
- - Introduzione e dati tecnici sul funzionamento dettagliato di Archiviazione Premium: http://azure.microsoft.com/blog/2015/04/16/azure-premium-storage-now-generally-available-2/
+ - Introduzione disco Premium: http://azure.microsoft.com/blog/2014/12/11/introducing-premium-storage-high-performance-storage-for-azure-virtual-machine-workloads/  
+ - Informazioni disco Premium più approfondite: http://azure.microsoft.com/documentation/articles/storage-premium-storage-preview-portal/   
+ - Raccolta utile di grafici per obiettivi di dimensioni e prestazioni per l'archiviazione: https://azure.microsoft.com/documentation/articles/storage-scalability-targets/  
+ - Altra introduzione + dati tecnici sul funzionamento dietro le quinte di Archiviazione Premium: http://azure.microsoft.com/blog/2015/04/16/azure-premium-storage-now-generally-available-2/
 
 **Disponibilità:**
- - Contratti di servizio (SLA) sui tempi di attività Azure IaaS: https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_0/  
- - Descrizione dei set di disponibilità: https://azure.microsoft.com/documentation/articles/virtual-machines-manage-availability/
+ - Contratti di servizio tempo di attività di Azure IaaS: https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_0/  
+ - Set di disponibilità: https://azure.microsoft.com/documentation/articles/virtual-machines-manage-availability/
 
 **Connettività:**
  - ExpressRoute e VPN di Azure: http://azure.microsoft.com/blog/2014/06/10/expressroute-or-virtual-network-vpn-whats-right-for-me/

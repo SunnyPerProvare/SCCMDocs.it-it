@@ -2,24 +2,19 @@
 title: Configurare gli avvisi di Endpoint Protection
 titleSuffix: Configuration Manager
 description: Informazioni su come configurare gli avvisi di Endpoint Protection in System Center Configuration Manager.
-ms.custom: na
 ms.date: 03/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: f504de3e-4caf-455c-80d7-a63f13f4c5d9
-caps.latest.revision: "21"
-author: NathBarn
-ms.author: nathbarn
-manager: angrobe
-ms.openlocfilehash: 91df245565cfe99f79a18618d62c00f0cea579d2
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 275ce06520174adf10100b77a8034620b072c93f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 #  <a name="configure-alerts-for-endpoint-protection-in-configuration-manager"></a>Configurare gli avvisi di Endpoint Protection in Configuration Manager
 
@@ -43,12 +38,12 @@ ms.lasthandoff: 10/12/2017
     > [!NOTE]
     >  Non è possibile configurare avvisi per raccolte di utenti.
 
-4.  Nella scheda **Avvisi** della finestra di dialogo **Proprietà***<Nome raccolta\>* selezionare **Visualizza questa raccolta nel dashboard di Endpoint Protection** se si vogliono visualizzare i dettagli sulle operazioni antimalware per questa raccolta nell'area di lavoro **Monitoraggio** della console di Configuration Manager console.
+4.  Nella scheda **Avvisi** della finestra di dialogo ***Proprietà**<Nome raccolta\>* selezionare **Visualizza questa raccolta nel dashboard di Endpoint Protection** se si vogliono visualizzare i dettagli sulle operazioni antimalware per la raccolta nell'area di lavoro **Monitoraggio** della console di Configuration Manager.
 
     > [!NOTE]
     >  Questa opzione non è disponibile per la raccolta **Tutti i sistemi** .
 
-5.  Nella scheda **Avvisi** della finestra di dialogo **Proprietà***<Nome raccolta\>* fare clic su **Aggiungi**.
+5.  Nella scheda **Avvisi** della finestra di dialogo ***Proprietà* *<Nome raccolta\>* fare clic su **Aggiungi**.
 
 6.  Nella sezione **Genera un avviso quando si applicano queste condizioni** della finestra di dialogo **Aggiungi avvisi nuova raccolta**, selezionare gli avvisi che devono essere generati da Configuration Manager se si verificano gli eventi di Endpoint Protection specificati e fare clic su **OK**.
 
@@ -87,7 +82,7 @@ ms.lasthandoff: 10/12/2017
 
         -   **Intervallo per rilevamento (ore)** : specificare l'intervallo di rilevamento, in ore, in cui deve essere raggiunto il numero di rilevamenti di malware. Specificare un numero compreso tra **1** e **168**.
 
-9. Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà***<Nome raccolta\>*.  
+9. Fare clic su **OK** per chiudere la finestra di dialogo ***Proprietà* *<Nome raccolta\>*.  
 
 ## <a name="alert-for-outdated-malware-client"></a>Avviso per client malware obsoleto
 

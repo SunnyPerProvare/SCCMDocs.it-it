@@ -2,24 +2,19 @@
 title: Configurare la gestione di dispositivi Windows ibrida con Microsoft Intune
 titleSuffix: Configuration Manager
 description: Impostare la gestione dei dispositivi Windows con System Center Configuration Manager e Microsoft Intune.
-ms.custom: na
 ms.date: 03/17/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: dc1f70f5-64ab-42ab-aa91-d3858803e12f
-caps.latest.revision: "9"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 95808d4fd743d5cc18cacb69bb38bc729acdda25
-ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 1e45cae03754fcfa3a310bf59e8e3280d5088518
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/02/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="set-up-windows-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurare la gestione di dispositivi ibridi Windows con System Center Configuration Manager e Microsoft Intune
 
@@ -69,7 +64,7 @@ Con la registrazione automatica è possibile registrare PC Windows 10 e disposit
 
 ### <a name="configure-automatic-mdm-enrollment"></a>Configurare la registrazione automatica MDM
 
-1. Accedere al [portale di gestione di Azure](https://portal.azure.com) (https://manage.windowsazure.com) e selezionare **Azure Active Directory**.
+1. Accedere al [portale di gestione di Azure](https://portal.azure.com), https://manage.windowsazure.com), e selezionare **Azure Active Directory**.
 
   ![Schermata del portale di Azure](../media/auto-enroll-azure-main.png)
 

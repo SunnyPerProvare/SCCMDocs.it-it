@@ -2,26 +2,19 @@
 title: Variabili predefinite della sequenza di attività
 titleSuffix: Configuration Manager
 description: Le variabili predefinite della sequenza di attività offrono informazioni sull'ambiente in cui è in esecuzione la sequenza di attività. Sono disponibili nel corso dell'intera sequenza di attività.
-ms.custom: na
 ms.date: 04/18/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-osd
+ms.topic: conceptual
 ms.assetid: 02bc6bd4-ca53-4e22-8b80-d8ee5fe72567
-caps.latest.revision: 15
-caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fe26982195e7cae639cc457dbba31e3dbd45b6d3
-ms.sourcegitcommit: e23350fe65ff99228274e465b24b5e163769f38f
+ms.openlocfilehash: d3ea1b35c5f220155cecafddaf3a2ff1acf5ed53
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="task-sequence-built-in-variables-in-system-center-configuration-manager"></a>Variabili predefinite della sequenza di attività in System Center Configuration Manager
 
@@ -78,7 +71,7 @@ ms.lasthandoff: 04/20/2018
 |SMSTSDriverReceiveTimeOut|Numero di secondi prima del timeout della connessione al server.|
 |SMSTSErrorDialogTimeout|Quando si verifica un errore nella sequenza di attività, viene visualizzata una finestra di dialogo con l'errore. La sequenza di attività la ignora automaticamente dopo il numero di secondi specificato da questa variabile. Per impostazione predefinita, questo valore è pari a **900** secondi (15 minuti).|  
 | TSDisableProgressUI | <!-- 1354291 --> A partire da Configuration Manager versione 1706 usare questa variabile per determinare se lo stato della sequenza di attività viene visualizzato agli utenti finali. Per nascondere o visualizzare lo stato in momenti diversi, impostare questa variabile più volte in una sequenza di attività. Per nascondere lo stato della sequenza di attività impostare il valore di questa variabile su **True**. Per visualizzare lo stato della sequenza di attività impostare il valore di questa variabile su **False**. | 
-| SMSTSDisableStatusRetry | <!--512358--> Negli scenari disconnessi il motore di esecuzione della sequenza di attività prova ripetutamente a inviare messaggi di stato al punto di gestione. Questo comportamento in questo scenario causa ritardi nell'elaborazione della sequenza di attività. A partire da Configuration Manager versione 1802, impostare questa variabile su **True** per evitare che il motore di esecuzione della sequenza di attività provi a mandare di nuovo i messaggi di stato dopo il primo errore. Questo comportamento persiste fino al riavvio successivo o finché il valore di questa variabile non viene impostato su **False**. NOTA: la [creazione di report sullo stato della sequenza di attività](/sccm/core/servers/manage/list-of-reports#task-sequence---deployment-status) si basa su questi messaggi di stato per la visualizzazione dell'avanzamento, della cronologia e dei dettagli di ogni passaggio. | 
+| SMSTSDisableStatusRetry | <!--512358--> Negli scenari disconnessi il motore di esecuzione della sequenza di attività prova ripetutamente a inviare messaggi di stato al punto di gestione. Questo comportamento in questo scenario causa ritardi nell'elaborazione della sequenza di attività. A partire da Configuration Manager versione 1802, impostare questa variabile su **True** per evitare che il motore di esecuzione della sequenza di attività provi a mandare di nuovo i messaggi di stato dopo il primo errore. Il primo tentativo include diversi tentativi.<br/><br/>Quando la sequenza di attività viene riavviata, il valore della variabile viene mantenuto. Tuttavia, la sequenza di attività tenta di inviare un messaggio di stato iniziale. Il primo tentativo include diversi tentativi. Se l'operazione riesce, la sequenza di attività continua a inviare lo stato indipendentemente dal valore della variabile. Se l'invio dello stato non riesce, la sequenza di attività usa il valore della variabile.<br/><br/>NOTA: la [creazione di report sullo stato della sequenza di attività](/sccm/core/servers/manage/list-of-reports#task-sequence---deployment-status) si basa su questi messaggi di stato per la visualizzazione dell'avanzamento, della cronologia e dei dettagli di ogni passaggio. | 
 |SMSTSLanguageFolder|usare questa variabile per modificare la lingua di visualizzazione di un'immagine di avvio indipendente dalla lingua.|  
 |SMSTSLocalDataDrive|Specifica la posizione del computer di destinazione in cui vengono archiviati i file temporanei durante l'esecuzione della sequenza di attività.<br /><br /> Questa variabile deve essere impostata prima dell'inizio della sequenza di attività, ad esempio impostando una variabile raccolta. Dopo aver avviato la sequenza di attività, Configuration Manager definisce la variabile _SMSTSMDataPath.|  
 |SMSTSMP|Usare questa variabile per specificare l'URL o l'indirizzo IP del punto di gestione di Configuration Manager.|  

@@ -2,24 +2,19 @@
 title: Domande frequenti relative al client Endpoint Protection
 titleSuffix: Configuration Manager
 description: Risposte alle domande frequenti su Windows Defender e su Endpoint Protection.
-ms.custom: na
 ms.date: 12/09/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: e3aaa9d2-a40e-42b1-ad75-5a115351729e
-caps.latest.revision: "15"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 2656a5c40dbd2916ef36268936a4e2163ebde14d
-ms.sourcegitcommit: 372171a5cd8d143d6d47b651018cda0c91cad67c
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 7e86c8196cf2ff2473b066fccf741c2df20cd8f9
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="endpoint-protection-client-frequently-asked-questions"></a>Domande frequenti relative al client Endpoint Protection
 
@@ -158,7 +153,7 @@ Per rimuovere facilmente e velocemente tutti gli elementi indesiderati o potenzi
 
 -   Assicurarsi che il software antivirus e antispyware, Windows Defender, usi gli aggiornamenti più recenti dalle potenziali minacce (vedere Come mantenere aggiornate le definizioni di virus e spyware). Assicurarsi inoltre di usare sempre la versione più recente di Windows Defender.  
 
--   Scaricare aggiornamenti solo da fonti attendibili. Per i sistemi operativi Windows, usare sempre [Microsoft Update](http://go.microsoft.com/fwlink/?LinkID=96304) (http://go.microsoft.com/fwlink/?LinkID=96304) e per altri prodotti software usare sempre i siti Web legittimi dell'azienda o dell'utente che produce l'applicazione.  
+-   Scaricare aggiornamenti solo da fonti attendibili. Per i sistemi operativi Windows, usare sempre [Microsoft Update](http://go.microsoft.com/fwlink/?LinkID=96304) (http://go.microsoft.com/fwlink/?LinkID=96304) e per altri prodotti software usare sempre i siti Web legittimi dell'azienda o della persona che produce l'applicazione.  
 
 -   Se si riceve un messaggio di posta elettronica con un allegato e non si è certi dell'origine, è opportuno eliminarlo immediatamente. Non scaricare applicazioni o file eseguibili da origini sconosciute e prestare attenzione nello scambio di file con altri utenti.  
 

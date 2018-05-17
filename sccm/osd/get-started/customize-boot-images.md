@@ -2,25 +2,19 @@
 title: 'Personalizzare le immagini di avvio '
 titleSuffix: Configuration Manager
 description: Informazioni su diversi modi di usare Configuration Manager o lo strumento da riga di comando Gestione e manutenzione immagini distribuzione (DISM) per personalizzare un'immagine d'avvio.
-ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 9cbfc406-d009-446d-8fee-4938de48c919
-caps.latest.revision: "15"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 184768e87406051508c8dcacfa63db5ff85c3732
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 3532e6db7b4ece1676c9b9f41f9336274ac3d117
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="customize-boot-images-with-system-center-configuration-manager"></a>Personalizzare le immagini d'avvio con System Center Configuration Manager
 
@@ -141,7 +135,7 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 
     4.  Nella pagina **Origine dati** specificare le seguenti opzioni e quindi fare clic su **Avanti**.  
 
-        -   Nella casella **Percorso** , specificare il percorso all'immagine di avvio aggiornata. Il percorso specificato deve essere un percorso di rete valido in formato UNC. Ad esempio:  **\\\\<***nomeserver***>\\<***condivisione WinPEWAIK***>\winpe.wim**.  
+        -   Nella casella **Percorso** , specificare il percorso all'immagine di avvio aggiornata. Il percorso specificato deve essere un percorso di rete valido in formato UNC. Ad esempio: **\\\\<***nomeserver***>\\<***condivisione WinPEWAIK***>\winpe.wim**.  
 
         -   Selezionare l'immagine di avvio dall'elenco a discesa **Immagine di avvio** . Se il file WIM contiene più immagini di avvio, viene elencata ogni immagine.  
 
@@ -257,7 +251,7 @@ Ogni versione di Configuration Manager supporta una versione specifica di Window
 
     4.  Nella pagina **Origine dati** specificare le seguenti opzioni e quindi fare clic su **Avanti**.  
 
-        -   Nella casella **Percorso** , specificare il percorso all'immagine di avvio aggiornata. Il percorso specificato deve essere un percorso di rete valido in formato UNC. Ad esempio:  **\\\\<***nomeserver***>\\<***condivisione WinPEWAIK***>\winpe.wim**.  
+        -   Nella casella **Percorso** , specificare il percorso all'immagine di avvio aggiornata. Il percorso specificato deve essere un percorso di rete valido in formato UNC. Ad esempio: **\\\\<***nomeserver***>\\<***condivisione WinPEWAIK***>\winpe.wim**.  
 
         -   Selezionare l'immagine di avvio dall'elenco a discesa **Immagine di avvio** . Se il file WIM contiene più immagini di avvio, viene elencata ogni immagine.  
 

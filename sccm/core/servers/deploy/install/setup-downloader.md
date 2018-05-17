@@ -2,25 +2,19 @@
 title: Downloader di installazione
 titleSuffix: Configuration Manager
 description: Leggere le informazioni su questa applicazione autonoma progettata per assicurare che l'installazione del sito usi le versioni correnti dei file di installazione principali.
-ms.custom: na
 ms.date: 3/1/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: bda87fc5-2e4c-4992-98a4-01770365038c
-caps.latest.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: dec591ac845b6c54421197099e56d7a4a86783ae
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: f8948556ebee069e4ea1c8bf16302ef92fe7b3c1
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="setup-downloader-for-system-center-configuration-manager"></a>Downloader di installazione per System Center Configuration Manager
 
@@ -56,7 +50,7 @@ Sono disponibili due opzioni per l'esecuzione del downloader di installazione:
 
 ## <a name="run-setup-downloader-from-a-command-prompt"></a>Eseguire il Downloader di installazione da un prompt dei comandi  
 
-1.  In una finestra del prompt dei comandi, passare a **&lt;*Supporti di installazione di Configuration Manager*\>\SMSSETUP\BIN\X64**.   
+1.  In una finestra del prompt dei comandi passare a **&lt;*Supporti di installazione di Configuration Manager*\>\SMSSETUP\BIN\X64**.   
 
 2.  Eseguire **Setupdl.exe** per aprire il downloader di installazione.
 

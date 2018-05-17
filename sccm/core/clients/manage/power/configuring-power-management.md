@@ -2,25 +2,19 @@
 title: Configurazione del risparmio energia
 titleSuffix: Configuration Manager
 description: Configurare il risparmio energia in System Center Configuration Manager.
-ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 435c923c-ea30-4dce-8afd-48962ed85502
-caps.latest.revision: "5"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: ed6aa0ce35d93837ac133cccedb44dedaa4a9602
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: ceb8c07c111818136db7c3815eee58cc87ae75c8
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configuring-power-management-in-system-center-configuration-manager"></a>Configurazione del risparmio energia in System Center Configuration Manager
 
@@ -29,7 +23,7 @@ ms.lasthandoff: 10/12/2017
 Prima di poter usare il risparmio energia in System Center Configuration Manager, è necessario eseguire i passaggi di configurazione seguenti.  
 
 ## <a name="enable-and-configure-power-management-client-settings"></a>Abilitare e configurare le impostazioni client di risparmio energia.  
- Questa procedura consente di configurare le impostazioni client predefinite per il risparmio energia e di applicarle a tutti i computer nella gerarchia. Per applicare queste impostazioni solo ad alcuni computer, creare un'impostazione client di dispositivo personalizzata e assegnarla a una raccolta contenente i computer in cui si vuole usare la funzionalità di risparmio energia. Per altre informazioni su come creare impostazioni di dispositivo personalizzate, vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md).  
+ Questa procedura consente di configurare le impostazioni client predefinite per il risparmio energia e di applicarle a tutti i computer nella gerarchia. Per applicare queste impostazioni solo ad alcuni computer, creare un'impostazione client di dispositivo personalizzata e assegnarla a una raccolta contenente i computer in cui si vuole usare la funzionalità di risparmio energia. Per altre informazioni su come creare impostazioni dispositivo personalizzate, vedere [How to configure client settings in System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md) (Come configurare le impostazioni client in System Center Configuration Manager).  
 
 #### <a name="to-enable-power-management-and-configure-client-settings"></a>Per abilitare le impostazioni client di risparmio energia  
 
@@ -51,7 +45,7 @@ Prima di poter usare il risparmio energia in System Center Configuration Manager
 
 8.  Fare clic su **OK** per chiudere la finestra di dialogo **Impostazioni client predefinite** .  
 
- I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero criteri per un singolo client, vedere [How to manage clients in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
+ I computer client verranno configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero criteri per un singolo client, vedere [Come gestire i client in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
 
 ## <a name="exclude-computers-from-power-management"></a>Escludere computer dal risparmio energia  
  È possibile evitare che raccolte di computer specifiche ricevano impostazioni di risparmio energia. Se un computer è membro di una raccolta esclusa dalle impostazioni di risparmio energia, a questo computer le impostazioni di risparmio energia non vengono applicate, neanche se il computer è membro di un'altra raccolta che applica impostazioni di risparmio energia.  
@@ -82,6 +76,6 @@ Prima di poter usare il risparmio energia in System Center Configuration Manager
 
 3.  Nell'elenco **Raccolte dispositivi** selezionare la raccolta che si vuole escludere dal risparmio energia e quindi nel gruppo **Proprietà** della scheda **Home** fare clic su **Proprietà**.  
 
-4.  Nella scheda **Risparmio energia** della finestra di dialogo **Proprietà** *<nome raccolta\>* selezionare **Non applicare mai le impostazioni di risparmio energia ai computer di questa raccolta**.  
+4.  Nella scheda **Risparmio energia** della finestra di dialogo ***Proprietà* *<Nome raccolta\>* selezionare **Non applicare mai le impostazioni di risparmio energia ai computer di questa raccolta**.  
 
-5.  Fare clic su **OK** per chiudere la finestra di dialogo *Proprietà\>***<nome raccolta** e salvare le impostazioni.  
+5.  Fare clic su **OK** per chiudere la finestra di dialogo ***Proprietà* *<Nome raccolta\>* e salvare le impostazioni.  

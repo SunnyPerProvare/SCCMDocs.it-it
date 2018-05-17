@@ -2,26 +2,20 @@
 title: Certificati e sicurezza
 titleSuffix: Configuration Manager
 description: Gestire certificati e sicurezza per System Center Updates Publisher
-ms.custom: na
 ms.date: 4/29/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-sum
+ms.topic: conceptual
 ms.assetid: a7f91e63-4750-402e-9970-dd14be7f76a3
-caps.latest.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
 robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 9d8812da3588b60f388288cef6f9a093731d873f
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: b3ce22747cddc1371fb38718cc97b70cda8afcb1
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-certificates-and-security-for-updates-publisher"></a>Gestire certificati e sicurezza per Updates Publisher
 
@@ -41,7 +35,7 @@ La procedura seguente è uno dei diversi metodi possibili per aggiungere il cert
 
 3.  Selezionare **Another computer** (Altro computer), digitare il nome del server di aggiornamento o fare clic su **Sfoglia** per trovare il server di aggiornamento, fare clic su **Fine**, **Chiudi** e quindi fare clic su **OK**.
 
-4.  Espandere **Certificati (*aggiornare nome server*)**, espandere **WSUS** e quindi fare clic su **Certificati**.
+4.  Espandere **Certificati (*nome server di aggiornamento*)**, espandere **WSUS** e quindi fare clic su **Certificati**.
 
 5.  Nel riquadro dei risultati fare clic sul certificato desiderato, fare clic su **All Tasks** (Tutte le attività) e quindi fare clic su **Esporta**.
 
@@ -51,7 +45,7 @@ La procedura seguente è uno dei diversi metodi possibili per aggiungere il cert
 
 8.  Se viene usato un certificato autofirmato, ad esempio **Autori WSUS autofirmato**, fare clic con il pulsante destro del mouse su **Autorità di certificazione radice attendibili**, su **All Tasks** (Tutte le attività) e quindi fare clic su **Importa**. Completare l'Esportazione guidata certificati usando il file esportato al Passaggio 6.
 
-9.  Fare clic con il pulsante destro del mouse su **Certificati (*aggiornare nome server*)**, fare clic su **Connetti a un altro computer**, immettere il nome del computer per Updates Publisher e quindi fare clic su **OK**.
+9.  Fare clic con il pulsante destro del mouse su **Certificati (*nome server di aggiornamento*)**, fare clic su **Connetti a un altro computer**, immettere il nome del computer per Updates Publisher e quindi fare clic su **OK**.
 
 10. Se Updates Publisher è remoto rispetto al server di aggiornamento, ripetere i passaggi da 7 a 9 per importare il certificato nell'archivio certificati nel computer di Updates Publisher.
 
@@ -71,7 +65,7 @@ Di seguito è riportato un esempio di come configurare il certificato di firma n
 
 3.  Selezionare **Another computer** (Altro computer), digitare il nome del server di aggiornamento o fare clic su **Sfoglia** per trovare il server di aggiornamento, fare clic su **Fine**, **Chiudi** e quindi fare clic su **OK**.
 
-4.  Espandere **Certificati (*aggiornare nome server*)**, espandere **WSUS** e quindi fare clic su **Certificati**.
+4.  Espandere **Certificati (*nome server di aggiornamento*)**, espandere **WSUS** e quindi fare clic su **Certificati**.
 
 5.  Fare clic con il pulsante destro del mouse nel riquadro dei risultati, fare clic su **All Tasks** (Tutte le attività) e quindi fare clic su **Esporta**. Completare l'**Esportazione guidata certificati** usando le impostazioni predefinite per creare un certificato di esportazione con il nome e il percorso specificati nella procedura guidata.
 
@@ -82,7 +76,7 @@ Di seguito è riportato un esempio di come configurare il certificato di firma n
     -   Per i certificati emessi dall'autorità di certificazione: aggiungere il certificato all'archivio certificati **Autori attendibili**.
 
     > [!NOTE]
-    > L'agente di Windows Update verifica se l'impostazione di Criteri di gruppo **Allow signed content from intranet Microsoft update service location** (Consenti contenuto firmato dal percorso del servizio di aggiornamento Microsoft nella rete Intranet) è abilitata nel computer locale. È necessario abilitare questa impostazione dei criteri per l'agente di Windows Update affinché venga eseguita la scansione degli aggiornamenti che sono stati creati e pubblicati con Updates Publisher. Per altre informazioni sull'abilitazione di questa impostazione di Criteri di gruppo, vedere How to Configure the Group Policy on Client Computers (Come configurare Criteri di gruppo nei computer client)(https://technet.microsoft.com/library/bb530967.aspx(d=robot).
+    > L'agente di Windows Update verifica se l'impostazione di Criteri di gruppo **Allow signed content from intranet Microsoft update service location** (Consenti contenuto firmato dal percorso del servizio di aggiornamento Microsoft nella rete Intranet) è abilitata nel computer locale. È necessario abilitare questa impostazione dei criteri per l'agente di Windows Update affinché venga eseguita la scansione degli aggiornamenti che sono stati creati e pubblicati con Updates Publisher. Per altre informazioni sull'abilitazione di questa impostazione di Criteri di gruppo, vedere [Come configurare Criteri di gruppo sui computer client] (https://technet.microsoft.com/library/bb530967.aspx(d=robot).
 
 
 
