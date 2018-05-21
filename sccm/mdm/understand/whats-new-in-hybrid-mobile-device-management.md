@@ -2,7 +2,7 @@
 title: Novità nella gestione di dispositivi mobili ibrida
 titleSuffix: Configuration Manager
 description: Informazioni sulle nuove funzionalità di gestione dei dispositivi mobili disponibili per le distribuzioni ibride con Configuration Manager e Intune.
-ms.date: 05/01/2018
+ms.date: 05/09/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,11 +10,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3105f9597d1f3971d6ef1092a33b0077118a1a22
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 72aeff7874456c3866ccb658395b8706057bdfaf
+ms.sourcegitcommit: 7bec1331c4f3096e6a278ff9ea0e929cff0a9cb9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con Configuration Manager e Microsoft Intune
 
@@ -41,6 +41,13 @@ Ogni sezione di questo articolo elenca le funzionalità ibride in tre categorie 
 
 ## <a name="may-2018"></a>Maggio 2018
 
+### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
+
+#### <a name="requesting-help-in-the-company-portal-for-windows-10"></a>Richiesta di assistenza in Portale aziendale per Windows 10 
+<!--1874137-->
+Portale aziendale per Windows 10 ora invia i log dell'app direttamente a Microsoft quando l'utente avvia il flusso di lavoro di richiesta di assistenza per risolvere un problema. Questo comportamento rende più semplice la risoluzione dei problemi segnalati a Microsoft.  
+
+
 ### <a name="new-in-configuration-manager-current-branch"></a>Novità di Configuration Manager (Current Branch)
 
 #### <a name="support-for-new-versions-of-cisco-anyconnect-client-for-ios"></a>Supporto per nuove versioni del client Cisco AnyConnect per iOS
@@ -58,6 +65,9 @@ Per altre informazioni sull'abilitazione di questa funzionalità, vedere [Funzio
 
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
 
+#### <a name="intune-adapts-to-fluent-design-system-in-the-company-portal-app-for-windows-10"></a>Intune si adatta a Fluent Design System nell'app Portale aziendale per Windows 10 
+<!--1195010-->
+L'app Portale aziendale Intune per Windows 10 è stata aggiornata con la [visualizzazione della navigazione di Fluent Design System](/windows/uwp/design/basics/navigation-basics). A lato dell'app si noti un elenco verticale statico di tutte le pagine di primo livello. Fare clic su un collegamento per visualizzare rapidamente tutte le pagine e passare da una all'altra. Questo è il primo di molti aggiornamenti che saranno resi disponibili come parte del continuo impegno per creare un'esperienza più adattiva, empatica e familiare in Intune. Per visualizzare l'aspetto aggiornato, vedere [Novità dell'interfaccia utente dell'app](/intune/whats-new-app-ui).
 
 #### <a name="improved-device-tiles-in-the-windows-10-company-portal"></a>Riquadri di dispositivo migliorati nel Portale aziendale di Windows 10
 <!--2213364-->
@@ -112,6 +122,35 @@ Per visualizzare l'aspetto aggiornato, vedere le [novità dell'interfaccia utent
 ## <a name="march-2018"></a>Marzo 2018
 
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
+
+#### <a name="windows-company-portal-send-feedback-option-may-no-longer-work"></a>L'opzione Invia commenti e suggerimenti del Portale aziendale di Windows potrebbe non funzionare più
+<!--2070166-->
+L'app Portale aziendale di Windows include l'opzione "Invia commenti e suggerimenti" che consente agli utenti di inviare a Microsoft commenti e suggerimenti sull'app. Dal 30 aprile 2018, questa opzione continua a essere supportata solo nell'app Portale aziendale di Windows 10 in esecuzione in Windows 10 versione 1607 e successive.   
+
+**Quali sono le conseguenze di questa modifica?**
+
+Se l'app Portale aziendale di Windows non è installata per gli utenti finali, ignorare questo messaggio.
+
+Se gli utenti finali usano l'app Portale aziendale, si noti che a partire dal 30 aprile il pulsante "Invia commenti e suggerimenti" non funzionerà più per l'app negli scenari seguenti:  
+
+ - App Portale aziendale di Windows 10 in Windows 10 versioni 1507 e 1511  
+
+ - App Portale aziendale di Windows Phone 8.1  
+
+Per i dispositivi interessati, l'opzione "Invia commenti e suggerimenti" non funziona al primo tentativo né a quelli successivi. Per inviare commenti e suggerimenti a Microsoft relativi alle esperienze in queste piattaforme, sono disponibili i canali alternativi elencati di seguito.
+
+**Operazioni di preparazione alla modifica**
+
+Informare di questa modifica gli utenti finali e aggiornare eventuali materiali sussidiari, se necessario. 
+
+Informare gli utenti finali che usano il Portale aziendale in Windows Phone 8.1, Windows 10 versione 1507 e Windows 10 versione 1511 della disponibilità di due canali alternativi. Gli utenti possono:  
+
+- Usare l'app Hub di Feedback in Windows 10  
+- Inviare un messaggio di posta elettronica a WinCPfeedback@microsoft.com  
+
+Chiedere agli utenti finali che usano Windows 10 versione 1607 o successiva di eseguire l'aggiornamento alla versione più recente del Portale aziendale di Windows disponibile in Microsoft Store.
+
+
 
 #### <a name="azure-active-directory-web-sites-can-require-the-intune-managed-browser-app-and-support-single-sign-on-for-the-managed-browser-public-preview"></a>I siti Web di Azure Active Directory possono richiedere l'app Intune Managed Browser e supportano il Single Sign-On per Managed Browser (anteprima pubblica)
 <!-- 710595 --> 
@@ -531,35 +570,6 @@ Nella versione 1702 di Configuration Manager (Current Branch) sono disponibili a
 
 
 ## <a name="notices"></a>Notifiche
-
-### <a name="windows-company-portal-send-feedback-option-may-no-longer-work"></a>L'opzione Invia commenti e suggerimenti del Portale aziendale di Windows potrebbe non funzionare più
-
-L'app Portale aziendale di Windows include l'opzione "Invia commenti e suggerimenti" che consente agli utenti di inviare a Microsoft commenti e suggerimenti sull'app. Dal 30 aprile 2018, questa opzione continua a essere supportata solo nell'app Portale aziendale di Windows 10 in esecuzione in Windows 10 versione 1607 e successive.   
-
-#### <a name="how-does-this-affect-me"></a>Quali sono le conseguenze di questa modifica?
-
-Se l'app Portale aziendale di Windows non è installata per gli utenti finali, ignorare questo messaggio.
-
-Se gli utenti finali usano l'app Portale aziendale, si noti che a partire dal 30 aprile il pulsante "Invia commenti e suggerimenti" non funzionerà più per l'app negli scenari seguenti:  
-
- - App Portale aziendale di Windows 10 in Windows 10 versioni 1507 e 1511  
-
- - App Portale aziendale di Windows Phone 8.1  
-
-Per i dispositivi interessati, l'opzione "Invia commenti e suggerimenti" non funziona al primo tentativo né a quelli successivi. Per inviare commenti e suggerimenti a Microsoft relativi alle esperienze in queste piattaforme, sono disponibili i canali alternativi elencati di seguito.
-
-#### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Operazioni di preparazione alla modifica
-
-Informare di questa modifica gli utenti finali e aggiornare eventuali materiali sussidiari, se necessario. 
-
-Informare gli utenti finali che usano il Portale aziendale in Windows Phone 8.1, Windows 10 versione 1507 e Windows 10 versione 1511 della disponibilità di due canali alternativi. Gli utenti possono:  
-
-- Usare l'app Hub di Feedback in Windows 10  
-- Inviare un messaggio di posta elettronica a WinCPfeedback@microsoft.com  
-
-Chiedere agli utenti finali che usano Windows 10 versione 1607 o successiva di eseguire l'aggiornamento alla versione più recente del Portale aziendale di Windows disponibile in Microsoft Store.
-
-
 
 ### <a name="company-portal-for-windows-81-and-windows-phone-81-moving-to-sustaining-mode"></a>Passaggio dell'app Portale aziendale per Windows 8.1 e Windows Phone 8.1 alla modalità di solo supporto 
 <!--1428681-->
