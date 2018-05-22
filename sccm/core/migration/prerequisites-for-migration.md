@@ -2,7 +2,7 @@
 title: Prerequisiti per la migrazione
 titleSuffix: Configuration Manager
 description: Individuare le versioni supportate di Configuration Manager, le lingue del sito di origine supportate e le configurazioni necessarie per la migrazione.
-ms.date: 3/7/2017
+ms.date: 5/7/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,11 +10,11 @@ ms.assetid: ec976930-7467-4d3c-b33c-991bf408a74a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fde02837f281a6db182d3144d2009e6b56f0dc69
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: da35641b7e00bfdae025d2978beaa541951487da
+ms.sourcegitcommit: 7198ec49d9ce68c6d55bfb9e2d537b5442a132cb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="prerequisites-for-migration-in-system-center-configuration-manager"></a>Prerequisiti per la migrazione in System Center Configuration Manager
 
