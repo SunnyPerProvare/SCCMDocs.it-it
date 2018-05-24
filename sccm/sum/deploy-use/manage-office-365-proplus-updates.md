@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
-ms.openlocfilehash: a7c1786e9acce10d98da031d9d5df3b81f9a1a28
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a94ac00b8fce6098cbd829947f4e2fbdcb761b9e
+ms.sourcegitcommit: c5e078b8eee87f527e5b5a0c2eb687bb9d6896c5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Gestire Office 365 ProPlus con Configuration Manager
 
@@ -96,7 +96,7 @@ Dopo la creazione e la distribuzione di applicazioni di Office 365 mediante il p
 
 
 ## <a name="deploy-office-365-updates"></a>Distribuire aggiornamenti di Office 365
-A partire da Configuration Manager versione 1706, gli aggiornamenti del client di Office 365 sono stati spostati nel nodo **Gestione client di Office 365** >**Aggiornamenti di Office 365**.  Lo spostamento non avrà impatto sulla configurazione delle regole di distribuzione automatica. 
+A partire da Configuration Manager versione 1706, gli aggiornamenti del client di Office 365 sono stati spostati nel nodo **Gestione client di Office 365** >**Aggiornamenti di Office 365**. Questo spostamento non avrà effetti sulla configurazione delle regole di distribuzione automatica corrente. 
 
 Eseguire i passaggi seguenti per distribuire gli aggiornamenti di Office 365 con Configuration Manager:
 
