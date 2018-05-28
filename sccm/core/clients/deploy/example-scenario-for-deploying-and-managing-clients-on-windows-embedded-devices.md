@@ -79,7 +79,7 @@ Coho Vineyard & Winery sta per aprire un centro visite e deve installare dei chi
 
      Questi dispositivi sono associati a un dominio di Active Directory. Jane non deve pertanto approvarli manualmente come client attendibili, ma ne conferma l'approvazione dalla console di Configuration Manager.  
 
-     Per altre informazioni, vedere [How to manage clients in System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
+     Per altre informazioni, vedere [Come gestire i client in System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
 
 8.  Per installare il software per le presentazioni interattive, Jane esegue la **Distribuzione guidata del software** e configura un'applicazione richiesta. Nella pagina **Esperienza utente** della procedura guidata, nella sezione **Gestione filtri di scrittura per dispositivi con Windows Embedded** , accetta l'opzione predefinita che seleziona **Invia modifiche alla scadenza o in una finestra di manutenzione (riavvio necessario)**.  
 
