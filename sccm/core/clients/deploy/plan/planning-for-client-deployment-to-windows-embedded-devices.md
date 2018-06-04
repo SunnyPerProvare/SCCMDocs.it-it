@@ -1,20 +1,27 @@
 ---
-title: Pianificazione della distribuzione dei client in dispositivi con Windows Embedded
-titleSuffix: Configuration Manager
+title: Pianificazione della distribuzione dei client in dispositivi con Windows Embedded | Microsoft Docs
 description: Pianificazione della distribuzione del client a dispositivi con Windows Embedded in System Center Configuration Manager.
+ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-client
-ms.topic: conceptual
+ms.reviewer: na
+ms.suite: na
+ms.technology:
+- configmgr-client
+ms.tgt_pltfrm: na
+ms.topic: get-started-article
 ms.assetid: 038e61f9-f49d-41d1-9a9f-87bec9e00d5d
-author: aczechowski
-ms.author: aaroncz
-manager: dougeby
-ms.openlocfilehash: 6ca987411775ec3a6fbe626d4b34f83313673f5b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+caps.latest.revision: 7
+caps.handback.revision: 0
+author: arob98
+ms.author: angrobe
+manager: angrobe
+ms.openlocfilehash: 513dcb2a224a6e60553fdc602813e9fe47116235
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 09/15/2017
+ms.locfileid: "22103605"
 ---
 # <a name="planning-for-client-deployment-to-windows-embedded-devices-in-system-center-configuration-manager"></a>Pianificazione della distribuzione del client in dispositivi con Windows Embedded in System Center Configuration Manager
 
@@ -24,7 +31,7 @@ ms.lasthandoff: 05/03/2018
 
  Se si disabilitano i filtri, prestare attenzione a non disabilitare i driver di filtro. In genere questi driver vengono eseguiti automaticamente all'avvio del computer. La disabilitazione dei driver impedisce l'installazione del client o interferisce con l'orchestrazione dei filtri di scrittura che provoca l'errore delle operazioni dei client. I servizi associati a ogni tipo di filtro di scrittura che deve rimanere in esecuzione sono:  
 
-|Tipo di filtro di scrittura|Driver|Type|Descrizione|  
+|Tipo di filtro di scrittura|Driver|Tipo|Descrizione|  
 |-----------------------|------------|----------|-----------------|  
 |EWF|ewf|Kernel|Impementa il reindirizzamento I/O a livello di settore nei volumi protetti.|  
 |FBWF|fbwf|File system|Impementa il reindirizzamento I/O a livello di file nei volumi protetti.|  
@@ -58,7 +65,7 @@ ms.lasthandoff: 05/03/2018
 >
 > **Per i dispositivi che usano solo FBWF:** configurare le eccezioni seguenti per salvare lo stato del client e i dati dell'inventario tra i riavvii del dispositivo:  
 >   
->  -   CCMINSTALLDIR\\\*.sdf  
+>  -   CCMINSTALLDIR\\*.sdf  
 > -   CCMINSTALLDIR\ServiceData  
 > -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\CCM\StateSystem  
 >   
