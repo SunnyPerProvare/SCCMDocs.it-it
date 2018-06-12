@@ -10,11 +10,12 @@ ms.assetid: 495b87ae-41a4-49ba-abe2-d4f7d22ac0d4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8eb561d9867c6bde778ffd5fb6ef404395c359da
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a8ce492aa34fa130a11bde0d5823252a9d782960
+ms.sourcegitcommit: e35d07870656eadd29faacc378ecd091ff3bdcfb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848629"
 ---
 # <a name="licensing-and-branches-for-system-center-configuration-manager"></a>Licenze e rami per System Center Configuration Manager
 
@@ -38,9 +39,9 @@ Questo argomento fa riferimento al contratto Software Assurance, o a diritti di 
 |----------------|---------------------|--------------------|
 |Current Branch | Richiede un contratto Software Assurance attivo (o diritti equivalenti) per Configuration Manager. </br></br> Vedere [Software Assurance e Current Branch](#software-assurance-and-the-current-Branch) in questo argomento.| Supportato per l'uso in ambienti di produzione per cui si vogliono ottenere regolarmente aggiornamenti qualitativi e funzionali da Microsoft. </br></br> Questo ramo consente di usare tutte le funzionalità e tutti i miglioramenti. </br></br> Per le versioni di Configuration Manager precedenti alla 1710, il supporto è per 12 mesi. A partire dalla versione 1710, ogni versione di aggiornamento continua a essere supportata per 18 mesi dalla data in cui viene resa disponibile a livello generale. Per altri dettagli, vedere [Support for System Center Configuration Manager current branch versions](/sccm/core/servers/manage/current-branch-versions-supported) (Supporto per le versioni di System Center Configuration Manager Current Branch).|
 |Long-Term Servicing Branch (LTSB)| Richiede un contratto Software Assurance corrente con Microsoft al momento del rilascio (1° ottobre 2016) </br></br> Vedere [Software Assurance e LTSB](#software-assurance-and-the-ltsb) in questo argomento. | Supportato per l'uso in ambienti di produzione. Destinato all'uso da parte di clienti che hanno lasciato scadere Software Assurance o diritti di sottoscrizione equivalenti per Configuration Manager dopo il 1° ottobre 2016. </br></br> Rispetto a Current Branch questo ramo presenta delle limitazioni. </br></br> Per questo ramo vengono resi disponibili gli aggiornamenti della sicurezza critici per Configuration Manager ma non vengono rese disponibili le nuove funzionalità. |
-|Installazione di valutazione di Current Branch| Non richiede un contratto Software Assurance con Microsoft. | Le [installazioni di valutazione](https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection) sono sempre di Current Branch e possono essere usate per 180 giorni. </br></br> L'installazione di valutazione può essere aggiornata a un'installazione completa di Current Branch. Non è possibile aggiornare un'installazione di valutazione a Long-Term Servicing Branch.|
+|Installazione di valutazione di Current Branch| Non richiede un contratto Software Assurance con Microsoft. | Le [installazioni di valutazione](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection) sono sempre di Current Branch e possono essere usate per 180 giorni. </br></br> L'installazione di valutazione può essere aggiornata a un'installazione completa di Current Branch. Non è possibile aggiornare un'installazione di valutazione a Long-Term Servicing Branch.|
 
-Oltre a Current Branch, a LTSB e all'installazione di valutazione di Current Branch, è anche disponibile una [Technical Preview di System Center Configuration Manager](https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview). Si tratta di una build di Configuration Manager limitata che consente di provare le nuove funzionalità che potrebbero essere aggiunte a Current Branch in un aggiornamento futuro. È possibile installare la Technical Preview tramite supporti diversi rispetto alle versioni con licenza. Per altre informazioni, vedere la documentazione relativa alla [Technical Preview](/sccm/core/get-started/technical-preview).
+Oltre a Current Branch, a LTSB e all'installazione di valutazione di Current Branch, è anche disponibile una [Technical Preview di System Center Configuration Manager](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview). Si tratta di una build di Configuration Manager limitata che consente di provare le nuove funzionalità che potrebbero essere aggiunte a Current Branch in un aggiornamento futuro. È possibile installare la Technical Preview tramite supporti diversi rispetto alle versioni con licenza. Per altre informazioni, vedere la documentazione relativa alla [Technical Preview](/sccm/core/get-started/technical-preview).
 
 
 ## <a name="licensed-branches"></a>Rami con licenza

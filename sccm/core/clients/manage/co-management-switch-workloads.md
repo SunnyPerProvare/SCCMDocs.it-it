@@ -10,16 +10,18 @@ manager: dougeby
 ms.date: 03/22/2018
 ms.topic: conceptual
 ms.assetid: 60e2022f-a4f9-40dd-af01-9ecb37b43878
-ms.openlocfilehash: 439e4e26c08b5a2710da0978ed2407d715bc86bd
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: ceb4004c7f4cc24ff17f0e9648cddb29cb26d898
+ms.sourcegitcommit: 493cc42f05b9388ef872e466e5a75d569642b9fc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34569647"
 ---
 # <a name="switch-configuration-manager-workloads-to-intune"></a>Passare i carichi di lavoro di Configuration Manager a Intune
 In [Preparare i dispositivi Windows 10 per la co-gestione](co-management-prepare.md) sono stati preparati i dispositivi Windows 10 a questo scopo. Tali dispositivi sono stati aggiunti ad AD e ad Azure AD, sono stati registrati in Intune e hanno il client di Configuration Manager. È probabile che vi siano ancora dispositivi Windows 10 aggiunti ad AD e che hanno il client di Configuration Manager, ma che non sono stati aggiunti ad Azure AD o registrati in Intune. Di seguito sono riportati i passaggi per abilitare la co-gestione, preparare il resto dei dispositivi Windows 10, ovvero quelli che hanno il client di Configuration Manager ma che non sono registrati in Intune, e avviare il passaggio di specifici carichi di lavoro di Configuration Manager a Intune.
 
 1. Nella console di Configuration Manager accedere a **Amministrazione** > **Panoramica** > **Servizi cloud** > **Co-management** (Co-gestione).    
+
 2. Nel gruppo Gestisci della scheda Home scegliere  **Configure co-management** (Configurazione co-gestione) per aprire la procedura guidata di configurazione della co-gestione.    
 3. Nella pagina della sottoscrizione fare clic su **Accedi**, accedere al tenant di Intune e fare clic su **Avanti**.   
 4. Nella pagina di attivazione scegliere **Pilota** o **Tutti** per abilitare la registrazione automatica in Intune e quindi fare clic su **Avanti**. Quando si sceglie **Pilota**, vengono registrati automaticamente in Intune solo i client di Configuration Manager che sono membri del gruppo pilota. Questa opzione consente di abilitare la co-gestione su un subset di client per iniziare a testarla e implementarla mediante un approccio per fasi. È possibile usare la riga di comando per distribuire il client di Configuration Manager come app in Intune per i dispositivi già registrati in Intune. Per informazioni, vedere [Dispositivi Windows 10 registrati in Intune](co-management-prepare.md#windows-10-devices-enrolled-in-intune).
@@ -55,8 +57,8 @@ Alcuni carichi di lavoro possono essere passati a Intune. L'elenco seguente verr
       - Controllo delle applicazioni di Windows Defender
       - Windows Defender Security Center
       - Windows Defender Advanced Threat Protection
-
-
+      - Windows Information Protection
+      
 
 ## <a name="monitor-co-management"></a>Monitorare la co-gestione
 Dopo aver abilitato la co-gestione, è possibile monitorare i dispositivi di co-gestione usando i metodi seguenti:
