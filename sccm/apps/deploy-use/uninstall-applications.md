@@ -10,11 +10,12 @@ ms.assetid: 0ea3edaa-27c6-4391-9896-cd97d9c5d06d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7587fa6d96d6f8737921c9e5edae992cdd0ea614
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: e5b0ee5cb677cff5e57f24a20122fb017aea056c
+ms.sourcegitcommit: 493cc42f05b9388ef872e466e5a75d569642b9fc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34569664"
 ---
 # <a name="uninstall-applications-with-system-center-configuration-manager"></a>Disinstallare le applicazioni con System Center Configuration Manager
 
@@ -41,7 +42,7 @@ Eseguire le azioni seguenti per disinstallare un'applicazione distribuita in pre
 -   Una distribuzione con lo scopo di distribuzione di **Disinstalla** non controlla le regole relative ai requisiti. Se l'applicazione è installata sul computer su cui viene eseguita la distribuzione, l'applicazione verrà rimossa.  
 
 > [!IMPORTANT]  
-> È necessario eliminare tutte le distribuzioni simulate o esistenti di un'applicazione in una raccolta prima di poter distribuire l'applicazione con un'azione di distribuzione di **Disinstalla**.  
+> Per distribuire l'applicazione con l'azione di disinstallazione, è prima necessario eliminare le distribuzioni di applicazioni esistenti, le distribuzioni simulate o le distribuzioni di sequenze di attività che includono questa applicazione. 
 
  Per altre informazioni su come creare un tipo di distribuzione, vedere [Create applications](../../apps/deploy-use/create-applications.md) (Creare applicazioni).  
 

@@ -9,11 +9,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
-ms.openlocfilehash: e62b748596aba1404d6b097e5aa0bf74266f055b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: fbae44d1344dd36d3c0a6faf2e50727dfa830ba0
+ms.sourcegitcommit: 8060ea520fb08629e1d5f249daffe825536673a5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35232371"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificati per il gateway di gestione cloud
 
@@ -41,7 +42,7 @@ Il gateway di gestione cloud crea un servizio HTTPS a cui si connettono i client
 ### <a name="cmg-trusted-root-certificate-to-clients"></a>Certificato radice trusted del gateway di gestione cloud per i client
 
 I client devono considerare attendibile il certificato di autenticazione server del gateway di gestione cloud. Esistono due metodi per confermare l'attendibilità:
-- Usare un certificato di un provider pubblico considerato attendibile a livello globale. Ad esempio, tra gli altri, VeriSign o Thawte. I client Windows includono le autorità di certificazione (CA) che rilasciano i certificati radice trusted da questi provider. Usando un certificato di autenticazione server rilasciato da uno di questi provider, i client confermano automaticamente l'attendibilità. 
+- Usare un certificato di un provider pubblico considerato attendibile a livello globale. Ad esempio, tra gli altri, DigiCert, Thawte, o VeriSign. I client Windows includono le autorità di certificazione (CA) che rilasciano i certificati radice trusted da questi provider. Usando un certificato di autenticazione server rilasciato da uno di questi provider, i client confermano automaticamente l'attendibilità. 
 - Usare un certificato rilasciato da un'autorità di certificazione globale (enterprise) dall'infrastruttura a chiave pubblica. Nella maggior parte delle implementazioni di infrastruttura a chiave pubblica di tipo Enterprise le autorità di certificazione radice attendibili vengono aggiunte ai client di Windows. Ad esempio, usando i servizi certificati Active Directory con criteri di gruppo. Se si rilascia il certificato di autenticazione server per il gateway di gestione cloud da un'autorità di certificazione che i client non considerano automaticamente attendibile, è necessario aggiungere il certificato radice trusted di tale autorità ai client basati su Internet.
     - È inoltre possibile usare i profili dei certificati di Configuration Manager per eseguire il provisioning dei certificati nei client. Per altre informazioni, vedere l'[introduzione alle raccolte](/sccm/protect/deploy-use/introduction-to-certificate-profiles).
 

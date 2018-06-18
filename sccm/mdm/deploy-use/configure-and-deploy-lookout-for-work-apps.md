@@ -2,7 +2,7 @@
 title: Distribuire app Lookout for Work
 titleSuffix: Configuration Manager
 description: Configurare e distribuire l'app Lookout for Work.
-ms.date: 03/05/2017
+ms.date: 05/31/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,11 +10,12 @@ ms.assetid: 3f62b763-4347-453d-b0a7-1f4a0d1d4105
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a812ed059bc0d96c23af986c2051416c26f6a15a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 87ad7a768128cb11a1fc361c90a6eccac454a28c
+ms.sourcegitcommit: 9cff0702c2cc0f214173b47ec241f7e5a40f84e6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34752591"
 ---
 # <a name="configure-and-deploy-lookout-for-work-apps"></a>Configurare e distribuire l'app Lookout for Work
 
@@ -22,8 +23,10 @@ ms.lasthandoff: 05/03/2018
 
 Questo articolo illustra come configurare e distribuire l'app Lookout for Work per i dispositivi Android e iOS.
 
+
+
 ## <a name="android-google-play-store-app"></a>Android (app Google Play Store)
-1.  Nella console di Configuration Manager fare clic su **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.
+1.  Nella console di Configuration Manager fare clic su **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
 
 2.  Nella pagina **Generale** della Distribuzione guidata del software specificare le seguenti informazioni:  
     - Tipo: selezionare **Pacchetto app Android in Google Play**.
@@ -33,7 +36,7 @@ Questo articolo illustra come configurare e distribuire l'app Lookout for Work p
     - Descrizione: Lookout offre la migliore protezione contro le minacce per dispositivi mobili. Dopo l'installazione, l'app Lookout protegge il dispositivo dalle minacce che, se rilevate, vengono segnalate all'utente e all'amministratore IT.
     - Categoria amministrativa: Gestione computer  
 
-    Al completamento, l'app Lookout for Work viene visualizzata nell'elenco di applicazioni.
+    Al completamento, l'app Lookout for Work viene visualizzata nell'elenco di applicazioni.  
 
 3.  Nella scheda **Home**, gruppo **Distribuzione**, scegliere **Distribuisci** per distribuire l'app Lookout for Work agli utenti.   
     >[!IMPORTANT]  
@@ -45,30 +48,35 @@ Questo articolo illustra come configurare e distribuire l'app Lookout for Work p
 
 ## <a name="ios-enterprise-signed-version-of-lookout-app"></a>iOS (versione con firma aziendale dell'app Lookout)
 
-- **Passaggio 1:** Assicurarsi che la **gestione iOS** sia configurata sul dispositivo. Per istruzioni su come configurare il dispositivo per la gestione iOS, vedere [Configurare la gestione dei dispositivi iOS e Mac](/sccm/mdm/deploy-use/enroll-hybrid-ios-mac).
+1. Assicurarsi che la gestione iOS sia configurata nel dispositivo. Per istruzioni su come configurare il dispositivo per la gestione iOS, vedere [Configurare la gestione dei dispositivi iOS e Mac](/sccm/mdm/deploy-use/enroll-hybrid-ios-mac).  
 
-- **Passaggio 2:** **Firmare nuovamente** l'app Lookout for Work per iOS. Lookout distribuisce la sua app Lookout for Work per iOS esternamente all'App Store iOS. **Prima di distribuire l'app** è necessario firmarla nuovamente con il certificato di sviluppatore aziendale iOS. Per istruzioni dettagliate su come firmare nuovamente le app Lookout for Work per iOS, vedere [Lookout for Work iOS app re-signing process](https://personal.support.lookout.com/hc/articles/114094038714) (Firmare nuovamente l'app Lookout for Work per iOS) nel sito di Lookout.
+2. Firmare di nuovo l'app Lookout for Work per iOS. Lookout distribuisce la sua app Lookout for Work per iOS esternamente all'App Store iOS. Prima di distribuire l'app è necessario firmarla nuovamente con il certificato di sviluppatore aziendale iOS. Per istruzioni dettagliate su come firmare nuovamente le app Lookout for Work per iOS, vedere [Lookout for Work iOS app re-signing process](https://personal.support.lookout.com/hc/articles/114094038714) (Firmare nuovamente l'app Lookout for Work per iOS) nel sito di Lookout.  
+
+3. Abilitare l'autenticazione Azure Active Directory (Azure AD) per gli utenti iOS.
+   1.  Accedere al [pannello di Azure AD del portale di Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) e passare alla pagina di registrazione delle app.  
+   2.  Specificare **app Lookout for Work per iOS** come Nome e selezionare **Nativa** come Tipo applicazione.  
+  ![Schermata della finestra di dialogo Aggiungi applicazione con l'opzione Applicazione client nativa](media/aad-add-app-reg.png)
+
+   3.  Per questo URI di reindirizzamento, usare il formato seguente: `lookoutwork://com.lookout.enterprise.<yourcompanyname>`, sostituendo `<yourcompanyname>` con il nome della società. Ad esempio: `lookoutwork://com.lookout.enterprise.contoso`
+   4. Fare clic su **Crea** per creare l'app. 
+   5.  Aprire la nuova app, fare clic su **Impostazioni** e aggiungere un URI di reindirizzamento aggiuntivo. Usare il formato seguente: `companyportal://code/<originalURI>`, dove `<originalURI>` è una versione con codifica URL dell'URI di reindirizzamento originale. Ad esempio: `companyportal://code/lookoutwork%3A%2F%2Fcom.lookout.enterprise.contoso`
+   6.  Nelle impostazioni dell'app passare ad **Autorizzazioni necessarie** e fare clic su **Aggiungi**. Selezionare le autorizzazioni delegate seguenti:  
+
+       | API  | Autorizzazione  |
+       |---------|---------|
+       | Lookout MTP     | Accesso a Lookout MTP         |
+       | Microsoft Graph     | Accesso e lettura del profilo utente        |  
+
+   Per altre informazioni, vedere [Configurare un'applicazione client nativa](/azure/app-service/app-service-mobile-how-to-configure-active-directory-authentication#optional-configure-a-native-client-application).  
 
 
-- **Passaggio 3:** Attivare l'autenticazione Azure Active Directory per gli utenti iOS seguendo questa procedura:
-  1.  Accedere al [portale di gestione di Azure Active Directory](https:/portal.azure.com) e passare alla pagina delle applicazioni.
-  2.  Aggiungere l'**app Lookout for Work per iOS** come **applicazione client nativa**.
-  ![Schermata della finestra di dialogo Aggiungi applicazione con l'opzione Applicazione client nativa](media/aad-add-app.png)
-
-  3. Sostituire a **com.lookout.enterprise.nomeazienda** l'ID bundle cliente selezionato alla firma dell'IPA.
-  4.  Aggiungere l'URI di reindirizzamento supplementare: **&lt;portaleazienda://code/ >** seguito da una versione con codifica URL del proprio URI di reindirizzamento originale.
-  5.  Aggiungere **Autorizzazioni delegate** all'app.
-
-  Per altre informazioni, vedere [Configurare un'applicazione client nativa](/azure/app-service/app-service-mobile-how-to-configure-active-directory-authentication#optional-configure-a-native-client-application).
+4. In Configuration Manager caricare il file con estensione ipa firmato nuovamente. Impostare la versione minima del sistema operativo su iOS 8.0 o versioni successive. Per altre informazioni, vedere [Creare applicazioni iOS](/sccm/apps/get-started/creating-ios-applications).   
 
 
-- **Passaggio 4:** Caricare il file con estensione IPA firmato di nuovo, come descritto nell'argomento [Create iOS applications with System Center Configuration Manager](/sccm/apps/get-started/creating-ios-applications) (Creare applicazioni iOS con System Center Configuration Manager). Impostare la versione minima del sistema operativo su iOS 8.0 o versioni successive.
+5. Creare criteri di configurazione delle app gestite. Per altre informazioni, vedere [Applicare le impostazioni alle app iOS con i criteri di configurazione app](/sccm/apps/deploy-use/configure-ios-apps-with-app-configuration-policies).  
 
 
-- **Passaggio 5:** Creare i criteri di configurazione app gestita, come descritto nell'argomento [Configure iOS apps with mobile app configuration policies in Microsoft Intune](/sccm/apps/deploy-use/configure-ios-apps-with-app-configuration-policies) (Configurare app iOS con criteri di configurazione app per dispositivi mobili in Microsoft Intune).
-
-
-- **Passaggio 6:** **Per distribuire l'app agli utenti**, selezionare l'app Lookout for Work nella pagina **Applicazioni**, quindi nella scheda **Home**, gruppo **Distribuzione**, scegliere **Distribuisci**.
+6. Distribuire l'app Lookout for Work agli utenti. Per altre informazioni, vedere l'argomento relativo alla [distribuzione delle applicazioni](/sccm/apps/deploy-use/deploy-applications).  
 
   Selezionare gli stessi utenti aggiunti all'opzione Enrollment Management (Gestisci registrazione) nella console di Lookout. Scegliere l'opzione **Installazione richiesta**. Questa opzione richiede l'installazione dell'app Lookout nel dispositivo dell'utente.
 
@@ -76,7 +84,7 @@ Questo articolo illustra come configurare e distribuire l'app Lookout for Work p
 
 ## <a name="what-happens-when-the-deployed-app-is-opened-on-the-device"></a>Cosa accade quando l'app distribuita viene aperta sul dispositivo
 
-Quando l'utente apre Lookout for Work nel dispositivo, viene richiesta l'attivazione dell'app. L'utente deve scegliere di accedere con l'opzione Azure Active Directory. Una procedura dettagliata con il flusso di lavoro per l'utente finale è disponibile in questi articoli:
+Quando l'utente apre Lookout for Work nel dispositivo, viene richiesta l'attivazione dell'app. L'utente deve scegliere di accedere con l'opzione Azure AD. Una procedura dettagliata con il flusso di lavoro per l'utente finale è disponibile in questi articoli:
 
 - [Viene richiesto di installare Lookout for Work nel dispositivo Android](/intune-user-help/you-are-prompted-to-install-lookout-for-work-android)
 

@@ -10,11 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 183315fe-27bd-456f-b2c5-e8d25e05229b
-ms.openlocfilehash: 3dd5a7f9717843244ab8477a09b109261618f9aa
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 07616a1c03c0383e9001418043dc6cd7ec117c1d
+ms.sourcegitcommit: 493cc42f05b9388ef872e466e5a75d569642b9fc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34703486"
 ---
 # <a name="integration-with-windows-update-for-business-in-windows-10"></a>Integrazione con Windows Update for Business in Windows 10
 
@@ -72,7 +73,8 @@ A partire da Configuration Manager versione 1706, è possibile configurare i cri
 >A partire da Configuration Manager versione 1802, è possibile impostare i criteri di differimento per Windows Insider. <!--507201-->Per altre informazioni sul programma Windows Insider, vedere [Introduzione al programma Windows Insider per le aziende](https://docs.microsoft.com/windows/deployment/update/waas-windows-insider-for-business).
 
 ### <a name="prerequisites"></a>Prerequisiti
-I dispositivi di Windows 10 gestiti da Windows Update for Business devono disporre di connettività a Internet.
+-   Windows 10 versione 1703 o successiva
+-   I dispositivi Windows 10 gestiti da Windows Update per le aziende devono disporre di connettività Internet
 
 #### <a name="to-create-a-windows-update-for-business-deferral-policy"></a>Per creare i criteri di rinvio di Windows Update for Business
 1. In **Libreria Software** > **Manutenzione pacchetti di Windows 10** > **Criteri di Windows Update for Business**

@@ -10,11 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: 3a667ae075ac688d4b49789ed88f858c2ff39397
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 9324126014245b586ba8fed87c670ac829f6cb81
+ms.sourcegitcommit: 493cc42f05b9388ef872e466e5a75d569642b9fc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34703469"
 ---
 # <a name="co-management-for-windows-10-devices"></a>Co-gestione per dispositivi Windows 10    
  Con gli aggiornamenti precedenti di Windows 10 è già possibile aggiungere un dispositivo Windows 10 ad Active Directory (AD) locale e ad Azure AD basato sul cloud allo stesso tempo (Azure AD ibrida). A partire da Configuration Manager versione 1710, la co-gestione sfrutta questo miglioramento e consente di gestire contemporaneamente i dispositivi Windows 10 versione 1709 usando sia Configuration Manager che Intune. <!-- 1350871 -->
@@ -60,7 +61,7 @@ I percorsi principali per realizzare la co-gestione sono due. Uno consiste nella
 ### <a name="enable-co-management"></a>Abilitare la co-gestione 
  Nella console di Configuration Manager accedere a **Amministrazione** > **Panoramica** > **Servizi cloud** > **Co-management** (Co-gestione). Scegliere  **Configura la co-gestione** dalla barra multifunzione per aprire **Co-management Onboarding Wizard** (Caricamento guidato della co-gestione). 
    
-1. Nella pagina **Sottoscrizione** fare clic su **Accedi**, accedere al tenant di Intune e fare clic su **Avanti**.    
+1. Nella pagina **Sottoscrizione** fare clic su **Accedi**, accedere al tenant di Intune e fare clic su **Avanti**. Assicurarsi che all'account usato per accedere al tenant sia assegnata una licenza di Intune, in caso contrario, sarà visualizzato il messaggio di errore "Utente non riconosciuto".   
 2. Nella pagina **Abilitazione** scegliere l'impostazione **Automatic enrollment into Intune** (Registrazione automatica a Intune). Copiare la riga di comando per i dispositivi già registrati in Intune, se necessario. 
 3. Nella pagina **Carichi di lavoro** per ogni carico di lavoro scegliere il gruppo di dispositivi da spostare per la gestione con Intune.
 4. Nella pagina **Staging** selezionare una raccolta di dispositivi come **raccolta pilota**. Verificare le informazioni di **riepilogo** e completare la procedura guidata. 

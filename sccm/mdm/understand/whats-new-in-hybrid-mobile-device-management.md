@@ -2,7 +2,7 @@
 title: Novità nella gestione di dispositivi mobili ibrida
 titleSuffix: Configuration Manager
 description: Informazioni sulle nuove funzionalità di gestione dei dispositivi mobili disponibili per le distribuzioni ibride con Configuration Manager e Intune.
-ms.date: 05/09/2018
+ms.date: 06/04/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,11 +10,12 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 72aeff7874456c3866ccb658395b8706057bdfaf
-ms.sourcegitcommit: 7bec1331c4f3096e6a278ff9ea0e929cff0a9cb9
+ms.openlocfilehash: 62b86310b8a7eb183cc5e759e9c1087b80a72d6b
+ms.sourcegitcommit: 032e6e19b819863e43e36b24b57761d0a173d0dc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34754574"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con Configuration Manager e Microsoft Intune
 
@@ -43,12 +44,29 @@ Ogni sezione di questo articolo elenca le funzionalità ibride in tre categorie 
 
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
 
+#### <a name="intune-app-protection-policies-and-microsoft-edge"></a>Criteri di protezione delle app di Intune e Microsoft Edge 
+<!--1818968,1818969-->
+Il browser Microsoft Edge per dispositivi mobili (iOS e Android) ora supporta criteri di protezione delle app di Microsoft Intune. Gli utenti di dispositivi iOS e Android che accedono all'applicazione Edge tramite account di Azure Active Directory aziendali sono protetti da Intune. Nei dispositivi iOS, i criteri **Richiedi un browser gestito per l'apertura del collegamento** consentono agli utenti di aprire collegamenti in Edge, se quest'ultimo è gestito.
+
 #### <a name="requesting-help-in-the-company-portal-for-windows-10"></a>Richiesta di assistenza in Portale aziendale per Windows 10 
 <!--1874137-->
 Portale aziendale per Windows 10 ora invia i log dell'app direttamente a Microsoft quando l'utente avvia il flusso di lavoro di richiesta di assistenza per risolvere un problema. Questo comportamento rende più semplice la risoluzione dei problemi segnalati a Microsoft.  
 
 
 ### <a name="new-in-configuration-manager-current-branch"></a>Novità di Configuration Manager (Current Branch)
+
+#### <a name="android-for-work-and-lookout-onboarding-moved-to-intune-on-azure"></a>Android for Work e onboarding Lookout spostati in Intune in Azure
+<!--2355022,2357366-->
+Con l'aggiornamento di Intune più recente è possibile abilitare e gestire l'integrazione di Android for Work e della protezione dalle minacce per dispositivi mobili di Lookout nei tenant di gestione di dispositivi mobili ibrida in Intune nel portale di Azure. Prima dell'aggiornamento, queste funzionalità erano configurabili solo nel portale di Intune classico (Silverlight).
+ 
+Nota: Lookout è l'unico provider di protezione dalle minacce per dispositivi mobili (MTD, Mobile Threat Defense) supportato dalla gestione ibrida. Se in precedenza è stata eseguita l'integrazione con un altro provider MTD, quest'ultimo compare comunque in Intune nel portale di Azure. Se si elimina il connettore di questo, non è possibile aggiungerlo di nuovo.
+ 
+Queste modifiche non influiscono sulle funzionalità esistenti. Continuare a usare la console di Configuration Manager per la gestione delle app correlate, per la creazione di report e per i criteri.
+ 
+Per altre informazioni, vedere gli articoli seguenti:
+- [Configurare la gestione di dispositivi Android ibrida](/sccm/mdm/deploy-use/enroll-hybrid-android)
+- [Gestire l'accesso alle risorse aziendali in base ai rischi per dispositivi, rete e applicazioni](/sccm/mdm/deploy-use/lookout-mobile-threat-defense-in-configuration-manager)
+
 
 #### <a name="support-for-new-versions-of-cisco-anyconnect-client-for-ios"></a>Supporto per nuove versioni del client Cisco AnyConnect per iOS
 <!--1357393-->
@@ -452,121 +470,8 @@ Le funzionalità seguenti erano precedentemente disponibili nelle versioni di Co
   **Problema noto**: nella Technical Preview 1706, i certificati PFX non vengono emessi per le autorità di certificazione di Microsoft. Questo problema non influenza i certificati PFX importati o i profili SCEP.
 
 - **Supporto Cisco (IPsec) per i profili VPN di MacOS**      
-  È possibile creare un profilo VPN di MacOS con Cisco (IPsec) come tipo di connessione. Per altre informazioni, vedere [Creare i profili VPN](/sccm/mdm/deploy-use/create-vpn-profiles#create-vpn-profiles).
+  È possibile creare un profilo VPN di MacOS con Cisco (IPsec) come tipo di connessione. Per altre informazioni, vedere [Creare profili VPN](/sccm/mdm/deploy-use/create-vpn-profiles#create-vpn-profiles).
   <!-- 1321367 -->
-
-
-## <a name="april-2017"></a>Aprile 2017
-
-### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
-
-- **MyApps disponibile per Managed Browser**  
-  Microsoft MyApps offre ora un supporto migliore all'interno di Managed Browser. Gli utenti di Managed Browser che non sono assegnati alla gestione passano direttamente al servizio MyApps, in cui possono accedere alle app SaaS con provisioning dell'amministratore. Gli utenti destinati alla gestione di Intune continuano ad accedere a MyApps dal segnalibro di Managed Browser incorporato.
-
-- **Nuove icone per Managed Browser e il portale aziendale**  
-  Managed Browser riceve icone aggiornate per le versioni sia Android che iOS dell'app. La nuova icona contiene il badge Intune aggiornato per renderla più coerente con altre app in Enterprise Mobility + Security (EM + S). È possibile visualizzare la nuova icona per Managed Browser nella [pagina delle novità dell'interfaccia utente dell'app Intune](https://docs.microsoft.com/intune/whats-new-app-ui).
-
-  Anche il portale aziendale riceve icone aggiornate per le versioni di Android, iOS e Windows dell'app per migliorare la coerenza con altre applicazioni in EM+S. Queste icone verranno rilasciate gradualmente per tutte le piattaforme da aprile alla fine di maggio.
-
-- **Indicatore dello stato di accesso nel portale aziendale Android**  
-  Un aggiornamento per l'app del portale aziendale Android mostra un indicatore dello stato di accesso quando l'utente avvia o riprende l'uso dell'app. L'indicatore attraversa nuovi stati, a partire da "Connessione in corso...", quindi "Accesso in corso..." e infine "Verifica dei requisiti di protezione..." prima di consentire all'utente di accedere all'app. È possibile visualizzare le nuove schermate per l'app Portale aziendale di Intune per Android nella [pagina delle novità dell'interfaccia utente dell'app Intune](https://docs.microsoft.com/intune/whats-new-app-ui).
-
-- **Bloccare l'accesso delle app a SharePoint Online**  
-  È ora possibile creare un criterio di accesso condizionale basato su app per bloccare l'accesso delle applicazioni, a cui non sono stati applicati criteri di protezione di app, a [SharePoint Online](https://docs.microsoft.com/intune-classic/deploy-use/mam-ca-for-sharepoint-online). Nello scenario di accesso condizionale basato su app, è possibile specificare le app che dovranno accedere a SharePoint Online usando il portale di Azure.
-
-### <a name="new-in-configuration-manager-technical-preview-1704"></a>Novità di Configuration Manager Technical Preview 1704
-
-- **Configurare le app Android con i criteri di configurazione delle app**  
-  Quando un utente esegue un'app in un dispositivo Android for Work, è possibile usare i criteri di configurazione delle app in Configuration Manager per distribuire impostazioni preconfigurate. I criteri di configurazione delle app per Android sono disponibili solo nei dispositivi che eseguono Android for Work e riguardano le app approvate per lo store Play for Work. Per altre informazioni, vedere [Configurare le app Android con i criteri di configurazione delle app](/sccm/core/get-started/capabilities-in-technical-preview-1704#configure-android-apps-with-app-configuration-policies).
-
-
-
-## <a name="march-2017"></a>Marzo 2017
-
-### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
-
-- **Nuova esperienza utente per l'app Portale aziendale per Android**  
-  L'app Portale aziendale per Android offre un'interfaccia utente dall'aspetto più moderno. Gli aggiornamenti più importanti riguardano gli aspetti seguenti:
-
-  - Colori: le intestazioni delle schede dell'app Portale aziendale possono avere un colore personalizzato definito dal personale IT.
-  - App: nella scheda **App** i pulsanti **App in evidenza** e **Tutte le app** sono stati aggiornati.
-  - Ricerca: nella scheda **App** il pulsante **Cerca** è un pulsante di azione mobile.
-  - Navigazione tra le app: in **Tutte le app** è disponibile una visualizzazione a schede di **In evidenza**, **Tutte** e **Categorie** per una navigazione più semplice.
-  - Supporto: le schede **Dispositivi personali** e **Contatta l'IT** sono state aggiornate per migliorare la leggibilità.
-
-  Per altre informazioni su queste modifiche, vedere [Aggiornamenti dell'interfaccia utente per le applicazioni degli utenti finali in Intune](https://docs.microsoft.com/intune/whats-new-app-ui).
-
-- **Script di firma per l'app Portale aziendale di Windows 10**  
-  Se è necessario scaricare e trasferire localmente l'app Portale aziendale di Windows 10, è ora disponibile uno script per semplificare e ottimizzare il processo di firma dell'app per l'organizzazione. Per scaricare lo script e le relative istruzioni d'uso, vedere [Microsoft Intune Signing Script for Windows 10 Company Portal](https://aka.ms/win10cpscript) (Script di firma di Microsoft Intune per l'app Portale aziendale di Windows 10) nella raccolta TechNet. Per altre informazioni su questo annuncio, vedere [Updating your Windows 10 Company Portal app](https://blogs.technet.microsoft.com/intunesupport/2017/03/13/updating-your-windows-10-company-portal-app/) (Aggiornamento dell'app Portale aziendale per Windows 10) nel blog del team di supporto di Intune.
-
-- **Supporto migliorato per gli utenti Android in Cina**  
-  A causa dell'assenza di Google Play Store in Cina, i dispositivi Android devono ottenere le app da marketplace cinesi. L'app Portale aziendale supporta questo flusso di lavoro, reindirizzando gli utenti Android in Cina per scaricare le app Portale aziendale e Outlook da App Store locali. Questo comportamento consente di migliorare l'esperienza utente quando sono abilitati i criteri di accesso condizionale, per la gestione sia dei dispositivi mobili che delle relative applicazioni. Le app Portale aziendale e Outlook per Android sono disponibili negli app store cinesi seguenti:
-
-  - [Baidu](https://go.microsoft.com/fwlink/?linkid=836946)
-  - [Xiaomi](https://go.microsoft.com/fwlink/?linkid=836947)
-  - [Tencent](https://go.microsoft.com/fwlink/?linkid=836949)
-  - [Huawei](https://go.microsoft.com/fwlink/?linkid=836948)
-  - [Wandoujia](https://go.microsoft.com/fwlink/?linkid=836950)
-
-- **Verificare che le app Portale aziendale siano aggiornate**  
-  Nel mese di dicembre 2016 è stato rilasciato un aggiornamento che imponeva l'uso di Multi-Factor Authentication (MFA) a un gruppo di utenti che registrano un dispositivo iOS, Android, Windows 8.1+ o Windows Phone 8.1+. Questa funzionalità non può essere usata senza determinate versioni di base dell'app Portale aziendale per Android (5.0.3419.0+) e iOS (2.1.17+).
-
-  Le funzionalità di gestione di Intune sono in continua evoluzione. Molti miglioramenti sono accompagnati da aggiornamenti alle app Portale aziendale su tutte le piattaforme supportate. È consigliabile mantenere installate nei dispositivi le versioni più recenti delle app Portale aziendale. In tal modo, è possibile sfruttare i vantaggi offerti dai miglioramenti di Intune e garantire un'esperienza utente ottimale.
-
-  >[!Tip]
-  > Chiedere agli utenti di impostare i dispositivi in modo da aggiornare automaticamente le app dall'app store appropriato. Se si è resa disponibile l'app Portale aziendale per Android su una condivisione di rete, è possibile scaricare la versione più recente dall'[Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=49140).
-
-- **Microsoft Teams è ora abilitato per MAM su iOS e Android**  
-  Nelle app Microsoft Teams per iOS e Android sono ora abilitate le funzionalità di gestione delle app mobili (MAM, Mobile App Management) di Intune. È possibile consentire ai team di passare liberamente da un dispositivo all'altro, garantendo la protezione delle conversazioni e dei dati aziendali. Per altre informazioni, vedere [l'annuncio relativo a Microsoft Teams](https://blogs.technet.microsoft.com/enterprisemobility/2017/03/14/microsoft-teams-is-now-generally-available-and-mam-enabled-on-ios-and-android/) nel blog di Enterprise Mobility + Security.
-
-### <a name="new-in-configuration-manager-technical-preview-1703"></a>Novità di Configuration Manager Technical Preview 1703
-
-- **Supporto aggiuntivo per scenari VPP (Volume Purchase Program) di Apple**  
-   A partire da Technical Preview 1703 è disponibile il supporto per gli scenari VPP (Volume Purchase Program) seguenti:
-
-   - Licenze per dispositivi: le app che supportano le licenze per dispositivi e vengono distribuite in raccolte di dispositivi richiedono ora una sola licenza per ogni dispositivo. In precedenza, era necessario usare una licenza per ogni utente in un dispositivo. Per altre informazioni, vedere [Distribuire app iOS acquistate con Volume Purchase Program a raccolte di dispositivi](/sccm/core/get-started/capabilities-in-technical-preview-1703#deploy-volume-purchased-ios-apps-to-device-collections).
-   - Uso di più token VPP per un tenant singolo ibrido con entrambi i token usati per gestire le app VPP.
-   - Uso di token per istituti di istruzione VPP con la possibilità di distinguere tra i token aziendali e di istituti di istruzione.
-
-### <a name="new-in-configuration-manager-current-branch"></a>Novità di Configuration Manager (Current Branch)
-
-Le funzionalità seguenti erano precedentemente disponibili nelle versioni di Configuration Manager Technical Preview. Ora sono disponibili nelle distribuzioni ibride con Intune e Configuration Manager (Current Branch) versione 1702.
-
-- [Supporto di Android for Work](/sccm/core/plan-design/changes/whats-new-in-version-1702##android-for-work-support)
-- [Impostazioni di conformità di app non conformi](/sccm/core/plan-design/changes/whats-new-in-version-1702#conditional-access-device-compliance-policy-improvements)
-- [Creazione e distribuzione del certificato PFX e supporto per S/MIME](/sccm/core/plan-design/changes/whats-new-in-version-1702#improvements-to-certificate-profiles)
-- [Non è più necessario specificare le versioni di Android e iOS nella creazione guidata della gestione ibrida dei dispositivi mobili](/sccm/core/plan-design/changes/whats-new-in-version-1702#android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm)
-
-Nella versione 1702 di Configuration Manager (Current Branch) sono disponibili anche le funzionalità ibride aggiuntive seguenti:
-
-- **Supporto migliorato per Volume Purchase Program (VPP) di Apple**  
-  - È ora possibile distribuire app con licenza sia ai dispositivi che agli utenti. In base alla capacità dell'app di supportare la gestione delle licenze dei dispositivi, al momento della distribuzione viene richiesta una licenza appropriata, come indicato di seguito:
-
-    | Versione di Configuration Manager | Gestione delle licenze dei dispositivi supportata | Tipo di raccolta della distribuzione | Licenza richiesta |
-    |-|-|-|-|
-    |Precedente la 1702|Sì|utente|Licenza utente|
-    |Precedente la 1702|No|utente|Licenza utente|
-    |Precedente la 1702|Sì|Dispositivo|Licenza utente|
-    |Precedente la 1702|No|Dispositivo|Licenza utente|
-    |1702 e versioni successive|Sì|utente|Licenza utente|
-    |1702 e versioni successive|No|utente|Licenza utente|
-    |1702 e versioni successive|Sì|Dispositivo|Licenza dispositivo|
-    |1702 e versioni successive|No|Dispositivo|Licenza utente|
-
-  - È ora possibile anche distribuire e tenere traccia delle app acquistate tramite iOS Volume Purchase Program for Education.
-
-  - È ora possibile associare a Configuration Manager più token di Volume Purchase Program di Apple.
-
-  Per altre informazioni sulle app iOS acquistate tramite Volume Purchase Program, vedere [Gestire le app iOS acquistate tramite Volume Purchase Program](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
-
-- **Supporto per app line-of-business in Microsoft Store per le aziende**  
-  È ora possibile sincronizzare app line-of-business personalizzate da Microsoft Store per le aziende.
-
-- **Nuovi strumenti di monitoraggio Mobile Threat Defense**  
-    Sono ora disponibili nuovi strumenti per il monitoraggio dello stato di conformità con il provider di servizi Mobile Threat Defense.
-
-    Per altre informazioni, vedere [Monitorare la conformità a Mobile Threat Defense](/sccm/mdm/deploy-use/monitor-mobile-threat-defense-compliance).
-
 
 
 ## <a name="notices"></a>Notifiche

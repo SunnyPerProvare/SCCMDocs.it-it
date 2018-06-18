@@ -6,18 +6,19 @@ metadata:
   title: Documentazione di Microsoft Deployment Toolkit
   description: Microsoft Deployment Toolkit offre una raccolta unificata di strumenti, processi e linee guida per l'automazione delle distribuzioni di desktop e server.
   keywords: freeware, strumento, processo, flusso di lavoro, automazione, implementazione, automatizzare, distribuzione
-  author: arob98
-  ms.author: angrobe
-  manager: angrobe
-  ms.date: 12/27/2017
+  author: aczechowski
+  ms.author: aaroncz
+  manager: dougeby
+  ms.date: 06/04/2018
   ms.topic: landing-page
   ms.devlang: na
   ms.prod: configuration-manager
-  ms.openlocfilehash: 56462ae538a2336f94a1883d099ad7b45c714633
-  ms.sourcegitcommit: 32bbc006a41868a6d9a708db5f7b372d9c71d985
+  ms.openlocfilehash: e02afe511d0c9f240bba68161551857d13d33de0
+  ms.sourcegitcommit: 10b3a571e2a822bbd7b58a25840ee1e6f703a7a2
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 03/08/2018
+  ms.lasthandoff: 06/06/2018
+  ms.locfileid: "34814223"
 sections:
 - items:
   - type: markdown
@@ -28,11 +29,11 @@ sections:
     className: cardsM
     columns: 2
     items:
-    - href: whats-new-in-mdt.md
-      html: "<p>Scoprire le novità.</p>"
+    - href: https://aka.ms/mdtdownload
+      html: <p>Download dell'ultima versione di MDT.</p>
       image:
-        src: https://docs.microsoft.com/media/common/i_whats-new.svg
-      title: "Novità"
+        src: https://docs.microsoft.com/media/common/i_download-generic.svg
+      title: Eseguire il download di MDT
     - href: release-notes.md
       html: <p>Informazioni dettagliate sulle correzioni e i bug inclusi in questa versione.</p>
       image:
@@ -43,11 +44,11 @@ sections:
       image:
         src: https://docs.microsoft.com/media/common/i_code-samples.svg
       title: Guida agli esempi
-    - href: user-driven-installation-developers-guide.md
-      html: <p>Personalizzare l'installazione guidata dall'utente per l'organizzazione.</p>
+    - href: use-the-mdt.md
+      html: <p>Eseguire le distribuzioni di Windows con Lite Touch Installation, Zero Touch Installation o l'installazione guidata dall'utente.</p>
       image:
-        src: https://docs.microsoft.com/media/common/i_architecture.svg
-      title: Guida per gli sviluppatori
+        src: https://docs.microsoft.com/media/common/i_api-reference.svg
+      title: Come usare Microsoft Deployment Toolkit
 - title: Guide introduttive
   items:
   - type: list
@@ -74,10 +75,6 @@ sections:
     className: cardsM
     columns: 3
     items:
-    - href: use-the-mdt.md
-      title: Eseguire distribuzioni con installazioni Lite Touch, automatizzate e guidate dall'utente.
-      image:
-        src: https://docs.microsoft.com/media/common/i_api-reference.svg
     - href: toolkit-reference.md
       title: Impostazioni di configurazione di aiuto con le distribuzioni.
       image:
@@ -86,3 +83,7 @@ sections:
       title: File di log, codici di errore e altri dettagli sulla risoluzione dei problemi.
       image:
         src: https://docs.microsoft.com/media/common/i_support.svg
+    - href: user-driven-installation-developers-guide.md
+      title: Personalizzare l'installazione guidata dall'utente per l'organizzazione.
+      image:
+        src: https://docs.microsoft.com/media/common/i_architecture.svg
