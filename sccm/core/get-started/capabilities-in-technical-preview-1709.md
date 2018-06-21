@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32341152"
 ---
 # <a name="capabilities-in-technical-preview-1709-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1709 per System Center Configuration Manager
 
@@ -150,7 +151,7 @@ Quando si hanno dispositivi Windows 10 che sono client di Configuration Manager,
 #### <a name="command-line-to-install-configuration-manager-client"></a>Riga di comando per installare il client di Configuration Manager
 Creare un'app in Intune per i dispositivi Windows 10 che non sono già client di Configuration Manager. Quando si crea l'app nelle sezioni successive, usare la riga di comando seguente:
 
-ccmsetup.msi CCMSETUPCMD="/mp:&#60;*URL dell'endpoint autorizzazione reciproca di Cloud Management Gateway*&#62;/ CCMHOSTNAME=&#60;*URL dell'endpoint autorizzazione reciproca di Cloud Management Gateway*&#62; SMSSiteCode=&#60;*Codice sito*&#62; SMSMP=https:&#47;/&#60;*FQDN del punto di gestione*&#62; AADTENANTID=&#60;*ID tenant AAD*&#62; AADTENANTNAME=&#60;*Nome tenant*&#62; AADCLIENTAPPID=&#60;*AppID del server per l'integrazione di AAD*&#62; AADRESOURCEURI=https:&#47;/&#60;*ID risorsa*& #62;"
+ccmsetup.msi CCMSETUPCMD="/mp:&#60;*URL dell'endpoint autorizzazione reciproca di Cloud Management Gateway*&#62;/ CCMHOSTNAME=&#60;*URL dell'endpoint autorizzazione reciproca di Cloud Management Gateway*&#62; SMSSiteCode=&#60;*Codice sito*&#62; SMSMP=https:&#47;/&#60;*FQDN del punto di gestione*&#62; AADTENANTID=&#60;*ID tenant AAD*&#62; AADTENANTNAME=&#60;*Nome tenant*&#62; AADCLIENTAPPID=&#60;*AppID del server per l'integrazione di AAD*&#62; AADRESOURCEURI=https:&#47;/&#60;*ID risorsa*&#62;"
 
 Ad esempio, se sono stati restituiti i valori seguenti:
 
