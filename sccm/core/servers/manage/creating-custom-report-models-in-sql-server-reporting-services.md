@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32342648"
 ---
 # <a name="creating-custom-report-models-for-system-center-configuration-manager-in-sql-server-reporting-services"></a>Creazione di modelli di report personalizzati per System Center Configuration Manager in SQL Server Reporting Services
 
@@ -165,7 +166,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
      `</SemanticModel>`  
 
-8.  Incollare il contenuto del file *&lt;Nome modello\>***.dsv* direttamente prima dell'ultima riga del file (**&lt;SemanticModel\>**).  
+8.  Incollare il contenuto del file *&lt;Nome modello\>***.dsv** direttamente prima dell'ultima riga del file (**&lt;SemanticModel\>**).  
 
 9. Salvare e chiudere il file *&lt;Nome modello\>***.smdl**.  
 
@@ -408,7 +409,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
      `</SemanticModel>`  
 
-8.  Incollare il contenuto del file *&lt;Nome modello\>***.dsv* direttamente prima dell'ultima riga del file (**&lt;SemanticModel\>**).  
+8.  Incollare il contenuto del file *&lt;Nome modello\>***.dsv** direttamente prima dell'ultima riga del file (**&lt;SemanticModel\>**).  
 
 9. Salvare e chiudere il file *&lt;Nome modello\>***.smdl**.  
 

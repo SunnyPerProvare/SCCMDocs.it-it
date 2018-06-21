@@ -16,6 +16,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32336613"
 ---
 # <a name="import-the-compliance-settings-compliant-cab-files-into-system-center-configuration-manager"></a>Importare i file con estensione cab conformi a Impostazioni di compatibilità in System Center Configuration Manager
 
@@ -29,7 +30,7 @@ Il passaggio successivo del processo consiste nell'utilizzare la console di Conf
 ## <a name="to-import-the-compliance-settings-compliant-cab-files-into-configuration-manager"></a>Importare i file con estensione cab conformi a Impostazioni di compatibilità in Configuration Manager
 
 1. Aprire la **console di Configuration Manager**.
-2. Nel riquadro di spostamento della **console di Configuration Manager passare ad **Asset e conformità**> **Impostazioni di conformità** > **Linee di base di configurazione**.
+2. Nel riquadro di spostamento della  **console di Configuration Manager passare ad \*\* Asset e conformità**> **Impostazioni di conformità** > **Linee di base di configurazione**.
 
 3. Nel riquadro Azioni fare clic su **Importa dati di configurazione** per avviare l'Importazione guidata dei dati di configurazione.
 
