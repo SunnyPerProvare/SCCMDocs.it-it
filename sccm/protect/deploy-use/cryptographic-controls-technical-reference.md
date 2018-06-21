@@ -9,11 +9,12 @@ ms.topic: conceptual
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c28964d8cf6b11e9999a9d0967422ececafe234b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: dd37bb3f452f5018dd1130d43ead0117481f2aab
+ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "34450190"
 ---
 # <a name="cryptographic-controls-technical-reference"></a>Riferimento tecnico per i controlli crittografici
 
@@ -116,18 +117,7 @@ System Center Configuration Manager usa la firma e la crittografia per protegger
 ### <a name="mobile-device-management-and-pki-certificates"></a>Gestione dei dispositivi mobili e certificati PKI  
  Se il dispositivo mobile non è stato bloccato dall'operatore mobile, è possibile usare Configuration Manager o Microsoft Intune per richiedere e installare un certificato client. Questo certificato assicura l'autenticazione reciproca tra il client sul dispositivo mobile e i sistemi del sito di Configuration Manager o i servizi di Microsoft Intune. Se il dispositivo mobile è bloccato, non è possibile usare Configuration Manager o Microsoft Intune per la distribuzione dei certificati.  
 
- Se si abilita l'inventario hardware per i dispositivi mobili, Configuration Manager o Microsoft Intune archivia anche i certificati installati sul dispositivo mobile.  
-
-### <a name="out-of-band-management-and-pki-certificates"></a>Gestione fuori banda e certificati PKI  
- La gestione fuori banda per computer Intel basati su AMT usa almeno due tipi di certificati emessi da PKI: un certificato di provisioning AMT e un certificato server Web.  
-
- Il punto di servizio fuori banda usa un certificato di provisioning AMT per preparare i computer per la gestione fuori banda. I computer basati su AMT su cui verrà effettuato il provisioning devono considerare attendibile il certificato presentato dal punto di gestione fuori banda. Per impostazione predefinita, i computer basati su AMT vengono configurati dal produttore all'utilizzo di autorità di certificazione esterne, come VeriSign, Go Daddy, Comodo e Starfield. Se si acquista un certificato di provisioning da un'autorità di certificazione esterna e si configura Configuration Manager in modo che usi il certificato, i computer basati su AMT considereranno attendibile l'autorità di certificazione del certificato di provisioning e il provisioning verrà eseguito correttamente. Tuttavia, è consigliabile usare un'autorità di certificazione interna per l'emissione del certificato di provisioning AMT.  
-
- I computer basati su AMT eseguono un componente del server Web nel firmware che esegue la crittografia del canale di comunicazione con il punto di servizio fuori banda usando Transport Layer Security (TLS). Nel BIOS AMT non esiste un'interfaccia utente per configurare manualmente un certificato, quindi è necessario disporre di un'autorità di certificazione dell'organizzazione (enterprise) Microsoft che approvi automaticamente le richieste provenienti dai computer basati su AMR richiedenti. La richiesta usa PKCS #10 per il formato della richiesta, che a sua volta usa PKCS #7 per trasmettere le informazioni del certificato al computer basato su AMT.  
-
- Anche se il computer basato su AMT viene autenticato sul computer che lo gestisce, non esiste nessun certificato PKI client corrispondente nel computer che lo gestisce. Al contrario, queste comunicazioni usano l'autenticazione Kerberos o HTTP Digest. Quando si usa HTTP Digest, la crittografia avviene tramite TLS.  
-
- Un tipo di certificato aggiuntivo potrebbe essere necessario per la gestione dei computer basati su AMT fuori banda: un certificato client facoltativo per reti cablate autenticate 802.1X e reti wireless. Il certificato del client potrebbe essere necessario per il computer basato su AMT per l'autenticazione sul server RADIUS. Quando il server RADIUS è configurato per l'autenticazione EAP-TLS, è sempre necessario un certificato client. Quando il server RADIUS è configurato per EAP-TTLS/MSCHAPv2 o PEAPv0/EAP-MSCHAPv2, la configurazione RADIUS specifica se è necessario o meno un certificato client. Questo certificato viene richiesto dal computer basato su AMT usando gli stessi processi della richiesta di certificato del server Web.  
+ Se si abilita l'inventario hardware per i dispositivi mobili, Configuration Manager o Microsoft Intune archivia anche i certificati installati sul dispositivo mobile.   
 
 ### <a name="operating-system-deployment-and-pki-certificates"></a>Distribuzione del sistema operativo e dei certificati PKI  
  Quando si usa Configuration Manager per distribuire sistemi operativi e un punto di gestione richiede connessioni client HTTPS, anche il computer client deve usare un certificato per comunicare con il punto di gestione, anche se si trova in una fase transitoria come un avvio da supporto per sequenza di attività o in un punto di distribuzione abilitato PXE. Per supportare questo scenario, è necessario creare un certificato di autenticazione client PKI ed esportarlo con la chiave privata, quindi importarlo nelle proprietà del server del sito oltre ad aggiungere il certificato CA principale attendibile del punto di gestione.  
