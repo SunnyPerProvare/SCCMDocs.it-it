@@ -16,6 +16,7 @@ ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 03/27/2018
+ms.locfileid: "27821085"
 ---
 # <a name="user-driven-installation---developers-guide"></a>Installazione guidata dall'utente - Guida per gli sviluppatori
 L'installazione guidata dall'utente (UDI, User Driven Installation) semplifica la distribuzione dei sistemi operativi client Windows®, quali Windows 8.1, a computer che usano la funzionalità di distribuzione del sistema operativo (OSD, Operating System Deployment) in Configuration Manager di Microsoft® System Center 2012 R2. L'UDI è inclusa nel Microsoft Deployment Toolkit (MDT).  

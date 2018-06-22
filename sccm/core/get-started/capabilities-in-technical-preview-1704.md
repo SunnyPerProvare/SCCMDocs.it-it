@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32343491"
 ---
 # <a name="capabilities-in-technical-preview-1704-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1704 per System Center Configuration Manager
 

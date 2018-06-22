@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32350120"
 ---
 # <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>Passaggi della sequenza di attività per la gestione della conversione da BIOS a UEFI
 Molte delle nuove funzionalità di sicurezza offerte da Windows 10 richiedono dispositivi abilitati per UEFI. Alcuni PC Windows moderni supportano UEFI, ma usano un BIOS legacy. Per convertire un dispositivo da BIOS a UEFI, è necessario in genere accedere a ogni PC, ripartire il disco rigido e riconfigurare il firmware. Usando le sequenze di attività disponibili in Configuration Manager, è possibile preparare un disco rigido per la conversione da BIOS a UEFI, eseguire la conversione nell'ambito del processo di aggiornamento sul posto e raccogliere informazioni su UEFI nell'ambito dell'inventario hardware.

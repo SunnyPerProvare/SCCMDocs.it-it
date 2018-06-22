@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32338051"
 ---
 # <a name="about-the-service-connection-point-in-system-center-configuration-manager"></a>Informazioni sul punto di connessione del servizio in System Center Configuration Manager
 

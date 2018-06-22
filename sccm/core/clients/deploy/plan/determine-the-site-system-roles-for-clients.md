@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32334076"
 ---
 # <a name="determine-the-site-system-roles-for-system-center-configuration-manager-clients"></a>Determinare i ruoli del sistema del sito per System Center Configuration Manager
 

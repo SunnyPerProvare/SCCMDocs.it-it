@@ -16,6 +16,7 @@ ms.sourcegitcommit: 7198ec49d9ce68c6d55bfb9e2d537b5442a132cb
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33915973"
 ---
 # <a name="microsoft-deployment-toolkit-samples-guide"></a>Guida agli esempi di Microsoft Deployment Toolkit  
  Questa guida fa parte di Microsoft® Deployment Toolkit (MDT) 2013 ed è destinata ai team specializzati che eseguono la distribuzione dei sistemi operativi Windows e di Microsoft Office. In particolare, la guida offre esempi di impostazioni di configurazione per scenari di distribuzione specifici.  

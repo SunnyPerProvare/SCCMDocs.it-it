@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32335831"
 ---
 # <a name="how-to-create-configuration-items-for-mac-os-x-devices-managed-with-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Mac OS X gestiti con il client di System Center Configuration Manager
 Usare l'elemento di configurazione **Mac OS X (personalizzato)** di System Center Configuration Manager per gestire le impostazioni dei dispositivi Mac OS X gestiti dal client di Configuration Manager.  

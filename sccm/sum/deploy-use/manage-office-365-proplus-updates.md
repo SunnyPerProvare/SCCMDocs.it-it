@@ -15,6 +15,7 @@ ms.sourcegitcommit: c5e078b8eee87f527e5b5a0c2eb687bb9d6896c5
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34270715"
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Gestire Office 365 ProPlus con Configuration Manager
 

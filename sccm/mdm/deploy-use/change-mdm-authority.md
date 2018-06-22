@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32349518"
 ---
 # <a name="change-your-mdm-authority"></a>Cambiare l'autorità MDM
 È possibile cambiare l'autorità MDM senza dover contattare il supporto tecnico Microsoft e senza che sia necessario annullare la registrazione dei dispositivi gestiti esistenti e quindi eseguirla di nuovo. Questo articolo descrive i passaggi necessari per modificare un tenant esistente di Microsoft Intune configurato dalla console di Configuration Manager (ibrido) alla versione autonoma di Intune. Dopo aver completato i passaggi descritti in questo articolo, i dispositivi vengono gestiti da Microsoft Intune nel [portale di Azure](https://portal.azure.com). 

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32346798"
 ---
 # <a name="use-bootable-media-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Usare i supporti di avvio per distribuire Windows in rete con System Center Configuration Manager
 

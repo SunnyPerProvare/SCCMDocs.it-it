@@ -15,6 +15,7 @@ ms.sourcegitcommit: defdaf493c1dc5a7a380541bc028fbd2b21c1047
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34153023"
 ---
 # <a name="step-by-step-example-deployment-of-the-pki-certificates-for-system-center-configuration-manager-windows-server-2008-certification-authority"></a>Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008
 

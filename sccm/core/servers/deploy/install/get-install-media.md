@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32337021"
 ---
 # <a name="where-to-get-installation-media-for-system-center-configuration-manager"></a>Dove ottenere il supporto di installazione per System Center Configuration Manager
 

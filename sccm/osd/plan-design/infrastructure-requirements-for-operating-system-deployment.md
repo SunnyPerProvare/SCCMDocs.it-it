@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32352136"
 ---
 # <a name="infrastructure-requirements-for-os-deployment-in-system-center-configuration-manager"></a>Requisiti dell'infrastruttura per la distribuzione del sistema operativo in System Center Configuration Manager
 

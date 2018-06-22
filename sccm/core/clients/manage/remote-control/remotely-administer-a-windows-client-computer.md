@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32338646"
 ---
 # <a name="how-to-remotely-administer-a-windows-client-computer-by-using-system-center-configuration-manager"></a>Come amministrare un computer client Windows in remoto mediante System Center Configuration Manager
 

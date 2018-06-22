@@ -2,26 +2,20 @@
 title: Gestire l'accesso a Internet utilizzando criteri di browser gestiti
 titleSuffix: Configuration Manager
 description: Distribuire Intune Managed Browser per gestire e limitare l'accesso a Internet.
-ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-hybrid
+ms.topic: conceptual
 ms.assetid: 8e25e00c-c9a8-473f-bcb7-ea989f6ca3c5
-caps.latest.revision: ''
-caps.handback.revision: ''
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 3aea2a65733a52ab532d451b21ae98fbc0f122c6
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 8754219f36e30f2442178dc5521e05246948d3de
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/27/2018
+ms.lasthandoff: 05/03/2018
+ms.locfileid: "32350147"
 ---
 # <a name="manage-internet-access-using-managed-browser-policies-with-system-center-configuration-manager"></a>Gestire l'accesso a Internet mediante criteri di Managed Browser con System Center Configuration Manager
 
@@ -92,7 +86,7 @@ Il nuovo criterio viene visualizzato nel nodo **Criteri di gestione delle applic
 
 Utilizzare le seguenti informazioni per ulteriori informazioni sui formati consentiti e i caratteri jolly, che è possibile utilizzare quando si specificano le URL negli elenchi consentiti e bloccati.  
 
--   È possibile utilizzare il carattere jolly asterisco '**\\***' secondo le regole nell'elenco di modelli consentiti sottostante.  
+-   È possibile utilizzare il carattere jolly asterisco '**\***' secondo le regole nell'elenco di modelli consentiti sottostante.  
 
 -   Assicurarsi che tutte le  URL abbiano con prefisso **http** o **https** quando immetterle nell'elenco.  
 
@@ -111,7 +105,7 @@ Utilizzare le seguenti informazioni per ulteriori informazioni sui formati conse
     |http://www.contoso.com<br /><br /> Corrisponde a una singola pagina|www.contoso.com|host.contoso.com<br /><br /> www.contoso.com/images<br /><br /> contoso.com/|  
     |http://contoso.com<br /><br /> Corrisponde a una singola pagina|contoso.com/|host.contoso.com<br /><br /> www.contoso.com/images<br /><br /> www.contoso.com|  
     |http://www.contoso.com/*<br /><br /> Corrisponde a tutte le URL a partire da www.contoso.com|www.contoso.com<br /><br /> www.contoso.com/images<br /><br /> www.contoso.com/videos/tvshows|host.contoso.com<br /><br /> host.contoso.com/images|  
-    |http://\*.contoso.com/\*<br /><br /> Corrisponde a tutti i sottodomini in contoso.com|developer.contoso.com/resources<br /><br /> news.contoso.com/images<br /><br /> news.contoso.com/videos|contoso.host.com|  
+    |http://*.contoso.com/\*<br /><br /> Corrisponde a tutti i sottodomini in contoso.com|developer.contoso.com/resources<br /><br /> news.contoso.com/images<br /><br /> news.contoso.com/videos|contoso.host.com|  
     |http://www.contoso.com/images<br /><br /> Corrisponde a una singola cartella|www.contoso.com/images|www.contoso.com/images/dogs|  
     |http://www.contoso.com:80<br /><br /> Corrisponde a una singola pagina utilizzando un numero di porta|http://www.contoso.com:80||  
     |https://www.contoso.com<br /><br /> Corrisponde a una singola pagina protetta|https://www.contoso.com|http://www.contoso.com|  
@@ -121,11 +115,11 @@ Utilizzare le seguenti informazioni per ulteriori informazioni sui formati conse
 
     -   *.com  
 
-    -   \*.contoso/\*  
+    -   *.contoso/\*  
 
     -   www.contoso.com/*images  
 
-    -   www.contoso.com/\*images\*pigs  
+    -   www.contoso.com/*images\*pigs  
 
     -   www.contoso.com/page*  
 

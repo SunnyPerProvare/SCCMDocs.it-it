@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32336341"
 ---
 # <a name="administrator-checklists-for-migration-planning-in-system-center-configuration-manager"></a>Elenchi di controllo amministratore per la pianificazione della migrazione in System Center Configuration Manager
 

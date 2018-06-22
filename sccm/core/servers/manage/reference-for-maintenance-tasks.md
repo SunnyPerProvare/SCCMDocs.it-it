@@ -15,6 +15,7 @@ ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32342444"
 ---
 # <a name="reference-for-maintenance-tasks-for-system-center-configuration-manager"></a>Informazioni di riferimento per le attività di manutenzione per System Center Configuration Manager
 
