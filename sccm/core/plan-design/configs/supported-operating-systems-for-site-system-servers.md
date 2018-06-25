@@ -2,7 +2,7 @@
 title: Server di sistema del sito supportati
 titleSuffix: Configuration Manager
 description: Informazioni sulle versioni di Windows che è possibile usare per ospitare un sito di System Center Configuration Manager o un ruolo del sistema del sito.
-ms.date: 04/17/2018
+ms.date: 05/23/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,11 +10,12 @@ ms.assetid: 17905b4c-3895-4ad4-a69c-5e0d0fc5a8c3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: de7f340080111daf3f1b19e26aa838dc6db2e263
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: aa933186e95f084bd4e3e518e167a1cd301a4484
+ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "34474293"
 ---
 # <a name="supported-operating-systems-for-system-center-configuration-manager-site-system-servers"></a>Sistemi operativi supportati per i server dei sistemi del sito di System Center Configuration Manager
 
@@ -254,6 +255,11 @@ Questo sistema operativo non è supportato per i server del sito o per i ruoli d
     -   I punti di distribuzione in questa versione del sistema operativo non supportano il multicast.  
 
     -   I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni sulle opzioni disponibili per i punti di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+
+## <a name="the-server-core-installation-of-windows-server-version-1803"></a>Installazione Server Core di Windows Server, versione 1803
+<!--503702--> A partire da Configuration Manager 1802, [Windows Server, versione 1803](https://docs.microsoft.com/windows-server/get-started/get-started-with-1803) è supportato per l'uso come punto di distribuzione con le limitazioni seguenti:  
+  -   È supportata solo la versione a x64 bit.
+  -   I punti di distribuzione in questo sistema operativo non supportano PXE né il multicast.  
 
 ## <a name="the-server-core-installation-of-windows-server-version-1709"></a>Installazione Server Core di Windows Server, versione 1709
 A partire da Configuration Manager 1710, [Windows Server, versione 1709](https://docs.microsoft.com/windows-server/get-started/get-started-with-1709) è supportato per l'uso come punto di distribuzione con le limitazioni seguenti:  

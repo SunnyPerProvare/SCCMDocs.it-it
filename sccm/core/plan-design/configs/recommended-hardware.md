@@ -2,7 +2,7 @@
 title: Hardware consigliato
 titleSuffix: Configuration Manager
 description: Ottenere consigli su hardware per ridimensionare l'ambiente di System Center Configuration Manager, oltre una distribuzione di base.
-ms.date: 03/22/2018
+ms.date: 05/23/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,11 +10,12 @@ ms.assetid: 5267f0af-34d3-47a0-9ab8-986c41276e6c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ae2ba43c8e5c97dd0b8b9ba43c3e3fde1eb259f4
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 51d3a537fd7aa874fb2662bb6ec15fcfaa2124e5
+ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "34474327"
 ---
 # <a name="recommended-hardware-for-system-center-configuration-manager"></a>Hardware consigliato per System Center Configuration Manager
 
@@ -23,6 +24,7 @@ ms.lasthandoff: 05/03/2018
 I consigli seguenti sono linee guida che consentono di ridimensionare l'ambiente di System Center Configuration Manager per supportare una distribuzione più avanzata di siti, sistemi del sito e client. Queste raccomandazioni non intendono coprire tutte le possibili configurazioni di siti e gerarchie.  
 
  Usare le informazioni delle sezioni seguenti come guida per la pianificazione dell'hardware che può soddisfare i carichi di elaborazione per i client e i siti che usano le funzionalità di Configuration Manager disponibili con le configurazioni predefinite.  
+
 
 
 ##  <a name="bkmk_ScaleSieSystems"></a> Sistemi del sito  
@@ -113,11 +115,11 @@ Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità da
 
 -   **Spazio su disco:** 500 MB di spazio disponibile su disco, con 5 GB consigliati per la cache del client di Configuration Manager. Se si usano le impostazioni personalizzate per installare il client di Configuration Manager, è necessario meno spazio:  
 
-    -   Usare la proprietà della riga di comando CCMSetup /skipprereq per evitare di installare i file non necessari per il clent. Ad esempio, eseguire **CCMSetup.exe /skipprereq:silverlight.exe** se il client non usa il Catalogo applicazioni. A partire da Configuration Manager 1802, Silverlight non viene più installato automaticamente.  
+    -   Usare la proprietà della riga di comando CCMSetup /skipprereq per evitare di installare i file non necessari per il clent. Ad esempio, eseguire `CCMSetup.exe /skipprereq:silverlight.exe` se il client non usa il Catalogo applicazioni. A partire da Configuration Manager 1802, Silverlight non viene più installato automaticamente.  
 
-    -   Usare la proprietà Client. msi SMSCACHESIZE per impostare un file di cache inferiore a quello predefinito di 5120 MB. La dimensione minima è 1 MB. Ad esempio, **CCMSetup.exe SMSCachesize=2** crea una cache di 2 MB.  
+    -   Usare la proprietà Client. msi SMSCACHESIZE per impostare un file di cache inferiore a quello predefinito di 5120 MB. La dimensione minima è 1 MB. Ad esempio, `CCMSetup.exe SMSCachesize=2` crea una cache di 2 MB.  
 
-    Per altre informazioni su queste impostazioni di installazione del client, vedere [Informazioni sulle proprietà di installazione del client in System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
+    Per altre informazioni su queste impostazioni di installazione del client, vedere [Informazioni sulle proprietà di installazione del client](../../../core/clients/deploy/about-client-installation-properties.md).  
 
     > [!TIP]  
     >  L'installazione del client con lo spazio minimo su disco è utile per i dispositivi Windows Embedded, che in genere hanno dimensioni di disco inferiori a quelle dei computer Windows standard.  
@@ -173,6 +175,6 @@ Oltre a PowerShell, è supportato anche Windows Management Framework (WMF) 3.0 o
 
 |Ruolo|CPU (core)|Memoria (GB)|Spazio su disco (GB)|  
 |----------|---------------|-------------------|-----------------------|  
-|Server del sito e di database|2 - 4|7 - 12|100|  
+|Server del sito e di database|2 - 4|8 - 12|100|  
 |Server del sistema del sito|1 - 4|2 - 4|50|  
 |Client|1 - 2|1 - 3|30|  

@@ -2,7 +2,7 @@
 title: Technical Preview 1804
 titleSuffix: Configuration Manager
 description: Informazioni sulle nuove funzionalità disponibili in Configuration Manager Technical Preview versione 1804.
-ms.date: 04/25/2018
+ms.date: 05/21/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,11 +10,12 @@ ms.assetid: 8af43618-ec60-4c3e-a007-12399d1335b9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0fcdcc984e267e6c54ad7c6194e8494854f0a1ee
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a796c8cc23ab15e3fbeb09fca6ffa6f1dbd45bc3
+ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "34474344"
 ---
 # <a name="capabilities-in-technical-preview-1804-for-system-center-configuration-manager"></a>Funzionalità della Technical Preview 1804 per System Center Configuration Manager
 
@@ -28,9 +29,15 @@ Prima di installare questo aggiornamento, vedere l'articolo [Technical Preview](
 <!--  Known Issues Template   -->
 ## <a name="known-issues-in-this-technical-preview"></a>Problemi noti di questa versione Technical Preview
 
+### <a name="bkmk_ki-prereqs"></a> Il collegamento di installazione per scaricare gli aggiornamenti non funziona
+<!--514334--> Se si esegue l'installazione dal supporto, la pagina iniziale include un collegamento denominato **Get the latest Configuration Manager updates** (Ottieni gli ultimi aggiornamenti di Configuration Manager), che non funziona in questa versione. Questo collegamento consente di scaricare i file necessari per l'installazione.
+
+#### <a name="workaround"></a>Soluzione alternativa
+Per scaricare i file necessari per l'installazione, eseguire l'installazione guidata. Nella pagina Download prerequisiti usare l'opzione **Scarica file richiesti**. 
+
+
 ### <a name="bkmk_appcathttps"></a> Il punto per servizi Web del Catalogo applicazioni non può essere abilitato per HTTPS
-<!--512637-->
-Se il punto per servizi Web del Catalogo applicazioni è abilitato per HTTPS:
+<!--512637--> Se il punto per servizi Web del Catalogo applicazioni è abilitato per HTTPS:
 
 - Le applicazioni distribuite come disponibili per gli utenti non sono visualizzate in Software Center  
 
@@ -50,8 +57,7 @@ Riconfigurare il punto per servizi Web del Catalogo applicazioni per la comunica
 
 
 ## <a name="configure-a-remote-content-library-for-the-site-server"></a>Configurare una raccolta contenuto remota per il server del sito  
-<!--1357525-->
-Per liberare spazio sul disco rigido nel server del sito primario, spostare la relativa [raccolta contenuto](/sccm/core/plan-design/hierarchy/the-content-library) in un'altra posizione di archiviazione. È possibile spostare la raccolta contenuto in un'altra unità sul server del sito, un server distinto o dischi a tolleranza di errore in una rete di archiviazione (SAN). È consigliabile una SAN perché fornisce uno spazio di archiviazione elastico, che può aumentare o ridursi nel tempo per soddisfare i requisiti del contenuto. 
+<!--1357525--> Per liberare spazio sul disco rigido nel server del sito primario, spostare la relativa [raccolta contenuto](/sccm/core/plan-design/hierarchy/the-content-library) in un'altra posizione di archiviazione. È possibile spostare la raccolta contenuto in un'altra unità sul server del sito, un server distinto o dischi a tolleranza di errore in una rete di archiviazione (SAN). È consigliabile una SAN perché fornisce uno spazio di archiviazione elastico, che può aumentare o ridursi nel tempo per soddisfare i requisiti del contenuto. 
 
 Questa raccolta contenuto remota è un nuovo prerequisito per la [disponibilità elevata dei ruoli del server del sito](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability). 
 
@@ -210,8 +216,7 @@ Quando si revoca l'approvazione per un'applicazione, il comportamento è stato m
 
 
 ## <a name="exclude-active-directory-containers-from-discovery"></a>Escludere i contenitori di Active Directory dall'individuazione
-<!--1358143-->
-Per ridurre il numero degli oggetti individuati, ora è possibile escludere specifici contenitori da Individuazione sistema Active Directory. Questa funzionalità è il risultato dei [commenti e suggerimenti raccolti tramite UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8414520-exclude-virtual-cluster-and-ou-from-discovery).
+<!--1358143--> Per ridurre il numero degli oggetti individuati, ora è possibile escludere specifici contenitori da Individuazione sistema Active Directory. Questa funzionalità è il risultato dei [commenti e suggerimenti raccolti tramite UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8414520-exclude-virtual-cluster-and-ou-from-discovery).
 
 ### <a name="try-it-out"></a>Verifica
  Provare a completare le attività. Inviare quindi [commenti e suggerimenti](#bkmk_feedback).
@@ -257,8 +262,7 @@ Per altre informazioni sulle impostazioni client, vedere [Configurare le imposta
 
 
 ## <a name="filter-automatic-deployment-rules-by-software-update-architecture"></a>Filtrare le regole di distribuzione automatica in base all'architettura di aggiornamento software
- <!--1322266-->
-Ora è possibile filtrare le regole di distribuzione automatica in modo da escludere architetture come Itanium e ARM64.
+ <!--1322266--> È ora possibile filtrare le regole di distribuzione automatica in modo da escludere architetture come Itanium e ARM64.
 
 ### <a name="try-it-out"></a>Verifica
 Provare a completare le attività. Inviare quindi [commenti e suggerimenti](#bkmk_feedback).

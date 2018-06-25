@@ -10,11 +10,12 @@ ms.assetid: 6e4964c5-43cb-4372-9a89-b62ae6a4775c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 906b39f01b05600d86a045e07d3e28184e9360e8
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 1faabd64d11eeef8e825f22f7f661112813f5459
+ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "34474310"
 ---
 # <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Usare lo strumento di connessione del servizio per System Center Configuration Manager
 
@@ -101,7 +102,13 @@ A partire dalla versione 1606, mentre si è connessi a Microsoft è possibile ca
 A partire dalla versione 1706, è stato modificato il comportamento di download di strumenti predefinito e lo strumento supporta le opzioni per controllare i file da scaricare.
 -   Per impostazione predefinita, lo strumento consente di scaricare solo l'aggiornamento più recente disponibile adeguato alla versione del sito. Non scarica gli aggiornamenti rapidi.
 
-Per modificare questo comportamento, utilizzare uno dei parametri seguenti per impostare i file che vengono scaricati. La versione del sito è determinata dai dati nel file CAB che viene caricata quando viene eseguito lo strumento.
+Per modificare questo comportamento, utilizzare uno dei parametri seguenti per impostare i file che vengono scaricati. 
+
+> [!NOTE]
+> La versione del sito è determinata dai dati nel file CAB che viene caricata quando viene eseguito lo strumento.
+>
+> È possibile verificare la versione cercando il file *SiteVersion*.txt all'interno del file CAB.
+
 -   **-downloadall** Questa opzione consente di scaricare tutti gli elementi, inclusi aggiornamenti e aggiornamenti rapidi, indipendentemente dalla versione del sito.
 -   **-downloadhotfix** Questa opzione consente di scaricare tutti gli aggiornamenti rapidi indipendentemente dalla versione del sito.
 -   **-downloadsiteversion** Questa opzione consente di scaricare aggiornamenti e aggiornamenti rapidi con una versione più recente rispetto alla versione del sito.
@@ -160,8 +167,19 @@ Riga di comando di esempio che utilizza *- downloadsiteversion*:
 
  Per informazioni sull'installazione degli aggiornamenti, vedere  [Installare gli aggiornamenti nella console per System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md).  
 
+## <a name="bkmk_cmd"></a> File di log
+
+**ServiceConnectionTool.log**
+
+Ogni volta che si esegue lo strumento di connessione del servizio, verrà generato un file di log denominato **ServiceConnectionTool.log** nello stesso percorso dello strumento.  Questo file di log fornirà semplici dettagli sull'esecuzione dello strumento in base ai comandi usati.  Un file di log esistente verrà sostituito ogni volta che si esegue lo strumento.
+
+**ConfigMgrSetup.log**
+
+Quando si usa lo strumento per la connessione e il download degli aggiornamenti, verrà generato un file di log nella radice dell'unità di sistema denominato **ConfigMgrSetup.log**.  Questo file di log fornirà informazioni più dettagliate, ad esempio quali file vengono scaricati, estratti e se i controlli dell'hash hanno esito positivo.
+
 ## <a name="bkmk_cmd"></a> Opzioni della riga di comando  
  Per visualizzare le informazioni della Guida per lo strumento del punto di connessione del servizio, aprire il prompt dei comandi nella cartella che contiene lo strumento ed eseguire il comando:  **serviceconnectiontool.exe**.  
+
 
 |Opzioni della riga di comando|Dettagli|  
 |---------------------------|-------------|  

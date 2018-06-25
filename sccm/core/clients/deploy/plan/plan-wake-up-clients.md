@@ -1,8 +1,8 @@
 ---
 title: Riattivazione dei client
 titleSuffix: Configuration Manager
-description: Pianificare la riattivazione dei client in System Center Configuration Manager.
-ms.date: 04/23/2017
+description: Pianificare la riattivazione dei client in System Center Configuration Manager con la riattivazione LAN (WOL).
+ms.date: 05/23/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,31 +10,32 @@ ms.assetid: 52ee82b2-0b91-4829-89df-80a6abc0e63a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: aa5a0b30526f66add7dfb87fa988ed502cca1ee1
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 2f36ff6c28bd8a3fa23599652aff82ef0c721cad
+ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "34474141"
 ---
 # <a name="plan-how-to-wake-up-clients-in-system-center-configuration-manager"></a>Pianificare la riattivazione dei client in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
- Configuration Manager supporta due tecnologie LAN (Local Area Network) per riattivare computer in modalità sospensione quando si vuole installare software necessario, ad esempio aggiornamenti software e applicazioni: i pacchetti di riattivazione tradizionali e i comandi di accensione AMT.  
+ Configuration Manager supporta i pacchetti di riattivazione tradizionale per riattivare i computer in modalità sospensione quando si vuole installare software richiesto, come aggiornamenti software e applicazioni.  
 
 È possibile integrare il metodo tradizionale di riattivazione pacchetti usando le impostazioni client proxy di riattivazione. Il proxy di riattivazione usa un protocollo peer-to-peer e computer selezionati per controllare se nella subnet sono attivi altri computer e per riattivarli se necessario. Quando il sito è configurato per la riattivazione LAN e i client sono configurati per il proxy di riattivazione, il processo funziona nel modo seguente:  
 
-1.  I computer con il client di Configuration Manager e che non sono in stato di sospensione nella subnet controllano se nella subnet ci sono altri computer riattivati. A tal fine si inviano tra di loro un comando ping TCP/IP ogni 5 secondi.  
+1.  I computer con il client di Configuration Manager e che non sono in stato di sospensione nella subnet controllano se nella subnet ci sono altri computer riattivati. Questo controllo viene eseguito inviando tra di loro un comando ping TCP/IP ogni cinque secondi.  
 
 2.  Se non esiste alcuna risposta da altri computer, questi verranno considerati in stato di sospensione. I computer riattivati diventano *computer di gestione* per la subnet.  
 
      Poiché è possibile che un computer non risponda per un motivo che non sia collegato alla sospensione (ad esempio, è spento, rimosso dalla rete o non è più applicata l'impostazione client di riattivazione proxy), ai computer viene inviato un pacchetto di riattivazione ogni giorno alle 14.00. ora locale. I computer che non rispondono non verranno più considerati in stato di sospensione e non verranno riattivati da proxy di riattivazione.  
 
-     Per il supporto dei proxy di riattivazione, devono essere attivi almeno tre computer per ogni subnet. Per ottenere questo risultato, tre computer vengono scelti in modo non deterministico come *computer tutori* della subnet. Ciò significa che rimangono attivi, nonostante siano presenti criteri di risparmio energia configurati in modalità di sospensione o di ibernazione dopo un periodo di inattività. I computer tutori rispettano i comandi di arresto o di riavvio, ad esempio, in seguito ad attività di manutenzione. Se ciò accade, i computer tutori rimanenti riattivano un altro computer nella subnet in modo che la subnet stessa continui ad avere tre computer tutori.  
+     Per il supporto dei proxy di riattivazione, devono essere attivi almeno tre computer per ogni subnet. Per soddisfare questo requisito, tre computer vengono scelti in modo non deterministico come *computer tutori* della subnet. Questo stato indica che rimangono attivi, nonostante siano presenti criteri di risparmio energia configurati in modalità di sospensione o di ibernazione dopo un periodo di inattività. I computer tutori rispettano i comandi di arresto o di riavvio, ad esempio, in seguito ad attività di manutenzione. Se ciò accade, i computer tutori rimanenti riattivano un altro computer nella subnet in modo che la subnet stessa continui ad avere tre computer tutori.  
 
 3.  I computer di gestione chiedono al commutatore di rete di reindirizzare il traffico di rete dei computer in sospensione verso sé stessi.  
 
-     Il reindirizzamento avviene mediante la trasmissione dal parte del computer di gestione di un frame Ethernet che usa l'indirizzo MAC del computer in sospensione come indirizzo di origine. In questo modo il commutatore di rete si comporta come se il computer in sospensione sia stato spostato sulla stessa porta su cui si trova il computer di gestione. Il computer di gestione invia anche pacchetti ARP per i computer in sospensione per mantenere la voce nella cache ARP. Il computer di gestione risponderà anche alle richieste ARP per conto del computer in sospensione e con l'indirizzo MAC del computer in sospensione.  
+     Il reindirizzamento avviene mediante la trasmissione dal parte del computer di gestione di un frame Ethernet che usa l'indirizzo MAC del computer in sospensione come indirizzo di origine. In questo modo il commutatore di rete si comporta come se il computer in sospensione sia stato spostato sulla stessa porta su cui si trova il computer di gestione. Il computer di gestione invia anche pacchetti ARP per i computer in sospensione per mantenere la voce nella cache ARP. Il computer di gestione risponde anche alle richieste ARP per conto del computer in sospensione e con l'indirizzo MAC del computer in sospensione.  
 
     > [!WARNING]  
     >  Durante questo processo, il mapping da indirizzo IP a indirizzo MAC per il computer in sospensione rimane lo stesso. Il proxy di riattivazione informa il commutatore di rete che una scheda di rete differente sta usando la porta registrata da un altra scheda di rete. Tuttavia, questo comportamento è noto come flap MAC ed è insolito per operazioni di rete standard. Alcuni strumenti di monitoraggio della rete cercano questo comportamento e possono presumere che qualcosa non vada. Di conseguenza, questi strumenti di monitoraggio sono in grado di generare avvisi o chiudere le porte quando si usa il proxy di riattivazione.  
@@ -50,7 +51,7 @@ ms.lasthandoff: 05/03/2018
 > [!IMPORTANT]  
 >  Se un team separato è responsabile dell'infrastruttura di rete e dei servizi di rete, inviare una notifica e includere tale team nel periodo di valutazione e verifica. Ad esempio, in una rete che usa il controllo accesso alla rete mediante 802.1 X, il proxy di attivazione non funziona e può causare l'interruzione del servizio di rete. Il proxy di riattivazione potrebbe inoltre causare la generazione di avvisi da parte di alcuni strumenti di monitoraggio della rete quando viene rilevato il traffico per la riattivazione di altri computer.  
 
--   I client supportati sono Windows 7, Windows 8, Windows Server 2008 R2, Windows Server 2012.  
+-   Tutti i sistemi operativi Windows indicati come client supportati in [Sistemi operativi supportati per client e dispositivi](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices) sono supportati per la riattivazione LAN (WOL).  
 
 -   Non sono supportati i sistemi operativi guest in esecuzione su una macchina virtuale.  
 
@@ -60,7 +61,7 @@ ms.lasthandoff: 05/03/2018
 
 -   Se un computer dispone di più di una scheda di rete, non è possibile configurare la scheda da usare per il proxy di riattivazione; la scelta è non deterministica. La scheda selezionata viene tuttavia registrata nel file SleepAgent_<DOMAIN\>@SYSTEM_0.log.  
 
--   La rete deve consentire le richieste echo ICMP (almeno all'interno della subnet). Non è possibile configurare l'intervallo di 5 secondi usato per inviare i comandi ping ICMP.  
+-   La rete deve consentire le richieste echo ICMP (almeno all'interno della subnet). Non è possibile configurare l'intervallo di cinque secondi usato per inviare i comandi ping ICMP.  
 
 -   La comunicazione non è crittografata né autenticate e IPsec non è supportato.  
 
@@ -80,7 +81,7 @@ Se si vogliono riattivare i computer per un'installazione software pianificata, 
 
  Per usare i pacchetti di riattivazione, è necessario distribuire le impostazioni client del proxy di riattivazione di Risparmio energia oltre alla configurazione del sito primario.  
 
-È necessario anche decidere se usare pacchetti di broadcast diretti a subnet oppure pacchetti unicast, nonché il numero di porta UDP da usare. Per impostazione predefinita, i pacchetti di riattivazione tradizionali vengono trasmessi usando la porta UDP 9 ma, per una maggior sicurezza, è possibile selezionare una porta alternativa per il sito se supportata dai router e firewall coinvolti.  
+Decidere se usare pacchetti di broadcast diretti a subnet oppure pacchetti unicast, nonché il numero di porta UDP da usare. Per impostazione predefinita, i pacchetti di riattivazione tradizionali vengono trasmessi usando la porta UDP 9 ma, per una maggior sicurezza, è possibile selezionare una porta alternativa per il sito se supportata dai router e firewall coinvolti.  
 
 ### <a name="choose-between-unicast-and-subnet-directed-broadcast-for-wake-on-lan"></a>Scegliere tra il broadcast unicast e con riferimento a subnet per la riattivazione LAN  
  Se si è scelto di riattivare i computer inviando pacchetti di riattivazione tradizionali, occorre decidere se trasmettere pacchetti unicast o pacchetti di broadcast con riferimento a subnet. Se si usa il proxy di riattivazione, è necessario usare pacchetti unicast. In caso contrario, usare la tabella seguente per determinare quale metodo di trasmissione scegliere.  

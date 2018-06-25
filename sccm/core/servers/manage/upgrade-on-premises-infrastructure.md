@@ -1,8 +1,8 @@
 ---
 title: Aggiornare l'infrastruttura locale
 titleSuffix: Configuration Manager
-description: Informazioni su come aggiornare l'infrastruttura, ad esempio SQL Server e il sistema operativo del sito di sistemi del sito.
-ms.date: 02/15/2018
+description: Informazioni su come aggiornare l'infrastruttura, ad esempio SQL Server e il sistema operativo dei sistemi del sito.
+ms.date: 05/23/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,21 +10,24 @@ ms.assetid: 8ca970dd-e71c-404f-9435-d36e773a0db2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 09cce65bd4bb4ccb8a9cfee6927aa86409e691a0
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: dc433d63eb647ef7a0a88ada212f949783ac25c0
+ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "34474252"
 ---
 # <a name="upgrade-on-premises-infrastructure-that-supports-system-center-configuration-manager"></a>Aggiornare l'infrastruttura locale che supporta System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Le informazioni disponibili in questo articolo consentono di aggiornare l'infrastruttura server che esegue System Center Configuration Manager.  
+Le informazioni disponibili in questo articolo consentono di aggiornare l'infrastruttura server che esegue Configuration Manager.  
 
- - Per eseguire l'aggiornamento a System Center Configuration Manager da una versione precedente di Configuration Manager, vedere [Aggiornamenti per System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).
+ - Per eseguire l'*aggiornamento* a System Center Configuration Manager Current Branch da una versione precedente di Configuration Manager, vedere [Eseguire l'aggiornamento a System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).
 
-- Per aggiornare l'infrastruttura di System Center Configuration Manager a una versione più recente, vedere [Aggiornamenti per System Center Configuration Manager](/sccm/core/servers/manage/updates).
+- Per *aggiornare* l'infrastruttura di System Center Configuration Manager Current Branch a una versione più recente, vedere [Aggiornamenti per System Center Configuration Manager](/sccm/core/servers/manage/updates).
+
+
 
 ##  <a name="BKMK_SupConfigUpgradeSiteSrv"></a> Aggiornare il sistema operativo dei sistemi del sito  
  Configuration Manager supporta l'aggiornamento sul posto del sistema operativo dei server che ospitano un server del sito e dei server remoti che ospitano un ruolo qualsiasi del sistema del sito, nelle situazioni seguenti:  
@@ -34,24 +37,24 @@ Le informazioni disponibili in questo articolo consentono di aggiornare l'infras
     - Da Windows Server 2012 R2 a Windows Server 2016 ([vedere dettagli aggiuntivi](#bkmk_2016)).
     - Da Windows Server 2012 a Windows Server 2016 ([vedere dettagli aggiuntivi](#bkmk_2016)).
     - Da Windows Server 2012 a Windows Server 2012 R2 ([vedere dettagli aggiuntivi](#bkmk_2012r2)).
-    - A partire da Configuration Manager versione 1602, è anche supportato l'aggiornamento da Windows Server 2008 R2 a Windows Server 2012 R2 ([vedere dettagli aggiuntivi](#bkmk_from2008r2)).
+    - Da Windows Server 2008 R2 a Windows Server 2012 R2 ([vedere dettagli aggiuntivi](#bkmk_from2008r2)).
 
     > [!WARNING]  
-    >  Prima di eseguire l'aggiornamento a un sistema operativo diverso, *è necessario disinstallare WSUS* dal server. È possibile conservare il database WSUS e ricollegarlo dopo la reinstallazione di WSUS. Per informazioni su questo passaggio critico, vedere la sezione "Funzionalità nuove e modificate" in [Panoramica di Windows Server Update Services](https://technet.microsoft.com/library/hh852345.aspx), nella documentazione di Windows Server.  
+    >  Prima di eseguire l'aggiornamento a un sistema operativo diverso, *è necessario disinstallare WSUS* dal server. È possibile conservare il database WSUS e ricollegarlo dopo la reinstallazione di WSUS. Per altre informazioni su questo passaggio critico, vedere la sezione "Funzionalità nuove e modificate" in [Panoramica di Windows Server Update Services](https://technet.microsoft.com/library/hh852345.aspx), nella documentazione di Windows Server.  
 
-Per aggiornare un server, eseguire la procedura di aggiornamento indicata dal sistema operativo interessato dall'aggiornamento.  Vedere la documentazione seguente:
+Per aggiornare un server, eseguire la procedura di aggiornamento indicata dal sistema operativo interessato dall'aggiornamento. Vedere gli articoli seguenti:
   -  [Opzioni di aggiornamento per Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) nella documentazione di Windows Server.  
-  - [Opzioni di aggiornamento e conversione per Windows Server 2016](https://technet.microsoft.com/windows-server-docs/get-started/supported-upgrade-paths) nella documentazione di Windows Server.
+  - [Opzioni di aggiornamento e conversione per Windows Server 2016](/windows-server/get-started/supported-upgrade-paths) nella documentazione di Windows Server.
 
 ### <a name="bkmk_2016"></a> Eseguire l'aggiornamento da Windows Server 2012 o Windows Server 2012 R2 a 2016
 Quando si esegue l'aggiornamento di Windows Server 2012 o Windows Server 2012 R2 a Windows Server 2016, sono valide le considerazioni seguenti:
 
 
-**Prima di eseguire l'aggiornamento:**  
+#### <a name="before-upgrade"></a>Prima di eseguire l'aggiornamento  
 -   Rimuovere il client di System Center Endpoint Protection (SCEP). Windows Server 2016 è predefinito con Windows Defender, che sostituisce il client SCEP. La presenza del client SCEP può impedire un aggiornamento a Windows Server 2016.
 -   Rimuovere il ruolo WSUS dal server, se installato. È possibile conservare il database WSUS e ricollegarlo dopo la reinstallazione di WSUS.
 
-**Dopo aver eseguito l'aggiornamento:**
+#### <a name="after-upgrade"></a>Dopo l'aggiornamento   
 -   Assicurarsi che Windows Defender sia abilitato, impostato per l'avvio automatico e in esecuzione.
 -   Verificare che i servizi di Configuration Manager seguenti siano in esecuzione:
   -     SMS_EXECUTIVE
@@ -70,7 +73,7 @@ Quando si esegue l'aggiornamento di Windows Server 2012 o Windows Server 2012 R2
 
 -   Se si sta aggiornando il server del sito primario, [eseguire una reimpostazione del sito](/sccm/core/servers/manage/modify-your-infrastructure#bkmk_reset).
 
-**Problema noto per le console remota di Configuration Manager:**  
+#### <a name="known-issue-for-remote-configuration-manager-consoles"></a>Problema noto per le console remote di Configuration Manager   
 Può succedere che, dopo aver aggiornato il server del sito o un server che ospita un'istanza di SMS_Provider per Windows Server 2016, gli utenti amministratori non riescano a connettere una console di Configuration Manager al sito. Per risolvere questo problema, è necessario ripristinare manualmente le autorizzazioni per il gruppo SMS Admins in WMI. Le autorizzazioni devono essere impostate nel server del sito e in ogni server remoto che ospita un'istanza del provider SMS:
 
 1. Nei server applicabili aprire Microsoft Management Console (MMC), aggiungere lo snap-in per **Controllo WMI** e quindi selezionare **Computer locale**.
@@ -85,12 +88,13 @@ Può succedere che, dopo aver aggiornato il server del sito o un server che ospi
   -   Abilita remoto
 5. Salvare le autorizzazioni per ripristinare l'accesso per la console di Configuration Manager.
 
+
 ### <a name="bkmk_2012r2"></a> Da Windows Server 2012 a Windows Server 2012 R2
 
-**Prima di eseguire l'aggiornamento:**
+#### <a name="before-upgrade"></a>Prima dell'aggiornamento  
 -   Rimuovere il ruolo WSUS dal server, se installato. È possibile conservare il database WSUS e ricollegarlo dopo la reinstallazione di WSUS.
 
-**Dopo aver eseguito l'aggiornamento:**
+#### <a name="after-upgrade"></a>Dopo l'aggiornamento  
   - Assicurarsi che Servizi di distribuzione Windows sia avviato e in esecuzione per i ruoli del sistema del sito seguenti. Questo servizio viene arrestato durante l'aggiornamento:
     - Server del sito
     - Punto di gestione
@@ -111,11 +115,11 @@ Può succedere che, dopo aver aggiornato il server del sito o un server che ospi
 ### <a name="bkmk_from2008r2"></a> Eseguire l'aggiornamento da Windows Server 2008 R2 a Windows Server 2012 R2
 Questo scenario di aggiornamento del sistema operativo presenta le condizioni seguenti:  
 
-**Prima di eseguire l'aggiornamento:**
+#### <a name="before-upgrade"></a>Prima dell'aggiornamento  
 -   Disinstallare WSUS 3.2.  
-    Prima di eseguire l'aggiornamento di un sistema operativo a Windows Server 2012 R2, è necessario disinstallare WSUS 3.2 dal server. Per informazioni su questo passaggio critico, vedere la sezione Funzionalità nuove e modificate in Panoramica di Windows Server Update Services, nella documentazione di Windows Server.
+    Prima di eseguire l'aggiornamento di un sistema operativo server a Windows Server 2012 R2, è necessario disinstallare WSUS 3.2 dal server. Per informazioni su questo passaggio critico, vedere la sezione Funzionalità nuove e modificate in [Panoramica di Windows Server Update Services](https://technet.microsoft.com/library/hh852345.aspx), nella documentazione di Windows Server.
 
-**Dopo aver eseguito l'aggiornamento:**
+#### <a name="after-upgrade"></a>Dopo l'aggiornamento  
   - Assicurarsi che Servizi di distribuzione Windows sia avviato e in esecuzione per i ruoli del sistema del sito seguenti. Questo servizio viene arrestato durante l'aggiornamento:
     - Server del sito
     - Punto di gestione
@@ -148,52 +152,56 @@ Sono solitamente richiesti, ma non sono supportati da Configuration Manager gli 
 
 -   Aggiornamento sul posto a una versione di Service Pack di Windows successiva purché il livello di Service Pack risultante sia comunque supportato da Configuration Manager.  
 
--   Aggiornamento sul posto di Windows da una versione supportata di Windows 10. Per altre informazioni, vedere [Aggiornare Windows alla versione più recente con System Center Configuration Manager](../../../osd/deploy-use/upgrade-windows-to-the-latest-version.md).  
+-   Aggiornamento sul posto di Windows da una versione supportata di Windows 10. Per altre informazioni, vedere [Aggiornare Windows alla versione più recente](../../../osd/deploy-use/upgrade-windows-to-the-latest-version.md).  
 
--   Aggiornamenti di manutenzione da build a build di Windows 10.  Per altre informazioni, vedere [Gestire Windows come servizio con System Center Configuration Manager](../../../osd/deploy-use/manage-windows-as-a-service.md).  
+-   Aggiornamenti di manutenzione da build a build di Windows 10. Per altre informazioni, vedere [Gestire Windows come servizio](../../../osd/deploy-use/manage-windows-as-a-service.md).  
+
+
 
 ##  <a name="BKMK_SupConfigUpgradeDBSrv"></a> Aggiornare SQL Server sul server di database del sito  
   Configuration Manager supporta un aggiornamento sul posto di SQL Server da una versione supportata di SQL sul server di database del sito. Gli scenari di aggiornamento di SQL Server descritti in questa sezione sono supportati da Configuration Manager e includono i requisiti per ogni scenario.
 
- Per informazioni sulle versioni di SQL Server supportate da Configuration Manager, vedere [Supporto per le versioni di SQL Server per System Center Configuration Manager](../../../core/plan-design/configs/support-for-sql-server-versions.md).  
+ Per informazioni sulle versioni di SQL Server supportate da Configuration Manager, vedere [Supporto per le versioni di SQL Server](../../../core/plan-design/configs/support-for-sql-server-versions.md).  
 
- **Eseguire l'aggiornamento della versione Service Pack di SQL Server:**    
+ ### <a name="upgrade-the-service-pack-version-of-sql-server"></a>Aggiornamento della versione del Service Pack di SQL Server    
  Configuration Manager supporta l’aggiornamento sul posto di SQL Server a una versione di Service Pack successiva purché il livello di Service Pack di SQL Server risultante sia comunque supportato da Configuration Manager.
 
- Quando in una gerarchia sono presenti più siti di Configuration Manager, ogni sito può eseguire una versione diversa di Service Pack di SQL Server. Non esistono limitazioni per l'ordine in cui i siti eseguono l'aggiornamento della versione di Service Pack di SQL Server usata per il database del sito.
+ In presenza di più siti di Configuration Manager in una gerarchia, ogni sito può eseguire una versione diversa del Service pack di SQL Server. Non esiste alcuna limitazione per l'ordine in cui i siti si aggiornano la versione del Service Pack di SQL Server usato per il database del sito.
 
- **Eseguire l'aggiornamento a una nuova versione di SQL Server:**   
+### <a name="upgrade-to-a-new-version-of-sql-server"></a>Eseguire l'aggiornamento a una nuova versione di SQL Server   
  Configuration Manager supporta l'aggiornamento sul posto di SQL Server alle versione seguenti:
 
- - SQL Server 2012  
- - SQL Server 2014  
+ - SQL Server 2017
  - SQL Server 2016  
+ - SQL Server 2014  
 
 Quando si aggiorna la versione di SQL Server che ospita il database del sito, è necessario aggiornare la versione di SQL Server usata nei siti nell'ordine seguente:
 
  1. Eseguire l'aggiornamento di SQL Server prima nel sito di amministrazione centrale.
  2. Aggiornare i siti secondari prima di eseguire l’aggiornamento del sito primario padre di un sito secondario.
- 3. Aggiornare per ultimo i siti primari padre. Sono inclusi sia i siti primari figlio che fanno riferimento a un sito di amministrazione centrale sia i siti primari autonomi che sono siti di livello superiore di una gerarchia.
+ 3. Aggiornare per ultimo i siti primari padre. Questi siti includono sia i siti primari figlio che fanno riferimento a un sito di amministrazione centrale sia i siti primari autonomi che sono siti di livello superiore di una gerarchia.
 
-**Livello di stima della cardinalità di SQL Server e database del sito:**   
+### <a name="sql-server-cardinality-estimation-level-and-the-site-database"></a>Livello di stima della cardinalità di SQL Server e database del sito   
 Quando un database del sito viene aggiornato da una versione precedente di SQL Server, il database mantiene il livello CE (Cardinality Estimation, Stima della cardinalità) SQL esistente se questo corrisponde al minimo consentito per l'istanza di SQL Server. L'aggiornamento di SQL Server con un database a un livello di compatibilità inferiore a quello consentito imposta automaticamente il database sul livello di compatibilità più basso consentito da SQL Server.
 
 La tabella seguente identifica i livelli di compatibilità consigliati per i database del sito di Configuration Manager:
 
 |Versione di SQL Server | Livelli di compatibilità supportati |Livello consigliato|
 |----------------|--------------------|--------|
-| SQL Server 2016| 130, 120, 110, 100 | 130|
-| SQL Server 2014| 120, 110, 100      | 110|
+| SQL Server 2017 | 140, 130, 120, 110  | 140 |
+| SQL Server 2016 | 130, 120, 110  | 130 |
+| SQL Server 2014 | 120, 110      | 110 |
 
-Per identificare il livello di compatibilità CE di SQL Server in uso per il database del sito, eseguire la query SQL seguente sul server di database del sito: **SELECT name, compatibility_level FROM sys.databases**
+Per identificare il livello di compatibilità CE di SQL Server in uso per il database del sito, eseguire la query SQL seguente nel server di database del sito:  
+`SELECT name, compatibility_level FROM sys.databases`
 
- Per altre informazioni sui livelli di compatibilità CE di SQL e su come impostarli, vedere [Livello di compatibilità ALTER DATABASE (Transact-SQL)](https://msdn.microsoft.com/library/bb510680.aspx).
+ Per altre informazioni sui livelli di compatibilità CE di SQL e su come impostarli, vedere [Livello di compatibilità ALTER DATABASE (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-compatibility-level?view=sql-server-2017).
 
 
-Per altre informazioni su SQL Server, vedere la documentazione di SQL Server su TechNet:
--   [Eseguire l'aggiornamento a SQL Server 2012](http://technet.microsoft.com/library/ms143393\(v=sql.110))
+Per altre informazioni sull'aggiornamento di SQL Server, vedere la documentazione di SQL Server seguente:
+-   [Eseguire l'aggiornamento a SQL Server 2017](/sql/database-engine/install-windows/supported-version-and-edition-upgrades-2017)
+-   [Eseguire l'aggiornamento a SQL Server 2016](/sql/database-engine/install-windows/supported-version-and-edition-upgrades)
 -   [Eseguire l'aggiornamento a SQL Server 2014](http://technet.microsoft.com/library/ms143393\(v=sql.120))  
--   [Eseguire l'aggiornamento a SQL Server 2016](https://technet.microsoft.com/library/bb677622(v=sql.130))
 
 
 

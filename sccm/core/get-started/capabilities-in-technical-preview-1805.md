@@ -2,7 +2,7 @@
 title: Technical Preview 1805
 titleSuffix: Configuration Manager
 description: Informazioni sulle nuove funzionalità disponibili in Configuration Manager Technical Preview versione 1805.
-ms.date: 05/11/2018
+ms.date: 05/21/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,11 +10,12 @@ ms.assetid: 7996b3eb-5259-483b-af40-adae2943d123
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bb2b25440c87d4969d152ce410b8a28f010868ce
-ms.sourcegitcommit: 021272d5858e5dbb650b95644736d1de3dab7d8a
+ms.openlocfilehash: 24cb16ab17475bdd063949c7e3e2961b53341026
+ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/15/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "34450152"
 ---
 # <a name="capabilities-in-technical-preview-1805-for-system-center-configuration-manager"></a>Funzionalità nella Technical Preview 1805 per System Center Configuration Manager
 
@@ -45,8 +46,7 @@ Steps to workaround, if any.
 
 
 ## <a name="create-a-phased-deployment-with-manually-configured-phases-for-a-task-sequence"></a>Creare una distribuzione in più fasi con fasi configurate manualmente per una sequenza di attività
-<!--1358148--> 
-È ora possibile [creare una distribuzione in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence) con fasi configurate manualmente per una sequenza di attività. È possibile aggiungere fino a 10 fasi aggiuntive dalla scheda **Fasi** della procedura guidata Crea una distribuzione in più fasi. 
+<!--1358148--> È ora possibile [creare una distribuzione in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence) con fasi configurate manualmente per una sequenza di attività. È possibile aggiungere fino a 10 fasi aggiuntive dalla scheda **Fasi** della procedura guidata Crea una distribuzione in più fasi. 
 
 
 ### <a name="try-it-out"></a>Verifica
@@ -84,8 +84,7 @@ Seguire le istruzioni per creare una distribuzione in più fasi in cui configura
 
 
 ## <a name="cloud-distribution-point-support-for-azure-resource-manager"></a>Supporto del punto di distribuzione cloud per Azure Resource Manager
-<!--1322209-->
-Quando si crea un'istanza del [punto di distribuzione cloud](/sccm/core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure), la procedura guidata consente ora di creare una **distribuzione Azure Resource Manager**. [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) è una piattaforma moderna per la gestione di tutte le risorse di una soluzione come una singola entità detta [gruppo di risorse](/azure/azure-resource-manager/resource-group-overview#resource-groups). Quando si distribuisce un punto di distribuzione cloud con Azure Resource Manager, il sito usa Azure Active Directory (Azure AD) per autenticare e creare le risorse cloud necessarie. Questa distribuzione modernizzata non richiede il certificato di gestione classico di Azure.  
+<!--1322209--> Quando si crea un'istanza del [punto di distribuzione cloud](/sccm/core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure), la procedura guidata consente ora di creare una **distribuzione Azure Resource Manager**. [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) è una piattaforma moderna per la gestione di tutte le risorse di una soluzione come una singola entità detta [gruppo di risorse](/azure/azure-resource-manager/resource-group-overview#resource-groups). Quando si distribuisce un punto di distribuzione cloud con Azure Resource Manager, il sito usa Azure Active Directory (Azure AD) per autenticare e creare le risorse cloud necessarie. Questa distribuzione modernizzata non richiede il certificato di gestione classico di Azure.  
 
 La procedura guidata per il punto di distribuzione cloud offre ancora l'opzione per una **distribuzione classica del servizio** tramite un certificato di gestione di Azure. Per semplificare la distribuzione e la gestione delle risorse, è consigliabile usare il modello di distribuzione Azure Resource Manager per tutti i nuovi punti di distribuzione cloud. Se possibile, ridistribuire i punti di distribuzione cloud esistenti tramite Resource Manager.
 
@@ -120,8 +119,7 @@ Monitorare lo stato della distribuzione del servizio con **cloudmgr.log** nel pu
 
 
 ## <a name="take-actions-based-on-management-insights"></a>Intraprendere azioni in base alle informazioni dettagliate sulla gestione
-<!--1357930-->
-Alcune [informazioni dettagliate sulla gestione](/sccm/core/servers/manage/management-insights) offrono ora la possibilità di eseguire un'azione. A seconda della regola, questa azione presenta uno dei comportamenti seguenti:  
+<!--1357930--> Alcune [informazioni dettagliate sulla gestione](/sccm/core/servers/manage/management-insights) offrono ora la possibilità di eseguire un'azione. A seconda della regola, questa azione presenta uno dei comportamenti seguenti:  
 
 - Passare direttamente nella console al nodo in cui è possibile eseguire ulteriori azioni. Ad esempio, se le informazioni dettagliate sulla gestione consigliano di modificare un'impostazione client, l'opzione per eseguire un'azione consente di passare al nodo Impostazioni client. È possibile eseguire ulteriori azioni modificando l'impostazione predefinita o un oggetto impostazioni client personalizzato.  
 
@@ -181,8 +179,7 @@ Per altre informazioni su Windows LEDBAT, vedere il post di blog [New transport 
 
 
 ## <a name="cloud-management-dashboard"></a>Dashboard di gestione del cloud
-<!--1358461-->
-Il nuovo **dashboard di gestione del cloud** offre una visualizzazione centralizzata per l'utilizzo di Cloud Management Gateway (CMG). Dopo l'onboarding del sito con Azure AD, nel dashboard vengono visualizzati anche dati sugli utenti e i dispositivi del cloud.  
+<!--1358461--> Il nuovo **dashboard di gestione del cloud** offre una visualizzazione centralizzata per l'utilizzo di Cloud Management Gateway (CMG). Dopo l'onboarding del sito con Azure AD, nel dashboard vengono visualizzati anche dati sugli utenti e i dispositivi del cloud.  
 
 Lo screenshot seguente illustra una parte del dashboard di gestione del cloud che mostra due dei riquadri disponibili:  
 ![Riquadri del dashboard di gestione del cloud: traffico CMG e Client online correnti](media/1358461-cmg-dashboard.png)
@@ -220,8 +217,7 @@ Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio
 
 
 ## <a name="cmpivot"></a>CMPivot
-<!--1358456-->
-Configuration Manager ha sempre fornito un archivio centralizzato di grandi dimensioni per i dati dei dispositivi, usato dai clienti per i report. Tuttavia, la validità di questi dati è limitata all'ultima raccolta dai client. 
+<!--1358456--> Configuration Manager ha sempre fornito un archivio centralizzato di grandi dimensioni per i dati dei dispositivi, usato dai clienti per i report. Tuttavia, la validità di questi dati è limitata all'ultima raccolta dai client. 
 
 CMPivot è una nuova utilità inclusa nella console che consente l'accesso allo stato in tempo reale dei dispositivi nell'ambiente in uso. Esegue immediatamente una query su tutti i dispositivi connessi nella raccolta di destinazione e restituisce i risultati. È quindi possibile filtrare e raggruppare questi dati nello strumento. La disponibilità di dati in tempo reale dai client online consente di rispondere alle domande aziendali, risolvere i problemi e rispondere agli eventi imprevisti di sicurezza in modo più veloce.
 
@@ -264,8 +260,7 @@ Provare a completare le attività. Inviare quindi [commenti e suggerimenti](capa
 
 
 ## <a name="improved-secure-client-communications"></a>Comunicazioni client sicure migliorate
-<!--1356889,1358228,1358460-->
-L'uso delle comunicazioni HTTPS è consigliato per tutti i percorsi di comunicazione di Configuration Manager, ma può essere difficile per alcuni clienti a causa del sovraccarico di gestione dei certificati PKI. L'introduzione dell'integrazione di Azure Active Directory (Azure AD) riduce alcuni ma non tutti i requisiti per i certificati. 
+<!--1356889,1358228,1358460--> L'uso delle comunicazioni HTTPS è consigliato per tutti i percorsi di comunicazione di Configuration Manager, ma può essere difficile per alcuni clienti a causa del sovraccarico di gestione dei certificati PKI. L'introduzione dell'integrazione di Azure Active Directory (Azure AD) riduce alcuni ma non tutti i requisiti per i certificati. 
 
 Questa versione include miglioramenti per le modalità di comunicazione dei client con i sistemi del sito. Questi miglioramenti hanno due obiettivi principali:  
 
@@ -282,18 +277,16 @@ Gli scenari seguenti traggono vantaggio da questi miglioramenti:
 
 #### <a name="bkmk_token1"></a> Scenario 1: Da client a punto di gestione
 <!--1356889-->
-I [dispositivi aggiunti ad Azure AD](/azure/active-directory/device-management-introduction#azure-ad-joined-devices) possono comunicare tramite un Cloud Management Gateway (CMG) con un punto di gestione configurato per HTTP. Il server del sito genera un certificato per il punto di gestione in modo che possa comunicare tramite un canale sicuro.   
+[I dispositivi aggiunti ad Azure AD](/azure/active-directory/device-management-introduction#azure-ad-joined-devices) possono comunicare tramite un Cloud Management Gateway (CMG) con un punto di gestione configurato per HTTP. Il server del sito genera un certificato per il punto di gestione in modo che possa comunicare tramite un canale sicuro.   
 
 > [!Note]  
 > Questo comportamento è cambiato rispetto a Configuration Manager Current Branch versione 1802, che richiede un punto di gestione abilitato per HTTPS per questo scenario. Per altre informazioni, vedere [Abilitare i punti di gestione per HTTPS](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#enable-management-point-for-https).  
 
 #### <a name="bkmk_token2"></a> Scenario 2: Da client a punto di distribuzione
-<!--1358228-->
-Un gruppo di lavoro o un client aggiunto ad Azure AD può scaricare contenuto tramite un canale sicuro da un punto di distribuzione configurato per HTTP.   
+<!--1358228--> Un gruppo di lavoro o un client aggiunto ad Azure AD può scaricare contenuto tramite un canale sicuro da un punto di distribuzione configurato per HTTP.   
 
 #### <a name="bkmk_token3"></a> Scenario 3: Identità del dispositivo di Azure AD 
-<!--1358460-->
-Un dispositivo aggiunto ad Azure AD o un [dispositivo di Azure AD ibrido](/azure/active-directory/device-management-introduction#hybrid-azure-ad-joined-devices) senza un utente di Azure AD connesso può comunicare in modo sicuro con il relativo sito assegnato. L'identità del dispositivo basata sul cloud è ora sufficiente per l'autenticazione con CMG e il punto di gestione.  
+<!--1358460--> Un dispositivo aggiunto ad Azure AD o un [dispositivo di Azure AD ibrido](/azure/active-directory/device-management-introduction#hybrid-azure-ad-joined-devices) senza un utente di Azure AD connesso può comunicare in modo sicuro con il relativo sito assegnato. L'identità del dispositivo basata sul cloud è ora sufficiente per l'autenticazione con CMG e il punto di gestione.  
 
 
 ### <a name="prerequisites"></a>Prerequisiti  
@@ -336,8 +329,7 @@ Vedere l'[elenco di scenari](#bkmk_token) precedenti per la convalida.
 
 
 ## <a name="improvements-for-enabling-third-party-software-update-support"></a>Miglioramenti all'abilitazione del supporto degli aggiornamenti software di terze parti
-<!--1357605-->
-Grazie ai commenti e suggerimenti dei clienti in UserVoice in merito al [supporto di aggiornamenti software di terze parti](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8803711-3rd-party-patching-scup-integration-with-sccm-co), questa versione migliora ulteriormente l'integrazione con System Center Updates Publisher (SCUP). In Configuration Manager Technical Preview [versione 1803](/sccm/core/get-started/capabilities-in-technical-preview-1803#enable-third-party-software-update-support-on-clients) è stata aggiunta la possibilità di leggere il certificato da WSUS per gli aggiornamenti di terze parti e quindi distribuire tale certificato ai client. È però ancora necessario usare lo strumento SCUP per creare e gestire il certificato per la firma degli aggiornamenti software di terze parti.
+<!--1357605--> Grazie ai commenti e suggerimenti dei clienti in UserVoice in merito al [supporto di aggiornamenti software di terze parti](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8803711-3rd-party-patching-scup-integration-with-sccm-co), questa versione migliora ulteriormente l'integrazione con System Center Updates Publisher (SCUP). In Configuration Manager Technical Preview [versione 1803](/sccm/core/get-started/capabilities-in-technical-preview-1803#enable-third-party-software-update-support-on-clients) è stata aggiunta la possibilità di leggere il certificato da WSUS per gli aggiornamenti di terze parti e quindi distribuire tale certificato ai client. È però ancora necessario usare lo strumento SCUP per creare e gestire il certificato per la firma degli aggiornamenti software di terze parti.
 
 In questa versione, è possibile abilitare il sito di Configuration Manager per la configurazione automatica del certificato. Il sito comunica con WSUS per generare un certificato a questo scopo. Configuration Manager continua quindi a distribuire tale certificato ai client. Questa iterazione elimina la necessità di usare lo strumento SCUP per creare e gestire il certificato. 
 
@@ -396,8 +388,7 @@ Lo strumento per la visualizzazione di log CMTrace viene ora installato automati
 
 
 ## <a name="improvement-to-the-configuration-manager-console"></a>Miglioramento della console di Configuration Manager
-<!--1358202-->
-È stato introdotto il miglioramento seguente per la console di Configuration Manager:
+<!--1358202--> È stato introdotto il miglioramento seguente per la console di Configuration Manager:
 
 - Gli elenchi di dispositivi in Asset e conformità, Dispositivi, ora visualizzano l'utente attualmente connesso per impostazione predefinita. Questo valore è aggiornato quanto lo [stato del client](/sccm/core/clients/manage/monitor-clients#bkmk_indStatus). Il valore viene cancellato quando l'utente si disconnette. Se nessun utente è connesso, il valore è vuoto. 
 
@@ -407,12 +398,14 @@ Il valore dell'utente attualmente connesso è vuoto nel nodo Dispositivi o quand
 
 
 ## <a name="improvements-to-console-feedback"></a>Miglioramenti alla funzione della console relativa a commenti e suggerimenti
-<!--1357542-->
-Questa versione include i miglioramenti seguenti per il nuovo meccanismo per l'invio di [commenti e suggerimenti](capabilities-in-technical-preview-1804.md#bkmk_feedback)nella console di Configuration Manager:  
+<!--1357542--> Questa versione include i miglioramenti seguenti per il nuovo meccanismo per l'invio di [commenti e suggerimenti](capabilities-in-technical-preview-1804.md#bkmk_feedback) nella console di Configuration Manager:  
 
 - La finestra di dialogo per l'invio di commenti e suggerimenti memorizza ora le impostazioni precedenti, ad esempio le opzioni selezionate e l'indirizzo di posta elettronica.  
 
 - È ora supportato l'invio di commenti e suggerimenti offline. È possibile salvare i commenti e i suggerimenti dalla console e quindi caricarli per Microsoft da un sistema connesso a internet. Usare il nuovo strumento per il caricamento dei commenti e suggerimenti offline disponibile in `cd.latest\SMSSETUP\Tools\UploadOfflineFeedback\UploadOfflineFeedback.exe`. Per visualizzare le opzioni della riga di comando disponibili e obbligatorie, eseguire lo strumento con l'opzione `--help`. Il sistema connesso deve avere accesso a **petrol.office.microsoft.com**.
+
+### <a name="known-issues"></a>Problemi noti
+Quando si usa **Invia smile** oppure **Invia faccia imbronciata** dalla console in un computer con connettività Internet, può essere restituito il messaggio seguente: "Si è verificato un errore durante l'invio dei commenti". Se si fa clic su **Altri dettagli** viene visualizzato il testo seguente: `{"Message":""}`. Questo errore è dovuto a un problema noto con la risposta dal sistema di commenti e suggerimenti di back-end. È possibile ignorare l'errore. Microsoft ha ricevuto comunque i commenti e suggerimenti. (Se nei dettagli viene visualizzato un messaggio diverso, usare l'opzione per l'invio di commenti e suggerimenti offline per riprovare a inviarli in un secondo momento.)
 
 
 
@@ -427,8 +420,7 @@ Questa versione include i miglioramenti aggiuntivi seguenti quando si usa l'opzi
 
 
 ## <a name="improvement-to-hardware-inventory-for-large-integer-values"></a>Miglioramento dell'inventario hardware per valori interi di grandi dimensioni
-<!--1357880-->
-L'inventario hardware ha attualmente un limite per numeri interi maggiori di 4.294.967.296 (2^32). Questo limite può essere raggiunto per attributi come le dimensioni delle unità disco rigido in byte. Il punto di gestione non elabora valori interi oltre questo limite, pertanto nessun valore viene archiviato nel database. In questa versione, il limite è stato aumentato a 18.446.744.073.709.551.616 (2^64). 
+<!--1357880--> L'inventario hardware ha attualmente un limite per numeri interi maggiori di 4.294.967.296 (2^32). Questo limite può essere raggiunto per attributi come le dimensioni delle unità disco rigido in byte. Il punto di gestione non elabora valori interi oltre questo limite, pertanto nessun valore viene archiviato nel database. In questa versione, il limite è stato aumentato a 18.446.744.073.709.551.616 (2^64). 
 
 Per una proprietà con un valore che non cambia, ad esempio le dimensioni totali del disco, il valore potrebbe non essere immediatamente visibile dopo l'aggiornamento del sito. La maggior parte dell'inventario hardware è un report delta. Il client invia solo valori che cambiano. Per risolvere questo problema, aggiungere un'altra proprietà alla stessa classe. Con questa azione, il client aggiorna tutte le proprietà nella classe modificata. 
 
@@ -451,8 +443,7 @@ Provare a completare le attività. Inviare quindi [commenti e suggerimenti](capa
 
 
 ## <a name="improvement-to-support-for-cng-certificates"></a>Miglioramento del supporto per i certificati CNG
-<!--1357314-->
-In questa versione, è possibile usare i [certificati CNG](/sccm/core/plan-design/network/cng-certificates-overview) per i ruoli del server abilitati per HTTPS aggiuntivi seguenti:  
+<!--1357314--> In questa versione, è possibile usare i [certificati CNG](/sccm/core/plan-design/network/cng-certificates-overview) per i ruoli del server abilitati per HTTPS aggiuntivi seguenti:  
 - Punto di registrazione certificati, incluso il server del servizio Registrazione dispositivi di rete con il modulo di criteri di Configuration Manager
 
 
