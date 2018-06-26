@@ -77,6 +77,6 @@ Prima di poter usare il risparmio energia in System Center Configuration Manager
 
 3.  Nell'elenco **Raccolte dispositivi** selezionare la raccolta che si vuole escludere dal risparmio energia e quindi nel gruppo **Proprietà** della scheda **Home** fare clic su **Proprietà**.  
 
-4.  Nella scheda **Risparmio energia** della finestra di dialogo ***Proprietà* *<Nome raccolta\>* selezionare **Non applicare mai le impostazioni di risparmio energia ai computer di questa raccolta**.  
+4.  Nella scheda **Risparmio energia** della finestra di dialogo **Proprietà** *<Nome raccolta\>* selezionare **Non applicare mai le impostazioni di risparmio energia ai computer di questa raccolta**.  
 
 5.  Fare clic su **OK** per chiudere la finestra di dialogo ***Proprietà* *<Nome raccolta\>* e salvare le impostazioni.  

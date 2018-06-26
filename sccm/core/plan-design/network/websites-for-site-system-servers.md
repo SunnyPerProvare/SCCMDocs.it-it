@@ -50,7 +50,7 @@ Alcuni ruoli del sistema del sito di Configuration Manager richiedono Microsoft 
 -   Per ogni sito Web personalizzato o predefinito che usa una cartella personalizzata, inserire una copia del tipo di documento predefinito da usare nella cartella radice che ospita il sito Web. Ad esempio, in un computer Windows Server 2008 R2 con configurazioni predefinite, **iisstart.htm** è uno dei diversi tipi di documento predefiniti disponibili. È possibile trovare questo file nella radice del sito Web predefinito e quindi inserire una copia del file (o una copia del tipo di documento predefinito da usare) nella cartella radice che ospita il sito Web personalizzato SMSWEB. Per altre informazioni sui tipi di documento predefiniti, vedere [Default Document &lt;defaultDocument\> for IIS](http://www.iis.net/configreference/system.webserver/defaultdocument) (Documento predefinito defaultDocument per IIS).  
 
 **Informazioni sui requisiti IIS:**
-** i seguenti ruoli del sistema del sito richiedono IIS e un sito Web per ospitare i servizi del sistema del sito:**  
+**i seguenti ruoli del sistema del sito richiedono IIS e un sito Web per ospitare i servizi del sistema del sito:**  
 
 -   Punto per servizi Web del Catalogo applicazioni  
 

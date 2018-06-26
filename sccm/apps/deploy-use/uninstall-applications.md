@@ -59,7 +59,7 @@ Eseguire le azioni seguenti per disinstallare un'applicazione distribuita in pre
         > [!NOTE]  
         >  La pagina **Contenuto** viene visualizzata solo se si seleziona l'opzione **Specifica manualmente le informazioni sul tipo di distribuzione** nella pagina **Generale** della Creazione guidata tipo di distribuzione.  
 
-    -   Nella scheda **Programmi** della finestra di dialogo **Proprietà<*nome tipo di distribuzione>*** specificare la riga di comando da usare per disinstallare l'applicazione nel campo **Disinstalla programma**.  
+    -   Nella scheda **Programmi** della finestra di dialogo **Proprietà<*nome tipo di distribuzione*>**  specificare la riga di comando da usare per disinstallare l'applicazione nel campo **Disinstalla programma**.  
 
 2.  Distribuire l'applicazione e selezionare l'azione di distribuzione **Disinstalla** nella pagina **Impostazioni di distribuzione** della Distribuzione guidata del software.  
 

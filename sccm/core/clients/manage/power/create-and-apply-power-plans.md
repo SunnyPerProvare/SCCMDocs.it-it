@@ -47,7 +47,7 @@ Le funzionalità di risparmio energia in System Center Configuration Manager con
 
 3.  Nell'elenco **Raccolte dispositivi** fare clic sulla raccolta a cui si vogliono applicare le impostazioni di risparmio energia e quindi nel gruppo **Proprietà** della scheda **Home** fare clic su **Proprietà**.  
 
-4.  Nella scheda **Risparmio energia** della finestra di dialogo ***Proprietà* *<Nome raccolta\>* selezionare **Specifica impostazioni di risparmio energia per questa raccolta**.  
+4.  Nella scheda **Risparmio energia** della finestra di dialogo **Proprietà** *<Nome raccolta\>* selezionare **Specifica impostazioni di risparmio energia per questa raccolta**.  
 
     > [!NOTE]  
     >  È anche possibile fare clic su **Sfoglia** e quindi copiare le impostazioni di risparmio energia da una raccolta selezionata alla raccolta selezionata.  
