@@ -10,12 +10,12 @@ ms.assetid: b57acf0b-05b7-46af-ad4c-f3e707bd3861
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f346c47188bf71512ec2cbc46f6c9cb352cd642e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 28b7819b915eb2dea8a34d1474141067ac7751b5
+ms.sourcegitcommit: 0305e710f634529793ae73e5aac24168ee4fe02f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333179"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37042780"
 ---
 # <a name="whats-new-in-system-center-configuration-manager-incremental-versions"></a>Novità delle versioni incrementali di System Center Configuration Manager
 
@@ -34,7 +34,7 @@ ms.locfileid: "32333179"
   - [Novità della versione 1706](../../../core/plan-design/changes/whats-new-in-version-1706.md)  
 
 
- Ogni versione di aggiornamento è supportata per un anno dopo il relativo rilascio. È consigliabile disporre sempre della versione di aggiornamento più recente. Per altre informazioni, vedere [Supporto per le versioni di System Center Configuration Manager Current Branch](../../../core/servers/manage/current-branch-versions-supported.md).  
+Per le versioni di Configuration Manager precedenti alla 1710, il supporto è per 12 mesi. A partire dalla versione 1710, ogni versione di aggiornamento continua a essere supportata per 18 mesi dalla data in cui viene resa disponibile a livello generale.  È consigliabile disporre sempre della versione di aggiornamento più recente. Per altre informazioni, vedere [Supporto per le versioni di System Center Configuration Manager Current Branch](../../../core/servers/manage/current-branch-versions-supported.md).  
 
 
 ## <a name="see-also"></a>Vedere anche
