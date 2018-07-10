@@ -10,11 +10,12 @@ ms.assetid: b06f781b-ab25-4d9a-b128-02cbd7cbcffe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0893df43f7979fa3c36ba90ab400e399f96e6228
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 5ab632367e6cc30210db00a61ee4d3b9c414fdbd
+ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36260813"
 ---
 # <a name="database-replicas-for-management-points-for-system-center-configuration-manager"></a>Repliche di database per i punti di gestione per System Center Configuration Manager
 
@@ -78,7 +79,7 @@ I siti primari di System Center Configuration Manager possono usare una replica 
 
     -   [Spostare un database del server del sito che pubblica una replica di database](#BKMK_DBReplicaOps_Move)  
 
--   **Aggiornamenti a System Center Configuration Manager**: prima di aggiornare un sito da System Center 2012 Configuration Manager a System Center Configuration Manager, è necessario disabilitare le repliche di database per i punti di gestione.  Dopo l'aggiornamento del sito, è possibile riconfigurare le repliche di database per i punti di gestione.  
+-   **Aggiornamenti a System Center Configuration Manager**: prima di aggiornare un sito da System Center 2012 Configuration Manager a System Center Configuration Manager Current Branch oppure prima di aggiornare Configuration Manager Current Branch all'ultima versione, è necessario disabilitare le repliche di database per i punti di gestione.  Dopo l'aggiornamento del sito, è possibile riconfigurare le repliche di database per i punti di gestione.  
 
 -   **Più repliche in un'unica istanza di SQL Server:** se si configura un server di replica di database per ospitare più repliche di database per i punti di gestione (ogni replica deve trovarsi in un'istanza separata), è necessario usare uno script di configurazione modificato (dal passaggio 4 della sezione successiva) per evitare di sovrascrivere il certificato autofirmato usato dalle repliche di database configurate in precedenza in tale server.  
 

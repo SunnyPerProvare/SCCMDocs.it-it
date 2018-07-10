@@ -10,12 +10,12 @@ ms.assetid: b7332ed3-8003-454b-bb12-1fdf8721425c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d486907a7819758b27c9a644214ed4d5ec873762
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 705247080fc99a6a9dd7dfcb773b2220283cd7a6
+ms.sourcegitcommit: e3f7bb8cec4b37a311bc86098297534cab947de8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342546"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36759033"
 ---
 # <a name="list-of-reports-in-system-center-configuration-manager"></a>Elenco dei report in System Center Configuration Manager
 
@@ -28,7 +28,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="administrative-security"></a>Protezione amministrativa  
- I report seguenti sono elencati sotto la categoria **Protezione amministrativa** .  
+ I sei report seguenti sono elencati nella categoria **Protezione amministrativa**.  
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -42,7 +42,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="alerts"></a>Avvisi  
-
+I due report seguenti sono elencati nella categoria **Avvisi**.  
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
 |**Scorecard avvisi**|Visualizza un riepilogo di tutti gli avvisi posticipati generati tra la data di inizio e la data di fine specificate.|  
@@ -51,6 +51,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="asset-intelligence"></a>Asset Intelligence  
+I 62 report seguenti sono elencati nella categoria **Asset Intelligence**.  
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -120,6 +121,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="client-push"></a>Push client  
+I quattro report seguenti sono elencati nella la categoria **Push client**.  
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -131,6 +133,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="client-status"></a>Stato del client  
+I sette report seguenti sono elencati nella categoria **Stato client**.  
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -145,6 +148,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="company-resource-access"></a>Accesso alle risorse aziendali  
+I tre report seguenti sono elencati nella categoria **Accesso alle risorse aziendali**. 
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -155,6 +159,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="compliance-and-settings-management"></a>Gestione conformità e impostazioni  
+I 22 report seguenti sono elencati nella categoria **Gestione conformità e impostazioni**. 
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -184,6 +189,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="device-management"></a>Gestione dispositivi  
+I 37 report seguenti sono elencati nella categoria **Gestione dispositivi**. 
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -228,6 +234,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="driver-management"></a>Gestione driver  
+I 13 report seguenti sono elencati nella categoria **Gestione driver**. 
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -248,7 +255,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="endpoint-protection"></a>Endpoint Protection  
-
+I sei report seguenti sono elencati nella categoria **Endpoint Protection**. 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
 |**Report attività antimalware**|Visualizza una panoramica dell'attività antimalware.|  
@@ -261,7 +268,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="hardware---cd-rom"></a>Hardware - CD-ROM  
-
+I quattro report seguenti sono elencati nella categoria **Hardware - CD-ROM**. 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
 |**Informazioni CD-ROM per un computer specifico**|Visualizza le informazioni sulle unità CD-ROM in un computer specifico.|  
@@ -272,6 +279,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="hardware---disk"></a>Hardware - Disco  
+Gli otto report seguenti sono elencati nella categoria **Hardware - Disco**. 
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -287,6 +295,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="hardware---general"></a>Hardware - Generale  
+I cinque report seguenti sono elencati nella categoria **Hardware - Generale**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -299,6 +308,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="hardware---memory"></a>Hardware - Memoria  
+I cinque report seguenti sono elencati nella categoria **Hardware - Memoria**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -311,6 +321,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="hardware---modem"></a>Hardware - Modem  
+I tre report seguenti sono elencati nella categoria **Hardware - Modem**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -321,6 +332,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="hardware---network-adapter"></a>Hardware - Scheda di rete  
+I tre report seguenti sono elencati nella categoria **Hardware - Scheda di rete**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -331,6 +343,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="hardware---processor"></a>Hardware - Processore  
+I cinque report seguenti sono elencati nella categoria **Hardware - Processore**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -343,6 +356,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="hardware---scsi"></a>Hardware - SCSI  
+I cinque report seguenti sono elencati nella categoria **Hardware - SCSI**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -353,6 +367,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="hardware---security"></a>Hardware - Sicurezza
+Il report seguente è elencato nella categoria **Hardware - Sicurezza**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -361,6 +376,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="hardware---sound-card"></a>Hardware - Scheda audio  
+I tre report seguenti sono elencati nella categoria **Hardware - SCSI**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -371,6 +387,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="hardware---video-card"></a>Hardware - Scheda video  
+I tre report seguenti sono elencati nella categoria **Hardware - Scheda video**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -381,6 +398,8 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="migration"></a>Migrazione  
+
+I cinque report seguenti sono elencati nella categoria **Migrazione**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -394,6 +413,8 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 ## <a name="network"></a>Rete  
 
+I sei report seguenti sono elencati nella categoria **Rete**.
+
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
 |**Conteggio indirizzi IP per subnet**|Visualizza il numero di indirizzi IP in inventario per ogni subnet IP.|  
@@ -406,6 +427,9 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="operating-system"></a>Sistema operativo  
+
+I 10 report seguenti sono elencati nella categoria **Sistema operativo**.
+
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -423,6 +447,8 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="power-management"></a>Risparmio energia  
+
+I 18 report seguenti sono elencati nella categoria **Risparmio energia**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -448,6 +474,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="replication-traffic"></a>Traffico di replica  
+I 10 report seguenti sono elencati nella categoria **Traffico di replica**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -465,6 +492,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="site---client-information"></a>Sito - Informazioni client  
+I 19 report seguenti sono elencati nella categoria **Sito - Informazioni client**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -491,6 +519,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="site---discovery-and-inventory-information"></a>Sito - Informazioni individuazione e inventario  
+I 10 report seguenti sono elencati nella categoria **Sito - Informazioni individuazione e inventario**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -508,6 +537,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="site---general"></a>Sito - Generale  
+I tre report seguenti sono elencati nella categoria **Sito - Generale**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -518,6 +548,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="site---server-information"></a>Sito - Informazioni server  
+Il report seguente è elencato nella categoria **Sito - Informazioni server**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -526,6 +557,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="software---companies-and-products"></a>Software - Società e prodotti  
+I 15 report seguenti sono elencati nella categoria **Software - Società e prodotti**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -548,6 +580,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="software---files"></a>Software - File  
+I cinque report seguenti sono elencati nella categoria **Software - File**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -560,6 +593,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="software-distribution---application-monitoring"></a>Distribuzione software - Monitoraggio applicazione  
+I 10 report seguenti sono elencati nella categoria **Distribuzione software - Monitoraggio applicazione**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -577,6 +611,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="software-distribution---collections"></a>Distribuzione software - Raccolte  
+I tre report seguenti sono elencati nella categoria **Distribuzione software - Raccolte**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -587,6 +622,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="software-distribution---content"></a>Distribuzione software - Contenuto  
+I 16 report seguenti sono elencati nella categoria **Distribuzione software - Contenuto**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -609,7 +645,8 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 
-## <a name="software-distribution---package-and-program-deployment"></a>Distribuzione software - Distribuzione programma e pacchetto  
+## <a name="software-distribution---package-and-program-deployment"></a>Distribuzione software - Distribuzione programma e pacchetto 
+I cinque report seguenti sono elencati nella categoria **Distribuzione software - Distribuzione programma e pacchetto**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -622,6 +659,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="software-distribution---package-and-program-deployment-status"></a>Distribuzione software - Stato distribuzione programma e pacchetto  
+I cinque report seguenti sono elencati nella categoria **Distribuzione software - Stato distribuzione programma e pacchetto**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -634,6 +672,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="software-metering"></a>Controllo software  
+I 13 report seguenti sono elencati nella categoria **Controllo software**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -654,6 +693,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="software-updates---a-compliance"></a>Aggiornamenti software - Conformità A  
+Gli otto report seguenti sono elencati nella categoria **Aggiornamenti software - Conformità A**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -669,6 +709,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="software-updates---b-deployment-management"></a>Aggiornamenti software - Gestione distribuzione B  
+Gli otto report seguenti sono elencati nella categoria **Aggiornamenti software - Gestione distribuzione B**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -684,6 +725,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="software-updates---c-deployment-states"></a>Aggiornamenti software - Stati distribuzione C  
+I sei report seguenti sono elencati nella categoria **Aggiornamenti software - Stati distribuzione C**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -697,6 +739,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="software-updates---d-scan"></a>Aggiornamenti software - Analisi D  
+I quattro report seguenti sono elencati nella categoria **Aggiornamenti software - Analisi D**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -709,6 +752,8 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 ## <a name="software-updates---e-troubleshooting"></a>Aggiornamenti software - Risoluzione dei problemi E  
 
+I quattro report seguenti sono elencati nella categoria **Aggiornamenti software - Risoluzione dei problemi E**.
+
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
 |**Risoluzione dei problemi 1 - Errori di analisi**|Visualizza gli errori di analisi nel sito e il numero di computer in cui si verifica ogni errore.|  
@@ -719,6 +764,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="state-migration"></a>Migrazione stato  
+I tre report seguenti sono elencati nella categoria **Migrazione stato**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -729,6 +775,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="status-messages"></a>Messaggi di stato  
+I 12 report seguenti sono elencati nella categoria **Messaggi di stato**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -749,6 +796,8 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 ## <a name="status-messages---audit"></a>Messaggi di stato - Controllo  
 
+I tre report seguenti sono elencati nella categoria **Messaggi di stato - Controllo**.
+
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
 |**Tutti i messaggi di controllo per un utente specifico**|Visualizza un riepilogo di tutti i messaggi di stato di controllo per un utente specifico. I messaggi di controllo descrivono le azioni eseguite nella console di Configuration Manager che aggiungono, modificano o eliminano oggetti in Configuration Manager.|  
@@ -758,6 +807,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="task-sequence---deployment-status"></a>Sequenza di attività - Stato distribuzione  
+Gli 11 report seguenti sono elencati nella categoria **Sequenza attività - Stato distribuzione**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -776,6 +826,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="task-sequence---deployments"></a>Sequenza attività - Distribuzioni  
+Gli 11 report seguenti sono elencati nella categoria **Sequenza attività - Distribuzioni**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -794,6 +845,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="task-sequence---progress"></a>Sequenza attività - Progresso  
+I cinque report seguenti sono elencati nella categoria **Sequenza attività - Progresso**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -806,6 +858,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="task-sequences---references"></a>Sequenze attività - Riferimenti  
+Il report seguente è elencato nella categoria **Sequenza attività - Riferimenti**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -815,6 +868,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 <!--
 ## Upgrade Assessment  
+The following 11 reports are listed under the **Upgrade Assessment** category.
 
 |Report name|Description|  
 |-----------------|-----------------|  
@@ -835,6 +889,8 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 ## <a name="user---device-affinity"></a>Utente - Affinità dispositivo  
 
+I due report seguenti sono elencati nella categoria **Utente - Affinità dispositivo**.
+
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
 |**Associazioni affinità-utente dispositivo in sospeso per raccolta**|Questo report mostra tutte le assegnazioni affinità utente dispositivo basate sui dati di uso per i membri di una raccolta.|  
@@ -843,6 +899,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="user-data-and-profiles-health"></a>Integrità profili e dati utente  
+I quattro report seguenti sono elencati nella categoria **Integrità profili e dati utente**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -854,6 +911,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="users"></a>Utenti  
+I tre report seguenti sono elencati nella categoria **Utenti**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -864,6 +922,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="virtual-applications"></a>Applicazioni virtuali  
+I sette report seguenti sono elencati nella categoria **Applicazioni virtuali**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -878,6 +937,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="volume-purchase-programs---apple"></a>Volume Purchase Program - Apple
+Il report seguente è elencato nella categoria **Volume Purchase Program - Apple**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -886,6 +946,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="vulnerability-assessment"></a>Valutazione della vulnerabilità
+Il report seguente è elencato nella categoria **Valutazione della vulnerabilità**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -894,6 +955,7 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="wake-on-lan"></a>Riattivazione LAN  
+I sette report seguenti sono elencati nella categoria **Riattivazione LAN**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  

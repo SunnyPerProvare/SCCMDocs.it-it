@@ -1,8 +1,8 @@
 ---
-title: Nozioni di base di Windows come servizio
+title: Configuration Manager e Windows as a Service
 titleSuffix: Configuration Manager
 description: Ottenere informazioni di base sull'adozione di Configuration Manager Current Branch per supportare Windows come servizio.
-ms.date: 04/30/2018
+ms.date: 06/15/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,21 +10,22 @@ ms.assetid: c8534a1e-57b8-4688-b6e6-299d82cfcec9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6ca2b72cb3533c3b857b3edbb4e37ca846d4cfa4
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: e2fb6b022526ce4bae1de21012ac996dbcea35cf
+ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36260908"
 ---
-# <a name="keep-windows-10-up-to-date-in-the-enterprise-using-configuration-manager"></a>Aggiornare Windows 10 nell'organizzazione usando Configuration Manager
+# <a name="configuration-manager-and-windows-as-a-service"></a>Configuration Manager e Windows as a Service
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager offre un controllo completo sugli aggiornamenti delle funzionalità per Windows 10. Per adottare interamente il modello Windows come servizio, è necessario usare anche il modello Configuration Manager Current Branch. Perché Windows 10 sia aggiornato, è necessario che lo sia anche Configuration Manager per garantire un'ottima esperienza. Per poter sfruttare al meglio le straordinarie funzionalità aziendali di Windows 10, sono necessarie le nuove versioni di Configuration Manager. Questo contenuto è considerato una pagina di destinazione per gli articoli principali relativi all'adozione di Configuration Manager Current Branch. Configuration Manager Current Branch consente di implementare Windows come servizio.
+System Center Configuration Manager offre un controllo completo sugli aggiornamenti delle funzionalità per Windows 10. Per adottare interamente il modello Windows come servizio, è necessario usare anche il modello Configuration Manager Current Branch. Perché Windows 10 sia aggiornato, è necessario che lo sia anche Configuration Manager per garantire un'ottima esperienza. Per poter sfruttare al meglio le straordinarie funzionalità aziendali di Windows 10, sono necessarie le nuove versioni di Configuration Manager. Questo articolo è considerato una pagina di destinazione per gli articoli principali relativi all'adozione di Configuration Manager Current Branch. Configuration Manager Current Branch consente di implementare Windows come servizio.
 
-## <a name="key-topics-about-adopting-configuration-manager-current-branch"></a>Argomenti principali sull'adozione di Configuration Manager Current Branch
+## <a name="key-articles-about-adopting-configuration-manager-current-branch"></a>Articoli principali sull'adozione di Configuration Manager Current Branch
 
-| Argomento        | Descrizione          | 
+| Articolo        | Descrizione          | 
 | ------------- |-------------|
 |[Panoramica di Configuration Manager Current Branch](/sccm/core/plan-design/changes/whats-new-incremental-versions)|Offre un breve riepilogo dei punti chiave del nuovo modello di manutenzione di Configuration Manager (Current Branch)|
 |[Ciclo di vita del supporto](/sccm/core/servers/manage/current-branch-versions-supported)|Illustra il nuovo modello di supporto e manutenzione.|
@@ -37,12 +38,13 @@ System Center Configuration Manager offre un controllo completo sugli aggiorname
 |[Technical Preview per Configuration Manager](/sccm/core/get-started/technical-preview)|Offre informazioni sul programma di Technical Preview per Configuration Manager.|
 
 
-## <a name="key-topics-about-adopting-windows-as-a-service"></a>Argomenti principali sull'adozione di Windows distribuito come servizio
-| Argomento        | Descrizione          | 
+## <a name="key-articles-about-adopting-windows-as-a-service"></a>Articoli principali sull'adozione di Windows as a Service
+| Articolo        | Descrizione          | 
 | ------------- |-------------|
 |[Gestire Windows come servizio](/sccm/osd/deploy-use/manage-windows-as-a-service)|Spiega come usare i piani di manutenzione per distribuire gli aggiornamenti delle funzionalità di Windows 10.|
 |[Aggiornare Windows 10 tramite la sequenza di attività](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system)|Dettagli di creazione di una sequenza di attività per aggiornare Windows 10 con elementi consigliati aggiuntivi.|
 |[Distribuzioni in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence)|Le distribuzioni in più fasi automatizzano un'implementazione coordinata e in sequenza di una sequenza di attività in più raccolte.|  
+|[Ottimizzare il recapito degli aggiornamenti di Windows 10](/sccm/sum/deploy-use/optimize-windows-10-update-delivery)|Usare Configuration Manager per gestire il contenuto di aggiornamento per rimanere aggiornati con Windows 10.|
 |[Integrare con Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics)|Preparazione aggiornamenti consente di valutare e analizzare l'idoneità dei dispositivi nell'ambiente per un aggiornamento a Windows 10.| 
 |[Integrazione con Windows Update for Business in Windows 10](/sccm/sum/deploy-use/integrate-windows-update-for-business-windows-10)|Spiega come definire e distribuire i criteri di Windows Update per le aziende tramite Configuration Manager.|
 |[Usare la co-gestione con Microsoft Intune e Windows Update per le aziende (facoltativo)](/sccm/core/clients/manage/co-management-overview)|Offre una panoramica sulla co-gestione| 

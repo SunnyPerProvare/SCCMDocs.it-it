@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
-ms.openlocfilehash: a94ac00b8fce6098cbd829947f4e2fbdcb761b9e
-ms.sourcegitcommit: c5e078b8eee87f527e5b5a0c2eb687bb9d6896c5
+ms.openlocfilehash: fa73ed132a00455b47355877b1c20e8d2f8c4f3a
+ms.sourcegitcommit: 59afe6f05333d4150afaf88ab0a85a979818e3fb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34270715"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36957798"
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Gestire Office 365 ProPlus con Configuration Manager
 
@@ -48,7 +48,7 @@ Per visualizzare il dashboard di Gestione client di Office 365, nella console di
 ### <a name="display-data-in-the-office-365-client-management-dashboard"></a>Visualizzare dati nel dashboard di gestione client di Office 365
 I dati visualizzati nel dashboard di gestione client di Office 365 provengono dall'inventario hardware. Abilitare l'inventario hardware e selezionare la classe **Configurazioni di Office 365 ProPlus** di tale inventario per visualizzare i dati nel dashboard. 
 #### <a name="to-display-data-in-the-office-365-client-management-dashboard"></a>Per visualizzare dati nel dashboard di gestione client di Office 365
-1. Abilitare l'inventario hardware, se non è ancora stato fatto. Per altri dettagli, vedere [Configurare l'inventario hardware](\sccm\core\clients\manage\configure-hardware-inventory).
+1. Abilitare l'inventario hardware, se non è ancora stato fatto. Per altri dettagli, vedere [Configurare l'inventario hardware](/sccm/core/clients/manage/inventory/configure-hardware-inventory).
 2. Nella console di Configuration Manager passare a **Amministrazione** > **Impostazioni client** > **Impostazioni client predefinite**.  
 3. Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 4. Nel **Impostazioni Client predefinite** nella finestra di dialogo fare clic su **l'inventario Hardware**.  
@@ -67,7 +67,7 @@ Per le versioni di Configuration Manager precedenti, è necessario eseguire la p
 
 ### <a name="requirements"></a>requisiti
 - Il computer che esegue il programma di installazione di Office 365 deve avere accesso a Internet.  
-- L'utente che esegue il programma di installazione di Office 365 deve avere accesso in **lettura** e **scrittura** al percorso dei contenuti specificato nella procedura guidata.
+- L'utente che esegue il programma di installazione di Office 365 deve avere accesso in **lettura** e **scrittura** alla condivisione dei contenuti specificata nella procedura guidata.
 - Se si riceve l'errore di download 404, copiare i file seguenti nella cartella %temp% dell'utente:
   - [releasehistory.xml](http://officecdn.microsoft.com/pr/wsus/releasehistory.cab)
   - [o365client_32bit.xml](http://officecdn.microsoft.com/pr/wsus/ofl.cab)  

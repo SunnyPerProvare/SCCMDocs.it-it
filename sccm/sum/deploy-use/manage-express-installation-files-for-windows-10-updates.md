@@ -1,45 +1,61 @@
 ---
-title: Gestire i file di installazione rapida per gli aggiornamenti di Windows 10
+title: Gestire gli aggiornamenti rapidi di Windows 10
 titleSuffix: Configuration Manager
-description: Configuration Manager supporta l'installazione rapida dei file per Windows 10, garantendo download più contenuti e tempi di installazione più rapidi per i client.
+description: Configuration Manager supporta file di installazione rapida per Windows 10, garantendo download più contenuti e tempi di installazione più rapidi per i client.
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 03/24/2017
+ms.date: 06/15/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b8d8af88-e8ac-4deb-921b-975e2d2afd80
-ms.openlocfilehash: 4ca7a6c37137e266d719b76532b4131a6c43d4de
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 5f29b7a5d82b58358bdecd5508391db219b2cedc
+ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36260925"
 ---
 # <a name="manage-express-installation-files-for-windows-10-updates"></a>Gestire i file di installazione rapida per gli aggiornamenti di Windows 10
-A partire dalla versione 1702, Configuration Manager supporta i file di installazione rapida per gli aggiornamenti di Windows 10. Se si usa una versione supportata di Windows 10, è possibile usare le impostazioni client di Configuration Manager per configurare il client in modo da scaricare solo le differenze tra l'aggiornamento cumulativo di Windows 10 del mese corrente e l'aggiornamento del mese precedente. Senza i file di installazione rapida, i client di Configuration Manager scaricano ogni mese l'aggiornamento cumulativo completo di Windows 10, inclusi tutti gli aggiornamenti dei mesi precedenti. Grazie ai file di installazione rapida sono possibili download più brevi e tempi di installazione più rapidi per i client.
 
-> [!IMPORTANT]
-> Anche se le impostazioni per il supporto dei file di installazione rapida sono disponibili in Configuration Manager versione 1702, il supporto per il sistema operativo client è disponibile in Windows 10 versione 1607 con un aggiornamento dell'agente Windows Update. Questo aggiornamento è incluso negli aggiornamenti rilasciati in data 11 aprile 2017 (Patch Tuesday). Per altre informazioni su questi aggiornamenti, vedere l'[articolo del supporto tecnico 4015217](http://support.microsoft.com/kb/4015217). Gli aggiornamenti futuri sfrutteranno i file di installazione rapida per download di dimensioni più contenute. Windows 10 versione 1607 senza l'aggiornamento e le versioni precedenti di Windows non supportano i file di installazione rapida.
+Configuration Manager supporta i file di installazione rapida per gli aggiornamenti di Windows 10. Configurare il client per scaricare solo le modifiche tra l'aggiornamento qualitativo cumulativo di Windows 10 del mese corrente e quello del mese precedente. Senza i file di installazione rapida, i client di Configuration Manager scaricano ogni mese l'aggiornamento cumulativo completo di Windows 10, che include tutti gli aggiornamenti dei mesi precedenti. Grazie ai file di installazione rapida sono possibili download più brevi e tempi di installazione più rapidi per i client.
+
+Per informazioni su come usare Configuration Manager per gestire il contenuto di aggiornamento in modo da rimanere aggiornati con Windows 10, vedere [Ottimizzare il recapito degli aggiornamenti di Windows 10](/sccm/sum/deploy-use/optimize-windows-10-update-delivery).  
 
 
-### <a name="to-enable-the-download-of-express-installation-files-for-windows-10-updates"></a>Per abilitare il download dei file di installazione rapida per gli aggiornamenti di Windows 10
-Per avviare la sincronizzazione dei metadati per i file di installazione rapida di Windows 10 è necessario abilitarla nelle proprietà del punto di aggiornamento software.
-1.  Nella console di Configuration Manager passare a **Amministrazione** > **Configurazione del sito** > **Siti**.
-2.  Selezionare il sito di amministrazione centrale o il sito primario autonomo.
-3.  Nel gruppo **Impostazioni** della scheda **Home** fare clic su **Configura componenti sito**, quindi fare clic su **Punto di aggiornamento software**. Nella scheda **File di aggiornamento** selezionare **Scarica i file completi per tutti gli aggiornamenti approvati e i file dell'installazione rapida per Windows 10**.
+> [!IMPORTANT]  
+> Il supporto del client del sistema operativo è disponibile in Windows 10, versione 1607, con un aggiornamento dell'agente di Windows Update. Questo aggiornamento è incluso negli aggiornamenti rilasciati in data 11 aprile 2017. Per altre informazioni su questi aggiornamenti, vedere l'[articolo del supporto tecnico 4015217](http://support.microsoft.com/kb/4015217). Gli aggiornamenti futuri sfrutteranno i file di installazione rapida per download di dimensioni più contenute. Le versioni precedenti di Windows 10 e Windows 10 versione 1607 senza questo aggiornamento non supportano i file di installazione rapida.  
+
+
+### <a name="enable-the-site-to-download-express-installation-files-for-windows-10-updates"></a>Abilitare il sito per il download dei file di installazione rapida per gli aggiornamenti di Windows 10
+Per avviare la sincronizzazione dei metadati per i file di installazione rapida di Windows 10, abilitarla nelle proprietà del punto di aggiornamento software.  
+
+1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Configurazione del sito** e selezionare **Siti**.  
+
+2. Selezionare il sito di amministrazione centrale o il sito primario autonomo.  
+
+3. Nella barra multifunzione fare clic su **Configura componenti del sito** e quindi fare clic su **Punto di aggiornamento software**. Passare alla scheda **File di aggiornamento** e selezionare **Scarica i file completi per tutti gli aggiornamenti approvati e i file dell'installazione rapida per Windows 10**.
 
 > [!NOTE]    
-> Non è possibile configurare il componente del punto di aggiornamento software in modo da scaricare solo gli aggiornamenti rapidi.  Il download dei file dell'installazione rapida andrà ad aggiungersi a quello dei file completi, aumentando pertanto la quantità di contenuto distribuito e archiviato nei punti di distribuzione.
+> Non è possibile configurare il componente del punto di aggiornamento software per scaricare *solo* gli aggiornamenti rapidi.  Il sito scarica i file di installazione rapida oltre ai file completi. In questo modo aumenta la quantità di contenuto archiviato nella raccolta contenuto e distribuito e archiviato nei punti di distribuzione.
 
-### <a name="to-enable-support-for-clients-to-download-and-install-express-installation-files"></a>Per abilitare il supporto del download e dell'installazione di file di installazione rapida per i client
-Per abilitare il supporto dei file di installazione rapida per i client, è necessario abilitare i file di installazione rapida nella sezione Aggiornamenti software delle impostazioni del client. Questa operazione crea un nuovo listener HTTP che attende le richieste di download dei file di installazione rapida sulla porta specificata.
+> [!Tip]  
+> Per determinare lo spazio effettivo usato su disco dal file, vedere la proprietà **Dimensioni su disco** del file. La proprietà Dimensioni su disco dovrebbe essere notevolmente inferiore rispetto al valore Dimensioni. Per altre informazioni, vedere [FAQs to optimize Windows 10 update delivery](/sccm/sum/deploy-use/optimize-windows-10-update-delivery#bkmk_faq).  
+
+
+### <a name="enable-clients-to-download-and-install-express-installation-files"></a>Abilitare i client per il download e l'installazione dei file di installazione rapida
+Per abilitare il supporto dei file di installazione rapida per i client, abilitare i file di installazione rapida nel gruppo **Aggiornamenti software** delle impostazioni del client. Questa impostazione crea un nuovo listener HTTP che attende le richieste di download dei file di installazione rapida sulla porta specificata.
 
 > [!NOTE]    
-> Si tratta di una porta locale usata dai client per restare in ascolto delle richieste da Ottimizzazione recapito o dal Servizio trasferimento intelligente in background (BITS) per scaricare il contenuto rapido dal punto di distribuzione. Non è necessario aprire la porta nel firewall perché tutto il traffico è nel computer locale.
+> Si tratta di una porta locale usata dai client per restare in ascolto delle richieste da Ottimizzazione recapito o dal Servizio trasferimento intelligente in background (BITS) per scaricare il contenuto rapido dal punto di distribuzione. Non è necessario aprire la porta nei firewall perché tutto il traffico è nel computer locale.  
 
-Dopo aver distribuito le impostazioni client per abilitare questa funzionalità nel client, la funzionalità tenterà di scaricare le differenze tra l'aggiornamento cumulativo di Windows 10 del mese corrente e l'aggiornamento cumulativo del mese precedente. Nei client deve essere in esecuzione una versione di Windows 10 che supporti i file di installazione rapida.
-1.  Abilitare il supporto per i file di installazione rapida nelle proprietà del componente del punto di aggiornamento software (procedura precedente).
-2.  Nella console di Configuration Manager passare ad **Amministrazione** > **Impostazioni client**.
-3.  Selezionare le impostazioni client appropriate e quindi nella scheda **Home** fare clic su **Proprietà**.
-4.  Selezionare la pagina **Aggiornamenti software** , selezionare **Sì** nell'impostazione **Abilita l'installazione di aggiornamenti rapidi nei client** e configurare la porta usata dal listener HTTP nel client per l'impostazione **Porta usata per scaricare contenuto per gli aggiornamenti rapidi**.
+Dopo aver distribuito le impostazioni client per abilitare questa funzionalità nel client, la funzionalità tenterà di scaricare le differenze tra l'aggiornamento cumulativo di Windows 10 del mese corrente e l'aggiornamento cumulativo del mese precedente. I client devono eseguire una versione di Windows 10 che supporti i file di installazione rapida.  
+
+1. Abilitare il supporto per i file di installazione rapida nelle proprietà del componente del punto di aggiornamento software (procedura precedente).  
+
+2. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione** e selezionare **Impostazioni client**.  
+
+3. Selezionare le impostazioni client appropriate e fare clic su **Proprietà** sulla barra multifunzione.  
+
+4. Selezionare il gruppo **Aggiornamenti software**. Specificare **Sì** per l'impostazione **Abilita l'installazione di file per l'installazione rapida nei client**. Configurare la **porta usata per scaricare il contenuto per gli aggiornamenti rapidi** con la porta usata dal listener HTTP nel client.  

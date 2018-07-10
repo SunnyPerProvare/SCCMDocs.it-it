@@ -2,7 +2,7 @@
 title: Concetti di base della gestione dei contenuti
 titleSuffix: Configuration Manager
 description: È possibile usare gli strumenti e le opzioni di Configuration Manager per gestire il contenuto da distribuire.
-ms.date: 03/22/2018
+ms.date: 06/15/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,13 +10,14 @@ ms.assetid: c201be2a-692c-4d67-ac95-0a3afa5320fe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5dfe33e7182eae158c15afb848d3a9f1702678ba
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 4419a563a65ab9d98a76dcf58b48ae00e0763dab
+ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36260735"
 ---
-# <a name="fundamental-concepts-for-content-management-in-system-center-configuration-manager"></a>Concetti di base per la gestione dei contenuti in System Center Configuration Manager
+# <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Concetti di base per la gestione dei contenuti in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -69,7 +70,7 @@ Le applicazioni usano sempre la replica differenziale binaria. La replica differ
 
 
 ## <a name="branchcache"></a>BranchCache  
- [BranchCache](/windows-server/networking/branchcache/branchcache) è una tecnologia di Windows. I client che supportano BranchCache e hanno scaricato una distribuzione configurata per BranchCache agiscono da origine di contenuto per altri client abilitati per BranchCache.  
+ [BranchCache](https://docs.microsoft.com/windows-server/networking/branchcache/branchcache) è una tecnologia di Windows. I client che supportano BranchCache e hanno scaricato una distribuzione configurata per BranchCache agiscono da origine di contenuto per altri client abilitati per BranchCache.  
 
  Ad esempio, è necessario un punto di distribuzione che esegue Windows Server 2012 o versione successiva ed è configurato come server BranchCache. Quando il primo client abilitato per BranchCache richiede un contenuto da questo server, il client scarica tale contenuto e lo memorizza nella cache.  
 
@@ -77,11 +78,14 @@ Le applicazioni usano sempre la replica differenziale binaria. La replica differ
 - Altri client nella stessa subnet non devono scaricare contenuto dal punto di distribuzione.  
 - Il contenuto viene distribuito tra più client per trasferimenti futuri.  
 
+Per altre informazioni, vedere [Supporto per Windows BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#bkmk_branchcache).
+
 
 
 ## <a name="delivery-optimization"></a>Ottimizzazione recapito
-<!-- 1324696 -->
-I gruppi di limiti di Configuration Manager consentono di definire e regolamentare la distribuzione del contenuto nella rete aziendale e negli uffici remoti. [Ottimizzazione recapito di Windows](/windows/deployment/update/waas-delivery-optimization) è una tecnologia peer-to-peer basata sul cloud per la condivisione di contenuti tra dispositivi Windows 10. A partire dalla versione 1802, è possibile configurare Ottimizzazione recapito in modo che usi i gruppi di limiti per la condivisione di contenuti tra peer. Le impostazioni del client applicano l'identificatore del gruppo di limiti come identificatore di gruppo di Ottimizzazione recapito sul client. Quando il client comunica con il servizio cloud Ottimizzazione recapito, usa questo identificatore per individuare i peer con il contenuto desiderato. Per altre informazioni, vedere impostazioni client per [ottimizzazione recapito](/sccm/core/clients/deploy/about-client-settings#delivery-optimization).
+<!-- 1324696 --> I gruppi di limiti di Configuration Manager consentono di definire e regolamentare la distribuzione del contenuto nella rete aziendale e negli uffici remoti. [Ottimizzazione recapito di Windows](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) è una tecnologia peer-to-peer basata sul cloud per la condivisione di contenuti tra dispositivi Windows 10. A partire dalla versione 1802, è possibile configurare Ottimizzazione recapito in modo che usi i gruppi di limiti per la condivisione di contenuti tra peer. Le impostazioni del client applicano l'identificatore del gruppo di limiti come identificatore di gruppo di Ottimizzazione recapito sul client. Quando il client comunica con il servizio cloud Ottimizzazione recapito, usa questo identificatore per individuare i peer con il contenuto desiderato. Per altre informazioni, vedere impostazioni client per [ottimizzazione recapito](/sccm/core/clients/deploy/about-client-settings#delivery-optimization).
+
+Ottimizzazione recapito è la tecnologia consigliata per [ottimizzare il recapito degli aggiornamenti di Windows 10](/sccm/sum/deploy-use/optimize-windows-10-update-delivery) dei file di installazione rapida per gli aggiornamenti qualitativi di Windows 10.
 
 
 

@@ -10,12 +10,12 @@ ms.assetid: 0e45290e-f8f7-4335-801e-570225d12c2b
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 7b282fdb2f7cf3a200950484e4da5b9505c5b71c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a2051088b70c721250842548f877792adc84b38f
+ms.sourcegitcommit: 59afe6f05333d4150afaf88ab0a85a979818e3fb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32332156"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36957781"
 ---
 # <a name="how-to-configure-hardware-inventory-in-system-center-configuration-manager"></a>Come configurare l'inventario hardware in System Center Configuration Manager
 
@@ -36,7 +36,7 @@ Questa procedura consente di configurare le impostazioni client predefinite per 
 
 6.  Nell'elenco **Impostazioni dispositivo** configurare le impostazioni seguenti:  
 
-    -   **Abilitare inventario hardware nei client**: selezionare **Vero**.  
+    -   **Abilitare inventario hardware nei client**: selezionare **Sì**.  
 
     -   **Pianificazione inventario hardware**: fare clic su **Pianifica** per specificare l'intervallo di raccolta dell'inventario hardware da parte dei client.  
 
