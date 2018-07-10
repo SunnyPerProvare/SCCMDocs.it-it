@@ -2,7 +2,7 @@
 title: punto di connessione del servizio
 titleSuffix: Configuration Manager
 description: Informazioni sul ruolo di sistema del sito di Configuration Manager e pianificazione della gamma di usi.
-ms.date: 1/29/2018
+ms.date: 07/05/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: bc2282d5-0571-465b-9528-a555855eaacd
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7328d7053d1fb06487e255fe4a24d6955c99c4b0
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 6002c077ae0a8e34f35a9d0e36d02f5950946bde
+ms.sourcegitcommit: 73b241a72db8f8f3bd7e269fc81ad49e14f01058
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338051"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37843288"
 ---
 # <a name="about-the-service-connection-point-in-system-center-configuration-manager"></a>Informazioni sul punto di connessione del servizio in System Center Configuration Manager
 
@@ -98,6 +98,8 @@ Per abilitare l'operazione, il computer che ospita il punto di connessione del s
 -   download.windowsupdate.com
 
 -   sccmconnected-a01.cloudapp.net  
+
+- configmgrbits.azureedge.net
 
 **Microsoft Intune**  
 
