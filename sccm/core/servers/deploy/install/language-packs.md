@@ -1,8 +1,8 @@
 ---
 title: Language Pack
 titleSuffix: Configuration Manager
-description: Informazioni sul supporto per le lingue disponibile in System Center Configuration Manager.
-ms.date: 1/3/2017
+description: Informazioni sul supporto per le lingue disponibile in Configuration Manager.
+ms.date: 06/29/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,27 +10,39 @@ ms.assetid: cd74e5f5-33f6-4566-8c9d-d6a93bfe71ed
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a198e15a1ef389d792acc73f2253aa4a704ac35a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 54034ec94ad2a0ea2b7ce095d9da669aea02f0b3
+ms.sourcegitcommit: 702e6017b6dee4629b67bb9f3bd5d9b5a889ebee
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340309"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37340227"
 ---
-# <a name="language-packs-in-system-center-configuration-manager"></a>Language Pack in System Center Configuration Manager
+# <a name="language-packs-in-configuration-manager"></a>Language Pack in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-In questo argomento vengono forniti dettagli tecnici sul supporto per le lingue in System Center Configuration Manager.  
+Questo articolo offre dettagli tecnici sul supporto per le lingue in Configuration Manager. I server e i client del sito di Configuration Manager sono considerati indipendenti dalla lingua. Aggiungere il supporto per le lingue visualizzate installando i **Language Pack server** o i **Language Pack client** in un sito di amministrazione centrale e nei siti primari. Durante il processo di installazione di un sito si selezionano le lingue per server e client da supportare in quel sito scegliendole dai file dei Language Pack disponibili.
+ 
+Installare più lingue in ogni sito. È sufficiente installare le lingue usate.  
 
-## <a name="BKMK_SupLanguagePacks"></a> Lingue del sistema operativo supportate  
- È possibile installare il supporto per le lingue visualizzate nelle tabelle seguenti installando i **Language Pack server** o i **Language Pack client** in un sito di amministrazione centrale e nei siti primari. Durante il processo di installazione di un sito si selezionano le lingue per server e client da supportare in quel sito scegliendole dai file dei Language Pack disponibili.
+- Ogni sito supporta più lingue per le console di Configuration Manager.  
 
- I file dei Language Pack vengono scaricati quando si esegue il programma di installazione come parte del download dei file di prerequisiti e ridistribuibili. È anche possibile usare [Downloader di installazione](setup-downloader.md) per scaricare questi file prima di eseguire il programma di installazione.   
+- In ogni sito è possibile installare Language Pack client singoli, aggiungendo il supporto solo per le lingue client che si vuole supportare.  
 
- Usare la tabella seguente per eseguire il mapping di un ID impostazioni locali con una lingua da supportare nei server o nei computer client. Per altre informazioni sugli ID impostazioni locali, vedere [ID impostazioni locali assegnati da Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=252609).  
+Quando si installa il supporto per una lingua corrispondente ai componenti seguenti:  
 
-### <a name="server-languages"></a>Lingue server  
+- La lingua di visualizzazione di un computer: sia nella console di Configuration Manager che nell'interfaccia utente client in esecuzione in tale computer vengono visualizzate informazioni in tale lingua.  
+
+- La lingua preferita usata dal Web browser di un computer: le connessioni alle informazioni basate sul Web, inclusi il Catalogo applicazioni o SQL Server Reporting Services, vengono visualizzate in tale lingua.  
+
+
+Durante l'installazione di Configuration Manager vengono scaricati i file dei Language Pack come parte dei file di prerequisiti e ridistribuibili. È anche possibile usare il [downloader di installazione](setup-downloader.md) per scaricare questi file prima di eseguire il programma di installazione.   
+
+
+
+## <a name="server-languages"></a>Lingue server  
+
+Usare la seguente tabella per il mapping tra ID impostazioni locali e una lingua da supportare nei server. Per altre informazioni sugli ID impostazioni locali, vedere [ID impostazioni locali assegnati da Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=252609).  
 
 |Lingua server|ID impostazioni locali (LCID)|Codice di tre lettere|  
 |---------------------|------------------------|-----------------------|  
@@ -54,7 +66,11 @@ In questo argomento vengono forniti dettagli tecnici sul supporto per le lingue 
 |Svedese|041d|SVE|  
 |Turco|041f|TRK|  
 
-### <a name="client-languages"></a>Lingue client  
+
+
+## <a name="client-languages"></a>Lingue client  
+
+Usare la tabella seguente per eseguire il mapping di un ID impostazioni locali con una lingua da supportare nei computer client. Per altre informazioni sugli ID impostazioni locali, vedere [ID impostazioni locali assegnati da Microsoft](https://go.microsoft.com/fwlink/p/?LinkId=252609).  
 
 |Lingua client|ID impostazioni locali (LCID)|Codice di tre lettere|  
 |---------------------|------------------------|-----------------------|  
@@ -82,12 +98,15 @@ In questo argomento vengono forniti dettagli tecnici sul supporto per le lingue 
 |Svedese|041d|SVE|  
 |Turco|041f|TRK|  
 
+
 ### <a name="mobile-device-client-languages"></a>Lingue client per dispositivi mobili  
- Quando si aggiunge il supporto per le lingue per dispositivi mobili, vengono incluse tutte le lingue client per dispositivi mobili supportate. Non è possibile selezionare singoli Language Pack per il supporto dei dispositivi mobili.  
+Quando si aggiunge il supporto per le lingue per dispositivi mobili, vengono incluse tutte le lingue client per dispositivi mobili supportate. Non è possibile selezionare singoli Language Pack per il supporto dei dispositivi mobili.  
 
-### <a name="identify-installed-language-packs"></a>Identificare i Language Pack installati  
-Per identificare i Language Pack installati in un computer che esegue il client di Configuration Manager, cercare l'ID impostazioni locali (LCID) dei Language Pack installati nel Registro di sistema del computer. Queste informazioni sono disponibili in:
 
- **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\CCMSetup\InstalledLangs**  
 
-È possibile utilizzare l'inventario hardware per raccogliere queste informazioni e quindi generare un report personalizzato per visualizzare i dettagli relativi alla lingua. Per informazioni sulla raccolta di inventario hardware, vedere [How to configure hardware inventory in System Center Configuration Manager](../../../../core/clients/manage/inventory/configure-hardware-inventory.md) (Come configurare l'inventario hardware in System Center Configuration Manager). Per informazioni sulla creazione di report, vedere la sezione [Gestire i report di Configuration Manager](../../../../core/servers/manage/operations-and-maintenance-for-reporting.md#BKMK_ManageReports) nell'argomento [Operazioni e manutenzione per la creazione di report in System Center Configuration Manager](../../../../core/servers/manage/operations-and-maintenance-for-reporting.md).  
+## <a name="identify-installed-language-packs"></a>Identificare i Language Pack installati  
+Per identificare i Language Pack installati in un computer che esegue il client di Configuration Manager, cercare l'ID impostazioni locali (LCID) dei Language Pack installati nel Registro di sistema del computer. Queste informazioni sono disponibili nel percorso del Registro di sistema seguente:  
+
+`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\CCMSetup\InstalledLangs`  
+
+Personalizzare l'inventario hardware per raccogliere queste informazioni. Creare quindi un report personalizzato per visualizzare i dettagli per la lingua. Per altre informazioni sulla raccolta di un inventario hardware personalizzato, vedere [Come configurare l'inventario hardware](/sccm/core/clients/manage/inventory/configure-hardware-inventory). Per altre informazioni sulla creazione di report, vedere [Gestire i report di Configuration Manager](/sccm/core/servers/manage/operations-and-maintenance-for-reporting#BKMK_ManageReports).  

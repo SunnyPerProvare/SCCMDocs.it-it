@@ -2,7 +2,7 @@
 title: Profili VPN
 titleSuffix: Configuration Manager
 description: Informazioni sui profili VPN nei dispositivi mobili in Configuration Manager.
-ms.date: 05/01/2018
+ms.date: 06/12/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,11 +10,12 @@ ms.assetid: 45388103-2410-4c7e-b4cf-73a1bda485fc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1b59c413fdd857db3aadd94b9851ad0778937a0a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 9409b6cc71ea238755f40baf75e6211c447b547f
+ms.sourcegitcommit: 826e9ec385d6a1c1f3aa86ac202883154e0c1285
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37116497"
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Profili VPN nei dispositivi mobili in System Center Configuration Manager
 
@@ -55,9 +56,12 @@ La tabella seguente mostra il tipo di connessione supportato per ogni piattaform
    - Usare l'opzione **Cisco AnyConnect** per i profili VPN nelle versioni seguenti:
        - iOS con Cisco AnyConnect versione 4.0.7 o versione successiva
 
-     > [!Note]  
-     > Cisco AnyConnect 4.0.07x e versioni successive per iOS è una funzionalità di versione non definitiva. Per abilitarla, vedere [Funzionalità di versioni non definitive in System Center Configuration Manager](/sccm/core/servers/manage/pre-release-features).  
-
+     > [!Tip]  
+     > Cisco AnyConnect 4.0.07x e versioni successive per iOS è una funzionalità introdotta per la prima volta nella versione 1802 come [versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dall'[aggiornamento 4163547](https://support.microsoft.com/help/4163547) per la versione 1802, questa funzionalità non è più in versione non definitiva.  
+  
+  
+> [!Note]  
+> F5 Access 2018 non è supportato per i profili VPN in una soluzione MDM ibrida.  
 
 
 ## <a name="windows-10-vpn-features-available-when-using-configuration-manager-with-intune"></a>Funzionalità VPN di Windows 10 disponibili quando si usa Configuration Manager con Intune  
