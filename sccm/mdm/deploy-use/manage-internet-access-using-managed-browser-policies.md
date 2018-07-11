@@ -2,7 +2,7 @@
 title: Gestire l'accesso a Internet utilizzando criteri di browser gestiti
 titleSuffix: Configuration Manager
 description: Distribuire Intune Managed Browser per gestire e limitare l'accesso a Internet.
-ms.date: 03/05/2017
+ms.date: 07/06/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 8e25e00c-c9a8-473f-bcb7-ea989f6ca3c5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8754219f36e30f2442178dc5521e05246948d3de
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 9fe64aef541a4e6405b0fbf6308afc6269d88f56
+ms.sourcegitcommit: f03cb34693b9806e9fecd3c0162de70cc8cb4b1e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350147"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37886485"
 ---
 # <a name="manage-internet-access-using-managed-browser-policies-with-system-center-configuration-manager"></a>Gestire l'accesso a Internet mediante criteri di Managed Browser con System Center Configuration Manager
 
@@ -86,55 +86,55 @@ Il nuovo criterio viene visualizzato nel nodo **Criteri di gestione delle applic
 
 Utilizzare le seguenti informazioni per ulteriori informazioni sui formati consentiti e i caratteri jolly, che è possibile utilizzare quando si specificano le URL negli elenchi consentiti e bloccati.  
 
--   È possibile utilizzare il carattere jolly asterisco '**\***' secondo le regole nell'elenco di modelli consentiti sottostante.  
+-   Usare il carattere jolly `*` (asterisco) secondo le regole nell'elenco di modelli consentiti sottostante.  
 
--   Assicurarsi che tutte le  URL abbiano con prefisso **http** o **https** quando immetterle nell'elenco.  
+-   Aggiungere il prefisso **http** o **https** a tutti gli URL durante l'immissione nell'elenco.  
 
--   È possibile specificare numeri di porta nell'indirizzo. Se non si specifica un numero di porta, i valori utilizzati sono:  
+-   Specificare i numeri di porta nell'indirizzo. Se non si specifica un numero di porta, vengono usati i valori seguenti:  
 
     -   Porta 80 per http  
 
     -   Porta 443 per https  
 
-     L'uso dei caratteri jolly per il numero di porta non è supportato, ad esempio **http://www.contoso.com:\*** e **http://www.contoso.com: /\***  
+     Non usare caratteri jolly per il numero di porta, perché non sono supportati. Ad esempio: `http://www.contoso.com:*`   
 
 -   Per ulteriori informazioni sui modelli consentiti che è possibile utilizzare quando si specificano gli URL, utilizzare la tabella seguente:  
 
     |URL|Corrispondenze|Non corrisponde|  
     |---------|-------------|--------------------|  
-    |http://www.contoso.com<br /><br /> Corrisponde a una singola pagina|www.contoso.com|host.contoso.com<br /><br /> www.contoso.com/images<br /><br /> contoso.com/|  
-    |http://contoso.com<br /><br /> Corrisponde a una singola pagina|contoso.com/|host.contoso.com<br /><br /> www.contoso.com/images<br /><br /> www.contoso.com|  
-    |http://www.contoso.com/*<br /><br /> Corrisponde a tutte le URL a partire da www.contoso.com|www.contoso.com<br /><br /> www.contoso.com/images<br /><br /> www.contoso.com/videos/tvshows|host.contoso.com<br /><br /> host.contoso.com/images|  
-    |http://*.contoso.com/\*<br /><br /> Corrisponde a tutti i sottodomini in contoso.com|developer.contoso.com/resources<br /><br /> news.contoso.com/images<br /><br /> news.contoso.com/videos|contoso.host.com|  
-    |http://www.contoso.com/images<br /><br /> Corrisponde a una singola cartella|www.contoso.com/images|www.contoso.com/images/dogs|  
-    |http://www.contoso.com:80<br /><br /> Corrisponde a una singola pagina utilizzando un numero di porta|http://www.contoso.com:80||  
-    |https://www.contoso.com<br /><br /> Corrisponde a una singola pagina protetta|https://www.contoso.com|http://www.contoso.com|  
-    |http://www.contoso.com/images/*<br /><br /> Corrisponde a una singola cartella e a tutte le sottocartelle|www.contoso.com/images/dogs<br /><br /> www.contoso.com/images/cats|www.contoso.com/videos|  
+    |`http://www.contoso.com`<br /><br /> Corrisponde a una singola pagina|`www.contoso.com`|`host.contoso.com`<br /><br /> `www.contoso.com/images`<br /><br /> `contoso.com/`|  
+    |`http://contoso.com`<br /><br /> Corrisponde a una singola pagina|`contoso.com`|`host.contoso.com`<br /><br /> `www.contoso.com/images`<br /><br /> `www.contoso.com`|  
+    |`http://www.contoso.com/*`<br /><br /> Corrisponde a tutti gli URL che iniziano con `www.contoso.com`|`www.contoso.com`<br /><br /> `www.contoso.com/images`<br /><br /> `www.contoso.com/videos/tvshows`|`host.contoso.com`<br /><br /> `host.contoso.com/images`|  
+    |`http://*.contoso.com/*`<br /><br /> Corrisponde a tutti i sottodomini in contoso.com|`developer.contoso.com/resources`<br /><br /> `news.contoso.com/images`<br /><br /> `news.contoso.com/videos`|`contoso.host.com`|  
+    |`http://www.contoso.com/images`<br /><br /> Corrisponde a una singola cartella|`www.contoso.com/images`|`www.contoso.com/images/dogs`|  
+    |`http://www.contoso.com:80`<br /><br /> Corrisponde a una singola pagina utilizzando un numero di porta|`http://www.contoso.com:80`||  
+    |`https://www.contoso.com`<br /><br /> Corrisponde a una singola pagina protetta|`https://www.contoso.com`|`http://www.contoso.com`|  
+    |`http://www.contoso.com/images/*`<br /><br /> Corrisponde a una singola cartella e a tutte le sottocartelle|`www.contoso.com/images/dogs`<br /><br /> `www.contoso.com/images/cats`|`www.contoso.com/videos`|  
 
 -   Di seguito sono riportati esempi di alcuni input che non è possibile specificare:  
 
-    -   *.com  
+    -   `*.com`  
 
-    -   *.contoso/\*  
+    -   `*.contoso/*`  
 
-    -   www.contoso.com/*images  
+    -   `www.contoso.com/*images`  
 
-    -   www.contoso.com/*images\*pigs  
+    -   `www.contoso.com/*images*pigs`  
 
-    -   www.contoso.com/page*  
+    -   `www.contoso.com/page*`  
 
     -   Indirizzi IP  
 
-    -   https://*  
+    -   `https://*`  
 
-    -   http://*  
+    -   `http://*`  
 
-    -   http://www.contoso.com:*  
+    -   `http://www.contoso.com:*`  
 
-    -   http://www.contoso.com: /*  
+    -   `http://www.contoso.com: /*`  
 
 > [!NOTE]  
->  *.microsoft.com è sempre consentito.  
+>  `*.microsoft.com` è sempre consentito.  
 
 ### <a name="how-conflicts-between-the-allow-and-block-list-are-resolved"></a>Come vengono risolti i conflitti tra l'elenco Consenti e blocca  
  Se distribuiti diversi criteri browser gestito a un dispositivo e si verifica un conflitto di impostazioni, sia per modalità (Consenti o blocca) e per elenchi di URL, che vengono poi valutati a livello di conflitti. In caso di conflitto si applica il comportamento seguente:  
