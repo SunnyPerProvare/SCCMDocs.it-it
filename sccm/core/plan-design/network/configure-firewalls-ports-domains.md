@@ -10,12 +10,12 @@ ms.assetid: d6993bba-f6bd-4639-adbf-efc1c638b2f3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ee7494b582828014114d41eb6bb721a7e1fd5c16
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 43c63ff85b86dd95a5eda2998a21b9b52f12b126
+ms.sourcegitcommit: 06d490d526070e17d77e86bc6c200899ded911cb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333145"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967124"
 ---
 # <a name="set-up-firewalls-ports-and-domains-for-system-center-configuration-manager"></a>Configurare firewall, porte e domini per System Center Configuration Manager
 
@@ -26,6 +26,6 @@ Per preparare la rete al supporto di System Center Configuration Manager, pianif
 |Considerazione|Dettagli|  
 |-------------------|-------------|  
 |**Porte e protocolli** usati da diverse funzionalità di Configuration Manager. Alcune porte sono obbligatorie, mentre altri **domini e servizi** possono essere personalizzati.|La maggior parte delle comunicazioni di Configuration Manager usa porte comuni, ad esempio la porta 80 per HTTP o la 443 per le comunicazioni HTTPS. Tuttavia, [alcuni ruoli del sistema del sito supportano l'uso di siti Web personalizzati](/sccm/core/plan-design/network/websites-for-site-system-servers) e porte personalizzate.<br /><br /> **Prima di distribuire Configuration Manager**, identificare le porte da usare e configurare i firewall in modo appropriato.<br /><br /> **Se è necessario modificare una porta** dopo l'installazione di Configuration Manager, non trascurare l'aggiornamento dei firewall sui dispositivi e sulla rete. Modificare anche la configurazione della porta dall'interno di Configuration Manager.<br /><br /> Per altre informazioni, vedere: </br>- [Come configurare le porte di comunicazione client](../../../core/clients/deploy/configure-client-communication-ports.md) </br>- [Porte usate in Configuration Manager](../../../core/plan-design/hierarchy/ports.md) </br>- [Requisiti di accesso Internet per il punto di connessione del servizio](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_urls)|  
-|**Domini e i servizi** che i client e i server del sito possono avere necessità di usare.|Le funzionalità di Configuration Manager possono richiedere che i client e i server del sito abbiano accesso a servizi e domini specifici su Internet, ad esempio Windowsudpate.microsoft.com o il servizio Microsoft Intune.<br /><br /> Se si usa Microsoft Intune per gestire i dispositivi mobili, è necessario anche configurare l'accesso a [porte e domini richiesti da Intune.](https://docs.microsoft.com/en-us/intune/get-started/network-infrastructure-requirements-for-microsoft-intune)|  
+|**Domini e i servizi** che i client e i server del sito possono avere necessità di usare.|Le funzionalità di Configuration Manager possono richiedere che i client e i server del sito abbiano accesso a servizi e domini specifici su Internet, ad esempio Windowsudpate.microsoft.com o il servizio Microsoft Intune.<br /><br /> Se si usa Microsoft Intune per gestire i dispositivi mobili, è necessario anche configurare l'accesso a [porte e domini richiesti da Intune.](https://docs.microsoft.com/intune/get-started/network-infrastructure-requirements-for-microsoft-intune)|  
 |**Server proxy** per i server del sistema del sito e per le comunicazioni client. È possibile specificare i server proxy per diversi client e server di sistema del sito.|Dal momento che queste configurazioni vengono eseguite in fase di installazione di un ruolo del sistema del sito o un client, è sufficiente essere a conoscenza delle configurazioni del server proxy per riferimento futuro quando si configurano i ruoli del sistema del sito e i client.<br /><br /> Se non si è certi se per la distribuzione sarà necessario usare i server proxy, esaminare [Supporto dei server proxy in System Center Configuration Manager](../../../core/plan-design/network/proxy-server-support.md) per conoscere i ruoli del sistema del sito e le operazioni del client che possono usare un server proxy.|   
 |  

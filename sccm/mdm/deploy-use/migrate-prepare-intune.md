@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: db97ae9e-34f4-4e10-a282-cd211f612bb4
-ms.openlocfilehash: a2636713f8c121eecd826eeba060f8e3f8e865f3
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 0d71abbe33def6e12e75c2042e48f3d7ddcfe5c6
+ms.sourcegitcommit: 06d490d526070e17d77e86bc6c200899ded911cb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353165"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967148"
 ---
 # <a name="prepare-intune-for-user-migration"></a>Preparare Intune per la migrazione degli utenti 
 
@@ -66,7 +66,7 @@ Per il corretto funzionamento dell'accesso condizionale dopo la migrazione degli
 - Rimuovere gli utenti dall'accesso condizionale in Configuration Manager una volta eseguita la migrazione alla versione autonoma di Intune.
 
 ## <a name="configure-the-microsoft-intune-certificate-connector"></a>Configurare Connettore di certificati di Microsoft Intune
-Se si usa il servizio Registrazione dispositivi di rete (NDES) per l'emissione di certificati tramite SCEP, è necessario configurare Connettore di certificati di Microsoft Intune. Il computer che ospita NDES Connector in Intune non può essere lo stesso computer che ospita NDES Connector in Configuration Manager. Per informazioni dettagliate, vedere [Configurare e gestire i certificati SCEP con Intune](https://docs.microsoft.com/en-us/intune/certificates-scep-configure). 
+Se si usa il servizio Registrazione dispositivi di rete (NDES) per l'emissione di certificati tramite SCEP, è necessario configurare Connettore di certificati di Microsoft Intune. Il computer che ospita NDES Connector in Intune non può essere lo stesso computer che ospita NDES Connector in Configuration Manager. Per informazioni dettagliate, vedere [Configurare e gestire i certificati SCEP con Intune](https://docs.microsoft.com/intune/certificates-scep-configure). 
 
 > [!Important]    
 > Dopo avere configurato il connettore, è necessario modificare i profili SCEP importati per fare riferimento al nuovo URL del server.
