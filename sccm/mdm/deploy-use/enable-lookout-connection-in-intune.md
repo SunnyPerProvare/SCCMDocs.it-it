@@ -1,6 +1,5 @@
 ---
 title: Abilitare Lookout MTP in Intune
-titleSuffix: Configuration Manager
 description: Abilitare Lookout Mobile Threat Defense (MTD) nel portale di Microsoft Intune.
 ms.date: 05/31/2018
 ms.prod: configuration-manager
@@ -10,12 +9,12 @@ ms.assetid: 7e4ada34-63bf-4b9f-8246-31816aa44196
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0de1859d97eed804eced58028d6459ab682f9b3f
-ms.sourcegitcommit: 9cff0702c2cc0f214173b47ec241f7e5a40f84e6
+ms.openlocfilehash: 179aae5fdbd8d6c09a34dca6dd01437d5f61f7b8
+ms.sourcegitcommit: 0a4556820fabe004d45a82b0ee1176f6891ac9f0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34745436"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37949595"
 ---
 # <a name="enable-lookout-mtd-connection-in-the-intune-admin-console"></a>Abilitare la connessione Lookout MTD nella console di amministrazione di Intune
 
@@ -50,7 +49,7 @@ Questo articolo descrive come abilitare la connessione Lookout Mobile Threat Def
 - **Connetti dispositivi Android 4.1+ a Lookout for Work MTD**: quando si abilita questa opzione, è possibile fare in modo che i dispositivi Android 4.1+ segnalino i rischi di sicurezza in Intune.  
     - **Contrassegna come non conforme se non vengono ricevuti dati**: se Intune non riceve i dati su un dispositivo nella piattaforma da Lookout, considerare il dispositivo non conforme.  
 
-- **Connetti dispositivi iOS 8.0+ a Lookout for Work MTD**: quando si abilita questa opzione, è possibile fare in modo che i dispositivi Android 4.1+ segnalino i rischi di sicurezza in Intune.
+- **Connetti dispositivi iOS 8.0+ a Lookout for Work MTD**: quando si abilita questa opzione, è possibile fare in modo che i dispositivi iOS 8.0+ segnalino i rischi di sicurezza in Intune.
     - **Contrassegna come non conforme se non vengono ricevuti dati**: se Intune non riceve i dati su un dispositivo nella piattaforma da Lookout, considerare il dispositivo non conforme.  
 
 > [!TIP]  

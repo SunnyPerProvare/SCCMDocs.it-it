@@ -2,7 +2,7 @@
 title: Novità nella gestione di dispositivi mobili ibrida
 titleSuffix: Configuration Manager
 description: Informazioni sulle nuove funzionalità di gestione dei dispositivi mobili disponibili per le distribuzioni ibride con Configuration Manager e Intune.
-ms.date: 07/05/2018
+ms.date: 07/12/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5d527d2fc4fdc52e132b6f603d9b83851e1693f3
-ms.sourcegitcommit: c9d0a4c24ce90825cb2d05e4fe37c5b41fa48a50
+ms.openlocfilehash: d2a705ed8b09e4c2de92baa22164cbe97f180462
+ms.sourcegitcommit: e54e9d4a735e72b84095e0017c5bec50af480207
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37923539"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39039625"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con Configuration Manager e Microsoft Intune
 
@@ -43,6 +43,17 @@ Ogni sezione di questo articolo elenca le funzionalità ibride in tre categorie 
 ## <a name="july-2018"></a>Luglio 2018
 
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
+
+#### <a name="support-for-security-enhancement-in-intune-service"></a>Supporto per miglioramenti della sicurezza nel servizio Intune
+<!--2520152--> È ora possibile specificare che i dispositivi senza criteri di conformità assegnati siano da considerare non conformi in modalità ibrida. Configurare questa impostazione in Intune nel portale di Azure. È consigliabile abilitare questa funzionalità per proteggere le risorse interne.
+
+Nei tenant ibridi questa funzionalità è disabilitata per impostazione predefinita. Quando si abilita questa funzionalità, i dispositivi che non hanno criteri di conformità assegnati vengono considerati non conformi. Se si abilita anche l'accesso condizionale, questi dispositivi non potranno accedere alle risorse interne, ad esempio Outlook o SharePoint, in base ai criteri di accesso condizionale nell'ambiente. Se si lascia questa impostazione disabilitata, questi dispositivi continueranno ad avere lo stesso livello di accesso di sempre.
+
+Per capire meglio quale impatto può avere questa funzionalità se abilitata, è disponibile uno [script nella raccolta di TechNet](https://gallery.technet.microsoft.com/SQL-Query-for-Hybrid-MDM-5bcb8695). Eseguendo lo script nel database di Configuration Manager, vengono elencati i dispositivi che non sono interessati dai criteri di conformità.
+
+Per altre informazioni, vedere gli articoli seguenti:
+- Post di blog [Security Enhancements in the Intune Service](https://aka.ms/compliance_policies) (Miglioramenti apportati alla sicurezza nel servizio Intune) 
+- [Criteri di conformità del dispositivo in Configuration Manager](/sccm/mdm/deploy-use/device-compliance-policies)
 
 #### <a name="updates-to-out-of-compliance-messages-in-company-portal-app"></a>Aggiornamenti per i messaggi di mancata conformità nell'app Portale aziendale 
 <!--1832222--> È in corso la revisione dei messaggi visualizzati dagli utenti dei dispositivi quando un dispositivo risulta non conforme. I messaggi conservano il significato originale, ma vengono aggiornati con un linguaggio più descrittivo e un minor uso di terminologia tecnica. Verranno anche aggiornati i collegamenti alla documentazione e alle procedure di correzione per mantenerli aggiornati.  
