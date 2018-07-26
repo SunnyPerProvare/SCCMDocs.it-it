@@ -10,12 +10,12 @@ ms.assetid: f504de3e-4caf-455c-80d7-a63f13f4c5d9
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 275ce06520174adf10100b77a8034620b072c93f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 514404119044bbf994eb88c5705bb5051281ee9f
+ms.sourcegitcommit: cea5152422a60e61601fdaeae1519300001fe6ee
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348668"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39175222"
 ---
 #  <a name="configure-alerts-for-endpoint-protection-in-configuration-manager"></a>Configurare gli avvisi di Endpoint Protection in Configuration Manager
 
@@ -87,7 +87,7 @@ ms.locfileid: "32348668"
 
 ## <a name="alert-for-outdated-malware-client"></a>Avviso per client malware obsoleto
 
-A partire da Configuration Manager versione 1702, è possibile configurare un avviso per verificare che i client Endpoint Protection non siano obsoleti. È ora possibile visualizzare **Versione client antimalware** e **Endpoint Protection Deployment Status** (Stato distribuzione Endpoint Protection) passando ad **Asset e conformità** > **Panoramica** > **Dispositivi** > **Tutti i client desktop e di server**. Per controllare un avviso, visualizzare **Avvisi** nell'area di lavoro **Monitoraggio**. Se più del 20% dei client gestiti esegue una versione scaduta del software antimalware, viene visualizzato l'avviso La versione del client antimalware è obsoleta. Questo avviso non viene visualizzato nella scheda **Monitoraggio** > **Panoramica**. Per aggiornare i client antimalware scaduti, abilitare gli aggiornamenti software per i client antimalware.
+A partire da Configuration Manager versione 1702, è possibile configurare un avviso per verificare che i client Endpoint Protection non siano obsoleti. È ora possibile visualizzare **Versione client antimalware** e **Stato distribuzione di Endpoint Protection** passando ad **Asset e conformità** > **Panoramica** > **Raccolte dispositivi** > **Tutti i client desktop e di server**. Per controllare un avviso, visualizzare **Avvisi** nell'area di lavoro **Monitoraggio**. Se più del 20% dei client gestiti esegue una versione scaduta del software antimalware, viene visualizzato l'avviso La versione del client antimalware è obsoleta. Questo avviso non viene visualizzato nella scheda **Monitoraggio** > **Panoramica**. Per aggiornare i client antimalware scaduti, abilitare gli aggiornamenti software per i client antimalware.
 
 Per configurare la percentuale oltre la quale viene generato l'avviso, espandere **Monitoraggio** > **Avvisi** > **Tutti gli avvisi**, fare doppio clic su **I client antimalware sono obsoleti** e modificare l'opzione **Genera un avviso se la percentuale di client gestiti con una versione obsoleta del client antimalware è superiore a**.
 
