@@ -1,10 +1,5 @@
 # Comprendere ed esplorare
 ## [Panoramica](understand\protect-data-and-site-infrastructure.md)
-## [Eseguire il backup dei siti](understand/backup-and-recovery.md)
-## [Ripristinare i siti](understand/recover-sites.md)
-## [Ripristino automatico dei siti](understand/unattended-recovery.md)
-## [Opzioni di disponibilità elevata](understand/high-availability-options.md)
-## [Impostazioni per gestire le distribuzioni ad alto rischio](understand/settings-to-manage-high-risk-deployments.md)
 
 # Pianificare e progettare
 ## [Prerequisiti per i profili certificato](plan-design/prerequisites-for-certificate-profiles.md)
