@@ -13,7 +13,7 @@
 
 ## [Estensioni SCAP (Security Content Automation Protocol)](plan-design/scap/about-scap.md)
 ### [Installare e configurare le estensioni SCAP](plan-design/scap/install-configure-scap.md)
-### [Importare le impostazioni di conformità SCAP](plan-design/scap/import-scap-compliance-settings.md)
+### [Distribuire e monitorare la conformità SCAP](plan-design/scap/deploy-monitor-export.md)
 ### [Risoluzione dei problemi relativi alle estensioni SCAP](plan-design/scap/troubleshooting-scap.md)
 
 # Distribuire e usare

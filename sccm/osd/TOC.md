@@ -45,8 +45,9 @@
 ### [Distribuire Windows to Go](deploy-use/deploy-windows-to-go.md)
 
 ## [Gestire Windows come servizio](deploy-use/manage-windows-as-a-service.md)
+## [Creare una distribuzione in più fasi](deploy-use/create-phased-deployment-for-task-sequence.md)
+## [Gestire e monitorare le distribuzioni in più fasi](deploy-use/manage-monitor-phased-deployments.md)
 ## [Monitorare le distribuzioni del sistema operativo](deploy-use/monitor-operating-system-deployments.md)
-## [Creare una distribuzione in fasi per una sequenza di attività](deploy-use/create-phased-deployment-for-task-sequence.md)
 
 ## [Gestire le sequenze di attività per automatizzare le attività](deploy-use/manage-task-sequences-to-automate-tasks.md)
 ### [Creare una sequenza di attività per installare un sistema operativo](deploy-use/create-a-task-sequence-to-install-an-operating-system.md)
