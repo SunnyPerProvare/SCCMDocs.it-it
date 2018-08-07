@@ -10,12 +10,12 @@ ms.assetid: 226cbbb2-9afa-4e2e-a472-be989c0f0e11
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5d83b23673d8eea6e98f21ea30b6b802eb7e5595
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a3a091a526a385fadf0353073048d33ae704cd76
+ms.sourcegitcommit: f9b11bb0942cd3d03d90005b1681e9a14dc052a1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338381"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39229372"
 ---
 # <a name="the-content-library-cleanup-tool-for-system-center-configuration-manager"></a>Strumento di pulizia della raccolta contenuto per System Center Configuration Manager
 
@@ -60,7 +60,7 @@ Per eseguire lo strumento:
 **Problema noto** Quando si esegue lo strumento, se un pacchetto o una distribuzione ha esito negativo o è in corso, è possibile che venga restituito un errore simile al seguente:
 -  *System.InvalidOperationException: non è possibile eseguire la pulizia della raccolta contenuto perché il pacchetto <packageID> non è installato completamente*.
 
-**Soluzione temporanea:** Nessuna. Lo strumento non è in grado di identificare in modo affidabile i file orfani quando il contenuto è in corso o la sua distribuzione ha avuto esito negativo. Di conseguenza, lo strumento non consente di eseguire la pulizia del contenuto fino a quando il problema non viene risolto.
+**Soluzione temporanea:** Nessuna. Lo strumento non è in grado di identificare in modo affidabile i file orfani quando la distribuzione del contenuto è in corso o ha avuto esito negativo. Di conseguenza, lo strumento non consente di eseguire la pulizia del contenuto fino a quando il problema non viene risolto.
 
 ### <a name="command-line-switches"></a>Opzioni della riga di comando  
 È possibile usare le opzioni della riga di comando seguenti in qualsiasi ordine.   

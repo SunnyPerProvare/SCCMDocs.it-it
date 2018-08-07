@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b8d8af88-e8ac-4deb-921b-975e2d2afd80
-ms.openlocfilehash: 5f29b7a5d82b58358bdecd5508391db219b2cedc
-ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
+ms.openlocfilehash: 54e91c729739d7bf1f0417a80a0143cc4969ed74
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36260925"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39383135"
 ---
 # <a name="manage-express-installation-files-for-windows-10-updates"></a>Gestire i file di installazione rapida per gli aggiornamenti di Windows 10
 
@@ -58,4 +58,4 @@ Dopo aver distribuito le impostazioni client per abilitare questa funzionalità 
 
 3. Selezionare le impostazioni client appropriate e fare clic su **Proprietà** sulla barra multifunzione.  
 
-4. Selezionare il gruppo **Aggiornamenti software**. Specificare **Sì** per l'impostazione **Abilita l'installazione di file per l'installazione rapida nei client**. Configurare la **porta usata per scaricare il contenuto per gli aggiornamenti rapidi** con la porta usata dal listener HTTP nel client.  
+4. Selezionare il gruppo **Aggiornamenti software**. Specificare **Sì** per l'impostazione **Abilita l'installazione di file per l'installazione rapida nei client**. Configurare la **porta usata per scaricare il contenuto per gli aggiornamenti rapidi** con la porta usata dal listener HTTP nel client.

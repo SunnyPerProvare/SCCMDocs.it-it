@@ -10,12 +10,12 @@ ms.assetid: 3af2a69d-30e7-4dce-832d-82b7a1c082f8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 13742fcbeefacd2183b26c5083d6f8b3ee0ef60f
-ms.sourcegitcommit: d1bf26bcf0d78b37ac7598fab36eb58ca69b1dc5
+ms.openlocfilehash: 5183b30d9184f7119d1423b5773da2b692026ab7
+ms.sourcegitcommit: 64b343906afdd442189559119eea8e933642cbf8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37067624"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342815"
 ---
 # <a name="capabilities-in-technical-preview-18062-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1806.2 per System Center Configuration Manager
 
@@ -152,7 +152,7 @@ Per informazioni su come creare una nuova app MSIX, vedere [MSIX support introdu
 Provare a completare le attività. Inviare quindi [commenti e suggerimenti](capabilities-in-technical-preview-1804.md#bkmk_feedback).
 
 1. [Creare un'applicazione](/sccm/apps/deploy-use/create-applications) nella console di Configuration Manager. 
-2. Selezionare il **Tipo** di file di installazione dell'applicazione **Pacchetto app Windows (*.appx, *.appxbundle, *.msix, *.msixbundle)**.
+2. Selezionare il **Tipo** di file di installazione dell'applicazione **Pacchetto app Windows (\*.appx, \*.appxbundle, \*.msix, \*.msixbundle)**.
 3. [Distribuire l'applicazione](/sccm/apps/deploy-use/deploy-applications) al client che esegue la build più recente di Windows Insider Preview.
 
 

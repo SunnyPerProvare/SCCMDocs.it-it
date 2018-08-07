@@ -10,12 +10,12 @@ ms.assetid: 495b87ae-41a4-49ba-abe2-d4f7d22ac0d4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a8ce492aa34fa130a11bde0d5823252a9d782960
-ms.sourcegitcommit: e35d07870656eadd29faacc378ecd091ff3bdcfb
+ms.openlocfilehash: 33cd99fd51bd7fabc1ae7f8379bcf2a69a5c4898
+ms.sourcegitcommit: f195190347a98b6c5be957564d33b6c4dfb610d7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848629"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39309375"
 ---
 # <a name="licensing-and-branches-for-system-center-configuration-manager"></a>Licenze e rami per System Center Configuration Manager
 
@@ -28,7 +28,7 @@ I clienti con Software Assurance o sottoscrizione equivalente attiva per le lice
 
 
 **Specifiche delle licenze:**  
-[I termini e le condizioni relativi ai prodotti acquistati tramite i programmi multilicenza Microsoft sono disponibili qui](http://go.microsoft.com/fwlink/?LinkId=800052).
+[I termini e le condizioni relativi ai prodotti acquistati tramite i programmi multilicenza Microsoft sono disponibili qui](https://go.microsoft.com/fwlink/?LinkId=800052).
 
 
 ## <a name="system-center-configuration-manager-licensed-branches"></a>Rami di System Center Configuration Manager con licenza  
@@ -95,16 +95,15 @@ Per altre informazioni sulle licenze Software Assurance e Current Branch di Syst
 Usare i collegamenti seguenti per altri dettagli sulle licenze dei prodotti.
 
 **Collegamenti relativi al Centro servizi per contratti multilicenza:**
-- Panoramica del Centro servizi per contratti multilicenza: [https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx](https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx).
+- [Panoramica del Centro servizi per contratti multilicenza](https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx)
 
-- Termini per i contratti multilicenza Microsoft per i prodotti: [http://go.microsoft.com/fwlink/?LinkId=800052](http://go.microsoft.com/fwlink/?LinkId=800052).
+- [Termini per i contratti multilicenza Microsoft per i prodotti](https://go.microsoft.com/fwlink/?LinkId=800052)
 
-- I clienti che hanno acquistato contratti multilicenza possono ottenere un riepilogo delle proprie licenze qui:  [https://www.microsoft.com/Licensing/servicecenter/default.aspx](https://www.microsoft.com/Licensing/servicecenter/default.aspx).  
-  Per una panoramica delle licenze, passare al menu **Licenze** e fare clic su **Riepilogo licenze**.
+- I clienti che hanno acquistato contratti multilicenza possono ottenere un riepilogo delle proprie licenze dal [Centro servizi per contratti multilicenza](https://www.microsoft.com/Licensing/servicecenter/default.aspx). Per una panoramica delle licenze, passare al menu **Licenze** e fare clic su **Riepilogo licenze**.
 
 **Video sul Centro servizi per contratti multilicenza:**
-- Video di formazione sul funzionamento del Centro servizi per contratti multilicenza: m[https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx#tab=2](https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx#tab=2).
+- [Video di formazione sul funzionamento del Centro servizi per contratti multilicenza](https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx#tab=2)  
 
-- Dove cercare il proprio contratto Software Assurance (a 43 secondi dall'inizio): [https://www.microsoft.com/showcase/video.aspx?uuid=fe1846cb-1d26-49fc-b064-57b25dcc31a0](https://www.microsoft.com/showcase/video.aspx?uuid=fe1846cb-1d26-49fc-b064-57b25dcc31a0).
+- [Dove cercare il proprio contratto Software Assurance](https://www.microsoft.com/showcase/video.aspx?uuid=fe1846cb-1d26-49fc-b064-57b25dcc31a0) (a 43 secondi dall'inizio)  
 
-- Come ottenere le autorizzazioni per il Centro servizi per contratti multilicenza: [https://www.microsoft.com/showcase/video.aspx?uuid=ac4ed1ca-d0a9-43cd-89fa-74ccb555dec4](https://www.microsoft.com/showcase/video.aspx?uuid=ac4ed1ca-d0a9-43cd-89fa-74ccb555dec4).  È possibile delegare le autorizzazioni in lettura e scrittura per il Centro servizi per contratti multilicenza ad altri utenti nell'organizzazione.
+- [Come ottenere le autorizzazioni per il Centro servizi per contratti multilicenza](https://www.microsoft.com/showcase/video.aspx?uuid=ac4ed1ca-d0a9-43cd-89fa-74ccb555dec4). È possibile delegare le autorizzazioni in lettura e scrittura per il Centro servizi per contratti multilicenza ad altri utenti nell'organizzazione.

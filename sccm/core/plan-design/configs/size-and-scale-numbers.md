@@ -10,12 +10,12 @@ ms.assetid: c5a42100-2f60-4952-b495-918025ea6559
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b995687e330fe4beca26da83ee29ddc504c38e3a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: de8116e1fec500750e429edfb48303b8c24822f4
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32343933"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39384838"
 ---
 # <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Numeri di ridimensionamento e scalabilità per System Center Configuration Manager
 
@@ -150,8 +150,6 @@ Per altre informazioni, vedere [Prestazioni e scalabilità](/sccm/core/clients/m
 -   Un punto di aggiornamento software installato nel server del sito può supportare fino a 25.000 client.   
 
 -   Un punto di aggiornamento software installato in un computer remoto rispetto al server del sito può supportare fino a 150.000 client quando il computer remoto soddisfa i requisiti di Windows Server Update Services (WSUS) per il supporto di questo numero di client.  
-
--   Per impostazione predefinita, Configuration Manager non supporta la configurazione di punti di aggiornamento software come cluster di Bilanciamento carico di rete. È possibile tuttavia usare l'SDK di Configuration Manager per configurare fino a quattro punti di aggiornamento software in un cluster di Bilanciamento carico di rete.  
 
 
 
