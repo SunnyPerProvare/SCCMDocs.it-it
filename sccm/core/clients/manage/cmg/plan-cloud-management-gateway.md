@@ -2,26 +2,25 @@
 title: Pianificare il gateway di gestione cloud
 titleSuffix: Configuration Manager
 description: Pianificare e progettare il gateway di gestione di cloud (CMG) per semplificare la gestione dei client basati su Internet.
-ms.date: 04/10/2018
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6e5274398b1a53b5a8dce8b854bccbe0e0d92081
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 78300528fde4a75f8ff816fb5ac2bb8549c2571c
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340856"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39383763"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
  
-<!--1101764-->
-Il gateway di gestione cloud (CMG) consente di gestire i client di Configuration Manager in Internet in modo semplice. Distribuendo il gateway di gestione cloud (CMG) come servizio cloud in Microsoft Azure, è possibile gestire i client tradizionali che effettuano il roaming in Internet senza un'infrastruttura aggiuntiva. Inoltre non è necessario esporre l'infrastruttura locale a Internet. 
+<!--1101764--> Il gateway di gestione cloud (CMG) consente di gestire i client di Configuration Manager in Internet in modo semplice. Distribuendo il gateway di gestione cloud (CMG) come servizio cloud in Microsoft Azure, è possibile gestire i client tradizionali che effettuano il roaming in Internet senza un'infrastruttura aggiuntiva. Inoltre non è necessario esporre l'infrastruttura locale a Internet. 
 
 > [!Tip]  
 > Questa funzionalità è stata introdotta per la prima volta nella versione 1610 come [versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1802, questa funzionalità non è più in versione non definitiva.  
@@ -96,8 +95,7 @@ La distribuzione e l'utilizzo del gateway di gestione cloud includono i componen
 
 
 ### <a name="azure-resource-manager"></a>Azure Resource Manager
-<!-- 1324735 -->
-A partire dalla versione 1802, è possibile creare il gateway di gestione cloud usando una **distribuzione Azure Resource Manager**. [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) è una piattaforma moderna per la gestione di tutte le risorse di una soluzione come una singola entità detta [gruppo di risorse](/azure/azure-resource-manager/resource-group-overview#resource-groups). Quando si distribuisce Cloud Management Gateway con Azure Resource Manager, il sito usa Azure Active Directory (Azure AD) per autenticare e creare le risorse cloud necessarie. Questa distribuzione modernizzata non richiede il certificato di gestione classico di Azure.  
+<!-- 1324735 --> A partire dalla versione 1802, è possibile creare il gateway di gestione cloud usando una **distribuzione Azure Resource Manager**. [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) è una piattaforma moderna per la gestione di tutte le risorse di una soluzione come una singola entità detta [gruppo di risorse](/azure/azure-resource-manager/resource-group-overview#resource-groups). Quando si distribuisce Cloud Management Gateway con Azure Resource Manager, il sito usa Azure Active Directory (Azure AD) per autenticare e creare le risorse cloud necessarie. Questa distribuzione modernizzata non richiede il certificato di gestione classico di Azure.  
 
 La procedura guidata di Cloud Management Gateway offre ancora l'opzione per una **distribuzione classica del servizio** tramite un certificato di gestione di Azure. Per semplificare la distribuzione e la gestione delle risorse, è consigliabile usare il modello di distribuzione Azure Resource Manager per tutte le nuove istanze di Cloud Management Gateway. Se possibile, ridistribuire le istanze di Cloud Management Gateway esistenti tramite Resource Manager. Per altre informazioni, vedere [Modify a CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#modify-a-cmg) (Modificare un gateway di gestione cloud).
 
@@ -199,6 +197,7 @@ La tabella seguente elenca il supporto di Cloud Management Gateway (CMG) per le 
 | Distribuzione del software (indirizzata a utenti, obbligatoria)</br>(con integrazione di Azure AD)     | ![Supportato](media/green_check.png)  (1710) |
 | Distribuzione del software (indirizzata a utenti, disponibile)</br>([tutti i requisiti](/sccm/apps/deploy-use/deploy-applications#deploy-user-available-applications-on-azure-ad-joined-devices)) | ![Supportato](media/green_check.png)  (1802) |
 | Sequenza di attività di aggiornamento sul posto di Windows 10     | ![Supportato](media/green_check.png)  (1802) |
+| CMPivot     | ![Supportato](media/green_check.png)  (1806) |
 | Qualsiasi altro scenario di sequenza di attività     | ![Non supportato](media/Red_X.png) |
 | Push client     | ![Non supportato](media/Red_X.png) |
 | Assegnazione automatica al sito     | ![Non supportato](media/Red_X.png) |
@@ -264,9 +263,9 @@ Cloud Management Gateway (CMG) usa i componenti di Azure seguenti, che implicano
 
 - I client basati su Internet ottengono i contenuti degli aggiornamenti del software Microsoft da Windows Update senza alcun costo. Non distribuire i pacchetti di aggiornamento con i contenuti degli aggiornamenti Microsoft a un punto di distribuzione cloud per non incorrere in costi di archiviazione e dati in ingresso.  
 
-- Altri contenuti necessari, ad esempio applicazioni o aggiornamenti software di terze parti, devono essere distribuiti a un punto di distribuzione basato su cloud. Il gateway di gestione cloud supporta attualmente solo il punto di distribuzione cloud per l'invio di contenuti ai client.  
+- Altri contenuti necessari, ad esempio applicazioni o aggiornamenti software di terze parti, devono essere distribuiti a un punto di distribuzione cloud. Attualmente il gateway di gestione cloud supporta solo il punto di distribuzione cloud per l'invio di contenuti ai client.  
 
-- Per altre informazioni, vedere i costi di utilizzo della [distribuzione basata su cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#cost-of-using-cloud-based-distribution).  
+- Per altre informazioni, vedere i costi d'uso dei [punti di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#bkmk_cost).  
 
 #### <a name="other-costs"></a>Altri costi
 

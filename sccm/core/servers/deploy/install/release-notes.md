@@ -2,7 +2,7 @@
 title: Note sulla versione
 titleSuffix: Configuration Manager
 description: Informazioni su problemi urgenti non ancora risolti nel prodotto o trattati in un articolo della Microsoft Knowledge Base.
-ms.date: 04/18/2018
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,14 +10,14 @@ ms.assetid: 030947fd-f5e0-4185-8513-2397fb2ec96f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4aeacdbc73e21c3bae18111e22c8407eba865a87
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 9daf0fb53face0cf7ed56f2a45ab044fbfac203c
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338160"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39385508"
 ---
-# <a name="release-notes-for-system-center-configuration-manager"></a>Note sulla versione per System Center Configuration Manager
+# <a name="release-notes-for-configuration-manager"></a>Note sulla versione per Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -26,12 +26,12 @@ Con Configuration Manager le note sulla versione del prodotto sono limitate ai p
 La documentazione specifica delle funzionalità include informazioni sui problemi noti che interessano gli scenari di base.  
 
 > [!TIP]  
->  Questo argomento contiene le note sulla versione di Configuration Manager (Current Branch). Per informazioni sul Technical Preview Branch, vedere [Technical Preview per System Center Configuration Manager](../../../../core/get-started/technical-preview.md).  
+>  Questo argomento contiene le note sulla versione di Configuration Manager (Current Branch). Per informazioni sul Technical Preview Branch, vedere [Technical Preview](../../../../core/get-started/technical-preview.md)  
 
 Per informazioni sulle nuove funzionalità introdotte con le diverse versioni, vedere gli articoli seguenti:
+- [Novità della versione 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806)  
 - [Novità della versione 1802](/sccm/core/plan-design/changes/whats-new-in-version-1802)
 - [Novità della versione 1710](/sccm/core/plan-design/changes/whats-new-in-version-1710)
-- [Novità della versione 1706](/sccm/core/plan-design/changes/whats-new-in-version-1706)  
 
 
 
@@ -74,8 +74,7 @@ Anche se non produce alcun effetto sul risultato del processo di installazione, 
 ### <a name="azure-ad-enabled-clients-cant-communicate-with-management-point"></a>I client abilitati per Azure AD non riescono a comunicare con il punto di gestione
 <!--501089-->
 *Si applica a: Configuration Manager versione 1706*
-<!--also fixed in 1710 HFRU-->
-Nello scenario relativo all'[installazione e all'assegnazione di client Windows 10 di Configuration Manager usando Azure AD per l'autenticazione](/sccm/core/clients/deploy/deploy-clients-cmg-azure), la comunicazione client ha esito negativo se il punto di gestione abilitato per HTTPS usa credenziali alternative per il database. 
+<!--also fixed in 1710 HFRU--> Nello scenario relativo all'[installazione e all'assegnazione di client Windows 10 di Configuration Manager usando Azure AD per l'autenticazione](/sccm/core/clients/deploy/deploy-clients-cmg-azure), la comunicazione client ha esito negativo se il punto di gestione abilitato per HTTPS usa credenziali alternative per il database. 
 
 #### <a name="workaround"></a>Soluzione alternativa
 Attenuare il problema con una delle azioni seguenti:
@@ -88,14 +87,6 @@ Attenuare il problema con una delle azioni seguenti:
 
 
 ## <a name="software-updates"></a>Aggiornamenti software
-
-### <a name="servicing-plans-create-many-duplicate-software-update-groups-and-deployments-by-default"></a>I piani di manutenzione creano molte distribuzioni e molti gruppi di aggiornamento software duplicati per impostazione predefinita  
-<!-- 474326 -->
-Per impostazione predefinita, la procedura guidata Crea piano di manutenzione viene attualmente eseguita dopo ogni sincronizzazione degli aggiornamenti software. A ogni esecuzione, la procedura guidata crea un nuovo gruppo di aggiornamento software e una nuova distribuzione. Se la pianificazione della sincronizzazione degli aggiornamenti software viene eseguita diverse volte al giorno, la procedura guidata Crea piano di manutenzione crea più distribuzioni e gruppi di aggiornamento software ogni giorno.  
-
-#### <a name="workaround"></a>Soluzione alternativa
- dopo aver creato un piano di manutenzione, aprire le proprietà del piano, passare alla scheda **Pianificazione valutazione**, selezionare **Esegui la regola in base a una pianificazione**, fare clic su **Personalizza** e quindi creare una pianificazione personalizzata. Ad esempio, è possibile impostare l'esecuzione del piano di manutenzione ogni 60 giorni.  
-
 
 ### <a name="changing-office-365-client-setting-doesnt-apply"></a>La modifica dell'impostazione client di Office 365 non è applicabile 
 <!--511551-->

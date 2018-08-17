@@ -2,7 +2,7 @@
 title: Pianificare e configurare la gestione delle applicazioni
 titleSuffix: Configuration Manager
 description: Implementare e configurare le dipendenze necessarie per la distribuzione di applicazioni in System Center Configuration Manager.
-ms.date: 11/07/2017
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 2be84a1d-ebb9-47ae-8982-c66d5b92a52a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 18d9fe80a1c5525457579dadbfeaeafa3425202d
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 626fbb8d431857b1b672fffd9f3ba0df8b2a3da0
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340149"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39385202"
 ---
 # <a name="plan-for-and-configure-application-management-in-system-center-configuration-manager"></a>Pianificare e configurare la gestione delle applicazioni in System Center Configuration Manager
 
@@ -183,8 +183,7 @@ In Software Center la personalizzazione viene applicata secondo le regole seguen
 3. Se una sottoscrizione di Microsoft Intune è configurata e connessa a Configuration Manager, Software Center visualizzerà il nome dell'organizzazione, il colore e il logo aziendale specificati nelle proprietà della sottoscrizione di Intune. Per ulteriori informazioni, vedere [Configuring the Microsoft Intune subscription](https://docs.microsoft.com/sccm/mdm/deploy-use/setup-hybrid-mdm#step-3-configure-intune-subscription).
 
 #### <a name="to-manually-set-software-center-branding"></a>Per impostare manualmente la personalizzazione di Software Center
-<!-- 1351224 -->
-Con la versione 1710, è possibile aggiungere manualmente elementi di personalizzazione aziendale e specificare la visibilità delle schede in Software Center. È possibile aggiungere il nome specifico della società per Software Center, impostare un tema di colori per la configurazione di Software Center, impostare il logo della società e impostare le schede visibili per i dispositivi client.
+<!-- 1351224 --> Con la versione 1710, è possibile aggiungere manualmente elementi di personalizzazione aziendale e specificare la visibilità delle schede in Software Center. È possibile aggiungere il nome specifico della società per Software Center, impostare un tema di colori per la configurazione di Software Center, impostare il logo della società e impostare le schede visibili per i dispositivi client.
 
 1. Nella console di **Configuration Manager** scegliere **Amministrazione** > **Impostazioni client**. Fare clic sull'istanza di impostazione client desiderata.
 2. Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.
@@ -201,9 +200,13 @@ Con la versione 1710, è possibile aggiungere manualmente elementi di personaliz
     -  Scheda Enable Installation Status (Abilita stato installazione)
     -  Scheda Enable Device compliance (Abilita conformità dispositivo)
     -  Scheda Enable Options (Abilita opzioni)
+    -  Specifica una scheda personalizzata per Software Center (a partire dalla versione 1806) <!--1358132 -->
+        - Nome scheda
+        - URL del contenuto
 
 > [!IMPORTANT]  
->  La personalizzazione di Software Center viene sincronizzata con il servizio Intune ogni 14 giorni. È possibile quindi che le modifiche apportate in Intune vengano visualizzate in Configuration Manager con un certo ritardo.
+> - Alcune funzionalità del sito Web potrebbero non funzionare quando viene usato come scheda personalizzata in Software Center. Sottoporre a test i risultati prima di distribuire questa opzione ai client. <!--519659--> 
+> - La personalizzazione di Software Center viene sincronizzata con il servizio Intune ogni 14 giorni. È possibile quindi che le modifiche apportate in Intune vengano visualizzate in Configuration Manager con un certo ritardo.
 
 ###  <a name="step-5-verify-that-the-application-catalog-is-operational"></a>Passaggio 5: Verificare che il Catalogo applicazioni sia operativo  
  Utilizzare le seguenti procedure per verificare che il Catalogo applicazioni sia operativo. È possibile usare direttamente il Catalogo applicazioni da un browser o da Software Center.  
