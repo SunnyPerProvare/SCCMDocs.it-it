@@ -60,7 +60,7 @@ Per altre informazioni, vedere [Versioni di base e di aggiornamento](/sccm/core/
 
 -   Rende disponibili gli aggiornamenti pertinenti alla distribuzione dall'interno della console di Configuration Manager.  
 
-Questo ruolo del sistema del sito supporta sia una modalità online che una offline di funzionamento. Per ulteriori informazioni, vedere [About the service connection point in System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
+Questo ruolo del sistema del sito supporta sia una modalità online che una offline di funzionamento. Per ulteriori informazioni, vedere [Informazioni sul punto di connessione del servizio in System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
 
 ##  <a name="bkmk_usage"></a> Raccolta dei dati di utilizzo  
  System Center Configuration Manager raccoglie dati di utilizzo relativi ai siti e all'infrastruttura. Queste informazioni vengono compilate e inviate al servizio cloud Microsoft dal punto di connessione del servizio. È necessario abilitare Configuration Manager per scaricare gli aggiornamenti per la distribuzione che si applicano alla versione di Configuration Manager in uso. Quando si configura il punto di connessione del servizio, è possibile specificare sia il livello di dati raccolti sia la modalità di invio, che può essere automatica (modalità online) o manuale (modalità offline).  
