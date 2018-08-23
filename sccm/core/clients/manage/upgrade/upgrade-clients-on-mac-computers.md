@@ -60,7 +60,7 @@ Seguire la procedura dettagliata descritta di seguito per aggiornare il client i
 
  Se non si usa la registrazione di Configuration Manager, ma si installa il certificato client indipendentemente da Configuration Manager, vedere [Configurare il client aggiornato per usare un certificato esistente](#BKMK_UpgradingClient_MachineEnrollment).  
 
-##  <a name="BKMK_UpgradingClient_MachineEnrollment"></a> Configure the upgraded client to use an existing certificate  
+##  <a name="BKMK_UpgradingClient_MachineEnrollment"></a> Configurare il client aggiornato per l'uso di un certificato esistente  
  Eseguire la procedura seguente per impedire che venga eseguita la registrazione guidata computer e per configurare il client aggiornato in modo da usare un certificato client esistente.  
 
 -   Nella console di Configuration Manager creare un elemento di configurazione del tipo **Mac OS X**.  

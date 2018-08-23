@@ -136,7 +136,7 @@ Oltre al download di nuove informazioni per il catalogo di Asset Intelligence, i
 
 2.  Nel gruppo **Asset Intelligence** della scheda **Home** scegliere **Importa licenze software**.   
 
-4.  Nella pagina **Importa** specificare se si intende importare un file di Microsoft Volume Licensing (MVLS) (con estensione xml o csv) o un file di resoconto delle licenze generale (con estensione csv). Per altre informazioni sulla creazione di un file di resoconto delle licenze generale, vedere [Create a general license statement information file for import](#BKMK_CreateGeneralLicenseStatement) più avanti in questo argomento.  
+4.  Nella pagina **Importa** specificare se si intende importare un file di Microsoft Volume Licensing (MVLS) (con estensione xml o csv) o un file di resoconto delle licenze generale (con estensione csv). Per altre informazioni sulla creazione di un file di resoconto delle licenze generale, vedere [Creare un file di resoconto delle licenze generale per l'importazione](#BKMK_CreateGeneralLicenseStatement) più avanti in questo argomento.  
 
     > [!WARNING]  
     >  Per scaricare un file MVLS in formato CSV che è possibile importare nel catalogo di Asset Intelligence, vedere [Microsoft Volume Licensing Service Center](http://go.microsoft.com/fwlink/p/?LinkId=226547). Per accedere a queste informazioni, è necessario disporre di un account registrato nel sito Web. È necessario contattare il rappresentante Microsoft per informazioni su come ottenere il file MVLS in formato XML.  
@@ -148,7 +148,7 @@ Oltre al download di nuove informazioni per il catalogo di Asset Intelligence, i
 
 6. Completare la procedura guidata.  
 
-###  <a name="BKMK_CreateGeneralLicenseStatement"></a> Create a general license statement information file for import  
+###  <a name="BKMK_CreateGeneralLicenseStatement"></a> Creare un file di resoconto delle licenze generale per l'importazione  
  È anche possibile importare un resoconto delle licenze generale nel catalogo di Asset Intelligence tramite un file di importazione delle licenze creato manualmente in formato delimitato da virgole (con estensione csv).  
 
 > [!NOTE]  

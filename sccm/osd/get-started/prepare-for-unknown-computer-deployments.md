@@ -78,4 +78,4 @@ Usare le informazioni di questo argomento per distribuire sistemi operativi a co
 
 -   **Supporto pre-installato**  
 
-     Selezionare la casella di controllo **Abilita supporto per computer sconosciuti** nella pagina **Protezione** della Creazione guidata del supporto per la sequenza attività. Per ulteriori informazioni, vedere [Create prestaged media with System Center Configuration Manager](../deploy-use/create-prestaged-media.md).  
+     Selezionare la casella di controllo **Abilita supporto per computer sconosciuti** nella pagina **Protezione** della Creazione guidata del supporto per la sequenza attività. Per ulteriori informazioni, vedere [Creare supporti pre-installati con System Center Configuration Manager](../deploy-use/create-prestaged-media.md).  
