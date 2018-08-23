@@ -1,6 +1,5 @@
 # Panoramica
 ## [Informazioni sulla gestione di dispositivi mobili ibrida](understand/hybrid-mobile-device-management.md)
-## [Scegliere la versione autonoma di Intune o la gestione di dispositivi mobili ibrida](understand/choose-between-standalone-intune-and-hybrid-mobile-device-management.md)
 ## [Novità nella gestione dei dispositivi mobili ibrida](understand/whats-new-in-hybrid-mobile-device-management.md)
 
 # [Pianificare e progettare](plan-design/plan-hybrid-mobile-device-management.md)
