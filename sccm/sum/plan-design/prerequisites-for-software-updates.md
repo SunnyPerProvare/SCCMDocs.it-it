@@ -41,7 +41,7 @@ Quando esistono più punti di aggiornamento software in un sito, verificare che 
 > [!WARNING]  
 >  La classificazione degli aggiornamenti software **Aggiornamenti** è supportata solo a partire da WSUS 4.0. Prima di sincronizzare questa nuova classificazione e avere la possibilità di valutare i computer Windows 10 in un piano di manutenzione di Windows 10, è fondamentale installare l'[hotfix 3095113](https://support.microsoft.com/kb/3095113) per WSUS nei punti di aggiornamento software e nei server del sito. Questo hotfix consente a WSUS in un server basato su Windows Server 2012 o su Windows Server 2012 R2 di sincronizzare e distribuire gli aggiornamenti di funzionalità per Windows 10. Per altre informazioni, vedere [Gestire Windows come servizio](../../osd/deploy-use/manage-windows-as-a-service.md).  
 >   
->  Se si sincronizzano gli aggiornamenti software con la classificazione di **Aggiornamenti** prima di installare l' [hotfix 3095113](https://support.microsoft.com/kb/3095113), vedere [Recover from synchronizing the Aggiornamenti category before you install KB 3095113](#BKMK_RecoverUpgrades).  
+>  Se si sincronizzano gli aggiornamenti software con la classificazione di **Aggiornamenti** prima di installare l' [hotfix 3095113](https://support.microsoft.com/kb/3095113), vedere [Per ripristinare la sincronizzazione della classificazione Aggiornamenti prima di installare KB 3095113](#BKMK_RecoverUpgrades).  
 
 ### <a name="wsus-administration-console"></a>Console di amministrazione di WSUS  
  È necessaria la console di amministrazione di WSUS nel server del sito di Configuration Manager se il punto di aggiornamento software si trova in un server di sistema del sito remoto e WSUS non è ancora stato installato nel server del sito.  
