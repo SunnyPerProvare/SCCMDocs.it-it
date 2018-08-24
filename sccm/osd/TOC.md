@@ -1,9 +1,5 @@
 # Comprendere ed esplorare
 ## [Introduzione alla distribuzione del sistema operativo](understand/introduction-to-operating-system-deployment.md)
-## [Passaggi della sequenza di attività](understand/task-sequence-steps.md)
-## [Variabili di azione della sequenza di attività](understand/task-sequence-action-variables.md)
-## [Variabili predefinite della sequenza di attività](understand/task-sequence-built-in-variables.md)
-## [Comandi di preavvio per supporti per sequenza di attività](understand/prestart-commands-for-task-sequence-media.md)
 
 # Pianificare e progettare
 ## [Requisiti dell'infrastruttura per la distribuzione del sistema operativo](plan-design/infrastructure-requirements-for-operating-system-deployment.md)
@@ -13,7 +9,7 @@
 
 # Introduzione
 ## [Preparare i ruoli del sistema del sito per le distribuzioni del sistema operativo](get-started/prepare-site-system-roles-for-operating-system-deployments.md)
-## [Preparare la distribuzione del sistema operativo](get-started/prepare-for-operating-system-deployment.md)
+## [Preparativi per la distribuzione del sistema operativo](get-started/prepare-for-operating-system-deployment.md)
 ### [Gestire le immagini di avvio](get-started/manage-boot-images.md)
 #### [Personalizzare le immagini di avvio](get-started/customize-boot-images.md)
 
@@ -67,3 +63,10 @@
 ### [Creare supporti pre-installati](deploy-use/create-prestaged-media.md)
 ### [Creare supporti di avvio](deploy-use/create-bootable-media.md)
 ### [Creare supporti di acquisizione](deploy-use/create-capture-media.md)
+
+# Informazioni di riferimento tecnico
+## [Passaggi della sequenza di attività](understand/task-sequence-steps.md)
+## [Come usare le variabili della sequenza di attività](understand/using-task-sequence-variables.md)
+## [Variabili della sequenza di attività](understand/task-sequence-variables.md)
+## [Comandi di preavvio per supporti per sequenza di attività](understand/prestart-commands-for-task-sequence-media.md)
+
