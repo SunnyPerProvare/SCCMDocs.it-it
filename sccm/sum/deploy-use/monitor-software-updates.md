@@ -5,17 +5,17 @@ description: La console di System Center Configuration Manager invia avvisi e st
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 11/20/2016
+ms.date: 07/30/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 9afd7b0f-5c8e-48bc-9a65-1f7d74103688
-ms.openlocfilehash: bc594fe6b870e1054033601a67209aa9ad72ccef
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: e51e2c8236b014063efe9734baf338ebe70d1eb3
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351866"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39384484"
 ---
 # <a name="monitor-software-updates-in-system-center-configuration-manager"></a>Monitorare gli aggiornamenti software in System Center Configuration Manager
 
@@ -61,6 +61,26 @@ Dopo aver configurato le impostazioni degli avvisi, Configuration Manager genera
 
 ##  <a name="BKMK_SUReports"></a> Report degli aggiornamenti software  
  I messaggi di stato per gli aggiornamenti software offrono informazioni sulla conformità degli aggiornamenti software e sullo stato di valutazione e applicazione delle distribuzioni di aggiornamenti software. Per visualizzare tali messaggi di stato, è possibile eseguire i report degli aggiornamenti software. Sono disponibili oltre 30 report degli aggiornamenti software predefiniti. Sono organizzati in diverse categorie e forniscono informazioni specifiche sugli aggiornamenti e le distribuzioni di software. Oltre a usare i report preconfigurati, è anche possibile creare report degli aggiornamenti software personalizzati in base alle esigenze dell'azienda. Per altre informazioni, vedere [Operazioni e manutenzione per la creazione di report](../../core/servers/manage/operations-and-maintenance-for-reporting.md).  
+
+### <a name="recommended-software-updates-reports"></a>Report degli aggiornamenti software consigliati
+Di seguito sono riportati alcuni dei report utili per identificare potenziali problemi. 
+
+#### <a name="compliance-9---overall-health-and-compliance-starting-in-version-1806"></a>Conformità 9 - Dati complessivi su integrità e conformità (a partire dalla versione 1806)
+Il report include le parti seguenti:
+
+- **Healthy Clients vs Total Clients** (Client integri rispetto a totale client): questo grafico a barre confronta i client "integri" che hanno comunicato con il sito nel periodo di tempo specificato rispetto al numero totale di client nella raccolta specificata.
+- **Compliance Overview** (Panoramica conformità): grafico a torta che mostra lo stato di conformità generale per il gruppo di aggiornamenti software specifico nei client attivi nella raccolta specificata.
+- **Top 5 Non-Compliant by Article ID** (Primi 5 non conformi in base a ID articolo): questo grafico a barre visualizza i primi cinque aggiornamenti software nel gruppo specificato che non sono conformi nei client attivi nella raccolta specificata.
+- La parte inferiore del report è una tabella con altri dettagli, in cui sono elencati gli aggiornamenti software nel gruppo specificato.
+
+#### <a name="management-2---updates-required-but-not-deployed"></a>Gestione 2 - Aggiornamenti richiesti ma non distribuiti
+
+Questo report mostra gli aggiornamenti software specifici del fornitore in una determinata classificazione degli aggiornamenti che sono stati rilevati come richiesti nei client ma non sono stati distribuiti in una raccolta specifica. 
+
+#### <a name="troubleshooting-2---deployment-errors"></a>Risoluzione dei problemi 2 - Errori di distribuzione
+
+Questo report restituisce gli errori di distribuzione nel sito e un conteggio dei computer in cui ogni errore viene riscontrato. 
+
 
 ##  <a name="BKMK_MonitorContent"></a> Monitoraggio del contenuto  
  È possibile monitorare il contenuto nella console di Configuration Manager per verificare lo stato di tutti i tipi di pacchetti in relazione ai punti di distribuzione associati. Sono inclusi lo stato di convalida del contenuto del pacchetto, lo stato del contenuto assegnato a un gruppo di punti di distribuzione specifico, lo stato del contenuto assegnato a un punto di distribuzione e lo stato di funzionalità facoltative per ogni punto di distribuzione (convalida contenuto, PXE e multicast).  

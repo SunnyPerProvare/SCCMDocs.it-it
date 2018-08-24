@@ -10,12 +10,12 @@ ms.assetid: a26a653e-17aa-43eb-ab36-0e36c7d29f49
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7ff953d658c54c2cebbbfd29a6bba83fe65cc08e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 5607402171a3b771560ff439b1f1f99a6a947e83
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342342"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39383297"
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Configurare i servizi di Azure da usare con Configuration Manager
 
@@ -63,7 +63,7 @@ La tabella seguente elenca informazioni dettagliate sui singoli servizi.
 |Gestione cloud con</br>Individuazione utente Azure AD | Più elementi | Pubblico | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | Importa, Crea |
 |Connettore OMS | Uno | Pubblico, Privato | ![Supportato](media/green_check.png) | ![Non supportato](media/Red_X.png) | Importa |
 |Preparazione aggiornamenti | Uno | Pubblico | ![Supportato](media/green_check.png) | ![Non supportato](media/Red_X.png) | Importa |
-|Microsoft Store per</br>le aziende e la formazione | Uno | Pubblico | ![Supportato](media/green_check.png) | ![Non supportato](media/Red_X.png) | Importa, Crea |
+|Microsoft Store per</br>Business | Uno | Pubblico | ![Supportato](media/green_check.png) | ![Non supportato](media/Red_X.png) | Importa, Crea |
 
 
 ### <a name="about-azure-ad-apps"></a>Informazioni sulle app di Azure AD
@@ -81,7 +81,7 @@ Per altre informazioni sulle autorizzazioni delle app necessarie e sulle configu
 Per altre informazioni sulle app di Azure, vedere gli articoli seguenti:
 - [Autenticazione e autorizzazione nel servizio app di Azure](/azure/app-service/app-service-authentication-overview)
 - [Panoramica di App Web](/azure/app-service-web/app-service-web-overview)
-- [Basics of Registering an Application in Azure AD](/azure/active-directory/develop/active-directory-authentication-scenarios#basics-of-registering-an-application-in-azure-ad) (Nozioni di base per la registrazione di un'applicazione in Azure AD)  
+- [Nozioni di base sulla registrazione di un'applicazione in Azure AD](/azure/active-directory/develop/active-directory-authentication-scenarios#basics-of-registering-an-application-in-azure-ad)  
 - [Registrare l'applicazione nel tenant di Azure Active Directory](/azure/active-directory/active-directory-app-registration)
 
 
@@ -90,7 +90,7 @@ Per altre informazioni sulle app di Azure, vedere gli articoli seguenti:
 
 Dopo aver scelto il servizio al quale connettersi, fare riferimento alla tabella in [Dettagli servizio](#service-details). Questa tabella specifica informazioni necessarie per completare la procedura guidata del servizio di Azure. In primo luogo valutare le alternative con l'amministratore di Azure AD. Decidere se creare manualmente e in anticipo le app nel portale di Azure e quindi importare i dettagli dell'app in Configuration Manager. In alternativa è possibile usare Configuration Manager per creare le app direttamente in Azure AD. Per raccogliere i dati necessari da Azure AD, esaminare le informazioni delle altre sezioni di questo articolo.
 
-Alcuni servizi richiedono che le app di Azure AD dispongano di autorizzazioni specifiche. Esaminare le informazioni per ogni servizio per determinare le autorizzazioni necessarie. Ad esempio, prima di poter importare un'app Web è necessario che un amministratore di Azure crei l'app nel [portale di Azure](https://portal.azure.com). Quando si configura Upgrade Readiness o OMS Connector è necessario concedere alla nuova app Web registrata l'autorizzazione *Collaboratore* per il gruppo di risorse che contiene l'area di lavoro OMS appropriata. Questa autorizzazione consente a Configuration Manager di accedere all'area di lavoro. Cercare il nome della registrazione dell'app nel pannello **Aggiungi utenti** durante l'assegnazione dell'autorizzazione. Questo processo è analogo a quello che [aggiunge a Configuration Manager le autorizzazioni per OMS](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#provide-configuration-manager-with-permissions-to-oms). Queste autorizzazioni devono essere assegnate da un amministratore prima dell'importazione dell'app in Configuration Manager.
+Alcuni servizi richiedono che le app di Azure AD dispongano di autorizzazioni specifiche. Esaminare le informazioni per ogni servizio per determinare le autorizzazioni necessarie. Ad esempio, prima di poter importare un'app Web è necessario che un amministratore di Azure crei l'app nel [portale di Azure](https://portal.azure.com). Quando si configura Upgrade Readiness o OMS Connector è necessario concedere alla nuova app Web registrata l'autorizzazione *Collaboratore* per il gruppo di risorse che contiene l'area di lavoro OMS appropriata. Questa autorizzazione consente a Configuration Manager di accedere all'area di lavoro. Durante l'assegnazione dell'autorizzazione cercare il nome della registrazione dell'app nell'area **Aggiungi utenti** del portale di Azure. Questo processo è analogo a quello che [aggiunge a Configuration Manager le autorizzazioni per OMS](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#provide-configuration-manager-with-permissions-to-oms). Queste autorizzazioni devono essere assegnate da un amministratore prima dell'importazione dell'app in Configuration Manager.
 
 
 
@@ -149,7 +149,7 @@ Quando si fa clic su **Importa** nella finestra di dialogo App server o nella pa
 - **ID client**
 - **Chiave privata**
 - **Scadenza della chiave privata**: selezionare una data futura nel calendario. 
-- **URI ID app**: questo valore deve essere univoco nel tenant di Azure AD. È incluso nel token di accesso usato dal client Configuration Manager per richiedere l'accesso al servizio. Per impostazione predefinita, questo valore è impostato su https://ConfigMgrService.  
+- **URI ID app**: questo valore deve essere univoco nel tenant di Azure AD. È incluso nel token di accesso usato dal client di Configuration Manager per richiedere l'accesso al servizio. Per impostazione predefinita, questo valore è impostato su https://ConfigMgrService.  
 
 Dopo aver immesso le informazioni, fare clic su **Verifica**. Quindi fare clic su **OK** per chiudere la finestra di dialogo Importa le app. Questa azione torna a visualizzare la [pagina App](#azure-app-properties) della procedura guidata per i servizi di Azure o la [finestra di dialogo App server](#server-app-dialog).
 
@@ -158,7 +158,7 @@ Dopo aver immesso le informazioni, fare clic su **Verifica**. Quindi fare clic s
 Quando si fa clic su **Crea** nella finestra di dialogo App server viene visualizzata la finestra di dialogo Crea un'applicazione server. Questa pagina automatizza la creazione di un'app Web in Azure AD. Specificare le informazioni seguenti:
 - **Nome applicazione**: nome descrittivo per l'app.
 - **URL della home page**: questo valore non viene usato da Configuration Manager, ma è richiesto da Azure AD. Per impostazione predefinita, questo valore è impostato su https://ConfigMgrService.  
-- **URI ID app**: questo valore deve essere univoco nel tenant di Azure AD. È incluso nel token di accesso usato dal client Configuration Manager per richiedere l'accesso al servizio. Per impostazione predefinita, questo valore è impostato su https://ConfigMgrService.  
+- **URI ID app**: questo valore deve essere univoco nel tenant di Azure AD. È incluso nel token di accesso usato dal client di Configuration Manager per richiedere l'accesso al servizio. Per impostazione predefinita, questo valore è impostato su https://ConfigMgrService.  
 - **Periodo di validità della chiave privata**: fare clic sull'elenco a discesa e selezionare **1 anno** o **2 anni**. Il valore predefinito è 1 anno.
 
 Fare clic su **Accedi** per eseguire l'autenticazione in Azure come utente amministratore. Queste credenziali non vengono memorizzate in Configuration Manager. Questo utente tipo non richiede autorizzazioni in Configuration Manager e non deve necessariamente essere lo stesso account che esegue la procedura guidata per i servizi di Azure. Dopo l'autenticazione in Azure, nella pagina viene visualizzato il **Nome del tenant di Azure AD** come riferimento. 
@@ -213,7 +213,7 @@ Dopo aver specificato l'app Web e l'app nativa nella pagina App, la procedura gu
 
 -   Servizio **Connettore Upgrade Readiness**, pagina **Configurazione**: [Usare la procedura guidata per Azure per creare la connessione](/sccm/core/clients/manage/upgrade/upgrade-analytics#use-the-azure-wizard-to-create-the-connection)  
 
--   Servizio **Microsoft Store per le aziende**, pagina **Configurazione**: [Configurare la sincronizzazione di Microsoft Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#for-configuration-manager-version-1706-and-later)  
+-   Servizio **Microsoft Store per le aziende**, pagina **Configurazione**: [Configurare la sincronizzazione di Microsoft Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#bkmk_config)  
 
 
 Infine completare la procedura guidata per i servizi di Azure con le pagine Riepilogo, Stato e Completamento. La configurazione di un servizio di Azure in Configuration Manager è completata. Ripetere questo processo per configurare altri servizi di Azure.
@@ -237,7 +237,7 @@ Il diagramma seguente è un flusso di dati concettuale per l'interazione tra Con
 
 3.  Il sito archivia dati sugli oggetti utente. Per altre informazioni, vedere [Individuazione utente Azure AD](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc).  
 
-4.  Il client Configuration Manager richiede il token utente di Azure AD. Il client esegue l'attestazione mediante l'ID applicazione dell'app client di Azure AD, con l'app server come gruppo di destinatari. Per altre informazioni, vedere [Claims in Azure AD Security Tokens](/azure/active-directory/develop/active-directory-authentication-scenarios#claims-in-azure-ad-security-tokens) (Attestazioni nei token di sicurezza di Azure AD).  
+4.  Il client di Configuration Manager richiede il token utente di Azure AD. Il client esegue l'attestazione mediante l'ID applicazione dell'app client di Azure AD, con l'app server come gruppo di destinatari. Per altre informazioni, vedere [Attestazioni nei token di sicurezza di Azure AD](/azure/active-directory/develop/active-directory-authentication-scenarios#claims-in-azure-ad-security-tokens).  
 
 5.  Il client esegue l'autenticazione con il sito presentando il token Azure AD a Cloud Management Gateway e/o al punto di gestione locale abilitato per HTTPS.  
 

@@ -5,17 +5,17 @@ description: Informazioni sulle funzionalità di Software Center
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 03/22/2018
+ms.date: 07/30/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.assetid: 9e68de6e-2b33-442b-b674-a382728d9529
-ms.openlocfilehash: ff40af9dd40921b63f8b8bd13ba5c287c3bf9972
-ms.sourcegitcommit: e35d07870656eadd29faacc378ecd091ff3bdcfb
+ms.openlocfilehash: bcdc6298a7b1c429888acf2b7257cec072e9b878
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848663"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39383421"
 ---
 # <a name="software-center-user-guide"></a>Manuale dell'utente di Software Center
 
@@ -52,8 +52,7 @@ Fare clic sulla scheda **Applicazioni** per trovare e installare le applicazioni
 
 
 ### <a name="install-multiple-applications"></a>Installare più applicazioni 
-<!-- 1357126 -->
-È possibile installare più applicazioni contemporaneamente anziché attendere il completamento di un'installazione prima di iniziare quella successiva. Non tutte le applicazioni sono idonee:
+<!-- 1357126 --> È possibile installare più applicazioni contemporaneamente anziché attendere il completamento di un'installazione prima di iniziare quella successiva. Non tutte le applicazioni sono idonee:
 - L'app deve essere visibile all'utente
 - L'app non deve essere già installata o in fase di download
 - Per installare l'app non è necessaria l'approvazione dell'admin IT
@@ -96,8 +95,11 @@ Fare clic sulla scheda **Stato installazione** per visualizzare lo stato delle a
 - **Installata**: Software Center ha già installato questa applicazione nel computer.
 - **Download in corso**: Software Center sta scaricando il software da installare nel computer.
 - **Non riuscita**: Software Center ha riscontrato un errore nel tentativo di installare il software.
+- **Installazione pianificata dopo**: mostra la data e ora della successiva finestra di manutenzione del dispositivo per installare software futuri. Le finestre di manutenzione vengono definite dall'amministratore IT.<!--1358131-->
+    - Lo stato può essere visualizzato nelle schede **Tutto** e **Imminente**. 
+    - È possibile eseguire l'installazione prima della data e dell'ora della finestra di manutenzione facendo sul pulsante **Installa adesso**. 
 
-
+L'amministratore IT può consentire di visualizzare le applicazioni dal sito Web del Catalogo applicazioni. Per visualizzare il sito Web, fare clic su **Aprire il sito Web del Catalogo applicazioni** nell'angolo in alto a destra. <!--1358214-->
 
 ## <a name="device-compliance"></a>Conformità del dispositivo
 
@@ -134,3 +136,5 @@ Specifica come Software Center applica le modifiche al software prima della scad
 - **Sospendi le attività di Software Center quando il computer si trova in modalità presentazione**: questa opzione è abilitata per impostazione predefinita.
 - **Sincronizza criteri**: fare clic su questo pulsante quando richiesto dall'amministratore IT. Il computer verifica sui server la presenza di nuovi elementi, quali applicazioni, aggiornamenti software o sistemi operativi.
 
+## <a name="custom-tab-in-software-center"></a>Scheda personalizzata in Software Center
+L'amministratore IT potrebbe avere aggiunto una scheda aggiuntiva in Software Center. Questa scheda viene denominata dall'amministratore e porta a un sito Web specificato. Ad esempio, si potrebbe avere una scheda denominata "Help desk" che conduce al sito Web dell'help desk dell'organizzazione. <!--1358132-->

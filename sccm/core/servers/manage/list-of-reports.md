@@ -2,7 +2,7 @@
 title: Elenco dei report
 titleSuffix: Configuration Manager
 description: Esaminare l'elenco dei report inclusi in Configuration Manager. I report vengono visualizzati in diverse categorie.
-ms.date: 03/22/2018
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: b7332ed3-8003-454b-bb12-1fdf8721425c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 705247080fc99a6a9dd7dfcb773b2220283cd7a6
-ms.sourcegitcommit: e3f7bb8cec4b37a311bc86098297534cab947de8
+ms.openlocfilehash: 9f4bbb8ec680248b31b1ddd8c457e62e9be44d4b
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36759033"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39385265"
 ---
 # <a name="list-of-reports-in-system-center-configuration-manager"></a>Elenco dei report in System Center Configuration Manager
 
@@ -705,7 +705,7 @@ Gli otto report seguenti sono elencati nella categoria **Aggiornamenti software 
 |**Conformità 6 - Stati specifici di aggiornamento software (secondario)**|Visualizza il numero e la percentuale di computer in ogni stato di conformità per l'aggiornamento software specificato.|  
 |**Conformità 7 - Computer in uno stato di conformità specifico per un gruppo di aggiornamenti (secondario)**|Visualizza tutti i computer in una raccolta che hanno uno stato di conformità generale specificato rispetto a un gruppo di aggiornamento software.|  
 |**Conformità 8 - Computer in uno stato di conformità specifico per un aggiornamento (secondario)**|Visualizza tutti i computer in una raccolta che hanno uno stato di conformità specificato per un aggiornamento software.|  
-
+|**Conformità 9 - Dati complessivi su integrità e conformità**|Visualizza i dati complessivi relativi all'integrità e alla conformità per un gruppo di aggiornamento software. (a partire dalla versione 1806)| 
 
 
 ## <a name="software-updates---b-deployment-management"></a>Aggiornamenti software - Gestione distribuzione B  

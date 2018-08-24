@@ -1,81 +1,103 @@
 ---
 title: Distribuire gli aggiornamenti software
 titleSuffix: Configuration Manager
-description: Scegliere gli aggiornamenti software nella console di Configuration Manager per avviare manualmente il processo di distribuzione o distribuire automaticamente gli aggiornamenti.
+description: Informazioni su come distribuire manualmente o automaticamente gli aggiornamenti software nella console di Configuration Manager.
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 02/16/2018
+ms.date: 07/30/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 04536d51-3bf7-45e5-b4af-36ceed10583d
-ms.openlocfilehash: e6a825f0d4333dc551405e38db70f8417ee2b5ce
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 3a99c2b1310d5e78699b0b9c97a5074c329bac46
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350358"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39383746"
 ---
-#  <a name="BKMK_SUMDeploy"></a> Distribuire gli aggiornamenti software  
+# <a name="deploy-software-updates"></a>Distribuire gli aggiornamenti software  
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-La fase di distribuzione degli aggiornamenti software è il processo di distribuzione degli aggiornamenti software. Indipendentemente dalla modalità di distribuzione degli aggiornamenti software, gli aggiornamenti sono in genere:
-- Aggiunti a un gruppo di aggiornamento software.
-- Scaricati nei punti di distribuzione.
-- Il gruppo di aggiornamento viene distribuito ai client. Dopo aver creato la distribuzione, un criterio di aggiornamento software associato viene inviato ai computer client. I file di contenuto dell'aggiornamento software vengono scaricati da un punto di distribuzione nella cache locale sui computer client. Gli aggiornamenti software sono quindi disponibili per l'installazione da parte del client. I client su Internet scaricano il contenuto da Microsoft Update.  
+La fase di distribuzione degli aggiornamenti software è il processo di distribuzione degli aggiornamenti software. Indipendentemente dalla modalità di distribuzione degli aggiornamenti software, il sito:
+- Aggiunge gli aggiornamenti software a un gruppo di aggiornamento software
+- Distribuisce il contenuto degli aggiornamenti nei punti di distribuzione
+- Distribuisce il gruppo di aggiornamento ai client  
+
+Dopo aver creato la distribuzione, il sito invia un criterio di aggiornamento software associato ai client di destinazione. I client scaricano i file di contenuto degli aggiornamenti software da un'origine del contenuto alla cache locale. I client basati su Internet scaricano sempre il contenuto dal servizio cloud Microsoft Update. Gli aggiornamenti software sono quindi disponibili per l'installazione da parte del client.   
+
+> [!Tip]  
+>  Se un punto di distribuzione non è disponibile, i client nella Intranet possono anche scaricare gli aggiornamenti software da Microsoft Update.  
 
 > [!NOTE]  
->  Se un punto di distribuzione non è disponibile, è possibile configurare un client nella Intranet in modo che scarichi gli aggiornamenti software da Microsoft Update.  
+>  A differenza di altri tipi di distribuzione, tutti gli aggiornamenti software vengono scaricati nella cache del client. Questa operazione viene eseguita indipendentemente dall'impostazione per la dimensione massima della cache sul client. Per altre informazioni sull'impostazione della cache client, vedere [Configurare la cache del client per i client di Configuration Manager](/sccm/core/clients/manage/manage-clients#BKMK_ClientCache).  
 
-> [!NOTE]  
->  A differenza di altri tipi di distribuzione, tutti gli aggiornamenti software vengono scaricati nella cache del client. Questa operazione viene eseguita indipendentemente dall'impostazione per la dimensione massima della cache sul client. Per altre informazioni sull'impostazione della cache client, vedere [Configure the Client Cache for Configuration Manager Clients](../../core/clients/manage/manage-clients.md#BKMK_ClientCache).  
+Se si configura una distribuzione degli aggiornamenti software necessaria, gli aggiornamenti software vengono installati automaticamente alla scadenza programmata. In alternativa, l'utente del computer client può pianificare o avviare l'installazione dell'aggiornamento software prima della scadenza. Dopo il tentativo di installazione, i computer client inviano messaggi di stato al server del sito per segnalare se l'installazione dell'aggiornamento software è stata eseguita correttamente. Per altre informazioni sulle distribuzioni degli aggiornamenti software, vedere [Software update deployment workflows](/sccm/sum/understand/software-updates-introduction#BKMK_DeploymentWorkflows).  
 
-Se si configura una distribuzione degli aggiornamenti software necessaria, gli aggiornamenti software vengono installati automaticamente alla scadenza programmata. In alternativa, l'utente del computer client può pianificare o avviare l'installazione dell'aggiornamento software prima della scadenza. Dopo il tentativo di installazione, i computer client inviano messaggi di stato al server del sito per segnalare se l'installazione dell'aggiornamento software è stata eseguita correttamente. Per altre informazioni sulle distribuzioni degli aggiornamenti software, vedere [Software update deployment workflows](../understand/software-updates-introduction.md#BKMK_DeploymentWorkflows).  
+Esistono due scenari principali per la distribuzione di aggiornamenti software: la distribuzione manuale e la distribuzione automatica. In genere, si effettua inizialmente la distribuzione manuale degli aggiornamenti software per creare una baseline per i client e quindi si gestiscono gli aggiornamenti software sui client usando la distribuzione automatica.  
 
-Esistono due scenari principali per la distribuzione di aggiornamenti software: la distribuzione manuale e la distribuzione automatica. In genere, si effettua inizialmente la distribuzione manuale degli aggiornamenti software per creare una linea di base per i computer client e quindi si gestiscono gli aggiornamenti software sui client usando la distribuzione automatica.  
+
 
 ## <a name="BKMK_ManualDeployment"></a> Distribuire manualmente gli aggiornamenti software
-È possibile scegliere gli aggiornamenti software nella console di Configuration Manager per avviare manualmente il processo di distribuzione. In genere si utilizzerà questo metodo di distribuzione per mantenere aggiornati i computer client con gli aggiornamenti software richiesti prima di creare regole di distribuzione automatica che gestiranno le distribuzioni degli aggiornamenti software in corso a cadenza mensile e per distribuire i requisiti di aggiornamento software fuori banda. Il seguente elenco descrive il flusso di lavoro generale per la distribuzione manuale degli aggiornamenti software:  
+Scegliere gli aggiornamenti software nella console di Configuration Manager per avviare manualmente il processo di distribuzione. Questo metodo di distribuzione viene usato in genere per:  
 
-1. Filtrare gli aggiornamenti software che usano requisiti specifici. Ad esempio, è possibile fornire criteri per il recupero di tutti gli aggiornamenti software critici o della sicurezza necessari su più di 50 computer client.  
-2. Creare un gruppo di aggiornamenti software che contenga gli aggiornamenti software.  
-3. Scaricare il contenuto per gli aggiornamenti software nel gruppo di aggiornamenti software.  
-4. Distribuire manualmente il gruppo di aggiornamenti software.
+- Mantenere aggiornati i client con gli aggiornamenti software obbligatori prima di creare regole di distribuzione automatiche che gestiscono le distribuzioni mensili  
 
-Per informazioni dettagliate, vedere [Distribuire manualmente gli aggiornamenti software](manually-deploy-software-updates.md).
+- Distribuire gli aggiornamenti software fuori banda  
 
->[!NOTE]
->A partire da Configuration Manager versione 1706, gli aggiornamenti del client di Office 365 sono stati spostati nel nodo **Gestione client di Office 365** >**Aggiornamenti di Office 365**. Ciò non influisce sulla configurazione delle regole di distribuzione automatica, ma ha effetto sulla distribuzione manuale degli aggiornamenti di Office 365. 
+
+Il seguente elenco descrive il flusso di lavoro generale per la distribuzione manuale degli aggiornamenti software:  
+
+1. Filtrare gli aggiornamenti software che usano requisiti specifici. Ad esempio, fornire criteri per il recupero di tutti gli aggiornamenti software critici o della sicurezza necessari su più di 50 client.  
+
+2. Creare un gruppo di aggiornamento software che contenga gli aggiornamenti software.  
+
+3. Scaricare il contenuto per gli aggiornamenti software nel gruppo di aggiornamento software.  
+
+4. Distribuire manualmente il gruppo di aggiornamento software.  
+
+Per altre informazioni e per la procedura dettagliata, vedere [Distribuire manualmente gli aggiornamenti software](manually-deploy-software-updates.md).
+
+> [!Tip]  
+> Quando vengono distribuiti manualmente, gli aggiornamenti del client Office 365 sono disponibili nel nodo **Aggiornamenti di Office 365** in **Gestione client di Office 365** dell'area di lavoro **Raccolta software**.  
+
+
 
 ## <a name="automatically-deploy-software-updates"></a>Distribuire automaticamente gli aggiornamenti software
-La distribuzione automatica degli aggiornamenti software viene configurata con una regola di distribuzione automatica. Si tratta di un metodo comune di distribuzione per aggiornamenti software mensili ("Patch Tuesday") e per la gestione degli aggiornamenti delle definizioni. Quando si esegue la regola, gli aggiornamenti software vengono rimossi dal gruppo di aggiornamenti software (se si usa un gruppo di aggiornamento esistente), gli aggiornamenti software che soddisfano un criterio specificato (ad esempio, tutti gli aggiornamenti software della sicurezza rilasciati il mese precedente) vengono aggiunti a un gruppo di aggiornamenti software, i file di contenuto per gli aggiornamenti software vengono scaricati e copiati nei punti di distribuzione e gli aggiornamenti software vengono distribuiti nei computer client nella raccolta di destinazione. L'elenco seguente descrive il flusso di lavoro generale per la distribuzione automatica degli aggiornamenti software:  
 
-1.  Creare una regola di distribuzione automatica che specifica le impostazioni di distribuzione.
-2.  Gli aggiornamenti software vengono aggiunti a un gruppo di aggiornamenti software.  
-3.  Il gruppo di aggiornamenti software viene distribuito ai computer client nella raccolta di destinazione, se specificato.  
+Per configurare la distribuzione automatica degli aggiornamenti software, si usa con una regola di distribuzione automatica. Si tratta di un metodo comune di distribuzione per gli aggiornamenti software mensili ("Patch Tuesday") e per la gestione degli aggiornamenti delle definizioni. Per automatizzare il processo di distribuzione, si definiscono i criteri per una regola di distribuzione automatica. L'elenco seguente descrive il flusso di lavoro generale per la distribuzione automatica degli aggiornamenti software:  
 
-È necessario determinare la strategia di distribuzione da usare nel proprio ambiente. Ad esempio, è possibile creare la regola di distribuzione automatica e trovare una raccolta di destinazione dei client di prova. Dopo aver verificato che gli aggiornamenti software siano installati nel gruppo di prova, è possibile aggiungere una nuova distribuzione alla regola o modificare la raccolta nella distribuzione esistente in una raccolta di destinazione che include un set di client più ampio. Gli oggetti di aggiornamento software creati dalle regole di distribuzione automatica sono interattivi.  
+1.  Creare una regola di distribuzione automatica che specifica le impostazioni di distribuzione.  
 
--   Gli aggiornamenti software distribuiti usando una regola di distribuzione automatica vengono distribuiti automaticamente nei nuovi client aggiunti alla raccolta di destinazione.  
--   I nuovi aggiornamenti software aggiunti a un gruppo di aggiornamenti software vengono distribuiti automaticamente ai client nella raccolta di destinazione.  
--   È possibile abilitare o disabilitare le distribuzioni in qualsiasi momento per la regola di distribuzione automatica.  
+2.  Il sito aggiunge gli aggiornamenti software a un gruppo di aggiornamento software.  
 
-Dopo aver creato una regola di distribuzione automatica, è possibile aggiungere altre distribuzioni alla regola. Ciò consente di gestire la complessità della distribuzione di aggiornamenti diversi a raccolte differenti. Ogni nuova distribuzione include l'intera gamma dell'esperienza di monitoraggio di funzionalità e distribuzione. Ogni nuova distribuzione aggiunta:  
+3.  Il sito distribuisce il gruppo di aggiornamento software nei client della raccolta di destinazione.  
 
--   Usa lo stesso gruppo e lo stesso pacchetto di aggiornamento creato alla prima esecuzione della regola di distribuzione automatica  
--   Può specificare una raccolta diversa  
+Determinare in primo luogo la strategia di distribuzione automatica degli aggiornamenti software. Ad esempio, creare la regola di distribuzione automatica in modo da destinare gli aggiornamenti a una raccolta di client di prova. Dopo aver verificato che gli aggiornamenti software sono stati correttamente installati nel gruppo di prova, aggiungere una nuova distribuzione alla regola. È anche possibile cambiare la raccolta di destinazione nella distribuzione esistente, specificandone una che include un set di client più esteso. Per decidere la strategia da usare, tenere in considerazione i comportamenti seguenti:  
+
+- È possibile modificare le proprietà degli oggetti aggiornamento software creati dalla regola di distribuzione automatica.   
+
+- La regola di distribuzione automatica distribuisce gli aggiornamenti software ai clienti quando questi vengono aggiunti alla raccolta di destinazione.  
+
+- Quando l'utente o la regola di distribuzione automatica aggiunge nuovi aggiornamenti software al gruppo di aggiornamento software, il sito li distribuisce automaticamente ai client nella raccolta di destinazione.  
+
+- Abilitare o disabilitare le distribuzioni in qualsiasi momento per la regola di distribuzione automatica.  
+
+
+Dopo aver creato una regola di distribuzione automatica, aggiungere altre distribuzioni alla regola. Questa azione consente di gestire la complessità della distribuzione di aggiornamenti diversi in raccolte diverse. Ogni nuova distribuzione dispone dell'intera gamma di funzionalità e dell’esperienza di monitoraggio della distribuzione.  
+
+Ogni nuova distribuzione aggiunta presenta le seguenti caratteristiche:  
+
+-   Usa lo stesso gruppo e lo stesso pacchetto di aggiornamento creato durante la prima esecuzione della regola di distribuzione automatica  
+-   Può essere destinata a una raccolta diversa  
 -   Supporta proprietà di distribuzione univoca tra cui:  
    -   Ora attivazione  
    -   Scadenza  
-   -   Mostra o nascondi l'esperienza dell'utente finale  
-   -   Avvisi separati per questa distribuzione  
-
-Per informazioni dettagliate, vedere [Automatically deploy software updates](automatically-deploy-software-updates.md) (Distribuire automaticamente gli aggiornamenti software)
-
-<!-- ###  <a name="BKMK_ClientCache"></a> Client cache setting  
-The Configuration Manager client downloads the content for required software updates to the local client cache soon after it receives the deployment. However, the client waits to download the content until after the **Software available time** setting for the deployment. The client does not download software updates in optional deployments (deployments that do not have a scheduled installation deadline) until the user manually starts the installation. When the configured deadline passes, the software updates client agent performs a scan to verify that the software update is still required, then the software updates client agent checks the local cache on the client computer to verify that the software update source file is still available, and then installs the software update. If the content was deleted from the client cache to make room for another deployment, the client downloads the software updates to the cache. Software updates are always downloaded to the client cache regardless of the configured maximum client cache size. For other deployments, such as applications or packages, the client only downloads content that is within the maximum cache size that you configure for the client. Cached content is not automatically deleted, but it remains in the cache for at least one day after the client used that content.  -->
+   -   Esperienza utente  
+   -   Avvisi separati per ogni distribuzione  
 
 
- <!-- For more information about the deployment process, see [Software update deployment process](../../sum/understand/software-updates-introduction.md#BKMK_DeploymentProcess).  -->
+Per altre informazioni e per la procedura dettagliata, vedere [Distribuire automaticamente gli aggiornamenti software](automatically-deploy-software-updates.md).
+

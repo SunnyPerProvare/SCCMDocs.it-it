@@ -1,8 +1,8 @@
 ---
 title: Creare applicazioni iOS
 titleSuffix: Configuration Manager
-description: Questo articolo descrive le considerazioni da tenere presenti quando si creano e distribuiscono applicazioni per i dispositivi iOS.
-ms.date: 03/05/2017
+description: Informazioni su come creare e distribuire applicazioni per dispositivi iOS in Configuration Manager.
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,41 +10,26 @@ ms.assetid: ff633013-5313-4cd3-949c-56d45e777280
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 985a8177602bd32da0b6134eeddb564a44749d65
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 246ca26b8fab3a1006e8d72b803c298fe48df9df
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32346431"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39385236"
 ---
-# <a name="create-ios-applications-with-system-center-configuration-manager"></a>Creare applicazioni iOS con System Center Configuration Manager
+# <a name="create-ios-applications-in-configuration-manager"></a>Creare applicazioni iOS in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Un'applicazione di System Center Configuration Manager contiene uno o più tipi di distribuzione che comprendono le informazioni e i file di installazione necessari per distribuire software in un dispositivo. Un tipo di distribuzione contiene anche le regole che specificano quando e come deve essere distribuito il software.  
+Un'applicazione di Configuration Manager contiene uno o più tipi di distribuzione che comprendono le informazioni e i file di installazione necessari per distribuire software in un dispositivo. Un tipo di distribuzione contiene anche le regole che specificano quando e come deve essere distribuito il software.  
 
- È possibile creare applicazioni usando due metodi:  
+Per la procedura necessaria per creare le applicazioni e i tipi di distribuzione di Configuration Manager, vedere l'articolo su come [creare un'applicazione](/sccm/apps/deploy-use/create-applications#bkmk_create). 
 
--   Creare automaticamente i tipi di applicazione e di distribuzione leggendo i file di installazione dell'applicazione.  
+Tenere presenti le seguenti considerazioni quando si creano e si distribuiscono applicazioni per i dispositivi iOS:  
 
--   Creare manualmente l'applicazione e quindi aggiungere tipi di distribuzione in un secondo momento.  
+- Configuration Manager supporta la distribuzione dei pacchetti iOS con estensione ipa. Quando si importa un'app iOS, non è necessario specificare un file di elenco di proprietà con estensione plist. 
 
--   Importare un'applicazione da un file.  
-
-Per la procedura necessaria per creare le applicazioni e i tipi di distribuzione di Configuration Manager, vedere [Avviare la Creazione guidata applicazione](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard). Inoltre, quando si creano e si distribuiscono applicazioni per i dispositivi iOS, tenere presenti le considerazioni seguenti.  
-
-## <a name="general-considerations"></a>Considerazioni generali  
- Configuration Manager supporta la distribuzione dei seguenti tipi di app:  
-
-|Tipo di dispositivo|File supportati|  
-|-----------------|---------------------|  
-|iOS|*.ipa<br /><br /> In System Center Configuration Manager non è necessario specificare un file di elenco di proprietà (PLIST) quando si importa un'app iOS.|  
-
- Sono supportate le azioni di distribuzione seguenti:  
-
-|Tipo di dispositivo|Azioni supportate|  
-|-----------------|-----------------------|  
-|iOS|**Disponibile**, **Richiesto**. L'utente deve accettare l'installazione e la disinstallazione.
+- Distribuire le applicazioni iOS come **disponibili** oppure **obbligatorie**. L'utente deve accettare l'installazione e la disinstallazione.
 
 > [!IMPORTANT]  
->  Al momento gli utenti finali non possono installare app aziendali dall'app Portale aziendale di Microsoft Intune per iOS. Ciò è dovuto a restrizioni relative alle app pubblicate in App Store iOS (vedere la sezione 2 delle linee guida di revisione di App Store). Gli utenti possono installare app aziendali (incluse le app gestite di App Store e i pacchetti di app line-of-business) passando al portale Web di Intune nel proprio dispositivo (portal.manage.microsoft.com). Per altre informazioni sulle funzionalità di gestione dei dispositivi mobili offerte dall'app Portale aziendale di Intune, vedere [Funzionalità di gestione dei dispositivi registrati di Microsoft Intune](https://technet.microsoft.com/library/dn600287.aspx).  
+>  Al momento gli utenti finali non possono installare app aziendali dall'app Portale aziendale di Microsoft Intune per iOS. Questa limitazione è dovuta alle restrizioni relative alle app pubblicate nell'App Store iOS. Vedere la sezione 2 delle linee guida di revisione dell'App Store. Gli utenti possono installare app aziendali passando al portale di Intune nel proprio dispositivo. Tali app includono quelle gestite dell'App Store e i pacchetti di app line-of-business. Per altre informazioni sulle funzionalità di gestione dei dispositivi mobili offerte dall'app Portale aziendale di Intune, vedere l'articolo sulle [funzionalità di gestione dei dispositivi registrati in Microsoft Intune](https://docs.microsoft.com/intune/device-enrollment).  

@@ -5,24 +5,23 @@ description: Configurare le impostazioni per il Web browser Microsoft Edge nei c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 03/28/2018
+ms.date: 07/30/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.assetid: 76477b4d-df41-4b25-8318-7d18d46ca2c6
-ms.openlocfilehash: 81bd0a59a24cab446668911f714548581c1347df
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 2b0b553b7281015bfee89f8409fd6c5e255d753c
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32343797"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39384144"
 ---
 # <a name="configure-microsoft-edge-settings-in-system-center-configuration-manager"></a>Configurare le impostazioni per Microsoft Edge in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-<!-- 1357310 -->
-A partire dalla versione 1802 i clienti che usano il Web browser [Microsoft Edge](https://technet.microsoft.com/microsoft-edge/bb265256) nei client Windows 10 possono creare un criterio delle impostazioni di conformità di Configuration Manager per definire diverse impostazioni di Microsoft Edge. 
+<!-- 1357310 --> A partire dalla versione 1802 i clienti che usano il Web browser [Microsoft Edge](https://technet.microsoft.com/microsoft-edge/bb265256) nei client Windows 10 possono creare criteri delle impostazioni di conformità di Configuration Manager per definire diverse impostazioni di Microsoft Edge. 
 
 Questi criteri si applicano solo ai client con Windows 10 versione 1703 o successiva. <!--511552-->
 
@@ -44,14 +43,23 @@ Questo criterio include attualmente le impostazioni seguenti:
 - **Consenti le estensioni**: per altre informazioni, vedere [Criterio del browser AllowExtensions](/windows/client-management/mdm/policy-csp-browser#browser-allowextensions).
 
 
+### <a name="configure-windows-defender-smartscreen-settings-for-microsoft-edge"></a>Configurare le impostazioni di Windows Defender SmartScreen per Microsoft Edge
+<!--1353701--> A partire dalla versione 1806, questi criteri prevedono tre impostazioni aggiuntive per [Windows Defender SmartScreen](/windows/security/threat-protection/windows-defender-smartscreen/windows-defender-smartscreen-overview). I criteri ora includono le seguenti impostazioni aggiuntive nella pagina **Impostazioni di SmartScreen**:
+
+- **Consenti SmartScreen**: specifica se Windows Defender SmartScreen è consentito. Per altre informazioni, vedere il [criterio di browser AllowSmartScreen](/windows/client-management/mdm/policy-csp-browser#browser-allowsmartscreen).
+- **Gli utenti possono eseguire l'override del prompt di SmartScreen per i siti**: specifica se gli utenti possono ignorare gli avvisi del filtro di SmartScreen Windows Defender relativi ai siti Web potenzialmente dannosi. Per altre informazioni, vedere il [criterio di browser PreventSmartScreenPromptOverride](/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverride).
+- **Gli utenti possono eseguire l'override del prompt di SmartScreen per i file**: specifica se gli utenti possono ignorare gli avvisi del filtro di SmartScreen Windows Defender relativi al download di file non verificati. Per altre informazioni, vedere il [criterio di browser PreventSmartScreenPromptOverrideForFiles](/windows/client-management/mdm/policy-csp-browser#browser-preventsmartscreenpromptoverrideforfiles).
+
+
 
 ## <a name="create-the-microsoft-edge-browser-profile"></a>Creare il profilo del browser Microsoft Edge
 
-1. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità**. Espandere **Impostazioni di conformità** e selezionare il nuovo nodo **Profili del browser Microsoft Edge**. Fare clic sull'opzione **Crea un criterio del browser Microsoft Edge** sulla barra multifunzione.
+1. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità**. Espandere **Impostazioni di conformità** e selezionare il nodo **Profili del browser Microsoft Edge**. Fare clic sull'opzione **Crea un profilo di Microsoft Edge** sulla barra multifunzione.
 2. Specificare un nome per il criterio nel campo **Nome** e una descrizione facoltativa nel campo **Descrizione**, quindi fare clic su **Avanti**.
-3. Nella pagina **Impostazioni** cambiare il valore delle impostazioni da includere nel criterio su **Configurato**, quindi fare clic su **Avanti**.
-4. Nella pagina **Piattaforme supportate** selezionare le architetture e le versioni del sistema operativo a cui si applica il criterio, quindi fare clic su **Avanti**. 
-5. Completare la procedura guidata.
+3. Nella pagina **Impostazioni generali** cambiare il valore delle impostazioni da includere nel criterio su **Configurato** e quindi fare clic su **Avanti**. Per continuare, l'impostazione **Imposta il browser Microsoft Edge come predefinito** deve essere configurata.
+4. Nella versione 1806 e successive, configurare le impostazioni nella pagina **Impostazioni di SmartScreen** e quindi fare clic su **Avanti**. 
+5. Nella pagina **Piattaforme supportate** selezionare le architetture e le versioni del sistema operativo a cui si applica il criterio e quindi fare clic su **Avanti**. 
+6. Completare la procedura guidata.
 
 
 
@@ -59,9 +67,9 @@ Questo criterio include attualmente le impostazioni seguenti:
 
 1. Selezionare il criterio e fare clic sull'opzione **Distribuisci** sulla barra multifunzione.
 2. Fare clic su **Sfoglia** per selezionare la raccolta utenti o dispositivi nella quale si vuole distribuire il criterio. 
-3. Selezionare le opzioni aggiuntive eventualmente necessarie. 
-    a. Impostare la generazione di avvisi quando il criterio non è conforme. 
-    b. Impostare la pianificazione in base alla quale il client valuta la conformità del dispositivo al criterio.
+3. Selezionare le opzioni aggiuntive eventualmente necessarie.  
+     a. Impostare la generazione di avvisi quando il criterio non è conforme.  
+     b. Impostare la pianificazione in base alla quale il client valuta la conformità del dispositivo al criterio. 
 4. Fare clic su **OK** per creare la distribuzione.
 
 

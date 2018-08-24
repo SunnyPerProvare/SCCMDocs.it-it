@@ -1,0 +1,109 @@
+---
+title: Gestire e monitorare le distribuzioni in più fasi
+titleSuffix: Configuration Manager
+description: Informazioni su come gestire e monitorare le distribuzioni in più fasi per il software in Configuration Manager.
+ms.date: 07/30/2018
+ms.prod: configuration-manager
+ms.technology: configmgr-osd
+ms.topic: conceptual
+ms.assetid: dc245916-bc11-4983-9c4d-015f655007c1
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 1889ba3ea19d27676089f2a9a24cef812c9f526c
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39385862"
+---
+# <a name="manage-and-monitor-phased-deployments"></a>Gestire e monitorare le distribuzioni in più fasi
+
+Questo articolo descrive come gestire e monitorare le distribuzioni in più fasi. Le attività di gestione comprendono l'avvio manuale della fase successiva e la sospensione o la ripresa di una fase. 
+
+È necessario prima [creare una distribuzione in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence). 
+
+
+
+## <a name="bkmk_move"></a> Passare alla fase successiva
+
+Quando si seleziona l'impostazione, **Inizia manualmente la seconda fase della distribuzione**, il sito non avvia automaticamente la fase successiva in base ai criteri per l'esito positivo. È necessario spostare la distribuzione in più fasi alla fase successiva.  
+
+1. La modalità di avvio di questa azione varia in base al tipo di software distribuito:  
+
+    - **Applicazione** (solo la versione 1806 o successiva): passare a **Raccolta software**, espandere **Gestione applicazioni** e selezionare **Applicazioni**.   
+
+    - **Sequenza di attività**: passare all'area di lavoro **Raccolta software**, espandere **Sistemi operativi** e selezionare **Sequenze di attività**.   
+
+2. Selezionare il software con la distribuzione in più fasi.  
+
+3. Nel riquadro dei dettagli passare alla scheda **Distribuzioni in più fasi**.  
+
+4. Selezionare la distribuzione in più fasi e fare clic su **Passa alla fase successiva** nella barra multifunzione.  
+
+    ![Menu di scelta rapida che mostra le azioni per una distribuzione in più fasi](media/Suspend-phased-deployment.PNG)
+
+
+
+## <a name="bkmk_suspend"></a> Sospendere e riprendere le fasi 
+
+Potrebbe essere necessario sospendere o riprendere manualmente una distribuzione in più fasi. Ad esempio, si crea una distribuzione in più fasi per una sequenza di attività. Durante il monitoraggio della fase nel gruppo pilota si nota un numero elevato di errori. Si sospende la distribuzione in più fasi per impedire ad altri dispositivi di eseguire la sequenza di attività. Dopo la risoluzione del problema si riprende la distribuzione in più fasi per continuare l'implementazione. 
+
+1. La modalità di avvio di questa azione varia in base al tipo di software distribuito:  
+
+    - **Applicazione** (solo la versione 1806 o successiva): passare a **Raccolta software**, espandere **Gestione applicazioni** e selezionare **Applicazioni**.   
+
+    - **Sequenza di attività**: passare all'area di lavoro **Raccolta software**, espandere **Sistemi operativi** e selezionare **Sequenze di attività**. Selezionare una sequenza di attività esistente e quindi fare clic su **Crea una distribuzione in più fasi** nella barra multifunzione.  
+
+2. Selezionare il software con la distribuzione in più fasi.  
+
+3. Nel riquadro dei dettagli passare alla scheda **Distribuzioni in più fasi**.  
+
+4. Selezionare la distribuzione in più fasi e fare clic su **Sospendi** o su **Riprendi** nella barra multifunzione.  
+
+<!-- Removed for 1806, need to clarify behavior with engineering
+When you suspend a phased deployment, it sets the available and deadline times on the active deployments to a future time. When you resume, it generates a new schedule based on when you resume the phased deployment. The new schedule helps to avoid problems if you resume after the original deadline. For example, the initial schedule has the required deadline seven days after the deployment is available. You suspend it on the second day. If you aren't ready to resume it until day eight, you don't want the deployment to be immediately past the deadline. So it generates a new deadline starting from when you resume the phased deployment on day eight. 
+-->
+
+
+## <a name="bkmk_monitor"></a> Monitoraggio
+<!--1358577-->
+
+A partire dalla versione 1806, per le distribuzioni in più fasi è disponibile un'esperienza di monitoraggio nativa. Dal nodo **Distribuzioni** nell'area di lavoro **Monitoraggio** selezionare una distribuzione in più fasi e quindi fare clic su **Stato di distribuzione in più fasi** nella barra multifunzione.
+
+![Dashboard dello stato di distribuzione in più fasi che mostra lo stato delle due fasi](media/1358577-phased-deployment-status.png)
+
+Questo dashboard visualizza le informazioni seguenti per ogni fase della distribuzione:  
+
+- **Totale dispositivi**: numero di dispositivi interessati da questa fase.  
+
+- **Stato**: stato corrente della fase. Ogni fase può trovarsi in uno degli stati seguenti:  
+
+    - **Distribuzione creata**: la distribuzione in più fasi ha creato una distribuzione del software nella raccolta per questa fase. Ai client viene assegnato in modo attivo questo software.  
+
+    - **In attesa**: la fase precedente non ha ancora raggiunto i criteri di esito positivo per consentire la continuazione della distribuzione verso questa fase.  
+
+    - **Sospeso**: un amministratore ha sospeso la distribuzione.  
+
+- **Stato**: stati di distribuzione con codifica a colori dai client. Ad esempio: Esito positivo, In corso, Errore, Requisiti non soddisfatti e Sconosciuto. 
+
+#### <a name="success-criteria-tile"></a>Riquadro Criteri per l'esito positivo
+
+Usare l'elenco a discesa **Selezionare una fase** per modificare la visualizzazione del riquadro **Criteri per l'esito positivo**. Questo riquadro confronta il valore di **Obiettivo della fase** alla conformità corrente della distribuzione. Con le impostazioni predefinite, l'obiettivo della fase è il 95%. Questo valore indica che la distribuzione richiede una conformità del 95% per passare alla fase successiva. 
+
+In questo esempio, l'obiettivo della fase è il 65% e la conformità corrente è il 66,7%. La distribuzione in più fasi passa automaticamente alla seconda fase perché la prima fase soddisfa i criteri per l'esito positivo.
+![Riquadro Criteri per l'esito positivo di esempio dallo stato della distribuzione in più fasi](media/pod-status-success-criteria-tile.png)
+
+L'obiettivo della fase è lo stesso di **Percentuale di esiti positivi della distribuzione** in Impostazioni delle fasi per la fase *successiva*. Affinché la distribuzione in più fasi inizi la fase successiva, questa seconda fase definisce i criteri per l'esito positivo della prima fase. Per visualizzare questa impostazione: 
+
+1. Passare all'oggetto di distribuzione in più fasi sul software e aprire Proprietà della distribuzione in più fasi.  
+
+2. Passare alla scheda **Fasi**. Selezionare **Fase 2** e fare clic su **Visualizza**.  
+
+3. Nella finestra delle proprietà della fase passare alla scheda **Impostazioni delle fasi**.  
+
+4. Visualizzare il valore per **Percentuale di esiti positivi della distribuzione** nel gruppo *Criteri per l'esito positivo della fase precedente*.  
+
+Ad esempio, le proprietà seguenti sono relative alla stessa fase del riquadro dei criteri per l'esito positivo riportato, in cui il criterio è il 65%:  
+![Scheda Impostazioni delle fasi nelle proprietà della fase](media/phase-properties-phase-settings.png)
+

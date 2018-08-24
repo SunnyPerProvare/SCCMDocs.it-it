@@ -1,8 +1,8 @@
 ---
-title: Punto di distribuzione basato su cloud
+title: Punto di distribuzione cloud
 titleSuffix: Configuration Manager
-description: Informazioni sulle configurazioni e le limitazioni per l'uso di un punto di distribuzione basato sul cloud con System Center Configuration Manager.
-ms.date: 3/27/2017
+description: Pianificare e progettare la distribuzione del contenuto software tramite Microsoft Azure con i punti di distribuzione cloud in Configuration Manager.
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,201 +10,363 @@ ms.assetid: 3cd9c725-6b42-427d-9191-86e67f84e48c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fd3e8c58b358093ebf9d90478920c45e127e382e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 0c41fddef794049456529d9577275a21668717f5
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341594"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39385457"
 ---
-# <a name="use-a-cloud-based-distribution-point-with-system-center-configuration-manager"></a>Usare un punto di distribuzione basato sul cloud con System Center Configuration Manager
+# <a name="use-a-cloud-distribution-point-in-configuration-manager"></a>Usare un punto di distribuzione cloud in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Un punto di distribuzione basato sul cloud è un punto di distribuzione di System Center Configuration Manager ospitato in Microsoft Azure. Le informazioni seguenti hanno lo scopo di illustrare le configurazioni e le limitazioni relative all'uso di un punto di distribuzione basato sul cloud.
+Un punto di distribuzione cloud è un punto di distribuzione di Configuration Manager ospitato come PaaS (piattaforma distribuita come servizio) in Microsoft Azure. Questo servizio supporta gli scenari seguenti:  
 
-Se dopo aver installato un sito primario si è pronti a installare un punto di distribuzione basato sul cloud, vedere [Installare punti di distribuzione basati sul cloud in Azure](../../../core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure.md).
+- Fornire contenuto software ai client basati su Internet senza infrastruttura locale aggiuntiva  
 
+- Abilitare il sistema di distribuzione del contenuto per il cloud  
 
-## <a name="plan-to-use-a-cloud-based-distribution-point"></a>Pianificare l'uso di un punto di distribuzione basato sul cloud
-Quando si usa una distribuzione basata sul cloud:  
-
--   **Configurare le impostazioni client** per consentire l'accesso al contenuto a utenti e dispositivi.  
-
--   **Specificare un sito primario per gestire il trasferimento del contenuto** al punto di distribuzione.  
-
--   **Specificare le soglie** per la quantità di contenuti da archiviare nel punto di distribuzione e la quantità di contenuti di cui i client possono eseguire il trasferimento dal punto di distribuzione.  
+- Ridurre la necessità di punti di distribuzione tradizionali  
 
 
-In base alle soglie configurate, Configuration Manager può generare degli avvisi per l'utente quando la quantità combinata di contenuto archiviato nel punto di distribuzione si avvicina alla quantità di archiviazione specificata oppure quando i dati trasferiti dai client si avvicinano alle soglie definite.  
-
-I punti di distribuzione basati sul cloud supportano diverse funzionalità, che sono offerte anche dai punti di distribuzione locali:  
-
--   I punti di distribuzione basati sul cloud sono gestiti singolarmente o come membri di gruppi di punti di distribuzione.  
-
--   È possibile usare un punto di distribuzione basato sul cloud come percorso di fallback per il contenuto.  
-
--   Si riceve supporto per client basati su Internet e intranet.  
-
-
-I punti di distribuzione basati sul cloud offrono i seguenti vantaggi aggiuntivi:  
-
--   Configuration Manager esegue la crittografia del contenuto destinato a un punto di distribuzione basato sul cloud prima di inviarlo ad Azure.  
-
--   In Azure è possibile ridimensionare manualmente il servizio cloud per soddisfare le esigenze mutevoli in termini di richieste di contenuto da parte dei client, senza la necessità di installare ed effettuare il provisioning di punti di distribuzione aggiuntivi.  
-
--   Il punto di distribuzione basato su cloud supporta il download del contenuto da parte dei client configurati per Windows BranchCache.  
+Questo articolo fornisce informazioni sul punto di distribuzione cloud, sulla pianificazione del suo utilizzo e sulla progettazione dell'implementazione. Include le sezioni seguenti:
+- [Funzionalità e vantaggi](#bkmk_features)
+- [Progettazione della topologia](#bkmk_topology)
+- [Requirements](#bkmk_requirements)
+- [Specifiche](#bkmk_spec)
+- [Costi](#bkmk_cost)
+- [Prestazioni e scalabilità](#bkmk_perf)
+- [Porte e flusso di dati](#bkmk_dataflow)
+- [Certificati](#bkmk_certs)
+- [Domande frequenti](#bkmk_faq)
 
 
-Un punto di distribuzione basato su cloud presenta le limitazioni seguenti:  
 
--  Se non si usa la versione 1610 con l'hotfix KB4010155, non è possibile usare un punto di distribuzione basato su cloud per ospitare i pacchetti di aggiornamento software. Questo problema viene risolto a partire dalla versione 1702 e successive.  
+## <a name="bkmk_features"></a> Funzionalità e vantaggi
 
--   Non è possibile usare un punto di distribuzione basato sul cloud per distribuzioni abilitate per PXE o per il multicast.  
+### <a name="features"></a>Caratteristiche
 
--   Ai client non viene offerto un punto di distribuzione basato su cloud come un percorso contenuto per una sequenza di attività che viene distribuita usando l'opzione di distribuzione **Scaricare il contenuto localmente quando necessario eseguendo la sequenza di attività**. Tuttavia, le sequenze di attività distribuite usando l'opzione di distribuzione di **Scarica tutto il contenuto localmente prima di avviare la sequenza di attività** possono usare un punto di distribuzione basato su cloud come un percorso contenuto valido.  
+Il punto di distribuzione cloud supporta diverse funzionalità che sono offerte anche dai punti di distribuzione locali:  
 
--   Un punto di distribuzione basato su cloud non supporta pacchetti eseguiti dal punto di distribuzione. Tutto il contenuto deve essere scaricato dal client e quindi eseguito in locale.  
+-   I punti di distribuzione cloud sono gestiti singolarmente o come membri di gruppi di punti di distribuzione  
 
--   Un punto di distribuzione basato su cloud non supporta lo streaming di applicazioni usando Application Virtualization o programmi simili.  
+-   È possibile usare un punto di distribuzione cloud come percorso di fallback per il contenuto  
 
--   Un punto di distribuzione basato su cloud non supporta contenuto pre-installazione. La gestione distribuzione del sito primario che gestisce il punto di distribuzione trasferisce tutto il contenuto al punto di distribuzione.  
-
--   Il punto di distribuzione basato su cloud non può essere configurato come punto di distribuzione pull.  
-
-##  <a name="BKMK_PrereqsCloudDP"></a> Prerequisiti dei punti di distribuzione basati sul cloud  
- Un punto di distribuzione basato su cloud richiede i seguenti prerequisiti per l'uso:  
-
--   Una sottoscrizione di Azure (vedere [Informazioni sulle sottoscrizioni e sui certificati](#BKMK_CloudDPCerts) in questo argomento).
-
--   Un certificato di gestione autofirmato o di infrastruttura a chiave pubblica (PKI) per la comunicazione da un server del sito primario di Configuration Manager al servizio cloud in Azure (vedere [Informazioni sulle sottoscrizioni e sui certificati](#BKMK_CloudDPCerts) in questo argomento).
-
--   Un certificato di servizio (PKI) usato dai client di Configuration Manager per connettersi ai punti di distribuzione basati su cloud e scaricarne il relativo contenuto usando HTTPS.  
-
--  Perché un dispositivo o un utente possa accedere al contenuto da un punto di distribuzione basato sul cloud, è necessario che l'opzione **Consentire accesso al punto di distribuzione cloud** sia impostata su **Sì** nell'impostazione client per **Servizi cloud** per tale dispositivo o utente. Per impostazione predefinita, questo valore è configurato su **No**.  
-
--   Un client deve poter risolvere il nome del servizio cloud, che richiede un alias DNS (Domain Name System) e un record CNAME nello spazio dei nomi DNS.  
-
--   Un client deve essere in grado di accedere a Internet per usare il punto di distribuzione basato su cloud.  
-
-##  <a name="BKMK_CloudDPCost"></a> Costo dell'uso della distribuzione basata sul cloud  
- Quando si usa un punto di distribuzione basato sul cloud, pianificare i costi dell'archiviazione dei dati e dei download per i trasferimenti eseguiti dai client di Configuration Manager.  
-
- Configuration Manager include opzioni per il controllo dei costi e il monitoraggio dell'accesso ai dati:  
-
--   È possibile controllare e monitorare la quantità dei contenuti archiviati in un servizio cloud.  
-
--   È possibile configurare Configuration Manager in modo che avvisi l'utente quando le **soglie** per i download del client raggiungono o superano i limiti mensili.  
-
--   Inoltre, è possibile usare il peer caching (Windows BranchCache) per ridurre il numero di trasferimenti di dati dai punti di distribuzione basati sul cloud eseguiti dai client. I client di Configuration Manager configurati per BranchCache possono trasferire il contenuto usando i punti di distribuzione basati sul cloud.  
+-   Offre supporto per client basati su Internet e intranet  
 
 
-**Opzioni:**  
+### <a name="benefits"></a>Vantaggi
 
--   **Impostazioni client per il cloud**: è possibile controllare l'accesso a tutti i punti di distribuzione basati sul cloud in una gerarchia usando **Impostazioni client**.  
+Il punto di distribuzione cloud offre i vantaggi aggiuntivi seguenti:  
 
-     In **Impostazioni client**la categoria **Impostazioni cloud** supporta l'impostazione **Consentire accesso al punto di distribuzione cloud**. Per impostazione predefinita, questa impostazione è impostata su **No**. È possibile abilitare questa impostazione per utenti e dispositivi.  
+-   Il sito esegue la crittografia del contenuto prima di inviarlo al punto di distribuzione cloud in Azure.  
 
--   **Soglie per i trasferimenti di dati**: è possibile specificare le soglie per la quantità di dati da archiviare nel punto di distribuzione e per la quantità di dati che i client possono scaricare dal punto di distribuzione.  
+-   Il servizio cloud può essere ridimensionato manualmente in Azure per adattarlo alle variazioni dei volumi delle richieste di contenuto dai client. Per questa operazione non è necessario installare ed effettuare il provisioning di punti di distribuzione aggiuntivi in Configuration Manager.  
 
-     Le soglie per i punti di distribuzione basati sul cloud includono le seguenti caratteristiche:  
+-   È supportato il download del contenuto da client configurati per altre tecnologie di gestione di contenuti, come Windows BranchCache e provider di contenuto alternativi.  
 
-    -   **Soglia di avviso di archiviazione**: Una soglia di avviso di archiviazione imposta un limite massimo per la quantità di dati o contenuto da archiviare nel punto di distribuzione basato sul cloud. Configuration Manager può generare un avviso quando lo spazio libero rimanente raggiunge il livello specificato.  
+-   A partire dalla versione 1806 è possibile usare i punti di distribuzione cloud come percorsi di origine per i punti di distribuzione pull.  
 
-    -   **Soglia di avviso di trasferimento**: Una soglia di avviso di trasferimento consente di monitorare la quantità di contenuto trasferita dal punto di distribuzione ai client per un periodo di 30 giorni. La soglia di avviso di trasferimento monitora il trasferimento dei dati per i 30 giorni precedenti e può generare un avviso e un avviso critico quando i trasferimenti raggiungono i valori definiti dall'utente.  
 
-        > [!IMPORTANT]  
-        >  Configuration Manager monitora il trasferimento dei dati, ma non lo interrompe quando viene superata la soglia di avviso di trasferimento specificata.  
+## <a name="bkmk_topology"></a> Progettazione della topologia
 
- È possibile specificare delle soglie per ogni punto di distribuzione basato sul cloud durante l'installazione del punto di distribuzione oppure è possibile modificare le proprietà di ogni punto di distribuzione basato sul cloud dopo l'installazione.  
+La distribuzione e l'utilizzo del punto di distribuzione cloud includono i componenti seguenti:  
 
--   **Avvisi**: è possibile configurare Configuration Manager in modo che generi avvisi sul trasferimento dei dati da e verso ogni punto di distribuzione basato sul cloud, a seconda delle soglie di trasferimento dei dati specificate. Questi avvisi consentono di monitorare i trasferimenti dei dati e di decidere quando arrestare il servizio cloud, modificare il contenuto archiviato nel punto di distribuzione o modificare i client che possono usare i punti di distribuzione basati sul cloud.  
+- Un **servizio cloud** in Azure. Il sito distribuisce contenuto a questo servizio, che lo memorizza nell'archiviazione cloud di Azure. Il punto di gestione fornisce ai client questo percorso del contenuto nell'elenco delle origini disponibili, secondo necessità.  
 
-     In un ciclo orario, il sito primario che monitora il punto di distribuzione basato sul cloud scarica i dati di transazione da Azure e li archivia in CloudDP-&lt;NomeServizio\>.log nel server del sito. Configuration Manager valuta quindi queste informazioni in rapporto alle quote di trasferimento e archiviazione per ogni punto di distribuzione basato sul cloud. Quando il trasferimento dei dati raggiunge o supera il volume specificato per gli avvisi o gli avvisi critici, Configuration Manager genera l'avviso appropriato.  
+- Un ruolo del sistema del sito del **punto di gestione** risponde alle richieste del client normalmente.  
 
-    > [!WARNING]  
-    >  Dato che le informazioni sui trasferimenti dei dati vengono scaricate da Azure ogni ora, l'utilizzo di quei dati potrebbe superare una soglia di avviso o critica prima che Configuration Manager possa accedere ai dati e generare un avviso.  
+    - I client locali usano in genere un punto di gestione locale.  
+
+    - I client basati su Internet usano un [gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway) o un [punto di gestione basato su Internet](/sccm/core/clients/manage/plan-internet-based-client-management).  
+
+- Il punto di distribuzione cloud usa un servizio Web **HTTPS basato sui certificati** per proteggere la comunicazione di rete con i client. I client devono considerare attendibile questo certificato.  
+
+
+### <a name="azure-resource-manager"></a>Azure Resource Manager
+<!--1322209--> A partire dalla versione 1806, è possibile creare un punto di distribuzione cloud usando una **distribuzione Azure Resource Manager**. [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) è una piattaforma moderna per la gestione di tutte le risorse di una soluzione come una singola entità detta [gruppo di risorse](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups). Quando si distribuisce un punto di distribuzione cloud con Azure Resource Manager, il sito usa Azure Active Directory (Azure AD) per autenticare e creare le risorse cloud necessarie. Questa distribuzione modernizzata non richiede il certificato di gestione classico di Azure.  
+
+La procedura guidata per il punto di distribuzione cloud offre ancora l'opzione per una **distribuzione classica del servizio** tramite un certificato di gestione di Azure. Per semplificare la distribuzione e la gestione delle risorse, Microsoft consiglia di usare il modello di distribuzione Azure Resource Manager per tutti i nuovi punti di distribuzione cloud. Se possibile, ridistribuire i punti di distribuzione cloud esistenti tramite Resource Manager.
+
+Configuration Manager non esegue la migrazione dei punti di distribuzione cloud classici esistenti nel modello di distribuzione Azure Resource Manager. Creare nuovi punti di distribuzione cloud usando distribuzioni di Azure Resource Manager e quindi rimuovere i punti di distribuzione cloud classici. 
+
+> [!IMPORTANT]  
+> Questa funzionalità non supporta i provider di servizi cloud di Azure. La distribuzione di punti di distribuzione cloud con Azure Resource Manager continua a usare il servizio cloud classico, non supportato dal provider di servizi cloud. Per altre informazioni, vedere [Available Azure services in Azure CSP](/azure/cloud-solution-provider/overview/azure-csp-available-services) (servizi di Azure disponibili in Azure CSP).  
+
+
+### <a name="hierarchy-design"></a>Modello di gerarchia
+
+La posizione in cui si crea il punto di distribuzione cloud dipende da quali client dovranno accedere al contenuto. A partire dalla versione 1806, esistono tre tipi di punti di distribuzione cloud:  
+
+- Distribuzione classica del servizio: creare questo tipo solo in un sito primario.  
+
+- Distribuzione Azure Resource Manager: creare questo tipo in un sito primario o nel sito di amministrazione centrale.  
+
+- Anche il gateway di gestione cloud può distribuire contenuti ai client. Questa funzionalità riduce i certificati necessari e i costi delle macchine virtuali di Azure. Per altre informazioni, vedere [Pianificare il gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway).<!--1358651-->  
+
+
+Per determinare se includere punti di distribuzione cloud nei gruppi di limiti, considerare i comportamenti seguenti:  
+
+- I client basati su Internet non si basano sui gruppi di limiti. Usano solo punti di distribuzione con connessione Internet o punti di distribuzione cloud. Se si usano solo punti di distribuzione cloud per fornire servizi a questi tipi di client, non è necessario includerli in gruppi di limiti.  
+
+- Se si desidera che i client nella rete interna usino un punto di distribuzione cloud, questo dovrà essere nello stesso gruppo di limiti dei client. I client danno priorità minima ai punti di distribuzione cloud nel loro elenco delle origini di contenuti, perché il download di contenuti da Azure comporta un costo. Quindi un punto di distribuzione cloud viene in genere usato come origine di fallback per i client basati su Intranet. Se si desidera dare la priorità al cloud, progettare i gruppi di limiti in modo da soddisfare questo requisito aziendale. Per altre informazioni, vedere [Configurare gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups).  
+
+
+Anche se si installano punti di distribuzione cloud in specifiche aree di Azure, i client non tengono conto delle aree di Azure, ma selezionano un punto di distribuzione cloud in modo casuale. Se si installano punti di distribuzione cloud in più aree e un client riceve più punti nell'elenco dei percorsi del contenuto, il client potrebbe non usare un punto di distribuzione cloud della stessa area di Azure.  
+
+
+### <a name="backup-and-recovery"></a>Backup e ripristino  
+
+Quando si usa un punto di distribuzione cloud nella gerarchia, usare le informazioni seguenti per pianificare il backup e il ripristino:  
+
+- Quando si usa l'attività di manutenzione **Backup server sito**, Configuration Manager include automaticamente le configurazione per il punto di distribuzione cloud.  
+
+- Eseguire il backup e salvare una copia del certificato di autenticazione server. Se si usa la distribuzione classica del servizio in Azure, eseguire il backup e salvare una copia anche del certificato di gestione di Azure. Quando si ripristina il sito primario di Configuration Manager in un server diverso, è necessario reimportare i certificati.  
+
+
+
+##  <a name="bkmk_requirements"></a> Requisiti
+
+- È necessaria una **sottoscrizione di Azure** per l'hosting del servizio.  
+
+    - Un **amministratore di Azure** deve partecipare alla creazione iniziale di alcuni componenti, a seconda della progettazione. Questo utente tipo non necessita di autorizzazioni in Configuration Manager.  
+
+- Il server del sito richiede l'**accesso a Internet** per distribuire e gestire il servizio cloud.  
+
+- Con il metodo di distribuzione classico di Azure è necessario un **certificato di gestione di Azure**. Per ulteriori informazioni, vedere la sezione [Certificati](#bkmk_certs) sottostante.   
+
+    > [!TIP]  
+    > A partire da Configuration Manager versione 1806, usare il modello di distribuzione **Azure Resource Manager**, che non richiede il certificato di gestione.  
+
+- Se si usa il metodo di distribuzione **Azure Resource Manager**, integrare Configuration Manager con [Azure AD](/sccm/core/clients/deploy/deploy-clients-cmg-azure). L'individuazione utenti di Azure AD non è necessaria.  
+
+- Un **certificato di autenticazione server**. Per ulteriori informazioni, vedere la sezione [Certificati](#bkmk_certs) sottostante.  
+
+    - Per ridurre la complessità, Microsoft consiglia di usare un provider di certificati pubblico per il certificato di autenticazione server. In tal caso, è necessario anche un **alias CNAME del DNS** per consentire ai client di risolvere il nome del servizio cloud.  
+
+- Impostare l'opzione del client **Consentire accesso al punto di distribuzione cloud** su **Sì** nel gruppo **Servizi cloud**. Per impostazione predefinita, questo valore è configurato su **No**.  
+
+- I dispositivi client richiedono una **connessione a Internet** e devono usare il protocollo **IPv4**.  
+
+
+
+## <a name="bkmk_spec"></a> Specifiche
+
+- Il punto di distribuzione cloud supporta tutte le versioni di Windows elencate in [Sistemi operativi supportati per client e dispositivi ](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices).  
+
+- Un amministratore distribuisce i tipi di contenuto software supportati seguenti:  
+    - Applicazioni
+    - Pacchetti
+    - Pacchetti di aggiornamento del sistema operativo
+    - Aggiornamenti software di terze parti  
+
+    > [!Important]  
+    > Anche se la console di Configuration Manager non blocca la distribuzione degli aggiornamenti software Microsoft in un punto di distribuzione cloud, si sostengono costi di Azure per archiviare contenuto non usato dai client. I client basati su Internet ottengono sempre i contenuti di aggiornamento software Microsoft dal servizio cloud Microsoft Update. Evitare di distribuire gli aggiornamenti software Microsoft in un punto di distribuzione cloud.    
+
+- A partire dalla versione 1806, è possibile configurare un punto di distribuzione pull per usare un punto di distribuzione cloud come origine. Per altre informazioni, vedere [Informazioni sui punti di distribuzione di origine](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point#about-source-distribution-points).<!--1321554-->  
+
+
+### <a name="deployment-settings"></a>Impostazioni di distribuzione
+
+- Quando si distribuisce una sequenza di attività con l'opzione **Scaricare il contenuto localmente quando necessario eseguendo la sequenza attività**, il punto di gestione non include un punto di distribuzione cloud come percorso del contenuto. Se si desidera che i client usino un punto di distribuzione cloud, distribuire la sequenza di attività con l'opzione **Scaricare tutto il contenuto localmente prima di avviare la sequenza di attività**.  
+
+- Un punto di distribuzione cloud non supporta le distribuzioni di pacchetti con l'opzione **Esegui programma dal punto di distribuzione**. Usare l'opzione di distribuzione **Scarica il contenuto dal punto di distribuzione ed esegui in locale**.  
+
+
+### <a name="limitations"></a>Limitazioni  
+
+- Non è possibile usare un punto di distribuzione cloud per distribuzioni abilitate per PXE o per il multicast.  
+
+- Un punto di distribuzione cloud non supporta lo streaming di applicazioni con App-V.  
+
+- Non è possibile [pre-installare il contenuto](/sccm/core/plan-design/hierarchy/manage-network-bandwidth#BKMK_PrestagingContent) in un punto di distribuzione cloud. La gestione distribuzione del sito primario che gestisce il punto di distribuzione cloud trasferisce tutto il contenuto.  
+
+- Non è possibile configurare un punto di distribuzione cloud come punto di distribuzione pull.  
+
+
+
+##  <a name="bkmk_cost"></a> Costi   
+<!--501018-->
+> [!IMPORTANT]  
+> Le informazioni sui costi seguenti sono puramente stime. Altre variabili dell'ambiente possono influire sul costo complessivo dell'uso di un punto di distribuzione cloud.  
+
+Configuration Manager include le opzioni seguenti per il controllo dei costi e il monitoraggio dell'accesso ai dati:  
+
+- È possibile controllare e monitorare la quantità dei contenuti archiviati in un servizio cloud. Per altre informazioni, vedere la sezione sul [monitoraggio dei punti di distribuzione cloud](/sccm/core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure#bkmk_monitor).  
+
+- È possibile configurare Configuration Manager in modo che avvisi l'utente quando le soglie per i download del client raggiungono o superano i limiti mensili. Per altre informazioni, vedere la sezione sugli [avvisi di soglia di trasferimento dati](/sccm/core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure#bkmk_alerts).   
+
+- Per ridurre il numero di trasferimenti di dati dai punti di distribuzione cloud eseguiti dai client, è possibile usare una delle tecnologie di peer caching seguenti:  
+    - Peer cache di Configuration Manager
+    - Windows BranchCache
+    - Ottimizzazione recapito per Windows 10  
+
+   Per altre informazioni su BranchCache, vedere [Fundamental concepts for content management](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management) (Concetti di base per la gestione dei contenuti).   
+
+
+### <a name="components"></a>Componenti
+
+Un punto di distribuzione cloud usa i componenti di Azure seguenti, che implicano l'addebito di costi all'account della sottoscrizione di Azure:  
+
+> [!Tip]  
+> A partire dalla versione 1806, anche il gateway di gestione cloud può distribuire contenuti ai client. Questa funzionalità riduce i costi consolidando le macchine virtuali di Azure. Per altre informazioni, vedere i [costi per il gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#cost).  
+
+#### <a name="virtual-machine"></a>Macchina virtuale
+- Il punto di distribuzione cloud usa i servizi cloud di Azure come PaaS (piattaforma distribuita come servizio). Questo servizio usa macchine virtuali che comportano costi di calcolo.  
+
+- Ogni servizio del punto di distribuzione cloud usa due macchine virtuali A0 Standard.  
+
+- Vedere il [calcolatore dei prezzi di Azure](https://azure.microsoft.com/pricing/calculator/) per determinare i costi potenziali.
 
     > [!NOTE]  
-    >  Gli avvisi per un punto di distribuzione basato sul cloud dipendono dalle statistiche di utilizzo di Azure, che possono richiedere fino a 24 ore per diventare disponibili. Per informazioni su Storage Analytics per Azure, incluse informazioni sulla frequenza con cui Azure aggiorna le statistiche di utilizzo, vedere [Storage Analytics](http://go.microsoft.com/fwlink/p/?LinkID=275111) in MSDN Library.  
+    > I costi delle macchine virtuali variano a seconda dell'area.
 
+#### <a name="outbound-data-transfer"></a>Trasferimento dati in uscita
+- I flussi di dati verso Azure sono gratuiti (dati in ingresso o caricamento). La distribuzione di contenuti dal sito al punto di distribuzione cloud è un caricamento in Azure.  
 
--   **Arrestare o avviare il servizio cloud su richiesta**: è possibile usare l'opzione per arrestare un servizio cloud in qualsiasi momento per impedire ai client di usare il servizio in modo continuo. Quando si arresta il servizio cloud, viene immediatamente impedito ai client di scaricare contenuto aggiuntivo dal servizio. È inoltre possibile riavviare il servizio cloud per ripristinare l'accesso per i client. È ad esempio possibile arrestare un servizio cloud quando vengono raggiunte le soglie dei dati.  
+- Gli addebiti si basano sul flusso di dati in uscita da Azure (dati in uscita o download). I flussi di dati del punto di distribuzione cloud da Azure sono costituiti dal contenuto software scaricato dai client.  
 
-     Quando si arresta un servizio cloud, tale servizio non elimina il contenuto dal punto di distribuzione e non impedisce al server del sito di trasferire contenuto aggiuntivo nel punto di distribuzione basato sul cloud.  
+- Per altre informazioni, vedere la sezione sul [monitoraggio dei punti di distribuzione cloud](/sccm/core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure#bkmk_monitor).  
 
-     Per arrestare un servizio cloud, nella console di Configuration Manager selezionare il punto di distribuzione nel nodo **Punti di distribuzione del cloud** in **Servizi cloud** nell'area di lavoro **Amministrazione** . Scegliere quindi **Arresta servizio** per arrestare il servizio cloud eseguito in Azure.  
+- Vedere i [dettagli sui prezzi per la larghezza di banda di Azure](https://azure.microsoft.com/pricing/details/bandwidth/) per determinare i costi potenziali. I prezzi del trasferimento dei dati sono diversificati. Un maggior utilizzo comporta un costo minore per gigabyte.  
 
-##  <a name="BKMK_CloudDPCerts"></a> Informazioni sulle sottoscrizioni e sui certificati per i punti di distribuzione basati sul cloud  
- I punti di distribuzione basati sul cloud richiedono dei certificati per abilitare Configuration Manager per la gestione del servizio cloud che ospita il punto di distribuzione e per l'accesso al contenuto dal punto di distribuzione da parte dei client. Di seguito sono riportate informazioni generali su questi certificati. Per maggiori dettagli, vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
+#### <a name="content-storage"></a>Archivio del contenuto
+- I client basati su Internet ricevono i contenuti di aggiornamento del software Microsoft dal servizio cloud Microsoft Update gratuitamente. Evitare di distribuire pacchetti di distribuzione di aggiornamenti software con gli aggiornamenti del software Microsoft a un punto di distribuzione cloud. In caso contrario, si dovranno sostenere costi di archiviazione dati per contenuto mai usato dai client.  
 
- **Certificati**  
+- I punti di distribuzione cloud usano gli archivi BLOB standard seguenti in base al modello di distribuzione:  
 
--   **Certificato di gestione per la comunicazione tra il server del sito e il punto di distribuzione**: il certificato di gestione stabilisce relazioni di trust tra l'API di gestione di Azure e Configuration Manager. Questa autenticazione consente a Configuration Manager di chiamare l'API di Azure quando si eseguono attività quali la distribuzione del contenuto o l'avvio e l'arresto del servizio cloud. Azure consente di creare propri certificati di gestione, nella forma di un certificato autofirmato o di certificati rilasciati da un'autorità di certificazione (CA):  
+    - Una distribuzione classica usa l'archiviazione di Azure con ridondanza geografica (GRS). Per altre informazioni, vedere [Archiviazione con ridondanza geografica](https://docs.microsoft.com/azure/storage/common/storage-redundancy-grs).  
 
-    -   Fornire ad Azure il file con estensione cer del certificato di gestione quando si configura Azure per Configuration Manager. Il file .cer contiene la chiave pubblica per il certificato di gestione. Prima di installare un punto di distribuzione basato sul cloud, è necessario caricare questo certificato in Azure. Questo certificato consente a Configuration Manager di accedere all'API di Azure.  
+    - Una distribuzione di Azure Resource Manager usa l'archiviazione di Azure con ridondanza locale (LRS). Questa modifica riduce il costo dell'account di archiviazione. La distribuzione classica non usava le funzionalità aggiuntive di archiviazione con ridondanza geografica. Per altre informazioni, vedere [Archiviazione con ridondanza locale](https://docs.microsoft.com/azure/storage/common/storage-redundancy-lrs).  
 
-    -   Trasmettere il file .pfx del certificato di gestione a Configuration Manager quando si installa il punto di distribuzione basato sul cloud. Il file .pfx contiene la chiave privata per il certificato di gestione. Configuration Manager archivia questo certificato nel database del sito. Dal momento che il file .pfx contiene la chiave privata, è necessario immettere la password per importare questo file del certificato nel database di Configuration Manager.  
-
-    Se si crea un certificato autofirmato, è necessario prima di tutto esportare il certificato come file CER e quindi esportarlo nuovamente come file PFX.  
-
-    Facoltativamente, è possibile specificare un file con estensione **publishsettings** versione 1 di Azure SDK 1.7. Per informazioni sui file con estensione publishsettings, vedere la documentazione di Azure.  
-
-    Per altre informazioni, vedere [Come creare un certificato di gestione](http://go.microsoft.com/fwlink/p/?LinkId=220281) e [Come aggiungere un certificato di gestione a una sottoscrizione di Azure](http://go.microsoft.com/fwlink/p/?LinkId=241722) nella sezione dedicata alla piattaforma Azure in MSDN Library.  
-
--   **Certificato di servizio per la comunicazione tra client e punto di distribuzione**: il certificato di servizio del punto di distribuzione basato sul cloud di Configuration Manager stabilisce relazioni di trust tra i client di Configuration Manager e il punto di distribuzione basato sul cloud e protegge i dati che i client scaricano da quest'ultimo usando Secure Socket Layer (SSL) su HTTPS.  
-
-    > [!IMPORTANT]  
-    >  Il nome comune nella casella Soggetto certificato del certificato di servizio deve essere univoco nel dominio e non deve corrispondere ad alcun dispositivo appartenente a un dominio.  
-
-   Per un esempio di distribuzione di questo certificato, vedere la sezione **Distribuzione del certificato di servizio per i punti di distribuzione basati sul cloud** nell'argomento [Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
-
-##  <a name="bkmk_Tasks"></a> Attività di gestione comuni per i punti di distribuzione basati sul cloud  
-
--   **Comunicazione tra il server del sito e il punto di distribuzione basato sul cloud**: quando si installa un punto di distribuzione basato sul cloud, è necessario assegnare un sito primario per gestire il trasferimento del contenuto al servizio cloud. Ciò equivale a installare il ruolo del sistema del sito del punto di distribuzione in un sito specifico.  
-
--   **Comunicazione tra il client e il punto di distribuzione basato sul cloud**: quando un dispositivo o un utente di un dispositivo viene configurato con l'impostazione client che consente l'utilizzo di un punto di distribuzione basato sul cloud, il dispositivo può ricevere tale punto di distribuzione come percorso del contenuto valido:  
-
-    -   Il punto di distribuzione basato sul cloud viene considerato come un punto di distribuzione remoto quando un client valuta i percorsi del contenuto disponibili.  
-
-    -   I client nella intranet usano i punti di distribuzione basati su cloud solo come un'opzione di fallback se non sono disponibili punti di distribuzione locali.  
-
-    Anche se si installano punti di distribuzione basati su cloud in specifiche aree di Azure, i client che usano i punti di distribuzione basati sul cloud non sono a conoscenza delle aree di Azure e selezionano in modo non deterministico un punto di distribuzione basato sul cloud.
-
-Ciò significa che se si installano punti di distribuzione basati sul cloud in più aree e un client riceve più punti di distribuzione basati sul cloud come percorsi del contenuto, il client potrebbe non usare un punto di distribuzione basato sul cloud della stessa area di Azure del client.  
-
-I client che usano i punti di distribuzione basati sul cloud usano la sequenza seguente per le richieste di percorso del contenuto:  
-
-1.  Un client configurato per l'utilizzo di punti di distribuzione basati su cloud tenta sempre prima di ottenere il contenuto da un punto di distribuzione preferito.  
-
-2.  In assenza di un punto di distribuzione preferito, il client usa un punto di distribuzione remoto eventualmente disponibile se la distribuzione supporta questa opzione.  
-
-3.  In assenza di un punto di distribuzione preferito o remoto disponibile, il client può cercare di ottenere il contenuto da un punto di distribuzione basato su cloud.  
+#### <a name="other-costs"></a>Altri costi
+- Ogni servizio cloud ha un indirizzo IP dinamico. Ogni punto di distribuzione cloud distinto usa un nuovo indirizzo IP dinamico. L'aggiunta di macchine virtuali per il servizio cloud non aumenta il numero di indirizzi.  
 
 
 
-  Quando un client usa un punto di distribuzione basato su cloud come un percorso del contenuto, si autentica a tale punto di distribuzione usando un token di accesso di Configuration Manager. Se il client considera attendibile il certificato del punto di distribuzione basato su cloud di Configuration Manager, può scaricare il contenuto richiesto.  
+##  <a name="bkmk_dataflow"></a> Porte e flusso di dati   
 
--   **Monitorare i punti di distribuzione basati sul cloud**: è possibile monitorare il contenuto distribuito a ciascun punto di distribuzione basato sul cloud e il servizio cloud che ospita il punto di distribuzione.  
+Vi sono due flussi di dati primari per il punto di distribuzione cloud:  
 
-    -   **Contenuto**: è possibile monitorare il contenuto distribuito in un punto di distribuzione basato sul cloud nello stesso modo con cui si distribuisce il contenuto nei punti di distribuzione locali.  
+- Il server del sito si connette ad Azure per configurare il servizio del punto di distribuzione cloud  
 
-    -   **Servizio cloud**: Configuration Manager controlla periodicamente il servizio di Azure e genera un avviso se il servizio non è attivo o se vengono rilevati problemi relativi alla sottoscrizione o al certificato. È anche possibile visualizzare i dettagli sul punto di distribuzione nel nodo **Punti di distribuzione del cloud** in **Servizi cloud** nell'area di lavoro **Amministrazione** della console di Configuration Manager. Da questa posizione è possibile visualizzare informazioni di livello generale sul punto di distribuzione. Si può anche selezionare un punto di distribuzione e quindi modificarne le proprietà.  
+- Un client si connette al punto di distribuzione cloud per scaricare contenuti  
 
-    Quando si modificano le proprietà di un punto di distribuzione basato sul cloud, è possibile:  
 
-    -   Adattare le soglie dei dati per l'archiviazione e gli avvisi.  
+### <a name="site-server-to-azure"></a>Da server del sito ad Azure
 
-    -   Gestire il contenuto come per un punto di distribuzione locale.  
+Non è necessario aprire alcuna porta in ingresso per la rete locale. Il server del sito avvia tutte le comunicazioni con Azure e con il punto di distribuzione cloud per distribuire, aggiornare e gestire il servizio cloud. Il server del sito deve essere in grado di creare connessioni in uscita verso il cloud Microsoft. Ciò equivale a installare il ruolo del sistema del sito del punto di distribuzione in un sito specifico.  
 
-    Per ogni punto di distribuzione basato sul cloud, è infine possibile visualizzare, ma non modificare, l'ID sottoscrizione, il nome servizio e altri dettagli correlati specificati durante l'installazione della distribuzione basata su cloud.  
 
--   **Eseguire backup e ripristino dei punti di distribuzione basati sul cloud**: quando si usa un punto di distribuzione basato sul cloud nella gerarchia, usare le informazioni seguenti per pianificare il backup o il ripristino del punto di distribuzione:  
+### <a name="client-to-cloud-distribution-point"></a>Da client a punto di distribuzione cloud
 
-    -   Quando si usa l'attività di manutenzione predefinita **Backup server sito**, Configuration Manager include automaticamente le configurazione per il punto di distribuzione basato sul cloud.  
+Non è necessario aprire alcuna porta in ingresso per la rete locale. I client basati su Internet comunicano direttamente con il servizio di Azure. I client nella rete interna che usano un punto di distribuzione cloud devono essere in grado di connettersi al cloud Microsoft. 
 
-    -   È consigliabile eseguire il backup e salvare una copia sia del certificato di gestione che del certificato di servizio in uso con un punto di distribuzione basato sul cloud. Se il sito primario di Configuration Manager che gestisce il punto di distribuzione basato sul cloud viene ripristinato in un computer diverso, è necessario importare nuovamente i certificati prima di continuare a usarli.  
+Per altre informazioni sulla priorità dei percorsi dei contenuti e sui casi in cui i client basati su intranet usano un punto di distribuzione cloud, vedere [Content source priority](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#content-source-priority) (Priorità delle origini dei contenuti).
 
--   **Disinstallare un punto di distribuzione basato sul cloud**: per eseguire la disinstallazione, selezionare il punto di distribuzione nella console di Configuration Manager e quindi scegliere **Elimina**.  
+Quando un client usa un punto di distribuzione cloud come percorso del contenuto:  
 
-    Quando un punto di distribuzione basato sul cloud viene eliminato da una gerarchia, Configuration Manager rimuove il contenuto dal servizio cloud in Azure.  
+1. Il punto di gestione fornisce al client un token di accesso insieme all'elenco delle origini dei contenuti. Il token è valido per 24 ore e consente al client l'accesso al punto di distribuzione cloud.  
+
+2. Il punto di gestione risponde alla richiesta di percorso del client con il **nome di dominio completo del servizio** del punto di distribuzione cloud. Questa proprietà corrisponde al nome comune del certificato di autenticazione server.  
+
+    Se si usa il proprio nome di dominio, ad esempio WallaceFalls.contoso.com, il client tenta innanzitutto di risolvere questo FQDN. È necessario un alias CNAME nel DNS con connessione internet del proprio dominio per consentire ai client di risolvere il nome del servizio di Azure, ad esempio: WallaceFalls.cloudapp.net.  
+
+3. Il client quindi risolve il nome del servizio di Azure, ad esempio WallaceFalls.cloudapp.net, in un indirizzo IP valido. Questa risposta deve essere gestita dal DNS di Azure.  
+
+4. Il client si connette al punto di distribuzione cloud. Azure bilancia il carico della connessione a una delle istanze di VM. Il client si autentica usando il token di accesso.  
+
+5. Il punto di distribuzione cloud autentica il token di accesso del client e quindi fornisce al client la posizione esatta del contenuto nell'archiviazione di Azure.  
+
+6. Se il client considera attendibile il certificato di autenticazione server del punto di distribuzione cloud, si connette all'archiviazione di Azure per scaricare il contenuto. 
+
+
+
+##  <a name="bkmk_perf"></a> Prestazioni e scalabilità   
+<!--494872-->
+
+Come con qualsiasi progettazione dei punti di distribuzione, prendere in considerazione i fattori seguenti:  
+- Numero di connessioni client simultanee
+- Dimensioni del contenuto scaricato dai client
+- Il tempo disponibile per soddisfare i requisiti aziendali 
+
+A seconda della [progettazione della topologia](#bkmk_topology), se i client hanno la scelta tra più punti di distribuzione cloud per un dato contenuto, selezioneranno in modo casuale uno dei servizi cloud. Se si distribuisce un determinato contenuto in un solo punto di distribuzione cloud e un gran numero di client tenta di scaricare questo contenuto allo stesso tempo, questa attività sottopone quel singolo punto di distribuzione cloud a un carico maggiore. Quando si aggiunge un punto di distribuzione cloud, viene incluso anche un servizio di archiviazione di Azure separato. Per altre informazioni sul modo in cui il client comunica con i componenti del punto di distribuzione cloud e scarica il contenuto, vedere [Porte e flusso di dati](#bkmk_dataflow).  
+
+Il punto di distribuzione cloud usa due macchine virtuali di Azure come front-end per l'archiviazione di Azure. Questa distribuzione predefinita soddisfa la maggior parte delle esigenze dei clienti. In alcuni casi estremi, con un numero elevato di connessioni client simultanee (ad esempio, 150.000 client), la capacità di elaborazione delle macchine virtuali di Azure non riesce a gestire le richieste dei client. Non è possibile ridimensionare le macchine virtuali di Azure usate per il punto di distribuzione cloud. Non è possibile configurare il numero di istanze di macchine virtuali per il punto di distribuzione cloud in Configuration Manager. Se necessario, è comunque possibile riconfigurare il servizio cloud nel portale di Azure, aggiungendo manualmente altre istanze di macchine virtuali oppure configurando la scalabilità automatica del servizio. 
+
+> [!Important]  
+> Quando si aggiorna Configuration Manager, il sito ridistribuisce il servizio cloud. Se si riconfigura manualmente il servizio cloud nel portale di Azure, il numero di istanze viene reimpostato sul valore predefinito di due.  
+
+Il servizio di archiviazione di Azure supporta 500 richieste al secondo per un singolo file. In un test delle prestazioni, un punto di distribuzione cloud ha supportato la distribuzione di un singolo file da 100 MB a 50.000 client in 24 ore.<!--512106-->  
+
+
+
+##  <a name="bkmk_certs"></a> Certificati  
+
+A seconda della progettazione del punto di distribuzione cloud, sono necessari uno o più certificati digitali.  
+
+
+### <a name="azure-management-certificate"></a>Certificato di gestione di Azure
+
+*Questo certificato è obbligatorio per le distribuzioni di servizi classiche. Non è necessario per le distribuzioni di Azure Resource Manager.*
+
+Con il metodo di distribuzione classico di Azure è necessario un **certificato di gestione di Azure**. Per altre informazioni, vedere la sezione [Certificato di gestione di Azure](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#azure-management-certificate) dell'articolo sui certificati per il gateway di gestione cloud. Il server del sito di Configuration Manager usa questo certificato per autenticarsi con Azure per creare e gestire la distribuzione classica.  
+
+> [!TIP]  
+> A partire da Configuration Manager versione 1806, usare il modello di distribuzione **Azure Resource Manager**, che non richiede il certificato di gestione.  
+
+Per ridurre la complessità, usare lo stesso certificato di gestione di Azure per tutte le distribuzioni classiche di punti di distribuzione cloud e gateway di gestione cloud, con tutte le sottoscrizioni di Azure e tutti i siti di Configuration Manager.
+
+
+### <a name="server-authentication-certificate"></a>Certificato di autenticazione server
+
+*Questo certificato è necessario per tutte le distribuzioni di punti di distribuzione cloud.*
+
+Per altre informazioni, vedere [Certificato di autenticazione server del gateway di gestione cloud](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#cmg-server-authentication-certificate) e le sottosezioni seguenti, come necessario:  
+- Certificato radice trusted del gateway di gestione cloud per i client
+- Certificato di autenticazione server rilasciato da un provider pubblico
+- Certificato di autenticazione server rilasciato da un'infrastruttura a chiave pubblica di tipo Enterprise
+
+Il punto di distribuzione cloud usa questo tipo di certificato nello stesso modo del gateway di gestione cloud. Anche i client devono considerare attendibile questo certificato. Per ridurre la complessità, Microsoft consiglia di usare un certificato rilasciato da un provider pubblico. 
+
+A meno di non usare un certificato con caratteri jolly, non riusare lo stesso certificato. Ogni istanza del punto di distribuzione cloud e del gateway di gestione cloud richiede un certificato di autenticazione server univoco. 
+
+Per altre informazioni sulla creazione di questo certificato da un'infrastruttura PKI, vedere [Distribuire il certificato di servizio per i punti di distribuzione basati su cloud](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clouddp2008_cm2012).  
+
+
+
+##  <a name="bkmk_faq"></a> Domande frequenti   
+
+### <a name="does-a-client-need-a-certificate-to-download-content-from-a-cloud-distribution-point"></a>Un client necessita di un certificato per scaricare contenuti da un punto di distribuzione cloud?
+
+Non è necessario un certificato di autenticazione client. Il client deve considerare attendibile il certificato di autenticazione server usato dal punto di distribuzione cloud. Se questo certificato è rilasciato da un provider di certificati pubblico, la maggior parte dei dispositivi Windows include già i certificati radice trusted per tali provider. Se è stato emesso un certificato di autenticazione server dall'infrastruttura PKI dell'organizzazione, i clienti devono considerare attendibili le certificazioni dell'intera catena. Questa catena include l'autorità di certificazione radice e tutte le autorità di certificazione intermedie. A seconda della progettazione dell'infrastruttura PKI, questo certificato può introdurre complessità aggiuntive nella distribuzione del punto di distribuzione cloud. Per evitare questa complessità, Microsoft consiglia di usare un provider di certificati pubblici che i client considerano già attendibile.  
+
+
+### <a name="can-my-on-premises-clients-use-a-cloud-distribution-point"></a>I client locali possono usare un punto di distribuzione cloud?
+
+Sì. Se si desidera che i client nella rete interna usino un punto di distribuzione cloud, questo dovrà essere nello stesso gruppo di limiti dei client. I client danno priorità minima ai punti di distribuzione cloud nel loro elenco delle origini di contenuti, perché il download di contenuti da Azure comporta un costo. Quindi un punto di distribuzione cloud viene in genere usato come origine di fallback per i client basati su Intranet. Se si desidera dare la priorità al cloud, progettare i gruppi di limiti di conseguenza. Per altre informazioni, vedere [Configurare gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups).  
+
+
+### <a name="do-i-need-azure-expressroute"></a>È necessario Microsoft Azure ExpressRoute?
+
+[Microsoft Azure ExpressRoute](/azure/expressroute/expressroute-introduction) consente di estendere la rete locale nel cloud Microsoft. Microsoft Azure ExpressRoute o altre connessioni di rete virtuale simili non sono necessari per il punto di distribuzione cloud di Configuration Manager.  
+
+Se l'organizzazione usa ExpressRoute, isolare la sottoscrizione di Azure per il punto di distribuzione cloud dalla sottoscrizione che usa ExpressRoute. Questa configurazione assicura che il punto di distribuzione cloud non sia connesso accidentalmente in questo modo.  
+
+
+### <a name="do-i-need-to-maintain-the-azure-virtual-machines"></a>È necessario gestire le macchine virtuali di Azure?
+
+Non è necessaria alcuna manutenzione. La progettazione del punto di distribuzione cloud usa Azure come PaaS (piattaforma come servizio). Tramite la sottoscrizione offerta dall'utente, Configuration Manager crea le macchine virtuali, le risorse di archiviazione e la rete necessari. Azure protegge e aggiorna le macchine virtuali. Queste macchine virtuali non fanno parte dell'ambiente locale, come accade con l'infrastruttura come servizio (IaaS). Il punto di distribuzione cloud è un PaaS che estende l'ambiente di Configuration Manager nel cloud. Per altre informazioni, vedere [Vantaggi di sicurezza di un modello di servizio cloud PaaS](https://docs.microsoft.com/azure/security/security-paas-deployments#security-advantages-of-a-paas-cloud-service-model).  
+
+
+### <a name="does-the-cloud-distribution-point-use-azure-cdn"></a>Il punto di distribuzione cloud usa la rete CDN di Azure?
+
+La rete per la distribuzione di contenuti (CDN) di Azure è una soluzione globale per distribuire rapidamente contenuto con larghezza di banda elevata memorizzandolo nella cache di nodi fisici posizionati strategicamente in tutto il mondo. Per ulteriori informazioni, vedere [Definizione di rete per la distribuzione di contenuti](https://docs.microsoft.com/azure/cdn/cdn-overview).
+
+Il punto di distribuzione cloud di Configuration Manager non supporta attualmente la rete CDN di Azure.
+
+
+
+## <a name="next-steps"></a>Passaggi successivi
+[Installare punti di distribuzione basati sul cloud](/sccm/core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure)

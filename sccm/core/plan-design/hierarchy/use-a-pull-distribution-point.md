@@ -1,8 +1,8 @@
 ---
 title: Punto di distribuzione pull
 titleSuffix: Configuration Manager
-description: Informazioni sulle configurazioni e le limitazioni per l'uso di un punto di distribuzione pull con System Center Configuration Manager.
-ms.date: 2/14/2017
+description: Informazioni sulle configurazioni e le limitazioni per l'uso di un punto di distribuzione pull con Configuration Manager.
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,124 +10,156 @@ ms.assetid: 7d8f530b-1a39-4a9d-a2f0-675b516da7e4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d6d6f68e913d261a5a23db85707ea0c9ac965cbd
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 008da23a6fedf1666a29754dc41a47c61f8bfbda
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32339139"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39384233"
 ---
-# <a name="use-a-pull-distribution-point-with-system-center-configuration-manager"></a>Usare un punto di distribuzione pull basato sul cloud con System Center Configuration Manager
+# <a name="use-a-pull-distribution-point-with-configuration-manager"></a>Usare un punto di distribuzione pull con Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-Un punto di distribuzione pull per System Center Configuration Manager è un punto di distribuzione standard che consente di ottenere il contenuto distribuito scaricandolo da una posizione di origine, ad esempio un client, anziché eseguire il push del contenuto nella posizione dal server del sito.  
+Quando si distribuisce contenuto in un punto di distribuzione standard nella console di Configuration Manager, il server del sito esegue il push del contenuto al punto di distribuzione. Un punto di distribuzione pull ottiene il contenuto scaricandolo da una posizione di origine, ad esempio un client.  
 
- Quando si distribuisce contenuto in un ampio numero di punti di distribuzione in un sito, i punti di distribuzione pull possono ridurre il carico di elaborazione sul server del sito e velocizzare il trasferimento del contenuto a ciascun punto di distribuzione. Questa efficienza viene ottenuta ripartendo il carico del processo di trasferimento del contenuto a ogni punto di distribuzione dal processo di gestione della distribuzione al server del sito.  
+Quando si distribuisce contenuto in numerosi punti di distribuzione, i punti distribuzione pull consentono di ridurre il carico di elaborazione nel server del sito e possono anche velocizzare il trasferimento del contenuto a ogni server. Normalmente, il componente per la gestione delle distribuzioni nel server del sito invia il contenuto a ogni punto di distribuzione. Il sito esegue invece l'offload del processo di trasferimento del contenuto ai punti di distribuzione pull.  
 
--   È possibile configurare singoli punti di distribuzione come punti di distribuzione pull.  
+È possibile configurare singoli punti di distribuzione come punti di distribuzione pull. Per ogni punto di distribuzione pull, specificare uno o più punti di distribuzione di origine da cui può ottenere il contenuto. Un punto di distribuzione pull può scaricare contenuto solo da un punto di distribuzione specificato come punto di distribuzione di origine. 
 
--   Per ogni punto di distribuzione pull è necessario specificare uno o più punti di distribuzione di origine da cui ottenere le distribuzioni (un punto di distribuzione pull può ricevere contenuto solo da un punto di distribuzione specificato come punto di distribuzione di origine).  
+Quando si distribuisce contenuto in un punto di distribuzione pull nella console, il server del sito invia una notifica al punto di distribuzione pull, che scarica quindi il contenuto da un punto di distribuzione di origine. Un punto di distribuzione pull gestisce il trasferimento del contenuto eseguendo il download da un altro punto di distribuzione che contiene già una copia del contenuto.  
 
--   Quando si distribuisce contenuto in un punto di distribuzione pull, il server del sito invia una notifica al punto di distribuzione pull che quindi avvia il download (trasferimento) del contenuto da un punto di distribuzione di origine. Un punto di distribuzione pull gestisce individualmente il trasferimento del contenuto, scaricandolo da un altro punto di distribuzione che contiene già una copia del contenuto.  
+I punti di distribuzione pull supportano le stesse configurazioni e funzionalità dei normali punti di distribuzione. Un punto di distribuzione pull supporta ad esempio: 
+- Configurazioni multicast e PXE
+- Convalida contenuto
+- Distribuzione di contenuto su richiesta
+- Comunicazioni HTTP o HTTPS dai client
+- Opzioni per i certificati identiche a quelle degli altri punti di distribuzione
+- Gestione individuale o come membro di un gruppo di punti di distribuzione  
 
-I punti di distribuzione pull supportano le stesse configurazioni e funzionalità dei normali punti di distribuzione di Configuration Manager. Ad esempio, un punto di distribuzione configurato come un punto di distribuzione pull supporta l'utilizzo di configurazioni multicast e PXE, convalida contenuto e distribuzione di contenuto su richiesta. Un punto di distribuzione pull supporta comunicazioni HTTP o HTTPS da client, supporta le stesse opzioni relative ai certificati di altri punti di distribuzione e può essere gestito individualmente o come un membro di un gruppo di punti di distribuzione.  
+> [!IMPORTANT]  
+> Anche se un punto di distribuzione pull supporta le comunicazioni su HTTP e HTTPS, quando si usa la console di Configuration Manager è possibile specificare solo punti di distribuzione di origine configurati per HTTP. È possibile usare Configuration Manager SDK per specificare un punto di distribuzione di origine configurato per HTTPS.  
 
-> [!IMPORTANT]
-> Anche se un punto di distribuzione pull supporta le comunicazioni su HTTP e HTTPS, quando si usa Configuration Manager è possibile specificare solo punti di distribuzione di origine configurati per HTTP. È possibile usare Configuration Manager SDK per specificare un punto di distribuzione di origine configurato per HTTPS.  
+Configurare un punto di distribuzione pull quando si installa il punto di distribuzione. Dopo aver creato un punto di distribuzione, configurarlo come punto di distribuzione pull modificando le proprietà del ruolo. Per altre informazioni su come abilitare un punto di distribuzione come punto di distribuzione pull, vedere [Punto di distribuzione pull](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#pull-distribution-point).  
 
- **La sequenza di eventi seguente si verifica durante la distribuzione del contenuto a un punto di distribuzione pull:**  
+Rimuovere la configurazione come punto di distribuzione pull modificando le proprietà del punto di distribuzione. Quando si rimuove la configurazione come punto di distribuzione pull, viene ripristinato il normale funzionamento. I futuri trasferimenti di contenuto al punto di distribuzione verranno gestiti dal server del sito.  
 
--   Non appena si distribuisce contenuto a un punto di distribuzione pull, sul server del sito, Package Transfer Manager esegue la verifica del database del sito per confermare se il contenuto è disponibile in un punto di distribuzione di origine. Se questa conferma non è possibile, il controllo viene ripetuto ogni 20 minuti finché il contenuto non diventa disponibile.  
 
--   Quando il Package Transfer Manager conferma la disponibilità del contenuto, viene inviata una notifica al punto di distribuzione pull con la richiesta di scaricare il contenuto. Se questa notifica non riesce, esegue nuovi tentativi in base a **Impostazioni dei tentativi** del componente di distribuzione software per i punti di distribuzione pull. Quando riceve questa notifica, il punto di distribuzione pull tenta di scaricare il contenuto dai relativi punti di distribuzione di origine.  
 
--   Mentre il punto di distribuzione pull scarica il contenuto, Package Transfer Manager esegue il polling dello stato del componente di distribuzione software in base alle **Impostazioni del polling di stato** per i punti di distribuzione pull.  Al termine del download del contenuto da parte del punto di distribuzione pull, lo stato viene inviato a un punto di gestione.
+### <a name="distribution-process"></a>Processo di distribuzione
 
-**È possibile configurare un punto di distribuzione pull** quando si installa il punto di distribuzione o dopo averlo installato modificando le proprietà del ruolo del sistema del sito del punto di distribuzione.  
+Quando si distribuisce contenuto in un punto di distribuzione pull, si verifica la sequenza di eventi seguente:
 
-**È possibile rimuovere la configurazione come punto di distribuzione pull** modificando le proprietà del punto di distribuzione. Quando si rimuove la configurazione del punto di distribuzione pull, il punto di distribuzione torna al normale funzionamento e i successivi trasferimenti di contenuto al punto di distribuzione vengono gestiti dal server del sito.  
+-   Quando si distribuisce contenuto in un punto di distribuzione pull nella console, il componente Package Transfer Manager nel server del sito controlla il database del sito per verificare se il contenuto è disponibile in un punto di distribuzione di origine. Se non può verificare la presenza del contenuto in un punto di distribuzione di origine per il punto di distribuzione pull, ripete il controllo ogni 20 minuti finché il contenuto non risulta disponibile.  
 
-## <a name="to-configure-software-distribution-component-for-pull-distribution-points"></a>Per configurare il componente di distribuzione software per i punti di distribuzione pull
+-   Quando il Package Transfer Manager conferma la disponibilità del contenuto, viene inviata una notifica al punto di distribuzione pull con la richiesta di scaricare il contenuto. Se la notifica non riesce, riprova in base alle **impostazioni dei tentativi** per i punti di distribuzione pull nel componente Distribuzione software. Quando riceve la notifica, il punto di distribuzione pull prova a scaricare il contenuto dai punti di distribuzione di origine.  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Siti**.  
+-   Mentre il punto di distribuzione pull scarica il contenuto, Package Transfer Manager esegue il polling dello stato in base alle **impostazioni del polling di stato** per i punti di distribuzione pull nel componente Distribuzione software.  Al termine del download del contenuto da parte del punto di distribuzione pull, lo stato viene inviato a un punto di gestione.  
 
-2.  Selezionare il sito desiderato e quindi **Configura componenti del sito** > **Distribuzione software**
 
-3. Selezionare la scheda**Punto di distribuzione pull**.  
 
-4.  Nell'elenco **Impostazioni dei tentativi** configurare i valori seguenti:  
+## <a name="configure-site-component-settings"></a>Configurare le impostazioni dei componenti del sito
 
-    -   **Numero di tentativi**: numero di volte che Package Transfer Manager tenta di comunicare al punto di distribuzione pull di scaricare il contenuto.  Se questo numero viene superato, Package Transfer Manager annulla il trasferimento.
+Quando si usa un punto di distribuzione pull, esaminare e configurare le impostazioni dei componenti del sito seguenti:  
 
-    -   **Ritardo prima di riprovare (minuti)**: numero di minuti di attesa da parte di Package Transfer Manager tra un tentativo e il successivo. 
+1.  Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Configurazione del sito** e selezionare **Siti**.  
 
-5.  Nell'elenco **Impostazioni del polling di stato** configurare i valori seguenti:  
+2.  Selezionare il sito. Sulla barra multifunzione fare clic su **Configura componenti del sito** e selezionare **Distribuzione software**.  
 
-    -   **Numero di polling**: numero di volte che Package Transfer Manager contatta il punto di distribuzione pull per recuperare lo stato del processo.  Se questo numero viene superato prima del completamento del processo, Package Transfer Manager annulla il trasferimento.
+3. Passare alla scheda**Punto di distribuzione pull**.  
 
-    -   **Ritardo prima di riprovare (minuti)**: numero di minuti di attesa da parte di Package Transfer Manager tra un tentativo e il successivo. 
+4.  Nel gruppo **Impostazioni dei tentativi** esaminare i valori seguenti.  
+
+    -   **Numero di tentativi**: numero di tentativi effettuati da Package Transfer Manager per notificare al punto di distribuzione pull di scaricare il contenuto. Dopo il numero di tentativi specificato, Package Transfer Manager annulla il trasferimento. Il valore predefinito è 30.  
+
+    -   **Ritardo prima di riprovare (minuti)**: numero di minuti di attesa da parte di Package Transfer Manager tra un tentativo e il successivo. Il valore predefinito è 20.  
+
+5.  Nel gruppo **Impostazioni del polling di stato** esaminare i valori seguenti.  
+
+    -   **Numero di polling**: numero di volte che Package Transfer Manager contatta il punto di distribuzione pull per recuperare lo stato del processo. Se esegue questo numero di tentativi prima che il processo sia completato, Package Transfer Manager annulla il trasferimento. Il valore predefinito è 72.   
+
+    -   **Ritardo prima di riprovare (minuti)**: numero di minuti di attesa da parte di Package Transfer Manager tra un tentativo e il successivo. Il valore predefinito è 60.   
     
     > [!NOTE]  
-    >  Quando Package Transfer Manager annulla un processo perché il numero di nuovi tentativi di polling dello stato è stato superato, il punto di distribuzione pull continua a scaricare il contenuto.  Al termine, verrà inviato il messaggio di stato appropriato a Package Transfer Manager e la console rifletterà il nuovo stato.
+    >  Quando Package Transfer Manager annulla un processo perché viene superato il numero di tentativi di polling, il punto di distribuzione pull continua a scaricare il contenuto. Al termine, il punto di distribuzione pull invia il messaggio di stato appropriato e il nuovo stato viene riportato nella console.  
     
-## <a name="limitations-for-pull-distribution-points"></a>Limitazioni per i punti di distribuzione pull  
 
--   Il punto di distribuzione basato su cloud non può essere configurato come punto di distribuzione pull.  
 
--   Un punto di distribuzione in un server del sito non può essere configurato come punto di distribuzione pull.  
+## <a name="limitations"></a>Limitazioni 
 
--   **La configurazione del contenuto di pre-installazione sostituisce la configurazione del punto di distribuzione pull**. Un punto di distribuzione pull configurato per il contenuto pre-installazione rimane in attesa del contenuto. Non abilita il pull di contenuto dal punto di distribuzione di origine e, analogamente a un punto di distribuzione standard con configurazione contenuto pre-installazione, non riceve contenuto dal server del sito.  
+-   Non è possibile configurare un punto di distribuzione cloud come punto di distribuzione pull.  
 
--   **Un punto di distribuzione pull non usa le configurazioni per la pianificazione o i limiti di velocità** durante il trasferimento del contenuto. Se si configura un punto di distribuzione installato in precedenza per farlo diventare un punto di distribuzione pull, le configurazioni per la pianificazione e i limiti di velocità vengono salvate ma non usate. Se in un secondo momento si rimuove la configurazione del punto di distribuzione pull, vengono implementate le configurazioni della pianificazione e dei limiti di velocità configurate in precedenza.  
+-   Non è possibile configurare il ruolo di punto di distribuzione in un server del sito come punto di distribuzione pull.  
+
+-   La configurazione del contenuto pre-installazione sostituisce la configurazione del punto di distribuzione pull. Se si attiva l'opzione **Abilita questo punto di distribuzione per il contenuto pre-installato** in un punto di distribuzione pull, tale punto di distribuzione attende il contenuto e non ne esegue il pull dal punto di distribuzione di origine. Come un punto di distribuzione standard abilitato per il contenuto pre-installato, non riceve contenuto dal server del sito. Per altre informazioni, vedere [Contenuto pre-installato](/sccm/core/plan-design/hierarchy/manage-network-bandwidth#BKMK_PrestagingContent).  
+
+-   Un punto di distribuzione pull non usa le configurazioni della pianificazione o dei limiti di velocità. Quando si configura un punto di distribuzione installato in precedenza come punto di distribuzione pull, le configurazioni per la pianificazione e i limiti di velocità vengono salvate ma non usate. Se in un secondo momento si rimuove la configurazione del punto di distribuzione pull, vengono implementate le configurazioni della pianificazione e dei limiti di velocità configurate in precedenza.  
 
     > [!NOTE]  
-    >  Se un punto di distribuzione è configurato come punto di distribuzione pull, le schede **Pianificazione** e **Limiti di velocità** non sono visibili nelle proprietà del punto di distribuzione.  
+    >  Le schede **Pianificazione** e **Limiti di velocità** non sono visibili nelle proprietà del punto di distribuzione.  
 
--   I punti di distribuzione pull non usano le impostazioni della scheda **Generale** delle **Proprietà componente distribuzione software** per ogni sito.  Ciò vale anche per **Impostazioni distribuzione simultanea** e **Impostazioni tentativi multicast**.  Usare la scheda **Punto di distribuzione pull** per configurare le impostazioni per i punti di distribuzione pull.
+-   I punti di distribuzione pull non usano le impostazioni della scheda **Generale** di **Proprietà componente distribuzione software** per ogni sito. Tali impostazioni includono **Impostazioni distribuzione simultanea** e **Impostazioni tentativi multicast**.  
 
--   Per trasferire contenuto da un punto di distribuzione di origine in una foresta remota, nel computer che ospita il punto di distribuzione pull deve essere installato un client di Configuration Manager. Un account di accesso alla rete che può accedere al punto di distribuzione di origine deve essere configurato per l'utilizzo.  
+-   Per trasferire contenuto da un punto di distribuzione di origine in una foresta remota, installare il client di Configuration Manager nel punto di distribuzione pull. Configurare anche un account di accesso alla rete che possa accedere al punto di distribuzione di origine. A partire dalla versione 1806, se si abilita l'opzione del sito **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP** non è necessario un account di accesso alla rete.<!--1358228-->  
 
--   In un computer configurato come un punto di distribuzione pull e che esegue un client di Configuration Manager la versione del client deve essere identica a quella del sito di Configuration Manager che installa il punto di distribuzione pull. Di conseguenza, è necessario usare il componente CCMFramework comune al punto di distribuzione pull e al client di Configuration Manager.  
+-   Se il punto di distribuzione pull è anche un client di Configuration Manager, la versione del client deve essere identica a quella del sito di Configuration Manager che installa il punto di distribuzione pull. Il punto di distribuzione pull usa CCMFramework, comune al punto di distribuzione pull e al client di Configuration Manager.  
+
+
 
 ## <a name="about-source-distribution-points"></a>Informazioni sui punti di distribuzione di origine  
- Quando si configura il punto di distribuzione pull, è necessario specificare uno o più punti di distribuzione di origine:  
 
--   Vengono visualizzati solo i punti di distribuzione che sono qualificati come punti di distribuzione di origine.  
+Quando si configura il punto di distribuzione pull, specificare uno o più punti di distribuzione di origine:  
+
+-   La procedura guidata visualizza solo i punti di distribuzione che sono qualificati per essere usati come punti di distribuzione di origine.  
 
 -   Un punto di distribuzione pull può essere specificato come un punto di distribuzione di origine per un altro punto di distribuzione pull.  
 
--   Quando si usa la console di Configuration Manager, solo i punti di distribuzione che supportano HTTP possono essere specificati come punti di distribuzione di origine.  
+-   Quando si usa la console di Configuration Manager, come punti di distribuzione di origine possono essere specificati solo i punti di distribuzione che supportano HTTP.  
 
--   È possibile usare Configuration Manager SDK per specificare un punto di distribuzione di origine configurato per HTTPS. Per usare un punto di distribuzione di origine configurato per HTTPS, il percorso del punto di distribuzione pull deve essere condiviso in un computer che esegue il client di Configuration Manager.  
+-   Usare Configuration Manager SDK per specificare un punto di distribuzione di origine configurato per HTTPS. Per usare un punto di distribuzione di origine configurato per HTTPS, installare il client di Configuration Manager nel punto di distribuzione pull.  
 
-È possibile assegnare una priorità a ogni punto di distribuzione in un elenco di punti di distribuzione di origine con punti di distribuzione pull:  
+-   A partire dalla versione 1806, se gli uffici remoti hanno una connessione a Internet più efficiente oppure si vuole ridurre il carico sui collegamenti WAN, usare come origine un [punto di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) in Microsoft Azure. Per comunicare con Microsoft Azure, il punto di distribuzione pull richiede l'accesso a Internet. Il contenuto deve essere distribuito nel punto di distribuzione cloud di origine.<!--1321554-->  
 
--   È possibile assegnare una priorità separata per ogni punto di distribuzione di origine o assegnare la stessa priorità a più punti di distribuzione di origine.  
+    > [!Note]  
+    > Questa funzionalità comporta l'addebito alla sottoscrizione di Azure per l'archiviazione dei dati e il traffico di rete in uscita. Per altre informazioni, vedere il [costo per l'uso di punti di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#bkmk_cost).  
 
--   La priorità determina l'ordine secondo cui il punto di distribuzione pull richiede contenuto dai relativi punti di distribuzione di origine.  
 
--   Inizialmente viene contattato il punto di distribuzione di origine con il valore di priorità più basso.  Se esistono più punti di distribuzione di origine con la stessa priorità, viene selezionato in modo non deterministico uno dei punti di distribuzione di origine che condividono tale priorità.  
+> [!Tip]  
+> Un punto di distribuzione pull che scarica contenuto da un punto di distribuzione di origine viene conteggiato come un client nella colonna **Client a cui è stato effettuato l'accesso (univoco)** del report **Riepilogo di utilizzo dei punti di distribuzione** .  
 
--   Se il contenuto non è disponibile nell'origine selezionata, il punto di distribuzione pull prova a scaricare il contenuto da un altro punto di distribuzione con la stessa priorità.  
 
--   Se nessuno dei punti di distribuzione con una priorità specifica dispone del contenuto, il punto di distribuzione pull tenta di scaricare il contenuto da un punto di distribuzione a cui è stato assegnato il valore di priorità successivo più alto, finché il contenuto non viene individuato o il punto di distribuzione pull passa in modalità di sospensione per 30 minuti prima di iniziare nuovamente il processo.  
+### <a name="source-priorities"></a>Priorità delle origini
 
-Un punto di distribuzione pull che scarica contenuto da un punto di distribuzione di origine viene conteggiato come un client nella colonna **Client a cui è stato effettuato l'accesso (univoco)** del report **Riepilogo di utilizzo dei punti di distribuzione** .  
+-   Assegnare una priorità separata a ogni punto di distribuzione di origine oppure assegnare la stessa priorità a più punti di distribuzione di origine.  
 
- Per impostazione predefinita, un punto di distribuzione pull usa l' **account computer** per trasferire il contenuto da un punto di distribuzione di origine. Tuttavia, quando il punto di distribuzione pull trasferisce il contenuto da un punto di distribuzione di origine ubicato in una foresta remota, usa sempre l'account di accesso alla rete. Questo processo richiede che il client di Configuration Manager sia installato nel computer e che un account di accesso alla rete sia configurato per l'uso e possa accedere al punto di distribuzione di origine.  
+-   La priorità determina l'ordine in cui il punto di distribuzione pull richiede contenuto dai punti di distribuzione di origine.  
 
-## <a name="about-content-transfers"></a>Informazioni sui trasferimenti di contenuto  
- Per gestire il trasferimento del contenuto, i punti di distribuzione pull usano il componente **CCMFramework** del software client di Configuration Manager.  
+-   Inizialmente viene contattato il punto di distribuzione di origine con il valore di priorità più basso. Se sono presenti più punti di distribuzione di origine con la stessa priorità, il punto di distribuzione pull seleziona in modo casuale una delle origini con tale priorità.  
 
--   Questo framework viene installato da **Pulldp.msi** quando si configura il punto di distribuzione come punto di distribuzione pull. Non richiede l'installazione del client di Configuration Manager.  
+-   Se il contenuto non è disponibile nell'origine selezionata, il punto di distribuzione pull prova a scaricarlo da un altro punto di distribuzione con la stessa priorità.  
 
--   Al termine dell'installazione del punto di distribuzione pull, il servizio CCMExec nel computer del punto di distribuzione deve essere operativo per il funzionamento del punto di distribuzione pull.  
-<!--sms.503672 -Clarified BITS use-->
--   Quando il punto di distribuzione pull trasferisce il contenuto, il trasferimento viene eseguito tramite il **Servizio trasferimento intelligente in background** (BITS) incluso nel sistema operativo Windows. Un punto di distribuzione pull non richiede l'installazione della funzionalità facoltativa di estensione del server IIS BITS.
+-   Se nessuno dei punti di distribuzione con una determinata priorità ha il contenuto, il punto di distribuzione pull prova a scaricarlo da un punto di distribuzione di origine con il livello di priorità successivo. Questa ricerca continua finché non viene individuato il contenuto.   
 
--  Il punto di distribuzione pull registra le operazioni all'interno di **datatransferservice.log** e **pulldp.log** nel computer del punto di distribuzione.
+- Se nessuno dei punti di distribuzione di origine assegnati ha il contenuto, il punto di distribuzione pull attende 30 minuti e quindi avvia di nuovo il processo.  
+
+
+
+## <a name="inside-the-pull-distribution-point"></a>All'interno del punto di distribuzione pull 
+
+-   Per gestire il trasferimento di contenuto, i punti di distribuzione pull usano il componente **CCMFramework**, che è incluso nel client di Configuration Manager.  
+
+-   Quando si abilita il punto di distribuzione pull, il sito installa **pulldp.msi**. Questo programma di installazione aggiunge anche il componente CCMFramework. Non richiede l'installazione del client di Configuration Manager.  
+
+-   Dopo l'installazione del punto di distribuzione pull, per il relativo funzionamento viene usato principalmente il servizio **CCMExec**.  
+
+-   Quando il punto di distribuzione pull trasferisce contenuto, usa **Servizio trasferimento intelligente in background** (BITS), integrato in Windows. Un punto di distribuzione pull non richiede l'installazione dell'estensione BITS per il server IIS.<!--sms.503672 -Clarified BITS use-->
+
+-  Per i dettagli operativi, vedere i file di log seguenti nel punto di distribuzione pull:  
+    - **DataTransferService.log**
+    - **PullDP.log**
+
+
 
 ## <a name="see-also"></a>Vedere anche  
- [Fundamental concepts for content management in System Center Configuration Manager](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management) (Concetti di base per la gestione dei contenuti in System Center Configuration Manager)   
+ [Concetti di base sulla gestione dei contenuti](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management)   

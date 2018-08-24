@@ -1,8 +1,8 @@
 ---
-title: Visualizzare l'inventario hardware con Esplora inventario risorse
+title: Come usare Esplora inventario risorse
 titleSuffix: Configuration Manager
-description: Usare Esplora inventario risorse per visualizzare l'inventario hardware in System Center Configuration Manager.
-ms.date: 01/03/2017
+description: Usare Esplora inventario risorse per visualizzare l'inventario hardware in Configuration Manager.
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,39 +10,63 @@ ms.assetid: 375912f5-436d-4315-bdbe-d77afee6c9f3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: be2c8c3dbfef5ea0f35e338b14439c65150310be
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: e4f39d06072222c14627481f21139f06ee6656c4
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32332210"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39384988"
 ---
-# <a name="how-to-use-resource-explorer-to-view-hardware-inventory-in-system-center-configuration-manager"></a>Come usare Esplora inventario risorse per visualizzare l'inventario hardware in System Center Configuration Manager
+# <a name="how-to-use-resource-explorer-to-view-hardware-inventory-in-configuration-manager"></a>Come usare Esplora inventario risorse per visualizzare l'inventario hardware in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile usare Esplora inventario risorse in System Center Configuration Manager per visualizzare informazioni relative all'inventario hardware raccolto dai client nella gerarchia.  
+Usare Esplora inventario risorse in Configuration Manager per visualizzare le informazioni relative all'inventario hardware. Il sito raccoglie le informazioni dai client nella gerarchia.  
+
+> [!Tip]  
+>  Esplora inventario risorse non visualizzerà alcun inventario dati fino a quando non viene eseguito un ciclo di inventario hardware nel client a cui ci si connette.  
+
+
+
+## <a name="overview"></a>Panoramica
+
+Esplora inventario risorse contiene le sezioni seguenti relative all'inventario hardware:  
+
+- **Hardware**: mostra l'inventario hardware più recente raccolto dal dispositivo client specificato.  
+
+    - Il nodo **Stato workstation** mostra l'ora e la data dell'ultimo inventario hardware dal dispositivo.  
+
+- **Cronologia hardware**: contiene una cronologia degli elementi inclusi nell'inventario che sono stati modificati dall'ultima esecuzione del ciclo dell'inventario hardware.  
+
+    - Espandere un elemento per visualizzare un nodo **Corrente** e uno o più nodi con la data cronologica. Confrontare le informazioni nel nodo corrente con uno dei nodi cronologici per individuare gli elementi modificati.  
 
 > [!NOTE]  
->  Esplora inventario risorse non visualizzerà alcun inventario dati fino a quando non è eseguito un ciclo di inventario hardware nel client si connette a.  
+> Per impostazione predefinita, Configuration Manager elimina i dati di inventario hardware che sono rimasti inattivi per 90 giorni. Regolare il numero di giorni nell'attività di manutenzione del sito **Elimina cronologia inventario obsoleta**. Per ulteriori informazioni, vedere [Attività di manutenzione](/sccm/core/servers/manage/maintenance-tasks).  
 
- Esplora inventario risorse contiene le sezioni seguenti relative all'inventario hardware:  
 
--   **Hardware**: contiene l'inventario hardware più recente raccolto dal dispositivo client specificato.  **Stato workstation**: indica la data e ora dell'ultima esecuzione di un inventario hardware del dispositivo.  
 
--   **Cronologia hardware**: contiene una cronologia degli elementi inclusi nell'inventario che sono stati modificati dall'ultima esecuzione dell'inventario hardware. Ogni elemento contiene un nodo **Corrente** e uno o più nodi *<data\>*. È possibile confrontare le informazioni nel nodo corrente con uno dei nodi cronologici per individuare gli elementi modificati.  
+## <a name="bkmk_open"></a> Come aprire Esplora inventario risorse   
 
-    > [!NOTE]  
-    >  Configuration Manager mantiene una cronologia dell'inventario hardware per il numero di giorni specificato nell'attività di manutenzione del sito **Elimina cronologia inventario obsoleta**  
+1.  Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità** e selezionare il nodo **Dispositivi**. In alternativa, selezionare una raccolta nel nodo **Raccolte dispositivi**.  
 
-> [!NOTE]  
->  Per informazioni su come visualizzare l'inventario hardware dai client che eseguono Linux e UNIX, vedere [Come monitorare i client per i server Linux e UNIX in System Center Configuration Manager](../../../../core/clients/manage/monitor-clients-for-linux-and-unix-servers.md).  
+2.  Selezionare un dispositivo. Nella scheda **Home** e nel gruppo **Dispositivi** della barra multifunzione, fare clic su **Avvia** e quindi selezionare **Esplora inventario risorse**.   
 
-### <a name="how-to-run-resource-explorer-from-the-configuration-manager-console"></a>Come eseguire Esplora inventario risorse dalla console di Configuration Manager  
+> [!Tip]  
+> In Esplora inventario risorse fare clic con il pulsante destro del mouse su un elemento nel riquadro dei risultati a destra per visualizzare altre azioni. Scegliere **Proprietà** per visualizzare l'elemento in un formato diverso.  
 
-1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Dispositivi** oppure aprire qualsiasi raccolta che visualizza dispositivi.  
 
-3.  Scegliere il computer che contiene l'inventario da visualizzare e quindi nel gruppo **Dispositivi** della scheda **Home** scegliere **Avvia** >  **Esplora inventario risorse**.   
 
-4.  Fare clic con il pulsante destro del mouse su qualsiasi elemento nel riquadro di destra della finestra **Esplora inventario risorse** e quindi scegliere **Proprietà** per aprire la finestra di dialogo *<Nome elemento\>***Proprietà** che consente di visualizzare le informazioni di inventario raccolte in un formato più leggibile.  
+## <a name="bkmk_bigint"></a> Utilizzo di valori interi di grandi dimensioni
+<!--1357880--> Nelle versioni di Configuration Manager 1802 e precedenti, l'inventario hardware prevede un limite per i valori interi maggiori di 4.294.967.296 (2^32). Questo limite può essere raggiunto per attributi come le dimensioni delle unità disco rigido in byte. Il punto di gestione non elabora valori interi oltre questo limite, quindi nessun valore viene archiviato nel database. 
 
+A partire dalla versione 1806, il limite è stato aumentato a 18.446.744.073.709.551.616 (2^64). 
+
+Per una proprietà con un valore che non cambia, ad esempio le dimensioni totali del disco, il valore potrebbe non essere immediatamente visibile dopo l'aggiornamento del sito. La maggior parte dell'inventario hardware è un report delta. Il client invia solo valori che cambiano. Per risolvere questo problema, aggiungere un'altra proprietà alla stessa classe. Con questa azione, il client aggiorna tutte le proprietà nella classe modificata. 
+
+
+
+## <a name="see-also"></a>Vedere anche
+
+Per informazioni su come visualizzare l'inventario hardware dai client che eseguono Linux e UNIX, vedere [Come monitorare i client per i server Linux e UNIX](/sccm/core/clients/manage/monitor-clients-for-linux-and-unix-servers).  
+
+Esplora inventario risorse mostra anche l'inventario software. Per altre informazioni, vedere [Come usare Esplora inventario risorse per visualizzare l'inventario software](/sccm/core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory).

@@ -2,7 +2,7 @@
 title: Supporto per Windows 10
 titleSuffix: Configuration Manager
 description: Informazioni sulle versioni di Windows 10 supportate come client o per la distribuzione del sistema operativo con System Center Configuration Manager
-ms.date: 04/30/2018
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,14 +10,14 @@ ms.assetid: a1626a65-da22-49e0-9564-d2f752ea3f4b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bea7d3d0e2c4482a08473f49fbdc3916065627b7
-ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
+ms.openlocfilehash: f5aac395c71b76a0b83826e8f7c9de1e656aa884
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36260718"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39383640"
 ---
-# <a name="support-for-windows-10-in-system-center-configuration-manager"></a>Supporto per Windows 10 in System Center Configuration Manager  
+# <a name="support-for-windows-10-in-configuration-manager"></a>Supporto per Windows 10 in Configuration Manager  
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -40,14 +40,14 @@ Ad esempio, una versione di Configuration Manager viene eliminata dalla matrice 
 <br/>
 La tabella seguente elenca le versioni di Windows 10 che è possibile usare come client con versioni diverse di Configuration Manager.
 
-| Versione di Windows 10 | Configuration Manager 1706 | Configuration Manager 1710 | Configuration Manager 1802 |
-|---------------------|-----|-----|-----|
-| Enterprise 2015 LTSB            <!--10/14/2025-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| Enterprise 2016 LTSB            <!--10/13/2026-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| 1607   <br />(*vedere le edizioni*)   <!--04+6/10/2018-->   | ![Supportato](media/green_check.png) <sup>1</sup> | ![Supportato](media/green_check.png) <sup>1</sup> | ![Supportato](media/green_check.png) <sup>1</sup> |
-| 1703   <br />(*vedere le edizioni*)   <!--10+6/09/2018-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| 1709   <br />(*vedere le edizioni*)   <!--04+6/09/2019-->   | ![Compatibile con le versioni precedenti](media/blue_compat.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| 1803   <br />(*vedere le edizioni*)   <!--11/12/2019-->   | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) |
+| Versione di Windows 10 | Configuration Manager 1706 | Configuration Manager 1710 | Configuration Manager 1802 | Configuration Manager 1806 |
+|---------------------|-----|-----|-----|-----|
+| Enterprise 2015 LTSB            <!--10/14/2025-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| Enterprise 2016 LTSB            <!--10/13/2026-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| 1607   <br />(*vedere le edizioni*)   <!--04+6/10/2018-->   | ![Supportato](media/green_check.png) <sup>1</sup> | ![Supportato](media/green_check.png) <sup>1</sup> | ![Supportato](media/green_check.png) <sup>1</sup> | ![Supportato](media/green_check.png) <sup>1</sup> |
+| 1703   <br />(*vedere le edizioni*)   <!--10+6/09/2018-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| 1709   <br />(*vedere le edizioni*)   <!--04+6/09/2019-->   | ![Compatibile con le versioni precedenti](media/blue_compat.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| 1803   <br />(*vedere le edizioni*)   <!--11/12/2019-->   | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
 
 <!-- lifecycle reference: https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet -->
 
@@ -71,11 +71,11 @@ Quando si distribuiscono sistemi operativi con Configuration Manager, [Windows A
 
 La tabella seguente elenca le versioni di Windows ADK 10 che è possibile usare con versioni diverse di Configuration Manager.
 
-| Versione di Windows 10 ADK  | Configuration Manager 1706 | Configuration Manager 1710 | Configuration Manager 1802   |
-|--------------------|-----|-----|-----|
-| 1703  | ![Supportato](media/green_check.png) | ![Compatibile con le versioni precedenti](media/blue_compat.png) | ![Compatibile con le versioni precedenti](media/blue_compat.png) |
-| 1709  | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| 1803  | ![Non supportato](media/Red_X.png)   | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) |
+| Versione di Windows 10 ADK  | Configuration Manager 1706 | Configuration Manager 1710 | Configuration Manager 1802 | Configuration Manager 1806 |
+|--------------------|-----|-----|-----|-----|
+| 1703  | ![Supportato](media/green_check.png) | ![Compatibile con le versioni precedenti](media/blue_compat.png) | ![Compatibile con le versioni precedenti](media/blue_compat.png) | ![Non supportato](media/Red_X.png)   |
+| 1709  | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Compatibile con le versioni precedenti](media/blue_compat.png) |
+| 1803  | ![Non supportato](media/Red_X.png)   | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
 
 |Chiave|
 |--|

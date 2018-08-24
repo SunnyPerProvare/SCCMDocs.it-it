@@ -1,8 +1,8 @@
 ---
 title: Installare punti di distribuzione basati sul cloud
 titleSuffix: Configuration Manager
-description: Informazioni su cosa occorre fare per iniziare a usare punti di distribuzione basati sul cloud in Microsoft Azure.
-ms.date: 2/8/2017
+description: Usare questa procedura per configurare un punto di distribuzione cloud in Configuration Manager.
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,120 +10,345 @@ ms.assetid: bb83ac87-9914-4a35-b633-ad070031aa6e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2c9c79c5e635a50fecf02c46e2a134df87c2d784
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: afb32cd827a223ca9f317f2ddc96d9b176858d2d
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338415"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39385338"
 ---
-# <a name="install-cloud-based-distribution-points-in-microsoft-azure-for-system-center-configuration-manager"></a>Installare punti di distribuzione basati sul cloud in Microsoft Azure per System Center Configuration Manager
+# <a name="install-a-cloud-distribution-point-for-configuration-manager"></a>Installare un punto di distribuzione cloud per Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile installare punti di distribuzione basati sul cloud in Microsoft Azure per System Center Configuration Manager. Se non si ha familiarità con i punti di distribuzione basati sul cloud, vedere [Usare un punto di distribuzione basato sul cloud](../../../../core/plan-design/hierarchy/use-a-cloud-based-distribution-point.md) prima di continuare.
+In questo articolo è illustrata in dettaglio la procedura per installare un punto di distribuzione cloud di Configuration Manager in Microsoft Azure. Include le sezioni seguenti:
+- [Prima di iniziare](#bkmk_before) 
+- [Configurare](#bkmk_setup)
+- [Configurare DNS](#bkmk_dns)
+- [Configurare il proxy server](#bkmk_proxy)
+- [Distribuire il contenuto e configurare i client](#bkmk_client)
+- [Gestire e monitorare](#bkmk_monitor)
+- [Modificare](#bkmk_modify)
+- [Risoluzione dei problemi avanzata](#bkmk_tshoot) 
 
- Prima di iniziare l'installazione, verificare di avere i file di certificato richiesti:  
-
--   Un certificato di gestione Microsoft Azure esportato in un file CER e in un file PFX.  
-
--   Un certificato di servizio del punto di distribuzione basato sul cloud di Configuration Manager esportato in un file con estensione pfx.  
-
-    > [!TIP]
-    >   Per altre informazioni su questi certificati, vedere la sezione relativa ai punti di distribuzione basati sul cloud nell'argomento [PKI certificate requirements for System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md) (Requisiti dei certificati PKI per System Center Configuration Manager). Per un esempio di distribuzione del certificato di servizio del punto di distribuzione basato sul cloud, vedere la sezione "Distribuzione del certificato di servizio per i punti di distribuzione basati su cloud" in [Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
 
- Al termine dell'installazione del punto di distribuzione basato sul cloud, Azure genera automaticamente un GUID per il servizio e lo aggiunge al suffisso DNS di **cloudapp.net**. Se si usa questo GUID, è necessario configurare DNS con un alias DNS (record CNAME). Ciò consente di effettuare il mapping del nome servizio definito nel certificato di servizio del punto di distribuzione basato sul cloud di Configuration Manager al GUID generato automaticamente.  
+## <a name="bkmk_before"></a> Prima di iniziare
 
- Se si utilizza un server Web proxy, potrebbe essere necessario configurare le impostazioni proxy per abilitare la comunicazione con il servizio cloud che ospita il punto di distribuzione.  
+Per iniziare, leggere l'articolo [Usare un punto di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point), in cui viene descritto come pianificare e progettare i punti di distribuzione cloud. 
 
-##  <a name="BKMK_ConfigWindowsAzureandInstallDP"></a> Configurare Azure e installare punti di distribuzione basati sul cloud  
- Usare le procedure seguenti per configurare Azure per il supporto dei punti di distribuzione, quindi installare il punto di distribuzione basato sul cloud in Configuration Manager.  
+Usare l'elenco di controllo seguente per assicurarsi di avere le informazioni e i prerequisiti necessari per la creazione di un punto di distribuzione cloud:  
 
-### <a name="to-set-up-a-cloud-service-in-azure-for-a-distribution-point"></a>Per configurare un servizio cloud in Azure per un punto di distribuzione  
+- Il server del sito può connettersi ad Azure. Se la rete usa un proxy, [configurare il ruolo del sistema del sito](#bkmk_proxy).  
 
-1.  Aprire un Web browser, passare al portale di Azure all'indirizzo https://manage.windowsazure.com e accedere al proprio account.  
+- **Ambiente Azure** da usare. Ad esempio il cloud pubblico di Azure o il cloud di Azure Governo degli Stati Uniti.  
 
-2.  Fare clic su **Servizi ospitati, account di archiviazione e CDN** e quindi selezionare **Certificati di gestione**.  
+- A partire dalla versione 1806 e come *scelta consigliata*, se si intende usare la **distribuzione di Azure Resource Manager**, è necessario soddisfare i requisiti seguenti:<!--1322209-->  
 
-3.  Fare clic con il pulsante destro del mouse sulla sottoscrizione, quindi selezionare **Aggiungi certificato**.  
+    - Integrazione con [Azure Active Directory](/sccm/core/servers/deploy/configure/azure-services-wizard) per **Gestione cloud**. L'individuazione utenti di Azure AD non è necessaria.  
 
-4.  Per **File di certificato** specificare il file CER contenente il certificato di gestione di Azure esportato da usare per questo servizio cloud, quindi fare clic su **OK**.  
+    - **ID sottoscrizione** di Azure.  
 
-Quando il certificato di gestione viene caricato in Azure è possibile installare un punto di distribuzione basato sul cloud.  
+    - **Gruppo di risorse** di Azure.  
 
-### <a name="to-install-a-cloud-based-distribution-point-for-configuration-manager"></a>Per installare un punto di distribuzione basato sul cloud per Configuration Manager  
+    - Durante la procedura guidata un **account amministratore della sottoscrizione** deve eseguire l'accesso.  
 
-1.  Completare i passaggi della procedura precedente per configurare un servizio cloud in Azure con un certificato di gestione.  
+- Se si intende usare la **distribuzione classica del servizio** di Azure, è necessario soddisfare i requisiti seguenti:  
 
-2.  Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e selezionare **Punti di distribuzione del cloud**. Nella scheda **Home** fare clic su **Crea punto di distribuzione cloud**.  
+    - **ID sottoscrizione** di Azure.  
 
-3.  Nella pagina **Generale** della creazione guidata del punto di distribuzione cloud, configurare quanto segue:  
+    - Un **certificato di gestione** di Azure, esportato come file CER e PFX. Un amministratore della sottoscrizione di Azure deve aggiungere il certificato di gestione CER alla sottoscrizione nel [portale di Azure](https://portal.azure.com).  
 
-    -   Specificare l'**ID sottoscrizione** per l'account di Azure.  
+- Un **certificato di autenticazione server**, esportato come file PFX.  
 
-        > [!TIP]  
-        >  L'ID sottoscrizione di Azure è reperibile nel portale di Azure.  
+- Un **nome di servizio** univoco globale per il punto di distribuzione cloud.  
 
-    -   Specificare il **Certificato di gestione**. Fare clic su **Sfoglia** per specificare il file PFX contenente il certificato di gestione di Azure esportato, quindi immettere la password per il certificato. Facoltativamente, è possibile specificare un file PUBLISHSETTINGS versione 1 di Azure SDK 1.7.  
+    > [!TIP]  
+    > Prima di richiedere il certificato di autenticazione server che usa questo nome di servizio, verificare che il nome di dominio di Azure desiderato sia univoco, ad esempio *WallaceFalls.CloudApp.Net*. Accedere al [portale di Microsoft Azure](https://portal.azure.com). Fare clic su **Crea una risorsa**, selezionare la categoria **Calcolo**, quindi fare clic su **Servizio cloud**. Digitare un prefisso nel campo **Nome DNS**, ad esempio *WallaceFalls*. L'interfaccia indica se il nome di dominio è disponibile o se è già in uso in un altro servizio. Non creare il servizio nel portale, ma usare questo processo solo per verificare la disponibilità del nome.  
+ 
+- **Area** di Azure per questa distribuzione.  
 
-4.  Fare clic su **Avanti**. Configuration Manager si connette ad Azure per la convalida del certificato di gestione.  
 
-5.  Indicare quanto segue nella pagina **Impostazioni** e quindi fare clic su **Avanti**:  
 
-    -   Per **Area** selezionare l'area di Azure in cui si vuole creare il servizio cloud che ospita il punto di distribuzione.  
+##  <a name="bkmk_setup"></a> Configurare   
 
-    -   Per **File di certificato** specificare il file PFX contenente il certificato esportato per il servizio del punto di distribuzione basato sul cloud di Configuration Manager. Immettere la password.  
+Eseguire questa procedura nel sito per ospitare il punto di distribuzione cloud, come stabilito nella [progettazione](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#bkmk_topology).  
+
+1.  Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Servizi cloud** e selezionare **Punti di distribuzione del cloud**. Nella barra multifunzione fare clic su **Crea punto di distribuzione cloud**.  
+
+2.  Nella pagina **Generale** della procedura guidata per la creazione del punto di distribuzione cloud, configurare le impostazioni seguenti:  
+
+    a. Specificare prima l'**ambiente di Azure**.  
+
+    b. Scegliere il metodo di distribuzione di Azure e quindi configurare le impostazioni associate.  
+
+       - **Distribuzione di Azure Resource Manager** (a partire dalla versione 1806 e come *scelta consigliata*): fare clic su **Accedi** per eseguire l'autenticazione con un account amministratore della sottoscrizione di Azure. La procedura guidata compila automaticamente i campi rimanenti in base alle informazioni archiviate durante il prerequisito di integrazione di Azure AD. Se si hanno più sottoscrizioni, selezionare l'**ID sottoscrizione** di quella che si vuole usare.  
+
+       - **Distribuzione classica del servizio** (e in versioni di Configuration Manager precedenti alla 1802): immettere l'**ID sottoscrizione** di Azure. Quindi fare clic su **Sfoglia** e selezionare il file con estensione pfx del certificato di gestione di Azure.  
+
+3.  Fare clic su **Avanti**. Attendere che il sito completi il test della connessione ad Azure.  
+
+4.  Nella pagina **Impostazioni** specificare le impostazioni seguenti e quindi fare clic su **Avanti**:  
+
+    - **Area**: selezionare l'area di Azure in cui si vuole creare il punto di distribuzione cloud.  
+
+    - **Gruppo di risorse** (solo metodo di distribuzione di Azure Resource Manager)  
+
+        - **Usa esistente**: selezionare un gruppo di risorse esistente nell'elenco a discesa.  
+
+        - **Crea nuovo**: immettere il nome del nuovo gruppo di risorse da creare nella sottoscrizione di Azure.  
+
+    - **Sito primario**: selezionare il sito primario per distribuire contenuto in questo punto di distribuzione.
+
+    - **File di certificato**: fare clic su **Sfoglia** e selezionare il file PFX per il certificato di autenticazione server di questo punto di distribuzione cloud. Il nome comune di questo certificato popola i campi obbligatori **FQDN servizio** e **Nome servizio**.  
 
         > [!NOTE]  
-        >  La casella **FQDN servizio** viene compilata automaticamente con il nome del soggetto certificato. Nella maggior parte dei casi non è necessario modificarla. L'eccezione è se si usa un certificato con caratteri jolly in un ambiente di testing. Ad esempio, in questo caso si può non specificare il nome host, in modo che più computer con lo stesso suffisso DNS possano usare il certificato. In questo scenario, il soggetto certificato contiene un valore simile a **CN=\*.contoso.com** e Configuration Manager visualizza un messaggio per indicare che è necessario specificare l'FQDN corretto. Fare clic su **OK** per chiudere il messaggio, quindi immettere un nome specifico prima del suffisso DNS per fornire un FQDN completo. È ad esempio possibile aggiungere **clouddp1** per specificare l'FQDN servizio completo di **clouddp1.contoso.com**. L'FQDN del servizio deve essere univoco nel dominio e non corrispondere a qualsiasi dispositivo aggiunto al dominio.  
-        >   
-        >  I certificati con caratteri jolly sono supportati solo per ambienti di testing.  
+        > Il certificato di autenticazione server del punto di distribuzione cloud supporta i caratteri jolly. Se si usa un certificato con caratteri jolly, sostituire l'asterisco (*) nel campo **FQDN servizio** con il nome host desiderato per il servizio.  
 
-6.  Nella pagina **Avvisi** impostare le quote di archiviazione, le quote di trasferimento e la percentuale delle quote necessaria affinché Configuration Manager generi gli avvisi. Fare quindi clic su **Avanti**.  
+5. Nella pagina **Avvisi** impostare le quote di archiviazione, le quote di trasferimento e la percentuale delle quote necessaria affinché Configuration Manager generi gli avvisi. Fare quindi clic su **Avanti**.  
 
-7.  Completare la procedura guidata.  
+6. Completare la procedura guidata.  
 
-Questa procedura guidata consente di creare un nuovo servizio ospitato per il punto di distribuzione basato sul cloud. Al termine della procedura guidata, è possibile monitorare l'avanzamento dell'installazione del punto di distribuzione basato sul cloud nella console di Configuration Manager. È anche possibile monitorare il file **CloudMgr.log** sul server del sito primario. È possibile monitorare il provisioning del servizio cloud nel portale di gestione di Azure.  
+
+### <a name="monitor-installation"></a>Monitorare l'installazione  
+
+Il sito inizia a creare un nuovo servizio ospitato per il punto di distribuzione cloud. Al termine della procedura guidata, monitorare l'avanzamento dell'installazione del punto di distribuzione cloud nella console di Configuration Manager. Monitorare anche il file **CloudMgr.log** nel server del sito primario. Se necessario, monitorare il provisioning del servizio cloud nel portale di Azure.  
 
 > [!NOTE]  
->  Il provisioning di un nuovo punto di distribuzione in Azure può richiedere fino a 30 minuti. Fino a quando non viene eseguito il provisioning dell'account di archiviazione, nel file **CloudMgr.log** viene ripetuto il messaggio seguente: **Waiting for check if container exists (In attesa della verifica dell'esistenza del contenitore). Nuova verifica tra 10 secondi**. Il servizio viene quindi creato e configurato.  
+>  Il provisioning di un nuovo punto di distribuzione in Azure può richiedere fino a 30 minuti. Il file **CloudMgr.log** ripete il messaggio seguente finché non viene eseguito il provisioning dell'account di archiviazione:  
+> `Waiting for check if container exists. Will check again in 10 seconds`  
+> Dopo il provisioning dell'account di archiviazione, il servizio viene creato e configurato.  
 
- È possibile verificare il completamento dell'installazione del punto di distribuzione basato sul cloud utilizzando i seguenti metodi:  
 
--   Nel portale di Azure la **Distribuzione** per il punto di distribuzione basato sul cloud visualizza lo stato **Pronto**.  
+### <a name="verify-installation"></a>Verificare l'installazione
 
--   Nella console di Configuration Manager, area di lavoro **Amministrazione**, **Configurazione della gerarchia**, nodo **Cloud**, il punto di distribuzione basato sul cloud visualizza lo stato **Pronto**.  
+Usare i metodi seguenti per verificare il completamento dell'installazione del punto di distribuzione cloud:  
 
--   Configuration Manager visualizza l'ID messaggio di stato **9409** per il componente SMS_CLOUD_SERVICES_MANAGER.  
+- Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**. Espandere **Servizi cloud** e selezionare il nodo **Punti di distribuzione del cloud**. Individuare il nuovo punto di distribuzione cloud nell'elenco. Il valore nella colonna Stato dovrebbe essere **Pronto**.  
 
-##  <a name="BKMK_ConfigDNSforCloudDPs"></a> Impostare la risoluzione dei nomi per i punti di distribuzione basati sul cloud  
- Per poter accedere al punto di distribuzione basato sul cloud, i client devono essere in grado di risolverne il nome in un indirizzo IP gestito da Azure. I client effettuano questa operazione in due fasi:  
+- Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio**. Espandere **Stato del sistema** e selezionare il nodo **Stato componente**. Visualizzare tutti i messaggi del componente **SMS_CLOUD_SERVICES_MANAGER** e cercare l'ID messaggio di stato **9409**.  
 
-1.  Eseguono il mapping del nome del servizio indicato con il certificato di servizio del punto di distribuzione basato sul cloud di Configuration Manager nell'FQDN del servizio Azure. Questo FQDN contiene un GUID e il suffisso DNS di **cloudapp.net**. Il GUID viene generato automaticamente dopo l'installazione del punto di distribuzione basato su cloud. È possibile visualizzare l'FQDN completo nel portale di Azure, facendo riferimento all'**URL SITO** nel dashboard del servizio cloud. Un esempio di URL del sito è **http://d1594d4527614a09b934d470.cloudapp.net**.  
+- Se necessario, passare al portale di Azure. Nel portale di Azure lo stato visualizzato della **Distribuzione** per il punto di distribuzione cloud è **Pronto**.  
 
-2.  Risolvono l'FQDN del servizio Azure nell'indirizzo IP allocato da Azure. Tale indirizzo IP può essere inoltre individuato nel dashboard per il servizio cloud nel portale di Azure ed è denominato **INDIRIZZO IP VIRTUALE (VIP) PUBBLICO**.  
 
-Per eseguire il mapping del nome del servizio specificato con il certificato di servizio del punto di distribuzione basato sul cloud di Configuration Manager (ad esempio **clouddp1.contoso.com**) nell'FQDN del servizio Azure (ad esempio **d1594d4527614a09b934d470.cloudapp.net**), i server DNS su Internet devono avere un alias DNS (record CNAME). I client possono quindi risolvere l'FQDN del servizio Azure nell'indirizzo IP usando i server DNS su Internet.  
 
-##  <a name="BKMK_ConfigProxyforCloud"></a> Specificare le impostazioni proxy per i siti primari che gestiscono servizi cloud  
- Quando si usano servizi cloud con Configuration Manager, il sito primario che gestisce il punto di distribuzione basato sul cloud deve essere in grado di connettersi al portale di Azure. Il sito si connette usando l'account **di sistema** del computer del sito primario. Questa connessione viene effettuata utilizzando il browser Web predefinito sul computer del server del sito primario.  
+##  <a name="bkmk_dns"></a> Configurare DNS  
 
- Può essere necessario specificare le impostazioni proxy sul server del sito primario che gestisce il punto di distribuzione basato sul cloud per consentire al sito primario di accedere a Internet e Azure.  
+Per poter usare il punto di distribuzione cloud, i client devono essere in grado di risolverne il nome in un indirizzo IP gestito da Azure. Il punto di gestione fornisce ai client il **FQDN servizio** del punto di distribuzione cloud. Il punto di distribuzione cloud è presente in Azure come **Nome servizio**. Visualizzare questi valori nella scheda **Impostazioni** delle proprietà del punto di distribuzione cloud. 
 
- Usare la procedura seguente per specificare le impostazioni proxy per il server del sito primario nella console di Configuration Manager.  
+> [!Note]  
+> Il nodo **Punti di distribuzione del cloud** nella console include una colonna denominata **Nome servizio**, che in realtà mostra il valore di **FQDN servizio**. Per visualizzare entrambi i valori, aprire **Proprietà** per il punto di distribuzione cloud e passare alla scheda **Impostazioni**.  
 
-> [!TIP]  
->  È anche possibile impostare il server proxy quando si installano nuovi ruoli del sistema del sito sul server del sito primario con l'**Aggiunta guidata ruoli del sistema del sito**.  
+<!-- Remove based on feedback from RoYork
+If you issue the server authentication certificate from your PKI, you may directly specify the Azure **Service name**. For example, `WallaceFalls.cloudapp.net`. When you specify this certificate in the Create Cloud Distribution Point Wizard, both the **Service FQDN** and **Service name** properties are the same. In this scenario, you don't need to configure DNS. The name that clients receive from the management point is the same name as the service in Azure.  
+-->
 
-#### <a name="to-set-up-proxy-settings-for-the-primary-site-server"></a>Per specificare le impostazioni proxy per il server del sito primario  
+Il nome comune del certificato di autenticazione server deve includere il nome di dominio. Tale nome è obbligatorio quando si acquista un certificato da un provider pubblico. È consigliato quando il certificato viene rilasciato da PKI, ad esempio `WallaceFalls.contoso.com`. Quando si specifica questo certificato in Crea procedura guidata punto di distribuzione cloud, in **FQDN servizio** viene inserito il nome comune (`WallaceFalls.contoso.com`). In **Nome servizio** viene accettato lo stesso nome host (`WallaceFalls`), che viene aggiunto al nome di dominio di Azure `cloudapp.net`. In questo scenario i client devono risolvere la proprietà **FQDN servizio** del dominio (`WallaceFalls.contoso.com`) nella proprietà **Nome servizio** di Azure (`WallaceFalls.cloudapp.net`). Creare un alias CNAME per eseguire il mapping di questi nomi.
 
-1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Configurazione del sito**e quindi fare clic su **Server e ruoli del sistema del sito**. Selezionare quindi il server del sito primario che gestisce il punto di distribuzione basato sul cloud.  
+### <a name="create-cname-alias"></a>Creare l'alias CNAME
 
-3.  Nel riquadro dei dettagli fare clic con il pulsante destro del mouse su **Sistema del sito**, quindi fare clic su **Proprietà**.  
+Creare un record di nome canonico (CNAME) nel DNS pubblico con connessione Internet dell'organizzazione. Questo record crea un alias per la proprietà **FQDN servizio** del punto di distribuzione cloud ricevuta dai client nella proprietà **Nome servizio** di Azure. Creare, ad esempio, un nuovo record CNAME per `WallaceFalls.contoso.com` in `WallaceFalls.cloudapp.net`.  
 
-4.  In **Proprietà sistema del sito** selezionare la scheda **Proxy** e quindi specificare le impostazioni proxy per il server del sito primario.  
 
-5.  Fare clic su **OK** per salvare le impostazioni.  
+### <a name="client-name-resolution-process"></a>Processo di risoluzione del nome client
+
+Il processo seguente illustra in che modo un client risolve il nome del punto di distribuzione cloud:  
+
+1. Il client ottiene il valore di **FQDN servizio** del punto di distribuzione cloud nell'elenco delle origini di contenuto, ad esempio `WallaceFalls.contoso.com`.  
+
+2. Interroga DNS, che risolve il FQDN servizio usando il nome CNAME nel **Nome servizio**  di Azure, ad esempio `WallaceFalls.cloudapp.net`.  
+
+3. Interroga di nuovo DNS, che risolve il nome servizio di Azure nell'indirizzo IP pubblico di Azure.   
+
+4. Il client usa questo indirizzo IP per avviare le comunicazioni con il punto di distribuzione cloud.   
+
+5. Il punto di distribuzione cloud presenta il certificato di autenticazione server al client. Il client usa la catena di certificati del certificato da convalidare.  
+
+
+
+## <a name="bkmk_proxy"></a> Configurare il proxy server  
+
+Il server del sito primario che gestisce il punto di distribuzione cloud deve comunicare con Azure. Se l'organizzazione usa un server proxy per controllare l'accesso a Internet, configurare il server del sito primario per l'uso di questo proxy.   
+
+Per altre informazioni, vedere [Supporto dei server proxy](/sccm/core/plan-design/network/proxy-server-support).  
+
+
+
+## <a name="bkmk_client"></a> Distribuire il contenuto e configurare i client
+
+Distribuire il contenuto nel punto di distribuzione cloud in modo analogo a qualsiasi altro punto di distribuzione locale. Il punto di gestione non include il punto di distribuzione cloud nell'elenco dei percorsi di contenuto a meno che non includa il contenuto richiesto dai client. Per altre informazioni, vedere [Distribuire e gestire contenuto](/sccm/core/servers/deploy/configure/deploy-and-manage-content). 
+
+Gestire un punto di distribuzione cloud in modo analogo a qualsiasi altro punto di distribuzione locale. Queste azioni includono l'assegnazione del punto a un gruppo di punti di distribuzione e la gestione dei pacchetti di contenuto. Per altre informazioni, vedere [Installare e configurare i punti di distribuzione](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points).
+
+Con le impostazioni client predefinite i client vengono abilitati automaticamente all'uso dei punti di distribuzione cloud. Per controllare l'accesso a tutti i punti di distribuzione cloud nella gerarchia, usare le impostazioni client seguenti:  
+
+   - Nel gruppo **Impostazioni cloud** modificare l'impostazione **Consentire accesso al punto di distribuzione cloud**.  
+
+       - Per impostazione predefinita, il valore di questa impostazione è **Sì**.  
+
+       - Modificare e distribuire questa impostazione per utenti e dispositivi.  
+
+
+
+## <a name="bkmk_monitor"></a> Gestire e monitorare  
+
+Monitorare il contenuto distribuito in un punto di distribuzione cloud in modo analogo a qualsiasi altro punto di distribuzione locale. Per altre informazioni, vedere [Monitorare il contenuto distribuito](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed). 
+
+### <a name="bkmk_alerts"></a> Avvisi  
+
+Configuration Manager controlla periodicamente il servizio di Azure. Se il servizio non è attivo o se sono presenti problemi relativi al certificato o alla sottoscrizione, Configuration Manager genera un avviso. 
+
+Configurare le soglie per la quantità di dati da archiviare nel punto di distribuzione cloud e per la quantità di dati che si vuole far scaricare ai client dal punto di distribuzione. Usare gli avvisi per queste soglie che consentono di decidere quando arrestare o eliminare il servizio cloud, regolare il contenuto archiviato nel punto di distribuzione cloud o modificare i client che possono usare il servizio. 
+
+- **Soglia di avviso di archiviazione**: consente di impostare un limite massimo in GB per la quantità di dati o il contenuto da archiviare nel punto di distribuzione cloud. Per impostazione predefinita, questa soglia è pari a 2.000 GB. Configuration Manager genera avvisi e avvisi critici quando lo spazio libero rimanente raggiunge i livelli specificati. Per impostazione predefinita, questi avvisi vengono generati al 50% e al 90% della soglia.  
+
+- **Soglia di avviso del trasferimento mensile**: consente di monitorare la quantità di contenuto trasferita dal punto di distribuzione ai client per un periodo di 30 giorni. Per impostazione predefinita, questa soglia è pari a 10.000 GB. Il sito genera avvisi ed avvisi critici avvisi quando i trasferimenti raggiungono i valori definiti. Per impostazione predefinita, questi avvisi vengono generati al 50% e al 90% della soglia.  
+
+    > [!IMPORTANT]  
+    >  Configuration Manager monitora il trasferimento dei dati, ma non lo interrompe quando viene superata la soglia di avviso di trasferimento specificata.  
+
+Specificare le soglie per ogni punto di distribuzione cloud durante l'installazione oppure usare la scheda **Avvisi** delle proprietà del punto di distribuzione cloud.  
+
+> [!NOTE]  
+>  Gli avvisi per un punto di distribuzione cloud dipendono dalle statistiche di utilizzo di Azure, che possono richiedere fino a 24 ore per diventare disponibili. Per altre informazioni su Analisi archiviazione per Azure, vedere [Storage Analytics](https://docs.microsoft.com/rest/api/storageservices/storage-analytics) (Analisi archiviazione).  
+
+In un ciclo orario il sito primario che monitora il punto di distribuzione cloud scarica i dati delle transazioni da Azure e li archivia nel file `CloudDP-<ServiceName>.log` nel server del sito. Configuration Manager valuta quindi queste informazioni in rapporto alle quote di trasferimento e archiviazione per ogni punto di distribuzione cloud. Quando il trasferimento dei dati raggiunge o supera il volume specificato per gli avvisi o gli avvisi critici, Configuration Manager genera l'avviso appropriato.  
+
+> [!WARNING]  
+>  Dal momento che il sito scarica le informazioni sui trasferimenti dei dati da Azure ogni ora, l'utilizzo di tali dati potrebbe superare una soglia di avviso o critica prima che Configuration Manager possa accedere ai dati e generare un avviso.  
+
+
+
+## <a name="bkmk_modify"></a> Modificare
+
+È possibile visualizzare informazioni di carattere generale sul punto di distribuzione nel nodo **Punti di distribuzione del cloud** in **Servizi cloud** nell'area di lavoro **Amministrazione** della console di Configuration Manager. Selezionare un punto di distribuzione e fare clic su **Proprietà** per visualizzare maggiori dettagli.  
+
+Quando si modificano le proprietà di un punto di distribuzione cloud, è possibile modificare i valori seguenti:  
+
+- Scheda **Impostazioni**:  
+
+    - **Descrizione**  
+
+    - **File di certificato**: prima della scadenza del certificato di autenticazione server, rilasciare un nuovo certificato con lo stesso nome comune. Aggiungere quindi qui il nuovo certificato per iniziare a usare il servizio. Se il certificato scade, i client non considerano attendibile il servizio e non lo usano.  
+
+- Scheda **Avvisi**: consente di regolare le soglie dei dati per gli avvisi relativi all'archiviazione e ai trasferimenti mensili.  
+
+- Scheda **Contenuto**: consente di gestire il contenuto in modo analogo a un punto di distribuzione locale.  
+
+Altre modifiche significative, ad esempio le configurazioni seguenti, richiedono la ridistribuzione del servizio:
+- Metodo di distribuzione classico ad Azure Resource Manager
+- Sottoscrizione
+- Nome del servizio
+- PKI da privato a pubblico
+- Area di Azure
+
+A partire dalla versione 1806, se è presente un punto di distribuzione cloud esistente nel metodo distribuzione classico, per poter usare il metodo di distribuzione di Azure Resource Manager è necessario distribuire un nuovo punto di distribuzione cloud. Sono disponibili due opzioni:
+
+- Per riusare lo stesso nome di servizio:  
+
+    1. Eliminare prima il punto di distribuzione cloud classico. Se non esiste un altro punto di distribuzione cloud, è possibile che i client non riescano a ottenere il contenuto.  
+
+    2. Creare un nuovo punto di distribuzione cloud usando una distribuzione Resource Manager. Riusare lo stesso certificato di autenticazione server.  
+
+    3. Distribuire il contenuto del pacchetto software necessario nel nuovo punto di distribuzione cloud.  
+
+- Per usare un nuovo nome del servizio:  
+
+    1. Creare un nuovo punto di distribuzione cloud usando una distribuzione Resource Manager. Usare un nuovo certificato di autenticazione server.  
+
+    2. Distribuire il contenuto del pacchetto software necessario nel nuovo punto di distribuzione cloud.  
+
+    3. Eliminare il punto di distribuzione cloud classico.
+
+
+### <a name="stop-or-start-the-cloud-service-on-demand"></a>Arrestare o avviare il servizio cloud su richiesta
+
+Arrestare un punto di distribuzione cloud in qualsiasi momento nella console di Configuration Manager. Questa azione impedisce immediatamente ai client di scaricare contenuto aggiuntivo dal servizio. Riavviare il servizio cloud dalla console di Configuration Manager per ripristinare l'accesso per i client. Arrestare un servizio cloud, ad esempio, quando viene raggiunta una soglia dei dati.  
+
+Quando si arresta un punto di distribuzione cloud, il servizio cloud non elimina il contenuto dall'account di archiviazione, né impedisce al server del sito di trasferire contenuto aggiuntivo al punto di distribuzione cloud. Il punto di gestione restituisce comunque il punto di distribuzione cloud ai client come origine di contenuto valida. 
+
+Usare la procedura seguente per arrestare un punto di distribuzione cloud:  
+
+1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**. Espandere **Servizi cloud** e selezionare il nodo **Punti di distribuzione del cloud**.  
+
+2. Selezionare il punto di distribuzione cloud. Per arrestare il servizio cloud eseguito in Azure, fare clic su **Arresta servizio**.  
+
+3. Fare clic su **Avvia servizio** per riavviare il punto di distribuzione cloud.  
+
+
+### <a name="delete-a-cloud-distribution-point"></a>Eliminare un punto di distribuzione cloud
+
+Per disinstallare un punto di distribuzione cloud, selezionare il punto di distribuzione nella console di Configuration Manager e quindi scegliere **Elimina**.  
+
+Quando un punto di distribuzione cloud viene eliminato da una gerarchia, Configuration Manager rimuove il contenuto dal servizio cloud in Azure. 
+
+La rimozione manuale di componenti in Azure crea incoerenze nel sistema. Questo stato produce dati orfani e può dare origine a comportamenti imprevisti.
+
+
+
+## <a name="bkmk_tshoot"></a> Risoluzione dei problemi avanzata
+
+Se è necessario raccogliere la registrazione diagnostica da macchine virtuali di Azure per facilitare la risoluzione dei problemi relativi al punto di distribuzione cloud, usare l'esempio di PowerShell seguente per abilitare l'estensione di diagnostica del servizio per la sottoscrizione:<!--514275-->  
+
+``` PowerShell
+# Change these variables for your Azure environment. The current values are provided as examples. You can find the values for these from the Azure portal.
+$storage_name="4780E38368358502‬‭23C071" # The name of the storage account that goes with the CloudDP
+$key="3jSyvMssuTyAyj5jWHKtf2bV5JF^aDN%z%2g*RImGK8R4vcu3PE07!P7CKTbZhT1Sxd3l^t69R8Cpsdl1xhlhZtl" # The storage access key from the Storage Account view
+$service_name="4780E38368358502‬‭23C071" # The name of the cloud service for the CloudDP, which for a Cloud DP is the same as the storage name
+$azureSubscriptionName="8ba1cb83-84a2-457e-bd37-f78d2dd371ee" # The subscription name the tenant is using 
+$subscriptionId="8ba1cb83-84a2-457e-bd37-f78d2dd371ee" # The subscription ID the tenant is using 
+
+# This variable is the path to the config file on the local computer.
+$public_config="F:\PowerShellDiagFile\diagnostics.wadcfgx"
+
+# These variables are for the Azure management certificate. Install it in the Current User certificate store on the system running this script. 
+$thumbprint="dac9024f54d8f6df94935fb1732638ca6ad77c13" # The thumbprint of the Azure management certificate 
+$mycert = Get-Item cert:\\CurrentUser\My\$thumbprint
+
+Set-AzureSubscription -SubscriptionName $azureSubscriptionName -SubscriptionId $subscriptionId -Certificate $mycert
+
+Select-AzureSubscription $azureSubscriptionName
+
+Set-AzureServiceDiagnosticsExtension -StorageAccountName $storage_name -StorageAccountKey $key -DiagnosticsConfigurationPath $public_config –ServiceName $service_name -Slot 'Production' -Verbose
+```
+
+
+L'esempio seguente è un file **diagnostics.wadcfgx** di esempio cui viene fatto riferimento nella variabile **public_config** nello script di PowerShell precedente. Per altre informazioni, vedere [Versioni e cronologia degli schemi di configurazione dell'estensione di Diagnostica di Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics-schema).  
+
+``` XML
+<?xml version="1.0" encoding="utf-8"?>
+<PublicConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
+  <WadCfg>
+    <DiagnosticMonitorConfiguration overallQuotaInMB="4096">
+      <Directories scheduledTransferPeriod="PT1M">
+        <IISLogs containerName ="wad-iis-logfiles" />
+        <FailedRequestLogs containerName ="wad-failedrequestlogs" />
+      </Directories>
+      <WindowsEventLog scheduledTransferPeriod="PT1M">
+        <DataSource name="Application!*" />
+      </WindowsEventLog>
+      <Logs scheduledTransferPeriod="PT1M" scheduledTransferLogLevelFilter="Information" />
+      <CrashDumps dumpType="Full">
+        <CrashDumpConfiguration processName="WaAppAgent.exe" />
+        <CrashDumpConfiguration processName="WaIISHost.exe" />
+        <CrashDumpConfiguration processName="WindowsAzureGuestAgent.exe" />
+        <CrashDumpConfiguration processName="WaWorkerHost.exe" />
+        <CrashDumpConfiguration processName="DiagnosticsAgent.exe" />
+        <CrashDumpConfiguration processName="w3wp.exe" />
+      </CrashDumps>
+      <PerformanceCounters scheduledTransferPeriod="PT1M">
+        <PerformanceCounterConfiguration counterSpecifier="\Memory\Available MBytes" sampleRate="PT3M" />
+        <PerformanceCounterConfiguration counterSpecifier="\Web Service(_Total)\ISAPI Extension Requests/sec" sampleRate="PT3M" />
+        <PerformanceCounterConfiguration counterSpecifier="\Web Service(_Total)\Bytes Total/Sec" sampleRate="PT3M" />
+        <PerformanceCounterConfiguration counterSpecifier="\ASP.NET Applications(__Total__)\Requests/Sec" sampleRate="PT3M" />
+        <PerformanceCounterConfiguration counterSpecifier="\ASP.NET Applications(__Total__)\Errors Total/Sec" sampleRate="PT3M" />
+        <PerformanceCounterConfiguration counterSpecifier="\ASP.NET\Requests Queued" sampleRate="PT3M" />
+        <PerformanceCounterConfiguration counterSpecifier="\ASP.NET\Requests Rejected" sampleRate="PT3M" />
+        <PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)\% Processor Time" sampleRate="PT3M" />
+      </PerformanceCounters>
+    </DiagnosticMonitorConfiguration>
+  </WadCfg>
+</PublicConfig>
+```
+

@@ -2,7 +2,7 @@
 title: Concetti di base della gestione dei contenuti
 titleSuffix: Configuration Manager
 description: È possibile usare gli strumenti e le opzioni di Configuration Manager per gestire il contenuto da distribuire.
-ms.date: 06/15/2018
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,18 +10,18 @@ ms.assetid: c201be2a-692c-4d67-ac95-0a3afa5320fe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4419a563a65ab9d98a76dcf58b48ae00e0763dab
-ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
+ms.openlocfilehash: a8f4d93c7bfa73b04ed2c760db17b27e8f1f6de2
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36260735"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39385259"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Concetti di base per la gestione dei contenuti in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Configuration Manager supporta un solido sistema di strumenti e opzioni per gestire i contenuti distribuiti, ad esempio distribuzioni di applicazioni, pacchetti, aggiornamenti software e sistemi operativi. Configuration Manager archivia il contenuto sia sui server del sito che sui punti di distribuzione. Questo contenuto richiede una grande quantità di larghezza di banda di rete durante il trasferimento tra i percorsi. Per pianificare e usare efficacemente l'infrastruttura di gestione dei contenuti, è consigliabile comprendere le opzioni disponibili e le configurazioni. Quindi valutare come usarle per adattare al meglio l'ambiente di rete e le esigenze di distribuzione del contenuto.  
+Configuration Manager supporta un solido sistema di strumenti e opzioni per gestire i contenuti software, necessari per tutte le distribuzioni di software, quali applicazioni, pacchetti, aggiornamenti software e distribuzioni del sistema operativo. Configuration Manager archivia il contenuto sia sui server del sito che sui punti di distribuzione. Questo contenuto richiede una grande quantità di larghezza di banda di rete durante il trasferimento tra i percorsi. Per pianificare e usare efficacemente l'infrastruttura di gestione dei contenuti, è opportuno conoscere prima le opzioni e le configurazioni disponibili. Quindi valutare come usarle per adattare al meglio l'ambiente di rete e le esigenze di distribuzione del contenuto.  
 
 > [!TIP]    
 > Per ulteriori informazioni sul processo di distribuzione del contenuto e per informazioni sulla diagnosi e la risoluzione dei problemi di distribuzione del contenuto generale, vedere [Comprensione e risoluzione dei problemi di distribuzione del contenuto in Configuration Manager](https://support.microsoft.com/help/4000401/content-distribution-in-mcm).
@@ -41,7 +41,7 @@ Di seguito sono riportati gli argomenti che rappresentano i concetti di base per
 
 -   **Account di connessione multicast**: usato per le distribuzioni del sistema operativo.  
 
-Per altre informazioni sugli account, vedere [Gestire gli account per l'accesso al contenuto](../../../core/plan-design/hierarchy/manage-accounts-to-access-content.md).
+Per altre informazioni sugli account, vedere [Gestire gli account per l'accesso al contenuto](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content).
 
 
 
@@ -59,11 +59,11 @@ Per altre informazioni sugli account, vedere [Gestire gli account per l'accesso 
 
  Quando si usa la replica differenziale binaria, Configuration Manager consente di identificare le modifiche apportate ai file di origine per ogni set di contenuti distribuiti in precedenza.  
 
--   Quando i file nel contenuto di origine cambiano, il sito crea una nuova versione incrementale del set di contenuto, quindi replica solo i file modificati nei siti di destinazione e i punti di distribuzione. Un file è considerato modificato se viene rinominato, spostato o se il contenuto del file cambia. Ad esempio, se si sostituisce un singolo file del driver con un pacchetto di driver che è stato in precedenza distribuito in diversi siti, vengono replicati solo i file dei driver modificati.  
+-   Quando i file nel contenuto di origine cambiano, il sito crea una nuova versione incrementale dei contenuti, quindi replica solo i file modificati nei siti di destinazione e i punti di distribuzione. Un file è considerato modificato se viene rinominato, spostato o se il contenuto del file cambia. Ad esempio, se si sostituisce un singolo file del driver con un pacchetto di driver che è stato in precedenza distribuito in diversi siti, vengono replicati solo i file dei driver modificati.  
 
 -   Configuration Manager supporta fino a cinque versioni incrementali del set di contenuti prima di inviare nuovamente l'intero set di contenuti. Dopo il quinto aggiornamento, la successiva modifica del set di contenuto fa sì che il sito crei una nuova versione del set di contenuto. Configuration Manager distribuisce quindi la nuova versione del set di contenuti per sostituire il set precedente e qualsiasi sua versione incrementale. Dopo che il nuovo set di contenuti è stato distribuito, modifiche incrementali successive ai file di origine vengono nuovamente replicate dalla replica differenziale binaria.  
 
-La replica differenziale binaria è supportata tra ogni sito padre e figlio in una gerarchia. La replica differenziale binaria è supportata all'interno di un sito tra il server del sito e i suoi normali punti di distribuzione. Tuttavia, i punti di distribuzione pull e i punti di distribuzione basati sul cloud non supportano la replica differenziale binaria per trasferire il contenuto. I punti di distribuzione pull supportano i delta a livello di file e il trasferimento dei nuovi file, ma non i blocchi all'interno di un file.
+La replica differenziale binaria è supportata tra ogni sito padre e figlio in una gerarchia. La replica differenziale binaria è supportata all'interno di un sito tra il server del sito e i suoi normali punti di distribuzione. I punti di distribuzione pull e i punti di distribuzione cloud non supportano però la replica differenziale binaria per trasferire i contenuti. I punti di distribuzione pull supportano i delta a livello di file e il trasferimento dei nuovi file, ma non i blocchi all'interno di un file.
 
 Le applicazioni usano sempre la replica differenziale binaria. La replica differenziale binaria è facoltativa per i pacchetti e non è abilitata per impostazione predefinita. Per usare la replica differenziale binaria per i pacchetti, abilitare questa funzionalità per ogni pacchetto. Selezionare l'opzione **Abilita replica differenziale binaria** quando si crea o si modifica un pacchetto.   
 
@@ -89,10 +89,21 @@ Ottimizzazione recapito è la tecnologia consigliata per [ottimizzare il recapit
 
 
 
+## <a name="windows-ledbat"></a>Windows LEDBAT
+<!--1358112--> Windows LEDBAT (Low Extra Delay Background Transport) è una funzionalità di controllo della congestione della rete di Windows Server che consente di gestire i trasferimenti di rete in background. Per i punti di distribuzione in esecuzione in versioni supportate di Windows Server, abilitare un'opzione che consente di regolare il traffico di rete. In questo modo i client usano la larghezza di banda di rete solo quando è disponibile. 
+
+Per altre informazioni di carattere generale su Windows LEDBAT, vedere il post di blog [New transport advancements](https://blogs.technet.microsoft.com/networking/2016/07/18/announcing-new-transport-advancements-in-the-anniversary-update-for-windows-10-and-windows-server-2016/) (Nuovi miglioramenti per il trasporto).
+
+Per altre informazioni su come usare Windows LEDBAT con i punti di distribuzione di Configuration Manager, vedere l'impostazione **Regola la velocità del download per usare la larghezza di banda di rete inutilizzata (Windows LEDBAT)** descritta nella sezione relativa alla [configurazione delle impostazioni generali di un punto di distribuzione](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_config-general).
+
+
+
 ## <a name="peer-cache"></a>Peer cache
 La peer cache client consente di gestire la distribuzione di contenuti ai client in posizioni remote. La peer cache è una soluzione integrata di Configuration Manager che consente ai client di condividere i contenuti con altri client direttamente dalla cache locale.
 
-Dopo aver distribuito le impostazioni client che abilitano la peer cache per una raccolta, i membri di tale raccolta possono fungere da origine di contenuto peer per altri client nello stesso gruppo di limiti.
+Distribuire prima di tutto in una raccolta le impostazioni client che abilitano la peer cache. I membri di tale raccolta possono fungere da origine del contenuto peer per altri client all'interno dello stesso gruppo di limiti.
+
+A partire dalla versione 1806, le origini delle peer cache dei client sono in grado di dividere il contenuto in parti, grazie alle quali è possibile ridurre al minimo il trasferimento in rete, riducendo l'utilizzo della rete WAN. Il punto di gestione consente una traccia più dettagliata delle parti del contenuto e prova a eliminare più download dello stesso contenuto per ogni gruppo di limiti.<!--1357346-->
 
 Per altre informazioni, vedere [Peer cache per i client di Configuration Manager](/sccm/core/plan-design/hierarchy/client-peer-cache).
 
@@ -101,7 +112,7 @@ Per altre informazioni, vedere [Peer cache per i client di Configuration Manager
 ## <a name="windows-pe-peer-cache"></a>Peer cache di Windows PE
 Quando si distribuisce un nuovo sistema operativo con Configuration Manager, i computer che eseguono la sequenza di attività possono usare la peer cache Windows PE. Scaricano contenuto da un'origine peer cache anziché da un punto di distribuzione. Questo comportamento contribuisce a ridurre al minimo il traffico WAN negli scenari con le filiali, in cui non esiste un punto di distribuzione locale.
 
-Per altre informazioni, vedere [Peer cache di Windows PE](../../../osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md).
+Per altre informazioni, vedere [Peer cache di Windows PE](/sccm/osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic).
 
 
 
@@ -110,28 +121,47 @@ Per altre informazioni, vedere [Peer cache di Windows PE](../../../osd/get-start
 
 -   **Intranet** (locale):  
 
-    -   I punti di distribuzione possono usare HTTP o HTTPS.  
+    -   i punti di distribuzione possono usare HTTP o HTTPS.  
 
-    -   Usare i punti di distribuzione basati sul cloud solo come opzione di fallback, se non sono disponibili punti di distribuzione locali.  
+    -   Usare i punti di distribuzione cloud solo come opzione di fallback, se non sono disponibili punti di distribuzione locali.  
 
 -   **Internet**:  
 
-    -   I punti di distribuzione devono accettare HTTPS.  
+    -   richiede che i punti di distribuzione con connessione Internet accettino HTTPS.  
 
-    -   È possibile usare un punto di distribuzione basato sul cloud per il fallback.  
+    -   Può usare un punto di distribuzione cloud.  
 
 -   **Gruppo di lavoro**:  
 
-    -   I punti di distribuzione devono accettare HTTPS.  
+    -   richiede che i punti di distribuzione accettino HTTPS.  
 
-    -   È possibile usare un punto di distribuzione basato sul cloud per il fallback.  
+    -   Può usare un punto di distribuzione cloud.  
+
+
+
+## <a name="content-source-priority"></a>Priorità dell'origine del contenuto
+
+Quando un client ha bisogno di contenuto, invia una richiesta di percorso del contenuto al punto di gestione. Il punto di gestione restituisce un elenco di percorsi del contenuto validi per il contenuto richiesto. Questo elenco varia a seconda dello scenario specifico, delle tecnologie in uso, della struttura del sito, dei gruppi di limiti e delle impostazioni di distribuzione. L'elenco seguente contiene tutti i possibili percorsi di origine del contenuto utilizzabili da un client, in ordine di priorità:  
+
+1.  Il punto di distribuzione presente nello stesso computer del client
+2.  Un'origine peer nella stessa subnet di rete
+3.  Un punto di distribuzione nella stessa subnet di rete
+4.  Un'origine peer nello stesso sito Active Directory
+5.  Un punto di distribuzione nello stesso sito Active Directory
+6.  Un'origine peer nello stesso gruppo di limiti
+7.  Un punto di distribuzione nel gruppo di limiti corrente
+8.  Un punto di distribuzione in un gruppo di limiti vicino configurato per il fallback
+9.  Un punto di distribuzione nel gruppo di limiti predefinito del sito 
+10. Il servizio cloud di Windows Update
+11. Un punto di distribuzione con connessione Internet
+12. Un punto di distribuzione cloud in Azure
 
 
 
 ## <a name="content-library"></a>Raccolta contenuto  
  La raccolta contenuto è l'archivio a istanza singola del contenuto in Configuration Manager. Questa raccolta consente di ridurre la dimensione complessiva del contenuto distribuito.  
 
-- Altre informazioni sulla [raccolta contenuto](../../../core/plan-design/hierarchy/the-content-library.md).
+- Altre informazioni sulla [raccolta contenuto](/sccm/core/plan-design/hierarchy/the-content-library).
 - Usare lo [strumento per la pulizia della raccolta contenuto](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool) per rimuovere il contenuto non più associato a un'applicazione.  
 
 
@@ -143,26 +173,29 @@ Per altre informazioni, vedere [Peer cache di Windows PE](../../../osd/get-start
 
 -   **Punto di distribuzione pull**: variante di un punto di distribuzione in cui il punto di distribuzione ottiene il contenuto da un altro punto di distribuzione (punto di distribuzione di origine). Questo processo è simile al modo in cui i client scaricano contenuto dai punti di distribuzione. I punti di distribuzione pull possono risultare utili per evitare i colli di bottiglia della larghezza di banda di rete che si verificano quando il server del sito deve distribuire direttamente il contenuto a ogni punto di distribuzione. [Usare un punto di distribuzione pull](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point).
 
--   **Punto di distribuzione basato sul cloud**: variante di un punto di distribuzione installato in Microsoft Azure. [Apprendere l'uso di un punto di distribuzione basato sul cloud](../../../core/plan-design/hierarchy/use-a-cloud-based-distribution-point.md).  
+-   **Punto di distribuzione cloud**: variante di un punto di distribuzione installato in Microsoft Azure. [Informazioni sull'uso di un punto di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point).  
 
 
 I punti di distribuzione standard supportano una gamma di configurazioni e funzionalità:  
 
 - Per controllare il trasferimento, usare controlli come le **pianificazioni** o la **limitazione della larghezza di banda**.  
-- È anche possibile usare altre opzioni, tra cui il **contenuto pre-installazione** e i **punti di distribuzione pull** per ridurre al minimo e controllare il consumo della rete. 
+
+- È anche possibile usare altre opzioni, tra cui il **contenuto pre-installazione** e i **punti di distribuzione pull** per ridurre al minimo e controllare il consumo della rete.  
+
 - **BranchCache**, **peer cache** e **Ottimizzazione recapito** sono tecnologie peer-to-peer per ridurre la larghezza di banda di rete usata quando si distribuisce il contenuto.  
-- Esistono diverse configurazioni per le distribuzioni del sistema operativo, quali **[PXE](../../../osd/get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint)** e  **[Multicast](../../../osd/get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_DPMulticast)**
+
+- Esistono diverse configurazioni per le distribuzioni del sistema operativo, quali **[PXE](/sccm/osd/get-started/prepare-site-system-roles-for-operating-system-deployments#BKMK_PXEDistributionPoint)** e  **[Multicast](/sccm/osd/get-started/prepare-site-system-roles-for-operating-system-deployments#BKMK_DPMulticast)**  
+
 - Opzioni per **dispositivi mobili**   
   
-  
-I punti di distribuzione pull e basati sul cloud supportano molte di queste configurazioni, ma presentano limitazioni specifiche per ogni variante del punto di distribuzione.  
+I punti di distribuzione pull e cloud supportano molte di queste configurazioni, ma presentano limitazioni specifiche per ogni variante del punto di distribuzione.  
 
 
 
 ## <a name="distribution-point-groups"></a>Gruppi di punti di distribuzione  
  I gruppi di punti di distribuzione sono raggruppamenti logici di punti di distribuzione che possono semplificare la distribuzione del contenuto.  
 
- Per altre informazioni, vedere [Gestire i gruppi di punti di distribuzione](../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage).
+ Per altre informazioni, vedere [Gestire i gruppi di punti di distribuzione](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_manage).
 
 
 
@@ -196,17 +229,6 @@ I concetti di punti di distribuzione preferiti non sono più usati e le impostaz
 
 Per altre informazioni, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
 
-<!--
-**Version 1511, 1602, and 1606**   
-Fallback settings are related to the use of **preferred distribution points** and to content source locations that are used by clients.
-
--   By default, clients only download content from a preferred distribution point (one that is associated with the client's boundary groups).  
-
--   However, when a distribution point is configured with **Allow clients to use this site system as a fallback source location for content**, that distribution point is only offered as a valid content source to any client that can't get a deployment from one of its preferred distribution points.  
-
-For information about the different content location and fallback scenarios, see [Content source location scenarios](../../../core/plan-design/hierarchy/content-source-location-scenarios.md). For information about boundary groups, see [Boundary groups for versions 1511,1602, and 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606).
--->
-
 
 
 ## <a name="network-bandwidth"></a>Larghezza di banda di rete  
@@ -227,19 +249,6 @@ Le velocità di connessione di rete che definiscono un punto di distribuzione co
 
 Per altre informazioni, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
 
-<!--
-**Version 1511, 1602, and 1606**   
- You can configure the network connection speed of each distribution point in a boundary group:  
-
--   Clients use this value when they connect to the distribution point.
-
--   By default, the network connection speed is configured as **Fast**, but it can also be set as **Slow**.  
-
--   The **network connection speed**, along with the configuration of a deployment, determine if a client can download content from a distribution point when the client is in an associated boundary group  
-
-For information about the different content location and fallback scenarios, see [Content source location scenarios](../../../core/plan-design/hierarchy/content-source-location-scenarios.md). For information about boundary groups, see [Boundary groups for versions 1511,1602, and 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606).
--->
-
 
 
 ## <a name="on-demand-content-distribution"></a>Distribuzione di contenuto su richiesta  
@@ -247,39 +256,18 @@ For information about the different content location and fallback scenarios, see
 
 -   Per abilitare questa impostazione per una distribuzione, abilitare **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti**.  
 
--   Quando questa opzione è abilitata per una distribuzione e un client prova a richiedere un contenuto non disponibile in uno qualsiasi dei punti di distribuzione preferiti dei client, Configuration Manager automaticamente distribuisce tale contenuto ai punti di distribuzione preferiti dei client.  
+-   Quando si abilita questa opzione per una distribuzione e un client richiede contenuto non disponibile in uno qualsiasi dei punti di distribuzione preferiti del client, Configuration Manager distribuisce automaticamente tale contenuto ai punti di distribuzione preferiti del client.  
 
 -   In questo modo viene attivata la distribuzione automatica del contenuto ai punti di distribuzione preferiti del client da parte di Configuration Manager e il client può ottenere tale contenuto da altri punti di distribuzione prima che i punti di distribuzione preferiti per il client ricevano la distribuzione. In questo caso, il contenuto sarà presente nel punto di distribuzione per l'uso da parte del client successivo che cerca quella specifica distribuzione.  
 
 Per altre informazioni, vedere [Gruppi di limiti](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
-
-<!--
-If you use version 1511, 1602, or 1606, see  [Content source location scenarios](../../../core/plan-design/hierarchy/content-source-location-scenarios.md) for information about the different content location and fallback scenarios.
--->
 
 
 
 ## <a name="package-transfer-manager"></a>Package Transfer Manager  
  Componente del server del sito che trasferisce il contenuto ai punti di distribuzione in altri computer.  
 
- Per altre informazioni, vedere [Package Transfer Manager](../../../core/plan-design/hierarchy/package-transfer-manager.md).  
-
-
-
-<!--
-## Preferred distribution point  
- A preferred distribution point includes any distribution points that are associated with a client's current boundary groups.  
-
- You have the option to associate each distribution point with one or more boundary groups:  
-
--   This association helps the client identify distribution points from which it can download content.  
--   By default, clients can only download content from a preferred distribution point.  
-
-
-For more information:
- - If you use version 1610 or later, see [Boundary groups](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
- - If you use version 1511, 1602, or 1606, see [Content source location scenarios](../../../core/plan-design/hierarchy/content-source-location-scenarios.md).
--->
+ Per altre informazioni, vedere [Package Transfer Manager](/sccm/core/plan-design/hierarchy/package-transfer-manager).  
 
 
 

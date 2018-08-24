@@ -2,7 +2,7 @@
 title: Usare finestre di manutenzione
 titleSuffix: Configuration Manager
 description: Usare le raccolte e le finestre di manutenzione per gestire in modo efficace i client in System Center Configuration Manager.
-ms.date: 02/22/2017
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,18 +10,18 @@ ms.assetid: 4564ebcb-41a8-4eb0-afdb-2e1f0795cfa2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 18a870b111b141cb9b95664a2f66403ea37cb99e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 6512b42191b5ea627f5e8729fea29aab81ee1aed
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32332526"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39384332"
 ---
 # <a name="how-to-use-maintenance-windows-in-system-center-configuration-manager"></a>Come usare le finestre di manutenzione in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Le finestre di manutenzione consentono di definire un periodo di tempo in cui è possibile eseguire le operazioni di Configuration Manager in una raccolta di dispositivi. È possibile usare le finestre di manutenzione per garantire che le modifiche alla configurazione client vengano eseguite quando non influiscono sulla produttività.  
+Le finestre di manutenzione consentono di definire un periodo di tempo in cui è possibile eseguire le operazioni di Configuration Manager in una raccolta di dispositivi. È possibile usare le finestre di manutenzione per garantire che le modifiche alla configurazione client vengano eseguite quando non influiscono sulla produttività. A partire da Configuration Manager versione 1806, gli utenti possono visualizzare quando verrà eseguita la finestra di manutenzione successiva nella scheda **Stato dell'installazione** nel **Software Center**. <!--1358131-->
 
  Le finestre di manutenzione sono supportate dalle operazioni seguenti:  
 
@@ -35,7 +35,7 @@ Le finestre di manutenzione consentono di definire un periodo di tempo in cui è
 
 -   Distribuzioni di sequenze attività  
 
- Configurare le finestre di manutenzione con una data di inizio, un'ora di inizio e di fine e un criterio di ricorrenza. La durata massima di una finestra deve essere inferiore a 24 ore. Per impostazione predefinita, i riavvii del computer causati da una distribuzione non sono consentiti al di fuori di una finestra di manutenzione, ma è possibile sostituire questa impostazione. Le finestre di manutenzione interessano solo il periodo in cui il programma di distribuzione è in esecuzione. Le applicazioni configurate per il download e l'esecuzione in locale possono scaricare contenuto al di fuori della finestra.  
+ Configurare le finestre di manutenzione con una data di inizio, un'ora di inizio e di fine e un criterio di ricorrenza. La durata massima di una finestra deve essere inferiore a 24 ore. Per impostazione predefinita, i riavvii del computer causati da una distribuzione non sono consentiti al di fuori di una finestra di manutenzione, ma è possibile eseguire l'override di questa impostazione. Le finestre di manutenzione interessano solo il periodo in cui il programma di distribuzione è in esecuzione. Le applicazioni configurate per il download e l'esecuzione in locale possono scaricare contenuto al di fuori della finestra.  
 
  Se un computer client è membro di una raccolta di dispositivi per la quale è configurata una finestra di manutenzione, il programma di distribuzione viene eseguito solo se il tempo di esecuzione massimo consentito non supera la durata configurata per la finestra. Se non è possibile eseguire il programma, viene generato un avviso e la distribuzione viene eseguita nuovamente durante la finestra di manutenzione pianificata successiva con tempo disponibile.  
 
@@ -48,13 +48,13 @@ Le finestre di manutenzione consentono di definire un periodo di tempo in cui è
 
  Se un utente avvia l'installazione di un'applicazione da Software Center, l'applicazione viene installata immediatamente, indipendentemente dalle finestre di manutenzione.  
 
- Se la distribuzione di un'applicazione con scopo **Richiesto** raggiunge la scadenza dell'installazione durante l'orario non lavorativo configurato da un utente in Software Center, l'applicazione verrà installata.  
+ Se la distribuzione di un'applicazione con scopo **Richiesto** raggiunge la scadenza dell'installazione durante l'orario non lavorativo configurato da un utente in Software Center, l'applicazione verrà installata. 
 
 ### <a name="how-to-configure-maintenance-windows"></a>Come configurare le finestre di manutenzione  
 
 1.  Nella console di Configuration Manager scegliere **Asset e conformità**>  **Raccolte dispositivi**.  
 
-3.  Nell'elenco **Raccolte dispositivi** selezionare una raccolta. È impossibile creare finestre di manutenzione per la raccolta **Tutti i sistemi** .  
+3.  Nell'elenco **Raccolte dispositivi** selezionare una raccolta. Non è possibile creare finestre di manutenzione per la raccolta **Tutti i sistemi**.  
 
 4.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
 

@@ -1,8 +1,8 @@
 ---
-title: Introduzione alla gestione delle applicazioni
+title: Introduzione alla gestione delle app
 titleSuffix: Configuration Manager
-description: Individuare le informazioni di necessarie per gestire e distribuire applicazioni di System Center Configuration Manager.
-ms.date: 12/23/2016
+description: È possibile individuare le informazioni di base necessarie per gestire e distribuire applicazioni di System Center Configuration Manager.
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,97 +10,199 @@ ms.assetid: 08f711ba-83bf-4b5f-9520-a0778c6ae7eb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bcdc5800a1c280c99289528c40e0efee8acf5ad5
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 70ab4136f39b4bf559c3d460ca1528bb4de0f6e1
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336171"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39384291"
 ---
-# <a name="introduction-to-application-management-in-system-center-configuration-manager"></a>Introduzione alla gestione delle applicazioni in System Center Configuration Manager
+# <a name="introduction-to-application-management-in-configuration-manager"></a>Introduzione alla gestione delle applicazioni in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Questo argomento fornisce una descrizione delle nozioni di base necessarie prima di iniziare a usare le applicazioni di System Center Configuration Manager.  
+In questo argomento verranno fornite le informazioni di base necessarie prima di iniziare a usare le applicazioni di Configuration Manager.  
 
 > [!TIP]  
->  Se si ha familiarità con le procedure per gestire le applicazioni in Configuration Manager, è possibile ignorare questo argomento e passare alla creazione di un'applicazione di esempio. Vedere [Creare e distribuire un'applicazione con System Center Configuration Manager](../../apps/get-started/create-and-deploy-an-application.md).  
+>  Se si ha già familiarità con la modalità di gestione delle applicazioni in Configuration Manager, ignorare questo articolo. Passare alla creazione di un'applicazione di esempio, illustrata in [Creare e distribuire un'applicazione](/sccm/apps/get-started/create-and-deploy-an-application).  
+
+
 
 ## <a name="what-is-an-application"></a>Che cos'è un'applicazione?  
- Anche se *applicazione* è un termine ampiamente usato in informatica, in Configuration Manager indica un concetto diverso. Pensare a un'applicazione come a una scatola. Questa scatola contiene uno o più set di file di installazione per un pacchetto software (chiamato **tipo di distribuzione**) e le istruzioni su come distribuire il software.  
 
- Quando l'applicazione viene distribuita ai dispositivi, i **requisiti** stabiliscono il tipo di distribuzione installato nel dispositivo.  
+Anche se *applicazione* è un termine ampiamente usato in informatica, in Configuration Manager indica un concetto specifico. Pensare a un'applicazione come a una scatola. Questa scatola contiene uno o più set di file di installazione per un pacchetto software (chiamato *tipo di distribuzione*) e le istruzioni su come distribuire il software.  
 
- È possibile eseguire molte altre operazioni con un'applicazione. Altre informazioni su queste operazioni sono disponibili in questa guida. La tabella seguente introduce alcuni concetti che è necessario conoscere prima di avviare un'analisi più approfondita.  
+Quando si distribuisce l'applicazione nei dispositivi, i **requisiti** stabiliscono quale tipo di distribuzione viene installato nel dispositivo da Configuration Manager.  
 
-|Concetto|Descrizione|    
-|-|-|  
-|**Requirements**|Nelle versioni precedenti di Configuration Manager spesso veniva creata una raccolta che conteneva i dispositivi in cui distribuire un'applicazione. Anche se è comunque possibile creare una raccolta, con i requisiti è possibile specificare criteri più dettagliati per la distribuzione di un'applicazione.<br /><br /> Ad esempio, è possibile indicare che un'applicazione può essere installata soltanto nei dispositivi che eseguono Windows 10. Quindi, l'applicazione potrà essere distribuita nei dispositivi, ma verrà installata solo nei dispositivi che eseguono Windows 10.<br /><br /> Configuration Manager valuta i requisiti per determinare se un'applicazione o uno dei tipi di distribuzione correlati verranno installati. Quindi, determina il tipo di distribuzione corretto usato per installare un'applicazione. Ogni sette giorni, per impostazione predefinita, le regole di requisiti vengono rivalutate per garantire la conformità in base all'impostazione client **Pianificare nuova valutazione per le distribuzioni**.<br /><br /> Per i dettagli, vedere [Create and deploy an application](../../apps/get-started/create-and-deploy-an-application.md) (Creare e distribuire un'applicazione).|  
-|**Condizioni globali**|I requisiti vengono usati con uno specifico tipo di distribuzione in una singola applicazione, ma è anche possibile creare delle condizioni globali, ossia una raccolta di requisiti predefiniti che è possibile usare con qualsiasi applicazione e tipo di distribuzione.<br /><br /> Configuration Manager contiene un set di condizioni globali predefinite e consente anche di creare set personalizzati.<br /><br /> Per i dettagli, vedere [Create global conditions](../../apps/deploy-use/create-global-conditions.md) (Creare condizioni globali).|  
-|**Distribuzione simulata**|Valuta i requisiti, il metodo di rilevamento e le dipendenze di un'applicazione. Fornisce i risultati senza installare l'applicazione.<br /><br /> Per i dettagli, vedere [Simulate application deployments](../../apps/deploy-use/simulate-application-deployments.md) (Simulare distribuzioni di applicazioni).|  
-|**Azione di distribuzione**|Specifica se installare o disinstallare (se l'operazione è supportata) l'applicazione che si sta distribuendo.<br /><br /> Per i dettagli, vedere [Deploy applications](../../apps/deploy-use/deploy-applications.md) (Distribuire applicazioni).|  
-|**Scopo della distribuzione**|Specifica se l'app di distribuzione sarà impostata su **Obbligatorio**o **Disponibile**.<br /><br /> **Richiesto**: l'applicazione viene distribuita automaticamente in base alla pianificazione configurata. Un utente può tuttavia tenere traccia dello stato della distribuzione, a meno che non sia nascosto, e può installare l'applicazione prima della scadenza usando Software Center.<br /><br /> **Disponibile** : se l'applicazione viene distribuita a un utente, l'utente visualizzerà l'applicazione pubblicata in Software Center e potrà installarla su richiesta.<br /><br /> Per i dettagli, vedere [Deploy applications](../../apps/deploy-use/deploy-applications.md) (Distribuire applicazioni).|  
-|**Revisioni**|Quando si eseguono revisioni a un'applicazione o a un tipo di distribuzione incluso in un'applicazione, Configuration Manager crea una nuova versione dell'applicazione. È possibile visualizzare la cronologia delle revisioni e le proprietà di ciascuna applicazione, ripristinare una versione precedente di un'applicazione oppure eliminare una versione precedente.<br /><br /> Per i dettagli, vedere [Update and retire applications](../../apps/deploy-use/update-and-retire-applications.md) (Aggiornare e ritirare applicazioni).|  
-|**Metodo di rilevamento**|I metodi di rilevamento vengono usati per stabilire se un'applicazione distribuita è già installata. Se il metodo di rilevamento indica che l'applicazione è installata, Configuration Manager non prova a installarla nuovamente.<br /><br /> Per i dettagli, vedere [Create applications](../../apps/deploy-use/create-applications.md) (Creare applicazioni).|  
-|**Dipendenze**|Le dipendenze definiscono uno o più tipi di distribuzione da un'altra applicazione che deve essere installata prima dell'installazione di un tipo di distribuzione. È possibile configurare i tipi di distribuzione dipendenti per l'installazione automatica prima dell'installazione di un tipo di distribuzione.<br /><br /> Per i dettagli, vedere [Create applications](../../apps/deploy-use/create-applications.md) (Creare applicazioni).|  
-|**Sostituzione**|Configuration Manager consente di aggiornare o sostituire applicazioni esistenti usando una relazione di sostituzione. Quando si sostituisce un'applicazione, è possibile specificare un nuovo tipo di distribuzione che andrà a sostituire il tipo di distribuzione dell'applicazione sostituita. È anche possibile decidere se aggiornare o disinstallare l'applicazione sostituita prima di installare l'applicazione sostitutiva.<br /><br /> Per i dettagli, vedere [Create applications](../../apps/deploy-use/create-applications.md) (Creare applicazioni).|  
-|**Gestione incentrata sull'utente**|Le applicazioni di Configuration Manager supportano la gestione incentrata sull'utente, che consente di associare utenti specifici a dispositivi specifici. Invece di dover ricordare il nome del dispositivo di un utente, è possibile distribuire le app all'utente e al dispositivo. Questa funzionalità consente di verificare che le app più importanti siano sempre disponibili in ogni dispositivo a cui accede un utente specifico. Se un utente acquisisce un nuovo computer, è possibile installare automaticamente le app dell'utente nel dispositivo prima dell'accesso.<br /><br /> Per i dettagli, vedere [Link users and devices with user device affinity](../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md) (Collegare utenti e dispositivi tramite l'affinità utente-dispositivo).|  
+È possibile eseguire molte altre operazioni con un'applicazione. Altre informazioni su queste operazioni sono disponibili in questa guida. Le sezioni seguenti introducono alcuni concetti che è necessario conoscere prima di avviare un'analisi più approfondita:  
+
+#### <a name="deployment-type"></a>Tipo di distribuzione
+Se l'*applicazione* è la scatola, il *tipo di distribuzione* corrisponde ai contenuti della scatola. Un'applicazione necessita di almeno un tipo di distribuzione, perché consente di determinare la modalità di installazione dell'app. Usare uno o più tipi di distribuzione per configurare contenuti e programmi di installazione diversi per la stessa applicazione. 
+
+Ad esempio, una società ha un'applicazione line-of-business denominata Astoria. Gli sviluppatori dell'applicazione forniscono le modalità seguenti per l'installazione dell'app:
+- Pacchetto di Windows Installer per offrire funzionalità complete nei dispositivi Windows 10
+- Pacchetto App-V da usare nella server farm
+- Pacchetto app Android per utenti di dispositivi mobili  
+
+È possibile creare una singola applicazione per Astoria in Configuration Manager. L'applicazione definisce i metadati generali relativi all'app che risultano comuni in tutti i metodi di installazione e in tutte le piattaforme. È quindi possibile creare tre tipi di distribuzione per i metodi di installazione disponibili e distribuire l'applicazione a tutti gli utenti. In base ai requisiti e ad altre configurazioni nei tipi di distribuzione, Configuration Manager determina il metodo corretto in ogni caso d'uso. 
+
+Per altre informazioni, vedere [Creare tipi di distribuzione per l'applicazione](/sccm/apps/deploy-use/create-applications#bkmk_create-dt).
+
+#### <a name="requirements"></a>requisiti
+Nelle versioni precedenti di Configuration Manager è necessario creare una raccolta di dispositivi in cui distribuire un'applicazione. Anche se è comunque possibile creare una raccolta, usare i *requisiti* per specificare criteri più dettagliati per la distribuzione di un'applicazione.
+
+Ad esempio, è possibile indicare che un'applicazione può essere installata soltanto nei dispositivi che eseguono Windows 10. Quando si distribuisce l'applicazione in tutti i dispositivi, verrà installata solo nei dispositivi che eseguono Windows 10.
+
+Configuration Manager valuta i requisiti per determinare se un'applicazione o uno dei tipi di distribuzione correlati verranno installati. Quindi, determina il tipo di distribuzione corretto usato per installare un'applicazione. Ogni sette giorni, per impostazione predefinita, il client di Configuration Manager ripete la valutazione delle regole dei requisiti per verificare la conformità in base all'impostazione **Pianificare nuova valutazione per le distribuzioni** del client.
+
+Per altre informazioni, vedere [Creare e distribuire un'applicazione](/sccm/apps/get-started/create-and-deploy-an-application) e [Requisiti per il tipo di distribuzione](/sccm/apps/deploy-use/create-applications#bkmk_dt-require).
+
+#### <a name="global-conditions"></a>Condizioni globali
+I requisiti vengono usati con uno specifico tipo di distribuzione in una singola applicazione, ma è anche possibile creare *condizioni globali*, ossia una raccolta di requisiti predefiniti che è possibile usare con qualsiasi applicazione e tipo di distribuzione. Configuration Manager include un set di condizioni globali predefinite ma consente anche di creare set personalizzati. 
+
+Per altre informazioni, vedere [Creare condizioni globali](/sccm/apps/deploy-use/create-global-conditions).
+
+#### <a name="simulated-deployment"></a>Distribuzione simulata
+Una *distribuzione simulata* valuta i requisiti, il metodo di rilevamento e le dipendenze di un'applicazione. Un client fornisce i risultati senza installare l'applicazione. 
+
+Per altre informazioni, vedere [Simulare distribuzioni di applicazioni ](/sccm/apps/deploy-use/simulate-application-deployments).  
+
+#### <a name="deployment-action"></a>Azione di distribuzione
+Un'*azione di distribuzione* specifica se installare o disinstallare l'applicazione che si sta distribuendo. Non tutti i tipi di distribuzione supportano l'azione di disinstallazione. 
+
+Per altre informazioni, vedere l'argomento relativo alla [distribuzione delle applicazioni](/sccm/apps/deploy-use/deploy-applications).  
+
+#### <a name="deployment-purpose"></a>Scopo della distribuzione
+Lo *scopo della distribuzione* specifica se l'app di distribuzione è di tipo **Richiesto** o **Disponibile**:  
+
+- Il client installa automaticamente una distribuzione di tipo *richiesto* in base alla pianificazione configurata. Se l'applicazione non è nascosta, un utente può verificarne lo stato di distribuzione. Gli utenti possono anche usare Software Center per installare l'applicazione prima della scadenza.  
+
+- Se si distribuisce l'applicazione a un utente come *disponibile*, l'applicazione viene visualizzata in Software Center e può essere installata su richiesta.  
+
+Per altre informazioni, vedere l'argomento relativo alla [distribuzione delle applicazioni](/sccm/apps/deploy-use/deploy-applications).  
+
+#### <a name="revisions"></a>Revisioni
+Quando si eseguono *revisioni* per un'applicazione o un tipo di distribuzione, Configuration Manager crea una nuova versione dell'applicazione. Eseguire queste azioni nella console di Configuration Manager: 
+- Visualizzare la cronologia delle revisioni di ogni applicazione
+- Visualizzare le rispettive proprietà
+- Ripristinare una versione precedente di un'applicazione
+- Eliminare una versione precedente
+
+Per altre informazioni, vedere [Aggiornare e ritirare le applicazioni](/sccm/apps/deploy-use/update-and-retire-applications).  
+
+#### <a name="detection-method"></a>Metodo di rilevamento
+Usare i *metodi di rilevamento* per verificare se un dispositivo ha già installato un'applicazione. Se il metodo di rilevamento indica che l'applicazione è installata, Configuration Manager non prova a installarla nuovamente.
+
+Per altre informazioni, vedere [Opzioni del metodo di rilevamento per il tipo di distribuzione](/sccm/apps/deploy-use/create-applications##bkmk_dt-detect).
+
+#### <a name="dependencies"></a>Dipendenze
+Le *dipendenze* definiscono uno o più tipi di distribuzione da un'altra applicazione che il client deve installare prima dell'installazione di questo tipo di distribuzione. 
+
+Per altre informazioni, vedere [Dipendenze per il tipo di distribuzione](/sccm/apps/deploy-use/create-applications#bkmk_dt-depend).  
+
+#### <a name="supersedence"></a>Sostituzione
+Configuration Manager consente di aggiornare o sostituire applicazioni esistenti usando una relazione di *sostituzione*. Quando si sostituisce un'applicazione, è possibile specificare un nuovo tipo di distribuzione che andrà a sostituire il tipo di distribuzione dell'applicazione sostituita. È anche possibile decidere se aggiornare o disinstallare l'applicazione sostituita prima che il client installi l'applicazione sostitutiva.
+
+Per altre informazioni, vedere [Application revisions](/sccm/apps/deploy-use/revise-and-supersede-applications#application-supersedence) (Sostituzione delle applicazioni).  
+
+#### <a name="user-centric-management"></a>Gestione incentrata sull'utente
+Le applicazioni di Configuration Manager supportano la *gestione incentrata sull'utente*, che consente di associare utenti specifici a dispositivi specifici. Invece di dover ricordare il nome del dispositivo di un utente, è possibile distribuire le app all'utente e al dispositivo. Questa funzionalità consente di verificare che le app più importanti siano sempre disponibili in ogni dispositivo dell'utente. Se un utente acquisisce un nuovo computer, Configuration Manager installa automaticamente le rispettive app nel dispositivo prima dell'accesso. 
+
+Per altre informazioni, vedere [Collegare utenti e dispositivi mediante l'affinità utente dispositivo](/sccm/apps/deploy-use/link-users-and-devices-with-user-device-affinity).  
+
+
 
 ## <a name="what-application-types-can-you-deploy"></a>Quali tipi di applicazione possono essere distribuiti?  
- Configuration Manager consente di distribuire i tipi di app seguenti:  
 
-- Windows Installer (file *.msi)
-- Pacchetto app Windows (\*.appx, \*.appxbundle)
-- Pacchetto app Windows (in Windows Store)
-- Microsoft Application Virtualization 4
-- Microsoft Application Virtualization  5
-- Windows Mobile Cabinet
+Configuration Manager consente di distribuire i tipi di app seguenti:  
+
+- Windows Installer (msi)  
+
+- Pacchetto app Windows (appx o appxbundle)  
+
+    > [!Note]  
+    > A partire dalla versione 1806, questo tipo include i nuovi formati pacchetto app Windows 10 (con estensione msix) e bundle dell'app (con estensione msixbundle).<!--1357427-->  
+
+- Pacchetto app Windows in Microsoft Store  
+
+- Microsoft App-V v4 e v5  
+
 - macOS  
 
 
-Quando poi si gestiscono dispositivi tramite la gestione di dispositivi locale di Microsoft Intune o Configuration Manager, è possibile gestire anche questi tipi di applicazione:
+Quando poi si gestiscono dispositivi tramite la gestione di dispositivi locale di Microsoft Intune o Configuration Manager, è possibile gestire anche questi tipi di applicazione:  
 
-- Pacchetto app Windows Phone (file *.xap)
-- Pacchetto app per iOS (file *.ipa)
-- Pacchetto app per Android (file *.apk)
-- Pacchetto app Android in Google Play
-- Pacchetto app Windows Phone (in Windows Phone Store)
-- Windows Installer tramite MDM
+- Pacchetto app per Windows Phone (xap)  
+
+- Pacchetto app Windows Phone in Microsoft Store  
+
+- Pacchetto app per iOS (ipa)  
+
+- Pacchetto app iOS nell'App Store  
+
+- Pacchetto app per Android (apk)  
+
+- Pacchetto app Android in Google Play  
+
+- Windows Installer tramite MDM (msi)  
+
 - Applicazione Web
 
 
 
 ## <a name="state-based-applications"></a>Applicazioni basate sullo stato  
- Le applicazioni di Configuration Manager usano il monitoraggio basato sugli stati, che consente di tenere traccia dell'ultimo stato di distribuzione delle applicazioni per utenti e dispositivi. I messaggi di stato visualizzano informazioni sui singoli dispositivi. Ad esempio, se un'applicazione viene distribuita a una raccolta di utenti, è possibile visualizzare lo stato di conformità e lo scopo della distribuzione nella console di Configuration Manager. È possibile monitorare la distribuzione di tutti i software usando l'area di lavoro **Monitoraggio** nella console di Configuration Manager. Le distribuzioni software includono aggiornamenti software, impostazioni di conformità, applicazioni, sequenze attività e pacchetti e programmi. Per altre informazioni, vedere [Monitor applications](/sccm/apps/deploy-use/monitor-applications-from-the-console) (Monitoraggio delle applicazioni).  
 
- Le distribuzioni di applicazioni vengono regolarmente sottoposte a valutazione da Configuration Manager. Ad esempio:  
+Le applicazioni di Configuration Manager usano il monitoraggio basato sullo stato. È possibile tenere traccia dello stato più recente della distribuzione dell'applicazione per utenti e dispositivi. I messaggi di stato visualizzano informazioni sui singoli dispositivi. Ad esempio, se si distribuisce un'applicazione a una raccolta di utenti, è possibile visualizzare lo stato di conformità e lo scopo della distribuzione nella console di Configuration Manager. È possibile monitorare la distribuzione di tutto il software dall'area di lavoro **Monitoraggio** nella console di Configuration Manager. Per altre informazioni, vedere l'argomento relativo al [monitoraggio delle applicazioni](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
 
--   un'applicazione distribuita viene disinstallata dall'utente finale. Al ciclo di valutazione successivo Configuration Manager rileva che l'applicazione non è presente e la reinstalla.  
+Il client di Configuration Manager ripete regolarmente la valutazione delle distribuzioni dell'applicazione. Ad esempio:  
 
--   Un'applicazione non è stata installata in un dispositivo poiché non soddisfa i requisiti. In seguito, viene apportata una modifica al dispositivo in modo che soddisfi i requisiti. Configuration Manager rileva la modifica apportata e l'applicazione viene installata.  
+- Un utente disinstalla un'applicazione distribuita. Al ciclo di valutazione successivo Configuration Manager rileva che l'app non è presente. Il client reinstalla quindi automaticamente l'app.  
+
+- Configuration Manager non ha installato un'applicazione in un dispositivo perché non rispetta i requisiti specificati. In seguito, viene apportata una modifica al dispositivo in modo che soddisfi i requisiti. Configuration Manager rileva la modifica apportata e il client installa l'applicazione.  
+
+È possibile configurare l'intervallo di ripetizione della valutazione per le distribuzioni dell'applicazione. Usare l'impostazione **Pianificare nuova valutazione per le distribuzioni** del client disponibile nel gruppo **Distribuzione software**. Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings#software-deployment) (Informazioni sulle impostazioni client).  
 
 
- È possibile impostare l'intervallo di rivalutazione per le distribuzioni delle applicazioni usando l'impostazione del client **Pianificare nuova valutazione per le distribuzioni**. Per altre informazioni, vedere [About client settings](../../core/clients/deploy/about-client-settings.md) (Informazioni sulle impostazioni client).  
 
 ## <a name="get-started-creating-an-application"></a>Introduzione alla creazione di un'applicazione  
- Per iniziare a creare subito un'applicazione semplice, usare la procedura dettagliata nell'argomento [Create and deploy an application](../../apps/get-started/create-and-deploy-an-application.md) (Creare e distribuire un'applicazione).  
 
- Se si ha familiarità con le nozioni di base e si cercano informazioni di riferimento più dettagliate su tutte le opzioni disponibili, iniziare da [Create applications](/sccm/apps/deploy-use/create-applications) (Creare applicazioni).  
+Per iniziare a creare subito un'applicazione, usare la procedura dettagliata disponibile nell'articolo [Creare e distribuire un'applicazione](/sccm/apps/get-started/create-and-deploy-an-application).  
 
-## <a name="software-center-and-the-application-catalog"></a>Software Center e Catalogo applicazioni  
- Nelle versioni precedenti di Configuration Manager per installare e pianificare le installazioni di software, configurare le impostazioni di controllo remoto e configurare le opzioni di risparmio energia veniva usato Software Center. Gli utenti potevano connettersi al Catalogo applicazioni per cercare e richiedere software, impostare alcune preferenze e cancellare in remoto i dati dei propri dispositivi mobili.  
+Se si ha familiarità con le nozioni di base e si cercano informazioni di riferimento più dettagliate su tutte le opzioni disponibili, iniziare a [Creare applicazioni](/sccm/apps/deploy-use/create-applications).  
 
- Anche se queste impostazioni sono ancora disponibili in System Center Configuration Manager, è ora disponibile una nuova versione di Software Center che consente di cercare le applicazioni. Non è necessario usare il Catalogo applicazioni, che richiede un Web browser abilitato per Silverlight. Tuttavia, i ruoli del sistema del sito del punto per siti Web del Catalogo applicazioni e del punto per servizi Web del Catalogo applicazioni continuano a essere necessari per visualizzare le app disponibili per gli utenti in Software Center.  
 
- Per altre informazioni, vedere [Plan for and configure application management](../../apps/plan-design/plan-for-and-configure-application-management.md) (Pianificare e configurare la gestione delle applicazioni).  
 
-## <a name="configuration-manager-packages-and-programs"></a>Pacchetti e programmi di Configuration Manager  
- Configuration Manager continua a supportare pacchetti e programmi usati nelle versioni precedenti del prodotto. Una distribuzione che usa pacchetti e programmi può essere più adatta rispetto a una che usa un'applicazione quando si distribuisce uno degli elementi seguenti:  
+## <a name="software-center"></a>Software Center  
 
--   Script che non installano un'applicazione su un computer, ad esempio uno script per deframmentare l'unità disco del computer.  
+Software Center è un'applicazione Windows installata con il client di Configuration Manager. Consente di eseguire le azioni seguenti:  
+- Esplorare e richiedere applicazioni distribuite nel dispositivo o per l'utente
+- Eseguire e pianificare le installazioni di software
+- Visualizzare lo stato dell'installazione per applicazioni, aggiornamenti software e sistemi operativi
+- Configurare le impostazioni per il controllo remoto
+- Configurare il risparmio energia
 
--   Script "One-off" che non è necessario monitorare costantemente.  
+Per altre informazioni, vedere gli articoli seguenti:  
+- [Pianificare e configurare la gestione delle applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management)
+- [Manuale dell'utente di Software Center](/sccm/core/understand/software-center)
 
--   Script eseguiti in base a una pianificazione ricorrente e che non possono usare la valutazione globale.
+> [!Note]  
+> Il ruolo Punto per servizi Web del Catalogo applicazioni non è più necessario nella versione 1806, ma è ancora un ruolo supportato. 
+> 
+> Il ruolo del sito Web del Catalogo applicazioni non è supportato nella versione 1806. Per altre informazioni, vedere [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).  
 
- Per altre informazioni, vedere [Packages and programs](../../apps/deploy-use/packages-and-programs.md) (Pacchetti e programmi).  
+
+
+## <a name="packages-and-programs"></a>Pacchetti e programmi  
+
+Configuration Manager continua a supportare pacchetti e programmi usati nelle versioni precedenti del prodotto. 
+
+Per altre informazioni, vedere [Packages and programs](/sccm/apps/deploy-use/packages-and-programs) (Pacchetti e programmi).  
+
+
+
+## <a name="next-steps"></a>Passaggi successivi
+
+Dopo avere compreso i concetti di base relativi alla gestione delle applicazioni in Configuration Manager, è possibile passare agli articoli seguenti:
+- [Creare e distribuire un'applicazione di esempio](/sccm/apps/get-started/create-and-deploy-an-application)
+- [Pianificare e configurare la gestione delle applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management)
+- [Creare applicazioni](/sccm/apps/deploy-use/create-applications)
