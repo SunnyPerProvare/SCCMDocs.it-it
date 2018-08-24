@@ -4,12 +4,12 @@ hide_bc: true
 title: Documentazione per System Center Configuration Manager
 description: Informazioni su come usare System Center Configuration Manager.
 ms.topic: hub-page
-ms.openlocfilehash: 250f5cf0793f5afd396a82f96389c937ed9be14b
-ms.sourcegitcommit: e3f7bb8cec4b37a311bc86098297534cab947de8
+ms.openlocfilehash: 9288732db8771d9ae83c006b1865683fe58ebc0e
+ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "29781763"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42587895"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -70,8 +70,8 @@ ms.locfileid: "29781763"
                                             <div class="cardText">
                                                 <h3>Gestione di dispositivi mobili</h3>
                                                 <p><a href="/sccm/mdm/understand/hybrid-mobile-device-management">Gestione di dispositivi mobili ibrida</a></p>
-                                                <p><a href="/sccm/mdm/deploy-use/setup-hybrid-mdm">Impostare la gestione di dispositivi mobili ibrida con Intune</a></p>
-                                                <p><a href="/sccm/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management">Scegliere tra la versione autonoma di Intune e la gestione di dispositivi mobili ibrida con Configuration Manager</a></p>
+                                                <p><a href="/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa">Eseguire la migrazione di dispositivi e utenti dalla soluzione MDM ibrida alla versione autonoma di Intune</a></p>
+                                                <p><a href="/sccm/mdm/understand/whats-new-in-hybrid-mobile-device-management">Novità nella gestione dei dispositivi mobili ibrida</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -344,7 +344,7 @@ ms.locfileid: "29781763"
                                 </a>
                             </li>
                             <li>
-                                <a href="/sccm/mdm/deploy-use/setup-hybrid-mdm">
+                                <a href="/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -354,8 +354,8 @@ ms.locfileid: "29781763"
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Impostare la gestione di dispositivi mobili (MDM) ibrida con Intune</h3>
-                                                <p>Abilitare gli scenari BYOD e soddisfare i prerequisiti per la maggior parte delle strategie di gestione dei dispositivi di proprietà dell'azienda.</p>
+                                                <h3>Eseguire la migrazione di dispositivi e utenti dalla soluzione MDM ibrida alla versione autonoma di Intune</h3>
+                                                <p>Usare un approccio in più fasi per eseguire la migrazione dalla soluzione MDM ibrida alla soluzione autonoma di Intune consigliata.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -363,7 +363,7 @@ ms.locfileid: "29781763"
                                 </a>
                             </li>
                             <li>
-                                <a href="/sccm/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management">
+                                <a href="/sccm/mdm/understand/whats-new-in-hybrid-mobile-device-management">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -373,8 +373,8 @@ ms.locfileid: "29781763"
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Scegliere tra la versione autonoma di Intune e la gestione di dispositivi mobili ibrida con Configuration Manager</h3>
-                                                <p>Versione autonoma di Intune o gestione di dispositivi mobili ibrida? Quale preferire? </p>
+                                                <h3>Novità nella gestione di dispositivi mobili ibrida</h3>
+                                                <p>Informazioni sulle nuove funzionalità di Intune supportate con la soluzione MDM ibrida.</p>
                                             </div>
                                         </div>
                                     </div>

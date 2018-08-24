@@ -56,7 +56,7 @@
 ### [Creare una sequenza di attività per acquisire e ripristinare lo stato utente](deploy-use/create-a-task-sequence-to-capture-and-restore-user-state.md)
 ### [Usare una sequenza di attività per gestire dischi rigidi virtuali](deploy-use/use-a-task-sequence-to-manage-virtual-hard-disks.md)
 
-## [Scenari di sequenze di attività personalizzate](deploy-use/custom-task-sequence-scenarios.md)
+## Scenari di sequenze di attività personalizzate
 ### [Creare una sequenza di attività personalizzata](deploy-use/create-a-custom-task-sequence.md)
 ### [Creare una sequenza di attività per distribuzioni non di sistema operativo](deploy-use/create-a-task-sequence-for-non-operating-system-deployments.md)
 ### [Passaggi della sequenza di attività per la gestione della conversione da BIOS a UEFI](deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion.md)
