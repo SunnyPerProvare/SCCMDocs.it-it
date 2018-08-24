@@ -1,8 +1,8 @@
 ---
 title: Strumento di pulizia della raccolta contenuto
 titleSuffix: Configuration Manager
-description: Usare lo strumento di pulizia della raccolta contenuto per rimuovere contenuto orfano non più associato a una distribuzione di System Center Configuration Manager.
-ms.date: 4/7/2017
+description: Usare lo strumento di pulizia della raccolta contenuto per rimuovere contenuto orfano non più associato a una distribuzione di Configuration Manager.
+ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,66 +10,127 @@ ms.assetid: 226cbbb2-9afa-4e2e-a472-be989c0f0e11
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a3a091a526a385fadf0353073048d33ae704cd76
-ms.sourcegitcommit: f9b11bb0942cd3d03d90005b1681e9a14dc052a1
+ms.openlocfilehash: 1e71b95642160d519f222a50a66bc8f636628d6e
+ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39229372"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39383524"
 ---
-# <a name="the-content-library-cleanup-tool-for-system-center-configuration-manager"></a>Strumento di pulizia della raccolta contenuto per System Center Configuration Manager
+# <a name="content-library-cleanup-tool"></a>Strumento di pulizia della raccolta contenuto
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
- A partire dalla versione 1702, è possibile usare uno strumento da riga di comando (**ContentLibraryCleanup.exe**) per rimuovere contenuto non più associato a un pacchetto o a un'applicazione da un punto di distribuzione (contenuto orfano). Questo strumento, denominato strumento di pulizia della raccolta contenuto, sostituisce le versioni precedenti di strumenti simili rilasciati per i prodotti Configuration Manager precedenti.  
+Usare lo strumento da riga di comando per la pulizia della raccolta contenuto per rimuovere il contenuto non più associato a un pacchetto o a un'applicazione in un punto di distribuzione. Questo tipo di contenuto è detto *contenuto orfano*. Questo strumento sostituisce le versioni precedenti di strumenti simili rilasciati per i prodotti Configuration Manager precedenti.  
 
 Lo strumento interessa solo il contenuto presente nel punto di distribuzione che viene specificato quando si esegue lo strumento stesso. Quest'ultimo non può rimuovere contenuto dalla raccolta contenuto nel server del sito.
 
-Lo strumento **ContentLibraryCleanup.exe** è disponibile nella cartella *%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* nel server del sito in un sito di amministrazione centrale o in un sito primario.
+Trovare **ContentLibraryCleanup.exe** in `CD.Latest\SMSSETUP\TOOLS\ContentLibraryCleanup` sul server del sito.
+
+
 
 ## <a name="requirements"></a>requisiti  
- Lo strumento può essere eseguito solo in un singolo punto di distribuzione alla volta.  
- - È possibile eseguire lo strumento direttamente nel computer che ospita il punto di distribuzione da pulire oppure in remoto da un altro server.
- - L'account utente che esegue lo strumento deve disporre di autorizzazioni di amministrazione dirette basate sui ruoli equivalenti a quelle di amministratore completo nella gerarchia di Configuration Manager. Lo strumento non funziona se all'account sono state concesse queste autorizzazioni in quanto membro di un gruppo di sicurezza di Windows con autorizzazioni di amministratore completo.
+
+- Eseguire lo strumento solo in un singolo punto di distribuzione alla volta.  
+
+- Eseguirlo direttamente nel computer che ospita il punto di distribuzione da pulire oppure in remoto da un altro computer.  
+
+- L'account utente che esegue lo strumento deve avere le stesse autorizzazioni del ruolo di sicurezza **Amministratore completo** in Configuration Manager.  
+
+
 
 ## <a name="modes-of-operation"></a>Modalità di funzionamento
-È possibile eseguire lo strumento nelle due modalità seguenti. È consigliabile eseguire lo strumento in modalità *di simulazione*, in modo che sia possibile esaminare i risultati prima di eseguirlo in *modalità di eliminazione*:
-  1.    **Modalità di simulazione**:   
-      Se non si specifica l'opzione **/delete**, lo strumento viene eseguito in modalità di simulazione e identifica il contenuto da eliminare dal punto di distribuzione.
-   - Quando viene eseguito in questa modalità, lo strumento non elimina alcun dato.
-   - Le informazioni sul contenuto da eliminare vengono scritte nel file di log dello strumento e non viene chiesto di confermare ogni potenziale eliminazione.  
-      </br>   
 
-  2. **Modalità di eliminazione**:   
-    Se si attiva l'opzione **/delete**, lo strumento viene eseguito in modalità di eliminazione.
+Eseguire lo strumento nelle due modalità seguenti: [simulazione](#what-if-mode) ed [eliminazione](#delete-mode).
 
-     - Se si esegue lo strumento in questa modalità, il contenuto orfano rilevato nel punto di distribuzione specificato può essere eliminato dalla raccolta contenuto del punto di distribuzione stesso.
-     -  Prima di eliminare ciascun file, è necessario confermare l'operazione.  È possibile selezionare **S** per Sì, **N** per No o **Sì a tutti** per ignorare le altre richieste di conferma ed eliminare tutto il contenuto orfano.  
-     </br>
+> [!Tip]  
+> Iniziare con la modalità di *simulazione*. Dopo aver ottenuto i risultati desiderati, eseguire lo strumento in modalità di *eliminazione*.  
 
-Quando si esegue lo strumento, indipendentemente dalla modalità, viene creato automaticamente un log il cui nome è composto dalla modalità in cui viene eseguito lo strumento, dal nome del punto di distribuzione e dalla data e dall'ora dell'operazione. Il file di log si apre automaticamente al termine dell'esecuzione dello strumento.
 
-Per impostazione predefinita, il file di log viene scritto nella cartella temp dell'account utente che esegue lo strumento, sul computer in cui quest'ultimo viene eseguito. È tuttavia possibile usare l'opzione **/log** per reindirizzare il file di log a un'altra posizione, compresa una condivisione di rete.
+### <a name="what-if-mode"></a>Modalità di simulazione   
+
+Se non si specifica il parametro `/delete`, lo strumento viene eseguito in modalità di simulazione. Questa modalità identifica il contenuto che verrebbe eliminato dal punto di distribuzione.
+
+- Quando viene eseguito in questa modalità, lo strumento non elimina alcun dato.  
+
+- Lo strumento scrive nel file di log le informazioni sul contenuto da eliminare. Non viene richiesto di confermare ogni eliminazione potenziale.  
+
+
+### <a name="delete-mode"></a>Modalità di eliminazione   
+
+Se si attiva il parametro `/delete`, lo strumento viene eseguito in modalità di eliminazione.
+
+- Se si esegue lo strumento in questa modalità, il contenuto orfano trovato nel punto di distribuzione specificato può essere eliminato dalla raccolta contenuto del punto di distribuzione stesso.  
+
+- Prima di eliminare ogni file, confermare che lo strumento debba eliminarlo. Selezionare **S** per Sì, **N** per No o **Sì a tutti** per ignorare le altre richieste di conferma ed eliminare tutto il contenuto orfano.  
+
+
+### <a name="log-file"></a>File di log
+
+Quando lo strumento viene eseguito in una delle due modalità, crea automaticamente un log. Denomina il file di log con le informazioni seguenti: 
+- Modalità di esecuzione dello strumento  
+- Nome del punto di distribuzione  
+- Data e ora dell'operazione  
+
+Al termine dell'esecuzione dello strumento, il file di log si apre automaticamente in Windows. 
+
+Per impostazione predefinita, lo strumento scrive il file di log nella cartella temp dell'account utente che esegue lo strumento. Questo percorso si trova sul computer in cui si esegue lo strumento, che non è sempre la destinazione dello strumento. Usare il parametro `/log` per reindirizzare il file di log a un'altra posizione, compresa una condivisione di rete.
+
 
 
 ## <a name="run-the-tool"></a>Eseguire lo strumento
-Per eseguire lo strumento:
-1. Aprire un prompt dei comandi amministrativo in una cartella contenente **ContentLibraryCleanup.exe**.  
-2. Immettere quindi una riga di comando che includa le opzioni della riga di comando obbligatorie e le opzioni facoltative che si vogliono usare.
 
-**Problema noto** Quando si esegue lo strumento, se un pacchetto o una distribuzione ha esito negativo o è in corso, è possibile che venga restituito un errore simile al seguente:
--  *System.InvalidOperationException: non è possibile eseguire la pulizia della raccolta contenuto perché il pacchetto <packageID> non è installato completamente*.
+Per eseguire lo strumento: 
 
-**Soluzione temporanea:** Nessuna. Lo strumento non è in grado di identificare in modo affidabile i file orfani quando la distribuzione del contenuto è in corso o ha avuto esito negativo. Di conseguenza, lo strumento non consente di eseguire la pulizia del contenuto fino a quando il problema non viene risolto.
+1. Aprire un prompt dei comandi come amministratore. Sostituire la directory con la cartella contenente **ContentLibraryCleanup.exe**.  
 
-### <a name="command-line-switches"></a>Opzioni della riga di comando  
-È possibile usare le opzioni della riga di comando seguenti in qualsiasi ordine.   
+2. Immettere una riga di comando che includa i [parametri della riga di comando](#bkmk_params) obbligatori e i parametri facoltativi che si vogliono usare.
 
-|Opzione|Dettagli|
+
+
+## <a name="bkmk_params"></a> Parametri della riga di comando  
+
+Usare questi parametri della riga di comando in qualsiasi ordine.   
+
+### <a name="required-parameters"></a>Parametri obbligatori
+|Parametro|Dettagli|
 |---------|-------|
-|**/delete**  |**Facoltativa** </br> Usare questa opzione se si desidera eliminare contenuto dal punto di distribuzione. Prima dell'eliminazione viene richiesta la conferma. </br></br> Se questa opzione non viene usata, lo strumento registra i risultati relativi al contenuto da eliminare, ma non elimina contenuto dal punto di distribuzione. </br></br> Esempio: ***ContentLibraryCleanup.exe /dp server1.contoso.com /delete*** |
-| **/q**       |**Facoltativa** </br> Questa opzione consente di eseguire lo strumento in modalità non interattiva. Tutte le richieste di conferma, ad esempio in caso di eliminazione di contenuto, vengono soppresse e il file di log non viene aperto automaticamente. </br></br> Esempio: ***ContentLibraryCleanup.exe /q /dp server1.contoso.com*** |
-| **/dp &lt;FQDN punto di distribuzione>**  | **Richiesto** </br> Specificare il nome di dominio completo (FQDN) del punto di distribuzione che si desidera pulire. </br></br> Esempio: ***ContentLibraryCleanup.exe /dp server1.contoso.com***|
-| **/ps &lt;FQDN sito primario>**       | **Facoltativa** per la pulizia del contenuto di un punto di distribuzione in un sito primario.</br>**Obbligatoria** per la pulizia del contenuto di un punto di distribuzione in un sito secondario. </br></br>Lo strumento si connette al sito primario padre per eseguire query su SMS_Provider. Queste query consentono allo strumento di determinare il tipo di contenuto che deve essere disponibile nel punto di distribuzione, in modo da poter identificare il contenuto isolato e che può essere rimosso. La connessione al sito primario padre deve essere eseguita per i punti di distribuzione in un sito secondario, perché i dettagli necessari non sono disponibili direttamente dal sito secondario.</br></br> Specificare il nome FQDN del sito primario a cui appartiene il punto di distribuzione oppure il nome del padre primario se il punto di distribuzione si trova in un sito secondario. </br></br> Esempio: ***ContentLibraryCleanup.exe /dp server1.contoso.com /ps siteserver1.contoso.com*** |
-| **/sc &lt;codice del sito primario>**  | **Facoltativa** per la pulizia del contenuto di un punto di distribuzione in un sito primario.</br>**Obbligatoria** per la pulizia del contenuto di un punto di distribuzione in un sito secondario. </br></br> Specificare il codice del sito primario a cui appartiene il punto di distribuzione o del sito primario padre se il punto di distribuzione si trova in un sito secondario.</br></br> Esempio: ***ContentLibraryCleanup.exe /dp server1.contoso.com /sc ABC*** |
-| **/log <log file directory>**       |**Facoltativa** </br> Specificare il percorso in cui lo strumento scrive il file di log. Può trattarsi di un'unità locale o di una condivisione di rete.</br></br> Quando questa opzione non viene usata, il file di log viene scritto nella cartella temp dell'utente, sul computer in cui viene eseguito lo strumento.</br></br> Esempio di unità locale: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log C:\Users\Administrator\Desktop*** </br></br>Esempio di condivisione di rete: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log \\&lt;condivisione>\&lt;cartella>***|
+| `/dp <distribution point FQDN>`  | Specificare il nome di dominio completo (FQDN) del punto di distribuzione da pulire. |
+| `/ps <primary site FQDN>` | *Obbligatorio* solo per la pulizia del contenuto di un punto di distribuzione in un sito secondario. Lo strumento si connette al sito primario padre per eseguire query sul provider SMS. Queste query consentono allo strumento di determinare quale contenuto deve trovarsi nel punto di distribuzione e quindi di identificare il contenuto orfano da rimuovere. La connessione al sito primario padre deve essere eseguita per i punti di distribuzione in un sito secondario, perché i dettagli necessari non sono disponibili direttamente dal sito secondario.|
+| `/sc <primary site code>`  | *Obbligatorio* solo per la pulizia del contenuto di un punto di distribuzione in un sito secondario. Specificare il codice del sito primario padre. |
+
+#### <a name="example-scan-and-log-what-content-it-would-delete-what-if"></a>Esempio: analizzare e registrare il contenuto da eliminare (simulazione)
+`ContentLibraryCleanup.exe /dp server1.contoso.com`
+
+#### <a name="example-scan-and-log-content-for-a-dp-at-a-secondary-site"></a>Esempio: analizzare e registrare il contenuto per un punto di distribuzione in un sito secondario
+`ContentLibraryCleanup.exe /dp server1.contoso.com /ps siteserver1.contoso.com /sc ABC` 
+
+
+### <a name="optional-parameters"></a>Parametri facoltativi
+
+|Parametro|Dettagli|
+|---------|-------|
+|`/delete`| Usare questo parametro se si è pronti per eliminare il contenuto dal punto di distribuzione. Viene chiesta conferma prima di eliminare il contenuto. </br></br> Quando non si usa questo parametro, lo strumento registra i risultati sul contenuto da eliminare. Senza questo parametro, il contenuto non viene effettivamente eliminato dal punto di distribuzione. |
+| `/q` | Questo parametro esegue lo strumento in modalità non interattiva, che elimina tutti i prompt. Questi prompt includono quando eliminare il contenuto. Neppure il file di log viene aperto automaticamente. |
+| `/ps <primary site FQDN>` | Facoltativo solo per la pulizia del contenuto di un punto di distribuzione in un sito primario. Specificare il nome di dominio completo del sito primario a cui appartiene il punto di distribuzione. |
+| `/sc <primary site code>` | Facoltativo solo per la pulizia del contenuto di un punto di distribuzione in un sito primario. Specificare il codice del sito primario a cui appartiene il punto di distribuzione. |
+| `/log <log file directory>` | Specificare il percorso in cui lo strumento scrive il file di log. Questo percorso può essere un'unità locale o una condivisione di rete.</br></br> Quando non si usa questo parametro, lo strumento inserisce il file di log nella directory temporanea dell'utente sul computer in cui lo strumento viene eseguito.|
+
+#### <a name="example-delete-content"></a>Esempio: eliminare il contenuto 
+`ContentLibraryCleanup.exe /dp server1.contoso.com /delete`
+
+#### <a name="example-delete-content-without-prompts"></a>Esempio: eliminare il contenuto senza prompt
+`ContentLibraryCleanup.exe /q /dp server1.contoso.com /delete` 
+
+#### <a name="example-log-to-local-drive"></a>Esempio: eseguire la registrazione nell'unità locale
+`ContentLibraryCleanup.exe /dp server1.contoso.com /log C:\Users\Administrator\Desktop` 
+
+#### <a name="example-log-to-network-share"></a>Esempio: eseguire la registrazione nella condivisione di rete
+`ContentLibraryCleanup.exe /dp server1.contoso.com /log \\server\share`
+
+
+### <a name="known-issue"></a>Problema noto
+
+Quando un pacchetto o una distribuzione non è riuscita o è in corso, lo strumento potrebbe restituire l'errore seguente: `System.InvalidOperationException: This content library cannot be cleaned up right now because package <packageID> is not fully installed.`
+
+Non esiste una soluzione alternativa per questo problema. Lo strumento non riesce a identificare in modo affidabile i file orfani quando la distribuzione del contenuto è in corso o ha avuto esito negativo. Lo strumento non consentirà di pulire il contenuto fino a quando il problema non sarà stato risolto.

@@ -2,7 +2,7 @@
 title: punto di connessione del servizio
 titleSuffix: Configuration Manager
 description: Informazioni sul ruolo di sistema del sito di Configuration Manager e pianificazione della gamma di usi.
-ms.date: 07/05/2018
+ms.date: 08/01/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: bc2282d5-0571-465b-9528-a555855eaacd
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6002c077ae0a8e34f35a9d0e36d02f5950946bde
-ms.sourcegitcommit: 73b241a72db8f8f3bd7e269fc81ad49e14f01058
+ms.openlocfilehash: 560fa3480f00811f325eb22dda439facac36e6e4
+ms.sourcegitcommit: 6e0e5b4b7779ce03e2b56b3b5f68f4ace1acedd8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37843288"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39467675"
 ---
 # <a name="about-the-service-connection-point-in-system-center-configuration-manager"></a>Informazioni sul punto di connessione del servizio in System Center Configuration Manager
 
@@ -80,6 +80,9 @@ Per usare Configuration Manager Service Manager, nella console passare a **Monit
 
 ##  <a name="bkmk_urls"></a> Requisiti per l'accesso a Internet  
 Per abilitare l'operazione, il computer che ospita il punto di connessione del servizio ed eventuali firewall tra il computer e Internet deve passare le comunicazioni tramite la porta in uscita **TCP 443** per HTTPS e la porta in uscita **TCP 80** per HTTP ai percorsi Internet seguenti. Il punto di connessione del servizio supporta anche l'uso di un proxy Web (con o senza autenticazione) per accedere a questi percorsi.  Se è necessario configurare un account proxy Web, vedere [Supporto dei server proxy in System Center Configuration Manager](/sccm/core/plan-design/network/proxy-server-support).
+
+> [!TIP]
+> Il punto di connessione del servizio usa il servizio Microsoft Intune quando si connette a http://go.Microsoft.com o a http://manage.Microsoft.com. Esiste un problema noto per cui in Intune Connector si verificano problemi di connettività se il certificato radice Baltimore CyberTrust non è installato, è scaduto o è danneggiato nel sistema del sito di Configuration Manager in cui è installato il ruolo Punto di connessione del servizio. Per altre informazioni, vedere [Informazioni sul punto di connessione del servizio in System Center Configuration Manager](https://support.microsoft.com/help/3187516).
 
 **Aggiornamenti e manutenzione**  
 

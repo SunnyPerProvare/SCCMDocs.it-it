@@ -10,18 +10,18 @@ ms.assetid: 4a9dc4d9-e114-42ec-ae2b-73bee14ab04f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1e27bce7576f6d96a8e8af95fa5df69dd39c05cd
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 060d15ce396a8d062164c7971d1c90ee583414bb
+ms.sourcegitcommit: aa610a806f9680753f4d0c0c385357fad51f5fd3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344331"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39401162"
 ---
 # <a name="define-network-locations-as-boundaries-for-system-center-configuration-manager"></a>Definire percorsi di rete come limiti di System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-I limiti di Configuration Manager sono costituiti dai percorsi di rete in cui sono contenuti i dispositivi da gestire. Il limite di un dispositivo è equivalente al sito di Active Directory o all'indirizzo IP di rete identificato dal client di Configuration Manager installato nel dispositivo.
+I limiti di Configuration Manager sono costituiti dai percorsi di rete in cui sono contenuti i dispositivi da gestire. Il limite di un dispositivo è equivalente al sito di Active Directory o all'indirizzo IP di rete identificato dal client Configuration Manager installato nel dispositivo.
  - È possibile creare manualmente i singoli limiti. Configuration Manager, tuttavia, non supporta l'immissione diretta di una supernet come limite. È possibile, invece, usare il tipo di limite Intervallo di indirizzi IP.
  - È possibile configurare il metodo [Active Directory Forest Discovery](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutForest) per il rilevamento automatico e la creazione di limiti per ogni subnet IP e sito Active Directory individuati. Quando l'individuazione foresta Active Directory individua una supernet assegnata a un sito di Active Directory, Configuration Manager converte la supernet in un limite Intervallo di indirizzi IP.  
 
