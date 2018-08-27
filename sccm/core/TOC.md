@@ -93,6 +93,7 @@
 ###  [Informativa sulla privacy - Libreria di cmdlet di Configuration Manager](plan-design/security/privacy-statement-cmdlet-library.md)
 ###  [Informazioni aggiuntive sulla privacy](plan-design/security/additional-privacy.md)
 ###  [Configurare la sicurezza](plan-design/security/configure-security.md)
+###  [Riferimento tecnico per i controlli crittografici](plan-design/security/cryptographic-controls-technical-reference.md)
 
 #    Introduzione
 ##   [Valutare Configuration Manager in un lab](get-started/evaluate-with-lab-environment.md)

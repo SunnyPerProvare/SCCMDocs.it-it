@@ -29,7 +29,6 @@
 ## [Profili certificato](deploy-use/introduction-to-certificate-profiles.md)
 ### [Come creare i profili certificato in Configuration Manager](deploy-use/create-certificate-profiles.md)
 ### [Configurazione dei profili certificato in System Center Configuration Manager](deploy-use/certificate-infrastructure.md)
-### [Riferimento tecnico per i controlli crittografici](deploy-use/cryptographic-controls-technical-reference.md)
 
 ## [Endpoint Protection](deploy-use/endpoint-protection.md)
 ### [Configurare Endpoint Protection](deploy-use/endpoint-protection-configure.md)
