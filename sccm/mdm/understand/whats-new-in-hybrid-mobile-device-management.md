@@ -2,7 +2,7 @@
 title: Novità nella gestione di dispositivi mobili ibrida
 titleSuffix: Configuration Manager
 description: Informazioni sulle nuove funzionalità di gestione dei dispositivi mobili disponibili per le distribuzioni ibride con Configuration Manager e Intune.
-ms.date: 08/01/2018
+ms.date: 08/29/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,18 +10,22 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cdb5720778366cea951476ad9b314b69bdd0c492
-ms.sourcegitcommit: 6e0e5b4b7779ce03e2b56b3b5f68f4ace1acedd8
+ms.openlocfilehash: 87a40300cfe13ec097d155093fbb7b70af3b459c
+ms.sourcegitcommit: 8661f10596f565ca2b7bdb5951388b44b3b622ee
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39467607"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43193919"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con Configuration Manager e Microsoft Intune
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 Questo articolo illustra le nuove funzionalità di gestione dei dispositivi mobili (MDM) disponibili per le distribuzioni ibride con System Center Configuration Manager e Intune.     
+
+> [!Important]  
+> A partire dal 14 agosto 2018, la gestione ibrida dei dispositivi mobili è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
+
 
 > [!Note]    
 > Intune in Azure è la soluzione MDM consigliata da Microsoft.     
@@ -42,10 +46,32 @@ Ogni sezione di questo articolo elenca le funzionalità ibride in tre categorie 
 |**Novità di Configuration Manager (Current Branch)**| Tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Configuration Manager (Current Branch) specificata. Se si usa una versione precedente di Configuration Manager per la distribuzione ibrida, eseguire l'aggiornamento alla versione di Configuration Manager (Current Branch) specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Eseguire l'aggiornamento a Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).|
 
 
+## <a name="august-2018"></a>Agosto 2018
+
+### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
+
+### <a name="new-user-experience-update-for-the-company-portal-website"></a>Nuovo aggiornamento dell'esperienza utente per il sito Web Portale aziendale
+<!--2000968--> In base ai commenti e ai suggerimenti degli utenti, sono state aggiunte nuove funzionalità al sito Web Portale aziendale. Le funzionalità esistenti e la semplicità d'uso risulteranno molto migliorate dai dispositivi Android, iOS e Windows. In alcune aree del sito è stato applicato un nuovo design reattivo moderno. Tali aree includono quelle relative a dettagli dei dispositivi, commenti e suggerimenti e supporto tecnico e panoramica dei dispositivi. Sono stati inoltre apportati i miglioramenti seguenti:
+
+- Semplificazione dei flussi di lavoro in tutte le piattaforme per dispositivi
+- Miglioramento dei flussi di identificazione e registrazione dei dispositivi
+- Messaggi di errore più utili
+- Linguaggio più semplice con meno gergo tecnico
+- Possibilità di condividere collegamenti diretti alle app
+- Miglioramento delle prestazioni per i cataloghi di app di grandi dimensioni
+- Maggiore accessibilità per tutti gli utenti
+
+
 
 ## <a name="july-2018"></a>Luglio 2018
 
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
+
+#### <a name="updated-intune-app-sdk-for-android-is-now-available"></a>Versione aggiornata di Intune App SDK per Android ora disponibile
+<!--2744271--> È disponibile una versione aggiornata di Intune App SDK per Android che supporta la versione Android 9 Pie. Gli sviluppatori di app che usano Intune SDK per Android possono installare la versione aggiornata di Intune App SDK. Questo aggiornamento garantisce che la funzionalità di Intune nelle app Android continui a funzionare come previsto nei dispositivi Android Pie 9. Questa versione di Intune App SDK offre un plug-in integrato che esegue gli aggiornamenti SDK. Non è necessario riscrivere il codice esistente integrato. Per altre informazioni, vedere [Intune SDK per Android](https://github.com/msintuneappsdk/ms-intune-app-sdk-android). 
+
+Se si usa lo stile di personalizzazione precedente per Intune, iniziare a usare l'icona a forma di valigetta. Per altre informazioni sulla personalizzazione, vedere [Intune App Badging System](https://github.com/msintuneappsdk/intune-app-partner-badge) (Sistema di personalizzazione di app di Intune).
+
 
 #### <a name="support-for-security-enhancement-in-intune-service"></a>Supporto per miglioramenti della sicurezza nel servizio Intune
 <!--2520152--> È ora possibile specificare che i dispositivi senza criteri di conformità assegnati siano da considerare non conformi in modalità ibrida. Configurare questa impostazione in Intune nel portale di Azure. È consigliabile abilitare questa funzionalità per proteggere le risorse interne.
@@ -433,86 +459,11 @@ Chiedere agli utenti finali che usano Windows 10 versione 1607 o successiva di e
 
 
 
-## <a name="july-2017"></a>Luglio 2017
-
-### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
-
-- **Aggiunta di comunicazioni di fine supporto per Android e Windows Phone**    
-    Sono state aggiunte nuove comunicazioni relative alla fine del supporto per alcune versioni di Android e di Windows Phone. Per informazioni, vedere [Notifiche](#notices).
-
-
-### <a name="new-in-configuration-manager-current-branch"></a>Novità di Configuration Manager (Current Branch)
-
-Le funzionalità seguenti erano precedentemente disponibili nelle versioni di Configuration Manager Technical Preview. Ora sono disponibili nelle distribuzioni ibride con Intune e Configuration Manager (Current Branch) versione 1706.
-
-- [Supporto di Entrust per le autorità di certificazione Entrust](/sccm/core/get-started/capabilities-in-technical-preview-1706#support-for-entrust-certification-authorities)
-- [Nuove impostazioni dei criteri di gestione delle applicazioni mobili](/sccm/core/plan-design/changes/whats-new-in-version-1706#new-mobile-application-management-policy-settings)
-- [Aggiornamenti della configurazione della condivisione di Android for Work](/sccm/core/plan-design/changes/whats-new-in-version-1706#updates-to-android-for-work-sharing-configuration)
-- [Nuove regole per i criteri di conformità dei dispositivi](/sccm/core/plan-design/changes/whats-new-in-version-1706#new-device-compliance-policy-rules)
-- [Nuove impostazioni di configurazione per dispositivi Windows 10 non gestiti con il client di Configuration Manager](/sccm/core/plan-design/changes/whats-new-in-version-1706#new-configuration-settings-for-windows-10-devices-that-are-not-managed-with-the-configuration-manager-client)
-- [Supporto Cisco (IPsec) per i profili VPN di MacOS](/sccm/core/get-started/capabilities-in-technical-preview-1706#cisco-ipsec-support-for-macos-vpn-profiles)
-- [Restrizioni di registrazione per Android e iOS](/sccm/core/plan-design/changes/whats-new-in-version-1706#android-and-ios-enrollment-restrictions) 
-
-
-
-## <a name="june-2017"></a>Giugno 2017
-
-### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
-
-- **Cambiare l'autorità MDM**    
-  A partire dalla versione 1610 di Configuration Manager, è possibile cambiare l'autorità MDM senza bisogno di contattare il supporto tecnico Microsoft. Inoltre, non è necessario annullare e ripetere la registrazione dei dispositivi gestiti esistenti. Per altre informazioni, vedere [Cambiare l'autorità MDM](/sccm/mdm/deploy-use/change-mdm-authority).
-
-- **Integrazione di Managed Browser e del proxy di applicazione**    
-  Intune Managed Browser può ora integrarsi con il servizio proxy di applicazione di Azure AD per consentire agli utenti di accedere ai siti Web interni, anche quando lavorano in remoto. Gli utenti del browser immettono l'URL del sito nel modo usuale e Managed Browser indirizza la richiesta tramite il gateway Web del proxy di applicazione. Per altre informazioni, vedere [Gestire un accesso Internet tramite i criteri di Managed Browser](https://docs.microsoft.com/intune/app-configuration-managed-browser).
-
-- **L'app Portale aziendale per Android offre ora all'utente finale una nuova esperienza dei criteri di protezione delle app**  
-  In base ai suggerimenti dei clienti, l'app Portale aziendale per Android è stata modificata in modo da includere un pulsante **Accesso al contenuto aziendale**. Lo scopo è impedire che gli utenti finali eseguano inutilmente il processo di registrazione quando hanno solo necessità di accedere alle app che supportano i criteri di protezione delle app, una funzionalità di gestione delle applicazioni mobili di Intune. È possibile visualizzare queste modifiche nella pagina delle [novità dell'interfaccia utente dell'app](https://docs.microsoft.com/intune/whats-new-app-ui).
-
-- **Nuova azione di menu per rimuovere facilmente Portale aziendale**  
-  In base ai suggerimenti degli utenti, nell'app Portale aziendale per Android è stata aggiunta a una nuova azione di menu per avviare la rimozione di Portale aziendale dal dispositivo. Questa azione rimuove il dispositivo dalla gestione di Intune in modo che l'utente possa rimuovere l'app dal dispositivo. È possibile visualizzare queste modifiche nella pagina [Novità dell'interfaccia utente dell'app](https://docs.microsoft.com/intune/whats-new-app-ui) e nella [documentazione di Android per l'utente finale](https://docs.microsoft.com/intune-user-help/unenroll-your-device-from-intune-android).
-
-- **Miglioramenti alla sincronizzazione delle app con Windows 10 Creators Update**  
-  L'app Portale aziendale per Windows 10 a questo punto avvia automaticamente una sincronizzazione per le richieste di installazione di app per i dispositivi con Windows 10 Creators Update (versione 1703). Questo comportamento riduce il problema del blocco dell'installazione di app durante lo stato "In attesa di sincronizzazione". Gli utenti sono anche in grado di avviare manualmente la sincronizzazione all'interno dell'app. È possibile visualizzare queste modifiche nella pagina delle [novità dell'interfaccia utente dell'app](https://docs.microsoft.com/intune/whats-new-app-ui).
-
-- **Nuova esperienza interattiva per Portale aziendale di Windows 10**  
-  L'app Portale aziendale per Windows 10 include un'esperienza guidata per Intune per i dispositivi che non sono stati identificati o registrati. La nuova esperienza fornisce istruzioni dettagliate che guidano l'utente nella fase di registrazione in Azure Active Directory (obbligatoria per le funzionalità di accesso condizionale) e la registrazione in MDM (obbligatoria per le funzionalità di gestione dei dispositivi). L'esperienza interattiva è accessibile dalla home page di Portale aziendale. Se gli utenti non completano la registrazione, possono continuare a usare l'app, ma le funzionalità saranno limitate.
-
-  Questo aggiornamento è disponibile solo nei dispositivi che eseguono l'Aggiornamento dell'anniversario di Windows 10 (build 1607) o versione successiva. È possibile visualizzare queste modifiche nella pagina delle [novità dell'interfaccia utente dell'app](https://docs.microsoft.com/intune/whats-new-app-ui).
-
-- **Miglioramenti ai riquadri dell'app nell'app Portale aziendale per iOS**  
-  La progettazione dei riquadri dell'app nella home page è stata aggiornata in modo da riflettere il colore della personalizzazione impostato per il Portale aziendale. Per altre informazioni, vedere la pagina delle [novità dell'interfaccia utente dell'app](https://docs.microsoft.com/intune/whats-new-app-ui).
-
-- **Selezione account ora disponibile per l'app Portale aziendale per iOS**  
-  Se gli utenti di dispositivi iOS usano il proprio account aziendale o dell'istituto di istruzione per accedere alle altre app Microsoft, possono visualizzare la nuova selezione account quando effettuano l'accesso a Portale aziendale. Per altre informazioni, vedere la pagina delle [novità dell'interfaccia utente dell'app](https://docs.microsoft.com/intune/whats-new-app-ui).
-
-### <a name="new-in-configuration-manager-technical-preview-1706"></a>Novità di Configuration Manager Technical Preview 1706
-
-- **Nuove impostazioni degli elementi di configurazione di Windows**      
-  Nuovi elementi di configurazione di Windows sono disponibili per le categorie di impostazioni relative a password, dispositivi, archivi e Microsoft Edge. Per altre informazioni, vedere [Nuove attività degli elementi di configurazione di Windows](/sccm/core/get-started/capabilities-in-technical-preview-1706#new-windows-configuration-item-settings).
-  <!-- 1354715 -->
-
-- **Nuove regole per i criteri di conformità dei dispositivi**   
-  È ora possibile configurare nuove opzioni per i criteri di conformità che in precedenza erano disponibili solo nella versione autonoma di Intune. Per i dettagli, vedere [Miglioramenti dei criteri di conformità dei dispositivi](/sccm/core/get-started/capabilities-in-technical-preview-1706#new-device-compliance-policy-rules).
-
-- **Restrizioni di registrazione per Android e iOS**       
-  Gli amministratori possono ora specificare che gli utenti non possono registrare dispositivi Android o iOS personali nel proprio ambiente ibrido. Questa azione consente di limitare i dispositivi registrati ai dispositivi pre-dichiarati, ai dispositivi di proprietà dell'azienda o ai dispositivi iOS registrati solo tramite Device Enrollment Program. Per i dettagli vedere [Restrizioni di registrazione di Android e iOS](/sccm/core/get-started/capabilities-in-technical-preview-1706#android-and-ios-enrollment-restrictions).
-  <!-- 1290826 -->
-
-- **Supporto per le autorità di certificazione Entrust**      
-  Configuration Manager ora supporta l'autorità di certificazione Entrust. Questo supporto consente il recapito dei certificati PFX ai dispositivi registrati in Microsoft Intune.    
-  <!-- 1350740 -->
-
-  Quando si aggiunge un ruolo di punto di registrazione certificato in Configuration Manager, è possibile configurare Entrust come autorità di certificazione. Quando si aggiunge un nuovo profilo di certificato che emette i certificati PFX, è possibile selezionare l'autorità di certificazione Microsoft o Entrust.
-
-  **Problema noto**: nella Technical Preview 1706, i certificati PFX non vengono emessi per le autorità di certificazione di Microsoft. Questo problema non influenza i certificati PFX importati o i profili SCEP.
-
-- **Supporto Cisco (IPsec) per i profili VPN di MacOS**      
-  È possibile creare un profilo VPN di MacOS con Cisco (IPsec) come tipo di connessione. Per altre informazioni, vedere [Creare profili VPN](/sccm/mdm/deploy-use/create-vpn-profiles#create-vpn-profiles).
-  <!-- 1321367 -->
-
-
-
 ## <a name="notices"></a>Notifiche
+
+### <a name="plan-for-change-use-intune-on-azure-now-for-your-mdm-management"></a>Modifiche pianificate: usare Intune in Azure per la gestione dei dispositivi mobili 
+<!--1227338--> Oltre un anno fa, Microsoft ha annunciato la [versione di anteprima pubblica di Intune in Azure](https://cloudblogs.microsoft.com/enterprisemobility/2016/12/07/public-preview-of-intune-on-azure/) e sei mesi fa è stata annunciata la [disponibilità generale della nuova esperienza di amministrazione](https://cloudblogs.microsoft.com/enterprisemobility/2017/06/08/the-new-intune-and-conditional-access-admin-consoles-are-ga/) per Intune. A partire dal 31 agosto 2018, verrà disattivata la gestione dei dispositivi mobili (MDM) nella console Silverlight classica per i clienti che usano la versione autonoma di Intune. Usare invece [Intune in Azure](https://aka.ms/Intune_on_Azure) per la gestione dei dispositivi mobili. Se si usa ancora la console classica per la gestione dei dispositivi mobili, smettere di usarla e acquisire familiarità con Intune in Azure. Microsoft non prevede alcun impatto di questa modifica sull'utente finale. La gestione dei PC classica con Intune rimane in Silverlight. Per altre informazioni, vedere il [blog del team di supporto di Intune](https://aka.ms/Intune_on_Azure_mdm).
+
 
 ### <a name="plan-for-change-upcoming-macos-and-intune-password-enforcement-change"></a>Modifica prevista: modifica imminente dell'applicazione della password per macOS e Intune
 <!--1873216--> Nella versione del servizio di settembre è prevista l'integrazione in Intune dell'impostazione di Apple rilasciata di recente "Change Password at Next Auth" (Cambia password alla successiva autenticazione) per i dispositivi che eseguono macOS versioni 10.13 e successive. Prima dell'introduzione di questa impostazione, i provider MDM non avevano modo di verificare che il passcode in un dispositivo fosse stato modificato per garantire la conformità. I criteri di configurazione e conformità di Intune verificavano solo che alla successiva modifica di una password nel dispositivo, questa venisse contrassegnata come conforme. Gli utenti di macOS riceveranno una richiesta di aggiornamento della password quando questa nuova funzionalità di Apple verrà integrata, anche se la password è già conforme.

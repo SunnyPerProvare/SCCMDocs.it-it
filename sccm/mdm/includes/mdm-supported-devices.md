@@ -5,7 +5,7 @@
 - PC che eseguono Windows 10 (versioni Home, Pro, Education ed Enterprise)
 - Dispositivi che eseguono Windows 10 IoT Enterprise (x86, x64)
 - Dispositivi che eseguono Windows 10 IoT Mobile Enterprise
-- Windows Holographic e Windows Holographic Enterprise
+- Windows Holographic for Business
 - Mac OS X 10.9 e versioni successive
 - Windows Phone 8.1, i PC che eseguono Windows 8.1 e Windows 8.1 RT sono in modalità di solo supporto (il palmare Windows Embedded 8.1 non è supportato)
 

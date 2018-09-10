@@ -2,7 +2,7 @@
 title: Novità della versione 1806
 titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1806 di Configuration Manager (Current Branch).
-ms.date: 07/31/2018
+ms.date: 08/29/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 0249dbd3-1e85-4d05-a9e5-420fbe44d850
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1c6ae28a50f3145420895b295ebe730fb7b2a9a7
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 89742711f17997487fec403d51c89a42ceff34ec
+ms.sourcegitcommit: 52ec30245ba559596d2f88a3eff70c467b4a056f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39386062"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43381041"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Novità della versione 1806 di Configuration Manager (Current Branch)
 
@@ -23,12 +23,12 @@ ms.locfileid: "39386062"
 
 L'aggiornamento 1806 per Configuration Manager (Current Branch) è disponibile come aggiornamento nella console. Applicare questo aggiornamento ai siti con la versione 1706, 1710 o 1802. <!-- baseline only statement: When installing a new site, it's also available as a baseline version.-->
 
-> [!Important]  
-> Questo articolo elenca tutte le funzionalità importanti di questa versione al momento. Tuttavia, non tutte le sezioni sono ancora collegate al contenuto aggiornato con maggiori informazioni sulle nuove funzionalità. Continuare a controllare questa pagina con regolarità per verificare la disponibilità di aggiornamenti. Le modifiche sono contrassegnate con il tag ***[Aggiornato]***. Questa nota sarà rimossa nella versione finale del contenuto.  
+Esaminare sempre l'elenco di controllo più recente per installare questo aggiornamento. Per altre informazioni, vedere [Elenco di controllo per l'installazione dell'aggiornamento 1806](/sccm/core/servers/manage/checklist-for-installing-update-1806). Dopo aver aggiornato un sito, vedere anche [Elenco di controllo post-aggiornamento](/sccm/core/servers/manage/checklist-for-installing-update-1806#post-update-checklist).
 
-<!--
-Aside from new features, this release also includes additional changes such as bug fixes. For more information, see [Summary of changes in System Center Configuration Manager current branch, version 1806](https://support.microsoft.com/help/4101375).
--->
+> [!Important]  
+> Questo articolo elenca tutte le funzionalità importanti di questa versione al momento. Tuttavia, non tutte le sezioni sono ancora collegate al contenuto aggiornato con maggiori informazioni sulle nuove funzionalità. Continuare a controllare questa pagina con regolarità per verificare la disponibilità di aggiornamenti. Le modifiche sono contrassegnate con il tag ***[Aggiornamento]***. Questa nota sarà rimossa nella versione finale del contenuto.  
+
+A parte le nuove funzionalità, questa versione include anche ulteriori modifiche, ad esempio correzioni di bug. Per altre informazioni, vedere [Riepilogo delle modifiche in System Center Configuration Manager Current Branch, versione 1806](https://support.microsoft.com/help/4459701).
 
 <!--
 The following additional updates to this release are also now available:
@@ -40,10 +40,13 @@ Le sezioni seguenti offrono informazioni dettagliate sulle modifiche e sulle nuo
 
 
 
-<!--
-## Deprecated features and operating systems
-Learn about support changes before they are implemented in [removed and deprecated items](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated).
+## <a name="deprecated-features-and-operating-systems"></a>Funzionalità e sistemi operativi deprecati
 
+Informazioni sulle modifiche apportate al supporto prima dell'implementazione in [Elementi rimossi e deprecati](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated).
+
+***[Aggiornamento]*** A partire dal 14 agosto 2018, la funzionalità di gestione ibrida dei dispositivi mobili è deprecata. Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
+
+<!--
 Version 1806 drops support for the following products:
 -->
 
@@ -84,7 +87,10 @@ Per altre informazioni, vedere [Strumenti di Configuration Manager](/sccm/core/s
 
 
 ### <a name="exclude-active-directory-containers-from-discovery"></a>Escludere i contenitori di Active Directory dall'individuazione
-<!--1358143--> Per ridurre il numero di oggetti individuati, escludere specifici contenitori a Individuazione sistema Active Directory. 
+<!--1358143-->
+ ***[Aggiornamento]*** Per ridurre il numero di oggetti individuati, escludere contenitori specifici dall'individuazione sistema Active Directory. 
+
+Per altre informazioni, vedere [Configurare l'individuazione sistema Active Directory](/sccm/core/servers/deploy/configure/configure-discovery-methods#bkmk_config-adsd).
 
 
 
@@ -125,11 +131,14 @@ Per altre informazioni, vedere [Supporto per download parziale](/sccm/core/plan-
 
 
 ### <a name="boundary-group-options-for-peer-downloads"></a>Opzioni del gruppo di limiti per download peer
-<!--1356193--> Sono ora disponibili impostazioni aggiuntive per i gruppi di limiti per offrire maggiore controllo sulla distribuzione di contenuti nell'ambiente. Questa versione aggiunge le opzioni seguenti:  
+<!--1356193-->
+ ***[Aggiornamento]*** Sono ora disponibili impostazioni aggiuntive per i gruppi di limiti che offrono maggiore controllo sulla distribuzione di contenuti nell'ambiente. Questa versione aggiunge le opzioni seguenti:  
 
-- **Allow peer downloads in this boundary group** (Consenti download peer in questo gruppo di limiti): questa impostazione è abilitata per impostazione predefinita. Il punto di gestione fornisce ai client un elenco di posizioni del contenuto che include le origini peer. Questa impostazione influisce anche sull'applicazione di ID di gruppo per l'ottimizzazione recapito.  
+- **Consenti i download peer in questo gruppo di limiti**: il punto di gestione fornisce ai client un elenco delle posizioni dei contenuti che include le origini peer. Questa impostazione influisce anche sull'applicazione di ID di gruppo per l'ottimizzazione recapito.  
 
-- **Durante i download peer, usa solo i peer entro la stessa subnet**: questa impostazione dipende da quella sopra indicata. Se si abilita questa opzione, il punto di gestione include nell'elenco delle posizioni del contenuto solo le origini peer incluse nella stessa subnet del client.  
+- **Durante i download peer, usa solo i peer entro la stessa subnet**: il punto di gestione include nell'elenco delle posizioni dei contenuti solo le origini peer presenti nella stessa subnet del client.  
+
+Per altre informazioni, vedere [Opzioni del gruppo di limiti per download peer](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgoptions).
 
 
 
@@ -288,17 +297,10 @@ Per altre informazioni, vedere l'argomento relativo alla [distribuzione delle ap
 
 
 ### <a name="package-conversion-manager"></a>Package Conversion Manager 
-<!--1357861--> Package Conversion Manager è ora uno strumento integrato che consente di convertire i pacchetti di Configuration Manager 2007 legacy in applicazioni Current Branch di Configuration Manager. È quindi possibile usare le funzionalità di applicazioni come dipendenze, regole dei requisiti e affinità utente-dispositivo.
+<!--1357861-->
+ ***[Aggiornamento]*** Package Conversion Manager è ora uno strumento integrato che consente di convertire i pacchetti legacy in applicazioni di Configuration Manager Current Branch. È quindi possibile usare le funzionalità di applicazioni come dipendenze, regole dei requisiti e affinità utente-dispositivo.
 
-Iniziare con le azioni seguenti dal nodo **Pacchetti** nella console di Configuration Manager:  
-
-   - **Analizza pacchetto**: avviare il processo di conversione analizzando il pacchetto.  
-
-   - **Converti pacchetto**: alcuni pacchetti possono essere facilmente convertiti in applicazioni con questa azione.  
-
-   - **Correggi e converti**: alcuni pacchetti richiedono la risoluzione dei problemi prima della conversione in applicazioni.  
-
-Passare quindi al dashboard **Stato della conversione pacchetti** nell'area di lavoro **Monitoraggio**. Questo nuovo dashboard visualizza lo stato complessivo dell'analisi e della conversione dei pacchetti nel sito. Si tratta di una [funzionalità di versione non definitiva](/sccm/core/servers/manage/pre-release-features).
+Per altre informazioni, vedere [Package Conversion Manager](/sccm/apps/pcm/package-conversion-manager).
 
 
 
@@ -321,7 +323,7 @@ Per altre informazioni, vedere questo articolo: [Gestire e monitorare le distrib
 #### <a name="gradual-rollout-during-phased-deployments"></a>Implementazione graduale durante le distribuzioni in più fasi
 <!--1358578--> Durante una distribuzione in più fasi, l'implementazione di ogni fase può ora essere graduale. Questo comportamento consente di ridurre il rischio di problemi di distribuzione e diminuisce il carico sulla rete causato dalla distribuzione di contenuti ai client. Il sito può rendere gradualmente disponibile il software a seconda della configurazione per ogni fase. Tutti i client in una fase hanno una scadenza definita in base al momento in cui il software viene reso disponibile. L'intervallo di tempo tra l'ora di disponibilità e la scadenza è uguale per tutti i client in una fase. 
 
-Per altre informazioni vedere [Impostazioni delle fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence#bkmk_settings).  
+Per altre informazioni, vedere [Impostazioni delle fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence#bkmk_settings).  
 
 
 ### <a name="improvements-to-windows-10-in-place-upgrade-task-sequence"></a>Miglioramenti alla sequenza di attività di aggiornamento sul posto di Windows 10
@@ -348,16 +350,36 @@ Queste sequenze di attività possono essere per la distribuzione del sistema ope
 ### <a name="other-improvements-to-os-deployment"></a>Altri miglioramenti alla distribuzione del sistema operativo
 
 #### <a name="mask-sensitive-data-stored-in-task-sequence-variables"></a>Mascherare i dati sensibili archiviati nelle variabili della sequenza di attività
-<!--1358330--> Nel passaggio [Imposta variabile della sequenza attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) selezionare la nuova opzione **Non visualizzare questo valore**, ad esempio quando si specifica una password. 
+ <!--1358330--> ***[Aggiornamento]*** Nel passaggio **Imposta variabile della sequenza di attività** selezionare la nuova opzione **Non visualizzare questo valore**. 
+
+ Per altre informazioni, vedere [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable). 
 
 #### <a name="mask-program-name-during-run-command-step-of-a-task-sequence"></a>Mascherare il nome programma durante il passaggio Esegui riga di comando di una sequenza di attività
-<!--1358493--> Per impedire la visualizzazione o la registrazione di dati potenzialmente sensibili, impostare la variabile **OSDDoNotLogCommand** della sequenza di attività su `TRUE`. Questa variabile maschera il nome del programma in smsts.log durante il passaggio [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine) della sequenza di attività.   
+ <!--1358493--> ***[Aggiornamento]*** Per impedire la visualizzazione o la registrazione di dati potenzialmente sensibili, impostare la variabile della sequenza di attività **OSDDoNotLogCommand**.  
+
+ Per altre informazioni, vedere [Task sequence variables](/sccm/osd/understand/task-sequence-variables#OSDDoNotLogCommand) (Variabili della sequenza di attività). 
 
 #### <a name="task-sequence-variable-for-dism-parameters-when-installing-drivers"></a>Variabile della sequenza di attività per i parametri DISM durante l'installazione di driver
-<!--516679--> Per specificare parametri della riga di comando aggiuntivi per DISM, usare la nuova variabile della sequenza di attività **OSDInstallDriversAdditionalOptions**. Abilitare l'impostazione di passaggio [Applica pacchetto di driver](/sccm/osd/understand/task-sequence-steps#BKMK_ApplyDriverPackage) su **Installa il pacchetto driver eseguendo DISM con l'opzione di ricorsione**. 
+ <!--516679/2840016--> ***[Aggiornamento]*** Per specificare parametri della riga di comando aggiuntivi per DISM, usare la nuova variabile della sequenza di attività **OSDInstallDriversAdditionalOptions**. 
+
+ Per altre informazioni, vedere [Task sequence variables](/sccm/osd/understand/task-sequence-variables#OSDInstallDriversAdditionalOptions) (Variabili della sequenza di attività). 
 
 #### <a name="option-to-use-full-disk-encryption"></a>Opzione per usare la crittografia del disco completo
-<!--SCCMDocs-pr issue 2671--> I passaggi [Attiva BitLocker](/sccm/osd/understand/task-sequence-steps#BKMK_EnableBitLocker) e [BitLocker pre-provisioning](/sccm/osd/understand/task-sequence-steps#BKMK_PreProvisionBitLocker) includono ora entrambi un'opzione **Usa la crittografia del disco completo**. Per impostazione predefinita, questi passaggi eseguono la crittografia dello spazio usato sull'unità. Questo comportamento predefinito è consigliato perché è più veloce ed efficiente. Se l'organizzazione richiede di crittografare l'intera unità durante l'installazione, abilitare questa opzione. Installazione di Windows attende la crittografia dell'intera unità, operazione che richiede molto tempo soprattutto nelle unità di grandi dimensioni. 
+ <!--SCCMDocs-pr issue 2671--> ***[Aggiornamento]*** I passaggi **Attiva BitLocker** e **Pre-provisioning di BitLocker** ora includono entrambi l'opzione **Usa la crittografia del disco completo**. Per impostazione predefinita, questi passaggi eseguono la crittografia dello spazio usato sull'unità. Questo comportamento predefinito è consigliato perché è più veloce ed efficiente. 
+
+ Per altre informazioni, vedere [Attivare BitLocker](/sccm/osd/understand/task-sequence-steps#BKMK_EnableBitLocker) ed [Eseguire il pre-provisioning di BitLocker](/sccm/osd/understand/task-sequence-steps#BKMK_PreProvisionBitLocker). 
+
+#### <a name="client-provisioning-mode-isnt-enabled-with-windows-10-upgrade-compatibility-scan"></a>La modalità di provisioning client non è abilitata con l'analisi di compatibilità dell'aggiornamento di Windows 10
+ <!--SCCMDocs-pr issue 2812--> ***[Aggiornamento]*** Ora, quando si abilita l'opzione **Esegui analisi di compatibilità di Installazione di Windows senza avviare l'aggiornamento**, il passaggio della sequenza di attività **Aggiorna sistema operativo** non imposta il client Configuration Manager in modalità di provisioning.
+
+ Per altre informazioni, vedere [Aggiorna sistema operativo](/sccm/osd/understand/task-sequence-steps#BKMK_UpgradeOS).
+
+#### <a name="revised-documentation-for-task-sequence-variables"></a>Documentazione rivista per le variabili della sequenza di attività
+ ***[Aggiornamento]***  Sono ora disponibili due nuovi articoli con informazioni sulle variabili della sequenza di attività:  
+
+ - [How to use task sequence variables](/sccm/osd/understand/using-task-sequence-variables) (Come usare le variabili della sequenza di attività) è un nuovo articolo che descrive i diversi tipi di variabili, i metodi per impostare le variabili e come accedervi.  
+
+ - [Task sequence variables](/sccm/osd/understand/task-sequence-variables) (Variabili della sequenza di attività) è un articolo con informazioni di riferimento per tutte le variabili della sequenza di attività. Questo articolo combina gli articoli precedenti in cui le variabili predefinite erano separate dalle variabili di azione. 
 
 
 
@@ -509,7 +531,7 @@ Per altre informazioni, vedere [Miglioramenti della console nella versione 1806]
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Quando si è pronti per installare questa versione, vedere [Installazione degli aggiornamenti per Configuration Manager](/sccm/core/servers/manage/updates).
+Quando si è pronti per installare la versione, vedere [Installazione degli aggiornamenti per Configuration Manager](/sccm/core/servers/manage/updates) ed [Elenco di controllo per l'installazione dell'aggiornamento 1806](/sccm/core/servers/manage/checklist-for-installing-update-1806).
 
 > [!TIP]  
 > Per installare un nuovo sito, usare una versione base di Configuration Manager.  
@@ -519,3 +541,5 @@ Quando si è pronti per installare questa versione, vedere [Installazione degli 
 >   - [Baseline and update versions](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions) (Versioni di base e di aggiornamento)  
 
 Per problemi noti e importanti, vedere [Note sulla versione](/sccm/core/servers/deploy/install/release-notes).
+
+Dopo aver aggiornato un sito, vedere anche [Elenco di controllo post-aggiornamento](/sccm/core/servers/manage/checklist-for-installing-update-1806#post-update-checklist).

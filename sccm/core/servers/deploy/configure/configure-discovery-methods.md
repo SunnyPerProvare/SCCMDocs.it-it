@@ -2,7 +2,7 @@
 title: Configurare l'individuazione
 titleSuffix: Configuration Manager
 description: Configurare i metodi di individuazione per trovare le risorse da gestire dalla rete, Active Directory e Azure Active Directory.
-ms.date: 03/22/2018
+ms.date: 08/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,21 +10,21 @@ ms.assetid: 49505eb1-d44d-4121-8712-e0f3d8b15bf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e7ac10fdc08569e519468633f30548c5c76b5838
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: e232875aab086dea04261abc4d83df8d5d03e6c8
+ms.sourcegitcommit: aca62bd3d267b1dbea46d4db6f32d797c5f6263c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344120"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43347971"
 ---
-# <a name="configure-discovery-methods-for-system-center-configuration-manager"></a>Configurare i metodi di individuazione per System Center Configuration Manager
+# <a name="configure-discovery-methods-for-configuration-manager"></a>Configurare i metodi di individuazione per Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
 Configurare i metodi di individuazione per trovare le risorse da gestire dalla rete, Active Directory e Azure Active Directory (Azure AD). Abilitare e configurare i metodi che si vogliono usare per eseguire ricerche nell'ambiente. È anche possibile disabilitare un metodo seguendo la stessa procedura usata per abilitarlo. Le uniche eccezioni a tale procedura sono il metodo di individuazione heartbeat e di individuazione server:  
 
--   Per impostazione predefinita, l'**individuazione heartbeat** è già abilitata quando si installa un sito primario di Configuration Manager. Viene configurata perché sia eseguita secondo una pianificazione di base. Lasciare l'individuazione heartbeat abilitata. In questo modo si assicura che i record dei dati di individuazione per i dispositivi siano aggiornati. Per altre informazioni sull'individuazione heartbeat, vedere [Informazioni sull'individuazione heartbeat](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutHeartbeat).  
+-   Per impostazione predefinita, l'**individuazione heartbeat** è già abilitata quando si installa un sito primario di Configuration Manager. È configurata per l'esecuzione secondo una pianificazione di base. Lasciare l'individuazione heartbeat abilitata. In questo modo si garantisce che i record dei dati di individuazione per i dispositivi siano aggiornati. Per altre informazioni sull'individuazione heartbeat, vedere [Informazioni sull'individuazione heartbeat](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutHeartbeat).  
 
 -   L'**individuazione server** è un metodo di individuazione automatica. Individua i computer in uso come sistemi del sito. Non è possibile configurare o disabilitare questo metodo.  
 
@@ -36,57 +36,65 @@ Configurare i metodi di individuazione per trovare le risorse da gestire dalla r
 
 2.  Selezionare il metodo di individuazione per il sito in cui si desidera attivare l'individuazione.  
 
-3.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**. Nella scheda **Generale** selezionare la casella **Abilita &lt;Metodo di individuazione\>**.  
+3.  Nella scheda **Home** della barra multifunzione selezionare **Proprietà** nel gruppo **Proprietà**. Nella scheda **Generale** selezionare quindi **Abilita &lt;metodo di individuazione\>**.  
 
-     Se questa casella è già selezionata, è possibile disabilitare il metodo di individuazione deselezionandola.  
+     Se questa opzione è già abilitata, è possibile disabilitare il metodo di individuazione deselezionando la casella di controllo.  
 
-4.  Scegliere **OK** per salvare la configurazione.  
+4.  Selezionare **OK** per salvare la configurazione.  
 
 
 
 ##  <a name="BKMK_ConfigADForestDisc"></a> Configurare l'individuazione foresta Active Directory  
-Per completare la configurazione dell'individuazione foresta Active Directory, è necessario configurare le impostazioni in due posizioni:  
 
--   Nel nodo **Metodi di individuazione** è possibile:
+Per completare la configurazione dell'individuazione foresta Active Directory, configurare le impostazioni nelle posizioni seguenti della console di Configuration Manager:  
 
-    - Abilitare il metodo di individuazione.
-    - Impostare una pianificazione del polling.
+- Nel nodo **Metodi di individuazione**:
+
+    - Abilitare il metodo di individuazione.  
+
+    - Impostare una pianificazione del polling.  
+
     - Determinare se l'individuazione crea automaticamente limiti per le subnet e i siti di Active Directory individuati.  
 
--   Nel nodo **Foreste Active Directory** è possibile:
+- Nel nodo **Foreste Active Directory**:
 
-    - Aggiungere foreste da individuare.
-    - Abilitare l'individuazione di siti e subnet di Active Directory in quella foresta.
-    - Configurare impostazioni che consentono ai siti di Configuration Manager di pubblicare le informazioni sul sito nella foresta.
+    - Aggiungere foreste da individuare.  
+
+    - Abilitare l'individuazione di siti e subnet di Active Directory in quella foresta.  
+
+    - Configurare impostazioni che consentono ai siti di Configuration Manager di pubblicare le informazioni sul sito nella foresta.  
+
     - Assegnare un account da usare come Account foresta Active Directory per ogni foresta.  
 
 Usare le procedure seguenti per attivare l'individuazione foresta Active Directory e per configurare singole foreste per l'uso con l'individuazione foresta Active Directory.  
 
-#### <a name="to-enable-active-directory-forest-discovery"></a>Per attivare l'individuazione foresta Active Directory  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** e quindi scegliere **Metodi di individuazione**.  
+### <a name="enable-active-directory-forest-discovery"></a>Abilitare l'individuazione foresta Active Directory  
+
+1.  Nella console di Configuration Manager accedere all'area di lavoro **Amministrazione**, espandere **Configurazione della gerarchia** e selezionare il nodo **Metodi di individuazione**.  
 
 2.  Selezionare il metodo Individuazione foresta Active Directory per il sito in cui si desidera configurare l'individuazione.  
 
-3.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
+3.  Nella scheda **Home** della barra multifunzione selezionare **Proprietà** nel gruppo **Proprietà**.  
 
-4.  Nella scheda **Generale** selezionare la casella per abilitare l'individuazione. In alternativa è possibile configurare subito l'individuazione e abilitarla in un secondo momento.  
+4.  Nella scheda **Generale** selezionare la casella di controllo per abilitare l'individuazione. In alternativa è possibile configurare subito l'individuazione e abilitarla in un secondo momento.  
 
 5.  Specificare le opzioni per creare i limiti del sito per i percorsi individuati.  
 
 6.  Specificare una pianificazione per l'esecuzione dell'individuazione.  
 
-7.  Al termine della configurazione dell'individuazione foresta Active Directory per il sito, scegliere **OK** per salvare la configurazione.  
+7.  Selezionare **OK** per salvare la configurazione.  
 
-#### <a name="to-configure-a-forest-for-active-directory-forest-discovery"></a>Per configurare una foresta per l'individuazione foresta Active Directory  
 
-1.  Nell'area di lavoro **Amministrazione** scegliere **Foreste Active Directory**. Se in precedenza è stato eseguito il metodo di individuazione foresta Active Directory, è possibile visualizzare ogni foresta rilevata nel riquadro dei risultati. La foresta locale e qualsiasi foresta trusted vengono individuate durante l'esecuzione del metodo di individuazione foresta Active Directory. È necessario aggiungere manualmente solo le foreste non trusted.  
+### <a name="configure-a-forest-for-active-directory-forest-discovery"></a>Configurare una foresta per l'individuazione foresta Active Directory  
 
-    -   Per configurare una foresta individuata in precedenza, selezionarla nel riquadro dei risultati. Nel gruppo **Proprietà** della scheda **Home** scegliere **Proprietà** per aprire le proprietà della foresta. Procedere al passaggio 3.  
+1.  Nell'area di lavoro **Amministrazione** espandere **Configurazione della gerarchia** e selezionare il nodo **Foreste Active Directory**. Se in precedenza è stato eseguito il metodo di individuazione foresta Active Directory, è possibile visualizzare ogni foresta rilevata nel riquadro dei risultati. La foresta locale e qualsiasi foresta trusted vengono individuate durante l'esecuzione del metodo di individuazione foresta Active Directory. È necessario aggiungere manualmente solo le foreste non trusted.  
 
-    -   Per configurare una nuova foresta non presente nell'elenco, nel gruppo **Crea** della scheda **Home** scegliere **Aggiungi foresta** per aprire la finestra di dialogo **Aggiungi foreste**. Procedere al passaggio 3.  
+    -   Per configurare una foresta individuata in precedenza, selezionarla nel riquadro dei risultati. Nella scheda **Home** della barra multifunzione selezionare quindi **Proprietà** nel gruppo **Proprietà** per aprire le proprietà della foresta. Procedere al passaggio 3.  
 
-2.  Nella scheda **Generale** completare le configurazioni per la foresta che si vuole individuare e specificare un valore per **Account foresta Active Directory**.  
+    -   Per configurare una nuova foresta non presente nell'elenco, nella scheda **Home** della barra multifunzione selezionare **Aggiungi foresta** nel gruppo **Crea**. Verrà aperta la finestra di dialogo **Add Forests** (Aggiungi foreste). Procedere al passaggio 3.  
+
+2.  Nella scheda **Generale** completare le configurazioni per la foresta che si vuole individuare e specificare un valore per **Account foresta Active Directory**. Per ulteriori informazioni su questo account, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#active-directory-forest-account).  
 
     > [!NOTE]  
     >  Il metodo di individuazione della foresta Active Directory richiede un account globale per l'individuazione e la pubblicazione in foreste non trusted. Se non si usa l'account computer del server del sito, è possibile selezionare solo un account globale.  
@@ -94,40 +102,44 @@ Usare le procedure seguenti per attivare l'individuazione foresta Active Directo
 3.  Se si prevede di consentire ai siti di pubblicare i relativi dati in questa foresta, completare le configurazioni per la pubblicazione in questa foresta nella scheda **Pubblicazione**.  
 
     > [!NOTE]  
-    >  Se si consente ai siti di pubblicare in una foresta, è necessario estendere lo schema di Active Directory di tale foresta per Configuration Manager. L'account foresta Active Directory deve disporre delle autorizzazioni di tipo Controllo completo sul contenitore di sistema di tale foresta.  
+    >  Se si consente ai siti di pubblicare in una foresta, estendere lo schema di Active Directory di tale foresta per Configuration Manager. L'account foresta Active Directory deve disporre delle autorizzazioni di tipo Controllo completo sul contenitore di sistema di tale foresta.  
 
-4.  Al termine della configurazione della foresta per l'uso con l'individuazione della foresta Active Directory, scegliere **OK** per salvare la configurazione.  
+4.  Selezionare **OK** per salvare la configurazione.  
 
 
 
-##  <a name="BKMK_ConfigADDiscGeneral"></a> Configurare l'individuazione Active Directory per computer, utenti o gruppi  
- Per configurare l'individuazione di computer, utenti o gruppi, seguire le informazioni relative ai metodi di individuazione seguenti, riportate in queste sezioni:  
+##  <a name="BKMK_ConfigADDiscGeneral"></a> Configurare l'individuazione di Active Directory per computer, utenti o gruppi  
 
--   Individuazione gruppo Active Directory  
+Per configurare l'individuazione di computer, utenti o gruppi, iniziare con questi passaggi comuni:
 
--   Individuazione sistema Active Directory  
+1.  Nella console di Configuration Manager accedere all'area di lavoro **Amministrazione**, espandere **Configurazione della gerarchia** e selezionare il nodo **Metodi di individuazione**.  
 
--   individuazione utenti di Active Directory  
+2.  Selezionare il metodo per il sito in cui si desidera configurare l'individuazione.  
+
+3.  Nella scheda **Home** della barra multifunzione selezionare **Proprietà** nel gruppo **Proprietà**.  
+
+4.  Nella scheda **Generale** selezionare la casella di controllo per abilitare l'individuazione. In alternativa è possibile configurare subito l'individuazione e abilitarla in un secondo momento.  
+
+Usare quindi le informazioni nelle sezioni seguenti per configurare metodi di individuazione specifici:  
+
+- [Individuazione gruppo Active Directory](#bkmk_config-adgd)  
+
+- [Individuazione sistema Active Directory](#bkmk_config-adgd)  
+
+- [Individuazione utente Active Directory](#bkmk_config-adud)  
 
 > [!NOTE]  
 >  Le informazioni contenute in questa sezione non si applicano all'individuazione foresta Active Directory.  
 
- Anche se ogni metodo di individuazione è indipendente dagli altri, tutti condividono opzioni simili. Per altre informazioni su queste opzioni di configurazione, vedere l'argomento [Opzioni condivise per l'individuazione di gruppi, sistemi e utenti](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_shared).  
+ Anche se ogni metodo di individuazione è indipendente dagli altri, tutti condividono opzioni simili. Per altre informazioni su queste opzioni di configurazione, vedere [Opzioni condivise per l'individuazione di gruppi, sistemi e utenti](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_shared).  
 
 > [!WARNING]  
 >  Il polling di Active Directory da ciascuno di questi metodi di individuazione può generare notevole traffico di rete. È consigliabile pianificare ogni metodo di individuazione in modo che venga eseguito in un momento in cui il traffico di rete non condizioni negativamente gli usi aziendali della rete.  
 
-#### <a name="to-configure-active-directory-group-discovery"></a>Per configurare l'individuazione gruppo Active Directory  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** e quindi scegliere **Metodi di individuazione**.  
+### <a name="bkmk_config-adgd"></a> Configurare l'individuazione gruppo Active Directory  
 
-2.  Scegliere il metodo **Individuazione gruppo Active Directory** per il sito in cui si vuole configurare l'individuazione.  
-
-3.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
-
-4.  Nella scheda **Generale** selezionare la casella per abilitare l'individuazione. In alternativa è possibile configurare subito l'individuazione e abilitarla in un secondo momento.  
-
-5.  Scegliere **Aggiungi** per configurare un ambito di individuazione, scegliere **Gruppi** o **Percorso** e quindi completare le configurazioni seguenti nella finestra di dialogo **Aggiungi gruppi**o **Aggiungi percorso di Active Directory**:  
+1. Nella scheda **Generale** della finestra delle proprietà di individuazione gruppo Active Directory selezionare **Aggiungi** per configurare un ambito di individuazione. Selezionare **Gruppi** o **Percorso**. Completare quindi le configurazioni seguenti nella finestra di dialogo **Aggiungi gruppi** o **Aggiungi percorso di Active Directory**:  
 
     1.  Specificare un **Nome** per questo ambito di individuazione.  
 
@@ -137,92 +149,88 @@ Usare le procedure seguenti per attivare l'individuazione foresta Active Directo
 
         -   Se si sceglie **Percorso**, specificare un contenitore Active Directory come percorso da individuare. È anche possibile attivare una ricerca ricorsiva dei contenitori figlio di Active Directory per questo percorso.  
 
-    3.  Specificare l' **Account di individuazione gruppo Active Directory** utilizzato per la ricerca di questo ambito di individuazione.  
+    3.  In **Account di individuazione gruppo Active Directory** indicare l'account usato dal sito per la ricerca nell'ambito di individuazione. Per altre informazioni, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#active-directory-group-discovery-account).  
 
     4.  Scegliere **OK** per salvare la configurazione dell'ambito di individuazione.  
 
-6.  Ripetere il passaggio 6 per ogni ambito di individuazione aggiuntivo che si desidera definire.  
+2.  Ripetere i passaggi precedenti per ogni ambito di individuazione aggiuntivo da definire.  
 
-7.  Nella scheda **Pianificazione del polling** configurare la pianificazione del polling per l'individuazione completa e l'individuazione differenziale.  
+3.  Nella scheda **Pianificazione del polling** configurare la pianificazione del polling per l'individuazione completa e l'individuazione differenziale.  
 
-8.  Facoltativamente, nella scheda **Opzioni** è possibile configurare le opzioni per escludere dall'individuazione i record del computer non aggiornati. È anche possibile configurare l'individuazione dell'appartenenza dei gruppi di distribuzione.  
+4.  Nella scheda **Opzioni** configurare le impostazioni di filtro per escludere dall'individuazione i record dei computer non aggiornati. È anche possibile configurare l'individuazione dell'appartenenza dei gruppi di distribuzione.  
 
     > [!NOTE]  
     >  Per impostazione predefinita, l'individuazione gruppo Active Directory rileva solo l'appartenenza dei gruppi di sicurezza.  
 
-9. Al termine della configurazione dell'individuazione gruppo Active Directory per questo sito, scegliere **OK** per salvare la configurazione.  
+5. Selezionare **OK** per salvare la configurazione.  
 
-#### <a name="to-configure-active-directory-system-discovery"></a>Per configurare l'individuazione sistema Active Directory  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** e quindi scegliere **Metodi di individuazione**.  
+### <a name="bkmk_config-adsd"></a> Configurare l'individuazione sistema Active Directory  
 
-2.  Selezionare il metodo per il sito in cui si desidera configurare l'individuazione.  
+1. Nella scheda **Generale** della finestra delle proprietà di individuazione sistema Active Directory selezionare l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) per specificare un nuovo contenitore Active Directory. Nella finestra di dialogo **Contenitore Active Directory** completare le configurazioni seguenti:  
 
-3.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
+    1.  Digitare o cercare un percorso in **Percorso**. Questo valore è un percorso LDAP valido di un contenitore o un'unità organizzativa (OU). Il sito esegue query su questo percorso per le risorse. Ad esempio: `LDAP://CN=Computers,DC=contoso,DC=com`  
 
-4.  Nella scheda **Generale** selezionare la casella per abilitare l'individuazione. In alternativa è possibile configurare subito l'individuazione e abilitarla in un secondo momento.  
+    2.  Specificare le opzioni che modificano il comportamento di ricerca:  
 
-5.  Scegliere l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) per specificare un nuovo contenitore di Active Directory. Nella finestra di dialogo **Contenitore Active Directory** completare le configurazioni seguenti:  
+        - **Individua oggetti all'interno dei gruppi di Active Directory**: il sito analizza anche l'appartenenza dei gruppi in questo percorso.  
 
-    1.  Specificare uno o più percorsi in cui eseguire la ricerca.  
+        - **Esegui ricerca ricorsiva nei contenitori figlio di Active Directory**: se si abilita questa opzione, il sito esegue la ricerca in unità organizzative o contenitori aggiuntivi nel percorso specificato. Se si disabilita questa opzione, il sito esegue la ricerca delle risorse solo nel percorso specifico.  
 
-    2.  Per ogni percorso, specificare le opzioni che modificano il comportamento di ricerca.  
+            A partire dalla versione 1806, selezionare i sottocontenitori da escludere da questa ricerca ricorsiva. Questa opzione consente di ridurre il numero di oggetti individuati. Selezionare **Aggiungi** per scegliere i contenitori nel percorso specificato. Nella finestra di dialogo Seleziona nuovo contenitore selezionare un contenitore figlio da escludere. Selezionare **OK** per chiudere la finestra di dialogo Seleziona nuovo contenitore.<!--1358143-->
 
-    3.  Specificare per ogni percorso l'account da utilizzare come **Account di individuazione Active Directory**.  
+            > [!Tip]  
+            > L'elenco di contenitori Active Directory nella finestra delle proprietà di individuazione sistema Active Directory include una colonna **Con esclusioni**. Quando si selezionano i contenitori da escludere, questo valore è **Sì**.  
+
+    3.  Specificare per ogni percorso l'account da utilizzare come **Account di individuazione Active Directory**. Per altre informazioni, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#active-directory-system-discovery-account).  
 
         > [!TIP]  
         >  Per ogni percorso specificato, è possibile configurare una serie di opzioni di individuazione e un account di individuazione Active Directory univoco.  
 
-    4.  Scegliere **OK** per salvare la configurazione del contenitore Active Directory.  
+    4.  Scegliere **OK** per salvare la configurazione dei contenitori Active Directory.  
 
-6.  Nella scheda **Pianificazione del polling** configurare la pianificazione del polling per l'individuazione completa e l'individuazione differenziale.  
+2.  Nella scheda **Pianificazione del polling** configurare la pianificazione del polling per l'individuazione completa e l'individuazione differenziale.  
 
-7.  Facoltativamente, nella scheda **Attributi di Active Directory** è possibile configurare attributi aggiuntivi di Active Directory per i computer che si desidera individuare. Sono inoltre elencati gli attributi oggetto predefiniti.  
+3.  Nella scheda **Attributi di Active Directory** configurare gli attributi aggiuntivi di Active Directory per i computer da individuare. In questa scheda sono elencati gli attributi degli oggetti predefiniti.  
 
      > [!Tip]  
-     > Ad esempio, l'organizzazione usa l'attributo **Description** nell'account computer in Active Directory. Fare clic su **Personalizza** e aggiungere `Description` come attributo personalizzato. Quando il metodo di individuazione viene eseguito, questo attributo viene visualizzato nella scheda delle proprietà del dispositivo nella console di Configuration Manager.<!--513948-->
+     > Ad esempio, l'organizzazione usa l'attributo **Description** nell'account computer in Active Directory. Selezionare **Personalizzato** e aggiungere `Description` come attributo personalizzato. Quando il metodo di individuazione viene eseguito, questo attributo viene visualizzato nella scheda delle proprietà del dispositivo nella console di Configuration Manager.<!--513948-->  
 
-8.  Facoltativamente, nella scheda **Opzioni** è possibile configurare le opzioni per escludere, tramite un filtro, dall'individuazione i record del computer non aggiornati.  
+4.  Nella scheda **Opzioni** configurare le impostazioni di filtro per escludere dall'individuazione i record dei computer non aggiornati.  
 
-9. Al termine della configurazione dell'individuazione sistema Active Directory per questo sito, scegliere **OK** per salvare la configurazione.  
+5. Selezionare **OK** per salvare la configurazione.  
 
-#### <a name="to-configure-active-directory-user-discovery"></a>Per configurare l'individuazione utente Active Directory  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** e quindi scegliere **Metodi di individuazione**.  
+### <a name="bkmk_config-adud"></a> Configurare l'individuazione utente Active Directory  
 
-2.  Scegliere il metodo **Individuazione utente Active Directory** per il sito in cui si vuole configurare l'individuazione.  
-
-3.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
-
-4.  Nella scheda **Generale** selezionare la casella per abilitare l'individuazione. In alternativa è possibile configurare subito l'individuazione e abilitarla in un secondo momento.  
-
-5.  Scegliere l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) per specificare un nuovo contenitore di Active Directory. Nella finestra di dialogo **Contenitore Active Directory** completare le configurazioni seguenti:  
+1.  Nella scheda **Generale** della finestra delle proprietà di individuazione utente Active Directory selezionare l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) per specificare un nuovo contenitore Active Directory. Nella finestra di dialogo **Contenitore Active Directory** completare le configurazioni seguenti:  
 
     1.  Specificare uno o più percorsi in cui eseguire la ricerca.  
 
     2.  Per ogni percorso, specificare le opzioni che modificano il comportamento di ricerca.  
 
-    3.  Specificare per ogni percorso l'account da utilizzare come **Account di individuazione Active Directory**.  
+    3.  Specificare per ogni percorso l'account da utilizzare come **Account di individuazione Active Directory**. Per altre informazioni, vedere [Account](/sccm/core/plan-design/hierarchy/accounts#active-directory-user-discovery-account).  
 
         > [!NOTE]  
         >  Per ogni percorso specificato, è possibile configurare un'unica serie di opzioni di individuazione e un account di individuazione Active Directory univoco.  
 
-    4.  Scegliere **OK** per salvare la configurazione del contenitore Active Directory.  
+    4.  Scegliere **OK** per salvare la configurazione dei contenitori Active Directory.  
 
 6.  Nella scheda **Pianificazione del polling** configurare la pianificazione del polling per l'individuazione completa e l'individuazione differenziale.  
 
-7.  Facoltativamente, nella scheda **Attributi di Active Directory** è possibile configurare attributi aggiuntivi di Active Directory per i computer che si desidera individuare. Sono inoltre elencati gli attributi oggetto predefiniti.  
+7.  Nella scheda **Attributi di Active Directory** configurare gli attributi aggiuntivi di Active Directory per i computer da individuare. In questa scheda sono elencati gli attributi degli oggetti predefiniti.  
 
-8.  Al termine della configurazione dell'individuazione utente Active Directory per questo sito, scegliere **OK** per salvare la configurazione.  
+8.  Selezionare **OK** per salvare la configurazione.  
 
 
 
 ## <a name="azureaadisc"></a>Configurare l'individuazione utenti di Azure AD
+
 L'individuazione utenti di AD Azure non viene abilitata o configurata come altri metodi di individuazione. È necessario configurarla durante il caricamento del sito di Configuration Manager in Azure AD. È anche possibile abilitare e configurare questo metodo di individuazione durante la [configurazione dei servizi Azure](/sccm/core/servers/deploy/configure/azure-services-wizard) per la **gestione cloud**. 
 
 Durante la configurazione del servizio di Azure **Gestione cloud**: 
-- Nella pagina **Individuazione** della procedura guidata fare clic su **Abilita l'individuazione utente di Azure Active Directory**. 
-- Fare clic su **Impostazioni**. 
+- Nella pagina **Individuazione** della procedura guidata selezionare l'opzione **Abilita l'individuazione utente di Azure Active Directory**. 
+- Selezionare **Impostazioni**. 
 - Nella finestra di dialogo Impostazioni dell'individuazione utenti di Azure AD configurare una pianificazione per l'esecuzione dell'individuazione. È anche possibile abilitare l'individuazione differenziale che verifica solo gli account nuovi o modificati in Azure AD. 
 
 Per altre informazioni, vedere [Individuazione utenti di Azure AD](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc).
@@ -230,9 +238,9 @@ Per altre informazioni, vedere [Individuazione utenti di Azure AD](/sccm/core/se
  > [!Important]  
  > Prima di *importare* l'app Azure AD in Configuration Manager, è necessario concedere l'autorizzazione delle applicazioni server per la lettura dei dati della directory da Azure AD. 
  >  - Accedere al pannello [Azure Active Directory](https://portal.azure.com) dal **portale di Azure**. 
- >  - Fare clic su **Registrazioni per l'app** e passare a **Tutte le app**, se necessario. 
- >  - Selezionare l'app server di tipo *App Web / API*, quindi fare clic su **Impostazioni**. 
- >  - Fare clic su **Autorizzazioni necessarie**, quindi selezionare **Concedi autorizzazioni**.
+ >  - Selezionare **Registrazioni per l'app** e passare a **Tutte le app**, se necessario. 
+ >  - Selezionare l'app server di tipo *App Web/API* e quindi selezionare **Impostazioni**. 
+ >  - Selezionare **Autorizzazioni necessarie** e quindi **Concedi autorizzazioni**.
  >  
  > Se si *crea* l'app server da Configuration Manager, Azure AD genera automaticamente le autorizzazioni insieme all'applicazione. È comunque necessario concedere il consenso all'applicazione nel portale di Azure.
 
@@ -242,28 +250,30 @@ Per altre informazioni, vedere [Individuazione utenti di Azure AD](/sccm/core/se
 
 
 ##  <a name="BKMK_ConfigHBDisc"></a> Configurare l'individuazione heartbeat  
- Per impostazione predefinita, l'individuazione heartbeat è abilitata quando si installa un sito primario di Configuration Manager. È quindi necessario configurare solo la pianificazione della frequenza di invio dei record dei dati di individuazione heartbeat a un punto di gestione da parte dei client quando non si vuole usare la frequenza predefinita di sette giorni.  
+
+Configuration Manager abilita il metodo di individuazione heartbeat quando si installa un sito primario. Se si vuole usare la pianificazione predefinita eseguita ogni sette giorni, non sono necessarie altre configurazioni. In caso contrario, è necessario configurare solo la pianificazione della frequenza di invio dei record dei dati di individuazione heartbeat a un punto di gestione da parte dei client.  
 
 > [!NOTE]  
->  Se l'installazione push del client e l'attività di gestione del sito per **Cancella flag di installazione** sono attivati nello stesso sito, impostare la pianificazione dell'individuazione heartbeat in modo che sia inferiore al valore **Periodo nuova individuazione client** dell'attività di gestione del sito **Cancella flag di installazione** . Per altre informazioni sulle attività di manutenzione del sito, vedere [Attività di manutenzione per System Center Configuration Manager](../../../../core/servers/manage/maintenance-tasks.md).  
-
-#### <a name="to-configure-the-heartbeat-discovery-schedule"></a>Per configurare la pianificazione dell'individuazione heartbeat  
-
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** e quindi scegliere **Metodi di individuazione**.  
-
-2.  Scegliere **Individuazione heartbeat** per il sito in cui si vuole eseguire l'individuazione heartbeat.  
-
-3.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
-
-4.  Configurare la frequenza con cui i client inviano i record dei dati di individuazione heartbeat, quindi scegliere **OK** per salvare la configurazione.  
+>  Se si abilitano sia l'installazione push client che l'attività di manutenzione del sito per **Cancella flag di installazione** nello stesso sito, impostare la pianificazione dell'individuazione heartbeat in modo che sia inferiore al valore di **Periodo nuova individuazione client** dell'attività di manutenzione del sito **Cancella flag di installazione**. Per altre informazioni sulle attività di manutenzione del sito, vedere [Attività di manutenzione](/sccm/core/servers/manage/maintenance-tasks).  
 
 
+### <a name="configure-the-heartbeat-discovery-schedule"></a>Configurare la pianificazione dell'individuazione heartbeat  
+
+1.  Nella console di Configuration Manager accedere all'area di lavoro **Amministrazione**, espandere **Configurazione della gerarchia** e selezionare il nodo **Metodi di individuazione**.  
+
+2.  Selezionare il metodo **Individuazione heartbeat** per il sito in cui si vuole configurare l'individuazione heartbeat.  
+
+3.  Nella scheda **Home** della barra multifunzione selezionare **Proprietà** nel gruppo **Proprietà**.  
+
+4.  Configurare la frequenza con cui i client inviano i record dei dati di individuazione heartbeat. Selezionare quindi **OK** per salvare la configurazione.  
+
+
+
+<a name="BKMK_AboutConfigNetworkDisc"></a>
 
 ##  <a name="BKMK_ConfigNetworkDisc"></a> Configurare l'individuazione di rete  
- Seguire le informazioni nelle sezioni riportate di seguito per configurare l'individuazione della rete.  
 
-###  <a name="BKMK_AboutConfigNetworkDisc"></a> Informazioni sulla configurazione dell'individuazione di rete  
- Prima di configurare l'individuazione della rete, è necessario conoscere i concetti seguenti:  
+ Prima di configurare l'individuazione di rete, acquisire familiarità con gli argomenti seguenti:  
 
 -   Livelli disponibili per l'individuazione della rete  
 
@@ -271,25 +281,39 @@ Per altre informazioni, vedere [Individuazione utenti di Azure AD](/sccm/core/se
 
 -   Applicazione di limiti all'individuazione della rete in rete  
 
-Per altre informazioni, vedere [Informazioni sull'individuazione di rete](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutNetwork).  
+Per altre informazioni, vedere [Informazioni sull'individuazione di rete](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutNetwork).  
 
- Nelle sezioni seguenti vengono fornite informazioni sulle configurazioni comuni per l'individuazione della rete. È possibile definire una o più di queste configurazioni per l'utilizzo durante la stessa esecuzione dell'individuazione. Se si utilizzano più configurazioni, sarà necessario considerare le interazioni che possono influenzare i risultati dell'individuazione.  
+Nelle sezioni seguenti vengono fornite informazioni sulle configurazioni comuni per l'individuazione della rete. È possibile definire una o più di queste configurazioni per l'utilizzo durante la stessa esecuzione dell'individuazione. Se si usano più configurazioni, considerare le interazioni che possono influenzare i risultati dell'individuazione.  
 
- Ad esempio, è possibile individuare tutti i dispositivi SNMP (Simple Network Management Protocol) che usano uno specifico nome di comunità SNMP. Per la stessa esecuzione dell'individuazione, è inoltre possibile disattivare l'individuazione in una subnet specifica. Durante l'esecuzione dell'individuazione, l'individuazione della rete non rileva i dispositivi SNMP con il nome community specificato nella subnet disabilitata.  
+Ad esempio, si individuano tutti i dispositivi SNMP (Simple Network Management Protocol) che usano uno specifico nome community SNMP. Per la stessa operazione di individuazione si disabilita l'individuazione in una subnet specifica. Durante l'esecuzione dell'individuazione, l'individuazione della rete non rileva i dispositivi SNMP con il nome community specificato nella subnet disabilitata.  
 
-####  <a name="BKMK_DetermineNetTopology"></a> Determinare la topologia di rete  
+
+###  <a name="BKMK_DetermineNetTopology"></a> Determinare la topologia di rete  
+
  Per eseguire il mapping della rete, è possibile utilizzare un'individuazione solo per topologia. Questo tipo di individuazione non rileva i potenziali client. L'individuazione di rete solo per topologia si basa su SNMP.  
 
- Quando si esegue il mapping della topologia di rete, è necessario configurare gli **Hop massimi** nella scheda **SNMP** nella finestra di dialogo **Proprietà dell'individuazione della rete**. Con solo pochi hop è possibile controllare la larghezza di banda di rete che viene utilizzata quando viene eseguita l'individuazione. Man mano che l'individuazione di rete avanza, è possibile aumentare il numero di hop per ottenere una migliore comprensione della topologia di rete.  
+ Quando si esegue il mapping della topologia di rete, configurare il valore di **Hop massimi** nella scheda **SNMP** della finestra di dialogo **Individuazione di rete - Proprietà**. Con solo pochi hop è possibile controllare la larghezza di banda di rete usata per l'individuazione. Man mano che l'individuazione di rete avanza, aumentare il numero di hop per ottenere una migliore comprensione della topologia di rete.  
 
- Dopo aver compreso la topologia della rete, è possibile configurare proprietà aggiuntive per l'individuazione della rete per individuare potenziali client e i relativi sistemi operativi, mentre si usano le configurazioni disponibili per limitare i segmenti della rete in cui l'individuazione della rete può eseguire la ricerca.  
+ Dopo aver compreso la topologia di rete, configurare proprietà aggiuntive per l'individuazione di rete. Queste proprietà consentono di individuare i potenziali client e i relativi sistemi operativi. Configurare anche l'individuazione di rete per limitare i segmenti di rete in cui eseguire la ricerca.  
 
-####  <a name="BKMK_LimitBySubnet"></a> Limitare le ricerche mediante subnet  
- È possibile configurare l'individuazione di rete per effettuare la ricerca in subnet specifiche durante un ciclo di individuazione. Per impostazione predefinita, l'individuazione di rete effettua la ricerca nella subnet del server che esegue l'individuazione. Eventuali altre subnet configurate e abilitate si applicano esclusivamente alle opzioni di ricerca SNMP e DHCP (Dynamic Host Configuration Protocol). Per la ricerca nei domini, l'individuazione della rete non è limitata dalle configurazioni per subnet.  
+ Per altre informazioni, vedere [Come determinare la topologia di rete](#bkmk_proc-top)
 
- Se si specificano una o più subnet nella scheda **Subnet** della finestra di dialogo **Proprietà dell'individuazione della rete** , la ricerca viene effettuata solo nelle subnet che sono contrassegnate con **Attivato** .  
 
- Quando si disabilita una subnet, essa viene esclusa dall'individuazione e vengono applicate le condizioni seguenti:  
+### <a name="network-discovery-search-options"></a>Opzioni di ricerca per l'individuazione di rete
+
+Configuration Manager supporta i metodi seguenti per la ricerca nella rete:
+- [Limitare le ricerche tramite subnet](#BKMK_LimitBySubnet)
+- [Eseguire ricerche in un dominio specifico](#BKMK_SearchByDomain)
+- [Limitare le ricerche tramite nomi community SNMP](#BKMK_LimitBySNMPname)
+- [Eseguire ricerche in un server DHCP specifico](#BKMK_SearchByDHCP)
+
+####  <a name="BKMK_LimitBySubnet"></a> Limitare le ricerche tramite subnet  
+
+ È possibile configurare l'individuazione di rete per effettuare la ricerca in subnet specifiche durante un ciclo di individuazione. Per impostazione predefinita, l'individuazione di rete effettua la ricerca nella subnet del server che esegue l'individuazione. Eventuali subnet aggiuntive configurate e abilitate si applicano esclusivamente alle opzioni di ricerca SNMP e DHCP. Per la ricerca nei domini, l'individuazione della rete non è limitata dalle configurazioni per subnet.  
+
+ Se si specificano una o più subnet nella scheda **Subnet** della finestra di dialogo **Individuazione di rete - Proprietà**, la ricerca viene eseguita solo nelle subnet contrassegnate con **Attivato**.  
+
+ Quando si disabilita una subnet, il sito la esclude dall'individuazione e vengono applicate le condizioni seguenti:  
 
 -   Le query basate su SNMP non vengono eseguite sulla subnet.  
 
@@ -297,150 +321,152 @@ Per altre informazioni, vedere [Informazioni sull'individuazione di rete](../../
 
 -   Le query basate su dominio possono individuare risorse che si trovano nella subnet.  
 
+
 ####  <a name="BKMK_SearchByDomain"></a> Eseguire ricerche in un dominio specifico  
+
  È possibile configurare l'individuazione di rete per effettuare la ricerca in un dominio specifico o in un insieme di domini durante l'esecuzione dell'individuazione. Per impostazione predefinita, l'individuazione di rete effettua la ricerca nel dominio locale del server che esegue l'individuazione.  
 
- Se si specificano uno o più domini nella scheda **Domini** della finestra di dialogo **Proprietà dell'individuazione della rete** , viene effettuata la ricerca solo nei domini che sono contrassegnati con **Attivato** .  
+ Se si specificano uno o più domini nella scheda **Domini** della finestra di dialogo **Individuazione di rete - Proprietà**, la ricerca viene eseguita solo nei domini contrassegnati con **Attivato**.  
 
- Quando si disabilita un dominio, esso viene escluso dall'individuazione e vengono applicate le condizioni seguenti:  
+ Quando si disabilita un dominio, il sito lo esclude dall'individuazione e vengono applicate le condizioni seguenti:  
 
--   L'individuazione di rete non esegue una query sui controller di dominio nel dominio.  
+-   L'individuazione di rete non esegue query sui controller di dominio in tale dominio.  
 
 -   Le query basate su SNMP possono comunque essere eseguite sulle subnet in quel dominio.  
 
 -   I server DHCP possono comunque rispondere con un elenco di risorse presenti nel dominio.  
 
-####  <a name="BKMK_LimitBySNMPname"></a> Limitare le ricerche usando i nomi comunità SNMP  
- L'individuazione di rete viene configurata per effettuare la ricerca in una comunità SNMP specifica o in un insieme di comunità durante l'esecuzione dell'individuazione. Per impostazione predefinita, è configurato per l'utilizzo il nome comunità di **Pubblico** .  
 
- L'individuazione di rete utilizza i nomi comunità per accedere ai router che sono dispositivi SNMP. Un router può fornire l'individuazione di rete con informazioni su altri router e subnet che sono collegati al primo router.  
+#### <a name="BKMK_LimitBySNMPname"></a> Limitare le ricerche tramite nomi community SNMP  
+
+ L'individuazione di rete viene configurata per effettuare la ricerca in una community SNMP specifica o in un insieme di community durante l'esecuzione dell'individuazione. Per impostazione predefinita, il metodo configura il nome community **pubblico**.  
+
+ L'individuazione di rete utilizza i nomi community per accedere ai router che sono dispositivi SNMP. Un router può fornire l'individuazione di rete con informazioni su altri router e subnet che sono collegati al primo router.  
 
 > [!NOTE]  
->  I nomi comunità SNMP sono simili alle password. L'individuazione della rete può ottenere informazioni solo da un dispositivo SNMP per il quale è stato specificato un nome community. Ciascun dispositivo SNMP può avere il proprio nome comunità, ma spesso lo stesso nome comunità viene condiviso tra diversi dispositivi. Inoltre, la maggior parte dei dispositivi SNMP hanno un nome comunità predefinito, cioè **Pubblico**. Alcune organizzazioni, però, eliminano il nome comunità **pubblico** dai propri dispositivi come misura di sicurezza.  
+>  I nomi community SNMP sono simili alle password. L'individuazione della rete può ottenere informazioni solo da un dispositivo SNMP per il quale è stato specificato un nome community. Ciascun dispositivo SNMP può avere il proprio nome community, ma spesso lo stesso nome community viene condiviso tra diversi dispositivi. Inoltre, la maggior parte dei dispositivi SNMP hanno un nome community predefinito, cioè **pubblico**. Alcune organizzazioni, però, eliminano il nome community **pubblico** dai propri dispositivi come misura di sicurezza.  
 
- Se nella scheda **SNMP** della finestra di dialogo **Individuazione di rete - Proprietà** vengono visualizzate più community SNMP, l'individuazione della rete esegue la ricerca in queste community nell'ordine in cui compaiono. Per ridurre al minimo il traffico di rete generato dai tentativi di contattare un dispositivo utilizzando nomi diversi, assicurarsi che i nomi utilizzati più di frequente appaiano nella parte superiore dell'elenco.  
+ Se si include più di una community SNMP nella scheda **SNMP** della finestra di dialogo **Individuazione di rete - Proprietà**, la ricerca viene eseguita in base all'ordine di visualizzazione. Assicurarsi che i nomi usati più di frequente si trovino all'inizio dell'elenco. Questa configurazione aiuta a ridurre al minimo il traffico di rete generato dal sito quando cerca di contattare un dispositivo usando nomi diversi.
 
 > [!NOTE]  
 >  Oltre a usare il nome community SNMP, è possibile specificare l'indirizzo IP o il nome risolvibile di un dispositivo SNMP specifico. Questa operazione può essere eseguita nella scheda **Dispositivi SNMP** della finestra di dialogo **Individuazione di rete - Proprietà**.  
 
+
 ####  <a name="BKMK_SearchByDHCP"></a> Eseguire ricerche in un server DHCP specifico  
+
  È possibile configurare l'individuazione di rete per l'utilizzo di un server DHCP specifico o di più server per individuare i client DHCP durante l'esecuzione dell'individuazione.  
 
- L'individuazione di rete effettua la ricerca in ogni server DHCP specificato nella scheda **DHCP** della finestra di dialogo **Proprietà dell'individuazione della rete** . Se il server che sta eseguendo l'individuazione esegue il lease dell'indirizzo IP da un server DHCP, è possibile configurare l'individuazione per effettuare la ricerca in quel server DHCP selezionando la casella **Includi il server DHCP per il cui utilizzo è configurato il server di sito**.  
+ L'individuazione di rete effettua la ricerca in ogni server DHCP specificato nella scheda **DHCP** della finestra di dialogo **Proprietà dell'individuazione della rete**. Se il server che sta eseguendo l'individuazione esegue il lease dell'indirizzo IP da un server DHCP, è possibile configurare l'individuazione per eseguire la ricerca in tale server DHCP. Abilitare questo comportamento con l'opzione **Includi il server DHCP per il cui utilizzo è configurato il server di sito**.  
 
 > [!NOTE]  
 >  Per configurare correttamente un server DHCP nell'individuazione di rete, l'ambiente deve supportare IPv4. Non è possibile configurare l'individuazione della rete per usare un server DHCP in un ambiente IPv6 nativo.  
 
+
 ###  <a name="BKMK_HowToConfigNetDisc"></a> Come configurare l'individuazione di rete  
+
  Utilizzare le seguenti procedure per individuare in primo luogo la topologia di rete, quindi per configurare l'individuazione di rete e individuare potenziali client utilizzando una o più delle opzioni di individuazione di rete disponibili.  
 
-##### <a name="to-determine-your-network-topology"></a>Per determinare la topologia di rete  
+#### <a name="bkmk_proc-top"></a> Come determinare la topologia di rete  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** e quindi scegliere **Metodi di individuazione**.  
+1.  Nella console di Configuration Manager accedere all'area di lavoro **Amministrazione**, espandere **Configurazione della gerarchia** e selezionare il nodo **Metodi di individuazione**.  
 
-2.  Selezionare **Individuazione di rete** per il sito in cui si vuole eseguire l'individuazione di rete.  
+2.  Selezionare il metodo **Individuazione di rete** per il sito in cui si vuole individuare le risorse di rete.  
 
-3.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
+3.  Nella scheda **Home** della barra multifunzione selezionare **Proprietà** nel gruppo **Proprietà**.  
 
-    -   Nella scheda **Generale** selezionare la casella **Abilita individuazione della rete** e quindi scegliere **Topologia** nelle opzioni **Tipo di individuazione**.  
+    -   Nella scheda **Generale** selezionare l'opzione **Abilita individuazione della rete**. Selezionare quindi **Topologia** in **Tipo di individuazione**.  
 
-    -   Nella scheda **Subnet** selezionare la casella **Cerca subnet locali**.  
+    -   Nella scheda **Subnet** selezionare l'opzione **Cerca subnet locali**.  
 
         > [!TIP]  
-        >  Se si conoscono le subnet specifiche che costituiscono la rete, deselezionare la casella **Cerca subnet locali**. A questo punto, usare l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) per aggiungere le subnet specifiche che si vogliono cercare. Per reti di grandi dimensioni, spesso è meglio eseguire la ricerca solo in una o due subnet alla volta per ridurre al minimo l'uso della larghezza di banda di rete.  
+        >  Se si conoscono le subnet specifiche che costituiscono la rete, deselezionare la casella di controllo **Cerca subnet locali**. Selezionare quindi l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) e aggiungere le subnet specifiche in cui eseguire la ricerca. Per reti di grandi dimensioni, eseguire la ricerca solo in una o due subnet alla volta per ridurre al minimo l'uso della larghezza di banda di rete.  
 
-    -   Nella scheda **Domini** selezionare la casella **Cerca dominio locale**.  
+    -   Nella scheda **Domini** selezionare l'opzione **Cerca dominio locale**.  
 
-    -   Nella scheda **SNMP** , utilizzare l'elenco a discesa **Hop massimi** per specificare quanti hop router può prendere l'individuazione di rete nel mapping della topologia.  
+    -   Nella scheda **SNMP** selezionare un'opzione nell'elenco a discesa **Hop massimi**. Questa opzione specifica quanti hop router può usare l'individuazione di rete nel mapping della topologia.  
 
         > [!TIP]  
         >  Quando si esegue per la prima volta la topologia di rete, configurare un numero limitato di hop router per ridurre al minimo l'utilizzo della larghezza di banda di rete.  
 
-4.  Nella scheda **Pianifica** scegliere l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) per impostare una pianificazione per l'esecuzione dell'individuazione di rete.  
+4.  Nella scheda **Pianifica** selezionare l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) e impostare una pianificazione per l'esecuzione dell'individuazione.  
 
     > [!NOTE]  
     >  Non è possibile assegnare una configurazione di individuazione diversa per separare le varie pianificazioni di individuazione della rete. Ogni volta che viene eseguita l'individuazione di rete, essa utilizza la configurazione di individuazione corrente.  
 
-5.  Scegliere **OK** per accettare le configurazioni. L'individuazione di rete viene eseguita all'orario specificato.  
+5.  Selezionare **OK** per accettare le configurazioni. L'individuazione di rete viene eseguita all'orario specificato.  
 
-##### <a name="to-configure-network-discovery"></a>Per configurare l'individuazione di rete  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione della gerarchia** e quindi scegliere **Metodi di individuazione**.  
+#### <a name="bkmk_proc-config"></a> Come configurare l'individuazione di rete  
 
-2.  Selezionare **Individuazione di rete** per il sito in cui si vuole eseguire l'individuazione di rete.  
+1.  Nella console di Configuration Manager accedere all'area di lavoro **Amministrazione**, espandere **Configurazione della gerarchia** e selezionare il nodo **Metodi di individuazione**.  
 
-3.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
+2.  Selezionare il metodo **Individuazione di rete** per il sito in cui si vuole individuare le risorse di rete.  
 
-4.  Nella scheda **Generale** selezionare la casella di controllo **Abilita individuazione della rete** e quindi selezionare il tipo di individuazione che si vuole eseguire nelle opzioni **Tipo di individuazione**.  
+3.  Nella scheda **Home** della barra multifunzione selezionare **Proprietà** nel gruppo **Proprietà**.  
 
-5.  Per configurazione l'individuazione in modo da effettuare la ricerca nelle subnet, scegliere la scheda **Subnet** e quindi configurare una o più delle opzioni seguenti:  
+4.  Nella scheda **Generale** selezionare l'opzione **Abilita individuazione della rete**.  
 
-    -   Per eseguire l'individuazione sulle subnet locali per il computer che esegue l'individuazione, selezionare la casella **Cerca subnet locali**.  
+    - Selezionare un'opzione in **Tipo di individuazione** per il tipo di individuazione da eseguire.  
+
+    - Abilitare l'opzione **Rete lenta** per fare in modo che Configuration Manager si adatti automaticamente alle reti con larghezza di banda ridotta.  
+
+5.  Per configurare l'individuazione per la ricerca nelle subnet, passare alla scheda **Subnet**. Configurare quindi una o più delle opzioni seguenti:  
+
+    -   Per eseguire l'individuazione nelle subnet locali del computer che esegue l'individuazione, abilitare l'opzione **Cerca subnet locali**.  
 
     -   Per effettuare la ricerca in una subnet specifica, verificare che la subnet sia inclusa nell'elenco in **Subnet da cercare** e che il valore **Cerca** sia impostato su **Attivato**:  
 
-        1.  Se la subnet non compare in elenco, scegliere l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuova assegnazione subnet** immettere le informazioni **Subnet** e **Mask**, quindi scegliere **OK**. Per impostazione predefinita, una nuova subnet è abilitata per la ricerca.  
+        1.  Se la subnet non è presente nell'elenco, selezionare l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuova assegnazione subnet** immettere le informazioni in **Subnet** e **Mask** e quindi selezionare **OK**. Per impostazione predefinita, una nuova subnet è abilitata per la ricerca.  
 
-        2.  Per modificare il valore **Cerca** per una subnet presente in elenco, selezionare la subnet, quindi scegliere l'icona **Mostra/Nascondi** per impostare il valore su **Disattivato** o **Attivato**.  
+        2.  Per modificare il valore di **Cerca** per una subnet nell'elenco, selezionare la subnet. Selezionare quindi l'icona **Mostra/Nascondi** per alternare il valore tra **Disattivato** e **Attivato**.  
 
-6.  Per configurazione l'individuazione in modo da effettuare la ricerca nei domini, scegliere la scheda **Domini** e quindi configurare una o più delle opzioni seguenti:  
+6.  Per configurare l'individuazione per la ricerca nei domini, passare alla scheda **Domini**. Configurare quindi una o più delle opzioni seguenti:  
 
-    -   Per eseguire l'individuazione sul dominio del computer che esegue l'individuazione, selezionare la casella **Cerca dominio locale**.  
+    -   Per eseguire l'individuazione nel dominio del computer che esegue l'individuazione, abilitare l'opzione **Cerca dominio locale**.  
 
     -   Per effettuare la ricerca in un dominio specifico, verificare che il dominio sia incluso nell'elenco in **Domini** e che il valore **Cerca** sia impostato su **Attivato**:  
 
-        1.  Se il dominio non compare in elenco, scegliere l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Proprietà dominio** immettere le informazioni sul **Dominio** e quindi scegliere **OK**. Per impostazione predefinita, un nuovo dominio è abilitato per la ricerca.  
+        1.  Se il dominio non è presente nell'elenco, selezionare l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Proprietà dominio** immettere le informazioni in **Dominio** e quindi selezionare **OK**. Per impostazione predefinita, un nuovo dominio è abilitato per la ricerca.  
 
-        2.  Per modificare il valore **Cerca** per un dominio presente in elenco, selezionare il dominio e quindi fare clic sull'icona **Mostra/Nascondi** per impostare il valore su **Disattivato** o **Attivato**.  
+        2.  Per modificare il valore di **Cerca** per un dominio nell'elenco, selezionare il dominio. Selezionare quindi l'icona **Mostra/Nascondi** per alternare il valore tra **Disattivato** e **Attivato**.  
 
-7.  Per configurare l'individuazione in modo da cercare dispositivi SNMP in specifici nomi comunità SNMP, scegliere la scheda **SNMP** e quindi configurare una o più delle opzioni seguenti:  
+7.  Per configurare l'individuazione per la ricerca di nomi community SNMP specifici per i dispositivi SNMP, passare alla scheda **SNMP**. Configurare quindi una o più delle opzioni seguenti:  
 
-    -   Per aggiungere un nome comunità SNMP all'elenco **Nomi comunità SNMP**, scegliere l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuovo nome comunità SNMP** specificare il **Nome** della comunità SNMP e quindi scegliere **OK**.  
+    - Per aggiungere un nome community SNMP all'elenco **Nomi comunità SNMP**, selezionare l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuovo nome comunità SNMP** specificare un valore per **Nome** per la community SNMP e quindi selezionare **OK**.  
 
-    -   Per rimuovere un nome comunità SNMP, selezionarlo e quindi scegliere l'icona **Elimina** ![Icona Elimina](media/Disc_delete_Icon.gif).  
+    - Per rimuovere un nome community SNMP, selezionare il nome e quindi l'icona **Elimina** ![Icona Elimina](media/Disc_delete_Icon.gif).  
 
-    -   Per modificare l'ordine di ricerca dei nomi comunità SNMP, selezionare un nome comunità e quindi scegliere l'icona **Sposta elemento in alto**![Icona Sposta su](media/Disc_moveUp_Icon.gif) oppure l'icona **Sposta elemento in basso** ![Icona Sposta giù](media/Disc_moveDown_Icon.gif). Quando viene eseguita l'individuazione, viene effettuata la ricerca nei nomi comunità seguendo un ordine dall'alto in basso. Tenere presente quanto segue.
+    - Per modificare l'ordine di ricerca dei nomi community SNMP, selezionare un nome nell'elenco. Selezionare quindi l'icona **Sposta elemento in alto** ![Icona Sposta elemento in alto](media/Disc_moveUp_Icon.gif) o **Sposta elemento in basso** ![Icona Sposta elemento in basso](media/Disc_moveDown_Icon.gif). Quando viene eseguita l'individuazione, viene effettuata la ricerca nei nomi community seguendo un ordine dall'alto in basso. 
 
-        > [!NOTE]  
-        >  L'individuazione di rete utilizza i nomi comunità SNMP per accedere ai router che sono dispositivi SNMP. Un router può informare l'individuazione di rete su altri router e subnet collegati al primo router.  
+    - Per configurare il numero massimo di hop router utilizzabili per le ricerche SNMP, selezionare il numero di hop nell'elenco a discesa **Hop massimi**.  
 
-        -   I nomi comunità SNMP sono simili alle password.  
-
-        -   L'individuazione di rete può ottenere informazioni solo da un dispositivo SNMP per il quale è stato specificato un nome comunità.  
-
-        -   Ciascun dispositivo SNMP può avere il proprio nome comunità, ma spesso lo stesso nome comunità viene condiviso tra diversi dispositivi.  
-
-        -   La maggior parte dei dispositivi SNMP ha un nome comunità predefinito, ovvero **Pubblico**. È possibile usarlo se non si conoscono altri nomi comunità. Tuttavia, alcune organizzazioni eliminano il nome comunità **Pubblico** dai propri dispositivi come misura di sicurezza.  
-
-8.  Per configurare il numero massimo di hop router utilizzabili dalle ricerche SNMP, scegliere la scheda **SNMP** e quindi selezionare il numero di hop nell'elenco a discesa **Hop massimi**.  
-
-9. Per configurare un dispositivo SNMP, scegliere la scheda **Dispositivi SNMP**. Se il dispositivo non compare in elenco, scegliere l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuovo dispositivo SNMP** specificare l'indirizzo IP o il nome dispositivo del dispositivo SNMP e quindi scegliere **OK**.  
+8. Per configurare un dispositivo SNMP, passare alla scheda **Dispositivi SNMP**. Se il dispositivo non è presente nell'elenco, selezionare l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuovo dispositivo SNMP** specificare l'indirizzo IP o il nome del dispositivo SNMP e quindi selezionare **OK**.  
 
     > [!NOTE]  
     >  Se si specifica un nome dispositivo, Configuration Manager deve essere in grado di risolvere il nome NetBIOS in un indirizzo IP.  
 
-10. Per configurare l'individuazione in modo da eseguire una query su specifici server DHCP per i client DHCP, scegliere la scheda **DHCP** e quindi configurare una o più delle opzioni seguenti:  
+9. Per configurare l'individuazione per eseguire query su server DHCP specifici, passare alla scheda **DHCP**. Configurare quindi una o più delle opzioni seguenti:  
 
-    -   Per eseguire la query sul server DHCP nel computer che esegue l'individuazione, scegliere di **usare sempre il server DHCP del server del sito**.  
+    -   Per eseguire query sul server DHCP nel computer che esegue l'individuazione, abilitare l'opzione **Always use the site server's DHCP server** (Usa sempre server DHCP del server del sito).  
 
         > [!NOTE]  
         >  Per usare questa opzione, il server deve eseguire il lease dell'indirizzo IP da un server DHCP e non può usare un indirizzo IP statico.  
 
-    -   Per eseguire la query su un server DHCP specifico, scegliere l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuovo server DHCP** specificare l'indirizzo IP o il nome server del server DHCP e quindi scegliere **OK**.  
+    -   Per eseguire query su un server DHCP specifico, selezionare l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif). Nella finestra di dialogo **Nuovo server DHCP** specificare l'indirizzo IP o il nome del server DHCP e quindi selezionare **OK**.  
 
         > [!NOTE]  
         >  Se si specifica un nome server, Configuration Manager deve essere in grado di risolvere il nome NetBIOS in un indirizzo IP.  
 
-11. Per configurare l'orario di esecuzione dell'individuazione, scegliere la scheda **Pianificazione** e quindi scegliere l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) per impostare una pianificazione per l'esecuzione dell'individuazione di rete.  
-
-     È possibile configurare più pianificazioni ricorrenti e più pianificazioni che non hanno ricorrenza.  
+10. Per specificare quando viene eseguita l'individuazione, passare alla scheda **Pianifica**. Selezionare quindi l'icona **Nuovo** ![Icona Nuovo](media/Disc_new_Icon.gif) per impostare una pianificazione per l'esecuzione dell'individuazione di rete. È possibile configurare più pianificazioni ricorrenti e più pianificazioni senza ricorrenza.  
 
     > [!NOTE]  
-    >  Se vengono visualizzate più pianificazioni contemporaneamente nella scheda **Pianificazione**, tutte le pianificazioni porteranno a un'esecuzione dell'individuazione di rete come configurata nell'orario indicato nella pianificazione. Questo vale anche per le pianificazioni ricorrenti.  
+    >  Se nella scheda **Pianifica** sono visualizzate più pianificazioni contemporaneamente, l'individuazione di rete viene eseguita per tutte le pianificazioni come configurata nell'orario indicato nella pianificazione. Questo vale anche per le pianificazioni ricorrenti.  
 
-12. Scegliere **OK** per salvare le configurazioni.  
+11. Selezionare **OK** per salvare le configurazioni.  
+
 
 ###  <a name="BKMK_HowToVerifyNetDisc"></a> Come verificare il completamento dell'individuazione di rete  
+
  Il tempo necessario per il completamento dell'individuazione della rete può variare in base a uno o più dei fattori seguenti:  
 
 -   La dimensione della rete  
@@ -451,24 +477,20 @@ Per altre informazioni, vedere [Informazioni sull'individuazione di rete](../../
 
 -   Il tipo di individuazione che viene eseguita  
 
-Poiché l'individuazione della rete non crea messaggi per avvisare l'utente quando è terminata, è possibile usare la procedura seguente per verificarne il completamento.  
+L'individuazione di rete non crea messaggi per avvisare quando l'operazione è terminata. Usare la procedura seguente per verificare quando è terminata l'individuazione:  
 
-##### <a name="to-verify-that-network-discovery-has-finished"></a>Per verificare che l'individuazione di rete è terminata  
+1.  Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio**. Espandere **Stato del sistema** e quindi selezionare il nodo **Query messaggi di stato**.  
 
-1.  Nella console di Configuration Manager scegliere **Monitoraggio**.  
+2.  Selezionare la query **Tutti i messaggi di stato**.  
 
-2.  Nell'area di lavoro **Monitoraggio** espandere **Stato del sistema** e quindi scegliere **Query messaggi di stato**.  
+3.  Nella scheda **Home** della barra multifunzione selezionare **Mostra messaggi** nel gruppo **Query messaggi di stato**.  
 
-3.  Scegliere **Tutti i messaggi di stato**.  
-
-4.  Nel gruppo **Query messaggi di stato** della scheda **Home** scegliere **Mostra messaggi**.  
-
-5.  Nell'elenco a discesa **Seleziona data e ora** selezionare un valore che includa il tempo trascorso dall'inizio dell'individuazione e infine scegliere **OK** per aprire il **Visualizzatore messaggi di stato di Configuration Manager**.  
+4.  Nella finestra Tutti i messaggi di stato selezionare un valore nell'elenco a discesa **Seleziona data e ora** che includa il tempo trascorso dall'inizio dell'individuazione. Selezionare quindi **OK** per aprire il **Visualizzatore messaggi di stato di Configuration Manager**.  
 
     > [!TIP]  
     >  È possibile utilizzare anche l'opzione **Specifica data e ora** per selezionare una data e un'ora specifici per l'esecuzione dell'individuazione. Questa opzione è utile quando si esegue l'individuazione della rete in una determinata data e si desidera recuperare i messaggi solo da tale data.  
 
-6.  Per convalidare il termine dell'individuazione della rete, cercare un messaggio di stato con i seguenti dettagli:  
+5.  Per convalidare il termine dell'individuazione della rete, cercare un messaggio di stato con i seguenti dettagli:  
 
     -   ID messaggio: **502**  
 
