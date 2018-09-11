@@ -5,16 +5,17 @@ description: Pianificare e progettare il gateway di gestione di cloud (CMG) per 
 ms.date: 07/30/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 78300528fde4a75f8ff816fb5ac2bb8549c2571c
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 2c60a269ade54c87c754fc9b5a3fb90deecd32f5
+ms.sourcegitcommit: 316899b08f2ef372993909e08e069f7edfed1d33
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383763"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44111162"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
