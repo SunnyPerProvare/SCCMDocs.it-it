@@ -1,8 +1,8 @@
 ---
 title: Pianificare la gestione di dispositivi mobili ibrida
 titleSuffix: Configuration Manager
-description: Pianificare una gestione ibrida di dispositivi mobili con System Center Configuration Manager e Microsoft Intune.
-ms.date: 03/05/2017
+description: Pianificare la gestione di dispositivi mobili ibrida con Configuration Manager e Microsoft Intune.
+ms.date: 08/14/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,25 +10,30 @@ ms.assetid: bb95154b-f63e-4491-896e-41d732c802f8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4aa4dda1333e36b99800f5e1c72b92459195f32e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 4b43f1e37301159b09fb3a2975904b7092a92b48
+ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32346825"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42584506"
 ---
-# <a name="plan-for-hybrid-mobile-device-management-mdm-with-system-center-configuration-manager-and-microsoft-intune"></a>Pianificare una gestione ibrida di dispositivi mobile (MDM) con System Center Configuration Manager e Microsoft Intune
+# <a name="plan-for-hybrid-mdm-with-configuration-manager-and-microsoft-intune"></a>Pianificare la gestione di dispositivi mobili ibrida con Configuration Manager e Intune
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile usare solo una soluzione di gestione, ovvero l'autorità di gestione dei dispositivi mobili, per gestire i dispositivi mobili. Prima di eseguire questa impostazione è consigliabile [scegliere tra Microsoft Intune autonomo e la gestione dei dispositivi mobili ibrida con Configuration Manager](../understand/choose-between-standalone-intune-and-hybrid-mobile-device-management.md).
 
-Inoltre, la pagina [Intune Deployment Planning, Design and Implementation Guide](https://docs.microsoft.com/intune/plan-design/introduction) (Guida alla pianificazione, progettazione e implementazione della distribuzione di Intune) contiene molte informazioni sui processi di sviluppo di un piano di distribuzione, di progettazione, di caricamento di Intune e di esecuzione di un'implementazione di produzione.
+> [!Important]  
+> A partire dal 14 agosto 2018, la gestione ibrida dei dispositivi mobili è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
 
-- L'articolo [Supported Device Platforms](supported-device-platforms-for-hybrid.md) (Piattaforme di dispositivi supportate) illustra le piattaforme di dispositivi mobili supportate da Configuration Manager tramite Microsoft Intune.
+
+È possibile usare solo una soluzione di gestione, ovvero l'autorità di gestione dei dispositivi mobili, per gestire i dispositivi mobili. Intune in Azure è la soluzione MDM consigliata da Microsoft. Per altre informazioni, vedere [Guida alla pianificazione, progettazione e implementazione della distribuzione di Intune](https://docs.microsoft.com/intune/plan-design/introduction). Questa guida contiene informazioni sui processi di sviluppo di un piano di distribuzione, di progettazione, di caricamento di Intune e di esecuzione di un'implementazione di produzione.
+
+Per altre informazioni sulla gestione dei dispositivi mobili ibrida, vedere gli articoli seguenti:
+- L'articolo [Supported device platforms](supported-device-platforms-for-hybrid.md) (Piattaforme di dispositivi supportate) illustra le piattaforme di dispositivi mobili supportate da Configuration Manager tramite Microsoft Intune.
 
 - L'articolo [Metodi di registrazione dei dispositivi](device-enrollment-methods.md) contiene informazioni su come registrare i dispositivi di proprietà dell'azienda, quelli di proprietà dell'utente e le relative funzionalità supportate.
 
 
 ### <a name="next-steps"></a>Passaggi successivi
+
  [Impostare una MDM ibrida](../deploy-use/setup-hybrid-mdm.md)

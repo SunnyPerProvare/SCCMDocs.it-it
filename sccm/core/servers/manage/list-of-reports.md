@@ -10,12 +10,12 @@ ms.assetid: b7332ed3-8003-454b-bb12-1fdf8721425c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9f4bbb8ec680248b31b1ddd8c457e62e9be44d4b
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 9d292d85ce5a30e56d7909d74b986ac408d29346
+ms.sourcegitcommit: 849391d3985b057027cae610bd3a79fdaa708b94
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385265"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "42584462"
 ---
 # <a name="list-of-reports-in-system-center-configuration-manager"></a>Elenco dei report in System Center Configuration Manager
 
@@ -51,7 +51,7 @@ I due report seguenti sono elencati nella categoria **Avvisi**.
 
 
 ## <a name="asset-intelligence"></a>Asset Intelligence  
-I 62 report seguenti sono elencati nella categoria **Asset Intelligence**.  
+I 66 report seguenti sono elencati nella categoria **Asset Intelligence**.  
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -117,6 +117,10 @@ I 62 report seguenti sono elencati nella categoria **Asset Intelligence**.
 |**Software 14A - Ricerca di software con tag di identificazione software abilitato**|Visualizza un conteggio dei software installati con un tag di identificazione software abilitato.|  
 |**Software 14B - Computer con software specifico installato con tag di identificazione software abilitato**|Visualizza tutti i computer con software installato con un tag di identificazione software abilitato specifico.|  
 |**Software 14C - Software istallato con tag di identificazione software abilitato in un computer specifico**|Visualizza tutti i software installati con un tag di identificazione software specifico abilitato in un computer specifico.|  
+|**Ciclo di vita 01A - Computer con un prodotto software specifico**|Visualizza un elenco dei computer in cui viene rilevato un prodotto specificato.|
+|**Ciclo di vita 02A - Elenco di computer con prodotti scaduti nell'organizzazione**|Visualizza i computer con prodotti scaduti. È possibile filtrare questo report in base al nome del prodotto.|
+|**Ciclo di vita 03A - Elenco di prodotti scaduti rilevati nell'organizzazione**|Visualizza i dettagli relativi ai prodotti trovati nell'ambiente con date del ciclo di vita scadute.|
+|**Ciclo di vita 04A - Panoramica generale del ciclo di vita del prodotto**|Visualizza un elenco di cicli di vita dei prodotti. Filtrare l'elenco in base al nome del prodotto e ai giorni mancanti alla scadenza.|
 
 
 
@@ -186,6 +190,18 @@ I 22 report seguenti sono elencati nella categoria **Gestione conformità e impo
 |**Riepilogo degli utenti con app non conformi**|Visualizza informazioni sugli utenti che dispongono di app installate che non sono conformi ai criteri specificati.|  
 |**Accettazione di termini e condizioni**|Visualizza i termini e le condizioni e indica la versione accettata da ogni utente.|  
 
+## <a name="data-warehouse"></a>Data warehouse  
+I 7 report seguenti sono elencati nella categoria **Data warehouse**. 
+
+|Nome report|Descrizione|  
+|-----------------|-----------------|  
+|**Distribuzione applicazioni**|Cronologico: visualizza i dettagli per la distribuzione di applicazioni per un'applicazione e un computer specifici.|
+|**Conformità di Endpoint Protection e degli aggiornamenti software**|Cronologico: visualizza i computer in cui mancano aggiornamenti software.|
+|**Inventario hardware generale**|Cronologico: visualizza tutto l'inventario dell'hardware per un computer specifico.|
+|**Inventario software generale**|Cronologico: visualizza tutto l'inventario del software per un computer specifico.|
+|**Panoramica dell'integrità dell'infrastruttura**|Cronologico: visualizza una panoramica dell'integrità dell'infrastruttura di Configuration Manager.|
+|**Elenco del malware rilevato**|Cronologico: visualizza il malware che è stato rilevato nell'organizzazione.|
+|**Riepilogo di distribuzione del software**|Cronologico: riepilogo della distribuzione del software per un annuncio e un computer specifici.|
 
 
 ## <a name="device-management"></a>Gestione dispositivi  
@@ -443,7 +459,6 @@ I 10 report seguenti sono elencati nella categoria **Sistema operativo**.
 |**Servizi - Informazioni sui servizi per un computer specifico**|Visualizza le informazioni di riepilogo sui servizi in un computer specifico.|  
 |**Dettagli della manutenzione di Windows 10 per una raccolta specifica**|Visualizza informazioni generali sulla manutenzione di Windows 10 per una raccolta specifica.|
 |**Computer Windows Server**|Visualizza un elenco di computer che eseguono sistemi operativi Windows Server.|  
-
 
 
 ## <a name="power-management"></a>Risparmio energia  

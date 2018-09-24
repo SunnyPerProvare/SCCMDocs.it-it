@@ -2,7 +2,7 @@
 title: Elenco di controllo per la versione 1806
 titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di Configuration Manager alla versione 1806.
-ms.date: 07/30/2018
+ms.date: 08/22/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,18 +10,18 @@ ms.assetid: bb0a87a6-fd65-440b-90a5-2fef35622c9d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f1eda33d040f823a4ee12fc523634e62881bc5ca
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: d0f79053eba91ac7177fe117a79612d1c1988965
+ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385922"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42755777"
 ---
-# <a name="checklist-for-installing-update-1806-for-system-center-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1806 di System Center Configuration Manager
+# <a name="checklist-for-installing-update-1806-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1806 di Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Quando si usa la versione Current Branch di System Center Configuration Manager, è possibile installare l'aggiornamento nella console per la versione 1806 per aggiornare la gerarchia da una versione precedente. <!-- baseline only statement: (Because version 1802 is also available as [baseline media](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions), you can use the installation media to install the first site of a new hierarchy.)-->
+Quando si usa la versione Current Branch di Configuration Manager, è possibile installare l'aggiornamento nella console per la versione 1806 per aggiornare la gerarchia da una versione precedente. <!-- baseline only statement: (Because version 1802 is also available as [baseline media](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions), you can use the installation media to install the first site of a new hierarchy.)-->
 
 Per ottenere l'aggiornamento per la versione 1806, è necessario usare un punto di connessione del servizio nel sito principale della gerarchia. Questo ruolo del sistema del sito può essere in modalità online o offline. Dopo che la gerarchia ha scaricato l'aggiornamento da Microsoft, lo si può trovare nella console. Nell'area di lavoro **Amministrazione** selezionare il nodo **Aggiornamenti e manutenzione**.
 
@@ -46,7 +46,7 @@ L'aggiornamento 1806 viene installato nel sito principale della gerarchia. Avvia
 
 -   I siti primari figlio installano automaticamente l'aggiornamento al termine dell'installazione dell'aggiornamento nel sito di amministrazione centrale. È possibile usare gli intervalli di servizio per controllare quando eseguire l'installazione dell'aggiornamento in un sito. Per altre informazioni, vedere [Intervalli di servizio per i server del sito](/sccm/core/servers/manage/service-windows).
 
--   Dopo che il sito primario padre ha completato l'installazione dell'aggiornamento, aggiornare manualmente ogni sito secondario dalla console di Configuration Manager. L'aggiornamento automatico dei server del sito secondario non è supportato.
+-   Dopo che il sito primario padre ha completato l'installazione dell'aggiornamento, aggiornare manualmente ogni sito secondario dalla console di Configuration Manager. L'aggiornamento automatico dei server dei siti secondari non è supportato.
 
 #### <a name="site-system-roles"></a>Ruoli del sistema del sito
 Quando un server del sito installa l'aggiornamento, aggiorna automaticamente tutti i ruoli del sistema del sito. Questi ruoli sono nel server del sito o installati in server remoti. Prima di installare l'aggiornamento, verificare quindi che ogni server del sistema del sito soddisfi i prerequisiti correnti per la nuova versione di aggiornamento.
@@ -161,16 +161,59 @@ Per altre informazioni, vedere [Aggiornamenti per Configuration Manager](/sccm/c
 
 
 ## <a name="post-update-checklist"></a>Elenco di controllo post-aggiornamento
-Dopo l'aggiornamento del sito, esaminare le azioni seguenti:
 
-1.  Per le gerarchie multisito, verificare che la replica da sito a sito sia attiva. Nella console andare ai nodi **Gerarchia siti** e **Replica di database** nell'area di lavoro **Monitoraggio**. Questi nodi forniscono indicazioni di problemi o una conferma che i collegamenti di replica siano attivi.  
+Dopo gli aggiornamenti del sito, usare l'elenco di controllo seguente per completare le configurazioni e le attività comuni.
 
-2.  Assicurarsi che ogni server del sito e ogni ruolo del sistema del sito siano aggiornati alla versione 1806. Nella console aggiungere la colonna **Versione** ai nodi **Siti** e **Punti di distribuzione** nell'area di lavoro **Amministrazione**. Se necessario, un ruolo del sistema del sito viene reinstallato automaticamente per l'aggiornamento alla nuova versione. Provare a riavviare i sistemi del sito remoti che non vengono aggiornati subito.  
 
-3.  Riconfigurare le repliche di database per i punti di gestione nei siti primari che sono stati disabilitati prima di avviare l'aggiornamento.  
+#### <a name="confirm-version-and-restart-if-necessary"></a>Confermare la versione e il riavvio (se necessario)
+Assicurarsi che ogni server del sito e ogni ruolo del sistema del sito siano aggiornati alla versione 1806. Nella console aggiungere la colonna **Versione** ai nodi **Siti** e **Punti di distribuzione** nell'area di lavoro **Amministrazione**. Se necessario, un ruolo del sistema del sito viene reinstallato automaticamente per l'aggiornamento alla nuova versione. 
 
-4.  Riconfigurare le attività di manutenzione di database che sono state disabilitate prima di avviare l'aggiornamento.  
+Provare a riavviare i sistemi del sito remoti che non vengono aggiornati subito. Esaminare l'infrastruttura dei siti e verificare che sia stato completato il riavvio dei server del sito e dei server del sistema del sito remoti applicabili. In genere, i server del sito vengono riavviati solo quando Configuration Manager installa .NET come prerequisito per un ruolo del sistema del sito.
 
-5.  Se si è configurata la distribuzione client pilota prima di installare l'aggiornamento, aggiornare i client in base al piano che è stato creato.
 
-6.  Se si usano estensioni di Configuration Manager, eseguire l'aggiornamento alla versione più recente per supportare Configuration Manager versione 1806. 
+#### <a name="confirm-site-to-site-replication-is-active"></a>Verificare che la replica da sito a sito sia attiva
+Nella console di Configuration Manager passare alle posizioni seguenti per visualizzare lo stato e assicurarsi che la replica sia attiva:  
+
+-   Area di lavoro **Monitoraggio**, nodo **Gerarchia siti**  
+
+-   Area di lavoro **Monitoraggio**, nodo **Replica di database**  
+
+Per altre informazioni, vedere gli articoli seguenti:  
+- [Monitorare l'infrastruttura della gerarchia e di replica](/sccm/core/servers/manage/monitor-hierarchy-and-replication-infrastructure)
+- [Informazioni su Replication Link Analyzer](/sccm/core/servers/manage/monitor-hierarchy-and-replication-infrastructure#BKMK_RLA)  
+
+
+#### <a name="update-configuration-manager-consoles"></a>Aggiornare le console di Configuration Manager
+Aggiornare tutte le console remote di Configuration Manager alla stessa versione. Viene richiesto di aggiornare la console nei casi seguenti:  
+
+-   Si apre la console.  
+
+-   Si passa a un nuovo nodo nella console.  
+
+
+#### <a name="reconfigure-database-replicas-for-management-points"></a>Riconfigurare le repliche di database per i punti di gestione
+Dopo aver aggiornato un sito primario, riconfigurare la replica di database per i punti di gestione disinstallati prima dell'aggiornamento del sito. Per altre informazioni, vedere [Repliche di database per i punti di gestione](/sccm/core/servers/deploy/configure/database-replicas-for-management-points).  
+
+
+#### <a name="reconfigure-any-disabled-maintenance-tasks"></a>Riconfigurare le attività di manutenzione disabilitate
+Se si sono disabilitate le [attività di manutenzione](/sccm/core/servers/manage/maintenance-tasks) del database in un sito prima dell'installazione dell'aggiornamento, riconfigurare tali attività. Usare le stesse impostazioni presenti prima dell'aggiornamento.  
+
+
+#### <a name="update-clients"></a>Aggiornare i client
+Aggiornare i client in base al piano creato, in particolare se è stata configurata la distribuzione client pilota prima di installare l'aggiornamento. Per altre informazioni, vedere [Come aggiornare i client per i computer Windows in System Center Configuration Manager](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers).  
+
+
+#### <a name="third-party-extensions"></a>Estensioni di terze parti
+Se si usano estensioni di Configuration Manager, eseguire l'aggiornamento alla versione più recente per supportare Configuration Manager versione 1806. 
+
+
+#### <a name="update-custom-boot-images-and-media"></a>Aggiornare le immagini di avvio e i supporti personalizzati
+<!--SCCMDocs issue 775-->
+
+Usare l'azione **Aggiorna punti di distribuzione** per qualsiasi immagine di avvio usata, sia che si tratti di un'immagine di avvio predefinita o personalizzata. Questa azione assicura che i client possano usare la versione più recente. Anche se non è disponibile una nuova versione di Windows ADK, i componenti client di Configuration Manager possono cambiare con un aggiornamento. Se non si aggiornano le immagini di avvio e i supporti, le distribuzioni della sequenza attività potrebbero non riuscire nei dispositivi. 
+
+Quando si aggiorna il sito, Configuration Manager aggiorna automaticamente le immagini di avvio *predefinite*. Non distribuisce automaticamente il contenuto aggiornato ai punti di distribuzione. Usare l'azione **Aggiorna punti di distribuzione** sulle immagini di avvio specifiche quando si è pronti per distribuire il contenuto in rete. 
+
+Aggiornare manualmente eventuali immagini di avvio *personalizzate* dopo l'aggiornamento del sito. Questa azione aggiorna l'immagine di avvio con i componenti client più recenti, se necessario, la ricarica facoltativamente con la versione corrente di Windows PE e ridistribuisce il contenuto ai punti di distribuzione. 
+
+Per altre informazioni, vedere [Aggiornare il contenuto nei punti di distribuzione](/sccm/osd/get-started/manage-boot-images#update-distribution-points-with-the-boot-image). 

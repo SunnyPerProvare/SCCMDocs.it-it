@@ -10,12 +10,12 @@ ms.assetid: 83a7c934-3b11-435d-ba22-cbc274951e83
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7f4de7295075de4b5baa5e7ba3fa1a3aea2ec032
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: f31a221151239b6a72a750652731dca7e4557649
+ms.sourcegitcommit: a849dab9333ebac799812624d6155f2a96b523ca
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336283"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "42584638"
 ---
 # <a name="plan-for-internet-based-client-management-in-system-center-configuration-manager"></a>Pianificare la gestione client basata su Internet in System Center Configuration Manager
 
@@ -85,6 +85,9 @@ Sebbene non sia richiesto un trust tra la foresta di un client e quella di un se
     La configurazione consigliata quando si usano server Web proxy per la gestione client basata su Internet è il bridging SSL a SSL, che usa la terminazione SSL con l'autenticazione. I computer client devono essere autenticati usando l'autenticazione computer e i client legacy di dispositivi mobili vengono autenticati usando l'autenticazione utente. I dispositivi mobili che vengono registrati da Configuration Manager non supportano il bridging SSL.  
 
      Il vantaggio della terminazione SSL sul server Web proxy è che i pacchetti provenienti da Internet sono soggetti alla verifica prima di essere inoltrati alla rete interna. Il server Web proxy autentica la connessione dal client, la termina, quindi apre una nuova connessione autenticata ai sistemi del sito basati su Internet. Quando i client di Configuration Manager usano un server Web proxy, l'identità client (GUID client) viene contenuta in modo protetto all'interno del payload dei pacchetti in modo che il punto di gestione non consideri il server Web proxy come il client. Il bridging HTTP a HTTPS o HTTPS a HTTP non è supportato in Configuration Manager.  
+     
+    > [!Note]  
+    > Configuration Manager non supporta l'impostazione di configurazioni di bridge SSL di terze parti. Ad esempio, Citrix Netscaler o F5 BIG-IP. Collaborare con il fornitore del dispositivo per configurarlo per l'uso con Configuration Manager.  
 
 -   **Tunneling**:   
     Se il server Web proxy non può supportare i requisiti per il bridging SSL o se si vuole configurare il supporto Internet per i dispositivi mobili registrati da Configuration Manager, è supportato il tunneling SSL. Si tratta di un'opzione meno sicura perché i pacchetti SSL provenienti da Internet vengono inoltrati ai sistemi del sito senza terminazione SSL e, pertanto, non possono essere verificati per l'eventuale presenza di contenuto dannoso. Quando si usa il tunneling SSL, non sono previsti requisiti di certificato per il server Web proxy.  

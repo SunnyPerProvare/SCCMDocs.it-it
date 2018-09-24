@@ -10,12 +10,12 @@ ms.assetid: 1401a35e-4312-4d3b-8ceb-0abbb10d4f05
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 76796cdb56a7106ac709866a9df7c2a08bc6b7bc
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: c314cba909929ee49355eab59dfc813aab7e393e
+ms.sourcegitcommit: a849dab9333ebac799812624d6155f2a96b523ca
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337089"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "42584560"
 ---
 # <a name="how-to-create-collections-in-system-center-configuration-manager"></a>Come creare le raccolte in System Center Configuration Manager
 
@@ -88,7 +88,7 @@ Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da incl
 
 Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da escludere dalla nuova raccolta e quindi scegliere **OK**.  
 
--   **Utilizza aggiornamenti incrementali per questa raccolta**: selezionare questa opzione per eseguire periodicamente una scansione e aggiornare solo le risorse nuove o modificate rispetto alla valutazione raccolta precedente, indipendentemente da una valutazione raccolta completa. Gli aggiornamenti incrementali vengono eseguiti a intervalli di 10 minuti.  
+-   **Utilizza aggiornamenti incrementali per questa raccolta**: selezionare questa opzione per eseguire periodicamente una scansione e aggiornare solo le risorse nuove o modificate rispetto alla valutazione raccolta precedente, indipendentemente da una valutazione raccolta completa. Per impostazione predefinita, gli aggiornamenti incrementali vengono eseguiti a intervalli di 5 minuti.  
 
 > [!IMPORTANT]  
 >  Le raccolte configurate tramite le regole di query che usano le classi seguenti non supportano gli aggiornamenti incrementali:  
@@ -160,7 +160,7 @@ Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da incl
 Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da escludere dalla nuova raccolta e quindi scegliere **OK**.  
 
 
--   **Utilizza aggiornamenti incrementali per questa raccolta**: selezionare questa opzione per eseguire periodicamente una scansione e aggiornare solo le risorse nuove o modificate rispetto alla valutazione raccolta precedente, indipendentemente da una valutazione raccolta completa. Gli aggiornamenti incrementali vengono eseguiti a intervalli di 10 minuti.  
+-   **Utilizza aggiornamenti incrementali per questa raccolta**: selezionare questa opzione per eseguire periodicamente una scansione e aggiornare solo le risorse nuove o modificate rispetto alla valutazione raccolta precedente, indipendentemente da una valutazione raccolta completa. Per impostazione predefinita, gli aggiornamenti incrementali vengono eseguiti a intervalli di 5 minuti.  
 
 > [!IMPORTANT]  
 >  Le raccolte configurate tramite le regole di query che usano le classi seguenti non supportano gli aggiornamenti incrementali:  

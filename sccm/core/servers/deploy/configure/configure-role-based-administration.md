@@ -1,7 +1,7 @@
 ---
 title: Configurare l'amministrazione basata su ruoli
 titleSuffix: Configuration Manager
-ms.date: 2/14/2017
+ms.date: 08/14/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -9,20 +9,20 @@ ms.assetid: 57413dd3-b2f8-4a5f-b27f-8464d357caff
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 44472640b6982e850b840a407e0c30059a3e189b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: f5a0601af46d4d5f835822d3e5c551096512ceb3
+ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341492"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42590877"
 ---
-# <a name="configure-role-based-administration-for-system-center-configuration-manager"></a>Configurare l'amministrazione basata su ruoli per System Center Configuration Manager   
+# <a name="configure-role-based-administration-for-configuration-manager"></a>Configurare l'amministrazione basata su ruoli per Configuration Manager   
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-In System Center Configuration Manager l'amministrazione basata su ruoli combina ruoli di sicurezza, ambiti di protezione e raccolte assegnate per definire l'ambito amministrativo per ogni utente amministratore. L'ambito amministrativo comprende gli oggetti che possono essere visualizzati da un utente amministratore nella console di Configuration Manager, nonché le attività relative a tali oggetti eseguibili dall'utente amministratore. Le configurazioni dell'amministrazione basata su ruoli vengono applicate a tutti i siti della gerarchia.  
+In Configuration Manager l'amministrazione basata su ruoli combina ruoli di sicurezza, ambiti di protezione e raccolte assegnate per definire l'ambito amministrativo per ogni utente amministratore. L'ambito amministrativo comprende gli oggetti che possono essere visualizzati da un utente amministratore nella console di Configuration Manager, nonché le attività relative a tali oggetti eseguibili dall'utente amministratore. Le configurazioni dell'amministrazione basata su ruoli vengono applicate a tutti i siti della gerarchia.  
 
- Se non si ha ancora familiarità con i concetti dell'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](../../../../core/understand/fundamentals-of-role-based-administration.md).  
+ Se non si ha ancora familiarità con i concetti dell'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli](/sccm/core/understand/fundamentals-of-role-based-administration).  
 
  Le informazioni contenute nelle seguenti procedure consentono di creare e configurare l'amministrazione basata su ruoli e le relative impostazioni di sicurezza:  
 
@@ -106,7 +106,7 @@ In System Center Configuration Manager l'amministrazione basata su ruoli combina
 ##  <a name="BKMK_ConfigSecScope"></a> Configurare gli ambiti di protezione per un oggetto  
  L'associazione di un ambito di protezione per un oggetto si gestisce dall'oggetto e non dall'ambito di protezione. Le uniche configurazioni dirette supportate dagli ambiti di protezione sono le modifiche apportate al nome e alla descrizione. Per modificare il nome e la descrizione di un ambito di protezione durante la visualizzazione delle proprietà dell'ambito di protezione, è necessario disporre dell'autorizzazione **Modifica** per l'oggetto a protezione diretta **Ambiti di protezione** .  
 
- Quando si crea un nuovo oggetto in Configuration Manager, questo viene associato a ogni ambito di protezione associato ai ruoli di sicurezza dell'account usato per creare l'oggetto se quei ruoli di sicurezza forniscono l'autorizzazione **Crea** o **Imposta ambito di protezione**. Gli ambiti di protezione a cui è associato l'oggetto possono essere modificati solo dopo la creazione dell'oggetto.  
+ Quando si crea un nuovo oggetto in Configuration Manager, viene associato a ogni ambito di sicurezza che è associato ai ruoli di sicurezza dell'account usato per creare l'oggetto. Questo comportamento si verifica quando i ruoli di sicurezza forniscono l'autorizzazione **Crea** oppure l'autorizzazione **Imposta ambito di protezione**. È possibile modificare gli ambiti di sicurezza per l'oggetto dopo averlo creato.  
 
  Si supponga ad esempio che all'utente venga assegnato un ruolo di sicurezza che concede l'autorizzazione per creare un nuovo gruppo di limiti. Quando si crea un nuovo gruppo di limiti, non esiste nessuna opzione a cui è possibile assegnare ambiti di protezione specifici. Gli ambiti di protezione disponibili relativamente ai ruoli di sicurezza a cui è associato l'utente vengono invece assegnati automaticamente al nuovo gruppo di limiti. Dopo aver salvato il nuovo gruppo di limiti, è possibile modificare gli ambiti di protezione associati al nuovo gruppo di limiti.  
 
@@ -128,7 +128,7 @@ In System Center Configuration Manager l'amministrazione basata su ruoli combina
 ##  <a name="BKMK_ConfigColl"></a> Configurare le raccolte per la gestione della sicurezza  
  Non esistono procedure per la configurazione delle raccolte per l'amministrazione basata su ruoli. Le raccolte non hanno una configurazione dell'amministrazione basata su ruoli. Vengono invece assegnate a un utente amministratore durante la configurazione dell'utente amministratore. Le operazioni di protezione della raccolta abilitate nei ruoli di sicurezza assegnati degli utenti determinano le autorizzazioni di un utente amministratore per le raccolte e le risorse delle raccolte (membri delle raccolte).  
 
- Quando un utente amministratore dispone delle autorizzazioni per una raccolta, dispone anche delle autorizzazioni per le raccolte limitate alla raccolta specifica. Si supponga ad esempio che l'organizzazione usi una raccolta denominata All Desktops ed esista una raccolta denominata All North America Desktops limitata alla raccolta All Desktops. Se un utente amministratore dispone delle autorizzazioni per All Desktops, avrà le stesse autorizzazioni anche per la raccolta All North America Desktops.
+ Quando un utente amministratore dispone delle autorizzazioni per una raccolta, dispone anche delle autorizzazioni per le raccolte limitate alla raccolta specifica. Ad esempio, l'organizzazione usa una raccolta denominata All Desktops. È inoltre disponibile una raccolta denominata All North America Desktops, limitata alla raccolta All Desktops. Se un utente amministratore dispone delle autorizzazioni per All Desktops, avrà le stesse autorizzazioni anche per la raccolta All North America Desktops.
 
  Inoltre, un utente amministratore non può usare l'autorizzazione **Elimina** o **Modifica** su una raccolta che gli è stata assegnata direttamente. Può invece usare queste autorizzazioni sulle raccolte limitate alla raccolta specifica. Nell'esempio precedente, l'utente amministratore può eliminare o modificare la raccolta All North America Desktops, ma non può eliminare o modificare la raccolta All Desktops.  
 
@@ -154,7 +154,7 @@ In System Center Configuration Manager l'amministrazione basata su ruoli combina
 
 6.  Scegliere una delle due opzioni seguenti per definire il comportamento degli oggetti a protezione diretta per il nuovo utente:  
 
-    -   **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**: questa opzione associa l'utente amministratore all'ambito di protezione **Tutto** e alle raccolte predefinite a livello radice per **Tutti i sistemi** e **Tutti gli utenti e i gruppi di utenti**. I ruoli di sicurezza assegnati all'utente definiscono l'accesso agli oggetti. I nuovi oggetti creati dall'utente amministratore vengono assegnati all'ambito di protezione **Predefinito** .  
+    -   **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**: questa opzione associa l'utente amministratore all'ambito di protezione **Tutto** e alle raccolte **Tutti i sistemi** e **Tutti gli utenti e i gruppi di utenti**. I ruoli di sicurezza assegnati all'utente definiscono l'accesso agli oggetti. I nuovi oggetti creati dall'utente amministratore vengono assegnati all'ambito di protezione **Predefinito** .  
 
     -   **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**: per impostazione predefinita, questa opzione associa l'utente amministratore all'ambito di protezione **Predefinito** e alle raccolte **Tutti i sistemi** e **Tutti gli utenti e i gruppi di utenti**. Tuttavia, le raccolte e gli ambiti di protezione effettivi sono limitati a quelli associati all'account utilizzato per creare il nuovo utente amministratore. Questa opzione supporta l'aggiunta o la rimozione di raccolte e ambiti di protezione per personalizzare l'ambito amministrativo dell'utente amministratore.  
 
@@ -163,18 +163,18 @@ In System Center Configuration Manager l'amministrazione basata su ruoli combina
 
 7.  A seconda dell'opzione selezionata nel passaggio 6, eseguire le seguenti operazioni:  
 
-    -   Se si è selezionato **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**, scegliere **OK** per completare questa procedura.  
+    -   Se si seleziona **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**, scegliere **OK** per completare questa procedura.  
 
-    -   Se si è selezionato **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**, è possibile scegliere **Aggiungi** per selezionare raccolte e ambiti di protezione aggiuntivi. In alternativa, selezionare uno o più oggetti nell'elenco e quindi scegliere **Rimuovi** per rimuoverli. Scegliere **OK** per completare questa procedura.  
+    -   Se si seleziona **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**, è possibile scegliere **Aggiungi** per selezionare raccolte e ambiti di protezione aggiuntivi. In alternativa, selezionare uno o più oggetti nell'elenco e quindi scegliere **Rimuovi** per rimuoverli. Scegliere **OK** per completare questa procedura.  
 
 ##  <a name="BKMK_ModAdminUser"></a> Modificare l'ambito amministrativo di un utente amministratore  
  È possibile modificare l'ambito amministrativo di un utente amministratore aggiungendo o rimuovendo raccolte, ruoli di sicurezza e ambiti di protezione associati all'utente. È necessario associare a ogni utente amministratore almeno un ruolo di sicurezza e un ambito di protezione. Potrebbe essere necessario assegnare una o più raccolte all'ambito amministrativo dell'utente. La maggior parte dei ruoli di sicurezza interagisce con le raccolte e non funziona correttamente senza una raccolta assegnata.  
 
  Quando si modifica un utente amministratore, è possibile modificare il comportamento di associazione degli oggetti a protezione diretta ai ruoli di sicurezza assegnati. Di seguito, i tre comportamenti che è possibile selezionare:  
 
--   **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**: questa opzione associa l'utente amministratore all'ambito **Tutto** e alle raccolte predefinite a livello radice per **Tutti i sistemi** e **Tutti gli utenti e i gruppi di utenti**. I ruoli di sicurezza assegnati all'utente definiscono l'accesso agli oggetti.  
+-   **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**: questa opzione associa l'utente amministratore all'ambito **Tutto** e alle raccolte **Tutti i sistemi** e **Tutti gli utenti e i gruppi di utenti**. I ruoli di sicurezza assegnati all'utente definiscono l'accesso agli oggetti.  
 
--   **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**: questa opzione associa l'utente amministratore agli stessi ambiti di sicurezza e collezioni associate all'account usato per configurare l'utente amministratore. Questa opzione supporta l'aggiunta o la rimozione di raccolte e ruoli di sicurezza per personalizzare l'ambito amministrativo dell'utente amministratore.  
+-   **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**: questa opzione associa l'utente amministratore agli stessi ambiti e raccolte di protezione associati all'account usato per configurare l'utente amministratore. Questa opzione supporta l'aggiunta o la rimozione di raccolte e ruoli di sicurezza per personalizzare l'ambito amministrativo dell'utente amministratore.  
 
 -   **Associa ruoli di sicurezza assegnati a raccolte e ambiti di protezione specifici**: questa opzione consente di creare associazioni specifiche tra i singoli ruoli di sicurezza e gli ambiti di protezione e le raccolte specifici per l'utente.  
 
@@ -201,9 +201,9 @@ Usare la procedura seguente per visualizzare e gestire la configurazione per gli
 
 7.  Scegliere **OK** per completare la procedura.  
 
-Usare la procedura seguente per modificare un utente amministrativo con il comportamento degli oggetti a protezione diretta impostato su **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**.  
+Usare la procedura seguente per modificare un utente amministratore con il comportamento degli oggetti a protezione diretta impostato su **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**.  
 
-#### <a name="for-option-all-securable-objects-that-are-relevant-to-their-associated-security-roles"></a>Per l'opzione: Tutte le istanze degli oggetti collegati ai ruoli di sicurezza assegnati  
+#### <a name="for-option-all-instances-of-the-objects-that-are-related-to-the-assigned-security-roles"></a>Per l'opzione: Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati  
 
 1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
 
@@ -228,9 +228,9 @@ Usare la procedura seguente per modificare un utente amministrativo con il compo
 
 8.  Scegliere **OK** per completare questa procedura.  
 
-Utilizzare la seguente procedura per modificare un utente amministratore con il comportamento degli oggetti a protezione diretta impostato su **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**.  
+Usare la procedura seguente per modificare un utente amministratore con il comportamento degli oggetti a protezione diretta impostato su **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**.  
 
-#### <a name="for-option-only-securable-objects-in-specified-security-scopes-or-collections"></a>Per l'opzione: Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati  
+#### <a name="for-option-only-the-instances-of-objects-that-are-assigned-to-the-specified-security-scopes-and-collections"></a>Per l'opzione: Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati  
 
 1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
 
@@ -256,9 +256,9 @@ Utilizzare la seguente procedura per modificare un utente amministratore con il 
 
 8.  Scegliere **OK** per completare questa procedura.  
 
-Utilizzare la seguente procedura per modificare un utente amministratore con il comportamento degli oggetti a protezione diretta impostato su **Associa ruoli di protezione assegnati a raccolte e ambiti di protezione specifici**.  
+Usare la procedura seguente per modificare un utente amministratore con il comportamento degli oggetti a protezione diretta impostato su **Associa ruoli di protezione assegnati a raccolte e ambiti di protezione specifici**.  
 
-#### <a name="for-option-only-securable-objects-as-determined-by-the-security-roles-of-the-administrative-user"></a>Per l'opzione: Associa ruoli di sicurezza assegnati a raccolte e ambiti di protezione specifici  
+#### <a name="for-option-associate-assigned-security-roles-with-specific-security-scopes-and-collections"></a>Per l'opzione: Associa ruoli di protezione assegnati a raccolte e ambiti di protezione specifici  
 
 1.  Nella console di Configuration Manager scegliere **Amministrazione**.  
 
@@ -268,7 +268,7 @@ Utilizzare la seguente procedura per modificare un utente amministratore con il 
 
 4.  Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.  
 
-5.  Scegliere la scheda **Ambiti di protezione** per assicurarsi che l'utente amministratore sia configurato per **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**.  
+5.  Scegliere la scheda **Ambiti di protezione** per assicurarsi che l'utente amministratore sia configurato per **Associa ruoli di protezione assegnati a raccolte e ambiti di protezione specifici**.  
 
 6.  Per modificare i ruoli di sicurezza assegnati, scegliere la scheda **Ruoli di protezione**.  
 

@@ -1,8 +1,8 @@
 ---
 title: Note sulla versione
 titleSuffix: Configuration Manager
-description: Informazioni su problemi urgenti non ancora risolti nel prodotto o trattati in un articolo della Microsoft Knowledge Base.
-ms.date: 07/30/2018
+description: Informazioni su problemi urgenti non ancora risolti nel prodotto o trattati in un articolo della Knowledge Base del supporto tecnico Microsoft.
+ms.date: 08/21/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,23 +10,23 @@ ms.assetid: 030947fd-f5e0-4185-8513-2397fb2ec96f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9daf0fb53face0cf7ed56f2a45ab044fbfac203c
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 939ab4b97a1a62eeae834873dd39e2f0d435527d
+ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385508"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42590098"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Note sulla versione per Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Con Configuration Manager le note sulla versione del prodotto sono limitate ai problemi urgenti. Questi problemi non sono ancora risolti nel prodotto né trattati in dettaglio in un articolo della Microsoft Knowledge Base.  
+Con Configuration Manager le note sulla versione del prodotto sono limitate ai problemi urgenti. Questi problemi non sono ancora stati risolti nel prodotto né trattati in dettaglio in un articolo della Knowledge Base del supporto tecnico Microsoft.  
 
 La documentazione specifica delle funzionalità include informazioni sui problemi noti che interessano gli scenari di base.  
 
 > [!TIP]  
->  Questo argomento contiene le note sulla versione di Configuration Manager (Current Branch). Per informazioni sul Technical Preview Branch, vedere [Technical Preview](../../../../core/get-started/technical-preview.md)  
+>  Questo argomento contiene le note sulla versione di Configuration Manager (Current Branch). Per informazioni sul Technical Preview Branch, vedere [Technical Preview](/sccm/core/get-started/technical-preview)  
 
 Per informazioni sulle nuove funzionalità introdotte con le diverse versioni, vedere gli articoli seguenti:
 - [Novità della versione 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806)  
@@ -63,6 +63,16 @@ Anche se non produce alcun effetto sul risultato del processo di installazione, 
 
  > [!Note]  
  > Il parametro EnableSQM per il [programma di installazione della console](/sccm/core/servers/deploy/install/install-consoles) non è necessario.
+
+
+### <a name="cloud-service-manager-component-stopped-on-site-server-in-passive-mode"></a>Componente di gestione del servizio cloud arrestato nel server del sito in modalità passiva
+<!--VSO 2858826, SCCMDocs issue 772-->
+*Si applica a: Configuration Manager versione 1806*
+
+Se il [punto di connessione del servizio](/sccm/core/servers/deploy/configure/about-the-service-connection-point) si trova nella stessa posizione di un [server del sito in modalità passiva](/sccm/core/servers/deploy/configure/site-server-high-availability), la distribuzione e il monitoraggio di un [gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway) non vengono avviati. Il componente di gestione del servizio cloud (SMS_CLOUD_SERVICES_MANAGER) è nello stato arrestato.
+
+#### <a name="workaround"></a>Soluzione alternativa
+Spostare il ruolo del punto di connessione del servizio in un altro server.
 
 
 

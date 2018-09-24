@@ -10,12 +10,12 @@ ms.assetid: 946b0f74-0794-4e8f-a6af-9737d877179b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a50aa9d2269830fa09c494c63c7681f1dbda3cc0
-ms.sourcegitcommit: 6e0e5b4b7779ce03e2b56b3b5f68f4ace1acedd8
+ms.openlocfilehash: 3c31b950ef59147f6f3f46c1cba7780b7789948c
+ms.sourcegitcommit: 4b7812b505e80f79fc90dfa8a6db06eea79a3550
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39467590"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42584643"
 ---
 # <a name="enable-third-party-updates"></a>Abilitare gli aggiornamenti di terze parti 
 
@@ -164,6 +164,7 @@ La sincronizzazione degli aggiornamenti software di terze parti viene gestita da
 -  Configuration Manager include una nuova versione per il formato di file CAB di catalogo. La nuova versione include i certificati per i file binari del fornitore. Questi certificati vengono aggiunti al nodo **Certificati** sotto **Sicurezza** nell'area di lavoro **Amministrazione** dopo aver approvato e considerato attendibile il catalogo.  
      - È comunque possibile usare la versione del file CAB del catalogo precedente, purché l'URL di download sia https e gli aggiornamenti siano firmati. Il contenuto non verrà pubblicato perché i certificati per i file binari non sono nel file CAB e sono già approvati. Per risolvere il problema, trovare il certificato nel nodo **Certificati**, sbloccarlo e quindi pubblicare di nuovo l'aggiornamento. Se si devono pubblicare più aggiornamenti firmati con certificati diversi, sarà necessario sbloccare ogni certificato usato.
      - Per altre informazioni, vedere i messaggi di stato 11523 e 11524 nella tabella dei messaggi di stato seguente.
+-  Quando il servizio di sincronizzazione degli aggiornamenti software di terze parti nel punto di aggiornamento software di livello superiore richiede un server proxy per l'accesso a Internet, i controlli della firma digitale potrebbero non riuscire. Per risolvere questo problema, configurare le impostazioni proxy WinHTTP nel sistema del sito. Per altre informazioni, vedere [Netsh commands for WinHTTP](https://go.microsoft.com/fwlink/p/?linkid=199086) (Comandi Netsh per WinHTTP).
 
 ## <a name="status-messages"></a>Messaggi di stato
 
@@ -176,7 +177,7 @@ La sincronizzazione degli aggiornamenti software di terze parti viene gestita da
 
 
 ## <a name="working-with-third-party-updates-video"></a>Video Working with third-party updates (Uso di aggiornamenti di terze parti)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bvAQeDSJIbs?ecver=1" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ai8rLCLtuTI?rel=0" frameborder="0" allowfullscreen></iframe>
 
 
 

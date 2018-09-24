@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
-ms.openlocfilehash: fbae44d1344dd36d3c0a6faf2e50727dfa830ba0
-ms.sourcegitcommit: 8060ea520fb08629e1d5f249daffe825536673a5
+ms.openlocfilehash: 02a830d10263164e26902247856f999523092c76
+ms.sourcegitcommit: a849dab9333ebac799812624d6155f2a96b523ca
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35232371"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "42584524"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificati per il gateway di gestione cloud
 
@@ -63,7 +63,8 @@ Ad esempio, Contoso usa **GraniteFalls.Contoso.com** per il nome comune del cert
 
 Creare un certificato SSL personalizzato per il gateway di gestione cloud identico a quello di un punto di distribuzione cloud. Seguire le istruzioni per la [distribuzione del certificato di servizio per i punti di distribuzione basati su cloud](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clouddp2008_cm2012) procedendo in modo diverso per le operazioni seguenti:
 
-- Quando si richiede il certificato del server Web personalizzato, specificare un FQDN per il nome comune del certificato. Per usare il gateway di gestione cloud nel cloud pubblico di Azure, usare un nome che termina con **cloudapp.net** o **usgovcloudapp.net** per il cloud di Azure Governo degli Stati Uniti.
+- Quando si richiede il certificato del server Web personalizzato, specificare un FQDN per il nome comune del certificato. Può trattarsi di un nome di dominio pubblico di cui si è proprietari o è possibile sfruttare il dominio cloudapp.net. Se si usa il proprio dominio pubblico, fare riferimento al processo sopra descritto per la creazione di un alias DNS nel DNS pubblico dell'organizzazione.
+- Quando si usa il dominio pubblico cloudapp.net per il certificato del server Web CMG, nel cloud pubblico di Azure, usare un nome che termina con **cloudapp.net** o **usgovcloudapp.net** per il cloud di Azure Governo degli Stati Uniti.
 
 
 

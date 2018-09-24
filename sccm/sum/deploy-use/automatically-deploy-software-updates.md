@@ -5,17 +5,17 @@ description: Per distribuire automaticamente gli aggiornamenti software, si usan
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 07/30/2018
+ms.date: 08/21/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
-ms.openlocfilehash: 2ae76e9bca172b4f45a39444800a0fe152104aa4
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 6c23dc7328e2618d42b70f12bf7df8aa22fddb91
+ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383600"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42589027"
 ---
 #  <a name="automatically-deploy-software-updates"></a>Distribuire automaticamente gli aggiornamenti software  
 
@@ -24,7 +24,7 @@ ms.locfileid: "39383600"
 Usare una regola di distribuzione automatica invece di aggiungere nuovi aggiornamenti a un gruppo di aggiornamento software esistente. Solitamente si usano le regole di distribuzione automatica per distribuire mensilmente gli aggiornamenti software, comunemente noti anche come aggiornamenti Patch Tuesday, e per gestire gli aggiornamenti delle definizioni di Endpoint Protection. Per altre informazioni su come determinare il metodo di distribuzione da usare, vedere [Distribuire gli aggiornamenti software](deploy-software-updates.md).
 
 
-##  <a name="BKMK_CreateAutomaticDeploymentRule"></a> Creare una regola di distribuzione automatica  
+##  <a name="BKMK_CreateAutomaticDeploymentRule"></a> Creare una regola di distribuzione automatica (ADR)  
 Approvare e distribuire automaticamente gli aggiornamenti software usando una regola di distribuzione automatica. La regola può aggiungere gli aggiornamenti software a un nuovo gruppo di aggiornamento software ogni volta che la regola viene eseguita oppure aggiungere gli aggiornamenti software a un gruppo esistente. Quando una regola viene eseguita e aggiunge aggiornamenti software a un gruppo esistente, la regola rimuove tutti gli aggiornamenti software dal gruppo e quindi aggiunge al gruppo gli aggiornamenti che soddisfano i criteri definiti. 
 
 > [!WARNING]  
@@ -39,13 +39,13 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
 3.  Nella pagina **Generale** della Creazione guidata delle regole di distribuzione automatica configurare le impostazioni seguenti:  
 
-    -   **Nome**: specificare il nome per la regola di distribuzione automatica. Il nome deve essere univoco, descrivere lo scopo della regola e contribuire a distinguerla dalle altre presenti nel sito di Configuration Manager.  
+    -   **Nome:** specificare il nome per l'ADR. Il nome deve essere univoco, descrivere lo scopo della regola e contribuire a distinguerla dalle altre presenti nel sito di Configuration Manager.  
 
-    -   **Descrizione**: specificare una descrizione per la regola di distribuzione automatica. La descrizione deve fornire una panoramica della regola di distribuzione, nonché le altre informazioni rilevanti per differenziare la regola dalle altre. Il campo della descrizione è facoltativo, ha un limite di 256 caratteri e un valore vuoto per impostazione predefinita.  
+    -   **Descrizione:** specificare una descrizione per l'ADR. La descrizione deve fornire una panoramica della regola di distribuzione, nonché le altre informazioni rilevanti per differenziare la regola dalle altre. Il campo della descrizione è facoltativo, ha un limite di 256 caratteri e un valore vuoto per impostazione predefinita.  
 
     -   **Modello**: selezionare un modello di distribuzione per specificare se applicare le configurazioni di regole di distribuzione automatica salvate in precedenza. Configurare un modello di distribuzione che contenga più proprietà di distribuzione degli aggiornamenti comuni utilizzabili durante la creazione delle regole di distribuzione automatica. Questi modelli consentono di risparmiare tempo e garantire la coerenza tra le distribuzioni simili. Scegliere uno dei modelli di distribuzione degli aggiornamenti software predefiniti elencati di seguito:  
 
-         - Il modello **Patch Tuesday** offre impostazioni comuni da usare quando si distribuiscono aggiornamenti software su base ciclica mensile.  
+         - Il modello **Patch martedì** offre impostazioni comuni da usare quando si distribuiscono aggiornamenti software su base ciclica mensile.  
 
          - Il modello **Aggiornamenti del client Office 365** offre impostazioni comuni da usare quando si distribuiscono aggiornamenti per client Office 365 Pro Plus.  
 
@@ -55,7 +55,7 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
     -   Decidere se aggiungere gli aggiornamenti software a un gruppo di aggiornamento software nuovo o esistente. Nella maggior parte dei casi scegliere di creare un nuovo gruppo di aggiornamento software quando si esegue la regola di distribuzione automatica. Se la regola viene eseguita in una pianificazione più aggressiva, è possibile scegliere di usare un gruppo esistente. Ad esempio, se si esegue la regola ogni giorno per gli aggiornamenti delle definizioni, è possibile aggiungere gli aggiornamenti software a un gruppo di aggiornamento software esistente.  
 
-    -   **Attiva la distribuzione dopo l'esecuzione di questa regola**: specificare se abilitare la distribuzione degli aggiornamenti software dopo l'esecuzione della regola di distribuzione automatica. Per questa impostazione prendere in considerazione le opzioni seguenti:  
+    -   **Attiva la distribuzione dopo l'esecuzione di questa regola**: specificare se abilitare la distribuzione degli aggiornamenti software dopo l'esecuzione dell'ADR. Per questa impostazione prendere in considerazione le opzioni seguenti:  
 
         -   Quando si abilita la distribuzione, gli aggiornamenti che soddisfano i criteri definiti per la regola vengono aggiunti a un gruppo di aggiornamento software. Il contenuto dell'aggiornamento software viene scaricato in base alle necessità. Il contenuto viene copiato nei punti di distribuzione specificati e gli aggiornamenti vengono distribuiti ai client nella raccolta di destinazione.  
 
@@ -68,7 +68,7 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
     -   **Livello dettaglio**: specificare il livello di dettaglio per i messaggi di stato segnalati dai client.  
 
         > [!IMPORTANT]  
-        >  Quando si distribuiscono gli aggiornamenti delle definizioni, impostare il livello di dettaglio su **Solo errori** affinché il client restituisca un messaggio di stato solo in caso un aggiornamento delle definizioni non riesca. In caso contrario, il client restituisce un numero elevato di messaggi di stato che potrebbe influire sulle prestazioni del server del sito.  
+        >  Quando si distribuiscono gli aggiornamenti delle definizioni, impostare il livello di dettaglio su **Solo errori** affinché il client segnali un messaggio di stato solo in caso un aggiornamento delle definizioni non riesca. In caso contrario, il client restituisce un numero elevato di messaggi di stato che potrebbe influire sulle prestazioni del server del sito.  
 
     -   **Impostazione condizioni di licenza**: specificare se si desidera distribuire automaticamente gli aggiornamenti software con le condizioni di licenza associate. Alcuni aggiornamenti software includono le condizioni di licenza. Quando si distribuiscono automaticamente gli aggiornamenti software, non vengono visualizzate le condizioni di licenza e non è disponibile un'opzione per accettare tali condizioni. Scegliere di distribuire automaticamente tutti gli aggiornamenti software indipendentemente dalle condizioni di licenza associate o di distribuire solo gli aggiornamenti a cui non sono associate tali condizioni.  
 
@@ -78,7 +78,7 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
 5.  Nella pagina **Aggiornamenti software** configurare i criteri per gli aggiornamenti software recuperati e aggiunti al gruppo di aggiornamento software dalla regola di distribuzione automatica.  
 
-     - Il limite della regola di distribuzione automatica è di 1000 aggiornamenti software.  
+     - Il limite dell'ADR è di 1000 aggiornamenti software.  
 
      - Se necessario, filtrare le dimensioni del contenuto per gli aggiornamenti software nelle regole di distribuzione automatica. Per altre informazioni, vedere [Configuration Manager and Simplified Windows Servicing on Down Level Operating Systems](https://blogs.technet.microsoft.com/enterprisemobility/2016/10/07/configuration-manager-and-simplified-windows-servicing-on-down-level-operating-systems/) (Configuration Manager e manutenzione Windows semplificata su sistemi operativi di livello inferiore).  
 
@@ -89,7 +89,7 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
     - La configurazione dell'ora di avvio per la pianificazione si basa sull'ora locale del computer su cui è in esecuzione la console di Configuration Manager.  
 
-    - La valutazione della regola di distribuzione automatica può essere eseguita per un massimo di tre volte al giorno.  
+    - La valutazione dell'ADR può essere eseguita per un massimo di tre volte al giorno.  
 
     - Non impostare mai la pianificazione per la valutazione con una frequenza superiore alla pianificazione della sincronizzazione degli aggiornamenti software. In questa pagina è visualizzata la pianificazione di sincronizzazione del punto di aggiornamento software che consente di determinare la frequenza della pianificazione per la valutazione.  
     
@@ -100,7 +100,7 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
        >  
        > Quando si pianifica la valutazione con un offset durante l'ultima settimana del mese e si sceglie un offset che causa il passaggio al mese successivo, il sito pianifica la valutazione per l'ultimo giorno del mese.<!--506731-->  
        >  
-       > ![Offset rispetto al giorno di base della pianificazione di valutazione personalizzata della regola di distribuzione automatica](./media/ADR-evaluation-schedule-offset.PNG)
+       > ![Offset rispetto al giorno base della pianificazione di valutazione personalizzata ADR](./media/ADR-evaluation-schedule-offset.PNG)
 
    
 7.  Nella pagina **Pianificazione della distribuzione** configurare le impostazioni seguenti:  
@@ -139,14 +139,14 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
     -   **Comportamento scadenza**: specificare i comportamenti da adottare quando la distribuzione dell'aggiornamento software raggiunge la scadenza oltre qualsiasi finestra di manutenzione definita. Le opzioni disponibili consentono di scegliere se installare gli aggiornamenti software ed eseguire un riavvio del sistema dopo l'installazione. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).  
 
-    -   **Comportamento riavvio dispositivo**: specificare se evitare un riavvio del sistema in server e workstation quando è richiesto un riavvio del sistema per completare l'installazione dell'aggiornamento.  
+    -   **Comportamento riavvio dispositivo**: specificare se evitare un riavvio del sistema in server e workstation se è richiesto un riavvio del sistema per completare l'installazione dell'aggiornamento.  
 
         > [!WARNING]  
         >  La disattivazione dei riavvii del sistema può essere utile in ambienti server o quando non si vuole che i computer di destinazione vengano riavviati per impostazione predefinita. Con tale impostazione, però, i computer potrebbero trovarsi in uno stato non protetto. Un riavvio forzato assicura il completamento immediato dell'installazione degli aggiornamenti software.  
 
     -   **Gestione filtri di scrittura per dispositivi con Windows Embedded**: questa impostazione controlla il comportamento di installazione nei dispositivi con Windows Embedded in cui è abilitato un filtro di scrittura. Scegliere l'opzione per eseguire il commit delle modifiche alla scadenza dell'installazione o durante una finestra di manutenzione. Quando si seleziona questa opzione, è necessario un riavvio e la modifica viene salvata in modo permanente nel dispositivo. In caso contrario, l'aggiornamento viene installato, applicato all'overlay temporaneo e sottoposto a commit successivamente.  
 
-           -  Quando si distribuisce un aggiornamento software in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta che dispone di una finestra di manutenzione configurata.  
+           -  Quando si distribuisce un aggiornamento software in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta che ha una finestra di manutenzione configurata.  
 
     - **Comportamento di rivalutazione della distribuzione degli aggiornamenti software al riavvio**: selezionare questa impostazione per configurare le distribuzioni degli aggiornamenti software in modo che i client eseguano un'analisi della conformità degli aggiornamenti software immediatamente dopo l'installazione degli aggiornamenti software e il riavvio. Questa impostazione consente al client di controllare la presenza di aggiornamenti aggiuntivi che diventano applicabili dopo il riavvio e di installarli durante la stessa finestra di manutenzione.  
 
@@ -173,9 +173,9 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
     - **Crea un nuovo pacchetto di distribuzione**: consente di aggiungere questi aggiornamenti a un nuovo pacchetto di distribuzione. Configurare le impostazioni aggiuntive seguenti:  
 
-        -  **Nome**: specificare il nome del pacchetto di distribuzione. Usare un nome univoco che descrive il contenuto del pacchetto. Il nome è limitato a 50 caratteri.  
+        -  **Nome**: specificare il nome del pacchetto di distribuzione. Usare un nome univoco che descrive il contenuto del pacchetto. Il nome può contenere un massimo di 50 caratteri.  
 
-        -  **Descrizione**: specificare una descrizione che fornisca informazioni sul pacchetto di distribuzione. La descrizione facoltativa è limitata a 127 caratteri.  
+        -  **Descrizione**: specificare una descrizione che fornisca informazioni sul pacchetto di distribuzione. La descrizione facoltativa può contenere un massimo di 127 caratteri.  
 
         -  **Origine pacchetto**: specifica il percorso dei file di origine dell'aggiornamento software. Digitare un percorso di rete per il percorso di origine, ad esempio `\\server\sharename\path`, oppure fare clic su **Sfoglia** per trovare il percorso di rete. Prima di procedere alla pagina successiva, è necessario creare la cartella condivisa per i file di origine del pacchetto di distribuzione.  
 
@@ -185,11 +185,14 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
             -  L'account computer del provider SMS e l'utente che esegue la procedura guidata per scaricare gli aggiornamenti software devono disporre entrambi delle autorizzazioni di **Scrittura** per il percorso di download. Limitare l'accesso al percorso di download. Questa restrizione riduce il rischio che utenti malintenzionati possano manomettere i file di origine degli aggiornamenti software.  
 
-        -  **Priorità di invio**: specificare la priorità di invio per il pacchetto di distribuzione. Configuration Manager usa tale priorità quando invia il pacchetto di distribuzione ai punti di distribuzione. I pacchetti di distribuzione vengono inviati in ordine di priorità, ovvero Alta, Media o Bassa. I pacchetti con priorità identiche vengono inviati nell'ordine in cui sono stati creati. Se non esiste alcun backlog, il pacchetto viene elaborato subito, indipendentemente dalla priorità.  
+        -  **Priorità di invio**: specificare la priorità di invio per il pacchetto di distribuzione. Configuration Manager usa tale priorità quando invia il pacchetto di distribuzione ai punti di distribuzione. I pacchetti di distribuzione vengono inviati in ordine di priorità, ovvero Alta, Media o Bassa. I pacchetti con priorità identiche vengono inviati nell'ordine in cui sono stati creati. Se non esiste alcun backlog, il pacchetto esegue immediatamente l'elaborazione, indipendentemente dalla priorità configurata.  
 
-        - **Abilita la replica differenziale binaria**: abilitare questa impostazione per ridurre al minimo il traffico di rete tra i siti. Con la replica differenziale binaria (BDR) non viene aggiornato l'intero contenuto del pacchetto, ma solo quello che è stato modificato. Per altre informazioni, vedere [Replica differenziale binaria](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#binary-differential-replication).  
+        - **Abilita la replica differenziale binaria**: abilitare questa impostazione per ridurre al minimo il traffico di rete tra i siti. La replica differenziale binaria aggiorna soltanto il contenuto del pacchetto che è stato modificato e non l'intero contenuto. Per altre informazioni, vedere [Replica differenziale binaria](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#binary-differential-replication).  
 
     - **Nessun pacchetto di distribuzione**: a partire dalla versione 1806, è possibile distribuire gli aggiornamenti software nei dispositivi senza prima scaricare e distribuire il contenuto nei punti di distribuzione. Questa impostazione è utile quando il contenuto degli aggiornamenti è particolarmente esteso. Usarla anche quando si vuole che i client ottengano sempre i contenuti dal servizio cloud Microsoft Update. I client in questo scenario possono anche scaricare il contenuto da peer in cui è già presente il contenuto necessario. Il client Gestione configurazione continua a gestire il download del contenuto, quindi è in grado di usare la funzionalità peer cache di Configuration Manager o altre tecnologie, ad esempio Ottimizzazione recapito. Questa funzionalità supporta qualsiasi tipo di aggiornamento supportato dalla gestione degli aggiornamenti software di Configuration Manager, tra cui gli aggiornamenti di Windows e Office.<!--1357933-->  
+
+        > [!Note]  
+        > Questa opzione è solo per le nuove regole di distribuzione automatica. Non è possibile modificare le regole esistenti con questa impostazione.<!--SCCMDocs issue 741-->  
 
 12. Nella pagina **Punti di distribuzione** specificare i punti di distribuzione o i gruppi di punti di distribuzione che ospiteranno i file di aggiornamento software. Per altre informazioni sui punti di distribuzione, vedere [Configurazioni dei punti di distribuzione](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_configs). Questa pagina è disponibile solo quando si crea un nuovo pacchetto di distribuzione di aggiornamento software.  
   
@@ -206,13 +209,13 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
     -  Il nome del modello può essere costituito da caratteri ASCII alfanumerici, nonché da `\` (barra rovesciata) o da `'` (virgoletta singola).  
 
-16. Fare clic su **Avanti** per creare la regola di distribuzione automatica.  
+16. Fare clic su **Avanti** per creare l'ADR.  
 
-Dopo il completamento della procedura guidata viene eseguita la regola di distribuzione automatica. Gli aggiornamenti software che soddisfano i criteri specificati vengono aggiunti a un gruppo di aggiornamento software. La regola di distribuzione automatica scarica gli aggiornamenti nella raccolta contenuto del server del sito e li distribuisce ai punti di distribuzione configurati. La regola di distribuzione automatica quindi distribuisce il gruppo di aggiornamento software ai client nella raccolta di destinazione.  
+Dopo il completamento della procedura guidata viene eseguita la regola di distribuzione automatica. Gli aggiornamenti software che soddisfano i criteri specificati vengono aggiunti a un gruppo di aggiornamento software. L'ADR scarica gli aggiornamenti nella raccolta contenuto del server del sito e li distribuisce ai punti di distribuzione configurati. L'ADR quindi distribuisce il gruppo di aggiornamenti software ai client nella raccolta di destinazione.  
 
 
 
-##  <a name="BKMK_AddDeploymentToADR"></a> Aggiungere una nuova distribuzione a una regola di distribuzione automatica esistente  
+##  <a name="BKMK_AddDeploymentToADR"></a> Aggiungere una nuova distribuzione a un'ADR esistente  
 
 Dopo aver creato una regola di distribuzione automatica, aggiungere altre distribuzioni alla regola. Questa azione consente di gestire la complessità della distribuzione di aggiornamenti diversi in raccolte diverse. Ogni nuova distribuzione dispone dell'intera gamma di funzionalità e dell’esperienza di monitoraggio della distribuzione.  
 
@@ -232,7 +235,7 @@ Dopo aver creato una regola di distribuzione automatica, aggiungere altre distri
      - Impostazioni di download  
 
 
-Per altre informazioni sul processo di distribuzione, vedere [Processo di distribuzione degli aggiornamenti software](/sccm/sum/understand/software-updates-introduction#BKMK_DeploymentProcess).
+Per altre informazioni sul processo di distribuzione, vedere [Software update deployment process](/sccm/sum/understand/software-updates-introduction#BKMK_DeploymentProcess).
 
 
 

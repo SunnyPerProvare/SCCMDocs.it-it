@@ -10,12 +10,12 @@ ms.assetid: 1a38421d-24c1-4fef-bf6c-42fce53109ac
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 18435bd43ed74daee646096d1e8d8b6ed7b7bc27
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 057310d7f580cfc61f23a53977716743ed906867
+ms.sourcegitcommit: 849391d3985b057027cae610bd3a79fdaa708b94
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39386342"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "42584593"
 ---
 # <a name="high-availability-options-for-configuration-manager"></a>Opzioni di disponibilità elevata per Configuration Manager
 
@@ -25,7 +25,7 @@ Questo articolo descrive come distribuire Configuration Manager usando opzioni c
 
 Le seguenti opzioni di Configuration Manager supportano la disponibilità elevata:   
 
-- A partire dalla versione 1806, configurare il sito di amministrazione centrale e ogni sito primario con un server del sito aggiuntivo in modalità passiva.  
+- A partire dalla versione 1806, configurare i siti primari autonomi con un server del sito aggiuntivo in modalità passiva.  
  
 - Configurare un gruppo di disponibilità Always On di SQL Server per il database del sito nei siti primari e nel sito di amministrazione centrale.
 
@@ -70,7 +70,7 @@ Ad esempio, i client di Configuration Manager in genere funzionano in maniera au
 ##  <a name="bkmk_snh"></a> Disponibilità elevata per siti e gerarchie  
 
 #### <a name="use-a-site-server-in-passive-mode"></a>Usare un server del sito in modalità passiva
-A partire dalla versione 1806, installare un server del sito aggiuntivo in modalità *passiva*. Il server del sito in modalità passiva è un'aggiunta al server del sito esistente in modalità *attiva*. Un server del sito in modalità passiva è disponibile per l'uso immediato, quando necessario. Per altre informazioni, vedere [Disponibilità elevata del server del sito](/sccm/core/servers/deploy/configure/site-server-high-availability).  
+A partire dalla versione 1806, installare un server del sito aggiuntivo in modalità *passiva* per un sito primario autonomo. Il server del sito in modalità passiva è in aggiunta al server del sito esistente in modalità *attiva*. Un server del sito in modalità passiva è disponibile per l'uso immediato, quando è necessario. Per altre informazioni, vedere [Disponibilità elevata del server del sito](/sccm/core/servers/deploy/configure/site-server-high-availability).  
 
 #### <a name="use-a-remote-content-library"></a>Usare una raccolta contenuto remota
 A partire dalla versione 1806, spostare la raccolta contenuto del sito in una posizione remota che fornisca uno spazio di archiviazione a disponibilità elevata. Questa funzionalità è un requisito per la disponibilità elevata del server del sito. Per altre informazioni, vedere [Raccolta contenuto](/sccm/core/plan-design/hierarchy/the-content-library#bkmk_remote).

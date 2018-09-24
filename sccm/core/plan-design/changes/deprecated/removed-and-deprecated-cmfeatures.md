@@ -2,7 +2,7 @@
 title: Funzionalità deprecate
 titleSuffix: Configuration Manager
 description: Informazioni sulle funzionalità che Configuration Manager non supporta più.
-ms.date: 07/30/2018
+ms.date: 08/14/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 287a6324-ae65-4d38-b2ef-198d47c91231
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8075fb0e00a0cc9bd8190bb2838431be8c2d1ce8
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: a84d25203fc0addc32271446e1375c9013c0bb6e
+ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39382873"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42584739"
 ---
 # <a name="removed-and-deprecated-features-for-configuration-manager"></a>Funzionalità rimosse e deprecate per Configuration Manager
 
@@ -31,7 +31,8 @@ Queste informazioni sono soggette a modifica nelle versioni future. È possibile
 
 |Funzionalità|Primo annuncio riguardo agli elementi deprecati|Supporto&nbsp;rimosso|  
 |-----------|---|--------------|  
-|L'**esperienza utente di Silverlight** per il punto per siti Web del Catalogo applicazioni non è più supportata. Gli utenti devono usare il nuovo Software Center. NOTA: il ruolo Punto per siti Web del Catalogo applicazioni e il ruolo Punto per servizi Web sono ancora supportati. In alcuni scenari, il nuovo Software Center comunica con il punto per siti Web del Catalogo applicazioni.|11 agosto 2017| Versione 1806|
+|Gestione ibrida dei dispositivi mobili. Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->|14 agosto 2018|1 settembre 2019|
+|L'**esperienza utente di Silverlight** per il ruolo Punto per siti Web del Catalogo applicazioni non è più supportato. Gli utenti devono usare il nuovo Software Center. NOTA: il ruolo Punto per siti Web del Catalogo applicazioni e il ruolo Punto per servizi Web sono ancora supportati. In alcuni scenari, il nuovo Software Center comunica con il punto per siti Web del Catalogo applicazioni.|11 agosto 2017| Versione 1806|
 |Versione precedente di Software Center.<br><br>Per altre informazioni sulla nuova versione di Software Center, vedere [Pianificare e configurare la gestione delle applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management#configure-software-center-and-the-application-catalog-windows-pcs-only).|13 dicembre 2016|Versione 1802|
 |Gestione dei dischi rigidi virtuali in Configuration Manager. </br></br>Questa funzionalità deprecata include la rimozione delle opzioni per creare un nuovo disco rigido virtuale o per gestire un disco rigido virtuale con una sequenza di attività e la rimozione del nodo Dischi rigidi virtuali dalla console di Configuration Manager. </br></br>I dischi rigidi virtuali esistenti non vengono eliminati, ma non saranno più accessibili dalla console di Configuration Manager.  |6 gennaio 2017 |Versione 1710|
 |Sequenze attività: <br /> - Converti il disco selezionato in disco dinamico <br /> - Installa strumenti di distribuzione |18 novembre 2016|Versione 1710|

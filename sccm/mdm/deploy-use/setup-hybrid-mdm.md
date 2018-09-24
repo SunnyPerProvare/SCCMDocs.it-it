@@ -1,8 +1,8 @@
 ---
-title: Impostare la gestione di dispositivi mobili ibrida
+title: Impostare la gestione dei dispositivi mobili ibrida
 titleSuffix: Configuration Manager
 description: Impostazione della registrazione ibrida di dispositivi con Configuration Manager e Intune.
-ms.date: 03/08/2018
+ms.date: 08/14/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,19 +10,26 @@ ms.assetid: bb95154b-f63e-4491-896e-41d732c802f8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fbc5b9abf63d95185795716cfcb9ebfaf3e2ec3d
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 23cfa8f3bb69d980c43ec37355c24c29c96056fd
+ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32347077"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42584611"
 ---
-# <a name="setup-hybrid-mobile-device-management-mdm-with-system-center-configuration-manager-and-microsoft-intune"></a>Impostare la gestione dei dispositivi mobili ibrida con System Center Configuration Manager e Microsoft Intune
+# <a name="set-up-hybrid-mdm-with-configuration-manager-and-microsoft-intune"></a>Impostare la gestione dei dispositivi mobili ibrida con Configuration Manager e Intune
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
 Prima di poter essere gestiti con Configuration Manager, i dispositivi iOS, Windows e Android devono essere registrati con Intune. Usare i passaggi seguenti per impostare la registrazione ibrida dei dispositivi con Configuration Manager tramite Intune. Una volta completati i passaggi seguenti, la registrazione "bring your own device" (BYOD) per gli utenti sarà abilitata. Questi passaggi sono anche i prerequisiti per la [registrazione di dispositivi di proprietà dell'utente (BYOD)](enroll-hybrid-ios-mac.md) e la [registrazione di dispositivi di proprietà dell'azienda](enroll-company-owned-devices.md).
+
+> [!Important]  
+> A partire dal 14 agosto 2018, la gestione ibrida dei dispositivi mobili è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
+
+
+
+## <a name="set-up-steps"></a>Passaggi di configurazione
 
  |Passaggi|Dettagli|  
  |-----------|-------------|  
@@ -35,12 +42,22 @@ Prima di poter essere gestiti con Configuration Manager, i dispositivi iOS, Wind
  |**Passaggio 7:** [Impostare la gestione aggiuntiva](set-up-additional-management.md)|(Facoltativo) Impostare gli elementi di configurazione e l'accesso condizionale per i dispositivi registrati|
  |**Passaggio 8:** [Verificare la configurazione della gestione dei dispositivi mobili](verify-mdm-configuration.md)|Visualizzare i file di log per verificare che il punto di connessione del servizio sia stato creato correttamente e che gli account utente siano sincronizzati.|
 
+
+
+## <a name="enroll-devices"></a>Registrare i dispositivi
+
+Al termine dell'installazione ibrida è possibile registrare i dispositivi in Configuration Manager in diversi modi:
+
+- **Dispositivi di proprietà dell'azienda (COD):** nell'articolo [Registrare i dispositivi aziendali](enroll-company-owned-devices.md) sono riportate indicazioni su diverse modalità specifiche della piattaforma per la registrazione dei dispositivi di proprietà dell'azienda  
+
+- **Dispositivi di proprietà dell'utente (BYOD):** nell'articolo [Registrare i dispositivi di proprietà dell'utente (BYOD)](enroll-hybrid-ios-mac.md) sono riportate indicazioni sulle modalità di registrazione dei dispositivi di proprietà degli utenti  
+
+
+
+## <a name="see-also"></a>Vedere anche
+
 Per informazioni su Intune senza Configuration Manager
 > [!div class="button"]
 [Vedi documenti di Intune >](https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune)
 
 
-## <a name="enroll-devices"></a>Registrare i dispositivi
-Al termine dell'installazione ibrida è possibile registrare i dispositivi in Configuration Manager in diversi modi:
-- **Dispositivi di proprietà dell'azienda (COD):** nell'articolo [Registrare i dispositivi aziendali](enroll-company-owned-devices.md) sono riportate indicazioni su diverse modalità specifiche della piattaforma per la registrazione dei dispositivi di proprietà dell'azienda.
-- **Dispositivi di proprietà dell'utente (BYOD):** nell'articolo [Registrare i dispositivi di proprietà dell'utente (BYOD)](enroll-hybrid-ios-mac.md) sono riportate indicazioni sulle modalità di registrazione dei dispositivi di proprietà degli utenti.

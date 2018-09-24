@@ -10,12 +10,12 @@ ms.assetid: 6c64f276-b88c-4b1e-8073-331876a03038
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 90eaaec52076e4ac4fbaddf6cc07cf20359b5a68
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 69d8db3cceff45319ed4f2fc0b2962c3bb50b0f2
+ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353638"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42756173"
 ---
 # <a name="prepare-windows-pe-peer-cache-to-reduce-wan-traffic-in-system-center-configuration-manager"></a>Preparare la peer cache di Windows PE per ridurre il traffico della rete WAN in System Center Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "32353638"
 
 Quando si distribuisce un nuovo sistema operativo in System Center Configuration Manager, i computer che eseguono la sequenza di attività possono usare la peer cache di Windows PE per ottenere contenuto da un peer locale (un'origine peer cache) anziché scaricarlo da un punto di distribuzione. In tal modo il traffico WAN viene ridotto al minimo negli scenari con le filiali, in cui non esiste un punto di distribuzione locale.  
 
- La peer cache di Windows PE è simile a [Windows BranchCache](http://technet.microsoft.com/library/mt617255\(TechNet.10\).aspx#bkmk_branchcache), ma funziona in Ambiente preinstallazione di Windows (Windows PE). Per descrivere i client che usano la peer cache di Windows PE vengono usati i termini seguenti:  
+ La peer cache di Windows PE è simile a [Windows BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#bkmk_branchcache), ma funziona in Ambiente preinstallazione di Windows (Windows PE). Per descrivere i client che usano la peer cache di Windows PE vengono usati i termini seguenti:  
 
 -   Un **client peer cache** è un computer configurato per utilizzare Peer cache di Windows PE.  
 
@@ -70,7 +70,7 @@ Usare le sezioni seguenti per gestire la peer cache.
         > [!TIP]  
         >  I client useranno HTTPS per scaricare il contenuto quando è disponibile. Tuttavia, lo stesso numero di porta viene usato per HTTP o HTTPS.  
 
--   [Configurare la cache del client per i client di Configuration Manager](../../core/clients/manage/manage-clients.md#BKMK_ClientCache) nei client per garantire che dispongano di spazio sufficiente a contenere e archiviare le immagini distribuite. La peer cache di Windows PE non influisce sulla configurazione o sul comportamento della cache client.  
+-   [Configurare la cache del client per i client di Configuration Manager](/sccm/core/clients/manage/manage-clients#BKMK_ClientCache) nei client per garantire che dispongano di spazio sufficiente a contenere e archiviare le immagini distribuite. La peer cache di Windows PE non influisce sulla configurazione o sul comportamento della cache client.  
 
 -   Le opzioni di distribuzione per la distribuzione della sequenza di attività devono essere configurate come Scarica contenuto localmente quando richiesto dalla sequenza di attività.  
 
@@ -81,7 +81,7 @@ Usare le sezioni seguenti per gestire la peer cache.
 
 -   Un client peer cache peer può ottenere contenuto da un altro client peer cache (un’origine peer cache).  Poiché il client è configurato per peer cache, quando esegue una sequenza di attività configurata in modo da preservare il contenuto memorizzato nella cache, il client diventa un'origine peer cache.  
 
--   Un client esegue una sequenza di attività che include il passaggio facoltativo, [Download Package Content](../understand/task-sequence-steps.md#BKMK_DownloadPackageContent), usato per pre-installare contenuto di rilievo incluso nella sequenza di attività della peer cache di Windows PE. Quando si utilizza questo metodo:  
+-   Un client esegue una sequenza di attività che include il passaggio facoltativo, [Download Package Content](/sccm/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent), usato per pre-installare contenuto di rilievo incluso nella sequenza di attività della peer cache di Windows PE. Quando si utilizza questo metodo:  
 
     -   Non è necessario che nel client venga installata l’immagine in corso di distribuzione.  
 
@@ -129,7 +129,7 @@ Usare le sezioni seguenti per gestire la peer cache.
 
      Ciò contrassegna il contenuto nella sequenza di attività per essere mantenuto nella cache del client di Configuration Manager dopo la distribuzione. Questa operazione è diversa rispetto all'uso di SMSTSPersisContent che mantiene il contenuto solo per la durata della sequenza di attività e usa la cache della sequenza di attività, ma non la cache del client di Configuration Manager.  
 
- Per altre informazioni, vedere [Variabili predefinite della sequenza di attività](../understand/task-sequence-built-in-variables.md).  
+ Per altre informazioni, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables).  
 
 ###  <a name="BKMK_PeerCacheValidate"></a> Convalidare l'esito positivo dell'uso della peer cache di Windows PE  
  Dopo aver usato la peer cache di Windows PE per distribuire e installare una sequenza di attività, è possibile verificare che la peer cache sia stata usata correttamente nel processo visualizzando **smsts.log** sul client che ha eseguito la sequenza di attività.  

@@ -2,7 +2,7 @@
 title: CMPivot per i dati in tempo reale
 titleSuffix: Configuration Manager
 description: Informazioni su come usare CMPivot in Configuration Manager per eseguire query sui client in tempo reale.
-ms.date: 07/30/2018
+ms.date: 08/21/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 32e2d6b9-148f-45e2-8083-98c656473f82
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0766bc765712fc493f01eb5aa807426ec44fa5d7
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 0429c62f68a111bc7f620d1c954d5c8cf944d1c1
+ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385942"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42590057"
 ---
 # <a name="cmpivot-for-real-time-data-in-configuration-manager"></a>CMPivot per i dati in tempo reale in Configuration Manager
 
@@ -56,6 +56,8 @@ Per usare CMPivot sono necessari i componenti seguenti:
 - Non è possibile personalizzare le proprietà delle entità, le colonne per i risultati o le azioni sui dispositivi.  
 
 - In un computer che esegue la console di Configuration Manager si può eseguire una sola istanza di CMPivot per volta.  
+
+- Nella versione 1806, la query per l'entità **Administrators** funziona solo se il gruppo è denominato "Administrators". Non funziona se il nome del gruppo è localizzato. Ad esempio, "Administrateurs" in francese.<!--SCCMDocs issue 759-->  
 
 
 
@@ -229,6 +231,20 @@ Le query e i risultati contengono solo testo. Le entità **InstallSoftware** e *
 
 Una query raggiunge il timeout dopo un'ora. Ad esempio, una raccolta include 500 dispositivi e 450 client sono attualmente online. I dispositivi attivi ricevono la query e restituiscono i risultati quasi immediatamente. Se si lascia aperta la finestra CMPivot, anche gli altri 50 client, non appena passano online, ricevono la query e restituiscono i risultati. 
 
+>[!TIP]
+> Le iterazioni CMPivot vengono registrate nei file di log seguenti:
+>
+> **Lato server:**
+> - SmsProv.log
+> - bgbServer.log
+> - StateSys.log
+>
+> **Lato client:**
+> - CcmNotificationAgent.log
+> - Scripts.log
+> - StateMessage.log
+>
+> Per altre informazioni, vedere [File di log](/sccm/core/plan-design/hierarchy/log-files).
 
 
 ## <a name="see-also"></a>Vedere anche

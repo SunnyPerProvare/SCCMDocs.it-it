@@ -10,12 +10,12 @@ ms.assetid: 1392797b-76cb-46b4-a3e4-8f349ccaa078
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 765f599af115e481197603fabd0f3698807ec13a
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 10dfebccd997a42f4c79e5d88bdf05e26585aebb
+ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385321"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42589873"
 ---
 # <a name="site-and-site-system-prerequisites-for-configuration-manager"></a>Prerequisiti del sito e del sistema del sito per Configuration Manager
 
@@ -84,7 +84,7 @@ Per i prerequisiti specifici dei server e dei ruoli del sistema del sito in Wind
 
 - .NET Framework 3.5 SP1 (o versioni successive)  
 
-- .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1  
+- .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7, 4.7.1 o 4.7.2  
 
     - Per altre informazioni sulle versioni di .NET Framework, vedere [Versioni e dipendenze di .NET Framework](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies).
 
@@ -110,7 +110,7 @@ Per i prerequisiti specifici dei server e dei ruoli del sistema del sito in Wind
 
 - .NET Framework 3.5 SP1 (o versioni successive)  
 
-- .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1  
+- .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7, 4.7.1 o 4.7.2  
 
     - Per altre informazioni sulle versioni di .NET Framework, vedere [Versioni e dipendenze di .NET Framework](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies).  
 
@@ -162,7 +162,7 @@ Per i prerequisiti specifici dei server e dei ruoli del sistema del sito in Wind
 
 - .NET Framework 3.5 SP1 (o versioni successive)  
 
-- .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1  
+- .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7, 4.7.1 o 4.7.2  
 
     - ASP.NET 4.5  
 
@@ -179,9 +179,9 @@ Per i prerequisiti specifici dei server e dei ruoli del sistema del sito in Wind
 
 -   Sviluppo di applicazioni:  
 
-    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)  
+    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)   
 
-    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)  
+    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)   
 
     -   Estendibilità .NET 3.5  
 
@@ -203,11 +203,11 @@ Per i prerequisiti specifici dei server e dei ruoli del sistema del sito in Wind
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1:  
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7, 4.7.1 o 4.7.2:  
 
     -   ASP.NET 4.5:  
 
-        -   Attivazione HTTP (e le opzioni selezionate automaticamente)  
+        -   Attivazione ASP.NET (e le opzioni selezionate automaticamente)  
 
 #### <a name="iis-configuration"></a>Configurazione di IIS  
 
@@ -221,11 +221,11 @@ Per i prerequisiti specifici dei server e dei ruoli del sistema del sito in Wind
 
 -   Sviluppo di applicazioni:  
 
-    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)  
+    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)   
 
     -   Estendibilità .NET 3.5  
 
-    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)  
+    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)   
 
     -   Estendibilità .NET 4.5  
 
@@ -241,7 +241,7 @@ Per i prerequisiti specifici dei server e dei ruoli del sistema del sito in Wind
 
 #### <a name="windows-server-roles-and-features"></a>Funzionalità e ruoli di Windows Server  
 
--   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7, 4.7.1 o 4.7.2 
 
 
 
@@ -249,7 +249,7 @@ Per i prerequisiti specifici dei server e dei ruoli del sistema del sito in Wind
 
 #### <a name="windows-server-roles-and-features"></a>Funzionalità e ruoli di Windows Server  
 
--   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1:  
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7, 4.7.1 o 4.7.2:  
 
     -   Attivazione HTTP  
 
@@ -257,9 +257,9 @@ Per i prerequisiti specifici dei server e dei ruoli del sistema del sito in Wind
 
 -   Sviluppo di applicazioni:  
 
-    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)  
+    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)   
 
-    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)  
+    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)   
 
 -   Compatibilità Gestione IIS 6:  
 
@@ -336,11 +336,11 @@ Per altre informazioni, vedere [Installare e configurare i punti di distribuzion
 
 -   .NET Framework 3.5 (o versioni successive)  
 
--   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1:  
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7, 4.7.1 o 4.7.2:  
 
      Quando viene installato questo ruolo del sistema del sito, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Se un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
 
-    -   Attivazione HTTP (e le opzioni selezionate automaticamente)  
+    -   Attivazione ASP.NET (e le opzioni selezionate automaticamente)  
 
     -   ASP.NET 4.5  
 
@@ -352,11 +352,11 @@ Per altre informazioni, vedere [Installare e configurare i punti di distribuzion
 
 -   Sviluppo di applicazioni:  
 
-    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)  
+    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)   
 
     -   Estendibilità .NET 3.5  
 
-    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)  
+    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)   
 
     -   Estendibilità .NET 4.5  
 
@@ -378,7 +378,7 @@ Per altre informazioni, vedere [Installare e configurare i punti di distribuzion
 
 -   .NET Framework 3.5 (o versioni successive)  
 
--   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7, 4.7.1 o 4.7.2 
 
      Quando viene installato questo ruolo del sistema del sito, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Se un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
 
@@ -392,9 +392,9 @@ Per altre informazioni, vedere [Installare e configurare i punti di distribuzion
 
 -   Sviluppo di applicazioni:  
 
-    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)  
+    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)   
 
-    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)  
+    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)   
 
     -   Estendibilità .NET 3.5  
 
@@ -430,7 +430,7 @@ Per altre informazioni, vedere [Installare e configurare i punti di distribuzion
 
 #### <a name="windows-server-roles-and-features"></a>Funzionalità e ruoli di Windows Server  
 
--   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7, 4.7.1 o 4.7.2 
 
 -   Estensioni del server BITS (e le opzioni selezionate automaticamente) o Servizio trasferimento intelligente in background (BITS) (e le opzioni selezionate automaticamente)  
 
@@ -456,7 +456,7 @@ Per altre informazioni, vedere [Installare e configurare i punti di distribuzion
 
 #### <a name="windows-server-roles-and-features"></a>Funzionalità e ruoli di Windows Server  
 
--   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7, 4.7.1 o 4.7.2 
 
 #### <a name="sql-server-reporting-services"></a>SQL Server Reporting Services  
 
@@ -472,7 +472,7 @@ Per altre informazioni, vedere [Installare e configurare i punti di distribuzion
 
 #### <a name="windows-server-roles-and-features"></a>Funzionalità e ruoli di Windows Server  
 
--   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7, 4.7.1 o 4.7.2 
 
      Quando viene installato questo ruolo del sistema del sito, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Se un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
 
@@ -490,7 +490,7 @@ Per altre informazioni, vedere [Installare e configurare i punti di distribuzion
 
 -   .NET Framework 3.5 SP1 (o versioni successive)  
 
--   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1 
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7, 4.7.1 o 4.7.2 
 
 È necessaria la configurazione predefinita di IIS.
 
@@ -508,11 +508,11 @@ Per altre informazioni, vedere [Installare e configurare i punti di distribuzion
 
 -   .NET Framework 3.5 (o versioni successive)  
 
--   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7 o 4.7.1:  
+-   .NET Framework 4.5.2, 4.6.1, 4.6.2, 4.7, 4.7.1 o 4.7.2:  
 
      Quando viene installato questo ruolo del sistema del sito, Configuration Manager installa automaticamente .NET Framework 4.5.2. Questa installazione può far sì che il server passi a uno stato di riavvio in sospeso. Se un riavvio è in sospeso per .NET Framework, le applicazioni .NET possono restituire un errore finché il server non viene riavviato e l'installazione non viene completata.  
 
-    -   Attivazione HTTP (e le opzioni selezionate automaticamente)  
+    -   Attivazione ASP.NET (e le opzioni selezionate automaticamente)  
 
     -   ASP.NET 4.5  
 
@@ -524,11 +524,11 @@ Per altre informazioni, vedere [Installare e configurare i punti di distribuzion
 
 -   Sviluppo di applicazioni:  
 
-    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)  
+    -   ASP.NET 3.5 (e le opzioni selezionate automaticamente)   
 
     -   Estendibilità .NET 3.5  
 
-    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)  
+    -   ASP.NET 4.5 (e le opzioni selezionate automaticamente)   
 
     -   Estendibilità .NET 4.5  
 

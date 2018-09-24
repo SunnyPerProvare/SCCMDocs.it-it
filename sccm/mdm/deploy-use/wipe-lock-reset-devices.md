@@ -1,8 +1,8 @@
 ---
 title: Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode
 titleSuffix: Configuration Manager
-description: Proteggere i dati del dispositivo con cancellazione completa, cancellazione selettiva, blocco remoto o reimpostazione passcode usando System Center Configuration Manager.
-ms.date: 10/27/2017
+description: Proteggere i dati del dispositivo con cancellazione completa, cancellazione selettiva, blocco remoto o reimpostazione passcode usando Configuration Manager.
+ms.date: 08/14/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,28 +10,34 @@ ms.assetid: 770da7bd-02dd-474a-9604-93ff1ea0c1e4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 670667c21e85d7e5c174c051b6adbdca3eba55a8
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 21fed8dbba8cc5c8e96218459288b57364fe350e
+ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353002"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42584738"
 ---
-# <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-system-center-configuration-manager"></a>Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando System Center Configuration Manager
+# <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-configuration-manager"></a>Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager include funzionalità per la cancellazione selettiva, la cancellazione completa, il blocco remoto e la reimpostazione del passcode. I dispositivi mobili possono memorizzare i dati aziendali riservati e consentire l'accesso a numerose risorse aziendali. Per aiutare a proteggere i dispositivi è possibile eseguire:  
+Configuration Manager include funzionalità per la cancellazione selettiva, la cancellazione completa, il blocco remoto e la reimpostazione del passcode. I dispositivi mobili possono memorizzare i dati aziendali riservati e consentire l'accesso a numerose risorse aziendali. Per aiutare a proteggere i dispositivi è possibile eseguire:  
 
-- Una cancellazione completa per ripristinare le impostazioni di fabbrica del dispositivo.  
+- Una cancellazione completa per ripristinare le impostazioni di fabbrica del dispositivo  
 
-- Una cancellazione selettiva per rimuovere solo i dati aziendali.  
+- Una cancellazione selettiva per rimuovere solo i dati aziendali  
 
-- Un blocco remoto per proteggere un dispositivo che potrebbe andare perso.  
+- Un blocco remoto per proteggere un dispositivo che potrebbe andare perso  
 
-- Una reimpostazione del passcode del dispositivo.  
+- Una reimpostazione del passcode del dispositivo  
+
+> [!Important]  
+> A partire dal 14 agosto 2018, la gestione ibrida dei dispositivi mobili è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
+
+
 
 ## <a name="full-wipe"></a>Cancellazione completa  
+
 È possibile eseguire un comando di cancellazione del dispositivo se è necessario proteggere un dispositivo perso o se si ritira un dispositivo.  
 
 Impartire un comando di **cancellazione completa** di un dispositivo per ripristinarne le impostazioni di fabbrica. Questo comando rimuove i dati e le impostazioni aziendali e dell'utente. È possibile eseguire una cancellazione completa nei dispositivi Windows Phone, iOS, Android e Windows 10.  
@@ -50,7 +56,10 @@ Impartire un comando di **cancellazione completa** di un dispositivo per riprist
 
 3. Scegliere **Azioni dispositivo remoto** in **Gruppo di dispositivi** e quindi scegliere **Disattiva/Cancella**.  
 
+
+
 ## <a name="selective-wipe"></a>Cancellazione selettiva  
+
 Eseguire una **cancellazione selettiva** per rimuovere solo i dati aziendali presenti sul dispositivo. La tabella seguente descrive i dati che vengono rimossi in base al tipo di piattaforma e l'effetto sui dati che rimangono sul dispositivo dopo la cancellazione selettiva.  
 
 **iOS**  
@@ -136,7 +145,10 @@ Le seguenti impostazioni vengono inoltre rimosse dai dispositivi Windows 10 Mobi
 
 3. Scegliere **Azioni dispositivo remoto** in **Gruppo di dispositivi** e quindi scegliere **Disattiva/Cancella**.  
 
+
+
 ## <a name="wiping-efs-enabled-content"></a>Cancellazione dei contenuti abilitati EFS  
+
 Windows 8.1 e Windows RT 8.1 supportano la cancellazione selettiva dei contenuti crittografati con EFS. Quanto descritto di seguito si applica alla cancellazione selettiva di contenuti abilitati EFS:  
 
 - Solo le app e i dati protetti da EFS attraverso lo stesso dominio Internet come account Intune vengono cancellati in modo selettivo. Per altre informazioni, vedere [Cancellazione selettiva di Windows per la gestione di dati del dispositivo](http://technet.microsoft.com/library/dn486874.aspx).  
@@ -153,6 +165,7 @@ I dati e le app attualmente supportati dalla cancellazione selettiva EFS sono:
 
 - File e cartelle crittografate con EFS. Per altre informazioni, vedere [Procedure ottimali per la crittografia del file system](http://support.microsoft.com/kb/223316).  
 
+
 ### <a name="best-practices-for-selective-wipe"></a>Procedure consigliate per la cancellazione selettiva  
 
 - Per cancellare correttamente i messaggi di posta elettronica, configurare profili di posta elettronica nei dispositivi iOS e Windows Phone 8.1.  
@@ -163,7 +176,10 @@ I dati e le app attualmente supportati dalla cancellazione selettiva EFS sono:
 
 - Se un account è stato disattivato, dopo un anno Intune ritirerà l'account e verrà eseguita una cancellazione selettiva.  
 
+
+
 ##  <a name="passcode-reset"></a>Reimpostazione del passcode  
+
 Se un utente dimentica il passcode, è possibile aiutarlo rimuovendo il passcode da un dispositivo oppure forzando l'uso di un nuovo passcode temporaneo su un dispositivo. La tabella seguente illustra il funzionamento della reimpostazione del passcode su diverse piattaforme per dispositivi mobili.  
 
 | Piattaforma                              | Reimpostazione del passcode                                                                               |
@@ -197,7 +213,10 @@ Se un utente dimentica il passcode, è possibile aiutarlo rimuovendo il passcode
 
 3. Scegliere **Azioni dispositivo remoto** in **Gruppo di dispositivi** e quindi scegliere **Mostra stato passcode**.  
 
+
+
 ## <a name="remote-lock"></a>Blocco remoto  
+
 Se un utente perde il dispositivo, è possibile bloccare il dispositivo in modalità remota. Nella tabella seguente è illustrato il funzionamento del blocco remoto su diverse piattaforme per dispositivi mobili.  
 
 |Piattaforma|Blocco remoto|  
@@ -228,5 +247,8 @@ Se un utente perde il dispositivo, è possibile bloccare il dispositivo in modal
 
 3. Scegliere **Azioni dispositivo remoto** in **Gruppo di dispositivi** e quindi scegliere **Mostra stato blocco remoto**.  
 
-### <a name="see-also"></a>Vedere anche  
+
+
+## <a name="see-also"></a>Vedere anche  
+
 [Cancellazione selettiva di Windows per la gestione di dati del dispositivo](http://technet.microsoft.com/library/dn486874.aspx)   

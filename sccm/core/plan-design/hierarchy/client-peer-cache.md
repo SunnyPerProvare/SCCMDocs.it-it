@@ -10,12 +10,12 @@ ms.assetid: 86cd5382-8b41-45db-a4f0-16265ae22657
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 00a79e099255b9ec19660914825334dc95b30682
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: c3dc6189f73b939f632581a8b50f05a72310111d
+ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383851"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42755997"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
 
@@ -45,7 +45,7 @@ Il client di Configuration Manager usa la peer cache per distribuire ad altri cl
 La peer cache non sostituisce l'uso di altre soluzioni, come Windows BranchCache o Ottimizzazione recapito, ma viene usata insieme ad altre soluzioni. Queste tecnologie offrono maggiori opzioni per estendere le soluzioni tradizionali di distribuzione del contenuto, ad esempio i punti di distribuzione. La peer cache è una soluzione personalizzata che non dipende da BranchCache. Se si non abilita o non si usa BranchCache, la peer cache funziona comunque.  
 
   > [!Note]  
-  > A partire dalla versione 1802, Windows BranchCache è sempre abilitato nei client. L'impostazione **Consenti ai client di condividere il contenuto con altri client nella stessa subnet** è stata rimossa. I client usano BranchCache se è supportato dal punto di distribuzione.<!--SCCMDocs issue 539-->  
+  > A partire dalla versione 1802, Windows BranchCache è sempre abilitato nelle distribuzioni. L'impostazione **Consenti ai client di condividere il contenuto con altri client nella stessa subnet** è stata rimossa.<!--SCCMDocs issue 539--> Se il punto di distribuzione lo supporta e se è abilitata nelle impostazioni client, i client usano BranchCache. Per altre informazioni, vedere [Configurare BranchCache](/sccm/core/clients/deploy/about-client-settings#configure-branchcache).<!--SCCMDocs issue 735-->   
 
 
 
@@ -53,7 +53,7 @@ La peer cache non sostituisce l'uso di altre soluzioni, come Windows BranchCache
 
 Per abilitare la peer cache, distribuire le [impostazioni client](#bkmk_settings) in una raccolta. I membri di tale raccolta fungono quindi da origine di peer cache per altri client all'interno dello stesso gruppo di limiti.  
 
- -  Un client che agisce come origine del contenuto peer invia un elenco di contenuti disponibili che ha memorizzato nella cache al suo punto di gestione.  
+ -  Un client che agisce come origine contenuto peer invia un elenco di contenuti disponibili che ha memorizzato nella cache al suo punto di gestione.  
 
  -  Un altro client nello stesso gruppo di limiti invia una richiesta di percorso del contenuto al punto di gestione. Il server restituisce l'elenco delle possibili origini del contenuto. Questo elenco include tutte le origini di peer cache che includono contenuto e sono online. Include anche i punti di distribuzione e altri percorsi di origine del contenuto in tale gruppo di limiti. Per altre informazioni, vedere [Priorità dell'origine del contenuto](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#content-source-priority).  
 
@@ -84,7 +84,7 @@ Quando l'origine di peer cache rifiuta una richiesta di contenuto, il client di 
 
 
 
-## <a name="requirements"></a>Requisiti
+## <a name="requirements"></a>requisiti
 
 - La peer cache supporta tutte le versioni di Windows indicate come supportate in [Sistemi operativi supportati per client e dispositivi](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices). I sistemi operativi non Windows non sono supportati come origini di peer cache o client di peer cache.  
 
@@ -118,7 +118,7 @@ Nei client con peer cache abilitata che usano Windows Firewall, Configuration Ma
 
 
 ## <a name="bkmk_parts"></a> Supporto per download parziale
-<!--1357346--> A partire dalla versione 1806, le origini di peer cache dei client sono in grado di dividere il contenuto in parti, grazie alle quali è possibile ridurre al minimo il trasferimento in rete, riducendo l'utilizzo della rete WAN. Il punto di gestione consente una traccia più dettagliata delle parti del contenuto e prova a eliminare più download dello stesso contenuto per ogni gruppo di limiti. 
+<!--1357346--> A partire dalla versione 1806, le origini di peer cache dei client sono in grado di dividere il contenuto in parti, grazie alle quali è possibile ridurre al minimo il trasferimento in rete, riducendo l'utilizzo della rete WAN. Il punto di gestione consente una traccia più dettagliata delle parti del contenuto e tenta di eliminare più download dello stesso contenuto per ogni gruppo di limiti. 
 
 
 ### <a name="example-scenario"></a>Scenario di esempio
@@ -175,7 +175,7 @@ Per visualizzarli durante la gestione del download del contenuto in parti, esami
 
 - Il client di origine della peer cache aggiorna l'ora dell'ultimo riferimento del contenuto nella cache quando viene scaricato da un peer. Il client usa questo timestamp quando gestisce automaticamente la relativa cache, rimuovendo per primo il contenuto meno recente. Deve quindi attendere prima di rimuovere il contenuto che i client di peer cache scaricano con maggiore frequenza, se non addirittura evitare di rimuoverlo.  
 
-- Se necessario, durante una sequenza di attività di distribuzione del sistema operativo usare la variabile **SMSTSPreserveContent** per mantenere il contenuto della cache del client. Per altre informazioni, vedere [Variabili predefinite della sequenza di attività](/sccm/osd/understand/task-sequence-built-in-variables).  
+- Se necessario, durante una sequenza di attività di distribuzione del sistema operativo usare la variabile **SMSTSPreserveContent** per mantenere il contenuto della cache del client. Per altre informazioni, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables#SMSTSPreserveContent).  
 
 - Se necessario, durante la creazione del software seguente, usare l'opzione **Rendi permanente il contenuto nella cache client**:  
     - Applicazioni
@@ -205,7 +205,7 @@ Usare inoltre i report per visualizzare l'uso della peer cache. Nella console pa
 3. **Dettagli del rifiuto di contenuto di origine di peer cache**: visualizza le informazioni sul contenuto richiesto dal client al momento del rifiuto.  
 
     > [!Note]  
-    > **Problema noto**<!--486652-->: non è possibile selezionare i parametri disponibili, ma è necessario immetterli manualmente. Immettere il valore per *Rejection Type* (Tipo di rifiuto) come visualizzato nel report **Rifiuto di contenuto di origine di peer cache**. Immettere quindi il valore per *ID risorsa* per l'origine del contenuto sulla quale si vogliono più informazioni. 
+    > **Problema noto**<!--486652-->: non è possibile selezionare i parametri disponibili, ma è necessario immetterli manualmente. Immettere il valore per *Rejection Type* (Tipo di rifiuto) come visualizzato nel report **Rifiuto di contenuto di origine di peer cache**. Immettere quindi il valore per *ID risorsa* per l'origine contenuto sulla quale si vogliono più informazioni. 
     > 
     > Per trovare l'ID risorsa dell'origine di contenuto:  
     > 

@@ -10,12 +10,12 @@ ms.assetid: 7591e386-a9ab-4640-8643-332dce5aa006
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 483b5f8b285fb256005e31e01a0786cef6c8e11d
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: bddcd356a3ee221d5b67935a5be91bbe89d2afc2
+ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383086"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42756055"
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-os-in-configuration-manager"></a>Creare una sequenza di attività per aggiornare un sistema operativo in Configuration Manager
 
@@ -155,7 +155,7 @@ A partire dalla versione 1802, il modello di sequenza di attività predefinito p
 
 - **Rimuovi/Sospendi la sicurezza di terze parti**: aggiungere in questo gruppo i passaggi da eseguire per rimuovere o sospendere le applicazioni di sicurezza di terze parti, come i programmi antivirus.  
 
-   - Se si usa un programma di crittografia dischi di terze parti, fornire il relativo driver di crittografia al programma di installazione di Windows con l'[opzione della riga di comando](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#23) `/ReflectDrivers`. Aggiungere un passaggio [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) alla sequenza di attività in questo gruppo. Impostare la variabile della sequenza di attività su **OSDSetupAdditionalUpgradeOptions**. Impostare il valore su `/ReflectDrivers` con il percorso del driver. Questa [variabile di azione della sequenza di attività](/sccm/osd/understand/task-sequence-action-variables#upgrade-operating-system) accoda la riga di comando del programma di installazione di Windows usata dalla sequenza di attività. Per ulteriori indicazioni su questo processo, contattare il fornitore del software in uso.  
+   - Se si usa un programma di crittografia dischi di terze parti, fornire il relativo driver di crittografia al programma di installazione di Windows con l'[opzione della riga di comando](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#23) `/ReflectDrivers`. Aggiungere un passaggio [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) alla sequenza di attività in questo gruppo. Impostare la variabile della sequenza di attività su **OSDSetupAdditionalUpgradeOptions**. Impostare il valore su `/ReflectDrivers` con il percorso del driver. Questa [variabile della sequenza di attività](/sccm/osd/understand/task-sequence-variables#OSDSetupAdditionalUpgradeOptions) accoda la riga di comando di Installazione di Windows usata dalla sequenza di attività. Per ulteriori indicazioni su questo processo, contattare il fornitore del software in uso.  
 
 
 ### <a name="download-package-content-task-sequence-step"></a>Passaggio della sequenza di attività Scaricare il contenuto del pacchetto  
@@ -215,7 +215,7 @@ A partire dalla versione 1806, il modello di sequenza di attività predefinito p
 
     - Per altre informazioni sui log client di Configuration Manager, vedere [Log client di Configuration Manager](/sccm/core/plan-design/hierarchy/log-files#BKMK_ClientLogs).  
 
-    - Per altre informazioni su_SMSTSLogPath e altre variabili utili, vedere [Variabili predefinite della sequenza di attività](/sccm/osd/understand/task-sequence-built-in-variables).  
+    - Per altre informazioni su **_SMSTSLogPath** e altre variabili utili, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables).  
 
 - **Esegui gli strumenti di diagnostica**: per eseguire strumenti di diagnostica aggiuntivi, aggiungere passaggi in questo gruppo. Automatizzare questi strumenti per la raccolta di informazioni aggiuntive dal sistema subito dopo l'errore.  
 
@@ -234,18 +234,18 @@ A partire dalla versione 1806, il modello di sequenza di attività predefinito p
 
 - Nel passaggio predefinito **Verifica conformità** abilitare **Verifica lo spazio minimo disponibile su disco (MB)**. Impostare il valore su almeno **16384** (16 GB) per un pacchetto di aggiornamento del sistema operativo a 32 bit o su **20480** (20 GB) per un pacchetto a 64 bit.  
 
-- Usare la [variabile di sequenza di attività predefinita](/sccm/osd/understand/task-sequence-built-in-variables) **SMSTSDownloadRetryCount** per riprovare a scaricare i criteri. Per impostazione predefinita, attualmente il client esegue due tentativi; questa variabile è impostata su due (2). Se i client non sono su una connessione di rete Intranet cablata, ulteriori tentativi possono aiutare a ottenere i criteri per tali client. L'uso di questa variabile non ha effetti collaterali negativi, se non un errore ritardato nel caso in cui il download dei criteri non riesca.<!--501016--> Aumentare inoltre il valore della variabile **SMSTSDownloadRetryDelay** dai 15 secondi predefiniti.  
+- Usare la [variabile della sequenza di attività](/sccm/osd/understand/task-sequence-variables#SMSTSDownloadRetryCount) **SMSTSDownloadRetryCount** per riprovare a scaricare i criteri. Per impostazione predefinita, attualmente il client esegue due tentativi; questa variabile è impostata su due (2). Se i client non sono su una connessione di rete Intranet cablata, ulteriori tentativi possono aiutare a ottenere i criteri per tali client. L'uso di questa variabile non ha effetti collaterali negativi, se non un errore ritardato nel caso in cui il download dei criteri non riesca.<!--501016--> Aumentare inoltre il valore della variabile **SMSTSDownloadRetryDelay** dai 15 secondi predefiniti.  
 
 - Eseguire una valutazione della compatibilità inline:  
 
    - Aggiungere un secondo passaggio **Aggiorna sistema operativo** nel gruppo **Preparazione dell'aggiornamento**. Assegnargli in nome *Valutazione aggiornamento*. Specificare lo stesso pacchetto di aggiornamento e quindi abilitare l'opzione **Esegui analisi compatibilità Installazione di Windows senza avviare l’aggiornamento**. Abilitare **Continua in caso di errore** nella scheda Opzioni.  
 
-   - Subito dopo questo passaggio *Valutazione aggiornamento* aggiungere un passaggio **Esegui riga di comando**. Specificare la riga di comando seguente:</br> `cmd /c exit %_SMSTSOSUpgradeActionReturnCode%`</br>Nella scheda **Opzioni** aggiungere la condizione seguente: </br>`Task Sequence Variable _SMSTSOSUpgradeActionReturnCode not equals 3247440400` </br>Questo codice restituito è l'equivalente in formato decimale di MOSETUP_E_COMPAT_SCANONLY (0xC1900210), che indica una valutazione della compatibilità riuscita senza problemi. Se il passaggio *Valutazione aggiornamento* riesce e restituisce questo codice, la sequenza di attività ignora questo passaggio. Se invece il passaggio di valutazione restituisce qualsiasi altro codice, questo passaggio esegue con errori la sequenza di attività con il codice restituito dall'analisi di compatibilità di Installazione di Windows.  
+   - Subito dopo questo passaggio *Valutazione aggiornamento* aggiungere un passaggio **Esegui riga di comando**. Specificare la riga di comando seguente:</br> `cmd /c exit %_SMSTSOSUpgradeActionReturnCode%`</br>Nella scheda **Opzioni** aggiungere la condizione seguente: </br>`Task Sequence Variable _SMSTSOSUpgradeActionReturnCode not equals 3247440400` </br>Questo codice restituito è l'equivalente in formato decimale di MOSETUP_E_COMPAT_SCANONLY (0xC1900210), che indica una valutazione della compatibilità riuscita senza problemi. Se il passaggio *Valutazione aggiornamento* riesce e restituisce questo codice, la sequenza di attività ignora questo passaggio. Se invece il passaggio di valutazione restituisce qualsiasi altro codice, questo passaggio esegue con errori la sequenza di attività con il codice restituito dall'analisi di compatibilità di Installazione di Windows. Per altre informazioni su **_SMSTSOSUpgradeActionReturnCode**, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables#SMSTSOSUpgradeActionReturnCode).  
 
    - Per altre informazioni, vedere [Aggiorna sistema operativo](/sccm/osd/understand/task-sequence-steps#BKMK_UpgradeOS).  
 
 - Se si vuole modificare il dispositivo da BIOS a UEFI durante questa sequenza di attività, vedere [Conversione da BIOS a UEFI durante un aggiornamento sul posto](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade).  
 
-- Se si usa la crittografia dischi BitLocker, per impostazione predefinita il programma di installazione di Windows la sospenderà automaticamente durante l'aggiornamento. A partire da Windows 10 versione 1803, il programma di installazione di Windows include il parametro della riga di comando `/BitLocker` per controllare questo comportamento. Se i requisiti di sicurezza richiedono di mantenere sempre attiva la crittografia dischi, usare la variabile della sequenza di attività **OSDSetupAdditionalUpgradeOptions** nel gruppo **Preparazione dell'aggiornamento** per includere `/BitLocker TryKeepActive`. Per altre informazioni, vedere [Opzioni della riga di comando di Installazione di Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#33).<!--SCCMDocs issue #494-->  
+- Se si usa la crittografia dischi BitLocker, per impostazione predefinita il programma di installazione di Windows la sospenderà automaticamente durante l'aggiornamento. A partire da Windows 10 versione 1803, il programma di installazione di Windows include il parametro della riga di comando `/BitLocker` per controllare questo comportamento. Se i requisiti di sicurezza richiedono di mantenere sempre attiva la crittografia dischi, usare la [variabile della sequenza di attività](/sccm/osd/understand/task-sequence-variables#OSDSetupAdditionalUpgradeOptions) **OSDSetupAdditionalUpgradeOptions** nel gruppo **Preparazione dell'aggiornamento** per includere `/BitLocker TryKeepActive`. Per altre informazioni, vedere [Opzioni della riga di comando di Installazione di Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#33).<!--SCCMDocs issue #494-->  
 
 - Alcuni clienti rimuovono le app predefinite di cui è stato effettuato il provisioning in Windows 10. Ad esempio, l'app Bing Meteo o Microsoft Solitaire Collection. In alcune situazioni, queste app ritornano dopo l'aggiornamento di Windows 10. Per altre informazioni, vedere l'articolo su [come mantenere le app rimosse da Windows 10](https://docs.microsoft.com/windows/application-management/remove-provisioned-apps-during-update). Aggiungere il passaggio **Esegui riga di comando** alla sequenza di attività nel gruppo **Preparazione dell'aggiornamento**. Specificare una riga di comando simile a quella dell'esempio seguente:</br> `cmd /c reg delete "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\Microsoft.BingWeather_8wekyb3d8bbwe" /f` <!--SCCMDocs issue #526-->  
