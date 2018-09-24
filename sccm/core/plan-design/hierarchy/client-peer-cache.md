@@ -2,7 +2,7 @@
 title: Peer cache per i client
 titleSuffix: Configuration Manager
 description: Usare la peer cache per i client per i percorsi di origine client quando si distribuisce contenuto con Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 08/29/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 86cd5382-8b41-45db-a4f0-16265ae22657
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c3dc6189f73b939f632581a8b50f05a72310111d
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.openlocfilehash: 4e3eda79b9b722b00f8fb9ac5329db8dd4153db1
+ms.sourcegitcommit: 52ec30245ba559596d2f88a3eff70c467b4a056f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42755997"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43380983"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
 
@@ -58,6 +58,8 @@ Per abilitare la peer cache, distribuire le [impostazioni client](#bkmk_settings
  -  Un altro client nello stesso gruppo di limiti invia una richiesta di percorso del contenuto al punto di gestione. Il server restituisce l'elenco delle possibili origini del contenuto. Questo elenco include tutte le origini di peer cache che includono contenuto e sono online. Include anche i punti di distribuzione e altri percorsi di origine del contenuto in tale gruppo di limiti. Per altre informazioni, vedere [Priorità dell'origine del contenuto](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#content-source-priority).  
 
  -  In genere, il client che cerca il contenuto seleziona un'origine dall'elenco specificato. A questo punto il client tenta di ottenere il contenuto.  
+
+A partire dalla versione 1806, sono disponibili impostazioni aggiuntive per i gruppi di limiti per offrire maggiore controllo sulla distribuzione di contenuti nell'ambiente. Per altre informazioni, vedere [Opzioni del gruppo di limiti per download peer](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgoptions).<!--1356193-->
 
 > [!NOTE]  
 > Se il client esegue il fallback a un gruppo di limiti vicino per il contenuto, il punto di gestione non aggiunge le origini di peer cache del gruppo di limiti vicino all'elenco di possibili percorsi di origine del contenuto.  
