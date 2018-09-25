@@ -10,16 +10,20 @@ ms.assetid: 0212b023-804a-4f84-b880-7a59cdb49c67
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d1963509bc4255e2a203e9ed562f5c51a3db0625
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: fc5af771d6ab15f4e26c22c5272abf2bb46de047
+ms.sourcegitcommit: 78d2dce465e3500653b252583a6903a006784c26
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32352153"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46448889"
 ---
 # <a name="use-a-task-sequence-to-manage-virtual-hard-disks-in-system-center-configuration-manager"></a>Usare una sequenza di attività per gestire dischi rigidi virtuali in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
+
+
+    > [!NOTE] 
+    >  Support for this feature was deprecated in version 1710. For more information, see [Removed and deprecated features for Configuration Manager](https://docs.microsoft.com/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).
 
 In System Center Configuration Manager è possibile gestire dischi rigidi virtuali e integrare quelli creati nel data center dalla console di Configuration Manager. In particolare, è possibile creare e modificare un disco rigido virtuale, aggiungere applicazioni e aggiornamenti software al disco e pubblicare il disco in System Center Virtual Machine Manager (VMM) dalla console di Configuration Manager.  
 

@@ -10,12 +10,12 @@ ms.assetid: e83a7b0d-b381-4b4a-8eca-850385abbebb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cdf073aa3e9ca3be6062ea0e5e0528bb97937989
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a3d4cbbf78639a135e9e36e3402f9920a6ef71ed
+ms.sourcegitcommit: 78d2dce465e3500653b252583a6903a006784c26
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333403"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46448787"
 ---
 # <a name="co-management-dashboard-in-system-center-configuration-manager"></a>Dashboard di co-gestione in System Center Configuration Manager
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -76,7 +76,7 @@ Nel dashboard di co-gestione vengono visualizzati quattro grafici per l'ambiente
 ## <a name="next-steps"></a>Passaggi successivi
 
 Per altre informazioni sulla co-gestione, vedere:
- - [Co-gestione per dispositivi Windows 10](/sccm/core/clients/manage/co-management-overview.md)
- - [Preparare i dispositivi Windows 10 per la co-gestione](/sccm/core/clients/manage/co-management-prepare.md)
+ - [Co-gestione per dispositivi Windows 10](/sccm/core/clients/manage/co-management-overview)
+ - [Preparare i dispositivi Windows 10 per la co-gestione](/sccm/core/clients/manage/co-management-prepare)
 
     
