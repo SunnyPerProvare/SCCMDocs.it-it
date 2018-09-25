@@ -10,12 +10,12 @@ ms.assetid: 6bce416b-761d-4b23-bd33-5b7c30edb10d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e72cdf667f96828fb6730cf3294c8d20ec553130
-ms.sourcegitcommit: 759098de944b8f7d5eedfc2bae2cb9a6ba15276f
+ms.openlocfilehash: 7b82bdfcbe69c7e9d59185fc6af20a85e65a6e7d
+ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43289255"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893567"
 ---
 # <a name="pre-release-features-in-configuration-manager"></a>Funzionalità di versioni non definitive in Configuration Manager
 
@@ -91,7 +91,7 @@ Quando si abilita una funzionalità non definitiva, gestione gerarchie (HMAN) di
 | Punto di servizio del data warehouse <!-- 1277922 --> |  [Versione 1702](/sccm/core/servers/manage/data-warehouse) |[Versione 1706](/sccm/core/servers/manage/data-warehouse)|
 | Peer cache per la distribuzione del contenuto ai client <!-- 1101436 --> |  [Versione 1610](/sccm/core/plan-design/hierarchy/client-peer-cache) | [Versione 1710](/sccm/core/plan-design/hierarchy/client-peer-cache)|
 | Gateway di gestione cloud <!-- 1101764 --> |  [Versione 1610](/sccm/core/clients/manage/plan-cloud-management-gateway) |[Versione 1802](/sccm/core/clients/manage/plan-cloud-management-gateway)|
-| Microsoft Operations Management Suite Connector <!-- 1236739 --> | [Version 1606](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) |[Versione 1802](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite)|
+| Connettore Log Analytics <!-- 1236739 --> | [Version 1606](/sccm/core/clients/manage/sync-data-log-analytics) |[Versione 1802](/sccm/core/clients/manage/sync-data-log-analytics)|
 | Manutenzione di una raccolta compatibile con cluster (manutenzione di un gruppo di server) <!-- 1081776 --> | [Versione 1602](/sccm/core/get-started/capabilities-in-technical-preview-1605#BKMK_ServerGroups)|![Non ancora](media/red_x.png)|
 | Accesso condizionale per i PC gestiti da System Center Configuration Manager <!--  --> | [Versione 1602](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm)     | [Versione 1702](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm)                     |
 <!--Image used = ![Not yet](media/red_x.png) -->

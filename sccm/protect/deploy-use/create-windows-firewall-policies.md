@@ -10,18 +10,18 @@ ms.assetid: 6ecdfad1-6305-45a8-ae75-3f33b967cb8f
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: e3030b4390e38ca2dfce6805c04d5b0bb7916bba
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 3217fe8f6d9ee541105abdecf9963898af38b907
+ms.sourcegitcommit: 316899b08f2ef372993909e08e069f7edfed1d33
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32347954"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44111026"
 ---
 # <a name="create-and-deploy-windows-firewall-policies-for-endpoint-protection-in-system-center-configuration-manager"></a>Creare e distribuire criteri di Windows Firewall per Endpoint Protection in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-I criteri di Windows Firewall per Endpoint Protection in System Center 2012 Configuration Manager consentono di eseguire le attività di configurazione e manutenzione di base di Windows Firewall nei computer client della gerarchia. È possibile usare i criteri di Windows Firewall per le attività seguenti:  
+I criteri di Windows Firewall per Endpoint Protection in System Center Configuration Manager consentono di eseguire le attività di configurazione e manutenzione di base di Windows Firewall nei computer client della gerarchia. È possibile usare i criteri di Windows Firewall per le attività seguenti:  
 
 -   Controllare se Windows Firewall è attivato o disattivato.  
 

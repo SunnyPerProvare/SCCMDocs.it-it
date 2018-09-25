@@ -10,12 +10,12 @@ ms.assetid: 0249dbd3-1e85-4d05-a9e5-420fbe44d850
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 89742711f17997487fec403d51c89a42ceff34ec
-ms.sourcegitcommit: 52ec30245ba559596d2f88a3eff70c467b4a056f
+ms.openlocfilehash: 13dbffd442cfbe0ced30d46b9a93dd03418202c9
+ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43381041"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893842"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Novità della versione 1806 di Configuration Manager (Current Branch)
 
@@ -26,7 +26,7 @@ L'aggiornamento 1806 per Configuration Manager (Current Branch) è disponibile c
 Esaminare sempre l'elenco di controllo più recente per installare questo aggiornamento. Per altre informazioni, vedere [Elenco di controllo per l'installazione dell'aggiornamento 1806](/sccm/core/servers/manage/checklist-for-installing-update-1806). Dopo aver aggiornato un sito, vedere anche [Elenco di controllo post-aggiornamento](/sccm/core/servers/manage/checklist-for-installing-update-1806#post-update-checklist).
 
 > [!Important]  
-> Questo articolo elenca tutte le funzionalità importanti di questa versione al momento. Tuttavia, non tutte le sezioni sono ancora collegate al contenuto aggiornato con maggiori informazioni sulle nuove funzionalità. Continuare a controllare questa pagina con regolarità per verificare la disponibilità di aggiornamenti. Le modifiche sono contrassegnate con il tag ***[Aggiornamento]***. Questa nota sarà rimossa nella versione finale del contenuto.  
+> Questo articolo elenca tutte le funzionalità importanti di questa versione al momento. Tuttavia, non tutte le sezioni sono ancora collegate al contenuto aggiornato con maggiori informazioni sulle nuove funzionalità. Continuare a controllare questa pagina con regolarità per verificare la disponibilità di aggiornamenti. Le modifiche sono contrassegnate con il tag ***[Aggiornato]***. Questa nota sarà rimossa nella versione finale del contenuto.  
 
 A parte le nuove funzionalità, questa versione include anche ulteriori modifiche, ad esempio correzioni di bug. Per altre informazioni, vedere [Riepilogo delle modifiche in System Center Configuration Manager Current Branch, versione 1806](https://support.microsoft.com/help/4459701).
 
@@ -385,8 +385,15 @@ Queste sequenze di attività possono essere per la distribuzione del sistema ope
 
 ## <a name="software-center"></a>Software Center
 
+> [!Important]  
+> Per sfruttare i vantaggi delle nuove funzionalità di Configuration Manager, aggiornare prima di tutto i clienti alla versione più recente. Anche se le nuove funzionalità vengono visualizzate nella console di Configuration Manager quando si esegue l'aggiornamento del sito e della console, lo scenario completo risulta funzionante solo dopo l'aggiornamento alla versione più recente del client.
+
+
 ### <a name="software-center-infrastructure-improvements"></a>Miglioramenti all'infrastruttura di Software Center
-<!--1358309--> I ruoli del Catalogo applicazioni non sono più necessari per visualizzare le applicazioni disponibili per gli utenti in Software Center. Questa modifica consente di ridurre l'infrastruttura server necessaria per distribuire le applicazioni agli utenti. Software Center ora si affida al punto di gestione per ottenere queste informazioni e questo consente una migliore scalabilità degli ambienti di grandi dimensioni, che vengono assegnati a [gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups#management-points).
+<!--1358309-->
+ ***[Aggiornamento]*** I ruoli del Catalogo applicazioni non sono più necessari per visualizzare le applicazioni disponibili per gli utenti in Software Center. Questa modifica consente di ridurre l'infrastruttura server necessaria per distribuire le applicazioni agli utenti. Software Center ora si affida al punto di gestione per ottenere queste informazioni e questo consente una migliore scalabilità degli ambienti di grandi dimensioni, che vengono assegnati a [gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups#management-points).
+
+Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex)  
 
 > [!Note]  
 > Il ruolo Punto per siti Web e il ruolo Punto per servizi Web del Catalogo applicazioni non sono più *necessari* nella versione 1806, ma sono ancora *supportati*. 

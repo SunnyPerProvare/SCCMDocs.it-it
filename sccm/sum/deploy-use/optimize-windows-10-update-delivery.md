@@ -10,12 +10,12 @@ ms.assetid: b670cfaf-96a4-4fcb-9caa-0f2e8c2c6198
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7e445cd6e49617afde6f8acf043eeb4c707e1480
-ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
+ms.openlocfilehash: 801cd2cd35d370fbe469b16613da7f7592feff6e
+ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36261010"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893809"
 ---
 # <a name="optimize-windows-10-update-delivery-with-configuration-manager"></a>Ottimizzare il recapito degli aggiornamenti di Windows 10 con Configuration Manager
 
@@ -89,7 +89,7 @@ La selezione della tecnologia di peer caching appropriata per i file di installa
 | Controllo delle dimensioni della cache su disco | Sì | Sì | Sì |
 | Individuazione di un'origine peer | Automatica | Manuale (impostazione agente client) | Automatica |
 | Individuazione peer | Tramite il servizio cloud Ottimizzazione recapito (richiede l'accesso a Internet) | Tramite il punto di gestione (basato su gruppi di limiti client) | Trasmissione |
-| Reporting | Sì (con Microsoft Operations Management Suite) | Dashboard Origini dati del client di ConfigMgr | Dashboard Origini dati del client di ConfigMgr |
+| Reporting | Sì (con Windows Analytics) | Dashboard Origini dati del client di ConfigMgr | Dashboard Origini dati del client di ConfigMgr |
 | Controllo dell'utilizzo WAN | Sì (nativa e controllabile tramite impostazioni di Criteri di gruppo) | Gruppi di limiti | Solo supporto subnet |
 | Tipi di contenuto supportati | - Aggiornamenti rapidi (tramite ConfigMgr)</br> - Windows e aggiornamenti della sicurezza</br> - Driver</br> - App di Windows Store</br> - App di Windows Store per le aziende | Tutti i tipi di contenuto ConfigMgr, incluse le immagini scaricate in [Windows PE](/sccm/osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic) | Tutti i tipi di contenuto di ConfigMgr, ad eccezione delle immagini |
 | Gestione tramite ConfigMgr | Parziale (impostazione agente client) | Sì (impostazione agente client) | Sì (impostazione agente client) |

@@ -10,12 +10,12 @@ ms.assetid: 14ee4fb0-7790-45a6-906e-6e55627d4079
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0a855e332fe54779cc324ccf4fb2206a64b74110
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 8ed8aed38f20adb3558b61dd32a36f88fbac3b00
+ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344229"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893509"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1706-of-system-center-configuration-manager"></a>Livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1706
 
@@ -214,11 +214,11 @@ Per System Center Configuration Manager versione 1706, questo livello include i 
 
   - Numero di client aggiunti ai servizi Azure Active Directory
 
-  - Numero di raccolte sincronizzate con Operations Management Suite
+  - Numero di raccolte sincronizzate con Azure Log Analytics
 
   - Numero di connettori di analisi degli aggiornamenti
 
-  - Stato di abilitazione del connettore cloud di Operations Management Suite
+  - Indica se il connettore cloud Azure Log Analytics è abilitato
 
 
 

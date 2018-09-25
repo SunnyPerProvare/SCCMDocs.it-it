@@ -10,12 +10,12 @@ ms.assetid: a0287beb-70a9-4b57-a627-e7bfba27fd3b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5da60a9dd45b3993f9c1afd95c41a90956ec70c4
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: d964295134538cf281af214830a5bc416484be51
+ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385962"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893672"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1806"></a>Livelli di raccolta dati di utilizzo e di diagnostica per la versione 1806
 
@@ -258,11 +258,11 @@ Per Configuration Manager versione 1806, questo livello include i dati seguenti:
 
   - Numero di applicazioni e di servizi di Azure Active Directory connessi a Configuration Manager
 
-  - Numero di raccolte sincronizzate con Operations Management Suite
+  - Numero di raccolte sincronizzate con Azure Log Analytics
 
   - Numero di connettori di analisi degli aggiornamenti
 
-  - Stato di abilitazione del connettore cloud di Operations Management Suite  
+  - Indica se il connettore cloud Azure Log Analytics è abilitato  
 
   - ***[Nuovo]*** Numero di punti di distribuzione pull con un punto di distribuzione cloud come percorso di origine  
 

@@ -1,8 +1,8 @@
 ---
 title: Introduzione alla gestione delle app
 titleSuffix: Configuration Manager
-description: È possibile individuare le informazioni di base necessarie per gestire e distribuire applicazioni di System Center Configuration Manager.
-ms.date: 07/30/2018
+description: È possibile individuare le informazioni di base necessarie per gestire e distribuire applicazioni in Configuration Manager.
+ms.date: 08/31/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 08f711ba-83bf-4b5f-9520-a0778c6ae7eb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 70ab4136f39b4bf559c3d460ca1528bb4de0f6e1
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 0d4e83cbcb1c95303719b1d86ffc9a8969c16998
+ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384291"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893907"
 ---
 # <a name="introduction-to-application-management-in-configuration-manager"></a>Introduzione alla gestione delle applicazioni in Configuration Manager
 
@@ -186,9 +186,9 @@ Per altre informazioni, vedere gli articoli seguenti:
 - [Manuale dell'utente di Software Center](/sccm/core/understand/software-center)
 
 > [!Note]  
-> Il ruolo Punto per servizi Web del Catalogo applicazioni non è più necessario nella versione 1806, ma è ancora un ruolo supportato. 
+> Il ruolo Punto per siti Web e il ruolo Punto per servizi Web del Catalogo applicazioni non sono più *necessari* nella versione 1806, ma sono ancora *supportati*. 
 > 
-> Il ruolo del sito Web del Catalogo applicazioni non è supportato nella versione 1806. Per altre informazioni, vedere [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).  
+> L'**esperienza utente di Silverlight** per il ruolo Punto per siti Web del Catalogo applicazioni non è più supportato. Per altre informazioni, vedere [Funzionalità rimosse e deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).  
 
 
 

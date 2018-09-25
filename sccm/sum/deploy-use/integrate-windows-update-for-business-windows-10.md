@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 183315fe-27bd-456f-b2c5-e8d25e05229b
-ms.openlocfilehash: 07616a1c03c0383e9001418043dc6cd7ec117c1d
-ms.sourcegitcommit: 493cc42f05b9388ef872e466e5a75d569642b9fc
+ms.openlocfilehash: ce3937b630eea38af34f1abd7c7348ebf2f8dfdb
+ms.sourcegitcommit: 316899b08f2ef372993909e08e069f7edfed1d33
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34703486"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44111094"
 ---
 # <a name="integration-with-windows-update-for-business-in-windows-10"></a>Integrazione con Windows Update for Business in Windows 10
 
@@ -66,8 +66,7 @@ Windows Update for Business (WUfB) consente di mantenere i dispositivi basati su
 5.  Lo stato di conformità dei computer gestiti tramite Windows Update for Business sarà **Sconosciuto** e quindi questi non verranno conteggiati come parte della percentuale di conformità complessiva.  
 
 ## <a name="configure-windows-update-for-business-deferral-policies"></a>Configurare i criteri di rinvio di Windows Update for Business
-<!-- 1290890 -->
-A partire da Configuration Manager versione 1706, è possibile configurare i criteri di rinvio dei dispositivi per gli aggiornamenti delle funzionalità di Windows 10 o dei dispositivi con aggiornamenti di qualità di Windows 10 gestiti direttamente da Windows Update for Business. È possibile gestire i criteri di rinvio nel nuovo nodo **Criteri di Windows Update for Business** in **Libreria Software** > **Manutenzione pacchetti di Windows 10**.
+<!-- 1290890 --> A partire da Configuration Manager versione 1706, è possibile configurare i criteri di differimento dei dispositivi per gli aggiornamenti delle funzionalità o gli aggiornamenti qualitativi di Windows 10 per dispositivi Windows 10 gestiti direttamente da Windows Update for Business. È possibile gestire i criteri di rinvio nel nuovo nodo **Criteri di Windows Update for Business** in **Libreria Software** > **Manutenzione pacchetti di Windows 10**.
 
 >[!NOTE] 
 >A partire da Configuration Manager versione 1802, è possibile impostare i criteri di differimento per Windows Insider. <!--507201-->Per altre informazioni sul programma Windows Insider, vedere [Introduzione al programma Windows Insider per le aziende](https://docs.microsoft.com/windows/deployment/update/waas-windows-insider-for-business).
@@ -82,10 +81,10 @@ A partire da Configuration Manager versione 1706, è possibile configurare i cri
 3. Nella pagina **Generale** specificare un nome e una descrizione per il criterio.
 4. Nella pagina **Criteri di differimento** configurare se si desidera differire o sospendere gli aggiornamenti delle funzionalità. Gli aggiornamenti delle funzionalità sono generalmente nuove funzionalità per Windows. Dopo aver configurato l'impostazione **Livello di conformità con Branch**, è possibile definire se e per quanto tempo si desidera rinviare la ricezione di aggiornamenti delle funzionalità in base alla disponibilità da Microsoft.
     - **Livello di conformità con Branch**: impostare il branch per il quale il dispositivo riceverà gli aggiornamenti di Windows (Current Branch o Current Branch for Business).
-    - **Periodo di differimento (giorni):** specificare il numero di giorni per cui verranno posticipati gli aggiornamenti delle funzionalità. È possibile posticipare la ricezione di questi aggiornamenti delle funzionalità per un periodo di 180 giorni dopo il rilascio.
+    - **Periodo di differimento (giorni):** specificare il numero di giorni per cui verranno posticipati gli aggiornamenti delle funzionalità. È possibile differire la ricezione di questi aggiornamenti delle funzionalità per un periodo di 365 giorni dopo il rilascio.
     - **Pause Features Updates starting** (Sospendi avvio degli aggiornamenti delle funzionalità): selezionare se sospendere la ricezione da parte dei dispositivi degli aggiornamenti delle funzionalità per un periodo massimo di 60 giorni a partire dal momento in cui si sospendono gli aggiornamenti. Una volta trascorso il numero massimo di giorni, la sospensione della funzionalità scadrà automaticamente e il dispositivo analizzerà Windows Updates per gli aggiornamenti applicabili. Dopo questa analisi, è possibile sospendere nuovamente gli aggiornamenti. È possibile riprendere gli aggiornamenti delle funzionalità deselezionando la casella di controllo.   
 5. Scegliere se rinviare o sospendere gli aggiornamenti di qualità. Gli aggiornamenti di qualità sono in genere correzioni e miglioramenti alle funzionalità esistenti di Windows e vengono generalmente pubblicati il primo martedì di ogni mese, sebbene possano essere rilasciati in qualsiasi momento da Microsoft. È possibile definire se e per quanto tempo si desidera rinviare la ricezione degli aggiornamenti di qualità dopo la loro disponibilità.
-    - **Periodo di differimento (giorni):** specificare il numero di giorni per cui verranno posticipati gli aggiornamenti delle funzionalità. È possibile posticipare la ricezione di questi aggiornamenti delle funzionalità per un periodo di 180 giorni dopo il rilascio.
+    - **Periodo di differimento (giorni):** specificare il numero di giorni per cui gli aggiornamenti qualitativi verranno differiti. È possibile differire la ricezione di questi aggiornamenti qualitativi per un periodo di 30 giorni dopo il rilascio.
     - **Pause Quality Updates starting** (Sospendi avvio degli aggiornamenti di qualità): selezionare se sospendere la ricezione da parte dei dispositivi degli aggiornamenti di qualità per un periodo massimo di 35 giorni a partire dal momento in cui si sospendono gli aggiornamenti. Una volta trascorso il numero massimo di giorni, la sospensione della funzionalità scadrà automaticamente e il dispositivo analizzerà Windows Updates per gli aggiornamenti applicabili. Dopo questa analisi, è possibile sospendere nuovamente gli aggiornamenti. È possibile riprendere gli aggiornamenti di qualità deselezionando la casella di controllo.
 6. Selezionare **Installa gli aggiornamenti per altri prodotti Microsoft** per abilitare l'impostazione dei criteri di gruppo che rendono le impostazioni di rinvio applicabili a Microsoft Update, oltre agli aggiornamenti di Windows.
 7. Selezionare **Include drivers with Windows Update** (Includi i driver con Windows Update) per aggiornare automaticamente i driver da Windows Update. Se si deseleziona questa impostazione, gli aggiornamenti dei driver non vengono scaricati da Windows Update.

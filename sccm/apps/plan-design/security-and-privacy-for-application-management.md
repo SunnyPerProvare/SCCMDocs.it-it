@@ -1,8 +1,8 @@
 ---
-title: Sicurezza e privacy per la gestione delle applicazioni
+title: Sicurezza e privacy per le app
 titleSuffix: Configuration Manager
-description: Informazioni su indicazioni e consigli per la sicurezza e la privacy nella gestione delle applicazioni
-ms.date: 03/22/2018
+description: Indicazioni e consigli per la sicurezza e la privacy nella gestione delle applicazioni in Configuration Manager.
+ms.date: 08/31/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,37 +10,141 @@ ms.assetid: 4d26deed-3b16-4116-b640-f618f2c20f5a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 80ae609bccd60e68cfee76878bd7a461b5f61716
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 65e4d68f05087d24bc83e8e4a3dd67489fdbaed3
+ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336409"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893584"
 ---
-# <a name="security-and-privacy-for-application-management-in-system-center-configuration-manager"></a>Sicurezza e privacy per la gestione delle applicazioni in System Center Configuration Manager
+# <a name="security-and-privacy-for-application-management-in-configuration-manager"></a>Sicurezza e privacy per la gestione delle applicazioni in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
 ##  <a name="security-guidance-for-application-management"></a>Indicazioni sulla sicurezza per la gestione delle applicazioni  
 
-|Indicazioni sulla sicurezza|Altre informazioni|  
-|----------------------------|----------------------|  
-|Configurare i punti del Catalogo applicazioni per utilizzare le connessioni HTTPS e istruire gli utenti sui pericoli di siti Web dannosi.|Configurare il punto per siti Web del Catalogo applicazioni e il punto per servizi Web del Catalogo applicazioni per accettare le connessioni HTTPS. Questa configurazione consente al server di essere autenticato per gli utenti e ai dati trasmessi di essere protetti da manomissioni e visualizzazioni. Impedire attacchi di ingegneria sociale istruendo gli utenti a connettersi esclusivamente a siti Web attendibili.<br /><br /> Quando non si usa HTTPS, non usare opzioni di configurazione di personalizzazione che specificano il nome dell'organizzazione nel Catalogo applicazioni come identificazione.|  
-|Utilizzare la separazione dei ruoli e installare il punto per siti Web del Catalogo applicazioni e il punto di servizio del Catalogo applicazioni su server separati.|Se il punto per siti Web del Catalogo applicazioni è compromesso, installarlo in un server separato dal punto per servizi Web del Catalogo applicazioni. In questo modo si proteggono i client e l'infrastruttura di Configuration Manager. Questa configurazione è particolarmente importante se il punto per siti Web del Catalogo applicazioni accetta connessioni client da Internet, rendendo così il server vulnerabile agli attacchi.|  
-|Istruire gli utenti a chiudere la finestra del browser dopo aver utilizzato il Catalogo applicazioni.|Se gli utenti navigano in un sito Web esterno nella stessa finestra del browser utilizzata per il Catalogo applicazioni, il browser continua a utilizzare le impostazioni di protezione adatte per i siti attendibili nell'intranet.|  
-|Specificare manualmente l'affinità utente-dispositivo invece di consentire agli utenti di identificare il dispositivo primario. Non abilitare la configurazione basata sull'utilizzo.|Non considerare autorevoli le informazioni raccolte dagli utenti o dal dispositivo. Se si distribuisce il software usando un'affinità utente-dispositivo non specificata da un utente amministratore attendibile, il software potrebbe essere installato su computer e per utenti che non sono autorizzati a riceverlo.|  
-|Configurare sempre le distribuzioni per scaricare il contenuto dai punti di distribuzione, anziché eseguirlo dai punti di distribuzione.|Quando si configurano le distribuzioni per scaricare il contenuto da un punto di distribuzione ed eseguirlo in locale, il client di Configuration Manager verifica l'hash del pacchetto dopo aver scaricato il contenuto. Il client scarta il pacchetto se l'hash non corrisponde all'hash nei criteri. Invece, se si configura la distribuzione per l'esecuzione direttamente da un punto di distribuzione, il client di Configuration Manager non verifica l'hash pacchetto, il che significa che il client di Configuration Manager può installare il software che è stato manomesso.<br /><br /> Se è necessario eseguire le distribuzioni direttamente da punti di distribuzione, usare autorizzazioni NTFS per i pacchetti nei punti di distribuzione. Usare anche Internet protocol security (IPsec) per proteggere il canale tra il client e i punti di distribuzione e tra i punti di distribuzione e il server del sito.|  
-|<a name="bkmk_interact"></a>Non consentire agli utenti di interagire con le applicazioni se sono abilitate le opzioni **Esegui con diritti amministrativi** o **Installa per sistema**.|Quando si configura un'applicazione, è possibile impostare l'opzione **Consenti agli utenti di visualizzare e interagire con l'installazione del programma**. Questa impostazione consente agli utenti di rispondere a qualsiasi richiesta necessaria nell'interfaccia utente. Se anche l'applicazione è configurata con **Esegui con diritti amministrativi** o, a partire dalla versione1802, con **Installa per sistema**, un utente malintenzionato nel computer in cui è in esecuzione il programma potrebbe usare l'interfaccia utente per riassegnare i privilegi nel computer client.<br /><br /> Usare programmi che usano Windows Installer per l'installazione e privilegi elevati per utente per le distribuzioni software che richiedono credenziali amministrative. Il programma di installazione deve essere eseguito nel contesto di un utente che non ha credenziali amministrative. I privilegi elevati per utente di Windows Installer rappresentano il modo più sicuro per distribuire applicazioni con questo requisito.|  
-|Limitare gli utenti che possono installare software in modo interattivo utilizzando l'impostazione client **Autorizzazioni installazione** .|Configurare l'impostazione **Autorizzazioni di installazione** del dispositivo client **Agente computer** per limitare i tipi di utenti che possono installare software usando il Catalogo applicazioni o Software Center. Ad esempio, creare un impostazione client personalizzata con **Autorizzazioni di installazione** impostato su **Solo amministratori**. Applicare quindi questa impostazione client a una raccolta di server per impedire agli utenti senza autorizzazioni amministrative di installare software in tali computer.|  
-|Per i dispositivi mobili, distribuire solo le applicazioni firmate.|Distribuire applicazioni per dispositivi mobili solo se il relativo codice è firmato da un'autorità di certificazione (CA) considerata attendibile dal dispositivo mobile. Ad esempio:<br /><ul><li>Un'applicazione di un fornitore, firmata da un'autorità di certificazione nota, come VeriSign.</li><li>Un'applicazione interna che viene firmata in modo indipendente da Configuration Manager usando l'autorità di certificazione interna.</li><li>Un'applicazione interna firmata con Configuration Manager quando si crea il tipo di applicazione e si usa un certificato di firma.</li></ul>|  
-|Se si firmano applicazioni per dispositivi mobili usando la **Creazione guidata applicazione** in Configuration Manager, proteggere il percorso del file del certificato di firma e il canale di comunicazione.|Per proteggersi dall'elevazione dei privilegi e dagli attacchi man-in-the-middle, archiviare il file del certificato di firma in una cartella protetta e usare IPsec tra i computer seguenti:<br /><ul><li>Computer che esegue la console di Configuration Manager</li><li>Computer in cui è archiviato il file del certificato di firma</li><li>Computer in cui sono archiviati i file di origine dell'applicazione</li></ul> In alternativa, firmare l'applicazione indipendentemente da Configuration Manager e prima di eseguire la **Creazione guidata applicazione**.|  
-|Per proteggere i computer di riferimento, implementare i controlli di accesso.|Quando un utente amministratore configura il metodo di rilevamento in un tipo di distribuzione selezionando un computer di riferimento, assicurarsi che il computer non sia stato compromesso.|  
-|Limitare e monitorare gli utenti amministratori a cui vengono concessi i ruoli di sicurezza basata sui ruoli per la gestione delle applicazioni:<br /><ul><li>**Amministratore applicazione**</li><li>**Autore applicazione**</li><li> **Gestione distribuzione applicazioni**</li></ul>|Anche quando si configura l'amministrazione basata su ruoli, gli utenti amministratori che creano e distribuiscono le applicazioni potrebbero disporre di più autorizzazioni del previsto. Ad esempio, gli utenti amministratori che creano o modificano un'applicazione possono selezionare applicazioni dipendenti non incluse nel loro ambito di protezione.|  
-|Durante la configurazione di ambienti virtuali Microsoft Application Virtualization (App-V), selezionare le applicazioni con lo stesso livello di attendibilità nell'ambiente virtuale.|Poiché le applicazioni in un ambiente virtuale App-V possono condividere risorse, come gli Appunti, configurare l'ambiente virtuale in modo che le applicazioni selezionate abbiano lo stesso livello di attendibilità.<br /><br /> Per altre informazioni, vedere [Create App-V virtual environments](../../apps/deploy-use/create-app-v-virtual-environments.md) (Creare ambienti virtuali App-V).|  
-|Se si distribuiscono applicazioni per computer Mac, accertarsi che i file di origine provengano da una fonte attendibile.|Lo strumento CMAppUtil non convalida la firma del pacchetto di origine, quindi assicurarsi che il pacchetto provenga da una fonte attendibile. Lo strumento CMAppUtil non consente di rilevare eventuali manomissioni dei file.|  
-|Se si distribuiscono applicazioni per computer Mac, proteggere il percorso del file **CMMAC** e il canale di comunicazione quando si importa tale file in Configuration Manager.|Il file **CMMAC** generato dallo strumento CMAppUtil e importato in Configuration Manager non è firmato o convalidato. Per evitare la manomissione di questo file, archiviarlo in una cartella sicura e usare IPSec o SMB tra i computer seguenti:<br /><br /><ul><li>Computer che esegue la console di Configuration Manager</li><li>Computer in cui è archiviato il file **CMMAC**</li></ul>|  
-|Se si configura un tipo di distribuzione applicazioni Web, usare HTTPS anziché HTTP per proteggere la connessione.|Se si distribuisce un'applicazione Web usando un collegamento HTTP anziché un collegamento HTTPS, il dispositivo potrebbe essere reindirizzato a un server non autorizzato. I dati trasferiti tra il dispositivo e il server potrebbero essere manomessi.|  
+
+### <a name="use-the-new-software-center-without-the-application-catalog"></a>Usare il nuovo Software Center senza il Catalogo applicazioni
+<!--1358309--> A partire dalla versione 1806, i ruoli del Catalogo applicazioni non sono più necessari per visualizzare le applicazioni disponibili per gli utenti in Software Center. Questa configurazione consente di ridurre l'infrastruttura server necessaria per distribuire le applicazioni agli utenti. Riducendo l'infrastruttura server si riduce anche la superficie di attacco. 
+
+Per offrire un'esperienza dell'applicazione coerente e sicura per i client basati su Internet, usare Azure Active Directory e il gateway di gestione cloud.
+
+Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex). 
+
+
+### <a name="use-https-with-the-application-catalog"></a>Usare HTTPS con il Catalogo applicazioni
+
+Configurare il punto per siti Web del Catalogo applicazioni e il punto per servizi Web del Catalogo applicazioni per accettare le connessioni HTTPS. Con questa configurazione, il server viene autenticato agli utenti. I dati trasmessi sono protetti da manomissioni e visualizzazioni. 
+
+Impedire attacchi di ingegneria sociale istruendo gli utenti a connettersi esclusivamente a siti Web attendibili. Informare gli utenti sui pericoli dei siti Web dannosi.
+
+Quando non si usa HTTPS, non usare le opzioni di configurazione della personalizzazione. Queste impostazioni mostrano il nome dell'organizzazione nel Catalogo applicazioni come identificazione.  
+
+
+### <a name="use-role-separation"></a>Usare la separazione dei ruoli
+
+Installare il punto per siti Web del Catalogo applicazioni e il punto per servizi Web del Catalogo applicazioni in server separati. Se il punto per siti Web del Catalogo applicazioni è compromesso, viene separato dal punto per servizi Web del Catalogo applicazioni. In questo modo si proteggono i client e l'infrastruttura. Questa configurazione è particolarmente importante se il punto per siti Web del Catalogo applicazioni accetta connessioni client da Internet, rendendo così il server più vulnerabile agli attacchi.  
+
+
+### <a name="close-browser-windows"></a>Chiudere le finestre del browser
+
+Istruire gli utenti a chiudere la finestra del browser dopo aver utilizzato il Catalogo applicazioni. Se gli utenti navigano in un sito Web esterno nella stessa finestra del browser utilizzata per il Catalogo applicazioni, il browser continua a utilizzare le impostazioni di protezione adatte per i siti attendibili nell'intranet.  
+
+
+### <a name="centrally-specify-user-device-affinity"></a>Specificare a livello centrale l'affinità utente-dispositivo
+
+Specificare manualmente l'affinità utente-dispositivo invece di consentire agli utenti di identificare il dispositivo primario. Non abilitare la configurazione basata sull'utilizzo.
+
+Non considerare autorevoli le informazioni raccolte dagli utenti o dal dispositivo. Se si distribuisce il software usando un'affinità utente-dispositivo non specificata da un utente amministratore attendibile, il software potrebbe essere installato in computer e per utenti che non sono autorizzati a riceverlo.  
+
+
+### <a name="dont-run-deployments-from-distribution-points"></a>Non eseguire distribuzioni dai punti di distribuzione
+
+Configurare sempre le distribuzioni per scaricare il contenuto dai punti di distribuzione, anziché eseguirlo dai punti di distribuzione. Quando si configurano le distribuzioni per scaricare il contenuto da un punto di distribuzione ed eseguirlo in locale, il client di Configuration Manager verifica l'hash del pacchetto dopo aver scaricato il contenuto. Il client scarta il pacchetto se l'hash non corrisponde all'hash nei criteri. 
+
+Se si configura la distribuzione per l'esecuzione direttamente da un punto di distribuzione, il client di Configuration Manager non verifica l'hash pacchetto, il che significa che il client di Configuration Manager può installare software che è stato manomesso.
+
+Se è necessario eseguire le distribuzioni direttamente da punti di distribuzione, usare autorizzazioni NTFS per i pacchetti nei punti di distribuzione. Usare anche IPsec (Internet Protocol Security) per proteggere il canale tra il client e i punti di distribuzione e tra i punti di distribuzione e il server del sito.
+
+
+### <a name="bkmk_interact"></a> Non consentire agli utenti di interagire con processi con privilegi elevati
+  
+Se si abilitano le opzioni **Esegui con diritti amministrativi** o **Installa per sistema**, non consentire agli utenti di interagire con tali applicazioni. Quando si configura un'applicazione, è possibile impostare l'opzione **Consenti agli utenti di visualizzare e interagire con l'installazione del programma**. Questa impostazione consente agli utenti di rispondere a qualsiasi richiesta necessaria nell'interfaccia utente. Se anche l'applicazione è configurata con **Esegui con diritti amministrativi** o, a partire dalla versione1802, con **Installa per sistema**, un utente malintenzionato nel computer in cui è in esecuzione il programma potrebbe usare l'interfaccia utente per riassegnare i privilegi nel computer client.
+
+Usare programmi che usano Windows Installer per l'installazione e privilegi elevati per utente per le distribuzioni software che richiedono credenziali amministrative. Il programma di installazione deve essere eseguito nel contesto di un utente che non ha credenziali amministrative. I privilegi elevati per utente di Windows Installer rappresentano il modo più sicuro per distribuire applicazioni con questo requisito.
+
+
+### <a name="restrict-whether-users-can-install-software-interactively"></a>Limitare gli utenti che possono installare software in modo interattivo
+
+Configurare l'impostazione client **Autorizzazioni di installazione** nel gruppo **Agente computer**. Questa impostazione limita i tipi di utenti che possono installare software usando il Catalogo applicazioni o Software Center. 
+
+Ad esempio, creare un impostazione client personalizzata con **Autorizzazioni di installazione** impostato su **Solo amministratori**. Applicare questa impostazione client a un raccolta di server. Questa configurazione impedisce agli utenti senza autorizzazioni amministrative di installare software in tali server.  
+
+
+### <a name="for-mobile-devices-deploy-only-applications-that-are-signed"></a>Per i dispositivi mobili, distribuire solo le applicazioni firmate.
+
+Distribuire applicazioni per dispositivi mobili solo se il relativo codice è firmato da un'autorità di certificazione (CA) considerata attendibile dal dispositivo mobile. 
+
+Ad esempio:
+- Un'applicazione di un fornitore, firmata da un'autorità di certificazione nota, come VeriSign.  
+
+- Un'applicazione interna che viene firmata in modo indipendente da Configuration Manager usando l'autorità di certificazione interna.  
+
+- Un'applicazione interna firmata con Configuration Manager quando si crea il tipo di applicazione e si usa un certificato di firma.
+
+
+### <a name="secure-the-location-of-the-mobile-device-application-signing-certificate"></a>Proteggere il percorso del certificato di firma dell'applicazione per dispositivi mobili
+
+Se si firmano applicazioni per dispositivi mobili usando la **Creazione guidata applicazione** in Configuration Manager, proteggere il percorso del file del certificato di firma e il canale di comunicazione. Per proteggersi dall'elevazione dei privilegi e dagli attacchi man-in-the-middle, archiviare il file del certificato di firma in una cartella protetta 
+
+e usare IPsec tra i computer seguenti:
+- Computer che esegue la console di Configuration Manager
+- Computer in cui è archiviato il file del certificato di firma
+- Computer in cui sono archiviati i file di origine dell'applicazione
+
+In alternativa, firmare l'applicazione indipendentemente da Configuration Manager e prima di eseguire la **Creazione guidata applicazione**.
+
+
+### <a name="implement-access-controls"></a>Implementare i controlli di accesso
+
+Per proteggere i computer di riferimento, implementare i controlli di accesso. Quando si configura il metodo di rilevamento in un tipo di distribuzione selezionando un computer di riferimento, assicurarsi che il computer non sia compromesso.
+
+
+### <a name="restrict-and-monitor-administrative-users"></a>Limitare e monitorare gli utenti amministratori
+
+Limitare e monitorare gli utenti amministratori a cui vengono concessi i ruoli di sicurezza basata sui ruoli per la gestione delle applicazioni:
+- **Amministratore applicazione**
+- **Autore applicazione**
+- **Gestione distribuzione applicazioni**
+
+Anche quando si configura l'amministrazione basata su ruoli, gli utenti amministratori che creano e distribuiscono le applicazioni potrebbero disporre di più autorizzazioni del previsto. Ad esempio, gli utenti amministratori che creano o modificano un'applicazione possono selezionare applicazioni dipendenti non incluse nel loro ambito di protezione.
+
+
+### <a name="configure-app-v-apps-in-virtual-environments-with-the-same-trust-level"></a>Configurare app App-V in ambienti virtuali con lo stesso livello di attendibilità
+
+Durante la configurazione di ambienti virtuali Microsoft Application Virtualization (App-V), selezionare le applicazioni con lo stesso livello di attendibilità nell'ambiente virtuale. Poiché le applicazioni in un ambiente virtuale App-V possono condividere risorse, come gli Appunti, configurare l'ambiente virtuale in modo che le applicazioni selezionate abbiano lo stesso livello di attendibilità.
+
+Per altre informazioni, vedere [Create App-V virtual environments](/sccm/apps/deploy-use/create-app-v-virtual-environments) (Creare ambienti virtuali App-V).
+
+
+### <a name="make-sure-macos-apps-are-from-a-trustworthy-source"></a>Verificare che le app macOS provengano da un'origine attendibile
+
+Se si distribuiscono applicazioni per dispositivi macOS, accertarsi che i file di origine provengano da una fonte attendibile. Lo strumento CMAppUtil non convalida la firma del pacchetto di origine. Verificare che il pacchetto provenga da un'origine considerata attendibile. Lo strumento CMAppUtil non consente di rilevare eventuali manomissioni dei file.
+
+
+### <a name="secure-the-cmmac-file-for-macos-apps"></a>Proteggere il file con estensione cmmac per le app macOS
+
+Se si distribuiscono applicazioni per computer macOS, proteggere il percorso del file con estensione **cmmac**. Lo strumento CMAppUtil genera questo file e quindi lo si importa in Configuration Manager. Questo file non viene firmato o convalidato. 
+
+Proteggere il canale di comunicazione quando si importa questo file in Configuration Manager. Per evitare che questo file venga manomesso, archiviarlo in una cartella protetta. e usare IPsec tra i computer seguenti:
+- Computer che esegue la console di Configuration Manager  
+- Computer in cui è archiviato il file **CMMAC**  
+
+
+### <a name="use-https-for-web-applications"></a>Usare HTTPS per le applicazioni Web
+
+Se si configura un tipo di distribuzione delle applicazioni Web, usare HTTPS per proteggere la connessione. Se si distribuisce un'applicazione Web usando un collegamento HTTP anziché un collegamento HTTPS, il dispositivo potrebbe essere reindirizzato a un server non autorizzato. I dati trasferiti tra il dispositivo e il server potrebbero essere manomessi.
 
 
 
@@ -62,16 +166,22 @@ ms.locfileid: "32336409"
 
      Quando un'applicazione App-V viene pubblicata in un computer, tutti gli utenti che accedono a tale computer possono installare l'applicazione. Non è possibile limitare gli utenti che possono installare l'applicazione dopo la pubblicazione.  
 
--   Non è possibile limitare le autorizzazioni di installazione per il portale dell'azienda.  
+-   Non è possibile limitare le autorizzazioni di installazione per il portale aziendale nei dispositivi mobili.  
 
-     Sebbene sia possibile configurare un'impostazione client per limitare le autorizzazioni di installazione, ad esempio solo agli utenti principali di un dispositivo o agli amministratori locali, tale impostazione non funziona per il portale dell'azienda. Questo problema può causare un'elevazione dei privilegi. Gli utenti possono installare un'app che non dovrebbero invece poter installare.  
+     Anche se è possibile configurare un'impostazione client per limitare le autorizzazioni di installazione, questa impostazione non funziona per il portale aziendale. Questo problema può causare un'elevazione dei privilegi. Gli utenti possono installare un'app che non dovrebbero invece poter installare.  
 
 
 
 ##  <a name="BKMK_CertificatesSilverlight5"></a> Certificati per Microsoft Silverlight 5 e modalità di attendibilità elevata richiesta per il Catalogo applicazioni  
- I client di Configuration Manager richiedono Microsoft Silverlight 5, che deve essere eseguito in modalità di attendibilità elevata affinché gli utenti installino il software dal Catalogo applicazioni. Per impostazione predefinita, le applicazioni Silverlight vengono eseguite in modalità di attendibilità parziale per evitare l'accesso ai dati utente. Se non è già installato, Configuration Manager installa automaticamente Microsoft Silverlight 5 nei client. Per impostazione predefinita, Configuration Manager imposta su **Sì** l'impostazione client **Consentire alle applicazioni di Silverlight di essere eseguite in modalità attendibilità elevata**. Questa impostazione consente alle applicazioni Silverlight firmate e attendibili di richiedere la modalità attendibilità elevata.  
 
- Quando si installa il ruolo del sistema del sito del punto per siti Web del Catalogo applicazioni, il client installa anche un certificato di firma Microsoft nell'archivio certificati del computer Autori attendibili in ogni computer client di Configuration Manager. Le applicazioni Silverlight firmate da questo certificato vengono eseguite nella modalità attendibilità elevata che i computer richiedono per installare software dal Catalogo applicazioni. Configuration Manager gestisce automaticamente questo certificato di firma. Per garantire la continuità del servizio, non eliminare manualmente né spostare questo certificato di firma Microsoft.  
+> [!Important]  
+> A partire da Configuration Manager versione 1802, Silverlight non viene più installato automaticamente.
+> 
+> A partire dalla versione 1806, l'**esperienza utente di Silverlight** per il ruolo Punto per siti Web del Catalogo applicazioni non è più supportato. Gli utenti devono usare il nuovo Software Center. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex).  
+
+ I client di Configuration Manager versione 1710 e precedenti richiedono Microsoft Silverlight 5, che deve essere eseguito in modalità di attendibilità elevata perché gli utenti installino il software dal Catalogo applicazioni. Per impostazione predefinita, le applicazioni Silverlight vengono eseguite in modalità di attendibilità parziale per evitare l'accesso ai dati utente. Se non è già installato, Configuration Manager installa automaticamente Microsoft Silverlight 5 nei client. Per impostazione predefinita, Configuration Manager imposta su **Sì** l'impostazione client **Consentire alle applicazioni di Silverlight di essere eseguite in modalità attendibilità elevata**. Questa impostazione consente alle applicazioni Silverlight firmate e attendibili di richiedere la modalità attendibilità elevata.  
+
+ Quando si installa il ruolo del sistema del sito del punto per siti Web del Catalogo applicazioni, il client installa anche un certificato di firma Microsoft nell'archivio certificati del computer Autori attendibili in ogni computer client di Configuration Manager. Le applicazioni Silverlight firmate da questo certificato vengono eseguite nella modalità attendibilità elevata che i computer richiedono per installare software dal Catalogo applicazioni. Configuration Manager gestisce automaticamente questo certificato di firma. Per aumentare la continuità del servizio, non eliminare manualmente né spostare questo certificato di firma Microsoft.  
 
 > [!WARNING]  
 >  Se abilitata, l'impostazione client **Consentire alle applicazioni di Silverlight di essere eseguite in modalità attendibilità elevata** consente l'esecuzione in modalità attendibilità elevata per tutte le applicazioni Silverlight firmate da certificati nell'archivio certificati Autori attendibili nell'archivio computer o nell'archivio utente. L'impostazione client non può abilitare la modalità di attendibilità elevata specificamente per il Catalogo applicazioni di Configuration Manager o per l'archivio certificati Autori attendibili nell'archivio computer. Se un malware aggiunge un certificato non autorizzato nell'archivio Autori attendibili, anche il malware che usa l'applicazione Silverlight può essere eseguito in modalità di attendibilità elevata.  
@@ -80,45 +190,57 @@ ms.locfileid: "32336409"
 
  Per altre informazioni sulle applicazioni attendibili in Silverlight, vedere [Trusted Applications (Applicazioni attendibili)](https://go.microsoft.com/fwlink/p/?LinkId=252842).  
 
- > [!NOTE]
- > A partire da Configuration Manager 1802, Silverlight non viene più installato automaticamente. La funzionalità principale del Catalogo applicazioni è ora inclusa in Software Center. Il supporto per il sito Web Catalogo applicazioni terminerà con il primo aggiornamento rilasciato dopo il 1 giugno 2018.
-
 
 
 ##  <a name="privacy-information-for-application-management"></a>Informazioni sulla privacy per la gestione delle applicazioni  
+
  La gestione delle applicazioni consente l'esecuzione di qualsiasi applicazione, programma o script in qualsiasi client della gerarchia. Configuration Manager non controlla i tipi di applicazioni, programmi o script eseguiti né il tipo di informazioni trasmesse. Durante il processo di distribuzione delle applicazioni, Configuration Manager può trasmettere informazioni che identificano gli account di accesso e del dispositivo tra i client e i server.  
 
  Configuration Manager conserva le informazioni sullo stato relative al processo di distribuzione del software. Le informazioni sullo stato di distribuzione del software non vengono crittografate durante la trasmissione, a meno che il client non comunichi tramite HTTPS. Le informazioni sullo stato non vengono memorizzate in forma crittografata nel database.  
 
  L'uso delle funzionalità di installazione delle applicazioni di Configuration Manager per installare in remoto, in modo interattivo o automatico il software nei client può essere soggetto alle condizioni di licenza software per tali software, distinte dalle Condizioni di licenza software per System Center Configuration Manager. Rivedere sempre e accettare le Condizioni di licenza software prima di distribuire il software usando Configuration Manager.  
 
+ Configuration Manager raccoglie dati di utilizzo e di diagnostica sulle applicazioni, che vengono usati da Microsoft per migliorare le versioni future. Per altre informazioni, vedere [Diagnostica e dati di utilizzo](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data).
+
  La distribuzione delle applicazioni non avviene per impostazione predefinita e richiede diversi passaggi di configurazione.  
 
- Due funzionalità facoltative che consentono la corretta distribuzione del software sono l'affinità utente dispositivo e il Catalogo applicazioni:  
+ Le funzionalità seguenti consentono di distribuire il software in modo efficiente:   
 
--   L'affinità utente-dispositivo esegue il mapping di un utente ai dispositivi. Un amministratore di Configuration Manager distribuisce il software a un utente. Il client installa automaticamente il software in uno o più computer che l'utente usa più di frequente.  
+- L'**affinità utente-dispositivo** esegue il mapping di un utente ai dispositivi. Un amministratore di Configuration Manager distribuisce il software a un utente. Il client installa automaticamente il software in uno o più computer che l'utente usa più di frequente.  
 
--   Il Catalogo applicazioni è un sito Web che consente agli utenti di richiedere software da installare.  
+- Il **Catalogo applicazioni** è un sito Web che consente agli utenti di richiedere software da installare.  
 
- Visualizzare le sezioni seguenti per informazioni sulla privacy sull'affinità utente dispositivo e il Catalogo applicazioni.  
+    > [!Note]  
+    > A partire da Configuration Manager 1802, la funzionalità principale del Catalogo applicazioni è ora inclusa in Software Center. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex).  
+
+-  **Software Center** viene automaticamente installato in un dispositivo quando si installa il client di Configuration Manager. Gli utenti modificano le impostazioni e cercano e installano applicazioni in Software Center.  
+
+ Visualizzare le sezioni seguenti per informazioni sulla privacy sull'[affinità utente-dispositivo](#bkmk_privacy-uda) e su [Software Center e il Catalogo applicazioni](#bkmk_privacy-userex).  
 
  Prima di configurare la gestione delle applicazioni, considerare i requisiti sulla privacy.  
 
 
+### <a name="bkmk_privacy-uda"></a> Affinità utente-dispositivo  
 
-##  <a name="user-device-affinity"></a>Affinità utente dispositivo  
 -  È possibile che Configuration Manager trasmetta informazioni tra i client e i sistemi del sito del punto di gestione, che identificano il computer e l'account di accesso, nonché dati di utilizzo aggregati relativi agli account di accesso.  
+
 -  Le informazioni trasmesse tra il client e il server non vengono crittografate, a meno che il punto di gestione sia configurato in modo da richiedere che i client comunichino tramite HTTPS.  
--  Le informazioni sul computer e sull'uso dell'account di accesso, usate per eseguire il mapping di un utente a un dispositivo, vengono archiviate nei computer client, inviate ai punti di gestione e quindi archiviate nel database di Configuration Manager. Le informazioni precedenti vengono eliminate dal database per impostazione predefinita dopo 90 giorni. È possibile configurare il comportamento di eliminazione impostando l'attività di manutenzione del sito **Elimina dati di affinità utente dispositivo obsoleti** .
+
+-  Le informazioni sul computer e sull'uso dell'account di accesso, usate per eseguire il mapping di un utente a un dispositivo, vengono archiviate nei computer client, inviate ai punti di gestione e quindi archiviate nel database di Configuration Manager. Le informazioni precedenti vengono eliminate dal database per impostazione predefinita dopo 90 giorni. È possibile configurare il comportamento di eliminazione impostando l'attività di manutenzione del sito **Elimina dati di affinità utente dispositivo obsoleti** .  
+
 -  Configuration Manager conserva informazioni sullo stato relative all'affinità utente dispositivo. Le informazioni sullo stato non vengono crittografate durante la trasmissione, a meno che i client non siano configurati in modo da comunicare con i punti di gestione tramite HTTPS. Le informazioni sullo stato non vengono memorizzate in forma crittografata nel database.  
--  Le informazioni sul computer, le informazioni sull'utilizzo dell'account di accesso e le informazioni sullo stato non vengono inviate a Microsoft.  
--  Le informazioni sul computer e sull'utilizzo dell'account di accesso, usate per stabilire l'affinità tra utenti e dispositivi, sono sempre abilitate. Inoltre, gli utenti e gli utenti amministrativi possono fornire informazioni sull'affinità utente dispositivo.  
+
+-  Le informazioni sul computer e sull'utilizzo dell'account di accesso, usate per stabilire l'affinità utente-dispositivo, sono sempre abilitate. Gli utenti e gli utenti amministrativi possono fornire informazioni sull'affinità utente-dispositivo.  
 
 
+### <a name="bkmk_privacy-userex"></a> Software Center e Catalogo applicazioni  
 
-##  <a name="application-catalog"></a>Catalogo applicazioni  
--  Il Catalogo applicazioni consente all'amministratore di Configuration Manager di pubblicare tutte le applicazioni, i programmi o gli script che gli utenti dovranno eseguire. Configuration Manager non ha alcun controllo sui tipi di programmi o script che vengono pubblicati nel catalogo, né sul tipo di informazioni trasmesse.    
+-  Software Center e il Catalogo applicazioni consentono all'amministratore di Configuration Manager di pubblicare tutte le applicazioni, i programmi o gli script che gli utenti dovranno eseguire. Configuration Manager non ha alcun controllo sui tipi di programmi o script che vengono pubblicati nel catalogo, né sul tipo di informazioni trasmesse.  
+
 -  Configuration Manager potrebbe trasmettere informazioni tra i client e i ruoli del sistema del sito del Catalogo applicazioni. Queste informazioni potrebbero consentire l'identificazione di computer e account di accesso. Le informazioni trasmesse tra il client e i server non vengono crittografate, a meno che tali ruoli del sistema non siano configurati in modo da richiedere che i client si connettano tramite HTTPS.  
+
 -  Le informazioni relative alla richiesta di approvazione applicazione vengono memorizzate nel database di Configuration Manager. Le richieste annullate o respinte vengono eliminate per impostazione predefinita dopo 30 giorni, insieme alle relative voci di cronologia delle richieste. È possibile configurare il comportamento di eliminazione impostando l'attività di manutenzione del sito **Elimina dati richiesta applicazione obsoleti** . Le richieste di approvazione di applicazioni con stato approvato e in attesa non vengono mai eliminate.  
--  Le informazioni scambiate con il Catalogo applicazioni non vengono inviate a Microsoft.  
+
+-  Software Center viene automaticamente installato quando si installa il client di Configuration Manager in un dispositivo.  
+
 -  Il Catalogo applicazioni non viene installato per impostazione predefinita. Questa installazione richiede diversi passaggi di configurazione.  

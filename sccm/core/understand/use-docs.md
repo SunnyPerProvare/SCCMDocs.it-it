@@ -2,7 +2,7 @@
 title: Come usare la documentazione
 titleSuffix: Configuration Manager
 description: Suggerimenti sull'uso della di documentazione tecnica di Configuration Manager.
-ms.date: 04/30/2018
+ms.date: 09/07/2018
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-other
@@ -11,12 +11,12 @@ ms.assetid: b3d755bd-0870-4f1f-a56d-bfd3c7b492b9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 46bff7e26a5df326b686b07c37f1d58352755857
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 6bd4675d3b366c5f414467b76627e25b91259ef2
+ms.sourcegitcommit: 240d3199e1c6fa47af6eda499492b2527516ab18
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32345091"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44326204"
 ---
 # <a name="how-to-use-the-configuration-manager-docs"></a>Uso della documentazione di Configuration Manager
 
@@ -63,9 +63,9 @@ Per informazioni generali sul prodotto, vedere l'argomento sulla [consultazione 
 
 Per passare alla sezione Commenti e suggerimenti nella parte inferiore, fare clic sul collegamento **Commenti e suggerimenti** in alto a destra nell'articolo. Questa sezione è integrata con Problemi di GitHub. Per altre informazioni sull'integrazione con Problemi di GitHub, vedere il [post di blog sulla piattaforma di documentazione](https://docs.microsoft.com/teamblog/a-new-feedback-system-is-coming-to-docs).
 
-Per condividere commenti e suggerimenti sul prodotto Configuration Manager, fare clic su **Give product feedback** (Invia commenti e suggerimenti sulla documentazione). Per altre informazioni, vedere la sezione su [commenti e suggerimenti per i prodotti](/sccm/core/understand/find-help#product-feedback). 
+Per condividere commenti e suggerimenti sul prodotto Configuration Manager, fare clic su **Commenti e suggerimenti sul prodotto**. Per altre informazioni, vedere la sezione su [commenti e suggerimenti per i prodotti](/sccm/core/understand/find-help#product-feedback). 
 
-Un [account GitHub](https://github.com/join) è un prerequisito per l'invio di un feedback sulla documentazione. Dopo aver effettuato l'accesso, viene richiesta un'autorizzazione monouso per MicrosoftDocs. Quando si fa clic su **Give documentation feedback** (Invia commenti e suggerimenti sulla documentazione) immettere un titolo e un commento e quindi scegliere **Invia commenti e suggerimenti**. Con questa azione si aggiunge un nuovo problema relativo all'articolo di destinazione al [repository SCCMdocs](https://github.com/MicrosoftDocs/SCCMdocs/issues).
+Un [account GitHub](https://github.com/join) è un prerequisito per l'invio di un feedback sulla documentazione. Dopo aver effettuato l'accesso, viene richiesta un'autorizzazione monouso per MicrosoftDocs. Quando si fa clic su **Commenti sul contenuto** immettere un titolo e un commento e quindi scegliere **Invia commenti e suggerimenti**. Con questa azione si aggiunge un nuovo problema relativo all'articolo di destinazione al [repository SCCMdocs](https://github.com/MicrosoftDocs/SCCMdocs/issues).
 
 Questa integrazione consente anche di visualizzare eventuali problemi chiusi o aperti esistenti per l'articolo di destinazione. Se esistono altri problemi, esaminarli prima di inviare un nuovo problema. Se si trova un problema correlato, fare clic sull'icona del viso per aggiungere una reazione o espanderla per aggiungere un commento. 
 
@@ -106,15 +106,49 @@ Per ricevere notifiche quando viene modificato il contenuto nella libreria della
 La libreria di documentazione di Configuration Manager, analogamente alla maggior parte del contenuto su docs.microsoft.com, è open source su GitHub. Questa raccolta accetta e incoraggia i contributi della community. Per altre informazioni su come iniziare, vedere la [guida per i collaboratori](https://docs.microsoft.com/contribute). Creare un [account GitHub](https://github.com/join) è l'unico prerequisito.
 
 #### <a name="basic-steps-to-contribute-to-sccmdocs"></a>Procedura di base per contribuire a SCCMdocs
-1. Fare clic su **Modifica** nell'articolo di destinazione. Questa azione apre il file di origine in GitHub.
-2. Per modificare il file di origine, fare clic sull'icona a forma di matita.
-3. Apportare le modifiche nel markdown. Per altre informazioni, vedere [How to use Markdown for writing Docs](https://docs.microsoft.com/contribute/how-to-write-use-markdown) (Come usare il markdown per scrivere documenti). 
-4. Nella sezione di modifica del file immettere un commento di commit pubblico che descriva *cosa* è stato modificato. Quindi fare clic su **Propose file change** (Proponi modifica file).
-5. Scorrere verso il basso e verificare le modifiche apportate. Fare clic su **Crea richiesta pull** per aprire il modulo. Indicare *perché* è stata apportata la modifica. Assegnare un tag all'autore dell'articolo e richiedere la sua revisione. Fare clic su **Crea richiesta pull**.
+1. Fare clic su **Modifica** nell'articolo di destinazione. Questa azione apre il file di origine in GitHub.  
+
+2. Per modificare il file di origine, fare clic sull'icona a forma di matita.  
+
+3. Apportare le modifiche nel markdown. Per altre informazioni, vedere [How to use Markdown for writing Docs](https://docs.microsoft.com/contribute/how-to-write-use-markdown) (Come usare il markdown per scrivere documenti).  
+
+4. Nella sezione di modifica del file immettere un commento di commit pubblico che descriva *cosa* è stato modificato. Quindi fare clic su **Propose file change** (Proponi modifica file).  
+
+5. Scorrere verso il basso e verificare le modifiche apportate. Fare clic su **Crea richiesta pull** per aprire il modulo. Indicare *perché* è stata apportata la modifica. Assegnare un tag all'autore dell'articolo e richiedere la sua revisione. Fare clic su **Crea richiesta pull**.  
+
 
 ### <a name="what-to-contribute"></a>In che modo si contribuisce
-Se si è interessati a collaborare ma non si sa come iniziare, vedere i suggerimenti seguenti:
-- Esaminare un articolo per verificarne l'accuratezza. Aggiornare quindi i metadati **ms.date** usando il formato `mm/dd/yyyy`. Questo contributo consente di mantenere aggiornato il contenuto.
-- Aggiungere precisazioni, esempi o indicazioni in base alla propria esperienza. Questo contributo usa le risorse della community per condividere le informazioni.  
-- Correggere le traduzioni in una lingua diversa dall'inglese. Questo contributo migliora l'usabilità del contenuto localizzato.
-- Cercare nell'elenco dei problemi le etichette [good-first-issue](https://github.com/MicrosoftDocs/sccmdocs/issues?q=is:open+is:issue+label:good-first-issue) e [help-wanted](https://github.com/MicrosoftDocs/sccmdocs/issues?q=is:open+is:issue+label:help-wanted) assegnate alla community. Le etichette vengono assegnate dagli autori di Microsoft ai problemi per cui più facilmente si riceveranno contributi della community.
+
+Se si è interessati a collaborare, ma non si sa come iniziare, vedere i suggerimenti seguenti:  
+
+- Cercare nell'elenco dei problemi le etichette assegnate alla community:  
+    - [good-first-issue](https://github.com/MicrosoftDocs/sccmdocs/issues?q=is:open+is:issue+label:good-first-issue)   
+    - [help-wanted](https://github.com/MicrosoftDocs/sccmdocs/issues?q=is:open+is:issue+label:help-wanted)  
+
+    Le etichette vengono assegnate dagli autori di Microsoft ai problemi per cui più facilmente si riceveranno contributi della community.  
+
+- Esaminare un articolo per verificarne l'accuratezza. Aggiornare quindi i metadati **ms.date** usando il formato `mm/dd/yyyy`. Questo contributo consente di mantenere aggiornato il contenuto.  
+
+- Aggiungere precisazioni, esempi o indicazioni in base alla propria esperienza. Questo contributo usa le risorse della community per condividere le informazioni.   
+
+- Correggere le traduzioni in una lingua diversa dall'inglese. Questo contributo migliora l'usabilità del contenuto localizzato.  
+
+> [!Note]  
+> Chi non è un dipendente di Microsoft deve firmare un contratto di licenza per contributi per inviare contributi consistenti. GitHub richiede automaticamente di firmare questo contratto quando un contributo raggiunge la soglia.  
+
+
+### <a name="tips"></a>Suggerimenti
+
+Quando si contribuisce a documenti di Configuration Manager, seguire queste linee guida generali:
+
+- Invece di inviare richieste pull di grandi dimensioni, [segnalare un problema](https://docs.microsoft.com/sccm/core/understand/use-docs#bkmk_docfeedback) e avviare una discussione. Si eviterà così di perdere tempo e sarà possibile stabilire come procedere.  
+
+- Leggere la [guida di stile Microsoft](https://aka.ms/MicrosoftStyle). Tenere presenti i [10 suggerimenti principali di Microsoft sullo stile e il tono](https://docs.microsoft.com/style-guide/top-10-tips-style-voice).  
+
+- Basare il proprio lavoro sul [modello di richiesta pull](https://github.com/MicrosoftDocs/SCCMdocs/blob/master/PULL_REQUEST_TEMPLATE.md).  
+
+- Seguire il [flusso di lavoro di GitHub](https://guides.github.com/introduction/flow/).  
+
+- Creare spesso blog e tweet (o quanto si ritiene idoneo) sui propri contributi.  
+
+Questo elenco è stato tratto dalla [guida ai contributi su .NET](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md#dos-and-donts).
