@@ -10,12 +10,12 @@ ms.assetid: 32e2d6b9-148f-45e2-8083-98c656473f82
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0429c62f68a111bc7f620d1c954d5c8cf944d1c1
-ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
+ms.openlocfilehash: 2e0f74790437b34d1c5cd5dc00767ec782a51b45
+ms.sourcegitcommit: fe279229a90fdc8cddbb13c7ffdbbb22af0e25ef
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42590057"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47229297"
 ---
 # <a name="cmpivot-for-real-time-data-in-configuration-manager"></a>CMPivot per i dati in tempo reale in Configuration Manager
 
@@ -78,7 +78,7 @@ Per usare CMPivot sono necessari i componenti seguenti:
 
      - Fare clic su una delle **Entità** per aggiungerla alla stringa di query.  
 
-     - I collegamenti per **Operatori tabella**, **Funzioni di aggregazione** e **Funzioni scalari** consentono di aprire la documentazione di riferimento del linguaggio nel Web browser. CMPivot usa lo stesso linguaggio di query di [Azure Log Analytics](https://docs.loganalytics.io/docs/Language-Reference/Change-log).  
+     - I collegamenti per **Operatori tabella**, **Funzioni di aggregazione** e **Funzioni scalari** consentono di aprire la documentazione di riferimento del linguaggio nel Web browser. CMPivot usa lo stesso linguaggio di query di [Azure Log Analytics](https://docs.microsoft.com/azure/kusto/query/).  
 
 3. Tenere la finestra CMPivot aperta per visualizzare i risultati dai client. Quando si chiude la finestra CMPivot, la sessione è completa.  
 
@@ -113,7 +113,7 @@ La finestra CMPivot presenta gli elementi seguenti:
 
 5. Nel riquadro della query si compila o si digita una query da eseguire nei client della raccolta.  
 
-    - CMPivot usa un subset dello stesso linguaggio di query di [Azure Log Analytics](https://docs.loganalytics.io/docs/Language-Reference/Change-log).  
+    - CMPivot usa un subset dello stesso linguaggio di query di [Azure Log Analytics](https://docs.microsoft.com/azure/kusto/query/).  
 
     - Tagliare, copiare o incollare il contenuto nel riquadro della query.  
 

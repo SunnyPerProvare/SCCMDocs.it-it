@@ -10,12 +10,12 @@ ms.assetid: 7996b3eb-5259-483b-af40-adae2943d123
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 21833d124ee998f0b943d2620370a2fcff264e28
-ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
+ms.openlocfilehash: ebd51b397e37c69e8f6e8d1e154fc369347bd63a
+ms.sourcegitcommit: fe279229a90fdc8cddbb13c7ffdbbb22af0e25ef
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42591646"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47229365"
 ---
 # <a name="capabilities-in-technical-preview-1805-for-system-center-configuration-manager"></a>Funzionalità nella Technical Preview 1805 per System Center Configuration Manager
 
@@ -255,7 +255,7 @@ Provare a completare le attività. Inviare quindi [commenti e suggerimenti](capa
 2. L'interfaccia fornisce ulteriori informazioni sull'uso dello strumento. 
      - È possibile immettere manualmente le stringhe di query nella parte superiore oppure fare clic sui collegamenti nella documentazione in linea.
      - Fare clic su una delle **Entità** per aggiungerla alla stringa di query. 
-     - I collegamenti per **Operatori tabella**, **Funzioni di aggregazione** e **Funzioni scalari** consentono di aprire la documentazione di riferimento del linguaggio nel Web browser. CMPivot usa lo stesso linguaggio di query di [Azure Log Analytics](https://docs.loganalytics.io/docs/Language-Reference/Change-log).
+     - I collegamenti per **Operatori tabella**, **Funzioni di aggregazione** e **Funzioni scalari** consentono di aprire la documentazione di riferimento del linguaggio nel Web browser. CMPivot usa lo stesso linguaggio di query di [Azure Log Analytics](https://docs.microsoft.com/azure/kusto/query/).
 
 
 
