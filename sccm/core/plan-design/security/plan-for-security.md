@@ -180,7 +180,7 @@ Dato il numero di opzioni e scelte di configurazione in Configuration Manager, s
 
 3.  Eseguire il progetto pilota di un'implementazione PKI per i certificati client. Per una distribuzione di esempio, vedere la sezione *Distribuzione del certificato client per computer Windows* dell'articolo [Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
-4.  Installare i client usando il metodo di installazione push client. Per altre informazioni, vedere la sezione [Come installare i client Configuration Manager tramite push client](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush) nell'articolo [Come distribuire client a computer Windows in System Center Configuration Manager](../../../core/clients/deploy/deploy-clients-to-windows-computers.md).  
+4.  Installare i client usando il metodo di installazione push client. Per altre informazioni, vedere la sezione [Come installare i client Configuration Manager tramite push client](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush) nell'articolo [Come distribuire i client nei computer Windows in System Center Configuration Manager](../../../core/clients/deploy/deploy-clients-to-windows-computers.md).  
 
 5.  Monitorare lo stato e la distribuzione dei client usando i report e le informazioni nella console di Configuration Manager.  
 
