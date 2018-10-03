@@ -33,7 +33,7 @@ ms.locfileid: "32351643"
 ##  <a name="BKMK_Prerequisites"></a> Prerequisiti  
  Per visualizzare i dati nel dashboard di manutenzione di Windows 10 è necessario seguire questa procedura:  
 
--   I computer Windows 10 devono usare gli aggiornamenti software di Configuration Manager con Windows Server Update Services (WSUS) per la gestione degli aggiornamenti software. Se la gestione degli aggiornamenti software avviene tramite Windows Update per le aziende o Windows Insider, il computer non viene valutato nei piani di manutenzione di Windows 10. Per altre informazioni, vedere [Integration with Windows Update for Business in Windows 10](../../sum/deploy-use/integrate-windows-update-for-business-windows-10.md).  
+-   I computer Windows 10 devono usare gli aggiornamenti software di Configuration Manager con Windows Server Update Services (WSUS) per la gestione degli aggiornamenti software. Se la gestione degli aggiornamenti software avviene tramite Windows Update per le aziende o Windows Insider, il computer non viene valutato nei piani di manutenzione di Windows 10. Per altre informazioni, vedere [Integrazione con Windows Update for Business in Windows 10](../../sum/deploy-use/integrate-windows-update-for-business-windows-10.md).  
 
 -   Installare WSUS 4.0 con l' [hotfix 3095113](https://support.microsoft.com/kb/3095113) nei punti di aggiornamento software e nei server del sito. Questo hotfix aggiunge la classificazione di aggiornamento software **Aggiornamenti**. Per altre informazioni, vedere [Prerequisiti per aggiornamenti software](../../sum/plan-design/prerequisites-for-software-updates.md).  
 
