@@ -2,7 +2,7 @@
 title: Novità della versione 1806
 titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1806 di Configuration Manager (Current Branch).
-ms.date: 08/29/2018
+ms.date: 09/19/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 0249dbd3-1e85-4d05-a9e5-420fbe44d850
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 13dbffd442cfbe0ced30d46b9a93dd03418202c9
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.openlocfilehash: 3b5cb217b9351f5d2491070b447d0a96efe0aa29
+ms.sourcegitcommit: 4e4b71227309bee7e9f1285971f8235c67a9c502
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893842"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46533780"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Novità della versione 1806 di Configuration Manager (Current Branch)
 
@@ -29,6 +29,8 @@ Esaminare sempre l'elenco di controllo più recente per installare questo aggior
 > Questo articolo elenca tutte le funzionalità importanti di questa versione al momento. Tuttavia, non tutte le sezioni sono ancora collegate al contenuto aggiornato con maggiori informazioni sulle nuove funzionalità. Continuare a controllare questa pagina con regolarità per verificare la disponibilità di aggiornamenti. Le modifiche sono contrassegnate con il tag ***[Aggiornato]***. Questa nota sarà rimossa nella versione finale del contenuto.  
 
 A parte le nuove funzionalità, questa versione include anche ulteriori modifiche, ad esempio correzioni di bug. Per altre informazioni, vedere [Riepilogo delle modifiche in System Center Configuration Manager Current Branch, versione 1806](https://support.microsoft.com/help/4459701).
+
+Per altre informazioni sulle modifiche apportate ai cmdlet di Windows PowerShell per Configuration Manager, vedere le [note sulla versione di PowerShell 1806](https://docs.microsoft.com/powershell/sccm/1806_release_notes?view=sccm-ps).
 
 <!--
 The following additional updates to this release are also now available:
@@ -141,6 +143,13 @@ Per altre informazioni, vedere [Supporto per download parziale](/sccm/core/plan-
 Per altre informazioni, vedere [Opzioni del gruppo di limiti per download peer](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgoptions).
 
 
+### <a name="improvement-to-peer-cache-source-location-status"></a>Miglioramento dello stato della posizione di origine di peer cache
+<!--SCCMDocs issue 850-->
+ ***[Aggiornato]*** Configuration Manager è più efficiente nel determinare se è stato eseguito il roaming di un'origine peer cache in un'altra posizione. Questo comportamento garantisce che il punto di gestione la offra come origine di contenuto ai client nella nuova posizione e non in quella precedente. Se si usa la funzionalità di peer cache con origini di peer cache in roaming, dopo aver aggiornato il sito alla versione 1806, aggiornare anche tutte le origini di peer cache alla versione più recente del client. Il punto di gestione non include tali origini di peer cache nell'elenco di posizioni del contenuto finché non vengono aggiornate almeno alla versione 1806.
+
+Per altre informazioni, vedere i [requisiti per la peer cache](/sccm/core/plan-design/hierarchy/client-peer-cache#requirements).
+
+
 
 <!-- ## Migration  -->
 
@@ -177,9 +186,14 @@ Per altre informazioni, vedere [CMTrace](/sccm/core/support/cmtrace).
 
 
 ### <a name="cloud-management-dashboard"></a>Dashboard di gestione del cloud
-<!--1358461--> Il nuovo dashboard di Cloud Management fornisce una visualizzazione centralizzata per l'utilizzo di Cloud Management Gateway (CMG). Dopo l'onboarding del sito con Azure AD, nel dashboard vengono visualizzati anche dati sugli utenti e i dispositivi del cloud. Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio**. Selezionare il nodo **Gestione cloud** e visualizzare i riquadri del dashboard.  
+<!--1358461-->
+ ***[Aggiornato]*** Il nuovo dashboard di Cloud Management offre una vista centralizzata per l'uso di Cloud Management Gateway (CMG). Dopo l'onboarding del sito con Azure AD, nel dashboard vengono visualizzati anche dati sugli utenti e i dispositivi del cloud.   
 
-Questa funzionalità include anche l'**analizzatore della connessione CMG** per verifiche in tempo reale a supporto della risoluzione dei problemi. L'utilità inclusa nella console controlla lo stato corrente del servizio e il canale di comunicazione dal punto di connessione CMG a tutti i punti di gestione che consentono il traffico CMG. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**. Espandere **Servizi cloud** e selezionare **Gateway di gestione cloud**. Selezionare l'istanza di CMG di destinazione e quindi fare clic su **Analizzatore della connessione** nella barra multifunzione.
+Questa funzionalità include anche l'**analizzatore della connessione CMG** per verifiche in tempo reale a supporto della risoluzione dei problemi. L'utilità inclusa nella console controlla lo stato corrente del servizio e il canale di comunicazione dal punto di connessione CMG a tutti i punti di gestione che consentono il traffico CMG. 
+
+Per altre informazioni, vedere le sezioni seguenti nell'articolo relativo al [monitoraggio di CMG](/sccm/core/clients/manage/cmg/monitor-clients-cloud-management-gateway):  
+- [Dashboard di gestione del cloud](/sccm/core/clients/manage/cmg/monitor-clients-cloud-management-gateway#cloud-management-dashboard)  
+- [Analizzatore della connessione](/sccm/core/clients/manage/cmg/monitor-clients-cloud-management-gateway#connection-analyzer)  
 
 
 ### <a name="improvements-to-cloud-management-gateway"></a>Miglioramenti al gateway di gestione cloud
@@ -187,26 +201,16 @@ Questa funzionalità include anche l'**analizzatore della connessione CMG** per 
 La versione 1806 include i miglioramenti seguenti a Cloud Management Gateway (CMG):
 
 #### <a name="simplified-client-bootstrap-command-line"></a>Riga di comando semplificata per bootstrap client
-<!--1358215--> Quando si installa il client di Configuration Manager su Internet usando un CMG, ora è richiesto un numero inferiore di proprietà della riga di comando. Questo miglioramento riduce la dimensione della riga di comando usata in Microsoft Intune durante la preparazione per la co-gestione. 
+<!--1358215-->
+ ***[Aggiornato]*** Quando si installa il client di Configuration Manager su Internet usando CMG ora è richiesto un numero inferiore di proprietà della riga di comando. Questo miglioramento riduce la dimensione della riga di comando usata in Microsoft Intune durante la preparazione per la co-gestione. 
 
-Le seguenti proprietà della riga di comando sono richieste in tutti gli scenari:
-  - CCMHOSTNAME  
-  - SMSSITECODE  
-
-Le seguenti proprietà sono richieste quando si usa Azure AD per l'autenticazione client anziché i certificati di autenticazione client basati su infrastruttura a chiave pubblica:
-  - AADCLIENTAPPID  
-  - AADRESOURCEURI  
-
-La seguente proprietà è obbligatoria se il client effettua il roaming alla rete intranet:
-  - SMSMP  
-
-L'esempio seguente include tutte le proprietà indicate sopra:   
-`ccmsetup.exe CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC AADCLIENTAPPID=7506ee10-f7ec-415a-b415-cd3d58790d97 AADRESOURCEURI=https://contososerver SMSMP=https://mp1.contoso.com`
-
-<!--For more information, see [Client installation properties](/sccm/core/clients/deploy/about-client-installation-properties).-->
+Per altre informazioni, vedere [Preparare i dispositivi Windows 10 per la co-gestione](/sccm/core/clients/manage/co-management-prepare#command-line-to-install-configuration-manager-client).
 
 #### <a name="download-content-from-a-cmg"></a>Scaricare il contenuto da un CMG
-<!--1358651--> In precedenza, era necessario distribuire un punto di distribuzione cloud e un CMG come ruoli separati. Ora in questa versione un CMG può anche trasferire il contenuto ai client. Questa funzionalità riduce i certificati necessari e i costi delle macchine virtuali di Azure. Per abilitare questa funzionalità, abilitare la nuova opzione che **consente a CMG di funzionare come punto di distribuzione cloud e rendere disponibili i contenuti di Archiviazione di Azure** nella scheda **Impostazioni** delle proprietà del CMG. 
+<!--1358651-->
+ ***[Aggiornato]*** In precedenza era necessario distribuire un punto di distribuzione cloud e CMG come ruoli separati. Ora in questa versione un CMG può anche trasferire il contenuto ai client. Questa funzionalità riduce i certificati necessari e i costi delle macchine virtuali di Azure. 
+
+Per altre informazioni, vedere [Modify a CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#modify-a-cmg) (Modificare un gateway di gestione cloud).
 
 #### <a name="trusted-root-certificate-isnt-required-with-azure-ad"></a>Non è necessario un certificato radice trusted con Azure AD
 <!--503899--> Quando si crea un CMG, non è più necessario specificare un [certificato radice trusted](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#cmg-trusted-root-certificate-to-clients) nella pagina Impostazioni. Questo certificato non è obbligatorio se si usa Azure Active Directory (Azure AD) per l'autenticazione client, ma veniva richiesto nella procedura guidata. Se si usano certificati di autenticazione client PKI, è comunque necessario aggiungere un certificato radice trusted al CMG.
@@ -357,12 +361,12 @@ Queste sequenze di attività possono essere per la distribuzione del sistema ope
 #### <a name="mask-program-name-during-run-command-step-of-a-task-sequence"></a>Mascherare il nome programma durante il passaggio Esegui riga di comando di una sequenza di attività
  <!--1358493--> ***[Aggiornamento]*** Per impedire la visualizzazione o la registrazione di dati potenzialmente sensibili, impostare la variabile della sequenza di attività **OSDDoNotLogCommand**.  
 
- Per altre informazioni, vedere [Task sequence variables](/sccm/osd/understand/task-sequence-variables#OSDDoNotLogCommand) (Variabili della sequenza di attività). 
+ Per altre informazioni, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables#OSDDoNotLogCommand). 
 
 #### <a name="task-sequence-variable-for-dism-parameters-when-installing-drivers"></a>Variabile della sequenza di attività per i parametri DISM durante l'installazione di driver
  <!--516679/2840016--> ***[Aggiornamento]*** Per specificare parametri della riga di comando aggiuntivi per DISM, usare la nuova variabile della sequenza di attività **OSDInstallDriversAdditionalOptions**. 
 
- Per altre informazioni, vedere [Task sequence variables](/sccm/osd/understand/task-sequence-variables#OSDInstallDriversAdditionalOptions) (Variabili della sequenza di attività). 
+ Per altre informazioni, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables#OSDInstallDriversAdditionalOptions). 
 
 #### <a name="option-to-use-full-disk-encryption"></a>Opzione per usare la crittografia del disco completo
  <!--SCCMDocs-pr issue 2671--> ***[Aggiornamento]*** I passaggi **Attiva BitLocker** e **Pre-provisioning di BitLocker** ora includono entrambi l'opzione **Usa la crittografia del disco completo**. Per impostazione predefinita, questi passaggi eseguono la crittografia dello spazio usato sull'unità. Questo comportamento predefinito è consigliato perché è più veloce ed efficiente. 

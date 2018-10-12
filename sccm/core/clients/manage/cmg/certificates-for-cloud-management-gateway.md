@@ -4,17 +4,17 @@ description: Informazioni sui diversi certificati digitali da usare con il gatew
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 03/22/2018
+ms.date: 09/10/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
-ms.openlocfilehash: 02a830d10263164e26902247856f999523092c76
-ms.sourcegitcommit: a849dab9333ebac799812624d6155f2a96b523ca
+ms.openlocfilehash: 052210b53ec330a75d73508ae41218231bd75153
+ms.sourcegitcommit: 65423b94f0fee5dc5026804d88f13416872b93d4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "42584524"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47173479"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificati per il gateway di gestione cloud
 
@@ -23,48 +23,85 @@ ms.locfileid: "42584524"
 In base allo scenario in cui si gestiscono i client su Internet con il gateway di gestione cloud, è necessario usare uno o più certificati digitali. Per altre informazioni sui diversi scenari, vedere [Pianificare il gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway).
 
 
+### <a name="general-information"></a>Informazioni generali
+<!--SCCMDocs issue #779--> I certificati per Cloud Management Gateway supportano le configurazioni seguenti:  
+
+- **Lunghezza della chiave 4096 bit**  
+
+- A partire dalla versione 1710, supporto per i certificati della **versione 3**. Per altre informazioni, vedere [Panoramica dei certificati CNG](/sccm/core/plan-design/network/cng-certificates-overview).  
+
+- A partire dalla versione 1802, quando si configura Windows con i criteri seguenti: **Crittografia di sistema: utilizza algoritmi FIPS compatibili per crittografia, hash e firma**  
+
+- A partire dalla versione 1802, supporto per **TLS 1.2**. Per altre informazioni, vedere [Riferimento tecnico per i controlli crittografici](/sccm/core/plan-design/security/cryptographic-controls-technical-reference#about-ssl-vulnerabilities).  
+
+
+
 ## <a name="cmg-server-authentication-certificate"></a>Certificato di autenticazione server del gateway di gestione cloud
 
 *Questo certificato è necessario in tutti gli scenari.*
 
 Usare questo certificato quando si crea il gateway di gestione cloud nella console di Configuration Manager.
 
-Il gateway di gestione cloud crea un servizio HTTPS a cui si connettono i client basati su Internet. Il server richiede un certificato di autenticazione server per compilare il canale sicuro. Acquistare un certificato per questo scopo da un provider pubblico o inviarlo dall'infrastruttura a chiave pubblica. Per altre informazioni, vedere [Certificato radice trusted del gateway di gestione cloud per i client](#cmg-trusted-root-certificate-to-clients).
+Il gateway di gestione cloud crea un servizio HTTPS a cui si connettono i client basati su Internet. Il server richiede un certificato di autenticazione server per compilare il canale sicuro. Acquisire un certificato per questo scopo da un provider pubblico o inviarlo dall'infrastruttura a chiave pubblica. Per altre informazioni, vedere [Certificato radice trusted del gateway di gestione cloud per i client](#cmg-trusted-root-certificate-to-clients).
 
  > [!TIP]
- > Questo certificato richiede un nome univoco globale per identificare il servizio in Azure. Prima di richiedere un certificato, verificare che il nome di dominio di Azure sia univoco. Ad esempio, *GraniteFalls.CloudApp.Net*. Accedere al [portale di Microsoft Azure](https://portal.azure.com). Fare clic su **Crea una risorsa**, selezionare la categoria **Calcolo**, quindi fare clic su **Servizio cloud**. Digitare un prefisso nel campo **Nome DNS**, ad esempio *GraniteFalls*. L'interfaccia indica se il nome di dominio è disponibile o se è già in uso in un altro servizio. Non creare il servizio nel portale, usare questo processo per verificare la disponibilità del nome. 
+ > Questo certificato richiede un nome univoco globale per identificare il servizio in Azure. Prima di richiedere un certificato, verificare che il nome di dominio di Azure sia univoco. Ad esempio, *GraniteFalls.CloudApp.Net*. Accedere al [portale di Microsoft Azure](https://portal.azure.com). Selezionare **Crea una risorsa**, scegliere la categoria **Calcolo**, quindi selezionare **Servizio cloud**. Digitare un prefisso nel campo **Nome DNS**, ad esempio *GraniteFalls*. L'interfaccia indica se il nome di dominio è disponibile o se è già in uso in un altro servizio. Non creare il servizio nel portale, usare questo processo per verificare la disponibilità del nome. 
   
  > [!NOTE]
- > A partire dalla versione 1802, il certificato di autenticazione server del gateway di gestione cloud supporta i caratteri jolly. Alcune autorità di certificazione rilasciano certificati in cui viene usato un carattere jolly per il nome host. Ad esempio, **\*.contoso.com**. Alcune organizzazioni usano certificati con caratteri jolly per semplificare l'infrastruttura a chiave pubblica e ridurre i costi di manutenzione.
- <!--491233-->
+ > A partire dalla versione 1802, il certificato di autenticazione server del gateway di gestione cloud supporta i caratteri jolly. Alcune autorità di certificazione rilasciano certificati in cui viene usato un carattere jolly per il nome host. Ad esempio, **\*.contoso.com**. Alcune organizzazioni usano certificati con caratteri jolly per semplificare l'infrastruttura a chiave pubblica e ridurre i costi di manutenzione.<!--491233-->  
+ > 
+ > Per altre informazioni su come usare un certificato con caratteri jolly con CMG, vedere [Impostare un Cloud Management Gateway](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#set-up-a-cmg).<!--SCCMDocs issue #565-->  
 
 
 ### <a name="cmg-trusted-root-certificate-to-clients"></a>Certificato radice trusted del gateway di gestione cloud per i client
 
-I client devono considerare attendibile il certificato di autenticazione server del gateway di gestione cloud. Esistono due metodi per confermare l'attendibilità:
-- Usare un certificato di un provider pubblico considerato attendibile a livello globale. Ad esempio, tra gli altri, DigiCert, Thawte, o VeriSign. I client Windows includono le autorità di certificazione (CA) che rilasciano i certificati radice trusted da questi provider. Usando un certificato di autenticazione server rilasciato da uno di questi provider, i client confermano automaticamente l'attendibilità. 
-- Usare un certificato rilasciato da un'autorità di certificazione globale (enterprise) dall'infrastruttura a chiave pubblica. Nella maggior parte delle implementazioni di infrastruttura a chiave pubblica di tipo Enterprise le autorità di certificazione radice attendibili vengono aggiunte ai client di Windows. Ad esempio, usando i servizi certificati Active Directory con criteri di gruppo. Se si rilascia il certificato di autenticazione server per il gateway di gestione cloud da un'autorità di certificazione che i client non considerano automaticamente attendibile, è necessario aggiungere il certificato radice trusted di tale autorità ai client basati su Internet.
-    - È inoltre possibile usare i profili dei certificati di Configuration Manager per eseguire il provisioning dei certificati nei client. Per altre informazioni, vedere l'[introduzione alle raccolte](/sccm/protect/deploy-use/introduction-to-certificate-profiles).
+I client devono considerare attendibile il certificato di autenticazione server del gateway di gestione cloud. Esistono due metodi per confermare l'attendibilità: 
+
+- Usare un certificato di un provider pubblico considerato attendibile a livello globale. Ad esempio, tra gli altri, DigiCert, Thawte, o VeriSign. I client Windows includono le autorità di certificazione (CA) che rilasciano i certificati radice trusted da questi provider. Usando un certificato di autenticazione server rilasciato da uno di questi provider, i client confermano automaticamente l'attendibilità.  
+
+- Usare un certificato rilasciato da un'autorità di certificazione globale (enterprise) dall'infrastruttura a chiave pubblica. Nella maggior parte delle implementazioni di infrastruttura a chiave pubblica di tipo Enterprise le autorità di certificazione radice attendibili vengono aggiunte ai client di Windows. Ad esempio, usando i servizi certificati Active Directory con criteri di gruppo. Se si rilascia il certificato di autenticazione server per il gateway di gestione cloud da un'autorità di certificazione che i client non considerano automaticamente attendibile, aggiungere il certificato radice trusted di tale autorità ai client basati su Internet.  
+
+    - È inoltre possibile usare i profili dei certificati di Configuration Manager per eseguire il provisioning dei certificati nei client. Per altre informazioni, vedere l'[introduzione alle raccolte](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
+
+> [!Note]  
+> A partire dalla versione 1806, quando si crea un CMG non è più necessario specificare un certificato radice trusted nella pagina Impostazioni. Questo certificato non è obbligatorio se si usa Azure Active Directory (Azure AD) per l'autenticazione client, ma veniva richiesto nella procedura guidata. Se si usano certificati di autenticazione client PKI, è comunque necessario aggiungere un certificato radice trusted al CMG.<!--SCCMDocs-pr issue #2872-->  
+
 
 ### <a name="server-authentication-certificate-issued-by-public-provider"></a>Certificato di autenticazione server rilasciato da un provider pubblico
 
-Quando si usa questo metodo, i client considereranno automaticamente attendibile il certificato e non è necessario creare un certificato personalizzato. Configuration Manager crea il servizio in Azure con il dominio cloudapp.net. Un provider di certificati pubblico non può emettere un certificato con lo stesso nome per l'utente. Usare la seguente procedura per creare un alias DNS:
+Un provider di certificati di terze parti non può creare un certificato per CloudApp.net, perché il dominio è di proprietà di Microsoft. È possibile ottenere solo un certificato emesso per un dominio di cui si è proprietari. Il motivo principale per l'acquisizione di un certificato da un provider di terze parti è che i client già considerano attendibile il certificato radice del provider.
+
+Usare la seguente procedura per creare un alias DNS:
 
 1. Creare un record di nome canonico (CNAME) nel DNS pubblico dell'organizzazione. Questo record crea un alias per il gateway di gestione cloud con un nome descrittivo usato dall'utente nel certificato pubblico.
-Ad esempio, Contoso assegna al gateway di gestione cloud il nome **GraniteFalls**, che diventa **GraniteFalls.CloudApp.Net** in Azure. Nello spazio dei nomi contoso.com del DNS pubblico di Contoso l'amministratore DNS crea un nuovo record CNAME **GraniteFalls.Contoso.com** per il nome host effettivo, **GraniteFalls.CloudApp.net**.
+
+    Ad esempio, Contoso assegna al gateway di gestione cloud il nome **GraniteFalls**, che diventa **GraniteFalls.CloudApp.Net** in Azure. Nello spazio dei nomi contoso.com del DNS pubblico di Contoso l'amministratore DNS crea un nuovo record CNAME **GraniteFalls.Contoso.com** per il nome host effettivo, **GraniteFalls.CloudApp.net**.  
+
 2. Richiedere un certificato di autenticazione server da un provider pubblico usando il nome comune dell'alias CNAME.
-Ad esempio, Contoso usa **GraniteFalls.Contoso.com** per il nome comune del certificato.
-3. Creare il gateway di gestione cloud nella console di Configuration Manager usando questo certificato. Nella pagina **Impostazioni** della Creazione guidata del gateway di gestione cloud: 
-    - Quando si aggiunge il certificato del server per questo servizio cloud (da **File di certificato**), la procedura guidata estrae il nome host dal nome comune del certificato come nome del servizio. 
-    - Aggiunge quindi tale nome host a **cloudapp.net** o **usgovcloudapp.net** per il cloud di Azure Governo degli Stati Uniti come FQDN del servizio per creare il servizio in Azure.
-    - Ad esempio, quando Contoso crea il gateway di gestione cloud, Configuration Manager estrae il nome host **GraniteFalls** dal nome comune del certificato. Azure crea il servizio effettivo come **GraniteFalls.CloudApp.net**.
+Ad esempio, Contoso usa **GraniteFalls.Contoso.com** per il nome comune del certificato.  
+
+3. Creare il gateway di gestione cloud nella console di Configuration Manager usando questo certificato. Nella pagina **Impostazioni** della Creazione guidata del gateway di gestione cloud:   
+
+    - Quando si aggiunge il certificato del server per questo servizio cloud (da **File di certificato**), la procedura guidata estrae il nome host dal nome comune del certificato come nome del servizio.  
+
+    - Aggiunge quindi tale nome host a **cloudapp.net** o **usgovcloudapp.net** per il cloud di Azure Governo degli Stati Uniti come FQDN del servizio per creare il servizio in Azure.  
+
+    - Ad esempio, quando Contoso crea il gateway di gestione cloud, Configuration Manager estrae il nome host **GraniteFalls** dal nome comune del certificato. Azure crea il servizio effettivo come **GraniteFalls.CloudApp.net**.  
+
+Quando si crea l'istanza CMG in Configuration Manager, mentre il certificato ha GraniteFalls.Contoso.com, Configuration Manager estrae solo il nome host, ad esempio: GraniteFalls. Questo nome host viene accodato a CloudApp.net, che Azure richiede quando crea un servizio cloud. L'alias CNAME nello spazio dei nomi DNS per il dominio, Contoso.com, esegue il mapping dei due nomi di dominio completi. Configuration Manager offre ai client i criteri per accedere al CMG, il mapping DNS li collega in modo che possano accedere in modo sicuro al servizio in Azure.<!--SCCMDocs issue #565-->  
+
 
 ### <a name="server-authentication-certificate-issued-from-enterprise-pki"></a>Certificato di autenticazione server rilasciato da un'infrastruttura a chiave pubblica di tipo Enterprise
 
 Creare un certificato SSL personalizzato per il gateway di gestione cloud identico a quello di un punto di distribuzione cloud. Seguire le istruzioni per la [distribuzione del certificato di servizio per i punti di distribuzione basati su cloud](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_clouddp2008_cm2012) procedendo in modo diverso per le operazioni seguenti:
 
-- Quando si richiede il certificato del server Web personalizzato, specificare un FQDN per il nome comune del certificato. Può trattarsi di un nome di dominio pubblico di cui si è proprietari o è possibile sfruttare il dominio cloudapp.net. Se si usa il proprio dominio pubblico, fare riferimento al processo sopra descritto per la creazione di un alias DNS nel DNS pubblico dell'organizzazione.
-- Quando si usa il dominio pubblico cloudapp.net per il certificato del server Web CMG, nel cloud pubblico di Azure, usare un nome che termina con **cloudapp.net** o **usgovcloudapp.net** per il cloud di Azure Governo degli Stati Uniti.
+- Quando si richiede il certificato del server Web personalizzato, specificare un FQDN per il nome comune del certificato. Il nome può essere un nome di dominio pubblico di cui si è proprietari o è possibile usare il dominio cloudapp.net. Se si usa il proprio dominio pubblico, fare riferimento al processo sopra descritto per la creazione di un alias DNS nel DNS pubblico dell'organizzazione.  
+
+- Quando si usa il dominio pubblico cloudapp.net per il certificato CMG del server Web:  
+
+    - Nel cloud pubblico di Azure usare un nome che termina con **cloudapp.net**  
+
+    - Usare un nome che termina con **usgovcloudapp.net** per il cloud di Azure Governo degli Stati Uniti  
 
 
 
@@ -78,9 +115,9 @@ Per creare il gateway di gestione cloud in Azure, il punto di connessione del se
 
 Per altre informazioni e istruzioni su come caricare un certificato di gestione, vedere gli articoli seguenti nella documentazione di Azure:
 
-- [Servizi cloud e certificati di gestione](/azure/cloud-services/cloud-services-certs-create#what-are-management-certificates)
+- [Servizi cloud e certificati di gestione](https://docs.microsoft.com/azure/cloud-services/cloud-services-certs-create#what-are-management-certificates)  
 
-- [Caricare un certificato di gestione dei servizi di Azure](/azure/azure-api-management-certs)
+- [Caricare un certificato di gestione dei servizi di Azure](https://docs.microsoft.com/azure/azure-api-management-certs)  
 
 > [!IMPORTANT]
 > Assicurarsi di copiare l'ID sottoscrizione associato al certificato di gestione. Usare questo certificato per creare il gateway di gestione cloud nella console di Configuration Manager.
@@ -109,35 +146,45 @@ Il gateway di gestione client deve considerare attendibile il certificato di aut
 
 Dopo aver emesso un certificato di autenticazione client per un computer, usare questo processo in tale computer per esportare la radice attendibile.
 
-1.  Aprire il menu Start. Digitare "esegui" per aprire la finestra di esecuzione. Aprire **mmc**. 
+1.  Aprire il menu Start. Digitare "esegui" per aprire la finestra di esecuzione. Aprire `mmc`.  
 
-2.  Dal menu file scegliere **Aggiungi/Rimuovi snap-in**.
+2.  Dal menu file scegliere **Aggiungi/Rimuovi snap-in**.  
 
-3.  Nella finestra di dialogo Aggiungi o rimuovi snap-in selezionare **Certificati**, quindi fare clic su **Aggiungi**. 
-    a. Nella finestra di dialogo Snap-in certificati selezionare **Account del computer** e fare clic su **Avanti**. 
-    b. Nella finestra di dialogo Selezione computer selezionare **Computer locale** e quindi fare clic su **Fine**. 
-    c. Nella finestra di dialogo Aggiungi o rimuovi snap-in fare clic su **OK**.
+3.  Nella finestra di dialogo Aggiungi o rimuovi snap-in selezionare **Certificati**, quindi selezionare **Aggiungi**.  
 
-4.  Espandere **Certificati**, espandere **Personale** e selezionare **Certificati**.
+    a. Nella finestra di dialogo Snap-in certificati selezionare **Account del computer** e selezionare **Avanti**.  
 
-5.  Selezionare un certificato il cui scopo designato è **Autenticazione client**. 
-    a. Dal menu Azione selezionare **Apri**. 
-    b. Passare alla scheda **Percorso certificazione**. c. Selezionare il certificato successivo procedendo verso l'alto nella catena, quindi gare clic su **Visualizza certificato**.
+    b. Nella finestra di dialogo Selezione computer selezionare **Computer locale** e quindi **Fine**.  
 
-6.  Nella nuova finestra di dialogo Certificato passare alla scheda **Dettagli**. Fare clic su **Copia su file**.
+    c. Nella finestra di dialogo Aggiungi o rimuovi snap-in selezionare **OK**.  
 
-7.  Completare l'Esportazione guidata certificati usando il formato di certificato predefinito, **DER encoded binary X.509 (.CER)**. Prendere nota del nome e del percorso del certificato esportato.
+4.  Espandere **Certificati**, espandere **Personale** e selezionare **Certificati**.  
 
-8. Esportare tutti i certificati presenti nel percorso di certificazione del certificato di autenticazione client originale. Prendere nota dei certificati esportati che rappresentano autorità di certificazione intermedie e di quelli che rappresentano autorità radice attendibili.
+5.  Selezionare un certificato il cui scopo designato è **Autenticazione client**.  
+
+    a. Dal menu Azione selezionare **Apri**.  
+
+    b. Passare alla scheda **Percorso certificazione**.  
+
+    c. Selezionare il certificato successivo procedendo verso l'alto nella catena, quindi selezionare **Visualizza certificato**.  
+
+6.  Nella nuova finestra di dialogo Certificato passare alla scheda **Dettagli**. Selezionare **Copia su file**.  
+
+7.  Completare l'Esportazione guidata certificati usando il formato di certificato predefinito, **DER encoded binary X.509 (.CER)**. Prendere nota del nome e del percorso del certificato esportato.  
+
+8. Esportare tutti i certificati presenti nel percorso di certificazione del certificato di autenticazione client originale. Prendere nota dei certificati esportati che rappresentano autorità di certificazione intermedie e di quelli che rappresentano autorità radice attendibili.  
 
 
 
 ## <a name="enable-management-point-for-https"></a>Abilitare i punti di gestione per HTTPS
 
 *Requisiti relativi ai certificati*
-- Nelle versioni 1706 o 1710, quando si gestiscono client tradizionali con identità locale usando un certificato di autenticazione client, questo certificato è consigliato ma non obbligatorio.
-- Nella versione 1710, quando si gestiscono i client Windows 10 aggiunti ad Azure AD, questo certificato è obbligatorio per i punti di gestione. 
-- A partire dalla versione 1802 questo certificato è necessario in tutti gli scenari. Solo i punti di gestione abilitati per il gateway di gestione cloud devono essere HTTPS. Questa modifica del comportamento offre un supporto migliore per l'autenticazione basata su token di Azure AD. 
+
+- Nelle versioni 1706 o 1710, quando si gestiscono client tradizionali con identità locale usando un certificato di autenticazione client, questo certificato è consigliato ma non obbligatorio.  
+
+- Nella versione 1710, quando si gestiscono i client Windows 10 aggiunti ad Azure AD, questo certificato è obbligatorio per i punti di gestione.  
+
+- A partire dalla versione 1802 questo certificato è necessario in tutti gli scenari. Solo i punti di gestione abilitati per il gateway di gestione cloud devono essere HTTPS. Questa modifica del comportamento offre un supporto migliore per l'autenticazione basata su token di Azure AD.  
 
 Eseguire il provisioning del certificato all'esterno del contesto di Configuration Manager. Ad esempio, usare Servizi certificati Active Directory e i criteri di gruppo per rilasciare un certificato del server Web. Per altre informazioni, vedere [Requisiti dei certificati PKI](/sccm/core/plan-design/network/pki-certificate-requirements) e [Distribuzione del certificato del server Web per sistemi del sito che eseguono IIS](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_webserver2008_cm2012).
 

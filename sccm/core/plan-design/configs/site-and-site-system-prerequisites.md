@@ -10,12 +10,12 @@ ms.assetid: 1392797b-76cb-46b4-a3e4-8f349ccaa078
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 10dfebccd997a42f4c79e5d88bdf05e26585aebb
-ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
+ms.openlocfilehash: 4ba23a42acb111f4ed7d0337552b2ea90b0268d6
+ms.sourcegitcommit: 78d2dce465e3500653b252583a6903a006784c26
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42589873"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46448923"
 ---
 # <a name="site-and-site-system-prerequisites-for-configuration-manager"></a>Prerequisiti del sito e del sistema del sito per Configuration Manager
 
@@ -73,7 +73,7 @@ Per i prerequisiti specifici dei server e dei ruoli del sistema del sito in Wind
 - [Punto proxy di registrazione](#bkmk_2012EnrollProxpreq)
 - [Punto di stato di fallback](#bkmk_2012FSPpreq)
 - [Punto di gestione](#bkmk_2012MPpreq)
-- [Punto di reporting](#bkmk_2012RSpoint)
+- [Punto di Reporting Services](#bkmk_2012RSpoint)
 - [Punto di connessione del servizio](#bkmk_SCPpreq)
 - [Punto di aggiornamento software](#bkmk_2012SUPpreq)
 - [Punto di migrazione stato](#bkmk_2012SMPpreq)
@@ -452,7 +452,7 @@ Per altre informazioni, vedere [Installare e configurare i punti di distribuzion
 
 
 
-##  <a name="bkmk_2012RSpoint"></a> Punto di reporting  
+##  <a name="bkmk_2012RSpoint"></a> Punto di Reporting Services  
 
 #### <a name="windows-server-roles-and-features"></a>Funzionalità e ruoli di Windows Server  
 

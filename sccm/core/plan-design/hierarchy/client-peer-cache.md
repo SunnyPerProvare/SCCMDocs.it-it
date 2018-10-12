@@ -2,7 +2,7 @@
 title: Peer cache per i client
 titleSuffix: Configuration Manager
 description: Usare la peer cache per i client per i percorsi di origine client quando si distribuisce contenuto con Configuration Manager.
-ms.date: 08/29/2018
+ms.date: 09/19/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 86cd5382-8b41-45db-a4f0-16265ae22657
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4e3eda79b9b722b00f8fb9ac5329db8dd4153db1
-ms.sourcegitcommit: 52ec30245ba559596d2f88a3eff70c467b4a056f
+ms.openlocfilehash: b1d4e2b7dca44db7ddc5976edde59a04bc3cb45e
+ms.sourcegitcommit: 4e4b71227309bee7e9f1285971f8235c67a9c502
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43380983"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46533763"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
 
@@ -100,9 +100,12 @@ Quando l'origine di peer cache rifiuta una richiesta di contenuto, il client di 
 
     - Quando necessario, l'origine di peer cache usa l'account di accesso alla rete per autenticare le richieste di download ricevute dai peer. Per tale scopo, a questo account sono richieste solo le autorizzazioni utente di dominio.  
 
-- L'ultimo invio dell'individuazione heartbeat del client determina il limite corrente di un'origine di peer cache. Un client che si sposta in un gruppo di limiti diverso potrebbe comunque essere un membro del relativo gruppo di limiti precedente ai fini della peer cache. Di conseguenza, a un client può essere offerta un'origine di peer cache che non si trova nel relativo percorso di rete immediato. Non abilitare il roaming dei client come origine di peer cache.<!--SCCMDocs issue 641-->  
+- Con la versione 1802 e precedenti, l'ultimo invio dell'individuazione heartbeat del client determina il limite corrente di un'origine di peer cache. Un client che si sposta in un gruppo di limiti diverso potrebbe comunque essere un membro del relativo gruppo di limiti precedente ai fini della peer cache. Di conseguenza, a un client può essere offerta un'origine di peer cache che non si trova nel relativo percorso di rete immediato. Non abilitare il roaming dei client come origine di peer cache.<!--SCCMDocs issue 641-->  
 
-- Prima di provare a scaricare il contenuto, il client di peer cache esegue una convalida per verificare prima che l'origine di peer cache sia online.<!--sms.498675--> La convalida viene eseguita tramite il "canale rapido" per la notifica client, che usa la porta TCP 10123.<!--511673-->  
+    > [!Important]  
+    > A partire dalla versione 1806, Configuration Manager è più efficiente nel determinare se è stato eseguito il roaming di un'origine peer cache in un'altra posizione. Questo comportamento garantisce che il punto di gestione la offra come origine di contenuto ai client nella nuova posizione e non in quella precedente. Se si usa la funzionalità di peer cache con origini di peer cache in roaming, dopo aver aggiornato il sito alla versione 1806, aggiornare anche tutte le origini di peer cache alla versione più recente del client. Il punto di gestione non include tali origini di peer cache nell'elenco di posizioni del contenuto finché non vengono aggiornate almeno alla versione 1806.<!--SCCMDocs issue 850-->  
+
+- Prima di provare a scaricare il contenuto, il punto di gestione esegue una convalida per verificare prima che l'origine di peer cache sia online.<!--sms.498675--> La convalida viene eseguita tramite il "canale rapido" per la notifica client, che usa la porta TCP 10123.<!--511673-->  
 
 > [!Note]  
 > Per sfruttare i vantaggi delle nuove funzionalità di Configuration Manager, aggiornare prima di tutto i clienti alla versione più recente. Anche se le nuove funzionalità vengono visualizzate nella console di Configuration Manager quando si esegue l'aggiornamento del sito e della console, lo scenario completo risulta funzionante solo dopo l'aggiornamento alla versione più recente del client.  

@@ -2,7 +2,7 @@
 title: Pianificare il gateway di gestione cloud
 titleSuffix: Configuration Manager
 description: Pianificare e progettare il gateway di gestione di cloud (CMG) per semplificare la gestione dei client basati su Internet.
-ms.date: 07/30/2018
+ms.date: 09/10/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2c60a269ade54c87c754fc9b5a3fb90deecd32f5
-ms.sourcegitcommit: 316899b08f2ef372993909e08e069f7edfed1d33
+ms.openlocfilehash: 9b25b7a5b7df42dc83bec18d38b44c7807e6dc1a
+ms.sourcegitcommit: 2badee2b63ae63687795250e298f463474063100
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44111162"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45601127"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
@@ -56,7 +56,7 @@ Un gateway di gestione cloud può essere utile in scenari diversi. Gli scenari s
 
 - Installare il client Configuration Manager in dispositivi Windows 10 tramite Internet. L'uso di Azure AD consente al dispositivo di eseguire l'autenticazione nel gateway di gestione cloud per la registrazione e l'assegnazione dei client. È possibile installare il client manualmente oppure usando un altro metodo di distribuzione del software, ad esempio Microsoft Intune.  
 
-- Nuovo provisioning di dispositivi von co-gestione. Il gateway di gestione cloud non è necessario per la co-gestione. Consente di completare uno scenario end-to-end per i nuovi dispositivi che prevedono l'uso di Windows AutoPilot, Azure AD, Microsoft Intune e Configuration Manager.  
+- Nuovo provisioning di dispositivi von co-gestione. CMG è necessario per la co-gestione. Consente di completare uno scenario end-to-end per i nuovi dispositivi che prevedono l'uso di Windows AutoPilot, Azure AD, Microsoft Intune e Configuration Manager.  
 
 ### <a name="specific-use-cases"></a>Casi d'uso specifici
 In questi scenari possono essere applicati i casi d'uso di dispositivi specifici seguenti:
@@ -93,6 +93,8 @@ La distribuzione e l'utilizzo del gateway di gestione cloud includono i componen
 - I client basati su Internet usano i **certificati PKI o Azure AD** per l'identità e l'autenticazione.  
 
 - Un [**punto di distribuzione cloud**](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) fornisce i contenuti ai client basati su Internet, in base alle esigenze.  
+
+    - A partire dalla versione 1806, un CMG può anche trasferire contenuti ai client. Questa funzionalità riduce i certificati necessari e i costi delle macchine virtuali di Azure. Per altre informazioni, vedere l'articolo sulla [modifica di un CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#modify-a-cmg).<!--1358651-->  
 
 
 ### <a name="azure-resource-manager"></a>Azure Resource Manager
@@ -174,11 +176,11 @@ Analogamente, quando effettuano il roaming in Internet, i client di Parigi comun
 
 - Il gateway di gestione cloud supporta solo i ruoli del punto di gestione e del punto di aggiornamento software.  
 
-- Il gateway di gestione cloud non supporta i client che comunicano solo con indirizzi IPv6.<!--495606-->  
+- CMG non supporta i client che comunicano solo con indirizzi IPv6.<!--495606-->  
 
 - I punti di aggiornamento software che usano un bilanciamento del carico di rete non funzionano con il gateway di gestione cloud. <!--505311-->  
 
-- A partire dalla versione 1802, le distribuzioni di Cloud Management Gateway tramite il modello Azure Resource Manager non abilitano il supporto dei provider di servizi cloud di Azure. La distribuzione di Cloud Management Gateway con Azure Resource Manager continua infatti a usare il servizio cloud classico, non supportato dal provider di servizi cloud. Per altre informazioni, vedere [Available Azure services in Azure CSP](/azure/cloud-solution-provider/overview/azure-csp-available-services) (Servizi di Azure disponibili in Azure CSP).  
+- A partire dalla versione 1802, le distribuzioni CMG che usano il modello Azure Resource Manager non abilitano il supporto dei provider di servizi cloud di Azure. La distribuzione del gateway di gestione cloud con Azure Resource Manager continua infatti a usare il servizio cloud classico, non supportato dal provider di servizi cloud. Per altre informazioni, vedere [Available Azure services in Azure CSP](/azure/cloud-solution-provider/overview/azure-csp-available-services) (Servizi di Azure disponibili in Azure CSP).  
 
 
 ### <a name="support-for-configuration-manager-features"></a>Supporto delle funzionalità di Configuration Manager
@@ -193,10 +195,10 @@ La tabella seguente elenca il supporto di Cloud Management Gateway (CMG) per le 
 | Stato del client e notifiche     | ![Supportato](media/green_check.png) |
 | Esecuzione di script     | ![Supportato](media/green_check.png) |
 | Impostazioni di conformità     | ![Supportato](media/green_check.png) |
-| Installazione client</br>(con integrazione di Azure AD)     | ![Supportato](media/green_check.png)  (1706) |
+| Installazione client<br>(con integrazione di Azure AD)     | ![Supportato](media/green_check.png)  (1706) |
 | Distribuzione del software (indirizzata a dispositivi)     | ![Supportato](media/green_check.png) |
-| Distribuzione del software (indirizzata a utenti, obbligatoria)</br>(con integrazione di Azure AD)     | ![Supportato](media/green_check.png)  (1710) |
-| Distribuzione del software (indirizzata a utenti, disponibile)</br>([tutti i requisiti](/sccm/apps/deploy-use/deploy-applications#deploy-user-available-applications-on-azure-ad-joined-devices)) | ![Supportato](media/green_check.png)  (1802) |
+| Distribuzione del software (indirizzata a utenti, obbligatoria)<br>(con integrazione di Azure AD)     | ![Supportato](media/green_check.png)  (1710) |
+| Distribuzione del software (indirizzata a utenti, disponibile)<br>([tutti i requisiti](/sccm/apps/deploy-use/deploy-applications#deploy-user-available-applications-on-azure-ad-joined-devices)) | ![Supportato](media/green_check.png)  (1802) |
 | Sequenza di attività di aggiornamento sul posto di Windows 10     | ![Supportato](media/green_check.png)  (1802) |
 | CMPivot     | ![Supportato](media/green_check.png)  (1806) |
 | Qualsiasi altro scenario di sequenza di attività     | ![Non supportato](media/Red_X.png) |
@@ -217,7 +219,7 @@ La tabella seguente elenca il supporto di Cloud Management Gateway (CMG) per le 
 |--|
 |![Supportato](media/green_check.png) = Questa funzionalità è supportata con Cloud Management Gateway (CMG) da tutte le versioni supportate di Configuration Manager  |
 |![Supportato](media/green_check.png) (*AAMM*) = Questa funzionalità è supportata con Cloud Management Gateway (CMG) a partire dalla versione *AAMM* di Configuration Manager  |
-|![Non supportato](media/Red_X.png) = Questa funzionalità non è supportata con Cloud Management Gateway (CMG) |
+|![Non supportato](media/Red_X.png) = Questa funzionalità non è supportata con CMG |
 
 
 
@@ -267,6 +269,9 @@ Cloud Management Gateway (CMG) usa i componenti di Azure seguenti, che implicano
 - Altri contenuti necessari, ad esempio applicazioni o aggiornamenti software di terze parti, devono essere distribuiti a un punto di distribuzione cloud. Attualmente il gateway di gestione cloud supporta solo il punto di distribuzione cloud per l'invio di contenuti ai client.  
 
 - Per altre informazioni, vedere i costi d'uso dei [punti di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#bkmk_cost).  
+
+- A partire dalla versione 1806, un CMG può anche trasferire contenuti ai client. Questa funzionalità riduce i certificati necessari e i costi delle macchine virtuali di Azure. Per altre informazioni, vedere l'articolo sulla [modifica di un CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#modify-a-cmg).<!--1358651-->  
+
 
 #### <a name="other-costs"></a>Altri costi
 
@@ -323,15 +328,15 @@ La tabella seguente elenca le porte e i protocolli di rete richiesti. Il *client
 | Punto di connessione del gateway di gestione cloud     | HTTPS | 443        | Servizio Cloud Management Gateway       | Fallback per la creazione del canale del gateway di gestione cloud in una sola istanza di macchina virtuale<sup>2</sup> |
 | Punto di connessione del gateway di gestione cloud     |  HTTPS   | 10124-10139     | Servizio Cloud Management Gateway       | Fallback per la creazione del canale del gateway di gestione cloud in due o più istanze di macchina virtuale<sup>3</sup> |
 | Client     |  HTTPS | 443         | Gateway di gestione cloud        | Comunicazione client generale |
-| Punto di connessione del gateway di gestione cloud      | HTTPS o HTTP | 443 o 80         | Punto di gestione</br>(versione 1706 o 1710) | Traffico locale, la porta dipende dalla configurazione del punto di gestione |
-| Punto di connessione del gateway di gestione cloud      | HTTPS | 443      | Punto di gestione</br>(versione 1802) | Il traffico locale deve essere HTTPS |
+| Punto di connessione del gateway di gestione cloud      | HTTPS o HTTP | 443 o 80         | Punto di gestione<br>(versione 1706 o 1710) | Traffico locale, la porta dipende dalla configurazione del punto di gestione |
+| Punto di connessione del gateway di gestione cloud      | HTTPS | 443      | Punto di gestione<br>(versione 1802) | Il traffico locale deve essere HTTPS |
 | Punto di connessione del gateway di gestione cloud      | HTTPS o HTTP | 443 o 80         | Punto di aggiornamento software | Traffico locale, la porta dipende dalla configurazione del punto di aggiornamento software |
 
-<sup>1</sup> Il punto di connessione del gateway di gestione cloud tenta innanzitutto di stabilire una connessione TCP-TLS di lunga durata con ogni istanza di macchina virtuale del gateway di gestione cloud. Si connette alla prima istanza di macchina virtuale sulla porta 10140. La seconda istanza di macchina virtuale usa la porta 10141, fino alla 10155. Una connessione TCP-TLS offre le prestazioni migliori, ma non supporta proxy Internet. Se il punto di connessione del gateway di gestione cloud non può connettersi tramite TCP-TLS, torna a HTTPS<sup>2</sup>.  
+<sup>1</sup> Il punto di connessione del gateway di gestione cloud tenta innanzitutto di stabilire una connessione TCP-TLS di lunga durata con ogni istanza di macchina virtuale del gateway di gestione cloud. Si connette alla prima istanza di macchina virtuale sulla porta 10140. La seconda istanza di macchina virtuale usa la porta 10141, fino alla sedicesima sulla porta 10155. Una connessione TCP-TLS offre le prestazioni migliori, ma non supporta proxy Internet. Se il punto di connessione del gateway di gestione cloud non può connettersi tramite TCP-TLS, torna a HTTPS<sup>2</sup>.  
 
 <sup>2</sup> Se il punto di connessione del gateway di gestione cloud non può connettersi a gateway tramite TCP-TLS<sup>1</sup>, si connette al bilanciamento del carico di rete di Azure su HTTPS 443 per una sola istanza di macchina virtuale.  
 
-<sup>3</sup> Se sono presenti due o più istanze di macchina virtuale, il punto di connessione del gateway di gestione cloud usa HTTPS 10124 per la prima istanza di macchina virtuale, non HTTPS 443. Si connette alla seconda istanza di macchina virtuale su HTTPS 10125, fino alla porta HTTPS 10139.
+<sup>3</sup> Se sono presenti due o più istanze di macchina virtuale, il punto di connessione del gateway di gestione cloud usa HTTPS 10124 per la prima istanza di macchina virtuale, non HTTPS 443. Si connette alla seconda istanza di macchina virtuale su HTTPS 10125, fino alla sedicesima sulla porta HTTPS 10139.
 
 
 ### <a name="internet-access-requirements"></a>Requisiti per l'accesso a Internet

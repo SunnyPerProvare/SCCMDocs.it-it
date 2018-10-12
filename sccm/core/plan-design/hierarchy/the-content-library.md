@@ -2,7 +2,7 @@
 title: Raccolta contenuto
 titleSuffix: Configuration Manager
 description: Informazioni sulla raccolta contenuto che Configuration Manager usa per ridurre le dimensioni complessive del contenuto distribuito.
-ms.date: 07/30/2018
+ms.date: 09/19/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 65c88e54-3574-48b0-a127-9cc914a89dca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 05c49f78d24599c574828cee59118c069b7c4ee8
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 5f063034ed7cdc22a92df8d07d8be03ece12f663
+ms.sourcegitcommit: 4e4b71227309bee7e9f1285971f8235c67a9c502
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384954"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46533746"
 ---
 # <a name="the-content-library-in-configuration-manager"></a>Raccolta contenuto in Configuration Manager
 
@@ -82,7 +82,9 @@ Una raccolta contenuto remota è un prerequisito per la [disponibilità elevata 
 > Questa azione sposta solo la raccolta contenuto nel server del sito. Non influisce sulla posizione della raccolta contenuto nei punti di distribuzione. 
 
 > [!Tip]  
-> Pianificare inoltre la gestione del contenuto di origine del pacchetto, che è esterno alla raccolta contenuto. Ogni oggetto software in Configuration Manager ha un'origine del pacchetto in una condivisione di rete. Provare a centralizzare tutte le origini in una singola condivisione, ma assicurarsi che questo percorso sia ridondante e a disponibilità elevata. Se si sposta la raccolta contenuto nello stesso volume di archiviazione delle origini del pacchetto e il volume supporta la deduplicazione del contenuto, questo scenario può salvare la quantità di spazio di archiviazione necessaria.  
+> Pianificare inoltre la gestione del contenuto di origine del pacchetto, che è esterno alla raccolta contenuto. Ogni oggetto software in Configuration Manager ha un'origine del pacchetto in una condivisione di rete. Provare a centralizzare tutte le origini in una singola condivisione, ma assicurarsi che questo percorso sia ridondante e a disponibilità elevata. 
+> 
+> Se si sposta la raccolta contenuto nello stesso volume di archiviazione delle origini del pacchetto, non è possibile contrassegnare il volume per la deduplicazione dei dati. Anche se la raccolta contenuto supporta la deduplicazione dei dati, il volume delle origini del pacchetto non la supporta. Per altre informazioni, vedere [Deduplicazione dei dati](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#bkmmk_datadedup).<!--SCCMDOcs issue #831-->  
 
 
 ### <a name="prerequisites"></a>Prerequisiti  
@@ -98,6 +100,9 @@ Una raccolta contenuto remota è un prerequisito per la [disponibilità elevata 
 ### <a name="process-to-manage-the-content-library"></a>Processo per gestire la raccolta contenuto
 
 1. Creare una cartella in una condivisione di rete come la destinazione per la raccolta contenuto. Ad esempio, `\\server\share\folder`.  
+
+    > [!Warning]  
+    > Non riusare una cartella esistente con contenuto. Ad esempio, non usare la stessa cartella delle origini del pacchetto. Prima di copiare la raccolta contenuto, Configuration Manager rimuove qualsiasi contenuto esistente dalla posizione specificata.  
 
 2. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**. Espandere **Configurazione del sito**, selezionare il nodo **Siti** e selezionare il sito. Nella scheda **Riepilogo** nella parte inferiore del riquadro dei dettagli è visibile una nuova colonna **Raccolta contenuto**.  
 

@@ -4,17 +4,17 @@ description: Questo articolo contiene le risposte alle domande frequenti sul gat
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 03/22/2018
+ms.date: 09/10/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 4c1a128d-22fb-49f1-8e0b-36513a8dc117
-ms.openlocfilehash: 3b178ce27b91701d52d5ea350de85216e1250442
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 16cb80efe5ad082d8624452c01dcd54a5eca27f2
+ms.sourcegitcommit: 2badee2b63ae63687795250e298f463474063100
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333223"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45600940"
 ---
 # <a name="frequently-asked-questions-about-the-cloud-management-gateway"></a>Domande frequenti sul gateway di gestione cloud
 
@@ -45,6 +45,21 @@ Non è necessaria alcuna manutenzione. La progettazione del gateway di gestione 
 ### <a name="im-already-using-ibcm-if-i-add-cmg-how-do-clients-behave"></a>Sto già usando IBCM. Se aggiungo Cloud Management Gateway, come si comportano i client?
 
 Se è già stata distribuita la [gestione client basata su Internet](/sccm/core/clients/manage/plan-internet-based-client-management) (IBCM), è possibile anche distribuire il gateway di gestione cloud. I client ricevono criteri per entrambi i servizi. Quando effettuano il roaming su Internet, essi selezionano in modo casuale e usano uno di questi servizi basati su Internet.
+
+
+### <a name="do-the-user-accounts-have-to-be-in-the-same-azure-subscription-as-the-subscription-that-hosts-the-cmg-cloud-service"></a>Gli account utente devono trovarsi nella sottoscrizione di Azure che ospita il servizio cloud CMG?
+<!--SCCMDocs-pr issue #2873--> Se l'ambiente ha più di una sottoscrizione, è possibile distribuire CMG in qualsiasi sottoscrizione in grado di ospitare i servizi cloud di Azure. 
+
+Questa domanda è comune negli scenari seguenti:  
+
+- Quando si usano ambienti di test e produzione distinti per Active Directory e Azure AD, ma un'unica sottoscrizione di hosting centralizzata di Azure  
+
+- L'uso di Azure è cresciuto organicamente in team diversi  
+
+Quando si usa una distribuzione di Resource Manager, eseguire l'onboarding del tenant di Azure AD associato. Questa connessione consente a Configuration Manager di eseguire l'autenticazione ad Azure per creare, distribuire e gestire il CMG.  
+
+Se si usa l'autenticazione di Azure AD per gli utenti e i dispositivi gestiti con il CMG, eseguire l'onboarding del tenant di Azure AD. Per altre informazioni sui servizi di Azure per la gestione cloud, vedere [Configurare i servizi di Azure](/sccm/core/servers/deploy/configure/azure-services-wizard). Quando si carica ogni tenant di Azure AD, un singolo CMG può specificare l'autenticazione di Azure AD per più tenant, indipendentemente dalla posizione di hosting.
+
 
 
 ## <a name="next-steps"></a>Passaggi successivi

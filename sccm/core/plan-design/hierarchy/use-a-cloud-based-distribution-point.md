@@ -2,7 +2,7 @@
 title: Punto di distribuzione cloud
 titleSuffix: Configuration Manager
 description: Pianificare e progettare la distribuzione del contenuto software tramite Microsoft Azure con i punti di distribuzione cloud in Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 09/10/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 3cd9c725-6b42-427d-9191-86e67f84e48c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0c41fddef794049456529d9577275a21668717f5
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 79b17ba00274459401dc81035833163e75939be0
+ms.sourcegitcommit: 2badee2b63ae63687795250e298f463474063100
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385457"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45601144"
 ---
 # <a name="use-a-cloud-distribution-point-in-configuration-manager"></a>Usare un punto di distribuzione cloud in Configuration Manager
 
@@ -305,6 +305,18 @@ Il servizio di archiviazione di Azure supporta 500 richieste al secondo per un s
 ##  <a name="bkmk_certs"></a> Certificati  
 
 A seconda della progettazione del punto di distribuzione cloud, sono necessari uno o più certificati digitali.  
+
+
+### <a name="general-information"></a>Informazioni generali
+<!--SCCMDocs issue #779--> I certificati per i punti di distribuzione cloud supportano le configurazioni seguenti:  
+
+- **Lunghezza della chiave 4096 bit**  
+
+- A partire dalla versione 1710, supporto per i certificati della **versione 3**. Per altre informazioni, vedere [Panoramica dei certificati CNG](/sccm/core/plan-design/network/cng-certificates-overview).  
+
+- A partire dalla versione 1802, quando si configura Windows con i criteri seguenti: **Crittografia di sistema: utilizza algoritmi FIPS compatibili per crittografia, hash e firma**  
+
+- A partire dalla versione 1802, supporto per **TLS 1.2**. Per altre informazioni, vedere [Riferimento tecnico per i controlli crittografici](/sccm/core/plan-design/security/cryptographic-controls-technical-reference#about-ssl-vulnerabilities).  
 
 
 ### <a name="azure-management-certificate"></a>Certificato di gestione di Azure

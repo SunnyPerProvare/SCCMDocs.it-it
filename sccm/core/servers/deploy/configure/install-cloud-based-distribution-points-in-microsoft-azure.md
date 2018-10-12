@@ -10,12 +10,12 @@ ms.assetid: bb83ac87-9914-4a35-b633-ad070031aa6e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: afb32cd827a223ca9f317f2ddc96d9b176858d2d
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: ef8bfead4bb73871f990a455aef87971413701ba
+ms.sourcegitcommit: 2badee2b63ae63687795250e298f463474063100
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385338"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45601110"
 ---
 # <a name="install-a-cloud-distribution-point-for-configuration-manager"></a>Installare un punto di distribuzione cloud per Configuration Manager
 
@@ -28,7 +28,7 @@ In questo articolo è illustrata in dettaglio la procedura per installare un pun
 - [Configurare il proxy server](#bkmk_proxy)
 - [Distribuire il contenuto e configurare i client](#bkmk_client)
 - [Gestire e monitorare](#bkmk_monitor)
-- [Modificare](#bkmk_modify)
+- [Modifica](#bkmk_modify)
 - [Risoluzione dei problemi avanzata](#bkmk_tshoot) 
 
 
@@ -143,7 +143,7 @@ Per poter usare il punto di distribuzione cloud, i client devono essere in grado
 If you issue the server authentication certificate from your PKI, you may directly specify the Azure **Service name**. For example, `WallaceFalls.cloudapp.net`. When you specify this certificate in the Create Cloud Distribution Point Wizard, both the **Service FQDN** and **Service name** properties are the same. In this scenario, you don't need to configure DNS. The name that clients receive from the management point is the same name as the service in Azure.  
 -->
 
-Il nome comune del certificato di autenticazione server deve includere il nome di dominio. Tale nome è obbligatorio quando si acquista un certificato da un provider pubblico. È consigliato quando il certificato viene rilasciato da PKI, ad esempio `WallaceFalls.contoso.com`. Quando si specifica questo certificato in Crea procedura guidata punto di distribuzione cloud, in **FQDN servizio** viene inserito il nome comune (`WallaceFalls.contoso.com`). In **Nome servizio** viene accettato lo stesso nome host (`WallaceFalls`), che viene aggiunto al nome di dominio di Azure `cloudapp.net`. In questo scenario i client devono risolvere la proprietà **FQDN servizio** del dominio (`WallaceFalls.contoso.com`) nella proprietà **Nome servizio** di Azure (`WallaceFalls.cloudapp.net`). Creare un alias CNAME per eseguire il mapping di questi nomi.
+Il nome comune del certificato di autenticazione server deve includere il nome di dominio. Tale nome è obbligatorio quando si acquista un certificato da un provider pubblico. È consigliato quando il certificato viene rilasciato da PKI, Ad esempio, `WallaceFalls.contoso.com`. Quando si specifica questo certificato in Crea procedura guidata punto di distribuzione cloud, in **FQDN servizio** viene inserito il nome comune (`WallaceFalls.contoso.com`). In **Nome servizio** viene accettato lo stesso nome host (`WallaceFalls`), che viene aggiunto al nome di dominio di Azure `cloudapp.net`. In questo scenario i client devono risolvere la proprietà **FQDN servizio** del dominio (`WallaceFalls.contoso.com`) nella proprietà **Nome servizio** di Azure (`WallaceFalls.cloudapp.net`). Creare un alias CNAME per eseguire il mapping di questi nomi.
 
 
 ### <a name="create-cname-alias"></a>Creare l'alias CNAME
@@ -155,9 +155,9 @@ Creare un record di nome canonico (CNAME) nel DNS pubblico con connessione Inter
 
 Il processo seguente illustra in che modo un client risolve il nome del punto di distribuzione cloud:  
 
-1. Il client ottiene il valore di **FQDN servizio** del punto di distribuzione cloud nell'elenco delle origini di contenuto, ad esempio `WallaceFalls.contoso.com`.  
+1. Il client ottiene il valore di **FQDN servizio** del punto di distribuzione cloud nell'elenco delle origini di contenuto, Ad esempio, `WallaceFalls.contoso.com`.  
 
-2. Interroga DNS, che risolve il FQDN servizio usando il nome CNAME nel **Nome servizio**  di Azure, ad esempio `WallaceFalls.cloudapp.net`.  
+2. Interroga DNS, che risolve il FQDN servizio usando il nome CNAME nel **Nome servizio**  di Azure, Ad esempio, `WallaceFalls.cloudapp.net`.  
 
 3. Interroga di nuovo DNS, che risolve il nome servizio di Azure nell'indirizzo IP pubblico di Azure.   
 
@@ -224,17 +224,22 @@ In un ciclo orario il sito primario che monitora il punto di distribuzione cloud
 
 È possibile visualizzare informazioni di carattere generale sul punto di distribuzione nel nodo **Punti di distribuzione del cloud** in **Servizi cloud** nell'area di lavoro **Amministrazione** della console di Configuration Manager. Selezionare un punto di distribuzione e fare clic su **Proprietà** per visualizzare maggiori dettagli.  
 
-Quando si modificano le proprietà di un punto di distribuzione cloud, è possibile modificare i valori seguenti:  
+Quando si modificano le proprietà di un punto di distribuzione cloud, le tabelle seguenti includono impostazioni da modificare:  
 
-- Scheda **Impostazioni**:  
+#### <a name="settings"></a>Impostazioni  
 
-    - **Descrizione**  
+- **Descrizione**  
 
-    - **File di certificato**: prima della scadenza del certificato di autenticazione server, rilasciare un nuovo certificato con lo stesso nome comune. Aggiungere quindi qui il nuovo certificato per iniziare a usare il servizio. Se il certificato scade, i client non considerano attendibile il servizio e non lo usano.  
+- **File di certificato**: prima della scadenza del certificato di autenticazione server, rilasciare un nuovo certificato con lo stesso nome comune. Aggiungere quindi qui il nuovo certificato per iniziare a usare il servizio. Se il certificato scade, i client non considerano attendibile il servizio e non lo usano.  
 
-- Scheda **Avvisi**: consente di regolare le soglie dei dati per gli avvisi relativi all'archiviazione e ai trasferimenti mensili.  
+#### <a name="alerts"></a>Avvisi
+Regolare le soglie dei dati per gli avvisi relativi all'archiviazione e ai trasferimenti mensili.  
 
-- Scheda **Contenuto**: consente di gestire il contenuto in modo analogo a un punto di distribuzione locale.  
+#### <a name="content"></a>Content
+Gestire il contenuto in modo analogo a un punto di distribuzione locale.  
+
+
+### <a name="redeploy-the-service"></a>Ridistribuire il servizio
 
 Altre modifiche significative, ad esempio le configurazioni seguenti, richiedono la ridistribuzione del servizio:
 - Metodo di distribuzione classico ad Azure Resource Manager
@@ -260,6 +265,11 @@ A partire dalla versione 1806, se è presente un punto di distribuzione cloud es
     2. Distribuire il contenuto del pacchetto software necessario nel nuovo punto di distribuzione cloud.  
 
     3. Eliminare il punto di distribuzione cloud classico.
+
+> [!Tip]  
+> Per determinare il modello di distribuzione corrente di un punto di distribuzione cloud:<!--SCCMDocs issue #611-->  
+> 1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Servizi cloud** e selezionare il nodo **Punti di distribuzione del cloud**.  
+> 2. Aggiungere l'attributo **Modello di distribuzione** come colonna alla visualizzazione elenco. Per una distribuzione di Resource Manager, questo attributo è **Azure Resource Manager**.  
 
 
 ### <a name="stop-or-start-the-cloud-service-on-demand"></a>Arrestare o avviare il servizio cloud su richiesta

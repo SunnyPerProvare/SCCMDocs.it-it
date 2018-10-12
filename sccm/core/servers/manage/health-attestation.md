@@ -10,12 +10,12 @@ ms.assetid: 91f9de33-b277-4500-acd6-e7d90a2947c9
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: c41a04d82edb46a234b6e5bd10d796e6544cbfad
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 27e8e3ef78947eb6623a56e670e176aaa2800f68
+ms.sourcegitcommit: 78d2dce465e3500653b252583a6903a006784c26
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340183"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46448906"
 ---
 # <a name="health-attestation-for-system-center-configuration-manager"></a>Attestazione dell'integrità per System Center Configuration Manager
 
@@ -56,8 +56,9 @@ A partire da Configuration Manager 1702, è possibile configurare l'URL del serv
 2. Fare clic con il pulsante destro del mouse sul sito primario o secondario con il punto di gestione che supporta i client locali dell'attestazione dell'integrità del dispositivo e scegliere **Configura componenti del sito** > **Punto di gestione**. Viene visualizzata la pagina **Proprietà del componente del punto di gestione**.
 3. Nella scheda **Opzioni avanzate** selezionare **Aggiungi** e specificare un URL valido del servizio locale di attestazione dell'integrità del dispositivo. È possibile aggiungere più URL. Se vengono specificati più URL locali, i client ricevono il set completo e scelgono in modo casuale quello da usare.
 4.  Nella console di Configuration Manager scegliere **Amministrazione** > **Panoramica** > **Impostazioni client**.  Selezionare la scheda delle impostazioni di **Agente computer** .  
-5.  Nella finestra di dialogo **Impostazioni predefinite** selezionare **Agente computer** e quindi scorrere fino a **Usare il servizio di attestazione dell'integrità locale** e fare clic su **Sì**.
-6. Definire come destinazione le raccolte di dispositivi che devono comunicare informazioni sull'integrità con le impostazioni dell'agente client per abilitare la creazione di report sull'attestazione dell'integrità del dispositivo.
+5.  Scorrere in basso fino all'opzione **Abilita le comunicazioni con il servizio di attestazione dell'integrità** e impostarla su **Sì**.
+7.  Fare clic sull'opzione **Usare il servizio di attestazione dell'integrità locale** e impostarla su **Sì**.
+8. Definire come destinazione le raccolte di dispositivi che devono comunicare informazioni sull'integrità con le impostazioni dell'agente client per abilitare la creazione di report sull'attestazione dell'integrità del dispositivo.
 
 È possibile anche usare le opzioni **Modifica** o **Rimuovi** per modificare o rimuovere gli URL del servizio di attestazione dell'integrità del dispositivo.
 
