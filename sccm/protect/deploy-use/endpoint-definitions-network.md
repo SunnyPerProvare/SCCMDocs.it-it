@@ -10,12 +10,12 @@ ms.assetid: ddef4d2a-f481-4020-9ddd-9cca5f9795cb
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 96fe34d713a1d9d3afb78dc59124865024e9eb77
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 47c6a046dac7cd4b5d0d16f0342d7e95ba3cc2a0
+ms.sourcegitcommit: 4f05517f7b284696a492a1b184cc5f25c5cda5e6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32347043"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48891147"
 ---
 # <a name="enable-endpoint-protection-malware-definitions-to-download-from-a-network-share-for-configuration-manager"></a>Abilitare le definizioni malware di Endpoint Protection da scaricare da una condivisione di rete per Configuration Manager
 
@@ -26,7 +26,7 @@ ms.locfileid: "32347043"
 > [!NOTE]
 >  Per poter scaricare gli aggiornamenti delle definizioni, i client devono avere accesso in lettura alla cartella condivisa.
 
- Per altre informazioni su come scaricare gli aggiornamenti del motore e delle definizioni per l'archiviazione nella condivisione file, vedere [Install the latest Microsoft antimalware and antispyware software](http://www.microsoft.com/security/portal/Definitions/HowToForeFront.aspx) (Installare il software antimalware e antispyware di Microsoft più recente).
+ Per altre informazioni su come scaricare gli aggiornamenti del motore e delle definizioni per l'archiviazione nella condivisione file, vedere [Install the latest Microsoft antimalware and antispyware software](https://www.microsoft.com/wdsi/definitions) (Installare il software antimalware e antispyware di Microsoft più recente).
 
 ## <a name="to-configure-definition-downloads-from-a-file-share"></a>Per configurare i download delle definizioni da una condivisione file
 

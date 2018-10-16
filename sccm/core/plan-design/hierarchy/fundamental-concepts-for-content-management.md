@@ -10,12 +10,12 @@ ms.assetid: c201be2a-692c-4d67-ac95-0a3afa5320fe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a8f4d93c7bfa73b04ed2c760db17b27e8f1f6de2
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 5c3af900bae26262ba402ea258b8859ba07b999b
+ms.sourcegitcommit: 4f05517f7b284696a492a1b184cc5f25c5cda5e6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385259"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48891215"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Concetti di base per la gestione dei contenuti in Configuration Manager
 
@@ -121,7 +121,7 @@ Per altre informazioni, vedere [Peer cache di Windows PE](/sccm/osd/get-started/
 
 -   **Intranet** (locale):  
 
-    -   i punti di distribuzione possono usare HTTP o HTTPS.  
+    -   I punti di distribuzione possono usare HTTP o HTTPS.  
 
     -   Usare i punti di distribuzione cloud solo come opzione di fallback, se non sono disponibili punti di distribuzione locali.  
 
@@ -133,7 +133,7 @@ Per altre informazioni, vedere [Peer cache di Windows PE](/sccm/osd/get-started/
 
 -   **Gruppo di lavoro**:  
 
-    -   richiede che i punti di distribuzione accettino HTTPS.  
+    -   I punti di distribuzione devono accettare HTTPS.  
 
     -   Può usare un punto di distribuzione cloud.  
 
@@ -146,11 +146,9 @@ Quando un client ha bisogno di contenuto, invia una richiesta di percorso del co
 1.  Il punto di distribuzione presente nello stesso computer del client
 2.  Un'origine peer nella stessa subnet di rete
 3.  Un punto di distribuzione nella stessa subnet di rete
-4.  Un'origine peer nello stesso sito Active Directory
-5.  Un punto di distribuzione nello stesso sito Active Directory
-6.  Un'origine peer nello stesso gruppo di limiti
-7.  Un punto di distribuzione nel gruppo di limiti corrente
-8.  Un punto di distribuzione in un gruppo di limiti vicino configurato per il fallback
+4.  Un'origine peer nello stesso gruppo di limiti
+5.  Un punto di distribuzione nel gruppo di limiti corrente
+6.  Un punto di distribuzione in un gruppo di limiti vicino configurato per il fallback
 9.  Un punto di distribuzione nel gruppo di limiti predefinito del sito 
 10. Il servizio cloud di Windows Update
 11. Un punto di distribuzione con connessione Internet
