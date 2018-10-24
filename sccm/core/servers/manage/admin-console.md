@@ -10,12 +10,12 @@ ms.assetid: 463ce307-59dd-4abd-87b8-42ca9db178d7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8d783211396f3cdc9f14798ed7dc97e921e45554
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 793ba0f05c7a188a6bda9649c9d25922ce27d42c
+ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385912"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48862465"
 ---
 # <a name="using-the-system-center-configuration-manager-console"></a>Uso della console di System Center Configuration Manager
 
@@ -82,6 +82,17 @@ La barra multifunzione è nella parte superiore della console di Configuration M
 Nella parte inferiore del menu di scelta rapida della colonna è possibile ordinare o raggruppare in base a una colonna. È anche possibile ordinare in base a una colonna facendo clic sull'intestazione. 
 
 ![Raggruppare per colonna in Configuration Manager](media/column-group-by.png)
+
+##<a name="console-command-line-options"></a>Opzioni della riga di comando della console
+La console di Microsoft System Center Configuration Manager include le seguenti opzioni della riga di comando.
+
+|Opzione|Descrizione|  
+|------------|-----------------|  
+|**/sms:debugview=1**|Una DebugView viene inserita in tutte le ResultViews che specificano una visualizzazione. DebugView mostra le proprietà non elaborate (nomi e valori).|  
+|**/sms:NamespaceView=1**|Mostra la visualizzazione dello spazio dei nomi nella console di System Center Configuration Manager.|  
+|**/sms:ResetSettings**|La console di System Center Configuration Manager ignora la connessione permanente dell'utente e gli stati di visualizzazione (le dimensioni della finestra di Microsoft Management Console non vengono reimpostate).|  
+|**/sms:IgnoreExtensions**|Disabilita tutte le estensioni di System Center Configuration Manager.|  
+|**/sms:NoRestore**|La console di System Center Configuration Manager ignora la navigazione dei nodi persistente precedente.|  
 
 ## <a name="console-improvements-in-version-1806"></a>Miglioramenti della console nella versione 1806
 In Configuration Manager versione 1806 sono stati aggiunti i miglioramenti della console seguenti:

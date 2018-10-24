@@ -2,7 +2,7 @@
 title: Requisiti dell'infrastruttura di distribuzione del sistema operativo
 titleSuffix: Configuration Manager
 description: Informazioni sulle dipendenze esterne e dei prodotti e sui requisiti per la distribuzione del sistema operativo in Configuration Manager
-ms.date: 07/30/2018
+ms.date: 10/02/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 1dc74219-7ff5-4e3b-b4f6-5aad663bb75b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4e54c6c7d8f827a17c69f4e166aeb4dccca4272f
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 03ec9c046e1b32f137777f15393b5d26b49e5520
+ms.sourcegitcommit: 265d38d55ca0db043e3a7131a56f123e1d98aa5b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39382919"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48236158"
 ---
 # <a name="infrastructure-requirements-for-os-deployment-in-configuration-manager"></a>Requisiti dell'infrastruttura per la distribuzione del sistema operativo in Configuration Manager
 
@@ -33,21 +33,6 @@ Questa sezione offre informazioni su strumenti esterni, kit di installazione e v
 
 Windows Assessment and Deployment Kit (ADK) è un set di strumenti e documentazione a supporto della configurazione e della distribuzione di Windows. Configuration Manager usa Windows ADK per automatizzare azioni quali l'installazione di Windows, l'acquisizione di immagini e la migrazione di dati e profili utente.  
 
-È necessario installare le funzionalità di Windows ADK seguenti nel server del sito di livello superiore della gerarchia, nel server di ogni sito primario nella gerarchia e nel server del sistema del sito del provider SMS:  
-
--   Utilità di migrazione stato utente (USMT) <sup>1</sup>  
-
--   Strumenti di distribuzione Windows  
-
--   Ambiente preinstallazione di Windows (Windows PE)  
-
-Per un elenco delle versioni di Windows 10 ADK che è possibile usare con versioni diverse di Configuration Manager, vedere [Supporto per Windows 10](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk).
-
- <sup>1</sup> L'Utilità di migrazione stato utente non è richiesta nel server del sistema del sito del provider SMS.  
-
-> [!NOTE]  
->  È necessario installare manualmente Windows ADK in ogni server del sito prima di installare il sito di Configuration Manager.  
-
 Per altre informazioni, vedere gli articoli seguenti:  
 
 - [Scenari di Windows ADK per Windows 10 per i professionisti IT](https://docs.microsoft.com/windows/deployment/windows-adk-scenarios-for-it-pros)  
@@ -55,6 +40,37 @@ Per altre informazioni, vedere gli articoli seguenti:
 - [Scaricare Windows ADK per Windows 10](https://docs.microsoft.com/windows-hardware/get-started/adk-install)  
 
 - [Supporto per Windows 10](/sccm/core/plan-design/configs/support-for-windows-10)  
+
+
+#### <a name="site-systems"></a>Sistemi del sito
+Windows ADK è un prerequisito per i server dei sistemi del sito seguenti:
+
+- Server del sito del sito di primo livello nella gerarchia  
+
+- Server del sito del sito di ogni sito primario nella gerarchia  
+
+- Ogni istanza del provider SMS  
+
+
+> [!NOTE]  
+> Installare manualmente Windows ADK in ogni server del sito prima di installare il sito di Configuration Manager.  
+
+#### <a name="windows-adk-features"></a>Funzionalità di Windows ADK
+Installare le funzionalità seguenti di Windows ADK:  
+
+-   Utilità di migrazione stato utente (USMT)  
+
+    > [!Note]  
+    > L'Utilità di migrazione stato utente non è richiesta nel provider SMS.
+
+-   Strumenti di distribuzione Windows  
+
+-   Ambiente preinstallazione di Windows (Windows PE)  
+
+    > [!Important]  
+    > A partire da Windows 10 versione 1809, Windows PE è un programma di installazione separato. Non esistono differenze funzionali.<!--SCCMDocs-pr issue 2908-->  
+
+Per un elenco delle versioni di Windows 10 ADK che è possibile usare con versioni diverse di Configuration Manager, vedere [Supporto per Windows 10](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk).
 
 
 ### <a name="user-state-migration-tool-usmt"></a>Utilità di migrazione stato utente (USMT)  
@@ -70,7 +86,7 @@ Per altre informazioni, vedere gli articoli seguenti:
 
 ### <a name="windows-pe"></a>Windows PE  
 
-Windows PE viene usato per le immagini d'avvio per avviare un computer. Si tratta di una versione di Windows con servizi limitati che viene usata durante la pre-installazione e la distribuzione di Windows. L'elenco seguente include le versioni supportate di Windows ADK per Configuration Manager, Current Branch:  
+Windows PE viene usato per le immagini di avvio per avviare un computer. Si tratta di una versione di Windows con servizi limitati che viene usata durante la pre-installazione e la distribuzione di Windows. L'elenco seguente include le versioni supportate di Windows ADK per Configuration Manager, Current Branch:  
 
 #### <a name="windows-adk-version"></a>Versione di Windows ADK  
 Windows ADK per Windows 10. Per altre informazioni, vedere [Supporto per Windows 10](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk).
@@ -83,7 +99,7 @@ Windows PE 3.1<sup>1</sup> e Windows PE 5
 
 <sup>1</sup> È possibile aggiungere un'immagine d'avvio a Configuration Manager solo se è basata su Windows PE 3.1. Installare il supplemento Windows AIK per Windows 7 SP1 per aggiornare Windows AIK per Windows 7 (basato su Windows PE 3) con il supplemento Windows AIK per Windows 7 SP1 (basato su Windows PE 3.1). Scaricare il supplemento Windows AIK per Windows 7 SP1 dall'[Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=5188).  
 
-Ad esempio, se si ha Configuration Manager, è possibile personalizzare le immagini d'avvio da Windows ADK per Windows 10 (basato su Windows PE 10) dalla console di Configuration Manager. Anche se le immagini d'avvio basate su Windows PE 5 sono supportate, è comunque necessario personalizzarle da un computer diverso e usare la versione di Gestione e manutenzione immagini distribuzione installata con Windows AIK per Windows 8. Aggiungere quindi l'immagine d'avvio alla console di Configuration Manager. Per altre informazioni sui passaggi per personalizzare un'immagine d'avvio (aggiungere componenti e driver facoltativi), abilitare il supporto comandi nell'immagine d'avvio, aggiungere l'immagine d'avvio alla console di Configuration Manager e aggiornare i punti di distribuzione con l'immagine d'avvio, vedere [Personalizzare le immagini d'avvio](/sccm/osd/get-started/customize-boot-images). Per altre informazioni sulle immagini d'avvio, vedere [Gestire le immagini d'avvio con System Center Configuration Manager](/sccm/osd/get-started/manage-boot-images).  
+Ad esempio, se si ha Configuration Manager, è possibile personalizzare le immagini d'avvio da Windows ADK per Windows 10 (basato su Windows PE 10) dalla console di Configuration Manager. Anche se le immagini d'avvio basate su Windows PE 5 sono supportate, è comunque necessario personalizzarle da un computer diverso e usare la versione di Gestione e manutenzione immagini distribuzione installata con Windows AIK per Windows 8. Aggiungere quindi l'immagine d'avvio alla console di Configuration Manager. Per altre informazioni sui passaggi per personalizzare un'immagine d'avvio (aggiungere componenti e driver facoltativi), abilitare il supporto comandi nell'immagine d'avvio, aggiungere l'immagine d'avvio alla console di Configuration Manager e aggiornare i punti di distribuzione con l'immagine d'avvio, vedere [Customize boot images](/sccm/osd/get-started/customize-boot-images) (Personalizzare le immagini d'avvio). Per altre informazioni sulle immagini d'avvio, vedere [Gestire le immagini d'avvio con System Center Configuration Manager](/sccm/osd/get-started/manage-boot-images).  
 
 
 ### <a name="windows-server-update-services-wsus"></a>Windows Server Update Services (WSUS)  
@@ -163,7 +179,7 @@ Per altre informazioni su come acquisire e ripristinare lo stato utente, vedere 
 
 ### <a name="reporting-services-point"></a>Punto di Reporting Services  
 
-Per usare i report di Configuration Manager per le distribuzioni del sistema operativo, installare e configurare un punto di reporting. Per altre informazioni, vedere [Creazione di report](/sccm/core/servers/manage/reporting).  
+Per usare i report di Configuration Manager per le distribuzioni del sistema operativo, installare e configurare un punto di reporting. Per altre informazioni, vedere [Reporting](/sccm/core/servers/manage/reporting) (Creazione di report).  
 
 
 ### <a name="security-permissions-for-os-deployments"></a>Autorizzazioni di sicurezza per le distribuzioni del sistema operativo  

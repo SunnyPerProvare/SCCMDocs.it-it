@@ -10,12 +10,12 @@ ms.assetid: 5e5d854c-9cc1-4dd8-b33f-0fcac675b395
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3750e91d96c1ca3eda1ad0ca2fc67b5f627c7a03
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 2ccc918bf5f15798c201ed491dd3824bb20b2ebb
+ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353553"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48862567"
 ---
 # <a name="device-guard-management-with-configuration-manager"></a>Gestione di Device Guard con Configuration Manager
 
@@ -148,7 +148,7 @@ In questo caso, l'esecuzione del software potrebbe ancora essere consentita anch
 - Non distribuire un criterio in modalità **Imposizione abilitata** per poi distribuire in un secondo momento un criterio in modalità **Solo controllo** nello stesso dispositivo. Questa configurazione potrebbe consentire l'esecuzione di software non attendibile.
 - Quando si usa Configuration Manager per abilitare Controllo di applicazioni di Windows Defender sui PC client, il sistema non impedisce agli utenti con diritti di amministratore locale di eludere i criteri di Controllo di applicazioni o di eseguire in altro modo software non attendibile. 
 - L'unico modo per impedire agli utenti con diritti di amministratore locale di disabilitare Controllo di applicazioni consiste nel distribuire un criterio binario firmato, operazione possibile con Criteri di gruppo, ma non attualmente supportata in Configuration Manager.
-- La configurazione di Configuration Manager come programma di installazione gestito nei PC client usa criteri di AppLocker. AppLocker è usato solo per identificare i programmi di installazione gestiti e qualsiasi imposizione avviene con l'applicazione. 
+- La configurazione di Configuration Manager come programma di installazione gestito nei PC client usa criteri di AppLocker. AppLocker è usato solo per identificare i programmi di installazione gestiti e qualsiasi imposizione avviene con Controllo delle applicazioni di Windows Defender. 
 
 
 
