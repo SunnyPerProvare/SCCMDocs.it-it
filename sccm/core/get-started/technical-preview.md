@@ -2,7 +2,7 @@
 title: Versioni di Technical Preview
 titleSuffix: Configuration Manager
 description: Informazioni sulla versione Technical Preview che consente di testare nuove funzionalità e capacità in Configuration Manager.
-ms.date: 10/03/2018
+ms.date: 10/16/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 9ce0a8cb-f96c-4e41-834c-59ceb54ce44a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c43b501e8305f97f178d2eba9d3ab64fa9efe2a7
-ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
+ms.openlocfilehash: f19e998e803bdaeed2b72dac84ae866930ad0003
+ms.sourcegitcommit: 73dbd2146bd581a1b668b22b84b7cda68a487d05
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48862448"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49390633"
 ---
 # <a name="technical-preview-for-configuration-manager"></a>Technical Preview per Configuration Manager
 
@@ -104,7 +104,7 @@ Microsoft supporta ogni versione Technical Preview fino a quando diventano dispo
    
 È possibile installare una versione di base al massimo per un anno dopo il rilascio. Quando si installa un nuovo sito Technical Preview, se sono disponibili più versioni di base, usare la versione di base più recente.
 
--  **Technical Preview versione 1806**: Configuration Manager Technical Preview versione 1806 è disponibile sia come aggiornamento nella console, sia come nuova versione di base. Scaricare le versioni di base [dal TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
+-  **Technical Preview versione 1810.2**: Configuration Manager Technical Preview versione 1810.2 è disponibile sia come aggiornamento nella console, sia come nuova versione di base. Scaricare le versioni di base dal [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
 
 
 
@@ -124,20 +124,16 @@ Le funzionalità seguenti sono disponibili con la versione Technical Preview di 
 
 <!-- This is the full list of new features in the latest TP release -->
 
-### <a name="technical-preview-version-1810"></a>Technical Preview versione 1810
+### <a name="technical-preview-version-18102"></a>Technical Preview versione 1810.2
 
-- [Miglioramento dell'installazione client](capabilities-in-technical-preview-1810.md#bkmk_ccmsetup) <!--1358840-->
-- [Criteri di conformità delle app obbligatori per i dispositivi con co-gestione](capabilities-in-technical-preview-1810.md#bkmk_app-compliance) <!--1358196-->
-- [Miglioramento del dashboard di co-gestione](capabilities-in-technical-preview-1810.md#bkmk_comgmt-report) <!--1358980-->
-- [Nuove opzioni del gruppo di limiti](capabilities-in-technical-preview-1810.md#bkmk_bgoptions) <!--1358749-->
-- [Sistema del sito nel nodo del cluster Windows](capabilities-in-technical-preview-1810.md#bkmk_cluster) <!--1359132-->
-- [Miglioramenti di CMPivot](capabilities-in-technical-preview-1810.md#bkmk_cmpivot) <!--1359068-->
-- [Miglioramenti degli script](capabilities-in-technical-preview-1810.md#bkmk_scripts) <!--1358239-->
-- [Nuova azione di notifica client per la riattivazione del dispositivo](capabilities-in-technical-preview-1810.md#bkmk_wakeup) <!--1317364-->
-- [Supporto della sequenza di attività per i gruppi di limiti](capabilities-in-technical-preview-1810.md#bkmk_bgr-osd) <!--1359025-->
-- [Dashboard delle informazioni dettagliate sulla gestione](capabilities-in-technical-preview-1810.md#bkmk_insights) <!--1357979-->
-- [Dashboard della documentazione nella console](capabilities-in-technical-preview-1810.md#bkmk_doc-dashboard) <!--1357546-->
-- [Miglioramenti della manutenzione dei driver](capabilities-in-technical-preview-1810.md#bkmk_drivers)<!--1358270-->  
+<!--capabilities-in-technical-preview-1810-2.md#bkmk_anchor-->
+
+- [Miglioramenti alla valutazione delle raccolte](capabilities-in-technical-preview-1810-2.md#bkmk_colleval) <!--1358981-->
+- [Autenticazione dell'amministratore di Configuration Manager](capabilities-in-technical-preview-1810-2.md#bkmk_auth) <!--1357013-->
+- [Regola delle informazioni dettagliate sulla gestione per la versione del client di origine di peer cache](capabilities-in-technical-preview-1810-2.md#bkmk_insights) <!--1358008-->
+- [Miglioramenti al programma di installazione del client basato su Internet](capabilities-in-technical-preview-1810-2.md#bkmk_cmg) <!--1359181-->
+- [Converti le applicazioni in MSIX](capabilities-in-technical-preview-1810-2.md#bkmk_msix) <!--1359029-->
+- [Modifiche all'azione di notifica client per la riattivazione di un dispositivo](capabilities-in-technical-preview-1810-2.md#bkmk_wakeup) <!--1317364-->
 
 
 > [!Note]  
@@ -156,19 +152,25 @@ Then remove the bottom of this list and/or move individual items not in CB to th
 
  |Funzionalità |Versione Technical Preview |Versione Current Branch|  
  |----------------|---------------------|--------------------|
+ | Miglioramento dell'installazione client <!--1358840--> | [Tech Preview 1810](capabilities-in-technical-preview-1810.md#bkmk_ccmsetup) | ![Non aggiunta](media/Red_X.gif) | 
+ | Criteri di conformità delle app obbligatori per i dispositivi con co-gestione <!--1358196--> | [Tech Preview 1810](capabilities-in-technical-preview-1810.md#bkmk_app-compliance) | ![Non aggiunta](media/Red_X.gif) | 
+ | Miglioramento del dashboard di co-gestione <!--1358980--> | [Tech Preview 1810](capabilities-in-technical-preview-1810.md#bkmk_comgmt-report) | ![Non aggiunta](media/Red_X.gif) | 
+ | Nuove opzioni del gruppo di limiti <!--1358749--> | [Tech Preview 1810](capabilities-in-technical-preview-1810.md#bkmk_bgoptions) | ![Non aggiunta](media/Red_X.gif) | 
+ | Sistema del sito nel nodo del cluster Windows <!--1359132--> | [Tech Preview 1810](capabilities-in-technical-preview-1810.md#bkmk_cluster) | ![Non aggiunta](media/Red_X.gif) | 
+ | Miglioramenti di CMPivot <!--1359068--> | [Tech Preview 1810](capabilities-in-technical-preview-1810.md#bkmk_cmpivot) | ![Non aggiunta](media/Red_X.gif) | 
+ | Miglioramenti degli script <!--1358239--> | [Tech Preview 1810](capabilities-in-technical-preview-1810.md#bkmk_scripts) | ![Non aggiunta](media/Red_X.gif) | 
+ | Nuova azione di notifica client per la riattivazione del dispositivo <!--1317364--> | [Tech Preview 1810](capabilities-in-technical-preview-1810.md#bkmk_wakeup) | ![Non aggiunta](media/Red_X.gif) | 
+ | Supporto della sequenza di attività per i gruppi di limiti <!--1359025--> | [Tech Preview 1810](capabilities-in-technical-preview-1810.md#bkmk_bgr-osd) | ![Non aggiunta](media/Red_X.gif) | 
+ | Dashboard delle informazioni dettagliate sulla gestione <!--1357979--> | [Tech Preview 1810](capabilities-in-technical-preview-1810.md#bkmk_insights) | ![Non aggiunta](media/Red_X.gif) | 
+ | Dashboard della documentazione nella console <!--1357546--> | [Tech Preview 1810](capabilities-in-technical-preview-1810.md#bkmk_doc-dashboard) | ![Non aggiunta](media/Red_X.gif) | 
+ | Miglioramenti della manutenzione dei driver <!--1358270--> | [Tech Preview 1810](capabilities-in-technical-preview-1810.md#bkmk_drivers) | ![Non aggiunta](media/Red_X.gif) | 
+ | Supporto della sequenza di attività di Windows AutoPilot per dispositivi esistenti <!--1358333--> | [Tech Preview 1810](capabilities-in-technical-preview-1810.md#bkmk_autopilot) | ![Non aggiunta](media/Red_X.gif) | 
  | Miglioramenti di CMPivot <!--1359068--> | [Tech Preview 1809](capabilities-in-technical-preview-1809.md#bkmk_cmpivot) | ![Non aggiunta](media/Red_X.gif) | 
  | Miglioramento del dashboard del ciclo di vita <!--1358702--> | [Tech Preview 1809](capabilities-in-technical-preview-1809.md#bkmk_lifecycle) | ![Non aggiunta](media/Red_X.gif) | 
  | Miglioramento del data warehouse <!--1358870--> | [Tech Preview 1809](capabilities-in-technical-preview-1809.md#bkmk_dataw) | ![Non aggiunta](media/Red_X.gif) | 
  | Miglioramento delle finestre di manutenzione per gli aggiornamenti software <!--vso2839307--> | [Tech Preview 1809](capabilities-in-technical-preview-1809.md#bkmk_sum-mw) | ![Non aggiunta](media/Red_X.gif) | 
  | Distribuzione in più fasi degli aggiornamenti software <!--1358146--> | [Tech Preview 1808](capabilities-in-technical-preview-1808.md#bkmk_pod) | ![Non aggiunta](media/Red_X.gif) | 
  | Miglioramenti del ripristino delle applicazioni <!--1357866--> | [Tech Preview 1808](capabilities-in-technical-preview-1808.md#bkmk_repair) | ![Non aggiunta](media/Red_X.gif) | 
- | Hub della community <!--1357766--> | [Tech Preview 1807](capabilities-in-technical-preview-1807.md#bkmk_hub) | ![Non aggiunta](media/Red_X.gif) | 
- | Specificare l'unità per la manutenzione di immagini del sistema operativo offline <!--1358924--> | [Tech Preview 1807](capabilities-in-technical-preview-1807.md#bkmk_osd) | ![Non aggiunta](media/Red_X.gif) | 
- | Attività di sincronizzazione dei dispositivi in co-gestione con Intune <!--1358565--> | [Tech Preview 1807](capabilities-in-technical-preview-1807.md#bkmk_comgmt) | ![Non aggiunta](media/Red_X.gif) | 
- | Ripristinare le applicazioni <!--1357866--> | [Tech Preview 1807](capabilities-in-technical-preview-1807.md#bkmk_app-repair) | ![Non aggiunta](media/Red_X.gif) | 
- | Approvare le richieste dell'applicazione tramite posta elettronica <!--1321550--> | [Tech Preview 1807](capabilities-in-technical-preview-1807.md#bkmk_email-approve) | ![Non aggiunta](media/Red_X.gif) | 
- | Miglioramento dell'output degli script <!--1236459--> | [Tech Preview 1807](capabilities-in-technical-preview-1807.md#bkmk_script) | ![Non aggiunta](media/Red_X.gif) | 
- | Miglioramento degli aggiornamenti software di terze parti <!--1358714--> | [Tech Preview 1807](capabilities-in-technical-preview-1807.md#bkmk_3pupdate) | ![Non aggiunta](media/Red_X.gif) | 
 
 
 
@@ -184,6 +186,13 @@ With each CB release, review and remove from this list for anything that's now a
 
 |Funzionalità |Versione Technical Preview |  
 |----------------|---------------------|
+| Hub della community <!--1357766--> | [Tech Preview 1807](capabilities-in-technical-preview-1807.md#bkmk_hub) | 
+| Specificare l'unità per la manutenzione di immagini del sistema operativo offline <!--1358924--> | [Tech Preview 1807](capabilities-in-technical-preview-1807.md#bkmk_osd) | 
+| Attività di sincronizzazione dei dispositivi in co-gestione con Intune <!--1358565--> | [Tech Preview 1807](capabilities-in-technical-preview-1807.md#bkmk_comgmt) | 
+| Ripristinare le applicazioni <!--1357866--> | [Tech Preview 1807](capabilities-in-technical-preview-1807.md#bkmk_app-repair) | 
+| Approvare le richieste dell'applicazione tramite posta elettronica <!--1321550--> | [Tech Preview 1807](capabilities-in-technical-preview-1807.md#bkmk_email-approve) | 
+| Miglioramento dell'output degli script <!--1236459--> | [Tech Preview 1807](capabilities-in-technical-preview-1807.md#bkmk_script) | 
+| Miglioramento degli aggiornamenti software di terze parti <!--1358714--> | [Tech Preview 1807](capabilities-in-technical-preview-1807.md#bkmk_3pupdate) |
 |Support Center <!--1357489--> | [Tech Preview 1804](capabilities-in-technical-preview-1804.md#support-center)  | 
 |Servizio risponditore PXE basato su client <!-- 1357148 --> | [Tech Preview 1712](capabilities-in-technical-preview-1712.md#client-based-pxe-responder-service) |
 |Supporto dell'avvio della rete PXE per IPv6 <!-- 1269793 --> |[Tech Preview 1706](capabilities-in-technical-preview-1706.md#pxe-network-boot-support-for-ipv6)|
