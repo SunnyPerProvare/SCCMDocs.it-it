@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 3f22e7ed209496c2d679591a9c7b282f811f4ae1
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 7d12962e40880ccd5aef0a2f3a78754748228f75
+ms.sourcegitcommit: 23e93055c234a01fd1066d0b0a7e35fb22e47f73
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351803"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49324829"
 ---
 # <a name="create--software-updates-and-update-bundles-with-updates-publisher"></a>Creare aggiornamenti software e aggiornare aggregazioni con Updates Publisher
 

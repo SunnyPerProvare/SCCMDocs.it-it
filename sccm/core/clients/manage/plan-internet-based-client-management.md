@@ -10,12 +10,12 @@ ms.assetid: 83a7c934-3b11-435d-ba22-cbc274951e83
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f31a221151239b6a72a750652731dca7e4557649
-ms.sourcegitcommit: a849dab9333ebac799812624d6155f2a96b523ca
+ms.openlocfilehash: aaa033fb64c3b525eff3ca54537df6dcdf773502
+ms.sourcegitcommit: dfb2cb01c1608b848f2f2fee7c84500e7adcb7a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "42584638"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49101263"
 ---
 # <a name="plan-for-internet-based-client-management-in-system-center-configuration-manager"></a>Pianificare la gestione client basata su Internet in System Center Configuration Manager
 
@@ -47,6 +47,9 @@ La gestione client basata su Internet consente di gestire i client di System Cen
  La gestione client basata su Internet, inoltre, non supporta il roaming. Il roaming consente ai client di individuare sempre i punti di distribuzione più vicini per scaricare il contenuto. I client gestiti su Internet comunicano con i sistemi del sito dal relativo sito assegnato quando tali sistemi sono configurati per l'utilizzo di un FQDN Internet e i ruoli del sistema del sito consentono connessioni client da Internet. I client selezionano in modo non deterministico uno dei sistemi del sito basati su Internet, indipendentemente dalla posizione fisica o dalla larghezza di banda.  
 
  Se si dispone di un punto di aggiornamento software configurato per accettare le connessioni a Internet, i client basati su Internet di Configuration Manager eseguono l'analisi sempre rispetto a questo punto per determinare gli aggiornamenti software necessari. Tuttavia, i client su Internet provano a scaricare prima gli aggiornamenti software da Microsoft Update piuttosto che da un punto di distribuzione basato su Internet. Solo in caso di errore, proveranno quindi a scaricare gli aggiornamenti software richiesti da un punto di distribuzione basato su Internet. I client non configurati per la gestione client basata su Internet non provano mai a scaricare gli aggiornamenti software da Microsoft Update, ma usano sempre i punti di distribuzione di Configuration Manager.  
+ 
+[!Tip]  
+Il client di Configuration Manager determina automaticamente se si trova sull'intranet o su Internet. Se il client riesce a contattare un controller di dominio o un punto di gestione locale, imposta il proprio tipo di connessione su Ora intranet. In caso contrario, passa a Ora Internet e il client usa i punti di gestione, i punti di aggiornamento software e i punti di distribuzione assegnati al proprio sito per la comunicazione.
 
 ##  <a name="considerations-for-client-communications-from-the-internet-or-untrusted-forest"></a>Considerazioni per le comunicazioni client da Internet o da una foresta non trusted  
  I seguenti ruoli del sistema del sito installati nei siti primari supportano connessioni da client che si trovano in percorsi non attendibili, come Internet o una foresta non trusted (i siti secondari non supportano le connessioni client da percorsi non attendibili):  

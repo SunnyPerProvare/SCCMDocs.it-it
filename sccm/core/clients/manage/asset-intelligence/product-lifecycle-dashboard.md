@@ -10,12 +10,12 @@ ms.assetid: 8b5b144a-0e5f-4fcc-87b2-33b9bcdb5655
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f99aeba109ed4de3ef1b88b721b59eebb4653cb6
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: dd1a3a56bac6d7917c70db731b1735a195fae3df
+ms.sourcegitcommit: dfb2cb01c1608b848f2f2fee7c84500e7adcb7a4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384632"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49101246"
 ---
 # <a name="manage-microsoft-lifecycle-policy-with-configuration-manager"></a>Gestire i criteri del ciclo di vita Microsoft con Configuration Manager
 
@@ -63,7 +63,7 @@ Il dashboard include i riquadri seguenti:
 
 - **Primi 5 prodotti che hanno superato la scadenza:** questo riquadro è una visualizzazione dati consolidata dei prodotti che hanno superato la scadenza trovati nell'ambiente. Il grafico mostra il software installato scaduto rispetto al ciclo di vita del supporto dei sistemi operativi e dei prodotti SQL Server.  
 
-- **Primi 5 prodotti che si avvicinano alla scadenza nei sei mesi successivi:** questo riquadro è una visualizzazione dati consolidata dei prodotti che si avvicinano alla scadenza nei sei mesi successivi trovati nell'ambiente. Il grafico mostra il software installato che scadrà entro sei mesi rispetto al ciclo di vita del supporto dei sistemi operativi e dei prodotti SQL Server.  
+- **Primi 5 prodotti che si avvicinano alla scadenza nei sei mesi successivi:** questo riquadro è una visualizzazione dati consolidata dei prodotti che si avvicinano alla scadenza nei 18 mesi successivi trovati nell'ambiente. Il grafico mostra il software installato che scadrà entro 18 mesi rispetto al ciclo di vita del supporto dei sistemi operativi e dei prodotti SQL Server.  
 
 - **Dati sul ciclo di vita per i prodotti installati:** questo riquadro offre un'idea generale della transizione di un prodotto dallo stato supportato allo stato scaduto. Il grafico presenta in dettaglio il numero di client in cui il prodotto è installato, lo stato di disponibilità del supporto e un collegamento ad altre informazioni sui passaggi successivi da eseguire. Nel grafico sono incluse le informazioni seguenti:     
     - Tempo rimanente per il supporto tecnico

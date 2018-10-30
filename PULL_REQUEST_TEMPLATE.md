@@ -3,5 +3,3 @@
 Descrivere la modifica, spiegando in particolare *perché* la si ritiene necessaria.
 
 Corregge #Issue_Number (se necessario)
-
-@Article_Author: verificare il contenuto (esaminando il tag di metadati `author`)
