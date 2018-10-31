@@ -10,12 +10,12 @@ author: aczechowski
 description: Informazioni su come configurare Windows Server Update Services per l'approvazione automatica degli aggiornamenti delle definizioni.
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: b1c79a839ad1c83c96d7fe4583b46f6a3edbffba
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 5aa857141b047fc0f9929ca72041980a8bc8b6a7
+ms.sourcegitcommit: 19fc4f27667d51502fc9d7d02d164f2837d65dae
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349858"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49461257"
 ---
 # <a name="enable-endpoint-protection-malware-definitions-to-download-from-windows-server-update-services-wsus-for-configuration-manager"></a>Abilitare le definizioni malware di Endpoint Protection da scaricare da Windows Server Update Services (WSUS) per Configuration Manager
 
@@ -37,7 +37,7 @@ ms.locfileid: "32349858"
 
     -   Per Windows 8.1 e versioni precedenti, nella scheda **Prodotti** della finestra di dialogo **Proprietà del componente del punto di aggiornamento software** selezionare la casella di controllo **Forefront Endpoint Protection 2010** .
 
-    -   Per Windows 10 e versioni successive, nella scheda **Prodotti** della finestra di dialogo **Proprietà del componente del punto di aggiornamento software** selezionare le caselle di controllo **Windows Defender** e **Windows Technical Preview 2** .
+    -   Per Windows 10 e versioni successive, nella scheda **Prodotti** della finestra di dialogo **Proprietà del componente del punto di aggiornamento software** selezionare la casella di controllo **Windows Defender**.
 
 6.  Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà del componente del punto di aggiornamento software** .
 
@@ -51,7 +51,7 @@ ms.locfileid: "32349858"
 
     -   Per Windows 8.1 e versioni precedenti, nella scheda **Prodotti** della finestra di dialogo **Proprietà del componente del punto di aggiornamento software** selezionare la casella di controllo **Forefront Endpoint Protection 2010** .
 
-    -   Per Windows 10 e versioni successive, nella scheda **Prodotti** della finestra di dialogo **Proprietà del componente del punto di aggiornamento software** selezionare le caselle di controllo **Windows Defender** e **Windows Technical Preview 2** .
+    -   Per Windows 10 e versioni successive, nella scheda **Prodotti** della finestra di dialogo **Proprietà del componente del punto di aggiornamento software** selezionare la casella di controllo **Windows Defender**.
 
 3.  Nella scheda **Classificazioni** della finestra di dialogo **Prodotti e classificazioni** selezionare le caselle di controllo **Aggiornamenti delle definizioni** e **Aggiornamenti** .
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: b552391d-abc0-48a2-a429-93605a13a66a
-ms.openlocfilehash: 89db0abe9a60e6850ae36e619483e0dcdc3e5360
-ms.sourcegitcommit: 316899b08f2ef372993909e08e069f7edfed1d33
+ms.openlocfilehash: 655d7663a6597ce1b13fb26a5340d482be1ba7ed
+ms.sourcegitcommit: 8827ffaea108678da968a3623f072876990c830c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44111145"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49411311"
 ---
 # <a name="import-configuration-manager-data-to-microsoft-intune"></a>Importare i dati di Configuration Manager in Microsoft Intune 
 
@@ -55,6 +55,7 @@ Lo strumento di importazione può raccogliere informazioni sui tipi di oggetti s
 - Lo strumento tenterà di indicare il motivo per cui non è possibile importare un oggetto. In alcuni casi, prima di importare gli oggetti in Intune, è possibile tornare alla console di Configuration Manager, risolvere il problema, avviare di nuovo l'operazione di individuazione degli oggetti di Configuration Manager e quindi importare gli oggetti. In alcuni casi potrebbe essere necessario o consigliabile ricreare questi oggetti manualmente in Intune.
 - Ci sono alcuni profili che dipendono da altri oggetti. Se si vuole importare un profilo che dipende da un altro oggetto, ad esempio un profilo di posta elettronica che dipende da un certificato, è necessario importare entrambi gli oggetti contemporaneamente, a meno che l'altro oggetto non sia stato importato in precedenza dallo stesso computer con lo stesso utente.  
 - Dopo aver eseguito lo strumento, potrebbe essere necessario eseguire altri passaggi manualmente. Ad esempio, indirizzare app e criteri ai gruppi di AAD. 
+- Se agli utenti sono state assegnate app Web (talvolta denominate clip Web), è necessario rimuovere queste app Web prima della migrazione degli utenti e quindi riassegnarle una volta completata la migrazione. In caso contrario, le clip Web diventeranno ingestibili dopo la migrazione.
 
 ## <a name="prerequisites"></a>Prerequisiti
 - Configuration Manager versione 1610 o successiva. È consigliabile specificare il sito principale ed eseguire lo strumento con un utente che abbia accesso a tutti gli oggetti nella gerarchia dei siti. Lo strumento individua solo gli oggetti accessibili dall'utente che lo esegue. 

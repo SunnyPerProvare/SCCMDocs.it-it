@@ -10,12 +10,12 @@ ms.assetid: 0a7415ba-2c53-4433-983e-780e92aa662f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6805aed620ea6bd41d1ec3460c1076b44d28f67a
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: f2c3052337b5c985798c15950a541086587176d1
+ms.sourcegitcommit: 19fc4f27667d51502fc9d7d02d164f2837d65dae
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385355"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49461308"
 ---
 # <a name="plan-for-site-system-servers-and-site-system-roles-in-configuration-manager"></a>Pianificare i server e i ruoli del sistema del sito in Configuration Manager
 
@@ -59,8 +59,8 @@ Questo ruolo identifica un sistema del sito che esegue un'istanza del servizio *
 #### <a name="configuration-manager-site-database-server"></a>Server di database del sito di Configuration Manager
 Il sito assegna questo ruolo ai server di sistema del sito che contengono un'istanza del database del sito. Spostare questo ruolo solo in un nuovo server, eseguendo l'installazione per modificare il sito in modo che usi un'altra istanza di SQL Server per ospitare il database del sito.  
 
-#### <a name="sms-provider"></a>provider SMS
-Il ruolo viene assegnato a ogni computer che ospita un'istanza del provider SMS. Il provider è l'interfaccia tra una console di Configuration Manager e il database del sito. Per impostazione predefinita, questo ruolo viene installato automaticamente nel server del sito di un sito di amministrazione centrale e nei siti primari. Installare istanze aggiuntive in ogni sito per consentire l'accesso ad altri utenti amministratori o per garantire la ridondanza.  
+#### <a name="sms-provider"></a>Provider SMS
+Il sito assegna questo ruolo a ogni computer che ospita un'istanza del provider SMS. Il provider è l'interfaccia tra una console di Configuration Manager e il database del sito. Per impostazione predefinita, questo ruolo viene installato automaticamente nel server del sito di un sito di amministrazione centrale e nei siti primari. Installare istanze aggiuntive in ogni sito per consentire l'accesso ad altri utenti amministratori o per garantire la ridondanza.  
 
 Per installare provider aggiuntivi eseguire il programma di installazione di Configuration Manager per [gestire il provider SMS](/sccm/core/servers/manage/modify-your-infrastructure#BKMK_ManageSMSprovider). Quindi installare altri provider in computer aggiuntivi. Installare una sola istanza del provider SMS in un computer. Il computer deve trovarsi nello stesso dominio del server del sito.  
 

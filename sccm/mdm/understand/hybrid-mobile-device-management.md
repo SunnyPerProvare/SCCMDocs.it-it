@@ -10,12 +10,12 @@ ms.assetid: bb95154b-f63e-4491-896e-41d732c802f8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9f65c7665d5c055fc2a1636a1c9556b4ff75a4f7
-ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
+ms.openlocfilehash: 22e685889f51f3b35c3ba58e94d161816424b2a3
+ms.sourcegitcommit: dd785ad7146b8491c98ccd7804d0959a5c1fb034
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42584612"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49383015"
 ---
 # <a name="hybrid-mdm-with-configuration-manager-and-microsoft-intune"></a>Soluzione MDM ibrida con Configuration Manager e Intune
 
@@ -23,7 +23,8 @@ ms.locfileid: "42584612"
 
 > [!Important]  
 > A partire dal 14 agosto 2018, la gestione ibrida dei dispositivi mobili è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).
-> <!--Intune feature 2683117--> Dopo il lancio in Azure oltre un anno fa, sono state aggiunte a Intune centinaia di nuove funzionalità del servizio leader di settore e richieste dai clienti. Il servizio offre ora molte più funzionalità di quelle offerte nella gestione di dispositivi mobili (MDM) ibrida. Intune in Azure offre un'esperienza amministrativa più integrata e semplificata per le esigenze di mobilità aziendale.
+> <!--Intune feature 2683117-->  
+> Dopo il lancio in Azure oltre un anno fa, sono state aggiunte a Intune centinaia di nuove funzionalità del servizio leader di settore e richieste dai clienti. Il servizio offre ora molte più funzionalità di quelle offerte nella gestione di dispositivi mobili (MDM) ibrida. Intune in Azure offre un'esperienza amministrativa più integrata e semplificata per le esigenze di mobilità aziendale.
 > 
 > La maggior parte dei clienti sceglie di conseguenza Intune in Azure piuttosto che la soluzione MDM ibrida. Sempre meno clienti usano la soluzione MDM ibrida, mentre il numero di quelli che passano al cloud è in continuo aumento. L'1 settembre 2019, Microsoft ritirerà quindi l'offerta di servizio MDM ibrido. Pianificare la [migrazione a Intune in Azure](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa) per la gestione dei dispositivi mobili. 
 > 
