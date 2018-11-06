@@ -2,7 +2,7 @@
 title: Funzionalità di versioni non definitive
 titleSuffix: Configuration Manager
 description: Le funzionalità di versioni non definitive sono incluse nel Current Branch a scopo di test preliminare in un ambiente di produzione.
-ms.date: 07/30/2018
+ms.date: 10/24/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 6bce416b-761d-4b23-bd33-5b7c30edb10d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7b82bdfcbe69c7e9d59185fc6af20a85e65a6e7d
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.openlocfilehash: e3b3b31c31725c6b9931d0c2cc67324c4b39f974
+ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893567"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50411137"
 ---
 # <a name="pre-release-features-in-configuration-manager"></a>Funzionalità di versioni non definitive in Configuration Manager
 
@@ -75,7 +75,7 @@ Quando si abilita una funzionalità non definitiva, gestione gerarchie (HMAN) di
 
 | Funzionalità          | Aggiunta come versione non definitiva | Aggiunta come funzionalità completa |  
 |------------------|----------------------|-------------------------|
-| Sistema del sito HTTP migliorato<!--1356889,1358228-->|Versione 1806|![Non ancora](media/red_x.png)|
+| Sistema del sito HTTP migliorato<!--1356889,1358228-->|[Versione 1806](/sccm/core/plan-design/hierarchy/enhanced-http)|![Non ancora](media/red_x.png)|
 | App per dispositivi mobili per dispositivi con co-gestione<!--1357892-->|[Versione 1806](/sccm/core/clients/manage/co-management-switch-workloads#workloads-able-to-be-transitioned-to-intune)|![Non ancora](media/red_x.png)|
 | Package Conversion Manager<!--1357861-->|[Versione 1806](/sccm/apps/pcm/package-conversion-manager)|![Non ancora](media/red_x.png)|
 | Supporto per Cisco AnyConnect 4.0.07x e versioni successive per iOS<!--1357393-->|[Versione 1802](/sccm/mdm/deploy-use/create-vpn-profiles)| [Versione 1802 con aggiornamento 4163547](/sccm/mdm/deploy-use/create-vpn-profiles) |

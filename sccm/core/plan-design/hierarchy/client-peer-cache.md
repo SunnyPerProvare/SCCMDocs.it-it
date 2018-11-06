@@ -10,12 +10,12 @@ ms.assetid: 86cd5382-8b41-45db-a4f0-16265ae22657
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b1d4e2b7dca44db7ddc5976edde59a04bc3cb45e
-ms.sourcegitcommit: 4e4b71227309bee7e9f1285971f8235c67a9c502
+ms.openlocfilehash: e5099be5ff6b34bcbc232e78056f1937a9508c4f
+ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46533763"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50411426"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
 
@@ -94,7 +94,7 @@ Quando l'origine di peer cache rifiuta una richiesta di contenuto, il client di 
 
 - I client possono scaricare il contenuto solo origini di peer cache inclusi nel relativo gruppo di limiti corrente.  
 
-- Non è richiesto alcun [account di accesso alla rete](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account), ad eccezione dei casi seguenti:  
+- Non è richiesto alcun [account di accesso alla rete](/sccm/core/plan-design/hierarchy/accounts#network-access-account), ad eccezione dei casi seguenti:  
 
     - Configurare un account di accesso alla rete nel sito quando un client abilitato per la peer cache esegue una sequenza di attività di Software Center e viene riavviato in un'immagine d'avvio. Quando il dispositivo si trova in Windows PE, usa l'account di accesso alla rete per ottenere il contenuto dall'origine di peer cache.  
 
