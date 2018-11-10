@@ -10,12 +10,12 @@ ms.assetid: 32e2d6b9-148f-45e2-8083-98c656473f82
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2e0f74790437b34d1c5cd5dc00767ec782a51b45
-ms.sourcegitcommit: fe279229a90fdc8cddbb13c7ffdbbb22af0e25ef
+ms.openlocfilehash: 29b0f577ad291899467d9c6fd305af9ef6b892eb
+ms.sourcegitcommit: 5b3ff56018cfc6bda9643c9f1bebc575173f61bc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47229297"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50083803"
 ---
 # <a name="cmpivot-for-real-time-data-in-configuration-manager"></a>CMPivot per i dati in tempo reale in Configuration Manager
 
@@ -35,7 +35,7 @@ Per usare CMPivot sono necessari i componenti seguenti:
 
 - Aggiornare i dispositivi di destinazione alla versione più recente del client Configuration Manager.  
 
-- L'amministratore di Configuration Manager necessita dell'autorizzazione **Lettura** per l'oggetto **Script SMS** e dell'autorizzazione **Esegui script** per l'oggetto **Raccolta**. Il ruolo **Scripts Runner** (Esecutore script) ha queste autorizzazioni. Per altre informazioni, vedere [Creare ruoli di sicurezza per gli script](/sccm/apps/deploy-use/create-deploy-scripts#bkmk_ScriptRoles).  
+- L'amministratore di Configuration Manager necessita dell'autorizzazione **Lettura** per l'oggetto **Script SMS**, dell'autorizzazione **Esegui script** per l'oggetto **Raccolta** e dell'ambito predefinito. Il ruolo **Scripts Runner** (Esecutore script) ha queste autorizzazioni. Per altre informazioni, vedere [Creare ruoli di sicurezza per gli script](/sccm/apps/deploy-use/create-deploy-scripts#bkmk_ScriptRoles).  
 
 - Per raccogliere dati per le entità seguenti, i client di destinazione richiedono PowerShell versione 5.0:  
     - Amministratori

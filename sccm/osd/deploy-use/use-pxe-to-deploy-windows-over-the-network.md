@@ -10,12 +10,12 @@ ms.assetid: da5f8b61-2386-4530-ad54-1a5c51911f07
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4c6069f81c9a5d086ef7c3ed13312d4f878d524a
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 1efd4197e63ddc12c0afc9e37b633c38d0df0f14
+ms.sourcegitcommit: a52255da16c9f8b0b60a6c299a369347c7e01bef
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384092"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49989145"
 ---
 # <a name="use-pxe-to-deploy-windows-over-the-network-with-configuration-manager"></a>Usare PXE per distribuire Windows in rete con Configuration Manager
 
@@ -40,7 +40,8 @@ Eseguire i passaggi di uno degli scenari di distribuzione del sistema operativo 
 
 Per distribuire i sistemi operativi ai client di Configuration Manager che eseguono richieste di avvio PXE, è necessario configurare uno o più punti di distribuzioni per accettare le richieste PXE. Dopo la configurazione, il punto di distribuzione risponde alle richieste di avvio PXE e stabilisce l'azione appropriata da eseguire per la distribuzione. Per altre informazioni, vedere [Install or modify a distribution point](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_config-pxe) (Installare o modificare un punto di distribuzione).  
 
-
+> [!NOTE]  
+>  Quando si configura un singolo punto di distribuzione che supporta PXE per più subnet, non è supportato per l'uso delle opzioni DHCP. Configurare gli helper IP sui router per consentire l'inoltro delle richieste PXE ai punti di distribuzione che supportano PXE.
 
 ## <a name="prepare-a-pxe-enabled-boot-image"></a>Preparare un'immagine d'avvio che supporta PXE
 

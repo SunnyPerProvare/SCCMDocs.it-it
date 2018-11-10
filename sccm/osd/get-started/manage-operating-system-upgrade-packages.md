@@ -10,12 +10,12 @@ ms.assetid: b9b22655-b8c1-461f-8047-3a7e906f647a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e323fa8df7d8ae88d6526a5d1777ceb8fa27c2de
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 1caaf1b63a5773e61c3e8d7b500e9d0acfca1010
+ms.sourcegitcommit: a52255da16c9f8b0b60a6c299a369347c7e01bef
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353148"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49989128"
 ---
 # <a name="manage-operating-system-upgrade-packages-with-system-center-configuration-manager"></a>Gestire i pacchetti di aggiornamento del sistema operativo con System Center Configuration Manager
 
@@ -87,3 +87,6 @@ Un pacchetto di aggiornamento in System Center Configuration Manager contiene i 
 7.  Nella pagina **Riepilogo** verificare le informazioni e quindi fare clic su **Avanti**.  
 
 8.  Nella pagina **Completamento** verificare che gli aggiornamenti software siano stati applicati correttamente all'immagine del sistema operativo.  
+
+> [!NOTE]  
+>  Per ridurre al minimo le dimensioni del payload, il processo di manutenzione dei pacchetti di aggiornamento del sistema operativo e delle immagini del sistema operativo rimuove la versione precedente. 

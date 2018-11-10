@@ -10,12 +10,12 @@ ms.assetid: f504de3e-4caf-455c-80d7-a63f13f4c5d9
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 78afa39b173abc79c4ed1cadc79f41ab32150ecf
-ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
+ms.openlocfilehash: 626c52b827e38a53ed3b8982963496f29f11acb5
+ms.sourcegitcommit: 5b3ff56018cfc6bda9643c9f1bebc575173f61bc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48862363"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50083769"
 ---
 #  <a name="configure-alerts-for-endpoint-protection-in-configuration-manager"></a>Configurare gli avvisi di Endpoint Protection in Configuration Manager
 
@@ -39,12 +39,12 @@ ms.locfileid: "48862363"
     > [!NOTE]
     >  Non è possibile configurare avvisi per raccolte di utenti.
 
-4.  Nella scheda **Avvisi** della finestra di dialogo ***Proprietà**<Nome raccolta\>* selezionare **Visualizza questa raccolta nel dashboard di Endpoint Protection** se si vogliono visualizzare i dettagli sulle operazioni antimalware per la raccolta nell'area di lavoro **Monitoraggio** della console di Configuration Manager.
+4.  Nella scheda **Avvisi** della finestra di dialogo **Proprietà** _<Nome raccolta\>_ selezionare **Visualizza questa raccolta nel dashboard di Endpoint Protection** se si vogliono visualizzare i dettagli sulle operazioni antimalware per la raccolta nell'area di lavoro **Monitoraggio** della console di Configuration Manager.
 
     > [!NOTE]
     >  Questa opzione non è disponibile per la raccolta **Tutti i sistemi** .
 
-5.  Nella scheda **Avvisi** della finestra di dialogo ***Proprietà* *<Nome raccolta\>* fare clic su **Aggiungi**.
+5.  Nella scheda **Avvisi** della finestra di dialogo **Proprietà** _<Nome raccolta\>_ fare clic su **Aggiungi**.
 
 6.  Nella sezione **Genera un avviso quando si applicano queste condizioni** della finestra di dialogo **Aggiungi avvisi nuova raccolta**, selezionare gli avvisi che devono essere generati da Configuration Manager se si verificano gli eventi di Endpoint Protection specificati e fare clic su **OK**.
 
@@ -83,7 +83,7 @@ ms.locfileid: "48862363"
 
         -   **Intervallo per rilevamento (ore)** : specificare l'intervallo di rilevamento, in ore, in cui deve essere raggiunto il numero di rilevamenti di malware. Specificare un numero compreso tra **1** e **168**.
 
-9. Fare clic su **OK** per chiudere la finestra di dialogo ***Proprietà* *<Nome raccolta\>*.  
+9. Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà** _<Nome raccolta\>_.  
 
 ## <a name="alert-for-outdated-malware-client"></a>Avviso per client malware obsoleto
 

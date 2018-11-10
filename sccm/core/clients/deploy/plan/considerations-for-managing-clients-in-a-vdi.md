@@ -10,12 +10,12 @@ ms.assetid: abd45393-d84e-4583-bc80-74bbb3709577
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ec8989a2e7b71d09198e03f2e263364bebc6b169
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a17bb43d91d26cf10da0e1d3da5d8f6e4a2af2a7
+ms.sourcegitcommit: 5b3ff56018cfc6bda9643c9f1bebc575173f61bc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344161"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50083786"
 ---
 # <a name="considerations-for-managing-system-center-configuration-manager-clients--in-a-virtual-desktop-infrastructure-vdi"></a>Considerazioni per la gestione dei client di System Center Configuration Manager in un'infrastruttura VDI (Virtual Desktop Infrastructure)
 
@@ -42,4 +42,4 @@ System Center Configuration Manager supporta l'installazione del client di Confi
 > [!NOTE]  
 >  Con l'eccezione dei client di Windows Embedded che sono in modalità di manutenzione, anche i client di Configuration Manager che non sono in esecuzione in ambienti virtualizzati usano il ritardo casuale. Quando si è eseguita la distribuzione di molti client, questo comportamento consente di evitare dei picchi nella larghezza di banda di rete e riduce il requisito di elaborazione CPU nei sistemi del sito di Configuration Manager, come il punto di gestione e il server del sito. L'intervallo di ritardo varia in base alle funzionalità di Configuration Manager.  
 >   
->  Il ritardo casuale è disabilitato per impostazione predefinita per le distribuzioni di applicazioni e gli aggiornamenti software richiesti usando le impostazioni client seguenti: **Agente computer**: **Disabilitare sequenza casuale scadenza**.
+>  Il ritardo casuale è disabilitato per impostazione predefinita per gli aggiornamenti software richiesti usando le impostazioni client seguenti: **Agente computer**: **Disabilitare sequenza casuale scadenza**.
