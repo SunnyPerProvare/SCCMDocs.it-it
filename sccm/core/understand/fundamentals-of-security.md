@@ -1,8 +1,8 @@
 ---
 title: Nozioni fondamentali sulla sicurezza
 titleSuffix: Configuration Manager
-description: Di seguito sono riportate informazioni sui livelli di protezione per System Center Configuration Manager.
-ms.date: 12/30/2016
+description: Informazioni sui livelli di sicurezza in Configuration Manager.
+ms.date: 10/22/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,59 +10,118 @@ ms.assetid: 035b7f73-8b78-4ed1-835e-a31f9a5c4a02
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 47b03d8e3f0828efc6f32627fb0298645b5998d1
-ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
+ms.openlocfilehash: 45b65e5ff35f93bb79418f00795aecab5cc208b9
+ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42584626"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50411205"
 ---
-# <a name="fundamentals-of-security-for-system-center-configuration-manager"></a>Nozioni fondamentali sulla sicurezza di System Center Configuration Manager
+# <a name="fundamentals-of-security-for-configuration-manager"></a>Nozioni fondamentali sulla sicurezza di Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-La sicurezza di System Center Configuration Manager è costituita da diversi livelli. Il primo livello è fornito dalle funzionalità di sicurezza di Windows per il sistema operativo e per la rete e include:  
+Questo articolo illustra i componenti di sicurezza fondamentali seguenti di qualsiasi ambiente Configuration Manager:
+- [Livelli di sicurezza](#bkmk_layers)
+- [Amministrazione basata su ruoli](#bkmk_rba)
+- [Protezione degli endpoint client](#bkmk_endpoints)
+- [Account e gruppi di Configuration Manager](#bkmk_accounts)
+- [Privacy](#bkmk_privacy)
 
--   Condivisione di file per il trasferimento di file tra componenti di Configuration Manager.  
+## <a name="bkmk_layers"></a> Livelli di sicurezza
 
--   Elenchi di controllo di accesso (ACL) per agevolare la protezione dei file e delle chiavi del Registro di sistema.  
+La sicurezza in Configuration Manager è costituita dai livelli seguenti: 
+- [Sicurezza di rete e del sistema operativo Windows](#bkmk_layer-windows)
+- [Infrastruttura di rete: firewall, identificazione delle intrusioni, infrastruttura a chiave pubblica (PKI)](#bkmk_layer-network)
+- [Controlli di sicurezza di Configuration Manager](#bkmk_layer-cm)
+- [Provider SMS](#bkmk_layer-provider)
+- [Autorizzazioni per il database del sito](#bkmk_layer-db)
 
--   Internet Protocol Security (IPSec) per proteggere le comunicazioni.  
+#### <a name="bkmk_layer-windows"></a> Sicurezza di rete e del sistema operativo Windows
+Il primo livello è offerto dalle funzionalità di sicurezza di Windows per il sistema operativo e la rete. Questo livello include i componenti seguenti:  
 
--   Criteri di gruppo per impostare criteri di sicurezza.  
+-   Condivisione di file per il trasferimento di file tra componenti di Configuration Manager  
 
--   Autorizzazioni DCOM (Distributed Component Object Model) per applicazioni distribuite, ad esempio la console di Configuration Manager.  
+-   Elenchi di controllo di accesso (ACL) per agevolare la protezione dei file e delle chiavi del Registro di sistema  
 
--   Active Directory Domain Services per archiviare le entità di protezione.  
+-   Internet Protocol Security (IPSec) per proteggere le comunicazioni  
 
--   Protezione account di Windows, inclusi alcuni gruppi creati durante la configurazione di Configuration Manager.  
+-   Criteri di gruppo per impostare criteri di sicurezza  
 
-Altri componenti di sicurezza, come firewall e rilevamento intrusioni, contribuiscono alla difesa per l'intero ambiente. I certificati emessi dalle implementazioni di infrastruttura a chiave pubblica (PKI) standard per il settore consentono di offrire autenticazione, firma e crittografia.  
+-   Autorizzazioni DCOM (Distributed Component Object Model) per applicazioni distribuite, ad esempio la console di Configuration Manager  
 
-Oltre alla sicurezza fornita da Windows Server e dall'infrastruttura di rete, Configuration Manager controlla l'accesso alla console di Configuration Manager e alle relative risorse in diversi modi. Per impostazione predefinita, solo gli amministratori locali hanno i diritti per i file e per le chiavi del Registro di sistema necessari per l'esecuzione della console di Configuration Manager nei computer in cui è installata.  
+-   Servizi di dominio Active Directory per memorizzare le entità di protezione  
+
+-   Protezione account di Windows, inclusi alcuni gruppi creati da Configuration Manager durante l'installazione  
+
+#### <a name="bkmk_layer-network"></a> Infrastruttura di rete
+
+Componenti di sicurezza aggiuntivi, ad esempio firewall e identificazione delle intrusioni, contribuiscono alla difesa dell'intero ambiente. I certificati emessi dalle implementazioni di infrastruttura a chiave pubblica (PKI) standard per il settore consentono di offrire autenticazione, firma e crittografia.  
+
+#### <a name="bkmk_layer-cm"></a> Controlli di sicurezza di Configuration Manager
+
+Oltre alla sicurezza offerta dall'infrastruttura di rete e server Windows, Configuration Manager controlla l'accesso alla propria console e alle proprie risorse in diversi modi. Per impostazione predefinita, solo gli amministratori locali hanno i diritti per i file e le chiavi del Registro di sistema necessari per la console di Configuration Manager nei computer in cui è installata.  
+
+#### <a name="bkmk_layer-provider"></a> Provider SMS
 
 Il livello successivo di protezione si basa sull'accesso tramite Windows Management Instrumentation (WMI), in particolare sul provider SMS. Il provider SMS è un componente di Configuration Manager che concede a un utente l'accesso per eseguire query nel database del sito per informazioni. Per impostazione predefinita, l'accesso al provider è limitato ai membri del gruppo SMS Admins locale. Questo gruppo contiene inizialmente solo l'utente che ha installato Configuration Manager. Per concedere altre autorizzazioni account al repository Common Information Model (CIM) e al provider SMS, aggiungere altri account al gruppo SMS Admins.  
 
-Il livello di protezione finale si basa sulle autorizzazioni per gli oggetti nel database del sito. Per impostazione predefinita, l'account di sistema locale e l'account utente usato per l'installazione di Configuration Manager possono amministrare tutti gli oggetti nel database di sito. È possibile concedere e limitare le autorizzazioni per altri utenti amministrativi nella console di Configuration Manager usando l'amministrazione basata su ruoli.  
+Per altre informazioni, vedere [Piano per il provider SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider).
+
+#### <a name="bkmk_layer-db"></a> Autorizzazioni per il database del sito
+
+Il livello di protezione finale si basa sulle autorizzazioni per gli oggetti nel database del sito. Per impostazione predefinita, l'account di sistema locale e l'account utente usato per l'installazione di Configuration Manager possono amministrare tutti gli oggetti nel database di sito. Concedere e limitare le autorizzazioni per altri utenti amministratori nella console di Configuration Manager usando l'amministrazione basata su ruoli.  
 
 
 
-## <a name="role-based-administration"></a>Amministrazione basata su ruoli  
- Configuration Manager usa l'amministrazione basata su ruoli per consentire la protezione di oggetti quali raccolte, distribuzioni e siti. Questo modello di amministrazione definisce e gestisce centralmente le impostazioni di accesso di protezione a livello di gerarchia per tutti i siti e le impostazioni del sito. I ruoli di sicurezza vengono assegnati a utenti con privilegi amministrativi e alle autorizzazioni per i gruppi. Le autorizzazioni sono collegate a diversi tipi di oggetto di Configuration Manager, ad esempio le autorizzazioni usate per creare o modificare le impostazioni client. Gli ambiti di sicurezza raggruppano istanze specifiche di oggetti che un utente amministratore ha la responsabilità di gestire, ad esempio un'applicazione che installa Microsoft Office. La combinazione di ruoli di sicurezza, ambiti di sicurezza e raccolte consente di definire gli oggetti che possono essere visualizzati e gestiti da un utente amministrativo. Configuration Manager installa alcuni ruoli di sicurezza predefiniti per le attività di gestione comuni. È comunque possibile creare ruoli di sicurezza personalizzati per supportare requisiti aziendali specifici.  
+## <a name="bkmk_rba"></a> Amministrazione basata su ruoli  
 
- Per altre informazioni, vedere [Configurare l'amministrazione basata su ruoli per System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
+ Configuration Manager usa l'amministrazione basata su ruoli per consentire la protezione di oggetti quali raccolte, distribuzioni e siti. Questo modello di amministrazione definisce e gestisce centralmente le impostazioni di accesso di protezione a livello di gerarchia per tutti i siti e le impostazioni del sito. 
 
-## <a name="securing-client-endpoints"></a>Protezione degli endpoint client  
- Le comunicazioni dei client con i ruoli del sistema del sito vengono protette tramite certificati autofirmati o tramite certificati PKI. È necessario usare un certificato PKI per i computer client rilevati da Configuration Manager come presenti su Internet e per i client di dispositivi mobili. Il certificato PKI usa HTTPS per proteggere gli endpoint client. I ruoli del sistema del sito a cui si connettono i client possono essere configurati per la comunicazione client di tipo HTTPS o HTTP. I computer client comunicano sempre usando il metodo più sicuro disponibile. I computer client passano all'uso del metodo di comunicazione meno sicuro, ovvero HTTP su Intranet, solo se sono disponibili ruoli del sistema del sito che consentono le comunicazioni HTTP.  
+ Un amministratore assegna *ruoli di sicurezza* a utenti amministratori e autorizzazioni di gruppo. Le autorizzazioni sono collegate a diversi tipi di oggetto di Configuration Manager, ad esempio per creare o modificare le impostazioni client. 
 
- Per altre informazioni, vedere [Riferimento tecnico per i controlli crittografici per System Center Configuration Manager](../../protect/deploy-use/cryptographic-controls-technical-reference.md).  
+ Gli *ambiti di sicurezza* raggruppano istanze specifiche di oggetti che un utente amministratore ha la responsabilità di gestire, ad esempio un'applicazione che installa Microsoft Office. 
 
-## <a name="configuration-manager-accounts-and-groups"></a>Account e gruppi di Configuration Manager  
- Configuration Manager usa l'account di sistema locale per la maggior parte delle operazioni del sito. Per alcune attività di gestione potrebbe essere necessario creare e gestire altri account. Durante l'installazione vengono creati diversi gruppi predefiniti e ruoli di SQL Server. Potrebbe essere necessario aggiungere manualmente account computer o account utente ai gruppi e ai ruoli di SQL Server predefiniti.  
+ La combinazione di ruoli di sicurezza, ambiti di sicurezza e raccolte consente di definire gli oggetti che possono essere visualizzati e gestiti da un utente amministrativo. Configuration Manager installa alcuni ruoli di sicurezza predefiniti per le attività di gestione comuni. È possibile creare ruoli di sicurezza personalizzati per supportare requisiti aziendali specifici.  
 
- Per altre informazioni, vedere [Account usati in System Center Configuration Manager](../../core/plan-design/hierarchy/accounts.md).  
+ Per altre informazioni, vedere [Configurare un'amministrazione basata su ruoli](/sccm/core/servers/deploy/configure/configure-role-based-administration).  
 
-## <a name="privacy"></a>Privacy  
- Benché i prodotti di gestione aziendale offrano molti vantaggi, grazie alla capacità effettiva di gestire un numero elevato di client, è necessario essere consapevoli del modo in cui tale software potrebbe influire sulla privacy degli utenti dell'organizzazione. System Center Configuration Manager include molti strumenti per la raccolta dei dati e il monitoraggio dei dispositivi. Alcuni strumenti potrebbero avere implicazioni a livello di privacy.  
 
- Ad esempio, quando si installa il client di Configuration Manager, vengono abilitate per impostazione predefinita molte impostazioni di gestione. Il software client invia pertanto informazioni al sito di Configuration Manager. Le informazioni sul client vengono archiviate nel database di Configuration Manager e non vengono inviate a Microsoft. Prima di implementare System Center Configuration Manager, considerare i requisiti relativi alla privacy.  
+
+## <a name="bkmk_endpoints"></a> Protezione degli endpoint client  
+
+ Configuration Manager protegge la comunicazione dei client ai ruoli del sistema del sito usando certificati autofirmati o PKI oppure token di Azure Active Directory (Azure AD). Alcuni scenari richiedono l'uso di certificati PKI. Ad esempio, la [gestione client basata su Internet](/sccm/core/clients/manage/plan-internet-based-client-management) e i [client dispositivo mobile](/sccm/mdm/plan-design/plan-on-premises-mdm).  
+
+ È possibile configurare i ruoli del sistema del sito ai quali si connettono i client per la comunicazione client di tipo HTTPS o HTTP. I computer client comunicano sempre usando il metodo più sicuro disponibile. I computer client passano all'uso del metodo di comunicazione meno sicuro solo se sono disponibili ruoli del sistema del sito che consentono le comunicazioni HTTP.  
+
+ Per altre informazioni, vedere [Pianificare la sicurezza](/sccm/core/plan-design/security/plan-for-security).
+
+
+
+## <a name="bkmk_accounts"></a> Account e gruppi di Configuration Manager  
+
+ Configuration Manager usa l'account di sistema locale per la maggior parte delle operazioni del sito. Per alcune attività di gestione potrebbe essere necessario creare e gestire altri account. Durante l'installazione, Configuration Manager crea diversi gruppi predefiniti e ruoli di SQL Server. Potrebbe essere necessario aggiungere manualmente account computer o account utente ai gruppi e ai ruoli di SQL Server predefiniti.  
+
+ Per altre informazioni, vedere [Account usati in Configuration Manager](/sccm/core/plan-design/hierarchy/accounts).  
+
+
+
+## <a name="bkmk_privacy"></a> Privacy  
+
+ Prima di implementare Configuration Manager, valutare i requisiti relativi alla tutela della privacy. Anche se i prodotti di gestione aziendale offrono molti vantaggi derivanti dalla possibilità di gestire un numero elevato di client, il software potrebbe influire sulla privacy degli utenti all'interno dell'organizzazione. Configuration Manager include molti strumenti per la raccolta dei dati e il monitoraggio dei dispositivi. Alcuni strumenti potrebbero avere implicazioni a livello di privacy nell'organizzazione.  
+
+ Ad esempio, l'installazione del client di Configuration Manager abilita per impostazione predefinita molte impostazioni di gestione. Questa configurazione comporta l'invio, da parte del software client, di informazioni al sito di Configuration Manager. Il sito archivia le informazioni del client nel proprio database. Le informazioni del client non vengono inviate direttamente a Microsoft. Per altre informazioni, vedere [Diagnostica e dati di utilizzo](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data).
+
+
+
+## <a name="see-also"></a>Vedere anche
+
+- [Pianificare la sicurezza](/sccm/core/plan-design/security/plan-for-security)  
+
+- [Sicurezza e privacy per i client di Configuration Manager](/sccm/core/clients/deploy/plan/security-and-privacy-for-clients)  
+
+- [Configurare la sicurezza](/sccm/core/plan-design/security/configure-security)   
+
+- [Comunicazioni tra gli endpoint](/sccm/core/plan-design/hierarchy/communications-between-endpoints)  
+
+- [Riferimento tecnico per i controlli crittografici](/sccm/core/plan-design/security/cryptographic-controls-tehnical-reference)  

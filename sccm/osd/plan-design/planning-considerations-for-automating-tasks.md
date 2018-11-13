@@ -2,7 +2,7 @@
 title: Pianificare l'automazione delle attività
 titleSuffix: Configuration Manager
 description: Prevedere una pianificazione appropriata prima di creare sequenze di attività per automatizzare le attività con Configuration Manager.
-ms.date: 08/17/2018
+ms.date: 10/29/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: fc497a8a-3c54-4529-8403-6f6171a21c64
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1ea1b104dfbdf23a080bc71da94b88cdcad31fa1
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.openlocfilehash: 608b947e75ff29cf9653b2a12497918846556f4d
+ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42755949"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50411290"
 ---
 # <a name="planning-considerations-for-automating-tasks-in-configuration-manager"></a>Considerazioni sulla pianificazione dell'automazione delle attività in Configuration Manager
 
@@ -236,18 +236,42 @@ ms.locfileid: "42755949"
 
 ##  <a name="BKMK_TSNetworkAccessAccount"></a> Sequenze di attività e account di accesso alla rete  
 
- Anche se le sequenze di attività vengono eseguite solo nel contesto dell'account di sistema locale, potrebbe essere necessario configurare l'[account di accesso alla rete](/sccm/core/plan-design/hierarchy/accounts#network-access) nelle circostanze seguenti:  
+> [!Important]  
+> A partire dalla versione 1806, alcuni scenari di distribuzione del sistema operativo non richiedono l'uso dell'account di accesso alla rete. Per altre informazioni, vedere [HTTP avanzato](#enhanced-http).
 
- - Se la sequenza di attività tenta di accedere al contenuto di Configuration Manager nei punti di distribuzione. Configurare correttamente l'account di accesso alla rete o la sequenza di attività avrà esito negativo.   
+Anche se le sequenze di attività vengono eseguite solo nel contesto dell'account di sistema locale, potrebbe essere necessario configurare l'[account di accesso alla rete](/sccm/core/plan-design/hierarchy/accounts#network-access-account) nelle circostanze seguenti:  
 
- - Quando si usa un'immagine di avvio per avviare una distribuzione del sistema operativo. In questo caso, Configuration Manager usa l'ambiente Windows PE, che non è un sistema operativo completo. L'ambiente Windows PE usa un nome casuale generato automaticamente che non è membro di nessun dominio. Se non si configura correttamente l'account di accesso alla rete, il computer non può accedere al contenuto necessario per la sequenza di attività.  
+- Se la sequenza di attività tenta di accedere al contenuto di Configuration Manager nei punti di distribuzione. Configurare correttamente l'account di accesso alla rete o la sequenza di attività avrà esito negativo.   
+
+- Quando si usa un'immagine di avvio per avviare una distribuzione del sistema operativo. In questo caso, Configuration Manager usa l'ambiente Windows PE, che non è un sistema operativo completo. L'ambiente Windows PE usa un nome casuale generato automaticamente che non è membro di nessun dominio. Se non si configura correttamente l'account di accesso alla rete, il computer non può accedere al contenuto necessario per la sequenza di attività.  
+
+> [!NOTE]  
+>  L'account di accesso alla rete non viene mai usato come contesto di sicurezza per l'esecuzione di programmi, l'installazione di applicazioni, l'installazione di aggiornamenti o l'esecuzione di sequenze di attività. L'account di accesso alla rete viene usato solo per accedere alle risorse associate nella rete.  
+
+Per altre informazioni sull'account di accesso alla rete, vedere [Account di accesso alla rete](/sccm/core/plan-design/hierarchy/accounts#network-access-account).  
 
 
- > [!NOTE]  
- >  L'account di accesso alla rete non viene mai usato come contesto di sicurezza per l'esecuzione di programmi, l'installazione di applicazioni, l'installazione di aggiornamenti o l'esecuzione di sequenze di attività. L'account di accesso alla rete viene usato solo per accedere alle risorse associate nella rete.  
+### <a name="enhanced-http"></a>HTTP avanzato
+<!--1358278-->
 
+A partire dalla versione 1806, quando si abilita **HTTP avanzato**, gli scenari seguenti non richiedono un account di accesso alla rete per scaricare il contenuto da un punto di distribuzione:
+  
+- Sequenze di attività in esecuzione da supporti di avvio o PXE  
+- Sequenze di attività in esecuzione da Software Center  
 
- Per altre informazioni sull'account di accesso alla rete, vedere [Account di accesso alla rete](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#bkmk_NAA).  
+Queste sequenze di attività possono essere per la distribuzione del sistema operativo o personalizzate. Sono supportate anche per i computer del gruppo di lavoro.
+ 
+Per altre informazioni, vedere [HTTP avanzato](/sccm/core/plan-design/hierarchy/enhanced-http).  
+
+> [!Note]  
+> I seguenti scenari di distribuzione del sistema operativo richiedono ancora l'uso dell'account di accesso alla rete:
+>  
+> - L'[opzione di distribuzione](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS) **Accedere al contenuto direttamente da un punto di distribuzione quando necessario eseguendo la sequenza di attività** della sequenza di attività   
+> - L'opzione [Se l'account del computer non riesce a connettersi all'archiviazione stati, utilizzare l'account di accesso di rete](/sccm/osd/understand/task-sequence-steps#BKMK_RequestStateStore) del passaggio **Richiedi archiviazione stati** 
+> - Quando si effettua la connessione con un dominio non trusted o in foreste di Active Directory 
+> - L'opzione [Accedi al contenuto direttamente dal punto di distribuzione](/sccm/osd/understand/task-sequence-steps#BKMK_ApplyOperatingSystemImage) del passaggio **Applica immagine del sistema operativo** 
+> - L'[impostazione avanzata](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#bkmk_prop-advanced) **Esegui prima un altro programma** della sequenza di attività 
+> - [Multicast](/sccm/osd/deploy-use/use-multicast-to-deploy-windows-over-the-network)  
 
 
 

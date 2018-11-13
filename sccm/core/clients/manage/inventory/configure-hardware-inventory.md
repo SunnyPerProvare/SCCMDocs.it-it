@@ -10,12 +10,12 @@ ms.assetid: 0e45290e-f8f7-4335-801e-570225d12c2b
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: a2051088b70c721250842548f877792adc84b38f
-ms.sourcegitcommit: 59afe6f05333d4150afaf88ab0a85a979818e3fb
+ms.openlocfilehash: 1b632a9b7b7b20bc8d6653d35b267043dde6660d
+ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36957781"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50411001"
 ---
 # <a name="how-to-configure-hardware-inventory-in-system-center-configuration-manager"></a>Come configurare l'inventario hardware in System Center Configuration Manager
 
@@ -24,7 +24,10 @@ ms.locfileid: "36957781"
 Questa procedura consente di configurare le impostazioni client predefinite per l'inventario hardware e applicarle a tutti i client nella gerarchia. Per applicare queste impostazioni solo ad alcuni client, creare un'impostazione client di dispositivo personalizzata e assegnarla a una raccolta contenente i dispositivi per cui si vuole usare l'inventario hardware. Vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md).  
 
 > [!NOTE]  
->  Se un dispositivo client riceve impostazioni di inventario hardware da più set di impostazioni client, le classi di inventario hardware di ogni set di impostazioni verranno unite quando il client eseguirà report di inventario hardware.  
+>  Se un dispositivo client riceve impostazioni di inventario hardware da più set di impostazioni client, le classi di inventario hardware di ogni set di impostazioni verranno unite quando il client eseguirà report di inventario hardware. Se inoltre non si seleziona una classe in un'impostazione client personalizzata con priorità più alta, non viene disabilitato l'inventario di tale classe da parte del client. 
+
+Per disabilitare una classe di inventario hardware specifica nella maggior parte dei sistemi, ad eccezione di alcuni, la classe deve essere deselezionata nelle impostazioni client predefinite. Creare quindi un'impostazione client personalizzata per abilitare la classe e distribuirla nei sistemi di destinazione.
+
 
 ### <a name="to-configure-hardware-inventory"></a>Per configurare l'inventario hardware  
 

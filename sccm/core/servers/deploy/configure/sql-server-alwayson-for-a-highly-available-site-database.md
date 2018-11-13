@@ -10,12 +10,12 @@ ms.assetid: 58d52fdc-bd18-494d-9f3b-ccfc13ea3d35
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9657cbbf60a90f21f0daa8bb5ef3d5cf80f7da4e
-ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
+ms.openlocfilehash: 0cb94f8d14ff525687909290085e16ecd47fa39f
+ms.sourcegitcommit: 22257e35a7d7263939a6802602050190897412a8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42589395"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "51562049"
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparare l'uso di gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
@@ -59,7 +59,7 @@ L'account computer del server del sito deve essere un membro del gruppo **Admini
 
 ### <a name="sql-server"></a>SQL Server
 
-#### <a name="version"></a>Versione  
+#### <a name="version"></a>Version  
 Ogni replica nel gruppo di disponibilità deve eseguire una versione di SQL Server supportata dalla versione in uso di Configuration Manager. Se supportati da SQL Server, nodi diversi di un gruppo di disponibilità possono eseguire versioni diverse di SQL Server. Per altre informazioni, vedere [Versioni di SQL Server supportate per Configuration Manager](/sccm/core/plan-design/configs/support-for-sql-server-versions).<!--SCCMDocs issue 656-->
 
 #### <a name="edition"></a>Edizione  
@@ -171,7 +171,7 @@ Creare queste configurazioni solo su una replica primaria. Per configurare una r
 
 Eseguire lo script SQL seguente per verificare le configurazioni di database per le repliche primaria e secondaria. Prima di risolvere un problema su una replica secondaria, è necessario trasformare tale replica secondaria in replica primaria.
 
-``` SQL
+```SQL
     SET NOCOUNT ON
 
     DECLARE @dbname NVARCHAR(128)
@@ -182,7 +182,7 @@ Eseguire lo script SQL seguente per verificare le configurazioni di database per
     RAISERROR(N'ERROR: Script is targetting a system database.  It should be targeting the DB you created instead.', 0, 1)
     GOTO Branch_Exit;
     END ELSE
-    PRINT N'INFO: Targetted database is ' + @dbname + N'.'
+    PRINT N'INFO: Targeted database is ' + @dbname + N'.'
 
     PRINT N'INFO: Running verifications....'
 

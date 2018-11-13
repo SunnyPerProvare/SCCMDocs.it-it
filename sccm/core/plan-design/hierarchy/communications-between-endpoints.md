@@ -1,8 +1,8 @@
 ---
 title: Comunicazioni tra gli endpoint
 titleSuffix: Configuration Manager
-description: Informazioni sulle modalità di comunicazione dei componenti e sistemi del sito di System Center Configuration Manager in una rete.
-ms.date: 10/06/2016
+description: Informazioni sulle modalità di comunicazione tra i componenti e i sistemi del sito di Configuration Manager in una rete.
+ms.date: 10/25/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,20 +10,38 @@ ms.assetid: 68fe0e7e-351e-4222-853a-877475adb589
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 603adb982f704c462e043d8c0974fc85a0748863
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: ce3353d9cc139da53a655f50144c3816b1a4a355
+ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341441"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50411375"
 ---
-# <a name="communications-between-endpoints-in-system-center-configuration-manager"></a>Comunicazioni tra gli endpoint in System Center Configuration Manager
+# <a name="communications-between-endpoints-in-configuration-manager"></a>Comunicazioni tra gli endpoint in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
+Questo articolo illustra le modalità di comunicazione tra i componenti e i sistemi del sito di Configuration Manager in una rete. Include le sezioni seguenti:  
+
+- [Comunicazioni tra sistemi del sito in un sito](#Planning_Intra-site_Com)  
+    - [Dal server del sito al punto di distribuzione](#bkmk_site2dp)  
+
+- [Comunicazioni da client a sistemi e servizi del sito](#Planning_Client_to_Site_System)  
+    - [Comunicazioni tra client e punti di gestione](#bkmk_client2mp)  
+    - [Comunicazioni tra client e punti di distribuzione](#bkmk_client2dp)  
+    - [Considerazioni per le comunicazioni client da Internet o da una foresta non attendibile](#BKMK_clientspan)  
+    - [Informazioni sui sistemi del sito con connessione Internet](#bkmk_internetfacing)  
+
+- [Comunicazioni tra foreste Active Directory](#Plan_Com_X-Forest)  
+    - [Supportare i computer di dominio in una foresta considerata non attendibile dalla foresta del server del sito](#bkmk_noforesttrust)  
+    - [Supportare i computer in un gruppo di lavoro](#bkmk_workgroup)  
+    - [Scenari di supporto di un sito o una gerarchia che si estende su più domini e foreste](#bkmk_span)  
+
+
 
 ##  <a name="Planning_Intra-site_Com"></a> Comunicazioni tra sistemi del sito in un sito  
- Quando i sistemi o componenti del sito di Configuration Manager comunicano in rete con altri sistemi del sito oppure con componenti di Configuration Manager nel sito, usano uno dei protocolli seguenti, a seconda della configurazione del sito:  
+
+ Quando i sistemi o componenti del sito di Configuration Manager comunicano in rete con altri sistemi del sito o componenti nel sito, usano uno dei protocolli seguenti, a seconda della configurazione del sito:  
 
 -   Server Message Block (SMB)  
 
@@ -31,58 +49,77 @@ ms.locfileid: "32341441"
 
 -   HTTPS  
 
-Con l'eccezione della comunicazione dal server del sito a un punto di distribuzione, le comunicazioni tra server in un sito possono verificarsi in qualsiasi momento e non usano meccanismi per controllare la larghezza di banda di rete. Poiché non è possibile controllare la comunicazione tra sistemi del sito, assicurarsi di installare i server del sistema del sito in posizioni che abbiano reti veloci e ben connesse.  
+Con l'eccezione della comunicazione dal server del sito a un punto di distribuzione, le comunicazioni tra server in un sito possono verificarsi in qualsiasi momento. Queste comunicazioni non usano meccanismi per controllare la larghezza di banda di rete. Poiché non è possibile controllare la comunicazione tra sistemi del sito, assicurarsi di installare i server del sistema del sito in posizioni che dispongono di reti veloci e ben connesse.  
 
-Per gestire il trasferimento di contenuto dal server del sito ai punti di distribuzione:  
 
--   Configurare il punto di distribuzione per il controllo della larghezza di banda di rete e la pianificazione. Questi controlli sono simili alle configurazioni usate dagli indirizzi intrasito ed è spesso possibile usare questa configurazione invece di installare un altro sito di Configuration Manager quando la larghezza di banda incide soprattutto sul trasferimento di contenuti su percorsi di rete remoti.  
+### <a name="bkmk_site2dp"></a> Dal server del sito al punto di distribuzione 
+
+Per gestire il trasferimento di contenuto dal server del sito ai punti di distribuzione, adottare le strategie seguenti:  
+
+-   Configurare il punto di distribuzione per il controllo della larghezza di banda di rete e la pianificazione. Questi controlli sono simili alle configurazioni usate dagli indirizzi intrasito. Usare questa configurazione invece di installare un altro sito di Configuration Manager quando il trasferimento di contenuti su percorsi di rete remoti è il problema principale a livello di uso della larghezza di banda.  
 
 -   È possibile installare un punto di distribuzione come punto di distribuzione pre-installato. Un punto di distribuzione pre-installato consente di usare contenuto che viene messo manualmente sul server del punto di distribuzione e rimuove il requisito di trasferire i file di contenuto sulla rete.  
 
 Per altre informazioni, vedere [Gestire la larghezza di banda di rete per la gestione dei contenuti](manage-network-bandwidth.md).
 
 
+
 ##  <a name="Planning_Client_to_Site_System"></a> Comunicazioni da client a sistemi e servizi del sito  
-I client avviano le comunicazioni con i ruoli del sistema del sito, Active Directory Domain Services e servizi online. Per abilitare queste comunicazioni, i firewall devono consentire il traffico di rete tra i client e gli endpoint delle comunicazioni. Gli endpoint includono:  
 
--   **Punto per siti Web del Catalogo applicazioni**: supporta la comunicazione HTTP e HTTPS
+I client avviano le comunicazioni con i ruoli del sistema del sito, Active Directory Domain Services e servizi online. Per abilitare queste comunicazioni, i firewall devono consentire il traffico di rete tra i client e gli endpoint delle comunicazioni. Per altre informazioni sulle porte e i protocolli usati dai client per la comunicazione con questi endpoint, vedere [Porte usate in Configuration Manager](/sccm/core/plan-design/hierarchy/ports).  
 
--   **Risorse basate sul cloud**: include Microsoft Azure e Microsoft Intune  
+Per poter comunicare con un ruolo del sistema del sito, il client usa la posizione del servizio per individuare un ruolo che supporta il protocollo del client (HTTP o HTTPS). Per impostazione predefinita, i client usano il metodo più sicuro a loro disposizione. Per altre informazioni, vedere [Informazioni su come i client trovano i servizi e le risorse del sito](/sccm/core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services).  
 
--   **Modulo criteri di Configuration Manager (NDES)**: supporta la comunicazione HTTP e HTTPS
+Per utilizzare HTTPS, configurare una delle opzioni seguenti:  
 
--   **Punti di distribuzione**: supporta la comunicazione HTTP e HTTPS, e HTTPS è richiesto dai punti di distribuzione basati sul cloud  
+- Usare un'infrastruttura a chiave pubblica (PKI) e installare i certificati PKI sui client e sui server. Per informazioni su come usare i certificati, vedere [Requisiti dei certificati PKI per Configuration Manager](/sccm/core/plan-design/network/pki-certificate-requirements).  
 
--   **Punto di stato di fallback**: supporta la comunicazione HTTP  
+- A partire dalla versione 1806, configurare il sito con l'opzione **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**. Per altre informazioni, vedere [Enhanced HTTP](/sccm/core/plan-design/hierarchy/enhanced-http) (HTTP avanzato).  
 
--   **Punto di gestione**: supporta la comunicazione HTTP e HTTPS  
+Quando si distribuisce un ruolo del sistema del sito che usa Internet Information Services (IIS) e supporta le comunicazioni dai client, è necessario specificare se i client si connettono al sistema del sito tramite HTTP o HTTPS. Se si usa HTTP, è necessario considerare anche le opzioni di firma e crittografia. Per altre informazioni, vedere [Pianificazione di firma e crittografia](/sccm/core/plan-design/security/plan-for-security#BKMK_PlanningForSigningEncryption).  
 
--   **Microsoft Update**  
 
--   **Punti di aggiornamento software**: supporta la comunicazione HTTP e HTTPS  
+### <a name="bkmk_client2mp"></a> Comunicazioni tra client e punti di gestione
 
--   **Punto di migrazione stato**: supporta la comunicazione HTTP e HTTPS  
+La comunicazione tra un client e un punto di gestione avviene in due fasi: autenticazione (trasporto) e autorizzazione (messaggio). Questo processo varia a seconda dei fattori seguenti: 
+- Configurazione del sito: HTTP, HTTPS o HTTP avanzato
+- Configurazione del punto di gestione: solo HTTPS o sia HTTP che HTTPS
+- Identità del dispositivo per gli scenari incentrati sui dispositivi
+- Identità dell'utente per gli scenari incentrati sugli utenti
 
--   **Vari servizi di dominio**  
+Usare la tabella seguente per comprendere il funzionamento del processo:  
 
-Per poter comunicare con un ruolo del sistema del sito, il client usa la posizione del servizio per individuare un ruolo del sistema del sito che supporta il protocollo del client (HTTP o HTTPS). Per impostazione predefinita, i client usano il metodo più sicuro a loro disposizione:  
+| Tipo di punto di gestione  | Autenticazione client  | Autorizzazione client<br>Identità del dispositivo  | Autorizzazione client<br>Identità utente  |
+|----------|---------|---------|---------|
+| HTTP     | Anonima<br>Con la modalità HTTP avanzato, il sito verifica il token *user* (utente) o *device* (dispositivo) di Azure AD. | Richiesta della posizione: Anonima<br>Pacchetto client: Anonimo<br>Registrazione con uno dei metodi seguenti per dimostrare l'identità del dispositivo:<br> - Anonima (approvazione manuale)<br> - Autenticazione integrata Windows<br> - Token *device* di Azure AD (HTTP avanzato)<br>Dopo la registrazione il client usa la firma del messaggio per dimostrare l'identità del dispositivo | Per gli scenari incentrati sull'utente, registrazione con uno dei metodi seguenti per dimostrare l'identità dell'utente:<br> - Autenticazione integrata Windows<br> - Token *user* di Azure AD (HTTP avanzato) |
+| HTTPS    | Mediante uno dei metodi seguenti:<br> - Certificato PKI<br> - Autenticazione integrata Windows<br> - Token *user* o *device* di Azure AD | Richiesta della posizione: Anonima<br>Pacchetto client: Anonimo<br>Registrazione con uno dei metodi seguenti per dimostrare l'identità del dispositivo:<br> - Anonima (approvazione manuale)<br> - Autenticazione integrata Windows<br> - Certificato PKI<br> - Token *user* o *device* di Azure AD<br>Dopo la registrazione il client usa la firma del messaggio per dimostrare l'identità del dispositivo | Per gli scenari incentrati sull'utente, registrazione con uno dei metodi seguenti per dimostrare l'identità dell'utente:<br> - Autenticazione integrata Windows<br> - Token *user* di Azure AD |
 
--   Per usare HTTPS, è necessario disporre di un'infrastruttura a chiave pubblica (PKI) e installare i certificati PKI sui client e sui server. Per informazioni sull'uso dei certificati, vedere [PKI certificate requirements for System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md) (Requisiti dei certificati PKI per System Center Configuration Manager).  
+> [!Tip]  
+> Per altre informazioni sulla configurazione del punto di gestione per i diversi tipi di identità del dispositivo e con il Cloud Management Gateway, vedere [Abilitare i punti di gestione per HTTPS](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_mphttps).  
 
--   Quando si distribuisce un ruolo del sistema del sito che usa Internet Information Services (IIS) e supporta le comunicazioni dai client, è necessario specificare se i client si connettono al sistema del sito tramite HTTP o HTTPS. Se si usa HTTP, è necessario considerare anche le opzioni di firma e crittografia. Per altre informazioni, vedere [Pianificazione di firma e crittografia](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForSigningEncryption) in [Pianificare la sicurezza in System Center Configuration Manager](../../../core/plan-design/security/plan-for-security.md).  
 
-Per informazioni sul processo di posizione del servizio usato dai client, vedere  [Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager](../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
+### <a name="bkmk_client2dp"></a> Comunicazioni tra client e punti di distribuzione
 
-Per informazioni dettagliate sulle porte e i protocolli usati dai client per la comunicazione con questi endpoint, vedere [Porte usate in System Center Configuration Manager](../../../core/plan-design/hierarchy/ports.md).  
+Quando un client comunica con un punto di distribuzione, deve solo eseguire l'autenticazione prima di scaricare il contenuto. Usare la tabella seguente per comprendere il funzionamento del processo:
 
-###  <a name="BKMK_clientspan"></a> Considerazioni per le comunicazioni client da Internet o da una foresta non trusted  
-I seguenti ruoli del sistema del sito installati nei siti primari supportano connessioni da client che si trovano in percorsi non attendibili, come Internet o una foresta non trusted. I siti secondari non supportano le connessioni client da percorsi non attendibili:  
 
--   Punto per siti Web del Catalogo applicazioni  
+| Tipo punto di distribuzione  | Autenticazione client  |
+|----------|---------|
+| HTTP     | - Anonima, se consentita<br>- Autenticazione integrata Windows con account del computer o account di accesso alla rete<br> - Token di accesso al contenuto (HTTP avanzato) |
+| HTTPS    | - Certificato PKI<br> - Autenticazione integrata Windows con account del computer o account di accesso alla rete<br> - Token di accesso al contenuto |
 
--   Modulo criteri di Configuration Manager  
 
--   Punto di distribuzione (HTTPS è richiesto dai punti di distribuzione basati sul cloud)  
+###  <a name="BKMK_clientspan"></a> Considerazioni per le comunicazioni client da Internet o da una foresta non attendibile  
+
+I seguenti ruoli del sistema del sito installati nei siti primari supportano connessioni da client che si trovano in percorsi non attendibili, come Internet o una foresta non attendibile. I siti secondari non supportano le connessioni client da percorsi non attendibili. 
+
+-   Punto per siti Web del catalogo applicazioni  
+
+-   Modulo criteri di Configuration Manager (NDES) 
+
+-   Punto di distribuzione   
+
+-   Punto di distribuzione basato sul cloud (richiede HTTPS)
 
 -   Punto proxy di registrazione  
 
@@ -92,12 +129,19 @@ I seguenti ruoli del sistema del sito installati nei siti primari supportano con
 
 -   Punto di aggiornamento software  
 
-**Informazioni sui sistemi del sito con connessione internet:**   
-Non è necessario che esista una relazione di trust tra la foresta del client e quella del server del sistema del sito. Quando la foresta che contiene il sistema del sito con connessione Internet considera attendibile la foresta che contiene gli account utente, tuttavia, questa configurazione supporta criteri basati sull'utente per i dispositivi su Internet se si abilita l'impostazione client **Abilitare le richieste dei criteri utente dai client Internet** di **Criteri client**.  
+-   Gateway di gestione cloud (richiede HTTPS)
+
+
+### <a name="bkmk_internetfacing"></a> Informazioni sui sistemi del sito con connessione a Internet
+
+> [!Note]  
+> La sezione seguente riguarda gli scenari di gestione di client basata su Internet. Non è applicabile agli scenari di gateway di gestione cloud. Per altre informazioni, vedere [Gestire i client su Internet](/sccm/core/clients/manage/manage-clients-internet).  
+
+Non è necessario che esista l'attendibilità reciproca tra la foresta del client e quella del server del sistema del sito. Quando la foresta che contiene il sistema del sito con connessione Internet considera attendibile la foresta che contiene gli account utente, tuttavia, questa configurazione supporta criteri basati sull'utente per i dispositivi su Internet se si abilita l'impostazione client **Abilitare le richieste dei criteri utente dai client Internet** di **Criteri client**.  
 
 Ad esempio, le configurazioni seguenti illustrano quando la gestione client basata su Internet supporta criteri utente per i dispositivi su Internet:  
 
--   Il punto di gestione basato su Internet si trova nella rete perimetrale in cui risiede un controller di dominio di sola lettura per autenticare l'utente e un firewall consente pacchetti di Active Directory.  
+-   Il punto di gestione basato su Internet si trova nella rete perimetrale in cui risiede un controller di dominio di sola lettura per autenticare l'utente e un firewall consente il passaggio dei pacchetti di Active Directory.  
 
 -   L'account utente si trova nella Foresta A (intranet) e il punto di gestione basato su Internet si trova nella Foresta B (la rete perimetrale). La Foresta B considera attendibile la Foresta A e un firewall consente i pacchetti di autenticazione.  
 
@@ -106,73 +150,73 @@ Ad esempio, le configurazioni seguenti illustrano quando la gestione client basa
 > [!NOTE]  
 >  Se l'autenticazione Kerberos ha esito negativo, sarà automaticamente tentata l'autenticazione NTLM.  
 
-Come mostrato nell'esempio precedente, è possibile posizionare i sistemi del sito basati su Internet nella intranet quando vengono pubblicati su Internet usando un server Web proxy, come ISA Server e Forefront Threat Management Gateway. Questi sistemi del sito possono essere configurati per connessioni client solo da Internet o per connessioni client da Internet e Intranet. Quando si usa un server Web proxy, è possibile configurarlo per il bridging Secure Sockets Layer (SSL) a SSL (più sicuro) o tunneling SSL, come segue:  
+Come visualizzato nell'esempio precedente, è possibile posizionare i sistemi del sito basati su Internet nell'intranet quando vengono pubblicati su Internet usando un server Web proxy. Questi sistemi del sito possono essere configurati per connessioni client solo da Internet o per connessioni client da Internet e dall'intranet. Quando si usa un server Web proxy, è possibile configurarlo per il bridging Secure Sockets Layer (SSL) a SSL (più sicuro) o tunneling SSL, come segue:  
 
 -   **Bridging SSL a SSL:**   
-    La configurazione consigliata quando si usano server Web proxy per la gestione client basata su Internet è il bridging SSL a SSL, che usa la terminazione SSL con l'autenticazione. I computer client devono essere autenticati usando l'autenticazione computer e i client legacy di dispositivi mobili vengono autenticati usando l'autenticazione utente. I dispositivi mobili che vengono registrati da Configuration Manager non supportano il bridging SSL.  
+    La configurazione consigliata quando si usano server Web proxy per la gestione client basata su Internet è il bridging da SSL a SSL, che usa la terminazione SSL con l'autenticazione. I computer client devono essere autenticati usando l'autenticazione computer e i client legacy di dispositivi mobili vengono autenticati usando l'autenticazione utente. I dispositivi mobili che vengono registrati da Configuration Manager non supportano il bridging SSL.  
 
-     Il vantaggio della terminazione SSL sul server Web proxy è che i pacchetti provenienti da Internet sono soggetti alla verifica prima di essere inoltrati alla rete interna. Il server Web proxy autentica la connessione dal client, la termina, quindi apre una nuova connessione autenticata ai sistemi del sito basati su Internet. Quando i client di Configuration Manager usano un server Web proxy, l'identità client (GUID client) viene contenuta in modo protetto all'interno del payload dei pacchetti in modo che il punto di gestione non consideri il server Web proxy come il client. Il bridging HTTP a HTTPS o HTTPS a HTTP non è supportato in Configuration Manager.  
+     Il vantaggio della terminazione SSL sul server Web proxy è che i pacchetti provenienti da Internet sono sottoposti a verifica prima di essere inoltrati alla rete interna. Il server Web proxy autentica la connessione dal client, la termina, quindi apre una nuova connessione autenticata ai sistemi del sito basati su Internet. Quando i client di Configuration Manager usano un server Web proxy, l'identità client (GUID client) viene inclusa in modo protetto nel payload dei pacchetti, in modo che il punto di gestione non consideri il server Web proxy come il client. Il bridging da HTTP a HTTPS o da HTTPS a HTTP non è supportato in Configuration Manager.  
 
 -   **Tunneling**:   
-    Se il server Web proxy non può supportare i requisiti per il bridging SSL o se si vuole configurare il supporto Internet per i dispositivi mobili registrati da Configuration Manager, è supportato il tunneling SSL. Si tratta di un'opzione meno sicura perché i pacchetti SSL provenienti da Internet vengono inoltrati ai sistemi del sito senza terminazione SSL e, pertanto, non possono essere verificati per l'eventuale presenza di contenuto dannoso. Quando si usa il tunneling SSL, non sono previsti requisiti di certificato per il server Web proxy.  
+    Se il server Web proxy non supporta i requisiti per il bridging SSL o se si vuole configurare il supporto Internet per i dispositivi mobili registrati da Configuration Manager, è supportato anche il tunneling SSL. Si tratta di un'opzione meno sicura, perché i pacchetti SSL provenienti da Internet vengono inoltrati ai sistemi del sito senza terminazione SSL e pertanto non possono essere verificati per l'eventuale presenza di contenuto dannoso. Quando si usa il tunneling SSL, non sono previsti requisiti di certificato per il server Web proxy.  
+
+
 
 ##  <a name="Plan_Com_X-Forest"></a> Comunicazioni tra foreste Active Directory  
-System Center Configuration Manager supporta siti e gerarchie che si estendono su foreste Active Directory.  
 
-Configuration Manager supporta anche computer del dominio che non si trovano nella stessa foresta Active Directory del server del sito e computer che appartengono a gruppi di lavoro:  
+Configuration Manager supporta siti e gerarchie che si estendono su foreste Active Directory. Supporta anche computer del dominio che non si trovano nella stessa foresta Active Directory del server del sito e computer che appartengono a gruppi di lavoro.  
 
--   **Per supportare i computer di dominio in una foresta considerata non trusted dalla foresta del server del sito**, è possibile:  
 
-    -   Installare i ruoli del sistema del sito in tale foresta non trusted, con la possibilità di pubblicare le informazioni sul sito in tale foresta di Active Directory  
+### <a name="bkmk_noforesttrust"></a> Supportare i computer di dominio in una foresta considerata non attendibile dalla foresta del server del sito 
 
-    -   Gestire questi computer come computer di un gruppo di lavoro.  
+-   Installare i ruoli del sistema del sito in tale foresta non trusted, con la possibilità di pubblicare le informazioni sul sito in tale foresta di Active Directory  
 
-  Quando si installano i server del sistema del sito in una foresta Active Directory non trusted, la comunicazione tra client e server eseguita dai client della foresta viene mantenuta all'interno di tale foresta e Configuration Manager può autenticare il computer con Kerberos. Quando vengono pubblicate le informazioni del sito sulla foresta del client, i client possono recuperare le informazioni del sito, come ad esempio un elenco di punti di gestione disponibili, dalla relativa foresta Active Directory invece di scaricarle dal punto di gestione assegnato.  
+-   Gestire questi computer come computer di un gruppo di lavoro  
 
-  > [!NOTE]  
-  >  Se si desidera gestire i dispositivi su Internet, è possibile installare ruoli del sistema del sito basati su Internet nella rete perimetrale quando i server del sistema del sito si trovano nella foresta Active Directory. In questo scenario non è richiesto un trust bidirezionale tra la rete perimetrale e la foresta del server del sito.  
+Quando si installano i server del sistema del sito in una foresta Active Directory non trusted, la comunicazione tra client e server eseguita dai client della foresta viene mantenuta all'interno di tale foresta e Configuration Manager può autenticare il computer con Kerberos. Quando vengono pubblicate le informazioni del sito sulla foresta del client, i client possono recuperare le informazioni del sito, come ad esempio un elenco di punti di gestione disponibili, dalla relativa foresta Active Directory invece di scaricarle dal punto di gestione assegnato.  
 
--   **Per supportare i computer in un gruppo di lavoro**, è necessario:  
+> [!NOTE]  
+>  Se si vuole gestire i dispositivi su Internet, è possibile installare ruoli del sistema del sito basati su Internet nella rete perimetrale quando i server del sistema del sito si trovano nella foresta Active Directory. In questo scenario non è richiesto un trust bidirezionale tra la rete perimetrale e la foresta del server del sito.  
 
-    -   Approvare manualmente i computer del gruppo di lavoro quando questi usano connessioni client HTTP ai ruoli del sistema del sito. Ciò avviene perché Configuration Manager non può autenticare questi computer con Kerberos.  
 
-    -   Configurare i client dei gruppi di lavoro per l'uso dell'Account di accesso alla rete in modo che questi computer possano recuperare il contenuto dai punti di distribuzione.  
+### <a name="bkmk_workgroup"></a> Supportare i computer in un gruppo di lavoro  
 
-    -   Fornire ai client del gruppo di lavoro un meccanismo alternativo per trovare i punti di gestione. È possibile usare la pubblicazione DNS o WINS oppure assegnare direttamente un punto di gestione. Questo perché tali client non possono recuperare le informazioni del sito da Servizi di dominio Active Directory.  
+-   Approvare manualmente i computer del gruppo di lavoro quando questi usano connessioni client HTTP ai ruoli del sistema del sito. Configuration Manager non può autenticare questi computer usando Kerberos.  
 
-    Risorse correlate in questa raccolta contenuto:  
+-   Configurare i client dei gruppi di lavoro per l'uso dell'Account di accesso alla rete in modo che questi computer possano recuperare il contenuto dai punti di distribuzione.  
 
-    -   [Gestire i record in conflitto per i client di Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_ConflictingRecords)  
+-   Fornire ai client del gruppo di lavoro un meccanismo alternativo per trovare i punti di gestione. Usare la pubblicazione DNS, WINS oppure assegnare direttamente un punto di gestione. Questi client non possono recuperare le informazioni del sito da Active Directory Domain Services.  
 
-    -   [Account di accesso alla rete](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#accounts-used-for-content-management)  
+Per altre informazioni, vedere gli articoli seguenti:  
 
-    -   [Come installare i client di Configuration Manager sui computer del gruppo di lavoro](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientWorkgroup)  
+-   [Gestire i record in conflitto](/sccm/core/clients/manage/manage-clients#BKMK_ConflictingRecords)  
+
+-   [Account di accesso alla rete](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#accounts-used-for-content-management)  
+
+-   [Come installare i client di Configuration Manager sui computer del gruppo di lavoro](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_ClientWorkgroup)  
+
 
 ###  <a name="bkmk_span"></a> Scenari di supporto di un sito o una gerarchia che si estende su più domini e foreste  
 
-#### <a name="communication-between-sites-in-a-hierarchy-that-spans-forests"></a>Comunicazione tra siti in una gerarchia che si estende su più foreste  
-Questo scenario richiede un trust tra foreste bidirezionale che supporti l'autenticazione Kerberos.  Se non è presente un trust tra foreste bidirezionale che supporti l'autenticazione Kerberos, Configuration Manager non supporterà il sito figlio nella foresta remota.  
+#### <a name="scenario-1-communication-between-sites-in-a-hierarchy-that-spans-forests"></a>Scenario 1: Comunicazione tra siti in una gerarchia che si estende su più foreste  
+Questo scenario richiede un trust tra foreste bidirezionale che supporti l'autenticazione Kerberos.  Se non è presente un trust tra foreste bidirezionale che supporta l'autenticazione Kerberos, Configuration Manager non supporterà il sito figlio nella foresta remota.  
 
- **Configuration Manager supporta l'installazione di un sito figlio in una foresta remota che ha il trust bidirezionale richiesto con la foresta del sito padre**  
-
--   Ad esempio, è possibile inserire un sito secondario in una foresta diversa da quella del sito primario padre a condizione che sia presente il trust necessario.  
+Configuration Manager supporta l'installazione di un sito figlio in una foresta remota che dispone del trust bidirezionale richiesto con la foresta del sito padre. Ad esempio, è possibile inserire un sito secondario in una foresta diversa da quella del sito primario padre a condizione che sia presente il trust necessario.  
 
 > [!NOTE]  
 >  Un sito figlio può essere un sito primario (dove il sito di amministrazione centrale è il sito padre) o un sito secondario.  
 
-La comunicazione tra siti in Configuration Manager usa la replica di database e i trasferimenti basati su file. Quando si installa un sito, è necessario specificare un account da usare per l'installazione del sito nel server designato. Inoltre, questo account stabilisce e mantiene la comunicazione tra siti.  
+La comunicazione tra siti in Configuration Manager usa la replica di database e i trasferimenti basati su file. Quando si installa un sito, è necessario specificare un account da usare per l'installazione del sito nel server designato. Inoltre, questo account stabilisce e mantiene la comunicazione tra siti. Dopo che il sito è stato installato correttamente e i trasferimenti basati su file e la replica di database sono stati avviati, non sarà necessario eseguire altre configurazioni per la comunicazione con il sito.  
 
-Dopo che il sito è stato installato correttamente e i trasferimenti basati su file e la replica di database sono stati avviati, non sarà necessario eseguire ulteriori configurazioni per la comunicazione con il sito.  
+In presenza di un trust tra foreste bidirezionale, Configuration Manager non richiede altri passaggi di configurazione.  
 
-**In presenza di un trust tra foreste bidirezionale, Configuration Manager non richiede altri passaggi di configurazione.**  
-
-Per impostazione predefinita, quando si installa un nuovo sito come figlio di un altro sito, Configuration Manager configura gli elementi seguenti:  
+Per impostazione predefinita, quando si installa un nuovo sito figlio Configuration Manager configura gli elementi seguenti:  
 
 -   Una route di replica basata su file tra siti per ogni sito che usa l'account computer del server del sito. Configuration Manager aggiunge l'account computer di ciascun computer al gruppo **SMS_SiteToSiteConnection_&lt;sitecode\>** nel computer di destinazione.  
 
--   Replica di database tra il server SQL in ciascun sito.  
+-   Replica di database tra i server SQL in ogni sito.  
 
-È necessario impostare anche le seguenti configurazioni:  
+Vengono impostate anche le configurazioni seguenti:  
 
 -   I firewall e i dispositivi di rete interessati devono consentire i pacchetti di rete richiesti da Configuration Manager.  
 
@@ -180,22 +224,22 @@ Per impostazione predefinita, quando si installa un nuovo sito come figlio di un
 
 -   Per installare un sito o un ruolo del sistema del sito, è necessario specificare un account con autorizzazioni di amministratore locale sul computer specificato.  
 
-#### <a name="communication-in-a-site-that-spans-forests"></a>Comunicazione in un sito che si estende su più foreste  
+#### <a name="scenario-2-communication-in-a-site-that-spans-forests"></a>Scenario 2: Comunicazione in un sito che si estende su più foreste  
 Questo scenario non richiede un trust tra foreste bidirezionale.  
 
-**I siti primari supportano l'installazione dei ruoli del sistema del sito su computer in foreste remote**.  
+I siti primari supportano l'installazione dei ruoli del sistema del sito su computer in foreste remote.  
 
 -   Il punto per servizi Web del Catalogo applicazioni è l'unica eccezione.  È supportato solo nella stessa foresta del server del sito.  
 
--   Quando un ruolo del sistema del sito accetta connessioni da Internet, la procedura ottimale di protezione prevede l'installazione dei ruoli del sistema del sito in una posizione in cui i limiti della foresta forniscono la protezione per il server del sito, ad esempio in una rete perimetrale.  
+-   Quando un ruolo del sistema del sito accetta connessioni da Internet, la procedura ottimale di protezione prevede l'installazione dei ruoli del sistema del sito in una posizione in cui i limiti della foresta garantiscono la protezione per il server del sito, ad esempio in una rete perimetrale.  
 
-**Per installare un ruolo del sistema del sito in un computer in una foresta non trusted:**  
+Per installare un ruolo del sistema del sito in un computer in una foresta non trusted:  
 
--   È necessario specificare un **account di installazione del sistema del sito** che consente di installare il ruolo del sistema del sito. L'account deve disporre delle credenziali di amministratore locale per la connessione. Installare quindi i ruoli del sistema del sito nel computer specificato.  
+- Specificare un **account di installazione del sistema del sito**, che il sito usa per installare il ruolo del sistema del sito. L'account deve disporre delle credenziali di amministratore locale per la connessione. Installare quindi i ruoli del sistema del sito nel computer specificato.  
 
--   È necessario selezionare l'opzione del sistema del sito **Richiedi al server del sito di avviare le connessioni al sistema del sito**. In questo modo il server del sito deve stabilire connessioni al server del sistema del sito per il trasferimento di dati. Questo consente di evitare che il computer nella posizione non attendibile avvii un contatto con il server del sito all'interno della rete attendibile. Queste connessioni usano l' **account di installazione del sistema del sito**.  
+- Selezionare l'opzione del sistema del sito **Richiedi al server del sito di avviare le connessioni al sistema del sito**. Questa impostazione richiede al server del sito di stabilire connessioni al server del sistema del sito per il trasferimento di dati. Questa configurazione evita che il computer nella posizione non attendibile avvii un contatto con il server del sito all'interno della rete attendibile. Queste connessioni usano l' **account di installazione del sistema del sito**.  
 
-**Per usare un ruolo del sistema del sito installato in una foresta non trusted,** i firewall devono consentire il traffico di rete, anche quando il server del sito avvia il trasferimento dei dati.  
+Per usare un ruolo del sistema del sito installato in una foresta non attendibile, i firewall devono consentire il traffico di rete anche quando il server del sito avvia il trasferimento dei dati.  
 
 Inoltre, i seguenti ruoli del sistema del sito richiedono l'accesso diretto al database del sito. È quindi necessario che i firewall consentano il traffico applicabile dalla foresta non trusted a SQL Server dei siti:  
 
@@ -211,17 +255,15 @@ Inoltre, i seguenti ruoli del sistema del sito richiedono l'accesso diretto al d
 
 -   Punto di migrazione stato  
 
-Per altre informazioni, vedere [Porte usate in System Center Configuration Manager](../../../core/plan-design/hierarchy/ports.md).  
+Per altre informazioni, vedere [Porte usate in Configuration Manager](/sccm/core/plan-design/hierarchy/ports).  
 
-**Potrebbe essere necessario configurare l'accesso del ruolo del sistema del sito al database del sito:**  
+Può essere necessario configurare l'accesso del punto di registrazione e del punto di gestione al database del sito.
 
-Il ruolo del sistema del sito del punto di registrazione e il ruolo del sistema del sito del punto di gestione si connettono entrambi al database del sito.  
+-   Per impostazione predefinita, quando si installano questi ruoli, Configuration Manager configura l'account computer del nuovo server del sistema del sito come account di connessione per il ruolo del sistema del sito. Quindi aggiunge l'account al ruolo del database SQL Server appropriato.  
 
--   Per impostazione predefinita, quando questi ruoli vengono installati, Configuration Manager configura l'account computer del nuovo server del sistema del sito come account di connessione per il ruolo del sistema del sito e aggiunge l'account al ruolo del database SQL Server appropriato.  
+-   Quando si installano questi ruoli del sistema del sito in un dominio non attendibile, configurare l'account di connessione del ruolo del sistema del sito in modo da abilitarlo alla ricezione delle informazioni dal database.  
 
--   Quando si installano questi ruoli del sistema del sito in un dominio non attendibile, è necessario configurare l'account di connessione del ruolo del sistema del sito per abilitarne la ricezione delle informazioni dal database.  
-
-Se si configura un account utente di dominio come account di connessione per questi ruoli del sistema del sito, assicurarsi che l'account utente di dominio abbia accesso appropriato al database di SQL Server in quel sito:  
+Se si configura un account utente di dominio come account di connessione per questi ruoli del sistema del sito, assicurarsi che l'account utente di dominio abbia l'accesso appropriato al database di SQL Server in quel sito:  
 
 -   Punto di gestione: **account di connessione al database del punto di gestione**  
 
@@ -229,11 +271,11 @@ Se si configura un account utente di dominio come account di connessione per que
 
 Considerare le seguenti informazioni aggiuntive per la pianificazione di ruoli del sistema del sito in altre foreste:  
 
--   Se si esegue Windows Firewall, configurare i profili firewall applicabili per consentire il passaggio delle comunicazioni tra il server di database del sito e i computer installati con i ruoli del sistema del sito remoto. Per informazioni sui profili firewall, vedere [Informazioni sui profili del firewall](http://go.microsoft.com/fwlink/p/?LinkId=233629).  
+-   Se si esegue Windows Firewall, configurare i profili firewall applicabili per consentire il passaggio delle comunicazioni tra il server di database del sito e i computer installati con i ruoli del sistema del sito remoto.   
 
 -   Quando il punto di gestione basato su Internet considera attendibile la foresta che contiene gli account utente, vengono supportati i criteri utente. In caso contrario, sono supportati solo i criteri computer.  
 
-#### <a name="communication-between-clients-and-site-system-roles-when-the-clients-are-not-in-the-same-active-directory-forest-as-their-site-server"></a>Comunicazione tra client e ruoli del sistema del sito quando i client non si trovano nella stessa foresta Active Directory del relativo server del sito  
+#### <a name="scenario-3-communication-between-clients-and-site-system-roles-when-the-clients-arent-in-the-same-active-directory-forest-as-their-site-server"></a>Scenario 3: Comunicazione tra client e ruoli del sistema del sito quando i client non si trovano nella stessa foresta Active Directory del relativo server del sito  
 Configuration Manager supporta i seguenti scenari per i client che non si trovano nella stessa foresta del relativo server del sito:  
 
 -   È presente un trust tra foreste bidirezionale tra la foresta del client e la foresta del server del sito.  
@@ -246,11 +288,22 @@ Configuration Manager supporta i seguenti scenari per i client che non si trovan
 
 I client in un computer aggiunto a un dominio possono usare Active Directory Domain Services per la posizione del servizio quando il relativo sito è pubblicato nella foresta Active Directory.  
 
-Per pubblicare le informazioni di un sito in un'altra foresta Active Directory, è necessario:  
+Per pubblicare le informazioni di un sito in un'altra foresta Active Directory:  
 
 -   Specificare la foresta, quindi abilitare la pubblicazione in tale foresta nel nodo **Foreste Active Directory** dell'area di lavoro **Amministrazione** .  
 
--   Configurare ogni sito per la pubblicazione dei relativi dati in Servizi di dominio Active Directory. Questa configurazione consente ai client di tale foresta di recuperare le informazioni del sito e trovare punti di gestione. Per i client che non possono usare Servizi di dominio Active Directory per la posizione del servizio, è possibile usare DNS, WINS o il punto di gestione client assegnato.  
+-   Configurare ogni sito per la pubblicazione dei relativi dati in Servizi di dominio Active Directory. Questa configurazione consente ai client di tale foresta di recuperare le informazioni del sito e trovare punti di gestione. Per i client che non possono usare Active Directory Domain Services per la posizione del servizio è possibile usare DNS, WINS o il punto di gestione client assegnato.  
 
-###  <a name="bkmk_xchange"></a> Inserire il connettore Exchange Server in una foresta remota  
-Per supportare questo scenario, assicurarsi che la risoluzione dei nomi funzioni tra le foreste (ad esempio, configurare inoltri DNS) e quando si configura il connettore Exchange Server specificare il nome FQDN Intranet di Exchange Server. Per altre informazioni, vedere [Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
+
+####  <a name="bkmk_xchange"></a> Scenario 4: Inserire il connettore Exchange Server in una foresta remota  
+
+Per il supporto di questo scenario, assicurarsi che la risoluzione dei nomi funzioni correttamente tra le foreste. Ad esempio, configurare gli inoltri DNS. Quando si configura il connettore Exchange Server, specificare il FQDN intranet di Exchange Server. Per altre informazioni, vedere [Gestire i dispositivi mobili con Configuration Manager ed Exchange](/sccm/mdm/deploy-use/manage-mobile-devices-with-exchange-activesync).  
+
+
+
+## <a name="see-also"></a>Vedere anche
+
+- [Pianificare la sicurezza](/sccm/core/plan-design/security/plan-for-security)  
+
+- [Sicurezza e privacy per i client di Configuration Manager](/sccm/core/clients/deploy/plan/security-and-privacy-for-clients)  
+

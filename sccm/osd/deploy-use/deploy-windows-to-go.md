@@ -10,12 +10,12 @@ ms.assetid: 8eed50f5-80a4-422e-8aa6-a7ccb2171475
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 12b7a28ff5ea0e2e1870c0c37edd8e056930b09f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: afc76b59d594c6b8f52062add480874ba5c5686d
+ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351888"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50411494"
 ---
 # <a name="deploy-windows-to-go-with-system-center-configuration-manager"></a>Distribuire Windows to Go con System Center Configuration Manager
 
@@ -151,7 +151,7 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
     -   **Punto di distribuzione**: specificare il punto di distribuzione che ospita l'immagine d'avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
 
         > [!NOTE]  
-        >  L'utente amministratore deve disporre dei diritti di accesso di **Lettura** per il contenuto dell'immagine di avvio nel punto di distribuzione. Per altre informazioni, vedere [Manage accounts to access content](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md) (Gestire gli account per l'accesso al contenuto).  
+        >  L'utente amministratore deve disporre dei diritti di accesso di **Lettura** per il contenuto dell'immagine di avvio nel punto di distribuzione. Per altre informazioni, vedere [Account di accesso al pacchetto](/sccm/core/plan-design/hierarchy/accounts#package-access-account).  
 
     -   Se è stato selezionato **Supporto basato su sito** nella pagina **Gestione del supporto** di questa procedura guidata, nella casella **Punto di gestione** specificare un punto di gestione da un sito primario.  
 
@@ -166,7 +166,7 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
     -   **Punto di distribuzione**: specificare il punto di distribuzione che ospita il pacchetto di immagini del sistema operativo. La procedura guidata recupera l'immagine del sistema operativo dal punto di distribuzione e la scrive sul supporto.  
 
         > [!NOTE]  
-        >  L'utente amministratore deve disporre dei diritti di accesso di **Lettura** per il contenuto dell'immagine del sistema operativo nel punto di distribuzione. Per altre informazioni, vedere [Manage accounts to access content](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md) (Gestire gli account per l'accesso al contenuto).  
+        >  L'utente amministratore deve disporre dei diritti di accesso di **Lettura** per il contenuto dell'immagine del sistema operativo nel punto di distribuzione. Per altre informazioni, vedere [Account di accesso al pacchetto](/sccm/core/plan-design/hierarchy/accounts#package-access-account).  
 
 11. Nella pagina **Selezione applicazione** selezionare il contenuto dell'applicazione da includere nel file supporto e quindi fare clic su **Avanti**.  
 

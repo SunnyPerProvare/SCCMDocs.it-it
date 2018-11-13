@@ -10,12 +10,12 @@ ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3e0b70a2b024555bd67f63b3a31a6408b07c273b
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.openlocfilehash: bec95b13ecba5ae5238d758ae06566042a95d939
+ms.sourcegitcommit: 303d826f45c8fd9a05d8883afc1ca645e56bd576
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42756078"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51269247"
 ---
 # <a name="task-sequence-steps-in-configuration-manager"></a>Passaggi della sequenza di attività in Configuration Manager
 
@@ -134,7 +134,7 @@ ms.locfileid: "42756078"
 
  Usare questo passaggio per specificare le informazioni di configurazione della rete o del gruppo di lavoro per il computer di destinazione. La sequenza di attività archivia questi valori nel file di risposte appropriato. Installazione di Windows usa questo file di risposte durante l'azione **Imposta Windows e ConfigMgr**.  
 
- Questo passaggio della sequenza di attività viene eseguito nel sistema operativo completo o in Windows PE. 
+ Questo passaggio della sequenza di attività può essere eseguito solo in Windows PE. Non viene eseguito nel sistema operativo completo. 
 
  Usare le variabili della sequenza di attività seguenti con questo passaggio:  
  - [OSDAdapter](/sccm/osd/understand/task-sequence-variables#OSDAdapter)  
@@ -1564,7 +1564,7 @@ ms.locfileid: "42756078"
  Specificare il nome di una variabile di azione o predefinita della sequenza di attività oppure specificare un nome di variabile definito dall'utente.  
 
 #### <a name="do-not-display-this-value"></a>Non visualizzare questo valore
- <!--1358330--> A partire dalla versione 1806, abilitare questa opzione per mascherare i dati sensibili archiviati nelle variabili della sequenza di attività. Ad esempio, quando si specifica una password. 
+ <!--1358330--> A partire dalla versione 1806, abilitare questa opzione per mascherare i dati sensibili archiviati nelle variabili della sequenza di attività. ad esempio quando si specifica una password. 
 
 #### <a name="value"></a>Valore  
  La sequenza di attività imposta la variabile su questo valore. Impostare questa variabile della sequenza di attività sul valore di un'altra variabile della sequenza di attività con la sintassi `%varname%`.  

@@ -2,7 +2,7 @@
 title: Concetti di base della gestione dei contenuti
 titleSuffix: Configuration Manager
 description: È possibile usare gli strumenti e le opzioni di Configuration Manager per gestire il contenuto da distribuire.
-ms.date: 07/30/2018
+ms.date: 10/26/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: c201be2a-692c-4d67-ac95-0a3afa5320fe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5c3af900bae26262ba402ea258b8859ba07b999b
-ms.sourcegitcommit: 4f05517f7b284696a492a1b184cc5f25c5cda5e6
+ms.openlocfilehash: b73ead1492b143260d327f428db5a6183f84434c
+ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48891215"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50411341"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Concetti di base per la gestione dei contenuti in Configuration Manager
 
@@ -33,15 +33,19 @@ Di seguito sono riportati gli argomenti che rappresentano i concetti di base per
 ## <a name="accounts-used-for-content-management"></a>Account usati per la gestione dei contenuti  
  Con la gestione dei contenuti è possibile usare gli account seguenti:  
 
--   **Account di accesso alla rete**: usato dai client per connettersi a un punto di distribuzione e accedere al contenuto. Per impostazione predefinita, l'account computer viene usato per primo.  
+#### <a name="network-access-account"></a>Account di accesso alla rete
+Usato dai client per connettersi a un punto di distribuzione e accedere al contenuto. Per impostazione predefinita, l'account computer viene usato per primo.  
 
-     Questo account viene usato anche dai punti di distribuzione pull per scaricare contenuto da un punto di distribuzione di origine in una foresta remota.  
+Questo account viene usato anche dai punti di distribuzione pull per scaricare contenuto da un punto di distribuzione di origine in una foresta remota.  
 
--   **Account di accesso ai pacchetti**: per impostazione predefinita, Configuration Manager concede l'accesso al contenuto in un punto di distribuzione agli account di accesso generici Utenti e Amministratori. È tuttavia possibile configurare autorizzazioni aggiuntive per limitare l'accesso.   
+A partire dalla versione 1806, in alcuni scenari non è più necessario un account di accesso alla rete. È possibile abilitare il sito affinché usi HTTP migliorato con l'autenticazione di Azure Active Directory.<!--1358228--> 
 
--   **Account di connessione multicast**: usato per le distribuzioni del sistema operativo.  
+Per altre informazioni, vedere [Account di accesso alla rete](/sccm/core/plan-design/hierarchy/accounts#network-access-account).
 
-Per altre informazioni sugli account, vedere [Gestire gli account per l'accesso al contenuto](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content).
+#### <a name="package-access-account"></a>Account di accesso al pacchetto
+Per impostazione predefinita, Configuration Manager concede l'accesso ai contenuti in un punto di distribuzione agli account di accesso generici Utenti e Amministratori. È tuttavia possibile configurare autorizzazioni aggiuntive per limitare l'accesso.   
+
+Per altre informazioni, vedere [Account di accesso al pacchetto](/sccm/core/plan-design/hierarchy/accounts#package-access-account).
 
 
 

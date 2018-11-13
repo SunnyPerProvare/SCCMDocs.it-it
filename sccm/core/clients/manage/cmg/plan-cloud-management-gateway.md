@@ -2,7 +2,7 @@
 title: Pianificare il gateway di gestione cloud
 titleSuffix: Configuration Manager
 description: Pianificare e progettare il gateway di gestione di cloud (CMG) per semplificare la gestione dei client basati su Internet.
-ms.date: 09/10/2018
+ms.date: 10/24/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9b25b7a5b7df42dc83bec18d38b44c7807e6dc1a
-ms.sourcegitcommit: 2badee2b63ae63687795250e298f463474063100
+ms.openlocfilehash: 0f7e598da0953a20412f6c8279b90a95c1d26581
+ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45601127"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50411477"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
@@ -103,7 +103,7 @@ La distribuzione e l'utilizzo del gateway di gestione cloud includono i componen
 La procedura guidata di Cloud Management Gateway offre ancora l'opzione per una **distribuzione classica del servizio** tramite un certificato di gestione di Azure. Per semplificare la distribuzione e la gestione delle risorse, è consigliabile usare il modello di distribuzione Azure Resource Manager per tutte le nuove istanze di Cloud Management Gateway. Se possibile, ridistribuire le istanze di Cloud Management Gateway esistenti tramite Resource Manager. Per altre informazioni, vedere [Modify a CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#modify-a-cmg) (Modificare un gateway di gestione cloud).
 
 > [!IMPORTANT]  
-> Questa funzionalità non supporta i provider di servizi cloud di Azure. La distribuzione di Cloud Management Gateway con Azure Resource Manager continua infatti a usare il servizio cloud classico, non supportato dal provider di servizi cloud. Per altre informazioni, vedere [Available Azure services in Azure CSP](/azure/cloud-solution-provider/overview/azure-csp-available-services) (servizi di Azure disponibili in Azure CSP). 
+> Questa funzionalità non supporta i provider di servizi cloud di Azure. La distribuzione del gateway di gestione cloud con Azure Resource Manager continua infatti a usare il servizio cloud classico, non supportato dal provider di servizi cloud. Per altre informazioni, vedere [Available Azure services in Azure CSP](/azure/cloud-solution-provider/overview/azure-csp-available-services) (servizi di Azure disponibili in Azure CSP). 
 
 
 ### <a name="hierarchy-design"></a>Modello di gerarchia
@@ -139,7 +139,7 @@ Quando effettuano il roaming in Internet, i client di Seattle comunicano con il 
 Analogamente, quando effettuano il roaming in Internet, i client di Parigi comunicano con il gateway di gestione cloud nell'area di Azure dell'Europa occidentale. Il gateway di gestione cloud inoltra le comunicazioni al punto di connessione del gateway di gestione cloud di Parigi. Quando gli utenti di Parigi si recano nella sede di Seattle, i loro computer continuano a comunicare con il gateway di gestione cloud dell'area di Azure dell'Europa occidentale. 
 
  > [!Note]  
- > Fourth Coffee prende in considerazione la creazione di un altro punto di connessione del gateway di gestione cloud nel sito primario di Parigi collegato al gateway di gestione cloud degli Stati Uniti occidentali. I client di Parigi potrebbero in questo modo usare entrambi i gateway di gestione cloud, indipendentemente dalla loro posizione. Sebbene consenta di bilanciare il carico del traffico e di offrire la ridondanza del servizio, questa configurazione potrebbe anche causare ritardi di comunicazione tra i client di Parigi e il gateway di gestione cloud degli Stati Uniti. Poiché i client Configuration Manager non considerano l'area geografica di appartenenza, non preferire un gateway di gestione cloud geograficamente più vicino. I client usano qualsiasi gateway di gestione cloud disponibile.
+ > Fourth Coffee prende in considerazione la creazione di un altro punto di connessione del gateway di gestione cloud nel sito primario di Parigi collegato al gateway di gestione cloud degli Stati Uniti occidentali. I client di Parigi potrebbero in questo modo usare entrambi i gateway di gestione cloud, indipendentemente dalla loro posizione. Sebbene consenta di bilanciare il carico del traffico e di offrire la ridondanza del servizio, questa configurazione potrebbe anche causare ritardi di comunicazione tra i client di Parigi e il gateway di gestione cloud degli Stati Uniti. Poiché i client di Configuration Manager non considerano l'area geografica di appartenenza, non preferire un gateway di gestione cloud geograficamente più vicino. I client usano qualsiasi gateway di gestione cloud disponibile.
 
 
 
@@ -153,16 +153,19 @@ Analogamente, quando effettuano il roaming in Internet, i client di Parigi comun
 
 - Il **punto di connessione del servizio** deve essere in [modalità online](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_modes).   
 
-- Un [**certificato di autenticazione server**](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#cmg-server-authentication-certificate) per il gateway di gestione cloud.  
+- Un [**certificato di autenticazione server**](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_serverauth) per il gateway di gestione cloud.  
 
-- Con il metodo di distribuzione classico di Azure è necessario usare un [**certificato di gestione di Azure**](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#azure-management-certificate).  
+- Con il metodo di distribuzione classico di Azure è necessario usare un [**certificato di gestione di Azure**](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_azuremgmt).  
 
     > [!TIP]  
-    > A partire da Configuration Manager versione 1802, è consigliabile usare il modello di distribuzione **Azure Resource Manager**. Non richiede il certificato di gestione.  
+    > A partire da Configuration Manager versione 1802, Microsoft consiglia di usare il modello di distribuzione di **Azure Resource Manager**. che non richiede il certificato di gestione.  
 
 - Possono essere necessari **altri certificati**, a seconda della versione del sistema operativo del client e del modello di autenticazione. Per altre informazioni, vedere [CMG certificates](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway) (Certificati per il gateway di gestione cloud).  
 
-    - A partire dalla versione 1802, è necessario configurare tutti i [**punti di gestione abilitati per il gateway di gestione cloud per l'uso di HTTPS**](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#enable-management-point-for-https).  
+    - A partire dalla versione 1802, è necessario configurare tutti i [**punti di gestione abilitati per il gateway di gestione cloud per l'uso di HTTPS**](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_mphttps).  
+
+    - A partire dalla versione 1806, quando si usa l'opzione del sito **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**, il punto di gestione può essere HTTP. Per altre informazioni, vedere [HTTP avanzato](/sccm/core/plan-design/hierarchy/enhanced-http).  
+
 
 - Può essere necessaria l'integrazione con **Azure AD** per i client Windows 10. Per altre informazioni, vedere [Configurare i servizi di Azure](/sccm/core/servers/deploy/configure/azure-services-wizard).  
 
@@ -325,8 +328,8 @@ La tabella seguente elenca le porte e i protocolli di rete richiesti. Il *client
 |---------|---------|---------|---------|---------|
 | punto di connessione del servizio     | HTTPS | 443        | Azure        | Distribuzione del gateway di gestione cloud |
 | Punto di connessione del gateway di gestione cloud     |  TCP-TLS | 10140-10155        | Servizio Cloud Management Gateway        | Protocollo preferito per la creazione del canale del gateway di gestione cloud<sup>1</sup> |
-| Punto di connessione del gateway di gestione cloud     | HTTPS | 443        | Servizio Cloud Management Gateway       | Fallback per la creazione del canale del gateway di gestione cloud in una sola istanza di macchina virtuale<sup>2</sup> |
-| Punto di connessione del gateway di gestione cloud     |  HTTPS   | 10124-10139     | Servizio Cloud Management Gateway       | Fallback per la creazione del canale del gateway di gestione cloud in due o più istanze di macchina virtuale<sup>3</sup> |
+| Punto di connessione del gateway di gestione cloud     | HTTPS | 443        | Servizio Cloud Management Gateway       | Protocollo di fallback per la creazione del canale del gateway di gestione cloud in una sola istanza di macchina virtuale<sup>2</sup> |
+| Punto di connessione del gateway di gestione cloud     |  HTTPS   | 10124-10139     | Servizio Cloud Management Gateway       | Protocollo di fallback per la creazione del canale del gateway di gestione cloud in due o più istanze di macchina virtuale<sup>3</sup> |
 | Client     |  HTTPS | 443         | Gateway di gestione cloud        | Comunicazione client generale |
 | Punto di connessione del gateway di gestione cloud      | HTTPS o HTTP | 443 o 80         | Punto di gestione<br>(versione 1706 o 1710) | Traffico locale, la porta dipende dalla configurazione del punto di gestione |
 | Punto di connessione del gateway di gestione cloud      | HTTPS | 443      | Punto di gestione<br>(versione 1802) | Il traffico locale deve essere HTTPS |
