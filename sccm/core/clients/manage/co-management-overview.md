@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: a99983583aa8c21f8a987f3e20550752e7b77ba4
-ms.sourcegitcommit: 83806460b6fd88a1d08a2c97f4d72b9e36e04102
+ms.openlocfilehash: 1791217e22e2bcc6d5fd2603abee3aaced816afe
+ms.sourcegitcommit: 1f8731ed8f0308cb2cb576722adb0821a366e9ce
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39495561"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51223739"
 ---
 # <a name="co-management-for-windows-10-devices"></a>Co-gestione per dispositivi Windows 10    
 
@@ -72,7 +72,7 @@ Uso immediato delle funzionalità di Intune seguenti:
 
  - I dispositivi Windows 10 devono essere aggiunti ad Azure AD. Possono essere di uno dei due tipi seguenti:  
 
-     - [Ibrido aggiunto ad Azure AD](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup), in cui il dispositivo viene aggiunto sia ad Azure AD che al dominio locale  
+     - [Aggiunto ad Azure AD ibrido](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup), il dispositivo è aggiunto ad Active Directory locale e registrato in Azure Active Directory.
 
      - Aggiunto solo ad Azure AD. Questo tipo è anche noto come "aggiunto a un dominio cloud".<!--SCCMDocs issue 605-->
 

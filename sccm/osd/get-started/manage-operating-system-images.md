@@ -10,12 +10,12 @@ ms.assetid: fab13949-371c-4a4c-978e-471db1e54966
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3b0931671c05604a0115c14a5e7fc5d9c6767b7c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: d442955d62989d3bbc7b32e0aba122a0853a3f14
+ms.sourcegitcommit: 1f8731ed8f0308cb2cb576722adb0821a366e9ce
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350103"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51223671"
 ---
 # <a name="manage-operating-system-images-with-system-center-configuration-manager"></a>Gestire le immagini del sistema operativo con System Center Configuration Manager
 
@@ -35,9 +35,9 @@ Le immagini del sistema operativo in Configuration Manager vengono archiviate in
 
 -   **Svantaggi**  
 
-    -   L'installazione del sistema operativo può richiedere più tempo, perché l'installazione delle app e le altre configurazioni vengono eseguite al termine dell'installazione del sistema operativo.  
+    -   L'installazione del sistema operativo può richiedere più tempo, perché l'installazione delle app e le altre configurazioni vengono eseguite al termine dell'installazione del sistema operativo.
 
- **Immagine acquisita**  
+**Immagine acquisita**  
 
  Per creare un'immagine del sistema operativo personalizzata, è necessario creare un computer di riferimento con il sistema operativo desiderato e installare le app, configurare le impostazioni e così via. Quindi, è possibile acquisire l'immagine del sistema operativo dal computer di riferimento per creare il file WIM. È possibile creare manualmente il computer di riferimento o usare una sequenza di attività per automatizzare alcune o tutte le istruzioni di generazione.   
 Per informazioni sui passaggi necessari per creare un'immagine del sistema operativo personalizzata, vedere [Personalizzare le immagini del sistema operativo](customize-operating-system-images.md).  
@@ -48,8 +48,9 @@ Per informazioni sui passaggi necessari per creare un'immagine del sistema opera
 
 -   **Svantaggi**  
 
-    -   L'installazione del sistema operativo può richiedere più tempo, perché l'installazione delle app e le altre configurazioni vengono eseguite al termine dell'installazione del sistema operativo.  
-
+    -   Le dimensioni dell'immagine sono potenzialmente maggiori di quelle dell'immagine predefinita.
+    
+    -   Se sono necessari aggiornamenti per le applicazioni e gli strumenti, sarà necessario creare una nuova immagine.
 
 ##  <a name="BKMK_AddOSImages"></a> Aggiungere immagini del sistema operativo a Configuration Manager  
  Prima di poter usare un'immagine del sistema operativo, è necessario aggiungere l'immagine a un sito di Configuration Manager. Usare la procedura seguente per aggiungere un'immagine del sistema operativo a un sito.  
@@ -109,6 +110,9 @@ Per informazioni sui passaggi necessari per creare un'immagine del sistema opera
 7.  Nella pagina **Riepilogo** verificare le informazioni e quindi fare clic su **Avanti**.  
 
 8.  Nella pagina **Completamento** verificare che gli aggiornamenti software siano stati applicati correttamente all'immagine del sistema operativo.  
+
+> [!NOTE]  
+>  Per ridurre al minimo le dimensioni del payload, il processo di manutenzione dei pacchetti di aggiornamento del sistema operativo e delle immagini del sistema operativo rimuove la versione precedente.  
 
 ##  <a name="BKMK_OSImageMulticast"></a> Preparare l'immagine del sistema operativo per le distribuzioni multicast  
  Usare le distribuzioni multicast per consentire a più computer di scaricare simultaneamente un'immagine del sistema operativo. Il punto di distribuzione esegue il multicast dell'immagine nei client e non deve inviare una copia dell'immagine a ogni client con una connessione separata. Quando si sceglie il metodo di distribuzione del sistema operativo [Usare il multicast per distribuire Windows in rete](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md), è necessario configurare il pacchetto dell'immagine del sistema operativo in modo che supporti il multicast prima di distribuire l'immagine del sistema operativo in un punto di distribuzione abilitato per il multicast. Utilizzare la seguente procedura per impostare le opzioni di multicast per un pacchetto immagine del sistema operativo esistente.  
