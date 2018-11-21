@@ -10,12 +10,12 @@ ms.assetid: 68dc6acd-5848-47a4-b4c1-ffa40e47890b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5492382afdb523846fcdd40b68d498730073eb7e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: f8450308f0719903bc4b3f74d6c2ab1ca5e17c59
+ms.sourcegitcommit: e0209e4549e9828eb74089313dbee323ece1fc2f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342444"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51598615"
 ---
 # <a name="reference-for-maintenance-tasks-for-system-center-configuration-manager"></a>Informazioni di riferimento per le attività di manutenzione per System Center Configuration Manager
 
@@ -120,7 +120,7 @@ Questo argomento fornisce informazioni dettagliate su ognuna delle attività di 
 
 **Elimina dispositivi registrati obsoleti**: a partire dall'aggiornamento 1602, questa attività è disabilitata per impostazione predefinita. È possibile usarla per eliminare dal database del sito i dati obsoleti relativi ai dispositivi mobili che non hanno inviato informazioni al sito per un determinato periodo di tempo.
 
-Questa attività si applica ai dispositivi registrati da Microsoft Intune (modalità ibrida) o con la funzionalità di gestione dei dispositivi mobili in locale di Configuration Manager. Per informazioni sui sistemi operativi dei dispositivi registrati da Configuration Manager o Intune, vedere la sezione [Dispositivi mobili registrati con Microsoft Intune](../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md#mobile-devices-enrolled-by-microsoft-intune) dell'argomento [Sistemi operativi supportati per client e dispositivi per System Center Configuration Manager](../../../core/plan-design/configs/supported-operating-systems-for-clients-and-devices.md).
+Questa attività si applica ai dispositivi registrati da Microsoft Intune (modalità ibrida) o con la funzionalità di gestione dei dispositivi mobili in locale di Configuration Manager. Per altre informazioni, vedere [Sistemi operativi supportati per client e dispositivi](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#bkmk_OnpremOS).
 
 -   Sito di amministrazione centrale: non disponibile    
 -   **Sito primario**: non abilitato    

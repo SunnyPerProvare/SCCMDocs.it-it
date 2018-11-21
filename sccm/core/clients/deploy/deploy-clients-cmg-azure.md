@@ -10,12 +10,12 @@ ms.assetid: a44006eb-8650-49f6-94e1-18fa0ca959ee
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 91ebb0c35687b231a6f08b7bc92cccb83cf0e602
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 490e5a614a98633629df98abcd554b02cec1261a
+ms.sourcegitcommit: ae03ad403b1732a5a61dec981e3a3010a0f09188
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344688"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "51860247"
 ---
 # <a name="install-and-assign-configuration-manager-windows-10-clients-using-azure-ad-for-authentication"></a>Installare e assegnare client di Configuration Manager in dispositivi Windows 10 usando Azure AD per l'autenticazione
 
@@ -41,9 +41,7 @@ Per installare il client di Configuration Manager nei dispositivi Windows 10 con
 
 - Oltre ai [prerequisiti esistenti](/sccm/core/plan-design/configs/site-and-site-system-prerequisites#bkmk_2012MPpreq) per il ruolo del sistema del sito punto di gestione, abilitare anche **ASP.NET 4.5** in questo server. Includere eventuali altre opzioni che vengono automaticamente selezionate quando si abilita ASP.NET 4.5.  
 
-- Configurare tutti i punti di gestione per la modalità HTTPS. Per altre informazioni, vedere [Requisiti dei certificati PKI](/sccm/core/plan-design/network/pki-certificate-requirements) e [Distribuzione del certificato del server Web per sistemi del sito che eseguono IIS](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_webserver2008_cm2012).  
-    - Se si usa il gateway di gestione cloud, è necessario configurare HTTPS solo per i punti di gestione abilitati per il gateway di gestione cloud.
-    - Se si distribuiscono client nella Intranet che usano l'autenticazione basata su token di Azure AD, è necessario abilitare per HTTPS tutti i punti di gestione che questi client possono contattare. 
+- Determinare se il punto di gestione richiede HTTPS. Per altre informazioni, vedere [Abilitare i punti di gestione per HTTPS](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_mphttps).  
 
 - Se necessario, configurare un [gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway) per distribuire i client basati su Internet. Per i client locali che eseguono l'autenticazione con Azure AD, non è necessario un gateway di gestione cloud.  
 

@@ -2,7 +2,7 @@
 title: Funzionalità deprecate
 titleSuffix: Configuration Manager
 description: Informazioni sulle funzionalità che Configuration Manager non supporta più.
-ms.date: 08/31/2018
+ms.date: 10/26/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 287a6324-ae65-4d38-b2ef-198d47c91231
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: dbebfa1ef5d4851cfd6bbc118c2d7bab30f0b01f
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.openlocfilehash: 7c1e07a2911a5f8560e3b69d7596716eb526bb34
+ms.sourcegitcommit: 3772ece83823714b2aae46ec20523cc094701760
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893451"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51681427"
 ---
 # <a name="removed-and-deprecated-features-for-configuration-manager"></a>Funzionalità rimosse e deprecate per Configuration Manager
 
@@ -31,6 +31,7 @@ Queste informazioni sono soggette a modifica nelle versioni future. È possibile
 
 |Funzionalità|Primo annuncio riguardo agli elementi deprecati|Supporto&nbsp;rimosso|  
 |-----------|---|--------------|  
+|System Center Endpoint Protection per Mac e Linux<br>Per altre informazioni, vedere il [post del blog sulla fine del supporto](https://go.microsoft.com/fwlink/?linkid=870182).|Ottobre 2018|31 dicembre 2018|
 |Gestione ibrida dei dispositivi mobili. Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->|14 agosto 2018|1 settembre 2019|
 |L'**esperienza utente di Silverlight** per il ruolo Punto per siti Web del Catalogo applicazioni non è più supportato. Gli utenti devono usare il nuovo Software Center. NOTA: il ruolo Punto per siti Web del Catalogo applicazioni e il ruolo Punto per servizi Web sono ancora supportati. In alcuni scenari, il nuovo Software Center comunica con il punto per siti Web del Catalogo applicazioni. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex).<!--1358309-->|11 agosto 2017| Versione 1806|
 |Versione precedente di Software Center.<br><br>Per altre informazioni sulla nuova versione di Software Center, vedere [Pianificare e configurare la gestione delle applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management##bkmk_userex).|13 dicembre 2016|Versione 1802|

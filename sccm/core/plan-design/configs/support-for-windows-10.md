@@ -10,12 +10,12 @@ ms.assetid: a1626a65-da22-49e0-9564-d2f752ea3f4b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 67a25cc788c417409306e506de97cb0fdf1cf2e8
-ms.sourcegitcommit: 265d38d55ca0db043e3a7131a56f123e1d98aa5b
+ms.openlocfilehash: ab8c0336b34fd3e9496d1fd7c5956aaca4c5cc32
+ms.sourcegitcommit: e0209e4549e9828eb74089313dbee323ece1fc2f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48236141"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "51598547"
 ---
 # <a name="support-for-windows-10-in-configuration-manager"></a>Supporto per Windows 10 in Configuration Manager  
 
@@ -53,8 +53,9 @@ La tabella seguente elenca le versioni di Windows 10 che è possibile usare come
 
 | Versione di Windows 10 | Configuration Manager 1710 | Configuration Manager 1802 | Configuration Manager 1806 |
 |---------------------|-----|-----|-----|-----|
-| Enterprise 2015 LTSB            <!--10/14/2025-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| Enterprise 2016 LTSB            <!--10/13/2026-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| Enterprise 2015 LTSB <!--10/14/2025-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| Enterprise 2016 LTSB <!--10/13/2026-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| Enterprise LTSC 2019 <!--10/10/2028-->   | ![Non supportato](media/Red_X.png)   | ![Non supportato](media/Red_X.png)   | ![Supportato](media/green_check.png) |
 | 1607   <!--04/09/2019-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
 | 1703   <!--10/08/2019-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
 | 1709   <!--04/14/2020-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |

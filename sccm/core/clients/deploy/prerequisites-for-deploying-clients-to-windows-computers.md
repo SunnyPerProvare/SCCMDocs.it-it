@@ -10,12 +10,12 @@ ms.assetid: 1a2a9b48-a95b-4643-b00c-b3079584ae2e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 025edee312e1c67eba9f9e4f812b03806f51dbbb
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 11474f54aaf7a9afe13d411b0dd469abb1eef963
+ms.sourcegitcommit: c2c44329f1f9a2e6c14095360b4fc4aafabc27f0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384315"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51694944"
 ---
 # <a name="prerequisites-for-deploying-clients-to-windows-computers-in-configuration-manager"></a>Prerequisiti per la distribuzione dei client nei computer Windows in Configuration Manager
 
@@ -60,7 +60,7 @@ Se il client richiede queste dipendenze per completare l'installazione, le insta
 |Microsoft Policy Platform 1.2.3514.0|Necessario per consentire ai client di valutare le impostazioni di conformità.|  
 |Microsoft Silverlight 5.1.41212.0|Necessario per supportare l'esperienza utente del sito Web Catalogo applicazioni. A partire da Configuration Manager 1802, Silverlight non viene più installato automaticamente. La funzionalità principale del Catalogo applicazioni è ora inclusa in Software Center. Il supporto per il sito Web del Catalogo applicazioni termina con la versione 1806.<!--1356195-->|  
 |Microsoft .NET Framework version 4.5.2|Necessario per supportare le operazioni client. Viene installato automaticamente nel computer client se Microsoft .NET Framework 4.5 o versione successiva non è installato in tale computer. Per altre informazioni, vedere [Informazioni aggiuntive su Microsoft .NET Framework versione 4.5.2](#dotNet).|  
-|Componenti di Microsoft SQL Server Compact 3.5 SP2|Necessari per archiviare le informazioni relative alle operazioni client.|  
+|Componenti di Microsoft SQL Server Compact 4.0 SP1|Necessari per archiviare le informazioni relative alle operazioni client.|  
 
 
 ####  <a name="dotNet"></a> Informazioni dettagliate aggiuntive su Microsoft .NET Framework versione 4.5.2  
