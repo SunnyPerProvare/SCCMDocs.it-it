@@ -1,6 +1,6 @@
 ---
 title: Creare e distribuire criteri di Windows Defender Application Guard
-titleSuffix: Configuraton Manager
+titleSuffix: Configuration Manager
 description: Creare e distribuire criteri di Windows Defender Application Guard.
 ms.date: 03/22/2018
 ms.prod: configuration-manager
@@ -10,17 +10,16 @@ ms.assetid: 33a6c1d9-4dd8-411c-a748-693a5bd2ea5a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e7f0a1ccb71abb2fec27e0430bd4195dc85aceae
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 82423914b1d1f5cae8fa4ecea3d02ef02d23703a
+ms.sourcegitcommit: 2cc635835709fb8d86cdb63ea34233b36c94d4d8
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348073"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52258911"
 ---
 # <a name="create-and-deploy-windows-defender-application-guard-policy"></a>Creare e distribuire criteri di Windows Defender Application Guard 
-*Si applica a: System Center Configuration Manager (Current Branch)*
-<!-- 1351960 -->
-È possibile creare e distribuire criteri di [Windows Defender Application Guard](https://docs.microsoft.com/windows/threat-protection/windows-defender-application-guard/wd-app-guard-overview) usando Endpoint Protection di Configuration Manager. Questi criteri consentono di proteggere gli utenti tramite l'apertura dei siti Web non attendibili in un contenitore isolato protetto e non accessibile da altre parti del sistema operativo.
+*Si applica a: System Center Configuration Manager (Current Branch)* 
+ <!-- 1351960 --> è possibile creare e distribuire [Windows Defender Application Guard](https://docs.microsoft.com/windows/threat-protection/windows-defender-application-guard/wd-app-guard-overview) criteri usando l'endpoint di Configuration Manager protezione dati. Questi criteri consentono di proteggere gli utenti tramite l'apertura dei siti Web non attendibili in un contenitore isolato protetto e non accessibile da altre parti del sistema operativo.
 
 ## <a name="prerequisites"></a>Prerequisiti
 
