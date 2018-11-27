@@ -10,12 +10,12 @@ ms.assetid: f4f9a5fd-f573-4b99-ad93-b2c76812e922
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e0a4369e9c302c687f15b29b0daafbf4329e22a5
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 7d6b957ebcc19dfe8c14dd781f71678db8e160af
+ms.sourcegitcommit: 1a1bac2d5ee0f20ce565d29798ee4dd99aaca044
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342308"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "52281907"
 ---
 # <a name="install-and-upgrade-with-the-version-1606-baseline-media-for-system-center-configuration-manager"></a>Eseguire installazioni e aggiornamenti con il supporto di base della versione 1606 per System Center Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "32342308"
 
 Quando si esegue il programma di installazione dal supporto di base della versione 1606 per Configuration Manager, è possibile installare Long-Term Servicing Branch o un sito di Current Branch di System Center Configuration Manager.
 
-Il supporto di base è disponibile su DVD come parte di Microsoft System Center 2016 o in System Center Configuration Manager Current Branch e Long-Term Servicing Branch 1606. Per informazioni sui supporti di base, vedere [Baseline and update versions](/sccm/core/servers/manage/updates#baseline-and-udpate-versions) (Versioni base e di aggiornamento).
+Il supporto di base è disponibile su DVD come parte di Microsoft System Center 2016 o in System Center Configuration Manager Current Branch e Long-Term Servicing Branch 1606. Per informazioni sui supporti di base, vedere [Baseline and update versions](../servers/manage/updates.md#bkmk_Baselines) (Versioni base e di aggiornamento).
 
 
 Quando si usa il supporto di base della versione 1606, il sito che si installa o a cui si esegue l'aggiornamento è:

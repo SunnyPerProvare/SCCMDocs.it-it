@@ -1,6 +1,6 @@
 ---
 title: Passare i carichi di lavoro di Configuration Manager a Intune
-titleSuffix: Configuraton Manager
+titleSuffix: Configuration Manager
 description: Informazioni su come passare i carichi di lavoro attualmente gestiti da Configuration Manager a Microsoft Intune.
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,12 +10,12 @@ manager: dougeby
 ms.date: 07/30/2018
 ms.topic: conceptual
 ms.assetid: 60e2022f-a4f9-40dd-af01-9ecb37b43878
-ms.openlocfilehash: c1f5f96c4178068ced727cfe96b1c6fe8b60a0fc
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 739773e83213033103b414cc9bb79f7abccb230c
+ms.sourcegitcommit: 2cc635835709fb8d86cdb63ea34233b36c94d4d8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384000"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52258945"
 ---
 # <a name="switch-configuration-manager-workloads-to-intune"></a>Passare i carichi di lavoro di Configuration Manager a Intune
 In [Preparare i dispositivi Windows 10 per la co-gestione](co-management-prepare.md) sono stati preparati i dispositivi Windows 10 a questo scopo. Questi dispositivi sono aggiunti ad Active Directory e ad Azure AD, sono stati registrati in Intune e hanno il client di Configuration Manager. È probabile che vi siano ancora dispositivi Windows 10 aggiunti ad AD e che hanno il client di Configuration Manager, ma che non sono stati aggiunti ad Azure AD o registrati in Intune. Di seguito sono riportati i passaggi per abilitare la co-gestione, preparare il resto dei dispositivi Windows 10, ovvero quelli che hanno il client di Configuration Manager ma che non sono registrati in Intune, e avviare il passaggio di specifici carichi di lavoro di Configuration Manager a Intune.
