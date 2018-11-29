@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 04536d51-3bf7-45e5-b4af-36ceed10583d
-ms.openlocfilehash: 3a99c2b1310d5e78699b0b9c97a5074c329bac46
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: d456d7232133333bf6cd88374d5288227f6dfea1
+ms.sourcegitcommit: 2ea71b048307a93a2db7898700aea984a8f88824
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383746"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52304283"
 ---
 # <a name="deploy-software-updates"></a>Distribuire gli aggiornamenti software  
 
@@ -26,7 +26,7 @@ La fase di distribuzione degli aggiornamenti software è il processo di distribu
 - Distribuisce il contenuto degli aggiornamenti nei punti di distribuzione
 - Distribuisce il gruppo di aggiornamento ai client  
 
-Dopo aver creato la distribuzione, il sito invia un criterio di aggiornamento software associato ai client di destinazione. I client scaricano i file di contenuto degli aggiornamenti software da un'origine del contenuto alla cache locale. I client basati su Internet scaricano sempre il contenuto dal servizio cloud Microsoft Update. Gli aggiornamenti software sono quindi disponibili per l'installazione da parte del client.   
+Dopo aver creato la distribuzione, il sito invia un criterio di aggiornamento software associato ai client di destinazione. I client scaricano i file di contenuto degli aggiornamenti software da un'origine del contenuto alla cache locale. I client connessi a Internet scaricano sempre il contenuto dal servizio cloud Microsoft Update. Gli aggiornamenti software sono quindi disponibili per l'installazione da parte del client.   
 
 > [!Tip]  
 >  Se un punto di distribuzione non è disponibile, i client nella Intranet possono anche scaricare gli aggiornamenti software da Microsoft Update.  
@@ -52,11 +52,11 @@ Il seguente elenco descrive il flusso di lavoro generale per la distribuzione ma
 
 1. Filtrare gli aggiornamenti software che usano requisiti specifici. Ad esempio, fornire criteri per il recupero di tutti gli aggiornamenti software critici o della sicurezza necessari su più di 50 client.  
 
-2. Creare un gruppo di aggiornamento software che contenga gli aggiornamenti software.  
+2. Creare un gruppo di aggiornamenti software che contenga gli aggiornamenti software.  
 
-3. Scaricare il contenuto per gli aggiornamenti software nel gruppo di aggiornamento software.  
+3. Scaricare il contenuto per gli aggiornamenti software nel gruppo di aggiornamenti software.  
 
-4. Distribuire manualmente il gruppo di aggiornamento software.  
+4. Distribuire manualmente il gruppo di aggiornamenti software.  
 
 Per altre informazioni e per la procedura dettagliata, vedere [Distribuire manualmente gli aggiornamenti software](manually-deploy-software-updates.md).
 
