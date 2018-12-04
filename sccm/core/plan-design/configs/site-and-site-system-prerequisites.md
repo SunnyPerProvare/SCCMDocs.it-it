@@ -10,12 +10,12 @@ ms.assetid: 1392797b-76cb-46b4-a3e4-8f349ccaa078
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4ba23a42acb111f4ed7d0337552b2ea90b0268d6
-ms.sourcegitcommit: 78d2dce465e3500653b252583a6903a006784c26
+ms.openlocfilehash: 00789c0c469e7de5ccd0b4dcac4130fdb14bb485
+ms.sourcegitcommit: 1439817f1309658b31008d7bafaab32fc5ef8789
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46448923"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "52820119"
 ---
 # <a name="site-and-site-system-prerequisites-for-configuration-manager"></a>Prerequisiti del sito e del sistema del sito per Configuration Manager
 
@@ -416,7 +416,13 @@ Per altre informazioni, vedere [Installare e configurare i punti di distribuzion
 
 
 
-##  <a name="bkmk_2012FSPpreq"></a> Punto di stato di fallback  
+##  <a name="bkmk_2012FSPpreq"></a> Punto di stato di fallback 
+
+#### <a name="windows-server-roles-and-features"></a>Funzionalità e ruoli di Windows Server 
+
+-   Estensioni del server BITS (e le opzioni selezionate automaticamente) o Servizio trasferimento intelligente in background (BITS) (e le opzioni selezionate automaticamente) 
+
+#### <a name="iis-configuration"></a>Configurazione di IIS 
 
 È necessaria la configurazione predefinita di IIS con le aggiunte seguenti:  
 

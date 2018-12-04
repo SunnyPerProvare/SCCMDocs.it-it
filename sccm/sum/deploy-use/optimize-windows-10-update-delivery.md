@@ -10,12 +10,12 @@ ms.assetid: b670cfaf-96a4-4fcb-9caa-0f2e8c2c6198
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 801cd2cd35d370fbe469b16613da7f7592feff6e
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.openlocfilehash: 6fb655ae6094d7c764f2c3d0b84a505e9dfda3d2
+ms.sourcegitcommit: 9f02f21fbd4324ee8cc1af2d56db67c9c2fce969
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893809"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52709934"
 ---
 # <a name="optimize-windows-10-update-delivery-with-configuration-manager"></a>Ottimizzare il recapito degli aggiornamenti di Windows 10 con Configuration Manager
 
@@ -88,7 +88,7 @@ La selezione della tecnologia di peer caching appropriata per i file di installa
 | Supporto del contenuto parziale | Sì | Solo per Office 365 e gli aggiornamenti rapidi | Sì |
 | Controllo delle dimensioni della cache su disco | Sì | Sì | Sì |
 | Individuazione di un'origine peer | Automatica | Manuale (impostazione agente client) | Automatica |
-| Individuazione peer | Tramite il servizio cloud Ottimizzazione recapito (richiede l'accesso a Internet) | Tramite il punto di gestione (basato su gruppi di limiti client) | Trasmissione |
+| Individuazione peer | Tramite il servizio cloud Ottimizzazione recapito (richiede l'accesso a Internet) | Tramite il punto di gestione (basato su gruppi di limiti client) | Multicast |
 | Reporting | Sì (con Windows Analytics) | Dashboard Origini dati del client di ConfigMgr | Dashboard Origini dati del client di ConfigMgr |
 | Controllo dell'utilizzo WAN | Sì (nativa e controllabile tramite impostazioni di Criteri di gruppo) | Gruppi di limiti | Solo supporto subnet |
 | Tipi di contenuto supportati | - Aggiornamenti rapidi (tramite ConfigMgr)</br> - Windows e aggiornamenti della sicurezza</br> - Driver</br> - App di Windows Store</br> - App di Windows Store per le aziende | Tutti i tipi di contenuto ConfigMgr, incluse le immagini scaricate in [Windows PE](/sccm/osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic) | Tutti i tipi di contenuto di ConfigMgr, ad eccezione delle immagini |
