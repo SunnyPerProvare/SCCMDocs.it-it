@@ -12,7 +12,7 @@ ms.author: aaroncz
 manager: dougeby
 ms.openlocfilehash: 639fabbe1e2f51194669fc1f196d88140193a727
 ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/03/2018
 ms.locfileid: "32352102"
@@ -365,7 +365,7 @@ Queste impostazioni si riferiscono ai dispositivi che eseguono Windows 10 e vers
 |**Abilita SmartScreen**|Usare SmartScreen per controllare che i file scaricati dagli utenti non contengano codice dannoso.|  
 |**Consenti popup**|Consentire o disabilitare i popup del browser.|  
 |**Consenti cookie**|Consentire o disabilitare i cookie.|  
-|**Consenti riempimento automatico**|Consente l'uso della funzionalità di riempimento automatico del browser Edge.|  
+|**Consenti riempimento automatico**|Consente l'uso della funzionalità di riempimento automatico del browser Microsoft Edge.|  
 |**Consenti strumento per la gestione delle password**|Consentire l'uso della funzionalità dello strumento per la gestione delle password del browser Microsoft Edge.|  
 |**Posizione elenco siti modalità Enterprise**|Specifica dove trovare l'elenco di siti Web che si aprono in modalità Enterprise. L'elenco non è modificabile dagli utenti.|
 |**Blocca l'accesso ai flag Informazioni su**|Impedire l'accesso dell'utente finale alla pagina about:flags in Edge contenente impostazioni sperimentali e per sviluppatori.|
