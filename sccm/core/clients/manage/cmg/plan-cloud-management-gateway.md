@@ -2,7 +2,7 @@
 title: Pianificare il gateway di gestione cloud
 titleSuffix: Configuration Manager
 description: Pianificare e progettare il gateway di gestione di cloud (CMG) per semplificare la gestione dei client basati su Internet.
-ms.date: 10/24/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0f7e598da0953a20412f6c8279b90a95c1d26581
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
+ms.openlocfilehash: b059fd3b8511a3cbbf308ea7a3ee21a4ec9dbfaa
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411477"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456720"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
@@ -98,12 +98,15 @@ La distribuzione e l'utilizzo del gateway di gestione cloud includono i componen
 
 
 ### <a name="azure-resource-manager"></a>Azure Resource Manager
-<!-- 1324735 --> A partire dalla versione 1802, è possibile creare il gateway di gestione cloud usando una **distribuzione Azure Resource Manager**. [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) è una piattaforma moderna per la gestione di tutte le risorse di una soluzione come una singola entità detta [gruppo di risorse](/azure/azure-resource-manager/resource-group-overview#resource-groups). Quando si distribuisce Cloud Management Gateway con Azure Resource Manager, il sito usa Azure Active Directory (Azure AD) per autenticare e creare le risorse cloud necessarie. Questa distribuzione modernizzata non richiede il certificato di gestione classico di Azure.  
+<!-- 1324735 --> A partire dalla versione 1802, è possibile creare il gateway di gestione cloud usando una **distribuzione Azure Resource Manager**. [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) è una piattaforma moderna per la gestione di tutte le risorse di una soluzione come una singola entità detta [gruppo di risorse](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups). Quando si distribuisce Cloud Management Gateway con Azure Resource Manager, il sito usa Azure Active Directory (Azure AD) per autenticare e creare le risorse cloud necessarie. Questa distribuzione modernizzata non richiede il certificato di gestione classico di Azure.  
+
+> [!Note]  
+> Questa funzionalità non supporta i provider di servizi cloud di Azure. La distribuzione del gateway di gestione cloud con Azure Resource Manager continua infatti a usare il servizio cloud classico, non supportato dal provider di servizi cloud. Per altre informazioni, vedere [Available Azure services in Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services) (servizi di Azure disponibili in Azure CSP). 
 
 La procedura guidata di Cloud Management Gateway offre ancora l'opzione per una **distribuzione classica del servizio** tramite un certificato di gestione di Azure. Per semplificare la distribuzione e la gestione delle risorse, è consigliabile usare il modello di distribuzione Azure Resource Manager per tutte le nuove istanze di Cloud Management Gateway. Se possibile, ridistribuire le istanze di Cloud Management Gateway esistenti tramite Resource Manager. Per altre informazioni, vedere [Modify a CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#modify-a-cmg) (Modificare un gateway di gestione cloud).
 
-> [!IMPORTANT]  
-> Questa funzionalità non supporta i provider di servizi cloud di Azure. La distribuzione del gateway di gestione cloud con Azure Resource Manager continua infatti a usare il servizio cloud classico, non supportato dal provider di servizi cloud. Per altre informazioni, vedere [Available Azure services in Azure CSP](/azure/cloud-solution-provider/overview/azure-csp-available-services) (servizi di Azure disponibili in Azure CSP). 
+> [!Important]  
+> A partire dalla versione 1810, la distribuzione classica del servizio in Azure è deprecata in Configuration Manager. Si tratta dell'ultima versione che supporta la creazione di queste distribuzioni di Azure. Questa funzionalità verrà rimossa nella prima versione di Configuration Manager rilasciata dopo il 1° luglio 2019. Spostare CMG e i punti di distribuzione del cloud nelle distribuzioni di Azure Resource Manager prima di tale data. <!--SCCMDocs-pr issue #2993-->  
 
 
 ### <a name="hierarchy-design"></a>Modello di gerarchia
@@ -158,13 +161,15 @@ Analogamente, quando effettuano il roaming in Internet, i client di Parigi comun
 - Con il metodo di distribuzione classico di Azure è necessario usare un [**certificato di gestione di Azure**](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_azuremgmt).  
 
     > [!TIP]  
-    > A partire da Configuration Manager versione 1802, Microsoft consiglia di usare il modello di distribuzione di **Azure Resource Manager**. che non richiede il certificato di gestione.  
+    > A partire da Configuration Manager versione 1802, Microsoft consiglia di usare il modello di distribuzione di **Azure Resource Manager**. che non richiede il certificato di gestione. 
+    > 
+    > Il metodo di distribuzione classica è deprecato a partire dalla versione 1810.   
 
 - Possono essere necessari **altri certificati**, a seconda della versione del sistema operativo del client e del modello di autenticazione. Per altre informazioni, vedere [CMG certificates](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway) (Certificati per il gateway di gestione cloud).  
 
     - A partire dalla versione 1802, è necessario configurare tutti i [**punti di gestione abilitati per il gateway di gestione cloud per l'uso di HTTPS**](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_mphttps).  
 
-    - A partire dalla versione 1806, quando si usa l'opzione del sito **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**, il punto di gestione può essere HTTP. Per altre informazioni, vedere [HTTP avanzato](/sccm/core/plan-design/hierarchy/enhanced-http).  
+    - A partire dalla versione 1806, quando si usa l'opzione del sito **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**, il punto di gestione può essere HTTP. Per altre informazioni, vedere [HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http).  
 
 
 - Può essere necessaria l'integrazione con **Azure AD** per i client Windows 10. Per altre informazioni, vedere [Configurare i servizi di Azure](/sccm/core/servers/deploy/configure/azure-services-wizard).  
@@ -183,7 +188,7 @@ Analogamente, quando effettuano il roaming in Internet, i client di Parigi comun
 
 - I punti di aggiornamento software che usano un bilanciamento del carico di rete non funzionano con il gateway di gestione cloud. <!--505311-->  
 
-- A partire dalla versione 1802, le distribuzioni CMG che usano il modello Azure Resource Manager non abilitano il supporto dei provider di servizi cloud di Azure. La distribuzione del gateway di gestione cloud con Azure Resource Manager continua infatti a usare il servizio cloud classico, non supportato dal provider di servizi cloud. Per altre informazioni, vedere [Available Azure services in Azure CSP](/azure/cloud-solution-provider/overview/azure-csp-available-services) (Servizi di Azure disponibili in Azure CSP).  
+- A partire dalla versione 1802, le distribuzioni CMG che usano il modello Azure Resource Manager non abilitano il supporto dei provider di servizi cloud di Azure. La distribuzione del gateway di gestione cloud con Azure Resource Manager continua infatti a usare il servizio cloud classico, non supportato dal provider di servizi cloud. Per altre informazioni, vedere [Available Azure services in Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services) (Servizi di Azure disponibili in Azure CSP).  
 
 
 ### <a name="support-for-configuration-manager-features"></a>Supporto delle funzionalità di Configuration Manager

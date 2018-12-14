@@ -2,7 +2,7 @@
 title: Versioni incrementali
 titleSuffix: Configuration Manager
 description: Informazioni sulle novità dell'ultimo aggiornamento per Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: b57acf0b-05b7-46af-ad4c-f3e707bd3861
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3afe14d62f55bf5ef7923882bbb2bbe57e245661
-ms.sourcegitcommit: 2cc635835709fb8d86cdb63ea34233b36c94d4d8
+ms.openlocfilehash: 0a7d07972d412826f8b9b069f23c79df1e972f38
+ms.sourcegitcommit: 1439817f1309658b31008d7bafaab32fc5ef8789
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52258928"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "52820051"
 ---
 # <a name="whats-new-in-configuration-manager-incremental-versions"></a>Novità delle versioni incrementali di System Center Configuration Manager
 
@@ -23,7 +23,7 @@ ms.locfileid: "52258928"
 
  Configuration Manager usa un processo di [aggiornamenti e manutenzione](/sccm/core/servers/manage/updates) nella console. Questo processo di aggiornamento semplifica l'identificazione e l'installazione degli aggiornamenti di Configuration Manager. Non sono più presenti service pack o versioni di aggiornamento cumulativo di cui tenere traccia e che è necessario installare. Non occorre cercare il download della versione o degli aggiornamenti più recenti.
 
- Per aggiornare il prodotto a una nuova versione di Current Branch, si usa la console di Configuration Manager per trovare e quindi [installare gli aggiornamenti nella console](../../../core/servers/manage/install-in-console-updates.md). Alcune volte all'anno Microsoft rilascia nuove versioni che includono aggiornamenti del prodotto. Ogni versione introduce anche nuove funzionalità. Quando si installa un aggiornamento con nuove funzionalità, è possibile scegliere se usare tali funzionalità. 
+ Per aggiornare il prodotto a una nuova versione di Current Branch, si usa la console di Configuration Manager per trovare e quindi [installare gli aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates). Alcune volte all'anno Microsoft rilascia nuove versioni che includono aggiornamenti del prodotto. Ogni versione introduce anche nuove funzionalità. Quando si installa un aggiornamento con nuove funzionalità, è possibile scegliere se usare tali funzionalità. 
 
  Le diverse versioni di aggiornamento sono identificate dall'anno e dal mese. La versione 1511, ad esempio, identifica novembre 2015, ossia il mese in cui Configuration Manager Current Branch è stato rilasciato per la prima volta in produzione. Gli aggiornamenti successivi hanno nomi di versione come 1802, per indicare che un aggiornamento è stato creato nel mese di febbraio 2018. Queste versioni degli aggiornamenti sono fondamentali per comprendere la versione incrementale dell'installazione di Configuration Manager e le funzionalità che possono essere abilitate nel proprio ambiente.
 
@@ -31,12 +31,13 @@ ms.locfileid: "52258928"
 
 ## <a name="supported-versions"></a>Versioni supportate
  Usare i collegamenti seguenti per individuare le novità di ogni versione supportata:
-  - [Novità della versione 1806](../../../core/plan-design/changes/whats-new-in-version-1806.md)  
-  - [Novità della versione 1802](../../../core/plan-design/changes/whats-new-in-version-1802.md)
-  - [Novità della versione 1710](../../../core/plan-design/changes/whats-new-in-version-1710.md)
+  - [Novità della versione 1810](/sccm/core/plan-design/changes/whats-new-in-version-1810)
+  - [Novità della versione 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806)  
+  - [Novità della versione 1802](/sccm/core/plan-design/changes/whats-new-in-version-1802)
+  - [Novità della versione 1710](/sccm/core/plan-design/changes/whats-new-in-version-1710)
 
 
-Per le versioni di Configuration Manager precedenti alla 1710, il supporto è per 12 mesi. A partire dalla versione 1710, ogni versione di aggiornamento continua a essere supportata per 18 mesi dalla data in cui viene resa disponibile a livello generale.  È consigliabile disporre sempre della versione di aggiornamento più recente. Per altre informazioni, vedere [Supporto per le versioni di System Center Configuration Manager Current Branch](../../../core/servers/manage/current-branch-versions-supported.md).  
+Per le versioni di Configuration Manager precedenti alla 1710, il supporto è per 12 mesi. A partire dalla versione 1710, ogni versione di aggiornamento continua a essere supportata per 18 mesi dalla data in cui viene resa disponibile a livello generale.  È consigliabile disporre sempre della versione di aggiornamento più recente. Per altre informazioni, vedere [Supporto per le versioni di System Center Configuration Manager Current Branch](/sccm/core/servers/manage/current-branch-versions-supported).  
 
 
 ## <a name="see-also"></a>Vedere anche

@@ -10,12 +10,12 @@ ms.assetid: ec5b54cf-62b7-4ed1-9bb3-e8c63b9641c8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2c739f52553aca8680328e581e183a5ca974ffdf
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: f1683f69ae065d0523719edd3d24da52d499341b
+ms.sourcegitcommit: 1439817f1309658b31008d7bafaab32fc5ef8789
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337507"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "52820000"
 ---
 # <a name="upgrade-the-long-term-servicing-branch-to-the-current-branch"></a>Aggiornare Long-Term Servicing Branch a Current Branch
 
@@ -46,6 +46,6 @@ Se il sito esegue LTSB, è possibile usare l'opzione seguente nella console di C
 
  1. Nella console passare ad **Amministrazione** > **Configurazione del sito** > **Siti** e quindi aprire **Impostazioni gerarchia**.  
 
- 2. Selezionare l'opzione per eseguire la conversione in Current Branch e quindi scegliere **Applica**.  
+ 2. In **Impostazioni gerarchia** passare alla scheda **Licenze**. Selezionare l'opzione **Converti a Current Branch** e quindi scegliere **Applica**.  
 
 Quando il sito è stato convertito in Current Branch, è possibile usare le funzionalità e le caratteristiche precedentemente non disponibili.

@@ -2,7 +2,7 @@
 title: Informazioni dettagliate sulla gestione
 titleSuffix: Configuration Manager
 description: Informazioni sulla funzionalità Informazioni dettagliate sulla gestione disponibile nella console di Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: a79f83be-884c-48e6-94d6-ed0a68c22e2f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 92f82ee7247030d19df63e50b0ac4437f250717a
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 3721c4c35dd22a0d2a59d2300bd25dfbd3c75aeb
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383498"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456312"
 ---
 # <a name="management-insights-in-configuration-manager"></a>Informazioni dettagliate sulla gestione in Configuration Manager
 
@@ -31,11 +31,12 @@ Per visualizzare le regole, l'account deve disporre dell'autorizzazione di **let
 
 1. Aprire la console di Configuration Manager.  
 
-2. Passare all'area di lavoro **Amministrazione** e fare clic su **Informazioni dettagliate sulla gestione**.  
+2. Nell'area di lavoro **Amministrazione** espandere **Informazioni dettagliate sulla gestione** e selezionare **Tutte le informazioni dettagliate**.  
 
-3. Selezionare **Tutte le informazioni dettagliate**.  
+    > [!Note]  
+    > A partire dalla versione 1810, quando si seleziona il nodo **Informazioni dettagliate sulla gestione** viene visualizzato il [Dashboard di informazioni dettagliate sulla gestione](#bkmk_insights).  
 
-4. Fare doppio clic sul **Nome del gruppo di informazioni dettagliate sulla gestione** che si desidera esaminare. In alternativa, evidenziarlo e fare clic su **Mostra le informazioni dettagliate** nella barra multifunzione.  
+3. Aprire il nome del gruppo di informazioni dettagliate sulla gestione che si vuole esaminare. Selezionare **Mostra le informazioni dettagliate** nella barra multifunzione.  
 
 È possibile esaminare le quattro schede seguenti: 
 
@@ -45,7 +46,7 @@ Per visualizzare le regole, l'account deve disporre dell'autorizzazione di **let
 
 - **In corso**: mostra le regole in cui alcuni, ma non tutti i prerequisiti sono soddisfatti.  
 
-- **Azione richiesta**: sono elencate le regole che richiedono le azioni adottate. Fare clic con il pulsante destro del mouse e scegliere **Altri dettagli** per recuperare elementi specifici in cui è necessaria un'azione.  
+- **Azione richiesta**: sono elencate le regole che richiedono le azioni adottate. Scegliere **Altri dettagli** per recuperare elementi specifici in cui è necessaria un'azione.  
 
 Nel riquadro **Prerequisiti** sono elencati gli elementi obbligatori per eseguire la regola.
 
@@ -53,7 +54,7 @@ Nel riquadro **Prerequisiti** sono elencati gli elementi obbligatori per eseguir
 ![Informazioni dettagliate sulla gestione- Tutte le regole e i prerequisiti per il gruppo di servizi cloud](./media/Management-insights-all-cloud-rules.png)
 
 
-Selezionare una regola e fare clic su **Altri dettagli** per visualizzarne i dettagli.
+Selezionare una regola e quindi selezionare **Altri dettagli** per visualizzarne i dettagli.
 
 
 
@@ -63,7 +64,7 @@ Le regole delle informazioni dettagliate sulla gestione rivalutano la loro appli
 
 Il file di log per le regole di Informazioni dettagliate sulla gestione è **SMS_DataEngine.log** ed è disponibile nel server del sito.
 
-<!--1357930--> A partire dalla versione 1806, alcune regole consentono di intervenire. Selezionare una regola, fare clic su **Altri dettagli** e quindi, se disponibile, fare clic su **Intervieni**. 
+<!--1357930--> A partire dalla versione 1806, alcune regole consentono di intervenire. Selezionare una regola, selezionare **Altri dettagli** e quindi, se disponibile, selezionare **Intervieni**. 
 
 A seconda della regola, questa azione presenta uno dei comportamenti seguenti:  
 
@@ -73,9 +74,45 @@ A seconda della regola, questa azione presenta uno dei comportamenti seguenti:
 
 
 
+## <a name="bkmk_insights"></a> Dashboard delle informazioni dettagliate sulla gestione
+<!--1357979-->
+
+A partire dalla versione 1810 il nodo **Informazioni dettagliate sulla gestione** include un dashboard grafico. Questo dashboard visualizza una panoramica degli stati delle regole che rende più semplice visualizzare lo stato di avanzamento. 
+
+Usare i filtri seguenti nella parte superiore del dashboard per ottimizzare la visualizzazione:
+- Mostra completate
+- Facoltativo
+- Consigliato
+- Critico
+
+Il dashboard include i riquadri seguenti:  
+
+- **Management insights index** (Indice informazioni dettagliate sulla gestione): registra l'avanzamento generale delle regole delle informazioni dettagliate sulla gestione. L'indice è una media ponderata. Le regole critiche hanno maggior valore. Questo indice assegna il minor peso alle regole facoltative.  
+
+- **Management insights groups** (Gruppi informazioni dettagliate sulla gestione): mostra la percentuale di regole di ogni gruppo che soddisfa i filtri. Selezionare un gruppo per eseguire il drill-down nelle regole specifiche del gruppo.  
+
+- **Management insights priority** (Priorità informazioni dettagliate sulla gestione): mostra la percentuale di regole in ordine di priorità che soddisfa i filtri.   
+
+- **All insights** (Tutte le informazioni dettagliate sulla gestione): tabella delle informazioni dettagliate con priorità e stato. Usare il campo **Filtro** nella parte superiore della tabella per la corrispondenza con stringhe in una qualsiasi delle colonne disponibili. Il dashboard consente di ordinare la tabella nell'ordine seguente:
+    - Stato: Azione necessaria, Completato, Sconosciuto  
+    - Priorità: Critico, Consigliato, Facoltativo  
+    - Ultima modifica: le date meno recenti sono visualizzate all'inizio   
+
+![Screenshot del dashboard delle informazioni dettagliate sulla gestione](media/1357979-management-insights-dashboard.png)
+
+
+
 ## <a name="groups-and-rules"></a>Gruppi e regole
 
-Le regole sono organizzate in diversi gruppi di informazioni dettagliate sulla gestione. Vedere l'elenco seguente per i gruppi e le regole attualmente disponibili:
+Le regole sono organizzate nei seguenti gruppi di informazioni dettagliate sulla gestione:
+- [Applicazioni](#applications)  
+- [Servizi cloud](#cloud-services)  
+- [raccolte](#collections)  
+- [Manutenzione proattiva](#proactive-maintenance)  
+- [Security](#security)  
+- [Gestione semplificata](#simplified-management)  
+- [Software Center](#software-center)  
+- [Windows 10](#windows-10)  
 
 
 ### <a name="applications"></a>Applicazioni
@@ -119,6 +156,8 @@ Informazioni dettagliate che consentono di semplificare la gestione tramite la p
 - **Immagini d'avvio inutilizzate**: immagini di avvio a cui non viene fatto riferimento per l'avvio PXE o per l'uso di sequenze di attività. Per altre informazioni, vedere [Manage boot images](/sccm/osd/get-started/manage-boot-images) (Gestire le immagini d'avvio).  
 
 - **Elementi di configurazione inutilizzati**: elementi di configurazione che non fanno parte di una baseline di configurazione e sono anteriori a 30 giorni. Per altre informazioni, vedere [Creare configurazioni di base](/sccm/compliance/deploy-use/create-configuration-baselines).  
+
+- **Aggiorna le origini di peer cache alla versione più recente del client di Configuration Manager**: identifica i clienti che fanno da peer cache ma non sono stati aggiornati da una versione del client precedente alla 1806. I client precedenti alla versione 1806 non possono essere usati come origine di peer cache per i client che eseguono la versione 1806 o versioni successive. Selezionare **Intervieni** per aprire una visualizzazione del dispositivo con l'elenco dei client.<!--1358008-->  
 
 
 ### <a name="security"></a>Sicurezza

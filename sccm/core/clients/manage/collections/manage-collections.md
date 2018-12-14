@@ -10,12 +10,12 @@ ms.assetid: e102fd1a-76df-4d8e-b1b0-10ee18318f67
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5d7c967ce02c009cd9659c7956f7ca79f4a34faf
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.openlocfilehash: 03b34c09a5fef63316bb1d9d1a94dbbfc3ccf69f
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42755973"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456261"
 ---
 # <a name="how-to-manage-collections-in-configuration-manager"></a>Come gestire le raccolte in Configuration Manager
 
@@ -73,40 +73,11 @@ Usare le informazioni generali di questo articolo per eseguire le attività di g
 
 
 #### <a name="client-notification"></a>Notifica client
- Indica a tutti i client nella raccolta di dispositivi selezionata di eseguire immediatamente una delle azioni seguenti:
-
- - **Scarica criteri computer**: aggiorna i criteri del dispositivo. Per altre informazioni, vedere [Avviare il recupero criteri per un client di Configuration Manager](/sccm/core/clients/manage/manage-clients#BKMK_PolicyRetrieval).  
-
- - **Scarica criteri utente**: aggiorna i criteri dell'utente.  
-
- - **Raccogli i dati di individuazione**: attiva i client per l'invio di un record dei dati di individuazione. Per altre informazioni, vedere [Individuazione heartbeat](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutHeartbeat).  
-
- - **Raccogli l'inventario software**: attiva i client per l'esecuzione di un ciclo di inventario software. Per altre informazioni, vedere [Introduzione all'inventario software](/sccm/core/clients/manage/inventory/introduction-to-software-inventory).  
-
- - **Raccogli l'inventario hardware**: attiva i client per l'esecuzione di un ciclo di inventario hardware. Per altre informazioni, vedere [Introduzione all'inventario hardware](/sccm/core/clients/manage/inventory/introduction-to-hardware-inventory).  
-
- - **Valuta le distribuzioni dell'applicazione**: attiva i client per l'esecuzione di un ciclo di valutazione delle distribuzioni dell'applicazione. Per altre informazioni, vedere [Pianificare nuova valutazione per le distribuzioni](/sccm/core/clients/deploy/about-client-settings#schedule-re-evaluation-for-deployments).  
-
- - **Valuta le distribuzioni di aggiornamento software**: attiva i client per l'esecuzione di un ciclo di valutazione delle distribuzioni degli aggiornamenti software. Per altre informazioni, vedere [Introduzione agli aggiornamenti software](/sccm/sum/understand/software-updates-introduction).  
-
- - **Passare al punto di aggiornamento software successivo**: attiva i client per il passaggio al successivo punto di aggiornamento software disponibile. Per altre informazioni, vedere [Passaggio a un nuovo punto di aggiornamento software](/sccm/sum/plan-design/plan-for-software-updates#BKMK_SUPSwitching).  
-
- - **Valuta l'attestazione dell'integrità del dispositivo**: attiva i client di Windows 10 per il controllo e l'invio dello stato dell'integrità del dispositivo più recente. Per altre informazioni, vedere [Attestazione dell'integrità](/sccm/core/servers/manage/health-attestation).  
-
- - **Controlla la conformità dell'accesso condizionale**: attiva i client per il controllo della conformità dell'accesso condizionale. Per altre informazioni, vedere [Gestire l'accesso ai servizi di O365 per i PC](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm).  
+ Per altre informazioni vedere [Client notifications](/sccm/core/clients/manage/client-notification) (Notifiche client).
 
 
 #### <a name="endpoint-protection"></a>Endpoint Protection
- Indica a tutti i client nella raccolta di dispositivi selezionata di eseguire immediatamente una delle azioni seguenti:
-
- - **Analisi completa**: attiva Endpoint Protection o Windows Defender per l'esecuzione di un'analisi antimalware *completa*  
-
- - **Analisi veloce**: attiva Endpoint Protection o Windows Defender per l'esecuzione di un'analisi antimalware *veloce*  
-
- - **Scarica definizione**: attiva Endpoint Protection o Windows Defender per il download delle definizioni antimalware più recenti  
-
-
- Per altre informazioni, vedere [Endpoint Protection in Configuration Manager](/sccm/protect/deploy-use/endpoint-protection).
+ Per altre informazioni vedere [Client notifications](/sccm/core/clients/manage/client-notification) (Notifiche client).
 
 
 #### <a name="export"></a>Esporta

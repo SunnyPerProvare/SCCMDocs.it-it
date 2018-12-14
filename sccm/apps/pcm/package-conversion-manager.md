@@ -10,12 +10,12 @@ ms.assetid: f053fa73-c553-4522-a6b9-f885f23fe57c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7057084ba976408f189a0d4fbb96f176bc0c6656
-ms.sourcegitcommit: 759098de944b8f7d5eedfc2bae2cb9a6ba15276f
+ms.openlocfilehash: 41dd6ad6f8a0292fdb16a0d727665b17e038f87b
+ms.sourcegitcommit: 1439817f1309658b31008d7bafaab32fc5ef8789
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43297244"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "52820042"
 ---
 # <a name="package-conversion-manager"></a>Package Conversion Manager
 
@@ -25,8 +25,9 @@ ms.locfileid: "43297244"
 
 A partire dalla versione 1806, Package Conversion Manager consente di convertire i pacchetti legacy di Configuration Manager in applicazioni. Le applicazioni offrono vantaggi aggiuntivi, come dipendenze, regole dei requisiti, metodi di rilevamento e affinità utente-dispositivo.
 
-> [!Note]  
-> In questa versione di Configuration Manager, Package Conversion Manager è una funzionalità di versione non definitiva. Per abilitarla, vedere [Funzionalità di versioni non definitive in System Center Configuration Manager](/sccm/core/servers/manage/pre-release-features).  
+> [!Tip]  
+> Questa funzionalità è stata introdotta per la prima volta nella versione 1806 come [funzionalità di una versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1810, questa funzionalità non è più in versione non definitiva.  
+
 
 Un'applicazione di Configuration Manager contiene file e programmi che possono essere distribuiti ai dispositivi client. Tuttavia, a differenza dei pacchetti e dei programmi legacy, un'applicazione fornisce funzionalità aggiuntive specifiche per l'utente. Ad esempio, un'applicazione potrebbe contenere tipi di distribuzione per un'installazione locale di un pacchetto software, un pacchetto di applicazioni virtuali o una versione dell'applicazione per dispositivi mobili.
 

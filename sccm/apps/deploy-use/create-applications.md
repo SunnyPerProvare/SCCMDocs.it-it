@@ -2,7 +2,7 @@
 title: Creare applicazioni
 titleSuffix: Configuration Manager
 description: Creare applicazioni con tipi di distribuzione, metodi di rilevamento e requisiti per installare software.
-ms.date: 07/30/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 848b81ee9e1d6d9ebc189a2d8cb0126648f91be0
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 947dfac82db43e5cb21d8304d31be23219bb83aa
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385185"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456652"
 ---
 # <a name="create-applications-in-configuration-manager"></a>Creare applicazioni in Configuration Manager
 
@@ -241,6 +241,10 @@ Nella pagina **Contenuto** specificare le informazioni seguenti:
 - **Programma di disinstallazione**: specificare facoltativamente il nome del programma di disinstallazione ed eventuali parametri obbligatori.  
 
     - **Avvio disinstallazione da**: specificare la cartella che contiene il programma di disinstallazione per il tipo di distribuzione (facoltativo). Questa cartella può corrispondere a un percorso assoluto nel client. Può anche essere un percorso relativo in un punto di distribuzione della cartella con il pacchetto.  
+
+- **Ripristino programma**: a partire dalla versione 1810, per i tipi di distribuzione Windows Installer e Script Installer, è possibile specificare il nome del programma di ripristino ed eventuali parametri obbligatori.<!--1357866-->  
+
+    - **Inizio ripristino in**: specificare la cartella che contiene il programma di ripristino per il tipo di distribuzione (facoltativo). Questa cartella può corrispondere a un percorso assoluto nel client. Può anche essere un percorso relativo in un punto di distribuzione della cartella con il pacchetto.  
 
 - **Esegui l'installazione e la disinstallazione del programma come processo a 32 bit su client a 64 bit**: usare i percorsi di file e registro di sistema a 32 bit nei computer basati su Windows per eseguire il programma di installazione per il tipo di distribuzione.  
 

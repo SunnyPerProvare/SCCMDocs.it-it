@@ -2,7 +2,7 @@
 title: Elenco dei report
 titleSuffix: Configuration Manager
 description: Esaminare l'elenco dei report inclusi in Configuration Manager. I report vengono visualizzati in diverse categorie.
-ms.date: 07/30/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,14 +10,14 @@ ms.assetid: b7332ed3-8003-454b-bb12-1fdf8721425c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9d292d85ce5a30e56d7909d74b986ac408d29346
-ms.sourcegitcommit: 849391d3985b057027cae610bd3a79fdaa708b94
+ms.openlocfilehash: 01112dac89ba0fe9e18dabe186353506d9476213
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "42584462"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456771"
 ---
-# <a name="list-of-reports-in-system-center-configuration-manager"></a>Elenco dei report in System Center Configuration Manager
+# <a name="list-of-reports-in-configuration-manager"></a>Elenco dei report di Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
@@ -28,7 +28,8 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="administrative-security"></a>Protezione amministrativa  
- I sei report seguenti sono elencati nella categoria **Protezione amministrativa**.  
+
+I sei report seguenti sono elencati nella categoria **Protezione amministrativa**.  
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -42,7 +43,9 @@ I report seguenti sono disponibili in Configuration Manager. I report vengono vi
 
 
 ## <a name="alerts"></a>Avvisi  
+
 I due report seguenti sono elencati nella categoria **Avvisi**.  
+
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
 |**Scorecard avvisi**|Visualizza un riepilogo di tutti gli avvisi posticipati generati tra la data di inizio e la data di fine specificate.|  
@@ -51,14 +54,15 @@ I due report seguenti sono elencati nella categoria **Avvisi**.
 
 
 ## <a name="asset-intelligence"></a>Asset Intelligence  
-I 66 report seguenti sono elencati nella categoria **Asset Intelligence**.  
+
+I 67 report seguenti sono elencati nella categoria **Asset Intelligence**.  
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
 |**Hardware 01A - Riepilogo dei computer in una raccolta specifica**|Visualizza un riepilogo di Asset Intelligence dei computer in una raccolta specificata.|  
 |**Hardware 03A - Utenti computer primario**|Visualizza gli utenti e il numero di computer in cui sono utenti primari.|  
 |**Hardware 03B - Computer per un utente console primario specifico**|Visualizza tutti i computer per cui l'utente specificato è l'utente console primario.|  
-|**Hardware 04A - Computer con più utenti (condivisi)**|Visualizza i computer che non hanno un utente primario in quanto nessun utente dispone di una percentuale di tempo di accesso alla console superiore a 66%.|  
+|**Hardware 04A - Computer con più utenti (condivisi)**|Visualizza i computer che non hanno un utente primario in quanto nessun utente dispone di una percentuale di tempo di accesso superiore a 66%.|  
 |**Hardware 05A - Utenti console in un computer specifico**|Visualizza tutti gli utenti console in un computer specifico.|  
 |**Hardware 06A - Computer per cui non è possibile determinare gli utenti console**|Consente agli utenti amministratori di identificare i computer in cui è necessario attivare la registrazione di protezione.|  
 |**Hardware 07A - Dispositivi USB per produttore**|Visualizza i dispositivi USB raggruppati in base al produttore.|  
@@ -83,9 +87,9 @@ I 66 report seguenti sono elencati nella categoria **Asset Intelligence**.
 |**Licenza 05A - Computer che forniscono il Servizio di gestione delle chiavi**|Visualizza i computer che agiscono come Server di gestione delle chiavi.|  
 |**Licenza 06A - Numero di processori per prodotti con licenza per processore**|Visualizza il numero di processori nei computer che usano i prodotti Microsoft che supportano la gestione licenze per processore.|  
 |**Licenza 06B - Computer con un prodotto specifico che supporta le licenze per processore**|Visualizza un elenco di computer in cui è installato un prodotto Microsoft specifico che supporta la gestione licenze per processore.|  
-|**Licenza 14A - Report di riconciliazione di Microsoft Volume Licensing**|Visualizza la riconciliazione sulle licenze software acquistate tramite il contratto Microsoft Volume License e il numero corrente in inventario.|  
+|**Licenza 14A - Report di riconciliazione di Microsoft Volume Licensing**|Visualizza la riconciliazione sulle licenze software ottenute tramite il contratto Microsoft Volume License e il numero corrente in inventario.|  
 |**Licenza 14B - Elenco dell'inventario software Microsoft non trovato in MVLS**|Questo report visualizza i titoli del software Microsoft in uso che non sono stati trovati nel contratto Microsoft Volume License.|  
-|**Licenza 15A - Report di riconciliazione licenza generale**|Visualizza la riconciliazione sulle licenze software generali acquistate e il numero corrente in inventario.|  
+|**Licenza 15A - Report di riconciliazione licenza generale**|Visualizza la riconciliazione sulle licenze software generali ottenute e il numero corrente in inventario.|  
 |**Licenza 15B - Report di riconciliazione licenza generale per computer**|Visualizza i computer in cui è installato il prodotto concesso in licenza con una versione specifica.|  
 |**Software 01A - Riepilogo del software installato in una raccolta specifica**|Visualizza un riepilogo del software installato ordinato per numero di istanze trovate nell'inventario.|  
 |**Software 02A - Famiglie di prodotti per una raccolta specifica**|Visualizza le famiglie di prodotti e il conteggio del software nella famiglia per una raccolta specifica.|  
@@ -121,10 +125,12 @@ I 66 report seguenti sono elencati nella categoria **Asset Intelligence**.
 |**Ciclo di vita 02A - Elenco di computer con prodotti scaduti nell'organizzazione**|Visualizza i computer con prodotti scaduti. È possibile filtrare questo report in base al nome del prodotto.|
 |**Ciclo di vita 03A - Elenco di prodotti scaduti rilevati nell'organizzazione**|Visualizza i dettagli relativi ai prodotti trovati nell'ambiente con date del ciclo di vita scadute.|
 |**Ciclo di vita 04A - Panoramica generale del ciclo di vita del prodotto**|Visualizza un elenco di cicli di vita dei prodotti. Filtrare l'elenco in base al nome del prodotto e ai giorni mancanti alla scadenza.|
+|**Ciclo di vita 05A - Dashboard Ciclo di vita del prodotto**|A partire dalla versione 1810, questo report include informazioni simili a quelle del dashboard nella console.|
 
 
 
 ## <a name="client-push"></a>Push client  
+
 I quattro report seguenti sono elencati nella la categoria **Push client**.  
 
 |Nome report|Descrizione|  
@@ -137,6 +143,7 @@ I quattro report seguenti sono elencati nella la categoria **Push client**.
 
 
 ## <a name="client-status"></a>Stato del client  
+
 I sette report seguenti sono elencati nella categoria **Stato client**.  
 
 |Nome report|Descrizione|  
@@ -152,6 +159,7 @@ I sette report seguenti sono elencati nella categoria **Stato client**.
 
 
 ## <a name="company-resource-access"></a>Accesso alle risorse aziendali  
+
 I tre report seguenti sono elencati nella categoria **Accesso alle risorse aziendali**. 
 
 |Nome report|Descrizione|  
@@ -163,6 +171,7 @@ I tre report seguenti sono elencati nella categoria **Accesso alle risorse azien
 
 
 ## <a name="compliance-and-settings-management"></a>Gestione conformità e impostazioni  
+
 I 22 report seguenti sono elencati nella categoria **Gestione conformità e impostazioni**. 
 
 |Nome report|Descrizione|  
@@ -172,7 +181,7 @@ I 22 report seguenti sono elencati nella categoria **Gestione conformità e impo
 |**Conformità dell'accesso condizionale per un utente**|Visualizza la conformità dettagliata dell'accesso condizionale per un utente specifico.|
 |**Report di conformità dell'accesso condizionale**|Report di conformità dell'accesso condizionale per i criteri di conformità usati.|
 |**Dettagli delle regole conformi degli elementi di configurazione in una linea di base configurazione per un asset**|Visualizza informazioni sulle regole valutate come conformi per un elemento di configurazione specifico per un dispositivo o utente specifico.|  
-|**Dettagli delle regole in conflitto degli elementi di configurazione in una linea di base configurazione per un asset**|Visualizza informazioni sulle regole in un elemento di configurazione distribuito in conflitto con altre regole. Le altre regole possono essere contenute nello stesso elemento di configurazione distribuito o in un altro elemento.|  
+|**Dettagli delle regole in conflitto degli elementi di configurazione in una linea di base configurazione per un asset**|Visualizza informazioni sulle regole in un elemento di configurazione distribuito in conflitto con altre regole. Include le altre regole nello stesso elemento di configurazione distribuito o in un altro elemento.|  
 |**Dettagli degli errori degli elementi di configurazione in una linea di base configurazione per un asset**|Visualizza le informazioni sugli errori generati da un elemento di configurazione specifico per un dispositivo o un utente specifico.|  
 |**Dettagli delle regole non conformi degli elementi di configurazione in una linea di base configurazione per un asset**|Visualizza le informazioni sulle regole valutate come non conformi per un elemento di configurazione specifico, per un dispositivo o un utente specifico.|  
 |**Dettagli delle regole risolte degli elementi di configurazione in una linea di base configurazione per un asset**|Visualizza le informazioni sulle regole risolte da un elemento di configurazione specifico per un dispositivo o un utente specifico.|  
@@ -190,8 +199,11 @@ I 22 report seguenti sono elencati nella categoria **Gestione conformità e impo
 |**Riepilogo degli utenti con app non conformi**|Visualizza informazioni sugli utenti che dispongono di app installate che non sono conformi ai criteri specificati.|  
 |**Accettazione di termini e condizioni**|Visualizza i termini e le condizioni e indica la versione accettata da ogni utente.|  
 
+
+
 ## <a name="data-warehouse"></a>Data warehouse  
-I 7 report seguenti sono elencati nella categoria **Data warehouse**. 
+
+I sette report seguenti sono elencati nella categoria **Data warehouse**. 
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
@@ -204,7 +216,8 @@ I 7 report seguenti sono elencati nella categoria **Data warehouse**.
 |**Riepilogo di distribuzione del software**|Cronologico: riepilogo della distribuzione del software per un annuncio e un computer specifici.|
 
 
-## <a name="device-management"></a>Gestione dispositivi  
+## <a name="device-management"></a>Gestione dei dispositivi  
+
 I 37 report seguenti sono elencati nella categoria **Gestione dispositivi**. 
 
 |Nome report|Descrizione|  
@@ -250,6 +263,7 @@ I 37 report seguenti sono elencati nella categoria **Gestione dispositivi**.
 
 
 ## <a name="driver-management"></a>Gestione driver  
+
 I 13 report seguenti sono elencati nella categoria **Gestione driver**. 
 
 |Nome report|Descrizione|  
@@ -271,7 +285,9 @@ I 13 report seguenti sono elencati nella categoria **Gestione driver**.
 
 
 ## <a name="endpoint-protection"></a>Endpoint Protection  
+
 I sei report seguenti sono elencati nella categoria **Endpoint Protection**. 
+
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
 |**Report attività antimalware**|Visualizza una panoramica dell'attività antimalware.|  
@@ -284,7 +300,9 @@ I sei report seguenti sono elencati nella categoria **Endpoint Protection**.
 
 
 ## <a name="hardware---cd-rom"></a>Hardware - CD-ROM  
+
 I quattro report seguenti sono elencati nella categoria **Hardware - CD-ROM**. 
+
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
 |**Informazioni CD-ROM per un computer specifico**|Visualizza le informazioni sulle unità CD-ROM in un computer specifico.|  
@@ -295,6 +313,7 @@ I quattro report seguenti sono elencati nella categoria **Hardware - CD-ROM**.
 
 
 ## <a name="hardware---disk"></a>Hardware - Disco  
+
 Gli otto report seguenti sono elencati nella categoria **Hardware - Disco**. 
 
 |Nome report|Descrizione|  
@@ -311,6 +330,7 @@ Gli otto report seguenti sono elencati nella categoria **Hardware - Disco**.
 
 
 ## <a name="hardware---general"></a>Hardware - Generale  
+
 I cinque report seguenti sono elencati nella categoria **Hardware - Generale**.
 
 |Nome report|Descrizione|  
@@ -324,6 +344,7 @@ I cinque report seguenti sono elencati nella categoria **Hardware - Generale**.
 
 
 ## <a name="hardware---memory"></a>Hardware - Memoria  
+
 I cinque report seguenti sono elencati nella categoria **Hardware - Memoria**.
 
 |Nome report|Descrizione|  
@@ -337,6 +358,7 @@ I cinque report seguenti sono elencati nella categoria **Hardware - Memoria**.
 
 
 ## <a name="hardware---modem"></a>Hardware - Modem  
+
 I tre report seguenti sono elencati nella categoria **Hardware - Modem**.
 
 |Nome report|Descrizione|  
@@ -348,6 +370,7 @@ I tre report seguenti sono elencati nella categoria **Hardware - Modem**.
 
 
 ## <a name="hardware---network-adapter"></a>Hardware - Scheda di rete  
+
 I tre report seguenti sono elencati nella categoria **Hardware - Scheda di rete**.
 
 |Nome report|Descrizione|  
@@ -359,6 +382,7 @@ I tre report seguenti sono elencati nella categoria **Hardware - Scheda di rete*
 
 
 ## <a name="hardware---processor"></a>Hardware - Processore  
+
 I cinque report seguenti sono elencati nella categoria **Hardware - Processore**.
 
 |Nome report|Descrizione|  
@@ -372,6 +396,7 @@ I cinque report seguenti sono elencati nella categoria **Hardware - Processore**
 
 
 ## <a name="hardware---scsi"></a>Hardware - SCSI  
+
 I cinque report seguenti sono elencati nella categoria **Hardware - SCSI**.
 
 |Nome report|Descrizione|  
@@ -383,6 +408,7 @@ I cinque report seguenti sono elencati nella categoria **Hardware - SCSI**.
 
 
 ## <a name="hardware---security"></a>Hardware - Sicurezza
+
 Il report seguente è elencato nella categoria **Hardware - Sicurezza**.
 
 |Nome report|Descrizione|  
@@ -392,6 +418,7 @@ Il report seguente è elencato nella categoria **Hardware - Sicurezza**.
 
 
 ## <a name="hardware---sound-card"></a>Hardware - Scheda audio  
+
 I tre report seguenti sono elencati nella categoria **Hardware - SCSI**.
 
 |Nome report|Descrizione|  
@@ -403,6 +430,7 @@ I tre report seguenti sono elencati nella categoria **Hardware - SCSI**.
 
 
 ## <a name="hardware---video-card"></a>Hardware - Scheda video  
+
 I tre report seguenti sono elencati nella categoria **Hardware - Scheda video**.
 
 |Nome report|Descrizione|  
@@ -446,7 +474,6 @@ I sei report seguenti sono elencati nella categoria **Rete**.
 
 I 10 report seguenti sono elencati nella categoria **Sistema operativo**.
 
-
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
 |**Cronologia versione del sistema operativo del computer**|Visualizza la cronologia di inventario per sistema operativo in un computer specifico.|  
@@ -489,6 +516,7 @@ I 18 report seguenti sono elencati nella categoria **Risparmio energia**.
 
 
 ## <a name="replication-traffic"></a>Traffico di replica  
+
 I 10 report seguenti sono elencati nella categoria **Traffico di replica**.
 
 |Nome report|Descrizione|  
@@ -507,6 +535,7 @@ I 10 report seguenti sono elencati nella categoria **Traffico di replica**.
 
 
 ## <a name="site---client-information"></a>Sito - Informazioni client  
+
 I 19 report seguenti sono elencati nella categoria **Sito - Informazioni client**.
 
 |Nome report|Descrizione|  
@@ -534,6 +563,7 @@ I 19 report seguenti sono elencati nella categoria **Sito - Informazioni client*
 
 
 ## <a name="site---discovery-and-inventory-information"></a>Sito - Informazioni individuazione e inventario  
+
 I 10 report seguenti sono elencati nella categoria **Sito - Informazioni individuazione e inventario**.
 
 |Nome report|Descrizione|  
@@ -542,7 +572,7 @@ I 10 report seguenti sono elencati nella categoria **Sito - Informazioni individ
 |**Computer individuati per un sito specifico**|Visualizza un elenco di tutti i computer individuati dal sito specificato. Indica inoltre la data dell'individuazione più recente.|  
 |**Computer individuati recentemente per metodo di individuazione**|Visualizza un elenco dei computer individuati dal sito entro il numero di giorni specificato. Elenca anche gli agenti che li hanno individuati. Se un computer è stato individuato da più agenti, è possibile che venga visualizzato più di una volta nell'elenco.|  
 |**Client non individuati di recente (in un numero specifico di giorni)**|Visualizza un elenco dei computer che il sito ha individuato non di recente. Indica anche il numero di giorni trascorsi da quando il sito ha individuato il computer.|  
-|**Computer non entrati in inventario di recente (in un numero specifico di giorni)**|Visualizza un elenco dei computer che il sito ha incluso in inventario non di recente. Indica anche l'ultima volta che il sito ha incluso il computer in inventario.|  
+|**Computer non entrati in inventario di recente (in un numero specifico di giorni)**|Visualizza un elenco dei computer che il sito non ha inserito nell'inventario di recente. Indica anche l'ultima volta che il sito ha incluso il computer in inventario.|  
 |**Computer che potrebbero condividere lo stesso identificatore univoco di Configuration Manager**|Visualizza un elenco di computer che hanno modificato il nome. Una modifica nel nome può significare che un computer condivide un identificatore univoco di Configuration Manager con un altro computer.|  
 |**Computer con indirizzi MAC duplicati**|Visualizza computer che condividono l'indirizzo MAC.|  
 |**Conteggio dei computer nei domini o gruppi di lavoro della risorsa**|Visualizza il numero di computer in ogni dominio o gruppo di lavoro della risorsa.|  
@@ -552,6 +582,7 @@ I 10 report seguenti sono elencati nella categoria **Sito - Informazioni individ
 
 
 ## <a name="site---general"></a>Sito - Generale  
+
 I tre report seguenti sono elencati nella categoria **Sito - Generale**.
 
 |Nome report|Descrizione|  
@@ -563,6 +594,7 @@ I tre report seguenti sono elencati nella categoria **Sito - Generale**.
 
 
 ## <a name="site---server-information"></a>Sito - Informazioni server  
+
 Il report seguente è elencato nella categoria **Sito - Informazioni server**.
 
 |Nome report|Descrizione|  
@@ -572,6 +604,7 @@ Il report seguente è elencato nella categoria **Sito - Informazioni server**.
 
 
 ## <a name="software---companies-and-products"></a>Software - Società e prodotti  
+
 I 15 report seguenti sono elencati nella categoria **Software - Società e prodotti**.
 
 |Nome report|Descrizione|  
@@ -586,7 +619,7 @@ I 15 report seguenti sono elencati nella categoria **Software - Società e prodo
 |**Conteggio dei prodotti e delle versioni in inventario per un prodotto specifico**|Visualizza un elenco delle versioni in inventario di un prodotto specifico e il numero di computer su cui sono installate.|  
 |**Conteggio di tutte le istanze software registrate con Installazione applicazioni**|Visualizza un riepilogo di tutte le istanze software installate e registrate in Installazione applicazioni oppure in Programmi e funzionalità nei computer all'interno di una raccolta specifica.|  
 |**Conteggio delle istanze software registrate in Installazione applicazioni**|Visualizza un conteggio delle istanze per pacchetti software specifici installati e registrati in Installazione applicazioni oppure in Programmi e funzionalità.|  
-|**Numero di browser predefiniti**|Visualizza il numero di client con un Web browser specifico come impostazione predefinita di Windows. </br>Usare il riferimento seguente per i valori BrowserProgID più comuni:</br> - AppXq0fevzme2pys62n3e0fbqa7peapykr8v: Microsoft Edge</br> - IE.HTTP: Microsoft Internet Explorer</br> - ChromeHTML: Google Chrome</br> - OperaStable: Opera Software</br> - FirefoxURL-308046B0AF4A39CB: Mozilla Firefox</br> - Sconosciuto: il sistema operativo del client non supporta la query, la query non è stata eseguita o un utente non si è connesso|
+|**Numero di browser predefiniti**|Visualizza il numero di client con un Web browser specifico come impostazione predefinita di Windows. <br>Usare il riferimento seguente per i valori BrowserProgID più comuni:<br> - AppXq0fevzme2pys62n3e0fbqa7peapykr8v: Microsoft Edge<br> - IE.HTTP: Microsoft Internet Explorer<br> - ChromeHTML: Google Chrome<br> - OperaStable: Opera Software<br> - FirefoxURL-308046B0AF4A39CB: Mozilla Firefox<br> - Sconosciuto: il sistema operativo del client non supporta la query, la query non è stata eseguita o un utente non si è connesso|
 |**Installazioni delle app di Windows specificate**|Questo report elenca tutti i computer con un'app di Windows specificata.|  
 |**Prodotto in un computer specifico**|Visualizza un elenco di prodotti software in inventario e dei relativi produttori in un computer specifico.|  
 |**Software registrato in Installazione applicazioni in un computer specifico**|Visualizza un riepilogo del software installato in un computer specifico registrato in Installazione applicazioni oppure in Programmi e funzionalità.|  
@@ -595,6 +628,7 @@ I 15 report seguenti sono elencati nella categoria **Software - Società e prodo
 
 
 ## <a name="software---files"></a>Software - File  
+
 I cinque report seguenti sono elencati nella categoria **Software - File**.
 
 |Nome report|Descrizione|  
@@ -608,6 +642,7 @@ I cinque report seguenti sono elencati nella categoria **Software - File**.
 
 
 ## <a name="software-distribution---application-monitoring"></a>Distribuzione software - Monitoraggio applicazione  
+
 I 10 report seguenti sono elencati nella categoria **Distribuzione software - Monitoraggio applicazione**.
 
 |Nome report|Descrizione|  
@@ -626,6 +661,7 @@ I 10 report seguenti sono elencati nella categoria **Distribuzione software - Mo
 
 
 ## <a name="software-distribution---collections"></a>Distribuzione software - Raccolte  
+
 I tre report seguenti sono elencati nella categoria **Distribuzione software - Raccolte**.
 
 |Nome report|Descrizione|  
@@ -637,6 +673,7 @@ I tre report seguenti sono elencati nella categoria **Distribuzione software - R
 
 
 ## <a name="software-distribution---content"></a>Distribuzione software - Contenuto  
+
 I 16 report seguenti sono elencati nella categoria **Distribuzione software - Contenuto**.
 
 |Nome report|Descrizione|  
@@ -661,6 +698,7 @@ I 16 report seguenti sono elencati nella categoria **Distribuzione software - Co
 
 
 ## <a name="software-distribution---package-and-program-deployment"></a>Distribuzione software - Distribuzione programma e pacchetto 
+
 I cinque report seguenti sono elencati nella categoria **Distribuzione software - Distribuzione programma e pacchetto**.
 
 |Nome report|Descrizione|  
@@ -674,6 +712,7 @@ I cinque report seguenti sono elencati nella categoria **Distribuzione software 
 
 
 ## <a name="software-distribution---package-and-program-deployment-status"></a>Distribuzione software - Stato distribuzione programma e pacchetto  
+
 I cinque report seguenti sono elencati nella categoria **Distribuzione software - Stato distribuzione programma e pacchetto**.
 
 |Nome report|Descrizione|  
@@ -686,7 +725,8 @@ I cinque report seguenti sono elencati nella categoria **Distribuzione software 
 
 
 
-## <a name="software-metering"></a>Controllo software  
+## <a name="software-metering"></a>Controllo del software  
+
 I 13 report seguenti sono elencati nella categoria **Controllo software**.
 
 |Nome report|Descrizione|  
@@ -708,6 +748,7 @@ I 13 report seguenti sono elencati nella categoria **Controllo software**.
 
 
 ## <a name="software-updates---a-compliance"></a>Aggiornamenti software - Conformità A  
+
 Gli otto report seguenti sono elencati nella categoria **Aggiornamenti software - Conformità A**.
 
 |Nome report|Descrizione|  
@@ -724,22 +765,24 @@ Gli otto report seguenti sono elencati nella categoria **Aggiornamenti software 
 
 
 ## <a name="software-updates---b-deployment-management"></a>Aggiornamenti software - Gestione distribuzione B  
+
 Gli otto report seguenti sono elencati nella categoria **Aggiornamenti software - Gestione distribuzione B**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
-|**Gestione 1 - Distribuzioni di un gruppo di aggiornamenti**|Visualizza tutte le distribuzioni che contengono tutti gli aggiornamenti software definiti in un gruppo di aggiornamento software specifico.|  
+|**Gestione 1 - Distribuzioni di un gruppo di aggiornamenti**|Visualizza tutte le distribuzioni che includono tutti gli aggiornamenti software definiti in un gruppo di aggiornamento software specifico.|  
 |**Gestione 2 - Aggiornamenti richiesti ma non distribuiti**|Visualizza tutti gli aggiornamenti software di uno specifico fornitore che i client hanno rilevato come obbligatori, ma che l'amministratore non ha distribuito a una raccolta specifica.|  
 |**Gestione 3 - Aggiornamenti in una distribuzione**|Visualizza gli aggiornamenti software che sono contenuti in una distribuzione specifica.|  
 |**Gestione 4 - Distribuzioni associate a una raccolta**|Visualizza tutte le distribuzioni di aggiornamenti software destinate a una raccolta specifica.|  
 |**Gestione 5 - Distribuzioni associate a un computer**|Visualizza tutte le distribuzioni di aggiornamenti software distribuite in un computer specifico.|  
-|**Gestione 6 - Distribuzioni che contengono un aggiornamento specifico**|Visualizza tutte le distribuzioni che contengono un aggiornamento software specifico e la raccolta di destinazione associata per la distribuzione.|  
+|**Gestione 6 - Distribuzioni che contengono un aggiornamento specifico**|Visualizza tutte le distribuzioni che includono un aggiornamento software specifico e la raccolta di destinazione associata per la distribuzione.|  
 |**Gestione 7 - Aggiornamenti in una distribuzione senza contenuto**|Visualizza gli aggiornamenti software in una distribuzione specifica per i quali non è stato recuperato tutto il contenuto associato. Questo stato impedisce ai client di installare l'aggiornamento e alla distribuzione di raggiungere il 100% di conformità.|  
 |**Gestione 8 - Computer senza contenuto (secondario)**|Visualizza tutti i computer che necessitano dell'aggiornamento software specificato, ma il contenuto associato non è ancora stato distribuito a un punto di distribuzione.|  
 
 
 
 ## <a name="software-updates---c-deployment-states"></a>Aggiornamenti software - Stati distribuzione C  
+
 I sei report seguenti sono elencati nella categoria **Aggiornamenti software - Stati distribuzione C**.
 
 |Nome report|Descrizione|  
@@ -754,6 +797,7 @@ I sei report seguenti sono elencati nella categoria **Aggiornamenti software - S
 
 
 ## <a name="software-updates---d-scan"></a>Aggiornamenti software - Analisi D  
+
 I quattro report seguenti sono elencati nella categoria **Aggiornamenti software - Analisi D**.
 
 |Nome report|Descrizione|  
@@ -779,6 +823,7 @@ I quattro report seguenti sono elencati nella categoria **Aggiornamenti software
 
 
 ## <a name="state-migration"></a>Migrazione stato  
+
 I tre report seguenti sono elencati nella categoria **Migrazione stato**.
 
 |Nome report|Descrizione|  
@@ -790,6 +835,7 @@ I tre report seguenti sono elencati nella categoria **Migrazione stato**.
 
 
 ## <a name="status-messages"></a>Messaggi di stato  
+
 I 12 report seguenti sono elencati nella categoria **Messaggi di stato**.
 
 |Nome report|Descrizione|  
@@ -821,7 +867,8 @@ I tre report seguenti sono elencati nella categoria **Messaggi di stato - Contro
 
 
 
-## <a name="task-sequence---deployment-status"></a>Sequenza di attività - Stato distribuzione  
+## <a name="task-sequence---deployment-status"></a>Sequenza attività - Stato distribuzione  
+
 Gli 11 report seguenti sono elencati nella categoria **Sequenza attività - Stato distribuzione**.
 
 |Nome report|Descrizione|  
@@ -841,6 +888,7 @@ Gli 11 report seguenti sono elencati nella categoria **Sequenza attività - Stat
 
 
 ## <a name="task-sequence---deployments"></a>Sequenza attività - Distribuzioni  
+
 Gli 11 report seguenti sono elencati nella categoria **Sequenza attività - Distribuzioni**.
 
 |Nome report|Descrizione|  
@@ -860,6 +908,7 @@ Gli 11 report seguenti sono elencati nella categoria **Sequenza attività - Dist
 
 
 ## <a name="task-sequence---progress"></a>Sequenza attività - Progresso  
+
 I cinque report seguenti sono elencati nella categoria **Sequenza attività - Progresso**.
 
 |Nome report|Descrizione|  
@@ -872,7 +921,8 @@ I cinque report seguenti sono elencati nella categoria **Sequenza attività - Pr
 
 
 
-## <a name="task-sequences---references"></a>Sequenze attività - Riferimenti  
+## <a name="task-sequences---references"></a>Sequenza attività - Riferimenti  
+
 Il report seguente è elencato nella categoria **Sequenza attività - Riferimenti**.
 
 |Nome report|Descrizione|  
@@ -914,6 +964,7 @@ I due report seguenti sono elencati nella categoria **Utente - Affinità disposi
 
 
 ## <a name="user-data-and-profiles-health"></a>Integrità profili e dati utente  
+
 I quattro report seguenti sono elencati nella categoria **Integrità profili e dati utente**.
 
 |Nome report|Descrizione|  
@@ -926,6 +977,7 @@ I quattro report seguenti sono elencati nella categoria **Integrità profili e d
 
 
 ## <a name="users"></a>Utenti  
+
 I tre report seguenti sono elencati nella categoria **Utenti**.
 
 |Nome report|Descrizione|  
@@ -937,6 +989,7 @@ I tre report seguenti sono elencati nella categoria **Utenti**.
 
 
 ## <a name="virtual-applications"></a>Applicazioni virtuali  
+
 I sette report seguenti sono elencati nella categoria **Applicazioni virtuali**.
 
 |Nome report|Descrizione|  
@@ -951,7 +1004,8 @@ I sette report seguenti sono elencati nella categoria **Applicazioni virtuali**.
 
 
 
-## <a name="volume-purchase-programs---apple"></a>Volume Purchase Program - Apple
+## <a name="volume-purchase-programs---apple"></a>Volume purchase programs - Apple
+
 Il report seguente è elencato nella categoria **Volume Purchase Program - Apple**.
 
 |Nome report|Descrizione|  
@@ -961,6 +1015,7 @@ Il report seguente è elencato nella categoria **Volume Purchase Program - Apple
 
 
 ## <a name="vulnerability-assessment"></a>Valutazione della vulnerabilità
+
 Il report seguente è elencato nella categoria **Valutazione della vulnerabilità**.
 
 |Nome report|Descrizione|  
@@ -970,6 +1025,7 @@ Il report seguente è elencato nella categoria **Valutazione della vulnerabilit�
 
 
 ## <a name="wake-on-lan"></a>Riattivazione LAN  
+
 I sette report seguenti sono elencati nella categoria **Riattivazione LAN**.
 
 |Nome report|Descrizione|  

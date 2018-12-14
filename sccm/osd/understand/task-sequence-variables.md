@@ -2,7 +2,7 @@
 title: Informazioni di riferimento sulle variabili della sequenza di attività
 titleSuffix: Configuration Manager
 description: Informazioni sulle variabili per controllare e personalizzare una sequenza di attività di Configuration Manager.
-ms.date: 08/17/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 62f15230-d3a6-4afc-abd4-1e07e7ba6c97
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cfecd7441abd206bdff1d2f6618d763a30dddc51
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.openlocfilehash: cde62242fc4db99d762d670037aad22bd25d6c00
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42756257"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456737"
 ---
 # <a name="task-sequence-variables-in-configuration-manager"></a>Variabili della sequenza di attività in Configuration Manager
 
@@ -124,6 +124,12 @@ Per altre informazioni, vedere [Come usare le variabili della sequenza di attivi
  *Si applica al passaggio [Imposta variabili dinamiche](task-sequence-steps.md#BKMK_SetDynamicVariables).*
 
  Specifica gli indirizzi IP usati dal computer.
+
+
+### <a name="SMSTSLastActionName"></a> _SMSTSLastActionName
+ *A partire dalla versione 1810*  
+
+ Archivia il nome dell'ultima azione eseguita. Questa variabile è associata a **_SMSTSLastActionRetCode**. La sequenza di attività registra questi valori nel file smsts.log. Questa variabile è utile per la risoluzione dei problemi di una sequenza di attività. Quando un passaggio non riesce, uno script personalizzato può includere il nome del passaggio e il codice restituito.
 
 
 ### <a name="SMSTSLastActionRetCode"></a> _SMSTSLastActionRetCode

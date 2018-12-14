@@ -10,12 +10,12 @@ ms.assetid: 4deac022-e397-4f1f-bc0a-cea6c6c6368d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3a49fd8e171b053a5cc89d316fce3651e2a2f567
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
+ms.openlocfilehash: 7b7cb4a6a7ec6738bdf045b75bf88c8b4d8c4650
+ms.sourcegitcommit: 1439817f1309658b31008d7bafaab32fc5ef8789
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411562"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "52820102"
 ---
 # <a name="enhanced-http"></a>HTTP avanzato
 
@@ -23,8 +23,9 @@ ms.locfileid: "50411562"
 
 <!--1356889,1358460-->
 
-> [!Note]  
-> In questa versione di Configuration Manager HTTP avanzato è una funzionalità di versione non definitiva. Per abilitarla, vedere [Funzionalità di versioni non definitive in System Center Configuration Manager](/sccm/core/servers/manage/pre-release-features).  
+> [!Tip]  
+> Questa funzionalità è stata introdotta per la prima volta nella versione 1806 come [funzionalità di una versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1810, questa funzionalità non è più in versione non definitiva.  
+
 
 Microsoft consiglia l'uso delle comunicazioni HTTPS per tutti i percorsi di comunicazione di Configuration Manager, ma alcuni clienti possono avere difficoltà a causa del sovraccarico di gestione dei certificati PKI. L'introduzione dell'integrazione di Azure Active Directory (Azure AD) riduce alcuni ma non tutti i requisiti per i certificati. 
 

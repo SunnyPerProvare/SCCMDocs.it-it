@@ -4,17 +4,17 @@ description: Informazioni sui diversi certificati digitali da usare con il gatew
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 10/24/2018
+ms.date: 11/27/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
-ms.openlocfilehash: 121b3840ea4f61f4789c5d6c21ab857cb091e199
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
+ms.openlocfilehash: 4ef9746b9a1eb90beeec6a477ad1d406acebbb05
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411307"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456567"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificati per il gateway di gestione cloud
 
@@ -123,6 +123,9 @@ Creare un certificato SSL personalizzato per il gateway di gestione cloud identi
 ## <a name="bkmk_azuremgmt"></a> Certificato di gestione di Azure
 
 *Questo certificato è obbligatorio per le distribuzioni di servizi classiche. Non è necessario per le distribuzioni di Azure Resource Manager.*
+
+> [!Important]  
+> A partire dalla versione 1810, le distribuzioni classiche del servizio in Azure sono deprecate in Configuration Manager. Iniziare a usare le distribuzioni di Azure Resource Manager per il gateway di gestione cloud. Per altre informazioni, vedere [Pianificare il gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager).
 
 Specificare questo certificato nel portale di Azure quando si crea il gateway di gestione cloud nella console di Configuration Manager.
 

@@ -2,7 +2,7 @@
 title: Versioni Current Branch
 titleSuffix: Configuration Manager
 description: Informazioni sulla cronologia delle versioni di Configuration Manager e sulle fasi del servizio offerto.
-ms.date: 07/30/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 35b5baec-d313-46aa-9d14-c443aa0d6c09
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8a8f646b1cd535809689daacb1390fd79f8ce5c1
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: dd8116bc74f855fff956d0bb201691c741a6d351
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383780"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52455989"
 ---
 # <a name="support-for-configuration-manager-current-branch-versions"></a>Supporto per le versioni Current Branch di Configuration Manager
 
@@ -33,8 +33,8 @@ Figura 1. Esempio di sovrapposizione del ciclo di rilascio per il supporto della
 > [!NOTE]  
 >  La versione Current Branch più recente è sempre nella fase di manutenzione **Aggiornamenti di sicurezza e critici**. Questo significa che, nel caso in cui venga rilevato un errore del codice che richiede un aggiornamento critico, è necessario che sia installata la versione Current Branch più recente per ricevere una correzione. Tutte le altre versioni Current Branch supportate sono idonee a ricevere gli aggiornamenti della sicurezza.
 > - Per le versioni 1710 e successive, il supporto termina completamente allo scadere del ciclo di vita di 18 mesi della versione Current Branch corrente.
-> - Per le versioni precedenti alla 1710, il supporto termina allo scadere del ciclo di vita di 12 mesi.
-
+> - Per le versioni 1706 e precedenti, il supporto termina allo scadere del ciclo di vita di 12 mesi.
+> 
 > Aggiornare l'ambiente di Configuration Manager alla versione più recente prima della scadenza del supporto per la versione corrente.
 
 Per un elenco di versioni Current Branch, vedere [Dettagli sulla versione](/sccm/core/servers/manage/updates#version-details).

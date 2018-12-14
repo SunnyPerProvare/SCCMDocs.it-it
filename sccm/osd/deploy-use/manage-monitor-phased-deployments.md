@@ -2,7 +2,7 @@
 title: Gestire e monitorare le distribuzioni in più fasi
 titleSuffix: Configuration Manager
 description: Informazioni su come gestire e monitorare le distribuzioni in più fasi per il software in Configuration Manager.
-ms.date: 07/30/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -10,18 +10,21 @@ ms.assetid: dc245916-bc11-4983-9c4d-015f655007c1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1889ba3ea19d27676089f2a9a24cef812c9f526c
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 5324e00f17770feca25d40c645d8e344df797f21
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385862"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456329"
 ---
 # <a name="manage-and-monitor-phased-deployments"></a>Gestire e monitorare le distribuzioni in più fasi
 
 Questo articolo descrive come gestire e monitorare le distribuzioni in più fasi. Le attività di gestione comprendono l'avvio manuale della fase successiva e la sospensione o la ripresa di una fase. 
 
-È necessario prima [creare una distribuzione in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence). 
+È necessario prima creare una distribuzione in più fasi: 
+- [Applicazione](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence?toc=/sccm/apps/toc.json&bc=/sccm/apps/breadcrumb/toc.json)  
+- [Aggiornamento software](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json)  
+- [Sequenza di attività](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence)  
 
 
 
@@ -31,7 +34,14 @@ Quando si seleziona l'impostazione, **Inizia manualmente la seconda fase della d
 
 1. La modalità di avvio di questa azione varia in base al tipo di software distribuito:  
 
-    - **Applicazione** (solo la versione 1806 o successiva): passare a **Raccolta software**, espandere **Gestione applicazioni** e selezionare **Applicazioni**.   
+    - **Applicazione** (solo nella versione 1806 o successiva): passare all'area di lavoro **Raccolta software**, espandere **Gestione applicazioni** e selezionare **Applicazioni**.   
+
+    - **Aggiornamento software** (solo nella versione 1810 o successiva): passare all'area di lavoro **Raccolta software** e quindi selezionare uno dei nodi seguenti:    
+        - Aggiornamenti software  
+            - **Tutti gli aggiornamenti software**  
+            - **Gruppi di aggiornamenti software**   
+        - Manutenzione pacchetti di Windows 10, **Aggiornamenti di tutte le piattaforme Windows 10**  
+        - Gestione client di Office 365, **Aggiornamenti di Office 365**  
 
     - **Sequenza di attività**: passare all'area di lavoro **Raccolta software**, espandere **Sistemi operativi** e selezionare **Sequenze di attività**.   
 
@@ -47,11 +57,18 @@ Quando si seleziona l'impostazione, **Inizia manualmente la seconda fase della d
 
 ## <a name="bkmk_suspend"></a> Sospendere e riprendere le fasi 
 
-Potrebbe essere necessario sospendere o riprendere manualmente una distribuzione in più fasi. Ad esempio, si crea una distribuzione in più fasi per una sequenza di attività. Durante il monitoraggio della fase nel gruppo pilota si nota un numero elevato di errori. Si sospende la distribuzione in più fasi per impedire ad altri dispositivi di eseguire la sequenza di attività. Dopo la risoluzione del problema si riprende la distribuzione in più fasi per continuare l'implementazione. 
+È possibile sospendere o riprendere manualmente una distribuzione in più fasi. Ad esempio, si crea una distribuzione in più fasi per una sequenza di attività. Durante il monitoraggio della fase nel gruppo pilota si nota un numero elevato di errori. Si sospende la distribuzione in più fasi per impedire ad altri dispositivi di eseguire la sequenza di attività. Dopo la risoluzione del problema si riprende la distribuzione in più fasi per continuare l'implementazione. 
 
 1. La modalità di avvio di questa azione varia in base al tipo di software distribuito:  
 
-    - **Applicazione** (solo la versione 1806 o successiva): passare a **Raccolta software**, espandere **Gestione applicazioni** e selezionare **Applicazioni**.   
+    - **Applicazione** (solo nella versione 1806 o successiva): passare all'area di lavoro **Raccolta software**, espandere **Gestione applicazioni** e selezionare **Applicazioni**.   
+
+    - **Aggiornamento software** (solo nella versione 1810 o successiva): passare all'area di lavoro **Raccolta software** e quindi selezionare uno dei nodi seguenti:    
+        - Aggiornamenti software  
+            - **Tutti gli aggiornamenti software**  
+            - **Gruppi di aggiornamenti software**   
+        - Manutenzione pacchetti di Windows 10, **Aggiornamenti di tutte le piattaforme Windows 10**  
+        - Gestione client di Office 365, **Aggiornamenti di Office 365**  
 
     - **Sequenza di attività**: passare all'area di lavoro **Raccolta software**, espandere **Sistemi operativi** e selezionare **Sequenze di attività**. Selezionare una sequenza di attività esistente e quindi fare clic su **Crea una distribuzione in più fasi** nella barra multifunzione.  
 
@@ -91,7 +108,8 @@ Questo dashboard visualizza le informazioni seguenti per ogni fase della distrib
 
 Usare l'elenco a discesa **Selezionare una fase** per modificare la visualizzazione del riquadro **Criteri per l'esito positivo**. Questo riquadro confronta il valore di **Obiettivo della fase** alla conformità corrente della distribuzione. Con le impostazioni predefinite, l'obiettivo della fase è il 95%. Questo valore indica che la distribuzione richiede una conformità del 95% per passare alla fase successiva. 
 
-In questo esempio, l'obiettivo della fase è il 65% e la conformità corrente è il 66,7%. La distribuzione in più fasi passa automaticamente alla seconda fase perché la prima fase soddisfa i criteri per l'esito positivo.
+In questo esempio, l'obiettivo della fase è il 65% e la conformità corrente è il 66,7%. La distribuzione in più fasi passa automaticamente alla seconda fase perché la prima fase soddisfa i criteri per l'esito positivo.  
+
 ![Riquadro Criteri per l'esito positivo di esempio dallo stato della distribuzione in più fasi](media/pod-status-success-criteria-tile.png)
 
 L'obiettivo della fase è lo stesso di **Percentuale di esiti positivi della distribuzione** in Impostazioni delle fasi per la fase *successiva*. Affinché la distribuzione in più fasi inizi la fase successiva, questa seconda fase definisce i criteri per l'esito positivo della prima fase. Per visualizzare questa impostazione: 

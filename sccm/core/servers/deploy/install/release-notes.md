@@ -2,7 +2,7 @@
 title: Note sulla versione
 titleSuffix: Configuration Manager
 description: Informazioni su problemi urgenti non ancora risolti nel prodotto o trattati in un articolo della Knowledge Base del supporto tecnico Microsoft.
-ms.date: 08/21/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 030947fd-f5e0-4185-8513-2397fb2ec96f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b31e0c84d0e3920024870361239e22bb90005ccb
-ms.sourcegitcommit: e7732dd67f19218cec576f70fe4ab44e2626b8e0
+ms.openlocfilehash: 41039ec31c11573424f044df009e9c364491b5f7
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48045216"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456346"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Note sulla versione per Configuration Manager
 
@@ -29,9 +29,9 @@ La documentazione specifica delle funzionalità include informazioni sui problem
 >  Questo argomento contiene le note sulla versione di Configuration Manager (Current Branch). Per informazioni sul Technical Preview Branch, vedere [Technical Preview](/sccm/core/get-started/technical-preview)  
 
 Per informazioni sulle nuove funzionalità introdotte con le diverse versioni, vedere gli articoli seguenti:
+- [Novità della versione 1810](/sccm/core/plan-design/changes/whats-new-in-version-1810)
 - [Novità della versione 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806)  
 - [Novità della versione 1802](/sccm/core/plan-design/changes/whats-new-in-version-1802)
-- [Novità della versione 1710](/sccm/core/plan-design/changes/whats-new-in-version-1710)
 
 
 
@@ -79,18 +79,8 @@ Spostare il ruolo del punto di connessione del servizio in un altro server.
 <!-- ## Backup and recovery  -->
 
 
-## <a name="client-deployment-and-upgrade"></a>Distribuzione e aggiornamento del client
+<!--## Client deployment and upgrade-->
 
-### <a name="azure-ad-enabled-clients-cant-communicate-with-management-point"></a>I client abilitati per Azure AD non riescono a comunicare con il punto di gestione
-<!--501089-->  
-*Si applica a: Configuration Manager versione 1706*
-<!--also fixed in 1710 HFRU-->  
-Nello scenario relativo all'[installazione e all'assegnazione di client Windows 10 di Configuration Manager usando Azure AD per l'autenticazione](/sccm/core/clients/deploy/deploy-clients-cmg-azure), la comunicazione client ha esito negativo se il punto di gestione abilitato per HTTPS usa credenziali alternative per il database. 
-
-#### <a name="workaround"></a>Soluzione alternativa
-Attenuare il problema con una delle azioni seguenti:
-- Aggiornare il sito alla versione più recente e applicare l'hotfix più recente
-- Modificare le credenziali usate dal punto di gestione.
 
 
 <!-- ## Operating system deployment  -->

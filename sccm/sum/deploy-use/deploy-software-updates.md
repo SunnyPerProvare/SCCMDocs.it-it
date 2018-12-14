@@ -5,17 +5,17 @@ description: Informazioni su come distribuire manualmente o automaticamente gli 
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 07/30/2018
+ms.date: 11/27/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 04536d51-3bf7-45e5-b4af-36ceed10583d
-ms.openlocfilehash: d456d7232133333bf6cd88374d5288227f6dfea1
-ms.sourcegitcommit: 2ea71b048307a93a2db7898700aea984a8f88824
+ms.openlocfilehash: f59ca099325028ccf29904a2108939d0047df745
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52304283"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52455947"
 ---
 # <a name="deploy-software-updates"></a>Distribuire gli aggiornamenti software  
 
@@ -36,7 +36,15 @@ Dopo aver creato la distribuzione, il sito invia un criterio di aggiornamento so
 
 Se si configura una distribuzione degli aggiornamenti software necessaria, gli aggiornamenti software vengono installati automaticamente alla scadenza programmata. In alternativa, l'utente del computer client può pianificare o avviare l'installazione dell'aggiornamento software prima della scadenza. Dopo il tentativo di installazione, i computer client inviano messaggi di stato al server del sito per segnalare se l'installazione dell'aggiornamento software è stata eseguita correttamente. Per altre informazioni sulle distribuzioni degli aggiornamenti software, vedere [Software update deployment workflows](/sccm/sum/understand/software-updates-introduction#BKMK_DeploymentWorkflows).  
 
-Esistono due scenari principali per la distribuzione di aggiornamenti software: la distribuzione manuale e la distribuzione automatica. In genere, si effettua inizialmente la distribuzione manuale degli aggiornamenti software per creare una baseline per i client e quindi si gestiscono gli aggiornamenti software sui client usando la distribuzione automatica.  
+Esistono tre scenari principali per la distribuzione degli aggiornamenti software: 
+- [Distribuzione manuale](#BKMK_ManualDeployment)  
+- [Distribuzione automatica](#bkmk_auto)  
+- [Distribuzione in più fasi](#bkmk_phased)  
+
+In genere, si effettua inizialmente la distribuzione manuale degli aggiornamenti software per creare una baseline per i client e quindi si gestiscono gli aggiornamenti software sui client usando la distribuzione automatica o la distribuzione in più fasi.  
+
+> [!Note]  
+> Non è possibile usare una regola di distribuzione automatica con una distribuzione in più fasi.
 
 
 
@@ -65,7 +73,7 @@ Per altre informazioni e per la procedura dettagliata, vedere [Distribuire manua
 
 
 
-## <a name="automatically-deploy-software-updates"></a>Distribuire automaticamente gli aggiornamenti software
+## <a name="bkmk_auto"></a> Distribuire automaticamente gli aggiornamenti software
 
 Per configurare la distribuzione automatica degli aggiornamenti software, si usa con una regola di distribuzione automatica. Si tratta di un metodo comune di distribuzione per gli aggiornamenti software mensili ("Patch Tuesday") e per la gestione degli aggiornamenti delle definizioni. Per automatizzare il processo di distribuzione, si definiscono i criteri per una regola di distribuzione automatica. L'elenco seguente descrive il flusso di lavoro generale per la distribuzione automatica degli aggiornamenti software:  
 
@@ -100,4 +108,12 @@ Ogni nuova distribuzione aggiunta presenta le seguenti caratteristiche:
 
 
 Per altre informazioni e per la procedura dettagliata, vedere [Distribuire automaticamente gli aggiornamenti software](automatically-deploy-software-updates.md).
+
+
+
+## <a name="bkmk_phased"></a> Distribuire gli aggiornamenti software in più fasi
+
+<!--1358146--> A partire dalla versione 1810 creare distribuzioni in più fasi per gli aggiornamenti software. Le distribuzioni in più fasi consentono di orchestrare un'implementazione coordinata e in sequenza del software basata su criteri e gruppi personalizzabili.
+
+Per altre informazioni, vedere [Creare distribuzioni in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence?toc=/sccm/sum/toc.json&bc=/sccm/sum/breadcrumb/toc.json).
 

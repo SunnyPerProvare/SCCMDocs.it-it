@@ -2,7 +2,7 @@
 title: Gestire le sequenze di attività
 titleSuffix: Configuration Manager
 description: Creare, modificare, distribuire, importare ed esportare sequenze di attività per gestirle e automatizzarle nel proprio ambiente.
-ms.date: 08/17/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: a1f099f1-e9b5-4189-88b3-f53e3b4e4add
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a6c1fb447719a36bd3c0cb7e2c91daf6a58d85ff
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.openlocfilehash: 44cfb06c8d92568a4468c1f46b90ceeb259c3c1f
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42755925"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456635"
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-configuration-manager"></a>Gestire le sequenze di attività per automatizzare le attività in Configuration Manager
 
@@ -391,6 +391,9 @@ Viene visualizzato il messaggio di notifica seguente quando l'utente finale apre
     -   **Utilizzare un punto di distribuzione remoto quando non sono disponibili punti di distribuzione locali**: specifica se i client possono scaricare il contenuto necessario per la sequenza di attività da punti di distribuzione di un gruppo di limiti vicino.  
 
     - **Consenti ai client di usare punti di distribuzione dal gruppo di limiti del sito predefinito**: specificare se i client devono scaricare il contenuto da un punto di distribuzione nel gruppo di limiti del sito predefinito quando non è disponibile da un punto di distribuzione nel gruppo di limiti corrente o nei gruppi di limiti vicini.  
+
+        > [!Note]  
+        > A partire dalla versione 1810, quando un dispositivo esegue una sequenza di attività e deve acquisire il contenuto, il dispositivo usa comportamenti dei gruppi di limiti simili al client Configuration Manager. Per altre informazioni, vedere [Supporto della sequenza di attività per i gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgr-osd).<!--1359025-->  
 
 11. A partire da Configuration Manager 1802, nella scheda **Riepilogo** fare clic su **Salva come modello** se si vogliono salvare le impostazioni da usare di nuovo. Assegnare un nome al modello e selezionare le impostazioni da salvare.  
 

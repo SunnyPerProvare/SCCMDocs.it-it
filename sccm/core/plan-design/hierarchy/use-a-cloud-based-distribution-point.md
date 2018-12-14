@@ -2,7 +2,7 @@
 title: Punto di distribuzione cloud
 titleSuffix: Configuration Manager
 description: Pianificare e progettare la distribuzione del contenuto software tramite Microsoft Azure con i punti di distribuzione cloud in Configuration Manager.
-ms.date: 09/10/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 3cd9c725-6b42-427d-9191-86e67f84e48c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 79b17ba00274459401dc81035833163e75939be0
-ms.sourcegitcommit: 2badee2b63ae63687795250e298f463474063100
+ms.openlocfilehash: 4673da59da7fede2f425948472c31a620d13a258
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45601144"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456295"
 ---
 # <a name="use-a-cloud-distribution-point-in-configuration-manager"></a>Usare un punto di distribuzione cloud in Configuration Manager
 
@@ -87,12 +87,15 @@ La distribuzione e l'utilizzo del punto di distribuzione cloud includono i compo
 ### <a name="azure-resource-manager"></a>Azure Resource Manager
 <!--1322209--> A partire dalla versione 1806, è possibile creare un punto di distribuzione cloud usando una **distribuzione Azure Resource Manager**. [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) è una piattaforma moderna per la gestione di tutte le risorse di una soluzione come una singola entità detta [gruppo di risorse](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups). Quando si distribuisce un punto di distribuzione cloud con Azure Resource Manager, il sito usa Azure Active Directory (Azure AD) per autenticare e creare le risorse cloud necessarie. Questa distribuzione modernizzata non richiede il certificato di gestione classico di Azure.  
 
+> [!Note]  
+> Questa funzionalità non supporta i provider di servizi cloud di Azure. La distribuzione di punti di distribuzione cloud con Azure Resource Manager continua a usare il servizio cloud classico, non supportato dal provider di servizi cloud. Per altre informazioni, vedere [Available Azure services in Azure CSP](/azure/cloud-solution-provider/overview/azure-csp-available-services) (servizi di Azure disponibili in Azure CSP).  
+
 La procedura guidata per il punto di distribuzione cloud offre ancora l'opzione per una **distribuzione classica del servizio** tramite un certificato di gestione di Azure. Per semplificare la distribuzione e la gestione delle risorse, Microsoft consiglia di usare il modello di distribuzione Azure Resource Manager per tutti i nuovi punti di distribuzione cloud. Se possibile, ridistribuire i punti di distribuzione cloud esistenti tramite Resource Manager.
 
-Configuration Manager non esegue la migrazione dei punti di distribuzione cloud classici esistenti nel modello di distribuzione Azure Resource Manager. Creare nuovi punti di distribuzione cloud usando distribuzioni di Azure Resource Manager e quindi rimuovere i punti di distribuzione cloud classici. 
+> [!Important]  
+> A partire dalla versione 1810, la distribuzione classica del servizio in Azure è deprecata in Configuration Manager. Si tratta dell'ultima versione che supporta la creazione di queste distribuzioni di Azure. Questa funzionalità verrà rimossa nella prima versione di Configuration Manager rilasciata dopo il 1° luglio 2019. Spostare CMG e i punti di distribuzione del cloud nelle distribuzioni di Azure Resource Manager prima di tale data. <!--SCCMDocs-pr issue #2993-->  
 
-> [!IMPORTANT]  
-> Questa funzionalità non supporta i provider di servizi cloud di Azure. La distribuzione di punti di distribuzione cloud con Azure Resource Manager continua a usare il servizio cloud classico, non supportato dal provider di servizi cloud. Per altre informazioni, vedere [Available Azure services in Azure CSP](/azure/cloud-solution-provider/overview/azure-csp-available-services) (servizi di Azure disponibili in Azure CSP).  
+Configuration Manager non esegue la migrazione dei punti di distribuzione cloud classici esistenti nel modello di distribuzione Azure Resource Manager. Creare nuovi punti di distribuzione cloud usando distribuzioni di Azure Resource Manager e quindi rimuovere i punti di distribuzione cloud classici. 
 
 
 ### <a name="hierarchy-design"></a>Modello di gerarchia
@@ -134,12 +137,14 @@ Quando si usa un punto di distribuzione cloud nella gerarchia, usare le informaz
 
 - Il server del sito richiede l'**accesso a Internet** per distribuire e gestire il servizio cloud.  
 
+- Quando si usa il metodo di distribuzione **Azure Resource Manager**, integrare Configuration Manager con [Azure AD](/sccm/core/servers/deploy/configure/azure-services-wizard) per **Gestione cloud**. L'*individuazione utenti* di Azure AD non è necessaria.  
+
 - Con il metodo di distribuzione classico di Azure è necessario un **certificato di gestione di Azure**. Per ulteriori informazioni, vedere la sezione [Certificati](#bkmk_certs) sottostante.   
 
     > [!TIP]  
     > A partire da Configuration Manager versione 1806, usare il modello di distribuzione **Azure Resource Manager**, che non richiede il certificato di gestione.  
-
-- Se si usa il metodo di distribuzione **Azure Resource Manager**, integrare Configuration Manager con [Azure AD](/sccm/core/clients/deploy/deploy-clients-cmg-azure). L'individuazione utenti di Azure AD non è necessaria.  
+    > 
+    > Il metodo di distribuzione classica è deprecato a partire dalla versione 1810.   
 
 - Un **certificato di autenticazione server**. Per ulteriori informazioni, vedere la sezione [Certificati](#bkmk_certs) sottostante.  
 
@@ -327,6 +332,8 @@ Con il metodo di distribuzione classico di Azure è necessario un **certificato 
 
 > [!TIP]  
 > A partire da Configuration Manager versione 1806, usare il modello di distribuzione **Azure Resource Manager**, che non richiede il certificato di gestione.  
+> 
+> Il metodo di distribuzione classica è deprecato a partire dalla versione 1810.   
 
 Per ridurre la complessità, usare lo stesso certificato di gestione di Azure per tutte le distribuzioni classiche di punti di distribuzione cloud e gateway di gestione cloud, con tutte le sottoscrizioni di Azure e tutti i siti di Configuration Manager.
 

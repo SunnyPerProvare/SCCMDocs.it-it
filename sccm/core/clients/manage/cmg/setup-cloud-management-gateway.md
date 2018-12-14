@@ -5,17 +5,17 @@ description: Usare questa procedura dettagliata per configurare un Cloud Managem
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 09/10/2018
+ms.date: 11/27/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
-ms.openlocfilehash: a5f356eef4d72040bd069fc17dd20fdbc3587cd6
-ms.sourcegitcommit: 2badee2b63ae63687795250e298f463474063100
+ms.openlocfilehash: 041ea28e91b77545b8984742b4199782d1edb6b7
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45601059"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456533"
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Configurare il gateway di gestione cloud per Configuration Manager
 
@@ -38,13 +38,16 @@ Usare l'elenco di controllo seguente per assicurarsi di avere le informazioni e 
 
 - A seconda della struttura pianificata saranno necessari uno o più certificati per Cloud Management Gateway. Per altre informazioni, vedere [Certificati per il gateway di gestione del cloud](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway).  
 
-- A partire dalla versione 1802, scegliere se usare il metodo **Distribuzione di Azure Resource Manager** o **Distribuzione classica del servizio**. Per altre informazioni, vedere [Azure Resource Manager](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager). Per la distribuzione Azure Resource Manager del Cloud Management Gateway devono essere disponibili i requisiti seguenti:  
+- A partire dalla versione 1802, selezionare la **distribuzione di Azure Resource Manager**. Per altre informazioni, vedere [Azure Resource Manager](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager). Per la distribuzione Azure Resource Manager del Cloud Management Gateway devono essere disponibili i requisiti seguenti:  
 
     - Integrazione con [Azure AD](/sccm/core/servers/deploy/configure/azure-services-wizard) per la **Gestione cloud**. L'individuazione utenti di Azure AD non è necessaria.  
 
     - Un amministratore della sottoscrizione deve effettuare l'accesso.  
 
 - Per la distribuzione classica del servizio Cloud Management Gateway devono essere disponibili i requisiti seguenti:  
+
+    > [!Important]  
+    > A partire dalla versione 1810, le distribuzioni classiche del servizio in Azure sono deprecate in Configuration Manager. Iniziare a usare le distribuzioni di Azure Resource Manager per il gateway di gestione cloud. Per altre informazioni, vedere [Pianificare il gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager).  
 
     - ID della sottoscrizione di Azure  
 
@@ -66,11 +69,14 @@ Eseguire questa procedura nel sito di livello superiore. Tale sito è un sito pr
 
 2. Selezionare **Crea un gateway di gestione cloud** sulla barra multifunzione.  
 
-3. A partire dalla versione 1802, nella pagina Generale della procedura guidata, iniziare scegliendo il metodo di distribuzione di Cloud Management Gateway, **Distribuzione di Azure Resource Manager** o **Distribuzione classica del servizio**.  
+3. A partire dalla versione 1802, nella pagina Generale della procedura guidata selezionare **Distribuzione di Azure Resource Manager** come metodo di distribuzione di Cloud Management Gateway.  
 
-    1. Per **Distribuzione di Azure Resource Manager**: selezionare **Accedi** per eseguire l'autenticazione con un account amministratore della sottoscrizione di Azure. La procedura guidata compila automaticamente i campi rimanenti in base alle informazioni archiviate durante il prerequisito di integrazione di Azure AD. Se si hanno più sottoscrizioni, selezionare l'**ID sottoscrizione** di quella che si vuole usare.  
+    Selezionare **Accedi** per eseguire l'autenticazione con un account amministratore della sottoscrizione di Azure. La procedura guidata compila automaticamente i campi rimanenti in base alle informazioni archiviate durante il prerequisito di integrazione di Azure AD. Se si hanno più sottoscrizioni, selezionare l'**ID sottoscrizione** di quella che si vuole usare.
 
-    2. Per **Distribuzione classica del servizio** *e le versioni di Configuration Manager 1706 e 1710*: immettere l'**ID sottoscrizione** di Azure. Quindi selezionare **Sfoglia** e scegliere il file PFX del certificato di gestione di Azure. 
+    > [!Note]  
+    > A partire dalla versione 1810, le distribuzioni classiche del servizio in Azure sono deprecate in Configuration Manager. 
+    > 
+    > Se è necessario usare una distribuzione classica del servizio, selezionare l'opzione in questa pagina. Immettere l'**ID sottoscrizione** di Azure. Quindi selezionare **Sfoglia** e scegliere il file PFX del certificato di gestione di Azure. 
 
 4. Specificare l'**ambiente di Azure** per il Cloud Management Gateway. Le opzioni nell'elenco a discesa possono variare a seconda del metodo di distribuzione.  
 

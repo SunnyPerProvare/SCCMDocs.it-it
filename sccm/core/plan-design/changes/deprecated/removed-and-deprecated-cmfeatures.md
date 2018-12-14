@@ -2,7 +2,7 @@
 title: Funzionalità deprecate
 titleSuffix: Configuration Manager
 description: Informazioni sulle funzionalità che Configuration Manager non supporta più.
-ms.date: 10/26/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 287a6324-ae65-4d38-b2ef-198d47c91231
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7c1e07a2911a5f8560e3b69d7596716eb526bb34
-ms.sourcegitcommit: 3772ece83823714b2aae46ec20523cc094701760
+ms.openlocfilehash: 089f1f69f8df87b1d4b30cd8df6e735f5c79f312
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51681427"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52455786"
 ---
 # <a name="removed-and-deprecated-features-for-configuration-manager"></a>Funzionalità rimosse e deprecate per Configuration Manager
 
@@ -31,6 +31,7 @@ Queste informazioni sono soggette a modifica nelle versioni future. È possibile
 
 |Funzionalità|Primo annuncio riguardo agli elementi deprecati|Supporto&nbsp;rimosso|  
 |-----------|---|--------------|  
+|Distribuzione classica del servizio in Azure per il gateway di gestione cloud e il punto di distribuzione cloud. Per altre informazioni, vedere [Pianificare il gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager).|Novembre 2018|Prima versione rilasciata dopo il 1° luglio 2019| 
 |System Center Endpoint Protection per Mac e Linux<br>Per altre informazioni, vedere il [post del blog sulla fine del supporto](https://go.microsoft.com/fwlink/?linkid=870182).|Ottobre 2018|31 dicembre 2018|
 |Gestione ibrida dei dispositivi mobili. Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->|14 agosto 2018|1 settembre 2019|
 |L'**esperienza utente di Silverlight** per il ruolo Punto per siti Web del Catalogo applicazioni non è più supportato. Gli utenti devono usare il nuovo Software Center. NOTA: il ruolo Punto per siti Web del Catalogo applicazioni e il ruolo Punto per servizi Web sono ancora supportati. In alcuni scenari, il nuovo Software Center comunica con il punto per siti Web del Catalogo applicazioni. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex).<!--1358309-->|11 agosto 2017| Versione 1806|

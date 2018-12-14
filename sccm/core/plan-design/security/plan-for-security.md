@@ -2,7 +2,7 @@
 title: Pianificare la sicurezza
 titleSuffix: Configuration Manager
 description: Procedure consigliate e altre informazioni sulla sicurezza in Configuration Manager.
-ms.date: 10/22/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 2a216814-ca8c-4d2e-bcef-dc00966a3c9f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e03c2b53044225eeb790d70474868e337a4cc997
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
+ms.openlocfilehash: 5332fa778b343a5eaae93a08db0826823fffce42
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411460"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456380"
 ---
 # <a name="plan-for-security-in-configuration-manager"></a>Pianificare la sicurezza in Configuration Manager
 
@@ -41,13 +41,15 @@ Questo articolo descrive i concetti da tenere in considerazione durante la piani
 
 - [Pianificare Azure Active Directory](#bkmk_planazuread)  
 
+- [Pianificare l'autenticazione del provider SMS](#bkmk_auth)
 
 
-##  <a name="BKMK_PlanningForCertificates"></a> Pianificare i certificati (autofirmati e PKI)  
+
+##  <a name="BKMK_PlanningForCertificates"></a> Pianificare certificati (autofirmati e PKI)  
 
  Configuration Manager usa una combinazione di certificati autofirmati e certificati di infrastruttura a chiave pubblica (PKI).  
 
- Usare i certificati PKI quando possibile. Per altre informazioni, vedere [Requisiti dei certificati PKI](/sccm/core/plan-design/network/pki-certificate-requirements). Quando Configuration Manager richiede i certificati PKI durante la registrazione di dispositivi mobili, è necessario usare Active Directory Domain Services e un'autorità di certificazione globale (enterprise). Tutti gli altri certificati PKI possono essere distribuiti e gestiti indipendentemente da Configuration Manager. 
+ Usare i certificati PKI quando possibile. Per altre informazioni, vedere [requisiti dei certificati PKI](/sccm/core/plan-design/network/pki-certificate-requirements). Quando Configuration Manager richiede i certificati PKI durante la registrazione di dispositivi mobili, è necessario usare Active Directory Domain Services e un'autorità di certificazione globale (enterprise). Tutti gli altri certificati PKI possono essere distribuiti e gestiti indipendentemente da Configuration Manager. 
 
  I certificati PKI sono obbligatori quando i computer client si connettono a sistemi del sito basati su internet. Anche alcuni scenari con gateway di gestione cloud e punto di distribuzione cloud richiedono l'uso di certificati PKI. Per altre informazioni, vedere [Gestire i client su Internet](/sccm/core/clients/manage/manage-clients-internet).
 
@@ -98,7 +100,7 @@ La gestione dei client in Internet tramite il gateway di gestione cloud (CMG) e 
 3.  Installare il client usando la proprietà client.msi seguente: `SMSSIGNCERT=<full path and file name>`  
 
 
-###  <a name="BKMK_PlanningForCRLs"></a> Pianificare la revoca di certificati PKI  
+###  <a name="BKMK_PlanningForCRLs"></a> Pianificare revoche di certificati PKI  
 
 Quando si usano i certificati PKI con Configuration Manager, pianificare l'uso di un elenco di revoche di certificati (CRL). I dispositivi usano l'elenco di revoche di certificati per verificare il certificato presente nel computer che si connette. L'elenco di revoche di certificati è un file creato e firmato da un'autorità di certificazione. Contiene un elenco di certificati rilasciati dall'autorità di certificazione, ma revocati. Quando un amministratore revoca i certificati, la relativa identificazione personale viene aggiunta all'elenco di revoche di certificati. Ad esempio, in caso di sospetta o accertata compromissione di un certificato rilasciato.
 
@@ -409,6 +411,25 @@ La stringa restituita è la chiave radice attendibile. Verificare che corrispond
 
 
  Per altre informazioni su Azure AD, vedere la [documentazione di Azure Active Directory](https://docs.microsoft.com/azure/active-directory/).
+
+
+
+## <a name="bkmk_auth"></a> Pianificare l'autenticazione del provider SMS
+<!--1357013--> 
+
+A partire dalla versione 1810, è possibile specificare il livello di autenticazione minimo per gli amministratori per l'accesso ai siti di Configuration Manager. Questa funzionalità impone agli amministratori di accedere a Windows con il livello richiesto. Si applica a tutti i componenti che accedono al provider SMS. Ad esempio, la console di Configuration Manager, i metodi dell'SDK e i cmdlet di Windows PowerShell. 
+
+Questa configurazione è un'impostazione a livello di gerarchia. Prima di modificare questa impostazione, assicurarsi che tutti gli amministratori di Configuration Manager possano accedere a Windows con il livello di autenticazione richiesto. 
+
+Sono disponibili i livelli seguenti:
+
+- **Autenticazione di Windows**: richiede l'autenticazione con le credenziali del dominio di Active Directory.   
+
+- **Autenticazione del certificato**: richiede l'autenticazione con un certificato valido emesso da un'autorità di certificazione PKI attendibile.  
+
+- **Autenticazione di Windows Hello for Business**: richiede l'autenticazione a due fattori avanzata associata a un dispositivo e l'uso di dati biometrici o di un PIN.  
+
+Per altre informazioni, vedere [Piano per il provider SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider#bkmk_auth). 
 
 
 

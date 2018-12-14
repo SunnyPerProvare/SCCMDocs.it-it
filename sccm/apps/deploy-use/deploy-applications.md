@@ -2,7 +2,7 @@
 title: Distribuire applicazioni
 titleSuffix: Configuration Manager
 description: Creare o simulare la distribuzione di un'applicazione a una raccolta di utenti o dispositivi
-ms.date: 07/30/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 2629c376-ec43-4f0e-a78b-4223cc9302bf
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d23c5ee5b81264a9725c4654cd1717b30302c708
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 5b70c651186a35e0f1c5a5da8b9c7dffe0abc7da
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384821"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456584"
 ---
 # <a name="deploy-applications-with-configuration-manager"></a>Distribuire applicazioni con Configuration Manager
 
@@ -98,6 +98,8 @@ Nella pagina **Impostazioni distribuzione** specificare le informazioni seguenti
     > [!NOTE]   
     >  Quando si imposta l'azione di distribuzione su **Disinstalla**, lo scopo della distribuzione viene impostato automaticamente su **Richiesto**. Non è possibile modificare questo comportamento.  
 
+- **Consenti agli utenti finali di provare a ripristinare questa applicazione**: a partire dalla versione 1810, se l'applicazione è stata creata con una riga di comando di ripristino, abilitare questa opzione. In Software Center è disponibile per gli utenti l'opzione **Ripristina** per ripristinare l'applicazione.<!--1357866-->  
+
 - **Pre-distribuisci il software nel dispositivo primario dell'utente**: se la distribuzione è destinata a un utente, selezionare questa opzione per distribuire l'applicazione nei dispositivi primari dell'utente. Questa impostazione non richiede all'utente di accedere prima che venga eseguita la distribuzione. Non selezionare questa opzione se l'utente deve interagire con l'installazione. Questa opzione è disponibile solo quando la distribuzione è impostata su **Richiesto**.  
 
 - **Invia pacchetti di riattivazione**: se la distribuzione è impostata su **Richiesto**, Configuration Manager invia un pacchetto di riattivazione ai computer prima che il client esegua la distribuzione. Il pacchetto attiva i computer nel momento in cui scade l'installazione. Prima di usare questa opzione, i computer e le reti devono essere configurati per la riattivazione LAN. Per altre informazioni, vedere [Pianificare la riattivazione dei client](/sccm/core/clients/deploy/plan/plan-wake-up-clients).  
@@ -118,25 +120,9 @@ In base alla versione di Configuration Manager, viene visualizzata una delle imp
 
 - **Richiedi l'approvazione dell'amministratore se gli utenti richiedono questa applicazione**: per la versione 1710 e versioni precedenti, l'amministratore approva tutte le richieste degli utenti per l'applicazione prima che l'utente la installi. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando si distribuisce l'applicazione un una raccolta di dispositivi.  
 
-    Le richieste di approvazione dell'applicazione vengono visualizzate nel nodo **Richieste di approvazione** , in **Gestione applicazioni** , nell'area di lavoro **Raccolta software** . Se una richiesta non viene approvata entro 45 giorni, viene rimossa. La reinstallazione del client potrebbe annullare eventuali richieste di approvazione in sospeso.  
-
-    Dopo avere approvato un'applicazione per l'installazione, è possibile scegliere di negare la richiesta facendo clic su **Nega** nella console di Configuration Manager. Questa azione non provoca la disinstallazione dell'applicazione dai dispositivi da parte del client. Impedisce agli utenti di installare nuove copie dell'applicazione da Software Center.  
-
 - **Un amministratore deve approvare una richiesta per questa applicazione nel dispositivo**: a partire dalla versione 1802, l'amministratore approva tutte le richieste utente per l'applicazione prima che l'utente la installi nel dispositivo richiesto. Se l'amministratore approva la richiesta, l'utente può installare l'applicazione solo su quel dispositivo. Per installare l'applicazione in un altro dispositivo dovrà inviare un'altra richiesta. Questa opzione è disattivata quando lo scopo della distribuzione è **Richiesto** o quando si distribuisce l'applicazione un una raccolta di dispositivi. <!--1357015-->  
 
-    Questa funzionalità è facoltativa. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti). Se non si abilita questa funzionalità, viene visualizzata l'esperienza precedente.  
-
-    > [!Note]  
-    > Per sfruttare i vantaggi delle nuove funzionalità di Configuration Manager, aggiornare prima di tutto i clienti alla versione più recente. Anche se le nuove funzionalità vengono visualizzate nella console di Configuration Manager quando si esegue l'aggiornamento del sito e della console, lo scenario completo risulta funzionante solo dopo l'aggiornamento alla versione più recente del client.<!--SCCMDocs issue 646-->  
-
-    Nell'area di lavoro **Raccolta software** della console di Configuration Manager visualizzare **Richieste di approvazione** in **Gestione applicazioni**. Nell'elenco è ora presente una colonna **Dispositivo** per ogni richiesta. Quando si intraprende un'azione sulla richiesta, la finestra di dialogo Richiesta di applicazioni include anche il nome del dispositivo da cui l'utente ha inviato la richiesta.  
-
-    Se una richiesta non viene approvata entro 45 giorni, viene rimossa. La reinstallazione del client potrebbe annullare eventuali richieste di approvazione in sospeso.  
-
-    Dopo avere approvato un'applicazione per l'installazione, è possibile scegliere di negare la richiesta facendo clic su **Nega** nella console di Configuration Manager. Questa azione non provoca la disinstallazione dell'applicazione dai dispositivi da parte del client. Impedisce agli utenti di installare nuove copie dell'applicazione da Software Center.  
-
-    > [!Important]  
-    > A partire dalla versione 1806, *il comportamento è cambiato* quando si revoca l'approvazione per un'applicazione approvata e installata in precedenza. Ora, quando si **Nega** la richiesta per l'applicazione, il client disinstalla l'applicazione dal dispositivo dell'utente.<!--1357891-->  
+Per altre informazioni, vedere [Approvare le applicazioni](/sccm/apps/deploy-use/app-approval).
 
 
 #### <a name="deployment-properties-deployment-settings"></a>**Impostazioni distribuzione** delle proprietà della distribuzione
@@ -177,7 +163,7 @@ Nella pagina **Esperienza utente** specificare le informazioni sulle modalità d
 
 - **Installazione del software** e **Riavvio del sistema**: configurare queste impostazioni solo per le distribuzioni obbligatorie. Consentono di specificare i comportamenti relativi al raggiungimento della scadenza da parte della distribuzione all'esterno di qualsiasi finestra di manutenzione definita. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).  
 
-- **Gestione filtri di scrittura per dispositivi con Windows Embedded**: questa impostazione controlla il comportamento di installazione nei dispositivi con Windows Embedded in cui è abilitato un filtro di scrittura. Scegliere l'opzione per il commit delle modifiche in corrispondenza della scadenza dell'installazione o durante una finestra di manutenzione. Quando si seleziona questa opzione, è necessario un riavvio e la modifica viene salvata in modo permanente nel dispositivo. In caso contrario, l'applicazione viene installata nell'overlay temporaneo e il commit viene eseguito successivamente.  
+- **Gestione filtri di scrittura per dispositivi con Windows Embedded**: questa impostazione controlla il comportamento di installazione nei dispositivi con Windows Embedded in cui è abilitato un filtro di scrittura. Scegliere l'opzione per eseguire il commit delle modifiche alla scadenza dell'installazione o durante una finestra di manutenzione. Quando si seleziona questa opzione, è necessario un riavvio e la modifica viene salvata in modo permanente nel dispositivo. In caso contrario, l'applicazione viene installata nell'overlay temporaneo e il commit viene eseguito successivamente.  
 
     - Quando si distribuisce un aggiornamento software in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta che ha una finestra di manutenzione configurata. Per altre informazioni sulle finestre di manutenzione e sui dispositivi con Windows Embedded, vedere [Creare applicazioni Windows Embedded con System Center Configuration Manager](/sccm/apps/get-started/creating-windows-embedded-applications).  
 
@@ -194,7 +180,7 @@ Quando si esegue un tipo di distribuzione iOS, verrà visualizzata anche la pagi
 
 
 ## <a name="bkmk_phased"></a> Creare una distribuzione in più fasi
-<!--1358147--> A partire dalla versione 1806, è possibile creare una distribuzione in più fasi per un'applicazione. Le distribuzioni in più fasi consentono di orchestrare un'implementazione coordinata e in sequenza del software basata su criteri e gruppi personalizzabili. È ad esempio possibile distribuire l'applicazione in una raccolta pilota e quindi continuare automaticamente l'implementazione in base ai criteri relativi all'esito positivo. 
+<!--1358147--> A partire dalla versione 1806, è possibile creare una distribuzione in più fasi per un'applicazione. Le distribuzioni in più fasi consentono di orchestrare un'implementazione coordinata e in sequenza del software basata su criteri e gruppi personalizzabili. È possibile, ad esempio, distribuire l'applicazione in una raccolta pilota e quindi continuare automaticamente l'implementazione in base ai criteri per l'esito positivo. 
 
 Per altre informazioni, vedere gli articoli seguenti:  
 

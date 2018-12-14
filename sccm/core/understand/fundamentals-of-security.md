@@ -10,12 +10,12 @@ ms.assetid: 035b7f73-8b78-4ed1-835e-a31f9a5c4a02
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 45b65e5ff35f93bb79418f00795aecab5cc208b9
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
+ms.openlocfilehash: 1a7d8e6fe1824ab2a7fe3cfb6f89965a4b5800c0
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411205"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456074"
 ---
 # <a name="fundamentals-of-security-for-configuration-manager"></a>Nozioni fondamentali sulla sicurezza di Configuration Manager
 
@@ -65,6 +65,8 @@ Oltre alla sicurezza offerta dall'infrastruttura di rete e server Windows, Confi
 #### <a name="bkmk_layer-provider"></a> Provider SMS
 
 Il livello successivo di protezione si basa sull'accesso tramite Windows Management Instrumentation (WMI), in particolare sul provider SMS. Il provider SMS è un componente di Configuration Manager che concede a un utente l'accesso per eseguire query nel database del sito per informazioni. Per impostazione predefinita, l'accesso al provider è limitato ai membri del gruppo SMS Admins locale. Questo gruppo contiene inizialmente solo l'utente che ha installato Configuration Manager. Per concedere altre autorizzazioni account al repository Common Information Model (CIM) e al provider SMS, aggiungere altri account al gruppo SMS Admins.  
+
+A partire dalla versione 1810 è possibile specificare il livello di autenticazione minimo per gli amministratori per l'accesso ai siti di Configuration Manager. Questa funzionalità impone agli amministratori di accedere a Windows con il livello richiesto. <!--1357013-->  
 
 Per altre informazioni, vedere [Piano per il provider SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider).
 

@@ -2,7 +2,7 @@
 title: Supporto per Windows 10
 titleSuffix: Configuration Manager
 description: Informazioni sulle versioni di Windows 10 supportate come client o per la distribuzione del sistema operativo con System Center Configuration Manager
-ms.date: 10/02/2018
+ms.date: 11/27/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: a1626a65-da22-49e0-9564-d2f752ea3f4b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ab8c0336b34fd3e9496d1fd7c5956aaca4c5cc32
-ms.sourcegitcommit: e0209e4549e9828eb74089313dbee323ece1fc2f
+ms.openlocfilehash: a02f904614e245a61e533164d25c0280e3a4d486
+ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51598547"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52456134"
 ---
 # <a name="support-for-windows-10-in-configuration-manager"></a>Supporto per Windows 10 in Configuration Manager  
 
@@ -51,16 +51,16 @@ Una versione di Configuration Manager viene eliminata dalla matrice dopo che ter
 <br/>
 La tabella seguente elenca le versioni di Windows 10 che è possibile usare come client con versioni diverse di Configuration Manager.
 
-| Versione di Windows 10 | Configuration Manager 1710 | Configuration Manager 1802 | Configuration Manager 1806 |
+| Versione di Windows 10 | Configuration Manager 1710 | Configuration Manager 1802 | Configuration Manager 1806 | Configuration Manager 1810 |
 |---------------------|-----|-----|-----|-----|
-| Enterprise 2015 LTSB <!--10/14/2025-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| Enterprise 2016 LTSB <!--10/13/2026-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| Enterprise LTSC 2019 <!--10/10/2028-->   | ![Non supportato](media/Red_X.png)   | ![Non supportato](media/Red_X.png)   | ![Supportato](media/green_check.png) |
-| 1607   <!--04/09/2019-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| 1703   <!--10/08/2019-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| 1709   <!--04/14/2020-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| 1803   <!--11/10/2020-->   | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| 1809   <!--04/12/2021?-->   | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) |
+| Enterprise 2015 LTSB <!--10/14/2025-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| Enterprise 2016 LTSB <!--10/13/2026-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| Enterprise LTSC 2019 <!--10/10/2028-->   | ![Non supportato](media/Red_X.png)   | ![Non supportato](media/Red_X.png)   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| 1607   <!--04/09/2019-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| 1703   <!--10/08/2019-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| 1709   <!--04/14/2020-->   | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| 1803   <!--11/10/2020-->   | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
+| 1809   <!--04/12/2021?-->   | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
 
 <!-- lifecycle reference: https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet -->
 
@@ -85,12 +85,12 @@ Quando si distribuiscono sistemi operativi con Configuration Manager, Windows AD
 
 La tabella seguente elenca le versioni di Windows ADK 10 che è possibile usare con versioni diverse di Configuration Manager.
 
-| Versione di Windows 10 ADK  | Configuration Manager 1710 | Configuration Manager 1802 | Configuration Manager 1806 |
+| Versione di Windows 10 ADK  | Configuration Manager 1710 | Configuration Manager 1802 | Configuration Manager 1806 | Configuration Manager 1810 |
 |--------------------|-----|-----|-----|-----|
-| 1703  | ![Compatibile con le versioni precedenti](media/blue_compat.png) | ![Compatibile con le versioni precedenti](media/blue_compat.png) | ![Non supportato](media/Red_X.png)   |
-| 1709  | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Compatibile con le versioni precedenti](media/blue_compat.png) |
-| 1803  | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
-| 1809  | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) |
+| 1703  | ![Compatibile con le versioni precedenti](media/blue_compat.png) | ![Compatibile con le versioni precedenti](media/blue_compat.png) | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) |
+| 1709  | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Compatibile con le versioni precedenti](media/blue_compat.png) | ![Non supportato](media/Red_X.png)   |
+| 1803  | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) | ![Compatibile con le versioni precedenti](media/blue_compat.png) |
+| 1809  | ![Non supportato](media/Red_X.png) | ![Non supportato](media/Red_X.png) | ![Supportato](media/green_check.png) | ![Supportato](media/green_check.png) |
 
 |Chiave|
 |--|
