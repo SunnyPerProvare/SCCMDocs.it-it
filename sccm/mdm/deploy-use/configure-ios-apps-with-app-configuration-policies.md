@@ -10,12 +10,12 @@ ms.assetid: f0a78038-ea22-4826-9c07-1771b7dd2e8d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e5d00b1efd02d3b096a0b64033b450f0da949eeb
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 19b55204566c49c95e76a3eff3f88206df553e13
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349460"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416164"
 ---
 # <a name="apply-settings-to-ios-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Applicare le impostazioni alle app iOS con i criteri di configurazione app in System Center Configuration Manager
 
@@ -44,11 +44,11 @@ Per altre informazioni sui tipi di installazione delle app, vedere l'[introduzio
 1. Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Criteri di configurazione dell'app**.
 2. Nella scheda **Home**, nel gruppo **Criteri di configurazione dell'app** fare clic su **Creare nuovi criteri di configurazione dell'applicazione**.
 3. Nella pagina **Generale** della Creazione guidata criteri di configurazione dell'app impostare le seguenti informazioni per i criteri:
-  - **Nome**. Immettere un nome univoco per i criteri.
-  - **Descrizione**. (Facoltativo) Per rendere più semplice l'identificazione dei criteri, è possibile aggiungere una descrizione.
-  - **Categorie assegnate per migliorare la ricerca e i filtri**. (Facoltativo) Per creare e assegnare categorie ai criteri, scegliere **Categorie**. Con le categorie è più semplice trovare e ordinare gli elementi nella console di Configuration Manager.
+   - **Nome**. Immettere un nome univoco per i criteri.
+   - **Descrizione**. (Facoltativo) Per rendere più semplice l'identificazione dei criteri, è possibile aggiungere una descrizione.
+   - **Categorie assegnate per migliorare la ricerca e i filtri**. (Facoltativo) Per creare e assegnare categorie ai criteri, scegliere **Categorie**. Con le categorie è più semplice trovare e ordinare gli elementi nella console di Configuration Manager.
 4. Nella pagina **Criteri iOS** scegliere come impostare le informazioni sui criteri di configurazione:
-  - **Specify name and value pairs** (Specifica coppie nome/valore). È possibile usare questa opzione per i file elenco di proprietà senza annidamento.
+   - **Specify name and value pairs** (Specifica coppie nome/valore). È possibile usare questa opzione per i file elenco di proprietà senza annidamento.
 
       *Per specificare una coppia nome/valore*
         1. Scegliere **Nuova** per aggiungere una nuova coppia.
@@ -57,13 +57,13 @@ Per altre informazioni sui tipi di installazione delle app, vedere l'[introduzio
             - **Nome**. Immettere il nome della chiave dell'elenco di proprietà per la quale si vuole specificare un valore.
             - **Valore**. Digitare il valore che verrà applicato alla chiave immessa.
 
-  - **Browse to a property list file** (Passa a un file elenco di proprietà). Usare questa opzione se è già presente un file XML di configurazione app o per file più complessi con annidamento.
+   - **Browse to a property list file** (Passa a un file elenco di proprietà). Usare questa opzione se è già presente un file XML di configurazione app o per file più complessi con annidamento.
 
-    *Per passare a un file elenco di proprietà*
+     *Per passare a un file elenco di proprietà*
 
-      1.  Nel campo **Criteri di configurazione dell'app** immettere le informazioni sull'elenco di proprietà nel formato XML corretto.
+     1. Nel campo **Criteri di configurazione dell'app** immettere le informazioni sull'elenco di proprietà nel formato XML corretto.
 
-      Per altre informazioni sugli elenchi di proprietà XML, vedere l'articolo relativo agli [elenchi di proprietà XML](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/PropertyLists/UnderstandXMLPlist/UnderstandXMLPlist.html) nella libreria degli sviluppatori iOS.
+        Per altre informazioni sugli elenchi di proprietà XML, vedere l'articolo relativo agli [elenchi di proprietà XML](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/PropertyLists/UnderstandXMLPlist/UnderstandXMLPlist.html) nella libreria degli sviluppatori iOS.
 
 Il formato dell'elenco di proprietà XML varia a seconda dell'app da configurare. Per informazioni dettagliate sul formato da usare, contattare il fornitore dell'app.
 Intune supporta i tipi di dati seguenti in un elenco di proprietà:

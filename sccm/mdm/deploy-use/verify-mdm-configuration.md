@@ -10,12 +10,12 @@ ms.assetid: 94ecfada-97d9-4d5f-bb04-63550dda5f47
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3c2d212268c2c9b875890bfe8e0640f68b7d831e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 2d57965a75d602b81da7b19d6732ac7db6e7abe0
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32345965"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420830"
 ---
 # <a name="verify-mdm-configuration-with-system-center-configuration-manager"></a>Verificare la configurazione MDM con System Center Configuration Manager
 
@@ -30,4 +30,4 @@ ms.locfileid: "32345965"
 Per altre informazioni su questi file di log specifici e su come visualizzarli, vedere [File di log in System Center Configuration Manager](../../core/plan-design/hierarchy/log-files.md##BKMK_FunctionLogs). 
 
 > [!div class="button"]
-[< Passaggio precedente](set-up-additional-management.md)
+> [< Passaggio precedente](set-up-additional-management.md)

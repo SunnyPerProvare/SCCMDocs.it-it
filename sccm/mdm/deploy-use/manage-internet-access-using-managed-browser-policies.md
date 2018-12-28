@@ -10,12 +10,12 @@ ms.assetid: 8e25e00c-c9a8-473f-bcb7-ea989f6ca3c5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9fe64aef541a4e6405b0fbf6308afc6269d88f56
-ms.sourcegitcommit: f03cb34693b9806e9fecd3c0162de70cc8cb4b1e
-ms.translationtype: HT
+ms.openlocfilehash: 2483a15286a2784f2fb8a4256029004374a313dc
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37886485"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419785"
 ---
 # <a name="manage-internet-access-using-managed-browser-policies-with-system-center-configuration-manager"></a>Gestire l'accesso a Internet mediante criteri di Managed Browser con System Center Configuration Manager
 
@@ -86,52 +86,54 @@ Il nuovo criterio viene visualizzato nel nodo **Criteri di gestione delle applic
 
 Utilizzare le seguenti informazioni per ulteriori informazioni sui formati consentiti e i caratteri jolly, che è possibile utilizzare quando si specificano le URL negli elenchi consentiti e bloccati.  
 
--   Usare il carattere jolly `*` (asterisco) secondo le regole nell'elenco di modelli consentiti sottostante.  
+- Usare il carattere jolly `*` (asterisco) secondo le regole nell'elenco di modelli consentiti sottostante.  
 
--   Aggiungere il prefisso **http** o **https** a tutti gli URL durante l'immissione nell'elenco.  
+- Aggiungere il prefisso **http** o **https** a tutti gli URL durante l'immissione nell'elenco.  
 
--   Specificare i numeri di porta nell'indirizzo. Se non si specifica un numero di porta, vengono usati i valori seguenti:  
+- Specificare i numeri di porta nell'indirizzo. Se non si specifica un numero di porta, vengono usati i valori seguenti:  
 
-    -   Porta 80 per http  
+  - Porta 80 per http  
 
-    -   Porta 443 per https  
+  - Porta 443 per https  
 
-     Non usare caratteri jolly per il numero di porta, perché non sono supportati. Ad esempio: `http://www.contoso.com:*`   
+    Non usare caratteri jolly per il numero di porta, perché non sono supportati. Ad esempio: `http://www.contoso.com:*`   
 
--   Per ulteriori informazioni sui modelli consentiti che è possibile utilizzare quando si specificano gli URL, utilizzare la tabella seguente:  
+- Per ulteriori informazioni sui modelli consentiti che è possibile utilizzare quando si specificano gli URL, utilizzare la tabella seguente:  
 
-    |URL|Corrispondenze|Non corrisponde|  
-    |---------|-------------|--------------------|  
-    |`http://www.contoso.com`<br /><br /> Corrisponde a una singola pagina|`www.contoso.com`|`host.contoso.com`<br /><br /> `www.contoso.com/images`<br /><br /> `contoso.com/`|  
-    |`http://contoso.com`<br /><br /> Corrisponde a una singola pagina|`contoso.com`|`host.contoso.com`<br /><br /> `www.contoso.com/images`<br /><br /> `www.contoso.com`|  
-    |`http://www.contoso.com/*`<br /><br /> Corrisponde a tutti gli URL che iniziano con `www.contoso.com`|`www.contoso.com`<br /><br /> `www.contoso.com/images`<br /><br /> `www.contoso.com/videos/tvshows`|`host.contoso.com`<br /><br /> `host.contoso.com/images`|  
-    |`http://*.contoso.com/*`<br /><br /> Corrisponde a tutti i sottodomini in contoso.com|`developer.contoso.com/resources`<br /><br /> `news.contoso.com/images`<br /><br /> `news.contoso.com/videos`|`contoso.host.com`|  
-    |`http://www.contoso.com/images`<br /><br /> Corrisponde a una singola cartella|`www.contoso.com/images`|`www.contoso.com/images/dogs`|  
-    |`http://www.contoso.com:80`<br /><br /> Corrisponde a una singola pagina utilizzando un numero di porta|`http://www.contoso.com:80`||  
-    |`https://www.contoso.com`<br /><br /> Corrisponde a una singola pagina protetta|`https://www.contoso.com`|`http://www.contoso.com`|  
-    |`http://www.contoso.com/images/*`<br /><br /> Corrisponde a una singola cartella e a tutte le sottocartelle|`www.contoso.com/images/dogs`<br /><br /> `www.contoso.com/images/cats`|`www.contoso.com/videos`|  
 
--   Di seguito sono riportati esempi di alcuni input che non è possibile specificare:  
+  |                                           URL                                            |                                                    Corrispondenze                                                    |                                    Non corrisponde                                     |
+  |------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+  |                `http://www.contoso.com`<br /><br /> Corrisponde a una singola pagina                |                                               `www.contoso.com`                                               |  `host.contoso.com`<br /><br /> `www.contoso.com/images`<br /><br /> `contoso.com/`   |
+  |                  `http://contoso.com`<br /><br /> Corrisponde a una singola pagina                  |                                                 `contoso.com`                                                 | `host.contoso.com`<br /><br /> `www.contoso.com/images`<br /><br /> `www.contoso.com` |
+  | `http://www.contoso.com/*`<br /><br /> Corrisponde a tutti gli URL che iniziano con `www.contoso.com` |      `www.contoso.com`<br /><br /> `www.contoso.com/images`<br /><br /> `www.contoso.com/videos/tvshows`      |               `host.contoso.com`<br /><br /> `host.contoso.com/images`                |
+  |      `http://*.contoso.com/*`<br /><br /> Corrisponde a tutti i sottodomini in contoso.com      | `developer.contoso.com/resources`<br /><br /> `news.contoso.com/images`<br /><br /> `news.contoso.com/videos` |                                  `contoso.host.com`                                   |
+  |           `http://www.contoso.com/images`<br /><br /> Corrisponde a una singola cartella            |                                           `www.contoso.com/images`                                            |                             `www.contoso.com/images/dogs`                             |
+  |    `http://www.contoso.com:80`<br /><br /> Corrisponde a una singola pagina utilizzando un numero di porta    |                                          `http://www.contoso.com:80`                                          |                                                                                       |
+  |           `https://www.contoso.com`<br /><br /> Corrisponde a una singola pagina protetta            |                                           `https://www.contoso.com`                                           |                               `http://www.contoso.com`                                |
+  | `http://www.contoso.com/images/*`<br /><br /> Corrisponde a una singola cartella e a tutte le sottocartelle |                    `www.contoso.com/images/dogs`<br /><br /> `www.contoso.com/images/cats`                    |                               `www.contoso.com/videos`                                |
 
-    -   `*.com`  
 
-    -   `*.contoso/*`  
+- Di seguito sono riportati esempi di alcuni input che non è possibile specificare:  
 
-    -   `www.contoso.com/*images`  
+  -   `*.com`  
 
-    -   `www.contoso.com/*images*pigs`  
+  -   `*.contoso/*`  
 
-    -   `www.contoso.com/page*`  
+  -   `www.contoso.com/*images`  
 
-    -   Indirizzi IP  
+  -   `www.contoso.com/*images*pigs`  
 
-    -   `https://*`  
+  -   `www.contoso.com/page*`  
 
-    -   `http://*`  
+  -   Indirizzi IP  
 
-    -   `http://www.contoso.com:*`  
+  -   `https://*`  
 
-    -   `http://www.contoso.com: /*`  
+  -   `http://*`  
+
+  -   `http://www.contoso.com:*`  
+
+  -   `http://www.contoso.com: /*`  
 
 > [!NOTE]  
 >  `*.microsoft.com` è sempre consentito.  

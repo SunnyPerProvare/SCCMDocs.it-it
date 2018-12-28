@@ -10,12 +10,12 @@ ms.assetid: 7c3b9316-247b-490b-a363-8f8553821579
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f94cc80d41eb346cb1d4c2fc314d310005c7b5f2
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 86d79a193f09014206b72efcf745212712a3352e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350188"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417252"
 ---
 # <a name="manage-volume-purchased-ios-apps-with-system-center-configuration-manager"></a>Gestire le app iOS acquistate tramite Volume Purchase Program con System Center Configuration Manager
 
@@ -62,9 +62,9 @@ ms.locfileid: "32350188"
 
 |Gestione delle licenze dei dispositivi supportata|Tipo di raccolta della distribuzione|Licenza richiesta|
 |---|---|---|
-|Sì|utente|Licenza utente|
+|Yes|utente|Licenza utente|
 |No|utente|Licenza utente|
-|Sì|Dispositivo|Licenza dispositivo|
+|Yes|Dispositivo|Licenza dispositivo|
 |No|Dispositivo|Licenza utente|
 
 
@@ -99,19 +99,19 @@ Dal nodo **Token di Volume Purchase Program di Apple** è ora possibile visualiz
 
 ## <a name="step-2---deploy-a-volume-purchased-app"></a>Passaggio 2: Distribuire un'app acquistata tramite Volume Purchase Program  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Informazioni di licenza per le app dello Store**.  
+1. Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Informazioni di licenza per le app dello Store**.  
 
-3.  Scegliere l'app che si vuole distribuire e quindi nella scheda **Home** nel gruppo **Crea** scegliere **Crea applicazione**.
-L'applicazione di Configuration Manager creata contiene l'app di Microsoft Store per le aziende. È quindi possibile distribuire e monitorare l'applicazione come qualsiasi altra applicazione di Configuration Manager.  
+2. Scegliere l'app che si vuole distribuire e quindi nella scheda **Home** nel gruppo **Crea** scegliere **Crea applicazione**.
+   L'applicazione di Configuration Manager creata contiene l'app di Microsoft Store per le aziende. È quindi possibile distribuire e monitorare l'applicazione come qualsiasi altra applicazione di Configuration Manager.  
 
-    > [!IMPORTANT]  
-    > È necessario scegliere lo scopo della distribuzione **Richiesto**. Le installazioni disponibili non sono attualmente supportate.
+   > [!IMPORTANT]  
+   > È necessario scegliere lo scopo della distribuzione **Richiesto**. Le installazioni disponibili non sono attualmente supportate.
 
- Quando si distribuisce l'app, una licenza viene usata da ogni utente o, per le installazioni di dispositivo, da ogni dispositivo che installa l'app. Se si definisce come destinazione una raccolta di dispositivi con un'app che supporta le licenze dei dispositivi, viene richiesta una licenza dispositivo. Se si definisce come destinazione una raccolta di dispositivi con un'app che non supporta le licenze dei dispositivi, viene richiesta una licenza utente. 
+   Quando si distribuisce l'app, una licenza viene usata da ogni utente o, per le installazioni di dispositivo, da ogni dispositivo che installa l'app. Se si definisce come destinazione una raccolta di dispositivi con un'app che supporta le licenze dei dispositivi, viene richiesta una licenza dispositivo. Se si definisce come destinazione una raccolta di dispositivi con un'app che non supporta le licenze dei dispositivi, viene richiesta una licenza utente. 
 
- Quando si crea un'app dal nodo **Informazioni di licenza per le app dello Store**, l'app viene associata alle licenze dal token per l'app selezionata. Ad esempio, nel nodo possono essere visualizzate due versioni della stessa app. Ciò avviene perché ogni versione dell'app è associata a un diverso token VPP di Apple. È quindi possibile creare app da ogni token e distribuirle separatamente.
+   Quando si crea un'app dal nodo **Informazioni di licenza per le app dello Store**, l'app viene associata alle licenze dal token per l'app selezionata. Ad esempio, nel nodo possono essere visualizzate due versioni della stessa app. Ciò avviene perché ogni versione dell'app è associata a un diverso token VPP di Apple. È quindi possibile creare app da ogni token e distribuirle separatamente.
 
- Per recuperare una licenza, è necessario creare una nuova distribuzione per l'app con l'azione di distribuzione **Disinstalla**. Non è possibile modificare l'azione di distribuzione nella distribuzione originale. La licenza viene recuperata dopo la disinstallazione dell'app.  
+   Per recuperare una licenza, è necessario creare una nuova distribuzione per l'app con l'azione di distribuzione **Disinstalla**. Non è possibile modificare l'azione di distribuzione nella distribuzione originale. La licenza viene recuperata dopo la disinstallazione dell'app.  
 
 
 

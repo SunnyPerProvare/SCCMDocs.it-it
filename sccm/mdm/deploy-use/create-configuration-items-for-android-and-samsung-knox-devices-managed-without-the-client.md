@@ -10,12 +10,12 @@ ms.assetid: 7b66f3c4-e3bb-4f6a-abd5-55be649ff90d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fbfcc2189e2ce06e6348936caad6c68de51f5bdb
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 8a1759013902a75c26ec5004b932a81b536e303e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32352068"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416997"
 ---
 # <a name="how-to-create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Android e Samsung KNOX gestiti senza il client System Center Configuration Manager
 
@@ -63,7 +63,7 @@ Usare l'elemento di configurazione **Android e Samsung KNOX** di System Center C
 
 12. Completare la procedura guidata.  
 
- È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
+    È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
 
 ## <a name="android-and-samsung-knox-configuration-item-settings-reference"></a>Informazioni di riferimento sulle impostazioni degli elementi di configurazione per Android e Samsung KNOX  
 
@@ -84,17 +84,17 @@ Queste impostazioni si applicano ai dispositivi Android e Samsung KNOX.
 
 ### <a name="device"></a>Dispositivo   
 
-|Impostazione|Dettagli|  
-|------------------|-------------|  
-|**Chiamata vocale**|Abilita o disabilita la funzionalità di composizione vocale sul dispositivo.|
-|**Assistente vocale**|Consente di usare un assistente vocale sul dispositivo.|
-|**Acquisizione schermo**|Consente all'utente di acquisire il contenuto dello schermo sotto forma di immagine.|
-|**Invio dati diagnostici**|Consente al dispositivo di inviare i dati di diagnostica a Google.|
-|**Georilevazione**|Consente al dispositivo di usare informazioni sulla posizione geografica.|
-|**Copia e Incolla**|Consente di usare le funzioni di copia e incolla nel dispositivo.|
-|**Ripristino impostazioni predefinite**|Consente all'utente di eseguire il ripristino delle impostazioni di fabbrica del dispositivo.|  |
-|**Condivisione degli Appunti tra applicazioni**|Consente all'utente di usare gli Appunti per copiare e incollare tra app.|  |
-|**Bluetooth**|Consente l'uso del Bluetooth sul dispositivo.|
+|                 Impostazione                  |                             Dettagli                             |
+|------------------------------------------|-----------------------------------------------------------------|
+|            **Chiamata vocale**             |  Abilita o disabilita la funzionalità di composizione vocale sul dispositivo.   |
+|           **Assistente vocale**            |    Consente di usare un assistente vocale sul dispositivo.    |
+|            **Acquisizione schermo**            |     Consente all'utente di acquisire il contenuto dello schermo sotto forma di immagine.      |
+|      **Invio dati diagnostici**      |    Consente al dispositivo di inviare i dati di diagnostica a Google.     |
+|             **Georilevazione**              |            Consente al dispositivo di usare informazioni sulla posizione geografica.            |
+|            **Copia e Incolla**            |         Consente di usare le funzioni di copia e incolla nel dispositivo.          |
+|            **Ripristino impostazioni predefinite**             |      Consente all'utente di eseguire il ripristino delle impostazioni di fabbrica del dispositivo.       |
+| **Condivisione degli Appunti tra applicazioni** | Consente all'utente di usare gli Appunti per copiare e incollare tra app. |
+|              **Bluetooth**               |           Consente l'uso del Bluetooth sul dispositivo.            |
 
 ### <a name="store"></a>Archivio
 
@@ -163,14 +163,15 @@ Non è possibile specificare sia le app conformi che quelle non conformi nello s
 
 Nella pagina **App conformi e non conformi (Android)** specificare le informazioni seguenti:  
 
-|Impostazione|Altre informazioni|  
-|-------------|----------------------|  
-|**Elenco app non conformi**|Specifica un elenco di app che verranno segnalate come non conformi, quando vengono installate dagli utenti.|  
-|**Elenco app conformi**|Specifica un elenco di app Mac OS X che gli utenti sono autorizzati a installare. Tutte le altre app installate verranno segnalate come non conformi.|  
-|**Aggiungi**|Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, cercare l'app da usare dalla [sezione delle app di Google Play](https://play.google.com/store/apps).<br /><br /> Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app conformi e non conformi.<br /><br /> **Esempio:** cercare **Microsoft Office Mobile**in Google Play. L'URL da usare sarà **https://play.google.com/store/apps/details?id=com.microsoft.office.officehub**.|  
-|**Modifica**|Consente di modificare il nome, l'autore e l'URL dell'app selezionata.|  
-|**Rimuovi**|Elimina l'app selezionata dall'elenco.|  
-|**Importa**|Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.|  
+
+|          Impostazione           |                                                                                                                                                                                                                                                                                                                 Altre informazioni                                                                                                                                                                                                                                                                                                                  |
+|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Elenco app non conformi** |                                                                                                                                                                                                                                                                               Specifica un elenco di app che verranno segnalate come non conformi, quando vengono installate dagli utenti.                                                                                                                                                                                                                                                                               |
+|  **Elenco app conformi**   |                                                                                                                                                                                                                                                              Specifica un elenco di app Mac OS X che gli utenti sono autorizzati a installare. Tutte le altre app installate verranno segnalate come non conformi.                                                                                                                                                                                                                                                               |
+|          **Aggiungi**           | Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, cercare l'app da usare dalla [sezione delle app di Google Play](https://play.google.com/store/apps).<br /><br /> Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app conformi e non conformi.<br /><br /> **Esempio:** Cercare Google Play **Microsoft Office Mobile**. L'URL da usare sarà **<https://play.google.com/store/apps/details?id=com.microsoft.office.officehub>**. |
+|          **Modifica**          |                                                                                                                                                                                                                                                                                          Consente di modificare il nome, l'autore e l'URL dell'app selezionata.                                                                                                                                                                                                                                                                                          |
+|         **Rimuovi**         |                                                                                                                                                                                                                                                                                                      Elimina l'app selezionata dall'elenco.                                                                                                                                                                                                                                                                                                      |
+|         **Importa**         |                                                                                                                                                                                                                                                 Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.                                                                                                                                                                                                                                                 |
 
 ## <a name="android-for-work-configuration-items"></a>Elementi di configurazione di Android for Work
 Android for Work ha due gruppi di impostazioni per gli elementi di configurazione:

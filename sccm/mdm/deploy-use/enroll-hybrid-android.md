@@ -10,12 +10,12 @@ ms.assetid: c517fe34-0130-465b-a020-bdb555878778
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f833a28a22e4b3ffd2c8fc237effec94e26e69e8
-ms.sourcegitcommit: 10b3a571e2a822bbd7b58a25840ee1e6f703a7a2
-ms.translationtype: HT
+ms.openlocfilehash: fb488ccfc186fcc56ea91c30b6c0319aead5208e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34814257"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416980"
 ---
 # <a name="set-up-android-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurare la gestione di dispositivi mobili ibridi Android con System Center Configuration Manager e Microsoft Intune
 
@@ -35,7 +35,7 @@ La procedura seguente consente a Configuration Manager di gestire dispositivi An
 3. Nel gruppo **Sottoscrizione** della scheda **Home** scegliere **Configura piattaforme** > **Android**.  
 4. Nella finestra di dialogo **Proprietà sottoscrizione di Microsoft Intune** scegliere la scheda **Android** e selezionare la casella di controllo **Abilita registrazione Android**. È possibile scegliere **Blocca dispositivi di proprietà personale** per limitare la registrazione ai [dispositivi predichiarati](predeclare-devices-with-hardware-id.md).
 
- Dopo aver completato la configurazione occorre informare gli utenti su come registrare i loro dispositivi. Vedere [Informazioni sull'uso di Microsoft Intune per gli utenti finali](/intune/end-user-educate). Queste informazioni si applicano ai dispositivi mobili gestiti sia con Microsoft Intune che con Configuration Manager.
+   Dopo aver completato la configurazione occorre informare gli utenti su come registrare i loro dispositivi. Vedere [Informazioni sull'uso di Microsoft Intune per gli utenti finali](/intune/end-user-educate). Queste informazioni si applicano ai dispositivi mobili gestiti sia con Microsoft Intune che con Configuration Manager.
 
 
 
@@ -80,4 +80,4 @@ Dopo aver abilitato la registrazione di dispositivi Android for Work è possibil
 - [Cancellare in modo selettivo il profilo di lavoro](/sccm/mdm/deploy-use/wipe-lock-reset-devices#selective-wipe)
 
 > [!div class="button"]
-[< Passaggio precedente](create-service-connection-point.md)  [Passaggio successivo >](set-up-additional-management.md)
+> [< Passaggio precedente](create-service-connection-point.md)  [Passaggio successivo >](set-up-additional-management.md)

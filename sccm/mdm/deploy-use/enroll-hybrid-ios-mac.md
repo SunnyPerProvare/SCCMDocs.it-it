@@ -10,12 +10,12 @@ ms.assetid: 5eae4400-58ca-4c71-804c-6a585cd3df5d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9407180df12902c17f4de8e52be13229ce35c60b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: a1357c54b0f848374ea15727bb6265f68400f88c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348828"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422369"
 ---
 # <a name="set-up-ios-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurare la gestione dei dispositivi iOS ibrido con Microsoft Intune e System Center Configuration Manager
 
@@ -77,4 +77,4 @@ Dopo aver completato la configurazione occorre informare gli utenti su come regi
 3.  Scegliere **Blocca dispositivi di proprietà personale** per limitare la registrazione ai dispositivi di proprietà dell'azienda.
 
 > [!div class="button"]
-[< Passaggio precedente](create-service-connection-point.md)  [Passaggio successivo >](set-up-additional-management.md)
+> [< Passaggio precedente](create-service-connection-point.md)  [Passaggio successivo >](set-up-additional-management.md)

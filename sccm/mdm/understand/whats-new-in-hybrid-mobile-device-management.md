@@ -2,7 +2,7 @@
 title: Novità nella gestione di dispositivi mobili ibrida
 titleSuffix: Configuration Manager
 description: Informazioni sulle nuove funzionalità di gestione dei dispositivi mobili disponibili per le distribuzioni ibride con Configuration Manager e Intune.
-ms.date: 12/05/2018
+ms.date: 12/14/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6ecc3f47b908678b1849e16c2cb2053f100a655a
-ms.sourcegitcommit: 2491fbe98915b7a30c2422a371c929d0d4ebf22f
+ms.openlocfilehash: 7cf1adf7d73e60fba0d748022ab7c241d60ffed7
+ms.sourcegitcommit: c60e057075a83f07d1ca2577c3de1c7d7c8e9cec
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53247527"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53626498"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con Configuration Manager e Microsoft Intune
 
@@ -44,6 +44,23 @@ Ogni sezione di questo articolo elenca le funzionalità ibride in tre categorie 
 |**Novità di Microsoft Intune** | In generale, tutte le funzionalità elencate in questa categoria dovrebbero funzionare con tutte le versioni di Configuration Manager, incluse le versioni di System Center 2012 R2 Configuration Manager, perché richiedono solo il servizio Intune e non richiedono altre funzionalità di Configuration Manager.|
 |**Novità di Configuration Manager Technical Preview**| Tutte le funzionalità elencate in questa categoria funzionano solo con il ramo di Technical Preview specificato. Per provare queste funzionalità, è necessario installare la versione di Technical Preview specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Technical Preview per Configuration Manager](/sccm/core/get-started/technical-preview).|
 |**Novità di Configuration Manager (Current Branch)**| Tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Configuration Manager (Current Branch) specificata. Se si usa una versione precedente di Configuration Manager per la distribuzione ibrida, eseguire l'aggiornamento alla versione di Configuration Manager (Current Branch) specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Eseguire l'aggiornamento a Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).|
+
+
+
+## <a name="december-2018"></a>Dicembre 2018
+
+### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
+
+#### <a name="microsoft-auto-update-version-450-required-for-macos-devices"></a>Versione di aggiornamento automatico Microsoft 4.5.0 necessaria per i dispositivi macOS
+<!--3503442--> Per continuare a ricevere gli aggiornamenti per l'App portale aziendale e altre applicazioni di Office, è necessario aggiornare i dispositivi macOS gestiti da Intune per l'aggiornamento automatico Microsoft 4.5.0. Gli utenti potrebbero disporre già questa versione per le app di Office.
+
+#### <a name="the-intune-app-sdk-will-support-256-bit-encryption-keys"></a>Intune App SDK supporta le chiavi di crittografia a 256 bit 
+<!--1832174--> Intune App SDK per Android ora Usa le chiavi di crittografia a 256 bit durante la crittografia è abilitata per i criteri di protezione delle App. il SDK continuerà a fornire supporto di chiavi a 128 bit per garantire la compatibilità con le app che usano versioni precedenti di SDK e contenuti.
+
+#### <a name="intune-requires-macos-1012-or-later"></a>Intune richiede macOS 10.12 o versione successiva 
+<!--2827778--> Intune è ora necessario macOS 10.12 o versione successiva. I dispositivi con versioni precedenti di macOS non è possibile usare l'App portale aziendale per registrarsi in Intune. Per ricevere supporto tecnico e le nuove funzionalità, gli utenti devono aggiornare il dispositivo MacOS 10.12 o versione successiva e aggiornare l'App portale aziendale alla versione più recente.
+
+Per altre informazioni, vedere [modifiche pianificate: Intune supporta macOS 10.12 e versioni successive nel mese di dicembre](#plan-for-change-intune-supports-macos-1012-and-higher-in-december).
 
 
 
@@ -549,7 +566,11 @@ Per altre informazioni, vedere [Registrare il dispositivo macOS in Intune con l'
 
 
 ### <a name="plan-for-change-new-intune-support-experience-for-premier-customers"></a>Modifiche pianificate: Nuovo supporto per Intune esperienza clienti Premier clienti 
-<!--2828727--> I clienti Microsoft Premier attualmente possono usare il [portale Microsoft Premier Online (MPO)](https://premier.microsoft.com) e [Intune in Azure](https://portal.azure.com) per creare le richieste di supporto per Intune. A partire dal 3 dicembre 2018, per continuare a migliorare l'esperienza di supporto tecnico Premier, l'utente sarà in grado di creare le richieste di supporto solo in Intune in Azure.
+<!--2828727-->
+
+aggiornamento 4/12 marzo 2018 Stiamo cercando di rendere più adatti per questo processo. La creazione della richiesta di supporto in MPO non sarà possibile disabilitare il 3 dicembre. Te lo comunicheremo tramite tramite il centro messaggi e aggiornare questo post di presto per condividere le sequenze temporali per questa modifica.
+
+I clienti Premier di Microsoft è attualmente possibile usare la [portale Microsoft Premier Online (MPO)](https://premier.microsoft.com) e [Intune in Azure](https://portal.azure.com) creare richieste di supporto per Intune. A partire dal 3 dicembre 2018, per continuare a migliorare l'esperienza di supporto tecnico Premier, l'utente sarà in grado di creare le richieste di supporto solo in Intune in Azure.
 
 #### <a name="how-does-this-affect-me"></a>Quali sono le conseguenze di questa modifica?
 Dopo il 3 dicembre non è possibile creare le richieste di supporto in MPO. Se si tenta di crearle, verrà visualizzata una richiesta che è impossibile ignorare e l'utente verrà reindirizzato a Intune in Azure. Quando si crea una richiesta di supporto nel portale di Azure, viene indirizzata al supporto tecnico Microsoft dedicato a Intune. Il problema viene diagnosticato e risolto in modo tempestivo. Se si crea una richiesta di supporto nel portale MPO, non è possibile visualizzarla nel portale di Azure. Iniziare creando le richieste di supporto solo in Intune in Azure.  

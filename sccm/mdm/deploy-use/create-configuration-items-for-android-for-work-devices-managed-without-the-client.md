@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.assetid: ab6784fd-8c57-4be9-858f-50fe39f2ff5f
 author: aczechowski
 ms.author: aaroncz
-ms.openlocfilehash: ba70e4d3a87f2a305312449907730174c62c4775
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 0b2104b72a155f269beefc6f64c2615b62266b66
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351276"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415467"
 ---
 # <a name="how-to-create-configuration-items-for-android-for-work-devices-managed-with-intune"></a>Come creare elementi di configurazione per dispositivi Android for Work gestiti con Intune 
 
@@ -21,47 +21,47 @@ ms.locfileid: "32351276"
 
 ### <a name="to-create-an-android-for-work-configuration-item"></a>Per creare un elemento di configurazione di Android for Work  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1. Nella console di Configuration Manager fare clic su **Asset e conformità**.  
 
-2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
+2. Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
+3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
 
-4.  Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
+4. Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
 
-5.  In **Specificare il tipo di elemento di configurazione da creare** selezionare **Android for Work**.  
+5. In **Specificare il tipo di elemento di configurazione da creare** selezionare **Android for Work**.  
 
-6.  Scegliere **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
+6. Scegliere **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
 
-  Fare clic su **Avanti**.
+   Fare clic su **Avanti**.
 
-7.  Nella pagina **Impostazioni dispositivo** della procedura guidata selezionare i gruppi di impostazioni da configurare. Per informazioni dettagliate, vedere [Impostazioni degli elementi di configurazione di Android for Work](#android-for-work-configuration-item-settings-reference) e quindi fare clic su **Avanti**.  
+7. Nella pagina **Impostazioni dispositivo** della procedura guidata selezionare i gruppi di impostazioni da configurare. Per informazioni dettagliate, vedere [Impostazioni degli elementi di configurazione di Android for Work](#android-for-work-configuration-item-settings-reference) e quindi fare clic su **Avanti**.  
 
-  > [!TIP]  
-  >  Se l'impostazione da modificare non è inclusa nell'elenco, selezionare la casella di controllo **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  
+   > [!TIP]  
+   >  Se l'impostazione da modificare non è inclusa nell'elenco, selezionare la casella di controllo **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  
 
-9. In ogni pagina di impostazioni configurare le impostazioni necessarie e specificare se si vuole monitorarle e aggiornarle nel caso non siano conformi nei dispositivi (se questa funzionalità è supportata).  
+8. In ogni pagina di impostazioni configurare le impostazioni necessarie e specificare se si vuole monitorarle e aggiornarle nel caso non siano conformi nei dispositivi (se questa funzionalità è supportata).  
 
-10. Per ogni gruppo di impostazioni, è anche possibile configurare il livello di gravità che verrà segnalato quando viene trovato un elemento di configurazione non conforme, selezionando uno dei livelli seguenti:  
+9. Per ogni gruppo di impostazioni, è anche possibile configurare il livello di gravità che verrà segnalato quando viene trovato un elemento di configurazione non conforme, selezionando uno dei livelli seguenti:  
 
-    -   **Nessuno**: i dispositivi che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
+   -   **Nessuno**: i dispositivi che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
 
-    -   **Informazioni**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Informazioni** per i report di Configuration Manager.  
+   -   **Informazioni**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Informazioni** per i report di Configuration Manager.  
 
-    -   **Avviso**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Avviso** per i report di Configuration Manager.  
+   -   **Avviso**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Avviso** per i report di Configuration Manager.  
 
-    -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
+   -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
 
-    -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel log eventi dell'applicazione.  
+   -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel log eventi dell'applicazione.  
 
-11. Nella pagina **Applicabilità piattaforma** della creazione guidata, verificare le eventuali impostazioni non compatibili con le piattaforme supportate selezionate in precedenza. È possibile tornare indietro e rimuovere queste impostazioni oppure continuare.  
+10. Nella pagina **Applicabilità piattaforma** della creazione guidata, verificare le eventuali impostazioni non compatibili con le piattaforme supportate selezionate in precedenza. È possibile tornare indietro e rimuovere queste impostazioni oppure continuare.  
 
     > [!TIP]  
     >  Non viene valutata la conformità delle impostazioni non supportate.  
 
-12. Completare la procedura guidata.  
+11. Completare la procedura guidata.  
 
- È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
+    È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
 
 ##  <a name="android-for-work-configuration-item-settings-reference"></a>Informazioni di riferimento sulle impostazioni degli elementi di configurazione di Android for Work  
 
@@ -92,7 +92,7 @@ ms.locfileid: "32351276"
 Nessuna delle opzioni di **Consenti la condivisione dei dati tra i profili di lavoro e personali** impedisce il comportamento di copia e incolla. Usare un'impostazione personalizzata che può essere configurata per impedire le operazioni di copia e incolla. L'impostazione è configurabile tramite un URI personalizzato.
 
 - URI OMA: ./Vendor/MSFT/WorkProfile/DisallowCrossProfileCopyPaste
-- Tipo valore: booleano
+- Tipo di valore: Boolean
 
 Impostando DisallowCrossProfileCopyPaste su true si impedisce il comportamento di copia e incolla tra Android for Work personale e i profili di lavoro.
 

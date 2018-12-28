@@ -10,12 +10,12 @@ ms.assetid: 02979fb8-ea7e-4ec6-b7e0-ecbfda73e52d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 10cddac80b9a7ea4bd912e2f52585cdcef7e70da
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 35170f4584f9c327c542ac35d2f63803163330ba
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351242"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422284"
 ---
 # <a name="plan-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Pianificare la gestione di dispositivi mobili locale in System Center Configuration Manager
 
@@ -52,54 +52,54 @@ Prendere in considerazione i requisiti seguenti prima di preparare l'infrastrutt
 ##  <a name="bkmk_roles"></a> Ruoli di sistema del sito necessari  
  La gestione dei dispositivi mobili locale richiede minimo uno dei ruoli di sistema del sito seguenti:  
 
--   **Punto proxy di registrazione** per supportare le richieste di registrazione.  
+- **Punto proxy di registrazione** per supportare le richieste di registrazione.  
 
--   **Punto di registrazione** per supportare la registrazione dei dispositivi.  
+- **Punto di registrazione** per supportare la registrazione dei dispositivi.  
 
--   **Punto gestione periferiche** per la distribuzione dei criteri. Questo ruolo del sistema del sito è una variante del ruolo del punto di gestione che è stato configurato per consentire la gestione dei dispositivi mobili.  
+- **Punto gestione periferiche** per la distribuzione dei criteri. Questo ruolo del sistema del sito è una variante del ruolo del punto di gestione che è stato configurato per consentire la gestione dei dispositivi mobili.  
 
--   **Punto di distribuzione** per la distribuzione di contenuti.  
+- **Punto di distribuzione** per la distribuzione di contenuti.  
 
--   **Punto di connessione del servizio** per la connessione a Intune per le notifiche a dispositivi esterni al firewall.  
+- **Punto di connessione del servizio** per la connessione a Intune per le notifiche a dispositivi esterni al firewall.  
 
- Questi ruoli del sistema del sito possono essere installati in un unico server del sistema del sito oppure possono essere eseguiti separatamente in server diversi a seconda delle esigenze dell'organizzazione. Ogni server di sistema del sito usato per la gestione dei dispositivi mobili locale deve essere configurato come endpoint HTTPS per comunicare con dispositivi attendibili. Per altre informazioni, vedere [Comunicazioni attendibili richieste](#bkmk_trustedComs).  
+  Questi ruoli del sistema del sito possono essere installati in un unico server del sistema del sito oppure possono essere eseguiti separatamente in server diversi a seconda delle esigenze dell'organizzazione. Ogni server di sistema del sito usato per la gestione dei dispositivi mobili locale deve essere configurato come endpoint HTTPS per comunicare con dispositivi attendibili. Per altre informazioni, vedere [Comunicazioni attendibili richieste](#bkmk_trustedComs).  
 
- Per altre informazioni sulla pianificazione dei ruoli del sistema del sito, vedere [Pianificare i server e i ruoli del sistema del sito per System Center Configuration Manager](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).  
+  Per altre informazioni sulla pianificazione dei ruoli del sistema del sito, vedere [Pianificare i server e i ruoli del sistema del sito per System Center Configuration Manager](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).  
 
- Per altre informazioni su come aggiungere i ruoli del sistema del sito, vedere [Installare i ruoli di sistema del sito per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/install-site-system-roles-for-on-premises-mdm.md).  
+  Per altre informazioni su come aggiungere i ruoli del sistema del sito, vedere [Installare i ruoli di sistema del sito per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/install-site-system-roles-for-on-premises-mdm.md).  
 
 ##  <a name="bkmk_trustedComs"></a> Comunicazioni attendibili necessarie  
  La gestione dei dispositivi mobili richiede che i ruoli di sistema del sito siano abilitati per le comunicazioni HTTPS. A seconda delle esigenze, è possibile usare l'autorità di certificazione (CA) dell'azienda per stabilire connessioni attendibili tra server e dispositivi oppure è possibile usare un'autorità di certificazione disponibile pubblicamente come CA attendibile.  In entrambi i casi, è necessario che un certificato server Web sia configurato con IIS nei server del sistema del sito che ospitano i ruoli del sistema del sito richiesti e sarà necessario il certificato radice della CA installato nei dispositivi che devono connettersi a tali server.  
 
  Se si usa la CA dell'azienda per stabilire una comunicazione attendibile, è necessario eseguire le attività seguenti:  
 
--   Creare ed emettere il modello di certificato del server Web nella CA.  
+- Creare ed emettere il modello di certificato del server Web nella CA.  
 
--   Richiedere un certificato del server web per ogni server del sistema del sito che ospita un ruolo del sistema del sito richiesto.  
+- Richiedere un certificato del server web per ogni server del sistema del sito che ospita un ruolo del sistema del sito richiesto.  
 
--   Configurare IIS nel server del sistema del sito per usare il certificato del server Web richiesto.  
+- Configurare IIS nel server del sistema del sito per usare il certificato del server Web richiesto.  
 
- Per i dispositivi aggiunti al dominio Active Directory aziendale, il certificato radice della CA aziendale è già disponibile nel dispositivo per le connessioni attendibili. Ciò significa che i dispositivi appartenenti a un dominio (come i computer desktop) saranno automaticamente attendibili per le connessioni HTTPS con i server del sistema del sito. Nei dispositivi (in genere mobili) non appartenenti a un dominio, invece, il certificato radice obbligatorio non sarà installato. Tali dispositivi richiederanno l'installazione manuale del certificato radice per comunicare correttamente con i server di sistema del sito che supportano la gestione dei dispositivi mobili locale.  
+  Per i dispositivi aggiunti al dominio Active Directory aziendale, il certificato radice della CA aziendale è già disponibile nel dispositivo per le connessioni attendibili. Ciò significa che i dispositivi appartenenti a un dominio (come i computer desktop) saranno automaticamente attendibili per le connessioni HTTPS con i server del sistema del sito. Nei dispositivi (in genere mobili) non appartenenti a un dominio, invece, il certificato radice obbligatorio non sarà installato. Tali dispositivi richiederanno l'installazione manuale del certificato radice per comunicare correttamente con i server di sistema del sito che supportano la gestione dei dispositivi mobili locale.  
 
- È necessario esportare il certificato radice della CA emittente per l'uso da parte di singoli dispositivi. Per ottenere il file del certificato radice, è possibile esportarlo usando la CA oppure, per un metodo più semplice, usando il certificato del server Web rilasciato dalla CA per estrarre la radice e creare un file del certificato radice.   Il certificato radice deve essere quindi recapitato al dispositivo.  Alcuni metodi di recapito semplici includono  
+  È necessario esportare il certificato radice della CA emittente per l'uso da parte di singoli dispositivi. Per ottenere il file del certificato radice, è possibile esportarlo usando la CA oppure, per un metodo più semplice, usando il certificato del server Web rilasciato dalla CA per estrarre la radice e creare un file del certificato radice.   Il certificato radice deve essere quindi recapitato al dispositivo.  Alcuni metodi di recapito semplici includono  
 
--   File system  
+- File system  
 
--   Allegato e-mail  
+- Allegato e-mail  
 
--   Scheda di memoria  
+- Scheda di memoria  
 
--   Dispositivo con tethering  
+- Dispositivo con tethering  
 
--   Archiviazione cloud (ad esempio OneDrive)  
+- Archiviazione cloud (ad esempio OneDrive)  
 
--   Connessione NFC (Near Field Communication)  
+- Connessione NFC (Near Field Communication)  
 
--   Lettore di codice a barre  
+- Lettore di codice a barre  
 
--   Pacchetto di provisioning della Configurazione guidata  
+- Pacchetto di provisioning della Configurazione guidata  
 
- Per altre informazioni, vedere [Configurare i certificati per le comunicazioni attendibili per la gestione dei dispositivi mobili locale in System Center Configuration Manager.](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)  
+  Per altre informazioni, vedere [Configurare i certificati per le comunicazioni attendibili per la gestione dei dispositivi mobili locale in System Center Configuration Manager.](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)  
 
 ##  <a name="bkmk_enrollment"></a> Considerazioni sulla registrazione  
  Per abilitare la registrazione di dispositivi per la gestione dei dispositivi mobili locale, gli utenti devono avere l'autorizzazione alla registrazione e i dispositivi devono poter stabilire comunicazioni attendibili con i server di sistema del sito che ospitano i ruoli di sistema del sito necessari.  

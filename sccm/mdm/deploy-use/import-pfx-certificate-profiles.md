@@ -10,12 +10,12 @@ ms.assetid: e3bb3e13-3037-4122-93bc-504bfd080a4d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 81847846efe99bbc3ad5f0ff5a074b393c8b140a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 214dcdca927e515f776e99f005f968a4b98f4112
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349552"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418833"
 ---
 # <a name="how-to-create-pfx-certificate-profiles-by-importing-certificate-details"></a>Creare profili certificato PFX importando i dettagli dei certificati
 
@@ -26,11 +26,11 @@ Questo argomento illustra come creare un profilo certificato tramite l'importazi
 
 L'argomento sui [profili certificato](../../protect/deploy-use/introduction-to-certificate-profiles.md) offre informazioni generali sulla creazione e sulla configurazione dei profili certificato ed evidenzia alcune informazioni specifiche sui profili certificato relative ai certificati PFX.
 
--  In Configuration Manager è disponibile un'ampia gamma di archivi certificati appropriati per sistemi operativi e dispositivi diversi.  Sono inclusi:
+- In Configuration Manager è disponibile un'ampia gamma di archivi certificati appropriati per sistemi operativi e dispositivi diversi.  Sono inclusi:
 
- -   iOS e MacOS/OSX
- -   Android e Android For Work
- -   Windows 10, incluso Windows 10 Mobile.
+  -   iOS e MacOS/OSX
+  -   Android e Android For Work
+  -   Windows 10, incluso Windows 10 Mobile.
 
 Per altre informazioni, vedere [Prerequisiti per i profili certificato](../../protect/plan-design/prerequisites-for-certificate-profiles.md).
 
@@ -51,15 +51,15 @@ System Center Configuration Manager consente di importare credenziali di certifi
 
 4.  Nella pagina **Generale** della **Creazione guidata profilo certificato** specificare le informazioni seguenti:  
 
-    -   **Nome**: immettere un nome univoco per il profilo certificato. È possibile usare un massimo di 256 caratteri.  
+    -   **Nome**: Immettere un nome univoco per il profilo certificato. È possibile usare un massimo di 256 caratteri.  
 
-    -   **Descrizione**: digitare una descrizione che offra una panoramica del profilo certificato e altre informazioni rilevanti per facilitarne l'identificazione nella console di System Center Configuration Manager. È possibile usare un massimo di 256 caratteri.  
+    -   **Descrizione**: Fornire una descrizione che offra una panoramica del profilo certificato e altre informazioni rilevanti per facilitarne l'identificazione nella console di System Center Configuration Manager. È possibile usare un massimo di 256 caratteri.  
 
-    -   **Specificare il tipo di profilo certificato da creare**: per i certificati PFX, scegliere una delle opzioni seguenti:  
+    -   **Specificare il tipo di profilo certificato che si desidera creare**: Per i certificati PFX, scegliere una delle opzioni seguenti:  
 
-        -   **Scambio informazioni personali -- Impostazioni PKCS #12 (PFX) -- Importa**: crea un profilo certificato importando a livello di codice le informazioni da certificati esistenti.  
+        -   **Impostazioni di PKCS #12 (PFX) di scambio informazioni personali - importazione**: Crea un profilo certificato importando a livello di codice le informazioni da certificati esistenti.  
 
-        -   **Personal Information Exchange -- Impostazioni di PKCS #12 (PFX) -- Crea**: crea un profilo certificato PFX usando credenziali fornite da una CA.  Per altre informazioni, vedere [Come creare profili certificato PFX usando un'autorità di certificazione](../../mdm/deploy-use/create-pfx-certificate-profiles.md).
+        -   **Personal Information Exchange - impostazioni PKCS #12 (PFX) - Crea**: Crea un profilo certificato PFX usando credenziali fornite da un'autorità di certificazione.  Per altre informazioni, vedere [Come creare profili certificato PFX usando un'autorità di certificazione](../../mdm/deploy-use/create-pfx-certificate-profiles.md).
 
 
 ### <a name="create-a-pfx-certificate-profile-for-the-imported-credentials"></a>Creare un profilo certificato PFX per le credenziali importate

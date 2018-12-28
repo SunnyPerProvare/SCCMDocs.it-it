@@ -10,12 +10,12 @@ ms.assetid: 2bfc4c51-b25c-4c70-b81e-8a3b6ddf02c8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d77dbcf0b8b7853153a0b2ead4b2db3affd03733
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 5e2c8ab4f8dc0b544a79b2113c278f97444357bf
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32352777"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420958"
 ---
 # <a name="manage-dynamics-crm-online-access-in-system-center-configuration-manager"></a>Gestire l'accesso a Dynamics CRM Online in System Center Configuration Manager
 
@@ -44,7 +44,7 @@ Se non viene soddisfatta una condizione, viene visualizzato uno dei due messaggi
 * Se il dispositivo non è conforme, viene visualizzato un messaggio che indirizza l'utente al sito Web del portale aziendale di Microsoft Intune o all'app Portale aziendale dove sono disponibili informazioni sul problema e su come risolverlo.
 
 ## <a name="configure-conditional-access-for-dynamics-crm-online"></a>Configurare l'accesso condizionale per Dynamics CRM Online  
-### <a name="step-1-configure-active-directory-security-groups"></a>Passaggio 1: Configurare i gruppi di sicurezza di Active Directory
+### <a name="step-1-configure-active-directory-security-groups"></a>Passaggio 1: Configurare gruppi di sicurezza di Active Directory
 
 Prima di iniziare configurare i gruppi di sicurezza di Azure Active Directory per i criteri di accesso condizionale. È possibile configurare questi gruppi nel **centro di amministrazione di Office 365**. I gruppi verranno usati per applicare o ignorare i criteri per gli utenti. Per poter accedere alle risorse, un utente di destinazione in un criterio deve usare solo dispositivi conformi.
 
@@ -54,7 +54,7 @@ Prima di iniziare configurare i gruppi di sicurezza di Azure Active Directory pe
 
 Se un utente si trova in entrambi i gruppi, sarà esentato dai criteri.
 
-### <a name="step-2-configure-and-deploy-a-compliance-policy"></a>Passaggio 2: Configurare e distribuire i criteri di conformità
+### <a name="step-2-configure-and-deploy-a-compliance-policy"></a>Passaggio 2: Configurare e distribuire criteri di conformità
 [Creare e distribuire](../../protect/deploy-use/device-compliance-policies.md) i criteri di conformità in tutti i dispositivi cui verranno applicati i criteri. Si tratta di tutti i dispositivi usati dagli utenti dei gruppi di destinazione.
 
 > [!NOTE]
@@ -67,17 +67,17 @@ Quando si è pronti, continuare con il Passaggio 3.
 ### <a name="step-3-configure-the-dynamics-crm-policy"></a>Passaggio 3: Configurare i criteri di Dynamics CRM
 A questo punto, configurare i criteri in modo che solo i dispositivi gestiti e conformi possano accedere a Dynamics CRM. Questi criteri verranno archiviati in Azure Active Directory.
 
-1.  Nella console di amministrazione di Microsoft Intune scegliere **Criteri > Accesso condizionale > Criteri di Dynamics CRM Online**.
+1. Nella console di amministrazione di Microsoft Intune scegliere **Criteri > Accesso condizionale > Criteri di Dynamics CRM Online**.
 
-     ![Schermata della pagina dei criteri di accesso condizionale di Dynamics CRM Online](media/mdm-ca-dynamics-crm-policy-configuration.png)
+    ![Schermata della pagina dei criteri di accesso condizionale di Dynamics CRM Online](media/mdm-ca-dynamics-crm-policy-configuration.png)
 
-2.  Selezionare **Abilitare i criteri di accesso condizionale**.
-3.  In **Accesso all'applicazione**è possibile scegliere di applicare i criteri di accesso condizionale a:
-  * **iOS**
-  * **Android**
-4.  In **Gruppi di destinazione** scegliere **Modifica** per selezionare i gruppi di sicurezza di Azure Active Directory ai quali verranno applicati i criteri. È possibile scegliere applicare questa opzione a tutti gli utenti o solo a un gruppo selezionato di utenti.
-5.  Facoltativamente, in **Gruppi esentati** scegliere **Modifica** per selezionare i gruppi di sicurezza di Azure Active Directory esentati da questi criteri.
-6.  Al termine, scegliere **Salva**.
+2. Selezionare **Abilitare i criteri di accesso condizionale**.
+3. In **Accesso all'applicazione**è possibile scegliere di applicare i criteri di accesso condizionale a:
+   * **iOS**
+   * **Android**
+4. In **Gruppi di destinazione** scegliere **Modifica** per selezionare i gruppi di sicurezza di Azure Active Directory ai quali verranno applicati i criteri. È possibile scegliere applicare questa opzione a tutti gli utenti o solo a un gruppo selezionato di utenti.
+5. Facoltativamente, in **Gruppi esentati** scegliere **Modifica** per selezionare i gruppi di sicurezza di Azure Active Directory esentati da questi criteri.
+6. Al termine, scegliere **Salva**.
 
 L'accesso condizionale per Dynamics CRM è stato configurato. Non è necessario distribuire i criteri di accesso condizionale perché diventano immediatamente effettivi.
 ##  <a name="monitor-the-compliance-and-conditional-access-policies"></a>Monitorare i criteri di conformità e di accesso condizionale

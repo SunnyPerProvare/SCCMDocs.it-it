@@ -10,12 +10,12 @@ ms.assetid: 4d3f9e6b-4d71-4fc4-9b91-47f1bfbd8c70
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cda5f01842f08ccc3e8dfbd17078fe157954d985
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: e7f5eefe532c3a0a48bc0703365bf07028bfae71
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353471"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419632"
 ---
 # <a name="add-terms-and-conditions-with-system-center-configuration-manager"></a>Aggiungere termini e condizioni con System Center Configuration Manager
 
@@ -28,29 +28,29 @@ ms.locfileid: "32353471"
 
 ## <a name="to-create-a-terms-and-conditions"></a>Per creare termini e condizioni  
 
-1.  Nella console di Configuration Manager passare a **Asset e conformità** > **Panoramica** > **Impostazioni di conformità** > **Termini e condizioni**.  
+1. Nella console di Configuration Manager passare a **Asset e conformità** > **Panoramica** > **Impostazioni di conformità** > **Termini e condizioni**.  
 
-2.  Fare clic su **Crea termini e condizioni** per creare nuovi termini e condizioni.  
+2. Fare clic su **Crea termini e condizioni** per creare nuovi termini e condizioni.  
 
-3.  Nella pagina **Generale** specificare le informazioni seguenti:  
+3. Nella pagina **Generale** specificare le informazioni seguenti:  
 
-    -   **Nome**: nome univoco visualizzato nella console di Configuration Manager  
+   - **Nome**: nome univoco visualizzato nella console di Configuration Manager  
 
-    -   **Descrizione**: dettagli che consentono di identificare le condizioni nella console di Configuration Manager  
-
-     Fare clic su **Avanti**.  
-
-4.  Nella pagina **Condizioni** specificare le informazioni seguenti:  
-
-    -   **Titolo** - Titolo visualizzato agli utenti nel portale aziendale  
-
-    -   **Testo per le condizioni** - Termini e condizioni visualizzati agli utenti nel portale aziendale  
-
-    -   **Testo in cui vengono spiegate le implicazioni dell'accettazione da parte dell'utente** : etichetta visualizzata agli utenti relativa all'accettazione. **Esempio**: "Accetto le condizioni".  
+   - **Descrizione**: dettagli che consentono di identificare le condizioni nella console di Configuration Manager  
 
      Fare clic su **Avanti**.  
 
-5.  Completare la procedura guidata per creare i nuovi termini e condizioni. I nuovi termini e condizioni vengono visualizzati nel nodo Termini e condizioni dell'area di lavoro Asset e conformità.  
+4. Nella pagina **Condizioni** specificare le informazioni seguenti:  
+
+   - **Titolo** - Titolo visualizzato agli utenti nel portale aziendale  
+
+   - **Testo per le condizioni** - Termini e condizioni visualizzati agli utenti nel portale aziendale  
+
+   - **Testo in cui vengono spiegate le implicazioni dell'accettazione da parte dell'utente** : etichetta visualizzata agli utenti relativa all'accettazione. **Esempio**: "Accetto i termini e condizioni."  
+
+     Fare clic su **Avanti**.  
+
+5. Completare la procedura guidata per creare i nuovi termini e condizioni. I nuovi termini e condizioni vengono visualizzati nel nodo Termini e condizioni dell'area di lavoro Asset e conformità.  
 
 ## <a name="to-deploy-a-terms-and-conditions"></a>Per distribuire termini e condizioni  
 
@@ -117,4 +117,4 @@ ms.locfileid: "32353471"
      È consigliabile incrementare il numero di versione e richiedere l'accettazione ogni volta che si apportano modifiche significative a termini e condizioni. Non modificare il numero di versione corrente se, ad esempio, si correggono errori di digitazione o si modifica la formattazione.
 
 > [!div class="button"]
-[< Passaggio precedente](configure-intune-subscription.md)  [Passaggio successivo >](create-service-connection-point.md)
+> [< Passaggio precedente](configure-intune-subscription.md)  [Passaggio successivo >](create-service-connection-point.md)

@@ -10,12 +10,12 @@ ms.assetid: 9126d188-7780-45a4-b21d-7fcf4fad7da2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 79ab2548453c84cfff7450574ed46562d7c1a005
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 6f83f26f746c54e3d1defe31df47b3c7c8a7e117
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348182"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417949"
 ---
 # <a name="apply-settings-to-android-for-work-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Applicare le impostazioni alle app Android for Work con i criteri di configurazione delle app in System Center Configuration Manager
 
@@ -39,19 +39,19 @@ Per altre informazioni sui tipi di installazione delle app, vedere l'[introduzio
 1. Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Criteri di configurazione dell'app**.
 2. Nella scheda **Home**, nel gruppo **Criteri di configurazione dell'app** fare clic su **Creare i criteri di configurazione dell'app**.
 3. Nella pagina **Generale** della Creazione guidata criteri di configurazione dell'app impostare le seguenti informazioni per i criteri:
-  - **Nome**. Immettere un nome univoco per i criteri.
-  - **Descrizione**. (Facoltativo) Per rendere più semplice l'identificazione dei criteri, è possibile aggiungere una descrizione.
-  -  **Selezionare un tipo di criteri di configurazione**. Specificare la piattaforma di destinazione per i criteri di configurazione dell'app: **Configuration policy for Android for Work apps** (Criteri di configurazione per app Android for Work).
-  -  **Categorie assegnate per migliorare la ricerca e i filtri**. (Facoltativo) Per creare e assegnare categorie ai criteri, scegliere **Categorie**. Con le categorie è più semplice trovare e ordinare gli elementi nella console di Configuration Manager.
+   - **Nome**. Immettere un nome univoco per i criteri.
+   - **Descrizione**. (Facoltativo) Per rendere più semplice l'identificazione dei criteri, è possibile aggiungere una descrizione.
+   -  **Selezionare un tipo di criteri di configurazione**. Specificare la piattaforma di destinazione dei criteri di configurazione app: **Criteri di configurazione per Android per le app di lavoro**.
+   -  **Categorie assegnate per migliorare la ricerca e i filtri**. (Facoltativo) Per creare e assegnare categorie ai criteri, scegliere **Categorie**. Con le categorie è più semplice trovare e ordinare gli elementi nella console di Configuration Manager.
 4. Nella pagina **Criteri Android for Work** scegliere come impostare le informazioni sui criteri di configurazione:
-  - **Specify name and value pairs** (Specifica coppie nome/valore). È possibile usare questa opzione per i file elenco di proprietà senza annidamento. Per specificare una coppia nome/valore:
+   - **Specify name and value pairs** (Specifica coppie nome/valore). È possibile usare questa opzione per i file elenco di proprietà senza annidamento. Per specificare una coppia nome/valore:
         1. Scegliere **Nuova** per aggiungere una nuova coppia JSON.
         2. Nella finestra di dialogo **Aggiungere la coppia nome-valore** specificare i dettagli seguenti:
             - **Tipo**. Scegliere il tipo di valore da specificare nell'elenco.
             - **Nome**. Immettere il nome della chiave dell'elenco di proprietà per la quale si vuole specificare un valore.
             - **Valore**. Digitare il valore che verrà applicato alla chiave immessa.
 
-  - **Browse to a property list JSON file** (Passa a un file JSON elenco di proprietà). Usare questa opzione se è già presente un file JSON di configurazione app o per file più complessi con annidamento. Nel campo **Criteri di configurazione dell'app** immettere le informazioni sull'elenco di proprietà nel formato JSON corretto.
+   - **Browse to a property list JSON file** (Passa a un file JSON elenco di proprietà). Usare questa opzione se è già presente un file JSON di configurazione app o per file più complessi con annidamento. Nel campo **Criteri di configurazione dell'app** immettere le informazioni sull'elenco di proprietà nel formato JSON corretto.
 5. Per importare un file JSON creato in precedenza, scegliere **Seleziona file**.
 6. Scegliere **Avanti**. Se sono presenti errori nel codice JSON, correggerli prima di continuare.
 7. Completare i passaggi della procedura guidata.

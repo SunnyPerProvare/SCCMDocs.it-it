@@ -10,12 +10,12 @@ ms.assetid: ddb4c68e-e7f7-475a-89e2-7379a86e44c4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 86ef14c871f476df39923e01e47874702271a08d
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 118e9b32d691c228857fc31b2da1e9d9b72b7b58
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348284"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415926"
 ---
 # <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Predichiarare i dispositivi con i numeri di serie IMEI o iOS
 
@@ -30,33 +30,33 @@ Se si caricano numeri di serie di dispositivi iOS di proprietà dell'azienda, è
 
 ## <a name="how-to-predeclare-corporate-owned-devices"></a>Come predichiarare i dispositivi di proprietà dell'azienda
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Panoramica** > **Tutti i dispositivi di proprietà dell'azienda** > **Windows**Predeclared devices (Dispositivi predichiarati).
+1. Nella console di Configuration Manager fare clic su **Asset e conformità** > **Panoramica** > **Tutti i dispositivi di proprietà dell'azienda** > **Windows**Predeclared devices (Dispositivi predichiarati).
 
-2.  Fare clic su **Create Predeclared Device** (Crea dispositivi predichiarati). Verrà avviata la procedura guidata per la creazione di dispositivi predichiarati.
+2. Fare clic su **Create Predeclared Device** (Crea dispositivi predichiarati). Verrà avviata la procedura guidata per la creazione di dispositivi predichiarati.
 
-3.  Specificare come si vogliono aggiungere le informazioni sul dispositivo:
+3. Specificare come si vogliono aggiungere le informazioni sul dispositivo:
 
-     -  **Caricare un file CSV contenente numeri IMEI o numeri di serie e dettagli**
+    -  **Caricare un file CSV contenente numeri IMEI o numeri di serie e dettagli**
 
-        Per questa opzione, fare clic su **Sfoglia** per specificare il file con estensione csv contenente le informazioni per predichiarare i dispositivi di proprietà dell'azienda. Il file con estensione csv deve essere formattato correttamente. Per altre informazioni, vedere [Formato per il caricamento di file con estensione csv](#format-for-uploading-csv-files).
+       Per questa opzione, fare clic su **Sfoglia** per specificare il file con estensione csv contenente le informazioni per predichiarare i dispositivi di proprietà dell'azienda. Il file con estensione csv deve essere formattato correttamente. Per altre informazioni, vedere [Formato per il caricamento di file con estensione csv](#format-for-uploading-csv-files).
 
-     -  **Aggiungere manualmente i numeri IMEI o i numeri di serie e i dettagli**
+    -  **Aggiungere manualmente i numeri IMEI o i numeri di serie e i dettagli**
 
-        Per immettere manualmente le informazioni, digitare il codice IMEI o il numero di serie iOS e i dettagli per i dispositivi. Prima di continuare, correggere eventuali errori o avvisi.
+       Per immettere manualmente le informazioni, digitare il codice IMEI o il numero di serie iOS e i dettagli per i dispositivi. Prima di continuare, correggere eventuali errori o avvisi.
 
-    Fare clic su **Avanti**.
+   Fare clic su **Avanti**.
 
 4. Se è stato caricato un file con estensione csv, esaminare i risultati dell'importazione del file. Se è stato importato in precedenza un numero di dispositivo, Configuration Manager visualizza i dispositivi e i **Dettagli** della sostituzione. Selezionare i dispositivi di cui si vuole sovrascrivere i dettagli. I dettagli del dispositivo possono essere modificati solo importando di nuovo l'identificazione del dispositivo o un numero di serie.
 
-  Se si è scelto di immettere manualmente il numero, completare il modulo per i dispositivi da predichiarare.
+   Se si è scelto di immettere manualmente il numero, completare il modulo per i dispositivi da predichiarare.
 
-  Fare clic su **Avanti** per continuare.
+   Fare clic su **Avanti** per continuare.
 
-4. Se l'elenco include numeri di serie iOS, selezionare **Enrollment Profile to Assign** (Profilo di registrazione da assegnare) dall'elenco dei profili disponibili e fare clic su **Avanti**.
+5. Se l'elenco include numeri di serie iOS, selezionare **Enrollment Profile to Assign** (Profilo di registrazione da assegnare) dall'elenco dei profili disponibili e fare clic su **Avanti**.
 
-5. Fare clic su **Avanti** per esaminare i dettagli e quindi fare clic nuovamente su **Avanti** per caricare i dati.
+6. Fare clic su **Avanti** per esaminare i dettagli e quindi fare clic nuovamente su **Avanti** per caricare i dati.
 
-6. Fare clic su **Chiudi** per completare la procedura.
+7. Fare clic su **Chiudi** per completare la procedura.
 
 ## <a name="format-for-uploading-csv-files"></a>Formato per il caricamento di file con estensione csv
 

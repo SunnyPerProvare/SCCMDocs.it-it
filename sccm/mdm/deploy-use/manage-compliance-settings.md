@@ -10,12 +10,12 @@ ms.assetid: 9e83007f-e81c-4b7e-b47e-b01d7b19cfbc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 012539cd5879691f0e42910c72cb03052e77b722
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 5f6ee6ae8d059905e8cda08fec3d75deff177163
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351446"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418544"
 ---
 # <a name="managing-compliance-on-devices-managed-with-intune"></a>Gestione della conformità nei dispositivi gestiti con Intune
 
@@ -40,83 +40,83 @@ Questi scenari forniscono un'introduzione all'uso delle impostazioni di conformi
 
 ## <a name="scenarios-for-windows-81-and-windows-10-devices-managed-with-intune"></a>Scenari per dispositivi Windows 8.1 e Windows 10 gestiti con Intune  
 
-### <a name="scenario-restrict-access-to-the-app-store-on-all-windows-pcs"></a>Scenario: Limitare l'accesso all'App Store in tutti i PC Windows  
+### <a name="scenario-restrict-access-to-the-app-store-on-all-windows-pcs"></a>Scenario: Limitare l'accesso all'app store in tutti i PC Windows  
  In questo scenario si è l'amministratore IT per una società che gestisce informazioni estremamente riservate. Per questo motivo, si applicano restrizioni alle applicazioni che gli utenti possono installare. Si vuole impedire che gli utenti di tutti i PC Windows 10 scarichino app da Windows Store, quindi si intraprendono le azioni seguenti.  
 
-1.  Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **Windows 8.1 e Windows 10** , quindi fare clic su **Avanti**.  
+1. Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **Windows 8.1 e Windows 10** , quindi fare clic su **Avanti**.  
 
-2.  Nella pagina **Piattaforme supportate** selezionare tutte le piattaforme Windows 10.  
+2. Nella pagina **Piattaforme supportate** selezionare tutte le piattaforme Windows 10.  
 
-3.  Nella pagina **Impostazioni dispositivo** selezionare **Store**, quindi fare clic su **Avanti**.  
+3. Nella pagina **Impostazioni dispositivo** selezionare **Store**, quindi fare clic su **Avanti**.  
 
-4.  Nella pagina **Store** selezionare **Non consentito** come valore per **Store applicazioni**.  
+4. Nella pagina **Store** selezionare **Non consentito** come valore per **Store applicazioni**.  
 
-5.  Selezionare **Monitora e aggiorna impostazioni non conformi** per assicurarsi che la modifica venga applicata a tutti i PC.  
+5. Selezionare **Monitora e aggiorna impostazioni non conformi** per assicurarsi che la modifica venga applicata a tutti i PC.  
 
-6.  Completare la procedura guidata per creare l'elemento di configurazione.  
+6. Completare la procedura guidata per creare l'elemento di configurazione.  
 
- È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
+   È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
 
 ## <a name="scenarios-for-windows-phone-devices-managed-with-intune"></a>Scenari per dispositivi Windows Phone gestiti con Intune  
 
-### <a name="scenario-disable-the-use-of-screen-capture-on-a-windows-phone"></a>Scenario: Disabilitare l'uso dell'acquisizione schermo in un dispositivo Windows Phone  
+### <a name="scenario-disable-the-use-of-screen-capture-on-a-windows-phone"></a>Scenario: Disabilitare l'uso dell'acquisizione schermo in un Windows Phone  
  Questo scenario prevede l'uso di dispositivi Windows Phone 8.1 nell'azienda. Questi dispositivi eseguono un'app di vendita che contiene informazioni riservate. Per proteggere l'azienda, si vuole disabilitare l'uso dell'acquisizione schermo nel dispositivo, che potrebbe essere usato per trasmettere informazioni sensibili all'esterno dell'azienda.  
 
-1.  Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **Windows Phone** , quindi fare clic su **Avanti**.  
+1. Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **Windows Phone** , quindi fare clic su **Avanti**.  
 
-2.  Nella pagina **Piattaforme supportate** selezionare le piattaforme **Tutti i sistemi operativi Windows Phone 8.1**.  
+2. Nella pagina **Piattaforme supportate** selezionare le piattaforme **Tutti i sistemi operativi Windows Phone 8.1**.  
 
-3.  Nella pagina **Impostazioni dispositivo** selezionare **Dispositivo**, quindi fare clic su **Avanti**.  
+3. Nella pagina **Impostazioni dispositivo** selezionare **Dispositivo**, quindi fare clic su **Avanti**.  
 
-4.  Nella pagina **Dispositivo** selezionare **Disabilitato** come valore per **Acquisizione schermo**.  
+4. Nella pagina **Dispositivo** selezionare **Disabilitato** come valore per **Acquisizione schermo**.  
 
-5.  Selezionare **Monitora e aggiorna impostazioni non conformi** per assicurarsi che la modifica venga applicata a tutti i dispositivi Windows Phone 8.1.  
+5. Selezionare **Monitora e aggiorna impostazioni non conformi** per assicurarsi che la modifica venga applicata a tutti i dispositivi Windows Phone 8.1.  
 
-6.  Completare la procedura guidata per creare l'elemento di configurazione.  
+6. Completare la procedura guidata per creare l'elemento di configurazione.  
 
- È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione con System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
+   È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione con System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
 
 ## <a name="scenarios-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Scenari per dispositivi iOS e Mac OS X gestiti con Intune  
 
-### <a name="scenario-disable-the-camera-on-ios-devices"></a>Scenario: Disabilitare la fotocamera sui dispositivi iOS  
+### <a name="scenario-disable-the-camera-on-ios-devices"></a>Scenario: Disabilitare la fotocamera nei dispositivi iOS  
  In questo scenario l'azienda produce disegni per nuovi progetti di prodotti, che contengono informazioni sensibili da non divulgare.  Considerato che la società fornisce iPhone o iPad a tutti i dipendenti, si vuole disabilitare l'uso della fotocamera su tali dispositivi per impedire che venga usata per fotografare i disegni.  
 
-1.  Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **iOS e Mac OS X** , quindi fare clic su **Avanti**.  
+1. Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **iOS e Mac OS X** , quindi fare clic su **Avanti**.  
 
-2.  Nella pagina **Piattaforme supportate** selezionare le piattaforme per tutti i dispositivi iPhone e iPad.  
+2. Nella pagina **Piattaforme supportate** selezionare le piattaforme per tutti i dispositivi iPhone e iPad.  
 
-3.  Nella pagina **Impostazioni dispositivo** selezionare **Sicurezza**, quindi fare clic su **Avanti**.  
+3. Nella pagina **Impostazioni dispositivo** selezionare **Sicurezza**, quindi fare clic su **Avanti**.  
 
-4.  Nella pagina **Sicurezza** selezionare **Non consentito** come valore per **Fotocamera**.  
+4. Nella pagina **Sicurezza** selezionare **Non consentito** come valore per **Fotocamera**.  
 
-5.  Selezionare **Monitora e aggiorna impostazioni non conformi** per assicurarsi che la modifica venga applicata a tutti i dispositivi iOS.  
+5. Selezionare **Monitora e aggiorna impostazioni non conformi** per assicurarsi che la modifica venga applicata a tutti i dispositivi iOS.  
 
-6.  Completare la procedura guidata per creare l'elemento di configurazione.  
+6. Completare la procedura guidata per creare l'elemento di configurazione.  
 
- È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione con System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
+   È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione con System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
 
 ## <a name="scenarios-for-android-and-samsung-knox-standard-devices-managed-with-intune"></a>Scenari per dispositivi Android e Samsung KNOX Standard gestiti con Intune  
 
-### <a name="scenario-require-a-password-on-all-android-5-devices"></a>Scenario: Richiedere una password per tutti i dispositivi Android 5  
+### <a name="scenario-require-a-password-on-all-android-5-devices"></a>Scenario: Richiedi una password in tutti i dispositivi Android 5  
  In questo scenario verrà creato un elemento di configurazione solo per i dispositivi Android 5 che richiede agli utenti di configurare una password di almeno 6 caratteri nei propri dispositivi. Inoltre, se un utente immette per 5 volte una password errata, i dati del dispositivo vengono cancellati.  
 
-1.  Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **Android e Samsung KNOX** , quindi fare clic su **Avanti**.  
+1. Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **Android e Samsung KNOX** , quindi fare clic su **Avanti**.  
 
-2.  Nella pagina **Piattaforme supportate** selezionare solo **Android 5** per assicurarsi che le impostazioni vengano applicate solo a tale piattaforma.  
+2. Nella pagina **Piattaforme supportate** selezionare solo **Android 5** per assicurarsi che le impostazioni vengano applicate solo a tale piattaforma.  
 
-3.  Nella pagina **Impostazioni dispositivo** selezionare **Password**, quindi fare clic su **Avanti**.  
+3. Nella pagina **Impostazioni dispositivo** selezionare **Password**, quindi fare clic su **Avanti**.  
 
-4.  Nella pagina **Password** configurare le seguenti impostazioni:  
+4. Nella pagina **Password** configurare le seguenti impostazioni:  
 
-    -   **Richiedi impostazioni password nei dispositivi** > **Richiesta**  
+   -   **Richiedi impostazioni password nei dispositivi** > **Richiesta**  
 
-    -   **Lunghezza minima password (caratteri)** > **6**  
+   -   **Lunghezza minima password (caratteri)** > **6**  
 
-    -   **Numero di tentativi di accesso non riusciti prima della cancellazione dei dati dal dispositivo** > **5**  
+   -   **Numero di tentativi di accesso non riusciti prima della cancellazione dei dati dal dispositivo** > **5**  
 
-5.  Completare la procedura guidata per creare l'elemento di configurazione.  
+5. Completare la procedura guidata per creare l'elemento di configurazione.  
 
- È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
+   È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
 
 ## <a name="configuration-items-for-devices-managed-with-intune"></a>Elementi di configurazione per i dispositivi gestiti con Intune
 

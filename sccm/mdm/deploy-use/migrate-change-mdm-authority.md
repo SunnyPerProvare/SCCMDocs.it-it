@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: be503ec9-5324-4f7c-bcf5-77204328e99c
-ms.openlocfilehash: d5efcb78ad5e732691cc2f214f81db0b357e0e19
-ms.sourcegitcommit: 316899b08f2ef372993909e08e069f7edfed1d33
-ms.translationtype: HT
+ms.openlocfilehash: 4ded99c2084f274d519680e78fdc54825b3857cb
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44111111"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419513"
 ---
 # <a name="change-your-mdm-authority-to-intune-standalone"></a>Cambiare l'autorità MDM in Intune autonomo
 
@@ -48,20 +48,20 @@ Esaminare le informazioni seguenti per preparare il passaggio alla nuova autorit
 ## <a name="change-the-mdm-authority-to-intune"></a>Cambiare l'autorità MDM in Intune
 Usa la procedura seguente per modificare l'autorità MDM a livello di tenant in Intune.
 
-1.  Nella console di Configuration Manager passare ad **Amministrazione** &gt; **Panoramica** &gt; **Servizi cloud** &gt; **Sottoscrizione a Microsoft Intune** ed eliminare la sottoscrizione a Intune esistente.
-2.  Selezionare **Cambia l'autorità MDM in Microsoft Intune** e fare clic su **Avanti**.
+1. Nella console di Configuration Manager passare ad **Amministrazione** &gt; **Panoramica** &gt; **Servizi cloud** &gt; **Sottoscrizione a Microsoft Intune** ed eliminare la sottoscrizione a Intune esistente.
+2. Selezionare **Cambia l'autorità MDM in Microsoft Intune** e fare clic su **Avanti**.
 
-    ![Finestra di dialogo Rimuovi la sottoscrizione di Microsoft Intune](media/mdm-change-delete-subscription.png)
-3.  Accedere al tenant di Intune usato in origine quando è stata configurata l'autorità MDM in Configuration Manager.
-4.  Fare clic su **Avanti** e completare la procedura guidata.
-5.  L'autorità MDM è ora reimpostata. La sottoscrizione a Intune non è più visualizzata nel nodo Sottoscrizioni a Microsoft Intune della console di Configuration Manager.
-6.  Accedere al [portale di Intune](https://aka.ms/IntunePortal).
-7.  Nel pannello di Microsoft Intune fare clic su **Registrazione del dispositivo**.
-8.  Nel pannello Panoramica di Registrazione del dispositivo vedere la proprietà **Autorità MDM**.
+   ![Finestra di dialogo Rimuovi la sottoscrizione di Microsoft Intune](media/mdm-change-delete-subscription.png)
+3. Accedere al tenant di Intune usato in origine quando è stata configurata l'autorità MDM in Configuration Manager.
+4. Fare clic su **Avanti** e completare la procedura guidata.
+5. L'autorità MDM è ora reimpostata. La sottoscrizione a Intune non è più visualizzata nel nodo Sottoscrizioni a Microsoft Intune della console di Configuration Manager.
+6. Accedere al [portale di Intune](https://aka.ms/IntunePortal).
+7. Nel pannello di Microsoft Intune fare clic su **Registrazione del dispositivo**.
+8. Nel pannello Panoramica di Registrazione del dispositivo vedere la proprietà **Autorità MDM**.
 
-  > [!Important]    
-  > Non usare la console di Intune classica. È necessario accedere a Intune nel portale di Azure.
-7.  Verificare che l'autorità MDM sia stata modificata in **Microsoft Intune**. 
+   > [!Important]    
+   > Non usare la console di Intune classica. È necessario accedere a Intune nel portale di Azure.
+9. Verificare che l'autorità MDM sia stata modificata in **Microsoft Intune**. 
 
 ## <a name="next-steps"></a>Passaggi successivi
 Una volta completata la modifica dell'autorità MDM, esaminare le informazioni seguenti:

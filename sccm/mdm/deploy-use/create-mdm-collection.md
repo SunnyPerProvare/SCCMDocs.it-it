@@ -10,12 +10,12 @@ ms.assetid: d1b4337f-85e8-45e6-8bbe-9f18b49041c7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d271499baf48364fe24a8961cae767c46d05a332
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 8aba9fb658072ce4eaa2e4b2a364cf2b52f9c51b
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32346305"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53414651"
 ---
 # <a name="create-an-mdm-collection-with-system-center-configuration-manager-and-microsoft-intune"></a>Creare una raccolta MDM con System Center Configuration Manager e Microsoft Intune
 
@@ -31,4 +31,4 @@ A scopo di test è possibile impostare una **Regola diretta** e aggiungere utent
 ![Per creare una raccolta utenti per la gestione dei dispositivi mobili](../media/mdm-create-user-collection.png)
 
 > [!div class="button"]
-[Passaggio successivo >](confirm-dns.md)
+> [Passaggio successivo >](confirm-dns.md)

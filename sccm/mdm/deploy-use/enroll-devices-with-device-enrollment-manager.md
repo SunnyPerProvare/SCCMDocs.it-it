@@ -10,12 +10,12 @@ ms.assetid: 2905f26e-7859-497d-b995-5ff48261efa2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9a691bc98a26cdf56d22c03840997d9e0a380b7b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: cc1be1d602c3f9f8e65e0523d64c5b6a8e579c90
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32347621"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415553"
 ---
 # <a name="enroll-devices-with-device-enrollment-manager-with-configuration-manager"></a>Registrare i dispositivi usando il manager di registrazione dispositivi con Configuration Manager
 
@@ -34,15 +34,15 @@ Le limitazioni seguenti si applicano ai dispositivi gestiti usando un account de
 
 - Il gestore del negozio non può reimpostare il dispositivo dal portale aziendale.  
 - I dispositivi non possono essere aggiunti all'area di lavoro o ad Azure Active Directory. I dispositivi non possono quindi usare l'accesso condizionale.
--  Per distribuire le app aziendali ai dispositivi gestiti con il manager di registrazione dispositivi, distribuire l'app Portale aziendale come **Installazione richiesta** all'account utente del manager di registrazione dispositivi. Il manager di registrazione dispositivi può quindi avviare l'app Portale aziendale per installare altre app.
+- Per distribuire le app aziendali ai dispositivi gestiti con il manager di registrazione dispositivi, distribuire l'app Portale aziendale come **Installazione richiesta** all'account utente del manager di registrazione dispositivi. Il manager di registrazione dispositivi può quindi avviare l'app Portale aziendale per installare altre app.
 - Per migliorare le prestazioni, nell'app Portale aziendale viene visualizzato solo il dispositivo locale. La gestione remota di altri dispositivi DEM è possibile solo dalla console di Configuration Manager e se ne può occupare l'amministratore
 - Il sito Web del portale aziendale non è disponibile per gli account del manager di registrazione dispositivi. Usare l'app Portale aziendale.
 - Se si usa il manager di registrazione dispositivi per registrare i dispositivi iOS, non è possibile usare Apple Configurator o Apple Device Enrollment Program (DEP) per registrare i dispositivi. (solo iOS) 
 
- **Esempi di scenario con il manager di registrazione dispositivi:**   
-Un ristorante vuole adottare tablet POS per il personale di sala e monitor per gli ordini per il personale di cucina. I dipendenti non hanno quindi bisogno di accedere a dati aziendali o di effettuare l'accesso come utente. L'amministratore di Intune crea un account di manager di registrazione dispositivi e registra i dispositivi di proprietà dell'azienda con tale account. In alternativa, l'amministratore potrebbe concedere le credenziali di manager di registrazione dispositivi a un responsabile del ristorante, per consentirgli di registrare e gestire i dispositivi.  
+  **Esempi di scenario con il manager di registrazione dispositivi:**   
+  Un ristorante vuole adottare tablet POS per il personale di sala e monitor per gli ordini per il personale di cucina. I dipendenti non hanno quindi bisogno di accedere a dati aziendali o di effettuare l'accesso come utente. L'amministratore di Intune crea un account di manager di registrazione dispositivi e registra i dispositivi di proprietà dell'azienda con tale account. In alternativa, l'amministratore potrebbe concedere le credenziali di manager di registrazione dispositivi a un responsabile del ristorante, per consentirgli di registrare e gestire i dispositivi.  
 
- L'amministratore o il manager può quindi distribuire app specifiche del ruolo nei dispositivi del ristorante. Un amministratore può anche selezionare un dispositivo nella console e disattivarlo nella gestione dei dispositivi mobili.  
+  L'amministratore o il manager può quindi distribuire app specifiche del ruolo nei dispositivi del ristorante. Un amministratore può anche selezionare un dispositivo nella console e disattivarlo nella gestione dei dispositivi mobili.  
 
 #### <a name="add-a-device-enrollment-manager"></a>Aggiungere un manager di registrazione dispositivi  
 

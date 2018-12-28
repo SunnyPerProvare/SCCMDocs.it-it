@@ -10,12 +10,12 @@ ms.assetid: 28115475-e563-4e16-bf30-f4c9fe704754
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e410e50d05a0f190e3dfdc87df066b5ebce92321
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 35064653fc00d63a1e5ad371ce337fea9b141684
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351167"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424749"
 ---
 # <a name="protect-apps-using-mobile-application-management-policies-in-system-center-configuration-manager"></a>Proteggere le app usando i criteri di gestione delle applicazioni mobili in System Center Configuration Manager
 
@@ -30,16 +30,16 @@ I criteri di gestione delle applicazioni di System Center Configuration Manager 
 È anche possibile usare i criteri di gestione delle app mobili per proteggere le app su dispositivi non gestiti da Intune. Con questa nuova funzionalità è possibile applicare i criteri di gestione delle app mobili ad app che si connettono ai servizi di Office 365. Questa funzionalità non è supportata per le app che si connettono a Exchange o SharePoint locale.  
 
 Per usare questa nuova funzionalità, è necessario usare il portale di anteprima di Azure. Per acquisire familiarità con tale funzionalità, usare gli argomenti seguenti:  
--   [Introduzione ai criteri di gestione delle app mobili nel portale di Azure](https://technet.microsoft.com/library/mt627830.aspx)  
--   [Creare e distribuire i criteri di gestione delle app mobili con Microsoft Intune](https://technet.microsoft.com/library/mt627829.aspx)  
+- [Introduzione ai criteri di gestione delle app mobili nel portale di Azure](https://technet.microsoft.com/library/mt627830.aspx)  
+- [Creare e distribuire i criteri di gestione delle app mobili con Microsoft Intune](https://technet.microsoft.com/library/mt627829.aspx)  
 
- Un criterio di gestione delle applicazioni non viene distribuito direttamente come invece avviene per le linee base e gli elementi di configurazione in Configuration Manager. Al contrario, è possibile associare i criteri al tipo di distribuzione delle applicazioni che si vuole limitare. Le impostazioni specificate diventeranno effettive quando il tipo di distribuzione delle app verrà distribuito e installato nei dispositivi.  
+  Un criterio di gestione delle applicazioni non viene distribuito direttamente come invece avviene per le linee base e gli elementi di configurazione in Configuration Manager. Al contrario, è possibile associare i criteri al tipo di distribuzione delle applicazioni che si vuole limitare. Le impostazioni specificate diventeranno effettive quando il tipo di distribuzione delle app verrà distribuito e installato nei dispositivi.  
 
 Per applicare le restrizioni a un'app, è necessario che nell'app sia incorporato il Software Development Kit (SDK) dell'app di Microsoft Intune. Esistono due metodi per ottenere questo tipo di app:  
 
--   **Usare un'app gestita da criteri** (Android e iOS): queste app includono App SDK incorporato. Per aggiungere questo tipo di applicazione, è possibile specificare un collegamento all'app da un archivio di app, ad esempio l'iTunes store o Google Play. Non sono richieste ulteriori elaborazioni per questo tipo di app. Per un elenco delle app gestite da criteri disponibili per dispositivi iOS e Android, vedere [App gestite per criteri di gestione delle applicazioni per dispositivi mobili di Microsoft Intune](https://technet.microsoft.com/library/dn708489.aspx).  
+-   **Usare un'app gestita da criteri** (Android e iOS): Queste App includono App SDK incorporato. Per aggiungere questo tipo di applicazione, è possibile specificare un collegamento all'app da un archivio di app, ad esempio l'iTunes store o Google Play. Non sono richieste ulteriori elaborazioni per questo tipo di app. Per un elenco delle app gestite da criteri disponibili per dispositivi iOS e Android, vedere [App gestite per criteri di gestione delle applicazioni per dispositivi mobili di Microsoft Intune](https://technet.microsoft.com/library/dn708489.aspx).  
 
--   **Usare un'app con wrapper** (Android e iOS): app che sono state riassemblate per includere App SDK usando lo  **strumento per la disposizione testo per app di Microsoft Intune**. Questo strumento viene in genere usato per elaborare le app aziendali create internamente. Non può essere usato per elaborare le app state scaricate dall'App Store. Per altre informazioni, vedere i seguenti articoli:
+-   **Usare un'app "wrapping"** (Android e iOS): Queste App sono state riassemblate per includere App SDK usando il **Microsoft Intune App Wrapping Tool**. Questo strumento viene in genere usato per elaborare le app aziendali create internamente. Non può essere usato per elaborare le app state scaricate dall'App Store. Per altre informazioni, vedere i seguenti articoli:
     - [Preparare le app per iOS per la gestione di applicazioni per dispositivi mobili con lo strumento per la disposizione testo per app di Intune](https://technet.microsoft.com/library/dn878028.aspx)
 
     - [Preparare le app per Android per la gestione di applicazioni per dispositivi mobili con lo strumento per la disposizione testo per app di Intune](https://technet.microsoft.com/library/mt147413.aspx)  
@@ -48,54 +48,54 @@ Per applicare le restrizioni a un'app, è necessario che nell'app sia incorporat
 
 ##  <a name="step-1-obtain-the-link-to-a-policy-managed-app-or-create-a-wrapped-app"></a>Passaggio 1: Ottenere il collegamento a un'app gestita da criteri o creare un'app con wrapper  
 
--   **Per ottenere un collegamento a un'app gestita da criteri**: nell'App Store trovare e prendere nota dell'URL dell'app gestita da criteri che si vuole distribuire.  
+-   **Per ottenere un collegamento a un criterio managed app**: Nell'app store trovare e prendere nota dell'URL dell'app gestita da criteri che si desidera distribuire.  
 
      Ad esempio, l'URL dell'app Microsoft Word per iPad è **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**  
 
--   **Per creare un'app con wrapper**: usare le informazioni negli argomenti [Preparare le app per iOS per la gestione di applicazioni per dispositivi mobili con lo strumento per la disposizione testo per app di Intune](https://technet.microsoft.com/library/dn878028.aspx) e [Preparare le app per Android per la gestione di applicazioni per dispositivi mobili con lo strumento per la disposizione testo per app di Intune](https://technet.microsoft.com/library/mt147413.aspx) per creare un'app con wrapper.  
+-   **Per creare un'app con wrapper**: Usare le informazioni negli argomenti [preparare le app iOS per la gestione di applicazioni per dispositivi mobili con Microsoft Intune App Wrapping Tool](https://technet.microsoft.com/library/dn878028.aspx) e [preparare le app Android per la gestione di applicazioni per dispositivi mobili con Microsoft Intune Strumento di wrapping delle app](https://technet.microsoft.com/library/mt147413.aspx) per creare un'app con wrapper.  
 
      Lo strumento crea un'app elaborata e un file manifesto associato. Questi file vengono usati quando si crea un'applicazione di Configuration Manager che contiene l'app.  
 
 ##  <a name="step-2-create-a-configuration-manager-application-that-contains-an-app"></a>Passaggio 2: Creare un'applicazione di Configuration Manager che contenga un'app  
  La procedura per creare l'applicazione di Configuration Manager è diversa quando si usa un'app gestita da criteri (collegamento esterno) o un'app creata tramite Microsoft Intune App Wrapping Tool di Microsoft Intune per iOS (pacchetto dell'app per iOS). Per creare l'applicazione di Configuration Manager, usare una delle procedure seguenti.  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
+1. Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
 
-3.  Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea applicazione** per aprire la **Creazione guidata applicazione**.  
+2. Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea applicazione** per aprire la **Creazione guidata applicazione**.  
 
-4.  Nella pagina **Generale** selezionare **Rileva automaticamente le informazioni sull'applicazione dai file di installazione**.  
+3. Nella pagina **Generale** selezionare **Rileva automaticamente le informazioni sull'applicazione dai file di installazione**.  
 
-5.  Nell'elenco a discesa **Tipo** selezionare **Pacchetto app iOS (file \*.ipa)**.  
+4. Nell'elenco a discesa **Tipo** selezionare **Pacchetto app iOS (file \*.ipa)**.  
 
-6.  Fare clic su **Sfoglia** per selezionare il pacchetto dell'app che si vuole importare e quindi fare clic su **Avanti**.  
+5. Fare clic su **Sfoglia** per selezionare il pacchetto dell'app che si vuole importare e quindi fare clic su **Avanti**.  
 
-7.  Nella pagina **Informazioni generali** immettere il testo descrittivo e le informazioni di categoria che si desidera visualizzare agli utenti nel portale della società.  
+6. Nella pagina **Informazioni generali** immettere il testo descrittivo e le informazioni di categoria che si desidera visualizzare agli utenti nel portale della società.  
 
-8.  Completare la procedura guidata.  
+7. Completare la procedura guidata.  
 
- La nuova applicazione viene visualizzata nel nodo **Applicazioni** dell'area di lavoro **Raccolta software** .  
+   La nuova applicazione viene visualizzata nel nodo **Applicazioni** dell'area di lavoro **Raccolta software** .  
 
 ### <a name="create-an-application-that-contains-a-link-to-a-policy-managed-app"></a>Creare un'applicazione contenente un collegamento a un'app gestita da criteri  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
+1. Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
 
-3.  Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea applicazione** per aprire la **Creazione guidata applicazione**.  
+2. Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea applicazione** per aprire la **Creazione guidata applicazione**.  
 
-4.  Nella pagina **Generale** selezionare **Rileva automaticamente le informazioni sull'applicazione dai file di installazione**.  
+3. Nella pagina **Generale** selezionare **Rileva automaticamente le informazioni sull'applicazione dai file di installazione**.  
 
-5.  Nell'elenco a discesa **Tipo** selezionare una delle opzioni seguenti:  
+4. Nell'elenco a discesa **Tipo** selezionare una delle opzioni seguenti:  
 
-    -   Per iOS: **Pacchetto app per iOS nell'App Store**  
+   -   Per iOS: **Pacchetto app per iOS nell'App Store**  
 
-    -   Per Android: **Pacchetto app per Android in Google Play**  
+   -   Per Android: **Pacchetto app Android in Google Play**  
 
-6.  Immettere l' URL per l'app (dal passaggio 1) e quindi fare clic su **Avanti**.  
+5. Immettere l' URL per l'app (dal passaggio 1) e quindi fare clic su **Avanti**.  
 
-7.  Nella pagina **Informazioni generali** immettere il testo descrittivo e le informazioni di categoria che si desidera visualizzare agli utenti nel portale della società.  
+6. Nella pagina **Informazioni generali** immettere il testo descrittivo e le informazioni di categoria che si desidera visualizzare agli utenti nel portale della società.  
 
-8.  Completare la procedura guidata.  
+7. Completare la procedura guidata.  
 
- La nuova applicazione viene visualizzata nel nodo **Applicazioni** dell'area di lavoro **Raccolta software** .  
+   La nuova applicazione viene visualizzata nel nodo **Applicazioni** dell'area di lavoro **Raccolta software** .  
 
 ##  <a name="step-3-create-an-application-management-policy"></a>Passaggio 3: Creare criteri di gestione delle applicazioni  
  Creare quindi un criterio di gestione delle applicazioni che verrà associato all'applicazione. È possibile creare criteri di Managed Browser o generali.  
@@ -108,9 +108,9 @@ Per applicare le restrizioni a un'app, è necessario che nell'app sia incorporat
 
 4)  Nella pagina **Tipo di criterio** selezionare la piattaforma e il tipo di criterio e quindi fare clic su **Avanti**. Sono disponibili i tipi di criterio seguenti:  
 
--   **Generale**: il tipo di criterio Generale consente di modificare la funzionalità delle app distribuite per adeguarle ai criteri aziendali di conformità e sicurezza. Ad esempio, è possibile limitare le operazioni taglia, copia e incolla in un'app con restrizioni.  
+-   **Generale**: Tipo di criteri generale consente di modificare la funzionalità delle App distribuite per adeguarle ai aziendali di conformità e criteri di sicurezza. Ad esempio, è possibile limitare le operazioni taglia, copia e incolla in un'app con restrizioni.  
 
--   **Managed Browser**: consente di scegliere se consentire o meno a Managed Browser di aprire un elenco di URL. Il tipo di criteri Managed Browser consente di modificare la funzionalità dell'app Intune Managed Browser. Si tratta di un Web browser che consente di gestire le azioni eseguibili dagli utenti, inclusi i siti che possono visitare, e come aprire i collegamenti al contenuto all'interno del browser. Altre informazioni sull'  [app Intune Managed Browser per iOS](https://itunes.apple.com/us/app/microsoft-intune-managed-browser/id943264951?mt=8) e l' [app Intune Managed Browser per Android](https://play.google.com/store/apps/details?id=com.microsoft.intune.mam.managedbrowser&hl=en).
+-   **Managed Browser**: I criteri di Managed Browser consentono di decidere se consentire o bloccare il browser gestito di aprire un elenco di URL. Il tipo di criteri Managed Browser consente di modificare la funzionalità dell'app Intune Managed Browser. Si tratta di un Web browser che consente di gestire le azioni eseguibili dagli utenti, inclusi i siti che possono visitare, e come aprire i collegamenti al contenuto all'interno del browser. Altre informazioni sull'  [app Intune Managed Browser per iOS](https://itunes.apple.com/us/app/microsoft-intune-managed-browser/id943264951?mt=8) e l' [app Intune Managed Browser per Android](https://play.google.com/store/apps/details?id=com.microsoft.intune.mam.managedbrowser&hl=en).
 
 5)  Nella pagina **Criteri iOS** o **Criteri Android** configurare i valori seguenti come richiesto e quindi fare clic su **Avanti**. Le opzioni possono variare a seconda del tipo di dispositivo per il quale si sta configurando il criterio.  
 
@@ -139,7 +139,7 @@ Per altre informazioni, vedere [Gestire un accesso Internet tramite i criteri di
 
  Il nuovo criterio viene visualizzato nel nodo **Criteri di gestione delle applicazioni** dell'area di lavoro **Raccolta software** .  
 
-##  <a name="step-4-associate-the-application-management-policy-with-a-deployment-type"></a>Passaggio 4: Associare i criteri di gestione delle applicazioni a un tipo di distribuzione  
+##  <a name="step-4-associate-the-application-management-policy-with-a-deployment-type"></a>Passaggio 4: Associare i criteri di gestione di applicazioni con un tipo di distribuzione  
 
  Quando viene creato un tipo di distribuzione per un'app che richiede un criterio di gestione dell'applicazione, Configuration Manager lo riconosce e chiede di associare un criterio di gestione dell'app. Per Managed Browser, è necessario associare i criteri Managed Browser e Generale. Per altre informazioni, vedere [Create applications](create-applications.md) (Creare le applicazioni).  
 
@@ -154,13 +154,13 @@ Per altre informazioni, vedere [Gestire un accesso Internet tramite i criteri di
 ##  <a name="step-5-monitor-the-app-deployment"></a>Passaggio 5: Monitorare la distribuzione dell'app  
  Dopo aver creato e distribuito un'app associata al criterio di gestione delle applicazioni mobili, è possibile monitorare l'app e risolvere eventuali conflitti di criteri.  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Panoramica** > **Distribuzioni**.  
+1. Nella console di Configuration Manager scegliere **Raccolta software** > **Panoramica** > **Distribuzioni**.  
 
-3.  Selezionare la distribuzione che è stata creata. Nella scheda **Home** scegliere **Proprietà**.  
+2. Selezionare la distribuzione che è stata creata. Nella scheda **Home** scegliere **Proprietà**.  
 
-4.  Nel riquadro dei dettagli per la distribuzione scegliere **Criteri di gestione delle applicazioni** in **Oggetti correlati**.  
+3. Nel riquadro dei dettagli per la distribuzione scegliere **Criteri di gestione delle applicazioni** in **Oggetti correlati**.  
 
- Per altre informazioni sul monitoraggio delle applicazioni, vedere [Monitorare le applicazioni](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
+   Per altre informazioni sul monitoraggio delle applicazioni, vedere [Monitorare le applicazioni](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
 
 ##  <a name="learn-how-policy-conflicts-are-resolved"></a>Informazioni su come vengono risolti i conflitti tra criteri  
  Quando si verifica un conflitto tra i criteri di gestione delle applicazioni mobili nella prima distribuzione all'utente o al dispositivo, il valore di impostazione specifico in conflitto viene rimosso dai criteri distribuiti all'app. L'app usa quindi un valore in conflitto incorporato.  

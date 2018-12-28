@@ -10,12 +10,12 @@ ms.assetid: 2a7d7170-1933-40e9-96d6-74a6eb7278e2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c538c3b7668cc93069f0805b98f29586c3d7c86c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 391ecbd4ff9f863f41454786e8f8232b31a112a5
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351694"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418323"
 ---
 # <a name="set-up-certificates-for-trusted-communications-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Configurare i certificati per le comunicazioni attendibili per la gestione dei dispositivi mobili locale in System Center Configuration Manager
 
@@ -111,21 +111,21 @@ La gestione dei dispositivi mobili locale di System Center Configuration Manager
 ##  <a name="bkmk_requestCert"></a> Richiedere il certificato del server Web per ogni ruolo del sistema del sito  
  I dispositivi registrati per la gestione dei dispositivi mobili locale devono considerare attendibili gli endpoint SSL che ospitano il punto di registrazione, il punto proxy di registrazione, il punto di distribuzione e il punto di gestione dispositivi.  La procedura seguente mostra come richiedere il certificato del server Web per IIS. È necessario eseguire questa operazione per ogni server (endpoint SSL) che ospita uno dei ruoli del sistema del sito necessari per la gestione dei dispositivi mobili locale.  
 
-1.  Nel server del sito primario aprire il prompt dei comandi con le autorizzazioni di amministratore, digitare **MMC** e premere **INVIO**.  
+1. Nel server del sito primario aprire il prompt dei comandi con le autorizzazioni di amministratore, digitare **MMC** e premere **INVIO**.  
 
-2.  In MMC fare clic su **File** > **Aggiungi/Rimuovi snap-in**.  
+2. In MMC fare clic su **File** > **Aggiungi/Rimuovi snap-in**.  
 
-3.  Nello snap-in Certificati selezionare **Certificati**, fare clic su **Aggiungi**, selezionare **Account del computer**, fare clic su **Avanti**, fare clic su **Fine** e quindi fare clic su **OK** per uscire dalla finestra Aggiungi o rimuovi snap-in.  
+3. Nello snap-in Certificati selezionare **Certificati**, fare clic su **Aggiungi**, selezionare **Account del computer**, fare clic su **Avanti**, fare clic su **Fine** e quindi fare clic su **OK** per uscire dalla finestra Aggiungi o rimuovi snap-in.  
 
-4.  Fare clic con il pulsante destro del mouse su **Personale** e scegliere **Tutte le attività** > **Richiedi nuovo certificato**.  
+4. Fare clic con il pulsante destro del mouse su **Personale** e scegliere **Tutte le attività** > **Richiedi nuovo certificato**.  
 
-5.  Nella procedura guidata Registrazione certificato fare clic su **Avanti**, selezionare **Criteri di registrazione Active Directory** e fare clic su **Avanti**.  
+5. Nella procedura guidata Registrazione certificato fare clic su **Avanti**, selezionare **Criteri di registrazione Active Directory** e fare clic su **Avanti**.  
 
-6.  Selezionare la casella di controllo accanto al certificato del server Web (**Server Web MDM ConfigMgr**), quindi fare clic su **Registrazione**.  
+6. Selezionare la casella di controllo accanto al certificato del server Web (**Server Web MDM ConfigMgr**), quindi fare clic su **Registrazione**.  
 
-7.  Al termine della registrazione del certificato, fare clic su **Fine**.  
+7. Al termine della registrazione del certificato, fare clic su **Fine**.  
 
- Dato che per ogni server sarà necessario un certificato server Web univoco, occorre ripetere questa procedura per ogni server che ospita uno dei ruoli del sistema del sito necessari per la gestione dei dispositivi mobili locale.  Se un server ospita tutti i ruoli del sistema del sito, è sufficiente richiedere un certificato del server Web.  
+   Dato che per ogni server sarà necessario un certificato server Web univoco, occorre ripetere questa procedura per ogni server che ospita uno dei ruoli del sistema del sito necessari per la gestione dei dispositivi mobili locale.  Se un server ospita tutti i ruoli del sistema del sito, è sufficiente richiedere un certificato del server Web.  
 
 ##  <a name="bkmk_bindCert"></a> Associare il certificato al server Web  
  A questo punto è necessario che il nuovo certificato venga associato al server Web per ogni server del sistema del sito che ospita i ruoli del sistema del sito necessari per la gestione dei dispositivi mobili locale. Seguire questa procedura per ogni server che ospita i ruoli del sistema del sito di punto di registrazione e punto proxy di registrazione. Se un server ospita tutti i ruoli del sistema del sito, è sufficiente eseguire la procedura una sola volta. Questa operazione non è necessaria per i ruoli del sistema del sito punto di distribuzione e punto di gestione dispositivi perché questi ricevono automaticamente il certificato richiesto durante la registrazione.  

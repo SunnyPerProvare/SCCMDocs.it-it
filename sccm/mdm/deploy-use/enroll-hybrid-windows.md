@@ -10,12 +10,12 @@ ms.assetid: dc1f70f5-64ab-42ab-aa91-d3858803e12f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1e45cae03754fcfa3a310bf59e8e3280d5088518
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 26529460498d10fb4ee747059ca050cd6af9db54
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349627"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415960"
 ---
 # <a name="set-up-windows-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurare la gestione di dispositivi ibridi Windows con System Center Configuration Manager e Microsoft Intune
 
@@ -26,16 +26,16 @@ Questo argomento descrive in che modo gli amministratori IT possono consentire a
 ## <a name="enable-windows-device-management"></a>Abilitare la gestione dei dispositivi Windows
 Per abilitare la gestione dei dispositivi Windows per PC o dispositivi mobili, usare la procedura seguente:
 
-1.  Prima di impostare la registrazione per una qualsiasi piattaforma, completare i prerequisiti e le procedure indicate in [Setup hybrid MDM](setup-hybrid-mdm.md) (Impostare una MDM ibrida).  
-2.  Nell'area di lavoro **Amministrazione** della console di Configuration Manager andare a **Panoramica** > **Servizi cloud** > **Sottoscrizioni a Microsoft Intune**.  
-3.  Nella barra multifunzione fare clic su **Configura piattaforme** e quindi selezionare la piattaforma Windows:
-    - **Windows** per PC desktop e portatili Windows, quindi completare i passaggi seguenti:
-      1. Nella scheda **Generale** fare clic sulla casella di controllo **Abilita registrazione Windows**.
-      2. Se si usa un certificato per firmare il codice e distribuire l'app del portale aziendale, individuare il **certificato di firma del codice**. Gli utenti dei dispositivi possono anche installare l'app del portale aziendale da Microsoft Store o è possibile distribuire l'app da Microsoft Store per le aziende senza firma del codice.
-      3. Inoltre è possibile configurare le [impostazioni di Windows Hello for Business](windows-hello-for-business-settings.md).
-    - **Windows Phone** per telefoni e tablet Windows, quindi completare la procedura seguente:
-      1. Nella scheda **Generale** fare clic sulla casella di controllo **Windows Phone 8.1 e Windows 10 Mobile**. Windows Phone 8.0 non è più supportato.
-      2. Se l'organizzazione ha bisogno di trasferire localmente app aziendali, è possibile caricare il file o il token necessario. Per altre informazioni sul trasferimento locale di app, vedere [Creare applicazioni Windows](https://docs.microsoft.com/sccm/apps/get-started/creating-windows-applications).
+1. Prima di impostare la registrazione per una qualsiasi piattaforma, completare i prerequisiti e le procedure indicate in [Setup hybrid MDM](setup-hybrid-mdm.md) (Impostare una MDM ibrida).  
+2. Nell'area di lavoro **Amministrazione** della console di Configuration Manager andare a **Panoramica** > **Servizi cloud** > **Sottoscrizioni a Microsoft Intune**.  
+3. Nella barra multifunzione fare clic su **Configura piattaforme** e quindi selezionare la piattaforma Windows:
+   - **Windows** per PC desktop e portatili Windows, quindi completare i passaggi seguenti:
+     1. Nella scheda **Generale** fare clic sulla casella di controllo **Abilita registrazione Windows**.
+     2. Se si usa un certificato per firmare il codice e distribuire l'app del portale aziendale, individuare il **certificato di firma del codice**. Gli utenti dei dispositivi possono anche installare l'app del portale aziendale da Microsoft Store o è possibile distribuire l'app da Microsoft Store per le aziende senza firma del codice.
+     3. Inoltre è possibile configurare le [impostazioni di Windows Hello for Business](windows-hello-for-business-settings.md).
+   - **Windows Phone** per telefoni e tablet Windows, quindi completare la procedura seguente:
+     1. Nella scheda **Generale** fare clic sulla casella di controllo **Windows Phone 8.1 e Windows 10 Mobile**. Windows Phone 8.0 non è più supportato.
+     2. Se l'organizzazione ha bisogno di trasferire localmente app aziendali, è possibile caricare il file o il token necessario. Per altre informazioni sul trasferimento locale di app, vedere [Creare applicazioni Windows](https://docs.microsoft.com/sccm/apps/get-started/creating-windows-applications).
         - **Token di registrazione applicazione**
         - **File con estensione .pfx**
         - **Nessuno** Se si usa un certificato Symantec, è possibile specificare **Show an alert before Symantec certificates expire** (Mostra un avviso prima della scadenza dei certificati Symantec).
@@ -67,15 +67,15 @@ Con la registrazione automatica è possibile registrare PC Windows 10 e disposit
 
 1. Accedere al [portale di gestione di Azure](https://portal.azure.com), https://manage.windowsazure.com), e selezionare **Azure Active Directory**.
 
-  ![Schermata del portale di Azure](../media/auto-enroll-azure-main.png)
+   ![Schermata del portale di Azure](../media/auto-enroll-azure-main.png)
 
 2. Selezionare **Servizi Mobility (MDM e MAM)**.
 
-  ![Schermata del portale di Azure](../media/auto-enroll-mdm.png)
+   ![Schermata del portale di Azure](../media/auto-enroll-mdm.png)
 
 3. Selezionare **Microsoft Intune**.
 
-  ![Schermata del portale di Azure](../media/auto-enroll-intune.png)
+   ![Schermata del portale di Azure](../media/auto-enroll-intune.png)
 
 4. Configurare **Ambito utente MDM**. Specificare i dispositivi utente da gestire con Microsoft Intune. I dispositivi utente Windows 10 vengono registrati automaticamente per essere gestiti con Microsoft Intune.
 
@@ -113,7 +113,7 @@ Se si dispone di più suffissi UPN, è necessario creare un CNAME per ciascun no
 |----------|---------------|---------------|---|
 |CNAME|EnterpriseEnrollment.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com|1 ora|
 |CNAME|EnterpriseEnrollment.us.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com|1 ora|
-|CNAME|EnterpriseEnrollment.eu.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com| 1 ora|
+|CNAME|EnterpriseEnrollment.eu.contoso.com|EnterpriseEnrollment-s.manage.microsoft.com| 1 ora|
 
 `EnterpriseEnrollment-s.manage.microsoft.com`: supporta un reindirizzamento al servizio Intune con riconoscimento del dominio dal nome di dominio del messaggio di posta elettronica
 
@@ -124,4 +124,4 @@ La propagazione delle modifiche ai record DNS potrebbe richiedere fino a 72 ore.
  Dopo aver completato la configurazione occorre informare gli utenti su come registrare i loro dispositivi. Per informazioni, vedere [Informazioni sull'uso di Microsoft Intune per gli utenti finali](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune). È possibile indirizzare gli utenti a [Uso del dispositivo Windows con Intune](https://docs.microsoft.com/intune/enduser/enroll-your-device-in-intune-windows). Queste informazioni si applicano ai dispositivi mobili gestiti sia con Microsoft Intune che con Configuration Manager.
 
 > [!div class="button"]
-[< Passaggio precedente](create-service-connection-point.md)  [Passaggio successivo >](set-up-additional-management.md)
+> [< Passaggio precedente](create-service-connection-point.md)  [Passaggio successivo >](set-up-additional-management.md)

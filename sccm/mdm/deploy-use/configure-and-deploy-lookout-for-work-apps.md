@@ -10,12 +10,12 @@ ms.assetid: 3f62b763-4347-453d-b0a7-1f4a0d1d4105
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 87ad7a768128cb11a1fc361c90a6eccac454a28c
-ms.sourcegitcommit: 9cff0702c2cc0f214173b47ec241f7e5a40f84e6
-ms.translationtype: HT
+ms.openlocfilehash: 00fa7e538f6156f0dacee00feeb4b767a3c83a5c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34752591"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417624"
 ---
 # <a name="configure-and-deploy-lookout-for-work-apps"></a>Configurare e distribuire l'app Lookout for Work
 
@@ -31,9 +31,9 @@ Questo articolo illustra come configurare e distribuire l'app Lookout for Work p
 2.  Nella pagina **Generale** della Distribuzione guidata del software specificare le seguenti informazioni:  
     - Tipo: selezionare **Pacchetto app Android in Google Play**.
     - Percorso: copiare il collegamento dell'app Lookout for Work da Google Play Store e incollarlo qui
-    - Autore: Lookout Mobile Security
+    - Server di pubblicazione: Lookout Mobile Security
     - Nome: Lookout for Work
-    - Descrizione: Lookout offre la migliore protezione contro le minacce per dispositivi mobili. Dopo l'installazione, l'app Lookout protegge il dispositivo dalle minacce che, se rilevate, vengono segnalate all'utente e all'amministratore IT.
+    - Descrizione: Lookout offre la migliore protezione contro le minacce per dispositivi mobili per proteggere il dispositivo. Dopo l'installazione, l'app Lookout protegge il dispositivo dalle minacce che, se rilevate, vengono segnalate all'utente e all'amministratore IT.
     - Categoria amministrativa: Gestione computer  
 
     Al completamento, l'app Lookout for Work viene visualizzata nell'elenco di applicazioni.  
@@ -55,7 +55,7 @@ Questo articolo illustra come configurare e distribuire l'app Lookout for Work p
 3. Abilitare l'autenticazione Azure Active Directory (Azure AD) per gli utenti iOS.
    1.  Accedere al [pannello di Azure AD del portale di Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) e passare alla pagina di registrazione delle app.  
    2.  Specificare **app Lookout for Work per iOS** come Nome e selezionare **Nativa** come Tipo applicazione.  
-  ![Schermata della finestra di dialogo Aggiungi applicazione con l'opzione Applicazione client nativa](media/aad-add-app-reg.png)
+   ![Schermata della finestra di dialogo Aggiungi applicazione con l'opzione Applicazione client nativa](media/aad-add-app-reg.png)
 
    3.  Per questo URI di reindirizzamento, usare il formato seguente: `lookoutwork://com.lookout.enterprise.<yourcompanyname>`, sostituendo `<yourcompanyname>` con il nome della società. Ad esempio: `lookoutwork://com.lookout.enterprise.contoso`
    4. Fare clic su **Crea** per creare l'app. 
@@ -78,7 +78,7 @@ Questo articolo illustra come configurare e distribuire l'app Lookout for Work p
 
 6. Distribuire l'app Lookout for Work agli utenti. Per altre informazioni, vedere l'argomento relativo alla [distribuzione delle applicazioni](/sccm/apps/deploy-use/deploy-applications).  
 
-  Selezionare gli stessi utenti aggiunti all'opzione Enrollment Management (Gestisci registrazione) nella console di Lookout. Scegliere l'opzione **Installazione richiesta**. Questa opzione richiede l'installazione dell'app Lookout nel dispositivo dell'utente.
+   Selezionare gli stessi utenti aggiunti all'opzione Enrollment Management (Gestisci registrazione) nella console di Lookout. Scegliere l'opzione **Installazione richiesta**. Questa opzione richiede l'installazione dell'app Lookout nel dispositivo dell'utente.
 
 
 

@@ -9,36 +9,36 @@ ms.assetid: df10dc4d-c9ff-4574-bb33-8d30eb14cfe3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4590077b303d5676aa72a816d785a0864fe2205f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 6cfeae4ddc582d1d641d1065f2542319d5519b5e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351973"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416423"
 ---
 # <a name="how-to-create-configuration-items-for-windows-phone-devices-managed-without-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Windows Phone gestiti senza il client System Center Configuration Manager
 Usare l'elemento di configurazione **Windows Phone** di System Center Configuration Manager per gestire le impostazioni per i dispositivi Windows Phone registrati in Microsoft Intune o gestiti localmente da Configuration Manager.  
   
 ### <a name="to-create-a-windows-phone-configuration-item"></a>Per creare un elemento di configurazione Windows Phone  
   
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1. Nella console di Configuration Manager fare clic su **Asset e conformità**.  
   
-2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
+2. Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
   
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
+3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
   
-4.  Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
+4. Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
   
-5.  In **Specificare il tipo di elemento di configurazione da creare**selezionare **Windows Phone**.  
+5. In **Specificare il tipo di elemento di configurazione da creare**selezionare **Windows Phone**.  
   
-6.  Fare clic su **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
+6. Fare clic su **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
   
-7.  Nella pagina **Piattaforme supportate** della procedura guidata selezionare le piattaforme Windows Phone specifiche che valuteranno l'elemento di configurazione.  
+7. Nella pagina **Piattaforme supportate** della procedura guidata selezionare le piattaforme Windows Phone specifiche che valuteranno l'elemento di configurazione.  
   
-8.  Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per dettagli, vedere [Informazioni di riferimento sulle impostazioni degli elementi di configurazione Windows Phone](#BKMK_Setref) in questo argomento e quindi fare clic su **Avanti**.  
+8. Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per dettagli, vedere [Informazioni di riferimento sulle impostazioni degli elementi di configurazione Windows Phone](#BKMK_Setref) in questo argomento e quindi fare clic su **Avanti**.  
   
-    > [!TIP]  
-    >  Se l'impostazione da modificare non è inclusa nell'elenco, selezionare la casella di controllo **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  
+   > [!TIP]  
+   >  Se l'impostazione da modificare non è inclusa nell'elenco, selezionare la casella di controllo **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  
   
 9. In ogni pagina di impostazioni configurare le impostazioni necessarie e specificare se si vuole monitorarle e aggiornarle nel caso non siano conformi nei dispositivi (se questa funzionalità è supportata).  
   
@@ -61,7 +61,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
   
 12. Completare la procedura guidata.  
   
- È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
+    È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
   
 ##  <a name="windows-phone-configuration-item-settings-reference"></a>Informazioni di riferimento sulle impostazioni degli elementi di configurazione Windows Phone  
   
@@ -293,7 +293,7 @@ Usare l'elemento di configurazione **Windows Phone** di System Center Configurat
 |Impostazione|Altre informazioni|  
 |**Elenco delle app bloccate**|Selezionare questa opzione per specificare un elenco di applicazioni che gli utenti non sono autorizzati a installare.|  
 |**Elenco delle app consentite**|Selezionare questa opzione per specificare un elenco di applicazioni che gli utenti sono autorizzati a installare.|  
-|**Aggiungi**|Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, nella pagina di Windows Phone Store cercare l'app da usare.<br /><br /> **Esempio:** cercare l'app **Skype** nello store. L'URL da usare sarà http://www.windowsphone.com/en-us/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51.<br /><br /> Nel caso dell'app del portale aziendale o delle app line-of-business, non è necessario specificare un URL completo ma soltanto il GUID dell'app.|  
+|**Aggiungi**|Aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.<br /><br /> Per specificare l'URL, nella pagina di Windows Phone Store cercare l'app da usare.<br /><br /> **Esempio:** Cercare nello store il **Skype** app. L'URL da usare sarà http://www.windowsphone.com/en-us/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51.<br /><br /> Nel caso dell'app del portale aziendale o delle app line-of-business, non è necessario specificare un URL completo ma soltanto il GUID dell'app.|  
 |**Modifica**|Consente di modificare il nome, l'autore e l'URL dell'app selezionata.|  
 |**Rimuovi**|Elimina l'app selezionata dall'elenco.|  
 |**Importaa**|Importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.|  

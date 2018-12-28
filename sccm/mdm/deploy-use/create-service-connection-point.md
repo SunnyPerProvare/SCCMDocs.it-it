@@ -10,12 +10,12 @@ ms.assetid: 617abb22-d22f-41fb-a76b-1c4259e419d2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3dfd02a84cef31c22023b7fc4cb75931dc82160f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 12626a734138094e7558617b714b2b5acdac6450
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32346457"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424324"
 ---
 # <a name="create-a-service-connection-point-with-system-center-configuration-manager-and-microsoft-intune"></a>Creare un punto di connessione del servizio con System Center Configuration Manager e Microsoft Intune
 
@@ -37,9 +37,9 @@ Dopo avere creato la sottoscrizione, sarà quindi possibile installare il ruolo 
 
 3.  Aggiungere il ruolo del **punto di connessione del servizio** a un server del sistema del sito nuovo o esistente usando il passaggio associato:
 
-    -   Nuovo server del sistema del sito: nel gruppo **Crea** della scheda **Home** fare clic su **Crea server di sistema sito** per avviare la Creazione guidata server del sistema sito.
+    -   Nuovo server del sistema del sito: Nel **Home** nella scheda il **Create** fare clic su **crea Server di sistema del sito** per avviare Creazione guidata Server del sistema del sito.
 
-    -   Server del sistema del sito esistente: fare clic sul server in cui si vuole installare il ruolo del punto di connessione del servizio. Nella scheda **Home** , nel gruppo **Server** , fare clic su **Aggiungi ruoli del sistema del sito** per avviare l'Aggiunta guidata ruoli del sistema del sito.
+    -   Server del sistema del sito esistente: Selezionare il server in cui si desidera installare il ruolo punto di connessione del servizio. Nella scheda **Home** , nel gruppo **Server** , fare clic su **Aggiungi ruoli del sistema del sito** per avviare l'Aggiunta guidata ruoli del sistema del sito.
 
 4.  Nella pagina **Selezione ruolo del sistema** selezionare **Punto di connessione del servizio**, quindi fare clic su **Avanti**.
 ![Creare un punto di connessione del servizio](../media/mdm-service-connection-point.png)
@@ -54,4 +54,4 @@ Dopo avere creato la sottoscrizione, sarà quindi possibile installare il ruolo 
 2.  Il certificato del passaggio 1 viene installato nel ruolo del sito del punto di connessione del servizio e viene usato per autenticare e autorizzare tutte le ulteriori comunicazioni con il servizio Microsoft Intune.
 
 > [!div class="button"]
-[< Passaggio precedente](terms-and-conditions.md)  [Passaggio successivo >](enable-platform-enrollment.md)
+> [< Passaggio precedente](terms-and-conditions.md)  [Passaggio successivo >](enable-platform-enrollment.md)
