@@ -10,36 +10,36 @@ ms.assetid: 613a48ac-c55d-4c4a-94ea-d3747a1b10cb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0a6925cdc1f3b3a5018cc4895820019d88254bd3
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: bf5f580d10c48bb44b3c202832ffff3a06c5c37f
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353342"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416181"
 ---
 # <a name="how-to-create-configuration-items-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Come creare elementi di configurazione per dispositivi iOS e Mac OS X gestiti con Intune
 Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configuration Manager per gestire le impostazioni per i dispositivi iOS e Mac OS X registrati in Microsoft Intune o gestiti localmente da Configuration Manager.  
   
 ### <a name="to-create-an-ios-and-mac-os-x-configuration-item"></a>Per creare un elemento di configurazione per iOS e Mac OS X  
   
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1. Nella console di Configuration Manager fare clic su **Asset e conformità**.  
   
-2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
+2. Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
   
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
+3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
   
-4.  Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
+4. Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
   
-5.  In **Specificare il tipo di elemento di configurazione da creare**selezionare **iOS e Mac OS X**.  
+5. In **Specificare il tipo di elemento di configurazione da creare**selezionare **iOS e Mac OS X**.  
   
-6.  Fare clic su **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
+6. Fare clic su **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
   
-7.  Nella pagina **Piattaforme supportate** della procedura guidata selezionare le piattaforme iOS o Mac OS X specifiche che valuteranno l'elemento di configurazione.  
+7. Nella pagina **Piattaforme supportate** della procedura guidata selezionare le piattaforme iOS o Mac OS X specifiche che valuteranno l'elemento di configurazione.  
   
-8.  Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per dettagli, vedere [Informazioni di riferimento sulle impostazioni degli elementi di configurazione per iOS e Mac OS X](#BKMK_Setref) in questo argomento e quindi fare clic su **Avanti**.  
+8. Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per dettagli, vedere [Informazioni di riferimento sulle impostazioni degli elementi di configurazione per iOS e Mac OS X](#BKMK_Setref) in questo argomento e quindi fare clic su **Avanti**.  
   
-    > [!TIP]  
-    >  Se l'impostazione da modificare non è inclusa nell'elenco, selezionare la casella di controllo **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  
+   > [!TIP]  
+   >  Se l'impostazione da modificare non è inclusa nell'elenco, selezionare la casella di controllo **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  
   
 9. In ogni pagina di impostazioni configurare le impostazioni necessarie e specificare se si vuole monitorarle e aggiornarle nel caso non siano conformi nei dispositivi (se questa funzionalità è supportata).  
   
@@ -62,7 +62,7 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
   
 12. Completare la procedura guidata.  
   
- È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
+    È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
   
 ##  <a name="ios-and-mac-os-x-configuration-item-settings-reference"></a>Informazioni di riferimento sulle impostazioni degli elementi di configurazione per iOS e Mac OS X  
   
@@ -226,35 +226,35 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
   
 #### <a name="to-specify-the-compliant-or-noncompliant-apps-list"></a>Per indicare le app conformi o non conformi  
   
-1.  Nella pagina **App conformi e non conformi (iOS)** specificare le informazioni seguenti:  
+1. Nella pagina **App conformi e non conformi (iOS)** specificare le informazioni seguenti:  
   
-    -   **Elenco App non conformi**: selezionare questa opzione per specificare un elenco di app da segnalare come non conformi se installate dagli utenti.  
+   -   **Elenco App non conformi**: selezionare questa opzione per specificare un elenco di app da segnalare come non conformi se installate dagli utenti.  
   
-    -   **Elenco App conformi**: selezionare questa opzione per specificare un elenco di app che gli utenti sono autorizzati a installare. Tutte le altre app installate verranno segnalate come non conformi.  
+   -   **Elenco App conformi**: selezionare questa opzione per specificare un elenco di app che gli utenti sono autorizzati a installare. Tutte le altre app installate verranno segnalate come non conformi.  
   
-    -   **Aggiungi** aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.  
+   -   **Aggiungi** aggiunge un'app all'elenco selezionato. Specificare un nome desiderato, facoltativamente l'autore dell'app e l'URL dell'app nell'App Store.  
   
-         Per specificare l'URL, cercare l'app da usare nell'App Store di iTunes.  
+        Per specificare l'URL, cercare l'app da usare nell'App Store di iTunes.  
   
-         Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app conformi e non conformi.  
+        Aprire la pagina dell'app e copiare l'URL negli Appunti. A questo punto l'URL può essere usato in entrambi gli elenchi di app conformi e non conformi.  
   
-         **Esempio:** cercare l'app **Microsoft Word per iPad** nell'App Store. L'URL da usare sarà **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
+        **Esempio:** Cercare nello store il **Microsoft Word per iPad** app. L'URL da usare sarà **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
   
-    -   **Modifica**: consente di modificare il nome, l'autore e l'URL dell'app selezionata.  
+   -   **Modifica**: consente di modificare il nome, l'autore e l'URL dell'app selezionata.  
   
-    -   **Rimuovi**: elimina l'app selezionata dall'elenco.  
+   -   **Rimuovi**: elimina l'app selezionata dall'elenco.  
   
-    -   **Importa**: importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.  
+   -   **Importa**: importa un elenco di app specificate in un file con valori delimitati da virgole. Per il file usare il formato nome applicazione, autore, URL.  
   
-2.  Al termine, fare clic su **Avanti**.  
+2. Al termine, fare clic su **Avanti**.  
   
- È possibile usare uno dei report seguenti per monitorare le app conformi e non conformi:  
+   È possibile usare uno dei report seguenti per monitorare le app conformi e non conformi:  
   
--   **Elenco di app e dispositivi non conformi per un utente specificato** : Visualizza informazioni sugli utenti e sui dispositivi con app installate che non sono conformi ai criteri specificati.  
+- **Elenco di app e dispositivi non conformi per un utente specificato** : Visualizza informazioni sugli utenti e sui dispositivi con app installate che non sono conformi ai criteri specificati.  
   
--   **Riepilogo degli utenti con app non conformi** : Visualizza informazioni sugli utenti che dispongono di app installate che non sono conformi ai criteri specificati.  
+- **Riepilogo degli utenti con app non conformi** : Visualizza informazioni sugli utenti che dispongono di app installate che non sono conformi ai criteri specificati.  
   
- Per informazioni sull'uso dei report, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+  Per informazioni sull'uso dei report, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
   
 ###  <a name="compliant-and-noncompliant-apps-mac-os-x"></a>App conformi e non conformi (Mac OS X)  
  Consente di specificare un elenco di app Mac OS X conformi oppure non conformi nella società. È quindi possibile usare i report per visualizzare i dispositivi nei quali sono installate app non conformi e gli utenti associati.  
@@ -263,39 +263,39 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
   
 #### <a name="to-specify-the-compliant-or-noncompliant-apps-list"></a>Per indicare le app conformi o non conformi  
   
-1.  Nella pagina **App conformi e non conformi (Mac OS X)** specificare le informazioni seguenti:  
+1. Nella pagina **App conformi e non conformi (Mac OS X)** specificare le informazioni seguenti:  
   
-    -   **Elenco App non conformi**: selezionare questa opzione per specificare un elenco di app da segnalare come non conformi se installate dagli utenti.  
+   - **Elenco App non conformi**: selezionare questa opzione per specificare un elenco di app da segnalare come non conformi se installate dagli utenti.  
   
-    -   **Elenco App conformi**: selezionare questa opzione per specificare un elenco di app che gli utenti sono autorizzati a installare. Tutte le altre app installate verranno segnalate come non conformi.  
+   - **Elenco App conformi**: selezionare questa opzione per specificare un elenco di app che gli utenti sono autorizzati a installare. Tutte le altre app installate verranno segnalate come non conformi.  
   
-    -   **Aggiungi** aggiunge un'app all'elenco selezionato. Specificare il nome scelto, l'autore dell'app (facoltativo) e l'ID bundle dell'app.  
+   - **Aggiungi** aggiunge un'app all'elenco selezionato. Specificare il nome scelto, l'autore dell'app (facoltativo) e l'ID bundle dell'app.  
   
-        > [!TIP]  
-        >  Per trovare l'ID bundle di un'app, usare i passaggi seguenti in un computer Mac in cui è installata l'app:  
-        >   
-        >  1.  Aprire la cartella in cui è installata l'app, ad esempio, **/Applications**  
-        > 2.  Selezionare il bundle *<Nome app\>***.app** e scegliere **Show Package Contents** (Mostra contenuti pacchetto)  
-        > 3.  Aprire il file **Info.plist**  
-        > 4.  Controllare il valore associato alla chiave **CFBundleIdentifier**  
-        >   
-        >  Il formato per l'ID bundle è **com.contoso.nomeapp**  
+     > [!TIP]
+     >  Per trovare l'ID bundle di un'app, usare i passaggi seguenti in un computer Mac in cui è installata l'app:  
+     > 
+     > 1. Aprire la cartella in cui è installata l'app, ad esempio, **/Applications**  
+     >    2.  Selezionare il bundle *<Nome app\>***.app** e scegliere **Show Package Contents** (Mostra contenuti pacchetto)  
+     >    3.  Aprire il file **Info.plist**  
+     >    4.  Controllare il valore associato alla chiave **CFBundleIdentifier**  
+     > 
+     >    Il formato per l'ID bundle è **com.contoso.nomeapp**  
   
-    -   **Modifica**: consente di modificare il nome, l'autore e l'ID bundle dell'app selezionata.  
+   - **Modifica**: consente di modificare il nome, l'autore e l'ID bundle dell'app selezionata.  
   
-    -   **Rimuovi**: elimina l'app selezionata dall'elenco.  
+   - **Rimuovi**: elimina l'app selezionata dall'elenco.  
   
-    -   **Importa**: importa un elenco di app specificate in un file con valori delimitati da virgole. Nel file usare il formato, il nome dell'app, l'autore e l'ID bundle dell'app.  
+   - **Importa**: importa un elenco di app specificate in un file con valori delimitati da virgole. Nel file usare il formato, il nome dell'app, l'autore e l'ID bundle dell'app.  
   
-2.  Al termine, fare clic su **Avanti**.  
+2. Al termine, fare clic su **Avanti**.  
   
- È possibile usare uno dei report seguenti per monitorare le app conformi e non conformi:  
+   È possibile usare uno dei report seguenti per monitorare le app conformi e non conformi:  
   
--   **Elenco di app e dispositivi non conformi per un utente specificato** : Visualizza informazioni sugli utenti e sui dispositivi con app installate che non sono conformi ai criteri specificati.  
+- **Elenco di app e dispositivi non conformi per un utente specificato** : Visualizza informazioni sugli utenti e sui dispositivi con app installate che non sono conformi ai criteri specificati.  
   
--   **Riepilogo degli utenti con app non conformi** : Visualizza informazioni sugli utenti che dispongono di app installate che non sono conformi ai criteri specificati.  
+- **Riepilogo degli utenti con app non conformi** : Visualizza informazioni sugli utenti che dispongono di app installate che non sono conformi ai criteri specificati.  
   
- Per informazioni sull'uso dei report, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+  Per informazioni sull'uso dei report, vedere [Creazione di report in System Center Configuration Manager](../../core/servers/manage/reporting.md).  
   
 ### <a name="ios-and-mac-os-x-custom-profile-settings"></a>Impostazioni dei profili personalizzati di iOS e Mac OS X  
  Usare i **profili personalizzati di iOS e Mac OS X** per distribuire le impostazioni create tramite lo [strumento Apple Configurator](https://itunes.apple.com/us/app/apple-configurator-2/id1037126344?mt=12) nei dispositivi iOS e Mac OS X. Questo strumento consente di creare molte impostazioni che controllano il funzionamento di questi dispositivi e di esportarle in un profilo di configurazione. È quindi possibile importare il profilo di configurazione nel profilo personalizzato di iOS e Mac OS X e distribuire le impostazioni a utenti e dispositivi nell'organizzazione.  
@@ -344,67 +344,67 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
   
 #### <a name="to-configure-kiosk-mode-for-ios-devices"></a>Per configurare la modalità tutto schermo per dispositivi iOS  
   
-1.  Nella pagina di **Configura impostazioni modalità tutto schermo per dispositivi iOS** della **Creazione guidata dell'elemento di configurazione**specificare le seguenti informazioni:  
+1. Nella pagina di **Configura impostazioni modalità tutto schermo per dispositivi iOS** della **Creazione guidata dell'elemento di configurazione**specificare le seguenti informazioni:  
   
-    -   **Seleziona app**: selezionare l'app che potrà essere eseguita quando il dispositivo è in modalità tutto schermo. Non sarà possibile eseguire altre applicazioni nel dispositivo. È possibile scegliere tra:  
+   - **Seleziona app**: selezionare l'app che potrà essere eseguita quando il dispositivo è in modalità tutto schermo. Non sarà possibile eseguire altre applicazioni nel dispositivo. È possibile scegliere tra:  
   
-        -   **App gestita e** - fare clic su Sfoglia, quindi selezionare un'app gestita.  
+     - **App gestita e** - fare clic su Sfoglia, quindi selezionare un'app gestita.  
   
-        -   **App dello Store** - specificare l'URL di un'app dell’app store, quindi fare clic su **Ottieni ID app** per popolare il campo **ID app** .  
+     - **App dello Store** - specificare l'URL di un'app dell’app store, quindi fare clic su **Ottieni ID app** per popolare il campo **ID app** .  
   
-         Per trovare l'URL dell'app:  
+       Per trovare l'URL dell'app:  
   
-        -   Usando un motore di ricerca, individuare l'app da usare nell'App Store iTunes e aprire la pagina per l'app.  
+     - Usando un motore di ricerca, individuare l'app da usare nell'App Store iTunes e aprire la pagina per l'app.  
   
-        -   Copiare l'URL della pagina e usarlo come URL per specificare l'app da eseguire in modalità tutto schermo.  
+     - Copiare l'URL della pagina e usarlo come URL per specificare l'app da eseguire in modalità tutto schermo.  
   
-        -   **Esempio:** cercare **Microsoft Word per iPad**. L'URL da usare sarà **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
+     - **Esempio:** Cercare **Microsoft Word per iPad**. L'URL da usare sarà **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
   
-    -   **Tocco**: abilita o disabilita il touchscreen nel dispositivo.  
+   - **Tocco**: abilita o disabilita il touchscreen nel dispositivo.  
   
-    -   **Rotazione schermo**: abilita o disabilita la modifica dell'orientamento dello schermo quando si ruota il dispositivo.  
+   - **Rotazione schermo**: abilita o disabilita la modifica dell'orientamento dello schermo quando si ruota il dispositivo.  
   
-    -   **Pulsanti volume**: abilita o disabilita l'uso dei pulsanti del volume del dispositivo.  
+   - **Pulsanti volume**: abilita o disabilita l'uso dei pulsanti del volume del dispositivo.  
   
-    -   **Commutatore suoneria**: abilita o disabilita la suoneria nel dispositivo.  
+   - **Commutatore suoneria**: abilita o disabilita la suoneria nel dispositivo.  
   
-    -   **Pulsante di riattivazione sospensione schermo**: abilita o disabilita il pulsante di riattivazione sospensione dello schermo del dispositivo.  
+   - **Pulsante di riattivazione sospensione schermo**: abilita o disabilita il pulsante di riattivazione sospensione dello schermo del dispositivo.  
   
-    -   **Blocco automatico**: abilita o disabilita il blocco automatico del dispositivo.  
+   - **Blocco automatico**: abilita o disabilita il blocco automatico del dispositivo.  
   
-    -   **Audio mono**: abilita o disabilita l'impostazione di accessibilità **Audio mono**.  
+   - **Audio mono**: abilita o disabilita l'impostazione di accessibilità **Audio mono**.  
   
-    -   **Voice over**: abilita o disabilita l'impostazione di accessibilità **Voice over** per la lettura a voce alta del testo sullo schermo del dispositivo.  
+   - **Voice over**: abilita o disabilita l'impostazione di accessibilità **Voice over** per la lettura a voce alta del testo sullo schermo del dispositivo.  
   
-    -   **Regolazioni di voice over**: abilita o disabilita le regolazioni del voice over che consentono di modificare la funzione Voice over, ad esempio la velocità con cui viene letto il testo visualizzato sullo schermo.  
+   - **Regolazioni di voice over**: abilita o disabilita le regolazioni del voice over che consentono di modificare la funzione Voice over, ad esempio la velocità con cui viene letto il testo visualizzato sullo schermo.  
   
-    -   **Zoom**: abilita o disabilita l'impostazione di accessibilità **Zoom** che consente di usare le funzionalità di tocco per ingrandire la visualizzazione del dispositivo.  
+   - **Zoom**: abilita o disabilita l'impostazione di accessibilità **Zoom** che consente di usare le funzionalità di tocco per ingrandire la visualizzazione del dispositivo.  
   
-    -   **Regolazioni dello zoom**: abilita o disabilita le regolazioni dello zoom che consentono di modificare la funzione di zoom.  
+   - **Regolazioni dello zoom**: abilita o disabilita le regolazioni dello zoom che consentono di modificare la funzione di zoom.  
   
-    -   **Inversione colori**: abilita o disabilita l'impostazione di accessibilità **Inversione colori** che consente di regolare la visualizzazione per gli utenti con problemi visivi.  
+   - **Inversione colori**: abilita o disabilita l'impostazione di accessibilità **Inversione colori** che consente di regolare la visualizzazione per gli utenti con problemi visivi.  
   
-    -   **Regolazioni dell'inversione colori**: abilita o disabilita le regolazioni dell'inversione colori che consentono di modificare la funzione Inversione colori.  
+   - **Regolazioni dell'inversione colori**: abilita o disabilita le regolazioni dell'inversione colori che consentono di modificare la funzione Inversione colori.  
   
-    -   **Tocco per l'accesso facilitato**: abilita o disabilita l'impostazione di accessibilità **Tocco per l'accesso facilitato** che consente agli utenti di eseguire sullo schermo movimenti che potrebbero essere difficili da eseguire.  
+   - **Tocco per l'accesso facilitato**: abilita o disabilita l'impostazione di accessibilità **Tocco per l'accesso facilitato** che consente agli utenti di eseguire sullo schermo movimenti che potrebbero essere difficili da eseguire.  
   
-    -   **Regolazioni del tocco per l'accesso facilitato**: abilita o disabilita le regolazioni del tocco per l'accesso facilitato che consentono di modificare la funzione Tocco per l'accesso facilitato.  
+   - **Regolazioni del tocco per l'accesso facilitato**: abilita o disabilita le regolazioni del tocco per l'accesso facilitato che consentono di modificare la funzione Tocco per l'accesso facilitato.  
   
-    -   **Selezione comandi vocali**: abilita o disabilita l'impostazione di accessibilità **Leggi selezione** che consente di leggere a voce alta il testo selezionato.  
+   - **Selezione comandi vocali**: abilita o disabilita l'impostazione di accessibilità **Leggi selezione** che consente di leggere a voce alta il testo selezionato.  
   
-    -   **Monitora e aggiorna impostazioni non conformi**: selezionare se si vogliono monitorare e aggiornare le impostazioni di configurazione non conformi (se supportate).  
+   - **Monitora e aggiorna impostazioni non conformi**: selezionare se si vogliono monitorare e aggiornare le impostazioni di configurazione non conformi (se supportate).  
   
-    -   **Gravità della non conformità per i report**: specificare il livello di gravità che viene segnalato se i criteri di conformità vengono valutati come non conformi. I livelli di gravità disponibili sono i seguenti:  
+   - **Gravità della non conformità per i report**: specificare il livello di gravità che viene segnalato se i criteri di conformità vengono valutati come non conformi. I livelli di gravità disponibili sono i seguenti:  
   
-        -   **Nessuno**: i dispositivi che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
+     -   **Nessuno**: i dispositivi che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
   
-        -   **Informazioni**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Informazioni** per i report di Configuration Manager.  
+     -   **Informazioni**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Informazioni** per i report di Configuration Manager.  
   
-        -   **Avviso**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Avviso** per i report di Configuration Manager.  
+     -   **Avviso**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Avviso** per i report di Configuration Manager.  
   
-        -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico** per i report di Configuration Manager.  
+     -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico** per i report di Configuration Manager.  
   
-        -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel log eventi dell'applicazione.  
+     -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel log eventi dell'applicazione.  
   
 ## <a name="see-also"></a>Vedere anche  
  [Elementi di configurazione per dispositivi gestiti senza il client di System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)
