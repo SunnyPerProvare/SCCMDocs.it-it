@@ -10,12 +10,12 @@ ms.assetid: 14226fbe-dd07-4432-910b-130790624a4e
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: bdb48689efba4c6f884d4c36c1a4dee0bbcc6b65
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 319721e18c6571949cf3b1a9d864d9c601f29e39
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334675"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424205"
 ---
 # <a name="how-to-create-configuration-items-for-windows-10-devices-managed-with-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Windows 10 gestiti con il client di System Center Configuration Manager
 Usare l'elemento di configurazione **Windows 10** in System Center Configuration Manager per gestire le impostazioni dei computer che eseguono Windows 10 gestiti dal client di Configuration Manager.  
@@ -27,24 +27,24 @@ Usare l'elemento di configurazione **Windows 10** in System Center Configuration
   
 ### <a name="to-create-a-windows-10-configuration-item"></a>Per creare un elemento di configurazione Windows 10  
   
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1. Nella console di Configuration Manager fare clic su **Asset e conformità**.  
   
-2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
+2. Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
   
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
+3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
   
-4.  Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
+4. Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
   
-5.  In **Specificare il tipo di elemento di configurazione da creare**selezionare **Windows 10**.  
+5. In **Specificare il tipo di elemento di configurazione da creare**selezionare **Windows 10**.  
   
-6.  Fare clic su **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
+6. Fare clic su **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
   
-7.  Nella pagina **Piattaforme supportate** della procedura guidata selezionare le piattaforme Windows 10 specifiche che valuteranno l'elemento di configurazione.  
+7. Nella pagina **Piattaforme supportate** della procedura guidata selezionare le piattaforme Windows 10 specifiche che valuteranno l'elemento di configurazione.  
   
-8.  Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per dettagli, vedere [Windows 10 configuration item settings reference](#BKMK_Ref) in questo argomento e quindi fare clic su **Avanti**.  
+8. Nella pagina **Impostazioni dispositivo** della creazione guidata selezionare il gruppo di impostazioni da configurare. Per dettagli, vedere [Windows 10 configuration item settings reference](#BKMK_Ref) in questo argomento e quindi fare clic su **Avanti**.  
   
-    > [!TIP]  
-    >  Se l'impostazione da modificare non è inclusa nell'elenco, selezionare la casella di controllo **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  
+   > [!TIP]  
+   >  Se l'impostazione da modificare non è inclusa nell'elenco, selezionare la casella di controllo **Configura impostazioni aggiuntive non presenti nei gruppi di impostazioni predefinite**.  
   
 9. In ogni pagina di impostazioni configurare le impostazioni necessarie e specificare se si vuole monitorarle e aggiornarle nel caso non siano conformi nei dispositivi (se questa funzionalità è supportata).  
   
@@ -67,7 +67,7 @@ Usare l'elemento di configurazione **Windows 10** in System Center Configuration
   
 12. Completare la procedura guidata.  
   
- È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
+    È possibile visualizzare il nuovo elemento di configurazione nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
   
 ##  <a name="windows-10-configuration-item-settings-reference"></a>Informazioni di riferimento sulle impostazioni degli elementi di configurazione di Windows 10  
   
