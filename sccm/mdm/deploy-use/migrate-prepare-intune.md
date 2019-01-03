@@ -5,74 +5,77 @@ description: Informazioni su come preparare Intune in Azure per la migrazione de
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 12/05/2017
+ms.date: 12/26/2018
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: db97ae9e-34f4-4e10-a282-cd211f612bb4
-ms.openlocfilehash: 7f4302071f9cd53576bb2b2922730ab9a0e897ff
-ms.sourcegitcommit: 316899b08f2ef372993909e08e069f7edfed1d33
-ms.translationtype: HT
+ms.openlocfilehash: f7c0f0d9dc52c39e0ec33abb8df565d4918471f7
+ms.sourcegitcommit: 54e5786875c4e5f5c1b54e38ed59e96344faf9b4
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44111060"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53818039"
 ---
 # <a name="prepare-intune-for-user-migration"></a>Preparare Intune per la migrazione degli utenti 
 
 *Si applica a: System Center Configuration Manager (Current Branch)*    
-
-Prima di eseguire la migrazione degli utenti dalla soluzione MDM ibrida (Intune integrato con Configuration Manager) alla versione autonoma di Intune, è necessario eseguire i passaggi di preparazione di Intune. Questi passaggi garantiscono la continuità della gestione degli utenti di cui viene eseguita la migrazione e dei relativi dispositivi. Quando si completano questi passaggi e si avvia la migrazione a Intune, l'operazione dovrebbe essere trasparente per gli utenti.  
+Prima di eseguire la migrazione degli utenti dalla soluzione MDM ibrida a Intune autonomo, eseguire passaggi di preparazione di Intune. Questi passaggi consentono di assicurarsi che gli utenti migrati e i dispositivi continuino a essere gestiti. Quando si completano questi passaggi e avviare la migrazione a Intune, non ha alcun impatto di una notevole quantità agli utenti.  
 
 ## <a name="fix-issues-found-during-data-collection-and-import"></a>Correggere i problemi riscontrati durante la raccolta e l'importazione dei dati
-Se è stato eseguito il processo di [importazione dei dati di Configuration Manager in Microsoft Intune](migrate-import-data.md), lo strumento di importazione dati di Intune ha fornito un riepilogo di tutti gli oggetti che non è stato possibile importare. Alcuni dei problemi tipici che si potrebbero riscontrare con i passaggi da eseguire per risolvere il problema in Intune sono elencati nella tabella seguente: 
+Se è stato usato lo strumento di importazione dati di Intune per [importare dati di Configuration Manager in Microsoft Intune](migrate-import-data.md), riepilogato gli oggetti che nelze importovat. Nella tabella seguente sono elencati alcuni dei problemi tipici e i passaggi per correggere gli errori in Intune: 
 
 |Problema  |Correzione  |
 |---------|---------|
-|Non è possibile eseguire automaticamente la migrazione delle raccolte basate sull'appartenenza diretta o su un tipo complesso.|È necessario creare gruppi di Azure Active Directory (AAD) in Azure per sostituire la raccolta che non è stata importata. Assegnare quindi l'oggetto al gruppo.|
-|I criteri non possono essere importati |È necessario ricreare i criteri in Intune.|
-|La distribuzione di un oggetto non viene importata|È necessario assegnare l'oggetto al gruppo. Il gruppo deve contenere gli stessi utenti dalla raccolta per la distribuzione.|
+|Non vengono migrate automaticamente raccolte basate sull'appartenenza diretta o su un tipo complesso.|Creare gruppi di Azure Active Directory (Azure AD) in Azure per sostituire la raccolta che non è stata importata. Assegnare quindi l'oggetto al gruppo.|
+|I criteri non sono stati importable (importabile) |Ricreare i criteri in Intune.|
+|La distribuzione di un oggetto non viene importata|Assegnare l'oggetto al gruppo. Il gruppo debba includere gli stessi utenti dalla raccolta per la distribuzione.|
 
 ## <a name="create-intune-objects"></a>Creare oggetti di Intune 
-Se è stato eseguito il processo di [importazione dei dati di Configuration Manager in Microsoft Intune](migrate-import-data.md) e sono stati risolti i problemi riscontrati durante il processo di importazione, è necessario verificare che gli oggetti importati siano configurati correttamente. Creare inoltre in Intune gli oggetti aggiuntivi (criteri, profili, app e così via) necessari nell'organizzazione. 
+Se si [importati i dati di Configuration Manager a Microsoft Intune](migrate-import-data.md) e risolto i problemi durante il processo, verificare gli oggetti importati siano configurati correttamente. Creare anche tutti gli oggetti aggiuntivi (criteri, profili e le App) in Intune che è necessario nell'organizzazione. 
 
 ## <a name="assign-intune-licenses-to-migrated-users"></a>Assegnare le licenze di Intune agli utenti di cui è stata eseguita la migrazione
-In Configuration Manager aggiungere una raccolta alla sottoscrizione di Intune e i membri della raccolta avranno la possibilità di registrare i propri dispositivi. Mentre la licenza di Intune è riservata ai dispositivi registrati, queste licenze non sono associate in modo specifico all'utente o al dispositivo. Non si troverà, ad esempio, una licenza di Intune in AAD per un utente che ha un dispositivo registrato. Nella versione autonoma di Intune, tuttavia, è necessario configurare una licenza di Intune per ogni utente. Eseguire questa operazione PRIMA di eseguire la migrazione di un utente alla versione autonoma di Intune, per garantire che l'utente e i relativi dispositivi siano gestiti da Intune dopo la modifica all'autorità MDM. Per altre informazioni, vedere [Assign Intune licenses to your user accounts](https://docs.microsoft.com/intune/licenses-assign) (Assegnare licenze di Intune agli account utente). 
+In Configuration Manager, si aggiunge un insieme alla sottoscrizione di Intune e i membri della raccolta possono registrare i dispositivi. Mentre una licenza di Intune è riservata per i dispositivi registrati, queste licenze non sono associate all'utente o dispositivo. È ad esempio, non sarebbe trovare una licenza di Intune in Azure AD per un utente che ha un dispositivo registrato. 
+
+Nella versione autonoma di Intune, configurare una licenza di Intune per ogni utente. Configurare la licenza *prima di* si esegue la migrazione di un utente a Intune autonomo. Questa azione assicura che l'utente e i suoi dispositivi siano gestiti da Intune dopo la modifica nell'autorità MDM. Per altre informazioni, vedere [Assign Intune licenses to your user accounts](https://docs.microsoft.com/intune/licenses-assign) (Assegnare licenze di Intune agli account utente). 
 
 ## <a name="verify-intune-user-groups"></a>Verificare i gruppi di utenti di Intune
-Gli utenti e i gruppi sono probabilmente già in AAD, perché è configurata la sincronizzazione delle directory. Per assicurarsi che gli utenti facciano parte del gruppo di utenti corretto, è consigliabile esaminare i gruppi di utenti di Intune. Criteri, profili, app e così via vengono destinati a questi gruppi. Assicurarsi che gli utenti di cui si esegue la migrazione alla versione autonoma di Intune facciano parte dei gruppi corretti. 
+Gli utenti e gruppi sono probabilmente già in Azure AD perché hai configurata la sincronizzazione delle directory. Per assicurarsi che gli utenti facciano parte del gruppo di utenti corretto, è consigliabile esaminare i gruppi di utenti di Intune. Destinazione dei criteri, profili e le app a tali gruppi. Assicurarsi che gli utenti di cui si esegue la migrazione alla versione autonoma di Intune facciano parte dei gruppi corretti. 
 
 ## <a name="configure-role-based-administration-control-rbac"></a>Configurare Controllo degli accessi in base al ruolo
-Come parte della migrazione, configurare tutti i ruoli Controllo degli accessi in base al ruolo necessari in Intune e assegnare gli utenti a tali ruoli. Si noti che ci sono alcune differenze tra Controllo degli accessi in base al ruolo in Configuration Manager e in Intune, ad esempio per quanto riguarda l'ambito delle risorse. Per informazioni dettagliate, vedere [Controllo degli accessi in base al ruolo (RBAC) con Intune](https://docs.microsoft.com/intune/role-based-access-control).
+Come parte della migrazione, configurare tutti i ruoli Controllo degli accessi in base al ruolo necessari in Intune e assegnare gli utenti a tali ruoli. Esistono differenze tra RBAC in Configuration Manager e Intune, ad esempio di definizione dell'ambito delle risorse. Per altre informazioni, vedere [controllo degli accessi in base al ruolo (RBAC) con Intune](https://docs.microsoft.com/intune/role-based-access-control).
 
 ## <a name="assign-apps-and-policies-to-aad-groups"></a>Assegnare app e criteri ai gruppi di AAD
-Se è stata eseguita la fase di [importazione dei dati di Configuration Manager in Microsoft Intune](migrate-import-data.md) del processo di migrazione per eseguire la migrazione di diversi oggetti di Configuration Manager a Intune, molti oggetti potrebbero essere già assegnati ai gruppi di AAD. È tuttavia necessario verificare che tutti gli oggetti (app, criteri, profili e così via) siano assegnati ai gruppi di AAD corretti. Se si assegnano gli oggetti in modo corretto, i dispositivi degli utenti vengono configurati automaticamente dopo la migrazione, che deve essere trasparente per gli utenti. Per informazioni dettagliate sull'assegnazione di oggetti a un gruppo di AAD, vedere gli argomenti seguenti: 
-- [Assegnare criteri](https://docs.microsoft.com/intune/get-started-policies) 
-- [Assegnare profili](https://docs.microsoft.com/intune/device-profile-assign) 
+Se si [importati i dati di Configuration Manager a Microsoft Intune](migrate-import-data.md), molti oggetti potrebbero essere già assegnati a gruppi Azure AD. Verificare che tutti gli oggetti (App, i criteri e profili) siano assegnati correttamente i gruppi Azure AD. Se si assegnano gli oggetti in modo corretto, i dispositivi dell'utente vengono configurati automaticamente dopo che l'utente viene eseguita la migrazione e la migrazione non deve avere alcun impatto di una notevole quantità di utenti. Per altre informazioni sull'assegnazione di oggetti a un gruppo di Azure AD, vedere gli articoli seguenti: 
+- [Assegnare criteri](https://docs.microsoft.com/intune/get-started-policies)  
+- [Assegnare profili](https://docs.microsoft.com/intune/device-profile-assign)  
+    > [!NOTE]  
+    > Quando Intune distribuisce il nuovo profilo di posta elettronica, gli utenti ricevono la richiesta di immettere nuovamente la password.  
 - [Assegnare app](https://docs.microsoft.com/intune/get-started-apps) 
 
 ## <a name="terms-and-conditions-policy"></a>Criteri relativi a termini e condizioni
-Come per gli altri criteri a livello di tenant, per i criteri relativi a termini e condizioni viene eseguita automaticamente la migrazione a Intune una volta abilitata l'autorità mista per il tenant.  È tuttavia necessario assegnare i termini e le condizioni a un gruppo che contiene gli utenti di cui è stata eseguita la migrazione per creare report accurati relativi all'accettazione per gli utenti di cui è stata eseguita la migrazione e per assicurarsi che i termini e le condizioni vengano gestiti correttamente per le registrazioni dei dispositivi o gli aggiornamenti di termini e condizioni futuri. Gli utenti non devono accettare di nuovo le condizioni, a meno che non vengano apportate modifiche ai criteri nella console di Configuration Manager. Per informazioni dettagliate, vedere [Assegnare termini e condizioni](https://docs.microsoft.com/intune/terms-and-conditions-create#assign-terms-and-conditions).
+Come per gli altri criteri a livello di tenant, per i criteri relativi a termini e condizioni viene eseguita automaticamente la migrazione a Intune una volta abilitata l'autorità mista per il tenant.  Tuttavia, è necessario assegnare i termini e condizioni a un gruppo che contiene la migrazione degli utenti per report relativi all'accettazione per gli utenti migrati in modo accurato e assicurarsi che i termini e condizioni correttamente come destinazione per future termini e condizioni aggiornamenti o dispositivo registrazioni. Gli utenti non dovranno accettare i termini e condizioni, a meno che non sono disponibili le modifiche apportate ai criteri nella console di Configuration Manager. Per altre informazioni, vedere [assegnare termini e condizioni](https://docs.microsoft.com/intune/terms-and-conditions-create#assign-terms-and-conditions).
 
 ## <a name="configure-the-exchange-connector"></a>Configurare Exchange Connector
-Se si usa Exchange e si ha un'istanza di Exchange Connector locale in Configuration Manager, è necessario [configurare la versione locale di Exchange Connector in Intune](https://docs.microsoft.com/intune/exchange-connector-install). Considerare inoltre le informazioni nelle sezioni seguenti per eseguire la migrazione a Intune Exchange Connector e per garantire il corretto funzionamento dell'accesso condizionale dopo la migrazione.
+Se si usa Exchange e si ha un'istanza di Exchange Connector locale in Configuration Manager, è necessario [configurare la versione locale di Exchange Connector in Intune](https://docs.microsoft.com/intune/exchange-connector-install). Considerare inoltre le informazioni nelle sezioni seguenti che consentono di eseguire la migrazione a Intune Exchange Connector e per verificare che l'accesso condizionale funzioni correttamente dopo la migrazione.
 
 ### <a name="powershell-scripts-to-help-you-migrate-to-the-intune-exchange-connector"></a>Script di PowerShell per facilitare la migrazione a Intune Exchange Connector 
 Sono disponibili script di PowerShell per preparare la transizione dei dispositivi di Exchange da Configuration Manager Exchange Connector a Intune Exchange Connector. Anche se l'esecuzione di questi script è facoltativa, si consiglia di eseguirli in modo da rimuovere i dispositivi inattivi da Exchange, che impediscono a Intune di individuare i dispositivi non necessari. L'esecuzione degli script garantisce che i dispositivi individuati mediante Exchange possano essere uniti ai dispositivi registrati in Intune nel modo più lineare possibile. Eseguire questi script prima di configurare Intune Exchange Connector. Gli script di PowerShell fanno parte dell'installazione dello strumento di importazione dati di Intune usato per [importare i dati di Configuration Manager in Microsoft Intune](migrate-import-data.md) nell'articolo successivo. Per informazioni dettagliate e per scaricare gli script, visitare la pagina di GitHub dello [strumento di importazione dati di Microsoft Intune](https://github.com/ConfigMgrTools/Intune-Data-Importer).
 
-### <a name="steps-to-ensure-conditional-access-works-properly-after-user-migration"></a>Passaggi per garantire il corretto funzionamento dell'accesso condizionale dopo la migrazione degli utenti
-Per il corretto funzionamento dell'accesso condizionale dopo la migrazione degli utenti e per fare in modo che gli utenti continuino ad avere accesso al server di posta elettronica, verificare quanto segue:
+### <a name="steps-to-make-sure-conditional-access-works-properly-after-user-migration"></a>Passaggi per rendere in modo corretto funzionamento dell'accesso condizionale che dopo la migrazione degli utenti
+Per l'accesso condizionale per funzionare correttamente dopo la migrazione di utenti e per assicurarsi che gli utenti continuino ad avere accesso al server di posta elettronica, assicurarsi che siano impostate le seguenti configurazioni:
 - Se l'impostazione del livello di accesso predefinito di Exchange ActiveSync (DefaultAccessLevel) è Blocca o Quarantena, i dispositivi potrebbero perdere l'accesso alla posta elettronica. 
-- Se Exchange Connector è installato in Configuration Manager e il **livello di accesso quando un dispositivo mobile non è gestito da una regola** ha un valore **Consenti accesso**, è necessario installare la [versione locale di Exchange Connector](https://docs.microsoft.com/intune/conditional-access-exchange-create#configure-exchange-on-premises-access) in Intune prima di eseguire la migrazione degli utenti. Configurare l'impostazione del livello di accesso predefinito in Intune nel pannello **Exchange locale** in **Impostazioni avanzate dell'accesso a Exchange ActiveSync**. Per informazioni dettagliate, vedere [Configurare l'accesso locale a Exchange](https://docs.microsoft.com/intune/conditional-access-exchange-create#configure-exchange-on-premises-access).
+- Se è installato Exchange Connector in Configuration Manager e il **livello di accesso quando un dispositivo mobile non è gestito da una regola** impostazione ha un valore pari **consentire l'accesso**, installare il [ Exchange connector locale](https://docs.microsoft.com/intune/conditional-access-exchange-create#configure-exchange-on-premises-access) in Intune prima della migrazione degli utenti. Configurare l'impostazione del livello di accesso predefinito in Intune nel **Exchange in locale** nella pagina **le impostazioni di accesso Advanced Exchange ActiveSync**. Per altre informazioni, vedere [configurare Exchange in locale l'accesso](https://docs.microsoft.com/intune/conditional-access-exchange-create#configure-exchange-on-premises-access).
 - Usare la stessa configurazione per entrambi i connettori. L'ultimo connettore configurato sovrascrive le impostazioni dell'organizzazione di ActiveSync scritte in precedenza dall'altro connettore. Se si configurano i connettori in modo diverso, potrebbero verificarsi modifiche impreviste dell'accesso condizionale.
 - Rimuovere gli utenti dall'accesso condizionale in Configuration Manager una volta eseguita la migrazione alla versione autonoma di Intune.
 
 ## <a name="configure-the-microsoft-intune-certificate-connector"></a>Configurare Connettore di certificati di Microsoft Intune
-Se si usa il servizio Registrazione dispositivi di rete (NDES) per l'emissione di certificati tramite SCEP, è necessario configurare Connettore di certificati di Microsoft Intune. Il computer che ospita NDES Connector in Intune non può essere lo stesso computer che ospita NDES Connector in Configuration Manager. Per informazioni dettagliate, vedere [Configurare e gestire i certificati SCEP con Intune](https://docs.microsoft.com/intune/certificates-scep-configure). 
+Se si usa il servizio Registrazione dispositivi di rete (NDES) per l'emissione di certificati tramite SCEP, è necessario configurare Connettore di certificati di Microsoft Intune. Computer che ospita NDES connector in Intune non può essere lo stesso computer che ospita NDES connector in Configuration Manager. Per altre informazioni, vedere [configurare e gestire i certificati SCEP con Intune](https://docs.microsoft.com/intune/certificates-scep-configure). 
 
 > [!Important]    
-> Dopo avere configurato il connettore, è necessario modificare i profili SCEP importati per fare riferimento al nuovo URL del server.
+> Dopo aver configurato il connettore, modificare i profili SCEP importati per il nuovo URL del server di riferimento.
 
 ## <a name="next-step"></a>Passaggio successivo
-Dopo avere preparato Intune per la migrazione, si è pronti per eseguire la migrazione di un set di utenti di test alla versione autonoma di Intune. Per informazioni dettagliate, vedere [Modificare l'autorità MDM per utenti specifici (autorità MDM mista)](migrate-mixed-authority.md).
+Dopo avere preparato Intune per la migrazione, si è pronti per eseguire la migrazione di un set di utenti di test alla versione autonoma di Intune. Per altre informazioni, vedere [cambiare l'autorità MDM per utenti specifici (autorità mista)](migrate-mixed-authority.md).
 
 
