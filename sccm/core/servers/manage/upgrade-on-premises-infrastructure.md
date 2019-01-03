@@ -10,12 +10,12 @@ ms.assetid: 8ca970dd-e71c-404f-9435-d36e773a0db2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7ff6d885ca635e15c62eddcdfa06abdc1a09cdf8
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 2d51774688b80faf808653cde77aa3b651ea210c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456601"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422590"
 ---
 # <a name="upgrade-on-premises-infrastructure-that-supports-configuration-manager"></a>Aggiornare l'infrastruttura locale che supporta Configuration Manager
 
@@ -55,7 +55,7 @@ Per aggiornare un server, eseguire la procedura di aggiornamento indicata dal si
 
 - [Opzioni di aggiornamento e conversione per Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/supported-upgrade-paths)  
 
-- [Upgrade Options for Windows Server 2012 R2](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303416\(v=ws.11)) (Opzioni di aggiornamento per Windows Server 2012 R2)   
+- [Upgrade Options for Windows Server 2012 R2](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303416(v=ws.11)) (Opzioni di aggiornamento per Windows Server 2012 R2)   
 
 
 ### <a name="bkmk_2016-2019"></a> Eseguire l'aggiornamento a Windows Server 2016 o 2019
@@ -68,7 +68,7 @@ Seguire la procedura descritta in questa sezione per uno degli scenari di aggior
 
 
 #### <a name="before-upgrade"></a>Prima dell'aggiornamento  
-- Windows Server 2012 o Windows Server 2012 R2: rimuovere il client di System Center Endpoint Protection. In Windows Server è ora incorporato Windows Defender, che sostituisce il client di System Center Endpoint Protection. La presenza di questo client può impedire l'aggiornamento a Windows Server.  
+- (Windows Server 2012 o Windows Server 2012 R2): Rimuovere il client di System Center Endpoint Protection (SCEP). In Windows Server è ora incorporato Windows Defender, che sostituisce il client di System Center Endpoint Protection. La presenza di questo client può impedire l'aggiornamento a Windows Server.  
 
 - Rimuovere il ruolo WSUS dal server, se installato. È possibile conservare il database WSUS e ricollegarlo dopo la reinstallazione di WSUS.  
 
@@ -128,9 +128,9 @@ Dopo aver aggiornato il server del sito o un'istanza del provider SMS, non è po
 Quando si esegue l'aggiornamento da Windows Server 2008 R2 o da Windows Server 2012 a Windows Server 2012 R2, si applicano le condizioni seguenti:
 
 #### <a name="before-upgrade"></a>Prima dell'aggiornamento  
-- In Windows Server 2012: rimuovere il ruolo WSUS dal server, se installato. È possibile conservare il database WSUS e ricollegarlo dopo la reinstallazione di WSUS.  
+- In Windows Server 2012: Rimuovere il ruolo WSUS dal server, se installato. È possibile conservare il database WSUS e ricollegarlo dopo la reinstallazione di WSUS.  
 
-- In Windows Server 2008 R2: prima di eseguire l'aggiornamento a Windows Server 2012 R2, è necessario disinstallare WSUS 3.2 dal server. È possibile conservare il database WSUS e ricollegarlo dopo la reinstallazione di WSUS. Per altre informazioni, vedere [Windows Server Update Services Overview](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh852345\(v=ws.11)#new-and-changed-functionality) (Panoramica di Windows Server Update Services).  
+- In Windows Server 2008 R2: Prima di eseguire l'aggiornamento a Windows Server 2012 R2, è necessario disinstallare WSUS 3.2 dal server. È possibile conservare il database WSUS e ricollegarlo dopo la reinstallazione di WSUS. Per altre informazioni, vedere [Windows Server Update Services Overview](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh852345(v=ws.11)#new-and-changed-functionality) (Panoramica di Windows Server Update Services).  
 
 #### <a name="after-upgrade"></a>Dopo l'aggiornamento  
 - Il processo di aggiornamento disabilita Servizi di distribuzione Windows. Assicurarsi che questo servizio sia avviato e in esecuzione per i ruoli del sistema del sito seguenti:  

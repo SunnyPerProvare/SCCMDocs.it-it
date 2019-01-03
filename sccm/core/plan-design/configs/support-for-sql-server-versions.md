@@ -10,12 +10,12 @@ ms.assetid: 35e237b6-9f7b-4189-90e7-8eca92ae7d3d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 962029dc6bc5584e1edf0bd26d4be3fc280d6204
-ms.sourcegitcommit: 147aae8300831c722a559087c735df0f761b2041
+ms.openlocfilehash: 43093f38a2769c46d3d96a51afbf47f33ed38b51
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51645243"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423797"
 ---
 # <a name="supported-sql-server-versions-for-configuration-manager"></a>Versioni di SQL Server supportate per Configuration Manager
 
@@ -78,26 +78,26 @@ Il supporto per un Service Pack di SQL Server specifico include gli aggiornament
 ### <a name="sql-server-2017-standard-enterprise"></a>SQL Server 2017: Standard, Enterprise  
 È possibile usare questa versione di SQL Server con almeno la [versione dell'aggiornamento cumulativo 2](https://support.microsoft.com/help/4052574), a partire da [Configuration Manager versione 1710](/sccm/core/plan-design/changes/whats-new-in-version-1710) per i siti seguenti: 
 
--   sito di amministrazione centrale  
--   sito primario  
--   sito secondario  
-<!--SMS.498506-->
+- sito di amministrazione centrale  
+- sito primario  
+- sito secondario  
+  <!--SMS.498506-->
 
-### <a name="sql-server-2016-sp2-standard-enterprise"></a>SQL Server 2016 SP2 - Standard, Enterprise  
+### <a name="sql-server-2016-sp2-standard-enterprise"></a>SQL Server 2016 SP2 Standard, Enterprise  
 <!--514985--> È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
 
 -   sito di amministrazione centrale  
 -   sito primario  
 -   sito secondario  
 
-### <a name="sql-server-2016-sp1-standard-enterprise"></a>SQL Server 2016 SP1 - Standard, Enterprise  
+### <a name="sql-server-2016-sp1-standard-enterprise"></a>SQL Server 2016 SP1: Standard, Enterprise  
 È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
 
 -   sito di amministrazione centrale  
 -   sito primario  
 -   sito secondario  
 
-### <a name="sql-server-2016-standard-enterprise"></a>SQL Server 2016 - Standard, Enterprise  
+### <a name="sql-server-2016-standard-enterprise"></a>SQL Server 2016: Standard, Enterprise  
 È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
 
 -   sito di amministrazione centrale  
@@ -111,14 +111,14 @@ Il supporto per un Service Pack di SQL Server specifico include gli aggiornament
 -   sito primario  
 -   sito secondario
 
-### <a name="sql-server-2014-sp2-standard-enterprise"></a>SQL Server 2014 SP2 - Standard, Enterprise  
+### <a name="sql-server-2014-sp2-standard-enterprise"></a>SQL Server 2014 SP2: Standard, Enterprise  
 È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
 
 -   sito di amministrazione centrale  
 -   sito primario  
 -   sito secondario
 
-### <a name="sql-server-2014-sp1-standard-enterprise"></a>SQL Server 2014 SP1 - Standard, Enterprise  
+### <a name="sql-server-2014-sp1-standard-enterprise"></a>SQL Server 2014 SP1: Standard, Enterprise  
  È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
 
 -   sito di amministrazione centrale  
@@ -132,14 +132,14 @@ Il supporto per un Service Pack di SQL Server specifico include gli aggiornament
 -   sito primario  
 -   sito secondario  
 
-### <a name="sql-server-2012-sp3-standard-enterprise"></a>SQL Server 2012 SP3 - Standard, Enterprise  
+### <a name="sql-server-2012-sp3-standard-enterprise"></a>SQL Server 2012 SP3: Standard, Enterprise  
  È possibile usare questa versione di SQL Server senza una versione dell'aggiornamento cumulativo minima per i siti seguenti:  
 
 -   sito di amministrazione centrale  
 -   sito primario  
 -   sito secondario  
 
-### <a name="sql-server-2008-r2-sp3-standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3 - Standard, Enterprise, Datacenter     
+### <a name="sql-server-2008-r2-sp3-standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3: Standard, Enterprise, Datacenter     
   Questa versione di SQL Server non è supportata. Per altre informazioni, vedere [Supporto deprecato per le versioni di SQL Server usate come database del sito](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#deprecated-support-for-sql-server-versions-as-a-site-database).  
 
 ### <a name="sql-server-2017-express"></a>SQL Server 2017 Express   
@@ -187,7 +187,7 @@ Il supporto per un Service Pack di SQL Server specifico include gli aggiornament
  Configuration Manager richiede una versione a 64 bit di SQL Server per ospitare il database del sito.  
 
 ### <a name="database-collation"></a>Regole di confronto del database   
- In ogni sito sia l'istanza di SQL Server usata per il sito che il database del sito devono usare le regole di confronto seguenti: **SQL_Latin1_General_CP1_CI_AS**.  
+ In ogni sito, sia l'istanza di SQL Server usata per il sito che il database del sito devono usare le regole di confronto seguenti: **SQL_Latin1_General_CP1_CI_AS**.  
 
  Configuration Manager supporta due eccezioni a queste regole di confronto per rispettare gli standard definiti in GB18030 per l'uso in Cina. Per altre informazioni, vedere [Supporto internazionale](/sccm/core/plan-design/hierarchy/international-support).  
 
@@ -208,15 +208,15 @@ Il supporto per un Service Pack di SQL Server specifico include gli aggiornament
 ### <a name="sql-server-memory"></a>Memoria di SQL Server  
  Riservare la memoria per SQL Server usando SQL Server Management Studio e l'impostazione **Memoria minima per il server** in **Opzioni per la memoria del server**. Per altre informazioni su come configurare questa impostazione, vedere [Opzioni di configurazione del server Server Memory](https://docs.microsoft.com/sql/database-engine/configure-windows/server-memory-server-configuration-options).  
 
--   **Per un server di database installato nello stesso computer del server del sito**: limitare la memoria per SQL Server al 50-80% della memoria di sistema indirizzabile disponibile.  
+-   **Per un server di database installato nello stesso computer del server del sito**: Limitare la memoria per SQL Server a 50-80% della memoria di sistema indirizzabile disponibile.  
 
--   **Per un server di database dedicato (remoto rispetto al server del sito)**: limitare la memoria per SQL Server all'80-90% della memoria di sistema indirizzabile disponibile.  
+-   **Per un server di database dedicato (remoto dal computer del server del sito)**: Limitare la memoria per SQL Server a 80-90% della memoria di sistema indirizzabile disponibile.  
 
 -   **Per una riserva di memoria per il pool di buffer di ogni istanza di SQL Server in uso**:  
 
-    -   Per un sito di amministrazione centrale, impostare almeno 8 gigabyte (GB).  
-    -   Per un sito primario, impostare almeno 8 gigabyte (GB).  
-    -   Per un sito secondario, impostare almeno 4 gigabyte (GB).  
+    -   Per un sito di amministrazione centrale: impostare minimo 8 gigabyte (GB).  
+    -   Per un sito primario: impostare minimo 8 gigabyte (GB).  
+    -   Per un sito secondario: impostare minimo 4 gigabyte (GB).  
 
 ### <a name="sql-nested-triggers"></a>Trigger nidificati SQL   
  I trigger nidificati SQL devono essere abilitati. Per altre informazioni, vedere [Configurare l'opzione di configurazione del server nested triggers](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-the-nested-triggers-server-configuration-option) 
@@ -252,7 +252,7 @@ Per informazioni su come modificare l'account usato dal servizio SQL Server, ved
 SQL Server Reporting Services è necessario per l'installazione di un punto di Reporting Services che consente di eseguire report.  
 
 > [!IMPORTANT]  
-> Dopo aver aggiornato SQL Server da una versione precedente, potrebbe essere visualizzato l'errore seguente: *Report Builder Does Not Exist* (Generatore report inesistente).  
+> Dopo aver aggiornato SQL Server da una versione precedente, potrebbe essere visualizzato l'errore seguente:  *Report Builder Does Not Exist* (Generatore report non esiste).  
 > Per risolvere questo errore è necessario reinstallare il ruolo del sistema del sito del punto di Reporting Services.  
 
 ### <a name="sql-server-ports"></a>Porte di SQL Server  

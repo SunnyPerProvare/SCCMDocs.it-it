@@ -10,12 +10,12 @@ ms.assetid: 6e4964c5-43cb-4372-9a89-b62ae6a4775c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e88d40317fe0c1385d78ab7b5919f0f766254598
-ms.sourcegitcommit: 303d826f45c8fd9a05d8883afc1ca645e56bd576
+ms.openlocfilehash: 96f816e20d31315e2eaf63b5bf4a14376f3c9261
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51269213"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417898"
 ---
 # <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Usare lo strumento di connessione del servizio per System Center Configuration Manager
 
@@ -59,9 +59,9 @@ Di seguito sono elencati i prerequisiti e i problemi noti.
 
  In questa procedura gli esempi della riga di comando usano i nomi file e i percorsi di cartelle seguenti (non è necessario usare questi percorsi e nomi file, si possono usare anche alternative più adatte al proprio ambiente e alle proprie preferenze):  
 
--   Percorso di una chiave USB in cui vengono archiviati i dati per il trasferimento tra server: **D:\USB\\**  
+-   Percorso a una chiave USB dove vengono archiviati i dati per il trasferimento tra server:  **D:\USB\\**  
 
--   Nome del file con estensione cab che contiene i dati esportati dal sito: **UsageData.cab**  
+-   Nome del file CAB che contiene i dati esportati dal sito: **UsageData.cab**  
 
 -   Nome della cartella vuota in cui verranno archiviati gli aggiornamenti scaricati per Configuration Manager per il trasferimento tra server: **UpdatePacks**  
 
@@ -80,7 +80,7 @@ Quando si esegue il comando seguente, lo strumento prepara un file CAB che conti
 ### <a name="overview"></a>Panoramica
 #### <a name="there-are-three-primary-steps-to-using-the-service-connection-tool"></a>I passaggi principali per l'uso dello strumento di connessione del servizio sono tre  
 
-1.  **Preparazione**: questo passaggio viene eseguito nel computer che ospita il punto di connessione del servizio. Quando si esegue lo strumento, i dati di utilizzo vengono inseriti in un file CAB e archiviati in un'unità USB o in una posizione di trasferimento alternativa specificata.  
+1.  **Preparazione**:  questo passaggio viene eseguito nel computer che ospita il punto di connessione del servizio. Quando si esegue lo strumento, i dati di utilizzo vengono inseriti in un file CAB e archiviati in un'unità USB o in una posizione di trasferimento alternativa specificata.  
 
 2.  **Connessione**: per questo passaggio lo strumento viene eseguito in un computer remoto che si connette a Internet in modo da poter caricare i dati di utilizzo e poi scaricare gli aggiornamenti.  
 
@@ -121,51 +121,51 @@ Riga di comando di esempio che utilizza *- downloadsiteversion*:
 
 ### <a name="to-use-the-service-connection-tool"></a>Per usare lo strumento di connessione del servizio  
 
-1.  Nel computer che ospita il punto di connessione del servizio:  
+1. Nel computer che ospita il punto di connessione del servizio:  
 
-    -   Aprire un prompt dei comandi con privilegi amministrativi, quindi passare alla directory nel percorso che contiene **serviceconnectiontool.exe**.   
+   -   Aprire un prompt dei comandi con privilegi amministrativi, quindi passare alla directory nel percorso che contiene **serviceconnectiontool.exe**.   
 
-2.  Eseguire il comando seguente per fare in modo che lo strumento prepari un file con estensione cab contenente informazioni sull'utilizzo e lo copi nel percorso specificato:  
+2. Eseguire il comando seguente per fare in modo che lo strumento prepari un file con estensione cab contenente informazioni sull'utilizzo e lo copi nel percorso specificato:  
 
-    -   **serviceconnectiontool.exe -prepare -usagedatadest D:\USB\UsageData.cab**  
+   -   **serviceconnectiontool.exe -prepare -usagedatadest D:\USB\UsageData.cab**  
 
-    Se si caricano file con estensione cab da più gerarchie contemporaneamente, è necessario che ogni file nella cartella abbia un nome univoco. È possibile rinominare manualmente i file aggiunti nella cartella.
+   Se si caricano file con estensione cab da più gerarchie contemporaneamente, è necessario che ogni file nella cartella abbia un nome univoco. È possibile rinominare manualmente i file aggiunti nella cartella.
 
-    Per visualizzare le informazioni sull'utilizzo raccolte per essere caricate nel servizio cloud di Configuration Manager, eseguire il comando seguente per esportare gli stessi dati come file con estensione csv che può essere visualizzato usando un'applicazione come Excel:  
+   Per visualizzare le informazioni sull'utilizzo raccolte per essere caricate nel servizio cloud di Configuration Manager, eseguire il comando seguente per esportare gli stessi dati come file con estensione csv che può essere visualizzato usando un'applicazione come Excel:  
 
-    -   **serviceconnectiontool.exe -export -dest D:\USB\UsageData.csv**  
+   -   **serviceconnectiontool.exe -export -dest D:\USB\UsageData.csv**  
 
-3.  Una volta completata la procedura di preparazione, spostare l'unità USB (o trasferire i dati esportati con un altro metodo) in un computer con l'accesso a Internet.  
+3. Una volta completata la procedura di preparazione, spostare l'unità USB (o trasferire i dati esportati con un altro metodo) in un computer con l'accesso a Internet.  
 
-4.  Nel computer con l'accesso a Internet aprire un prompt dei comandi con privilegi amministrativi, quindi passare alla directory nel percorso che contiene una copia dello strumento  **serviceconnectiontool.exe** e gli altri file provenienti dalla cartella specificata.  
+4. Nel computer con l'accesso a Internet aprire un prompt dei comandi con privilegi amministrativi, quindi passare alla directory nel percorso che contiene una copia dello strumento  **serviceconnectiontool.exe** e gli altri file provenienti dalla cartella specificata.  
 
-5.  Eseguire questo comando per avviare il caricamento delle informazioni di utilizzo e il download degli aggiornamenti per Configuration Manager:  
+5. Eseguire questo comando per avviare il caricamento delle informazioni di utilizzo e il download degli aggiornamenti per Configuration Manager:  
 
-    -   **serviceconnectiontool.exe -connect -usagedatasrc D:\USB -updatepackdest D:\USB\UpdatePacks**
+   -   **serviceconnectiontool.exe -connect -usagedatasrc D:\USB -updatepackdest D:\USB\UpdatePacks**
 
-    Per altri esempi di questa riga di comando, vedere la sezione [Opzioni della riga di comando](../../../core/servers/manage/use-the-service-connection-tool.md#bkmk_cmd) più avanti in questo argomento.
+   Per altri esempi di questa riga di comando, vedere la sezione [Opzioni della riga di comando](../../../core/servers/manage/use-the-service-connection-tool.md#bkmk_cmd) più avanti in questo argomento.
 
-    > [!NOTE]  
-    >  Quando si esegue la riga di comando per connettersi al servizio cloud di Configuration Manager, potrebbe verificarsi un errore simile al seguente:  
-    >   
-    >  -   Eccezione non gestita: System.UnauthorizedAccessException:  
-    >   
-    >      L'accesso al percorso 'C:\  
-    >     Users\br\AppData\Local\Temp\extractmanifestcab\95F8A562.sql' è negato.  
-    >   
-    > Questo errore può essere ignorato senza conseguenze ed è possibile chiudere la finestra di errore e continuare.  
+   > [!NOTE]  
+   >  Quando si esegue la riga di comando per connettersi al servizio cloud di Configuration Manager, potrebbe verificarsi un errore simile al seguente:  
+   >   
+   >  -   Eccezione non gestita: System.UnauthorizedAccessException:  
+   >   
+   >      L'accesso al percorso 'C:\  
+   >     Users\br\AppData\Local\Temp\extractmanifestcab\95F8A562.sql' è negato.  
+   >   
+   > Questo errore può essere ignorato senza conseguenze ed è possibile chiudere la finestra di errore e continuare.  
 
-6.  Dopo aver scaricato gli aggiornamenti per Configuration Manager, spostare l'unità USB (o trasferire i dati esportati con un altro metodo) nel computer che ospita il punto di connessione del servizio.  
+6. Dopo aver scaricato gli aggiornamenti per Configuration Manager, spostare l'unità USB (o trasferire i dati esportati con un altro metodo) nel computer che ospita il punto di connessione del servizio.  
 
-7.  Nel computer che ospita il punto di connessione del servizio aprire un prompt dei comandi con privilegi amministrativi, passare alla directory nel percorso che contiene **serviceconnectiontool.exe**, quindi eseguire il comando seguente:  
+7. Nel computer che ospita il punto di connessione del servizio aprire un prompt dei comandi con privilegi amministrativi, passare alla directory nel percorso che contiene **serviceconnectiontool.exe**, quindi eseguire il comando seguente:  
 
-    -   **serviceconnectiontool.exe -import -updatepacksrc D:\USB\UpdatePacks**  
+   -   **serviceconnectiontool.exe -import -updatepacksrc D:\USB\UpdatePacks**  
 
-8.  Al termine dell'importazione, è possibile chiudere il prompt dei comandi. Vengono importati solo gli aggiornamenti per la gerarchia applicabile.  
+8. Al termine dell'importazione, è possibile chiudere il prompt dei comandi. Vengono importati solo gli aggiornamenti per la gerarchia applicabile.  
 
 9. Aprire la console di Configuration Manager e passare ad **Amministrazione** > **Aggiornamenti e manutenzione**. Gli aggiornamenti importati sono ora pronti per l'installazione. Nelle versioni precedenti la 1702, Aggiornamenti e manutenzione si trova in **Amministrazione** > **Servizi cloud**.
 
- Per informazioni sull'installazione degli aggiornamenti, vedere  [Installare gli aggiornamenti nella console per System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md).  
+   Per informazioni sull'installazione degli aggiornamenti, vedere  [Installare gli aggiornamenti nella console per System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md).  
 
 ## <a name="bkmk_cmd"></a> File di log
 

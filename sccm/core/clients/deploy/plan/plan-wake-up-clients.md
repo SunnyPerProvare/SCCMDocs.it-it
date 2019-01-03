@@ -10,12 +10,12 @@ ms.assetid: 52ee82b2-0b91-4829-89df-80a6abc0e63a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2f36ff6c28bd8a3fa23599652aff82ef0c721cad
-ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
+ms.openlocfilehash: 7e2726c6264091390e85c4c8ad89d47182d94175
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "34474141"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423984"
 ---
 # <a name="plan-how-to-wake-up-clients-in-system-center-configuration-manager"></a>Pianificare la riattivazione dei client in System Center Configuration Manager
 
@@ -25,28 +25,28 @@ ms.locfileid: "34474141"
 
 È possibile integrare il metodo tradizionale di riattivazione pacchetti usando le impostazioni client proxy di riattivazione. Il proxy di riattivazione usa un protocollo peer-to-peer e computer selezionati per controllare se nella subnet sono attivi altri computer e per riattivarli se necessario. Quando il sito è configurato per la riattivazione LAN e i client sono configurati per il proxy di riattivazione, il processo funziona nel modo seguente:  
 
-1.  I computer con il client di Configuration Manager e che non sono in stato di sospensione nella subnet controllano se nella subnet ci sono altri computer riattivati. Questo controllo viene eseguito inviando tra di loro un comando ping TCP/IP ogni cinque secondi.  
+1. I computer con il client di Configuration Manager e che non sono in stato di sospensione nella subnet controllano se nella subnet ci sono altri computer riattivati. Questo controllo viene eseguito inviando tra di loro un comando ping TCP/IP ogni cinque secondi.  
 
-2.  Se non esiste alcuna risposta da altri computer, questi verranno considerati in stato di sospensione. I computer riattivati diventano *computer di gestione* per la subnet.  
+2. Se non esiste alcuna risposta da altri computer, questi verranno considerati in stato di sospensione. I computer riattivati diventano *computer di gestione* per la subnet.  
 
-     Poiché è possibile che un computer non risponda per un motivo che non sia collegato alla sospensione (ad esempio, è spento, rimosso dalla rete o non è più applicata l'impostazione client di riattivazione proxy), ai computer viene inviato un pacchetto di riattivazione ogni giorno alle 14.00. ora locale. I computer che non rispondono non verranno più considerati in stato di sospensione e non verranno riattivati da proxy di riattivazione.  
+    Poiché è possibile che un computer non risponda per un motivo che non sia collegato alla sospensione (ad esempio, è spento, rimosso dalla rete o non è più applicata l'impostazione client di riattivazione proxy), ai computer viene inviato un pacchetto di riattivazione ogni giorno alle 14.00. ora locale. I computer che non rispondono non verranno più considerati in stato di sospensione e non verranno riattivati da proxy di riattivazione.  
 
-     Per il supporto dei proxy di riattivazione, devono essere attivi almeno tre computer per ogni subnet. Per soddisfare questo requisito, tre computer vengono scelti in modo non deterministico come *computer tutori* della subnet. Questo stato indica che rimangono attivi, nonostante siano presenti criteri di risparmio energia configurati in modalità di sospensione o di ibernazione dopo un periodo di inattività. I computer tutori rispettano i comandi di arresto o di riavvio, ad esempio, in seguito ad attività di manutenzione. Se ciò accade, i computer tutori rimanenti riattivano un altro computer nella subnet in modo che la subnet stessa continui ad avere tre computer tutori.  
+    Per il supporto dei proxy di riattivazione, devono essere attivi almeno tre computer per ogni subnet. Per soddisfare questo requisito, tre computer vengono scelti in modo non deterministico come *computer tutori* della subnet. Questo stato indica che rimangono attivi, nonostante siano presenti criteri di risparmio energia configurati in modalità di sospensione o di ibernazione dopo un periodo di inattività. I computer tutori rispettano i comandi di arresto o di riavvio, ad esempio, in seguito ad attività di manutenzione. Se ciò accade, i computer tutori rimanenti riattivano un altro computer nella subnet in modo che la subnet stessa continui ad avere tre computer tutori.  
 
-3.  I computer di gestione chiedono al commutatore di rete di reindirizzare il traffico di rete dei computer in sospensione verso sé stessi.  
+3. I computer di gestione chiedono al commutatore di rete di reindirizzare il traffico di rete dei computer in sospensione verso sé stessi.  
 
-     Il reindirizzamento avviene mediante la trasmissione dal parte del computer di gestione di un frame Ethernet che usa l'indirizzo MAC del computer in sospensione come indirizzo di origine. In questo modo il commutatore di rete si comporta come se il computer in sospensione sia stato spostato sulla stessa porta su cui si trova il computer di gestione. Il computer di gestione invia anche pacchetti ARP per i computer in sospensione per mantenere la voce nella cache ARP. Il computer di gestione risponde anche alle richieste ARP per conto del computer in sospensione e con l'indirizzo MAC del computer in sospensione.  
+    Il reindirizzamento avviene mediante la trasmissione dal parte del computer di gestione di un frame Ethernet che usa l'indirizzo MAC del computer in sospensione come indirizzo di origine. In questo modo il commutatore di rete si comporta come se il computer in sospensione sia stato spostato sulla stessa porta su cui si trova il computer di gestione. Il computer di gestione invia anche pacchetti ARP per i computer in sospensione per mantenere la voce nella cache ARP. Il computer di gestione risponde anche alle richieste ARP per conto del computer in sospensione e con l'indirizzo MAC del computer in sospensione.  
 
-    > [!WARNING]  
-    >  Durante questo processo, il mapping da indirizzo IP a indirizzo MAC per il computer in sospensione rimane lo stesso. Il proxy di riattivazione informa il commutatore di rete che una scheda di rete differente sta usando la porta registrata da un altra scheda di rete. Tuttavia, questo comportamento è noto come flap MAC ed è insolito per operazioni di rete standard. Alcuni strumenti di monitoraggio della rete cercano questo comportamento e possono presumere che qualcosa non vada. Di conseguenza, questi strumenti di monitoraggio sono in grado di generare avvisi o chiudere le porte quando si usa il proxy di riattivazione.  
-    >   
-    >  Non usare il proxy di riattivazione se gli strumenti e i servizi di monitoraggio di rete e servizi non consentono i flap MAC.  
+   > [!WARNING]  
+   >  Durante questo processo, il mapping da indirizzo IP a indirizzo MAC per il computer in sospensione rimane lo stesso. Il proxy di riattivazione informa il commutatore di rete che una scheda di rete differente sta usando la porta registrata da un altra scheda di rete. Tuttavia, questo comportamento è noto come flap MAC ed è insolito per operazioni di rete standard. Alcuni strumenti di monitoraggio della rete cercano questo comportamento e possono presumere che qualcosa non vada. Di conseguenza, questi strumenti di monitoraggio sono in grado di generare avvisi o chiudere le porte quando si usa il proxy di riattivazione.  
+   >   
+   >  Non usare il proxy di riattivazione se gli strumenti e i servizi di monitoraggio di rete e servizi non consentono i flap MAC.  
 
-4.  Quando un computer di gestione visualizza una nuova richiesta di connessione TCP per un computer in sospensione e la richiesta è su una porta su cui tale computer era in ascolto prima di andare in sospensione, il computer di gestione invia un pacchetto di riattivazione, quindi smette di reindirizzare il traffico per questo computer.  
+4. Quando un computer di gestione visualizza una nuova richiesta di connessione TCP per un computer in sospensione e la richiesta è su una porta su cui tale computer era in ascolto prima di andare in sospensione, il computer di gestione invia un pacchetto di riattivazione, quindi smette di reindirizzare il traffico per questo computer.  
 
-5.  Il computer in sospensione riceve il pacchetto di riattivazione e viene riattivato. Il computer di invio ritenta automaticamente la connessione e questa volta, il computer viene riattivato ed è in grado di rispondere.  
+5. Il computer in sospensione riceve il pacchetto di riattivazione e viene riattivato. Il computer di invio ritenta automaticamente la connessione e questa volta, il computer viene riattivato ed è in grado di rispondere.  
 
- Il proxy di riattivazione presenta i prerequisiti e le limitazioni seguenti:  
+   Il proxy di riattivazione presenta i prerequisiti e le limitazioni seguenti:  
 
 > [!IMPORTANT]  
 >  Se un team separato è responsabile dell'infrastruttura di rete e dei servizi di rete, inviare una notifica e includere tale team nel periodo di valutazione e verifica. Ad esempio, in una rete che usa il controllo accesso alla rete mediante 802.1 X, il proxy di attivazione non funziona e può causare l'interruzione del servizio di rete. Il proxy di riattivazione potrebbe inoltre causare la generazione di avvisi da parte di alcuni strumenti di monitoraggio della rete quando viene rilevato il traffico per la riattivazione di altri computer.  
@@ -92,4 +92,4 @@ Decidere se usare pacchetti di broadcast diretti a subnet oppure pacchetti unica
 |Broadcast con riferimento a subnet|Maggiore percentuale di successo rispetto a unicast se si dispone di computer che cambiano spesso l'indirizzo IP nella stessa subnet.<br /><br /> Non è necessaria nessuna riconfigurazione del commutatore.<br /><br /> Elevata percentuale di compatibilità con schede di computer per tutti gli stati di sospensione, perché i broadcast con riferimento a subnet erano il metodo di trasmissione originale per l'invio di pacchetti di riattivazione.|Soluzione meno sicuro rispetto all'utilizzo di unicast, poiché un utente malintenzionato potrebbe inviare flussi continui di richieste echo di Internet Control Message Protocol (ICMP) da un indirizzo di origine falsificato all'indirizzo di broadcast con riferimento a subnet. Ciò provocherebbe la risposta di tutti gli host a tale indirizzo di origine. Se i router sono configurati per consentire trasmissioni con riferimento a subnet, per motivi di sicurezza è consigliabile la configurazione aggiuntiva:<br /><br /> Configurare i router per consentire solo broadcast diretti IP dal server del sito di Configuration Manager, usando un numero di porta UDP specificato.<br />Configurare Configuration Manager per l'uso del numero di porta non predefinito specificato.<br /><br /> Potrebbe essere richiesta la riconfigurazione di tutti i router coinvolti per abilitare broadcast con riferimento a subnet.<br /><br /> Usa una larghezza di banda di rete maggiore rispetto a trasmissioni unicast.<br /><br /> Supportato solo con IPv4 e non con IPv6.|  
 
 > [!WARNING]  
->  Esistono rischi per la sicurezza associati ai broadcast con riferimento a subnet: un utente malintenzionato potrebbe inviare flussi continui di richieste echo di Internet Control Message Protocol (ICMP) da un indirizzo di origine falsificato all'indirizzo di broadcast con riferimento a subnet, determinando la risposta di tutti gli host a tale indirizzo di origine. Questo tipo di attacco Denial of Service è comunemente denominato attacco smurf e viene in genere limitato non abilitando le broadcast con riferimento a subnet.
+>  Ci sono rischi di protezione associati a broadcast con riferimento a subnet: un utente malintenzionato potrebbe inviare flussi continui di richieste echo di Internet Control Message Protocol (ICMP) da un indirizzo di origine falsificato all'indirizzo di broadcast con riferimento a subnet, determinando la risposta di tutti gli host a tale indirizzo di origine. Questo tipo di attacco Denial of Service è comunemente denominato attacco smurf e viene in genere limitato non abilitando le broadcast con riferimento a subnet.
