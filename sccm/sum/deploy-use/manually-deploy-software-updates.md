@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 57184274-5fea-4d79-a2b4-22e08ed26daf
-ms.openlocfilehash: a76582e853c2bcacdbd93723dc15b12d3b25f37c
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: aae0951ddf32ce1d58a29b034acef96b55ab85a0
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384441"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53414804"
 ---
 # <a name="manually-deploy-software-updates"></a>Distribuire manualmente gli aggiornamenti software  
 
@@ -52,7 +52,7 @@ A seconda delle combinazioni di prodotti e classificazioni sincronizzate dal sit
 
 
 
-##  <a name="BKMK_2UpdateGroup"></a> Passaggio 2: Creare un gruppo di aggiornamenti software che contenga gli aggiornamenti software   
+##  <a name="BKMK_2UpdateGroup"></a> Passaggio 2: Creare un gruppo di aggiornamenti software che contiene gli aggiornamenti software   
 
 I gruppi di aggiornamento software consentono di organizzare gli aggiornamenti software in preparazione per la distribuzione. Usare la procedura seguente per aggiungere manualmente gli aggiornamenti software in un nuovo gruppo di aggiornamento software.  
 
@@ -74,8 +74,7 @@ Prima di distribuire gli aggiornamenti software, scaricare il contenuto degli ag
 
 
 ### <a name="process-to-download-content-for-the-software-update-group"></a>Processo per scaricare il contenuto per il gruppo di aggiornamento software
-[!INCLUDE[downloadupdates](..\includes\downloadupdates.md)]
-
+[!INCLUDE [downloadupdates](../includes/downloadupdates.md)]
 
 ### <a name="process-to-monitor-content-status"></a>Processo per monitorare lo stato del contenuto
 1. Per monitorare lo stato del contenuto per gli aggiornamenti software, passare all'area di lavoro **Monitoraggio** nella console di Configuration Manager. Espandere **Stato distribuzione** e quindi selezionare il nodo **Stato contenuto**.  
@@ -92,88 +91,88 @@ Dopo avere determinato gli aggiornamenti da distribuire e averli aggiunti a un g
 
 ### <a name="process-to-manually-deploy-the-software-updates-in-a-software-update-group"></a>Processo per distribuire manualmente gli aggiornamenti software in un gruppo di aggiornamento software  
 
-1.  Nella console di Configuration Manager passare all'area di lavoro **Raccolta software**, espandere **Aggiornamenti software** e selezionare il nodo **Gruppi di aggiornamenti software**.  
+1. Nella console di Configuration Manager passare all'area di lavoro **Raccolta software**, espandere **Aggiornamenti software** e selezionare il nodo **Gruppi di aggiornamenti software**.  
 
-2.  Selezionare il gruppo di aggiornamento software che si vuole distribuire. Fare clic su **Distribuisci** nella barra multifunzione.   
+2. Selezionare il gruppo di aggiornamento software che si vuole distribuire. Fare clic su **Distribuisci** nella barra multifunzione.   
 
-3.  Nella pagina **Generale** della Distribuzione guidata degli aggiornamenti software configurare le impostazioni seguenti:  
+3. Nella pagina **Generale** della Distribuzione guidata degli aggiornamenti software configurare le impostazioni seguenti:  
 
-    -   **Nome**: specificare il nome per la distribuzione. La distribuzione deve avere un nome univoco che ne descriva lo scopo e la distingua da altre distribuzioni nel sito. Questo campo del nome prevede un limite di 256 caratteri. Per impostazione predefinita, Configuration Manager fornisce automaticamente un nome per la distribuzione nel formato seguente: `Microsoft Software Updates - YYYY-MM-DD <time>`  
+   -   **Nome**: specificare il nome per la distribuzione. La distribuzione deve avere un nome univoco che ne descriva lo scopo e la distingua da altre distribuzioni nel sito. Questo campo del nome prevede un limite di 256 caratteri. Per impostazione predefinita, Configuration Manager fornisce automaticamente un nome per la distribuzione nel formato seguente: `Microsoft Software Updates - YYYY-MM-DD <time>`  
 
-    -   **Descrizione**: specificare una descrizione per la distribuzione. La descrizione è facoltativa, ma fornisce una panoramica della distribuzione. Includere eventuali altre informazioni rilevanti per identificare e distinguere la distribuzione dalle altre nel sito. Il campo della descrizione ha un limite di 256 caratteri e un valore vuoto per impostazione predefinita.  
+   -   **Descrizione**: Specificare una descrizione per la distribuzione. La descrizione è facoltativa, ma fornisce una panoramica della distribuzione. Includere eventuali altre informazioni rilevanti per identificare e distinguere la distribuzione dalle altre nel sito. Il campo della descrizione ha un limite di 256 caratteri e un valore vuoto per impostazione predefinita.  
 
-    -   **Aggiornamento software/gruppo di aggiornamenti software**: verificare che il gruppo di aggiornamento software visualizzato o l'aggiornamento software sia corretto.  
+   -   **Aggiornamento software/gruppo di aggiornamenti software**: verificare che il gruppo di aggiornamenti software o l'aggiornamento software visualizzato siano corretti.  
 
-    -   **Seleziona modello di distribuzione**: specificare se applicare un modello di distribuzione precedentemente salvato. Configurare un modello di distribuzione per salvare le proprietà di distribuzione degli aggiornamenti software comuni. Applicare quindi il modello quando si distribuiscono gli aggiornamenti software in futuro. Questi modelli consentono di risparmiare tempo e garantire la coerenza tra le distribuzioni simili.  
+   -   **Seleziona modello di distribuzione**: specificare se applicare un modello di distribuzione precedentemente salvato. Configurare un modello di distribuzione per salvare le proprietà di distribuzione degli aggiornamenti software comuni. Applicare quindi il modello quando si distribuiscono gli aggiornamenti software in futuro. Questi modelli consentono di risparmiare tempo e garantire la coerenza tra le distribuzioni simili.  
 
-    -   **Raccolta**: specificare la raccolta per la distribuzione. I dispositivi nella raccolta ricevono gli aggiornamenti software di questa distribuzione.  
+   -   **Raccolta**: specificare la raccolta per questa distribuzione. I dispositivi nella raccolta ricevono gli aggiornamenti software di questa distribuzione.  
 
-4.  Nella pagina **Impostazioni distribuzione** configurare le impostazioni seguenti:  
+4. Nella pagina **Impostazioni distribuzione** configurare le impostazioni seguenti:  
 
-    -   **Tipo di distribuzione**: specificare il tipo di distribuzione per la distribuzione degli aggiornamenti software.  
+   -   **Tipo di distribuzione**: Specificare il tipo di distribuzione per la distribuzione degli aggiornamenti software.  
 
-        > [!IMPORTANT]  
-        >  Dopo aver creato la distribuzione degli aggiornamenti software, non è possibile modificare il tipo di distribuzione.  
+       > [!IMPORTANT]  
+       >  Dopo aver creato la distribuzione degli aggiornamenti software, non è possibile modificare il tipo di distribuzione.  
 
-         - Selezionare **Richiesto** per creare una distribuzione degli aggiornamenti software obbligatoria. Gli aggiornamenti software vengono installati automaticamente nei client prima della scadenza di installazione configurata.  
+        - Selezionare **Richiesto** per creare una distribuzione degli aggiornamenti software obbligatoria. Gli aggiornamenti software vengono installati automaticamente nei client prima della scadenza di installazione configurata.  
 
-         - Selezionare **Disponibile** per creare una distribuzione degli aggiornamenti software facoltativa. Questa distribuzione è disponibile per l'installazione da parte degli utenti in Software Center.  
+        - Selezionare **Disponibile** per creare una distribuzione degli aggiornamenti software facoltativa. Questa distribuzione è disponibile per l'installazione da parte degli utenti in Software Center.  
 
-        > [!NOTE]  
-        >  Quando si distribuisce un gruppo di aggiornamento software come **Richiesto**, i client scaricano il contenuto in background rispettando le impostazioni BITS, se configurate.  
-        > 
-        > Per i gruppi di aggiornamenti software distribuiti come **Disponibile** i client scaricano il contenuto in primo piano ignorando le impostazioni BITS.  
+       > [!NOTE]  
+       >  Quando si distribuisce un gruppo di aggiornamento software come **Richiesto**, i client scaricano il contenuto in background rispettando le impostazioni BITS, se configurate.  
+       > 
+       > Per i gruppi di aggiornamenti software distribuiti come **Disponibile** i client scaricano il contenuto in primo piano ignorando le impostazioni BITS.  
 
-    -   **Utilizza riattivazione LAN per riattivare i client per le distribuzioni richieste**: specifica se abilitare la riattivazione LAN alla scadenza. La funzione di riattivazione LAN invia pacchetti di riattivazione ai computer che richiedono uno o più aggiornamenti software nella distribuzione. Il sito riattiva tutti i computer in modalità sospensione all'ora di scadenza dell'installazione in modo che l'installazione venga avviata. I client in modalità sospensione che non richiedono aggiornamenti software nella distribuzione non vengono avviati. Per impostazione predefinita, questa impostazione non è abilitata. È disponibile solo per le distribuzioni **obbligatorie**. Prima di usare questa opzione, configurare i computer e le reti per la riattivazione LAN. Per altre informazioni, vedere [Come configurare la riattivazione LAN](/sccm/core/clients/deploy/configure-wake-on-lan).  
+   -   **Usa riattivazione LAN per riattivare i client per le distribuzioni richieste**: specifica se abilitare la riattivazione LAN alla scadenza. La funzione di riattivazione LAN invia pacchetti di riattivazione ai computer che richiedono uno o più aggiornamenti software nella distribuzione. Il sito riattiva tutti i computer in modalità sospensione all'ora di scadenza dell'installazione in modo che l'installazione venga avviata. I client in modalità sospensione che non richiedono aggiornamenti software nella distribuzione non vengono avviati. Per impostazione predefinita, questa impostazione non è abilitata. È disponibile solo per le distribuzioni **obbligatorie**. Prima di usare questa opzione, configurare i computer e le reti per la riattivazione LAN. Per altre informazioni, vedere [Come configurare la riattivazione LAN](/sccm/core/clients/deploy/configure-wake-on-lan).  
 
-    -   **Livello dettaglio**: specificare il livello di dettaglio per i messaggi di stato segnalati dai client nel sito.  
+   -   **Livello dettaglio**: specificare il livello di dettaglio per i messaggi di stato segnalati dai client nel sito.  
 
-5.  Nella pagina **Pianificazione** configurare le impostazioni seguenti:  
+5. Nella pagina **Pianificazione** configurare le impostazioni seguenti:  
 
-    -   **Pianificazione della valutazione**: specificare l'ora in cui Configuration Manager valuta il tempo disponibile e le scadenze dell'installazione. Scegliere se usare l'ora UTC (Coordinated Universal Time) oppure l'ora locale del computer in cui viene eseguita la console di Configuration Manager.  
+   -   **Pianificazione della valutazione**: specificare l'ora in cui Configuration Manager valuta il tempo disponibile e le scadenze dell'installazione. Scegliere se usare l'ora UTC (Coordinated Universal Time) oppure l'ora locale del computer in cui viene eseguita la console di Configuration Manager.  
 
-        - Quando qui si seleziona **Ora locale client** e quindi **Appena possibile** come opzione di **Tempo disponibile software**, per valutare la disponibilità degli aggiornamenti viene usata l'ora corrente nel computer che esegue la console di Configuration Manager. Questo comportamento è analogo con l'opzione **Scadenza installazione** e l'ora in cui gli aggiornamenti vengono installati in un client. Se il client si trova in un fuso orario diverso, le azioni seguenti vengono eseguite quando l'ora del client corrisponde a quella impostata per la valutazione.  
+       - Quando qui si seleziona **Ora locale client** e quindi **Appena possibile** come opzione di **Tempo disponibile software**, per valutare la disponibilità degli aggiornamenti viene usata l'ora corrente nel computer che esegue la console di Configuration Manager. Questo comportamento è analogo con l'opzione **Scadenza installazione** e l'ora in cui gli aggiornamenti vengono installati in un client. Se il client si trova in un fuso orario diverso, le azioni seguenti vengono eseguite quando l'ora del client corrisponde a quella impostata per la valutazione.  
 
-    -   **Tempo disponibile software**: selezionare una delle seguenti impostazioni per specificare quando gli aggiornamenti del software saranno disponibili per i client:  
+   -   **Tempo disponibile software**: selezionare una delle seguenti impostazioni per specificare quando gli aggiornamenti software saranno disponibili per i client:  
 
-        -   **Appena possibile**: questa impostazione consente di rendere disponibili gli aggiornamenti software nella distribuzione per i client il prima possibile. Quando si crea la distribuzione con questa impostazione selezionata, Configuration Manager aggiorna i criteri client. Al successivo ciclo di polling dei criteri client, ai client viene comunicata la distribuzione e gli aggiornamenti software risultano disponibili per l'installazione.  
+       -   **Appena possibile**: questa impostazione consente di rendere disponibili prima possibile gli aggiornamenti software nella distribuzione per i client. Quando si crea la distribuzione con questa impostazione selezionata, Configuration Manager aggiorna i criteri client. Al successivo ciclo di polling dei criteri client, ai client viene comunicata la distribuzione e gli aggiornamenti software risultano disponibili per l'installazione.  
 
-        -   **Orario specifico**: rende disponibili gli aggiornamenti software nella distribuzione per i client in una data e a un orario specifici. Quando si crea la distribuzione con questa impostazione attivata, Configuration Manager aggiorna i criteri client. La distribuzione viene comunicata ai client in occasione del successivo ciclo di polling dei criteri client. Gli aggiornamenti del software nella distribuzione non sono però disponibili per l'installazione prima della data e dell'orario configurati.  
+       -   **Orario specifico**: rende disponibili gli aggiornamenti software nella distribuzione per i client in una data e a un orario specifici. Quando si crea la distribuzione con questa impostazione attivata, Configuration Manager aggiorna i criteri client. La distribuzione viene comunicata ai client in occasione del successivo ciclo di polling dei criteri client. Gli aggiornamenti del software nella distribuzione non sono però disponibili per l'installazione prima della data e dell'orario configurati.  
 
-    -   **Scadenza installazione**: queste opzioni sono disponibili solo per le distribuzioni **obbligatorie**. Selezionare una delle impostazioni seguenti per specificare la scadenza per l'installazione degli aggiornamenti software nella distribuzione.  
+   -   **Scadenza installazione**: queste opzioni sono disponibili solo per le distribuzioni **obbligatorie**. Selezionare una delle impostazioni seguenti per specificare la scadenza per l'installazione degli aggiornamenti software nella distribuzione.  
 
-        -   **Appena possibile**: selezionare questa impostazione per installare automaticamente gli aggiornamenti software nella distribuzione appena possibile.  
+       -   **Appena possibile**: selezionare questa impostazione per installare automaticamente gli aggiornamenti software nella distribuzione appena possibile.  
 
-        -   **Orario specifico**: selezionare questa impostazione per installare automaticamente gli aggiornamenti software nella distribuzione in una data e a un orario specifici.  
+       -   **Orario specifico**: selezionare questa impostazione per installare automaticamente gli aggiornamenti software nella distribuzione in una data e a un orario specifici.  
 
-            - L'orario effettivo di scadenza dell'installazione corrisponde all'ora di scadenza visualizzata più una quantità di tempo casuale di massimo due ore. Questo valore casuale riduce il potenziale impatto di un'installazione simultanea degli aggiornamenti nella distribuzione da parte dei client nella raccolta.   
+           - L'orario effettivo di scadenza dell'installazione corrisponde all'ora di scadenza visualizzata più una quantità di tempo casuale di massimo due ore. Questo valore casuale riduce il potenziale impatto di un'installazione simultanea degli aggiornamenti nella distribuzione da parte dei client nella raccolta.   
 
-            - Per disabilitare il ritardo della sequenza casuale di installazione per gli aggiornamenti software obbligatori, configurare l'impostazione client **Disabilitare sequenza casuale scadenza** nel gruppo **Agente computer**. Per altre informazioni, vedere le impostazioni client di [Agente computer](/sccm/core/clients/deploy/about-client-settings#computer-agent).  
+           - Per disabilitare il ritardo della sequenza casuale di installazione per gli aggiornamenti software obbligatori, configurare l'impostazione client **Disabilitare sequenza casuale scadenza** nel gruppo **Agente computer**. Per altre informazioni, vedere le impostazioni client di [Agente computer](/sccm/core/clients/deploy/about-client-settings#computer-agent).  
 
-    -  **Ritardare l'imposizione di questa distribuzione in base alle preferenze dell'utente, fino al periodo di tolleranza massimo definito nelle impostazioni del client**: abilitare questa impostazione per dare agli utenti più tempo per installare gli aggiornamenti software obbligatori dopo la scadenza.  
+   -  **Ritardare l'imposizione di questa distribuzione in base alle preferenze dell'utente, fino al periodo di tolleranza massimo definito nelle impostazioni del client**: Abilitare questa impostazione per concedere agli utenti più tempo per installare gli aggiornamenti software necessari, oltre la data di scadenza.  
 
-        - Questo comportamento è in genere necessario quando un computer è stato disattivato per molto tempo ed è necessario installare molte applicazioni o aggiornamenti software, come nel caso, ad esempio, di un utente che, tornato da una vacanza, deve attendere parecchio tempo mentre il client installa le distribuzioni scadute.  
+       - Questo comportamento è in genere necessario quando un computer è stato disattivato per molto tempo ed è necessario installare molte applicazioni o aggiornamenti software, come nel caso, ad esempio, di un utente che, tornato da una vacanza, deve attendere parecchio tempo mentre il client installa le distribuzioni scadute.  
 
-        - Configurare il periodo di tolleranza con la proprietà **Periodo di tolleranza per l'imposizione dopo la scadenza della distribuzione (ore)** nelle impostazioni del client. Per altre informazioni, vedere la sezione [Agente computer](/sccm/core/clients/deploy/about-client-settings#computer-agent). Tale periodo di tolleranza si applica a tutte le distribuzioni con questa opzione abilitata e destinate a dispositivi in cui è stata distribuita anche l'impostazione del client.  
+       - Configurare il periodo di tolleranza con la proprietà **Periodo di tolleranza per l'imposizione dopo la scadenza della distribuzione (ore)** nelle impostazioni del client. Per altre informazioni, vedere la sezione [Agente computer](/sccm/core/clients/deploy/about-client-settings#computer-agent). Tale periodo di tolleranza si applica a tutte le distribuzioni con questa opzione abilitata e destinate a dispositivi in cui è stata distribuita anche l'impostazione del client.  
 
-        - Dopo la scadenza il client installa gli aggiornamenti software nella prima finestra non lavorativa, configurata dall'utente, fino al termine del periodo di tolleranza. L'utente può però aprire comunque Software Center e installare gli aggiornamenti software in qualsiasi momento. Una volta scaduto il periodo di tolleranza, le distribuzioni scadute torneranno al normale comportamento.  
+       - Dopo la scadenza il client installa gli aggiornamenti software nella prima finestra non lavorativa, configurata dall'utente, fino al termine del periodo di tolleranza. L'utente può però aprire comunque Software Center e installare gli aggiornamenti software in qualsiasi momento. Una volta scaduto il periodo di tolleranza, le distribuzioni scadute torneranno al normale comportamento.  
 
-6.  Nella pagina **Esperienza utente** è possibile configurare le impostazioni seguenti:  
+6. Nella pagina **Esperienza utente** è possibile configurare le impostazioni seguenti:  
 
-    -   **Notifiche utente**: specificare se visualizzare la notifica in Software Center nell'orario configurato in **Tempo disponibile software**. Questa impostazione consente di stabilire anche se inviare notifiche agli utenti nei computer client. Per le distribuzioni **disponibili** non è possibile selezionare l'opzione **Nascondi in Software Center e nascondi tutte le notifiche**.  
+   -   **Notifiche utente**: specificare se visualizzare la notifica in Software Center nell'orario configurato in **Tempo disponibile software**. Questa impostazione consente di stabilire anche se inviare notifiche agli utenti nei computer client. Per le distribuzioni **disponibili** non è possibile selezionare l'opzione **Nascondi in Software Center e nascondi tutte le notifiche**.  
 
-    -   **Comportamento scadenza**: questa impostazione è configurabile solo per le distribuzioni **obbligatorie**. Specificare i comportamenti da adottare quando la distribuzione dell'aggiornamento software raggiunge la scadenza oltre qualsiasi finestra di manutenzione definita. Le opzioni disponibili consentono di scegliere se installare gli aggiornamenti software ed eseguire un riavvio del sistema dopo l'installazione. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).  
+   -   **Comportamento scadenza**: questa impostazione è configurabile solo per le distribuzioni **obbligatorie**. Specificare i comportamenti da adottare quando la distribuzione dell'aggiornamento software raggiunge la scadenza oltre qualsiasi finestra di manutenzione definita. Le opzioni disponibili consentono di scegliere se installare gli aggiornamenti software ed eseguire un riavvio del sistema dopo l'installazione. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).  
 
-    -   **Comportamento riavvio dispositivo**: questa impostazione è configurabile solo per le distribuzioni **obbligatorie**. Specificare se evitare un riavvio del sistema in server e workstation se è necessario un riavvio del sistema per completare l'installazione dell'aggiornamento.  
+   -   **Comportamento riavvio dispositivo**: questa impostazione è configurabile solo per le distribuzioni **obbligatorie**. Specificare se evitare un riavvio del sistema in server e workstation se è necessario un riavvio del sistema per completare l'installazione dell'aggiornamento.  
 
-        > [!WARNING]  
-        >  La disattivazione dei riavvii del sistema può essere utile in ambienti server o quando non si vuole che i computer di destinazione vengano riavviati per impostazione predefinita. Con tale impostazione, però, i computer potrebbero trovarsi in uno stato non protetto. Un riavvio forzato assicura il completamento immediato dell'installazione degli aggiornamenti software.  
+       > [!WARNING]  
+       >  La disattivazione dei riavvii del sistema può essere utile in ambienti server o quando non si vuole che i computer di destinazione vengano riavviati per impostazione predefinita. Con tale impostazione, però, i computer potrebbero trovarsi in uno stato non protetto. Un riavvio forzato assicura il completamento immediato dell'installazione degli aggiornamenti software.  
 
-    -   **Gestione filtri di scrittura per dispositivi con Windows Embedded**: questa impostazione controlla il comportamento di installazione nei dispositivi con Windows Embedded in cui è abilitato un filtro di scrittura. Scegliere l'opzione per eseguire il commit delle modifiche alla scadenza dell'installazione o durante una finestra di manutenzione. Quando si seleziona questa opzione, è necessario un riavvio e la modifica viene salvata in modo permanente nel dispositivo. In caso contrario, l'aggiornamento viene installato, applicato all'overlay temporaneo e sottoposto a commit successivamente.  
+   -   **Gestione filtri di scrittura per dispositivi con Windows Embedded**: questa impostazione controlla il comportamento di installazione nei dispositivi con Windows Embedded in cui è abilitato un filtro di scrittura. Scegliere l'opzione per eseguire il commit delle modifiche alla scadenza dell'installazione o durante una finestra di manutenzione. Quando si seleziona questa opzione, è necessario un riavvio e la modifica viene salvata in modo permanente nel dispositivo. In caso contrario, l'aggiornamento viene installato, applicato all'overlay temporaneo e sottoposto a commit successivamente.  
 
-        -  Quando si distribuisce un aggiornamento software in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta che ha una finestra di manutenzione configurata.  
+       -  Quando si distribuisce un aggiornamento software in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta che ha una finestra di manutenzione configurata.  
 
-    - **Comportamento di rivalutazione della distribuzione degli aggiornamenti software al riavvio**: selezionare questa impostazione per configurare le distribuzioni degli aggiornamenti software in modo che i client eseguano un'analisi della conformità degli aggiornamenti software immediatamente dopo l'installazione degli aggiornamenti software e il riavvio. Questa impostazione consente al client di controllare la presenza di aggiornamenti aggiuntivi che diventano applicabili dopo il riavvio e di installarli durante la stessa finestra di manutenzione.  
+   - **Comportamento di rivalutazione della distribuzione degli aggiornamenti software al riavvio**: selezionare questa impostazione per configurare le distribuzioni degli aggiornamenti software, in modo che i client eseguano un'analisi della conformità degli aggiornamenti software immediatamente dopo l'installazione degli aggiornamenti software e il riavvio. Questa impostazione consente al client di controllare la presenza di aggiornamenti aggiuntivi che diventano applicabili dopo il riavvio e di installarli durante la stessa finestra di manutenzione.  
 
 7. Nella pagina **Avvisi** configurare la modalità di generazione degli avvisi per questa distribuzione in Configuration Manager. Esaminare gli avvisi recenti relativi agli aggiornamenti software nel nodo **Aggiornamenti software** dell'area di lavoro **Raccolta software**. Se si usa anche System Center Operations Manager, configurare i rispettivi avvisi. Configurare gli avvisi solo per le distribuzioni **obbligatorie**.  
 
@@ -186,9 +185,9 @@ Dopo avere determinato gli aggiornamenti da distribuire e averli aggiunti a un g
 
     - Specificare se i clienti devono scaricare e installare gli aggiornamenti da un punto di distribuzione nel gruppo di limiti del sito predefinito quando il contenuto degli aggiornamenti software non è disponibile da un punto di distribuzione nel gruppo di limiti corrente o nei gruppi di limiti vicini.  
 
-    - **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'uso di BranchCache per il download del contenuto. Per altre informazioni, vedere [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache). A partire dalla versione 1802, BranchCache è sempre abilitato nei client. Questa impostazione è stata rimossa perché i client usano BranchCache se supportato dal punto di distribuzione.  
+    - **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'utilizzo di BranchCache per il download del contenuto. Per altre informazioni, vedere [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache). A partire dalla versione 1802, BranchCache è sempre abilitato nei client. Questa impostazione è stata rimossa perché i client usano BranchCache se supportato dal punto di distribuzione.  
 
-    - **Se gli aggiornamenti software non sono disponibili nel punto di distribuzione nei gruppi di limiti correnti, vicini o del sito, scaricare il contenuto da Microsoft Update**: selezionare questa impostazione in modo che i client connessi alla Intranet scarichino gli aggiornamenti software da Microsoft Update se non sono disponibili nei punti di distribuzione. I client basati su Internet passano sempre a Microsoft Update per il contenuto degli aggiornamenti software.
+    - **Se gli aggiornamenti software non sono disponibili nel punto di distribuzione nei gruppi di limiti correnti, vicini o del sito, scaricare il contenuto da Microsoft Update**: selezionare questa impostazione per consentire ai client connessi all'Intranet di scaricare gli aggiornamenti software da Microsoft Update se non sono disponibili nei punti di distribuzione. I client basati su Internet passano sempre a Microsoft Update per il contenuto degli aggiornamenti software.
 
     - Specificare se consentire ai client di eseguire il download dopo una scadenza dell'installazione quando usano connessioni Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati in entrata e in uscita quando si usa una connessione a consumo.  
 
@@ -203,9 +202,9 @@ Dopo avere determinato gli aggiornamenti da distribuire e averli aggiunti a un g
 
     - **Crea un nuovo pacchetto di distribuzione**: consente di aggiungere questi aggiornamenti a un nuovo pacchetto di distribuzione. Configurare le impostazioni aggiuntive seguenti:  
 
-        -  **Nome**: specificare il nome del pacchetto di distribuzione. Usare un nome univoco che descrive il contenuto del pacchetto. Il nome è limitato a 50 caratteri.  
+        -  **Nome**: specificare il nome del pacchetto di distribuzione. Usare un nome univoco che descrive il contenuto del pacchetto. Il nome può contenere un massimo di 50 caratteri.  
 
-        -  **Descrizione**: specificare una descrizione che fornisca informazioni sul pacchetto di distribuzione. La descrizione facoltativa è limitata a 127 caratteri.  
+        -  **Descrizione**: specificare una descrizione che fornisca informazioni sul pacchetto di distribuzione. La descrizione facoltativa può contenere un massimo di 127 caratteri.  
 
         -  **Origine pacchetto**: specificare il percorso dei file di origine dell'aggiornamento software. Digitare un percorso di rete per il percorso di origine, ad esempio `\\server\sharename\path`, oppure fare clic su **Sfoglia** per trovare il percorso di rete. Prima di procedere alla pagina successiva, è necessario creare la cartella condivisa per i file di origine del pacchetto di distribuzione.  
 
@@ -215,9 +214,9 @@ Dopo avere determinato gli aggiornamenti da distribuire e averli aggiunti a un g
 
             -  L'account computer del provider SMS e l'utente che esegue la procedura guidata per scaricare gli aggiornamenti software devono disporre entrambi delle autorizzazioni di **Scrittura** per il percorso di download. Limitare l'accesso al percorso di download. Questa restrizione riduce il rischio che utenti malintenzionati possano manomettere i file di origine degli aggiornamenti software.  
 
-        -  **Priorità di invio**: specificare la priorità di invio per il pacchetto di distribuzione. Configuration Manager usa tale priorità quando invia il pacchetto di distribuzione ai punti di distribuzione. I pacchetti di distribuzione vengono inviati in ordine di priorità, ovvero Alta, Media o Bassa. I pacchetti con priorità identiche vengono inviati nell'ordine in cui sono stati creati. Se non esiste alcun backlog, il pacchetto viene elaborato subito, indipendentemente dalla priorità.  
+        -  **Priorità di invio**: Specificare la priorità di invio per il pacchetto di distribuzione. Configuration Manager usa tale priorità quando invia il pacchetto di distribuzione ai punti di distribuzione. I pacchetti di distribuzione vengono inviati in ordine di priorità, ovvero Alta, Media o Bassa. I pacchetti con priorità identiche vengono inviati nell'ordine in cui sono stati creati. Se non esiste alcun backlog, il pacchetto esegue immediatamente l'elaborazione, indipendentemente dalla priorità configurata.  
 
-        - **Abilita la replica differenziale binaria**: abilitare questa impostazione per ridurre al minimo il traffico di rete tra i siti. Con la replica differenziale binaria (BDR) non viene aggiornato l'intero contenuto del pacchetto, ma solo quello che è stato modificato. Per altre informazioni, vedere [Replica differenziale binaria](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#binary-differential-replication).  
+        - **Abilita replica differenziale binaria**: selezionare questa impostazione per ridurre al minimo il traffico di rete tra siti. La replica differenziale binaria aggiorna soltanto il contenuto del pacchetto che è stato modificato e non l'intero contenuto. Per altre informazioni, vedere [Replica differenziale binaria](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#binary-differential-replication).  
 
     - **Nessun pacchetto di distribuzione**: a partire dalla versione 1806, è possibile distribuire gli aggiornamenti software nei dispositivi senza prima scaricare e distribuire il contenuto nei punti di distribuzione. Questa impostazione è utile quando il contenuto degli aggiornamenti è particolarmente esteso. Usarla anche quando si vuole che i client ottengano sempre i contenuti dal servizio cloud Microsoft Update. I client in questo scenario possono anche scaricare il contenuto da peer in cui è già presente il contenuto necessario. Il client Gestione configurazione continua a gestire il download del contenuto, quindi è in grado di usare la funzionalità peer cache di Configuration Manager o altre tecnologie, ad esempio Ottimizzazione recapito. Questa funzionalità supporta qualsiasi tipo di aggiornamento supportato dalla gestione degli aggiornamenti software di Configuration Manager, tra cui gli aggiornamenti di Windows e Office.<!--1357933-->  
 
@@ -228,9 +227,9 @@ Dopo avere determinato gli aggiornamenti da distribuire e averli aggiunti a un g
 
 11. Nella pagina **Percorso download** specificare se scaricare i file di aggiornamento software da Internet o dalla rete locale. Configurare le seguenti impostazioni:  
 
-    -   **Scarica aggiornamenti software da Internet**: selezionare questa impostazione per scaricare gli aggiornamenti software da un percorso specificato in Internet. Questa opzione è attivata per impostazione predefinita.  
+    -   **Scarica aggiornamenti software da Internet**: selezionare questa impostazione per scaricare gli aggiornamenti software da un percorso specificato su Internet. Questa opzione è attivata per impostazione predefinita.  
 
-    -   **Scarica aggiornamenti software da un percorso sulla rete locale**: selezionare questa impostazione per scaricare gli aggiornamenti software da una directory locale o una cartella condivisa. Questa impostazione è utile quando il computer che esegue la procedura guidata non dispone di accesso a Internet. I computer con accesso a Internet possono scaricare preventivamente gli aggiornamenti e archiviarli in un percorso nella rete locale accessibile al computer che esegue la procedura guidata.  
+    -   **Scarica aggiornamenti software dal seguente percorso nella rete locale**: Selezionare questa impostazione per scaricare gli aggiornamenti software da una cartella condivisa o da una directory locale. Questa impostazione è utile quando il computer che esegue la procedura guidata non dispone di accesso a Internet. I computer con accesso a Internet possono scaricare preventivamente gli aggiornamenti e archiviarli in un percorso nella rete locale accessibile al computer che esegue la procedura guidata.  
 
 12. Nella pagina **Selezione lingua** selezionare le lingue per le quali il sito scarica gli aggiornamenti software selezionati. Il sito scarica questi aggiornamenti solo se sono disponibili nelle lingue selezionate. Gli aggiornamenti software non specifici della lingua vengono sempre scaricati. Per impostazione predefinita, la procedura guidata consente di selezionare le lingue configurate nelle proprietà del punto di aggiornamento software. Prima di procedere alla pagina successiva, è necessario selezionare almeno una lingua. Quando si selezionano solo lingue non supportate da un aggiornamento software, il download dell'aggiornamento non riesce.  
 
@@ -241,9 +240,9 @@ Dopo avere determinato gli aggiornamenti da distribuire e averli aggiunti a un g
 
     -  Il nome del modello può essere costituito da caratteri ASCII alfanumerici, nonché da `\` (barra rovesciata) o da `'` (virgoletta singola).  
 
-17. Fare clic su **Avanti** per distribuire l'aggiornamento software.  
+14. Fare clic su **Avanti** per distribuire l'aggiornamento software.  
 
- Dopo aver completato la procedura guidata, Configuration Manager scarica gli aggiornamenti software nella raccolta contenuto del server del sito. Distribuisce quindi il contenuto nei punti di distribuzione configurati e distribuisce il gruppo di aggiornamento software nei client della raccolta di destinazione. Per altre informazioni sul processo di distribuzione, vedere [Software update deployment process](/sum/understand/software-updates-introduction#BKMK_DeploymentProcess).  
+    Dopo aver completato la procedura guidata, Configuration Manager scarica gli aggiornamenti software nella raccolta contenuto del server del sito. Distribuisce quindi il contenuto nei punti di distribuzione configurati e distribuisce il gruppo di aggiornamento software nei client della raccolta di destinazione. Per altre informazioni sul processo di distribuzione, vedere [Software update deployment process](/sum/understand/software-updates-introduction#BKMK_DeploymentProcess).  
 
 
 
