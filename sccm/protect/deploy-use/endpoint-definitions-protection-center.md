@@ -9,12 +9,12 @@ ms.assetid: eb4ab74b-b605-41dd-930c-ac18d2f40319
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 66f091623a8e7b86128fea523166b69cffe968de
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 6e8a10756958a0490902c5f4ea2057546288332a
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32346138"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415348"
 ---
 # <a name="using-the-microsoft-malware-protection-center-to-download-definitions"></a>Uso di Microsoft Malware Protection Center per scaricare le definizioni
 
@@ -24,10 +24,10 @@ ms.locfileid: "32346138"
 
 > [!IMPORTANT]
 >  Per poter usare questo metodo per scaricare gli aggiornamenti delle definizioni, i client devono avere accesso a Microsoft Update in Internet.
-
-
+> 
+> 
 > [!div class="button"]
-[Passaggio successivo >](endpoint-antimalware-policies.md)
-
+> [Passaggio successivo >](endpoint-antimalware-policies.md)
+> 
 > [!div class="button"]
-[Indietro >](endpoint-configure-alerts.md)
+> [Indietro >](endpoint-configure-alerts.md)

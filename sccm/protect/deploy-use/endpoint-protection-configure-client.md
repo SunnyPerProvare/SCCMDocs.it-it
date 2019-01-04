@@ -10,12 +10,12 @@ ms.assetid: e63f2394-6eb1-4a33-bec5-8377fc62a34e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e909f6d291816125415ef712bb00822f23951099
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
-ms.translationtype: HT
+ms.openlocfilehash: a7d66f11e67d8623eca696a5c996294a89e7458f
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384349"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420567"
 ---
 # <a name="configure-custom-client-settings-for-endpoint-protection"></a>Configurare le impostazioni client personalizzate per Endpoint Protection
 
@@ -30,24 +30,24 @@ Questa procedura consente di configurare impostazioni client personalizzate per 
 
 ## <a name="to-enable-endpoint-protection-and-configure-custom-client-settings"></a>Per abilitare Endpoint Protection e configurare impostazioni client personalizzate
 
-1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
+1. Nella console di Configuration Manager fare clic su **Amministrazione**.  
 
-2.  Nell'area di lavoro **Amministrazione** fare clic su **Impostazioni client**.  
+2. Nell'area di lavoro **Amministrazione** fare clic su **Impostazioni client**.  
 
-3.  Nel gruppo **Crea** della scheda **Home** fare clic su **Crea impostazioni dispositivo client personalizzate**.  
+3. Nel gruppo **Crea** della scheda **Home** fare clic su **Crea impostazioni dispositivo client personalizzate**.  
 
-4.  Nella finestra di dialogo **Crea impostazioni dispositivo client personalizzate** specificare un nome e una descrizione per il gruppo di impostazioni e quindi selezionare **Endpoint Protection**.  
+4. Nella finestra di dialogo **Crea impostazioni dispositivo client personalizzate** specificare un nome e una descrizione per il gruppo di impostazioni e quindi selezionare **Endpoint Protection**.  
 
-5.  Configurare le impostazioni client per Endpoint Protection che si ritengono necessarie. Per un elenco completo delle impostazioni client per Endpoint Protection che è possibile configurare, vedere la sezione relativa a Endpoint Protection in [Informazioni sulle impostazioni client](/sccm/core/clients/deploy/about-client-settings#endpoint-protection).  
+5. Configurare le impostazioni client per Endpoint Protection che si ritengono necessarie. Per un elenco completo delle impostazioni client per Endpoint Protection che è possibile configurare, vedere la sezione relativa a Endpoint Protection in [Informazioni sulle impostazioni client](/sccm/core/clients/deploy/about-client-settings#endpoint-protection).  
 
    > [!IMPORTANT]  
    >  Prima di configurare le impostazioni client per Endpoint Protection, installare il ruolo del sistema del sito per Endpoint Protection.  
 
-6.  Fare clic su **OK** per chiudere la finestra di dialogo **Crea impostazioni dispositivo client personalizzate** . Le nuove impostazioni client vengono visualizzate nel nodo **Impostazioni client** dell'area di lavoro **Amministrazione** .  
+6. Fare clic su **OK** per chiudere la finestra di dialogo **Crea impostazioni dispositivo client personalizzate** . Le nuove impostazioni client vengono visualizzate nel nodo **Impostazioni client** dell'area di lavoro **Amministrazione** .  
 
-7.  Distribuire quindi le impostazioni client personalizzate in una raccolta. Selezionare le impostazioni client personalizzate da distribuire. Nel gruppo **Impostazioni client** della scheda **Home** fare clic su **Distribuisci**.  
+7. Distribuire quindi le impostazioni client personalizzate in una raccolta. Selezionare le impostazioni client personalizzate da distribuire. Nel gruppo **Impostazioni client** della scheda **Home** fare clic su **Distribuisci**.  
 
-8.  Nella finestra di dialogo **Seleziona raccolta** scegliere la raccolta in cui distribuire le impostazioni client e quindi fare clic su **OK**. La nuova distribuzione viene visualizzata nella scheda **Distribuzioni** del riquadro dei dettagli.  
+8. Nella finestra di dialogo **Seleziona raccolta** scegliere la raccolta in cui distribuire le impostazioni client e quindi fare clic su **OK**. La nuova distribuzione viene visualizzata nella scheda **Distribuzioni** del riquadro dei dettagli.  
 
 I client verranno configurati con queste impostazioni al successivo download dei criteri client. Per altre informazioni, vedere [Avviare il recupero criteri per un client di Configuration Manager](/sccm/core/clients/manage/manage-clients#BKMK_PolicyRetrieval).  
 
@@ -67,14 +67,14 @@ Usare le procedure descritte di seguito per installare e configurare il client d
 
 Nell'elenco seguente sono inclusi i prerequisiti necessari per installare il software client di Endpoint Protection in un computer di riferimento.
 
--   È necessario accedere al pacchetto di installazione del client di Endpoint Protection, **scepinstall.exe**. Questo pacchetto si trova nella sottocartella **Client** della cartella di installazione di Configuration Manager nel server del sito.  
+- È necessario accedere al pacchetto di installazione del client di Endpoint Protection, **scepinstall.exe**. Questo pacchetto si trova nella sottocartella **Client** della cartella di installazione di Configuration Manager nel server del sito.  
 
--   Per distribuire il client di Endpoint Protection con la configurazione richiesta dell'organizzazione, creare ed esportare un criterio antimalware. Specificare quindi tale criterio quando si installa manualmente il client di Endpoint Protection. Per altre informazioni, vedere [Come creare e distribuire criteri antimalware](/sccm/protect/deploy-use/endpoint-antimalware-policies).  
+- Per distribuire il client di Endpoint Protection con la configurazione richiesta dell'organizzazione, creare ed esportare un criterio antimalware. Specificare quindi tale criterio quando si installa manualmente il client di Endpoint Protection. Per altre informazioni, vedere [Come creare e distribuire criteri antimalware](/sccm/protect/deploy-use/endpoint-antimalware-policies).  
 
-   > [!NOTE]  
-   >  L'esportazione di **Criteri antimalware predefiniti del client** non è consentita.  
+  > [!NOTE]  
+  >  L'esportazione di **Criteri antimalware predefiniti del client** non è consentita.  
 
--   Se si vuole installare il client di Endpoint Protection con le definizioni più recenti, scaricarle da [Windows Defender Security Intelligence](https://www.microsoft.com/wdsi).  
+- Se si vuole installare il client di Endpoint Protection con le definizioni più recenti, scaricarle da [Windows Defender Security Intelligence](https://www.microsoft.com/wdsi).  
 
 > [!NOTE]  
 > A partire da Configuration Manager 1802, non è necessario installare l'agente di Endpoint Protection (SCEPInstall) nei dispositivi Windows 10. Se è già installato nei dispositivi Windows 10, non viene rimosso da Configuration Manager. Gli amministratori possono rimuovere l'agente di Endpoint Protection nei dispositivi Windows 10 che eseguono almeno la versione client 1802. SCEPInstall.exe potrebbe essere ancora presente in C:\Windows\ccmsetup in alcuni computer, ma non verrà scaricato nelle nuove installazioni client. <!--503654-->
@@ -90,21 +90,23 @@ Se necessario, includere anche un criterio antimalware preconfigurato oppure uno
 
 ## <a name="bkmk_manual-install"></a> Per installare il client di Endpoint Protection dal prompt dei comandi
 
-1.  Copiare **scepinstall.exe** dalla sottocartella **Client** della cartella di installazione di Configuration Manager al computer in cui si vuole installare il software client di Endpoint Protection.  
+1. Copiare **scepinstall.exe** dalla sottocartella **Client** della cartella di installazione di Configuration Manager al computer in cui si vuole installare il software client di Endpoint Protection.  
 
-2.  Aprire un prompt dei comandi come amministratore. Passare alla cartella con il programma di installazione. Eseguire quindi `scepinstall.exe`, aggiungendo le altre proprietà della riga di comando eventualmente necessarie:
+2. Aprire un prompt dei comandi come amministratore. Passare alla cartella con il programma di installazione. Eseguire quindi `scepinstall.exe`, aggiungendo le altre proprietà della riga di comando eventualmente necessarie:
 
-   |Proprietà|Descrizione|
-   |--------------|-----------------|
-   |`/s`|Eseguire il programma di installazione in modalità invisibile all'utente|
-   |`/q`|Estrarre i file di installazione in modalità invisibile all'utente|
-   |`/i`|Eseguire il programma di installazione normalmente|
-   |`/policy`|Specificare un file di criteri antimalware per configurare il client durante l'installazione|
-   |`/sqmoptin`|Acconsentire esplicitamente a partecipare al programma Analisi utilizzo software|
 
-3.  Seguire le istruzioni visualizzate per completare l'installazione del client.  
+   |  Proprietà   |                                  Descrizione                                   |
+   |-------------|--------------------------------------------------------------------------------|
+   |    `/s`     |                           Eseguire il programma di installazione in modalità invisibile all'utente                           |
+   |    `/q`     |                        Estrarre i file di installazione in modalità invisibile all'utente                        |
+   |    `/i`     |                           Eseguire il programma di installazione normalmente                           |
+   |  `/policy`  | Specificare un file di criteri antimalware per configurare il client durante l'installazione |
+   | `/sqmoptin` |     Acconsentire esplicitamente a partecipare al programma Analisi utilizzo software     |
 
-4.  Se è stato scaricato il pacchetto con le definizioni più recenti, copiare il pacchetto nel computer client e quindi fare doppio clic sul pacchetto delle definizioni per installarlo.  
+
+3. Seguire le istruzioni visualizzate per completare l'installazione del client.  
+
+4. Se è stato scaricato il pacchetto con le definizioni più recenti, copiare il pacchetto nel computer client e quindi fare doppio clic sul pacchetto delle definizioni per installarlo.  
 
    > [!NOTE]  
    >  Al termine dell'installazione del client di Endpoint Protection, il client esegue automaticamente un controllo degli aggiornamenti delle definizioni. Se la ricerca di aggiornamenti viene completata, non è necessario installare manualmente il pacchetto con le definizioni più recenti.  
@@ -133,18 +135,18 @@ Dopo aver installato il client di Endpoint Protection nel computer di riferiment
 
 Per preparare il client di Endpoint Protection per la creazione dell'immagine, seguire questa procedura:
 
-1.  Nel computer di riferimento eseguire l'accesso come amministratore.  
+1. Nel computer di riferimento eseguire l'accesso come amministratore.  
 
-2.  Scaricare e installare **PsExec** da [Windows SysInternals](https://docs.microsoft.com/sysinternals/downloads/psexec).  
+2. Scaricare e installare **PsExec** da [Windows SysInternals](https://docs.microsoft.com/sysinternals/downloads/psexec).  
 
-3.  Eseguire il prompt dei comandi come amministratore, passare alla cartella in cui si è installato PsTools e quindi digitare il comando seguente:  
+3. Eseguire il prompt dei comandi come amministratore, passare alla cartella in cui si è installato PsTools e quindi digitare il comando seguente:  
 
    `psexec.exe -s -i regedit.exe`  
 
    > [!IMPORTANT]  
    >  Prestare attenzione quando si esegue l'editor del Registro di sistema in questo modo. PsExec.exe viene eseguito nel contesto di LocalSystem.  
 
-4.  Nell'editor del Registro di sistema eliminare le chiavi del Registro di sistema seguenti:  
+4. Nell'editor del Registro di sistema eliminare le chiavi del Registro di sistema seguenti:  
 
    > [!IMPORTANT]  
    >  Eliminare queste chiavi del Registro di sistema come ultimo passaggio prima della creazione dell'immagine del computer di riferimento. Il client di Endpoint Protection ricrea queste chiavi quando viene avviato. Se si riavvia il computer di riferimento, eliminare di nuovo le chiavi del Registro di sistema.  

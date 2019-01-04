@@ -10,12 +10,12 @@ ms.assetid: a5fc033e-828e-4e45-9097-bbbd0697ebdf
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 10d746f88d0e7b869e2b73d389944f3b382d687d
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: f474db6768204403978eb188c3dbd138e34035d4
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348386"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422794"
 ---
 # <a name="windows-defender-advanced-threat-protection"></a>Windows Defender Advanced Threat Protection
 
@@ -46,23 +46,23 @@ Windows Defender ATP è un servizio disponibile in [Windows Defender Security Ce
 
 ## <a name="onboard-devices-for-windows-defender-atp"></a>Caricare dispositivi per Windows Defender ATP  
 
-1.  Nella console di Configuration Manager passare ad **Asset e conformità** > **Panoramica** > **Protezione endpoint** > **Criteri di Windows Defender ATP** e fare clic su **Creare criteri di Windows Defender ATP**. Verrà visualizzata la Creazione guidata criteri di Windows Defender ATP.  
+1. Nella console di Configuration Manager passare ad **Asset e conformità** > **Panoramica** > **Protezione endpoint** > **Criteri di Windows Defender ATP** e fare clic su **Creare criteri di Windows Defender ATP**. Verrà visualizzata la Creazione guidata criteri di Windows Defender ATP.  
 
-2.  Digitare il **nome** e la **descrizione** per il criterio di Windows Defender ATP e selezionare **Onboarding** (Caricamento). Fare clic su **Avanti**.  
+2. Digitare il **nome** e la **descrizione** per il criterio di Windows Defender ATP e selezionare **Onboarding** (Caricamento). Fare clic su **Avanti**.  
 
-3.  Usare **Sfoglia** per cercare il file di configurazione fornito dal tenant del servizio cloud Windows Defender ATP dell'organizzazione. Fare clic su **Avanti**.  
+3. Usare **Sfoglia** per cercare il file di configurazione fornito dal tenant del servizio cloud Windows Defender ATP dell'organizzazione. Fare clic su **Avanti**.  
 
-4.  Specificare i file campione che vengono raccolti e condivisi dai dispositivi gestiti per l'analisi.  
+4. Specificare i file campione che vengono raccolti e condivisi dai dispositivi gestiti per l'analisi.  
 
-    -   **Nessuno**   
+   - **Nessuno**   
 
-    -   **Tutti i tipi di file**  
+   - **Tutti i tipi di file**  
 
      Fare clic su **Avanti**.  
 
-5.  Esaminare le informazioni di riepilogo e completare la procedura guidata.  
+5. Esaminare le informazioni di riepilogo e completare la procedura guidata.  
 
-6.  È ora possibile distribuire i criteri di Windows Defender ATP nei computer client gestiti facendo clic su **Distribuisci**.  
+6. È ora possibile distribuire i criteri di Windows Defender ATP nei computer client gestiti facendo clic su **Distribuisci**.  
 
 ## <a name="monitor-windows-defender-atp"></a>Monitorare Windows Defender ATP  
 

@@ -10,12 +10,12 @@ ms.assetid: 537dd2a7-4e44-4877-b8dd-5e1499407f8d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f650ba7bc703ec4fa0492fc86859cb8742e0510d
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: e83f999ccd3e7625b2f83372464569771520632a
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32347366"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419208"
 ---
 #  <a name="configure-definition-updates-for-endpoint-protection"></a>Configurare gli aggiornamenti delle definizioni per Endpoint Protection  
 
@@ -25,17 +25,17 @@ ms.locfileid: "32347366"
 
  Per aggiornare le definizioni antimalware, è possibile usare uno o più dei metodi seguenti:
 
--   [Aggiornamenti distribuiti da Configuration Manager](endpoint-definitions-configmgr.md): questo metodo usa gli aggiornamenti software di Configuration Manager per recapitare aggiornamenti del motore e delle definizioni ai computer della gerarchia.
+- [Aggiornamenti distribuiti da Configuration Manager](endpoint-definitions-configmgr.md): questo metodo usa gli aggiornamenti software di Configuration Manager per recapitare aggiornamenti del motore e delle definizioni ai computer della gerarchia.
 
--   [Aggiornamenti distribuiti da Windows Server Update Services (WSUS)](endpoint-definitions-wsus.md): questo metodo usa l'infrastruttura di WSUS per recapitare aggiornamenti del motore e delle definizioni ai computer.
+- [Aggiornamenti distribuiti da Windows Server Update Services (WSUS)](endpoint-definitions-wsus.md): questo metodo usa l'infrastruttura di WSUS per recapitare aggiornamenti del motore e delle definizioni ai computer.
 
--   [Aggiornamenti distribuiti da Microsoft Update](endpoint-definitions-microsoft-updates.md): questo metodo consente ai computer di connettersi direttamente a Microsoft Update per scaricare gli aggiornamenti del motore e delle definizioni. Questo metodo può essere utile per i computer che spesso non sono connessi alla rete aziendale.
+- [Aggiornamenti distribuiti da Microsoft Update](endpoint-definitions-microsoft-updates.md): questo metodo consente ai computer di connettersi direttamente a Microsoft Update per scaricare gli aggiornamenti del motore e delle definizioni. Questo metodo può essere utile per i computer che spesso non sono connessi alla rete aziendale.
 
--   [Aggiornamenti distribuiti da Microsoft Malware Protection Center](endpoint-definitions-protection-center.md): questo metodo scarica gli aggiornamenti delle definizioni da Microsoft Malware Protection Center.
+- [Aggiornamenti distribuiti da Microsoft Malware Protection Center](endpoint-definitions-protection-center.md): questo metodo scarica gli aggiornamenti delle definizioni da Microsoft Malware Protection Center.
 
--   [Aggiornamenti dalle condivisioni file UNC](endpoint-definitions-network.md): con questo metodo è possibile salvare gli aggiornamenti più recenti del motore e delle definizioni in una condivisione in rete. I client possono quindi accedere alla rete per installare gli aggiornamenti.
+- [Aggiornamenti dalle condivisioni file UNC](endpoint-definitions-network.md): con questo metodo è possibile salvare gli aggiornamenti più recenti del motore e delle definizioni in una condivisione in rete. I client possono quindi accedere alla rete per installare gli aggiornamenti.
 
- È possibile configurare più origini degli aggiornamenti delle definizioni e controllare l'ordine in cui vengono valutate e applicate. Questa operazione può essere eseguita nella finestra di dialogo **Configura origini aggiornamenti definizioni** quando si crea un criterio antimalware.
+  È possibile configurare più origini degli aggiornamenti delle definizioni e controllare l'ordine in cui vengono valutate e applicate. Questa operazione può essere eseguita nella finestra di dialogo **Configura origini aggiornamenti definizioni** quando si crea un criterio antimalware.
 
 > [!IMPORTANT]
 >  Per i computer che eseguono Windows 10, è necessario configurare Endpoint Protection per aggiornare le definizioni di malware per Windows Defender.

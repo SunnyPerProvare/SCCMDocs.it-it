@@ -10,12 +10,12 @@ ms.assetid: eab0e09d-b09e-4c14-ab14-c5f87472522e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 44be093d079a06ac2cbc7e8fa82392fa3afd4f72
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: be8d8e70267630a048d68f1415928a7245b75368
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349365"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419411"
 ---
 # <a name="planning-for-certificate-template-permissions-for-certificate-profiles-in-system-center-configuration-manager"></a>Pianificazione delle autorizzazioni dei modelli di certificato per i profili di certificato in System Center Configuration Manager
 
@@ -27,15 +27,15 @@ Le informazioni seguenti illustrano come pianificare la modalità di configurazi
 ## <a name="default-security-permissions-and-considerations"></a>Autorizzazioni di sicurezza predefinite e considerazioni  
  Le autorizzazioni di sicurezza predefinite necessarie per i modelli di certificato che vengono usate da System Center Configuration Manager per richiedere certificati per utenti e dispositivi sono le seguenti:  
 
--   Lettura e registrazione per l'account utilizzato dal pool di applicazioni del servizio Registrazione dispositivi di rete  
+- Lettura e registrazione per l'account utilizzato dal pool di applicazioni del servizio Registrazione dispositivi di rete  
 
--   Lettura per l'account che esegue la console di System Center Configuration Manager  
+- Lettura per l'account che esegue la console di System Center Configuration Manager  
 
- Per altre informazioni su queste autorizzazioni di sicurezza, vedere [Configurazione dell'infrastruttura di certificazione](../deploy-use/certificate-infrastructure.md).  
+  Per altre informazioni su queste autorizzazioni di sicurezza, vedere [Configurazione dell'infrastruttura di certificazione](../deploy-use/certificate-infrastructure.md).  
 
- Se si utilizza questa configurazione predefinita, gli utenti e i dispositivi non possono richiedere direttamente i certificati dai modelli di certificato e tutte le richieste devono essere avviate dal servizio Registrazione dispositivi di rete. È una limitazione importante perché questi modelli di certificato devono essere configurati con **Inserisci nella richiesta** per il soggetto del certificato, il che significa che c'è un rischio di rappresentazione se un utente non autorizzato o un dispositivo danneggiato richiede un certificato. Nella configurazione predefinita, il servizio Registrazione dispositivi di rete deve avviare una richiesta di questo tipo. Rimane tuttavia il rischio di rappresentazione se il servizio che esegue il servizio Registrazione dispositivi di rete viene danneggiato. Per evitare questo rischio, seguire tutte le procedure di protezione consigliate per il servizio Registrazione dispositivi di rete e il computer che esegue questo ruolo dei servizi.  
+  Se si utilizza questa configurazione predefinita, gli utenti e i dispositivi non possono richiedere direttamente i certificati dai modelli di certificato e tutte le richieste devono essere avviate dal servizio Registrazione dispositivi di rete. È una limitazione importante perché questi modelli di certificato devono essere configurati con **Inserisci nella richiesta** per il soggetto del certificato, il che significa che c'è un rischio di rappresentazione se un utente non autorizzato o un dispositivo danneggiato richiede un certificato. Nella configurazione predefinita, il servizio Registrazione dispositivi di rete deve avviare una richiesta di questo tipo. Rimane tuttavia il rischio di rappresentazione se il servizio che esegue il servizio Registrazione dispositivi di rete viene danneggiato. Per evitare questo rischio, seguire tutte le procedure di protezione consigliate per il servizio Registrazione dispositivi di rete e il computer che esegue questo ruolo dei servizi.  
 
- Se le autorizzazioni di protezione predefinite non soddisfano i requisiti aziendali, è disponibile un'altra opzione per configurare le autorizzazioni di protezione nei modelli di certificato: è possibile aggiungere autorizzazioni di lettura e registrazione per utenti e computer.  
+  Se le autorizzazioni di protezione predefinite non soddisfano i requisiti aziendali, è disponibile un'altra opzione per configurare le autorizzazioni di protezione nei modelli di certificato: è possibile aggiungere autorizzazioni di lettura e registrazione per utenti e computer.  
 
 ## <a name="adding-read-and-enroll-permissions-for-users-and-computers"></a>Aggiunta di autorizzazioni Lettura e Registrazione per utenti e computer  
  L'aggiunta di autorizzazioni di lettura e registrazione potrebbe essere appropriata se un team separato gestisce il team dell'infrastruttura dell'autorità di certificazione (CA) e tale team separato vuole che System Center Configuration Manager verifichi che gli utenti dispongano di un account Active Directory Domain Services valido prima di inviare loro un profilo certificato per richiedere un certificato utente. Per questa configurazione è necessario specificare uno o più gruppi di protezione che contengono gli utenti e quindi concedere loro le autorizzazioni Lettura e Registrazione nei modelli di certificato. In questo scenario, l'amministratore CA gestisce il controllo di protezione.  
@@ -50,10 +50,10 @@ Le informazioni seguenti illustrano come pianificare la modalità di configurazi
 
 #### <a name="to-check-for-read-and-enroll-permissions-for-users-and-domain-member-computers"></a>Verificare le autorizzazioni Lettura e Registrazione per gli utenti e i computer appartenenti a un dominio  
 
-1.  Nel server di sistema del sito che ospita il punto di registrazione certificati, creare la chiave seguente del Registro di sistema DWORD per avere un valore di 0: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SCCM\CRP\SkipTemplateCheck  
+1.  Nel server del sistema del sito che ospita il punto di registrazione certificati, creare la seguente chiave del Registro di sistema DWORD per avere un valore di 0: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SCCM\CRP\SkipTemplateCheck  
 
 2.  Se un account non può essere autenticato perché non si riceve alcuna risposta da un controller di dominio e si desidera ignorare la verifica delle autorizzazioni:  
 
-    -   Nel server di sistema del sito che ospita il punto di registrazione certificati, creare la chiave seguente del Registro di sistema DWORD per avere un valore di 1: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SCCM\CRP\SkipTemplateCheckOnlyIfAccountAccessDenied  
+    -   Nel server del sistema del sito che ospita il punto di registrazione certificati, creare la seguente chiave del Registro di sistema DWORD per avere un valore di 1:  HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SCCM\CRP\SkipTemplateCheckOnlyIfAccountAccessDenied  
 
 3.  Nella CA emittente aggiungere uno o più gruppi di protezione per concedere agli account utente o dispositivo le autorizzazioni Lettura e Registrazione nella scheda **Protezione** delle proprietà del modello di certificato.  

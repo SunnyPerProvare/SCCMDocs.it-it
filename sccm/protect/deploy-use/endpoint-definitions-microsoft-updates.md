@@ -10,12 +10,12 @@ ms.assetid: ab7626ae-d4bf-4ca6-ab25-c61f96800a02
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 0d8037f2258f97e2782d475598ca62d2f605e5cd
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: d401eea9b3556eae2ad8b3c26eda5a243fc07211
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32346482"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419139"
 ---
 # <a name="enable-endpoint-protection-malware-definitions-to-download-from-microsoft-updates-for-configuration-manager"></a>Abilitare le definizioni malware di Endpoint Protection da scaricare da Microsoft Updates per Configuration Manager
 
@@ -34,10 +34,10 @@ ms.locfileid: "32346482"
 
 > [!IMPORTANT]
 >  Per poter usare questo metodo per scaricare gli aggiornamenti delle definizioni, i client devono avere accesso a Microsoft Update in Internet.
-
-
+> 
+> 
 > [!div class="button"]
-[Passaggio successivo >](endpoint-antimalware-policies.md)
-
+> [Passaggio successivo >](endpoint-antimalware-policies.md)
+> 
 > [!div class="button"]
-[Indietro >](endpoint-configure-alerts.md)
+> [Indietro >](endpoint-configure-alerts.md)
