@@ -10,12 +10,12 @@ ms.assetid: f338e4db-73b5-45ff-92f4-1b89a8ded989
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d2969a0df23f7e8b74708a4aee03c3ea7f689a99
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: bb5814860389de28294c44f367920a2da9b72fbe
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349899"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419428"
 ---
 # <a name="how-to-create-vpn-profiles-in-system-center-configuration-manager"></a>Come creare profili VPN in System Center Configuration Manager
 
@@ -27,28 +27,28 @@ Per le connessioni VPN di terze parti, distribuire l'app VPN prima di distribuir
 
 ### <a name="create-a-vpn-profile"></a>Creare un profilo VPN   
 
-1.  Nella console di Configuration Manager scegliere **Asset e conformità** > **Impostazioni di conformità** > **Accesso risorse aziendali** > **Profili VPN**.  
+1. Nella console di Configuration Manager scegliere **Asset e conformità** > **Impostazioni di conformità** > **Accesso risorse aziendali** > **Profili VPN**.  
 
-2.  Nel gruppo **Crea** della scheda **Home** scegliere **Crea profilo VPN**.  
-
-
-3.  Completare la pagina **Generale**. Tenere presente quanto segue:  
-
-    - Selezionare il valore appropriato in **Piattaforma**.
-
-       - Se si seleziona la piattaforma Windows 8.1, è possibile selezionare **Importa un profilo VPN esistente da un file** per importare informazioni su un profilo VPN esportate in un file XML.
-
-    - Nel nome del profilo VPN non usare i caratteri \\/:*?&lt;>&#124;, né lo spazio. Questi caratteri non sono supportati dal profilo VPN di Windows Server.  
+2. Nel gruppo **Crea** della scheda **Home** scegliere **Crea profilo VPN**.  
 
 
-4.  Nella pagina **Connessione** specificare:  
+3. Completare la pagina **Generale**. Tenere presente quanto segue:  
 
-    -   **Tipo di connessione**: scegliere il tipo di connessione VPN. È possibile scegliere tra i tipi di connessione nella tabella seguente.  
+   - Selezionare il valore appropriato in **Piattaforma**.
 
-    -   **Elenco server**: aggiungere un nuovo server da usare per la connessione VPN. In base al tipo di connessione è possibile aggiungere uno o più server VPN e specificare il server predefinito.  
+      - Se si seleziona la piattaforma Windows 8.1, è possibile selezionare **Importa un profilo VPN esistente da un file** per importare informazioni su un profilo VPN esportate in un file XML.
 
-        > [!NOTE]  
-        >  I dispositivi che eseguono iOS non supportano l'utilizzo di più server VPN. Se si configurano più server VPN e si distribuisce il profilo VPN a un dispositivo iOS, verrà usato solo il server predefinito.  
+   - Nel nome del profilo VPN non usare i caratteri \\/:*?&lt;>&#124;, né lo spazio. Questi caratteri non sono supportati dal profilo VPN di Windows Server.  
+
+
+4. Nella pagina **Connessione** specificare:  
+
+   - Tipo di connessione Scegliere il tipo di connessione VPN. È possibile scegliere tra i tipi di connessione nella tabella seguente.  
+
+   - **Elenco server**: aggiungere un nuovo server da usare per la connessione VPN. In base al tipo di connessione è possibile aggiungere uno o più server VPN e specificare il server predefinito.  
+
+     > [!NOTE]  
+     >  I dispositivi che eseguono iOS non supportano l'utilizzo di più server VPN. Se si configurano più server VPN e si distribuisce il profilo VPN a un dispositivo iOS, verrà usato solo il server predefinito.  
 
      Questa tabella specifica le opzioni per i tipi di connessione. Per altre informazioni, vedere la documentazione del server VPN.
 

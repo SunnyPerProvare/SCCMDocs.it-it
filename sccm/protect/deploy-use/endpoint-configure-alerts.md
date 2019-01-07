@@ -10,12 +10,12 @@ ms.assetid: f504de3e-4caf-455c-80d7-a63f13f4c5d9
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 626c52b827e38a53ed3b8982963496f29f11acb5
-ms.sourcegitcommit: 5b3ff56018cfc6bda9643c9f1bebc575173f61bc
-ms.translationtype: HT
+ms.openlocfilehash: dbebdde88a5031eec91a2383e105d06cbc7541e5
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50083769"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420448"
 ---
 #  <a name="configure-alerts-for-endpoint-protection-in-configuration-manager"></a>Configurare gli avvisi di Endpoint Protection in Configuration Manager
 
@@ -75,13 +75,13 @@ ms.locfileid: "50083769"
 
         -   **Numero di rilevamenti malware** : l'avviso viene generato quando lo stesso malware viene rilevato nei computer nella raccolta per un numero di volte maggiore di quello specificato. Specificare un numero compreso tra **2** e **32**.
 
-        -   **Intervallo per rilevamento (ore)** : specificare l'intervallo di rilevamento (in ore) in cui deve essere raggiunto il numero di rilevamenti di malware. Specificare un numero compreso tra **1** e **168**.
+        -   **Intervallo per rilevamento (ore):** specificare l'intervallo di rilevamento (in ore) in cui deve essere raggiunto il numero di rilevamenti di malware. Specificare un numero compreso tra **1** e **168**.
 
     -   **Rilevamento di più malware**: questo avviso viene generato se più di un numero specificato di tipi di malware viene rilevato durante un numero determinato di ore nei computer della raccolta monitorata. Per configurare questo avviso, specificare le informazioni seguenti:
 
-        -   **Numero di tipi di malware rilevati** : l'avviso viene generato quando viene rilevato il numero specificato di tipi diversi di malware nei computer nella raccolta. Specificare un numero compreso tra **2** e **32**.
+        -   **Numero di tipi di malware rilevato:** l'avviso viene generato quando viene rilevato il numero specificato di tipi diversi di malware nei computer nella raccolta. Specificare un numero compreso tra **2** e **32**.
 
-        -   **Intervallo per rilevamento (ore)** : specificare l'intervallo di rilevamento, in ore, in cui deve essere raggiunto il numero di rilevamenti di malware. Specificare un numero compreso tra **1** e **168**.
+        -   **Intervallo per rilevamento (ore):** specificare l'intervallo di rilevamento (in ore) in cui deve essere raggiunto il numero di rilevamenti di malware. Specificare un numero compreso tra **1** e **168**.
 
 9. Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà** _<Nome raccolta\>_.  
 
@@ -92,7 +92,7 @@ A partire da Configuration Manager versione 1702, è possibile configurare un av
 Per configurare la percentuale oltre la quale viene generato l'avviso, espandere **Monitoraggio** > **Avvisi** > **Tutti gli avvisi**, fare doppio clic su **I client antimalware sono obsoleti** e modificare l'opzione **Genera un avviso se la percentuale di client gestiti con una versione obsoleta del client antimalware è superiore a**.
 
 > [!div class="button"]
-[Passaggio successivo >](endpoint-definition-updates.md)
-
+> [Passaggio successivo >](endpoint-definition-updates.md)
+> 
 > [!div class="button"]
-[Indietro >](endpoint-protection-site-role.md)
+> [Indietro >](endpoint-protection-site-role.md)

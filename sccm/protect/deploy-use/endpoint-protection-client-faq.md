@@ -10,12 +10,12 @@ ms.assetid: e3aaa9d2-a40e-42b1-ad75-5a115351729e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7e86c8196cf2ff2473b066fccf741c2df20cd8f9
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 74bcd026dff0b67ae91276c63ba85597008dfd70
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353243"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422482"
 ---
 # <a name="endpoint-protection-client-frequently-asked-questions"></a>Domande frequenti relative al client Endpoint Protection
 
@@ -98,13 +98,13 @@ Potrebbe essere presente software dannoso nel computer anche senza alcun sintomo
 
  In base al livello di attenzione è possibile scegliere una delle azioni seguenti da applicare all'elemento rilevato:  
 
--   **Rimuovi**: questa azione consente di eliminare permanentemente il software dal computer.  
+- **Rimuovi**: questa azione consente di eliminare permanentemente il software dal computer.  
 
--   **Quarantena**: questa azione consente di mettere in quarantena il software in modo da impedirne l'esecuzione. Quando Windows Defender mette il software in quarantena, lo sposta in una posizione diversa del computer impedendone l'esecuzione finché l'utente non sceglie se ripristinarlo o rimuoverlo dal computer.  
+- **Quarantena**: questa azione consente di mettere in quarantena il software in modo da impedirne l'esecuzione. Quando Windows Defender mette il software in quarantena, lo sposta in una posizione diversa del computer impedendone l'esecuzione finché l'utente non sceglie se ripristinarlo o rimuoverlo dal computer.  
 
--   **Consenti**: questa azione aggiunge il software all'elenco dei software consentiti di Windows Defender e ne consente l'esecuzione nel computer. Windows Defender non avviserà più l'utente dei rischi posti dal software per la privacy o la sicurezza del computer.  
+- **Consenti**: questa azione aggiunge il software all'elenco dei software consentiti di Windows Defender e ne consente l'esecuzione nel computer. Windows Defender non avviserà più l'utente dei rischi posti dal software per la privacy o la sicurezza del computer.  
 
- Se si sceglie **Consenti** per un elemento, ad esempio un programma software, Windows Defender non avviserà più l'utente dei rischi posti dal software per la privacy dell'utente o la sicurezza del computer. Inserire pertanto un software nell'elenco degli elementi consentiti solo se si considera attendibile il software e il relativo autore.  
+  Se si sceglie **Consenti** per un elemento, ad esempio un programma software, Windows Defender non avviserà più l'utente dei rischi posti dal software per la privacy dell'utente o la sicurezza del computer. Inserire pertanto un software nell'elenco degli elementi consentiti solo se si considera attendibile il software e il relativo autore.  
 
 ### <a name="how-to-remove-potentially-harmful-software"></a>Come rimuovere software potenzialmente dannoso
 
@@ -203,11 +203,11 @@ Per rimuovere facilmente e velocemente tutti gli elementi indesiderati o potenzi
 
  Se la protezione in tempo reale rileva una minaccia o una potenziale minaccia, Windows Defender visualizza una notifica. È quindi possibile scegliere una delle opzioni seguenti:  
 
--   Fare clic su **Pulisci computer** per rimuovere l'elemento rilevato. Windows Defender rimuoverà automaticamente l'elemento dal computer.  
+- Fare clic su **Pulisci computer** per rimuovere l'elemento rilevato. Windows Defender rimuoverà automaticamente l'elemento dal computer.  
 
--   Fare clic sul collegamento **Mostra** dettagli per visualizzare la finestra Dettagli rischi potenziali e quindi scegliere l'azione da applicare all'elemento rilevato.  
+- Fare clic sul collegamento **Mostra** dettagli per visualizzare la finestra Dettagli rischi potenziali e quindi scegliere l'azione da applicare all'elemento rilevato.  
 
- È possibile scegliere il software e le impostazioni che si vuole monitorare con Windows Defender, ma è consigliabile attivare la protezione in tempo reale e abilitare tutte le opzioni di protezione in tempo reale. La tabella seguente illustra le opzioni disponibili.  
+  È possibile scegliere il software e le impostazioni che si vuole monitorare con Windows Defender, ma è consigliabile attivare la protezione in tempo reale e abilitare tutte le opzioni di protezione in tempo reale. La tabella seguente illustra le opzioni disponibili.  
 
 |||  
 |-|-|  
@@ -231,9 +231,9 @@ Per rimuovere facilmente e velocemente tutti gli elementi indesiderati o potenzi
 
  Verranno anche visualizzate notifiche di avviso di tipo diverso, ad esempio nel caso in cui per qualche motivo è stata disattivata la protezione in tempo reale o non è stato eseguito l'aggiornamento delle definizioni di virus e spyware per alcuni giorni oppure se sono disponibili aggiornamenti del programma. Windows Defender visualizza brevemente una notifica anche per segnalare che è in corso l'analisi del computer.  
 
-> [!TIP]  
-
->Se l'icona di Windows Defender non viene visualizzata, fare clic sulla freccia nell'area di notifica per visualizzare le icone nascoste, compresa l'icona di Windows Defender.  
+> [!TIP]
+> 
+> Se l'icona di Windows Defender non viene visualizzata, fare clic sulla freccia nell'area di notifica per visualizzare le icone nascoste, compresa l'icona di Windows Defender.  
 
 
  Il colore dell'icona dipende dallo stato corrente del computer:  

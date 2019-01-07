@@ -10,12 +10,12 @@ ms.assetid: f4a1335c-bb3d-493e-a124-83a32a107dc8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f4e1ea4cb097381467774af9c3161079419d6840
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 5de0ab2eb56ad671a43a6a40fab4e1f4dcc051a4
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348770"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424394"
 ---
 # <a name="how-to-monitor-endpoint-protection-status"></a>Come monitorare lo stato di Endpoint Protection
 
@@ -25,23 +25,23 @@ ms.locfileid: "32348770"
 
 ##  <a name="BKMK_1"></a> Come monitorare Endpoint Protection usando il nodo Stato Endpoint Protection  
 
-1.  Nella console di Configuration Manager fare clic su **Monitoraggio**.  
+1. Nella console di Configuration Manager fare clic su **Monitoraggio**.  
 
-2.  Nell'area di lavoro **Monitoraggio** espandere **Sicurezza** e quindi fare clic su **Stato Endpoint Protection**.  
+2. Nell'area di lavoro **Monitoraggio** espandere **Sicurezza** e quindi fare clic su **Stato Endpoint Protection**.  
 
-3.  Nel **raccolta** selezionare la raccolta per cui si desidera visualizzare informazioni sullo stato.  
+3. Nel **raccolta** selezionare la raccolta per cui si desidera visualizzare informazioni sullo stato.  
 
-    > [!IMPORTANT]  
-    >  Gli insiemi sono disponibili per la selezione nei seguenti casi:  
-    >   
-    >  -   Quando si seleziona **Visualizza questa raccolta nel dashboard di Endpoint Protection** nella scheda **Avvisi** della finestra di dialogo ***Proprietà* *<Nome raccolta\>*.  
-    > -   Quando si distribuisce un criterio antimalware Endpoint Protection nella raccolta.  
-    > -   Quando si abilitano e si distribuiscono le impostazioni client di Endpoint Protection nella raccolta.  
+   > [!IMPORTANT]
+   >  Gli insiemi sono disponibili per la selezione nei seguenti casi:  
+   > 
+   > - Quando si seleziona **Visualizza questa raccolta nel dashboard di Endpoint Protection** nella scheda **Avvisi** della finestra di dialogo <em><nome raccolta\></em>**Proprietà**.  
+   >   -   Quando si distribuisce un criterio antimalware Endpoint Protection nella raccolta.  
+   >   -   Quando si abilitano e si distribuiscono le impostazioni client di Endpoint Protection nella raccolta.  
 
-4.  Esaminare le informazioni visualizzate nel **dello stato di protezione** e **stato operativo** sezioni. È possibile fare clic sui collegamenti di stato per creare una raccolta temporanea nel **dispositivi** nodo il **asset e conformità** area di lavoro. La raccolta temporanea contiene i computer con lo stato selezionato.  
+4. Esaminare le informazioni visualizzate nel **dello stato di protezione** e **stato operativo** sezioni. È possibile fare clic sui collegamenti di stato per creare una raccolta temporanea nel **dispositivi** nodo il **asset e conformità** area di lavoro. La raccolta temporanea contiene i computer con lo stato selezionato.  
 
-    > [!IMPORTANT]  
-    >  Le informazioni visualizzate nel nodo **Stato Endpoint Protection** sono basate sugli ultimi dati riepilogati dal database di Configuration Manager e potrebbero non essere aggiornate. Se si vogliono recuperare i dati più recenti, nella scheda **Home** fare clic su **Esegui riepilogo**oppure fare clic su **Pianifica riepilogo** per regolare l'intervallo di esecuzione del riepilogo.  
+   > [!IMPORTANT]  
+   >  Le informazioni visualizzate nel nodo **Stato Endpoint Protection** sono basate sugli ultimi dati riepilogati dal database di Configuration Manager e potrebbero non essere aggiornate. Se si vogliono recuperare i dati più recenti, nella scheda **Home** fare clic su **Esegui riepilogo**oppure fare clic su **Pianifica riepilogo** per regolare l'intervallo di esecuzione del riepilogo.  
 
 ##  <a name="BKMK_2"></a> Come monitorare Endpoint Protection nell'area di lavoro Asset e conformità  
 

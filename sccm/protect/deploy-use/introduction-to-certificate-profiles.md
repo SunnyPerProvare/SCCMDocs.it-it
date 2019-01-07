@@ -10,12 +10,12 @@ ms.assetid: 41dcc259-f147-4420-bff2-b65bdf8cff77
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c4230b935b7fabc44743d57fcb2315348edb4274
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 27a615a412bca7e30ab5f5a3dc5f794961d13d2c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349688"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424494"
 ---
 # <a name="introduction-to-certificate-profiles-in-system-center-configuration-manager"></a>Introduzione ai profili certificato in System Center Configuration Manager
 
@@ -34,9 +34,9 @@ I profili di certificato forniscono le seguenti funzionalità di gestione:
 
 -   Monitoraggio e creazione di report per i certificati installati.  
 
-**Esempio:** Tutti i dipendenti devono potersi connettere agli hotspot Wi-Fi in più sedi aziendali. Per consentire agli utenti di connettersi con facilità, distribuire per prima cosa i certificati necessari per la connessione Wi-Fi, quindi distribuire i profili Wi-Fi che fanno riferimento al certificato.  
+**Esempio:** tutti i dipendenti devono potersi connettersi agli hotspot Wi-Fi in più sedi aziendali. Per consentire agli utenti di connettersi con facilità, distribuire per prima cosa i certificati necessari per la connessione Wi-Fi, quindi distribuire i profili Wi-Fi che fanno riferimento al certificato.  
 
-**Esempio:** si dispone di un'infrastruttura a chiave pubblica (PKI) e si vuole passare a un metodo più flessibile e sicuro di distribuzione dei certificati. Gli utenti devono essere in grado di accedere alle risorse aziendali dai loro dispositivi personali senza compromettere la protezione. Configurare i profili certificato con le impostazioni e i protocolli supportati per la piattaforma per dispositivi specifica. I dispositivi possono quindi richiedere automaticamente questi certificati a un server di registrazione con connessione Internet. Configurare quindi i profili VPN per usare questi certificati, in modo che il dispositivo possa accedere alle risorse aziendali.  
+Esempio: Si dispone di una PKI. e si vuole passare a un metodo più flessibile e sicuro di distribuzione dei certificati. Gli utenti devono essere in grado di accedere alle risorse aziendali dai loro dispositivi personali senza compromettere la protezione. Configurare i profili certificato con le impostazioni e i protocolli supportati per la piattaforma per dispositivi specifica. I dispositivi possono quindi richiedere automaticamente questi certificati a un server di registrazione con connessione Internet. Configurare quindi i profili VPN per usare questi certificati, in modo che il dispositivo possa accedere alle risorse aziendali.  
 
 
 
@@ -100,10 +100,10 @@ Un certificato della CA radice aziendale deve essere installato nel dispositivo 
 ## <a name="automatic-revocation-of-certificates"></a>Revoca automatica dei certificati  
  System Center Configuration Manager revoca automaticamente i certificati utente e computer che sono stati distribuiti usando profili certificato nelle seguenti circostanze:  
 
--   Il dispositivo è stato ritirato dalla gestione di System Center Configuration Manager.  
+- Il dispositivo è stato ritirato dalla gestione di System Center Configuration Manager.  
 
--   Il dispositivo è stato cancellato in modo selettivo.  
+- Il dispositivo è stato cancellato in modo selettivo.  
 
--   Il dispositivo è stato bloccato dalla gerarchia di System Center Configuration Manager.  
+- Il dispositivo è stato bloccato dalla gerarchia di System Center Configuration Manager.  
 
- Per revocare i certificati, il server del sito invia un comando di revoca all'autorità di certificazione emittente. Il motivo della revoca è **Termine operazione**.  
+  Per revocare i certificati, il server del sito invia un comando di revoca all'autorità di certificazione emittente. Il motivo della revoca è **Termine operazione**.  

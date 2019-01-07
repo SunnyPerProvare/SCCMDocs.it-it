@@ -10,12 +10,12 @@ ms.assetid: 3b9c4027-a98b-406b-935c-ccabcfe713df
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 414231d2cd07e583196b6b1abdd6530c3d49681a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 86452d628d025aea2b797d0ade92a3c2e2fff933
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350793"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418578"
 ---
 #  <a name="using-configuration-manager-software-updates-to-deliver-definition-updates"></a>Utilizzo degli aggiornamenti Software di Configuration Manager per distribuire gli aggiornamenti delle definizioni
 
@@ -29,31 +29,31 @@ ms.locfileid: "32350793"
 
 ## <a name="to-configure-an-automatic-deployment-rule-to-deliver-definition-updates"></a>Per configurare una regola di distribuzione automatica per distribuire aggiornamenti delle definizioni
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.
+1. Nella console di Configuration Manager fare clic su **Raccolta software**.
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Aggiornamenti software**e quindi fare clic su **Regole di distribuzione automatica**.
+2. Nell'area di lavoro **Raccolta software** espandere **Aggiornamenti software**e quindi fare clic su **Regole di distribuzione automatica**.
 
-3.  Nella scheda **Home** del gruppo **Crea** fare clic su **Crea regola di distribuzione automatica**.
+3. Nella scheda **Home** del gruppo **Crea** fare clic su **Crea regola di distribuzione automatica**.
 
-4.  Nella pagina **Generale** della **Creazione guidata delle regole di distribuzione automatica**specificare le informazioni seguenti:
+4. Nella pagina **Generale** della **Creazione guidata delle regole di distribuzione automatica**specificare le informazioni seguenti:
 
-    -   **Nome**: immettere un nome univoco per la regola di distribuzione automatica.
+   -   **Nome**: immettere un nome univoco per la regola di distribuzione automatica.
 
-    -   **Raccolta**: selezionare la raccolta di computer client in cui distribuire gli aggiornamenti delle definizioni.
+   -   **Raccolta**: selezionare la raccolta di computer client in cui distribuire gli aggiornamenti delle definizioni.
 
-        > [!NOTE]
-        >  Non è possibile distribuire aggiornamenti delle definizioni in una raccolta di utenti.
+       > [!NOTE]
+       >  Non è possibile distribuire aggiornamenti delle definizioni in una raccolta di utenti.
 
-5.  Fare clic su **Aggiungi a un gruppo di aggiornamenti software**.
+5. Fare clic su **Aggiungi a un gruppo di aggiornamenti software**.
 
-6.  Assicurarsi che la casella di controllo  **Attiva la distribuzione dopo l'esecuzione di questa regola** sia selezionata e quindi fare clic su **Avanti**.
+6. Assicurarsi che la casella di controllo  **Attiva la distribuzione dopo l'esecuzione di questa regola** sia selezionata e quindi fare clic su **Avanti**.
 
-7.  Nella pagina **Impostazioni distribuzione** della procedura guidata, nell'elenco **Livello dettaglio** selezionare **Minimo**e quindi fare clic su **Avanti**.
+7. Nella pagina **Impostazioni distribuzione** della procedura guidata, nell'elenco **Livello dettaglio** selezionare **Minimo**e quindi fare clic su **Avanti**.
 
-    > [!NOTE]
-    >  Nell'elenco **Livello dettaglio** selezionare **Minimo** (Configuration Manager senza Service Pack) o **Solo messaggi di errore** (Configuration Manager). In questo modo, sarà possibile ridurre il numero di messaggi di stato restituiti dalla distribuzione delle definizioni. Questa configurazione consente di ridurre l'utilizzo dell'elaborazione CPU nei server di Configuration Manager.
+   > [!NOTE]
+   >  Nell'elenco **Livello dettaglio** selezionare **Minimo** (Configuration Manager senza Service Pack) o **Solo messaggi di errore** (Configuration Manager). In questo modo, sarà possibile ridurre il numero di messaggi di stato restituiti dalla distribuzione delle definizioni. Questa configurazione consente di ridurre l'utilizzo dell'elaborazione CPU nei server di Configuration Manager.
 
-8.  Nell'elenco **Filtri proprietà** selezionare la casella di controllo **Classificazione aggiornamento** .
+8. Nell'elenco **Filtri proprietà** selezionare la casella di controllo **Classificazione aggiornamento** .
 
 9. Nell'elenco **Criteri di ricerca** fare clic su **<elementi da trovare\>**. Nella finestra di dialogo **Criteri di ricerca** selezionare quindi **Aggiornamenti delle definizioni** nell'elenco **Specificare il valore da cercare**.
 
@@ -66,8 +66,8 @@ ms.locfileid: "32350793"
 13. Fare clic su **OK** per chiudere la finestra di dialogo **Criteri di ricerca** e quindi fare clic su **Avanti**.
 
 14. Facoltativamente, è possibile filtrare gli aggiornamenti sostituiti.   A tale scopo, procedere nel seguente modo:
-  1.  Nell'elenco **Filtri proprietà** selezionare la casella di controllo **Sostituito** .
-  2.  Nell'elenco **Criteri di ricerca** fare clic su **<elementi da trovare\>**. Nella finestra di dialogo **Criteri di ricerca** selezionare quindi **No** nell'elenco **Specificare il valore da cercare**.  <br><br>
+    1.  Nell'elenco **Filtri proprietà** selezionare la casella di controllo **Sostituito** .
+    2.  Nell'elenco **Criteri di ricerca** fare clic su **<elementi da trovare\>**. Nella finestra di dialogo **Criteri di ricerca** selezionare quindi **No** nell'elenco **Specificare il valore da cercare**.  <br><br>
 
 15. Fare clic su **OK** per chiudere la finestra di dialogo **Criteri di ricerca** e quindi fare clic su **Avanti**.
 
@@ -79,7 +79,7 @@ ms.locfileid: "32350793"
 
     -   **Tempo disponibile software**: specificare il tempo disponibile per la distribuzione creata da questa regola. Il tempo specificato deve essere almeno un'ora dopo l'esecuzione della regola di distribuzione automatica. Ciò consente di assicurarsi che il contenuto abbia tempo sufficiente per la replica nei punti di distribuzione nella gerarchia. Alcuni aggiornamenti delle definizioni possono includere anche aggiornamenti del motore antimalware, che potrebbero richiedere più tempo per raggiungere i punti di distribuzione.
 
-    -   **Scadenza installazione**: selezionare **Appena possibile**.
+    -   **Scadenza installazione**: Selezionare **appena possibile**.
 
         > [!NOTE]
         >  Le scadenze degli aggiornamenti software variano all'interno di un periodo di due ore, per impedire che tutti i client richiedano un aggiornamento contemporaneamente.
@@ -109,7 +109,7 @@ ms.locfileid: "32350793"
 
 
 > [!div class="button"]
-[Passaggio successivo >](endpoint-antimalware-policies.md)
-
+> [Passaggio successivo >](endpoint-antimalware-policies.md)
+> 
 > [!div class="button"]
-[Indietro >](endpoint-configure-alerts.md)
+> [Indietro >](endpoint-configure-alerts.md)

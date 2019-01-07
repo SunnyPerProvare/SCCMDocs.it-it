@@ -10,12 +10,12 @@ ms.assetid: 98feaa06-64b1-4e86-a122-93017c97cd4f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a3a9c27eed58bce1b6d2371c545621b48f4b4f54
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: d061649744d7a2da37e67d55f3c8b655d18c0aa4
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349797"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416793"
 ---
 # <a name="how-to-monitor-certificate-profiles-in-system-center-configuration-manager"></a>Come monitorare i profili certificato in System Center Configuration Manager
 
@@ -26,38 +26,39 @@ ms.locfileid: "32349797"
 
 Per monitorare la conformità dei certificati SCEP, usare i [report](#view-compliance-results-by-using-reports) invece della console. 
 
-1.  Nella console di Configuration Manager scegliere **Monitoraggio**>  **Distribuzioni**.  
+1. Nella console di Configuration Manager scegliere **Monitoraggio**>  **Distribuzioni**.  
 
-3.  Selezionare la distribuzione del profilo certificato desiderata.  
+2. Selezionare la distribuzione del profilo certificato desiderata.  
 
-4.  Controllare le informazioni di riepilogo sulla conformità del certificato nella pagina principale. Per informazioni più dettagliate, selezionare il profilo certificato, quindi nella scheda **Home**, nel gruppo **Distribuzione**, scegliere **Visualizza stato** per aprire la pagina **Stato distribuzione** .  
+3. Controllare le informazioni di riepilogo sulla conformità del certificato nella pagina principale. Per informazioni più dettagliate, selezionare il profilo certificato, quindi nella scheda **Home**, nel gruppo **Distribuzione**, scegliere **Visualizza stato** per aprire la pagina **Stato distribuzione** .  
 
-     La pagina **Stato distribuzione** contiene le seguenti schede:  
+    La pagina **Stato distribuzione** contiene le seguenti schede:  
 
-    -   **Conforme**: visualizza la conformità del profilo certificato in base al numero degli asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti gli utenti che sono conformi al profilo del certificato. Il riquadro **Dettagli asset** visualizza anche gli utenti che sono conformi a questo profilo. Fare doppio clic su un utente nell'elenco per visualizzare altre informazioni.  
+   -   **Conforme**: visualizza la conformità del profilo certificato in base al numero degli asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti gli utenti che sono conformi al profilo del certificato. Il riquadro **Dettagli asset** visualizza anche gli utenti che sono conformi a questo profilo. Fare doppio clic su un utente nell'elenco per visualizzare altre informazioni.  
 
-        > [!IMPORTANT]  
-        >  Un profilo certificato non viene valutato se non è applicabile a un dispositivo client. Tuttavia, viene restituito come conforme.  
+       > [!IMPORTANT]  
+       >  Un profilo certificato non viene valutato se non è applicabile a un dispositivo client. Tuttavia, viene restituito come conforme.  
 
-    -   **Errore**: visualizza un elenco di tutti gli errori per la distribuzione del profilo certificato selezionata in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti gli utenti che hanno generato errori con questo profilo. Quando si seleziona un utente, il riquadro **Dettagli asset** visualizza gli utenti interessati dal problema selezionato. Fare doppio clic su un utente nell'elenco per visualizzare altre informazioni.  
+   -   **Errore**: visualizza un elenco di tutti gli errori per la distribuzione del profilo certificato selezionata in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti gli utenti che hanno generato errori con questo profilo. Quando si seleziona un utente, il riquadro **Dettagli asset** visualizza gli utenti interessati dal problema selezionato. Fare doppio clic su un utente nell'elenco per visualizzare altre informazioni.  
 
-    -   **Non conforme**: visualizza un elenco di tutte le regole non conformi nel profilo certificato in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti gli utenti che non sono conformi a questo profilo. Quando si seleziona un utente, il riquadro **Dettagli asset** visualizza gli utenti interessati dal problema selezionato. Fare doppio clic su un utente nell'elenco per visualizzare informazioni aggiuntive sul problema.  
+   -   **Non conforme**: visualizza un elenco di tutte le regole non conformi nel profilo certificato in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti gli utenti che non sono conformi a questo profilo. Quando si seleziona un utente, il riquadro **Dettagli asset** visualizza gli utenti interessati dal problema selezionato. Fare doppio clic su un utente nell'elenco per visualizzare informazioni aggiuntive sul problema.  
 
-    -   **Sconosciuto**: visualizza un elenco di tutti gli utenti che non sono conformi alla distribuzione del profilo certificato selezionata insieme allo stato client corrente dei dispositivi.  
+   -   **Sconosciuto**: visualizza un elenco di tutti gli utenti che non sono conformi alla distribuzione del profilo certificato selezionata insieme allo stato client corrente dei dispositivi.  
 
-5.  Nella pagina **Stato distribuzione** esaminare le informazioni dettagliate sulla conformità del profilo certificato distribuito. Viene creato un nodo temporaneo nel nodo **Distribuzioni** che consente di ritrovare rapidamente queste informazioni.  
+4. Nella pagina **Stato distribuzione** esaminare le informazioni dettagliate sulla conformità del profilo certificato distribuito. Viene creato un nodo temporaneo nel nodo **Distribuzioni** che consente di ritrovare rapidamente queste informazioni.  
 
-     Lo stato di registrazione del certificato viene visualizzato come un numero. Utilizzare la tabella seguente per comprendere il significato di ciascun numero:  
+    Lo stato di registrazione del certificato viene visualizzato come un numero. Utilizzare la tabella seguente per comprendere il significato di ciascun numero:  
 
-    |Stato registrazione|Descrizione|  
-    |-----------------------|-----------------|  
-    |0x00000001|La registrazione ha avuto esito positivo e il certificato è stato rilasciato.|  
-    |0x00000002|La richiesta è stata inviata e la registrazione è in sospeso o la richiesta è stata emessa fuori banda.|  
-    |0x00000004|La registrazione deve essere rinviata.|  
-    |0x00000010|Si è verificato un errore.|  
-    |0x00000020|Lo stato di registrazione è sconosciuto.|  
-    |0x00000040|Le informazioni sullo stato sono state ignorate. Ciò può verificarsi se un'autorità di certificazione (collegamento ipertestuale "http://msdn.microsoft.com/windows/ms721572" \l "_security_certification_authority_gly") non è valida o non è stata selezionata per il monitoraggio.|  
-    |0x00000100|La registrazione è stata negata.|  
+
+   | Stato registrazione |                                                                                                                   Descrizione                                                                                                                   |
+   |-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   |    0x00000001     |                                                                                         La registrazione ha avuto esito positivo e il certificato è stato rilasciato.                                                                                          |
+   |    0x00000002     |                                                                    La richiesta è stata inviata e la registrazione è in sospeso o la richiesta è stata emessa fuori banda.                                                                    |
+   |    0x00000004     |                                                                                                          La registrazione deve essere rinviata.                                                                                                           |
+   |    0x00000010     |                                                                                                               Si è verificato un errore.                                                                                                                |
+   |    0x00000020     |                                                                                                        Lo stato di registrazione è sconosciuto.                                                                                                        |
+   |    0x00000040     | Le informazioni sullo stato sono state ignorate. Ciò può verificarsi se un'autorità di certificazione (collegamento ipertestuale "<http://msdn.microsoft.com/windows/ms721572>" \l "_security_certification_authority_gly") non è valida o non è stata selezionata per il monitoraggio. |
+   |    0x00000100     |                                                                                                           La registrazione è stata negata.                                                                                                           |
 
 ##  <a name="view-compliance-results-by-using-reports"></a>Visualizzare i risultati di conformità usando i report
 
