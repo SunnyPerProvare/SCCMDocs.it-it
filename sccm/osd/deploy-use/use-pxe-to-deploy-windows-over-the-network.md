@@ -10,12 +10,12 @@ ms.assetid: da5f8b61-2386-4530-ad54-1a5c51911f07
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1efd4197e63ddc12c0afc9e37b633c38d0df0f14
-ms.sourcegitcommit: a52255da16c9f8b0b60a6c299a369347c7e01bef
+ms.openlocfilehash: 75e463d27475e82677e91b00bfba4c4287d463ee
+ms.sourcegitcommit: f2a1fa59fb3870a6bebca61daf15c0c157e9fdd6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49989145"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54030989"
 ---
 # <a name="use-pxe-to-deploy-windows-over-the-network-with-configuration-manager"></a>Usare PXE per distribuire Windows in rete con Configuration Manager
 
@@ -43,13 +43,16 @@ Per distribuire i sistemi operativi ai client di Configuration Manager che esegu
 > [!NOTE]  
 >  Quando si configura un singolo punto di distribuzione che supporta PXE per più subnet, non è supportato per l'uso delle opzioni DHCP. Configurare gli helper IP sui router per consentire l'inoltro delle richieste PXE ai punti di distribuzione che supportano PXE.
 
+> [!NOTE]  
+>  Non è supportato l'uso del risponditore PXE senza WDS nei server che eseguono anche un server DHCP.
+
 ## <a name="prepare-a-pxe-enabled-boot-image"></a>Preparare un'immagine d'avvio che supporta PXE
 
 Per usare PXE per distribuire un sistema operativo, è necessario avere immagini d'avvio che supportano PXE sia x86 sia x64, distribuite in uno o più punti di distribuzione che supportano PXE. Usare le informazioni per abilitare PXE in un'immagine d'avvio e distribuirla nei punti di distribuzione:
 
 -   Per abilitare PXE in un'immagine d'avvio, selezionare **Distribuire questa immagine d'avvio dal punto di distribuzione che supporta PXE** nella scheda **Origine dati** nelle proprietà dell'immagine d'avvio.
 
--   Se si modificano le proprietà per l'immagine d'avvio, ridistribuirla nei punti di distribuzione. Per altre informazioni, vedere [Distribuire il contenuto](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_distribute).
+-   Se si modificano le proprietà per l'immagine d'avvio, aggiornarla e ridistribuirla nei punti di distribuzione. Per altre informazioni, vedere [Distribuire il contenuto](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_distribute).
 
 
 
@@ -106,7 +109,7 @@ Distribuire il sistema operativo in una raccolta di destinazione. Per altre info
 
 -   **Distribuzione richiesta**: le distribuzioni richieste usano PXE senza alcun intervento da parte dell'utente. L'utente non può ignorare l'avvio PXE. Tuttavia, se l'utente annulla l'avvio di PXE prima della risposta del punto di distribuzione, il sistema operativo non viene distribuito.
 
--   **Distribuzione disponibile**: le distribuzioni disponibili richiedono la presenza dell'utente al computer di destinazione. L'utente deve premere **F12** per continuare il processo di avvio PXE. Se l'utente non è presente per premere **F12**, il computer esegue l'avvio nel sistema operativo corrente oppure dal successivo dispositivo di avvio disponibile.
+-   **Distribuzione disponibile**: le distribuzioni disponibili richiedono la presenza dell'utente nel computer di destinazione. L'utente deve premere **F12** per continuare il processo di avvio PXE. Se l'utente non è presente per premere **F12**, il computer esegue l'avvio nel sistema operativo corrente oppure dal successivo dispositivo di avvio disponibile.
 
 È possibile ridistribuire una distribuzione PXE richiesta cancellando lo stato dell'ultima distribuzione PXE assegnato a una raccolta di Configuration Manager o a un computer. Per altre informazioni sull'azione **Cancella distribuzioni PXE richieste**, vedere [Gestire i client](/sccm/core/clients/manage/manage-clients#BKMK_ManagingClients_DevicesNode) o [Come gestire le raccolte di dispositivi](/sccm/core/clients/manage/collections/manage-collections#how-to-manage-device-collections). Questa azione consente di reimpostare lo stato di quella distribuzione e reinstalla le distribuzioni richieste più recenti.
 

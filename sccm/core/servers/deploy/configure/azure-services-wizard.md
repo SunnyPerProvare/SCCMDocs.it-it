@@ -10,12 +10,12 @@ ms.assetid: a26a653e-17aa-43eb-ab36-0e36c7d29f49
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0e1cdef0acc799fc60c622f11e4c9c7426dfc19c
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 76611065dbed595904c8e0e2f5d52af0b4c68492
+ms.sourcegitcommit: 54e5786875c4e5f5c1b54e38ed59e96344faf9b4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456457"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53817784"
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Configurare i servizi di Azure da usare con Configuration Manager
 
@@ -37,14 +37,14 @@ Configurare i seguenti servizi di Azure tramite questa procedura guidata:
 
     - Supporto di alcuni [scenari di Cloud Management Gateway](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#scenarios)  
 
--   **Connettore Log Analytics**: [connette ad Azure Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics). Sincronizza i dati della raccolta a Log Analytics.  
+-   **Connettore Log Analytics**: [Connettersi ad Azure Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics). Sincronizza i dati della raccolta a Log Analytics.  
 
     > [!Note]  
     > Questo articolo si riferisce al *connettore Log Analytics*, che era in precedenza denominato *OMS Connector*. Non esistono differenze funzionali. Per altre informazioni, vedere [Gestione di Azure - Monitoraggio](https://docs.microsoft.com/azure/monitoring/#operations-management-suite).  
 
--   **Connettore Upgrade Readiness**: connessione a [Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics) di Windows Analytics. Consente di visualizzare i dati di compatibilità degli aggiornamenti del client.  
+-   **Connettore di Preparazione aggiornamenti**: connettersi a [Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics) di Windows Analytics. Consente di visualizzare i dati di compatibilità degli aggiornamenti del client.  
 
--   **Microsoft Store per le aziende**: connessione a [Microsoft Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business). Consente di ottenere da Microsoft Store le app distribuibili con Configuration Manager.  
+-   **Microsoft Store per le aziende**: connettersi a [Microsoft Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business). Consente di ottenere da Microsoft Store le app distribuibili con Configuration Manager.  
 
 ### <a name="service-details"></a>Dettagli dei servizi
 
@@ -161,7 +161,7 @@ Quando si seleziona **Importa** nella finestra di dialogo App server o nella pag
 - **ID client**
 - **Chiave privata**
 - **Scadenza della chiave privata**: selezionare una data futura nel calendario. 
-- **URI ID app**: questo valore deve essere univoco nel tenant di Azure AD. È incluso nel token di accesso usato dal client Configuration Manager per richiedere l'accesso al servizio. Per impostazione predefinita, questo valore è impostato su https://ConfigMgrService.  
+- **URI ID app**: questo valore deve essere univoco nel tenant di Azure AD. È incluso nel token di accesso usato dal client Configuration Manager per richiedere l'accesso al servizio. Per impostazione predefinita, questo valore è https\://ConfigMgrService.  
 
 Dopo aver immesso le informazioni, selezionare **Verifica**. Quindi selezionare **OK** per chiudere la finestra di dialogo Importa le app. Questa azione torna a visualizzare la [pagina App](#azure-app-properties) della procedura guidata per i servizi di Azure o la [finestra di dialogo App server](#server-app-dialog).
 
@@ -169,8 +169,8 @@ Dopo aver immesso le informazioni, selezionare **Verifica**. Quindi selezionare 
 
 Quando si seleziona **Crea** nella finestra di dialogo App server viene visualizzata la finestra di dialogo Crea un'applicazione server. Questa pagina automatizza la creazione di un'app Web in Azure AD. Specificare le informazioni seguenti:
 - **Nome applicazione**: nome descrittivo per l'app.
-- **URL della home page**: questo valore non viene usato da Configuration Manager, ma è richiesto da Azure AD. Per impostazione predefinita, questo valore è impostato su https://ConfigMgrService.  
-- **URI ID app**: questo valore deve essere univoco nel tenant di Azure AD. È incluso nel token di accesso usato dal client Configuration Manager per richiedere l'accesso al servizio. Per impostazione predefinita, questo valore è impostato su https://ConfigMgrService.  
+- **URL della home page**: questo valore non viene usato da Configuration Manager, ma è richiesto da Azure AD. Per impostazione predefinita, questo valore è https\://ConfigMgrService.  
+- **URI ID app**: questo valore deve essere univoco nel tenant di Azure AD. È incluso nel token di accesso usato dal client Configuration Manager per richiedere l'accesso al servizio. Per impostazione predefinita, questo valore è https\://ConfigMgrService.  
 - **Periodo di validità della chiave privata**: scegliere **1 anno** o **2 anni** dall'elenco a discesa. Il valore predefinito è 1 anno.
 
 Selezionare **Accedi** per eseguire l'autenticazione in Azure come utente amministratore. Queste credenziali non vengono memorizzate in Configuration Manager. Questo utente tipo non richiede autorizzazioni in Configuration Manager e non deve necessariamente essere lo stesso account che esegue la procedura guidata per i servizi di Azure. Dopo l'autenticazione in Azure, nella pagina viene visualizzato il **Nome del tenant di Azure AD** come riferimento. 
@@ -208,11 +208,28 @@ Dopo aver immesso le informazioni, selezionare **Verifica**. Quindi selezionare 
 
 Quando si seleziona **Crea** nella finestra di dialogo App client viene visualizzata la finestra di dialogo Crea un'applicazione client. Questa pagina automatizza la creazione di un'app nativa in Azure AD. Specificare le informazioni seguenti:
 - **Nome applicazione**: nome descrittivo per l'app.
-- **URL di risposta**: questo valore non viene usato da Configuration Manager, ma è richiesto da Azure AD. Per impostazione predefinita, questo valore è impostato su https://ConfigMgrService. 
+- **URL di risposta**: questo valore non viene usato da Configuration Manager, ma è richiesto da Azure AD. Per impostazione predefinita, questo valore è https\://ConfigMgrService. 
 
 Selezionare **Accedi** per eseguire l'autenticazione in Azure come utente amministratore. Queste credenziali non vengono memorizzate in Configuration Manager. Questo utente tipo non richiede autorizzazioni in Configuration Manager e non deve necessariamente essere lo stesso account che esegue la procedura guidata per i servizi di Azure. Dopo l'autenticazione in Azure, nella pagina viene visualizzato il **Nome del tenant di Azure AD** come riferimento. 
 
 Selezionare **OK** per creare l'app nativa in Azure AD e chiudere la finestra di dialogo Crea un'applicazione client. Questa azione torna a visualizzare la [finestra di dialogo App client](#client-app-dialog).
+
+
+### <a name="renew-secret-key-azure-ad-apps"></a>Rinnovare la chiave privata per app di Azure AD
+Prima della versione 1806, per rinnovare la chiave privata di un'app di Azure, era necessario ricreare l'app.
+
+Nella versione 1806 e successive:
+
+- App creata: Nel **nodo Servizi cloud** passare a **Tenant di Azure Active Directory**. Nel riquadro dei dettagli selezionare il tenant in cui è stata creata l'applicazione e selezionare **Rinnova la chiave privata**.  
+
+    - Selezionare **Accedi** per eseguire l'autenticazione in Azure come utente amministratore.  
+
+    - Selezionare **OK** per creare l'app nativa in Azure AD e chiudere la finestra di dialogo Crea un'applicazione client. Questa azione torna a visualizzare la [finestra di dialogo App client](#client-app-dialog).  
+
+- App importata: Usare il portale di Azure per il rinnovo e prendere nota della nuova chiave privata e della data di scadenza. Aggiungere queste informazioni nella procedura guidata **Rinnova la chiave privata**.  
+
+> [!Note]  
+> Salvare la chiave privata prima di chiudere la pagina **Chiave** delle proprietà dell'applicazione di Azure. Queste informazioni vengono rimosse quando si chiude la pagina.
 
 
 ## <a name="configuration-or-discovery"></a>Configurazione o Individuazione
@@ -221,11 +238,11 @@ Dopo aver specificato l'app Web e l'app nativa nella pagina App, la procedura gu
 
 -   Servizio **Gestione cloud**, pagina **Individuazione**: [Configurare l'individuazione utente di Azure AD](/sccm/core/servers/deploy/configure/configure-discovery-methods#azureaadisc)  
 
--   Servizio del **connettore Log Analytics**, pagina **Configurazione**: [Configurare la connessione a Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics#configure-the-connection-to-log-analytics)  
+-   Servizio **Connettore Log Analytics**, pagina **Configurazione**: [Configurare la connessione a Log Analytics](/sccm/core/clients/manage/sync-data-log-analytics#configure-the-connection-to-log-analytics)  
 
--   Servizio **Connettore Upgrade Readiness**, pagina **Configurazione**: [Usare la procedura guidata per Azure per creare la connessione](/sccm/core/clients/manage/upgrade/upgrade-analytics#use-the-azure-wizard-to-create-the-connection)  
+-   Servizio **Connettore di Preparazione aggiornamenti**, pagina **Configurazione**: [Usare la procedura guidata per Azure per creare la connessione](/sccm/core/clients/manage/upgrade/upgrade-analytics#use-the-azure-wizard-to-create-the-connection)  
 
--   Servizio **Microsoft Store per le aziende**, pagina **Configurazione**: [Configurare la sincronizzazione di Microsoft Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#bkmk_config)  
+-   Servizio **Microsoft Store per le aziende**, pagina **Configurazioni**: [Configurare la sincronizzazione di Microsoft Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#bkmk_config)  
 
 
 Infine completare la procedura guidata per i servizi di Azure con le pagine Riepilogo, Stato e Completamento. La configurazione di un servizio di Azure in Configuration Manager è completata. Ripetere questo processo per configurare altri servizi di Azure.

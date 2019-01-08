@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
-ms.openlocfilehash: 4ef9746b9a1eb90beeec6a477ad1d406acebbb05
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 60fa4176d44b530b2cab6c2b9b4b35c968fae3c1
+ms.sourcegitcommit: 32a257fafbb29aece8b4f435dd5614fcef305328
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456567"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54005484"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificati per il gateway di gestione cloud
 
@@ -62,8 +62,11 @@ Il gateway di gestione cloud crea un servizio HTTPS a cui si connettono i client
  > [!TIP]
  > Questo certificato richiede un nome univoco globale per identificare il servizio in Azure. Prima di richiedere un certificato, verificare che il nome di dominio di Azure sia univoco. Ad esempio, *GraniteFalls.CloudApp.Net*. Accedere al [portale di Microsoft Azure](https://portal.azure.com). Selezionare **Crea una risorsa**, scegliere la categoria **Calcolo**, quindi selezionare **Servizio cloud**. Digitare un prefisso nel campo **Nome DNS**, ad esempio *GraniteFalls*. L'interfaccia indica se il nome di dominio è disponibile o se è già in uso in un altro servizio. Non creare il servizio nel portale, usare questo processo per verificare la disponibilità del nome. 
   
+ > [!TIP]
+ > Se il servizio CMG verrà abilitato anche come punto di distribuzione cloud, verificare che il nome del servizio CMG scelto sia anche un nome univoco di account di archiviazione di Azure. Ad esempio, *GraniteFalls*. Accedere al [portale di Microsoft Azure] (https://portal.azure.com). Selezionare **Crea una risorsa**, scegliere la categoria **Archiviazione** e quindi selezionare **Account di archiviazione: BLOB, File, Tabelle, Code**. Fare clic su **Crea** e in **Dettagli dell'istanza** immettere lo stesso nome scelto per il servizio CMG, ad esempio *GraniteFalls*. L'interfaccia indica se il nome dell'account di archiviazione è disponibile o se è già in uso in un altro servizio. Non creare l'account di archiviazione nel portale, ma usare semplicemente questa procedura per verificare la disponibilità del nome. Se il nome del servizio cloud CMG è univoco, ma non lo è il nome dell'account di archiviazione, il provisioning non riuscirà.
+ 
  > [!NOTE]
- > A partire dalla versione 1802, il certificato di autenticazione server del gateway di gestione cloud supporta i caratteri jolly. Alcune autorità di certificazione rilasciano certificati in cui viene usato un carattere jolly per il nome host. Ad esempio, **\*.contoso.com**. Alcune organizzazioni usano certificati con caratteri jolly per semplificare l'infrastruttura a chiave pubblica e ridurre i costi di manutenzione.<!--491233-->  
+ > A partire dalla versione 1802, il certificato di autenticazione server del Cloud Management Gateway supporta i caratteri jolly. Alcune autorità di certificazione rilasciano certificati in cui viene usato un carattere jolly per il nome host. Ad esempio, **\*.contoso.com**. Alcune organizzazioni usano certificati con caratteri jolly per semplificare l'infrastruttura a chiave pubblica e ridurre i costi di manutenzione.<!--491233-->  
  > 
  > Per altre informazioni su come usare un certificato con caratteri jolly con CMG, vedere [Impostare un Cloud Management Gateway](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#set-up-a-cmg).<!--SCCMDocs issue #565-->  
 
@@ -246,11 +249,11 @@ Configurare un punto di gestione locale con la modalità di connessione client i
 #### <a name="legend-of-terms"></a>Legenda dei termini
 - *Gruppo di lavoro*: il dispositivo non è stato aggiunto a un dominio o ad Azure AD, ma ha un [certificato di autenticazione client](#bkmk_clientauth)  
 - *Aggiunto a un dominio AD*: il dispositivo viene aggiunto a un dominio di Active Directory locale  
-- *Aggiunto ad Azure AD* o aggiunto al dominio cloud: il dispositivo viene aggiunto a un tenant di Azure Active Directory  
+- *Aggiunto ad Azure AD*: o aggiunto al dominio cloud: il dispositivo viene aggiunto a un tenant di Azure Active Directory  
 - *Aggiunto ad AD ibrido*: il dispositivo viene aggiunto sia a un dominio di Active Directory, sia a un tenant di Azure AD  
 - *HTTP*: nelle proprietà del punto di gestione le connessioni client sono impostate su **HTTP**  
 - *HTTPS*: nelle proprietà del punto di gestione le connessioni client sono impostate su **HTTPS**  
-- *E-HTTP*: nella scheda Comunicazione computer client delle proprietà del sito configurare le impostazioni di sistema del sito per **HTTPS o HTTP** e abilitare l'opzione **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**. Configurare il punto di gestione per HTTP o HTTPS.  
+- *E-HTTP*: nella scheda Comunicazione computer client delle proprietà del sito configurare le impostazioni di sistema del sito per **HTTPS o HTTP** e abilitare l'opzione **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**. Si configura il punto di gestione per il protocollo HTTP. Il punto di gestione HTTP è pronto per la comunicazione HTTP e HTTPS (scenari di autenticazione basata su token).   
 
 
 

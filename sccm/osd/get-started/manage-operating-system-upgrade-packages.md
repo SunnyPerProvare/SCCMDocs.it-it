@@ -10,12 +10,12 @@ ms.assetid: b9b22655-b8c1-461f-8047-3a7e906f647a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f7b8b18cbec5a3b5972a448e8a70339533dc11fb
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 46e948a215535bf57153e5a97dbdc9cad2e35e3b
+ms.sourcegitcommit: 54e5786875c4e5f5c1b54e38ed59e96344faf9b4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456007"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53817852"
 ---
 # <a name="manage-os-upgrade-packages-with-configuration-manager"></a>Gestire i pacchetti di aggiornamento del sistema operativo in Configuration Manager
 
@@ -23,6 +23,8 @@ ms.locfileid: "52456007"
 
 Un pacchetto di aggiornamento in Configuration Manager contiene i file di origine dell'installazione di Windows per l'aggiornamento di un sistema operativo esistente in un computer. Questo articolo descrive come aggiungere, distribuire e gestire un pacchetto di aggiornamento del sistema operativo.
 
+>[!NOTE]
+>I pacchetti di aggiornamento del sistema operativo possono essere usati anche per le nuove installazioni di Windows. Ciò dipende, tuttavia, dalla compatibilità dei driver con questo metodo. Quando si eseguono nuove installazioni di Windows da un pacchetto di aggiornamento del sistema operativo, i driver vengono installati quando si trovano ancora in Windows PE, anziché essere semplicemente inseriti mentre sono in Windows PE. Alcuni driver non sono compatibili con l'installazione da Windows PE. Se i driver non sono compatibili per l'installazione mentre sono in Windows PE, usare invece un'[immagine del sistema operativo](/sccm/osd/get-started/manage-operating-system-images), ad esempio **install.wim**.
 
 
 ##  <a name="BKMK_AddOSUpgradePkgs"></a> Aggiungere pacchetto di aggiornamento del sistema operativo  
@@ -47,7 +49,7 @@ Prima di poter usare un pacchetto di aggiornamento del sistema operativo, è nec
 
 4.  Nella pagina **Generale** specificare le informazioni seguenti. Queste informazioni sono utili per scopi di identificazione quando sono presenti più pacchetti di aggiornamento del sistema operativo.  
 
-    -   **Nome**: nome univoco del pacchetto di aggiornamento per il sistema operativo.  
+    -   **Nome**: nome univoco del pacchetto di aggiornamento del sistema operativo.  
 
     -   **Versione**: identificatore di versione facoltativo. Questa proprietà non deve corrispondere alla versione del sistema operativo del pacchetto di aggiornamento. Si tratta spesso della versione assegnata dall'organizzazione al pacchetto.  
 

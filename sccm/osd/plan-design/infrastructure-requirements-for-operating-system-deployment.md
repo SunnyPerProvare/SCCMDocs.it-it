@@ -10,12 +10,12 @@ ms.assetid: 1dc74219-7ff5-4e3b-b4f6-5aad663bb75b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 03ec9c046e1b32f137777f15393b5d26b49e5520
-ms.sourcegitcommit: 265d38d55ca0db043e3a7131a56f123e1d98aa5b
+ms.openlocfilehash: cfaa50b941697b19f2d4d029ed7990f2d39eecbc
+ms.sourcegitcommit: f2a1fa59fb3870a6bebca61daf15c0c157e9fdd6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48236158"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54030972"
 ---
 # <a name="infrastructure-requirements-for-os-deployment-in-configuration-manager"></a>Requisiti dell'infrastruttura per la distribuzione del sistema operativo in Configuration Manager
 
@@ -186,9 +186,9 @@ Per usare i report di Configuration Manager per le distribuzioni del sistema ope
 
 Il ruolo di sicurezza **Gestione distribuzione del sistema operativo** è un ruolo predefinito che non può essere modificato. Tuttavia, è possibile copiare il ruolo, apportare modifiche e quindi salvare tali modifiche come un nuovo ruolo di sicurezza personalizzato. Di seguito vengono riportate alcune delle autorizzazioni che si applicano direttamente alle distribuzioni del sistema operativo:  
 
-- **Pacchetto immagine d'avvio**: Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Imposta ambito di protezione  
+- **Pacchetto di immagine di avvio**: Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Imposta ambito di protezione  
 
-- **Driver dispositivo**: Crea, Elimina, Modifica, Modifica cartella, Modifica report, Sposta oggetto, Lettura, Esegui report  
+- **Driver di dispositivo**: Crea, Elimina, Modifica, Modifica cartella, Modificare report, Sposta oggetto, Lettura, Esegui report  
 
 - **Pacchetto driver**: Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Imposta ambito di protezione  
 
@@ -196,7 +196,7 @@ Il ruolo di sicurezza **Gestione distribuzione del sistema operativo** è un ruo
 
 - **Pacchetto di aggiornamento del sistema operativo**: Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Imposta ambito di protezione  
 
-- **Pacchetto sequenza di attività**: Crea, Crea supporto per sequenza di attività, Elimina, Modifica, Modifica cartella, Modifica report, Sposta oggetto, Lettura, Esegui report, Imposta ambito di protezione  
+- **Pacchetto sequenza attività**: Crea, Crea supporto per sequenza attività, Elimina, Modifica, Modifica cartella, Modifica report, Sposta oggetto, Lettura, Esegui report, Imposta ambito di protezione  
 
 Per altre informazioni, vedere [Creare ruoli di sicurezza personalizzati](/sccm/core/servers/deploy/configure/configure-role-based-administration#BKMK_CreateSecRole).  
 
@@ -260,6 +260,8 @@ Se si prevede di co-ospitare il punto di distribuzione in un server che esegue D
 
      `WDSUTIL /Set-Server /UseDHCPPorts:No /DHCPOption60:Yes`  
 
+> [!NOTE]
+> Quando si usa il risponditore PXE senza WDS, invece di WDS, non è consentito eseguire anche DHCP nello stesso server.
 
 
 ##  <a name="BKMK_SupportedOS"></a> Sistemi operativi supportati  

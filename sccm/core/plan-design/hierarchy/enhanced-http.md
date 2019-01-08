@@ -10,12 +10,12 @@ ms.assetid: 4deac022-e397-4f1f-bc0a-cea6c6c6368d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7b7cb4a6a7ec6738bdf045b75bf88c8b4d8c4650
-ms.sourcegitcommit: 1439817f1309658b31008d7bafaab32fc5ef8789
+ms.openlocfilehash: 7f2fab639082e6871e5df8dcebe0d1b3a440624c
+ms.sourcegitcommit: 1bf26b83fa7da637d299a21e1d3bc61f2d7d8c10
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "52820102"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54060366"
 ---
 # <a name="enhanced-http"></a>HTTP avanzato
 
@@ -79,7 +79,7 @@ Un dispositivo aggiunto ad Azure AD o un [dispositivo di Azure AD ibrido](https:
 
     - Se questo prerequisito per il sito è già soddisfatto, è necessario aggiornare l'applicazione Azure AD. Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e selezionare **Tenant di Azure Active Directory**. Selezionare il tenant di Azure AD, selezionare l'applicazione Web nel riquadro **Applicazioni** e quindi selezionare **Aggiornare le impostazioni dell'applicazione** nella barra multifunzione.  
 
-- *Solo [scenario 3](#bkmk_scenario3)*: un client che esegue Windows 10 versione 1803 e aggiunto ad Azure AD. 
+- *Solo per lo [scenario 3](#bkmk_scenario3)*: un client che esegue Windows 10 versione 1803 e aggiunto ad Azure AD. 
 
 
 

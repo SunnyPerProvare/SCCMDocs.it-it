@@ -10,12 +10,12 @@ ms.assetid: b87ac054-9b37-4725-a3f3-2340cfb10bff
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: efce5242c5de148d6922144af27f47a267b3c6c3
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 6ea093b71d19c2cee35caa748ae60f76a95b078c
+ms.sourcegitcommit: 54e5786875c4e5f5c1b54e38ed59e96344faf9b4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52458189"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53817767"
 ---
 # <a name="checklist-for-installing-update-1810-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1810 di Configuration Manager
 
@@ -89,6 +89,9 @@ Per altre informazioni, vedere  [Prerequisiti del sito e del sistema del sito](
 La versione di Windows 10 Assessment and Deployment Kit (ADK) deve essere supportata per Configuration Manager versione 1810. Per altre informazioni sulle versioni supportate di Windows ADK, vedere [Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk). Se è necessario aggiornare Windows ADK, eseguire questa operazione prima di iniziare l'aggiornamento di Configuration Manager. Questo ordine assicura che le immagini d'avvio predefinite vengano aggiornate automaticamente alla versione più recente di Windows PE. Aggiornare manualmente eventuali immagini di avvio personalizzate dopo l'aggiornamento del sito.
 
 Se si aggiorna il sito prima di aggiornare Windows ADK, vedere [Aggiornare i punti di distribuzione con l'immagine di avvio](/sccm/osd/get-started/manage-boot-images#update-distribution-points-with-the-boot-image).
+
+#### <a name="review-sql-server-native-client-version"></a>Verificare la versione di SQL Server Native Client
+Deve essere installata una versione minima di SQL Server 2012 Native Client che include il supporto per TLS 1.2. Per altre informazioni, vedere [Elenco dei controlli dei prerequisiti](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#sql-native-client).
 
 #### <a name="review-the-site-and-hierarchy-status-for-unresolved-issues"></a>Esaminare lo stato del sito e della gerarchia per verificare la presenza di problemi non risolti 
 Un aggiornamento del sito può avere esito negativo a causa di problemi operativi esistenti. Prima di aggiornare un sito, risolvere tutti i problemi operativi per i sistemi seguenti:  
