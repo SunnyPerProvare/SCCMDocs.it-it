@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6d25c6a11821b73f34c8a3cd6aa95d4a78c86587
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 033f0fc3dd86c074f89804f6d9e70c173e9cf0b8
+ms.sourcegitcommit: 54e5786875c4e5f5c1b54e38ed59e96344faf9b4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53418399"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53817954"
 ---
 # <a name="cryptographic-controls-technical-reference"></a>Riferimento tecnico per i controlli crittografici
 
@@ -108,8 +108,6 @@ System Center Configuration Manager usa la firma e la crittografia per protegger
 
 - Quando si usano punti di distribuzione basati su cloud.  
 
-- Quando si gestiscono computer Intel basati su AMT fuori banda.  
-
   Per la maggior parte delle altre comunicazioni di Configuration Manager che richiedono certificati per l'autenticazione, la firma o la crittografia, Configuration Manager usa automaticamente i certificati PKI se sono disponibili. Se non sono disponibili, Configuration Manager genera certificati autofirmati.  
 
   Configuration Manager non usa i certificati PKI quando gestisce dispositivi mobili con il connettore Exchange Server.  
@@ -162,7 +160,7 @@ System Center Configuration Manager usa la firma e la crittografia per protegger
 
  Per impostazione predefinita, il controllo dell'elenco di revoche di certificati (CRL) è abilitato in IIS, pertanto se si sta usando un CRL con la distribuzione PKI, non è necessario eseguire ulteriori configurazioni nella maggior parte dei sistemi del sito di Configuration Manager che eseguono IIS. L'eccezione riguarda gli aggiornamenti software, che richiedono un passaggio manuale per l'abilitazione del controllo CRL per verificare le firme sui file di aggiornamento software.  
 
- Per impostazione predefinita, il controllo CRL è abilitato per i computer client che usano connessioni client HTTPS. Per impostazione predefinita, il controllo CRL non è abilitato quando si esegue la console di gestione fuori banda per connettersi a computer basati su AMT. È possibile abilitare tale opzione. Non è possibile disabilitare il controllo CRL per i client su computer Mac in Configuration Manager SP1 o versioni successive.  
+ Per impostazione predefinita, il controllo CRL è abilitato per i computer client che usano connessioni client HTTPS. Non è possibile disabilitare il controllo CRL per i client su computer Mac in Configuration Manager SP1 o versioni successive.  
 
  Il controllo CRL non è supportato in Configuration Manager per le connessioni seguenti:  
 
