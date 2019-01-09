@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: a6a1f8257c2a334b539499a5febbdb77729f0fb2
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: f0ec652a9fb7d4ef6bef881bfc96f1be2b4e297a
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349916"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424341"
 ---
 # <a name="manage-publications-in-updates-publisher"></a>Gestire le pubblicazioni in Updates Publisher
 
@@ -41,9 +41,9 @@ Nell'**area di lavoro Pubblicazioni** e possibile modificare il **tipo di pubbli
 
 2. Quindi, nella scheda **Home**, scegliere una delle opzioni seguenti. Le opzioni disponibili dipendono dal tipo di pubblicazione degli aggiornamenti selezionato.
 
-  -   **Automatic** (Automatica)
-  -   **Full Content** (Contenuto completo)
-  -   **Metadata only** (Solo metadati)
+   -   **Automatic** (Automatica)
+   -   **Full Content** (Contenuto completo)
+   -   **Metadata only** (Solo metadati)
 
 Dopo aver apportato una modifica, potrebbe essere necessario aggiornare la visualizzazione della pubblicazione per esaminare i nuovi valori.
 
@@ -67,13 +67,13 @@ Per poter eseguire la pubblicazione, è prima necessario configurare l'opzione [
 
 ### <a name="to-publish-a-publication"></a>Per pubblicare una pubblicazione
 
-1.  Passare all'**area di lavoro Pubblicazioni** quindi selezionare una pubblicazione contenente il gruppo di aggiornamenti e aggregazioni che si vogliono pubblicare o esportare. Scegliere quindi **Pubblica** nella scheda **Home** della barra multifunzione.
+1. Passare all'**area di lavoro Pubblicazioni** quindi selezionare una pubblicazione contenente il gruppo di aggiornamenti e aggregazioni che si vogliono pubblicare o esportare. Scegliere quindi **Pubblica** nella scheda **Home** della barra multifunzione.
 
-2.  Nella pagina **Seleziona** della **Pubblicazione guidata** è possibile scegliere di firmare tutti gli aggiornamenti con un nuovo certificato di pubblicazione, ma non è possibile modificare il tipo di pubblicazione.
+2. Nella pagina **Seleziona** della **Pubblicazione guidata** è possibile scegliere di firmare tutti gli aggiornamenti con un nuovo certificato di pubblicazione, ma non è possibile modificare il tipo di pubblicazione.
 
-3.  Completare la procedura guidata.
+3. Completare la procedura guidata.
 
-  Se la pubblicazione ha esito negativo, viene visualizzato un collegamento al file UpdatesPublisher.log in cui sono disponibili maggiori informazioni.
+   Se la pubblicazione ha esito negativo, viene visualizzato un collegamento al file UpdatesPublisher.log in cui sono disponibili maggiori informazioni.
 
 ## <a name="export-a-publication"></a>Esportare una pubblicazione
 È possibile esportare una pubblicazione dal repository di Updates Publisher. Con questa operazione vengono esportati gli aggiornamenti e le aggregazioni assegnati alla pubblicazione e viene creato un catalogo di aggiornamenti. È quindi possibile [aggiungere](/sccm/sum/tools/updates-publisher-catalogs#add-software-update-catalogs) e [importare](/sccm/sum/tools/updates-publisher-catalogs#mport-updates) tale catalogo in un'altra istanza di Updates Publisher. È anche possibile [esportare aggiornamenti](/sccm/sum/tools/manage-updates-with-updates-publisher#export-updates) che non sono parte di una pubblicazione.

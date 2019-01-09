@@ -10,12 +10,12 @@ ms.assetid: 86cd5382-8b41-45db-a4f0-16265ae22657
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e5099be5ff6b34bcbc232e78056f1937a9508c4f
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
+ms.openlocfilehash: 0650e1aa16f0c1005748c85423c3367a727b1b9b
+ms.sourcegitcommit: 4659946369d5352234f27c7682bce65a0e86c697
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411426"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53303891"
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Peer cache per i client di Configuration Manager
 
@@ -64,7 +64,7 @@ A partire dalla versione 1806, sono disponibili impostazioni aggiuntive per i gr
 > [!NOTE]  
 > Se il client esegue il fallback a un gruppo di limiti vicino per il contenuto, il punto di gestione non aggiunge le origini di peer cache del gruppo di limiti vicino all'elenco di possibili percorsi di origine del contenuto.  
 
-Scegliere solo i client più adatti come origini di peer cache. Valutare l'idoneità dei client in base ad attributi come il tipo di chassis, lo spazio su disco e la connettività di rete. Per altre informazioni utili per scegliere i client più adatti da usare per la peer cache, vedere [questo blog scritto da un consulente Microsoft](https://blogs.technet.microsoft.com/setprice/2016/06/29/pe-peer-cache-custom-reporting-examples/).
+Scegliere solo i client più adatti come origini di peer cache. Valutare l'idoneità dei client in base ad attributi come il tipo di chassis, lo spazio su disco e la connettività di rete. Per altre informazioni utili per scegliere i client più adatti da usare per la peer cache, vedere [questo blog scritto da un consulente Microsoft](https://blogs.technet.microsoft.com/askpfeplat/2018/11/21/configuration-manager-peer-cache-custom-reporting-examples/).
 
 
 ### <a name="limited-access-to-a-peer-cache-source"></a>Accesso limitato a un'origine di peer cache  
@@ -202,12 +202,12 @@ Usare inoltre i report per visualizzare l'uso della peer cache. Nella console pa
     > [!Note]  
     > **Problema noto**<!--486652-->: quando si esegue il drill-down in risultati come *MaxCPULoad* o *MaxDiskIO*, è possibile che venga visualizzato un errore per segnalare che non è possibile trovare il report o i dettagli. Per risolvere questo problema, usare gli altri due report che mostrano direttamente i risultati.  
 
-2. **Rifiuto di contenuto di origine di peer cache per condizione**: visualizza i dettagli relativi al rifiuto per un tipo di rifiuto o un gruppo di limiti specificato. 
+2. **Peer cache source content rejection by condition** (Rifiuto di contenuto di origine di peer cache - per condizione): visualizza i dettagli relativi al rifiuto per un tipo di rifiuto o un gruppo di limiti specificato. 
 
     > [!Note]  
     > **Problema noto**<!--486652-->: non è possibile selezionare i parametri disponibili, ma è necessario immetterli manualmente. Immettere i valori relativi al *nome del gruppo di limiti* e al *tipo di rifiuto* indicati nel report **Rifiuto di contenuto di origine di peer cache**. Ad esempio, per *Rejection Type* (Tipo di rifiuto) è possibile immettere *MaxCPULoad* o *MaxDiskIO*.  
 
-3. **Dettagli del rifiuto di contenuto di origine di peer cache**: visualizza le informazioni sul contenuto richiesto dal client al momento del rifiuto.  
+3. **Peer cache source content rejection details** (Rifiuto di contenuto di origine di peer cache - dettagli): visualizza le informazioni sul contenuto richiesto dal client al momento del rifiuto.  
 
     > [!Note]  
     > **Problema noto**<!--486652-->: non è possibile selezionare i parametri disponibili, ma è necessario immetterli manualmente. Immettere il valore per *Rejection Type* (Tipo di rifiuto) come visualizzato nel report **Rifiuto di contenuto di origine di peer cache**. Immettere quindi il valore per *ID risorsa* per l'origine contenuto sulla quale si vogliono più informazioni. 

@@ -2,7 +2,7 @@
 title: Controlli dei prerequisiti
 titleSuffix: Configuration Manager
 description: Informazioni di riferimento sugli specifici controlli dei prerequisiti per gli aggiornamenti di Configuration Manager.
-ms.date: 11/27/2018
+ms.date: 12/14/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 6a279624-ffc9-41aa-8132-df1809708dd5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9f17be653d206fd453cdafa4de159804f2fca816
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 4fdc882d63e7bf7d3189e770f230412f17ca0b63
+ms.sourcegitcommit: d36e4c7082a5144e79035dd8847c8e741fa04667
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456686"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53444655"
 ---
 # <a name="list-of-prerequisite-checks-for-configuration-manager"></a>Elenco dei controlli dei prerequisiti per Configuration Manager
 
@@ -28,7 +28,7 @@ Questo articolo illustra in dettaglio i controlli dei prerequisiti che vengono e
 ##  <a name="BKMK_Security"></a> Privilegi di protezione  
 
 
-### <a name="security-rights-errors"></a>Privilegi di protezione: errori
+### <a name="security-rights-errors"></a>Privilegi di protezione: Errori
 
 #### <a name="administrator-rights-on-central-administration-site"></a>Diritti di amministratore per il sito di amministrazione centrale 
 *Si applica a: sito primario*
@@ -41,7 +41,7 @@ L'account utente che esegue l'installazione di Configuration Manager ha privileg
 Quando un sito primario viene espanso in una gerarchia, l'account utente che esegue l'installazione ha privilegi di **amministratore** nel server del sito primario autonomo.
 
 #### <a name="administrative-rights-on-site-system"></a>Diritti amministrativi sul sistema del sito 
-*Si applica a: sito di amministrazione centrale, sito primario,sito secondario*
+*Si applica a: sito di amministrazione centrale, sito primario, sito secondario*
 
 L'account utente che esegue l'installazione di Configuration Manager ha privilegi di **amministratore** per il server del sito.
 
@@ -87,7 +87,7 @@ SQL Server è configurato per la sicurezza di autenticazione di Windows.
 
 ##  <a name="BKMK_Dependencies"></a> Dipendenze
 
-### <a name="dependencies-errors"></a>Dipendenze: errori
+### <a name="dependencies-errors"></a>Dipendenze: Errori
 
 #### <a name="active-migration-mappings-on-the-target-primary-site"></a>Mapping di migrazione attivi nel sito primario di destinazione 
 *Si applica a: sito di amministrazione centrale*
@@ -128,19 +128,19 @@ Durante un aggiornamento le raccolte fanno riferimento solo ad altre raccolte de
 Si sta installando il punto di gestione in un server che non ha una versione diversa del client di Configuration Manager installato.
 
 #### <a name="dedicated-sql-server-instance"></a>Istanza di SQL Server dedicata 
-*Si applica a: sito di amministrazione centrale, sito primario,sito secondario*
+*Si applica a: sito di amministrazione centrale, sito primario, sito secondario*
 
 È stata configurata un'istanza dedicata di SQL Server per ospitare il database del sito di Configuration Manager. 
 
 Se un altro sito usa l'istanza, è necessario selezionare un'istanza diversa per il nuovo sito. È anche possibile disinstallare l'altro sito o spostare il relativo database in un'istanza diversa di SQL Server.
 
 #### <a name="existing-configuration-manager-server-components-on-server"></a>Componenti del server di Configuration Manager esistenti nel server 
-*Si applica a: sito di amministrazione centrale, sito primario,sito secondario*
+*Si applica a: sito di amministrazione centrale, sito primario, sito secondario*
 
 Un server del sito o un ruolo del sistema del sito non è installato nel server selezionato per l'installazione del sito.
 
 #### <a name="firewall-exception-for-sql-server"></a>Eccezione firewall per SQL Server 
-*Si applica a: sito di amministrazione centrale, sito primario,sito secondario, punto di gestione*
+*Si applica a: sito di amministrazione centrale, sito primario, sito secondario, punto di gestione*
 
 Windows Firewall è disattivato o è stata generata un'eccezione rilevante di Windows Firewall per SQL Server. 
 
@@ -157,12 +157,12 @@ IIS è installato e in esecuzione nel server per il punto di gestione o il punto
 Quando si espande un sito primario in una gerarchia, il sito del database per il sito primario autonomo usa le stesse regole di confronto del database del sito nel sito di amministrazione centrale.
 
 #### <a name="microsoft-remote-differential-compression-rdc-library-registered"></a>Libreria di Compressione differenziale remota Microsoft (RDC) registrata 
-*Si applica a: sito di amministrazione centrale, sito primario,sito secondario*
+*Si applica a: sito di amministrazione centrale, sito primario, sito secondario*
 
 La libreria Connessione Desktop remoto è registrata nel server del sito di Configuration Manager.
 
 #### <a name="microsoft-windows-installer"></a>Microsoft Windows Installer 
-*Si applica a: sito di amministrazione centrale, sito primario,sito secondario*
+*Si applica a: sito di amministrazione centrale, sito primario, sito secondario*
 
 Verifica la versione di Windows Installer. 
 
@@ -174,7 +174,7 @@ Se questo controllo ha esito negativo, l'installazione non riesce a verificare l
 Microsoft .NET Framework 4.0 è installato nel computer della console di Configuration Manager. 
 
 #### <a name="minimum-net-framework-version-for-configuration-manager-site-server"></a>Versione minima di .NET Framework per il server del sito di Configuration Manager 
-*Si applica a: sito di amministrazione centrale, sito primario,sito secondario*
+*Si applica a: sito di amministrazione centrale, sito primario, sito secondario*
 
 .NET Framework 3.5 è installato o abilitato nel server del sito di Configuration Manager. 
 
@@ -194,7 +194,7 @@ Le regole di confronto del database del sito corrispondono a quelle del database
 Il nome NetBIOS del computer corrisponde al nome host locale nel nome di dominio completo (FQDN).
 
 #### <a name="required-sql-server-collation"></a>Regole di confronto di SQL Server richieste 
-*Si applica a: sito di amministrazione centrale, sito primario,sito secondario*
+*Si applica a: sito di amministrazione centrale, sito primario, sito secondario*
 
 L'istanza di SQL Server è configurata per usare le regole di confronto **SQL_Latin1_General_CP1_CI_AS**. 
 
@@ -218,7 +218,7 @@ L'account computer per il sito secondario ha le autorizzazioni seguenti per acce
 La versione di Configuration Manager nella cartella di origine specificata per l'installazione del sito secondario corrisponde alla versione di Configuration Manager del sito primario.
 
 #### <a name="site-code-in-use"></a>Codice del sito in uso 
-*Si applica a: sito primario* Il codice sito specificato non è già in uso nella gerarchia di Configuration Manager. Specificare un codice univoco per questo sito.
+*Si applica a: sito primario* Il codice del sito specificato non è già in uso nella gerarchia di Configuration Manager. Specificare un codice univoco per questo sito.
 
 #### <a name="sms-provider-in-same-domain-as-site-server"></a>Il provider SMS ha lo stesso dominio del server del sito 
 *Si applica a: provider SMS*
@@ -244,7 +244,7 @@ SQL Server è installato nel server del sito secondario. Non è possibile instal
 > Il controllo viene eseguito solo quando si configura il programma di installazione in modo che usi un'istanza esistente di SQL Server.  
 
 #### <a name="sql-server-service-running-account"></a>Account di esecuzione del servizio SQL Server 
-*Si applica a: sito di amministrazione centrale, sito primario,sito secondario*
+*Si applica a: sito di amministrazione centrale, sito primario, sito secondario*
 
 L'account di accesso per il servizio SQL Server non è un account utente locale o di tipo **LOCAL SERVICE**. 
 
@@ -397,7 +397,7 @@ Per altre informazioni, vedere [Sistemi operativi supportati per i server dei si
 > Questo controllo non può risolvere lo stato dei ruoli del sistema del sito installati in Azure o per l'archiviazione nel cloud usata da Microsoft Intune. Ignorare gli avvisi per questi ruoli come falsi positivi.
 
 #### <a name="verify-site-server-permissions-to-publish-to-active-directory"></a>Verificare le autorizzazioni del server del sito da pubblicare in Active Directory Domain Services 
-*Si applica a: sito di amministrazione centrale, sito primario,sito secondario*
+*Si applica a: sito di amministrazione centrale, sito primario, sito secondario*
 
 L'account computer per il server del sito dispone di autorizzazioni di tipo **Controllo completo** per il contenitore **System Management** nel dominio di Active Directory. 
 
@@ -436,10 +436,10 @@ Sono disponibili due opzioni:
 
 ##  <a name="BKMK_Requirements"></a> Requisiti di sistema  
 
-### <a name="system-requirements-errors"></a>Requisiti di sistema: errori
+### <a name="system-requirements-errors"></a>Requisiti di sistema: Errori
 
 #### <a name="server-service-is-running"></a>Il servizio Server è in esecuzione 
-*Si applica a: sito di amministrazione centrale, sito primario,sito secondario*
+*Si applica a: sito di amministrazione centrale, sito primario, sito secondario*
 
 Il servizio Server è avviato e in esecuzione.
 
@@ -449,7 +449,7 @@ Il servizio Server è avviato e in esecuzione.
 Il computer di Configuration Manager è membro di un dominio di Windows.
 
 #### <a name="free-disk-space-on-site-server"></a>Spazio su disco disponibile nel server di sito 
-*Si applica a: sito di amministrazione centrale, sito primario,sito secondario*
+*Si applica a: sito di amministrazione centrale, sito primario, sito secondario*
 
 Per installare il server del sito, il computer deve avere almeno 15 GB di spazio libero su disco. Se si installa il provider SMS nello stesso server, è necessario 1 GB di spazio libero aggiuntivo.
 
@@ -466,14 +466,14 @@ A partire dalla versione 1810, questo controllo è più resiliente. Per verifica
 - `HKLM:Software\Microsoft\ServerManager, CurrentRebootAttempts`  
 
 #### <a name="read-only-domain-controller"></a>Controller di dominio di sola lettura 
-*Si applica a: sito di amministrazione centrale, sito primario,sito secondario*
+*Si applica a: sito di amministrazione centrale, sito primario, sito secondario*
 
 I server di database del sito e i server dei siti secondari non sono supportati in un controller di dominio di sola lettura. 
 
 Per altre informazioni, vedere l'articolo del supporto tecnico Microsoft relativo ai [problemi riscontrati durante l'installazione di SQL Server in un controller di dominio](https://support.microsoft.com/help/2032911).
 
 #### <a name="site-server-fqdn-length"></a>Lunghezza del nome di dominio completo del server del sito 
-*Si applica a: sito di amministrazione centrale, sito primario,sito secondario*
+*Si applica a: sito di amministrazione centrale, sito primario, sito secondario*
 
 Lunghezza del nome di dominio completo del server del sito.
 
@@ -550,13 +550,12 @@ Questo comando avvia una pulizia di syscommittab e di tutte le tabelle laterali 
 SELECT * FROM vLogs WHERE ProcedureName = 'spDiagChangeTracking'
 ```
 
-<!-- #### SQL Native Client
-<!--SCCMDocs-pr issue 3094->
-*Applies to: Central administration site, primary site, secondary site*
+#### <a name="sql-native-client"></a>SQL Native Client
+<!--SCCMDocs-pr issue 3094-->
+*Si applica a: sito di amministrazione centrale, sito primario, sito secondario*
 
-A supported version of the SQL Native Client. Starting in version 1810, the minimum version is 11.4.7001.0. 
+Quando si installa un nuovo sito, Configuration Manager installa automaticamente SQL Native Client come componente ridistribuibile. Configuration Manager non supporta l'aggiornamento di SQL Native Client. Questo controllo garantisce che il sito disponga di una versione supportata di SQL Native Client. A partire dalla versione 1810, la versione minima è SQL 2012 SP4 (`11.*.7001.0`). 
 
-This SQL Native Client version supports TLS 1.2. For more information, see the following articles:
-- [TLS 1.2 support for Microsoft SQL Server](https://support.microsoft.com/help/3135244/tls-1-2-support-for-microsoft-sql-server)  
-- [How to enable TLS 1.2 for Configuration Manager](https://support.microsoft.com/help/4040243/how-to-enable-tls-1-2-for-configuration-manager)  
- -->
+Questa versione di SQL Native Client supporta TLS 1.2. Per altre informazioni, vedere gli articoli seguenti:
+- [Supporto di TLS 1.2 per Microsoft SQL Server](https://support.microsoft.com/help/3135244/tls-1-2-support-for-microsoft-sql-server)  
+- [Come abilitare TLS 1.2 per Configuration Manager](https://support.microsoft.com/help/4040243/how-to-enable-tls-1-2-for-configuration-manager)  

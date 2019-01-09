@@ -10,12 +10,12 @@ ms.assetid: b06f781b-ab25-4d9a-b128-02cbd7cbcffe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5ab632367e6cc30210db00a61ee4d3b9c414fdbd
-ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
+ms.openlocfilehash: da5ad0fd932bb94bdab42ab723dcfc71ff252140
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36260813"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416379"
 ---
 # <a name="database-replicas-for-management-points-for-system-center-configuration-manager"></a>Repliche di database per i punti di gestione per System Center Configuration Manager
 
@@ -59,13 +59,13 @@ I siti primari di System Center Configuration Manager possono usare una replica 
 
     -   L'istanza di SQL Server che ospita il database del sito e quella che ospita la replica di database devono essere entrambe configurate per supportare un valore **Max Text Repl Size** di 2 GB. Per un esempio di configurazione di SQL Server 2012, vedere [Configurare l'opzione di configurazione del server max text repl size](http://go.microsoft.com/fwlink/p/?LinkId=273960).  
 
--   **Certificato autofirmato:** per configurare una replica di database, è necessario creare un certificato autofirmato nel server di replica di database e renderlo disponibile per ogni punto di gestione che userà il server di replica di database.  
+-   **Certificato autofirmato**: per configurare una replica di database, è necessario creare un certificato autofirmato nel server di replica di database e renderlo disponibile per ogni punto di gestione che userà il server di replica di database.  
 
     -   Il certificato è automaticamente disponibile per un punto di gestione installato nel server di replica di database.  
 
     -   Per fare in modo che il certificato sia disponibile ai punti di gestione remoti, è necessario esportare il certificato e quindi aggiungerlo all'archivio certificati **Persone attendibili** del punto di gestione remoto.  
 
--   **Notifica client:** per supportare la notifica client con una replica di database per un punto di gestione, è necessario configurare la comunicazione tra il server di database del sito e il server di replica di database per **SQL Server Service Broker**. A questo scopo è necessario:  
+-   **Notifica client**: per supportare la notifica client con una replica di database per un punto di gestione, è necessario configurare la comunicazione tra il server di database del sito e il server di replica di database per **SQL Server Service Broker**. A questo scopo è necessario:  
 
     -   Configurare ogni database con informazioni sull'altro database  
 
@@ -81,7 +81,7 @@ I siti primari di System Center Configuration Manager possono usare una replica 
 
 -   **Aggiornamenti a System Center Configuration Manager**: prima di aggiornare un sito da System Center 2012 Configuration Manager a System Center Configuration Manager Current Branch oppure prima di aggiornare Configuration Manager Current Branch all'ultima versione, è necessario disabilitare le repliche di database per i punti di gestione.  Dopo l'aggiornamento del sito, è possibile riconfigurare le repliche di database per i punti di gestione.  
 
--   **Più repliche in un'unica istanza di SQL Server:** se si configura un server di replica di database per ospitare più repliche di database per i punti di gestione (ogni replica deve trovarsi in un'istanza separata), è necessario usare uno script di configurazione modificato (dal passaggio 4 della sezione successiva) per evitare di sovrascrivere il certificato autofirmato usato dalle repliche di database configurate in precedenza in tale server.  
+-   **Più repliche in un'unica istanza di SQL Server**:  se si configura un server di replica di database per ospitare più repliche di database per i punti di gestione (ogni replica deve trovarsi in un'istanza separata), è necessario usare uno script di configurazione modificato (dal passaggio 4 della sezione successiva) per evitare di sovrascrivere il certificato autofirmato usato dalle repliche di database configurate in precedenza in tale server.  
 
 ##  <a name="BKMK_DBReplica_Config"></a> Configurare le repliche di database  
 La configurazione di una replica di database prevede i passaggi seguenti:  
@@ -122,7 +122,7 @@ La configurazione di una replica di database prevede i passaggi seguenti:
 
         -   SYSTEM: **Controllo completo**  
 
-        -   ConfigMgr_MPReplicaAccess: **Lettura**, **Lettura ed esecuzione**, **Visualizzazione contenuto cartella**  
+        -   ConfigMgr_MPReplicaAccess: **Lettura**, **Lettura ed esecuzione**, **Elenca contenuti cartella**  
 
 5.  Usare **SQL Server Management Studio** per connettersi al database del sito ed eseguire la seguente stored procedure come una query: **spCreateMPReplicaPublication**  
 
@@ -140,83 +140,83 @@ Usare la seguente procedura come esempio di configurazione di un server di repli
 
 ##### <a name="to-configure-the-database-replica-server"></a>Per configurare il server di replica di database  
 
-1.  Nel server di replica di database impostare SQL Server Agent per l'avvio automatico.  
+1. Nel server di replica di database impostare SQL Server Agent per l'avvio automatico.  
 
-2.  Nel server di replica di database usare **SQL Server Management Studio** per la connessione al server locale, quindi selezionare la cartella **Replica** , fare clic su Sottoscrizioni locali e selezionare **Nuove sottoscrizioni** per avviare **Creazione guidata nuova sottoscrizione**:  
+2. Nel server di replica di database usare **SQL Server Management Studio** per la connessione al server locale, quindi selezionare la cartella **Replica** , fare clic su Sottoscrizioni locali e selezionare **Nuove sottoscrizioni** per avviare **Creazione guidata nuova sottoscrizione**:  
 
-    1.  Nella pagina **Pubblicazione** della casella di riepilogo **Autore** selezionare **Trova server di pubblicazione SQL Server**, immettere il nome del server di database del sito e fare clic su **Connetti**.  
+   1. Nella pagina **Pubblicazione** della casella di riepilogo **Autore** selezionare **Trova server di pubblicazione SQL Server**, immettere il nome del server di database del sito e fare clic su **Connetti**.  
 
-    2.  Selezionare **ConfigMgr_MPReplica**, quindi fare clic su **Avanti**.  
+   2. Selezionare **ConfigMgr_MPReplica**, quindi fare clic su **Avanti**.  
 
-    3.  Nella pagina **Posizione in cui eseguire l'agente di distribuzione** selezionare **Esegui ogni agente nel relativo Sottoscrittore (sottoscrizioni pull)**, quindi fare clic su **Avanti**.  
+   3. Nella pagina **Posizione in cui eseguire l'agente di distribuzione** selezionare **Esegui ogni agente nel relativo Sottoscrittore (sottoscrizioni pull)**, quindi fare clic su **Avanti**.  
 
-    4.  Nella pagina **Sottoscrittori** eseguire una delle seguenti operazioni:  
+   4. Nella pagina **Sottoscrittori** eseguire una delle seguenti operazioni:  
 
-        -   Selezionare un database esistente dal server di replica di database da usare per la replica di database, quindi fare clic su **OK**.  
+      -   Selezionare un database esistente dal server di replica di database da usare per la replica di database, quindi fare clic su **OK**.  
 
-        -   Selezionare **Nuovo database** per creare un nuovo database per la replica di database. Nella pagina **Nuovo database** specificare un nome di database, quindi fare clic su **OK**.  
+      -   Selezionare **Nuovo database** per creare un nuovo database per la replica di database. Nella pagina **Nuovo database** specificare un nome di database, quindi fare clic su **OK**.  
 
-    5.  Fare clic su **Avanti** per continuare.  
+   5. Fare clic su **Avanti** per continuare.  
 
-    6.  Nella pagina **Protezione agente di distribuzione** fare clic sul pulsante delle proprietà **(.…)** nella riga Connessione al Sottoscrittore della finestra di dialogo, quindi configurare le impostazioni di protezione per la connessione.  
+   6. Nella pagina **Protezione agente di distribuzione** fare clic sul pulsante delle proprietà **(.…)** nella riga Connessione al Sottoscrittore della finestra di dialogo, quindi configurare le impostazioni di protezione per la connessione.  
 
-        > [!TIP]  
-        >  Il pulsante delle proprietà **(….)** si trova nella quarta colonna della finestra di visualizzazione.  
+      > [!TIP]  
+      >  Il pulsante delle proprietà **(….)** si trova nella quarta colonna della finestra di visualizzazione.  
 
-        **Impostazioni di protezione:**  
+      **Impostazioni di protezione:**  
 
-        -   Configurare l'account che esegue il processo dell'agente di distribuzione (l'account del processo):  
+      - Configurare l'account che esegue il processo dell'agente di distribuzione (l'account del processo):  
 
-            -   Se SQL Server Agent viene eseguito come sistema locale, selezionare **Esegui con l'account del servizio SQL Server Agent (procedura non consigliata per la protezione)**  
+        -   Se SQL Server Agent viene eseguito come sistema locale, selezionare **Esegui con l'account del servizio SQL Server Agent (procedura non consigliata per la protezione)**  
 
-            -   Se SQL Server Agent viene eseguito usando un account diverso, selezionare **Esegui con l'account di Windows seguente**, quindi configurare l'account. È possibile specificare un account Windows o un account SQL Server.  
+        -   Se SQL Server Agent viene eseguito usando un account diverso, selezionare **Esegui con l'account di Windows seguente**, quindi configurare l'account. È possibile specificare un account Windows o un account SQL Server.  
 
-            > [!IMPORTANT]  
-            >  È necessario concedere all'account che esegue l'agente di distribuzione le autorizzazioni per l'autore come una sottoscrizione pull. Per informazioni sulla configurazione delle autorizzazioni, vedere [Protezione agente di distribuzione](http://go.microsoft.com/fwlink/p/?LinkId=238463) nella Libreria TechNet SQL Server.  
+        > [!IMPORTANT]  
+        >  È necessario concedere all'account che esegue l'agente di distribuzione le autorizzazioni per l'autore come una sottoscrizione pull. Per informazioni sulla configurazione delle autorizzazioni, vedere [Protezione agente di distribuzione](http://go.microsoft.com/fwlink/p/?LinkId=238463) nella Libreria TechNet SQL Server.  
 
-        -   Per **Connetti al server di distribuzione**, selezionare **Tramite rappresentazione dell'account del processo**.  
+      - Per **Connetti al server di distribuzione**, selezionare **Tramite rappresentazione dell'account del processo**.  
 
-        -   Per **Connetti al Sottoscrittore**, selezionare **Tramite rappresentazione dell'account del processo**.  
+      - Per **Connetti al Sottoscrittore**, selezionare **Tramite rappresentazione dell'account del processo**.  
 
-         Al termine della configurazione delle impostazioni di protezione per la connessione, fare clic su **OK** per salvarle, quindi fare clic su **Avanti**.  
+        Al termine della configurazione delle impostazioni di protezione per la connessione, fare clic su **OK** per salvarle, quindi fare clic su **Avanti**.  
 
-    7.  Nella casella di riepilogo **Pianificazione agente** della pagina **Pianificazione della sincronizzazione** selezionare **Definizione pianificazione**, quindi configurare **Nuova pianificazione processo**. Selezionare la frequenza **Quotidiana**, fare in modo che ricorra ogni **5 minuti**e impostare la durata **Nessuna data di fine**. Fare clic su **Avanti** per salvare la pianificazione, quindi fare clic nuovamente su **Avanti** .  
+   7. Nella casella di riepilogo **Pianificazione agente** della pagina **Pianificazione della sincronizzazione** selezionare **Definizione pianificazione**, quindi configurare **Nuova pianificazione processo**. Selezionare la frequenza **Quotidiana**, fare in modo che ricorra ogni **5 minuti**e impostare la durata **Nessuna data di fine**. Fare clic su **Avanti** per salvare la pianificazione, quindi fare clic nuovamente su **Avanti** .  
 
-    8.  Nella pagina **Azioni procedura guidata** selezionare la casella di controllo **Crea le sottoscrizioni**, quindi fare clic su **Avanti**.  
+   8. Nella pagina **Azioni procedura guidata** selezionare la casella di controllo **Crea le sottoscrizioni**, quindi fare clic su **Avanti**.  
 
-    9. Nella pagina **Completamento procedura guidata** fare clic su **Fine**, quindi su **Chiudi** per completare la procedura guidata.  
+   9. Nella pagina **Completamento procedura guidata** fare clic su **Fine**, quindi su **Chiudi** per completare la procedura guidata.  
 
-3.  Subito dopo aver completato la Creazione guidata nuova sottoscrizione, usare **SQL Server Management Studio** per connettersi al database del server di replica di database e quindi eseguire la query seguente per attivare la proprietà del database TRUSTWORTHY:  `ALTER DATABASE <MP Replica Database Name> SET TRUSTWORTHY ON;`  
+3. Subito dopo aver completato la Creazione guidata nuova sottoscrizione, usare **SQL Server Management Studio** per connettersi al database del server di replica di database e quindi eseguire la query seguente per attivare la proprietà del database TRUSTWORTHY:  `ALTER DATABASE <MP Replica Database Name> SET TRUSTWORTHY ON;`  
 
-4.  Controllare lo stato di sincronizzazione per verificare che la sottoscrizione sia stata eseguita correttamente:  
+4. Controllare lo stato di sincronizzazione per verificare che la sottoscrizione sia stata eseguita correttamente:  
 
-    -   Nel computer del sottoscrittore:  
+   -   Nel computer del sottoscrittore:  
 
-        -   In **SQL Server Management Studio**eseguire la connessione al server di replica di database, quindi espandere **Replica**.  
+       -   In **SQL Server Management Studio**eseguire la connessione al server di replica di database, quindi espandere **Replica**.  
 
-        -   Espandere **Sottoscrizioni locali**, fare clic con il pulsante destro del mouse sulla sottoscrizione alla pubblicazione del database del sito e quindi selezionare **Visualizza stato sincronizzazione**.  
+       -   Espandere **Sottoscrizioni locali**, fare clic con il pulsante destro del mouse sulla sottoscrizione alla pubblicazione del database del sito e quindi selezionare **Visualizza stato sincronizzazione**.  
 
-    -   Nel computer dell'autore:  
+   -   Nel computer dell'autore:  
 
-        -   In **SQL Server Management Studio**eseguire la connessione al computer del database del sito, fare clic con il pulsante destro del mouse sulla cartella **Replica** , quindi selezionare **Avvia Monitoraggio replica**.  
+       -   In **SQL Server Management Studio**eseguire la connessione al computer del database del sito, fare clic con il pulsante destro del mouse sulla cartella **Replica** , quindi selezionare **Avvia Monitoraggio replica**.  
 
-5.  Per abilitare l'integrazione Common Language Runtime (CLR) per la replica di database, usare **SQL Server Management Studio** per connettersi alla replica di database nel server di replica di database ed eseguire la seguente stored procedure come una query: **exec sp_configure 'clr enabled', 1; RICONFIGURARE CON SOSTITUZIONE**  
+5. Per abilitare l'integrazione Common Language Runtime (CLR) per la replica di database, usare **SQL Server Management Studio** per connettersi alla replica di database nel server di replica di database ed eseguire la seguente stored procedure come una query: **exec sp_configure 'clr enabled', 1; RICONFIGURARE CON SOSTITUZIONE**  
 
-6.  Per ciascun punto di gestione che usa un server di replica di database, aggiungere l'account computer relativo al punto di gestione al gruppo **Administrators** locale nel server di replica di database.  
+6. Per ciascun punto di gestione che usa un server di replica di database, aggiungere l'account computer relativo al punto di gestione al gruppo **Administrators** locale nel server di replica di database.  
 
-    > [!TIP]  
-    >  Questo passaggio non è necessario per i punti di gestione eseguiti nel server di replica di database.  
+   > [!TIP]  
+   >  Questo passaggio non è necessario per i punti di gestione eseguiti nel server di replica di database.  
 
- La replica di database ora può essere usata da un punto di gestione.  
+   La replica di database ora può essere usata da un punto di gestione.  
 
 ###  <a name="BKMK_DBReplica_ConfigMP"></a> Passaggio 3: Configurare i punti di gestione per l'uso della replica di database  
  È possibile configurare un punto di gestione in un sito primario per l'utilizzo di una replica di database durante l'installazione del ruolo del punto di gestione, oppure è possibile riconfigurare un punto di gestione esistente per l'utilizzo di una replica di database.  
 
  Per configurare un punto di gestione per l'utilizzo di una replica di database, usare le seguenti informazioni:  
 
--   **Per configurare un nuovo punto di gestione:** Nella pagina **Database del punto di gestione** della procedura guidata usata per l'installazione del punto di gestione selezionare **Usa replica di database**e specificare l'FQDN del computer che ospita la replica di database. Successivamente, per **Nome database del sito di Configuration Manager**, specificare il nome del database della replica di database nel computer.  
+-   **Per configurare un nuovo punto di gestione**: nella pagina **Database del punto di gestione** della procedura guidata utilizzata per l'installazione del punto di gestione selezionare **Utilizza replica di database** e specificare l'FQDN del computer che ospita la replica di database. Successivamente, per **Nome database del sito di Configuration Manager**, specificare il nome del database della replica di database nel computer.  
 
--   **Per configurare un punto di gestione installato in precedenza**: Aprire la pagina delle proprietà del punto di gestione, selezionare la scheda **Database del punto di gestione** , selezionare **Usa replica di database**, quindi specificare l'FQDN del computer che ospita la replica di database. Successivamente, per **Nome database del sito di Configuration Manager**, specificare il nome del database della replica di database nel computer.  
+-   **Per configurare un punto di gestione installato in precedenza**: aprire la pagina delle proprietà del punto di gestione, selezionare la scheda **Database del punto di gestione**, selezionare **Usa replica di database**, quindi specificare l'FQDN del computer che ospita la replica di database. Successivamente, per **Nome database del sito di Configuration Manager**, specificare il nome del database della replica di database nel computer.  
 
 -   **Per ogni punto di gestione che usa una replica di database**è necessario aggiungere manualmente l'account computer del server del punto di gestione al ruolo **db_datareader** per la replica di database.  
 
@@ -371,9 +371,9 @@ Oltre a configurare il punto di gestione per l'utilizzo del server di replica di
 
 3.  Nel server di replica di database eseguire il seguente comando applicabile alla configurazione di SQL Server:  
 
-    -   Per un'istanza predefinita di SQL Server: Fare clic con il pulsante destro del mouse sul file **CreateMPReplicaCert.ps1** e selezionare **Esegui con PowerShell**. Durante l'esecuzione dello script viene creato il certificato autofirmato e SQL Server viene configurato per l'utilizzo del certificato.  
+    -   Per un'istanza predefinita di SQL Server: fare clic con il pulsante destro del mouse sul file **CreateMPReplicaCert.ps1** e selezionare **Esegui con PowerShell**. Durante l'esecuzione dello script viene creato il certificato autofirmato e SQL Server viene configurato per l'utilizzo del certificato.  
 
-    -   Per un'istanza denominata di SQL Server: Usare PowerShell per eseguire il comando **%path%\CreateMPReplicaCert.ps1 xxxxxx** dove **xxxxxx** è il nome dell'istanza di SQL Server.  
+    -   Per un'istanza denominata di SQL Server: usare PowerShell per eseguire il comando **%path%\CreateMPReplicaCert.ps1 xxxxxx** dove **xxxxxx** è il nome dell'istanza di SQL Server.  
 
     -   Dopo aver completato lo script, verificare che SQL Server Agent sia in esecuzione. In caso contrario, riavviare SQL Server Agent.  
 
@@ -421,33 +421,33 @@ Per supportare la notifica client con una replica di database per un punto di ge
 
 ##### <a name="to-configure-the-service-broker-for-a-database-replica"></a>Per configurare Service Broker per una replica di database  
 
-1.  Usare **SQL Server Management Studio** per connettersi al database del server di replica di database, quindi eseguire la query seguente per abilitare Service Broker nel server di replica di database: **ALTER DATABASE &lt;Replica Database Name\> SET ENABLE_BROKER, HONOR_BROKER_PRIORITY ON WITH ROLLBACK IMMEDIATE**  
+1. Usare **SQL Server Management Studio** per connettersi al database del server di replica di database, quindi eseguire la query seguente per abilitare Service Broker nel server di replica di database: **ALTER DATABASE &lt;Nome database di replica\> SET ENABLE_BROKER, HONOR_BROKER_PRIORITY ON WITH ROLLBACK IMMEDIATE**  
 
-2.  Successivamente, nel server di replica di database, configurare Service Broker per la notifica client ed esportare il certificato di Service Broker. A tale scopo, eseguire una stored procedure di SQL Server che consente di configurare Service Broker ed esportare il certificato come una singola azione. Quando si esegue la stored procedure, è necessario specificare l'FQDN del server di replica di database, il nome del database delle repliche di database e specificare un percorso per l'esportazione del file di certificato.  
+2. Successivamente, nel server di replica di database, configurare Service Broker per la notifica client ed esportare il certificato di Service Broker. A tale scopo, eseguire una stored procedure di SQL Server che consente di configurare Service Broker ed esportare il certificato come una singola azione. Quando si esegue la stored procedure, è necessario specificare l'FQDN del server di replica di database, il nome del database delle repliche di database e specificare un percorso per l'esportazione del file di certificato.  
 
-     Eseguire la query seguente per configurare i dettagli richiesti nel server di replica di database e per esportare il certificato per il server di replica di database: **EXEC sp_BgbConfigSSBForReplicaDB '&lt;Replica SQL Server FQDN\>', '&lt;Replica Database Name\>', '&lt;Certificate Backup File Path\>'**  
+    Eseguire la seguente query per configurare i dettagli richiesti nel server di replica di database e per esportare il certificato per il server di replica di database: **EXEC sp_BgbConfigSSBForReplicaDB '&lt;FQDN SQL Server di replica\>', '&lt;Nome database di replica\>', '&lt;Percorso file di backup certificato\>'**  
 
-    > [!NOTE]  
-    >  Quando il server di replica di database non si trova nell'istanza predefinita di SQL Server, per questo passaggio è necessario specificare il nome dell'istanza oltre al nome del database di replica. A tale scopo, sostituire **&lt;Replica Database Name\>** con **&lt;Instance name\\Replica Database Name\>**.  
+   > [!NOTE]  
+   >  Quando il server di replica di database non si trova nell'istanza predefinita di SQL Server, per questo passaggio è necessario specificare il nome dell'istanza oltre al nome del database di replica. A tale scopo, sostituire **&lt;Replica Database Name\>** con **&lt;Instance name\\Replica Database Name\>**.  
 
-     Dopo aver esportato il certificato dal server di replica di database, inserire una copia del certificato nel server di database dei siti primari.  
+    Dopo aver esportato il certificato dal server di replica di database, inserire una copia del certificato nel server di database dei siti primari.  
 
-3.  Usare **SQL Server Management Studio** per connettersi al database del sito primario. Dopo aver eseguito la connessione al database dei siti primari, eseguire una query per importare il certificato e specificare la porta Service Broker in uso nel server di replica di database, l'FQDN del server di replica di database e il nome del database delle repliche di database. In questo modo, il database dei siti primari viene configurato per usare Service Broker per comunicare con il database del server di replica di database.  
+3. Usare **SQL Server Management Studio** per connettersi al database del sito primario. Dopo aver eseguito la connessione al database dei siti primari, eseguire una query per importare il certificato e specificare la porta Service Broker in uso nel server di replica di database, l'FQDN del server di replica di database e il nome del database delle repliche di database. In questo modo, il database dei siti primari viene configurato per usare Service Broker per comunicare con il database del server di replica di database.  
 
-     Eseguire la query seguente per importare il certificato dal server di replica di database e specificare i dettagli richiesti: **EXEC sp_BgbConfigSSBForRemoteService 'REPLICA', '&lt;SQL Service Broker Port\>', '&lt;Certificate File Path\>', '&lt;Replica SQL Server FQDN\>', '&lt;Replica Database Name\>'**  
+    Eseguire la seguente query per importare il certificato dal server di replica di database e specificare i dettagli richiesti: **EXEC sp_BgbConfigSSBForRemoteService 'REPLICA', '&lt;Porta SQL Service Broker\>', '&lt;Percorso file certificato\>', '&lt;FQDN SQL Server di replica\>', '&lt;Nome database replica\>'**  
 
-    > [!NOTE]  
-    >  Quando il server di replica di database non si trova nell'istanza predefinita di SQL Server, per questo passaggio è necessario specificare il nome dell'istanza oltre al nome del database di replica. A tale scopo, sostituire **&lt;Replica Database Name\>** con **\Instance name\\Replica Database Name\>**.  
+   > [!NOTE]  
+   >  Quando il server di replica di database non si trova nell'istanza predefinita di SQL Server, per questo passaggio è necessario specificare il nome dell'istanza oltre al nome del database di replica. A tale scopo, sostituire **&lt;Replica Database Name\>** con **\Instance name\\Replica Database Name\>**.  
 
-4.  Successivamente, nel server di database del sito eseguire il comando seguente per esportare il certificato per il server di database del sito: **EXEC sp_BgbCreateAndBackupSQLCert '&lt;Certificate Backup File Path\>'**  
+4. Successivamente, nel server di database del sito, eseguire il seguente comando per esportare il certificato per il server di database del sito: **EXEC sp_BgbCreateAndBackupSQLCert '&lt;Percorso file di backup certificato\>'**  
 
-     Dopo aver esportato il certificato dal server di database del sito, inserire una copia del certificato nel server di replica di database.  
+    Dopo aver esportato il certificato dal server di database del sito, inserire una copia del certificato nel server di replica di database.  
 
-5.  Usare **SQL Server Management Studio** per connettersi al database del server di replica di database. Dopo aver eseguito la connessione al database del server di replica di database, eseguire una query per importare il certificato e specificare il codice del sito del sito primario e la porta Service Broker in uso nel server di database del sito. In questo modo, il server di replica di database viene configurato per usare Service Broker per comunicare con il database del sito primario.  
+5. Usare **SQL Server Management Studio** per connettersi al database del server di replica di database. Dopo aver eseguito la connessione al database del server di replica di database, eseguire una query per importare il certificato e specificare il codice del sito del sito primario e la porta Service Broker in uso nel server di database del sito. In questo modo, il server di replica di database viene configurato per usare Service Broker per comunicare con il database del sito primario.  
 
-     Eseguire la query seguente per importare il certificato dal server di database del sito: **EXEC sp_BgbConfigSSBForRemoteService '&lt;Site Code\>', '&lt;SQL Service Broker Port\>', '&lt;Certificate File Path\>'**  
+    Eseguire la seguente query per importare il certificato dal server di database del sito: **EXEC sp_BgbConfigSSBForRemoteService '&lt;Codice sito\>', '&lt;Porta SQL Service Broker\>', '&lt;Percorso file certificato\>'**  
 
- Alcuni minuti dopo aver completato la configurazione del database del sito e del database della replica di database, Notification Manager imposta la conversazione di Service Broker nel sito primario per la notifica client dal database del sito primario alla replica di database.  
+   Alcuni minuti dopo aver completato la configurazione del database del sito e del database della replica di database, Notification Manager imposta la conversazione di Service Broker nel sito primario per la notifica client dal database del sito primario alla replica di database.  
 
 ###  <a name="bkmk_supscript"></a> Script supplementari per ulteriori repliche di database in un'unica istanza di SQL Server  
  Quando si usa lo script del passaggio 4 per configurare un certificato autofirmato per il server di replica di database in un'istanza di Server SQL in cui è già presente una replica di database che si intende continuare a usare, è necessario usare una versione modificata dello script originale. Le modifiche seguenti impediscono allo script di eliminare un certificato esistente nel server e creano i certificati successivi con nomi descrittivi univoci.  Modificare lo script originale nel modo seguente:  

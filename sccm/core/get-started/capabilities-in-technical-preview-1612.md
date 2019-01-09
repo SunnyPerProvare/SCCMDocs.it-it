@@ -10,12 +10,12 @@ ms.assetid: bceab2e8-2f05-4a17-9ac8-a7a558670fb7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a72f7979c38a0a8782aa41fef66b7aa00af9bc0f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 24f1d08fedfc09a190739182d7858772745fb3fe
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342240"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423372"
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1612 per System Center Configuration Manager
 
@@ -59,7 +59,7 @@ Oltre all'installazione e alla configurazione del database del data warehouse, v
 - Il computer in cui si installa il ruolo del sistema del sito richiede .NET Framework 4.5.2 o versioni successive.
 - L'account computer del computer in cui si installa il ruolo del sistema del sito deve avere le autorizzazioni di amministratore locale per il computer che ospiterà il database del data warehouse.
 - L'account amministrativo usato per installare il ruolo del sistema del sito deve essere un DBO nell'istanza di SQL Server che ospiterà il database del data warehouse.  
--  Il database è supportato:
+- Il database è supportato:
   - Con SQL Server 2012 o versione successiva, Enterprise Edition o Datacenter Edition.
   - In un'istanza predefinita o denominata
   - In un *cluster di SQL Server*. Questa configurazione dovrebbe funzionare, ma non è stata testata e il supporto viene offerto secondo il criterio del massimo sforzo.
@@ -80,12 +80,12 @@ Prima che la procedura guidata visualizzi l'opzione di selezione e installazione
 
 Pagina **Generale**: sono necessarie le informazioni generali seguenti:
 - **Impostazioni del database di Configuration Manager:**   
-  - **Nome server**: specificare l'FQDN del server che ospita il database del sito. Se non si usa un'istanza predefinita di SQL Server, è necessario specificare l'istanza dopo l'FQDN nel formato seguente: ***&lt;FQDN_SQLServer>\&lt;Nome_istanza>***
+  - **Nome server**: specificare l'FQDN del server che ospita il database del sito. Se non si usa un'istanza predefinita di SQL Server, è necessario specificare l'istanza dopo l'FQDN nel formato seguente: ***&lt;FQDN_Sqlserver>\&lt;Nome_istanza>***
   - **Nome database**: specificare il nome del database del sito.
   - **Verifica** Fare clic su **Verifica** per verificare che la connessione al database del sito funzioni correttamente.
 </br></br>
 - **Impostazioni del database del data warehouse:**
-  - **Nome server**: specificare l'FQDN del server che ospita il database e il punto di servizio del data warehouse. Se non si usa un'istanza predefinita di SQL Server, è necessario specificare l'istanza dopo l'FQDN nel formato seguente: ***&lt;FQDN_SQLServer>\&lt;Nome_istanza>***
+  - **Nome server**: specificare l'FQDN del server che ospita il database e il punto di servizio del data warehouse. Se non si usa un'istanza predefinita di SQL Server, è necessario specificare l'istanza dopo l'FQDN nel formato seguente: ***&lt;FQDN_Sqlserver>\&lt;Nome_istanza>***
   - **Nome database**: specificare l'FQDN del database del data warehouse.  Configuration Manager creerà il database con questo nome. Se si specifica un nome di database già esistente nell'istanza di SQL Server, Configuration Manager userà il database corrispondente.
   - **Verifica** Fare clic su **Verifica** per verificare che la connessione al database del sito funzioni correttamente.
 
@@ -122,21 +122,21 @@ Dopo aver installato un ruolo del sistema del sito del Data Warehouse, nel punto
 ### <a name="move-the-data-warehouse-database"></a>Spostare il database del data warehouse
 Per spostare il database del data warehouse in un nuovo SQL Server, procedere come segue:
 
-  1. Esaminare la configurazione corrente del database e registrare i dettagli di configurazione, ad esempio:  
+1. Esaminare la configurazione corrente del database e registrare i dettagli di configurazione, ad esempio:  
    - I gruppi di dati da sincronizzare
    - Le tabelle incluse o escluse dalla sincronizzazione       
 
    I gruppi di dati e le tabelle verranno riconfigurati dopo il ripristino del database in un nuovo server e la reinstallazione del ruolo del sistema del sito.  
 
-  2. Usare SQL Server Management Studio per eseguire il backup del database del data warehouse e quindi di nuovo per ripristinare il database all'interno di SQL Server nel nuovo computer che ospiterà il data warehouse.
+2. Usare SQL Server Management Studio per eseguire il backup del database del data warehouse e quindi di nuovo per ripristinare il database all'interno di SQL Server nel nuovo computer che ospiterà il data warehouse.
 
-  Dopo aver ripristinato il database nel nuovo server, assicurarsi che le autorizzazioni di accesso al database per il nuovo database del data warehouse siano le stesse del data warehouse originale.
+   Dopo aver ripristinato il database nel nuovo server, assicurarsi che le autorizzazioni di accesso al database per il nuovo database del data warehouse siano le stesse del data warehouse originale.
 
-  3. Usare la console di Configuration Manager per rimuovere il ruolo del sistema del sito punto di servizio Data warehouse dal server corrente.
+3. Usare la console di Configuration Manager per rimuovere il ruolo del sistema del sito punto di servizio Data warehouse dal server corrente.
 
-  4. Installare un nuovo punto di servizio Data warehouse e specificare il nome del nuovo SQL Server e dell'istanza che ospita il database del data warehouse appena ripristinato.
+4. Installare un nuovo punto di servizio Data warehouse e specificare il nome del nuovo SQL Server e dell'istanza che ospita il database del data warehouse appena ripristinato.
 
-  5. Dopo l'installazione del ruolo del sistema del sito, lo spostamento è completato.
+5. Dopo l'installazione del ruolo del sistema del sito, lo spostamento è completato.
 
 È possibile esaminare i registri di Configuration Manager seguenti per verificare che il ruolo del sistema del sito sia stato reinstallato correttamente:  
 - **DWSSMSI.log** e **DWSSSetup.log**: usare questi registri per analizzare gli errori che si verificano durante l'installazione del punto di servizio Data warehouse.
@@ -148,7 +148,7 @@ A partire dalla versione Technical Preview 1612 è possibile usare un nuovo stru
 
 Questo strumento interessa solo il contenuto nel punto di distribuzione specificato quando si esegue lo strumento. Quest'ultimo non può rimuovere contenuto dalla raccolta contenuto nel server del sito.
 
-Dopo aver installato la versione Technical Preview 1612, è possibile trovare il file **ContentLibraryCleanup.exe** nella cartella \*%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* nel server del sito della versione Technical Preview.
+Dopo aver installato la versione Technical Preview 1612, è possibile trovare il file **ContentLibraryCleanup.exe** nella cartella *%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* nel server del sito della versione Technical Preview.
 
 Lo strumento rilasciato con questa versione Technical Preview è destinato a sostituire le versioni precedenti di strumenti simili rilasciati per i prodotti Configuration Manager precedenti. Questa versione dello strumento smetterà di funzionare dopo il 1° marzo 2017. Fino a quel momento, tuttavia, verranno rilasciate nuove versioni Technical Preview, dato che questo strumento viene rilasciato nell'ambito di Current Branch o di un rilascio fuori programma pronto per la produzione.
 
@@ -158,22 +158,22 @@ Lo strumento rilasciato con questa versione Technical Preview è destinato a sos
 
 ### <a name="modes-of-operation"></a>Modalità di funzionamento
 Lo strumento può essere eseguito in due modalità:
-  1.    **Modalità di simulazione**:   
-      Se non si specifica l'opzione **/delete**, lo strumento viene eseguito in modalità di simulazione e identifica il contenuto da eliminare dal punto di distribuzione, senza però eliminare effettivamente i dati.
+1. **Modalità di simulazione**:   
+   Se non si specifica l'opzione **/delete**, lo strumento viene eseguito in modalità di simulazione e identifica il contenuto da eliminare dal punto di distribuzione, senza però eliminare effettivamente i dati.
 
-      - Se si esegue lo strumento in questa modalità, le informazioni sul contenuto da eliminare vengono scritte automaticamente nel file di log dello strumento. All'utente non viene richiesto di confermare ogni eliminazione potenziale.
-      - Per impostazione predefinita, il file di log viene scritto nella cartella Temp dell'utente nel computer in cui si esegue lo strumento. È tuttavia possibile usare l'opzione /log per reindirizzare il file di log in un'altra posizione.  
-      </br>
+   - Se si esegue lo strumento in questa modalità, le informazioni sul contenuto da eliminare vengono scritte automaticamente nel file di log dello strumento. All'utente non viene richiesto di confermare ogni eliminazione potenziale.
+   - Per impostazione predefinita, il file di log viene scritto nella cartella Temp dell'utente nel computer in cui si esegue lo strumento. È tuttavia possibile usare l'opzione /log per reindirizzare il file di log in un'altra posizione.  
+   </br>
 
-    È consigliabile eseguire lo strumento in questa modalità e di esaminare il file di log prima di eseguire lo strumento con l'opzione /delete.  
+   È consigliabile eseguire lo strumento in questa modalità e di esaminare il file di log prima di eseguire lo strumento con l'opzione /delete.  
 
-  2. **Modalità di eliminazione**: se si esegue lo strumento con l'opzione **/delete**, lo strumento viene eseguito in modalità di eliminazione.
+2. **Modalità di eliminazione**: Se si attiva l'opzione **/delete**, lo strumento viene eseguito in modalità di eliminazione.
 
-     - Se si esegue lo strumento in questa modalità, il contenuto orfano rilevato nel punto di distribuzione interessato può essere eliminato dalla raccolta contenuto del punto di distribuzione stesso.
-     -  Prima di eliminare ogni file, all'utente viene richiesto di confermare l'eliminazione.  È possibile selezionare **S** per Sì, **N** per No o **Sì a tutti** per ignorare le altre richieste di conferma ed eliminare tutto il contenuto orfano.  
-     </br>
+   - Se si esegue lo strumento in questa modalità, il contenuto orfano rilevato nel punto di distribuzione interessato può essere eliminato dalla raccolta contenuto del punto di distribuzione stesso.
+   -  Prima di eliminare ogni file, all'utente viene richiesto di confermare l'eliminazione.  È possibile selezionare **S** per Sì, **N** per No o **Sì a tutti** per ignorare le altre richieste di conferma ed eliminare tutto il contenuto orfano.  
+   </br>
 
-     È consigliabile eseguire lo strumento in modalità di simulazione e di esaminare il file di log prima di eseguire lo strumento con l'opzione /delete.  
+   È consigliabile eseguire lo strumento in modalità di simulazione e di esaminare il file di log prima di eseguire lo strumento con l'opzione /delete.  
 
 Quando si esegue lo strumento di pulizia della raccolta contenuto, indipendentemente dalla modalità, viene creato automaticamente un log il cui nome è composto dalla modalità in cui viene eseguito lo strumento, dal nome del punto di distribuzione, dalla data e dall'ora dell'operazione. Il file di log si apre automaticamente al termine dell'esecuzione dello strumento. Per impostazione predefinita, il log viene scritto nella cartella **Temp** dell'utente nel computer in cui si esegue lo strumento. È tuttavia possibile usare un'opzione della riga di comando per reindirizzare il file di log in un'altra posizione, compresa una condivisione di rete.   
 
@@ -186,7 +186,7 @@ Per eseguire lo strumento:
 **Problema noto** Quando si esegue lo strumento, se un pacchetto o una distribuzione ha esito negativo o è in corso, è possibile che venga restituito un errore simile al seguente:
 -  *System.InvalidOperationException: non è possibile eseguire la pulizia della raccolta contenuto perché il pacchetto <packageID> non è installato completamente*.
 
-**Soluzione temporanea:** Nessuna. Lo strumento non è in grado di identificare in modo affidabile i file orfani quando il contenuto è in corso o la sua distribuzione ha avuto esito negativo. Di conseguenza, lo strumento non consente di eseguire la pulizia del contenuto fino a quando il problema non viene risolto.
+**Soluzione alternativa:** Nessuna. Lo strumento non è in grado di identificare in modo affidabile i file orfani quando il contenuto è in corso o la sua distribuzione ha avuto esito negativo. Di conseguenza, lo strumento non consente di eseguire la pulizia del contenuto fino a quando il problema non viene risolto.
 
 
 
@@ -197,7 +197,7 @@ Per eseguire lo strumento:
 |---------|-------|
 |**/delete**  |**Facoltativa** </br> Usare questa opzione se si desidera eliminare contenuto dal punto di distribuzione. Prima dell'eliminazione viene richiesta la conferma. </br></br> Se questa opzione non viene utilizzata, lo strumento registra i risultati relativi al contenuto da eliminare, ma non elimina alcun contenuto dal punto di distribuzione. </br></br> Esempio: ***ContentLibraryCleanup.exe /dp server1.contoso.com /delete*** |
 | **/q**       |**Facoltativa** </br> Eseguire lo strumento in modalità non interattiva. Tutte le richieste di conferma (ad esempio in caso di eliminazione di contenuto) vengono soppresse e il file di log non viene aperto automaticamente. </br></br> Esempio: ***ContentLibraryCleanup.exe /q /dp server1.contoso.com*** |
-| **/dp &lt;FQDN punto di distribuzione>**  | **Richiesto** </br> Specificare il nome di dominio completo (FQDN) del punto di distribuzione che si desidera pulire. </br></br> Esempio: ***ContentLibraryCleanup.exe /dp server1.contoso.com***|
+| **/dp &lt;FQDN punto di distribuzione>**  | **Richiesto** </br> Specificare il nome di dominio completo (FQDN) del punto di distribuzione che si desidera pulire. </br></br> Esempio:  ***ContentLibraryCleanup.exe /dp server1.contoso.com***|
 | **/ps &lt;FQDN sito primario>**       | **Facoltativa** per la pulizia del contenuto di un punto di distribuzione in un sito primario.</br>**Obbligatoria** per la pulizia del contenuto di un punto di distribuzione in un sito secondario. </br></br> Specificare il nome FQDN del sito primario a cui appartiene il punto di distribuzione o del padre primario se il punto di distribuzione si trova in un sito secondario. </br></br> Esempio: ***ContentLibraryCleanup.exe /dp server1.contoso.com /ps siteserver1.contoso.com*** |
 | **/sc &lt;codice del sito primario>**  | **Facoltativa** per la pulizia del contenuto di un punto di distribuzione in un sito primario.</br>**Obbligatoria** per la pulizia del contenuto di un punto di distribuzione in un sito secondario. </br></br> Specificare il codice del sito primario a cui appartiene il punto di distribuzione o del sito primario padre se il punto di distribuzione si trova in un sito secondario.</br></br> Esempio: ***ContentLibraryCleanup.exe /dp server1.contoso.com /sc ABC*** |
 | **/log <log file directory>**       |**Facoltativa** </br> Specificare la directory in cui salvare i file di log. Può essere un'unità locale o una condivisione di rete.</br></br> Se questa opzione non viene usata, i file di log vengono salvati automaticamente nella cartella Temp dell'utente.</br></br> Esempio di unità locale: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log C:\Users\Administrator\Desktop*** </br></br>Esempio di condivisione di rete: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log \\&lt;condivisione>\&lt;cartella>***|

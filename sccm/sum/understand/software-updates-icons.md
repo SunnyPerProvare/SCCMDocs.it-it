@@ -10,12 +10,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 63c5ef72-5715-4d86-85a2-71beba469fab
 ms.author: aaroncz
-ms.openlocfilehash: d772b4ede4c8bfe13c68597ec8fe9a1f3dccbf38
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 77c6772682c8eb6d1532c0ea38489a45d2466c30
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32352934"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422862"
 ---
 # <a name="icons-used-for-software-updates-in-system-center-configuration-manager"></a>Icone usate per gli aggiornamenti software in System Center Configuration Manager
 
@@ -55,17 +55,17 @@ Gli aggiornamenti software sincronizzati vengono visualizzati nella console di C
 
  Gli aggiornamenti software sostituiti sono stati sostituiti con le versioni più recenti dell'aggiornamento software. In genere, un aggiornamento software che sostituisce un altro aggiornamento software offre uno o più dei seguenti vantaggi:  
 
--   Migliora o incrementa la correzione fornita da uno o più aggiornamenti software rilasciati in precedenza.  
+- Migliora o incrementa la correzione fornita da uno o più aggiornamenti software rilasciati in precedenza.  
 
--   Migliora l'efficienza del pacchetto dei file di aggiornamento software, che viene installato nei client se l'aggiornamento software viene approvato per l'installazione. Ad esempio, l'aggiornamento software sostituito potrebbe contenere file che non sono più rilevanti per la correzione o per i sistemi operativi ora supportati dal nuovo aggiornamento software, quindi tali file non sono inclusi nel pacchetto di file di aggiornamento software sostitutivo.  
+- Migliora l'efficienza del pacchetto dei file di aggiornamento software, che viene installato nei client se l'aggiornamento software viene approvato per l'installazione. Ad esempio, l'aggiornamento software sostituito potrebbe contenere file che non sono più rilevanti per la correzione o per i sistemi operativi ora supportati dal nuovo aggiornamento software, quindi tali file non sono inclusi nel pacchetto di file di aggiornamento software sostitutivo.  
 
--   Aggiorna le versioni più recenti di un prodotto o, in altre parole, non è più applicabile alle versioni o configurazioni precedenti di un prodotto. Gli aggiornamenti software possono anche sostituire altri aggiornamenti software se sono state apportate modifiche per espandere il supporto della lingua. Ad esempio, una revisione recente di un aggiornamento prodotto per Microsoft Office potrebbe rimuovere il supporto per un sistema operativo precedente, ma potrebbe aggiungere supporto aggiuntivo per nuove lingue nel rilascio dell'aggiornamento software iniziale.  
+- Aggiorna le versioni più recenti di un prodotto o, in altre parole, non è più applicabile alle versioni o configurazioni precedenti di un prodotto. Gli aggiornamenti software possono anche sostituire altri aggiornamenti software se sono state apportate modifiche per espandere il supporto della lingua. Ad esempio, una revisione recente di un aggiornamento prodotto per Microsoft Office potrebbe rimuovere il supporto per un sistema operativo precedente, ma potrebbe aggiungere supporto aggiuntivo per nuove lingue nel rilascio dell'aggiornamento software iniziale.  
 
- Nella scheda Regole di sostituzione delle proprietà del componente del punto di aggiornamento software è possibile specificare come gestire gli aggiornamenti software sostituiti. Per altre informazioni, vedere [Supersedence rules](../plan-design/plan-for-software-updates.md#BKMK_SupersedenceRules).  
+  Nella scheda Regole di sostituzione delle proprietà del componente del punto di aggiornamento software è possibile specificare come gestire gli aggiornamenti software sostituiti. Per altre informazioni, vedere [Supersedence rules](../plan-design/plan-for-software-updates.md#BKMK_SupersedenceRules).  
 
- **Problemi operativi:**  
+  **Problemi operativi:**  
 
- Quando possibile, distribuire l'aggiornamento software sostitutivo ai computer client anziché l'aggiornamento software sostituito. È possibile visualizzare un elenco degli aggiornamenti software che sostituiscono l'aggiornamento software nella scheda **Informazioni di sostituzione** delle proprietà dell'aggiornamento software.  
+  Quando possibile, distribuire l'aggiornamento software sostitutivo ai computer client anziché l'aggiornamento software sostituito. È possibile visualizzare un elenco degli aggiornamenti software che sostituiscono l'aggiornamento software nella scheda **Informazioni di sostituzione** delle proprietà dell'aggiornamento software.  
 
 ### <a name="invalid-icon"></a>Icona Non valido  
  ![Icona](../media/Invalid.jpg "Icona Non valido") L'icona con la X rossa rappresenta un aggiornamento software non valido.  
@@ -74,13 +74,13 @@ Gli aggiornamenti software sincronizzati vengono visualizzati nella console di C
 
  Gli aggiornamenti software non validi si trovano in una distribuzione attiva, ma per qualche motivo il contenuto (file di aggiornamento software) non è disponibile. Questo stato può verificarsi negli scenari seguenti:  
 
--   L'aggiornamento software viene distribuito correttamente, ma il file di aggiornamento software viene rimosso dal pacchetto di distribuzione e non è più disponibile.  
+- L'aggiornamento software viene distribuito correttamente, ma il file di aggiornamento software viene rimosso dal pacchetto di distribuzione e non è più disponibile.  
 
--   Si crea una distribuzione degli aggiornamenti software in un sito e l'oggetto di distribuzione viene replicato correttamente in un sito figlio, ma il pacchetto di distribuzione non viene replicato nel sito figlio.  
+- Si crea una distribuzione degli aggiornamenti software in un sito e l'oggetto di distribuzione viene replicato correttamente in un sito figlio, ma il pacchetto di distribuzione non viene replicato nel sito figlio.  
 
- **Problemi operativi:**  
+  **Problemi operativi:**  
 
- Quando non è disponibile contenuto per un aggiornamento software, i client non riescono a installare l'aggiornamento software finché il contenuto non diventa disponibile in un punto di distribuzione. È possibile ridistribuire il contenuto nei punti di distribuzione usando l'azione **Ridistribuisci** . Quando non è disponibile contenuto per un aggiornamento software in una distribuzione creata in un sito padre, l'aggiornamento software deve essere replicato o ridistribuito al sito figlio. Per altre informazioni sulla ridistribuzione di contenuto, vedere [Manage content you have distributed](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_manage) (Gestire il contenuto distribuito).  
+  Quando non è disponibile contenuto per un aggiornamento software, i client non riescono a installare l'aggiornamento software finché il contenuto non diventa disponibile in un punto di distribuzione. È possibile ridistribuire il contenuto nei punti di distribuzione usando l'azione **Ridistribuisci** . Quando non è disponibile contenuto per un aggiornamento software in una distribuzione creata in un sito padre, l'aggiornamento software deve essere replicato o ridistribuito al sito figlio. Per altre informazioni sulla ridistribuzione di contenuto, vedere [Manage content you have distributed](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_manage) (Gestire il contenuto distribuito).  
 
 ### <a name="metadata-only-icon"></a>Icona Solo metadati
  ![Icona](../media/MetadataOnly.png "Icona Solo metadati") L'icona con la freccia blu rappresenta un aggiornamento software solo di metadati.

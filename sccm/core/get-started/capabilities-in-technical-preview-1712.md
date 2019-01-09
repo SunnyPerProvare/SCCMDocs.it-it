@@ -10,12 +10,12 @@ ms.assetid: 3ce372d6-bd93-4d4d-b612-5303f89c36f0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5ecaa025a9a9f0d85b7a2ef857e70c4d762fd1f5
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 065353a9f6d341364a1414d58be1b32fd3686877
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338279"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419054"
 ---
 # <a name="capabilities-in-technical-preview-1712-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1712 per System Center Configuration Manager
 
@@ -33,14 +33,14 @@ Vedere [Technical Preview per System Center Configuration Manager](/sccm/core/ge
 **Known Issues in this Technical Preview:**
 -->
 **Problemi noti di questa versione Technical Preview:**
--   **L'aggiornamento a una nuova versione di anteprima ha esito negativo se il server del sito è in modalità passiva**. Se si usa un [server del sito primario in modalità passiva](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), è necessario disinstallare il server del sito in modalità passiva prima dell'aggiornamento a questa nuova versione di anteprima. Sarà possibile reinstallare il server del sito in modalità passiva al termine dell'aggiornamento del sito.
+- **L'aggiornamento a una nuova versione di anteprima ha esito negativo se il server del sito è in modalità passiva**. Se si usa un [server del sito primario in modalità passiva](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), è necessario disinstallare il server del sito in modalità passiva prima dell'aggiornamento a questa nuova versione di anteprima. Sarà possibile reinstallare il server del sito in modalità passiva al termine dell'aggiornamento del sito.
 
   Per disinstallare il server del sito in modalità passiva:
   1. Nella console di Configuration Manager passare ad **Amministrazione** > **Panoramica** > **Configurazione del sito** > **Server e ruoli del sistema del sito** e quindi selezionare il server del sito in modalità passiva.
   2. Nel riquadro **Ruoli sistema del sito** fare clic con il pulsante destro del mouse sul ruolo **Server del sito** e quindi scegliere **Rimuovi ruolo**.
   3. Fare clic con il pulsante destro del mouse sul server del sito in modalità passiva e quindi scegliere **Elimina**.
   4. Dopo la disinstallazione del server del sito, nel server del sito primario attivo riavviare il servizio **CONFIGURATION_MANAGER_UPDATE**.
-<!--sms489412-->
+  <!--sms489412-->
 
 
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
@@ -56,13 +56,11 @@ Vedere [Technical Preview per System Center Configuration Manager](/sccm/core/ge
 -->
 
 ## <a name="do-not-automatically-upgrade-superseded-applications"></a>Non vengono aggiornate automaticamente le applicazioni sostituite
-<!-- 1351266 -->
-In base ai [commenti e suggerimenti di UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/11532669-fix-supercedence-behavior), in questa versione è possibile configurare una distribuzione dell'applicazione in modo da non aggiornare automaticamente eventuali versioni sostituite. Ora quando si crea la distribuzione, nella pagina **Impostazioni di distribuzione** della **Distribuzione guidata del software**, ai fini di un'installazione **disponibile** o **necessaria**, è possibile abilitare o disabilitare l'opzione che consente di **aggiornare automaticamente eventuali versioni sostituite dell'applicazione**.
+<!-- 1351266 --> In base ai [commenti e suggerimenti di UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/11532669-fix-supercedence-behavior), in questa versione è possibile configurare una distribuzione dell'applicazione in modo da non aggiornare automaticamente eventuali versioni sostituite. Ora quando si crea la distribuzione, nella pagina **Impostazioni di distribuzione** della **Distribuzione guidata del software**, ai fini di un'installazione **disponibile** o **necessaria**, è possibile abilitare o disabilitare l'opzione che consente di **aggiornare automaticamente eventuali versioni sostituite dell'applicazione**.
 
 
 ## <a name="install-multiple-applications-in-software-center"></a>Installare più applicazioni nel Software Center
-<!-- 1357126 -->
-Se un utente finale o un tecnico desktop deve installare più applicazioni in un dispositivo, il Software Center ora supporta l'installazione di più applicazioni selezionate. Ciò consente all'utente di essere più efficiente senza dover aspettare che termini un'installazione prima di avviare quella successiva.
+<!-- 1357126 --> Se un utente finale o un tecnico desktop deve installare più applicazioni in un dispositivo, Software Center ora supporta l'installazione di più applicazioni selezionate. Ciò consente all'utente di essere più efficiente senza dover aspettare che termini un'installazione prima di avviare quella successiva.
 
 Quando si usa la modalità di selezione multipla nella scheda **Applicazioni** i seguenti criteri determinano quali app vengono abilitate nel Software Center per la selezione multipla:
  - L'app è visibile all'utente
@@ -83,8 +81,7 @@ Le app vengono installate come di consueto, ma in successione.
 
 
 ## <a name="client-based-pxe-responder-service"></a>Servizio risponditore PXE basato su client
-<!-- 1357148 -->
-Un problema comune per i clienti è erogare servizi PXE in postazioni remote o succursali con infrastruttura server minima o assente. Il ruolo punto di distribuzione supporta i sistemi operativi client, ma non può essere abilitato per PXE a causa della dipendenza dai servizi di distribuzione Windows.
+<!-- 1357148 --> Un problema comune per i clienti è erogare servizi PXE in postazioni remote o succursali con infrastruttura server minima o assente. Il ruolo punto di distribuzione supporta i sistemi operativi client, ma non può essere abilitato per PXE a causa della dipendenza dai servizi di distribuzione Windows.
 
 Sono ora disponibili nuove impostazioni client per l'abilitazione di un servizio risponditore PXE nei client di Configuration Manager. Un'immagine di avvio che supporta PXE deve trovarsi nella cache del client del risponditore PXE.
 
@@ -92,18 +89,18 @@ Sono ora disponibili nuove impostazioni client per l'abilitazione di un servizio
 Verificare che non vi siano già punti di distribuzione abilitati per PXE o altri server PXE nell'ambiente di test che possano essere in conflitto con il risponditore PXE nel client.
 
 Nella console di Configuration Manager:
- 1. Nell'area di lavoro **Raccolta software**, in **Sistemi operativi**, **Sequenze attività**: creare una sequenza di attività usando il modello personalizzato.
-    1. Fare clic su **Aggiungi**, selezionare **Generale** e quindi il passaggio **Imposta variabile della sequenza di attività**. Immettere **SMSTSPersistContent** come variabile della sequenza di attività, quindi immettere il valore **TRUE**.
-    1. Fare clic su **Aggiungi**, selezionare **Software** e quindi il passaggio **Scarica contenuto pacchetto**. Fare clic sull'asterisco dorato e quindi selezionare un'immagine di avvio che supporta PXE. Includere le immagini di avvio x86 e x64. Configurare il passaggio da inserire nella **cache del client di Configuration Manager**.
-    1. Fare clic su **Aggiungi**, selezionare **Generale** e quindi il passaggio **Imposta variabile della sequenza di attività**. Immettere **SMSTSPreserveContent** come variabile della sequenza di attività, quindi immettere il valore **TRUE**.
- 2. Nell'area di lavoro **Amministrazione**, **Impostazioni client**: creare un criterio di impostazioni dispositivo client personalizzate.
-    1. Selezionare il gruppo **Impostazioni della cache del client**.
-  1. Impostare l'opzione **Abilita il client di Configuration Manager nell'intero sistema operativo per condividere i contenuti** su **Sì**.
-    1. Impostare l'opzione **Abilita il servizio risponditore PXE** su **Sì**.
-  1. Per l'impostazione **Creare un certificato autofirmato o importare un certificato client PKI**, fare clic su **Specificare un certificato**. Selezionare **Importa certificato** se l'ambiente di test ha PKI, altrimenti fare clic su **OK** per creare un certificato autofirmato. 
-    1. Configurare le altre impostazioni secondo le esigenze dell'ambiente di test. Le impostazioni predefinite devono funzionare a meno che non esistano requisiti specifici di sicurezza o di rete.
- 3. Distribuire la sequenza di attività e le impostazioni client personalizzate a una raccolta di client di destinazione identificati come risponditori PXE. Attendere che i criteri vengano applicati e che la sequenza di attività venga eseguita.
- 4. Avviare un altro client nella stessa subnet per avviare la rete PXE come di consueto.
+1. Nell'area di lavoro **Raccolta software**, in **Sistemi operativi**, **Sequenze attività**: creare una sequenza di attività usando il modello personalizzato.
+   1. Fare clic su **Aggiungi**, selezionare **Generale** e quindi il passaggio **Imposta variabile della sequenza di attività**. Immettere **SMSTSPersistContent** come variabile della sequenza di attività, quindi immettere il valore **TRUE**.
+   1. Fare clic su **Aggiungi**, selezionare **Software** e quindi il passaggio **Scarica contenuto pacchetto**. Fare clic sull'asterisco dorato e quindi selezionare un'immagine di avvio che supporta PXE. Includere le immagini di avvio x86 e x64. Configurare il passaggio da inserire nella **cache del client di Configuration Manager**.
+   1. Fare clic su **Aggiungi**, selezionare **Generale** e quindi il passaggio **Imposta variabile della sequenza di attività**. Immettere **SMSTSPreserveContent** come variabile della sequenza di attività, quindi immettere il valore **TRUE**.
+2. Nell'area di lavoro **Amministrazione**, **Impostazioni client**: creare un criterio di impostazioni dispositivo client personalizzate.
+   1. Selezionare il gruppo **Impostazioni della cache del client**.
+   1. Impostare l'opzione **Abilita il client di Configuration Manager nell'intero sistema operativo per condividere i contenuti** su **Sì**.
+   1. Impostare l'opzione **Abilita il servizio risponditore PXE** su **Sì**.
+   1. Per l'impostazione **Creare un certificato autofirmato o importare un certificato client PKI**, fare clic su **Specificare un certificato**. Selezionare **Importa certificato** se l'ambiente di test ha PKI, altrimenti fare clic su **OK** per creare un certificato autofirmato. 
+   1. Configurare le altre impostazioni secondo le esigenze dell'ambiente di test. Le impostazioni predefinite devono funzionare a meno che non esistano requisiti specifici di sicurezza o di rete.
+3. Distribuire la sequenza di attività e le impostazioni client personalizzate a una raccolta di client di destinazione identificati come risponditori PXE. Attendere che i criteri vengano applicati e che la sequenza di attività venga eseguita.
+4. Avviare un altro client nella stessa subnet per avviare la rete PXE come di consueto.
 
 ### <a name="known-issues"></a>Problemi noti
  - L'editor della sequenza di attività visualizza un'icona rossa di errore per il passaggio **Scarica contenuto pacchetto** quando si aggiunge un'immagine di avvio, ma la sequenza di attività viene salvata correttamente. Quando si apre di nuovo questa sequenza di attività nell'editor appare un avviso informativo che indica che non è possibile trovare gli oggetti a cui viene fatto riferimento. <!-- sms427542 -->
@@ -118,8 +115,7 @@ In seguito ai commenti e suggerimenti di UserVoice, [Silverlight non viene più 
 Il dashboard di Surface ora visualizza la versione del firmware per i dispositivi Surface anziché la versione del sistema operativo. Nella console passare a **Monitoraggio** > **Surface Devices** (Dispositivi Surface). È possibile visualizzare i seguenti elementi:
 - Percentuale di dispositivi Surface
 - Percentuale di modelli Surface
-- Prime cinque versioni di firmware
- <!--1355788-->
+- Prime cinque versioni di firmware <!--1355788-->
 
 
 ## <a name="improvements-to-office-365-client-management-dashboard"></a>Miglioramenti del dashboard di Gestione client di Office 365 
@@ -130,14 +126,14 @@ Il dashboard di Gestione client di Office 365 ora visualizza un elenco di dispos
 ## <a name="improvements-to-the-configuration-manager-console"></a>Miglioramenti della console di Configuration Manager 
 Sono stati apportati i miglioramenti seguenti alla console di Configuration Manager, molti dei quali sono il risultato dei commenti e suggerimenti di UserVoice.
 
-- [Nell'elenco di dispositivi è visualizzato l'utente primario](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8782225-enable-a-column-for-primary-user): gli elenchi di dispositivi in Asset e conformità, Dispositivi, ora visualizzano l'utente primario per impostazione predefinita. L'ultimo utente connesso può inoltre essere aggiunto come colonna facoltativa. <!-- 1357280 -->
-- [Le raccolte rinominate appaiono nelle regole di appartenenza di una raccolta esistente](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/20125567-fix-the-renaming-of-collections): se una raccolta è membro di un'altra raccolta e viene rinominata, il nuovo nome viene aggiornato nelle regole di appartenenza.<!--1357282--> 
+- [Nell'elenco di dispositivi è visualizzato l'utente primario](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8782225-enable-a-column-for-primary-user): Gli elenchi di dispositivi in Asset e conformità, Dispositivi, ora visualizzano l'utente primario per impostazione predefinita. L'ultimo utente connesso può inoltre essere aggiunto come colonna facoltativa. <!-- 1357280 -->
+- [Le raccolte rinominate vengono visualizzate nelle regole di appartenenza della raccolta esistenti](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/20125567-fix-the-renaming-of-collections): Se una raccolta è membro di un'altra raccolta e viene rinominata, il nuovo nome viene aggiornato nelle regole di appartenenza.<!--1357282--> 
 
 
 ## <a name="improvements-to-operating-system-deployment"></a>Miglioramenti alla distribuzione del sistema operativo
 Sono stati apportati i miglioramenti seguenti alla distribuzione del sistema operativo a seguito dei commenti e suggerimenti di UserVoice.
- - [Strumento di visualizzazione log predefinito nell'immagine di avvio](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/19269823-stop-cmtrace-from-asking-us-if-we-want-to-use-it-a): in Windows PE quando si avvia cmtrace.exe non viene più richiesto di scegliere se rendere questo programma lo strumento di visualizzazione predefinito per i file di log. <!-- SMS 500897 -->
- - Passaggio Scarica contenuto pacchetto: ora è possibile aggiungere immagini di avvio a questo passaggio della sequenza di attività.
+ - [Visualizzatore log predefinito nell'immagine d'avvio](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/19269823-stop-cmtrace-from-asking-us-if-we-want-to-use-it-a): In Windows PE quando si avvia cmtrace.exe non viene più richiesto di scegliere se rendere questo programma lo strumento di visualizzazione predefinito per i file di log. <!-- SMS 500897 -->
+ - Passaggio Scarica contenuto pacchetto: ora è possibile aggiungere immagini d'avvio a questo passaggio della sequenza di attività.
 
 
 ## <a name="windows-10-feedback-hub-app-integration"></a>Integrazione di app dell'hub di commenti e suggerimenti di Windows 10

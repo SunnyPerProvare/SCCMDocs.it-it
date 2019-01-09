@@ -10,12 +10,12 @@ ms.assetid: 3986a992-c175-4b6f-922e-fc561e3d7cb7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 623d7b6a048b7728e40adb3655dc1017408fb1d7
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 488a24284e814effea23db0b221d62b7d25c483e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342223"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419530"
 ---
 # <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Come gestire i client in System Center Configuration Manager
 
@@ -36,119 +36,119 @@ Quando un client di Configuration Manager viene installato e assegnato correttam
 
 A seconda del tipo di dispositivo, alcune di queste opzioni potrebbero non essere disponibili.  
 
-1.  Nella console di Configuration Manager scegliere **Asset e conformità** >  **Dispositivi**.  
+1. Nella console di Configuration Manager scegliere **Asset e conformità** >  **Dispositivi**.  
 
-3.  Selezionare uno o più dispositivi, quindi selezionare una di queste attività di gestione client dalla barra multifunzione o facendo clic con il pulsante destro del mouse sul dispositivo:  
+2. Selezionare uno o più dispositivi, quindi selezionare una di queste attività di gestione client dalla barra multifunzione o facendo clic con il pulsante destro del mouse sul dispositivo:  
 
-    -   **Gestire le informazioni di affinità utente dispositivo**  
+   - **Gestire le informazioni di affinità utente dispositivo**  
 
-         Configurare le associazioni tra utenti e dispositivi, per una distribuzione efficiente del software agli utenti.  
+      Configurare le associazioni tra utenti e dispositivi, per una distribuzione efficiente del software agli utenti.  
 
-         Vedere [Collegare utenti e dispositivi mediante l'affinità utente dispositivo in System Center Configuration Manager](../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md)  
+      Vedere [Collegare utenti e dispositivi mediante l'affinità utente dispositivo in System Center Configuration Manager](../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md)  
 
-    -   **Aggiungere il dispositivo a una raccolta nuova o esistente**  
+   - **Aggiungere il dispositivo a una raccolta nuova o esistente**  
 
-         Aggiungere il dispositivo a una raccolta con una regola diretta.  
+      Aggiungere il dispositivo a una raccolta con una regola diretta.  
 
-    -   **Installare e reinstallare il client usando l'Installazione push client guidata**  
+   - **Installare e reinstallare il client usando l'Installazione push client guidata**  
 
-         Installare e reinstallare il client di Configuration Manager per ripristinarlo o riconfigurarlo. Questa opzione include le impostazioni di configurazione del sito e le proprietà di client.msi impostate per l'installazione push client.  
+      Installare e reinstallare il client di Configuration Manager per ripristinarlo o riconfigurarlo. Questa opzione include le impostazioni di configurazione del sito e le proprietà di client.msi impostate per l'installazione push client.  
 
-        > [!TIP]  
-        >  Esistono diversi modi per installare e reinstallare il client di Configuration Manager. Sebbene l'Installazione push client guidata consenta di installare il client in modo pratico grazie all'esecuzione dalla console, questo metodo presenta numerose dipendenze e non è adatto a tutti gli ambienti. Per altre informazioni sulle dipendenze, vedere [Prerequisiti per la distribuzione dei client nei computer Windows in System Center Configuration Manager](../../../core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.md). Per altre informazioni sugli altri metodi di installazione dei client, vedere [Metodi di installazione client in System Center Configuration Manager](../../../core/clients/deploy/plan/client-installation-methods.md).  
+     > [!TIP]  
+     >  Esistono diversi modi per installare e reinstallare il client di Configuration Manager. Sebbene l'Installazione push client guidata consenta di installare il client in modo pratico grazie all'esecuzione dalla console, questo metodo presenta numerose dipendenze e non è adatto a tutti gli ambienti. Per altre informazioni sulle dipendenze, vedere [Prerequisiti per la distribuzione dei client nei computer Windows in System Center Configuration Manager](../../../core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.md). Per altre informazioni sugli altri metodi di installazione dei client, vedere [Metodi di installazione client in System Center Configuration Manager](../../../core/clients/deploy/plan/client-installation-methods.md).  
 
-         Vedere [Come installare i client di Configuration Manager utilizzando push client](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush).  
+      Vedere [Come installare i client di Configuration Manager utilizzando push client](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush).  
 
-    -   **Riassegnare il sito**  
+   - **Riassegnare il sito**  
 
-         È ora possibile riassegnare uno o più client, inclusi i dispositivi mobili gestiti, a un altro sito principale nella gerarchia. I client possono essere riassegnati singolarmente o possono essere selezionati più volte e riassegnati in massa a un nuovo sito.  
+      È ora possibile riassegnare uno o più client, inclusi i dispositivi mobili gestiti, a un altro sito principale nella gerarchia. I client possono essere riassegnati singolarmente o possono essere selezionati più volte e riassegnati in massa a un nuovo sito.  
 
-    -   **Amministrare in remoto il client**  
+   - **Amministrare in remoto il client**  
 
-         Eseguire Esplora inventario risorse per visualizzare le informazioni sull'inventario hardware e software da un client Windows. Amministrare in remoto il dispositivo tramite Controllo remoto, Assistenza remota o Desktop remoto.  
+      Eseguire Esplora inventario risorse per visualizzare le informazioni sull'inventario hardware e software da un client Windows. Amministrare in remoto il dispositivo tramite Controllo remoto, Assistenza remota o Desktop remoto.  
 
-         Vedere [Come usare Esplora inventario risorse per visualizzare l'inventario hardware](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md) e [Come usare Esplora inventario software per visualizzare l'inventario software](../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md).  
+      Vedere [Come usare Esplora inventario risorse per visualizzare l'inventario hardware](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md) e [Come usare Esplora inventario software per visualizzare l'inventario software](../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md).  
 
-         Vedere [Come amministrare un computer client Windows in remoto](../../../core/clients/manage/remote-control/remotely-administer-a-windows-client-computer.md).  
+      Vedere [Come amministrare un computer client Windows in remoto](../../../core/clients/manage/remote-control/remotely-administer-a-windows-client-computer.md).  
 
-    -   **Approvare un client**  
+   - **Approvare un client**  
 
-         Quando il client comunica con i sistemi del sito mediante HTTP e un certificato autofirmato, è necessario approvare i client per identificarli come computer attendibili. Per impostazione predefinita, la configurazione del sito approva automaticamente i client della stessa foresta Active Directory e delle foreste trusted e non è quindi necessario approvare manualmente ciascun client. È tuttavia necessario approvare manualmente i computer del gruppo di lavoro ritenuti attendibili e altri eventuali computer ritenuti attendibili, ma non approvati.  
+      Quando il client comunica con i sistemi del sito mediante HTTP e un certificato autofirmato, è necessario approvare i client per identificarli come computer attendibili. Per impostazione predefinita, la configurazione del sito approva automaticamente i client della stessa foresta Active Directory e delle foreste trusted e non è quindi necessario approvare manualmente ciascun client. È tuttavia necessario approvare manualmente i computer del gruppo di lavoro ritenuti attendibili e altri eventuali computer ritenuti attendibili, ma non approvati.  
 
-        > [!WARNING]  
-        >  Sebbene alcune funzioni di gestione potrebbero funzionare per i client non approvati, si tratta di uno scenario non supportato per Configuration Manager.  
+     > [!WARNING]  
+     >  Sebbene alcune funzioni di gestione potrebbero funzionare per i client non approvati, si tratta di uno scenario non supportato per Configuration Manager.  
 
-         Non è necessario approvare i client che comunicano sempre con i sistemi del sito usando HTTPS o i client che usano un certificato PKI durante la comunicazione con i sistemi del sito mediante HTTP. Questi client stabiliscono relazioni di trust mediante certificati PKI.  
+      Non è necessario approvare i client che comunicano sempre con i sistemi del sito usando HTTPS o i client che usano un certificato PKI durante la comunicazione con i sistemi del sito mediante HTTP. Questi client stabiliscono relazioni di trust mediante certificati PKI.  
 
-    -   **Bloccare o sbloccare un client**  
+   - **Bloccare o sbloccare un client**  
 
-         È possibile bloccare un client che non è più attendibile. Con il blocco si impedisce al client di ricevere i criteri e ai sistemi del sito di comunicare con il client.  
+      È possibile bloccare un client che non è più attendibile. Con il blocco si impedisce al client di ricevere i criteri e ai sistemi del sito di comunicare con il client.  
 
-        > [!WARNING]  
-        >  Il blocco di un client impedisce solo la comunicazione del client con i sistemi del sito di Configuration Manager, non la comunicazione con gli altri dispositivi. Inoltre, quando il client comunica con i sistemi del sito mediante HTTP anziché HTTPS, vengono applicate alcune limitazioni di protezione.  
+     > [!WARNING]  
+     >  Il blocco di un client impedisce solo la comunicazione del client con i sistemi del sito di Configuration Manager, non la comunicazione con gli altri dispositivi. Inoltre, quando il client comunica con i sistemi del sito mediante HTTP anziché HTTPS, vengono applicate alcune limitazioni di protezione.  
 
-         È anche possibile sbloccare un client bloccato. 
+      È anche possibile sbloccare un client bloccato. 
 
-         Vedere [Determinare se bloccare o meno i client in System Center Configuration Manager](../../../core/clients/deploy/plan/determine-whether-to-block-clients.md).  
+      Vedere [Determinare se bloccare o meno i client in System Center Configuration Manager](../../../core/clients/deploy/plan/determine-whether-to-block-clients.md).  
 
-    -   **Cancellare una distribuzione PXE richiesta**  
+   - **Cancellare una distribuzione PXE richiesta**  
 
-         Ridistribuire le distribuzioni PXE richieste per il computer.  
+      Ridistribuire le distribuzioni PXE richieste per il computer.  
 
-         Vedere [Usare PXE per distribuire Windows in rete con System Center Configuration Manager](../../../osd/deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
+      Vedere [Usare PXE per distribuire Windows in rete con System Center Configuration Manager](../../../osd/deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
 
-    -   **Gestire le proprietà client**  
+   - **Gestire le proprietà client**  
 
-         Visualizzare i dati di individuazione e le distribuzioni usate come destinazione per il client. È inoltre possibile configurare le variabili usate dalle sequenze attività per distribuire un sistema operativo nel dispositivo.  
+      Visualizzare i dati di individuazione e le distribuzioni usate come destinazione per il client. È inoltre possibile configurare le variabili usate dalle sequenze attività per distribuire un sistema operativo nel dispositivo.  
 
-    -   **Eliminare il client**  
+   - **Eliminare il client**  
 
-        > [!WARNING]  
-        >  Non eliminare un client se si vuole disinstallare il client di Configuration Manager o rimuoverlo da una raccolta.  
+     > [!WARNING]  
+     >  Non eliminare un client se si vuole disinstallare il client di Configuration Manager o rimuoverlo da una raccolta.  
 
-         L'azione **Elimina** consente di eliminare manualmente il record client dal database di Configuration Manager e, in genere, non va usata al di fuori degli scenari di risoluzione dei problemi. Se si elimina il record client, ma il client è ancora installato e comunica con il sito, l'individuazione heartbeat ricrea il record client. Il record client viene nuovamente visualizzato nella console di Configuration Manager, anche se la cronologia client ed eventuali associazioni precedenti andranno perse.  
+      L'azione **Elimina** consente di eliminare manualmente il record client dal database di Configuration Manager e, in genere, non va usata al di fuori degli scenari di risoluzione dei problemi. Se si elimina il record client, ma il client è ancora installato e comunica con il sito, l'individuazione heartbeat ricrea il record client. Il record client viene nuovamente visualizzato nella console di Configuration Manager, anche se la cronologia client ed eventuali associazioni precedenti andranno perse.  
 
-        > [!NOTE]  
-        >  Quando viene eliminato un client di dispositivi mobili registrato da Configuration Manager, l'azione revoca inoltre il certificato PKI rilasciato al dispositivo mobile. Il certificato viene quindi rifiutato dal punto di gestione, anche se IIS non esegue il controllo CRL. I certificati dei client precedenti del dispositivo mobile non vengono revocati quando i client vengono eliminati.  
+     > [!NOTE]  
+     >  Quando viene eliminato un client di dispositivi mobili registrato da Configuration Manager, l'azione revoca inoltre il certificato PKI rilasciato al dispositivo mobile. Il certificato viene quindi rifiutato dal punto di gestione, anche se IIS non esegue il controllo CRL. I certificati dei client precedenti del dispositivo mobile non vengono revocati quando i client vengono eliminati.  
 
-         Per disinstallare il client, vedere [Disinstallare il client di Configuration Manager](#BKMK_UninstalClient).  
+      Per disinstallare il client, vedere [Disinstallare il client di Configuration Manager](#BKMK_UninstalClient).  
 
-         Per assegnare il client a un nuovo sito primario, vedere [Come assegnare i client a un sito in System Center Configuration Manager](../../../core/clients/deploy/assign-clients-to-a-site.md).  
+      Per assegnare il client a un nuovo sito primario, vedere [Come assegnare i client a un sito in System Center Configuration Manager](../../../core/clients/deploy/assign-clients-to-a-site.md).  
 
-         Per rimuovere il client da una raccolta, riconfigurare le proprietà della raccolta. Vedere [Come gestire le raccolte in System Center Configuration Manager](../../../core/clients/manage/collections/manage-collections.md).  
+      Per rimuovere il client da una raccolta, riconfigurare le proprietà della raccolta. Vedere [Come gestire le raccolte in System Center Configuration Manager](../../../core/clients/manage/collections/manage-collections.md).  
 
-    -   **Cancellare i dati di un dispositivo mobile**  
+   - **Cancellare i dati di un dispositivo mobile**  
 
-         È possibile cancellare i dati dei dispositivi mobili che supportano il comando di cancellazione.  
+      È possibile cancellare i dati dei dispositivi mobili che supportano il comando di cancellazione.  
 
-         Questa azione consente di rimuovere definitivamente tutti i dati del dispositivo mobile, comprese le impostazioni e i dati personali. In genere, questa azione consente di ripristinare le impostazioni di fabbrica nel dispositivo. Cancellare i dati di un dispositivo mobile quando il dispositivo mobile non è più considerato attendibile, ad esempio in caso di furto o smarrimento.  
+      Questa azione consente di rimuovere definitivamente tutti i dati del dispositivo mobile, comprese le impostazioni e i dati personali. In genere, questa azione consente di ripristinare le impostazioni di fabbrica nel dispositivo. Cancellare i dati di un dispositivo mobile quando il dispositivo mobile non è più considerato attendibile, ad esempio in caso di furto o smarrimento.  
 
-        > [!TIP]  
-        >  Vedere la documentazione del produttore per altre informazioni sull'elaborazione di un comando di cancellazione remota da parte del dispositivo mobile.  
+     > [!TIP]  
+     >  Vedere la documentazione del produttore per altre informazioni sull'elaborazione di un comando di cancellazione remota da parte del dispositivo mobile.  
 
-         Si verifica spesso un ritardo nella ricezione del comando di cancellazione da parte del dispositivo mobile:  
+      Si verifica spesso un ritardo nella ricezione del comando di cancellazione da parte del dispositivo mobile:  
 
-        -   Se il dispositivo mobile è registrato da Configuration Manager o da Microsoft Intune, il client riceve il comando al momento del download dei criteri client.  
+     - Se il dispositivo mobile è registrato da Configuration Manager o da Microsoft Intune, il client riceve il comando al momento del download dei criteri client.  
 
-        -   Se il dispositivo mobile è gestito dal connettore Exchange Server, riceve il comando al momento della sincronizzazione con Exchange.  
+     - Se il dispositivo mobile è gestito dal connettore Exchange Server, riceve il comando al momento della sincronizzazione con Exchange.  
 
-         È possibile usare la colonna **Stato cancellazione** per il monitoraggio della ricezione del comando di cancellazione da parte del dispositivo. Finché il dispositivo non invia un acknowledgment di cancellazione a Configuration Manager, è possibile annullare il comando di cancellazione.  
+       È possibile usare la colonna **Stato cancellazione** per il monitoraggio della ricezione del comando di cancellazione da parte del dispositivo. Finché il dispositivo non invia un acknowledgment di cancellazione a Configuration Manager, è possibile annullare il comando di cancellazione.  
 
-    -   **Ritirare un dispositivo mobile**  
+   - **Ritirare un dispositivo mobile**  
 
-         L'opzione **Ritira** è supportata solo dai dispositivi mobili registrati da Microsoft Intune o da Gestione dispositivi mobili locali.  
+      L'opzione **Ritira** è supportata solo dai dispositivi mobili registrati da Microsoft Intune o da Gestione dispositivi mobili locali.  
 
-         Per altre informazioni, vedere [Proteggere i dati con Cancellazione remota, Blocco remoto o Reimpostazione passcode usando System Center Configuration Manager](../../../mdm/deploy-use/wipe-lock-reset-devices.md).  
+      Per altre informazioni, vedere [Proteggere i dati con Cancellazione remota, Blocco remoto o Reimpostazione passcode usando System Center Configuration Manager](../../../mdm/deploy-use/wipe-lock-reset-devices.md).  
 
-    -   **Modificare la proprietà di un dispositivo**  
+   - **Modificare la proprietà di un dispositivo**  
 
-         Se un dispositivo non viene aggiunto a un dominio e non dispone del client di Configuration Manager installato, usare questa opzione per modificare la proprietà in **Società** o **Personale**.  
+      Se un dispositivo non viene aggiunto a un dominio e non dispone del client di Configuration Manager installato, usare questa opzione per modificare la proprietà in **Società** o **Personale**.  
 
-         È possibile usare questo valore nei requisiti applicazione per controllare le distribuzioni e per controllare il volume dell'inventario raccolto dai dispositivi degli utenti.  
+      È possibile usare questo valore nei requisiti applicazione per controllare le distribuzioni e per controllare il volume dell'inventario raccolto dai dispositivi degli utenti.  
 
-        Può essere necessario aggiungere la colonna **Proprietario dispositivo** alla visualizzazione facendo clic con il pulsante destro del mouse su un'intestazione di colonna e scegliendo l'elemento corrispondente.
+     Può essere necessario aggiungere la colonna **Proprietario dispositivo** alla visualizzazione facendo clic con il pulsante destro del mouse su un'intestazione di colonna e scegliendo l'elemento corrispondente.
 
-         Per altre informazioni, vedere [Gestione di dispositivi mobili ibridi con System Center Configuration Manager e Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md).  
+      Per altre informazioni, vedere [Gestione di dispositivi mobili ibridi con System Center Configuration Manager e Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md).  
 
 ##  <a name="BKMK_ManagingClients_DeviceCollectionsNode"></a> Gestire i client dal nodo Raccolte di dispositivi  
   Molte delle attività disponibili per i dispositivi nel nodo **Dispositivi** sono presenti anche nelle raccolte. La console applica automaticamente l'operazione a tutti i dispositivi idonei della raccolta. Questa azione eseguita in un'intera raccolta genera pacchetti di rete aggiuntivi e aumenta l'utilizzo della CPU nel server del sito.  
@@ -224,7 +224,7 @@ Il client di Configuration Manager scarica il contenuto per il software richiest
 Se il client tenta di scaricare il contenuto per un programma o un'applicazione di dimensioni superiori rispetto a quelle della cache, la distribuzione ha esito negativo perché le dimensioni della cache non sono sufficienti. Il client genera il messaggio di stato 10050 per dimensioni della cache non sufficienti. Se le dimensioni della cache vengono aumentate in un secondo momento, il risultato è il seguente:  
 
 -   Per un programma richiesto: il client non tenterà automaticamente di scaricare il contenuto. Ridistribuire il programma e il pacchetto al client.  
--   Per un'applicazione richiesta: il client tenterà automaticamente di scaricare il contenuto al momento del download dei criteri client.  
+-   Per un'applicazione richiesta: il client proverà automaticamente a scaricare il contenuto al momento del download dei criteri client.  
 
 Se il client tenta di scaricare un pacchetto di dimensioni inferiori rispetto a quelle della cache, ma la cache è piena, tutte le distribuzioni richieste eseguiranno altri tentativi finché non sarà disponibile spazio nella cache, non si verificherà un timeout del download oppure non verrà raggiunto il numero massimo di tentativi. Se in seguito la dimensione della cache viene aumentata, il client di Configuration Manager tenterà di scaricare nuovamente il pacchetto al successivo intervallo tra tentativi. Il client tenterà di scaricare il contenuto ogni quattro ore finché non avrà eseguito 18 tentativi.  
 
@@ -236,39 +236,39 @@ Il contenuto nella cache non viene eliminato automaticamente ma rimane nella cac
 
 Eseguire il comando CCMSetup.exe dal percorso di origine di installazione e specificare le seguenti proprietà richieste e separate da spazi:  
 
-   -   DISABLECACHEOPT  
+- DISABLECACHEOPT  
 
-    -   SMSCACHEDIR  
+  - SMSCACHEDIR  
 
-    -   SMSCACHEFLAGS  
+  - SMSCACHEFLAGS  
 
-    -   SMSCACHESIZE  
+  - SMSCACHESIZE  
 
-        > [!NOTE]
-        > Per la versione 1606, usare le impostazioni della dimensione della cache disponibili in **Impostazioni client** nella console di Configuration Manager anziché SMSCACHESIZE. Per altre informazioni vedere [Impostazioni della cache dei client](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
+    > [!NOTE]
+    > Per la versione 1606, usare le impostazioni della dimensione della cache disponibili in **Impostazioni client** nella console di Configuration Manager anziché SMSCACHESIZE. Per altre informazioni vedere [Impostazioni della cache dei client](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
 
 Per altre informazioni sull'uso delle proprietà della riga di comando di CCMSetup.exe, vedere [Informazioni sulle proprietà di installazione del client](../../../core/clients/deploy/about-client-installation-properties.md).  
 
 ### <a name="to-configure-the-client-cache-folder-when-you-install-clients-by-using-client-push-installation"></a>Per configurare la cartella cache client durante l'installazione client usando l'installazione push client  
 
-1.  Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione del sito** > **Siti**.  
+1. Nella console di Configuration Manager scegliere **Amministrazione** > **Configurazione del sito** > **Siti**.  
 
-3.  Selezionare il sito appropriato e nella scheda **Home**, nel gruppo **Impostazioni**, scegliere **Impostazioni di installazione client** > **scheda Proprietà di installazione**.  
+2. Selezionare il sito appropriato e nella scheda **Home**, nel gruppo **Impostazioni**, scegliere **Impostazioni di installazione client** > **scheda Proprietà di installazione**.  
 
-5.  Specificare le seguenti proprietà, separate da spazi:  
+3. Specificare le seguenti proprietà, separate da spazi:  
 
-    -   DISABLECACHEOPT  
+   - DISABLECACHEOPT  
 
-    -   SMSCACHEDIR  
+   - SMSCACHEDIR  
 
-    -   SMSCACHEFLAGS  
+   - SMSCACHEFLAGS  
 
-    -   SMSCACHESIZE  
+   - SMSCACHESIZE  
 
-        > [!NOTE]
-        > Per la versione 1606, usare le impostazioni della dimensione della cache disponibili in **Impostazioni client** nella console di Configuration Manager anziché SMSCACHESIZE. Per altre informazioni vedere [Impostazioni della cache dei client](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
+     > [!NOTE]
+     > Per la versione 1606, usare le impostazioni della dimensione della cache disponibili in **Impostazioni client** nella console di Configuration Manager anziché SMSCACHESIZE. Per altre informazioni vedere [Impostazioni della cache dei client](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
 
-       Per altre informazioni sull'uso delle proprietà della riga di comando di CCMSetup.exe, vedere [Informazioni sulle proprietà di installazione del client](../../../core/clients/deploy/about-client-installation-properties.md).  
+     Per altre informazioni sull'uso delle proprietà della riga di comando di CCMSetup.exe, vedere [Informazioni sulle proprietà di installazione del client](../../../core/clients/deploy/about-client-installation-properties.md).  
 
 ### <a name="to-configure-the-client-cache-folder-on-the-client-computer"></a>Per configurare la cartella cache del client sul computer client  
 
@@ -285,11 +285,11 @@ Regolare le dimensioni della cache del client senza reinstallare il client. Conf
 1. Nella console di Configuration Manager scegliere **Amministrazione** > **Impostazioni client**.
 
 2. Fare doppio clic su **Impostazioni client predefinite**.
-  È anche possibile creare impostazioni client personalizzate per applicare la dimensione della cache in modo più selettivo. Per altre informazioni sulle impostazioni client predefinite e personalizzate, vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).
+   È anche possibile creare impostazioni client personalizzate per applicare la dimensione della cache in modo più selettivo. Per altre informazioni sulle impostazioni client predefinite e personalizzate, vedere [Come configurare le impostazioni client in System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).
 
- 3. Scegliere **Impostazioni della cache del client**, scegliere **Sì** per **Configurare le dimensioni della cache del client**, quindi usare l'impostazione in **MB** o la **percentuale del disco**. La cache viene adeguata alla dimensione che risulta inferiore.
+   3. Scegliere **Impostazioni della cache del client**, scegliere **Sì** per **Configurare le dimensioni della cache del client**, quindi usare l'impostazione in **MB** o la **percentuale del disco**. La cache viene adeguata alla dimensione che risulta inferiore.
 
-     Il client di Configuration Manager configurerà la dimensione della cache con queste impostazioni al successivo download dei criteri client.
+      Il client di Configuration Manager configurerà la dimensione della cache con queste impostazioni al successivo download dei criteri client.
 
 
 

@@ -10,12 +10,12 @@ ms.assetid: abd45393-d84e-4583-bc80-74bbb3709577
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a17bb43d91d26cf10da0e1d3da5d8f6e4a2af2a7
-ms.sourcegitcommit: 5b3ff56018cfc6bda9643c9f1bebc575173f61bc
+ms.openlocfilehash: 6733a4dc3b027efa23ddc64e06e4269260c43101
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50083786"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418629"
 ---
 # <a name="considerations-for-managing-system-center-configuration-manager-clients--in-a-virtual-desktop-infrastructure-vdi"></a>Considerazioni per la gestione dei client di System Center Configuration Manager in un'infrastruttura VDI (Virtual Desktop Infrastructure)
 
@@ -23,13 +23,13 @@ ms.locfileid: "50083786"
 
 System Center Configuration Manager supporta l'installazione del client di Configuration Manager nei seguenti scenari di infrastruttura VDI:  
 
--   **Macchine virtuali personali**: le macchine virtuali personali vengono in genere usate quando ci si desidera assicurare che i dati e le impostazioni utente vengano mantenute sulla macchina virtuale tra le sessioni.  
+- **Macchine virtuali personali**: le macchine virtuali personali vengono in genere usate quando ci si desidera assicurare che i dati e le impostazioni utente vengano mantenute sulla macchina virtuale tra le sessioni.  
 
--   **Sessioni di Servizi Desktop remoto**: i Servizi Desktop remoto consentono a un server di ospitare più sessioni client simultanee. Gli utenti possono connettersi a una sessione e quindi eseguire le applicazioni su tale server.  
+- **Sessioni di Servizi Desktop remoto**: i Servizi Desktop remoto consentono a un server di ospitare più sessioni client simultanee. Gli utenti possono connettersi a una sessione e quindi eseguire le applicazioni su tale server.  
 
--   **Macchine virtuali in pool**: le macchine virtuali in pool non sono persistenti tra le sessioni. Alla chiusura di una sessione tutti i dati e le impostazioni vengono rimossi. Le macchine virtuali in pool sono utili quando i Servizi Desktop remoto non possono essere usati perché un'applicazione aziendale richiesta non può essere eseguita sul Windows Server che ospita le sessioni client.  
+- **Macchine virtuali in pool**: le macchine virtuali in pool non sono persistenti tra le sessioni. Alla chiusura di una sessione tutti i dati e le impostazioni vengono rimossi. Le macchine virtuali in pool sono utili quando i Servizi Desktop remoto non possono essere usati perché un'applicazione aziendale richiesta non può essere eseguita sul Windows Server che ospita le sessioni client.  
 
- Nella tabella seguente è riportato l'elenco di considerazioni per la gestione del client di Configuration Manager in un'infrastruttura VDI.  
+  Nella tabella seguente è riportato l'elenco di considerazioni per la gestione del client di Configuration Manager in un'infrastruttura VDI.  
 
 |Tipo di macchina virtuale|Considerazioni|  
 |--------------------------|--------------------|  

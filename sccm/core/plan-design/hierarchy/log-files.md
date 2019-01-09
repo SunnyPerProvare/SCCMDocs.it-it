@@ -10,12 +10,12 @@ ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cf7ca86dd04d60f1ff914294a7430d9f4a7a2fb7
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 58ec927ee795624cb475b31c44d64334047f3422
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456703"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416504"
 ---
 # <a name="log-files-in-configuration-manager"></a>File di log in Configuration Manager
 
@@ -216,39 +216,39 @@ Nella tabella seguente sono elencati i file di log individuati nel client di Con
 ###  <a name="BKMK_LogFilesforLnU"></a> Client per Linux e UNIX  
  Il client di Configuration Manager per Linux e UNIX registra le informazioni nei file di log seguenti:  
 
-> [!TIP]  
+> [!TIP]
 >  Usare CMTrace per visualizzare i file di log per i client Linux e UNIX.  
-
-> [!NOTE]  
+> 
+> [!NOTE]
 >  Quando si usa la versione iniziale del client per Linux e UNIX e si fa riferimento alla documentazione in questa sezione, sostituire i riferimenti seguenti per ogni file o processo:  
->   
->  -   Sostituire **omiserver.bin** con **nwserver.bin**  
-> -   Sostituire **omi** con **nanowbem**  
+> 
+> - Sostituire **omiserver.bin** con **nwserver.bin**  
+>   -   Sostituire **omi** con **nanowbem**  
 
-|Nome registro|Dettagli|  
-|--------------|-------------|  
-|Scxcm.log|File di log per il servizio principale del client di Configuration Manager per Linux e UNIX (ccmexec.bin). Questo file di log contiene informazioni sull'installazione e le operazioni in corso di ccmexec.bin.<br /><br /> Per impostazione predefinita, questo file di log è disponibile in **/var/opt/microsoft/scxcm.log**<br /><br /> Per cambiare il percorso del file di log, modificare **/opt/microsoft/configmgr/etc/scxcm.conf** e apportare le modifiche desiderate nel campo **PATH** . Non è necessario riavviare il servizio o il computer client per rendere effettive le modifiche.<br /><br /> È possibile impostare il livello di registrazione scegliendo tra quattro diverse impostazioni.|  
-|Scxcmprovider.log|File di log per il servizio CIM del client di Configuration Manager per Linux e UNIX (omiserver.bin). Questo file di log contiene informazioni sulle operazioni in corso di nwserver.bin.<br /><br /> Questo log è disponibile in **/var/opt/microsoft/configmgr/scxcmprovider.log**<br /><br /> Per cambiare il percorso del file di log, modificare **/opt/microsoft/omi/etc/scxcmprovider.conf** e apportare le modifiche desiderate nel campo **PATH** . Non è necessario riavviare il servizio o il computer client per rendere effettive le modifiche.<br /><br /> È possibile impostare il livello di registrazione scegliendo fra tre impostazioni.|  
+|     Nome registro      |                                                                                                                                                                                                                                                                                               Dettagli                                                                                                                                                                                                                                                                                               |
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|     Scxcm.log     | File di log per il servizio principale del client di Configuration Manager per Linux e UNIX (ccmexec.bin). Questo file di log contiene informazioni sull'installazione e le operazioni in corso di ccmexec.bin.<br /><br /> Per impostazione predefinita, questo file di log è disponibile in **/var/opt/microsoft/scxcm.log**<br /><br /> Per cambiare il percorso del file di log, modificare **/opt/microsoft/configmgr/etc/scxcm.conf** e apportare le modifiche desiderate nel campo **PATH** . Non è necessario riavviare il servizio o il computer client per rendere effettive le modifiche.<br /><br /> È possibile impostare il livello di registrazione scegliendo tra quattro diverse impostazioni. |
+| Scxcmprovider.log |     File di log per il servizio CIM del client di Configuration Manager per Linux e UNIX (omiserver.bin). Questo file di log contiene informazioni sulle operazioni in corso di nwserver.bin.<br /><br /> Questo log è disponibile in <strong>/var/opt/microsoft/configmgr/scxcmprovider.log</strong><br /><br /> Per cambiare il percorso del file di log, modificare **/opt/microsoft/omi/etc/scxcmprovider.conf** e apportare le modifiche desiderate nel campo **PATH** . Non è necessario riavviare il servizio o il computer client per rendere effettive le modifiche.<br /><br /> È possibile impostare il livello di registrazione scegliendo fra tre impostazioni.      |
 
  Entrambi i file di log supportano diversi livelli di registrazione:  
 
 -   **scxcm.log**. Per impostare il livello di registrazione, modificare **/opt/microsoft/configmgr/etc/scxcm.conf** e sostituire ogni istanza del tag **MODULE** con il livello di registrazione desiderato:  
 
-    -   ERROR: indica i problemi che richiedono attenzione  
+    -   ERRORE: indica i problemi che richiedono attenzione  
 
-    -   WARNING: indica i possibili problemi per le operazioni del client  
+    -   AVVISO: indica i possibili problemi per le operazioni client  
 
-    -   INFO: registrazione più dettagliata, che indica lo stato di diversi eventi nel client  
+    -   INFORMAZIONI: registrazione dettagliata aggiuntiva, che indica lo stato di vari eventi nel client  
 
-    -   TRACE: registrazione dettagliata che viene generalmente usata per diagnosticare i problemi  
+    -   TRACCIA: registrazione dettagliata che viene generalmente usata per diagnosticare i problemi  
 
 -   **scxcmprovider.log**. Per impostare il livello di registrazione, modificare **/opt/microsoft/omi/etc/scxcmprovider.conf** e sostituire ogni istanza del tag **MODULE** con il livello di registrazione desiderato:  
 
-    -   ERROR: indica i problemi che richiedono attenzione  
+    -   ERRORE: indica i problemi che richiedono attenzione  
 
-    -   WARNING: indica i possibili problemi per le operazioni del client
+    -   AVVISO: indica i possibili problemi per le operazioni client
 
-    -   INFO: registrazione più dettagliata, che indica lo stato di diversi eventi nel client  
+    -   INFORMAZIONI: registrazione dettagliata aggiuntiva, che indica lo stato di vari eventi nel client  
 
 In condizioni operative normali, usare il livello di registrazione ERROR. Questo livello di registrazione crea il file di log più piccolo. Quando il livello di registrazione aumenta da ERROR a WARNING, INFO e infine a TRACE, viene creato un file di log più grande, poiché nel file viene scritta una quantità maggiore di dati.  
 

@@ -10,12 +10,12 @@ ms.assetid: 9089e1b5-cba4-42bd-a2de-126ef882a3af
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9f07a321ac6f10f5287a88d0df7064920f538ae5
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 3de7b19eb7d997ef72cc7a413eb143172c4ce40e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341696"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424358"
 ---
 # <a name="prepare-to-install-system-center-configuration-manager-sites"></a>Preparare l'installazione di siti di System Center Configuration Manager
 
@@ -37,7 +37,7 @@ Il primo sito che si installa in una gerarchia è un sito di amministrazione cen
 
 **Supporti di installazione**: per installare un sito di amministrazione centrale o un sito primario autonomo come primo sito di una nuova gerarchia, è necessario [usare una versione di base](../../../../core/servers/manage/updates.md#bkmk_Baselines) di Configuration Manager. Non installare il primo sito di una nuova gerarchia usando i file di origine aggiornati presenti nella [cartella CD.Latest](../../../../core/servers/manage/the-cd.latest-folder.md) di qualsiasi sito.
 
-**Metodo di installazione**: è possibile installare uno dei tipi di sito usando l'[installazione guidata di Configuration Manager](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md) oppure configurare uno script da usare con un'[installazione dalla riga di comando con script](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md).
+**Metodo di installazione**: è possibile installare uno dei tipi di sito tramite l'[Installazione guidata di System Center Configuration Manager](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md) oppure è possibile configurare uno script da usare con un'[installazione dalla riga di comando con script](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md).
 
 
 ### <a name="additional-sites"></a>Siti aggiuntivi
@@ -57,9 +57,9 @@ Dopo aver installato il sito iniziale, è possibile aggiungere altri siti in qua
 Un sito secondario deve essere installato dalla console di Configuration Manager. In questo modo, i siti secondari vengono sempre installati usando i file di origine del sito primario padre.
 
 **Metodo di installazione**: il metodo usato per installare altri siti dipende dal tipo di sito che si vuole installare.
--   **Aggiungere un sito di amministrazione centrale**: è possibile usare l'installazione guidata di Configuration Manager o una riga di comando con script per installare il nuovo sito di amministrazione centrale come sito padre per il sito primario autonomo esistente. Per altre informazioni, vedere [Espansione di un sito primario autonomo](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md#bkmk_expand).
--   **Aggiungere un sito primario figlio**: è possibile usare l'installazione guidata di Configuration Manager o un'installazione da riga di comando per aggiungere un sito primario figlio sotto un sito di amministrazione centrale.
--   **Aggiungere un sito secondario**: per installare un sito secondario come sito figlio sotto il sito primario, usare la console di Configuration Manager. Altri metodi non sono supportati per l'aggiunta di siti secondari.
+-   **Aggiunta di un sito di amministrazione centrale**:  è possibile usare l'Installazione guidata di Configuration Manager o una riga di comando con script per installare il nuovo sito di amministrazione centrale come sito padre per il sito primario autonomo esistente. Per altre informazioni, vedere [Espansione di un sito primario autonomo](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md#bkmk_expand).
+-   **Aggiunta di sito primario figlio**:  è possibile usare l'Installazione guidata di Configuration Manager o un'installazione da riga di comando per aggiungere un sito primario figlio sotto un sito di amministrazione centrale.
+-   **Aggiunta di un sito secondario**:  per installare un sito secondario come sito figlio al di sotto del sito primario, usare la console di Configuration Manager. Altri metodi non sono supportati per l'aggiunta di siti secondari.
 
 ## <a name="bkmk_tasks"></a> Attività comuni da completare prima di avviare un'installazione
 -   **Esaminare la topologia della gerarchia che verrà usata per la distribuzione**    
@@ -105,11 +105,11 @@ I codici di sito non possono essere usati più di una volta in una gerarchia di 
 
 ## <a name="limits-and-restrictions-for-installed-sites"></a>Limiti e restrizioni per i siti installati
 Prima di installare un sito, è importante capire le limitazioni seguenti che si applicano a siti e gerarchie di siti:
--   Dopo avere eseguito l'installazione non è possibile modificare le seguenti proprietà del sito senza disinstallare il sito e quindi reinstallarlo usando i nuovi valori:  
+- Dopo avere eseguito l'installazione non è possibile modificare le seguenti proprietà del sito senza disinstallare il sito e quindi reinstallarlo usando i nuovi valori:  
   -   Directory di installazione dei file di programma  
   -   Codice sito  
   -   Descrizione sito  
--   Se la gerarchia include un sito di amministrazione centrale:  
+- Se la gerarchia include un sito di amministrazione centrale:  
   -   Configuration Manager non consente di spostare un sito primario figlio da una gerarchia per creare un sito primario autonomo o aggiungerlo a un'altra gerarchia. Disinstallare invece il sito primario figlio e reinstallarlo come nuovo sito primario autonomo o come sito figlio del sito di amministrazione centrale di un'altra gerarchia.  
 
 
@@ -130,7 +130,7 @@ Per identificare e correggere i problemi prima di eseguire il programma di insta
 **Identificare le porte facoltative**
 
 È possibile identificare le porte facoltative da usare per i client e i sistemi del sito. Altre informazioni:
- -  Per impostazione predefinita, i client e i sistemi del sito usano porte predefinite per la comunicazione.
- -  Durante l'installazione è possibile configurare porte alternative.
+- Per impostazione predefinita, i client e i sistemi del sito usano porte predefinite per la comunicazione.
+- Durante l'installazione è possibile configurare porte alternative.
 
- Per altre informazioni, vedere [Porte usate in System Center Configuration Manager](../../../../core/plan-design/hierarchy/ports.md).
+  Per altre informazioni, vedere [Porte usate in System Center Configuration Manager](../../../../core/plan-design/hierarchy/ports.md).

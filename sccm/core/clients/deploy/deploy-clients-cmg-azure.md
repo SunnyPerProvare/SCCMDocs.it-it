@@ -10,16 +10,16 @@ ms.assetid: a44006eb-8650-49f6-94e1-18fa0ca959ee
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 490e5a614a98633629df98abcd554b02cec1261a
-ms.sourcegitcommit: ae03ad403b1732a5a61dec981e3a3010a0f09188
+ms.openlocfilehash: b722187a895a71b4195200354180cdbc8b2813e6
+ms.sourcegitcommit: 12b71da551350c99c5916df3629e33e31040db15
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51860247"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53530915"
 ---
 # <a name="install-and-assign-configuration-manager-windows-10-clients-using-azure-ad-for-authentication"></a>Installare e assegnare client di Configuration Manager in dispositivi Windows 10 usando Azure AD per l'autenticazione
 
-Per installare il client di Configuration Manager nei dispositivi Windows 10 con l'autenticazione di Azure AD, integrare Configuration Manager con Azure Active Directory (Azure AD). I client possono essere sulla Intranet in comunicazione diretta con un punto di gestione abilitato per HTTPS. Possono anche essere basati su Internet e comunicare attraverso il gateway di gestione cloud o un punto di gestione basato su Internet. Questo processo usa Azure AD per autenticare i client per il sito di Configuration Manager. Azure AD evita di dover configurare e usare i certificati di autenticazione client.
+Per installare il client di Configuration Manager nei dispositivi Windows 10 con l'autenticazione di Azure AD, integrare Configuration Manager con Azure Active Directory (Azure AD). I client possono essere sulla Intranet in comunicazione diretta con un punto di gestione abilitato per HTTPS o con qualsiasi punto di comunicazione in un sito abilitato per HTTP avanzato. Possono anche essere basati su Internet e comunicare attraverso il gateway di gestione cloud o un punto di gestione basato su Internet. Questo processo usa Azure AD per autenticare i client per il sito di Configuration Manager. Azure AD evita di dover configurare e usare i certificati di autenticazione client.
 
 
 

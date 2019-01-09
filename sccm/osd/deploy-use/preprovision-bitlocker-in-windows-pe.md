@@ -10,12 +10,12 @@ ms.assetid: c7c94ba0-d709-4129-8077-075a8abaea1c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ad4bfe99e841af5ccc4f6792fda664b8259a5369
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 10c072c89064472398c068a62079d1af120b1a11
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350528"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416555"
 ---
 # <a name="preprovision-bitlocker-in-windows-pe-with-system-center-configuration-manager"></a>Effettuare il pre-provisioning di BitLocker in Windows PE con System Center Configuration Manager
 
@@ -25,20 +25,20 @@ Il passaggio della sequenza di attività **pre-provisioning di BitLocker** in Sy
 
  In generale, è necessario effettuare le seguenti operazioni per eseguire correttamente il pre-provisioning di BitLocker in un computer su cui verrà installato Windows 7:  
 
--   Riavviare il computer in Windows PE  
+- Riavviare il computer in Windows PE  
 
-    > [!IMPORTANT]  
-    >  Per eseguire il pre-provisioning di BitLocker, è necessario utilizzare un'immagine di avvio con Windows PE 4 o versione successiva. Per altre informazioni sulle versioni Windows PE supportate in Configuration Manager, vedere [Dipendenze esterne a Configuration Manager](../plan-design/infrastructure-requirements-for-operating-system-deployment.md#BKMK_ExternalDependencies).  
+  > [!IMPORTANT]  
+  >  Per eseguire il pre-provisioning di BitLocker, è necessario utilizzare un'immagine di avvio con Windows PE 4 o versione successiva. Per altre informazioni sulle versioni Windows PE supportate in Configuration Manager, vedere [Dipendenze esterne a Configuration Manager](../plan-design/infrastructure-requirements-for-operating-system-deployment.md#BKMK_ExternalDependencies).  
 
--   Partizionare e formattare il disco rigido  
+- Partizionare e formattare il disco rigido  
 
--   Eseguire il pre-provisioning di BitLocker  
+- Eseguire il pre-provisioning di BitLocker  
 
--   Installare Windows 7 con sistema operativo e impostazioni di rete specifiche  
+- Installare Windows 7 con sistema operativo e impostazioni di rete specifiche  
 
--   Aggiungere una protezione con chiave a BitLocker  
+- Aggiungere una protezione con chiave a BitLocker  
 
- In Configuration Manager, la modalità consigliata per il pre-provisioning di BitLocker su disco rigido e l'installazione di Windows 7 è di creare una nuova sequenza di attività e selezionare **Installa un pacchetto immagine esistente** nella pagina **Crea nuova sequenza attività** della **Creazione guidata della sequenza attività**. La procedura guidata crea i passaggi della sequenza di attività elencati nella tabella riportata di seguito.  
+  In Configuration Manager, la modalità consigliata per il pre-provisioning di BitLocker su disco rigido e l'installazione di Windows 7 è di creare una nuova sequenza di attività e selezionare **Installa un pacchetto immagine esistente** nella pagina **Crea nuova sequenza attività** della **Creazione guidata della sequenza attività**. La procedura guidata crea i passaggi della sequenza di attività elencati nella tabella riportata di seguito.  
 
 > [!NOTE]  
 >  La sequenza di attività potrebbe richiedere passaggi ulteriori a seconda della configurazione delle impostazioni nella procedura guidata. Ad esempio, si potrebbe avere il passaggio **Acquisisci impostazioni Windows** se è stato selezionato **Impostazioni di Microsoft Windows acquisite** nella pagina **Migrazione stato** della procedura guidata.  

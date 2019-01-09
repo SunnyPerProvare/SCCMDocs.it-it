@@ -10,12 +10,12 @@ ms.assetid: c8534a1e-57b8-4688-b6e6-299d82cfcec9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e2fb6b022526ce4bae1de21012ac996dbcea35cf
-ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
+ms.openlocfilehash: 329f5c2f227cbd8a51b1c9ccc21810cda9f6a2cf
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36260908"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417140"
 ---
 # <a name="configuration-manager-and-windows-as-a-service"></a>Configuration Manager e Windows as a Service
 
@@ -39,6 +39,7 @@ System Center Configuration Manager offre un controllo completo sugli aggiorname
 
 
 ## <a name="key-articles-about-adopting-windows-as-a-service"></a>Articoli principali sull'adozione di Windows as a Service
+
 | Articolo        | Descrizione          | 
 | ------------- |-------------|
 |[Gestire Windows come servizio](/sccm/osd/deploy-use/manage-windows-as-a-service)|Spiega come usare i piani di manutenzione per distribuire gli aggiornamenti delle funzionalità di Windows 10.|

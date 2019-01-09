@@ -10,12 +10,12 @@ ms.assetid: eb20eb90-bcc0-41de-bfea-638ea470c0dd
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 658d005234469d8729b515e9deeb02e20e94c748
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: b29044858bb9a9d57db1c2229c826630d0905860
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340897"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416521"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1610-of-system-center-configuration-manager"></a>Livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1610
 
@@ -40,18 +40,18 @@ A partire dalla versione 1610, è possibile modificare il livello di raccolta da
  Per System Center Configuration Manager versione 1610, questo livello include:
 
 
--   Informazioni sull'installazione:
-      - Build, tipo di installazione, Language Pack, funzionalità abilitate  
+- Informazioni sull'installazione:
+    - Build, tipo di installazione, Language Pack, funzionalità abilitate  
 
-      - Stato di distribuzione ed errori del pacchetto di aggiornamento, stato del download ed errori dei prerequisiti    
+    - Stato di distribuzione ed errori del pacchetto di aggiornamento, stato del download ed errori dei prerequisiti    
 
-      - Versione dello script post-aggiornamento
+    - Versione dello script post-aggiornamento
 
-      - Uso di Fast Ring di aggiornamento
+    - Uso di Fast Ring di aggiornamento
 
-    - ***[Nuovo]*** Uso delle versioni non definitive, tipo di supporto di installazione, tipo Branch
+  - ***[Nuovo]*** Uso delle versioni non definitive, tipo di supporto di installazione, tipo Branch
 
-    - ***[Nuovo]*** Data di scadenza di Software Assurance
+  - ***[Nuovo]*** Data di scadenza di Software Assurance
 
 - Metriche delle prestazioni del database (informazioni sull'elaborazione della replica, principali stored procedure di SQL Server per processore e utilizzo del disco)
 

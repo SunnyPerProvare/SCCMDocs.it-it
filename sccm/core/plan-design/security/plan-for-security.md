@@ -10,12 +10,12 @@ ms.assetid: 2a216814-ca8c-4d2e-bcef-dc00966a3c9f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5332fa778b343a5eaae93a08db0826823fffce42
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 88fa98de0f9f0a113adeef3a30536628706484ab
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456380"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424681"
 ---
 # <a name="plan-for-security-in-configuration-manager"></a>Pianificare la sicurezza in Configuration Manager
 
@@ -24,7 +24,7 @@ ms.locfileid: "52456380"
 Questo articolo descrive i concetti da tenere in considerazione durante la pianificazione della sicurezza nell'implementazione di Configuration Manager. Include le sezioni seguenti:  
 
 - [Pianificare i certificati (autofirmati e PKI)](#BKMK_PlanningForCertificates)  
-    - [Certificati CNG (Cryptography Next Generation)](#bkmk_plan-cng)  
+    - [Certificati CNG (Cryptography: Next Generation)](#bkmk_plan-cng)  
     - [HTTP avanzato](#bkmk_plan-ehttp)  
     - [Certificati per CMG e CDP](#bkmk_plan-cmgcdp)  
     - [Certificato di firma del server del sito (autofirmato)](#bkmk_plansitesign)  
@@ -58,9 +58,9 @@ Questo articolo descrive i concetti da tenere in considerazione durante la piani
  Quando i certificati PKI non sono disponibili, Configuration Manager genera automaticamente certificati autofirmati. Alcuni certificati in Configuration Manager sono sempre autofirmati. Nella maggior parte dei casi, Configuration Manager gestisce automaticamente i certificati autofirmati e non sono necessarie azioni aggiuntive. Un esempio è il certificato di firma del server del sito. Questo certificato è sempre autofirmato. Garantisce che i criteri che i client scaricano dal punto di gestione siano stati inviati dal server del sito e non siano stati manomessi.  
 
 
-### <a name="bkmk_plan-cng"></a> Certificati CNG (Cryptography Next Generation)  
+### <a name="bkmk_plan-cng"></a> Certificati CNG (Cryptography: Next Generation)  
 
- Configuration Manager supporta i certificati CNG (Cryptography Next Generation). I client di Configuration Manager possono usare certificati di autenticazione client con chiave privata nel provider di archiviazione chiavi (KSP) CNG. Con il supporto per i provider di archiviazione chiavi, i client di Configuration Manager supportano chiavi private basate sull'hardware, ad esempio TPM KSP per i certificati di autenticazione client PKI. Per altre informazioni, vedere [Panoramica dei certificati CNG](/sccm/core/plan-design/network/cng-certificates-overview).
+ Configuration Manager supporta i certificati CNG (Cryptography: Next Generation). I client di Configuration Manager possono usare certificati di autenticazione client con chiave privata nel provider di archiviazione chiavi (KSP) CNG. Con il supporto per i provider di archiviazione chiavi, i client di Configuration Manager supportano chiavi private basate sull'hardware, ad esempio TPM KSP per i certificati di autenticazione client PKI. Per altre informazioni, vedere [Panoramica dei certificati CNG](/sccm/core/plan-design/network/cng-certificates-overview).
 
 
 ### <a name="bkmk_plan-ehttp"></a> HTTP avanzato  
@@ -154,7 +154,7 @@ Questi certificati CA radice importati e il certificato CA radice di ogni punto 
 
 In molti casi, la configurazione e il comportamento predefiniti sono sufficienti. Il client Configuration Manager su computer Windows filtra più certificati usando questi criteri nell'ordine indicato:  
 
-1.  Elenco di autorità di certificazione: il certificato è concatenato a una CA radice considerata attendibile dal punto di gestione.  
+1.  L'elenco di autorità emittenti di certificati: il certificato si concatena a una CA radice considerata attendibile dal punto di gestione.  
 
 2.  Il certificato si trova nell'archivio certificati predefinito **Personale**.  
 
@@ -178,17 +178,17 @@ I client che al momento dell'installazione iniziale sono privi dell'elenco di au
 
 Nella maggior parte dei casi, il client Configuration Manager identifica correttamente un certificato PKI univoco e appropriato. Tuttavia, in assenza di questo comportamento, anziché selezionare il certificato sulla base della funzionalità di autenticazione client, è possibile configurare due metodi di selezione alternativi:  
 
--   Una corrispondenza di stringa parziale nel nome soggetto del certificato client. Questo metodo è una corrispondenza senza distinzione tra maiuscole e minuscole. È appropriato se si usa il nome di dominio completo (FQDN) di un computer nel campo del soggetto e si vuole che la selezione del certificato si basi sul suffisso del dominio, ad esempio **contoso.com**. È tuttavia possibile usare questo metodo di selezione per identificare qualsiasi stringa di caratteri sequenziali nel nome soggetto del certificato che lo differenzi da altri certificati presenti nell'archivio certificati del client.  
+- Una corrispondenza di stringa parziale nel nome soggetto del certificato client. Questo metodo è una corrispondenza senza distinzione tra maiuscole e minuscole. È appropriato se si usa il nome di dominio completo (FQDN) di un computer nel campo del soggetto e si vuole che la selezione del certificato si basi sul suffisso del dominio, ad esempio **contoso.com**. È tuttavia possibile usare questo metodo di selezione per identificare qualsiasi stringa di caratteri sequenziali nel nome soggetto del certificato che lo differenzi da altri certificati presenti nell'archivio certificati del client.  
 
-    > [!NOTE]  
-    >  Non è consentito usare la corrispondenza di stringa parziale con il nome alternativo del soggetto (SAN) come impostazione del sito. Anche se è possibile specificare una corrispondenza di stringa parziale per il SAN usando CCMSetup, essa verrà sovrascritta dalle proprietà del sito negli scenari seguenti:  
-    >   
-    >  -   I client recuperano le informazioni del sito pubblicate in Active Directory Domain Services.  
-    > -   I client vengono installati tramite installazione push client.  
-    >   
-    >  Usare una corrispondenza di stringa parziale nel SAN solo quando si installano i client manualmente e quando questi non recuperano le informazioni del sito da Active Directory Domain Services. Queste condizioni si applicano, ad esempio, ai client solo Internet.  
+  > [!NOTE]
+  >  Non è consentito usare la corrispondenza di stringa parziale con il nome alternativo del soggetto (SAN) come impostazione del sito. Anche se è possibile specificare una corrispondenza di stringa parziale per il SAN usando CCMSetup, essa verrà sovrascritta dalle proprietà del sito negli scenari seguenti:  
+  > 
+  > - I client recuperano le informazioni del sito pubblicate in Active Directory Domain Services.  
+  >   -   I client vengono installati tramite installazione push client.  
+  > 
+  >   Usare una corrispondenza di stringa parziale nel SAN solo quando si installano i client manualmente e quando questi non recuperano le informazioni del sito da Active Directory Domain Services. Queste condizioni si applicano, ad esempio, ai client solo Internet.  
 
--   Una corrispondenza nei valori di attributo del nome soggetto del certificato client o nei valori di attributo del nome alternativo del soggetto (SAN). Questo metodo è una corrispondenza con distinzione tra maiuscole e minuscole. È appropriato se si usa un nome distinto X500 o identificatori di oggetto (OID) equivalenti in conformità con RFC 3280 e si vuole che la selezione del certificato si basi sui valori di attributo. È possibile specificare solo gli attributi e i rispettivi valori richiesti per identificare o convalidare in modo univoco il certificato e differenziarlo dagli altri certificati nel relativo archivio.  
+- Una corrispondenza nei valori di attributo del nome soggetto del certificato client o nei valori di attributo del nome alternativo del soggetto (SAN). Questo metodo è una corrispondenza con distinzione tra maiuscole e minuscole. È appropriato se si usa un nome distinto X500 o identificatori di oggetto (OID) equivalenti in conformità con RFC 3280 e si vuole che la selezione del certificato si basi sui valori di attributo. È possibile specificare solo gli attributi e i rispettivi valori richiesti per identificare o convalidare in modo univoco il certificato e differenziarlo dagli altri certificati nel relativo archivio.  
 
 Nella tabella seguente vengono illustrati i valori attributo che Configuration Manager supporta per i criteri di selezione del certificato client.  
 
@@ -212,7 +212,7 @@ Nella tabella seguente vengono illustrati i valori attributo che Configuration M
 
 Se viene individuato più di un certificato appropriato dopo aver applicato i criteri di selezione, è possibile ignorare la configurazione predefinita che prevede la selezione del certificato con il periodo di validità più lungo specificando che nessun certificato è selezionato. In questo scenario, il client non riuscirà a comunicare con i sistemi del sito IIS con un certificato PKI. Il client invia un messaggio di errore al suo punto di stato di fallback assegnato per avvisare circa l'esito negativo della selezione del certificato e consentire la modifica o il perfezionamento dei criteri di selezione del certificato. Il comportamento del client varia a seconda se la connessione non riuscita era su HTTPS o HTTP:  
 
--   Se la connessione non riuscita era su HTTPS: il client prova a connettersi su HTTP e usa il certificato client autofirmato.  
+-   Se la connessione non riuscita era su HTTPS: il client prova connettersi su HTTP e usa il certificato autofirmato.  
 
 -   Se la connessione non riuscita era su HTTP: il client prova a connettersi di nuovo su HTTP usando il certificato client autofirmato.  
 
@@ -227,37 +227,37 @@ Le opzioni di configurazione flessibile in Configuration Manager consentono di e
 
 Dato il numero di opzioni e scelte di configurazione in Configuration Manager, le modalità di transizione di un sito all'uso di connessioni HTTPS da parte di tutti i client sono molteplici. Tuttavia, è possibile attenersi alla seguente procedura come guida:  
 
-1.  Installare il sito di Configuration Manager e configurarlo in modo che i sistemi del sito accettino le connessioni client su HTTPS e HTTP.  
+1. Installare il sito di Configuration Manager e configurarlo in modo che i sistemi del sito accettino le connessioni client su HTTPS e HTTP.  
 
-2.  Configurare la scheda **Comunicazione computer client** nelle proprietà del sito in modo che **Impostazioni sistema del sito** sia **HTTP o HTTPS**, quindi selezionare **Usa certificato client PKI (funzionalità di autenticazione client) quando disponibile**.  Per altre informazioni, vedere [Configurare le impostazioni per i certificati PKI client](/sccm/core/plan-design/security/configure-security#BKMK_ConfigureClientPKI).  
+2. Configurare la scheda **Comunicazione computer client** nelle proprietà del sito in modo che **Impostazioni sistema del sito** sia **HTTP o HTTPS**, quindi selezionare **Usa certificato client PKI (funzionalità di autenticazione client) quando disponibile**.  Per altre informazioni, vedere [Configurare le impostazioni per i certificati PKI client](/sccm/core/plan-design/security/configure-security#BKMK_ConfigureClientPKI).  
 
-3.  Eseguire il progetto pilota di un'implementazione PKI per i certificati client. Per una distribuzione di esempio, vedere [Distribuire il certificato client per computer Windows](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_client2008_cm2012).  
+3. Eseguire il progetto pilota di un'implementazione PKI per i certificati client. Per una distribuzione di esempio, vedere [Distribuire il certificato client per computer Windows](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_client2008_cm2012).  
 
-4.  Installare i client usando il metodo di installazione push client. Per altre informazioni, vedere [Come installare i client di Configuration Manager usando push client](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_ClientPush).  
+4. Installare i client usando il metodo di installazione push client. Per altre informazioni, vedere [Come installare i client di Configuration Manager usando push client](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_ClientPush).  
 
-5.  Monitorare lo stato e la distribuzione dei client usando i report e le informazioni nella console di Configuration Manager.  
+5. Monitorare lo stato e la distribuzione dei client usando i report e le informazioni nella console di Configuration Manager.  
 
-6.  Tenere traccia del numero di client che usano un certificato client PKI visualizzando la colonna **Certificato client** nell'area di lavoro **Asset e conformità** , nodo **Dispositivi** .  
+6. Tenere traccia del numero di client che usano un certificato client PKI visualizzando la colonna **Certificato client** nell'area di lavoro **Asset e conformità** , nodo **Dispositivi** .  
 
-     È anche possibile distribuire lo strumento di valutazione della conformità HTTPS di Configuration Manager (**cmHttpsReadiness.exe**) ai computer. Usare quindi i report per vedere quanti computer possono usare un certificato PKI client con Configuration Manager.  
+    È anche possibile distribuire lo strumento di valutazione della conformità HTTPS di Configuration Manager (**cmHttpsReadiness.exe**) ai computer. Usare quindi i report per vedere quanti computer possono usare un certificato PKI client con Configuration Manager.  
 
-    > [!NOTE]  
-    >  All'installazione del client di Configuration Manager, lo strumento **CMHttpsReadiness.exe** viene installato nella cartella `%windir%\CCM`. Quando si esegue lo strumento, le opzioni della riga di comando disponibili sono le seguenti:  
-    >   
-    > - `/Store:<name>`: questa opzione equivale alla proprietà client.msi **CCMCERTSTORE**  
-    > - `/Issuers:<list>`: questa opzione equivale alla proprietà client.msi **CCMCERTISSUERS**    
-    > - `/Criteria:<criteria>`: questa opzione equivale alla proprietà client.msi **CCMCERTSEL**    
-    > - `/SelectFirstCert`: questa opzione equivale alla proprietà client.msi **CCMFIRSTCERT**    
-    >   
-    >  Per altre informazioni, vedere [Proprietà di installazione client](/sccm/core/clients/deploy/about-client-installation-properties).  
+   > [!NOTE]
+   >  All'installazione del client di Configuration Manager, lo strumento **CMHttpsReadiness.exe** viene installato nella cartella `%windir%\CCM`. Quando si esegue lo strumento, le opzioni della riga di comando disponibili sono le seguenti:  
+   > 
+   > - `/Store:<name>`: questa opzione equivale alla proprietà client.msi **CCMCERTSTORE**  
+   > - `/Issuers:<list>`: questa opzione equivale alla proprietà client.msi **CCMCERTISSUERS**    
+   > - `/Criteria:<criteria>`: questa opzione equivale alla proprietà client.msi **CCMCERTSEL**    
+   > - `/SelectFirstCert`: questa opzione equivale alla proprietà client.msi **CCMFIRSTCERT**    
+   > 
+   >   Per altre informazioni, vedere [Proprietà di installazione client](/sccm/core/clients/deploy/about-client-installation-properties).  
 
-7.  Dopo avere appurato che un numero sufficiente di client stia usando correttamente il rispettivo certificato PKI client per l'autenticazione su HTTP, seguire questa procedura:  
+7. Dopo avere appurato che un numero sufficiente di client stia usando correttamente il rispettivo certificato PKI client per l'autenticazione su HTTP, seguire questa procedura:  
 
-    1.  Distribuire un certificato server Web PKI a un server membro che esegue un punto di gestione aggiuntivo per il sito e configurare il certificato in IIS. Per altre informazioni, vedere [Distribuire il certificato del server Web per sistemi del sito che eseguono IIS](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_webserver2008_cm2012).  
+   1.  Distribuire un certificato server Web PKI a un server membro che esegue un punto di gestione aggiuntivo per il sito e configurare il certificato in IIS. Per altre informazioni, vedere [Distribuire il certificato del server Web per sistemi del sito che eseguono IIS](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_webserver2008_cm2012).  
 
-    2.  Installare il ruolo del punto di gestione su questo server e configurare l'opzione **Connessioni client** nelle proprietà del punto di gestione per **HTTPS**.  
+   2.  Installare il ruolo del punto di gestione su questo server e configurare l'opzione **Connessioni client** nelle proprietà del punto di gestione per **HTTPS**.  
 
-8.  Monitorare e verificare che i client che dispongono di un certificato PKI utilizzino il nuovo punto di gestione tramite HTTPS. Per verificare si può usare la registrazione IIS o i contatori delle prestazioni.  
+8. Monitorare e verificare che i client che dispongono di un certificato PKI utilizzino il nuovo punto di gestione tramite HTTPS. Per verificare si può usare la registrazione IIS o i contatori delle prestazioni.  
 
 9. Riconfigurare altri ruoli del sistema del sito per l'utilizzo di connessioni client HTTPS. Se si vuole gestire i client in Internet, verificare che i sistemi del sito abbiano un nome di dominio completo Internet. Configurare singoli punti di gestione e punti di distribuzione per accettare le connessioni client da Internet.  
 
@@ -266,9 +266,9 @@ Dato il numero di opzioni e scelte di configurazione in Configuration Manager, l
 
 10. Estendere l'implementazione dei certificati PKI a client e sistemi del sito che eseguono IIS. Configurare i ruoli del sistema del sito per le connessioni client HTTPS e le connessioni Internet, in base alle esigenze.  
 
-11. Per una sicurezza avanzata: quando si è certi che tutti i client usino un certificato PKI client per l'autenticazione e la crittografia, modificare le proprietà del sito per l'uso esclusivo di HTTPS.  
+11. Per la massima protezione: Quando si è certi che tutti i client stanno usando un certificato client PKI per l'autenticazione e la crittografia, modificare le proprietà del sito per l'utilizzo esclusivo di HTTPS.  
 
- Questo piano introduce prima i certificati PKI solo per l'autenticazione su HTTP e successivamente per l'autenticazione e la crittografia su HTTPS. Adottando questo piano per introdurre gradualmente questi certificati si riduce il rischio di avere client non gestiti e si beneficerà della massima sicurezza supportata da Configuration Manager.  
+    Questo piano introduce prima i certificati PKI solo per l'autenticazione su HTTP e successivamente per l'autenticazione e la crittografia su HTTPS. Adottando questo piano per introdurre gradualmente questi certificati si riduce il rischio di avere client non gestiti e si beneficerà della massima sicurezza supportata da Configuration Manager.  
 
 ##  <a name="BKMK_PlanningForRTK"></a> Pianificare la chiave radice attendibile  
 
@@ -280,26 +280,26 @@ Dato il numero di opzioni e scelte di configurazione in Configuration Manager, l
 
  I client recuperano automaticamente la copia pubblica della chiave radice attendibile tramite due meccanismi:  
 
- - Estendere lo schema di Active Directory per Configuration Manager e pubblicare il sito in Active Directory Domain Services. I client recuperano quindi le informazioni del sito da un server di catalogo globale. Per altre informazioni, vedere [Preparare Active Directory per la pubblicazione di siti](/sccm/core/plan-design/network/extend-the-active-directory-schema).  
+- Estendere lo schema di Active Directory per Configuration Manager e pubblicare il sito in Active Directory Domain Services. I client recuperano quindi le informazioni del sito da un server di catalogo globale. Per altre informazioni, vedere [Preparare Active Directory per la pubblicazione di siti](/sccm/core/plan-design/network/extend-the-active-directory-schema).  
 
- - Installare i client tramite il metodo di installazione push client. Per altre informazioni, vedere [Installazione push client](/sccm/core/clients/deploy/plan/client-installation-methods#client-push-installation).  
+- Installare i client tramite il metodo di installazione push client. Per altre informazioni, vedere [Installazione push client](/sccm/core/clients/deploy/plan/client-installation-methods#client-push-installation).  
 
- Se i client non sono in grado di recuperare la chiave radice attendibile tramite uno di questi meccanismi, considereranno attendibile la chiave radice attendibile fornita dal primo punto di gestione con cui è stata stabilita una connessione. In questo scenario, un client potrebbe essere erroneamente indirizzato al punto di gestione di un utente malintenzionato in cui riceverebbe criteri dal punto di gestione non autorizzato. Questa azione richiede un utente malintenzionato esperto. Questo attacco è limitato al breve periodo di tempo che trascorre prima che il client recuperi la chiave radice attendibile da un punto di gestione valido. Per ridurre il rischio di un errato indirizzamento dei client a un punto di gestione non autorizzato, effettuare il pre-provisioning dei client con la chiave radice attendibile.  
+  Se i client non sono in grado di recuperare la chiave radice attendibile tramite uno di questi meccanismi, considereranno attendibile la chiave radice attendibile fornita dal primo punto di gestione con cui è stata stabilita una connessione. In questo scenario, un client potrebbe essere erroneamente indirizzato al punto di gestione di un utente malintenzionato in cui riceverebbe criteri dal punto di gestione non autorizzato. Questa azione richiede un utente malintenzionato esperto. Questo attacco è limitato al breve periodo di tempo che trascorre prima che il client recuperi la chiave radice attendibile da un punto di gestione valido. Per ridurre il rischio di un errato indirizzamento dei client a un punto di gestione non autorizzato, effettuare il pre-provisioning dei client con la chiave radice attendibile.  
 
- Seguire le procedure seguenti per eseguire il pre-provisioning e verificare la chiave radice attendibile per un client di Configuration Manager:  
+  Seguire le procedure seguenti per eseguire il pre-provisioning e verificare la chiave radice attendibile per un client di Configuration Manager:  
 
- - [Effettuare il pre-provisioning di un client con la chiave radice attendibile usando un file](#bkmk_trk-provision-file)  
+- [Effettuare il pre-provisioning di un client con la chiave radice attendibile usando un file](#bkmk_trk-provision-file)  
 
- - [Effettuare il pre-provisioning di un client con la chiave radice attendibile senza usare un file](#bkmk_trk-provision-nofile)  
+- [Effettuare il pre-provisioning di un client con la chiave radice attendibile senza usare un file](#bkmk_trk-provision-nofile)  
 
- - [Verificare la chiave radice attendibile in un client](#bkmk_trk-verify)  
+- [Verificare la chiave radice attendibile in un client](#bkmk_trk-verify)  
 
- - [Rimuovere o sostituire la chiave radice attendibile](#bkmk_trk-reset)  
+- [Rimuovere o sostituire la chiave radice attendibile](#bkmk_trk-reset)  
 
- > [!NOTE]  
- > Se i client riescono a ottenere la chiave radice attendibile da Active Directory Domain Services o tramite push client, il pre-provisioning non è necessario. 
- > 
- > Quando i client usano la comunicazione HTTPS ai punti di gestione, il pre-provisioning della chiave radice attendibile non è necessario. Questi client stabiliscono relazioni di trust tramite i certificati PKI.  
+  > [!NOTE]  
+  > Se i client riescono a ottenere la chiave radice attendibile da Active Directory Domain Services o tramite push client, il pre-provisioning non è necessario. 
+  > 
+  > Quando i client usano la comunicazione HTTPS ai punti di gestione, il pre-provisioning della chiave radice attendibile non è necessario. Questi client stabiliscono relazioni di trust tramite i certificati PKI.  
 
 
 ### <a name="bkmk_trk-provision-file"></a> Effettuare il pre-provisioning di un client con la chiave radice attendibile usando un file  

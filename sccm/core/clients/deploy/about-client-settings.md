@@ -10,12 +10,12 @@ ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ff4cdcc52e9be329fcfa0fd2127c43255c73ad65
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.openlocfilehash: c4cd6c45d21c58459fcd23ee02db4b5900996939
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893873"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421995"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -100,13 +100,13 @@ Questa impostazione si applica agli utenti i cui computer si trovano nella Intra
 
 Impostare questa opzione su **Sì** se si vuole che gli utenti ricevano i criteri utente nei computer basati su Internet. Devono essere rispettati anche i requisiti seguenti:  
 
--   Il client e il sito devono essere configurati per la [gestione client basata su Internet](/sccm/core/clients/manage/plan-internet-based-client-management) o per un [gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway).  
+- Il client e il sito devono essere configurati per la [gestione client basata su Internet](/sccm/core/clients/manage/plan-internet-based-client-management) o per un [gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway).  
 
--   L'impostazione **Abilitare i criteri utente nei client** deve essere **Sì**.  
+- L'impostazione **Abilitare i criteri utente nei client** deve essere **Sì**.  
 
--   Il punto di gestione basato su Internet deve eseguire l'autenticazione dell'utente tramite l'autenticazione di Windows (Kerberos o NTLM). Per altre informazioni, vedere [Considerazioni per le comunicazioni client da Internet o da una foresta non attendibile](/sccm/core/plan-design/hierarchy/communications-between-endpoints#BKMK_clientspan).  
+- Il punto di gestione basato su Internet deve eseguire l'autenticazione dell'utente tramite l'autenticazione di Windows (Kerberos o NTLM). Per altre informazioni, vedere [Considerazioni per le comunicazioni client da Internet o da una foresta non attendibile](/sccm/core/plan-design/hierarchy/communications-between-endpoints#BKMK_clientspan).  
 
--   A partire dalla versione 1710 il gateway di gestione cloud autentica correttamente l'utente mediante Azure Active Directory. Per altre informazioni, vedere [Deploy user-available applications on Azure AD-joined devices](\sccm\apps\deploy-use\deploy-applications#deploy-user-available-applications-on-azure-ad-joined-devices) (Distribuire applicazioni disponibili per l'utente in dispositivi aggiunti ad Azure AD).  
+- A partire dalla versione 1710 il gateway di gestione cloud autentica correttamente l'utente mediante Azure Active Directory. Per altre informazioni, vedere [Deploy user-available applications on Azure AD-joined devices](/sccm/apps/deploy-use/deploy-applications#deploy-user-available-applications-on-azure-ad-joined-devices) (Distribuire applicazioni disponibili per l'utente in dispositivi aggiunti ad Azure AD).  
 
 Se si imposta questa opzione su **No** o uno o più dei requisiti precedenti non vengono soddisfatti, un computer connesso a Internet riceve solo criteri computer. In questo scenario gli utenti possono comunque visualizzare, richiedere e installare applicazioni da un Catalogo applicazioni basato su Internet. Se questa impostazione corrisponde a **No**, ma l'opzione **Abilitare i criteri utente nei client** è impostata su **Sì**, gli utenti ricevono i criteri client solo quando il computer è connesso alla Intranet.  
 
@@ -218,7 +218,7 @@ Configurare la modalità di avvio dell'installazione del software, degli aggiorn
 
 -   **Tutti gli utenti**: utenti con qualsiasi autorizzazione eccetto Guest.  
 
--   **Solo amministratori**: gli utenti devono far parte del gruppo Administrators locale.  
+-   **Solo amministratori**: Gli utenti devono essere membri del gruppo Administrators locale.  
 
 -   **Solo amministratori e utenti primari**: gli utenti devono far parte del gruppo Administrators locale o devono essere utenti primari del computer.  
 
@@ -247,9 +247,9 @@ Attivare questa opzione solo in presenza di una delle seguenti condizioni:
 
 Configurare la modalità di esecuzione degli script di Windows PowerShell da parte dei client di Configuration Manager. Questi script possono essere usati per il rilevamento negli elementi di configurazione per le impostazioni di conformità. Possono anche essere inviati in una distribuzione come script standard.  
 
--   **Ignora**: il client Gestione configurazione ignora la configurazione di Windows PowerShell nel computer client per consentire l'esecuzione degli script non firmati.  
+-   **Ignora**: il client di Configuration Manager ignora la configurazione di Windows PowerShell nel computer client per consentire l'esecuzione degli script non firmati.  
 
--   **Con restrizioni**: il client Gestione configurazione usa la configurazione di Windows PowerShell corrente nel computer client. Questa configurazione determina se possono essere eseguiti script non firmati.  
+-   **Con restrizioni**: il client di Configuration Manager usa la configurazione di Windows PowerShell corrente nel computer client. Questa configurazione determina se possono essere eseguiti script non firmati.  
 
 -   **Tutti firmati**: il client di Configuration Manager esegue gli script solo se sono firmati da un autore attendibile. Questa restrizione si applica in modo indipendente dalla configurazione di PowerShell corrente nel computer client.  
 
@@ -259,7 +259,7 @@ Questa opzione richiede almeno Windows PowerShell versione 2.0. Il valore predef
 >  Se non è possibile eseguire gli script non firmati a causa di questa impostazione client, Configuration Manager segnala questo errore nei modi seguenti:  
 >   
 > -   L'area di lavoro **Monitoraggio** nella console visualizza l'ID errore stato distribuzione **0x87D00327** e la descrizione **Script non firmato**.  
-> -   I report visualizzano il tipo di errore **Errore di individuazione**, quindi visualizzano il codice di errore **0x87D00327** e la descrizione **Script non firmato** oppure il codice di errore **0x87D00320** e la descrizione **L'host script non è stato ancora installato**. Ecco un esempio di report: **Dettagli degli errori degli elementi di configurazione in una linea di base configurazione per un asset**.  
+> -   I report visualizzano il tipo di errore **Errore di individuazione**, quindi visualizzano il codice di errore **0x87D00327** e la descrizione **Script non firmato** oppure il codice di errore **0x87D00320** e la descrizione **L'host script non è stato ancora installato**. Un report di esempio è: **Dettagli degli errori degli elementi di configurazione in una linea di base configurazione per un asset**.  
 > -   Il file **DcmWmiProvider.log** visualizza il messaggio **Script non firmato (errore: 87D00327; origine: CCM)**.  
 
 ### <a name="show-notifications-for-new-deployments"></a>Mostra notifiche per nuove distribuzioni
@@ -304,8 +304,8 @@ Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le fin
 
 
 ##  <a name="endpoint-protection"></a>Endpoint Protection  
->  [!Tip]   
-> Oltre alle informazioni seguenti, è possibile trovare altri dettagli sull'uso delle impostazioni client di Endpoint Protection in [Scenario di esempio: uso di Endpoint Protection per proteggere i computer dal malware](/sccm/protect/deploy-use/scenarios-endpoint-protection).
+> [!Tip]
+> Oltre alle informazioni seguenti, è possibile trovare altri dettagli sull'uso delle impostazioni client di Endpoint Protection in [Scenario di esempio: Uso di Endpoint Protection per proteggere i computer dal malware](/sccm/protect/deploy-use/scenarios-endpoint-protection).
 
 ### <a name="manage-endpoint-protection-client-on-client-computers"></a>Gestire il client Endpoint Protection nei computer client
 
@@ -428,7 +428,7 @@ Perché un file MIF venga raccolto dall'inventario hardware, deve trovarsi nel p
 
 Per questa impostazione scegliere una delle opzioni seguenti:  
 
--   **Consenti**: tutte le comunicazioni client sono consentite tramite la connessione Internet a consumo a meno che il dispositivo client non stia usando una connessione dati in roaming.  
+-   **Consenti**: tutte le comunicazioni client sono consentite tramite la connessione Internet a consumo, a meno che il dispositivo client usi una connessione dati in roaming.  
 
 -   **Limite**: sono consentite solo le comunicazioni client seguenti tramite la connessione Internet a consumo:  
 
@@ -445,7 +445,7 @@ Per questa impostazione scegliere una delle opzioni seguenti:
 
     Se il client raggiunge il limite di trasferimento dei dati per la connessione Internet a consumo, non prova più a comunicare con i siti di Configuration Manager.  
 
--   **Blocca**: il client di Gestione configurazione non prova a comunicare con i siti di Configuration Manager in presenza di una connessione Internet a consumo. Questa opzione corrisponde all'impostazione predefinita.  
+-   **Blocca**: il client di Configuration Manager non prova a comunicare con i siti di Configuration Manager in presenza di una connessione Internet a consumo. Questa opzione corrisponde all'impostazione predefinita.  
 
 
 
@@ -470,18 +470,18 @@ Per altre informazioni sul proxy di riattivazione, vedere [Pianificare la riatti
 
 Configurare quindi le impostazioni aggiuntive seguenti in base alle esigenze:
 
--   **Numero di porta del proxy di riattivazione (UDP)**: numero di porta usato dai client per inviare pacchetti di riattivazione ai computer in sospensione. Mantenere la porta predefinita 25536 o modificare il numero con un valore a propria scelta.  
+-   **Numero di porta del proxy di riattivazione (UDP)**: Numero di porta usato dai client per inviare pacchetti di riattivazione ai computer in sospensione. Mantenere la porta predefinita 25536 o modificare il numero con un valore a propria scelta.  
 
--   **Numero di porta di riattivazione LAN (UDP)**: mantenere il valore predefinito 9 a meno che non sia stato modificato il numero di porta di riattivazione LAN (UDP) nella scheda **Porte** delle **Proprietà** del sito.  
+-   **Numero di porta di riattivazione LAN (UDP)**: mantenere il valore predefinito 9 a meno che non sia stato modificato il numero di porta di riattivazione LAN (UDP) nelle **Proprietà** del sito nella scheda **Porte**.  
 
     > [!IMPORTANT]  
     >  Questo numero deve corrispondere al numero nelle **Proprietà**del sito. Se si modifica questo numero in una posizione, non viene aggiornato automaticamente nell'altra.  
 
--   **Eccezione di Windows Defender Firewall per il proxy di riattivazione**: il client di Configuration Manager configura automaticamente il numero di porta del proxy di riattivazione nei dispositivi che eseguono Windows Defender Firewall. Selezionare **Configura** per specificare i profili firewall desiderati.
+-   **Eccezione di Windows Defender Firewall per il proxy di riattivazione**: Il client di Configuration Manager configura automaticamente il numero di porta del proxy di riattivazione nei dispositivi che eseguono Windows Defender Firewall. Selezionare **Configura** per specificare i profili firewall desiderati.
 
     Se i client eseguono un firewall diverso, è necessario configurarlo manualmente per consentire il **Numero di porta del proxy di riattivazione (UDP)**.  
         
--   **Prefissi IPv6 se richiesti per DirectAccess o altri dispositivi di rete. Usare una virgola per specificare più voci**: immettere i prefissi IPv6 necessari per il funzionamento del proxy di riattivazione nella rete in uso.
+-   **Prefissi IPv6 se richiesti per DirectAccess o altri dispositivi di rete. Usare una virgola per specificare più voci**: Immettere i prefissi IPv6 necessari per il funzionamento del proxy di riattivazione nella rete in uso.
 
 
 
@@ -583,11 +583,11 @@ Impostare questa opzione su **Sì** per stabilire connessioni Desktop remoto a c
 ### <a name="select-these-new-settings-to-specify-company-information"></a>Selezionare le nuove impostazioni per specificare le informazioni aziendali
 Impostare questa opzione su **Sì** e quindi specificare le impostazioni seguenti per personalizzare Software Center per l'organizzazione:
 
-- **Nome società**: immettere il nome dell'organizzazione che verrà visualizzato dagli utenti in Software Center.  
+- **Nome società**: Immettere il nome dell'organizzazione visualizzato dagli utenti in Software Center.  
 
-- **Combinazione colori per il Software Center**: selezionare **Seleziona il colore** per definire il colore primario usato da Software Center.  
+- **Combinazione colori per il Software Center**: fare clic su **Seleziona il colore** per definire il colore primario usato da Software Center.  
 
-- **Seleziona un logo per il Software Center**: fare clic su **Sfoglia** per scegliere un'immagine da visualizzare in Software Center. Il logo deve essere un file JPEG, PNG o BMP di 400 x 100 pixel, con una dimensione massima di 750 KB. Il nome del file del logo non deve contenere spazi.  
+- **Seleziona un logo per il Software Center**: Fare clic su **Sfoglia** per scegliere un'immagine da visualizzare in Software Center. Il logo deve essere un file JPEG, PNG o BMP di 400 x 100 pixel, con una dimensione massima di 750 KB. Il nome del file del logo non deve contenere spazi.  
          
 ### <a name="bkmk_HideUnapproved"></a> Nascondi le applicazioni non approvate nel Software Center
 A partire da Configuration Manager 1802, se questa opzione è abilitata le applicazioni disponibili per l'utente che richiedono l'approvazione sono nascoste in Software Center.   <!--1355146-->
@@ -658,7 +658,7 @@ Per specificare i tipi di file per l'inventario, selezionare **Imposta tipi** e 
 
     -   **Nome**: specificare un nome per il file che si vuole includere nell'inventario. Usare il carattere jolly asterisco (**&#42;**) per rappresentare qualsiasi stringa di testo e un punto interrogativo (**?**) per rappresentare qualsiasi carattere singolo. Ad esempio, se si vuole includere nell'inventario tutti i file con estensione doc, specificare il nome del file **\*.doc**.  
 
-    -   **Percorso** : selezionare **Imposta** per aprire la finestra di dialogo **Proprietà percorso**. Configurare l'inventario software per cercare in tutti i dischi rigidi del client il file specificato, un percorso specifico (ad esempio **C:\Cartella**) o una variabile specifica (ad esempio, *%windir%*). È anche possibile cercare tutte le sottocartelle nel percorso specificato.  
+    -   **Percorso**: selezionare **Imposta** per aprire la finestra di dialogo **Proprietà percorso**. Configurare l'inventario software per cercare in tutti i dischi rigidi del client il file specificato, un percorso specifico (ad esempio **C:\Cartella**) o una variabile specifica (ad esempio, *%windir%*). È anche possibile cercare tutte le sottocartelle nel percorso specificato.  
 
     -   **Escludi file crittografati e compressi**: quando si seleziona questa opzione, tutti i file compressi o crittografati non vengono inclusi nell'inventario.  
 
@@ -679,11 +679,11 @@ Se si vogliono raccogliere i file dai computer client, selezionare **Imposta fil
 
     -   **Nome**: specificare un nome per il file che si vuole raccogliere. Usare il carattere jolly asterisco (**&#42;**) per rappresentare qualsiasi stringa di testo e un punto interrogativo (**?**) per rappresentare qualsiasi carattere singolo.  
 
-    -   **Percorso** : selezionare **Imposta** per aprire la finestra di dialogo **Proprietà percorso**. Configurare l'inventario software per cercare in tutti i dischi rigidi del client il file che si vuole raccogliere, un percorso specifico (ad esempio **C:\Cartella**) o una variabile specifica (ad esempio, *%windir%*). È anche possibile cercare tutte le sottocartelle nel percorso specificato.  
+    -   **Percorso**: selezionare **Imposta** per aprire la finestra di dialogo **Proprietà percorso**. Configurare l'inventario software per cercare in tutti i dischi rigidi del client il file che si vuole raccogliere, un percorso specifico (ad esempio **C:\Cartella**) o una variabile specifica (ad esempio, *%windir%*). È anche possibile cercare tutte le sottocartelle nel percorso specificato.  
 
     -   **Escludi file crittografati e compressi**: quando si seleziona questa opzione, i file compressi o crittografati non vengono inclusi nell'inventario.  
 
-    -   **Interrompere la raccolta file quando le dimensioni totali dei file superano (KB)**: specificare le dimensioni del file (in KB) oltre le quali il client interrompe la raccolta dei file specificati.  
+    -   **Interrompere la raccolta file quando le dimensioni totali dei file superano (KB)**: specificare le dimensioni del file, in kilobyte (KB), oltre le quali il client smette di raccogliere i file specificati.  
 
     > [!NOTE]  
     >  Il server del sito raccoglie le cinque versioni più recenti dei file raccolti e le archivia nella directory `<ConfigMgr installation directory>\Inboxes\Sinv.box\Filecol`. Se dopo l'ultimo ciclo di inventario software un file non è stato modificato, non viene raccolto nuovamente.  
@@ -703,9 +703,9 @@ Se si vogliono raccogliere i file dai computer client, selezionare **Imposta fil
 
 L'agente inventario software recupera i nomi del produttore e del prodotto dalle informazioni di intestazione dei file. Questi nomi non sono sempre standardizzati all'interno di queste informazioni. Quando si visualizza l'inventario software in Esplora inventario risorse, possono essere visualizzate versioni diverse dello stesso nome di produttore o di prodotto. Per standardizzare i nomi visualizzati, selezionare **Imposta nomi** e quindi configurare le impostazioni seguenti:  
 
--   **Tipo nome**: l'inventario software raccoglie informazioni su produttori e prodotti. Scegliere se configurare i nomi visualizzati per un **Produttore** o un **Prodotto**.  
+-   **Tipo nome**: L'inventario software raccoglie informazioni su produttori e prodotti. Scegliere se configurare i nomi visualizzati per un **Produttore** o un **Prodotto**.  
 
--   **Nome visualizzato:** specificare il nome visualizzato da usare al posto dei nomi inclusi nell'elenco **Nomi di inventario**. Per specificare un nuovo nome visualizzato, selezionare **Nuovo**.  
+-   **Nome visualizzato**: specificare il nome visualizzato da usare al posto dei nomi inclusi nell'elenco **Nomi di inventario**. Per specificare un nuovo nome visualizzato, selezionare **Nuovo**.  
 
 -   **Nomi di inventario**: per aggiungere un nome di inventario, selezionare **Nuovo**. Questo nome viene sostituito nell'inventario software dal nome scelto nell'elenco **Nome visualizzato**. È possibile aggiungere più nomi da sostituire.  
 

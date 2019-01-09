@@ -10,12 +10,12 @@ ms.assetid: f4706a58-1f11-4eab-b1eb-3d1a0da02d0f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 730d14c5985c088d964761bb83043f3a34924486
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: e8f7a8fbdbd52a8f872583cf2237a06ee8c1420e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340336"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53414719"
 ---
 # <a name="capabilities-in-technical-preview-1710-for-system-center-configuration-manager"></a>Funzionalità nella Technical Preview 1710 per System Center Configuration Manager
 
@@ -30,8 +30,8 @@ L'articolo illustra le funzionalità disponibili nella Technical Preview version
     Workaround details.
 -->
 **Problemi noti di questa versione Technical Preview:**
--   **Supporto per Windows 10, versione 1709 (anche noto come Fall Creators Update)**.  A partire da questa versione di Windows, il supporto include più versioni. Quando si configura una sequenza di attività per l'uso di un pacchetto di aggiornamento o di un'immagine del sistema operativo, assicurarsi di selezionare un'[edizione utilizzabile da Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
--   **L'aggiornamento a una nuova versione di anteprima ha esito negativo se il server del sito è in modalità passiva**. Se si esegue una versione di anteprima con il [server del sito primario in modalità passiva](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), è necessario disinstallare il server del sito in modalità passiva prima di poter aggiornare il sito di anteprima alla nuova versione di anteprima. Sarà possibile reinstallare il server del sito in modalità passiva al termine dell'aggiornamento del sito.
+- **Supporto per Windows 10, versione 1709 (anche noto come Fall Creators Update)**.  A partire da questa versione di Windows, il supporto include più versioni. Quando si configura una sequenza di attività per l'uso di un pacchetto di aggiornamento o di un'immagine del sistema operativo, assicurarsi di selezionare un'[edizione utilizzabile da Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
+- **L'aggiornamento a una nuova versione di anteprima ha esito negativo se il server del sito è in modalità passiva**. Se si esegue una versione di anteprima con il [server del sito primario in modalità passiva](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), è necessario disinstallare il server del sito in modalità passiva prima di poter aggiornare il sito di anteprima alla nuova versione di anteprima. Sarà possibile reinstallare il server del sito in modalità passiva al termine dell'aggiornamento del sito.
 
   Per disinstallare il server del sito in modalità passiva:
   1. Nella console passare ad **Amministrazione** > **Panoramica** > **Configurazione del sito** > **Server e ruoli del sistema del sito** e quindi selezionare il server del sito in modalità passiva.
@@ -86,8 +86,7 @@ Aggiungere un'icona per l'app in Software Center. Per provare subito, vedere [Cr
 
 
 ## <a name="check-compliance-from-software-center-for-co-managed-devices"></a>Controllare la conformità da Software Center per i dispositivi co-gestiti
-<!-- 1356374 -->
-In questa versione gli utenti possono usare Software Center per verificare la conformità dei dispositivi Windows 10 co-gestiti, anche se l'accesso condizionale viene gestito da Intune. Per i dettagli, vedere [Co-gestione per dispositivi Windows 10](./capabilities-in-technical-preview-1709.md#co-management-for-windows-10-devices).
+<!-- 1356374 --> In questa versione gli utenti possono usare Software Center per verificare la conformità dei dispositivi Windows 10 co-gestiti, anche se l'accesso condizionale viene gestito da Intune. Per i dettagli, vedere [Co-gestione per dispositivi Windows 10](./capabilities-in-technical-preview-1709.md#co-management-for-windows-10-devices).
 
 
 ## <a name="support-for-exploit-guard"></a>Supporto per Exploit Guard
@@ -112,22 +111,21 @@ I dispositivi gestiti devono eseguire Windows 10 1709 Fall Creators Update o ver
 | Protezione di rete  |  Nei dispositivi deve essere abilitata la [protezione in tempo reale di Windows Defender AV]( https://docs.microsoft.com/windows/threat-protection/windows-defender-exploit-guard/controlled-folders-exploit-guard).  |
 
 ### <a name="create-an-exploit-guard-policy----1355468---"></a>Creare un criterio di Exploit Guard <!--1355468 -->
-1.  Nella console di Configuration Manager passare ad **Asset e conformità** > **Endpoint Protection** e fare clic su **Windows Defender Exploit Guard**.
-2.  Nel gruppo **Crea** della scheda **Home** fare clic su **Create Exploit Policy** (Crea criterio di Exploit Guard).
-3.  Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.
-4.  Selezionare quindi i componenti di Exploit Guard da gestire con questo criterio. Per ogni componente selezionato è quindi possibile configurare altri dettagli.
-  - **Riduzione della superficie di attacco:** configurare le minacce che prendono di mira rispettivamente Office e la posta elettronica e le minacce di scripting da bloccare o controllare. È anche possibile escludere da questa regola cartelle o file specifici.
-  - **Accesso controllato alle cartelle:** configurare il blocco o il controllo e quindi aggiungere le app che possono ignorare questo criterio.  È anche possibile specificare cartelle aggiuntive non protette per impostazione predefinita.
-  - **Protezione dagli exploit:** specificare un file XML contenente le impostazioni per limitare gli exploit di processi di sistema e app. È possibile esportare queste impostazioni dall'app Windows Defender Security Center in un dispositivo Windows 10.
-  - **Protezione di rete:** impostare la protezione di rete in modo da bloccare o controllare l'accesso a domini sospetti.
-5.  Completare la procedura guidata di creazione del criterio, che potrà in seguito essere distribuito ai dispositivi.
+1. Nella console di Configuration Manager passare ad **Asset e conformità** > **Endpoint Protection** e fare clic su **Windows Defender Exploit Guard**.
+2. Nel gruppo **Crea** della scheda **Home** fare clic su **Create Exploit Policy** (Crea criterio di Exploit Guard).
+3. Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.
+4. Selezionare quindi i componenti di Exploit Guard da gestire con questo criterio. Per ogni componente selezionato è quindi possibile configurare altri dettagli.
+   - **Riduzione della superficie di attacco:** configurare le minacce che prendono di mira rispettivamente Office e la posta elettronica e le minacce di scripting da bloccare o controllare. È anche possibile escludere da questa regola cartelle o file specifici.
+   - **Accesso controllato alle cartelle:** configurare i criteri di blocco o di controllo e quindi aggiungere le app che possono ignorare questi criteri.  È anche possibile specificare cartelle aggiuntive non protette per impostazione predefinita.
+   - **Protezione dagli exploit:**  specificare un file XML contenente le impostazioni per attenuare gli exploit di processi di sistema e app. È possibile esportare queste impostazioni dall'app Windows Defender Security Center in un dispositivo Windows 10.
+   - **Protezione di rete:** impostare la protezione di rete in modo da bloccare o controllare l'accesso a domini sospetti.
+5. Completare la procedura guidata di creazione del criterio, che potrà in seguito essere distribuito ai dispositivi.
 
 ### <a name="deploy-an-exploit-guard-policy"></a>Distribuire un criterio di Exploit Guard     
 Dopo aver creato i criteri di Exploit Guard, usare la procedura guidata Deploy Exploit Guard Policy (Distribuzione criterio di Exploit Guard) per distribuirli. A tale scopo, aprire la console di Configuration Manager, passare ad **Asset e conformità** > **Endpoint Protection** e fare clic su **Deploy Exploit Guard Policy** (Distribuzione criterio di Exploit Guard).
 
 ## <a name="limited-support-for-cng-certificates"></a>Supporto limitato per i certificati CNG
-<!-- 1356191 -->
-A partire da questa versione è possibile usare i modelli di certificato [delle API CNG (Cryptography Next Generation)](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx) per gli scenari seguenti:
+<!-- 1356191 --> A partire da questa versione è possibile usare i modelli di certificato delle [API CNG (Cryptography Next Generation)](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx) per gli scenari seguenti:
 
 - Registrazione e comunicazione dei client con un punto di gestione HTTPS.   
 - Distribuzione di software e applicazioni con un punto di distribuzione HTTPS.   

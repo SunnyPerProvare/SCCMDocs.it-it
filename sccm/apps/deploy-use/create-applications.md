@@ -10,12 +10,12 @@ ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 947dfac82db43e5cb21d8304d31be23219bb83aa
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 9bf3a58c58a525ac3d9fdb30eafaeb68e74002db
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456652"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423780"
 ---
 # <a name="create-applications-in-configuration-manager"></a>Creare applicazioni in Configuration Manager
 
@@ -87,7 +87,7 @@ Rilevare quindi automaticamente o specificare manualmente le informazioni sull'a
 
     -   **Usa una connessione VPN automatica (se configurata)**: se è stato distribuito un profilo VPN nel dispositivo in cui l'utente avvia l'app, connettersi alla VPN all'avvio dell'app. Questa opzione è disponibile solo per Windows 8.1 e Windows Phone 8.1. Le connessioni VPN non sono supportate nei dispositivi Windows Phone 8.1 se si distribuisce più di un profilo VPN nel dispositivo. Per altre informazioni, vedere [Profili VPN](/sccm/protect/deploy-use/vpn-profiles).  
 
-    - **Effettua il provisioning di questa applicazione per tutti gli utenti nel dispositivo**<!--1358310-->: a partire dalla versione 1806, è possibile effettuare il provisioning di un'applicazione con un pacchetto app Windows per tutti gli utenti nel dispositivo. Per altre informazioni, vedere [Creare applicazioni Windows](/sccm/apps/get-started/creating-windows-applications#bkmk_provision).  
+    - **Effettua il provisioning di questa applicazione per tutti gli utenti nel dispositivo**<!--1358310-->: a partire dalla versione 1806, è possibile effettuare il provisioning di un'applicazione con un pacchetto dell'app di Windows per tutti gli utenti nel dispositivo. Per altre informazioni, vedere [Creare applicazioni Windows](/sccm/apps/get-started/creating-windows-applications#bkmk_provision).  
 
        > [!Tip]  
        > Se si modifica un'applicazione esistente, questa impostazione è disponibile nella scheda **Esperienza utente** delle proprietà del tipo di distribuzione del pacchetto app Windows.  
@@ -117,7 +117,7 @@ Per aggiungere altri tipi di distribuzione o configurare altre impostazioni, ved
 
 3.  Nella pagina **Catalogo applicazioni** della Creazione guidata applicazione specificare le informazioni seguenti:  
 
-    -   **Lingua selezionata**: dall'elenco a discesa selezionare la lingua dell'applicazione che si vuole configurare. Scegliere **Aggiungi/Rimuovi** per configurare più lingue per l'applicazione.  
+    -   **Lingua selezionata**: dall'elenco a discesa, selezionare la versione della lingua dell'applicazione che si vuole configurare. Scegliere **Aggiungi/Rimuovi** per configurare più lingue per l'applicazione.  
 
     -   **Nome dell'applicazione localizzata**: specificare il nome dell'applicazione nella lingua selezionata.  
 
@@ -128,9 +128,9 @@ Per aggiungere altri tipi di distribuzione o configurare altre impostazioni, ved
 
     -   **Documentazione utente**: specificare il percorso di un file da cui gli utenti di Software Center possono ottenere altre informazioni su questa applicazione. Questo percorso è un indirizzo di sito Web o un percorso di rete con un nome file. Assicurarsi che gli utenti possano accedere a questo percorso.  
 
-    -   **Testo collegamento**: specificare il testo da visualizzare al posto dell'URL dell'applicazione.  
+    -   **Testo del collegamento**: specificare il testo da visualizzare al posto dell'URL dell'applicazione.  
 
-    -   **URL privacy**: specificare un indirizzo di Sito Web per l'informativa sulla privacy per l'applicazione.  
+    -   **URL privacy**: specificare un indirizzo di sito Web per l'informativa sulla privacy per l'applicazione.  
 
     -   **Descrizione localizzata**: immettere una descrizione per questa applicazione nella lingua selezionata.  
 
@@ -138,7 +138,7 @@ Per aggiungere altri tipi di distribuzione o configurare altre impostazioni, ved
 
     -   **Icona**: fare clic su **Sfoglia** per selezionare un'icona per questa applicazione. Se non si specifica un'icona, Configuration Manager usa un'icona predefinita. Le icone possono avere dimensioni massime pari a 512x512 pixel.  
 
-    -   **Visualizza come app in primo piano ed evidenziala nel portale aziendale**: questa opzione visualizza in primo piano l'app nel Portale aziendale nei dispositivi mobili.  
+    -   **Visualizza come app in primo piano ed evidenziala nel portale aziendale**: questa opzione visualizza chiaramente l'app Portale aziendale nei dispositivi mobili.  
 
 4.  Nella pagina **Tipi di distribuzione** della Creazione guidata applicazione scegliere **Aggiungi** per creare un nuovo tipo di distribuzione. Per altre informazioni, vedere [Creare tipi di distribuzione per l'applicazione](#bkmk_create-dt).  
 
@@ -168,9 +168,9 @@ Se vengono [rilevate automaticamente le informazioni sull'applicazione](#bkmk_au
 
 È possibile avviare la Creazione guidata tipo di distribuzione in tre modi:
 
-- **Nel nodo Applicazioni**: nella console di Configuration Manager passare all'area di lavoro **Raccolta software**, espandere **Gestione applicazioni** e selezionare il nodo **Applicazioni**. Selezionare un'applicazione e quindi fare clic su **Crea tipo di distribuzione** sulla barra multifunzione.  
+- **Nel nodo Applicazioni**: Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**, espandere **Gestione applicazioni** e selezionare il nodo **Applicazioni**. Selezionare un'applicazione e quindi fare clic su **Crea tipo di distribuzione** sulla barra multifunzione.  
 
-- **Durante la creazione di un'applicazione**: quando [si specificano manualmente le informazioni sull'applicazione](#bkmk_manual-app) nella Creazione guidata applicazione, fare clic su **Aggiungi** nella pagina Tipi di distribuzione.  
+- **Quando si crea un'applicazione**: quando [si specificano manualmente le informazioni sull'applicazione](#bkmk_manual-app) nella Creazione guidata applicazione, fare clic su **Aggiungi** nella pagina Tipi di distribuzione.  
 
 - **Dalle proprietà dell'applicazione**: selezionare un'applicazione esistente nel nodo **Applicazioni** e fare clic su **Proprietà**. Passare alla scheda **Tipi di distribuzione** e fare clic su **Aggiungi**.
 
@@ -227,7 +227,7 @@ Nella pagina **Contenuto** specificare le informazioni seguenti:
 > [!Note]  
 > Quando si visualizzano le proprietà di un tipo di distribuzione esistente, alcune opzioni vengono visualizzate nella scheda **Contenuto** e altre nella scheda **Programmi**.  
 
-- **Percorso dei contenuti**: specificare il percorso del contenuto per questo tipo di distribuzione o selezionare **Sfoglia** per scegliere la cartella del contenuto del tipo di distribuzione.  
+- **Percorso contenuto**: specificare il percorso del contenuto per questo tipo di distribuzione o selezionare **Sfoglia** per scegliere la cartella del contenuto del tipo di distribuzione.  
 
     > [!IMPORTANT]  
     >  L'account di sistema del computer server del sito deve avere le autorizzazioni per il percorso del contenuto specificato.  
@@ -258,15 +258,15 @@ Quando si visualizzano le proprietà di un tipo di distribuzione, le opzioni seg
 
     - **Nessun contenuto di disinstallazione**: selezionare questa opzione se l'applicazione non richiede contenuti per la disinstallazione.  
 
-    - **Diversa dal contenuto di installazione**: selezionare questa opzione se il contenuto di disinstallazione è diverso dal contenuto di installazione.  
+    - **Diversa dal contenuto di installazione**: se il contenuto di disinstallazione è diverso dal contenuto di installazione, selezionare questa opzione.  
 
         - **Posizione del contenuto di disinstallazione**: specificare il percorso di rete per il contenuto usato per disinstallare l'applicazione.  
 
-- **Consenti ai client di usare punti di distribuzione dal gruppo di limiti del sito predefinito**: specificare se i clienti devono scaricare e installare il software da un punto di distribuzione nel gruppo di limiti del sito predefinito quando il contenuto non è disponibile da un punto di distribuzione nel gruppo di limiti corrente o nei gruppi di limiti vicini.  
+- **Consenti ai client di usare i punti di distribuzione dal gruppo di limiti del sito predefinito**: specificare se i client devono scaricare e installare il software da un punto di distribuzione nel gruppo di limiti del sito predefinito quando il contenuto non è disponibile da un punto di distribuzione nel gruppo di limiti corrente o nei gruppi di limiti vicini.  
 
 - **Opzioni di distribuzione**: specificare se i client devono scaricare l'applicazione quando usano un punto di distribuzione da un gruppo di limiti vicino o dai gruppi di limiti del sito predefiniti.  
 
-- **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'uso di BranchCache per il download del contenuto. Per altre informazioni, vedere [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache). A partire dalla versione 1802, BranchCache è sempre abilitato nei client. Questa impostazione viene rimossa, perché i client usano BranchCache se il punto di distribuzione lo supporta.  
+- **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'utilizzo di BranchCache per il download del contenuto. Per altre informazioni, vedere [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache). A partire dalla versione 1802, BranchCache è sempre abilitato nei client. Questa impostazione viene rimossa, perché i client usano BranchCache se il punto di distribuzione lo supporta.  
 
 
 ### <a name="bkmk_dt-detect"></a> Opzioni del **Metodo di rilevamento** per il tipo di distribuzione   
@@ -290,21 +290,21 @@ Questa procedura configura un metodo di rilevamento che indica la presenza del t
 
         - **Nome file o cartella** (obbligatorio): specificare il nome del file o della cartella da rilevare nel percorso indicato in precedenza. Se il client rileva questo file o questa cartella nel dispositivo, considererà l'applicazione come installata nel dispositivo.  
 
-        - **Il file o la cartella sono associati a un'applicazione a 32 bit su sistemi a 64 bit**: questa opzione è selezionata per impostazione predefinita. Il client cerca prima di tutto la cartella o il file specificato nei percorsi di file a 32 bit. Se la cartella o il file non viene trovato, il client esegue quindi una ricerca nei percorsi a 64 bit.  
+        - **Il file o la cartella sono associati a un'applicazione a 32 bit su sistemi a 64 bit**: Questa opzione è selezionata per impostazione predefinita. Il client cerca prima di tutto la cartella o il file specificato nei percorsi di file a 32 bit. Se la cartella o il file non viene trovato, il client esegue quindi una ricerca nei percorsi a 64 bit.  
 
     - **Registro di sistema**: consente di rilevare se una chiave o un valore del Registro di sistema è presente in un dispositivo client. In caso affermativo, l'applicazione è installata. Specificare i dettagli aggiuntivi seguenti:  
 
         - **Hive** (obbligatorio): scegliere un hive del Registro di sistema dall'elenco a discesa. Ad esempio, `HKEY_LOCAL_MACHINE`.  
 
-        - **Chiave** (obbligatorio): specificare la chiave del Registro di sistema da cercare nell'hive indicato in precedenza. Ad esempio, `SOFTWARE\Microsoft\Office`.  
+        - **Chiave** (obbligatoria): specificare la chiave del Registro di sistema da cercare nell'hive indicato in precedenza. Ad esempio, `SOFTWARE\Microsoft\Office`.  
 
         - **Valore** (facoltativo): immettere un valore specifico da rilevare nella chiave indicata in precedenza. Se si vuole che il client rilevi il valore predefinito, abilitare l'opzione **Usa il valore predefinito della chiave del Registro di sistema per il rilevamento**. Quando si immette un valore o si abilita questa opzione, è necessario selezionare un **Tipo di dati**.  
 
-        - **La chiave del Registro di sistema è associata a un'applicazione a 32 bit su sistemi a 64 bit**: selezionare questa opzione per cercare la chiave specificata del Registro di sistema prima di tutto nei percorsi del Registro di sistema a 32 bit. Se non è possibile trovare la chiave del Registro di sistema, il client cerca nei percorsi a 64 bit.  
+        - **La chiave del Registro di sistema è associata a un'applicazione a 32 bit su sistemi a 64 bit**: Selezionare questa opzione per cercare prima la chiave del Registro di sistema specificata nei percorsi del Registro di sistema a 32 bit. Se non è possibile trovare la chiave del Registro di sistema, il client cerca nei percorsi a 64 bit.  
 
     - **Windows Installer**: consente di rilevare se un file Windows Installer specifico è presente in un dispositivo client. In caso affermativo, l'applicazione è installata. Specificare il **Codice prodotto** MSI da rilevare nel client. Se si fa clic su **Sfoglia**, selezionare il file MSI da cui leggere il codice prodotto. 
 
-3.  Nella parte inferiore della finestra Regola di rilevamento specificare se l'elemento deve esistere o deve soddisfare una regola. Se ad esempio si esegue il rilevamento tramite un file, l'opzione seguente è selezionata per impostazione predefinita: **L'impostazione del file system deve essere presente nel sistema di destinazione per indicare la presenza dell'applicazione**. Selezionare l'altra opzione per creare una regola per il rilevamento in base alle proprietà di un file o di una cartella. Queste proprietà includono Data modifica, Data creazione, Versione o Dimensioni. I criteri di queste regole sono diversi per ogni tipo di impostazione.  
+3.  Nella parte inferiore della finestra Regola di rilevamento specificare se l'elemento deve esistere o deve soddisfare una regola. Se ad esempio si effettua il rilevamento tramite un file, per impostazione predefinita è selezionata l'opzione seguente: **L'impostazione del file system deve essere presente nel sistema di destinazione per indicare la presenza dell'applicazione**. Selezionare l'altra opzione per creare una regola per il rilevamento in base alle proprietà di un file o di una cartella. Queste proprietà includono Data modifica, Data creazione, Versione o Dimensioni. I criteri di queste regole sono diversi per ogni tipo di impostazione.  
 
 4.  Fare clic su **OK** per chiudere la finestra di dialogo **Regola di rilevamento**.  
 
@@ -334,6 +334,7 @@ Configuration Manager controlla i risultati dello script. Legge i valori scritti
 Usare le tabelle seguenti per controllare se un'applicazione è installata usando l'output di uno script:  
 
 **Codice di uscita uguale a zero:**  
+
 |STDOUT|STDERR|Risultato dello script|Stato di rilevamento dell'applicazione|
 |---------|---------|---------|---------|
 |Vuoto|Vuoto|Operazione completata|Non installato|
@@ -343,6 +344,7 @@ Usare le tabelle seguenti per controllare se un'applicazione è installata usand
 
 
 **Codice di uscita diverso da zero:**  
+
 |STDOUT|STDERR|Risultato dello script|Stato di rilevamento dell'applicazione|
 |---------|---------|---------|---------|
 |Vuoto|Vuoto|Errore|Sconosciuto|
@@ -393,24 +395,24 @@ Nella pagina **Esperienza utente** specificare le informazioni seguenti:
 
 - **Comportamento installazione**: nell'elenco a discesa selezionare una delle seguenti opzioni:  
 
-    - **Installa per utente**: il cliente installa l'applicazione solo per l'utente per cui viene distribuita l'applicazione.  
+    - **Installa per utente**: il client installa l'applicazione solo per l'utente per cui viene distribuita l'applicazione.  
 
     - **Installa per sistema**: il client installa l'applicazione solo una volta. È disponibile per tutti gli utenti.  
 
-    - **Installa per sistema se la risorsa è un dispositivo, altrimenti installa per utente**: se si distribuisce l'applicazione in un dispositivo, il client la installa per tutti gli utenti. Se si distribuisce l'applicazione per un utente, il client la installa solo per tale utente.  
+    - **Installa per sistema se la risorsa è un dispositivo, altrimenti installa per utente**: Se si distribuisce l'applicazione per un dispositivo, il client la installa per tutti gli utenti. Se si distribuisce l'applicazione per un utente, il client la installa solo per tale utente.  
 
-- **Requisiti di accesso**: selezionare una delle opzioni seguenti:  
+- **Requisiti di accesso**: Selezionare una delle opzioni seguenti:  
 
-    - **Solo se un utente è connesso**  
+  - **Solo se un utente è connesso**  
 
-    - **Indipendentemente dalla connessione degli utenti**  
+  - **Indipendentemente dalla connessione degli utenti**  
 
-    - **Solo se nessun utente è connesso**  
+  - **Solo se nessun utente è connesso**  
 
     > [!NOTE]  
     >  Per impostazione predefinita, questa opzione è impostata su **Solo se un utente è connesso**. Se si seleziona **Installa per utente** nell'elenco a discesa **Comportamento installazione**, non è possibile modificare questa opzione.  
 
-- **Visibilità del programma di installazione**: specificare la modalità in cui il tipo di distribuzione deve essere eseguito nei dispositivi client. Selezionare una delle opzioni seguenti:  
+- **Visibilità del programma di installazione**: specificare la modalità in cui viene eseguito il tipo di distribuzione sui dispositivi client. Selezionare una delle opzioni seguenti:  
 
     - **Ingrandita**: il tipo di distribuzione viene eseguito in modalità ingrandita sui dispositivi client. Gli utenti potranno seguire l'intera l'attività di installazione.  
 
@@ -420,7 +422,7 @@ Nella pagina **Esperienza utente** specificare le informazioni seguenti:
 
     - **Nascosto**: l'esecuzione del tipo di distribuzione viene nascosta nei dispositivi client. Gli utenti non vedono alcuna attività di installazione.  
 
-- **Consenti agli utenti di visualizzare e interagire con l'installazione del programma**: specificare se un utente può interagire con l'installazione del tipo di distribuzione per configurarne le opzioni.  
+- **Consenti agli utenti di visualizzare e interagire con l'installazione del programma**: specifica se un utente può interagire con l'installazione del tipo di distribuzione per configurarne le opzioni.  
 
     > [!NOTE]  
     >  Se si seleziona l'opzione **Installa per utente** nell'elenco a discesa **Comportamento installazione**, questa opzione è abilitata per impostazione predefinita.  
@@ -434,14 +436,14 @@ Nella pagina **Esperienza utente** specificare le informazioni seguenti:
 
     Usare questo valore per le azioni seguenti:  
 
-    - Per monitorare i risultati dal tipo di distribuzione.  
+  - Per monitorare i risultati dal tipo di distribuzione.  
 
-    - Per verificare se un tipo di distribuzione è installato quando si definiscono finestre di manutenzione nei dispositivi client. Quando è attiva una finestra di manutenzione, un tipo di distribuzione viene avviato solo se il tempo disponibile nella finestra di manutenzione è sufficiente per il valore specificato nell'impostazione **Tempo esecuzione massimo consentito**.  
+  - Per verificare se un tipo di distribuzione è installato quando si definiscono finestre di manutenzione nei dispositivi client. Quando è attiva una finestra di manutenzione, un tipo di distribuzione viene avviato solo se il tempo disponibile nella finestra di manutenzione è sufficiente per il valore specificato nell'impostazione **Tempo esecuzione massimo consentito**.  
 
     > [!IMPORTANT]  
     >  Potrebbe verificarsi un conflitto se il **Tempo di esecuzione massimo consentito** è maggiore della finestra di manutenzione pianificata. Se l'utente imposta il tempo di esecuzione massimo su una durata maggiore di quella di qualsiasi finestra di manutenzione disponibile, il tipo di distribuzione corrispondente non viene eseguito.  
 
-- **Tempo previsto di installazione (minuti)**: specificare il tempo previsto per l'installazione del tipo di distribuzione. Gli utenti possono visualizzarlo in Software Center.  
+- **Tempo previsto di installazione (minuti)**: specificare il tempo di installazione previsto del tipo di distribuzione. Gli utenti possono visualizzarlo in Software Center.  
 
 
 #### <a name="deployment-type-properties-user-experience-options"></a>Opzioni di **Esperienza utente** delle proprietà del tipo di distribuzione
@@ -455,7 +457,7 @@ Quando si visualizzano le proprietà di un tipo di distribuzione, le opzioni seg
 
 - **Il programma di installazione software potrebbe forzare il riavvio del dispositivo**: Configuration Manager non controlla o inizializza un riavvio, ma è possibile che l'installazione effettiva esegua questa operazione senza preavviso. Usare questa impostazione per impedire la segnalazione di errori di installazione di Configuration Manager quando il programma di installazione esegue un riavvio. Software Center visualizza che **potrebbe essere necessario un riavvio**.  
 
-- **Il client Configuration Manager forzerà il riavvio obbligatorio del dispositivo**: Configuration Manager forza il riavvio del dispositivo al termine dell'installazione. Software Center segnala che è necessario eseguire il riavvio. Se un utente esegue l'accesso durante l'installazione, viene visualizzata una richiesta in base alla configurazione di Esperienza utente della *distribuzione*.  
+- **Il client Configuration Manager forzerà il riavvio obbligatorio del dispositivo**: Configuration Manager forza un riavvio del dispositivo al termine dell'installazione. Software Center segnala che è necessario eseguire il riavvio. Se un utente esegue l'accesso durante l'installazione, viene visualizzata una richiesta in base alla configurazione di Esperienza utente della *distribuzione*.  
 
 
 ### <a name="bkmk_dt-require"></a> **Requisiti** del tipo di distribuzione
@@ -518,7 +520,7 @@ Le dipendenze definiscono uno o più tipi di distribuzione da un'altra applicazi
 > [!Note]  
 > Questa pagina non è disponibile nella Creazione guidata tipo di distribuzione. Si tratta di una scheda delle proprietà di un tipo di distribuzione esistente.  
 
-Specificare i codici restituiti per controllare i comportamenti dopo il completamento del tipo di distribuzione. È ad esempio possibile segnalare che è necessario il riavvio, che l'installazione è stata completata oppure personalizzare il testo mostrato agli utenti. 
+Specificare i codici restituiti per controllare i comportamenti dopo il completamento del tipo di distribuzione. È ad esempio possibile segnalare che è necessario il riavvio e che l'installazione è stata completata. 
 
 1. Nella scheda **Codici restituiti** della finestra delle proprietà del tipo di distribuzione fare clic su **Aggiungi**.  
 
@@ -530,13 +532,13 @@ Specificare i codici restituiti per controllare i comportamenti dopo il completa
 
     - **Errore (senza riavvio)**: non è stato possibile installare il tipo di distribuzione.  
 
-    - **Avvio a freddo**: il tipo di distribuzione è stato installato ma richiede il riavvio del dispositivo. Non è possibile eseguire altre installazioni fino al riavvio del dispositivo.  
+    - **Avvio a freddo**: il tipo di distribuzione è stato installato, ma richiede il riavvio del dispositivo. Non è possibile eseguire altre installazioni fino al riavvio del dispositivo.  
 
-    - **Avvio a caldo**: il tipo di distribuzione è stato installato ma richiede il riavvio del dispositivo. È possibile eseguire altre installazioni prima del riavvio del dispositivo.    
+    - **Avvio a caldo**: il tipo di distribuzione è stato installato, ma richiede il riavvio del dispositivo. È possibile eseguire altre installazioni prima del riavvio del dispositivo.    
 
     - **Tentativo veloce**: un'altra installazione è già in corso nel dispositivo. Il client esegue nuovi tentativi ogni due ore, per un totale di 10 volte.  
 
-4. È facoltativamente possibile immettere un **Nome** e una **Descrizione** per questo codice restituito. Questo testo viene mostrato all'utente.  
+4. È facoltativamente possibile immettere un **Nome** e una **Descrizione** per questo codice restituito.
 
 5. Fare clic su **OK** per chiudere la finestra Aggiungi codice restituito.  
 
@@ -549,6 +551,7 @@ Viene distribuita un'applicazione che restituisce un codice di uscita pari a `1`
 Quando si creano alcuni tipi di distribuzione, Configuration Manager aggiunge automaticamente i codici restituiti seguenti comuni per la rispettiva tecnologia:  
 
 **Windows Installer (file \*.msi)**  
+
 |Valore    |Tipo di codice|
 |---------|---------|
 |0        |Operazione riuscita (senza riavvio)|
@@ -558,6 +561,7 @@ Quando si creano alcuni tipi di distribuzione, Configuration Manager aggiunge au
 |1618     |Tentativo veloce|
 
 **Programma di installazione dello script**  
+
 |Valore    |Tipo di codice|
 |---------|---------|
 |0        |Operazione riuscita (senza riavvio)|
@@ -566,6 +570,7 @@ Quando si creano alcuni tipi di distribuzione, Configuration Manager aggiunge au
 |1618     |Tentativo veloce|
 
 **Pacchetto app Windows (\*.appx, \*.appxbundle, \*.msix, \*.msixbundle)**  
+
 |Valore    |Tipo di codice|
 |---------|---------|
 |15605    |Tentativo veloce|
@@ -654,12 +659,12 @@ Configuration Manager supporta i tipi di distribuzione seguenti per le applicazi
 | **Applicazione Web** | Consente di specificare un collegamento a un'applicazione Web. Questo tipo di distribuzione installa un collegamento all'applicazione Web sul dispositivo dell'utente.<sup>[Nota 2](#bkmk_note2)</sup> |  
 | **Windows Installer tramite MDM (\*.msi)** | Consente di creare e distribuire app basate su Windows Installer in dispositivi Windows 10. Per altre informazioni, vedere [Distribuire app Windows Installer nei PC Windows 10 registrati](/sccm/apps/get-started/creating-windows-applications#bkmk_mdm-msi). |  
 
-#### <a name="bkmk_note1"></a> Nota 1: pacchetto app Windows (in Windows Store)
+#### <a name="bkmk_note1"></a> Nota 1: Pacchetto app Windows (in Windows Store)
 Per distribuire l'app come collegamento a Windows Store, configurare l'impostazione **Disattiva applicazione Store** di Criteri di gruppo. Impostare il criterio su **Disabilitato** o **Non configurato**. Se questa impostazione è abilitata, i client non possono connettersi a Windows Store per scaricare e installare applicazioni.
 
 I client Windows valutano sempre i tipi di distribuzione che usano un collegamento a uno Store prima di altri tipi di distribuzione. Il client valuta quindi i tipi di distribuzione in base alla priorità. 
 
-#### <a name="bkmk_note2"></a> Nota 2: applicazione Web  
+#### <a name="bkmk_note2"></a> Nota 2: Applicazione Web  
 Se è stata installata l'applicazione Microsoft Intune Managed Browser in dispositivi iOS o Android, assicurarsi che gli utenti possano usare Managed Browser solo per aprire l'app. Nell'indirizzo del sito Web sostituire **http** con **http-intunemam** o **https** con **https-intunemam**. Ad esempio: 
 - `http-intunemam://<path to web app>`
 - `https-intunemam://<path to web app>`

@@ -10,12 +10,12 @@ ms.assetid: c14a3607-253b-41fb-8381-ae2d534a9022
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7635dce325a2612c144c6eaa9c733b7dffc7c251
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 1c1d83f6dc0de701176bbf6eeec8936afa081829
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456210"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420686"
 ---
 # <a name="install-in-console-updates-for-configuration-manager"></a>Installare gli aggiornamenti nella console per Configuration Manager
 
@@ -165,18 +165,18 @@ Installare l'aggiornamento fuori dal normale orario di ufficio per ogni sito per
 #### <a name="1-when-the-update-installation-starts"></a>1. Quando viene avviata l'installazione dell'aggiornamento  
 Viene visualizzato l'Aggiornamento guidato con un elenco delle aree del prodotto a cui si applica l'aggiornamento.  
 
--   Nella pagina **Generale** della procedura guidata configurare **Avvisi relativi ai prerequisiti** in base alle esigenze:  
+- Nella pagina **Generale** della procedura guidata configurare **Avvisi relativi ai prerequisiti** in base alle esigenze:  
 
-    -   Gli errori relativi ai prerequisiti arrestano sempre l'installazione dell'aggiornamento. Correggere gli errori prima di ritentare l'installazione dell'aggiornamento. Per altre informazioni, vedere [Ripetere l'installazione di un aggiornamento non riuscito](#bkmk_retry) .  
+  - Gli errori relativi ai prerequisiti arrestano sempre l'installazione dell'aggiornamento. Correggere gli errori prima di ritentare l'installazione dell'aggiornamento. Per altre informazioni, vedere [Ripetere l'installazione di un aggiornamento non riuscito](#bkmk_retry) .  
 
-    -   Gli avvisi relativi ai prerequisiti possono anche arrestare l'installazione dell'aggiornamento. Risolvere gli avvisi prima di ritentare l'installazione dell'aggiornamento. Per altre informazioni, vedere [Ripetere l'installazione di un aggiornamento non riuscito](#bkmk_retry) .  
+  - Gli avvisi relativi ai prerequisiti possono anche arrestare l'installazione dell'aggiornamento. Risolvere gli avvisi prima di ritentare l'installazione dell'aggiornamento. Per altre informazioni, vedere [Ripetere l'installazione di un aggiornamento non riuscito](#bkmk_retry) .  
 
-    -   **Ignorare eventuali avvisi del controllo dei prerequisiti e installare questo aggiornamento anche in caso di requisiti mancanti**: impostare una condizione in base alla quale l'installazione dell'aggiornamento ignorerà gli avvisi relativi ai prerequisiti. Questa opzione consente all'installazione dell'aggiornamento di continuare. Se non si seleziona questa opzione, l'installazione dell'aggiornamento si interrompe se viene generato un avviso nel processo. Non usare questa opzione a meno che il controllo dei prerequisiti non sia stato eseguito in precedenza e non siano già stati corretti gli avvisi relativi ai prerequisiti per un sito.  
+  - **Ignorare eventuali avvisi del controllo dei prerequisiti e installare questo aggiornamento anche in caso di requisiti mancanti**: impostare una condizione affinché l'installazione dell'aggiornamento ignori gli avvisi relativi ai prerequisiti. Questa opzione consente all'installazione dell'aggiornamento di continuare. Se non si seleziona questa opzione, l'installazione dell'aggiornamento si interrompe se viene generato un avviso nel processo. Non usare questa opzione a meno che il controllo dei prerequisiti non sia stato eseguito in precedenza e non siano già stati corretti gli avvisi relativi ai prerequisiti per un sito.  
 
-      Nelle aree di lavoro **Amministrazione** e **Monitoraggio**, il nodo Aggiornamenti e manutenzione include un pulsante denominato **Ignora avvisi dei prerequisiti** sulla barra multifunzione. Questo pulsante diventa disponibile quando non viene completata l'installazione di un pacchetto di aggiornamento a causa di avvisi del controllo dei prerequisiti. Ad esempio, dall'Aggiornamento guidato si installa un aggiornamento senza usare l'opzione per ignorare gli avvisi dei prerequisiti. L'installazione dell'aggiornamento si interrompe con uno stato di avviso dei prerequisiti ma senza errori. Facendo quindi clic su **Ignora avvisi dei prerequisiti** sulla barra multifunzione, questa azione attiva la continuazione automatica dell'installazione dell'aggiornamento e gli avvisi relativi ai prerequisiti vengono ignorati. Quando si usa questa opzione l'installazione dell'aggiornamento continua automaticamente dopo alcuni minuti.  
+    Nelle aree di lavoro **Amministrazione** e **Monitoraggio**, il nodo Aggiornamenti e manutenzione include un pulsante denominato **Ignora avvisi dei prerequisiti** sulla barra multifunzione. Questo pulsante diventa disponibile quando non viene completata l'installazione di un pacchetto di aggiornamento a causa di avvisi del controllo dei prerequisiti. Ad esempio, dall'Aggiornamento guidato si installa un aggiornamento senza usare l'opzione per ignorare gli avvisi dei prerequisiti. L'installazione dell'aggiornamento si interrompe con uno stato di avviso dei prerequisiti ma senza errori. Facendo quindi clic su **Ignora avvisi dei prerequisiti** sulla barra multifunzione, questa azione attiva la continuazione automatica dell'installazione dell'aggiornamento e gli avvisi relativi ai prerequisiti vengono ignorati. Quando si usa questa opzione l'installazione dell'aggiornamento continua automaticamente dopo alcuni minuti.  
 
 
--   Se un aggiornamento si applica al client di Configuration Manager, scegliere di testare l'aggiornamento con un set limitato di client. Per altre informazioni, vedere [Come testare gli aggiornamenti client in una raccolta di pre-produzione](/sccm/core/clients/manage/upgrade/test-client-upgrades).  
+- Se un aggiornamento si applica al client di Configuration Manager, scegliere di testare l'aggiornamento con un set limitato di client. Per altre informazioni, vedere [Come testare gli aggiornamenti client in una raccolta di pre-produzione](/sccm/core/clients/manage/upgrade/test-client-upgrades).  
 
 
 #### <a name="2-during-the-update-installation"></a>2. Durante l'installazione dell'aggiornamento  
@@ -209,7 +209,7 @@ Per monitorare lo stato di avanzamento, eseguire questi passaggi:
 
     -   **Installazione**    
 
-    -   **Dopo l'installazione**: per altre informazioni, vedere [Operazioni successive all'installazione](#post-installation-tasks).  
+    -   **Post-installazione**: per altre informazioni, vedere [Attività post-installazione](#post-installation-tasks).  
 
 -   Visualizzare il file **CMUpdate.log** disponibile in `<ConfigMgr_Installation_Directory>\Logs` nel server del sito.  
 
@@ -266,54 +266,54 @@ Non tutte le attività vengono completate immediatamente. Alcune non vengono avv
 
 Le attività di post-installazione includono:
 
--   **Installazione del servizio SMS_EXECUTIVE**
+- **Installazione del servizio SMS_EXECUTIVE**
   -   Servizio critico eseguito nel server del sito.
   -   La reinstallazione di questo servizio viene completata rapidamente.
 
 
--   **Installazione del componente SMS_DATABASE_NOTIFICATION_MONITOR**
+- **Installazione del componente SMS_DATABASE_NOTIFICATION_MONITOR**
   -   Thread del componenti critico del sito del servizio SMS_EXECUTIVE.
   -   La reinstallazione di questo servizio viene completata rapidamente.
 
 
--   **Installazione del componente SMS_HIERARCHY_MANAGER**
+- **Installazione del componente SMS_HIERARCHY_MANAGER**
   -   Componente critico del sito eseguito nel server del sito.
   -   Responsabile della reinstallazione dei ruoli nei server del sistema del sito. Lo stato della reinstallazione dei singoli ruoli del sistema del sito non viene visualizzato.
   -   La reinstallazione di questo servizio viene completata rapidamente.
 
 
--   **Installazione del componente SMS_REPLICATION_CONFIGURATION_MONITOR**
+- **Installazione del componente SMS_REPLICATION_CONFIGURATION_MONITOR**
   -   Componente critico del sito eseguito nel server del sito.
   -   La reinstallazione di questo servizio viene completata rapidamente.
 
 
--   **Installazione del componente SMS_POLICY_PROVIDER**
+- **Installazione del componente SMS_POLICY_PROVIDER**
   -   Componente critico del sito eseguito solo nei siti primari.
   -   La reinstallazione di questo servizio viene completata rapidamente.
 
 
--   **Monitoraggio dell'inizializzazione della replica**   
+- **Monitoraggio dell'inizializzazione della replica**   
   -   Questa attività viene visualizzata solo nel sito di amministrazione centrale e nei siti primari figlio.
   -   Dipende da SMS_REPLICATION_CONFIGURATION_MONITOR.
   -   Viene completata rapidamente.
 
 
--   **Aggiornamento del pacchetto di pre-produzione client di Configuration Manager**    
+- **Aggiornamento del pacchetto di pre-produzione client di Configuration Manager**    
   -   Questa attività viene visualizzata anche quando l'uso della pre-produzione client, anche detta distribuzione pilota del client, non è abilitato.
   -   Viene avviata solo al termine dell'installazione dell'aggiornamento in tutti i siti della gerarchia.
 
 
--   **Aggiornamento della cartella Client nel server del sito**
+- **Aggiornamento della cartella Client nel server del sito**
   -   Questa attività non viene visualizzata se si usa il client in pre-produzione.  
   -   Viene completata rapidamente.
 
 
--   **Aggiornamento del pacchetto client di Configuration Manager**
+- **Aggiornamento del pacchetto client di Configuration Manager**
   -   Questa attività non viene visualizzata se si usa il client in pre-produzione.  
   -   Termina solo quando tutti i siti hanno installato l'aggiornamento.  
 
 
--   **Attivazione delle funzionalità**
+- **Attivazione delle funzionalità**
   -   Questa attività viene visualizzata solo nel sito di livello superiore della gerarchia.
   -   Viene avviata solo al termine dell'installazione dell'aggiornamento in tutti i siti della gerarchia.
   -   Non vengono visualizzate le singole funzionalità.

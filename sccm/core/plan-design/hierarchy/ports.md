@@ -10,12 +10,12 @@ ms.assetid: c6777fb0-0754-4abf-8a1b-7639d23e9391
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5a5ec4f699f2c122dc435bbca5c77789ea972de7
-ms.sourcegitcommit: 2badee2b63ae63687795250e298f463474063100
+ms.openlocfilehash: b074ee02ec5e50fb5e495923538535cf8765dcdb
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45601229"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420941"
 ---
 # <a name="ports-used-in-configuration-manager"></a>Porte usate in Configuration Manager
 
@@ -179,7 +179,7 @@ Per altre informazioni, vedere [Porte CMG e flusso di dati](/sccm/core/clients/m
 
 > [!Important]  
 > Se si abilita un firewall basato su host, verificare che le regole consentano al server di inviare e ricevere su queste porte. Quando si abilita un punto di distribuzione per PXE, Configuration Manager è in grado di abilitare le regole in ingresso (ricezione) per il firewall di Windows. Non consente di configurare le regole in uscita (invio).<!--SCCMDocs issue #744-->  
-  
+
 
 ###  <a name="BKMK_PortsClient-FSP"></a> Client -- > Punto di stato di fallback  
 
@@ -237,12 +237,14 @@ Configuration Manager usa queste connessioni per compilare il canale CMG. Per al
 
 #### <a name="version-1706-or-1710"></a>Versione 1706 o 1710
 La porta specifica dipende dalla configurazione del punto di gestione. 
+
 |Descrizione|UDP|TCP|  
 |-----------------|---------|---------|  
 |HTTPS|--|443|
 |HTTP|--|80|  
 
 #### <a name="version-1802"></a>Versione 1802
+
 |Descrizione|UDP|TCP|  
 |-----------------|---------|---------|  
 |HTTPS|--|443|
@@ -253,6 +255,7 @@ Per altre informazioni, vedere [Porte CMG e flusso di dati](/sccm/core/clients/m
 ###  <a name="bkmk_cmgcp-sup"></a> Punto di connessione CMG -- > Punto di aggiornamento software  
 
 La porta specifica dipende dalla configurazione del punto di aggiornamento software. 
+
 |Descrizione|UDP|TCP|  
 |-----------------|---------|---------|  
 |HTTPS|--|443|
@@ -759,7 +762,7 @@ Configurare le porte seguenti:
  - SQL su TCP: TCP 1433
  - SQL Server Service Broker: TCP 4022
  - Server Message Block (SMB): TCP 445
- - Agente mapping endpoint RPC: TCP 135
+ - Mapper di endpoint RPC: TCP 135
 
 > [!WARNING]  
 >  Configuration Manager non supporta porte dinamiche. Per impostazione predefinita, le istanze denominate di SQL Server usano le porte dinamiche per le connessioni al motore di database. Se si usa un'istanza denominata, configurare manualmente la porta statica per la comunicazione tra siti.  
@@ -794,7 +797,7 @@ Per un esempio di come configurare SQL Server per l'uso di una porta specifica, 
 Configuration Manager usa le porte seguenti per l'individuazione e la pubblicazione delle informazioni del sito:
  - Lightweight Directory Access Protocol (LDAP): 389
  - Catalogo globale LDAP: 3268
- - Mapper di Endpoint RPC: 135
+ - Mapper di endpoint RPC: 135
  - RPC: porte TCP elevate allocate dinamicamente
  - TCP: 1024: 5000
  - TCP:  49152: 65535
@@ -836,17 +839,17 @@ I sistemi del sito o i client locali di Configuration Manager possono eseguire l
 
  I punti di gestione e di distribuzione basati su Internet che supportano i client basati su Internet, il punto di aggiornamento software e il punto di stato di fallback usano le seguenti porte per l'installazione e il ripristino:  
 
--   Server del sito --> Sistema del sito: mapper di endpoint RPC con la porta 135 TCP e UDP.  
+-   Server del sito --> Sistema del sito: Agente mapping endpoint RPC tramite la porta TCP e UDP 135.  
 
--   Server del sito --> Sistema del sito: porte TCP dinamiche RPC  
+-   Server del sito --> Sistema del sito: Porte TCP dinamiche RPC  
 
--   Server del sito &lt; --> Sistema del sito: Server Message Block (SMB) con la porta TCP 445
+-   Server del sito &lt; --> Sistema del sito: Server Message Block (SMB) tramite la porta TCP 445
 
 Le installazioni di applicazioni e pacchetti nei punti di distribuzione richiedono le seguenti porte RPC:  
 
--   Server del sito --> Punto di distribuzione: mapper di endpoint RPC con la porta 135 TCP e UDP
+-   Server del sito -- > Punto di distribuzione: mapper di endpoint RPC tramite la porta TCP e UDP 135
 
--   Server del sito --> Punto di distribuzione: porte TCP dinamiche RPC  
+-   Server del sito -- > Punto di distribuzione: Porte TCP dinamiche RPC  
 
 Usare IPsec per proteggere il traffico tra il server del sito e i sistemi del sito. Se è necessario limitare le porte dinamiche usate con RPC, è possibile usare lo strumento di configurazione RPC di Microsoft (rpccfg.exe) per configurare un intervallo limitato di porte per tali pacchetti RPC. Per altre informazioni sullo strumento di configurazione RPC, vedere [Come configurare RPC per l'utilizzo di determinate porte e come proteggere tali porte tramite IPsec](https://support.microsoft.com/help/908472/how-to-configure-rpc-to-use-certain-ports-and-how-to-help-secure-those).  
 

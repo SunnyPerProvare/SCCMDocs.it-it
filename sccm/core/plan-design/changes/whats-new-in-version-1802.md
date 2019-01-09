@@ -10,12 +10,12 @@ ms.assetid: 5bd637b1-d7a1-411b-877a-c7aae9741173
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0757e7f3fac12c2945a3eab860851b0debf28fd5
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.openlocfilehash: a0e16c137604480ab23e15b52723692491d1816d
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893890"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53414855"
 ---
 # <a name="whats-new-in-version-1802-of-system-center-configuration-manager"></a>Novità della versione 1802 di System Center Configuration Manager
 
@@ -147,7 +147,7 @@ Per informazioni dettagliate, vedere l'articolo [Dashboard dei dispositivi Surfa
 <!-- 1357365 --> Dopo aver abilitato la co-gestione, è possibile eseguire la transizione del carico di lavoro di Endpoint Protection a Intune. Per eseguire questa transizione, passare alla pagina delle proprietà di co-gestione e spostare la barra del dispositivo di scorrimento da Configuration Manager a **Pilota** o **Tutto**. Per informazioni dettagliate sui carichi di lavoro, vedere [Workloads able to be transitioned to Intune](/sccm/core/clients/manage/co-management-switch-workloads#Workloads-able-to-be-transitioned-to-Intune) (Carichi di lavoro disponibili per la transizione a Intune). Per altre informazioni sulla co-gestione, vedere [Co-gestione per dispositivi Windows 10](/sccm/core/clients/manage/co-management-overview).
  
 ### <a name="co-management-dashboard-in-system-center-configuration-manager"></a>Dashboard di co-gestione in System Center Configuration Manager
-<!--1356648--> A partire da questa versione, è possibile visualizzare un dashboard con informazioni sulla co-gestione. Il dashboard consente di esaminare i computer co-gestiti presenti nell'ambiente. I grafici consentono di identificare i dispositivi che potrebbero richiedere attenzione. Per informazioni dettagliate, vedere l'articolo [Dashboard di co-gestione](\sccm\core\clients\manage\client-management-dashboard). 
+<!--1356648--> A partire da questa versione, è possibile visualizzare un dashboard con informazioni sulla co-gestione. Il dashboard consente di esaminare i computer co-gestiti presenti nell'ambiente. I grafici consentono di identificare i dispositivi che potrebbero richiedere attenzione. Per informazioni dettagliate, vedere l'articolo [Dashboard di co-gestione](/sccm/core/clients/manage/client-management-dashboard). 
 
 
 ## <a name="compliance-settings"></a>Impostazioni di conformità

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: c552c58ca44943f1c5be6e2ffc9efc807c0cc41b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a50e78a65a1c41189baedf877ece24c324abad71
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32339996"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423916"
 ---
 # <a name="content-source-location-scenarios-in-system-center-configuration-manager"></a>Scenari del percorso di origine del contenuto in System Center Configuration Manager
 
@@ -35,9 +35,9 @@ Nelle versioni precedenti alla versione 1610, System Center Configuration Manage
 
 **Le tre impostazioni seguenti definiscono il comportamento quando i client richiedono contenuti:**
 
--  **Consenti percorso origine di fallback per il contenuto** (opzione abilitata o non abilitata): questa opzione può essere abilitata nella scheda **Gruppi limite** di un punto di distribuzione. L'opzione consente al client di usare un punto di distribuzione configurato come percorso di fallback quando non è disponibile contenuto in un punto di distribuzione preferito.  
+- **Consenti percorso origine di fallback per il contenuto** (opzione abilitata o non abilitata): questa opzione può essere abilitata nella scheda **Gruppi limite** di un punto di distribuzione. L'opzione consente al client di usare un punto di distribuzione configurato come percorso di fallback quando non è disponibile contenuto in un punto di distribuzione preferito.  
 
- - **Comportamento di distribuzione per la velocità di connessione di rete**: ogni distribuzione è configurata con uno dei comportamenti seguenti da usare quando la connessione al punto di distribuzione è lenta:  
+  - **Comportamento di distribuzione per la velocità di connessione di rete**: ogni distribuzione è configurata con uno dei comportamenti seguenti da usare quando la connessione al punto di distribuzione è lenta:  
 
     -   **Scarica il contenuto dal punto di distribuzione ed esegui in locale**  
 
@@ -45,7 +45,7 @@ Nelle versioni precedenti alla versione 1610, System Center Configuration Manage
 
     La velocità di connessione per un punto di distribuzione è configurata nella scheda **Riferimenti** di un gruppo di limiti ed è specifica per tale gruppo.  
 
- -  **Distribuzione di pacchetti su richiesta** (nei punti di distribuzione preferiti): questa opzione viene abilitata quando si seleziona l'opzione **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti** nella scheda **Impostazioni distribuzione** delle proprietà delle applicazioni o di un pacchetto. Quando è abilitata, questa opzione fa in modo che Configuration Manager copi automaticamente il contenuto in un punto di distribuzione preferito in cui ancora non è presente dopo che un client richiede tale contenuto da tale punto di distribuzione.  
+  - **Distribuzione di pacchetti su richiesta** (nei punti di distribuzione preferiti): questa opzione viene abilitata quando si seleziona l'opzione **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti** nella scheda **Impostazioni distribuzione** delle proprietà delle applicazioni o di un pacchetto. Quando è abilitata, questa opzione fa in modo che Configuration Manager copi automaticamente il contenuto in un punto di distribuzione preferito in cui ancora non è presente dopo che un client richiede tale contenuto da tale punto di distribuzione.  
 
 
  **I requisiti seguenti si applicano a tutti gli scenari:**
@@ -61,12 +61,12 @@ Nelle versioni precedenti alla versione 1610, System Center Configuration Manage
 
 -   **Il contenuto è disponibile in un punto di distribuzione preferito**  
 
--   **Consenti fallback**: opzione non abilitata  
+-   **Consenti fallback**: Non abilitato  
 
--   **Comportamento di distribuzione per rete lenta**: qualsiasi configurazione  
+-   **Comportamento di distribuzione per rete lenta**: Qualsiasi configurazione  
 
 
-**Dettagli**: la configurazione per la distribuzione di pacchetti su richiesta non è pertinente in questo scenario.  
+**Dettagli:** la configurazione per la distribuzione di pacchetti su richiesta non è pertinente in questo scenario.  
 
 1.  Il client invia una richiesta di contenuto al punto di gestione.  
 
@@ -79,12 +79,12 @@ Nelle versioni precedenti alla versione 1610, System Center Configuration Manage
 
 -   **Il contenuto è disponibile in un punto di distribuzione preferito**  
 
--   **Consenti fallback**: opzione abilitata  
+-   **Consenti fallback**: Abilitato  
 
--   **Comportamento di distribuzione per rete lenta**: Non scaricare il contenuto  
+-   **Comportamento di distribuzione per rete lenta**: Non scaricare contenuto  
 
 
-**Dettagli**: la configurazione per la distribuzione di pacchetti su richiesta non è pertinente in questo scenario.  
+**Dettagli:** la configurazione per la distribuzione di pacchetti su richiesta non è pertinente in questo scenario.  
 
 1.  Il client invia una richiesta di contenuto al punto di gestione. Il client include un flag con la richiesta che indica che i punti di distribuzione di fallback sono consentiti.  
 
@@ -97,12 +97,12 @@ Nelle versioni precedenti alla versione 1610, System Center Configuration Manage
 
 -   **Il contenuto è disponibile in un punto di distribuzione preferito**  
 
--   **Consenti fallback**: opzione abilitata  
+-   **Consenti fallback**: Abilitato  
 
 -   **Comportamento di distribuzione per rete lenta**: Scaricare e installare il contenuto  
 
 
-**Dettagli**: la configurazione per la distribuzione di pacchetti su richiesta non è pertinente in questo scenario.  
+**Dettagli:** la configurazione per la distribuzione di pacchetti su richiesta non è pertinente in questo scenario.  
 
 1.  Il client invia una richiesta di contenuto al punto di gestione. Il client include un flag con la richiesta che indica che i punti di distribuzione di fallback sono consentiti.  
 
@@ -117,9 +117,9 @@ Nelle versioni precedenti alla versione 1610, System Center Configuration Manage
 
 -   **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti**: opzione non abilitata  
 
--   **Consenti fallback**: opzione non abilitata  
+-   **Consenti fallback**: Non abilitato  
 
--   **Comportamento di distribuzione per rete lenta**: qualsiasi configurazione  
+-   **Comportamento di distribuzione per rete lenta**: Qualsiasi configurazione  
 
 
 **Dettagli:**  
@@ -137,9 +137,9 @@ Nelle versioni precedenti alla versione 1610, System Center Configuration Manage
 
 -   **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti**: opzione non abilitata  
 
--   **Consenti fallback**: opzione abilitata  
+-   **Consenti fallback**: Abilitato  
 
--   **Comportamento di distribuzione per rete lenta**: Non scaricare il contenuto  
+-   **Comportamento di distribuzione per rete lenta**: Non scaricare contenuto  
 
 
 **Dettagli:**  
@@ -157,7 +157,7 @@ Nelle versioni precedenti alla versione 1610, System Center Configuration Manage
 
 -   **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti**: opzione non abilitata  
 
--   **Consenti fallback**: opzione abilitata  
+-   **Consenti fallback**: Abilitato  
 
 -   **Comportamento di distribuzione per rete lenta**: Scaricare e installare il contenuto  
 
@@ -177,9 +177,9 @@ Nelle versioni precedenti alla versione 1610, System Center Configuration Manage
 
 -   **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti**: opzione abilitata  
 
--   **Consenti fallback**: opzione non abilitata  
+-   **Consenti fallback**: Non abilitato  
 
--   **Comportamento di distribuzione per rete lenta**: qualsiasi configurazione  
+-   **Comportamento di distribuzione per rete lenta**: Qualsiasi configurazione  
 
 
 **Dettagli:**  
@@ -205,9 +205,9 @@ Nelle versioni precedenti alla versione 1610, System Center Configuration Manage
 
 -   **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti**: opzione abilitata  
 
--   **Consenti fallback**: opzione abilitata  
+-   **Consenti fallback**: Abilitato  
 
--   **Comportamento di distribuzione per rete lenta**: Non scaricare il contenuto  
+-   **Comportamento di distribuzione per rete lenta**: Non scaricare contenuto  
 
 
 **Dettagli:**  
@@ -235,7 +235,7 @@ Nelle versioni precedenti alla versione 1610, System Center Configuration Manage
 
 -   **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti**: opzione abilitata  
 
--   **Consenti fallback**: opzione abilitata  
+-   **Consenti fallback**: Abilitato  
 
 -   **Comportamento di distribuzione per rete lenta**: Scaricare e installare il contenuto  
 

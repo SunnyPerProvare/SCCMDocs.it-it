@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
-ms.openlocfilehash: 807204b9a64e36e103a32d553e7804a0a8592ec1
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: ea1225b1f7ec29d089e8991e397fbae64d5a38eb
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383806"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424188"
 ---
 # <a name="plan-for-software-updates-in-configuration-manager"></a>Pianificare gli aggiornamenti software in Configuration Manager
 
@@ -104,9 +104,9 @@ Configuration Manager offre al client un elenco di punti di aggiornamento softwa
 
 Il client seleziona un punto di aggiornamento software a caso dall'elenco. Assegna la priorità ai punti di aggiornamento software appartenenti alla stessa foresta. Configuration Manager offre ai client un elenco diverso a seconda del tipo di client:  
 
--   **Client basati su intranet**: ricevono un elenco di punti di aggiornamento software che è possibile configurare per consentire solo connessioni dall'intranet oppure un elenco di punti di aggiornamento software che consentono connessioni client su Internet e intranet.  
+-   **Client basati su Intranet**: si riceve un elenco di punti di aggiornamento software che è possibile configurare per consentire solo connessioni dalla Intranet oppure un elenco di punti di aggiornamento software che consentono connessioni client Internet e Intranet.  
 
--   **Client basati su Internet**: ricevono un elenco di punti di aggiornamento software che è possibile configurare per consentire solo le connessioni da Internet oppure un elenco di punti di aggiornamento software che consentono connessioni client su Internet e Intranet.  
+-   **Client basati su Internet**: si riceve un elenco di punti di aggiornamento software che è possibile configurare per consentire solo connessioni da Internet oppure un elenco di punti di aggiornamento software che consentono connessioni client Internet e Intranet.  
 
 
 ###  <a name="BKMK_SUPSwitching"></a> Passaggio a un nuovo punto di aggiornamento software  
@@ -342,15 +342,15 @@ Potrebbe essere necessario aggiungere gli indirizzi seguenti al firewall che si 
 - Se i siti secondari hanno un punto di aggiornamento software 
 - Se è presente un punto di aggiornamento software basato su Internet attivo remoto in un sito
 
- **Punto di aggiornamento software nel sito secondario**  
+  **Punto di aggiornamento software nel sito secondario**  
 
--   `http://<FQDN for software update point on child site>`  
+- `http://<FQDN for software update point on child site>`  
 
--   `https://<FQDN for software update point on child site>`  
+- `https://<FQDN for software update point on child site>`  
 
--   `http://<FQDN for software update point on parent site>`  
+- `http://<FQDN for software update point on parent site>`  
 
--   `https://<FQDN for software update point on parent site>`  
+- `https://<FQDN for software update point on parent site>`  
 
 
 
@@ -372,7 +372,7 @@ La sincronizzazione degli aggiornamenti software in Configuration Manager scaric
 
 Le impostazioni dell'origine di sincronizzazione per il punto di aggiornamento software specificano il percorso in cui il punto di aggiornamento software recupera i metadati degli aggiornamenti software. Le impostazioni specificano anche se il processo di sincronizzazione crea eventi di reporting WSUS.  
 
--   **Origine sincronizzazione**: per impostazione predefinita, il punto di aggiornamento software nel sito di livello superiore configura l'origine della sincronizzazione per Microsoft Update. È possibile sincronizzare il sito principale con un server WSUS esistente. Il punto di aggiornamento software in un sito primario figlio configura l'origine di sincronizzazione come il punto di aggiornamento software nel sito di amministrazione centrale.  
+-   **Origine di sincronizzazione**: per impostazione predefinita, il punto di aggiornamento software nel sito di livello superiore configura l'origine di sincronizzazione per Microsoft Update. È possibile sincronizzare il sito principale con un server WSUS esistente. Il punto di aggiornamento software in un sito primario figlio configura l'origine di sincronizzazione come il punto di aggiornamento software nel sito di amministrazione centrale.  
 
     -  Il primo punto di aggiornamento software installato in un sito primario, ovvero il punto predefinito, si sincronizza con il sito di amministrazione centrale. I punti di aggiornamento software aggiuntivi nel sito primario si sincronizzano con il punto di aggiornamento software predefinito nel sito primario.  
 
@@ -397,23 +397,23 @@ Ogni aggiornamento software viene definito in base a una classificazione di aggi
 
 Configuration Manager supporta la sincronizzazione delle classificazioni aggiornamenti seguenti:  
 
--   **Aggiornamenti critici**: aggiornamento rilasciato su vasta scala per un problema specifico, che risolve un bug critico, non correlato alla sicurezza.  
+-   **Aggiornamenti critici**: aggiornamento rilasciato su vasta scala per un problema specifico, per un bug critico, non correlato alla sicurezza.  
 
--   **Aggiornamenti delle definizioni**: aggiornamento di file di definizioni antivirus o altri file di definizioni.  
+-   **Aggiornamenti delle definizioni**: aggiornamento per virus o altri file di definizione.  
 
 -   **Feature Pack**: nuove funzionalità del prodotto distribuite al di fuori di una versione del prodotto. In genere sono incluse nella versione successiva del prodotto completo.  
 
--   **Aggiornamenti della sicurezza**: aggiornamento rilasciato su vasta scala per un problema specifico del prodotto e associato alla sicurezza.  
+-   **Aggiornamenti della sicurezza**: aggiornamento rilasciato su vasta scala per un problema specifico del prodotto e correlato alla sicurezza.  
 
--   **Service Pack**: set cumulativo di aggiornamenti rapidi applicati a un sistema operativo o un'applicazione. Questi aggiornamenti rapidi includono aggiornamenti della sicurezza, aggiornamenti critici e aggiornamenti software.  
+-   **Service Pack**: set cumulativo di hotfix applicati a un sistema operativo o a un'applicazione. Questi aggiornamenti rapidi includono aggiornamenti della sicurezza, aggiornamenti critici e aggiornamenti software.  
 
 -   **Strumenti**: utilità o funzionalità che consentono di completare una o più attività.  
 
--   **Aggiornamento cumulativo**: set cumulativo di aggiornamenti rapidi inclusi nello stesso pacchetto per facilitarne la distribuzione. Questi aggiornamenti rapidi includono aggiornamenti della sicurezza, aggiornamenti critici e aggiornamenti software. Un aggiornamento cumulativo è relativo in genere a un'area specifica, ad esempio la sicurezza o un componente del prodotto.  
+-   **Aggiornamenti cumulativi**: set cumulativo di hotfix inclusi nello stesso pacchetto per facilitarne la distribuzione. Questi aggiornamenti rapidi includono aggiornamenti della sicurezza, aggiornamenti critici e aggiornamenti software. Un aggiornamento cumulativo è relativo in genere a un'area specifica, ad esempio la sicurezza o un componente del prodotto.  
 
 -   **Aggiornamenti**: aggiornamento di un'applicazione o di un file attualmente installato.  
 
--   **Aggiornamenti funzionalità**: aggiornamento delle funzionalità a una nuova versione di Windows 10.  
+-   **Aggiornamenti delle funzionalità**: aggiornamento delle funzionalità a una nuova versione di Windows 10.  
 
 Configurare le impostazioni delle classificazioni aggiornamento solo nel sito di livello superiore. Tali impostazioni non vengono configurate nel punto di aggiornamento software dei siti figlio, poiché i metadati degli aggiornamenti software vengono replicati dal sito di livello superiore. Quando si selezionano le classificazioni di aggiornamento, tenere presente che quante più classificazioni vengono selezionate tanto maggiore sarà il tempo richiesto per la sincronizzazione dei metadati degli aggiornamenti software.  
 
@@ -454,7 +454,7 @@ Prendere in considerazione i seguenti scenari in cui potrebbe essere necessario 
 -   Un aggiornamento software sostitutivo potrebbe non essere stato approvato per la distribuzione nell'ambiente di produzione.  
 
     > [!NOTE]  
-    > Quando Configuration Manager imposta un aggiornamento software sostituito su **Scaduto**, non imposta l'aggiornamento su **Rifiutato** in WSUS. Quando però viene eseguita l'attività di pulizia di WSUS, gli aggiornamenti impostati su **Scaduto** in Configuration Manager vengono impostati su **Rifiutato** nel server WSUS. Di conseguenza l'agente di Windows Update nei client non effettua più l'analisi di questi aggiornamenti. I client continuano a eseguire l'analisi di aggiornamento scaduto fino all'esecuzione dell'attività di pulizia. Per altre informazioni sull'attività di pulizia di WSUS, vedere [Manutenzione degli aggiornamenti software](/sccm/sum/deploy-use/software-updates-maintenance).  
+    > Prima di Configuration Manager versione 1806, quando Configuration Manager imposta un aggiornamento software sostituito su **Scaduto**, non imposta l'aggiornamento su **Rifiutato** in WSUS. I client continuano a eseguire l'analisi dell'aggiornamento scaduto finché l'aggiornamento non viene rifiutato manualmente o tramite uno script personalizzato.  Dopo Configuration Manager versione 1806, Configuration Manager rifiuterà anche gli aggiornamenti sostituiti in WSUS. Per altre informazioni sull'attività di pulizia di WSUS, vedere [Manutenzione degli aggiornamenti software](/sccm/sum/deploy-use/software-updates-maintenance).
 
 
 ###  <a name="BKMK_UpdateLanguages"></a> Lingue  

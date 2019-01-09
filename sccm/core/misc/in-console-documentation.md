@@ -9,12 +9,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 robots: noindex,nofollow
-ms.openlocfilehash: b9602d6641e1bb28a3af7c24c64073ba019e0f3e
-ms.sourcegitcommit: 6126dfdf5c879db7d12c3eec019a88fa44521361
+ms.openlocfilehash: a71aa0834a241332d3390e1d888d99b6e3f986f7
+ms.sourcegitcommit: d36e4c7082a5144e79035dd8847c8e741fa04667
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52830507"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53444570"
 ---
 <!-- 
 - Feature 1357546
@@ -89,7 +89,7 @@ Articoli con un aggiornamento recente e significativo.
 ## <a name="troubleshooting-articles"></a>Articoli sulla risoluzione dei problemi
 Procedure dettagliate guidate che semplificano la risoluzione dei problemi relativi a funzionalità e componenti di Configuration Manager.
 
-- [Risoluzione dei problemi di avvio PXE](https://support.microsoft.com/help/10082)
+- [Risoluzione dei problemi di avvio PXE](https://support.microsoft.com/help/4468612)
 - [Risoluzione dei problemi di sincronizzazione degli aggiornamenti software](https://support.microsoft.com/help/10059)
 - [Informazioni e risoluzione dei problemi di distribuzione del contenuto](https://support.microsoft.com/help/4000401)
 - [Informazioni e risoluzione dei problemi di integrazione di Microsoft Store per le aziende](https://support.microsoft.com/help/4010214)
@@ -101,12 +101,12 @@ Procedure dettagliate guidate che semplificano la risoluzione dei problemi relat
 ## <a name="new-and-updated-support-articles"></a>Articoli di supporto nuovi e aggiornati
 Articoli del supporto tecnico nuovi o aggiornati in novembre 2018.
 
-- [KB 4468362: How to deploy a Windows language pack as an application in Configuration Manager](https://support.microsoft.com/help/4468362) (KB 4468362: Come distribuire un Language Pack di Windows come applicazione in Configuration Manager)
-- [KB 4469580: ConfigMgr PXE does not work because a self-signed certificate is not created](https://support.microsoft.com/help/4469580/) (KB 4469580: PXE di ConfigMgr non funziona perché non viene creato un certificato autofirmato)
-- [KB 4471003: How to boot from a PXE server that's on a different network](https://support.microsoft.com/help/4471003) (KB 4471003: Come eseguire l'avvio da un server PXE su una rete diversa)
-- [KB 4462978: Update rollup for System Center Configuration Manager current branch, version 1806](https://support.microsoft.com/help/4462978) (KB 4462978: Aggiornamento cumulativo per System Center Configuration Manager Current Branch, versione 1806)
-- [KB 4471061: A client computer can "steal" the Configuration Manager GUID of an Unknown Computer object during imaging](https://support.microsoft.com/help/4471061) (KB 4471061: Un computer client può "rubare" l'interfaccia utente grafica di Configuration Manager di un oggetto computer sconosciuto durante la creazione delle immagini)
-- [KB 4471115: Dynamic Media in Configuration Manager cannot get management point locations when the Task Sequence Wizard runs in Windows PE](https://support.microsoft.com/help/4471115) (KB 4471115: Il supporto dinamico in Configuration Manager non riesce a ottenere le posizioni dei punti di gestione quando la procedura guidata della sequenza di attività viene eseguita in Windows PE)
+- [KB4468362: How to deploy a Windows language pack as an application in Configuration Manager](https://support.microsoft.com/help/4468362) (KB4468362: Come distribuire un Language Pack di Windows come applicazione in Configuration Manager)
+- [KB4469580: ConfigMgr PXE does not work because a self-signed certificate is not created](https://support.microsoft.com/help/4469580/) (KB4469580: PXE di ConfigMgr non funziona perché non viene creato un certificato autofirmato)
+- [KB4471003: How to boot from a PXE server that's on a different network](https://support.microsoft.com/help/4471003) (KB4471003: Come eseguire l'avvio da un server PXE su una rete diversa)
+- [KB4462978: Update rollup for System Center Configuration Manager current branch, version 1806](https://support.microsoft.com/help/4462978) (KB4462978: Aggiornamento cumulativo per System Center Configuration Manager Current Branch, versione 1806)
+- [KB4471061: A client computer can "steal" the Configuration Manager GUID of an Unknown Computer object during imaging](https://support.microsoft.com/help/4471061) (KB4471061: Un computer client può "rubare" l'interfaccia utente grafica di Configuration Manager di un oggetto computer sconosciuto durante la creazione delle immagini)
+- [KB4471115: Dynamic Media in Configuration Manager cannot get management point locations when the Task Sequence Wizard runs in Windows PE](https://support.microsoft.com/help/4471115) (KB4471115: Il supporto dinamico in Configuration Manager non riesce a ottenere le posizioni dei punti di gestione quando la procedura guidata della sequenza di attività viene eseguita in Windows PE)
 
 
 Per sottoscrivere la notifica Atom o RSS dei nuovi articoli di supporto di Configuration Manager, vedere [Aggiornamenti dei contenuti del supporto](https://support.microsoft.com/help/4089498/) e selezionare **System Center Configuration Manager**.  

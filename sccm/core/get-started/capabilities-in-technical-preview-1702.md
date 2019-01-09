@@ -10,12 +10,12 @@ ms.assetid: aedd608d-6db3-4ea5-851d-70f2dcda6bb5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: dc1fc6668c61f2eafe04f92fc6b9ea27520ddc43
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: d87ef098b096f1dc04bc424a3a100955b12f6f57
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342461"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419020"
 ---
 # <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1702 per System Center Configuration Manager
 
@@ -30,9 +30,9 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
 Questa anteprima introduce nuove opzioni per l'invio di commenti e suggerimenti nella console di Configuration Manager. Le opzioni di Commenti e suggerimenti consentono di inviare commenti e suggerimenti direttamente al team di sviluppo, tramite il sito Web UserVoice di Configuration Manager.  
 
->È possibile trovare l'opzione **Commenti e suggerimenti**:
--  Nella barra multifunzione, all'estrema sinistra della scheda Home di ogni nodo.  
-   ![Barra multifunzione](./media/feedback-home.png)
+> È possibile trovare l'opzione **Commenti e suggerimenti**:
+> -  Nella barra multifunzione, all'estrema sinistra della scheda Home di ogni nodo.  
+>    ![Barra multifunzione](./media/feedback-home.png)
 
 -  Facendo clic con il pulsante destro del mouse su qualsiasi oggetto nella console.   
     ![Opzione con clic con il pulsante destro del mouse](./media/feedback-option.png)   
@@ -86,8 +86,8 @@ Dopo avere configurato Configuration Manager per l'esecuzione in Azure AD, è po
 Per ogni metodo da usare, modificare la query LDAP per cercare le strutture di unità organizzativa di Azure Active Directory anziché i contenitori tipici di Active Directory locale. Questo richiede che la query venga indirizzata per la ricerca in Active Directory nella sottoscrizione di Azure.  
 
 Negli esempi seguenti viene usata una Azure AD di *contoso.onmicrosoft.com*:
- - **Individuazione del sistema**   
-Azure AD archivia i dispositivi nell'unità organizzativa **AADDC Computers**.  Configurare quanto segue:  
+- **Individuazione del sistema**   
+  Azure AD archivia i dispositivi nell'unità organizzativa **AADDC Computers**.  Configurare quanto segue:  
   - *LDAP://OU=AADDC Computers,DC=contoso,DC=onmicrosoft,DC=com*  
 
 
@@ -113,7 +113,7 @@ Ciò consente alle organizzazioni di ridurre la perdita di dati da app non prote
 
 ### <a name="try-it-out"></a>Procedura
 
-**Scenario:** identificare le applicazioni che potrebbero causare perdita di dati inviando dati aziendali all'esterno dell'azienda o che causano un uso eccessivo dei dati e quindi [creare un criterio di conformità dei dispositivi per l'accesso condizionale](https://docs.microsoft.com/sccm/protect/deploy-use/create-compliance-policy) che aggiunge queste applicazioni all'elenco di applicazioni non conformi. In questo modo verrà bloccato l'accesso alle risorse aziendali che supportano l'accesso condizionale fino a quando l'utente non potrà rimuovere l'app bloccata.
+**Scenario:** identificare le app che potrebbero causare perdita di dati inviando dati aziendali all'esterno dell'azienda o che causano un uso eccessivo dei dati e quindi [creare un criterio di conformità dei dispositivi per l'accesso condizionale](https://docs.microsoft.com/sccm/protect/deploy-use/create-compliance-policy) che aggiunge queste app all'elenco di app non conformi. In questo modo verrà bloccato l'accesso alle risorse aziendali che supportano l'accesso condizionale fino a quando l'utente non potrà rimuovere l'app bloccata.
 
 ## <a name="antimalware-client-version-alert"></a>Avviso della versione del client antimalware
 A partire da questa versione della Technical Preview, Configuration Manager Endpoint Protection genera un avviso se oltre il 20% (valore predefinito) dei client gestiti usa una versione obsoleta del client antimalware, ad esempio il client di Windows Defender o Endpoint Protection.
@@ -174,8 +174,8 @@ Attenersi alla procedura seguente per impostare una sequenza di attività a impa
 1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Sequenze di attività**.
 2. Selezionare l'attività da modificare e fare clic su **Proprietà**.
 3. Nella scheda **Notifica utente** selezionare **Usa il testo personalizzato**.
->  [!NOTE]
->  È possibile impostare il testo della notifica utente solo quando l'opzione **Questa è una sequenza di attività a impatto elevato** è selezionata.
+   > [!NOTE]
+   >  È possibile impostare il testo della notifica utente solo quando l'opzione **Questa è una sequenza di attività a impatto elevato** è selezionata.
 
 4. Configurare le impostazioni seguenti (massimo 255 caratteri per casella di testo):
 
@@ -188,20 +188,20 @@ Attenersi alla procedura seguente per impostare una sequenza di attività a impa
 
    Si supponga di configurare la notifica personalizzata seguente nelle proprietà.
 
-   ![Notifica personalizzata per una sequenza di attività](.\media\user-notification.png)
+   ![Notifica personalizzata per una sequenza di attività](./media/user-notification.png)
 
    Verrà visualizzato il messaggio di notifica seguente quando l'utente finale apre il programma di installazione da Software Center.
 
-   ![Notifica personalizzata per una sequenza di attività](.\media\user-notification-enduser.png)
+   ![Notifica personalizzata per una sequenza di attività](./media/user-notification-enduser.png)
 
 ### <a name="configure-software-center-properties"></a>Configurare le proprietà di Software Center
 Attenersi alla procedura seguente per configurare i dettagli per la sequenza di attività visualizzata in Software Center. Tali dettagli sono solo a scopo informativo.  
 1. Nella console di Configuration Manager accedere a **Raccolta software** > **Sistemi operativi** > **Sequenze di attività**.
 2. Selezionare l'attività da modificare e fare clic su **Proprietà**.
 3. Nella scheda **Generale** sono disponibili le impostazioni seguenti per Software Center:
-  - **Riavvio necessario**: consente all'utente di sapere se è necessario un riavvio durante l'installazione.
-  - **Dimensioni del download (MB)**: specifica quanti megabyte vengono visualizzati in Software Center per la sequenza di attività.  
-  - **Tempo di esecuzione stimato (minuti)**: specifica il tempo di esecuzione stimato in minuti che viene visualizzato in Software Center per la sequenza di attività.
+   - **Riavvio necessario**: consente all'utente di sapere se è necessario un riavvio durante l'installazione.
+   - **Dimensioni del download (MB)**: specifica quanti megabyte vengono visualizzati in Software Center per la sequenza di attività.  
+   - **Tempo di esecuzione stimato (minuti)**: specifica il tempo di esecuzione stimato in minuti che viene visualizzato in Software Center per la sequenza di attività.
 
 
 ## <a name="check-for-running-executable-files-before-installing-an-application"></a>Controllare l'esecuzione di file eseguibili prima di installare un'applicazione
@@ -264,8 +264,7 @@ Sono state aggiunte nuove impostazioni che è possibile usare negli elementi di 
 - **Tastiere predittive** (solo modalità di supervisione)
 - **Correzione automatica** (solo modalità di supervisione)
 - **Controllo ortografico tastiera** (solo modalità di supervisione)
-- **Scelte rapide da tastiera** (solo modalità di supervisione)
-<!--- - **Enterprise app trust settings modification** --->
+- **Scelte rapide da tastiera** (solo modalità di supervisione) <!--- - **Enterprise app trust settings modification** --->
 - **Installazione di app solo con Apple Configurator e iTunes** (solo modalità di supervisione)
 - **Download automatici delle app** (solo modalità di supervisione)
 - **Modifica le impostazioni dell'app Find My Friends** (solo modalità di supervisione)
@@ -298,17 +297,17 @@ Le sezioni seguenti descrivono la gestione di Android for Work.
 #### <a name="enable-android-for-work-management"></a>Abilitare la gestione di Android for Work
 1. Creare un account Google all'indirizzo https://accounts.google.com/SignUp da usare come account amministratore di Android for Work, che verrà associato a tutte le attività di gestione di Android for Work per il tenant di Intune. Potrebbe trattarsi di un account di Google condiviso tra gli amministratori che gestiscono i dispositivi Android. Si tratta dell'account Google usato dall'organizzazione per gestire e pubblicare applicazioni nella console di Play for Work. Questo account verrà usato per approvare le applicazioni nello store di Play for Work, quindi è consigliabile appuntarsi nome dell'account e password.
 2. Abilitare la registrazione di Android associando l'account Google al tenant di Intune gestito in Configuration Manager:
-  1. Accedere ad **Amministrazione** > **Panoramica** > **Servizi cloud** > **Sottoscrizioni a Microsoft Intune** e selezionare la propria sottoscrizione Intune.
-  2. Nella barra multifunzione fare clic su **Configura piattaforme** > **Android** e assicurarsi che l'opzione **Abilita registrazione Android** sia selezionata.
-  3. Nella barra multifunzione fare clic su **Configura piattaforme** > **Android for Work**.
-  4. Nella finestra di dialogo fare clic su **Configura Android for Work nella console di Intune**. La console di Intune viene aperta nel Web browser.
-  5. Usare le credenziali di amministratore di Intune per accedere al portale di Intune.
-  6. Fare clic su **Configura** per aprire il sito Web Android for Work di Google Play.
-  7. Nella pagina di accesso di Google immettere le credenziali Google dal passaggio 1 e quindi specificare le informazioni aziendali.
+   1. Accedere ad **Amministrazione** > **Panoramica** > **Servizi cloud** > **Sottoscrizioni a Microsoft Intune** e selezionare la propria sottoscrizione Intune.
+   2. Nella barra multifunzione fare clic su **Configura piattaforme** > **Android** e assicurarsi che l'opzione **Abilita registrazione Android** sia selezionata.
+   3. Nella barra multifunzione fare clic su **Configura piattaforme** > **Android for Work**.
+   4. Nella finestra di dialogo fare clic su **Configura Android for Work nella console di Intune**. La console di Intune viene aperta nel Web browser.
+   5. Usare le credenziali di amministratore di Intune per accedere al portale di Intune.
+   6. Fare clic su **Configura** per aprire il sito Web Android for Work di Google Play.
+   7. Nella pagina di accesso di Google immettere le credenziali Google dal passaggio 1 e quindi specificare le informazioni aziendali.
 3. Quando si torna al portale di Intune, Android for Work è attivato e sono disponibili tre opzioni di registrazione per i dispositivi Android for Work:
-  - **Gestisci tutti i dispositivi come Android**: (disabilitata) tutti i dispositivi Android, inclusi i dispositivi Android for Work, verranno registrati come dispositivi Android convenzionali
-  - **Gestisci i dispositivi supportati come Android for Work**: (abilitata) tutti i dispositivi che supportano Android for Work vengano registrati come dispositivi Android for Work. I dispositivi Android che non supportano Android for Work vengono registrati come dispositivi Android convenzionali.
-  - **Gestisci i dispositivi supportati per gli utenti solo in questi gruppi come Android for Work**: (test) consente di usare la gestione Android for Work per un insieme di utenti limitato. Solo i membri dei gruppi selezionati che registrano un dispositivo che supporta Android for Work vengono registrati come dispositivi Android for Work. Tutti gli altri vengono registrati come dispositivi Android.
+   - **Gestisci tutti i dispositivi come Android**: (disabilitata) tutti i dispositivi Android, inclusi i dispositivi Android for Work, verranno registrati come dispositivi Android convenzionali
+   - **Gestisci i dispositivi supportati come Android for Work**: (abilitata) tutti i dispositivi che supportano Android for Work vengano registrati come dispositivi Android for Work. I dispositivi Android che non supportano Android for Work vengono registrati come dispositivi Android convenzionali.
+   - **Gestisci i dispositivi supportati per gli utenti solo in questi gruppi come Android for Work**: (test) consente di usare la gestione Android for Work per un insieme di utenti limitato. Solo i membri dei gruppi selezionati che registrano un dispositivo che supporta Android for Work vengono registrati come dispositivi Android for Work. Tutti gli altri vengono registrati come dispositivi Android.
   
 > [!NOTE]
 > Un problema noto impedisce all'opzione **Gestisci i dispositivi supportati per gli utenti solo in questi gruppi come Android for Work** di funzionare come previsto. I dispositivi degli utenti nei gruppi Azure AD specificati saranno registrati come Android anziché Android for Work. Per testare Android for Work, è necessario usare **Gestisci i dispositivi supportati come Android for Work**.

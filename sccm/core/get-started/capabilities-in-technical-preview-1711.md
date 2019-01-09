@@ -10,12 +10,12 @@ ms.assetid: 2e68dc12-6776-437a-9138-45cd7d4bf9cf
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6353b765f769dfa57ea57926d12bf2b254ba8f68
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 4a28f05e813a375f72d15113a01092924eb2245e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32343872"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424902"
 ---
 # <a name="capabilities-in-technical-preview-1711-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1711 per System Center Configuration Manager
 
@@ -30,8 +30,8 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
     Workaround details.
 -->
 **Problemi noti di questa versione Technical Preview:**
--   **Supporto per Windows 10, versione 1709 (anche noto come Fall Creators Update)**.  A partire da questa versione di Windows, il supporto include più versioni. Quando si configura una sequenza di attività per l'uso di un pacchetto di aggiornamento o di un'immagine del sistema operativo, assicurarsi di selezionare un'[edizione utilizzabile da Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
--   **L'aggiornamento a una nuova versione di anteprima ha esito negativo se il server del sito è in modalità passiva**. Se si esegue una versione di anteprima con il [server del sito primario in modalità passiva](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), è necessario disinstallare il server del sito in modalità passiva prima di poter aggiornare il sito di anteprima alla nuova versione di anteprima. Sarà possibile reinstallare il server del sito in modalità passiva al termine dell'aggiornamento del sito.
+- **Supporto per Windows 10, versione 1709 (anche noto come Fall Creators Update)**.  A partire da questa versione di Windows, il supporto include più versioni. Quando si configura una sequenza di attività per l'uso di un pacchetto di aggiornamento o di un'immagine del sistema operativo, assicurarsi di selezionare un'[edizione utilizzabile da Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
+- **L'aggiornamento a una nuova versione di anteprima ha esito negativo se il server del sito è in modalità passiva**. Se si esegue una versione di anteprima con il [server del sito primario in modalità passiva](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), è necessario disinstallare il server del sito in modalità passiva prima di poter aggiornare il sito di anteprima alla nuova versione di anteprima. Sarà possibile reinstallare il server del sito in modalità passiva al termine dell'aggiornamento del sito.
 
   Per disinstallare il server del sito in modalità passiva:
   1. Nella console passare ad **Amministrazione** > **Panoramica** > **Configurazione del sito** > **Server e ruoli del sistema del sito** e quindi selezionare il server del sito in modalità passiva.
@@ -84,7 +84,7 @@ Provare a completare le attività seguenti e quindi usare **Commenti e suggerime
 
     c. Selezionare **Indipendentemente dalla connessione degli utenti** per **Requisiti di accesso**.
 
-    d. Selezionare **Normale** per **Visibilità del programma di installazione**. È possibile scegliere tra tre opzioni: **Ridotta a icona**, **Normale** o **Ingrandita**.
+    d. Selezionare **Normale** per **Visibilità del programma di installazione**. È possibile selezionare una delle tre opzioni seguenti: **Ridotta a icona**, **Normale** o **Ingrandita**.
 
     e. Selezionare la casella **Consenti agli utenti di visualizzare e interagire con il programma**.
 

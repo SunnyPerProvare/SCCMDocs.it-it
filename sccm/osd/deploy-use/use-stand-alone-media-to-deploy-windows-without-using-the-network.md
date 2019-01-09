@@ -10,12 +10,12 @@ ms.assetid: 58a0d2ae-de76-401f-b854-7a5243949033
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 18e50806868955eac807645a5378aea53acdc899
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 9e297842a82ac3ae39f4e3a75962aaef115e35a4
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348607"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420975"
 ---
 # <a name="use-stand-alone-media-to-deploy-windows-without-using-the-network-in-system-center-configuration-manager"></a>Usare i supporti autonomi per distribuire Windows senza usare la rete in System Center Configuration Manager
 
@@ -29,13 +29,13 @@ I supporti autonomi in System Center Configuration Manager contengono tutti gli 
 
 È possibile usare il supporto autonomo negli scenari di distribuzione del sistema operativo seguenti:  
 
--   [Aggiornare un computer esistente con una nuova versione di Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
+- [Aggiornare un computer esistente con una nuova versione di Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
 
--   [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)  
+- [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)  
 
--   [Aggiornare Windows alla versione più recente](upgrade-windows-to-the-latest-version.md)  
+- [Aggiornare Windows alla versione più recente](upgrade-windows-to-the-latest-version.md)  
 
- Completare i passaggi in uno degli scenari di distribuzione del sistema operativo e quindi usare le sezioni seguenti per preparare e creare il supporto autonomo.  
+  Completare i passaggi in uno degli scenari di distribuzione del sistema operativo e quindi usare le sezioni seguenti per preparare e creare il supporto autonomo.  
 
 ## <a name="task-sequence-actions-not-supported-when-using-stand-alone-media"></a>Azioni della sequenza di attività non supportate quando si usa il supporto autonomo  
  Se la procedura descritta in uno degli scenari di distribuzione del sistema operativo supportati è stata completata, la sequenza di attività per distribuire o aggiornare il sistema operativo è stata creata e tutti i contenuti associati sono stati distribuiti in un punto di distribuzione. Quando si usa il supporto autonomo, nella sequenza di attività le azioni seguenti non sono supportate:  
@@ -57,7 +57,7 @@ I supporti autonomi in System Center Configuration Manager contengono tutti gli 
 >   
 >  `"WMI method SMS_TaskSequencePackage.GetClientConfigPolicies failed (0x80041001)"`
 >   
->  Per un supporto autonomo che include il passaggio **Installa pacchetto**, è necessario creare il supporto autonomo in un sito primario in cui l'agente di distribuzione software sia abilitato oppure aggiungere un passaggio [Esegui riga di comando](../understand/task-sequence-steps.md#BKMK_RunCommandLine) dopo il passaggio [Imposta Windows e ConfigMgr](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr) e prima del primo passaggio **Installa pacchetto** nella sequenza di attività. Il passaggio **Esegui riga di comando** esegue un comando WMIC per abilitare l'agente di distribuzione software prima dell'esecuzione del primo passaggio Installa pacchetto. È possibile usare quanto segue nel passaggio della sequenza di attività **Esegui riga di comando** :  
+>  Per un supporto autonomo che include il passaggio **Installa pacchetto** , è necessario creare il supporto autonomo in un sito primario in cui l'agente di distribuzione software sia abilitato oppure aggiungere un passaggio [Run Command Line](../understand/task-sequence-steps.md#BKMK_RunCommandLine) dopo il passaggio [Setup Windows and ConfigMgr](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr) e prima del primo passaggio **Installa pacchetto** nella sequenza di attività. Il passaggio **Esegui riga di comando** esegue un comando WMIC per abilitare l'agente di distribuzione software prima dell'esecuzione del primo passaggio Installa pacchetto. È possibile usare quanto segue nel passaggio della sequenza di attività **Esegui riga di comando** :  
 >   
 >  **Riga di comando**: **WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE**  
 

@@ -10,12 +10,12 @@ ms.assetid: 7341cc6e-9e08-41e4-bcc6-6c1ff12e85ca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 891366f7e5fa3f4fd2b8f9a8606e823f0a48c394
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 98deb50a35bd96684bf537c1821c58d1d08ca738
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342512"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420125"
 ---
 # <a name="use-alerts-and-the-status-system-for-system-center-configuration-manager"></a>Usare gli avvisi e il sistema di stato per System Center Configuration Manager
 
@@ -29,7 +29,7 @@ Configurare gli avvisi e usare il sistema di stato predefinito per rimanere aggi
 
  Per impostazione predefinita, il sistema di stato di Configuration Manager funziona senza configurazione usando impostazioni adatte alla maggior parte degli ambienti. Tuttavia, è possibile configurare quanto segue:  
 
--   **Generatori riepilogo dello stato:** è possibile modificare il riepilogo dello stato in ogni sito per controllare la frequenza dei messaggi di stato che generano una modifica dell'indicatore di stato per i quattro generatori di riepilogo seguenti:  
+-   **Generatori riepilogo dello stato:** è possibile modificare i generatori riepilogo dello stato in ogni sito per controllare la frequenza dei messaggi di stato che generano una modifica dell'indicatore di stato per i quattro generatori riepilogo seguenti:  
 
     -   Generatore riepilogo distribuzione applicazione  
 
@@ -44,7 +44,7 @@ Configurare gli avvisi e usare il sistema di stato predefinito per rimanere aggi
     > [!NOTE]  
     >  Le regole di filtro dello stato non supportano l'utilizzo di variabili di ambiente per l'esecuzione di comandi esterni.  
 
--   **Creazione rapporti di stato:** è possibile configurare la creazione di rapporti di stato per componenti server e client per modificare il modo in cui i messaggi di stato vengono segnalati al sistema di stato di Configuration Manager e specificare dove inviare i messaggi di stato.  
+-   **Creazione rapporti di stato:** è possibile configurare la creazione di report per componenti server e client per modificare il modo in cui i messaggi di stato vengono segnalati al sistema di stato di Configuration Manager e specificare dove inviare i messaggi di stato.  
 
     > [!WARNING]  
     >  Poiché le impostazioni di creazione rapporti predefinite sono adatte alla maggior parte degli ambienti, modificarle con cautela. Quando si aumenta il livello di creazione rapporti di stato scegliendo di includere nel rapporto tutti i dettagli dello stato, è possibile aumentare la quantità dei messaggi di stato da elaborare, che a sua volta aumenta il carico di elaborazione nel sito di Configuration Manager. Se si diminuisce il livello di creazione di rapporti di stato è possibile che venga limitata l'utilità dei generatori di riepilogo dello stato.  
@@ -181,15 +181,15 @@ Poiché il sistema di stato mantiene configurazioni separate per ogni sito è ne
 ##  <a name="bkmk_Alerts"></a> Avvisi  
  Gli avvisi di Configuration Manager vengono generati da alcune operazioni quando si verifica una condizione specifica.  
 
--   In genere, gli avvisi vengono generati quando si verifica un errore che è necessario risolvere  
+- In genere, gli avvisi vengono generati quando si verifica un errore che è necessario risolvere  
 
--   Gli avvisi potrebbero essere generati per informare l'utente dell'esistenza di una condizione, per poter continuare a monitorare la situazione  
+- Gli avvisi potrebbero essere generati per informare l'utente dell'esistenza di una condizione, per poter continuare a monitorare la situazione  
 
--   Alcuni avvisi vengono configurati, ad esempio gli avvisi per lo stato di Endpoint Protection e del client, mentre altri avvisi vengono configurati automaticamente  
+- Alcuni avvisi vengono configurati, ad esempio gli avvisi per lo stato di Endpoint Protection e del client, mentre altri avvisi vengono configurati automaticamente  
 
--   È possibile configurare le sottoscrizioni agli avvisi che possono quindi inviare informazioni dettagliate via e-mail, aumentando la consapevolezza di problemi chiave  
+- È possibile configurare le sottoscrizioni agli avvisi che possono quindi inviare informazioni dettagliate via e-mail, aumentando la consapevolezza di problemi chiave  
 
- Usare la tabella seguente per trovare informazioni su come configurare gli avvisi e le sottoscrizioni di avvisi in Configuration Manager:  
+  Usare la tabella seguente per trovare informazioni su come configurare gli avvisi e le sottoscrizioni di avvisi in Configuration Manager:  
 
 
 |Action|Altre informazioni|  
@@ -204,9 +204,9 @@ Poiché il sistema di stato mantiene configurazioni separate per ogni sito è ne
 
 ##### <a name="to-manage-general-alerts"></a>Per gestire gli avvisi generali  
 
-1.  Nella console di Configuration Manager passare a **Monitoraggio** > **Avvisi**, quindi selezionare un'attività di gestione.  
+1. Nella console di Configuration Manager passare a **Monitoraggio** > **Avvisi**, quindi selezionare un'attività di gestione.  
 
-  Per altre informazioni sulle attività di gestione che potrebbero richiedere alcune informazioni prima della relativa selezione, usare la seguente tabella.  
+   Per altre informazioni sulle attività di gestione che potrebbero richiedere alcune informazioni prima della relativa selezione, usare la seguente tabella.  
 
 |Attività di gestione|Dettagli|  
     |---------------------|-------------|  
@@ -253,11 +253,11 @@ Poiché il sistema di stato mantiene configurazioni separate per ogni sito è ne
 
 3.  Nella finestra di dialogo **Proprietà del componente di notifica e-mail** specificare le informazioni seguenti:  
 
-    -   **Abilita notifiche email per avvisi**: selezionare questa casella di controllo per abilitare in Configuration Manager l'uso di un server SMTP per inviare avvisi di posta elettronica.  
+    -   **Abilita notifiche e-mail per avvisi**: selezionare questa casella di controllo per abilitare in Configuration Manager l'uso di un server SMTP per inviare avvisi di posta elettronica.  
 
     -   **FQDN o indirizzo IP del server SMTP per inviare avvisi e-mail**: immettere il nome di dominio completo (FQDN) o l'indirizzo IP e la porta SMTP per il server e-mail che si vuole usare per questi avvisi.  
 
-    -   **Account di connessione al Server SMTP**: specificare il metodo di autenticazione per Configuration Manager da usare per connettere il server di posta elettronica.  
+    -   **Account di connessione al server SMTP**: specificare il metodo di autenticazione per Configuration Manager da usare per connettere il server di posta elettronica.  
 
     -   **Indirizzo mittente per avvisi e-mail**: specificare l'indirizzo e-mail da cui vengono inviati gli avvisi e-mail.  
 
@@ -275,9 +275,9 @@ Poiché il sistema di stato mantiene configurazioni separate per ogni sito è ne
 
     -   **Nome**: immettere un nome per identificare la sottoscrizione e-mail. È possibile usare fino a 255 caratteri.  
 
-    -   **Indirizzo di posta elettronica**: immettere gli indirizzi e-mail ai quali si vuole inviare l'avviso. È possibile separare più indirizzi e-mail con un punto e virgola.  
+    -   **Indirizzo di posta elettronica**: immettere gli indirizzi e-mail a cui si vuole inviare l'avviso. È possibile separare più indirizzi e-mail con un punto e virgola.  
 
-    -   **Lingua e-mail**: nell'elenco, specificare la lingua per l'e-mail.  
+    -   **Lingua e-mail**: nell'elenco specificare la lingua per l'e-mail.  
 
 4.  Fare clic su **OK** per chiudere la finestra di dialogo **Nuova sottoscrizione** e creare la sottoscrizione e-mail.  
 
@@ -287,22 +287,22 @@ Poiché il sistema di stato mantiene configurazioni separate per ogni sito è ne
 ###  <a name="BKMK_MonitorAlerts"></a> Avvisi di monitoraggio  
  È possibile visualizzare gli avvisi nel nodo **Avvisi** dell'area di lavoro **Monitoraggio** . Gli avvisi hanno uno degli stati di avviso seguenti:  
 
--   **Mail attivato**: la condizione dell'avviso non è stata soddisfatta.  
+- **Mai attivato**: la condizione dell'avviso non è stata soddisfatta.  
 
--   **Attivo**: la condizione dell'avviso è stata soddisfatta.  
+- **Attivo**: la condizione dell'avviso è stata soddisfatta.  
 
--   **Annullato**: la condizione di un avviso attivo non viene più soddisfatta. Questo stato indica che la condizione che ha generato l'avviso è stata risolta.  
+- **Annullato**: la condizione di un avviso attivo non viene più soddisfatta. Questo stato indica che la condizione che ha generato l'avviso è stata risolta.  
 
--   **Rimandato**: un utente amministratore ha configurato Configuration Manager per valutare lo stato dell'avviso in un secondo momento.  
+- **Rimandato**: un utente amministratore ha configurato Configuration Manager per valutare lo stato dell'avviso in un secondo momento.  
 
--   **Disabilitato**: l'avviso è stato disabilitato da un utente amministratore. Quando un avviso ha questo stato, Configuration Manager non aggiorna l'avviso nemmeno in caso di modifica dello stato.  
+- **Disabled**: l'avviso è stato disattivato da un utente amministratore. Quando un avviso ha questo stato, Configuration Manager non aggiorna l'avviso nemmeno in caso di modifica dello stato.  
 
- Quando Configuration Manager genera un avviso è possibile eseguire una delle seguenti azioni:  
+  Quando Configuration Manager genera un avviso è possibile eseguire una delle seguenti azioni:  
 
--   Risolvere la condizione che ha generato l'avviso, ad esempio un problema di rete o un problema di configurazione. Quando Configuration Manager rileva che il problema non esiste più, lo stato dell'avviso viene modificato in **Annulla**.  
+- Risolvere la condizione che ha generato l'avviso, ad esempio un problema di rete o un problema di configurazione. Quando Configuration Manager rileva che il problema non esiste più, lo stato dell'avviso viene modificato in **Annulla**.  
 
--   Se l'avviso è un problema noto, è possibile rimandare l'avviso per un determinato periodo di tempo. In quel momento Configuration Manager aggiorna l'avviso allo stato corrente.  
+- Se l'avviso è un problema noto, è possibile rimandare l'avviso per un determinato periodo di tempo. In quel momento Configuration Manager aggiorna l'avviso allo stato corrente.  
 
-     È possibile rimandare un avviso solo quando è attivo.  
+   È possibile rimandare un avviso solo quando è attivo.  
 
--   È possibile modificare il **Commento** di un avviso in modo che gli altri utenti amministratori vedano che l'utente è al corrente dell'avviso. Nel commento è ad esempio possibile individuare le modalità di risoluzione della condizione, fornire informazioni sullo stato corrente della condizione o spiegare perché l'avviso è stato rimandato.  
+- È possibile modificare il **Commento** di un avviso in modo che gli altri utenti amministratori vedano che l'utente è al corrente dell'avviso. Nel commento è ad esempio possibile individuare le modalità di risoluzione della condizione, fornire informazioni sullo stato corrente della condizione o spiegare perché l'avviso è stato rimandato.  

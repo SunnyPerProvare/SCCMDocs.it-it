@@ -10,12 +10,12 @@ ms.assetid: 95033a9b-ff13-4b70-b1de-bcb25bcb6024
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b9a3f4583944f0818f74930753bad99e3408a928
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 0b218d665d574c74358e3d018f45dd5b173cc21c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350018"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424171"
 ---
 # <a name="customize-operating-system-images-with-system-center-configuration-manager"></a>Personalizzare le immagini del sistema operativo con System Center Configuration Manager
 
@@ -32,34 +32,34 @@ Le immagini di sistema operativo in System Center Configuration Manager sono fil
 #### <a name="automated-configuration"></a>Configurazione automatizzata  
  **Vantaggi**  
 
--   La configurazione può essere completamente automatica, rendendo superflua la presenza di un amministratore o di un utente.  
+- La configurazione può essere completamente automatica, rendendo superflua la presenza di un amministratore o di un utente.  
 
--   È possibile riutilizzare la sequenza attività per ripetere la configurazione di ulteriori computer di riferimento con un elevato livello di attendibilità.  
+- È possibile riutilizzare la sequenza attività per ripetere la configurazione di ulteriori computer di riferimento con un elevato livello di attendibilità.  
 
--   È possibile modificare la sequenza attività per gestire le differenze nei computer di riferimento senza la necessità di ricreare l'intera sequenza attività.  
+- È possibile modificare la sequenza attività per gestire le differenze nei computer di riferimento senza la necessità di ricreare l'intera sequenza attività.  
 
- **Svantaggi**  
+  **Svantaggi**  
 
--   La fase iniziale di creazione e di testing di una sequenza attività può richiedere molto tempo.  
+- La fase iniziale di creazione e di testing di una sequenza attività può richiedere molto tempo.  
 
--   Se i requisiti del computer di riferimento cambiano in modo significativo, ripetere la fase di creazione e di testing della sequenza attività può richiedere molto tempo.  
+- Se i requisiti del computer di riferimento cambiano in modo significativo, ripetere la fase di creazione e di testing della sequenza attività può richiedere molto tempo.  
 
 #### <a name="manual-configuration"></a>Configurazione manuale  
  **Vantaggi**  
 
--   Non è necessario creare una sequenza attività o soffermarsi sulla verifica e sulla risoluzione dei problemi della sequenza attività.  
+- Non è necessario creare una sequenza attività o soffermarsi sulla verifica e sulla risoluzione dei problemi della sequenza attività.  
 
--   È possibile eseguire l'installazione direttamente dai CD, senza inserire tutti i pacchetti software (compreso lo stesso Windows) in un pacchetto di Configuration Manager.  
+- È possibile eseguire l'installazione direttamente dai CD, senza inserire tutti i pacchetti software (compreso lo stesso Windows) in un pacchetto di Configuration Manager.  
 
- **Svantaggi**  
+  **Svantaggi**  
 
--   La precisione della configurazione del computer di riferimento dipende dall'amministratore o dall'utente che configura il computer.  
+- La precisione della configurazione del computer di riferimento dipende dall'amministratore o dall'utente che configura il computer.  
 
--   È comunque necessario verificare e testare la corretta configurazione del computer di riferimento.  
+- È comunque necessario verificare e testare la corretta configurazione del computer di riferimento.  
 
--   È impossibile riutilizzare il metodo di configurazione.  
+- È impossibile riutilizzare il metodo di configurazione.  
 
--   Durante il processo è necessaria la presenza attiva di una persona.  
+- Durante il processo è necessaria la presenza attiva di una persona.  
 
 ###  <a name="BKMK_RefComputerConsiderations"></a> Considerazioni per il computer di riferimento  
  Di seguito sono elencati gli elementi di base da prendere in considerazione durante la configurazione di un computer di riferimento.  
@@ -113,20 +113,20 @@ Le immagini di sistema operativo in System Center Configuration Manager sono fil
 
 #### <a name="to-manually-build-the-reference-computer"></a>Per creare manualmente il computer di riferimento  
 
-1.  Individuare il computer da utilizzare come computer di riferimento.  
+1. Individuare il computer da utilizzare come computer di riferimento.  
 
-2.  Configurare il computer di riferimento con il sistema operativo appropriato e con il software necessario per creare l'immagine del sistema operativo che si desidera distribuire.  
+2. Configurare il computer di riferimento con il sistema operativo appropriato e con il software necessario per creare l'immagine del sistema operativo che si desidera distribuire.  
 
-    > [!WARNING]  
-    >  Installare almeno il sistema operativo e il Service Pack appropriati, i driver di supporto e gli aggiornamenti software richiesti.  
+   > [!WARNING]  
+   >  Installare almeno il sistema operativo e il Service Pack appropriati, i driver di supporto e gli aggiornamenti software richiesti.  
 
-3.  Configurare il computer di riferimento per l'appartenenza a un gruppo di lavoro.  
+3. Configurare il computer di riferimento per l'appartenenza a un gruppo di lavoro.  
 
-4.  Reimpostare la password dell'amministratore locale nel computer di riferimento in modo che il valore della password sia vuoto.  
+4. Reimpostare la password dell'amministratore locale nel computer di riferimento in modo che il valore della password sia vuoto.  
 
-5.  Eseguire Sysprep usando il comando:  **sysprep /quiet /generalize /reboot**. L'opzione /generalize indica a Sysprep di rimuovere i dati specifici del sistema dall'installazione di Windows. Le informazioni specifiche del sistema includono registri eventi, ID di sicurezza univoci (SID) e altre informazioni univoche. Dopo la rimozione delle informazioni di sistema univoche, il computer viene riavviato.  
+5. Eseguire Sysprep usando il comando:  **sysprep /quiet /generalize /reboot**. L'opzione /generalize indica a Sysprep di rimuovere i dati specifici del sistema dall'installazione di Windows. Le informazioni specifiche del sistema includono registri eventi, ID di sicurezza univoci (SID) e altre informazioni univoche. Dopo la rimozione delle informazioni di sistema univoche, il computer viene riavviato.  
 
- Quando il computer di riferimento è pronto, usare una sequenza di attività per acquisire l'immagine del sistema operativo da tale computer.  Per informazioni dettagliate, vedere [Acquisire un'immagine del sistema operativo da un computer di riferimento esistente](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_CaptureExistingRefComputer).  
+   Quando il computer di riferimento è pronto, usare una sequenza di attività per acquisire l'immagine del sistema operativo da tale computer.  Per informazioni dettagliate, vedere [Acquisire un'immagine del sistema operativo da un computer di riferimento esistente](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_CaptureExistingRefComputer).  
 
 ##  <a name="BKMK_UseTSToBuildReference"></a> Usare una sequenza di attività per creare un computer di riferimento  
  È possibile automatizzare il processo di creazione di un computer di riferimento usando una sequenza di attività per distribuire il sistema operativo, i driver, le applicazioni e così via.  Usare i passaggi seguenti per creare il computer di riferimento e quindi acquisire l'immagine del sistema operativo da tale computer.  

@@ -11,12 +11,12 @@ author: aczechowski
 robots: noindex,nofollow
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 6d5ecf4e2d231a596012aa9f7d371f18ef0705a1
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: c7a0c1438fe08e1efae9d2bfe5fb608214486031
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32343552"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423049"
 ---
 # <a name="capabilities-in-technical-preview-1603-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1603 per System Center Configuration Manager
 
@@ -26,11 +26,11 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
  **Problemi noti di questa versione Technical Preview:**  
 
--   Questa versione include gli aggiornamenti per le funzionalità rilasciate in precedenza ma non vengono introdotte nuove funzionalità. La pagina delle funzionalità della procedura guidata di aggiornamento sarà quindi vuota se in precedenza è stato eseguito l'aggiornamento alla versione 1602 e sono state abilitate tutte le funzionalità incluse nella versione 1602.  
+- Questa versione include gli aggiornamenti per le funzionalità rilasciate in precedenza ma non vengono introdotte nuove funzionalità. La pagina delle funzionalità della procedura guidata di aggiornamento sarà quindi vuota se in precedenza è stato eseguito l'aggiornamento alla versione 1602 e sono state abilitate tutte le funzionalità incluse nella versione 1602.  
 
--   Dopo gli aggiornamenti del server del sito alla Technical Preview 1603, i client non possono usare le funzionalità di controllo remoto fino a quando non vengono anch'essi aggiornati alla versione 1603.  
+- Dopo gli aggiornamenti del server del sito alla Technical Preview 1603, i client non possono usare le funzionalità di controllo remoto fino a quando non vengono anch'essi aggiornati alla versione 1603.  
 
- **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
+  **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
 ##  <a name="BKMK_SC1603"></a> Miglioramenti a Software Center  
 
@@ -53,9 +53,9 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
  Nella Technical Preview 1603 è possibile personalizzare le dimensioni della finestra e del blocco TFTP RamDisk per i punti di distribuzione abilitati per PXE. Se la rete è stata personalizzata, il download dell'immagine di avvio potrebbe non riuscire a causa di un errore di timeout perché le dimensioni del blocco o della finestra sono troppo grandi. La personalizzazione delle dimensioni della finestra e del blocco TFTP RamDisk consentono di ottimizzare il traffico TFTP quando si usa PXE per soddisfare requisiti di rete specifici.   
 È necessario testare le impostazioni personalizzate nel proprio ambiente per stabilire quale sia la scelta più efficiente.  
 
--   **Dimensioni blocco TFTP**: le dimensioni del blocco corrispondono alle dimensioni dei pacchetti di dati che vengono inviati dal server al client che sta scaricando il file (come descritto in RFC 2347). Dimensioni maggiori del blocco consentono al server di inviare meno pacchetti e di conseguenza si verificano meno ritardi per il round trip tra il server e client. Dimensioni del blocco grandi, tuttavia, comportano la creazione di pacchetti frammentati, che non sono supportati dalla maggior parte delle implementazioni di client PXE.  
+-   **Dimensioni del blocco TFTP**: le dimensioni del blocco corrispondono alle dimensioni dei pacchetti di dati che vengono inviati dal server al client che sta scaricando il file (come descritto in RFC 2347). Dimensioni maggiori del blocco consentono al server di inviare meno pacchetti e di conseguenza si verificano meno ritardi per il round trip tra il server e client. Dimensioni del blocco grandi, tuttavia, comportano la creazione di pacchetti frammentati, che non sono supportati dalla maggior parte delle implementazioni di client PXE.  
 
--   **Dimensioni finestra TFTP**: TFTP richiede un pacchetto di acknowledgment (ACK) per ogni blocco di dati inviato. Il server non invia il blocco successivo nella sequenza finché non riceve il pacchetto ACK per il blocco precedente. L'uso di finestre TFTP è una funzionalità di Servizi di distribuzione Windows che consente di definire quanti blocchi di dati sono necessari per riempire una finestra. Il server invia i blocchi di dati back-to-back fino a riempire la finestra e quindi il client invia un pacchetto ACK. Aumentando le dimensioni di questa finestra si riduce il numero di ritardi di round trip tra il client e il server, nonché il tempo complessivo necessario per scaricare un'immagine di avvio.  
+-   **Dimensioni della finestra TFTP**: TFTP richiede un pacchetto di acknowledgment (ACK) per ogni blocco di dati inviato. Il server non invia il blocco successivo nella sequenza finché non riceve il pacchetto ACK per il blocco precedente. L'uso di finestre TFTP è una funzionalità di Servizi di distribuzione Windows che consente di definire quanti blocchi di dati sono necessari per riempire una finestra. Il server invia i blocchi di dati back-to-back fino a riempire la finestra e quindi il client invia un pacchetto ACK. Aumentando le dimensioni di questa finestra si riduce il numero di ritardi di round trip tra il client e il server, nonché il tempo complessivo necessario per scaricare un'immagine di avvio.  
 
 ### <a name="try-it-out"></a>Prova subito!  
  Provare a completare le attività seguenti e quindi usare il collegamento per l'invio di commenti e suggerimenti nella parte superiore di questo argomento per comunicare i risultati:  
@@ -66,26 +66,26 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
 ### <a name="to-modify-the-ramdisk-tftp-window-size"></a>Per modificare le dimensioni della finestra TFTP RamDisk  
 
--   Aggiungere la chiave del Registro di sistema seguente nei punti di distribuzione abilitati per PXE per personalizzare le dimensioni della finestra TFTP RamDisk:  
+- Aggiungere la chiave del Registro di sistema seguente nei punti di distribuzione abilitati per PXE per personalizzare le dimensioni della finestra TFTP RamDisk:  
 
-     **Percorso**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
-    Nome: RamDiskTFTPWindowSize  
+   **Percorso**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
+  Nome: RamDiskTFTPWindowSize  
 
-     **Tipo**: REG_DWORD  
+   **Tipo**: REG_DWORD  
 
-     **Valore**: &lt;dimensioni finestra personalizzate\>  
+   **Valore**: &lt;dimensioni finestra personalizzate\>  
 
- Il valore predefinito è 1 (1 blocco di dati riempie la finestra)  
+  Il valore predefinito è 1 (1 blocco di dati riempie la finestra)  
 
 ### <a name="to-modify-the-ramdisk-tftp-block-size"></a>Per modificare le dimensioni del blocco TFTP RamDisk  
 
--   Aggiungere la chiave del Registro di sistema seguente nei punti di distribuzione abilitati per PXE per personalizzare le dimensioni della finestra TFTP RamDisk:  
+- Aggiungere la chiave del Registro di sistema seguente nei punti di distribuzione abilitati per PXE per personalizzare le dimensioni della finestra TFTP RamDisk:  
 
-     **Percorso**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
-    Nome: RamDiskTFTPBlockSize  
+   **Percorso**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
+  Nome: RamDiskTFTPBlockSize  
 
-     **Tipo**: REG_DWORD  
+   **Tipo**: REG_DWORD  
 
-     **Valore**: &lt;dimensioni blocco personalizzate\>  
+   **Valore**: &lt;dimensioni blocco personalizzate\>  
 
- Il valore predefinito è 4096 (4k).  
+  Il valore predefinito è 4096 (4k).  

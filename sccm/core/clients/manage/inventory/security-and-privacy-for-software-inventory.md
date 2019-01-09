@@ -10,12 +10,12 @@ ms.assetid: 8e68e1fb-a8ec-4543-bb8a-cbbaf184a418
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5fef3c1892c015fcec42197c9af373506d8e426a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 5bd03980c772edf8033ddc4a8ccce336ba924c07
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333111"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423168"
 ---
 # <a name="security-and-privacy-for-software-inventory-in-system-center-configuration-manager"></a>Sicurezza e privacy per l'inventario software in System Center Configuration Manager
 
@@ -35,17 +35,17 @@ Questo argomento contiene informazioni sulla sicurezza e la privacy per l'invent
 ### <a name="security-issues-for-software-inventory"></a>Problemi di sicurezza per l'inventario software  
  La raccolta dell'inventario espone potenziali vulnerabilità. Gli utenti malintenzionati possono eseguire le attività seguenti:  
 
--   Inviare dati non validi, che verranno accettati dal punto di gestione anche quando l'impostazione client dell'inventario software è disabilitata e la raccolta di file non è abilitata.  
+- Inviare dati non validi, che verranno accettati dal punto di gestione anche quando l'impostazione client dell'inventario software è disabilitata e la raccolta di file non è abilitata.  
 
--   Inviare quantità eccessivamente elevate di dati in un singolo file e in un numero elevato di file e potenzialmente causare un attacco Denial of Service .  
+- Inviare quantità eccessivamente elevate di dati in un singolo file e in un numero elevato di file e potenzialmente causare un attacco Denial of Service .  
 
--   Accedere a informazioni dell'inventario mentre vengono trasferite a Configuration Manager.  
+- Accedere a informazioni dell'inventario mentre vengono trasferite a Configuration Manager.  
 
- Se gli utenti sanno che è possibile creare un file nascosto denominato **Skpswi.dat** e posizionarlo nella radice di un disco rigido del client per escluderlo dall'inventario software, non sarà possibile raccogliere i dati dell'inventario software dal computer.  
+  Se gli utenti sanno che è possibile creare un file nascosto denominato **Skpswi.dat** e posizionarlo nella radice di un disco rigido del client per escluderlo dall'inventario software, non sarà possibile raccogliere i dati dell'inventario software dal computer.  
 
- Poiché un utente con privilegi di amministratore locale può inviare qualsiasi informazione come dati di inventario, non considerare affidabili i dati di inventario raccolti da Configuration Manager.  
+  Poiché un utente con privilegi di amministratore locale può inviare qualsiasi informazione come dati di inventario, non considerare affidabili i dati di inventario raccolti da Configuration Manager.  
 
- L'inventario software è abilitato per impostazione predefinita come impostazione client.  
+  L'inventario software è abilitato per impostazione predefinita come impostazione client.  
 
 ##  <a name="BKMK_Privacy_HardwareInventory"></a> Informazioni sulla privacy per l'inventario software  
  L'inventario hardware consente di recuperare le informazioni archiviate nel Registro di sistema e in WMI nei client di Configuration Manager. L'inventario software consente di individuare tutti i file di un tipo specificato o raccogliere tutti i file specificati dai client. Asset Intelligence migliora le funzionalità di inventario mediante l'estensione dell'inventario hardware e software e l'aggiunta di nuove funzionalità di gestione delle licenze.  

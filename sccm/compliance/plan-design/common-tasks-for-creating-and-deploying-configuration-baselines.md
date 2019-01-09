@@ -10,12 +10,12 @@ ms.assetid: 4bb6afeb-d267-4f9b-ade2-26e5400c223b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bd76ecfcd4f5731e7fa078a00e79fdc6ab91ffa4
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a12d2e40007a351d3718247803d8be7856e12273
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333502"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423338"
 ---
 # <a name="common-tasks-for-creating-and-deploying-configuration-baselines-with-system-center-configuration-manager"></a>Attività comuni per la creazione e la distribuzione di linee base di configurazione con System Center Configuration Manager
 
@@ -34,49 +34,49 @@ Questo argomento descrive alcuni scenari comuni per scoprire come creare e distr
 
 Usare la procedura seguente per apprendere come aggiungere questo elemento di configurazione a una linea di base di configurazione per prepararlo per la distribuzione.  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Linee di base di configurazione**.  
+1. Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Linee di base di configurazione**.  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea linea di base di configurazione**.  
+2. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea linea di base di configurazione**.  
 
-4.  Nella finestra di dialogo **Crea linea di base di configurazione** configurare le impostazioni seguenti:  
+3. Nella finestra di dialogo **Crea linea di base di configurazione** configurare le impostazioni seguenti:  
 
-    -   **Nome** - Immettere **Password Windows 10** (o un altro nome a scelta).  
+   -   **Nome** - Immettere **Password Windows 10** (o un altro nome a scelta).  
 
-5.  Fare clic su **Aggiungi** > **Elementi di configurazione**.  
+4. Fare clic su **Aggiungi** > **Elementi di configurazione**.  
 
-6.  Nella finestra di dialogo **Aggiungi elementi di configurazione** selezionare l'elemento di configurazione **Windows 10 Password Enforcement** creato in precedenza e quindi fare clic su **Aggiungi**.  
+5. Nella finestra di dialogo **Aggiungi elementi di configurazione** selezionare l'elemento di configurazione **Windows 10 Password Enforcement** creato in precedenza e quindi fare clic su **Aggiungi**.  
 
-7.  Fare clic su OK per chiudere la finestra di dialogo **Aggiungi elementi di configurazione** e tornare alla finestra di dialogo **Crea linea di base di configurazione**.
+6. Fare clic su OK per chiudere la finestra di dialogo **Aggiungi elementi di configurazione** e tornare alla finestra di dialogo **Crea linea di base di configurazione**.
 
-8.  Fare clic su **OK** per chiudere la finestra di dialogo **Crea linea di base di configurazione** .  
+7. Fare clic su **OK** per chiudere la finestra di dialogo **Crea linea di base di configurazione** .  
 
- È ora possibile visualizzare la linea di base di configurazione nel nodo **Linee di base di configurazione** nella console di Configuration Manager.  
+   È ora possibile visualizzare la linea di base di configurazione nel nodo **Linee di base di configurazione** nella console di Configuration Manager.  
 
 ## <a name="deploy-the-configuration-baseline"></a>Distribuire la linea di base di configurazione  
  In questo esempio viene descritto come distribuire la linea di base di configurazione creata nella procedura precedente in una raccolta di computer.  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Linee di base di configurazione**.  
+1. Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Linee di base di configurazione**.  
 
-3.  Nell'elenco di linee di base di configurazione selezionare **Password Windows 10**.  
+2. Nell'elenco di linee di base di configurazione selezionare **Password Windows 10**.  
 
-4.  Nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Distribuisci**.  
+3. Nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Distribuisci**.  
 
-5.  Nella finestra di dialogo **Distribuisci linee di base di configurazione** configurare le impostazioni seguenti:  
+4. Nella finestra di dialogo **Distribuisci linee di base di configurazione** configurare le impostazioni seguenti:  
 
-    -   **Linee di base di configurazione selezionate** - Assicurarsi che la linea di base di configurazione **Password Windows 10** sia stata aggiunta automaticamente all'elenco.  
+   -   **Linee di base di configurazione selezionate** - Assicurarsi che la linea di base di configurazione **Password Windows 10** sia stata aggiunta automaticamente all'elenco.  
 
-    -   **Monitora e aggiorna le regole non conformi, se supportato** - Selezionare questa casella di controllo per assicurarsi che, in caso di assenza nei dispositivi di destinazione, le impostazioni corrette vengano monitorate e aggiornate da Configuration Manager.  
+   -   **Monitora e aggiorna le regole non conformi, se supportato** - Selezionare questa casella di controllo per assicurarsi che, in caso di assenza nei dispositivi di destinazione, le impostazioni corrette vengano monitorate e aggiornate da Configuration Manager.  
 
-    -   **Raccolta** - Fare clic su **Sfoglia** per scegliere la raccolta di computer in cui la linea di base di configurazione viene valutata e monitorata e aggiornata per la conformità. In questo esempio, la linea di base di configurazione è stata distribuita nella raccolta predefinita **Tutti i client desktop e di server** .  
+   -   **Raccolta** - Fare clic su **Sfoglia** per scegliere la raccolta di computer in cui la linea di base di configurazione viene valutata e monitorata e aggiornata per la conformità. In questo esempio, la linea di base di configurazione è stata distribuita nella raccolta predefinita **Tutti i client desktop e di server** .  
 
-        > [!TIP]  
-        >  Non occorre preoccuparsi se la raccolta scelta contiene computer o dispositivi che non eseguono Windows 10. Se nell'elemento di configurazione creato sono state configurate le piattaforme supportate, solo i PC Windows 10 vengono valutati per la conformità.  
+       > [!TIP]  
+       >  Non occorre preoccuparsi se la raccolta scelta contiene computer o dispositivi che non eseguono Windows 10. Se nell'elemento di configurazione creato sono state configurate le piattaforme supportate, solo i PC Windows 10 vengono valutati per la conformità.  
 
-    -   Se necessario, configurare la pianificazione per la valutazione della linea di base di configurazione. In caso contrario, usare il valore predefinito di **7 giorni**.  
+   -   Se necessario, configurare la pianificazione per la valutazione della linea di base di configurazione. In caso contrario, usare il valore predefinito di **7 giorni**.  
 
-7.  Fare clic su **OK** per chiudere la finestra di dialogo **Distribuisci linee di base di configurazione** e creare la distribuzione.  
+5. Fare clic su **OK** per chiudere la finestra di dialogo **Distribuisci linee di base di configurazione** e creare la distribuzione.  
 
- Per esaminare rapidamente le statistiche di conformità per questa distribuzione, nell'area di lavoro **Monitoraggio** fare clic su **Distribuzioni**. Nella parte inferiore della schermata è visualizzato un grafico **Statistiche conformità**.  
+   Per esaminare rapidamente le statistiche di conformità per questa distribuzione, nell'area di lavoro **Monitoraggio** fare clic su **Distribuzioni**. Nella parte inferiore della schermata è visualizzato un grafico **Statistiche conformità**.  
 
 ## <a name="next-steps"></a>Passaggi successivi 
 

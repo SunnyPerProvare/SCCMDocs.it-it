@@ -10,12 +10,12 @@ ms.assetid: 6c64f276-b88c-4b1e-8073-331876a03038
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 69d8db3cceff45319ed4f2fc0b2962c3bb50b0f2
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.openlocfilehash: 804b21733422bd654764f2199fe33d184d54cce4
+ms.sourcegitcommit: d021f82e4bc35a8e9b5d291bf779ce52b4f47eb8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42756173"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53656476"
 ---
 # <a name="prepare-windows-pe-peer-cache-to-reduce-wan-traffic-in-system-center-configuration-manager"></a>Preparare la peer cache di Windows PE per ridurre il traffico della rete WAN in System Center Configuration Manager
 
@@ -34,19 +34,19 @@ Usare le sezioni seguenti per gestire la peer cache.
 ##  <a name="BKMK_PeerCacheObjects"></a> Oggetti archiviati in un'origine peer cache  
  Una sequenza di attività configurata per l'uso della peer cache di Windows PE può ottenere gli oggetti contenuto seguenti durante l'esecuzione in Windows PE:  
 
--   Immagine del sistema operativo  
+- Immagine del sistema operativo  
 
--   Pacchetto driver  
+- Pacchetto driver  
 
--   Pacchetti e programmi (quando il client continua a eseguire la sequenza di attività nel sistema operativo completo, ottiene questo contenuto da un’origine peer cache se la sequenza di attività è stata configurata in origine per la peer cache in esecuzione in Windows PE).  
+- Pacchetti e programmi (quando il client continua a eseguire la sequenza di attività nel sistema operativo completo, ottiene questo contenuto da un’origine peer cache se la sequenza di attività è stata configurata in origine per la peer cache in esecuzione in Windows PE).  
 
--   Immagini di avvio aggiuntive  
+- Immagini di avvio aggiuntive  
 
- Gli oggetti contenuto seguenti non vengono mai trasferiti tramite peer cache. Vengono invece trasferiti da un punto di distribuzione o mediante Windows BranchCache se è configurato nell'ambiente:  
+  Gli oggetti contenuto seguenti non vengono mai trasferiti tramite peer cache. Vengono invece trasferiti da un punto di distribuzione o mediante Windows BranchCache se è configurato nell'ambiente:  
 
--   Applicazioni  
+- Applicazioni  
 
--   Aggiornamenti software  
+- Aggiornamenti software  
 
 ##  <a name="BKMK_PeerCacheWork"></a> Come funziona la peer cache di Windows PE?  
  Si consideri uno scenario con una filiale che non dispone di un punto di distribuzione ma che invece dispone di vari client abilitati all'uso della peer cache di Windows PE. Si distribuisce la sequenza di attività configurata per l'uso della peer cache in diversi client che sono configurati come parte dell'origine peer cache. Il primo client a eseguire la sequenza di attività trasmette una richiesta di un peer con il contenuto. Poiché non ne trova uno, ottiene il contenuto da un punto di distribuzione attraverso la rete WAN. Il client installa la nuova immagine e archivia il contenuto nella relativa cache del client di Configuration Manager in modo che funzioni come origine peer cache per altri client. Quando il client successivo esegue la sequenza di attività, trasmette una richiesta nella subnet per un’origine peer cache, e il primo client risponde rendendo disponibile il contenuto memorizzato nella cache.  
@@ -77,59 +77,59 @@ Usare le sezioni seguenti per gestire la peer cache.
 ##  <a name="BKMK_PeerCacheConfigure"></a> Configurare la peer cache di Windows PE  
  È possibile usare i metodi seguenti per eseguire il provisioning di contenuto peer cache per un client, in modo che possa servire come origine peer cache:  
 
--   Un client peer cache che non è in grado di trovare un'origine peer cache con il contenuto lo scaricherà da un punto di distribuzione.  Se il client riceve le impostazioni client che abilitano la peer cache e la sequenza di attività viene configurata in modo da preservare il contenuto memorizzato nella cache, il client diventa un'origine peer cache.  
+- Un client peer cache che non è in grado di trovare un'origine peer cache con il contenuto lo scaricherà da un punto di distribuzione.  Se il client riceve le impostazioni client che abilitano la peer cache e la sequenza di attività viene configurata in modo da preservare il contenuto memorizzato nella cache, il client diventa un'origine peer cache.  
 
--   Un client peer cache peer può ottenere contenuto da un altro client peer cache (un’origine peer cache).  Poiché il client è configurato per peer cache, quando esegue una sequenza di attività configurata in modo da preservare il contenuto memorizzato nella cache, il client diventa un'origine peer cache.  
+- Un client peer cache peer può ottenere contenuto da un altro client peer cache (un’origine peer cache).  Poiché il client è configurato per peer cache, quando esegue una sequenza di attività configurata in modo da preservare il contenuto memorizzato nella cache, il client diventa un'origine peer cache.  
 
--   Un client esegue una sequenza di attività che include il passaggio facoltativo, [Download Package Content](/sccm/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent), usato per pre-installare contenuto di rilievo incluso nella sequenza di attività della peer cache di Windows PE. Quando si utilizza questo metodo:  
+- Un client esegue una sequenza di attività che include il passaggio facoltativo, [Download Package Content](/sccm/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent), usato per pre-installare contenuto di rilievo incluso nella sequenza di attività della peer cache di Windows PE. Quando si utilizza questo metodo:  
 
-    -   Non è necessario che nel client venga installata l’immagine in corso di distribuzione.  
+  -   Non è necessario che nel client venga installata l’immagine in corso di distribuzione.  
 
-    -   Oltre all'opzione **Scarica il contenuto del pacchetto** , per la sequenza di attività è necessario usare anche l'opzione **Cache client Gestione configurazione** . Utilizzare questa opzione per archiviare il contenuto nella cache dei client in modo che il client possa funzionare da origine peer cache per altri client peer cache.  
+  -   Oltre all'opzione **Scarica il contenuto del pacchetto** , per la sequenza di attività è necessario usare anche l'opzione **Cache client Gestione configurazione** . Utilizzare questa opzione per archiviare il contenuto nella cache dei client in modo che il client possa funzionare da origine peer cache per altri client peer cache.  
 
- Nelle procedure riportate di seguito sarà possibile configurare Peer cache di Windows PE sui client e configurare le sequenze di attività che supportano la peer cache.  
+  Nelle procedure riportate di seguito sarà possibile configurare Peer cache di Windows PE sui client e configurare le sequenze di attività che supportano la peer cache.  
 
 ### <a name="to-configure-the-windows-pe-peer-cache-source-computers"></a>Per configurare i computer dell'origine peer cache di Windows PE  
 
-1.  Nella console di Configuration Manager passare ad **Amministrazione** > **Impostazioni client**e creare un nuovo oggetto **Impostazioni dispositivo client personalizzate** o modificare un oggetto impostazioni esistente. È possibile anche eseguire questa configurazione per l’oggetto **Impostazioni client predefinite** .  
+1. Nella console di Configuration Manager passare ad **Amministrazione** > **Impostazioni client**e creare un nuovo oggetto **Impostazioni dispositivo client personalizzate** o modificare un oggetto impostazioni esistente. È possibile anche eseguire questa configurazione per l’oggetto **Impostazioni client predefinite** .  
 
-    > [!TIP]  
-    >  Utilizzare un oggetto impostazioni personalizzate per gestire i client che ricevono questa configurazione. È possibile, ad esempio, evitare questa configurazione sui portatili degli utenti che si trovano spesso in viaggio. Un sistema altamente mobile può essere un'origine insufficiente a fornire contenuto ad altri client peer cache.  
-    >   
-    >  Ricordare anche che quando si configura questa impostazione come parte di **Impostazioni client predefinite**, la configurazione si applica a tutti i client dell'ambiente in uso.  
+   > [!TIP]  
+   >  Utilizzare un oggetto impostazioni personalizzate per gestire i client che ricevono questa configurazione. È possibile, ad esempio, evitare questa configurazione sui portatili degli utenti che si trovano spesso in viaggio. Un sistema altamente mobile può essere un'origine insufficiente a fornire contenuto ad altri client peer cache.  
+   >   
+   >  Ricordare anche che quando si configura questa impostazione come parte di **Impostazioni client predefinite**, la configurazione si applica a tutti i client dell'ambiente in uso.  
 
-2.  In **Peer cache di Windows PE**impostare **Abilita client di Configuration Manager nel sistema operativo completo a condividere contenuto** su **Sì**.  
+2. In **Impostazioni della cache del client** impostare **Abilita client di Configuration Manager nel sistema operativo completo a condividere contenuto** su **Sì**.  
 
-    -   Per impostazione predefinita, è abilitato solo HTTP. Se si desidera abilitare i client a scaricare il contenuto in HTTPS, impostare **Abilitare HTTPS per la comunicazione peer client** su **Sì**.  
+   -   Per impostazione predefinita, è abilitato solo HTTP. Se si desidera abilitare i client a scaricare il contenuto in HTTPS, impostare **Abilitare HTTPS per la comunicazione peer client** su **Sì**.  
 
-    -   Per impostazione predefinita, la porta per le trasmissioni è impostata su 8004 e la porta per il download del contenuto è impostata su 8003. È possibile modificare entrambe.  
+   -   Per impostazione predefinita, la porta per le trasmissioni è impostata su 8004 e la porta per il download del contenuto è impostata su 8003. È possibile modificare entrambe.  
 
-3.  Salvare e distribuire le impostazioni client ai client selezionati come origine cache peer.  
+3. Salvare e distribuire le impostazioni client ai client selezionati come origine cache peer.  
 
- Dopo aver configurato un dispositivo con questo oggetto impostazioni, il dispositivo viene configurato per funzionare da origine peer cache. Queste impostazioni devono essere distribuite ai potenziali client peer cache per configurare le porte e i protocolli richiesti.  
+   Dopo aver configurato un dispositivo con questo oggetto impostazioni, il dispositivo viene configurato per funzionare da origine peer cache. Queste impostazioni devono essere distribuite ai potenziali client peer cache per configurare le porte e i protocolli richiesti.  
 
 ###  <a name="BKMK_PeerCacheConfigureTS"></a> Configurare una sequenza di attività per la peer cache di Windows PE  
  Quando si configura la sequenza di attività, usare le seguenti variabili della sequenza di attività come variabili di raccolta per la raccolta in cui viene distribuita la sequenza di attività:  
 
--   **SMSTSPeerDownload**  
+- **SMSTSPeerDownload**  
 
-     Valore: TRUE  
+   Valore:  TRUE  
 
-     Consente al client di utilizzare Peer cache di Windows PE.  
+   Consente al client di utilizzare Peer cache di Windows PE.  
 
--   **SMSTSPeerRequestPort**  
+- **SMSTSPeerRequestPort**  
 
-     Valore: <numero porta\>  
+   Valore: <numero porta\>  
 
-     Quando non si usano le porte predefinite configurate in Impostazioni client (8004), è necessario configurare questa variabile con un valore personalizzato della porta di rete da usare per la trasmissione iniziale.  
+   Quando non si usano le porte predefinite configurate in Impostazioni client (8004), è necessario configurare questa variabile con un valore personalizzato della porta di rete da usare per la trasmissione iniziale.  
 
--   **SMSTSPreserveContent**  
+- **SMSTSPreserveContent**  
 
-     Valore: TRUE  
+   Valore: TRUE  
 
-     Ciò contrassegna il contenuto nella sequenza di attività per essere mantenuto nella cache del client di Configuration Manager dopo la distribuzione. Questa operazione è diversa rispetto all'uso di SMSTSPersisContent che mantiene il contenuto solo per la durata della sequenza di attività e usa la cache della sequenza di attività, ma non la cache del client di Configuration Manager.  
+   Ciò contrassegna il contenuto nella sequenza di attività per essere mantenuto nella cache del client di Configuration Manager dopo la distribuzione. Questa operazione è diversa rispetto all'uso di SMSTSPersisContent che mantiene il contenuto solo per la durata della sequenza di attività e usa la cache della sequenza di attività, ma non la cache del client di Configuration Manager.  
 
- Per altre informazioni, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables).  
+  Per altre informazioni, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables).  
 
 ###  <a name="BKMK_PeerCacheValidate"></a> Convalidare l'esito positivo dell'uso della peer cache di Windows PE  
  Dopo aver usato la peer cache di Windows PE per distribuire e installare una sequenza di attività, è possibile verificare che la peer cache sia stata usata correttamente nel processo visualizzando **smsts.log** sul client che ha eseguito la sequenza di attività.  

@@ -10,12 +10,12 @@ ms.assetid: 0a2d6c3f-a4e4-4c19-b087-3caada480de9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3b7916b386cb22f2d1869eface009bd10ff17d18
-ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
+ms.openlocfilehash: 1103b9e977f3bbef3e07d545b6b3762f6cf59fdd
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48862550"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53414974"
 ---
 # <a name="fundamentals-of-role-based-administration-for-system-center-configuration-manager"></a>Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager
 
@@ -25,13 +25,13 @@ Con System Center Configuration Manager si usa l'amministrazione basata su ruoli
 
  Questo modello di amministrazione basata su ruoli definisce e gestisce centralmente le impostazioni di accesso di sicurezza a livello di gerarchia per tutti i siti e le impostazioni del sito usando quanto segue:  
 
--   I*ruoli di sicurezza* vengono assegnati agli utenti (o a gruppi di utenti) amministratori per fornire loro le autorizzazioni per diversi oggetti di Configuration Manager, ad esempio le autorizzazioni per la creazione o la modifica delle impostazioni client.  
+- I*ruoli di sicurezza* vengono assegnati agli utenti (o a gruppi di utenti) amministratori per fornire loro le autorizzazioni per diversi oggetti di Configuration Manager, ad esempio le autorizzazioni per la creazione o la modifica delle impostazioni client.  
 
--   Gli *ambiti di sicurezza* vengono usati per raggruppare istanze specifiche di oggetti che un utente amministratore ha la responsabilità di gestire, ad esempio un'applicazione che installa Microsoft Office 2010.  
+- Gli *ambiti di sicurezza* vengono usati per raggruppare istanze specifiche di oggetti che un utente amministratore ha la responsabilità di gestire, ad esempio un'applicazione che installa Microsoft Office 2010.  
 
--   Le*raccolte* vengono usate per specificare i gruppi di utenti e le risorse dispositivi che l'utente amministratore può gestire.  
+- Le*raccolte* vengono usate per specificare i gruppi di utenti e le risorse dispositivi che l'utente amministratore può gestire.  
 
- Con la combinazione di ruoli di sicurezza, ambiti di sicurezza e raccolte è possibile separare le assegnazioni amministrative in base ai requisiti specifici dell'organizzazione. Nel loro insieme, questi elementi definiscono l'ambito amministrativo di un utente, che rappresenta ciò che l'utente può visualizzare e gestire nella distribuzione di Configuration Manager.  
+  Con la combinazione di ruoli di sicurezza, ambiti di sicurezza e raccolte è possibile separare le assegnazioni amministrative in base ai requisiti specifici dell'organizzazione. Nel loro insieme, questi elementi definiscono l'ambito amministrativo di un utente, che rappresenta ciò che l'utente può visualizzare e gestire nella distribuzione di Configuration Manager.  
 
 ## <a name="benefits-of-role-based-administration"></a>Vantaggi dell'amministrazione basata su ruoli  
 
@@ -75,7 +75,7 @@ Quando si progetta e implementa la protezione amministrativa per Configuration M
 > [!TIP]  
 >  È possibile visualizzare l'elenco di ruoli di sicurezza incorporati e i ruoli di sicurezza personalizzati creati, incluse le descrizioni, nella console di Configuration Manager. Per visualizzare i ruoli, nell'area di lavoro **Amministrazione** espandere **Sicurezza** e quindi selezionare **Ruoli di protezione**.  
 
- Ogni ruolo di sicurezza dispone di autorizzazioni specifiche per diversi tipi di oggetto. Ad esempio, il ruolo di sicurezza *Autore applicazioni* ha le autorizzazioni seguenti per le applicazioni: Approva, Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Esegui report e Imposta ambito di protezione.
+ Ogni ruolo di sicurezza dispone di autorizzazioni specifiche per diversi tipi di oggetto. Ad esempio, il ruolo di sicurezza *Autore applicazione* dispone delle seguenti autorizzazioni per le applicazioni: Approva, Crea, Elimina, Modifica, Modifica cartella, Sposta oggetto, Lettura, Esegui report e Imposta ambito di protezione.
 
  Non è possibile modificare le autorizzazioni per i ruoli di sicurezza incorporati, ma è possibile copiare il ruolo, apportare modifiche e quindi salvare tali modifiche come un nuovo ruolo di sicurezza personalizzato. È anche possibile importare ruoli di sicurezza esportati da un'altra gerarchia, ad esempio da una rete di test. Esaminare i ruoli di sicurezza e le relative autorizzazioni per stabilire se usare i ruoli di sicurezza predefiniti o se è necessario crearne di personalizzati.  
 

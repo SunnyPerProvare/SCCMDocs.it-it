@@ -10,12 +10,12 @@ ms.assetid: a1fe22d0-4695-4de0-8bf0-e3475b03cf0e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d4aa1c044c8ea68b934a6dad4f1f85cbe43ec19b
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 56b1c0cff398f0009169ab1b02801e536e1a3343
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52458140"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418121"
 ---
 # <a name="how-to-configure-boundary-groups-for-configuration-manager"></a>Come configurare gruppi di limiti per Configuration Manager
 
@@ -81,17 +81,17 @@ Per configurare il comportamento di fallback, passare alla scheda **Relazioni** 
 
 - Per creare una relazione con un altro gruppo di limiti:  
 
-    - Selezionare **Aggiungi**. Nella finestra Gruppi di limiti di fallback selezionare il gruppo di limiti da configurare.  
+  - Selezionare **Aggiungi**. Nella finestra Gruppi di limiti di fallback selezionare il gruppo di limiti da configurare.  
 
-    - Impostare il tempo di fallback per i ruoli del sistema del sito seguenti:  
-        - Punto di distribuzione  
-        - Punto di aggiornamento software  
-        - Punto di gestione  
+  - Impostare il tempo di fallback per i ruoli del sistema del sito seguenti:  
+    - Punto di distribuzione  
+    - Punto di aggiornamento software  
+    - Punto di gestione  
 
-        > [!Note]  
-        > Ad esempio, aprire la finestra delle proprietà per il gruppo di limiti di una succursale. Nella finestra Gruppi di limiti di fallback selezionare il gruppo di limiti della sede centrale. Impostare il tempo di fallback per i punti di distribuzione su `20`. Quando si salva questa configurazione, i client nel gruppo di limiti della succursale inizieranno a cercare il contenuto nei punti di distribuzione nel gruppo di limiti della sede centrale dopo 20 minuti.  
+      > [!Note]  
+      > Ad esempio, aprire la finestra delle proprietà per il gruppo di limiti di una succursale. Nella finestra Gruppi di limiti di fallback selezionare il gruppo di limiti della sede centrale. Impostare il tempo di fallback per i punti di distribuzione su `20`. Quando si salva questa configurazione, i client nel gruppo di limiti della succursale inizieranno a cercare il contenuto nei punti di distribuzione nel gruppo di limiti della sede centrale dopo 20 minuti.  
 
-    - Per impedire il fallback a un gruppo di limiti specifico, selezionare il gruppo di limiti e quindi selezionare **Non eseguire mai il fallback** per il tipo di ruolo del sistema del sito. Questa operazione può includere il *gruppo di limiti del sito predefinito*.  
+  - Per impedire il fallback a un gruppo di limiti specifico, selezionare il gruppo di limiti e quindi selezionare **Non eseguire mai il fallback** per il tipo di ruolo del sistema del sito. Questa operazione può includere il *gruppo di limiti del sito predefinito*.  
 
 - Per modificare la configurazione di una relazione esistente, selezionare il gruppo di limiti nell'elenco e quindi selezionare **Cambia**. Questa operazione apre la finestra Gruppi di limiti di fallback solo per il gruppo di limiti specifico.  
  
@@ -103,9 +103,9 @@ Per altre informazioni, vedere [Fallback](/sccm/core/servers/deploy/configure/bo
 ### <a name="bkmk_options"></a> Configurare le opzioni del gruppo di limiti
 <!--1356193--> A partire dalla versione 1806, per configurare opzioni aggiuntive per i client in questo gruppo di limiti, passare alla scheda **Opzioni**. Per altre informazioni, vedere [Opzioni del gruppo di limiti per download peer](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgoptions).
 
-- **Consenti i download peer in questo gruppo di limiti**: questa opzione è abilitata per impostazione predefinita. Il punto di gestione fornisce ai client un elenco di posizioni del contenuto che include le origini peer.  
+- **Consenti i download peer in questo gruppo di limiti**: Questa opzione è attivata per impostazione predefinita. Il punto di gestione fornisce ai client un elenco di posizioni del contenuto che include le origini peer.  
 
-    - **Durante i download peer, usa solo i peer entro la stessa subnet**: questa impostazione dipende da quella sopra indicata. Se si abilita questa opzione, il punto di gestione include nell'elenco delle posizioni del contenuto solo le origini peer incluse nella stessa subnet del client.  
+    - **Durante i download peer, usa solo i peer entro la stessa subnet**: Questa impostazione dipende da quella precedente. Se si abilita questa opzione, il punto di gestione include nell'elenco delle posizioni del contenuto solo le origini peer incluse nella stessa subnet del client.  
 
 
 ## <a name="bkmk_site-fallback"></a> Configurare un sito di fallback per l'assegnazione sito automatica  

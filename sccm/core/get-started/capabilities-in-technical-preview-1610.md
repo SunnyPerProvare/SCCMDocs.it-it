@@ -10,12 +10,12 @@ ms.assetid: 8b31fd3e-875a-4a31-9498-5b050aadce32
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0798deff2f4904cb1cecac79251e7bc0688e0d4e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: d0d1e646795bb778e185d49f5de0796f486d2a08
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337055"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419564"
 ---
 # <a name="capabilities-in-technical-preview-1610-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1610 per System Center Configuration Manager
 
@@ -63,26 +63,26 @@ Per negare la richiesta di un'applicazione approvata:
 1.  Nella console di Configuration Manager [creare e distribuire un'applicazione](https://docs.microsoft.com/sccm/apps/deploy-use/create-applications) che richiede l'approvazione.
 2.  In un computer client aprire Software Center e inviare una richiesta per l'applicazione.
 3.  Nella console di Configuration Manager approvare la richiesta per l'applicazione.
-4.  Negare la richiesta di un'applicazione approvata: nella console di Configuration Manager passare a**Raccolta software** > **Panoramica** > **Gestione applicazioni** > **Richieste di approvazione** e selezionare la richiesta di applicazione che si desidera negare.  Nella barra multifunzione fare clic su **Nega**.
+4.  Nega la richiesta dell'applicazione approvata: nella console di Configuration Manager passare a **Raccolta software** > **Panoramica** > **Gestione applicazioni** > **Richieste di approvazione** e selezionare la richiesta di applicazione che si vuole negare.  Nella barra multifunzione fare clic su **Nega**.
 
 ## <a name="exclude-clients-from-automatic-upgrade"></a>Impedire l'aggiornamento automatico dei client
 Tecnichal Preview 1610 presenta una nuova impostazione che consente di impedire che una raccolta di client installi automaticamente le versioni client aggiornate.  Questa funzione si applica sia all'aggiornamento automatico sia ad altri metodi, ad esempio all'aggiornamento basato sull'aggiornamento software, agli script di accesso e ai criteri di gruppo. Questa opzione può essere utile per una raccolta di computer che richiede particolare attenzione durante l'aggiornamento del client. I client che appartengono a una raccolta esclusa ignorano le richieste di aggiornamento del software client.
 
 ### <a name="configure-exclusion-from-automatic-upgrade"></a>Configurare l'esclusione dall'aggiornamento automatico
 Per configurare le esclusioni dall'aggiornamento automatico:
-1.  Nella console di Configuration Manager aprire **Impostazioni gerarchia** in **Amministrazione > Configurazione del sito > Siti** e quindi selezionare la scheda **Aggiornamento client**.
-2.  Selezionare la casella di controllo **Exclude specified clients from upgrade** (Escludi dall'aggiornamento i client specificati) e **Exclusion collection** (Raccolta di esclusione), quindi selezionare la raccolta da escludere. È possibile selezionare per l'esclusione solo una singola raccolta.
-3.  Fare clic su **OK** per chiudere e salvare la configurazione. Dopo che i client avranno aggiornato i criteri, i client appartenenti alla raccolta esclusa non installeranno più automaticamente gli aggiornamenti per il software client.
+1. Nella console di Configuration Manager aprire **Impostazioni gerarchia** in **Amministrazione > Configurazione del sito > Siti** e quindi selezionare la scheda **Aggiornamento client**.
+2. Selezionare la casella di controllo **Exclude specified clients from upgrade** (Escludi dall'aggiornamento i client specificati) e **Exclusion collection** (Raccolta di esclusione), quindi selezionare la raccolta da escludere. È possibile selezionare per l'esclusione solo una singola raccolta.
+3. Fare clic su **OK** per chiudere e salvare la configurazione. Dopo che i client avranno aggiornato i criteri, i client appartenenti alla raccolta esclusa non installeranno più automaticamente gli aggiornamenti per il software client.
 
-  ![Impostazioni per l'esclusione dall'aggiornamento automatico](media/automatic_upgrade_exclusion.png)
+   ![Impostazioni per l'esclusione dall'aggiornamento automatico](media/automatic_upgrade_exclusion.png)
 
 > [!NOTE]
 > Anche se l'interfaccia utente indica che i client non verranno aggiornati, esistono due metodi che è possibile usare per sostituire queste impostazioni. L'installazione push del client e l'installazione manuale del client consentono di sostituire questa configurazione. Per altre informazioni, vedere la sezione seguente.
 
 ### <a name="how-to-upgrade-a-client-that-is-in-an-excluded-collection"></a>Come aggiornare un client in una raccolta esclusa
 Se una raccolta è configurata per l'esclusione, i membri di tale raccolta possono aggiornare il software client solo tramite uno dei due metodi che sostituiscono l'esclusione:
- - **Installazione push client**: è possibile usare l'installazione push del client per eseguire l'aggiornamento di un client che appartiene a una raccolta esclusa. Questa operazione è consentita in quanto richiesta dall'amministratore e permette di aggiornare i client lasciando invariata l'esclusione dell'intera raccolta.       
- - **Installazione client manuale**: è possibile aggiornare manualmente i client che appartengono a una raccolta esclusa usando la seguente opzione della riga di comando con ccmsetup: ***/ignoreskipupgrade***.
+- **Installazione push client**: è possibile usare l'installazione push del client per eseguire l'aggiornamento di un client che appartiene a una raccolta esclusa. Questa operazione è consentita in quanto richiesta dall'amministratore e permette di aggiornare i client lasciando invariata l'esclusione dell'intera raccolta.       
+- **Installazione client manuale**: è possibile aggiornare manualmente i client che appartengono a una raccolta esclusa usando la seguente opzione della riga di comando con ccmsetup: ***/ignoreskipupgrade***.
 
   Se si tenta di aggiornare manualmente un client che fa parte della raccolta esclusa senza usare questa opzione, il client non installa il nuovo software client. Per altre informazioni, vedere [Come installare manualmente i client di Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#a-namebkmkmanuala-how-to-install-configuration-manager-clients-manually).
 

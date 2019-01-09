@@ -10,12 +10,12 @@ ms.assetid: 3417ff88-7177-4a0d-8967-ab21fe7eba17
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 376d75a2aed5fe0b14b3af309e48a75d8f392c11
-ms.sourcegitcommit: defdaf493c1dc5a7a380541bc028fbd2b21c1047
+ms.openlocfilehash: 8e857d42654544308c0b008776110862a202a8ba
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34153023"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417524"
 ---
 # <a name="step-by-step-example-deployment-of-the-pki-certificates-for-system-center-configuration-manager-windows-server-2008-certification-authority"></a>Esempio dettagliato di distribuzione dei certificati PKI per System Center Configuration Manager: Autorità di certificazione di Windows Server 2008
 
@@ -25,11 +25,11 @@ Questo esempio dettagliato di distribuzione usa un'autorità di certificazione (
 
  Dal momento che non esiste un singolo metodo di distribuzione per i certificati richiesti, consultare la documentazione di distribuzione PKI specifica per le procedure richieste e consigliate di distribuzione dei certificati richiesti per un ambiente di produzione. Per altre informazioni sui requisiti dei certificati, vedere [Requisiti dei certificati PKI per System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
 
-> [!TIP]  
+> [!TIP]
 >  È possibile adattare le istruzioni riportate in questo argomento per sistemi operativi diversi da quelli documentati nella sezione Requisiti della rete di test. Tuttavia, se si esegue la CA emittente su Windows Server 2012, non viene richiesta la versione del modello di certificato. Al contrario, specificarla nella scheda **Compatibilità** delle proprietà del modello:  
->   
->  -   **Autorità di certificazione**: **Windows Server 2003**  
-> -   **Destinatario certificato**: **Windows XP / Server 2003**  
+> 
+> - **Autorità di certificazione**: **Windows Server 2003**  
+>   -   **Destinatario certificato**: **Windows XP / Server 2003**  
 
 ## <a name="in-this-section"></a>In questa sezione  
  Le sezioni seguenti comprendono istruzioni dettagliate di esempio per creare e distribuire i certificati seguenti che possono essere usati in System Center Configuration Manager:  
@@ -71,7 +71,7 @@ Questo esempio dettagliato di distribuzione usa un'autorità di certificazione (
 |Requisito del certificato|Descrizione del certificato|  
 |-----------------------------|-----------------------------|  
 |Certificato del server Web per i sistemi del sito che eseguono IIS|Questo certificato viene utilizzato per crittografare dati e per l'autenticazione tra server e client. Deve essere installato esternamente da System Center Configuration Manager nei server dei sistemi del sito che eseguono Internet Information Services (IIS) e che sono configurati in System Center Configuration Manager per usare HTTPS.<br /><br /> Per i passaggi relativi alla configurazione e installazione di questo certificato, vedere [Distribuire il certificato del server Web per sistemi del sito che eseguono IIS](#BKMK_webserver2008_cm2012) in questo argomento.|  
-|Certificato di servizio per i client per la connessione ai punti di distribuzione basati su cloud|Per i passaggi relativi alla configurazione e installazione di questo certificato, vedere [Distribuire il certificato di servizio per i punti di distribuzione basati su cloud](#BKMK_clouddp2008_cm2012) in questo argomento.<br /><br /> **Importante** : questo certificato viene usato in combinazione con il certificato di gestione di Windows Azure. Per altre informazioni sul certificato di gestione, vedere [Come creare un certificato di gestione per Windows Azure](http://go.microsoft.com/fwlink/p/?LinkId=220281) e [Come aggiungere un certificato di gestione a una sottoscrizione Windows Azure](http://go.microsoft.com/fwlink/?LinkId=241722) nella sezione della piattaforma Windows Azure di MSDN Library.|  
+|Certificato di servizio per i client per la connessione ai punti di distribuzione basati su cloud|Per i passaggi relativi alla configurazione e installazione di questo certificato, vedere [Distribuire il certificato di servizio per i punti di distribuzione basati su cloud](#BKMK_clouddp2008_cm2012) in questo argomento.<br /><br /> **Importante:** Questo certificato viene usato in combinazione con il certificato di gestione di Windows Azure. Per altre informazioni sul certificato di gestione, vedere [Come creare un certificato di gestione per Windows Azure](http://go.microsoft.com/fwlink/p/?LinkId=220281) e [Come aggiungere un certificato di gestione a una sottoscrizione Windows Azure](http://go.microsoft.com/fwlink/?LinkId=241722) nella sezione della piattaforma Windows Azure di MSDN Library.|  
 |Certificato client per computer Windows|Questo certificato è usato per l'autenticazione tra i computer client di System Center Configuration Manager e i sistemi del sito che sono configurati per usare HTTPS. Può inoltre essere usato per il monitoraggio dello stato operativo dei punti di gestione e dei punti di migrazione stato quando sono configurati per l'uso di HTTPS. Deve essere installato esternamente da System Center Configuration Manager nei computer.<br /><br /> Per i passaggi relativi alla configurazione e installazione di questo certificato, vedere [Distribuire il certificato client per computer Windows](#BKMK_client2008_cm2012) in questo argomento.|  
 |Certificato client per punti di distribuzione|Questo certificato ha due scopi:<br /><br /> Il certificato viene utilizzato per l'autenticazione tra il punto di distribuzione e un punto di gestione abilitato HTTPS prima che il punto di distribuzione invii dei messaggi di stato.<br /><br /> Quando l'opzione del punto di distribuzione **Abilita supporto PXE per i client** è selezionata, il certificato viene inviato ai computer con avvio PXE in modo che possano connettersi a un punto di gestione abilitato HTTPS durante la distribuzione del sistema operativo.<br /><br /> Per i passaggi relativi alla configurazione e installazione di questo certificato, vedere [Distribuire il certificato client per punti di distribuzione](#BKMK_clientdistributionpoint2008_cm2012) in questo argomento.|  
 |Certificato di registrazione per dispositivi mobili|Questo certificato è usato per l'autenticazione tra i computer client dei dispositivi mobili di System Center Configuration Manager e i sistemi del sito che sono configurati per usare HTTPS. Deve essere installato come parte della registrazione dei dispositivi mobili in System Center Configuration Manager ed è necessario scegliere il modello di certificato configurato come impostazione client dei dispositivi mobili.<br /><br /> Per i passaggi relativi alla configurazione di questo certificato, vedere [Distribuire il certificato di registrazione per i dispositivi mobili](#BKMK_mobiledevices2008_cm2012) in questo argomento.|  
@@ -176,22 +176,22 @@ Questo esempio dettagliato di distribuzione usa un'autorità di certificazione (
 
 ##### <a name="to-set-up-iis-to-use-the-web-server-certificate"></a>Per configurare IIS per l'uso del certificato del server Web  
 
-1.  Nel server membro in cui è installato IIS fare clic su **Start**, scegliere **Programmi**, **Strumenti di amministrazione**, quindi **Gestione Internet Information Services (IIS)**.  
+1. Nel server membro in cui è installato IIS fare clic su **Start**, scegliere **Programmi**, **Strumenti di amministrazione**, quindi **Gestione Internet Information Services (IIS)**.  
 
-2.  Espandere **Siti**, fare clic con il pulsante destro del mouse su **Sito Web predefinito**, quindi scegliere **Modifica binding**.  
+2. Espandere **Siti**, fare clic con il pulsante destro del mouse su **Sito Web predefinito**, quindi scegliere **Modifica binding**.  
 
-3.  Scegliere la voce **https**, quindi scegliere **Modifica**.  
+3. Scegliere la voce **https**, quindi scegliere **Modifica**.  
 
-4.  Nella finestra di dialogo **Modifica binding sito** selezionare il certificato richiesto usando il modello Certificati server Web ConfigMgr, quindi scegliere **OK**.  
+4. Nella finestra di dialogo **Modifica binding sito** selezionare il certificato richiesto usando il modello Certificati server Web ConfigMgr, quindi scegliere **OK**.  
 
-    > [!NOTE]  
-    >  Se non si è certi di quale sia il certificato corretto, sceglierne uno e quindi scegliere **Visualizza**. In questo modo è possibile confrontare i dettagli del certificato selezionato con i certificati nello snap-in Certificati. Ad esempio, lo snap-in Certificati mostra il modello di certificato che è stato usato per richiedere il certificato. È possibile quindi confrontare l'identificazione personale del certificato richiesto usando il modello Certificati server Web ConfigMgr con l'identificazione personale del certificato attualmente selezionato nella finestra di dialogo **Modifica binding sito**.  
+   > [!NOTE]  
+   >  Se non si è certi di quale sia il certificato corretto, sceglierne uno e quindi scegliere **Visualizza**. In questo modo è possibile confrontare i dettagli del certificato selezionato con i certificati nello snap-in Certificati. Ad esempio, lo snap-in Certificati mostra il modello di certificato che è stato usato per richiedere il certificato. È possibile quindi confrontare l'identificazione personale del certificato richiesto usando il modello Certificati server Web ConfigMgr con l'identificazione personale del certificato attualmente selezionato nella finestra di dialogo **Modifica binding sito**.  
 
-5.  Scegliere **OK** nella finestra di dialogo **Modifica binding sito**, quindi scegliere **Chiudi**.  
+5. Scegliere **OK** nella finestra di dialogo **Modifica binding sito**, quindi scegliere **Chiudi**.  
 
-6.  Chiudere **Gestione Internet Information Services (IIS)**.  
+6. Chiudere **Gestione Internet Information Services (IIS)**.  
 
- A questo punto, il server membro è configurato con un certificato server Web di System Center Configuration Manager.  
+   A questo punto, il server membro è configurato con un certificato server Web di System Center Configuration Manager.  
 
 > [!IMPORTANT]  
 >  Quando si installa il server del sistema del sito di System Center Configuration Manager in questo computer, assicurarsi di specificare nelle proprietà del sistema del sito gli stessi FQDN indicati al momento della richiesta del certificato.  
@@ -209,14 +209,14 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 ###  <a name="BKMK_clouddpcreating2008"></a> Creare ed emettere il modello del certificato del server Web personalizzato nell'autorità di certificazione  
  Questa procedura consente di creare un modello di certificato personalizzato basato sul modello del certificato del server Web. Il certificato è valido per i punti di distribuzione di System Center Configuration Manager basati sul cloud. La chiave privata deve essere esportabile. Dopo aver creato il modello di certificato, viene aggiunto all'autorità di certificazione.  
 
-> [!NOTE]  
+> [!NOTE]
 >  In questa procedura viene usato un modello di certificato diverso dal modello di certificato del server Web che è stato creato per i sistemi del sito che eseguono IIS. Sebbene entrambi i certificati richiedano la funzionalità di autenticazione server, il certificato per i punti di distribuzione basati su cloud richiede di immettere un valore definito in modo personalizzato per il nome del soggetto e la chiave privata deve essere esportata. Come procedura consigliata di sicurezza, non configurare i modelli di certificato per consentire l'esportazione della chiave privata, a meno che questa configurazione non sia necessaria. Il punto di distribuzione basato su cloud richiede questa configurazione in quanto è necessario importare il certificato come file, anziché sceglierlo dall'archivio certificati.  
->   
+> 
 >  Quando si crea un nuovo modello di certificato per questo certificato, è possibile limitare il numero dei computer che possono richiedere un certificato che consenta l'esportazione della chiave privata. In una rete di produzione, è inoltre possibile aggiungere le seguenti modifiche per questo certificato:  
->   
->  -   Richiedere l'approvazione per installare il certificato per una maggiore sicurezza.  
-> -   Aumentare il periodo di validità del certificato. Poiché è necessario esportare e importare il certificato ogni volta che scade, un aumento del periodo di validità riduce la frequenza di ripetizione di questa procedura. Tuttavia, l'aumento del periodo di validità riduce anche la sicurezza del certificato, perché fornisce un tempo maggiore all'autore di un attacco per decrittografare la chiave privata e rubare il certificato.  
-> -   Utilizzare un valore personalizzato nel nome alternativo del soggetto (SAN) del certificato per distinguere questo certificato dai certificati del server Web standard che si utilizzano con IIS.  
+> 
+> - Richiedere l'approvazione per installare il certificato per una maggiore sicurezza.  
+>   -   Aumentare il periodo di validità del certificato. Poiché è necessario esportare e importare il certificato ogni volta che scade, un aumento del periodo di validità riduce la frequenza di ripetizione di questa procedura. Tuttavia, l'aumento del periodo di validità riduce anche la sicurezza del certificato, perché fornisce un tempo maggiore all'autore di un attacco per decrittografare la chiave privata e rubare il certificato.  
+>   -   Utilizzare un valore personalizzato nel nome alternativo del soggetto (SAN) del certificato per distinguere questo certificato dai certificati del server Web standard che si utilizzano con IIS.  
 
 ##### <a name="to-create-and-issue-the-custom-web-server-certificate-template-on-the-certification-authority"></a>Per creare ed emettere il modello del certificato del server Web personalizzato nell'autorità di certificazione  
 
@@ -299,28 +299,28 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 ##### <a name="to-export-the-custom-web-server-certificate-for-cloud-based-distribution-points"></a>Per esportare il certificato del server Web personalizzato per i punti di distribuzione basati su cloud  
 
-1.  Nella console **Certificati (computer locale)** fare clic con il pulsante destro del mouse sul certificato appena installato, scegliere **Tutte le attività**, quindi scegliere **Esporta**.  
+1. Nella console **Certificati (computer locale)** fare clic con il pulsante destro del mouse sul certificato appena installato, scegliere **Tutte le attività**, quindi scegliere **Esporta**.  
 
-2.  Nell'Esportazione guidata certificati scegliere **Avanti**.  
+2. Nell'Esportazione guidata certificati scegliere **Avanti**.  
 
-3.  Nella pagina **Esportazione della chiave privata con il certificato** scegliere **Sì, esporta la chiave privata**, quindi scegliere **Avanti**.  
+3. Nella pagina **Esportazione della chiave privata con il certificato** scegliere **Sì, esporta la chiave privata**, quindi scegliere **Avanti**.  
 
-    > [!NOTE]  
-    >  Se questa opzione non è disponibile, il certificato è stato creato senza l'opzione per esportare la chiave privata. In questo scenario, non è possibile esportare il certificato nel formato richiesto. È necessario configurare il modello di certificato per consentire l'esportazione della chiave privata e richiedere di nuovo il certificato.  
+   > [!NOTE]  
+   >  Se questa opzione non è disponibile, il certificato è stato creato senza l'opzione per esportare la chiave privata. In questo scenario, non è possibile esportare il certificato nel formato richiesto. È necessario configurare il modello di certificato per consentire l'esportazione della chiave privata e richiedere di nuovo il certificato.  
 
-4.  Nella pagina **Formato file di esportazione** assicurarsi che sia selezionata l'opzione **Scambio di informazioni personali - PKCS #12 (.PFX)**.  
+4. Nella pagina **Formato file di esportazione** assicurarsi che sia selezionata l'opzione **Scambio di informazioni personali - PKCS #12 (.PFX)**.  
 
-5.  Nella pagina **Password** specificare una password complessa per proteggere il certificato esportato con la relativa chiave privata, quindi scegliere **Avanti**.  
+5. Nella pagina **Password** specificare una password complessa per proteggere il certificato esportato con la relativa chiave privata, quindi scegliere **Avanti**.  
 
-6.  Nella pagina **File da esportare** specificare il nome del file da esportare, quindi scegliere **Avanti**.  
+6. Nella pagina **File da esportare** specificare il nome del file da esportare, quindi scegliere **Avanti**.  
 
-7.  Per chiudere la procedura guidata, scegliere **Fine** nella pagina **Esportazione guidata certificato**, quindi scegliere **OK** nella finestra di conferma.  
+7. Per chiudere la procedura guidata, scegliere **Fine** nella pagina **Esportazione guidata certificato**, quindi scegliere **OK** nella finestra di conferma.  
 
-8.  Chiudere **Certificati (computer locale)**.  
+8. Chiudere **Certificati (computer locale)**.  
 
 9. Archiviare il file in modo protetto e assicurarsi che sia possibile accedervi dalla console di System Center Configuration Manager.  
 
- Il certificato è ora pronto per essere importato quando si crea un punto di distribuzione basato su cloud.  
+   Il certificato è ora pronto per essere importato quando si crea un punto di distribuzione basato su cloud.  
 
 ##  <a name="BKMK_client2008_cm2012"></a> Distribuire il certificato client per computer Windows  
  La distribuzione di questo certificato prevede le procedure seguenti:  
@@ -386,24 +386,24 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 ##### <a name="to-automatically-enroll-the-workstation-authentication-certificate-and-verify-its-installation-on-the-client-computer"></a>Per registrare automaticamente il certificato di autenticazione della workstation e verificare la sua installazione nel computer client  
 
-1.  Riavviare il computer della workstation e attendere alcuni minuti prima di effettuare l'accesso.  
+1. Riavviare il computer della workstation e attendere alcuni minuti prima di effettuare l'accesso.  
 
-    > [!NOTE]  
-    >  Il riavvio di un computer è il metodo più affidabile per un registrazione automatica dei certificati corretta.  
+   > [!NOTE]  
+   >  Il riavvio di un computer è il metodo più affidabile per un registrazione automatica dei certificati corretta.  
 
-2.  Accedere con un account che abbia privilegi amministrativi.  
+2. Accedere con un account che abbia privilegi amministrativi.  
 
-3.  Nella casella di ricerca digitare **mmc.exe**, quindi premere **INVIO**.  
+3. Nella casella di ricerca digitare **mmc.exe**, quindi premere **INVIO**.  
 
-4.  Nella console di gestione vuota scegliere **File**, quindi **Aggiungi/Rimuovi snap-in**.  
+4. Nella console di gestione vuota scegliere **File**, quindi **Aggiungi/Rimuovi snap-in**.  
 
-5.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **Certificati** dall'elenco **Snap-in disponibili**, quindi scegliere **Aggiungi**.  
+5. Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **Certificati** dall'elenco **Snap-in disponibili**, quindi scegliere **Aggiungi**.  
 
-6.  Nella finestra di dialogo **Snap-in certificati** scegliere **Account computer**, quindi scegliere **Avanti**.  
+6. Nella finestra di dialogo **Snap-in certificati** scegliere **Account computer**, quindi scegliere **Avanti**.  
 
-7.  Nella finestra di dialogo **Seleziona computer** verificare che l'opzione **Computer locale: (computer in cui è in esecuzione la console)** sia selezionata, quindi scegliere **Fine**.  
+7. Nella finestra di dialogo **Seleziona computer** verificare che l'opzione **Computer locale: (computer in cui è in esecuzione la console)** sia selezionata, quindi scegliere **Fine**.  
 
-8.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **OK**.  
+8. Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **OK**.  
 
 9. Nella console espandere **Certificati (computer locale)**, espandere **Personale**, quindi scegliere **Certificati**.  
 
@@ -413,7 +413,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 12. Ripetere i passaggi da 1 a 11 per il server membro per verificare che anche il server che verrà configurato come punto di gestione disponga di un certificato client.  
 
- A questo punto, il computer è configurato con un certificato client di System Center Configuration Manager.  
+    A questo punto, il computer è configurato con un certificato client di System Center Configuration Manager.  
 
 ##  <a name="BKMK_clientdistributionpoint2008_cm2012"></a> Distribuire il certificato client per punti di distribuzione  
 
@@ -431,14 +431,14 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 ###  <a name="BKMK_clientdistributionpoint02008"></a> Creare ed emettere un modello di certificato di autenticazione della workstation personalizzato nell'autorità di certificazione  
  Questa procedura crea un modello di certificato personalizzato per i punti di distribuzione di System Center Configuration Manager che consente l'esportazione della chiave privata e l'aggiunta del modello di certificato all'autorità di certificazione.  
 
-> [!NOTE]  
+> [!NOTE]
 >  In questa procedura viene usato un modello di certificato diverso dal modello di certificato che è stato creato per i computer client. Sebbene entrambi i certificati richiedano la funzionalità di autenticazione client, il certificato per i punti di distribuzione richiede l'esportazione della chiave privata. Come procedura consigliata di sicurezza, non configurare i modelli di certificato per consentire l'esportazione della chiave privata, a meno che questa configurazione non sia necessaria. Il punto di distribuzione richiede questa configurazione in quanto è necessario importare il certificato come file, anziché sceglierlo dall'archivio certificati.  
->   
+> 
 >  Quando si crea un nuovo modello di certificato per questo certificato, è possibile limitare il numero dei computer che possono richiedere un certificato che consenta l'esportazione della chiave privata. Nel nostro esempio di distribuzione questo sarà il gruppo di sicurezza precedentemente creato per i server del sistema del sito di System Center Configuration Manager che eseguono IIS. In una rete di produzione che distribuisce i ruoli del sistema del sito IIS, creare un nuovo gruppo di protezione per i server su cui sono in esecuzione i punti di distribuzione in modo che sia possibile limitare il certificato solo a questi server del sistema del sito. È possibile anche aggiungere le seguenti modifiche per questo certificato:  
->   
->  -   Richiedere l'approvazione per installare il certificato per una maggiore sicurezza.  
-> -   Aumentare il periodo di validità del certificato. Poiché è necessario esportare e importare il certificato ogni volta che scade, un aumento del periodo di validità riduce la frequenza di ripetizione di questa procedura. Tuttavia, l'aumento del periodo di validità riduce anche la sicurezza del certificato, perché fornisce un tempo maggiore all'autore di un attacco per decrittografare la chiave privata e rubare il certificato.  
-> -   Utilizzare un valore personalizzato nel campo Oggetto del certificato o Nome alternativo del soggetto (SAN) per identificare questo certificato dai certificati client standard. Può essere particolarmente utile se si utilizza lo stesso certificato per più punti di distribuzione.  
+> 
+> - Richiedere l'approvazione per installare il certificato per una maggiore sicurezza.  
+>   -   Aumentare il periodo di validità del certificato. Poiché è necessario esportare e importare il certificato ogni volta che scade, un aumento del periodo di validità riduce la frequenza di ripetizione di questa procedura. Tuttavia, l'aumento del periodo di validità riduce anche la sicurezza del certificato, perché fornisce un tempo maggiore all'autore di un attacco per decrittografare la chiave privata e rubare il certificato.  
+>   -   Utilizzare un valore personalizzato nel campo Oggetto del certificato o Nome alternativo del soggetto (SAN) per identificare questo certificato dai certificati client standard. Può essere particolarmente utile se si utilizza lo stesso certificato per più punti di distribuzione.  
 
 ##### <a name="to-create-and-issue-the-custom-workstation-authentication-certificate-template-on-the-certification-authority"></a>Per creare ed emettere il modello di certificato di autenticazione della workstation personalizzato nell'autorità di certificazione  
 
@@ -505,28 +505,28 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 ##### <a name="to-export-the-client-certificate-for-distribution-points"></a>Per esportare il certificato client per i punti di distribuzione  
 
-1.  Nella console **Certificati (computer locale)** fare clic con il pulsante destro del mouse sul certificato appena installato, scegliere **Tutte le attività**, quindi scegliere **Esporta**.  
+1. Nella console **Certificati (computer locale)** fare clic con il pulsante destro del mouse sul certificato appena installato, scegliere **Tutte le attività**, quindi scegliere **Esporta**.  
 
-2.  Nell'Esportazione guidata certificati scegliere **Avanti**.  
+2. Nell'Esportazione guidata certificati scegliere **Avanti**.  
 
-3.  Nella pagina **Esportazione della chiave privata con il certificato** scegliere **Sì, esporta la chiave privata**, quindi scegliere **Avanti**.  
+3. Nella pagina **Esportazione della chiave privata con il certificato** scegliere **Sì, esporta la chiave privata**, quindi scegliere **Avanti**.  
 
-    > [!NOTE]  
-    >  Se questa opzione non è disponibile, il certificato è stato creato senza l'opzione per esportare la chiave privata. In questo scenario, non è possibile esportare il certificato nel formato richiesto. È necessario configurare il modello di certificato per consentire l'esportazione della chiave privata e richiedere di nuovo il certificato.  
+   > [!NOTE]  
+   >  Se questa opzione non è disponibile, il certificato è stato creato senza l'opzione per esportare la chiave privata. In questo scenario, non è possibile esportare il certificato nel formato richiesto. È necessario configurare il modello di certificato per consentire l'esportazione della chiave privata e richiedere di nuovo il certificato.  
 
-4.  Nella pagina **Formato file di esportazione** assicurarsi che sia selezionata l'opzione **Scambio di informazioni personali - PKCS #12 (.PFX)**.  
+4. Nella pagina **Formato file di esportazione** assicurarsi che sia selezionata l'opzione **Scambio di informazioni personali - PKCS #12 (.PFX)**.  
 
-5.  Nella pagina **Password** specificare una password complessa per proteggere il certificato esportato con la relativa chiave privata, quindi scegliere **Avanti**.  
+5. Nella pagina **Password** specificare una password complessa per proteggere il certificato esportato con la relativa chiave privata, quindi scegliere **Avanti**.  
 
-6.  Nella pagina **File da esportare** specificare il nome del file da esportare, quindi scegliere **Avanti**.  
+6. Nella pagina **File da esportare** specificare il nome del file da esportare, quindi scegliere **Avanti**.  
 
-7.  Per chiudere la procedura guidata, scegliere **Fine** nella pagina **Esportazione guidata certificato**, quindi scegliere **OK** nella finestra di conferma.  
+7. Per chiudere la procedura guidata, scegliere **Fine** nella pagina **Esportazione guidata certificato**, quindi scegliere **OK** nella finestra di conferma.  
 
-8.  Chiudere **Certificati (computer locale)**.  
+8. Chiudere **Certificati (computer locale)**.  
 
 9. Archiviare il file in modo protetto e assicurarsi che sia possibile accedervi dalla console di System Center Configuration Manager.  
 
- A questo punto, il certificato è pronto per essere importato durante la configurazione del punto di distribuzione.  
+   A questo punto, il certificato è pronto per essere importato durante la configurazione del punto di distribuzione.  
 
 > [!TIP]  
 >  È possibile usare lo stesso file del certificato quando si configurano le immagini di supporto per la distribuzione di un sistema operativo che non usa l'avvio PXE e la sequenza attività per installare l'immagine deve contattare un punto di gestione che richieda connessioni client HTTPS.  
@@ -539,24 +539,24 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 ##### <a name="to-create-and-issue-the-enrollment-certificate-template-on-the-certification-authority"></a>Per creare ed emettere il modello di certificato di registrazione nell'autorità di certificazione  
 
-1.  Creare un gruppo di sicurezza che contenga gli utenti che registreranno i dispositivi mobili in System Center Configuration Manager.  
+1. Creare un gruppo di sicurezza che contenga gli utenti che registreranno i dispositivi mobili in System Center Configuration Manager.  
 
-2.  Nel server membro in cui è installato Servizi certificati, nella console Autorità di certificazione, fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console di gestione Modelli di certificato.  
+2. Nel server membro in cui è installato Servizi certificati, nella console Autorità di certificazione, fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console di gestione Modelli di certificato.  
 
-3.  Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Sessione autenticata** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
+3. Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Sessione autenticata** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
 
-4.  Nella finestra di dialogo **Duplica modello** verificare che sia selezionato **Windows 2003 Server, Enterprise Edition**, quindi scegliere **OK**.  
+4. Nella finestra di dialogo **Duplica modello** verificare che sia selezionato **Windows 2003 Server, Enterprise Edition**, quindi scegliere **OK**.  
 
-    > [!IMPORTANT]  
-    >  Non selezionare **Windows 2008 Server, Enterprise Edition**.  
+   > [!IMPORTANT]  
+   >  Non selezionare **Windows 2008 Server, Enterprise Edition**.  
 
-5.  Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Certificato di registrazione del dispositivo mobile di ConfigMgr** per generare i certificati di registrazione per i dispositivi mobili che saranno gestiti da System Center Configuration Manager.  
+5. Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Certificato di registrazione del dispositivo mobile di ConfigMgr** per generare i certificati di registrazione per i dispositivi mobili che saranno gestiti da System Center Configuration Manager.  
 
-6.  Scegliere la scheda **Nome soggetto**, verificare che l'opzione **Crea in base alle informazioni di Active Directory** sia selezionata, selezionare **Nome comune** per **Formato del nome soggetto** e deselezionare **Nome entità utente (UPN)** in **Includere le seguenti informazioni nel nome soggetto alternativo**.  
+6. Scegliere la scheda **Nome soggetto**, verificare che l'opzione **Crea in base alle informazioni di Active Directory** sia selezionata, selezionare **Nome comune** per **Formato del nome soggetto** e deselezionare **Nome entità utente (UPN)** in **Includere le seguenti informazioni nel nome soggetto alternativo**.  
 
-7.  Scegliere la scheda **Sicurezza**, scegliere il gruppo di sicurezza che contiene gli utenti che devono registrare i dispositivi mobili, quindi scegliere l'autorizzazione aggiuntiva **Registrazione**. Non deselezionare **Lettura**.  
+7. Scegliere la scheda **Sicurezza**, scegliere il gruppo di sicurezza che contiene gli utenti che devono registrare i dispositivi mobili, quindi scegliere l'autorizzazione aggiuntiva **Registrazione**. Non deselezionare **Lettura**.  
 
-8.  Scegliere **OK** e quindi chiudere la console **Modelli di certificato**.  
+8. Scegliere **OK** e quindi chiudere la console **Modelli di certificato**.  
 
 9. Nella console Autorità di certificazione fare clic con il pulsante destro del mouse su **Modelli di certificato**, scegliere **Nuovo** e quindi **Modello di certificato da emettere**.  
 
@@ -564,7 +564,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 11. Se non è necessario creare ed emettere altri certificati, chiudere la console Autorità di certificazione.  
 
- A questo punto, il modello di certificato di registrazione del dispositivo mobile è pronto per essere selezionato durante la configurazione di un profilo di registrazione del dispositivo mobile nelle impostazioni client.  
+    A questo punto, il modello di certificato di registrazione del dispositivo mobile è pronto per essere selezionato durante la configurazione di un profilo di registrazione del dispositivo mobile nelle impostazioni client.  
 
 ##  <a name="BKMK_AMT2008_cm2012"></a> Distribuire i certificati per AMT  
  La distribuzione di questo certificato prevede le procedure seguenti:  
@@ -585,24 +585,24 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 ##### <a name="to-request-and-issue-the-amt-provisioning-certificate"></a>Per richiedere ed emettere il certificato di provisioning AMT  
 
-1.  Creare un gruppo di sicurezza che contenga gli account computer dei server del sistema del sito che eseguiranno il punto di servizio fuori banda.  
+1. Creare un gruppo di sicurezza che contenga gli account computer dei server del sistema del sito che eseguiranno il punto di servizio fuori banda.  
 
-2.  Nel server membro in cui è installato Servizi certificati, nella console Autorità di certificazione, fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console **Modelli di certificato**.  
+2. Nel server membro in cui è installato Servizi certificati, nella console Autorità di certificazione, fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console **Modelli di certificato**.  
 
-3.  Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Server Web** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
+3. Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Server Web** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
 
-4.  Nella finestra di dialogo **Duplica modello** verificare che sia selezionato **Windows 2003 Server, Enterprise Edition**, quindi scegliere **OK**.  
+4. Nella finestra di dialogo **Duplica modello** verificare che sia selezionato **Windows 2003 Server, Enterprise Edition**, quindi scegliere **OK**.  
 
-    > [!IMPORTANT]  
-    >  Non selezionare **Windows 2008 Server, Enterprise Edition**.  
+   > [!IMPORTANT]  
+   >  Non selezionare **Windows 2008 Server, Enterprise Edition**.  
 
-5.  Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Provisioning AMT di ConfigMgr** per il modello del certificato di provisioning AMT.  
+5. Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Provisioning AMT di ConfigMgr** per il modello del certificato di provisioning AMT.  
 
-6.  Scegliere la scheda **Nome soggetto**, scegliere **Crea in base alle informazioni di Active Directory**, quindi scegliere **Nome comune**.  
+6. Scegliere la scheda **Nome soggetto**, scegliere **Crea in base alle informazioni di Active Directory**, quindi scegliere **Nome comune**.  
 
-7.  Scegliere la scheda **Estensioni**, assicurarsi che sia selezionato **Criteri di applicazione**, quindi scegliere **Modifica**.  
+7. Scegliere la scheda **Estensioni**, assicurarsi che sia selezionato **Criteri di applicazione**, quindi scegliere **Modifica**.  
 
-8.  Nella finestra di dialogo **Modifica estensione criteri di applicazione** scegliere **Aggiungi**.  
+8. Nella finestra di dialogo **Modifica estensione criteri di applicazione** scegliere **Aggiungi**.  
 
 9. Nella finestra di dialogo **Aggiunta criterio di applicazione** scegliere **Nuovo**.  
 
@@ -631,25 +631,25 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 20. Non chiudere **Autorità di certificazione**.  
 
- Il certificato di provisioning AMT dalla CA interna è ora pronto per essere installato nel computer del punto di servizio fuori banda.  
+    Il certificato di provisioning AMT dalla CA interna è ora pronto per essere installato nel computer del punto di servizio fuori banda.  
 
 ##### <a name="to-install-the-amt-provisioning-certificate"></a>Per installare il certificato di provisioning AMT  
 
-1.  Riavviare il server membro in cui è in esecuzione IIS, per assicurarsi che possa accedere al modello di certificato con l'autorizzazione configurata.  
+1. Riavviare il server membro in cui è in esecuzione IIS, per assicurarsi che possa accedere al modello di certificato con l'autorizzazione configurata.  
 
-2.  Fare clic su **Start**, scegliere **Esegui** e quindi digitare **mmc.exe.** Nella console vuota scegliere **File**, quindi **Aggiungi/Rimuovi snap-in**.  
+2. Fare clic su **Start**, scegliere **Esegui** e quindi digitare **mmc.exe.** Nella console vuota scegliere **File**, quindi **Aggiungi/Rimuovi snap-in**.  
 
-3.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **Certificati** dall'elenco **Snap-in disponibili**, quindi scegliere **Aggiungi**.  
+3. Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **Certificati** dall'elenco **Snap-in disponibili**, quindi scegliere **Aggiungi**.  
 
-4.  Nella finestra di dialogo **Snap-in certificati** scegliere **Account computer**, quindi scegliere **Avanti**.  
+4. Nella finestra di dialogo **Snap-in certificati** scegliere **Account computer**, quindi scegliere **Avanti**.  
 
-5.  Nella finestra di dialogo **Seleziona computer** verificare che l'opzione **Computer locale: (computer in cui è in esecuzione la console)** sia selezionata, quindi scegliere **Fine**.  
+5. Nella finestra di dialogo **Seleziona computer** verificare che l'opzione **Computer locale: (computer in cui è in esecuzione la console)** sia selezionata, quindi scegliere **Fine**.  
 
-6.  Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **OK**.  
+6. Nella finestra di dialogo **Aggiungi o rimuovi snap-in** scegliere **OK**.  
 
-7.  Nella console espandere **Certificati (computer locale)**, quindi scegliere **Personale**.  
+7. Nella console espandere **Certificati (computer locale)**, quindi scegliere **Personale**.  
 
-8.  Fare clic con il pulsante destro del mouse su **Certificati**, scegliere **Tutte le attività**, quindi **Richiedi nuovo certificato**.  
+8. Fare clic con il pulsante destro del mouse su **Certificati**, scegliere **Tutte le attività**, quindi **Richiedi nuovo certificato**.  
 
 9. Nella pagina **Prima di iniziare** scegliere **Avanti**.  
 
@@ -661,31 +661,31 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 13. Chiudere **Certificati (computer locale)**.  
 
- A questo punto, il certificato di provisioning AMT dalla CA interna è installato e pronto per essere selezionato nelle proprietà del punto di servizio fuori banda.  
+    A questo punto, il certificato di provisioning AMT dalla CA interna è installato e pronto per essere selezionato nelle proprietà del punto di servizio fuori banda.  
 
 ### <a name="create-and-issue-the-web-server-certificate-for-amt-based-computers"></a>Creare ed emettere il certificato del server Web per computer basati su AMT  
  Utilizzare la procedura seguente per la preparazione dei certificati server Web per computer basati su AMT.  
 
 ##### <a name="to-create-and-issue-the-web-server-certificate-template"></a>Per creare ed emettere il modello di certificato del server Web  
 
-1.  Creare un gruppo di sicurezza vuoto che contenga gli account computer AMT creati da System Center Configuration Manager durante il provisioning AMT.  
+1. Creare un gruppo di sicurezza vuoto che contenga gli account computer AMT creati da System Center Configuration Manager durante il provisioning AMT.  
 
-2.  Nel server membro in cui è installato Servizi certificati, nella console Autorità di certificazione, fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console **Modelli di certificato**.  
+2. Nel server membro in cui è installato Servizi certificati, nella console Autorità di certificazione, fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console **Modelli di certificato**.  
 
-3.  Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Server Web** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
+3. Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Server Web** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
 
-4.  Nella finestra di dialogo **Duplica modello** verificare che sia selezionato **Windows 2003 Server, Enterprise Edition**, quindi scegliere **OK**.  
+4. Nella finestra di dialogo **Duplica modello** verificare che sia selezionato **Windows 2003 Server, Enterprise Edition**, quindi scegliere **OK**.  
 
-    > [!IMPORTANT]  
-    >  Non selezionare **Windows 2008 Server, Enterprise Edition.**  
+   > [!IMPORTANT]  
+   >  Non selezionare **Windows 2008 Server, Enterprise Edition.**  
 
-5.  Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Certificato server Web di ConfigMgr** per generare i certificati Web che saranno usati per la gestione fuori banda sui computer AMT.  
+5. Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Certificato server Web di ConfigMgr** per generare i certificati Web che saranno usati per la gestione fuori banda sui computer AMT.  
 
-6.  Scegliere la scheda **Nome soggetto**, scegliere **Crea in base alle informazioni di Active Directory**, quindi scegliere **Nome comune** per **Formato del nome soggetto** e deselezionare **Nome entità utente (UPN)** per il nome soggetto alternativo.  
+6. Scegliere la scheda **Nome soggetto**, scegliere **Crea in base alle informazioni di Active Directory**, quindi scegliere **Nome comune** per **Formato del nome soggetto** e deselezionare **Nome entità utente (UPN)** per il nome soggetto alternativo.  
 
-7.  Scegliere la scheda **Protezione** e quindi rimuovere l'autorizzazione **Registrazione** dai gruppi di sicurezza **Domain Admins** ed **Enterprise Admins**.  
+7. Scegliere la scheda **Protezione** e quindi rimuovere l'autorizzazione **Registrazione** dai gruppi di sicurezza **Domain Admins** ed **Enterprise Admins**.  
 
-8.  Scegliere **Aggiungi**, immettere il nome del gruppo di sicurezza creato per il provisioning AMT, quindi scegliere **OK**.  
+8. Scegliere **Aggiungi**, immettere il nome del gruppo di sicurezza creato per il provisioning AMT, quindi scegliere **OK**.  
 
 9. Scegliere le seguenti autorizzazioni **Consenti** per questo gruppo di sicurezza: **Lettura** e **Registrazione**.  
 
@@ -697,31 +697,31 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 13. Se non è necessario creare ed emettere altri certificati, chiudere **Autorità di certificazione**.  
 
- A questo punto, il modello di server Web AMT è pronto per la configurazione dei computer basati su AMT con i certificati del server Web. Scegliere questo modello di certificato nelle proprietà del componente della gestione fuori banda.  
+    A questo punto, il modello di server Web AMT è pronto per la configurazione dei computer basati su AMT con i certificati del server Web. Scegliere questo modello di certificato nelle proprietà del componente della gestione fuori banda.  
 
 ### <a name="create-and-issue-the-client-authentication-certificates-for-8021x-amt-based-computers"></a>Creare ed emettere i certificati di autenticazione client per computer basati su AMT 802.1X  
  Utilizzare la procedura seguente se i computer basati su AMT utilizzeranno i certificati client per reti cablate o wireless autenticate 802.1 X.  
 
 ##### <a name="to-create-and-issue-the-client-authentication-certificate-template-on-the-ca"></a>Per creare ed emettere il modello di certificato di autenticazione client nella CA  
 
-1.  Nel server membro in cui è installato Servizi certificati, nella console Autorità di certificazione, fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console **Modelli di certificato**.  
+1. Nel server membro in cui è installato Servizi certificati, nella console Autorità di certificazione, fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console **Modelli di certificato**.  
 
-2.  Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Autenticazione workstation** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
+2. Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Autenticazione workstation** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
 
-    > [!IMPORTANT]  
-    >  Non selezionare **Windows 2008 Server, Enterprise Edition.**  
+   > [!IMPORTANT]  
+   >  Non selezionare **Windows 2008 Server, Enterprise Edition.**  
 
-3.  Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Certificato di autenticazione client 802.1X AMT di ConfigMgr** per generare i certificati client che saranno usati per la gestione fuori banda nei computer AMT.  
+3. Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Certificato di autenticazione client 802.1X AMT di ConfigMgr** per generare i certificati client che saranno usati per la gestione fuori banda nei computer AMT.  
 
-4.  Scegliere la scheda **Nome soggetto**, scegliere **Crea in base alle informazioni di Active Directory**, quindi scegliere **Nome comune** per **Formato del nome soggetto**. Deselezionare **Nome DNS** per il nome soggetto alternativo, quindi scegliere **Nome entità utente (UPN)**.  
+4. Scegliere la scheda **Nome soggetto**, scegliere **Crea in base alle informazioni di Active Directory**, quindi scegliere **Nome comune** per **Formato del nome soggetto**. Deselezionare **Nome DNS** per il nome soggetto alternativo, quindi scegliere **Nome entità utente (UPN)**.  
 
-5.  Scegliere la scheda **Protezione** e quindi rimuovere l'autorizzazione **Registrazione** dai gruppi di sicurezza **Domain Admins** ed **Enterprise Admins**.  
+5. Scegliere la scheda **Protezione** e quindi rimuovere l'autorizzazione **Registrazione** dai gruppi di sicurezza **Domain Admins** ed **Enterprise Admins**.  
 
-6.  Scegliere **Aggiungi**, immettere il nome del gruppo di sicurezza che verrà specificato nelle proprietà del componente della gestione fuori banda per contenere gli account dei computer basati su AMT, quindi scegliere **OK**.  
+6. Scegliere **Aggiungi**, immettere il nome del gruppo di sicurezza che verrà specificato nelle proprietà del componente della gestione fuori banda per contenere gli account dei computer basati su AMT, quindi scegliere **OK**.  
 
-7.  Selezionare le seguenti autorizzazioni **Consenti** per questo gruppo di protezione: **Lettura** e **Registrazione**.  
+7. Selezionare le seguenti autorizzazioni **Consenti** per questo gruppo di sicurezza: **Lettura** e **Registrazione**.  
 
-8.  Scegliere **OK**, quindi chiudere la console di gestione **Modelli di certificato**, **certtmpl - [Modelli di certificato]**.  
+8. Scegliere **OK**, quindi chiudere la console di gestione **Modelli di certificato**, **certtmpl - [Modelli di certificato]**.  
 
 9. Nella console di gestione **Autorità di certificazione** fare clic con il pulsante destro del mouse su **Modelli di certificato**, scegliere **Nuovo** e quindi **Modello di certificato da emettere**.  
 
@@ -729,7 +729,7 @@ La distribuzione di questo certificato prevede le procedure seguenti:
 
 11. Se non è necessario creare ed emettere altri certificati, chiudere **Autorità di certificazione**.  
 
- Il modello di certificato di autenticazione client è ora pronto per emettere certificati ai computer basati su AMT che possono essere utilizzati per l'autenticazione client 802.1 X. Scegliere questo modello di certificato nelle proprietà del componente della gestione fuori banda.  
+    Il modello di certificato di autenticazione client è ora pronto per emettere certificati ai computer basati su AMT che possono essere utilizzati per l'autenticazione client 802.1 X. Scegliere questo modello di certificato nelle proprietà del componente della gestione fuori banda.  
 
 ##  <a name="BKMK_MacClient_SP1"></a> Distribuire il certificato client per computer Mac  
 
@@ -745,24 +745,24 @@ Questa distribuzione del certificato dispone di una sola procedura per creare ed
 
 ##### <a name="to-create-and-issue-the-mac-client-certificate-template-on-the-certification-authority"></a>Per creare ed emettere il modello di certificato client Mac nell'autorità di certificazione  
 
-1.  Creare un gruppo di sicurezza che contenga gli account utente per gli utenti amministratori che registreranno il certificato nel computer Mac usando System Center Configuration Manager.  
+1. Creare un gruppo di sicurezza che contenga gli account utente per gli utenti amministratori che registreranno il certificato nel computer Mac usando System Center Configuration Manager.  
 
-2.  Nel server membro su cui è in esecuzione la console Autorità di certificazione fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console di gestione Modelli di certificato.  
+2. Nel server membro su cui è in esecuzione la console Autorità di certificazione fare clic con il pulsante destro del mouse su **Modelli di certificato**, quindi scegliere **Gestisci** per caricare la console di gestione Modelli di certificato.  
 
-3.  Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Sessione autenticata** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
+3. Nel riquadro dei risultati fare clic con il pulsante destro del mouse sulla voce con **Sessione autenticata** nella colonna **Nome visualizzato modello**, quindi scegliere **Duplica modello**.  
 
-4.  Nella finestra di dialogo **Duplica modello** verificare che sia selezionato **Windows 2003 Server, Enterprise Edition**, quindi scegliere **OK**.  
+4. Nella finestra di dialogo **Duplica modello** verificare che sia selezionato **Windows 2003 Server, Enterprise Edition**, quindi scegliere **OK**.  
 
-    > [!IMPORTANT]  
-    >  Non selezionare **Windows 2008 Server, Enterprise Edition**.  
+   > [!IMPORTANT]  
+   >  Non selezionare **Windows 2008 Server, Enterprise Edition**.  
 
-5.  Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Certificato client Mac di ConfigMgr** per generare i certificati client Mac.  
+5. Nella finestra di dialogo **Proprietà nuovo modello**, nella scheda **Generale**, immettere un nome di modello come **Certificato client Mac di ConfigMgr** per generare i certificati client Mac.  
 
-6.  Scegliere la scheda **Nome soggetto**, verificare che l'opzione **Crea in base alle informazioni di Active Directory** sia selezionata, scegliere **Nome comune** per **Formato del nome soggetto** e deselezionare **Nome entità utente (UPN)** in **Includere le seguenti informazioni nel nome soggetto alternativo**.  
+6. Scegliere la scheda **Nome soggetto**, verificare che l'opzione **Crea in base alle informazioni di Active Directory** sia selezionata, scegliere **Nome comune** per **Formato del nome soggetto** e deselezionare **Nome entità utente (UPN)** in **Includere le seguenti informazioni nel nome soggetto alternativo**.  
 
-7.  Scegliere la scheda **Protezione** e quindi rimuovere l'autorizzazione **Registrazione** dai gruppi di sicurezza **Domain Admins** ed **Enterprise Admins**.  
+7. Scegliere la scheda **Protezione** e quindi rimuovere l'autorizzazione **Registrazione** dai gruppi di sicurezza **Domain Admins** ed **Enterprise Admins**.  
 
-8.  Scegliere **Aggiungi**, specificare il gruppo di sicurezza creato nel passaggio 1, quindi scegliere **OK**.  
+8. Scegliere **Aggiungi**, specificare il gruppo di sicurezza creato nel passaggio 1, quindi scegliere **OK**.  
 
 9. Scegliere l'autorizzazione **Registrazione** per questo gruppo e non deselezionare l'autorizzazione **Lettura**.  
 
@@ -774,4 +774,4 @@ Questa distribuzione del certificato dispone di una sola procedura per creare ed
 
 13. Se non è necessario creare ed emettere altri certificati, chiudere **Autorità di certificazione**.  
 
- A questo punto, il modello di certificato client Mac è pronto per essere selezionato durante la configurazione delle impostazioni client per la registrazione.
+    A questo punto, il modello di certificato client Mac è pronto per essere selezionato durante la configurazione delle impostazioni client per la registrazione.

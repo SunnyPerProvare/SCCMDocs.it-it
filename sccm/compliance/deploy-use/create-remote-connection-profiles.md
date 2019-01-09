@@ -10,12 +10,12 @@ ms.assetid: 8c6eabc4-5dda-4682-b03e-3a450e6ef65a
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: c0e94fd8669556223044403fc72216fcaaaa5e54
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 7d6bcb46650082cebc95e8300a2f6adeb119fdbf
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337701"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421876"
 ---
 # <a name="remote-connection-profiles-in-system-center-configuration-manager"></a>Profili di connessione remota in System Center Configuration Manager
 
@@ -86,37 +86,37 @@ Windows Intune è necessario se si vuole che gli utenti si connettano ai propri 
 
 ## <a name="create-a-remote-connection-profile"></a>Creare un profilo di connessione remota
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Profili connessione remota**.  
+1. Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Profili connessione remota**.  
 
-3.  Nella scheda **Home** del gruppo **Crea** fare clic su **Crea profilo di connessione remota**.  
+2. Nella scheda **Home** del gruppo **Crea** fare clic su **Crea profilo di connessione remota**.  
 
-4.  Nella pagina **Generale** della **Creazione guidata profilo connessione remota**specificare un massimo di 256 caratteri per il nome e la descrizione facoltativa del profilo.  
+3. Nella pagina **Generale** della **Creazione guidata profilo connessione remota**specificare un massimo di 256 caratteri per il nome e la descrizione facoltativa del profilo.  
 
-5.  Nella pagina delle impostazioni **Profilo** specificare le impostazioni seguenti per il profilo di connessione remota:  
+4. Nella pagina delle impostazioni **Profilo** specificare le impostazioni seguenti per il profilo di connessione remota:  
 
-    -   **Nome completo e porta del server Gateway Desktop remoto (facoltativo)** : specificare il nome del server Gateway Desktop remoto da usare per le connessioni.  
+   -   **Nome completo e porta del server Gateway Desktop remoto (facoltativo)** : specificare il nome del server Gateway Desktop remoto da usare per le connessioni.  
 
-        > [!NOTE]  
-        >  Configuration Manager non supporta l'uso di un nome IDN (Internationalized Domain Name) per specificare un server in questa casella.  
-        >   
-        >  Il nome del server non deve essere superiore a 256 caratteri e può contenere caratteri maiuscoli, minuscoli, numerici e i caratteri **–** e **_** separati da punti.  
+       > [!NOTE]  
+       >  Configuration Manager non supporta l'uso di un nome IDN (Internationalized Domain Name) per specificare un server in questa casella.  
+       >   
+       >  Il nome del server non deve essere superiore a 256 caratteri e può contenere caratteri maiuscoli, minuscoli, numerici e i caratteri **–** e **_** separati da punti.  
 
-    -   **Consenti connessioni solo da computer che eseguono Desktop remoto con Autenticazione a livello di rete**  
+   -   **Consenti connessioni solo da computer che eseguono Desktop remoto con Autenticazione a livello di rete**  
 
-6.  Selezionare **Abilitato** o **Non abilitato** per ciascuna delle seguenti impostazioni di connessione:  
+5. Selezionare **Abilitato** o **Non abilitato** per ciascuna delle seguenti impostazioni di connessione:  
 
-    -   **Consenti connessioni remote a computer aziendali**  
+   -   **Consenti connessioni remote a computer aziendali**  
 
-    -   **Consenti a tutti gli utenti primari del computer aziendale di connettersi in remoto**  
+   -   **Consenti a tutti gli utenti primari del computer aziendale di connettersi in remoto**  
 
-    -   **Consenti eccezione di Windows Firewall per le connessioni nei domini Windows e nelle reti private**  
+   -   **Consenti eccezione di Windows Firewall per le connessioni nei domini Windows e nelle reti private**  
 
-    > [!IMPORTANT]  
-    >  Tutte e tre le impostazioni devono essere identiche prima di procedere al passaggio successivo della procedura guidata.  
+   > [!IMPORTANT]  
+   >  Tutte e tre le impostazioni devono essere identiche prima di procedere al passaggio successivo della procedura guidata.  
 
-7.  Nella pagina **Riepilogo** esaminare le azioni da eseguire e completare la procedura guidata.  
+6. Nella pagina **Riepilogo** esaminare le azioni da eseguire e completare la procedura guidata.  
 
- Il nuovo profilo di connessione remota viene visualizzato nel nodo **Profili connessione remota** dell'area di lavoro **Asset e conformità** .  
+   Il nuovo profilo di connessione remota viene visualizzato nel nodo **Profili connessione remota** dell'area di lavoro **Asset e conformità** .  
 
 Distribuire un profilo di connessione remota  
 
@@ -157,16 +157,16 @@ Distribuire un profilo di connessione remota
 
      La pagina **Stato distribuzione** contiene le seguenti schede:  
 
-    -   **Conforme** : visualizza la conformità del profilo di connessione remota in base al numero degli asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che sono conformi al profilo di connessione remota. Il riquadro **Dettagli asset** visualizza anche i dispositivi che sono conformi a questo profilo. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive.  
+    -   **Conforme:** viene visualizzata la conformità del profilo di connessione remota in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che sono conformi al profilo di connessione remota. Il riquadro **Dettagli asset** visualizza anche i dispositivi che sono conformi a questo profilo. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive.  
 
         > [!IMPORTANT]  
         >  Un profilo di connessione remota non viene valutato se non è applicabile a un dispositivo client. Tuttavia, viene restituito come conforme.  
 
-    -   **Errore** : visualizza un elenco di tutti gli errori per la distribuzione del profilo di connessione remota selezionata in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che hanno generato errori con questo profilo. Quando si seleziona un dispositivo, il riquadro **Dettagli asset** visualizza i dispositivi interessati dal problema selezionato. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive sul problema.  
+    -   **Errore:** viene visualizzato un elenco di tutti gli errori per la distribuzione del profilo di connessione remota selezionato in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che hanno generato errori con questo profilo. Quando si seleziona un dispositivo, il riquadro **Dettagli asset** visualizza i dispositivi interessati dal problema selezionato. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive sul problema.  
 
-    -   **Non conforme** : visualizza un elenco di tutte le regole non conformi nel profilo di connessione remota in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che non sono conformi a questo profilo. Quando si seleziona un dispositivo, il riquadro **Dettagli asset** visualizza i dispositivi interessati dal problema selezionato. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive sul problema.  
+    -   **Non conforme:** viene visualizzato un elenco di tutte le regole non conformi nel profilo di connessione remota in base al numero di asset interessati. È possibile fare doppio clic su una regola per creare un nodo temporaneo nel nodo **Utenti** nell'area di lavoro **Asset e conformità** . Questo nodo contiene tutti i dispositivi che non sono conformi a questo profilo. Quando si seleziona un dispositivo, il riquadro **Dettagli asset** visualizza i dispositivi interessati dal problema selezionato. Fare doppio clic su un dispositivo nell'elenco per visualizzare informazioni aggiuntive sul problema.  
 
-    -   **Sconosciuto** : visualizza un elenco di tutti i dispositivi che non sono conformi alla distribuzione del profilo di connessione remota selezionata insieme allo stato client corrente dei dispositivi.  
+    -   **Sconosciuto:** viene visualizzato un elenco di tutti i dispositivi che non sono conformi alla distribuzione del profilo di connessione remota selezionato insieme allo stato del client corrente dei dispositivi.  
 
 5.  Nella pagina **Stato distribuzione** è possibile esaminare le informazioni dettagliate sulla conformità del profilo di connessione remota distribuito. Viene creato un nodo temporaneo nel nodo **Distribuzioni** che consente di ritrovare rapidamente queste informazioni.  
 

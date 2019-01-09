@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 robots: noindex,nofollow
-ms.openlocfilehash: b399be1a0e0eeea76ac87b8724f3c9f04902d533
-ms.sourcegitcommit: 2cc635835709fb8d86cdb63ea34233b36c94d4d8
+ms.openlocfilehash: cac4e555ece110ede0ccddb59d947a6068ef38ff
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52259030"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423321"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1602-of-system-center-configuration-manager"></a>Livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1602
 
@@ -41,14 +41,14 @@ Le modifiche rispetto alle versioni precedenti sono contrassegnate da ***[Nuovo]
  A partire da System Center Configuration Manager versione 1602, questo livello include i dati seguenti:
 
 
- -   Informazioni sull'installazione:
-    - Build, tipo di installazione, Language Pack, funzionalità abilitate  
+- Informazioni sull'installazione:
+  - Build, tipo di installazione, Language Pack, funzionalità abilitate  
 
-    - ***[Aggiornato]*** Stato di distribuzione ed errori del pacchetto di aggiornamento, stato del download ed errori dei prerequisiti     
+  - ***[Aggiornato]*** Stato di distribuzione ed errori del pacchetto di aggiornamento, stato del download ed errori dei prerequisiti     
 
-    - ***[Nuovo]*** Versione dello script post-aggiornamento
+  - ***[Nuovo]*** Versione dello script post-aggiornamento
 
-    - ***[Nuovo]*** Uso di Fast Ring di aggiornamento
+  - ***[Nuovo]*** Uso di Fast Ring di aggiornamento
 
 -   Metriche delle prestazioni del database (informazioni sull'elaborazione della replica, principali stored procedure di SQL Server per processore e utilizzo del disco)
 
@@ -94,7 +94,7 @@ Questo livello è consigliato perché offre a Microsoft i dati minimi necessari 
 
 A partire da System Center Configuration Manager versione 1602, questo livello include i dati seguenti:
 
--   **Gestione delle applicazioni:**
+- **Gestione delle applicazioni:**
 
   -   ***[Aggiornato]*** Informazioni di base su utilizzo/destinazione per i tipi di distribuzione usati all'interno dell'organizzazione (utente e dispositivo di destinazione, richiesto o disponibile e app universali)  
 
@@ -118,145 +118,145 @@ A partire da System Center Configuration Manager versione 1602, questo livello i
 
   -  ***[Nuovo]*** Dimensioni criteri di applicazione e statistiche di complessità
 
--   **Client:**
+- **Client:**
 
-    -   Elenco/numero di agenti client abilitati
+  -   Elenco/numero di agenti client abilitati
 
-    -   Numero di installazioni client da ogni tipo di posizione di origine
+  -   Numero di installazioni client da ogni tipo di posizione di origine
 
-    -   Numero di errori di installazioni client
+  -   Numero di errori di installazioni client
 
--   **Impostazioni di conformità:**
+- **Impostazioni di conformità:**
 
-    -   Numero di elementi di configurazione per tipo
+  -   Numero di elementi di configurazione per tipo
 
-    -   Informazioni di base sulla linea di base di configurazione (numero, numero di distribuzioni e numero di riferimenti)
+  -   Informazioni di base sulla linea di base di configurazione (numero, numero di distribuzioni e numero di riferimenti)
 
-    -   Numero di distribuzioni che fanno riferimento a impostazioni predefinite (valore dell'impostazione non acquisito)
+  -   Numero di distribuzioni che fanno riferimento a impostazioni predefinite (valore dell'impostazione non acquisito)
 
-    -   Numero di regole e distribuzioni create per le impostazioni personalizzate
+  -   Numero di regole e distribuzioni create per le impostazioni personalizzate
 
-    -   ***[Aggiornato]*** Numero di certificati SCEP (Simple Certificate Enrollment Protocol), VPN, Wi-Fi, certificati (.pfx) e modelli dei criteri di conformità distribuiti   
+  -   ***[Aggiornato]*** Numero di certificati SCEP (Simple Certificate Enrollment Protocol), VPN, Wi-Fi, certificati (.pfx) e modelli dei criteri di conformità distribuiti   
 
-    -  ***[Nuovo]*** Numero dei certificati SCEP (Simple Certificate Enrollment Protocol), VPN, Wi-Fi, certificati (.pfx) e distribuzioni dei criteri di conformità per piattaforma
+  -  ***[Nuovo]*** Numero dei certificati SCEP (Simple Certificate Enrollment Protocol), VPN, Wi-Fi, certificati (.pfx) e distribuzioni dei criteri di conformità per piattaforma
 
--   **Contenuto:**
+- **Contenuto:**
 
-    -   Numero di limiti per tipo
+  -   Numero di limiti per tipo
 
-    -   Informazioni sui gruppi di limiti (numero di limiti e di sistemi del sito assegnati a ogni gruppo di limiti)
+  -   Informazioni sui gruppi di limiti (numero di limiti e di sistemi del sito assegnati a ogni gruppo di limiti)
 
-    -   Informazioni sui gruppi di punti di distribuzione (numero di pacchetti e punti di distribuzione assegnati a ogni gruppo di punti di distribuzione)
+  -   Informazioni sui gruppi di punti di distribuzione (numero di pacchetti e punti di distribuzione assegnati a ogni gruppo di punti di distribuzione)
 
-    -   Informazioni di configurazione sui punti di distribuzione (uso di BranchCache e monitoraggio dei punti di distribuzione)
+  -   Informazioni di configurazione sui punti di distribuzione (uso di BranchCache e monitoraggio dei punti di distribuzione)
 
-    -   Informazioni di configurazione di Distribution Manager (thread, intervallo tra tentativi, numero di tentativi e impostazioni dei punti di distribuzione pull)
+  -   Informazioni di configurazione di Distribution Manager (thread, intervallo tra tentativi, numero di tentativi e impostazioni dei punti di distribuzione pull)
 
--   **Endpoint Protection:**
+- **Endpoint Protection:**
 
-    -   Utilizzo dei criteri antimalware di Endpoint Protection e di Windows Firewall (numero di criteri univoci assegnati al gruppo)<br /><br />Non sono incluse informazioni sulle impostazioni contenute nei criteri.
+  -   Utilizzo dei criteri antimalware di Endpoint Protection e di Windows Firewall (numero di criteri univoci assegnati al gruppo)<br /><br />Non sono incluse informazioni sulle impostazioni contenute nei criteri.
 
-    -   Errori di distribuzione di Endpoint Protection (numero di codici di errore di distribuzione dei criteri di Endpoint Protection)
+  -   Errori di distribuzione di Endpoint Protection (numero di codici di errore di distribuzione dei criteri di Endpoint Protection)
 
-    -   Numero di raccolte selezionate per la visualizzazione nel dashboard di Endpoint Protection
+  -   Numero di raccolte selezionate per la visualizzazione nel dashboard di Endpoint Protection
 
-    -   Numero di avvisi configurati per la funzionalità Endpoint Protection
+  -   Numero di avvisi configurati per la funzionalità Endpoint Protection
 
--   **Gestione di applicazioni mobili (MAM):**
+- **Gestione di applicazioni mobili (MAM):**
 
-    -   Numero di applicazioni di Office e line-of-business e di criteri abilitati per MAM per sistema operativo
+  -   Numero di applicazioni di Office e line-of-business e di criteri abilitati per MAM per sistema operativo
 
-    -   Numero di distribuzioni di applicazioni/criteri MAM
+  -   Numero di distribuzioni di applicazioni/criteri MAM
 
-    -   Numero di regole create per ogni impostazione MAM
+  -   Numero di regole create per ogni impostazione MAM
 
--   **Gestione di dispositivi mobili (MDM):**
+- **Gestione di dispositivi mobili (MDM):**
 
-    -   Numero di azioni eseguite su dispositivi mobili (comandi di blocco, reimpostazione PIN, cancellazione e ritiro dati)
+  -   Numero di azioni eseguite su dispositivi mobili (comandi di blocco, reimpostazione PIN, cancellazione e ritiro dati)
 
-    -   Numero di dispositivi mobili gestiti da Configuration Manager e Microsoft Intune e modalità di registrazione (in blocco o basata sull'utente)
+  -   Numero di dispositivi mobili gestiti da Configuration Manager e Microsoft Intune e modalità di registrazione (in blocco o basata sull'utente)
 
-    -   Pianificazione del polling dei dispositivi mobili e statistiche della durata della registrazione dei dispositivi mobili
+  -   Pianificazione del polling dei dispositivi mobili e statistiche della durata della registrazione dei dispositivi mobili
 
-    -   Numero di criteri per dispositivi mobili
+  -   Numero di criteri per dispositivi mobili
 
-    -   Numero di utenti con più dispositivi mobili registrati
+  -   Numero di utenti con più dispositivi mobili registrati
 
--   **Risoluzione dei problemi di Microsoft Intune:**
+- **Risoluzione dei problemi di Microsoft Intune:**
 
-    -   Numero e dimensioni dei messaggi relativi a stato, inventario, RDR, DDR, UDX, stato tenant, POL, LOG, Cert, CRP, risincronizzazione, CFD, RDO, BEX, ISM e conformità scaricati da Microsoft Intune
+  -   Numero e dimensioni dei messaggi relativi a stato, inventario, RDR, DDR, UDX, stato tenant, POL, LOG, Cert, CRP, risincronizzazione, CFD, RDO, BEX, ISM e conformità scaricati da Microsoft Intune
 
-    -   Numero e dimensioni dei messaggi relativi ad azioni sui dispositivi (cancellazione, ritiro dati, blocco), telemetria e dati replicati in Microsoft Intune
+  -   Numero e dimensioni dei messaggi relativi ad azioni sui dispositivi (cancellazione, ritiro dati, blocco), telemetria e dati replicati in Microsoft Intune
 
-    -   Statistiche della sincronizzazione degli utenti completa e differenziale per Microsoft Intune
+  -   Statistiche della sincronizzazione degli utenti completa e differenziale per Microsoft Intune
 
--   **Gestione di dispositivi mobili (MDM) in locale:**
+- **Gestione di dispositivi mobili (MDM) in locale:**
 
-    -   Statistiche di esito positivo o negativo della distribuzione per distribuzioni di applicazioni MDM in locale
+  -   Statistiche di esito positivo o negativo della distribuzione per distribuzioni di applicazioni MDM in locale
 
-    -   Numero dei pacchetti e dei profili di registrazione in blocco di Windows 10
+  -   Numero dei pacchetti e dei profili di registrazione in blocco di Windows 10
 
--   **Distribuzione del sistema operativo:**
+- **Distribuzione del sistema operativo:**
 
-    -   Numero di immagini di avvio, driver, pacchetti di driver, punti di distribuzione abilitati per il multicast, punti di distribuzione che supportano PXE e sequenze di attività
+  -   Numero di immagini di avvio, driver, pacchetti di driver, punti di distribuzione abilitati per il multicast, punti di distribuzione che supportano PXE e sequenze di attività
 
--   **Aggiornamenti software:**
+- **Aggiornamenti software:**
 
-    -   Numero totale/medio di raccolte con distribuzioni di aggiornamento del software e numero massimo/medio di aggiornamenti distribuiti
+  -   Numero totale/medio di raccolte con distribuzioni di aggiornamento del software e numero massimo/medio di aggiornamenti distribuiti
 
-    -   Numero di regole di distribuzione automatica associate alla sincronizzazione
+  -   Numero di regole di distribuzione automatica associate alla sincronizzazione
 
-    -   Numero di regole di distribuzione automatica che aggiungono aggiornamenti o ne creano di nuovi in un gruppo esistente
+  -   Numero di regole di distribuzione automatica che aggiungono aggiornamenti o ne creano di nuovi in un gruppo esistente
 
-    -   Valori differenziali di disponibilità e scadenza usati nelle regole di distribuzione automatica
+  -   Valori differenziali di disponibilità e scadenza usati nelle regole di distribuzione automatica
 
-    -   Numero medio e massimo di assegnazioni per ogni aggiornamento
+  -   Numero medio e massimo di assegnazioni per ogni aggiornamento
 
-    -   Numero di aggiornamenti creati e distribuiti con System Center Update Publisher
+  -   Numero di aggiornamenti creati e distribuiti con System Center Update Publisher
 
-    -   Numero di gruppi e assegnazioni di aggiornamento
+  -   Numero di gruppi e assegnazioni di aggiornamento
 
-    -   Numero di pacchetti di aggiornamento e numero massimo/minimo/medio dei punti di distribuzione assegnati con pacchetti
+  -   Numero di pacchetti di aggiornamento e numero massimo/minimo/medio dei punti di distribuzione assegnati con pacchetti
 
-    -   Numero di gruppi di aggiornamento e numero minimo/massimo/medio di aggiornamenti per ogni gruppo
+  -   Numero di gruppi di aggiornamento e numero minimo/massimo/medio di aggiornamenti per ogni gruppo
 
-    -   Numero di aggiornamenti e percentuale di aggiornamenti distribuiti, scaduti, sostituiti, scaricati e contenenti EULA
+  -   Numero di aggiornamenti e percentuale di aggiornamenti distribuiti, scaduti, sostituiti, scaricati e contenenti EULA
 
-    -   Codici di errore e numero di computer per l'analisi per l'aggiornamento
+  -   Codici di errore e numero di computer per l'analisi per l'aggiornamento
 
-    -   Pianificazioni di valutazione e analisi per l'aggiornamento dei client
+  -   Pianificazioni di valutazione e analisi per l'aggiornamento dei client
 
-    -   Pianificazione della sincronizzazione dei punti di aggiornamento software
+  -   Pianificazione della sincronizzazione dei punti di aggiornamento software
 
-    -   Numero di regole di distribuzione automatica con più distribuzioni
+  -   Numero di regole di distribuzione automatica con più distribuzioni
 
-    -   Configurazioni usate per i piani di manutenzione attivi di Windows 10
+  -   Configurazioni usate per i piani di manutenzione attivi di Windows 10
 
-    -   Versioni del contenuto del dashboard di Windows 10
+  -   Versioni del contenuto del dashboard di Windows 10
 
-    -   Numero di client Windows 10 che usano Windows Update per le aziende
+  -   Numero di client Windows 10 che usano Windows Update per le aziende
 
-    -   Statistiche relative all'applicazione di patch al cluster
+  -   Statistiche relative all'applicazione di patch al cluster
 
-    -   Numero di aggiornamenti di Office 365 distribuiti
+  -   Numero di aggiornamenti di Office 365 distribuiti
 
-    -   ***[Nuovo]*** Classificazioni sincronizzate dal punto di aggiornamento software
+  -   ***[Nuovo]*** Classificazioni sincronizzate dal punto di aggiornamento software
 
--   **Dati SQL/prestazioni:**
+- **Dati SQL/prestazioni:**
 
-    -   Numero delle tabelle di database più grandi
+  -   Numero delle tabelle di database più grandi
 
-    -   Informazioni sulla replica SQL Always-On
+  -   Informazioni sulla replica SQL Always-On
 
-    -   Numero di raccolte per tipo
+  -   Numero di raccolte per tipo
 
-    -   ***[Aggiornato]*** Statistiche di valutazione raccolte (durata query, conteggi assegnati e non assegnati, conteggi per tipo, rollover degli ID e utilizzo delle regole)
+  -   ***[Aggiornato]*** Statistiche di valutazione raccolte (durata query, conteggi assegnati e non assegnati, conteggi per tipo, rollover degli ID e utilizzo delle regole)
 
-    - ***[Nuovo]***   Periodo di memorizzazione del rilevamento modifiche di SQL
+  - ***[Nuovo]***   Periodo di memorizzazione del rilevamento modifiche di SQL
 
--   ***[Nuovo] Aggiornamenti del sito:***
+- ***[Nuovo] Aggiornamenti del sito:***
 
-    - ***[Nuovo]*** Versioni dei pacchetti hotfix di Configuraton Manager installati
+  - ***[Nuovo]*** Versioni dei pacchetti hotfix di Configuraton Manager installati
 
 ##  <a name="bkmk_level3"></a> Livello 3 - Completo
 Il livello completo include tutti i dati dei livelli di base e avanzato. Include inoltre informazioni aggiuntive su Endpoint Protection, le percentuali di conformità degli aggiornamenti e informazioni sugli aggiornamenti software. Questo livello può includere anche informazioni di diagnostica avanzate, come file di sistema e snapshot di memoria, che possono contenere informazioni personali presenti in memoria o nei file di log al momento dell'acquisizione.

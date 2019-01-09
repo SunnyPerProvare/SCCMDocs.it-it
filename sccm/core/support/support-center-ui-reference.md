@@ -10,12 +10,12 @@ ms.assetid: 41cdebfe-b595-40aa-a385-32e0746255ed
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c7fbba9bc6c56a7d4b7a4fc908bfd7fdc9ffa762
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: df7d443a9f611278296c729949d5dfb764a43e9e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52458190"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420789"
 ---
 # <a name="support-center-user-interface-reference"></a>Informazioni di riferimento sull'interfaccia utente del Supporto tecnico
 
@@ -84,17 +84,17 @@ Mentre il Supporto tecnico sta raccogliendo i dati, selezionare **Cancel collect
 #### <a name="data-types"></a>Tipi di dati
 Se si seleziona la casella di controllo relativa a un'opzione, quando si seleziona di nuovo **Collect selected data** (Raccogli dati selezionati) il Supporto tecnico raccoglie i dati del tipo corrispondente. Sono disponibili i tipi seguenti:  
 
-- **Log files** (File di log): file di log del client, inclusi i log di installazione  
+- **File di log**: file di log del client, inclusi i log di installazione  
 
 - **Policy** (Criteri): raccolta dei criteri del client  
 
-- **Certificates** (Certificati): informazioni sulle chiavi pubbliche per i certificati client. Il Supporto tecnico non raccoglie chiavi private di certificati.  
+- **Certificati**: informazioni sulle chiavi pubbliche per i certificati client. Support Center non raccoglie chiavi private per i certificati.  
 
 - **Client configuration collector** (Agente di raccolta configurazione client): informazioni sul client di Configuration Manager. Questo tipo di dati non può essere disabilitato.  
 
-- **Client registry** (Registro di sistema client): raccoglie informazioni di configurazione del client dal Registro di sistema. Il Supporto tecnico raccoglie solo le informazioni del Registro di sistema relative a Configuration Manager.  
+- **Client registry** (Registro di sistema client): raccoglie informazioni di configurazione del client dal Registro di sistema. Support Center raccoglie solo le informazioni del Registro di sistema relative a Configuration Manager.  
 
-- **Client WMI** (WMI client): informazioni di configurazione del client da WMI. Il Supporto tecnico non raccoglie criteri client.  
+- **Client WMI** (WMI client): informazioni di configurazione del client da WMI. Support Center non raccoglie criteri client.  
 
 - **Troubleshooting** (Risoluzione dei problemi): dati in tempo reale di risoluzione dei problemi che agevolano la diagnosi dei problemi più comuni dei client con Active Directory, punti di gestione, reti, assegnazioni di criteri e registrazione.  
 
@@ -110,7 +110,7 @@ Se si seleziona la casella di controllo relativa a un'opzione, quando si selezio
     >  
     > Questo tipo di dati non è supportato quando si stabilisce una connessione remota a un altro client.  
 
-- **Operating system** (Sistema operativo): raccoglie informazioni di configurazione del computer locale. Questi dati includono informazioni sull'installazione di Windows, sulle schede di rete e sulla configurazione dei servizi di sistema. Questo tipo di dati non può essere disabilitato.  
+- **Sistema operativo**: raccoglie informazioni di configurazione sul computer locale. Questi dati includono informazioni sull'installazione di Windows, sulle schede di rete e sulla configurazione dei servizi di sistema. Questo tipo di dati non può essere disabilitato.  
 
 
 
@@ -145,11 +145,11 @@ Quando si caricano i dettagli del client, il Supporto tecnico visualizza le prop
 
 - **Registration State** (Stato della registrazione): indica se il client è registrato con Configuration Manager  
 
-- **Internet-facing** (Con connessione internet): indica se il client è connesso a Internet  
+- **Internet-facing** (Con connessione Internet): indica se il client è connesso a Internet  
 
 - **Version** (Versione): numero di versione del client di Configuration Manager installato  
 
-- **Site Code** (Codice sito): codice del sito primario a cui è assegnato il client  
+- **Site Code** (Codice del sito): codice del sito primario a cui è assegnato il client  
 
 - **Assigned MP** (Punto di gestione assegnato): nome di dominio completo (FQDN) del punto di gestione attualmente assegnato al client  
 
@@ -157,7 +157,7 @@ Quando si caricano i dettagli del client, il Supporto tecnico visualizza le prop
 
 - **Proxy MP** (Punto di gestione proxy): nome host o FQDN del punto di gestione proxy (se presente)  
 
-- **Proxy Site Code** (Codice sito proxy): codice del sito secondario (se presente)  
+- **Proxy Site Code** (Codice del sito proxy): Codice del sito per il sito secondario (se presente)  
 
 - **Proxy State** (Stato proxy): stato del punto di gestione proxy del client di Configuration Manager, ad esempio, **Active** (Attivo) o **Pending** (In sospeso).  
 
@@ -170,11 +170,11 @@ Usare le azioni in questa scheda anziché lo strumento [PolicySpy](/sccm/core/su
 #### <a name="load-policy"></a>Load Policy (Carica criteri)
 Questa opzione varia a seconda della visualizzazione:
 
-- **Load Actual policy** (Carica criteri effettivi): selezionare **Actual** (Effettivo) nel gruppo View (Visualizza) e quindi selezionare questa opzione nel gruppo Policy (Criteri). Il Supporto tecnico carica i criteri client attualmente selezionati.  
+- **Load Actual policy** (Carica criteri effettivi): selezionare **Actual** (Effettivi) nel gruppo View (Visualizza) e quindi selezionare questa opzione nel gruppo Policy (Criteri). Il Supporto tecnico carica i criteri client attualmente selezionati.  
 
 - **Load Requested policy** (Carica criteri richiesti): selezionare **Requested** (Richiesti) nel gruppo View (Visualizza) e quindi selezionare questa opzione nel gruppo Policy (Criteri). Il Supporto tecnico carica i criteri client richiesti per il client.  
 
-- **Load Default policy** (Carica criteri predefiniti): selezionare **Predefiniti** nel gruppo View (Visualizza) e quindi selezionare questa opzione nel gruppo Policy (Criteri). Il Supporto tecnico carica i criteri predefiniti per questo client.  
+- **Load Default policy** (Carica criteri predefiniti): selezionare **Default** (Predefiniti) nel gruppo View (Visualizza) e quindi selezionare questa opzione nel gruppo Policy (Criteri). Il Supporto tecnico carica i criteri predefiniti per questo client.  
 
 Selezionare l'elenco a discesa nella parte inferiore di questo pulsante per visualizzare opzioni aggiuntive:
 
@@ -222,30 +222,30 @@ Le voci seguenti di questo menu richiedono un'azione del client relativa al cont
 
 - **Location services** (Servizi di posizione)  
 
-    - **Refresh content locations** (Aggiorna posizioni contenuti): aggiorna i punti di distribuzione usati per i download di contenuto attivi.  
+    - **Refresh content locations** (Aggiorna posizioni contenuti): Aggiorna i punti di distribuzione usati da tutti i download di contenuto attivi.  
 
-    - **Refresh management points** (Aggiorna punti di gestione): aggiorna l'elenco interno dei punti di gestione usati dal client.  
+    - **Refresh management points** (Aggiorna punti di gestione): Aggiorna l'elenco interno di punti di gestione usati dal client.  
 
     - **Time out content requests** (Timeout richieste contenuto): se una richiesta di posizione di contenuto è in esecuzione da troppo tempo, questa azione la interrompe.  
 
- - **Application deployment evaluation**: Avvia un'attività che valuta le applicazioni distribuite.  
+  - **Application deployment evaluation** (Valutazione distribuzione applicazioni): Avvia un'attività che valuta le applicazioni distribuite.  
 
- - **Software updates deployment evaluation**: Avvia un'attività che valuta gli aggiornamenti del software distribuiti.  
+  - **Software updates deployment evaluation** (Valutazione distribuzione aggiornamenti software): Avvia un'attività che valuta gli aggiornamenti del software distribuiti.  
 
- - **Software updates source scan**: Avvia un'attività che analizza i percorsi di origine degli aggiornamenti.  
+  - **Software updates source scan** (Analisi origine aggiornamenti software): Avvia un'attività che analizza i percorsi di origine degli aggiornamenti.  
 
- - **Windows Installer source list update**: Avvia un'attività che aggiorna il percorso di origine per le installazioni di Windows Installer (MSI).  
+  - **Windows Installer source list update** (Aggiornamento elenco origine Windows Installer): Avvia un'attività che aggiorna il percorso di origine per le installazioni di Windows Installer (MSI).  
 
 #### <a name="content-view"></a>Visualizzazione di contenuto
 Visualizza le applicazioni, i pacchetti e gli aggiornamenti caricati nel client. Se si seleziona un'applicazione, un pacchetto o un aggiornamento, vengono visualizzate informazioni dettagliate sul contenuto. Per alcune applicazioni, è anche possibile eseguire le azioni seguenti:  
 
- - **Refresh** (Aggiorna): aggiorna la visualizzazione dei dettagli  
+ - **Aggiornare**: aggiorna la visualizzazione dei dettagli  
 
  - **Verify or Download** (Verifica o scarica): consente di verificare se un'applicazione è disponibile per il download  
 
  - **Install** (Installa): installa l'applicazione  
 
- - **Uninstall** (Disinstalla): disinstalla l'applicazione  
+ - **Uninstall** (Disinstalla): Disinstallare l'applicazione  
 
 #### <a name="cache-view"></a>Visualizzazione Cache
 Visualizza la configurazione della cache del client e i dettagli sul contenuto della cache. Quando si connette il Supporto tecnico a un client locale, è anche possibile eseguire le azioni seguenti:  
@@ -271,9 +271,9 @@ Per ogni evento, questa visualizzazione illustra le proprietà seguenti:
 
  - **Time** (Ora): ora in cui il client ha generato l'evento  
  - **Topic type** (Tipo di argomento): tipo del messaggio di stato  
- - **Topic ID**: ID del messaggio di stato, usato per eseguire il mapping agli eventi nei file di log  
- - **Topic ID Type** (Tipo ID argomento): sottotipo del messaggio di stato  
- - **State ID** (ID stato): risultato dell'azione in corso di monitoraggio  
+ - **Topic ID** (ID argomento): ID del messaggio di stato, usato per eseguire il mapping agli eventi nei file di log  
+ - **Topic ID type** (Tipo ID argomento): sottotipo del messaggio di stato  
+ - **State ID** (ID stato): risultati dell'azione monitorata  
  - **Details** (Dettagli) e **Event data** (Dati evento): altre informazioni nei messaggi di stato illustrati nella visualizzazione. I dettagli sullo stato possono anche essere vuoti.  
 
 
@@ -302,9 +302,9 @@ Le voci seguenti di questo menu richiedono un'azione del client correlata all'in
 
  - **Software inventory cycle** (Ciclo inventario software): attiva l'attività client usata per la raccolta dei dati di inventario software  
 
- - **Software metering report cycle**: attiva l'attività client usata per creare un report di misurazione del software e inviarlo al punto di gestione. È possibile tenere traccia dello stato dell'attività in **SWMTRReportGen.log**.
+ - **Software metering report cycle** (Ciclo report misurazione del software): attiva l'attività client usata per creare un report di misurazione del software e inviarlo al punto di gestione. È possibile tenere traccia dello stato dell'attività in **SWMTRReportGen.log**.
 
- - **Send unsent state messages in queue**: attiva l'attività client per scaricare la coda dei messaggi di stato.
+ - **Send unsent state messages in queue** (Invia messaggi di stato non inviati in coda): attiva l'attività client per scaricare la coda dei messaggi di stato.
 
  - **Advanced**  
      - **Hardware inventory cycle (full resynchronization)** (Ciclo inventario hardware (risincronizzazione completa))  
@@ -349,11 +349,11 @@ Consente di risolvere alcuni dei problemi più comuni relativi ai client di Conf
 Avvia la risoluzione dei problemi del client
 
 - **Active Directory**: esegue una query in Active Directory per recuperare le informazioni pubblicate nel sito di Configuration Manager  
-- **MPCERTIFICATE**: ottiene i certificati del punto di gestione  
-- **MPLIST**: ottiene un elenco dei punti di gestione  
+- **MPCERTIFICATE**: Ottiene i certificati del punto di gestione  
+- **MPLIST**: Ottiene un elenco dei punti di gestione  
 - **MPKEYINFORMATION**: ottiene le informazioni delle chiavi di crittografia del punto di gestione  
-- **Networking** (Rete): consente di risolvere i problemi di rete  
-- **Policy Assignments** (Assegnazioni criteri): recupera le assegnazioni dei criteri  
+- **Rete**: Consente di risolvere i problemi di rete  
+- **Policy Assignments** (Assegnazioni criteri): Recupera le assegnazioni di criteri  
 - **Registration** (Registrazione): verifica che il client sia registrato con il sito  
 
 #### <a name="view-selected-log"></a>View selected log
@@ -436,8 +436,8 @@ Selezionare l'elenco a discesa nella parte inferiore del pulsante **Open logs** 
 Chiude tutti i file di log aperti e cancella le voci di file di log visualizzate nella finestra. Il Supporto tecnico non visualizzerà queste voci in futuro.
 
 Selezionare l'elenco a discesa nella parte inferiore del pulsante **Close and clear logs** (Chiudi e cancella log) sulla barra multifunzione e selezionare una delle opzioni aggiuntive seguenti: 
-- **Clear all entries** (Cancella tutte le voci): cancella le voci di file di log visualizzate nella finestra. Il Supporto tecnico non visualizzerà queste voci in futuro.  
-- **Close all logs** (Chiudi tutti i log): chiude tutti i file di log aperti  
+- **Clear all entries** (Cancella tutte le voci): Cancella le voci di file di log visualizzate nella finestra. Il Supporto tecnico non visualizzerà queste voci in futuro.  
+- **Close all logs** (Chiudi tutti i log): Chiude tutti i file di log aperti  
 
 #### <a name="find"></a>Trova
 Apre la finestra di dialogo**Find** (Trova). Immettere la stringa da cercare. Per evitare corrispondenze di stringhe brevi in altre stringhe, è possibile scegliere di cercare solo parole intere. È anche possibile cercare stringhe con distinzione tra maiuscole e minuscole.
@@ -452,15 +452,15 @@ Dopo aver trovato due o più corrispondenze per la stringa cercata, questa opzio
 
 - **Live updating** (Aggiornamento in tempo reale): consente di monitorare le modifiche a un file di log attualmente aperto. Questa caratteristica non funziona quando sono aperti più file di log. Questa opzione è attivata per impostazione predefinita.  
 
-- **Auto-scroll** (Scorrimento automatico): se è stata selezionata anche l'opzione **Live updating**, questa opzione abilita lo scorrimento automatico della visualizzazione del log in modo da mostrare le nuove voci. Questa caratteristica non funziona quando sono aperti più file di log. Questa opzione è attivata per impostazione predefinita.  
+- **Auto-scroll** (Scorrimento automatico): se è stata selezionata anche l'opzione **Live updating** (Aggiornamento in tempo reale), questa opzione abilita lo scorrimento automatico della visualizzazione del log in modo da mostrare le nuove voci. Questa caratteristica non funziona quando sono aperti più file di log. Questa opzione è attivata per impostazione predefinita.  
 
-- **Show details** (Mostra dettagli): Quando si seleziona un messaggio di un file di log, nella parte inferiore della scheda **Logs** (Log) vengono visualizzati i dettagli del messaggio. Questa opzione è attivata per impostazione predefinita.  
+- **Show details** (Mostra dettagli): quando si seleziona un messaggio di un file di log, nella parte inferiore della scheda **Logs** (Log) vengono visualizzati i dettagli del messaggio. Questa opzione è attivata per impostazione predefinita.  
 
 - **Quick filter** (Filtro rapido): consente di filtrare i messaggi dei file di log in tutti i file di log aperti per trovare una stringa specifica. È possibile filtrare in base al testo del log, al nome del componente e all'ID thread. Per trovare messaggi di log simili, è anche possibile fare clic con il pulsante destro del mouse su un messaggio di log e quindi selezionare **Quick Filter** (Filtro rapido) per il testo del log.  
 
 - **Wrap log text** (Testo log a capo): consente di adattare all'interno di una colonna messaggi lunghi e su più righe. Questo comportamento rende più facile la lettura di tali messaggi. Questa opzione è attivata per impostazione predefinita.  
 
-- **Raw log entry display** (Visualizzazione voci di log non elaborate): visualizza righe di log non elaborate.  
+- **Raw log entry display** (Visualizzazione voci di registro non elaborate): consente di visualizzare righe di log non elaborate.  
 
 - **Advanced filters** (Filtri avanzati): apre la finestra di dialogo **Advanced filters** (Filtri avanzati). Per altre informazioni, vedere [Filtri avanzati dei file di log](#bkmk_adv-filters).  
 
@@ -628,9 +628,9 @@ Apre la finestra di dialogo Find (Trova), che include le funzionalità seguenti:
 
 - **Find what** (Trova): immettere la stringa da cercare nel set di dati WMI. I caratteri jolly sono supportati.  
 
-- **Look at**: scegliere se cercare nel set di dati WMI un **nome di classe o istanza**, una **proprietà**o un **valore**corrispondente.  
+- **Look at** (Cerca): scegliere se cercare nel set di dati WMI un **nome di classe o istanza**, una **proprietà** o un **valore** corrispondente.  
 
-- **Match whole string only** (Solo stringa intera): per impostazione predefinita vengono cercate le stringhe che contengono la stringa cercata. Selezionare questa casella di controllo per cercare solo le stringhe che corrispondono esattamente alla stringa inserita.  
+- **Match whole string only** (Solo stringa intera): per impostazione predefinita, vengono cercate le stringhe che contengono la stringa cercata. Selezionare questa casella di controllo per cercare solo le stringhe che corrispondono esattamente alla stringa inserita.  
 
 #### <a name="find-next"></a>Find next
 Apre l'istanza successiva della stringa inserita nella finestra di dialogo di ricerca all'interno del set di dati WMI.
@@ -651,9 +651,9 @@ Apre la finestra di dialogo Find (Trova), che include le funzionalità seguenti:
 
 - **Find what** (Trova): immettere la stringa da cercare nel set di dati WMI. I caratteri jolly sono supportati.  
 
-- **Look at**: scegliere se cercare nel set di dati WMI un **nome di classe o istanza**, una **proprietà**o un **valore**corrispondente.  
+- **Look at** (Cerca): scegliere se cercare nel set di dati WMI un **nome di classe o istanza**, una **proprietà** o un **valore** corrispondente.  
 
-- **Match whole string only** (Solo stringa intera): per impostazione predefinita vengono cercate le stringhe che contengono la stringa cercata. Selezionare questa casella di controllo per cercare solo le stringhe che corrispondono esattamente alla stringa inserita.  
+- **Match whole string only** (Solo stringa intera): per impostazione predefinita, vengono cercate le stringhe che contengono la stringa cercata. Selezionare questa casella di controllo per cercare solo le stringhe che corrispondono esattamente alla stringa inserita.  
 
 #### <a name="find-next"></a>Find next
 Apre l'istanza successiva della stringa inserita nella finestra di dialogo di ricerca all'interno del set di dati WMI.
@@ -671,9 +671,9 @@ Apre la finestra di dialogo Find (Trova), che include le funzionalità seguenti:
 
 - **Find what** (Trova): immettere la stringa da cercare nel set di dati WMI. I caratteri jolly sono supportati.  
 
-- **Look at**: scegliere se cercare nel set di dati WMI un **nome di classe o istanza**, una **proprietà**o un **valore**corrispondente.  
+- **Look at** (Cerca): scegliere se cercare nel set di dati WMI un **nome di classe o istanza**, una **proprietà** o un **valore** corrispondente.  
 
-- **Match whole string only** (Solo stringa intera): per impostazione predefinita vengono cercate le stringhe che contengono la stringa cercata. Selezionare questa casella di controllo per cercare solo le stringhe che corrispondono esattamente alla stringa inserita.  
+- **Match whole string only** (Solo stringa intera): per impostazione predefinita, vengono cercate le stringhe che contengono la stringa cercata. Selezionare questa casella di controllo per cercare solo le stringhe che corrispondono esattamente alla stringa inserita.  
 
 #### <a name="find-next"></a>Find next
 Apre l'istanza successiva della stringa inserita nella finestra di dialogo di ricerca all'interno del set di dati WMI.

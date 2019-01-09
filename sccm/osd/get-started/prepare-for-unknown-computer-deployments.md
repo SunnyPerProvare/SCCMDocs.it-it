@@ -10,12 +10,12 @@ ms.assetid: 9e447e34-0943-49ed-b6ba-3efebf3566c1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 425ab566b5ddbfaad775d61609c0a4ccd98e96d0
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 277881aab8a6d971c110b6ddd5b3dd34aae8fe7a
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348566"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420159"
 ---
 # <a name="prepare-for-unknown-computer-deployments-in-system-center-configuration-manager"></a>Operazioni preliminari alle distribuzioni in computer sconosciuti in System Center Configuration Manager
 
@@ -23,19 +23,19 @@ ms.locfileid: "32348566"
 
 Usare le informazioni di questo argomento per distribuire sistemi operativi a computer sconosciuti nell'ambiente di System Center Configuration Manager. Un computer sconosciuto è un computer che non è gestito da Configuration Manager. Ciò vuol dire che non ci sono record di questi computer nel database di Configuration Manager. I computer sconosciuti includono i seguenti:  
 
--   Computer in cui non è installato il client di Configuration Manager  
+- Computer in cui non è installato il client di Configuration Manager  
 
--   Computer non importati in Configuration Manager  
+- Computer non importati in Configuration Manager  
 
--   Computer non rilevati da Configuration Manager  
+- Computer non rilevati da Configuration Manager  
 
- È possibile distribuire sistemi operativi in computer sconosciuti con i metodi di distribuzione seguenti:  
+  È possibile distribuire sistemi operativi in computer sconosciuti con i metodi di distribuzione seguenti:  
 
--   [Usare PXE per distribuire Windows in rete](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md)  
+- [Usare PXE per distribuire Windows in rete](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md)  
 
--   [Usare i supporti di avvio per distribuire un sistema operativo](../deploy-use/create-bootable-media.md)  
+- [Usare i supporti di avvio per distribuire un sistema operativo](../deploy-use/create-bootable-media.md)  
 
--   [Usare i supporti preinstallati per distribuire un sistema operativo](../deploy-use/create-prestaged-media.md)  
+- [Usare i supporti preinstallati per distribuire un sistema operativo](../deploy-use/create-prestaged-media.md)  
 
 ## <a name="unknown-computer-deployment-workflow"></a>Flusso di lavoro per la distribuzione in computer sconosciuti  
  Di seguito è riportato il flusso di lavoro di base per distribuire un sistema operativo in un computer sconosciuto:  
@@ -52,15 +52,15 @@ Usare le informazioni di questo argomento per distribuire sistemi operativi a co
 ## <a name="unknown-computer-installation-process"></a>Processo di installazione di computer sconosciuti  
  Quando un computer viene avviato da PXE o da un supporto per la prima volta, Configuration Manager verifica la presenza di record per tale computer nel database di Configuration Manager. Se viene rilevato un record, Configuration Manager verifica la presenza di sequenze di attività distribuite nel record. Se non viene rilevato alcun record, Configuration Manager verifica la presenza di sequenze di attività distribuite in un oggetto computer sconosciuto. In entrambi i casi, Configuration Manager esegue una delle operazioni seguenti:  
 
--   Se c'è una sequenza di attività disponibile, Configuration Manager richiede all'utente di eseguire tale sequenza.  
+- Se c'è una sequenza di attività disponibile, Configuration Manager richiede all'utente di eseguire tale sequenza.  
 
--   Se c'è una sequenza di attività necessaria, Configuration Manager esegue tale sequenza automaticamente.  
+- Se c'è una sequenza di attività necessaria, Configuration Manager esegue tale sequenza automaticamente.  
 
--   Se non è distribuita una sequenza di attività per il record, Configuration Manager genera un errore che indica che non è presente nessuna sequenza di attività distribuita per il computer di destinazione.  
+- Se non è distribuita una sequenza di attività per il record, Configuration Manager genera un errore che indica che non è presente nessuna sequenza di attività distribuita per il computer di destinazione.  
 
- Quando viene avviato un computer sconosciuto, Configuration Manager identifica il computer come computer di cui non è stato eseguito il provisioning e non come computer sconosciuto. Ciò significa che il computer è ora in grado di ricevere le sequenze attività distribuite per l'oggetto computer sconosciuto. La sequenza di attività distribuita installa quindi un'immagine del sistema operativo che deve includere il client di Configuration Manager.  
+  Quando viene avviato un computer sconosciuto, Configuration Manager identifica il computer come computer di cui non è stato eseguito il provisioning e non come computer sconosciuto. Ciò significa che il computer è ora in grado di ricevere le sequenze attività distribuite per l'oggetto computer sconosciuto. La sequenza di attività distribuita installa quindi un'immagine del sistema operativo che deve includere il client di Configuration Manager.  
 
- Dopo aver installato il client di Configuration Manager, viene creato un record per il computer e tale computer viene elencato nella raccolta di Configuration Manager appropriata. Se il computer non riesce a installare l'immagine del sistema operativo o il client di Configuration Manager, viene creato un record "sconosciuto" per il computer e tale computer viene visualizzato nella raccolta **Tutti i sistemi**.  
+  Dopo aver installato il client di Configuration Manager, viene creato un record per il computer e tale computer viene elencato nella raccolta di Configuration Manager appropriata. Se il computer non riesce a installare l'immagine del sistema operativo o il client di Configuration Manager, viene creato un record "sconosciuto" per il computer e tale computer viene visualizzato nella raccolta **Tutti i sistemi**.  
 
 > [!NOTE]  
 >  Durante l'installazione dell'immagine del sistema operativo, la sequenza attività può recuperare le variabili raccolta ma non le variabili computer da questo computer.  

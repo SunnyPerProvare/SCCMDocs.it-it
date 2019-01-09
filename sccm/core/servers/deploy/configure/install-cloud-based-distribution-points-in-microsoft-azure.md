@@ -10,12 +10,12 @@ ms.assetid: bb83ac87-9914-4a35-b633-ad070031aa6e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a2d39617db7f2ea9a61e73a3c21cc2509fed2f07
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 3d6b4215615b6401a9163edfa33893d866e0c2ce
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456618"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424766"
 ---
 # <a name="install-a-cloud-distribution-point-for-configuration-manager"></a>Installare un punto di distribuzione cloud per Configuration Manager
 
@@ -106,7 +106,7 @@ Eseguire questa procedura nel sito per ospitare il punto di distribuzione cloud,
     - **File di certificato**: selezionare **Sfoglia** e scegliere il file PFX per il certificato di autenticazione server di questo punto di distribuzione cloud. Il nome comune di questo certificato popola i campi obbligatori **FQDN servizio** e **Nome servizio**.  
 
         > [!NOTE]  
-        > Il certificato di autenticazione server del punto di distribuzione cloud supporta i caratteri jolly. Se si usa un certificato con caratteri jolly, sostituire l'asterisco (*) nel campo **FQDN servizio** con il nome host desiderato per il servizio.  
+        > Il certificato di autenticazione server del punto di distribuzione cloud supporta i caratteri jolly. Se si usa un certificato con caratteri jolly, sostituire l'asterisco (\*) nel campo **FQDN servizio** con il nome host desiderato per il servizio.  
 
 5. Nella pagina **Avvisi** impostare le quote di archiviazione, le quote di trasferimento e la percentuale delle quote necessaria affinché Configuration Manager generi gli avvisi. Selezionare quindi **Avanti**.  
 
@@ -204,9 +204,9 @@ Configuration Manager controlla periodicamente il servizio di Azure. Se il servi
 
 Configurare le soglie per la quantità di dati da archiviare nel punto di distribuzione cloud e per la quantità di dati che si vuole far scaricare ai client dal punto di distribuzione. Usare gli avvisi per queste soglie che consentono di decidere quando arrestare o eliminare il servizio cloud, regolare il contenuto archiviato nel punto di distribuzione cloud o modificare i client che possono usare il servizio. 
 
-- **Soglia di avviso di archiviazione**: consente di impostare un limite massimo in GB per la quantità di dati o il contenuto da archiviare nel punto di distribuzione cloud. Per impostazione predefinita, questa soglia è pari a 2.000 GB. Configuration Manager genera avvisi e avvisi critici quando lo spazio libero rimanente raggiunge i livelli specificati. Per impostazione predefinita, questi avvisi vengono generati al 50% e al 90% della soglia.  
+- **Soglia di avviso di archiviazione**: la soglia di avviso di archiviazione imposta un limite massimo, espresso in GB, per la quantità di dati o contenuto da archiviare nel punto di distribuzione cloud. Per impostazione predefinita, questa soglia è pari a 2.000 GB. Configuration Manager genera avvisi e avvisi critici quando lo spazio libero rimanente raggiunge i livelli specificati. Per impostazione predefinita, questi avvisi vengono generati al 50% e al 90% della soglia.  
 
-- **Soglia di avviso del trasferimento mensile**: consente di monitorare la quantità di contenuto trasferita dal punto di distribuzione ai client per un periodo di 30 giorni. Per impostazione predefinita, questa soglia è pari a 10.000 GB. Il sito genera avvisi ed avvisi critici avvisi quando i trasferimenti raggiungono i valori definiti. Per impostazione predefinita, questi avvisi vengono generati al 50% e al 90% della soglia.  
+- **Soglia di avviso del trasferimento mensile**: la soglia di avviso del trasferimento mensile consente di monitorare la quantità di contenuto trasferita dal punto di distribuzione ai client per un periodo di 30 giorni. Per impostazione predefinita, questa soglia è pari a 10.000 GB. Il sito genera avvisi ed avvisi critici avvisi quando i trasferimenti raggiungono i valori definiti. Per impostazione predefinita, questi avvisi vengono generati al 50% e al 90% della soglia.  
 
     > [!IMPORTANT]  
     >  Configuration Manager monitora il trasferimento dei dati, ma non lo interrompe quando viene superata la soglia di avviso di trasferimento specificata.  

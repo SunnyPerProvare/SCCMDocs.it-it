@@ -10,16 +10,16 @@ ms.assetid: f4f9a5fd-f573-4b99-ad93-b2c76812e922
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7d6b957ebcc19dfe8c14dd781f71678db8e160af
-ms.sourcegitcommit: 1a1bac2d5ee0f20ce565d29798ee4dd99aaca044
+ms.openlocfilehash: c4ceec8c0d5482456d3257106ee067bf3d9ec1fb
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52281907"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418102"
 ---
 # <a name="install-and-upgrade-with-the-version-1606-baseline-media-for-system-center-configuration-manager"></a>Eseguire installazioni e aggiornamenti con il supporto di base della versione 1606 per System Center Configuration Manager
 
-*Si applica a: System Center Configuration Manager (Current Branch), (Long-Term Servicing Branch)*
+*Si applica a:  System Center Configuration Manager (Current Branch), (Long-Term Servicing Branch)*
 
 Quando si esegue il programma di installazione dal supporto di base della versione 1606 per Configuration Manager, è possibile installare Long-Term Servicing Branch o un sito di Current Branch di System Center Configuration Manager.
 
@@ -71,13 +71,13 @@ Il supporto di base della versione 1606 supporta una nuova chiave di file di scr
 Quando si usa uno script automatico per installare un ramo con licenza, è necessario aggiungere la sezione, i nomi delle chiavi e i valori seguenti nella sezione Opzioni dello script. Non è necessario usare questi valori per lo script di installazione di una copia di valutazione Current Branch:  
 
  **SABranchOptions**
--   **Nome chiave: SAActive**
+- **Nome chiave: SAActive**
   - Valori: 0 o 1.  
-  - Dettagli: 0 installa una copia di valutazione senza licenza di Current Branch, 1 installa una versione con licenza.   
+  - Dettagli:  0 installa una copia di valutazione senza licenza di Current Branch, 1 installa una versione con licenza.   
 
 - **CurrentBranch**
   - Valori: 0 o 1.  
-  - Dettagli: 0 installa Long-Term Servicing Branch, 1 installa Current Branch.  
+  - Dettagli:  0 installa Long-Term Servicing Branch, 1 installa Current Branch.  
 
 Ad esempio, per installare una versione con licenza di Current Branch si usa:
 

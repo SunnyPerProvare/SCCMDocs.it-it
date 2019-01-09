@@ -10,12 +10,12 @@ ms.assetid: ead79e64-1b63-4d0d-8bd5-addff8919820
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d3b2ce474488ebf02c3a3c4a82def91d706b6bfc
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: f26dd2928bac3c2dd60da35473a92e7dc36adb53
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351024"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420482"
 ---
 # <a name="create-bootable-media-with-system-center-configuration-manager"></a>Creare supporti di avvio con System Center Configuration Manager
 
@@ -36,7 +36,7 @@ I supporti di avvio in Configuration Manager contengono l'immagine d'avvio, i co
 |----------|-----------------|  
 |Immagine d'avvio|Tenere presente quanto segue per l'immagine d'avvio da usare nella sequenza di attività per distribuire il sistema operativo:<br /><br /> - L'architettura dell'immagine di avvio deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86.<br />- Verificare che l'immagine di avvio contenga i driver di archiviazione di rete e di massa necessari per eseguire il provisioning del computer di destinazione.|  
 |Creare una sequenza di attività per distribuire un sistema operativo|Come parte del supporto di avvio, è necessario specificare la sequenza di attività per distribuire il sistema operativo. - Per i passaggi necessari per creare una nuova sequenza di attività, vedere [Creare una sequenza di attività per installare un sistema operativo](../deploy-use/create-a-task-sequence-to-install-an-operating-system.md).|  
-|Distribuire tutto il contenuto associato alla sequenza di attività|È necessario distribuire in almeno un punto di distribuzione tutto il contenuto richiesto dalla sequenza di attività. Ciò include l'immagine d'avvio e altri file di preavvio associati. La procedura guidata raccoglie le informazioni dal punto di distribuzione quando crea il supporto di avvio. È necessario avere i diritti di accesso in **lettura** alla raccolta contenuto nel punto di distribuzione.  Per informazioni dettagliate, vedere [Informazioni sulla raccolta contenuto](../../core/plan-design/hierarchy/the-content-library.md).|  
+|Distribuire tutto il contenuto associato alla sequenza di attività|È necessario distribuire in almeno un punto di distribuzione tutto il contenuto richiesto dalla sequenza di attività. Ciò include l'immagine d'avvio e altri file di preavvio associati. La procedura guidata raccoglie le informazioni dal punto di distribuzione quando crea il supporto di avvio. È necessario avere i diritti di accesso in **lettura** alla raccolta contenuto nel punto di distribuzione.  Per informazioni, vedere [About the content library](../../core/plan-design/hierarchy/the-content-library.md).|  
 |Preparare l'unità USB rimovibile|Per un'unità USB rimovibile:<br /><br /> Se si usa un'unità USB rimovibile, l'unità deve essere collegata al computer in cui viene eseguita la procedura guidata e rilevabile da Windows come dispositivo rimovibile. La procedura guidata scrive direttamente nell'unità USB durante la creazione del supporto. Supporto autonomo usa un file system FAT32. Non è possibile creare supporti autonomi in un'unità flash USB il cui contenuto include un file di oltre 4 GB.|  
 |Creare una cartella di output|Per un set di CD/DVD:<br /><br /> Prima di eseguire la Creazione guidata del supporto per la sequenza di attività per creare il supporto per un set di CD o DVD, è necessario creare una cartella per i file di output creati dalla procedura guidata. Il supporto creato per un set di CD o DVD viene scritto come file con estensione iso direttamente nella cartella.|  
 
@@ -44,89 +44,89 @@ I supporti di avvio in Configuration Manager contengono l'immagine d'avvio, i co
 
 ### <a name="to-create-bootable-media"></a>Per creare il supporto di avvio  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1. Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+2. Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea supporto per sequenza di attività** per avviare la Creazione guidata del supporto per la sequenza di attività.  
+3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea supporto per sequenza di attività** per avviare la Creazione guidata del supporto per la sequenza di attività.  
 
-4.  Nella pagina **Seleziona tipo di supporto** specificare le opzioni seguenti e quindi fare clic su **Avanti**.  
+4. Nella pagina **Seleziona tipo di supporto** specificare le opzioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   Selezionare **Supporto di avvio**.  
+   -   Selezionare **Supporto di avvio**.  
 
-    -   Se si desidera solo consentire la distribuzione del sistema operativo senza richiedere l'input utente, è possibile selezionare **Consenti distribuzione automatica del sistema operativo**.  
+   -   Se si desidera solo consentire la distribuzione del sistema operativo senza richiedere l'input utente, è possibile selezionare **Consenti distribuzione automatica del sistema operativo**.  
 
-        > [!IMPORTANT]  
-        >  Quando si seleziona questa opzione, all'utente non vengono richieste informazioni sulla configurazione di rete o le sequenze attività facoltative. Tuttavia, all'utente viene richiesta una password se il supporto è configurato per la protezione con password.  
+       > [!IMPORTANT]  
+       >  Quando si seleziona questa opzione, all'utente non vengono richieste informazioni sulla configurazione di rete o le sequenze attività facoltative. Tuttavia, all'utente viene richiesta una password se il supporto è configurato per la protezione con password.  
 
-5.  Nella pagina **Gestione del supporto** specificare una delle opzioni seguenti e quindi fare clic su **Avanti**.  
+5. Nella pagina **Gestione del supporto** specificare una delle opzioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   Selezionare **Supporto dinamico** se si desidera consentire a un punto di gestione di reindirizzare il supporto a un altro punto di gestione, in base al percorso del client nei limiti del sito.  
+   -   Selezionare **Supporto dinamico** se si desidera consentire a un punto di gestione di reindirizzare il supporto a un altro punto di gestione, in base al percorso del client nei limiti del sito.  
 
-    -   Selezionare **Supporto basato su sito** se si desidera che il supporto contatti solo il punto di gestione specificato.  
+   -   Selezionare **Supporto basato su sito** se si desidera che il supporto contatti solo il punto di gestione specificato.  
 
-6.  Nella pagina **Tipo di supporto** specificare se il supporto è un'unità flash o un set di CD/DVD, quindi configurare quanto segue:  
+6. Nella pagina **Tipo di supporto** specificare se il supporto è un'unità flash o un set di CD/DVD, quindi configurare quanto segue:  
 
-    > [!IMPORTANT]  
-    >  Supporto autonomo usa un file system FAT32. Non è possibile creare supporti autonomi in un'unità flash USB il cui contenuto include un file di oltre 4 GB.  
+   > [!IMPORTANT]  
+   >  Supporto autonomo usa un file system FAT32. Non è possibile creare supporti autonomi in un'unità flash USB il cui contenuto include un file di oltre 4 GB.  
 
-    -   Se si seleziona **Unità memoria flash USB**, è necessario specificare l'unità in cui archiviare il contenuto.  
+   - Se si seleziona **Unità memoria flash USB**, è necessario specificare l'unità in cui archiviare il contenuto.  
 
-    -   Se si seleziona l'opzione **CD/DVD impostato**, specificare la capacità del supporto e il nome e il percorso dei file di output. La procedura guidata scrive i file di output in questa posizione. Ad esempio: **\\\nomeserver\cartella\filedioutput.iso**  
+   - Se si seleziona l'opzione **CD/DVD impostato**, specificare la capacità del supporto e il nome e il percorso dei file di output. La procedura guidata scrive i file di output in questa posizione. Ad esempio: **\\\nomeserver\cartella\filedioutput.iso**  
 
-         Se la capacità del supporto non è sufficiente per archiviare l'intero contenuto, vengono creati più file ed è necessario archiviare il contenuto in più CD o DVD. Quando sono necessari più supporti, Configuration Manager aggiunge un numero di sequenza al nome di ogni file di output creato. Se insieme al sistema operativo si distribuisce un'applicazione e questa non può essere contenuta in un unico supporto, Configuration Manager archivia l'applicazione in più supporti. Quando il supporto autonomo viene eseguito Configuration Manager chiede all'utente il supporto successivo contenente l'applicazione.  
+      Se la capacità del supporto non è sufficiente per archiviare l'intero contenuto, vengono creati più file ed è necessario archiviare il contenuto in più CD o DVD. Quando sono necessari più supporti, Configuration Manager aggiunge un numero di sequenza al nome di ogni file di output creato. Se insieme al sistema operativo si distribuisce un'applicazione e questa non può essere contenuta in un unico supporto, Configuration Manager archivia l'applicazione in più supporti. Quando il supporto autonomo viene eseguito Configuration Manager chiede all'utente il supporto successivo contenente l'applicazione.  
 
-        > [!IMPORTANT]  
-        >  Se si seleziona un'immagine iso esistente, la Creazione guidata del supporto per la sequenza di attività elimina l'immagine dall'unità o dalla condivisione non appena si passa alla pagina successiva della procedura guidata. L'immagine esistente viene eliminata, anche se si annulla la procedura guidata.  
+     > [!IMPORTANT]  
+     >  Se si seleziona un'immagine iso esistente, la Creazione guidata del supporto per la sequenza di attività elimina l'immagine dall'unità o dalla condivisione non appena si passa alla pagina successiva della procedura guidata. L'immagine esistente viene eliminata, anche se si annulla la procedura guidata.  
 
      Fare clic su **Avanti**.  
 
-7.  Nella pagina **Sicurezza** specificare le opzioni seguenti e quindi fare clic su **Avanti**.  
+7. Nella pagina **Sicurezza** specificare le opzioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   Selezionare la casella di controllo **Abilita supporto per computer sconosciuti** per consentire al supporto di distribuire un sistema operativo a un computer non gestito da Configuration Manager. Non sono presenti record di questi computer nel database di Configuration Manager.  
+   -   Selezionare la casella di controllo **Abilita supporto per computer sconosciuti** per consentire al supporto di distribuire un sistema operativo a un computer non gestito da Configuration Manager. Non sono presenti record di questi computer nel database di Configuration Manager.  
 
-         I computer sconosciuti includono i seguenti:  
+        I computer sconosciuti includono i seguenti:  
 
-        -   Computer in cui non è installato il client di Configuration Manager  
+       -   Computer in cui non è installato il client di Configuration Manager  
 
-        -   Computer che non sono stati importati in Configuration Manager  
+       -   Computer che non sono stati importati in Configuration Manager  
 
-        -   Computer che non sono stati rilevati da Configuration Manager  
+       -   Computer che non sono stati rilevati da Configuration Manager  
 
-    -   Selezionare la casella di controllo **Proteggi supporto con password** e immettere una password complessa per proteggere il supporto da accesso non autorizzato. Quando si specifica una password, l'utente deve immettere la password per usare il supporto di avvio.  
+   -   Selezionare la casella di controllo **Proteggi supporto con password** e immettere una password complessa per proteggere il supporto da accesso non autorizzato. Quando si specifica una password, l'utente deve immettere la password per usare il supporto di avvio.  
 
-        > [!IMPORTANT]  
-        >  Come procedura consigliata di sicurezza, assegnare sempre una password per proteggere il supporto di avvio.  
+       > [!IMPORTANT]  
+       >  Come procedura consigliata di sicurezza, assegnare sempre una password per proteggere il supporto di avvio.  
 
-    -   Per le comunicazioni HTTP, selezionare **Crea certificato del supporto autofirmato**e quindi specificare la data di inizio e di scadenza del certificato.  
+   -   Per le comunicazioni HTTP, selezionare **Crea certificato del supporto autofirmato**e quindi specificare la data di inizio e di scadenza del certificato.  
 
-    -   Per le comunicazioni HTTPS, selezionare **Importa certificato PKI**e quindi specificare il certificato da importare e la relativa password.  
+   -   Per le comunicazioni HTTPS, selezionare **Importa certificato PKI**e quindi specificare il certificato da importare e la relativa password.  
 
-         Per altre informazioni su questo certificato client usato per le immagini di avvio, vedere [Requisiti dei certificati PKI](../../core/plan-design/network/pki-certificate-requirements.md).  
+        Per altre informazioni su questo certificato client usato per le immagini di avvio, vedere [Requisiti dei certificati PKI](../../core/plan-design/network/pki-certificate-requirements.md).  
 
-    -   **Affinità utente dispositivo**: per supportare la gestione basata sugli utenti in Configuration Manager, specificare come si vuole che il supporto associ gli utenti al computer di destinazione. Per altre informazioni su come la distribuzione del sistema operativo supporti l'affinità utente dispositivo, vedere [Associare gli utenti a un computer di destinazione](../get-started/associate-users-with-a-destination-computer.md).  
+   -   **Affinità utente dispositivo**: per supportare la gestione basata sugli utenti in Configuration Manager, specificare come si vuole che il supporto associ gli utenti al computer di destinazione. Per altre informazioni su come la distribuzione del sistema operativo supporti l'affinità utente dispositivo, vedere [Associare gli utenti a un computer di destinazione](../get-started/associate-users-with-a-destination-computer.md).  
 
-        -   Specificare **Consenti affinità utente dispositivo con approvazione automatica** se si desidera che il supporto associ automaticamente gli utenti al computer di destinazione. Questa funzionalità si basa sulle azioni della sequenza di attività che distribuisce il sistema operativo. In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.  
+       -   Specificare **Consenti affinità utente dispositivo con approvazione automatica** se si desidera che il supporto associ automaticamente gli utenti al computer di destinazione. Questa funzionalità si basa sulle azioni della sequenza di attività che distribuisce il sistema operativo. In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.  
 
-        -   Specificare **Consenti approvazione amministratore in sospeso per affinità utente dispositivo** se si desidera che il supporto associ gli utenti al computer di destinazione dopo la concessione dell'approvazione. Questa funzionalità si basa sull'ambito della sequenza di attività che distribuisce il sistema operativo.  In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione, ma attende l'approvazione di un utente amministratore prima di distribuire il sistema operativo.  
+       -   Specificare **Consenti approvazione amministratore in sospeso per affinità utente dispositivo** se si desidera che il supporto associ gli utenti al computer di destinazione dopo la concessione dell'approvazione. Questa funzionalità si basa sull'ambito della sequenza di attività che distribuisce il sistema operativo.  In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione, ma attende l'approvazione di un utente amministratore prima di distribuire il sistema operativo.  
 
-        -   Specificare **Non consentire affinità utente dispositivo** se non si desidera che il supporto associ gli utenti al computer di destinazione. In questo scenario, la sequenza di attività non associa gli utenti al computer di destinazione quando distribuisce il sistema operativo.  
+       -   Specificare **Non consentire affinità utente dispositivo** se non si desidera che il supporto associ gli utenti al computer di destinazione. In questo scenario, la sequenza di attività non associa gli utenti al computer di destinazione quando distribuisce il sistema operativo.  
 
-8.  Nella pagina **Immagine di avvio** specificare le opzioni seguenti e quindi fare clic su **Avanti**.  
+8. Nella pagina **Immagine di avvio** specificare le opzioni seguenti e quindi fare clic su **Avanti**.  
 
-    > [!IMPORTANT]  
-    >  L'architettura dell'immagine di avvio distribuita deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86.  
+   > [!IMPORTANT]  
+   >  L'architettura dell'immagine di avvio distribuita deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86.  
 
-    -   Nella casella **Immagine di avvio** specificare l'immagine di avvio per avviare il computer di destinazione.  
+   -   Nella casella **Immagine di avvio** specificare l'immagine di avvio per avviare il computer di destinazione.  
 
-    -   Nella casella **Punto di distribuzione** specificare il punto di distribuzione in cui si trova l'immagine di avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
+   -   Nella casella **Punto di distribuzione** specificare il punto di distribuzione in cui si trova l'immagine di avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
 
-        > [!NOTE]  
-        >  È necessario avere i diritti di accesso in **lettura** alla raccolta contenuto nel punto di distribuzione.  
+       > [!NOTE]  
+       >  È necessario avere i diritti di accesso in **lettura** alla raccolta contenuto nel punto di distribuzione.  
 
-    -   Se si crea un supporto di avvio basato su sito nella pagina **Gestione del supporto** della procedura guidata, specificare un punto di gestione da un sito primario nella casella **Punto di gestione** .  
+   -   Se si crea un supporto di avvio basato su sito nella pagina **Gestione del supporto** della procedura guidata, specificare un punto di gestione da un sito primario nella casella **Punto di gestione** .  
 
-    -   Se si crea un supporto di avvio dinamico nella pagina **Gestione del supporto** della procedura guidata, specificare i punti di gestione del sito primario da usare e un ordine di priorità per le comunicazioni iniziali in **Punti di gestione associati**.  
+   -   Se si crea un supporto di avvio dinamico nella pagina **Gestione del supporto** della procedura guidata, specificare i punti di gestione del sito primario da usare e un ordine di priorità per le comunicazioni iniziali in **Punti di gestione associati**.  
 
 9. Nella pagina **Personalizzazione** specificare le seguenti opzioni e quindi fare clic su **Avanti**.  
 

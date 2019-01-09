@@ -10,12 +10,12 @@ ms.assetid: 8d15ae3f-de42-461f-a907-c43873da22d2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 05268780bd6dc3b86052b694f360065f8f70d6e6
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 396652d4fcfe2ad41aaa4dad188947d369cb0052
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32332366"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418663"
 ---
 # <a name="planning-for-client-deployment-to-mac-computers-in-system-center-configuration-manager"></a>Pianificazione della distribuzione del client in computer Mac in System Center Configuration Manager
 
@@ -23,84 +23,84 @@ ms.locfileid: "32332366"
 
 È possibile installare il client di Configuration Manager su computer Mac con sistema operativo Mac OS X e usare le funzionalità di gestione seguenti:  
 
--   **Inventario hardware**  
+- **Inventario hardware**  
 
-     È possibile usare l'inventario hardware di Configuration Manager per raccogliere informazioni sull'hardware e sulle applicazioni installate sui computer Mac. Tali informazioni possono essere visualizzate in Esplora inventario risorse nella console di Configuration Manager e usate per creare raccolte, query e report. Per altre informazioni, vedere [Come usare Esplora inventario risorse per visualizzare l'inventario hardware in Configuration Manager](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md).  
+   È possibile usare l'inventario hardware di Configuration Manager per raccogliere informazioni sull'hardware e sulle applicazioni installate sui computer Mac. Tali informazioni possono essere visualizzate in Esplora inventario risorse nella console di Configuration Manager e usate per creare raccolte, query e report. Per altre informazioni, vedere [Come usare Esplora inventario risorse per visualizzare l'inventario hardware in Configuration Manager](../../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md).  
 
-     Configuration Manager raccoglie le informazioni hardware seguenti dai computer Mac:  
+   Configuration Manager raccoglie le informazioni hardware seguenti dai computer Mac:  
 
-    -   Processore  
+  -   Processore  
 
-    -   Sistema computer  
+  -   Sistema computer  
 
-    -   Unità disco  
+  -   Unità disco  
 
-    -   Partizione disco  
+  -   Partizione disco  
 
-    -   Scheda di rete  
+  -   Scheda di rete  
 
-    -   Sistema operativo  
+  -   Sistema operativo  
 
-    -   Service  
+  -   Service  
 
-    -   Processo  
+  -   Processo  
 
-    -   Software installato  
+  -   Software installato  
 
-    -   Prodotto di sistema  
+  -   Prodotto di sistema  
 
-    -   Controller USB  
+  -   Controller USB  
 
-    -   Dispositivo USB  
+  -   Dispositivo USB  
 
-    -   Unità CD-ROM  
+  -   Unità CD-ROM  
 
-    -   Controller video  
+  -   Controller video  
 
-    -   Monitor da tavolo  
+  -   Monitor da tavolo  
 
-    -   Batteria portatile  
+  -   Batteria portatile  
 
-    -   Memoria fisica  
+  -   Memoria fisica  
 
-    -   Stampante  
+  -   Stampante  
 
-    > [!IMPORTANT]  
-    >  Non è possibile estendere le informazioni hardware raccolte dai computer Mac durante l'inventario hardware.  
+  > [!IMPORTANT]  
+  >  Non è possibile estendere le informazioni hardware raccolte dai computer Mac durante l'inventario hardware.  
 
--   **Impostazioni di conformità**  
+- **Impostazioni di conformità**  
 
-     È possibile usare le impostazioni di conformità di Configuration Manager per visualizzarne la conformità e correggere le impostazioni di preferenza di Mac OS X (file con estensione plist). Ad esempio, si potrebbero applicare le impostazioni per la home page del browser Web Safari oppure assicurarsi che il firewall Apple sia abilitato. È inoltre possibile usare gli script della shell per monitorare e correggere le impostazioni in MAC OS X.  
+   È possibile usare le impostazioni di conformità di Configuration Manager per visualizzarne la conformità e correggere le impostazioni di preferenza di Mac OS X (file con estensione plist). Ad esempio, si potrebbero applicare le impostazioni per la home page del browser Web Safari oppure assicurarsi che il firewall Apple sia abilitato. È inoltre possibile usare gli script della shell per monitorare e correggere le impostazioni in MAC OS X.  
 
--   **Gestione delle applicazioni**  
+- **Gestione delle applicazioni**  
 
-     Configuration Manager può distribuire software nei computer Mac. È possibile distribuire i seguenti formati di software nei computer Mac:  
+   Configuration Manager può distribuire software nei computer Mac. È possibile distribuire i seguenti formati di software nei computer Mac:  
 
-    -   Immagine disco Apple (.DMG)  
+  -   Immagine disco Apple (.DMG)  
 
-    -   File meta pacchetto (.MPKG)  
+  -   File meta pacchetto (.MPKG)  
 
-    -   Pacchetto di Mac OS X Installer (.PKG)  
+  -   Pacchetto di Mac OS X Installer (.PKG)  
 
-    -   Applicazione di Mac OS X (.APP)  
+  -   Applicazione di Mac OS X (.APP)  
 
- Quando si installa il client di Configuration Manager in computer Mac, non è possibile usare le funzionalità di gestione seguenti supportate dal client di Configuration Manager in computer Windows:  
+  Quando si installa il client di Configuration Manager in computer Mac, non è possibile usare le funzionalità di gestione seguenti supportate dal client di Configuration Manager in computer Windows:  
 
--   Installazione push client  
+- Installazione push client  
 
--   Distribuzione del sistema operativo  
+- Distribuzione del sistema operativo  
 
--   Aggiornamenti software  
+- Aggiornamenti software  
 
-    > [!NOTE]  
-    >  È possibile usare la gestione applicazioni di Configuration Manager per distribuire gli aggiornamenti software Mac OS X necessari ai computer Mac. Inoltre, è possibile usare le impostazioni di conformità per assicurarsi che i computer abbiano tutti gli aggiornamenti software necessari.  
+  > [!NOTE]  
+  >  È possibile usare la gestione applicazioni di Configuration Manager per distribuire gli aggiornamenti software Mac OS X necessari ai computer Mac. Inoltre, è possibile usare le impostazioni di conformità per assicurarsi che i computer abbiano tutti gli aggiornamenti software necessari.  
 
--   Finestre di manutenzione  
+- Finestre di manutenzione  
 
--   Controllo remoto  
+- Controllo remoto  
 
--   Risparmio energia  
+- Risparmio energia  
 
--   Controllo e correzione client dello stato client  
+- Controllo e correzione client dello stato client  
 
- Per altre informazioni su come installare e configurare il client Mac di Configuration Manager, vedere [Come distribuire i client a computer Mac in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-macs.md).
+  Per altre informazioni su come installare e configurare il client Mac di Configuration Manager, vedere [Come distribuire i client a computer Mac in System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-macs.md).

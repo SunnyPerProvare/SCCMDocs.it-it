@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 robots: noindex
-ms.openlocfilehash: ead1eef396e643930e00d3208ed1e821c73906d5
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 3454b56e53901668c89062f0910f8ea318f22cf2
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344178"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417660"
 ---
 # <a name="schema-extensions-for-system-center-configuration-manager"></a>Estensioni dello schema per System Center Configuration Manager
 
@@ -79,7 +79,7 @@ Prima di [estendere lo schema di Active Directory](https://docs.microsoft.com/sc
 
 **Configurazione della porta per la comunicazione "client a server"**: durante l'installazione, il client viene configurato con le informazioni della porta archiviate in Active Directory. Se in seguito si modifica la porta per la comunicazione tra client e server di un sito, il client può ottenere l'impostazione della nuova porta da Active Directory Domain Services.  
 
--   **Soluzioni alternative:** Se non si estende lo schema, usare una delle soluzioni alternative seguenti per fornire ai client esistenti la configurazione della nuova porta:  
+-   **Soluzioni alternative:** se non si estende lo schema, usare una delle soluzioni alternative seguenti per fornire ai client esistenti la configurazione della nuova porta:  
 
     -   **Reinstallare i client** usando opzioni che configurano la nuova porta.  
 
@@ -87,7 +87,7 @@ Prima di [estendere lo schema di Active Directory](https://docs.microsoft.com/sc
 
 **Scenari di distribuzione del contenuto**: quando si crea contenuto in un sito e lo si distribuisce a un altro sito nella gerarchia, il sito ricevente deve essere in grado di verificare la firma dei dati del contenuto firmato. A tale scopo, è necessario l'accesso alla chiave pubblica del sito di origine in cui vengono creati i dati. Quando si estende lo schema di Active Directory per Configuration Manager, viene resa disponibile la chiave pubblica di un sito per tutti i siti nella gerarchia.  
 
--   **Soluzione alternativa:** Se non si estende lo schema di Active Directory, usare lo strumento di manutenzione gerarchia, **preinst.exe**, per scambiare le informazioni sulla chiave di sicurezza tra i siti.  
+-   **Soluzione alternativa:** se non si estende lo schema di Active Directory, usare lo strumento di manutenzione gerarchia, **preinst.exe**, per scambiare le informazioni sulla chiave di sicurezza tra i siti.  
 
      Se ad esempio si prevede di creare il contenuto in un sito primario e di distribuirlo in un sito secondario all'interno di un altro sito primario, è necessario estendere lo schema di Active Directory per consentire al sito secondario di ottenere la chiave pubblica per il sito primario di origine oppure usare preinst.exe per condividere direttamente le chiavi tra i due siti.  
 
@@ -135,12 +135,12 @@ Quando si estende lo schema per System Center Configuration Manager, le classi e
 
     -   cn=MS-SMS-Site  
 
-> [!NOTE]  
-
+> [!NOTE]
+> 
 >  Le estensioni dello schema possono includere attributi e classi ereditati da versioni precedenti del prodotto, ma non usati da System Center Configuration Manager. Ad esempio:  
-
->   
->  -   Attributo: cn=MS-SMS-Site-Boundaries  
-> -   Classe: cn=MS-SMS-Server-Locator-Point  
+> 
+> 
+> - Attributo: cn=MS-SMS-Site-Boundaries  
+>   -   Classe: cn=MS-SMS-Server-Locator-Point  
 
 Per assicurarsi che gli elenchi precedenti siano aggiornati, esaminare il file **ConfigMgr_ad_schema.LDF** nella cartella **\SMSSETUP\BIN\x64** del supporto di installazione di System Center Configuration Manager.  

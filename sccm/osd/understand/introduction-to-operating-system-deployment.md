@@ -10,12 +10,12 @@ ms.assetid: d9a1c545-8301-492c-832f-2c108ff93c77
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5dfb38cb005b04e761990a4cb513646daab25439
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 6ec1e6b2ce2322086fdb85e4e45c34ae1a4b5887
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353536"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416708"
 ---
 # <a name="introduction-to-operating-system-deployment-in-system-center-configuration-manager"></a>Introduzione alla distribuzione del sistema operativo in System Center Configuration Manager
 
@@ -54,28 +54,28 @@ ms.locfileid: "32353536"
 ##  <a name="BKMK_OSDMethods"></a> Metodi per distribuire i sistemi operativi  
  Esistono diversi metodi con cui è possibile distribuire sistemi operativi nei computer client di Configuration Manager.  
 
--   **Distribuzioni avviate da PXE**: le distribuzioni avviate da PXE consentono ai computer client di richiedere una distribuzione in rete. In questo metodo di distribuzione l'immagine del sistema operativo e l'immagine di avvio di Windows PE vengono inviate a un punto di distribuzione configurato per accettare le richieste di avvio da PXE. Per altre informazioni, vedere [Usare PXE per distribuire Windows in rete con System Center Configuration Manager](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
+- **Distribuzioni avviate da PXE**: le distribuzioni avviate da PXE consentono ai computer client di richiedere una distribuzione in rete. In questo metodo di distribuzione l'immagine del sistema operativo e l'immagine di avvio di Windows PE vengono inviate a un punto di distribuzione configurato per accettare le richieste di avvio da PXE. Per altre informazioni, vedere [Usare PXE per distribuire Windows in rete con System Center Configuration Manager](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
 
--   **Rendere disponibili i sistemi operativi in Software Center**: è possibile distribuire un sistema operativo e renderlo disponibile in Software Center. I client di Configuration Manager possono avviare l'installazione del sistema operativo da Software Center. Per altre informazioni, vedere [Sostituire un computer esistente e trasferire le impostazioni](../deploy-use/replace-an-existing-computer-and-transfer-settings.md)  
+- **Rendere disponibili i sistemi operativi in Software Center**: è possibile distribuire un sistema operativo e renderlo disponibile in Software Center. I client di Configuration Manager possono avviare l'installazione del sistema operativo da Software Center. Per altre informazioni, vedere [Sostituire un computer esistente e trasferire le impostazioni](../deploy-use/replace-an-existing-computer-and-transfer-settings.md)  
 
--   **Distribuzioni multicast**: le distribuzioni multicast consentono di risparmiare larghezza di banda con l'invio simultaneo di dati a più client anziché inviare una copia dei dati a ogni client su una connessione separata. In questo metodo di distribuzione l'immagine del sistema operativo viene inviata a un punto di distribuzione. L'immagine verrà a sua volta distribuita quando i computer client richiedono la distribuzione. Per altre informazioni, vedere [Usare il multicast per distribuire Windows in rete](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
+- **Distribuzioni di multicast**: Le distribuzioni di multicast risparmiano larghezza di banda inviando contemporaneamente i dati a più client anziché inviare una copia dei dati a ogni client in una connessione separata. In questo metodo di distribuzione l'immagine del sistema operativo viene inviata a un punto di distribuzione. L'immagine verrà a sua volta distribuita quando i computer client richiedono la distribuzione. Per altre informazioni, vedere [Usare il multicast per distribuire Windows in rete](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
 
--   **Distribuzioni con supporti di avvio**: le distribuzioni con supporti di avvio consentono di distribuire il sistema operativo all'avvio del computer di destinazione. All'avvio del computer di destinazione, viene recuperata la sequenza di attività, l'immagine del sistema operativo e qualsiasi altro contenuto richiesto dalla rete. Poiché tale contenuto non è incluso nel supporto, è possibile aggiornare il contenuto senza dover ricreare il supporto. Per altre informazioni, vedere [Creare supporti di avvio](../deploy-use/create-bootable-media.md).  
+- **Distribuzioni dei supporti di avvio**: Le distribuzioni dei supporti di avvio consentono di distribuire il sistema operativo all'avvio del computer di destinazione. All'avvio del computer di destinazione, viene recuperata la sequenza di attività, l'immagine del sistema operativo e qualsiasi altro contenuto richiesto dalla rete. Poiché tale contenuto non è incluso nel supporto, è possibile aggiornare il contenuto senza dover ricreare il supporto. Per altre informazioni, vedere [Creare supporti di avvio](../deploy-use/create-bootable-media.md).  
 
--   **Distribuzioni con supporti autonomi**: le distribuzioni con supporti autonomi consentono di distribuire i sistemi operativi nelle condizioni seguenti:  
+- **Distribuzioni autonome avviate da supporti**: Le distribuzioni autonome avviate da supporti consentono di distribuire i sistemi operativi nelle condizioni seguenti:  
 
-    -   In ambienti dove non è semplice copiare un'immagine del sistema operativo o altri pacchetti di grandi dimensioni sulla rete.  
+  - In ambienti dove non è semplice copiare un'immagine del sistema operativo o altri pacchetti di grandi dimensioni sulla rete.  
 
-    -   In ambienti senza connettività di rete o con connettività di rete a larghezza di banda ridotta.  
+  - In ambienti senza connettività di rete o con connettività di rete a larghezza di banda ridotta.  
 
-     Per altre informazioni, vedere [Creare supporti autonomi](../deploy-use/create-stand-alone-media.md).  
+    Per altre informazioni, vedere [Creare supporti autonomi](../deploy-use/create-stand-alone-media.md).  
 
--   **Distribuzioni con supporti pre-installati**: le distribuzioni con supporti preinstallati consentono di distribuire un sistema operativo in un computer di cui non è stato effettuato il provisioning completo. Il supporto preinstallato è un file WIM (Windows Imaging Format) che può essere installato in un computer bare metal dal produttore o in un centro di gestione temporanea aziendale non connesso all'ambiente di Configuration Manager.  
+- **Distribuzioni di supporti pre-installati**: Le distribuzioni di supporti pre-installati consentono di distribuire un sistema operativo in un computer in cui non è stato effettuato il provisioning. Il supporto preinstallato è un file WIM (Windows Imaging Format) che può essere installato in un computer bare metal dal produttore o in un centro di gestione temporanea aziendale non connesso all'ambiente di Configuration Manager.  
 
-     Successivamente nell'ambiente di Configuration Manager il computer viene avviato usando l'immagine d'avvio fornita dal supporto, quindi il computer si collega al punto di gestione del sito per le sequenze di attività che completano il processo di download. Questo metodo di distribuzione può ridurre il traffico di rete perché l'immagine di avvio e l'immagine del sistema operativo sono già nel computer di destinazione. È possibile specificare applicazioni, pacchetti e pacchetti driver da includere nel supporto pre-installato. Per altre informazioni, vedere [Creare supporti preinstallati](../deploy-use/create-prestaged-media.md).  
+   Successivamente nell'ambiente di Configuration Manager il computer viene avviato usando l'immagine d'avvio fornita dal supporto, quindi il computer si collega al punto di gestione del sito per le sequenze di attività che completano il processo di download. Questo metodo di distribuzione può ridurre il traffico di rete perché l'immagine di avvio e l'immagine del sistema operativo sono già nel computer di destinazione. È possibile specificare applicazioni, pacchetti e pacchetti driver da includere nel supporto pre-installato. Per altre informazioni, vedere [Creare supporti preinstallati](../deploy-use/create-prestaged-media.md).  
 
 ##  <a name="BKMK_BootImages"></a> Immagini d'avvio  
- Un'immagine d'avvio in Configuration Manager è un'immagine Windows PE (WinPE) usata durante la distribuzione di un sistema operativo. Le immagini d'avvio vengono usate per avviare un computer in Windows PE, un sistema operativo minimo con componenti e servizi limitati che prepara il computer di destinazione per l'installazione di Windows. Configuration Manager offre due immagini di avvio: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. Queste sono considerate immagini d'avvio predefinite. Le immagini d'avvio create e aggiunte a Configuration Manager dall'utente sono considerate immagini personalizzate. Le immagini d'avvio predefinite possono essere sostituite automaticamente quando si aggiorna Configuration Manager. Per altre informazioni sulle immagini d'avvio, vedere [Gestire le immagini d'avvio con System Center Configuration Manager](../get-started/manage-boot-images.md).  
+ Un'immagine d'avvio in Configuration Manager è un'immagine Windows PE (WinPE) usata durante la distribuzione di un sistema operativo. Le immagini d'avvio vengono usate per avviare un computer in Windows PE, un sistema operativo minimo con componenti e servizi limitati che prepara il computer di destinazione per l'installazione di Windows. In Configuration Manager sono disponibili due immagini d'avvio: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. Queste sono considerate immagini d'avvio predefinite. Le immagini d'avvio create e aggiunte a Configuration Manager dall'utente sono considerate immagini personalizzate. Le immagini d'avvio predefinite possono essere sostituite automaticamente quando si aggiorna Configuration Manager. Per altre informazioni sulle immagini d'avvio, vedere [Gestire le immagini d'avvio con System Center Configuration Manager](../get-started/manage-boot-images.md).  
 
 ##  <a name="BKMK_OSImages"></a> Immagini del sistema operativo  
  Le immagini del sistema operativo in Configuration Manager vengono archiviate in file in formato Windows Imaging (WIM) e rappresentano una raccolta compressa dei file e delle cartelle di riferimento necessari per installare e configurare correttamente un sistema operativo in un computer. Per tutti gli scenari di distribuzione del sistema operativo, è necessario selezionare un'immagine del sistema operativo. È possibile usare l'immagine del sistema operativo predefinita o crearla da un computer di riferimento configurato dall'utente. Per altre informazioni, vedere [Manage operating system images](../get-started/manage-operating-system-images.md) (Gestire le immagini del sistema operativo).  
@@ -94,24 +94,24 @@ ms.locfileid: "32353536"
 
  Le informazioni sullo stato utente vengono acquisite e ripristinate usando le sequenze attività. Quando vengono acquisite le informazioni sullo stato utente, le informazioni possono essere memorizzate in uno dei modi seguenti:  
 
--   È possibile memorizzare i dati di stato utente in remoto configurando un punto di migrazione stato. La sequenza di attività di acquisizione invia i dati al punto di migrazione stato. Quindi, dopo aver distribuito il sistema operativo, la sequenza di attività di ripristino recupera i dati e ripristina lo stato utente nel computer di destinazione.  
+- È possibile memorizzare i dati di stato utente in remoto configurando un punto di migrazione stato. La sequenza di attività di acquisizione invia i dati al punto di migrazione stato. Quindi, dopo aver distribuito il sistema operativo, la sequenza di attività di ripristino recupera i dati e ripristina lo stato utente nel computer di destinazione.  
 
--   È possibile memorizzare i dati dello stato utente in una posizione specifica in locale. In questo scenario la sequenza di attività di acquisizione copia i dati utente in una posizione specifica nel computer di destinazione. Quindi, dopo aver distribuito il sistema operativo, la sequenza di attività di ripristino recupera i dati utente da tale posizione.  
+- È possibile memorizzare i dati dello stato utente in una posizione specifica in locale. In questo scenario la sequenza di attività di acquisizione copia i dati utente in una posizione specifica nel computer di destinazione. Quindi, dopo aver distribuito il sistema operativo, la sequenza di attività di ripristino recupera i dati utente da tale posizione.  
 
--   È possibile specificare i collegamenti reali che possono essere usati per ripristinare i dati utente e la relativa posizione originale. In questo scenario i dati dello stato utente rimangono sull'unità quando viene rimosso il sistema operativo precedente. Quindi, dopo aver distribuito il sistema operativo, la sequenza di attività di ripristino usa i collegamenti reali per ripristinare i dati dello stato utente nella posizione originale.  
+- È possibile specificare i collegamenti reali che possono essere usati per ripristinare i dati utente e la relativa posizione originale. In questo scenario i dati dello stato utente rimangono sull'unità quando viene rimosso il sistema operativo precedente. Quindi, dopo aver distribuito il sistema operativo, la sequenza di attività di ripristino usa i collegamenti reali per ripristinare i dati dello stato utente nella posizione originale.  
 
- Per altre informazioni, vedere [Gestire lo stato utente](../get-started/manage-user-state.md).  
+  Per altre informazioni, vedere [Gestire lo stato utente](../get-started/manage-user-state.md).  
 
 ##  <a name="BKMK_UnknownComputer"></a> Distribuire a computer sconosciuti  
  È possibile distribuire sistemi operativi in computer non gestiti da Configuration Manager. Non sono presenti record di questi computer nel database di Configuration Manager. Questi computer vengono definiti computer sconosciuti. I computer sconosciuti includono i seguenti:  
 
--   Computer in cui non è installato il client di Configuration Manager  
+- Computer in cui non è installato il client di Configuration Manager  
 
--   Computer che non sono stati importati in Configuration Manager  
+- Computer che non sono stati importati in Configuration Manager  
 
--   Computer che non sono stati individuati da Configuration Manager  
+- Computer che non sono stati individuati da Configuration Manager  
 
- Per altre informazioni, vedere [Operazioni preliminari alle distribuzioni in computer sconosciuti](../get-started/prepare-for-unknown-computer-deployments.md).  
+  Per altre informazioni, vedere [Operazioni preliminari alle distribuzioni in computer sconosciuti](../get-started/prepare-for-unknown-computer-deployments.md).  
 
 ##  <a name="BKMK_UDA"></a> Associare utenti a un computer  
  Quando viene distribuito un sistema operativo, è possibile associare gli utenti con il computer di destinazione per supportare le azioni di affinità utente dispositivo. Quando si associa un utente al computer di destinazione, un utente amministratore può successivamente eseguire le azioni in qualsiasi computer associato all'utente, ad esempio distribuire un'applicazione al computer di un utente specifico. Tuttavia, quando si distribuisce un sistema operativo, non è possibile distribuire il sistema operativo nel computer di un utente specifico. Per altre informazioni, vedere [Associate users with a destination computer](../get-started/associate-users-with-a-destination-computer.md) (Associare gli utenti a un computer di destinazione).  

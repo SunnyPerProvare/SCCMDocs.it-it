@@ -10,12 +10,12 @@ ms.assetid: 7e4ec207-bb49-401f-af1b-dd705ecb465d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2baafa04c315ebc7512504f042c89615b7217b4c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 10b15f8463bb54df859f09379f41a809a45fc5b9
+ms.sourcegitcommit: 81e3666c41eb976cc7651854042dafe219e2e467
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340727"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53747127"
 ---
 # <a name="configure-sql-server-always-on-availability-groups-for-configuration-manager"></a>Configurare gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
@@ -38,38 +38,38 @@ Per completare la procedura, l'account usato deve:
 -   Essere **amministratore di sistema** in ogni istanza di SQL Server che ospita il database del sito.
 
 ### <a name="to-create-and-configure-an-availability-group-for-configuration-manager"></a>Per creare e configurare un gruppo di disponibilità per Configuration Manager  
-1.  Usare il comando seguente per arrestare il sito di Configuration Manager: **Preinst.exe /stopsite**. Per altre informazioni sull'uso di Preinst.exe, vedere [Strumento di manutenzione gerarchia](/sccm/core/servers/manage/hierarchy-maintenance-tool-preinst.exe).
+1. Usare il comando seguente per arrestare il sito di Configuration Manager: **Preinst.exe /stopsite**. Per altre informazioni sull'uso di Preinst.exe, vedere [Strumento di manutenzione gerarchia](/sccm/core/servers/manage/hierarchy-maintenance-tool-preinst.exe).
 
-2.  Modificare il modello di backup per il database del sito da **SIMPLE** a **FULL**.
-Vedere [Visualizzazione o modifica del modello di recupero di un database](/sql/relational-databases/backup-restore/view-or-change-the-recovery-model-of-a-database-sql-server) nella documentazione di SQL Server. I gruppi di disponibilità supportano solo FULL.
+2. Modificare il modello di backup per il database del sito da **SIMPLE** a **FULL**.
+   Vedere [Visualizzazione o modifica del modello di recupero di un database](/sql/relational-databases/backup-restore/view-or-change-the-recovery-model-of-a-database-sql-server) nella documentazione di SQL Server. I gruppi di disponibilità supportano solo FULL.
 
-3.  Usare SQL Server per creare un backup completo del database del sito. Eseguire quindi una delle operazioni seguenti, a seconda del fatto che il server che ospita il database del sito sarà o meno un membro di replica del nuovo gruppo di disponibilità:
-    -   **Sarà membro del gruppo di disponibilità:**  
-        Se si usa questo server come membro di replica primaria iniziale del gruppo di disponibilità, non è necessario ripristinare una copia del database del sito su questo o su un altro server nel gruppo. Il database risulterà già incluso nella replica primaria e SQL Server eseguirà la replica del database nelle repliche secondarie in un passaggio successivo.  
+3. Usare SQL Server per creare un backup completo del database del sito. Eseguire quindi una delle operazioni seguenti, a seconda del fatto che il server che ospita il database del sito sarà o meno un membro di replica del nuovo gruppo di disponibilità:
+   - **Sarà membro del gruppo di disponibilità:**  
+     Se si usa questo server come membro di replica primaria iniziale del gruppo di disponibilità, non è necessario ripristinare una copia del database del sito su questo o su un altro server nel gruppo. Il database risulterà già incluso nella replica primaria e SQL Server eseguirà la replica del database nelle repliche secondarie in un passaggio successivo.  
 
-      -    **Non sarà membro del gruppo di disponibilità:**   
-    Ripristinare una copia del database del sito nel server che ospiterà la replica primaria del gruppo.
+     -    **Non sarà membro del gruppo di disponibilità:**   
+     Ripristinare una copia del database del sito nel server che ospiterà la replica primaria del gruppo.
 
-    Per informazioni su come completare questo passaggio, vedere [Creazione di un backup completo del database (SQL Server)](/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server) e [Ripristinare un backup del database tramite SSMS](/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms) nella documentazione di SQL Server.
+   Per informazioni su come completare questo passaggio, vedere [Creazione di un backup completo del database (SQL Server)](/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server) e [Ripristinare un backup del database tramite SSMS](/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms) nella documentazione di SQL Server.
 
-4.  Nel server che ospiterà la replica primaria iniziale del gruppo usare la [Creazione guidata Gruppo di disponibilità](/sql/database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio) per creare il gruppo di disponibilità. Nella procedura guidata:
-      -    Nella pagina **Seleziona database** selezionare il database per il sito di Configuration Manager.  
+4. Nel server che ospiterà la replica primaria iniziale del gruppo usare la [Creazione guidata Gruppo di disponibilità](/sql/database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio) per creare il gruppo di disponibilità. Nella procedura guidata:
+   - Nella pagina **Seleziona database** selezionare il database per il sito di Configuration Manager.  
 
-      -    Nella pagina **Specifica repliche** configurare:
-          -    **Repliche**: specificare i server che ospiteranno le repliche secondarie.
+   - Nella pagina **Specifica repliche** configurare:
+     -    **Repliche**: specificare i server che ospiteranno le repliche secondarie.
 
-          -    **Listener**: specificare il **Nome DNS del listener** come un nome DNS completo, ad esempio **&lt;Listener_Server> fabrikam.com**. Il nome viene usato quando si configura Configuration Manager per usare il database nel gruppo di disponibilità.
+     -    **Listener**: specificare il **Nome DNS del listener** come un nome DNS completo, ad esempio **&lt;Listener_Server> fabrikam.com**. Il nome viene usato quando si configura Configuration Manager per usare il database nel gruppo di disponibilità.
 
-      -    Nella pagina **Seleziona sincronizzazione dati iniziale** selezionare **Completa**. Dopo avere creato il gruppo di disponibilità, la procedura guidata esegue il backup del database primario e del log delle transazioni, quindi li ripristina in ogni server che ospita una replica secondaria. Se non si esegue questo passaggio, è necessario ripristinare una copia del database del sito in ogni server che ospita una replica secondaria e aggiungere manualmente il database al gruppo.   
+   - Nella pagina **Seleziona sincronizzazione dati iniziale** selezionare **Completa**. Dopo avere creato il gruppo di disponibilità, la procedura guidata esegue il backup del database primario e del log delle transazioni, quindi li ripristina in ogni server che ospita una replica secondaria. Se non si esegue questo passaggio, è necessario ripristinare una copia del database del sito in ogni server che ospita una replica secondaria e aggiungere manualmente il database al gruppo.   
 
-5.  Controllare la configurazione in ogni replica:   
-  1.    Verificare che l'account computer del server del sito sia un membro del gruppo **Administrators locale** in tutti i computer membri del gruppo di disponibilità.  
+5. Controllare la configurazione in ogni replica:   
+   1.    Verificare che l'account computer del server del sito sia un membro del gruppo **Administrators locale** in tutti i computer membri del gruppo di disponibilità.  
 
-  2.  Eseguire lo [script di verifica](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database#prerequisites) dai prerequisiti per verificare che il database del sito in ogni replica sia configurato correttamente.
+   2.  Eseguire lo [script di verifica](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database#prerequisites) dai prerequisiti per verificare che il database del sito in ogni replica sia configurato correttamente.
 
-  3.    Prima di impostare le configurazioni nelle repliche secondarie, è necessario eseguire il failover manuale della replica primaria nella replica secondaria. È possibile configurare solo il database di una replica primaria. Per altre informazioni, vedere [Eseguire un failover manuale pianificato di un gruppo di disponibilità](/sql/database-engine/availability-groups/windows/perform-a-planned-manual-failover-of-an-availability-group-sql-server) nella documentazione di SQL Server.
+   3.    Prima di impostare le configurazioni nelle repliche secondarie, è necessario eseguire il failover manuale della replica primaria nella replica secondaria. È possibile configurare solo il database di una replica primaria. Per altre informazioni, vedere [Eseguire un failover manuale pianificato di un gruppo di disponibilità](/sql/database-engine/availability-groups/windows/perform-a-planned-manual-failover-of-an-availability-group-sql-server) nella documentazione di SQL Server.
 
-6.  Quando tutte le repliche soddisfano i requisiti, il gruppo di disponibilità è pronto per essere usato con Configuration Manager.
+6. Quando tutte le repliche soddisfano i requisiti, il gruppo di disponibilità è pronto per essere usato con Configuration Manager.
 
 ## <a name="configure-a-site-to-use-the-database-in-the-availability-group"></a>Configurare un sito per usare il database nel gruppo di disponibilità
 Dopo aver [creato e configurato il gruppo di disponibilità](#create-and-configure-an-availability-group), usare la funzione di manutenzione del sito di Configuration Manager per configurare il sito affinché usi il database ospitato dal gruppo di disponibilità.
@@ -93,9 +93,9 @@ Per completare la procedura, l'account usato per eseguire il programma di instal
 4.  Riconfigurare quanto segue per il database del sito:
     -   **Nome server SQL:** immettere il nome virtuale del **listener** del gruppo di disponibilità configurato al momento della creazione del gruppo di disponibilità. Il nome virtuale deve essere un nome DNS completo, ad esempio ***&lt;Serverendpoint*>.fabrikam.com**.  
 
-    -   **Istanza:** questo valore deve essere vuoto per specificare l'istanza predefinita per il *listener* del gruppo di disponibilità. Se il database del sito corrente viene eseguito in un'istanza denominata, questa istanza viene elencata e deve essere cancellata.
+    -   **Istanza**: questo valore deve essere vuoto per specificare l'istanza predefinita per il *listener* del gruppo di disponibilità. Se il database del sito corrente viene eseguito in un'istanza denominata, questa istanza viene elencata e deve essere cancellata.
 
-    -   **Database** : non modificare il nome visualizzato. È il nome del database del sito corrente.
+    -   **Database**: non modificare il nome visualizzato. È il nome del database del sito corrente.
 
 5.  Dopo aver specificato le informazioni per il nuovo percorso del database, completare l'installazione con il processo e le configurazioni normali.
 
@@ -111,7 +111,7 @@ Per completare le procedure seguenti, l'account usato deve:
 
 ### <a name="to-add-a-new-synchronous-replica-member"></a>Per aggiungere un nuovo membro di replica sincrona  
 Il processo per aggiungere una replica secondaria a un gruppo di disponibilità usato con Configuration Manager può risultare complesso, dinamico e richiedere passaggi e procedure che variano in base ai singoli ambienti. Sono previsti alcuni miglioramenti di Configuration Manager per semplificare il processo. Nel frattempo, se è necessario aggiungere repliche secondarie, vedere il bloc seguente disponibile nella libreria TechNet per indicazioni utili
--   [ConfigMgr 1702: Adding a new node (Secondary Replica) to an existing SQL AO AG](https://blogs.technet.microsoft.com/umairkhan/2017/07/17/configmgr-1702-adding-a-new-node-secondary-replica-to-an-existing-sql-ao-ag/) (ConfigMgr 1702: Aggiungere un nuovo nodo (replica secondaria) a un gruppo di disponibilità SQL AlwaysOn esistente)
+-   [ConfigMgr 1702: Adding a new node (Secondary Replica) to an existing SQL AO AG](https://blogs.technet.microsoft.com/umairkhan/2017/07/17/configmgr-1702-adding-a-new-node-secondary-replica-to-an-existing-sql-ao-ag/) (Aggiungere un nuovo nodo (replica secondaria) a un gruppo di disponibilità SQL AlwaysOn esistente)
 
 ### <a name="to-remove-a-replica-member"></a>Per rimuovere un membro di replica
 Per questa procedura usare le informazioni contenute in [Rimuovere una replica secondaria da un gruppo di disponibilità](/sql/database-engine/availability-groups/windows/remove-a-secondary-replica-from-an-availability-group-sql-server) nella documentazione di SQL Server.  
@@ -160,11 +160,11 @@ Per completare la procedura, l'account usato deve:
 7.  Selezionare l'opzione **Modifica la configurazione di SQL Server** , quindi fare clic su **Avanti**.  
 
 8.  Riconfigurare quanto segue per il database del sito:
-    -   **Nome server SQL** : immettere il nome del server che ora ospita il database del sito.
+    -   **Nome server SQL:** immettere il nome del server che ora ospita il database del sito.
 
-    -   **Istanza** : specificare l'istanza denominata che ospita il database del sito o lasciare vuoto il campo se il database si trova nell'istanza predefinita.
+    -   **Istanza**: specificare l'istanza denominata che ospita il database del sito o lasciare vuoto il campo se il database si trova nell'istanza predefinita.
 
-    -   **Database** : non modificare il nome visualizzato. È il nome del database del sito corrente.    
+    -   **Database**: non modificare il nome visualizzato. È il nome del database del sito corrente.    
 
 9.  Dopo aver specificato le informazioni per il nuovo percorso del database, completare l'installazione con il processo e le configurazioni normali. Al termine dell'installazione, il sito viene riavviato e inizia a usare il nuovo percorso del database.    
 

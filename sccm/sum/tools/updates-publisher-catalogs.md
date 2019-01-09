@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: a387a7c5a466dc2f44ad114788ff7d56dd468195
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 03c325f2bd6aa6ea6c39d7994a78b900653e62a1
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32352194"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415442"
 ---
 # <a name="manage-software-update-catalogs-in-updates-publisher"></a>Gestire cataloghi di aggiornamenti software in Updates Publisher
 
@@ -54,10 +54,10 @@ Oltre all'aggiunta di cataloghi e alla visualizzazione di informazioni sui catal
 
     -   Nella console passare all'**area di lavoro Cataloghi** > **My Catalogs** (Cataloghi personali). Scegliere quindi **Add Catalogs** (Aggiungi cataloghi) dalla barra multifunzione.
 
--   **Aggiungere un catalogo utente:** nella console passare all'**area di lavoro Cataloghi** > **My Catalogs** (Cataloghi personali). Scegliere quindi **Add Catalogs** (Aggiungi cataloghi) dalla barra multifunzione. Oltre al percorso del file con estensione cab, è necessario specificare un fornitore, un nome e una descrizione per identificare il catalogo.
+-   **Aggiungere un catalogo utente:** Nella console passare all'**area di lavoro Cataloghi** > **My Catalogs** (Cataloghi personali). Scegliere quindi **Add Catalogs** (Aggiungi cataloghi) dalla barra multifunzione. Oltre al percorso del file con estensione cab, è necessario specificare un fornitore, un nome e una descrizione per identificare il catalogo.
 
 
--   **Verificare la presenza di aggiornamenti dei cataloghi:** selezionare uno o più cataloghi, quindi scegliere **Aggiorna** dalla barra multifunzione.
+-   **Verificare la presenza di aggiornamenti dei cataloghi:** selezionare uno o più cataloghi e quindi scegliere **Aggiorna** dalla barra multifunzione.
 
 -   **Modificare un catalogo utente:** selezionare un catalogo *utente* e quindi scegliere **Modifica** dalla barra multifunzione. È quindi possibile modificare le proprietà definite dall'utente.
 
@@ -69,32 +69,32 @@ Oltre all'aggiunta di cataloghi e alla visualizzazione di informazioni sui catal
 Quando si importa un catalogo, Updates Manager aggiunge gli aggiornamenti da tale catalogo nel repository di Updates Publisher. Dopo l'importazione degli aggiornamenti, è possibile pubblicarli nel server di aggiornamento per renderli disponibili ai dispositivi gestiti.
 
 ### <a name="to-import-updates"></a>Per importare aggiornamenti
-1.  Per avviare l'**Importazione guidata catalogo**, scegliere **Importa** dalla barra multifunzione in una delle aree di lavoro seguenti:
+1. Per avviare l'**Importazione guidata catalogo**, scegliere **Importa** dalla barra multifunzione in una delle aree di lavoro seguenti:
 
-    -   Area di lavoro Cataloghi
+   -   Area di lavoro Cataloghi
 
-    -   Area di lavoro Aggiornamenti
+   -   Area di lavoro Aggiornamenti
 
-2.  Nella pagina **Tipo di importazione** selezionare uno o più cataloghi aggiunti ad Updates Publisher. In alternativa, specificare un percorso a un catalogo non ancora aggiunto come sottoscrizione. Scegliere **Avanti** per visualizzare la schermata di riepilogo, quindi, dopo aver verificato le informazioni immesse, scegliere **Avanti** per avviare l'importazione.
+2. Nella pagina **Tipo di importazione** selezionare uno o più cataloghi aggiunti ad Updates Publisher. In alternativa, specificare un percorso a un catalogo non ancora aggiunto come sottoscrizione. Scegliere **Avanti** per visualizzare la schermata di riepilogo, quindi, dopo aver verificato le informazioni immesse, scegliere **Avanti** per avviare l'importazione.
 
-3.  Scegliere **Avanti** per visualizzare la schermata di riepilogo, quindi, dopo aver verificato le informazioni immesse, scegliere **Avanti** per avviare l'importazione.
+3. Scegliere **Avanti** per visualizzare la schermata di riepilogo, quindi, dopo aver verificato le informazioni immesse, scegliere **Avanti** per avviare l'importazione.
 
-    > [!CAUTION]    
-    > Accettare aggiornamenti solo da autori attendibili. Gli aggiornamenti software offerti da autori non attendibili possono potenzialmente danneggiare i computer client durante la ricerca di aggiornamenti.
+   > [!CAUTION]
+   > Accettare aggiornamenti solo da autori attendibili. Gli aggiornamenti software offerti da autori non attendibili possono potenzialmente danneggiare i computer client durante la ricerca di aggiornamenti.
+   > 
+   >  Se si ritiene che un autore non sia più attendibile, rimuoverlo dall'elenco degli autori attendibili. Per trovare altre informazioni sull'accettazione dei cataloghi, fare clic su **Tell Me More** (Ulteriori informazioni) nella finestra di dialogo **Security Warning – Catalog Validation** (Avviso di protezione – Convalida catalogo).
 
-    >  Se si ritiene che un autore non sia più attendibile, rimuoverlo dall'elenco degli autori attendibili. Per trovare altre informazioni sull'accettazione dei cataloghi, fare clic su **Tell Me More** (Ulteriori informazioni) nella finestra di dialogo **Security Warning – Catalog Validation** (Avviso di protezione – Convalida catalogo).
+   Se si sceglie di accettare i cataloghi di un particolare autore, tale autore viene aggiunto all'[elenco degli autori attendibili](/sccm/sum/tools/updates-publisher-options#trusted-publishers). È possibile esaminare e modificare questo elenco come opzione di Updates Publisher.
 
-    Se si sceglie di accettare i cataloghi di un particolare autore, tale autore viene aggiunto all'[elenco degli autori attendibili](/sccm/sum/tools/updates-publisher-options#trusted-publishers). È possibile esaminare e modificare questo elenco come opzione di Updates Publisher.
+4. L'importazione di un aggiornamento non viene eseguita quando quest'ultimo si trova già nel repository e si verifica una delle condizioni seguenti:
 
-4.  L'importazione di un aggiornamento non viene eseguita quando quest'ultimo si trova già nel repository e si verifica una delle condizioni seguenti:
+   -   L'aggiornamento non è stato modificato dall'ultima importazione.
 
-    -   L'aggiornamento non è stato modificato dall'ultima importazione.
+   -   L'aggiornamento è stato modificato e dispone di un nuovo hash digitale. La modifica di un aggiornamento impedisce che un nuovo aggiornamento sovrascriva quello originale. La sovrascrittura dell'originale determinerebbe infatti la sovrascrittura delle modifiche eventualmente distribuite.
 
-    -   L'aggiornamento è stato modificato e dispone di un nuovo hash digitale. La modifica di un aggiornamento impedisce che un nuovo aggiornamento sovrascriva quello originale. La sovrascrittura dell'originale determinerebbe infatti la sovrascrittura delle modifiche eventualmente distribuite.
+5. Nella pagina **Conferma** esaminare i risultati dell'importazione.
 
-5.  Nella pagina **Conferma** esaminare i risultati dell'importazione.
-
-6.  Fare clic su **Chiudi** per completare la procedura guidata. È ora possibile visualizzare gli aggiornamenti per il catalogo in Updates Workspace.
+6. Fare clic su **Chiudi** per completare la procedura guidata. È ora possibile visualizzare gli aggiornamenti per il catalogo in Updates Workspace.
 
 ## <a name="next-steps"></a>Passaggi successivi
 Dopo l'importazione degli aggiornamenti, le azioni comuni includono le seguenti:

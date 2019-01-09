@@ -10,12 +10,12 @@ ms.assetid: ca3b4714-2a16-495e-8a17-1d87991d5556
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2c6ceabc3a3f01ce541d4fbcdeaec5ae3db76c61
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 97d356ee4c9a763732b6e49ef6135a99dccf4c26
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342920"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416742"
 ---
 # <a name="capabilities-in-technical-preview-1706-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1706 per System Center Configuration Manager
 
@@ -52,11 +52,10 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 -->
 
 ## <a name="improved-boundary-groups-for-software-update-points"></a>Gruppi di limiti migliorati per i punti di aggiornamento software
-<!-- 1324591 -->
-Questa versione include dei miglioramenti per il funzionamento dei punti di aggiornamento del software con i gruppi di limiti. Di seguito viene riepilogato il nuovo comportamento di fallback:
--   Il fallback per i punti di aggiornamento del software usa attualmente un tempo configurabile per il fallback a gruppi di limiti adiacenti, con un tempo minimo di 120 minuti.
+<!-- 1324591 --> Questa versione include miglioramenti per il funzionamento dei punti di aggiornamento del software con i gruppi di limiti. Di seguito viene riepilogato il nuovo comportamento di fallback:
+- Il fallback per i punti di aggiornamento del software usa attualmente un tempo configurabile per il fallback a gruppi di limiti adiacenti, con un tempo minimo di 120 minuti.
 
--   Indipendentemente dalla configurazione di fallback, un client tenta di raggiungere l'ultimo punto di aggiornamento del software che ha usato per 120 minuti. Dopo l'esito negativo nel raggiungere il server per 120 minuti, il client controlla quindi il proprio pool di punti di aggiornamento del software disponibili, per poterne trovare uno nuovo.
+- Indipendentemente dalla configurazione di fallback, un client tenta di raggiungere l'ultimo punto di aggiornamento del software che ha usato per 120 minuti. Dopo l'esito negativo nel raggiungere il server per 120 minuti, il client controlla quindi il proprio pool di punti di aggiornamento del software disponibili, per poterne trovare uno nuovo.
 
   -   Tutti i punti di aggiornamento del software nel gruppo di limiti attuale del client vengono aggiunti immediatamente al pool del client.
 
@@ -64,9 +63,9 @@ Questa versione include dei miglioramenti per il funzionamento dei punti di aggi
 
   -   Se il fallback a un gruppo adiacente è configurato per il valore minimo di 120 minuti, i punti di aggiornamento del software da quel gruppo di limiti adiacente farà parte del pool del client di server disponibili.
 
--   Dopo l'esito negativo nel raggiungere il server originale per due ore, il client passa a un ciclo più breve per contattare un nuovo punto di aggiornamento del software.
+- Dopo l'esito negativo nel raggiungere il server originale per due ore, il client passa a un ciclo più breve per contattare un nuovo punto di aggiornamento del software.
 
-    Ciò significa che se un client non riesce a connettersi con un nuovo server, seleziona rapidamente il server successivo dal relativo pool di server disponibili e cerca di contattarne uno nuovo.
+  Ciò significa che se un client non riesce a connettersi con un nuovo server, seleziona rapidamente il server successivo dal relativo pool di server disponibili e cerca di contattarne uno nuovo.
 
   -   Questo ciclo continua fino a quando il client si connette a un punto di aggiornamento del software da poter usare.
   -   Fino a quando il client non trova un punto di aggiornamento del software, vengono aggiunti dei server aggiuntivi al pool di server disponibili quando si raggiunge l'ora di fallback per ogni gruppo di limiti adiacente.
@@ -75,8 +74,7 @@ Per altre informazioni, vedere la sezione [Punti di aggiornamento software](/scc
 
 
 ## <a name="site-server-role-high-availability"></a>Disponibilità elevata per il ruolo del server del sito
-<!-- 1128774 -->
-La disponibilità elevata per il ruolo del server del sito è una soluzione di base di Configuration Manager per installare un server del sito primario aggiuntivo in modalità *Passivo*. Il server del sito in modalità Passivo è un'aggiunta al server del sito primario esistente in modalità *Attivo*. Un server del sito in modalità Passivo è disponibile per l'uso immediato, quando necessario.
+<!-- 1128774 --> La disponibilità elevata per il ruolo del server del sito è una soluzione di base di Configuration Manager per installare un server del sito primario aggiuntivo in modalità *Passivo*. Il server del sito in modalità Passivo è un'aggiunta al server del sito primario esistente in modalità *Attivo*. Un server del sito in modalità Passivo è disponibile per l'uso immediato, quando necessario.
 
 Un server del sito primario in modalità Passivo:
 -   Usa lo stesso database del sito usato dal server del sito attivo.
@@ -184,8 +182,7 @@ Provare a completare le attività seguenti e quindi inviare **Feedback** dalla s
 
 
 ## <a name="include-trust-for-specific-files-and-folders-in-a-device-guard-policy"></a>Includere attendibilità per file e cartelle specifici in un criterio di Device Guard
-<!-- 1324676 -->
-In questa versione sono state aggiunte altre funzionalità alla gestione del criterio di [Device Guard](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)
+<!-- 1324676 --> In questa versione sono state aggiunte altre funzionalità alla gestione del criterio di [Device Guard](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)
 
 Ora è possibile aggiungere facoltativamente attendibilità per file e cartelle specifici in un criterio di Device Guard. Ciò consente di:
 
@@ -201,8 +198,7 @@ Ora è possibile aggiungere facoltativamente attendibilità per file e cartelle 
 
 
 ## <a name="hide-task-sequence-progress"></a>Nascondere l'avanzamento della sequenza di attività
-<!-- 1354291 -->
-In questa versione è possibile controllare quando stato sequenza di attività viene visualizzato agli utenti finali tramite una nuova variabile. Nella sequenza di attività usare il passaggio **Imposta variabile della sequenza attività** per impostare il valore per la variabile **TSDisableProgressUI** per nascondere o visualizzare lo stato della sequenza di attività. È possibile usare più volte il passaggio Imposta variabile della sequenza di attività in una sequenza di attività per modificare il valore della variabile. Ciò consente di visualizzare o nascondere l'avanzamento dello stato della sequenza di attività in varie sezioni della sequenza di attività.
+<!-- 1354291 --> In questa versione è possibile controllare quando lo stato della sequenza di attività viene visualizzato agli utenti finali tramite una nuova variabile. Nella sequenza di attività usare il passaggio **Imposta variabile della sequenza attività** per impostare il valore per la variabile **TSDisableProgressUI** per nascondere o visualizzare lo stato della sequenza di attività. È possibile usare più volte il passaggio Imposta variabile della sequenza di attività in una sequenza di attività per modificare il valore della variabile. Ciò consente di visualizzare o nascondere l'avanzamento dello stato della sequenza di attività in varie sezioni della sequenza di attività.
 
 #### <a name="to-hide-task-sequence-progress"></a>Per nascondere l'avanzamento della sequenza di attività
 Nell'editor di sequenze di attività usare il passaggio [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) per impostare il valore della variabile **TSDisableProgressUI** su **True** per nascondere lo stato della sequenza di attività.
@@ -211,8 +207,7 @@ Nell'editor di sequenze di attività usare il passaggio [Imposta variabile della
 Nell'editor di sequenze di attività usare il passaggio [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) per impostare il valore della variabile **TSDisableProgressUI** su **False** per visualizzare lo stato della sequenza di attività.
 
 ## <a name="specify-a-different-content-location-for-install-content-and-uninstall-content"></a>Specificare un percorso del contenuto diverso per il contenuto di installazione e il contenuto di disinstallazione
-<!-- 1097546 -->
-Oggi, in Configuration Manager specificare il percorso di installazione che contiene i file di installazione per un'app. Quando si specifica un percorso di installazione, questo viene usato anche come percorso di disinstallazione per il contenuto dell'applicazione.
+<!-- 1097546 --> Attualmente in Configuration Manager si specifica il percorso di installazione che contiene i file di installazione per un'app. Quando si specifica un percorso di installazione, questo viene usato anche come percorso di disinstallazione per il contenuto dell'applicazione.
 In base ai commenti, quando si desidera disinstallare un'applicazione distribuita e il contenuto dell'app non è presente nel computer client, il client scaricherà nuovamente tutti i file di installazione dell'app prima che l'applicazione venga disinstallata.
 Per risolvere questo problema, è ora possibile specificare sia il percorso del contenuto di installazione che il percorso del contenuto di disinstallazione facoltativo. In aggiunta, è possibile scegliere di non specificare il percorso del contenuto di disinstallazione.
 
@@ -229,8 +224,7 @@ Per risolvere questo problema, è ora possibile specificare sia il percorso del 
 
 
 ## <a name="accessibility-improvements"></a>Miglioramenti all'accessibilità  
-<!--1253000 -->
-Questa versione di anteprima introduce diversi miglioramenti alle [funzionalità di accessibilità](/sccm/core/understand/accessibility-features) nella console di Configuration Manager. Sono inclusi:     
+<!--1253000 --> Questa versione di anteprima introduce diversi miglioramenti alle [funzionalità di accessibilità](/sccm/core/understand/accessibility-features) nella console di Configuration Manager. Sono inclusi:     
 
 **Nuovi tasti di scelta rapida per spostarsi all'interno della console:**
 -   CTRL + M - Imposta il focus nel riquadro principale (centrale).
@@ -250,8 +244,7 @@ Questa versione di anteprima introduce diversi miglioramenti alle [funzionalità
 
 
 ## <a name="changes-to-the-azure-services-wizard-to-support-upgrade-readiness"></a>Modifiche alla procedura guidata dei servizi di Azure per il supporto della Preparazione aggiornamenti
-<!-- 1353331 -->
-A partire da questa versione, usare la procedura guidata per i servizi di Azure per configurare una connessione da Configuration Manager a [Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics). L'uso della procedura guidata semplifica la configurazione del connettore tramite una procedura guidata comune per i servizi di Azure correlati.   
+<!-- 1353331 --> A partire da questa versione, usare la procedura guidata per i servizi di Azure per configurare una connessione da Configuration Manager a [Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics). L'uso della procedura guidata semplifica la configurazione del connettore tramite una procedura guidata comune per i servizi di Azure correlati.   
 
 Anche se il metodo per configurare la connessione è stato modificato, i prerequisiti per la connessione e le modalità d'uso di Preparazione aggiornamenti restano invariati.   
 
@@ -389,8 +382,7 @@ Dopo aver eseguito uno script sui dispositivi client, è possibile usare questa 
 3. Nell'elenco **Risultati script** vengono mostrati i risultati per ogni script eseguito sui dispositivi client. Il codice di uscita dello script **0** in genere indica che lo script è stato eseguito correttamente.
 
 ## <a name="pxe-network-boot-support-for-ipv6"></a>Supporto dell'avvio della rete PXE per IPv6
-<!-- 1269793 -->
-È ora possibile abilitare il supporto dell'avvio della rete PXE per IPv6 per avviare una distribuzione del sistema operativo della sequenza di attività. Quando si usa questa impostazione, i punti di distribuzione abilitati per PXE supporteranno sia IPv4 che IPv6. Questa opzione non richiede WDS e interromperà WDS, se presente.
+<!-- 1269793 --> È ora possibile abilitare il supporto dell'avvio della rete PXE per IPv6 per avviare una distribuzione del sistema operativo della sequenza di attività. Quando si usa questa impostazione, i punti di distribuzione abilitati per PXE supporteranno sia IPv4 che IPv6. Questa opzione non richiede WDS e interromperà WDS, se presente.
 
 #### <a name="to-enable-pxe-boot-support-for-ipv6"></a>Per abilitare il supporto dell'avvio della rete PXE per IPv6
 Usare la procedura seguente per abilitare l'opzione per il supporto IPv6 per PXE.
@@ -399,8 +391,7 @@ Usare la procedura seguente per abilitare l'opzione per il supporto IPv6 per PXE
 2. Nella scheda **PXE** selezionare **Support IPv6** (Supporto IPv6) per abilitare il supporto IPv6 per PXE.
 
 ## <a name="manage-microsoft-surface-driver-updates"></a>Gestire gli aggiornamenti dei driver di Microsoft Surface
-<!-- 1098490 -->
-È ora possibile usare Configuration Manager per gestire gli aggiornamenti dei driver di Microsoft Surface.
+<!-- 1098490 --> È ora possibile usare Configuration Manager per gestire gli aggiornamenti dei driver di Microsoft Surface.
 
 ### <a name="prerequisites"></a>Prerequisiti
 Tutti i punti di aggiornamento software devono eseguire Windows Server 2016.
@@ -412,8 +403,7 @@ Provare a completare le attività seguenti e quindi inviare **Feedback** dalla s
 3. [Distribuire i driver di Microsoft Surface sincronizzati](/sccm/sum/deploy-use/deploy-software-updates)
 
 ## <a name="configure-windows-update-for-business-deferral-policies"></a>Configurare i criteri di rinvio di Windows Update for Business
-<!-- 1290890 -->
-È ora possibile configurare i criteri di rinvio dei dispositivi per gli aggiornamenti delle funzionalità di Windows 10 o gli aggiornamenti di qualità di Windows 10 gestiti direttamente da Windows Update for Business. È possibile gestire i criteri di rinvio nel nuovo nodo **Criteri di Windows Update for Business** in **Libreria Software** > **Manutenzione pacchetti di Windows 10**.
+<!-- 1290890 --> È ora possibile configurare i criteri di differimento dei dispositivi per gli aggiornamenti delle funzionalità o gli aggiornamenti qualitativi di Windows 10 per dispositivi Windows 10 gestiti direttamente da Windows Update for Business. È possibile gestire i criteri di rinvio nel nuovo nodo **Criteri di Windows Update for Business** in **Libreria Software** > **Manutenzione pacchetti di Windows 10**.
 
 ### <a name="prerequisites"></a>Prerequisiti
 I dispositivi di Windows 10 gestiti da Windows Update for Business devono disporre di connettività a Internet.
@@ -425,12 +415,12 @@ I dispositivi di Windows 10 gestiti da Windows Update for Business devono dispor
 4. Nella pagina **Criteri di differimento** configurare se si desidera differire o sospendere gli aggiornamenti delle funzionalità.    
     Gli aggiornamenti delle funzionalità sono generalmente nuove funzionalità per Windows. Dopo aver configurato l'impostazione **Livello di conformità con Branch**, è possibile definire se e per quanto tempo si desidera rinviare la ricezione di aggiornamenti delle funzionalità in base alla disponibilità da Microsoft.
     - **Livello di conformità con Branch**: impostare il branch per il quale il dispositivo riceverà gli aggiornamenti di Windows (Current Branch o Current Branch for Business).
-    - **Periodo di differimento (giorni):** specificare il numero di giorni per cui verranno posticipati gli aggiornamenti delle funzionalità. È possibile posticipare la ricezione di questi aggiornamenti delle funzionalità per un periodo di 180 giorni dopo il rilascio.
-    - **Pause Features Updates starting** (Sospendi avvio degli aggiornamenti delle funzionalità): selezionare se sospendere la ricezione da parte dei dispositivi degli aggiornamenti delle funzionalità per un periodo massimo di 60 giorni a partire dal momento in cui si sospendono gli aggiornamenti. Una volta trascorso il numero massimo di giorni, la sospensione della funzionalità scadrà automaticamente e il dispositivo analizzerà Windows Updates per gli aggiornamenti applicabili. Dopo questa analisi, è possibile sospendere nuovamente gli aggiornamenti. È possibile riprendere gli aggiornamenti delle funzionalità deselezionando la casella di controllo.   
+    - **Periodo di differimento (giorni)**:  specificare il numero di giorni per cui verranno posticipati gli aggiornamenti delle funzionalità. È possibile posticipare la ricezione di questi aggiornamenti delle funzionalità per un periodo di 180 giorni dopo il rilascio.
+    - **Sospendi gli aggiornamenti delle funzionalità a partire da**: scegliere se sospendere la ricezione da parte dei dispositivi degli aggiornamenti delle funzionalità per un periodo massimo di 60 giorni a partire dal momento in cui si sospendono gli aggiornamenti. Una volta trascorso il numero massimo di giorni, la sospensione della funzionalità scadrà automaticamente e il dispositivo analizzerà Windows Updates per gli aggiornamenti applicabili. Dopo questa analisi, è possibile sospendere nuovamente gli aggiornamenti. È possibile riprendere gli aggiornamenti delle funzionalità deselezionando la casella di controllo.   
 5. Scegliere se rinviare o sospendere gli aggiornamenti di qualità.     
     Gli aggiornamenti di qualità sono in genere correzioni e miglioramenti alle funzionalità esistenti di Windows e vengono generalmente pubblicati il primo martedì di ogni mese, sebbene possano essere rilasciati in qualsiasi momento da Microsoft. È possibile definire se e per quanto tempo si desidera rinviare la ricezione degli aggiornamenti di qualità dopo la loro disponibilità.
-    - **Periodo di differimento (giorni):** specificare il numero di giorni per cui verranno posticipati gli aggiornamenti delle funzionalità. È possibile posticipare la ricezione di questi aggiornamenti delle funzionalità per un periodo di 180 giorni dopo il rilascio.
-    - **Pause Quality Updates starting** (Sospendi avvio degli aggiornamenti di qualità): selezionare se sospendere la ricezione da parte dei dispositivi degli aggiornamenti di qualità per un periodo massimo di 35 giorni a partire dal momento in cui si sospendono gli aggiornamenti. Una volta trascorso il numero massimo di giorni, la sospensione della funzionalità scadrà automaticamente e il dispositivo analizzerà Windows Updates per gli aggiornamenti applicabili. Dopo questa analisi, è possibile sospendere nuovamente gli aggiornamenti. È possibile riprendere gli aggiornamenti di qualità deselezionando la casella di controllo.
+    - **Periodo di differimento (giorni)**: specificare il numero di giorni per cui verranno posticipati gli aggiornamenti delle funzionalità. È possibile posticipare la ricezione di questi aggiornamenti delle funzionalità per un periodo di 180 giorni dopo il rilascio.
+    - **Sospendi gli aggiornamenti qualitativi a partire da**: scegliere se sospendere la ricezione da parte dei dispositivi degli aggiornamenti qualitativi per un periodo massimo di 35 giorni a partire dal momento in cui si sospendono gli aggiornamenti. Una volta trascorso il numero massimo di giorni, la sospensione della funzionalità scadrà automaticamente e il dispositivo analizzerà Windows Updates per gli aggiornamenti applicabili. Dopo questa analisi, è possibile sospendere nuovamente gli aggiornamenti. È possibile riprendere gli aggiornamenti di qualità deselezionando la casella di controllo.
 6. Selezionare **Installa gli aggiornamenti per altri prodotti Microsoft** per abilitare l'impostazione dei criteri di gruppo che rendono le impostazioni di rinvio applicabili a Microsoft Update, oltre agli aggiornamenti di Windows.
 7. Selezionare **Include drivers with Windows Update** (Includi i driver con Windows Update) per aggiornare automaticamente i driver da Windows Update. Se si deseleziona questa impostazione, gli aggiornamenti dei driver non vengono scaricati da Windows Update.
 8. Completare la procedura guidata per creare i nuovi criteri di rinvio.
@@ -439,9 +429,9 @@ I dispositivi di Windows 10 gestiti da Windows Update for Business devono dispor
 1. In **Libreria Software** > **Manutenzione pacchetti di Windows 10** > **Criteri di Windows Update for Business**
 2. Nella scheda **Home**, nel gruppo **Distribuzione** selezionare **Distribuisci il criterio di Windows Update for Business**.
 3. Configurare le seguenti impostazioni:
-    - **Criteri di configurazione da distribuire**: selezionare il criterio Windows Update for Business che si desidera distribuire.
-    - **Raccolta**: fare clic su **Sfoglia** per selezionare la raccolta in cui si desidera distribuire i criteri.
-    - **Monitora e aggiorna le regole non conformi, se supportato**: selezionare per correggere automaticamente tutte le regole non conformi per Strumentazione gestione Windows (WMI), il registro di sistema, gli script e tutte le impostazioni per i dispositivi mobili registrati da Configuration Manager.
+    - **Criteri di configurazione da distribuire**: selezionare il criterio di Windows Update per le aziende che si vuole distribuire.
+    - **Raccolta**: fare clic su **Sfoglia** per selezionare la raccolta in cui si vogliono distribuire i criteri.
+    - **Monitora e aggiorna le regole non conformi, se supportato**: selezionare per correggere automaticamente tutte le regole non conformi per Strumentazione gestione Windows (WMI), il Registro di sistema, gli script e tutte le impostazioni per i dispositivi mobili registrati da Configuration Manager.
     - **Consenti monitoraggio e aggiornamento fuori dalla finestra di manutenzione**: se è stata configurata una finestra di manutenzione per la raccolta in cui si distribuiscono i criteri, abilitare questa opzione per consentire alle impostazioni di conformità di monitorare e aggiornare il valore fuori dalla finestra di manutenzione. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).
     - **Genera un avviso**: configura un avviso che viene generato se la conformità della linea di base di configurazione è inferiore a una percentuale specificata in base a una data e un orario specifici. È inoltre possibile specificare se si desidera che un avviso venga inviato a System Center Operations Manager.
     - **Ritardo casuale (ore)**: specifica una finestra di ritardo per evitare un'elaborazione eccessiva nel servizio Registrazione dispositivi di rete. Il valore predefinito è 64 ore.
@@ -451,12 +441,11 @@ I dispositivi di Windows 10 gestiti da Windows Update for Business devono dispor
 
 
 ## <a name="support-for-entrust-certification-authorities"></a>Supporto per le autorità di certificazione Entrust
-<!-- 1350740 -->
-Configuration Manager supporta ora l'autorità di certificazione Entrust; ciò consente la consegna del certifica PFX nei dispositivi registrati in Microsoft Intune.
+<!-- 1350740 --> Configuration Manager supporta ora l'autorità di certificazione Entrust. Ciò consente il recapito dei certificati PFX nei dispositivi registrati in Microsoft Intune.
 
 Quando si aggiunge un ruolo di punto di registrazione certificato in Configuration Manager, è possibile configurare Entrust come autorità di certificazione. Quando si aggiunge un nuovo profilo di certificato che emette i certificati PFX, è possibile selezionare l'autorità di certificazione Microsoft o Entrust.
 
-**Problema noto**: nella Technical Preview 1706, i certificati PFX non vengono emessi per le autorità di certificazione di Microsoft. Ciò non influenza i certificati PFX importati o i profili SCEP.
+**Problema noto**: nella Technical Preview 1706 i certificati PFX non vengono emessi per le autorità di certificazione di Microsoft. Ciò non influenza i certificati PFX importati o i profili SCEP.
 
 
 ## <a name="cisco-ipsec-support-for-ios-vpn-profiles"></a>Supporto Cisco (IPSec) per i profili VPN iOS
@@ -533,7 +522,7 @@ Vedere [Creare e distribuire criteri di conformità del dispositivo](https://doc
 ## <a name="new-mobile-application-management-policy-settings"></a>Nuove impostazioni dei criteri di gestione delle applicazioni mobili
 A partire da questa versione, è possibile usare tre nuove impostazioni di criteri di gestione delle applicazioni per dispositivi mobili (MAM):
 
-- **Blocca acquisizione schermo (solo per dispositivi Android):** specifica che le funzionalità di acquisizione schermo del dispositivo vengono bloccate quando si usa questa app.
+- **Blocca acquisizione schermo (solo per dispositivi Android):** Specifica che le funzionalità di acquisizione schermo del dispositivo vengono bloccate quando si usa questa app.
 
 - **Disabilita la sincronizzazione dei contatti:** impedisce all'app di salvare i dati nell'app dei contatti nativa del dispositivo.
 
@@ -542,8 +531,7 @@ A partire da questa versione, è possibile usare tre nuove impostazioni di crite
 Vedere [Proteggere le app usando i criteri di gestione delle applicazioni mobili in System Center Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/protect-apps-using-mam-policies) per provare le nuove impostazioni dei criteri di protezione dell'app.
 
 ## <a name="android-and-ios-enrollment-restrictions"></a>Restrizioni di registrazione di Android e iOS
-<!-- 1290826 -->
-A partire da questa versione, gli amministratori possono ora specificare che gli utenti non possono registrare dispositivi Android o iOS personali nel proprio ambiente ibrido. Ciò consente di limitare i dispositivi registrati ai dispositivi pre-dichiarati, di proprietà dell'azienda o ai dispositivi iOS registrati solo con il Device Enrollment Program.
+<!-- 1290826 --> A partire da questa versione, gli amministratori possono ora specificare che gli utenti non possono registrare dispositivi Android o iOS personali nel proprio ambiente ibrido. Ciò consente di limitare i dispositivi registrati ai dispositivi pre-dichiarati, di proprietà dell'azienda o ai dispositivi iOS registrati solo con il Device Enrollment Program.
 
 ### <a name="try-it-out"></a>Procedura
 1. Nell'area di lavoro **Amministrazione** della console di Configuration Manager andare a **Servizi cloud** > **Sottoscrizioni a Microsoft Intune**.
@@ -555,14 +543,14 @@ Sono state aggiornate le descrizioni delle impostazioni per Android per gli elem
 
 |Prima della Technical Preview 1706 | Nuovo nome dell'opzione | Comportamento|
 |-|-|-|
-|Impedire qualsiasi condivisione tra i limiti| Restrizioni di condivisione predefinite| Dall'ambito di lavoro a quello personale: predefinito (dovrà essere bloccato in tutte le versioni) <br>Dall'ambito personale a quello di lavoro: predefinito (consentito su 6.x+, bloccato su 5.x)|
-|Nessuna restrizione|   Le app nel profilo personale possono gestire richieste di condivisione dal profilo di lavoro| Dall'ambito di lavoro a quello personale: consentito  <br>Dall'ambito personale a quello di lavoro: consentito|
-|Le app nel profilo di lavoro possono gestire richieste di condivisione dal profilo personale |Le app nel profilo di lavoro possono gestire richieste di condivisione dal profilo personale |Dall'ambito di lavoro a quello personale: predefinito<br>Dall'ambito personale a quello di lavoro: consentito<br>(utile solamente su 5.x dove l'opzione dall'ambito personale a quello di lavoro è bloccata)|
+|Impedire qualsiasi condivisione tra i limiti| Restrizioni di condivisione predefinite| Dall'ambito di lavoro a quello personale: predefinito (dovrà essere bloccato in tutte le versioni) <br>Dall'ambito personale a quello di lavoro: predefinito (consentito in 6.x+, bloccato in 5.x)|
+|Nessuna restrizione|   Le app nel profilo personale possono gestire richieste di condivisione dal profilo di lavoro| Dall'ambito di lavoro a quello personale: È consentito  <br>Dall'ambito personale a quello di lavoro: È consentito|
+|Le app nel profilo di lavoro possono gestire richieste di condivisione dal profilo personale |Le app nel profilo di lavoro possono gestire richieste di condivisione dal profilo personale |Dall'ambito di lavoro a quello personale: Predefinito<br>Dall'ambito personale a quello di lavoro: È consentito<br>(utile solamente su 5.x dove l'opzione dall'ambito personale a quello di lavoro è bloccata)|
 
 Nessuna di queste opzioni impedisce direttamente il comportamento di copia e incolla. È stata aggiunta un'impostazione personalizzata al servizio e all'app del Portale aziendale in 1704 che può essere configurata per evitare di copiare e incollare. L'impostazione è configurabile tramite un URI personalizzato.
 
 -   URI OMA:  ./Vendor/MSFT/WorkProfile/DisallowCrossProfileCopyPaste
--   Tipo valore: booleano
+-   Tipo valore: Boolean
 
 Impostando DisallowCrossProfileCopyPaste su true si impedisce il comportamento di copia e incolla tra Android for Work personale e i profili di lavoro.
 
@@ -573,8 +561,7 @@ Impostando DisallowCrossProfileCopyPaste su true si impedisce il comportamento d
 4. Selezionare un valore per **Consenti la condivisione dei dati tra i profili di lavoro e personali** e completare la procedura guidata.
 
 ## <a name="device-health-attestation-assessment-for-compliance-policies-for-conditional-access"></a>Valutazione dell'attestazione dell'integrità dei dispositivi per i criteri di conformità per l'accesso condizionale
-<!-- 1097546 -->
-A partire da questa versione è possibile usare lo stato dell'attestazione dell'integrità del dispositivo come regola dei criteri di conformità per l'accesso condizionale alle risorse aziendali.
+<!-- 1097546 --> A partire da questa versione è possibile usare lo stato dell'attestazione dell'integrità del dispositivo come regola dei criteri di conformità per l'accesso condizionale alle risorse aziendali.
 
 ### <a name="try-it-out"></a>Procedura
 Selezionare una regola di attestazione dell'integrità dei dispositivi come parte di una valutazione dei criteri di conformità.

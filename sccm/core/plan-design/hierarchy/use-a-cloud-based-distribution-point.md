@@ -10,12 +10,12 @@ ms.assetid: 3cd9c725-6b42-427d-9191-86e67f84e48c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4673da59da7fede2f425948472c31a620d13a258
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 00c04190b954a7b19d4bea0e43b2dc6ecf9d8388
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456295"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53414991"
 ---
 # <a name="use-a-cloud-distribution-point-in-configuration-manager"></a>Usare un punto di distribuzione cloud in Configuration Manager
 
@@ -161,10 +161,10 @@ Quando si usa un punto di distribuzione cloud nella gerarchia, usare le informaz
 - Il punto di distribuzione cloud supporta tutte le versioni di Windows elencate in [Sistemi operativi supportati per client e dispositivi ](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices).  
 
 - Un amministratore distribuisce i tipi di contenuto software supportati seguenti:  
-    - Applicazioni
-    - Pacchetti
-    - Pacchetti di aggiornamento del sistema operativo
-    - Aggiornamenti software di terze parti  
+  - Applicazioni
+  - Pacchetti
+  - Pacchetti di aggiornamento del sistema operativo
+  - Aggiornamenti software di terze parti  
 
     > [!Important]  
     > Anche se la console di Configuration Manager non blocca la distribuzione degli aggiornamenti software Microsoft in un punto di distribuzione cloud, si sostengono costi di Azure per archiviare contenuto non usato dai client. I client basati su Internet ottengono sempre i contenuti di aggiornamento software Microsoft dal servizio cloud Microsoft Update. Evitare di distribuire gli aggiornamenti software Microsoft in un punto di distribuzione cloud.    
@@ -203,11 +203,11 @@ Configuration Manager include le opzioni seguenti per il controllo dei costi e i
 - È possibile configurare Configuration Manager in modo che avvisi l'utente quando le soglie per i download del client raggiungono o superano i limiti mensili. Per altre informazioni, vedere la sezione sugli [avvisi di soglia di trasferimento dati](/sccm/core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure#bkmk_alerts).   
 
 - Per ridurre il numero di trasferimenti di dati dai punti di distribuzione cloud eseguiti dai client, è possibile usare una delle tecnologie di peer caching seguenti:  
-    - Peer cache di Configuration Manager
-    - Windows BranchCache
-    - Ottimizzazione recapito per Windows 10  
+  - Peer cache di Configuration Manager
+  - Windows BranchCache
+  - Ottimizzazione recapito per Windows 10  
 
-   Per altre informazioni su BranchCache, vedere [Fundamental concepts for content management](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management) (Concetti di base per la gestione dei contenuti).   
+    Per altre informazioni su BranchCache, vedere [Fundamental concepts for content management](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management) (Concetti di base per la gestione dei contenuti).   
 
 
 ### <a name="components"></a>Componenti

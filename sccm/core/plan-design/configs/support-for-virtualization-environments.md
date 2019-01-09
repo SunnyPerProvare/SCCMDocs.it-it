@@ -10,12 +10,12 @@ ms.assetid: 1098e8c5-9676-4c2b-841b-ec88bd04e495
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 374a1643c5ea439a7406bbb1f6b53322caa50871
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: ec7db94635bcc03b21392db19eb668917f38de6d
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333325"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417218"
 ---
 # <a name="support-for-virtualization-environments-for-system-center-configuration-manager"></a>Supporto per gli ambienti di virtualizzazione per System Center Configuration Manager
 
@@ -25,15 +25,17 @@ Configuration Manager supporta l'installazione di ruoli del sistema del sito e c
 
  Ad esempio, se si usa Microsoft Hyper-V Server 2012 per ospitare una macchina virtuale che esegue Windows Server 2012, è possibile installare i ruoli del sistema del sito o client nella macchina virtuale (Windows Server 2012), ma non nell'host (Microsoft Hyper-V Server 2012).  
 
-|Ambiente di virtualizzazione|  
-|--------------------------------|  
-|Windows Server 2008 R2|  
-|Microsoft Hyper-V Server 2008 R2|  
-|Windows Server 2012|  
-|Microsoft Hyper-V Server 2012|  
-|Windows Server 2012 R2|
-|Windows Server 2016 <sup>(vedere *nota 1*)</sup>|
-|Microsoft Hyper-V Server 2016 <sup>(vedere *nota 1*)|
+
+|            Ambiente di virtualizzazione             |
+|---------------------------------------------------|
+|              Windows Server 2008 R2               |
+|         Microsoft Hyper-V Server 2008 R2          |
+|                Windows Server 2012                |
+|           Microsoft Hyper-V Server 2012           |
+|              Windows Server 2012 R2               |
+|   Windows Server 2016 <sup>(vedere *nota 1*)</sup>   |
+| Microsoft Hyper-V Server 2016 <sup>(vedere *nota 1*) |
+
 -  *Nota 1*: Configuration Manager non supporta la [virtualizzazione nidificata ](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/what-s-new-in-hyper-v-on-windows#a-namebkmknestedanested-virtualization-new), introdotta con Windows Server 2016.
 
 

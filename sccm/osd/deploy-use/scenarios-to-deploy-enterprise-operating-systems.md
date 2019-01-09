@@ -10,12 +10,12 @@ ms.assetid: f74fdb86-c7c2-447f-91f6-b42df6370d7f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d0beb10dca04fe26fb4add22b64ab61b53154185
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 0d8f5cf6b30bb465dea5ae680510f16814287daa
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349168"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419122"
 ---
 # <a name="scenarios-to-deploy-enterprise-operating-systems-with-system-center-configuration-manager"></a>Scenari di distribuzione di sistemi operativi aziendali con System Center Configuration Manager
 
@@ -23,13 +23,13 @@ ms.locfileid: "32349168"
 
 In System Center Configuration Manager sono disponibili gli scenari seguenti di distribuzione dei sistemi operativi:  
 
--   [Aggiornare Windows all'ultima versione con System Center Configuration Manager](upgrade-windows-to-the-latest-version.md): questo scenario aggiorna il sistema operativo nei computer che attualmente eseguono Windows 7, Windows 8, Windows 8.1 o Windows 10. Il processo di aggiornamento mantiene applicazioni, impostazioni e dati dell'utente nel computer. Non sono presenti dipendenze esterne, ad esempio Windows ADK, e questo processo è più veloce e più flessibile rispetto alle distribuzioni tradizionali del sistema operativo.  
+-   [Aggiornare Windows alla versione più recente](upgrade-windows-to-the-latest-version.md): questo scenario aggiorna il sistema operativo nei computer che attualmente eseguono Windows 7, Windows 8, Windows 8.1 o Windows 10. Il processo di aggiornamento mantiene applicazioni, impostazioni e dati dell'utente nel computer. Non sono presenti dipendenze esterne, ad esempio Windows ADK, e questo processo è più veloce e più flessibile rispetto alle distribuzioni tradizionali del sistema operativo.  
 
--   [Aggiornare un computer esistente con una nuova versione di Windows tramite System Center Configuration Manager](refresh-an-existing-computer-with-a-new-version-of-windows.md): questo scenario esegue i partizionamenti e le formattazioni (cancellazioni) di un computer esistente e installa un nuovo sistema operativo nel computer. Dopo aver installato il sistema operativo, è possibile eseguire la migrazione delle impostazioni e dei dati dell'utente.  
+-   [Aggiornare un computer esistente con una nuova versione di Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md): questo scenario esegue il partizionamento e la formattazione (cancellazione) di un computer esistente e installa un nuovo sistema operativo nel computer. Dopo aver installato il sistema operativo, è possibile eseguire la migrazione delle impostazioni e dei dati dell'utente.  
 
--   [Installare una nuova versione di Windows in un nuovo computer (bare metal) con System Center Configuration Manager](install-new-windows-version-new-computer-bare-metal.md): questo scenario installa un sistema operativo in un nuovo computer. Si tratta di una nuova installazione del sistema operativo e non include la migrazione dei dati dell'utente o delle impostazioni.  
+-   [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md): questo scenario consente di installare un sistema operativo in un nuovo computer. Si tratta di una nuova installazione del sistema operativo e non include la migrazione dei dati dell'utente o delle impostazioni.  
 
--   [Sostituire un computer esistente e trasferire le impostazioni con System Center Configuration Manager](replace-an-existing-computer-and-transfer-settings.md): questo scenario installa un sistema operativo in un nuovo computer. Facoltativamente, è possibile eseguire la migrazione delle impostazioni e dei dati dell'utente dal vecchio al nuovo computer.  
+-   [Sostituire un computer esistente e trasferire le impostazioni](replace-an-existing-computer-and-transfer-settings.md): questo scenario consente di installare un sistema operativo in un nuovo computer. Facoltativamente, è possibile eseguire la migrazione delle impostazioni e dei dati dell'utente dal vecchio al nuovo computer.  
 
 ## <a name="things-to-consider-before-you-deploy-operating-system-images"></a>Aspetti di cui tenere conto prima di distribuire immagini del sistema operativo  
  Prima di distribuire un sistema operativo, è necessario considerare alcuni aspetti.  
@@ -51,12 +51,12 @@ In System Center Configuration Manager sono disponibili gli scenari seguenti di 
 ## <a name="task-sequence-deployments"></a>Distribuzioni di sequenze attività  
  La sequenza di attività creata è in grado di distribuire l'immagine del sistema operativo in un computer client di Configuration Manager in uno dei modi seguenti:  
 
--   Scaricare prima l'immagine e il relativo contenuto nella cache del client di Configuration Manager da un punto di distribuzione e procedere con l'installazione.  
+- Scaricare prima l'immagine e il relativo contenuto nella cache del client di Configuration Manager da un punto di distribuzione e procedere con l'installazione.  
 
--   Installare immediatamente l'immagine e il relativo contenuto dal punto di distribuzione.  
+- Installare immediatamente l'immagine e il relativo contenuto dal punto di distribuzione.  
 
--   Installare l'immagine e il relativo contenuto, come richiesto dal punto di distribuzione  
+- Installare l'immagine e il relativo contenuto, come richiesto dal punto di distribuzione  
 
- Per impostazione predefinita, durante la creazione della distribuzione per la sequenza di attività, l'immagine viene prima scaricata nella cache del client di Configuration Manager e successivamente installata. Se si sceglie di scaricare l'immagine nella cache del client di Configuration Manager prima dell'esecuzione dell'immagine e la sequenza di attività contiene un passaggio per la ripartizione del disco rigido, il passaggio di ripartizione non riesce perché il partizionamento del disco rigido cancella i contenuti della cache del client di Configuration Manager. Se la sequenza di attività deve eseguire la ripartizione del disco rigido, è necessario eseguire l'installazione dell'immagine dal punto di distribuzione usando l'opzione **Esegui programma dal punto di distribuzione**  durante la distribuzione della sequenza di attività.  
+  Per impostazione predefinita, durante la creazione della distribuzione per la sequenza di attività, l'immagine viene prima scaricata nella cache del client di Configuration Manager e successivamente installata. Se si sceglie di scaricare l'immagine nella cache del client di Configuration Manager prima dell'esecuzione dell'immagine e la sequenza di attività contiene un passaggio per la ripartizione del disco rigido, il passaggio di ripartizione non riesce perché il partizionamento del disco rigido cancella i contenuti della cache del client di Configuration Manager. Se la sequenza di attività deve eseguire la ripartizione del disco rigido, è necessario eseguire l'installazione dell'immagine dal punto di distribuzione usando l'opzione **Esegui programma dal punto di distribuzione**  durante la distribuzione della sequenza di attività.  
 
- Per altre informazioni, vedere [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
+  Per altre informazioni, vedere [Deploy a task sequence](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  

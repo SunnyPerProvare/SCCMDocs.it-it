@@ -10,12 +10,12 @@ ms.assetid: 87f4e041-67df-4c61-aa98-7444faffe565
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 48eb4abcc328c57fdb35e3511e49500099a68cf2
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 6f60d7f3a8c3bd81f4de38b2ce4080f54756de14
+ms.sourcegitcommit: c60e057075a83f07d1ca2577c3de1c7d7c8e9cec
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456482"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53626464"
 ---
 # <a name="supported-os-versions-for-clients-and-devices-for-configuration-manager"></a>Versioni dei sistemi operativi per client e dispositivi supportate da Configuration Manager
 
@@ -42,9 +42,9 @@ ms.locfileid: "52456482"
 
     Per altre informazioni dettagliate, vedere [Supporto per Windows 10](/sccm/core/plan-design/configs/support-for-windows-10).  
 
--   **Windows 8.1** (x86, x64) - Professional, Enterprise    
+-   **Windows 8.1** (x86, x64): Professional, Enterprise    
 
--   **Windows 7 con SP1** (x86, x64) - Professional, Enterprise e Ultimate    
+-   **Windows 7 con SP1** (x86, x64): Professional, Enterprise e Ultimate    
 
 
 ### <a name="supported-server-os-versions"></a>Versioni del sistema operativo server supportate
@@ -66,7 +66,7 @@ ms.locfileid: "52456482"
 
 -   **Windows Server 2008 R2 con SP1** (x64): Standard, Enterprise, Datacenter <sup>[Nota 1](#bkmk_note1)</sup>    
 
--   **Windows Storage Server 2008 R2** (x86, x64) - Workgroup, Standard, Enterprise    
+-   **Windows Storage Server 2008 R2** (x86, x64): Workgroup, Standard, Enterprise    
 
 -   **Windows Server 2008 con SP2** (x86, x64): Standard, Enterprise, Datacenter <sup>[Nota 1](#bkmk_note1)</sup>    
 
@@ -360,10 +360,10 @@ Configuration Manager supporta la gestione limitata dei dispositivi che si conne
 
 ### <a name="supported-versions-of-exchange-server"></a>Versioni di Exchange Server supportate
 
--   **Exchange Server 2010 SP1**  
+- **Exchange Online (Office 365)**: questa versione include Business Productivity Online Standard Suite  
 
--   **Exchange Server 2010 SP2**  
+- **Exchange Server 2016** (a partire dalla versione 1802)  
 
--   **Exchange Server 2013**  
+- **Exchange Server 2013**  
 
--   **Exchange Online (Office 365)**: questa versione include Business Productivity Online Standard Suite  
+- **Exchange Server 2010 SP1** o **Exchange Server 2010 SP2** 

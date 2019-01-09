@@ -10,12 +10,12 @@ ms.assetid: 49ef2ed2-2e15-4637-8b63-1d5b7f9c17e1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 019b275177e1f264a4bfc2926cfe45ebd0be8eae
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 94ef3ce54db0efb7be7e9d6d0709f48bb212f7e7
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334573"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416538"
 ---
 # <a name="how-to-test-client-upgrades-in-a-pre-production-collection-in-system-center-configuration-manager"></a>Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager
 
@@ -38,15 +38,15 @@ ms.locfileid: "32334573"
 > [!IMPORTANT]
 > La distribuzione di client di pre-produzione non è supportata per i computer di gruppi di lavoro poiché non possono usare l'autenticazione necessaria per il punto di distribuzione per accedere al pacchetto client di pre-produzione.  Quando viene promosso a client di produzione, riceveranno il client più recente.
 
-1. [Impostare una raccolta](..\collections\create-collections.md) che contiene i computer nei quali si vuole distribuire il client di pre-produzione.   
+1. [Impostare una raccolta](../collections/create-collections.md) che contiene i computer nei quali si vuole distribuire il client di pre-produzione.   
 
-1.  Nella console di Configuration Manager aprire **Amministrazione** > **Configurazione del sito** > **Siti** e scegliere **Impostazioni gerarchia**.  
+2. Nella console di Configuration Manager aprire **Amministrazione** > **Configurazione del sito** > **Siti** e scegliere **Impostazioni gerarchia**.  
 
-     Nella scheda **Aggiornamento client** di **Proprietà impostazioni gerarchia**, eseguite le seguenti operazioni:  
+    Nella scheda **Aggiornamento client** di **Proprietà impostazioni gerarchia**, eseguite le seguenti operazioni:  
 
-    -   Selezionare **Aggiornare tutti i client della raccolta di preproduzione automaticamente utilizzando il client preproduzione**  
+   -   Selezionare **Aggiornare tutti i client della raccolta di preproduzione automaticamente utilizzando il client preproduzione**  
 
-    -   Immettere il nome di una raccolta da utilizzare come raccolta preproduzione  
+   -   Immettere il nome di una raccolta da utilizzare come raccolta preproduzione  
 
 ![Aggiornamenti automatici del client](media/test-client-upgrades.png)
 

@@ -10,12 +10,12 @@ ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bec95b13ecba5ae5238d758ae06566042a95d939
-ms.sourcegitcommit: 303d826f45c8fd9a05d8883afc1ca645e56bd576
+ms.openlocfilehash: 5e62983f76b0f2a4277edfab08d4321da5d4a258
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51269247"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416487"
 ---
 # <a name="task-sequence-steps-in-configuration-manager"></a>Passaggi della sequenza di attività in Configuration Manager
 
@@ -37,7 +37,7 @@ ms.locfileid: "51269247"
 
  - **Disattiva questo passaggio**: la sequenza di attività ignora questo passaggio quando viene eseguita in un computer. L'icona del passaggio è disattivata nell'editor della sequenza di attività.  
 
- - **Continua in caso di errori**: in caso di errore durante l'esecuzione del passaggio la sequenza di attività continua. Per altre informazioni, vedere [Considerazioni sulla pianificazione per l'automazione delle attività](/sccm/osd/plan-design/planning-considerations-for-automating-tasks#BKMK_TSGroups).   
+ - **Continua in caso di errore**: in caso di errore durante l'esecuzione del passaggio, la sequenza di attività continua. Per altre informazioni, vedere [Considerazioni sulla pianificazione per l'automazione delle attività](/sccm/osd/plan-design/planning-considerations-for-automating-tasks#BKMK_TSGroups).   
 
  - **Aggiungi condizione**: la sequenza di attività valuta queste istruzioni condizionali per determinare se il passaggio viene eseguito. Per un esempio dell'uso di una variabile della sequenza di attività come condizione, vedere [Come usare le variabili della sequenza di attività](/sccm/osd/understand/using-task-sequence-variables#bkmk_access-condition).   
 
@@ -73,7 +73,7 @@ ms.locfileid: "51269247"
 #### <a name="destination"></a>Destinazione  
  Configurare una delle opzioni seguenti:
 
- - **Next available partition** (Partizione disponibile successiva): usare la partizione sequenziale successiva non ancora sottoposta a un passaggio **Applica sistema operativo** o **Applica immagine dei dati** in questa sequenza di attività.  
+ - **Next available partition** (Partizione successiva disponibile): usare la partizione sequenziale successiva non ancora sottoposta a un passaggio **Applica sistema operativo** o **Applica immagine dei dati** in questa sequenza di attività.  
 
  - **Disco e partizione specifici**: selezionare un numero per **Disco** (a partire da 0) e per **Partizione** (a partire da 1).  
 
@@ -201,30 +201,30 @@ ms.locfileid: "51269247"
 #### <a name="os-image-actions"></a>Azioni dell'immagine del sistema operativo
  Il passaggio **Applica immagine del sistema operativo** esegue le azioni seguenti quando si usa un'immagine del sistema operativo:  
 
- 1.  Eliminare tutto il contenuto del volume interessato, ad eccezione dei file nella cartella specificata dalla variabile **\_SMSTSUserStatePath**.  
+1. Eliminare tutto il contenuto del volume interessato, ad eccezione dei file nella cartella specificata dalla variabile **\_SMSTSUserStatePath**.  
 
- 2.  Estrarre i contenuti del file con estensione wim specificato nella partizione di destinazione specificata.  
+2. Estrarre i contenuti del file con estensione wim specificato nella partizione di destinazione specificata.  
 
- 3.  Preparare il file di risposte:  
+3. Preparare il file di risposte:  
 
-    1.  Creare un nuovo file di risposte predefinito del programma di installazione di Windows (sysprep.inf o unattend.xml) per il sistema operativo distribuito.  
+   1.  Creare un nuovo file di risposte predefinito del programma di installazione di Windows (sysprep.inf o unattend.xml) per il sistema operativo distribuito.  
 
-    2.  Unire eventuali valori disponibili nel file di risposte specificato dall'utente.  
+   2.  Unire eventuali valori disponibili nel file di risposte specificato dall'utente.  
 
- 4.  Copiare i caricatori di avvio di Windows nella partizione attiva.  
+4. Copiare i caricatori di avvio di Windows nella partizione attiva.  
 
- 5.  Configurare il file boot.ini o i dati di configurazione di avvio in modo che facciano riferimento al sistema operativo appena installato.  
+5. Configurare il file boot.ini o i dati di configurazione di avvio in modo che facciano riferimento al sistema operativo appena installato.  
 
 #### <a name="os-upgrade-package-actions"></a>Azioni del pacchetto di aggiornamento del sistema operativo
  Il passaggio **Applica immagine del sistema operativo** esegue le azioni seguenti quando si usa un pacchetto di aggiornamento del sistema operativo:  
 
- 1.  Eliminare tutto il contenuto del volume interessato, ad eccezione dei file nella cartella specificata dalla variabile **\_SMSTSUserStatePath**.  
+1. Eliminare tutto il contenuto del volume interessato, ad eccezione dei file nella cartella specificata dalla variabile **\_SMSTSUserStatePath**.  
 
- 2.  Preparare il file di risposte:  
+2. Preparare il file di risposte:  
 
-    1.  Creare un nuovo file di risposte con valori standard generati da Configuration Manager.  
+   1.  Creare un nuovo file di risposte con valori standard generati da Configuration Manager.  
 
-    2.  Unire eventuali valori disponibili nel file di risposte specificato dall'utente.  
+   2.  Unire eventuali valori disponibili nel file di risposte specificato dall'utente.  
 
 
 ### <a name="properties"></a>Proprietà  
@@ -248,7 +248,7 @@ ms.locfileid: "51269247"
 #### <a name="destination"></a>Destinazione  
  Configurare una delle opzioni seguenti:  
 
- - **Next available partition** (Partizione disponibile successiva): usare la partizione sequenziale successiva non ancora sottoposta a un passaggio **Applica sistema operativo** o **Applica immagine dei dati** in questa sequenza di attività.  
+ - **Next available partition** (Partizione successiva disponibile): usare la partizione sequenziale successiva non ancora sottoposta a un passaggio **Applica sistema operativo** o **Applica immagine dei dati** in questa sequenza di attività.  
 
  - **Disco e partizione specifici**: selezionare un numero per **Disco** (a partire da 0) e per **Partizione** (a partire da 1).  
 
@@ -521,7 +521,7 @@ ms.locfileid: "51269247"
 
  - **Continua se non è possibile acquisire alcuni file**: abilitare questa impostazione per continuare il processo di migrazione, anche se non è possibile acquisire alcuni file. Se si disabilita questa opzione e non è possibile acquisire un file, il passaggio ha esito negativo. Questa opzione è attivata per impostazione predefinita.  
 
- - **Esegui acquisizione localmente utilizzando i collegamenti invece di copiare i file**: abilitare questa impostazione per usare i collegamenti reali NTFS per acquisire i file.  
+ - **Esegui acquisizione localmente utilizzando i collegamenti invece di copiare i file**: Abilitare questa impostazione per usare i collegamenti reali NTFS per l'acquisizione dei file.  
 
      Per altre informazioni sulla migrazione di dati tramite i collegamenti reali, vedere [Archivio delle migrazioni con collegamento reale](https://docs.microsoft.com/windows/deployment/usmt/usmt-hard-link-migration-store).  
 
@@ -693,7 +693,7 @@ ms.locfileid: "51269247"
 
  - **Cache del client di Configuration Manager**: usare questa opzione per archiviare il contenuto nella cache del client. Per impostazione predefinita, il percorso è `%WinDir%\ccmcache`.  
 
- - **Percorso personalizzato**: il motore di esecuzione della sequenza di attività scarica prima di tutto il pacchetto nella directory di lavoro della sequenza di attività e quindi lo sposta nel percorso specificato con questa opzione. Il motore di esecuzione della sequenza di attività aggiunge il percorso con l'ID pacchetto.  
+ - **Percorso personalizzato**: il motore della sequenza di attività scarica prima di tutto il pacchetto nella directory di lavoro della sequenza di attività e quindi lo sposta nel percorso specificato con questa opzione. Il motore di esecuzione della sequenza di attività aggiunge il percorso con l'ID pacchetto.  
 
 #### <a name="save-path-as-a-variable"></a>Salvare il percorso come variabile
  Salvare il percorso del pacchetto in una variabile della sequenza di attività personalizzata. Usare quindi questa variabile in un altro passaggio della sequenza di attività. 
@@ -878,7 +878,7 @@ ms.locfileid: "51269247"
 #### <a name="install-applications-according-to-dynamic-variable-list"></a>Installa le applicazioni in base all'elenco di variabili dinamiche
  La sequenza di attività installa le applicazioni usando questo nome variabile di base. Il nome variabile di base indica un set di variabili della sequenza di attività definite per una raccolta o un computer. Queste variabili specificano le applicazioni che vengono installate dalla sequenza di attività per tale raccolta o computer. Ogni nome di variabile comprende il nome base comune e un suffisso numerico che inizia con 01. Il valore di ogni variabili deve contenere soltanto il nome dell'applicazione.  
 
- Per consentire alla sequenza di attività di installare applicazioni usando un elenco di variabili dinamiche, abilitare l'impostazione seguente nella scheda **Generale** della finestra di dialogo **Proprietà** dell'applicazione: **Consenti l'installazione dell'applicazione dall'operazione sequenza di attività Installazione applicazione senza distribuzione**.  
+ Per consentire alla sequenza di attività di installare applicazioni usando un elenco di variabili dinamiche, abilitare l'impostazione seguente nella scheda **Generale** della finestra **Proprietà** dell'applicazione: **Consenti l'installazione dell'applicazione dall'operazione sequenza di attività Installazione applicazione senza distribuzione**.  
 
  > [!NOTE]  
  >  Non è possibile installare le applicazioni usando un elenco dinamico di variabili per distribuzioni con supporti autonomi.  
@@ -964,7 +964,7 @@ ms.locfileid: "51269247"
 #### <a name="install-software-packages-according-to-dynamic-variable-list"></a>Installa i pacchetti software in base all'elenco di variabili dinamiche
  La sequenza di attività installa i pacchetti usando questo nome variabile di base. Il nome variabile di base indica un set di variabili della sequenza di attività definite per una raccolta o un computer. Queste variabili specificano i pacchetti che vengono installati dalla sequenza di attività per la raccolta o il computer. Ogni nome di variabile comprende il nome base comune e un suffisso numerico che inizia con 001. Il valore di ogni variabile deve includere un ID pacchetto e il nome del software separati da due punti.  
 
- Per far sì che la sequenza di attività installi un software tramite un elenco di variabili dinamiche, abilitare l'impostazione seguente nella scheda **Avanzate** in **Proprietà** del pacchetto: **Consenti l'installazione di questo programma dalla sequenza di attività Installa pacchetto senza che venga distribuito**.  
+ Per consentire alla sequenza di attività di installare un software usando un elenco di variabili dinamiche, abilitare l'impostazione seguente nella scheda **Avanzate** della finestra **Proprietà** del pacchetto: **Consenti l'installazione di questo programma dalla sequenza di attività Installa pacchetto senza che venga distribuito**.  
 
  > [!NOTE]  
  >  Non è possibile installare pacchetti software usando un elenco dinamico di variabili per distribuzioni con supporti autonomi.  
@@ -1443,9 +1443,9 @@ ms.locfileid: "51269247"
 #### <a name="powershell-execution-policy"></a>Criteri di esecuzione di PowerShell
  Determinare quali script di PowerShell possono essere eseguiti nel computer. Scegliere uno dei criteri di esecuzione seguenti:  
 
- -   **Tutti firmati**: vengono eseguiti solo gli script firmati da un editore attendibile.  
+ -   **AllSigned**: vengono eseguiti solo gli script firmati da un editore attendibile  
 
- -   **Non definito**: non viene definito alcun criterio di esecuzione.  
+ -   **Non definito**: non viene definito alcun criterio di esecuzione  
 
  -   **Ignora**: vengono caricati tutti i file di configurazione e vengono eseguiti tutti gli script. Se si scarica uno script non firmato da Internet, Windows PowerShell non richiede l'autorizzazione prima di eseguire tale script.  
 
@@ -1520,7 +1520,7 @@ ms.locfileid: "51269247"
 
      `IF Serial Number = 5892087 OR MAC address = 26-78-13-5A-A4-22 THEN`  
 
- - **Percorso**: valutare i valori per il gateway di rete predefinito.  
+ - **Percorso**: valutare i valori per il gateway di rete predefinito  
 
  - **Marca e modello**: valutare i valori relativi a marca e modello di un computer. La regola restituisce true solo se entrambi i valori restituiscono true.   
 
@@ -1530,7 +1530,7 @@ ms.locfileid: "51269247"
 
     Specificare una o più variabili da impostare per una regola che restituisce true oppure impostare variabili senza usare una regola. Selezionare una variabile esistente o creare una variabile personalizzata.  
 
-     - **Existing task sequence variables** (Variabili esistenti della sequenza di attività): selezionare una o più variabili esistenti da un elenco di variabili della sequenza di attività. Le variabili di matrice non sono disponibili per la selezione.  
+     - **Existing task sequence variables** (Variabili esistenti della sequenza di attività): selezionare una o più variabili da un elenco di variabili esistenti della sequenza di attività. Le variabili di matrice non sono disponibili per la selezione.  
 
      - **Custom task sequence variables** (Variabili personalizzate della sequenza di attività): definire una variabile personalizzata della sequenza di attività. È anche possibile specificare una variabile esistente della sequenza di attività. Questa impostazione è utile per specificare una matrice di variabili esistenti, ad esempio **OSDAdapter**, perché le matrici di variabili non sono incluse nell'elenco di variabili esistenti della sequenza di attività.  
 
@@ -1698,7 +1698,7 @@ ms.locfileid: "51269247"
 
  - **Pacchetto driver**: fare clic su **Sfoglia** e selezionare un pacchetto di driver esistente nell'elenco.  
 
- - **Contenuto preconfigurato**: selezionare questa opzione per specificare il percorso per il pacchetto di driver. È possibile specificare una cartella locale, un percorso di rete o una variabile della sequenza di attività. Quando si usa una variabile per il percorso di origine, impostarne il valore prima nella sequenza di attività. Ad esempio, usando il passaggio [Scarica contenuto pacchetto](/sccm/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent).  
+ - **Contenuto preconfigurato**:  selezionare questa opzione per specificare il percorso per il pacchetto di driver. È possibile specificare una cartella locale, un percorso di rete o una variabile della sequenza di attività. Quando si usa una variabile per il percorso di origine, impostarne il valore prima nella sequenza di attività. Ad esempio, usando il passaggio [Scarica contenuto pacchetto](/sccm/osd/understand/task-sequence-steps#BKMK_DownloadPackageContent).  
 
 #### <a name="time-out-minutes"></a>Timeout (minuti)
  Specificare il numero di minuti prima che questo passaggio di Configuration Manager abbia esito negativo. Questa opzione è utile se Installazione di Windows interrompe l'elaborazione ma non termina.  

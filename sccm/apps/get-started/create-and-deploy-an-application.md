@@ -10,12 +10,12 @@ ms.assetid: 3bd1e487-ea18-43c1-b7c3-acbd9b86d429
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 3d34ec4abb712ce6797033a5ff490280611e1b02
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 18f51e43e223b13c01d0c6bde5a30fe08af64f61
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344392"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415457"
 ---
 # <a name="create-and-deploy-an-application-with-system-center-configuration-manager"></a>Creare e distribuire un'applicazione con System Center Configuration Manager
 
@@ -48,38 +48,38 @@ Assicurarsi di aver esaminato le informazioni contenute in [Introduzione alla ge
 
 ### <a name="to-start-the-create-application-wizard-and-create-the-application"></a>Per avviare la Creazione guidata applicazione e creare l'applicazione  
 
-1.  Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
+1. Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
 
-3.  Nella scheda **Home**, nel gruppo **Crea**, scegliere **Crea applicazione**.  
+2. Nella scheda **Home**, nel gruppo **Crea**, scegliere **Crea applicazione**.  
 
-4.  Nella pagina **Generale** della **Creazione guidata applicazione** selezionare **Rileva automaticamente le informazioni sull'applicazione dai file di installazione**. Alcune sezioni della procedura guidata vengono prepopolate con le informazioni estratte dal file di installazione con estensione msi. A questo punto, specificare le informazioni seguenti:  
+3. Nella pagina **Generale** della **Creazione guidata applicazione** selezionare **Rileva automaticamente le informazioni sull'applicazione dai file di installazione**. Alcune sezioni della procedura guidata vengono prepopolate con le informazioni estratte dal file di installazione con estensione msi. A questo punto, specificare le informazioni seguenti:  
 
-    -   **Tipo**: scegliere **Windows Installer (file \*.msi)**.  
+   -   **Tipo**: scegliere **Windows Installer (file \*.msi)**.  
 
-    -   **Percorso**: immettere il percorso del file di installazione **Contoso.msi** o fare clic su **Sfoglia**per selezionare il percorso. Per trovare i file di installazione con Configuration Manager, il percorso deve essere specificato nel formato *\\\Server\Share\File*.  
+   -   **Percorso**: immettere il percorso del file di installazione **Contoso.msi** o fare clic su **Sfoglia** per selezionare il percorso. Per trovare i file di installazione con Configuration Manager, il percorso deve essere specificato nel formato *\\\Server\Share\File*.  
+
+   Al termine, verrà visualizzata una schermata simile alla seguente:  
+
+   ![Pagina generica di Gestione guidata applicazioni](/sccm/apps/get-started/media/App-management-wizard-general-page.png)  
+
+4. Scegliere **Avanti**. Nella pagina **Importazione informazioni** verranno visualizzate alcune informazioni sull'app e tutti i file associati importati in Configuration Manager. Al termine, scegliere di nuovo **Avanti**.  
+
+5. Nella pagina **Informazioni generali**, è possibile fornire altre informazioni sull'applicazione che consentono di ordinarla e individuarla nella console di Configuration Manager.  
+
+    Inoltre, il campo **Programma di installazione** consente di specificare l'intera riga di comando usata per installare l'applicazione nei computer. È possibile modificare questa opzione per aggiungere proprietà personalizzate (ad esempio **/q** per un'installazione automatica).  
+
+   > [!TIP]  
+   >  Alcuni dei campi in questa pagina della procedura guidata potrebbero essere stati compilati automaticamente durante l'importazione dei file di installazione dell'applicazione.  
 
     Al termine, verrà visualizzata una schermata simile alla seguente:  
 
-    ![Pagina generica di Gestione guidata applicazioni](/sccm/apps/get-started/media/App-management-wizard-general-page.png)  
+    ![Pagina generica di informazioni di Gestione guidata applicazioni](/sccm/apps/get-started/media/App-management-wizard-general-information-page.png)  
 
-5.  Scegliere **Avanti**. Nella pagina **Importazione informazioni** verranno visualizzate alcune informazioni sull'app e tutti i file associati importati in Configuration Manager. Al termine, scegliere di nuovo **Avanti**.  
+6. Scegliere **Avanti**. Nella pagina di riepilogo è possibile confermare le impostazioni dell'applicazione e quindi completare la procedura guidata.  
 
-6.  Nella pagina **Informazioni generali**, è possibile fornire altre informazioni sull'applicazione che consentono di ordinarla e individuarla nella console di Configuration Manager.  
+   L'app viene creata. Per trovarla, espandere **Gestione applicazioni** nell'area di lavoro **Raccolta software** e quindi fare clic su **Applicazioni**. Per questo esempio verrà visualizzato:  
 
-     Inoltre, il campo **Programma di installazione** consente di specificare l'intera riga di comando usata per installare l'applicazione nei computer. È possibile modificare questa opzione per aggiungere proprietà personalizzate (ad esempio **/q** per un'installazione automatica).  
-
-    > [!TIP]  
-    >  Alcuni dei campi in questa pagina della procedura guidata potrebbero essere stati compilati automaticamente durante l'importazione dei file di installazione dell'applicazione.  
-
-     Al termine, verrà visualizzata una schermata simile alla seguente:  
-
-     ![Pagina generica di informazioni di Gestione guidata applicazioni](/sccm/apps/get-started/media/App-management-wizard-general-information-page.png)  
-
-7.  Scegliere **Avanti**. Nella pagina di riepilogo è possibile confermare le impostazioni dell'applicazione e quindi completare la procedura guidata.  
-
- L'app viene creata. Per trovarla, espandere **Gestione applicazioni** nell'area di lavoro **Raccolta software** e quindi fare clic su **Applicazioni**. Per questo esempio verrà visualizzato:  
-
- ![Immagine finale dell'app](/sccm/apps/get-started/media/Final-app-graphic.png)  
+   ![Immagine finale dell'app](/sccm/apps/get-started/media/Final-app-graphic.png)  
 
 ## <a name="examine-the-properties-of-the-application-and-its-deployment-type"></a>Esaminare le proprietà dell'applicazione e il tipo di distribuzione  
 

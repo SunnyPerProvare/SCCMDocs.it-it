@@ -10,12 +10,12 @@ ms.assetid: 8eed50f5-80a4-422e-8aa6-a7ccb2171475
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: afc76b59d594c6b8f52062add480874ba5c5686d
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
+ms.openlocfilehash: 162fbdeb08e345ecea20a58b3f5a95a8da193898
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411494"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415110"
 ---
 # <a name="deploy-windows-to-go-with-system-center-configuration-manager"></a>Distribuire Windows to Go con System Center Configuration Manager
 
@@ -54,7 +54,7 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
      prima di creare supporti pre-installati, è necessario distribuire l'immagine di avvio in un punto di distribuzione.  
 
     > [!NOTE]  
-    >  Le immagini di avvio vengono usate per installare il sistema operativo nei computer di destinazione nell'ambiente di Configuration Manager. Queste immagini contengono una versione di Windows PE che installa il sistema operativo e i driver di dispositivo aggiuntivi richiesti. Configuration Manager offre due immagini di avvio: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. È inoltre possibile creare le proprie immagini di avvio. Per altre informazioni, vedere [Manage boot images](../get-started/manage-boot-images.md) (Gestire le immagini d'avvio).  
+    >  Le immagini di avvio vengono usate per installare il sistema operativo nei computer di destinazione nell'ambiente di Configuration Manager. Queste immagini contengono una versione di Windows PE che installa il sistema operativo e i driver di dispositivo aggiuntivi richiesti. In Configuration Manager sono disponibili due immagini d'avvio: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. È inoltre possibile creare le proprie immagini di avvio. Per altre informazioni, vedere [Manage boot images](../get-started/manage-boot-images.md) (Gestire le immagini d'avvio).  
 
 -   **Distribuire l'immagine del sistema operativo Windows 8 in un punto di distribuzione**  
 
@@ -76,79 +76,79 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
 #### <a name="to-create-prestaged-media"></a>Per creare supporti pre-installati  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1. Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+2. Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea supporto per sequenza di attività** per avviare la Creazione guidata del supporto per la sequenza di attività.  
+3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea supporto per sequenza di attività** per avviare la Creazione guidata del supporto per la sequenza di attività.  
 
-4.  Nella pagina **Seleziona tipo di supporto** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
+4. Nella pagina **Seleziona tipo di supporto** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
 
-    -   Selezionare **Supporti preinstallati**.  
+   -   Selezionare **Supporti preinstallati**.  
 
-    -   Selezionare **Consenti distribuzione automatica del sistema operativo** per avviare la distribuzione di Windows To Go senza l'intervento dell'utente.  
+   -   Selezionare **Consenti distribuzione automatica del sistema operativo** per avviare la distribuzione di Windows To Go senza l'intervento dell'utente.  
 
-        > [!IMPORTANT]  
-        >  Quando si utilizza questa opzione con la variabile personalizzata SMSTSPreferredAdvertID (impostata in seguito nel corso di questa procedura), non è necessario l'intervento dell'utente e il computer avvierà automaticamente la distribuzione di Windows To Go quando rileverà l'unità di Windows To Go. Tuttavia, all'utente viene richiesta una password se il supporto è configurato per la protezione con password. Se si utilizza l'impostazione **Consenti distribuzione automatica del sistema operativo** senza configurare la variabile SMSTSPreferredAdvertID, si verificherà un errore durante la distribuzione della sequenza attività.  
+       > [!IMPORTANT]  
+       >  Quando si utilizza questa opzione con la variabile personalizzata SMSTSPreferredAdvertID (impostata in seguito nel corso di questa procedura), non è necessario l'intervento dell'utente e il computer avvierà automaticamente la distribuzione di Windows To Go quando rileverà l'unità di Windows To Go. Tuttavia, all'utente viene richiesta una password se il supporto è configurato per la protezione con password. Se si utilizza l'impostazione **Consenti distribuzione automatica del sistema operativo** senza configurare la variabile SMSTSPreferredAdvertID, si verificherà un errore durante la distribuzione della sequenza attività.  
 
-5.  Nella pagina **Gestione del supporto** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
+5. Nella pagina **Gestione del supporto** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
 
-    -   Selezionare **Supporto dinamico** se si desidera consentire a un punto di gestione di reindirizzare il supporto a un altro punto di gestione, in base al percorso del client nei limiti del sito.  
+   -   Selezionare **Supporto dinamico** se si desidera consentire a un punto di gestione di reindirizzare il supporto a un altro punto di gestione, in base al percorso del client nei limiti del sito.  
 
-    -   Selezionare **Supporto basato su sito** se si desidera che il supporto contatti solo il punto di gestione specificato.  
+   -   Selezionare **Supporto basato su sito** se si desidera che il supporto contatti solo il punto di gestione specificato.  
 
-6.  Nella pagina **Proprietà del supporto**  specificare le informazioni seguenti e fare clic su **Avanti**.  
+6. Nella pagina **Proprietà del supporto**  specificare le informazioni seguenti e fare clic su **Avanti**.  
 
-    -   **Creato da**: specificare chi ha creato il supporto.  
+   -   **Creato da**: Specificare chi ha creato il supporto.  
 
-    -   **Versione**: specificare il numero di versione del supporto.  
+   -   **Versione**: Specificare il numero di versione del supporto.  
 
-    -   **Commento**: specificare una descrizione univoca dello scopo per cui viene usato il supporto.  
+   -   **Commento**: Specificare una descrizione univoca dello scopo per cui viene usato il supporto.  
 
-    -   **File supporto**: specificare il nome e il percorso dei file di output. La procedura guidata scrive i file di output in questa posizione. Ad esempio: **\\\nomeserver\cartella\fileoutput.wim**  
+   -   **File supporto**: Specificare il nome e il percorso dei file di output. La procedura guidata scrive i file di output in questa posizione. Ad esempio: **\\\nomeserver\cartella\fileoutput.wim**  
 
-7.  Nella pagina **Sicurezza** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
+7. Nella pagina **Sicurezza** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
 
-    -   Selezionare **Abilita supporto per computer sconosciuti** per consentire al supporto di distribuire un sistema operativo a un computer non gestito da Configuration Manager. Non sono presenti record di questi computer nel database di Configuration Manager. I computer sconosciuti includono i seguenti:  
+   -   Selezionare **Abilita supporto per computer sconosciuti** per consentire al supporto di distribuire un sistema operativo a un computer non gestito da Configuration Manager. Non sono presenti record di questi computer nel database di Configuration Manager. I computer sconosciuti includono i seguenti:  
 
-        -   Computer in cui non è installato il client di Configuration Manager  
+       -   Computer in cui non è installato il client di Configuration Manager  
 
-        -   Computer che non sono stati importati in Configuration Manager  
+       -   Computer che non sono stati importati in Configuration Manager  
 
-        -   Un computer che non è stato rilevato da Configuration Manager  
+       -   Un computer che non è stato rilevato da Configuration Manager  
 
-    -   Selezionare **Proteggi supporto con password** e immettere una password complessa per proteggere il supporto da accesso non autorizzato. Quando si specifica una password l'utente deve immettere la password per usare il supporto pre-installato.  
+   -   Selezionare **Proteggi supporto con password** e immettere una password complessa per proteggere il supporto da accesso non autorizzato. Quando si specifica una password l'utente deve immettere la password per usare il supporto pre-installato.  
 
-        > [!IMPORTANT]  
-        >  Come procedura consigliata di sicurezza, assegnare sempre una password per proteggere il supporto pre-installato.  
+       > [!IMPORTANT]  
+       >  Come procedura consigliata di sicurezza, assegnare sempre una password per proteggere il supporto pre-installato.  
 
-        > [!NOTE]  
-        >  Quando si protegge il supporto pre-installato con una password all'utente viene richiesto di immettere la password anche se il supporto è stato configurato con l'impostazione **Consenti distribuzione automatica del sistema operativo** .  
+       > [!NOTE]  
+       >  Quando si protegge il supporto pre-installato con una password all'utente viene richiesto di immettere la password anche se il supporto è stato configurato con l'impostazione **Consenti distribuzione automatica del sistema operativo** .  
 
-    -   Per le comunicazioni HTTP, selezionare **Crea certificato del supporto autofirmato**e quindi specificare la data di inizio e di scadenza del certificato.  
+   -   Per le comunicazioni HTTP, selezionare **Crea certificato del supporto autofirmato**e quindi specificare la data di inizio e di scadenza del certificato.  
 
-    -   Per le comunicazioni HTTPS, selezionare **Importa certificato PKI**e quindi specificare il certificato da importare e la relativa password.  
+   -   Per le comunicazioni HTTPS, selezionare **Importa certificato PKI**e quindi specificare il certificato da importare e la relativa password.  
 
-         Per altre informazioni su questo certificato client usato per le immagini di avvio, vedere [Requisiti dei certificati PKI](../../core/plan-design/network/pki-certificate-requirements.md).  
+        Per altre informazioni su questo certificato client usato per le immagini di avvio, vedere [Requisiti dei certificati PKI](../../core/plan-design/network/pki-certificate-requirements.md).  
 
-    -   **Affinità utente dispositivo**: per supportare la gestione basata sugli utenti in Configuration Manager, specificare come si vuole che il supporto associ gli utenti al computer di destinazione. Per altre informazioni su come la distribuzione del sistema operativo supporti l'affinità utente dispositivo, vedere [Associare gli utenti a un computer di destinazione](../get-started/associate-users-with-a-destination-computer.md).  
+   -   **Affinità utente dispositivo**: per supportare la gestione basata sugli utenti in Configuration Manager, specificare come si vuole che il supporto associ gli utenti al computer di destinazione. Per altre informazioni su come la distribuzione del sistema operativo supporti l'affinità utente dispositivo, vedere [Associare gli utenti a un computer di destinazione](../get-started/associate-users-with-a-destination-computer.md).  
 
-        -   Specificare **Consenti affinità utente dispositivo con approvazione automatica** se si desidera che il supporto associ automaticamente gli utenti al computer di destinazione. Questa funzionalità si basa sulle azioni della sequenza di attività che distribuisce il sistema operativo. In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.  
+       -   Specificare **Consenti affinità utente dispositivo con approvazione automatica** se si desidera che il supporto associ automaticamente gli utenti al computer di destinazione. Questa funzionalità si basa sulle azioni della sequenza di attività che distribuisce il sistema operativo. In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.  
 
-        -   Specificare **Consenti approvazione amministratore in sospeso per affinità utente dispositivo** se si desidera che il supporto associ gli utenti al computer di destinazione dopo la concessione dell'approvazione. Questa funzionalità si basa sull'ambito della sequenza di attività che distribuisce il sistema operativo. In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione, ma attende l'approvazione di un utente amministratore prima di distribuire il sistema operativo.  
+       -   Specificare **Consenti approvazione amministratore in sospeso per affinità utente dispositivo** se si desidera che il supporto associ gli utenti al computer di destinazione dopo la concessione dell'approvazione. Questa funzionalità si basa sull'ambito della sequenza di attività che distribuisce il sistema operativo. In questo scenario, la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione, ma attende l'approvazione di un utente amministratore prima di distribuire il sistema operativo.  
 
-        -   Specificare **Non consentire affinità utente dispositivo** se non si desidera che il supporto associ gli utenti al computer di destinazione. In questo scenario, la sequenza di attività non associa gli utenti al computer di destinazione quando distribuisce il sistema operativo.  
+       -   Specificare **Non consentire affinità utente dispositivo** se non si desidera che il supporto associ gli utenti al computer di destinazione. In questo scenario, la sequenza di attività non associa gli utenti al computer di destinazione quando distribuisce il sistema operativo.  
 
-8.  Nella pagina **Sequenza attività** specificare la sequenza attività di Windows 8 creata nella sezione precedente.  
+8. Nella pagina **Sequenza attività** specificare la sequenza attività di Windows 8 creata nella sezione precedente.  
 
 9. Nella pagina **Immagine di avvio** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
 
     > [!IMPORTANT]  
     >  L'architettura dell'immagine di avvio distribuita deve essere appropriata per l'architettura del computer di destinazione. Ad esempio, un computer di destinazione x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di destinazione x86 può avviare ed eseguire solo un'immagine di avvio x86. Per i computer certificati Windows 8 in modalità EFI, è necessario utilizzare un'immagine di avvio x64.  
 
-    -   **Immagine d'avvio**: specificare l'immagine d'avvio per l'avvio del computer di destinazione.  
+    -   **Immagine d'avvio**: specificare l'immagine di avvio per l'avvio del computer di destinazione.  
 
-    -   **Punto di distribuzione**: specificare il punto di distribuzione che ospita l'immagine d'avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
+    -   **Punto di distribuzione**: specificare il punto di distribuzione che ospita l'immagine di avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
 
         > [!NOTE]  
         >  L'utente amministratore deve disporre dei diritti di accesso di **Lettura** per il contenuto dell'immagine di avvio nel punto di distribuzione. Per altre informazioni, vedere [Account di accesso al pacchetto](/sccm/core/plan-design/hierarchy/accounts#package-access-account).  
@@ -178,30 +178,30 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
 15. Nella pagina **Personalizzazione** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   **Variabili**: specificare le variabili usate dalla sequenza di attività per distribuire il sistema operativo. Per Windows To Go, utilizzare la variabile SMSTSPreferredAdvertID per selezionare automaticamente la distribuzione di Windows To Go utilizzando il seguente formato:  
+    - **Variabili**: Specificare le variabili usate dalla sequenza di attività per distribuire il sistema operativo. Per Windows To Go, utilizzare la variabile SMSTSPreferredAdvertID per selezionare automaticamente la distribuzione di Windows To Go utilizzando il seguente formato:  
 
-         SMSTSPreferredAdvertID = {*IDDistribuzione*}, dove IDDistribuzione è l'ID distribuzione associato alla sequenza attività che verrà utilizzata dal processo di provisioning per l'unità di Windows To Go.  
+       SMSTSPreferredAdvertID = {*IDDistribuzione*}, dove IDDistribuzione è l'ID distribuzione associato alla sequenza attività che verrà utilizzata dal processo di provisioning per l'unità di Windows To Go.  
+
+      > [!TIP]  
+      >  Quando si utilizza questa variabile con una sequenza attività impostata per l'esecuzione automatica (impostazione configurata in precedenza nella procedura), non è necessario l'intervento dell'utente e il computer avvierà automaticamente la distribuzione di Windows To Go quando rileverà l'unità di Windows To Go. Tuttavia, all'utente viene richiesta una password se il supporto è configurato per la protezione con password.  
+
+    - **Comando di preavvio**: Specificare i comandi preavvio da eseguire prima dell'esecuzione della sequenza di attività. I comandi di preavvio possono essere uno script o un eseguibile che possono interagire con l'utente in Windows PE prima che venga eseguita la sequenza attività per l'installazione del sistema operativo. Configurare quanto segue per la distribuzione di Windows To Go:  
+
+      - **OSDBitLockerPIN**: BitLocker per Windows To Go richiede una passphrase. Impostare la variabile di **OSDBitLockerPIN** come parte di un comando di preavvio per l'impostazione della passphrase di BitLocker per l'unità di Windows To Go.  
+
+        > [!WARNING]  
+        >  Dopo aver attivato BitLocker per la passphrase, l'utente deve immettere la passphrase a ogni riavvio del computer per l'unità di Windows To Go.  
+
+      - **SMSTSUDAUsers**: Specifica l'utente primario del computer di destinazione. Utilizzare questa variabile per raccogliere il nome utente, che quindi può essere utilizzato per associare l'utente al dispositivo. Per altre informazioni, vedere [Associate users with a destination computer](../get-started/associate-users-with-a-destination-computer.md) (Associare gli utenti a un computer di destinazione).  
 
         > [!TIP]  
-        >  Quando si utilizza questa variabile con una sequenza attività impostata per l'esecuzione automatica (impostazione configurata in precedenza nella procedura), non è necessario l'intervento dell'utente e il computer avvierà automaticamente la distribuzione di Windows To Go quando rileverà l'unità di Windows To Go. Tuttavia, all'utente viene richiesta una password se il supporto è configurato per la protezione con password.  
+        >  Per recuperare il nome utente, è possibile creare una casella di immissione come parte del comando di preavvio, far immettere all'utente il relativo nome utente e quindi impostare la variabile con il valore. Ad esempio, è possibile aggiungere le seguenti righe al file script del comando di preavvio:  
+        >   
+        >  `UserID = inputbox("Enter Username" ,"Enter your username:","",400,0)`  
+        >   
+        >  `env("SMSTSUDAUsers") = UserID`  
 
-    -   **Comando di preavvio**: specificare i comandi di preavvio da eseguire prima dell'esecuzione della sequenza di attività. I comandi di preavvio possono essere uno script o un eseguibile che possono interagire con l'utente in Windows PE prima che venga eseguita la sequenza attività per l'installazione del sistema operativo. Configurare quanto segue per la distribuzione di Windows To Go:  
-
-        -   **OSDBitLockerPIN**: BitLocker per Windows To Go richiede una passphrase. Impostare la variabile di **OSDBitLockerPIN** come parte di un comando di preavvio per l'impostazione della passphrase di BitLocker per l'unità di Windows To Go.  
-
-            > [!WARNING]  
-            >  Dopo aver attivato BitLocker per la passphrase, l'utente deve immettere la passphrase a ogni riavvio del computer per l'unità di Windows To Go.  
-
-        -   **SMSTSUDAUsers**: specifica l'utente primario del computer di destinazione. Utilizzare questa variabile per raccogliere il nome utente, che quindi può essere utilizzato per associare l'utente al dispositivo. Per altre informazioni, vedere [Associate users with a destination computer](../get-started/associate-users-with-a-destination-computer.md) (Associare gli utenti a un computer di destinazione).  
-
-            > [!TIP]  
-            >  Per recuperare il nome utente, è possibile creare una casella di immissione come parte del comando di preavvio, far immettere all'utente il relativo nome utente e quindi impostare la variabile con il valore. Ad esempio, è possibile aggiungere le seguenti righe al file script del comando di preavvio:  
-            >   
-            >  `UserID = inputbox("Enter Username" ,"Enter your username:","",400,0)`  
-            >   
-            >  `env("SMSTSUDAUsers") = UserID`  
-
-         Per altre informazioni su come creare un file script da usare come comando di preavvio, vedere [Prestart commands for task sequence media](../understand/prestart-commands-for-task-sequence-media.md) (Comandi di preavvio del supporto per sequenza attività).  
+        Per altre informazioni su come creare un file script da usare come comando di preavvio, vedere [Prestart commands for task sequence media](../understand/prestart-commands-for-task-sequence-media.md) (Comandi di preavvio del supporto per sequenza attività).  
 
 16. Completare la procedura guidata.  
 
@@ -213,24 +213,24 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
 #### <a name="to-create-the-windows-to-go-creator-package"></a>Per creare il pacchetto di Windows To Go Creator  
 
-1.  Nel server che ospiterà i file del pacchetto di Windows To Go Creator, creare una cartella di origine per i file di origine del pacchetto.  
+1. Nel server che ospiterà i file del pacchetto di Windows To Go Creator, creare una cartella di origine per i file di origine del pacchetto.  
 
-    > [!NOTE]  
-    >  L'account computer del server del sito deve disporre dei diritti di accesso in **Lettura** alla cartella di origine.  
+   > [!NOTE]  
+   >  L'account computer del server del sito deve disporre dei diritti di accesso in **Lettura** alla cartella di origine.  
 
-2.  Copiare il file supporto pre-installato creato nella sezione [Create prestaged media](#BKMK_CreatePrestagedMedia) nella cartella di origine del pacchetto.  
+2. Copiare il file supporto pre-installato creato nella sezione [Create prestaged media](#BKMK_CreatePrestagedMedia) nella cartella di origine del pacchetto.  
 
-3.  Copiare lo strumento Windows To Go Creator (WTGCreator.exe) nella cartella di origine del pacchetto. Lo strumento è disponibile in qualsiasi server del sito primario nel percorso seguente: <*CartellaInstallazioneConfigMgr*>\OSD\Tools\WTG\Creator.  
+3. Copiare lo strumento Windows To Go Creator (WTGCreator.exe) nella cartella di origine del pacchetto. Lo strumento è disponibile in qualsiasi server del sito primario nel percorso seguente: <*CartellaInstallazioneConfigMgr*>\OSD\Tools\WTG\Creator.  
 
-4.  Creare un pacchetto e un programma utilizzando la Creazione guidata pacchetto e programma.  
+4. Creare un pacchetto e un programma utilizzando la Creazione guidata pacchetto e programma.  
 
-5.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+5. Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-6.  Nell'area di lavoro **Raccolta software** espandere **Gestione applicazioni**, quindi fare clic su **Pacchetti**.  
+6. Nell'area di lavoro **Raccolta software** espandere **Gestione applicazioni**, quindi fare clic su **Pacchetti**.  
 
-7.  Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea pacchetto**.  
+7. Nella scheda **Home** nel gruppo **Crea** fare clic su **Crea pacchetto**.  
 
-8.  Nella pagina **Pacchetto** specificare il nome e la descrizione del pacchetto. Ad esempio, immettere **Windows To Go** per il nome del pacchetto e specificare **Package to configure a Windows To Go drive using System Center Configuration Manager** per la descrizione del pacchetto.  
+8. Nella pagina **Pacchetto** specificare il nome e la descrizione del pacchetto. Ad esempio, immettere **Windows To Go** per il nome del pacchetto e specificare **Package to configure a Windows To Go drive using System Center Configuration Manager** per la descrizione del pacchetto.  
 
 9. Selezionare **Questo pacchetto contiene file di origine**, specificare il percorso della cartella di origine del pacchetto creato nel passaggio 1, e quindi fare clic su **Avanti**.  
 
@@ -238,15 +238,15 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
 11. Nella **Programma standard** specificare quanto segue:  
 
-    -   **Nome**: specificare il nome del programma. Ad esempio, digitare **Creator** per il nome del programma.  
+    -   **Nome**: Specificare il nome del programma. Ad esempio, digitare **Creator** per il nome del programma.  
 
-    -   **Riga di comando**: digitare **WTGCreator.exe /wim:PrestageName.wim**, dove PrestageName è il nome del file pre-installato che è stato creato e copiato nella cartella di origine del pacchetto per il pacchetto di Windows To Go Creator.  
+    -   **Riga di comando**: Digitare **WTGCreator.exe /wim:PrestageName.wim**, dove PrestageName è il nome del file pre-installato che è stato creato e copiato nella cartella di origine del pacchetto per il pacchetto di Windows To Go Creator.  
 
          Facoltativamente, è possibile aggiungere le seguenti opzioni:  
 
         -   **enableBootRedirect**: opzione della riga di comando per la modifica delle opzioni di avvio di Windows Go per consentire il reindirizzamento di avvio. Quando si utilizza questa opzione, il computer si avvierà da USB senza che sia necessario modificare l'ordine di avvio nel firmware del computer o che l'utente debba selezionare da un elenco di opzioni di avvio durante l'avvio. Se viene rilevata un'unità di Windows To Go, il computer avvia tale unità.  
 
-    -   **Esegui**: specificare **Normale** per eseguire il programma in base alle impostazioni predefinite del sistema e del programma.  
+    -   **Esegui**: Specificare **Normale** per eseguire il programma in base alle impostazioni predefinite del sistema e del programma.  
 
     -   **Requisiti per esecuzione programma**: specificare se il programma può essere eseguito solo quando un utente è connesso.  
 
@@ -256,22 +256,22 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
 12. Nella pagina dei requisiti, specificare quanto segue:  
 
-    -   **Requisiti di piattaforma**: selezionare le piattaforme Windows 8 applicabili per consentire il provisioning.  
+    - **Requisiti di piattaforma**: selezionare le piattaforme Windows 8 applicabili per consentire il provisioning.  
 
-    -   **Spazio su disco stimato**: specificare le dimensioni della cartella di origine del pacchetto per Windows To Go Creator.  
+    - **Spazio su disco stimato**: specificare la dimensione della cartella di origine del pacchetto per Windows To Go Creator.  
 
-    -   **Tempo di esecuzione massimo consentito (minuti)**: specifica la durata massima di esecuzione prevista per il programma nel computer client. Per impostazione predefinita, il valore è impostato su 120 minuti.  
+    - **Tempo di esecuzione massimo consentito (minuti)**: specifica il tempo massimo che il programma prevede per l'esecuzione nel computer client. Per impostazione predefinita, il valore è impostato su 120 minuti.  
 
-        > [!IMPORTANT]  
-        >  Se si utilizzano finestre di manutenzione per la raccolta in cui viene eseguito il programma, è possibile che si verifichi un conflitto se il **Tempo di esecuzione massimo consentito** è superiore alla finestra di manutenzione pianificata. Se il tempo di esecuzione massimo è impostato su **Sconosciuto**, l'avvio avverrà all'interno della finestra di manutenzione, ma l'esecuzione proseguirà fino al completamento oppure non riuscirà se si chiude la finestra di manutenzione. Se si imposta il tempo di esecuzione massimo viene impostato su un periodo specifico (non su Sconosciuto) con durata superiore a quella di tutte le finestre di manutenzione disponibili, il programma non verrà eseguito.  
+      > [!IMPORTANT]  
+      >  Se si utilizzano finestre di manutenzione per la raccolta in cui viene eseguito il programma, è possibile che si verifichi un conflitto se il **Tempo di esecuzione massimo consentito** è superiore alla finestra di manutenzione pianificata. Se il tempo di esecuzione massimo è impostato su **Sconosciuto**, l'avvio avverrà all'interno della finestra di manutenzione, ma l'esecuzione proseguirà fino al completamento oppure non riuscirà se si chiude la finestra di manutenzione. Se si imposta il tempo di esecuzione massimo viene impostato su un periodo specifico (non su Sconosciuto) con durata superiore a quella di tutte le finestre di manutenzione disponibili, il programma non verrà eseguito.  
 
-        > [!NOTE]  
-        >  Se il valore è impostato come **sconosciuto**, Configuration Manager imposta un limite massimo di 12 ore (720 minuti).  
+      > [!NOTE]  
+      >  Se il valore è impostato come **sconosciuto**, Configuration Manager imposta un limite massimo di 12 ore (720 minuti).  
 
-        > [!NOTE]  
-        >  Se il tempo di esecuzione massimo (sia impostato dall'utente che come valore predefinito) viene superato, Configuration Manager arresta il programma se l'opzione **Esegui con diritti amministrativi** viene selezionata mentre l'opzione **Consenti agli utenti di visualizzare e interagire con l'installazione del programma** non viene selezionata nella pagina **Programma standard**.  
+      > [!NOTE]  
+      >  Se il tempo di esecuzione massimo (sia impostato dall'utente che come valore predefinito) viene superato, Configuration Manager arresta il programma se l'opzione **Esegui con diritti amministrativi** viene selezionata mentre l'opzione **Consenti agli utenti di visualizzare e interagire con l'installazione del programma** non viene selezionata nella pagina **Programma standard**.  
 
-     Fare clic su **Avanti** e completare la procedura guidata.  
+      Fare clic su **Avanti** e completare la procedura guidata.  
 
 ###  <a name="BKMK_UpdateTaskSequence"></a> Aggiornare la sequenza di attività per attivare BitLocker per Windows To Go  
  Windows To Go attiva BitLocker in un'unità di avvio esterne senza utilizzare TPM. Pertanto, è necessario utilizzare uno strumento separato per configurare BitLocker nell'unità di Windows To Go. Per attivare BitLocker, è necessario aggiungere un'azione alla sequenza attività dopo il passaggio **Imposta Windows e ConfigMgr** .  
@@ -309,7 +309,7 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
 13. Nella scheda **Proprietà** per il passaggio **Esegui riga di comando** aggiungere quanto segue:  
 
-    1.  **Nome**: specificare un nome per la riga di comando, ad esempio **Enable BitLocker for Windows To Go**.  
+    1.  **Nome**: specificare un nome per la riga di comando, ad esempio **Attiva BitLocker per Windows To Go**.  
 
     2.  **Riga di comando**: i386\osdbitlocker_wtg.exe /Enable /pwd:< *None&#124;AD*>  
 
@@ -351,11 +351,11 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
 5.  Nella pagina **Generale** specificare le impostazioni seguenti:  
 
-    1.  **Software**: verificare che il pacchetto di Windows To Go sia selezionato.  
+    1.  **Software**: verificare che il pacchetto di Windows To Go sia stato selezionato.  
 
-    2.  **Raccolta**: fare clic su **Sfoglia** per selezionare la raccolta in cui si vuole distribuire il pacchetto di Windows To Go.  
+    2.  **Raccolta**: fare clic su **Sfoglia** per selezionare la raccolta in cui si desidera distribuire il pacchetto di Windows To Go.  
 
-    3.  **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta**: selezionare questa opzione se si vuole archiviare il contenuto del pacchetto nel gruppo di punti di distribuzione predefinito della raccolta. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, l'opzione non sarà disponibile.  
+    3.  **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta**: selezionare questa opzione se si desidera archiviare il contenuto del pacchetto nel gruppo di punti di distribuzione predefiniti delle raccolte. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, l'opzione non sarà disponibile.  
 
 6.  Nella pagina **Contenuto** fare clic su **Aggiungi** e quindi selezionare i punti di distribuzione o i gruppi di punti di distribuzione in cui si desidera distribuire il contenuto associato a questo programma e pacchetto.  
 
@@ -369,23 +369,23 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
     1.  **Pianifica quando questa distribuzione diventerà disponibile**: specificare la data e l'ora in cui pacchetto e programma saranno disponibili per l'esecuzione nel computer di destinazione. Quando si seleziona **UTC**questa impostazione assicura che pacchetto e programma siano disponibile per più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
 
-    2.  **Pianifica alla scadenza di questa assegnazione**: specificare la data e l'ora di scadenza di pacchetto e programma nel computer di destinazione. Quando si seleziona **UTC**, questa impostazione assicura che la sequenza attività scada in più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
+    2.  **Pianifica alla scadenza di questa distribuzione**: specificare la data e l'ora di scadenza di pacchetto e programma nel computer di destinazione. Quando si seleziona **UTC**, questa impostazione assicura che la sequenza attività scada in più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
 
 10. Nella pagina **Esperienza utente** della procedura guidata specificare le seguenti informazioni:  
 
-    -   **Installazione software**: permette l'installazione del software al di fuori di qualsiasi finestra di manutenzione configurata.  
+    -   **Installazione software**: consente al software di essere installato al di fuori di tutte le finestre di manutenzione configurate.  
 
-    -   **Riavvio del sistema (se richiesto per completare l'installazione)**: consente il riavvio di un dispositivo al di fuori di una finestra di manutenzione configurata quando necessario per l'installazione del software.  
+    -   **Riavvio del sistema (se necessario per completare l'installazione)**: consente il riavvio di un dispositivo al di fuori di una finestra di manutenzione configurata quando necessario per l'installazione del software.  
 
-    -   **Dispositivi integrati**: quando si distribuiscono pacchetti e programmi in dispositivi con Windows Embedded abilitati per i filtri di scrittura, è possibile specificare di installare i pacchetti e i programmi nella sovrapposizione temporanea e confermare le modifiche in seguito oppure confermare le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione. Quando si confermano le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario il riavvio per mantenere le modifiche nel dispositivo.  
+    -   **Dispositivi integrati**: quando si distribuiscono pacchetti e programmi in dispositivi con Windows Embedded abilitati per i filtri di scrittura, è possibile specificare di installare i pacchetti e programmi nella sovrapposizione temporanea e confermare le modifiche in seguito oppure confermarle alla scadenza dell'installazione o all'interno di una finestra di manutenzione. Quando si confermano le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario il riavvio per mantenere le modifiche nel dispositivo.  
 
 11. Nella pagina **Punti di distribuzione** specificare le informazioni seguenti:  
 
-    -   **Opzioni di distribuzione** : specificare **Scarica il contenuto dal punto di distribuzione ed esegui in locale**.  
+    -   **Opzioni di distribuzione**: specificare **Scarica il contenuto dal punto di distribuzione ed esegui in locale**.  
 
-    -   **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: selezionare questa opzione per ridurre il carico sulla rete permettendo ai client di scaricare il contenuto da altri client nella rete che hanno già scaricato e memorizzato nella cache il contenuto. Questa opzione utilizza Windows BranchCache e può essere utilizzata in computer che eseguono Windows Vista SP2 e versioni successive.  
+    -   **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: selezionare questa opzione per ridurre il carico sulla rete consentendo ai client di scaricare contenuto da altri client della rete che lo abbiano già scaricato e memorizzato nella cache. Questa opzione utilizza Windows BranchCache e può essere utilizzata in computer che eseguono Windows Vista SP2 e versioni successive.  
 
-    -   **Consenti ai client di utilizzare un percorso origine di fallback per il contenuto**: specificare se consentire ai client di eseguire il fallback e usare un punto di distribuzione non preferito come percorso di origine del contenuto quando il contenuto non è disponibile presso un punto di distribuzione preferito.  
+    -   **Consenti ai client di utilizzare un percorso origine di fallback per il contenuto**: specificare se consentire ai client di eseguire il fallback e utilizzare un punto di distribuzione non preferito come percorso di origine del contenuto quando il contenuto non è disponibile presso un punto di distribuzione preferito.  
 
 12. Completare la procedura guidata.  
 
@@ -403,12 +403,12 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
     1.  **Sequenza di attività**: verificare che sia selezionata la sequenza di attività per Windows 8.  
 
-    2.  **Raccolta**: fare clic su **Sfoglia** per selezionare la raccolta che include tutti i dispositivi per cui un utente potrebbe eseguire il provisioning di Windows To Go.  
+    2.  **Raccolta**: fare clic su **Sfoglia** per selezionare la raccolta che include tutti i dispositivi per i quali un utente potrebbe eseguire il provisioning di Windows To Go.  
 
         > [!IMPORTANT]  
-        >  Se il supporto preinstallato creato nella sezione [Create prestaged media](#BKMK_CreatePrestagedMedia) utilizza la variabile SMSTSPreferredAdvertID, è possibile distribuire la sequenza attività nella raccolta **Tutti i sistemi** e specificare l'impostazione **Solo Windows PE (nascosto)** nella pagina **Contenuto** . Poiché la sequenza attività è nascosta, sarà disponibile solo per il supporto.  
+        >  Se il supporto preinstallato creato nella sezione [Creare supporti pre-installati](#BKMK_CreatePrestagedMedia) utilizza la variabile SMSTSPreferredAdvertID, è possibile distribuire la sequenza attività nella raccolta **Tutti i sistemi** e specificare l'impostazione **Solo Windows PE (nascosto)** nella pagina **Contenuto** . Poiché la sequenza attività è nascosta, sarà disponibile solo per il supporto.  
 
-    3.  **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta**: selezionare questa opzione se si vuole archiviare il contenuto del pacchetto nel gruppo di punti di distribuzione predefinito della raccolta. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, l'opzione non sarà disponibile.  
+    3.  **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta**: selezionare questa opzione se si desidera archiviare il contenuto del pacchetto nel gruppo di punti di distribuzione predefiniti delle raccolte. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, l'opzione non sarà disponibile.  
 
 6.  Nella pagina **Impostazioni distribuzione** configurare le impostazioni seguenti e quindi fare clic su **Avanti**.  
 
@@ -423,7 +423,7 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
     1.  **Pianifica quando questa distribuzione diventerà disponibile**: specificare la data e l'ora in cui la sequenza di attività può essere eseguita nel computer di destinazione. Quando si seleziona **UTC**, questa impostazione assicura che la sequenza attività sia disponibile per più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
 
-    2.  **Pianifica alla scadenza di questa assegnazione**: specificare la data e l'ora di scadenza della sequenza di attività nel computer di destinazione. Quando si seleziona **UTC**, questa impostazione assicura che la sequenza attività scada in più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
+    2.  **Pianifica alla scadenza di questa distribuzione**: specificare la data e l'ora di scadenza della sequenza di attività nel computer di destinazione. Quando si seleziona **UTC**, questa impostazione assicura che la sequenza attività scada in più computer di destinazione contemporaneamente anziché in momenti diversi, in base all'ora locale dei computer di destinazione.  
 
 8.  Nella pagina **Esperienza utente** specificare le informazioni seguenti:  
 
@@ -431,19 +431,19 @@ In questo argomento viene illustrato come eseguire il provisioning di Windows To
 
     -   **Installazione software**: specificare se l'utente è autorizzato a installare il software al di fuori di una finestra di manutenzione configurata dopo l'orario pianificato.  
 
-    -   **Riavvio del sistema (se richiesto per completare l'installazione)**: consente il riavvio di un dispositivo al di fuori di una finestra di manutenzione configurata quando necessario per l'installazione del software.  
+    -   **Riavvio del sistema (se necessario per completare l'installazione)**: consente il riavvio di un dispositivo al di fuori di una finestra di manutenzione configurata quando necessario per l'installazione del software.  
 
-    -   **Dispositivi integrati**: quando si distribuiscono pacchetti e programmi in dispositivi con Windows Embedded abilitati per i filtri di scrittura, è possibile specificare di installare i pacchetti e i programmi nella sovrapposizione temporanea e confermare le modifiche in seguito oppure confermare le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione. Quando si confermano le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario il riavvio per mantenere le modifiche nel dispositivo.  
+    -   **Dispositivi integrati**: quando si distribuiscono pacchetti e programmi in dispositivi con Windows Embedded abilitati per i filtri di scrittura, è possibile specificare di installare i pacchetti e programmi nella sovrapposizione temporanea e confermare le modifiche in seguito oppure confermarle alla scadenza dell'installazione o all'interno di una finestra di manutenzione. Quando si confermano le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario il riavvio per mantenere le modifiche nel dispositivo.  
 
-    -   **Client basati su Internet**: specificare se la sequenza di attività può essere eseguita in un client basato su Internet. Le operazioni di installazione di software, quale un sistema operativo, non sono supportate con questa impostazione. Usare questa opzione solo per le sequenze attività generiche basate su script che eseguono operazioni nel sistema operativo standard.  
+    -   **Client basati su Internet**: specificare se la sequenza attività può essere eseguita in un client basato su Internet. Le operazioni di installazione di software, quale un sistema operativo, non sono supportate con questa impostazione. Usare questa opzione solo per le sequenze attività generiche basate su script che eseguono operazioni nel sistema operativo standard.  
 
 9. Nella pagina **Avvisi** specificare le impostazioni di avviso desiderate per la distribuzione di questa sequenza di attività e quindi fare clic su **Avanti**.  
 
 10. Nella pagina **Punti di distribuzione** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   **Opzioni di distribuzione**: selezionare **Scaricare il contenuto localmente quando necessario eseguendo la sequenza di attività**.  
+    -   **Opzioni di distribuzione**: selezionare **Scaricare il contenuto localmente quando necessario eseguendo la sequenza attività**.  
 
-    -   **Utilizzare un punto di distribuzione remoto quando non sono disponibili punti di distribuzione locali**: specificare se i client possono scaricare il contenuto necessario per la sequenza di attività da punti di distribuzione disponibili in reti lente e inaffidabili.  
+    -   **Usare un punto di distribuzione remoto quando non sono disponibili punti di distribuzione locali**: specificare se i client possono scaricare il contenuto necessario per la sequenza di attività da punti di distribuzione disponibili in reti lente e inaffidabili.  
 
     -   **Consenti ai client di utilizzare un percorso origine di fallback per il contenuto**:
         - *Nelle versioni precedenti alla 1610* è possibile selezionare la casella di controllo Consenti percorso origine di fallback per il contenuto per consentire ai client esterni a questi gruppi di limiti di eseguire il fallback e usare il punto di distribuzione come percorso di origine per il contenuto in assenza di altri punti di distribuzione disponibili.

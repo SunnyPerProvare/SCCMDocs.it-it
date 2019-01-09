@@ -11,12 +11,12 @@ ms.assetid: b3d755bd-0870-4f1f-a56d-bfd3c7b492b9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6bd4675d3b366c5f414467b76627e25b91259ef2
-ms.sourcegitcommit: 240d3199e1c6fa47af6eda499492b2527516ab18
+ms.openlocfilehash: 27eea5c93ec66207e48390e3c7a0352a3a255ceb
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44326204"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424737"
 ---
 # <a name="how-to-use-the-configuration-manager-docs"></a>Uso della documentazione di Configuration Manager
 
@@ -45,7 +45,7 @@ Per informazioni generali sul prodotto, vedere l'argomento sulla [consultazione 
 
     - Per concentrare ulteriormente i risultati della ricerca sulla raccolta di contenuto corrente, includere `site:docs.microsoft.com` per definire l'ambito del motore di ricerca.  
 
--   Usare termini di ricerca che corrispondano alla terminologia nell'interfaccia utente e nella documentazione online. Evitare termini non ufficiali o abbreviazioni che possono trovarsi nei contenuti della community. Ad esempio, cercare "punto di gestione" anziché "PG", "tipo di distribuzione" anziché "TD" e "aggiornamenti software" anziché "AS".  
+-   Usare termini di ricerca che corrispondano alla terminologia nell'interfaccia utente e nella documentazione online. Evitare termini non ufficiali o abbreviazioni che possono trovarsi nei contenuti della community. Ad esempio, cercare "punto di gestione" anziché "PG", "tipo di distribuzione" anziché "TD" e "aggiornamenti software" anziché "AS".  
 
 -   Per eseguire una ricerca all'interno di un articolo che si sta visualizzando, usare la funzionalità di **ricerca** del browser. Con i Web browser più recenti, premere **CTRL**+**F** e quindi immettere i termini di ricerca.  
 
@@ -122,8 +122,8 @@ La libreria di documentazione di Configuration Manager, analogamente alla maggio
 Se si è interessati a collaborare, ma non si sa come iniziare, vedere i suggerimenti seguenti:  
 
 - Cercare nell'elenco dei problemi le etichette assegnate alla community:  
-    - [good-first-issue](https://github.com/MicrosoftDocs/sccmdocs/issues?q=is:open+is:issue+label:good-first-issue)   
-    - [help-wanted](https://github.com/MicrosoftDocs/sccmdocs/issues?q=is:open+is:issue+label:help-wanted)  
+  - [good-first-issue](https://github.com/MicrosoftDocs/sccmdocs/issues?q=is:open+is:issue+label:good-first-issue)   
+  - [help-wanted](https://github.com/MicrosoftDocs/sccmdocs/issues?q=is:open+is:issue+label:help-wanted)  
 
     Le etichette vengono assegnate dagli autori di Microsoft ai problemi per cui più facilmente si riceveranno contributi della community.  
 

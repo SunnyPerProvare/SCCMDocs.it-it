@@ -10,12 +10,12 @@ ms.assetid: 446c83b5-c292-4e74-ba19-0792ac6b3472
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 76b6b3e1e3ee8e1cdbfbb61890b5a1f7ac5e853f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: d63100e5525b24ffd8deba447a10325c8209ea00
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334015"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416691"
 ---
 # <a name="upgrade-clients-in-system-center-configuration-manager"></a>Aggiornare i client in System Center Configuration Manager
 
@@ -31,19 +31,19 @@ ms.locfileid: "32334015"
 
  **Vantaggi**  
 
--   Non richiede l'individuazione dei computer prima di poter aggiornare il client.  
+- Non richiede l'individuazione dei computer prima di poter aggiornare il client.  
 
--   Può essere utilizzato per le nuove installazioni di client o per gli aggiornamenti.  
+- Può essere utilizzato per le nuove installazioni di client o per gli aggiornamenti.  
 
--   I computer possono leggere le proprietà di installazione client che sono state pubblicate in Servizi di dominio Active Directory.  
+- I computer possono leggere le proprietà di installazione client che sono state pubblicate in Servizi di dominio Active Directory.  
 
--   Non richiede la configurazione e il mantenimento di un account di installazione per il computer client previsto.  
+- Non richiede la configurazione e il mantenimento di un account di installazione per il computer client previsto.  
 
- **Svantaggi**  
+  **Svantaggi**  
 
--   Può causare traffico di rete elevato se viene aggiornato un numero elevato di client.  
+- Può causare traffico di rete elevato se viene aggiornato un numero elevato di client.  
 
--   Se lo schema di Active Directory non viene esteso per Configuration Manager, è necessario usare le [impostazioni di Criteri di gruppo](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientGP) per aggiungere le proprietà di installazione del client ai computer presenti nel sito.  
+- Se lo schema di Active Directory non viene esteso per Configuration Manager, è necessario usare le [impostazioni di Criteri di gruppo](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientGP) per aggiungere le proprietà di installazione del client ai computer presenti nel sito.  
 
 
 ## <a name="logon-script-installation"></a>Installazione tramite script di accesso  
@@ -51,42 +51,42 @@ ms.locfileid: "32334015"
 
  **Vantaggi**  
 
--   Non richiede l'individuazione dei computer prima di poter installare il client.  
+- Non richiede l'individuazione dei computer prima di poter installare il client.  
 
--   Può essere utilizzato per le nuove installazioni di client o per gli aggiornamenti.  
+- Può essere utilizzato per le nuove installazioni di client o per gli aggiornamenti.  
 
--   Supporta l'utilizzo di proprietà della riga di comando per CCMSetup.  
+- Supporta l'utilizzo di proprietà della riga di comando per CCMSetup.  
 
- **Svantaggi**  
+  **Svantaggi**  
 
--   Può causare traffico di rete elevato se viene aggiornato un numero elevato di client in poco tempo.  
+- Può causare traffico di rete elevato se viene aggiornato un numero elevato di client in poco tempo.  
 
--   L'aggiornamento di tutti i computer client può richiedere molto tempo se gli utenti non accedono spesso alla rete.  
+- L'aggiornamento di tutti i computer client può richiedere molto tempo se gli utenti non accedono spesso alla rete.  
 
- Per altre informazioni, vedere [Come installare i client di Configuration Manager usando script di accesso](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientLogonScript).  
+  Per altre informazioni, vedere [Come installare i client di Configuration Manager usando script di accesso](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientLogonScript).  
 
 ## <a name="manual-installation"></a>Installazione manuale  
  **Piattaforma client supportata:** Windows, UNIX/Linux, Mac OS X  
 
  **Vantaggi**  
 
--   Non richiede l'individuazione dei computer prima di poter aggiornare il client.  
+- Non richiede l'individuazione dei computer prima di poter aggiornare il client.  
 
--   Può essere utile a scopo di test.  
+- Può essere utile a scopo di test.  
 
--   Supporta l'utilizzo di proprietà della riga di comando per CCMSetup.  
+- Supporta l'utilizzo di proprietà della riga di comando per CCMSetup.  
 
- **Svantaggi**  
+  **Svantaggi**  
 
--   Non prevede automazione, pertanto risulta dispendioso in termini di tempo.  
+- Non prevede automazione, pertanto risulta dispendioso in termini di tempo.  
 
- Per altre informazioni, vedere i seguenti argomenti:  
+  Per altre informazioni, vedere i seguenti argomenti:  
 
--   [Come installare manualmente i client di Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Manual)  
+- [Come installare manualmente i client di Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_Manual)  
 
--   [Come aggiornare i client per i server Linux e UNIX in System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-linux-and-unix-servers.md)  
+- [Come aggiornare i client per i server Linux e UNIX in System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-linux-and-unix-servers.md)  
 
--   [Come aggiornare i client di System Center Configuration Manager in computer Mac](../../../../core/clients/manage/upgrade/upgrade-clients-on-mac-computers.md)  
+- [Come aggiornare i client di System Center Configuration Manager in computer Mac](../../../../core/clients/manage/upgrade/upgrade-clients-on-mac-computers.md)  
 
 ## <a name="upgrade-installation-application-management"></a>Installazione aggiornamento (gestione applicazioni)  
  **Piattaforma client supportata:** Windows  
@@ -96,15 +96,15 @@ ms.locfileid: "32334015"
 
  **Vantaggi**  
 
--   Supporta l'utilizzo di proprietà della riga di comando per CCMSetup.  
+- Supporta l'utilizzo di proprietà della riga di comando per CCMSetup.  
 
- **Svantaggi**  
+  **Svantaggi**  
 
--   Può causare elevato traffico di rete quando si esegue la distribuzione del client in raccolte di grandi dimensioni.  
+- Può causare elevato traffico di rete quando si esegue la distribuzione del client in raccolte di grandi dimensioni.  
 
--   Può essere utilizzato solo per aggiornare il software client nei computer che sono stati individuati e assegnati al sito.  
+- Può essere utilizzato solo per aggiornare il software client nei computer che sono stati individuati e assegnati al sito.  
 
- Per altre informazioni, vedere [Come installare i client di Configuration Manager usando un pacchetto e un programma](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientApp).  
+  Per altre informazioni, vedere [Come installare i client di Configuration Manager usando un pacchetto e un programma](../../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientApp).  
 
 ## <a name="automatic-client-upgrade"></a>Aggiornamento automatico del client  
 
@@ -115,33 +115,33 @@ ms.locfileid: "32334015"
 
  **Vantaggi**  
 
--   Può essere utilizzato per mantenere automaticamente i client presenti nel sito aggiornati alla versione più recente.  
+- Può essere utilizzato per mantenere automaticamente i client presenti nel sito aggiornati alla versione più recente.  
 
--   Richiede un livello di amministrazione minimo.  
+- Richiede un livello di amministrazione minimo.  
 
- **Svantaggi**  
+  **Svantaggi**  
 
--   Può essere utilizzato solo per aggiornare il software client e non per installare un nuovo client.  
+- Può essere utilizzato solo per aggiornare il software client e non per installare un nuovo client.  
 
--   Non è adatto per l'aggiornamento di più client contemporaneamente.  
+- Non è adatto per l'aggiornamento di più client contemporaneamente.  
 
--   Si applica a tutti i client presenti nella gerarchia assegnati a un sito. Non può essere definito dalla raccolta.  
+- Si applica a tutti i client presenti nella gerarchia assegnati a un sito. Non può essere definito dalla raccolta.  
 
--   Opzioni di programmazione limitate.  
+- Opzioni di programmazione limitate.  
 
- Per altre informazioni, vedere [Come aggiornare i client per i computer Windows in System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
+  Per altre informazioni, vedere [Come aggiornare i client per i computer Windows in System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
 
 ## <a name="client-testing"></a>Test di client  
  **Piattaforma client supportata:** Windows  
 
  **Vantaggi**  
 
--   Può essere usato per testare nuove versioni client in una raccolta di pre-produzione più piccola.  
+- Può essere usato per testare nuove versioni client in una raccolta di pre-produzione più piccola.  
 
--   Al termine dei test, i client in pre-produzione vengono alzati di livello alla produzione e aggiornati automaticamente nel sito di Configuration Manager.  
+- Al termine dei test, i client in pre-produzione vengono alzati di livello alla produzione e aggiornati automaticamente nel sito di Configuration Manager.  
 
- **Svantaggi**  
+  **Svantaggi**  
 
--   Può essere utilizzato solo per aggiornare il software client e non per installare un nuovo client.  
+- Può essere utilizzato solo per aggiornare il software client e non per installare un nuovo client.  
 
- [Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager](../../../../core/clients/manage/upgrade/test-client-upgrades.md)  
+  [Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager](../../../../core/clients/manage/upgrade/test-client-upgrades.md)  

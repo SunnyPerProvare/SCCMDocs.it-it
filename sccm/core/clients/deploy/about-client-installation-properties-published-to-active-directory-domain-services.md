@@ -10,12 +10,12 @@ ms.assetid: 101d7d4d-92db-419d-b2ae-3c1c1dea68e9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 46ede93e8366b4ae387f7e04b83dcb33ce854c5e
-ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
+ms.openlocfilehash: dccd893cc4a22fddf09598376bdcd05b091e6c2c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48862516"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421553"
 ---
 # <a name="about-client-installation-properties-published-to-active-directory-domain-services"></a>Informazioni sulle proprietà di installazione client pubblicate in Active Directory Domain Services
 
@@ -35,29 +35,29 @@ Quando si estende lo schema di Active Directory per System Center Configuration 
 ## <a name="client-installation-properties-published-to-active-directory-domain-services"></a>Proprietà di installazione client pubblicate in Active Directory Domain Services  
 Di seguito è riportato un elenco delle proprietà di installazione client. Per altre informazioni sugli elementi elencati di seguito, vedere [Informazioni sulle proprietà di installazione del client in System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
--   Codice del sito di Configuration Manager.  
+- Codice del sito di Configuration Manager.  
 
--   Il certificato di firma del server del sito.  
+- Il certificato di firma del server del sito.  
 
--   La chiave radice attendibile.  
+- La chiave radice attendibile.  
 
--   Le porte di comunicazione client per HTTP e HTTPS.  
+- Le porte di comunicazione client per HTTP e HTTPS.  
 
--   Il punto di stato di fallback. Se nel sito sono presenti più punti di stato di fallback, verrà pubblicato in Active Directory Domain Services soltanto il primo elemento installato.  
+- Il punto di stato di fallback. Se nel sito sono presenti più punti di stato di fallback, verrà pubblicato in Active Directory Domain Services soltanto il primo elemento installato.  
 
--   Un'impostazione per indicare che il client deve comunicare solo tramite HTTPS.  
+- Un'impostazione per indicare che il client deve comunicare solo tramite HTTPS.  
 
--   Impostazioni relative ai certificati PKI:  
+- Impostazioni relative ai certificati PKI:  
 
-   -   Se si desidera utilizzare un certificato PKI del client.  
+  -   Se si desidera utilizzare un certificato PKI del client.  
 
-   -   Criteri per la selezione del certificato. Possono essere necessari perché il client dispone di più certificati PKI validi utilizzabili per Configuration Manager.  
+  -   Criteri per la selezione del certificato. Possono essere necessari perché il client dispone di più certificati PKI validi utilizzabili per Configuration Manager.  
 
-   -   Un'impostazione per stabilire quale certificato utilizzare se il client dispone di più certificati validi dopo il processo di selezione del certificato.  
+  -   Un'impostazione per stabilire quale certificato utilizzare se il client dispone di più certificati validi dopo il processo di selezione del certificato.  
 
-   -   L'elenco di autorità emittenti del certificato che contiene un elenco di certificati CA radice attendibili.  
+  -   L'elenco di autorità emittenti del certificato che contiene un elenco di certificati CA radice attendibili.  
 
--   Le proprietà di installazione client.msi specificate nella scheda **Client** della finestra di dialogo **Proprietà installazione push client** .
+- Le proprietà di installazione client.msi specificate nella scheda **Client** della finestra di dialogo **Proprietà installazione push client** .
 
 L'installazione client (CCMSetup) usa le proprietà pubblicate in Active Directory Domain Services solo se non vengono specificate altre proprietà mediante uno dei metodi seguenti:  
 

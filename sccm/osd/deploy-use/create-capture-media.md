@@ -10,12 +10,12 @@ ms.assetid: 10eb8958-3848-49d7-95c0-16119b624580
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 827247ba5d9c1badd1961ee56110b6dc1ea9351e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 8d733f4eb70b9e95bb00a918cb82f47c85cb3059
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32352978"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417541"
 ---
 # <a name="create-capture-media-with-system-center-configuration-manager"></a>Creare supporti di acquisizione con System Center Configuration Manager
 
@@ -41,37 +41,37 @@ Per creare i supporti di acquisizione, usare la Creazione guidata del supporto p
 
 #### <a name="to-create-capture-media"></a>Per creare supporti di acquisizione  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1. Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+2. Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea supporto per sequenza di attività** per avviare la Creazione guidata del supporto per la sequenza di attività.  
+3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea supporto per sequenza di attività** per avviare la Creazione guidata del supporto per la sequenza di attività.  
 
-4.  Nella pagina **Seleziona tipo di supporto** selezionare **Acquisisci supporto**, quindi fare clic su **Avanti**.  
+4. Nella pagina **Seleziona tipo di supporto** selezionare **Acquisisci supporto**, quindi fare clic su **Avanti**.  
 
-5.  Nella pagina **Tipo di supporto** specificare se il supporto è un'unità flash o un set di CD/DVD, quindi configurare quanto segue:  
+5. Nella pagina **Tipo di supporto** specificare se il supporto è un'unità flash o un set di CD/DVD, quindi configurare quanto segue:  
 
-    -   Se si seleziona **Unità memoria flash USB**, è necessario specificare l'unità in cui archiviare il contenuto.  
+   - Se si seleziona **Unità memoria flash USB**, è necessario specificare l'unità in cui archiviare il contenuto.  
 
-    -   Se si seleziona l'opzione **CD/DVD impostato**, specificare la capacità del supporto e il nome e il percorso dei file di output. La procedura guidata scrive i file di output in questa posizione. Ad esempio: **\\\nomeserver\cartella\filedioutput.iso**  
+   - Se si seleziona l'opzione **CD/DVD impostato**, specificare la capacità del supporto e il nome e il percorso dei file di output. La procedura guidata scrive i file di output in questa posizione. Ad esempio: **\\\nomeserver\cartella\filedioutput.iso**  
 
-         Se la capacità del supporto non è sufficiente per archiviare l'intero contenuto, vengono creati più file ed è necessario archiviare il contenuto in più CD o DVD. Quando sono necessari più supporti, Configuration Manager aggiunge un numero di sequenza al nome di ogni file di output creato. Se insieme al sistema operativo si distribuisce un'applicazione e questa non può essere contenuta in un unico supporto, Configuration Manager archivia l'applicazione in più supporti. Quando il supporto autonomo viene eseguito Configuration Manager chiede all'utente il supporto successivo contenente l'applicazione.  
+      Se la capacità del supporto non è sufficiente per archiviare l'intero contenuto, vengono creati più file ed è necessario archiviare il contenuto in più CD o DVD. Quando sono necessari più supporti, Configuration Manager aggiunge un numero di sequenza al nome di ogni file di output creato. Se insieme al sistema operativo si distribuisce un'applicazione e questa non può essere contenuta in un unico supporto, Configuration Manager archivia l'applicazione in più supporti. Quando il supporto autonomo viene eseguito Configuration Manager chiede all'utente il supporto successivo contenente l'applicazione.  
 
-        > [!IMPORTANT]  
-        >  Se si seleziona un'immagine iso esistente, la Creazione guidata del supporto per la sequenza di attività elimina l'immagine dall'unità o dalla condivisione non appena si passa alla pagina successiva della procedura guidata. L'immagine esistente viene eliminata, anche se si annulla la procedura guidata.  
+     > [!IMPORTANT]  
+     >  Se si seleziona un'immagine iso esistente, la Creazione guidata del supporto per la sequenza di attività elimina l'immagine dall'unità o dalla condivisione non appena si passa alla pagina successiva della procedura guidata. L'immagine esistente viene eliminata, anche se si annulla la procedura guidata.  
 
      Fare clic su **Avanti**.  
 
-6.  Nella pagina **Immagine di avvio** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
+6. Nella pagina **Immagine di avvio** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
 
-    > [!IMPORTANT]  
-    >  L'architettura dell'immagine di avvio specificata deve essere appropriata per l'architettura del computer di riferimento. Ad esempio, un computer di riferimento x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di riferimento x86 può avviare ed eseguire solo un'immagine di avvio x86.  
+   > [!IMPORTANT]  
+   >  L'architettura dell'immagine di avvio specificata deve essere appropriata per l'architettura del computer di riferimento. Ad esempio, un computer di riferimento x64 può avviare ed eseguire un'immagine di avvio x86 o x64. Tuttavia, un computer di riferimento x86 può avviare ed eseguire solo un'immagine di avvio x86.  
 
-    -   Nella casella **Immagine di avvio** specificare l'immagine di avvio per avviare il computer di riferimento.  
+   -   Nella casella **Immagine di avvio** specificare l'immagine di avvio per avviare il computer di riferimento.  
 
-    -   Nella casella **Punto di distribuzione** specificare il punto di distribuzione in cui si trova l'immagine di avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
+   -   Nella casella **Punto di distribuzione** specificare il punto di distribuzione in cui si trova l'immagine di avvio. La procedura guidata consente di recuperare l'immagine di avvio dal punto di distribuzione e di scriverla sul supporto.  
 
-        > [!NOTE]  
-        >  È necessario disporre dei diritti di accesso in lettura alla raccolta contenuto nel punto di distribuzione.  
+       > [!NOTE]  
+       >  È necessario disporre dei diritti di accesso in lettura alla raccolta contenuto nel punto di distribuzione.  
 
-7.  Completare la procedura guidata.  
+7. Completare la procedura guidata.  

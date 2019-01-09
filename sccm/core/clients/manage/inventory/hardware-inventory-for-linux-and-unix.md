@@ -10,12 +10,12 @@ ms.assetid: 1026d616-2a20-4fb2-8604-d331763937f8
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 68e60611356cbaea3dc14a42776e89ecdc951008
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 561a74730b8a4d27197f0de6f3149659430cc241
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32339418"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421179"
 ---
 # <a name="hardware-inventory-for-linux-and-unix-in-system-center-configuration-manager"></a>Inventario hardware per Linux e UNIX in System Center Configuration Manager
 
@@ -23,19 +23,19 @@ ms.locfileid: "32339418"
 
 Il client di System Center Configuration Manager per Linux e UNIX supporta l'inventario hardware. Dopo aver eseguito l'inventario hardware, è possibile visualizzarlo in Esplora inventario risorse o nei report di Configuration Manager e usare le informazioni per creare query e raccolte che consentono le operazioni seguenti:  
 
--   Distribuzione software  
+- Distribuzione software  
 
--   Imposizione delle finestre di manutenzione  
+- Imposizione delle finestre di manutenzione  
 
--   Distribuzione di impostazioni client personalizzate  
+- Distribuzione di impostazioni client personalizzate  
 
- La funzionalità di inventario hardware per server Linux e UNIX usa un server CIM (Common Information Model) basato su standard. Il server CIM viene eseguito come servizio software (o daemon) e fornisce un'infrastruttura di gestione basata sugli standard DMTF (Distributed Management Task Force). Il server CIM fornisce funzionalità simili alle funzionalità CIM WMI (Windows Management Infrastructure) disponibili nei computer basati su Windows.  
+  La funzionalità di inventario hardware per server Linux e UNIX usa un server CIM (Common Information Model) basato su standard. Il server CIM viene eseguito come servizio software (o daemon) e fornisce un'infrastruttura di gestione basata sugli standard DMTF (Distributed Management Task Force). Il server CIM fornisce funzionalità simili alle funzionalità CIM WMI (Windows Management Infrastructure) disponibili nei computer basati su Windows.  
 
- A partire dall'aggiornamento cumulativo 1, il client per Linux e UNIX usa **omiserver** versione 1.0.6 open source di **The Open Group**. Prima dell'aggiornamento cumulativo 1, il client usava **nanowbem** come server CIM.  
+  A partire dall'aggiornamento cumulativo 1, il client per Linux e UNIX usa **omiserver** versione 1.0.6 open source di **The Open Group**. Prima dell'aggiornamento cumulativo 1, il client usava **nanowbem** come server CIM.  
 
- Il server CIM viene installato come parte del client per Linux e UNIX. Il client per Linux e UNIX comunica direttamente con il server CIM e non usa l'interfaccia WS-MAN del server CIM. La porta WS-MAN nel server CIM viene disabilitata quando si installa il client. Microsoft ha sviluppato il server CIM che è ora disponibile come open source tramite il progetto OMI (Open Management Infrastructure). Per altre informazioni sul progetto OMI, vedere il sito Web di [The Open Group](http://go.microsoft.com/fwlink/p/?LinkId=262317) .  
+  Il server CIM viene installato come parte del client per Linux e UNIX. Il client per Linux e UNIX comunica direttamente con il server CIM e non usa l'interfaccia WS-MAN del server CIM. La porta WS-MAN nel server CIM viene disabilitata quando si installa il client. Microsoft ha sviluppato il server CIM che è ora disponibile come open source tramite il progetto OMI (Open Management Infrastructure). Per altre informazioni sul progetto OMI, vedere il sito Web di [The Open Group](http://go.microsoft.com/fwlink/p/?LinkId=262317) .  
 
- L'inventario hardware nei server Linux e UNIX funziona tramite il mapping delle classi e proprietà WMI Win32 esistenti alle classi e proprietà equivalenti per i server Linux e UNIX. Questo mapping uno-a-uno di classi e proprietà consente l'integrazione dell'inventario hardware di Linux e UNIX con Configuration Manager. I dati di inventario dai server Linux e UNIX vengono visualizzati insieme all'inventario dai computer basati su Windows nella console e nei report di Configuration Manager. Ciò offre un'esperienza di gestione eterogenea e coerente.  
+  L'inventario hardware nei server Linux e UNIX funziona tramite il mapping delle classi e proprietà WMI Win32 esistenti alle classi e proprietà equivalenti per i server Linux e UNIX. Questo mapping uno-a-uno di classi e proprietà consente l'integrazione dell'inventario hardware di Linux e UNIX con Configuration Manager. I dati di inventario dai server Linux e UNIX vengono visualizzati insieme all'inventario dai computer basati su Windows nella console e nei report di Configuration Manager. Ciò offre un'esperienza di gestione eterogenea e coerente.  
 
 > [!TIP]  
 >  È possibile usare il valore **Didascalia** per la classe **Sistema operativo** per identificare i diversi sistemi operativi Linux e UNIX nelle query e nelle raccolte.  
@@ -45,48 +45,48 @@ Il client di System Center Configuration Manager per Linux e UNIX supporta l'inv
 
  Il client per Linux e UNIX supporta le seguenti classi di inventario hardware disponibili nei server Linux e UNIX:  
 
--   Win32_BIOS  
+- Win32_BIOS  
 
--   Win32_ComputerSystem  
+- Win32_ComputerSystem  
 
--   Win32_DiskDrive  
+- Win32_DiskDrive  
 
--   Win32_DiskPartition  
+- Win32_DiskPartition  
 
--   Win32_NetworkAdapter  
+- Win32_NetworkAdapter  
 
--   Win32_NetworkAdapterConfiguration  
+- Win32_NetworkAdapterConfiguration  
 
--   Win32_OperatingSystem  
+- Win32_OperatingSystem  
 
--   Win32_Process  
+- Win32_Process  
 
--   Win32_Service  
+- Win32_Service  
 
--   Win32Reg_AddRemovePrograms  
+- Win32Reg_AddRemovePrograms  
 
--   SMS_LogicalDisk  
+- SMS_LogicalDisk  
 
--   SMS_Processor  
+- SMS_Processor  
 
- Non tutte le proprietà di queste classi di inventario sono abilitate per i computer Linux e UNIX in Configuration Manager.  
+  Non tutte le proprietà di queste classi di inventario sono abilitate per i computer Linux e UNIX in Configuration Manager.  
 
 ##  <a name="BKMK_OperationsforHardwareforLnU"></a> Operazioni per l'inventario hardware  
  Dopo aver raccolto l'inventario hardware dai server Linux e UNIX, è possibile visualizzare e usare tali informazioni con le stesse modalità valide per l'inventario raccolto dagli altri computer:  
 
--   Usare Esplora inventario risorse per visualizzare informazioni dettagliate relative all'inventario hardware dai server Linux e UNIX  
+- Usare Esplora inventario risorse per visualizzare informazioni dettagliate relative all'inventario hardware dai server Linux e UNIX  
 
--   Creare query basate su una configurazione hardware specifica  
+- Creare query basate su una configurazione hardware specifica  
 
--   Creare raccolte basate su query secondo configurazioni hardware specifiche  
+- Creare raccolte basate su query secondo configurazioni hardware specifiche  
 
--   Eseguire i report che consentono di visualizzare informazioni dettagliate specifiche sulle configurazioni hardware  
+- Eseguire i report che consentono di visualizzare informazioni dettagliate specifiche sulle configurazioni hardware  
 
- L'inventario hardware in un server Linux o UNIX viene eseguito in base alla pianificazione configurata nelle impostazioni client. L'intervallo predefinito è di sette giorni. Il client per Linux e UNIX supporta sia cicli di inventario completo che cicli di inventario differenziale.  
+  L'inventario hardware in un server Linux o UNIX viene eseguito in base alla pianificazione configurata nelle impostazioni client. L'intervallo predefinito è di sette giorni. Il client per Linux e UNIX supporta sia cicli di inventario completo che cicli di inventario differenziale.  
 
- È anche possibile imporre l'esecuzione immediata dell'inventario hardware per il client in un server Linux o UNIX. Per eseguire l'inventario hardware, in un client usare credenziali **root** per eseguire il comando seguente per avviare un ciclo di inventario hardware: **/opt/microsoft/configmgr/bin/ccmexec -rs hinv**  
+  È anche possibile imporre l'esecuzione immediata dell'inventario hardware per il client in un server Linux o UNIX. Per eseguire l'inventario hardware, in un client usare credenziali **root** per eseguire il comando seguente per avviare un ciclo di inventario hardware: **/opt/microsoft/configmgr/bin/ccmexec -rs hinv**  
 
- Le azioni per l'inventario hardware vengono immesse nel file di log client **scxcm.log**.  
+  Le azioni per l'inventario hardware vengono immesse nel file di log client **scxcm.log**.  
 
 ##  <a name="BKMK_CustomHINVforLinux"></a> Come usare OMI (Open Management Infrastructure) per creare un inventario hardware personalizzato  
  Il client per Linux e UNIX supporta l'inventario hardware personalizzato che è possibile creare tramite OMI (Open Management Infrastructure). A tale scopo, seguire questa procedura:  

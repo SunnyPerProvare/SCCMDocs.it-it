@@ -10,12 +10,12 @@ ms.assetid: b9800a66-7541-47ca-8276-da8ef6cb6d1b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e5a0e6d8066fc52bf64dd4e53eba4c4dc1c84aa6
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 52a7b81b6ff0d4a0035cf913d925ac5c148b14fc
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32346849"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417779"
 ---
 # <a name="create-a-custom-task-sequence-with-system-center-configuration-manager"></a>Creare una sequenza di attività personalizzata con System Center Configuration Manager
 
@@ -28,23 +28,23 @@ Quando si crea una sequenza di attività personalizzata in System Center Configu
 
 #### <a name="to-create-a-custom-task-sequence"></a>Per creare una sequenza di attività personalizzata  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1. Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+2. Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea sequenza di attività** per avviare la Creazione guidata della sequenza di attività.  
+3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea sequenza di attività** per avviare la Creazione guidata della sequenza di attività.  
 
-4.  Nella pagina **Crea una nuova sequenza di attività** selezionare **Crea una nuova sequenza di attività personalizzata**.  
+4. Nella pagina **Crea una nuova sequenza di attività** selezionare **Crea una nuova sequenza di attività personalizzata**.  
 
-5.  Nella pagina **Informazioni sequenza di attività** specificare un nome, una descrizione e un'immagine di avvio facoltativa per la sequenza di attività. Quindi completare la procedura guidata.  
+5. Nella pagina **Informazioni sequenza di attività** specificare un nome, una descrizione e un'immagine di avvio facoltativa per la sequenza di attività. Quindi completare la procedura guidata.  
 
- Dopo aver completato la Creazione guidata della sequenza di attività, Configuration Manager aggiunge la sequenza di attività personalizzata al nodo **Sequenze attività**. È ora possibile modificare questa sequenza di attività per aggiungere passaggi della sequenza di attività.  
+   Dopo aver completato la Creazione guidata della sequenza di attività, Configuration Manager aggiunge la sequenza di attività personalizzata al nodo **Sequenze attività**. È ora possibile modificare questa sequenza di attività per aggiungere passaggi della sequenza di attività.  
 
- Per un elenco dei passaggi della sequenza di attività disponibili, vedere [Passaggi della sequenza di attività](../understand/task-sequence-steps.md).  
+   Per un elenco dei passaggi della sequenza di attività disponibili, vedere [Passaggi della sequenza di attività](../understand/task-sequence-steps.md).  
 
- Per altre informazioni su come modificare una sequenza di attività, vedere [Modificare una sequenza di attività](manage-task-sequences-to-automate-tasks.md#BKMK_ModifyTaskSequence).  
+   Per altre informazioni su come modificare una sequenza di attività, vedere [Modificare una sequenza di attività](manage-task-sequences-to-automate-tasks.md#BKMK_ModifyTaskSequence).  
 
- Le sequenze di attività verranno usate principalmente per automatizzare le attività di distribuzione del sistema operativo, ma è possibile creare una sequenza di attività personalizzata per automatizzare diverse attività. Per altre informazioni, vedere [Creare una sequenza di attività per distribuzioni non di sistema operativo](create-a-task-sequence-for-non-operating-system-deployments.md).  
+   Le sequenze di attività verranno usate principalmente per automatizzare le attività di distribuzione del sistema operativo, ma è possibile creare una sequenza di attività personalizzata per automatizzare diverse attività. Per altre informazioni, vedere [Creare una sequenza di attività per distribuzioni non di sistema operativo](create-a-task-sequence-for-non-operating-system-deployments.md).  
 
- ## <a name="next-steps"></a>Passaggi successivi
- [Distribuire la sequenza di attività](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS)
+   ## <a name="next-steps"></a>Passaggi successivi
+   [Distribuire la sequenza di attività](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS)

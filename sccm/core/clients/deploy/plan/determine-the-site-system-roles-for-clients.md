@@ -10,12 +10,12 @@ ms.assetid: 984e8d92-7327-4b08-9228-0c955e6ac778
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: eac38757ed2147d664b3bdbf2f7e0eb11947dcac
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 8fdb7faee21904c504470c2bca86a674d59559cf
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334076"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419819"
 ---
 # <a name="determine-the-site-system-roles-for-system-center-configuration-manager-clients"></a>Determinare i ruoli del sistema del sito per System Center Configuration Manager
 
@@ -45,15 +45,15 @@ Questo argomento può essere utile per determinare i ruoli del sistema del sito 
 
  Installare un punto di stato di fallback in presenza di tutte le condizioni seguenti:  
 
--   Si desidera che gli errori di comunicazione client dai computer Windows siano inviati al sito, anche se questi computer client non possono comunicare con un punto di gestione.  
+- Si desidera che gli errori di comunicazione client dai computer Windows siano inviati al sito, anche se questi computer client non possono comunicare con un punto di gestione.  
 
--   Si vogliono usare i report di distribuzione client di Configuration Manager che visualizzano i dati inviati dal punto di stato di fallback.  
+- Si vogliono usare i report di distribuzione client di Configuration Manager che visualizzano i dati inviati dal punto di stato di fallback.  
 
--   Si dispone di un server dedicato per questo ruolo del sistema del sito e di ulteriori misure di sicurezza per proteggere il server da attacchi esterni.  
+- Si dispone di un server dedicato per questo ruolo del sistema del sito e di ulteriori misure di sicurezza per proteggere il server da attacchi esterni.  
 
--   I vantaggi dell'utilizzo di un punto di stato di fallback superano i rischi di protezione associati a connessioni non autenticate e trasferimenti di testo non crittografato nel traffico su HTTP.  
+- I vantaggi dell'utilizzo di un punto di stato di fallback superano i rischi di protezione associati a connessioni non autenticate e trasferimenti di testo non crittografato nel traffico su HTTP.  
 
- Non installare un punto di stato di fallback se i rischi a livello di sicurezza dell'esecuzione di un sito Web con connessioni non autenticate e trasferimenti di testo non crittografato superano i vantaggi dell'identificazione dei problemi di comunicazione client.  
+  Non installare un punto di stato di fallback se i rischi a livello di sicurezza dell'esecuzione di un sito Web con connessioni non autenticate e trasferimenti di testo non crittografato superano i vantaggi dell'identificazione dei problemi di comunicazione client.  
 
 ##  <a name="determine-whether-you-need-a-reporting-services-point"></a>Stabilire se è necessario un punto di Reporting Services  
  Configuration Manager offre molti report che consentono di monitorare l'installazione, l'assegnazione e la gestione dei client nella console di Configuration Manager. Alcuni dei report di distribuzione richiedono che i client siano assegnati a un punto di stato di fallback.  

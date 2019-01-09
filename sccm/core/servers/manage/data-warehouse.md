@@ -10,12 +10,12 @@ ms.assetid: aaf43e69-68b4-469a-ad58-9b66deb29057
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7671025b0a643063f30c98922f7da0659e2e1ab9
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 0c04ee9a62b6c629060f79df2f4b104fe78ca794
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456907"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418986"
 ---
 #  <a name="the-data-warehouse-service-point-for-configuration-manager"></a>Punto di servizio del data warehouse per Configuration Manager
 
@@ -94,17 +94,17 @@ Quando si installa il ruolo, Configuration Manager crea il database del data war
 
 - **Nome istanza di SQL Server, se applicabile**: se non si usa un'istanza predefinita di SQL Server, specificare l'istanza denominata.  
 
-- **Nome database**: specificare il nome del database del data warehouse. Configuration Manager crea il database del data warehouse con questo nome. Se si specifica un nome di database già esistente nell'istanza di SQL Server, Configuration Manager usa il database corrispondente.  
+- **Nome database**: Specificare il nome del database del data warehouse. Configuration Manager crea il database del data warehouse con questo nome. Se si specifica un nome di database già esistente nell'istanza di SQL Server, Configuration Manager usa il database corrispondente.  
 
-- **Porta di SQL Server usata per la connessione**: specificare il numero di porta TCP/IP usato dall'istanza di SQL Server che ospita il database del data warehouse. Il servizio di sincronizzazione del data warehouse usa questa porta per la connessione al database del data warehouse. Per impostazione predefinita, viene usata la porta di SQL Server **1433** per la comunicazione.  
+- **Porta di SQL Server usata per la connessione**: specificare il numero di porta TCP/IP usata dall'istanza di SQL Server che ospita il database del data warehouse. Il servizio di sincronizzazione del data warehouse usa questa porta per la connessione al database del data warehouse. Per impostazione predefinita, viene usata la porta di SQL Server **1433** per la comunicazione.  
 
-- **Account del punto di servizio del data warehouse**: a partire dalla versione 1802, impostare il **Nome utente** usato da SQL Server Reporting Services per la connessione al database del data warehouse.  
+- **Account del punto di servizio del data warehouse**: a partire dalla versione 1802, impostare il **nome utente** usato da SQL Server Reporting Services per la connessione al database del data warehouse.  
 
 
 #### <a name="synchronization-schedule-page"></a>Pagina Pianificazione della sincronizzazione
 *Si applica alla versione 1806 e precedenti*
 
-- **Ora di inizio**: specificare l'ora in cui si vuole avviare la sincronizzazione del data warehouse.  
+- **Ora di inizio**: Specificare l'ora in cui si vuole avviare la sincronizzazione del data warehouse.  
 
 - **Criterio ricorrenza**
 
@@ -121,7 +121,7 @@ Quando si installa il ruolo, Configuration Manager crea il database del data war
     > [!Note]  
     > Non è possibile rimuovere le tabelle che il ruolo seleziona per impostazione predefinita.  
 
-- **Ora di inizio**: specificare l'ora in cui si vuole avviare la sincronizzazione del data warehouse.  
+- **Ora di inizio**: Specificare l'ora in cui si vuole avviare la sincronizzazione del data warehouse.  
 
 - **Criterio ricorrenza**
 
@@ -142,19 +142,19 @@ Dopo aver installato un punto di servizio del data warehouse, diversi report div
 
 Il ruolo del sistema del sito del data warehouse include i report seguenti nella categoria **Data warehouse**:  
 
-- **Application Deployment - Historical** (Distribuzione applicazioni - Cronologia): visualizza i dettagli per la distribuzione di applicazioni per un'applicazione e un computer specifici.  
+- **Application Deployment - Historical** (Distribuzione applicazioni - Cronologia): Visualizza i dettagli per la distribuzione di applicazioni per un'applicazione e un computer specifici.  
 
-- **Endpoint Protection and Software Update Compliance - Historical** (Endpoint Protection e Conformità dell'aggiornamento software - Cronologia): visualizza i computer in cui mancano aggiornamenti software.  
+- **Conformità di Endpoint Protection e degli aggiornamenti software - cronologia**: Visualizza i computer in cui mancano aggiornamenti software.  
 
-- **General Hardware Inventory - Historical** (Inventario generale hardware - Cronologia): visualizza tutto l'inventario dell'hardware per un computer specifico.  
+- **General Hardware Inventory - Historical** (Inventario generale hardware - Cronologia): Visualizza tutto l'inventario dell'hardware per un computer specifico.  
 
-- **General Software Inventory - Historical** (Inventario generale software - Cronologia): visualizza tutto l'inventario del software per un computer specifico.  
+- **General Software Inventory - Historical** (Inventario generale software - Cronologia): Visualizza tutto l'inventario del software per un computer specifico.  
 
-- **Panoramica dell'integrità dell'infrastruttura - cronologia**: visualizza una panoramica dell'integrità dell'infrastruttura di Configuration Manager.  
+- **Infrastructure Health Overview - Historical** (Panoramica integrità infrastruttura - Cronologia): Visualizza una panoramica dell'integrità dell'infrastruttura di Configuration Manager.  
 
-- **Elenco di malware rilevati - cronologia**: visualizza il malware che è stato rilevato nell'organizzazione.  
+- **List of Malware Detected - Historical** (Elenco di malware rilevato - Cronologia):    Visualizza il malware che è stato rilevato nell'organizzazione.  
 
-- **Software Distribution Summary - Historical** (Riepilogo distribuzione software - Cronologia): riepilogo della distribuzione del software per un annuncio e un computer specifici.  
+- **Software Distribution Summary - Historical** (Riepilogo distribuzione software - Cronologia): Riepilogo della distribuzione del software per un annuncio e un computer specifici.  
 
 
 

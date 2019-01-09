@@ -10,12 +10,12 @@ ms.assetid: abb696f3-a816-4f12-a9f1-0503a81e1976
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3bd64cd937bf0a90a00ea6b17664d80394dcafab
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 4168b36553dacff69fab0972011a7d4c2843d787
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32339307"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421944"
 ---
 # <a name="test-the-database-upgrade-when-installing-an-update"></a>Testare l'aggiornamento del database quando si installa un aggiornamento
 
@@ -45,21 +45,21 @@ Il test dell'aggiornamento viene eseguito su un backup del database del sito che
 Se si verifica un errore in fase di aggiornamento, non è consigliabile ripristinare il sito. In alternativa, è possibile ritentare l'installazione dell'aggiornamento dall'interno della console.
 
 ##  <a name="run-the-test-upgrade"></a>Eseguire il test dell'aggiornamento    
-1.  Usare il programma di installazione di Configuration Manager e i file di origine dalla cartella **CD.Latest** di un sito che esegue la versione a cui si intende eseguire l'aggiornamento.  
+1. Usare il programma di installazione di Configuration Manager e i file di origine dalla cartella **CD.Latest** di un sito che esegue la versione a cui si intende eseguire l'aggiornamento.  
 
-2.  Copiare la cartella **CD.Latest** in un percorso dell'istanza di SQL Server che verrà usata per eseguire l'aggiornamento di test del database.
+2. Copiare la cartella **CD.Latest** in un percorso dell'istanza di SQL Server che verrà usata per eseguire l'aggiornamento di test del database.
 
-3.  Creare un backup del database del sito di cui di intende verificare l'aggiornamento. Ripristinare quindi una copia del database del sito in un'istanza di SQL Server che non ospita un sito di Configuration Manager. L'istanza di SQL Server deve usare la stessa edizione di SQL Server del database del sito.  
+3. Creare un backup del database del sito di cui di intende verificare l'aggiornamento. Ripristinare quindi una copia del database del sito in un'istanza di SQL Server che non ospita un sito di Configuration Manager. L'istanza di SQL Server deve usare la stessa edizione di SQL Server del database del sito.  
 
-4.  Dopo avere ripristinato la copia del database, eseguire **Installazione** dalla cartella CD.Latest che contiene i file di origine dalla versione a cui si sta eseguendo l'aggiornamento. Quando si esegue l'installazione, usare l'opzione della riga di comando **/TESTDBUPGRADE** . Se l'istanza di SQL Server che ospita la copia del database non è quella predefinita, fornire gli argomenti della riga di comando per identificare l'istanza che ospita la copia del database del sito.   
+4. Dopo avere ripristinato la copia del database, eseguire **Installazione** dalla cartella CD.Latest che contiene i file di origine dalla versione a cui si sta eseguendo l'aggiornamento. Quando si esegue l'installazione, usare l'opzione della riga di comando **/TESTDBUPGRADE** . Se l'istanza di SQL Server che ospita la copia del database non è quella predefinita, fornire gli argomenti della riga di comando per identificare l'istanza che ospita la copia del database del sito.   
 
-  Ad esempio, si dispone di un database del sito con il nome database *SMS_ABC*. Si ripristina una copia di questo database del sito in un'istanza supportata di SQL Server con il nome istanza *DBTest*. Per testare un aggiornamento di questa copia del database del sito, usare la seguente riga di comando: **Setup.exe /TESTDBUPGRADE DBtest\CM_ABC**.  
+   Ad esempio, si dispone di un database del sito con il nome database *SMS_ABC*. Si ripristina una copia di questo database del sito in un'istanza supportata di SQL Server con il nome istanza *DBTest*. Per testare un aggiornamento di questa copia del database del sito, utilizzare la seguente riga di comando: **Setup.exe /TESTDBUPGRADE DBtest\CM_ABC**.  
 
-  È possibile trovare Setup.exe nel percorso seguente del supporto di origine per System Center Configuration Manager: **SMSSETUP\BIN\X64**.  
+   È possibile trovare Setup.exe nel percorso seguente del supporto di origine per System Center Configuration Manager: **SMSSETUP\BIN\X64**.  
 
-5.  Nell'istanza di SQL Server in cui si esegue il test di aggiornamento, monitorare *ConfigMgrSetup.log* nella radice dell'unità di sistema per l'avanzamento e il completamento.  
+5. Nell'istanza di SQL Server in cui si esegue il test di aggiornamento, monitorare *ConfigMgrSetup.log* nella radice dell'unità di sistema per l'avanzamento e il completamento.  
 
-     Se il test dell'aggiornamento ha esito negativo, risolvere eventuali problemi associati all'errore di aggiornamento del database del sito. Creare quindi un nuovo backup del database del sito e testare l'aggiornamento della nuova copia del database.  
+    Se il test dell'aggiornamento ha esito negativo, risolvere eventuali problemi associati all'errore di aggiornamento del database del sito. Creare quindi un nuovo backup del database del sito e testare l'aggiornamento della nuova copia del database.  
 
 
 

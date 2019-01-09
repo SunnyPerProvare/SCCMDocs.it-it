@@ -11,12 +11,12 @@ author: aczechowski
 robots: noindex,nofollow
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 8a805d6b7075d61b0e7669200670ac8434eccdf5
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: d58a780ecf6232bd8ef6e7f0d9851ead34486177
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336562"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53414753"
 ---
 # <a name="capabilities-in-technical-preview-1511-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1511 per System Center Configuration Manager
 
@@ -59,15 +59,15 @@ Quando Microsoft pubblica un nuovo aggiornamento dei client per desktop di Offic
 ### <a name="try-it-out"></a>Verifica  
  Prova a completare l'attività seguente e quindi usa le informazioni relative a commenti e suggerimenti nella parte superiore di questo argomento per comunicare i risultati:  
 
-1.  È possibile sincronizzare gli aggiornamenti di Office 365 per il server del sito di Configuration Manager e visualizzarli dalla console di Configuration Manager.  
+1. È possibile sincronizzare gli aggiornamenti di Office 365 per il server del sito di Configuration Manager e visualizzarli dalla console di Configuration Manager.  
 
-2.  È possibile approvare e distribuire correttamente gli aggiornamenti di Office 365.  
+2. È possibile approvare e distribuire correttamente gli aggiornamenti di Office 365.  
 
-3.  È possibile scaricare correttamente gli aggiornamenti di Office 365 nei client.  
+3. È possibile scaricare correttamente gli aggiornamenti di Office 365 nei client.  
 
-4.  È possibile verificare la conformità degli aggiornamenti di Office 365 usando il monitoraggio integrato nella console o i report.  
+4. È possibile verificare la conformità degli aggiornamenti di Office 365 usando il monitoraggio integrato nella console o i report.  
 
- Per informazioni dettagliate sui passaggi da eseguire, vedere l'articolo relativo alla [gestione degli aggiornamenti client di Office 365 con System Center Configuration Manager Technical Preview](https://technet.microsoft.com/library/mt628083.aspx).  
+   Per informazioni dettagliate sui passaggi da eseguire, vedere l'articolo relativo alla [gestione degli aggiornamenti client di Office 365 con System Center Configuration Manager Technical Preview](https://technet.microsoft.com/library/mt628083.aspx).  
 
 ##  <a name="BKMK_AlwasyOn"></a> Supporto per SQL Server AlwaysOn per database a disponibilità elevata  
  Configuration Manager ora supporta l'utilizzo di un gruppo di disponibilità SQL Server AlwaysOn per ospitare il database del sito.  Quando si installa un nuovo sito, è possibile indirizzare il programma di installazione all'uso del gruppo di disponibilità anziché una normale istanza di SQL Server.  
@@ -131,11 +131,11 @@ Per installare un sito che utilizza un gruppo di disponibilità di SQL Server:
 
 1.  Sostituire gli elementi indicati di seguito quando richiesto dal programma di installazione di Configuration Manager:  
 
-    -   **Nome server SQL**: immettere il nome virtuale per l'endpoint configurato al momento della creazione del gruppo di disponibilità. Il nome virtuale deve essere un nome DNS completo, ad esempio **&lt;serverEndpoint\>.fabrikam.com**.  
+    -   **Nome SQL Server**: immettere il nome virtuale per l'Endpoint configurato al momento della creazione del gruppo di disponibilità. Il nome virtuale deve essere un nome DNS completo, ad esempio **&lt;serverEndpoint\>.fabrikam.com**.  
 
-    -   **Istanza**: questo valore deve rimanere vuoto. In questa configurazione non esiste alcuna istanza.  
+    -   **Istanza**:  questo valore deve rimanere vuoto. In questa configurazione non esiste alcuna istanza.  
 
-    -   **Database**: immettere il nome del database creato nella replica primaria del gruppo di disponibilità.  
+    -   **Database**: immettere il nome del database che è stato creato sulla replica primaria del gruppo di disponibilità.  
 
 2.  Successivamente, è necessario fornire un percorso di rete al quale ciascun SQL Server del gruppo sia in grado di accedere:  
 

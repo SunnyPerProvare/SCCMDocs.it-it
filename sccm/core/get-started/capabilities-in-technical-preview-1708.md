@@ -10,12 +10,12 @@ ms.assetid: 3c061ceb-3bdb-4d4f-8c60-344964bd416b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b6764acf3ecc1aaad4a19c9d56880e7bd5692464
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: b751dab7ca02112959a9a7d6ed8a51b037f25b0e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334617"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422658"
 ---
 # <a name="capabilities-in-technical-preview-1708-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1708 per System Center Configuration Manager
 
@@ -30,7 +30,7 @@ Questo articolo presenta le funzionalità disponibili nella versione 1708 di Tec
     Workaround details.
 -->
 **Problemi noti di questa versione Technical Preview:**
--   **L'aggiornamento alla versione Technical Preview 1708 ha esito negativo se il server del sito è in modalità passiva**. Quando si esegue la versione Technical Preview 1706 o 1707 ed è presente un [server del sito primario in modalità passiva](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), è necessario disinstallare il server del sito in modalità passiva prima di poter aggiornare il sito Technical Preview alla versione 1708. Sarà possibile reinstallare il server del sito in modalità passiva quando nel sito è in esecuzione la versione 1708.
+- **L'aggiornamento alla versione Technical Preview 1708 ha esito negativo se il server del sito è in modalità passiva**. Quando si esegue la versione Technical Preview 1706 o 1707 ed è presente un [server del sito primario in modalità passiva](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), è necessario disinstallare il server del sito in modalità passiva prima di poter aggiornare il sito Technical Preview alla versione 1708. Sarà possibile reinstallare il server del sito in modalità passiva quando nel sito è in esecuzione la versione 1708.
 
   Per disinstallare il server del sito in modalità passiva:
   1. Nella console passare ad **Amministrazione** > **Panoramica** > **Configurazione del sito** > **Server e ruoli del sistema del sito** e quindi selezionare il server del sito in modalità passiva.
@@ -72,16 +72,14 @@ La procedura guidata mostra quali parametri sono obbligatori e quali sono facolt
 Quando viene eseguito lo script, verranno usati i valori dei parametri configurati. Se non è stato configurato un parametro obbligatorio, all'utente finale viene chiesto di fornire il parametro quando viene eseguito lo script.
 
 ## <a name="management-insights"></a>Informazioni dettagliate sulla gestione
-<!-- 1353967 -->
-Ora è possibile ottenere informazioni dettagliate sullo stato corrente dell'ambiente in base all'analisi dei dati nel database del sito. Le informazioni dettagliate aiutano a capire meglio l'ambiente e a intervenire di conseguenza. Rivedere le informazioni dettagliate sulla gestione nella console di Configuration Manager in **Amministrazione**  > **Management Insights** (Informazioni dettagliate gestione) > **All Insights** (Tutte le informazioni dettagliate). In questa versione sono disponibili le informazioni dettagliate seguenti:
+<!-- 1353967 --> Ora è possibile ottenere informazioni dettagliate sullo stato corrente dell'ambiente in base all'analisi dei dati nel database del sito. Le informazioni dettagliate aiutano a capire meglio l'ambiente e a intervenire di conseguenza. Rivedere le informazioni dettagliate sulla gestione nella console di Configuration Manager in **Amministrazione**  > **Management Insights** (Informazioni dettagliate gestione) > **All Insights** (Tutte le informazioni dettagliate). In questa versione sono disponibili le informazioni dettagliate seguenti:
 
-- **Applicazioni senza distribuzioni**: un elenco delle applicazioni dell'ambiente senza distribuzioni attive. Aiuta a individuare ed eliminare le applicazioni non usate per semplificare l'elenco di applicazioni visualizzato nella console.
+- **Applicazioni senza distribuzioni**: elenca le applicazioni dell'ambiente senza distribuzioni attive. Aiuta a individuare ed eliminare le applicazioni non usate per semplificare l'elenco di applicazioni visualizzato nella console.
 - **Raccolte vuote**: un elenco delle raccolte dell'ambiente che non hanno membri. È possibile eliminare queste raccolte ad esempio per semplificare l'elenco delle raccolte visualizzate durante la distribuzione di oggetti.
 
 
 ## <a name="restart-computers-from-the-configuration-manager-console"></a>Riavviare i computer dalla console di Configuration Manager   
-<!-- 1356283 -->
-A partire da questa versione, è possibile usare la console di Configuration Manager per identificare i dispositivi client che richiedono il riavvio e quindi usare un'azione di notifica client per riavviarli.
+<!-- 1356283 --> A partire da questa versione, è possibile usare la console di Configuration Manager per identificare i dispositivi client che richiedono il riavvio e quindi usare un'azione di notifica client per riavviarli.
 
 Per identificare i dispositivi in attesa di riavvio, passare ad **Asset e conformità** > **Dispositivi** e selezionare una raccolta con i dispositivi che potrebbero richiedere un riavvio. Dopo aver selezionato una raccolta, è possibile visualizzare lo stato per ogni dispositivo nel riquadro dei dettagli, in una nuova colonna denominata **Riavvio in sospeso**. Ogni dispositivo ha un valore **Sì** o **No**.
 
@@ -100,16 +98,15 @@ Provare a completare le attività seguenti e quindi inviare **Feedback** dalla s
 
 
 ## <a name="software-center-customization"></a>Personalizzazione di Software Center
-<!-- 1351224 -->
-È possibile aggiungere elementi di branding aziendale e specificare la visibilità delle schede in Software Center. È possibile aggiungere il nome specifico della società per Software Center, impostare un tema di colori per la configurazione di Software Center, impostare il logo della società e impostare le schede visibili per i dispositivi client.
+<!-- 1351224 --> È possibile aggiungere elementi di branding aziendale e specificare la visibilità delle schede in Software Center. È possibile aggiungere il nome specifico della società per Software Center, impostare un tema di colori per la configurazione di Software Center, impostare il logo della società e impostare le schede visibili per i dispositivi client.
 
 ### <a name="customize-software-center"></a>Personalizzare Software Center
 
 Per modificare Software Center:
 
-1. Nella console di **Configuration Manager** scegliere **Amministrazione** > **Impostazioni client**. Fare clic sull'istanza di impostazione client desiderata.
-2. Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà**.
-3. Nella finestra di dialogo **Impostazioni predefinite** scegliere **Software Center**.
+1. Nella console di **Configuration Manager** scegliere  **Amministrazione** > **Impostazioni client**. Fare clic sull'istanza di impostazione client desiderata.
+2. Nella scheda  **Home** , nel gruppo  **Proprietà** scegliere  **Proprietà**.
+3. Nella finestra di dialogo  **Impostazioni predefinite** scegliere  **Software Center**.
 4. Selezionare **Sì** per **scegliere le nuove impostazioni per specificare informazioni sulla società**, in modo da abilitare le impostazioni di personalizzazione di Software Center.
 5. Digitare il **nome della società**.
 6. Selezionare la **combinazione colori per Software Center**.
@@ -125,4 +122,4 @@ Per modificare Software Center:
 
 ### <a name="next-steps"></a>Passaggi successivi
 
-Per altre informazioni sulla gestione delle applicazioni in Configuration Manager, vedere [Introduzione alla gestione delle applicazioni in System Center Configuration Manager](\sccm\apps\understand\introduction-to-application-management).
+Per altre informazioni sulla gestione delle applicazioni in Configuration Manager, vedere [Introduzione alla gestione delle applicazioni in System Center Configuration Manager](/sccm/apps/understand/introduction-to-application-management).

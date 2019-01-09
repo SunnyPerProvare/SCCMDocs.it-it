@@ -10,12 +10,12 @@ ms.assetid: 409e26e1-7716-4f1d-a0ee-34feabf20792
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6abf61488a96ec3299b606b10901b0787b82edc9
-ms.sourcegitcommit: fe279229a90fdc8cddbb13c7ffdbbb22af0e25ef
+ms.openlocfilehash: bdeed74504611589b36e31eff3c1957725345b8a
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47229348"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421842"
 ---
 # <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Novità della versione 1702 di System Center Configuration Manager
 
@@ -63,13 +63,13 @@ Di seguito sono riportati i miglioramenti apportati all'uso della funzionalità 
  È possibile usare le opzioni di feedback dalla console per inviare commenti e suggerimenti direttamente al team di sviluppo.
 
  È possibile trovare l'opzione **Commenti e suggerimenti**:
- -  Nella barra multifunzione, all'estrema sinistra della scheda Home di ogni nodo.  
-    ![Barra multifunzione](./media/feedback-home.png)
+- Nella barra multifunzione, all'estrema sinistra della scheda Home di ogni nodo.  
+  ![Barra multifunzione](./media/feedback-home.png)
 
- -  Facendo clic con il pulsante destro del mouse su qualsiasi oggetto nella console.   
-     ![Opzione con clic con il pulsante destro del mouse](./media/feedback-option.png)   
+- Facendo clic con il pulsante destro del mouse su qualsiasi oggetto nella console.   
+   ![Opzione con clic con il pulsante destro del mouse](./media/feedback-option.png)   
 
- Quando si seleziona **Commenti e suggerimenti**, il browser visualizza il [sito Web UserVoice di Configuration Manager](https://go.microsoft.com/fwlink/?linkid=617029).
+  Quando si seleziona **Commenti e suggerimenti**, il browser visualizza il [sito Web UserVoice di Configuration Manager](https://go.microsoft.com/fwlink/?linkid=617029).
 
 
 ###  <a name="changes-for-updates-and-servicing"></a>Modifiche per Aggiornamenti e manutenzione
@@ -200,13 +200,13 @@ In questa versione sono stati introdotti i miglioramenti seguenti:
 ### <a name="improvements-to-the-auto-apply-driver-task-sequence"></a>Miglioramenti della sequenza di attività Applica automaticamente i driver
 Sono ora disponibili nuove variabili della sequenza di attività per la configurazione del valore di timeout nel passaggio della sequenza di attività Applica automaticamente i driver durante la creazione di richieste di catalogo HTTP. Sono disponibili le seguenti variabili e valori predefiniti (in secondi):
    - SMSTSDriverRequestResolveTimeOut  
-     Impostazione predefinita: 60
+     Predefinito: 60
    - SMSTSDriverRequestConnectTimeOut  
-     Impostazione predefinita: 60
+     Predefinito: 60
    - SMSTSDriverRequestSendTimeOut  
-     Impostazione predefinita: 60
+     Predefinito: 60
    - SMSTSDriverRequestReceiveTimeOut  
-     Impostazione predefinita: 480
+     Predefinito: 480
 
 ### <a name="windows-10-adk-tracked-by-build-version"></a>Windows 10 ADK rilevato dalla versione build
 Windows 10 ADK viene ora rilevato dalla versione build per garantire maggior supporto durante la personalizzazione delle immagini d'avvio di Windows 10. Ad esempio, se il sito usa Windows ADK per Windows 10, versione 1607, possono essere personalizzate nella console soltanto le immagini d'avvio con versione 10.0.14393. Per informazioni dettagliate sulla personalizzazione delle versioni WinPE, vedere [Personalizzare le immagini d'avvio](/sccm/osd/get-started/customize-boot-images).

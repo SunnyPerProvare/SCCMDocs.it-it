@@ -10,12 +10,12 @@ ms.assetid: d2ad00e8-9f10-41b6-816a-d8542c23a22e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d610b9f5980376bc9859fcd1e8bb34660e068b09
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 71ad5ae8ff823d03951d5f9ae1a13e8051cba23e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335015"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416572"
 ---
 # <a name="capabilities-in-technical-preview-1611-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1611 per System Center Configuration Manager
 
@@ -26,15 +26,15 @@ ms.locfileid: "32335015"
 Questo articolo presenta le funzionalità disponibili nella versione Technical Preview 1611 per System Center Configuration Manager. È possibile installare questa versione per aggiornare e aggiungere nuove funzionalità al sito di Technical Preview di Configuration Manager. Prima di installare questa versione Technical Preview, consultare l'argomento introduttivo [Technical Preview for System Center Configuration Manager](../../core/get-started/technical-preview.md) (Technical Preview per System Center Configuration Manager) per acquisire familiarità con i requisiti generali e con le limitazioni per l'uso di una versione Technical Preview, con le modalità di aggiornamento tra le versioni e con le modalità per offrire feedback e suggerimenti sulle funzionalità di una versione Technical Preview.    
 
 **Problemi noti di questa versione Technical Preview:**   
-- ***Stato dei prerequisiti***: quando si installa la versione 1611, lo stato generale dei prerequisiti corrisponde a Controllo prerequisiti superato con avvisi ma i prerequisiti che hanno causato gli avvisi non vengono visualizzati. Ciò può essere causato dai due prerequisiti seguenti:
+- ***Stato dei prerequisiti***: quando si installa la versione 1611, lo stato generale dei prerequisiti corrisponde a Controllo prerequisiti superato con avvisi, ma i prerequisiti che hanno causato gli avvisi non vengono visualizzati. Ciò può essere causato dai due prerequisiti seguenti:
   - Opzioni della memoria di creazione indici di SQL
   - Controlli per la versione di SQL Server supportata  
 
- Poiché si tratta solo di avvisi, possono essere ignorati.
+  Poiché si tratta solo di avvisi, possono essere ignorati.
 
-- ***PowerShell***: quando ci si connette a Windows PowerShell dalla console di Configuration Manager, è possibile ricevere l'errore seguente: **Microsoft.ConfigurationManagement.PowerShell.Types.ps1xml is not digitally signed** (Microsoft.ConfigurationManagement.PowerShell.Types.ps1xml senza firma digitale).  
+- ***PowerShell***: Quando ci si connette a Windows PowerShell dalla console di Configuration Manager, potrebbe essere visualizzato l'errore seguente: **Microsoft.ConfigurationManagement.PowerShell.Types.ps1xml is not digitally signed** (Microsoft.ConfigurationManagement.PowerShell.Types.ps1xml senza firma digitale).  
 
-   È possibile risolvere questo problema sostituendo determinati file con le versioni firmate corrispondenti della versione 1610. Dalla cartella **&lt;directory di installazione>\AdminConsole\bin\** della versione 1610 copiare tutti i file con le estensioni seguenti: **psd1**, **ps1xml** e **psm1**. Incollare questi file nella cartella **&lt;directory di installazione>\AdminConsole\bin\** della versione Technical Preview 1611, sovrascrivendo la versione 1611 dei file.
+   È possibile risolvere questo problema sostituendo determinati file con le versioni firmate corrispondenti della versione 1610. Dalla cartella **&lt;directory di installazione>\AdminConsole\bin\\** della versione 1610 copiare tutti i file con le estensioni seguenti: **psd1**, **ps1xml** e **psm1**. Incollare questi file nella cartella **&lt;directory di installazione>\AdminConsole\bin\\** della versione Technical Preview 1611, sovrascrivendo la versione 1611 dei file.
 
 
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  

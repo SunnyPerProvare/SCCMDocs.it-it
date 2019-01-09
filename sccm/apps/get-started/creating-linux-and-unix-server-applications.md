@@ -10,12 +10,12 @@ ms.assetid: 79cd131a-1a24-4751-87c8-7f275e45d847
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 35ccc4944359b89bad3ccac52309a289f69933f7
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 12a3bffb48cba2e3f258d06489b7511d05b7daad
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338214"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422080"
 ---
 # <a name="create-linux-and-unix-server-applications-with-system-center-configuration-manager"></a>Creare applicazioni server Linux e UNIX con System Center Configuration Manager
 
@@ -100,15 +100,15 @@ Nella seguente tabella vengono elencate le proprietà non supportate per i pacch
 ### <a name="deploy-software-to-a-linux-or-unix-server"></a>Distribuire il software in un server Linux o UNIX
  Per distribuire il software in un server Linux o UNIX usando un pacchetto e programma, è possibile usare la **Distribuzione guidata del software** dalla console di Configuration Manager. La maggior parte delle impostazioni di distribuzione è supportata dal client per Linux e UNIX. Tuttavia, alcune impostazioni non sono supportate. Quando si distribuisce il software, considerare quanto segue:  
 
--   È necessario effettuare il provisioning del pacchetto in almeno un punto di distribuzione associato al gruppo di limiti configurato per la posizione del contenuto.  
+- È necessario effettuare il provisioning del pacchetto in almeno un punto di distribuzione associato al gruppo di limiti configurato per la posizione del contenuto.  
 
--   È necessario che il client per Linux e UNIX che riceve questa distribuzione sia in grado di accedere a questo punto di distribuzione dal relativo percorso di rete.  
+- È necessario che il client per Linux e UNIX che riceve questa distribuzione sia in grado di accedere a questo punto di distribuzione dal relativo percorso di rete.  
 
--   Il client per Linux e UNIX scarica il pacchetto dal punto di distribuzione ed esegue il programma nel computer locale.  
+- Il client per Linux e UNIX scarica il pacchetto dal punto di distribuzione ed esegue il programma nel computer locale.  
 
--   Il client per Linux e UNIX non è in grado di scaricare i pacchetti dalle cartelle condivise. Scarica i pacchetti dai punti di distribuzione abilitati per IIS che supportano HTTP o HTTPS.  
+- Il client per Linux e UNIX non è in grado di scaricare i pacchetti dalle cartelle condivise. Scarica i pacchetti dai punti di distribuzione abilitati per IIS che supportano HTTP o HTTPS.  
 
- Nella tabella seguente sono elencate le proprietà per le distribuzioni che non sono supportate:  
+  Nella tabella seguente sono elencate le proprietà per le distribuzioni che non sono supportate:  
 
 |Proprietà di distribuzione|Comportamento|Altre informazioni|  
 |-------------------------|--------------|----------------------|  
@@ -131,23 +131,23 @@ Nella seguente tabella vengono elencate le proprietà non supportate per i pacch
 
  Per configurare un client per l'utilizzo dei controlli della larghezza di banda di rete, vengono configurate le impostazioni client per **Trasferimento intelligente in background** e quindi applicate al computer client. Per usare i controlli della larghezza di banda, il client deve ricevere le impostazioni client per **Trasferimento intelligente in background** con le impostazioni seguenti configurate come **Sì**:  
 
--   **Limitare la larghezza di banda di rete massima per i trasferimenti in background BITS**  
+- **Limitare la larghezza di banda di rete massima per i trasferimenti in background BITS**  
 
- Il client supporta le seguenti configurazioni per il Trasferimento intelligente in background:  
+  Il client supporta le seguenti configurazioni per il Trasferimento intelligente in background:  
 
-    -   **Ora di inizio dell'intervallo di limitazione**  
+  -   **Ora di inizio dell'intervallo di limitazione**  
 
-    -   **Ora di fine dell'intervallo di limitazione**  
+  -   **Ora di fine dell'intervallo di limitazione**  
 
-    -   **Velocità massima di trasferimento durante l'intervallo di limitazione (Kbps)**  
+  -   **Velocità massima di trasferimento durante l'intervallo di limitazione (Kbps)**  
 
-    -   **Velocità massima di trasferimento all'esterno dell'intervallo di limitazione (Kbps)**  
+  -   **Velocità massima di trasferimento all'esterno dell'intervallo di limitazione (Kbps)**  
 
 La seguente configurazione per Trasferimento intelligente in background non è supportata e viene ignorata dal client per Linux e UNIX:  
 
--   **Consentire i download BITS all'esterno dell'intervallo di limitazione**  
+- **Consentire i download BITS all'esterno dell'intervallo di limitazione**  
 
- Se il download del software sul client da un punto di distribuzione viene interrotto, il client per Linux e UNIX non lo riprende, ma riavvia il download dell'intero pacchetto software.  
+  Se il download del software sul client da un punto di distribuzione viene interrotto, il client per Linux e UNIX non lo riprende, ma riavvia il download dell'intero pacchetto software.  
 
 ##  <a name="configure-operations-for-software-deployments"></a>Configurare le operazioni per le distribuzioni software  
  Come per il client Windows, il client di Configuration Manager per Linux e UNIX individua nuove distribuzioni software quando esegue il polling e verifica la presenza di nuovi criteri. La frequenza con cui il client verifica la presenza di nuovi criteri dipende dalle impostazioni del client. È possibile configurare le finestre di manutenzione in modo che controllino quando si verificano le distribuzioni software.  

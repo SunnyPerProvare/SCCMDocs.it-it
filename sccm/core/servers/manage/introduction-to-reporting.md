@@ -10,12 +10,12 @@ ms.assetid: 230be984-d2cd-4d53-bd7a-bc24dd93fc22
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 579e9494a4f44f41a411af88bf58df7dcc5e8075
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 3cdc4ef389e4d46ad1c572b8785cb8ea26d90fcd
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340471"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416657"
 ---
 # <a name="introduction-to-reporting-in-system-center-configuration-manager"></a>Introduzione ai report in System Center Configuration Manager
 
@@ -28,17 +28,17 @@ La creazione di report in System Center Configuration Manager offre un set di st
 
  Configuration Manager usa SQL Server Reporting Services come soluzione per la creazione di report. L'integrazione con Reporting Services offre i seguenti vantaggi:  
 
--   Usa un sistema di creazione di report standard di settore per eseguire query nel database di Configuration Manager.  
+- Usa un sistema di creazione di report standard di settore per eseguire query nel database di Configuration Manager.  
 
--   Visualizza i report usando Visualizzatore report di Configuration Manager oppure Gestione report, che è una connessione al report basata su Web.  
+- Visualizza i report usando Visualizzatore report di Configuration Manager oppure Gestione report, che è una connessione al report basata su Web.  
 
--   Fornisce scalabilità, disponibilità e prestazioni elevate.  
+- Fornisce scalabilità, disponibilità e prestazioni elevate.  
 
--   Fornisce agli utenti sottoscrizioni ai report; ad esempio, un manager può eseguire una sottoscrizione per ricevere automaticamente tramite posta elettronica un report con i dettagli dello stato dell'implementazione di un aggiornamento software.  
+- Fornisce agli utenti sottoscrizioni ai report; ad esempio, un manager può eseguire una sottoscrizione per ricevere automaticamente tramite posta elettronica un report con i dettagli dello stato dell'implementazione di un aggiornamento software.  
 
--   Esporta report che gli utenti possono selezionare in una gamma dei formati più diffusi.  
+- Esporta report che gli utenti possono selezionare in una gamma dei formati più diffusi.  
 
- Per ulteriori informazioni su Reporting Services, vedere [SQL Server Reporting Services](http://go.microsoft.com/fwlink/p/?LinkID=212032) nella documentazione online di SQL Server 2008.  
+  Per ulteriori informazioni su Reporting Services, vedere [SQL Server Reporting Services](http://go.microsoft.com/fwlink/p/?LinkID=212032) nella documentazione online di SQL Server 2008.  
 
 ##  <a name="BKMK_ReportingServicesPoint"></a> Punto di Reporting Services  
  Il punto di Reporting Services è un ruolo del sistema del sito installato su un server che esegue Microsoft SQL Server Reporting Services. Il punto di Reporting Services copia le definizioni report di Configuration Manager in Reporting Services, crea cartelle report basate sulle categorie report e imposta criteri di sicurezza per le cartelle report e i report basati sulle autorizzazioni basate su ruoli per gli utenti amministratori di Configuration Manager. In un intervallo di 10 minuti, il punto di Reporting Services si collega a Reporting Services per riapplicare i criteri di protezione se sono stati modificati, ad esempio utilizzando la Gestione report. Per ulteriori informazioni su come pianificare e installare un punto di Reporting Services, vedere la seguente documentazione:  
@@ -80,30 +80,30 @@ La creazione di report in System Center Configuration Manager offre un set di st
 
  L'installazione di Generatore report aggiunge il supporto per più di 20 lingue. Quando si esegue Generatore report, i dati vengono visualizzati nella lingua del sistema operativo in esecuzione sul computer locale. Se Generatore report non supporta la lingua, i dati vengono visualizzati in inglese. Generatore report supporta tutte le funzionalità di SQL Server 2008 Reporting Services, tra cui:  
 
--   Offre un ambiente di creazione report intuitivo con un aspetto simile a Microsoft Office.  
+- Offre un ambiente di creazione report intuitivo con un aspetto simile a Microsoft Office.  
 
--   Offre il layout report flessibile di SQL Server 2008 Report Definition Language (RDL).  
+- Offre il layout report flessibile di SQL Server 2008 Report Definition Language (RDL).  
 
--   Offre vari moduli di visualizzazione dei dati, compresi grafici e indicatori.  
+- Offre vari moduli di visualizzazione dei dati, compresi grafici e indicatori.  
 
--   Fornisce caselle di testo con formattazione completa.  
+- Fornisce caselle di testo con formattazione completa.  
 
--   Effettua l'esportazione in formato Microsoft Word.  
+- Effettua l'esportazione in formato Microsoft Word.  
 
- È inoltre possibile aprire Generatore report da SQL Server Reporting Services.  
+  È inoltre possibile aprire Generatore report da SQL Server Reporting Services.  
 
 ##  <a name="BKMK_ReportModels"></a> Modelli di report in SQL Server Reporting Services  
  SQL Reporting Services in Configuration Manager usa modelli di report per consentire agli utenti amministratori di selezionare dal database elementi da includere nei report basati su modello. Per l'utente amministratore che crea il report, i modelli di report mostrano solo visualizzazioni ed elementi specifici da selezionare. Per creare report basati su modello, deve essere disponibile almeno un modello. I modelli di report dispongono delle seguenti funzionalità:  
 
--   È possibile assegnare campi di database e visualizzazioni con nomi aziendali logici per facilitare la produzione di report. Non è necessario conoscere la struttura del database per la produzione di report.  
+- È possibile assegnare campi di database e visualizzazioni con nomi aziendali logici per facilitare la produzione di report. Non è necessario conoscere la struttura del database per la produzione di report.  
 
--   È possibile raggruppare logicamente gli elementi.  
+- È possibile raggruppare logicamente gli elementi.  
 
--   È possibile definire relazioni tra elementi.  
+- È possibile definire relazioni tra elementi.  
 
--   È possibile proteggere gli elementi del modello in modo che gli utenti amministrativi possano vedere solo i dati che sono autorizzati a vedere.  
+- È possibile proteggere gli elementi del modello in modo che gli utenti amministrativi possano vedere solo i dati che sono autorizzati a vedere.  
 
- Nonostante Configuration Manager fornisca modelli di report campione, è anche possibile definire modelli di report per soddisfare i requisiti della propria azienda. Per altre informazioni su come creare modelli di report, vedere [Creazione di modelli di report personalizzati per System Center Configuration Manager in SQL Server Reporting Services](creating-custom-report-models-in-sql-server-reporting-services.md).  
+  Nonostante Configuration Manager fornisca modelli di report campione, è anche possibile definire modelli di report per soddisfare i requisiti della propria azienda. Per altre informazioni su come creare modelli di report, vedere [Creazione di modelli di report personalizzati per System Center Configuration Manager in SQL Server Reporting Services](creating-custom-report-models-in-sql-server-reporting-services.md).  
 
 ## <a name="next-steps"></a>Passaggi successivi
 [Pianificazione della creazione di report](planning-for-reporting.md)

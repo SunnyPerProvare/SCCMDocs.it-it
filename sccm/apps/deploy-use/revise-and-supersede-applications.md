@@ -10,12 +10,12 @@ ms.assetid: 30170d70-489f-47f7-bebf-9ed0115db26b
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: d32a2997da45f02dfd4d2abaf3bf292295f88224
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: b42012bdd6eb0456d25f9970ed2cf18f881a1c14
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335576"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424817"
 ---
 # <a name="revise-and-supersede-applications-in-system-center-configuration-manager"></a>Rivedere e sostituire le applicazioni in System Center Configuration Manager
 
@@ -76,13 +76,13 @@ In questo argomento verrà illustrato come rivedere le versioni delle applicazio
 
  È possibile creare una relazione di sostituzione che aggiorna l'applicazione dipendente a una nuova versione.  
 
-1.  Assicurarsi che la nuova applicazione dipendente e l'applicazione dipendente originale siano nello stesso gruppo di dipendenze dell'applicazione master.  
+1. Assicurarsi che la nuova applicazione dipendente e l'applicazione dipendente originale siano nello stesso gruppo di dipendenze dell'applicazione master.  
 
-2.  Creare una relazione di sostituzione che sostituisce l'applicazione dipendente originale con la nuova applicazione dipendente.  
+2. Creare una relazione di sostituzione che sostituisce l'applicazione dipendente originale con la nuova applicazione dipendente.  
 
- Durante le nuove installazioni dell'applicazione master, viene installata la nuova applicazione dipendente. Le installazioni esistenti dell'applicazione master vengono aggiornate con la nuova applicazione dipendente.  
+   Durante le nuove installazioni dell'applicazione master, viene installata la nuova applicazione dipendente. Le installazioni esistenti dell'applicazione master vengono aggiornate con la nuova applicazione dipendente.  
 
- Il risultato finale è che tutte le distribuzioni dell'applicazione master usano la nuova applicazione dipendente.  
+   Il risultato finale è che tutte le distribuzioni dell'applicazione master usano la nuova applicazione dipendente.  
 
 ### <a name="further-considerations"></a>Altre considerazioni  
 

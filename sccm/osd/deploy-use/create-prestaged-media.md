@@ -10,12 +10,12 @@ ms.assetid: ff6e7267-302a-4563-815e-cdc0d1a4b60f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 61c54ad6c0224dfae03a26784f0b3f61271b172c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 97c4bde7e589e5d3d3c3ee3683055ca8e7412a03
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353063"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419836"
 ---
 # <a name="create-prestaged-media-with-system-center-configuration-manager"></a>Creare supporti pre-installati con System Center Configuration Manager
 
@@ -24,13 +24,13 @@ ms.locfileid: "32353063"
 I supporti preinstallati in System Center Configuration Manager sono file WIM (Windows Imaging Format) che possono essere installati in un computer bare metal dal produttore o in un centro di gestione temporanea aziendale non connesso all'ambiente di Configuration Manager.  
 Il supporto pre-installato contiene l'immagine di avvio usata per avviare il computer di destinazione e l'immagine del sistema operativo applicata al computer di destinazione. È anche possibile specificare applicazioni, pacchetti e pacchetti driver da includere come parte del supporto pre-installato. La sequenza di attività che distribuisce il sistema operativo non è inclusa nel supporto. Il supporto pre-installato viene applicato al disco rigido di un nuovo computer prima che il computer venga inviato all'utente finale. Usare i supporti preinstallati per gli scenari di distribuzione del sistema operativo seguenti:  
 
--   [Creare un'immagine per un OEM presso un produttore computer o un deposito locale](../../osd/deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
+- [Creare un'immagine per un OEM presso un produttore computer o un deposito locale](../../osd/deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
 
--   [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)  
+- [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)  
 
--   [Distribuire Windows to Go](deploy-windows-to-go.md)  
+- [Distribuire Windows to Go](deploy-windows-to-go.md)  
 
- Quando viene avviato per la prima volta dopo l'applicazione del supporto pre-installato, il computer avvia Windows PE e si connette a un punto di gestione per trovare la sequenza di attività che completa il processo di distribuzione del sistema operativo. È possibile specificare applicazioni, pacchetti e pacchetti driver da includere come parte del supporto preinstallato. Quando si distribuisce una sequenza di attività che usa un supporto pre-installato, la procedura guidata verifica innanzitutto la presenza di contenuto valido nella cache della sequenza di attività locale. Se non è possibile trovare il contenuto oppure il contenuto è stato rivisto, la procedura guidata scarica il contenuto dal punto di distribuzione.  
+  Quando viene avviato per la prima volta dopo l'applicazione del supporto pre-installato, il computer avvia Windows PE e si connette a un punto di gestione per trovare la sequenza di attività che completa il processo di distribuzione del sistema operativo. È possibile specificare applicazioni, pacchetti e pacchetti driver da includere come parte del supporto preinstallato. Quando si distribuisce una sequenza di attività che usa un supporto pre-installato, la procedura guidata verifica innanzitutto la presenza di contenuto valido nella cache della sequenza di attività locale. Se non è possibile trovare il contenuto oppure il contenuto è stato rivisto, la procedura guidata scarica il contenuto dal punto di distribuzione.  
 
 ##  <a name="BKMK_CreatePrestagedMedia"></a> Come creare un supporto pre-installato  
  Prima di creare un supporto preinstallato usando la Creazione guidata del supporto per la sequenza attività, assicurarsi che siano soddisfatte tutte le condizioni seguenti:  
@@ -69,13 +69,13 @@ Il supporto pre-installato contiene l'immagine di avvio usata per avviare il com
 
 6.  Nella pagina **Proprietà del supporto**  specificare le informazioni seguenti e fare clic su **Avanti**.  
 
-    -   **Creato da**: specificare chi ha creato il supporto.  
+    -   **Creato da**: Specificare chi ha creato il supporto.  
 
-    -   **Versione**: specificare il numero di versione del supporto.  
+    -   **Versione**: Specificare il numero di versione del supporto.  
 
-    -   **Commento**: specificare una descrizione univoca dello scopo per cui viene usato il supporto.  
+    -   **Commento**: Specificare una descrizione univoca dello scopo per cui viene usato il supporto.  
 
-    -   **File supporto**: specificare il nome e il percorso dei file di output. La procedura guidata scrive i file di output in questa posizione. Ad esempio: **\\\nomeserver\cartella\fileoutput.wim**  
+    -   **File supporto**: Specificare il nome e il percorso dei file di output. La procedura guidata scrive i file di output in questa posizione. Ad esempio: **\\\nomeserver\cartella\fileoutput.wim**  
 
 7.  Nella pagina **Sicurezza** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
 

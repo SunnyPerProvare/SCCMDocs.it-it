@@ -10,12 +10,12 @@ ms.assetid: c21eec87-ad1c-4465-8e45-5feb60b92707
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fbba0306cececebeb7a0e20757e7de3b0d4d0e70
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 35312c92a20f8e3842b5ee47dd3b916631671e45
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32348335"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417354"
 ---
 # <a name="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager"></a>Aggiornare Windows alla versione più recente con System Center Configuration Manager
 
@@ -46,21 +46,21 @@ Questo articolo illustra la procedura da eseguire in Configuration Manager per a
 
 Esaminare i requisiti e le limitazioni seguenti per la sequenza di attività da eseguire per aggiornare un sistema operativo e assicurarsi che soddisfi le esigenze:  
 
-  -   Aggiungere solo i passaggi della sequenza di attività correlati all'attività di base di aggiornamento del sistema operativo. Tali passaggi includono principalmente l'installazione di pacchetti, applicazioni o aggiornamenti. Usare poi i passaggi che eseguono righe di comando o comandi PowerShell o che impostano variabili dinamiche.  
+- Aggiungere solo i passaggi della sequenza di attività correlati all'attività di base di aggiornamento del sistema operativo. Tali passaggi includono principalmente l'installazione di pacchetti, applicazioni o aggiornamenti. Usare poi i passaggi che eseguono righe di comando o comandi PowerShell o che impostano variabili dinamiche.  
 
-  -   Esaminare i driver e le applicazioni installate nei computer per assicurarsi che siano compatibili con Windows 10 prima di distribuire la sequenza di attività di aggiornamento.  
+- Esaminare i driver e le applicazioni installate nei computer per assicurarsi che siano compatibili con Windows 10 prima di distribuire la sequenza di attività di aggiornamento.  
 
-  -   Le attività seguenti non sono compatibili con l'aggiornamento sul posto e richiedono l'uso di una distribuzione di tipo tradizionale del sistema operativo:  
+- Le attività seguenti non sono compatibili con l'aggiornamento sul posto e richiedono l'uso di una distribuzione di tipo tradizionale del sistema operativo:  
 
-     -   Modifica dell'appartenenza al dominio del computer o aggiornamento del gruppo Administrators locale.  
+  - Modifica dell'appartenenza al dominio del computer o aggiornamento del gruppo Administrators locale.  
 
-     -   Implementazione una modifica fondamentale nel computer, ad esempio: 
-         - Modifica delle partizioni del disco
-         - Modifica dell'architettura del sistema da x86 a x64
-         - Implementazione di UEFI. Per altre informazioni su un'opzione possibile, vedere [Conversione da BIOS a UEFI durante un aggiornamento sul posto](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade).
-         - Modifica della lingua di base del sistema operativo  
+  - Implementazione una modifica fondamentale nel computer, ad esempio: 
+    - Modifica delle partizioni del disco
+    - Modifica dell'architettura del sistema da x86 a x64
+    - Implementazione di UEFI. Per altre informazioni su un'opzione possibile, vedere [Conversione da BIOS a UEFI durante un aggiornamento sul posto](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade).
+    - Modifica della lingua di base del sistema operativo  
 
-     -   Presenza di requisiti personalizzati, ad esempio l'uso di un'immagine di base personalizzata o di un tipo di crittografia del disco di terze parti oppure l'esecuzione di operazioni WinPE offline.  
+  - Presenza di requisiti personalizzati, ad esempio l'uso di un'immagine di base personalizzata o di un tipo di crittografia del disco di terze parti oppure l'esecuzione di operazioni WinPE offline.  
 
 ### <a name="infrastructure-requirements"></a>Requisiti dell'infrastruttura  
 

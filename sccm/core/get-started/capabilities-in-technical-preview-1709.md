@@ -10,12 +10,12 @@ ms.assetid: a3ef6bdc-a204-4c4c-a02f-2bd03f35183e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 74ffd06f8b9786d627dc7fd9cecb15215228313d
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 79d7488e0554a36eb274bf4ef76cff92b48a71ba
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341152"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418442"
 ---
 # <a name="capabilities-in-technical-preview-1709-for-system-center-configuration-manager"></a>Funzionalità di Technical Preview 1709 per System Center Configuration Manager
 
@@ -30,7 +30,7 @@ L'articolo illustra le funzionalità disponibili nella versione 1709 di Technica
     Workaround details.
 -->
 **Problemi noti di questa versione Technical Preview:**
--   **L'aggiornamento alla versione 1709 di Technical Preview ha esito negativo se il server del sito è in modalità passiva**. Quando si eseguono le versioni 1706, 1707 o 1708 di Technical Preview ed è presente un [server del sito primario in modalità passiva](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), è necessario disinstallare il server del sito in modalità passiva prima di poter aggiornare il sito alla versione 1709 di Technical Preview. Sarà possibile reinstallare il server del sito in modalità passiva quando nel sito sarà in esecuzione la versione 1709.
+- **L'aggiornamento alla versione 1709 di Technical Preview ha esito negativo se il server del sito è in modalità passiva**. Quando si eseguono le versioni 1706, 1707 o 1708 di Technical Preview ed è presente un [server del sito primario in modalità passiva](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), è necessario disinstallare il server del sito in modalità passiva prima di poter aggiornare il sito alla versione 1709 di Technical Preview. Sarà possibile reinstallare il server del sito in modalità passiva quando nel sito sarà in esecuzione la versione 1709.
 
   Per disinstallare il server del sito in modalità passiva:
   1. Nella console passare ad **Amministrazione** > **Panoramica** > **Configurazione del sito** > **Server e ruoli del sistema del sito** e quindi selezionare il server del sito in modalità passiva.
@@ -42,8 +42,7 @@ L'articolo illustra le funzionalità disponibili nella versione 1709 di Technica
 **Di seguito sono riportate le nuove funzionalità disponibili con questa versione.**  
 
 ## <a name="improved-vpn-profile-experience-in-configuration-manager-console"></a>Esperienza del profilo VPN migliorata nella console di Configuration Manager
-<!-- 1313282 -->
-In questa versione sono state aggiornate la procedura guidata di creazione del profilo VPN e le pagine delle proprietà per visualizzare le impostazioni appropriate per la piattaforma selezionata. In particolare:
+<!-- 1313282 --> In questa versione sono state aggiornate la procedura guidata di creazione del profilo VPN e le pagine delle proprietà per visualizzare le impostazioni appropriate per la piattaforma selezionata. In particolare:
 
 - Ogni piattaforma ha un proprio flusso di lavoro, vale a dire che i nuovi profili VPN contengono solo l'impostazione supportata dalla piattaforma.
 - Le pagine **Piattaforme supportate** vengono ora visualizzate dopo la pagina **Generale**.  È ora possibile scegliere la piattaforma prima di impostare i valori delle proprietà.
@@ -77,8 +76,7 @@ Creare un nuovo profilo VPN usando il processo consueto. Si noti che la prima pa
 Quando si selezionano piattaforme diverse, si noti che vengono visualizzate solo le impostazioni rilevanti per la piattaforma selezionata.
 
 ## <a name="co-management-for-windows-10-devices"></a>Co-gestione per dispositivi Windows 10    
-<!-- 1350871 -->
-Molti clienti vogliono gestire i dispositivi Windows 10 nello stesso modo in cui gestiscono i dispositivi mobili usando una soluzione semplice, a costi contenuti e basata su cloud. Tuttavia, la transizione dalla gestione tradizionale a una gestione moderna può essere complessa. A partire da Windows 10, versione 1607 (nota anche come Aggiornamento dell'anniversario) è possibile aggiungere un dispositivo Windows 10 ad Active Directory (AD) locale e ad Azure AD basata sul cloud AD allo stesso tempo (Azure AD ibrida). La co-gestione sfrutta questo miglioramento e consente di gestire i dispositivi Windows 10 contemporaneamente usando sia Configuration Manager che Intune. È una soluzione che costituisce un ponte tra la gestione tradizionale e quella moderna e che consente di eseguire la transizione mediante un approccio per fasi. 
+<!-- 1350871 --> Molti clienti vogliono gestire i dispositivi Windows 10 nello stesso modo in cui gestiscono i dispositivi mobili, usando una soluzione semplice, a costi contenuti e basata sul cloud. Tuttavia, la transizione dalla gestione tradizionale a una gestione moderna può essere complessa. A partire da Windows 10, versione 1607 (nota anche come Aggiornamento dell'anniversario) è possibile aggiungere un dispositivo Windows 10 ad Active Directory (AD) locale e ad Azure AD basata sul cloud AD allo stesso tempo (Azure AD ibrida). La co-gestione sfrutta questo miglioramento e consente di gestire i dispositivi Windows 10 contemporaneamente usando sia Configuration Manager che Intune. È una soluzione che costituisce un ponte tra la gestione tradizionale e quella moderna e che consente di eseguire la transizione mediante un approccio per fasi. 
 
 ### <a name="prerequisites"></a>Prerequisiti
 Prima di poter abilitare la co-gestione, è necessario soddisfare i prerequisiti seguenti. Esistono prerequisiti generali e prerequisiti diversi per client di Configuration Manager esistenti e per dispositivi non client.
@@ -162,7 +160,7 @@ Ad esempio, se sono stati restituiti i valori seguenti:
 
 - **FQDN del punto di gestione** : sccmmp.corp.contoso.com    
 - **Codice sito**: PS1    
-- **ID del tenant di Azure AD**: 72F988BF-86F1-41AF-91AB-2D7CD011XXXX    
+- **ID tenant di Azure AD**: 72F988BF-86F1-41AF-91AB-2D7CD011XXXX    
 - **Nome del tenant di Azure AD**: contoso    
 - **ID app client Azure AD**: bef323b3-042f-41a6-907a-f9faf0d1XXXX     
 - **URI ID risorsa AAD**: ConfigMgrServer    
@@ -203,8 +201,8 @@ Nella sezione precedente i dispositivi Windows 10 sono stati preparati per la co
 2. Nella scheda Home nel gruppo di gestione scegliere  **Configure co-management** (Configurazione co-gestione) per aprire il caricamento guidato della co-gestione.    
 3. Nella pagina della sottoscrizione fare clic su **Accedi**, accedere al tenant di Intune e fare clic su **Avanti**.   
 4. Nella pagina della gestione temporanea configurare le impostazioni seguenti e fare clic su **Avanti**:
-    - **Pilot group** (Gruppo pilota): il gruppo pilota contiene una o più raccolte selezionate. Usare il gruppo come parte dell'implementazione a fasi della co-gestione. È possibile iniziare con una raccolta di test di piccole dimensioni e quindi aggiungere più raccolte al gruppo pilota durante l'implementazione della co-gestione per più utenti e dispositivi. È possibile modificare le raccolte del gruppo pilota in qualsiasi momento dalle proprietà della co-gestione.
-    - **Produzione**: quando si seleziona questa impostazione, tutti i dispositivi Windows 10 supportati vengono abilitati per la co-gestione. Configurare **Exclusion group** (Gruppo di esclusione) con una o più raccolte. I dispositivi che sono membri di una raccolta nel gruppo vengono esclusi dalla co-gestione. 
+    - **Gruppo pilota**: il gruppo pilota contiene una o più raccolte selezionate. Usare il gruppo come parte dell'implementazione a fasi della co-gestione. È possibile iniziare con una raccolta di test di piccole dimensioni e quindi aggiungere più raccolte al gruppo pilota durante l'implementazione della co-gestione per più utenti e dispositivi. È possibile modificare le raccolte del gruppo pilota in qualsiasi momento dalle proprietà della co-gestione.
+    - **Production**: quando si seleziona questa impostazione, tutti i dispositivi Windows 10 supportati vengono abilitati per la co-gestione. Configurare **Exclusion group** (Gruppo di esclusione) con una o più raccolte. I dispositivi che sono membri di una raccolta nel gruppo vengono esclusi dalla co-gestione. 
 5. Nella pagina di attivazione scegliere **Pilota** o **Tutti**, a seconda delle impostazioni configurate nella pagina della gestione temporanea, per abilitare la registrazione automatica in Intune e fare clic su **Avanti**. Quando si sceglie **Pilota**, vengono registrati automaticamente in Intune solo i client di Configuration Manager che sono membri del gruppo pilota. Ciò consente di abilitare la co-gestione inizialmente su un subset di client per testarla e implementarla mediante un approccio per fasi. 
 6. Nella pagina dei carichi di lavoro scegliere se passare i carichi di lavoro di Configuration Manager a Intune e fare clic su **Avanti**. Usare i dispositivi di scorrimento per selezionare se passare il carico di lavoro per il gruppo di pilota o per tutti i client Windows 10, a seconda delle impostazioni configurate nella pagina della gestione temporanea. 
 7. Per abilitare la co-gestione, completare la procedura guidata.  

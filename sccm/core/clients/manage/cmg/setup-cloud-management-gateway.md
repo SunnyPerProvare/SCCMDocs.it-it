@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
-ms.openlocfilehash: 041ea28e91b77545b8984742b4199782d1edb6b7
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 8f743514af8b89212b10073c07b24990ffedcb1a
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456533"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420397"
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Configurare il gateway di gestione cloud per Configuration Manager
 
@@ -82,37 +82,37 @@ Eseguire questa procedura nel sito di livello superiore. Tale sito è un sito pr
 
 5. Selezionare **Avanti**. Attendere che il sito completi il test della connessione ad Azure.  
 
-4. Nella pagina Impostazioni della procedura guidata, selezionare **Sfoglia** e scegliere il file PFX del certificato di autenticazione server per il Cloud Management Gateway. Il nome di questo certificato popola i campi obbligatori **FQDN servizio** e **Nome servizio**.  
+6. Nella pagina Impostazioni della procedura guidata, selezionare **Sfoglia** e scegliere il file PFX del certificato di autenticazione server per il Cloud Management Gateway. Il nome di questo certificato popola i campi obbligatori **FQDN servizio** e **Nome servizio**.  
 
    > [!NOTE]  
    > A partire dalla versione 1802, il certificato di autenticazione server del Cloud Management Gateway supporta i caratteri jolly. Se si usa un certificato con caratteri jolly, sostituire l'asterisco (\*) nel campo **FQDN servizio** con il nome desiderato per il Cloud Management Gateway.  
    <!--491233-->  
 
-5. Selezionare l'elenco a discesa **Area** per scegliere l'area di Azure per questo Cloud Management Gateway.  
+7. Selezionare l'elenco a discesa **Area** per scegliere l'area di Azure per questo Cloud Management Gateway.  
 
-6. Nella versione 1802 e con la distribuzione Azure Resource Manager, selezionare un'opzione per **Gruppo di risorse**. 
+8. Nella versione 1802 e con la distribuzione Azure Resource Manager, selezionare un'opzione per **Gruppo di risorse**. 
    1. Se si sceglie **Usa esistente** immettere il nome del nuovo gruppo di risorse o selezionare un gruppo di risorse esistente nell'elenco a discesa.
    2. Se si sceglie **Crea nuovo** immettere il nome del nuovo gruppo di risorse.
 
-6. Nel campo **Istanza della macchina virtuale** immettere il numero di macchine virtuali per questo servizio. Il valore predefinito è uno, ma è possibile impostare fino a 16 macchine virtuali per Cloud Management Gateway.  
+9. Nel campo **Istanza della macchina virtuale** immettere il numero di macchine virtuali per questo servizio. Il valore predefinito è uno, ma è possibile impostare fino a 16 macchine virtuali per Cloud Management Gateway.  
 
-7. Selezionare **Certificati** per aggiungere i certificati radice trusted del client. Aggiungere fino a due autorità di certificazione radice attendibili e quattro autorità intermedie (subordinate).  
+10. Selezionare **Certificati** per aggiungere i certificati radice trusted del client. Aggiungere fino a due autorità di certificazione radice attendibili e quattro autorità intermedie (subordinate).  
+
+     > [!Note]  
+     > A partire dalla versione 1806, quando si crea un CMG non è più necessario specificare un certificato radice trusted nella pagina Impostazioni. Questo certificato non è obbligatorio se si usa Azure Active Directory (Azure AD) per l'autenticazione client, ma veniva richiesto nella procedura guidata. Se si usano certificati di autenticazione client PKI, è comunque necessario aggiungere un certificato radice trusted al CMG.<!--SCCMDocs-pr issue #2872-->  
+
+11. Per impostazione predefinita, la procedura guidata abilita l'opzione **Verifica la revoca del certificato client**. Per il funzionamento di questa verifica è necessario pubblicare in modalità pubblica un elenco di revoche di certificati (CRL). Se non si pubblica un CRL, deselezionare questa opzione.  
+
+12. A partire dalla versione 1806, per impostazione predefinita, la procedura guidata abilita l'opzione seguente: **Consenti il funzionamento di CMG come punto di distribuzione cloud e per la gestione di contenuti da Archiviazione di Azure**. Ora un CMG può anche trasferire il contenuto ai client. Questa funzionalità riduce i certificati necessari e i costi delle macchine virtuali di Azure.  
+
+13. Selezionare **Avanti**.  
+
+14. Per monitorare il traffico del Cloud Management Gateway con una soglia di 14 giorni, selezionare la casella di controllo per attivare l'avviso di soglia. Specificare quindi la soglia e le percentuali in corrispondenza delle quali verranno generati i diversi livelli di avviso. Al termine scegliere **Avanti**.  
+
+15. Verificare le impostazioni e scegliere **Avanti**. Configuration Manager avvia la configurazione del servizio. Dopo l'esecuzione della procedura guidata saranno necessari da 5 a 15 minuti per completare il provisioning del servizio in Azure. Controllare la colonna **Stato** per la nuova istanza di Cloud Management Gateway per determinare quando il servizio è pronto.  
 
     > [!Note]  
-    > A partire dalla versione 1806, quando si crea un CMG non è più necessario specificare un certificato radice trusted nella pagina Impostazioni. Questo certificato non è obbligatorio se si usa Azure Active Directory (Azure AD) per l'autenticazione client, ma veniva richiesto nella procedura guidata. Se si usano certificati di autenticazione client PKI, è comunque necessario aggiungere un certificato radice trusted al CMG.<!--SCCMDocs-pr issue #2872-->  
-
-8. Per impostazione predefinita, la procedura guidata abilita l'opzione **Verifica la revoca del certificato client**. Per il funzionamento di questa verifica è necessario pubblicare in modalità pubblica un elenco di revoche di certificati (CRL). Se non si pubblica un CRL, deselezionare questa opzione.  
-
-9. A partire dalla versione 1806, per impostazione predefinita, la procedura guidata abilita l'opzione seguente: **Consenti il funzionamento di CMG come punto di distribuzione cloud e per la gestione di contenuti da Archiviazione di Azure**. Ora un CMG può anche trasferire il contenuto ai client. Questa funzionalità riduce i certificati necessari e i costi delle macchine virtuali di Azure.  
-
-10. Selezionare **Avanti**.  
-
-11. Per monitorare il traffico del Cloud Management Gateway con una soglia di 14 giorni, selezionare la casella di controllo per attivare l'avviso di soglia. Specificare quindi la soglia e le percentuali in corrispondenza delle quali verranno generati i diversi livelli di avviso. Al termine scegliere **Avanti**.  
-
-12. Verificare le impostazioni e scegliere **Avanti**. Configuration Manager avvia la configurazione del servizio. Dopo l'esecuzione della procedura guidata saranno necessari da 5 a 15 minuti per completare il provisioning del servizio in Azure. Controllare la colonna **Stato** per la nuova istanza di Cloud Management Gateway per determinare quando il servizio è pronto.  
-
- > [!Note]  
- > Per la risoluzione dei problemi relativi alle distribuzioni di Cloud Management Gateway, usare **CloudMgr.log** e **CMGSetup.log**. Per altre informazioni, vedere [File di log](/sccm/core/plan-design/hierarchy/log-files#cloud-management-gateway).
+    > Per la risoluzione dei problemi relativi alle distribuzioni di Cloud Management Gateway, usare **CloudMgr.log** e **CMGSetup.log**. Per altre informazioni, vedere [File di log](/sccm/core/plan-design/hierarchy/log-files#cloud-management-gateway).
 
 
 

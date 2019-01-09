@@ -10,12 +10,12 @@ ms.assetid: 2c8f57cf-1968-48de-87fb-4897432ed6e0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 976aeaacfadfa7d2f189f20ab001486d486b764e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: c88907b82e0066024128985e2d31522a2ea897ee
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335882"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416776"
 ---
 # <a name="how-to-monitor-clients-in-system-center-configuration-manager"></a>Come monitorare i client in System Center Configuration Manager
 
@@ -62,15 +62,15 @@ ms.locfileid: "32335882"
 
 ##  <a name="bkmk_allStatus"></a> Monitorare lo stato di tutti i client  
 
-1.  Nella console di Configuration Manager fare clic su **Monitoraggio** > **Stato client**. In questa pagina della console è possibile esaminare le statistiche generali per l'attività client e i controlli client nell'intero sito.  È anche possibile modificare l'ambito delle informazioni scegliendo una raccolta diversa.  
+1. Nella console di Configuration Manager fare clic su **Monitoraggio** > **Stato client**. In questa pagina della console è possibile esaminare le statistiche generali per l'attività client e i controlli client nell'intero sito.  È anche possibile modificare l'ambito delle informazioni scegliendo una raccolta diversa.  
 
-2.  Per visualizzare i dettagli delle statistiche, fare clic sul nome delle informazioni restituite, ad esempio **Client attivi che hanno superato il controllo o con nessun risultato**, ed esaminare le informazioni sui singoli client.  
+2. Per visualizzare i dettagli delle statistiche, fare clic sul nome delle informazioni restituite, ad esempio **Client attivi che hanno superato il controllo o con nessun risultato**, ed esaminare le informazioni sui singoli client.  
 
-3.  Fare clic su **Attività client** per visualizzare grafici che descrivono l'attività del client nel sito di Configuration Manager.  
+3. Fare clic su **Attività client** per visualizzare grafici che descrivono l'attività del client nel sito di Configuration Manager.  
 
-4.  Fare clic su **Controllo client** per visualizzare grafici che descrivono lo stato dei controlli client nel sito di Configuration Manager.  
+4. Fare clic su **Controllo client** per visualizzare grafici che descrivono lo stato dei controlli client nel sito di Configuration Manager.  
 
- È possibile configurare degli avvisi per inviare una notifica all'utente quando i client controllano i risultati oppure quando l'attività client cade al di sotto di una percentuale specificata di client in una raccolta oppure quando la correzione non viene eseguita correttamente su una percentuale specifica di client. Per informazioni su come configurare lo stato del client, vedere [Come configurare lo stato del client in System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md).  
+   È possibile configurare degli avvisi per inviare una notifica all'utente quando i client controllano i risultati oppure quando l'attività client cade al di sotto di una percentuale specificata di client in una raccolta oppure quando la correzione non viene eseguita correttamente su una percentuale specifica di client. Per informazioni su come configurare lo stato del client, vedere [Come configurare lo stato del client in System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md).  
 
 ##  <a name="BKMK_ClientHealth"></a> Controlli e correzioni effettuati dal controllo client  
  I controlli e le correzioni seguenti possono essere eseguiti dal controllo client.  

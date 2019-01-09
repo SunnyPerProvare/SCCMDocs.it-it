@@ -10,12 +10,12 @@ ms.assetid: ac034143-003e-4629-aac2-99eaffef4db1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7519971f05813edbf601c598b9281bcfdf19c83b
-ms.sourcegitcommit: fe279229a90fdc8cddbb13c7ffdbbb22af0e25ef
+ms.openlocfilehash: a9fe9c0b2f779558161e7995a01863e6415838ee
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47229331"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423083"
 ---
 # <a name="what39s-new-in-version-1706-of-system-center-configuration-manager"></a>Novità della versione 1706 di System Center Configuration Manager
 
@@ -132,28 +132,28 @@ Per informazioni dettagliate su tutte le impostazioni per Windows 10, vedere [Co
 
 * **Tipo di password richiesto**. Specificare se gli utenti devono creare una password alfanumerica o una password numerica. Per le password alfanumeriche, si specifica anche il numero minimo di set di caratteri che la password deve contenere. I quattro set di caratteri sono: lettere minuscole, lettere maiuscole, simboli e numeri.
 
- **Supportato in:**
- * Windows Phone 8+
- * Windows 8.1+
- * iOS 6+
-<br></br>
+  **Supportato in:**
+  * Windows Phone 8+
+  * Windows 8.1+
+  * iOS 6+
+  <br></br>
 * **Blocca il debug USB nel dispositivo**. Non è necessario configurare questa impostazione poiché l'esecuzione del debug dell'USB è già stata disabilitata in Android per i dispositivi di lavoro.
 
- **Supportato in:**
- * Android 4.0+
- * Samsung KNOX Standard 4.0+
-<br></br>
+  **Supportato in:**
+  * Android 4.0+
+  * Samsung KNOX Standard 4.0+
+  <br></br>
 * **Blocca app da origini sconosciute**. Obbligare i dispositivi a impedire l'installazione di app da origini sconosciute. Non è necessario configurare questa impostazione poiché Android per i dispositivi di lavoro limita sempre l'installazione da origini sconosciute.
 
   **Supportato in:**
   * Android 4.0+
   * Samsung KNOX Standard 4.0+
-<br></br>
+  <br></br>
 * **Rendi obbligatoria l'analisi delle minacce nelle app**. Questa impostazione specifica che la funzionalità dell'app di verifica è abilitata nel dispositivo.
 
- **Supportato in:**
- * Android da 4.2 a 4.4
- * Samsung KNOX Standard 4.0+
+  **Supportato in:**
+  * Android da 4.2 a 4.4
+  * Samsung KNOX Standard 4.0+
 
 Vedere [Creare e distribuire criteri di conformità del dispositivo](https://docs.microsoft.com/sccm/mdm/deploy-use/create-compliance-policy) per provare le nuove regole di conformità del dispositivo
 
@@ -175,7 +175,7 @@ Per altre informazioni, vedere [Creare ed eseguire script di PowerShell dalla co
 ### <a name="new-mobile-application-management-policy-settings"></a>Nuove impostazioni dei criteri di gestione delle applicazioni mobili    
 <!--1324760--> A partire da questa versione, è possibile usare tre nuove impostazioni di criteri di gestione delle applicazioni per dispositivi mobili (MAM):
 
-- **Blocca acquisizione schermo (solo per dispositivi Android):** specifica che le funzionalità di acquisizione schermo del dispositivo vengono bloccate quando si usa questa app.
+- **Blocca acquisizione schermo (solo per dispositivi Android):** Specifica che le funzionalità di acquisizione schermo del dispositivo vengono bloccate quando si usa questa app.
 
 Vedere [Proteggere le app usando i criteri di gestione delle applicazioni mobili in System Center Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/protect-apps-using-mam-policies) per provare le nuove impostazioni dei criteri di protezione dell'app.
 

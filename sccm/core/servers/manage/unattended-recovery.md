@@ -10,12 +10,12 @@ ms.assetid: 828c31d1-3d70-4412-b1a8-c92e7e504d39
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d868411b9e8bce171e8626e5a6ecab6125cc056e
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 637727356724085f019ac9ab336bc37e3635ea3a
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39386032"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415144"
 ---
 # <a name="unattended-site-recovery-for-configuration-manager"></a>Ripristino automatico del sito per Configuration Manager   
 
@@ -41,9 +41,9 @@ ms.locfileid: "39386032"
 
 -   **Nome chiave:** Action
 
-    -   **Richiesto:** sì
+    -   **Richiesto:** Sì
     -   **Valori:** RecoverCCAR
-    -   **Dettagli:** ripristina un sito di amministrazione centrale
+    -   **Dettagli:** Consente di ripristinare un sito di amministrazione centrale
 
 
 -   **Nome chiave:** CDLatest
@@ -55,7 +55,7 @@ ms.locfileid: "39386032"
 **RecoveryOptions**   
 -   **Nome chiave:** ServerRecoveryOptions   
 
-    -   **Richiesto:** sì
+    -   **Richiesto:** Sì
     -   **Valori:** 1, 2 o 4  
          1 = Ripristina il server del sito e SQL Server.   
          2 = Ripristina solo il server del sito.  
@@ -71,18 +71,18 @@ ms.locfileid: "39386032"
 
 -   **Nome chiave:** DatabaseRecoveryOptions
 
-    -   **Richiesto:** forse
+    -   **Richiesto:** Forse
     -   **Valori:**   
          - **10** = ripristina il database del sito dal backup.  
          - **20** = usa un database del sito che è stato ripristinato manualmente usando un altro metodo.   
          - **40** = crea un nuovo database per il sito. Usare questa opzione quando non è disponibile alcun backup di database del sito. I dati globali e i dati del sito vengono ripristinati tramite la replica da altri siti.  
          - **80** = ignora il ripristino del database.
-    -   **Dettagli:** specifica il modo in cui il programma di installazione ripristina il database del sito in SQL Server. Questa chiave è richiesta quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **4**.
+    -   **Dettagli:** specifica le modalità secondo cui il programma di installazione ripristinerà il database del sito in SQL Server. Questa chiave è richiesta quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **4**.
 
 
 -   **Nome chiave:** ReferenceSite  
 
-    -   **Richiesto:** forse
+    -   **Richiesto:** Forse
     -   **Valori:** &lt;FQDNSitoRiferimento\>
     -   **Dettagli:** specifica il sito primario di riferimento. Se il backup del database è antecedente al periodo di memorizzazione del rilevamento delle modifiche o se il sito viene ripristinato senza backup, il sito di amministrazione centrale usa il sito di riferimento per il ripristino dei dati globali.
 
@@ -94,114 +94,114 @@ ms.locfileid: "39386032"
 
 -   **Nome chiave:** SiteServerBackupLocation
 
-    -   **Richiesto:** no
+    -   **Richiesto:** No
     -   **Valori:** &lt;PercorsoSetBackupServerSito\>
-    -   **Dettagli:** specifica il percorso del set di backup del server del sito. Questa chiave è facoltativa quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **2**. Specificare un valore affinché la chiave **SiteServerBackupLocation** ripristini il sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.
+    -   **Dettagli:** Specifica il percorso per il set di backup del server del sito. Questa chiave è facoltativa quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **2**. Specificare un valore affinché la chiave **SiteServerBackupLocation** ripristini il sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.
 
 
 -   **Nome chiave:** BackupLocation
 
-    -   **Richiesto:** forse
+    -   **Richiesto:** Forse
     -   **Valori:** &lt;PercorsoSetBackupDatabaseSito\>
-    -   **Dettagli:** specifica il percorso del set di backup del database del sito. La chiave **BackupLocation** è richiesta quando viene configurato il valore **1** o **4** per la chiave **ServerRecoveryOptions** e viene configurato il valore **10** per la chiave **DatabaseRecoveryOptions** .
+    -   **Dettagli:** Specifica il percorso per il set di backup del database del sito. La chiave **BackupLocation** è richiesta quando viene configurato il valore **1** o **4** per la chiave **ServerRecoveryOptions** e viene configurato il valore **10** per la chiave **DatabaseRecoveryOptions** .
 
 
 **Opzioni**
 
--   **Nome chiave:** ProductID
-    -   **Richiesto:** sì
-    -   **Valori:**   
-         - xxxxx-xxxxx-xxxxx-xxxxx-xxxxx  
-         - valutazione
-    -   **Dettagli:** codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
+- **Nome chiave:** ProductID
+  -   **Richiesto:** Sì
+  -   **Valori:**   
+       - xxxxx-xxxxx-xxxxx-xxxxx-xxxxx  
+       - valutazione
+  -   **Dettagli:** codice Product Key per l'installazione di Configuration Manager, trattini inclusi. Immettere **Eval** per installare la versione di valutazione di Configuration Manager.  
 
 
--   **Nome chiave:** SiteCode
+- **Nome chiave:** SiteCode
 
-    -   **Richiesto:** sì
-    -   **Valori:** &lt;Codice del sito\>
-    -   **Dettagli:** tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. Specificare il codice del sito usato dal sito prima dell'errore.
-
-
--   **Nome chiave:** SiteName
-
-    -   **Richiesto:** sì
-    -   **Valori:** SiteName
-    -   **Dettagli:** descrizione del sito.
+  -   **Richiesto:** Sì
+  -   **Valori:** &lt;Codice del sito\>
+  -   **Dettagli:** tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. Specificare il codice del sito usato dal sito prima dell'errore.
 
 
--   **Nome chiave:** SMSInstallDir
+- **Nome chiave:** SiteName
 
-    -   **Richiesto:** sì
-    -   **Values:** &lt;*PercorsoInstallazioneConfigMg*>
-    -   **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.
-        > [!NOTE]   
-        >  È possibile specificare il percorso originale o uno nuovo da usare per l'installazione di Configuration Manager.
-
--   **Nome chiave:** SDKServer
-
-    -   **Richiesto:** sì
-    -   **Valori:** &lt;*FQDN del provider SMS*>
-    -   **Dettagli:** specifica l'FQDN del server che ospita il provider SMS. Specificare il server che ospitava il provider SMS prima dell'errore.
-
-         Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito.
-
--   **Nome chiave:** PrerequisiteComp
-
-    -   **Richiesto:** sì
-    -   **Valori:** 0 o 1  
-         0 = scarica   
-         1 = già scaricato
-    -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa il valore 0, il programma di installazione esegue il download dei file.  
+  -   **Richiesto:** Sì
+  -   **Valori:** SiteName
+  -   **Dettagli:** Descrizione per questo sito.
 
 
--   **Nome chiave:** PrerequisitePath
+- **Nome chiave:** SMSInstallDir
 
-    -   **Richiesto:** sì
-    -   **Valori:** &lt;*PathToSetupPrerequisiteFiles*>
-    -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.
+  - **Richiesto:** Sì
+  - **Valori:** &lt;*PercorsoInstallazioneConfigMgr*>
+  - **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.
+    > [!NOTE]   
+    >  È possibile specificare il percorso originale o uno nuovo da usare per l'installazione di Configuration Manager.
 
--   **Nome chiave:** AdminConsole
+- **Nome chiave:** SDKServer
 
-    -   **Richiesto:** forse
-    -   **Valori:** 0 o 1 0 = non installare   
-         1 = installa
-    -   **Dettagli:** specifica se installare la console di Configuration Manager. Questa chiave è necessaria tranne quando l'impostazione **ServerRecoveryOptions** ha valore **4**.
+  -   **Richiesto:** Sì
+  -   **Valori:** &lt;*FQDN del provider SMS*>
+  -   **Dettagli:** specifica l'FQDN del server che ospita il provider SMS. Specificare il server che ospitava il provider SMS prima dell'errore.
+
+       Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito.
+
+- **Nome chiave:** PrerequisiteComp
+
+  -   **Richiesto:** Sì
+  -   **Valori:** 0 o 1  
+       0 = scarica   
+       1 = già scaricato
+  -   **Dettagli:** specifica se i file dei prerequisiti di installazione sono già stati scaricati. Se ad esempio si usa il valore 0, il programma di installazione esegue il download dei file.  
 
 
--   **Nome chiave:** JoinCEIP   
-    > [!Note]  
-    > A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.
+- **Nome chiave:** PrerequisitePath
 
-    -   **Richiesto:** sì
-    -   **Valori:** 0 o 1  
-         0 = non partecipare  
-         1 = partecipa
-    -   **Dettagli:** specifica se partecipare al programma Analisi utilizzo software.
+  -   **Richiesto:** Sì
+  -   **Valori:** &lt;*PercorsoFilePrerequisitiInstallazione*>
+  -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.
+
+- **Nome chiave:** AdminConsole
+
+  -   **Richiesto:** Forse
+  -   **Valori:** 0 o 1 0 = non installare   
+       1 = installa
+  -   **Dettagli:** Specifica se installare la console di Configuration Manager. Questa chiave è necessaria tranne quando l'impostazione **ServerRecoveryOptions** ha valore **4**.
+
+
+- **Nome chiave:** JoinCEIP   
+  > [!Note]  
+  > A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.
+
+  -   **Richiesto:** Sì
+  -   **Valori:** 0 o 1  
+       0 = non partecipare  
+       1 = partecipa
+  -   **Dettagli:** Specifica se partecipare al programma Analisi utilizzo software.
 
 **SQLConfigOptions**
 
 -   **Nome chiave:** SQLServerName
 
-    -   **Richiesto:** sì
+    -   **Richiesto:** Sì
     -   **Valori:** *&lt;NomeSQLServer\>*
     -   **Dettagli:** nome del server o dell'istanza in cluster che esegue il sistema SQL Server in cui viene ospitato il database del sito. Specificare lo stesso server in cui era ospitato il database del sito prima dell'errore.
 
 
 -   **Nome chiave:** DatabaseName
 
-    -   **Richiesto:** sì
+    -   **Richiesto:** Sì
     -   **Valori:** *&lt;NomeDatabaseSito\>* o *&lt;NomeIstanza\>*\\*&lt;NomeDatabaseSito\>*
-    -   **Dettagli:** specifica il nome del database di SQL Server da creare o usare per installare il database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.
+    -   **Dettagli:** Il nome del database SQL Server da creare o usare per installare il database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.
 
         > [!IMPORTANT]  
         >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome del database del sito.
 
 -   **Nome chiave:** SQLSSBPort
 
-    -   **Richiesto:** no
+    -   **Richiesto:** No
     -   **Valori:** &lt;*NumeroPortaSSB*>
-    -   **Dettagli:** specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. In genere, SSB è configurato per usare la porta TCP 4022, ma sono supportate anche altre porte. Specificare la stessa porta SSB usata prima dell'errore.
+    -   **Dettagli:** Specifica la porta di SQL Server Service Broker (SSB) per l'utilizzo da parte di SQL Server. In genere, SSB è configurato per usare la porta TCP 4022, ma sono supportate anche altre porte. Specificare la stessa porta SSB usata prima dell'errore.
 
 ## <a name="recover-a-primary-site-unattended"></a>Ripristinare un sito primario automatico
  Usare le informazioni seguenti per configurare un file di script di installazione automatica per il ripristino di un sito di amministrazione centrale.
@@ -210,9 +210,9 @@ ms.locfileid: "39386032"
 
 -   **Nome chiave:** Action
 
-    -   **Richiesto:** sì
+    -   **Richiesto:** Sì
     -   **Valori:** RecoverPrimarySite
-    -   **Dettagli:** ripristina un sito primario
+    -   **Dettagli:** Ripristina un sito primario
 
 
 -   **Nome chiave:** CDLatest
@@ -225,7 +225,7 @@ ms.locfileid: "39386032"
 
 -   **Nome chiave:** ServerRecoveryOptions
 
-    -   **Richiesto:** sì
+    -   **Richiesto:** Sì
     -   **Valori:** 1, 2 o 4    
          1 = Ripristina il server del sito e SQL Server.   
          2 = Ripristina solo il server del sito.  
@@ -242,33 +242,33 @@ ms.locfileid: "39386032"
 
 -   **Nome chiave:** DatabaseRecoveryOptions
 
-    -   **Richiesto:** forse
+    -   **Richiesto:** Forse
     -   **Valori:**   
          - **10** = ripristina il database del sito dal backup.  
          - **20** = usa un database del sito che è stato ripristinato manualmente usando un altro metodo.     
          - **40** = crea un nuovo database per il sito. Usare questa opzione quando non è disponibile alcun backup di database del sito. I dati globali e i dati del sito vengono ripristinati tramite la replica da altri siti.  
          - **80** = ignora il ripristino del database.
-    -   **Dettagli:** specifica il modo in cui il programma di installazione ripristina il database del sito in SQL Server. Questa chiave è richiesta quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **4**.
+    -   **Dettagli:** specifica le modalità secondo cui il programma di installazione ripristinerà il database del sito in SQL Server. Questa chiave è richiesta quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **4**.
 
 
 -   **Nome chiave:** SiteServerBackupLocation
 
-    -   **Richiesto:** no
+    -   **Richiesto:** No
     -   **Valori:** &lt;PercorsoSetBackupServerSito\>
-    -   **Dettagli:** specifica il percorso del set di backup del server del sito. Questa chiave è facoltativa quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **2**. Specificare un valore affinché la chiave **SiteServerBackupLocation** ripristini il sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.     
+    -   **Dettagli:** Specifica il percorso per il set di backup del server del sito. Questa chiave è facoltativa quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **2**. Specificare un valore affinché la chiave **SiteServerBackupLocation** ripristini il sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.     
 
 
 -   **Nome chiave:** BackupLocation
 
-    -   **Richiesto:** forse
+    -   **Richiesto:** Forse
     -   **Valori:** &lt;PercorsoSetBackupDatabaseSito\>
-    -   **Dettagli:** specifica il percorso del set di backup del database del sito. La chiave **BackupLocation** è richiesta quando viene configurato il valore **1** o **4** per la chiave **ServerRecoveryOptions** e viene configurato il valore **10** per la chiave **DatabaseRecoveryOptions** .
+    -   **Dettagli:** Specifica il percorso per il set di backup del database del sito. La chiave **BackupLocation** è richiesta quando viene configurato il valore **1** o **4** per la chiave **ServerRecoveryOptions** e viene configurato il valore **10** per la chiave **DatabaseRecoveryOptions** .
 
 **Opzioni**
 
 -   **Nome chiave:** ProductID
 
-    -   **Richiesto:** sì
+    -   **Richiesto:** Sì
     -   **Valori:**     
          - xxxxx-xxxxx-xxxxx-xxxxx-xxxxx  
          - valutazione     
@@ -277,22 +277,22 @@ ms.locfileid: "39386032"
 
 -   **Nome chiave:** SiteCode
 
-    -   **Richiesto:** sì
+    -   **Richiesto:** Sì
     -   **Valori:** &lt;Codice del sito\>
     -   **Dettagli:** tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. Specificare il codice del sito usato dal sito prima dell'errore.
 
 
 -   **Nome chiave:** SiteName
 
-    -   **Richiesto:** sì
+    -   **Richiesto:** Sì
     -   **Valori:** SiteName
-    -   **Dettagli:** descrizione del sito.
+    -   **Dettagli:** Descrizione per questo sito.
 
 
 -   **Nome chiave:** SMSInstallDir
 
-    -   **Richiesto:** sì
-    -   **Values:** &lt;*PercorsoInstallazioneConfigMg*>
+    -   **Richiesto:** Sì
+    -   **Valori:** &lt;*PercorsoInstallazioneConfigMgr*>
     -   **Dettagli:** specifica la cartella di installazione per i file di programma di Configuration Manager.
 
         > [!NOTE]   
@@ -300,7 +300,7 @@ ms.locfileid: "39386032"
 
 -   **Nome chiave:** SDKServer
 
-    -   **Richiesto:** sì
+    -   **Richiesto:** Sì
     -   **Valori:** &lt;*FQDN del provider SMS*>
     -   **Dettagli:** specifica l'FQDN del server che ospita il provider SMS. Specificare il server che ospitava il provider SMS prima dell'errore.
 
@@ -308,7 +308,7 @@ ms.locfileid: "39386032"
 
 -   **Nome chiave:** PrerequisiteComp
 
-    -   **Richiesto:** sì
+    -   **Richiesto:** Sì
     -   **Valori:** 0 o 1    
          0 = scarica   
          1 = già scaricato   
@@ -317,71 +317,71 @@ ms.locfileid: "39386032"
 
 -   **Nome chiave:** PrerequisitePath
 
-    -   **Richiesto:** sì
-    -   **Valori:** &lt;*PathToSetupPrerequisiteFiles*>
+    -   **Richiesto:** Sì
+    -   **Valori:** &lt;*PercorsoFilePrerequisitiInstallazione*>
     -   **Dettagli:** specifica il percorso dei file dei prerequisiti di installazione. A seconda del valore di **PrerequisiteComp**, il programma di installazione usa questo percorso per archiviare i file scaricati oppure per individuare file scaricati in precedenza.
 
 
 -   **Nome chiave:** AdminConsole
 
-    -   **Richiesto:** forse
+    -   **Richiesto:** Forse
     -   **Valori:** 0 o 1  
          0 = non installare   
          1 = installa  
-    -   **Dettagli:** specifica se installare la console di Configuration Manager. Questa chiave è necessaria tranne quando l'impostazione **ServerRecoveryOptions** ha valore **4**.
+    -   **Dettagli:** Specifica se installare la console di Configuration Manager. Questa chiave è necessaria tranne quando l'impostazione **ServerRecoveryOptions** ha valore **4**.
 
 -   **Nome chiave:** JoinCEIP  
     > [!Note]  
     > A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.
 
-    -   **Richiesto:** sì
+    -   **Richiesto:** Sì
     -   **Valori:** 0 o 1    
          0 = non partecipare  
          1 = partecipa
-    -   **Dettagli:** specifica se partecipare al programma Analisi utilizzo software.
+    -   **Dettagli:** Specifica se partecipare al programma Analisi utilizzo software.
 
 
 **SQLConfigOptions**
 
 -   **Nome chiave:** SQLServerName
 
-    -   **Richiesto:** sì
+    -   **Richiesto:** Sì
     -   **Valori:** *&lt;NomeSQLServer\>*
     -   **Dettagli:** nome del server o dell'istanza in cluster che esegue il sistema SQL Server in cui viene ospitato il database del sito. Specificare lo stesso server in cui era ospitato il database del sito prima dell'errore.
 
 
 -   **Nome chiave:** DatabaseName
 
-    -   **Richiesto:** sì
+    -   **Richiesto:** Sì
     -   **Valori:** *&lt;NomeDatabaseSito\>* o *&lt;NomeIstanza\>*\\*&lt;NomeDatabaseSito\>*
-    -   **Dettagli:** specifica il nome del database di SQL Server da creare o usare per installare il database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.
+    -   **Dettagli:** Il nome del database SQL Server da creare o usare per installare il database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.
 
         > [!IMPORTANT]    
         >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome del database del sito.
 
 -   **Nome chiave:** SQLSSBPort
 
-    -   **Richiesto:** no
+    -   **Richiesto:** No
     -   **Valori:** &lt;*NumeroPortaSSB*>
-    -   **Dettagli:** specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. In genere, SSB è configurato per usare la porta TCP 4022, ma sono supportate anche altre porte. Specificare la stessa porta SSB usata prima dell'errore.
+    -   **Dettagli:** Specifica la porta di SQL Server Service Broker (SSB) per l'utilizzo da parte di SQL Server. In genere, SSB è configurato per usare la porta TCP 4022, ma sono supportate anche altre porte. Specificare la stessa porta SSB usata prima dell'errore.
 
 **Hierarchy ExpansionOption**
 
 -   **Nome chiave:** CCARSiteServer
 
-    -   **Richiesto:** forse
+    -   **Richiesto:** Forse
     -   **Valori:** &lt;*CodiceSitoPerSitoAmministrazioneCentrale*>
     -   **Dettagli:** specifica il sito di amministrazione centrale a cui si collega il sito primario quando viene aggiunto alla gerarchia di Configuration Manager. Questa impostazione è necessaria se il sito primario era collegato a un sito di amministrazione centrale prima dell'errore. Specificare il codice del sito usato dal sito di amministrazione centrale prima dell'errore.
 
 -   **Nome chiave:** CASRetryInterval
 
-    -   **Richiesto:** no
+    -   **Richiesto:** No
     -   **Valori:** &lt;*Intervallo*>
-    -   **Dettagli:** specifica l'intervallo (in minuti) tra i tentativi di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato per CASRetryInterval e quindi prova nuovamente a eseguire la connessione.
+    -   **Dettagli:** Specifica l'intervallo tra tentativi (in minuti) di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato per CASRetryInterval e quindi prova nuovamente a eseguire la connessione.
 
 
 -   **Nome chiave:** WaitForCASTimeout
 
-    -   **Richiesto:** no
+    -   **Richiesto:** No
     -   **Valori:** &lt;*Timeout*>
-    -   **Dettagli:** specifica il valore di timeout massimo (in minuti) per la connessione di un sito primario al sito di amministrazione centrale. Se ad esempio un sito primario non riesce a connettersi al sito di amministrazione centrale, tale sito primario proverà nuovamente a connettersi al sito di amministrazione centrale in base a CASRetryInterval finché non viene raggiunto il periodo di WaitForCASTimeout. È possibile specificare un valore compreso tra 0 e 100.
+    -   **Dettagli:** Specifica il valore di timeout massimo (in minuti) per la connessione di un sito primario al sito di amministrazione centrale. Se ad esempio un sito primario non riesce a connettersi al sito di amministrazione centrale, tale sito primario proverà nuovamente a connettersi al sito di amministrazione centrale in base a CASRetryInterval finché non viene raggiunto il periodo di WaitForCASTimeout. È possibile specificare un valore compreso tra 0 e 100.

@@ -10,12 +10,12 @@ ms.assetid: 58d52fdc-bd18-494d-9f3b-ccfc13ea3d35
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0cb94f8d14ff525687909290085e16ecd47fa39f
-ms.sourcegitcommit: 22257e35a7d7263939a6802602050190897412a8
+ms.openlocfilehash: cf5b55dddae34ac855f21e7d70967d3b9ab1c2dc
+ms.sourcegitcommit: 81e3666c41eb976cc7651854042dafe219e2e467
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51562049"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53747161"
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Preparare l'uso di gruppi di disponibilità Always On di SQL Server con Configuration Manager
 
@@ -24,12 +24,12 @@ ms.locfileid: "51562049"
 Usare questo articolo per preparare Configuration Manager per l'uso di gruppi di disponibilità Always On di SQL Server. Questa funzionalità fornisce una soluzione di disponibilità elevata e ripristino di emergenza per il database del sito.  
 
 Configuration Manager supporta l'uso di gruppi di disponibilità:
--     nei siti primari e nel sito di amministrazione centrale;
--     in locale o in Microsoft Azure.
+- nei siti primari e nel sito di amministrazione centrale;
+- in locale o in Microsoft Azure.
 
 Quando si usano i gruppi di disponibilità in Microsoft Azure, è possibile aumentare ulteriormente la disponibilità del database del sito con i *set di disponibilità di Azure*. Per altre informazioni sui set di disponibilità di Azure, vedere [Gestione della disponibilità delle macchine virtuali](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-manage-availability/).
 
->  [!Important]   
+> [!Important]
 >  Prima di continuare, acquisire familiarità con la configurazione di SQL Server e dei gruppi di disponibilità di SQL Server. Le informazioni seguenti fanno riferimento alla libreria della documentazione e alle procedure relative a SQL Server.
 
 
@@ -38,12 +38,12 @@ Quando si usano i gruppi di disponibilità in Microsoft Azure, è possibile aume
 
 Di seguito sono riportati gli scenari supportati per l'uso di gruppi di disponibilità con Configuration Manager. Per altre informazioni e procedure per ogni scenario, vedere [Configurare i gruppi di disponibilità per Configuration Manager](/sccm/core/servers/deploy/configure/configure-aoag).
 
--      [Creare un gruppo di disponibilità per l'uso con Configuration Manager](/sccm/core/servers/deploy/configure/configure-aoag#create-and-configure-an-availability-group)  
--     [Configurare un sito per l'uso di un gruppo di disponibilità](/sccm/core/servers/deploy/configure/configure-aoag#configure-a-site-to-use-the-database-in-the-availability-group)  
--     [Aggiungere e rimuovere i membri di una replica sincrona da un gruppo di disponibilità che ospita un database del sito](/sccm/core/servers/deploy/configure/configure-aoag#add-and-remove-synchronous-replica-members)  
--     [Configurare repliche con commit asincrono](/sccm/core/servers/deploy/configure/configure-aoag#configure-an-asynchronous-commit-repilca)  
--     [Ripristinare un sito da una replica con commit asincrono](/sccm/core/servers/deploy/configure/configure-aoag#use-the-asynchronous-replica-to-recover-your-site)  
--     [Spostare un database del sito da un gruppo di disponibilità a un'istanza predefinita o denominata di SQL Server autonomo](/sccm/core/servers/deploy/configure/configure-aoag#stop-using-an-availability-group)  
+- [Creare un gruppo di disponibilità per l'uso con Configuration Manager](/sccm/core/servers/deploy/configure/configure-aoag#create-and-configure-an-availability-group)  
+- [Configurare un sito per l'uso di un gruppo di disponibilità](/sccm/core/servers/deploy/configure/configure-aoag#configure-a-site-to-use-the-database-in-the-availability-group)  
+- [Aggiungere e rimuovere i membri di una replica sincrona da un gruppo di disponibilità che ospita un database del sito](/sccm/core/servers/deploy/configure/configure-aoag#add-and-remove-synchronous-replica-members)  
+- [Configurare repliche con commit asincrono](/sccm/core/servers/deploy/configure/configure-aoag#configure-an-asynchronous-commit-repilca)  
+- [Ripristinare un sito da una replica con commit asincrono](/sccm/core/servers/deploy/configure/configure-aoag#use-the-asynchronous-replica-to-recover-your-site)  
+- [Spostare un database del sito da un gruppo di disponibilità a un'istanza predefinita o denominata di SQL Server autonomo](/sccm/core/servers/deploy/configure/configure-aoag#stop-using-an-availability-group)  
 
 
 
@@ -95,23 +95,23 @@ Ogni membro di replica deve avere la configurazione seguente:
 
 - Deve usare l'*istanza predefinita* o un'*istanza denominata*  
 
-- L'opzione **Connessioni nel ruolo primario** deve essere impostata su **Sì**  
+- L'opzione **Connessioni nel ruolo primario** deve essere impostata su **Consenti tutte le connessioni**  
 
 - L'opzione **Secondario leggibile** deve essere impostata su **Sì**  
 
 - **Failover manuale** deve essere abilitato     
 
-    >  [!TIP]  
-    >  Configuration Manager supporta l'uso di repliche sincrone del gruppo di disponibilità se è stata scelta l'impostazione **Failover automatico**. Impostare **Failover manuale** quando:
-    >  -  Si esegue il programma di installazione di Configuration Manager per specificare l'uso del database del sito nel gruppo di disponibilità.  
-    >  -  Si installa un qualsiasi aggiornamento di Configuration Manager (non solo gli aggiornamenti che si applicano al database del sito).  
+  > [!TIP]
+  >  Configuration Manager supporta l'uso di repliche sincrone del gruppo di disponibilità se è stata scelta l'impostazione **Failover automatico**. Impostare **Failover manuale** quando:
+  >  -  Si esegue il programma di installazione di Configuration Manager per specificare l'uso del database del sito nel gruppo di disponibilità.  
+  >  -  Si installa un qualsiasi aggiornamento di Configuration Manager (non solo gli aggiornamenti che si applicano al database del sito).  
 
 #### <a name="replica-member-location"></a>Percorso dei membri della replica
 Tutte le repliche in un gruppo di disponibilità devono essere ospitate in locale o in Microsoft Azure. Non sono supportati gruppi che includono un membro locale e un membro in Azure.     
 
 Il programma di installazione di Configuration Manager deve connettersi a ogni replica. Quando si imposta un gruppo di disponibilità in Azure e il gruppo si trova dietro un bilanciamento del carico interno o esterno, aprire le seguenti porte predefinite:   
 
-- Mapper di endpoint RCP: **TCP 135**   
+- Mapper di endpoint RPC: **TCP 135**   
 
 - SQL Server Service Broker: **TCP 4022**  
 
@@ -253,11 +253,11 @@ Le limitazioni seguenti si applicano a tutti gli scenari.
 
 #### <a name="unsupported-database-use"></a>Uso di database non supportati
 
-- **Configuration Manager supporta solo il database del sito in un gruppo di disponibilità:** i database seguenti non sono supportati da Configuration Manager in un gruppo di disponibilità Always On di SQL Server:  
+- **Configuration Manager supporta solo il database del sito in un gruppo di disponibilità**: i database seguenti non sono supportati da Configuration Manager in un gruppo di disponibilità Always On di SQL Server:  
     - Database di report  
     - Database WSUS  
 
-- **Database preesistente:** non è possibile usare un nuovo database creato nella replica. Quando si configura un gruppo di disponibilità, ripristinare una copia di un database di Configuration Manager esistente nella replica primaria.  
+- **Database preesistente**: non è possibile usare un nuovo database creato nella replica. Quando si configura un gruppo di disponibilità, ripristinare una copia di un database di Configuration Manager esistente nella replica primaria.  
 
 #### <a name="setup-errors-in-configmgrsetuplog"></a>Errori di configurazione in ConfigMgrSetup.log  
 Quando si esegue il programma di installazione di Configuration Manager per spostare un database del sito in un gruppo di disponibilità, il programma tenta di elaborare i ruoli del database nelle repliche secondarie del gruppo di disponibilità. Il file **ConfigMgrSetup.log** mostra l'errore seguente:  

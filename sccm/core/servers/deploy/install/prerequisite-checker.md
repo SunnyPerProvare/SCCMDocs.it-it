@@ -10,12 +10,12 @@ ms.assetid: aaf13bb8-4ba2-4bd7-9fac-d36a9d88a1b6
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 296ed6590c10adeab22fb274d5e6f44bc578a784
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: c28152031a540ea3fd5f2ef7233c24fb86c8b7f7
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32339962"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422029"
 ---
 # <a name="prerequisite-checker-for-system-center-configuration-manager"></a>Controllo prerequisiti per System Center Configuration Manager
 
@@ -77,119 +77,119 @@ Per altre informazioni sui controlli eseguiti dal Controllo prerequisiti, vedere
 
 ## <a name="run-prerequisite-checker-from-a-command-prompt-to-use-options"></a>Eseguire il Controllo prerequisiti da un prompt dei comandi per usare le opzioni  
 
-1.  Aprire una finestra del prompt dei comandi e modificare le directory in base a una delle posizioni seguenti:  
+1. Aprire una finestra del prompt dei comandi e modificare le directory in base a una delle posizioni seguenti:  
 
-    -   **&lt;*Supporto di installazione di Configuration Manager*\>\SMSSETUP\BIN\X64**  
-    -   **&lt;*Percorso di installazione di Configuration Manager*\>\BIN\X64**  
+   -   **&lt;*Supporto di installazione di Configuration Manager*\>\SMSSETUP\BIN\X64**  
+   -   **&lt;*Percorso di installazione di Configuration Manager*\>\BIN\X64**  
 
-2.  Immettere **prereqchk.exe** con una o più opzioni della riga di comando seguenti.  
+2. Immettere **prereqchk.exe** con una o più opzioni della riga di comando seguenti.  
 
-    Ad esempio, per controllare un sito primario è possibile usare le opzioni seguenti:  
+   Ad esempio, per controllare un sito primario è possibile usare le opzioni seguenti:  
 
-       **prereqchk.exe [/NOUI] /PRI /SQL &lt;FQDN di SQL Server\> /SDK &lt;FQDN del provider SMS\> [/JOIN &lt;FQDN del sito di amministrazione centrale\>] [/MP &lt;FQDN del punto di gestione\>] [/DP &lt;FQDN del punto di distribuzione\>]**  
+      **prereqchk.exe [/NOUI] /PRI /SQL &lt;FQDN di SQL Server\> /SDK &lt;FQDN del provider SMS\> [/JOIN &lt;FQDN del sito di amministrazione centrale\>] [/MP &lt;FQDN del punto di gestione\>] [/DP &lt;FQDN del punto di distribuzione\>]**  
 
-    **Server del sito di amministrazione centrale:**  
+   **Server del sito di amministrazione centrale:**  
 
-    -   **/NOUI**  
-
-         Non obbligatorio. Avvia il Controllo prerequisiti senza visualizzare l'interfaccia utente. È necessario specificare questa opzione prima di qualsiasi altra opzione nella riga di comando.  
-
-    -   **/CAS**  
-
-         Obbligatorio. Verifica che il computer locale soddisfi i requisiti per il sito di amministrazione centrale.  
-
-    -   **/SQL &lt;*FQDN di SQL Server*>**  
-
-         Obbligatorio. Usando il nome di dominio completo (FQDN) verifica che il computer specificato soddisfi i requisiti per l'hosting del database del sito di Configuration Manager da parte di SQL Server.  
-
-    -   **/SDK &lt;*FQDN del provider SMS*>**  
-
-         Obbligatorio. Verifica che il computer specificato soddisfi i requisiti per il provider SMS.  
-
-    -   **/Ssbport**  
-
-         Non obbligatorio. Verifica se è attiva un'eccezione del firewall per consentire la comunicazione nella porta di SQL Server Service Broker (SSB). La porta SSB predefinita è la porta 4022.  
-
-    -   **InstallDir &lt;*Percorso di installazione di Configuration Manager*>**  
-
-         Non obbligatorio. Verifica lo spazio minimo su disco rispetto ai requisiti per l'installazione del sito.  
-
-    **Server del sito primario:**  
-
-    -   **/NOUI**  
+   -   **/NOUI**  
 
         Non obbligatorio. Avvia il Controllo prerequisiti senza visualizzare l'interfaccia utente. È necessario specificare questa opzione prima di qualsiasi altra opzione nella riga di comando.  
 
-    -   **/PRI**  
+   -   **/CAS**  
 
-         Obbligatorio. Verifica che il computer locale soddisfi i requisiti per il sito primario.  
+        Obbligatorio. Verifica che il computer locale soddisfi i requisiti per il sito di amministrazione centrale.  
 
-    -   **/SQL &lt;*FQDN di SQL Server*>**  
+   -   **/SQL &lt;*FQDN di SQL Server*>**  
 
-         Obbligatorio. Verifica che il computer specificato soddisfi i requisiti per l'hosting del database del sito di Configuration Manager da parte di SQL Server.  
+        Obbligatorio. Usando il nome di dominio completo (FQDN) verifica che il computer specificato soddisfi i requisiti per l'hosting del database del sito di Configuration Manager da parte di SQL Server.  
 
-    -   **/SDK &lt;*FQDN del provider SMS*>**  
+   -   **/SDK &lt;*FQDN del provider SMS*>**  
 
-         Obbligatorio. Verifica che il computer specificato soddisfi i requisiti per il provider SMS.  
+        Obbligatorio. Verifica che il computer specificato soddisfi i requisiti per il provider SMS.  
 
-    -   **/JOIN &lt;*FQDN del sito di amministrazione centrale*>**  
+   -   **/Ssbport**  
 
-         Non obbligatorio. Verifica che il computer locale soddisfi i requisiti per la connessione al server del sito di amministrazione centrale.  
+        Non obbligatorio. Verifica se è attiva un'eccezione del firewall per consentire la comunicazione nella porta di SQL Server Service Broker (SSB). La porta SSB predefinita è la porta 4022.  
 
-    -   **/MP &lt;*FQDN del punto di gestione*>**  
+   -   **InstallDir &lt;*Percorso di installazione di Configuration Manager*>**  
 
-         Non obbligatorio. Verifica che il computer specificato soddisfi i requisiti per il ruolo del sistema del sito del punto di gestione. Questa opzione è supportata solo quando si usa l'opzione **/PRI** .  
+        Non obbligatorio. Verifica lo spazio minimo su disco rispetto ai requisiti per l'installazione del sito.  
 
-    -   **/DP &lt;*FQDN del punto di distribuzione*>**  
+   **Server del sito primario:**  
 
-         Non obbligatorio. Verifica che il computer specificato soddisfi i requisiti per il ruolo del sistema del sito del punto di distribuzione. Questa opzione è supportata solo quando si usa l'opzione **/PRI** .  
+   -   **/NOUI**  
 
-    -   **/Ssbport**  
+       Non obbligatorio. Avvia il Controllo prerequisiti senza visualizzare l'interfaccia utente. È necessario specificare questa opzione prima di qualsiasi altra opzione nella riga di comando.  
 
-         Non obbligatorio. Verifica se è attiva un'eccezione del firewall per consentire la comunicazione sulla porta SSB. La porta SSB predefinita è la porta 4022.  
+   -   **/PRI**  
 
-    -   **InstallDir &lt;*Percorso di installazione di Configuration Manager*>**  
+        Obbligatorio. Verifica che il computer locale soddisfi i requisiti per il sito primario.  
 
-         Non obbligatorio. Verifica lo spazio minimo su disco rispetto ai requisiti per l'installazione del sito.  
+   -   **/SQL &lt;*FQDN di SQL Server*>**  
 
-    **Server del sito secondario:**  
+        Obbligatorio. Verifica che il computer specificato soddisfi i requisiti per l'hosting del database del sito di Configuration Manager da parte di SQL Server.  
 
-    -   **/NOUI**  
+   -   **/SDK &lt;*FQDN del provider SMS*>**  
 
-         Non obbligatorio. Avvia il Controllo prerequisiti senza visualizzare l'interfaccia utente. È necessario specificare questa opzione prima di qualsiasi altra opzione nella riga di comando.  
+        Obbligatorio. Verifica che il computer specificato soddisfi i requisiti per il provider SMS.  
 
-    -   **/SEC &lt;*FQDN del server del sito secondario*>**  
+   -   **/JOIN &lt;*FQDN del sito di amministrazione centrale*>**  
 
-         Obbligatorio. Verifica che il computer specificato soddisfi i requisiti per il sito secondario.  
+        Non obbligatorio. Verifica che il computer locale soddisfi i requisiti per la connessione al server del sito di amministrazione centrale.  
 
-    -   **/INSTALLSQLEXPRESS**  
+   -   **/MP &lt;*FQDN del punto di gestione*>**  
 
-         Non obbligatorio. Verifica se SQL Server Express può essere installato nel computer specificato.  
+        Non obbligatorio. Verifica che il computer specificato soddisfi i requisiti per il ruolo del sistema del sito del punto di gestione. Questa opzione è supportata solo quando si usa l'opzione **/PRI** .  
 
-    -   **/Ssbport**  
+   -   **/DP &lt;*FQDN del punto di distribuzione*>**  
 
-         Non obbligatorio. Verifica se è attiva un'eccezione del firewall per consentire la comunicazione per la porta SSB. La porta SSB predefinita è la porta 4022.  
+        Non obbligatorio. Verifica che il computer specificato soddisfi i requisiti per il ruolo del sistema del sito del punto di distribuzione. Questa opzione è supportata solo quando si usa l'opzione **/PRI** .  
 
-    -   **/Sqlport**  
+   -   **/Ssbport**  
 
-         Non obbligatorio. Verifica se è attiva un'eccezione del firewall per consentire le comunicazioni per la porta del servizio SQL Server e controlla che tale porta non sia usata da un'altra istanza denominata di SQL Server. La porta predefinita è 1433.  
+        Non obbligatorio. Verifica se è attiva un'eccezione del firewall per consentire la comunicazione sulla porta SSB. La porta SSB predefinita è la porta 4022.  
 
-    -   **InstallDir &lt;*Percorso di installazione di Configuration Manager*>**  
+   -   **InstallDir &lt;*Percorso di installazione di Configuration Manager*>**  
 
-         Non obbligatorio. Verifica lo spazio minimo su disco rispetto ai requisiti per l'installazione del sito.  
+        Non obbligatorio. Verifica lo spazio minimo su disco rispetto ai requisiti per l'installazione del sito.  
 
-    -   **/SourceDir**  
+   **Server del sito secondario:**  
 
-         Non obbligatorio. Verifica che l'account computer del sito secondario possa accedere alla cartella contenente i file di origine per l'installazione.  
+   -   **/NOUI**  
+
+        Non obbligatorio. Avvia il Controllo prerequisiti senza visualizzare l'interfaccia utente. È necessario specificare questa opzione prima di qualsiasi altra opzione nella riga di comando.  
+
+   -   **/SEC &lt;*FQDN del server del sito secondario*>**  
+
+        Obbligatorio. Verifica che il computer specificato soddisfi i requisiti per il sito secondario.  
+
+   -   **/INSTALLSQLEXPRESS**  
+
+        Non obbligatorio. Verifica se SQL Server Express può essere installato nel computer specificato.  
+
+   -   **/Ssbport**  
+
+        Non obbligatorio. Verifica se è attiva un'eccezione del firewall per consentire la comunicazione per la porta SSB. La porta SSB predefinita è la porta 4022.  
+
+   -   **/Sqlport**  
+
+        Non obbligatorio. Verifica se è attiva un'eccezione del firewall per consentire le comunicazioni per la porta del servizio SQL Server e controlla che tale porta non sia usata da un'altra istanza denominata di SQL Server. La porta predefinita è 1433.  
+
+   -   **InstallDir &lt;*Percorso di installazione di Configuration Manager*>**  
+
+        Non obbligatorio. Verifica lo spazio minimo su disco rispetto ai requisiti per l'installazione del sito.  
+
+   -   **/SourceDir**  
+
+        Non obbligatorio. Verifica che l'account computer del sito secondario possa accedere alla cartella contenente i file di origine per l'installazione.  
 
    **Console di Configuration Manager:**  
 
-    -   **/Adminui**  
+   -   **/Adminui**  
 
-         Obbligatorio. Verifica che il computer locale soddisfi i requisiti per l'installazione di Configuration Manager.  
+        Obbligatorio. Verifica che il computer locale soddisfi i requisiti per l'installazione di Configuration Manager.  
 
-3.  Nell'interfaccia utente del Controllo prerequisiti questo strumento crea un elenco di problemi individuati nella sezione **Risultato prerequisiti**.  
+3. Nell'interfaccia utente del Controllo prerequisiti questo strumento crea un elenco di problemi individuati nella sezione **Risultato prerequisiti**.  
 
-    -   Fare clic su un elemento nell'elenco per ottenere informazioni dettagliate su come risolvere il problema.  
-    -   Prima di installare il server del sito, il sistema del sito o la console di Configuration Manager, è necessario risolvere tutti gli elementi dell'elenco con stato di **errore**.  
-    -   È anche possibile aprire il file **ConfigMgrPrereq.log** nella radice dell'unità di sistema per esaminare i risultati del Controllo prerequisiti. Il file di log può contenere informazioni aggiuntive che non vengono visualizzate nell'interfaccia utente del Controllo Prerequisiti.  
+   -   Fare clic su un elemento nell'elenco per ottenere informazioni dettagliate su come risolvere il problema.  
+   -   Prima di installare il server del sito, il sistema del sito o la console di Configuration Manager, è necessario risolvere tutti gli elementi dell'elenco con stato di **errore**.  
+   -   È anche possibile aprire il file **ConfigMgrPrereq.log** nella radice dell'unità di sistema per esaminare i risultati del Controllo prerequisiti. Il file di log può contenere informazioni aggiuntive che non vengono visualizzate nell'interfaccia utente del Controllo Prerequisiti.  

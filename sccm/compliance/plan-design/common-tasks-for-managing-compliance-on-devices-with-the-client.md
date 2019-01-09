@@ -10,12 +10,12 @@ ms.assetid: 4e345791-74db-41ad-b472-024ce6521daf
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: ed9be26417aceef3fb73f48c2a4a2f15f0ba1b52
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: de1b5343bd66cec20ba55f0aa58add9839fcb48d
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333757"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418527"
 ---
 # <a name="common-tasks-for-managing-compliance-on-devices-with-the-system-center-configuration-manager-client"></a>Attività comuni per la gestione della conformità nei dispositivi con il client System Center Configuration Manager
 
@@ -43,66 +43,66 @@ Gli scenari presentati in questo argomento forniscono un'introduzione all'uso de
 ### <a name="scenario-disable-the-use-of-bluetooth-on-windows-10-devices"></a>Scenario: Disabilitare l'uso di Bluetooth in dispositivi Windows 10  
  In questo scenario il reparto di sicurezza ha identificato la funzionalità Bluetooth dei dispositivi quale mezzo che potrebbe essere usato per trasmettere informazioni aziendali riservate all'esterno dell'azienda. Di recente tutti i PC sono stati aggiornati a Windows 10 e si decide di disabilitare la funzionalità Bluetooth su questi dispositivi.  
 
-1.  Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **Windows 10** , quindi fare clic su **Avanti**.  
+1. Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **Windows 10** , quindi fare clic su **Avanti**.  
 
-2.  Nella pagina **Piattaforme supportate** della procedura guidata, selezionare tutte le piattaforme Windows 10.  
+2. Nella pagina **Piattaforme supportate** della procedura guidata, selezionare tutte le piattaforme Windows 10.  
 
-3.  Nella pagina **Impostazioni dispositivo** selezionare **Dispositivo**, quindi fare clic su **Avanti**.  
+3. Nella pagina **Impostazioni dispositivo** selezionare **Dispositivo**, quindi fare clic su **Avanti**.  
 
-4.  Nella pagina **Dispositivo** selezionare **Non consentito** come valore per **Bluetooth**.  
+4. Nella pagina **Dispositivo** selezionare **Non consentito** come valore per **Bluetooth**.  
 
-5.  Selezionare **Monitora e aggiorna impostazioni non conformi** per assicurarsi che la modifica venga applicata a tutti i dispositivi Windows 10.  
+5. Selezionare **Monitora e aggiorna impostazioni non conformi** per assicurarsi che la modifica venga applicata a tutti i dispositivi Windows 10.  
 
-6.  Completare la procedura guidata per creare l'elemento di configurazione.  
+6. Completare la procedura guidata per creare l'elemento di configurazione.  
 
- È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione con System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
+   È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione con System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
 
 ## <a name="scenarios-for-windows-desktop-and-server-computers-managed-with-the-configuration-manager-client"></a>Scenari per computer desktop e server di Windows gestiti con il client di Configuration Manager  
  Nei computer Mac che eseguono il client di Configuration Manager è possibile eseguire la valutazione di conformità in due modi:  
 
--   Valutare un file di preferenze (plist) di Mac OS X.  
+- Valutare un file di preferenze (plist) di Mac OS X.  
 
--   Usare uno script personalizzato e valutare i risultati restituiti dallo script.  
+- Usare uno script personalizzato e valutare i risultati restituiti dallo script.  
 
- Per altre informazioni, vedere [Come creare elementi di configurazione per dispositivi Mac OS X gestiti con il client di System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md).  
+  Per altre informazioni, vedere [Come creare elementi di configurazione per dispositivi Mac OS X gestiti con il client di System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md).  
 
 ### <a name="scenario-remediate-an-incorrect-registry-value-on-windows-desktop-computers"></a>Scenario: Correggere un valore non corretto del Registro di sistema nei computer desktop Windows  
  In questo scenario si scopre che un'importante app line-of-business non viene eseguita correttamente in alcuni computer gestiti che eseguono Windows 8.1. Dopo alcune indagini, si scopre che il problema è causato da una chiave del Registro di sistema denominata **HKEY_LOCAL_MACHINE\SOFTWARE\Woodgrove\LOB App\Configuration\Configuration1** , che in alcuni computer è impostata su un valore di **0** . Affinché l'app line-of-business venga eseguita correttamente, questo valore deve essere impostato su **1**.  
 
  In questa procedura verrà creato un elemento di configurazione che consente di monitorare e risolvere automaticamente i valori delle chiavi del Registro di sistema non corretti trovati.  
 
-1.  Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **Desktop e server di Windows (personalizzato)** , quindi fare clic su **Avanti**.  
+1. Nella pagina **Generale** della Creazione guidata dell'elemento di configurazione selezionare il tipo di elemento di configurazione **Desktop e server di Windows (personalizzato)** , quindi fare clic su **Avanti**.  
 
-2.  Nella pagina **Piattaforme supportate** della procedura guidata selezionare **Windows 8.1** (per verificare che l'elemento di configurazione si applichi solo ai computer interessati).  
+2. Nella pagina **Piattaforme supportate** della procedura guidata selezionare **Windows 8.1** (per verificare che l'elemento di configurazione si applichi solo ai computer interessati).  
 
-3.  Nella pagina **Impostazioni** fare clic su **Nuova** per creare una nuova impostazione.  
+3. Nella pagina **Impostazioni** fare clic su **Nuova** per creare una nuova impostazione.  
 
-4.  Nella scheda **Generale** della finestra di dialogo **Crea impostazione** configurare quanto segue:  
+4. Nella scheda **Generale** della finestra di dialogo **Crea impostazione** configurare quanto segue:  
 
-    -   **Nome** > **Impostazione di esempio**  
+   -   **Nome** > **Impostazione di esempio**  
 
-    -   **Tipo di impostazione** > **Valore del Registro di sistema**  
+   -   **Tipo di impostazione** > **Valore del Registro di sistema**  
 
-    -   **Tipo di dati** > **Numero intero** (perché il valore contiene solo un numero)  
+   -   **Tipo di dati** > **Numero intero** (perché il valore contiene solo un numero)  
 
-    -   **Hive** > **HKEY_LOCAL_MACHINE**  
+   -   **Hive** > **HKEY_LOCAL_MACHINE**  
 
-    -   **Chiave** > **SOFTWARE\Woodgrove\LOB App\Configuration\Configuration1**  
+   -   **Chiave** > **SOFTWARE\Woodgrove\LOB App\Configuration\Configuration1**  
 
-    -   **Valore** > **1** (il valore richiesto)  
+   -   **Valore** > **1** (il valore richiesto)  
 
-5.  Nella scheda **Regole di conformità** della finestra di dialogo **Crea impostazione** fare clic su **Nuova**, quindi nella finestra di dialogo **Crea regola** configurare quanto segue:  
+5. Nella scheda **Regole di conformità** della finestra di dialogo **Crea impostazione** fare clic su **Nuova**, quindi nella finestra di dialogo **Crea regola** configurare quanto segue:  
 
-    -   **Nome** > **Regola di esempio**  
+   -   **Nome** > **Regola di esempio**  
 
-    -   **Impostazione selezionata** : verificare che l'impostazione selezionata sia **Impostazione di esempio**.  
+   -   **Impostazione selezionata** : verificare che l'impostazione selezionata sia **Impostazione di esempio**.  
 
-    -   **Tipo di regola** > **Valore**  
+   -   **Tipo di regola** > **Valore**  
 
-    -   **L'impostazione deve essere conforme alla seguente regola** : verificare che il nome dell'impostazione sia corretto e configurare l'opzione per specificare che il valore dell'impostazione deve essere uguale **1**.  
+   -   **L'impostazione deve essere conforme alla seguente regola** : verificare che il nome dell'impostazione sia corretto e configurare l'opzione per specificare che il valore dell'impostazione deve essere uguale **1**.  
 
-    -   **Monitora e aggiorna le regole non conformi, se supportato**: selezionare questa casella per garantire che Configuration Manager reimposti il valore della chiave del Registro di sistema sul valore corretto nel caso in cui sia errato.  
+   -   **Monitora e aggiorna le regole non conformi, se supportato**: selezionare questa casella per garantire che Configuration Manager reimposti il valore della chiave del Registro di sistema sul valore corretto nel caso in cui sia errato.  
 
-6.  Completare la procedura guidata per creare l'elemento di configurazione.  
+6. Completare la procedura guidata per creare l'elemento di configurazione.  
 
- È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  
+   È ora possibile usare le informazioni contenute nell'argomento [Attività comuni per la creazione e la distribuzione di linee base di configurazione](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) per distribuire nei dispositivi la configurazione creata.  

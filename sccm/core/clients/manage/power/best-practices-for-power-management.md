@@ -10,12 +10,12 @@ ms.assetid: 9f7142e1-c972-4384-853b-2da1568cb3e3
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 480f7a890e82b46e2b2d69180763f39504a47e0c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a08162f36c247136dd346140480e2d29be0c4017
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344484"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424800"
 ---
 # <a name="best-practices-for-power-management-in-system-center-configuration-manager"></a>Procedure consigliate per il risparmio energia in System Center Configuration Manager
 
@@ -40,17 +40,17 @@ In System Center Configuration Manager usare le seguenti procedure consigliate p
 
  Esempi di computer che possono essere esclusi dal risparmio energia:  
 
--   Computer che devono rimanere accesi.  
+- Computer che devono rimanere accesi.  
 
--   Computer a cui gli utenti devono collegarsi mediante Connessione desktop remoto.  
+- Computer a cui gli utenti devono collegarsi mediante Connessione desktop remoto.  
 
--   Computer che non possono usare il risparmio energia.  
+- Computer che non possono usare il risparmio energia.  
 
--   Computer con il ruolo del sistema del sito del punto di distribuzione.  
+- Computer con il ruolo del sistema del sito del punto di distribuzione.  
 
--   Computer pubblici, ad esempio chioschi multimediali, display informativi o console di monitoraggio, in cui il computer e il monitor devono essere sempre accesi.  
+- Computer pubblici, ad esempio chioschi multimediali, display informativi o console di monitoraggio, in cui il computer e il monitor devono essere sempre accesi.  
 
- Per altre informazioni, vedere [Configuring Power Management in System Center Configuration Manager](../../../../core/clients/manage/power/configuring-power-management.md) (Configurazione del risparmio energia in System Center Configuration Manager).  
+  Per altre informazioni, vedere [Configuring Power Management in System Center Configuration Manager](../../../../core/clients/manage/power/configuring-power-management.md) (Configurazione del risparmio energia in System Center Configuration Manager).  
 
 ## <a name="first-apply-power-plans-to-a-test-collection-of-computers"></a>Applicare la combinazione per il risparmio di energia a una raccolta di test di computer  
  Analizzare sempre l'effetto dell'applicazione della combinazione per il risparmio di energia a una raccolta di test di computer prima di applicare tale combinazione a una raccolta più grande di computer.  

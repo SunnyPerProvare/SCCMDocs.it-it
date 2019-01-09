@@ -10,26 +10,26 @@ ms.assetid: d8d5c345-1e91-410b-b8a9-0170dcfa846e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8a5f801edced78306316a63d125d9b90b37600b2
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 676131965165acda9633e7fbceaee7f25d823efe
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349950"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420380"
 ---
 # <a name="manage-user-state-in-system-center-configuration-manager"></a>Gestire lo stato utente in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile usare le sequenze di attività di System Center Configuration Manager per acquisire e ripristinare i dati sullo stato utente in scenari di distribuzione del sistema operativo in cui si desidera mantenere lo stato utente del sistema operativo corrente. Ad esempio:  
+È possibile usare le sequenze attività di System Center Configuration Manager per acquisire e ripristinare i dati sullo stato utente in scenari di distribuzione del sistema operativo in cui si desidera mantenere lo stato utente del sistema operativo corrente. Ad esempio:  
 
--   Distribuzioni in cui si vuole acquisire lo stato utente da un computer per ripristinarlo in un altro computer.  
+- Distribuzioni in cui si vuole acquisire lo stato utente da un computer per ripristinarlo in un altro computer.  
 
--   Distribuzioni di aggiornamenti in cui si desidera acquisire e ripristinare lo stato utente sullo stesso computer.  
+- Distribuzioni di aggiornamenti in cui si desidera acquisire e ripristinare lo stato utente sullo stesso computer.  
 
- Configuration Manager usa l'Utilità di migrazione stato utente (USMT) 10.0 per gestire la migrazione dei dati sullo stato utente da un computer di origine a un computer di destinazione al termine dell'installazione del sistema operativo. Per altre informazioni sugli scenari comuni di migrazione per USMT 10.0 vedere  [Scenari di migrazione comuni](https://technet.microsoft.com/library/mt299169\(v=vs.85\).aspx).  
+  Configuration Manager usa l'Utilità di migrazione stato utente (USMT) 10.0 per gestire la migrazione dei dati sullo stato utente da un computer di origine a un computer di destinazione al termine dell'installazione del sistema operativo. Per altre informazioni sugli scenari comuni di migrazione per USMT 10.0 vedere  [Scenari di migrazione comuni](https://technet.microsoft.com/library/mt299169\(v=vs.85\).aspx).  
 
- Vedere le sezioni seguenti per informazioni sull'acquisizione e sul ripristino dei dati utente.
+  Vedere le sezioni seguenti per informazioni sull'acquisizione e sul ripristino dei dati utente.
 
 
 ##  <a name="BKMK_StoringUserData"></a> Archiviare i dati dello stato utente  
@@ -81,23 +81,23 @@ ms.locfileid: "32349950"
 ##  <a name="BKMK_StateMigrationPoint"></a> Configure a state migration point  
  Il punto di migrazione stato archivia i dati sullo stato dell'utente acquisiti in un computer e quindi ripristinati in un altro computer. Tuttavia, quando si acquisiscono le impostazioni utente per una distribuzione del sistema operativo nello stesso computer, ad esempio una distribuzione in cui il sistema operativo viene aggiornato nel computer di destinazione, è possibile archiviare i dati nello stesso computer con collegamenti reali oppure in un punto di migrazione stato. Per alcune distribuzioni di computer, quando viene creata l'archiviazione stati, Configuration Manager crea automaticamente un'associazione tra l'archiviazione stati e il computer di destinazione. Per configurare un punto di migrazione stato per archiviare i dati dello stato utente, è possibile utilizzare i metodi seguenti:  
 
--   Utilizzare la **Creazione guidata server del sistema sito** per creare un nuovo server di sistema del sito per il punto di migrazione stato.  
+- Utilizzare la **Creazione guidata server del sistema sito** per creare un nuovo server di sistema del sito per il punto di migrazione stato.  
 
--   Utilizzare l' **Aggiunta guidata ruoli del sistema del sito** per aggiungere un punto di migrazione stato a un server esistente.  
+- Utilizzare l' **Aggiunta guidata ruoli del sistema del sito** per aggiungere un punto di migrazione stato a un server esistente.  
 
- Quando si utilizzano queste procedure guidate, viene richiesto di fornire le informazioni seguenti per il punto di migrazione stato:  
+  Quando si utilizzano queste procedure guidate, viene richiesto di fornire le informazioni seguenti per il punto di migrazione stato:  
 
--   Cartelle in cui archiviare i dati dello stato utente.  
+- Cartelle in cui archiviare i dati dello stato utente.  
 
--   Numero massimo di client che possono archiviare i dati nel punto di migrazione stato.  
+- Numero massimo di client che possono archiviare i dati nel punto di migrazione stato.  
 
--   Spazio minimo disponibile per il punto di migrazione stato in cui archiviare i dati sullo stato utente.  
+- Spazio minimo disponibile per il punto di migrazione stato in cui archiviare i dati sullo stato utente.  
 
--   Criteri di eliminazione per il ruolo. È possibile specificare che i dati dello stato utente vengano eliminati immediatamente dopo il ripristino in un computer o dopo un numero specifico di giorni dopo il ripristino dei dati utente in un computer.  
+- Criteri di eliminazione per il ruolo. È possibile specificare che i dati dello stato utente vengano eliminati immediatamente dopo il ripristino in un computer o dopo un numero specifico di giorni dopo il ripristino dei dati utente in un computer.  
 
--   Se il punto di migrazione stato deve rispondere solo alle richieste di ripristino dei dati dello stato utente. Quando si abilita questa opzione, non è possibile utilizzare il punto di migrazione stato per archiviare dati dello stato utente.  
+- Se il punto di migrazione stato deve rispondere solo alle richieste di ripristino dei dati dello stato utente. Quando si abilita questa opzione, non è possibile utilizzare il punto di migrazione stato per archiviare dati dello stato utente.  
 
- Per altre informazioni sul punto di migrazione stato e sui passaggi per configurarlo, vedere [Punto di migrazione stato](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_StateMigrationPoints).  
+  Per altre informazioni sul punto di migrazione stato e sui passaggi per configurarlo, vedere [Punto di migrazione stato](prepare-site-system-roles-for-operating-system-deployments.md#BKMK_StateMigrationPoints).  
 
 ##  <a name="BKMK_ComputerAssociation"></a> Create a computer association  
  Creare un'associazione computer per definire una relazione tra un computer di origine e un computer di destinazione quando si installa un sistema operativo su hardware nuovo e si vogliono acquisire e ripristinare le impostazioni dei dati utente. Il computer di origine è un computer esistente gestito da Configuration Manager. Quando si distribuisce il nuovo sistema operativo nel computer di destinazione, il computer di origine contiene lo stato utente di cui viene eseguita la migrazione al computer di destinazione.  

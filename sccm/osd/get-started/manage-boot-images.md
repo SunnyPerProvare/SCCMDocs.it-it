@@ -10,12 +10,12 @@ ms.assetid: 97f2d81a-2c58-442c-88bc-defd5a1cd48f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6a2fe20896a781d7c897bd5a827d25a7b70390b7
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: b0fa269199f7f3bf4299f90faef9e55766f775d4
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351514"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421332"
 ---
 # <a name="manage-boot-images-with-system-center-configuration-manager"></a>Gestire le immagini d'avvio con System Center Configuration Manager
 
@@ -24,7 +24,7 @@ ms.locfileid: "32351514"
 Un'immagine d'avvio in Configuration Manager è un'immagine [Windows PE](https://docs.microsoft.com/windows-hardware/manufacture/desktop/winpe-intro) (WinPE) che viene usata durante la distribuzione di un sistema operativo. Le immagini d'avvio si usano per avviare un computer in WinPE. Questo sistema operativo di base contiene servizi e componenti limitati. Configuration Manager usa WinPE per preparare il computer di destinazione per l'installazione di Windows. Usare le sezioni seguenti per gestire le immagini d'avvio.
 
 ## <a name="BKMK_BootImageDefault"></a> Immagini d'avvio predefinite
-Configuration Manager offre due immagini d'avvio predefinite: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. Queste immagini sono archiviate nel percorso: \\\\*nomeserver*>\SMS_<*codicesito*>\osd\boot\\<*x64*> or <*i386*>. Le immagini di avvio predefinite vengono aggiornate o rigenerate in base all'azione eseguita.
+In Configuration Manager sono disponibili due immagini d'avvio predefinite: una per il supporto delle piattaforme x86 e una per il supporto delle piattaforme x64. Queste immagini sono archiviate nel percorso: \\\\*nomeserver*>\SMS_<*codicesito*>\osd\boot\\<*x64*> or <*i386*>. Le immagini di avvio predefinite vengono aggiornate o rigenerate in base all'azione eseguita.
 
 Tenere presente i comportamenti seguenti per le azioni descritte per le immagini d'avvio predefinite:
 - Gli oggetti driver di origine devono essere validi. Questi oggetti includono i file di origine del driver. Se gli oggetti non sono validi, il sito non aggiunge i driver alle immagini d'avvio.
@@ -62,51 +62,51 @@ A partire dalla versione 1706 di Configuration Manager, ricaricare nell'immagine
 
  Durante l'installazione del sito, Configuration Manager aggiunge automaticamente immagini d'avvio basate su una versione di WinPE dalla versione supportata di Windows ADK. A seconda della versione di Configuration Manager, è possibile aggiungere immagini d'avvio basate su una diversa versione di WinPE dalla versione supportata di Windows ADK. Quando si prova ad aggiungere un'immagine d'avvio che contiene una versione non supportata di WinPE si verifica un errore. L'elenco seguente include le versioni di Windows ADK e WinPE attualmente supportate: 
 
--   **Versione di Windows ADK**  
+- **Versione di Windows ADK**  
 
-     Windows ADK per Windows 10  
+   Windows ADK per Windows 10  
 
--   **Versioni di Windows PE per le immagini d'avvio personalizzabili dalla console di Configuration Manager**  
+- **Versioni di Windows PE per le immagini d'avvio personalizzabili dalla console di Configuration Manager**  
 
-     Windows PE 10  
+   Windows PE 10  
 
--   **Versioni di Windows PE supportate per le immagini d'avvio non personalizzabili dalla console di Configuration Manager**  
+- **Versioni di Windows PE supportate per le immagini d'avvio non personalizzabili dalla console di Configuration Manager**  
 
-     Windows PE 3.1<sup>1</sup> e Windows PE 5  
+   Windows PE 3.1<sup>1</sup> e Windows PE 5  
 
-     <sup>1</sup> È possibile aggiungere un'immagine d'avvio a Configuration Manager solo se è basata su Windows PE 3.1. Aggiornare Windows AIK per Windows 7 (basato su Windows PE 3.0) con il supplemento Windows AIK per Windows 7 SP1 (basato su Windows PE 3.1). Scaricare il supplemento Windows AIK per Windows 7 SP1 dall'[Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=5188).  
+   <sup>1</sup> È possibile aggiungere un'immagine d'avvio a Configuration Manager solo se è basata su Windows PE 3.1. Aggiornare Windows AIK per Windows 7 (basato su Windows PE 3.0) con il supplemento Windows AIK per Windows 7 SP1 (basato su Windows PE 3.1). Scaricare il supplemento Windows AIK per Windows 7 SP1 dall'[Area download Microsoft](https://www.microsoft.com/download/details.aspx?id=5188).  
 
-     Ad esempio, usare la console di Configuration Manager per personalizzare le immagini d'avvio basate su Windows PE 10 di Windows ADK per Windows 10. Nel caso di un'immagine d'avvio basata su Windows PE 5, personalizzarla in un altro computer usando la versione di Gestione e manutenzione immagini distribuzione di Windows ADK per Windows 8. Aggiungere quindi l'immagine d'avvio personalizzata alla console di Configuration Manager. Per altre informazioni, vedere [Customize boot images](customize-boot-images.md) (Personalizzare le immagini d'avvio).
+   Ad esempio, usare la console di Configuration Manager per personalizzare le immagini d'avvio basate su Windows PE 10 di Windows ADK per Windows 10. Nel caso di un'immagine d'avvio basata su Windows PE 5, personalizzarla in un altro computer usando la versione di Gestione e manutenzione immagini distribuzione di Windows ADK per Windows 8. Aggiungere quindi l'immagine d'avvio personalizzata alla console di Configuration Manager. Per altre informazioni, vedere [Customize boot images](customize-boot-images.md) (Personalizzare le immagini d'avvio).
 
- Usare la procedura seguente per aggiungere manualmente un'immagine d'avvio.  
+  Usare la procedura seguente per aggiungere manualmente un'immagine d'avvio.  
 
 #### <a name="to-add-a-boot-image"></a>Per aggiungere un'immagine di avvio  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1. Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**e quindi fare clic su **Immagini d'avvio**.  
+2. Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**e quindi fare clic su **Immagini d'avvio**.  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Aggiungi immagine di avvio** per avviare l'Aggiunta guidata immagine d'avvio.  
+3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Aggiungi immagine di avvio** per avviare l'Aggiunta guidata immagine d'avvio.  
 
-4.  Nella pagina **Origine dati** specificare le seguenti opzioni e quindi fare clic su **Avanti**.  
+4. Nella pagina **Origine dati** specificare le seguenti opzioni e quindi fare clic su **Avanti**.  
 
-    -   Nella casella **Percorso** specificare il percorso del file WIM dell'immagine di avvio.  
+   -   Nella casella **Percorso** specificare il percorso del file WIM dell'immagine di avvio.  
 
-         Il percorso specificato deve essere un percorso di rete valido in formato UNC. Ad esempio: \\\\<*nomeserver*\\<*nomecondivisione*>\\<*nomeimmagineavvio*>.wim.  
+        Il percorso specificato deve essere un percorso di rete valido in formato UNC. Ad esempio: \\\\<*nomeserver*\\<*nomecondivisione*>\\<*nomeimmagineavvio*>.wim.  
 
-    -   Selezionare l'immagine di avvio dall'elenco a discesa **Immagine di avvio** . Se il file WIM contiene più immagini di avvio, selezionare l'immagine appropriata.  
+   -   Selezionare l'immagine di avvio dall'elenco a discesa **Immagine di avvio** . Se il file WIM contiene più immagini di avvio, selezionare l'immagine appropriata.  
 
-5.  Nella pagina **Generale**  specificare le opzioni seguenti e quindi fare clic su **Avanti**.  
+5. Nella pagina **Generale**  specificare le opzioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   Nella casella **Nome** specificare un nome univoco per l'immagine di avvio.  
+   -   Nella casella **Nome** specificare un nome univoco per l'immagine di avvio.  
 
-    -   Nella casella **Versione** specificare un numero di versione per l'immagine di avvio.  
+   -   Nella casella **Versione** specificare un numero di versione per l'immagine di avvio.  
 
-    -   Nella casella **Commento** specificare una breve descrizione di come viene usata l'immagine di avvio.  
+   -   Nella casella **Commento** specificare una breve descrizione di come viene usata l'immagine di avvio.  
 
-6.  Completare la procedura guidata.  
+6. Completare la procedura guidata.  
 
- L'immagine d'avvio appare ora elencata nel nodo **Immagine d'avvio** della console di Configuration Manager. Prima di usare l'immagine d'avvio per distribuire un sistema operativo, distribuirla ai punti di distribuzione. 
+   L'immagine d'avvio appare ora elencata nel nodo **Immagine d'avvio** della console di Configuration Manager. Prima di usare l'immagine d'avvio per distribuire un sistema operativo, distribuirla ai punti di distribuzione. 
 
 > [!NOTE]  
 >  Nel nodo **Immagine d'avvio** della console la colonna **Dimensione (KB)** visualizza la dimensione decompressa per ogni immagine d'avvio. Quando il sito invia un'immagine d'avvio in rete, ne invia una copia compressa. Le dimensioni di questa copia sono in genere inferiori rispetto a quelle indicate nella colonna **Dimensione (KB)**.  
@@ -127,13 +127,13 @@ A partire dalla versione 1706 di Configuration Manager, ricaricare nell'immagine
 ##  <a name="BKMK_ModifyBootImages"></a> Modificare un'immagine d'avvio  
  È possibile aggiungere o rimuovere driver di dispositivo dall'immagine o modificare le proprietà associate all'immagine d'avvio. Ad esempio, è possibile aggiungere o rimuovere driver per scheda di rete o per dispositivi di archiviazione di massa. Quando si modificano le immagini di avvio, tenere presente quanto segue:  
 
--   Prima di aggiungere i driver di dispositivo all'immagine d'avvio, è necessario importarli e abilitarli nel catalogo dei driver di dispositivo.  
+- Prima di aggiungere i driver di dispositivo all'immagine d'avvio, è necessario importarli e abilitarli nel catalogo dei driver di dispositivo.  
 
--   Quando si modifica un'immagine d'avvio, l'immagine non modifica i pacchetti associati a cui fa riferimento.  
+- Quando si modifica un'immagine d'avvio, l'immagine non modifica i pacchetti associati a cui fa riferimento.  
 
--   Dopo aver apportato modifiche a un'immagine d'avvio, **aggiornarla** nei punti di distribuzione in cui è già presente. Grazie a questo processo, i client avranno a disposizione la versione più recente dell'immagine d'avvio. Per ulteriori informazioni, vedere [Manage content you have distributed](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_manage).  
+- Dopo aver apportato modifiche a un'immagine d'avvio, **aggiornarla** nei punti di distribuzione in cui è già presente. Grazie a questo processo, i client avranno a disposizione la versione più recente dell'immagine d'avvio. Per ulteriori informazioni, vedere [Manage content you have distributed](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_manage).  
 
- Usare la procedura seguente per modificare un'immagine d'avvio.  
+  Usare la procedura seguente per modificare un'immagine d'avvio.  
 
 #### <a name="to-modify-the-properties-of-a-boot-image"></a>Per modificare le proprietà di un'immagine di avvio  
 
@@ -220,7 +220,7 @@ A partire dalla versione 1706 di Configuration Manager, ricaricare nell'immagine
 
         -   Fare clic su **Convalida** per verificare l'integrità del pacchetto di immagini di avvio nel punto di distribuzione o nel gruppo di punti di distribuzione selezionato.  
 
-    -   Nella scheda **Componenti facoltativi** specificare i componenti aggiunti a Windows PE per l'utilizzo con Configuration Manager. Per altre informazioni sui componenti facoltativi disponibili, vedere [WinPE: aggiungere pacchetti (informazioni di riferimento sui componenti facoltativi)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference).  
+    -   Nella scheda **Componenti facoltativi** specificare i componenti aggiunti a Windows PE per l'utilizzo con Configuration Manager. Per altre informazioni sui componenti facoltativi, vedere [WinPE: aggiungere pacchetti (informazioni di riferimento sui componenti facoltativi)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/winpe-add-packages--optional-components-reference).  
 
     -   Nella scheda **Protezione** selezionare un utente amministratore e modificare le operazioni che può eseguire.  
 
@@ -249,14 +249,14 @@ A partire dalla versione 1706 di Configuration Manager, ricaricare nell'immagine
 ##  <a name="BKMK_BootImageLanguage"></a> Configurare più lingue per la distribuzione di immagini d'avvio  
  Le immagini di avvio sono indipendenti dalla lingua. Questa funzionalità consente di usare un'immagine d'avvio per visualizzare il testo della sequenza di attività in più lingue all'interno di WinPE. Includere il supporto della lingua appropriato dalla scheda **Componenti facoltativi** dell'immagine d'avvio. Impostare quindi la variabile della sequenza di attività appropriata per indicare la lingua da visualizzare. La lingua del sistema operativo distribuito è indipendente dalla lingua usata in WinPE. La lingua che WinPE visualizza all'utente viene determinata nel modo seguente:  
 
--   Quando un utente esegue la sequenza di attività da un sistema operativo esistente, Configuration Manager usa automaticamente la lingua configurata per l'utente. Quando la sequenza di attività viene eseguita automaticamente a causa della scadenza di una distribuzione obbligatoria, Configuration Manager usa la lingua del sistema operativo.  
+- Quando un utente esegue la sequenza di attività da un sistema operativo esistente, Configuration Manager usa automaticamente la lingua configurata per l'utente. Quando la sequenza di attività viene eseguita automaticamente a causa della scadenza di una distribuzione obbligatoria, Configuration Manager usa la lingua del sistema operativo.  
 
--   Per le distribuzioni di sistemi operativi avviate da PXE o da supporti, impostare il valore di ID lingua nella variabile **SMSTSLanguageFolder** all'interno di un comando di preavvio. Quando il computer si avvia in Windows PE, i messaggi vengono visualizzati nella lingua specificata nella variabile. Se si verifica un errore durante l'accesso al file di risorse della lingua nella cartella specificata o se la variabile non viene impostata, WinPE visualizza i messaggi nella lingua predefinita.  
+- Per le distribuzioni di sistemi operativi avviate da PXE o da supporti, impostare il valore di ID lingua nella variabile **SMSTSLanguageFolder** all'interno di un comando di preavvio. Quando il computer si avvia in Windows PE, i messaggi vengono visualizzati nella lingua specificata nella variabile. Se si verifica un errore durante l'accesso al file di risorse della lingua nella cartella specificata o se la variabile non viene impostata, WinPE visualizza i messaggi nella lingua predefinita.  
 
-    > [!NOTE]  
-    >  Quando il supporto è protetto da una password, il testo di richiesta di immissione della password viene sempre visualizzato nella lingua di WinPE.  
+  > [!NOTE]  
+  >  Quando il supporto è protetto da una password, il testo di richiesta di immissione della password viene sempre visualizzato nella lingua di WinPE.  
 
- Usare la procedura seguente per impostare la lingua di WinPE per distribuzioni del sistema operativo avviate da PXE o da supporto.  
+  Usare la procedura seguente per impostare la lingua di WinPE per distribuzioni del sistema operativo avviate da PXE o da supporto.  
 
 #### <a name="to-set-the-windows-pe-language-for-a-pxe-or-media-initiated-operating-system-deployment"></a>Per impostare la lingua di Windows PE per una distribuzione del sistema operativo avviata da PXE o da supporto  
 

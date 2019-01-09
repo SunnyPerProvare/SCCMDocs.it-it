@@ -10,12 +10,12 @@ ms.assetid: 0212b023-804a-4f84-b880-7a59cdb49c67
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 49de1e2f94d1016f3c0139ccf534b85a718bf7e0
-ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
+ms.openlocfilehash: 675d4a4c91e9401eb05c0a72bb83af00aab0336c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48862499"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419037"
 ---
 # <a name="use-a-task-sequence-to-manage-virtual-hard-disks-in-system-center-configuration-manager"></a>Usare una sequenza di attività per gestire dischi rigidi virtuali in System Center Configuration Manager
 
@@ -64,7 +64,7 @@ In System Center Configuration Manager è possibile gestire dischi rigidi virtua
  Per creare un disco rigido virtuale è necessario creare una sequenza di attività che contiene i passaggi per creare il disco rigido virtuale e quindi utilizzare tale sequenza nella Creazione guidata disco rigido virtuale. Le sezioni seguenti forniscono i passaggi per la creazione del disco rigido virtuale.  
 
 ###  <a name="BKMK_CreateTS"></a> Creare una sequenza attività per il disco rigido virtuale  
- È necessario creare una sequenza attività contenente i passaggi per creare il disco rigido virtuale. In Creazione guidata della sequenza attività, è disponibile l'opzione **Installa un pacchetto immagine esistente in un disco rigido virtuale** che consente di creare i passaggi da utilizzare per creare il disco rigido virtuale. Ad esempio, la procedura guidata aggiunge i seguenti passaggi obbligatori: Riavvia in Windows PE, Formato e disco partizione, Applica sistema operativo e Arresta computer. Non è possibile creare il disco rigido virtuale nel sistema operativo completo. Configuration Manager deve inoltre rimanere in attesa finché la macchina virtuale non viene arrestata prima di completare il pacchetto. Per impostazione predefinita, la procedura guidata rimane in attesa 5 minuti prima di arrestare la macchina virtuale. Dopo aver creato la sequenza attività, è possibile aggiungere ulteriori passaggi, se richiesto.  
+ È necessario creare una sequenza attività contenente i passaggi per creare il disco rigido virtuale. In Creazione guidata della sequenza attività, è disponibile l'opzione **Installa un pacchetto immagine esistente in un disco rigido virtuale** che consente di creare i passaggi da utilizzare per creare il disco rigido virtuale. Ad esempio, la procedura guidata consente di aggiungere i seguenti passaggi obbligatori: Riavvia in Windows PE, Formato e disco partizione, Applica sistema operativo e Arresta computer. Non è possibile creare il disco rigido virtuale nel sistema operativo completo. Configuration Manager deve inoltre rimanere in attesa finché la macchina virtuale non viene arrestata prima di completare il pacchetto. Per impostazione predefinita, la procedura guidata rimane in attesa 5 minuti prima di arrestare la macchina virtuale. Dopo aver creato la sequenza attività, è possibile aggiungere ulteriori passaggi, se richiesto.  
 
 > [!IMPORTANT]  
 >  La seguente procedura consente di creare la sequenza attività utilizzando l'opzione **Installa un pacchetto immagine esistente in un disco rigido virtuale** , che consente di includere automaticamente i passaggi richiesti per creare il disco rigido virtuale. Se si sceglie di utilizzare una sequenza attività esistente o di creare manualmente una sequenza attività, accertarsi di aggiungere il passaggio Arresta computer alla fine della sequenza attività. Senza questo passaggio, la macchina virtuale temporanea non viene eliminata e il processo di creazione del disco rigido virtuale non viene completato. La procedura guidata viene, tuttavia, correttamente completata.  
@@ -83,27 +83,27 @@ In System Center Configuration Manager è possibile gestire dischi rigidi virtua
 
 5.  Nella pagina **Informazioni sequenza di attività** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   **Nome sequenza di attività**: specificare un nome che identifichi la sequenza di attività.  
+    -   **Nome sequenza di attività**: specificare un nome che identifica la sequenza di attività.  
 
-    -   **Descrizione**: specificare una descrizione della sequenza di attività.  
+    -   **Descrizione**: specificare una descrizione della sequenza attività.  
 
-    -   **Immagine di avvio**: specificare l'immagine di avvio che installa il sistema operativo nel computer di destinazione. Per altre informazioni, vedere [Manage boot images](../get-started/manage-boot-images.md) (Gestire le immagini d'avvio).  
+    -   **Immagine d'avvio**: specificare l'immagine di avvio che installa il sistema operativo nel computer di destinazione. Per altre informazioni, vedere [Manage boot images](../get-started/manage-boot-images.md) (Gestire le immagini d'avvio).  
 
 6.  Nella pagina **Installa Windows** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
 
     -   **Pacchetto immagine**: specificare il pacchetto che contiene l'immagine del sistema operativo da installare.  
 
-    -   **Immagine**: se il pacchetto dell'immagine del sistema operativo contiene più immagini, specificare l'indice dell'immagine del sistema operativo da installare.  
+    -   **Immagine**: se il pacchetto immagine del sistema operativo contiene più immagini, specificare l'indice dell'immagine del sistema operativo da installare.  
 
     -   **Codice Product Key**: specificare il codice Product Key per il sistema operativo Windows da installare. È possibile specificare i codici Product Key per contratti multilicenza codificati e i codici Product Key standard. Se si usa un codice Product Key non codificato, ogni gruppo di 5 caratteri deve essere separato da un trattino (-). Ad esempio: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
 
-    -   **Modalità di gestione licenze del server**: specificare che la licenza del server è **Per postazione**, **Per server**o che non è specificata alcuna licenza. Se la licenza del server è **Per server**, specificare anche il numero massimo di connessioni al server.  
+    -   **Modalità di gestione licenze del server**: specificare che la licenza del server è **Per postazione**, **Per server** o che non è specificata alcuna licenza. Se la licenza del server è **Per server**, specificare anche il numero massimo di connessioni al server.  
 
     -   Specificare come gestire l'account amministratore usato quando viene distribuita l'immagine del sistema operativo.  
 
-        -   **Genera in modo casuale la password dell'amministratore locale e disattiva l'account su tutte le piattaforme supportate (consigliato)**: usare questa impostazione per creare una password casuale per l'account amministratore locale e disattivare l'account quando l'immagine del sistema operativo viene distribuita.  
+        -   **Genera in modo casuale la password dell'amministratore locale e disattiva l'account su tutte le piattaforme supportate (consigliato)**: utilizzare questa impostazione per creare una password casuale per l'account amministratore locale e disattivare l'account quando l'immagine del sistema operativo viene distribuita.  
 
-        -   **Attiva l'account e specifica la password dell'amministratore locale**: usare questa impostazione per usare una password specifica per l'account amministratore locale in tutti i computer in cui viene distribuita l'immagine del sistema operativo.  
+        -   **Attiva l'account e specifica la password dell'amministratore locale**: utilizzare questa impostazione per utilizzare una password specifica per l'account amministratore locale su tutti i computer in cui viene distribuita l'immagine del sistema operativo.  
 
 7.  Nella pagina **Configura rete** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
 
@@ -116,7 +116,7 @@ In System Center Configuration Manager è possibile gestire dischi rigidi virtua
 
          È inoltre possibile specificare un'unità organizzativa. Si tratta di un'impostazione facoltativa che specifica il nome distinto LDAP X.500 dell'unità organizzativa in cui creare l'account computer se non esiste già.  
 
-    -   **Account**: specificare il nome utente e la password per l'account con le autorizzazioni per l'aggiunta al dominio specificato. Ad esempio: *dominio\utente* o *%variabile%*.  
+    -   **Account**: specificare il nome utente e la password per l'account che dispone delle autorizzazioni per l'aggiunta al dominio specificato. Ad esempio: *dominio\utente* o *%variabile%*.  
 
 8.  Nella pagina **Installa Configuration Manager** specificare il pacchetto client di Configuration Manager da installare nel computer di destinazione e quindi fare clic su **Avanti**.  
 
@@ -134,50 +134,50 @@ In System Center Configuration Manager è possibile gestire dischi rigidi virtua
 
 #### <a name="to-create-a-vhd"></a>Per creare un disco rigido virtuale  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1. Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Dischi rigidi virtuali**.  
+2. Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Dischi rigidi virtuali**.  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea disco rigido virtuale** per avviare la Creazione guidata disco rigido virtuale.  
+3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea disco rigido virtuale** per avviare la Creazione guidata disco rigido virtuale.  
 
-    > [!NOTE]  
-    >  Hyper-V deve essere installato sul computer che esegue la console di Configuration Manager da cui si gestiscono i dischi rigidi virtuali, in caso contrario l'opzione **Crea disco rigido virtuale** non viene abilitata. Per ulteriori informazioni sui requisiti di Hyper-V, vedere [Prerequisiti di installazione di Hyper-V](http://technet.microsoft.com/library/cc731898.aspx).  
+   > [!NOTE]  
+   >  Hyper-V deve essere installato sul computer che esegue la console di Configuration Manager da cui si gestiscono i dischi rigidi virtuali, in caso contrario l'opzione **Crea disco rigido virtuale** non viene abilitata. Per ulteriori informazioni sui requisiti di Hyper-V, vedere [Prerequisiti di installazione di Hyper-V](http://technet.microsoft.com/library/cc731898.aspx).  
 
-    > [!TIP]  
-    >  Per organizzare i dischi rigidi virtuali, creare una nuova cartella o selezionare una cartella esistente nel nodo **Dischi rigidi virtuali** , quindi fare clic su **Crea disco rigido virtuale** dalla cartella.  
+   > [!TIP]  
+   >  Per organizzare i dischi rigidi virtuali, creare una nuova cartella o selezionare una cartella esistente nel nodo **Dischi rigidi virtuali** , quindi fare clic su **Crea disco rigido virtuale** dalla cartella.  
 
-4.  Nella pagina **Generale** specificare le seguenti impostazioni, quindi fare clic su **Avanti**.  
+4. Nella pagina **Generale** specificare le seguenti impostazioni, quindi fare clic su **Avanti**.  
 
-    -   **Nome**: specificare un nome univoco per il disco rigido virtuale.  
+   -   **Nome**: specificare un nome univoco per il disco rigido virtuale.  
 
-    -   **Versione**: specificare un numero di versione per il disco rigido virtuale. Si tratta di un'impostazione facoltativa.  
+   -   **Versione**: specificare un numero versione per il disco rigido virtuale. Si tratta di un'impostazione facoltativa.  
 
-    -   **Commento**: specificare una descrizione per il disco rigido virtuale.  
+   -   **Commento**: specificare una descrizione per il disco rigido virtuale.  
 
-    -   **Percorso**: specificare il percorso e il nome file usati dalla procedura guidata per creare il file VHD.  
+   -   **Percorso**: specificare il percorso e il nome file utilizzati dalla procedura guidata per creare il file VHD.  
 
-         È necessario immettere un percorso di rete valido nel formato UNC. Ad esempio: **\\\nomeserver\\<nomecondivisione\>\\<nomefile\>.vhd**.  
+        È necessario immettere un percorso di rete valido nel formato UNC. Ad esempio: **\\\nomeserver\\<nomecondivisione\>\\<nomefile\>.vhd**.  
 
-        > [!WARNING]  
-        >  Configuration Manager deve avere autorizzazioni di accesso in **scrittura** al percorso specificato per creare il disco rigido virtuale. Se Configuration Manager non è in grado di accedere al percorso, l'errore associato verrà registrato nel file distmgr.log sul server del sito.  
+       > [!WARNING]  
+       >  Configuration Manager deve avere autorizzazioni di accesso in **scrittura** al percorso specificato per creare il disco rigido virtuale. Se Configuration Manager non è in grado di accedere al percorso, l'errore associato verrà registrato nel file distmgr.log sul server del sito.  
 
-5.  Nella pagina **Sequenza attività** specificare la sequenza attività descritta nella sezione precedente, quindi fare clic su **Avanti**.  
+5. Nella pagina **Sequenza attività** specificare la sequenza attività descritta nella sezione precedente, quindi fare clic su **Avanti**.  
 
-6.  Nella pagina **Punti di distribuzione** selezionare uno o più punti di distribuzione che includono il contenuto richiesto dalla sequenza attività e quindi fare clic su **Avanti**.  
+6. Nella pagina **Punti di distribuzione** selezionare uno o più punti di distribuzione che includono il contenuto richiesto dalla sequenza attività e quindi fare clic su **Avanti**.  
 
-7.  Nella pagina **Personalizzazione** fare clic su **Avanti**. Il processo per creare il disco rigido virtuale ignora eventuali impostazioni specificate in questa pagina.  
+7. Nella pagina **Personalizzazione** fare clic su **Avanti**. Il processo per creare il disco rigido virtuale ignora eventuali impostazioni specificate in questa pagina.  
 
-8.  Verificare le impostazioni e fare clic su **Avanti**. La procedura guidata crea il disco rigido virtuale.  
+8. Verificare le impostazioni e fare clic su **Avanti**. La procedura guidata crea il disco rigido virtuale.  
 
-    > [!TIP]  
-    >  Il tempo necessario per completare il processo di creazione del disco rigido virtuale può variare. Durante l'elaborazione del processo, è possibile monitorare i seguenti file di log per tenere traccia dello stato di avanzamento. Per impostazione predefinita, i log si trovano nel computer che esegue la console di Configuration Manager in %*ProgramFiles(x86)*%\Microsoft Configuration Manager\AdminConsole\AdminUILog.  
-    >   
-    >  -   **CreateTSMedia.log**: le informazioni vengono scritte in questo log durante la creazione del supporto della sequenza di attività. Esaminare il file di log per tenere traccia dello stato di avanzamento della procedura guidata durante la creazione del supporto autonomo.  
-    > -   **DeployToVHD.log**: le informazioni vengono scritte in questo log durante l'elaborazione del processo di creazione del disco rigido virtuale. Esaminare il file di log per tenere traccia dello stato di avanzamento della procedura guidata durante la creazione del supporto autonomo.  
-    >   
-    >  Inoltre, all'avvio dell'installazione del sistema operativo, è possibile aprire la console di gestione di Hyper-V (se nel computer sono stati installati gli strumenti di gestione Hyper-V) e collegarsi alla macchina virtuale temporanea creata dalla procedura guidata per vedere la sequenza attività in esecuzione. Dalla macchina virtuale, è possibile monitorare il file Smsts log per tenere traccia dello stato di avanzamento della sequenza attività. Se si verificano problemi durante il completamento di un passaggio della sequenza attività, è possibile utilizzare questo file di log per risolvere il problema. Il file smsts.log si trova in x:\windows\temp\smstslog\smsts.log prima della formattazione del disco rigido e in c:\\_SMSTaskSequence\Logs\Smstslog\ dopo la formattazione. Al termine dei passaggi della sequenza attività, la macchina virtuale viene arrestata dopo 5 minuti (per impostazione predefinita) ed eliminata.  
+   > [!TIP]
+   >  Il tempo necessario per completare il processo di creazione del disco rigido virtuale può variare. Durante l'elaborazione del processo, è possibile monitorare i seguenti file di log per tenere traccia dello stato di avanzamento. Per impostazione predefinita, i log si trovano nel computer che esegue la console di Configuration Manager in %*ProgramFiles(x86)*%\Microsoft Configuration Manager\AdminConsole\AdminUILog.  
+   > 
+   > - **CreateTSMedia.log**: le informazioni vengono scritte in questo log durante la creazione del supporto della sequenza di attività. Esaminare il file di log per tenere traccia dello stato di avanzamento della procedura guidata durante la creazione del supporto autonomo.  
+   >   -   **DeployToVHD.log**: le informazioni vengono scritte in questo log durante l'elaborazione del processo di creazione del disco rigido virtuale. Esaminare il file di log per tenere traccia dello stato di avanzamento della procedura guidata durante la creazione del supporto autonomo.  
+   > 
+   >   Inoltre, all'avvio dell'installazione del sistema operativo, è possibile aprire la console di gestione di Hyper-V (se nel computer sono stati installati gli strumenti di gestione Hyper-V) e collegarsi alla macchina virtuale temporanea creata dalla procedura guidata per vedere la sequenza attività in esecuzione. Dalla macchina virtuale, è possibile monitorare il file Smsts log per tenere traccia dello stato di avanzamento della sequenza attività. Se si verificano problemi durante il completamento di un passaggio della sequenza attività, è possibile utilizzare questo file di log per risolvere il problema. Il file smsts.log si trova in x:\windows\temp\smstslog\smsts.log prima della formattazione del disco rigido e in c:\\_SMSTaskSequence\Logs\Smstslog\ dopo la formattazione. Al termine dei passaggi della sequenza attività, la macchina virtuale viene arrestata dopo 5 minuti (per impostazione predefinita) ed eliminata.  
 
- Dopo la creazione del disco rigido virtuale da parte di Configuration Manager, il disco si trova nel nodo **Dischi rigidi virtuali** nella console di Configuration Manager sotto il nodo **Distribuzione del sistema operativo** nell'area di lavoro **Raccolta software**.  
+   Dopo la creazione del disco rigido virtuale da parte di Configuration Manager, il disco si trova nel nodo **Dischi rigidi virtuali** nella console di Configuration Manager sotto il nodo **Distribuzione del sistema operativo** nell'area di lavoro **Raccolta software**.  
 
 > [!NOTE]  
 >  Configuration Manager recupera la dimensione del disco rigido virtuale connettendosi al percorso di origine del disco rigido virtuale. Se Configuration Manager non è in grado di accedere al file del disco rigido virtuale, viene visualizzato **0** nella colonna **Dimensione (KB)** per il disco rigido virtuale.  
@@ -192,25 +192,25 @@ In System Center Configuration Manager è possibile gestire dischi rigidi virtua
 
 #### <a name="to-create-a-custom-task-sequence-to-modify-the-vhd"></a>Creare una sequenza di attività personalizzata per modificare il disco rigido virtuale  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1. Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+2. Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea sequenza di attività** per avviare la Creazione guidata della sequenza di attività.  
+3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea sequenza di attività** per avviare la Creazione guidata della sequenza di attività.  
 
-4.  Nella pagina **Crea una nuova sequenza attività** , selezionare **Crea una nuova sequenza attività personalizzata**, quindi fare clic su **Avanti**.  
+4. Nella pagina **Crea una nuova sequenza attività** , selezionare **Crea una nuova sequenza attività personalizzata**, quindi fare clic su **Avanti**.  
 
-5.  Nella pagina **Informazioni sequenza di attività** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
+5. Nella pagina **Informazioni sequenza di attività** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   **Nome sequenza di attività**: specificare un nome che identifichi la sequenza di attività.  
+   -   **Nome sequenza di attività**: specificare un nome che identifica la sequenza di attività.  
 
-    -   **Descrizione**: specificare una descrizione della sequenza di attività.  
+   -   **Descrizione**: specificare una descrizione della sequenza attività.  
 
-    -   **Immagine di avvio**: specificare l'immagine di avvio che installa il sistema operativo nel computer di destinazione. Per altre informazioni, vedere la sezione relativa alla [gestione delle immagini di avvio](../get-started/manage-boot-images.md).  
+   -   **Immagine d'avvio**: specificare l'immagine di avvio che installa il sistema operativo nel computer di destinazione. Per altre informazioni, vedere [Manage boot images](../get-started/manage-boot-images.md) (Gestire le immagini d'avvio).  
 
-6.  Completare la procedura guidata.  
+6. Completare la procedura guidata.  
 
- Utilizzare la seguente procedura per aggiungere i passaggi della sequenza di attività alla sequenza di attività personalizzata.  
+   Utilizzare la seguente procedura per aggiungere i passaggi della sequenza di attività alla sequenza di attività personalizzata.  
 
 #### <a name="to-add-task-sequence-steps-to-the-custom-task-sequence"></a>Aggiungere i passaggi della sequenza di attività alla sequenza di attività personalizzata  
 
@@ -231,43 +231,43 @@ In System Center Configuration Manager è possibile gestire dischi rigidi virtua
 
 #### <a name="to-modify-a-vhd"></a>Modificare un disco rigido virtuale  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1. Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  Nell'area di lavoro **Raccolta software** , espandere **Sistemi operativi**, quindi fare clic su **Dischi rigidi virtuali**e selezionare quindi il disco rigido virtuale da modificare.  
+2. Nell'area di lavoro **Raccolta software** , espandere **Sistemi operativi**, quindi fare clic su **Dischi rigidi virtuali**e selezionare quindi il disco rigido virtuale da modificare.  
 
-3.  Nella scheda **Home** del gruppo **Disco rigido virtuale** , fare clic su **Modifica disco rigido virtuale** per avviare la Modifica guidata disco rigido virtuale.  
+3. Nella scheda **Home** del gruppo **Disco rigido virtuale** , fare clic su **Modifica disco rigido virtuale** per avviare la Modifica guidata disco rigido virtuale.  
 
-    > [!NOTE]  
-    >  Hyper-V deve essere installato sul computer che esegue la console di Configuration Manager da cui si gestiscono i dischi rigidi virtuali, in caso contrario l'opzione **Modifica disco rigido virtuale** non viene abilitata. Per ulteriori informazioni sui requisiti di Hyper-V, vedere [Prerequisiti di installazione di Hyper-V](http://technet.microsoft.com/library/cc731898.aspx).  
+   > [!NOTE]  
+   >  Hyper-V deve essere installato sul computer che esegue la console di Configuration Manager da cui si gestiscono i dischi rigidi virtuali, in caso contrario l'opzione **Modifica disco rigido virtuale** non viene abilitata. Per ulteriori informazioni sui requisiti di Hyper-V, vedere [Prerequisiti di installazione di Hyper-V](http://technet.microsoft.com/library/cc731898.aspx).  
 
-4.  Nella pagina **Generale** confermare le seguenti impostazioni, quindi fare clic su **Avanti**.  
+4. Nella pagina **Generale** confermare le seguenti impostazioni, quindi fare clic su **Avanti**.  
 
-    -   **Nome**: specifica il nome univoco per il disco rigido virtuale.  
+   -   **Nome**: specifica il nome univoco per il disco rigido virtuale.  
 
-    -   **Versione**: specifica il numero di versione per il disco rigido virtuale. Si tratta di un'impostazione facoltativa.  
+   -   **Versione**: specifica il numero di versione per il disco rigido virtuale. Si tratta di un'impostazione facoltativa.  
 
-    -   **Commento**: specifica la descrizione per il disco rigido virtuale.  
+   -   **Commento**: specifica la descrizione per il disco rigido virtuale.  
 
-    -   **Percorso**: specifica il percorso e il nome file in cui si trova il file VHD. È impossibile modificare questa impostazione.  
+   -   **Percorso**: specifica il percorso e il nome file in cui si trova il file VHD. È impossibile modificare questa impostazione.  
 
-        > [!WARNING]  
-        >  Configuration Manager deve avere autorizzazioni di accesso in **scrittura** al percorso specificato per creare il disco rigido virtuale. Se Configuration Manager non è in grado di accedere al percorso, l'errore associato verrà registrato nel file distmgr.log sul server del sito.  
+       > [!WARNING]  
+       >  Configuration Manager deve avere autorizzazioni di accesso in **scrittura** al percorso specificato per creare il disco rigido virtuale. Se Configuration Manager non è in grado di accedere al percorso, l'errore associato verrà registrato nel file distmgr.log sul server del sito.  
 
-5.  Nella pagina **Sequenza attività** specificare la sequenza di attività descritta creata nella sezione precedente, quindi fare clic su **Avanti**.  
+5. Nella pagina **Sequenza attività** specificare la sequenza di attività descritta creata nella sezione precedente, quindi fare clic su **Avanti**.  
 
-6.  Nella pagina **Punti di distribuzione** selezionare uno o più punti di distribuzione che includono il contenuto richiesto dalla sequenza attività e quindi fare clic su **Avanti**.  
+6. Nella pagina **Punti di distribuzione** selezionare uno o più punti di distribuzione che includono il contenuto richiesto dalla sequenza attività e quindi fare clic su **Avanti**.  
 
-7.  Nella pagina **Personalizzazione** fare clic su **Avanti**. Il processo per modificare il disco rigido virtuale ignora eventuali impostazioni specificate in questa pagina.  
+7. Nella pagina **Personalizzazione** fare clic su **Avanti**. Il processo per modificare il disco rigido virtuale ignora eventuali impostazioni specificate in questa pagina.  
 
-8.  Verificare le impostazioni e fare clic su **Avanti**. La procedura guidata crea il disco rigido virtuale modificato.  
+8. Verificare le impostazioni e fare clic su **Avanti**. La procedura guidata crea il disco rigido virtuale modificato.  
 
-    > [!TIP]  
-    >  Il tempo necessario per completare il processo di modifica del disco rigido virtuale può variare. Durante l'elaborazione del processo, è possibile monitorare i seguenti file di log per tenere traccia dello stato di avanzamento. Per impostazione predefinita, i log si trovano nel computer che esegue la console di Configuration Manager in %*ProgramFiles(x86)*%\Microsoft Configuration Manager\AdminConsole\AdminUILog.  
-    >   
-    >  -   **CreateTSMedia.log**: le informazioni vengono scritte in questo log durante la creazione del supporto della sequenza di attività. Esaminare il file di log per tenere traccia dello stato di avanzamento della procedura guidata durante la creazione del supporto autonomo.  
-    > -   **DeployToVHD.log**: la procedura guidata scrive le informazioni in questo registro durante l'elaborazione del processo di modifica del disco rigido virtuale. Esaminare il file di log per tenere traccia dello stato di avanzamento della procedura guidata durante la creazione del supporto autonomo.  
-    >   
-    >  Inoltre, è possibile aprire la console di gestione di Hyper-V (se nel computer sono stati installati gli strumenti di gestione Hyper-V) e connettersi alla macchina virtuale temporanea creata dalla procedura guidata per vedere la sequenza di attività in esecuzione. Dalla macchina virtuale, è possibile monitorare il file Smsts log per tenere traccia dello stato di avanzamento della sequenza attività. Se si verificano problemi durante il completamento di un passaggio della sequenza attività, è possibile utilizzare questo file di log per risolvere il problema. Il file smsts.log si trova in x:\windows\temp\smstslog\smsts.log prima della formattazione del disco rigido e in c:\\_SMSTaskSequence\Logs\Smstslog\ dopo la formattazione. Al termine dei passaggi della sequenza attività, la macchina virtuale viene arrestata dopo 5 minuti (per impostazione predefinita) ed eliminata.  
+   > [!TIP]
+   >  Il tempo necessario per completare il processo di modifica del disco rigido virtuale può variare. Durante l'elaborazione del processo, è possibile monitorare i seguenti file di log per tenere traccia dello stato di avanzamento. Per impostazione predefinita, i log si trovano nel computer che esegue la console di Configuration Manager in %*ProgramFiles(x86)*%\Microsoft Configuration Manager\AdminConsole\AdminUILog.  
+   > 
+   > - **CreateTSMedia.log**: le informazioni vengono scritte in questo log durante la creazione del supporto della sequenza di attività. Esaminare il file di log per tenere traccia dello stato di avanzamento della procedura guidata durante la creazione del supporto autonomo.  
+   >   -   **DeployToVHD.log**: le informazioni vengono scritte in questo log durante l'elaborazione del processo di modifica del disco rigido virtuale. Esaminare il file di log per tenere traccia dello stato di avanzamento della procedura guidata durante la creazione del supporto autonomo.  
+   > 
+   >   Inoltre, è possibile aprire la console di gestione di Hyper-V (se nel computer sono stati installati gli strumenti di gestione Hyper-V) e connettersi alla macchina virtuale temporanea creata dalla procedura guidata per vedere la sequenza di attività in esecuzione. Dalla macchina virtuale, è possibile monitorare il file Smsts log per tenere traccia dello stato di avanzamento della sequenza attività. Se si verificano problemi durante il completamento di un passaggio della sequenza attività, è possibile utilizzare questo file di log per risolvere il problema. Il file smsts.log si trova in x:\windows\temp\smstslog\smsts.log prima della formattazione del disco rigido e in c:\\_SMSTaskSequence\Logs\Smstslog\ dopo la formattazione. Al termine dei passaggi della sequenza attività, la macchina virtuale viene arrestata dopo 5 minuti (per impostazione predefinita) ed eliminata.  
 
 ##  <a name="BKMK_ApplyUpdates"></a> Applicare aggiornamenti software a un disco rigido virtuale  
  Periodicamente, vengono rilasciati nuovi aggiornamenti software applicabili al sistema operativo nel disco rigido virtuale. È possibile applicare gli aggiornamenti software a un disco rigido virtuale in base a una pianificazione specificata. Nella pianificazione specificata, Configuration Manager consente di applicare gli aggiornamenti software selezionati al disco rigido virtuale.  
@@ -323,8 +323,8 @@ In System Center Configuration Manager è possibile gestire dischi rigidi virtua
 
     -   **Nome del server VMM**: specificare l'FQDN del computer in cui è installato il server di gestione VMM. La procedura guidata si connette al server di gestione VMM per scaricare le condivisioni di libreria per il server.  
 
-    -   **Condivisione di libreria VMM**: specificare la condivisione di libreria VMM nell'elenco a discesa.  
+    -   **Condivisione di libreria VMM**: specificare la condivisione di libreria VMM dall'elenco a discesa.  
 
-    -   **Utilizzare trasferimento non crittografato**: selezionare questa opzione per trasferire il file VHD nel server di gestione VMM senza usare la crittografia.  
+    -   **Utilizzare trasferimento non crittografato**: selezionare questa opzione per trasferire il file VHD nel server di gestione VMM senza utilizzare la crittografia.  
 
 5.  Nella pagina di riepilogo, verificare le impostazioni, quindi completare la procedura guidata. Il tempo richiesto per caricare il disco rigido virtuale può variare in base alle dimensioni del file VHD e alla larghezza di banda di rete per il server di gestione VMM.  

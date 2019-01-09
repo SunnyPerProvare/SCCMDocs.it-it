@@ -10,12 +10,12 @@ ms.assetid: 9fcbcc81-cd6f-496e-b075-ef1afa2b8ccc
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: e7d1ee430ef07149b77a4e7b250bc3e19788582a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 1ddefeafdf03a64f5fe50df6a4638616552f818a
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335695"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420142"
 ---
 # <a name="create-user-data-and-profiles-configuration-items-in-system-center-configuration-manager"></a>Creare elementi di configurazione di profili e dati utente in System Center Configuration Manager
 
@@ -23,13 +23,13 @@ ms.locfileid: "32335695"
 
 Gli elementi di configurazione di profili e dati utente in System Center Configuration Manager contengono le impostazioni che consentono di gestire il reindirizzamento delle cartelle, i file offline e i profili mobili nei computer che eseguono Windows 8 e versioni successive per gli utenti della gerarchia. Ad esempio, è possibile:  
 
--   Reindirizzare la cartella Documenti di un utente a una condivisione di rete.  
+- Reindirizzare la cartella Documenti di un utente a una condivisione di rete.  
 
--   Assicurarsi che specifici file archiviati in rete siano disponibili nel computer di un utente quando la connessione di rete non è disponibile.  
+- Assicurarsi che specifici file archiviati in rete siano disponibili nel computer di un utente quando la connessione di rete non è disponibile.  
 
--   Configurare i file nel profilo mobile di un utente da sincronizzare con una condivisione di rete quando l'utente si connette e si disconnette.  
+- Configurare i file nel profilo mobile di un utente da sincronizzare con una condivisione di rete quando l'utente si connette e si disconnette.  
 
- A differenza di altri elementi di configurazione in Configuration Manager, gli elementi di configurazione di profili e dati utente non vengono aggiunti a una linea di base di configurazione da distribuire in un secondo momento. Al contrario, l'elemento di configurazione si distribuisce direttamente usando la finestra di dialogo **Distribuisci elemento di configurazione profili e dati utente** .  
+  A differenza di altri elementi di configurazione in Configuration Manager, gli elementi di configurazione di profili e dati utente non vengono aggiunti a una linea di base di configurazione da distribuire in un secondo momento. Al contrario, l'elemento di configurazione si distribuisce direttamente usando la finestra di dialogo **Distribuisci elemento di configurazione profili e dati utente** .  
 
 > [!IMPORTANT]  
 >  È possibile distribuire elementi di configurazione di profili e dati utente solo alle raccolte utenti.  
@@ -49,40 +49,40 @@ Gli elementi di configurazione di profili e dati utente in System Center Configu
 
 ## <a name="create-a-user-data-and-profiles-configuration-item"></a>Creare un elemento di configurazione di profili e dati utente  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Profili e dati utente**.  
+1. Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Profili e dati utente**.  
 
-3.  Nella gruppo **Crea** della scheda **Home** fare clic su **Crea elemento di configurazione profili e dati utente**.  
+2. Nella gruppo **Crea** della scheda **Home** fare clic su **Crea elemento di configurazione profili e dati utente**.  
 
-4.  Nella pagina **Generale** della **Creazione guidata elemento di configurazione profili e dati utente**specificare le informazioni seguenti:  
+3. Nella pagina **Generale** della **Creazione guidata elemento di configurazione profili e dati utente**specificare le informazioni seguenti:  
 
-    -   **Nome** : immettere un nome univoco per l'elemento di configurazione. È possibile usare un massimo di 256 caratteri.  
+   -   **Nome:** immettere un nome univoco per l'elemento di configurazione. È possibile usare un massimo di 256 caratteri.  
 
-    -   **Descrizione:** Fornire una descrizione che offra una panoramica di elemento di configurazione e altre informazioni rilevanti per identificarlo nella console di Configuration Manager. È possibile usare un massimo di 256 caratteri.  
+   -   **Descrizione:** fornire una descrizione che offra una panoramica dell'elemento di configurazione e altre informazioni rilevanti per identificarlo nella console di Configuration Manager. È possibile usare un massimo di 256 caratteri.  
 
-    -   **Reindirizzamento cartelle:** selezionare questa casella di controllo se si vuole configurare le impostazioni per il reindirizzamento delle cartelle per questo elemento di configurazione.  
+   -   **Reindirizzamento cartelle:** selezionare questa casella di controllo per configurare le impostazioni per il reindirizzamento delle cartelle per questo elemento di configurazione.  
 
-    -   **File offline:** selezionare questa casella di controllo se si vuole configurare le impostazioni per i file offline per questo elemento di configurazione.  
+   -   **File offline:** selezionare questa casella di controllo per configurare le impostazioni per i file offline per questo elemento di configurazione.  
 
-    -   **Profili utente mobili:** selezionare questa casella di controllo se si vuole configurare le impostazioni per i profili utente mobili per questo elemento di configurazione.  
+   -   **Profili utente mobili:** selezionare questa casella di controllo per configurare le impostazioni per i profili utente mobili per questo elemento di configurazione.  
 
-5.  Nella pagina **Reindirizzamento cartelle** della **Creazione guidata elemento di configurazione profili e dati utente**specificare come si vuole che i computer client degli utenti che ricevono questo elemento di configurazione gestiscano il reindirizzamento delle cartelle. È possibile configurare le impostazioni per qualsiasi dispositivo a cui l'utente accede o solo per i dispositivi primari dell'utente. Per altre informazioni sul reindirizzamento delle cartelle, vedere la documentazione di Windows Server.  
+4. Nella pagina **Reindirizzamento cartelle** della **Creazione guidata elemento di configurazione profili e dati utente**specificare come si vuole che i computer client degli utenti che ricevono questo elemento di configurazione gestiscano il reindirizzamento delle cartelle. È possibile configurare le impostazioni per qualsiasi dispositivo a cui l'utente accede o solo per i dispositivi primari dell'utente. Per altre informazioni sul reindirizzamento delle cartelle, vedere la documentazione di Windows Server.  
 
-    > [!NOTE]  
-    >  Questa pagina viene visualizzata solo se è stata selezionata la casella **Reindirizzamento cartelle** nella pagina **Generale** della procedura guidata.  
+   > [!NOTE]  
+   >  Questa pagina viene visualizzata solo se è stata selezionata la casella **Reindirizzamento cartelle** nella pagina **Generale** della procedura guidata.  
 
-6.  Nella pagina **File offline** della **Creazione guidata elemento di configurazione profili e dati utente**è possibile abilitare o disabilitare l'uso dei file offline per gli utenti che ricevono questo elemento di configurazione e quindi configurare le impostazioni per il comportamento dei file offline. È inoltre possibile specificare i file offline che saranno sempre disponibili in qualsiasi computer a cui l'utente esegue l'accesso. Per altre informazioni sui file offline, vedere la documentazione di Windows Server.  
+5. Nella pagina **File offline** della **Creazione guidata elemento di configurazione profili e dati utente**è possibile abilitare o disabilitare l'uso dei file offline per gli utenti che ricevono questo elemento di configurazione e quindi configurare le impostazioni per il comportamento dei file offline. È inoltre possibile specificare i file offline che saranno sempre disponibili in qualsiasi computer a cui l'utente esegue l'accesso. Per altre informazioni sui file offline, vedere la documentazione di Windows Server.  
 
-    > [!NOTE]  
-    >  Questa pagina viene visualizzata solo se è stata selezionata la casella **File offline** nella pagina **Generale** della procedura guidata.  
+   > [!NOTE]  
+   >  Questa pagina viene visualizzata solo se è stata selezionata la casella **File offline** nella pagina **Generale** della procedura guidata.  
 
-7.  Nella pagina **Profili mobili** della **Creazione guidata elemento di configurazione profili e dati utente**è possibile configurare se i profili mobili sono disponibili nei computer a cui l'utente esegue l'accesso e anche configurare informazioni aggiuntive sul funzionamento di tali profili. Per altre informazioni sui profili mobili, vedere la documentazione di Windows Server.  
+6. Nella pagina **Profili mobili** della **Creazione guidata elemento di configurazione profili e dati utente**è possibile configurare se i profili mobili sono disponibili nei computer a cui l'utente esegue l'accesso e anche configurare informazioni aggiuntive sul funzionamento di tali profili. Per altre informazioni sui profili mobili, vedere la documentazione di Windows Server.  
 
-    > [!NOTE]  
-    >  Questa pagina viene visualizzata solo se è stata selezionata la casella **Profili utente mobili** nella pagina **Generale** della procedura guidata.  
+   > [!NOTE]  
+   >  Questa pagina viene visualizzata solo se è stata selezionata la casella **Profili utente mobili** nella pagina **Generale** della procedura guidata.  
 
-8.  Completare la procedura guidata.  
+7. Completare la procedura guidata.  
 
- Il nuovo elemento di configurazione dei profili e dati utente viene visualizzato nel nodo **Profili e dati utente** dell'area di lavoro **Asset e conformità** .  
+   Il nuovo elemento di configurazione dei profili e dati utente viene visualizzato nel nodo **Profili e dati utente** dell'area di lavoro **Asset e conformità** .  
 
 ## <a name="deploy-a-user-data-and-profiles-configuration-item"></a>Distribuire un elemento di configurazione di profili e dati utente  
 

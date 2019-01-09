@@ -10,12 +10,12 @@ ms.assetid: ba9b623f-6e86-4006-93f2-83d563de0cd0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2eb75af410ae1511ae105aa7a3a56659c8ef0442
-ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
+ms.openlocfilehash: 0d2e3c7bc6cba90ebc24bdfdf244f54d1752d749
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48862414"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420465"
 ---
 # <a name="how-to-assign-clients-to-a-site-in-system-center-configuration-manager"></a>Come assegnare i client a un sito in System Center Configuration Manager
 
@@ -94,30 +94,30 @@ Se non è possibile completare l'assegnazione del client al sito, il software cl
 
 Configuration Manager controlla anche che il client di Configuration Manager (ramo corrente) sia stato assegnato a un sito che lo supporta. Durante la migrazione da versioni precedenti di Configuration Manager potrebbero verificarsi gli scenari seguenti.  
 
--   Scenario: è stata usata l'assegnazione al sito automatica e i limiti si sovrappongono ai limiti definiti in una versione precedente di Configuration Manager.  
+- Scenario: è stata usata l'assegnazione al sito automatica e i limiti si sovrappongono ai limiti definiti in una versione precedente di Configuration Manager.  
 
-     In questo caso il client prova a rilevare automaticamente un sito di Configuration Manager (Current Branch).  
+   In questo caso il client prova a rilevare automaticamente un sito di Configuration Manager (Current Branch).  
 
-     Il client esegue prima un controllo in Servizi di dominio Active Directory e, se rileva un sito di Configuration Manager (ramo corrente) pubblicato, l'assegnazione al sito riesce. In caso contrario, ad esempio se il sito di Configuration Manager non è pubblicato o il computer è un client di un gruppo di lavoro, il client verificherà la presenza di informazioni del sito dal punto di gestione assegnato.  
+   Il client esegue prima un controllo in Servizi di dominio Active Directory e, se rileva un sito di Configuration Manager (ramo corrente) pubblicato, l'assegnazione al sito riesce. In caso contrario, ad esempio se il sito di Configuration Manager non è pubblicato o il computer è un client di un gruppo di lavoro, il client verificherà la presenza di informazioni del sito dal punto di gestione assegnato.  
 
-    > [!NOTE]  
-    >  È possibile assegnare un punto di gestione al client durante l'installazione del client usando la proprietà Client.msi **SMSMP=&lt;nome_server>**.  
+  > [!NOTE]  
+  >  È possibile assegnare un punto di gestione al client durante l'installazione del client usando la proprietà Client.msi **SMSMP=&lt;nome_server>**.  
 
-     Se entrambi i metodi hanno esito negativo, si verifica un errore di assegnazione del sito ed è necessario assegnare il client manualmente.  
+   Se entrambi i metodi hanno esito negativo, si verifica un errore di assegnazione del sito ed è necessario assegnare il client manualmente.  
 
--   Scenario: il client di Configuration Manager (ramo corrente) è stato assegnato usando un codice sito specifico anziché l'assegnazione automatica, ma è stato erroneamente specificato un codice sito per una versione di Configuration Manager precedente System Center 2012 R2 Configuration Manager.  
+- Scenario: il client di Configuration Manager (Current Branch) è stato assegnato usando un codice sito specifico anziché l'assegnazione automatica, ma è stato erroneamente specificato un codice sito per una versione di Configuration Manager precedente System Center 2012 R2 Configuration Manager.  
 
-     In questo caso l'assegnazione al sito non riesce ed è necessario riassegnare il client manualmente a un sito di Configuration Manager (ramo corrente).  
+   In questo caso l'assegnazione al sito non riesce ed è necessario riassegnare il client manualmente a un sito di Configuration Manager (ramo corrente).  
 
- Il controllo di compatibilità del sito richiede una delle seguenti condizioni:  
+  Il controllo di compatibilità del sito richiede una delle seguenti condizioni:  
 
--   Il client può accedere alle informazioni del sito pubblicate in Servizi di dominio Active Directory.  
+- Il client può accedere alle informazioni del sito pubblicate in Servizi di dominio Active Directory.  
 
--   Il client può comunicare con un punto di gestione nel sito.  
+- Il client può comunicare con un punto di gestione nel sito.  
 
- Se la verifica compatibilità del sito non viene completata correttamente, l'assegnazione al sito avrà esito negativo e il client resterà non gestito fino a quando tale verifica non verrà completata correttamente durante la successiva esecuzione.  
+  Se la verifica compatibilità del sito non viene completata correttamente, l'assegnazione al sito avrà esito negativo e il client resterà non gestito fino a quando tale verifica non verrà completata correttamente durante la successiva esecuzione.  
 
- L'eccezione all'esecuzione del controllo di compatibilità del sito riguarda il caso in cui un client venga configurato per un punto di gestione basato su Internet. In questo scenario non viene effettuata alcuna verifica compatibilità del sito. Se si stanno assegnando dei client a un sito contenente sistemi basati su Internet e si specifica un punto di gestione basato su Internet, assicurarsi che il client sia assegnato al sito corretto. Se si assegna erroneamente il client a un sito di Configuration Manager 2007, un sito di System Center 2012 Configuration Manager o un sito di Configuration Manager che non dispone di ruoli del sistema del sito basati su Internet, il client sarà non gestito.  
+  L'eccezione all'esecuzione del controllo di compatibilità del sito riguarda il caso in cui un client venga configurato per un punto di gestione basato su Internet. In questo scenario non viene effettuata alcuna verifica compatibilità del sito. Se si stanno assegnando dei client a un sito contenente sistemi basati su Internet e si specifica un punto di gestione basato su Internet, assicurarsi che il client sia assegnato al sito corretto. Se si assegna erroneamente il client a un sito di Configuration Manager 2007, un sito di System Center 2012 Configuration Manager o un sito di Configuration Manager che non dispone di ruoli del sistema del sito basati su Internet, il client sarà non gestito.  
 
 ##  <a name="locating-management-points"></a>Individuazione dei punti di gestione  
  Dopo che un client viene assegnato a un sito, individua un punto di gestione all'interno del sito.  

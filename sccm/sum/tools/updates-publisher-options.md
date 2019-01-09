@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 497ff025dafcdb135e466a18f2f6661ca0f21a00
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 126ac524aaea851f5203888d414f7f9b188649c2
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349967"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424477"
 ---
 # <a name="configure-options-for-updates-publisher"></a>Configurare opzioni per Updates Publisher
 
@@ -42,34 +42,34 @@ Le opzioni sono divise nelle categorie seguenti:
 ## <a name="update-server"></a>Server di aggiornamento
 Per poter [pubblicare aggiornamenti](/sccm/sum/tools/manage-updates-with-updates-publisher#publish-updates-and-bundles), è prima necessario configurare Updates Publisher per il funzionamento con server di aggiornamento come WSUS (Windows Server Update Services). Questa operazione include la specifica del server, dei metodi per la connessione a quest'ultimo quando è remoto rispetto alla console e di un certificato da usare per la firma digitale degli aggiornamenti pubblicati.
 
--   **Configurare un server di aggiornamento**. Quando si configura un server di aggiornamento, selezionare il server WSUS di primo livello (server di aggiornamento) nella gerarchia di Configuration Manager, in modo che tutti i siti figlio abbiano accesso agli aggiornamenti pubblicati.
+- **Configurare un server di aggiornamento**. Quando si configura un server di aggiornamento, selezionare il server WSUS di primo livello (server di aggiornamento) nella gerarchia di Configuration Manager, in modo che tutti i siti figlio abbiano accesso agli aggiornamenti pubblicati.
 
   Se il server di aggiornamento è remoto rispetto al server di Updates Publisher, specificare il nome di dominio completo di tale server e indicare se ci si connette mediante SSL. Quando ci si connette mediante SSL, la porta predefinita passa da 8530 a 8531. Verificare che la porta impostata corrisponda a quella usata dal server di aggiornamento.
 
-    > [!TIP]  
-    > Se non si configura un server di aggiornamento, è comunque possibile usare Updates Publisher per creare aggiornamenti software.
+  > [!TIP]  
+  > Se non si configura un server di aggiornamento, è comunque possibile usare Updates Publisher per creare aggiornamenti software.
 
--   **Configurare il certificato di firma**. Per poter configurare il certificato di firma, è prima necessario configurare e connettersi a un server di aggiornamento.
+- **Configurare il certificato di firma**. Per poter configurare il certificato di firma, è prima necessario configurare e connettersi a un server di aggiornamento.
 
-    Updates Publisher usa il certificato di firma per firmare gli aggiornamenti software che vengono pubblicati nel server di aggiornamento. La pubblicazione ha esito negativo se il certificato digitale non è disponibile nell'archivio certificati del server di aggiornamento o del computer che esegue Updates Publisher.
+  Updates Publisher usa il certificato di firma per firmare gli aggiornamenti software che vengono pubblicati nel server di aggiornamento. La pubblicazione ha esito negativo se il certificato digitale non è disponibile nell'archivio certificati del server di aggiornamento o del computer che esegue Updates Publisher.
 
-    Per altre informazioni sull'aggiunta del certificato all'archivio certificati, vedere [Certificates and security for Updates Publisher](/sccm/sum/tools/updates-publisher-security) (Certificati e sicurezza per Updates Publisher).
+  Per altre informazioni sull'aggiunta del certificato all'archivio certificati, vedere [Certificates and security for Updates Publisher](/sccm/sum/tools/updates-publisher-security) (Certificati e sicurezza per Updates Publisher).
 
-    Se un certificato digitale non viene rilevato automaticamente per il server di aggiornamento, scegliere una delle operazioni seguenti:
+  Se un certificato digitale non viene rilevato automaticamente per il server di aggiornamento, scegliere una delle operazioni seguenti:
 
-    -   **Sfoglia**: questa opzione è disponibile solo quando il server di aggiornamento è installato nel server in cui si esegue la console. Dopo aver selezionato un certificato, è necessario scegliere **Crea** per aggiungerlo all'archivio certificati WSUS nel server di aggiornamento. Per i certificati selezionati con questo metodo, è necessario immettere la password del file con estensione **pfx**.
+  -   **Sfoglia**: questa opzione è disponibile solo quando il server di aggiornamento è installato nel server in cui si esegue la console. Dopo aver selezionato un certificato, è necessario scegliere **Crea** per aggiungerlo all'archivio certificati WSUS nel server di aggiornamento. Per i certificati selezionati con questo metodo, è necessario immettere la password del file con estensione **pfx**.
 
-    -   **Crea:** usare questa opzione per creare un nuovo certificato. Questa opzione aggiunge anche il certificato all'archivio certificati WSUS nel server di aggiornamento.
+  -   **Crea:** usare questa opzione per creare un nuovo certificato. Questa opzione aggiunge anche il certificato all'archivio certificati WSUS nel server di aggiornamento.
 
-    **Se si crea un certificato di firma personalizzato**, eseguire le operazioni di configurazione seguenti:
+  **Se si crea un certificato di firma personalizzato**, eseguire le operazioni di configurazione seguenti:
 
-    -   Abilitare l'opzione **Allow private key to be exported** (Rendi la chiave privata esportabile).
+  -   Abilitare l'opzione **Allow private key to be exported** (Rendi la chiave privata esportabile).
 
-    -   Impostare **Utilizzo chiavi** per la firma digitale.
+  -   Impostare **Utilizzo chiavi** per la firma digitale.
 
-    -   Impostare **Minimum key size** (Dimensioni minime chiave) su un valore uguale o maggiore di 2048 bit.
+  -   Impostare **Minimum key size** (Dimensioni minime chiave) su un valore uguale o maggiore di 2048 bit.
 
-    Usare l'opzione **Rimuovi** per rimuovere il certificato dall'archivio certificati WSUS. Questa opzione è disponibile quando il server di aggiornamento è locale per la console di Updates Publisher utilizzata o quando si è usato **SSL** per la connessione a un server di aggiornamento remoto.
+  Usare l'opzione **Rimuovi** per rimuovere il certificato dall'archivio certificati WSUS. Questa opzione è disponibile quando il server di aggiornamento è locale per la console di Updates Publisher utilizzata o quando si è usato **SSL** per la connessione a un server di aggiornamento remoto.
 
 ## <a name="configmgr-server"></a>Server di ConfigMgr
 Quando si usa Configuration Manager con Updates Publisher, usare le opzioni seguenti.
@@ -109,9 +109,9 @@ Le opzioni avanzate includono le seguenti:
 
 -   **Certificate revocation** (Revoca certificati): scegliere questa opzione per abilitare i controlli di revoca dei certificati.
 
--   **Local source publishing** (Pubblicazione origine locale: Updates Publisher può usare una copia locale di un aggiornamento in fase di pubblicazione prima del download di tale aggiornamento da Internet. La posizione deve essere una cartella sul computer che esegue Updates Publisher. Per impostazione predefinita, il percorso è **Documenti\LocalSourcePublishing.** Usare questo percorso quando in precedenza sono stati scaricati uno o più aggiornamenti o sono state apportate modifiche a un aggiornamento che si vuole distribuire.
+-   **Local source publishing** (Pubblicazione origine locale): Updates Publisher può usare una copia locale di un aggiornamento in fase di pubblicazione prima del download di tale aggiornamento da Internet. La posizione deve essere una cartella sul computer che esegue Updates Publisher. Per impostazione predefinita, il percorso è **Documenti\LocalSourcePublishing.** Usare questo percorso quando in precedenza sono stati scaricati uno o più aggiornamenti o sono state apportate modifiche a un aggiornamento che si vuole distribuire.
 
--   **Pulizia guidata aggiornamenti software**: avviare la Pulizia guidata aggiornamenti software. La procedura guidata imposta come scaduti gli aggiornamenti che si trovano sul server di aggiornamento ma non nel repository di Updates Publisher. Per altri dettagli vedere [Impostare come scaduti gli aggiornamenti senza riferimenti](#expire-unreferenced-software-updates).
+-   **Pulizia guidata aggiornamenti software**: avvia la Pulizia guidata aggiornamenti software. La procedura guidata imposta come scaduti gli aggiornamenti che si trovano sul server di aggiornamento ma non nel repository di Updates Publisher. Per altri dettagli vedere [Impostare come scaduti gli aggiornamenti senza riferimenti](#expire-unreferenced-software-updates).
 
 ## <a name="updates"></a>Aggiornamenti
  A ogni avvio, Updates Publisher può verificare automaticamente la presenza di nuovi aggiornamenti. È inoltre possibile scegliere di ricevere versioni di anteprima di Updates Publisher.

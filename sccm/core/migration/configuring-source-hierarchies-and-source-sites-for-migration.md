@@ -10,12 +10,12 @@ ms.assetid: ccce7cb5-e18f-4337-8adf-2018edca3c00
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d9ef1ca2dd2763cf5b96fd82031a2ef38ef64927
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 3871d0ccf7bbb368e86b9d4f10a87fd25739d360
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334692"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417592"
 ---
 # <a name="configure-source-hierarchies-and-source-sites-for-migration-to-system-center-configuration-manager"></a>Configurare gerarchie di origine e siti di origine per la migrazione a System Center Configuration Manager
 
@@ -41,27 +41,27 @@ Per abilitare la migrazione dei dati nell'ambiente di System Center Configuratio
 
 ### <a name="to-configure-a-source-hierarchy"></a>Per configurare una gerarchia di origine   
 
-1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
+1. Nella console di Configuration Manager fare clic su **Amministrazione**.  
 
-2.  Nell'area di lavoro **Amministrazione** espandere **Migrazione**, quindi fare clic su **Gerarchia di origine**.  
+2. Nell'area di lavoro **Amministrazione** espandere **Migrazione**, quindi fare clic su **Gerarchia di origine**.  
 
-3.  Nella scheda **Home** , nel gruppo **Migrazione** , fare clic su **Specifica gerarchia di origine**.  
+3. Nella scheda **Home** , nel gruppo **Migrazione** , fare clic su **Specifica gerarchia di origine**.  
 
-4.  Nella finestra di dialogo **Specifica gerarchia di origine** , per **Gerarchia di origine**, selezionare **Nuova gerarchia di origine**.  
+4. Nella finestra di dialogo **Specifica gerarchia di origine** , per **Gerarchia di origine**, selezionare **Nuova gerarchia di origine**.  
 
-5.  Per **Server di sito di Configuration Manager di livello superiore** immettere il nome o l'indirizzo IP del sito principale di una gerarchia di origine supportata.  
+5. Per **Server di sito di Configuration Manager di livello superiore** immettere il nome o l'indirizzo IP del sito principale di una gerarchia di origine supportata.  
 
-6.  Specificare gli account di accesso del sito di origine che dispongono delle seguenti autorizzazioni:  
+6. Specificare gli account di accesso del sito di origine che dispongono delle seguenti autorizzazioni:  
 
-    -   Account del sito di origine: autorizzazione **Lettura** per il provider SMS per il sito di livello superiore specificato nella gerarchia di origine. Per la condivisione e gli aggiornamenti dei punti di distribuzione sono necessarie le autorizzazioni **Modifica** ed **Eliminazione** per il sito nella gerarchia di origine.
+   - Account del sito di origine: autorizzazione di **lettura** per il provider SMS per il sito di livello superiore specificato nella gerarchia di origine. Per la condivisione e gli aggiornamenti dei punti di distribuzione sono necessarie le autorizzazioni **Modifica** ed **Eliminazione** per il sito nella gerarchia di origine.
 
-    -   Account del database del sito di origine: autorizzazioni **Lettura** ed **Esegui** per il database di SQL Server per il sito di livello superiore specificato nella gerarchia di origine.  
+   - Account del database del sito di origine: autorizzazioni di **lettura** ed **esecuzione** per il database di SQL Server per il sito di livello superiore specificato nella gerarchia di origine.  
 
      Se viene specificato l'uso dell'account computer, Configuration Manager usa l'account computer del sito principale della gerarchia di destinazione. Per questa opzione, verificare che l'account appartenga al gruppo di protezione **Distributed COM Users** nel dominio in cui si trova il sito di livello superiore della gerarchia di origine.  
 
-7.  Per condividere i punti di distribuzione tra le gerarchie di origine e di destinazione, selezionare la casella di controllo **Abilita la condivisione dei punti di distribuzione per il server del sito di origine** . Se non si abilita la condivisione dei punti di distribuzione in questo momento, è possibile farlo modificando le credenziali del sito di origine dopo che la raccolta dei dati è terminata.  
+7. Per condividere i punti di distribuzione tra le gerarchie di origine e di destinazione, selezionare la casella di controllo **Abilita la condivisione dei punti di distribuzione per il server del sito di origine** . Se non si abilita la condivisione dei punti di distribuzione in questo momento, è possibile farlo modificando le credenziali del sito di origine dopo che la raccolta dei dati è terminata.  
 
-8.  Fare clic su **OK** per salvare la configurazione. Verrà visualizzata la finestra di dialogo **Stato raccolta dati** e la raccolta dei dati inizierà automaticamente.  
+8. Fare clic su **OK** per salvare la configurazione. Verrà visualizzata la finestra di dialogo **Stato raccolta dati** e la raccolta dei dati inizierà automaticamente.  
 
 9. Al termine della raccolta dei dati, fare clic su **Chiudi** per chiudere la finestra di dialogo **Stato raccolta dati** e completare la configurazione.  
 
@@ -88,9 +88,9 @@ Usare la procedura seguente per configurare siti di origine aggiuntivi per le ge
 
 5.  Nella finestra di dialogo **Credenziali del sito di origine** , per gli account di accesso al sito di origine, specificare gli account che dispongono delle seguenti autorizzazioni:  
 
-    -   Account del sito di origine: autorizzazione **Lettura** per il provider SMS per il sito di livello superiore specificato nella gerarchia di origine. Per la condivisione e gli aggiornamenti dei punti di distribuzione sono necessarie le autorizzazioni **Modifica** ed **Eliminazione** per il sito nella gerarchia di origine.  
+    -   Account del sito di origine: autorizzazione di **lettura** per il provider SMS per il sito di livello superiore specificato nella gerarchia di origine. Per la condivisione e gli aggiornamenti dei punti di distribuzione sono necessarie le autorizzazioni **Modifica** ed **Eliminazione** per il sito nella gerarchia di origine.  
 
-    -   Account del database del sito di origine: autorizzazioni **Lettura** ed **Esegui** per il database di SQL Server per il sito di livello superiore specificato nella gerarchia di origine.  
+    -   Account del database del sito di origine: autorizzazioni di **lettura** ed **esecuzione** per il database di SQL Server per il sito di livello superiore specificato nella gerarchia di origine.  
 
     Se viene specificato l'uso dell'account computer, Configuration Manager usa l'account computer del sito principale della gerarchia di destinazione. Per questa opzione, verificare che l'account appartenga al gruppo di protezione **Distributed COM Users** nel dominio in cui si trova il sito di livello superiore della gerarchia di origine.  
 

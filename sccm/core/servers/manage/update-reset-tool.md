@@ -10,12 +10,12 @@ ms.assetid: 25fa89d6-7e47-45a6-8f4e-70b77560fba6
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e6ae6ed46cc1db5f545182e4b4f6b46374b5c174
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: de5c98e45c6f5d6dca1569de812825cce80d6f70
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344089"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417342"
 ---
 # <a name="update-reset-tool"></a>Strumento di reimpostazione dell'aggiornamento
 
@@ -62,13 +62,15 @@ Dopo l'esecuzione dello strumento:
 
 **Parametri della riga di comando:**  
 
-| Parametro        |Descrizione                 |  
-|------------------|----------------------------|  
-|**-S &lt;FQDN dell'istanza di SQL Server del sito di livello superiore>** | *Richiesto* <br> Specificare il nome di dominio completo dell'istanza di SQL Server che ospita il database del sito per il sito di livello superiore della gerarchia.    |  
-| **-D &lt;Nome database>**                        | *Richiesto* <br> Specificare il nome del database nel sito di livello superiore.  |  
-| **-P &lt;GUID pacchetto>**                         | *Richiesto* <br> Specificare il GUID dell'aggiornamento da reimpostare.   |  
-| **-I &lt;Nome istanza SQL Server>**             | *Facoltativa* <br> Identifica l'istanza di SQL Server che ospita il database del sito. |
-| **-FDELETE**                              | *Facoltativa* <br> Forza l'eliminazione di un aggiornamento scaricato correttamente. |  
+
+|                        Parametro                         |                                                       Descrizione                                                        |
+|----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| **-S &lt;FQDN dell'istanza di SQL Server del sito di livello superiore>** | *Richiesto* <br> Specificare il nome di dominio completo dell'istanza di SQL Server che ospita il database del sito per il sito di livello superiore della gerarchia. |
+|                **-D &lt;Nome database>**                 |                          *Richiesto* <br> Specificare il nome del database nel sito di livello superiore.                          |
+|                 **-P &lt;GUID pacchetto>**                 |                        *Richiesto* <br> Specificare il GUID dell'aggiornamento da reimpostare.                        |
+|           **-I &lt;Nome istanza SQL Server>**           |                    *Facoltativa* <br> Identifica l'istanza di SQL Server che ospita il database del sito.                     |
+|                       **-FDELETE**                       |                       *Facoltativa* <br> Forza l'eliminazione di un aggiornamento scaricato correttamente.                        |
+
  **Esempi:**  
  In uno scenario tipico, si vuole reimpostare un aggiornamento che presenta problemi di download. L'FQDN di SQL Server è *server1.fabrikam.com*, il database del sito è *CM_XYZ* e il GUID del pacchetto è *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Eseguire: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 

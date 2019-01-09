@@ -10,12 +10,12 @@ ms.assetid: 65c88e54-3574-48b0-a127-9cc914a89dca
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5f063034ed7cdc22a92df8d07d8be03ece12f663
-ms.sourcegitcommit: 4e4b71227309bee7e9f1285971f8235c67a9c502
+ms.openlocfilehash: 4587549ef2f43be3dcc5e18021f60c42770f5800
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46533746"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415518"
 ---
 # <a name="the-content-library-in-configuration-manager"></a>Raccolta contenuto in Configuration Manager
 
@@ -45,7 +45,7 @@ Configuration Manager copia i file di contenuto nell'unità con la priorità mas
 Per altre informazioni su come configurare le impostazioni dell'unità per il punto di distribuzione, vedere [Gestire il contenuto e l'infrastruttura del contenuto](/sccm/core/servers/deploy/configure/manage-content-and-content-infrastructure).  
 
 
->  [!IMPORTANT]  
+> [!IMPORTANT]
 >  Per spostare la raccolta contenuto in un percorso diverso in un punto di distribuzione dopo l'installazione, usare lo **strumento per il trasferimento di raccolte contenuto** negli Strumenti di Configuration Manager. Per altre informazioni, vedere lo [strumento per il trasferimento di raccolte contenuto](/sccm/core/support/content-library-transfer).  
 
 
@@ -112,13 +112,13 @@ Una raccolta contenuto remota è un prerequisito per la [disponibilità elevata 
 
 5. Notare il valore **Stato** nella colonna Raccolta contenuto della scheda Riepilogo nel riquadro dei dettagli. Viene aggiornata per mostrare lo stato di avanzamento del sito durante lo spostamento della raccolta contenuto.  
 
-    - Quando è **In corso**, il valore **Stato dello spostamento (%)** visualizza la percentuale di completamento.  
+   - Quando è **In corso**, il valore **Stato dello spostamento (%)** visualizza la percentuale di completamento.  
 
-    - Se è presente uno stato di errore, viene visualizzato l'errore. Gli errori tipici comprendono **accesso negato** o **disco pieno**.  
+   - Se è presente uno stato di errore, viene visualizzato l'errore. Gli errori tipici comprendono **accesso negato** o **disco pieno**.  
 
-    - Al termine, viene visualizzato **Completo**.  
+   - Al termine, viene visualizzato **Completo**.  
     
-    Per informazioni dettagliate, vedere **distmgr.log**. Per altre informazioni, vedere [Log del server del sito e del server di sistema del sito](/sccm/core/plan-design/hierarchy/log-files#BKMK_SiteSiteServerLog).  
+     Per informazioni dettagliate, vedere **distmgr.log**. Per altre informazioni, vedere [Log del server del sito e del server di sistema del sito](/sccm/core/plan-design/hierarchy/log-files#BKMK_SiteSiteServerLog).  
 
 Per altre informazioni su questo processo, vedere [Diagramma di flusso - Gestire la raccolta contenuto](/sccm/core/plan-design/hierarchy/manage-content-library-flowchart).
 

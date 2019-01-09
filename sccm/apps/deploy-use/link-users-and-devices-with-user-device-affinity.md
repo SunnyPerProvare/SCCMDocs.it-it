@@ -10,12 +10,12 @@ ms.assetid: 5b30b0d5-722d-4d4b-9ed7-5a43de315461
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 40bab1725b074bc549eeb9e9764ab8a1dd8b83e7
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 5343f10fe1e8a7b799454801c764a43619488014
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337718"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421740"
 ---
 # <a name="link-users-and-devices-with-user-device-affinity-in-system-center-configuration-manager"></a>Collegare utenti e dispositivi mediante l'affinità utente dispositivo in System Center Configuration Manager
 
@@ -52,10 +52,10 @@ L'affinità utente-dispositivo in System Center Configuration Manager (Configura
 ## <a name="automatically-create-user-device-affinities-windows-pcs-only"></a>Creare automaticamente le affinità utente dispositivo (solo PC Windows)  
  Configuration Manager legge i dati sugli accessi utente dal registro eventi di Windows. Per creare automaticamente le affinità utente-dispositivo, è necessario attivare le due opzioni seguenti dai criteri di sicurezza locali nei computer client per archiviare gli eventi di accesso nel registro eventi di Windows:  
 
--   **Controlla eventi di accesso account**  
--   **Controlla eventi di accesso**  
+- **Controlla eventi di accesso account**  
+- **Controlla eventi di accesso**  
 
- Per configurare queste impostazioni, usare i criteri di gruppo di Windows.  
+  Per configurare queste impostazioni, usare i criteri di gruppo di Windows.  
 
 > [!IMPORTANT]  
 > Se un errore causa la generazione di un numero elevato di voci da parte del registro eventi di Windows, è possibile che venga creato un nuovo registro eventi. In questo caso, gli eventi di accesso esistenti potrebbero non essere più disponibili per Configuration Manager.  

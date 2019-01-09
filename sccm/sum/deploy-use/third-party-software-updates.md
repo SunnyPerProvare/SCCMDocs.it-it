@@ -10,12 +10,12 @@ ms.assetid: 946b0f74-0794-4e8f-a6af-9737d877179b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fbcf7a7d76146cc11dd4bb57b86fe4752c694e02
-ms.sourcegitcommit: 1e782268d6c0211bd854b5860de72cfd6c6985c6
+ms.openlocfilehash: 32aced9e14f98008dfd769564c553370d067896e
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44697039"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423100"
 ---
 # <a name="enable-third-party-updates"></a>Abilitare gli aggiornamenti di terze parti 
 
@@ -53,7 +53,7 @@ A partire dalla versione 1806, il nodo **Cataloghi di aggiornamenti software di 
 4. Per consentire l'installazione del certificato di firma WSUS autofirmato negli archivi di autori attendibili e radici attendibili sul server del punto di aggiornamento software remoto:
    - L'**account di connessione al server WSUS** deve avere autorizzazioni di amministrazione remota per il server del punto di aggiornamento software.
 
-    Se questo elemento non è possibile, esportare il certificato dall'archivio WSUS del computer locale agli archivi di autori attendibili e radici attendibili. 
+     Se questo elemento non è possibile, esportare il certificato dall'archivio WSUS del computer locale agli archivi di autori attendibili e radici attendibili. 
 
 > [!NOTE] 
 >L'**account di connessione al server WSUS** può essere identificato visualizzando la scheda **Impostazioni proxy e account** nelle proprietà del ruolo del sistema del sito del punto di aggiornamento software. Se non viene specificato un account, viene usato l'account computer del server del sito.
@@ -110,7 +110,7 @@ I *cataloghi partner* sono cataloghi di fornitori di software le cui informazion
     - **URL di download**: un indirizzo HTTPS valido del catalogo personalizzato.
     - **Editore**: nome dell'organizzazione che pubblica il catalogo. 
     - **Nome**: nome del catalogo da visualizzare nella console di Configuration Manager. 
-    - **Descrizione**: descrizione del catalogo. 
+    - **Descrizione**: una descrizione del catalogo. 
     - **URL supporto tecnico** (facoltativo): indirizzo HTTPS valido di un sito Web per ottenere assistenza con il catalogo. 
     - **Contatto supporto tecnico** (facoltativo): informazioni di contatto per ottenere assistenza con il catalogo. 
 2. Fare clic su **Avanti** per esaminare il riepilogo del catalogo e continuare per completare gli **Aggiornamenti software guidati di terze parti per i cataloghi personalizzati**.
@@ -122,17 +122,17 @@ Quando si sottoscrive un catalogo di terze parti nella console di Configuration 
 1. Nella console di Configuration Manager accedere all'area di lavoro **Raccolta software**. Espandere **Aggiornamenti software** e selezionare il nodo **Cataloghi di aggiornamenti software di terze parti**.  
 2. Selezionare il catalogo per cui eseguire la sottoscrizione e fare clic su **Sottoscrivi il catalogo** nella barra multifunzione. 
     ![Aggiungi un catalogo personalizzato per gli aggiornamenti di terze parti](media/third-party-updates-subscribe.png)
-1. Rivedere e approvare il certificato del catalogo.  
-    >[!NOTE]
-    
-    > Quando si sottoscrive un catalogo di aggiornamenti software di terze parti, il certificato rivisto e approvato nella procedura guidata viene aggiunto al sito. Questo certificato è di tipo **Catalogo di aggiornamenti software di terze parti**. È possibile gestirlo dal nodo **Certificati** in **Protezione** nell'area di lavoro **Amministrazione**.  
-2. Completare la procedura guidata. Dopo la sottoscrizione iniziale, in pochi minuti viene avviato il download del catalogo. 
+3. Rivedere e approvare il certificato del catalogo.  
+   > [!NOTE]
+   > 
+   > Quando si sottoscrive un catalogo di aggiornamenti software di terze parti, il certificato rivisto e approvato nella procedura guidata viene aggiunto al sito. Questo certificato è di tipo **Catalogo di aggiornamenti software di terze parti**. È possibile gestirlo dal nodo **Certificati** in **Protezione** nell'area di lavoro **Amministrazione**.  
+4. Completare la procedura guidata. Dopo la sottoscrizione iniziale, in pochi minuti viene avviato il download del catalogo. 
     - Il catalogo viene sincronizzato automaticamente ogni 7 giorni.
     - Fare clic su **Sincronizza ora** nella barra multifunzione per forzare una sincronizzazione.
-3. Dopo aver scaricato il catalogo, i metadati del prodotto devono essere sincronizzati dal database WSUS nel database di Configuration Manager. [Avviare manualmente la sincronizzazione degli aggiornamenti software](../get-started/synchronize-software-updates.md#manually-start-software-updates-synchronization) per sincronizzare le informazioni sul prodotto.
-4. Dopo la sincronizzazione delle informazioni sul prodotto, [configurare il punto di aggiornamento software per sincronizzare il prodotto desiderato](../get-started/configure-classifications-and-products.md#to-configure-classifications-and-products-to-synchronize) in Configuration Manager.  
-5. [Avviare manualmente la sincronizzazione degli aggiornamenti software](../get-started/synchronize-software-updates.md#manually-start-software-updates-synchronization) per sincronizzare gli aggiornamenti del nuovo prodotto in Configuration Manager.  
-6. Al termine della sincronizzazione, è possibile visualizzare gli aggiornamenti di terze parti nel nodo **Tutti gli aggiornamenti**. Questi aggiornamenti vengono pubblicati come aggiornamenti **solo metadati** finché non si sceglie di pubblicarli. 
+5. Dopo aver scaricato il catalogo, i metadati del prodotto devono essere sincronizzati dal database WSUS nel database di Configuration Manager. [Avviare manualmente la sincronizzazione degli aggiornamenti software](../get-started/synchronize-software-updates.md#manually-start-software-updates-synchronization) per sincronizzare le informazioni sul prodotto.
+6. Dopo la sincronizzazione delle informazioni sul prodotto, [configurare il punto di aggiornamento software per sincronizzare il prodotto desiderato](../get-started/configure-classifications-and-products.md#to-configure-classifications-and-products-to-synchronize) in Configuration Manager.  
+7. [Avviare manualmente la sincronizzazione degli aggiornamenti software](../get-started/synchronize-software-updates.md#manually-start-software-updates-synchronization) per sincronizzare gli aggiornamenti del nuovo prodotto in Configuration Manager.  
+8. Al termine della sincronizzazione, è possibile visualizzare gli aggiornamenti di terze parti nel nodo **Tutti gli aggiornamenti**. Questi aggiornamenti vengono pubblicati come aggiornamenti **solo metadati** finché non si sceglie di pubblicarli. 
      - L'icona con la freccia blu rappresenta un aggiornamento software solo di metadati. ![Icona per gli aggiornamenti software solo metadati](media/MetadataOnly.png)
 
 

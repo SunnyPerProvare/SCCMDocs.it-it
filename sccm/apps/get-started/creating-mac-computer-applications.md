@@ -10,12 +10,12 @@ ms.assetid: ab1aecdd-d943-44f5-b0a9-e8fe7439e5d6
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 3cbb7281cd7dd39a32a71105fe173f868947eef9
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 1ff2b135d38c819804cc7873effa3bff5f9254e7
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338245"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422097"
 ---
 # <a name="create-mac-computer-applications-with-system-center-configuration-manager"></a>Creare applicazioni per computer Mac con System Center Configuration Manager
 
@@ -46,13 +46,14 @@ Tenere presenti le seguenti considerazioni quando si creano e si distribuiscono 
 ## <a name="steps-to-create-and-deploy-an-application"></a>Passaggi per creare e distribuire un'applicazione  
  Nella tabella seguente vengono forniti i passaggi, i dettagli e le informazioni per la creazione e la distribuzione di applicazioni per computer Mac.  
 
-|Passaggio|Dettagli|  
-|----------|-------------|  
-|**Passaggio 1**: Preparare le applicazioni Mac per Configuration Manager|Per poter creare applicazioni di Configuration Manager da pacchetti software Mac, è necessario usare lo strumento **CMAppUtil** in un computer Mac per convertire il software Mac in un file **CMMAC** di Configuration Manager.|  
-|**Passaggio 2**: Creare un'applicazione di Configuration Manager che contenga il software Mac|Usare la **Creazione guidata applicazione** per creare un'applicazione per il software Mac.|  
-|**Passaggio 3**: Creare un tipo di distribuzione per l'applicazione Mac|Questo passaggio è necessario solo se non si effettuata l'importazione automatica di queste informazioni dall'applicazione.|  
-|**Passaggio 4**: Distribuire l'applicazione Mac|Usare la **Distribuzione guidata del software** per distribuire l'applicazione nei computer Mac.|  
-|**Passaggio 5**: Monitorare la distribuzione dell'applicazione Mac|Monitorare le corrette distribuzioni delle applicazioni nei computer Mac.|  
+
+|                                         Passaggio                                          |                                                                                                             Dettagli                                                                                                              |
+|---------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|            **Passaggio 1**: Preparare le applicazioni Mac per Configuration Manager             | Per poter creare applicazioni di Configuration Manager da pacchetti software Mac, è necessario usare lo strumento **CMAppUtil** in un computer Mac per convertire il software Mac in un file <strong>CMMAC</strong> di Configuration Manager. |
+| **Passaggio 2**: Creare un'applicazione di Configuration Manager che contenga il software Mac |                                                                       Usare la **Creazione guidata applicazione** per creare un'applicazione per il software Mac.                                                                       |
+|             **Passaggio 3**: Creare un tipo di distribuzione per l'applicazione Mac              |                                                              Questo passaggio è necessario solo se non si effettuata l'importazione automatica di queste informazioni dall'applicazione.                                                               |
+|                        **Passaggio 4**: Distribuire l'applicazione Mac                         |                                                                          Usare la **Distribuzione guidata del software** per distribuire l'applicazione nei computer Mac.                                                                          |
+|               **Passaggio 5**: Monitorare la distribuzione dell'applicazione Mac               |                                                                                 Monitorare le corrette distribuzioni delle applicazioni nei computer Mac.                                                                                 |
 
 ## <a name="supplemental-procedures-to-create-and-deploy-applications-for-mac-computers"></a>Procedure supplementari per creare e distribuire applicazioni per computer Mac  
  Usare le procedure che seguono per creare e distribuire applicazioni per computer Mac gestiti da Configuration Manager.  

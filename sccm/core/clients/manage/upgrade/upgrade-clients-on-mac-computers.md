@@ -10,12 +10,12 @@ ms.assetid: 74c60941-5eae-4905-9e58-252bdb39df96
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fb0ef52bc3359e1b31b2e2237a87e58bf671bcb7
-ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
+ms.openlocfilehash: 37471367e95c6f0edc1d33b951776673037d845c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36260837"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416390"
 ---
 # <a name="how-to-upgrade-clients-on-mac-computers-in-system-center-configuration-manager"></a>Come aggiornare i client di System Center Configuration Manager in computer Mac
 
@@ -39,19 +39,19 @@ Seguire la procedura dettagliata descritta di seguito per aggiornare il client i
 
 ## <a name="step-4-create-a-cmmac-file-that-can-be-used-to-create-an-application"></a>Passaggio 4: creare un file con estensione cmmac che può essere usato per creare un'applicazione  
 
-1.  Usare lo strumento **CMAppUtil** (disponibile nella cartella **Strumenti** dei file di installazione del client Mac) per creare un file .cmmac dal pacchetto di installazione client. Questo file servirà per creare l'applicazione di Configuration Manager.  
+1. Usare lo strumento **CMAppUtil** (disponibile nella cartella **Strumenti** dei file di installazione del client Mac) per creare un file .cmmac dal pacchetto di installazione client. Questo file servirà per creare l'applicazione di Configuration Manager.  
 
-2.  Copiare il nuovo file **CMClient.pkg.cmmac** in un percorso disponibile per il computer che esegue la console di Configuration Manager.  
+2. Copiare il nuovo file **CMClient.pkg.cmmac** in un percorso disponibile per il computer che esegue la console di Configuration Manager.  
 
- Per altre informazioni, vedere [Supplemental procedures to create and deploy applications for Mac computers](/sccm/apps/get-started/creating-mac-computer-applications#supplemental-procedures-to-create-and-deploy-applications-for-mac-computers) (Procedure supplementari per creare e distribuire applicazioni per computer Mac).  
+   Per altre informazioni, vedere [Supplemental procedures to create and deploy applications for Mac computers](/sccm/apps/get-started/creating-mac-computer-applications#supplemental-procedures-to-create-and-deploy-applications-for-mac-computers) (Procedure supplementari per creare e distribuire applicazioni per computer Mac).  
 
 ## <a name="step-5-create-and-deploy-an-application-containing-the-mac-client-files"></a>**Passaggio 5:** creare e distribuire un'applicazione contenente i file del client Mac  
 
-1.  Nella console di Configuration Manager creare un'applicazione dal file **CMClient.pkg.cmmac** che contiene i file di installazione del client.  
+1. Nella console di Configuration Manager creare un'applicazione dal file **CMClient.pkg.cmmac** che contiene i file di installazione del client.  
 
-2.  Distribuire l'applicazione nei computer Mac della gerarchia.  
+2. Distribuire l'applicazione nei computer Mac della gerarchia.  
 
- Per altre informazioni, vedere [Creating Mac computer applications with System Center Configuration Manager](../../../../apps/get-started/creating-mac-computer-applications.md) (Creazione di applicazioni per computer Mac con System Center Configuration Manager).  
+   Per altre informazioni, vedere [Creating Mac computer applications with System Center Configuration Manager](../../../../apps/get-started/creating-mac-computer-applications.md) (Creazione di applicazioni per computer Mac con System Center Configuration Manager).  
 
 ## <a name="step-6-users-install-the-latest-client"></a>Passaggio 6: installare il client più recente  
  Gli utenti di client Mac saranno informati sulla disponibilità di un aggiornamento al client di Configuration Manager che dovrà essere installato. Al termine, è necessario riavviare il computer Mac.  
@@ -63,38 +63,38 @@ Seguire la procedura dettagliata descritta di seguito per aggiornare il client i
 ##  <a name="BKMK_UpgradingClient_MachineEnrollment"></a> Configurare il client aggiornato per l'uso di un certificato esistente  
  Eseguire la procedura seguente per impedire che venga eseguita la registrazione guidata computer e per configurare il client aggiornato in modo da usare un certificato client esistente.  
 
--   Nella console di Configuration Manager creare un elemento di configurazione del tipo **Mac OS X**.  
+- Nella console di Configuration Manager creare un elemento di configurazione del tipo **Mac OS X**.  
 
--   Aggiungere un'impostazione a questo elemento di configurazione con il tipo di impostazione **Script**.  
+- Aggiungere un'impostazione a questo elemento di configurazione con il tipo di impostazione **Script**.  
 
--   Aggiungere il seguente script all'impostazione:  
+- Aggiungere il seguente script all'impostazione:  
 
-    ```  
-    #!/bin/sh  
-    echo "Starting script\n"  
-    echo "Changing directory to MAC Client\n"  
-    cd /Users/Administrator/Desktop/'MAC Client'/  
-    echo "Import root cert\n"  
-    /usr/bin/sudo /usr/bin/security import /Users/Administrator/Desktop/'MAC Client'/Root.pfx -A -k /Library/Keychains/System.Keychain -P ROOT  
-    echo "Using openssl to convert pfx to a crt\n"  
-    /usr/bin/sudo openssl pkcs12 -in /Users/Administrator/Desktop/'MAC Client'/Root.pfx -out Root1.crt -nokeys -clcerts -passin pass:ROOT  
-    echo "Adding trust to root cert\n"  
-    /usr/bin/sudo /usr/bin/security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.Keychain Root1.crt  
-    echo "Import client cert\n"  
-    /usr/bin/sudo /usr/bin/security import /Users/Administrator/Desktop/'MAC Client'/MacClient.pfx -A -k /Library/Keychains/System.Keychain -P MAC  
-    echo "Executing ccmclient with MP\n"  
-    sudo ./ccmsetup -MP https://SCCM34387.SCCM34387DOM.NET/omadm/cimhandler.ashx  
-    echo "Editing Plist file\n"  
-    sudo /usr/libexec/Plistbuddy -c 'Add:SubjectName string CMMAC003L' /Library/'Application Support'/Microsoft/CCM/ccmclient.plist  
-    echo "Changing directory to CCM\n"  
-    cd /Library/'Application Support'/Microsoft/CCM/  
-    echo "Making connection to the server\n"  
-    sudo open ./CCMClient  
-    echo "Ending Script\n"  
-    exit  
+  ```  
+  #!/bin/sh  
+  echo "Starting script\n"  
+  echo "Changing directory to MAC Client\n"  
+  cd /Users/Administrator/Desktop/'MAC Client'/  
+  echo "Import root cert\n"  
+  /usr/bin/sudo /usr/bin/security import /Users/Administrator/Desktop/'MAC Client'/Root.pfx -A -k /Library/Keychains/System.Keychain -P ROOT  
+  echo "Using openssl to convert pfx to a crt\n"  
+  /usr/bin/sudo openssl pkcs12 -in /Users/Administrator/Desktop/'MAC Client'/Root.pfx -out Root1.crt -nokeys -clcerts -passin pass:ROOT  
+  echo "Adding trust to root cert\n"  
+  /usr/bin/sudo /usr/bin/security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.Keychain Root1.crt  
+  echo "Import client cert\n"  
+  /usr/bin/sudo /usr/bin/security import /Users/Administrator/Desktop/'MAC Client'/MacClient.pfx -A -k /Library/Keychains/System.Keychain -P MAC  
+  echo "Executing ccmclient with MP\n"  
+  sudo ./ccmsetup -MP https://SCCM34387.SCCM34387DOM.NET/omadm/cimhandler.ashx  
+  echo "Editing Plist file\n"  
+  sudo /usr/libexec/Plistbuddy -c 'Add:SubjectName string CMMAC003L' /Library/'Application Support'/Microsoft/CCM/ccmclient.plist  
+  echo "Changing directory to CCM\n"  
+  cd /Library/'Application Support'/Microsoft/CCM/  
+  echo "Making connection to the server\n"  
+  sudo open ./CCMClient  
+  echo "Ending Script\n"  
+  exit  
 
-    ```  
+  ```  
 
--   Aggiungere l'elemento di configurazione a una linea di base di configurazione, distribuire la linea di base di configurazione in tutti i computer Mac che installano un certificato indipendentemente da Configuration Manager.  
+- Aggiungere l'elemento di configurazione a una linea di base di configurazione, distribuire la linea di base di configurazione in tutti i computer Mac che installano un certificato indipendentemente da Configuration Manager.  
 
- Per altre informazioni su come creare e distribuire elementi di configurazione per computer Mac, vedere [How to create configuration items for Mac OS X devices managed with the System Center Configuration Manager client](../../../../compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md) (Come creare elementi di configurazione per dispositivi Mac OS X gestiti con il client di System Center Configuration Manager) e [How to deploy configuration baselines in System Center Configuration Manager](../../../../compliance/deploy-use/deploy-configuration-baselines.md) (Come distribuire le linee di base di configurazione in System Center Configuration Manager).  
+  Per altre informazioni su come creare e distribuire elementi di configurazione per computer Mac, vedere [How to create configuration items for Mac OS X devices managed with the System Center Configuration Manager client](../../../../compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md) (Come creare elementi di configurazione per dispositivi Mac OS X gestiti con il client di System Center Configuration Manager) e [How to deploy configuration baselines in System Center Configuration Manager](../../../../compliance/deploy-use/deploy-configuration-baselines.md) (Come distribuire le linee di base di configurazione in System Center Configuration Manager).  

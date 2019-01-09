@@ -10,12 +10,12 @@ ms.technology: configmgr-sum
 ms.assetid: 0d484c1a-e903-4bff-9e9b-e452c62e38a8
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: ad44beeb662cb0cd5cf083b18721d88a5b7360c4
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 74781a574f1c1959212a652a20e2ca4d0e620547
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351616"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420516"
 ---
 #  <a name="BKMK_ManageSUSettings"></a> Gestire le impostazioni per gli aggiornamenti software  
 
@@ -55,9 +55,9 @@ Usare la seguente procedura per aprire le proprietà degli aggiornamenti softwar
 
 #### <a name="to-open-software-update-properties"></a>Per aprire le proprietà degli aggiornamenti software  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
-2.  Nell'area di lavoro Raccolta software, espandere **Aggiornamenti software**, quindi fare clic su **Tutti gli aggiornamenti software**.  
-3.  Selezionare uno o più aggiornamenti software e quindi nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà** .  
+1. Nella console di Configuration Manager fare clic su **Raccolta software**.  
+2. Nell'area di lavoro Raccolta software, espandere **Aggiornamenti software**, quindi fare clic su **Tutti gli aggiornamenti software**.  
+3. Selezionare uno o più aggiornamenti software e quindi nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà** .  
 
    > [!NOTE]  
    >  Nel nodo **Tutti gli aggiornamenti software** Configuration Manager visualizza solo gli aggiornamenti software con classificazione **Errore critico** e **Sicurezza** rilasciati negli ultimi 30 giorni.  
@@ -68,7 +68,7 @@ Nelle proprietà degli aggiornamenti software, è possibile verificare le inform
 ####  <a name="BKMK_SoftwareUpdateDetails"></a> Dettagli sugli aggiornamenti software  
 Nella scheda **Dettagli aggiornamento** è possibile visualizzare le seguenti informazioni di riepilogo relative all'aggiornamento software selezionato:  
 
-- **ID bollettino**: specifica l'ID bollettino associato agli aggiornamenti software di sicurezza. È possibile trovare i dettagli relativi al bollettino sulla sicurezza cercando l'ID bollettino nella pagina Web [Bollettini sulla sicurezza](http://go.microsoft.com/fwlink/p/?LinkId=58313) .  
+- **ID bollettino**: specifica l'ID bollettino associato agli aggiornamenti software di protezione. È possibile trovare i dettagli relativi al bollettino sulla sicurezza cercando l'ID bollettino nella pagina Web [Bollettini sulla sicurezza](http://go.microsoft.com/fwlink/p/?LinkId=58313) .  
 
 - **ID articolo**: specifica l'ID articolo per l'aggiornamento software. L'articolo di riferimento fornisce informazioni più dettagliate sull'aggiornamento software e il problema che l'aggiornamento software consente di correggere o migliorare.  
 
@@ -91,7 +91,7 @@ Nella scheda **Informazioni sul contenuto** , esaminare le seguenti informazioni
 
 -   **Lingua**: specifica le lingue per l'aggiornamento software.  
 
--   **Percorso di origine**: specifica il percorso dei file di origine dell'aggiornamento software.  
+-   **Percorso di origine**: specifica il percorso ai file di origine dell'aggiornamento software.  
 
 -   **Dimensione (MB)**: specifica le dimensioni dei file di origine dell'aggiornamento software.  
 

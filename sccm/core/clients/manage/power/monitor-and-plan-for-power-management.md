@@ -10,12 +10,12 @@ ms.assetid: 507bf676-2679-4e4d-8831-3ffc9cf8557e
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 70e6f4ddfa335a08bdf7039274b388b5a468311e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: c0cff0787549624ab0b987fbacdb6f5b4f9c3ec1
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341764"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53416215"
 ---
 # <a name="how-to-monitor-and-plan-for-power-management-in-system-center-configuration-manager"></a>Come monitorare e pianificare il risparmio energia in System Center Configuration Manager
 
@@ -43,17 +43,17 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 ###  <a name="BKMK_Activity"></a> Report Attività computer  
  Il report **Attività computer** visualizza un grafico che mostra l'attività seguente per una raccolta specificata in un periodo di tempo specificato:  
 
--   **Computer acceso** - Il computer è stato acceso.  
+- **Computer acceso** - Il computer è stato acceso.  
 
--   **Monitor acceso** - Il monitor è stato acceso.  
+- **Monitor acceso** - Il monitor è stato acceso.  
 
--   **Utente attivo** - È stata rilevata attività dal mouse del computer, dalla tastiera del computer o da una connessione Desktop remoto al computer  
+- **Utente attivo** - È stata rilevata attività dal mouse del computer, dalla tastiera del computer o da una connessione Desktop remoto al computer  
 
- Questo report viene usato durante le fasi di monitoraggio, pianificazione e applicazione per analizzare l'andamento delle attività dei computer, dei monitor e degli utenti in un periodo di 24 ore. Se si esegue il report per alcuni giorni, i dati vengono aggregati per il periodo. Questo report può essere utile per determinare gli orari lavorativi (di punta) e non lavorativi (non di punta) tipici per una raccolta selezionata, in modo da poter decidere più facilmente quando applicare i piani di risparmio energia configurati.  
+  Questo report viene usato durante le fasi di monitoraggio, pianificazione e applicazione per analizzare l'andamento delle attività dei computer, dei monitor e degli utenti in un periodo di 24 ore. Se si esegue il report per alcuni giorni, i dati vengono aggregati per il periodo. Questo report può essere utile per determinare gli orari lavorativi (di punta) e non lavorativi (non di punta) tipici per una raccolta selezionata, in modo da poter decidere più facilmente quando applicare i piani di risparmio energia configurati.  
 
- Il grafico mostra i periodi di tempo durante i quali un computer potrebbe essere acceso, ma non è presente attività utente. Prendere in considerazione la possibilità di applicare impostazioni di risparmio energia più restrittive durante tali periodi per ridurre i costi energetici per i computer accesi, ma non usati. Un computer viene conteggiato come attivo in presenza di attività del computer, dell'utente o del monitor per più di un minuto per un'ora visualizzata nel grafico. Se un computer non restituisce dati relativi al risparmio energia, non verrà incluso nel report **Attività computer** .  
+  Il grafico mostra i periodi di tempo durante i quali un computer potrebbe essere acceso, ma non è presente attività utente. Prendere in considerazione la possibilità di applicare impostazioni di risparmio energia più restrittive durante tali periodi per ridurre i costi energetici per i computer accesi, ma non usati. Un computer viene conteggiato come attivo in presenza di attività del computer, dell'utente o del monitor per più di un minuto per un'ora visualizzata nel grafico. Se un computer non restituisce dati relativi al risparmio energia, non verrà incluso nel report **Attività computer** .  
 
- Usare i parametri seguenti per configurare questo report.  
+  Usare i parametri seguenti per configurare questo report.  
 
 #### <a name="required-report-parameters"></a>Parametri obbligatori del report  
  I parametri seguenti devono essere specificati per eseguire il report.  
@@ -78,13 +78,13 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 ###  <a name="BKMK_Comp_Activity_by_computer"></a> Report Attività computer per computer  
  Il report **Attività computer per computer** visualizza un grafico che mostra l'attività seguente per un computer specificato in una data specificata:  
 
--   **Computer acceso** - Il computer è stato acceso.  
+- **Computer acceso** - Il computer è stato acceso.  
 
--   **Monitor acceso** - Il monitor è stato acceso.  
+- **Monitor acceso** - Il monitor è stato acceso.  
 
--   **Utente attivo** - È stata rilevata attività dal mouse del computer, dalla tastiera del computer o da una connessione Desktop remoto al computer.  
+- **Utente attivo** - È stata rilevata attività dal mouse del computer, dalla tastiera del computer o da una connessione Desktop remoto al computer.  
 
- Questo report può essere eseguito in modo indipendente o chiamato dal report **Dettagli attività computer** .  
+  Questo report può essere eseguito in modo indipendente o chiamato dal report **Dettagli attività computer** .  
 
 > [!NOTE]  
 >  Le informazioni sull'attività del computer vengono raccolte dai computer client durante l'inventario hardware. A seconda dell'ora in cui viene eseguito l'inventario hardware, potrebbe essere raccolta l'attività mentre è applicata una combinazione per il risparmio di energia in ore di punta o fuori ore di punta.  
@@ -233,13 +233,13 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 ###  <a name="BKMK_Consumption"></a> Report Consumo energia  
  Il report **Consumo energia** visualizza le informazioni seguenti:  
 
--   Un grafico che mostra il consumo di energia mensile totale dei computer in kiloWatt per ora (kWh) nella raccolta specificata per il periodo di tempo specificato.  
+- Un grafico che mostra il consumo di energia mensile totale dei computer in kiloWatt per ora (kWh) nella raccolta specificata per il periodo di tempo specificato.  
 
--   Un grafico che mostra il consumo di energia medio in kiloWatt per ora (kWh) di ogni computer nella raccolta specificata per il periodo di tempo specificato.  
+- Un grafico che mostra il consumo di energia medio in kiloWatt per ora (kWh) di ogni computer nella raccolta specificata per il periodo di tempo specificato.  
 
--   Una tabella che mostra il consumo di energia mensile totale in kiloWatt per ora (kWh) e il consumo di energia medio dei computer nella raccolta specificata per il periodo di tempo specificato.  
+- Una tabella che mostra il consumo di energia mensile totale in kiloWatt per ora (kWh) e il consumo di energia medio dei computer nella raccolta specificata per il periodo di tempo specificato.  
 
- Queste informazioni possono essere utili per individuare le tendenze di consumo di energia nell'ambiente in oggetto. Dopo aver applicato una combinazione per il risparmio di energia ai computer nella raccolta selezionata, il consumo di energia dei computer dovrebbe ridursi.  
+  Queste informazioni possono essere utili per individuare le tendenze di consumo di energia nell'ambiente in oggetto. Dopo aver applicato una combinazione per il risparmio di energia ai computer nella raccolta selezionata, il consumo di energia dei computer dovrebbe ridursi.  
 
 > [!NOTE]  
 >  L'aggiunta o la rimozione di membri nella raccolta dopo aver applicato una combinazione per il risparmio di energia influirà sui risultati visualizzati dal report **Consumo di energia** e potrebbe risultare più difficile confrontare i risultati della fase di monitoraggio e pianificazione con quelli della fase di imposizione.  
@@ -276,13 +276,13 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 ###  <a name="BKMK_Consumption_by_Day"></a> Report Consumo energia per giorno  
  Il report **Consumo energia per giorno** visualizza le informazioni seguenti:  
 
--   Un grafico che mostra il consumo di energia giornaliero totale dei computer in kiloWatt per ora (kWh) nella raccolta specificata per gli ultimi 31 giorni.  
+- Un grafico che mostra il consumo di energia giornaliero totale dei computer in kiloWatt per ora (kWh) nella raccolta specificata per gli ultimi 31 giorni.  
 
--   Un grafico che mostra il consumo di energia medio giornaliero in kiloWatt per ora (kWh) di ogni computer nella raccolta specificata negli ultimi 31 giorni.  
+- Un grafico che mostra il consumo di energia medio giornaliero in kiloWatt per ora (kWh) di ogni computer nella raccolta specificata negli ultimi 31 giorni.  
 
--   Una tabella che mostra il consumo di energia totale giornaliero in kiloWatt per ora (kWh) e il consumo di energia medio giornaliero dei computer nella raccolta specificata negli ultimi 31 giorni.  
+- Una tabella che mostra il consumo di energia totale giornaliero in kiloWatt per ora (kWh) e il consumo di energia medio giornaliero dei computer nella raccolta specificata negli ultimi 31 giorni.  
 
- Queste informazioni possono essere utili per individuare le tendenze di consumo di energia nell'ambiente in oggetto. Dopo aver applicato una combinazione per il risparmio di energia ai computer nella raccolta selezionata, il consumo di energia dei computer dovrebbe ridursi.  
+  Queste informazioni possono essere utili per individuare le tendenze di consumo di energia nell'ambiente in oggetto. Dopo aver applicato una combinazione per il risparmio di energia ai computer nella raccolta selezionata, il consumo di energia dei computer dovrebbe ridursi.  
 
 > [!NOTE]  
 >  L'aggiunta o la rimozione di membri nella raccolta dopo aver applicato una combinazione per il risparmio di energia influirà sui risultati visualizzati dal report **Consumo di energia** e potrebbe risultare più difficile confrontare i risultati della fase di monitoraggio e pianificazione con quelli della fase di imposizione.  
@@ -317,15 +317,15 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 ###  <a name="BKMK_Cost"></a> Report Costo energia  
  Il report **Costo energia** visualizza le informazioni seguenti:  
 
--   Un grafico che mostra il costo dell'energia totale mensile per i computer nella raccolta specificata per il periodo di tempo specificato.  
+- Un grafico che mostra il costo dell'energia totale mensile per i computer nella raccolta specificata per il periodo di tempo specificato.  
 
--   Un grafico che mostra il costo dell'energia medio mensile per ogni computer nella raccolta specificata per il periodo di tempo specificato.  
+- Un grafico che mostra il costo dell'energia medio mensile per ogni computer nella raccolta specificata per il periodo di tempo specificato.  
 
--   Una tabella che mostra il costo dell'energia totale mensile e il costo medio mensile per i computer nella raccolta specificata negli ultimi 31 giorni.  
+- Una tabella che mostra il costo dell'energia totale mensile e il costo medio mensile per i computer nella raccolta specificata negli ultimi 31 giorni.  
 
- Queste informazioni possono essere utili per individuare le tendenze per i costi energetici nell'ambiente in oggetto. Dopo aver applicato una combinazione per il risparmio di energia ai computer nella raccolta selezionata, il costo energetico per i computer dovrebbe ridursi.  
+  Queste informazioni possono essere utili per individuare le tendenze per i costi energetici nell'ambiente in oggetto. Dopo aver applicato una combinazione per il risparmio di energia ai computer nella raccolta selezionata, il costo energetico per i computer dovrebbe ridursi.  
 
- Usare i parametri seguenti per configurare questo report.  
+  Usare i parametri seguenti per configurare questo report.  
 
 #### <a name="required-report-parameters"></a>Parametri obbligatori del report  
  I parametri seguenti devono essere specificati per eseguire il report.  
@@ -359,15 +359,15 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 ###  <a name="BKMK_Cost_by_Day"></a> Report Costo energia per giorno  
  Il report **Costo energia per giorno** visualizza le informazioni seguenti:  
 
--   Un grafico che mostra il costo dell'energia totale giornaliero per i computer nella raccolta specificata negli ultimi 31 giorni.  
+- Un grafico che mostra il costo dell'energia totale giornaliero per i computer nella raccolta specificata negli ultimi 31 giorni.  
 
--   Un grafico che mostra il costo dell'energia medio giornaliero per ogni computer nella raccolta specificata negli ultimi 31 giorni.  
+- Un grafico che mostra il costo dell'energia medio giornaliero per ogni computer nella raccolta specificata negli ultimi 31 giorni.  
 
--   Una tabella che mostra il costo dell'energia totale giornaliero e il costo medio giornaliero per i computer nella raccolta specificata negli ultimi 31 giorni.  
+- Una tabella che mostra il costo dell'energia totale giornaliero e il costo medio giornaliero per i computer nella raccolta specificata negli ultimi 31 giorni.  
 
- Queste informazioni possono essere utili per individuare le tendenze per i costi energetici nell'ambiente in oggetto. Dopo aver applicato una combinazione per il risparmio di energia ai computer nella raccolta selezionata, il costo energetico per i computer dovrebbe ridursi.  
+  Queste informazioni possono essere utili per individuare le tendenze per i costi energetici nell'ambiente in oggetto. Dopo aver applicato una combinazione per il risparmio di energia ai computer nella raccolta selezionata, il costo energetico per i computer dovrebbe ridursi.  
 
- Usare i parametri seguenti per configurare questo report.  
+  Usare i parametri seguenti per configurare questo report.  
 
 #### <a name="required-report-parameters"></a>Parametri obbligatori del report  
  I parametri seguenti devono essere specificati per eseguire il report.  
@@ -399,15 +399,15 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 ###  <a name="BKMK_Environmental_Impact"></a> Report Impatto ambientale  
  Il report **Impatto ambientale** visualizza le informazioni seguenti:  
 
--   Un grafico che mostra le emissioni di CO2 totali mensili (in tonnellate) per i computer nella raccolta specificata per il periodo di tempo specificato.  
+- Un grafico che mostra le emissioni di CO2 totali mensili (in tonnellate) per i computer nella raccolta specificata per il periodo di tempo specificato.  
 
--   Un grafico che mostra le emissioni di CO2 medie mensili (in tonnellate) per ogni computer nella raccolta specificata per il periodo di tempo specificato.  
+- Un grafico che mostra le emissioni di CO2 medie mensili (in tonnellate) per ogni computer nella raccolta specificata per il periodo di tempo specificato.  
 
--   Una tabella che mostra le emissioni di CO2 totali mensili e le emissioni di CO2 medie mensili generate per i computer nella raccolta specificata per il periodo di tempo specificato.  
+- Una tabella che mostra le emissioni di CO2 totali mensili e le emissioni di CO2 medie mensili generate per i computer nella raccolta specificata per il periodo di tempo specificato.  
 
- Il report **Impatto ambientale** calcola la quantità di CO2 generata (in tonnellate) in base al tempo di accensione di un computer o un monitor in un periodo di 24 ore.  
+  Il report **Impatto ambientale** calcola la quantità di CO2 generata (in tonnellate) in base al tempo di accensione di un computer o un monitor in un periodo di 24 ore.  
 
- Usare i parametri seguenti per configurare questo report.  
+  Usare i parametri seguenti per configurare questo report.  
 
 #### <a name="required-report-parameters"></a>Parametri obbligatori del report  
  I parametri seguenti devono essere specificati per eseguire il report.  
@@ -440,13 +440,13 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 ###  <a name="BKMK_Environmental_Impact_by_Day"></a> Report Impatto ambientale per giorno  
  Il report **Impatto ambientale per giorno** report visualizza le informazioni seguenti:  
 
--   Un grafico che mostra le emissioni di CO2 totali giornaliere (in tonnellate) per i computer nella raccolta specificata negli ultimi 31 giorni.  
+- Un grafico che mostra le emissioni di CO2 totali giornaliere (in tonnellate) per i computer nella raccolta specificata negli ultimi 31 giorni.  
 
--   Un grafico che mostra le emissioni di CO2 medie giornaliere (in tonnellate) per ogni computer nella raccolta specificata negli ultimi 31 giorni.  
+- Un grafico che mostra le emissioni di CO2 medie giornaliere (in tonnellate) per ogni computer nella raccolta specificata negli ultimi 31 giorni.  
 
--   Una tabella che mostra le emissioni di CO2 totali giornaliere e le emissioni di CO2 medie giornaliere generate per i computer nella raccolta specificata negli ultimi 31 giorni.  
+- Una tabella che mostra le emissioni di CO2 totali giornaliere e le emissioni di CO2 medie giornaliere generate per i computer nella raccolta specificata negli ultimi 31 giorni.  
 
- Il report **Impatto ambientale per giorno** calcola la quantità di CO2 generata (in tonnellate) in base al tempo di accensione di un computer o un monitor in un periodo di 24 ore.  
+  Il report **Impatto ambientale per giorno** calcola la quantità di CO2 generata (in tonnellate) in base al tempo di accensione di un computer o un monitor in un periodo di 24 ore.  
 
 #### <a name="required-report-parameters"></a>Parametri obbligatori del report  
  I parametri seguenti devono essere specificati per eseguire il report.  
@@ -534,17 +534,17 @@ Informazioni su come monitorare e pianificare il risparmio energia in System Cen
 ###  <a name="BKMK_Capabilites"></a> Report Funzionalità alimentazione  
  Il report **Funzionalità alimentazione** visualizza le capacità hardware di risparmio energia dei computer nella raccolta specificata. Questo report viene in genere usato nella fase di monitoraggio del risparmio energia per determinare le funzionalità di risparmio energia dei computer nell'organizzazione. Le informazioni visualizzate nel report possono quindi essere usate per creare raccolte di computer a cui applicare combinazioni per il risparmio di energia oppure da escludere dal risparmio energia. Le funzionalità di risparmio energia visualizzate in questo report sono:  
 
--   **Idoneo per essere sospeso** - Indica se il computer ha la possibilità di passare allo stato di sospensione se è stato configurato per farlo.  
+- **Idoneo per essere sospeso** - Indica se il computer ha la possibilità di passare allo stato di sospensione se è stato configurato per farlo.  
 
--   **Idoneo per essere messo in stato di ibernazione** - Indica se il computer può passare allo stato di ibernazione se è stato configurato per farlo.  
+- **Idoneo per essere messo in stato di ibernazione** - Indica se il computer può passare allo stato di ibernazione se è stato configurato per farlo.  
 
--   **Riattivazione da sospensione** - Indica se il computer può essere riattivato dalla sospensione se è stato configurato per farlo.  
+- **Riattivazione da sospensione** - Indica se il computer può essere riattivato dalla sospensione se è stato configurato per farlo.  
 
--   **Riattivazione dallo stato di ibernazione** - Indica se il computer può essere riattivato dallo stato di ibernazione se è stato configurato per farlo.  
+- **Riattivazione dallo stato di ibernazione** - Indica se il computer può essere riattivato dallo stato di ibernazione se è stato configurato per farlo.  
 
- I valori restituiti dal report **Funzionalità di alimentazione** indicano le capacità correlate alla sospensione e all'ibernazione dei computer segnalate da Windows. Tuttavia, i valori restituiti non riflettono i casi in cui le impostazioni di Windows o del BIOS impediscono il funzionamento di queste funzionalità.  
+  I valori restituiti dal report **Funzionalità di alimentazione** indicano le capacità correlate alla sospensione e all'ibernazione dei computer segnalate da Windows. Tuttavia, i valori restituiti non riflettono i casi in cui le impostazioni di Windows o del BIOS impediscono il funzionamento di queste funzionalità.  
 
- Usare i parametri seguenti per configurare questo report.  
+  Usare i parametri seguenti per configurare questo report.  
 
 #### <a name="required-report-parameters"></a>Parametri obbligatori del report  
  I parametri seguenti devono essere specificati per eseguire il report.  

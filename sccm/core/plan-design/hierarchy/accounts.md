@@ -10,12 +10,12 @@ ms.assetid: 72d7b174-f015-498f-a0a7-2161b9929198
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3981d454d0b007f5b057ccca4c8888da609dba97
-ms.sourcegitcommit: 2cc635835709fb8d86cdb63ea34233b36c94d4d8
+ms.openlocfilehash: d1a10f2381d6820d685ec8ff871c83c2a4c39bb1
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52259081"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415059"
 ---
 # <a name="accounts-used-in-configuration-manager"></a>Account usati in Configuration Manager
 
@@ -223,14 +223,14 @@ Per impostazione predefinita, il gruppo dispone del **controllo completo** per l
 ### <a name="active-directory-group-discovery-account"></a>Account di individuazione gruppo Active Directory  
 
  Il sito usa l'**account individuazione gruppo Active Directory** per individuare gli oggetti seguenti nei percorsi di Servizi di dominio Active Directory specificati dall'utente:
- - Gruppi di sicurezza locali, globali e universali
- - L'appartenenza all'interno di questi gruppi
- - L'appartenenza all'interno dei gruppi di distribuzione
-    - I gruppi di distribuzione non vengono rilevati come risorse di gruppo
+- Gruppi di sicurezza locali, globali e universali
+- L'appartenenza all'interno di questi gruppi
+- L'appartenenza all'interno dei gruppi di distribuzione
+   - I gruppi di distribuzione non vengono rilevati come risorse di gruppo
 
- Questo account può essere un account computer del server del sito che esegue l'individuazione o un account utente Windows. L'account deve disporre dell'autorizzazione di accesso in **Lettura** ai percorsi di Active Directory specificati per l'individuazione.  
+  Questo account può essere un account computer del server del sito che esegue l'individuazione o un account utente Windows. L'account deve disporre dell'autorizzazione di accesso in **Lettura** ai percorsi di Active Directory specificati per l'individuazione.  
 
- Per altre informazioni, vedere [Individuazione gruppo Active Directory](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutGroup).
+  Per altre informazioni, vedere [Individuazione gruppo Active Directory](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutGroup).
 
 
 ### <a name="active-directory-system-discovery-account"></a>Account individuazione sistema Active Directory  

@@ -10,12 +10,12 @@ ms.assetid: 1a2a9b48-a95b-4643-b00c-b3079584ae2e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 11474f54aaf7a9afe13d411b0dd469abb1eef963
-ms.sourcegitcommit: c2c44329f1f9a2e6c14095360b4fc4aafabc27f0
+ms.openlocfilehash: 2a830b36bec3d112c0b112d2df6887a84c837fa2
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51694944"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418255"
 ---
 # <a name="prerequisites-for-deploying-clients-to-windows-computers-in-configuration-manager"></a>Prerequisiti per la distribuzione dei client nei computer Windows in Configuration Manager
 
@@ -115,9 +115,9 @@ I prerequisiti seguenti sono specifici dei diversi metodi di installazione clien
 
 Per usare il push client, sono necessarie le autorizzazioni di sicurezza seguenti:  
 
-   -   Per configurare l'account di installazione push client: autorizzazione di **Modifica** e **Lettura** per l'oggetto **Sito**.  
+   -   Per configurare l'account di installazione push client: autorizzazione **Modifica** e **Lettura** per l'oggetto **Sito**.  
 
-   -   Per usare il push client per installare il client in raccolte, dispositivi e query: autorizzazione di **Modifica risorsa** e **Lettura** per l'oggetto **Raccolta**.  
+   -   Per usare il push client per installare il client in raccolte, dispositivi e query: autorizzazione **Modifica risorsa** e **Lettura** per l'oggetto **Raccolta**.  
 
 
 Il ruolo di sicurezza **Amministratore infrastruttura** predefinito include le autorizzazioni necessarie per gestire le installazioni push client.  
@@ -222,45 +222,45 @@ Quando si installa il client di Configuration Manager in dispositivi mobili e si
 
 Per altre informazioni, vedere [Determinare i ruoli del sistema del sito per i client](/sccm/core/clients/deploy/plan/determine-the-site-system-roles-for-clients).  
 
--   Punto di gestione configurato per le connessioni client HTTPS e abilitato per i dispositivi mobili  
+- Punto di gestione configurato per le connessioni client HTTPS e abilitato per i dispositivi mobili  
 
-     Per installare il client di Configuration Manager in dispositivi mobili è sempre necessario un punto di gestione. Oltre ai requisiti di configurazione di HTTPS e all'abilitazione per dispositivi mobili, il punto di gestione deve essere configurato con FQDN Internet e deve accettare connessioni client da Internet.  
+   Per installare il client di Configuration Manager in dispositivi mobili è sempre necessario un punto di gestione. Oltre ai requisiti di configurazione di HTTPS e all'abilitazione per dispositivi mobili, il punto di gestione deve essere configurato con FQDN Internet e deve accettare connessioni client da Internet.  
 
--   Punto di registrazione e punto proxy di registrazione  
+- Punto di registrazione e punto proxy di registrazione  
 
-     Un punto proxy di registrazione gestisce le richieste di registrazione da parte di dispositivi mobili e il punto di registrazione completa il processo di registrazione. È necessario che il punto di registrazione si trovi nella stessa foresta Active Directory del server del sito, ma il punto proxy di registrazione può trovarsi in una foresta diversa.  
+   Un punto proxy di registrazione gestisce le richieste di registrazione da parte di dispositivi mobili e il punto di registrazione completa il processo di registrazione. È necessario che il punto di registrazione si trovi nella stessa foresta Active Directory del server del sito, ma il punto proxy di registrazione può trovarsi in una foresta diversa.  
 
--   Impostazioni del client per la registrazione dei dispositivi portatili  
+- Impostazioni del client per la registrazione dei dispositivi portatili  
 
-     Configurare le impostazioni del client per consentire agli utenti di registrare i dispositivi mobili e configurare almeno un profilo di registrazione.  
+   Configurare le impostazioni del client per consentire agli utenti di registrare i dispositivi mobili e configurare almeno un profilo di registrazione.  
 
--   Punto di Reporting Services  
+- Punto di Reporting Services  
 
-     Il punto di Reporting Services è un ruolo di sistema sito facoltativo ma consigliato, in grado di visualizzare report correlati alla registrazione di dispositivi mobili e alla gestione di client.  
+   Il punto di Reporting Services è un ruolo di sistema sito facoltativo ma consigliato, in grado di visualizzare report correlati alla registrazione di dispositivi mobili e alla gestione di client.  
 
-     Per altre informazioni, vedere [Creazione di report in Configuration Manager](/sccm/core/servers/manage/reporting).  
+   Per altre informazioni, vedere [Creazione di report in Configuration Manager](/sccm/core/servers/manage/reporting).  
 
--   Per configurare la registrazione per dispositivi mobili, è necessario disporre delle autorizzazioni di sicurezza seguenti:  
+- Per configurare la registrazione per dispositivi mobili, è necessario disporre delle autorizzazioni di sicurezza seguenti:  
 
-    -   Per aggiungere, modificare ed eliminare i ruoli di sistema sito di registrazione: autorizzazione di **Modifica** per l'oggetto **Site** .  
+  - Per aggiungere, modificare ed eliminare i ruoli di sistema sito di registrazione: autorizzazione **Modifica** per l'oggetto **Sito**.  
 
-    -   Per configurare le impostazioni del client per la registrazione: le impostazioni client predefinite necessitano dell'autorizzazione di **Modifica** per l'oggetto **Site** e le impostazioni client personalizzate necessitano di autorizzazioni di tipo **Agente client**  .  
+  - Per configurare le impostazioni del client per la registrazione: le impostazioni client predefinite necessitano dell'autorizzazione di **Modifica** per l'oggetto **Sito** e le impostazioni client personalizzate necessitano di autorizzazioni di tipo **Agente client**.  
 
-     Il ruolo di sicurezza **Amministratore completo** include le autorizzazioni necessarie per configurare i ruoli del sistema del sito di registrazione.  
+    Il ruolo di sicurezza **Amministratore completo** include le autorizzazioni necessarie per configurare i ruoli del sistema del sito di registrazione.  
 
-     Per gestire i dispositivi mobili registrati, è necessario disporre delle autorizzazioni di sicurezza seguenti:  
+    Per gestire i dispositivi mobili registrati, è necessario disporre delle autorizzazioni di sicurezza seguenti:  
 
-    -   Per cancellare o ritirare un dispositivo mobile: **Elimina risorsa** per l'oggetto **Collection** .  
+  - Per cancellare o ritirare un dispositivo mobile: **Elimina risorsa** per l'oggetto **Raccolta**.  
 
-    -   Per annullare un comando di cancellazione o ritiro: **Elimina risorsa** per l'oggetto **Collection** .  
+  - Per annullare un comando di cancellazione o ritiro: **Elimina risorsa** per l'oggetto **Raccolta**.  
 
-    -   Per consentire e bloccare i dispositivi mobili: **Modifica risorsa** per l'oggetto **Collection** .  
+  - Per consentire e bloccare i dispositivi mobili: **Modifica risorsa** per l'oggetto **Raccolta**.  
 
-    -   Per il blocco remoto o la reimpostazione del passcode in un dispositivo mobile: **Modifica risorsa** per l'oggetto **Collection** .  
+  - Per il blocco remoto o la reimpostazione del passcode in un dispositivo mobile: **Modifica risorsa** per l'oggetto **Raccolta**.  
 
-     Il ruolo di sicurezza **Amministratore operazioni** include le autorizzazioni necessarie per gestire i dispositivi mobili.  
+    Il ruolo di sicurezza **Amministratore operazioni** include le autorizzazioni necessarie per gestire i dispositivi mobili.  
 
-     Per altre informazioni su come configurare le autorizzazioni di sicurezza, vedere [Nozioni fondamentali di amministrazione basata su ruoli](/sccm/core/understand/fundamentals-of-role-based-administration) e [Configurare l'amministrazione basata su ruoli](/sccm/core/servers/deploy/configure/configure-role-based-administration).  
+    Per altre informazioni su come configurare le autorizzazioni di sicurezza, vedere [Nozioni fondamentali di amministrazione basata su ruoli](/sccm/core/understand/fundamentals-of-role-based-administration) e [Configurare l'amministrazione basata su ruoli](/sccm/core/servers/deploy/configure/configure-role-based-administration).  
 
 
 ### <a name="firewall-requirements"></a>Requisiti del firewall  

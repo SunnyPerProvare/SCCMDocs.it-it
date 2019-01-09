@@ -10,12 +10,12 @@ ms.assetid: 32e2d6b9-148f-45e2-8083-98c656473f82
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 29b0f577ad291899467d9c6fd305af9ef6b892eb
-ms.sourcegitcommit: 5b3ff56018cfc6bda9643c9f1bebc575173f61bc
+ms.openlocfilehash: 85bd23130826c7ca23e10125efba58bf14555fb1
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50083803"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424222"
 ---
 # <a name="cmpivot-for-real-time-data-in-configuration-manager"></a>CMPivot per i dati in tempo reale in Configuration Manager
 
@@ -131,51 +131,51 @@ La finestra CMPivot presenta gli elementi seguenti:
 
 6. Il riquadro dei risultati visualizza i dati restituiti dai client attivi per la query.  
 
-    - Le colonne disponibili variano a seconda dell'entità e della query.  
+   - Le colonne disponibili variano a seconda dell'entità e della query.  
 
-    - Fare clic su un nome di colonna per ordinare i risultati in base a tale proprietà.  
+   - Fare clic su un nome di colonna per ordinare i risultati in base a tale proprietà.  
 
-    - Fare clic con il pulsante destro del mouse su un nome di colonna per raggruppare i risultati in base alle stesse informazioni di tale colonna o per ordinare i risultati.  
+   - Fare clic con il pulsante destro del mouse su un nome di colonna per raggruppare i risultati in base alle stesse informazioni di tale colonna o per ordinare i risultati.  
 
-    - Fare clic con il pulsante destro del mouse su un nome di dispositivo per eseguire le azioni aggiuntive seguenti sul dispositivo:  
+   - Fare clic con il pulsante destro del mouse su un nome di dispositivo per eseguire le azioni aggiuntive seguenti sul dispositivo:  
 
-       - **Pivot in**: esegue una query per un'altra entità su questo dispositivo.  
+      - **Pivot in**: esegue una query per un'altra entità su questo dispositivo.  
 
-       - **Esegui script**: avvia la procedura guidata Esegui script per eseguire uno script di PowerShell esistente su questo dispositivo. Per altre informazioni, vedere [Eseguire uno script](/sccm/apps/deploy-use/create-deploy-scripts#run-a-script).  
+      - **Esegui script**: avvia la procedura guidata Esegui script per eseguire uno script di PowerShell esistente su questo dispositivo. Per altre informazioni, vedere [Eseguire uno script](/sccm/apps/deploy-use/create-deploy-scripts#run-a-script).  
 
-       - **Controllo remoto**: avvia una sessione di Controllo remoto di Configuration Manager su questo dispositivo. Per altre informazioni, vedere [Come amministrare un computer client Windows in remoto](/sccm/core/clients/manage/remote-control/remotely-administer-a-windows-client-computer).  
+      - **Controllo remoto**: avvia una sessione di Controllo remoto di Configuration Manager su questo dispositivo. Per altre informazioni, vedere [Come amministrare un computer client Windows in remoto](/sccm/core/clients/manage/remote-control/remotely-administer-a-windows-client-computer).  
 
-       - **Esplora inventario risorse**: avvia Esplora inventario risorse di Configuration Manager per questo dispositivo. Per altre informazioni, vedere [Visualizzare l'inventario hardware](/sccm/core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory) o [Visualizzare l'inventario software](/sccm/core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory).  
+      - **Esplora inventario risorse**: avvia Esplora inventario risorse di Configuration Manager per questo dispositivo. Per altre informazioni, vedere [Visualizzare l'inventario hardware](/sccm/core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory) o [Visualizzare l'inventario software](/sccm/core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory).  
 
-    - Fare clic con il pulsante destro del mouse su una cella non di dispositivo per eseguire le azioni aggiuntive seguenti:  
+   - Fare clic con il pulsante destro del mouse su una cella non di dispositivo per eseguire le azioni aggiuntive seguenti:  
 
-       - **Copia**: copia il testo della cella negli Appunti.  
+     - **Copia**: copia il testo della cella negli Appunti.  
 
-       - **Mostra dispositivi con**: esegue una query dei dispositivi con questo valore della proprietà. Ad esempio, nei risultati della query `OS` selezionare questa opzione in una cella della riga Version: `OS | summarize countif( (Version == '10.0.17134') ) by Device | where (countif_ > 0)`  
+     - **Mostra dispositivi con**: esegue una query dei dispositivi con questo valore della proprietà. Ad esempio, nei risultati della query `OS` selezionare questa opzione in una cella della riga Version: `OS | summarize countif( (Version == '10.0.17134') ) by Device | where (countif_ > 0)`  
 
-       - **Mostra dispositivi senza**: esegue una query dei dispositivi senza questo valore della proprietà. Ad esempio, nei risultati della query `OS` selezionare questa opzione in una cella della riga Version: `OS | summarize countif( (Version == '10.0.17134') ) by Device | where (countif_ == 0) | project Device`  
+     - **Mostra dispositivi senza**: esegue una query dei dispositivi senza questo valore della proprietà. Ad esempio, nei risultati della query `OS` selezionare questa opzione in una cella della riga Version: `OS | summarize countif( (Version == '10.0.17134') ) by Device | where (countif_ == 0) | project Device`  
 
-       - **Usa Bing**: avvia il Web browser predefinito per accedere a www.bing.com con questo valore come stringa di query.  
+     - **Usa Bing**: avvia il Web browser predefinito per accedere a www.bing.com con questo valore come stringa di query.  
 
-    - Fare clic su un testo con collegamento ipertestuale per trasformare tramite Pivot la vista su tali informazioni specifiche.  
+   - Fare clic su un testo con collegamento ipertestuale per trasformare tramite Pivot la vista su tali informazioni specifiche.  
 
-    - Il riquadro dei risultati non visualizza più di 20.000 righe. Modificare la query per filtrare ulteriormente i dati oppure riavviare CMPivot in una raccolta più piccola.  
+   - Il riquadro dei risultati non visualizza più di 20.000 righe. Modificare la query per filtrare ulteriormente i dati oppure riavviare CMPivot in una raccolta più piccola.  
 
 7. La barra di stato mostra le informazioni seguenti (da sinistra a destra):  
 
-    - Lo stato della query corrente per la raccolta di destinazione. Questo stato include:  
-        - Il numero di client attivi che hanno completato la query (3)  
-        - Il numero di client totali (5)  
-        - Il numero di client offline (2)  
-        - I client che hanno restituito un errore (0)  
+   - Lo stato della query corrente per la raccolta di destinazione. Questo stato include:  
+     - Il numero di client attivi che hanno completato la query (3)  
+     - Il numero di client totali (5)  
+     - Il numero di client offline (2)  
+     - I client che hanno restituito un errore (0)  
 
-        Ad esempio: `Query completed on 3 of 5 clients (2 clients offline and 0 failure)`  
+       Ad esempio: `Query completed on 3 of 5 clients (2 clients offline and 0 failure)`  
 
-    - L'ID dell'operazione client. Ad esempio: `id(16780221)`  
+   - L'ID dell'operazione client. Ad esempio: `id(16780221)`  
 
-    - La raccolta corrente. Ad esempio: `PM_Team_Machines`  
+   - La raccolta corrente. Ad esempio: `PM_Team_Machines`  
 
-    - Il numero totale di righe nel riquadro dei risultati. Ad esempio: `1 objects`  
+   - Il numero totale di righe nel riquadro dei risultati. Ad esempio: `1 objects`  
 
 
 
@@ -208,7 +208,7 @@ Si selezionano tutti i dispositivi, si fa clic con il pulsante destro del mouse 
 Per assicurare reazioni proattive con la manutenzione operativa, una volta alla settimana si esegue CMPivot su una raccolta di server gestiti e si seleziona **Esegui query su tutto** nell'entità **AppCrash**. Si fa clic con il pulsante destro del mouse sulla colonna **FileName** e si sceglie **Ordinamento crescente**. Un dispositivo restituisce sette risultati per sqlsqm.exe con un timestamp corrispondente alle 03:00 circa ogni giorno. Si seleziona il nome file in una delle righe, si fa clic con il pulsante destro del mouse e si sceglie **Usa Bing**. Esplorando i risultati della ricerca nel Web browser, si trova un articolo del supporto tecnico Microsoft su questo problema con la risoluzione e altre informazioni. 
 
 
-### <a name="example-3-bios-version"></a>Esempio 3: Versione del BIOS
+### <a name="example-3-bios-version"></a>Esempio 3: Versione BIOS
 
 Per [mitigare le vulnerabilità del canale laterale di esecuzione speculativa](https://blogs.technet.microsoft.com/configurationmgr/2018/01/08/additional-guidance-to-mitigate-speculative-execution-side-channel-vulnerabilities/), uno dei requisiti prevede l'aggiornamento del BIOS di sistema. Si inizia con una query dell'entità **BIOS**, quindi si **raggruppa in base alla** proprietà **Version**. Si fa quindi clic con il pulsante destro del mouse su un valore specifico, ad esempio "LENOVO - 1140", e si sceglie **Mostra dispositivi con**.  
 

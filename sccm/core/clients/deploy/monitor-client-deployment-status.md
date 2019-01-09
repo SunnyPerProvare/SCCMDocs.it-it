@@ -10,12 +10,12 @@ ms.assetid: 20a573b3-53cb-4ed5-bae1-7542f533ed20
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9454183b390a6ff0267ac853f514ce87530c1519
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 8dc8d91cf963b97b96ac6320bce0213d259ecded
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32331751"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417813"
 ---
 # <a name="how-to-monitor-client-deployment-status-in-system-center-configuration-manager"></a>Come monitorare lo stato di distribuzione dei client in System Center Configuration Manager
 
@@ -28,33 +28,33 @@ La distribuzione client nel sito richiede tempo e alcune installazioni non riesc
 
  Nell'area di lavoro **Monitoraggio** della console è possibile monitorare i seguenti stati delle distribuzioni client che avvengono all'interno di una raccolta specificata:  
 
--   conformi  
+- conformi  
 
--   In corso  
+- In corso  
 
--   Non conforme  
+- Non conforme  
 
--   Operazione non riuscita  
+- Operazione non riuscita  
 
--   Sconosciuto  
+- Sconosciuto  
 
- Configuration Manager segnala le distribuzioni client di produzione o di pre-produzione. La console di Configuration Manager offre anche un grafico delle distribuzioni client non riuscite in uno specifico periodo di tempo, per determinare se le azioni intraprese per la risoluzione dei problemi di distribuzione stanno migliorando la percentuale di distribuzione senza errori nel tempo.  
+  Configuration Manager segnala le distribuzioni client di produzione o di pre-produzione. La console di Configuration Manager offre anche un grafico delle distribuzioni client non riuscite in uno specifico periodo di tempo, per determinare se le azioni intraprese per la risoluzione dei problemi di distribuzione stanno migliorando la percentuale di distribuzione senza errori nel tempo.  
 
 ## <a name="to-monitor-client-deployments"></a>Per monitorare le distribuzioni client  
 
--   Nella console di Configuration Manager fare clic su **Monitoraggio** > **Stato client**.  
+- Nella console di Configuration Manager fare clic su **Monitoraggio** > **Stato client**.  
 
--   Fare clic su **Distribuzione client di produzione** oppure su **Distribuzione client di pre-produzione** a seconda della versione del client da monitorare.  
+- Fare clic su **Distribuzione client di produzione** oppure su **Distribuzione client di pre-produzione** a seconda della versione del client da monitorare.  
 
--   Esaminare i grafici di stato della distribuzione client e di errore di distribuzione client.  
+- Esaminare i grafici di stato della distribuzione client e di errore di distribuzione client.  
 
--   Per modificare l'ambito del report, fare clic su **Sfoglia…** e scegliere una raccolta diversa.  
+- Per modificare l'ambito del report, fare clic su **Sfoglia…** e scegliere una raccolta diversa.  
 
- Per altre informazioni sulle distribuzioni client di pre-produzione, vedere [Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md).
+  Per altre informazioni sulle distribuzioni client di pre-produzione, vedere [Come testare gli aggiornamenti client in una raccolta di pre-produzione in System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md).
 
- > [!NOTE]
- > Lo stato della distribuzione nei computer che ospitano i ruoli del sistema del sito in una raccolta di pre-produzione può essere indicato come **Non conforme** anche quando il client è stato distribuito correttamente. Quando si promuove il client al livello di produzione, lo stato della distribuzione è segnalato in modo corretto.   
+  > [!NOTE]
+  > Lo stato della distribuzione nei computer che ospitano i ruoli del sistema del sito in una raccolta di pre-produzione può essere indicato come **Non conforme** anche quando il client è stato distribuito correttamente. Quando si promuove il client al livello di produzione, lo stato della distribuzione è segnalato in modo corretto.   
 
- Per monitorare lo stato dei client distribuiti, vedere [Come monitorare i client in System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md)  
+  Per monitorare lo stato dei client distribuiti, vedere [Come monitorare i client in System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md)  
 
- È possibile usare i report di Configuration Manager per ottenere altre informazioni sullo stato dei client nel proprio sito. Per altre informazioni sull'esecuzione dei report, vedere [Creazione di report in System Center Configuration Manager](../../../core/servers/manage/reporting.md).  
+  È possibile usare i report di Configuration Manager per ottenere altre informazioni sullo stato dei client nel proprio sito. Per altre informazioni sull'esecuzione dei report, vedere [Creazione di report in System Center Configuration Manager](../../../core/servers/manage/reporting.md).  

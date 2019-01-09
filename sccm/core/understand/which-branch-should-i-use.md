@@ -10,12 +10,12 @@ ms.assetid: a3be4f8f-3d44-4e3c-9fa1-e85f30a36e72
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4331ec4120141ab9aa20301b9a99c3c6ebeef568
-ms.sourcegitcommit: 0305e710f634529793ae73e5aac24168ee4fe02f
+ms.openlocfilehash: 35e1675e74b0df768d143441fa4cbb2dda47affc
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37042746"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418228"
 ---
 # <a name="which-branch-of-configuration-manager-should-i-use"></a>Scelta del ramo di Configuration Manager da usare
 
@@ -43,11 +43,11 @@ Per installare l'opzione Current Branch come un nuovo sito, usare [supporto di b
 
 È anche possibile usare il supporto di base per installare un nuovo sito come copia di valutazione di Current Branch. La versione di valutazione non richiede una licenza. È possibile utilizzare la versione di valutazione per 180 giorni. Supporta l'aggiornamento a una versione con licenza di Current Branch. Per installare solo una copia di valutazione, ottenere il software dal sito Web [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection).
 
->  [!NOTE]  
+> [!NOTE]
 > Usare il supporto di base per installare siti per una nuova gerarchia di Configuration Manager. Se è stata precedentemente installata una versione di base, usare gli aggiornamenti nella console per aggiornare i siti a una nuova versione.  
->  
+> 
 > I siti che vengono aggiornati usando gli aggiornamenti nella console sono uguali al nuovo sito installato usando il supporto di base.
->
+> 
 > Per altre informazioni, vedere [Aggiornamenti per System Center Configuration Manager](/sccm/core/servers/manage/updates).  
 
 

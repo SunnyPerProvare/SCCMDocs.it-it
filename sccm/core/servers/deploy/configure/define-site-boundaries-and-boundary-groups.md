@@ -10,12 +10,12 @@ ms.assetid: 54aa20d5-791e-4416-9db4-5aaea472c0b7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d1f8a8a270bcefb67885d6c0ca88e61a3d6ecd72
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 85d7dbb494f1d6288ad7a45fad98e24a6ad2b393
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334845"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421145"
 ---
 # <a name="define-site-boundaries-and-boundary-groups-for-system-center-configuration-manager"></a>Definire i limiti del sito e i gruppi di limiti per System Center Configuration Manager
 
@@ -33,7 +33,7 @@ I limiti per System Center Configuration Manager definiscono i percorsi di rete 
 I client nella intranet valutano il relativo percorso di rete corrente e quindi usano tali informazioni per identificare i gruppi di limiti a cui appartengono.  
 
  I client usano i gruppi di limiti per:  
--   **Trovare un sito assegnato:** i gruppi di limiti consentono ai client di trovare un sito primario per l'assegnazione client (assegnazione automatica del sito).  
+-   **Trovare un sito assegnato**: i gruppi di limiti consentono ai client di individuare un sito primario per l'assegnazione client (assegnazione sito automatica).  
 -   **Trovare specifici ruoli del sistema del sito che possono usare:** quando si associa un gruppo di limiti a specifici ruoli del sistema del sito, il gruppo di limiti fornisce ai client l'elenco di sistemi del sito da usare durante la specifica del percorso del contenuto e come punti di gestione preferiti.  
 
 I client in Internet o configurati come client solo per Internet non usano le informazioni relative ai limiti. Questi client non possono usare l'assegnazione automatica del sito e, se il punto di distribuzione è configurato per consentire le connessioni client da Internet, scaricano sempre il contenuto da qualsiasi punto di distribuzione del sito assegnato.  
@@ -46,16 +46,16 @@ I client in Internet o configurati come client solo per Internet non usano le in
 
 ##  <a name="BKMK_BoundaryBestPractices"></a> Procedure consigliate per i limiti e i gruppi di limiti  
 
--   **Usare una combinazione del numero minimo di limiti che soddisfano le esigenze:**  
-   In passato era consigliabile preferire alcuni tipi di limiti rispetto ad altri. Con le modifiche apportate per migliorare le prestazioni, è ora consigliabile usare il tipo o i tipi di limiti più adatti all'ambiente in uso e il numero più basso possibile di limiti, per semplificare le attività di gestione.      
+- **Usare una combinazione del numero minimo di limiti che soddisfano le esigenze:**  
+  In passato era consigliabile preferire alcuni tipi di limiti rispetto ad altri. Con le modifiche apportate per migliorare le prestazioni, è ora consigliabile usare il tipo o i tipi di limiti più adatti all'ambiente in uso e il numero più basso possibile di limiti, per semplificare le attività di gestione.      
 
--   **Evitare la sovrapposizione dei limiti per l'assegnazione automatica del sito:**  
-     Anche se ogni gruppo di limiti supporta sia le configurazioni di assegnazione del sito che quelle per il percorso del contenuto, è consigliabile creare un set separato di gruppi di limiti da usare solo per l'assegnazione del sito. Significato: verificare che ogni limite in un gruppo di limiti non sia membro di un altro gruppo di limiti con un'assegnazione del sito diversa. Motivo:  
+- **Evitare la sovrapposizione dei limiti per l'assegnazione automatica del sito:**  
+   Anche se ogni gruppo di limiti supporta sia le configurazioni di assegnazione del sito che quelle per il percorso del contenuto, è consigliabile creare un set separato di gruppi di limiti da usare solo per l'assegnazione del sito. Significato: verificare che ogni limite in un gruppo di limiti non sia membro di un altro gruppo di limiti con un'assegnazione del sito diversa. Motivo:  
 
-    -   Un singolo limite può essere incluso in più gruppi di limiti  
+  - Un singolo limite può essere incluso in più gruppi di limiti  
 
-    -   Ogni gruppo di limiti può essere associato a un sito primario diverso per l'assegnazione del sito  
+  - Ogni gruppo di limiti può essere associato a un sito primario diverso per l'assegnazione del sito  
 
-    -   Un client in un limite membro di due gruppi di limiti con assegnazioni del sito diverse selezionerà in modo casuale il sito a cui aggiungersi, che potrebbe non corrispondere a quello a cui si intende aggiungere il client.  Questa configurazione è definita a limiti sovrapposti.  
+  - Un client in un limite membro di due gruppi di limiti con assegnazioni del sito diverse selezionerà in modo casuale il sito a cui aggiungersi, che potrebbe non corrispondere a quello a cui si intende aggiungere il client.  Questa configurazione è definita a limiti sovrapposti.  
 
-     La sovrapposizione dei limiti non è un problema per il percorso del contenuto e spesso è la configurazione desiderata che fornisce ai client risorse aggiuntive o percorsi del contenuto che possono usare.  
+    La sovrapposizione dei limiti non è un problema per il percorso del contenuto e spesso è la configurazione desiderata che fornisce ai client risorse aggiuntive o percorsi del contenuto che possono usare.  

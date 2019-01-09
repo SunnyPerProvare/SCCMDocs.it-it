@@ -10,12 +10,12 @@ ms.assetid: e7cdb1a9-140a-436e-ac71-72d083110223
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4a6c989b1eabe47f3360ceec660d5eba32811d60
-ms.sourcegitcommit: ee434c53b3695a039b56298082b6f61f1006d9dd
+ms.openlocfilehash: dcf12016206fe0c4296d08ad8404b163607313e1
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49943292"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417167"
 ---
 # <a name="use-a-command-line-to-install-system-center-configuration-manager-sites"></a>Usare una riga di comando per installare i siti di System Center Configuration Manager
 
@@ -26,41 +26,41 @@ ms.locfileid: "49943292"
 ## <a name="supported-tasks-for-command-line-installations"></a>Attività supportate per le installazioni da riga di comando
  Questo metodo di installazione supporta le seguenti attività di installazione e manutenzione del sito:
 
--   **Installare un sito di amministrazione centrale o un sito primario da un prompt dei comandi**  
+- **Installare un sito di amministrazione centrale o un sito primario da un prompt dei comandi**  
   Visualizzare le [opzioni della riga di comando per il programma di installazione](../../../../core/servers/deploy/install/command-line-options-for-setup.md)
 
--  **Modificare le lingue in uso in un sito di amministrazione centrale o in un sito primario**  
-    Per modificare le lingue installate in un sito da un prompt dei comandi (comprese le lingue per i dispositivi mobili), è necessario:  
+- **Modificare le lingue in uso in un sito di amministrazione centrale o in un sito primario**  
+   Per modificare le lingue installate in un sito da un prompt dei comandi (comprese le lingue per i dispositivi mobili), è necessario:  
 
-     -   Eseguire il programma di installazione da **&lt;PercorsoInstallazioneConfigMgr\>\Bin\X64** nel server del sito,
-     -   usare l'opzione della riga di comando **/MANAGELANGS**,
-     -   specificare un file script che definisca le lingue che si vuole aggiungere o rimuovere.  
+  - Eseguire il programma di installazione da **&lt;PercorsoInstallazioneConfigMgr\>\Bin\X64** nel server del sito,
+  - usare l'opzione della riga di comando **/MANAGELANGS**,
+  - specificare un file script che definisca le lingue che si vuole aggiungere o rimuovere.  
 
     Ad esempio, usare la sintassi del comando seguente: **setupwpf.exe /MANAGELANGS &lt;file script delle lingue\>**  
 
     Per creare il file script delle lingue, usare le informazioni relative alle [opzioni della riga di comando per la gestione delle lingue](../../../../core/servers/deploy/install/command-line-options-for-setup.md#bkmk_Lang)  
 
--  **Usare un file script di installazione per le installazioni automatiche del sito o per il ripristino del sito**  
-    È possibile eseguire il programma di installazione da un prompt dei comandi usando uno script di installazione ed eseguire un'installazione automatica del sito. È anche possibile usare questa opzione per ripristinare un sito.    
+- **Usare un file script di installazione per le installazioni automatiche del sito o per il ripristino del sito**  
+   È possibile eseguire il programma di installazione da un prompt dei comandi usando uno script di installazione ed eseguire un'installazione automatica del sito. È anche possibile usare questa opzione per ripristinare un sito.    
 
-    Per usare uno script con il programma di installazione:  
+   Per usare uno script con il programma di installazione:  
 
-    -   Eseguire il programma di installazione con l'opzione della riga di comando **/SCRIPT** e specificare un file script.  
+  - Eseguire il programma di installazione con l'opzione della riga di comando **/SCRIPT** e specificare un file script.  
 
-    -   Il file script deve essere configurato con le chiavi e i valori necessari.  
+  - Il file script deve essere configurato con le chiavi e i valori necessari.  
 
     Per un'installazione automatica di un sito di amministrazione centrale o di un sito primario, il file script deve avere le sezioni seguenti:  
 
-    -   Identification    
-    -   Opzioni    
-    -   SQLConfigOptions    
-      -   HierarchyOptions    
-    -   CloudConnectorOptions   
+  - Identification    
+  - Opzioni    
+  - SQLConfigOptions    
+    -   HierarchyOptions    
+  - CloudConnectorOptions   
 
     Per ripristinare un sito, è necessario includere anche le sezioni seguenti del file script:  
 
-    -   Identification  
-    -   Modello di
+  - Identification  
+  - Modello di
 
 Per altre informazioni, vedere [Ripristino automatico del sito per Configuration Manager](/sccm/protect/understand/unattended-recovery).  
 

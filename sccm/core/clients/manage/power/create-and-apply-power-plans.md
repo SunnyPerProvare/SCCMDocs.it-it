@@ -10,12 +10,12 @@ ms.assetid: 738eddaa-52e2-467f-b453-821ef2884d47
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 4504f26f8f6288750d36028d8eb795ae0d839fbc
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: af1d2dd5b3075413cdc661ecc8d75c532443d2ce
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336222"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424851"
 ---
 # <a name="how-to-create-and-apply-power-plans-in-system-center-configuration-manager"></a>Come creare e applicare combinazioni per il risparmio di energia in System Center Configuration Manager
 
@@ -28,11 +28,11 @@ Le funzionalità di risparmio energia in System Center Configuration Manager con
 
  Se un computer è un membro di più raccolte, ognuna con combinazioni per il risparmio di energia diverse, verranno eseguite le azioni seguenti:  
 
--   Combinazione per il risparmio di energia: se a un computer sono applicati più valori per le impostazioni di risparmio energia, viene usato il valore meno restrittivo.  
+- Combinazione per il risparmio di energia: se a un computer sono applicati più valori per le impostazioni di risparmio energia, viene usato il valore meno restrittivo.  
 
--   Ora riattivazione: se a un computer desktop vengono applicate più ore di riattivazione, viene usata l'ora più vicina alla mezzanotte.  
+- Ora riattivazione: se a un computer desktop vengono applicate più ore di riattivazione, viene usata l'ora più vicina alla mezzanotte.  
 
- Usare il report **Computer con più combinazioni per il risparmio di energia** per visualizzare tutti i computer a cui sono applicate più combinazioni di risparmio di energia. In questo modo è più facile individuare i computer con conflitti. Per ulteriori informazioni sui report relativi al risparmio di energia, vedere [Come monitorare e pianificare il risparmio energia in System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
+  Usare il report **Computer con più combinazioni per il risparmio di energia** per visualizzare tutti i computer a cui sono applicate più combinazioni di risparmio di energia. In questo modo è più facile individuare i computer con conflitti. Per ulteriori informazioni sui report relativi al risparmio di energia, vedere [Come monitorare e pianificare il risparmio energia in System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
 
 > [!IMPORTANT]  
 >  Le impostazioni di risparmio energia configurate tramite Criteri di gruppo di Windows avranno la priorità sulle impostazioni configurate dalle funzionalità di risparmio energia di Configuration Manager.  
@@ -41,48 +41,48 @@ Le funzionalità di risparmio energia in System Center Configuration Manager con
 
 ### <a name="to-create-and-apply-a-power-plan"></a>Per creare e applicare una combinazione per il risparmio di energia  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1. Nella console di Configuration Manager fare clic su **Asset e conformità**.  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Raccolte dispositivi**.  
+2. Nell'area di lavoro **Asset e conformità** fare clic su **Raccolte dispositivi**.  
 
-3.  Nell'elenco **Raccolte dispositivi** fare clic sulla raccolta a cui si vogliono applicare le impostazioni di risparmio energia e quindi nel gruppo **Proprietà** della scheda **Home** fare clic su **Proprietà**.  
+3. Nell'elenco **Raccolte dispositivi** fare clic sulla raccolta a cui si vogliono applicare le impostazioni di risparmio energia e quindi nel gruppo **Proprietà** della scheda **Home** fare clic su **Proprietà**.  
 
-4.  Nella scheda **Risparmio energia** della finestra di dialogo **Proprietà** *<Nome raccolta\>* selezionare **Specifica impostazioni di risparmio energia per questa raccolta**.  
+4. Nella scheda **Risparmio energia** della finestra di dialogo **Proprietà**<em><nome raccolta\></em> selezionare **Specifica impostazioni di risparmio energia per questa raccolta**.  
 
-    > [!NOTE]  
-    >  È anche possibile fare clic su **Sfoglia** e quindi copiare le impostazioni di risparmio energia da una raccolta selezionata alla raccolta selezionata.  
+   > [!NOTE]  
+   >  È anche possibile fare clic su **Sfoglia** e quindi copiare le impostazioni di risparmio energia da una raccolta selezionata alla raccolta selezionata.  
 
-5.  Nei campi **Inizio** e **Fine** specificare l'ora di inizio e di fine per le ore di punta (o lavorative).  
+5. Nei campi **Inizio** e **Fine** specificare l'ora di inizio e di fine per le ore di punta (o lavorative).  
 
-6.  Abilitare **Ora riattivazione (computer desktop)** per specificare l'ora in cui un computer desktop verrà riattivato dalla modalità di sospensione o ibernazione per installare gli aggiornamenti pianificati o per installazioni di software.  
+6. Abilitare **Ora riattivazione (computer desktop)** per specificare l'ora in cui un computer desktop verrà riattivato dalla modalità di sospensione o ibernazione per installare gli aggiornamenti pianificati o per installazioni di software.  
 
-    > [!IMPORTANT]  
-    >  Le funzionalità di risparmio energia usano l'ora di riattivazione di Windows interna per riattivare i computer dalla modalità di sospensione o ibernazione. Le impostazioni dell'ora di riattivazione non vengono applicate ai computer portatili per evitare scenari in cui la riattivazione potrebbe essere eseguita quando non sono collegati alla rete elettrica. L'ora di riattivazione è casuale e i computer verranno riattivati per un periodo di un'ora dall'ora di attivazione specificata.  
+   > [!IMPORTANT]  
+   >  Le funzionalità di risparmio energia usano l'ora di riattivazione di Windows interna per riattivare i computer dalla modalità di sospensione o ibernazione. Le impostazioni dell'ora di riattivazione non vengono applicate ai computer portatili per evitare scenari in cui la riattivazione potrebbe essere eseguita quando non sono collegati alla rete elettrica. L'ora di riattivazione è casuale e i computer verranno riattivati per un periodo di un'ora dall'ora di attivazione specificata.  
 
-7.  Se si vuole configurare una combinazione per il risparmio di energia personalizzata per le ore di punta (o lavorative), selezionare **Personalizzazione ore di punta (Configuration Manager)** nell'elenco a discesa **Piano ore di punta** e quindi fare clic su **Modifica**. Se si vuole configurare una combinazione per il risparmio di energia personalizzata per le ore non di punta (o non lavorative), selezionare **Personalizzazione fuori ore di punta (Configuration Manager)** nell'elenco a discesa **Piano fuori ore di punta** e quindi fare clic su **Modifica**.  
+7. Se si vuole configurare una combinazione per il risparmio di energia personalizzata per le ore di punta (o lavorative), selezionare **Personalizzazione ore di punta (Configuration Manager)** nell'elenco a discesa **Piano ore di punta** e quindi fare clic su **Modifica**. Se si vuole configurare una combinazione per il risparmio di energia personalizzata per le ore non di punta (o non lavorative), selezionare **Personalizzazione fuori ore di punta (Configuration Manager)** nell'elenco a discesa **Piano fuori ore di punta** e quindi fare clic su **Modifica**.  
 
-    > [!NOTE]  
-    >  È possibile usare il report **Attività computer** per decidere le pianificazioni da usare per le ore di punta e non di punta quando si applicano combinazioni per il risparmio di energia a raccolte di computer. Per altre informazioni, vedere [Come monitorare e pianificare il risparmio energia in System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
+   > [!NOTE]  
+   >  È possibile usare il report **Attività computer** per decidere le pianificazioni da usare per le ore di punta e non di punta quando si applicano combinazioni per il risparmio di energia a raccolte di computer. Per altre informazioni, vedere [Come monitorare e pianificare il risparmio energia in System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
 
-     È anche possibile selezionare le combinazioni per il risparmio di energia predefinite, **Bilanciamento (Configuration Manager)**, **Prestazioni elevate (Configuration Manager)** e **Risparmio di energia (Configuration Manager)**, quindi fare clic su **Visualizza** per visualizzare le proprietà di ogni combinazione.  
+    È anche possibile selezionare le combinazioni per il risparmio di energia predefinite, **Bilanciamento (Configuration Manager)**, **Prestazioni elevate (Configuration Manager)** e **Risparmio di energia (Configuration Manager)**, quindi fare clic su **Visualizza** per visualizzare le proprietà di ogni combinazione.  
 
-    > [!NOTE]  
-    >  Non è possibile modificare le combinazioni per il risparmio di energia predefinite.  
+   > [!NOTE]  
+   >  Non è possibile modificare le combinazioni per il risparmio di energia predefinite.  
 
-8.  Nella finestra di dialogo ***Proprietà* *<nome combinazione per il risparmio di energia\>* configurare le impostazioni seguenti:  
+8. Nella finestra di dialogo **Proprietà**<em><Nome combinazione risparmio di energia\></em>  configurare le impostazioni seguenti:  
 
-    -   **Nome:** specificare un nome per la combinazione per il risparmio di energia o usare il valore predefinito fornito.  
+   -   **Nome:** specificare un nome per la combinazione per il risparmio di energia o usare il valore predefinito fornito.  
 
-    -   **Descrizione:**  specificare una descrizione per la combinazione per il risparmio di energia o usare il valore predefinito fornito.  
+   -   **Descrizione:**  specificare una descrizione per la combinazione per il risparmio di energia o usare il valore predefinito fornito.  
 
-    -   **Specificare le proprietà di questa combinazione per il risparmio di energia:** configurare le proprietà della combinazione per il risparmio di energia. Per disabilitare una proprietà, deselezionare la casella di controllo. Per informazioni sulle impostazioni disponibili, vedere [Available power management plan settings](#BKMK_Plans) in questo argomento.  
+   -   **Specificare le proprietà di questa combinazione per il risparmio di energia:** configurare le proprietà della combinazione per il risparmio di energia. Per disabilitare una proprietà, deselezionare la casella di controllo. Per informazioni sulle impostazioni disponibili, vedere [Available power management plan settings](#BKMK_Plans) in questo argomento.  
 
-        > [!IMPORTANT]  
-        >  Le impostazioni abilitate vengono applicate ai computer quando viene applicata la combinazione per il risparmio di energia. Se si deseleziona la casella di controllo di un'impostazione di risparmio energia, il valore nel computer client non viene modificato quando viene applicata la combinazione per il risparmio di energia. La deselezione di una casella di controllo non consente di ripristinare l'impostazione di risparmio energia sul valore precedente prima dell'applicazione di una combinazione per il risparmio di energia.  
+       > [!IMPORTANT]  
+       >  Le impostazioni abilitate vengono applicate ai computer quando viene applicata la combinazione per il risparmio di energia. Se si deseleziona la casella di controllo di un'impostazione di risparmio energia, il valore nel computer client non viene modificato quando viene applicata la combinazione per il risparmio di energia. La deselezione di una casella di controllo non consente di ripristinare l'impostazione di risparmio energia sul valore precedente prima dell'applicazione di una combinazione per il risparmio di energia.  
 
-9. Fare clic su **OK** per chiudere la finestra di dialogo ***Proprietà* *<nome combinazione per il risparmio di energia\>*.  
+9. Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà**<em><Nome combinazione risparmio energia\></em>.  
 
-10. Fare clic su **OK** per chiudere la finestra di dialogo ***Impostazioni* *<Nome raccolta\>* e applicare la combinazione per il risparmio di energia.  
+10. Fare clic su **OK** per chiudere la finestra di dialogo **Impostazioni** <em><nome raccolta\></em> e applicare la combinazione per il risparmio di energia.  
 
 ##  <a name="BKMK_Plans"></a> Available power management plan settings  
  Nella tabella seguente sono elencate le impostazioni di risparmio energia disponibili in Configuration Manager. È possibile configurare impostazioni distinte per quando il computer è alimentato da rete elettrica o alimentato a batteria. A seconda della versione di Windows in uso, alcune impostazioni potrebbero non essere configurabili.  

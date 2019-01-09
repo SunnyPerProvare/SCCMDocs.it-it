@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: e9778b13-c8a3-40eb-8655-34ac8ce9cdaa
-ms.openlocfilehash: d5528fc3e035cd5bed8bc92c8b65f3025d97a2d1
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: b59d7063cbe1a16dd023466b272d2c1ebea0e5b6
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351548"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424545"
 ---
 # <a name="introduction-to-software-updates-in-system-center-configuration-manager"></a>Introduzione agli aggiornamenti software in System Center Configuration Manager
 
@@ -129,19 +129,19 @@ Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiorn
 
  L'analisi per la conformità degli aggiornamenti software, inclusa la relativa pianificazione, può iniziare nei modi seguenti:  
 
--   **Pianificazione dell'analisi degli aggiornamenti software**: l'analisi per la conformità degli aggiornamenti software inizia in base alla pianificazione configurata nelle impostazioni di Agente client aggiornamenti software. Per altre informazioni sulla configurazione delle impostazioni client degli aggiornamenti software, vedere le impostazioni client degli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#software-updates) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
+-   **Pianificazione analisi aggiornamenti software**: l'analisi per la conformità degli aggiornamenti software inizia in base alla pianificazione configurata nelle impostazioni di Agente client aggiornamenti software. Per altre informazioni sulla configurazione delle impostazioni client degli aggiornamenti software, vedere le impostazioni client degli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#software-updates) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
 
 -   **Azione Proprietà di Configuration Manager**: l'utente può avviare l'azione **Ciclo di analisi per aggiornamenti software** o **Ciclo di valutazione distribuzione aggiornamenti software** nella scheda **Azione** della finestra di dialogo **Proprietà di Configuration Manager** nel computer client.  
 
--   **Pianificazione della rivalutazione della distribuzione**: la valutazione della distribuzione e l'analisi per la conformità degli aggiornamenti software iniziano in base alla pianificazione della rivalutazione della distribuzione configurata nelle impostazioni di Agente client aggiornamenti software. Per altre informazioni sulla configurazione delle impostazioni client degli aggiornamenti software, vedere le impostazioni client degli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#software-updates) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
+-   **Pianificazione della rivalutazione della distribuzione**: La valutazione della distribuzione e l'analisi per la conformità degli aggiornamenti software iniziano in base alla pianificazione della rivalutazione della distribuzione configurata nelle impostazioni di Agente client aggiornamenti software. Per altre informazioni sulla configurazione delle impostazioni client degli aggiornamenti software, vedere le impostazioni client degli aggiornamenti software in [About client settings in System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md#software-updates) (Informazioni sulle impostazioni client in System Center Configuration Manager).  
 
--   **Prima del download dei file di aggiornamento**: quando un computer client riceve un criterio di assegnazione per una nuova distribuzione richiesta, Agente client aggiornamenti software scarica i file di aggiornamento software nella cache del client locale. Prima di scaricare i file di aggiornamento software, l'agente client avvia un'analisi per verificare che l'aggiornamento software sia ancora necessario.  
+-   **Prima di scaricare i file di aggiornamento**: quando un computer client riceve un criterio di assegnazione per una nuova distribuzione richiesta, l'Agente client aggiornamenti software scarica i file di aggiornamento software nella cache del client locale. Prima di scaricare i file di aggiornamento software, l'agente client avvia un'analisi per verificare che l'aggiornamento software sia ancora necessario.  
 
--   **Prima dell'installazione dell'aggiornamento software**: prima dell'installazione dell'aggiornamento software, Agente client aggiornamenti software avvia un'analisi per verificare che gli aggiornamenti software siano ancora necessari.  
+-   **Prima dell'installazione dell'aggiornamento software**: prima dell'installazione dell'aggiornamento software, l'Agente client aggiornamenti software avvia un'analisi per verificare che gli aggiornamenti software siano ancora necessari.  
 
--   **Dopo l'installazione dell'aggiornamento software**: dopo il completamento dell'installazione di un aggiornamento software, Agente client aggiornamenti software avvia un'analisi per verificare che non siano più necessari aggiornamenti software e crea un nuovo messaggio di stato che indica che l'aggiornamento software è installato. Quando l'installazione è terminata, ma è necessario un riavvio, il messaggio di stato indica che il computer client è in attesa di un riavvio.  
+-   **Dopo l'installazione dell'aggiornamento software**: dopo il completamento dell'installazione dell'aggiornamento software, l'Agente client aggiornamenti software avvia un'analisi per verificare che gli aggiornamenti software non siano più necessari e crea un nuovo messaggio di stato che indica che l'aggiornamento software è installato. Quando l'installazione è terminata, ma è necessario un riavvio, il messaggio di stato indica che il computer client è in attesa di un riavvio.  
 
--   **Dopo il riavvio del sistema**: quando un computer client è in attesa di un riavvio del sistema per completare l'installazione dell'aggiornamento software, Agente client aggiornamenti software avvia un'analisi dopo il riavvio per verificare che l'aggiornamento software non sia più richiesto e crea un messaggio di stato che indica che l'aggiornamento software è installato.  
+-   **Dopo il riavvio del sistema**: quando un computer client è in attesa di un riavvio del sistema per completare l'installazione dell'aggiornamento software, l'Agente client aggiornamenti software avvia un'analisi dopo il riavvio per verificare che l'aggiornamento software non sia più richiesto e crea un messaggio di stato che indica che l'aggiornamento software è installato.  
 
 #### <a name="time-to-live-value"></a>Valore di durata  
  I metadati degli aggiornamenti software richiesti per l'analisi della conformità degli aggiornamenti software vengono memorizzati nel computer client locale e, per impostazione predefinita, sono rilevanti per un massimo di 24 ore. Questo valore è noto come Durata (TTL).  
@@ -209,47 +209,47 @@ Per uno scenario di esempio in cui viene illustrato come distribuire gli aggiorn
 ###  <a name="BKMK_AutomaticDeployment"></a> Distribuzione automatica degli aggiornamenti software  
  La distribuzione automatica degli aggiornamenti software viene configurata con una regola di distribuzione automatica. Questo metodo di distribuzione viene in genere usato per gli aggiornamenti software mensili (comunemente noti come Patch martedì) e per la gestione degli aggiornamenti delle definizioni. Quando si esegue la regola, gli aggiornamenti software vengono rimossi dal gruppo di aggiornamenti software (se si usa un gruppo esistente), gli aggiornamenti software che soddisfano un criterio specificato (ad esempio, tutti gli aggiornamenti software della sicurezza rilasciati la settimana precedente) vengono aggiunti a un gruppo di aggiornamenti software, i file di contenuto per gli aggiornamenti software vengono scaricati e copiati nei punti di distribuzione e gli aggiornamenti software vengono distribuiti nei computer client nella raccolta di destinazione. Il seguente elenco descrive il flusso di lavoro generale per la distribuzione automatica degli aggiornamenti software:  
 
-1.  Creare una regola di distribuzione automatica che specifica le impostazioni di distribuzione, tra cui:  
+1. Creare una regola di distribuzione automatica che specifica le impostazioni di distribuzione, tra cui:  
 
-    -   Raccolta di destinazione  
+   -   Raccolta di destinazione  
 
-    -   Decidere se abilitare la distribuzione o il report sulla conformità degli aggiornamenti software per i computer client nella raccolta di destinazione  
+   -   Decidere se abilitare la distribuzione o il report sulla conformità degli aggiornamenti software per i computer client nella raccolta di destinazione  
 
-    -   Criteri degli aggiornamenti software  
+   -   Criteri degli aggiornamenti software  
 
-    -   Pianificazioni di valutazione e distribuzione  
+   -   Pianificazioni di valutazione e distribuzione  
 
-    -   Esperienza utente  
+   -   Esperienza utente  
 
-    -   Proprietà di download  
+   -   Proprietà di download  
 
-2.  Gli aggiornamenti software vengono aggiunti a un gruppo di aggiornamenti software.  
+2. Gli aggiornamenti software vengono aggiunti a un gruppo di aggiornamenti software.  
 
-3.  Il gruppo di aggiornamenti software viene distribuito ai computer client nella raccolta di destinazione, se specificato.  
+3. Il gruppo di aggiornamenti software viene distribuito ai computer client nella raccolta di destinazione, se specificato.  
 
- È necessario determinare la strategia di distribuzione da usare nel proprio ambiente. Ad esempio, è possibile creare la regola di distribuzione automatica e trovare una raccolta di destinazione dei client di prova. Dopo aver verificato che gli aggiornamenti software siano installati nel gruppo di prova, è possibile aggiungere una nuova distribuzione alla regola o modificare la raccolta nella distribuzione esistente in una raccolta di destinazione che include un set di client più ampio. Gli oggetti di aggiornamento software creati dalle regole di distribuzione automatica sono interattivi.  
+   È necessario determinare la strategia di distribuzione da usare nel proprio ambiente. Ad esempio, è possibile creare la regola di distribuzione automatica e trovare una raccolta di destinazione dei client di prova. Dopo aver verificato che gli aggiornamenti software siano installati nel gruppo di prova, è possibile aggiungere una nuova distribuzione alla regola o modificare la raccolta nella distribuzione esistente in una raccolta di destinazione che include un set di client più ampio. Gli oggetti di aggiornamento software creati dalle regole di distribuzione automatica sono interattivi.  
 
--   Gli aggiornamenti software distribuiti usando una regola di distribuzione automatica vengono distribuiti automaticamente nei nuovi client aggiunti alla raccolta di destinazione.  
+- Gli aggiornamenti software distribuiti usando una regola di distribuzione automatica vengono distribuiti automaticamente nei nuovi client aggiunti alla raccolta di destinazione.  
 
--   I nuovi aggiornamenti software aggiunti a un gruppo di aggiornamenti software vengono distribuiti automaticamente ai client nella raccolta di destinazione.  
+- I nuovi aggiornamenti software aggiunti a un gruppo di aggiornamenti software vengono distribuiti automaticamente ai client nella raccolta di destinazione.  
 
--   È possibile abilitare o disabilitare le distribuzioni in qualsiasi momento per la regola di distribuzione automatica.  
+- È possibile abilitare o disabilitare le distribuzioni in qualsiasi momento per la regola di distribuzione automatica.  
 
- Dopo aver creato una regola di distribuzione automatica, è possibile aggiungere altre distribuzioni alla regola. Ciò consente di gestire la complessità della distribuzione di aggiornamenti diversi a raccolte differenti. Ogni nuova distribuzione include l'intera gamma dell'esperienza di monitoraggio di funzionalità e distribuzione. Ogni nuova distribuzione aggiunta:  
+  Dopo aver creato una regola di distribuzione automatica, è possibile aggiungere altre distribuzioni alla regola. Ciò consente di gestire la complessità della distribuzione di aggiornamenti diversi a raccolte differenti. Ogni nuova distribuzione include l'intera gamma dell'esperienza di monitoraggio di funzionalità e distribuzione. Ogni nuova distribuzione aggiunta:  
 
--   Utilizza lo stesso gruppo e lo stesso pacchetto di aggiornamento creato alla prima esecuzione di ADR  
+- Utilizza lo stesso gruppo e lo stesso pacchetto di aggiornamento creato alla prima esecuzione di ADR  
 
--   Può specificare una raccolta diversa  
+- Può specificare una raccolta diversa  
 
--   Supporta proprietà di distribuzione univoca tra cui:  
+- Supporta proprietà di distribuzione univoca tra cui:  
 
-    -   Ora attivazione  
+  -   Ora attivazione  
 
-    -   Scadenza  
+  -   Scadenza  
 
-    -   Mostra o nascondi l'esperienza dell'utente finale  
+  -   Mostra o nascondi l'esperienza dell'utente finale  
 
-    -   Avvisi separati per questa distribuzione  
+  -   Avvisi separati per questa distribuzione  
 
 ##  <a name="BKMK_DeploymentProcess"></a> Processo di distribuzione degli aggiornamenti software  
  Dopo aver distribuito gli aggiornamenti software oppure quando viene eseguita una regola di distribuzione automatica e vengono distribuiti gli aggiornamenti software, viene aggiunto un criterio di assegnazione distribuzione ai criteri del computer per il sito. Gli aggiornamenti software vengono scaricati dal percorso download, Internet o dalla cartella di rete condivisa nell'origine del pacchetto. Gli aggiornamenti software vengono copiati dall'origine del pacchetto nella raccolta contenuto nel server del sito, quindi nella raccolta contenuto nel punto di distribuzione.  

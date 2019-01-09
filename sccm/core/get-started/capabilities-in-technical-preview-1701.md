@@ -10,12 +10,12 @@ ms.assetid: 18598eaa-1131-44ff-8f8b-6093e87ac7a1
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 894d268151f9c9dfb05ded812eb642f8025dc459
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: b2a01d8ccc76315edbdf0e14085381463ec7ed7b
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338534"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424518"
 ---
 # <a name="capabilities-in-technical-preview-1701-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1701 per System Center Configuration Manager
 
@@ -43,24 +43,24 @@ In questa anteprima, tuttavia, i gruppi di limiti per i punti di aggiornamento s
 
 Di seguito è descritto il funzionamento per i punti di aggiornamento software con la presente versione Technical Preview:  
 
--   **I nuovi client usano i gruppi di limiti per selezionare i punti di aggiornamento software.** Un client installato dopo aver installato la versione 1701 seleziona un punto di aggiornamento software da quelli associati al gruppo di limiti del client.
+- **I nuovi client usano i gruppi di limiti per selezionare i punti di aggiornamento software.** Un client installato dopo aver installato la versione 1701 seleziona un punto di aggiornamento software da quelli associati al gruppo di limiti del client.
 
   Viene sostituito il comportamento precedente in cui i client selezionano un punto di aggiornamento software casuale da un elenco di punti che condividono la foresta dei client.   
 
--   **I client installati in precedenza continuano a usare il punto di aggiornamento software corrente fino a quando non eseguono il fallback per trovare un nuovo punto.**
-I client installati in precedenza e che hanno già un punto di aggiornamento software continueranno a usare il punto di aggiornamento software fino a quando non eseguono il fallback. Sono inclusi i punti di aggiornamento software non associati al gruppo di limiti corrente del client. Non tentano immediatamente di trovare e usare un punto di aggiornamento software del gruppo di limiti corrente.
+- **I client installati in precedenza continuano a usare il punto di aggiornamento software corrente fino a quando non eseguono il fallback per trovare un nuovo punto.**
+  I client installati in precedenza e che hanno già un punto di aggiornamento software continueranno a usare il punto di aggiornamento software fino a quando non eseguono il fallback. Sono inclusi i punti di aggiornamento software non associati al gruppo di limiti corrente del client. Non tentano immediatamente di trovare e usare un punto di aggiornamento software del gruppo di limiti corrente.
 
   Un client che ha già un punto di aggiornamento software inizia a usare questo nuovo comportamento dei gruppi di limiti solo dopo non aver raggiunto il punto di aggiornamento software corrente e aver iniziato il fallback.
-Questo ritardo nel passaggio al nuovo comportamento è intenzionale. Questo avviene perché una modifica del punto di aggiornamento software può comportare un utilizzo elevato della larghezza di banda di rete poiché il client sincronizza i dati con il nuovo punto di aggiornamento software. Il ritardo nella transizione può evitare la saturazione della rete nel caso in cui tutti i client passino a nuovi punti di aggiornamento software contemporaneamente.
+  Questo ritardo nel passaggio al nuovo comportamento è intenzionale. Questo avviene perché una modifica del punto di aggiornamento software può comportare un utilizzo elevato della larghezza di banda di rete poiché il client sincronizza i dati con il nuovo punto di aggiornamento software. Il ritardo nella transizione può evitare la saturazione della rete nel caso in cui tutti i client passino a nuovi punti di aggiornamento software contemporaneamente.
 
--   **Configurazioni del tempo di fallback:** le configurazioni relative al momento in cui i client iniziano il fallback per la ricerca di un nuovo punto di aggiornamento software non sono supportate in questa versione Technical Preview. Sono incluse le configurazioni per **Fallback times (in minutes)** (Tempi di fallback in minuti) e **Never fallback** (Nessun fallback) che è possibile configurare per relazioni di gruppi di limiti diverse.
+- **Configurazioni per l'orario di fallback:** le configurazioni relative al momento in cui i client iniziano il fallback per la ricerca di un nuovo punto di aggiornamento software non sono supportate in questa versione Technical Preview. Sono incluse le configurazioni per **Fallback times (in minutes)** (Tempi di fallback in minuti) e **Never fallback** (Nessun fallback) che è possibile configurare per relazioni di gruppi di limiti diverse.
 
   I client mantengono invece il comportamento corrente in cui il client tenta di connettersi al relativo punto di aggiornamento software corrente per due ore prima di iniziare il fallback per trovare un nuovo punto di aggiornamento software utilizzabile.
 
   Quando un client usa il fallback, userà le configurazioni dei gruppi di limiti per il fallback per creare un pool di punti di aggiornamento software disponibili. Il pool include tutti i punti di aggiornamento software del *gruppo di limiti corrente* dei client, dei *gruppi di limiti adiacenti* e del *gruppo di limiti predefinito del sito* dei client.
 
 - **Configurare il gruppo di limiti del sito predefinito:**  
- Considerare l'aggiunta di un punto di aggiornamento software a *Default-Site-Boundary-Group&lt;codicesito>*. Ciò garantisce che i client che non sono membri di un altro gruppo di limiti possano eseguire il fallback per trovare un punto di aggiornamento software.
+  Considerare l'aggiunta di un punto di aggiornamento software a *Default-Site-Boundary-Group&lt;codicesito>*. Ciò garantisce che i client che non sono membri di un altro gruppo di limiti possano eseguire il fallback per trovare un punto di aggiornamento software.
 
 
 Per gestire i punti di aggiornamento software per i gruppi di limiti, usare le [procedure della documentazione di Current Branch](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#procedures-for-boundary-groups) ricordando che i tempi di fallback che potrebbero essere configurati non vengono ancora usati per i punti di aggiornamento software.
@@ -71,18 +71,18 @@ Una nuova classe di inventario hardware (**SMS_Firmware**) e una nuova propriet�
 
 ## <a name="improvements-to-operating-system-deployment"></a>Miglioramenti alla distribuzione del sistema operativo
 Sono stati apportati i miglioramenti seguenti alla distribuzione del sistema operativo, molti dei quali sono il risultato del feedback degli utenti.
-- [**Supporto di più applicazioni per il passaggio della sequenza di attività Installa applicazioni**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17062207-task-sequence-allow-more-than-9-applications-in-t): il numero massimo di applicazioni che è possibile installare è stato aumentato a 99 nel passaggio della sequenza di attività **Installa applicazioni**. Il numero massimo precedente era di 9 applicazioni.
-- [**Selezione di più app nella sequenza di attività Installa applicazioni**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15459978-when-adding-items-to-an-install-application-step): quando si aggiungono le applicazioni al passaggio della sequenza di attività Installa applicazioni nell'editor delle sequenze di attività, è ora possibile selezionare più applicazioni dal riquadro **Seleziona l'applicazione da installare**.
-- [**Scadenza dei supporti autonomi**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/14448564-provide-a-method-for-expiring-standalone-media): durante la creazione di supporti autonomi, sono disponibili nuove opzioni per l'impostazione di date di inizio e scadenza facoltative nei supporti. Queste impostazioni sono disabilitate per impostazione predefinita. Le date vengono confrontate con l'ora di sistema nel computer prima che il supporto autonomo venga eseguito. Quando l'ora di sistema è precedente all'ora di inizio o successiva all'ora di scadenza, il supporto autonomo non viene avviato. Queste opzioni sono disponibili anche tramite il cmdlet PowerShell New-CMStandaloneMedia.
-- [**Supporto per contenuto aggiuntivo nei supporti autonomi**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8341257-support-installation-of-packages-apps-via-dynamic): è ora supportato contenuto aggiuntivo nei supporti autonomi. È possibile selezionare altri pacchetti, pacchetti driver e applicazioni da gestire nei supporti insieme ad altro contenuto cui viene fatto riferimento nella sequenza di attività. In precedenza, soltanto il contenuto cui veniva fatto riferimento nella sequenza di attività veniva gestito nei supporti autonomi.
-- [**Timeout configurabile per il passaggio della sequenza di attività Applica automaticamente i driver**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17153660-auto-apply-driver-timeout): sono ora disponibili nuove variabili della sequenza di attività per la configurazione del valore di timeout nel passaggio della sequenza di attività Applica automaticamente i driver durante la creazione di richieste di catalogo HTTP. Sono disponibili le seguenti variabili e valori predefiniti (in secondi):
+- [**Supporto di più applicazioni per il passaggio della sequenza di attività Installa applicazioni**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17062207-task-sequence-allow-more-than-9-applications-in-t): nel passaggio della sequenza di attività **Installa applicazioni** il numero massimo di applicazioni che è possibile installare è stato aumentato a 99. Il numero massimo precedente era di 9 applicazioni.
+- [**Selezionare più app nel passaggio della sequenza di attività Installa app**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15459978-when-adding-items-to-an-install-application-step): quando si aggiungono applicazioni al passaggio della sequenza di attività Installa applicazione nell'editor delle sequenze di attività, è ora possibile selezionare più applicazioni dal riquadro **Seleziona l'applicazione da installare**.
+- [**Scadenza dei supporti autonomi**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/14448564-provide-a-method-for-expiring-standalone-media): Quando si creano supporti autonomi, sono disponibili nuove opzioni per l'impostazione di date facoltative di inizio e scadenza nei supporti. Queste impostazioni sono disabilitate per impostazione predefinita. Le date vengono confrontate con l'ora di sistema nel computer prima che il supporto autonomo venga eseguito. Quando l'ora di sistema è precedente all'ora di inizio o successiva all'ora di scadenza, il supporto autonomo non viene avviato. Queste opzioni sono disponibili anche tramite il cmdlet PowerShell New-CMStandaloneMedia.
+- [**Supporto per contenuto aggiuntivo nei supporti autonomi**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/8341257-support-installation-of-packages-apps-via-dynamic): È ora supportato contenuto aggiuntivo nei supporti autonomi. È possibile selezionare altri pacchetti, pacchetti driver e applicazioni da gestire nei supporti insieme ad altro contenuto cui viene fatto riferimento nella sequenza di attività. In precedenza, soltanto il contenuto cui veniva fatto riferimento nella sequenza di attività veniva gestito nei supporti autonomi.
+- [**Timeout configurabile per il passaggio della sequenza di attività Applica automaticamente i driver**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17153660-auto-apply-driver-timeout): Sono ora disponibili nuove variabili della sequenza di attività per la configurazione del valore di timeout nel passaggio della sequenza di attività Applica automaticamente i driver durante la creazione di richieste di catalogo HTTP. Sono disponibili le seguenti variabili e valori predefiniti (in secondi):
    - SMSTSDriverRequestResolveTimeOut Default: 60
    - SMSTSDriverRequestConnectTimeOut Default: 60
    - SMSTSDriverRequestSendTimeOut Default: 60
    - SMSTSDriverRequestReceiveTimeOut Default: 480
-- [**ID pacchetto visualizzato nei passaggi della sequenza di attività**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/16167430-display-packageid-when-viewing-a-task-sequence-ste): tutti i passaggi della sequenza di attività che fanno riferimento a un pacchetto, un pacchetto driver, un'immagine del sistema operativo, un'immagine d'avvio o un pacchetto di aggiornamento del sistema operativo visualizzano ora l'ID pacchetto dell'oggetto cui viene fatto riferimento. Quando un passaggio della sequenza di attività fa riferimento a un'applicazione viene visualizzato l'ID oggetto.
-- **Windows 10 ADK rilevato per versione build**: Windows 10 ADK viene ora rilevato in base alla versione build per garantire maggior supporto durante la personalizzazione delle immagini d'avvio di Windows 10. Ad esempio, se il sito usa Windows ADK per Windows 10, versione 1607, possono essere personalizzate nella console soltanto le immagini d'avvio con versione 10.0.14393. Per informazioni dettagliate sulla personalizzazione delle versioni WinPE, vedere [Personalizzare le immagini d'avvio](/sccm/osd/get-started/customize-boot-images).
-- **Percorso di origine dell'immagine d'avvio predefinita non più modificabile**: le immagini d'avvio predefinite sono gestite da Configuration Manager e il percorso di origine dell'immagine d'avvio predefinita non può più essere modificato nella console di Configuration Manager o usando Configuration Manager SDK. È possibile continuare a configurare un percorso di origine personalizzato per le immagini d'avvio personalizzate.
+- [**L'ID pacchetto viene ora visualizzato nei passaggi della sequenza di attività**](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/16167430-display-packageid-when-viewing-a-task-sequence-ste): I passaggi della sequenza di attività che fanno riferimento a un pacchetto, un pacchetto driver, un'immagine del sistema operativo, un'immagine d'avvio o un pacchetto di aggiornamento del sistema operativo visualizzano ora l'ID pacchetto dell'oggetto a cui viene fatto riferimento. Quando un passaggio della sequenza di attività fa riferimento a un'applicazione viene visualizzato l'ID oggetto.
+- **Windows 10 ADK rilevato dalla versione build**: Windows 10 ADK viene ora rilevato dalla versione build per garantire maggior supporto durante la personalizzazione delle immagini d'avvio di Windows 10. Ad esempio, se il sito usa Windows ADK per Windows 10, versione 1607, possono essere personalizzate nella console soltanto le immagini d'avvio con versione 10.0.14393. Per informazioni dettagliate sulla personalizzazione delle versioni WinPE, vedere [Personalizzare le immagini d'avvio](/sccm/osd/get-started/customize-boot-images).
+- **Percorso di origine dell'immagine d'avvio predefinita non più modificabile**: Le immagini d'avvio predefinite sono gestite da Configuration Manager e il percorso di origine dell'immagine d'avvio predefinita non può più essere modificato nella console di Configuration Manager o tramite Configuration Manager SDK. È possibile continuare a configurare un percorso di origine personalizzato per le immagini d'avvio personalizzate.
 
 ## <a name="host-software-updates-on-cloud-based-distribution-points"></a>Ospitare gli aggiornamenti software in punti di distribuzione basati sul cloud
 A partire da questa versione di anteprima, è possibile usare un punto di distribuzione basato sul cloud per ospitare un pacchetto di aggiornamento software. Tuttavia, poiché è possibile configurare i client per scaricare gli aggiornamenti software direttamente da Microsoft Update, considerare i possibili costi aggiuntivi per la distribuzione di un pacchetto di aggiornamento software a un punto di distribuzione basato sul cloud.
@@ -104,31 +104,31 @@ Con questa versione Technical Preview è possibile usare il connettore Microsoft
 A tale scopo, modificare un file di configurazione in modo che punti al cloud per enti pubblici e quindi installare il connettore OMS.
 
 ### <a name="set-up-an-oms-connector-to-microsoft-azure-government-cloud"></a>Impostare un connettore OMS per il cloud di Microsoft Azure per enti pubblici
-1.  In un computer in cui è installata la console di Configuration Manager modificare il file di configurazione seguente in modo che punti al cloud per enti pubblici:  ***&lt;percorso installazione CM>\AdminConsole\bin\Microsoft.configurationManagmenet.exe.config***
+1. In un computer in cui è installata la console di Configuration Manager modificare il file di configurazione seguente in modo che punti al cloud per enti pubblici:  ***&lt;percorso di installazione CM>\AdminConsole\bin\Microsoft.configurationManagmenet.exe.config***
 
-  **Modifiche:**
+   **Modifiche:**
 
-    Modificare il valore del nome dell'impostazione *FairFaxArmResourceID* in modo che sia uguale a "https://management.usgovcloudapi.net/"
+   Modificare il valore del nome dell'impostazione *FairFaxArmResourceID* in modo che sia uguale a "<https://management.usgovcloudapi.net/”>
 
    - **Originale:** &lt;setting name="FairFaxArmResourceId" serializeAs="String">   
-      &lt;value>&lt;/value>   
-      &lt;/setting>
+     &lt;value>&lt;/value>   
+     &lt;/setting>
 
    - **Modificato:**     
-      &lt;setting name="FairFaxArmResourceId" serializeAs="String"> &lt;value>https://management.usgovcloudapi.net/&lt;/value>  
-      &lt;/setting>
+     &lt;setting name="FairFaxArmResourceId" serializeAs="String"> &lt;value><https://management.usgovcloudapi.net/&lt;/value>>  
+     &lt;/setting>
 
-  Modificare il valore del nome dell'impostazione *FairFaxAuthorityResource* in modo che sia uguale a "https://login.microsoftonline.com/"
+   Modificare il valore del nome dell'impostazione *FairFaxAuthorityResource* in modo che sia uguale a "<https://login.microsoftonline.com/>"
 
-  - **Originale:** &lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
-    &lt;value>&lt;/value>
+   - **Originale:** &lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
+     &lt;value>&lt;/value>
 
-    - **Modificato:** &lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
-    &lt;value>https://login.microsoftonline.com/&lt;/value>
+   - **Modificato:** &lt;setting name="FairFaxAuthorityResource" serializeAs="String">   
+     &lt;value><https://login.microsoftonline.com/&lt;/value>>
 
-2.  Dopo aver salvato il file con le due modifiche, riavviare la console di Configuration Manager nello stesso computer e quindi usare la console per installare il connettore OMS. Per installare il connettore, usare le informazioni in [Sincronizzazione dei dati da Configuration Manager a Microsoft Operations Management Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) e selezionare l'**Area di lavoro di Operations Management Suite** che si trova nel cloud di Microsoft Azure per enti pubblici.
+2. Dopo aver salvato il file con le due modifiche, riavviare la console di Configuration Manager nello stesso computer e quindi usare la console per installare il connettore OMS. Per installare il connettore, usare le informazioni in [Sincronizzazione dei dati da Configuration Manager a Microsoft Operations Management Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) e selezionare l'**Area di lavoro di Operations Management Suite** che si trova nel cloud di Microsoft Azure per enti pubblici.
 
-3.  Dopo aver installato il connettore OMS, la connessione al cloud per enti pubblici sarà disponibile quando si usa qualsiasi console che si connette al sito.
+3. Dopo aver installato il connettore OMS, la connessione al cloud per enti pubblici sarà disponibile quando si usa qualsiasi console che si connette al sito.
 
 ## <a name="android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm"></a>Non è più necessario specificare le versioni di Android e iOS nella creazione guidata della gestione ibrida dei dispositivi mobili
 

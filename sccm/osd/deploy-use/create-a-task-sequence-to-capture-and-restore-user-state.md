@@ -10,12 +10,12 @@ ms.assetid: d566d85c-bf7a-40e7-8239-57640a1db5f4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bffbb3373fbcd1a9a34f526a7c73faff68ccae49
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.openlocfilehash: c9888bbcc0468356b55216491d8599ebb5f42818
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42756110"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420431"
 ---
 # <a name="create-a-task-sequence-to-capture-and-restore-user-state-in-configuration-manager"></a>Creare una sequenza di attività per acquisire e ripristinare lo stato utente in Configuration Manager
 
@@ -69,20 +69,20 @@ ms.locfileid: "42756110"
 
  Per aggiungere i passaggi della sequenza di attività per ripristinare lo stato utente, seguire questa procedura:
 
- 1.  Nell'elenco **Sequenza attività** selezionare una sequenza attività, quindi fare clic su **Modifica**.  
+1. Nell'elenco **Sequenza attività** selezionare una sequenza attività, quindi fare clic su **Modifica**.  
 
- 2.  Aggiungere il passaggio **Ripristina stato utente** alla sequenza attività. In **Editor della sequenza di attività** fare clic su **Aggiungi**. Scegliere **Stato utente** e quindi fare clic su **Ripristina stato utente**. Questo passaggio stabilisce una connessione al punto di migrazione dello stato, se necessario. Configurare le proprietà e le opzioni per questo passaggio, quindi fare clic su **Applica**. Per altre informazioni sulle impostazioni disponibili, vedere [Ripristina stato utente](/sccm/osd/understand/task-sequence-steps#BKMK_RestoreUserState).  
+2. Aggiungere il passaggio **Ripristina stato utente** alla sequenza attività. In **Editor della sequenza di attività** fare clic su **Aggiungi**. Scegliere **Stato utente** e quindi fare clic su **Ripristina stato utente**. Questo passaggio stabilisce una connessione al punto di migrazione dello stato, se necessario. Configurare le proprietà e le opzioni per questo passaggio, quindi fare clic su **Applica**. Per altre informazioni sulle impostazioni disponibili, vedere [Ripristina stato utente](/sccm/osd/understand/task-sequence-steps#BKMK_RestoreUserState).  
 
-    > [!Important]  
-    >  Quando si usa il passaggio [Acquisisci stato utente](/sccm/osd/understand/task-sequence-steps#BKMK_CaptureUserState) con l'opzione **Acquisisci tutti i profili utente utilizzando le opzioni standard** selezionata, è necessario selezionare l'impostazione **Ripristina profili utente del computer locale** nel passaggio **Ripristina stato utente**. In caso contrario, la sequenza di attività avrà esito negativo.  
+   > [!Important]  
+   >  Quando si usa il passaggio [Acquisisci stato utente](/sccm/osd/understand/task-sequence-steps#BKMK_CaptureUserState) con l'opzione **Acquisisci tutti i profili utente utilizzando le opzioni standard** selezionata, è necessario selezionare l'impostazione **Ripristina profili utente del computer locale** nel passaggio **Ripristina stato utente**. In caso contrario, la sequenza di attività avrà esito negativo.  
 
-    > [!Note]  
-    > Se lo stato utente viene archiviato tramite collegamenti reali locali e il ripristino ha esito negativo, è possibile eliminare manualmente i collegamenti reali creati per l'archiviazione dei dati. La sequenza di attività può eseguire lo strumento USMTUtils per automatizzare questa azione con un passaggio [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine). Se si usa USMTUtils per eliminare il collegamento reale, aggiungere un passaggio [Riavvia computer](/sccm/osd/understand/task-sequence-steps#BKMK_RestartComputer) dopo l'esecuzione di USMTUtils.  
+   > [!Note]  
+   > Se lo stato utente viene archiviato tramite collegamenti reali locali e il ripristino ha esito negativo, è possibile eliminare manualmente i collegamenti reali creati per l'archiviazione dei dati. La sequenza di attività può eseguire lo strumento USMTUtils per automatizzare questa azione con un passaggio [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine). Se si usa USMTUtils per eliminare il collegamento reale, aggiungere un passaggio [Riavvia computer](/sccm/osd/understand/task-sequence-steps#BKMK_RestartComputer) dopo l'esecuzione di USMTUtils.  
 
- 3.  Se si usa un punto di migrazione stato per archiviare lo stato utente, aggiungere il passaggio **Rilascia archiviazione stati** alla sequenza di attività. In **Editor della sequenza di attività** fare clic su **Aggiungi**. Scegliere **Stato utente** e quindi fare clic su **Rilascia archiviazione stati**. Configurare le proprietà e le opzioni per questo passaggio, quindi fare clic su **Applica**. Per altre informazioni sulle impostazioni disponibili, vedere [Rilascia archiviazione stati](/sccm/osd/understand/task-sequence-steps#BKMK_ReleaseStateStore).  
+3. Se si usa un punto di migrazione stato per archiviare lo stato utente, aggiungere il passaggio **Rilascia archiviazione stati** alla sequenza di attività. In **Editor della sequenza di attività** fare clic su **Aggiungi**. Scegliere **Stato utente** e quindi fare clic su **Rilascia archiviazione stati**. Configurare le proprietà e le opzioni per questo passaggio, quindi fare clic su **Applica**. Per altre informazioni sulle impostazioni disponibili, vedere [Rilascia archiviazione stati](/sccm/osd/understand/task-sequence-steps#BKMK_ReleaseStateStore).  
 
-    > [!IMPORTANT]  
-    >  È necessario che l'azione della sequenza attività eseguita prima del passaggio **Rilascia archiviazione stati** abbia esito positivo prima dell'avvio del passaggio **Rilascia archiviazione stati**.  
+   > [!IMPORTANT]  
+   >  È necessario che l'azione della sequenza attività eseguita prima del passaggio **Rilascia archiviazione stati** abbia esito positivo prima dell'avvio del passaggio **Rilascia archiviazione stati**.  
 
 
  Distribuire questa sequenza attività per ripristinare lo stato utente in un computer di destinazione. Per informazioni sulla distribuzione di sequenze di attività, vedere [Distribuire una sequenza di attività](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS).  

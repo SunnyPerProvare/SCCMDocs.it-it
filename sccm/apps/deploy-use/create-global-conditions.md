@@ -10,12 +10,12 @@ ms.assetid: 2d5f871a-19dc-4bd3-a3ad-4230c7a69f1b
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: dac47f55a1ad0d287e789d555d2f0a93b40f9376
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a7f6ffa85fd82118ca093454b2dec6249fe7b3e2
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335678"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421893"
 ---
 # <a name="how-to-create-global-conditions-in-system-center-configuration-manager"></a>Come creare condizioni globali in System Center Configuration Manager
 
@@ -50,146 +50,146 @@ In System Center Configuration Manager le condizioni globali sono regole che rap
 
 ### <a name="to-set-up-a-setting-for-the-global-condition"></a>Per configurare un'impostazione per la condizione globale  
 
-1.  Nell'elenco a discesa **Tipo di condizione** , scegliere **Impostazione**.  
+1. Nell'elenco a discesa **Tipo di condizione** , scegliere **Impostazione**.  
 
-2.  Nell'elenco a discesa **Tipo di impostazione** , scegliere l'elemento da utilizzare come condizione per cui verranno controllati i requisiti. Sono disponibili i seguenti tipi di impostazione e configurazione.  
+2. Nell'elenco a discesa **Tipo di impostazione** , scegliere l'elemento da utilizzare come condizione per cui verranno controllati i requisiti. Sono disponibili i seguenti tipi di impostazione e configurazione.  
 
-    -   **Query Active Directory**  
+   - **Query Active Directory**  
 
-        -   **Prefisso LDAP** : specificare un prefisso LDAP valido per la query Servizi di dominio Active Directory per valutare la conformità nei computer client. È possibile usare **LDAP://** o **GC://**.  
+     -   **Prefisso LDAP** : specificare un prefisso LDAP valido per la query Servizi di dominio Active Directory per valutare la conformità nei computer client. È possibile usare **LDAP://** o **GC://**.  
 
-        -   **Nome distinto (DN)**: specificare il nome distinto dell'oggetto Active Directory Domain Services di cui verrà valutata la conformità nei computer client.  
+     -   **Nome distinto (DN)**: specificare il nome distinto dell'oggetto Active Directory Domain Services di cui verrà valutata la conformità nei computer client.  
 
-        -   **Filtro di ricerca** : specificare un filtro LDAP opzionale per rifinire i risultati derivanti dalla query Servizi di dominio Active Directory per valutare la conformità nei computer client.  
+     -   **Filtro di ricerca** : specificare un filtro LDAP opzionale per rifinire i risultati derivanti dalla query Servizi di dominio Active Directory per valutare la conformità nei computer client.  
 
-        -   **Ambito di ricerca** : specificare l'ambito di ricerca in Servizi di dominio Active Directory:  
+     -   **Ambito di ricerca** : specificare l'ambito di ricerca in Servizi di dominio Active Directory:  
 
-            -   **Base**: esegue una query solo dell'oggetto specificato.  
+         -   **Base**: esegue una query solo dell'oggetto specificato.  
 
-            -   **Un livello**: questa opzione non è usata in questa versione di Configuration Manager.  
+         -   **Un livello**: questa opzione non è usata in questa versione di Configuration Manager.  
 
-            -   **Sottoalbero**: esegue una query dell'oggetto specificato e il relativo sottoalbero completo nella directory.  
+         -   **Sottoalbero**: esegue una query dell'oggetto specificato e il relativo sottoalbero completo nella directory.  
 
-        -   **Proprietà** : specificare la proprietà dell'oggetto Servizi di dominio Active Directory che sarà utilizzato per valutare la conformità nei computer client.  
+     -   **Proprietà** : specificare la proprietà dell'oggetto Servizi di dominio Active Directory che sarà utilizzato per valutare la conformità nei computer client.  
 
-        -   **Query** : visualizza la query LDAP creata dalle voci in **Prefisso LDAP**, **Nome distinto (DN)**, **Filtro di ricerca** se specificati e **Proprietà**. Questa query verrà utilizzata per valutare la conformità nei computer client.  
+     -   **Query** : visualizza la query LDAP creata dalle voci in **Prefisso LDAP**, **Nome distinto (DN)**, **Filtro di ricerca** se specificati e **Proprietà**. Questa query verrà utilizzata per valutare la conformità nei computer client.  
 
-    -   **Assembly**  
+   - **Assembly**  
 
-        -   **Nome assembly** : specifica il nome dell'oggetto assembly da cercare. Il nome non può essere lo stesso di un altro oggetto assembly dello stesso tipo e deve essere registrato nella Global Assembly Cache. Il nome dell'assembly può contenere un massimo di 256 caratteri.  
+     -   **Nome assembly** : specifica il nome dell'oggetto assembly da cercare. Il nome non può essere lo stesso di un altro oggetto assembly dello stesso tipo e deve essere registrato nella Global Assembly Cache. Il nome dell'assembly può contenere un massimo di 256 caratteri.  
 
-        > [!NOTE]  
-        >  Un assembly è una porzione di codice che può essere condivisa tra applicazioni. I nomi file degli assembly possono avere estensione dll o exe. La cache di assembly globale è una cartella denominata *%systemroot%\assembly* nei computer client in cui sono memorizzati tutti gli assembly condivisi.  
+     > [!NOTE]  
+     >  Un assembly è una porzione di codice che può essere condivisa tra applicazioni. I nomi file degli assembly possono avere estensione dll o exe. La cache di assembly globale è una cartella denominata *%systemroot%\assembly* nei computer client in cui sono memorizzati tutti gli assembly condivisi.  
 
-    -   **File system**  
+   - **File system**  
 
-        -   **Tipo**: dall'elenco a discesa selezionare se si vuole effettuare la ricerca di un **File** o di una **Cartella**.  
+     - **Tipo**: dall'elenco a discesa selezionare se si vuole effettuare la ricerca di un **File** o di una **Cartella**.  
 
-        -   **Percorso** : specificare il percorso al file o alla cartella specificati nei computer client. È possibile specificare le variabili di ambiente relative al sistema e la variabile di ambiente *%USERPROFILE%* nel percorso.  
+     - **Percorso** : specificare il percorso al file o alla cartella specificati nei computer client. È possibile specificare le variabili di ambiente relative al sistema e la variabile di ambiente *%USERPROFILE%* nel percorso.  
 
-            > [!NOTE]  
-            >  Se si utilizza la variabile di ambiente *%USERPROFILE%* nei campi **Percorso** o **Nome file o cartella** , verrà effettuata la ricerca di tutti i profili utente sui computer client. Ciò potrebbe causare l'individuazione di più istanze del file o della cartella.  
+       > [!NOTE]  
+       >  Se si utilizza la variabile di ambiente *%USERPROFILE%* nei campi **Percorso** o **Nome file o cartella** , verrà effettuata la ricerca di tutti i profili utente sui computer client. Ciò potrebbe causare l'individuazione di più istanze del file o della cartella.  
 
-        -   **Nome file o cartella** : specificare il nome dell'oggetto file o cartella di cui verrà effettuata la ricerca. È possibile specificare le variabili di ambiente relative al sistema e la variabile di ambiente *%USERPROFILE%* nel nome file o cartella. Nel nome del file è anche possibile usare i caratteri jolly * e ?.  
+     - **Nome file o cartella** : specificare il nome dell'oggetto file o cartella di cui verrà effettuata la ricerca. È possibile specificare le variabili di ambiente relative al sistema e la variabile di ambiente *%USERPROFILE%* nel nome file o cartella. Nel nome del file è anche possibile usare i caratteri jolly * e ?.  
 
-            > [!NOTE]  
-            >  Se si specifica un nome file o cartella e si utilizzano dei caratteri jolly, ciò potrebbe produrre un numero elevato di risultati. Questo potrebbe portare a un uso elevato delle risorse nei computer client e a un intenso traffico di rete quando si segnalano i risultati a Configuration Manager.  
+       > [!NOTE]  
+       >  Se si specifica un nome file o cartella e si utilizzano dei caratteri jolly, ciò potrebbe produrre un numero elevato di risultati. Questo potrebbe portare a un uso elevato delle risorse nei computer client e a un intenso traffico di rete quando si segnalano i risultati a Configuration Manager.  
 
-        -   **Includi sottocartelle** : abilitare questa opzione se si desidera effettuare la ricerca anche nelle sottocartelle nel percorso specificato.  
+     - **Includi sottocartelle** : abilitare questa opzione se si desidera effettuare la ricerca anche nelle sottocartelle nel percorso specificato.  
 
-        -   **Il file o la cartella sono associati a un'applicazione a 64 bit**: scegliere se effettuare la ricerca anche nel percorso dei file del sistema a 64 bit (*%windir%* \system32), oltre al percorso dei file del sistema a 32 bit (*%windir%* \syswow64) nei client di Configuration Manager con una versione a 64 bit di Windows.  
+     - **Il file o la cartella sono associati a un'applicazione a 64 bit**: scegliere se effettuare la ricerca anche nel percorso dei file del sistema a 64 bit (*%windir%* \system32), oltre al percorso dei file del sistema a 32 bit (*%windir%* \syswow64) nei client di Configuration Manager con una versione a 64 bit di Windows.  
 
-            > [!NOTE]  
-            >  Se nel percorso dei file del sistema a 64 e 32 bit sullo stesso computer a 64 bit esiste lo stesso file o cartella, la condizione globale individuerà più file.  
+       > [!NOTE]  
+       >  Se nel percorso dei file del sistema a 64 e 32 bit sullo stesso computer a 64 bit esiste lo stesso file o cartella, la condizione globale individuerà più file.  
 
-         Il tipo di impostazione **File system** non supporta la specificazione di un percorso UNC in una condivisione di rete nel campo **Percorso** .  
+       Il tipo di impostazione **File system** non supporta la specificazione di un percorso UNC in una condivisione di rete nel campo **Percorso** .  
 
-    -   **Metabase IIS**  
+   - **Metabase IIS**  
 
-        -   **Percorso metabase** : specificare un percorso valido per la metabase IIS.  
+     -   **Percorso metabase** : specificare un percorso valido per la metabase IIS.  
 
-        -   **ID proprietà** : specificare la proprietà numerica dell'impostazione della metabase IIS.  
+     -   **ID proprietà** : specificare la proprietà numerica dell'impostazione della metabase IIS.  
 
-    -   **Chiave del Registro di sistema**  
+   - **Chiave del Registro di sistema**  
 
-        -   **Hive**: dall'elenco a discesa scegliere l'hive del Registro di sistema in cui si vuole effettuare la ricerca.  
+     -   **Hive**: dall'elenco a discesa scegliere l'hive del Registro di sistema in cui si vuole effettuare la ricerca.  
 
-        -   **Chiave** : specificare il nome della chiave del Registro di sistema in cui si desidera effettuare la ricerca. Il formato utilizzato deve essere *key\subkey*.  
+     -   **Chiave** : specificare il nome della chiave del Registro di sistema in cui si desidera effettuare la ricerca. Il formato utilizzato deve essere *key\subkey*.  
 
-        -   **Questa chiave del Registro di sistema è associata a un'applicazione a 64 bit** : consente di specificare se effettuare la ricerca anche tra le chiavi del Registro di sistema a 64 bit, oltre alle chiavi del Registro di sistema a 32 bit su client con una versione a 64 bit di Windows.  
+     -   **Questa chiave del Registro di sistema è associata a un'applicazione a 64 bit** : consente di specificare se effettuare la ricerca anche tra le chiavi del Registro di sistema a 64 bit, oltre alle chiavi del Registro di sistema a 32 bit su client con una versione a 64 bit di Windows.  
 
-            > [!NOTE]  
-            >  Se la stessa chiave del Registro di sistema esiste nei percorsi dei Registri di sistema a 64 e 32 bit sullo stesso computer a 64 bit, la condizione globale individuerà più chiavi del Registro di sistema.  
+         > [!NOTE]  
+         >  Se la stessa chiave del Registro di sistema esiste nei percorsi dei Registri di sistema a 64 e 32 bit sullo stesso computer a 64 bit, la condizione globale individuerà più chiavi del Registro di sistema.  
 
-    -   **Valore del Registro di sistema**  
+   - **Valore del Registro di sistema**  
 
-        -   **Hive** : dall'elenco a discesa, selezionare l'hive del Registro di sistema in cui si desidera effettuare la ricerca.  
+     -   **Hive** : dall'elenco a discesa, selezionare l'hive del Registro di sistema in cui si desidera effettuare la ricerca.  
 
-        -   **Chiave** : specificare il nome della chiave del Registro di sistema in cui si desidera effettuare la ricerca. Il formato utilizzato deve essere *key\subkey*.  
+     -   **Chiave** : specificare il nome della chiave del Registro di sistema in cui si desidera effettuare la ricerca. Il formato utilizzato deve essere *key\subkey*.  
 
-        -   **Valore** : specificare il valore che deve essere contenuto all'interno della chiave del Registro di sistema specificato.  
+     -   **Valore** : specificare il valore che deve essere contenuto all'interno della chiave del Registro di sistema specificato.  
 
-        -   **Questa chiave del Registro di sistema è associata a un'applicazione a 64 bit** : consente di specificare se effettuare la ricerca anche tra le chiavi del Registro di sistema a 64 bit, oltre alle chiavi del Registro di sistema a 32 bit su client con una versione a 64 bit di Windows.  
+     -   **Questa chiave del Registro di sistema è associata a un'applicazione a 64 bit** : consente di specificare se effettuare la ricerca anche tra le chiavi del Registro di sistema a 64 bit, oltre alle chiavi del Registro di sistema a 32 bit su client con una versione a 64 bit di Windows.  
 
-            > [!NOTE]  
-            >  Se la stessa chiave del Registro di sistema esiste nei percorsi dei Registri di sistema a 64 e 32 bit sullo stesso computer a 64 bit, la condizione globale individuerà più chiavi del Registro di sistema.  
+         > [!NOTE]  
+         >  Se la stessa chiave del Registro di sistema esiste nei percorsi dei Registri di sistema a 64 e 32 bit sullo stesso computer a 64 bit, la condizione globale individuerà più chiavi del Registro di sistema.  
 
-    -   **Script**  
+   - **Script**  
 
-        -   **Script di individuazione**: scegliere **Aggiungi** per immetterne uno oppure selezionare lo script da usare. È possibile usare script di Windows PowerShell, VBScript o JScript.  
+     -   **Script di individuazione**: scegliere **Aggiungi** per immetterne uno oppure selezionare lo script da usare. È possibile usare script di Windows PowerShell, VBScript o JScript.  
 
-        -   **Esegui script utilizzando le credenziali dell'utente connesso**: se si abilita questa opzione, lo script verrà eseguito nei computer client usando le credenziali dell'utente connesso.  
+     -   **Esegui script utilizzando le credenziali dell'utente connesso**: se si abilita questa opzione, lo script verrà eseguito nei computer client usando le credenziali dell'utente connesso.  
 
-            > [!NOTE]  
-            >  Il valore restituito dallo script verrà utilizzato per valutare la conformità della condizione globale. Ad esempio, quando si usa VBScript, si può usare il comando **WScript.Echo Risultato** per restituire il valore della variabile Risultato alla condizione globale.  
-            >   
-            >  Se lo script restituisce più valori, questi valori devono trovarsi su una singola riga, separati dal punto e virgola. Se ogni valore si trova su una riga distinta, la valutazione avrà esito negativo.  
+         > [!NOTE]  
+         >  Il valore restituito dallo script verrà utilizzato per valutare la conformità della condizione globale. Ad esempio, quando si usa VBScript, si può usare il comando **WScript.Echo Risultato** per restituire il valore della variabile Risultato alla condizione globale.  
+         >   
+         >  Se lo script restituisce più valori, questi valori devono trovarsi su una singola riga, separati dal punto e virgola. Se ogni valore si trova su una riga distinta, la valutazione avrà esito negativo.  
 
-    -   **Query SQL**  
+   - **Query SQL**  
 
-        -   **Istanza SQL Server** : scegliere se si desidera che la query SQL venga eseguita sul nome dell'istanza predefinita, di tutte le istanze o dell'istanza di un database specifico.  
+     -   **Istanza SQL Server** : scegliere se si desidera che la query SQL venga eseguita sul nome dell'istanza predefinita, di tutte le istanze o dell'istanza di un database specifico.  
 
-            > [!NOTE]  
-            >  Il nome dell'istanza deve fare riferimento a un'istanza locale di SQL Server. Per fare riferimento a un'istanza di SQL server del cluster, è necessario utilizzare un'impostazione script.  
+         > [!NOTE]  
+         >  Il nome dell'istanza deve fare riferimento a un'istanza locale di SQL Server. Per fare riferimento a un'istanza di SQL server del cluster, è necessario utilizzare un'impostazione script.  
 
-        -   **Database** : specificare il nome del database di Microsoft SQL Server per cui verrà eseguita la query SQL.  
+     -   **Database** : specificare il nome del database di Microsoft SQL Server per cui verrà eseguita la query SQL.  
 
-        -   **Colonna** : specificare il nome della colonna restituito dall'istruzione Transact-SQL da utilizzare per valutare la conformità della condizione globale.  
+     -   **Colonna** : specificare il nome della colonna restituito dall'istruzione Transact-SQL da utilizzare per valutare la conformità della condizione globale.  
 
-        -   **Istruzione Transact-SQL** : specificare la query SQL completa da utilizzare per la condizione globale. È anche possibile scegliere **Apri** per aprire una query SQL esistente.  
+     -   **Istruzione Transact-SQL** : specificare la query SQL completa da utilizzare per la condizione globale. È anche possibile scegliere **Apri** per aprire una query SQL esistente.  
 
-    -   **Query WQL**  
+   - **Query WQL**  
 
-        -   **Spazio dei nomi** : specificare lo spazio dei nomi WMI che sarà utilizzato per costruire una query WQL che verrà valutata per la conformità nei computer client. Il valore predefinito è Root\cimv2.  
+     -   **Spazio dei nomi** : specificare lo spazio dei nomi WMI che sarà utilizzato per costruire una query WQL che verrà valutata per la conformità nei computer client. Il valore predefinito è Root\cimv2.  
 
-        -   **Classe** : specificare la classe WMI che sarà utilizzata per costruire una query WQL che verrà valutata per la conformità nei computer client.  
+     -   **Classe** : specificare la classe WMI che sarà utilizzata per costruire una query WQL che verrà valutata per la conformità nei computer client.  
 
-        -   **Proprietà** : specificare la proprietà WMI che sarà utilizzata per costruire una query WQL che verrà valutata per la conformità nei computer client.  
+     -   **Proprietà** : specificare la proprietà WMI che sarà utilizzata per costruire una query WQL che verrà valutata per la conformità nei computer client.  
 
-        -   **Clausola WHERE della query WQL** : è possibile utilizzare l'elemento **Clausola WHERE della query WQL** per specificare una clausola WHERE da applicare allo spazio dei nomi, alla classe e alla proprietà specifici nei computer client.  
+     -   **Clausola WHERE della query WQL** : è possibile utilizzare l'elemento **Clausola WHERE della query WQL** per specificare una clausola WHERE da applicare allo spazio dei nomi, alla classe e alla proprietà specifici nei computer client.  
 
-    -   **Query XPath**  
+   - **Query XPath**  
 
-        -   **Percorso** : specificare il percorso del file XML nei computer client che verrà usato per valutare la conformità. Configuration Manager supporta l'uso di tutte le variabili di ambiente di sistema Windows e la variabile utente *%USERPROFILE%* nel nome del percorso.  
+     -   **Percorso** : specificare il percorso del file XML nei computer client che verrà usato per valutare la conformità. Configuration Manager supporta l'uso di tutte le variabili di ambiente di sistema Windows e la variabile utente *%USERPROFILE%* nel nome del percorso.  
 
-        -   **Nome file XML**: specificare il nome file che contiene la query XML da usare per valutare la conformità nei computer client.  
+     -   **Nome file XML**: specificare il nome file che contiene la query XML da usare per valutare la conformità nei computer client.  
 
-        -   **Includi sottocartelle** : abilitare questa opzione se si desidera effettuare la ricerca anche nelle sottocartelle nel percorso specificato.  
+     -   **Includi sottocartelle** : abilitare questa opzione se si desidera effettuare la ricerca anche nelle sottocartelle nel percorso specificato.  
 
-        -   **Il file è associato a un'applicazione a 64 bit**: scegliere se effettuare la ricerca anche nel percorso dei file del sistema a 64 bit (*%windir%* \system32), oltre al percorso dei file del sistema a 32 bit (*%windir%* \syswow64) nei client di Configuration Manager con una versione a 64 bit di Windows.  
+     -   **Il file è associato a un'applicazione a 64 bit**: scegliere se effettuare la ricerca anche nel percorso dei file del sistema a 64 bit (*%windir%* \system32), oltre al percorso dei file del sistema a 32 bit (*%windir%* \syswow64) nei client di Configuration Manager con una versione a 64 bit di Windows.  
 
-        -   **Query XPath** : specificare una query XPath valida e completa da utilizzare per valutare la conformità nei computer client.  
+     -   **Query XPath** : specificare una query XPath valida e completa da utilizzare per valutare la conformità nei computer client.  
 
-        -   **Spazi dei nomi** : aprire la finestra di dialogo **Spazi dei nomi XML** per individuare gli spazi dei nomi e i prefissi da utilizzare durante la query XPath.  
+     -   **Spazi dei nomi** : aprire la finestra di dialogo **Spazi dei nomi XML** per individuare gli spazi dei nomi e i prefissi da utilizzare durante la query XPath.  
 
-3.  Nell'elenco a discesa **Tipo di dati** , scegliere il formato in cui i dati verranno restituiti dalla condizione prima di essere utilizzato per controllare i requisiti.  
+3. Nell'elenco a discesa **Tipo di dati** , scegliere il formato in cui i dati verranno restituiti dalla condizione prima di essere utilizzato per controllare i requisiti.  
 
-    > [!NOTE]  
-    >  L'elenco a discesa **Tipo di dati** non viene visualizzato per tutti i tipi di impostazioni.  
+   > [!NOTE]  
+   >  L'elenco a discesa **Tipo di dati** non viene visualizzato per tutti i tipi di impostazioni.  
 
-4.  Configurare altri dettagli relativi a questa impostazione nell'elenco a discesa **Tipo di impostazione**. Gli elementi che è possibile configurare variano a seconda del tipo di impostazione selezionato.  
+4. Configurare altri dettagli relativi a questa impostazione nell'elenco a discesa **Tipo di impostazione**. Gli elementi che è possibile configurare variano a seconda del tipo di impostazione selezionato.  
 
-5.  Scegliere **OK** per salvare la regola e chiudere la finestra di dialogo **Crea condizione globale**.  
+5. Scegliere **OK** per salvare la regola e chiudere la finestra di dialogo **Crea condizione globale**.  
 
 ### <a name="set-up-an-expression-for-the-global-condition"></a>Configurare un'espressione per la condizione globale  
 

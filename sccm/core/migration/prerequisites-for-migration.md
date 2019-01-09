@@ -10,12 +10,12 @@ ms.assetid: ec976930-7467-4d3c-b33c-991bf408a74a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: da35641b7e00bfdae025d2978beaa541951487da
-ms.sourcegitcommit: 7198ec49d9ce68c6d55bfb9e2d537b5442a132cb
+ms.openlocfilehash: 6a2bbc2ac394d1bb13fbcd04779c88bb69677fae
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33915939"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415580"
 ---
 # <a name="prerequisites-for-migration-in-system-center-configuration-manager"></a>Prerequisiti per la migrazione in System Center Configuration Manager
 
@@ -34,14 +34,14 @@ Per eseguire la migrazione da una gerarchia di origine supportata, è necessario
 ##  <a name="BKMK_SupportedMigrationVersions"></a> Versioni di Configuration Manager supportate per la migrazione  
  È possibile eseguire la migrazione di dati da una gerarchia di origine che esegue una delle versioni seguenti di Configuration Manager:  
 
--   Configuration Manager 2007 SP2  (ai fini della migrazione, le versioni di Configuration Manager 2007 R2 o R3 nel sito di origine non sono prese in considerazione. Se il sito di origine esegue SP2, i siti in cui è installato il componente aggiuntivo R2 o R3 sono supportati per la migrazione a System Center Configuration Manager).  
+- Configuration Manager 2007 SP2  (ai fini della migrazione, le versioni di Configuration Manager 2007 R2 o R3 nel sito di origine non sono prese in considerazione. Se il sito di origine esegue SP2, i siti in cui è installato il componente aggiuntivo R2 o R3 sono supportati per la migrazione a System Center Configuration Manager).  
 
--   System Center 2012 Configuration Manager SP2 o System Center 2012 R2 Configuration Manager SP1.  
+- System Center 2012 Configuration Manager SP2 o System Center 2012 R2 Configuration Manager SP1.  
 
-    > [!TIP]  
-    >  Oltre alla migrazione, è possibile usare un aggiornamento sul posto di siti che eseguono System Center 2012 Configuration Manager per System Center Configuration Manager.  
+  > [!TIP]  
+  >  Oltre alla migrazione, è possibile usare un aggiornamento sul posto di siti che eseguono System Center 2012 Configuration Manager per System Center Configuration Manager.  
 
--   Gerarchia di System Center Configuration Manager della stessa versione o di una versione precedente di System Center Configuration Manager.  
+- Gerarchia di System Center Configuration Manager della stessa versione o di una versione precedente di System Center Configuration Manager.  
 
   Se, ad esempio, è presente una gerarchia di destinazione che esegue System Center Configuration Manager 1606, è possibile usare la migrazione per copiare dati da una gerarchia di origine che esegue la versione 1606 o 1602. Non è tuttavia possibile copiare dati da una gerarchia di origine che esegue la versione 1610.  
 
@@ -70,54 +70,54 @@ Quando si esegue la migrazione di dati da una gerarchia di System Center 2012 Co
 ##  <a name="BKMK_Required_Configurations"></a> Configurazioni necessarie per la migrazione  
 Di seguito sono elencate le configurazioni necessarie per l'uso della migrazione e delle operazioni di migrazione:  
 
--   **Per configurare, eseguire e monitorare la migrazione nella console di Configuration Manager:**  
+- **Per configurare, eseguire e monitorare la migrazione nella console di Configuration Manager:**  
 
-     Nel sito di destinazione, all'account deve essere assegnato il ruolo di sicurezza di amministrazione basato su ruoli di **Amministratore infrastruttura**. Questo ruolo di sicurezza concede le autorizzazioni di gestione per tutte le operazioni di migrazione, tra cui la creazione dei processi di migrazione, la pulizia, il monitoraggio e l'azione di condivisione e aggiornamento dei punti di distribuzione.  
+   Nel sito di destinazione, all'account deve essere assegnato il ruolo di sicurezza di amministrazione basato su ruoli di **Amministratore infrastruttura**. Questo ruolo di sicurezza concede le autorizzazioni di gestione per tutte le operazioni di migrazione, tra cui la creazione dei processi di migrazione, la pulizia, il monitoraggio e l'azione di condivisione e aggiornamento dei punti di distribuzione.  
 
--   **Raccolta dati:**  
+- **Raccolta dati:**  
 
-     Per abilitare il sito di destinazione alla raccolta dei dati, è necessario configurare i due account di accesso al sito di origine che seguono per l'utilizzo con tutti i siti di origine:  
+   Per abilitare il sito di destinazione alla raccolta dei dati, è necessario configurare i due account di accesso al sito di origine che seguono per l'utilizzo con tutti i siti di origine:  
 
-    -   **Account del sito di origine:** questo account viene usato per l'accesso al provider SMS del sito di origine.  
+  -   **Account del sito di origine:** Questo account viene usato per l'accesso al provider SMS del sito di origine.  
 
-        -   Per un sito di origine di Configuration Manager 2007 SP2, questo account richiede l'autorizzazione **Lettura** per tutti gli oggetti del sito di origine.  
+      -   Per un sito di origine di Configuration Manager 2007 SP2, questo account richiede l'autorizzazione **Lettura** per tutti gli oggetti del sito di origine.  
 
-        -   Per un sito di origine di System Center 2012 Configuration Manager o System Center Configuration Manager, questo account richiede l'autorizzazione **Lettura** per tutti gli oggetti del sito di origine. L'autorizzazione all'account viene concessa tramite l'amministrazione basata su ruoli. Per informazioni su come usare l'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
+      -   Per un sito di origine di System Center 2012 Configuration Manager o System Center Configuration Manager, questo account richiede l'autorizzazione **Lettura** per tutti gli oggetti del sito di origine. L'autorizzazione all'account viene concessa tramite l'amministrazione basata su ruoli. Per informazioni su come usare l'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
-    -   **Account del database del sito di origine:** questo account viene usato per l'accesso al database SQL Server del sito di origine e richiede le autorizzazioni **Connect**, **Execute**e **Select** per il database del sito di origine.  
+  -   **Account del database del sito di origine:** questo account viene usato per l'accesso al database SQL Server del sito di origine e richiede le autorizzazioni **Connect**, **Execute**e **Select** per il database del sito di origine.  
 
-    È possibile configurare questi account durante la configurazione di una nuova gerarchia di origine, la raccolta dati per un sito di origine aggiuntivo o la riconfigurazione delle credenziali per un sito di origine. Questi account possono utilizzare un account utente di dominio oppure è possibile specificare l'account computer del sito di livello superiore della gerarchia di destinazione.  
+  È possibile configurare questi account durante la configurazione di una nuova gerarchia di origine, la raccolta dati per un sito di origine aggiuntivo o la riconfigurazione delle credenziali per un sito di origine. Questi account possono utilizzare un account utente di dominio oppure è possibile specificare l'account computer del sito di livello superiore della gerarchia di destinazione.  
 
-    > [!IMPORTANT]  
-    >  Se si usa l'account computer di Configuration Manager per un account di accesso, verificare che l'account appartenga al gruppo di sicurezza **Distributed COM Users** nel dominio in cui si trova il sito di origine.  
+  > [!IMPORTANT]  
+  >  Se si usa l'account computer di Configuration Manager per un account di accesso, verificare che l'account appartenga al gruppo di sicurezza **Distributed COM Users** nel dominio in cui si trova il sito di origine.  
 
-    Durante la raccolta dati vengono utilizzati le porte e i protocolli di rete seguenti:  
+  Durante la raccolta dati vengono utilizzati le porte e i protocolli di rete seguenti:  
 
-    -   NetBIOS/SMB - 445 (TCP)  
+  -   NetBIOS/SMB - 445 (TCP)  
 
-    -   RPC (WMI) - 135 (TCP)  
+  -   RPC (WMI) - 135 (TCP)  
 
-    -   SQL Server - porte TCP utilizzate dai database del sito di origine e di destinazione.  
+  -   SQL Server - porte TCP utilizzate dai database del sito di origine e di destinazione.  
 
--   **Eseguire la migrazione degli aggiornamenti software:**  
+- **Eseguire la migrazione degli aggiornamenti software:**  
 
-     Prima di eseguire la migrazione degli aggiornamenti software, è necessario configurare la gerarchia di destinazione con un punto di aggiornamento software. Per altre informazioni, vedere [Pianificazione per eseguire la migrazione degli aggiornamenti software](../../core/migration/planning-for-the-migration-of-objects.md#Plan_migrate_Software_updates).  
+   Prima di eseguire la migrazione degli aggiornamenti software, è necessario configurare la gerarchia di destinazione con un punto di aggiornamento software. Per altre informazioni, vedere [Pianificazione per eseguire la migrazione degli aggiornamenti software](../../core/migration/planning-for-the-migration-of-objects.md#Plan_migrate_Software_updates).  
 
--   **Condividere i punti di distribuzione:**  
+- **Condividere i punti di distribuzione:**  
 
-     Per condividere correttamente i punti di distribuzione da un sito di origine, è necessario che almeno un sito primario o il sito di amministrazione centrale nella gerarchia di destinazione utilizzi gli stessi numeri di porta per le richieste client del sito di origine. Per informazioni sulle porte di richiesta client, vedere [Come configurare porte di comunicazione client in System Center Configuration Manager](../../core/clients/deploy/configure-client-communication-ports.md)  
+   Per condividere correttamente i punti di distribuzione da un sito di origine, è necessario che almeno un sito primario o il sito di amministrazione centrale nella gerarchia di destinazione utilizzi gli stessi numeri di porta per le richieste client del sito di origine. Per informazioni sulle porte di richiesta client, vedere [Come configurare porte di comunicazione client in System Center Configuration Manager](../../core/clients/deploy/configure-client-communication-ports.md)  
 
-     Per ogni sito di origine, vengono condivisi solo i punti di distribuzione installati nei server di sistema del sito configurati con un FQDN.  
+   Per ogni sito di origine, vengono condivisi solo i punti di distribuzione installati nei server di sistema del sito configurati con un FQDN.  
 
-     Per condividere un punto di distribuzione da un sito di origine di System Center 2012 Configuration Manager o di System Center Configuration Manager, l'**account del sito di origine** (che accede al provider SMS per il server del sito di origine) deve avere anche l'autorizzazione **Modifica** per l'oggetto **Sito** nel sito di origine. È possibile concedere questa autorizzazione all'account utilizzando l'amministrazione basata su ruoli. Per informazioni su come usare l'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
+   Per condividere un punto di distribuzione da un sito di origine di System Center 2012 Configuration Manager o di System Center Configuration Manager, l'**account del sito di origine** (che accede al provider SMS per il server del sito di origine) deve avere anche l'autorizzazione **Modifica** per l'oggetto **Sito** nel sito di origine. È possibile concedere questa autorizzazione all'account utilizzando l'amministrazione basata su ruoli. Per informazioni su come usare l'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
 
--   **Aggiornare o riassegnare i punti di distribuzione:**  
+- **Aggiornare o riassegnare i punti di distribuzione:**  
 
-     L' **account di accesso al sito di origine** configurato per la raccolta dei dati dal provider SMS del sito di origine deve disporre delle seguenti autorizzazioni:  
+   L' **account di accesso al sito di origine** configurato per la raccolta dei dati dal provider SMS del sito di origine deve disporre delle seguenti autorizzazioni:  
 
-    -   Per aggiornare un punto di distribuzione di Configuration Manager 2007, l'account richiede le autorizzazioni **Lettura**, **Esecuzione** ed **Eliminazione** per la classe **Sito** nel server del sito di Configuration Manager 2007 per rimuovere correttamente il punto di distribuzione dal sito di origine di Configuration Manager 2007.  
+  - Per aggiornare un punto di distribuzione di Configuration Manager 2007, l'account richiede le autorizzazioni **Lettura**, **Esecuzione** ed **Eliminazione** per la classe **Sito** nel server del sito di Configuration Manager 2007 per rimuovere correttamente il punto di distribuzione dal sito di origine di Configuration Manager 2007.  
 
-    -   Per riassegnare un punto di distribuzione di System Center 2012 Configuration Manager o System Center Configuration Manager, l'account deve avere l'autorizzazione **Modifica** per l'oggetto **sito** nel sito di origine. È possibile concedere questa autorizzazione all'account utilizzando l'amministrazione basata su ruoli. Per informazioni su come usare l'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
+  - Per riassegnare un punto di distribuzione di System Center 2012 Configuration Manager o System Center Configuration Manager, l'account deve avere l'autorizzazione **Modifica** per l'oggetto **sito** nel sito di origine. È possibile concedere questa autorizzazione all'account utilizzando l'amministrazione basata su ruoli. Per informazioni su come usare l'amministrazione basata su ruoli, vedere [Nozioni fondamentali di amministrazione basata su ruoli per System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
-     Per aggiornare o riassegnare correttamente un punto di distribuzione a una nuova gerarchia, le porte configurate per le richieste client nel sito che gestisce il punto di distribuzione nella gerarchia di origine devono corrispondere alla porte configurate per richieste client nel sito di destinazione che gestirà il punto di distribuzione. Per informazioni sulle porte di richiesta client, vedere [Come configurare porte di comunicazione client in System Center Configuration Manager](../../core/clients/deploy/configure-client-communication-ports.md).  
+    Per aggiornare o riassegnare correttamente un punto di distribuzione a una nuova gerarchia, le porte configurate per le richieste client nel sito che gestisce il punto di distribuzione nella gerarchia di origine devono corrispondere alla porte configurate per richieste client nel sito di destinazione che gestirà il punto di distribuzione. Per informazioni sulle porte di richiesta client, vedere [Come configurare porte di comunicazione client in System Center Configuration Manager](../../core/clients/deploy/configure-client-communication-ports.md).  

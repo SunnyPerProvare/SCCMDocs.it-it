@@ -9,12 +9,12 @@ ms.assetid: 1f703376-5f2c-4fd2-8209-7028c931ddc7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c15f59ababae6908a08c28d3ec8ad46075068d52
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: bca8d9efd4a48b4fddfed92521d9189c5b6fef30
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344613"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421315"
 ---
 # <a name="use-the-setup-wizard-to-install-system-center-configuration-manager-sites"></a>Usare l'installazione guidata per installare i siti di System Center Configuration Manager
 
@@ -36,61 +36,61 @@ Se si installa un sito di amministrazione centrale come parte di uno scenario di
 
 ### <a name="bkmk_installpri"></a> Per installare un sito primario o di amministrazione centrale
 
-1.  Nel computer in cui si vuole installare il sito eseguire **&lt;InstallationMedia\>\SMSSETUP\BIN\X64\Setup.exe** per avviare la procedura di **Installazione guidata di System Center Configuration Manager**.  
+1. Nel computer in cui si vuole installare il sito eseguire **&lt;InstallationMedia\>\SMSSETUP\BIN\X64\Setup.exe** per avviare la procedura di **Installazione guidata di System Center Configuration Manager**.  
 
-    > [!NOTE]  
-    > Quando si installa un sito di amministrazione centrale per espandere un sito primario autonomo o si installa un nuovo sito primario figlio in una gerarchia esistente, è necessario usare il supporto di installazione (file di origine) corrispondente alla versione del sito o dei siti esistenti. Se sono stati installati gli aggiornamenti nella console che hanno modificato la versione di siti installati in precedenza, non usare i supporti di installazione originale. Usare invece i file di origine dalla [cartella CD.Latest](../../../../core/servers/manage/the-cd.latest-folder.md) di un sito aggiornato. Configuration Manager richiede l'uso di file di origine corrispondenti alla versione del sito esistente a cui si connetterà il nuovo sito.  
+   > [!NOTE]  
+   > Quando si installa un sito di amministrazione centrale per espandere un sito primario autonomo o si installa un nuovo sito primario figlio in una gerarchia esistente, è necessario usare il supporto di installazione (file di origine) corrispondente alla versione del sito o dei siti esistenti. Se sono stati installati gli aggiornamenti nella console che hanno modificato la versione di siti installati in precedenza, non usare i supporti di installazione originale. Usare invece i file di origine dalla [cartella CD.Latest](../../../../core/servers/manage/the-cd.latest-folder.md) di un sito aggiornato. Configuration Manager richiede l'uso di file di origine corrispondenti alla versione del sito esistente a cui si connetterà il nuovo sito.  
 
-2.  Nella pagina **Prima di iniziare** scegliere **Avanti**.  
+2. Nella pagina **Prima di iniziare** scegliere **Avanti**.  
 
-3.  Nella pagina **Riquadro attività iniziale** selezionare il tipo di sito che si vuole installare:  
+3. Nella pagina **Riquadro attività iniziale** selezionare il tipo di sito che si vuole installare:  
 
-    -   **Sito di amministrazione centrale**, come primo sito di una nuova gerarchia o quando si espande un sito primario autonomo:  
+   - **Sito di amministrazione centrale**, come primo sito di una nuova gerarchia o quando si espande un sito primario autonomo:  
 
-        Selezionare **Installa un sito di amministrazione centrale di Configuration Manager**.  
+     Selezionare **Installa un sito di amministrazione centrale di Configuration Manager**.  
 
-         In un passaggio successivo di questa procedura, è possibile scegliere di installare un sito di amministrazione centrale come primo sito di una nuova gerarchia oppure installare un sito di amministrazione centrale per l'espansione in un sito primario autonomo.  
+      In un passaggio successivo di questa procedura, è possibile scegliere di installare un sito di amministrazione centrale come primo sito di una nuova gerarchia oppure installare un sito di amministrazione centrale per l'espansione in un sito primario autonomo.  
 
-    -    **Sito primario**, come sito primario autonomo che è il primo sito di una nuova gerarchia o come sito primario figlio:  
+   - **Sito primario**, come sito primario autonomo che è il primo sito di una nuova gerarchia o come sito primario figlio:  
 
-        Selezionare **Installa un sito primario di Configuration Manager**.  
+     Selezionare **Installa un sito primario di Configuration Manager**.  
 
-        > [!TIP]  
-        > In genere, si seleziona l'opzione **Utilizza le opzioni di installazione tipiche per un sito primario autonomo** solo quando si vuole installare un sito primario autonomo in un ambiente di test. Se si seleziona questa opzione, il programma di installazione:  
+     > [!TIP]
+     > In genere, si seleziona l'opzione **Utilizza le opzioni di installazione tipiche per un sito primario autonomo** solo quando si vuole installare un sito primario autonomo in un ambiente di test. Se si seleziona questa opzione, il programma di installazione:  
+     > 
+     > -   Configura automaticamente il sito come sito primario autonomo.  
+     > -   Usa un percorso di installazione predefinito.  
+     > -   Usa un'installazione locale dell'istanza predefinita di SQL Server per il database del sito.  
+     > -   Installa un punto di gestione e un punto di distribuzione nel computer server del sito.  
+     > -   Configura il sito con la lingua inglese e con la lingua di visualizzazione del sistema operativo nel server del sito primario, se corrisponde a una delle lingue supportate da Configuration Manager.  
 
-        > -   Configura automaticamente il sito come sito primario autonomo.  
-        > -   Usa un percorso di installazione predefinito.  
-        > -   Usa un'installazione locale dell'istanza predefinita di SQL Server per il database del sito.  
-        > -   Installa un punto di gestione e un punto di distribuzione nel computer server del sito.  
-        > -   Configura il sito con la lingua inglese e con la lingua di visualizzazione del sistema operativo nel server del sito primario, se corrisponde a una delle lingue supportate da Configuration Manager.  
+4. Nella pagina **Codice Product Key**:
+   - Scegliere se installare Configuration Manager come versione di valutazione o versione con licenza.  
 
-4.  Nella pagina **Codice Product Key**:
-    - Scegliere se installare Configuration Manager come versione di valutazione o versione con licenza.  
+     -   Se si seleziona una versione con licenza, immettere il codice Product Key e fare clic su **Avanti**.  
 
-      -   Se si seleziona una versione con licenza, immettere il codice Product Key e fare clic su **Avanti**.  
+     -   Se si seleziona una versione di valutazione, fare clic su **Avanti**. È possibile eseguire successivamente l'aggiornamento di un'installazione di valutazione a un'installazione completa.  
+   - A partire dalla versione di ottobre 2016 dei supporti di base 1606 per System Center Configuration Manager, è possibile specificare la data di scadenza del contratto Software Assurance. In questa pagina è possibile specificare la **data di scadenza di Software Assurance** del contratto di licenza come utile promemoria. Se non si immette questa data durante l'installazione, è possibile specificarla in un secondo momento dalla console di Configuration Manager.
 
-      -   Se si seleziona una versione di valutazione, fare clic su **Avanti**. È possibile eseguire successivamente l'aggiornamento di un'installazione di valutazione a un'installazione completa.  
-    - A partire dalla versione di ottobre 2016 dei supporti di base 1606 per System Center Configuration Manager, è possibile specificare la data di scadenza del contratto Software Assurance. In questa pagina è possibile specificare la **data di scadenza di Software Assurance** del contratto di licenza come utile promemoria. Se non si immette questa data durante l'installazione, è possibile specificarla in un secondo momento dalla console di Configuration Manager.
+     > [!NOTE]   
+     > Microsoft non convalida la data di scadenza immessa e non userà tale data per la convalida della licenza. È possibile invece usarla come promemoria della data di scadenza. Configuration Manager verifica periodicamente online la disponibilità di nuovi aggiornamenti software. Per usufruire di questi aggiornamenti aggiuntivi, è necessario che lo stato della licenza di Software Assurance sia regolare.    
 
-      > [!NOTE]   
-      > Microsoft non convalida la data di scadenza immessa e non userà tale data per la convalida della licenza. È possibile invece usarla come promemoria della data di scadenza. Configuration Manager verifica periodicamente online la disponibilità di nuovi aggiornamenti software. Per usufruire di questi aggiornamenti aggiuntivi, è necessario che lo stato della licenza di Software Assurance sia regolare.    
+     Per altre informazioni, vedere [Licensing and branches for System Center Configuration Manager](/sccm/core/understand/learn-more-editions) (Licenze e branch per System Center Configuration Manager).
 
-      Per altre informazioni, vedere [Licensing and branches for System Center Configuration Manager](/sccm/core/understand/learn-more-editions) (Licenze e branch per System Center Configuration Manager).
+5. Nella pagina **Condizioni di licenza software Microsoft** leggere e accettare le condizioni di licenza.  
 
-5.  Nella pagina **Condizioni di licenza software Microsoft** leggere e accettare le condizioni di licenza.  
+6. Nella pagina **Licenze prerequisite** leggere e accettare le condizioni di licenza per i prerequisiti software. Il programma di installazione scarica e installa automaticamente il software nei client o nei sistemi del sito quando è necessario. Prima di procedere alla pagina successiva, è necessario selezionare tutte le caselle di controllo.  
 
-6.  Nella pagina **Licenze prerequisite** leggere e accettare le condizioni di licenza per i prerequisiti software. Il programma di installazione scarica e installa automaticamente il software nei client o nei sistemi del sito quando è necessario. Prima di procedere alla pagina successiva, è necessario selezionare tutte le caselle di controllo.  
+7. Nella pagina **Download prerequisiti** specificare se il programma di installazione deve scaricare da Internet i file ridistribuibili richiesti più recenti o se usare i file scaricati in precedenza:  
 
-7.  Nella pagina **Download prerequisiti** specificare se il programma di installazione deve scaricare da Internet i file ridistribuibili richiesti più recenti o se usare i file scaricati in precedenza:  
+   -   Se si vuole che il programma di installazione scarichi i file al momento dell'installazione, selezionare **Scarica file richiesti** e specificare un percorso in cui memorizzare i file.  
 
-    -   Se si vuole che il programma di installazione scarichi i file al momento dell'installazione, selezionare **Scarica file richiesti** e specificare un percorso in cui memorizzare i file.  
+   -   Se i file sono stati scaricati in precedenza con il [downloader di installazione](../../../../core/servers/deploy/install/setup-downloader.md), selezionare **Utilizza file scaricati precedentemente** e specificare la cartella di download.  
 
-    -   Se i file sono stati scaricati in precedenza con il [downloader di installazione](../../../../core/servers/deploy/install/setup-downloader.md), selezionare **Utilizza file scaricati precedentemente** e specificare la cartella di download.  
+       > [!TIP]  
+       > Se si usano i file scaricati in precedenza, verificare che il percorso alla cartella di download contenga la versione più recente dei file.  
 
-        > [!TIP]  
-        > Se si usano i file scaricati in precedenza, verificare che il percorso alla cartella di download contenga la versione più recente dei file.  
-
-8.  Nella pagina **Selezione della lingua server** selezionare le lingue disponibili per la console di Configuration Manager e per i report. La lingua inglese è selezionata per impostazione predefinita e non può essere rimossa.  
+8. Nella pagina **Selezione della lingua server** selezionare le lingue disponibili per la console di Configuration Manager e per i report. La lingua inglese è selezionata per impostazione predefinita e non può essere rimossa.  
 
 9. Nella pagina **Selezione della lingua client** selezionare le lingue disponibili per i computer client e specificare se abilitare tutte le lingue per i client dei dispositivi mobili. La lingua inglese è selezionata per impostazione predefinita e non può essere rimossa.  
 
@@ -99,7 +99,7 @@ Se si installa un sito di amministrazione centrale come parte di uno scenario di
 
 10. Nella pagina **Impostazioni di installazione e del sito** specificare quanto segue per il nuovo sito che si sta installando:  
 
-    -   **Codice del sito**: [ogni codice del sito in una gerarchia deve essere univoco](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_sitecodes) ed essere costituito da tre caratteri alfanumerici (dalla A alla Z e da 0 a 9). Poiché il codice del sito viene usato nei nomi di cartella, non usare i nomi riservati di Windows, ad esempio:    
+    -   **Codice del sito:** [ogni codice del sito in una gerarchia deve essere univoco](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_sitecodes) ed essere costituito da tre caratteri alfanumerici (dalla A alla Z e da 0 a 9). Poiché il codice del sito viene usato nei nomi di cartella, non usare i nomi riservati di Windows, ad esempio:    
         -   AUX  
         -   CON    
         -   NUL    
@@ -109,9 +109,9 @@ Se si installa un sito di amministrazione centrale come parte di uno scenario di
         > [!NOTE]  
         > Il programma di installazione non verifica se il codice del sito specificato è già in uso o ha un nome riservato.  
 
-    -   **Nome sito**: ogni sito deve avere un nome descrittivo per poterlo facilmente individuare.  
+    -   **Nome sito:** ogni sito deve avere un nome descrittivo per poterlo facilmente individuare.  
 
-    -   **Cartella di installazione**: questo è il percorso della cartella per l'installazione di Configuration Manager. Non è possibile modificare il percorso dopo l'installazione del sito. Il percorso non può contenere spazi finali o caratteri Unicode.  
+    -   **Cartella di installazione:** questo è il percorso della cartella per l'installazione di Configuration Manager. Non è possibile modificare il percorso dopo l'installazione del sito. Il percorso non può contenere spazi finali o caratteri Unicode.  
 
 11. Nella pagina **Installazione sito** usare l'opzione seguente che corrisponde allo scenario:  
 
@@ -135,15 +135,15 @@ Se si installa un sito di amministrazione centrale come parte di uno scenario di
 
 12. Nella pagina **Informazioni database** specificare le informazioni seguenti:  
 
-    -   **Nome SQL Server (FQDN):** per impostazione predefinita, il valore è impostato come computer server del sito.
+    - **Nome SQL Server (FQDN):** per impostazione predefinita, il valore è impostato come computer server del sito.
 
-     Se si usa una porta personalizzata, aggiungerla al nome FQDN di SQL Server. Per eseguire questa operazione, aggiungere una virgola e quindi il numero di porta dopo il nome FQDN del server.   Ad esempio, se il server è *SQLServer1.fabrikam.com*, per specificare la porta *1551* usare **SQLServer1.fabrikam.com,1551**
+      Se si usa una porta personalizzata, aggiungerla al nome FQDN di SQL Server. Per eseguire questa operazione, aggiungere una virgola e quindi il numero di porta dopo il nome FQDN del server.   Ad esempio, se il server è *SQLServer1.fabrikam.com*, per specificare la porta *1551* usare:  **SQLServer1.fabrikam.com,1551**
 
-    -   **Nome dell'istanza:** per impostazione predefinita, il campo è vuoto. Usa l'istanza predefinita di SQL nel computer server del sito.  
+    - **Nome dell'istanza:** per impostazione predefinita, il campo è vuoto. Usa l'istanza predefinita di SQL nel computer server del sito.  
 
-    -   **Nome database:** per impostazione predefinita, questo valore è impostato su CM_&lt;CodiceSito\>. È possibile specificare un nome diverso.  
+    - **Nome database:** per impostazione predefinita, questo valore è impostato su CM_&lt;CodiceSito\>. È possibile specificare un nome diverso.  
 
-    -   **Porta di Service Broker:** per impostazione predefinita, questa opzione è impostata per usare la porta predefinita Server Service Broker (SSB) di SQL 4022. SQL la usa per comunicare direttamente con il database del sito in altri siti.  
+    - **Porta di Service Broker:** per impostazione predefinita, questa opzione è impostata per usare la porta predefinita di SQL Server Service Broker (SSB) 4022. SQL la usa per comunicare direttamente con il database del sito in altri siti.  
 
 13. Nella seconda pagina **Informazioni database** è possibile specificare percorsi non predefiniti per il file di dati e il file di log SQL Server per il database del sito:  
 
@@ -197,13 +197,13 @@ Se si installa un sito di amministrazione centrale come parte di uno scenario di
 
 20. Nella pagina di **verifica dell'installazione dei prerequisiti** vengono elencati i problemi che possono essere identificati.  
 
-    -   Quando il controllo dei prerequisiti rileva un problema, fare clic su un elemento nell'elenco per informazioni dettagliate su come risolverlo.  
+    - Quando il controllo dei prerequisiti rileva un problema, fare clic su un elemento nell'elenco per informazioni dettagliate su come risolverlo.  
 
-    -   Prima di continuare a installare il sito è necessario risolvere tutti gli elementi con stato **Non riuscito** . Gli elementi con stato **Avviso** devono essere risolti, ma non bloccano l'installazione del sito.  
+    - Prima di continuare a installare il sito è necessario risolvere tutti gli elementi con stato **Non riuscito** . Gli elementi con stato **Avviso** devono essere risolti, ma non bloccano l'installazione del sito.  
 
-    -   Dopo la risoluzione dei problemi fare clic su **Esegui controllo** per eseguire nuovamente il controllo dei prerequisiti.  
+    - Dopo la risoluzione dei problemi fare clic su **Esegui controllo** per eseguire nuovamente il controllo dei prerequisiti.  
 
-     Se si esegue il controllo dei prerequisiti e a nessun controllo viene assegnato lo stato **Non riuscito**, è possibile fare clic su **Inizia installazione** per avviare l'installazione del sito.  
+      Se si esegue il controllo dei prerequisiti e a nessun controllo viene assegnato lo stato **Non riuscito**, è possibile fare clic su **Inizia installazione** per avviare l'installazione del sito.  
 
     > [!TIP]  
     > Oltre ai suggerimenti offerti nella procedura guidata, è possibile trovare altre informazioni sui problemi dei prerequisiti quando si visualizza il file **ConfigMgrPrereq.log** nella radice dell'unità di sistema del computer su cui si sta eseguendo l'installazione. Per un elenco delle regole e delle descrizioni dei prerequisiti di installazione, vedere l'[elenco dei controlli dei prerequisiti per System Center Configuration Manager](../../../../core/servers/deploy/install/list-of-prerequisite-checks.md).  
@@ -253,109 +253,109 @@ Per espandere un sito primario autonomo, vedere prima l'argomento [Prerequisiti 
 ### <a name="bkmk_installsecondary"></a> Per installare un sito secondario  
 
 
-1.  Nella console di Configuration Manager passare a **Amministrazione** > **Configurazione del sito** > **Siti**. Selezionare il sito che sarà il sito primario padre del nuovo sito secondario.  
+1. Nella console di Configuration Manager passare a **Amministrazione** > **Configurazione del sito** > **Siti**. Selezionare il sito che sarà il sito primario padre del nuovo sito secondario.  
 
-2.  Scegliere **Crea sito secondario** per avviare la **Creazione guidata sito secondario**.  
+2. Scegliere **Crea sito secondario** per avviare la **Creazione guidata sito secondario**.  
 
-3.  Nella pagina **Prima di iniziare** confermare che il sito primario elencato sia quello che si vuole definire come padre del nuovo sito secondario. Scegliere quindi **Avanti**.  
+3. Nella pagina **Prima di iniziare** confermare che il sito primario elencato sia quello che si vuole definire come padre del nuovo sito secondario. Scegliere quindi **Avanti**.  
 
-4.  Nella pagina **Generale** specificare le impostazioni seguenti:  
+4. Nella pagina **Generale** specificare le impostazioni seguenti:  
 
-    -   **Codice del sito**: ogni codice del sito in una gerarchia deve essere univoco ed essere costituito da tre caratteri alfanumerici (dalla A alla Z e da 0 a 9). Poiché il codice del sito viene usato nei nomi di cartella, non usare i nomi riservati di Windows, ad esempio:  
+   - **Codice del sito**: ogni codice del sito in una gerarchia deve essere univoco ed essere costituito da tre caratteri alfanumerici (dalla A alla Z e da 0 a 9). Poiché il codice del sito viene usato nei nomi di cartella, non usare i nomi riservati di Windows, ad esempio:  
 
-        -   AUX    
-        -   CON    
-        -   NUL    
-        -   PRN  
-        -   SMS  
+     -   AUX    
+     -   CON    
+     -   NUL    
+     -   PRN  
+     -   SMS  
+
+     > [!NOTE]  
+     > Il programma di installazione non verifica se il codice del sito specificato è già in uso o ha un nome riservato.  
+
+   - **Nome server sito**: questo è il nome FQDN del server in cui verrà installato il nuovo sito secondario.  
+
+   - **Nome sito**: ogni sito deve avere un nome descrittivo per poterlo facilmente individuare.  
+
+   - **Cartella di installazione**: questo è il percorso della cartella per l'installazione di Configuration Manager. Non è possibile modificare il percorso dopo l'installazione del sito. Il percorso non può contenere spazi finali o caratteri Unicode.  
+
+   > [!IMPORTANT]
+   > Dopo aver specificato i dettagli in questa pagina, è possibile fare clic su **Riepilogo** per usare le impostazioni predefinite per le rimanenti opzioni del sito secondario e per passare direttamente alla pagina **Riepilogo** della procedura guidata.  
+   > 
+   > -   Usare questa opzione solo se si ha familiarità con le impostazioni predefinite della procedura guidata e si vogliono usare tali impostazioni.  
+   > -   I gruppi di limiti non sono associati al punto di distribuzione quando si usano le impostazioni predefinite. Di conseguenza, se non si configurano i gruppi di limiti che includono il server del sito secondario, i client non useranno il punto di distribuzione installato in questo sito secondario come percorso di origine del contenuto.  
+
+5. Nella pagina **File di origine dell'installazione** scegliere la modalità usata dal computer del sito secondario per ottenere i file di origine per l'installazione del sito.  
+
+    Quando si usano i file di origine archiviati nella rete o nel computer del sito secondario:  
+
+   -   Il percorso dei file di origine deve includere una cartella denominata **Redist** che contenga tutti i file scaricati in precedenza con il downloader di installazione.  
+
+   -   Se i file della cartella **Redist** non sono disponibili, l'installazione del sito secondario avrà esito negativo.  
+
+   -   L'account del computer del sito secondario deve avere le autorizzazioni di **lettura** sulla cartella del file di origine e di autorizzazioni di condivisione.  
+
+6. Nella pagina **Impostazioni di SQL Server** specificare la versione di SQL Server da usare e quindi configurare le impostazioni correlate.  
+
+   > [!NOTE]  
+   > Il programma di installazione non convalida le informazioni immesse in questa pagina fino all'avvio dell'installazione. Prima di continuare, verificare queste impostazioni.  
+
+    **Installa e configura una copia locale di SQL Express nel computer del sito secondario**  
+
+   -   **Porta del servizio di SQL Server**: specificare la porta del servizio di SQL Server per l'utilizzo da parte di SQL Server Express. La porta del servizio è in genere configurata per l'utilizzo della porta TCP 1433, ma è possibile configurare un'altra porta.  
+
+   -   **Porta di SQL Server Service Broker**: specificare la porta di SQL Server Service Broker (SSB) per l'utilizzo da parte di SQL Server Express. La porta di Service Broker è in genere configurata per l'utilizzo della porta TCP 4022, ma è possibile configurare un'altra porta. È necessario specificare una porta valida che non sia usata da nessun altro sito o servizio e che non sia soggetta ad alcuna restrizione del firewall.  
+
+   > [!IMPORTANT]
+   > Quando Configuration Manager installa SQL Server Express, viene installata la versione 2012 senza Service Pack:  
+   > 
+   > -   Per il supporto del sito secondario, dopo l'installazione è necessario aggiornare SQL Server Express 2012 a [una versione supportata](/sccm/core/plan-design/configs/support-for-sql-server-versions#bkmk_SQLVersions).
+   > -   Se l'installazione del nuovo sito secondario non riesce, ma viene prima completata l'installazione di SQL Server Express 2012, è necessario aggiornare tale istanza di SQL Server Express prima che Configuration Manager possa riprovare l'installazione del sito secondario.  
+
+    **Usa un'istanza di SQL Server esistente**  
+
+   -   **FQDN di SQL Server**: rivedere il nome FQDN del computer SQL Server. È necessario usare un server locale che esegue SQL Server per ospitare il database del sito secondario. Non è possibile modificare questa impostazione.  
+
+   -   **Istanza SQL Server**: specificare l'istanza di SQL Server da usare come database del sito secondario. Lasciare vuota questa opzione per usare l'istanza predefinita.  
+
+   -   **Nome database del sito di Configuration Manager**: specificare il nome da usare per il database del sito secondario.  
+
+   -   **Porta di SQL Server Service Broker**: specificare la porta di SQL Server Service Broker (SSB) per l'utilizzo da parte di SQL Server. È necessario specificare una porta valida che non sia usata da nessun altro sito o servizio e che non sia soggetta ad alcuna restrizione del firewall.  
+
+   > [!TIP]  
+   > Vedere l'argomento sulle [versioni supportate di SQL Server](../../../../core/plan-design/configs/support-for-sql-server-versions.md) per un elenco delle versioni di SQL Server supportate da System Center Configuration Manager.  
+
+7. Nella pagina **Punto di distribuzione** configurare le impostazioni per il punto di distribuzione che verranno installate sul server del sito secondario.  
+
+    **Impostazioni obbligatorie:**  
+
+   -   **Specificare la modalità di comunicazione dei dispositivi client con il punto di distribuzione**: scegliere HTTP o HTTPS.  
+
+   -   **Creare un certificato autofirmato o importare un certificato client PKI**: scegliere tra l'uso di un certificato autofirmato (che consente anche di usare connessioni anonime dai client di Configuration Manager alla raccolta contenuto) o l'importazione di un certificato da PKI.  
+
+        Il certificato viene usato per l'autenticazione tra il punto di distribuzione e un punto di gestione prima che il punto di distribuzione invii messaggi di stato.  
+
+        Per informazioni sui requisiti del certificato, vedere [Requisiti dei certificati PKI per Configuration Manager](https://technet.microsoft.com/library/gg699362.aspx).  
+
+   **Impostazioni facoltative:**  
+
+   -   **Installa e configura IIS, se richiesto da Configuration Manager**: selezionare questa impostazione per consentire a Configuration Manager di installare e configurare Internet Information Services (IIS) nel server, se non è già installato. IIS deve essere installato su tutti i punti di distribuzione.  
 
        > [!NOTE]  
-       > Il programma di installazione non verifica se il codice del sito specificato è già in uso o ha un nome riservato.  
+       > Anche se questa impostazione è facoltativa, è necessario installare IIS nel server prima di poter installare un punto di distribuzione.  
 
-    -   **Nome server sito**: questo è il nome FQDN del server in cui verrà installato il nuovo sito secondario.  
+   -   **Abilita e configura BranchCache per questo punto di distribuzione**.  
 
-    -   **Nome sito**: ogni sito deve avere un nome descrittivo per poterlo facilmente individuare.  
+   -   **Descrizione**. Questa è una semplice descrizione del punto di distribuzione che consente di individuarlo.  
 
-    -   **Cartella di installazione**: questo è il percorso della cartella per l'installazione di Configuration Manager. Non è possibile modificare il percorso dopo l'installazione del sito. Il percorso non può contenere spazi finali o caratteri Unicode.  
+   -   **Abilita questo punto di distribuzione per il contenuto pre-installato**.  
 
-    > [!IMPORTANT]  
-    > Dopo aver specificato i dettagli in questa pagina, è possibile fare clic su **Riepilogo** per usare le impostazioni predefinite per le rimanenti opzioni del sito secondario e per passare direttamente alla pagina **Riepilogo** della procedura guidata.  
+8. Nella pagina **Impostazioni unità** specificare le impostazioni unità per il punto di distribuzione del sito secondario.  
 
-    > -   Usare questa opzione solo se si ha familiarità con le impostazioni predefinite della procedura guidata e si vogliono usare tali impostazioni.  
-    > -   I gruppi di limiti non sono associati al punto di distribuzione quando si usano le impostazioni predefinite. Di conseguenza, se non si configurano i gruppi di limiti che includono il server del sito secondario, i client non useranno il punto di distribuzione installato in questo sito secondario come percorso di origine del contenuto.  
+    È possibile configurare fino a due unità disco per la raccolta contenuto e due unità disco per la condivisione dei pacchetti. Configuration Manager può usare unità aggiuntive nel caso in cui le prime due raggiungano il limite di spazio riservato nell'unità configurata. Nella pagina **Impostazioni unità** è possibile configurare la priorità per le unità disco e la quantità di spazio disponibile su disco da mantenere su ogni unità disco.  
 
-5.  Nella pagina **File di origine dell'installazione** scegliere la modalità usata dal computer del sito secondario per ottenere i file di origine per l'installazione del sito.  
+   - **Spazio riservato nell'unità (MB)**: il valore configurato per questa impostazione determina la quantità di spazio disponibile in un'unità prima che Configuration Manager scelga un'altra unità e continui il processo di copia su tale unità. I file di contenuto possono estendersi su più unità.  
 
-     Quando si usano i file di origine archiviati nella rete o nel computer del sito secondario:  
-
-    -   Il percorso dei file di origine deve includere una cartella denominata **Redist** che contenga tutti i file scaricati in precedenza con il downloader di installazione.  
-
-    -   Se i file della cartella **Redist** non sono disponibili, l'installazione del sito secondario avrà esito negativo.  
-
-    -   L'account del computer del sito secondario deve avere le autorizzazioni di **lettura** sulla cartella del file di origine e di autorizzazioni di condivisione.  
-
-6.  Nella pagina **Impostazioni di SQL Server** specificare la versione di SQL Server da usare e quindi configurare le impostazioni correlate.  
-
-    > [!NOTE]  
-    > Il programma di installazione non convalida le informazioni immesse in questa pagina fino all'avvio dell'installazione. Prima di continuare, verificare queste impostazioni.  
-
-     **Installa e configura una copia locale di SQL Express nel computer del sito secondario**  
-
-    -   **Porta del servizio di SQL Server**: specificare la porta del servizio di SQL Server per l'uso da parte di SQL Server Express. La porta del servizio è in genere configurata per l'utilizzo della porta TCP 1433, ma è possibile configurare un'altra porta.  
-
-    -   **Porta di SQL Server Service Broker**: specificare la porta di SQL Server Broker (SSB) per l'uso da parte di SQL Server Express. La porta di Service Broker è in genere configurata per l'utilizzo della porta TCP 4022, ma è possibile configurare un'altra porta. È necessario specificare una porta valida che non sia usata da nessun altro sito o servizio e che non sia soggetta ad alcuna restrizione del firewall.  
-
-    > [!IMPORTANT]  
-    > Quando Configuration Manager installa SQL Server Express, viene installata la versione 2012 senza Service Pack:  
-
-    > -   Per il supporto del sito secondario, dopo l'installazione è necessario aggiornare SQL Server Express 2012 a [una versione supportata](/sccm/core/plan-design/configs/support-for-sql-server-versions#bkmk_SQLVersions).
-    > -   Se l'installazione del nuovo sito secondario non riesce, ma viene prima completata l'installazione di SQL Server Express 2012, è necessario aggiornare tale istanza di SQL Server Express prima che Configuration Manager possa riprovare l'installazione del sito secondario.  
-
-     **Usa un'istanza di SQL Server esistente**  
-
-    -   **FQDN di SQL Server**: rivedere il nome FQDN del computer SQL Server. È necessario usare un server locale che esegue SQL Server per ospitare il database del sito secondario. Non è possibile modificare questa impostazione.  
-
-    -   **Istanza SQL Server**: specificare l'istanza di SQL Server da usare come database del sito secondario. Lasciare vuota questa opzione per usare l'istanza predefinita.  
-
-    -   **Nome database del sito di Configuration Manager**: specificare il nome da usare per il database del sito secondario.  
-
-    -   **Porta di SQL Server Service Broker**: specificare la porta di SQL Server Service Broker (SSB) per l'uso da parte di SQL Server. È necessario specificare una porta valida che non sia usata da nessun altro sito o servizio e che non sia soggetta ad alcuna restrizione del firewall.  
-
-    > [!TIP]  
-    > Vedere l'argomento sulle [versioni supportate di SQL Server](../../../../core/plan-design/configs/support-for-sql-server-versions.md) per un elenco delle versioni di SQL Server supportate da System Center Configuration Manager.  
-
-7.  Nella pagina **Punto di distribuzione** configurare le impostazioni per il punto di distribuzione che verranno installate sul server del sito secondario.  
-
-     **Impostazioni obbligatorie:**  
-
-    -   **Specificare la modalità di comunicazione dei dispositivi client con il punto di distribuzione**: scegliere HTTP o HTTPS.  
-
-    -   **Creare un certificato autofirmato o importare un certificato client PKI**: scegliere tra l'uso di un certificato autofirmato (che consente anche di usare connessioni anonime dai client di Configuration Manager alla raccolta contenuto) o l'importazione di un certificato da PKI.  
-
-         Il certificato viene usato per l'autenticazione tra il punto di distribuzione e un punto di gestione prima che il punto di distribuzione invii messaggi di stato.  
-
-         Per informazioni sui requisiti del certificato, vedere [Requisiti dei certificati PKI per Configuration Manager](https://technet.microsoft.com/library/gg699362.aspx).  
-
-    **Impostazioni facoltative:**  
-
-    -   **Installa e configura IIS se richiesto da Configuration Manager**: selezionare questa impostazione per consentire a Configuration Manager di installare e configurare Internet Information Services (IIS) nel server, se non è già installato. IIS deve essere installato su tutti i punti di distribuzione.  
-
-        > [!NOTE]  
-        > Anche se questa impostazione è facoltativa, è necessario installare IIS nel server prima di poter installare un punto di distribuzione.  
-
-    -   **Abilita e configura BranchCache per questo punto di distribuzione**.  
-
-    -   **Descrizione**. Questa è una semplice descrizione del punto di distribuzione che consente di individuarlo.  
-
-    -   **Abilita questo punto di distribuzione per il contenuto pre-installato**.  
-
-8.  Nella pagina **Impostazioni unità** specificare le impostazioni unità per il punto di distribuzione del sito secondario.  
-
-     È possibile configurare fino a due unità disco per la raccolta contenuto e due unità disco per la condivisione dei pacchetti. Configuration Manager può usare unità aggiuntive nel caso in cui le prime due raggiungano il limite di spazio riservato nell'unità configurata. Nella pagina **Impostazioni unità** è possibile configurare la priorità per le unità disco e la quantità di spazio disponibile su disco da mantenere su ogni unità disco.  
-
-    -   **Spazio riservato nell'unità (MB)**: il valore configurato per questa impostazione determina la quantità di spazio disponibile su un'unità prima che Configuration Manager scelga un'altra unità e continui il processo di copia su tale unità. I file di contenuto possono estendersi su più unità.  
-
-    -   **Percorsi contenuto**: Specificare i percorsi del contenuto per la condivisione di pacchetti e raccolte di contenuti. Configuration Manager copia i contenuti nel percorso del contenuto principale finché la quantità di spazio libero raggiunge in valore specificato per **Riserva spazio su disco (MB)**.
+   - **Percorsi contenuto**: Specificare i percorsi del contenuto per la condivisione di pacchetti e raccolte di contenuti. Configuration Manager copia i contenuti nel percorso del contenuto principale finché la quantità di spazio libero raggiunge in valore specificato per **Riserva spazio su disco (MB)**.
 
      Per impostazione predefinita, i percorsi contenuto sono impostati su **Automatico**. Il percorso del contenuto primario è impostato sull'unità disco con più spazio al momento dell'installazione. Il percorso secondario viene impostato per l'unità disco con lo spazio libero maggiore dopo l'unità principale. Quando le unità primaria e secondaria raggiungono il limite di spazio riservato, Configuration Manager seleziona un'altra unità disponibile con la maggiore quantità di spazio libero e continua il processo di copia.  
 
@@ -369,11 +369,11 @@ Per espandere un sito primario autonomo, vedere prima l'argomento [Prerequisiti 
 
 10. Nella pagina **Gruppi limite** gestire i gruppi di limiti ai quali viene assegnato questo punto di distribuzione:  
 
-    -   Durante la distribuzione del contenuto, i client devono trovarsi in un gruppo di limiti associato al punto di distribuzione per usarlo come percorso di origine per il contenuto.  
+    - Durante la distribuzione del contenuto, i client devono trovarsi in un gruppo di limiti associato al punto di distribuzione per usarlo come percorso di origine per il contenuto.  
 
-    -   È possibile selezionare l'opzione **Consenti percorso origine di fallback per il contenuto** per consentire ai client al di fuori di questi gruppi di limiti di eseguire il fallback e usare il punto di distribuzione come un percorso di origine quando i punti di distribuzione preferiti non sono disponibili.  
+    - È possibile selezionare l'opzione **Consenti percorso origine di fallback per il contenuto** per consentire ai client al di fuori di questi gruppi di limiti di eseguire il fallback e usare il punto di distribuzione come un percorso di origine quando i punti di distribuzione preferiti non sono disponibili.  
 
-     Per informazioni sui punti di distribuzione preferiti, vedere l'argomento [Concetti di base per la gestione dei contenuti](../../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
+      Per informazioni sui punti di distribuzione preferiti, vedere l'argomento [Concetti di base per la gestione dei contenuti](../../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
 
 11. Nella pagina **Riepilogo** verificare le impostazioni, quindi fare clic su **Avanti** per installare il sito secondario. Quando la procedura guidata visualizza la pagina **Completamento**, è possibile chiudere la procedura guidata. L'installazione del sito secondario continua in background.  
 

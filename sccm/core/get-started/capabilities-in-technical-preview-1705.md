@@ -10,12 +10,12 @@ ms.assetid: 00684289-d21a-45f8-b1e3-c5c787d73096
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 49205ac1d1fc2dd20cbd4a0844632c5f3d181e45
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a9a5aeb35137a74152333a78e95781fb727eecdf
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341900"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421604"
 ---
 # <a name="capabilities-in-technical-preview-1705-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1705 per System Center Configuration Manager
 
@@ -81,13 +81,15 @@ Dopo l'esecuzione dello strumento:
 
 **Parametri della riga di comando:**  
 
-| Parametro        |Descrizione                 |  
-|------------------|----------------------------|  
-|**-S &lt;FQDN dell'istanza di SQL Server del sito di livello superiore>** | *Richiesto* <br> Specificare il FQDN dell'istanza di SQL Server che ospita il database del sito per il sito di livello superiore della gerarchia.    |  
-| **-D &lt;Nome database>**                        | *Richiesto* <br> Specificare il nome del database dei siti di livello superiore.  |  
-| **-P &lt;GUID pacchetto>**                         | *Richiesto* <br> Specificare il GUID del pacchetto di aggiornamento da reimpostare.   |  
-| **-I &lt;Nome istanza SQL Server>**             | *Facoltativa* <br> Identifica l'istanza di SQL Server che ospita il database del sito. |
-| **-FDELETE**                              | *Facoltativa* <br> Consente di forzare l'eliminazione di un pacchetto di aggiornamento scaricato correttamente. |  
+
+|                        Parametro                         |                                                            Descrizione                                                            |
+|----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| **-S &lt;FQDN dell'istanza di SQL Server del sito di livello superiore>** | *Richiesto* <br> Specificare il FQDN dell'istanza di SQL Server che ospita il database del sito per il sito di livello superiore della gerarchia. |
+|                **-D &lt;Nome database>**                 |                             *Richiesto* <br> Specificare il nome del database dei siti di livello superiore.                             |
+|                 **-P &lt;GUID pacchetto>**                 |                        *Richiesto* <br> Specificare il GUID del pacchetto di aggiornamento da reimpostare.                        |
+|           **-I &lt;Nome istanza SQL Server>**           |                   *Facoltativa* <br> Identifica l'istanza di SQL Server che ospita il database del sito.                   |
+|                       **-FDELETE**                       |                      *Facoltativa* <br> Consente di forzare l'eliminazione di un pacchetto di aggiornamento scaricato correttamente.                      |
+
  **Esempi:**  
  In uno scenario tipico, si vuole reimpostare un aggiornamento che presenta problemi di download. L'FQDN di SQL Server è *server1.fabrikam.com*, il database del sito è *CM_XYZ* e il GUID del pacchetto è *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Eseguire: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ -P 61F16B3C-F1F6-4F9F-8647-2A524B0C802C***
 
@@ -114,13 +116,13 @@ A partire da questa Technical Preview, Peer Cache [non usa l'account di accesso 
 ## <a name="improvements-for-sql-server-always-on-availability-groups"></a>Miglioramenti per i gruppi di disponibilità Always On di SQL Server  
 Con questa versione è ora possibile usare le repliche con commit asincrono nei gruppi di disponibilità Always On di SQL Server usati con Configuration Manager.  Ciò significa che è possibile aggiungere repliche aggiuntive ai gruppi di disponibilità da usare come backup remoti, e quindi usarli in caso di ripristino di emergenza.  
 
--   Configuration Manager supporta l'uso della replica con commit asincrono per ripristinare la replica sincrona.  Vedere le [opzioni di ripristino del database del sito](/sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) nell'argomento Backup e ripristino per informazioni su come eseguire questa operazione.
+- Configuration Manager supporta l'uso della replica con commit asincrono per ripristinare la replica sincrona.  Vedere le [opzioni di ripristino del database del sito](/sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) nell'argomento Backup e ripristino per informazioni su come eseguire questa operazione.
 
--   Questa versione non supporta il failover per l'uso della replica con commit asincrono come database del sito.
-> [!CAUTION]  
-> Poiché Configuration Manager non convalida lo stato della replica con commit asincrono per verificare che sia corrente, e [per comportamento normale del prodotto, una replica di questo tipo può non essere sincronizzata](https://msdn.microsoft.com/library/ff877884(SQL.120).aspx(d=robot)#Availability%20Modes), l'uso di una replica con commit asincrono come database del sito può mettere a rischio l'integrità dei dati del sito.  
+- Questa versione non supporta il failover per l'uso della replica con commit asincrono come database del sito.
+  > [!CAUTION]  
+  > Poiché Configuration Manager non convalida lo stato della replica con commit asincrono per verificare che sia corrente, e [per comportamento normale del prodotto, una replica di questo tipo può non essere sincronizzata](https://msdn.microsoft.com/library/ff877884(SQL.120).aspx(d=robot)#Availability%20Modes), l'uso di una replica con commit asincrono come database del sito può mettere a rischio l'integrità dei dati del sito.  
 
--   In un gruppo di disponibilità è possibile usare lo stesso numero e tipo di repliche supportate dalla versione di SQL Server in uso.   In precedenza, il supporto era limitato a due repliche con commit sincrono.
+- In un gruppo di disponibilità è possibile usare lo stesso numero e tipo di repliche supportate dalla versione di SQL Server in uso.   In precedenza, il supporto era limitato a due repliche con commit sincrono.
 
 ### <a name="configure-an-asynchronous-commit-replica"></a>Configurare una replica con commit asincrono
 Per aggiungere una replica asincrona a un [gruppo di disponibilità usato con Configuration Manager](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database), non è necessaria eseguire gli script di configurazione necessari per configurare una replica sincrona, perché non viene offerto supporto per l'uso di tale replica asincrona come database del sito. Per altre informazioni sull'aggiunta di repliche secondarie ai gruppi di disponibilità, vedere la [documentazione di SQL Server](https://msdn.microsoft.com/library/hh213247(v=sql.120).aspx(d=robot)).
@@ -224,20 +226,20 @@ Per informazioni su come eseguire questa operazione, leggere gli argomenti segue
 
 In questo modo il sito di Configuration Manager viene connesso ad Azure AD; si tratta di un prerequisito per tutte le altre operazioni di questa sezione. Per eseguire questa operazione:
 
-1.  Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e quindi fare clic su **Servizi di Azure**.
-2.  Nella scheda **Home**, nel gruppo **Servizi di Azure**, fare clic su **Configura i servizi di Azure**.
-3.  Nella pagina **Servizi di Azure** della procedura guidata per i servizi di Azure, selezionare **Gestione cloud** per consentire ai client di autenticarsi nella gerarchia usando Azure AD.
-4.  Nella pagina **Generale** della procedura guidata specificare un nome e una descrizione per il servizio di Azure.
-5.  Nella pagina **App** della procedura guidata selezionare l'ambiente di Azure dall'elenco, quindi fare clic su **Sfoglia** per selezionare le applicazioni server e client da usare per configurare il servizio di Azure:
-    - Nella finestra **Server App** (App server) selezionare l'app server che si vuole usare e quindi fare clic su **OK**. Le app server sono app Web di Azure che contengono le configurazioni per l'account Azure, inclusi ID del tenant, ID client e una chiave privata per i client. Se non è disponibile un'app server, usare una delle opzioni seguenti:
-        - **Crea**: per creare una nuova app server, fare clic su **Crea**. Specificare un nome descrittivo per l'app e il tenant. Quindi, dopo avere effettuato l'accesso ad Azure, Configuration Manager crea l'app Web in Azure, inclusi l'ID Client e la chiave privata da usare con l'app Web. In un secondo momento, è possibile visualizzare queste informazioni dal portale di Azure.
-        - **Importa**: per usare un'app Web già esistente nella sottoscrizione di Azure, fare clic su **Importa**. Specificare un nome descrittivo per l'app e il tenant, quindi specificare ID tenant, ID client e chiave privata per l'app Web di Azure che si vuole rendere disponibile per l'uso con Configuration Manager. Dopo aver verificato le informazioni, fare clic su **OK** per continuare. Al momento questo opzione non è disponibile in questa versione Technical Preview.
-    - Ripetere la procedura per l'applicazione client.
+1. Nell'area di lavoro **Amministrazione** della console di Configuration Manager espandere **Servizi cloud** e quindi fare clic su **Servizi di Azure**.
+2. Nella scheda **Home**, nel gruppo **Servizi di Azure**, fare clic su **Configura i servizi di Azure**.
+3. Nella pagina **Servizi di Azure** della procedura guidata per i servizi di Azure, selezionare **Gestione cloud** per consentire ai client di autenticarsi nella gerarchia usando Azure AD.
+4. Nella pagina **Generale** della procedura guidata specificare un nome e una descrizione per il servizio di Azure.
+5. Nella pagina **App** della procedura guidata selezionare l'ambiente di Azure dall'elenco, quindi fare clic su **Sfoglia** per selezionare le applicazioni server e client da usare per configurare il servizio di Azure:
+   - Nella finestra **Server App** (App server) selezionare l'app server che si vuole usare e quindi fare clic su **OK**. Le app server sono app Web di Azure che contengono le configurazioni per l'account Azure, inclusi ID del tenant, ID client e una chiave privata per i client. Se non è disponibile un'app server, usare una delle opzioni seguenti:
+       - **Crea**: per creare una nuova app server, fare clic su **Crea**. Specificare un nome descrittivo per l'app e il tenant. Quindi, dopo avere effettuato l'accesso ad Azure, Configuration Manager crea l'app Web in Azure, inclusi l'ID Client e la chiave privata da usare con l'app Web. In un secondo momento, è possibile visualizzare queste informazioni dal portale di Azure.
+       - **Importa**: per usare un'app Web già esistente nella sottoscrizione di Azure, fare clic su **Importa**. Specificare un nome descrittivo per l'app e il tenant, quindi specificare ID tenant, ID client e chiave privata per l'app Web di Azure che si vuole rendere disponibile per l'uso con Configuration Manager. Dopo aver verificato le informazioni, fare clic su **OK** per continuare. Al momento questo opzione non è disponibile in questa versione Technical Preview.
+   - Ripetere la procedura per l'applicazione client.
 
-  È necessario concedere all'applicazione l'autorizzazione *Lettura dati directory* quando si importa l'applicazione, per impostare le autorizzazioni corrette nel portale. Se si usa la creazione dell'applicazione, le autorizzazioni vengono create automaticamente con l'applicazione, ma è necessario concedere il consenso all'applicazione nel portale di Azure.
-6.  Nella pagina **Individuazione** della procedura guidata, selezionare **Abilita l'individuazione utente di Azure Active Directory** e quindi fare clic su **Impostazioni**.
-Nella finestra di dialogo **Impostazioni di individuazione utenti di Azure AD** configurare una pianificazione per quando si verifica l'individuazione. È anche possibile abilitare l'individuazione differenziale che verifica solo gli account nuovi o modificati in Azure AD.
-7.  Completare la procedura guidata.
+   È necessario concedere all'applicazione l'autorizzazione *Lettura dati directory* quando si importa l'applicazione, per impostare le autorizzazioni corrette nel portale. Se si usa la creazione dell'applicazione, le autorizzazioni vengono create automaticamente con l'applicazione, ma è necessario concedere il consenso all'applicazione nel portale di Azure.
+6. Nella pagina **Individuazione** della procedura guidata, selezionare **Abilita l'individuazione utente di Azure Active Directory** e quindi fare clic su **Impostazioni**.
+   Nella finestra di dialogo **Impostazioni di individuazione utenti di Azure AD** configurare una pianificazione per quando si verifica l'individuazione. È anche possibile abilitare l'individuazione differenziale che verifica solo gli account nuovi o modificati in Azure AD.
+7. Completare la procedura guidata.
 
 A questo punto il sito di Configuration Manager è connesso ad Azure AD.
 
@@ -247,16 +249,16 @@ A questo punto il sito di Configuration Manager è connesso ad Azure AD.
 Prima di iniziare, verificare che i file di origine dell'installazione client vengano archiviati localmente nel dispositivo nel quale viene installato il client.
 Usare le istruzioni in [Come distribuire i client nei computer Windows in System Center Configuration Manager](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#a-namebkmkmanuala-how-to-install-clients-manually) con la riga di comando per l'installazione seguente, sostituendo con valori personalizzati i valori dell'esempio:
 
-**ccmsetup.exe /NoCrlCheck /Source:C:\CLIENT  CCMHOSTNAME=SCCMPROXYCONTOSO.CLOUDAPP.NET/CCM_Proxy_ServerAuth/72457598037527932 SMSSiteCode=HEC AADTENANTID=780433B5-E05E-4B7D-BFD1-E8013911E543 AADTENANTNAME=contoso  AADCLIENTAPPID=<GUID> AADRESOURCEURI=https://contososerver**
+**ccmsetup.exe /NoCrlCheck /Source:C:\CLIENT  CCMHOSTNAME=SCCMPROXYCONTOSO.CLOUDAPP.NET/CCM_Proxy_ServerAuth/72457598037527932 SMSSiteCode=HEC AADTENANTID=780433B5-E05E-4B7D-BFD1-E8013911E543 AADTENANTNAME=contoso  AADCLIENTAPPID=<GUID> AADRESOURCEURI=<https://contososerver>**
 
-- **/NoCrlCheck**: se il punto di gestione o il gateway di gestione cloud usa un certificato server non pubblico, il cliente potrebbe non raggiungere il percorso CRL.
-- **/Source**: cartella locale:  posizione dei file di installazione del client.
+- **/NoCrlCheck**: se il punto di gestione o il gateway di gestione cloud usa un certificato server non pubblico, il client potrebbe non raggiungere il percorso CRL.
+- **/Source**: Cartella locale:   posizione dei file di installazione del client.
 - **CCMHOSTNAME**: nome del punto di gestione Internet. È possibile trovarlo eseguendo **gwmi - namespace root\ccm\locationservices-classe SMS_ActiveMPCandidate** da un prompt dei comandi in un client gestito.
-- **SMSMP**: il nome del punto di gestione di ricerca; può trattarsi della rete Intranet.
-- **SMSSiteCode**: il codice del sito del sito di Configuration Manager.
-- **AADTENANTID**, **AADTENANTNAME**: il nome e l'ID del tenant di Azure AD connesso a Configuration Manager. È possibile trovarlo eseguendo dsregcmd.exe /status da un prompt dei comandi su dispositivo aggiunto ad Azure AD.
-- **AADCLIENTAPPID**: ID dell'app client di Azure AD. Per informazioni su come trovarlo, vedere [Usare il portale per creare un'applicazione Azure Active Directory e un'entità servizio che possano accedere alle risorse](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-application-id-and-authentication-key).
-- **AADResourceUri**: URI di identificazione dell'applicazione server di Azure AD caricata.
+- **SMSMP**: nome del punto di gestione di ricerca. Può trattarsi della rete Intranet.
+- **SMSSiteCode**: codice del sito del sito di Configuration Manager.
+- **AADTENANTID**, **AADTENANTNAME**: nome e ID del tenant di Azure AD collegato a Configuration Manager. È possibile trovarlo eseguendo dsregcmd.exe /status da un prompt dei comandi su dispositivo aggiunto ad Azure AD.
+- **AADCLIENTAPPID**: ID app client di Azure AD. Per informazioni su come trovarlo, vedere [Usare il portale per creare un'applicazione Azure Active Directory e un'entità servizio che possano accedere alle risorse](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#get-application-id-and-authentication-key).
+- **AADResourceUri**: URI di identificazione dell'app server di Azure AD caricata.
 
 ## <a name="use-azure-services-wizard-to-configure-a-connection-to-oms"></a>Usare la Procedura guidata Servizi di Azure per configurare una connessione a OMS
 A partire dalla versione Technical Preview 1705, la **Procedura guidata Servizi di Azure** viene usata per configurare la connessione da Configuration Manager al servizio cloud Operations Management Suite (OMS). La procedura guidata sostituisce i precedenti flussi di lavoro per la configurazione della connessione.

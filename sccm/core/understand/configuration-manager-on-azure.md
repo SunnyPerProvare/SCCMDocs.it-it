@@ -9,12 +9,12 @@ ms.assetid: d24257d8-8136-47f4-8e0d-34021356dc37
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2b952e76fc21e3190430cdf34cb4a264918fd199
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: fa201029b81bb3e0ca8fb5e97f126c899497d503
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342597"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422930"
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Configuration Manager in Azure: domande frequenti
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -45,13 +45,13 @@ Ottima domanda. Di seguito sono indicate le aree più importanti nell'ottica di 
 ### <a name="what-about-networking-requirements-should-i-use-expressroute-or-an-azure-vpn-gateway"></a>Per quanto riguarda i requisiti di rete, è opportuno usare un Gateway VPN di Azure o ExpressRoute?
 Questa decisione molto importante. Le velocità e la latenza di rete possono influire sulle funzionalità tra il server del sito e i sistemi del sito remoti e sulle comunicazione client ai sistemi del sito. È consigliabile usare ExpressRoute. Configuration Manager non prevede tuttavia limitazioni all'uso del Gateway VPN di Azure. È opportuno esaminare attentamente i requisiti specifici, come prestazioni, applicazione di patch, distribuzione del software e distribuzione di sistemi operativi, di questa infrastruttura e adottare la scelta più appropriata di conseguenza. Ecco alcuni aspetti da valutare per ogni soluzione:
 
- - **ExpressRoute** (scelta consigliata)
+- **ExpressRoute** (scelta consigliata)
   - Estensione naturale per il data center, ovvero la possibilità di unire più data center
   - Connessioni private tra i data center di Azure e l'infrastruttura
   - Mancato uso della rete Internet pubblica
   - Garanzia di affidabilità, velocità elevate, latenza inferiore ed elevata sicurezza
   - Velocità fino a 10 Gb/s e opzioni del piano dati illimitato
- - **Gateway VPN**
+- **Gateway VPN**
   - VPN da sito a sito/da punto a sito
   - Traffico gestito tramite la rete Internet pubblica
   - Uso di Internet Protocol Security (IPsec) e Internet Key Exchange (IKE)
@@ -107,8 +107,8 @@ Le tabelle seguenti elencano i conteggi di dischi consigliati nella fase inizial
 
 | Client desktop    |Dimensione VM consigliata|Dischi consigliati |
 |--------------------|-------------------|------------------|
-|**Fino a 25.000**       | Server del sito: F4S </br>Server di database: DS12_V2 | Server del sito: 1 x P30 </br>Server di database: 2 x P30 (con striping)  |
-|**Da 25.000 a 50.000**      | Server del sito: F4S </br>Server di database: DS13_V2 | Server del sito: 1 x P30 </br>Server di database: 2 x P30 (con striping)   |
+|**Fino a 25.000**       | Server del sito: F4S </br>Server di database: DS12_V2 | Server del sito: 1xP30 </br>Server di database: 2 x P30 (con striping)  |
+|**Da 25.000 a 50.000**      | Server del sito: F4S </br>Server di database: DS13_V2 | Server del sito: 1xP30 </br>Server di database: 2 x P30 (con striping)   |
 |**50.000 a 100.000**     | Server del sito: F8S </br>Server di database: DS14_V2 | Server del sito: 2 x P30 (con striping)   </br>Server di database: 3 x P30 (con striping)   |
 
 Di seguito è riportato un esempio di configurazione per un numero di client compreso tra 50 e 100.000 su DS14_V2 con 3 dischi P30 in un volume con striping, con volumi logici separati per i file di installazione e di database di Configuration Manager: ![VM)disks](media/vm_disks.png)  

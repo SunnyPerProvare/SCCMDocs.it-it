@@ -10,12 +10,12 @@ ms.assetid: 784c295c-b8b8-4202-ab9f-665908d49d6d
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 4aed4ecda35fded9314ae54b6601deb6f8e07197
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 129223a111085854ede038575653655ad13884dd
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32343889"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423814"
 ---
 # <a name="monitor-applications-from-the-system-center-configuration-manager-console"></a>Monitorare le applicazioni dalla console di System Center Configuration Manager
 
@@ -41,17 +41,17 @@ In System Center Configuration Manager è possibile monitorare la distribuzione 
 
 È possibile visualizzare altre informazioni per ogni stato di conformità, tra cui le sottocategorie all'interno dello stato di conformità e il numero di utenti e dispositivi presenti in tale categoria. Ad esempio, lo stato di conformità **Errore** include le seguenti sottocategorie:  
 
--   Errore durante la valutazione dei requisiti  
+- Errore durante la valutazione dei requisiti  
 
--   Errori relativi al contenuto  
+- Errori relativi al contenuto  
 
--   Errori di installazione  
+- Errori di installazione  
 
- Quando si applica più di uno stato di conformità a una distribuzione dell'applicazione, è possibile visualizzare lo stato aggregato che rappresenta la conformità minima. Ad esempio:  
+  Quando si applica più di uno stato di conformità a una distribuzione dell'applicazione, è possibile visualizzare lo stato aggregato che rappresenta la conformità minima. Ad esempio:  
 
-    -   Se un utente esegue l'accesso a due dispositivi e l'applicazione viene istallata correttamente in un dispositivo ma non è possibile installarla nel secondo, lo stato di distribuzione aggregato dell'applicazione per tale utente sarà **Errore**.  
+  -   Se un utente esegue l'accesso a due dispositivi e l'applicazione viene istallata correttamente in un dispositivo ma non è possibile installarla nel secondo, lo stato di distribuzione aggregato dell'applicazione per tale utente sarà **Errore**.  
 
-    -   Se un'applicazione viene distribuita a tutti gli utenti che eseguono l'accesso a un computer, si otterranno più risultati di distribuzione per tale computer. Se una delle distribuzioni non viene completata, lo stato di distribuzione aggregato per il computer sarà **Errore**.  
+  -   Se un'applicazione viene distribuita a tutti gli utenti che eseguono l'accesso a un computer, si otterranno più risultati di distribuzione per tale computer. Se una delle distribuzioni non viene completata, lo stato di distribuzione aggregato per il computer sarà **Errore**.  
 
 Lo stato di distribuzione per le distribuzioni del pacchetto e del programma non è aggregato.  
 

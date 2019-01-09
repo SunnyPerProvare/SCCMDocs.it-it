@@ -10,12 +10,12 @@ ms.assetid: 62e20d86-db6d-4a1f-b14a-905a9de31698
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 948aa0b261f9214dc08b76b25a70133141a1113f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 2f2cdddc27fd07b806bef8ad729c0a8be4bb29e5
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336035"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423066"
 ---
 # <a name="security-and-privacy-for-hardware-inventory-in-system-center-configuration-manager"></a>Sicurezza e privacy per l'inventario hardware in System Center Configuration Manager
 
@@ -34,15 +34,15 @@ Questo argomento contiene informazioni sulla sicurezza e la privacy per l'invent
 ### <a name="security-issues-for-hardware-inventory"></a>Problemi di sicurezza per l'inventario hardware  
  La raccolta dell'inventario espone potenziali vulnerabilità. Gli utenti malintenzionati possono eseguire le attività seguenti:  
 
--   Inviare dati non validi, che verranno accettati dal punto di gestione anche quando l'impostazione client dell'inventario software è disabilitata e la raccolta di file non è abilitata.  
+- Inviare dati non validi, che verranno accettati dal punto di gestione anche quando l'impostazione client dell'inventario software è disabilitata e la raccolta di file non è abilitata.  
 
--   Inviare quantità eccessivamente elevate di dati in un singolo file e in un numero elevato di file e potenzialmente causare un attacco Denial of Service .  
+- Inviare quantità eccessivamente elevate di dati in un singolo file e in un numero elevato di file e potenzialmente causare un attacco Denial of Service .  
 
--   Accedere a informazioni dell'inventario mentre vengono trasferite a Configuration Manager.  
+- Accedere a informazioni dell'inventario mentre vengono trasferite a Configuration Manager.  
 
- Poiché un utente con privilegi di amministratore locale può inviare qualsiasi informazione come dati di inventario, non considerare affidabili i dati di inventario raccolti da Configuration Manager.  
+  Poiché un utente con privilegi di amministratore locale può inviare qualsiasi informazione come dati di inventario, non considerare affidabili i dati di inventario raccolti da Configuration Manager.  
 
- L'inventario hardware è abilitato per impostazione predefinita come impostazione client.  
+  L'inventario hardware è abilitato per impostazione predefinita come impostazione client.  
 
 ##  <a name="BKMK_Privacy_HardwareInventory"></a> Informazioni sulla privacy per l'inventario hardware  
  L'inventario hardware consente di recuperare le informazioni archiviate nel Registro di sistema e in WMI nei client di Configuration Manager. L'inventario software consente di individuare tutti i file di un tipo specificato o raccogliere tutti i file specificati dai client. Asset Intelligence migliora le funzionalità di inventario mediante l'estensione dell'inventario hardware e software e l'aggiunta di nuove funzionalità di gestione delle licenze.  

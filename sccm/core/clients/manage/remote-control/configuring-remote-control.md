@@ -10,12 +10,12 @@ ms.assetid: 45affc27-aa11-4249-9493-082ac23a3a3d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4e4d380319704eda608930ac938232513800b81a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 9fac81f08f4750ab6cc133ddc3a3bb9f73780fcd
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32331642"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422539"
 ---
 # <a name="configuring-remote-control-in-system-center-configuration-manager"></a>Configurazione del controllo remoto in System Center Configuration Manager
 
@@ -27,17 +27,17 @@ Per usare Assistenza remota o Desktop remoto è necessario installare e configur
 
 #### <a name="to-enable-remote-control-and-configure-client-settings"></a>Per abilitare il controllo remoto e configurare le impostazioni client  
 
-1.  Nella console di Configuration Manager selezionare **Amministrazione** > **Impostazioni client** > **Impostazioni client predefinite**.  
+1. Nella console di Configuration Manager selezionare **Amministrazione** > **Impostazioni client** > **Impostazioni client predefinite**.  
 
-4.  Nella scheda **Home**, nel gruppo **Proprietà**, scegliere **Proprietà**.  
+2. Nella scheda **Home**, nel gruppo **Proprietà**, scegliere **Proprietà**.  
 
-5.  Nella finestra di dialogo **Predefinito** scegliere **Strumenti remoti**.  
+3. Nella finestra di dialogo **Predefinito** scegliere **Strumenti remoti**.  
 
-6.  Configurare le impostazioni client per il controllo remoto, Assistenza remota e Desktop remoto. Per un elenco di impostazioni client di strumenti remoti che è possibile configurare, vedere [Strumenti remoti](../../../../core/clients/deploy/about-client-settings.md#remote-tools).  
+4. Configurare le impostazioni client per il controllo remoto, Assistenza remota e Desktop remoto. Per un elenco di impostazioni client di strumenti remoti che è possibile configurare, vedere [Strumenti remoti](../../../../core/clients/deploy/about-client-settings.md#remote-tools).  
 
-    È possibile modificare il nome della società visualizzato nella finestra di dialogo **Controllo remoto di Configuration Manager** configurando un valore per **Nome organizzazione visualizzato in Software Center** nelle impostazioni client **Agente computer** .  
+   È possibile modificare il nome della società visualizzato nella finestra di dialogo **Controllo remoto di Configuration Manager** configurando un valore per **Nome organizzazione visualizzato in Software Center** nelle impostazioni client **Agente computer** .  
 
- I computer client vengono configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero criteri per un singolo client, vedere [Come gestire i client in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
+   I computer client vengono configurati con queste impostazioni al successivo download dei criteri client. Per avviare il recupero criteri per un singolo client, vedere [Come gestire i client in System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
 
 #### <a name="enable-keyboard-translation"></a>Abilitare la traduzione della tastiera
 

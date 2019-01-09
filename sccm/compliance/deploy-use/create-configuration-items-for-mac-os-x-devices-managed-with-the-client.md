@@ -10,12 +10,12 @@ ms.assetid: 722d5bf5-bedc-4dfc-b324-6eeb773874e9
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: e6358c8e84d12c37418d7a1af459e775783efaa2
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 24a0bad463dda09c7e23bbcc47ecc388735d1ca5
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335831"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421825"
 ---
 # <a name="how-to-create-configuration-items-for-mac-os-x-devices-managed-with-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Mac OS X gestiti con il client di System Center Configuration Manager
 Usare l'elemento di configurazione **Mac OS X (personalizzato)** di System Center Configuration Manager per gestire le impostazioni dei dispositivi Mac OS X gestiti dal client di Configuration Manager.  
@@ -24,21 +24,21 @@ Usare l'elemento di configurazione **Mac OS X (personalizzato)** di System Cente
   
 ### <a name="to-create-a-custom-mac-os-x-configuration-item"></a>Per creare un elemento di configurazione personalizzato di Mac OS X  
   
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1. Nella console di Configuration Manager fare clic su **Asset e conformità**.  
   
-2.  Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
+2. Nell'area di lavoro **Asset e conformità** espandere **Impostazioni di conformità**e quindi fare clic su **Elementi di configurazione**.  
   
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
+3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
   
-4.  Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
+4. Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
   
-5.  In **Specificare il tipo di elemento di configurazione da creare**selezionare **Mac OS X (personalizzato)**.  
+5. In **Specificare il tipo di elemento di configurazione da creare**selezionare **Mac OS X (personalizzato)**.  
   
-6.  Fare clic su **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
+6. Fare clic su **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
   
-7.  Nella pagina **Piattaforme supportate** della procedura guidata selezionare le versioni specifiche di Mac OS X che valuteranno l'elemento di configurazione.  
+7. Nella pagina **Piattaforme supportate** della procedura guidata selezionare le versioni specifiche di Mac OS X che valuteranno l'elemento di configurazione.  
   
-8.  Nella pagina **impostazioni** della procedura guidata aggiungere le nuove impostazioni che verranno valutate a livello di conformità nei computer Mac. Fare clic su **Nuova** per aprire la finestra di dialogo **Crea impostazione** .  
+8. Nella pagina **impostazioni** della procedura guidata aggiungere le nuove impostazioni che verranno valutate a livello di conformità nei computer Mac. Fare clic su **Nuova** per aprire la finestra di dialogo **Crea impostazione** .  
   
 9. Nella finestra di dialogo **Crea impostazione** immettere un nome univoco e una descrizione per l'impostazione.  
   
@@ -78,20 +78,20 @@ Usare l'elemento di configurazione **Mac OS X (personalizzato)** di System Cente
   
 13. Nella pagina **Regole di conformità** della procedura guidata specificare le condizioni che definiscono la conformità di un elemento di configurazione. Prima che sia possibile valutare la conformità di un'impostazione, è necessario che tale impostazione disponga almeno di una regola di conformità. Fare clic su **Nuova** per aggiungere una nuova regola.  
   
-14. Nella finestra di dialogo **Crea regola** immettere le informazioni seguenti:  
+14. Nel **Create Rule** finestra di dialogo immettere le informazioni seguenti:  
   
-    -   **Nome:** Immettere un nome per la regola di conformità.  
+    -   **Nome:** immettere un nome per la regola di conformità.  
   
-    -   **Descrizione:** Immettere una descrizione per la regola di conformità.  
+    -   **Descrizione:** immettere una descrizione per la regola di conformità.  
   
-    -   **Impostazione selezionata:** Fare clic su **Sfoglia** per aprire la **Select impostazione** nella finestra di dialogo. Selezionare l'impostazione che si desidera definire una regola per oppure fare clic su **nuova impostazione**. Al termine, fare clic su **selezionare**.  
+    -   **Impostazione selezionata:** fare clic su **Sfoglia** per aprire la finestra di dialogo **Seleziona impostazione**. Selezionare l'impostazione che si desidera definire una regola per oppure fare clic su **nuova impostazione**. Al termine, fare clic su **selezionare**.  
   
         > [!TIP]  
         >  È inoltre possibile fare clic su **proprietà** per visualizzare informazioni sull'impostazione attualmente selezionata.  
   
-    -   **Tipo di regola:** selezionare il tipo di regola di conformità da usare:  
+    -   **Tipo di regola:** selezionare il tipo di regola di conformità che si vuole usare:  
   
-        -   **Valore:** creare una regola che confronta il valore restituito dall'elemento di configurazione con un valore specificato.  
+        -   **Valore:** creare una regola che confronta il valore restituito dall'elemento di configurazione con un valore specificato dall'utente.  
   
         -   **Esistenziale** : creare una regola che valuta l'impostazione a seconda se esiste in un dispositivo.  
   
@@ -142,9 +142,9 @@ Usare l'elemento di configurazione **Mac OS X (personalizzato)** di System Cente
   
             -   **L'impostazione deve esistere nei dispositivi client**  
   
-            -   **L'impostazione non deve esistere nei dispositivi client**  
+            -   **L'impostazione non deve esistere in dispositivi client**  
   
-        -   **Gravità della non conformità per i report:** Specificare il livello di gravità che viene segnalato se si verifica un errore di questa regola di conformità. I livelli di gravità disponibili sono i seguenti:  
+        -   **Gravità della non conformità per i report:** specificare il livello di gravità segnalato nel caso la regola di conformità non venga soddisfatta. I livelli di gravità disponibili sono i seguenti:  
   
             -   **Nessuno**: i computer che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
   
@@ -163,9 +163,9 @@ Usare l'elemento di configurazione **Mac OS X (personalizzato)** di System Cente
   
 15. Nella **Riepilogo** confermare le impostazioni del nuovo elemento di configurazione e quindi completare la procedura guidata.  
   
- Il nuovo elemento di configurazione viene visualizzato nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
+    Il nuovo elemento di configurazione viene visualizzato nel nodo **Elementi di configurazione** dell'area di lavoro **Asset e conformità** .  
   
- Se si vuole aggiungere l'elemento di configurazione a una linea di base di configurazione, vedere [Come creare linee di base di configurazione in System Center Configuration Manager](../../compliance/deploy-use/create-configuration-baselines.md).  
+    Se si vuole aggiungere l'elemento di configurazione a una linea di base di configurazione, vedere [Come creare linee di base di configurazione in System Center Configuration Manager](../../compliance/deploy-use/create-configuration-baselines.md).  
   
 ## <a name="see-also"></a>Vedere anche  
  [Elementi di configurazione per dispositivi gestiti con il client di System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md)

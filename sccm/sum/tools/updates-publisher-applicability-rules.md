@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 84705584328b09313bebd1e6c70a0063b2b0724f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 280dd3da96b0c408f7c75fb7ef0a046ae0343765
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351429"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421417"
 ---
 # <a name="manage-applicability-rules-in-updates-publisher"></a>Gestire le regole di applicabilità in Updates Publisher
 
@@ -50,30 +50,30 @@ Per visualizzare le regole create, nell'**area di lavoro Regole** selezionare un
 ## <a name="create-applicability-rule"></a>Creare una regola di applicabilità
 Le informazioni seguenti sono simili a quelle per la creazione di regole nella [Creazione guidata aggiornamento](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard). A differenza di quanto si verifica nella procedura guidata, però, è possibile salvare i set di regole per un uso futuro.
 
-1.  Nell'**area di lavoro Regole** scegliere **Crea** per aprire la **Creazione guidata regola**.
+1. Nell'**area di lavoro Regole** scegliere **Crea** per aprire la **Creazione guidata regola**.
 
-2.  Specificare un nome per la regola, quindi fare clic su ![Nuova regola](media/newrule.png). Verrà visualizzata la pagina **Applicability Rule** (Regola di applicabilità) in cui è possibile configurare le regole.
+2. Specificare un nome per la regola, quindi fare clic su ![Nuova regola](media/newrule.png). Verrà visualizzata la pagina **Applicability Rule** (Regola di applicabilità) in cui è possibile configurare le regole.
 
-3.  Per **Tipo di regole** selezionare una delle opzioni seguenti. Le opzioni che è necessario configurare variano per ogni tipo:
+3. Per **Tipo di regole** selezionare una delle opzioni seguenti. Le opzioni che è necessario configurare variano per ogni tipo:
 
-    -   **File**: usare questa regola per indicare che, per poter eseguire l'aggiornamento, nel dispositivo deve essere presente un file con proprietà che soddisfano uno o più dei criteri specificati.
+   - **File**: usare questa regola per indicare che, per poter eseguire l'aggiornamento, nel dispositivo deve essere presente un file con proprietà che soddisfano uno o più dei criteri specificati.
 
-    -   **Registro di sistema**: usare questo tipo per specificare i dettagli del Registro di sistema che devono essere presenti per consentire l'installazione dell'aggiornamento nel dispositivo.
+   - **Registro di sistema**: usare questo tipo per specificare i dettagli del Registro di sistema che devono essere presenti per consentire l'installazione dell'aggiornamento nel dispositivo.
 
-    -   **Sistema**: questa regola usa i dettagli relativi al sistema per determinare l'applicabilità. È possibile scegliere tra la definizione di una versione di Windows, un linguaggio di Windows o l'architettura del processore. In alternativa, è possibile specificare una query WMI per identificare il sistema operativo dei dispositivi.
+   - **Sistema**: questa regola usa i dettagli relativi al sistema per determinare l'applicabilità. È possibile scegliere tra la definizione di una versione di Windows, un linguaggio di Windows o l'architettura del processore. In alternativa, è possibile specificare una query WMI per identificare il sistema operativo dei dispositivi.
 
-    -   **Windows Installer**: usare questa regola per determinare l'applicabilità in base a una patch installata Windows Installer o con estensione msi. È anche possibile determinare se funzionalità o componenti specifici vengono installati come parte del requisito.
+   - **Windows Installer**: usare questa regola per determinare l'applicabilità in base a una patch installata Windows Installer o con estensione msi. È anche possibile determinare se funzionalità o componenti specifici vengono installati come parte del requisito.
 
-       > [!IMPORTANT]   
-       > Nel dispositivi gestiti, l'agente di Windows Update non è in grado di rilevare i pacchetti del programma di installazione di Windows installati per utente. Quando si usa questo tipo di regola, configurare regole di applicabilità aggiuntive, come le versioni del file o i valori della chiave del Registro di sistema, in modo che il pacchetto Windows Installer possa essere rilevato correttamente sia in base a un criterio "per utente" che in base a un criterio "per sistema".
+     > [!IMPORTANT]   
+     > Nel dispositivi gestiti, l'agente di Windows Update non è in grado di rilevare i pacchetti del programma di installazione di Windows installati per utente. Quando si usa questo tipo di regola, configurare regole di applicabilità aggiuntive, come le versioni del file o i valori della chiave del Registro di sistema, in modo che il pacchetto Windows Installer possa essere rilevato correttamente sia in base a un criterio "per utente" che in base a un criterio "per sistema".
 
-    -   **Saved rule** (Regola salvata): questa regola consente di trovare e usare regole precedentemente configurate e salvate.
+   - **Saved rule** (Regola salvata): questa regola consente di trovare e usare regole precedentemente configurate e salvate.
 
-4.  Continuare ad aggiungere e configurare regole aggiuntive in base alle esigenze.
+4. Continuare ad aggiungere e configurare regole aggiuntive in base alle esigenze.
 
-5.  Usare i pulsanti corrispondenti alle operazioni logiche per ordinare e raggruppare regole differenti in modo da creare controlli dei requisiti più complessi.
+5. Usare i pulsanti corrispondenti alle operazioni logiche per ordinare e raggruppare regole differenti in modo da creare controlli dei requisiti più complessi.
 
-6.  Quando il set di regole è completo, fare clic su **OK** per salvarlo. Il set di regole viene ora visualizzato nell'elenco **My saved rules** (Regole personali salvate).
+6. Quando il set di regole è completo, fare clic su **OK** per salvarlo. Il set di regole viene ora visualizzato nell'elenco **My saved rules** (Regole personali salvate).
 
 ## <a name="edit-applicability-rule-sets"></a>Modificare set di regole di applicabilità
 Per modificare una regola di applicabilità, nell'**area di lavoro Regole** selezionare una regola presente nell'elenco **My saved rules** (Regole personali salvate), quindi scegliere il pulsante **Modifica** dalla barra multifunzione. Viene avviata la **Modifica guidata regola**.

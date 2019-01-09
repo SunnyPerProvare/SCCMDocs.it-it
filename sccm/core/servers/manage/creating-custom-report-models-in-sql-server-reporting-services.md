@@ -10,12 +10,12 @@ ms.assetid: f2df88b4-c348-4dcf-854a-54fd6eedf485
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: fd606ff7068b7c14047e445d16ea78d20a5c12ea
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: d011272c42f3347f555e4fb5322464e9c5e754da
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342648"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424698"
 ---
 # <a name="creating-custom-report-models-for-system-center-configuration-manager-in-sql-server-reporting-services"></a>Creazione di modelli di report personalizzati per System Center Configuration Manager in SQL Server Reporting Services
 
@@ -136,37 +136,37 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 ###  <a name="BKMK_DeployReportModel"></a> To deploy the custom report model to Configuration Manager  
 
-1.  Individuare la cartella in cui è stato creato il progetto di modello di report. Ad esempio, %*PROFILOUTENTE*%\Documents\Visual Studio 2008\Projects\\*&lt;Nome progetto\>.*  
+1. Individuare la cartella in cui è stato creato il progetto di modello di report. Ad esempio, %*PROFILOUTENTE*%\Documents\Visual Studio 2008\Projects\\*&lt;Nome progetto\>.*  
 
-2.  Copiare i seguenti file dalla cartella del progetto di modello di report in una cartella temporanea nel computer:  
+2. Copiare i seguenti file dalla cartella del progetto di modello di report in una cartella temporanea nel computer:  
 
-    -   *&lt;Nome modello\>* **.dsv**  
+   -   *&lt;Nome modello\>* **.dsv**  
 
-    -   *&lt;Nome modello\>* **.smdl**  
+   -   *&lt;Nome modello\>* **.smdl**  
 
-3.  Aprire i file precedenti utilizzando un editor di testo, ad esempio Blocco note.  
+3. Aprire i file precedenti utilizzando un editor di testo, ad esempio Blocco note.  
 
-4.  Nel file *&lt;Nome modello\>***.dvs** individuare la prima riga del file, simile alla seguente:  
+4. Nel file *&lt;Nome modello\>***.dvs** individuare la prima riga del file, simile alla seguente:  
 
-     **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine"\>**  
+    **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine"\>**  
 
-     Modificare la riga come segue:  
+    Modificare la riga come segue:  
 
-     **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="RelationalDataSourceView"\>**  
+    **&lt;DataSourceView xmlns="<http://schemas.microsoft.com/analysisservices/2003/engine>" xmlns:xsi="RelationalDataSourceView"\>**  
 
-5.  Copiare l'intero contenuto del file negli Appunti di Windows.  
+5. Copiare l'intero contenuto del file negli Appunti di Windows.  
 
-6.  Chiudere il file *&lt;Nome modello\>***.dsv**.  
+6. Chiudere il file *&lt;Nome modello\>***.dsv**.  
 
-7.  Nel file *&lt;Nome modello\>***.smdl** individuare le ultime tre righe del file, simili alle seguenti:  
+7. Nel file *&lt;Nome modello\>***.smdl** individuare le ultime tre righe del file, simili alle seguenti:  
 
-     `</Entity>`  
+    `</Entity>`  
 
-     `</Entities>`  
+    `</Entities>`  
 
-     `</SemanticModel>`  
+    `</SemanticModel>`  
 
-8.  Incollare il contenuto del file *&lt;Nome modello\>***.dsv** direttamente prima dell'ultima riga del file (**&lt;SemanticModel\>**).  
+8. Incollare il contenuto del file *&lt;Nome modello\>***.dsv** direttamente prima dell'ultima riga del file (**&lt;SemanticModel\>**).  
 
 9. Salvare e chiudere il file *&lt;Nome modello\>***.smdl**.  
 
@@ -178,13 +178,13 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 ##  <a name="AdvancedReportModel"></a> Passaggi per la creazione di un modello di report avanzato in SQL Server Reporting Services  
  Usare le procedure seguenti per creare un modello di report avanzato che gli utenti del sito possono usare per compilare report basati su modello specifici in base ai dati presenti in più viste del database di Configuration Manager. Creare un modello di report che fornisca all'autore del report informazioni sui computer client e sul sistema operativo installato in tali computer. Queste informazioni provengono dalle seguenti viste del database di Configuration Manager:  
 
--   **V_R_System**: contiene informazioni sui computer individuati e sul client di Configuration Manager.  
+- **V_R_System**: contiene informazioni sui computer individuati e sul client di Configuration Manager.  
 
--   **V_GS_OPERATING_SYSTEM**: contiene informazioni sul sistema operativo installato nel computer client.  
+- **V_GS_OPERATING_SYSTEM**: contiene informazioni sul sistema operativo installato nel computer client.  
 
- Gli elementi selezionati nelle visualizzazioni precedenti vengono consolidati in un unico elenco, vengono associati a nomi descrittivi e quindi forniti all'autore del report in Generatore report per l'inclusione in report specifici.  
+  Gli elementi selezionati nelle visualizzazioni precedenti vengono consolidati in un unico elenco, vengono associati a nomi descrittivi e quindi forniti all'autore del report in Generatore report per l'inclusione in report specifici.  
 
- Verificare che nel computer in cui vengono eseguite tali procedure sia installato SQL Server Business Intelligence Development Studio e che il computer disponga della connettività di rete al server del punto di Reporting Services. Per informazioni dettagliate su SQL Server Business Intelligence Development Studio, vedere la documentazione di SQL Server.  
+  Verificare che nel computer in cui vengono eseguite tali procedure sia installato SQL Server Business Intelligence Development Studio e che il computer disponga della connettività di rete al server del punto di Reporting Services. Per informazioni dettagliate su SQL Server Business Intelligence Development Studio, vedere la documentazione di SQL Server.  
 
 #### <a name="to-create-the-report-model-project"></a>To create the report model project  
 
@@ -234,28 +234,28 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 #### <a name="to-define-the-data-source-view-for-the-report-model"></a>Per definire la vista dell'origine dati per il modello di report  
 
-1.  In **Esplora soluzioni**fare clic con il pulsante destro del mouse su **Viste origine dati** per selezionare **Aggiungi nuova vista origine dati**.  
+1. In **Esplora soluzioni**fare clic con il pulsante destro del mouse su **Viste origine dati** per selezionare **Aggiungi nuova vista origine dati**.  
 
-2.  Nella pagina **Creazione guidata vista origine dati** fare clic su **Avanti**. Verrà visualizzata la pagina **Selezione origine dati** .  
+2. Nella pagina **Creazione guidata vista origine dati** fare clic su **Avanti**. Verrà visualizzata la pagina **Selezione origine dati** .  
 
-3.  Nella finestra **Origini dati relazionali** verificare che l'origine dati **Modello_Avanzato** sia selezionata, quindi fare clic su **Avanti**.  
+3. Nella finestra **Origini dati relazionali** verificare che l'origine dati **Modello_Avanzato** sia selezionata, quindi fare clic su **Avanti**.  
 
-4.  Nella pagina **Selezione tabelle e viste** selezionare le viste seguenti dall'elenco **Oggetti disponibili** per l'utilizzo nel modello di report:  
+4. Nella pagina **Selezione tabelle e viste** selezionare le viste seguenti dall'elenco **Oggetti disponibili** per l'utilizzo nel modello di report:  
 
-    -   **v_R_System (dbo)**  
+   - **v_R_System (dbo)**  
 
-    -   **v_GS_OPERATING_SYSTEM (dbo)**  
+   - **v_GS_OPERATING_SYSTEM (dbo)**  
 
      Dopo avere selezionato ogni vista, fare clic su **>** per trasferire l'oggetto nell'elenco **Oggetti inclusi** .  
 
-    > [!TIP]  
-    >  Per agevolare l'individuazione delle viste nell'elenco **Oggetti disponibili** , fare clic sull'intestazione **Nome** nella parte superiore dell'elenco per disporre gli oggetti in ordine alfabetico.  
+   > [!TIP]  
+   >  Per agevolare l'individuazione delle viste nell'elenco **Oggetti disponibili** , fare clic sull'intestazione **Nome** nella parte superiore dell'elenco per disporre gli oggetti in ordine alfabetico.  
 
-5.  Se viene visualizzata la finestra di dialogo **Corrispondenza nomi** , accettare le selezioni predefinite, quindi fare clic su **Avanti**.  
+5. Se viene visualizzata la finestra di dialogo **Corrispondenza nomi** , accettare le selezioni predefinite, quindi fare clic su **Avanti**.  
 
-6.  Dopo avere selezionato gli oggetti necessari, fare clic su **Avanti**, quindi specificare un nome per la vista dell'origine dati. Per questo esempio, digitare **Modello_Avanzato**.  
+6. Dopo avere selezionato gli oggetti necessari, fare clic su **Avanti**, quindi specificare un nome per la vista dell'origine dati. Per questo esempio, digitare **Modello_Avanzato**.  
 
-7.  Fare clic su **Fine**. La vista dell'origine dati **Modello_Avanzato.dsv** viene visualizzata nella cartella **Viste origine dati** di **Esplora soluzioni**.  
+7. Fare clic su **Fine**. La vista dell'origine dati **Modello_Avanzato.dsv** viene visualizzata nella cartella **Viste origine dati** di **Esplora soluzioni**.  
 
 #### <a name="to-define-relationships-in-the-data-source-view"></a>Per definire le relazioni nella vista dell'origine dati  
 
@@ -379,37 +379,37 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 #### <a name="to-deploy-the-custom-report-model-to-configuration-manager"></a>To deploy the custom report model to Configuration Manager  
 
-1.  Individuare la cartella in cui è stato creato il progetto di modello di report. Ad esempio, %*PROFILOUTENTE*%\Documents\Visual Studio 2008\Projects\\*&lt;Nome progetto\>.*  
+1. Individuare la cartella in cui è stato creato il progetto di modello di report. Ad esempio, %*PROFILOUTENTE*%\Documents\Visual Studio 2008\Projects\\*&lt;Nome progetto\>.*  
 
-2.  Copiare i seguenti file dalla cartella del progetto di modello di report in una cartella temporanea nel computer:  
+2. Copiare i seguenti file dalla cartella del progetto di modello di report in una cartella temporanea nel computer:  
 
-    -   *&lt;Nome modello\>* **.dsv**  
+   -   *&lt;Nome modello\>* **.dsv**  
 
-    -   *&lt;Nome modello\>* **.smdl**  
+   -   *&lt;Nome modello\>* **.smdl**  
 
-3.  Aprire i file precedenti utilizzando un editor di testo, ad esempio Blocco note.  
+3. Aprire i file precedenti utilizzando un editor di testo, ad esempio Blocco note.  
 
-4.  Nel file *&lt;Nome modello\>***.dvs** individuare la prima riga del file, simile alla seguente:  
+4. Nel file *&lt;Nome modello\>***.dvs** individuare la prima riga del file, simile alla seguente:  
 
-     **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine"\>**  
+    **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine"\>**  
 
-     Modificare la riga come segue:  
+    Modificare la riga come segue:  
 
-     **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="RelationalDataSourceView"\>**  
+    **&lt;DataSourceView xmlns="<http://schemas.microsoft.com/analysisservices/2003/engine>" xmlns:xsi="RelationalDataSourceView"\>**  
 
-5.  Copiare l'intero contenuto del file negli Appunti di Windows.  
+5. Copiare l'intero contenuto del file negli Appunti di Windows.  
 
-6.  Chiudere il file *&lt;Nome modello\>***.dsv**.  
+6. Chiudere il file *&lt;Nome modello\>***.dsv**.  
 
-7.  Nel file *&lt;Nome modello\>***.smdl** individuare le ultime tre righe del file, simili alle seguenti:  
+7. Nel file *&lt;Nome modello\>***.smdl** individuare le ultime tre righe del file, simili alle seguenti:  
 
-     `</Entity>`  
+    `</Entity>`  
 
-     `</Entities>`  
+    `</Entities>`  
 
-     `</SemanticModel>`  
+    `</SemanticModel>`  
 
-8.  Incollare il contenuto del file *&lt;Nome modello\>***.dsv** direttamente prima dell'ultima riga del file (**&lt;SemanticModel\>**).  
+8. Incollare il contenuto del file *&lt;Nome modello\>***.dsv** direttamente prima dell'ultima riga del file (**&lt;SemanticModel\>**).  
 
 9. Salvare e chiudere il file *&lt;Nome modello\>***.smdl**.  
 

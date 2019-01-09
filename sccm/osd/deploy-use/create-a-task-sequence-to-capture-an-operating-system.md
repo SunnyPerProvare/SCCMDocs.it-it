@@ -10,12 +10,12 @@ ms.assetid: 25e4ac68-0e78-4bbe-b8fc-3898b372c4e8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 34536114e6cb1be8f256da385b3d69d07c17f676
-ms.sourcegitcommit: 3dfe3f4401651afa9dc65d14a8944ae4e4198b3e
+ms.openlocfilehash: 974ecfdf30dd24e6addad91588fce5d223f27b1c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48862482"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53423746"
 ---
 # <a name="create-a-task-sequence-to-capture-an-operating-system-in-system-center-configuration-manager"></a>Creare una sequenza di attività per acquisire un sistema operativo in System Center Configuration Manager
 
@@ -48,60 +48,60 @@ Quando si usa una sequenza di attività per distribuire un sistema operativo in 
 
 #### <a name="to-create-a-task-sequence-that-builds-and-captures-an-operating-system-image"></a>Per creare una sequenza di attività che crea e acquisisce un'immagine del sistema operativo  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1. Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+2. Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea sequenza di attività** per avviare la Creazione guidata della sequenza di attività.  
+3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea sequenza di attività** per avviare la Creazione guidata della sequenza di attività.  
 
-4.  Nella pagina **Crea una nuova sequenza di attività** selezionare **Crea e acquisisci un'immagine del sistema operativo di riferimento**.  
+4. Nella pagina **Crea una nuova sequenza di attività** selezionare **Crea e acquisisci un'immagine del sistema operativo di riferimento**.  
 
-5.  Nella pagina **Informazioni sequenza di attività** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
+5. Nella pagina **Informazioni sequenza di attività** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   **Nome sequenza di attività**: specificare un nome che identifica la sequenza di attività.  
+   -   **Nome sequenza di attività**: specificare un nome che identifica la sequenza di attività.  
 
-    -   **Descrizione**: specificare una descrizione dell'attività eseguita dalla sequenza di attività, ad esempio una descrizione del sistema operativo creato dalla sequenza di attività.  
+   -   **Descrizione**: specificare una descrizione dell'attività eseguita dalla sequenza di attività, ad esempio una descrizione del sistema operativo creato dalla sequenza di attività.  
 
-    -   **Immagine di avvio**: specificare l'immagine di avvio che installa l'immagine del sistema operativo.  
+   -   **Immagine d'avvio**: specificare l'immagine di avvio che installa l'immagine del sistema operativo.  
 
-        > [!IMPORTANT]  
-        >  L'architettura dell'immagine di avvio deve essere compatibile con l'architettura hardware del computer di destinazione.  
+       > [!IMPORTANT]  
+       >  L'architettura dell'immagine di avvio deve essere compatibile con l'architettura hardware del computer di destinazione.  
 
-6.  Nella pagina **Installa Windows** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
+6. Nella pagina **Installa Windows** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   **Pacchetto immagine**: specificare il pacchetto immagine del sistema operativo, che contiene i file necessari per installare il sistema operativo.  
+   -   **Pacchetto immagine**: specificare il pacchetto immagine del sistema operativo, che contiene i file necessari per installare il sistema operativo.  
 
-    -   **Indice immagine**: specificare il sistema operativo da installare. Se l'immagine del sistema operativo contiene più versioni, selezionare la versione da installare.  
+   -   **Indice immagine**: specificare il sistema operativo da installare. Se l'immagine del sistema operativo contiene più versioni, selezionare la versione da installare.  
 
-    -   **Codice Product Key**: specificare il codice Product Key per il sistema operativo Windows da installare. È possibile specificare i codici Product Key per contratti multilicenza codificati e i codici Product Key standard. Se si usa un codice Product Key non codificato, ogni gruppo di 5 caratteri deve essere separato da un trattino (-). Ad esempio: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
+   -   **Codice Product Key**: specificare il codice Product Key per il sistema operativo Windows da installare. È possibile specificare i codici Product Key per contratti multilicenza codificati e i codici Product Key standard. Se si usa un codice Product Key non codificato, ogni gruppo di 5 caratteri deve essere separato da un trattino (-). Ad esempio: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
 
-    -   **Modalità di gestione licenze del server**: specificare che la licenza del server è **Per postazione**, **Per server**o che non è specificata alcuna licenza. Se la licenza del server è **Per server**, specificare anche il numero massimo di connessioni al server.  
+   -   **Modalità di gestione licenze del server**: specificare che la licenza del server è **Per postazione**, **Per server** o che non è specificata alcuna licenza. Se la licenza del server è **Per server**, specificare anche il numero massimo di connessioni al server.  
 
-    -   Specificare come gestire l'account amministratore usato quando viene distribuito il sistema operativo.  
+   -   Specificare come gestire l'account amministratore usato quando viene distribuito il sistema operativo.  
 
-        -   **Genera in modo casuale la password dell'amministratore locale e disattiva l'account su tutte le piattaforme supportate**: specificare se Configuration Manager deve creare una password casuale per l'account amministratore locale e disabilitare l'account quando viene distribuito il sistema operativo.  
+       -   **Genera in modo casuale la password dell'amministratore locale e disattiva l'account su tutte le piattaforme supportate**: specificare se Configuration Manager deve creare una password casuale per l'account amministratore locale e disattivare l'account quando l'immagine del sistema operativo viene distribuita.  
 
-        -   **Attiva l'account e specifica la password dell'amministratore locale**: specificare se la stessa password viene usata per l'account di amministratore locale su tutti i computer in cui viene distribuito il sistema operativo.  
+       -   **Attiva l'account e specifica la password dell'amministratore locale**: specificare se la stessa password viene usata per l'account di amministratore locale su tutti i computer in cui viene distribuito il sistema operativo.  
 
-7.  Nella pagina **Configura rete** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
+7. Nella pagina **Configura rete** specificare le impostazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   **Aggiunta a un gruppo di lavoro**: specificare se aggiungere il computer di destinazione a un gruppo di lavoro quando viene distribuito il sistema operativo.  
+   -   **Aggiunta a un gruppo di lavoro**: specificare se aggiungere il computer di destinazione a un gruppo di lavoro quando viene distribuito il sistema operativo.  
 
-    -   **Aggiunta a un dominio**: specificare se aggiungere il computer di destinazione a un dominio quando viene distribuito il sistema operativo. In **Dominio**specificare il nome del dominio.  
+   -   **Aggiunta a un dominio**: specificare se aggiungere il computer di destinazione a un dominio quando viene distribuito il sistema operativo. In **Dominio**specificare il nome del dominio.  
 
-        > [!IMPORTANT]  
-        >  È possibile cercare i domini nella foresta locale, ma è necessario specificare il nome di dominio per una foresta remota.  
+       > [!IMPORTANT]  
+       >  È possibile cercare i domini nella foresta locale, ma è necessario specificare il nome di dominio per una foresta remota.  
 
-         È inoltre possibile specificare un'unità organizzativa. Si tratta di un'impostazione facoltativa che specifica il nome distinto LDAP X.500 dell'unità organizzativa in cui creare l'account computer se non esiste già.  
+        È inoltre possibile specificare un'unità organizzativa. Si tratta di un'impostazione facoltativa che specifica il nome distinto LDAP X.500 dell'unità organizzativa in cui creare l'account computer se non esiste già.  
 
-    -   **Account**: specificare il nome utente e la password per l'account con le autorizzazioni per l'aggiunta al dominio specificato. Ad esempio: *dominio\utente* o *%variabile%*.  
+   -   **Account**: specificare il nome utente e la password per l'account che dispone delle autorizzazioni per l'aggiunta al dominio specificato. Ad esempio: *dominio\utente* o *%variabile%*.  
 
-        > [!IMPORTANT]  
-        >  Se si prevede di migrare le impostazioni del dominio o le impostazioni del gruppo di lavoro, è necessario immettere le credenziali di dominio appropriate.  
+       > [!IMPORTANT]  
+       >  Se si prevede di migrare le impostazioni del dominio o le impostazioni del gruppo di lavoro, è necessario immettere le credenziali di dominio appropriate.  
 
-8.  Nella pagina **Installa Configuration Manager** specificare il pacchetto client di Configuration Manager contenente i file di origine per installare il client di Configuration Manager, aggiungere eventuali altre proprietà necessarie per installare il client e quindi fare clic su **Avanti**.  
+8. Nella pagina **Installa Configuration Manager** specificare il pacchetto client di Configuration Manager contenente i file di origine per installare il client di Configuration Manager, aggiungere eventuali altre proprietà necessarie per installare il client e quindi fare clic su **Avanti**.  
 
-     Per altre informazioni sulle proprietà utilizzabili per installare un client, vedere [Informazioni sulle proprietà di installazione del client ](../../core/clients/deploy/about-client-installation-properties.md).  
+    Per altre informazioni sulle proprietà utilizzabili per installare un client, vedere [Informazioni sulle proprietà di installazione del client ](../../core/clients/deploy/about-client-installation-properties.md).  
 
 9. Nella pagina **Includi aggiornamenti** specificare se installare gli aggiornamenti software necessari, tutti gli aggiornamenti software o nessun aggiornamento software e quindi fare clic su **Avanti**. Se si sceglie di installare gli aggiornamenti software, Configuration Manager installa solo quelli assegnati alle raccolte di cui il computer di destinazione è membro.  
 
@@ -117,21 +117,21 @@ Quando si usa una sequenza di attività per distribuire un sistema operativo in 
 
     -   **Creato da**: specificare il nome dell'utente che ha creato l'immagine del sistema operativo.  
 
-    -   **Versione**: specificare un numero di versione definito dall'utente da associare all'immagine del sistema operativo.  
+    -   **Versione**: specificare un numero di versione definita dall'utente associata all'immagine del sistema operativo.  
 
-    -   **Descrizione**: specificare una descrizione definita dall'utente dell'immagine del computer del sistema operativo.  
+    -   **Descrizione**: Specificare una descrizione definita dall'utente dell'immagine del computer del sistema operativo.  
 
 13. Nella pagina **Acquisisci immagine** specificare le seguenti impostazioni, quindi fare clic su **Avanti**.  
 
-    -   **Percorso**: specificare una cartella di rete condivisa in cui è archiviato il file di output con estensione WIM. Questo file contiene l'immagine del sistema operativo basata sulle impostazioni specificate usando questa procedura guidata. Se si specifica una cartella che contiene un file con estensione wim esistente, il file esistente viene sovrascritto.  
+    -   **Percorso**: specificare una cartella di rete condivisa in cui è archiviato il file di output con estensione wim. Questo file contiene l'immagine del sistema operativo basata sulle impostazioni specificate usando questa procedura guidata. Se si specifica una cartella che contiene un file con estensione wim esistente, il file esistente viene sovrascritto.  
 
-    -   **Account**: specificare l'account di Windows con le autorizzazioni per la condivisione di rete in cui viene archiviata l'immagine.  
+    -   **Account**: specificare l'account Windows con le autorizzazioni per la condivisione di rete in cui viene archiviata l'immagine.  
 
 14. Completare la procedura guidata.  
 
 15. Per aggiungere ulteriori passaggi alla sequenza attività, selezionare la sequenza attività creata e fare clic su **Modifica**. Per informazioni su come modificare una sequenza di attività, vedere [Modificare una sequenza di attività](manage-task-sequences-to-automate-tasks.md#BKMK_ModifyTaskSequence).  
 
- Distribuire la sequenza di attività in un computer di riferimento in uno dei modi seguenti:  
+    Distribuire la sequenza di attività in un computer di riferimento in uno dei modi seguenti:  
 
 -   Se il computer di riferimento è un client di Configuration Manager, è possibile distribuire la sequenza di attività di creazione e acquisizione nella raccolta che contiene il computer di riferimento. Per informazioni su come distribuire l'immagine del sistema operativo, vedere [Creare una sequenza di attività per installare un sistema operativo](create-a-task-sequence-to-install-an-operating-system.md).  
 
@@ -147,21 +147,21 @@ Quando si usa una sequenza di attività per distribuire un sistema operativo in 
 
 #### <a name="to-capture-an-operating-system-from-an-existing-reference-computer"></a>Per acquisire un sistema operativo da un computer di riferimento esistente  
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1. Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+2. Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea sequenza di attività** per avviare la Creazione guidata della sequenza di attività.  
+3. Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea sequenza di attività** per avviare la Creazione guidata della sequenza di attività.  
 
-4.  Nella pagina **Crea una nuova sequenza di attività** selezionare **Crea una nuova sequenza di attività personalizzata**.  
+4. Nella pagina **Crea una nuova sequenza di attività** selezionare **Crea una nuova sequenza di attività personalizzata**.  
 
-5.  Nella pagina **Informazioni sequenza di attività** specificare un nome e una descrizione per la sequenza di attività.  
+5. Nella pagina **Informazioni sequenza di attività** specificare un nome e una descrizione per la sequenza di attività.  
 
-6.  Specificare un'immagine di avvio per la sequenza di attività. Questa immagine di avvio viene usata per avviare il computer di riferimento con Windows PE.  Per altre informazioni, vedere [Gestire le immagini di avvio](../get-started/manage-boot-images.md).  
+6. Specificare un'immagine di avvio per la sequenza di attività. Questa immagine di avvio viene usata per avviare il computer di riferimento con Windows PE.  Per altre informazioni, vedere [Gestire le immagini di avvio](../get-started/manage-boot-images.md).  
 
-7.  Completare la procedura guidata.  
+7. Completare la procedura guidata.  
 
-8.  In **Sequenze di attività**selezionare la sequenza di attività personalizzata e quindi nella scheda **Home** , nel gruppo **Sequenza di attività** , fare clic su **Modifica** per aprire l'editor della sequenza di attività.  
+8. In **Sequenze di attività**selezionare la sequenza di attività personalizzata e quindi nella scheda **Home** , nel gruppo **Sequenza di attività** , fare clic su **Modifica** per aprire l'editor della sequenza di attività.  
 
 9. Usare questo passaggio solo se il client di Configuration Manager è installato nel computer di riferimento.  
 
@@ -174,17 +174,17 @@ Quando si usa una sequenza di attività per distribuire un sistema operativo in 
 
 11. Fare clic su **Aggiungi**, fare clic su **Immagini**e quindi su [Acquisisci immagine del sistema operativo](../understand/task-sequence-steps.md#BKMK_CaptureOperatingSystemImage).  Questo passaggio della sequenza di attività viene eseguito solo da Windows PE per acquisire le unità disco rigido nel computer di riferimento. Configurare le impostazioni seguenti per il passaggio della sequenza di attività.  
 
-    -   **Nome** e **Descrizione**: facoltativamente, è possibile modificare il nome del passaggio della sequenza di attività e fornire una descrizione.  
+    - **Nome** e **Descrizione**: facoltativamente, è possibile modificare il nome del passaggio della sequenza di attività e fornire una descrizione.  
 
-    -   **Destinazione**: specificare una cartella di rete condivisa in cui è archiviato il file WIM di output. Questo file contiene l'immagine del sistema operativo basata sulle impostazioni specificate usando questa procedura guidata. Se si specifica una cartella che contiene un file con estensione wim esistente, il file esistente viene sovrascritto.  
+    - **Destinazione**: specificare una cartella di rete condivisa in cui è archiviato il file di output con estensione wim. Questo file contiene l'immagine del sistema operativo basata sulle impostazioni specificate usando questa procedura guidata. Se si specifica una cartella che contiene un file con estensione wim esistente, il file esistente viene sovrascritto.  
 
-    -   **Descrizione**, **Versione**e **Creato da**: facoltativamente, fornire i dettagli relativi all'immagine che verrà acquisita.  
+    - **Descrizione**, **Versione** e **Creato da**: facoltativamente, fornire i dettagli relativi all'immagine che verrà acquisita.  
 
-    -   **Account**: specificare l'account di Windows con le autorizzazioni per la condivisione di rete specificata. Fare clic su **Imposta** per specificare il nome dell'account di Windows.  
+    - **Account di acquisizione dell'immagine del sistema operativo**: specificare l'account di Windows con autorizzazioni per la condivisione di rete specificata. Fare clic su **Imposta** per specificare il nome dell'account di Windows.  
 
-     Fare clic su **OK** per chiudere l'editor della sequenza di attività.  
+      Fare clic su **OK** per chiudere l'editor della sequenza di attività.  
 
- Distribuire la sequenza di attività in un computer di riferimento in uno dei modi seguenti:  
+    Distribuire la sequenza di attività in un computer di riferimento in uno dei modi seguenti:  
 
 -   Se il computer di riferimento è un client di Configuration Manager, è possibile distribuire la sequenza di attività nella raccolta che contiene il computer di riferimento. Per informazioni su come distribuire l'immagine del sistema operativo, vedere [Creare una sequenza di attività per installare un sistema operativo](create-a-task-sequence-to-install-an-operating-system.md).  
 

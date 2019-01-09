@@ -10,12 +10,12 @@ ms.assetid: 44153689-70e8-42ad-9ae8-17ae35f6a2e3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7251ac6bf623236492f0843b8562a06e547c9cb1
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: d9d9fd940c21e0fc8d20c86c51cb3443f21a9339
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32343685"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419449"
 ---
 # <a name="planning-for-client-deployment-to-linux-and-unix-computers-in-system-center-configuration-manager"></a>Pianificazione della distribuzione del client in computer Linux e UNIX in System Center Configuration Manager
 
@@ -23,19 +23,19 @@ ms.locfileid: "32343685"
 
 È possibile installare il client di System Center Configuration Manager nei computer che eseguono Linux o UNIX. Questo client è progettato per i server che funzionano come computer di gruppi di lavoro e il client non supporta l'interazione con gli utenti connessi. Dopo aver installato il software client e dopo che il client ha stabilito la comunicazione con il sito di Configuration Manager, gestire il client usando la console e i report di Configuration Manager.  
 
-> [!NOTE]  
+> [!NOTE]
 >  Il client di Configuration Manager per computer Linux e UNIX non supporta le funzionalità di gestione seguenti:  
->   
->  -   Installazione push client  
-> -   Distribuzione del sistema operativo  
-> -   Distribuzione di applicazioni; in alternativa, distribuire il software usando pacchetti e programmi.  
-> -   Inventario software  
-> -   Aggiornamenti software  
-> -   Impostazioni di conformità  
-> -   Controllo remoto  
-> -   Risparmio energia  
-> -   Controllo e correzione client dello stato client  
-> -   Gestione client basata su Internet  
+> 
+> - Installazione push client  
+>   -   Distribuzione del sistema operativo  
+>   -   Distribuzione di applicazioni; in alternativa, distribuire il software usando pacchetti e programmi.  
+>   -   Inventario software  
+>   -   Aggiornamenti software  
+>   -   Impostazioni di conformità  
+>   -   Controllo remoto  
+>   -   Risparmio energia  
+>   -   Controllo e correzione client dello stato client  
+>   -   Gestione client basata su Internet  
 
  Per informazioni sulle distribuzioni Linux e UNIX e per l'hardware necessario per supportare il client per Linux e UNIX, vedere [Hardware consigliato per System Center Configuration Manager](../../../../core/plan-design/configs/recommended-hardware.md).  
 
@@ -186,7 +186,7 @@ ms.locfileid: "32343685"
 |Punto di distribuzione|Il punto di distribuzione non è necessario per installare un client di Configuration Manager per Linux e UNIX. Tuttavia, il ruolo del sistema del sito è necessario se si distribuisce software per server Linux e UNIX.<br /><br /> Poiché il client di Configuration Manager per Linux e UNIX non supporta le comunicazioni che usano SMB, i punti di distribuzione usati con il client devono supportare la comunicazione HTTP o HTTPS.|  
 |Punto di stato di fallback|Il punto dello stato di fallback non è necessario per installare un client di Configuration Manager per Linux e UNIX. Il punto di stato di fallback consente tuttavia ai computer nel sito di Configuration Manager di inviare messaggi di stato quando non possono comunicare con un punto di gestione. Client può inoltre inviare lo stato dell'installazione per il punto di stato di fallback.|  
 
- **Firewall requisiti**: Assicurarsi che i firewall non blocchino le comunicazioni attraverso le porte specificate come porte di richiesta client. Il client per Linux e UNIX comunica direttamente con i punti di gestione, i punti di distribuzione e i punti di stato di fallback.  
+ **Requisiti firewall**: verificare che i firewall non blocchino le comunicazioni tra le porte specificate come porte di richiesta client. Il client per Linux e UNIX comunica direttamente con i punti di gestione, i punti di distribuzione e i punti di stato di fallback.  
 
  Per informazioni sulle comunicazioni client e sulle porte di richiesta, vedere  [Configurare il Client per Linux e UNIX individuare i punti di gestione](../../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md#BKMK_ConfigClientMP).  
 

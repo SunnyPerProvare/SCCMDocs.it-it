@@ -11,12 +11,12 @@ author: aczechowski
 robots: noindex,nofollow
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: f75c27ece3b9a8b490fb136a411a65ac4cbe2129
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a11abd53a83f52cbb05d2a49c3271becb4cedb64
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32339469"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420193"
 ---
 # <a name="capabilities-in-technical-preview-1601-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1601 per System Center Configuration Manager
 
@@ -79,11 +79,11 @@ Nella Technical Preview 1601 è stato aggiunto il supporto delle funzionalità s
 
     Per usare l'opzione, è necessario creare un criterio di conformità in Configuration Manager con le regole specifiche descritte di seguito e impostare un criterio di accesso condizionale nella console di Intune.  Inoltre, per assicurarsi che l'accesso sia consentito solo ai PC conformi, è necessario impostare il requisito PC Windows per l'opzione **I dispositivi devono essere conformi**. Di seguito sono descritte le regole dei criteri di conformità applicabili ai PC gestiti da System Center Configuration Manager.  
 
-    -   **Richiedi registrazione in Azure Active Directory:** questa regola controlla se il dispositivo dell'utente è aggiunto all'area di lavoro in Azure AD e in caso contrario il dispositivo viene registrato automaticamente in Azure AD. La registrazione automatica è supportata solo in Windows 8.1. Per i PC con Windows 7, distribuire un file MSI per eseguire la registrazione automatica. Per altre informazioni, vedere [qui](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
+    -   **Richiedi la registrazione in Azure Active Directory:** questa regola controlla se il dispositivo dell'utente è aggiunto all'area di lavoro in Azure AD e in caso contrario il dispositivo viene registrato automaticamente in Azure AD. La registrazione automatica è supportata solo in Windows 8.1. Per i PC con Windows 7, distribuire un file MSI per eseguire la registrazione automatica. Per altre informazioni, vedere [qui](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
 
-    -   **Tutti gli aggiornamenti richiesti installati con una scadenza maggiore di X giorni:** questa regola controlla se il dispositivo dell'utente dispone di tutti gli aggiornamenti necessari **specificati nella regola Richiedi aggiornamenti automatici** entro la scadenza e il periodo di tolleranza specificati dall'utente e installa automaticamente eventuali aggiornamenti necessari in sospeso.  
+    -   **Tutti gli aggiornamenti richiesti installati con una scadenza precedente a un determinato numero di giorni:** questa regola controlla se il dispositivo dell'utente ha tutti gli aggiornamenti necessari (specificati nella regola **Richiedi aggiornamenti automatici**) entro la scadenza e il periodo di tolleranza specificati dall'utente e installa automaticamente eventuali aggiornamenti necessari in sospeso.  
 
-    -   **Richiedi crittografia unità BitLocker**questo è un controllo per verificare se l'unità principale del dispositivo, ad esempio C:\\\, è crittografata con BitLocker. Se la crittografia Bitlocker non è attivata nel dispositivo primario, l'accesso alla posta elettronica e ai servizi di SharePoint è bloccato.  
+    -   **Richiedi crittografia unità BitLocker:** questo è un controllo per verificare se l'unità principale (ad esempio, C:\\) nel dispositivo è crittografata con BitLocker. Se la crittografia Bitlocker non è attivata nel dispositivo primario, l'accesso alla posta elettronica e ai servizi di SharePoint è bloccato.  
 
     -   **Richiedi antimalware:** questo è un controllo per verificare se il software antimalware (System Center Endpoint Protection o solo Windows Defender) è abilitato e in esecuzione.  
          Se non è abilitato, l'accesso alla posta elettronica e ai servizi di SharePoint è bloccato.  
@@ -94,7 +94,7 @@ Nella Technical Preview 1601 è stato aggiunto il supporto delle funzionalità s
 
     È stata aggiunta una nuova regola di conformità alla console di Configuration Manager che consente di specificare se l'accesso deve essere consentito o negato ai dispositivi in base al loro stato di integrità.  Per creare questa regola, aprire la **Creazione guidata criteri di conformità** e aggiungere una nuova regola.  Selezionare la condizione **Segnalato come integro dal servizio di attestazione dell'integrità** e impostare il valore su **True**.  Questo garantirà che solo i dispositivi segnalati come integri avranno accesso alle risorse aziendali. Per informazioni dettagliate sul servizio di attestazione dell'integrità e su come viene segnalata l'integrità dei dispositivi in Intune, vedere [Device Health Attestation](#bkmk_devicehealth) (Attestazione dell'integrità dei dispositivi).  
 
--   **Nuove impostazioni dei criteri di conformità:** le nuove impostazioni dei criteri di conformità consentono di migliorare la sicurezza e la protezione nei dispositivi utilizzati per accedere alla posta elettronica aziendale e ai servizi di SharePoint:  
+-   **Nuove impostazioni dei criteri di conformità:** le nuove impostazioni dei criteri di conformità consentono di migliorare la sicurezza e la protezione nei dispositivi usati per accedere alla posta elettronica aziendale e ai servizi di SharePoint:  
 
     -   **Richiedi aggiornamenti automatici:** è possibile richiedere ai dispositivi con Windows 8.1 o versione successiva di consentire l'installazione automatica degli aggiornamenti e anche di specificare la classe degli aggiornamenti installati.  È possibile scegliere di installare solo gli aggiornamenti contrassegnati come importanti o tutti gli aggiornamenti consigliati.  
 
@@ -110,7 +110,7 @@ Nella Technical Preview 1601 è stato aggiunto il supporto delle funzionalità s
 
          Per creare una regola per la password con cui sbloccare i dispositivi mobili, aprire la **Creazione guidata criteri di conformità** e aggiungere una nuova regola. Selezionare **Richiedi una password per sbloccare un dispositivo inattivo** come condizione e impostare il valore su **True**.  
 
-    -   **Minuti di inattività prima che venga richiesta la password:** specifica il tempo di inattività prima che l'utente debba immettere nuovamente la password.  
+    -   **Minuti di inattività prima che venga richiesta la password:**  Specifica il tempo di inattività prima che l'utente debba immettere nuovamente la password.  
 
          Per creare questa regola, aprire la **Creazione guidata criteri di conformità** e aggiungere una nuova regola. Selezionare **Minuti di inattività prima che venga richiesta la password** come condizione e impostare l'opzione su uno dei valori disponibili: 1 minuto, 5 minuti, 15 minuti, 30 minuti, 1 ora.  
 
@@ -119,7 +119,7 @@ Nella Technical Preview 1601 è stato aggiunto il supporto delle funzionalità s
      Quando si seleziona questa opzione, i dispositivi registrati in Intune e conformi ai criteri di conformità possono accedere a Exchange locale. Questa regola sostituisce la regola predefinita, ossia anche se si definisce per la regola predefinita l'impostazione per la quarantena o il blocco dell'accesso, i dispositivi registrati e conformi potranno accedere a Exchange locale.  
      Usare questa impostazione quando si vuole che i dispositivi registrati e conformi abbiano sempre accesso alla posta elettronica tramite Exchange locale.  
 
-     La funzione è supportata sulle seguenti piattaforme: Windows Phone 8 e versioni successive, iOS 6 e versioni successive. Android 4.0 e versioni successive, Samsung KNOX Standard 4.0 e versioni successive.  
+     Questa impostazione è supportata nelle piattaforme seguenti:  Windows Phone 8 e versioni successive, iOS 6 e versioni successive. Android 4.0 e versioni successive, Samsung KNOX Standard 4.0 e versioni successive.  
 
      Per usare questa opzione, vedere la pagina **Generale** della **Configurazione guidata dei criteri di accesso condizionale** per Exchange locale.  
 
@@ -144,17 +144,17 @@ Un client è online se è attualmente connesso a un ruolo del sistema del sito d
 
 ### <a name="to-view-client-online-status"></a>Per visualizzare lo stato online del client  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità > Panoramica > Dispositivi**.  
+1. Nella console di Configuration Manager fare clic su **Asset e conformità > Panoramica > Dispositivi**.  
 
-2.  Fare clic con il pulsante destro del mouse nell'intestazione di colonna e quindi fare clic su uno dei campi dello stato online del client per aggiungerlo alla visualizzazione del dispositivo. I campi sono  
+2. Fare clic con il pulsante destro del mouse nell'intestazione di colonna e quindi fare clic su uno dei campi dello stato online del client per aggiungerlo alla visualizzazione del dispositivo. I campi sono  
 
-    -   **Stato online dispositivo** indica se il client è attualmente online o offline.  
+   -   **Stato online dispositivo** indica se il client è attualmente online o offline.  
 
-    -   **Ora ultimo stato online** indica quando lo stato online del client è cambiato da offline a online.  
+   -   **Ora ultimo stato online** indica quando lo stato online del client è cambiato da offline a online.  
 
-    -   **Ora ultimo stato offline** indica quando lo stato è cambiato da online a offline.  
+   -   **Ora ultimo stato offline** indica quando lo stato è cambiato da online a offline.  
 
- Per visualizzare le modifiche più recenti allo stato del client, aggiornare la console.  
+   Per visualizzare le modifiche più recenti allo stato del client, aggiornare la console.  
 
 ##  <a name="bkmk_appmgmt1601"></a> Miglioramenti per la gestione delle applicazioni  
  Nella Technical Preview 1601 è stato aggiunto il supporto delle funzionalità seguenti:  

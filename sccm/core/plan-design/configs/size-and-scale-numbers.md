@@ -10,12 +10,12 @@ ms.assetid: c5a42100-2f60-4952-b495-918025ea6559
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: de8116e1fec500750e429edfb48303b8c24822f4
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 4e1ee76acca06534605e58fff27d2e7ec5e464dd
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384838"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424715"
 ---
 # <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Numeri di ridimensionamento e scalabilità per System Center Configuration Manager
 
@@ -43,11 +43,11 @@ I numeri del supporto si basano sull'uso dell'hardware consigliato per Configura
 
 ### <a name="primary-site"></a>Sito primario  
 
--   Ogni sito primario può supportare fino a 250 siti secondari.  
+- Ogni sito primario può supportare fino a 250 siti secondari.  
 
--   Il numero di siti secondari per il sito primario si basa su connessioni WAN (Wide Area Network) continuamente connesse e affidabili. Per i percorsi contenenti meno di 500 client, considerare un punto di distribuzione anziché un sito secondario.  
+- Il numero di siti secondari per il sito primario si basa su connessioni WAN (Wide Area Network) continuamente connesse e affidabili. Per i percorsi contenenti meno di 500 client, considerare un punto di distribuzione anziché un sito secondario.  
 
- Per informazioni sul numero di client e di dispositivi che un sito primario può supportare, vedere la sezione [Numero di client per siti e gerarchie](#bkmk_clientnumbers).  
+  Per informazioni sul numero di client e di dispositivi che un sito primario può supportare, vedere la sezione [Numero di client per siti e gerarchie](#bkmk_clientnumbers).  
 
 
 ### <a name="secondary-site"></a>Sito secondario  
@@ -135,14 +135,14 @@ Per altre informazioni, vedere [Prestazioni e scalabilità](/sccm/core/clients/m
 
 ### <a name="management-point"></a>Punto di gestione  
 
--   Ogni sito primario supporta fino a 15 punti di gestione.  
+- Ogni sito primario supporta fino a 15 punti di gestione.  
 
-    > [!TIP]  
-    >  Non installare punti di gestione in server che usano un collegamento lento dal server del sito primario o dal server di database del sito.  
+  > [!TIP]  
+  >  Non installare punti di gestione in server che usano un collegamento lento dal server del sito primario o dal server di database del sito.  
 
--   Ciascun sito secondario supporta un unico punto di gestione che deve essere installato nel server del sito secondario.  
+- Ciascun sito secondario supporta un unico punto di gestione che deve essere installato nel server del sito secondario.  
 
- Per informazioni sul numero di client e dispositivi che un punto di gestione può supportare, vedere la sezione [Punti di gestione](#bkmk_mp).  
+  Per informazioni sul numero di client e dispositivi che un punto di gestione può supportare, vedere la sezione [Punti di gestione](#bkmk_mp).  
 
 
 ### <a name="software-update-point"></a>Punto di aggiornamento software  
@@ -160,17 +160,17 @@ Per altre informazioni, vedere [Prestazioni e scalabilità](/sccm/core/clients/m
 ###  <a name="bkmk_cas"></a> Gerarchia con un sito di amministrazione centrale  
 Un sito di amministrazione centrale supporta un numero totale di dispositivi che comprende fino al numero di dispositivi elencati per i tre gruppi seguenti:  
 
--   700.000 desktop (computer che eseguono Windows, Linux e UNIX). Vedere anche il supporto per i [dispositivi integrati](#embedded).
+- 700.000 desktop (computer che eseguono Windows, Linux e UNIX). Vedere anche il supporto per i [dispositivi integrati](#embedded).
 
--   25.000 dispositivi che eseguono Mac e Windows CE 7.0  
+- 25.000 dispositivi che eseguono Mac e Windows CE 7.0  
 
--   Uno dei gruppi seguenti, a seconda del modo in cui la distribuzione supporta la gestione di dispositivi mobili (MDM):  
+- Uno dei gruppi seguenti, a seconda del modo in cui la distribuzione supporta la gestione di dispositivi mobili (MDM):  
 
-    -   100.000 dispositivi gestiti con software MDM locale  
+  -   100.000 dispositivi gestiti con software MDM locale  
 
-    -   300.000 dispositivi basati sul cloud  
+  -   300.000 dispositivi basati sul cloud  
 
- Ad esempio, in una gerarchia è possibile supportare 700.000 desktop, fino a 25.000 dispositivi Mac e Windows CE 7.0 e fino a 300.000 dispositivi basati su cloud quando si integra Microsoft Intune. Questa gerarchia supporta un totale di 1.025.000 dispositivi. Se si supportano dispositivi gestiti tramite software MDM locale, il totale per questa gerarchia è 825.000 dispositivi.  
+  Ad esempio, in una gerarchia è possibile supportare 700.000 desktop, fino a 25.000 dispositivi Mac e Windows CE 7.0 e fino a 300.000 dispositivi basati su cloud quando si integra Microsoft Intune. Questa gerarchia supporta un totale di 1.025.000 dispositivi. Se si supportano dispositivi gestiti tramite software MDM locale, il totale per questa gerarchia è 825.000 dispositivi.  
 
 > [!IMPORTANT]  
 >  In una gerarchia in cui il sito di amministrazione centrale usa un'edizione Standard di SQL Server, la gerarchia supporta un massimo di 50.000 desktop e dispositivi. Per supportare più di 50.000 desktop e dispositivi è necessario usare un'edizione Enterprise di SQL Server. Questo requisito si applica solo a un sito di amministrazione centrale. Non si applica a un sito primario autonomo o un sito primario figlio. L'edizione di SQL Server in uso per un sito primario non limita la sua capacità di supportare il numero dichiarato di client.   

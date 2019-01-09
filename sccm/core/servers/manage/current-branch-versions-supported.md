@@ -10,12 +10,12 @@ ms.assetid: 35b5baec-d313-46aa-9d14-c443aa0d6c09
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: dd8116bc74f855fff956d0bb201691c741a6d351
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: c5d3635ee6d1ed4e9c3819e2cffc3ee5028953f5
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52455989"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422199"
 ---
 # <a name="support-for-configuration-manager-current-branch-versions"></a>Supporto per le versioni Current Branch di Configuration Manager
 
@@ -23,12 +23,12 @@ ms.locfileid: "52455989"
 
 Microsoft prevede di rilasciare diversi aggiornamenti per le versioni Current Branch di Configuration Manager ogni anno. Per le versioni di Configuration Manager precedenti alla 1710, il supporto è per 12 mesi. A partire dalla versione 1710, ogni versione di aggiornamento continua a essere supportata per 18 mesi dalla data in cui viene resa disponibile a livello generale. Microsoft fornisce il supporto tecnico per l'intero periodo. Ci sono due fasi di manutenzione distinte che dipendono dalla disponibilità della versione Current Branch più recente.  
 
--   Fase di manutenzione **Aggiornamenti di sicurezza e critici**: quando si esegue la versione Current Branch più recente di Configuration Manager si ricevono sia gli aggiornamenti critici che gli aggiornamenti di sicurezza.  
+- Fase di manutenzione **Aggiornamenti di sicurezza e critici**: quando si esegue la versione Current Branch più recente di Configuration Manager si ricevono sia gli aggiornamenti critici che gli aggiornamenti di sicurezza.  
 
--   Fase di manutenzione **Aggiornamenti della sicurezza (solo)**: quando viene resa disponibile una nuova versione Current Branch, Microsoft supporta solo gli aggiornamenti della sicurezza per le versioni precedenti per il ciclo di vita di supporto rimanente per tali versioni (mostrato nella figura 1).  
+- Fase di manutenzione **Aggiornamenti della sicurezza (solo)**: quando viene resa disponibile una nuova versione Current Branch, Microsoft supporta solo gli aggiornamenti della sicurezza per le versioni precedenti per il ciclo di vita di supporto rimanente per tali versioni (mostrato nella figura 1).  
 
- ![Immagine della sequenza temporale per la manutenzione e il supporto di Configuration Manager](media/CM_Servicing_support_timeline1.png)  
-Figura 1. Esempio di sovrapposizione del ciclo di rilascio per il supporto della manutenzione della versione Current Branch. Questo esempio ha il solo scopo di illustrare il ciclo e non rappresenta le date di rilascio effettive o previste.
+  ![Immagine della sequenza temporale per la manutenzione e il supporto di Configuration Manager](media/CM_Servicing_support_timeline1.png)  
+  Figura 1. Esempio di sovrapposizione del ciclo di rilascio per il supporto della manutenzione della versione Current Branch. Questo esempio ha il solo scopo di illustrare il ciclo e non rappresenta le date di rilascio effettive o previste.
 
 > [!NOTE]  
 >  La versione Current Branch più recente è sempre nella fase di manutenzione **Aggiornamenti di sicurezza e critici**. Questo significa che, nel caso in cui venga rilevato un errore del codice che richiede un aggiornamento critico, è necessario che sia installata la versione Current Branch più recente per ricevere una correzione. Tutte le altre versioni Current Branch supportate sono idonee a ricevere gli aggiornamenti della sicurezza.

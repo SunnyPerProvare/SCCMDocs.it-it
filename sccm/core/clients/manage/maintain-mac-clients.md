@@ -10,12 +10,12 @@ ms.assetid: cf6337a2-700c-47f3-b6f8-5814f9b81e59
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 32d36f041ed42ef0afa8fe0c0e052389587a2c8f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 337df4d64b6edda589344b52a100e5a90381676c
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335219"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421196"
 ---
 # <a name="maintain-mac-clients"></a>Gestire i client Mac
 *Si applica a: System Center Configuration Manager (Current Branch)*
@@ -44,26 +44,26 @@ Di seguito sono illustrate le procedure per disinstallare i client Mac e rinnova
 
 ###  <a name="renew-certificate-wizard"></a>Rinnovo guidato del certificato  
 
-1.  Configurare i valori seguenti come *stringhe* nel file ccmclient.plist che specifica quando aprire il Rinnovo guidato del certificato:  
+1. Configurare i valori seguenti come *stringhe* nel file ccmclient.plist che specifica quando aprire il Rinnovo guidato del certificato:  
 
- -   **RenewalPeriod1**: specifica, in secondi, il primo periodo di rinnovo in cui gli utenti possono rinnovare il certificato. Il valore predefinito è 3888000 secondi (45 giorni). Non configurare un valore inferiore a 300, poiché il periodo sarà ripristinato sul valore predefinito. 
+   - **RenewalPeriod1**: specifica, in secondi, il primo periodo di rinnovo in cui gli utenti possono rinnovare il certificato. Il valore predefinito è 3888000 secondi (45 giorni). Non configurare un valore inferiore a 300, poiché il periodo sarà ripristinato sul valore predefinito. 
 
- -   **RenewalPeriod2**: specifica, in secondi, il secondo periodo di rinnovo in cui gli utenti possono rinnovare il certificato. Il valore predefinito è 259200 secondi (3 giorni). Se il valore viene configurato, è superiore o uguale a 300 secondi ed è inferiore o uguale a **RenewalPeriod1**, il valore sarà usato. Se **RenewalPeriod1** è maggiore di 3 giorni, verrà usato un valore di 3 giorni per **RenewalPeriod2**.  Se **RenewalPeriod1** è minore di 3 giorni, **RenewalPeriod2** viene impostato sullo stesso valore di **RenewalPeriod1**.  
+   - **RenewalPeriod2**: specifica, in secondi, il secondo periodo di rinnovo in cui gli utenti possono rinnovare il certificato. Il valore predefinito è 259200 secondi (3 giorni). Se il valore viene configurato, è superiore o uguale a 300 secondi ed è inferiore o uguale a **RenewalPeriod1**, il valore sarà usato. Se **RenewalPeriod1** è maggiore di 3 giorni, verrà usato un valore di 3 giorni per **RenewalPeriod2**.  Se **RenewalPeriod1** è minore di 3 giorni, **RenewalPeriod2** viene impostato sullo stesso valore di **RenewalPeriod1**.  
 
- -   **RenewalReminderInterval1**: specifica, in secondi, la frequenza con la quale la procedura guidata di rinnovo certificato verrà presentata agli utenti durante il primo periodo di rinnovo. Il valore predefinito è 86.400 secondi (1 giorno). Se **RenewalReminderInterval1** è superiore a 300 secondi e inferiore al valore configurato per **RenewalPeriod1**, verrà usato il valore configurato. In caso contrario, verrà usato il valore predefinito di 1 giorno.  
+   - **RenewalReminderInterval1**: specifica, in secondi, la frequenza con la quale la procedura guidata di rinnovo certificato verrà presentata agli utenti durante il primo periodo di rinnovo. Il valore predefinito è 86.400 secondi (1 giorno). Se **RenewalReminderInterval1** è superiore a 300 secondi e inferiore al valore configurato per **RenewalPeriod1**, verrà usato il valore configurato. In caso contrario, verrà usato il valore predefinito di 1 giorno.  
 
- -   **RenewalReminderInterval2**: specifica, in secondi, la frequenza con la quale la procedura guidata di rinnovo del certificato verrà presentata agli utenti durante il secondo periodo di rinnovo. Il valore predefinito è 28.800 secondi (8 ore). Se **RenewalReminderInterval2** è superiore a 300 secondi, inferiore o uguale a **RenewalReminderInterval1** e inferiore o uguale a **RenewalPeriod2**, verrà usato il valore configurato. In caso contrario, verrà usato un valore di 8 ore.  
+   - **RenewalReminderInterval2**: specifica, in secondi, la frequenza con la quale la procedura guidata di rinnovo del certificato verrà presentata agli utenti durante il secondo periodo di rinnovo. Il valore predefinito è 28.800 secondi (8 ore). Se **RenewalReminderInterval2** è superiore a 300 secondi, inferiore o uguale a **RenewalReminderInterval1** e inferiore o uguale a **RenewalPeriod2**, verrà usato il valore configurato. In caso contrario, verrà usato un valore di 8 ore.  
 
-     **Esempio** : se vengono mantenuti i valori predefiniti, 45 giorni prima della scadenza del certificato la procedura guidata verrà avviata ogni 24 ore.  Entro 3 giorni del certificato in scadenza, la procedura guidata si aprirà ogni 8 ore.  
+     **Esempio:** Se vengono mantenuti i valori predefiniti, 45 giorni prima della scadenza del certificato, la procedura guidata si aprirà ogni 24 ore.  Entro 3 giorni del certificato in scadenza, la procedura guidata si aprirà ogni 8 ore.  
 
-     **Esempio:** usare la riga di comando seguente o uno script per impostare il primo periodo di rinnovo su 20 giorni.  
+     **Esempio:** utilizzare la seguente riga di comando o uno script per impostare il primo periodo di rinnovo a 20 giorni.  
 
      `sudo defaults write com.microsoft.ccmclient RenewalPeriod1 1728000`  
 
-2.  Quando si apre il Rinnovo guidato del certificato, i campi **Nome utente** e **Nome server** vengono solitamente prepopolati e l'utente deve soltanto immettere una password per rinnovare il certificato.  
+2. Quando si apre il Rinnovo guidato del certificato, i campi **Nome utente** e **Nome server** vengono solitamente prepopolati e l'utente deve soltanto immettere una password per rinnovare il certificato.  
 
-    > [!NOTE]  
-    >  Se la procedura guidata non si apre oppure se questa viene chiusa in modo accidentale, fare clic su **Rinnova** dalla pagina delle preferenze **Configuration Manager** per aprire la procedura guidata.  
+   > [!NOTE]  
+   >  Se la procedura guidata non si apre oppure se questa viene chiusa in modo accidentale, fare clic su **Rinnova** dalla pagina delle preferenze **Configuration Manager** per aprire la procedura guidata.  
 
 ###  <a name="renew-certificate-manually"></a>Rinnovo manuale del certificato  
  Il periodo di validità tipico per il certificato client Mac è 1 anno. Configuration Manager non rinnova automaticamente il certificato utente richiesto durante la registrazione, perciò è necessario usare la procedura seguente per rinnovare il certificato manualmente.  
@@ -120,7 +120,7 @@ Di seguito sono illustrate le procedure per disinstallare i client Mac e rinnova
 
     -   **Nome:Rimuovere SMSID per Mac**  
 
-    -   **Impostazione selezionata:** fare clic su **Sfoglia** e selezionare lo script di individuazione specificato in precedenza.  
+    -   **Impostazione selezionata:** scegliere **Sfoglia**, quindi selezionare lo script di individuazione specificato in precedenza.  
 
     -   Nel campo **i seguenti valori** immettere **Il dominio/coppia predefinita di (com.microsoft.ccmclient, SMSID) non esiste**.  
 

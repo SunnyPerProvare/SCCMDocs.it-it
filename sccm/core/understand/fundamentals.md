@@ -10,12 +10,12 @@ ms.assetid: cc4cdb35-f0b4-42b5-9cec-6431a8c30793
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6bd134857f53157e4ea81d46ff1a36693d7366ca
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: e29042aa4c6d335189c929eef6f2a19700681246
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335185"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422267"
 ---
 # <a name="fundamentals-of-system-center-configuration-manager"></a>Nozioni fondamentali su System Center Configuration Manager
 
@@ -27,11 +27,11 @@ Se si usa System Center Configuration Manager per la prima volta, leggere gli ar
 
  La distribuzione di Configuration Manager comporta anche la distribuzione di uno o più siti:  
 
--   **Quando si distribuiscono più siti**, i siti formano relazioni padre-figlio che vengono chiamate collettivamente gerarchia. Usare una gerarchia per gestire in modo centralizzato un numero elevato di siti e dispositivi.  I dati e le informazioni passano ai livelli inferiori della gerarchia per raggiungere i dispositivi gestiti. Le informazioni sui dispositivi e i risultati delle richieste e delle attività di configurazione passano ai livelli superiori della gerarchia.  
+- **Quando si distribuiscono più siti**, i siti formano relazioni padre-figlio che vengono chiamate collettivamente gerarchia. Usare una gerarchia per gestire in modo centralizzato un numero elevato di siti e dispositivi.  I dati e le informazioni passano ai livelli inferiori della gerarchia per raggiungere i dispositivi gestiti. Le informazioni sui dispositivi e i risultati delle richieste e delle attività di configurazione passano ai livelli superiori della gerarchia.  
 
--   **Quando si distribuisce un singolo sito**, anche in questo caso si parla di una gerarchia.  
+- **Quando si distribuisce un singolo sito**, anche in questo caso si parla di una gerarchia.  
 
- Alcune attività e impostazioni di configurazione si applicano a tutti i siti in una gerarchia, mentre altre si applicano a singoli siti.  
+  Alcune attività e impostazioni di configurazione si applicano a tutti i siti in una gerarchia, mentre altre si applicano a singoli siti.  
 
 ## <a name="fundamental-concepts-for-system-center-configuration-manager"></a>Concetti fondamentali relativi a System Center Configuration Manager
 Visualizzare gli argomenti seguenti per informazioni sui concetti fondamentali relativi a System Center Configuration Manager:  

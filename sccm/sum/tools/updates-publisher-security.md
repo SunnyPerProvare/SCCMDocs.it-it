@@ -11,18 +11,18 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: b3ce22747cddc1371fb38718cc97b70cda8afcb1
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 3632cbf8a512ef39413685f29b769e133fbcee40
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353604"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53424298"
 ---
 # <a name="manage-certificates-and-security-for-updates-publisher"></a>Gestire certificati e sicurezza per Updates Publisher
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Le procedure seguenti consentono di configurare l'archivio certificati nel server di aggiornamento, configurare un certificato autofirmato nel computer client e configurare Criteri di gruppo per consentire all'agente di Windows Update di analizzare gli aggiornamento pubblicati.
+Le procedure seguenti consentono di configurare l'archivio certificati nel server di aggiornamento, configurare un certificato autofirmato nel computer client e configurare Criteri di gruppo per consentire all'agente di Windows Update installato nei computer di analizzare gli aggiornamenti pubblicati.
 
 ## <a name="configure-the-certificate-store-on-the-update-server"></a>Configurare l'archivio certificati nel server di aggiornamento
  Updates Publisher usa un certificato digitale per firmare gli aggiornamenti nei cataloghi che pubblica. Affinché un catalogo possa essere pubblicato nel server di aggiornamento, è necessario che il certificato si trovi nell'archivio certificati del server di aggiornamento e nell'archivio certificati del computer con Updates Publisher, se tale computer è remoto rispetto al server di aggiornamento.
@@ -60,29 +60,29 @@ Nei computer client, l'agente di Windows Update (WUA) esegue la scansione degli 
 Di seguito è riportato un esempio di come configurare il certificato di firma nei computer client.
 
 ### <a name="to-configure-a-self-signing-certificate-on-client-computers"></a>Per configurare un certificato autofirmato nei computer client
-1.  In un computer con accesso al server di aggiornamento fare clic su **Avvia** e quindi su **Esegui**, digitare **MMC** nella casella di testo e quindi fare clic su **OK** per aprire Microsoft Management Console (MMC).
+1. In un computer con accesso al server di aggiornamento fare clic su **Avvia** e quindi su **Esegui**, digitare **MMC** nella casella di testo e quindi fare clic su **OK** per aprire Microsoft Management Console (MMC).
 
-2.  Fare clic su **File**, **Aggiungi/Rimuovi snap-in**, **Aggiungi**, **Certificati**, **Aggiungi**, selezionare **Account del computer** e quindi fare clic su **Avanti**.
+2. Fare clic su **File**, **Aggiungi/Rimuovi snap-in**, **Aggiungi**, **Certificati**, **Aggiungi**, selezionare **Account del computer** e quindi fare clic su **Avanti**.
 
-3.  Selezionare **Another computer** (Altro computer), digitare il nome del server di aggiornamento o fare clic su **Sfoglia** per trovare il server di aggiornamento, fare clic su **Fine**, **Chiudi** e quindi fare clic su **OK**.
+3. Selezionare **Another computer** (Altro computer), digitare il nome del server di aggiornamento o fare clic su **Sfoglia** per trovare il server di aggiornamento, fare clic su **Fine**, **Chiudi** e quindi fare clic su **OK**.
 
-4.  Espandere **Certificati (*nome server di aggiornamento*)**, espandere **WSUS** e quindi fare clic su **Certificati**.
+4. Espandere **Certificati (*nome server di aggiornamento*)**, espandere **WSUS** e quindi fare clic su **Certificati**.
 
-5.  Fare clic con il pulsante destro del mouse nel riquadro dei risultati, fare clic su **All Tasks** (Tutte le attività) e quindi fare clic su **Esporta**. Completare l'**Esportazione guidata certificati** usando le impostazioni predefinite per creare un certificato di esportazione con il nome e il percorso specificati nella procedura guidata.
+5. Fare clic con il pulsante destro del mouse nel riquadro dei risultati, fare clic su **All Tasks** (Tutte le attività) e quindi fare clic su **Esporta**. Completare l'**Esportazione guidata certificati** usando le impostazioni predefinite per creare un certificato di esportazione con il nome e il percorso specificati nella procedura guidata.
 
-6.  Usare uno dei metodi seguenti per aggiungere il certificato usato per firmare il catalogo di aggiornamenti in ogni computer client che userà l'agente di Windows Update per l'analisi degli aggiornamenti nel catalogo. Aggiungere il certificato al computer client seguendo questa procedura:
+6. Usare uno dei metodi seguenti per aggiungere il certificato usato per firmare il catalogo di aggiornamenti in ogni computer client che userà l'agente di Windows Update per l'analisi degli aggiornamenti nel catalogo. Aggiungere il certificato al computer client seguendo questa procedura:
 
-    -   Per i certificati autofirmati: aggiungere il certificato alle **Autorità di certificazione radice attendibili** e all'archivio certificati **Autori attendibili**.
+   -   Per i certificati autofirmati: aggiungere il certificato agli archivi certificati **Autorità di certificazione radice disponibile nell'elenco locale** e **Autori attendibili**.
 
-    -   Per i certificati emessi dall'autorità di certificazione: aggiungere il certificato all'archivio certificati **Autori attendibili**.
+   -   Per i certificati emessi dall'autorità di certificazione: aggiungere il certificato all'archivio certificati **Autori attendibili**.
 
-    > [!NOTE]
-    > L'agente di Windows Update verifica se l'impostazione di Criteri di gruppo **Allow signed content from intranet Microsoft update service location** (Consenti contenuto firmato dal percorso del servizio di aggiornamento Microsoft nella rete Intranet) è abilitata nel computer locale. È necessario abilitare questa impostazione dei criteri per l'agente di Windows Update affinché venga eseguita la scansione degli aggiornamenti che sono stati creati e pubblicati con Updates Publisher. Per altre informazioni sull'abilitazione di questa impostazione di Criteri di gruppo, vedere [Come configurare Criteri di gruppo sui computer client] (https://technet.microsoft.com/library/bb530967.aspx(d=robot).
+   > [!NOTE]
+   > L'agente di Windows Update verifica se l'impostazione di Criteri di gruppo **Allow signed content from intranet Microsoft update service location** (Consenti contenuto firmato dal percorso del servizio di aggiornamento Microsoft nella rete Intranet) è abilitata nel computer locale. È necessario abilitare questa impostazione dei criteri per l'agente di Windows Update affinché venga eseguita la scansione degli aggiornamenti che sono stati creati e pubblicati con Updates Publisher. Per altre informazioni sull'abilitazione di questa impostazione di Criteri di gruppo, vedere [Come configurare Criteri di gruppo sui computer client](<https://technet.microsoft.com/library/bb530967.aspx(d=robot>).
 
 
 
-## <a name="configuring-group-policy-to-allow-wua-on-computers-to-scan-for-published-updates"></a>Configurazione di Criteri di gruppo per consentire all'agente di Windows Update installato nei computer di analizzare gli aggiornamenti pubblicati
-Prima che l'agente di Windows Update analizzi gli aggiornamenti creati e pubblicati con Updates Publisher, è necessario abilitare un'impostazione dei criteri per consentire contenuto firmato dal percorso del servizio di aggiornamento Microsoft nella rete Intranet. Quando l'impostazione dei criteri viene abilitata, l'agente di Windows Update accetterà gli aggiornamenti ricevuti tramite un percorso Intranet se tali aggiornamenti sono firmati nell'archivio certificati **Autori attendibili** sul computer locale. Sono disponibili diversi metodi per configurare Criteri di gruppo nei computer dell'ambiente in uso.
+## <a name="configuring-group-policy-to-allow-wuaon-computers-to-scan-for-published-updates"></a>Configurazione di Criteri di gruppo per consentire all'agente di Windows Update installato nei computer di analizzare gli aggiornamenti pubblicati
+Prima che l'agente di Windows Update installato nei computer analizzi gli aggiornamenti creati e pubblicati con Updates Publisher, è necessario abilitare un'impostazione dei criteri per consentire contenuto firmato dal percorso del servizio di aggiornamento Microsoft nella rete Intranet. Quando l'impostazione dei criteri viene abilitata, l'agente di Windows Update accetterà gli aggiornamenti ricevuti tramite un percorso Intranet se tali aggiornamenti sono firmati nell'archivio certificati **Autori attendibili** nel computer locale. Sono disponibili diversi metodi per configurare Criteri di gruppo nei computer dell'ambiente in uso.
 
 Per i computer che non si trovano nel dominio, è possibile configurare una chiave del Registro di sistema che consenta contenuto firmato dal percorso del servizio di aggiornamento Microsoft nella rete Intranet.
 

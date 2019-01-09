@@ -2,7 +2,7 @@
 title: Novità della versione 1810
 titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1810 di Configuration Manager (Current Branch).
-ms.date: 11/27/2018
+ms.date: 12/20/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 4812324b-e6aa-4431-bf1d-9fcd763a8caa
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 80c4798a93d2424759b85b7d8fe106b9251714a4
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: f93b9c7e96c66fd2279d8d6e42f605a763c75025
+ms.sourcegitcommit: 81e3666c41eb976cc7651854042dafe219e2e467
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52458179"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53747144"
 ---
 # <a name="whats-new-in-version-1810-of-configuration-manager-current-branch"></a>Novità della versione 1810 di Configuration Manager (Current Branch)
 
@@ -28,9 +28,9 @@ Esaminare sempre l'elenco di controllo più recente per installare questo aggior
 > [!Note]  
 > Questo articolo elenca tutte le funzionalità importanti di questa versione al momento. Tuttavia, non tutte le sezioni sono ancora collegate al contenuto aggiornato con maggiori informazioni sulle nuove funzionalità. Continuare a controllare questa pagina con regolarità per verificare la disponibilità di aggiornamenti. Le modifiche sono contrassegnate con il tag ***[Aggiornato]***. Questa nota sarà rimossa nella versione finale del contenuto.  
 
-<!--
-Aside from new features, this release also includes additional changes such as bug fixes. For more information, see [Summary of changes in Configuration Manager current branch, version 1810](https://support.microsoft.com/help/4459701).
+A parte le nuove funzionalità, questa versione include anche ulteriori modifiche, ad esempio correzioni di bug. Per altre informazioni, vedere [Riepilogo delle modifiche in Configuration Manager Current Branch, versione 1810](https://support.microsoft.com/help/4482169).
 
+<!--
 For more information on changes to the Windows PowerShell cmdlets for Configuration Manager, see [PowerShell 1810 Release Notes](https://docs.microsoft.com/powershell/sccm/1810_release_notes?view=sccm-ps).
 
 The following additional updates to this release are also now available:
@@ -81,9 +81,9 @@ Quando si installa la versione 1810 o si esegue l'aggiornamento a questa version
 
 - **Pulizia rilevamento modifiche di SQL**: un nuovo controllo se il database del sito ha un backlog di dati di rilevamento modifiche di SQL. Per altre informazioni, inclusa una procedura per verificare e cancellare il backlog, vedere [SQL change tracking cleanup](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#bkmk_changetracking) (Pulizia rilevamento modifiche di SQL). <!--SCCMDocs-pr issue 3023-->  
 
-<!-- - **SQL Native Client version**: This prerequisite check is updated for versions of SQL Native Client that support TLS 1.2. The minimum version is 11.4.7001.0. For more information, see [SQL Native Client version](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#sql-native-client). <!--SCCMDocs-pr issue 3094->  
- -->
-- **Sistema del sito nel nodo del cluster Windows**: il processo di installazione di Configuration Manager non blocca più l'installazione del ruolo del server del sito in un computer con il ruolo Windows per il clustering di failover. Poiché SQL Always On richiede questo ruolo, non era possibile in precedenza inserire il database del sito nel server del sito. Con questa modifica, è possibile creare un sito a disponibilità elevata con un minor numero di server usando SQL Always On e un server del sito in modalità passiva. Per altre informazioni, vedere [Cluster di failover Windows](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#windows-failover-cluster). <!--1359132-->  
+- **Versione di SQL Native Client**: questo controllo prerequisiti è aggiornato per le versioni di SQL Native Client che supportano TLS 1.2. La versione minima è [SQL 2012 SP4](https://www.microsoft.com/download/details.aspx?id=50402). Per altre informazioni, vedere [Versione di SQL Native Client](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#sql-native-client). <!--SCCMDocs-pr issue 3094->  
+
+- **Sistema del sito nel nodo del cluster Windows**: Il processo di installazione di Configuration Manager non blocca più l'installazione del ruolo del server del sito in un computer con il ruolo Windows per il clustering di failover. Poiché SQL Always On richiede questo ruolo, non era possibile in precedenza inserire il database del sito nel server del sito. Con questa modifica, è possibile creare un sito a disponibilità elevata con un minor numero di server usando SQL Always On e un server del sito in modalità passiva. Per altre informazioni, vedere [Cluster di failover Windows](/sccm/core/servers/deploy/install/list-of-prerequisite-checks#windows-failover-cluster). <!--1359132-->  
 
 
 
@@ -104,9 +104,9 @@ Per altre informazioni, vedere [Client notifications](/sccm/core/clients/manage/
 ### <a name="new-boundary-group-options"></a>Nuove opzioni del gruppo di limiti
 <!--1358749--> Sono ora disponibili le impostazioni aggiuntive seguenti per i gruppi di limiti per offrire maggiore controllo sulla distribuzione di contenuti nell'ambiente:
 
-- **Preferisci i punti di distribuzione rispetto ai peer entro la stessa subnet**: per impostazione predefinita, il punto di gestione classifica le origini di peer cache in cima all'elenco delle posizioni dei contenuti. Questa impostazione inverte tale priorità per i client che si trovano nella stessa subnet dell'origine di peer cache.  
+- **Preferisci i punti di distribuzione rispetto ai peer entro la stessa subnet**: Per impostazione predefinita, il punto di gestione classifica le origini di peer cache in cima all'elenco delle posizioni dei contenuti. Questa impostazione inverte tale priorità per i client che si trovano nella stessa subnet dell'origine di peer cache.  
 
-- **Prefer cloud distribution points over distribution points** (Preferisci i punti di distribuzione cloud rispetto ai punti di distribuzione): se è presente una succursale con un collegamento Internet più veloce, è possibile classificare in ordine di priorità i contenuti cloud.  
+- **Preferisci i punti di distribuzione cloud rispetto ai punti di distribuzione**: Se è presente una succursale con un collegamento Internet più veloce, è possibile classificare in ordine di priorità i contenuti cloud.  
 
 Per altre informazioni, vedere [Opzioni del gruppo di limiti per download peer](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgoptions).
 
@@ -213,7 +213,7 @@ Un profilo di PowerShell è uno script che viene eseguito all'avvio di PowerShel
 ### <a name="task-sequence-support-of-windows-autopilot-for-existing-devices"></a>Supporto della sequenza di attività di Windows Autopilot per i dispositivi esistenti
 <!--1358333-->
 
-[Windows Autopilot per i dispositivi esistenti](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) è ora disponibile con Windows 10 Insider Preview. Questa nuova funzionalità consente di ricreare l'immagine ed eseguire il provisioning di un dispositivo Windows 7 per la [modalità definita dall'utente di Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven) usando una singola sequenza di attività nativa di Configuration Manager. 
+[Windows Autopilot per i dispositivi esistenti](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) è ora disponibile con Windows 10 Insider Preview versione 1809 o successiva. Questa nuova funzionalità consente di ricreare l'immagine ed eseguire il provisioning di un dispositivo Windows 7 per la [modalità definita dall'utente di Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven) usando una singola sequenza di attività nativa di Configuration Manager. 
 
 <!--For more information, see []().--> 
 
@@ -310,13 +310,13 @@ Per altre informazioni, vedere [Support Center](/sccm/core/support/support-cente
 
 Il nodo **Informazioni dettagliate sulla gestione** include ora un dashboard grafico. Questo dashboard visualizza una panoramica degli stati delle regole che rende più semplice visualizzare lo stato di avanzamento. Il dashboard include i riquadri seguenti:
 
-- **Management insights index** (Indice informazioni dettagliate sulla gestione): registra l'avanzamento generale delle regole delle informazioni dettagliate sulla gestione. L'indice è una media ponderata. Le regole critiche hanno maggior valore. Questo indice assegna il minor peso alle regole facoltative.  
+- **Indice informazioni dettagliate sulla gestione**: registra l'avanzamento generale delle regole delle informazioni dettagliate sulla gestione. L'indice è una media ponderata. Le regole critiche hanno maggior valore. Questo indice assegna il minor peso alle regole facoltative.  
 
 - **Gruppi di informazioni dettagliate sulla gestione**: visualizza la percentuale di regole di ogni gruppo.  
 
 - **Priorità delle informazioni dettagliate sulla gestione**: visualizza la percentuale di regole in ordine di priorità.  
 
-- **All insights** (Tutte le informazioni dettagliate sulla gestione): tabella delle informazioni dettagliate con priorità e stato.  
+- **Tutte le informazioni dettagliate sulla gestione**: tabella delle informazioni dettagliate con priorità e stato.  
 
 ![Screenshot del dashboard delle informazioni dettagliate sulla gestione](media/1357979-management-insights-dashboard.png)
 

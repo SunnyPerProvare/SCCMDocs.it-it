@@ -10,12 +10,12 @@ ms.assetid: 127ce713-d085-430f-ac7b-2701637fe126
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: faa974fda68c9448902f2f5c8e8fcf8ef2f2d386
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 0eec065c9b5d4f75e6a66260760ba08e7bb2c481
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340238"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422556"
 ---
 # <a name="select-discovery-methods-to-use-for-system-center-configuration-manager"></a>Selezionare i metodi di individuazione per System Center Configuration Manager
 
@@ -104,22 +104,22 @@ Poiché l'**individuazione heartbeat** non viene eseguita in un sito specifico, 
 ##  <a name="bkmk_best"></a> Procedure consigliate per l'individuazione  
 Per ottenere risultati ottimali con l'individuazione, è consigliabile eseguire quanto segue:
 
- - **Prima di eseguire l'individuazione gruppo Active Directory, eseguire l'individuazione sistema Active Directory e l'individuazione utente Active Directory.**  
+- **Prima di eseguire l'individuazione gruppo Active Directory, eseguire l'individuazione sistema Active Directory e l'individuazione utente Active Directory.**  
 
- In caso di individuazione di un computer o di un utente non individuato precedentemente come membro di un gruppo, l'individuazione gruppo Active Directory tenta di individuare dettagli di base relativi all'utente o al computer. Poiché l'individuazione gruppo Active Directory non è ottimizzata per questo tipo di individuazione, il processo può comprometterne la velocità di esecuzione. L'individuazione gruppo Active Directory individua solo i dettagli di base relativi agli utenti e ai computer individuati, ma non crea un record di individuazione utente o computer completo. Quando si esegue l'individuazione sistema Active Directory e l'individuazione utente Active Directory, sono disponibili gli attributi di Active Directory aggiuntivi relativi a ogni oggetto. Di conseguenza, l'individuazione gruppo Active Directory risulta più efficiente.  
+  In caso di individuazione di un computer o di un utente non individuato precedentemente come membro di un gruppo, l'individuazione gruppo Active Directory tenta di individuare dettagli di base relativi all'utente o al computer. Poiché l'individuazione gruppo Active Directory non è ottimizzata per questo tipo di individuazione, il processo può comprometterne la velocità di esecuzione. L'individuazione gruppo Active Directory individua solo i dettagli di base relativi agli utenti e ai computer individuati, ma non crea un record di individuazione utente o computer completo. Quando si esegue l'individuazione sistema Active Directory e l'individuazione utente Active Directory, sono disponibili gli attributi di Active Directory aggiuntivi relativi a ogni oggetto. Di conseguenza, l'individuazione gruppo Active Directory risulta più efficiente.  
 
 - **Quando viene impostata l'individuazione gruppo Active Directory, è sufficiente specificare solo i gruppi usati con Configuration Manager.**  
 
- Per controllare l'uso delle risorse da parte dell'individuazione gruppo Active Directory, specificare solo i gruppi usati con Configuration Manager. L'individuazione gruppo Active Directory, infatti, esegue ricerche ricorsive in ogni gruppo individuato relativamente a utenti, computer e gruppi nidificati. La ricerca di ogni gruppo annidato può espandere l'ambito dell'individuazione gruppo Active Directory e ridurre le prestazioni. Se si configura anche l'individuazione differenziale per l'individuazione gruppo Active Directory, questo metodo di individuazione consente di monitorare le modifiche di ogni gruppo. Le prestazioni vengono ulteriormente ridotte quando il metodo deve eseguire ricerche di gruppi non necessari.  
+  Per controllare l'uso delle risorse da parte dell'individuazione gruppo Active Directory, specificare solo i gruppi usati con Configuration Manager. L'individuazione gruppo Active Directory, infatti, esegue ricerche ricorsive in ogni gruppo individuato relativamente a utenti, computer e gruppi nidificati. La ricerca di ogni gruppo annidato può espandere l'ambito dell'individuazione gruppo Active Directory e ridurre le prestazioni. Se si configura anche l'individuazione differenziale per l'individuazione gruppo Active Directory, questo metodo di individuazione consente di monitorare le modifiche di ogni gruppo. Le prestazioni vengono ulteriormente ridotte quando il metodo deve eseguire ricerche di gruppi non necessari.  
 
 - **Impostare metodi di individuazione con un intervallo maggiore tra le individuazioni complete e un periodo più frequente per le individuazioni differenziali.**  
 
- Poiché l'individuazione differenziale usa un numero inferiore di risorse rispetto a un ciclo di individuazione completa e può identificare risorse nuove o modificate in Active Directory, è possibile ridurre la frequenza dei cicli di individuazione completa a esecuzioni settimanali o meno frequenti. L'individuazione differenziale per l'individuazione sistema Active Directory, l'individuazione utente Active Directory e l'individuazione gruppo Active Directory identificano quasi tutte le modifiche apportate agli oggetti Active Directory e possono mantenere dati accurati di individuazione per le risorse.  
+  Poiché l'individuazione differenziale usa un numero inferiore di risorse rispetto a un ciclo di individuazione completa e può identificare risorse nuove o modificate in Active Directory, è possibile ridurre la frequenza dei cicli di individuazione completa a esecuzioni settimanali o meno frequenti. L'individuazione differenziale per l'individuazione sistema Active Directory, l'individuazione utente Active Directory e l'individuazione gruppo Active Directory identificano quasi tutte le modifiche apportate agli oggetti Active Directory e possono mantenere dati accurati di individuazione per le risorse.  
 
 - **Eseguire i metodi di individuazione Active Directory in un sito primario che abbia un percorso di rete molto vicino al controller di dominio di Active Directory.**  
 
- Per migliorare le prestazioni dell'individuazione Active Directory, è consigliabile eseguire l'individuazione in un sito primario che abbia una connessione di rete veloce ai controller di dominio. Se si esegue lo stesso metodo di individuazione Active Directory in più siti, è consigliabile impostare ogni metodo di individuazione per evitare sovrapposizione. A differenza delle versioni precedenti di Configuration Manager, i dati di individuazione vengono condivisi tra i siti. Non è quindi necessaria l'individuazione delle stesse informazioni in più siti. Per altre informazioni, vedere [I dati di individuazione vengono condivisi tra i siti](../../../../core/servers/deploy/configure/select-discovery-methods-to-use.md#bkmk_shared).  
+  Per migliorare le prestazioni dell'individuazione Active Directory, è consigliabile eseguire l'individuazione in un sito primario che abbia una connessione di rete veloce ai controller di dominio. Se si esegue lo stesso metodo di individuazione Active Directory in più siti, è consigliabile impostare ogni metodo di individuazione per evitare sovrapposizione. A differenza delle versioni precedenti di Configuration Manager, i dati di individuazione vengono condivisi tra i siti. Non è quindi necessaria l'individuazione delle stesse informazioni in più siti. Per altre informazioni, vedere [I dati di individuazione vengono condivisi tra i siti](../../../../core/servers/deploy/configure/select-discovery-methods-to-use.md#bkmk_shared).  
 
 - **Se si prevede di creare automaticamente limiti dai dati di individuazione, è consigliabile eseguire l'individuazione foresta Active Directory in un unico sito.**  
 
- Se l'individuazione foresta Active Directory viene eseguita in più siti di una gerarchia, è consigliabile attivare solo le opzioni per la creazione automatica dei limiti in un unico sito. Quando l'individuazione foresta Active Directory viene eseguita in tutti i siti e crea i limiti, infatti, Configuration Manager non può unire tali limiti in un unico oggetto limite. Se l'individuazione foresta Active Directory viene configurata per la creazione automatica dei limiti in più siti, possono essere generati oggetti limite duplicati nella console di Configuration Manager.  
+  Se l'individuazione foresta Active Directory viene eseguita in più siti di una gerarchia, è consigliabile attivare solo le opzioni per la creazione automatica dei limiti in un unico sito. Quando l'individuazione foresta Active Directory viene eseguita in tutti i siti e crea i limiti, infatti, Configuration Manager non può unire tali limiti in un unico oggetto limite. Se l'individuazione foresta Active Directory viene configurata per la creazione automatica dei limiti in più siti, possono essere generati oggetti limite duplicati nella console di Configuration Manager.  

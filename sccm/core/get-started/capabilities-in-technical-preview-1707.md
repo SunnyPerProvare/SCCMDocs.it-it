@@ -10,12 +10,12 @@ ms.assetid: cb405ba0-8792-4ab7-988b-2f835f3a9550
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 375c743e1094f3b3f52090ae520ee9d8e86acbe0
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 5500b7458935c83207a5e54f8fd1d4d7f40dc333
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336970"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53421638"
 ---
 # <a name="capabilities-in-technical-preview-1707-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1707 per System Center Configuration Manager
 
@@ -31,7 +31,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 -->
 
 **Problemi noti di questa versione Technical Preview:**
--   **L'aggiornamento alla versione Technical Preview 1707 ha esito negativo se il server del sito è in modalità passiva**. Quando si esegue la versione Technical Preview 1706 ed è presente un [server del sito primario in modalità passiva](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), è necessario disinstallare il server del sito in modalità passiva prima di poter aggiornare il sito Technical Preview alla versione 1707. Sarà possibile reinstallare il server del sito in modalità passiva quando nel sito è in esecuzione la versione 1707.
+- **L'aggiornamento alla versione Technical Preview 1707 ha esito negativo se il server del sito è in modalità passiva**. Quando si esegue la versione Technical Preview 1706 ed è presente un [server del sito primario in modalità passiva](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), è necessario disinstallare il server del sito in modalità passiva prima di poter aggiornare il sito Technical Preview alla versione 1707. Sarà possibile reinstallare il server del sito in modalità passiva quando nel sito è in esecuzione la versione 1707.
 
   Per disinstallare il server del sito in modalità passiva:
   1. Nella console passare ad **Amministrazione** > **Panoramica** > **Configurazione del sito** > **Server e ruoli del sistema del sito** e quindi selezionare il server del sito in modalità passiva.
@@ -54,12 +54,10 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 -->
 
 ## <a name="client-peer-cache-support-for-express-installation-files-for-windows-10-and-office-365"></a>Supporto della peer cache del client per i file di installazione rapida per Windows 10 e Office 365
-<!-- 1352486 -->
-A partire da questa versione, la peer cache supporta la distribuzione dei file di installazione rapida del contenuto per Windows 10 e dei file di aggiornamento per Office 365. Non sono richieste configurazioni aggiuntive.
+<!-- 1352486 --> A partire da questa versione, la peer cache supporta la distribuzione dei file di installazione rapida del contenuto per Windows 10 e dei file di aggiornamento per Office 365. Non sono richieste configurazioni aggiuntive.
 
 ## <a name="surface-device-dashboard"></a>Dashboard del dispositivo Surface
-<!--1355788-->
-Il dashboard del dispositivo Surface visualizza informazioni sui dispositivi Surface rilevati nell'ambiente in uso. Nella console passare a **Monitoraggio** > **Surface Devices** (Dispositivi Surface). È possibile visualizzare le seguenti informazioni:
+<!--1355788--> Il dashboard dei dispositivi Surface visualizza informazioni sui dispositivi Surface rilevati nell'ambiente. Nella console passare a **Monitoraggio** > **Surface Devices** (Dispositivi Surface). È possibile visualizzare le seguenti informazioni:
 - percentuale di dispositivi Surface
 - percentuale di modelli Surface
 - prime cinque versioni del sistema operativo

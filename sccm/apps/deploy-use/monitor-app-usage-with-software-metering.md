@@ -10,12 +10,12 @@ ms.assetid: b1fdaee2-2816-4447-94cd-609f6948f215
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 66099b45fb04b18c84cd9a3973c1a4d93f0e93a6
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 862555a34d638ad9c1c5c2d0d0de6f2ce1edd3f3
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335763"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53419326"
 ---
 # <a name="software-metering-in-system-center-configuration-manager"></a>Controllo del software in System Center Configuration Manager
 
@@ -37,21 +37,21 @@ Il controllo del software non ha dipendenze esterne, ma solo dipendenze all'inte
 ##  <a name="configure-software-metering"></a>Configurare il controllo del software
  Questa procedura consente di configurare le impostazioni client predefinite per il controllo del software e applicarle a tutti i computer nella gerarchia. Per applicare queste impostazioni solo ad alcuni computer, creare un'impostazione client di dispositivo personalizzata e distribuirla in una raccolta contenente i computer in cui si vuole usare il controllo del software. Per altre informazioni su come creare le impostazioni personalizzate del dispositivo, vedere [Configurare le impostazioni client](../../core/clients/deploy/configure-client-settings.md).
 
-1.  Nella console di Configuration Manager fare clic su **Amministrazione** > **Impostazioni client** > **Impostazioni client predefinite**.
+1. Nella console di Configuration Manager fare clic su **Amministrazione** > **Impostazioni client** > **Impostazioni client predefinite**.
 
-2.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.
+2. Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.
 
-3.  Nella finestra di dialogo **Impostazioni predefinite** fare clic su **Controllo del software**.
+3. Nella finestra di dialogo **Impostazioni predefinite** fare clic su **Controllo del software**.
 
-4.  Nell'elenco **Impostazioni dispositivo** configurare le impostazioni seguenti:
+4. Nell'elenco **Impostazioni dispositivo** configurare le impostazioni seguenti:
 
-    -   **Abilitare controllo software nei client**: selezionare **True** per abilitare il controllo del software.
+   -   **Abilitare controllo software nei client**: selezionare **True** per abilitare la misurazione del software.
 
-    -   **Pianifica raccolta dati**: configurare la frequenza con cui verranno raccolti i dati dal controllo del software nei computer client. Usare il valore predefinito **7 giorni** oppure fare clic su **Pianifica** per configurare una pianificazione personalizzata.
+   -   **Pianifica raccolta dati**: configurare la frequenza con cui verranno raccolti i dati dalla misurazione del software nei computer client. Usare il valore predefinito **7 giorni** oppure fare clic su **Pianifica** per configurare una pianificazione personalizzata.
 
-5.  Fare clic su **OK** per chiudere la finestra di dialogo **Impostazioni dispositivo** .
+5. Fare clic su **OK** per chiudere la finestra di dialogo **Impostazioni dispositivo** .
 
- I computer client vengono configurati con queste impostazioni al successivo download dei criteri client. Per iniziare il recupero dei criteri per un singolo client, vedere [Gestire i client](../../core/clients/manage/manage-clients.md).
+   I computer client vengono configurati con queste impostazioni al successivo download dei criteri client. Per iniziare il recupero dei criteri per un singolo client, vedere [Gestire i client](../../core/clients/manage/manage-clients.md).
 
 ##  <a name="create-software-metering-rules"></a>Creare regole di controllo software
  Usare la Creazione guidata regola controllo software per creare una nuova regola di controllo software per il sito di Configuration Manager.
@@ -154,15 +154,15 @@ Il controllo del software non ha dipendenze esterne, ma solo dipendenze all'inte
 ## <a name="example-scenario-for-using-software-metering"></a>Scenario di esempio per l'uso della misurazione del software
  In questa sezione si creerà un regola di misurazione del software che consente di risolvere i dubbi sui requisiti aziendali seguenti:
 
--   Determinare il numero di copie di una particolare app presenti nell'azienda
+- Determinare il numero di copie di una particolare app presenti nell'azienda
 
--   Individuare le eventuali copie non utilizzate di un'app
+- Individuare le eventuali copie non utilizzate di un'app
 
--   Determinare quali utenti usano regolarmente una particolare app
+- Determinare quali utenti usano regolarmente una particolare app
 
- Woodgrove Bank ha distribuito Microsoft Office 2010 come famiglia standard di prodotti di produttività per l'ufficio. Per supportare un'applicazione legacy, tuttavia, alcuni computer devono continuare a eseguire Microsoft Office Word 2003. Il reparto IT vuole ridurre i costi di licenza e supporto rimuovendo le copie di Word 2003, se l'applicazione legacy non viene più usata. Anche l'help desk vuole identificare gli utenti che usano l'applicazione legacy.
+  Woodgrove Bank ha distribuito Microsoft Office 2010 come famiglia standard di prodotti di produttività per l'ufficio. Per supportare un'applicazione legacy, tuttavia, alcuni computer devono continuare a eseguire Microsoft Office Word 2003. Il reparto IT vuole ridurre i costi di licenza e supporto rimuovendo le copie di Word 2003, se l'applicazione legacy non viene più usata. Anche l'help desk vuole identificare gli utenti che usano l'applicazione legacy.
 
- Giorgio è responsabile dei sistemi IT di Woodgrove Bank e usa il controllo del software in Configuration Manager per raggiungere questi obiettivi aziendali. Esegue le azioni seguenti:
+  Giorgio è responsabile dei sistemi IT di Woodgrove Bank e usa il controllo del software in Configuration Manager per raggiungere questi obiettivi aziendali. Esegue le azioni seguenti:
 
 - Giorgio verifica i prerequisiti per la misurazione del software e conferma che il punto di Reporting Services è installato e funzionante.
 - Giorgio configura le impostazioni client predefinite per la misurazione del software:<br>Abilita la misurazione del software e usa la pianificazione di raccolta dati predefinita, una volta ogni sette giorni.<br>Configura l'inventario software in modo da eseguire l'inventario dei file con estensione exe, configurando l'impostazione dell'agente client inventario software **Tipi di file da includere nell'inventario**.<br>Aggiunge una nuova regola di misurazione del software, denominata **woodgrove.exe**, per monitorare l'applicazione legacy.
@@ -172,4 +172,4 @@ Il controllo del software non ha dipendenze esterne, ma solo dipendenze all'inte
 - John effettua ulteriori controlli per verificare che l'applicazione legacy non sia necessaria nei computer identificati. Quindi, disinstalla l'applicazione legacy e la copia di Word 2003 da questi computer.<br>Giorgio esegue il report **Utenti che hanno eseguito un programma di controllo software specifico** per fornire all'help desk un elenco di utenti che continuano a usare l'applicazione legacy.
 - John continua a controllare i report di misurazione del software ogni settimana e, se necessario, esegue azioni correttive.
 
- Come risultato di questa linea di azione, i costi di licenza e di supporto IT si riducono, grazie alla rimozione delle applicazioni non più necessarie. Inoltre, ora l'help desk ha a disposizione l'elenco degli utenti che eseguono l'applicazione legacy di cui aveva bisogno.
+  Come risultato di questa linea di azione, i costi di licenza e di supporto IT si riducono, grazie alla rimozione delle applicazioni non più necessarie. Inoltre, ora l'help desk ha a disposizione l'elenco degli utenti che eseguono l'applicazione legacy di cui aveva bisogno.

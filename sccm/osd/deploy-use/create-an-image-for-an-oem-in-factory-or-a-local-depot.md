@@ -10,12 +10,12 @@ ms.assetid: a7d3df90-062d-4d57-9e9d-e137d3e7cd7f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0c8cf0af19017f4acfd95bcd01f8226229c05a14
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: f1bf3460e29375a6c5e95ad372af089548be5713
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32353393"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53422478"
 ---
 # <a name="create-an-image-for-an-oem-in-factory-or-a-local-depot-with-system-center-configuration-manager"></a>Creare un'immagine per un OEM in modalità produttore computer o per un rivenditore locale con System Center Configuration Manager
 
@@ -28,11 +28,11 @@ Questo metodo di distribuzione può ridurre il traffico di rete perché l'immagi
 
  È possibile usare i supporti pre-installati negli scenari di distribuzione del sistema operativo seguenti:  
 
--   [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)  
+- [Installare una nuova versione di Windows in un nuovo computer (bare metal)](install-new-windows-version-new-computer-bare-metal.md)  
 
--   [Sostituire un computer esistente e trasferire le impostazioni](replace-an-existing-computer-and-transfer-settings.md)  
+- [Sostituire un computer esistente e trasferire le impostazioni](replace-an-existing-computer-and-transfer-settings.md)  
 
- Completare i passaggi in uno degli scenari di distribuzione del sistema operativo e quindi usare le sezioni seguenti per preparare e creare il supporto pre-installato.  
+  Completare i passaggi in uno degli scenari di distribuzione del sistema operativo e quindi usare le sezioni seguenti per preparare e creare il supporto pre-installato.  
 
 ## <a name="configure-deployment-settings"></a>Configurare le impostazioni di distribuzione  
  Quando si usa un supporto pre-installato per avviare il processo di distribuzione del sistema operativo, è necessario configurare la distribuzione per rendere disponibile il sistema operativo per il supporto. È possibile eseguire questa configurazione nella pagina **Impostazioni di distribuzione** della Distribuzione guidata del software o nella scheda **Impostazioni di distribuzione** nelle proprietà della distribuzione.  Per l'impostazione **Rendi disponibile per** , configurare uno degli elementi seguenti:  
@@ -44,7 +44,7 @@ Questo metodo di distribuzione può ridurre il traffico di rete perché l'immagi
 -   **Solo supporti e PXE (nascosto)**  
 
 ## <a name="create-the-prestaged-media"></a>Creare supporti pre-installati  
- Creare il file del supporto pre-installato da inviare all'OEM o al rivenditore locale. Per ulteriori informazioni, vedere [Creare supporti pre-installati con System Center Configuration Manager](create-prestaged-media.md).  
+ Creare il file del supporto pre-installato da inviare all'OEM o al rivenditore locale. Per ulteriori informazioni, vedere [Create prestaged media with System Center Configuration Manager](create-prestaged-media.md).  
 
 ## <a name="send-the-prestaged-media-file-to-the-oem-or-local-depot"></a>Inviare il file del supporto pre-installato all'OEM o al rivenditore locale  
  Inviare i supporti all'OEM o al rivenditore locale per pre-installare i computer. Il file del supporto pre-installato viene applicato a un disco rigido formattato nel computer.  
