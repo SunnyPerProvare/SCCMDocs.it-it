@@ -10,12 +10,12 @@ ms.assetid: 341f0d0b-f907-44cf-9e10-e1b41fc15f82
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6eaac644b876fa3adfa1a2c79e7c4c5810942d9f
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.openlocfilehash: 187f876999f39dd1d2d4aa345a7e9037f745a0ed
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385576"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418901"
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-configuration-manager"></a>Come distribuire i client nei computer Windows in Configuration Manager
 
@@ -158,7 +158,7 @@ Usare le procedure seguenti per configurare i computer senza un client di Config
 
      Esempio con il formato FQDN: `http://server1.contoso.com:8530`  
 
-5.  **Impostare il server per le statistiche nella rete Intranet**: questa impostazione corrisponde in genere al nome del server.   
+5.  **Impostare il server per le statistiche nella rete Intranet**: questa impostazione in genere corrisponde al nome del server.   
 
 6.  Assegnare l'oggetto Criteri di gruppo ai computer in cui si vuole installare il client e ricevere gli aggiornamenti software.  
 
@@ -256,7 +256,7 @@ Eseguire quindi uno di questi comandi:
 
 Questo esempio mostra come installare il client senza parametri o proprietà aggiuntive. Il client viene configurato automaticamente con le proprietà di installazione client pubblicate in Active Directory Domain Services, incluse le impostazioni seguenti:  
 
-- Codice del sito: per questa impostazione è necessario includere il percorso di rete del client in un gruppo di limiti configurato per l'assegnazione del client.  
+- Codice sito: per questa impostazione è necessario includere il percorso di rete del client in un gruppo di limiti configurato per l'assegnazione del client.  
 - Punto di gestione
 - Punto di stato di fallback
 - Comunicare solo tramite HTTPS  
@@ -331,7 +331,7 @@ Per conoscere la procedura di installazione del client di Configuration Manager 
 > [!NOTE]  
 > Per impostazione predefinita, dopo l'installazione del software client, la registrazione del dispositivo con Intune viene annullata.
 > 
-> A partire dalla versione 1710, la registrazione dei client con Intune non viene annullata. È possibile avere sia il client di Configuration Manager sia la registrazione MDM nello stesso momento. Per altre informazioni, vedere la [panoramica di co-gestione](/sccm/core/clients/manage/co-management-overview).  
+> A partire dalla versione 1710, la registrazione dei client con Intune non viene annullata. È possibile avere sia il client di Configuration Manager sia la registrazione MDM nello stesso momento. Per altre informazioni, vedere la [panoramica sulla co-gestione](/sccm/core/clients/manage/co-management-overview).  
 
 
 ###  <a name="install-clients-with-intune"></a>Installare i client con Intune  
@@ -340,7 +340,7 @@ Per conoscere la procedura di installazione del client di Configuration Manager 
 
 2. In Autore del software Microsoft Intune immettere i parametri della riga di comando. Ad esempio, usare la riga di comando seguente con un client tradizionale sulla Intranet:  
 
-  `CCMSETUPCMD="/MP:<FQDN of management point> SMSMP=<FQDN of management point> SMSSITECODE=<Your site code> DNSSUFFIX=<DNS Suffix of management point>"`  
+   `CCMSETUPCMD="/MP:<FQDN of management point> SMSMP=<FQDN of management point> SMSSITECODE=<Your site code> DNSSUFFIX=<DNS Suffix of management point>"`  
 
    > [!Note]  
    > Per una riga di comando di esempio da usare con un client Windows 10 moderno che usa l'autenticazione di Azure AD, vedere [Preparare i dispositivi Windows 10 per la co-gestione](/sccm/core/clients/manage/co-management-prepare#command-line-to-install-configuration-manager-client).  

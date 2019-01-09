@@ -10,12 +10,12 @@ ms.assetid: d0c6f7a0-dcae-4e6d-aa28-35d464d97ff7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 51bfe17980a7660ecdccfd13a11d6c7bcfd93e5f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: cec99ab9d4e52f2a2db4aaef0de47b5abfb794b5
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344375"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53417616"
 ---
 # <a name="security-and-privacy-for-asset-intelligence-in-system-center-configuration-manager"></a>Sicurezza e privacy per Asset Intelligence in System Center Configuration Manager
 
@@ -38,18 +38,18 @@ In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy
 
  Asset Intelligence non invia a Microsoft informazioni su utenti e computer o sull'utilizzo delle licenze. È possibile scegliere di inviare a System Center Online richieste per la categorizzazione, ovvero contrassegnare uno o più titoli software non categorizzati e inviarli a System Center Online per la ricerca e la categorizzazione. Una volta caricato un titolo software, i ricercatori Microsoft identificano, categorizzano e rendono disponibili le informazioni a tutti i clienti che usano il servizio online. È consigliabile considerare le implicazioni per la privacy seguenti relative all'invio di informazioni a System Center Online:  
 
--   Il caricamento si applica solo alle informazioni dei titoli software generiche (nome, autore e così via) che si sceglie di inviare a System Center Online. Le informazioni relative all'inventario non vengono inviate con un caricamento.  
+- Il caricamento si applica solo alle informazioni dei titoli software generiche (nome, autore e così via) che si sceglie di inviare a System Center Online. Le informazioni relative all'inventario non vengono inviate con un caricamento.  
 
--   Il caricamento non avviene mai automaticamente e il sistema non è progettato per l'automatizzazione di questa attività. È necessario selezionare manualmente e approvare il caricamento di ogni titolo di software.  
+- Il caricamento non avviene mai automaticamente e il sistema non è progettato per l'automatizzazione di questa attività. È necessario selezionare manualmente e approvare il caricamento di ogni titolo di software.  
 
--   Prima che venga avviato il processo di caricamento, una finestra di dialogo mostra esattamente quali dati verranno caricati.  
+- Prima che venga avviato il processo di caricamento, una finestra di dialogo mostra esattamente quali dati verranno caricati.  
 
--   Le informazioni sulle licenze non vengono inviate a Microsoft. Le informazioni sulle licenze vengono archiviate in un'area separata del database di Configuration Manager e non possono essere inviate a Microsoft.  
+- Le informazioni sulle licenze non vengono inviate a Microsoft. Le informazioni sulle licenze vengono archiviate in un'area separata del database di Configuration Manager e non possono essere inviate a Microsoft.  
 
--   Tutti i titoli software caricati diventano pubblici, nel senso che le informazioni su una determinata applicazione e la relativa categorizzazione diventano parte del catalogo di Asset Intelligence in System Center Online e possono quindi essere scaricate da altri utenti del catalogo.  
+- Tutti i titoli software caricati diventano pubblici, nel senso che le informazioni su una determinata applicazione e la relativa categorizzazione diventano parte del catalogo di Asset Intelligence in System Center Online e possono quindi essere scaricate da altri utenti del catalogo.  
 
--   L'origine del titolo software non viene registrata nel catalogo di Asset Intelligence e non viene resa disponibile agli altri clienti. È comunque necessario verificare di non caricare alcun titolo di applicazione che contiene informazioni private.  
+- L'origine del titolo software non viene registrata nel catalogo di Asset Intelligence e non viene resa disponibile agli altri clienti. È comunque necessario verificare di non caricare alcun titolo di applicazione che contiene informazioni private.  
 
--   Non è possibile annullare il caricamento dei dati selezionati.  
+- Non è possibile annullare il caricamento dei dati selezionati.  
 
- Prima di configurare la raccolta dati di Asset Intelligence e di scegliere se inviare informazioni a System Center Online, prendere in considerazione i requisiti per la privacy della propria organizzazione.  
+  Prima di configurare la raccolta dati di Asset Intelligence e di scegliere se inviare informazioni a System Center Online, prendere in considerazione i requisiti per la privacy della propria organizzazione.  

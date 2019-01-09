@@ -10,12 +10,12 @@ ms.assetid: a1f099f1-e9b5-4189-88b3-f53e3b4e4add
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 44cfb06c8d92568a4468c1f46b90ceeb259c3c1f
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: d0db075f652dd77a833f7a3a00f478bae5a5e54f
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456635"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53415195"
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-configuration-manager"></a>Gestire le sequenze di attività per automatizzare le attività in Configuration Manager
 
@@ -91,11 +91,11 @@ Usare le sequenze di attività per automatizzare i passaggi nell'ambiente di Con
 
 3. Nella scheda **Generale** sono disponibili le impostazioni seguenti per Software Center:  
 
-  - **Riavvio necessario**: consente all'utente di sapere se è necessario un riavvio durante l'installazione.  
+   - **Riavvio necessario**: consente all'utente di sapere se è necessario un riavvio durante l'installazione.  
 
-  - **Dimensioni del download (MB)**: specifica quanti megabyte vengono visualizzati in Software Center per la sequenza di attività.  
+   - **Dimensioni del download (MB)**: specifica quanti megabyte vengono visualizzati in Software Center per la sequenza di attività.  
 
-  - **Tempo di esecuzione stimato (minuti)**: specifica il tempo di esecuzione stimato in minuti che viene visualizzato in Software Center per la sequenza di attività.  
+   - **Tempo di esecuzione stimato (minuti)**: specifica il tempo di esecuzione stimato in minuti che viene visualizzato in Software Center per la sequenza di attività.  
 
 
 
@@ -109,38 +109,38 @@ Usare le sequenze di attività per automatizzare i passaggi nell'ambiente di Con
 
 3. Nella scheda **Avanzate** sono disponibili le impostazioni seguenti:  
 
-    - **Esegui prima un altro programma**: selezionare questa opzione per eseguire un programma in un altro pacchetto, prima di eseguire la sequenza di attività. Per impostazione predefinita, questa casella di controllo è deselezionata. Non è necessario distribuire separatamente il programma che deve essere eseguito per primo.  
+   - **Esegui prima un altro programma**: selezionare questa opzione per eseguire un programma in un altro pacchetto, prima di eseguire la sequenza di attività. Per impostazione predefinita, questa casella di controllo è deselezionata. Non è necessario distribuire separatamente il programma che deve essere eseguito per primo.  
 
-        > [!IMPORTANT]     
-        Questa impostazione si applica solo alle sequenze di attività che vengono eseguite nel sistema operativo completo. Se si avvia la sequenza di attività usando PXE o il supporto di avvio, Configuration Manager ignora questa impostazione.  
+     > [!IMPORTANT]
+     >   Questa impostazione si applica solo alle sequenze di attività che vengono eseguite nel sistema operativo completo. Se si avvia la sequenza di attività usando PXE o il supporto di avvio, Configuration Manager ignora questa impostazione.  
 
-        - **Pacchetto**: cercare il pacchetto contenente il programma da eseguire prima di questa sequenza di attività.  
+     - **Pacchetto**: cercare il pacchetto contenente il programma da eseguire prima di questa sequenza di attività.  
 
-        - **Programma**: selezionare il programma da eseguire prima di questa sequenza di attività.  
-
-        > [!NOTE]    
-        > Se l'esecuzione su in client del programma selezionato non riesce, la sequenza di attività non viene eseguita. Se l'esecuzione del programma selezionato avviene correttamente, il programma non viene eseguito nuovamente, anche se la sequenza di attività viene rieseguita nello stesso client.  
- 
-    - **Disattiva questa sequenza di attività nei computer in cui è distribuita**: se si seleziona questa opzione, Configuration Manager disabilita temporaneamente tutte le distribuzioni contenenti questa sequenza di attività. La sequenza di attività viene anche rimossa dall'elenco di distribuzioni disponibili per l'esecuzione. La sequenza di attività viene eseguita solo dopo averla abilitata. Questa opzione è deselezionata per impostazione predefinita.  
-
-    - **Tempo di esecuzione massimo consentito**: specifica il tempo massimo, in minuti, previsto per l'esecuzione della sequenza di attività nel computer di destinazione. Usare un numero intero uguale o maggiore di zero. Per impostazione predefinita, questo valore è impostato su 120 minuti.  
-
-        > [!IMPORTANT]    
-        > Se si usano finestre di manutenzione per la raccolta in cui si distribuisce la sequenza di attività, è possibile che si verifichi un conflitto se il **tempo di esecuzione massimo consentito** è superiore alla finestra di manutenzione pianificata. Se si imposta il tempo di esecuzione massimo su **0**, la sequenza di attività viene avviata durante la finestra di manutenzione. L'esecuzione continua fino al completamento oppure ha esisto negativo dopo la chiusura della finestra di manutenzione. Pertanto le sequenze di attività con un tempo massimo di esecuzione impostato su **0** potrebbero essere eseguite dopo il termine delle relative finestre di manutenzione. Se il tempo di esecuzione massimo viene impostato su un periodo specifico, diverso da zero, con durata superiore a quella di tutte le finestre di manutenzione disponibili, la sequenza di attività non viene eseguita. Per altre informazioni, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).  
- 
-       Se si imposta il valore su **0**, Configuration Manager valuta il tempo di esecuzione massimo consentito in **12** ore (720 minuti) per il controllo dello stato. Tuttavia, la sequenza di attività viene avviata a condizione che la durata del conto alla rovescia non superi il valore specificato per la finestra di manutenzione.  
+     - **Programma**: selezionare il programma da eseguire prima di questa sequenza di attività.  
 
        > [!NOTE]    
-       > Quando raggiunge il tempo di esecuzione massimo, se si imposta l'opzione su **Esegui con diritti amministrativi** e non si imposta l'opzione su **Consentire agli utenti di interagire con il programma**, Configuration Manager arresta la sequenza di attività. Se la sequenza di attività non viene arrestata, Configuration Manager arresta il monitoraggio dopo il raggiungimento del tempo di esecuzione massimo consentito.  
+       > Se l'esecuzione su in client del programma selezionato non riesce, la sequenza di attività non viene eseguita. Se l'esecuzione del programma selezionato avviene correttamente, il programma non viene eseguito nuovamente, anche se la sequenza di attività viene rieseguita nello stesso client.  
+ 
+   - **Disattiva questa sequenza di attività nei computer in cui è distribuita**: se si seleziona questa opzione, Configuration Manager disabilita temporaneamente tutte le distribuzioni che contengono questa sequenza di attività. La sequenza di attività viene anche rimossa dall'elenco di distribuzioni disponibili per l'esecuzione. La sequenza di attività viene eseguita solo dopo averla abilitata. Questa opzione è deselezionata per impostazione predefinita.  
 
-    - **Utilizza un'immagine d'avvio**: usare l'immagine d'avvio selezionata quando viene eseguita la sequenza di attività. Fare clic su **Sfoglia** per selezionare un'altra immagine d'avvio. Deselezionare questa opzione per disabilitare l'uso dell'immagine d'avvio selezionata quando viene eseguita la sequenza di attività.  
+   - **Tempo di esecuzione massimo consentito**: specifica il tempo massimo, in minuti, previsto per l'esecuzione della sequenza di attività nel computer di destinazione. Usare un numero intero uguale o maggiore di zero. Per impostazione predefinita, questo valore è impostato su 120 minuti.  
 
-    - **Questa sequenza di attività può essere eseguita in qualsiasi piattaforma**: se si seleziona questa opzione, Configuration Manager non verifica il tipo di piattaforma del computer di destinazione quando la sequenza di attività viene eseguita. Questa opzione è selezionata per impostazione predefinita.  
+       > [!IMPORTANT]    
+       > Se si usano finestre di manutenzione per la raccolta in cui si distribuisce la sequenza di attività, è possibile che si verifichi un conflitto se il **tempo di esecuzione massimo consentito** è superiore alla finestra di manutenzione pianificata. Se si imposta il tempo di esecuzione massimo su **0**, la sequenza di attività viene avviata durante la finestra di manutenzione. L'esecuzione continua fino al completamento oppure ha esisto negativo dopo la chiusura della finestra di manutenzione. Pertanto le sequenze di attività con un tempo massimo di esecuzione impostato su **0** potrebbero essere eseguite dopo il termine delle relative finestre di manutenzione. Se il tempo di esecuzione massimo viene impostato su un periodo specifico, diverso da zero, con durata superiore a quella di tutte le finestre di manutenzione disponibili, la sequenza di attività non viene eseguita. Per altre informazioni, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).  
+ 
+      Se si imposta il valore su **0**, Configuration Manager valuta il tempo di esecuzione massimo consentito in **12** ore (720 minuti) per il controllo dello stato. Tuttavia, la sequenza di attività viene avviata a condizione che la durata del conto alla rovescia non superi il valore specificato per la finestra di manutenzione.  
 
-    - **Questa sequenza di attività può essere eseguita solo in piattaforme specifiche**: questa opzione specifica i processori, le versioni dei sistemi operativi e i Service Pack per i quali può essere eseguita la sequenza di attività. Se questa opzione è selezionata, selezionare almeno una piattaforma dall'elenco. Per impostazione predefinita non è selezionata alcuna piattaforma. Configuration Manager usa queste informazioni quando valuta quali computer di destinazione di una raccolta ricevono la sequenza di attività distribuita.  
+      > [!NOTE]    
+      > Quando raggiunge il tempo di esecuzione massimo, se si imposta l'opzione su **Esegui con diritti amministrativi** e non si imposta l'opzione su **Consentire agli utenti di interagire con il programma**, Configuration Manager arresta la sequenza di attività. Se la sequenza di attività non viene arrestata, Configuration Manager arresta il monitoraggio dopo il raggiungimento del tempo di esecuzione massimo consentito.  
 
-        > [!NOTE]    
-        > Quando si esegue una sequenza di attività dal supporto di avvio o da PXE, Configuration Manager ignora questa opzione. La sequenza di attività viene eseguita come se l'opzione **Questo programma può essere eseguito in qualsiasi piattaforma** fosse selezionata.  
+   - **Utilizza un'immagine d'avvio**: usare l'immagine d'avvio selezionata quando viene eseguita la sequenza di attività. Fare clic su **Sfoglia** per selezionare un'altra immagine d'avvio. Deselezionare questa opzione per disabilitare l'uso dell'immagine d'avvio selezionata quando viene eseguita la sequenza di attività.  
+
+   - **Questa sequenza di attività può essere eseguita in qualsiasi piattaforma**: se questa opzione è selezionata, quando viene eseguita la sequenza di attività Configuration Manager non verifica il tipo di piattaforma del computer di destinazione. Questa opzione è selezionata per impostazione predefinita.  
+
+   - **Questa sequenza di attività può essere eseguita solo in piattaforme specifiche**: L'opzione specifica i processori, le versioni dei sistemi operativi e i Service Pack per i quali può essere eseguita la sequenza di attività. Se questa opzione è selezionata, selezionare almeno una piattaforma dall'elenco. Per impostazione predefinita non è selezionata alcuna piattaforma. Configuration Manager usa queste informazioni quando valuta quali computer di destinazione di una raccolta ricevono la sequenza di attività distribuita.  
+
+       > [!NOTE]    
+       > Quando si esegue una sequenza di attività dal supporto di avvio o da PXE, Configuration Manager ignora questa opzione. La sequenza di attività viene eseguita come se l'opzione **Questo programma può essere eseguito in qualsiasi piattaforma** fosse selezionata.  
 
 
 
@@ -173,8 +173,8 @@ Usare le sequenze di attività per automatizzare i passaggi nell'ambiente di Con
 
 3. Nella scheda **Notifica utente** selezionare **Usa il testo personalizzato**.  
 
-    >  [!NOTE]    
-    >  È possibile impostare il testo della notifica utente solo quando si seleziona l'opzione **Questa è una sequenza di attività a impatto elevato**.  
+   > [!NOTE]
+   >  È possibile impostare il testo della notifica utente solo quando si seleziona l'opzione **Questa è una sequenza di attività a impatto elevato**.  
 
 4. Configurare le seguenti impostazioni:  
 
@@ -194,11 +194,11 @@ Usare le sequenze di attività per automatizzare i passaggi nell'ambiente di Con
 #### <a name="example"></a>Esempio
 Si supponga di configurare la notifica personalizzata seguente nelle proprietà.
 
-![Scheda Notifica utente personalizzata delle proprietà della sequenza di attività](..\media\user-notification.png)
+![Scheda Notifica utente personalizzata delle proprietà della sequenza di attività](../media/user-notification.png)
 
 Viene visualizzato il messaggio di notifica seguente quando l'utente finale apre il programma di installazione da Software Center.
 
-![Notifica di sequenza di attività personalizzata per l'utente finale da Software Center](..\media\user-notification-enduser.png)
+![Notifica di sequenza di attività personalizzata per l'utente finale da Software Center](../media/user-notification-enduser.png)
 
 
 
@@ -244,153 +244,153 @@ Viene visualizzato il messaggio di notifica seguente quando l'utente finale apre
 
 #### <a name="to-deploy-a-task-sequence"></a>Per distribuire una sequenza di attività    
 
-1.  Nella console di Configuration Manager fare clic su **Raccolta software**.  
+1. Nella console di Configuration Manager fare clic su **Raccolta software**.  
 
-2.  Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
+2. Nell'area di lavoro **Raccolta software** espandere **Sistemi operativi**, quindi fare clic su **Sequenze attività**.  
 
-3.  Nell'elenco **Sequenza di attività** selezionare la sequenza di attività da distribuire.  
+3. Nell'elenco **Sequenza di attività** selezionare la sequenza di attività da distribuire.  
 
-4.  Nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Distribuisci**.  
+4. Nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Distribuisci**.  
 
-    > [!NOTE]  
-    >  Se l'opzione **Distribuisci** non è disponibile, la sequenza di attività presenta un riferimento non valido. Correggere il riferimento e quindi tentare nuovamente la distribuzione della sequenza di attività.  
+   > [!NOTE]  
+   >  Se l'opzione **Distribuisci** non è disponibile, la sequenza di attività presenta un riferimento non valido. Correggere il riferimento e quindi tentare nuovamente la distribuzione della sequenza di attività.  
 
-5.  On the **Generale** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
+5. On the **Generale** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
 
-    -   **Sequenza di attività**: specificare la sequenza di attività da distribuire. Per impostazione predefinita, in questa casella viene visualizzata la sequenza di attività selezionata.  
+   - **Sequenza di attività**: specificare la sequenza di attività da distribuire. Per impostazione predefinita, in questa casella viene visualizzata la sequenza di attività selezionata.  
 
-    -   **Raccolta**: selezionare la raccolta contenente i computer che eseguono la sequenza di attività.  
+   - **Raccolta**: selezionare la raccolta contenente i computer che eseguono la sequenza di attività.  
 
-         Non distribuire sequenze di attività che installano sistemi operativi in raccolte inappropriate, come ad esempio una raccolta di tutti i server di data center. Assicurarsi che la raccolta selezionata contenga solo i computer che devono eseguire la sequenza di attività.  
+      Non distribuire sequenze di attività che installano sistemi operativi in raccolte inappropriate, come ad esempio una raccolta di tutti i server di data center. Assicurarsi che la raccolta selezionata contenga solo i computer che devono eseguire la sequenza di attività.  
 
-        > [!NOTE]  
-        >  Quando si esegue una distribuzione ad alto rischio, ad esempio quella di un sistema operativo, nella finestra **Seleziona raccolta** vengono visualizzate soltanto le raccolte personalizzate che soddisfano le impostazioni di verifica della distribuzione configurate nelle proprietà del sito. Le distribuzioni ad alto rischio sono sempre limitate alle raccolte personalizzate (quelle create dall'utente) e alla racconta predefinita **Computer sconosciuti** . Quando si crea una distribuzione ad alto rischio, non è possibile selezionare una raccolta predefinita quale **Tutti i sistemi**. Deselezionare **Nascondi le raccolte con un numero di membri maggiore della configurazione delle dimensioni minime del sito** per visualizzare tutte le raccolte personalizzate che contengono un numero di client inferiore rispetto alla dimensione massima configurata. Per altre informazioni, vedere [Impostazioni per gestire distribuzioni ad alto rischio](/sccm/core/servers/manage/settings-to-manage-high-risk-deployments).  
-        >   
-        >  Le impostazioni di verifica della distribuzione sono basate sull'appartenenza attuale della raccolta. Dopo aver distribuito la sequenza di attività, Configuration Manager non rivaluta l'appartenenza alla raccolta per le impostazioni di distribuzione ad alto rischio.  
-        >   
-        >  Ad esempio, si supponga di impostare **Dimensione predefinita** su 100 e **Dimensione massima** su 1000. Quando si crea una distribuzione ad alto rischio, nella finestra **Seleziona raccolta** vengono visualizzate solo le raccolte che contengono meno di 100 client. Se si deseleziona l'impostazione **Nascondi le raccolte con un numero di membri maggiore della configurazione delle dimensioni minime del sito**, nella finestra vengono visualizzate le raccolte che includono meno di 1000 client.  
-        >   
-        >  Quando si seleziona una raccolta che include un ruolo del sito, si applicano i comportamenti seguenti:  
-        >   
-        >  -   Se la raccolta contiene un server di sistema del sito e le impostazioni di verifica della distribuzione sono state configurate in modo da bloccare le raccolte con server di sistema del sito, si verifica un errore. A questo punto la creazione della distribuzione non continua.  
-        > -   Se si applica uno dei criteri seguenti, nella Distribuzione guidata del software viene visualizzato un messaggio sul rischio elevato. Per continuare, è necessario accettare di creare una distribuzione ad alto rischio. Il sito genera un messaggio di stato di controllo.  
-        >     - Se la raccolta contiene un server di sistema del sito e le impostazioni di verifica della distribuzione sono state configurate in modo da generare un avviso per le raccolte con server di sistema del sito
-        >     - Se la raccolta supera il valore predefinito delle dimensioni
-        >     - Se la raccolta contiene un server  
+     > [!NOTE]
+     >  Quando si esegue una distribuzione ad alto rischio, ad esempio quella di un sistema operativo, nella finestra **Seleziona raccolta** vengono visualizzate soltanto le raccolte personalizzate che soddisfano le impostazioni di verifica della distribuzione configurate nelle proprietà del sito. Le distribuzioni ad alto rischio sono sempre limitate alle raccolte personalizzate (quelle create dall'utente) e alla racconta predefinita **Computer sconosciuti** . Quando si crea una distribuzione ad alto rischio, non è possibile selezionare una raccolta predefinita quale **Tutti i sistemi**. Deselezionare **Nascondi le raccolte con un numero di membri maggiore della configurazione delle dimensioni minime del sito** per visualizzare tutte le raccolte personalizzate che contengono un numero di client inferiore rispetto alla dimensione massima configurata. Per altre informazioni, vedere [Impostazioni per gestire distribuzioni ad alto rischio](/sccm/core/servers/manage/settings-to-manage-high-risk-deployments).  
+     > 
+     >  Le impostazioni di verifica della distribuzione sono basate sull'appartenenza attuale della raccolta. Dopo aver distribuito la sequenza di attività, Configuration Manager non rivaluta l'appartenenza alla raccolta per le impostazioni di distribuzione ad alto rischio.  
+     > 
+     >  Ad esempio, si supponga di impostare **Dimensione predefinita** su 100 e **Dimensione massima** su 1000. Quando si crea una distribuzione ad alto rischio, nella finestra **Seleziona raccolta** vengono visualizzate solo le raccolte che contengono meno di 100 client. Se si deseleziona l'impostazione **Nascondi le raccolte con un numero di membri maggiore della configurazione delle dimensioni minime del sito**, nella finestra vengono visualizzate le raccolte che includono meno di 1000 client.  
+     > 
+     >  Quando si seleziona una raccolta che include un ruolo del sito, si applicano i comportamenti seguenti:  
+     > 
+     > - Se la raccolta contiene un server di sistema del sito e le impostazioni di verifica della distribuzione sono state configurate in modo da bloccare le raccolte con server di sistema del sito, si verifica un errore. A questo punto la creazione della distribuzione non continua.  
+     >   -   Se si applica uno dei criteri seguenti, nella Distribuzione guidata del software viene visualizzato un messaggio sul rischio elevato. Per continuare, è necessario accettare di creare una distribuzione ad alto rischio. Il sito genera un messaggio di stato di controllo.  
+     >   - Se la raccolta contiene un server di sistema del sito e le impostazioni di verifica della distribuzione sono state configurate in modo da generare un avviso per le raccolte con server di sistema del sito
+     >   - Se la raccolta supera il valore predefinito delle dimensioni
+     >   - Se la raccolta contiene un server  
 
-    - **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta**: archiviare il contenuto della sequenza di attività nel gruppo di punti di distribuzione predefinito della raccolta. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, l'opzione è disattivata.  
+   - **Utilizza gruppi di punti di distribuzione predefiniti associati a questa raccolta**: archivia il contenuto della sequenza di attività nel gruppo di punti di distribuzione predefinito della raccolta. Se la raccolta selezionata non è stata associata a un gruppo di punti di distribuzione, l'opzione è disattivata.  
 
-    - **Distribuisci automaticamente contenuto per dipendenze**: se uno dei contenuti di riferimento ha dipendenze, il sito invia anche il contenuto dipendente ai punti di distribuzione.  
+   - **Distribuisci automaticamente contenuto per dipendenze**: se uno dei contenuti di riferimento ha dipendenze, il sito invia anche il contenuto dipendente ai punti di distribuzione.  
 
-    - **Pre-download del contenuto per questa sequenza di attività**: per altre informazioni, vedere [Configurare la pre-cache del contenuto](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content).  
+   - **Pre-download del contenuto per questa sequenza di attività**: Per altre informazioni, vedere [Configurare la pre-cache del contenuto](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content).  
 
-    - **Seleziona modello di distribuzione**: a partire da Configuration Manager versione 1802,<!--1357391--> è possibile salvare e specificare un modello di distribuzione per una sequenza di attività.     
-
-         > [!IMPORTANT]  
-         > In Configuration Manager versione 1802 alcuni elementi non vengono salvati nel modello.  <!--510610--> Quando si esegue la distribuzione guidata, assicurarsi di applicare gli elementi seguenti:  
-         > - Installazione software 
-         > - Pianificazione 
-         > - Download anticipato del contenuto
- 
-    -   **Commenti (facoltativo):**: specificare informazioni aggiuntive che descrivono la distribuzione della sequenza di attività.  
-
-6.  Nella pagina **Impostazioni distribuzione** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
-
-    -   **Scopo**: dall'elenco a discesa scegliere una delle opzioni seguenti:  
-
-        -   **Disponibile**: l'utente visualizza la sequenza di attività in Software Center e può installarla su richiesta.  
-
-        -   **Richiesto**: Configuration Manager esegue automaticamente la sequenza di attività in base alla pianificazione configurata. Se la sequenza di attività non è nascosta, l'utente può comunque tenere traccia dello stato di distribuzione. Gli utenti possono anche usare Software Center per installare la sequenza di attività prima della scadenza.  
-
-        >  [!NOTE]  
-        >  Se più utenti hanno eseguito l'accesso al dispositivo, le distribuzioni di sequenze di attività e di pacchetti potrebbero non comparire in Software Center.  
-
-    -   **Rendi disponibile per**: specificare se la sequenza di attività è disponibile per uno dei tipi seguenti:  
-        - Solo client di Configuration Manager  
-        - Client di Configuration Manager, supporti e PXE  
-        - Solo supporti e PXE  
-        - Solo supporti e PXE (nascosto)  
+   - **Seleziona modello di distribuzione**: a partire da Configuration Manager versione 1802,<!--1357391--> è possibile salvare e specificare un modello di distribuzione per una sequenza di attività.     
 
         > [!IMPORTANT]  
-        >  Usare l'impostazione **Solo supporti e PXE (nascosto)** per le distribuzioni sequenza di attività automatiche. Per fare in modo che il computer si avvii automaticamente al momento della distribuzione senza intervento dell'utente, selezionare **Consenti distribuzione automatica del sistema operativo** e impostare la variabile **SMSTSPreferredAdvertID** come parte del supporto. Per altre informazioni sulle variabili della sequenza di attività, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables#SMSTSPreferredAdvertID).  
+        > In Configuration Manager versione 1802 alcuni elementi non vengono salvati nel modello.  <!--510610--> Quando si esegue la distribuzione guidata, assicurarsi di applicare gli elementi seguenti:  
+        > - Installazione software 
+        > - Pianificazione 
+        > - Download anticipato del contenuto
+ 
+   - **Commenti (facoltativo)**: specificare informazioni aggiuntive che descrivono la distribuzione della sequenza di attività.  
 
-    -   **Invia pacchetti di riattivazione**: se la distribuzione è impostata su **Richiesto** e si seleziona questa opzione, il sito invia un pacchetto di riattivazione ai computer prima che il client esegua la distribuzione. Il pacchetto riattiva il computer dalla sospensione nel momento in cui scade l'installazione. Prima di usare questa opzione, i computer e le reti devono essere configurati per la riattivazione LAN. Per altre informazioni, vedere [Pianificare la riattivazione dei client](/sccm/core/clients/deploy/plan/plan-wake-up-clients).  
+6. Nella pagina **Impostazioni distribuzione** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
 
-    -   **Consente a tutti i client che utilizzano una connessione di rete a consumo di scaricare il contenuto una volta raggiunta la scadenza dell'installazione. Se si abilita questa opzione, potrebbe essere addebitato un costo aggiuntivo**: questa opzione è disponibile solo per le distribuzioni **richieste**. Quando una sequenza di attività personalizzata installa un'applicazione ma non distribuisce un sistema operativo, è possibile specificare se consentire ai client di scaricare il contenuto dopo la scadenza dell'installazione se usano una connessione Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati usati quando si usa una connessione Internet a consumo.  
+   - **Scopo**: dall'elenco a discesa scegliere una delle seguenti opzioni:  
 
-        > [!NOTE]  
-        >  Anche se potrebbe funzionare per le sequenze di attività che non distribuiscono un sistema operativo, l'uso di una connessione Internet a consumo non è supportato.  
+     -   **Disponibile**: l'utente visualizza la sequenza di attività in Software Center e può installarla su richiesta.  
 
-7.  Nella pagina **Pianificazione** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
+     -   **Richiesto**: Configuration Manager esegue automaticamente la sequenza di attività in base alla pianificazione configurata. Se la sequenza di attività non è nascosta, l'utente può comunque tenere traccia dello stato di distribuzione. Gli utenti possono anche usare Software Center per installare la sequenza di attività prima della scadenza.  
 
-    > [!IMPORTANT]  
-    >  Quando un client di Windows PE viene avviato da PXE o da supporti di avvio, il client non valuta le pianificazioni della distribuzione. Queste pianificazioni includono avvio, scadenza e date di scadenza. Configurare le pianificazioni solo nelle distribuzioni ai client che vengono avviati dal sistema operativo Windows completo. Considerare la possibilità di usare altri metodi, ad esempio le finestre di manutenzione, per controllare le sequenze di attività attive distribuite ai client che vengono avviati da Windows PE.  
+     > [!NOTE]
+     >  Se più utenti hanno eseguito l'accesso al dispositivo, le distribuzioni di sequenze di attività e di pacchetti potrebbero non comparire in Software Center.  
 
-    -   **Pianifica quando questa distribuzione diventerà disponibile**: specificare la data e l'ora in cui la sequenza di attività può essere eseguita nel computer di destinazione. Quando si seleziona la casella di controllo **UTC**, la sequenza di attività è disponibile per più computer contemporaneamente. In caso contrario, la distribuzione è disponibile a orari diversi, in base all'ora locale di ogni computer.  
+   - **Rendi disponibile per**: specificare se la sequenza di attività è disponibile per uno dei tipi seguenti:  
+     - Solo client di Configuration Manager  
+     - Client di Configuration Manager, supporti e PXE  
+     - Solo supporti e PXE  
+     - Solo supporti e PXE (nascosto)  
 
-         Se l'ora di avvio è precedente rispetto al tempo necessario, il client scarica il contenuto della sequenza di attività all'ora di avvio.  
+     > [!IMPORTANT]  
+     >  Usare l'impostazione **Solo supporti e PXE (nascosto)** per le distribuzioni sequenza di attività automatiche. Per fare in modo che il computer si avvii automaticamente al momento della distribuzione senza intervento dell'utente, selezionare **Consenti distribuzione automatica del sistema operativo** e impostare la variabile **SMSTSPreferredAdvertID** come parte del supporto. Per altre informazioni sulle variabili della sequenza di attività, vedere [Variabili della sequenza di attività](/sccm/osd/understand/task-sequence-variables#SMSTSPreferredAdvertID).  
 
-    -   **Pianifica alla scadenza di questa assegnazione**: specificare la data e l'ora di scadenza della sequenza di attività nel computer di destinazione. Quando si seleziona la casella di controllo **UTC**, la sequenza di attività scade in più computer contemporaneamente. In caso contrario, la distribuzione scade a orari diversi, in base all'ora locale di ogni computer.  
+   - **Invia pacchetti di riattivazione**: se la distribuzione è impostata su **Richiesto** e si seleziona questa opzione, il sito invia un pacchetto di riattivazione ai computer prima che il client esegua la distribuzione. Il pacchetto riattiva il computer dalla sospensione nel momento in cui scade l'installazione. Prima di usare questa opzione, i computer e le reti devono essere configurati per la riattivazione LAN. Per altre informazioni, vedere [Pianificare la riattivazione dei client](/sccm/core/clients/deploy/plan/plan-wake-up-clients).  
 
-    -   **Pianificazione assegnazione**: per una distribuzione **richiesta**, specificare quando il client esegue la sequenza di attività. È possibile aggiungere più pianificazioni. La pianificazione dell'assegnazione può avere una delle configurazioni seguenti:   
-        - Data e ora specifiche  
-        - Criterio di ricorrenza mensile, settimanale o personalizzato  
-        - Non appena possibile  
-        - Eventi di accesso o disconnessione  
+   - **Consente a tutti i client che utilizzano una connessione di rete a consumo di scaricare il contenuto una volta raggiunta la scadenza dell'installazione. Se si abilita questa opzione, potrebbe essere addebitato un costo aggiuntivo**: questa opzione è disponibile solo quando la distribuzione è impostata su **Richiesto**. Quando una sequenza di attività personalizzata installa un'applicazione ma non distribuisce un sistema operativo, è possibile specificare se consentire ai client di scaricare il contenuto dopo la scadenza dell'installazione se usano una connessione Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati usati quando si usa una connessione Internet a consumo.  
 
-        > [!NOTE]  
-        >  Se si pianifica un'ora di avvio per una distribuzione richiesta precedente alla data e ora in cui la sequenza di attività è disponibile, il client di Configuration Manager scarica il contenuto all'ora di avvio assegnata. Questo comportamento si verifica anche se si è pianificato che la sequenza di attività sia disponibile in un secondo momento.<!--SCCMDocs issue 777-->  
+     > [!NOTE]  
+     >  Anche se potrebbe funzionare per le sequenze di attività che non distribuiscono un sistema operativo, l'uso di una connessione Internet a consumo non è supportato.  
 
-    -   **Riesegui comportamento**: specificare quando viene eseguita nuovamente la sequenza di attività. Selezionare una delle opzioni seguenti:  
+7. Nella pagina **Pianificazione** specificare le seguenti informazioni e quindi fare clic su **Avanti**.  
 
-        -   **Non rieseguire mai un programma distribuito**: se la sequenza di attività è già stata eseguita nel client, non viene eseguita nuovamente. Anche se originariamente si sono verificati errori o se sono stati modificati i file della sequenza di attività, la sequenza di attività non viene rieseguita.  
+   > [!IMPORTANT]  
+   >  Quando un client di Windows PE viene avviato da PXE o da supporti di avvio, il client non valuta le pianificazioni della distribuzione. Queste pianificazioni includono avvio, scadenza e date di scadenza. Configurare le pianificazioni solo nelle distribuzioni ai client che vengono avviati dal sistema operativo Windows completo. Considerare la possibilità di usare altri metodi, ad esempio le finestre di manutenzione, per controllare le sequenze di attività attive distribuite ai client che vengono avviati da Windows PE.  
 
-        -   **Riesegui sempre un programma**: la sequenza di attività viene sempre rieseguita nel client quando la distribuzione è pianificata. Viene rieseguita anche se la sequenza di attività è già stata eseguita correttamente. Questa impostazione è utile quando si usano distribuzioni ricorrenti in cui la sequenza di attività viene regolarmente aggiornata.  
+   -   **Pianifica quando questa distribuzione diventerà disponibile**: specificare la data e l'ora in cui la sequenza di attività può essere eseguita nel computer di destinazione. Quando si seleziona la casella di controllo **UTC**, la sequenza di attività è disponibile per più computer contemporaneamente. In caso contrario, la distribuzione è disponibile a orari diversi, in base all'ora locale di ogni computer.  
 
-            > [!IMPORTANT]  
-            >  Questa opzione è selezionata per impostazione predefinita. Non ha tuttavia effetto fino a quando non si assegna una distribuzione richiesta. Un utente può sempre rieseguire le distribuzioni disponibili.  
+        Se l'ora di avvio è precedente rispetto al tempo necessario, il client scarica il contenuto della sequenza di attività all'ora di avvio.  
 
-        -   **Riesegui se il tentativo precedente non è riuscito**: la sequenza di attività viene rieseguita quando la distribuzione è pianificata solo se non è stata eseguita correttamente in precedenza. Questa impostazione è utile per una distribuzione obbligatoria. Se l'ultimo tentativo di esecuzione non è riuscito, la sequenza di attività verrà nuovamente eseguita in base alla pianificazione di assegnazione.  
+   -   **Pianifica alla scadenza di questa assegnazione**: specificare la data e l'ora di scadenza della sequenza di attività nel computer di destinazione. Quando si seleziona la casella di controllo **UTC**, la sequenza di attività scade in più computer contemporaneamente. In caso contrario, la distribuzione scade a orari diversi, in base all'ora locale di ogni computer.  
 
-        -   **Riesegui se il tentativo precedente è riuscito**: la sequenza di attività viene rieseguita solo se è stata eseguita correttamente in precedenza nel client. Questa impostazione è utile quando di usano distribuzioni ricorrenti in cui la sequenza di attività viene regolarmente aggiornata e ogni aggiornamento richiede che quello precedente sia installato correttamente.  
+   -   **Pianificazione assegnazione**: per una distribuzione di tipo **Richiesto**, specificare quando il client esegue la sequenza di attività. È possibile aggiungere più pianificazioni. La pianificazione dell'assegnazione può avere una delle configurazioni seguenti:   
+       - Data e ora specifiche  
+       - Criterio di ricorrenza mensile, settimanale o personalizzato  
+       - Non appena possibile  
+       - Eventi di accesso o disconnessione  
 
-        > [!NOTE]  
-        >  Un utente può rieseguire la distribuzione di una sequenza di attività disponibile. Prima di distribuire una sequenza di attività disponibile in un ambiente di produzione, testare che cosa accade se un utente riesegue la sequenza di attività più volte.  
+       > [!NOTE]  
+       >  Se si pianifica un'ora di avvio per una distribuzione richiesta precedente alla data e ora in cui la sequenza di attività è disponibile, il client di Configuration Manager scarica il contenuto all'ora di avvio assegnata. Questo comportamento si verifica anche se si è pianificato che la sequenza di attività sia disponibile in un secondo momento.<!--SCCMDocs issue 777-->  
 
-8.  Nella pagina **Esperienza utente** specificare le seguenti informazioni, quindi fare clic su **Avanti**.  
+   -   **Riesegui comportamento**: specificare quando viene eseguita nuovamente la sequenza di attività. Selezionare una delle opzioni seguenti:  
 
-    -   **Consenti agli utenti di eseguire il programma indipendentemente dalle assegnazioni**: specificare se un utente può eseguire una distribuzione richiesta al di fuori della pianificazione delle assegnazioni. Questa opzione è sempre abilitata per le distribuzioni disponibili.   
+       -   **Non rieseguire mai un programma distribuito**: se la sequenza di attività è già stata eseguita nel client, non viene eseguita nuovamente. Anche se originariamente si sono verificati errori o se sono stati modificati i file della sequenza di attività, la sequenza di attività non viene rieseguita.  
 
-    -   **Mostra stato sequenza di attività**: specificare se il client di Configuration Manager visualizza lo stato di avanzamento della sequenza di attività.  
+       -   **Riesegui sempre un programma**: la sequenza di attività viene sempre rieseguita nel client quando la distribuzione è pianificata. Viene rieseguita anche se la sequenza di attività è già stata eseguita correttamente. Questa impostazione è utile quando si usano distribuzioni ricorrenti in cui la sequenza di attività viene regolarmente aggiornata.  
 
-    -   **Installazione software**: specificare se l'utente è autorizzato a installare il software al di fuori di una finestra di manutenzione configurata dopo l'orario pianificato.  
+           > [!IMPORTANT]  
+           >  Questa opzione è selezionata per impostazione predefinita. Non ha tuttavia effetto fino a quando non si assegna una distribuzione richiesta. Un utente può sempre rieseguire le distribuzioni disponibili.  
 
-    -   **Riavvio del sistema (se necessario per completare l'installazione)**: specificare se l'utente è autorizzato a riavviare il computer dopo l'installazione software al di fuori di una finestra di manutenzione configurata dopo il periodo di assegnazione.  
+       -   **Riesegui se il tentativo precedente non è riuscito**: la sequenza di attività viene rieseguita quando la distribuzione è pianificata solo se non è stata eseguita correttamente in precedenza. Questa impostazione è utile per una distribuzione obbligatoria. Se l'ultimo tentativo di esecuzione non è riuscito, la sequenza di attività verrà nuovamente eseguita in base alla pianificazione di assegnazione.  
 
-    - **Gestione filtri di scrittura per dispositivi con Windows Embedded**: questa impostazione controlla il comportamento di installazione nei dispositivi con Windows Embedded in cui è abilitato un filtro di scrittura. Scegliere l'opzione per eseguire il commit delle modifiche alla scadenza dell'installazione o durante una finestra di manutenzione. Quando si seleziona questa opzione, è necessario un riavvio e la modifica viene salvata in modo permanente nel dispositivo. In caso contrario, l'applicazione viene installata nell'overlay temporaneo e il commit viene eseguito successivamente. Quando si distribuisce una sequenza di attività in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta con una finestra di manutenzione configurata.  
+       -   **Riesegui se il tentativo precedente è riuscito**: la sequenza di attività viene rieseguita solo se è stata eseguita correttamente in precedenza nel client. Questa impostazione è utile quando di usano distribuzioni ricorrenti in cui la sequenza di attività viene regolarmente aggiornata e ogni aggiornamento richiede che quello precedente sia installato correttamente.  
 
-    -   **Consenti l'esecuzione della sequenza di attività per il client in Internet:** specificare se la sequenza di attività può essere eseguita in un client basato su Internet. Le operazioni di installazione di software, come ad esempio un sistema operativo, non sono supportate con questa impostazione. Usare questa opzione solo per le sequenze di attività generiche basate su script che eseguono operazioni nel sistema operativo standard.  
+       > [!NOTE]  
+       >  Un utente può rieseguire la distribuzione di una sequenza di attività disponibile. Prima di distribuire una sequenza di attività disponibile in un ambiente di produzione, testare che cosa accade se un utente riesegue la sequenza di attività più volte.  
 
-         - A partire dalla versione 1802, questa impostazione è supportata per le distribuzioni di una sequenza di attività di aggiornamento sul posto di Windows 10 in client basati su Internet mediante Cloud Management Gateway. Per altre informazioni, vedere [Distribuire l'aggiornamento sul posto di Windows 10 mediante Cloud Management Gateway](#deploy-windows-10-in-place-upgrade-via-cmg).    
+8. Nella pagina **Esperienza utente** specificare le seguenti informazioni, quindi fare clic su **Avanti**.  
+
+   -   **Consenti agli utenti di eseguire il programma indipendentemente dalle assegnazioni**: specificare se un utente può eseguire una distribuzione richiesta al di fuori della pianificazione di assegnazione. Questa opzione è sempre abilitata per le distribuzioni disponibili.   
+
+   -   **Mostra stato sequenza di attività**: specificare se il client di Configuration Manager visualizza lo stato di avanzamento della sequenza di attività.  
+
+   -   **Installazione software**: specificare se l'utente è autorizzato a installare il software al di fuori di una finestra di manutenzione configurata dopo l'orario pianificato.  
+
+   -   **Riavvio del sistema (se necessario per completare l'installazione)**: specificare se l'utente è autorizzato a riavviare il computer dopo l'installazione software di fuori di una finestra di manutenzione configurata dopo il periodo di assegnazione.  
+
+   - **Gestione filtri di scrittura per dispositivi con Windows Embedded**: questa impostazione controlla il comportamento di installazione nei dispositivi con Windows Embedded in cui è abilitato un filtro di scrittura. Scegliere l'opzione per eseguire il commit delle modifiche alla scadenza dell'installazione o durante una finestra di manutenzione. Quando si seleziona questa opzione, è necessario un riavvio e la modifica viene salvata in modo permanente nel dispositivo. In caso contrario, l'applicazione viene installata nell'overlay temporaneo e il commit viene eseguito successivamente. Quando si distribuisce una sequenza di attività in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta con una finestra di manutenzione configurata.  
+
+   -   **Consenti l'esecuzione della sequenza di attività per il client in Internet**: specificare se la sequenza attività può essere eseguita in un client basato su Internet. Le operazioni di installazione di software, come ad esempio un sistema operativo, non sono supportate con questa impostazione. Usare questa opzione solo per le sequenze di attività generiche basate su script che eseguono operazioni nel sistema operativo standard.  
+
+        - A partire dalla versione 1802, questa impostazione è supportata per le distribuzioni di una sequenza di attività di aggiornamento sul posto di Windows 10 in client basati su Internet mediante Cloud Management Gateway. Per altre informazioni, vedere [Distribuire l'aggiornamento sul posto di Windows 10 mediante Cloud Management Gateway](#deploy-windows-10-in-place-upgrade-via-cmg).    
 
 9. Nella pagina **Avvisi** specificare le impostazioni di avviso desiderate per la distribuzione di questa sequenza di attività e quindi fare clic su **Avanti**.  
 
 10. Nella pagina **Punti di distribuzione** specificare le informazioni seguenti e quindi fare clic su **Avanti**.  
 
-    -   **Opzioni di distribuzione:** specificare una delle opzioni seguenti:  
+    -   **Opzioni di distribuzione**: specificare una delle opzioni seguenti:  
 
         > [!NOTE]  
         >  Quando si usa il multicast per distribuire un sistema operativo, scaricare il contenuto nei computer quando necessario oppure prima dell'esecuzione della sequenza di attività.  
 
-        - **Scaricare il contenuto localmente quando necessario eseguendo la sequenza di attività**: specificare che i client scaricano il contenuto dal punto di distribuzione in base alle necessità della sequenza di attività. Il client avvia la sequenza di attività. Quando un passaggio della sequenza di attività richiede il contenuto, il download viene eseguito prima dell'esecuzione del passaggio.  
+        - **Scaricare il contenuto localmente quando necessario eseguendo la sequenza di attività**: specificare che i client scaricano contenuto dal punto di distribuzione nel computer di destinazione come richiesto dalla sequenza di attività. Il client avvia la sequenza di attività. Quando un passaggio della sequenza di attività richiede il contenuto, il download viene eseguito prima dell'esecuzione del passaggio.  
 
-        - **Scaricare tutto il contenuto localmente prima di avviare la sequenza di attività**: specificare che i client scaricano tutto il contenuto dal punto di distribuzione prima che la sequenza di attività venga eseguita. Se si è resa la sequenza di attività disponibile nelle distribuzioni PXE e dei supporti di avvio nella pagina **Impostazioni distribuzione**, questa opzione non viene visualizzata.  
+        - **Scaricare tutto il contenuto localmente prima di avviare la sequenza di attività**: specificare che i client scaricano tutto il contenuto dal punto di distribuzione prima dell'esecuzione della sequenza di attività. Se si è resa la sequenza di attività disponibile nelle distribuzioni PXE e dei supporti di avvio nella pagina **Impostazioni distribuzione**, questa opzione non viene visualizzata.  
 
-        - **Accedere al contenuto direttamente da un punto di distribuzione quando necessario eseguendo la sequenza di attività**: specificare che i client eseguono il contenuto dal punto di distribuzione. Questa opzione è disponibile solo quando si abilitano tutti i pacchetti associati con la sequenza di attività all'uso di una condivisione pacchetto nel punto di distribuzione. Per abilitare il contenuto all'utilizzo di una condivisione pacchetto, vedere la scheda **Accesso dati** nelle **Proprietà** di ciascun pacchetto.  
+        - **Accedere al contenuto direttamente da un punto di distribuzione quando necessario eseguendo la sequenza di attività**: Specificare che i client eseguono il contenuto dal punto di distribuzione. Questa opzione è disponibile solo quando si abilitano tutti i pacchetti associati con la sequenza di attività all'uso di una condivisione pacchetto nel punto di distribuzione. Per abilitare il contenuto all'utilizzo di una condivisione pacchetto, vedere la scheda **Accesso dati** nelle **Proprietà** di ciascun pacchetto.  
 
-    -   **Utilizzare un punto di distribuzione remoto quando non sono disponibili punti di distribuzione locali**: specifica se i client possono scaricare il contenuto necessario per la sequenza di attività da punti di distribuzione di un gruppo di limiti vicino.  
+    -   **Utilizzare un punto di distribuzione remoto quando non sono disponibili punti di distribuzione locali**: specificare se i client possono usare punti di distribuzione remoti da un gruppo di limiti vicino per scaricare il contenuto necessario per la sequenza di attività.  
 
-    - **Consenti ai client di usare punti di distribuzione dal gruppo di limiti del sito predefinito**: specificare se i client devono scaricare il contenuto da un punto di distribuzione nel gruppo di limiti del sito predefinito quando non è disponibile da un punto di distribuzione nel gruppo di limiti corrente o nei gruppi di limiti vicini.  
+    - **Consenti ai client di usare punti di distribuzione dal gruppo di limiti del sito predefinito**: specificare se i clienti devono scaricare il contenuto da un punto di distribuzione nel gruppo di limiti del sito predefinito quando il contenuto non è disponibile in un punto di distribuzione nel gruppo di limiti corrente o nei gruppi di limiti vicini.  
 
         > [!Note]  
         > A partire dalla versione 1810, quando un dispositivo esegue una sequenza di attività e deve acquisire il contenuto, il dispositivo usa comportamenti dei gruppi di limiti simili al client Configuration Manager. Per altre informazioni, vedere [Supporto della sequenza di attività per i gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgr-osd).<!--1359025-->  
@@ -488,7 +488,7 @@ Per distribuire una sequenza di attività di aggiornamento sul posto usare le im
 
     -   Se l'oggetto è stato importato in precedenza, selezionare una delle seguenti azioni:  
 
-        -   **Ignora duplicato** (predefinito): questa azione non importa l'oggetto. Al contrario, la procedura guidata collega l'oggetto esistente alla sequenza di attività.  
+        -   **Ignora duplicato** (impostazione predefinita): questa azione non importa l'oggetto. Al contrario, la procedura guidata collega l'oggetto esistente alla sequenza di attività.  
 
         -   **Sovrascrivi**: questa azione sovrascrive l'oggetto esistente con l'oggetto importato. Per le applicazioni, è possibile aggiungere una revisione per aggiornare l'applicazione esistente o creare una nuova applicazione.  
 

@@ -10,12 +10,12 @@ ms.assetid: e8159bd9-5c2b-4d25-82f9-78fcfd732ba9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7d12fb7f3c7e14df57ec23074de23bfcf53e6c4b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 1bd9afcf12be3bae1e45ea2e0edf8a677e161bcf
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341169"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53420832"
 ---
 # <a name="how-to-use-asset-intelligence-in-system-center-configuration-manager"></a>Come usare Asset Intelligence in System Center Configuration Manager
 
@@ -29,14 +29,14 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 ###  <a name="BKMK_AssetIntelligenceHomePage"></a> Home page di Asset Intelligence  
  La home page di **Asset Intelligence** visualizza un dashboard di riepilogo delle informazioni del catalogo di Asset Intelligence. Nella home page è possibile visualizzare informazioni sulla sincronizzazione del catalogo e sullo stato del software di inventario. La home page di **Asset Intelligence** è divisa nelle sezioni seguenti:  
 
--   **Sincronizzazione catalogo**: fornisce informazioni sullo stato di abilitazione di Asset Intelligence, sullo stato corrente del punto di sincronizzazione di Asset Intelligence, sulla pianificazione della sincronizzazione, sul fatto che il resoconto delle licenze cliente sia stato o meno importato, sulla data dell'ultimo aggiornamento dello stato e sull'ora per il successivo aggiornamento pianificato, nonché sul numero di modifiche apportate dopo l'installazione del sistema del sito del punto di sincronizzazione di Asset Intelligence.  
+- **Sincronizzazione catalogo**: presenta informazioni sullo stato di abilitazione di Asset Intelligence, sullo stato corrente del punto di sincronizzazione di Asset Intelligence, sulla pianificazione della sincronizzazione, sul fatto che il resoconto delle licenze cliente sia stato o meno importato, sulla data dell'ultimo aggiornamento dello stato e sull'ora per il successivo aggiornamento pianificato, nonché sul numero di modifiche apportate dopo l'installazione del sistema del sito del punto di sincronizzazione di Asset Intelligence.  
 
-    > [!NOTE]  
-    >  La sezione relativa alla sincronizzazione del catalogo di Asset Intelligence nella home page di **Asset Intelligence** viene visualizzata solo se è stato installato un ruolo del sistema del sito del punto di sincronizzazione di Asset Intelligence.  
+  > [!NOTE]  
+  >  La sezione relativa alla sincronizzazione del catalogo di Asset Intelligence nella home page di **Asset Intelligence** viene visualizzata solo se è stato installato un ruolo del sistema del sito del punto di sincronizzazione di Asset Intelligence.  
 
--   **Stato software di inventario**: fornisce il numero e la percentuale dei software di inventario, le categorie software e le famiglie software identificate da Microsoft, identificate da un utente amministratore, con identificazione online in sospeso o non identificate e non in sospeso. Le informazioni visualizzate in formato di tabella mostrano i conteggi, mentre le informazioni visualizzate nel grafico mostrano le percentuali.  
+- **Stato software di inventario**: indica il conteggio e la percentuale dei programmi software, delle categorie software e delle famiglie software di inventario identificati da Microsoft, identificati da un utente amministratore, con identificazione online in sospeso o non identificati e non in sospeso. Le informazioni visualizzate in formato di tabella mostrano i conteggi, mentre le informazioni visualizzate nel grafico mostrano le percentuali.  
 
- Attenersi alla procedura seguente per visualizzare le informazioni di Asset Intelligence nella home page di **Asset Intelligence** .  
+  Attenersi alla procedura seguente per visualizzare le informazioni di Asset Intelligence nella home page di **Asset Intelligence** .  
 
 ##### <a name="to-view-asset-intelligence-information-on-the-asset-intelligence-home-page"></a>Per visualizzare le informazioni di Asset Intelligence nella home page di Asset Intelligence  
 
@@ -73,20 +73,20 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 
 #### <a name="to-create-a-synchronization-schedule-for-the-asset-intelligence-catalog"></a>Per creare una pianificazione della sincronizzazione per il catalogo di Asset Intelligence  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1. Nella console di Configuration Manager fare clic su **Asset e conformità**.  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**.  
+2. Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**.  
 
-3.  Nel gruppo **Crea** della scheda **Home** fare clic su **Sincronizza**e quindi su **Pianifica sincronizzazione**.  
+3. Nel gruppo **Crea** della scheda **Home** fare clic su **Sincronizza**e quindi su **Pianifica sincronizzazione**.  
 
-4.  Nella finestra di dialogo **Pianificazione punto di sincronizzazione di Asset Intelligence** selezionare **Abilita sincronizzazione su una pianificazione**e quindi configurare una pianificazione semplice o personalizzata.  
+4. Nella finestra di dialogo **Pianificazione punto di sincronizzazione di Asset Intelligence** selezionare **Abilita sincronizzazione su una pianificazione**e quindi configurare una pianificazione semplice o personalizzata.  
 
-5.  Fare clic su **OK** per salvare le modifiche.  
+5. Fare clic su **OK** per salvare le modifiche.  
 
-    > [!NOTE]  
-    >  Per informazioni sulla pianificazione della sincronizzazione, inclusa la sincronizzazione pianificata successiva, vedere il nodo **Asset Intelligence** nell'area di lavoro **Asset e conformità** nel sito principale della gerarchia.  
+   > [!NOTE]  
+   >  Per informazioni sulla pianificazione della sincronizzazione, inclusa la sincronizzazione pianificata successiva, vedere il nodo **Asset Intelligence** nell'area di lavoro **Asset e conformità** nel sito principale della gerarchia.  
 
- Attenersi alla procedura seguente per sincronizzare manualmente il catalogo di Asset Intelligence.  
+   Attenersi alla procedura seguente per sincronizzare manualmente il catalogo di Asset Intelligence.  
 
 > [!WARNING]  
 >  System Center Online accetta solo una richiesta di sincronizzazione manuale in un periodo di 12 ore.  
@@ -180,31 +180,31 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 
 ##### <a name="to-create-a-user-defined-hardware-requirements"></a>Per creare un requisito hardware definito dall'utente  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1. Nella console di Configuration Manager fare clic su **Asset e conformità**.  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**e quindi su **Requisiti hardware**.  
+2. Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**e quindi su **Requisiti hardware**.  
 
-3.  Nel gruppo **Crea** della scheda **Home** fare clic su **Crea requisiti hardware**.  
+3. Nel gruppo **Crea** della scheda **Home** fare clic su **Crea requisiti hardware**.  
 
-4.  Nella pagina **Generale** immettere le informazioni seguenti:  
+4. Nella pagina **Generale** immettere le informazioni seguenti:  
 
-    1.  **Titolo software**: specifica il titolo software a cui sono associati requisiti hardware. Il titolo software non può essere già presente nel catalogo di Asset Intelligence.  
+   1. **Titolo software**: specifica il titolo software a cui sono associati i requisiti hardware. Il titolo software non può essere già presente nel catalogo di Asset Intelligence.  
 
-    2.  **Stato convalida**: elenca lo stato di convalida come **Definito da utente** per i requisiti hardware. È impossibile modificare questa impostazione.  
+   2. **Stato convalida**: elenca lo stato di convalida come **Definito dall'utente** per i requisiti hardware. È impossibile modificare questa impostazione.  
 
-    3.  **CPU minima (MHz)**: specifica la velocità minima del processore, in megahertz (MHz), richiesta dal titolo software.  
+   3. **CPU minima (MHz)**: specifica la velocità minima del processore, in megahertz (MHz), richiesta dal titolo software.  
 
-    4.  **RAM minima (KB)**: specifica la RAM minima, in kilobyte (KB), richiesta dal titolo software.  
+   4. **RAM minima (KB)**: specifica la quantità di RAM minima, in kilobyte (KB), richiesta dal titolo software.  
 
-    5.  **Dimensioni minime spazio su disco (KB)**: specifica le dimensioni minime dello spazio disponibile su disco, in KB, richieste dal titolo software.  
+   5. **Dimensioni minime spazio su disco (KB):**: specifica la quantità minima di spazio disponibile sul disco, in KB, richiesta dal titolo software.  
 
-    6.  **Dimensioni disco minime (KB)**: specifica le dimensioni minime del disco rigido, in KB, richieste dal titolo software.  
+   6. **Dimensioni disco minime (KB):**: specifica la dimensione minima del disco rigido, in KB, richiesta dal titolo software.  
 
-     Fare clic su **Avanti**.  
+      Fare clic su **Avanti**.  
 
-5.  Nella pagina **Riepilogo** verificare le impostazioni e quindi fare clic su **Avanti**.  
+5. Nella pagina **Riepilogo** verificare le impostazioni e quindi fare clic su **Avanti**.  
 
-6.  Nella pagina **Completamento** fare clic su **Chiudi** per uscire dalla procedura guidata.  
+6. Nella pagina **Completamento** fare clic su **Chiudi** per uscire dalla procedura guidata.  
 
 ###  <a name="BKMK_ModifyCategorization"></a> Modificare le informazioni di categorizzazione per il software di inventario  
  Il software predefinito nel catalogo di Asset Intelligence è configurato con informazioni di categorizzazione specifiche, ad esempio nome del prodotto, fornitore, categoria software e famiglia software. Quando le informazioni di categorizzazione predefinite non soddisfano i requisiti, è possibile modificarle nelle proprietà del titolo software. Quando si modificano le informazioni di categorizzazione per software predefiniti, lo stato di convalida per le modifiche software cambia da **Convalidato** a **Definito da utente**.  
@@ -216,27 +216,27 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 
 ##### <a name="to-modify-the-categorizations-for-software-titles"></a>Per modificare le categorizzazioni per i titoli software  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1. Nella console di Configuration Manager fare clic su **Asset e conformità**.  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**e quindi su **Software di inventario**.  
+2. Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**e quindi su **Software di inventario**.  
 
-3.  Selezionare uno o più titoli software di cui si vogliono modificare le categorizzazioni.  
+3. Selezionare uno o più titoli software di cui si vogliono modificare le categorizzazioni.  
 
-4.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
+4. Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 
-5.  Nella scheda **Generale** è possibile modificare le informazioni di categorizzazione seguenti:  
+5. Nella scheda **Generale** è possibile modificare le informazioni di categorizzazione seguenti:  
 
-    -   **Nome prodotto**: specifica il nome del titolo software di inventario.  
+   -   **Nome prodotto**: specifica il nome del titolo software di inventario.  
 
-    -   **Fornitore**: specifica il nome del fornitore che ha sviluppato il titolo software di inventario.  
+   -   **Fornitore**: specifica il nome del fornitore che ha sviluppato il titolo software di inventario.  
 
-    -   **Categoria**: specifica la categoria software attualmente assegnata al titolo software di inventario.  
+   -   **Categoria**: specifica la categoria software attualmente assegnata al titolo software di inventario.  
 
-    -   **Famiglia**: specifica la famiglia software attualmente assegnata al titolo software di inventario.  
+   -   **Famiglia**: specifica la famiglia software attualmente assegnata al titolo software di inventario.  
 
-6.  Fare clic su **OK** per salvare le modifiche.  
+6. Fare clic su **OK** per salvare le modifiche.  
 
- Attenersi alla procedura seguente per ripristinare le informazioni di categorizzazione originali del software.  
+   Attenersi alla procedura seguente per ripristinare le informazioni di categorizzazione originali del software.  
 
 ### <a name="revert-categorization-information-to-original-settings-for-software"></a>Ripristinare le impostazioni originali delle informazioni di categorizzazione per il software  
  Configuration Manager archivia le informazioni di categorizzazione ottenute da System Center Online nel database. Le informazioni non possono essere eliminate. Dopo che le informazioni sono state modificate, è possibile ripristinare le informazioni di categorizzazione di System Center Online. È anche possibile ripristinare le impostazioni originali del software di inventario non incluso nel catalogo di Asset Intelligence.  
@@ -310,24 +310,24 @@ Questo argomento contiene informazioni che consentono di gestire le attività ti
 
 #### <a name="to-resolve-a-software-details-conflict"></a>Per risolvere un conflitto dei dettagli software  
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità**.  
+1. Nella console di Configuration Manager fare clic su **Asset e conformità**.  
 
-2.  Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**e quindi su **Software di inventario**.  
+2. Nell'area di lavoro **Asset e conformità** fare clic su **Asset Intelligence**e quindi su **Software di inventario**.  
 
-3.  Esaminare la colonna **Stato** per individuare i titoli software con stato **Aggiornabile** .  
+3. Esaminare la colonna **Stato** per individuare i titoli software con stato **Aggiornabile** .  
 
-4.  Selezionare il titolo software per cui è necessario risolvere un conflitto e quindi nel gruppo **Prodotto** della scheda **Home** fare clic su **Risolvi conflitto**.  
+4. Selezionare il titolo software per cui è necessario risolvere un conflitto e quindi nel gruppo **Prodotto** della scheda **Home** fare clic su **Risolvi conflitto**.  
 
-5.  Esaminare le informazioni seguenti:  
+5. Esaminare le informazioni seguenti:  
 
-    -   **Valore locale**: specifica le informazioni di categorizzazione software esistenti nel catalogo di Asset Intelligence che sono in conflitto con i dettagli di categorizzazione software più recenti di System Center Online.  
+   -   **Valore locale**: specifica le informazioni di categorizzazione software esistenti nel catalogo di Asset Intelligence che sono in conflitto con i dettagli di categorizzazione software più recenti di System Center Online.  
 
-    -   **Valore scaricato**: specifica le nuove informazioni di categorizzazione software di System Center Online per le informazioni di categorizzazione software del catalogo di Asset Intelligence in conflitto.  
+   -   **Valore scaricato**: specifica le nuove informazioni di categorizzazione software di System Center Online per le informazioni di categorizzazione software del catalogo di Asset Intelligence in conflitto.  
 
-6.  Selezionare una delle impostazioni seguenti per risolvere un conflitto dei dettagli software:  
+6. Selezionare una delle impostazioni seguenti per risolvere un conflitto dei dettagli software:  
 
-    -   **Mantieni le informazioni nel catalogo modificato localmente**: risolve il conflitto dei dettagli software mantenendo le informazioni di categorizzazione software del catalogo di Asset Intelligence esistenti. Quando si seleziona questa impostazione, lo stato del titolo software cambia da **Aggiornabile** a **Definito da utente**.  
+   - **Mantieni le informazioni nel catalogo modificato localmente**: risolve il conflitto dei dettagli software mantenendo le informazioni di categorizzazione software del catalogo di Asset Intelligence esistenti. Quando si seleziona questa impostazione, lo stato del titolo software cambia da **Aggiornabile** a **Definito da utente**.  
 
-    -   **Sovrascrivi le informazioni nel catalogo modificato localmente con le informazioni del catalogo di System Center Online**: risolve il conflitto dei dettagli software sovrascrivendo le informazioni di categorizzazione software del catalogo di Asset Intelligence esistenti con le nuove informazioni ottenute da System Center Online. Quando si seleziona questa impostazione, lo stato del titolo software cambia da **Aggiornabile** a **Convalidato**.  
+   - **Sovrascrivi le informazioni nel catalogo modificato localmente con le informazioni del catalogo di System Center Online**: risolve il conflitto dei dettagli software sovrascrivendo le informazioni di categorizzazione software del catalogo di Asset Intelligence esistenti con le nuove informazioni ottenute da System Center Online. Quando si seleziona questa impostazione, lo stato del titolo software cambia da **Aggiornabile** a **Convalidato**.  
 
      Fare clic su **OK** per salvare la risoluzione del conflitto.  
