@@ -10,12 +10,12 @@ ms.assetid: 55ae86a7-f0ab-4c09-b4da-89cd0e7fa0e0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 17b0147e82e2eb9a756bdab69eed7ab86f98a1e0
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: d046a5fcd6602c82eda631c9d9b7d47db2470888
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344297"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418425"
 ---
 # <a name="configuring-reporting-in-system-center-configuration-manager"></a>Configurazione della creazione di report in System Center Configuration Manager
 
@@ -97,9 +97,9 @@ Prima di poter creare, modificare ed eseguire report nella console di System Cen
     > [!NOTE]  
     >  Per altre informazioni sulla configurazione dei sistemi del sito, vedere [Aggiungere ruoli del sistema del sito per System Center Configuration Manager](../deploy/configure/add-site-system-roles.md).  
 
-    -   **Nuovo sistema del sito**: nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea server di sistema sito**. Viene visualizzata la **Creazione guidata server del sistema sito** .  
+    -   **Nuovo sistema del sito**: Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea server di sistema sito**. Viene visualizzata la **Creazione guidata server del sistema sito** .  
 
-    -   **Sistema del sito esistente**: fare clic sul server in cui si vuole installare il ruolo del sistema del sito del punto di Reporting Services. Quando si seleziona un server, nel riquadro dei risultati viene visualizzato un elenco dei ruoli del sistema del sito già installati nel server.  
+    -   **Sistema del sito esistente**: fare clic sul server in cui si desidera installare il ruolo del sistema del sito del punto di Reporting Services. Quando si seleziona un server, nel riquadro dei risultati viene visualizzato un elenco dei ruoli del sistema del sito già installati nel server.  
 
          Nella scheda **Home** , nel gruppo **Server** , fare clic su **Aggiungi ruoli del sistema del sito**. Verrà visualizzata la finestra di **Aggiunta guidata ruoli del sistema del sito** .  
 
@@ -111,7 +111,7 @@ Prima di poter creare, modificare ed eseguire report nella console di System Cen
 
     -   **Nome server di database del sito**: specificare il nome del server che ospita il database del sito di Configuration Manager. In genere, la procedura guidata recupera automaticamente il nome di dominio completo (FQDN) del server. Per specificare un'istanza di database, usare il formato &lt;*Nome server*>\&lt;*<Nome istanza*>.  
 
-    -   **Nome del database**: specificare il nome del database del sito di Configuration Manager, quindi fare clic su **Verifica** per verificare che la procedura guidata abbia accesso al database del sito.  
+    -   **Nome database**: specificare il nome del database del sito di Configuration Manager, quindi fare clic su **Verifica** per verificare che la procedura guidata abbia accesso al database del sito.  
 
         > [!IMPORTANT]  
         >  L'account utente che crea il punto di Reporting Services deve disporre dell'accesso in **Lettura** al database del sito. Se la prova di connessione non riesce, verrà visualizzata un'icona di avviso rossa. Spostare il cursore sull'icona per leggere i dettagli dell'errore. Correggere l'errore, quindi fare nuovamente clic su **Verifica** .  
@@ -123,7 +123,7 @@ Prima di poter creare, modificare ed eseguire report nella console di System Cen
         > [!IMPORTANT]  
         >  Configuration Manager esegue una connessione nell'ambito dell'utente corrente a Windows Management Instrumentation (WMI) nel sistema del sito selezionato per recuperare l'istanza di SQL Server per Reporting Services. Se l'utente corrente non dispone dell'accesso in **Lettura** a WMI nel sistema del sito, non è possibile recuperare le istanze di Reporting Services.  
 
-    -   **Account punto di Reporting Services**: fare clic su **Imposta**, selezionare un account da usare quando SQL Server Reporting Services nel punto di Reporting Services si connette al database del sito di Configuration Manager per recuperare i dati visualizzati in un report. Selezionare **Account esistente** per specificare un account utente di Windows precedentemente configurato come account di Configuration Manager oppure selezionare **Nuovo account** per specificare un account utente di Windows non attualmente configurato come account di Configuration Manager. Configuration Manager concede automaticamente all'utente specificato l'accesso al database del sito. L'utente viene visualizzato nella sottocartella **Account** del nodo **Sicurezza** nell'area di lavoro **Amministrazione** con il nome account **Punto di Reporting Services di Configuration Manager** .  
+    -   **Account punto di Reporting Services**: fare clic su **Imposta**, selezionare un account da utilizzare quando SQL Server Reporting Services nel punto di Reporting Services si connette al database del sito di Configuration Manager per recuperare i dati visualizzati in un report. Selezionare **Account esistente** per specificare un account utente di Windows precedentemente configurato come account di Configuration Manager oppure selezionare **Nuovo account** per specificare un account utente di Windows non attualmente configurato come account di Configuration Manager. Configuration Manager concede automaticamente all'utente specificato l'accesso al database del sito. L'utente viene visualizzato nella sottocartella **Account** del nodo **Sicurezza** nell'area di lavoro **Amministrazione** con il nome account **Punto di Reporting Services di Configuration Manager** .  
 
          L'account che esegue Reporting Services deve appartenere al gruppo di sicurezza locale del dominio **Gruppo di accesso Windows Authorization**e disporre dell'autorizzazione **Lettura tokenGroupsGlobalAndUniversal** impostata su **Consenti**. Per poter eseguire correttamente i report, deve essere presente un trust bidirezionale per gli utenti di un dominio diverso da quello dell'account al punto Servicies Reporting.
 
@@ -147,29 +147,29 @@ Prima di poter creare, modificare ed eseguire report nella console di System Cen
 > [!IMPORTANT]  
 >  Le azioni contenute nel seguente elenco vengono eseguite utilizzando le credenziali dell'account configurato per il servizio SMS_Executive, che solitamente corrisponde all'account di sistema locale del server del sito.  
 
--   Consente di installare il ruolo del sito del punto di Reporting Services.  
+- Consente di installare il ruolo del sito del punto di Reporting Services.  
 
--   Consente di creare l'origine dati in Reporting Services con le credenziali archiviate specificate nella procedura guidata. Si tratta della password e dell'account utente Windows utilizzati da Reporting Services per la connessione al database del sito durante l'esecuzione dei report.  
+- Consente di creare l'origine dati in Reporting Services con le credenziali archiviate specificate nella procedura guidata. Si tratta della password e dell'account utente Windows utilizzati da Reporting Services per la connessione al database del sito durante l'esecuzione dei report.  
 
--   Consente di creare la cartella radice di Configuration Manager in Reporting Services.  
+- Consente di creare la cartella radice di Configuration Manager in Reporting Services.  
 
--   Consente di aggiungere i ruoli di sicurezza **Utenti report di Configuration Manager** e **Amministratori report di Configuration Manager** in Reporting Services.  
+- Consente di aggiungere i ruoli di sicurezza **Utenti report di Configuration Manager** e **Amministratori report di Configuration Manager** in Reporting Services.  
 
--   Consente di creare sottocartelle e di distribuire i report di Configuration Manager da %ProgramFiles%\SMS_SRSRP a Reporting Services.  
+- Consente di creare sottocartelle e di distribuire i report di Configuration Manager da %ProgramFiles%\SMS_SRSRP a Reporting Services.  
 
--   Consente di aggiungere il ruolo **Utenti report di Configuration Manager** in Reporting Services alle cartelle radice per tutti gli account utente in Configuration Manager che dispongono dei diritti di **Lettura**.  
+- Consente di aggiungere il ruolo **Utenti report di Configuration Manager** in Reporting Services alle cartelle radice per tutti gli account utente in Configuration Manager che dispongono dei diritti di **Lettura**.  
 
--   Consente di aggiungere il ruolo **Amministratori report di Configuration Manager** in Reporting Services alle cartelle radice per tutti gli account utente in Configuration Manager che dispongono dei diritti di **lettura**.  
+- Consente di aggiungere il ruolo **Amministratori report di Configuration Manager** in Reporting Services alle cartelle radice per tutti gli account utente in Configuration Manager che dispongono dei diritti di **lettura**.  
 
--   Consente di recuperare il mapping tra le cartelle report e i tipi di oggetti protetti di Configuration Manager (gestiti nel database del sito di Configuration Manager).  
+- Consente di recuperare il mapping tra le cartelle report e i tipi di oggetti protetti di Configuration Manager (gestiti nel database del sito di Configuration Manager).  
 
--   Consente di configurare i seguenti diritti per utenti amministratori di Configuration Manager in cartelle report specifiche di Reporting Services:  
+- Consente di configurare i seguenti diritti per utenti amministratori di Configuration Manager in cartelle report specifiche di Reporting Services:  
 
-    -   Consente di aggiungere utenti e di assegnare il ruolo **Utenti report di Configuration Manager** alla cartella report associata per gli utenti amministratori che dispongono delle autorizzazioni **Esegui report** per l'oggetto di Configuration Manager.  
+  - Consente di aggiungere utenti e di assegnare il ruolo **Utenti report di Configuration Manager** alla cartella report associata per gli utenti amministratori che dispongono delle autorizzazioni **Esegui report** per l'oggetto di Configuration Manager.  
 
-    -   Consente di aggiungere utenti e di assegnare il ruolo **Amministratori report di Configuration Manager** alla cartella report associata per gli utenti amministratori che dispongono delle autorizzazioni **Modifica report** per l'oggetto di Configuration Manager.  
+  - Consente di aggiungere utenti e di assegnare il ruolo **Amministratori report di Configuration Manager** alla cartella report associata per gli utenti amministratori che dispongono delle autorizzazioni **Modifica report** per l'oggetto di Configuration Manager.  
 
-     Configuration Manager si connette a Reporting Services e configura le autorizzazioni per gli utenti nelle cartelle radice di Configuration Manager e di Reporting Services e in cartelle report specifiche. Al termine dell'installazione iniziale del punto di Reporting Services, Configuration Manager si connette a Reporting Services ad intervalli di 10 minuti per verificare che i diritti utente configurati nelle cartelle report siano i diritti associati configurati per gli utenti di Configuration Manager. Quando vengono aggiunti utenti o vengono modificati i diritti utente nella cartella report usando Gestione report di Reporting Services, Configuration Manager sovrascrive le modifiche mediante le assegnazioni basate sui ruoli archiviate nel database del sito. Configuration Manager rimuove anche gli utenti che non dispongono dei diritti di creazione di report in Configuration Manager.  
+    Configuration Manager si connette a Reporting Services e configura le autorizzazioni per gli utenti nelle cartelle radice di Configuration Manager e di Reporting Services e in cartelle report specifiche. Al termine dell'installazione iniziale del punto di Reporting Services, Configuration Manager si connette a Reporting Services ad intervalli di 10 minuti per verificare che i diritti utente configurati nelle cartelle report siano i diritti associati configurati per gli utenti di Configuration Manager. Quando vengono aggiunti utenti o vengono modificati i diritti utente nella cartella report usando Gestione report di Reporting Services, Configuration Manager sovrascrive le modifiche mediante le assegnazioni basate sui ruoli archiviate nel database del sito. Configuration Manager rimuove anche gli utenti che non dispongono dei diritti di creazione di report in Configuration Manager.  
 
 ##  <a name="BKMK_SecurityRoles"></a> Ruoli di sicurezza di Reporting Services per Configuration Manager  
  Quando Configuration Manager installa il punto di Reporting Services, in Reporting Services vengono aggiunti i seguenti ruoli di sicurezza:  
@@ -262,7 +262,7 @@ Prima di poter creare, modificare ed eseguire report nella console di System Cen
 
     -   **Nome server di database del sito**: specificare il nome del server che ospita il database del sito di Configuration Manager. In genere, la procedura guidata recupera automaticamente il nome di dominio completo (FQDN) del server. Per specificare un'istanza di database, usare il formato &lt;*Nome server*>\&lt;*<Nome istanza*>.  
 
-    -   **Nome del database**: specificare il nome del database del sito di System Center 2012 Configuration Manager, quindi fare clic su **Verifica** per verificare che la procedura guidata abbia accesso al database del sito.  
+    -   **Nome database**: specificare il nome del database del sito di System Center 2012 Configuration Manager, quindi fare clic su **Verifica** per verificare che la procedura guidata abbia accesso al database del sito.  
 
         > [!IMPORTANT]  
         >  L'account utente che crea il punto di Reporting Services deve disporre dell'accesso in Lettura al database del sito. Se la prova di connessione non riesce, verrà visualizzata un'icona di avviso rossa. Spostare il cursore sull'icona per leggere i dettagli dell'errore. Correggere l'errore, quindi fare nuovamente clic su **Verifica** .  

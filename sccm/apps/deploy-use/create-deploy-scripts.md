@@ -10,12 +10,12 @@ ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c9f3bc1b85ee9b8fbd8af47e22a826fe8d88377d
-ms.sourcegitcommit: c2c44329f1f9a2e6c14095360b4fc4aafabc27f0
+ms.openlocfilehash: 882af6e50a8619684225de53ce700fcc23923a06
+ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51694961"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53418401"
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Creare ed eseguire gli script di PowerShell dalla console di Configuration Manager
 
@@ -113,7 +113,7 @@ I tre ruoli di sicurezza usati per l'esecuzione di script non vengono creati per
 
 ### <a name="security-role-permissions"></a>Autorizzazioni del ruolo di sicurezza  
 
-**Nome del ruolo**: esecutori di script  
+**Nome ruolo**: Esecutori di script  
 - **Descrizione**: queste autorizzazioni consentono a questo ruolo solo di eseguire script precedentemente creati e approvati da altri ruoli.  
 - **Autorizzazioni:** verificare che le autorizzazioni seguenti siano impostate su **Sì**.  
 
@@ -125,7 +125,7 @@ I tre ruoli di sicurezza usati per l'esecuzione di script non vengono creati per
 |Script SMS|Lettura|Sì|
 
 
-**Nome del ruolo**: autori di script  
+**Nome ruolo**: Autori di script  
 - **Descrizione**: queste autorizzazioni consentono a questo ruolo di creare script, ma non di approvarli o eseguirli.  
 - **Autorizzazioni**: verificare che siano impostate le autorizzazioni seguenti.
  
@@ -139,7 +139,7 @@ I tre ruoli di sicurezza usati per l'esecuzione di script non vengono creati per
 |Script SMS|Modifica|Sì|
 
 
-**Nome ruolo**: responsabile approvazione di script  
+**Nome ruolo**: Responsabili approvazione di script  
 - **Descrizione**: queste autorizzazioni consentono a questo ruolo di approvare script, ma non di crearli o eseguirli.  
 - **Autorizzazioni:** verificare che siano impostate le autorizzazioni seguenti.  
 
@@ -172,8 +172,8 @@ I tre ruoli di sicurezza usati per l'esecuzione di script non vengono creati per
 5. Completare la procedura guidata. Il nuovo script viene visualizzato nell'elenco **Script** con stato **In attesa di approvazione** . Prima di poter eseguire questo script nei dispositivi client, è necessario approvarlo. 
 
 > [!IMPORTANT]
-    >Evitare di creare uno script per il riavvio del dispositivo o il riavvio dell'agente di Configuration Manager quando si usa la funzionalità Esegui script. Questa operazione potrebbe causare uno stato di riavvio continuo. Se necessario, sono disponibili miglioramenti delle funzionalità di notifica client che supportano il riavvio dei dispositivi, a partire da Configuration Manager versione 1710. La [colonna Riavvio in sospeso](/sccm/core/clients/manage/manage-clients#Restart-clients) può essere utile per identificare i dispositivi che richiedono un riavvio. 
-<!--SMS503978  -->
+> Evitare di creare uno script per il riavvio del dispositivo o il riavvio dell'agente di Configuration Manager quando si usa la funzionalità Esegui script. Questa operazione potrebbe causare uno stato di riavvio continuo. Se necessario, sono disponibili miglioramenti delle funzionalità di notifica client che supportano il riavvio dei dispositivi, a partire da Configuration Manager versione 1710. La [colonna Riavvio in sospeso](/sccm/core/clients/manage/manage-clients#Restart-clients) può essere utile per identificare i dispositivi che richiedono un riavvio. 
+> <!--SMS503978  -->
 
 ## <a name="script-parameters"></a>Parametri di script
 *Introdotti con la versione 1710*  
