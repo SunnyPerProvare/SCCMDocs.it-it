@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
-ms.openlocfilehash: 8f743514af8b89212b10073c07b24990ffedcb1a
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 0ad348c47ff7e97d8d9b3bfba91bd8a0c0ae48ff
+ms.sourcegitcommit: 32a257fafbb29aece8b4f435dd5614fcef305328
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53420397"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54005416"
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Configurare il gateway di gestione cloud per Configuration Manager
 
@@ -41,6 +41,8 @@ Usare l'elenco di controllo seguente per assicurarsi di avere le informazioni e 
 - A partire dalla versione 1802, selezionare la **distribuzione di Azure Resource Manager**. Per altre informazioni, vedere [Azure Resource Manager](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager). Per la distribuzione Azure Resource Manager del Cloud Management Gateway devono essere disponibili i requisiti seguenti:  
 
     - Integrazione con [Azure AD](/sccm/core/servers/deploy/configure/azure-services-wizard) per la **Gestione cloud**. L'individuazione utenti di Azure AD non è necessaria.  
+    
+    - Il provider di risorse **Microsoft.ClassicCompute** deve essere registrato nella sottoscrizione di Azure. Per altre informazioni, vedere [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services).
 
     - Un amministratore della sottoscrizione deve effettuare l'accesso.  
 
@@ -54,6 +56,8 @@ Usare l'elenco di controllo seguente per assicurarsi di avere le informazioni e 
     - Certificato di gestione di Azure  
 
 - Un nome univoco globale per il servizio. Il nome deriva dal [certificato di autenticazione server del Cloud Management Gateway](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#cmg-server-authentication-certificate).  
+
+- Se si abilita Cloud Management Gateway come punto di distribuzione cloud, lo stesso nome univoco globale selezionato per il servizio Cloud Management Gateway deve essere disponibile anche come nome di account di archiviazione univoco globale. Il nome deriva dal [certificato di autenticazione server del Cloud Management Gateway](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#cmg-server-authentication-certificate).
 
 - Area di Azure per questa distribuzione Cloud Management Gateway.  
 
@@ -91,7 +95,7 @@ Eseguire questa procedura nel sito di livello superiore. Tale sito è un sito pr
 7. Selezionare l'elenco a discesa **Area** per scegliere l'area di Azure per questo Cloud Management Gateway.  
 
 8. Nella versione 1802 e con la distribuzione Azure Resource Manager, selezionare un'opzione per **Gruppo di risorse**. 
-   1. Se si sceglie **Usa esistente** immettere il nome del nuovo gruppo di risorse o selezionare un gruppo di risorse esistente nell'elenco a discesa.
+   1. Se si sceglie **Usa esistente** immettere il nome del nuovo gruppo di risorse o selezionare un gruppo di risorse esistente nell'elenco a discesa. Il gruppo di risorse selezionato deve essere già presente nell'area selezionata nel passaggio 7. Se si seleziona un gruppo di risorse esistente che si trova in un'area diversa da quella selezionata in precedenza, Cloud Management Gateway non riuscirà a effettuare il provisioning.
    2. Se si sceglie **Crea nuovo** immettere il nome del nuovo gruppo di risorse.
 
 9. Nel campo **Istanza della macchina virtuale** immettere il numero di macchine virtuali per questo servizio. Il valore predefinito è uno, ma è possibile impostare fino a 16 macchine virtuali per Cloud Management Gateway.  

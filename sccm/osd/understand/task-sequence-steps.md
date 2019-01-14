@@ -10,12 +10,12 @@ ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5e62983f76b0f2a4277edfab08d4321da5d4a258
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 9d3cd85d4c0bd3a996bd6ec18fc24a02423fab62
+ms.sourcegitcommit: 54e5786875c4e5f5c1b54e38ed59e96344faf9b4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53416487"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53818056"
 ---
 # <a name="task-sequence-steps-in-configuration-manager"></a>Passaggi della sequenza di attività in Configuration Manager
 
@@ -235,7 +235,14 @@ ms.locfileid: "53416487"
  Installa un'immagine del sistema operativo acquisita. Fare clic su **Sfoglia** per aprire la finestra di dialogo **Seleziona pacchetto**. Selezionare quindi il pacchetto dell'immagine esistente da installare. Se al **Pacchetto immagine**specificato sono associate più immagini, selezionare l'immagine associata da usare per questa distribuzione nell'elenco a discesa. Per visualizzare le informazioni di base su ogni immagine esistente, fare clic sull'immagine.  
 
 #### <a name="apply-operating-system-image-from-an-original-installation-source"></a>Applica sistema operativo da un'origine di installazione originale
- Installa un sistema operativo usando un pacchetto di aggiornamento del sistema operativo, che è anche un'origine di installazione originale. Fare clic su **Sfoglia** per aprire la finestra di dialogo **Seleziona un pacchetto di installazione del sistema operativo**. Selezionare quindi il pacchetto di aggiornamento del sistema operativo esistente da usare. Per visualizzare le informazioni di base su ogni origine dell'immagine esistente, fare clic su di essa. Le proprietà associate dell'origine dell'immagine vengono visualizzate nel riquadro dei risultati nella parte inferiore della finestra di dialogo. Se al pacchetto specificato sono associate più edizioni, usare l'elenco a discesa per specificare l'**edizione** da usare.  
+ Installa un sistema operativo usando un pacchetto di aggiornamento del sistema operativo, che è anche un'origine di installazione originale. Fare clic su **Sfoglia** per aprire la finestra di dialogo **Seleziona un pacchetto di aggiornamento del sistema operativo**. Selezionare quindi il pacchetto di aggiornamento del sistema operativo esistente da usare. Per visualizzare le informazioni di base su ogni origine dell'immagine esistente, fare clic su di essa. Le proprietà associate dell'origine dell'immagine vengono visualizzate nel riquadro dei risultati nella parte inferiore della finestra di dialogo. Se al pacchetto specificato sono associate più edizioni, usare l'elenco a discesa per specificare l'**edizione** da usare.  
+
+>[!NOTE]
+>I **pacchetti di aggiornamento del sistema operativo** sono pensati principalmente per l'uso con gli aggiornamenti sul posto e non per le nuove installazioni di Windows. Quando si distribuiscono nuove installazioni di Windows, usare l'opzione **Applica sistema operativo da un'immagine acquisita** e **install.wim** dai file dell'origine di installazione.
+>
+>La distribuzione di nuove installazioni di Windows tramite **pacchetti di aggiornamento del sistema operativo** è ancora supportata, ma dipende dalla compatibilità dei driver con questo metodo. Quando si installa Windows da un **pacchetto di aggiornamento del sistema operativo**, i driver vengono installati quando si trovano ancora in Windows PE, anziché essere semplicemente inseriti mentre sono in Windows PE. Alcuni driver non sono compatibili con l'installazione da Windows PE.
+>
+>Se i driver non sono compatibili con l'installazione da Windows PE, creare un pacchetto di **install.wim** dai file dell'origine di installazione originale come **immagine del sistema operativo**. Eseguire quindi la distribuzione usando in alternativa l'opzione **Applica sistema operativo da un'immagine acquisita**.
 
 #### <a name="use-an-unattended-or-sysprep-answer-file-for-a-custom-installation"></a>Usa un file di risposta automatica o Sysprep per un'installazione personalizzata
  Usare questa opzione per fornire un file di risposte del programma di installazione di Windows (**unattend.xml**, **unattend.txt** o **sysprep.inf**), in base alla versione e al metodo di installazione del sistema operativo. Il file specificato può includere qualsiasi opzione di configurazione standard supportata dai file di risposte di Windows. È ad esempio possibile usarla per specificare la home page predefinita di Internet Explorer. Specificare il pacchetto che contiene il file di risposte e il percorso associato al file nel pacchetto.  

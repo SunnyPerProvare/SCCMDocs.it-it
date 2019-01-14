@@ -10,12 +10,12 @@ ms.assetid: 2a216814-ca8c-4d2e-bcef-dc00966a3c9f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 88fa98de0f9f0a113adeef3a30536628706484ab
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 5f7cb374859d2605021a3f1ec98d6a6b6081bfc4
+ms.sourcegitcommit: 54e5786875c4e5f5c1b54e38ed59e96344faf9b4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53424681"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53817903"
 ---
 # <a name="plan-for-security-in-configuration-manager"></a>Pianificare la sicurezza in Configuration Manager
 
@@ -109,7 +109,7 @@ Quando si usano i certificati PKI con Configuration Manager, pianificare l'uso d
 
 IIS verifica sempre la presenza dei certificati client nell'elenco di revoche di certificati e questa configurazione non può essere modificata in Configuration Manager. Per impostazione predefinita, i client Configuration Manager cercano sempre i sistemi del sito nell'elenco CRL. Disabilitare questa impostazione specificando una proprietà del sito e una proprietà CCMSetup.  
 
-I computer che usano il controllo della revoca del certificato, ma non riescono a individuare l'elenco di revoche di certificati, si comportano come se tutti i certificati nella catena di certificazione fossero revocati. Questo comportamento è dovuto all'impossibilità di verificare la presenza dei certificati nell'elenco. In questo scenario, non sarà possibile stabilire alcuna connessione che richieda certificati e usi un elenco di revoche di certificati.  
+I computer che usano il controllo della revoca del certificato, ma non riescono a individuare l'elenco di revoche di certificati, si comportano come se tutti i certificati nella catena di certificazione fossero revocati. Questo comportamento è dovuto al fatto che questi computer non possono verificare se i certificati sono inclusi nell'elenco di revoche di certificati. In questo scenario, non è possibile stabilire alcuna connessione che richieda certificati e includa il controllo dell'elenco di revoche di certificati. Quando si verifica l'accessibilità dell'elenco di revoche di certificati passando al relativo percorso HTTP, è importante notare che il client di Configuration Manager viene eseguito come sistema locale. Pertanto, il test di accessibilità dell'elenco di revoche di certificati con un Web browser in esecuzione nel contesto utente può avere esito positivo, ma l'account del computer può essere bloccato durante il tentativo di stabilire una connessione HTTP allo stesso URL dell'elenco di revoche di certificati a causa di una soluzione di filtro Web interna. In una situazione di questo tipo può essere necessario includere l'URL dell'elenco di revoche di certificati nell'elenco elementi consentiti delle soluzioni di filtro Web.
 
 Il controllo dell'elenco di revoche di certificati ogni volta che viene usato un certificato offre maggiore protezione dall'uso di un certificato che è stato revocato, anche se introduce un ritardo nella connessione e un'elaborazione aggiuntiva nel client. L'organizzazione può richiedere questo controllo di sicurezza aggiuntivo per i client in Internet o in una rete non attendibile.  
 
