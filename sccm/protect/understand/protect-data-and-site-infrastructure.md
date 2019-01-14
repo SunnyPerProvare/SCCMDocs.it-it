@@ -1,8 +1,8 @@
 ---
 title: Proteggere dati e infrastruttura e del sito
 titleSuffix: Configuration Manager
-description: Informazioni su come proteggere le risorse dell'organizzazione da esposizione o attacchi dannosi con System Center Configuration Manager.
-ms.date: 11/27/2016
+description: Informazioni su come proteggere le risorse dell'organizzazione da esposizione o attacchi dannosi con Configuration Manager.
+ms.date: 12/21/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-protect
 ms.topic: conceptual
@@ -10,30 +10,28 @@ ms.assetid: 2117f786-d521-4790-9e8d-ec096c63c9d7
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: e76a16fab84f5ccfcd71af4bc80913e31acdadd9
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.openlocfilehash: 5214723b5679f4a44110329b96d4d5ec3d660673
+ms.sourcegitcommit: 94bf7d5b5beb9628cc1fdfe75451d33b5de26f8a
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32347553"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54152384"
 ---
-# <a name="protect-data-and-site-infrastructure-with-system-center-configuration-manager"></a>Proteggere i dati e l'infrastruttura del sito con System Center Configuration Manager
+# <a name="protect-data-and-site-infrastructure-with-configuration-manager"></a>Proteggere i dati e l'infrastruttura del sito con Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
+Si vuole che gli utenti possano accedere in modo sicuro alle risorse aziendali, affinché sia l'infrastruttura che i dati siano protetti da esposizione o attacchi dannosi. Le informazioni contenute in questi articoli viene descritto come utilizzare Configuration Manager per abilitare l'accesso e su come proteggere le risorse dell'organizzazione.  
 
-Si vuole che gli utenti possano accedere in modo sicuro alle risorse aziendali, affinché sia l'infrastruttura che i dati siano protetti da esposizione o attacchi dannosi. Le informazioni contenute in questi argomenti descrivono come usare System Center Configuration Manager (noto anche come ConfigMgr o SCCM) per abilitare l'accesso e proteggere le risorse dell'organizzazione.  
+- Ridurre al minimo le operazioni eseguite dagli utenti per connettersi alle risorse aziendali abilitando la connettività VPN con i profili VPN. Per altre informazioni, vedere [Profili VPN](/sccm/protect/deploy-use/vpn-profiles).  
 
--   È possibile ridurre al minimo le operazioni eseguite dagli utenti per connettersi alle risorse aziendali abilitando la connettività VPN con i profili VPN. Informazioni su [Profili VPN in System Center Configuration Manager](../deploy-use/vpn-profiles.md).  
+- I profili Wi-Fi forniscono un set di strumenti e risorse che consentono di creare, distribuire e monitorare le impostazioni di rete wireless nei dispositivi dell'organizzazione. Distribuendo queste impostazioni, è possibile ridurre al minimo lo sforzo richiesto agli utenti finali per connettersi alle reti wireless aziendali. Per altre informazioni, vedere [profili Wi-fi](/sccm/protect/deploy-use/create-wifi-profiles).  
 
--   I profili Wi-Fi forniscono un set di strumenti e risorse che consentono di creare, distribuire e monitorare le impostazioni di rete wireless nei dispositivi dell'organizzazione. Distribuendo queste impostazioni, è possibile ridurre al minimo lo sforzo richiesto agli utenti finali per connettersi alle reti wireless aziendali. Informazioni su [Profili Wi-Fi in System Center Configuration Manager](/sccm/protect/deploy-use/create-wifi-profiles).  
+- I [profili certificato](/sccm/protect/deploy-use/introduction-to-certificate-profiles) descrivono come eseguire il provisioning dei dispositivi degli utenti con i certificati necessari per connettersi alle risorse aziendali.  
 
--   [Profili certificato in System Center Configuration Manager](../deploy-use/introduction-to-certificate-profiles.md) descrive come eseguire il provisioning dei dispositivi degli utenti con i certificati necessari per connettersi alle risorse aziendali.  
+- [Endpoint Protection di System Center](/sccm/protect/deploy-use/endpoint-protection) consente di gestire i criteri antimalware e la sicurezza di Windows Firewall per i computer client.  
 
--   [Endpoint Protection di System Center](../deploy-use/endpoint-protection.md) consente di gestire i criteri antimalware e la sicurezza di Windows Firewall per i computer client.  
+- Usare l'accesso condizionale per proteggere la posta elettronica e altri servizi nei dispositivi registrati in Microsoft Intune. Per altre informazioni, vedere [gestire l'accesso ai servizi](/sccm/protect/deploy-use/manage-access-to-services).  
 
--   È possibile usare l'accesso condizionale per proteggere la posta elettronica e altri servizi in dispositivi registrati con Microsoft Intune, come descritto in [Gestire l'accesso ai servizi in System Center Configuration Manager](../deploy-use/manage-access-to-services.md).  
+- I profili di posta elettronica offrono un set di strumenti e risorse per creare, distribuire e monitorare le impostazioni di posta elettronica nei dispositivi. Con questa funzionalità gli utenti possono accedere alla posta elettronica aziendale dai dispositivi personali senza alcuna configurazione. Per altre informazioni, vedere [profili di posta elettronica](/sccm/protect/deploy-use/introduction-to-email-profiles).  
 
--   I profili di posta elettronica offrono un set di strumenti e risorse per creare, distribuire e monitorare le impostazioni di posta elettronica nei dispositivi. In questo modo, gli utenti possono accedere alla posta elettronica aziendale dai dispositivi personali senza alcuna configurazione. Informazioni su [Profili di posta elettronica in System Center Configuration Manager](../deploy-use/introduction-to-email-profiles.md).  
-
--   Configuration Manager consente di eseguire l'integrazione con Windows Hello for Business (in precedenza Microsoft Passport for Work), un metodo di accesso alternativo che usa Active Directory o un account di Azure Active Directory per sostituire una password, una smart card o una smart card virtuale. Informazioni su [Impostazioni di Windows Hello for Business in System Center Configuration Manager](../deploy-use/windows-hello-for-business-settings.md).  

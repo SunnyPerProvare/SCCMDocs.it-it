@@ -10,12 +10,12 @@ ms.assetid: bb95154b-f63e-4491-896e-41d732c802f8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f3d25120701c12b547727259002fc58a8f8f0780
-ms.sourcegitcommit: 97083c51057e2c4e0fe12c3b1f1b512250874c6a
-ms.translationtype: HT
+ms.openlocfilehash: a84dfc33fe79f5eb4d5397505a12052b8e92aebf
+ms.sourcegitcommit: a3cec96a771eed69e58a29917d1a3fe1a5fb2e73
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50968136"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54250613"
 ---
 # <a name="hybrid-mdm-with-configuration-manager-and-microsoft-intune"></a>Soluzione MDM ibrida con Configuration Manager e Intune
 
@@ -28,7 +28,7 @@ ms.locfileid: "50968136"
 > 
 > La maggior parte dei clienti sceglie di conseguenza Intune in Azure piuttosto che la soluzione MDM ibrida. Sempre meno clienti usano la soluzione MDM ibrida, mentre il numero di quelli che passano al cloud è in continuo aumento. L'1 settembre 2019, Microsoft ritirerà quindi l'offerta di servizio MDM ibrido. Pianificare la [migrazione a Intune in Azure](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa) per la gestione dei dispositivi mobili. 
 > 
-> Questa modifica non incide su Configuration Manager locale o sulla [co-gestione per i dispositivi Windows 10](/sccm/core/clients/manage/co-management-overview). Se non si è certi di usare la soluzione MDM ibrida, passare all'area di lavoro **Amministrazione** della console di Configuration Manager, espandere **Servizi Cloud** e fare clic su **Sottoscrizioni a Microsoft Intune**. Se è configurata una sottoscrizione di Microsoft Intune, il tenant è configurato per la soluzione MDM ibrida.
+> Questa modifica non incide su Configuration Manager locale o sulla [co-gestione per i dispositivi Windows 10](/sccm/comanage/overview). Se non si è certi di usare la soluzione MDM ibrida, passare all'area di lavoro **Amministrazione** della console di Configuration Manager, espandere **Servizi Cloud** e fare clic su **Sottoscrizioni a Microsoft Intune**. Se è configurata una sottoscrizione di Microsoft Intune, il tenant è configurato per la soluzione MDM ibrida.
 > 
 > **Quali sono le conseguenze di questa modifica?**
 > 
@@ -86,8 +86,8 @@ Per informazioni sulle nuove funzionalità disponibili per il software MDM ibrid
 
 Per introdurre i dispositivi nella gestione ibrida, i dispositivi devono essere registrati nel servizio. La modalità di registrazione dei dispositivi varia a seconda del tipo di dispositivo in uso, della proprietà e del livello di gestione necessario.
 
-- **BYOD (Bring Your Own Device)**: gli utenti registrano i telefoni, i tablet o i PC personali  
+- **"Bring your own device" (BYOD)**: Gli utenti registrano i loro telefoni personali, Tablet o PC  
 
-- **Dispositivo di proprietà dell'azienda**: rende possibili scenari di gestione come la cancellazione remota, i dispositivi condivisi o l'affinità utente per un dispositivo  
+- **Dispositivo dell'azienda (COD)**: Abilitare scenari di gestione come la cancellazione remota, i dispositivi condivisi o affinità utente per un dispositivo  
 
 - Se si usa [Exchange ActiveSync](/sccm/mdm/plan-design/device-enrollment-methods#mobile-device-management-with-exchange-activesync-and-configuration-manager), sia in locale che ospitato nel cloud, è possibile abilitare la gestione semplice con Intune, senza registrazione. I PC Windows possono essere anche gestiti tramite il [software client di Intune](/intune/deploy-use/manage-windows-pcs-with-microsoft-intune).
