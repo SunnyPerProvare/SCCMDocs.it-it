@@ -10,12 +10,12 @@ ms.assetid: c8534a1e-57b8-4688-b6e6-299d82cfcec9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 329f5c2f227cbd8a51b1c9ccc21810cda9f6a2cf
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 26b6d68f634a230f56a93b6cc1691ce98fa77852
+ms.sourcegitcommit: a3cec96a771eed69e58a29917d1a3fe1a5fb2e73
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53417140"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54250686"
 ---
 # <a name="configuration-manager-and-windows-as-a-service"></a>Configuration Manager e Windows as a Service
 
@@ -48,7 +48,7 @@ System Center Configuration Manager offre un controllo completo sugli aggiorname
 |[Ottimizzare il recapito degli aggiornamenti di Windows 10](/sccm/sum/deploy-use/optimize-windows-10-update-delivery)|Usare Configuration Manager per gestire il contenuto di aggiornamento per rimanere aggiornati con Windows 10.|
 |[Integrare con Preparazione aggiornamenti](/sccm/core/clients/manage/upgrade/upgrade-analytics)|Preparazione aggiornamenti consente di valutare e analizzare l'idoneità dei dispositivi nell'ambiente per un aggiornamento a Windows 10.| 
 |[Integrazione con Windows Update for Business in Windows 10](/sccm/sum/deploy-use/integrate-windows-update-for-business-windows-10)|Spiega come definire e distribuire i criteri di Windows Update per le aziende tramite Configuration Manager.|
-|[Usare la co-gestione con Microsoft Intune e Windows Update per le aziende (facoltativo)](/sccm/core/clients/manage/co-management-overview)|Offre una panoramica sulla co-gestione| 
+|[Usare la co-gestione con Microsoft Intune e Windows Update per le aziende (facoltativo)](/sccm/comanage/overview)|Offre una panoramica sulla co-gestione| 
 
 
 ## <a name="related-articles"></a>Articoli correlati
