@@ -2,7 +2,7 @@
 title: Anteprima di UUP
 titleSuffix: Configuration Manager
 description: Istruzioni per l'anteprima dell'integrazione UUP
-ms.date: 01/04/2018
+ms.date: 01/14/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 robots: noindex,nofollow
-ms.openlocfilehash: cfc83f4d076a05ea1847c0d073bd824ad10aa731
-ms.sourcegitcommit: 1bf26b83fa7da637d299a21e1d3bc61f2d7d8c10
+ms.openlocfilehash: 17a9abf2f20f53ba69ad160db421be51471cc311
+ms.sourcegitcommit: 27b2594087e8c54062db6b2a30ab843bab17f8cc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54060383"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54270461"
 ---
 # <a name="uup-private-preview-instructions"></a>Istruzioni per l'anteprima privata di UUP
 
@@ -160,8 +160,8 @@ Una volta che si è pronti per sincronizzare gli aggiornamenti di UUP e iniziare
 
 5. Nella scheda **Prodotti**, dopo che il server WSUS è stato aggiunto all'anteprima, dovrebbero essere visualizzati due nuovi prodotti. Questi prodotti includono il contenuto dell'anteprima di UUP.  
 
-    - **Windows 10 UUP Pilot**: aggiornamenti di UUP per Windows Workstation  
-    - **Windows Server 2016 UUP**: aggiornamenti di UUP per Windows Server  
+    - **Windows 10 UUP Preview**  
+    - **Windows Server UUP Preview**  
 
 6. Nella scheda **Classificazioni** assicurarsi di selezionare:  
 

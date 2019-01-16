@@ -10,12 +10,12 @@ ms.assetid: 4812324b-e6aa-4431-bf1d-9fcd763a8caa
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 050cf81a99f29d24cad6eb13e691e332174627c3
-ms.sourcegitcommit: 54e5786875c4e5f5c1b54e38ed59e96344faf9b4
+ms.openlocfilehash: 60d1c93acc2fcc2c04d09cd8f0ec0c083089a8ec
+ms.sourcegitcommit: a3cec96a771eed69e58a29917d1a3fe1a5fb2e73
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53818022"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54250596"
 ---
 # <a name="whats-new-in-version-1810-of-configuration-manager-current-branch"></a>Novità della versione 1810 di Configuration Manager (Current Branch)
 
@@ -123,7 +123,10 @@ Per altre informazioni, vedere [Informazioni dettagliate sulla gestione](/sccm/c
 ### <a name="new-client-notification-action-to-wake-up-device"></a>Nuova azione di notifica client per la riattivazione del dispositivo
 <!--1317364--> È ora possibile riattivare un client dalla console di Configuration Manager anche se il client non si trova nella stessa subnet del server del sito. Se è necessario eseguire attività di manutenzione o query nei dispositivi, i client remoti in stato di sospensione non costituiranno un limite per le operazioni. Il server del sito usa il canale di notifica client per identificare un altro client attivo nella stessa subnet remota. Il client attivo invia quindi una richiesta di riattivazione LAN (Magic Packet).
 
-<!--For more information, see [Plan how to wake up clients](/sccm/core/clients/deploy/plan/plan-wake-up-clients).-->
+### <a name="new-option-to-perform-client-notification-from-devices-node"></a>Nuova opzione per eseguire la notifica client dal nodo dei dispositivi
+<!--1317364--> Fino alla versione 1810, l'opzione **Notifica client** era disponibile solo dal nodo Raccolta di dispositivi o quando si visualizzava l'appartenenza di una raccolta di dispositivi. È ora possibile eseguire una **Notifica client** direttamente dal nodo**Raccolta di dispositivi**. Non è più un requisito essere all'interno di una visualizzazione di appartenenza della raccolta. 
+
+Per altre informazioni, vedere [Client notifications](/sccm/core/clients/manage/client-notification) (Notifiche client).
 
 
 ### <a name="improvements-to-collection-evaluation"></a>Miglioramenti alla valutazione delle raccolte
@@ -169,7 +172,7 @@ Per altre informazioni, vedere [Configurare gruppi di limiti](/sccm/core/servers
 
 ![Screenshot del dashboard di co-gestione che mostra i quattro riquadri principali](media/1358980-comgmt-dashboard.png)
 
-Per altre informazioni, vedere [Dashboard di co-gestione](/sccm/core/clients/manage/co-management-dashboard).
+Per altre informazioni, vedere [Dashboard di co-gestione](/sccm/comanage/how-to-monitor#co-management-dashboard).
 
 
 

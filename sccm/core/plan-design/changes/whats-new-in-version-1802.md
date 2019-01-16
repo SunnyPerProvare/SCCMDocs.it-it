@@ -10,12 +10,12 @@ ms.assetid: 5bd637b1-d7a1-411b-877a-c7aae9741173
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a0e16c137604480ab23e15b52723692491d1816d
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 763826a1a308130415fb972f7f3dc3e577b8e573
+ms.sourcegitcommit: a3cec96a771eed69e58a29917d1a3fe1a5fb2e73
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53414855"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54250732"
 ---
 # <a name="whats-new-in-version-1802-of-system-center-configuration-manager"></a>Novità della versione 1802 di System Center Configuration Manager
 
@@ -144,7 +144,7 @@ Per informazioni dettagliate, vedere l'articolo [Dashboard dei dispositivi Surfa
 ## <a name="co-management"></a>Co-gestione
 
 ### <a name="transition-endpoint-protection-workload-to-intune-using-co-management"></a>Eseguire la transizione del carico di lavoro di Endpoint Protection a Intune tramite la co-gestione
-<!-- 1357365 --> Dopo aver abilitato la co-gestione, è possibile eseguire la transizione del carico di lavoro di Endpoint Protection a Intune. Per eseguire questa transizione, passare alla pagina delle proprietà di co-gestione e spostare la barra del dispositivo di scorrimento da Configuration Manager a **Pilota** o **Tutto**. Per informazioni dettagliate sui carichi di lavoro, vedere [Workloads able to be transitioned to Intune](/sccm/core/clients/manage/co-management-switch-workloads#Workloads-able-to-be-transitioned-to-Intune) (Carichi di lavoro disponibili per la transizione a Intune). Per altre informazioni sulla co-gestione, vedere [Co-gestione per dispositivi Windows 10](/sccm/core/clients/manage/co-management-overview).
+<!-- 1357365 --> Dopo aver abilitato la co-gestione, è possibile eseguire la transizione del carico di lavoro di Endpoint Protection a Intune. Per eseguire questa transizione, passare alla pagina delle proprietà di co-gestione e spostare la barra del dispositivo di scorrimento da Configuration Manager a **Pilota** o **Tutto**. Per informazioni dettagliate sui carichi di lavoro, vedere [Co-management workloads](/sccm/comanage/workloads) (Carichi di lavoro di co-gestione). Per altre informazioni sulla co-gestione, vedere [Co-gestione per dispositivi Windows 10](/sccm/comanage/overview).
  
 ### <a name="co-management-dashboard-in-system-center-configuration-manager"></a>Dashboard di co-gestione in System Center Configuration Manager
 <!--1356648--> A partire da questa versione, è possibile visualizzare un dashboard con informazioni sulla co-gestione. Il dashboard consente di esaminare i computer co-gestiti presenti nell'ambiente. I grafici consentono di identificare i dispositivi che potrebbero richiedere attenzione. Per informazioni dettagliate, vedere l'articolo [Dashboard di co-gestione](/sccm/core/clients/manage/client-management-dashboard). 
@@ -234,8 +234,8 @@ Questa versione include i miglioramenti seguenti alla distribuzione del sistema 
 ### <a name="report-for-default-browser-counts"></a>Report sul numero di browser predefiniti
 <!-- 1357830 --> È ora disponibile un nuovo report che mostra il numero di client con un Web browser specifico come impostazione predefinita di Windows. Vedere il report **Numero di browser predefiniti** nel gruppo di report **Software - Società e prodotti**. Per altre informazioni, vedere [Elenco dei report](/sccm/core/servers/manage/list-of-reports#software---companies-and-products).
 
-### <a name="report-on-windows-autopilot-device-information"></a>Report sulle informazioni sui dispositivi di Windows AutoPilot
-<!-- 1351442 --> Windows AutoPilot è una soluzione per l'onboarding e la configurazione di nuovi dispositivi Windows 10 in un modo moderno. Per altre informazioni, vedere [Panoramica di Windows AutoPilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot). Un metodo per registrare i dispositivi esistenti con Windows AutoPilot consiste nel caricare le informazioni sul dispositivo in Microsoft Store per le aziende e per la formazione. Queste informazioni includono il numero di serie del dispositivo, l'identificatore del prodotto Windows e un ID hardware. Usare Configuration Manager per raccogliere e segnalare queste informazioni con il nuovo report **Informazioni sui dispositivi di Windows AutoPilot** nel nodo dei report **Hardware - Generale**. Per altre informazioni, vedere [Nuovi dispositivi Windows 10](/sccm/core/clients/manage/co-management-prepare#new-windows-10-devices) nell'articolo relativo alla preparazione per la co-gestione.
+### <a name="report-on-windows-autopilot-device-information"></a>Report sulle informazioni sui dispositivi Windows Autopilot
+<!-- 1351442 --> Windows Autopilot è una soluzione per l'onboarding e la configurazione di nuovi dispositivi Windows 10 in un modo moderno. Per altre informazioni, vedere [Panoramica di Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot). Un metodo per registrare i dispositivi esistenti con Windows Autopilot consiste nel caricare le informazioni sul dispositivo in Microsoft Store per le aziende e per la formazione. Queste informazioni includono il numero di serie del dispositivo, l'identificatore del prodotto Windows e un ID hardware. Usare Configuration Manager per raccogliere e segnalare queste informazioni con il nuovo report **Informazioni sui dispositivi di Windows Autopilot** nel nodo dei report **Hardware - Generale**. Per altre informazioni, vedere [How to prepare internet-based devices for co-management](/sccm/comanage/how-to-prepare-win10#windows-autopilot) (Come preparare i dispositivi basati su Internet per la co-gestione).
 
 ### <a name="report-on-windows-10-servicing-details-for-a-specific-collection"></a>Report sui dettagli della manutenzione di Windows 10 per una raccolta specifica
 <!--1357653--> Il report **Dettagli della manutenzione di Windows 10 per una raccolta specifica** visualizza informazioni generali sulla manutenzione di Windows 10 per una raccolta specifica. Questo report mostra le informazioni seguenti relative ai dispositivi Windows 10: ID risorsa, nome NetBIOS, nome del sistema operativo, versione del sistema operativo, build, branch del sistema operativo e stato di manutenzione. Per altre informazioni, vedere [Elenco dei report](/sccm/core/servers/manage/list-of-reports#operating-system).

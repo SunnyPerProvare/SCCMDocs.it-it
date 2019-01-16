@@ -10,12 +10,12 @@ ms.assetid: a79f83be-884c-48e6-94d6-ed0a68c22e2f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3721c4c35dd22a0d2a59d2300bd25dfbd3c75aeb
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: cd2cee9de9f876f591145a12443b50d08349a451
+ms.sourcegitcommit: a3cec96a771eed69e58a29917d1a3fe1a5fb2e73
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456312"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54250749"
 ---
 # <a name="management-insights-in-configuration-manager"></a>Informazioni dettagliate sulla gestione in Configuration Manager
 
@@ -42,7 +42,7 @@ Per visualizzare le regole, l'account deve disporre dell'autorizzazione di **let
 
 - **Tutte le regole**: offre l'elenco completo delle regole per il gruppo di informazioni dettagliate di gestione scelto.  
 
-- **Completa**: elenca le regole in cui non è necessaria alcuna azione.  
+- **Completa**:  elenca le regole in cui non è necessaria alcuna azione.  
 
 - **In corso**: mostra le regole in cui alcuni, ma non tutti i prerequisiti sono soddisfatti.  
 
@@ -87,13 +87,13 @@ Usare i filtri seguenti nella parte superiore del dashboard per ottimizzare la v
 
 Il dashboard include i riquadri seguenti:  
 
-- **Management insights index** (Indice informazioni dettagliate sulla gestione): registra l'avanzamento generale delle regole delle informazioni dettagliate sulla gestione. L'indice è una media ponderata. Le regole critiche hanno maggior valore. Questo indice assegna il minor peso alle regole facoltative.  
+- **Indice informazioni dettagliate sulla gestione**: registra l'avanzamento generale delle regole delle informazioni dettagliate sulla gestione. L'indice è una media ponderata. Le regole critiche hanno maggior valore. Questo indice assegna il minor peso alle regole facoltative.  
 
-- **Management insights groups** (Gruppi informazioni dettagliate sulla gestione): mostra la percentuale di regole di ogni gruppo che soddisfa i filtri. Selezionare un gruppo per eseguire il drill-down nelle regole specifiche del gruppo.  
+- **Gruppi di informazioni dettagliate sulla gestione**: mostra la percentuale di regole di ogni gruppo che soddisfa i filtri. Selezionare un gruppo per eseguire il drill-down nelle regole specifiche del gruppo.  
 
-- **Management insights priority** (Priorità informazioni dettagliate sulla gestione): mostra la percentuale di regole in ordine di priorità che soddisfa i filtri.   
+- **Priorità delle informazioni dettagliate sulla gestione**: mostra la percentuale di regole in base alla priorità che soddisfa i filtri.   
 
-- **All insights** (Tutte le informazioni dettagliate sulla gestione): tabella delle informazioni dettagliate con priorità e stato. Usare il campo **Filtro** nella parte superiore della tabella per la corrispondenza con stringhe in una qualsiasi delle colonne disponibili. Il dashboard consente di ordinare la tabella nell'ordine seguente:
+- **Tutte le informazioni dettagliate sulla gestione**: tabella delle informazioni dettagliate con priorità e stato. Usare il campo **Filtro** nella parte superiore della tabella per la corrispondenza con stringhe in una qualsiasi delle colonne disponibili. Il dashboard consente di ordinare la tabella nell'ordine seguente:
     - Stato: Azione necessaria, Completato, Sconosciuto  
     - Priorità: Critico, Consigliato, Facoltativo  
     - Ultima modifica: le date meno recenti sono visualizzate all'inizio   
@@ -119,16 +119,16 @@ Le regole sono organizzate nei seguenti gruppi di informazioni dettagliate sulla
 
 Informazioni dettagliate per la gestione delle applicazioni.
 
-- **Applicazioni senza distribuzioni**: elenca le applicazioni dell'ambiente per cui non esistono distribuzioni attive. Questa regola aiuta a individuare ed eliminare le applicazioni non usate per semplificare l'elenco di applicazioni visualizzato nella console. Per altre informazioni, vedere l'argomento relativo alla [distribuzione delle applicazioni](/sccm/apps/deploy-use/deploy-applications).  
+- **Applicazioni senza distribuzioni**: elenca le applicazioni dell'ambiente senza distribuzioni attive. Questa regola aiuta a individuare ed eliminare le applicazioni non usate per semplificare l'elenco di applicazioni visualizzato nella console. Per altre informazioni, vedere l'argomento relativo alla [distribuzione delle applicazioni](/sccm/apps/deploy-use/deploy-applications).  
 
 
 ### <a name="cloud-services"></a>Servizi cloud
 
 Facilita l'integrazione con molti servizi cloud per una gestione moderna dei dispositivi. 
 
-- **Valuta l'idoneità per la co-gestione**: consente di comprendere i passaggi necessari per abilitare la co-gestione. Questa regola ha dei prerequisiti. Per altre informazioni, vedere la [panoramica sulla co-gestione](/sccm/core/clients/manage/co-management-overview).  
+- **Valuta l'idoneità per la co-gestione**: consente di comprendere i passaggi necessari per abilitare la co-gestione. Questa regola ha dei prerequisiti. Per altre informazioni, vedere la [panoramica sulla co-gestione](/sccm/comanage/overview).  
 
-- **Configura i servizi di Azure per l'uso con Configuration Manager**: questa regola consente di eseguire l'onboarding di Configuration Manager in Azure AD, in modo che i client possano usare Azure AD per eseguire l'autenticazione al sito. Per altre informazioni, vedere [Configurare i servizi di Azure](/sccm/core/servers/deploy/configure/azure-services-wizard).  
+- **Configura i servizi di Azure per l'uso con Configuration Manager**: questa regola consente di eseguire l'onboarding di Configuration Manager in Azure AD, in modo che i client possano usare Azure AD per eseguire l'autenticazione nel sito. Per altre informazioni, vedere [Configurare i servizi di Azure](/sccm/core/servers/deploy/configure/azure-services-wizard).  
 
 - **Consenti dispositivi ibridi aggiunti ad Azure Active Directory**: i dispositivi aggiunti ad Azure AD consentono agli utenti di accedere con le credenziali del dominio garantendo al contempo che i dispositivi soddisfino gli standard di sicurezza e conformità dell'organizzazione. Per altre informazioni, vedere [Considerazioni di progettazione dell'identità ibrida di Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-hybrid-identity-design-considerations-overview).  
 
@@ -139,7 +139,7 @@ Facilita l'integrazione con molti servizi cloud per una gestione moderna dei dis
 
 Informazioni dettagliate che consentono di semplificare la gestione tramite la pulizia e la riconfigurazione delle raccolte.
 
-- **Raccolte vuote**: elenca le raccolte dell'ambiente che non contengono membri. Per altre informazioni, vedere [Come gestire le raccolte](/sccm/core/clients/manage/collections/manage-collections).  
+- **Raccolte vuote**: un elenco delle raccolte dell'ambiente che non hanno membri. Per altre informazioni, vedere [Come gestire le raccolte](/sccm/core/clients/manage/collections/manage-collections).  
 
 
 ### <a name="proactive-maintenance"></a>Manutenzione proattiva
@@ -149,21 +149,21 @@ Informazioni dettagliate che consentono di semplificare la gestione tramite la p
 
 - **Gruppi di limiti senza membri**: i gruppi di limiti non sono applicabili per l'assegnazione del sito o la ricerca di contenuto se non hanno membri. Per altre informazioni, vedere [Configurare gruppi di limiti](/sccm/core/servers/deploy/configure/boundary-groups).  
 
-- **Distribution points not serving content to clients** (Punti di distribuzione che non servono contenuto ai client): punti di distribuzione che non hanno servito contenuto ai client negli ultimi 30 giorni. I dati sono basati sui report dai client della relativa cronologia di download. Per altre informazioni, vedere [Installare e configurare i punti di distribuzione](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points).  
+- **Punti di distribuzione che non forniscono contenuti ai client**: punti di distribuzione che non hanno reso disponibile contenuto ai client negli ultimi 30 giorni. I dati sono basati sui report dai client della relativa cronologia di download. Per altre informazioni, vedere [Installare e configurare i punti di distribuzione](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points).  
 
 - **Abilita la pulizia WSUS**: verifica che sia stata abilitata l'opzione per eseguire la pulizia WSUS sulle proprietà del componente del punto di aggiornamento software. Questa opzione consente di migliorare le prestazioni di WSUS. Per altre informazioni, vedere [Manutenzione degli aggiornamenti software](/sccm/sum/deploy-use/software-updates-maintenance).  
 
 - **Immagini d'avvio inutilizzate**: immagini di avvio a cui non viene fatto riferimento per l'avvio PXE o per l'uso di sequenze di attività. Per altre informazioni, vedere [Manage boot images](/sccm/osd/get-started/manage-boot-images) (Gestire le immagini d'avvio).  
 
-- **Elementi di configurazione inutilizzati**: elementi di configurazione che non fanno parte di una baseline di configurazione e sono anteriori a 30 giorni. Per altre informazioni, vedere [Creare configurazioni di base](/sccm/compliance/deploy-use/create-configuration-baselines).  
+- **Elementi di configurazione inutilizzati**: elementi di configurazione che non fanno parte di una linea di base di configurazione e sono anteriori a 30 giorni. Per altre informazioni, vedere [Creare configurazioni di base](/sccm/compliance/deploy-use/create-configuration-baselines).  
 
-- **Aggiorna le origini di peer cache alla versione più recente del client di Configuration Manager**: identifica i clienti che fanno da peer cache ma non sono stati aggiornati da una versione del client precedente alla 1806. I client precedenti alla versione 1806 non possono essere usati come origine di peer cache per i client che eseguono la versione 1806 o versioni successive. Selezionare **Intervieni** per aprire una visualizzazione del dispositivo con l'elenco dei client.<!--1358008-->  
+- **Aggiorna le origini di peer cache alla versione più recente del client di Configuration Manager**: identificare i client che fungono da origine di peer cache, ma non sono stati aggiornati da una versione del client precedente alla 1806. I client precedenti alla versione 1806 non possono essere usati come origine di peer cache per i client che eseguono la versione 1806 o versioni successive. Selezionare **Intervieni** per aprire una visualizzazione del dispositivo con l'elenco dei client.<!--1358008-->  
 
 
 ### <a name="security"></a>Sicurezza
 Informazioni dettagliate per il miglioramento dell'infrastruttura e dei dispositivi. 
 
-- **Versioni client dell'antimalware non supportate**: più del 10% dei client esegue versioni di System Center Endpoint Protection che non sono supportate. Per altre informazioni, vedere [Endpoint Protection](/sccm/protect/deploy-use/endpoint-protection).  
+- **Versioni client dell'antimalware non supportate**: più del 10% dei cliente esegue versioni di System Center Endpoint Protection che non sono più supportate. Per altre informazioni, vedere [Endpoint Protection](/sccm/protect/deploy-use/endpoint-protection).  
 
 
 ### <a name="simplified-management"></a>Gestione semplificata
@@ -179,7 +179,7 @@ Informazioni dettagliate per la gestione di Software Center.
 
 - **Indirizza gli utenti a Software Center invece che al Catalogo applicazioni**: controlla se gli utenti hanno installato o richiesto applicazioni dal Catalogo applicazioni negli ultimi 14 giorni. La funzionalità principale del Catalogo applicazioni è ora inclusa in Software Center. Il supporto per il sito Web del Catalogo applicazioni è terminato con la versione 1806. Per altre informazioni, vedere [Funzionalità deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures#deprecated-features).  
 
-- **Usa la nuova versione di Software Center**: la versione precedente di Software Center non è più supportata. Configurare i client per l'uso del nuovo Software Center abilitando l'impostazione client **Usa il nuovo Software Center** nel gruppo **Agente computer**. Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings#use-new-software-center) (Informazioni sulle impostazioni client).  
+- **Usa la nuova versione di Software Center**: La versione precedente di Software Center non è più supportata. Configurare i client per l'uso del nuovo Software Center abilitando l'impostazione client **Usa il nuovo Software Center** nel gruppo **Agente computer**. Per altre informazioni, vedere [About client settings](/sccm/core/clients/deploy/about-client-settings#use-new-software-center) (Informazioni sulle impostazioni client).  
 
 
 ### <a name="windows-10"></a>Windows 10
@@ -188,7 +188,7 @@ Informazioni dettagliate correlate alla distribuzione e alla manutenzione di Win
 
 - **Configura la telemetria di Windows e la chiave ID commerciale**: per usare i dati di Preparazione aggiornamenti, configurare i dispositivi con una chiave ID commerciale e abilitare la telemetria. Impostare i dispositivi Windows 10 sul livello di telemetria Avanzata (con limitazioni) o superiore. Per altre informazioni, vedere [Configurare i client per segnalare i dati a Windows Analytics](/sccm/core/clients/manage/monitor-windows-analytics#configure-clients-to-report-data-to-windows-analytics).  
 
-- **Connetti Configuration Manager a Preparazione aggiornamenti**: sfruttare Preparazione aggiornamenti per velocizzare le distribuzioni di Windows 10 prima che venga abbandonato il supporto di Windows 7. Per altre informazioni, vedere [Integrare Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics).   
+- **Connettere Configuration Manager a Preparazione aggiornamenti**: sfruttare Preparazione aggiornamenti per velocizzare le distribuzioni di Windows 10 prima dell'interruzione del supporto per Windows 7. Per altre informazioni, vedere [Integrare Upgrade Readiness](/sccm/core/clients/manage/upgrade/upgrade-analytics).   
 
 #### <a name="windows-10-management-insights-rules"></a>Regole di Informazioni dettagliate sulla gestione di Windows 10
 ![Informazioni dettagliate sulla gestione - Regole per Windows 10](./media/Windows-10-insights-group.png)

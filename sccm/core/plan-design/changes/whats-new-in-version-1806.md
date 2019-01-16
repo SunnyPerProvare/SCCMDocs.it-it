@@ -10,12 +10,12 @@ ms.assetid: 0249dbd3-1e85-4d05-a9e5-420fbe44d850
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e5fd7c26c190407ba5e497068582704b03c71f00
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
+ms.openlocfilehash: fe8fb2a8138433d00686530f76916a1ee4e88dac
+ms.sourcegitcommit: a3cec96a771eed69e58a29917d1a3fe1a5fb2e73
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411511"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54250800"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Novità della versione 1806 di Configuration Manager (Current Branch)
 
@@ -134,9 +134,9 @@ Per altre informazioni, vedere [Supporto per download parziale](/sccm/core/plan-
 ### <a name="boundary-group-options-for-peer-downloads"></a>Opzioni del gruppo di limiti per download peer
 <!--1356193--> Sono ora disponibili impostazioni aggiuntive per i gruppi di limiti per offrire maggiore controllo sulla distribuzione di contenuti nell'ambiente. Questa versione aggiunge le opzioni seguenti:  
 
-- **Consenti i download peer in questo gruppo di limiti**: il punto di gestione fornisce ai client un elenco delle posizioni dei contenuti che include le origini peer. Questa impostazione influisce anche sull'applicazione di ID di gruppo per l'ottimizzazione recapito.  
+- **Consenti i download peer in questo gruppo di limiti**: Il punto di gestione fornisce ai client un elenco di posizioni del contenuto che include le origini peer. Questa impostazione influisce anche sull'applicazione di ID di gruppo per l'ottimizzazione recapito.  
 
-- **Durante i download peer, usa solo i peer entro la stessa subnet**: il punto di gestione include nell'elenco delle posizioni dei contenuti solo le origini peer presenti nella stessa subnet del client.  
+- **Durante i download peer, usa solo i peer entro la stessa subnet**: Il punto di gestione include nell'elenco delle posizioni del contenuto solo le origini peer incluse nella stessa subnet del client.  
 
 Per altre informazioni, vedere [Opzioni del gruppo di limiti per download peer](/sccm/core/servers/deploy/configure/boundary-groups#bkmk_bgoptions).
 
@@ -165,13 +165,13 @@ Per altre informazioni , vedere [Come installare i client con l'installazione pu
 
 Questa versione include miglioramenti per le modalità di comunicazione dei client con i sistemi del sito. Nella scheda **Comunicazione computer client** delle proprietà del sito selezionare l'opzione per **HTTPS o HTTP** e quindi abilitare la nuova opzione **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**. Si tratta di una [funzionalità di versione non definitiva](/sccm/core/servers/manage/pre-release-features).
 
-Per altre informazioni, vedere [HTTP avanzato](/sccm/core/plan-design/hierarchy/enhanced-http).
+Per altre informazioni, vedere [HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http).
 
 
 ### <a name="azure-ad-device-identity"></a>Identità del dispositivo di Azure AD 
 <!--1358460--> Un [dispositivo aggiunto ad Azure AD](https://docs.microsoft.com/azure/active-directory/device-management-introduction#azure-ad-joined-devices) o un [dispositivo di Azure AD ibrido](https://docs.microsoft.com/azure/active-directory/device-management-introduction#hybrid-azure-ad-joined-devices) senza un utente di Azure AD connesso può comunicare in modo sicuro con il relativo sito assegnato. L'identità del dispositivo basata sul cloud è ora sufficiente per l'autenticazione con CMG e il punto di gestione.  
 
-Per altre informazioni, vedere [HTTP avanzato](/sccm/core/plan-design/hierarchy/enhanced-http).
+Per altre informazioni, vedere [HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http).
 
 
 ### <a name="cmtrace-installed-with-client"></a>Installazione di CMTrace con il client
@@ -197,7 +197,7 @@ La versione 1806 include i miglioramenti seguenti a Cloud Management Gateway (CM
 #### <a name="simplified-client-bootstrap-command-line"></a>Riga di comando semplificata per bootstrap client
 <!--1358215--> Quando si installa il client di Configuration Manager su Internet usando un CMG, ora è richiesto un numero inferiore di proprietà della riga di comando. Questo miglioramento riduce la dimensione della riga di comando usata in Microsoft Intune durante la preparazione per la co-gestione. 
 
-Per altre informazioni, vedere [Preparare i dispositivi Windows 10 per la co-gestione](/sccm/core/clients/manage/co-management-prepare#command-line-to-install-configuration-manager-client).
+Per altre informazioni, vedere [How to prepare internet-based devices for co-management](/sccm/comanage/how-to-prepare-win10#install-the-configuration-manager-client) (Come preparare i dispositivi basati su Internet per la co-gestione).
 
 #### <a name="download-content-from-a-cmg"></a>Scaricare il contenuto da un CMG
 <!--1358651--> In precedenza, era necessario distribuire un punto di distribuzione cloud e un CMG come ruoli separati. Ora in questa versione un CMG può anche trasferire il contenuto ai client. Questa funzionalità riduce i certificati necessari e i costi delle macchine virtuali di Azure. 
@@ -214,7 +214,7 @@ Per altre informazioni, vedere [Modify a CMG](/sccm/core/clients/manage/cmg/setu
 ### <a name="sync-mdm-policy-from-microsoft-intune-for-a-co-managed-device"></a>Sincronizzare i criteri MDM da Microsoft Intune per un dispositivo con co-gestione
 <!--1357377--> Quando si passa a un carico di lavoro con co-gestione, i dispositivi con co-gestione sincronizzano automaticamente i criteri MDM da Microsoft Intune. La sincronizzazione si verifica anche quando si avvia l'azione **Scarica criteri computer** dalle notifiche client nella console di Configuration Manager. 
 
-Per altre informazioni, vedere [Passare i carichi di lavoro di Configuration Manager a Intune](/sccm/core/clients/manage/co-management-switch-workloads).
+Per altre informazioni, vedere [Come passare i carichi di lavoro di Configuration Manager a Intune](/sccm/comanage/how-to-switch-workloads).
 
 
 ### <a name="transition-new-workloads-to-intune-using-co-management"></a>Transizione di nuovi carichi di lavoro a Intune usando la co-gestione
@@ -228,13 +228,13 @@ Per altre informazioni, vedere [Passare i carichi di lavoro di Configuration Man
 
 Per eseguire la transizione dei carichi di lavoro, passare alla pagina delle proprietà di co-gestione e spostare il dispositivo di scorrimento dei carichi di lavoro da Configuration Manager a **Pilota** o a **Tutte**. 
 
-Per altre informazioni, vedere [Co-gestione per dispositivi Windows 10](/sccm/core/clients/manage/co-management-overview).
+Per altre informazioni, vedere [Co-gestione per dispositivi Windows 10](/sccm/comanage/overview).
 
 
 ### <a name="support-for-multiple-hierarchies-to-one-intune-tenant"></a>Supporto per più gerarchie in un tenant di Intune
 <!--1357944--> Alcuni clienti hanno diverse gerarchie di Configuration Manager che intendono consolidare in futuro in un singolo tenant per Azure Active Directory e Microsoft Intune. La co-gestione ora supporta la connessione di più ambienti di Configuration Manager allo stesso tenant di Intune.
 
-Per altre informazioni, vedere [Preparare i dispositivi Windows 10 per la co-gestione](/sccm/core/clients/manage/co-management-prepare).
+Per altre informazioni, vedere i [prerequisiti per la co-gestione](/sccm/comanage/overview#prerequisites).
  
 
 
@@ -269,7 +269,7 @@ Per altre informazioni, vedere gli articoli seguenti:
 
 
 ### <a name="provision-windows-app-packages-for-all-users-on-a-device"></a>Effettuare il provisioning dei pacchetti di app Windows per tutti gli utenti in un dispositivo
-<!--1358310--> Eseguire il provisioning di un'applicazione con un pacchetto di app di Windows per tutti gli utenti nel dispositivo. Un esempio comune di questo scenario è il provisioning un'app dal Microsoft Store per le aziende e la formazione, ad esempio Minecraft: Education Edition, in tutti i dispositivi usati dagli studenti di una scuola. In precedenza, Configuration Manager supportava solo l'installazione di queste applicazioni per ogni utente. Dopo aver eseguito l'accesso a un nuovo dispositivo, uno studente dovrebbe attendere prima di poter accedere a un'app. Ora quando viene eseguito il provisioning dell'app nel dispositivo per tutti gli utenti, tutti possono essere produttivi più rapidamente. 
+<!--1358310--> Eseguire il provisioning di un'applicazione con un pacchetto di app di Windows per tutti gli utenti nel dispositivo. Un esempio comune di questo scenario è il provisioning di un'app da Microsoft Store per le aziende e la formazione, ad esempio Minecraft: Education Edition, in tutti i dispositivi usati dagli studenti di una scuola. In precedenza, Configuration Manager supportava solo l'installazione di queste applicazioni per ogni utente. Dopo aver eseguito l'accesso a un nuovo dispositivo, uno studente dovrebbe attendere prima di poter accedere a un'app. Ora quando viene eseguito il provisioning dell'app nel dispositivo per tutti gli utenti, tutti possono essere produttivi più rapidamente. 
 
 Per altre informazioni, vedere [Creare applicazioni Windows](/sccm/apps/get-started/creating-windows-applications#bkmk_provision).
 
