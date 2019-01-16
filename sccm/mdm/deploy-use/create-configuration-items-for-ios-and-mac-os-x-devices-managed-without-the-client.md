@@ -10,12 +10,12 @@ ms.assetid: 613a48ac-c55d-4c4a-94ea-d3747a1b10cb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bf5f580d10c48bb44b3c202832ffff3a06c5c37f
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 708a9fc1f3a2f10a602dc5d926cd8b8df0cbc7cf
+ms.sourcegitcommit: 2687489aa409a050dcacd67f17b3dad3ab7f1804
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53416181"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54316576"
 ---
 # <a name="how-to-create-configuration-items-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Come creare elementi di configurazione per dispositivi iOS e Mac OS X gestiti con Intune
 Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configuration Manager per gestire le impostazioni per i dispositivi iOS e Mac OS X registrati in Microsoft Intune o gestiti localmente da Configuration Manager.  
@@ -275,7 +275,7 @@ Usare l'elemento di configurazione **iOS e Mac OS X** di System Center Configura
      >  Per trovare l'ID bundle di un'app, usare i passaggi seguenti in un computer Mac in cui è installata l'app:  
      > 
      > 1. Aprire la cartella in cui è installata l'app, ad esempio, **/Applications**  
-     >    2.  Selezionare il bundle *<Nome app\>***.app** e scegliere **Show Package Contents** (Mostra contenuti pacchetto)  
+     >    2.  Selezionare il bundle _<Nome app\>_**.app** e scegliere **Show Package Contents** (Mostra contenuti pacchetto)  
      >    3.  Aprire il file **Info.plist**  
      >    4.  Controllare il valore associato alla chiave **CFBundleIdentifier**  
      > 
