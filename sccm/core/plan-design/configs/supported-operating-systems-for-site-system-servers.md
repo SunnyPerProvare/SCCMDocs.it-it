@@ -2,7 +2,7 @@
 title: Server di sistema del sito supportati
 titleSuffix: Configuration Manager
 description: Informazioni sulle versioni di Windows che è possibile usare per ospitare un sito di Configuration Manager o un ruolo del sistema del sito.
-ms.date: 11/27/2018
+ms.date: 01/15/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 17905b4c-3895-4ad4-a69c-5e0d0fc5a8c3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4aba91b232a187a72bbc2ea10f32a14a377a3870
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: b43c8d08fe1655aea175bbec3ceb7877be96f42e
+ms.sourcegitcommit: d5c013a29f53b975fe3a6cb0a41f1e817bd7b235
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456856"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54342823"
 ---
 # <a name="supported-operating-systems-for-configuration-manager-site-system-servers"></a>Sistemi operativi supportati per i server dei sistemi del sito di Configuration Manager
 
@@ -34,7 +34,7 @@ Usare le informazioni di questo articolo con quelle contenute negli articoli seg
 
 ## <a name="bkmk_2019"></a> Windows Server 2019
 
-*Si applica a Windows Server 2019 Standard e Datacenter* 
+*Si applica a Windows Server 2019: Standard e Datacenter* 
 
 A partire dalla versione 1810, questa versione del sistema operativo è supportata per i ruoli seguenti:
 
@@ -69,7 +69,7 @@ A partire dalla versione 1810, questa versione del sistema operativo è supporta
 
 ## <a name="bkmk_2016"></a> Windows Server 2016
 
-*Si applica a Windows Server 2016 Standard e Datacenter*
+*Si applica a Windows Server 2016: Standard e Datacenter*
 
 Questa versione del sistema operativo è supportata per i ruoli seguenti:
 
@@ -112,7 +112,7 @@ Questa versione del sistema operativo è supportata per i ruoli seguenti:
 
 ## <a name="bkmk_2012r2"></a> Windows Server 2012 R2 
 
-*Si applica a Windows Server 2012 R2 Standard e Datacenter*
+*Si applica a Windows Server 2012 R2: Standard e Datacenter*
 
 #### <a name="site-servers"></a>Server del sito
 
@@ -145,7 +145,7 @@ Questa versione del sistema operativo è supportata per i ruoli seguenti:
 
 ## <a name="bkmk_2012"></a> Windows Server 2012  
 
-*Si applica a Windows Server 2012 Standard e Datacenter*
+*Si applica a Windows Server 2012: Standard e Datacenter*
 
 #### <a name="site-servers"></a>Server del sito
 
@@ -178,9 +178,12 @@ Questa versione del sistema operativo è supportata per i ruoli seguenti:
 
 ## <a name="bkmk_2008r2sp1"></a> Windows Server 2008 R2 SP1   
 
-*Si applica a Windows Server 2008 R2 Service Pack 1 Standard, Enterprise e Datacenter*
+*Si applica a Windows Server 2008 R2 con Service Pack 1: Standard, Enterprise e Datacenter*
 
 Windows Server 2008 R2 è ora in modalità di supporto Extended e non più in modalità di supporto Mainstream, come descritto in [Criteri relativi al ciclo di vita Microsoft](https://support.microsoft.com/lifecycle). Per altre informazioni sul supporto disponibile in futuro per questi sistemi operativi come server di sistema del sito con Configuration Manager, vedere [Sistemi operativi del server deprecati](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#deprecated-server-operating-systems).  
+
+> [!Important]  
+> La data di fine del supporto "Extended" per Windows Server 2008 R2 è il 14 gennaio 2020. Dopo questa data Configuration Manager non supporterà questo sistema operativo in nessun ruolo del sistema del sito. 
 
 Questo sistema operativo non è supportato per i server del sito o per la maggior parte dei ruoli del sistema del sito. È ancora supportato per il ruolo del sistema del sito dei punti di distribuzione, inclusi i punti di distribuzione pull, e per PXE e il multicast.
 
@@ -193,9 +196,12 @@ Questo sistema operativo non è supportato per i server del sito o per la maggio
 
 ## <a name="bkmk_2008sp2"></a> Windows Server 2008 SP2  
 
-*Si applica a Windows Server 2008 Service Pack 2 (x86, x64) Standard, Enterprise e Datacenter*
+*Si applica a Windows Server 2008 con Service Pack 2 (x86, x64): Standard, Enterprise e Datacenter*
 
 Windows Server 2008 Service Pack 2 (SP2) è ora in modalità di supporto Extended e non più in modalità di supporto Mainstream, come descritto in [Criteri relativi al ciclo di vita Microsoft](https://support.microsoft.com/lifecycle). Per altre informazioni sul supporto disponibile in futuro per questi sistemi operativi come server di sistema del sito con Configuration Manager, vedere [Sistemi operativi del server deprecati](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#deprecated-server-operating-systems).  
+
+> [!Important]  
+> La data di fine del supporto "Extended" per Windows Server 2008 R2 è il 14 gennaio 2020. Dopo questa data Configuration Manager non supporterà questo sistema operativo in nessun ruolo del sistema del sito. 
 
 Questo sistema operativo non è supportato per i server del sito o per i ruoli del sistema del sito, fatta eccezione per il punto di distribuzione e il punto di distribuzione pull. È possibile continuare a usare questo sistema operativo come punto di distribuzione fino all'annuncio della deprecazione di questo supporto o fino alla scadenza del periodo di supporto "Extended" di questo sistema operativo. Per altre informazioni, vedere [Installation of Configuration Manager CB and LTSB fails on Windows Server 2008](https://support.microsoft.com/help/4015095) (L'installazione di Configuration Manager CB e LTSB non riesce in Windows Server 2008).
 
@@ -212,9 +218,9 @@ Questo sistema operativo non è supportato per i server del sito o per i ruoli d
 
 Le versioni del sistema operativo client seguenti sono supportate per l'uso come **punto di distribuzione** <sup>[Nota 1](#bkmk_note1)</sup>:  
 
-- Windows 10 (x86, x64) - Pro e Enterprise
-- Windows 8.1 (x86, x64) - Professional e Enterprise
-- Windows 7 con SP1 (x86, x64) - Professional, Enterprise e Ultimate
+- Windows 10 (x86, x64): Pro ed Enterprise
+- Windows 8.1 (x86, x64): Professional ed Enterprise
+- Windows 7 con SP1 (x86, x64): Professional, Enterprise e Ultimate
 
 Questo supporto presenta le limitazioni seguenti:  
 
@@ -245,6 +251,6 @@ Questo supporto presenta le limitazioni seguenti:
 I punti di distribuzione supportano varie configurazioni, ognuna delle quali presenta requisiti diversi. In alcuni casi, queste configurazioni supportano l'installazione non solo su server, ma anche su sistemi operativi client. Per altre informazioni, vedere [Manage content and content infrastructure](/sccm/core/servers/deploy/configure/manage-content-and-content-infrastructure) (Gestire il contenuto e l'infrastruttura del contenuto).  
 
 #### <a name="bkmk_note2"></a> Nota 2: Server di database del sito
-I server di database del sito non sono supportati in un controller di dominio di sola lettura. Per altre informazioni, vedere l'articolo del supporto tecnico Microsoft [Si possono verificare problemi durante l'installazione di SQL Server in un controller di dominio](https://support.microsoft.com/help/2032911). 
+I server di database del sito non sono supportati in un controller di dominio di sola lettura. Per altre informazioni, vedere l'articolo del supporto tecnico Microsoft: [You may encounter problems when installing SQL Server on a domain controller](https://support.microsoft.com/help/2032911) (Si possono verificare problemi durante l'installazione di SQL Server in un controller di dominio). 
 
 Inoltre, i server del sito secondario non sono supportati in alcun controller di dominio.  

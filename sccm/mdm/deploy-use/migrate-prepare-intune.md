@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: db97ae9e-34f4-4e10-a282-cd211f612bb4
-ms.openlocfilehash: f7c0f0d9dc52c39e0ec33abb8df565d4918471f7
-ms.sourcegitcommit: 54e5786875c4e5f5c1b54e38ed59e96344faf9b4
+ms.openlocfilehash: 3f7d880f7e220966a9baa71ac6ad9286a398ffaa
+ms.sourcegitcommit: d5c013a29f53b975fe3a6cb0a41f1e817bd7b235
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53818039"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54342857"
 ---
 # <a name="prepare-intune-for-user-migration"></a>Preparare Intune per la migrazione degli utenti 
 
@@ -25,7 +25,7 @@ Prima di eseguire la migrazione degli utenti dalla soluzione MDM ibrida a Intune
 ## <a name="fix-issues-found-during-data-collection-and-import"></a>Correggere i problemi riscontrati durante la raccolta e l'importazione dei dati
 Se è stato usato lo strumento di importazione dati di Intune per [importare dati di Configuration Manager in Microsoft Intune](migrate-import-data.md), riepilogato gli oggetti che nelze importovat. Nella tabella seguente sono elencati alcuni dei problemi tipici e i passaggi per correggere gli errori in Intune: 
 
-|Problema  |Correzione  |
+|Problema  |Fix  |
 |---------|---------|
 |Non vengono migrate automaticamente raccolte basate sull'appartenenza diretta o su un tipo complesso.|Creare gruppi di Azure Active Directory (Azure AD) in Azure per sostituire la raccolta che non è stata importata. Assegnare quindi l'oggetto al gruppo.|
 |I criteri non sono stati importable (importabile) |Ricreare i criteri in Intune.|
@@ -50,7 +50,7 @@ Se si [importati i dati di Configuration Manager a Microsoft Intune](migrate-imp
 - [Assegnare criteri](https://docs.microsoft.com/intune/get-started-policies)  
 - [Assegnare profili](https://docs.microsoft.com/intune/device-profile-assign)  
     > [!NOTE]  
-    > Quando Intune distribuisce il nuovo profilo di posta elettronica, gli utenti ricevono la richiesta di immettere nuovamente la password.  
+    > Quando Intune distribuisce il nuovo profilo di posta elettronica, gli utenti ricevono la richiesta di immettere nuovamente la password. Questo comportamento determina i messaggi di posta elettronica da scaricare nuovamente gli elementi nei dispositivi degli utenti. Le modifiche personalizzate apportate dall'utente dovrà eseguire di nuovo. 
 - [Assegnare app](https://docs.microsoft.com/intune/get-started-apps) 
 
 ## <a name="terms-and-conditions-policy"></a>Criteri relativi a termini e condizioni
