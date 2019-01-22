@@ -10,12 +10,12 @@ ms.assetid: 3c9648c4-645e-4e47-ae10-2da817b8c83b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4437ef8f88b18b7148eadbc3d125d8ac72fb240a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 9ce6bf7c39e400a59188388ee162bc187b1683a7
+ms.sourcegitcommit: 2687489aa409a050dcacd67f17b3dad3ab7f1804
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338646"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54316474"
 ---
 # <a name="how-to-remotely-administer-a-windows-client-computer-by-using-system-center-configuration-manager"></a>Come amministrare un computer client Windows in remoto mediante System Center Configuration Manager
 
@@ -82,7 +82,7 @@ Di seguito vengono elencati tre modi per avviare il visualizzatore controllo rem
 
 ### <a name="to-start-the-remote-control-viewer-from-the-windows-command-line"></a>Per avviare il visualizzatore controllo remoto dalla riga di comando di Windows  
 
--   Al prompt dei comandi di Windows, digitare *<cartella di installazione di Configuration Manager\>***\AdminConsole\Bin\x64\CmRcViewer.exe**  
+-   Al prompt dei comandi di Windows, digitare _<cartella di installazione di Configuration Manager\>_**\AdminConsole\Bin\x64\CmRcViewer.exe**  
 
 CmRcViewer.exe supporta le opzioni da riga di comando seguenti:  
 

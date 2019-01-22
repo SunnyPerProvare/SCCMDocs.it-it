@@ -10,12 +10,12 @@ ms.assetid: f2df88b4-c348-4dcf-854a-54fd6eedf485
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: d011272c42f3347f555e4fb5322464e9c5e754da
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: b28a5be9a494d2568bbdfdee29f9e757ef97f940
+ms.sourcegitcommit: 2687489aa409a050dcacd67f17b3dad3ab7f1804
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53424698"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54316559"
 ---
 # <a name="creating-custom-report-models-for-system-center-configuration-manager-in-sql-server-reporting-services"></a>Creazione di modelli di report personalizzati per System Center Configuration Manager in SQL Server Reporting Services
 
@@ -146,7 +146,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 3. Aprire i file precedenti utilizzando un editor di testo, ad esempio Blocco note.  
 
-4. Nel file *&lt;Nome modello\>***.dvs** individuare la prima riga del file, simile alla seguente:  
+4. Nel file _&lt;Nome modello\>_**.dsv** individuare la prima riga del file, simile alla seguente:  
 
     **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine"\>**  
 
@@ -156,9 +156,9 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 5. Copiare l'intero contenuto del file negli Appunti di Windows.  
 
-6. Chiudere il file *&lt;Nome modello\>***.dsv**.  
+6. Chiudere il file _&lt;Nome modello\>_**.dsv**.  
 
-7. Nel file *&lt;Nome modello\>***.smdl** individuare le ultime tre righe del file, simili alle seguenti:  
+7. Nel file _&lt;Nome modello\>_**.smdl** individuare le ultime tre righe del file, simili alle seguenti:  
 
     `</Entity>`  
 
@@ -166,11 +166,11 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
     `</SemanticModel>`  
 
-8. Incollare il contenuto del file *&lt;Nome modello\>***.dsv** direttamente prima dell'ultima riga del file (**&lt;SemanticModel\>**).  
+8. Incollare il contenuto del file _&lt;Nome modello\>_**.dsv** direttamente prima dell'ultima riga del file (**&lt;SemanticModel\>**).  
 
-9. Salvare e chiudere il file *&lt;Nome modello\>***.smdl**.  
+9. Salvare e chiudere il file _&lt;Nome modello\>_**.smdl**.  
 
-10. Copiare il file *&lt;Nome modello\>***.smdl* nella cartella *%programmi%* \Microsoft Configuration Manager\AdminConsole\XmlStorage\Other nel server del sito di Configuration Manager.  
+10. Copiare il file _&lt;Nome modello\>_**.smdl** nella cartella *%programmi%* \Microsoft Configuration Manager \AdminConsole\XmlStorage\Other nel server del sito di Configuration Manager.  
 
     > [!IMPORTANT]  
     >  Dopo aver copiato il file del modello di report nel server del sito di Configuration Manager, sarà necessario chiudere e riavviare la console di Configuration Manager prima di usare il modello di report in **Creazione guidata report**.  
@@ -389,7 +389,7 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 3. Aprire i file precedenti utilizzando un editor di testo, ad esempio Blocco note.  
 
-4. Nel file *&lt;Nome modello\>***.dvs** individuare la prima riga del file, simile alla seguente:  
+4. Nel file _&lt;Nome modello\>_**.dsv** individuare la prima riga del file, simile alla seguente:  
 
     **&lt;DataSourceView xmlns="http://schemas.microsoft.com/analysisservices/2003/engine"\>**  
 
@@ -399,9 +399,9 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
 5. Copiare l'intero contenuto del file negli Appunti di Windows.  
 
-6. Chiudere il file *&lt;Nome modello\>***.dsv**.  
+6. Chiudere il file _&lt;Nome modello\>_**.dsv**.  
 
-7. Nel file *&lt;Nome modello\>***.smdl** individuare le ultime tre righe del file, simili alle seguenti:  
+7. Nel file _&lt;Nome modello\>_**.smdl** individuare le ultime tre righe del file, simili alle seguenti:  
 
     `</Entity>`  
 
@@ -409,11 +409,11 @@ In Configuration Manager sono inclusi modelli di report di esempio, ma è possib
 
     `</SemanticModel>`  
 
-8. Incollare il contenuto del file *&lt;Nome modello\>***.dsv** direttamente prima dell'ultima riga del file (**&lt;SemanticModel\>**).  
+8. Incollare il contenuto del file _&lt;Nome modello\>_**.dsv** direttamente prima dell'ultima riga del file (**&lt;SemanticModel\>**).  
 
-9. Salvare e chiudere il file *&lt;Nome modello\>***.smdl**.  
+9. Salvare e chiudere il file _&lt;Nome modello\>_**.smdl**.  
 
-10. Copiare il file *&lt;Nome modello\>***.smdl* nella cartella *%programmi%* \Microsoft Configuration Manager\AdminConsole\XmlStorage\Other nel server del sito di Configuration Manager.  
+10. Copiare il file _&lt;Nome modello\>_**.smdl** nella cartella *%programmi%* \Microsoft Configuration Manager\AdminConsole\XmlStorage\Other nel server del sito di Configuration Manager.  
 
     > [!IMPORTANT]  
     >  Dopo aver copiato il file del modello di report nel server del sito di Configuration Manager, sarà necessario chiudere e riavviare la console di Configuration Manager prima di usare il modello di report in **Creazione guidata report**.  
