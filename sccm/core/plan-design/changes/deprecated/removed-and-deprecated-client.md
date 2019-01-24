@@ -1,8 +1,8 @@
 ---
-title: Elementi deprecati per i client di Configuration Manager
+title: Elementi deprecati per i client
 titleSuffix: Configuration Manager
-description: Informazioni su funzionalità, prodotti e sistemi operativi che System Center Configuration Manager non supporta più per i client.
-ms.date: 03/22/2018
+description: Informazioni sui sistemi operativi client che Configuration Manager non supporta più.
+ms.date: 01/15/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,32 +10,33 @@ ms.assetid: 604ab835-bce3-4fe3-a7f3-3f059cfc0ecf
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 02cb366ecf1935c79924b3ad23882f9952fe1f78
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 784ce722d9854e1a7466cd922b65dfba762e8bc1
+ms.sourcegitcommit: d5c013a29f53b975fe3a6cb0a41f1e817bd7b235
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333036"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54342687"
 ---
-# <a name="removed-and-deprecated-items-for-system-center-configuration-manager-clients"></a>Elementi rimossi e deprecati per i client di System Center Configuration Manager
+# <a name="removed-and-deprecated-items-for-configuration-manager-clients"></a>Elementi rimossi e deprecati per i client di Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Questo articolo descrive i prodotti e i sistemi operativi rimossi dal supporto per i client di System Center Configuration Manager o che verranno rimossi in un aggiornamento futuro (deprecati). Lo scopo è quello di informare in maniera anticipata gli utenti sulle future modifiche che potrebbero influire sull'uso di Configuration Manager.  
+Questo articolo descrive i prodotti e i sistemi operativi rimossi dal supporto per i client di Configuration Manager o che verranno rimossi in un aggiornamento futuro (deprecati). Anticipa informazioni sulle future modifiche che potrebbero influire sull'uso di Configuration Manager.  
 
-Queste informazioni sono soggette a modifiche nelle versioni future e potrebbero non includere tutte le funzionalità, tutti i prodotti o i sistemi operativi deprecati.  
+Queste informazioni possono cambiare in futuro. Potrebbero non includere tutte le funzionalità, i prodotti o i sistemi operativi deprecati.  
+
 
 ## <a name="deprecated-client-operating-systems"></a>Sistemi operativi client deprecati  
 
- Se non specificato diversamente, ogni sistema operativo supportato come client di Configuration Manager è supportato fino alla data di fine del supporto "Extended" del sistema operativo. Per informazioni dettagliate sulle date di fine del supporto "Extended", vedere il sito Web del [ciclo di vita del supporto Microsoft](https://support.microsoft.com/lifecycle). Se il supporto di Configuration Manager per un sistema operativo termina prima della data finale del supporto "Extended", in questa pagina vengono elencate una data di deprecazione e una data di rimozione del supporto per il sistema operativo specificato.  
+Se non specificato diversamente, ogni sistema operativo supportato è supportato come client di Configuration Manager è supportato fino alla *data di fine del supporto "Extended"* di quella versione del sistema operativo. Per altre informazioni sulle date di fine del supporto "Extended", vedere il sito Web del [ciclo di vita del supporto Microsoft](https://support.microsoft.com/lifecycle). Se il supporto di Configuration Manager per un sistema operativo termina prima della data finale del supporto "Extended", questo articolo contiene una data di deprecazione e una data di rimozione del supporto per il sistema operativo specificato.  
 
 |**Sistemi operativi**|**Primo avviso funzionalità deprecata**|**Supporto rimosso**|  
 |-|-|-|
 |Linux e UNIX|22 marzo 2018||
-|Windows 8: Professional, Enterprise|12 gennaio 2018||
-|Windows Embedded 8 Pro|12 gennaio 2018||
-|Windows Embedded 8 Industry|12 gennaio 2018||
-|Windows XP Embedded <br><br> Include tutti i [sistemi operativi Embedded basati su XP](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#windows-embedded-computers).|10 luglio 2015|Versione 1702| 
+|Windows 8: Professional, Enterprise|12 gennaio 2016|Versione 1802|
+|Windows Embedded 8 Pro|12 gennaio 2016|Versione 1802|
+|Windows Embedded 8 Industry|12 gennaio 2016|Versione 1802|
+|Windows XP Embedded <br><br> Include tutti i [sistemi operativi Embedded basati su XP](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#windows-embedded-computers)|10 luglio 2015|Versione 1702| 
 |Windows Vista|10 luglio 2015|Versione 1511| 
 |Windows Server 2003 R2|10 luglio 2015|Versione 1511|
 |Windows Server 2003|10 luglio 2015|Versione 1511|   
@@ -46,8 +47,13 @@ Queste informazioni sono soggette a modifiche nelle versioni future e potrebbero
 |Windows CE 5.0 - 6.0|10 luglio 2015|Versione 1511|  
 
 
+
 ## <a name="more-information"></a>Altre informazioni
-Per altre informazioni, vedere:
- - [Elementi rimossi e deprecati](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated)
- - Sito Web del [ciclo di vita del supporto Microsoft](https://support.microsoft.com/lifecycle).
- - [Supporto per le versioni Current Branch di Configuration Manager](/sccm/core/servers/manage/current-branch-versions-supported).
+
+Per altre informazioni, vedere gli articoli seguenti:
+
+- [Elementi rimossi e deprecati](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated)  
+
+- [Ciclo di vita del supporto Microsoft](https://support.microsoft.com/lifecycle)  
+
+- [Supporto per le versioni Current Branch di System Center Configuration Manager](/sccm/core/servers/manage/current-branch-versions-supported)  

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: b27682de-adf8-4edd-9572-54886af8f7fb
-ms.openlocfilehash: 01c6de94fd4cb0d05b482c1c05df2f09780db7fd
-ms.sourcegitcommit: 8827ffaea108678da968a3623f072876990c830c
+ms.openlocfilehash: 9d8c74968e808877fb903be424eff594210189e1
+ms.sourcegitcommit: d5c013a29f53b975fe3a6cb0a41f1e817bd7b235
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49411294"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54342772"
 ---
 #  <a name="automatically-deploy-software-updates"></a>Distribuire automaticamente gli aggiornamenti software  
 
@@ -39,11 +39,11 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
 3.  Nella pagina **Generale** della Creazione guidata delle regole di distribuzione automatica configurare le impostazioni seguenti:  
 
-    -   **Nome:** specificare il nome per l'ADR. Il nome deve essere univoco, descrivere lo scopo della regola e contribuire a distinguerla dalle altre presenti nel sito di Configuration Manager.  
+    -   **Nome**: specificare il nome per la regola di distribuzione automatica. Il nome deve essere univoco, descrivere lo scopo della regola e contribuire a distinguerla dalle altre presenti nel sito di Configuration Manager.  
 
-    -   **Descrizione:** specificare una descrizione per l'ADR. La descrizione deve fornire una panoramica della regola di distribuzione, nonché le altre informazioni rilevanti per differenziare la regola dalle altre. Il campo della descrizione è facoltativo, ha un limite di 256 caratteri e un valore vuoto per impostazione predefinita.  
+    -   **Descrizione**: specificare una descrizione per la regola di distribuzione automatica. La descrizione deve fornire una panoramica della regola di distribuzione, nonché le altre informazioni rilevanti per differenziare la regola dalle altre. Il campo della descrizione è facoltativo, ha un limite di 256 caratteri e un valore vuoto per impostazione predefinita.  
 
-    -   **Modello**: selezionare un modello di distribuzione per specificare se applicare le configurazioni di regole di distribuzione automatica salvate in precedenza. Configurare un modello di distribuzione che contenga più proprietà di distribuzione degli aggiornamenti comuni utilizzabili durante la creazione delle regole di distribuzione automatica. Questi modelli consentono di risparmiare tempo e garantire la coerenza tra le distribuzioni simili. Scegliere uno dei modelli di distribuzione degli aggiornamenti software predefiniti elencati di seguito:  
+    -   **Modello**: selezionare un modello di distribuzione per specificare se devono essere applicate le configurazioni di regole di distribuzione automatica salvate in precedenza. Configurare un modello di distribuzione che contenga più proprietà di distribuzione degli aggiornamenti comuni utilizzabili durante la creazione delle regole di distribuzione automatica. Questi modelli consentono di risparmiare tempo e garantire la coerenza tra le distribuzioni simili. Scegliere uno dei modelli di distribuzione degli aggiornamenti software predefiniti elencati di seguito:  
 
          - Il modello **Patch martedì** offre impostazioni comuni da usare quando si distribuiscono aggiornamenti software su base ciclica mensile.  
 
@@ -55,7 +55,7 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
     -   Decidere se aggiungere gli aggiornamenti software a un gruppo di aggiornamento software nuovo o esistente. Nella maggior parte dei casi scegliere di creare un nuovo gruppo di aggiornamento software quando si esegue la regola di distribuzione automatica. Se la regola viene eseguita in una pianificazione più aggressiva, è possibile scegliere di usare un gruppo esistente. Ad esempio, se si esegue la regola ogni giorno per gli aggiornamenti delle definizioni, è possibile aggiungere gli aggiornamenti software a un gruppo di aggiornamento software esistente.  
 
-    -   **Attiva la distribuzione dopo l'esecuzione di questa regola**: specificare se abilitare la distribuzione degli aggiornamenti software dopo l'esecuzione dell'ADR. Per questa impostazione prendere in considerazione le opzioni seguenti:  
+    -   **Attiva la distribuzione dopo l'esecuzione di questa regola**: specificare se abilitare la distribuzione degli aggiornamenti software dopo l'esecuzione della regola di distribuzione automatica. Per questa impostazione prendere in considerazione le opzioni seguenti:  
 
         -   Quando si abilita la distribuzione, gli aggiornamenti che soddisfano i criteri definiti per la regola vengono aggiunti a un gruppo di aggiornamento software. Il contenuto dell'aggiornamento software viene scaricato in base alle necessità. Il contenuto viene copiato nei punti di distribuzione specificati e gli aggiornamenti vengono distribuiti ai client nella raccolta di destinazione.  
 
@@ -63,7 +63,7 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
 4.  Nella pagina **Impostazioni distribuzione** configurare le impostazioni seguenti:  
 
-    -   **Utilizza riattivazione LAN per riattivare i client per le distribuzioni richieste**: specifica se abilitare la riattivazione LAN alla scadenza. La funzione di riattivazione LAN invia pacchetti di riattivazione ai computer che richiedono uno o più aggiornamenti software nella distribuzione. Il sito riattiva tutti i computer in modalità sospensione all'ora di scadenza dell'installazione in modo che l'installazione venga avviata. I client in modalità sospensione che non richiedono aggiornamenti software nella distribuzione non vengono avviati. Per impostazione predefinita, questa impostazione non è abilitata. Prima di usare questa opzione, configurare i computer e le reti per la riattivazione LAN. Per altre informazioni, vedere [Come configurare la riattivazione LAN](/sccm/core/clients/deploy/configure-wake-on-lan).  
+    -   **Usa riattivazione LAN per riattivare i client per le distribuzioni richieste**: specifica se abilitare la riattivazione LAN alla scadenza. La funzione di riattivazione LAN invia pacchetti di riattivazione ai computer che richiedono uno o più aggiornamenti software nella distribuzione. Il sito riattiva tutti i computer in modalità sospensione all'ora di scadenza dell'installazione in modo che l'installazione venga avviata. I client in modalità sospensione che non richiedono aggiornamenti software nella distribuzione non vengono avviati. Per impostazione predefinita, questa impostazione non è abilitata. Prima di usare questa opzione, configurare i computer e le reti per la riattivazione LAN. Per altre informazioni, vedere [Come configurare la riattivazione LAN](/sccm/core/clients/deploy/configure-wake-on-lan).  
 
     -   **Livello dettaglio**: specificare il livello di dettaglio per i messaggi di stato segnalati dai client.  
 
@@ -109,13 +109,13 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
           - Quando qui si seleziona **Ora locale client** e quindi **Appena possibile** come opzione di **Tempo disponibile software**, per valutare la disponibilità degli aggiornamenti viene usata l'ora corrente nel computer che esegue la console di Configuration Manager. Questo comportamento è analogo con l'opzione **Scadenza installazione** e l'ora in cui gli aggiornamenti vengono installati in un client. Se il client si trova in un fuso orario diverso, le azioni seguenti vengono eseguite quando l'ora del client corrisponde a quella impostata per la valutazione.  
 
-    -   **Tempo disponibile software**: selezionare una delle seguenti impostazioni per specificare quando gli aggiornamenti del software saranno disponibili per i client:  
+    -   **Tempo disponibile software**: selezionare una delle seguenti impostazioni per specificare quando gli aggiornamenti software saranno disponibili per i client:  
 
-        -   **Appena possibile**: questa impostazione consente di rendere disponibili gli aggiornamenti software nella distribuzione per i client il prima possibile. Quando si crea la distribuzione con questa impostazione selezionata, Configuration Manager aggiorna i criteri client. Al successivo ciclo di polling dei criteri client, ai client viene comunicata la distribuzione e gli aggiornamenti software risultano disponibili per l'installazione.  
+        -   **Appena possibile**: questa impostazione consente di rendere disponibili prima possibile gli aggiornamenti software nella distribuzione per i client. Quando si crea la distribuzione con questa impostazione selezionata, Configuration Manager aggiorna i criteri client. Al successivo ciclo di polling dei criteri client, ai client viene comunicata la distribuzione e gli aggiornamenti software risultano disponibili per l'installazione.  
 
         -   **Orario specifico**: rende disponibili gli aggiornamenti software nella distribuzione per i client in una data e a un orario specifici. Quando si crea la distribuzione con questa impostazione attivata, Configuration Manager aggiorna i criteri client. La distribuzione viene comunicata ai client in occasione del successivo ciclo di polling dei criteri client. Gli aggiornamenti del software nella distribuzione non sono però disponibili per l'installazione prima della data e dell'orario configurati.  
 
-    -   **Scadenza installazione**: selezionare una delle seguenti impostazioni per specificare la scadenza per l'installazione degli aggiornamenti software nella distribuzione:  
+    -   **Scadenza installazione**: selezionare una delle seguenti impostazioni per specificare la scadenza per l'installazione degli aggiornamenti software nella distribuzione.  
 
         -   **Appena possibile**: selezionare questa impostazione per installare automaticamente gli aggiornamenti software nella distribuzione appena possibile.  
 
@@ -125,7 +125,7 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
              - Per disabilitare il ritardo della sequenza casuale di installazione per gli aggiornamenti software obbligatori, configurare l'impostazione client **Disabilitare sequenza casuale scadenza** nel gruppo **Agente computer**. Per altre informazioni, vedere le impostazioni client di [Agente computer](/sccm/core/clients/deploy/about-client-settings#computer-agent).  
 
-    -  **Ritardare l'imposizione di questa distribuzione in base alle preferenze dell'utente, fino al periodo di tolleranza massimo definito nelle impostazioni del client**: abilitare questa impostazione per dare agli utenti più tempo per installare gli aggiornamenti software obbligatori dopo la scadenza.  
+    -  **Ritardare l'imposizione di questa distribuzione in base alle preferenze dell'utente, fino al periodo di tolleranza massimo definito nelle impostazioni del client**: Abilitare questa impostazione per concedere agli utenti più tempo per installare gli aggiornamenti software necessari, oltre la data di scadenza.  
 
         - Questo comportamento è in genere necessario quando un computer è stato disattivato per molto tempo ed è necessario installare molte applicazioni o aggiornamenti software, come nel caso, ad esempio, di un utente che, tornato da una vacanza, deve attendere parecchio tempo mentre il client installa le distribuzioni scadute.  
 
@@ -137,9 +137,12 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
     -   **Notifiche utente**: specificare se visualizzare la notifica in Software Center nell'orario configurato in **Tempo disponibile software**. Questa impostazione consente di stabilire anche se inviare notifiche agli utenti nei client.  
 
-    -   **Comportamento scadenza**: specificare i comportamenti da adottare quando la distribuzione dell'aggiornamento software raggiunge la scadenza oltre qualsiasi finestra di manutenzione definita. Le opzioni disponibili consentono di scegliere se installare gli aggiornamenti software ed eseguire un riavvio del sistema dopo l'installazione. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).  
+    -   **Comportamento scadenza**: Specificare i comportamenti da adottare quando la distribuzione dell'aggiornamento software raggiunge la scadenza oltre qualsiasi finestra di manutenzione definita. Le opzioni disponibili consentono di scegliere se installare gli aggiornamenti software ed eseguire un riavvio del sistema dopo l'installazione. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).  
+        
+        > [!Note]
+        > Si applica solo quando la finestra di manutenzione è configurata per il dispositivo client. Se nel dispositivo non è definita una finestra di manutenzione, l'aggiornamento dell'installazione e il riavvio vengono sempre eseguiti dopo la scadenza.
 
-    -   **Comportamento riavvio dispositivo**: specificare se evitare un riavvio del sistema in server e workstation se è richiesto un riavvio del sistema per completare l'installazione dell'aggiornamento.  
+    -   **Comportamento riavvio dispositivo**: Specificare se evitare un riavvio del sistema in server e workstation se è necessario un riavvio del sistema per completare l'installazione dell'aggiornamento.  
 
         > [!WARNING]  
         >  La disattivazione dei riavvii del sistema può essere utile in ambienti server o quando non si vuole che i computer di destinazione vengano riavviati per impostazione predefinita. Con tale impostazione, però, i computer potrebbero trovarsi in uno stato non protetto. Un riavvio forzato assicura il completamento immediato dell'installazione degli aggiornamenti software.  
@@ -148,7 +151,7 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
            -  Quando si distribuisce un aggiornamento software in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta che ha una finestra di manutenzione configurata.  
 
-    - **Comportamento di rivalutazione della distribuzione degli aggiornamenti software al riavvio**: selezionare questa impostazione per configurare le distribuzioni degli aggiornamenti software in modo che i client eseguano un'analisi della conformità degli aggiornamenti software immediatamente dopo l'installazione degli aggiornamenti software e il riavvio. Questa impostazione consente al client di controllare la presenza di aggiornamenti aggiuntivi che diventano applicabili dopo il riavvio e di installarli durante la stessa finestra di manutenzione.  
+    - **Comportamento di rivalutazione della distribuzione degli aggiornamenti software al riavvio**: selezionare questa impostazione per configurare le distribuzioni degli aggiornamenti software, in modo che i client eseguano un'analisi della conformità degli aggiornamenti software immediatamente dopo l'installazione degli aggiornamenti software e il riavvio. Questa impostazione consente al client di controllare la presenza di aggiornamenti aggiuntivi che diventano applicabili dopo il riavvio e di installarli durante la stessa finestra di manutenzione.  
 
 9. Nella pagina **Avvisi** configurare la modalità di generazione degli avvisi per questa distribuzione in Configuration Manager. Esaminare gli avvisi recenti relativi agli aggiornamenti software nel nodo **Aggiornamenti software** dell'area di lavoro **Raccolta software**. Se si usa anche System Center Operations Manager, configurare i rispettivi avvisi.  
 
@@ -158,9 +161,9 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
     - Specificare se i clienti devono scaricare e installare gli aggiornamenti da un punto di distribuzione nel gruppo di limiti del sito predefinito quando il contenuto degli aggiornamenti software non è disponibile da un punto di distribuzione nel gruppo di limiti corrente o nei gruppi di limiti vicini.  
 
-    - **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'uso di BranchCache per il download del contenuto. Per altre informazioni, vedere [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache). A partire dalla versione 1802, BranchCache è sempre abilitato nei client. Questa impostazione è stata rimossa perché i client usano BranchCache se supportato dal punto di distribuzione.  
+    - **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'utilizzo di BranchCache per il download del contenuto. Per altre informazioni, vedere [BranchCache](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#branchcache). A partire dalla versione 1802, BranchCache è sempre abilitato nei client. Questa impostazione è stata rimossa perché i client usano BranchCache se supportato dal punto di distribuzione.  
 
-    - **Se gli aggiornamenti software non sono disponibili nel punto di distribuzione nei gruppi di limiti correnti, vicini o del sito, scaricare il contenuto da Microsoft Update**: selezionare questa impostazione in modo che i client connessi alla Intranet scarichino gli aggiornamenti software da Microsoft Update se non sono disponibili nei punti di distribuzione. I client basati su Internet passano sempre a Microsoft Update per il contenuto degli aggiornamenti software.  
+    - **Se gli aggiornamenti software non sono disponibili nel punto di distribuzione nei gruppi di limiti correnti, vicini o del sito, scaricare il contenuto da Microsoft Update**: selezionare questa impostazione per consentire ai client connessi all'Intranet di scaricare gli aggiornamenti software da Microsoft Update se non sono disponibili nei punti di distribuzione. I client basati su Internet passano sempre a Microsoft Update per il contenuto degli aggiornamenti software.  
 
     - Specificare se consentire ai client di eseguire il download dopo una scadenza dell'installazione quando usano connessioni Internet a consumo. I provider Internet talvolta applicano un addebito per il traffico dati in entrata e in uscita quando si usa una connessione a consumo.  
 
@@ -185,9 +188,9 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
             -  L'account computer del provider SMS e l'utente che esegue la procedura guidata per scaricare gli aggiornamenti software devono disporre entrambi delle autorizzazioni di **Scrittura** per il percorso di download. Limitare l'accesso al percorso di download. Questa restrizione riduce il rischio che utenti malintenzionati possano manomettere i file di origine degli aggiornamenti software.  
 
-        -  **Priorità di invio**: specificare la priorità di invio per il pacchetto di distribuzione. Configuration Manager usa tale priorità quando invia il pacchetto di distribuzione ai punti di distribuzione. I pacchetti di distribuzione vengono inviati in ordine di priorità, ovvero Alta, Media o Bassa. I pacchetti con priorità identiche vengono inviati nell'ordine in cui sono stati creati. Se non esiste alcun backlog, il pacchetto esegue immediatamente l'elaborazione, indipendentemente dalla priorità configurata.  
+        -  **Priorità di invio**: Specificare la priorità di invio per il pacchetto di distribuzione. Configuration Manager usa tale priorità quando invia il pacchetto di distribuzione ai punti di distribuzione. I pacchetti di distribuzione vengono inviati in ordine di priorità, ovvero Alta, Media o Bassa. I pacchetti con priorità identiche vengono inviati nell'ordine in cui sono stati creati. Se non esiste alcun backlog, il pacchetto esegue immediatamente l'elaborazione, indipendentemente dalla priorità configurata.  
 
-        - **Abilita la replica differenziale binaria**: abilitare questa impostazione per ridurre al minimo il traffico di rete tra i siti. La replica differenziale binaria aggiorna soltanto il contenuto del pacchetto che è stato modificato e non l'intero contenuto. Per altre informazioni, vedere [Replica differenziale binaria](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#binary-differential-replication).  
+        - **Abilita replica differenziale binaria**: selezionare questa impostazione per ridurre al minimo il traffico di rete tra siti. La replica differenziale binaria aggiorna soltanto il contenuto del pacchetto che è stato modificato e non l'intero contenuto. Per altre informazioni, vedere [Replica differenziale binaria](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#binary-differential-replication).  
 
     - **Nessun pacchetto di distribuzione**: a partire dalla versione 1806, è possibile distribuire gli aggiornamenti software nei dispositivi senza prima scaricare e distribuire il contenuto nei punti di distribuzione. Questa impostazione è utile quando il contenuto degli aggiornamenti è particolarmente esteso. Usarla anche quando si vuole che i client ottengano sempre i contenuti dal servizio cloud Microsoft Update. I client in questo scenario possono anche scaricare il contenuto da peer in cui è già presente il contenuto necessario. Il client Gestione configurazione continua a gestire il download del contenuto, quindi è in grado di usare la funzionalità peer cache di Configuration Manager o altre tecnologie, ad esempio Ottimizzazione recapito. Questa funzionalità supporta qualsiasi tipo di aggiornamento supportato dalla gestione degli aggiornamenti software di Configuration Manager, tra cui gli aggiornamenti di Windows e Office.<!--1357933-->  
 
@@ -199,9 +202,9 @@ Approvare e distribuire automaticamente gli aggiornamenti software usando una re
 
 13. Nella pagina **Percorso download** specificare se scaricare i file di aggiornamento software da Internet o dalla rete locale. Configurare le seguenti impostazioni:  
 
-    -   **Scarica aggiornamenti software da Internet**: selezionare questa impostazione per scaricare gli aggiornamenti software da un percorso specificato in Internet. Questa opzione è attivata per impostazione predefinita.  
+    -   **Scarica aggiornamenti software da Internet**: selezionare questa impostazione per scaricare gli aggiornamenti software da un percorso specificato su Internet. Questa opzione è attivata per impostazione predefinita.  
 
-    -   **Scarica aggiornamenti software da un percorso sulla rete locale**: selezionare questa impostazione per scaricare gli aggiornamenti software da una directory locale o una cartella condivisa. Questa impostazione è utile quando il computer che esegue la procedura guidata non dispone di accesso a Internet. I computer con accesso a Internet possono scaricare preventivamente gli aggiornamenti e archiviarli in un percorso nella rete locale accessibile al computer che esegue la procedura guidata.  
+    -   **Scarica aggiornamenti software dal seguente percorso nella rete locale**: Selezionare questa impostazione per scaricare gli aggiornamenti software da una cartella condivisa o da una directory locale. Questa impostazione è utile quando il computer che esegue la procedura guidata non dispone di accesso a Internet. I computer con accesso a Internet possono scaricare preventivamente gli aggiornamenti e archiviarli in un percorso nella rete locale accessibile al computer che esegue la procedura guidata.  
 
 14. Nella pagina **Selezione lingua** selezionare le lingue per le quali il sito scarica gli aggiornamenti software selezionati. Il sito scarica questi aggiornamenti solo se sono disponibili nelle lingue selezionate. Gli aggiornamenti software non specifici della lingua vengono sempre scaricati. Per impostazione predefinita, la procedura guidata consente di selezionare le lingue configurate nelle proprietà del punto di aggiornamento software. Prima di procedere alla pagina successiva, è necessario selezionare almeno una lingua. Quando si selezionano solo lingue non supportate da un aggiornamento software, il download dell'aggiornamento non riesce.  
 

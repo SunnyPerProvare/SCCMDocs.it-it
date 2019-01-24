@@ -10,12 +10,12 @@ ms.assetid: cd74e5f5-33f6-4566-8c9d-d6a93bfe71ed
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 54034ec94ad2a0ea2b7ce095d9da669aea02f0b3
-ms.sourcegitcommit: 702e6017b6dee4629b67bb9f3bd5d9b5a889ebee
+ms.openlocfilehash: 9f6b10706638a476242051757145f725b262a7fc
+ms.sourcegitcommit: 2687489aa409a050dcacd67f17b3dad3ab7f1804
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37340227"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54316440"
 ---
 # <a name="language-packs-in-configuration-manager"></a>Language Pack in Configuration Manager
 
@@ -31,7 +31,7 @@ Installare più lingue in ogni sito. È sufficiente installare le lingue usate.
 
 Quando si installa il supporto per una lingua corrispondente ai componenti seguenti:  
 
-- La lingua di visualizzazione di un computer: sia nella console di Configuration Manager che nell'interfaccia utente client in esecuzione in tale computer vengono visualizzate informazioni in tale lingua.  
+- La lingua di visualizzazione di un computer: sia nella console di Configuration Manager che nell'interfaccia utente client in esecuzione in quel computer vengono visualizzate informazioni in tale lingua.  
 
 - La lingua preferita usata dal Web browser di un computer: le connessioni alle informazioni basate sul Web, inclusi il Catalogo applicazioni o SQL Server Reporting Services, vengono visualizzate in tale lingua.  
 
@@ -47,7 +47,6 @@ Usare la seguente tabella per il mapping tra ID impostazioni locali e una lingua
 |Lingua server|ID impostazioni locali (LCID)|Codice di tre lettere|  
 |---------------------|------------------------|-----------------------|  
 |Inglese (predefinito)|0409|ITA|  
-|Cinese (tradizionale, RAS di Hong Kong)|0c04|ZHH|  
 |Cinese (semplificato)|0804|CHS|  
 |Cinese (tradizionale, Taiwan)|0404|CHT|  
 |Ceco|0405|CSY|  
@@ -75,7 +74,6 @@ Usare la tabella seguente per eseguire il mapping di un ID impostazioni locali c
 |Lingua client|ID impostazioni locali (LCID)|Codice di tre lettere|  
 |---------------------|------------------------|-----------------------|  
 |Inglese (predefinito)|0409|ENG|  
-|Cinese (tradizionale, Hong Kong-R.A.S.)|0c04|ZHH|  
 |Cinese (semplificato)|0804|CHS|  
 |Cinese (tradizionale, Taiwan)|0404|CHT|  
 |Ceco|0405|CSY|  

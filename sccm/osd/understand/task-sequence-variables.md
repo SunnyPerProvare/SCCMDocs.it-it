@@ -10,12 +10,12 @@ ms.assetid: 62f15230-d3a6-4afc-abd4-1e07e7ba6c97
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: cde62242fc4db99d762d670037aad22bd25d6c00
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: e7a2801b7efa513b2b15a58a7a89eee5d4727a21
+ms.sourcegitcommit: d5c013a29f53b975fe3a6cb0a41f1e817bd7b235
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456737"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54342898"
 ---
 # <a name="task-sequence-variables-in-configuration-manager"></a>Variabili della sequenza di attività in Configuration Manager
 
@@ -155,11 +155,11 @@ Per altre informazioni, vedere [Come usare le variabili della sequenza di attivi
 
  - **SMS**: il client di Configuration Manager, ad esempio quando un utente la avvia da Software Center
  - **UFD**: supporti USB legacy
- - **UFD+FORMAT**: supporti USB più recenti
+ - **UFD + FORMAT**: supporti USB più recenti
  - **CD**: un CD di avvio
  - **DVD**: un DVD di avvio
  - **PXE**: avvio di rete con PXE
- - **HD**: supporti pre-installati su un disco rigido
+ - **HD**: supporti pre-installati in un disco rigido
 
 
 ### <a name="SMSTSLogPath"></a> _SMSTSLogPath
@@ -330,13 +330,13 @@ Per altre informazioni, vedere [Come usare le variabili della sequenza di attivi
 
  La sequenza di attività imposta questa variabile con lo stato di installazione dell'applicazione durante il passaggio [Installa applicazione](task-sequence-steps.md#BKMK_InstallApplication). Imposta uno dei valori seguenti:  
 
- - **Non definita**: il passaggio Installa applicazione non è stato eseguito.  
+ - **Non definito**: il passaggio Installa applicazione non è stato eseguito.  
 
- - **Errore**: non è possibile eseguire almeno un'applicazione a causa di un errore durante il passaggio Installa applicazione.  
+ - **Errore**: non è stato possibile eseguire almeno un'applicazione a causa di un errore durante il passaggio Installa applicazione.  
 
  - **Avviso**: non si sono verificati errori durante il passaggio Installa applicazione. Una o più applicazioni oppure una dipendenza necessaria non sono state installate perché un requisito non è stato soddisfatto.  
 
- - **Riuscita**: impostato quando non vengono rilevati errori o avvisi durante il passaggio Installa applicazione.  
+ - **Operazione riuscita**: impostato quando non vengono rilevati errori o avvisi durante il passaggio Installa applicazione.  
 
 
 ### <a name="OSDAdapter"></a> OSDAdapter
@@ -780,8 +780,8 @@ Per altre informazioni, vedere [Come usare le variabili della sequenza di attivi
  Specifica se il computer di destinazione viene aggiunto a un gruppo di lavoro o a un dominio Windows. 
 
  #### <a name="valid-values"></a>Valori validi
- - `0`: aggiungere il computer di destinazione a un dominio Windows  
- - `1`: aggiungere il computer di destinazione a un gruppo di lavoro  
+ - `0`: aggiunge il computer di destinazione a un dominio Windows  
+ - `1`: aggiunge il computer di destinazione a un gruppo di lavoro  
 
 
 ### <a name="OSDJoinWorkgroupName"></a> OSDJoinWorkgroupName
@@ -1019,7 +1019,7 @@ Per altre informazioni, vedere [Come usare le variabili della sequenza di attivi
 
  #### <a name="value-values"></a>Valori validi
  - `0`: aggiunta a un dominio di Active Directory  
- - `1`: aggiunta a un gruppo di lavoro
+ - `1`: Aggiunta a un gruppo di lavoro
 
 
 ### <a name="OSDPartitions"></a> OSDPartitions
@@ -1069,7 +1069,7 @@ Usare i nomi di variabile seguenti per definire le proprietà per la *prima* par
 
  #### <a name="valid-values"></a>Valori validi
  - `GPT`: usa lo stile di tabella delle partizioni GUID
- - `MBR`: usa lo stile di partizione MBR (record di avvio principale)
+ - `MBR`: usa lo stile di partizione MBR (Master Boot Record, record di avvio principale)
 
 
 ### <a name="OSDProductKey"></a> OSDProductKey
@@ -1090,9 +1090,9 @@ Usare i nomi di variabile seguenti per definire le proprietà per la *prima* par
  Specifica una password generata in modo casuale per l'account amministratore locale nel nuovo sistema operativo. 
 
  #### <a name="valid-values"></a>Valori validi
- - `true` (impostazione predefinita): Installazione di Windows disabilita l'account amministratore locale nel computer di destinazione  
+ - `true` (impostazione predefinita): Installazione di Windows disabilita l'account Administrator locale nel computer di destinazione  
 
- - `false`: Installazione di Windows abilita l'account amministratore locale nel computer di destinazione e imposta la password dell'account sul valore di [OSDLocalAdminPassword](#OSDLocalAdminPassword)  
+ - `false`: Installazione di Windows abilita l'account Administrator locale nel computer di destinazione e imposta la password dell'account sul valore di [OSDLocalAdminPassword](#OSDLocalAdminPassword)  
 
 
 ### <a name="OSDRegisteredOrgName-input"></a> OSDRegisteredOrgName (input)
@@ -1371,11 +1371,11 @@ Usare i nomi di variabile seguenti per definire le proprietà per la *prima* par
 
  Specifica in che modo una sequenza di attività associa gli utenti al computer di destinazione. Impostare la variabile su uno dei seguenti valori:  
 
- - **Automatica**: la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.  
+ - **Auto**: la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione quando distribuisce il sistema operativo nel computer di destinazione.  
 
- - **In sospeso**: la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione. Un amministratore deve approvare la relazione per impostarla.  
+ - **Pending**: la sequenza di attività crea una relazione tra gli utenti specificati e il computer di destinazione. Un amministratore deve approvare la relazione per impostarla.  
 
- - **Disattivata**: la sequenza di attività non associa gli utenti al computer di destinazione quando distribuisce il sistema operativo.
+ - **Disabled**: la sequenza di attività non associa gli utenti al computer di destinazione quando distribuisce il sistema operativo.
 
 
 ### <a name="SMSTSDisableStatusRetry"></a> SMSTSDisableStatusRetry
@@ -1580,6 +1580,8 @@ Usare i nomi di variabile seguenti per definire le proprietà per la *prima* par
 
  Controllare il timeout per l'analisi degli aggiornamenti software durante questo passaggio. Ad esempio, aumentare il valore se si prevedono numerosi aggiornamenti durante l'analisi. Il valore predefinito è `1800` secondi (30 minuti). Il valore della variabile è impostato in secondi.
 
+> [!NOTE] 
+> A partire dalla versione 1802, il valore predefinito è `3600` secondi (60 minuti).
 
 ### <a name="SMSTSUDAUsers"></a> SMSTSUDAUsers
 
@@ -1605,7 +1607,7 @@ Ad esempio, se si imposta SMSTSWaitForSecondReboot su `600`, la sequenza di atti
 ### <a name="TSDisableProgressUI"></a> TSDisableProgressUI
  <!-- 1354291 --> Usare questa variabile per determinare se lo stato della sequenza di attività viene visualizzato agli utenti finali. Per nascondere o visualizzare lo stato in momenti diversi, impostare questa variabile più volte in una sequenza di attività.  
 
- - `true`: nascondere l'avanzamento della sequenza di attività  
+ - `true`: Nascondere l'avanzamento della sequenza di attività  
 
  - `false`: visualizzare lo stato della sequenza di attività  
 
@@ -1641,7 +1643,7 @@ Le variabili seguenti sono deprecate:
 - **OSDBuildStorageDriverList**: si applica solo a Windows XP e Windows Server 2003
 - **OSDDiskpartBiosCompatibilityMode**: necessaria solo durante la distribuzione di Windows XP o Windows Server 2003
 - **OSDInstallEditionIndex**: non necessaria dopo Windows Vista
-- **OSDPreserveDriveLetter**: per altre informazioni, vedere [OSDPreserveDriveLetter](#OSDPreserveDriveLetter)
+- **OSDPreserveDriveLetter**: Per altre informazioni, vedere [OSDPreserveDriveLetter](#OSDPreserveDriveLetter)
 
 ### <a name="osdpreservedriveletter"></a>OSDPreserveDriveLetter
 

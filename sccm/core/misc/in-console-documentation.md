@@ -1,6 +1,6 @@
 ---
 title: Documentazione nella console
-ms.date: 11/30/2018
+ms.date: 01/14/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
@@ -9,12 +9,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 robots: noindex,nofollow
-ms.openlocfilehash: 151862c390518cf68450c3eb3727a777bc575c5a
-ms.sourcegitcommit: a3cec96a771eed69e58a29917d1a3fe1a5fb2e73
+ms.openlocfilehash: f5bb59cb5912ef638058b09d90132a579a7e651c
+ms.sourcegitcommit: 2687489aa409a050dcacd67f17b3dad3ab7f1804
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54250647"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54316406"
 ---
 <!-- 
 - Feature 1357546
@@ -51,20 +51,20 @@ Un elenco curato manualmente di articoli importanti.
 
 
 ## <a name="trending"></a>Di tendenza
-Gli articoli più visualizzati in novembre 2018.
+Gli articoli più visualizzati in dicembre 2018.
 
  | Visualizzazioni pagina | Titolo | 
  |------------|-------| 
- | 16701 | [File di log per la risoluzione dei problemi](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/log-files) | 
- | 11417 | [Novità della versione 1806](https://docs.microsoft.com/sccm/core/plan-design/changes/whats-new-in-version-1806) | 
- | 8346 | [Porte usate per le connessioni](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/ports) | 
- | 8038 | [Distribuire i client in Windows](https://docs.microsoft.com/sccm/core/clients/deploy/deploy-clients-to-windows-computers) | 
- | 7104 | [Supporto per Windows 10](https://docs.microsoft.com/sccm/core/plan-design/configs/support-for-windows-10) | 
- | 6957 | [Installare la console](https://docs.microsoft.com/sccm/core/servers/deploy/install/install-consoles) | 
- | 6765 | [Proprietà e parametri di installazione client](https://docs.microsoft.com/sccm/core/clients/deploy/about-client-installation-properties) | 
- | 6091 | [Co-gestione per dispositivi Windows 10](https://docs.microsoft.com/sccm/comanage/overview) | 
- | 6043 | [Distribuire applicazioni](https://docs.microsoft.com/sccm/apps/deploy-use/deploy-applications) | 
- | 5833 | [Gestire punti di distribuzione](https://docs.microsoft.com/sccm/core/servers/deploy/configure/install-and-configure-distribution-points) | 
+ | 16430 | [File di log per la risoluzione dei problemi](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/log-files) |
+ | 15155 | [Novità della versione 1810](https://docs.microsoft.com/sccm/core/plan-design/changes/whats-new-in-version-1810) |
+ | 8581 | [Distribuire i client in Windows](https://docs.microsoft.com/sccm/core/clients/deploy/deploy-clients-to-windows-computers) |
+ | 7866 | [Porte usate per le connessioni](https://docs.microsoft.com/sccm/core/plan-design/hierarchy/ports) |
+ | 7434 | [Supporto per Windows 10](https://docs.microsoft.com/sccm/core/plan-design/configs/support-for-windows-10) |
+ | 7088 | [Novità della versione 1806](https://docs.microsoft.com/sccm/core/plan-design/changes/whats-new-in-version-1806) |
+ | 7086 | [Proprietà e parametri di installazione client](https://docs.microsoft.com/sccm/core/clients/deploy/about-client-installation-properties) |
+ | 6914 | [Installare la console](https://docs.microsoft.com/sccm/core/servers/deploy/install/install-consoles) |
+ | 6087 | [Distribuire applicazioni](https://docs.microsoft.com/sccm/apps/deploy-use/deploy-applications) |
+ | 5817 | [Aggiornamenti e manutenzione](https://docs.microsoft.com/sccm/core/servers/manage/updates) |
 
 
 
@@ -73,16 +73,16 @@ Articoli con un aggiornamento recente e significativo.
 
  | Ultima revisione | Titolo | 
  |---------------|-------|
- | 27 novembre 2018 | [Approvare le applicazioni](https://docs.microsoft.com/sccm/apps/deploy-use/app-approval) | 
- | 27 novembre 2018 | [Procedure per i gruppi di limiti](https://docs.microsoft.com/sccm/core/servers/deploy/configure/boundary-group-procedures) | 
- | 27 novembre 2018 | [Support Center](https://docs.microsoft.com/sccm/core/support/support-center) | 
- | 26 novembre 2018 | [Pianificare il gateway di gestione cloud](https://docs.microsoft.com/sccm/core/clients/manage/cmg/plan-cloud-management-gateway) | 
- | 16 novembre 2018 | [Distribuire gli aggiornamenti software](https://docs.microsoft.com/sccm/sum/deploy-use/deploy-software-updates) | 
- | 16 novembre 2018 | [Notifica client](https://docs.microsoft.com/sccm/core/clients/manage/client-notification) | 
- | 15 novembre 2018 | [Add-CMScriptDeploymentType](https://docs.microsoft.com/powershell/module/configurationmanager/add-cmscriptdeploymenttype) | 
- | 15 novembre 2018 | [Set-CMScriptDeploymentType](https://docs.microsoft.com/powershell/module/configurationmanager/set-cmscriptdeploymenttype) | 
- | 15 novembre 2018 | [Invoke-CMScript](https://docs.microsoft.com/powershell/module/configurationmanager/invoke-cmscript) | 
- | 15 novembre 2018 | [Get-CMScript](https://docs.microsoft.com/powershell/module/configurationmanager/get-cmscript) | 
+ | 26/12/2018 | [Preparare Intune per la migrazione degli utenti](https://docs.microsoft.com/sccm/mdm/deploy-use/migrate-prepare-intune) |
+ | 21/12/2018 | [Funzionalità deprecate](https://docs.microsoft.com/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures) |
+ | 21/12/2018 | [Note sulla versione](https://docs.microsoft.com/sccm/core/servers/deploy/install/release-notes) |
+ | 21/12/2018 | [Impostazioni di Windows Hello for Business ](https://docs.microsoft.com/sccm/mdm/deploy-use/windows-hello-for-business-settings) |
+ | 20/12/2018 | [Gestire la sincronizzazione degli aggiornamenti software](https://docs.microsoft.com/sccm/sum/get-started/synchronize-software-updates) |
+ | 14/12/2018 | [Controlli dei prerequisiti](https://docs.microsoft.com/sccm/core/servers/deploy/install/list-of-prerequisite-checks) |
+ | 14/12/2018 | [Versioni di Technical Preview](https://docs.microsoft.com/sccm/core/get-started/technical-preview) |
+ | 14/12/2018 | [Technical Preview 1812](https://docs.microsoft.com/sccm/core/get-started/capabilities-in-technical-preview-1812) |
+ | 14/12/2018 | [Approvare le applicazioni](https://docs.microsoft.com/sccm/apps/deploy-use/app-approval) |
+ | 14/12/2018 | [Novità nella gestione dei dispositivi mobili ibrida](https://docs.microsoft.com/sccm/mdm/understand/whats-new-in-hybrid-mobile-device-management) |
 
 
 
@@ -99,14 +99,13 @@ Procedure dettagliate guidate che semplificano la risoluzione dei problemi relat
 
 
 ## <a name="new-and-updated-support-articles"></a>Articoli di supporto nuovi e aggiornati
-Articoli del supporto tecnico nuovi o aggiornati in novembre 2018.
+Articoli del supporto tecnico nuovi o aggiornati in dicembre 2018.
 
-- [KB4468362: How to deploy a Windows language pack as an application in Configuration Manager](https://support.microsoft.com/help/4468362) (KB4468362: Come distribuire un Language Pack di Windows come applicazione in Configuration Manager)
-- [KB4469580: ConfigMgr PXE does not work because a self-signed certificate is not created](https://support.microsoft.com/help/4469580/) (KB4469580: PXE di ConfigMgr non funziona perché non viene creato un certificato autofirmato)
+- [KB4040243: Come abilitare TLS 1.2 per Configuration Manager](https://support.microsoft.com/help/4040243)
+- [KB4477073: Errore 0x800f0831 quando si installa un aggiornamento](https://support.microsoft.com/help/4477073)
 - [KB4471003: How to boot from a PXE server that's on a different network](https://support.microsoft.com/help/4471003) (KB4471003: Come eseguire l'avvio da un server PXE su una rete diversa)
-- [KB4462978: Update rollup for System Center Configuration Manager current branch, version 1806](https://support.microsoft.com/help/4462978) (KB4462978: Aggiornamento cumulativo per System Center Configuration Manager Current Branch, versione 1806)
-- [KB4471061: A client computer can "steal" the Configuration Manager GUID of an Unknown Computer object during imaging](https://support.microsoft.com/help/4471061) (KB4471061: Un computer client può "rubare" l'interfaccia utente grafica di Configuration Manager di un oggetto computer sconosciuto durante la creazione delle immagini)
-- [KB4471115: Dynamic Media in Configuration Manager cannot get management point locations when the Task Sequence Wizard runs in Windows PE](https://support.microsoft.com/help/4471115) (KB4471115: Il supporto dinamico in Configuration Manager non riesce a ottenere le posizioni dei punti di gestione quando la procedura guidata della sequenza di attività viene eseguita in Windows PE)
+- [KB4474026: Enable BitLocker task fails with error 80070057 in Configuration Manager](https://support.microsoft.com/help/4474026) (L'attività Attiva BitLocker non riesce con errore 80070057 in Configuration Manager)
+- [KB4483868: Contributor role is no longer assigned for a web app at the subscription level in Azure](https://support.microsoft.com/help/4483868) (Ruolo collaboratore non più assegnato per un'app Web a livello di sottoscrizione in Azure)
 
 
 Per sottoscrivere la notifica Atom o RSS dei nuovi articoli di supporto di Configuration Manager, vedere [Aggiornamenti dei contenuti del supporto](https://support.microsoft.com/help/4089498/) e selezionare **System Center Configuration Manager**.  

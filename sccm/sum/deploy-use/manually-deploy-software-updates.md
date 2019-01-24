@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 57184274-5fea-4d79-a2b4-22e08ed26daf
-ms.openlocfilehash: aae0951ddf32ce1d58a29b034acef96b55ab85a0
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 8c0752506e410f752f49795470215c30b0928e4e
+ms.sourcegitcommit: d5c013a29f53b975fe3a6cb0a41f1e817bd7b235
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53414804"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54342840"
 ---
 # <a name="manually-deploy-software-updates"></a>Distribuire manualmente gli aggiornamenti software  
 
@@ -161,7 +161,10 @@ Dopo avere determinato gli aggiornamenti da distribuire e averli aggiunti a un g
 
    -   **Notifiche utente**: specificare se visualizzare la notifica in Software Center nell'orario configurato in **Tempo disponibile software**. Questa impostazione consente di stabilire anche se inviare notifiche agli utenti nei computer client. Per le distribuzioni **disponibili** non è possibile selezionare l'opzione **Nascondi in Software Center e nascondi tutte le notifiche**.  
 
-   -   **Comportamento scadenza**: questa impostazione è configurabile solo per le distribuzioni **obbligatorie**. Specificare i comportamenti da adottare quando la distribuzione dell'aggiornamento software raggiunge la scadenza oltre qualsiasi finestra di manutenzione definita. Le opzioni disponibili consentono di scegliere se installare gli aggiornamenti software ed eseguire un riavvio del sistema dopo l'installazione. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows).  
+   -   **Comportamento scadenza**: questa impostazione è configurabile solo per le distribuzioni **obbligatorie**. Specificare i comportamenti da adottare quando la distribuzione dell'aggiornamento software raggiunge la scadenza oltre qualsiasi finestra di manutenzione definita. Le opzioni disponibili consentono di scegliere se installare gli aggiornamenti software ed eseguire un riavvio del sistema dopo l'installazione. Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le finestre di manutenzione](/sccm/core/clients/manage/collections/use-maintenance-windows). 
+  
+       > [!Note]
+       > Si applica solo quando la finestra di manutenzione è configurata per il dispositivo client. Se nel dispositivo non è definita una finestra di manutenzione, l'aggiornamento dell'installazione e il riavvio vengono sempre eseguiti dopo la scadenza.
 
    -   **Comportamento riavvio dispositivo**: questa impostazione è configurabile solo per le distribuzioni **obbligatorie**. Specificare se evitare un riavvio del sistema in server e workstation se è necessario un riavvio del sistema per completare l'installazione dell'aggiornamento.  
 

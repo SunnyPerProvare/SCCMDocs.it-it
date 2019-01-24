@@ -10,12 +10,12 @@ ms.assetid: 20493c86-6454-4b35-8f22-0d049b68b8bb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 666df71b32ea0dc95411b8ffd58d18f7666d7b23
-ms.sourcegitcommit: d36e4c7082a5144e79035dd8847c8e741fa04667
+ms.openlocfilehash: 776d0a477d56a178927fb2d09866eacf63b4895a
+ms.sourcegitcommit: d5c013a29f53b975fe3a6cb0a41f1e817bd7b235
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53444587"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54342789"
 ---
 # <a name="approve-applications-in-configuration-manager"></a>Approvare le applicazioni in Configuration Manager
 
@@ -69,6 +69,10 @@ Dopo avere approvato un'applicazione per l'installazione, è possibile scegliere
 <!--1321550-->
 
 A partire dalla versione 1810 è possibile configurare le notifiche tramite posta elettronica per le richieste di approvazione dell'applicazione. Quando un utente richiede un'applicazione, si riceve un messaggio di posta elettronica. Fare clic sui collegamenti nel messaggio di posta elettronica per approvare o rifiutare la richiesta, senza che sia necessario usare la console di Configuration Manager.
+
+È possibile definire gli indirizzi di posta elettronica degli utenti che possono approvare o rifiutare la richiesta durante la creazione di una nuova distribuzione per l'applicazione. Se è necessario modificare l'elenco degli indirizzi di posta elettronica in un secondo momento, passare all'area di lavoro **Monitoraggio**, espandere **Avvisi** e selezionare il nodo **Sottoscrizioni**. Selezionare **Proprietà** da una delle sottoscrizioni **Approva l'applicazione tramite posta elettronica** correlate alla distribuzione dell'applicazione. 
+
+Se sono presenti più avvisi, è possibile determinare a quale distribuzione si riferisce ognuno di questi. Aprire le proprietà dell'avviso e visualizzare l'elenco di **Avvisi selezionati** nella scheda Generale. La distribuzione viene abilitata come avviso per questa sottoscrizione. 
 
 
 ### <a name="prerequisites"></a>Prerequisiti

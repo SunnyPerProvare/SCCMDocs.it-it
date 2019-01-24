@@ -10,12 +10,12 @@ ms.assetid: dce4b640-c92f-401a-9873-ce9aa9262014
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 193ee803fd0a6bacf043dbabc6550ef68a4a629a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 94af249b91735a535ea4056f8a5f19d120632770
+ms.sourcegitcommit: 818f98187d377a90263d1b1c89d4c1fdbf8c908b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337395"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54398490"
 ---
 # <a name="windows-firewall-and-port-settings-for-clients-in-system-center-configuration-manager"></a>Impostazioni di Windows Firewall e delle porte per i client in System Center Configuration Manager
 
@@ -45,9 +45,9 @@ I computer client in System Center Configuration Manager che eseguono Windows Fi
 ### <a name="client-push-installation"></a>Installazione push client  
  Per installare il client di Configuration Manager mediante push client, aggiungere le seguenti eccezioni a Windows Firewall:  
 
--   In uscita e in ingresso: **Condivisione file e stampanti**  
+-   In entrata e in uscita: **Condivisione file e stampanti**  
 
--   In ingresso: **Strumentazione gestione Windows (WMI)**  
+-   In entrata: **Strumentazione gestione Windows (WMI)**  
 
 ### <a name="client-installation-by-using-group-policy"></a>Installazione client mediante i criteri di gruppo  
  Per installare il client di Configuration Manager mediante i criteri di gruppo, aggiungere **Condivisione file e stampanti** come eccezione in Windows Firewall.  
@@ -55,9 +55,9 @@ I computer client in System Center Configuration Manager che eseguono Windows Fi
 ### <a name="client-requests"></a>Richieste client  
  Per stabilire la comunicazione tra i computer client e i sistemi del sito di Configuration Manager, aggiungere le seguenti eccezioni a Windows Firewall:  
 
- In uscita: porta TCP **80** (per la comunicazione HTTP)  
+ In uscita: Porta TCP **80** (per la comunicazione HTTP)  
 
- In uscita: porta TCP **443** (per la comunicazione HTTPS)  
+ In uscita: Porta TCP **443** (per la comunicazione HTTPS)  
 
 > [!IMPORTANT]  
 >  Questi numeri di porta predefiniti possono essere modificati in Configuration Manager. Per altre informazioni, vedere [How to configure client communication ports in System Center Configuration Manager](../../../core/clients/deploy/configure-client-communication-ports.md) (Come configurare i numeri di porta di comunicazione client in System Center Configuration Manager). Se queste porte sono state modificate rispetto ai valori predefiniti, è necessario configurare anche le eccezioni corrispondenti in Windows Firewall.  
@@ -65,13 +65,13 @@ I computer client in System Center Configuration Manager che eseguono Windows Fi
 ### <a name="client-notification"></a>Notifica client  
  Per fare in modo che il punto di gestione invii una notifica ai computer client sull'azione da eseguire quando un utente amministratore seleziona un'azione client nella console di Configuration Manager, ad esempio scaricare criteri computer o avviare una scansione malware, aggiungere la seguente eccezione a Windows Firewall:  
 
- In uscita: porta TCP **10123**  
+ In uscita: Porta TCP **10123**  
 
  Se la comunicazione non riesce, Configuration Manager esegue automaticamente il fallback alla porta HTTP o HTTPS esistente per la comunicazione tra client e punto di gestione:  
 
- In uscita: porta TCP **80** (per la comunicazione HTTP)  
+ In uscita: Porta TCP **80** (per la comunicazione HTTP)  
 
- In uscita: porta TCP **443** (per la comunicazione HTTPS)  
+ In uscita: Porta TCP **443** (per la comunicazione HTTPS)  
 
 > [!IMPORTANT]  
 >  Questi numeri di porta predefiniti possono essere modificati in Configuration Manager. Per altre informazioni, vedere [How to configure client communication ports in System Center Configuration Manager](../../../core/clients/deploy/configure-client-communication-ports.md) (Come configurare i numeri di porta di comunicazione client in System Center Configuration Manager). Se queste porte sono state modificate rispetto ai valori predefiniti, è necessario configurare anche le eccezioni corrispondenti in Windows Firewall.  
@@ -79,7 +79,7 @@ I computer client in System Center Configuration Manager che eseguono Windows Fi
 ### <a name="remote-control"></a>Controllo remoto  
  Per usare il controllo remoto di Configuration Manager, consentire la seguente porta:  
 
--   In ingresso: porta TCP**2701**  
+-   In entrata: Porta TCP **2701**  
 
 ### <a name="remote-assistance-and-remote-desktop"></a>Assistenza remota e Desktop remoto  
  Per avviare Assistenza remota dalla console di Configuration Manager, aggiungere il programma personalizzato **Helpsvc.exe** e la porta in entrata TCP personalizzata **135** all'elenco di programmi e servizi consentiti in Windows Firewall nel computer client. È inoltre necessario consentire **Assistenza remota** e **Desktop remoto**. Se Assistenza remota viene avviata dal computer client, Windows Firewall consente e configura automaticamente **Assistenza remota** e **Desktop remoto**.  
@@ -87,11 +87,11 @@ I computer client in System Center Configuration Manager che eseguono Windows Fi
 ### <a name="wake-up-proxy"></a>Proxy di riattivazione  
  Se si attiva l'impostazione client Proxy di riattivazione, il nuovo servizio Proxy di riattivazione di Configuration Manager utilizza un protocollo peer-to-peer per verificare che gli altri computer della subnet siano attivi e riattivarli se necessario. Questa comunicazione utilizza le seguenti porte:  
 
- In uscita: porta UDP **25536**  
+ In uscita: Porta UDP **25536**  
 
- In uscita: porta UDP **9**  
+ In uscita: Porta UDP **9**  
 
- Questi numeri di porta predefiniti possono essere modificati in Configuration Manager usando le impostazioni client **Risparmio energia**: **Numero di porta del proxy di riattivazione (UDP)** e **Numero di porta di riattivazione LAN (UDP)**. Se si specifica l'impostazione client **Risparmio energia**: **Eccezione di Windows Firewall per il proxy di riattivazione** , queste porte vengono configurate automaticamente in Windows Firewall per i client. Tuttavia, se i client eseguono un firewall diverso, è necessario configurare manualmente le eccezioni per i numeri di porta.  
+ Questi numeri di porta predefiniti possono essere modificati in Configuration Manager usando le impostazioni client **Risparmio energia**: **Numero di porta del proxy di riattivazione (UDP)** e **Numero di porta di riattivazione LAN (UDP)**. Se si specifica l'impostazione client **Risparmio energia**: **Eccezione di Windows Firewall per il proxy di riattivazione**, queste porte vengono configurate automaticamente in Windows Firewall per i client. Tuttavia, se i client eseguono un firewall diverso, è necessario configurare manualmente le eccezioni per i numeri di porta.  
 
  Oltre a queste porte, il proxy di riattivazione utilizza i messaggi di richiesta echo di Internet Control Message Protocol (ICMP) da un computer client all'altro. Questo tipo di comunicazione viene usata per verificare se l'altro computer è attivo nella rete. ICMP viene talvolta indicato come comandi ping TCP/IP.  
 

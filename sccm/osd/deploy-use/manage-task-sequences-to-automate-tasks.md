@@ -10,12 +10,12 @@ ms.assetid: a1f099f1-e9b5-4189-88b3-f53e3b4e4add
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d0db075f652dd77a833f7a3a00f478bae5a5e54f
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 0a2ee528c8b38acbc18aa051dd84a7634b66713b
+ms.sourcegitcommit: 2687489aa409a050dcacd67f17b3dad3ab7f1804
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53415195"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54316593"
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-configuration-manager"></a>Gestire le sequenze di attività per automatizzare le attività in Configuration Manager
 
@@ -120,6 +120,8 @@ Usare le sequenze di attività per automatizzare i passaggi nell'ambiente di Con
 
        > [!NOTE]    
        > Se l'esecuzione su in client del programma selezionato non riesce, la sequenza di attività non viene eseguita. Se l'esecuzione del programma selezionato avviene correttamente, il programma non viene eseguito nuovamente, anche se la sequenza di attività viene rieseguita nello stesso client.  
+   
+   - **Elimina notifiche della sequenza di attività**: selezionare questa opzione per nascondere l'avviso popup "È disponibile nuovo software". Viene ancora visualizzata l'icona "Nuovo software" di Software Center nell'area di notifica. Per impostazione predefinita, questa casella di controllo è deselezionata.  
  
    - **Disattiva questa sequenza di attività nei computer in cui è distribuita**: se si seleziona questa opzione, Configuration Manager disabilita temporaneamente tutte le distribuzioni che contengono questa sequenza di attività. La sequenza di attività viene anche rimossa dall'elenco di distribuzioni disponibili per l'esecuzione. La sequenza di attività viene eseguita solo dopo averla abilitata. Questa opzione è deselezionata per impostazione predefinita.  
 

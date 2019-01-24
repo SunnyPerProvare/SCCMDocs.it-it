@@ -10,12 +10,12 @@ ms.assetid: c201be2a-692c-4d67-ac95-0a3afa5320fe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b73ead1492b143260d327f428db5a6183f84434c
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
+ms.openlocfilehash: 4a777ec74fb4006df056b4e69d7cbdfb380bcf72
+ms.sourcegitcommit: d5c013a29f53b975fe3a6cb0a41f1e817bd7b235
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411341"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54342755"
 ---
 # <a name="fundamental-concepts-for-content-management-in-configuration-manager"></a>Concetti di base per la gestione dei contenuti in Configuration Manager
 
@@ -57,7 +57,7 @@ Per altre informazioni, vedere [Account di accesso al pacchetto](/sccm/core/plan
 
 
 ## <a name="binary-differential-replication"></a>Replica differenziale binaria  
- La replica differenziale binaria (BDR) è un prerequisito per i punti di distribuzione. È nota talvolta come replica differenziale. Quando si distribuiscono aggiornamenti al contenuto distribuito in precedenza ad altri siti o ai punti di distribuzione remoti, la replica differenziale binaria viene usata automaticamente per ridurre la larghezza di banda.  
+ La replica differenziale binaria è anche detta delta replication. Viene usata per distribuire aggiornamenti al contenuto distribuito in precedenza ad altri siti o ai punti di distribuzione remoti. Per supportare la riduzione dell'uso della larghezza di banda da parte della replica differenziale binaria, installare la funzionalità **Compressione differenziale remota** nei punti di distribuzione. Per altre informazioni, vedere i [prerequisiti per i punti di distribuzione](/sccm/core/plan-design/configs/site-and-site-system-prerequisites#bkmk_2012dppreq).
 
  La replica differenziale binaria riduce al minimo la larghezza di banda di rete usata per inviare aggiornamenti per il contenuto distribuito. Invia nuovamente solo il contenuto nuovo o modificato anziché inviare l'intero set di file di origine del contenuto ogni volta che si modificano tali file.  
 
@@ -175,7 +175,7 @@ Quando un client ha bisogno di contenuto, invia una richiesta di percorso del co
 
 -   **Punto di distribuzione pull**: variante di un punto di distribuzione in cui il punto di distribuzione ottiene il contenuto da un altro punto di distribuzione (punto di distribuzione di origine). Questo processo è simile al modo in cui i client scaricano contenuto dai punti di distribuzione. I punti di distribuzione pull possono risultare utili per evitare i colli di bottiglia della larghezza di banda di rete che si verificano quando il server del sito deve distribuire direttamente il contenuto a ogni punto di distribuzione. [Usare un punto di distribuzione pull](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point).
 
--   **Punto di distribuzione cloud**: variante di un punto di distribuzione installato in Microsoft Azure. [Informazioni sull'uso di un punto di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point).  
+-   **Punto di distribuzione cloud**: variante di un punto di distribuzione installata in Microsoft Azure. [Informazioni sull'uso di un punto di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point).  
 
 
 I punti di distribuzione standard supportano una gamma di configurazioni e funzionalità:  
@@ -256,7 +256,7 @@ Per altre informazioni, vedere [Gruppi di limiti](/sccm/core/servers/deploy/conf
 ## <a name="on-demand-content-distribution"></a>Distribuzione di contenuto su richiesta  
  La distribuzione del contenuto su richiesta è un'opzione per singole distribuzioni di applicazioni e pacchetti. Questa opzione consente la distribuzione del contenuto su richiesta ai server preferiti.  
 
--   Per abilitare questa impostazione per una distribuzione, abilitare **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti**.  
+-   Per abilitare questa impostazione per una distribuzione, abilitare: **Distribuisci il contenuto del pacchetto nei punti di distribuzione preferiti**.  
 
 -   Quando si abilita questa opzione per una distribuzione e un client richiede contenuto non disponibile in uno qualsiasi dei punti di distribuzione preferiti del client, Configuration Manager distribuisce automaticamente tale contenuto ai punti di distribuzione preferiti del client.  
 
