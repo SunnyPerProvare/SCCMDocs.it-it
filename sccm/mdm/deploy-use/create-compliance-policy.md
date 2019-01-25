@@ -10,13 +10,12 @@ ms.assetid: 0fd76043-d7ee-423d-8c5f-aa7e9ed58ce0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-robots: noindex
-ms.openlocfilehash: 67cc82bdd114c9d525e5a9dacc1e5775d52150dd
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: b0179de8cc96f885236178c70b7e834672ee1d5b
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53414923"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898580"
 ---
 # <a name="create-and-deploy-a-device-compliance-policy"></a>Creare e distribuire criteri di conformità del dispositivo
 
@@ -49,7 +48,7 @@ ms.locfileid: "53414923"
 
         - **Avviso**: I dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Avviso** per i report di Configuration Manager.  
 
-        - **Critico**: I dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
+        - **Errore critico**: I dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
 
         - **Errore critico con evento**: I dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità **Errore critico con evento** viene anche registrato come evento di Windows nel log eventi dell'applicazione.  
 
@@ -233,7 +232,7 @@ ms.locfileid: "53414923"
     **Supportato in**:  
     - iOS 6+  
 
-- **Profilo di posta elettronica**: Se è selezionata l'opzione L'account di posta elettronica deve essere gestito da Intune, scegliere **Seleziona** per scegliere il profilo di posta elettronica con cui gestire i dispositivi. Il profilo di posta elettronica deve essere presente nel dispositivo.  
+- **Profilo di posta elettronica**: Se è selezionata l'opzione **L'account di posta elettronica deve essere gestito da Intune**, scegliere **Seleziona** per scegliere il profilo di posta elettronica con cui gestire i dispositivi. Il profilo di posta elettronica deve essere presente nel dispositivo.  
 
     **Supportato in**:  
     - iOS 6+  

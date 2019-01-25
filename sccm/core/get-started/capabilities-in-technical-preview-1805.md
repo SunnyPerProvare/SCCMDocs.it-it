@@ -10,12 +10,13 @@ ms.assetid: 7996b3eb-5259-483b-af40-adae2943d123
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ebd51b397e37c69e8f6e8d1e154fc369347bd63a
-ms.sourcegitcommit: fe279229a90fdc8cddbb13c7ffdbbb22af0e25ef
+ROBOTS: NOINDEX
+ms.openlocfilehash: 6108a6d90a18277275e50ba980a9d81099ba116a
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47229365"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898495"
 ---
 # <a name="capabilities-in-technical-preview-1805-for-system-center-configuration-manager"></a>Funzionalità nella Technical Preview 1805 per System Center Configuration Manager
 
@@ -73,7 +74,7 @@ Seguire le istruzioni per creare una distribuzione in più fasi in cui configura
 
     - Dopo avere incluso un dispositivo, installare il software
         - **Appena possibile**: imposta come scadenza per l'installazione nel dispositivo il momento in cui il dispositivo viene incluso.
-        - **Ora della scadenza (rispetto all'ora in cui il dispositivo viene incluso)**: imposta come scadenza per l'installazione un determinato numero di giorni dopo che il dispositivo è stato incluso.  
+        - **Ora della scadenza (rispetto all'ora in cui il dispositivo viene incluso)**: imposta la scadenza per l'installazione un determinato numero di giorni dopo l'inclusione del dispositivo.  
      
 7. Completare la procedura guidata Impostazioni delle fasi.
 
@@ -405,7 +406,7 @@ Il valore dell'utente attualmente connesso è vuoto nel nodo Dispositivi o quand
 - È ora supportato l'invio di commenti e suggerimenti offline. È possibile salvare i commenti e i suggerimenti dalla console e quindi caricarli per Microsoft da un sistema connesso a internet. Usare il nuovo strumento per il caricamento dei commenti e suggerimenti offline disponibile in `cd.latest\SMSSETUP\Tools\UploadOfflineFeedback\UploadOfflineFeedback.exe`. Per visualizzare le opzioni della riga di comando disponibili e obbligatorie, eseguire lo strumento con l'opzione `--help`. Il sistema connesso deve avere accesso a **petrol.office.microsoft.com**.
 
 ### <a name="known-issues"></a>Problemi noti
-Quando si usa **Invia smile** oppure **Invia faccia imbronciata** dalla console in un computer con connettività Internet, può essere restituito il messaggio seguente: "Si è verificato un errore durante l'invio dei commenti". Se si fa clic su **Altri dettagli** viene visualizzato il testo seguente: `{"Message":""}`. Questo errore è dovuto a un problema noto con la risposta dal sistema di commenti e suggerimenti di back-end. È possibile ignorare l'errore. Microsoft ha ricevuto comunque i commenti e suggerimenti. (Se nei dettagli viene visualizzato un messaggio diverso, usare l'opzione per l'invio di commenti e suggerimenti offline per riprovare a inviarli in un secondo momento.)
+Quando si usa **Invia smile** oppure **Invia faccia imbronciata** dalla console in un computer con connettività Internet, può essere restituito il messaggio seguente: "Si è verificato un errore durante l'invio dei commenti e suggerimenti." Se si fa clic su **Altri dettagli** viene visualizzato il testo seguente: `{"Message":""}`. Questo errore è dovuto a un problema noto con la risposta dal sistema di commenti e suggerimenti di back-end. È possibile ignorare l'errore. Microsoft ha ricevuto comunque i commenti e suggerimenti. (Se nei dettagli viene visualizzato un messaggio diverso, usare l'opzione per l'invio di commenti e suggerimenti offline per riprovare a inviarli in un secondo momento.)
 
 
 

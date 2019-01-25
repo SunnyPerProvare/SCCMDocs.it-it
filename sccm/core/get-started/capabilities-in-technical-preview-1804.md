@@ -10,12 +10,13 @@ ms.assetid: 8af43618-ec60-4c3e-a007-12399d1335b9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a796c8cc23ab15e3fbeb09fca6ffa6f1dbd45bc3
-ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
+ROBOTS: NOINDEX
+ms.openlocfilehash: 80f16244c10899ed264b83f6c7a9a050fba7a224
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "34474344"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898308"
 ---
 # <a name="capabilities-in-technical-preview-1804-for-system-center-configuration-manager"></a>Funzionalità della Technical Preview 1804 per System Center Configuration Manager
 
@@ -101,7 +102,7 @@ Commenti e suggerimenti Ora è possibile comunicare direttamente al team di Conf
 
    - **Invia faccia imbronciata**: si è verificato un problema nella console o un determinato elemento non ha funzionato come previsto. Per questa opzione, immettere i dettagli del potenziale problema del prodotto, quindi includere uno screenshot, l'indirizzo di posta elettronica e i dati di diagnostica (facoltativo).  
 
-   - **Suggerimento**: questa opzione consente di proporre un'idea per modificare e migliorare Configuration Manager. Verrà aperto il sito [UserVoice](https://configurationmanager.uservoice.com) nel Web browser.  
+   - **Invia un suggerimento**: questa opzione consente di proporre un'idea per modificare e migliorare Configuration Manager. Verrà aperto il sito [UserVoice](https://configurationmanager.uservoice.com) nel Web browser.  
 
 Questi commenti e suggerimenti vengono inviati direttamente al team del prodotto Microsoft per Configuration Manager. Anche se l'uso dell'Hub di Feedback di Windows 10 è ancora supportato, è consigliabile usare il meccanismo per l'invio di feedback disponibile nella console.  
 
@@ -150,11 +151,11 @@ Gli strumenti server e client di Configuration Manager ora sono inclusi con la v
 
  - **DP Job Manager**: consente di risolvere i problemi dei processi di distribuzione del contenuto ai punti di distribuzione  
 
- - **Collection Evaluation Viewer**: consente di visualizzare i dettagli relativi alla valutazione della raccolta  
+ - **Collection Evaluation Viewer**: consente di visualizzare informazioni dettagliate sulla valutazione della raccolta  
 
  - **Content Library Explorer**: consente di visualizzare il contenuto dell'archivio a istanza singola della raccolta contenuto  
 
- - **Content Library Transfer**: trasferisce il contenuto di una raccolta tra diverse unità  
+ - **Content Library Transfer**: trasferisce la raccolta contenuto tra diverse unità  
 
  - **Content Ownership Tool**: modifica la proprietà dei pacchetti orfani. Questi pacchetti sono presenti nel sito senza un server del sito proprietario.  
 
@@ -162,7 +163,7 @@ Gli strumenti server e client di Configuration Manager ora sono inclusi con la v
 
 #### <a name="client-tools"></a>Strumenti client
 
- - **CMTrace**: visualizzare i log  
+ - **CMTrace**: consente di visualizzare i log  
 
  - **Deployment Monitoring Tool**: consente di risolvere i problemi di applicazioni, aggiornamenti e distribuzioni delle linee di base  
 
@@ -288,7 +289,7 @@ Dopo aver aggiunto i criteri relativi all'architettura, nella pagina delle propr
 ## <a name="improvements-to-os-deployment"></a>Miglioramenti della distribuzione del sistema operativo
 Sono stati apportati i miglioramenti seguenti alla distribuzione del sistema operativo a seguito dei commenti e suggerimenti di UserVoice.  
 
- - [Mascherare i dati sensibili archiviati nelle variabili della sequenza di attività](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15282795-secret-task-sequence-variable-value-exposed): nel passaggio [Imposta variabile della sequenza attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) selezionare la nuova opzione **Non visualizzare questo valore**, ad esempio quando si specifica una password.<!--1358330--> Quando si abilita questa opzione, si applicano i comportamenti seguenti:
+ - [Maschera i dati sensibili archiviati nelle variabili della sequenza di attività](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15282795-secret-task-sequence-variable-value-exposed): nel passaggio [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) selezionare la nuova opzione **Non visualizzare questo valore**, ad esempio quando si specifica una password.<!--1358330--> Quando si abilita questa opzione, si applicano i comportamenti seguenti:
    - Il valore della variabile non viene visualizzato in smsts.log.
    - La console di Configuration Manager e il provider SMS gestiscono questo valore come gli altri segreti, ad esempio le password.
    - Il valore non è incluso quando si esporta la sequenza di attività.
@@ -298,7 +299,7 @@ Sono stati apportati i miglioramenti seguenti alla distribuzione del sistema ope
    > Le variabili e i relativi valori vengono salvati con la sequenza di attività in formato XML e offuscati nel database. Quando il client richiede un criterio della sequenza di attività dal punto di gestione, il criterio viene crittografato in transito e durante l'archiviazione sul client. Tuttavia, tutti i valori delle variabili sono in testo normale nell'ambiente della sequenza di attività in memoria in fase di esecuzione nel client. Se la sequenza di attività include un passaggio per l'output del valore della variabile, questo output è in testo normale. Questo comportamento richiede un'azione esplicita da parte dell'amministratore per includere tale passaggio nella sequenza di attività. 
 
 
- - [Mascherare il nome del programma durante il passaggio Esegui riga di comando di una sequenza di attività](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15282795-secret-task-sequence-variable-value-exposed): per impedire la visualizzazione o la registrazione di dati potenzialmente sensibili, impostare la variabile **OSDDoNotLogCommand** della sequenza di attività su `TRUE`. Questa variabile maschera il nome del programma in smsts.log durante il passaggio [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine) della sequenza di attività. <!--1358493-->  
+ - [Maschera 'nome programma' durante il passaggio 'Esegui riga di comando' di una sequenza di attività](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/15282795-secret-task-sequence-variable-value-exposed): per impedire la visualizzazione o la registrazione di dati potenzialmente sensibili, impostare la variabile **OSDDoNotLogCommand** della sequenza di attività su `TRUE`. Questa variabile maschera il nome del programma in smsts.log durante il passaggio [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine) della sequenza di attività. <!--1358493-->  
 
 
 
