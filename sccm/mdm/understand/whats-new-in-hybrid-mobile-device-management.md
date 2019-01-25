@@ -10,12 +10,12 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 610dfb7391347663fd92c0839d20eb7a4a703438
-ms.sourcegitcommit: c80abe7e4b7b2f80e957e45ff205f67d1b715688
+ms.openlocfilehash: 1ec1155ec578e0eab957baa991628ed18eef6c62
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54226224"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898648"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con Configuration Manager e Microsoft Intune
 
@@ -435,7 +435,7 @@ Chiedere agli utenti finali che usano Windows 10 versione 1607 o successiva di e
 
 - **Nuove impostazioni dei criteri di gestione delle applicazioni mobili**     
   Sono state aggiunte le impostazioni seguenti relative ai criteri di gestione delle applicazioni per dispositivi mobili:
-  - **Disabilita sincronizzazione contatti**: impedisce all'app di salvare i dati nell'app dei contatti nativa del dispositivo.
+  - **Disabilita la sincronizzazione dei contatti**: impedisce all'app di salvare i dati nell'app dei contatti nativa del dispositivo.
   - **Disabilita stampa**: impedisce all'app di stampare dati aziendali o dell'istituto di istruzione.
   <!-- 1324760 -->    
 
@@ -592,24 +592,24 @@ Dopo dicembre gli utenti finali che usano dispositivi diversi da quelli elencati
 Per altre informazioni, vedere [Registrare il dispositivo macOS in Intune con l'app Portale aziendale](https://docs.microsoft.com/intune-user-help/enroll-your-device-in-intune-macos-cp).
 
 
-### <a name="plan-for-change-new-intune-support-experience-for-premier-customers"></a>Modifiche pianificate: Nuovo supporto per Intune esperienza clienti Premier clienti 
+### <a name="intune-support-experience-for-premier-customers-now-in-azure-instead-of-mpo"></a>Esperienza di supporto tecnico di Intune per Premier i clienti ora disponibile in Azure anziché MPO  
 <!--2828727-->
 
-aggiornamento 4/12 marzo 2018 Stiamo cercando di rendere più adatti per questo processo. La creazione della richiesta di supporto in MPO non sarà possibile disabilitare il 3 dicembre. Te lo comunicheremo tramite tramite il centro messaggi e aggiornare questo post di presto per condividere le sequenze temporali per questa modifica.
-
-I clienti Premier di Microsoft è attualmente possibile usare la [portale Microsoft Premier Online (MPO)](https://premier.microsoft.com) e [Intune in Azure](https://portal.azure.com) creare richieste di supporto per Intune. A partire dal 3 dicembre 2018, per continuare a migliorare l'esperienza di supporto tecnico Premier, l'utente sarà in grado di creare le richieste di supporto solo in Intune in Azure.
+È condiviso in MC147649 nel mese di settembre, che verrà rimosso la possibilità di creare richieste di supporto di Intune dal portale di Microsoft Premier Online (MPO) (premier.microsoft.com) nel mese di dicembre. A questo punto, dopo un lieve ritardo, alla fine del mese di gennaio, si verrà reindirizzati per creare richieste di supporto solo in Intune in Azure.
 
 #### <a name="how-does-this-affect-me"></a>Quali sono le conseguenze di questa modifica?
-Dopo il 3 dicembre non è possibile creare le richieste di supporto in MPO. Se si tenta di crearle, verrà visualizzata una richiesta che è impossibile ignorare e l'utente verrà reindirizzato a Intune in Azure. Quando si crea una richiesta di supporto nel portale di Azure, viene indirizzata al supporto tecnico Microsoft dedicato a Intune. Il problema viene diagnosticato e risolto in modo tempestivo. Se si crea una richiesta di supporto nel portale MPO, non è possibile visualizzarla nel portale di Azure. Iniziare creando le richieste di supporto solo in Intune in Azure.  
+Dopo la fine del mese di gennaio, continuare a migliorare il Premier supportano l'esperienza, sarà possibile creare le richieste di supporto in MPO. Quando si prova a eseguire questa operazione, verrà visualizzata una richiesta che è Impossibile ignorare il reindirizzamento è a Intune in Azure. In questo caso, è possibile creare una richiesta di supporto, viene indirizzata al supporto di Microsoft Intune-dedicato. Questi supporto tecnici verranno diagnosticare e risolvere il problema in modo tempestivo. Non è possibile visualizzare le richieste di supporto nel portale di Azure creato nel portale di MPO.
 
-Se si usa la gestione ibrida dei dispositivi mobili (MDM ibrida) o la co-gestione, continuare a usare MPO per creare le richieste di supporto per Configuration Manager, ma usare il portale di Azure per creare le richieste di supporto per Intune. Tenere presente che la gestione ibrida è deprecata e che è necessario prevedere il passaggio a Intune in Azure non appena possibile. Per altre informazioni, vedere l'articolo relativo al [passaggio dalla gestione ibrida dei dispositivi mobili a Intune in Azure](https://aka.ms/hybrid_notification).
+Il portale di Azure include una nuova esperienza di supporto come abbiamo annunciato di recente in MC171941. Per altre informazioni, vedere [come ottenere supporto per Microsoft Intune](https://aka.ms/new_support_experience).
 
-Si noti che solo gli utenti con ruoli di amministratore globale, amministratore del servizio Intune e amministratore del servizio di supporto tecnico possono creare ticket di supporto nel portale di Azure.
+Se si usa una MDM ibrida o CO-gestione, continuare a usare MPO per creare richieste di supporto per Configuration Manager. Usare il portale di Azure per creare richieste di supporto per Intune. Tenere presente che la gestione ibrida è deprecata e che è necessario prevedere il passaggio a Intune in Azure non appena possibile. Per altre informazioni, vedere l'articolo relativo al [passaggio dalla gestione ibrida dei dispositivi mobili a Intune in Azure](https://aka.ms/hybrid_notification).
+
+Solo gli utenti con ruoli di amministratore globale, amministratore del servizio Intune e amministratore servizio di supporto possono creare ticket di supporto nel portale di Azure.
 
 #### <a name="what-can-i-do-to-prepare-for-this-change"></a>Operazioni di preparazione alla modifica
 - Interrompere l'uso di MPO per le richieste di supporto correlate a Intune. Usare Intune in Azure per creare e gestire tutte le richieste di supporto per Intune.  
 - Inviare una notifica al supporto tecnico e aggiornare la documentazione, se necessario.  
-- Se alcuni utenti senza ruoli di amministratore globale o amministratore del servizio Intune stanno attualmente creando richieste di supporto in MPO, assegnare a tali utenti il ruolo di amministratore del servizio di supporto tecnico in Azure Active Directory. Gli utenti devono avere uno di questi ruoli per creare i ticket di supporto nel portale di Azure.  
+- Se sono presenti utenti senza i ruoli di amministratore globale o amministratore del servizio Intune sta creando le richieste di supporto in MPO, assegnare loro il ruolo di amministratore servizio di supporto in Azure Active Directory. Gli utenti devono avere uno di questi ruoli per creare i ticket di supporto nel portale di Azure.  
 
 #### <a name="additional-information"></a>Informazioni aggiuntive
 Per altre informazioni, vedere il [post di blog del team di supporto di Microsoft Intune](https://aka.ms/IntuneSupport_MPO_to_Azure).
