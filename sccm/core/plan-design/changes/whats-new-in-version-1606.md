@@ -10,12 +10,13 @@ ms.assetid: df2e57b9-6445-4067-98e7-ace85d4e6aa6
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0dcd2db7543d68a97e00244536d2aac218d440e7
-ms.sourcegitcommit: 2cc635835709fb8d86cdb63ea34233b36c94d4d8
+ROBOTS: NOINDEX
+ms.openlocfilehash: 0d45586267e06185752f597549f798be19d4d47b
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52259064"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54897050"
 ---
 # <a name="what39s-new-in-version-1606-of-system-center-configuration-manager"></a>Novità della versione 1606 di System Center Configuration Manager
 
@@ -146,7 +147,7 @@ Per informazioni dettagliate, vedere [Pianificare gli aggiornamenti software in 
 
 ## <a name="operating-system-deployment"></a>Distribuzione del sistema operativo
 
-### <a name="improvements-to-the-task-sequence-step-install-software-updates"></a>Miglioramenti del passaggio sequenza di attività: Installa aggiornamenti software
+### <a name="improvements-to-the-task-sequence-step-install-software-updates"></a>Miglioramenti al passaggio della sequenza di attività: Installa aggiornamenti software
 Una nuova impostazione, **Valuta gli aggiornamenti software dai risultati di analisi memorizzati nella cache**, consente di eseguire un'analisi completa degli aggiornamenti software invece di usare i risultati dell'analisi memorizzati nella cache. Per informazioni dettagliate, vedere [Passaggi della sequenza di attività in System Center Configuration Manager](../../../osd/understand/task-sequence-steps.md#BKMK_InstallSoftwareUpdates).
 
 È anche disponibile la nuova variabile della sequenza di attività **SMSTSSoftwareUpdateScanTimeout**. Questa variabile consente di controllare il timeout per l'analisi degli aggiornamenti software durante il passaggio della sequenza di attività Installa aggiornamenti software. Il valore predefinito è 30 minuti. Per informazioni dettagliate, vedere [Variabili predefinite della sequenza di attività in System Center Configuration Manager](../../../osd/understand/task-sequence-built-in-variables.md).

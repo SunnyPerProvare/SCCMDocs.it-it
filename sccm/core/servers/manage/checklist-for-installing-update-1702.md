@@ -10,12 +10,13 @@ ms.assetid: b587779e-1bd3-4ee3-8146-8e31f53499bd
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: be6d3bc210bfc672efc21b3c9397f679f00f2a82
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ROBOTS: NOINDEX
+ms.openlocfilehash: 53b09c5652eed1a1fad6cac0a2cb146863886d24
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53416406"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54897479"
 ---
 # <a name="checklist-for-installing-update-1702-for-system-center-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1702 di System Center Configuration Manager
 

@@ -9,17 +9,17 @@ ms.assetid: 1fa7d0d9-4bb5-4475-82ff-0d5da4a3da61
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-robots: noindex,nofollow
-ms.openlocfilehash: d4b0d0553254bd3bd86dd2ade1a3c1afc5127ad2
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ROBOTS: NOINDEX
+ms.openlocfilehash: 169bb7fa3bfcd8ead178685be3b9d466069b016d
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333094"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898274"
 ---
 # <a name="learn-more-about-available-updates-for-system-center-configuration-manager"></a>Altre informazioni sugli aggiornamenti disponibili per System Center Configuration Manager
 
-*Si applica a: System Center Configuration Manager (ramo corrente)*
+*Si applica a: System Center Configuration Manager (Current Branch)*
 
 Se si usa una versione finale di System Center Configuration Manager, vedere [Novità di System Center Configuration Manager](http://technet.microsoft.com/library/mt622084.aspx)  
 
