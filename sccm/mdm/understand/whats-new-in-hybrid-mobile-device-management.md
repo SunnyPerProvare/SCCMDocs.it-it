@@ -2,7 +2,7 @@
 title: Novità nella gestione di dispositivi mobili ibrida
 titleSuffix: Configuration Manager
 description: Informazioni sulle nuove funzionalità di gestione dei dispositivi mobili disponibili per le distribuzioni ibride con Configuration Manager e Intune.
-ms.date: 01/10/2019
+ms.date: 01/28/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1ec1155ec578e0eab957baa991628ed18eef6c62
-ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
+ms.openlocfilehash: 84c244a959bb9a087d33410fe0605bc6ddcadfbc
+ms.sourcegitcommit: a2ecd84d93f431ee77848134386fec14031aed6a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54898648"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55230903"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con Configuration Manager e Microsoft Intune
 
@@ -50,6 +50,15 @@ Ogni sezione di questo articolo elenca le funzionalità ibride in tre categorie 
 ## <a name="january-2019"></a>Gennaio 2019
 
 ### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
+
+#### <a name="intune-app-protection-policies-ui-update"></a>Aggiornamento dell'interfaccia utente di Intune app protection criteri 
+<!--3251427--> È stato modificato le etichette per le impostazioni e i pulsanti per la protezione delle app di Intune rendere ogni più facile da comprendere. Alcune delle modifiche includono:  
+
+- Controlli vengono modificati da **yes** / **alcun** principalmente i controlli ai **blocco** / **Consenti** e **disabilitare** / **abilitare** controlli. Le etichette vengono aggiornate anche.  
+
+- Le impostazioni vengono riformattate, in modo che l'impostazione e la relativa etichetta siano side-by-side nel controllo, per fornire una migliore navigazione.   
+
+Le impostazioni predefinite e il numero di impostazioni rimangono invariati, ma questa modifica consente all'utente di comprendere, esplorare e utilizzare le impostazioni più facilmente per applicare i criteri di protezione delle app selezionata. Per altre informazioni, vedere [delle impostazioni iOS](https://docs.microsoft.com/intune/app-protection-policy-settings-ios#access-requirements) e [impostazioni Android](https://docs.microsoft.com/intune/app-protection-policy-settings-android#access-requirements).
 
 #### <a name="tenant-status-dashboard"></a>Dashboard dello stato del tenant
 <!--1124854--> Il nuovo [pagina dello stato del Tenant](https://docs.microsoft.com/intune/tenant-status) fornisce un'unica posizione in cui è possibile visualizzare lo stato e i relativi dettagli per il tenant. Il dashboard è suddiviso in quattro aree:
