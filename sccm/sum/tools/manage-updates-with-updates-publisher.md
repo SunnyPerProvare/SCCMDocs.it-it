@@ -10,13 +10,12 @@ ms.assetid: cd64994c-b426-4465-96cd-54b0edc2778d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: d0d69990fe99f9b08c9c14222a2d1a9c6ec06b4c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 4de365b7df3a18abdfc5a92e9516bad84818ac35
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32351837"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54896737"
 ---
 # <a name="manage-software-updates-in-updates-publisher"></a>Distribuire e gestire gli aggiornamenti software
 
@@ -90,7 +89,7 @@ Esistono due modi per pubblicare gli aggiornamenti e le aggregazioni:
 ### <a name="to-publish-updates-and-bundles"></a>Per pubblicare aggiornamenti e aggregazioni
 1.  Passare all'**area di lavoro Aggiornamenti** e selezionare uno o più aggiornamenti e aggregazioni da pubblicare. Scegliere quindi **Pubblica** nella scheda **Home** della barra multifunzione.
 
-2.  Nella pagina **Seleziona** della Pubblicazione guidata selezionare la modalità di pubblicazione degli aggiornamenti. Le opzioni disponibili coincidono con quelle disponibili per l'[assegnazione di aggiornamenti](#assign-updates-and-bundles-to-a-publication): **Full Content** (Contenuto completo), **Metadata only** (Solo metadati) o **Automatic** (Automatica).
+2.  Nella pagina **Seleziona** della **Pubblicazione** guidata selezionare la modalità di pubblicazione degli aggiornamenti. Le opzioni disponibili coincidono con quelle disponibili per l'[assegnazione di aggiornamenti](#assign-updates-and-bundles-to-a-publication): **Full Content** (Contenuto completo), **Metadata only** (Solo metadati) o **Automatic** (Automatica).
 
     È anche possibile scegliere di firmare tutti gli aggiornamenti con un nuovo certificato di pubblicazione.
 

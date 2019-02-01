@@ -10,12 +10,13 @@ ms.assetid: bcde47a7-433e-4944-964b-539b17d15d64
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9095bdf431525a66a570267c4fff07a382a16fe4
-ms.sourcegitcommit: af4f8bd8dffe6fb05f51322ea9e94d335a2cc0c0
+ROBOTS: NOINDEX
+ms.openlocfilehash: c443f561392f95d875a681319ebb9db4ff3fb66b
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39360767"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898478"
 ---
 # <a name="capabilities-in-configuration-manager-technical-preview-version-1807"></a>Funzionalità in Configuration Manager Technical Preview versione 1807 
 
@@ -71,7 +72,7 @@ Per visualizzare altri dettagli su un elemento disponibile, fare clic nell'hub. 
 
 L'area di lavoro **Community** include anche i nodi seguenti:
 
-- **Documentazione**: visualizza la [libreria di documentazione](https://docs.microsoft.com/sccm/) di Configuration Manager  
+- **Documentazione**: visualizza la [libreria della documentazione](https://docs.microsoft.com/sccm/) di Configuration Manager  
 
 - **Commenti e suggerimenti**: visualizza il [sito UserVoice](https://configurationmanager.uservoice.com/) di Configuration Manager  
 
@@ -80,7 +81,7 @@ L'area di lavoro **Community** include anche i nodi seguenti:
 
 - Usare la console di Configuration Manager in un sistema operativo client.  
 
-    - In alternativa, ma non consigliato: in un sistema operativo server disabilitare [Internet Explorer: Configurazione sicurezza avanzata](https://go.microsoft.com/fwlink/?LinkId=253461).  
+    - In alternativa, ma non consigliato: in un sistema operativo server disabilitare [ Protezione avanzata di Internet Explorer](https://go.microsoft.com/fwlink/?LinkId=253461).  
 
 - Il computer con la console deve avere accesso a Internet e la connettività ai siti seguenti:  
     - `https://aka.ms`  

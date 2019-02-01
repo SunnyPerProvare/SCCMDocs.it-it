@@ -2,7 +2,7 @@
 title: Anteprima di UUP
 titleSuffix: Configuration Manager
 description: Istruzioni per l'anteprima dell'integrazione UUP
-ms.date: 01/14/2018
+ms.date: 01/25/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -10,13 +10,13 @@ ms.assetid: 0b0da585-0096-410b-8035-6b7a312f37f5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-robots: noindex,nofollow
-ms.openlocfilehash: 17a9abf2f20f53ba69ad160db421be51471cc311
-ms.sourcegitcommit: 27b2594087e8c54062db6b2a30ab843bab17f8cc
+ROBOTS: NOINDEX
+ms.openlocfilehash: 27a960758d8d3939798ae270404d5dd1afbea62d
+ms.sourcegitcommit: ad25a7bdd983c5a0e4c95bffdc61c9a1ebcbb765
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54270461"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55072986"
 ---
 # <a name="uup-private-preview-instructions"></a>Istruzioni per l'anteprima privata di UUP
 
@@ -56,28 +56,28 @@ Per recuperare l'ID WSUS:
 $server = Get-WsusServer
 $config = $server.GetConfiguration()
 $config.ServerId
+
+# also check MUUrl
+$config.MUUrl
 ```
 
-### <a name="2-update-configmgr-to-a-supported-version"></a>2. Aggiornare ConfigMgr a una versione supportata
+La proprietà **MUUrl** deve essere `https://sws.update.microsoft.com`. Per modificarla, vedere la risoluzione nell'articolo del supporto tecnico seguente: [La sincronizzazione di Windows Server Update Services non riesce con SoapException](https://support.microsoft.com/help/4482416/wsus-synchronization-fails-with-soapexception)
+
+
+### <a name="2-update-configmgr"></a>2. Aggiornare ConfigMgr
 
 Se si sincronizzano i file di installazione rapida nell'ambiente in uso, viene richiesto ConfigMgr 1810 Current Branch per gli ambienti di produzione o 1812 Technical Preview Branch per gli ambienti lab.
 
 Se non si sincronizzano i file di installazione rapida nell'ambiente in uso, viene richiesto ConfigMgr 1810 Hotfix KB4482615 per gli ambienti di produzione o 1812 Technical Preview Branch per gli ambienti lab.
 
 
-#### <a name="configmgr-1810-uup-hotfix-kb4482615"></a>ConfigMgr 1810 UUP Hotfix (KB4482615)
-
-> [!Important]  
-> Il processo seguente riguarda i siti Current Branch che sono stati aggiornati alla versione 1810 quando era disponibile a livello generale dopo il 19 dicembre 2018.
->
-> Se si è eseguito l'aggiornamento 1810 con uno script di PowerShell a fine novembre o a inizio dicembre 2018, questo hotfix non era ancora disponibile. 
+#### <a name="diagnostics-and-usage-data-level"></a>Livello dati di diagnostica e di utilizzo
+Valutare la possibilità di aumentare il livello dati di diagnostica e di utilizzo di Configuration Manager durante questa anteprima. Il livello **Completo** consente a Microsoft di analizzare meglio i problemi relativi a questa nuova funzionalità e di risolverli. Per altre informazioni, vedere [Livelli di raccolta dati di utilizzo e di diagnostica per la versione 1810](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1810).
 
 
-1. Aggiornare il sito
+#### <a name="update-rollup-for-configmgr-1810-4486457"></a>Aggiornamento cumulativo per ConfigMgr 1810 (4486457)
 
-    1. Scaricare l'hotfix KB4482615 dall'[Area download Microsoft]<!--(https://download.microsoft.com/download/0/9/0/09081E12-A2CF-40B6-82D8-9B8914A1C2D3/KB4482615/CM1810-KB4482615.ConfigMgr.Update.exe)-->. Questo hotfix abilita UUP per gli scenari di installazione non rapida.  
-
-    2. [Usare lo strumento di registrazione dell'aggiornamento per importare gli hotfix](/sccm/core/servers/manage/use-the-update-registration-tool-to-import-hotfixes)  
+1. Aggiornare il sito con l'aggiornamento cumulativo per la versione 1810. Per altre informazioni, vedere [Installare gli aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates).  
 
 2. Aggiornare i client.  
 
@@ -85,11 +85,15 @@ Se non si sincronizzano i file di installazione rapida nell'ambiente in uso, vie
 
     - Tutti i client destinati agli aggiornamenti di UUP devono essere aggiornati per evitare di **scaricare inutilmente circa 6 GB** di contenuto inutilizzato nei client.
 
+Per altre informazioni su questo aggiornamento, vedere [Aggiornamento cumulativo per System Center Configuration Manager Current Branch, versione 1810](https://support.microsoft.com/help/4486457).
 
-#### <a name="1812-technical-preview"></a>1812 Technical Preview
-1812 Technical Preview è equivalente negli scenari UUP supportati a ConfigMgr 1810 UUP Hotfix (KB4482615).
 
-L'unica considerazione è che l'aggiornamento client di 1812 Technical Preview viene interrotto da 1810.1 TP o 1811 TP. Per risolvere questo problema, è necessario disinstallare i client 1810.1 TP e 1811 TP e quindi installare correttamente il client 1812 TP. Tutti i client destinati agli aggiornamenti di UUP devono eseguire 1812 Technical Preview (o versioni successive) per evitare di **scaricare inutilmente circa 6 GB** di contenuto inutilizzato nei client.
+<!-- 
+#### 1812 Technical Preview
+The 1812 Technical Preview is equivalent in supported UUP scenarios to the ConfigMgr 1810 UUP Hotfix (KB4482615).
+
+The only note is that client upgrade of 1812 Technical Preview is broken from 1810.1 TP or 1811 TP. To work around this issue, you'll need to uninstall 1810.1 TP and 1811 TP clients, then install the 1812 TP client cleanly. All clients you target UUP updates to must be on 1812 Technical Preview (or later) to prevent **unnecessarily downloading around 6 GB** of unused content to the client.
+ -->
 
 
 ### <a name="3-update-windows-clients-to-supported-versions"></a>3. Aggiornare i client Windows alle versioni supportate
@@ -97,26 +101,26 @@ L'unica considerazione è che l'aggiornamento client di 1812 Technical Preview v
 #### <a name="for-express-installation-file-sync"></a>Per la sincronizzazione dei file di installazione rapida
 Per il contenuto dell'installazione rapida, le versioni di Windows supportate includono:
 
-- **Windows 10 versione 1709** con [KB4338825](https://support.microsoft.com/help/4338825) (aggiornamento cumulativo della sicurezza di luglio 2017) o versione successiva  
+- **Windows 10 versione 1809** con aggiornamento cumulativo non relativo alla sicurezza [KB4476976](https://support.microsoft.com/help/4476976/windows-10-update-kb4476976) (rilasciato il 22/1) o versione successiva. Questo aggiornamento è disponibile solo nel catalogo e non si sincronizza direttamente con WSUS. Per importare l'aggiornamento nell'ambiente in uso in modo da distribuirlo, vedere [Importare gli aggiornamenti da Microsoft Update Catalog](/sccm/sum/get-started/synchronize-software-updates#import-updates-from-the-microsoft-update-catalog).
 
 - **Windows 10 versione 1803** con [KB4284835](https://support.microsoft.com/help/4284835) (aggiornamento cumulativo della sicurezza di giugno 2017) o versione successiva  
 
-- **Windows 10 versione 1809** con l'aggiornamento cumulativo di gennaio non correlato alla sicurezza ancora da rilasciare (o il successivo aggiornamento cumulativo della sicurezza di febbraio) o versione successiva
+- **Windows 10 versione 1709** con [KB4338825](https://support.microsoft.com/help/4338825) (aggiornamento cumulativo della sicurezza di luglio 2017) o versione successiva  
+
 
 #### <a name="for-non-express-installation-file-sync"></a>Per la sincronizzazione dei file non di installazione rapida
-Per il contenuto non correlato all'installazione rapida, è necessario applicare una patch aggiuntiva. Questa patch è stata resa disponibile in un formato non cumulativo nel catalogo-12/20 e sarà disponibile nel formato cumulativo normale alla fine di gennaio.
+Per il contenuto non correlato all'installazione rapida, è necessario applicare una patch aggiuntiva. Questo aggiornamento è critico per evitare di scaricare inutilmente circa 6 GB di contenuto inutilizzato nel client. Le versioni di Windows supportate includono le build seguenti:
 
-**Windows 10 versione 1709** e **Windows 10 versione 1803** con:
-- Dicembre-gennaio: I client devono avere un livello di aggiornamento cumulativo di base oltre all'aggiornamento non cumulativo  
-    - Aggiornamento cumulativo  
-        - 1709: [KB4338825](https://support.microsoft.com/help/4338825) (aggiornamento cumulativo della sicurezza di luglio 2017) fino all'aggiornamento cumulativo della sicurezza di gennaio 2019 incluso  
-        - 1803: [KB4284835](https://support.microsoft.com/help/4284835) (aggiornamento cumulativo della sicurezza di giugno 2017) fino all'aggiornamento cumulativo della sicurezza di gennaio 2019 incluso  
-    - Aggiornamento non cumulativo: Questo aggiornamento è disponibile solo nel catalogo e non si sincronizza direttamente con WSUS. Per importare l'aggiornamento nell'ambiente in uso in modo da distribuirlo, vedere [Importare gli aggiornamenti da Microsoft Update Catalog](/sccm/sum/get-started/synchronize-software-updates#import-updates-from-the-microsoft-update-catalog).  
-        - 1709: [KB4483530](https://support.microsoft.com/help/4483530)  
-        - 1803: [KB4483541](https://support.microsoft.com/help/4483541)  
-- Febbraio e oltre: Solo per l'aggiornamento cumulativo, l'aggiornamento cumulativo di gennaio non correlato alla sicurezza ancora da rilasciare (o il successivo aggiornamento cumulativo della sicurezza di febbraio) o versione successiva   
+- **Windows 10 versione 1809** con aggiornamento cumulativo non relativo alla sicurezza [KB4476976](https://support.microsoft.com/help/4476976/windows-10-update-kb4476976) (rilasciato il 22/1) o versione successiva. Questo aggiornamento è disponibile solo nel catalogo e non si sincronizza direttamente con WSUS. Per importare l'aggiornamento nell'ambiente in uso in modo da distribuirlo, vedere [Importare gli aggiornamenti da Microsoft Update Catalog](/sccm/sum/get-started/synchronize-software-updates#import-updates-from-the-microsoft-update-catalog).
 
-**Windows 10 versione 1809** con l'aggiornamento cumulativo di gennaio non correlato alla sicurezza ancora da rilasciare (o il successivo aggiornamento cumulativo della sicurezza di febbraio) o versione successiva
+
+- I client **Windows 10 versione 1803** e **Windows 10 versione 1709** devono avere un livello di aggiornamento cumulativo di base oltre all'aggiornamento non cumulativo:
+    - Aggiornamento cumulativo
+        - 1803: [KB4284835](https://support.microsoft.com/help/4284835) (aggiornamento cumulativo della sicurezza di giugno 2017) fino all'aggiornamento cumulativo della sicurezza di gennaio 2019 incluso
+        - 1709: [KB4338825](https://support.microsoft.com/help/4338825) (aggiornamento cumulativo della sicurezza di luglio 2017) fino all'aggiornamento cumulativo della sicurezza di gennaio 2019 incluso
+    - Aggiornamento non cumulativo: Questo aggiornamento è disponibile solo nel catalogo e non si sincronizza direttamente con WSUS. Per importare l'aggiornamento nell'ambiente in uso in modo da distribuirlo, vedere [Importare gli aggiornamenti da Microsoft Update Catalog](/sccm/sum/get-started/synchronize-software-updates#import-updates-from-the-microsoft-update-catalog).
+        - 1803: [KB4483541](https://support.microsoft.com/help/4483541)
+        - 1709: [KB4483530](https://support.microsoft.com/help/4483530)
 
 
 ### <a name="4-enable-express-installation-on-clients-in-client-settings"></a>4. Abilitare l'installazione rapida nei client nelle impostazioni client
@@ -182,10 +186,7 @@ Dopo avere sincronizzato gli aggiornamenti di UUP nell'ambiente in uso, è oppor
 
 ### <a name="updates-available-during-preview"></a>Aggiornamenti disponibili durante l'anteprima
 
-- Aggiornamenti cumulativi di Windows 10 1709
-    - Aggiornamento della sicurezza di dicembre (12/11)
-    - Aggiornamento della sicurezza di gennaio (1/8)
-    - Aggiornamento non relativo alla sicurezza di gennaio (1/15)
+- Aggiornamenti cumulativi di Windows 10 1809
     - Aggiornamento della sicurezza di febbraio (2/12)  
 
 - Aggiornamenti cumulativi di Windows 10 1803
@@ -194,15 +195,18 @@ Dopo avere sincronizzato gli aggiornamenti di UUP nell'ambiente in uso, è oppor
     - Aggiornamento non relativo alla sicurezza di gennaio (1/15)
     - Aggiornamento della sicurezza di febbraio (2/12)  
 
-- Aggiornamenti cumulativi di Windows 10 1809
+- Aggiornamenti cumulativi di Windows 10 1709
+    - Aggiornamento della sicurezza di dicembre (12/11)
+    - Aggiornamento della sicurezza di gennaio (1/8)
+    - Aggiornamento non relativo alla sicurezza di gennaio (1/15)
     - Aggiornamento della sicurezza di febbraio (2/12)  
 
-- Aggiornamenti delle funzionalità di Windows 10 1803 (da 1709 o 1803)   
+- Aggiornamenti delle funzionalità di Windows 10 1809 (da 1709 o 1803)
     - Conformità aggiornamento della sicurezza di dicembre (12/11)
     - Conformità aggiornamento della sicurezza di gennaio (1/8)
     - Conformità aggiornamento della sicurezza di febbraio (2/12)  
 
-- Aggiornamenti delle funzionalità di Windows 10 1809 (da 1709 o 1803)
+- Aggiornamenti delle funzionalità di Windows 10 1803 (da 1709 o 1803)   
     - Conformità aggiornamento della sicurezza di dicembre (12/11)
     - Conformità aggiornamento della sicurezza di gennaio (1/8)
     - Conformità aggiornamento della sicurezza di febbraio (2/12)  
@@ -226,7 +230,7 @@ Se necessario, gli aggiornamenti della sicurezza di marzo e successivi continuer
 Durante l'anteprima, mantenere i client compatibili con l'aggiornamento di tipo UUP per più aggiornamenti consecutivi per mantenere le aspettative in corso.
 
 #### <a name="content"></a>Content
-Il primo aggiornamento per ogni versione principale (1709, 1803, 1809), architettura e combinazione linguistica sarà di grandi dimensioni, sia per il numero di file che per lo spazio su disco, rispetto ai precedenti aggiornamenti non UUP. Questo contenuto aggiuntivo è destinato principalmente a tutte le funzionalità su richiesta e i Language Pack per gli aggiornamenti cumulativi. Per gli aggiornamenti delle funzionalità, soprattutto se è abilitata l'installazione rapida, è presente contenuto aggiuntivo di grandi dimensioni per questo primo aggiornamento. 
+Il primo aggiornamento per ogni versione principale (1809, 1803, 1709), architettura e combinazione linguistica sarà di grandi dimensioni, sia per il numero di file che per lo spazio su disco, rispetto ai precedenti aggiornamenti non UUP. Questo contenuto aggiuntivo è destinato principalmente a tutte le funzionalità su richiesta e i Language Pack per gli aggiornamenti cumulativi. Per gli aggiornamenti delle funzionalità, soprattutto se è abilitata l'installazione rapida, è presente contenuto aggiuntivo di grandi dimensioni per questo primo aggiornamento. 
 
 Tuttavia, per gli aggiornamenti successivi (sia quelli cumulativi che gli aggiornamenti delle funzionalità mensili a livelli di conformità superiori), la quantità di nuovo contenuto che deve essere scaricato e distribuito sarà nettamente inferiore, poiché tutto il contenuto delle funzionalità su richiesta e dei Language Pack viene condiviso in modo intelligente tra gli aggiornamenti anziché essere nuovamente scaricato o ridistribuito. Durante l'anteprima, nelle versioni 1709 e 1803 questo download mensile sarà pari approssimativamente alle dimensioni degli aggiornamenti cumulativi per gli scenari non UUP. Tuttavia, nella versione 1809 la situazione migliora dal momento che il download incrementale dell'aggiornamento cumulativo è inferiore di mese in mese. 
 

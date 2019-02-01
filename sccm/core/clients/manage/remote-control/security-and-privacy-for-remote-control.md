@@ -10,18 +10,18 @@ ms.assetid: 272ee86b-d3d9-4fd9-b5c4-73e490e1a1e4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fc49a74fe4e257acceaea54d7c423709998a87bd
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 09a583fd3d7ff768c9a102631a0c2cb39a286c23
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334182"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898378"
 ---
 # <a name="security-and-privacy-for-remote-control-in-system-center-configuration-manager"></a>Sicurezza e privacy per il controllo remoto in System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy per il controllo remoto in System Center 2012 Configuration Manager.  
+Questo argomento contiene informazioni relative alla sicurezza e alla privacy per il controllo remoto in System Center Configuration Manager.  
 
 ##  <a name="BKMK_Security_HardwareInventory"></a> Procedure di sicurezza consigliate per il controllo remoto  
  Utilizzare le seguenti procedure ottimali di protezione per gestire i computer client utilizzando il controllo remoto.  
@@ -32,7 +32,7 @@ In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy
 |Non abilitare la condivisione degli Appunti nel visualizzatore controllo remoto.|Gli Appunti supportano oggetti quali file eseguibili e testo. L'utente potrebbe quindi usarli nel computer host durante la sessione di controllo remoto per eseguire un programma nel computer di origine.|  
 |Quando si amministra un computer in remoto, non immettere password di account con privilegi.|Eventuale software in grado di osservare l'input da tastiera potrebbe infatti acquisire le password. Questa violazione potrebbe avvenire anche tramite l'esecuzione nel computer client di un programma diverso da quello presupposto dall'utente del controllo remoto. Se sono richiesti account e password, l'utente finale deve immetterli.|  
 |Durante una sessione di controllo remoto bloccare la tastiera e il mouse.|Se Configuration Manager rileva che la connessione di controllo remoto è terminata, blocca automaticamente la tastiera e il mouse per impedire a un utente di assumere il controllo della sessione di controllo remoto aperta. Tale rilevamento, però, potrebbe non essere immediato e comunque non si verifica se il servizio di controllo remoto è stato arrestato.<br /><br /> Selezionare l'azione **Blocca tastiera e mouse remoti** nella finestra **Controllo remoto di Configuration Manager** .|  
-|Non consentire agli utenti di configurare le impostazioni di controllo remoto in Software Center.|Non abilitare l'impostazione client **Gli utenti possono modificare le impostazioni di criteri o notifiche in Software Center** per evitare che gli utenti vengano controllati.<br /><br /> Questa impostazione si riferisce al computer e non all'utente connesso.|  
+|Non consentire agli utenti di configurare le impostazioni di controllo remoto in Software Center.|Non abilitare l'impostazione client **Gli utenti possono modificare le impostazioni di criteri o notifiche in Software Center** per evitare che gli utenti vengano controllati. Se un utente la cambia, questa impostazione può consentire di visualizzare in modalità remota un altro utente nello stesso computer. <br /><br />**Questa impostazione si riferisce al computer e non all'utente connesso**.|  
 |Abilitare il profilo di Windows Firewall **Dominio** .|Abilitare l'impostazione client **Abilitare controllo remoto nei client Profili delle eccezioni firewall** e quindi selezionare il profilo di Windows Firewall **Dominio** per i computer della Intranet.|  
 |Se ci si disconnette durante una sessione di controllo remoto e si riaccede con un account utente diverso, assicurarsi di eseguire la disconnessione prima di disconnettere la sessione di controllo remoto.|In questo scenario, se non si esegue la disconnessione, la sessione rimane aperta.|  
 |Non concedere diritti di amministratore locale agli utenti.|Se si concedono diritti di amministratore locale agli utenti, questi ultimi potrebbero assumere il controllo della sessione di controllo remoto o compromettere le credenziali dell'amministratore.|  

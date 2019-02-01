@@ -8,15 +8,15 @@ ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: e4d9e414-1346-4ed4-85d0-64d602b68731
 author: aczechowski
-robots: noindex,nofollow
+ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 939a767820983c1fe2d575d7a745d6dabb45f25c
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 970f86849572d6b360c5b92a42a3d131a38fe1d7
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335661"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54896465"
 ---
 # <a name="capabilities-in-technical-preview-1512-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1512 per System Center Configuration Manager
 
@@ -75,9 +75,9 @@ Nella Technical Preview 1512 sono state aggiunte le nuove impostazioni seguenti 
 
      Il motore antimalware può richiedere l'invio a Microsoft di file di esempio per un'ulteriore analisi. Per impostazione predefinita, viene sempre visualizzata una richiesta prima dell'invio di tali campioni. Gli amministratori ora possono gestire le impostazioni seguenti per configurare questo comportamento:  
 
-    -   Avanzate: **Abilitare l'invio automatico di file di esempio per consentire a Microsoft di determinare se alcuni elementi rilevati siano dannosi**: impostare questa opzione su "Sì" per abilitare l'invio automatico dei file di esempio. L'impostazione predefinita è "No", che indica che l'invio automatico dei file di esempio è disabilitato e verrà visualizzata una richiesta agli utenti prima dell'invio dei campioni.   (Questa impostazione è stata introdotta in System Center 2012 R2 Configuration Manager SP1)  
+    -   Avanzata: **Abilitare l'invio automatico di file di esempio per consentire a Microsoft di determinare se alcuni elementi rilevati siano dannosi**:  Impostare questa opzione su "Sì" per abilitare l'invio automatico di file di esempio. L'impostazione predefinita è "No", che indica che l'invio automatico dei file di esempio è disabilitato e verrà visualizzata una richiesta agli utenti prima dell'invio dei campioni.   (Questa impostazione è stata introdotta in System Center 2012 R2 Configuration Manager SP1)  
 
-    -   Avanzate: **Consenti agli utenti di modificare le impostazioni di invio automatico dei file di esempio**. Questa impostazione determina se un utente con diritti amministrativi locali in un dispositivo può modificare l'impostazione per l'invio automatico dei file di esempio nell'interfaccia del client. L'impostazione predefinita è "No" e indica che le impostazioni possono essere modificate solo in Configuration Manager e gli amministratori locali di un dispositivo non possono modificare questa configurazione.  
+    -   Avanzata: **Consenti agli utenti di modificare le impostazioni di invio automatico dei file di esempio**: Questa impostazione determina se un utente con diritti amministrativi locali in un dispositivo può modificare l'impostazione per l'invio automatico dei file di esempio nell'interfaccia del client. L'impostazione predefinita è "No" e indica che le impostazioni possono essere modificate solo in Configuration Manager e gli amministratori locali di un dispositivo non possono modificare questa configurazione.  
 
          Ad esempio, di seguito viene illustrata l'impostazione di Windows Defender in Windows 10 configurata dall'amministratore come abilitata e l'utente non è in grado di modificarla:  
 

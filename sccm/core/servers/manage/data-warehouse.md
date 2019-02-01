@@ -10,12 +10,12 @@ ms.assetid: aaf43e69-68b4-469a-ad58-9b66deb29057
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0c04ee9a62b6c629060f79df2f4b104fe78ca794
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: a4d95495f2f200eaff39699c65cc391a2a81b009
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53418986"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54897560"
 ---
 #  <a name="the-data-warehouse-service-point-for-configuration-manager"></a>Punto di servizio del data warehouse per Configuration Manager
 
@@ -237,7 +237,7 @@ Per configurare i certificati eseguire questa procedura:
 
     2. Aprire **Gestione configurazione SQL Server**. In **Configurazione di rete SQL Server** fare clic con il pulsante destro del mouse per selezionare **Proprietà** in **Protocolli per MSSQLSERVER**. Passare alla scheda **Certificato**, selezionare **Certificato di identificazione SQL Server del data warehouse** come certificato e salvare le modifiche.  
 
-    3. In **Gestione configurazione SQL Server** in **Servizi di SQL Server** riavviare i servizi **Servizio SQL Server** e **Reporting Services**.  
+    3. In **Gestione configurazione SQL Server**, in **Servizi di SQL Server** riavviare il **servizio SQL Server**. Se nel server che ospita il database del data warehouse è installato anche SQL Reporting Services, riavviare anche i servizi **Reporting Services**.  
 
     4. Aprire Microsoft Management Console (MMC) e aggiungere lo snap-in **Certificati**. Selezionare l'**Account del computer** del computer locale. Espandere la cartella **Personale** e selezionare **Certificati**. Esportare il **Certificato di identificazione SQL Server del data warehouse** come file **Binario codificato DER x.509 (.CER)**.  
 

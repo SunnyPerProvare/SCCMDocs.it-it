@@ -10,12 +10,13 @@ ms.assetid: 14ee4fb0-7790-45a6-906e-6e55627d4079
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8ed8aed38f20adb3558b61dd32a36f88fbac3b00
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ROBOTS: NOINDEX
+ms.openlocfilehash: a45f48ef16e0d204cfe347c3e024cd0b36403405
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893509"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898189"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1706-of-system-center-configuration-manager"></a>Livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1706
 
@@ -449,7 +450,7 @@ Per System Center Configuration Manager versione 1706, questo livello include i 
 
 - ***[Nuovo]*** Statistiche dei criteri di conformità per la conformità e gli errori
 
-- Impostazioni di conformità: dettagli di configurazione del modello dei criteri di conformità e di SCEP, VPN, Wi-Fi e numero di gruppi per cui sono scaduti gli aggiornamenti software
+- Impostazioni di conformità: dettagli di configurazione SCEP, VPN, Wi-Fi e del modello dei criteri di conformità e numero di gruppi con aggiornamenti software scaduti
 
 - Utilizzo del pacchetto di configurazione DCM per System Center Configuration Manager
 

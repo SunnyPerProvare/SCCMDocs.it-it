@@ -2,7 +2,7 @@
 title: Novità della versione 1810
 titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1810 di Configuration Manager (Current Branch).
-ms.date: 12/20/2018
+ms.date: 01/25/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 4812324b-e6aa-4431-bf1d-9fcd763a8caa
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 60d1c93acc2fcc2c04d09cd8f0ec0c083089a8ec
-ms.sourcegitcommit: a3cec96a771eed69e58a29917d1a3fe1a5fb2e73
+ms.openlocfilehash: be1bbc8319a67b4aa2b4c27be9e9bbe6e935d087
+ms.sourcegitcommit: ad25a7bdd983c5a0e4c95bffdc61c9a1ebcbb765
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54250596"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55072969"
 ---
 # <a name="whats-new-in-version-1810-of-configuration-manager-current-branch"></a>Novità della versione 1810 di Configuration Manager (Current Branch)
 
@@ -27,15 +27,6 @@ Esaminare sempre l'elenco di controllo più recente per installare questo aggior
 
 > [!Note]  
 > Questo articolo elenca tutte le funzionalità importanti di questa versione al momento. Tuttavia, non tutte le sezioni sono ancora collegate al contenuto aggiornato con maggiori informazioni sulle nuove funzionalità. Continuare a controllare questa pagina con regolarità per verificare la disponibilità di aggiornamenti. Le modifiche sono contrassegnate con il tag ***[Aggiornato]***. Questa nota sarà rimossa nella versione finale del contenuto.  
-
-A parte le nuove funzionalità, questa versione include anche ulteriori modifiche, ad esempio correzioni di bug. Per altre informazioni, vedere [Riepilogo delle modifiche in Configuration Manager Current Branch, versione 1810](https://support.microsoft.com/help/4482169).
-
-<!--
-For more information on changes to the Windows PowerShell cmdlets for Configuration Manager, see [PowerShell 1810 Release Notes](https://docs.microsoft.com/powershell/sccm/1810_release_notes?view=sccm-ps).
-
-The following additional updates to this release are also now available:
-- [Update rollup for Configuration Manager current branch, version 1810](https://support.microsoft.com/help/4462978)
--->
 
 > [!Important]  
 > Per sfruttare i vantaggi delle nuove funzionalità di Configuration Manager, aggiornare prima di tutto i clienti alla versione più recente. Anche se le nuove funzionalità vengono visualizzate nella console di Configuration Manager quando si esegue l'aggiornamento del sito e della console, lo scenario completo risulta funzionante solo dopo l'aggiornamento alla versione più recente del client.
@@ -147,7 +138,8 @@ Per altre informazioni, vedere [Configurare gruppi di limiti](/sccm/core/servers
 
 ### <a name="improvements-to-internet-based-client-setup"></a>Miglioramenti al programma di installazione dei client basati su Internet
 <!--1359181-->
-<!--move this under co-management?--> Questa versione semplifica ulteriormente il processo di installazione del client di Configuration Manager per i client su Internet. Il sito pubblica informazioni aggiuntive di Azure Active Directory (Azure AD) in Cloud Management Gateway (CMG). Un client aggiunto ad Azure AD ottiene queste informazioni da CMG durante il processo ccmsetup, usando lo stesso tenant a cui viene aggiunto. Questo comportamento semplifica ulteriormente la registrazione dei dispositivi per la co-gestione in un ambiente con più di un tenant di Azure AD. Al momento le uniche due proprietà obbligatorie di ccmsetup sono **CCMHOSTNAME** e **SMSSiteCode**.
+<!--move this under co-management?-->  
+Questa versione semplifica ulteriormente il processo di installazione del client di Configuration Manager per i client su Internet. Il sito pubblica informazioni aggiuntive di Azure Active Directory (Azure AD) in Cloud Management Gateway (CMG). Un client aggiunto ad Azure AD ottiene queste informazioni da CMG durante il processo ccmsetup, usando lo stesso tenant a cui viene aggiunto. Questo comportamento semplifica ulteriormente la registrazione dei dispositivi per la co-gestione in un ambiente con più di un tenant di Azure AD. Al momento le uniche due proprietà obbligatorie di ccmsetup sono **CCMHOSTNAME** e **SMSSiteCode**.
 
 <!--For more information, see [Prepare Windows 10 devices for co-management](https://docs.microsoft.com/en-us/sccm/core/clients/manage/co-management-prepare#command-line-to-install-configuration-manager-client).-->
 
@@ -361,8 +353,31 @@ I miglioramenti seguenti relativi alle prestazioni e alla risoluzione dei proble
 
 ## <a name="bkmk_opmdm"></a> Software MDM locale
 
-### <a name="an-intune-connection-is-no-longer-required-for-on-premises-mdm"></a>Non è più necessaria una connessione a Intune per MDM locale
-<!--1359124--> Il prerequisito MDM locale per configurare una sottoscrizione di Microsoft Intune non è più obbligatorio. Per usare questa funzionalità è comunque necessario che l'organizzazione abbia le licenze di Intune. 
+### <a name="an-intune-connection-is-no-longer-required-for-new-on-premises-mdm-deployments"></a>Per le nuove distribuzioni MDM locali non è più necessaria una connessione a Intune
+<!--1359124--> Il prerequisito MDM locale relativo alla configurazione di una sottoscrizione di Microsoft Intune non è più obbligatorio per le nuove distribuzioni. Per usare questa funzionalità è comunque necessario che l'organizzazione abbia le licenze di Intune. Attualmente non è possibile rimuovere la connessione a Intune dalle distribuzioni MDM locali esistenti. Per altre informazioni, vedere il [post di blog del supporto tecnico di Intune](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150).
+
+
+
+## <a name="other-updates"></a>Altri aggiornamenti
+
+A parte le nuove funzionalità, questa versione include anche ulteriori modifiche, ad esempio correzioni di bug. Per altre informazioni, vedere [Riepilogo delle modifiche in Configuration Manager Current Branch, versione 1810](https://support.microsoft.com/help/4482169).
+
+<!--
+For more information on changes to the Windows PowerShell cmdlets for Configuration Manager, see [PowerShell 1810 Release Notes](https://docs.microsoft.com/powershell/sccm/1810_release_notes?view=sccm-ps).
+--> 
+
+L'aggiornamento cumulativo seguente (4486457) è disponibile nella console a partire dal 25 gennaio 2019: [Aggiornamento cumulativo per Configuration Manager Current Branch, versione 1810](https://support.microsoft.com/help/4486457).
+
+<!-- 
+### Hotfixes
+
+The following additional hotfixes are available to address specific issues:
+
+| ID | Title | Date | In-console |
+|---------|---------|---------|---------|
+| [4346645](https://support.microsoft.com/help/4346645) | Update for System Center Configuration Manager version 1806, first wave | 31 August 2018 | Yes | 
+
+-->
 
 
 

@@ -10,13 +10,12 @@ ms.assetid: a70bfbd4-757a-4468-9312-1c3b373ef9fc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-robots: noindex
-ms.openlocfilehash: 0481abfb1ed881355a489b99b0c3f7ec9c595e69
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 0e77225fb378a5851dbba9718dd3810463255cf7
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342325"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898427"
 ---
 # <a name="plan-a-migration-job-strategy-in-system-center-configuration-manager"></a>Pianificare una strategia di processo di migrazione in System Center Configuration Manager
 
@@ -45,11 +44,11 @@ Usare i processi di migrazione per configurare i dati specifici di cui si vuole 
 ##  <a name="Types_of_Migration"></a> Tipi di processi di migrazione  
  Configuration Manager supporta i tipi seguenti di processi di migrazione. Ogni tipo di processo è progettato per definire gli oggetti che è possibile includere nel processo.  
 
- **Migrazione raccolta** (supportata solo durante la migrazione da Configuration Manager 2007 SP2): esegue la migrazione di oggetti relativi alle raccolte selezionate. Per impostazione predefinita, la migrazione di una raccolta include tutti gli oggetti che sono associati ai membri della raccolta. Quando si utilizza un processo di migrazione raccolta, è possibile escludere le istanze specifiche di oggetti.  
+ **Migrazione raccolta** (supportata solo durante la migrazione da Configuration Manager 2007 SP2): Eseguire la migrazione di oggetti relative alle raccolte selezionate. Per impostazione predefinita, la migrazione di una raccolta include tutti gli oggetti che sono associati ai membri della raccolta. Quando si utilizza un processo di migrazione raccolta, è possibile escludere le istanze specifiche di oggetti.  
 
- **Migrazione oggetto**: esegue la migrazione di singoli oggetti selezionati. Selezionare solo i dati da migrare.  
+ **Migrazione oggetto**: Eseguire la migrazione di singoli oggetti selezionati. Selezionare solo i dati da migrare.  
 
- **Migrazione di oggetti di cui è già stata eseguita la migrazione**: esegue la migrazione di oggetti di cui è stata eseguita prima la migrazione quando sono stati aggiornati nella gerarchia di origine dopo l'ultima migrazione.  
+ **Migrazione di oggetti di cui è già stata eseguita la migrazione**: Eseguire la migrazione degli oggetti di cui era già stata eseguita la migrazione quando questi sono stati aggiornati nella gerarchia di origine dopo l'ultima migrazione.  
 
 ###  <a name="Objects_that_can_migrate"></a> Oggetti di cui è possibile eseguire la migrazione  
  Non tutti gli oggetti possono essere migrati da un tipo specifico di processo di migrazione. L'elenco seguente identifica il tipo di oggetti di cui è possibile eseguire la migrazione con ciascun tipo di processo di migrazione.  
@@ -285,7 +284,7 @@ Usare i processi di migrazione per configurare i dati specifici di cui si vuole 
 ### <a name="collection-dependencies-and-include-objects"></a>Dipendenze della raccolta e inclusione di oggetti  
  Quando si specifica una raccolta di cui eseguire la migrazione nella Creazione guidata del processo di migrazione, eventuali raccolte dipendenti verranno selezionate automaticamente per l'inclusione nel processo. Questo comportamento assicura che tutte le risorse necessarie siano disponibili dopo la migrazione.  
 
- Ad esempio: si seleziona una raccolta per dispositivi che eseguono Windows 7 e denominata **Win_7**. Questa raccolta è limitata a una raccolta contenente tutti i sistemi operativi client e denominata **All_Clients**. La raccolta **All_Clients** verrà selezionata automaticamente per la migrazione.  
+ Ad esempio: si seleziona una raccolta per i dispositivi che eseguono Windows 7 denominata **Win_7**. Questa raccolta è limitata a una raccolta contenente tutti i sistemi operativi client e denominata **All_Clients**. La raccolta **All_Clients** verrà selezionata automaticamente per la migrazione.  
 
 ### <a name="collection-limiting"></a>Limitazione della raccolta  
  Con System Center Configuration Manager, le raccolte sono dati globali e vengono valutate in ogni sito nella gerarchia. Pianificare quindi come limitare l'ambito di una raccolta dopo la migrazione. Durante la migrazione è possibile identificare una raccolta della gerarchia di destinazione da utilizzare per limitare l'ambito della raccolta di cui si esegue la migrazione, in modo che la raccolta di cui è stata eseguita la migrazione non includa membri imprevisti.  

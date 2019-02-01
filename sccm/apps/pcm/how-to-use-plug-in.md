@@ -10,13 +10,13 @@ ms.assetid: 83cf156c-36de-483f-a9e6-2e06158f3b20
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-robots: noindex,nofollow
-ms.openlocfilehash: 9e670cb6afd7186d7dc248bedd6e2ce7d7746b02
-ms.sourcegitcommit: 759098de944b8f7d5eedfc2bae2cb9a6ba15276f
+ROBOTS: NOINDEX
+ms.openlocfilehash: 5ed885ba459a584939881235e44d632515138cdf
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43297289"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54896363"
 ---
 # <a name="how-to-use-the-package-conversion-manager-plug-in"></a>Come usare il plug-in Package Conversion Manager
 
@@ -66,7 +66,7 @@ Quando si usa il plug-in, Package Conversion Manager esegue le operazioni seguen
 
 6.  Analisi dell'applicazione e determinazione dello stato di conformità del pacchetto.  
 
-7.  Scegliere una delle operazioni seguenti, a seconda dell'operazione di Package Conversion Manager:  
+7.  Scegliere una delle operazioni seguenti, a seconda dell'operazione di Package Conversion Manager:  
 
     - **Analizza**: viene visualizzato lo stato di conformità del pacchetto nella console di Configuration Manager.  
 

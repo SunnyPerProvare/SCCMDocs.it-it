@@ -10,12 +10,13 @@ ms.assetid: e318e705-20f2-417d-8cde-7dfe661b2fa7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b86b1a4b8400be29f9b4c468c280fdd0a47385c3
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ROBOTS: NOINDEX
+ms.openlocfilehash: 0b47d64a350a9cf0a8838809604d1a38b55ea3b1
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32343491"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54896731"
 ---
 # <a name="capabilities-in-technical-preview-1704-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1704 per System Center Configuration Manager
 
@@ -31,7 +32,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
 ### <a name="try-it-out"></a>Procedura                 
 
-Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Criteri di configurazione dell'app**, quindi scegliere **Create App Configuration Policy** (Crea criteri di configurazione dell'app). Nella pagina **Generale** della procedura guidata scegliere **Select a configuration policy type** (Selezionare un tipo di criteri di configurazione). Specificare la piattaforma di destinazione per i criteri di configurazione dell'app: **Configuration policy for Android for Work apps** (Criteri di configurazione per app Android for Work). Quindi è possibile scegliere **Specify name and value pairs** (Specifica coppie di nome e valore) o **Browse to a property list JSON file** (Esplora file elenco proprietà JSON). I nuovi criteri di configurazione app vengono visualizzati nel nodo **Criteri di configurazione dell'app** dell'area di lavoro **Raccolta software**. Per associare criteri di configurazione delle app alla distribuzione di un'app per Android for Work, distribuire l'applicazione nel modo consueto con la procedura descritta nell'argomento [Distribuire applicazioni](/sccm/apps/deploy-use/deploy-applications).
+Nella console di Configuration Manager scegliere **Raccolta software** > **Gestione applicazioni** > **Criteri di configurazione dell'app**, quindi scegliere **Create App Configuration Policy** (Crea criteri di configurazione dell'app). Nella pagina **Generale** della procedura guidata scegliere **Select a configuration policy type** (Selezionare un tipo di criteri di configurazione). Specificare la piattaforma di destinazione dei criteri di configurazione dell'app: **Criteri di configurazione per le app Android for Work**. Quindi è possibile scegliere **Specify name and value pairs** (Specifica coppie di nome e valore) o **Browse to a property list JSON file** (Esplora file elenco proprietà JSON). I nuovi criteri di configurazione app vengono visualizzati nel nodo **Criteri di configurazione dell'app** dell'area di lavoro **Raccolta software**. Per associare criteri di configurazione delle app alla distribuzione di un'app per Android for Work, distribuire l'applicazione nel modo consueto con la procedura descritta nell'argomento [Distribuire applicazioni](/sccm/apps/deploy-use/deploy-applications).
 
 ## <a name="hardware-inventory-collects-secure-boot-information"></a>L'inventario hardware raccoglie le informazioni di Avvio protetto
 L'inventario hardware ora raccoglie informazioni sull'attivazione di Avvio protetto nei client. Queste informazioni sono archiviate nella classe **SMS_Firmware** (introdotta nella versione 1702) e abilitate nell'inventario hardware per impostazione predefinita. Per altre informazioni sull'inventario hardware, vedere [Come configurare l'inventario hardware](/sccm/core/clients/manage/inventory/configure-hardware-inventory).
@@ -66,6 +67,6 @@ Quando si esegue **Aggiorna punti di distribuzione** su un'immagine d'avvio sele
 ## <a name="improvements-to-operating-system-deployment"></a>Miglioramenti alla distribuzione del sistema operativo
 Sono stati apportati i miglioramenti seguenti alla distribuzione del sistema operativo, molti dei quali sono il risultato del feedback degli utenti.
 
-- [Nuova colonna **Versione SO** per le immagini del sistema operativo](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17558407-add-a-column-to-the-operating-system-images-node-f): la nuova colonna **Versione SO** è stata aggiunta per visualizzare la versione del sistema operativo dell'immagine quando si visualizzano informazioni nei nodi **Immagini del sistema operativo** e **Pacchetti di aggiornamento del sistema operativo**. Viene visualizzata solo la versione del primo indice del file .WIM. Per verificare le versioni del sistema operativo corrispondenti agli altri indici, aprire la scheda **Dettagli** dell'immagine.
+- [Nuova colonna **Versione sistema operativo** per le immagini del sistema operativo](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17558407-add-a-column-to-the-operating-system-images-node-f): è stata aggiunta la nuova colonna **Versione sistema operativo** per visualizzare la versione del sistema operativo dell'immagine quando si visualizzano informazioni nei nodi **Immagini del sistema operativo** e **Pacchetti di aggiornamento del sistema operativo**. Viene visualizzata solo la versione del primo indice del file .WIM. Per verificare le versioni del sistema operativo corrispondenti agli altri indici, aprire la scheda **Dettagli** dell'immagine.
 
-- [Registrazione più efficiente in Smsts.log](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/16791919-stop-filling-smsts-log-with-useless): a partire dalla versione corrente, nel file smsts.log non verranno più scritte voci per le informazioni CCM_CIVersionInfo.PolicyID. Prima di questa versione venivano spesso registrate molte voci con queste informazioni, che rendevano difficile la ricerca di informazioni più importanti nel file di registro.
+- [Registrazione più efficiente in Smsts.log](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/16791919-stop-filling-smsts-log-with-useless): a partire dalla versione corrente, nel file smsts.log non vengono più scritte voci per le informazioni CCM_CIVersionInfo.PolicyID. Prima di questa versione venivano spesso registrate molte voci con queste informazioni, che rendevano difficile la ricerca di informazioni più importanti nel file di registro.

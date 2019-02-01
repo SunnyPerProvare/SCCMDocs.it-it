@@ -10,13 +10,13 @@ ms.assetid: 4021eca1-adfb-4e5a-adee-159263c29637
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-robots: noindex,nofollow
-ms.openlocfilehash: c6d085fd33513a32207a3b9acfdfe6fe91657a88
-ms.sourcegitcommit: 2cc635835709fb8d86cdb63ea34233b36c94d4d8
+ROBOTS: NOINDEX
+ms.openlocfilehash: 86d36921939b611fa6647d4a0bf3af6d11f27ee7
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52259047"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54897628"
 ---
 # <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>Novità della versione 1602 di System Center Configuration Manager
 
@@ -132,7 +132,7 @@ Queste app si trovano nel nodo **Applicazioni** della console di Configuration M
  Per maggiori dettagli, vedere [Criteri di conformità del dispositivo in System Center Configuration Manager](../../../protect/deploy-use/device-compliance-policies.md).  
 
 ### <a name="make-sure-enrolled-and-compliant-devices-always-have-access-to-exchange-on-premises"></a>Assicurarsi che i dispositivi registrati e conformi abbiano sempre accesso a Exchange locale  
- Quando si seleziona questa opzione, i dispositivi registrati in Intune e conformi ai criteri di conformità possono accedere a Exchange locale: **Sostituzione della regola predefinita: consenti sempre l'accesso a Exchange ai dispositivi conformi e registrati in Intune**. Questa regola è disponibile nella pagina **Generale** della **Configurazione guidata dei criteri di accesso condizionale** per Exchange locale.
+ Quando si seleziona l'opzione seguente, i dispositivi registrati in Intune e conformi ai criteri di conformità possono accedere a Exchange locale: **Sostituzione della regola predefinita: consenti sempre l'accesso a Exchange ai dispositivi conformi e registrati in Intune**. Questa regola è disponibile nella pagina **Generale** della **Configurazione guidata dei criteri di accesso condizionale** per Exchange locale.
 
  Questa regola sostituisce la regola predefinita, ossia anche se si definisce per la regola predefinita l'impostazione per la quarantena o il blocco dell'accesso, i dispositivi registrati e conformi potranno comunque accedere a Exchange locale. Usare questa impostazione quando si vuole che i dispositivi registrati e conformi abbiano sempre accesso alla posta elettronica tramite Exchange locale.   
 
@@ -173,17 +173,17 @@ Per informazioni dettagliate, vedere [Attestazione dell'integrità per System Ce
 ### <a name="improvements-to-endpoint-protection-antimalware-settings"></a>Miglioramenti delle impostazioni antimalware di Endpoint Protection  
  Nella versione 1602 sono state aggiunte le nuove impostazioni seguenti nei criteri antimalware di Endpoint Protection per Windows Defender:  
 
--   Protezione in tempo reale: Block potentially unwanted applications at download, prior to installation (Blocca le applicazioni potenzialmente indesiderate al download o prima dell'installazione).  
+-   Protezione in tempo reale: Abilita la protezione per le applicazioni potenzialmente indesiderate al download o prima dell'installazione.  
 
--   Impostazioni di analisi: Analizza le unità di rete mappate quando si esegue un'analisi completa.  
+-   Impostazioni di analisi: Analizza le unità di rete mappate durante un'analisi completa.  
 
 -   Impostazioni per l'invio automatico dei file di esempio:  
 
      Il motore antimalware può richiedere l'invio a Microsoft di file di esempio per un'ulteriore analisi. Per impostazione predefinita, viene sempre visualizzata una richiesta prima dell'invio di tali campioni. Gli amministratori ora possono gestire le impostazioni seguenti per configurare questo comportamento:  
 
-    -   Avanzate: Enable automatic sample file submission to help Microsoft determine whether certain detected items are malicious (Abilita l'invio automatico di file di esempio per consentire a Microsoft di determinare se alcuni elementi rilevati siano dannosi).  
+    -   Avanzate: Abilitare l'invio automatico di file di esempio per consentire a Microsoft di determinare se alcuni elementi rilevati siano dannosi.  
 
-    -   Avanzate: Allow users to modify automatic sample file submission settings (Consenti agli utenti di modificare le impostazioni di invio automatico di file di esempio).  
+    -   Avanzate: Consenti agli utenti di modificare le impostazioni di invio automatico dei file di esempio.  
 
     Inoltre, nella sezione "Impostazioni di esclusione" del criterio antimalware di Endpoint Protection, l'impostazione esistente **Exclude files and folders** (Escludi file e cartelle) ora consente l'esclusione di dispositivi.  
 
@@ -213,6 +213,6 @@ Configuration Manager può richiedere lo stato del blocco attivazione per i disp
 
 -   **Errore**  
 
--   **Non conforme**: gli utenti hanno accettato una versione di termini e condizioni, ma non la versione più recente.  
+-   **Non conforme**: gli utenti hanno accettato una versione di termini e condizioni, ma non la più recente.  
 
 -   **Sconosciuto**: gli utenti non hanno mai accettato termini e condizioni, inclusi quelli senza un dispositivo registrato.  

@@ -8,15 +8,15 @@ ms.technology: configmgr-other
 ms.topic: conceptual
 ms.assetid: 684a5559-9e6e-469b-86ae-e768e9f0c9ac
 author: aczechowski
-robots: noindex,nofollow
+ROBOTS: NOINDEX
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 113e22c33e9e8545c382373f3ba093dba3969939
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 9aecb8f744185116b85232bd9b2893cdf20a3b6d
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32340693"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54897543"
 ---
 # <a name="capabilities-in-technical-preview-1604-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1604 per System Center Configuration Manager
 
@@ -83,7 +83,7 @@ Questo articolo presenta le funzionalità disponibili nella versione Technical P
 
 ##### <a name="scenario-2-create-and-deploy-a-configuration-manager-application-from-a-windows-store-for-business-offline-licensed-app"></a>Scenario 2: Creare e distribuire un'applicazione di Configuration Manager da un archivio di Windows per app aziendali con licenza offline  
 
-1.  Nell'area di lavoro **Raccolta software** della console di Configuration Manager espandere **Gestione applicazioni** e fare clic su **Informazioni di licenza per le app dello Store**.  
+1.  Nell'area di lavoro **Raccolta software** della console di Configuration Manager espandere **Gestione delle applicazioni** e fare clic su **Informazioni di licenza per le app dello Store**.  
 
 2.  L'elenco delle **app di Windows Store per le aziende acquistate** mostra le applicazioni che sono state sincronizzate dall'archivio. Scegliere l'app che si vuole distribuire quindi nella scheda **Home** nel gruppo **Crea** fare clic su **Crea applicazione**.  
 

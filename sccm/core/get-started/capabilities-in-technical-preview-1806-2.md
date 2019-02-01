@@ -10,12 +10,13 @@ ms.assetid: 3af2a69d-30e7-4dce-832d-82b7a1c082f8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5183b30d9184f7119d1423b5773da2b692026ab7
-ms.sourcegitcommit: 64b343906afdd442189559119eea8e933642cbf8
+ROBOTS: NOINDEX
+ms.openlocfilehash: f052d4c4be1334214872ff91f16be1888850a118
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342815"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898512"
 ---
 # <a name="capabilities-in-technical-preview-18062-for-system-center-configuration-manager"></a>Funzionalità della versione Technical Preview 1806.2 per System Center Configuration Manager
 
@@ -96,11 +97,11 @@ Questa versione include i miglioramenti seguenti per le [distribuzioni in più f
 
 Questo dashboard visualizza le informazioni seguenti per ogni fase della distribuzione:  
 
-- **Totale dispositivi**: numero di dispositivi interessati da questa fase.  
+- **Dispositivi totali**: numero di dispositivi interessati da questa fase.  
 
-- **Stato**: stato corrente della fase. Ogni fase può trovarsi in uno degli stati seguenti:  
+- **Status** (Stato): stato corrente della fase. Ogni fase può trovarsi in uno degli stati seguenti:  
 
-    - **Distribuzione creata**: la distribuzione in più fasi ha creato una distribuzione del software nella raccolta per questa fase. Ai client viene assegnato in modo attivo questo software.  
+    - **La distribuzione è stata creata**: la distribuzione in più fasi ha creato una distribuzione del software nella raccolta per questa fase. Ai client viene assegnato in modo attivo questo software.  
 
     - **In attesa**: la fase precedente non ha ancora raggiunto i criteri di esito positivo per consentire la continuazione della distribuzione verso questa fase.  
 
@@ -130,7 +131,7 @@ Non è possibile creare manualmente le fasi per un'applicazione. La procedura gu
 ### <a name="bkmk_pod-throttle"></a> Implementazione graduale durante le distribuzioni in più fasi
 <!--1358578--> Durante una distribuzione in più fasi, l'implementazione di ogni fase può ora essere graduale. Questo comportamento consente di ridurre il rischio di problemi di distribuzione e diminuisce il carico sulla rete causato dalla distribuzione di contenuti ai client. Il sito può rendere gradualmente disponibile il software a seconda della configurazione per ogni fase. Tutti i client in una fase hanno una scadenza definita in base al momento in cui il software viene reso disponibile. L'intervallo di tempo tra l'ora di disponibilità e la scadenza è uguale per tutti i client in una fase. 
 
-Quando si crea una distribuzione in più fasi e si configura manualmente una fase nella pagina **Impostazioni delle fasi** dell'Aggiunta guidata fasi o nella pagina **Impostazioni** della procedura guidata Crea una distribuzione in più fasi, configurare l'opzione: **Gradually make this software available over this period of time (in days)** (Rendi disponibile gradualmente questo software in questo periodo di tempo - in giorni). Il valore predefinito di questa impostazione è **0**, ovvero la distribuzione non è limitata per impostazione predefinita.
+Quando si crea una distribuzione in più fasi e si configura manualmente una fase nella pagina **Impostazioni delle fasi** dell'Aggiunta guidata fasi o nella pagina **Impostazioni** della procedura guidata Crea una distribuzione in più fasi, configurare l'opzione: **Rendi gradualmente disponibile il software in questo periodo di tempo (in giorni)**. Il valore predefinito di questa impostazione è **0**, ovvero la distribuzione non è limitata per impostazione predefinita.
 
 > [!Note]  
 > Questa opzione è attualmente disponibile solo per le distribuzioni in più fasi delle sequenze di attività.  
@@ -185,7 +186,7 @@ Quando si aggiorna il sito, viene mantenuto il comportamento esistente. Dopo ave
 ## <a name="bkmk_insights"></a> Informazioni dettagliate sulla gestione per la manutenzione proattiva
 <!--1352184,et al--> In questa versione sono disponibili informazioni dettagliate sulla gestione aggiuntive per evidenziare i potenziali problemi di configurazione. Esaminare le regole seguenti nel nuovo gruppo **Manutenzione proattiva**:  
 
-- **Elementi di configurazione inutilizzati**: elementi di configurazione che non fanno parte di una baseline di configurazione e sono anteriori a 30 giorni.  
+- **Elementi di configurazione inutilizzati**: elementi di configurazione che non fanno parte di una linea di base di configurazione e sono anteriori a 30 giorni.  
 
 - **Immagini d'avvio inutilizzate**: immagini di avvio a cui non viene fatto riferimento per l'avvio PXE o per l'uso di sequenze di attività.  
 
@@ -193,7 +194,7 @@ Quando si aggiorna il sito, viene mantenuto il comportamento esistente. Dopo ave
 
 - **Gruppi di limiti senza membri**: i gruppi di limiti non sono applicabili per l'assegnazione del sito o la ricerca di contenuto se non hanno membri.  
 
-- **Distribution points not serving content to clients** (Punti di distribuzione che non servono contenuto ai client): punti di distribuzione che non hanno servito contenuto ai client negli ultimi 30 giorni. I dati sono basati sui report dai client della relativa cronologia di download.  
+- **Punti di distribuzione che non forniscono contenuti ai client**: punti di distribuzione che non hanno reso disponibile contenuto ai client negli ultimi 30 giorni. I dati sono basati sui report dai client della relativa cronologia di download.  
 
 - **Expired updates found** (Trovati aggiornamenti scaduti): gli aggiornamenti scaduti non sono applicabili per la distribuzione.   
 
@@ -215,7 +216,7 @@ Per altre informazioni, vedere gli articoli seguenti:
 ## <a name="bkmk_bgoptions"></a> Opzioni del gruppo di limiti per download peer
 <!--1356193--> Sono ora disponibili impostazioni aggiuntive per i gruppi di limiti per offrire maggiore controllo sulla distribuzione di contenuti nell'ambiente. Questa versione aggiunge le opzioni seguenti:  
 
-- **Allow peer downloads in this boundary group** (Consenti download peer in questo gruppo di limiti): questa impostazione è abilitata per impostazione predefinita. Il punto di gestione fornisce ai client un elenco di posizioni del contenuto che include le origini peer. <!--This setting also affects applying Group IDs for Delivery Optimization.518268-->  
+- **Consenti i download peer in questo gruppo di limiti**: Questa opzione è attivata per impostazione predefinita. Il punto di gestione fornisce ai client un elenco di posizioni del contenuto che include le origini peer. <!--This setting also affects applying Group IDs for Delivery Optimization.518268-->  
 
     Esistono due scenari comuni in cui potrebbe essere utile disabilitare questa opzione:  
 
@@ -223,7 +224,7 @@ Per altre informazioni, vedere gli articoli seguenti:
 
     - Se si usa un singolo gruppo di limiti di grandi dimensioni per l'assegnazione del sito che non fa riferimento ad alcun punto di distribuzione.  
 
-- **Durante i download peer, usa solo i peer entro la stessa subnet**: questa impostazione dipende da quella sopra indicata. Se si abilita questa opzione, il punto di gestione include nell'elenco delle posizioni del contenuto solo le origini peer incluse nella stessa subnet del client.
+- **Durante i download peer, usa solo i peer entro la stessa subnet**: Questa impostazione dipende da quella precedente. Se si abilita questa opzione, il punto di gestione include nell'elenco delle posizioni del contenuto solo le origini peer incluse nella stessa subnet del client.
 
     Scenari comuni per l'abilitazione di questa opzione:
 
@@ -266,7 +267,7 @@ Provare a completare le attività. Inviare quindi [commenti e suggerimenti](capa
 
     - **Nome**: nome del catalogo da visualizzare nella console di Configuration Manager.  
 
-    - **Descrizione**: descrizione del catalogo.  
+    - **Descrizione**: una descrizione del catalogo.  
 
     - **URL supporto tecnico** (facoltativo): indirizzo HTTPS valido di un sito Web per ottenere assistenza con il catalogo.  
 
@@ -317,8 +318,8 @@ Questa versione include i miglioramenti seguenti:
 Per visualizzare il report, passare all'area di lavoro **Monitoraggio**, espandere **Report**, espandere **Report**, espandere **Aggiornamenti software - Conformità A** e selezionare **Conformità 9 - Dati complessivi su integrità e conformità**. Specificare lo stato **Gruppo di aggiornamento**, **Nome raccolta** e **Stato client**.
 
 Il report include le parti seguenti:
-- **Healthy Clients vs Total Clients** (Client integri rispetto a totale client): questo grafico a barre confronta i client "integri" che hanno comunicato con il sito nel periodo di tempo specificato rispetto al numero totale di client nella raccolta specificata.
-- **Compliance Overview** (Panoramica conformità): grafico a torta che mostra lo stato di conformità generale per il gruppo di aggiornamenti software specifico nei client attivi nella raccolta specificata.
+- **Clienti integri rispetto a client totali**: questo grafico a barre confronta i client "integri" che hanno comunicato con il sito nel periodo di tempo specificato rispetto al numero totale di client nella raccolta specificata.
+- **Panoramica conformità**: grafico a torta che visualizza lo stato di conformità generale per il gruppo di aggiornamenti software specifico nei client attivi nella raccolta specificata.
 - **Top 5 Non-Compliant by Article ID** (Primi 5 non conformi in base a ID articolo): questo grafico a barre visualizza i primi cinque aggiornamenti software nel gruppo specificato che non sono conformi nei client attivi nella raccolta specificata.
 - La parte inferiore del report è una tabella con altri dettagli, in cui sono elencati gli aggiornamenti software nel gruppo specificato.
 

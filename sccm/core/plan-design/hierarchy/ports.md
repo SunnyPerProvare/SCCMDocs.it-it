@@ -10,12 +10,12 @@ ms.assetid: c6777fb0-0754-4abf-8a1b-7639d23e9391
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b074ee02ec5e50fb5e495923538535cf8765dcdb
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 8338e08ffb6d09299123e363f27e586b650452fe
+ms.sourcegitcommit: 231111a704777789629911369f4d9593d2053fc0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53420941"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55065100"
 ---
 # <a name="ports-used-in-configuration-manager"></a>Porte usate in Configuration Manager
 
@@ -714,6 +714,11 @@ Il servizio del sistema Daemon Trivial FTP (TFTP) non richiede un nome utente o 
 - RFC 2349: Intervallo di timeout e opzioni dimensione trasferimento  
 
 TFTP è progettato per supportare ambienti di avvio privi di dischi. I daemon TFTP sono in ascolto sulla porta UDP 69 ma rispondono da una porta elevata allocata in modo dinamico. Di conseguenza, l'abilitazione di questa porta consente al servizio TFTP di ricevere richieste TFTP in ingresso ma non consente al server selezionato di rispondere. Non è possibile consentire al server selezionato di rispondere alle richieste TFTP in entrata a meno che il server TFTP non sia configurato per rispondere dalla porta 69.  
+
+Il punto di distribuzione che supporta PXE e il client in Windows PE selezionano porte di numero alto ad assegnazione dinamica per i trasferimenti TFTP. Queste porte sono definite da Microsoft in un intervallo compreso tra 49152 e 65535. Per altre informazioni, vedere [Panoramica dei servizi e requisiti delle porte per Windows](https://support.microsoft.com/help/832017/service-overview-and-network-port-requirements-for-windows)
+
+Durante l'effettivo avvio PXE, tuttavia, la scheda di rete presente nel dispositivo seleziona la porta di numero alto ad assegnazione dinamica usata durante il trasferimento TFTP. La scheda di rete presente nel dispositivo non è associata alle porte di numero alto ad assegnazione dinamica definite da Microsoft. È associata solo alle porte definite in RFC 350. Questa porta può essere una qualsiasi nell'intervallo compreso tra 0 e 65535. Per informazioni sulle porte di numero alto ad assegnazione dinamica usate dalla scheda di rete, contattare il produttore dell'hardware del dispositivo.
+
 
 #### <a name="bkmk_note5"></a> Nota 5: Comunicazione tra server del sito e sistemi del sito
 Per impostazione predefinita, la comunicazione tra il server del sito e i sistemi del sito è bidirezionale. Il server del sito avvia la comunicazione per configurare il sistema del sito, quindi la maggior parte dei sistemi del sito si riconnette al server del sito per inviare le informazioni sullo stato. I punti di distribuzione e i punti di Reporting Services non inviano informazioni sullo stato. Se si seleziona **Richiedi al server del sito di avviare le connessioni al sistema del sito** nelle proprietà del sistema del sito dopo aver eseguito l'installazione, il sistema del sito non avvierà la comunicazione al server del sito. Il server del sito avvia la comunicazione e usa l'account di installazione del sistema del sito per l'autenticazione al server del sistema del sito.  

@@ -10,12 +10,13 @@ ms.assetid: 56dc4b07-5aa4-43e2-9be8-d26ae5ff5613
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: dc4dc88b2a8fa9ba075fee51e187e02ae55c2cce
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ROBOTS: NOINDEX
+ms.openlocfilehash: 672257141c0672a76b89ee9d78184d2a4230280f
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344518"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54898359"
 ---
 # <a name="capabilities-in-technical-preview-1803-for-system-center-configuration-manager"></a>Funzionalità della Technical Preview 1803 per System Center Configuration Manager
 
@@ -41,8 +42,7 @@ Prima di installare questo aggiornamento, vedere l'articolo [Technical Preview](
 
  
 ## <a name="pull-distribution-points-support-cloud-distribution-points-as-source"></a>I punti di distribuzione pull supportano punti di distribuzione cloud come origine  
-<!--1321554-->
-Molti clienti usano [punti di distribuzione pull](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point) in uffici remoti o succursali per scaricare contenuto da un punto di distribuzione di origine attraverso la rete WAN. Se gli uffici remoti hanno una connessione Internet più efficiente, oppure se si vuole ridurre il carico sui collegamenti WAN, è ora possibile usare come origine un [punto di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) in Microsoft Azure. Quando si aggiunge un'origine nella scheda **Punto di distribuzione pull** delle proprietà dei punti di distribuzione, qualsiasi punto di distribuzione cloud nel sito viene elencato come punto di distribuzione disponibile. Il comportamento di entrambi i ruoli del sistema del sito rimane per altri versi invariato. 
+<!--1321554--> Molti clienti usano [punti di distribuzione pull](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point) in uffici remoti o succursali per scaricare contenuto da un punto di distribuzione di origine attraverso la rete WAN. Se gli uffici remoti hanno una connessione Internet più efficiente, oppure se si vuole ridurre il carico sui collegamenti WAN, è ora possibile usare come origine un [punto di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) in Microsoft Azure. Quando si aggiunge un'origine nella scheda **Punto di distribuzione pull** delle proprietà dei punti di distribuzione, qualsiasi punto di distribuzione cloud nel sito viene elencato come punto di distribuzione disponibile. Il comportamento di entrambi i ruoli del sistema del sito rimane per altri versi invariato. 
 
 ### <a name="prerequisites"></a>Prerequisiti
 - Per comunicare con Microsoft Azure, il punto di distribuzione pull richiede l'accesso a Internet.
@@ -54,8 +54,7 @@ Molti clienti usano [punti di distribuzione pull](/sccm/core/plan-design/hierarc
 
 
 ## <a name="partial-download-support-in-client-peer-cache-to-reduce-wan-utilization"></a>Riduzione dell'utilizzo della rete WAN tramite supporto parziale del download nella peer cache del client
-<!--1357346-->
-Le origini delle peer cache dei client sono ora in grado di dividere il contenuto in parti, grazie alle quali è possibile ridurre al minimo il trasferimento in rete, riducendo l'utilizzo della rete WAN. Il punto di gestione consente una traccia più dettagliata delle parti del contenuto e tenta di eliminare più download dello stesso contenuto per ogni gruppo di limiti. 
+<!--1357346--> Le origini di peer cache dei client sono ora in grado di dividere il contenuto in parti, grazie alle quali è possibile ridurre al minimo il trasferimento in rete, riducendo l'utilizzo della rete WAN. Il punto di gestione consente una traccia più dettagliata delle parti del contenuto e tenta di eliminare più download dello stesso contenuto per ogni gruppo di limiti. 
 
 ### <a name="example-scenario"></a>Scenario di esempio
 Contoso ha un sito primario singolo con due gruppi di limiti: Headquarters (HQ) (Sede centrale) e Branch Office (Succursale). Tra i gruppi di limiti esiste una relazione di fallback di 30 minuti. Il punto di gestione e il punto di distribuzione per il sito si trovano solo all'interno del limite di HQ. La succursale non ha alcun punto di distribuzione locale. Due dei quattro client presso la succursale vengono configurati come origini di peer cache. 
@@ -93,15 +92,13 @@ Contoso ha un sito primario singolo con due gruppi di limiti: Headquarters (HQ) 
 
 
 ## <a name="maintenance-windows-in-software-center"></a>Finestre di manutenzione in Software Center
-<!--1358131-->
-Software Center ora visualizza la finestra di manutenzione pianificata successiva. Nella scheda Stato installazione cambiare la visualizzazione da Tutto a Upcoming (Prossima). Visualizza l'intervallo di tempo e l'elenco delle distribuzioni pianificate. L'elenco è vuoto se non ci sono finestre di manutenzione future. 
+<!--1358131--> Software Center ora visualizza la finestra di manutenzione pianificata successiva. Nella scheda Stato installazione cambiare la visualizzazione da Tutto a Upcoming (Prossima). Visualizza l'intervallo di tempo e l'elenco delle distribuzioni pianificate. L'elenco è vuoto se non ci sono finestre di manutenzione future. 
 
 ![Software Center con l'elenco delle distribuzioni future nella scheda Stato installazione](media/1358131-software-center-maintenance-windows.png)
 
 
 ## <a name="custom-tab-for-webpage-in-software-center"></a>Scheda personalizzata per pagine Web in Software Center
-<!--1358132-->
-È ora possibile creare una scheda personalizzata per aprire una pagina Web in Software Center. Questa funzionalità consente di visualizzare il contenuto per gli utenti finali in modo coerente e affidabile. L'elenco seguente include alcuni esempi:
+<!--1358132--> È ora possibile creare una scheda personalizzata per aprire una pagina Web in Software Center. Questa funzionalità consente di visualizzare il contenuto per gli utenti finali in modo coerente e affidabile. L'elenco seguente include alcuni esempi:
 - Contatta IT: informazioni su come contattare il reparto IT dell'organizzazione
 - Centro assistenza IT: azioni self-service per l'IT, ad esempio la ricerca nella Knowledge Base o l'apertura di un ticket di supporto.
 - Documentazione per l'utente finale: articoli per gli utenti dell'organizzazione su diversi argomenti IT, ad esempio l'uso delle applicazioni o l'aggiornamento a Windows 10.

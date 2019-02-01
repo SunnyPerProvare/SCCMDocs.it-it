@@ -10,13 +10,12 @@ ms.assetid: ab5cda93-b67c-4aa5-904d-7b63ce790aa0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: f74d7925528e48c691ce7ca61b6dc0b5136f1df7
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: f97decbe40293ee45cdc75c3fb36f4c57662ac06
+ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32349477"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54896778"
 ---
 # <a name="install-updates-publisher"></a>Installare Updates Publisher
 
@@ -39,19 +38,19 @@ Installare ed eseguire Updates Publisher su edizioni a 64 bit dei sistemi operat
 ### <a name="prerequisites"></a>Prerequisiti
 Di seguito sono riportati i requisiti per il computer che esegue Updates Publisher.
 
--   **Sistema operativo a 64 bit**: il sistema in cui viene installato Updates Publisher deve eseguire un sistema operativo a 64 bit.
+-   **Sistema operativo a 64 bit**: il computer in cui viene installato Updates Publisher deve eseguire un sistema operativo a 64 bit.
 -   **WSUS 4.0 o versione successiva**:
     -   per soddisfare questo requisito, in Windows Server installare la console di amministrazione predefinita.
     -   Per Windows 10 e Windows 8.1, installare [Strumenti di amministrazione remota del server per sistemi operativi Windows](https://support.microsoft.com/help/2693643/remote-server-administration-tools-rsat-for-windows-operating-systems). Questo consente di installare il supporto necessario per l'uso di Updates Publisher (*API e cmdlet PowerShell* e *Console di gestione interfaccia utente*).
 -   **Autorizzazioni**:
-    -   Installazione: Amministratore locale
+    -   Installazione: amministratore locale
     -   Maggior parte delle operazioni: utente locale
-    -   Per la pubblicazione o per operazioni che coinvolgono WSUS: membro del gruppo WSUS Administrators nel server WSUS.
+    -   Pubblicazione o operazioni che interessano Windows Server Update Services (WSUS): membro del gruppo Amministratori WSUS nel server WSUS.
 
 ### <a name="supported-languages"></a>Lingue supportate
 Updates Publisher è disponibile solo in lingua inglese, ma può gestire aggiornamenti per altre lingue. Il supporto per le lingue dipende dall'attività, ad esempio pubblicazione, creazione o modifica di aggiornamenti.
 
-Durante l'esportazione o la pubblicazione di aggiornamenti, Updates Publisher consente di visualizzare il titolo e la descrizione dell'aggiornamento software in base alle impostazioni locali del computer in cui è installato.
+Durante l'esportazione o la pubblicazione di aggiornamenti, Updates Publisher visualizza il titolo e la descrizione dell'aggiornamento software in base alle impostazioni locali del computer in cui è installato.
 
 Si supponga, ad esempio, di creare un aggiornamento software con un titolo in inglese e spagnolo.
 
