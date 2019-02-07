@@ -10,12 +10,12 @@ ms.assetid: 34024741-edfa-4088-8599-d6bafc331e62
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f4e67050740b9d05dd33f2f79b7820b6dc8d9093
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 8bd926535f56e32430ae41c883623b80d142aebc
+ms.sourcegitcommit: 33e066aceaf321add1031df00e552e942c8351a7
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53415807"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55764430"
 ---
 # <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Gestire l'accesso ai servizi di O365 per i PC gestiti da System Center Configuration Manager
 
@@ -23,11 +23,17 @@ ms.locfileid: "53415807"
 
 <!--1191496--> Configurare l'accesso condizionale ai servizi di Office 365 per i PC gestiti da Configuration Manager.  
 
-> [!Note]  
-> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Abilitare le funzionalità facoltative degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+> [!Important]  
+> Tra cui MDM ibrida in locale l'accesso condizionale vengono [funzionalità deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
+> 
+> Se si usa l'accesso condizionale nei dispositivi gestiti con il client di Configuration Manager, per assicurarsi che siano ancora protette, prima di tutto consentire l'accesso condizionale in Intune per i dispositivi prima della migrazione. Abilitare la co-gestione in Configuration Manager, spostare il carico di lavoro dei criteri di conformità in Intune e quindi completare la migrazione dalla soluzione ibrida di Intune a Intune autonomo. Per altre informazioni, vedere [l'accesso condizionale con CO-gestione](https://docs.microsoft.com/sccm/comanage/quickstart-conditional-access). 
 
 
 Per informazioni sulla configurazione dell'accesso condizionale per dispositivi registrati e gestiti da Microsoft Intune, vedere [Gestire l'accesso ai servizi in System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md). Questo articolo riguarda anche i dispositivi che vengono aggiunti al dominio e la cui conformità non viene valutata.
+
+> [!Note]  
+> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Abilitare le funzionalità facoltative degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
 
 ## <a name="supported-services"></a>Servizi supportati  
 
@@ -78,11 +84,11 @@ Per informazioni sulla configurazione dell'accesso condizionale per dispositivi 
 
 -   **Richiedi registrazione in Azure Active Directory:** Questa regola controlla se il dispositivo dell'utente è l'area di lavoro aggiunti ad Azure AD e in caso contrario, il dispositivo viene registrato automaticamente in Azure AD. La registrazione automatica è supportata solo in Windows 8.1. Per i PC con Windows 7, distribuire un file MSI per eseguire la registrazione automatica. Per altre informazioni, vedere [Registrazione automatica dei dispositivi con Azure Active Directory](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup)  
 
--   **Tutti gli aggiornamenti richiesti installati con una scadenza maggiore di un determinato numero di giorni:** Specificare il valore per il periodo di tolleranza di scadenza della distribuzione per gli aggiornamenti richiesti sul dispositivo dell'utente. L'aggiunta di questa regola comporta l'installazione automatica degli aggiornamenti necessari in sospeso. Specificare gli aggiornamenti necessari nella regola **Aggiornamenti automatici necessari**.   
+-   **Tutti gli aggiornamenti richiesti installati con una scadenza precedente a un determinato numero di giorni:** Specificare il valore per il periodo di tolleranza di scadenza della distribuzione per gli aggiornamenti richiesti sul dispositivo dell'utente. L'aggiunta di questa regola comporta l'installazione automatica degli aggiornamenti necessari in sospeso. Specificare gli aggiornamenti necessari nella regola **Aggiornamenti automatici necessari**.   
 
 -   **Richiedi crittografia unità BitLocker:** Questa regola controlla se l'unità principale (ad esempio, c\\) nel dispositivo è crittografata con BitLocker. Se la crittografia Bitlocker non è abilitata nel dispositivo primario, l'accesso alla posta elettronica e ai servizi di SharePoint è bloccato.  
 
--   **Richiedi Antimalware:** Questa regola controlla se System Center Endpoint Protection o Windows Defender è abilitato e in esecuzione. Se non è abilitato, l'accesso alla posta elettronica e ai servizi di SharePoint è bloccato.  
+-   **Richiedi antimalware:** Questa regola controlla se System Center Endpoint Protection o Windows Defender è abilitato e in esecuzione. Se non è abilitato, l'accesso alla posta elettronica e ai servizi di SharePoint è bloccato.  
 
 -   **Segnalato come integro dal servizio di attestazione dell'integrità:** Questa condizione include quattro sottoregole per verificare la conformità del dispositivo con il servizio attestazione dell'integrità del dispositivo. Per altre informazioni, vedere [Attestazione dell'integrità](/sccm/core/servers/manage/health-attestation). 
 
