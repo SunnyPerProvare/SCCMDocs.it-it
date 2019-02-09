@@ -10,19 +10,19 @@ ms.assetid: bb95154b-f63e-4491-896e-41d732c802f8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a744463aa82951d68125c0d17d88ba5e8a1f2703
-ms.sourcegitcommit: 33e066aceaf321add1031df00e552e942c8351a7
+ms.openlocfilehash: dd91d8afb092f855179edaa07163d5fcaa2ac350
+ms.sourcegitcommit: 38f56f1d5803370f4262931c2dc4a532bfcf0594
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55764413"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55905591"
 ---
 # <a name="hybrid-mdm-with-configuration-manager-and-microsoft-intune"></a>Soluzione MDM ibrida con Configuration Manager e Intune
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 > [!Important]  
-> A partire dal 14 agosto 2018, la gestione ibrida dei dispositivi mobili è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures).
+> A partire dal 14 agosto 2018, la gestione ibrida dei dispositivi mobili è una [funzionalità deprecata](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Inizia con la versione del servizio Intune 1902 prevista alla fine di febbraio 2019, i nuovi clienti non è possibile creare una nuova connessione ibrida. 
 > <!--Intune feature 2683117-->  
 > Dopo il lancio in Azure oltre un anno fa, sono state aggiunte a Intune centinaia di nuove funzionalità del servizio leader di settore e richieste dai clienti. Il servizio offre ora molte più funzionalità di quelle offerte nella gestione di dispositivi mobili (MDM) ibrida. Intune in Azure offre un'esperienza amministrativa più integrata e semplificata per le esigenze di mobilità aziendale.
 > 
@@ -36,13 +36,20 @@ ms.locfileid: "55764413"
 > 
 > - Se si esegue la migrazione a Intune in Azure prima della fine dell'offerta MDM ibrida, non ci sarà alcun impatto sugli utenti finali.  
 > 
+> - L'1 settembre 2019, i dispositivi MDM ibridi rimanenti non riceveranno più criteri, app o aggiornamenti della sicurezza.  
+> 
 > - Le licenze rimangono invariate. Le licenze di Intune in Azure sono incluse con la soluzione MDM ibrida.  
 > 
 > - La funzionalità MDM locale in Configuration Manager non è deprecata. A partire da Configuration Manager versione 1810, è possibile usare MDM locale senza una connessione a Intune. Per altre informazioni, vedere [connessione di Intune non è più necessario per le nuove distribuzioni MDM locale](/sccm/core/plan-design/changes/whats-new-in-version-1810#bkmk_opmdm). 
 > 
-> - La funzionalità di accesso condizionale di un'istanza locale di Configuration Manager viene anche deprecata con MDM ibrida. Se si usa l'accesso condizionale nei dispositivi gestiti con il client di Configuration Manager, per assicurarsi che siano ancora protette, prima di tutto consentire l'accesso condizionale in Intune per i dispositivi prima della migrazione. Abilitare la co-gestione in Configuration Manager, spostare il carico di lavoro dei criteri di conformità in Intune e quindi completare la migrazione dalla soluzione ibrida di Intune a Intune autonomo. Per altre informazioni, vedere [l'accesso condizionale con CO-gestione](https://docs.microsoft.com/sccm/comanage/quickstart-conditional-access). 
-> 
-> - L'1 settembre 2019, i dispositivi MDM ibridi rimanenti non riceveranno più criteri, app o aggiornamenti della sicurezza.  
+> - La funzionalità di accesso condizionale di un'istanza locale di Configuration Manager viene anche deprecata con MDM ibrida. Se si usa l'accesso condizionale nei dispositivi gestiti con il client di Configuration Manager, assicurarsi che siano protetti prima della migrazione. 
+>     1. Configurare i criteri di accesso condizionale in Azure
+>     2. Configurare i criteri di conformità nel portale di Intune 
+>     3. Completare la migrazione ibrida e impostare l'autorità MDM su Intune
+>     4. Abilitare la co-gestione
+>     5. Spostare il carico di lavoro conformità CO-gestione dei criteri in Intune 
+>
+>     Per altre informazioni, vedere [l'accesso condizionale con CO-gestione](https://docs.microsoft.com/sccm/comanage/quickstart-conditional-access). 
 > 
 > **Operazioni di preparazione alla modifica**
 > 
