@@ -2,7 +2,7 @@
 title: Porte usate per le connessioni
 titleSuffix: Configuration Manager
 description: Informazioni sulle porte di rete necessarie e personalizzabili usate da Configuration Manager per le connessioni.
-ms.date: 09/10/2018
+ms.date: 01/29/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: c6777fb0-0754-4abf-8a1b-7639d23e9391
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8338e08ffb6d09299123e363f27e586b650452fe
-ms.sourcegitcommit: 231111a704777789629911369f4d9593d2053fc0
+ms.openlocfilehash: a65b1f30815eca411a64a72b1a35acc9d7dad34c
+ms.sourcegitcommit: 013ca76d5a3c07306de7b5bfd985b0289d1be599
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55065100"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55482538"
 ---
 # <a name="ports-used-in-configuration-manager"></a>Porte usate in Configuration Manager
 
@@ -126,6 +126,10 @@ Oltre alle porte elencate in questa tabella, il proxy di riattivazione usa anche
 |-----------------|---------|---------|  
 |Riattivazione LAN|9 <sup>[vedere la nota 2](#bkmk_note2) Porta alternativa disponibile</sup>|--|  
 |Proxy di riattivazione|25536 <sup>[vedere la nota 2](#bkmk_note2) Porta alternativa disponibile</sup>|--|  
+|Trasmissione della peer cache di Windows PE|8004|--|  
+|Download della peer cache di Windows PE|--|8003|  
+
+Per altre informazioni, vedere [Peer cache di Windows PE](/sccm/osd/get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md#-requirements-for-a-client-to-use-a--windows-pe-peer-cache-source).
 
 
 ###  <a name="BKMK_PortsClient-PolicyModule"></a> Client -- > Modulo criteri del servizio Registrazione dispositivi di rete (SCEP) di Configuration Manager   

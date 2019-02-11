@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 68407ab8-c205-44ed-9deb-ff5714451624
-ms.openlocfilehash: ad084aabca6f3b0fd920fd2c9b406efff36005a1
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.openlocfilehash: 0ba5a484fe11185b46125de0d8764bce153f577d
+ms.sourcegitcommit: a2ecd84d93f431ee77848134386fec14031aed6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43995353"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55230852"
 ---
 # <a name="integrate-upgrade-readiness-with-configuration-manager"></a>Integrare Preparazione aggiornamenti con Configuration Manager
 
@@ -50,10 +50,14 @@ Configurare queste impostazioni usando le impostazioni del client di Configurati
 
 Usare la [Procedura guidata per i servizi di Azure](/sccm/core/servers/deploy/configure/azure-services-wizard) per semplificare il processo di configurazione dei servizi di Azure usati con Configuration Manager. Per connettere Configuration Manager a Preparazione aggiornamenti, creare la registrazione di un'app Azure Active Directory (Azure AD) di tipo *App Web/API* nel [portale di Azure](https://portal.azure.com). Per altre informazioni su come creare la registrazione di un'app, vedere [Registrare l'applicazione nel tenant di Azure AD](/azure/active-directory/active-directory-app-registration). 
 
-Nel portale di Azure assegnare le autorizzazioni di *Collaboratore* all'app Web appena registrata. Impostare queste autorizzazioni nel gruppo di risorse contenente l'area di lavoro di Log Analytics che ospita i dati di Preparazione aggiornamenti. La Procedura guidata per i servizi di Azure usa questa registrazione dell'app per consentire a Configuration Manager di comunicare in modo sicuro con Azure AD e connettere l'infrastruttura ai dati di Preparazione aggiornamenti.
+Nel portale di Azure assegnare le autorizzazioni seguenti all'app Web appena registrata:
+- Autorizzazioni di *Lettore* per il gruppo di risorse contenente l'area di lavoro di Log Analytics che ospita i dati di Preparazione aggiornamenti
+- Autorizzazioni di *Collaboratore* per l'area di lavoro di Log Analytics che ospita i dati di Preparazione aggiornamenti
+
+La Procedura guidata per i servizi di Azure usa questa registrazione dell'app per consentire a Configuration Manager di comunicare in modo sicuro con Azure AD e connettere l'infrastruttura ai dati di Preparazione aggiornamenti.
 
 > [!IMPORTANT]  
-> Concedere le autorizzazioni di *Collaboratore* all'app stessa e non a un'identità utente di Azure AD. È l'app registrata ad accedere ai dati per conto dell'infrastruttura di Configuration Manager. Per concedere le autorizzazioni, cercare il nome della registrazione dell'app nell'area **Aggiungi utenti** quando si assegna l'autorizzazione. 
+> Concedere le autorizzazioni all'app stessa e non a un'identità utente di Azure AD. È l'app registrata ad accedere ai dati per conto dell'infrastruttura di Configuration Manager. Per concedere le autorizzazioni, cercare il nome della registrazione dell'app nell'area **Aggiungi utenti** quando si assegna l'autorizzazione. 
 > 
 > Questo processo è analogo a quello che aggiunge a Configuration Manager le autorizzazioni per Log Analytics. È necessario completare questi passaggi prima che la registrazione dell'app venga importata in Configuration Manager con la *Procedura guidata per i servizi di Azure*.
 > 

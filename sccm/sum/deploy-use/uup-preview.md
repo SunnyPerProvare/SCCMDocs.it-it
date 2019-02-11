@@ -2,7 +2,7 @@
 title: Anteprima di UUP
 titleSuffix: Configuration Manager
 description: Istruzioni per l'anteprima dell'integrazione UUP
-ms.date: 01/25/2019
+ms.date: 01/30/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 27a960758d8d3939798ae270404d5dd1afbea62d
-ms.sourcegitcommit: ad25a7bdd983c5a0e4c95bffdc61c9a1ebcbb765
+ms.openlocfilehash: fde592b02d78c0a2ab29d77f7e55273c143b09ee
+ms.sourcegitcommit: f7b2fe522134cf102a3447505841cee315d3680c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55072986"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55570133"
 ---
 # <a name="uup-private-preview-instructions"></a>Istruzioni per l'anteprima privata di UUP
 
@@ -40,7 +40,9 @@ Per altre informazioni su UUP, vedere il post del blog di Windows [An update on 
 
 ### <a name="cumulative-updates"></a>Aggiornamenti cumulativi
 
-Gli aggiornamenti cumulativi con UUP consentono la distribuzione offline dei contenuti dei Language Pack e delle funzionalità su richiesta, in modo da consentire agli utenti finali di ottenerli su richiesta senza richiedere una connessione a Internet o complesse attività di gestione temporanea da parte degli amministratori.
+- Gli aggiornamenti cumulativi con UUP consentono la distribuzione offline dei contenuti dei Language Pack e delle funzionalità su richiesta, in modo da consentire agli utenti finali di ottenerli su richiesta senza richiedere una connessione a Internet o complesse attività di gestione temporanea da parte degli amministratori.
+
+- Gli aggiornamenti cumulativi con UUP includono gli aggiornamenti dello stack di manutenzione oltre agli aggiornamenti della sicurezza cumulativi mensili. Questo comportamento consente di risolvere problemi con l'orchestrazione di questi due aggiornamenti. Garantisce che gli aggiornamenti dello stack di manutenzione siano applicati per installare gli aggiornamenti cumulativi senza dover gestire e orchestrare le relazioni.
 
 
 
@@ -66,9 +68,7 @@ La proprietà **MUUrl** deve essere `https://sws.update.microsoft.com`. Per modi
 
 ### <a name="2-update-configmgr"></a>2. Aggiornare ConfigMgr
 
-Se si sincronizzano i file di installazione rapida nell'ambiente in uso, viene richiesto ConfigMgr 1810 Current Branch per gli ambienti di produzione o 1812 Technical Preview Branch per gli ambienti lab.
-
-Se non si sincronizzano i file di installazione rapida nell'ambiente in uso, viene richiesto ConfigMgr 1810 Hotfix KB4482615 per gli ambienti di produzione o 1812 Technical Preview Branch per gli ambienti lab.
+Apportare le modifiche seguenti al sito di Configuration Manager per supportare questa anteprima di UUP:
 
 
 #### <a name="diagnostics-and-usage-data-level"></a>Livello dati di diagnostica e di utilizzo

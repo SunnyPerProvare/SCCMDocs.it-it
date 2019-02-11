@@ -2,7 +2,7 @@
 title: Support Center
 titleSuffix: Configuration Manager
 description: Risolvere i problemi dei client di Configuration Manager con Support Center.
-ms.date: 11/27/2018
+ms.date: 01/30/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: c631197d-7daa-4faa-9e22-980cd6d604c2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6d9a4df006619278504d3a4967b813aa2989ebf7
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: 828edc3c90b4dd93f4d86772b863816bbc8c9130
+ms.sourcegitcommit: 013ca76d5a3c07306de7b5bfd985b0289d1be599
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52458120"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55482419"
 ---
 # <a name="support-center-for-configuration-manager"></a>Support Center per Configuration Manager
 
@@ -88,6 +88,8 @@ Per evitare questo problema, usare i formati di nome utente seguenti per connett
 Quando ci si connette ai client remoti usando il cmdlet [New-CMMachineConnection](https://go.microsoft.com/fwlink/p/?linkid=390542) di PowerShell, Support Center crea una connessione SMB a ogni client remoto. Tali connessioni vengono mantenute dopo aver completato la raccolta dei dati. Per evitare di superare il numero massimo di connessioni remote per Windows, usare il comando `net use` per visualizzare il set di connessioni remote attualmente attivo. A questo punto, disabilitare tutte le connessioni non necessarie usando il comando seguente: `net use <connection_name> /d`, 
 dove `<connection_name>` è il nome della connessione remota.
 
+#### <a name="application-deployment-evaluation-cycle-request-isnt-sent-correctly-to-remote-machines"></a>La richiesta del ciclo di valutazione della distribuzione dell'applicazione non viene inviata correttamente ai computer remoti
+<!--2849356--> In Support Center, se si seleziona **Application deployment evaluation** (Valutazione distribuzione applicazione) dall'azione **Invoke trigger** (Richiama trigger) nella scheda **Content** (Contenuto), questa azione avvia un'attività che valuta le applicazioni distribuite. Se si è connessi a un client locale, vengono valutate le distribuzioni delle applicazioni sia per computer che per utente. Se si è connessi a un client remoto, invece, vengono valutate solo le distribuzioni delle applicazioni per computer.
 
 
 ## <a name="next-steps"></a>Passaggi successivi

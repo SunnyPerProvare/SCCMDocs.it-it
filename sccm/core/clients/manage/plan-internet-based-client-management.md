@@ -10,12 +10,12 @@ ms.assetid: 83a7c934-3b11-435d-ba22-cbc274951e83
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1ce1596a6882b7756339eff3a9bf65a9420a6cec
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: f334c4ec1ef66ba85026da6bc970e34b94b51204
+ms.sourcegitcommit: a2ecd84d93f431ee77848134386fec14031aed6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53424528"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55230869"
 ---
 # <a name="plan-for-internet-based-client-management-in-system-center-configuration-manager"></a>Pianificare la gestione client basata su Internet in System Center Configuration Manager
 
@@ -48,8 +48,8 @@ La gestione client basata su Internet consente di gestire i client di System Cen
 
   Se si dispone di un punto di aggiornamento software configurato per accettare le connessioni a Internet, i client basati su Internet di Configuration Manager eseguono l'analisi sempre rispetto a questo punto per determinare gli aggiornamenti software necessari. Tuttavia, i client su Internet provano a scaricare prima gli aggiornamenti software da Microsoft Update piuttosto che da un punto di distribuzione basato su Internet. Solo in caso di errore, proveranno quindi a scaricare gli aggiornamenti software richiesti da un punto di distribuzione basato su Internet. I client non configurati per la gestione client basata su Internet non provano mai a scaricare gli aggiornamenti software da Microsoft Update, ma usano sempre i punti di distribuzione di Configuration Manager.  
  
-[!Tip]  
-Il client di Configuration Manager determina automaticamente se si trova sull'intranet o su Internet. Se il client riesce a contattare un controller di dominio o un punto di gestione locale, imposta il proprio tipo di connessione su Ora intranet. In caso contrario, passa a Ora Internet e il client usa i punti di gestione, i punti di aggiornamento software e i punti di distribuzione assegnati al proprio sito per la comunicazione.
+> [!Tip]  
+> Il client di Configuration Manager determina automaticamente se si trova sull'intranet o su Internet. Se il client riesce a contattare un controller di dominio o un punto di gestione locale, imposta il proprio tipo di connessione su Ora intranet. In caso contrario, passa a Ora Internet e il client usa i punti di gestione, i punti di aggiornamento software e i punti di distribuzione assegnati al proprio sito per la comunicazione.
 
 ##  <a name="considerations-for-client-communications-from-the-internet-or-untrusted-forest"></a>Considerazioni per le comunicazioni client da Internet o da una foresta non trusted  
  I seguenti ruoli del sistema del sito installati nei siti primari supportano connessioni da client che si trovano in percorsi non attendibili, come Internet o una foresta non trusted (i siti secondari non supportano le connessioni client da percorsi non attendibili):  

@@ -10,12 +10,12 @@ ms.assetid: 92b339ef-2723-4322-bec6-077b3e8846b0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a16794fbcff6f21f2240f69998c576994a57502c
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.openlocfilehash: 818065f4ea3f537dc565d06c278b710b224a4031
+ms.sourcegitcommit: f0ec334a70d0cdd3f5f185ac7787b700947f82de
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893628"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55303217"
 ---
 # <a name="prerequisites-for-installing-configuration-manager-sites"></a>Prerequisiti per l'installazione di siti di Configuration Manager
 

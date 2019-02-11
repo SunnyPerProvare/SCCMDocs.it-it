@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: fdf05118-162a-411e-b72e-386b9dc9a5e1
-ms.openlocfilehash: cbaaa84b0c4b3c9b05e7ffbae565a7b6da7c7426
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 5ec545fd2ae6c775fbbd0d984dcdd487359ab043
+ms.sourcegitcommit: f7b2fe522134cf102a3447505841cee315d3680c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53423882"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "55570167"
 ---
 # <a name="prerequisites-for-software-updates-in-system-center-configuration-manager"></a>Prerequisiti per gli aggiornamenti software in System Center Configuration Manager
 
@@ -32,7 +32,8 @@ Questo articolo elenca i prerequisiti per gli aggiornamenti software in System C
 ### <a name="windows-server-update-services"></a>Windows Server Update Services  
  Windows Server Update Services (WSUS) è necessario per la sincronizzazione degli aggiornamenti software e per l'analisi dell'applicabilità degli aggiornamenti software nei client. È necessario installare il server WSUS prima di creare il ruolo del punto di aggiornamento software. Per un punto di aggiornamento software sono supportate le versioni di WSUS seguenti:  
 
--   WSUS 10.0 (ruolo in Windows Server 2016)
+-   WSUS 10.0.14393 (ruolo in Windows Server 2016)
+-   WSUS 10.0.17763 (ruolo in Windows Server 2019) (richiede Configuration Manager 1810 o versioni successive)
 -   WSUS 6.2 e 6.3 (ruolo in Windows Server 2012 e Windows Server 2012 R2)
 
 >[!NOTE]

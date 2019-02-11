@@ -10,12 +10,12 @@ ms.assetid: 6bce416b-761d-4b23-bd33-5b7c30edb10d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4d892e8d194f61fece977c91ce36ba46cf9dd53d
-ms.sourcegitcommit: a3cec96a771eed69e58a29917d1a3fe1a5fb2e73
+ms.openlocfilehash: e1becb8cc719466edabfb55ce82f9aa5e3345e3f
+ms.sourcegitcommit: 013ca76d5a3c07306de7b5bfd985b0289d1be599
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54250715"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55482436"
 ---
 # <a name="pre-release-features-in-configuration-manager"></a>Funzionalità di versioni non definitive in Configuration Manager
 
@@ -78,6 +78,7 @@ Quando si abilita una funzionalità non definitiva, gestione gerarchie (HMAN) di
 | API provider SMS <!--1359052--> | Versione 1810 | ![Non ancora](media/red_x.png) |
 | [Sistema del sito HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http) <!--1356889,1358228--> | Versione 1806 | Versione 1810 |
 | [App client per dispositivi con co-gestione](/sccm/comanage/workloads#client-apps) <!--1357892--> | Versione 1806 | ![Non ancora](media/red_x.png) |
+| [Estensioni SCAP](/sccm/compliance/plan-design/scap/about-scap) <!--3607889--> | Versione 1806 | ![Non ancora](media/red_x.png) |
 | [Package Conversion Manager](/sccm/apps/pcm/package-conversion-manager) <!--1357861--> | Versione 1806 | Versione 1810 |
 | [Supporto per Cisco AnyConnect 4.0.07x e versioni successive per iOS](/sccm/mdm/deploy-use/create-vpn-profiles) <!--1357393--> | Versione 1802 | Versione 1802 <br>con aggiornamento 4163547 |
 | [Distribuzioni in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence) <!--1356837--> | Versione 1802 | Versione 1806 |
