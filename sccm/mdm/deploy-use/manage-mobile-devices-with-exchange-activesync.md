@@ -10,12 +10,13 @@ ms.assetid: aba688d9-fd5b-4c42-8cb4-f7e1b161ef50
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 98b573dcf72f4bbf3cde73cb9a5cd7905b8a0248
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a157e8696a9b4b24acb722be037185351f94ccdc
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53417320"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56127882"
 ---
 # <a name="manage-mobile-devices-with-system-center-configuration-manager-and-exchange"></a>Gestire i dispositivi mobili con System Center Configuration Manager ed Exchange
 
@@ -44,7 +45,7 @@ Usare il connettore Exchange Server in System Center Configuration Manager quand
 ## <a name="required-security-permissions"></a>Autorizzazioni di sicurezza richieste  
  È necessario disporre delle seguenti autorizzazioni di sicurezza per configurare il connettore Exchange Server:  
 
-- Per aggiungere, modificare ed eliminare il connettore Exchange Server: **Modificare** l'autorizzazione per il **sito** oggetto.  
+- Per aggiungere, modificare ed eliminare il connettore Exchange Server: autorizzazione **Modifica** per l'oggetto **Sito**.  
 
 - Per configurare le impostazioni del dispositivo mobile: **ModifyConnectorPolicy** l'autorizzazione per il **sito** oggetto.  
 
@@ -52,11 +53,11 @@ Usare il connettore Exchange Server in System Center Configuration Manager quand
 
   È necessario disporre delle seguenti autorizzazioni di sicurezza per gestire i dispositivi mobili:  
 
-- Per cancellare un dispositivo mobile: **Elimina risorsa** per il **raccolta** oggetto.  
+- Per cancellare un dispositivo mobile: **Elimina risorsa** per l'oggetto **Raccolta**.  
 
-- Per annullare un comando di cancellazione dati: **Modifica risorsa** per il **raccolta** oggetto.  
+- Per annullare un comando di cancellazione dati: **Modifica risorsa** per l'oggetto **Raccolta**.  
 
-- Per consentire e bloccare i dispositivi mobili: **Modifica risorsa** per il **raccolta** oggetto.  
+- Per consentire e bloccare i dispositivi mobili: **Modifica risorsa** per l'oggetto **Raccolta**.  
 
   Il ruolo di sicurezza **Amministratore operazioni** include le autorizzazioni necessarie per gestire i dispositivi mobili utilizzando il connettore Exchange Server.  
 

@@ -10,12 +10,13 @@ ms.assetid: 522c2e82-20eb-4f38-859b-d55640b24e32
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6e5aeb6a23231af19280d9eae58945bd76ee5ccd
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 0e80a001153012763f56686df66ab7c6fcbf9b88
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53414634"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56127389"
 ---
 # <a name="confirm-domain-name-requirements-with-system-center-configuration-manager-and-microsoft-intune"></a>Confermare i requisiti del nome di dominio con System Center Configuration Manager e Microsoft Intune
 

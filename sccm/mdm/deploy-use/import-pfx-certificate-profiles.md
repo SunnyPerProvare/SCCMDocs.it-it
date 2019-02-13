@@ -10,12 +10,13 @@ ms.assetid: e3bb3e13-3037-4122-93bc-504bfd080a4d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 214dcdca927e515f776e99f005f968a4b98f4112
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e694b81943dda937f1d95765f75f182e072bc7da
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53418833"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156907"
 ---
 # <a name="how-to-create-pfx-certificate-profiles-by-importing-certificate-details"></a>Creare profili certificato PFX importando i dettagli dei certificati
 
@@ -53,11 +54,11 @@ System Center Configuration Manager consente di importare credenziali di certifi
 
     -   **Nome**: Immettere un nome univoco per il profilo certificato. È possibile usare un massimo di 256 caratteri.  
 
-    -   **Descrizione**: Fornire una descrizione che offra una panoramica del profilo certificato e altre informazioni rilevanti per facilitarne l'identificazione nella console di System Center Configuration Manager. È possibile usare un massimo di 256 caratteri.  
+    -   **Descrizione**: digitare una descrizione che offra una panoramica del profilo certificato e altre informazioni rilevanti per facilitarne l'identificazione nella console di System Center Configuration Manager. È possibile usare un massimo di 256 caratteri.  
 
-    -   **Specificare il tipo di profilo certificato che si desidera creare**: Per i certificati PFX, scegliere una delle opzioni seguenti:  
+    -   **Specificare il tipo di profilo del certificato che si desidera creare**: Per i certificati PFX, scegliere una delle opzioni seguenti:  
 
-        -   **Impostazioni di PKCS #12 (PFX) di scambio informazioni personali - importazione**: Crea un profilo certificato importando a livello di codice le informazioni da certificati esistenti.  
+        -   **Scambio informazioni personali -- Impostazioni PKCS #12 (PFX) -- Importa**: Crea un profilo certificato importando a livello di codice le informazioni da certificati esistenti.  
 
         -   **Personal Information Exchange - impostazioni PKCS #12 (PFX) - Crea**: Crea un profilo certificato PFX usando credenziali fornite da un'autorità di certificazione.  Per altre informazioni, vedere [Come creare profili certificato PFX usando un'autorità di certificazione](../../mdm/deploy-use/create-pfx-certificate-profiles.md).
 

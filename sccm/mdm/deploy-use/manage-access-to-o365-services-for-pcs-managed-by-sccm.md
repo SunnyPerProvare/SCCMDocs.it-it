@@ -10,12 +10,13 @@ ms.assetid: 34024741-edfa-4088-8599-d6bafc331e62
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8bd926535f56e32430ae41c883623b80d142aebc
-ms.sourcegitcommit: 33e066aceaf321add1031df00e552e942c8351a7
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b45e9f586616a1f620864a6e6dc8d0777a118251
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55764430"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56122288"
 ---
 # <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Gestire l'accesso ai servizi di O365 per i PC gestiti da System Center Configuration Manager
 
@@ -86,7 +87,7 @@ Per informazioni sulla configurazione dell'accesso condizionale per dispositivi 
 
 -   **Tutti gli aggiornamenti richiesti installati con una scadenza precedente a un determinato numero di giorni:** Specificare il valore per il periodo di tolleranza di scadenza della distribuzione per gli aggiornamenti richiesti sul dispositivo dell'utente. L'aggiunta di questa regola comporta l'installazione automatica degli aggiornamenti necessari in sospeso. Specificare gli aggiornamenti necessari nella regola **Aggiornamenti automatici necessari**.   
 
--   **Richiedi crittografia unità BitLocker:** Questa regola controlla se l'unità principale (ad esempio, c\\) nel dispositivo è crittografata con BitLocker. Se la crittografia Bitlocker non è abilitata nel dispositivo primario, l'accesso alla posta elettronica e ai servizi di SharePoint è bloccato.  
+-   **Richiedi crittografia unità BitLocker:** Questa regola controlla se l'unità principale (ad esempio, c\\) nel dispositivo è crittografata con BitLocker. Se BitLocker crittografia non è abilitata sul dispositivo primario, l'accesso alla posta elettronica e SharePoint services è bloccato.  
 
 -   **Richiedi antimalware:** Questa regola controlla se System Center Endpoint Protection o Windows Defender è abilitato e in esecuzione. Se non è abilitato, l'accesso alla posta elettronica e ai servizi di SharePoint è bloccato.  
 

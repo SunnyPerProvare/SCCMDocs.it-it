@@ -10,12 +10,13 @@ ms.assetid: d240a836-c49b-49ab-a920-784c062d6748
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a186e0b2c4b355cabcaaeb3b3124b65d3588fbc8
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6bbe52a282db016077cb96144938a0d443955f6c
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32350963"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56127440"
 ---
 # <a name="how-to-create-pfx-certificate-profiles-using-a-certificate-authority"></a>Come creare profili certificato PFX usando un'autorità di certificazione
 
@@ -41,7 +42,7 @@ Per importare le credenziali dai file dei certificati esistenti, vedere [How to 
 
 4.  Nella pagina **Generale** della **Creazione guidata profilo certificato** specificare le informazioni seguenti:  
 
-    -   **Nome**: immettere un nome univoco per il profilo certificato. È possibile usare un massimo di 256 caratteri.  
+    -   **Nome**: Immettere un nome univoco per il profilo certificato. È possibile usare un massimo di 256 caratteri.  
 
     -   **Descrizione**: digitare una descrizione che offra una panoramica del profilo certificato e altre informazioni rilevanti per facilitarne l'identificazione nella console di System Center Configuration Manager. È possibile usare un massimo di 256 caratteri.  
 

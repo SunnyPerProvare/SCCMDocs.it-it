@@ -10,12 +10,13 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: b552391d-abc0-48a2-a429-93605a13a66a
-ms.openlocfilehash: 26d6f9b928a7acdfbeb6baac3c3ce1c29cc127d9
-ms.sourcegitcommit: d021f82e4bc35a8e9b5d291bf779ce52b4f47eb8
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 46b5034cb95193a07421fe79a445dac0f5b28503
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53656459"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56124262"
 ---
 # <a name="import-configuration-manager-data-to-microsoft-intune"></a>Importare i dati di Configuration Manager in Microsoft Intune 
 
@@ -183,7 +184,7 @@ Nella fase 1 si selezionano gli oggetti da individuare e lo strumento raccoglie 
 
         - **Nome server sito**: Specificare il nome di dominio completo del server del sito per importare gli oggetti. Lo strumento individua solo gli oggetti accessibili dall'utente che lo esegue. In genere, è consigliabile specificare il sito principale ed eseguire lo strumento con un utente che abbia accesso a tutti gli oggetti nella gerarchia dei siti.  
 
-        - **Codice sito**: Fornire il codice del sito per il server del sito. È possibile trovare il codice di tre lettere nella parte superiore della console di Configuration Manager.  
+        - **Codice del sito**: Fornire il codice del sito per il server del sito. È possibile trovare il codice di tre lettere nella parte superiore della console di Configuration Manager.  
 
         - **Tipi di oggetto per importare**: Scegliere gli oggetti che si desidera che lo strumento per raccogliere. È possibile scegliere **Select all** (Seleziona tutto) per scegliere tutti gli oggetti oppure selezionare singoli tipi di oggetti.  
 

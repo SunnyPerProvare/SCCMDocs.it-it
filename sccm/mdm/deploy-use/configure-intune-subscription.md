@@ -10,12 +10,13 @@ ms.assetid: 99de8fe7-560e-401a-8ab2-6d87d091be17
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a009159a4bd0588f80f140f588b17911101cc72c
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 9ec6756e5c180561bef10bba799e3fdba3dcc303
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53418561"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56137627"
 ---
 # <a name="configure-your-intune-subscription-with-system-center-configuration-manager-and-microsoft-intune"></a>Configurare la sottoscrizione di Intune con System Center Configuration Manager e Microsoft Intune
 
@@ -58,7 +59,7 @@ La sottoscrizione di Intune esegue le operazioni seguenti:
      > [!NOTE]
      >  Se un utente viene rimosso dalla raccolta, il dispositivo dell'utente continuerà a essere gestito per un massimo di 24 ore finché il record utente non verrà rimosso dal database utenti.
 
-   - **Nome della società**: Specificare il nome della società.
+   - **Nome società**: Specificare il nome della società.
 
    - **URL documentazione sulla privacy**: Se si pubblicano le informazioni sulla privacy della società a un collegamento accessibile da Internet, fornire un collegamento che gli utenti possono accedere dal portale aziendale, ad esempio http://www.contoso.com/CP_privacy.html. Le informazioni sulla privacy possono chiarire quali informazioni gli utenti condividono con la società.
 

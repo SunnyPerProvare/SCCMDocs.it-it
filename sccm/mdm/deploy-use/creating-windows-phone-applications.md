@@ -10,18 +10,19 @@ ms.assetid: 68fe11fa-5fb2-4b81-b0f5-b6f2392fb4ad
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 77eb0b750934641ceb66b2c8aa611544c654f54f
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 24ce7609a2e3e3ec9cfd9363ebd58cba3ec4dadd
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385440"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56120665"
 ---
 # <a name="create-windows-phone-applications-in-configuration-manager"></a>Creare applicazioni di Windows Phone in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Le applicazioni di Configuration Manager hanno uno o più tipi di distribuzione. Il tipo di distribuzione include i file di installazione e le informazioni necessarie per distribuire il software in un dispositivo. Un tipo di distribuzione contiene anche le regole che specificano quando e come deve essere distribuito il software.  
+Le applicazioni di Configuration Manager hanno uno o più tipi di distribuzione, Il tipo di distribuzione include i file di installazione e le informazioni necessarie per distribuire il software in un dispositivo. Un tipo di distribuzione contiene anche le regole che specificano quando e come deve essere distribuito il software.  
 
 Per la procedura necessaria per creare le applicazioni e i tipi di distribuzione di Configuration Manager, vedere l'articolo su come [creare un'applicazione](/sccm/apps/deploy-use/create-applications#bkmk_create). 
 

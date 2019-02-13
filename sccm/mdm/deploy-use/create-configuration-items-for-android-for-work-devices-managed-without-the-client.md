@@ -8,12 +8,13 @@ ms.topic: conceptual
 ms.assetid: ab6784fd-8c57-4be9-858f-50fe39f2ff5f
 author: aczechowski
 ms.author: aaroncz
-ms.openlocfilehash: 0b2104b72a155f269beefc6f64c2615b62266b66
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 15e0c2ad91e512551e55d507d6a84bde3e46396f
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53415467"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56127406"
 ---
 # <a name="how-to-create-configuration-items-for-android-for-work-devices-managed-with-intune"></a>Come creare elementi di configurazione per dispositivi Android for Work gestiti con Intune 
 
@@ -92,7 +93,7 @@ ms.locfileid: "53415467"
 Nessuna delle opzioni di **Consenti la condivisione dei dati tra i profili di lavoro e personali** impedisce il comportamento di copia e incolla. Usare un'impostazione personalizzata che può essere configurata per impedire le operazioni di copia e incolla. L'impostazione è configurabile tramite un URI personalizzato.
 
 - URI OMA: ./Vendor/MSFT/WorkProfile/DisallowCrossProfileCopyPaste
-- Tipo di valore: Boolean
+- Tipo valore: Boolean
 
 Impostando DisallowCrossProfileCopyPaste su true si impedisce il comportamento di copia e incolla tra Android for Work personale e i profili di lavoro.
 

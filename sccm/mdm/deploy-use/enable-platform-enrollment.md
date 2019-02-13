@@ -10,22 +10,23 @@ ms.assetid: a9163b77-a67d-4139-8272-bb1dfdb8707c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9a93d58f990738a93a489e0ee5920098ea04fce0
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 4e9c9cd6f881fd43c6d6824fbca5dc05f00fc5ea
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32345887"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56136746"
 ---
 # <a name="enable-platform-enrollment-with-system-center-configuration-manager-and-microsoft-intune"></a>Abilitare la registrazione della piattaforma con System Center Configuration Manager e Microsoft Intune
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 Piattaforme per dispositivi diverse richiedono una configurazione aggiuntiva per abilitare la registrazione dei dispositivi.
-  - [Impostazione della registrazione per iOS e Mac](enroll-hybrid-ios-mac.md): ottenere un certificato push MDM Apple
+  - [iOS e il programma di installazione di Mac registrazione](enroll-hybrid-ios-mac.md): Ottenere un certificato Push MDM Apple
 
-  - [Impostazione della registrazione per Windows](enroll-hybrid-windows.md): configurare il DNS e abilitare la registrazione per i dispositivi PC Windows, Windows Mobile 10 e Windows Phone
+  - [Impostazione della registrazione Windows](enroll-hybrid-windows.md): Configurare il server DNS e abilitare la registrazione dei dispositivi sia i PC Windows, Windows 10 Mobile e Windows Phone
 
-  - [Android](enroll-hybrid-android.md): i dispositivi Android non richiedono operazioni aggiuntive per abilitare la registrazione
+  - [Android](enroll-hybrid-android.md): I dispositivi Android non richiedono operazioni aggiuntive per abilitare la registrazione
 
 Dopo aver abilitato la gestione di dispositivi mobili, è possibile specificare il numero di dispositivi che ogni utente può registrare, fino a 15 dispositivi per utente.

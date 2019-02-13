@@ -10,18 +10,19 @@ ms.assetid: 9083c571-f4fc-4a78-adc5-8aec84dabcbd
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c8e984c6eb76716e031ed793a7753840842f0ea7
-ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 62db216d2047ee0272c6b3fa226493b5e8af5f84
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42584545"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56128722"
 ---
 # <a name="manage-access-to-company-resource-based-on-device-network-and-application-risk"></a>Gestire l'accesso alle risorse aziendali in base ai rischi per dispositivi, rete e applicazioni
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Controllare l'accesso dai dispositivi mobili alle risorse aziendali in base alla valutazione dei rischi eseguita da Lookout. Lookout è un soluzione di protezione dalle minacce per il dispositivo integrata con Microsoft Intune. Il rischio si basa sui dati raccolti dal servizio Lookout. Raccoglie dai dispositivi i dati relativi a vulnerabilità del sistema operativo, app dannose installate e profili di rete dannosa. 
+Controllare l'accesso dai dispositivi mobili alle risorse aziendali in base alla valutazione dei rischi eseguita da Lookout. Lookout è un soluzione di protezione dalle minacce per il dispositivo integrata con Microsoft Intune. Il rischio si basa sui dati raccolti dal servizio Lookout. Raccoglie dai dispositivi i dati relativi a vulnerabilità del sistema operativo, app dannose installate e profili di rete dannosa. 
 
 In base alla valutazione dei rischi segnalati da Lookout abilitata tramite i criteri di conformità di Configuration Manager, si configurano i criteri di accesso condizionale. Questi criteri consentono o bloccano i dispositivi rilevati come non conformi da Configuration Manager a causa delle minacce rilevate in tali dispositivi.
 

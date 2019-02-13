@@ -10,12 +10,13 @@ ms.assetid: e025c48c-1514-4ab7-836c-e0635aaa993a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a95a7735cc7f7afb6a16b030de6925926335e403
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ef070186112642d204aade24039da87c0e3a22f0
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385219"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56139671"
 ---
 # <a name="create-android-applications-in-configuration-manager"></a>Creare applicazioni Android in Configuration Manager
 
@@ -37,7 +38,7 @@ Sono supportate le azioni di distribuzione seguenti:
 
 |Tipo di dispositivo|Azioni supportate|
 |-|-|
-|Android|**Disponibile**, **Richiesto**: l'utente deve acconsentire all'installazione e alla disinstallazione.|
+|Android|**Disponibile**, **obbligatorio**: L'utente deve accettare l'installazione e la disinstallazione.|
 |Android for Work |**Disponibile**, **Richiesto** |
 
 

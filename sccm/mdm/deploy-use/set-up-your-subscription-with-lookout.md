@@ -10,12 +10,13 @@ ms.assetid: 6087b279-ba05-4824-b5e3-3af14f3d3cfe
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 85c2ae1039058f39bd96c7d0752f798504b0dd4d
-ms.sourcegitcommit: 9cff0702c2cc0f214173b47ec241f7e5a40f84e6
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6f914cba7eee44f340bf5b696aca1854128aeb8b
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34746111"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56141307"
 ---
 # <a name="set-up-your-subscription-for-lookout-mobile-threat-defense"></a>Configurare la sottoscrizione per Lookout Mobile Threat Defense
 
@@ -61,8 +62,8 @@ Eseguire i passaggi seguenti per raccogliere le informazioni richieste dal team 
 
    La console di Lookout supporta due livelli di accesso:  
 
-   - **Accesso completo:** l'amministratore di Azure AD può creare un gruppo per gli utenti che hanno completo e facoltativamente creare un gruppo per gli utenti che hanno accesso limitato. Solo gli utenti di questi gruppi possono accedere alla **console di Lookout**.
-   - **Accesso limitato:** gli utenti di questo gruppo non avranno accesso a diversi moduli correlati alla configurazione e alla registrazione della console di Lookout e avranno accesso in sola lettura al modulo **Security Policy** (Criteri di sicurezza) della console di Lookout.  
+   - **Accesso completo:** L'amministratore di Azure AD può creare un gruppo per gli utenti che hanno accesso completo e, facoltativamente, creare un gruppo per gli utenti che avranno accesso limitato. Solo gli utenti di questi gruppi possono accedere alla **console di Lookout**.
+   - **Accesso limitato:** Gli utenti in questo gruppo avranno no l'accesso a diversi moduli correlati alla registrazione della console di Lookout e configurazione e avere accesso in sola lettura per il **criteri di sicurezza** modulo alla console di Lookout.  
 
      > [!TIP]  
      > Per altre informazioni sulle autorizzazioni, vedere [questo articolo del supporto tecnico di Lookout](https://personal.support.lookout.com/hc/articles/114094105653).
@@ -105,7 +106,7 @@ Eseguire i passaggi seguenti per raccogliere le informazioni richieste dal team 
     >![screenshot del portale di Azure, servizio Microsoft Azure Active Directory, pagina Proprietà](media/aad-group-display-name.png)
 
     >[!NOTE]  
-    >La procedura consigliata prevede l'uso dell'incremento predefinito di cinque minuti per verificare la presenza di nuovi dispositivi. Limitazioni attuali, **Lookout non convalida i nomi visualizzati dei gruppi:** assicurarsi che il campo **NOME VISUALIZZATO** del portale di Azure corrisponda esattamente al gruppo di sicurezza di Azure AD. **Non è supportata la creazione di gruppi nidificati:** i gruppi di sicurezza di Azure AD usati in Lookout devono contenere solo utenti. Non possono contenere altri gruppi.
+    >La procedura consigliata prevede l'uso dell'incremento predefinito di cinque minuti per verificare la presenza di nuovi dispositivi. Limitazioni correnti, **Lookout non è possibile convalidare i nomi visualizzati di gruppo:** Verificare che il **nome visualizzato** campo nel portale di Azure corrisponde esattamente al gruppo di sicurezza di Azure AD. **Creazione di gruppi annidati non è supportata:**  Sicurezza di Azure AD i gruppi usati in Lookout devono contenere solo utenti. Non possono contenere altri gruppi.
 
 3.  Dopo aver aggiunto un gruppo, alla successiva apertura dell'app Lookout for Work nel dispositivo supportato, il dispositivo viene attivato in Lookout.
 

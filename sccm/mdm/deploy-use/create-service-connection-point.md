@@ -10,12 +10,13 @@ ms.assetid: 617abb22-d22f-41fb-a76b-1c4259e419d2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 12626a734138094e7558617b714b2b5acdac6450
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d0ce47e9ade73d76e99aa5c0d4e5581c713a847a
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53424324"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56139028"
 ---
 # <a name="create-a-service-connection-point-with-system-center-configuration-manager-and-microsoft-intune"></a>Creare un punto di connessione del servizio con System Center Configuration Manager e Microsoft Intune
 

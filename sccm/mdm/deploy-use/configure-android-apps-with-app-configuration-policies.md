@@ -10,12 +10,13 @@ ms.assetid: 9126d188-7780-45a4-b21d-7fcf4fad7da2
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6f83f26f746c54e3d1defe31df47b3c7c8a7e117
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 7d6f8c25902be857e0eec3cd4b969d1fb5bda136
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53417949"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56136331"
 ---
 # <a name="apply-settings-to-android-for-work-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Applicare le impostazioni alle app Android for Work con i criteri di configurazione delle app in System Center Configuration Manager
 
@@ -41,7 +42,7 @@ Per altre informazioni sui tipi di installazione delle app, vedere l'[introduzio
 3. Nella pagina **Generale** della Creazione guidata criteri di configurazione dell'app impostare le seguenti informazioni per i criteri:
    - **Nome**. Immettere un nome univoco per i criteri.
    - **Descrizione**. (Facoltativo) Per rendere più semplice l'identificazione dei criteri, è possibile aggiungere una descrizione.
-   -  **Selezionare un tipo di criteri di configurazione**. Specificare la piattaforma di destinazione dei criteri di configurazione app: **Criteri di configurazione per Android per le app di lavoro**.
+   -  **Selezionare un tipo di criteri di configurazione**. Specificare la piattaforma di destinazione dei criteri di configurazione dell'app: **Criteri di configurazione per le app Android for Work**.
    -  **Categorie assegnate per migliorare la ricerca e i filtri**. (Facoltativo) Per creare e assegnare categorie ai criteri, scegliere **Categorie**. Con le categorie è più semplice trovare e ordinare gli elementi nella console di Configuration Manager.
 4. Nella pagina **Criteri Android for Work** scegliere come impostare le informazioni sui criteri di configurazione:
    - **Specify name and value pairs** (Specifica coppie nome/valore). È possibile usare questa opzione per i file elenco di proprietà senza annidamento. Per specificare una coppia nome/valore:

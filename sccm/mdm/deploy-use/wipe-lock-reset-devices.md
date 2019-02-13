@@ -10,12 +10,13 @@ ms.assetid: 770da7bd-02dd-474a-9604-93ff1ea0c1e4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 21fed8dbba8cc5c8e96218459288b57364fe350e
-ms.sourcegitcommit: 98c3f7848dc9014de05541aefa09f36d49174784
-ms.translationtype: HT
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ebc2b995c763aa54e1d47ee38ab2d250554f5a29
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42584738"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56136025"
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-configuration-manager"></a>Proteggere i dati con cancellazione remota, blocco remoto o reimpostazione passcode usando Configuration Manager
 
@@ -69,7 +70,7 @@ Eseguire una **cancellazione selettiva** per rimuovere solo i dati aziendali pre
 |App aziendali e dati associati installati usando Configuration Manager e Intune|Le app vengono disinstallate e vengono rimossi i dati dell'app aziendale.|  
 |Profili VPN e Wi-Fi|Rimosso.|  
 |Certificati|Rimossi e revocati.|  
-|Impostazioni|Rimosse, tranne per: **Consenti chiamate in roaming**, **Consenti roaming dei dati** e **Consenti la sincronizzazione automatica durante il roaming**.|  
+|Impostazioni|Rimosso, tranne per: **Consenti roaming vocale**, **Consenti dati in roaming**, e **Consenti sincronizzazione automatica durante il roaming**.|  
 |Agente di gestione|Il profilo di gestione viene rimosso.|  
 |Profili di posta elettronica|Per i profili di posta elettronica configurati da Intune, vengono rimossi l'account e l'indirizzo di posta elettronica.|  
 
