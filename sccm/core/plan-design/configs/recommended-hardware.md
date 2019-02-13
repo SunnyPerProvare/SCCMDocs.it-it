@@ -10,12 +10,13 @@ ms.assetid: 5267f0af-34d3-47a0-9ab8-986c41276e6c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 51d3a537fd7aa874fb2662bb6ec15fcfaa2124e5
-ms.sourcegitcommit: 4b8afbd08ecf8fd54950eeb630caf191d3aa4767
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b773696d5967d9ed1779ee822168d7177f10f585
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "34474327"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56130446"
 ---
 # <a name="recommended-hardware-for-system-center-configuration-manager"></a>Hardware consigliato per System Center Configuration Manager
 
@@ -111,7 +112,7 @@ Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità da
 ### <a name="client-for-windows-computers"></a>Client per i computer Windows  
  Di seguito sono indicati i requisiti hardware minimi per i computer basati su Windows gestiti con Configuration Manager, inclusi i sistemi operativi Embedded:  
 
--   **Processore e memoria**: vedere i requisiti per il processore e la RAM specifici del sistema operativo del computer.  
+-   **Processore e memoria:** fare riferimento ai requisiti per il processore e la RAM specifici del sistema operativo del computer.  
 
 -   **Spazio su disco:** 500 MB di spazio disponibile su disco, con 5 GB consigliati per la cache del client di Configuration Manager. Se si usano le impostazioni personalizzate per installare il client di Configuration Manager, è necessario meno spazio:  
 
@@ -130,9 +131,9 @@ Per prestazioni ottimali, usare le configurazioni RAID 10 per tutte le unità da
 
 -   **Distribuzione del sistema operativo:** 384 MB di RAM  
 
--   **Software Center:** processore da 500 MHz  
+-   **Software Center:** Processore da 500 MHz  
 
--   **Controllo remoto:** Pentium 4 Hyper-Threaded 3 GHz (core singolo) o CPU comparabile, con almeno un 1 GB di RAM per un'esperienza ottimale  
+-   **Controllo remoto**: Pentium 4 Hyper-Threaded 3 GHz (core singolo) o CPU comparabile, con almeno un 1 GB di RAM per un'esperienza ottimale  
 
 ### <a name="client-for-linux-and-unix"></a>Client per Linux e UNIX  
  Di seguito sono indicati i requisiti minimi per i server Linux e UNIX gestiti con Configuration Manager.  
