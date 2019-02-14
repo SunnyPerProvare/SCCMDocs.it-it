@@ -10,12 +10,12 @@ ms.assetid: aebafaf9-b3d5-4a0f-9ee5-685758c037a1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 430931e8bfba3f40a8d970b7ae7b97e24d3381ec
-ms.sourcegitcommit: f2a1fa59fb3870a6bebca61daf15c0c157e9fdd6
+ms.openlocfilehash: 78eb7f360230951184ec645b78081b4ff6995984
+ms.sourcegitcommit: 5e7c4d36f4cdb3390ad3b381d31a3e1e4bf3c6e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54031023"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55986570"
 ---
 # <a name="install-and-configure-distribution-points-in-configuration-manager"></a>Installare e configurare punti di distribuzione per Configuration Manager
 
@@ -409,8 +409,7 @@ Gestire i gruppi di punti di distribuzione di cui il punto di distribuzione è u
 
 Per aggiungere questo punto di distribuzione come membro di un gruppo esistente, fare clic su **Aggiungi**. Nella finestra Aggiungi ai gruppi di punti di distribuzione selezionare un gruppo quindi fare clic su **OK**.  
 
-Per rimuovere il punto di distribuzione da un gruppo di punti di distribuzione, selezionare il gruppo dall'elenco e quindi fare clic su **Rimuovi**.  
-
+Per rimuovere il punto di distribuzione da un gruppo di punti di distribuzione, selezionare il gruppo dall'elenco e quindi fare clic su **Rimuovi**. La rimozione del punto di distribuzione da un gruppo di punti di distribuzione non rimuove alcun contenuto dal punto di distribuzione.
 
 ### <a name="bkmk_config-content"></a> Contenuto  
 

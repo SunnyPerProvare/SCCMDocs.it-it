@@ -10,12 +10,12 @@ ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 58ec927ee795624cb475b31c44d64334047f3422
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: 96673c0b299e45111c7d9a2bedf55282de50132e
+ms.sourcegitcommit: 5e7c4d36f4cdb3390ad3b381d31a3e1e4bf3c6e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53416504"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55986621"
 ---
 # <a name="log-files-in-configuration-manager"></a>File di log in Configuration Manager
 
@@ -701,7 +701,7 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |MP_ClientIDManager.log|Registra le risposte del punto di gestione alle richieste dell'ID client originate dalle sequenze di attività a partire da PXE o dal supporto di avvio.|Server del sistema del sito|  
 |MP_DriverManager.log|Registra le risposte del punto di gestione alle richieste dell'operazione sequenza di attività Applica automaticamente i driver.|Server del sistema del sito|  
 |OfflineServicingMgr.log|Registra informazioni dettagliate sulle pianificazioni della manutenzione offline e sulle azioni di applicazione aggiornamenti sui file di formato Windows Imaging (WIM) del sistema operativo.|Server del sistema del sito|  
-|Setupact.log|Registra informazioni dettagliate sui registri di Windows Sysprep e di installazione.|Client|  
+|Setupact.log|Registra informazioni dettagliate sui registri di Windows Sysprep e di installazione. Per altre informazioni, vedere [File di log](https://docs.microsoft.com/windows/deployment/upgrade/log-files).|Client|  
 |Setupapi.log|Registra informazioni dettagliate sui registri di Windows Sysprep e di installazione.|Client|  
 |Setuperr.log|Registra informazioni dettagliate sui registri di Windows Sysprep e di installazione.|Client|  
 |smpisapi.log|Registra informazioni dettagliate sulle azioni di acquisizione e ripristino dello stato del client, nonché informazioni sulle soglie.|Client|  
@@ -808,28 +808,14 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 
 ###  <a name="BKMK_WindowsServicingLog"></a>Manutenzione di Windows 10  
  Nella tabella seguente sono elencati i file di log contenenti informazioni correlate alla manutenzione di Windows 10.  
-
+Per la manutenzione vengono usati la stessa infrastruttura e lo stesso processo degli aggiornamenti software. Per altri log applicabili allo scenario di manutenzione, vedere [Aggiornamenti software](#BKMK_SU_NAPLog).
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
-|ccmperf.log|Registra le attività di manutenzione e acquisizione dati correlate ai contatori delle prestazioni dei client.|Client|  
-|CcmRepair.log|Registra le attività di ripristino dell'agente client.|Client|
-|PatchDownloader.log|Registra informazioni dettagliate sul processo di download degli aggiornamenti software dall'origine degli aggiornamenti alla destinazione del download sul server del sito.|Computer che ospita la console di Configuration Manager da cui vengono avviati i download|  
-|PolicyEvaluator.log|Registra informazioni dettagliate sulla valutazione dei criteri nei computer client, inclusi quelli derivanti dagli aggiornamenti software.|Client|  
-|RebootCoordinator.log|Registra informazioni dettagliate sul coordinamento dei riavvii del sistema nei computer client dopo le installazioni degli aggiornamenti software.|Client|  
-|ScanAgent.log|Registra informazioni dettagliate sulle richieste di ricerca di aggiornamenti software, sulla posizione di WSUS e sulle azioni correlate.|Client|  
-|SdmAgent.log|Registra informazioni dettagliate sul monitoraggio di aggiornamenti e conformità. Il file di log degli aggiornamenti software, UpdatesHandler.log, fornisce comunque informazioni più dettagliate sull'installazione degli aggiornamenti software necessari per la conformità.<br /><br /> Questo file di log viene condiviso con le impostazioni di conformità.|Client|  
-|ServiceWindowManager.log|Registra informazioni dettagliate sulla valutazione delle finestre di manutenzione.|Client|  
+|CBS.log|Registra gli errori di manutenzione correlati alle modifiche per Aggiornamenti di Windows o ruoli e funzionalità.|Client|  
+|DISM.log|Registra tutte le azioni usando Gestione e manutenzione immagini distribuzione. Se necessario, DISM.log punterà a CBS.log per altri dettagli.|Client|
 |setupact.log|File di log primario per la maggior parte degli errori che si verificano durante il processo di installazione di Windows. Il file di log è disponibile nella cartella %windir%\$Windows.~BT\sources\panther.|Client|
-|SmsWusHandler.log|Registra informazioni dettagliate sul processo di analisi per lo strumento di inventario per Microsoft Updates.|Client|  
-|StateMessage.log|Registra informazioni dettagliate sui messaggi di stato dell'aggiornamento software creati e inviati al punto di gestione.|Client|  
-|SUPSetup.log|Registra informazioni dettagliate sull'installazione del punto di aggiornamento software. Al termine dell'installazione del punto di aggiornamento software, **Installation was successful** viene scritto nel file di log.|Server del sistema del sito|  
-|UpdatesDeployment.log|Registra informazioni dettagliate sulle distribuzioni nel client, comprese l'attivazione, la valutazione e l'applicazione degli aggiornamenti software. La registrazione dettagliata visualizza informazioni aggiuntive sull'interazione con l'interfaccia utente del client.|Client|  
-|Updateshandler.log|Registra informazioni dettagliate sull'analisi della conformità degli aggiornamenti software e sul download e l'installazione di aggiornamenti software nel client.|Client|  
-|UpdatesStore.log|Registra informazioni dettagliate sullo stato di conformità degli aggiornamenti software ottenuto durante il ciclo di analisi della conformità.|Client|  
-|WCM.log|Registra informazioni dettagliate sulle configurazioni del punto di aggiornamento software e sulle connessioni al server WSUS per categorie di aggiornamento, classificazioni e lingue sottoscritte.|Server del sito|  
-|WSUSCtrl.log|Registra informazioni dettagliate su configurazione, connettività al database e integrità del server WSUS per il sito.|Server del sistema del sito|  
-|wsyncmgr.log|Registra informazioni dettagliate sul processo di sincronizzazione degli aggiornamenti software.|Server del sito|  
-|WUAHandler.log|Registra informazioni dettagliate sull'agente di Windows Update nel client durante la ricerca di aggiornamenti software.|Client|  
+
+Per altre informazioni, vedere [Online Servicing-Related Log Files](https://docs.microsoft.com/windows-hardware/manufacture/desktop/deployment-troubleshooting-and-log-files#online-servicing-related-log-files) (File di log correlati alla manutenzione online).
 
 ###  <a name="BKMK_WULog"></a> Agente di Windows Update  
  Nella tabella seguente sono elencati i file di log contenenti informazioni correlate all'agente di Windows Update.  
@@ -838,6 +824,8 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |--------------|-----------------|----------------------------|  
 |WindowsUpdate.log|Registra informazioni dettagliate che indicano il momento in cui l'agente di Windows Update si connette al server WSUS e recupera gli aggiornamenti software per la valutazione della conformità, nonché se vi sono aggiornamenti per i componenti dell'agente.|Client|  
 
+Per altre informazioni, vedere [File di log di Windows Update](https://docs.microsoft.com/windows/deployment/update/windows-update-logs).
+
 ###  <a name="BKMK_WSUSLog"></a> Server WSUS  
  Nella tabella seguente sono elencati i file di log contenenti informazioni correlate al server WSUS.  
 
@@ -845,3 +833,5 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |--------------|-----------------|----------------------------|  
 |Change.log|Registra informazioni dettagliate sulle informazioni modificate del database del server WSUS.|Server WSUS|  
 |SoftwareDistribution.log|Registra informazioni dettagliate sugli aggiornamenti software sincronizzati dall'origine aggiornamenti configurata con il database del server WSUS.|Server WSUS|  
+
+Questi file di log si trovano nella cartella %ProgramFiles%\Update Services\LogFiles.

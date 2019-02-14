@@ -10,12 +10,12 @@ ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c4cd6c45d21c58459fcd23ee02db4b5900996939
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.openlocfilehash: b272a8988a3e8d2e09b4043c087207e62c59b274
+ms.sourcegitcommit: 5e7c4d36f4cdb3390ad3b381d31a3e1e4bf3c6e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53421995"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "55986587"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -624,7 +624,7 @@ Se ad esempio l'organizzazione non usa criteri di conformità e si vuole nascond
 Configurare una pianificazione che indichi quando Configuration Manager deve eseguire una nuova valutazione delle regole dei requisiti per tutte le distribuzioni. Il valore predefinito è ogni sette giorni.  
 
 > [!IMPORTANT]  
->  Non impostare questo valore su un valore minore di quello predefinito. Una pianificazione di rivalutazione più aggressiva influisce negativamente sulle prestazioni della rete e dei computer client.  
+> Questa impostazione è più invasiva per il client locale rispetto al server di rete o al server del sito. Una pianificazione di rivalutazione più aggressiva influisce negativamente sulle prestazioni della rete e dei computer client. Microsoft non consiglia di impostare un valore inferiore a quello predefinito. Se si modifica questo valore, monitorare attentamente le prestazioni.  
 
 Avviare questa azione da un client scegliendo **Ciclo di valutazione distribuzione applicazione** nella scheda**Azioni** del pannello di controllo di **Configuration Manager**.  
 

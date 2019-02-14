@@ -2,7 +2,7 @@
 title: Funzionalità deprecate
 titleSuffix: Configuration Manager
 description: Informazioni sulle funzionalità che Configuration Manager non supporta più.
-ms.date: 12/21/2018
+ms.date: 01/30/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.assetid: 287a6324-ae65-4d38-b2ef-198d47c91231
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 441fb520fcf3e82bd284eb20db44f14cab52224f
-ms.sourcegitcommit: 94bf7d5b5beb9628cc1fdfe75451d33b5de26f8a
+ms.openlocfilehash: a46f2cb84e447a9b76e812dcb98805e83e31f701
+ms.sourcegitcommit: 38f56f1d5803370f4262931c2dc4a532bfcf0594
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54152469"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55905632"
 ---
 # <a name="removed-and-deprecated-features-for-configuration-manager"></a>Funzionalità rimosse e deprecate per Configuration Manager
 
@@ -33,7 +33,8 @@ Queste informazioni sono soggette a modifica nelle versioni future. È possibile
 |-----------|---|--------------|  
 |Distribuzione classica del servizio in Azure per il gateway di gestione cloud e il punto di distribuzione cloud. Per altre informazioni, vedere [Pianificare il gateway di gestione cloud](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager).|Novembre 2018|Prima versione rilasciata dopo il 1° luglio 2019| 
 |System Center Endpoint Protection per Mac e Linux<br>Per altre informazioni, vedere il [post del blog sulla fine del supporto](https://go.microsoft.com/fwlink/?linkid=870182).|Ottobre 2018|31 dicembre 2018|
-|Gestione ibrida dei dispositivi mobili. Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->|14 agosto 2018|1 settembre 2019|
+|Accesso condizionale in locale<br>Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).|30 gennaio 2019|1 settembre 2019|
+|Gestione di dispositivi mobili (MDM) ibrida<br>Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<br><br>A partire dalla versione 1902 del servizio Intune, prevista per la fine di febbraio 2019, i nuovi clienti non possono creare una nuova connessione ibrida.<!--Intune feature 2683117-->|14 agosto 2018|1 settembre 2019|
 |Impostazioni di Windows Hello for Business in Configuration Manager<br>Per altre informazioni, vedere [Impostazioni di Windows Hello for Business](/sccm/protect/deploy-use/windows-hello-for-business-settings).|Dicembre 2017|Prima versione rilasciata dopo il 1° novembre 2019|
 |L'**esperienza utente di Silverlight** per il ruolo Punto per siti Web del Catalogo applicazioni non è più supportato. Gli utenti devono usare il nuovo Software Center. NOTA: il ruolo Punto per siti Web del Catalogo applicazioni e il ruolo Punto per servizi Web sono ancora supportati. In alcuni scenari, il nuovo Software Center comunica con il punto per siti Web del Catalogo applicazioni. Per altre informazioni, vedere [Configurare Software Center](/sccm/apps/plan-design/plan-for-and-configure-application-management#bkmk_userex).<!--1358309-->|11 agosto 2017| Versione 1806|
 |Versione precedente di Software Center.<br><br>Per altre informazioni sulla nuova versione di Software Center, vedere [Pianificare e configurare la gestione delle applicazioni](/sccm/apps/plan-design/plan-for-and-configure-application-management##bkmk_userex).|13 dicembre 2016|Versione 1802|
