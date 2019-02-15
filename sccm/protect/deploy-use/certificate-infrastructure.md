@@ -10,12 +10,13 @@ ms.assetid: 29ae59b7-2695-4a0f-a9ff-4f29222f28b3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 783512841b61d6fa10e3f2832100e9000576e65a
-ms.sourcegitcommit: 2687489aa409a050dcacd67f17b3dad3ab7f1804
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 95a5166433ef35b3c2ab7108bfc83a2d403558e0
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54316525"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56128171"
 ---
 # <a name="configure-certificate-infrastructure"></a>Configurare l'infrastruttura di certificazione
 
@@ -42,7 +43,7 @@ Usare questi passaggi per configurare l'infrastruttura per i certificati SCEP o 
 
         Questa autorizzazione è richiesta in modo che durante l'esecuzione di Creazione guidata profilo di certificato è possibile selezionare il modello di certificato che si desidera usare quando si crea profilo delle impostazioni SCEP. La selezione di un modello di certificato implica che alcune impostazioni nella procedura guidata vengano popolate automaticamente. Questo semplifica la configurazione ed evita la selezione di impostazioni che non sono compatibili con i modelli di certificato usati dal servizio Registrazione dispositivi di rete.  
 
-   -   Per l'account del servizio SCEP usato dal pool di applicazioni del servizio Registrazione dispositivi di rete: autorizzazioni **Lettura** e **Registrazione**.  
+   -   Per l'account del servizio SCEP usato dal pool di applicazioni del servizio Registrazione dispositivi di rete: autorizzazioni **Lettura** e **Registrazione** .  
 
         Questo non è un requisito specifico di System Center Configuration Manager ma è parte della configurazione del servizio Registrazione dispositivi di rete. Per altre informazioni, vedere [Informazioni aggiuntive sul servizio Registrazione dispositivi di rete](http://go.microsoft.com/fwlink/p/?LinkId=309016) nella libreria Servizi certificati Active Directory in TechNet.  
 
@@ -126,7 +127,7 @@ Usare questi passaggi per configurare l'infrastruttura per i certificati SCEP o 
      -   **Nome sito Web**, **Numero porta HTTPS** e **Nome dell'applicazione virtuale** per il punto di registrazione certificati. In questi campi vengono inseriti automaticamente i valori predefiniti. 
      -   **URL per il servizio di registrazione dispositivi di rete e il certificato CA radice**: fare clic su **Aggiungi** e nella finestra di dialogo **Aggiungi URL e certificato CA radice** specificare quanto segue:
          - **URL per il servizio di registrazione dispositivi di rete**: specificare l'URL nel formato seguente: https://*<FQDN_server>*/certsrv/mscep/mscep.dll. Ad esempio, se il nome FQDN del server che esegue il servizio Registrazione dispositivi di rete è server1.contoso.com, digitare **https://server1.contoso.com/certsrv/mscep/mscep.dll**.
-         - **Certificato CA radice**: Individuare e selezionare il file del certificato (cer) creato e salvato nel **Passaggio 1: Installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze**. Questo certificato CA radice consente al punto di registrazione certificati di convalidare il certificato di autenticazione client che verrà usato dal modulo criteri di System Center Configuration Manager.  
+         - **Certificato CA radice**: Individuare e selezionare il file del certificato (con estensione cer) creato e salvato nel **Passaggio 1: Installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze**. Questo certificato CA radice consente al punto di registrazione certificati di convalidare il certificato di autenticazione client che verrà usato dal modulo criteri di System Center Configuration Manager.  
 
    - Se l'opzione **Elabora le richieste di certificati PFX** è selezionata, configurare i dettagli e le credenziali di connessione per la CA selezionata.
 
@@ -189,9 +190,9 @@ Usare questi passaggi per configurare l'infrastruttura per i certificati SCEP o 
 
 6. Accettare la porta predefinita **443** o specificare un numero di porta alternativo usato dal punto di registrazione certificati, quindi fare clic su **Avanti**.  
 
-7. Nella pagina **Certificato client per il modulo criteri** individuare e specificare il certificato di autenticazione client distribuito nel **Passaggio 1: Installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze** e quindi fare clic su **Avanti**.  
+7. Nella pagina **Certificato client per il modulo criteri**individuare e specificare il certificato di autenticazione client distribuito nel **Passaggio 1: Installare e configurare il servizio Registrazione dispositivi di rete e le dipendenze**e quindi fare clic su **Avanti**.  
 
-8. Nella pagina **Certificato punto di registrazione certificati** fare clic su **Sfoglia** per selezionare il file del certificato esportato per la CA radice individuata e salvata alla fine del **Passaggio 2: installare e configurare il punto di registrazione certificati**.  
+8. Nella pagina **Certificato punto di registrazione certificati** fare clic su **Sfoglia** per selezionare il file del certificato esportato per la CA radice individuata e salvata alla fine del **Passaggio 2: Installare e configurare il punto di registrazione certificati**.  
 
    > [!NOTE]  
    >  Se non è stato salvato in precedenza, il file di certificato si trova in <Percorso di installazione di ConfigMgr\>\inboxes\certmgr.box nel computer del server del sito.  

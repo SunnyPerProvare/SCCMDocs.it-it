@@ -10,12 +10,13 @@ ms.assetid: 321b19b2-a093-4b8f-995f-41f74b886eb5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f294bd3e6c8043149e7f5af8b07eb11288751601
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: dba1107dd8cd8d39be555b3b77ff828152513eb8
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53416266"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56122237"
 ---
 # <a name="create-wi-fi-profiles"></a>Creare profili Wi-Fi
 
@@ -58,13 +59,13 @@ L'articolo [Creare profili Wi-Fi](../../mdm/deploy-use/create-wifi-profiles.md) 
 
    -   **Nessuno**: i computer che non soddisfano questa regola di conformità non segnalano una gravità dell'errore per i report di Configuration Manager.  
 
-   -   **Informazioni**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Informazioni** per i report di Configuration Manager.  
+   -   **Informazioni**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Informazioni** per i report di Configuration Manager.  
 
    -   **Avviso**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Avviso** per i report di Configuration Manager.  
 
-   -   **Errore critico**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager.  
+   -   **Errore critico**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico** per i report di Configuration Manager.  
 
-   -   **Errore critico con evento**: i dispositivi che non soddisfano questa regola di conformità segnalano una gravità dell'errore di tipo **Errore critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel registro eventi applicazione.  
+   -   **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico** per i report di Configuration Manager. Il livello di gravità viene anche registrato come un evento Windows nel registro eventi applicazione.  
 
 5. Nella pagina **Profilo Wi-Fi** fornire il nome che i dispositivi visualizzeranno come nome della rete.  
 
@@ -78,8 +79,8 @@ L'articolo [Creare profili Wi-Fi](../../mdm/deploy-use/create-wifi-profiles.md) 
    > [!IMPORTANT]
    >  Se si intende creare un profilo Wi-Fi per la gestione dei dispositivi mobili locale, il ramo corrente di Configuration Manager supporta solo le configurazioni di sicurezza Wi-Fi seguenti:  
    > 
-   >  Tipo di sicurezza **WPA2 Enterprise** o **WPA2 Personal**  
-   > Tipo di crittografia **AES** o **TKIP**  
+   >  Tipi di sicurezza: **WPA2 Enterprise** o **WPA2 Personal**  
+   > Tipi di crittografia: **AES** o **TKIP**  
    > Tipi EAP: **Smart Card o altro certificato** o **PEAP**  
    > 
    > Per i dispositivi Android, i tipi di sicurezza **WPA Personal**, **WPA2 Personal** e **WEP** non sono supportati.  
@@ -102,12 +103,12 @@ L'articolo [Creare profili Wi-Fi](../../mdm/deploy-use/create-wifi-profiles.md) 
 13. **Solo per i dispositivi iOS:**  
     configurare le impostazioni per gli eventuali certificati richiesti per la connessione Wi-Fi. È necessario configurare il certificato client e il nome del certificato server attendibile oppure il certificato radice come segue:  
 
-    - **Nomi di certificati del server attendibili**: se il server a cui si connette il dispositivo usa un certificato di autenticazione server per identificare il server e proteggere il canale di comunicazione, immettere il nome o i nomi nel nome del soggetto o nel nome alternativo del soggetto del certificato. Il nome o i nomi sono in genere il nome di dominio completo del server. Ad esempio, se il certificato del server ha un nome comune srv1.contoso.com nel soggetto del certificato, immettere **srv1.contoso.com**. Se il certificato del server dispone di più nomi specificati nel nome alternativo oggetto, immettere i nomi separati da un punto e virgola.  
+    - **Nomi di certificato del server trusted**: se il server a cui si connette il dispositivo usa un certificato di autenticazione server per identificare il server e proteggere il canale di comunicazione, immettere il nome o i nomi nel nome del soggetto o nel nome alternativo del soggetto del certificato. Il nome o i nomi sono in genere il nome di dominio completo del server. Ad esempio, se il certificato del server ha un nome comune srv1.contoso.com nel soggetto del certificato, immettere **srv1.contoso.com**. Se il certificato del server dispone di più nomi specificati nel nome alternativo oggetto, immettere i nomi separati da un punto e virgola.  
 
       > [!TIP]  
       >  Se il certificato client selezionato per l'autenticazione EAP o l'autenticazione client per un dispositivo iOS verrà usato per l'autenticazione su un server RADIUS (Remote Authentication Dial-In User Service), ad esempio un server che sta eseguendo il server dei criteri di rete, il Nome alternativo oggetto deve essere impostato su Nome entità utente.  
 
-    - **Selezionare i certificati radice per la convalida server**: se il server a cui il dispositivo si connette usa un certificato di autenticazione server che non è considerato attendibile dal dispositivo, selezionare il profilo certificato contenente il certificato radice per il certificato del server per creare una catena di certificati attendibili sul dispositivo.  
+    - **Seleziona i certificati radice per la convalida del server**: se il server a cui il dispositivo si connette utilizza un certificato di autenticazione server che non è ritenuto attendibile dal dispositivo, selezionare il profilo certificato contenente il certificato radice per il certificato del server per creare una catena di certificati attendibili sul dispositivo.  
 
     - **Selezionare un certificato client per l'autenticazione client**: se il server o il dispositivo di rete richiede a un certificato client di autenticare il dispositivo connesso, selezionare il profilo certificato contenente il certificato di autenticazione client.  
 

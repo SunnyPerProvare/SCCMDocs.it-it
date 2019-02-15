@@ -10,12 +10,13 @@ ms.assetid: f338e4db-73b5-45ff-92f4-1b89a8ded989
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bb5814860389de28294c44f367920a2da9b72fbe
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 8f00b3aef75d2200d991f99e514f83636f7b16bb
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53419428"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56121812"
 ---
 # <a name="how-to-create-vpn-profiles-in-system-center-configuration-manager"></a>Come creare profili VPN in System Center Configuration Manager
 
@@ -43,7 +44,7 @@ Per le connessioni VPN di terze parti, distribuire l'app VPN prima di distribuir
 
 4. Nella pagina **Connessione** specificare:  
 
-   - Tipo di connessione Scegliere il tipo di connessione VPN. È possibile scegliere tra i tipi di connessione nella tabella seguente.  
+   - **Tipo di connessione**: scegliere il tipo di connessione VPN. È possibile scegliere tra i tipi di connessione nella tabella seguente.  
 
    - **Elenco server**: aggiungere un nuovo server da usare per la connessione VPN. In base al tipo di connessione è possibile aggiungere uno o più server VPN e specificare il server predefinito.  
 

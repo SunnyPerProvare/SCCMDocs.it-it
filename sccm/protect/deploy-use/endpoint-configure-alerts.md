@@ -10,12 +10,13 @@ ms.assetid: f504de3e-4caf-455c-80d7-a63f13f4c5d9
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: dbebdde88a5031eec91a2383e105d06cbc7541e5
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 26cf060d8443cefeed05c3615d5b1ecd0e862038
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53420448"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56138807"
 ---
 #  <a name="configure-alerts-for-endpoint-protection-in-configuration-manager"></a>Configurare gli avvisi di Endpoint Protection in Configuration Manager
 
@@ -75,13 +76,13 @@ ms.locfileid: "53420448"
 
         -   **Numero di rilevamenti malware** : l'avviso viene generato quando lo stesso malware viene rilevato nei computer nella raccolta per un numero di volte maggiore di quello specificato. Specificare un numero compreso tra **2** e **32**.
 
-        -   **Intervallo per rilevamento (ore):** specificare l'intervallo di rilevamento (in ore) in cui deve essere raggiunto il numero di rilevamenti di malware. Specificare un numero compreso tra **1** e **168**.
+        -   **Intervallo per rilevamento (ore)** : specificare l'intervallo di rilevamento (in ore) in cui deve essere raggiunto il numero di rilevamenti di malware. Specificare un numero compreso tra **1** e **168**.
 
     -   **Rilevamento di più malware**: questo avviso viene generato se più di un numero specificato di tipi di malware viene rilevato durante un numero determinato di ore nei computer della raccolta monitorata. Per configurare questo avviso, specificare le informazioni seguenti:
 
-        -   **Numero di tipi di malware rilevato:** l'avviso viene generato quando viene rilevato il numero specificato di tipi diversi di malware nei computer nella raccolta. Specificare un numero compreso tra **2** e **32**.
+        -   **Numero di tipi di malware rilevati** : l'avviso viene generato quando viene rilevato il numero specificato di tipi diversi di malware nei computer nella raccolta. Specificare un numero compreso tra **2** e **32**.
 
-        -   **Intervallo per rilevamento (ore):** specificare l'intervallo di rilevamento (in ore) in cui deve essere raggiunto il numero di rilevamenti di malware. Specificare un numero compreso tra **1** e **168**.
+        -   **Intervallo per rilevamento (ore)** : specificare l'intervallo di rilevamento, in ore, in cui deve essere raggiunto il numero di rilevamenti di malware. Specificare un numero compreso tra **1** e **168**.
 
 9. Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà** _<Nome raccolta\>_.  
 

@@ -10,12 +10,13 @@ ms.assetid: 3b9c4027-a98b-406b-935c-ccabcfe713df
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 86452d628d025aea2b797d0ade92a3c2e2fff933
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: c16487bc59a7e067aac5554213e2be750729078f
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53418578"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56120147"
 ---
 #  <a name="using-configuration-manager-software-updates-to-deliver-definition-updates"></a>Utilizzo degli aggiornamenti Software di Configuration Manager per distribuire gli aggiornamenti delle definizioni
 
@@ -79,7 +80,7 @@ ms.locfileid: "53418578"
 
     -   **Tempo disponibile software**: specificare il tempo disponibile per la distribuzione creata da questa regola. Il tempo specificato deve essere almeno un'ora dopo l'esecuzione della regola di distribuzione automatica. Ciò consente di assicurarsi che il contenuto abbia tempo sufficiente per la replica nei punti di distribuzione nella gerarchia. Alcuni aggiornamenti delle definizioni possono includere anche aggiornamenti del motore antimalware, che potrebbero richiedere più tempo per raggiungere i punti di distribuzione.
 
-    -   **Scadenza installazione**: Selezionare **appena possibile**.
+    -   **Scadenza installazione**: selezionare **Appena possibile**.
 
         > [!NOTE]
         >  Le scadenze degli aggiornamenti software variano all'interno di un periodo di due ore, per impedire che tutti i client richiedano un aggiornamento contemporaneamente.

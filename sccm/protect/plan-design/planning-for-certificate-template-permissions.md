@@ -10,12 +10,13 @@ ms.assetid: eab0e09d-b09e-4c14-ab14-c5f87472522e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: be8d8e70267630a048d68f1415928a7245b75368
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 8c885920fa1e413468d09201ddaecc728ffb7b53
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53419411"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56135375"
 ---
 # <a name="planning-for-certificate-template-permissions-for-certificate-profiles-in-system-center-configuration-manager"></a>Pianificazione delle autorizzazioni dei modelli di certificato per i profili di certificato in System Center Configuration Manager
 
@@ -50,10 +51,10 @@ Le informazioni seguenti illustrano come pianificare la modalità di configurazi
 
 #### <a name="to-check-for-read-and-enroll-permissions-for-users-and-domain-member-computers"></a>Verificare le autorizzazioni Lettura e Registrazione per gli utenti e i computer appartenenti a un dominio  
 
-1.  Nel server del sistema del sito che ospita il punto di registrazione certificati, creare la seguente chiave del Registro di sistema DWORD per avere un valore di 0: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SCCM\CRP\SkipTemplateCheck  
+1.  Nel server di sistema del sito che ospita il punto di registrazione certificati, creare la chiave seguente del Registro di sistema DWORD per avere un valore di 0: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SCCM\CRP\SkipTemplateCheck  
 
 2.  Se un account non può essere autenticato perché non si riceve alcuna risposta da un controller di dominio e si desidera ignorare la verifica delle autorizzazioni:  
 
-    -   Nel server del sistema del sito che ospita il punto di registrazione certificati, creare la seguente chiave del Registro di sistema DWORD per avere un valore di 1:  HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SCCM\CRP\SkipTemplateCheckOnlyIfAccountAccessDenied  
+    -   Nel server di sistema del sito che ospita il punto di registrazione certificati, creare la chiave seguente del Registro di sistema DWORD per avere un valore di 1: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SCCM\CRP\SkipTemplateCheckOnlyIfAccountAccessDenied  
 
 3.  Nella CA emittente aggiungere uno o più gruppi di protezione per concedere agli account utente o dispositivo le autorizzazioni Lettura e Registrazione nella scheda **Protezione** delle proprietà del modello di certificato.  

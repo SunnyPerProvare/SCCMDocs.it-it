@@ -10,12 +10,13 @@ ms.assetid: 41dcc259-f147-4420-bff2-b65bdf8cff77
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 27a615a412bca7e30ab5f5a3dc5f794961d13d2c
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5872a6a8ee69e50d0abfe5840a087aaf83ab7aa5
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53424494"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156611"
 ---
 # <a name="introduction-to-certificate-profiles-in-system-center-configuration-manager"></a>Introduzione ai profili certificato in System Center Configuration Manager
 
@@ -34,9 +35,9 @@ I profili di certificato forniscono le seguenti funzionalità di gestione:
 
 -   Monitoraggio e creazione di report per i certificati installati.  
 
-**Esempio:** tutti i dipendenti devono potersi connettersi agli hotspot Wi-Fi in più sedi aziendali. Per consentire agli utenti di connettersi con facilità, distribuire per prima cosa i certificati necessari per la connessione Wi-Fi, quindi distribuire i profili Wi-Fi che fanno riferimento al certificato.  
+**Esempio:** Tutti i dipendenti devono potersi connettere agli hotspot Wi-Fi in più sedi aziendali. Per consentire agli utenti di connettersi con facilità, distribuire per prima cosa i certificati necessari per la connessione Wi-Fi, quindi distribuire i profili Wi-Fi che fanno riferimento al certificato.  
 
-Esempio: Si dispone di una PKI. e si vuole passare a un metodo più flessibile e sicuro di distribuzione dei certificati. Gli utenti devono essere in grado di accedere alle risorse aziendali dai loro dispositivi personali senza compromettere la protezione. Configurare i profili certificato con le impostazioni e i protocolli supportati per la piattaforma per dispositivi specifica. I dispositivi possono quindi richiedere automaticamente questi certificati a un server di registrazione con connessione Internet. Configurare quindi i profili VPN per usare questi certificati, in modo che il dispositivo possa accedere alle risorse aziendali.  
+**Esempio:** si dispone di un'infrastruttura a chiave pubblica (PKI) e si vuole passare a un metodo più flessibile e sicuro di distribuzione dei certificati. Gli utenti devono essere in grado di accedere alle risorse aziendali dai loro dispositivi personali senza compromettere la protezione. Configurare i profili certificato con le impostazioni e i protocolli supportati per la piattaforma per dispositivi specifica. I dispositivi possono quindi richiedere automaticamente questi certificati a un server di registrazione con connessione Internet. Configurare quindi i profili VPN per usare questi certificati, in modo che il dispositivo possa accedere alle risorse aziendali.  
 
 
 

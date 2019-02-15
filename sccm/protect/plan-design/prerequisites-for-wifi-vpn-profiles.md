@@ -10,12 +10,13 @@ ms.assetid: d2dacb2d-ab3b-42a2-8dc8-94da31f993c2
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 9cf922f99ade06459a785e54775a9aedfd8e7a23
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 32103c108fab3d9120dd0a56c585d0fbdaf4d2b5
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53414549"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56127576"
 ---
 # <a name="prerequisites-for-wi-fi-and-vpn-profiles-in-system-center-configuration-manager"></a>Prerequisiti per i profili Wi-Fi e VPN in System Center Configuration Manager
 
@@ -25,24 +26,24 @@ I profili Wi-Fi e VPN in System Center Configuration Manager hanno solo dipenden
 
  È necessario disporre delle seguenti autorizzazioni di protezione per gestire le impostazioni di accesso alle risorse aziendali, quali profili certificato, Wi-Fi e VPN:  
 
-- Per visualizzare e gestire avvisi e report per i profili Wi-Fi e VPN: **Crea**, **Elimina**, **Modifica**, **Modifica report**, **Lettura** ed **Esegui report** per l'oggetto **Avvisi**.  
+- Per visualizzare e gestire avvisi e report per i profili Wi-Fi e VPN: autorizzazioni **Crea**, **Elimina**, **Modifica**, **Modifica report**, **Lettura**e **Esegui report** per l'oggetto **Avvisi**.  
 
-- Per creare e gestire i profili certificato: **Criteri autore**, **Modifica report**, **Lettura** ed **Esegui report** per l'oggetto **Profilo certificato**.  
+- Per creare e gestire profili dei certificati: **Criteri autore**, **Modifica report**, **Lettura**e **Esegui report** per l'oggetto **Profilo certificato** .  
 
-- Per gestire le distribuzioni dei profili Wi-Fi, certificato e VPN: **Distribuisci criteri di configurazione**, **Modifica avviso stato client**, **Lettura** e **Leggi risorsa** per l'oggetto **Raccolta**.  
+- Per gestire le distribuzioni Wi-Fi, certificato e profilo VPN: **Distribuisci criteri di configurazione**, **Modifica avviso stato client**, **Lettura**e **Leggi risorsa** per l'oggetto **Raccolta** .  
 
-- Per gestire tutti i criteri di configurazione: **Crea**, **Elimina**, **Modifica**, **Lettura** e **Imposta ambito di protezione** per l'oggetto **Criteri di configurazione**.  
+- Per gestire tutti i criteri di configurazione: **Crea**, **Elimina**, **Modifica**, **Lettura**e **Imposta ambito di protezione** per l'oggetto **Criteri di configurazione** .  
 
 - Per eseguire query correlate ai profili Wi-Fi e VPN: autorizzazione **Lettura** per l'oggetto **Query**.  
 
-- Per visualizzare le informazioni sui profili Wi-Fi e VPN nella console di System Center Configuration Manager: autorizzazione Lettura **per l'oggetto Sito**.  
+- Per visualizzare le informazioni sui profili Wi-Fi e VPN nella console di System Center Configuration Manager: autorizzazione **Lettura** per l'oggetto **Sito**.  
 
 - Per visualizzare i messaggi di stato per i profili Wi-Fi e VPN: autorizzazione **Lettura** per l'oggetto **Messaggi di stato**.  
 
-- Per creare e modificare il profilo certificato CA attendibile: **Criteri autore**, **Modifica report**, **Lettura** ed **Esegui report** per l'oggetto **Profilo certificato CA attendibile**.  
+- Per creare e modificare il profilo del certificato CA attendibile: **Criteri autore**, **Modifica report**, **Lettura**e **Esegui report** per l'oggetto **Profilo certificato CA attendibile** .  
 
-- Per creare e gestire i profili VPN: **Criteri autore**, **Modifica report**, **Lettura** ed **Esegui report** per l'oggetto **Profilo VPN**.  
+- Per creare e gestire profili VPN: **Criteri autore**, **Modifica report**, **Lettura**e **Esegui report** per l'oggetto **Profilo VPN** .  
 
-- Per creare e gestire i profili Wi-Fi: **Criteri autore**, **Modifica report**, **Lettura** ed **Esegui report** per l'oggetto **Profilo Wi-Fi**.  
+- Per creare e gestire profili Wi-Fi: **Criteri autore**, **Modifica report**, **Lettura**e **Esegui report** per l'oggetto **Profilo Wi-Fi** .  
 
   Il ruolo di sicurezza **Gestione accesso risorse aziendali** include queste autorizzazioni necessarie per gestire i profili Wi-Fi in System Center Configuration Manager. Per altre informazioni, vedere [Configure security in System Center Configuration Manager](../../core/plan-design/security/configure-security.md)
