@@ -10,12 +10,12 @@ ms.assetid: 727bca0d-6458-48dc-9a63-3b66d9799ddb
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 46f6bdefa2bd59ee1488c00dc1c2150608d0575d
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 11a195b94135be26541258d085b0abbd612f2074
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336868"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56128967"
 ---
 # <a name="queries-technical-reference-for-system-center-configuration-manager"></a>Riferimento tecnico per le query per System Center Configuration Manager
 
@@ -31,3 +31,4 @@ In System Center Configuration Manager le query restituiscono informazioni dal d
 -   [Operazioni e manutenzione per le query in System Center Configuration Manager](../../../core/servers/manage/operations-and-maintenance-for-queries.md)  
 
 -   [Sicurezza e privacy per le query in System Center Configuration Manager](../../../core/servers/manage/security-and-privacy-for-queries.md)  
+

@@ -10,12 +10,13 @@ ms.assetid: b89bcfbf-f5b6-4fb1-bb5e-a5cc18ec0c78
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 70d56194d693afe6c5521efaace9f26ce92b503f
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 9dce5e5277ffc0fbdf7e5432186a237d45933e7c
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53415824"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56133419"
 ---
 # <a name="operations-and-maintenance-for-reporting-in-system-center-configuration-manager"></a>Operazioni e manutenzione per la creazione di report in System Center Configuration Manager
 
@@ -163,7 +164,7 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
 >  Quando si crea un'istruzione SQL per un report personalizzato, è necessario non fare riferimento direttamente alle tabelle SQL Server. Fare invece riferimento alle viste di SQL Server per la creazione di report \(nomi di viste che iniziano con v\_\) dal database del sito. È anche possibile fare riferimento a stored procedure pubbliche \(nomi di stored procedure che iniziano con sp\_\) dal database del sito.  
 
 > [!IMPORTANT]  
->  Per creare un nuovo report, l'account utente deve disporre di autorizzazioni di **modifica del sito** . L'utente può creare un report solo nelle cartelle per cui dispone di autorizzazioni di tipo **Modifica report**.  
+>  Per creare un nuovo report, l'account utente deve disporre di autorizzazioni di **modifica del sito** . L'utente può creare un report solo nelle cartelle per cui dispone di autorizzazioni di tipo **Modifica report** .  
 
  Seguire le procedure seguenti per creare un report di Configuration Manager basato su SQL.  
 
@@ -232,7 +233,7 @@ Dopo aver definito l'infrastruttura per la creazione di report in System Center 
      > [!NOTE]  
      >  Il nome utente specificato in un secondo momento in questa pagina deve avere accesso alla condivisione server e deve disporre delle autorizzazioni di scrittura per la cartella di destinazione.  
 
-   - **Formato rendering**: selezionare uno dei formati seguenti per il file di report:  
+   - **Formato rendering**: Selezionare uno dei formati seguenti per il file di report:  
 
      -   **File XML con dati report**: salva il report in formato Extensible Markup Language.  
 

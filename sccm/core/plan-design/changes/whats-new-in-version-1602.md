@@ -11,12 +11,13 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
-ms.openlocfilehash: 86d36921939b611fa6647d4a0bf3af6d11f27ee7
-ms.sourcegitcommit: ef3fdf21180e43afd7af6c8264524711435e426e
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 9ac08431c76653711eacb62aed4100c2fab0db50
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54897628"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56122509"
 ---
 # <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>Novità della versione 1602 di System Center Configuration Manager
 
@@ -211,7 +212,7 @@ Configuration Manager può richiedere lo stato del blocco attivazione per i disp
 
 -   **Conforme**: gli utenti hanno accettato la versione più recente di termini e condizioni.  
 
--   **Errore**  
+-   **Erroree**  
 
 -   **Non conforme**: gli utenti hanno accettato una versione di termini e condizioni, ma non la più recente.  
 

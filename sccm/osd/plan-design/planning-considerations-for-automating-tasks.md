@@ -10,12 +10,13 @@ ms.assetid: fc497a8a-3c54-4529-8403-6f6171a21c64
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 608b947e75ff29cf9653b2a12497918846556f4d
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6030bb1a02a94e61cf3ef53b6d90f7b6a5ae4f7a
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411290"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56122101"
 ---
 # <a name="planning-considerations-for-automating-tasks-in-configuration-manager"></a>Considerazioni sulla pianificazione dell'automazione delle attività in Configuration Manager
 
@@ -237,7 +238,7 @@ ms.locfileid: "50411290"
 ##  <a name="BKMK_TSNetworkAccessAccount"></a> Sequenze di attività e account di accesso alla rete  
 
 > [!Important]  
-> A partire dalla versione 1806, alcuni scenari di distribuzione del sistema operativo non richiedono l'uso dell'account di accesso alla rete. Per altre informazioni, vedere [HTTP avanzato](#enhanced-http).
+> A partire dalla versione 1806, alcuni scenari di distribuzione del sistema operativo non richiedono l'uso dell'account di accesso alla rete. Per altre informazioni, vedere [HTTP migliorato](#enhanced-http).
 
 Anche se le sequenze di attività vengono eseguite solo nel contesto dell'account di sistema locale, potrebbe essere necessario configurare l'[account di accesso alla rete](/sccm/core/plan-design/hierarchy/accounts#network-access-account) nelle circostanze seguenti:  
 
@@ -261,7 +262,7 @@ A partire dalla versione 1806, quando si abilita **HTTP avanzato**, gli scenari 
 
 Queste sequenze di attività possono essere per la distribuzione del sistema operativo o personalizzate. Sono supportate anche per i computer del gruppo di lavoro.
  
-Per altre informazioni, vedere [HTTP avanzato](/sccm/core/plan-design/hierarchy/enhanced-http).  
+Per altre informazioni, vedere [HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http).  
 
 > [!Note]  
 > I seguenti scenari di distribuzione del sistema operativo richiedono ancora l'uso dell'account di accesso alla rete:

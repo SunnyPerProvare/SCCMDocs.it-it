@@ -10,12 +10,13 @@ ms.assetid: 101d7d4d-92db-419d-b2ae-3c1c1dea68e9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: dccd893cc4a22fddf09598376bdcd05b091e6c2c
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 203de632cea1dbe7c5fa70177f3a111a4e487911
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53421553"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56123812"
 ---
 # <a name="about-client-installation-properties-published-to-active-directory-domain-services"></a>Informazioni sulle proprietà di installazione client pubblicate in Active Directory Domain Services
 
@@ -106,7 +107,7 @@ Oltre alle proprietà di Client.msi, CCMSetup supporta i parametri seguenti: /fo
 -   Non è stato eseguito il provisioning del computer con le proprietà di installazione utilizzando i Criteri di gruppo.  
 
 ## <a name="software-distribution-installation"></a>Installazione della distribuzione software  
- CCMSetup cerca le proprietà di installazione nei Servizi di dominio Active Directory nelle seguenti circostanze:  
+ CCMSetup cerca le proprietà di installazione in Active Directory Domain Services nelle circostanze seguenti:  
 
 -   Nessuna proprietà della riga di comando viene specificata dopo il comando CCMSetup.exe.  
 

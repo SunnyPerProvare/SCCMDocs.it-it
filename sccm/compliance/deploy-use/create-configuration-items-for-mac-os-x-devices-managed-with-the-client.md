@@ -10,12 +10,13 @@ ms.assetid: 722d5bf5-bedc-4dfc-b324-6eeb773874e9
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 24a0bad463dda09c7e23bbcc47ecc388735d1ca5
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: cf610c3310265f8b7dd6b467640617928a51258f
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53421825"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56124054"
 ---
 # <a name="how-to-create-configuration-items-for-mac-os-x-devices-managed-with-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione per dispositivi Mac OS X gestiti con il client di System Center Configuration Manager
 Usare l'elemento di configurazione **Mac OS X (personalizzato)** di System Center Configuration Manager per gestire le impostazioni dei dispositivi Mac OS X gestiti dal client di Configuration Manager.  

@@ -10,12 +10,13 @@ ms.assetid: 03d1b3a9-41db-4d3a-a70e-e05ab5dc8141
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: ebc5c1b7f7efb1ba9c3f1fc7b36f82b6be59858f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 3812953df11daff9d768aa808edd0bcb08ab66f5
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336715"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56124814"
 ---
 # <a name="introduction-to-queries-in-system-center-configuration-manager"></a>Introduzione alle query in System Center Configuration Manager
 

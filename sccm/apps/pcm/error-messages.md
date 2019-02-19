@@ -10,12 +10,13 @@ ms.assetid: 0d3cf6e1-b295-4b05-821d-e9f57c74ca14
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 62c4453cc383fa14eebf6e66c2582b878aaebae2
-ms.sourcegitcommit: 759098de944b8f7d5eedfc2bae2cb9a6ba15276f
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a10ebaad901181e80a449c5c64274a0d68b53100
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43297257"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56126451"
 ---
 # <a name="technical-reference-for-package-conversion-manager-error-messages"></a>Informazioni tecniche sui messaggi di errore di Package Conversion Manager
 
@@ -35,15 +36,15 @@ Controllare le autorizzazioni in Configuration Manager, verificare la connettivi
 
 #### <a name="conversion-error--applies-to-a-package-transform-status"></a>Errore di conversione - SI APPLICA ALLO STATO DI CONVERSIONE DEL PACCHETTO
 
-Si è verificata un'eccezione durante la conversione del pacchetto. Esaminare il file **PCMtrace.log** (livello di dettaglio 4).
+si è verificata un'eccezione durante la conversione del pacchetto. Esaminare il file **PCMtrace.log** (livello di dettaglio 4).
 
 Controllare le autorizzazioni utente per la condivisione di rete (origine dati del pacchetto), verificare la connettività e quindi riprovare. Se queste operazioni non consentono di risolvere il problema, esaminare il file **PCMtrace.log** (livello di dettaglio 4).
 
 
 #### <a name="did-not-find-a-converted-package-and-its-resultant-application-in-the-workflow-outputs"></a>Negli output del flusso di lavoro non è stato trovato alcun pacchetto convertito, né la relativa app risultante
-L'applicazione (pacchetto/programma convertito) è stata eliminata.
+l'applicazione (pacchetto/programma convertito) è stata eliminata.
 
-Modificare il programma/pacchetto dipendente per garantire esista.
+modificare il programma/pacchetto dipendente per garantire esista.
 
 
 #### <a name="objects-were-not-created-successfully"></a>Gli oggetti non sono stati creati

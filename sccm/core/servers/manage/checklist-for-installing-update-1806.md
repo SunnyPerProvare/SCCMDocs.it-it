@@ -10,12 +10,13 @@ ms.assetid: bb0a87a6-fd65-440b-90a5-2fef35622c9d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d0f79053eba91ac7177fe117a79612d1c1988965
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6c0705df8fafea253fde06ed605521aad2d6ffbd
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42755777"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56131711"
 ---
 # <a name="checklist-for-installing-update-1806-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1806 di Configuration Manager
 
@@ -73,7 +74,7 @@ Questo valore è facoltativo. È possibile specificarlo come utile promemoria de
 
 Per altre informazioni, vedere [Licenze e rami](/sccm/core/understand/learn-more-editions).
 
-#### <a name="review-microsoft-net-versions"></a>Esaminare le versioni di Microsoft .NET 
+#### <a name="review-microsoft-net-versions"></a>Esaminare le versioni di Microsoft .NET 
 Quando un sito installa questo aggiornamento, Configuration Manager installa automaticamente .NET Framework 4.5.2. Quando questo prerequisito non è già installato, il sito lo installa in ogni server che ospita uno dei ruoli del sistema del sito seguenti:
 
 -   Punto di gestione
@@ -83,19 +84,19 @@ Quando un sito installa questo aggiornamento, Configuration Manager installa aut
 
 Questa installazione consente di impostare il server del sistema del sito in uno stato di riavvio in sospeso e segnala gli errori al visualizzatore di stato dei componenti di Configuration Manager. Inoltre, le applicazioni .NET sul server possono presentare errori casuali fino a quando il server non viene riavviato.
 
-Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).
+Per altre informazioni, vedere  [Prerequisiti del sito e del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).
 
 #### <a name="review-the-version-of-the-windows-adk-for-windows-10"></a>Esaminare la versione di Windows ADK per Windows 10
 La versione di Windows 10 Assessment and Deployment Kit (ADK) deve essere supportata per Configuration Manager versione 1806. Per altre informazioni sulle versioni supportate di Windows ADK, vedere [Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk). Se è necessario aggiornare Windows ADK, eseguire questa operazione prima di iniziare l'aggiornamento di Configuration Manager. Questo ordine assicura che le immagini d'avvio predefinite vengano aggiornate automaticamente alla versione più recente di Windows PE. Aggiornare manualmente eventuali immagini di avvio personalizzate dopo l'aggiornamento del sito.
 
 Se si aggiorna il sito prima di aggiornare Windows ADK, vedere [Aggiornare i punti di distribuzione con l'immagine di avvio](/sccm/osd/get-started/manage-boot-images#update-distribution-points-with-the-boot-image).
 
-#### <a name="review-the-site-and-hierarchy-status-for-unresolved-issues"></a>Esaminare lo stato del sito e della gerarchia per verificare la presenza di problemi non risolti 
+#### <a name="review-the-site-and-hierarchy-status-for-unresolved-issues"></a>Esaminare lo stato del sito e della gerarchia per verificare la presenza di problemi non risolti 
 Prima di aggiornare un sito, risolvere tutti i problemi operativi per il server del sito, il server del database del sito e i ruoli del sistema del sito installati nei computer remoti. Un aggiornamento del sito può avere esito negativo a causa di problemi operativi esistenti.
 
-Per altre informazioni, vedere [Usare gli avvisi e il sistema di stato](/sccm/core/servers/manage/use-alerts-and-the-status-system).
+Per altre informazioni, vedere  [Usare gli avvisi e il sistema di stato](/sccm/core/servers/manage/use-alerts-and-the-status-system).
 
-#### <a name="review-file-and-data-replication-between-sites"></a>Esaminare la replica di file e dati tra siti   
+#### <a name="review-file-and-data-replication-between-sites"></a>Esaminare la replica di file e dati tra siti   
 verificare che la replica di file e database tra siti sia funzionante e aggiornata. Eventuali ritardi o backlog in uno dei due ambiti possono complicare o compromettere l'aggiornamento. Per la replica di database è possibile usare Replication Link Analyzer per risolvere i problemi prima di avviare l'aggiornamento.
 
 Per altre informazioni, vedere [Informazioni su Replication Link Analyzer](/sccm/core/servers/manage/monitor-hierarchy-and-replication-infrastructure#BKMK_RLA).
@@ -103,13 +104,13 @@ Per altre informazioni, vedere [Informazioni su Replication Link Analyzer](/sccm
 #### <a name="install-all-applicable-critical-windows-updates"></a>Installare tutti gli aggiornamenti di Windows critici applicabili
 Prima di installare un aggiornamento per Configuration Manager, installare gli aggiornamenti critici del sistema operativo per ogni sistema del sito applicabile. Questi server includono il server del sito, il server di database del sito e i ruoli del sistema del sito remoto. Se un aggiornamento installato richiede un riavvio, riavviare i server interessati prima di iniziare l'aggiornamento.
 
-#### <a name="disable-database-replicas-for-management-points-at-primary-sites"></a>Disabilitare le repliche di database per i punti di gestione nei siti primari   
+#### <a name="disable-database-replicas-for-management-points-at-primary-sites"></a>Disabilitare le repliche di database per i punti di gestione nei siti primari   
 Configuration Manager non può aggiornare un sito primario per il quale esista una replica del database per i punti di gestione abilitati. Prima di installare un aggiornamento per Configuration Manager, disabilitare la replica di database.
 
 Per altre informazioni, vedere [Repliche di database per i punti di gestione](/sccm/core/servers/deploy/configure/database-replicas-for-management-points).
 
 #### <a name="set-sql-server-alwayson-availability-groups-to-manual-failover"></a>Impostare i gruppi di disponibilità di SQL Server Always On per eseguire il failover manuale   
-Se si usa un gruppo di disponibilità, prima di iniziare l'installazione dell'aggiornamento verificare che il gruppo di disponibilità sia impostato sul failover manuale. Dopo l'aggiornamento del sito, è possibile ripristinare la modalità di failover automatico. Per altre informazioni, vedere [Server AlwaysOn per database del sito](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database).
+Se si usa un gruppo di disponibilità, prima di iniziare l'installazione dell'aggiornamento verificare che il gruppo di disponibilità sia impostato sul failover manuale. Dopo l'aggiornamento del sito, è possibile ripristinare la modalità di failover automatico. Per altre informazioni, vedere  [Server AlwaysOn per database del sito](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database).
 
 #### <a name="disable-site-maintenance-tasks-at-each-site"></a>Disabilitare le attività di manutenzione del sito in ogni sito
 Prima di installare l'aggiornamento , disabilitare le eventuali attività di manutenzione che potrebbero essere eseguite mentre è in corso il processo di aggiornamento. Ad esempio, tra gli altri:
@@ -120,28 +121,28 @@ Prima di installare l'aggiornamento , disabilitare le eventuali attività di man
 
 Quando un'attività di manutenzione del database del sito viene eseguita durante l'installazione dell'aggiornamento, quest'ultima potrebbe avere esito negativo. Prima di disabilitare un'attività, registrarne la pianificazione per poter ripristinare la sua configurazione dopo l'installazione dell'aggiornamento.
 
-Per altre informazioni, vedere [Attività di manutenzione](/sccm/core/servers/manage/maintenance-tasks) e [Informazioni di riferimento per le attività di manutenzione](/sccm/core/servers/manage/reference-for-maintenance-tasks).
+Per altre informazioni, vedere  [Attività di manutenzione](/sccm/core/servers/manage/maintenance-tasks)  e [Informazioni di riferimento per le attività di manutenzione](/sccm/core/servers/manage/reference-for-maintenance-tasks).
 
 #### <a name="temporarily-stop-any-antivirus-software"></a>Arrestare temporaneamente i software antivirus 
 Prima di aggiornare un sito, arrestare il software antivirus sui server Configuration Manager. <!--SMS.503481--> 
 
-#### <a name="create-a-backup-of-the-site-database"></a>Creare un backup del database del sito 
+#### <a name="create-a-backup-of-the-site-database"></a>Creare un backup del database del sito 
 Prima di aggiornare un sito, eseguire il backup del database del sito nel sito di amministrazione centrale e nei siti primari. Questo backup assicura di avere un backup corretto da usare per il ripristino di emergenza.
 
-Per altre informazioni, vedere [Backup e ripristino](/sccm/protect/understand/backup-and-recovery).
+Per altre informazioni, vedere  [Backup e ripristino](/sccm/protect/understand/backup-and-recovery).
 
-#### <a name="plan-for-client-piloting"></a>Pianificare la distribuzione pilota del client   
+#### <a name="plan-for-client-piloting"></a>Pianificare la distribuzione pilota del client   
 Quando si installa un aggiornamento per il client, è possibile testare quest'ultimo in un ambiente di pre-produzione prima della distribuzione e dell'aggiornamento di tutti i client attivi. Per sfruttare i vantaggi di questa opzione, è necessario configurare il sito in modo da supportare gli aggiornamenti automatici di pre-produzione prima di iniziare l'installazione dell'aggiornamento.
 
-Per altre informazioni, vedere [Aggiornare i client](/sccm/core/clients/manage/upgrade/upgrade-clients) e [Come testare gli aggiornamenti client in una raccolta di pre-produzione](/sccm/core/clients/manage/upgrade/test-client-upgrades).
+Per altre informazioni, vedere  [Aggiornare i client](/sccm/core/clients/manage/upgrade/upgrade-clients)  e [Come testare gli aggiornamenti client in una raccolta di pre-produzione](/sccm/core/clients/manage/upgrade/test-client-upgrades).
 
 #### <a name="plan-to-use-service-windows"></a>Iniziare a usare gli intervalli di servizio   
-Per definire un periodo durante il quale possono essere installati gli aggiornamenti a un server del sito, usare gli intervalli di servizio, che permettono di controllare quando i siti nella gerarchia installano l'aggiornamento. Per altre informazioni, vedere [Intervalli di servizio per i server del sito](/sccm/core/servers/manage/service-windows).
+Per definire un periodo durante il quale possono essere installati gli aggiornamenti a un server del sito, usare gli intervalli di servizio, che permettono di controllare quando i siti nella gerarchia installano l'aggiornamento. Per altre informazioni, vedere  [Intervalli di servizio per i server del sito](/sccm/core/servers/manage/service-windows).
 
 #### <a name="review-supported-extensions"></a>Verificare le estensioni supportate
 <!--SCCMdocs#587--> Se si estende Configuration Manager usando altri prodotti Microsoft o di partner Microsoft, verificare che la versione 1806 sia supportata da tali prodotti. Rivolgersi al fornitore del prodotto per verificare questa informazione. Ad esempio, vedere le [note sulla versione](/sccm/mdt/release-notes) di Microsoft Deployment Toolkit.
 
-#### <a name="run-the-setup-prerequisite-checker"></a>Eseguire il controllo dei prerequisiti di installazione   
+#### <a name="run-the-setup-prerequisite-checker"></a>Eseguire il controllo dei prerequisiti di installazione   
 Quando l'aggiornamento risulta**Disponibile** nella console, è possibile eseguire il controllo dei prerequisiti in modo indipendente prima di procedere all'installazione. Quando si installa l'aggiornamento nel sito, il controllo dei prerequisiti viene eseguito nuovamente.
 
 Per eseguire il controllo dei prerequisiti dalla console, passare all'area di lavoro **Amministrazione** e selezionare **Aggiornamenti e manutenzione**. Selezionare il pacchetto di aggiornamento **Configuration Manager 1806**, quindi fare clic su **Esegui controllo prerequisiti**.
@@ -149,14 +150,14 @@ Per eseguire il controllo dei prerequisiti dalla console, passare all'area di la
 Per altre informazioni, vedere la sezione per **eseguire il controllo dei prerequisiti prima di installare un aggiornamento** in [Prima di installare un aggiornamento nella console](/sccm/core/servers/manage/install-in-console-updates#bkmk_beforeinstall).
 
 > [!IMPORTANT]  
-> Quando viene eseguito il controllo dei prerequisiti, vengono aggiornati alcuni file di origine del prodotto usati per le attività di manutenzione del sito. Di conseguenza, dopo aver eseguito il controllo dei prerequisiti, ma prima di installare l'aggiornamento, se si deve svolgere un'attività di manutenzione del sito, eseguire **Setupwfe.exe** (il programma di installazione di Configuration Manager) dalla cartella CD.Latest nel server del sito.
+> Quando viene eseguito il controllo dei prerequisiti, vengono aggiornati alcuni file di origine del prodotto usati per le attività di manutenzione del sito. Di conseguenza, dopo aver eseguito il controllo dei prerequisiti, ma prima di installare l'aggiornamento, se si deve svolgere un'attività di manutenzione del sito, eseguire  **Setupwfe.exe** (il programma di installazione di Configuration Manager) dalla cartella CD.Latest nel server del sito.
 
-#### <a name="update-sites"></a>Aggiornare i siti   
+#### <a name="update-sites"></a>Aggiornare i siti   
 A questo punto è possibile avviare l'installazione dell'aggiornamento per la gerarchia. Per altre informazioni sull'installazione dell'aggiornamento, vedere [Installare gli aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates#a-namebkmkinstalla-install-in-console-updates).
 
 È possibile pianificare l'installazione dell'aggiornamento al di fuori delle normali ore lavorative. Determinare quando il processo avrà l'impatto minimo sulle operazioni aziendali. Con l'installazione dell'aggiornamento e le relative azioni, vengono reinstallati i componenti del sito e i ruoli del sistema del sito.
 
-Per altre informazioni, vedere [Aggiornamenti per Configuration Manager](/sccm/core/servers/manage/updates).
+Per altre informazioni, vedere  [Aggiornamenti per Configuration Manager](/sccm/core/servers/manage/updates).
 
 
 

@@ -10,12 +10,13 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 304a83ea-0f72-437d-9688-2e6e0c7526dd
-ms.openlocfilehash: 7c775df2446dbd0da1d9317982fc752dbfe5120a
-ms.sourcegitcommit: 4e4b71227309bee7e9f1285971f8235c67a9c502
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: aac5c9d6c683447fe7dda50e6dcfd52b7024656d
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46533814"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56131643"
 ---
 # <a name="service-a-server-group"></a>Assistenza a un gruppo di server
 
@@ -41,9 +42,9 @@ Le impostazioni del gruppo di server vengono configurate nelle proprietà di una
 
 4.  Nella pagina **Impostazioni gruppo di server** specificare una delle impostazioni seguenti:  
 
-    -   **Consentire a una percentuale di computer di essere aggiornati contemporaneamente**: specifica che solo una determinata percentuale di client vengono aggiornati in qualsiasi momento. Se, ad esempio, l'insieme ha 10 client e la raccolta viene configurata per aggiornare il 30% dei client allo stesso tempo, solo 3 client installeranno gli aggiornamenti software in qualsiasi momento.  
+    -   **Consentire a una percentuale di computer di essere aggiornati contemporaneamente**: specifica che viene aggiornata solo una determinata percentuale di client alla volta. Se, ad esempio, l'insieme ha 10 client e la raccolta viene configurata per aggiornare il 30% dei client allo stesso tempo, solo 3 client installeranno gli aggiornamenti software in qualsiasi momento.  
 
-    -   **Consentire a un numero di computer di essere aggiornati contemporaneamente**: specifica che solo un certo numero di client possono essere aggiornati in un determinato momento.  
+    -   **Consentire a un numero di computer di essere aggiornati contemporaneamente**: specifica che viene aggiornato solo un determinato numero di client alla volta.  
 
     -   **Specifica la sequenza di manutenzione**: specifica che i client nella raccolta saranno aggiornati uno alla volta nella sequenza che viene configurata. Un client installerà gli aggiornamenti software solo dopo che il client che lo precede nell'elenco avrà completato l'installazione degli aggiornamenti.  
 

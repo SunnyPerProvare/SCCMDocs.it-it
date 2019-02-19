@@ -10,12 +10,13 @@ ms.assetid: d39c201f-d364-4e7b-bde4-faa76d747f33
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a8d1d0a727f0a4ad4a2bfc25141f7e2982494080
-ms.sourcegitcommit: b596d944e49f3c4912c6ca91915ed1418c17a1a2
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 35bfd908864ee77c19821ce02ab62c03523fae37
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42584642"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56126947"
 ---
 # <a name="install-the-system-center-configuration-manager-console"></a>Installare la console di System Center Configuration Manager
 
@@ -85,7 +86,7 @@ Gli amministratori usano la console di Configuration Manager per gestire l'ambie
   |/uninstall|Disinstalla la console di Configuration Manager. Specificare per prima questa opzione quando viene usata con l'opzione **/q**.|  
   |LangPackDir|Specifica il percorso alla cartella che contiene i file di lingua. È possibile usare il **Downloader di installazione** per scaricare i file di lingua. Se non si usa questa opzione, il programma di installazione ricerca la cartella della lingua nella cartella corrente. Se la cartella della lingua non viene trovata, il programma di installazione prosegue con l'installazione della sola versione in lingua inglese. Per altre informazioni, vedere [Downloader di installazione](setup-downloader.md).|  
   |TargetDir|Specifica la cartella di installazione per installare la console di Configuration Manager. Questa opzione è obbligatoria solo quando si usa l'opzione **/q** .|  
-  |EnableSQM|Specifica se partecipare all'Analisi utilizzo software (CEIP). Usare un valore di **1** per partecipare all'Analisi utilizzo software e un valore di **0** per non partecipare a tale analisi. Questa opzione è obbligatoria solo quando si usa l'opzione **/q** .</br></br>Nota: a partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.  Se si usa il parametro, l'installazione non riuscirà.|  
+  |EnableSQM|Specifica se partecipare all'Analisi utilizzo software (CEIP). Usare un valore di **1** per partecipare all'Analisi utilizzo software e un valore di **0** per non partecipare a tale analisi. Questa opzione è obbligatoria solo quando si usa l'opzione **/q** .</br></br>Nota: A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.  Se si usa il parametro, l'installazione non riuscirà.|  
   |DefaultSiteServerName|Specifica l'FQDN del server del sito a cui si connette la console all'apertura. Questa opzione è obbligatoria solo quando si usa l'opzione **/q** .|  
 
 
