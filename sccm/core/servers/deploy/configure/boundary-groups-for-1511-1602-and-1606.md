@@ -10,12 +10,13 @@ ms.assetid: dec1e0d7-5864-43a8-9f56-413923b3914e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0bb7ccfb2aa516a5deb712bd2ecd82f36c4f282c
-ms.sourcegitcommit: 48098f9fb2f447672bf36d50c9f58a3d26acb9ed
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 04e212c2c1c24098e8260f9470aec81cb35a7cf9
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53416725"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156890"
 ---
 # <a name="boundary-groups-for-system-center-configuration-manager-version-1511-1602-and-1606"></a>Gruppi di limiti per System Center Configuration Manager versioni 1511, 1602 e 1606
 
@@ -29,7 +30,7 @@ Se si usa la versione 1610 o successiva, vedere [Configurare gruppi di limiti](/
 ##  <a name="BKMK_BoundaryGroups"></a> Gruppi di limiti  
  I gruppi di limiti vengono creati per raggruppare logicamente i percorsi di rete correlati (limiti) e semplificare la gestione dell'infrastruttura. Prima di usare un gruppo di limiti è necessario assegnare i limiti ai gruppi di limiti. I client usano la configurazione del gruppo di limiti per:  
 
--   Assegnazione automatica del sito  
+-   Assegnazione automatica al sito  
 
 -   Percorso contenuto  
 
