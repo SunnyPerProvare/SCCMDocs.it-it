@@ -11,12 +11,12 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c16487bc59a7e067aac5554213e2be750729078f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 411811c4047cd781d0edcd5cc345ff82acc80f91
+ms.sourcegitcommit: 0a23cde6112cbb5987f433bffcf6f223b994ba72
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56120147"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56667444"
 ---
 #  <a name="using-configuration-manager-software-updates-to-deliver-definition-updates"></a>Utilizzo degli aggiornamenti Software di Configuration Manager per distribuire gli aggiornamenti delle definizioni
 
@@ -49,10 +49,10 @@ ms.locfileid: "56120147"
 
 6. Assicurarsi che la casella di controllo  **Attiva la distribuzione dopo l'esecuzione di questa regola** sia selezionata e quindi fare clic su **Avanti**.
 
-7. Nella pagina **Impostazioni distribuzione** della procedura guidata, nell'elenco **Livello dettaglio** selezionare **Minimo**e quindi fare clic su **Avanti**.
+7. Nella pagina **Impostazioni distribuzione** della procedura guidata, nell'elenco **Livello dettaglio** selezionare **Solo messaggi di errore** e quindi fare clic su **Avanti**.
 
    > [!NOTE]
-   >  Nell'elenco **Livello dettaglio** selezionare **Minimo** (Configuration Manager senza Service Pack) o **Solo messaggi di errore** (Configuration Manager). In questo modo, sarà possibile ridurre il numero di messaggi di stato restituiti dalla distribuzione delle definizioni. Questa configurazione consente di ridurre l'utilizzo dell'elaborazione CPU nei server di Configuration Manager.
+   >  Selezionando **solo i messaggi di errore** ridurrà il numero di messaggi di stato restituiti dalla distribuzione delle definizioni. Questa configurazione consente di ridurre l'utilizzo dell'elaborazione CPU nei server di Configuration Manager.
 
 8. Nell'elenco **Filtri proprietà** selezionare la casella di controllo **Classificazione aggiornamento** .
 
@@ -91,18 +91,20 @@ ms.locfileid: "56120147"
 
 20. Nella pagina **Avvisi** della procedura guidata non è necessario configurare avvisi. Endpoint Protection in Configuration Manager genera avvisi che potrebbero essere necessari. Fare clic su **Avanti**.
 
-21. Nella pagina **Impostazioni download** della procedura guidata selezionare il comportamento di download degli aggiornamenti software necessario e quindi fare clic su **Avanti**.
-
-22. Nella pagina **Pacchetto di distribuzione** della procedura guidata selezionare un pacchetto di distribuzione esistente o crearne uno nuovo per contenere i file degli aggiornamenti software associati alla regola.
+21. Nella pagina **Pacchetto di distribuzione** della procedura guidata selezionare un pacchetto di distribuzione esistente o crearne uno nuovo per contenere i file degli aggiornamenti software associati alla regola.
 
     > [!NOTE]
     >  È consigliabile inserire gli aggiornamenti delle definizioni in un pacchetto che non contenga altri aggiornamenti software. In questo modo, le dimensioni del pacchetto di aggiornamenti delle definizioni resteranno contenute, consentendo una replica più veloce nei punti di distribuzione.
 
-23. Nella pagina **Punti di distribuzione** della procedura guidata selezionare uno o più punti di distribuzione in cui verrà copiato il contenuto del pacchetto e quindi fare clic su **Avanti**.
+22. Se si crea un nuovo pacchetto, nella pagina **Punti di distribuzione** della procedura guidata selezionare uno o più punti di distribuzione in cui verrà copiato il contenuto del pacchetto e quindi fare clic su **Avanti**.
 
-24. Nella pagina **Percorso download** della procedura guidata selezionare **Scarica aggiornamenti software da Internet**e quindi fare clic su **Avanti**.
+23. Nella pagina **Percorso download** della procedura guidata selezionare **Scarica aggiornamenti software da Internet**e quindi fare clic su **Avanti**.
 
-25. Nella pagina **Selezione lingua** della procedura guidata selezionare ogni versione linguistica degli aggiornamenti da scaricare e quindi fare clic su **Avanti**.
+24. Nella pagina **Selezione lingua** della procedura guidata selezionare ogni versione linguistica degli aggiornamenti da scaricare e quindi fare clic su **Avanti**.
+
+25. Nella pagina **Impostazioni download** della procedura guidata selezionare il comportamento di download degli aggiornamenti software necessario e quindi fare clic su **Avanti**.
+
+26. Nella pagina **Riepilogo** della procedura guidata verificare le impostazioni e quindi fare clic su **Avanti**.
 
 26. Completare la Creazione guidata delle regole di distribuzione automatica.
 

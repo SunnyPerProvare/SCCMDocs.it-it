@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba364ce222ae5e07cc1a0e9d25eb3ae525f2cbbf
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 2f19fee37ab817670bd754d6da1ad1ebe9ccb452
+ms.sourcegitcommit: 369db96ee84299b5ab6d74b177e6366b3017fc54
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56142392"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56589935"
 ---
 # <a name="endpoint-protection-client-frequently-asked-questions"></a>Domande frequenti relative al client Endpoint Protection
 
@@ -51,16 +51,7 @@ Queste domande frequenti sono destinate a utenti di computer il cui amministrato
 
  Windows Defender o Endpoint Protection mettono a disposizione tre modi per impedire al software dannoso di infettare il computer:  
 
--   **Uso della protezione in tempo reale**: la protezione in tempo reale consente a Windows Defender di monitorare costantemente il computer e di avvertire l'utente quando il software dannoso, inclusi virus, spyware o altro software potenzialmente indesiderato, tenta l'installazione o l'esecuzione nel computer. Windows Defender sospende quindi il software e consente di seguire il suggerimento proposto relativo al software o di eseguire un'azione alternativa.  
-
-    |**Opzione di protezione in tempo reale** |**Scopo** |
-
-    |-|-|  
-    |Analizza tutti i download|Questa opzione consente di monitorare i file e i programmi scaricati, inclusi i file scaricati automaticamente tramite Windows Internet Explorer e Microsoft Outlook® Express, ad esempio i controlli ActiveX® e i programmi di installazione software. Questi file possono essere scaricati, installati o eseguiti dal browser stesso. Software dannoso, tra cui virus, spyware e altro software potenzialmente indesiderato, può essere incluso in questi file e installato all'insaputa dell'utente.<br /><br /> Con l'opzione di protezione in tempo reale, Windows Defender mantiene costantemente monitorato il computer e controlla l'eventuale presenza di file o programmi dannosi che potrebbero essere stati scaricati. Questa funzionalità di monitoraggio significa che Windows Defender non deve rallentare l'esperienza di esplorazione o la posta elettronica richiedendo un controllo di tutti i file o i programmi da scaricare.|  
-    |Monitorizza attività di file e programmi nel computer|Questa opzione consente di monitorare i file e programmi in esecuzione nel computer e quindi genera avvisi per le eventuali azioni eseguite da tali file e programmi e le azioni eseguite su di essi. Si tratta di un aspetto importante, perché il software dannoso può sfruttare le vulnerabilità nei programmi installati per eseguire software dannoso o indesiderato all'insaputa dell'utente. Ad esempio, un programma spyware può attivarsi automaticamente in background all'avvio di un programma usato di frequente. Windows Defender mantiene monitorati i programmi e genera avvisi se rileva attività sospette.|  
-    |Abilitare monitoraggio comportamento|Questa opzione consente di monitorare raccolte di comportamenti per individuare modelli sospetti che potrebbero non essere rilevati dai metodi di rilevamento antivirus tradizionali.|  
-
-    |Abilita Network Inspection System|Questa opzione consente di proteggere il computer dagli exploit "zero day" delle vulnerabilità note, riducendo il periodo di tempo tra l'individuazione di una vulnerabilità e l'applicazione di un aggiornamento.|  
+-   **Uso della protezione in tempo reale**: la protezione in tempo reale consente a Windows Defender di monitorare costantemente il computer e di avvertire l'utente quando il software dannoso, inclusi virus, spyware o altro software potenzialmente indesiderato, tenta l'installazione o l'esecuzione nel computer. Windows Defender sospende quindi il software e consente di seguire il suggerimento proposto relativo al software o di eseguire un'azione alternativa.
 
 -   **Opzioni di analisi**: è possibile usare Windows Defender per eseguire un'analisi al fine di rilevare potenziali minacce, come ad esempio virus, spyware e altro software dannoso, che potrebbero compromettere la sicurezza del computer. È inoltre possibile pianificare le analisi periodicamente e rimuovere il software dannoso rilevato durante un'analisi.  
 
@@ -216,7 +207,7 @@ Per rimuovere facilmente e velocemente tutti gli elementi indesiderati o potenzi
 |Analizza tutti i download|Questa opzione consente di monitorare i file e i programmi scaricati, inclusi i file scaricati automaticamente tramite Windows Internet Explorer e Microsoft Outlook® Express, ad esempio i controlli ActiveX® e i programmi di installazione software. Questi file possono essere scaricati, installati o eseguiti dal browser stesso. Software dannoso, tra cui virus, spyware e altro software potenzialmente indesiderato, può essere incluso in questi file e installato all'insaputa dell'utente.<br /><br /> Con l'opzione di protezione in tempo reale, Windows Defender mantiene costantemente monitorato il computer e controlla l'eventuale presenza di file o programmi dannosi che potrebbero essere stati scaricati. Questa funzionalità di monitoraggio significa che Windows Defender non deve rallentare l'esperienza di esplorazione o per la posta elettronica richiedendo un controllo di tutti i file o programmi da scaricare.|  
 |Monitoraggio dell'attività di file e programmi nel computer|Questa opzione consente di monitorare i file e programmi in esecuzione nel computer e quindi genera avvisi per le eventuali azioni eseguite da tali file e programmi e le azioni eseguite su di essi. Si tratta di un aspetto importante, perché il software dannoso può sfruttare le vulnerabilità nei programmi installati per eseguire software dannoso o indesiderato all'insaputa dell'utente. Ad esempio, un programma spyware può attivarsi automaticamente in background all'avvio di un programma usato di frequente. Windows Defender mantiene monitorati i programmi e genera avvisi se rileva attività sospette.|  
 |Abilita monitoraggio del comportamento|Questa opzione consente di monitorare raccolte di comportamenti per individuare modelli sospetti che potrebbero non essere rilevati dai metodi di rilevamento antivirus tradizionali.|  
-|Abilita Network Inspection System|Questa opzione consente di proteggere il computer dagli exploit zero-day di vulnerabilità note, riducendo il periodo di tempo tra l'individuazione di una vulnerabilità e l'applicazione di un aggiornamento.|  
+|Abilita Network Inspection System|Questa opzione consente di proteggere il computer dagli exploit zero-day delle vulnerabilità note, riducendo il periodo di tempo tra l'individuazione di una vulnerabilità e l'applicazione di un aggiornamento.|  
 
 ### <a name="to-turn-off-real-time-protection"></a>Per disattivare la protezione in tempo reale  
 
