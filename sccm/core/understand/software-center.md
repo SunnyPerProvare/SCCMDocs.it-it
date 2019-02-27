@@ -10,12 +10,13 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.assetid: 9e68de6e-2b33-442b-b674-a382728d9529
-ms.openlocfilehash: bcdc6298a7b1c429888acf2b7257cec072e9b878
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: da01c741107d4eb4a707f7f0d8ada5d82706f292
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383421"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56119892"
 ---
 # <a name="software-center-user-guide"></a>Manuale dell'utente di Software Center
 
@@ -94,8 +95,8 @@ Fare clic sulla scheda **Sistemi operativi** per visualizzare e installare le ve
 Fare clic sulla scheda **Stato installazione** per visualizzare lo stato delle applicazioni. Possono essere visualizzati gli stati seguenti:
 - **Installata**: Software Center ha già installato questa applicazione nel computer.
 - **Download in corso**: Software Center sta scaricando il software da installare nel computer.
-- **Non riuscita**: Software Center ha riscontrato un errore nel tentativo di installare il software.
-- **Installazione pianificata dopo**: mostra la data e ora della successiva finestra di manutenzione del dispositivo per installare software futuri. Le finestre di manutenzione vengono definite dall'amministratore IT.<!--1358131-->
+- **Operazione non riuscita**: Software Center ha riscontrato un errore nel tentativo di installare il software.
+- **Installazione pianificata dopo** : mostra la data e ora della successiva finestra di manutenzione del dispositivo per installare software futuri. Le finestre di manutenzione vengono definite dall'amministratore IT.<!--1358131-->
     - Lo stato può essere visualizzato nelle schede **Tutto** e **Imminente**. 
     - È possibile eseguire l'installazione prima della data e dell'ora della finestra di manutenzione facendo sul pulsante **Installa adesso**. 
 
@@ -132,8 +133,8 @@ Per rendere il computer esente da questi criteri, selezionare la casella di cont
 ### <a name="computer-maintenance"></a>Manutenzione computer
 
 Specifica come Software Center applica le modifiche al software prima della scadenza.
-- **Installare o disinstallare automaticamente il software richiesto e riavviare il computer solo fuori dall'orario di lavoro specificato**: questa opzione è disabilitata per impostazione predefinita.
-- **Sospendi le attività di Software Center quando il computer si trova in modalità presentazione**: questa opzione è abilitata per impostazione predefinita.
+- **Installare o disinstallare automaticamente il software richiesto e riavviare il computer solo fuori dall'orario di lavoro specificato**: Per impostazione predefinita, questa impostazione è disabilitata.
+- **Sospendi le attività di Software Center quando il computer si trova in modalità presentazione**: Questa opzione è attivata per impostazione predefinita.
 - **Sincronizza criteri**: fare clic su questo pulsante quando richiesto dall'amministratore IT. Il computer verifica sui server la presenza di nuovi elementi, quali applicazioni, aggiornamenti software o sistemi operativi.
 
 ## <a name="custom-tab-in-software-center"></a>Scheda personalizzata in Software Center
