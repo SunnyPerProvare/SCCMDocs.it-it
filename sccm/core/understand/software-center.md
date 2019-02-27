@@ -5,18 +5,18 @@ description: Informazioni sulle funzionalità di Software Center
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 07/30/2018
+ms.date: 02/20/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.assetid: 9e68de6e-2b33-442b-b674-a382728d9529
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da01c741107d4eb4a707f7f0d8ada5d82706f292
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: eacd1d1be2564b718423b9d0db8d24b60aac1adb
+ms.sourcegitcommit: 369db96ee84299b5ab6d74b177e6366b3017fc54
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56119892"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56589918"
 ---
 # <a name="software-center-user-guide"></a>Manuale dell'utente di Software Center
 
@@ -45,7 +45,7 @@ Fare clic sulla scheda **Applicazioni** per trovare e installare le applicazioni
 - **Tutte**: visualizza tutte le applicazioni che è possibile installare
 - **Richiesto**: l'amministratore IT richiede l'installazione di queste applicazioni. Se si disinstalla una di queste applicazioni, Software Center la reinstalla.
 - **Filtri**: l'amministratore IT può creare categorie di applicazioni. Se disponibile, fare clic sull'elenco a discesa per filtrare la visualizzazione e visualizzare solo le applicazioni di una categoria specifica. Selezionare **Tutte** per visualizzare tutte le applicazioni.
-- **Ordina per**: consente di riordinare l'elenco delle applicazioni. Per impostazione predefinita questo elenco è ordinato per **Più recente**.
+- **Ordina per**: consente di riordinare l'elenco delle applicazioni. Per impostazione predefinita questo elenco è ordinato per **Più recente**. Le applicazioni rese disponibili di recente sono elencate con un tag **Nuovo** visibile per 7 giorni.
 - **Cerca**: l'elemento cercato non è stato trovato? Immettere parole chiave nella casella di ricerca per trovarlo.
 -  **Alternare la visualizzazione**: fare clic sulle icone per alternare tra la visualizzazione elenco e la visualizzazione affiancata. Per impostazione predefinita l'elenco delle applicazioni viene visualizzato sotto forma di elementi grafici affiancati. 
     - Visualizzazione affiancata: l'amministratore IT può personalizzare le icone. Sotto ogni riquadro vengono visualizzati il nome dell'applicazione, l'editore e la versione. 
