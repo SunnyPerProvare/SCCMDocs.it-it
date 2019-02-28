@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 304fe88dd5ed8a37bf17dca390d95158d005bae3
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 8850d849066c97b8cb07719f229ebec1d4748403
+ms.sourcegitcommit: 369db96ee84299b5ab6d74b177e6366b3017fc54
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56125369"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56589884"
 ---
 # <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Numeri di ridimensionamento e scalabilità per System Center Configuration Manager
 
@@ -208,7 +208,7 @@ Ad esempio, un sito primario autonomo che supporta 150.000 desktop e 10.000 Mac 
 
 
 ### <a name="embedded"></a> Siti primari e dispositivi con Windows Embedded
-I siti primari supportano i dispositivi con Windows Embedded in cui sono abilitati i filtri di scrittura basati su file (FBWF). Se nei dispositivi integrati non sono abilitati filtri di scrittura, un sito primario può supportare un numero di dispositivi integrati non superiore al numero di dispositivi consentito per il sito. Del numero totale di dispositivi supportati da un sito primario, un massimo di 10.000 dispositivi possono essere Windows Embedded. Questi dispositivi devono essere configurati per le eccezioni elencate nella nota importante in [Pianificazione della distribuzione del client in dispositivi con Windows Embedded](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices). Un sito primario supporta solo 3.000 dispositivi con Windows Embedded in cui è abilitato EWF e che non sono configurati per le eccezioni.
+I siti primari supportano i dispositivi con Windows Embedded in cui sono abilitati i filtri di scrittura basati su file (FBWF). Se nei dispositivi integrati non sono abilitati filtri di scrittura, un sito primario può supportare un numero di dispositivi integrati non superiore al numero di dispositivi consentito per il sito. Quando nei dispositivi incorporati è abilitato FBWF o Unified Write Filters (UWF), un sito primario può supportare un massimo di 10.000 dispositivi Windows Embedded. Questi dispositivi devono essere configurati con le eccezioni elencate nella nota importante disponibile in [Pianificazione della distribuzione del client in dispositivi con Windows Embedded](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices). Un sito primario supporta solo 3.000 dispositivi con Windows Embedded in cui è abilitato EWF e che non sono configurati per le eccezioni.
 
 
 ###  <a name="bkmk_sec"></a> Siti secondari  
