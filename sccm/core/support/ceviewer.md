@@ -10,12 +10,13 @@ ms.assetid: caad2d93-087c-4dc0-a2a7-6a2fd808b4c8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6c052979ad310273669d5a7897213bffd9f7e213
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 054676d5583dbc4468f1d2716d895100f3a5471a
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39386572"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56134300"
 ---
 # <a name="collection-evaluation-viewer"></a>Collection Evaluation Viewer
 
@@ -43,7 +44,7 @@ Il processo di valutazione raccolta viene eseguito valutando le regole di appart
 
 - **Manual Queue** (Coda manuale): per le raccolte selezionate manualmente da un amministratore per la valutazione dalla console  
 
-- **New Queue** (Nuova coda): per le nuove raccolte create  
+- **Nuova coda**: per le nuove raccolte create  
 
 - **Full Queue** (Coda completa): per le raccolte su cui eseguire una valutazione completa  
 
@@ -67,7 +68,7 @@ Esistono quattro thread che vengono eseguiti per valutare le raccolte presenti n
 
 Eseguire **CEViewer.exe**. Il menu principale dello strumento contiene le schede seguenti: 
 
-- [Connetti](#bkmk_connect): stabilisce la connessione iniziale al server del sito primario e a SQL Server  
+- [Connessione](#bkmk_connect): stabilisce la connessione iniziale al server del sito primario e a SQL Server  
 
 - [Full Evaluation](#bkmk_full-eval) (Valutazione completa): elenca le informazioni dettagliate su tutte le valutazioni complete precedenti   
 
@@ -77,7 +78,7 @@ Eseguire **CEViewer.exe**. Il menu principale dello strumento contiene le schede
 
 - [Manual Queue](#bkmk_manual-q) (Coda manuale): elenca le informazioni dettagliate sulla valutazione raccolta corrente nella coda manuale  
 
-- [New Queue](#bkmk_new-q) (Nuova coda): elenca le informazioni dettagliate sulla valutazione raccolta corrente nella nuova coda  
+- [Nuova coda](#bkmk_new-q): elenca le informazioni dettagliate sulla valutazione raccolta corrente nella nuova coda  
 
 - [Full Queue](#bkmk_full-q) (Coda completa): elenca le informazioni dettagliate sulla valutazione raccolta corrente nella coda completa  
 
@@ -99,11 +100,11 @@ Mostra informazioni dettagliate sulle valutazioni raccolta complete precedenti. 
 
 - **Nome raccolta**: nome della raccolta  
 
-- **ID sito**: ID sito della raccolta   
+- **ID sito**: ID del sito della raccolta   
 
 - **Tempo di esecuzione**: durata, in secondi, dell'ultima esecuzione della valutazione raccolta  
 
-- **Last Evaluation Completion Time** (Ora completamento ultima valutazione): ora di fine dell'ultima valutazione raccolta  
+- **Last Evaluation Completion Time** (Ora completamento ultima valutazione): ora in cui è stata completata l'ultima valutazione raccolta  
 
 - **Next Evaluation Time** (Ora valutazione successiva): ora di inizio della valutazione completa successiva  
 
@@ -120,11 +121,11 @@ Mostra informazioni dettagliate sulle valutazioni raccolta incrementali preceden
 
 - **Nome raccolta**: nome della raccolta  
 
-- **ID sito**: ID sito della raccolta   
+- **ID sito**: ID del sito della raccolta   
 
 - **Tempo di esecuzione**: durata, in secondi, dell'ultima esecuzione della valutazione raccolta  
 
-- **Last Evaluation Completion Time** (Ora completamento ultima valutazione): ora di fine dell'ultima valutazione raccolta  
+- **Last Evaluation Completion Time** (Ora completamento ultima valutazione): ora in cui è stata completata l'ultima valutazione raccolta  
 
 - **Member Changes** (Modifiche ai membri): modifiche apportate ai membri nell'ultima valutazione raccolta. Queste modifiche sono in positivo (membri aggiunti) o in negativo (membri rimossi).  
 
@@ -139,15 +140,15 @@ Riepiloga le valutazioni raccolta in tempo reale per tutte e quattro le code. So
 
 - **Riepilogo**: elenca il numero totale di raccolte e la lunghezza delle code per tutte le raccolte in tutte e quattro le code  
 
-- **Running Evaluation** (Valutazione in esecuzione): elenca la raccolta di cui è attualmente in corso l'esecuzione in ogni coda e da quanto è in esecuzione  
+- **Running Evaluation** (Valutazione in esecuzione): indica la raccolta di cui è attualmente in corso l'esecuzione in ogni coda e da quanto è in esecuzione  
 
-- **Manual Update** (Aggiornamento manuale): mostra un breve riepilogo delle raccolte da valutare, l'ora di completamento prevista e l'ordine della valutazione nella coda manuale  
+- **Manual Update** (Aggiornamento manuale): illustra un breve riepilogo delle raccolte da valutare, l'ora di completamento prevista e l'ordine della valutazione nella coda manuale  
 
-- **Nuova raccolta**: mostra un breve riepilogo delle raccolte da valutare, l'ora di completamento prevista e l'ordine della valutazione nella nuova coda di raccolte  
+- **Nuova raccolta**: illustra un breve riepilogo delle raccolte da valutare, l'ora di completamento prevista e l'ordine della valutazione nella coda della nuova raccolta  
 
-- **Full Evaluation** (Valutazione completa): mostra un breve riepilogo delle raccolte da valutare, l'ora di completamento prevista e l'ordine della valutazione nella coda di valutazioni complete  
+- **Full Evaluation** (Valutazione completa): illustra un breve riepilogo delle raccolte da valutare, l'ora di completamento prevista e l'ordine della valutazione nella coda della valutazione completa  
 
-- **Full Evaluation** (Valutazione incrementale): mostra un breve riepilogo delle raccolte da valutare, l'ora di completamento prevista e l'ordine della valutazione nella coda di valutazioni incrementali  
+- **Incremental evaluation** (Valutazione incrementale): illustra un breve riepilogo delle raccolte da valutare, l'ora di completamento prevista e l'ordine della valutazione nella coda della valutazione incrementale  
 
 
 ### <a name="bkmk_manual-q"></a> Scheda Manual Queue (Coda manuale)
@@ -156,9 +157,9 @@ Mostra le informazioni sulla valutazione raccolta manuale attualmente in fase di
 
 - **Nome raccolta**: nome della raccolta  
 
-- **ID sito**: ID sito della raccolta   
+- **ID sito**: ID del sito della raccolta   
 
-- **Estimated Completion Time** (Tempo previsto di completamento): ora di fine prevista della valutazione  
+- **Tempo previsto di completamento**: ora di fine prevista per la valutazione  
 
 - **Estimated Run Time** (Tempo di esecuzione stimato): durata prevista della valutazione nel formato giorni:ore:minuti:secondi  
 
@@ -169,9 +170,9 @@ Mostra le informazioni in tempo reale sulla nuova valutazione raccolta in fase d
 
 - **Nome raccolta**: nome della raccolta  
 
-- **ID sito**: ID sito della raccolta   
+- **ID sito**: ID del sito della raccolta   
 
-- **Estimated Completion Time** (Tempo previsto di completamento): ora di fine prevista della valutazione  
+- **Tempo previsto di completamento**: ora di fine prevista per la valutazione  
 
 - **Estimated Run Time** (Tempo di esecuzione stimato): durata prevista della valutazione nel formato giorni:ore:minuti:secondi  
 
@@ -182,9 +183,9 @@ Mostra le informazioni sulla valutazione raccolta completa attualmente in fase d
 
 - **Nome raccolta**: nome della raccolta  
 
-- **ID sito**: ID sito della raccolta   
+- **ID sito**: ID del sito della raccolta   
 
-- **Estimated Completion Time** (Tempo previsto di completamento): ora di fine prevista della valutazione  
+- **Tempo previsto di completamento**: ora di fine prevista per la valutazione  
 
 - **Estimated Run Time** (Tempo di esecuzione stimato): durata prevista della valutazione nel formato giorni:ore:minuti:secondi  
 
@@ -195,9 +196,9 @@ Mostra le informazioni sulla valutazione raccolta incrementale attualmente in fa
 
 - **Nome raccolta**: nome della raccolta  
 
-- **ID sito**: ID sito della raccolta   
+- **ID sito**: ID del sito della raccolta   
 
-- **Estimated Completion Time** (Tempo previsto di completamento): ora di fine prevista della valutazione  
+- **Tempo previsto di completamento**: ora di fine prevista per la valutazione  
 
 - **Estimated Run Time** (Tempo di esecuzione stimato): durata prevista della valutazione nel formato giorni:ore:minuti:secondi  
 

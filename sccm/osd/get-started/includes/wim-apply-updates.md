@@ -4,12 +4,12 @@ ms.author: aaroncz
 ms.prod: configuration-manager
 ms.topic: include
 ms.date: 11/27/2018
-ms.openlocfilehash: c91cf0abb8cb79fe92e34b6b234a4c8264af75ab
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.openlocfilehash: f6e46f8b0bf985eae87cd5157f8a82af5fa0b849
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456941"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56142579"
 ---
 ##  <a name="BKMK_OSImagesApplyUpdates"></a> Applicare aggiornamenti software a un'immagine  
 
@@ -43,7 +43,7 @@ Le informazioni sull'immagine, inclusi gli aggiornamenti software applicati al m
 
     a.  **Pianificazione**: specificare il momento in cui si vuole che il sito applichi gli aggiornamenti software all'immagine.  
 
-    b.  **Continua in caso di errore**: selezionare questa opzione per continuare ad applicare gli aggiornamenti software all'immagine anche quando si verifica un errore.  
+    b.  **Continua in caso di errore**:  selezionare questa opzione per continuare ad applicare gli aggiornamenti software all'immagine anche quando si verifica un errore.  
 
     c.  **Aggiorna punti di distribuzione con l'immagine**: selezionare questa opzione per aggiornare l'immagine nei punti di distribuzione dopo che il sito ha applicato gli aggiornamenti software.  
 
@@ -56,7 +56,7 @@ Le informazioni sull'immagine, inclusi gli aggiornamenti software applicati al m
 ### <a name="servicing-operations"></a>Operazioni di manutenzione
 
 Nel nodo **Immagini sistema operativo** o **Pacchetti di aggiornamento del sistema operativo** della console di Configuration Manager aggiungere le colonne seguenti alla visualizzazione:
-- **Data aggiornamenti pianificati**: questa proprietà indica la pianificazione successiva definita.  
+- **Data aggiornamenti pianificati**: questa proprietà visualizza la pianificazione successiva definita.  
 - **Stato aggiornamenti pianificati**: questa proprietà indica lo stato. Ad esempio, **Completato** oppure **In elaborazione**.  
 
 Selezionare un oggetto immagine specifico e quindi passare alla scheda **Stato aggiornamento** nel riquadro dei dettagli. In questa scheda viene visualizzato l'elenco degli aggiornamenti nell'immagine. 
@@ -82,4 +82,5 @@ L'impostazione predefinita di questa opzione è **Automatic** (Automatica). Con 
 Se si seleziona un'unità che non esiste nel server del sito, Configuration Manager si comporta come se fosse selezionata l'opzione **Automatica**. 
 
 Durante l'installazione offline, Configuration Manager archivia i file temporanei nella cartella `<drive>:\ConfigMgr_OfflineImageServicing` e monta anche l'immagine del sistema operativo in questa cartella. 
+
 

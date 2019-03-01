@@ -10,12 +10,13 @@ ms.assetid: f3058277-c597-4dac-86d1-41b6f7e62b36
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5c90889861db55a27da897e709b16b66edece08a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 67d2fc976b08e438c6f19a7fecca03761bb099f6
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342427"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56124731"
 ---
 # <a name="use-the-hotfix-installer-to-install-updates-for-system-center-configuration-manager"></a>Usare il programma di installazione di hotfix per installare gli aggiornamenti per System Center Configuration Manager
 
@@ -78,7 +79,7 @@ La procedura guidata crea anche distribuzioni che è possibile usare per install
 |&lt;Versione prodotto\>-QFE-KB&lt;ID articolo KB\>-&lt;piattaforma\>-&lt;lingua\>.exe|Questo è il file di aggiornamento. La riga di comando per questo file è gestita da Updatesetup.exe.<br /><br /> Ad esempio:<br />CM1511RTM-QFE-KB123456-X64-ENU.exe|  
 |Updatesetup.exe|Questo wrapper .msi gestisce l'installazione del bundle di aggiornamenti.<br /><br /> Quando si esegue l'aggiornamento, Updatesetup.exe rileva la lingua di visualizzazione del computer in cui viene eseguito. Per impostazione predefinita, l'interfaccia utente per l'aggiornamento è in inglese. Quando la lingua di visualizzazione è supportata, l'interfaccia utente viene visualizzato nella lingua locale del computer.|  
 |License_&lt;lingua\>.rtf|Ove applicabile, ogni aggiornamento contiene uno o più file di licenza per le lingue supportate.|  
-|&lt;TipoProdotto&Aggiornamento>-&lt;versione prodotto\>-&lt;ID articolo KB\>-&lt;piattaforma\>.msp|Quando l'aggiornamento si applica alla console o ai client di Configuration Manager, il bundle di aggiornamento include file (.msp) separati della patch di Windows Installer.<br /><br /> Ad esempio:<br /><br /> **Aggiornamento della console di Configuration Manager:** ConfigMgr1511-AdminUI-KB1234567-i386.msp<br /><br /> **Aggiornamento del client:** ConfigMgr1511-client-KB1234567-i386.msp<br />ConfigMgr1511-client-KB1234567-x64.msp|  
+|&lt;TipoProdotto&Aggiornamento>-&lt;versione prodotto\>-&lt;ID articolo KB\>-&lt;piattaforma\>.msp|Quando l'aggiornamento si applica alla console o ai client di Configuration Manager, il bundle di aggiornamento include file (.msp) separati della patch di Windows Installer.<br /><br /> Ad esempio:<br /><br /> **Aggiornamento della console di Configuration Manager:** ConfigMgr1511-AdminUI-KB1234567-i386.msp<br /><br /> **Aggiornamento client:** ConfigMgr1511-client-KB1234567-i386.msp<br />ConfigMgr1511-client-KB1234567-x64.msp|  
 
  Per impostazione predefinita, il bundle di aggiornamento registra le azioni in un file .log sul server del sito. Il file di log ha lo stesso nome del bundle di aggiornamento e viene scritto nella cartella **%SystemRoot%/Temp** .  
 
@@ -94,7 +95,7 @@ La procedura guidata crea anche distribuzioni che è possibile usare per install
 |&lt;Nome del server\>|Questo è il nome del server del sito in cui si esegue il bundle di aggiornamento.|  
 |SMS_&lt;Codice sito\>|Questo è il nome della condivisione della cartella di installazione di Configuration Manager.|  
 |&lt;Numero KB\>|Questo è il numero ID dell'articolo della Knowledge Base per questo bundle di aggiornamento.|  
-|&lt;Tipo di aggiornamento\>|Questi sono i tipi di aggiornamenti per Configuration Manager. La procedura guidata crea una cartella separata per ogni tipo di aggiornamento incluso nel bundle di aggiornamento. I nomi delle cartelle rappresentano i tipi di aggiornamento. Essi includono quanto segue:<br /><br /> **Server**: include gli aggiornamenti ai server del sito, ai server del database del sito e ai computer che eseguono il provider SMS.<br /><br /> **Client**: include gli aggiornamenti del client di Configuration Manager.<br /><br /> **AdminConsole**: include gli aggiornamenti della console di Configuration Manager.<br /><br /> Oltre ai tipi di aggiornamento precedenti, la procedura guidata crea una cartella denominata **SCUP**. Questa cartella non rappresenta un tipo di aggiornamento, ma contiene invece il file CAB per Updates Publisher.|  
+|&lt;Tipo di aggiornamento\>|Questi sono i tipi di aggiornamenti per Configuration Manager. La procedura guidata crea una cartella separata per ogni tipo di aggiornamento incluso nel bundle di aggiornamento. I nomi delle cartelle rappresentano i tipi di aggiornamento. Essi includono quanto segue:<br /><br /> **Server**: include gli aggiornamenti ai server del sito, ai server del database del sito e ai computer che eseguono il provider SMS.<br /><br /> **Client**: include gli aggiornamenti del client di Configuration Manager.<br /><br /> **AdminConsole**: include gli aggiornamenti della console di Configuration Manager<br /><br /> Oltre ai tipi di aggiornamento precedenti, la procedura guidata crea una cartella denominata **SCUP**. Questa cartella non rappresenta un tipo di aggiornamento, ma contiene invece il file CAB per Updates Publisher.|  
 |&lt;Platform\>|Si tratta di una cartella specifica della piattaforma. Contiene i file di aggiornamento specifici di un tipo di processore.  Queste cartelle includono:<br /><br />- x64<br /><br /> - I386|  
 
 ##  <a name="bkmk_Install"></a> Come installare gli aggiornamenti  
@@ -161,7 +162,7 @@ Dopo aver installato il bundle di aggiornamento in un server del sito, è possib
 
 4.  Riavviare i servizi arrestati nei passaggi precedenti.  
 
-5.  Quando si installa il bundle di aggiornamenti, viene estratto **update.sql** nel percorso seguente nel server del sito: **\\\\&lt;Nome del server\>\SMS_&lt;Codice sito\>\Hotfix\\&lt;Numero KB\>\update.sql**  
+5.  Quando si installa il bundle di aggiornamento, **update.sql** viene estratto nel seguente percorso sul server del sito:  **\\\\&lt;Nome server\>\SMS_&lt;Codice sito\>\Hotfix\\&lt;Numero KB\>\update.sql**  
 
 ####  <a name="bkmk_provider"></a> Aggiornare un computer che esegue il provider SMS  
  Dopo aver installato un pacchetto di aggiornamento che include aggiornamenti per il provider SMS è necessario distribuire l'aggiornamento in ogni computer che esegue il provider SMS. L'unica eccezione è costituita dall'istanza del provider SMS installata in precedenza nel server del sito in cui si installa il bundle di aggiornamenti. L'istanza locale del provider SMS nel server del sito viene aggiornata quando si installa il bundle di aggiornamenti.  
@@ -202,7 +203,7 @@ Ad esempio, è possibile usare la riga di comando seguente per aggiornare una co
 ###  <a name="BKMK_DeploySCUP"></a> Usare Updates Publisher 2011 per installare gli aggiornamenti  
  Quando si installa il bundle di aggiornamenti in un server del sito, la procedura guidata di installazione crea un file di catalogo per Updates Publisher che è possibile usare per distribuire gli aggiornamenti nei computer applicabili. La procedura guidata crea sempre questo catalogo, anche quando si seleziona l'opzione **Use package and program to deploy this update**.  
 
- Il catalogo per Updates Publisher è denominato **SCUPCatalog.cab** ed è disponibile nel percorso seguente del computer in cui viene eseguito il bundle di aggiornamenti: **\\\\&lt;NomeServer\>\SMS_&lt;CodiceSito\>\Hotfix\\&lt;Numero KB\>\SCUP\SCUPCatalog.cab**  
+ Il catalogo per Updates Publisher, **SCUPCatalog.cab**, è disponibile nel percorso seguente del computer in cui viene eseguito il pacchetto di aggiornamento: **\\\\&lt;NomeServer\>\SMS_&lt;CodiceSito\>\Hotfix\\&lt;Numero KB\>\SCUP\SCUPCatalog.cab**  
 
 > [!IMPORTANT]  
 >  Poiché viene creato utilizzando i percorsi specifici per il server del sito in cui viene installato il pacchetto di aggiornamento, il file SCUPCatalog.cab non può essere utilizzato in altri server del sito.  

@@ -10,12 +10,13 @@ ms.assetid: 0da167f1-52cf-4dfd-8f73-833ca3eb8478
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fa8e3bf572ced8a2394099bbb59532502ef3b019
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f5c85e3058a63868cfee28865c1be222919b29a8
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342155"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56141824"
 ---
 # <a name="command-line-options-for-setup-in-system-center-configuration-manager"></a>Opzioni della riga di comando per l'installazione in System Center Configuration Manager
 
@@ -70,17 +71,17 @@ ms.locfileid: "32342155"
 
 -   **Nome chiave:** Action  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** ManageLanguages  
 
-    -   **Dettagli:** gestisce il supporto lingua di client per dispositivi mobili, client e server in un sito.  
+    -   **Dettagli:** Consente di gestire il supporto lingua di client per dispositivi mobili, client e server in un sito.  
 
 **Opzioni**  
 
 -   **Nome chiave:** AddServerLanguages  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
@@ -88,31 +89,31 @@ ms.locfileid: "32342155"
 
 -   **Nome chiave:** AddClientLanguages  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Dettagli:** specifica le lingue che saranno disponibili per i computer client. L'inglese è disponibile per impostazione predefinita.  
+    -   **Dettagli:** Specifica le lingue che saranno disponibili per i computer client. L'inglese è disponibile per impostazione predefinita.  
 
 -   **Nome chiave:** DeleteServerLanguages  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Dettagli:** specifica le lingue da rimuovere e che non saranno più disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
+    -   **Dettagli:** Specifica le lingue da rimuovere e che non saranno più disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
 
 -   **Nome chiave:** DeleteClientLanguages  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Dettagli:** specifica le lingue da rimuovere e che non saranno più disponibili per i computer client. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
+    -   **Dettagli:** Specifica le lingue da rimuovere e che non saranno più disponibili per i computer client. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
 
 -   **Nome chiave:** MobileDeviceLanguage  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -120,11 +121,11 @@ ms.locfileid: "32342155"
 
          1 = Installare  
 
-    -   **Dettagli:** specifica se sono installate le lingue del client del dispositivo mobile.  
+    -   **Dettagli:** Specifica se sono installate le lingue del client di dispositivo mobile.  
 
 -   **Nome chiave:** PrerequisiteComp  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -136,7 +137,7 @@ ms.locfileid: "32342155"
 
 -   **Nome chiave:** PrerequisitePath  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
 
@@ -152,7 +153,7 @@ ms.locfileid: "32342155"
 
 -   **Nome chiave:** Action  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** InstallCAS  
 
@@ -170,7 +171,7 @@ ms.locfileid: "32342155"
 
 -   **Nome chiave:** ProductID  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
 
@@ -178,23 +179,23 @@ ms.locfileid: "32342155"
 
 -   **Nome chiave:** SiteCode  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Codice del sito*>  
 
-    -   **Dettagli:** specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia.  
+    -   **Dettagli:** Specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia.  
 
--   **Nome chiave:** Site name  
+-   **Nome chiave:** Nome sito  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Nome del sito*>  
 
-    -   **Dettagli:** specifica il nome del sito.  
+    -   **Dettagli:** Specifica il nome del sito.  
 
 -   **Nome chiave:** SMSInstallDir  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Percorso di installazione di Configuration Manager*>  
 
@@ -202,15 +203,15 @@ ms.locfileid: "32342155"
 
 -   **Nome chiave:** SDKServer  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*FQDN del provider SMS*>  
 
-    -   **Dettagli:** specifica l'FQDN del server che ospiterà il provider SMS. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito.  
+    -   **Dettagli:** Specifica l'FQDN del server che ospiterà il provider SMS. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito.  
 
 -   **Nome chiave:** PrerequisiteComp  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -222,7 +223,7 @@ ms.locfileid: "32342155"
 
 -   **Nome chiave:** PrerequisitePath  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
 
@@ -230,7 +231,7 @@ ms.locfileid: "32342155"
 
 -   **Nome chiave:** AdminConsole  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -238,13 +239,13 @@ ms.locfileid: "32342155"
 
          1 = Installare  
 
-    -   **Dettagli:** specifica se installare la console di Configuration Manager.  
+    -   **Dettagli:** Specifica se installare la console di Configuration Manager.  
 
 -   **Nome chiave:** JoinCEIP  
     > [!Note]  
     > A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -252,11 +253,11 @@ ms.locfileid: "32342155"
 
          1 = Partecipare  
 
-    -   **Dettagli:** specifica se partecipare al programma Analisi utilizzo software (CEIP).  
+    -   **Dettagli:** Specifica se partecipare all'Analisi utilizzo software (CEIP).  
 
 -   **Nome chiave:** AddServerLanguages  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
@@ -264,31 +265,31 @@ ms.locfileid: "32342155"
 
 -   **Nome chiave:** AddClientLanguages  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Dettagli:** specifica le lingue che saranno disponibili per i computer client. L'inglese è disponibile per impostazione predefinita.  
+    -   **Dettagli:** Specifica le lingue che saranno disponibili per i computer client. L'inglese è disponibile per impostazione predefinita.  
 
 -   **Nome chiave:** DeleteServerLanguages  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Dettagli:** modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
+    -   **Dettagli:** Modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
 
 -   **Nome chiave:** DeleteClientLanguages  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Dettagli:** modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per i computer client. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
+    -   **Dettagli:** Modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per i computer client. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
 
 -   **Nome chiave:** MobileDeviceLanguage  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -296,13 +297,13 @@ ms.locfileid: "32342155"
 
          1 = Installare  
 
-    -   **Dettagli:** specifica se sono installate le lingue del client del dispositivo mobile.  
+    -   **Dettagli:** Specifica se sono installate le lingue del client di dispositivo mobile.  
 
 **SQLConfigOptions**  
 
 -   **Nome chiave:** SQLServerName  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Nome dell'istanza di SQL Server*>  
 
@@ -310,7 +311,7 @@ ms.locfileid: "32342155"
 
 -   **Nome chiave:** DatabaseName  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
 
@@ -321,15 +322,15 @@ ms.locfileid: "32342155"
 
 -   **Nome chiave:** SQLSSBPort  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*Numero della porta SSB*>  
 
-    -   **Dettagli:** specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. SQL Server Service Broker è in genere configurato per l'uso della porta TCP 4022, ma è possibile configurare un'altra porta.  
+    -   **Dettagli:** Specifica la porta di SQL Server Service Broker (SSB) per l'utilizzo da parte di SQL Server. SQL Server Service Broker è in genere configurato per l'uso della porta TCP 4022, ma è possibile configurare un'altra porta.  
 
 -   **Nome chiave:** SQLDataFilePath  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*Percorso del file mdb del database*>  
 
@@ -337,7 +338,7 @@ ms.locfileid: "32342155"
 
 -   **Nome chiave:** SQLLogFilePath  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*Percorso del file ldf del database*>  
 
@@ -347,7 +348,7 @@ ms.locfileid: "32342155"
 
 -   **Nome chiave:** CloudConnector  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -359,7 +360,7 @@ ms.locfileid: "32342155"
 
 -   **Nome chiave:** CloudConnectorServer  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
     -   **Valori:** <*FQDN del server del punto di connessione del servizio*>  
 
@@ -367,7 +368,7 @@ ms.locfileid: "32342155"
 
 -   **Nome chiave:** UseProxy  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
     -   **Valori:** 0 o 1  
 
@@ -377,9 +378,9 @@ ms.locfileid: "32342155"
 
     -   **Dettagli:** specifica se il punto di connessione del servizio usa un server proxy.  
 
--   **Nome chiave:** Nomeproxy  
+-   **Nome chiave:** ProxyName  
 
-    -   **Richiesta:** obbligatoria quando **UseProxy** è uguale a 1  
+    -   **Richiesto:** obbligatorio quando **UseProxy** è uguale a 1  
 
     -   **Valori:**  <*FQDN del server proxy*>  
 
@@ -387,7 +388,7 @@ ms.locfileid: "32342155"
 
 -   **Nome chiave:** ProxyPort  
 
-    -   **Richiesta:** obbligatoria quando **UseProxy** è uguale a 1  
+    -   **Richiesto:** obbligatorio quando **UseProxy** è uguale a 1  
 
     -   **Valori:** <*Numero della porta*>  
 
@@ -400,11 +401,11 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** Action  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
-    -   **Valori:** SitoPrimarioInstallazione  
+    -   **Valori:** InstallPrimarySite  
 
-    -   **Dettagli:** installa un sito primario.  
+    -   **Dettagli:** Installa un sito primario.  
 
 -   **Nome chiave:** CDLatest  
 
@@ -418,7 +419,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** ProductID  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
 
@@ -426,23 +427,23 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** SiteCode  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Codice del sito*>  
 
-    -   **Dettagli:** specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia.  
+    -   **Dettagli:** Specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia.  
 
 -   **Nome chiave:** SiteName  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Nome del sito*>  
 
-    -   **Dettagli:** specifica il nome del sito.  
+    -   **Dettagli:** Specifica il nome del sito.  
 
 -   **Nome chiave:** SMSInstallDir  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Percorso di installazione di Configuration Manager*>
 
@@ -450,15 +451,15 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** SDKServer  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*FQDN del provider SMS*>  
 
-    -   **Dettagli:** specifica l'FQDN del server che ospiterà il provider SMS. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito.  
+    -   **Dettagli:** Specifica l'FQDN del server che ospiterà il provider SMS. Dopo l'installazione iniziale, è possibile configurare altri provider SMS per il sito.  
 
 -   **Nome chiave:** PrerequisiteComp  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -470,7 +471,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** PrerequisitePath  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
 
@@ -478,7 +479,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** AdminConsole  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -486,13 +487,13 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          1 = Installare  
 
-    -   **Dettagli:** specifica se installare la console di Configuration Manager.  
+    -   **Dettagli:** Specifica se installare la console di Configuration Manager.  
 
 -   **Nome chiave:** JoinCEIP  
     > [!Note]  
     > A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -500,43 +501,43 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          1 = Partecipare  
 
-    -   **Dettagli**: specifica se partecipare al programma Analisi utilizzo software.  
+    -   **Dettagli:** specifica se partecipare al programma Analisi utilizzo software.  
 
 -   **Nome chiave:** ManagementPoint  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** < *FQDN del server del sito del punto di gestione*>  
 
-    -   **Dettagli:** specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito del punto di gestione.  
+    -   **Dettagli:** Specifica il nome FQDN del server che ospiterà il ruolo del sistema del sito di punto di gestione.  
 
 -   **Nome chiave:** ManagementPointProtocol  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** HTTPS *o* HTTP  
 
-    -   **Dettagli:** specifica il protocollo da usare per il punto di gestione.  
+    -   **Dettagli:** Specifica il protocollo da usare per il punto di gestione.  
 
 -   **Nome chiave:** DistributionPoint  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*FQDN del server del sito del punto di distribuzione*>  
 
-    -   **Dettagli:** specifica il protocollo da usare per il punto di distribuzione.  
+    -   **Dettagli:** Specifica il protocollo da usare per il punto di distribuzione.  
 
 -   **Nome chiave:** DistributionPointProtocol  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** HTTPS *o* HTTP  
 
-    -   **Dettagli:** specifica il protocollo da usare per il punto di distribuzione.  
+    -   **Dettagli:** Specifica il protocollo da usare per il punto di distribuzione.  
 
 -   **Nome chiave:** RoleCommunicationProtocol  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** EnforceHTTPS *o* HTTPorHTTPS  
 
@@ -544,7 +545,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** ClientsUsePKICertificate  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -552,11 +553,11 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          1 = Usare  
 
-    -   **Dettagli:** specifica se i client useranno un certificato PKI client per la comunicazione con i ruoli del sistema del sito.  
+    -   **Dettagli:** Specifica se i client utilizzeranno un certificato PKI client per la comunicazione con i ruoli del sistema del sito.  
 
 -   **Nome chiave:** AddServerLanguages  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
@@ -564,31 +565,31 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** AddClientLanguages  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Dettagli:** specifica le lingue che saranno disponibili per i computer client. L'inglese è disponibile per impostazione predefinita.  
+    -   **Dettagli:** Specifica le lingue che saranno disponibili per i computer client. L'inglese è disponibile per impostazione predefinita.  
 
 -   **Nome chiave:** DeleteServerLanguages  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Dettagli:** modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
+    -   **Dettagli:** Modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per la console di Configuration Manager, i report e gli oggetti di Configuration Manager. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
 
 -   **Nome chiave:** DeleteClientLanguages  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK o ZHH  
 
-    -   **Dettagli:** modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per i computer client. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
+    -   **Dettagli:** Modifica un sito dopo l'installazione. Specifica le lingue da rimuovere e che non saranno più disponibili per i computer client. La lingua inglese è disponibile per impostazione predefinita e non può essere rimossa.  
 
 -   **Nome chiave:** MobileDeviceLanguage  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -596,13 +597,13 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          1 = Installare  
 
-    -   **Dettagli:** specifica se sono installate le lingue del client del dispositivo mobile.  
+    -   **Dettagli:** Specifica se sono installate le lingue del client di dispositivo mobile.  
 
 **SQLConfigOptions**  
 
 -   **Nome chiave:** SQLServerName  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Nome dell'istanza di SQL Server*>  
 
@@ -610,7 +611,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** DatabaseName  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
 
@@ -621,15 +622,15 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** SQLSSBPort  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*Numero della porta SSB*>  
 
-    -   **Dettagli:** specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. SQL Server Service Broker è in genere configurato per l'uso della porta TCP 4022, ma è possibile configurare un'altra porta.  
+    -   **Dettagli:** specifica la porta SSB usata da SQL Server. SQL Server Service Broker è in genere configurato per l'uso della porta TCP 4022, ma è possibile configurare un'altra porta.  
 
 -   **Nome chiave:** SQLDataFilePath  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*Percorso del file mdb del database*>  
 
@@ -637,7 +638,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** SQLLogFilePath  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*Percorso del file ldf del database*>  
 
@@ -647,7 +648,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** CCARSiteServer  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*FQDN del sito di amministrazione centrale*>  
 
@@ -655,27 +656,27 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** CASRetryInterval  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*Intervallo*>  
 
-    -   **Dettagli:** specifica l'intervallo (in minuti) tra i tentativi di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato dall'utente per il valore **CASRetryInterval** e quindi tenta nuovamente di eseguire la connessione.  
+    -   **Dettagli:** Specifica l'intervallo tra tentativi (in minuti) di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato dall'utente per il valore **CASRetryInterval** e quindi tenta nuovamente di eseguire la connessione.  
 
 -   **Nome chiave:** WaitForCASTimeout  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*Timeout*>  
 
          Un valore tra **0** e **100**  
 
-    -   **Dettagli:** specifica il valore di timeout massimo (in minuti) per la connessione di un sito primario al sito di amministrazione centrale. Se ad esempio un sito primario non riesce a connettersi al sito di amministrazione centrale, tale sito primario proverà nuovamente a connettersi al sito di amministrazione centrale in base al valore **CASRetryInterval** finché non viene raggiunto il periodo di **WaitForCASTimeout**. È possibile specificare un valore compreso tra **0** e **100**.  
+    -   **Dettagli:** Specifica il valore di timeout massimo (in minuti) per la connessione di un sito primario al sito di amministrazione centrale. Se ad esempio un sito primario non riesce a connettersi al sito di amministrazione centrale, tale sito primario proverà nuovamente a connettersi al sito di amministrazione centrale in base al valore **CASRetryInterval** finché non viene raggiunto il periodo di **WaitForCASTimeout**. È possibile specificare un valore compreso tra **0** e **100**.  
 
 **CloudConnectorOptions**  
 
 -   **Nome chiave:** CloudConnector  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -687,7 +688,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** CloudConnectorServer  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
     -   **Valori:** <*FQDN del server del punto di connessione del servizio*\>  
 
@@ -695,7 +696,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** UseProxy  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
     -   **Valori:** 0 o 1  
 
@@ -705,9 +706,9 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Dettagli:** specifica se il punto di connessione del servizio usa un server proxy.  
 
--   **Nome chiave:** Nomeproxy  
+-   **Nome chiave:** ProxyName  
 
-    -   **Richiesta:** obbligatoria quando **UseProxy** è uguale a 1  
+    -   **Richiesto:** obbligatorio quando **UseProxy** è uguale a 1  
 
     -   **Valori:**  <*FQDN del server proxy*>  
 
@@ -715,7 +716,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** ProxyPort  
 
-    -   **Richiesta:** obbligatoria quando **UseProxy** è uguale a 1  
+    -   **Richiesto:** obbligatorio quando **UseProxy** è uguale a 1  
 
     -   **Valori:** <*Numero della porta*>  
 
@@ -728,11 +729,11 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** Action  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** RecoverCCAR  
 
-    -   **Dettagli:** ripristina un sito di amministrazione centrale.  
+    -   **Dettagli:** consente di ripristinare un sito di amministrazione centrale.  
 
 -   **Nome chiave:** CDLatest  
 
@@ -746,7 +747,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** ServerRecoveryOptions  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 1, 2 o 4  
 
@@ -758,15 +759,15 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Dettagli:** specifica se il programma di installazione ripristina il server del sito, SQL Server o entrambi. Le chiavi associate sono necessarie quando si imposta il valore seguente per l'impostazione **ServerRecoveryOptions**:  
 
-        -   Valore = 1: è possibile specificare un valore per la chiave **SiteServerBackupLocation** per il ripristino del sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
+        -   Valore = 1: È possibile specificare un valore per la chiave **SiteServerBackupLocation** per il ripristino del sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
 
-        -   Valore = 2: è possibile specificare un valore per la chiave **SiteServerBackupLocation** per il ripristino del sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
+        -   Valore = 2: È possibile specificare un valore per la chiave **SiteServerBackupLocation** per il ripristino del sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
 
-        -   Valore = 4: la chiave **BackupLocation** è richiesta in caso di configurazione del valore **10** per la chiave **DatabaseRecoveryOptions** necessaria per il ripristino del database del sito dal backup.  
+        -   Valore = 4: La chiave **BackupLocation** è richiesta in caso di configurazione del valore **10** per la chiave **DatabaseRecoveryOptions** necessaria per il ripristino del database del sito dal backup.  
 
 -   **Nome chiave:** DatabaseRecoveryOptions  
 
-    -   **Richiesta:** questa chiave è richiesta quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **4**.  
+    -   **Richiesto:** Questa chiave è richiesta quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **4**.  
 
     -   **Valori:** 10, 20, 40 o 80  
 
@@ -778,15 +779,15 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          80 = Ignora il ripristino del database.  
 
-    -   **Dettagli:** specifica il modo in cui il programma di installazione ripristina il database del sito in SQL Server.  
+    -   **Dettagli:** specifica le modalità secondo cui il programma di installazione ripristinerà il database del sito in SQL Server.  
 
 -   **Nome chiave:** ReferenceSite  
 
-    -   **Richiesto:** questa chiave è richiesta quando l'impostazione **DatabaseRecoveryOptions** ha il valore **40**.  
+    -   **Richiesto:** Questa chiave è richiesta quando l'impostazione **DatabaseRecoveryOptions** ha il valore **40**.  
 
     -   **Valori:** <*FQDN del sito di riferimento*>  
 
-    -   **Dettagli:** specifica il sito primario di riferimento usato dal sito di amministrazione centrale per il ripristino dei dati globali se il backup del database è antecedente al periodo di conservazione del rilevamento delle modifiche o se il sito viene ripristinato senza backup.  
+    -   **Dettagli:** Specifica il sito primario di riferimento usato dal sito di amministrazione centrale per il ripristino dei dati globali se il backup del database è antecedente al periodo di memorizzazione del rilevamento delle modifiche o se il sito viene ripristinato senza backup.  
 
          Se non viene specificato un sito di riferimento e il backup è antecedente al periodo di memorizzazione del rilevamento delle modifiche, tutti i siti primari vengono reinizializzati con i dati ripristinati dal sito di amministrazione centrale.  
 
@@ -794,25 +795,25 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** SiteServerBackupLocation  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*Percorso del set di backup del server del sito*>  
 
-    -   **Dettagli:** specifica il percorso del set di backup del server del sito. Questa chiave è facoltativa quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **2**. Specificare un valore affinché la chiave **SiteServerBackupLocation** ripristini il sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
+    -   **Dettagli:** Specifica il percorso per il set di backup del server del sito. Questa chiave è facoltativa quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **2**. Specificare un valore affinché la chiave **SiteServerBackupLocation** ripristini il sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
 
 -   **Nome chiave:** BackupLocation  
 
-    -   **Richiesta:** questa chiave è richiesta quando si configura il valore **1** o **4** per la chiave **ServerRecoveryOptions** e si configura il valore **10** per la chiave **DatabaseRecoveryOptions**.  
+    -   **Richiesto:** questa chiave è richiesta quando si configura il valore **1** o **4** per la chiave **ServerRecoveryOptions** e si configura il valore **10** per la chiave **DatabaseRecoveryOptions**.  
 
     -   **Valori:** <*Percorso del set di backup del database del sito*>  
 
-    -   **Dettagli:** specifica il percorso del set di backup del database del sito.  
+    -   **Dettagli:** Specifica il percorso per il set di backup del database del sito.  
 
 **Opzioni**  
 
 -   **Nome chiave:** ProductID  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *o* Eval  
 
@@ -820,23 +821,23 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** SiteCode  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Codice del sito*>  
 
-    -   **Dettagli:** specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. Specificare il codice del sito usato dal sito prima dell'errore.
+    -   **Dettagli:** Specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. Specificare il codice del sito usato dal sito prima dell'errore.
 
 -   **Nome chiave:** SiteName  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*Nome del sito*>  
 
-    -   **Dettagli:** specifica il nome del sito.  
+    -   **Dettagli:** Specifica il nome del sito.  
 
 -   **Nome chiave:** SMSInstallDir  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Percorso di installazione di Configuration Manager*>  
 
@@ -844,7 +845,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** SDKServer  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*FQDN del provider SMS*>  
 
@@ -854,7 +855,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** PrerequisiteComp  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -866,7 +867,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** PrerequisitePath  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
 
@@ -874,7 +875,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** AdminConsole  
 
-    -   **Richiesto:** questa chiave è necessaria tranne quando l'impostazione **ServerRecoveryOptions** ha il valore **4**.  
+    -   **Richiesto:** Questa chiave è necessaria tranne quando l'impostazione **ServerRecoveryOptions** ha valore **4**.  
 
     -   **Valori:** 0 o 1  
 
@@ -882,13 +883,13 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          1 = Installare  
 
-    -   **Dettagli:** specifica se installare la console di Configuration Manager.  
+    -   **Dettagli:** Specifica se installare la console di Configuration Manager.  
 
 -   **Nome chiave:** JoinCEIP  
     > [!Note]  
     > A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -896,13 +897,13 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          1 = Partecipare  
 
-    -   **Dettagli**: specifica se partecipare al programma Analisi utilizzo software.  
+    -   **Dettagli:** specifica se partecipare al programma Analisi utilizzo software.  
 
 **SQLConfigOptions**  
 
 -   **Nome chiave:** SQLServerName  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Nome dell'istanza di SQL Server*>  
 
@@ -910,26 +911,26 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** DatabaseName  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>  
 
-    -   **Dettagli:** specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.  
+    -   **Dettagli:** Specifica il nome del database di SQL Server da creare o del database di SQL Server da usare per l'installazione del database del sito di amministrazione centrale. Specificare lo stesso nome database usato prima dell'errore.  
 
         > [!IMPORTANT]  
         >  Se non si usa l'istanza predefinita, è necessario specificare il nome dell'istanza e il nome del database del sito.  
 
 -   **Nome chiave:** SQLSSBPort  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Numero della porta SSB*>  
 
-    -   **Dettagli:** specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. SSB è in genere configurato per usare la porta TCP 4022. Specificare la stessa porta SSB usata prima dell'errore.  
+    -   **Dettagli:** specifica la porta SSB usata da SQL Server. SSB è in genere configurato per usare la porta TCP 4022. Specificare la stessa porta SSB usata prima dell'errore.  
 
 -   **Nome chiave:** SQLDataFilePath  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*Percorso del file mdb del database*>  
 
@@ -937,7 +938,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** SQLLogFilePath  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*Percorso del file ldf del database*>  
 
@@ -947,7 +948,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** CloudConnector  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -959,7 +960,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** CloudConnectorServer  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
     -   **Valori:** <*FQDN del server del punto di connessione del servizio*>  
 
@@ -967,7 +968,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** UseProxy  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
     -   **Valori:** 0 o 1  
 
@@ -977,9 +978,9 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Dettagli:** specifica se il punto di connessione del servizio usa un server proxy.  
 
--   **Nome chiave:** Nomeproxy  
+-   **Nome chiave:** ProxyName  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
     -   **Valori:**  <*FQDN del server proxy*>  
 
@@ -987,7 +988,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** ProxyPort  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
     -   **Valori:** <*Numero della porta*>  
 
@@ -1000,11 +1001,11 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** Action  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*RecoverPrimarySite*>  
 
-    -   **Dettagli:** ripristina un sito primario.  
+    -   **Dettagli:** Ripristina un sito primario.  
 
 -   **Nome chiave:** CDLatest  
 
@@ -1018,7 +1019,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** ServerRecoveryOptions  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 1, 2 o 4  
 
@@ -1030,15 +1031,15 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Dettagli:** specifica se il programma di installazione ripristina il server del sito, SQL Server o entrambi. Le chiavi associate sono necessarie quando si imposta il valore seguente per l'impostazione **ServerRecoveryOptions**:  
 
-        -   Valore = 1: è possibile specificare un valore per la chiave **SiteServerBackupLocation** per il ripristino del sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
+        -   Valore = 1: È possibile specificare un valore per la chiave **SiteServerBackupLocation** per il ripristino del sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
 
-        -   Valore = 2: è possibile specificare un valore per la chiave **SiteServerBackupLocation** per il ripristino del sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
+        -   Valore = 2: È possibile specificare un valore per la chiave **SiteServerBackupLocation** per il ripristino del sito usando un backup del sito. Se non si specifica un valore, il sito viene reinstallato senza eseguire il ripristino da un set di backup.  
 
-        -   Valore = 4: la chiave **BackupLocation** è richiesta in caso di configurazione del valore **10** per la chiave **DatabaseRecoveryOptions** necessaria per il ripristino del database del sito dal backup.  
+        -   Valore = 4: La chiave **BackupLocation** è richiesta in caso di configurazione del valore **10** per la chiave **DatabaseRecoveryOptions** necessaria per il ripristino del database del sito dal backup.  
 
 -   **Nome chiave:** DatabaseRecoveryOptions  
 
-    -   **Richiesta:** questa chiave è richiesta quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **4**.  
+    -   **Richiesto:** Questa chiave è richiesta quando l'impostazione **ServerRecoveryOptions** ha il valore **1** o **4**.  
 
     -   **Valori:** 10, 20, 40 o 80  
 
@@ -1050,11 +1051,11 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          80 = Ignora il ripristino del database.  
 
-    -   **Dettagli:** specifica il modo in cui il programma di installazione ripristina il database del sito in SQL Server.  
+    -   **Dettagli:** specifica le modalità secondo cui il programma di installazione ripristinerà il database del sito in SQL Server.  
 
 -   **Nome chiave:** SiteServerBackupLocation  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*Percorso del set di backup del server del sito*>  
 
@@ -1068,13 +1069,13 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Valori:** <*Percorso del set di backup del database del sito*>  
 
-    -   **Dettagli:** specifica il percorso del set di backup del database del sito.  
+    -   **Dettagli:** Specifica il percorso per il set di backup del database del sito.  
 
 **Opzioni**  
 
 -   **Nome chiave:** ProductID  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** *xxxxx-xxxxx-xxxxx-xxxxx-xxxxx* o *Eval*  
 
@@ -1082,23 +1083,23 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** SiteCode  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Codice del sito*>  
 
-    -   **Dettagli:** specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. Specificare il codice del sito usato dal sito prima dell'errore.
+    -   **Dettagli:** Specifica i tre caratteri alfanumerici che identificano in modo univoco il sito nella gerarchia. Specificare il codice del sito usato dal sito prima dell'errore.
 
 -   **Nome chiave:** SiteName  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*Nome del sito*>  
 
-    -   **Dettagli:** specifica il nome del sito.  
+    -   **Dettagli:** Specifica il nome del sito.  
 
 -   **Nome chiave:** SMSInstallDir  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Percorso di installazione di Configuration Manager*>  
 
@@ -1106,7 +1107,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** SDKServer  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*FQDN del provider SMS*>  
 
@@ -1114,7 +1115,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** PrerequisiteComp  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -1126,7 +1127,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** PrerequisitePath  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Percorso dei file dei prerequisiti di installazione*>  
 
@@ -1134,7 +1135,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** AdminConsole  
 
-    -   **Richiesto:** questa chiave è necessaria tranne quando l'impostazione **ServerRecoveryOptions** ha il valore **4**.  
+    -   **Richiesto:** Questa chiave è necessaria tranne quando l'impostazione **ServerRecoveryOptions** ha valore **4**.  
 
     -   **Valori:** 0 o 1  
 
@@ -1142,13 +1143,13 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          1 = Installare  
 
-    -   **Dettagli:** specifica se installare la console di Configuration Manager.  
+    -   **Dettagli:** Specifica se installare la console di Configuration Manager.  
 
 -   **Nome chiave:** JoinCEIP  
     > [!Note]  
     > A partire da Configuration Manager versione 1802 la funzionalità Analisi utilizzo software è stata rimossa dal prodotto.
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -1156,13 +1157,13 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
          1 = Partecipare  
 
-    -   **Dettagli**: specifica se partecipare al programma Analisi utilizzo software.  
+    -   **Dettagli:** specifica se partecipare al programma Analisi utilizzo software.  
 
 **SQLConfigOptions**  
 
 -   **Nome chiave:** SQLServerName  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Nome dell'istanza di SQL Server*>  
 
@@ -1170,7 +1171,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** DatabaseName  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Nome del database del sito*> oppure <*Nome dell'istanza*>\\<*Nome del database del sito*>
 
@@ -1183,15 +1184,15 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** SQLSSBPort  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** <*Numero della porta SSB*>  
 
-    -   **Dettagli:** specifica la porta di SQL Server Service Broker (SSB) usata da SQL Server. In genere, SSB è configurato per usare la porta TCP 4022. Specificare la stessa porta SSB usata prima dell'errore.  
+    -   **Dettagli:** specifica la porta SSB usata da SQL Server. In genere, SSB è configurato per usare la porta TCP 4022. Specificare la stessa porta SSB usata prima dell'errore.  
 
 -   **Nome chiave:** SQLDataFilePath  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*Percorso del file mdb del database*>  
 
@@ -1199,7 +1200,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** SQLLogFilePath  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*Percorso del file ldf del database*>  
 
@@ -1209,7 +1210,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** CCARSiteServer  
 
-    -   **Richiesto:** vedere i dettagli.  
+    -   **Richiesto:** Visualizzare i dettagli.  
 
     -   **Valori:** <*Codice del sito per il sito di amministrazione centrale*>  
 
@@ -1217,25 +1218,25 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** CASRetryInterval  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*Intervallo*>  
 
-    -   **Dettagli:** specifica l'intervallo (in minuti) tra i tentativi di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato per **CASRetryInterval** e quindi tenta nuovamente di eseguire la connessione.  
+    -   **Dettagli:** Specifica l'intervallo tra tentativi (in minuti) di connessione al sito di amministrazione centrale dopo l'errore di connessione. Se ad esempio si verifica un errore di connessione al sito di amministrazione centrale, il sito primario attende il numero di minuti specificato per **CASRetryInterval** e quindi tenta nuovamente di eseguire la connessione.  
 
 -   **Nome chiave:** WaitForCASTimeout  
 
-    -   **Richiesto:** no  
+    -   **Richiesto:** No  
 
     -   **Valori:** <*Timeout*>  
 
-    -   **Dettagli:** specifica il valore di timeout massimo (in minuti) per la connessione di un sito primario al sito di amministrazione centrale. Se ad esempio un sito primario non riesce a connettersi al sito di amministrazione centrale, tale sito primario proverà nuovamente a connettersi al sito di amministrazione centrale in base al valore **CASRetryInterval** finché non viene raggiunto il periodo di **WaitForCASTimeout**. È possibile specificare un valore compreso tra **0** e **100**.  
+    -   **Dettagli:** Specifica il valore di timeout massimo (in minuti) per la connessione di un sito primario al sito di amministrazione centrale. Se ad esempio un sito primario non riesce a connettersi al sito di amministrazione centrale, tale sito primario proverà nuovamente a connettersi al sito di amministrazione centrale in base al valore **CASRetryInterval** finché non viene raggiunto il periodo di **WaitForCASTimeout**. È possibile specificare un valore compreso tra **0** e **100**.  
 
 **CloudConnectorOptions**  
 
 -   **Nome chiave:** CloudConnector  
 
-    -   **Richiesto:** sì  
+    -   **Richiesto:** Sì  
 
     -   **Valori:** 0 o 1  
 
@@ -1247,7 +1248,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** CloudConnectorServer  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
     -   **Valori:** <*FQDN del server del punto di connessione del servizio*>  
 
@@ -1255,7 +1256,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** UseProxy  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
     -   **Valori:** 0 o 1  
 
@@ -1265,9 +1266,9 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
     -   **Dettagli:** specifica se il punto di connessione del servizio usa un server proxy.  
 
--   **Nome chiave:** Nomeproxy  
+-   **Nome chiave:** ProxyName  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
     -   **Valori:**  <*FQDN del server proxy*>  
 
@@ -1275,7 +1276,7 @@ Usare i dettagli seguenti per installare un sito primario usando un file script 
 
 -   **Nome chiave:** ProxyPort  
 
-    -   **Richiesta:** obbligatoria quando **CloudConnector** è uguale a 1  
+    -   **Richiesto:** obbligatorio quando **CloudConnector** è uguale a 1  
 
     -   **Valori:** <*Numero della porta*>  
 

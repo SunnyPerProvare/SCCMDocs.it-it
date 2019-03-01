@@ -10,12 +10,13 @@ ms.assetid: 0cf4bacb-6b6d-4d4f-8640-b13fe15873de
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 915a8ac1d20ca288b2b830791c8a3b79c65ffbce
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ae1ac3262acff35e23de4faa1e80c796f5ee4e4b
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383648"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156696"
 ---
 # <a name="support-for-windows-features-and-networks-in-configuration-manager"></a>Supporto per le funzionalità e le reti Windows in Configuration Manager
 
@@ -151,10 +152,10 @@ I ruoli del server del sito richiedono il file system NTFS, per consentire a Con
 
 ### <a name="support-considerations"></a>Considerazioni sul supporto
 
-- **Storage Area Network**: una rete SAN (Storage Area Network) è supportata quando un server basato su Windows supportato è collegato direttamente al volume ospitato dalla SAN.  
+- **Rete di archiviazione**: Una rete SAN (Storage Area Network) è supportata quando un server basato su Windows supportato è collegato direttamente al volume ospitato dalla SAN.  
 
 - **Single Instance Storage**: Configuration Manager non supporta la configurazione di cartelle di pacchetto punto di distribuzione e firma in un volume compatibile con Single Instance Storage (SIS).  
 
      La cache di un client di Configuration Manager non è supportata in un volume compatibile con SIS.  
 
-- **Unità disco rimovibile**: Configuration Manager non supporta l'installazione del sistema del sito o dei client di Configuration Manager in un'unità disco rimovibile.  
+- **Unità disco rimovibile**: Configuration Manager non supporta l'installazione dei sistemi del sito o dei client di Configuration Manager in un'unità disco rimovibile.  

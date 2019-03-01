@@ -10,12 +10,13 @@ ms.assetid: 6dcef836-c0d1-40af-ad30-cd8d864b09a9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 912bdb93db05091ff756c51ee9f951a17a76ff5d
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: be12cfe29ff470f2f577bab2c685695ae5770bae
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385972"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56131422"
 ---
 # <a name="site-server-high-availability-in-configuration-manager"></a>Disponibilità elevata del server del sito in Configuration Manager
 
@@ -123,7 +124,7 @@ Per altre informazioni sul processo generale di aggiunta dei ruoli, vedere [Inst
 
          - **Usa i file di origine nel percorso seguente nel server del sito in modalità passiva**: ad esempio, un percorso locale in cui sono già stati copiati i file di origine. Assicurarsi che questo contenuto sia della stessa versione del server del sito in modalità attiva.  
 
-         - (*Consigliata*) **Utilizza i file di origine nel seguente percorso di rete**: specificare il percorso diretto al contenuto della cartella **CD.Latest** dal server del sito in modalità attiva. Ad esempio, `\\Server\SMS_ABC\CD.Latest`, dove "*Server*" è il nome del server del sito in modalità attiva e "*ABC*" è il codice del sito.  
+         - (*Opzione consigliata*) **Utilizza i file di origine nel seguente percorso di rete**: specificare il percorso diretto al contenuto della cartella **CD.Latest** dal server del sito in modalità attiva. Ad esempio, `\\Server\SMS_ABC\CD.Latest`, dove "*Server*" è il nome del server del sito in modalità attiva e "*ABC*" è il codice del sito.  
 
      - Specificare il percorso locale in cui installare Configuration Manager nel nuovo server del sito. Ad esempio: `C:\Program Files\Configuration Manager`  
 

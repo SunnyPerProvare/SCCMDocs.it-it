@@ -10,12 +10,13 @@ ms.assetid: 7591e386-a9ab-4640-8643-332dce5aa006
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bddcd356a3ee221d5b67935a5be91bbe89d2afc2
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: bc20a7e9be271bde8a5cd6464e2cebdf1ee9bad9
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42756055"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56138603"
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-os-in-configuration-manager"></a>Creare una sequenza di attività per aggiornare un sistema operativo in Configuration Manager
 
@@ -65,9 +66,9 @@ Per aggiornare il sistema operativo nei client, è possibile creare una sequenza
 
     -   **Pacchetto di aggiornamento**: specificare il pacchetto di aggiornamento che contiene i file di origine per l'aggiornamento del sistema operativo. Verificare di avere selezionato il pacchetto di aggiornamento corretto esaminando le informazioni nel riquadro **Proprietà**. Per altre informazioni, vedere [Gestire i pacchetti di aggiornamento del sistema operativo](/sccm/osd/get-started/manage-operating-system-upgrade-packages).  
 
-    -   **Indice edizione**: se sono presenti più indici edizione del sistema operativo nel pacchetto, selezionare l'indice edizione desiderato. Per impostazione predefinita, la procedura guidata seleziona il primo indice.  
+    -   **Indice dell'edizione**: se nel pacchetto sono disponibili più indici dell'edizione del sistema operativo, selezionare l'indice dell'edizione desiderato. Per impostazione predefinita, la procedura guidata seleziona il primo indice.  
 
-    -   **Codice Product Key**: specificare il codice Product Key Windows per il sistema operativo da installare. Specificare i codici Product Key per contratti multilicenza codificati o i codici Product Key standard. Se si usa un codice Product Key standard, separare ogni gruppo di cinque caratteri con un trattino (-). Ad esempio: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX* Se l'aggiornamento è per un'edizione per contratti multilicenza, il codice Product Key potrebbe non essere obbligatorio.  
+    -   **Codice Product Key**: specificare il codice Product Key Windows per il sistema operativo da installare. Specificare i codici Product Key per contratti multilicenza codificati o i codici Product Key standard. Se si usa un codice Product Key standard, separare ogni gruppo di cinque caratteri con un trattino (-). Ad esempio: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*. Se l'aggiornamento è per un'edizione per contratti multilicenza, il codice Product Key potrebbe non essere obbligatorio.  
 
         > [!Note]  
         > Questo codice Product Key può essere un codice ad attivazione multipla (MAK) o un codice generico di contratti multilicenza (GVLK). Un codice GVLK è anche definito codice di configurazione client del servizio di gestione delle chiavi (KMS). Per altre informazioni, vedere [Pianificare l'attivazione dei contratti multilicenza](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client). Per un elenco di codici di configurazione client KMS, vedere l'[Appendice A](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys) della Guida di attivazione di Windows Server. 
@@ -143,17 +144,17 @@ Con la funzionalità pre-cache del contenuto è possibile consentire al client d
 
 A partire dalla versione 1802, il modello di sequenza di attività predefinito per l'aggiornamento sul posto di Windows 10 include gruppi aggiuntivi con azioni consigliate da aggiungere prima del processo di aggiornamento. Queste azioni nel gruppo **Preparazione dell'aggiornamento** sono comuni tra numerosi clienti che stanno aggiornando i propri dispositivi a Windows 10. Per i siti con versioni precedenti alla 1802, aggiungere manualmente queste azioni alla sequenza di attività nel gruppo **Preparazione dell'aggiornamento**.  
 
-- **Verifiche della batteria**: aggiungere in questo gruppo i passaggi da eseguire per verificare se il computer usa la batteria o l'elettricità. Per eseguire questo controllo serve un'utilità o uno script personalizzato.  
+- **Verifiche della batteria**: consente di aggiungere passaggi in questo gruppo per verificare se il computer usa la batteria o l'alimentazione tramite cavo. Per eseguire questo controllo serve un'utilità o uno script personalizzato.  
 
-- **Verifiche della connessione di rete/via cavo**: aggiungere in questo gruppo i passaggi da eseguire per verificare se il computer è connesso a una rete e non usa una connessione wireless. Per eseguire questo controllo serve un'utilità o uno script personalizzato.  
+- **Verifiche della connessione di rete/via cavo**: consente di aggiungere passaggi in questo gruppo per verificare se il computer è connesso a una rete e non usa una connessione wireless. Per eseguire questo controllo serve un'utilità o uno script personalizzato.  
 
-- **Rimuovi le applicazioni non compatibili**: aggiungere in questo gruppo i passaggi da eseguire per rimuovere le applicazioni che non sono compatibili con questa versione di Windows 10. Il metodo per disinstallare un'applicazione varia a seconda dei casi.  
+- **Rimuovi le applicazioni non compatibili**: consente di aggiungere passaggi in questo gruppo per rimuovere eventuali applicazioni non compatibili con questa versione di Windows 10. Il metodo per disinstallare un'applicazione varia a seconda dei casi.  
 
     - Se l'applicazione usa Windows Installer, copiare la riga di comando **Disinstalla programma** dalla scheda **Programmi** nelle proprietà del tipo di distribuzione di Windows Installer dell'applicazione. Quindi aggiungere un passaggio **Esegui riga di comando** in questo gruppo con la riga di comando Disinstalla programma. Ad esempio: </br>`msiexec /x {150031D8-1234-4BA8-9F52-D6E5190D1CBA} /q`</br>  
 
-- **Rimuovi i driver non compatibili**: aggiungere in questo gruppo i passaggi da eseguire per rimuovere i driver che non sono compatibili con questa versione di Windows 10.  
+- **Rimuovi i driver non compatibili**: consente di aggiungere passaggi in questo gruppo per rimuovere eventuali driver non compatibili con questa versione di Windows 10.  
 
-- **Rimuovi/Sospendi la sicurezza di terze parti**: aggiungere in questo gruppo i passaggi da eseguire per rimuovere o sospendere le applicazioni di sicurezza di terze parti, come i programmi antivirus.  
+- **Rimuovi/Sospendi la sicurezza di terze parti**: consente di aggiungere passaggi in questo gruppo per rimuovere o sospendere programmi di sicurezza di terze parti, ad esempio l'antivirus.  
 
    - Se si usa un programma di crittografia dischi di terze parti, fornire il relativo driver di crittografia al programma di installazione di Windows con l'[opzione della riga di comando](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-setup-command-line-options#23) `/ReflectDrivers`. Aggiungere un passaggio [Imposta variabile della sequenza di attività](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) alla sequenza di attività in questo gruppo. Impostare la variabile della sequenza di attività su **OSDSetupAdditionalUpgradeOptions**. Impostare il valore su `/ReflectDrivers` con il percorso del driver. Questa [variabile della sequenza di attività](/sccm/osd/understand/task-sequence-variables#OSDSetupAdditionalUpgradeOptions) accoda la riga di comando di Installazione di Windows usata dalla sequenza di attività. Per ulteriori indicazioni su questo processo, contattare il fornitore del software in uso.  
 
@@ -180,13 +181,13 @@ Dopo aver creato la sequenza di attività, aggiungere questi passaggi nel gruppo
 
 A partire dalla versione 1802, il modello di sequenza di attività predefinito per l'aggiornamento sul posto di Windows 10 include gruppi aggiuntivi con azioni consigliate da aggiungere dopo il processo di aggiornamento. Queste azioni nel gruppo **Post-elaborazione** sono comuni tra numerosi clienti che stanno aggiornando i propri dispositivi a Windows 10. Per i siti con versioni precedenti alla 1802, aggiungere manualmente queste azioni alla sequenza di attività nel gruppo **Post-elaborazione**.  
 
-- **Applica driver basati su installazione**: aggiungere in questo gruppo i passaggi da eseguire per installare driver basati su installazione (con estensione exe) dai pacchetti.  
+- **Applica driver basati su installazione**: consente di aggiungere passaggi in questo gruppo per installare driver basati su installazione (EXE) dai pacchetti.  
 
-- **Installa/Abilita la sicurezza di terze parti**: aggiungere in questo gruppo i passaggi da eseguire per installare o abilitare le applicazioni di sicurezza di terze parti, come i programmi antivirus.  
+- **Installa/Abilita la sicurezza di terze parti**: consente di aggiungere passaggi in questo gruppo per installare o abilitare i programmi di sicurezza di terze parti, ad esempio l'antivirus.  
 
-- **Imposta le app predefinite e le associazioni di Windows**: aggiungere in questo gruppo i passaggi da eseguire per impostare le app predefinite e le associazioni di file di Windows. Preparare prima un computer di riferimento con le associazioni di app desiderate. Quindi eseguire l'esportazione tramite la riga di comando seguente: </br>`dism /online /Export-DefaultAppAssociations:"%UserProfile%\Desktop\DefaultAppAssociations.xml"`</br>Aggiungere il file XML a un pacchetto. Quindi aggiungere un passaggio [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine) in questo gruppo. Specificare il pacchetto che contiene il file XML, quindi specificare la riga di comando seguente: </br>`dism /online /Import-DefaultAppAssociations:DefaultAppAssocations.xml`</br> Per altre informazioni, vedere [Export or import default application associations](/windows-hardware/manufacture/desktop/export-or-import-default-application-associations) (Esportare o importare associazioni di applicazioni predefinite).  
+- **Imposta le app predefinite e le associazioni di Windows**: consente di aggiungere passaggi in questo gruppo per impostare le app predefinite e le associazioni di file di Windows. Preparare prima un computer di riferimento con le associazioni di app desiderate. Quindi eseguire l'esportazione tramite la riga di comando seguente: </br>`dism /online /Export-DefaultAppAssociations:"%UserProfile%\Desktop\DefaultAppAssociations.xml"`</br>Aggiungere il file XML a un pacchetto. Quindi aggiungere un passaggio [Esegui riga di comando](/sccm/osd/understand/task-sequence-steps#BKMK_RunCommandLine) in questo gruppo. Specificare il pacchetto che contiene il file XML, quindi specificare la riga di comando seguente: </br>`dism /online /Import-DefaultAppAssociations:DefaultAppAssocations.xml`</br> Per altre informazioni, vedere [Export or import default application associations](/windows-hardware/manufacture/desktop/export-or-import-default-application-associations) (Esportare o importare associazioni di applicazioni predefinite).  
 
-- **Applica personalizzazioni**: aggiungere in questo gruppo i passaggi da eseguire per applicare le personalizzazioni del menu Start, organizzando ad esempio gruppi di programmi. Per altre informazioni, vedere [Customize the Start screen](/windows-hardware/manufacture/desktop/customize-the-start-screen) (Personalizzare la schermata iniziale).  
+- **Applica personalizzazioni**: consente di aggiungere passaggi in questo gruppo per applicare le personalizzazioni del menu Start, ad esempio l'organizzazione di gruppi di programmi. Per altre informazioni, vedere [Customize the Start screen](/windows-hardware/manufacture/desktop/customize-the-start-screen) (Personalizzare la schermata iniziale).  
 
 
 

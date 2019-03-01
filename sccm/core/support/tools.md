@@ -10,12 +10,13 @@ ms.assetid: 395403dc-6997-4415-93fd-6b1eeb6ba31a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fd23bd523eb64f7d00f71c38c79a180c4e2e569a
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1479524f08f17aa59f6e7dc771253a4fb6720189
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39386542"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56131133"
 ---
 # <a name="configuration-manager-tools"></a>Strumenti di Configuration Manager
 
@@ -53,11 +54,11 @@ Tutti i sistemi operativi Windows indicati come client supportati in [Sistemi op
 
 - [DP Job Queue Manager](/sccm/core/support/dp-job-manager): consente di risolvere i problemi dei processi di distribuzione del contenuto ai punti di distribuzione  
 
-- [Collection Evaluation Viewer](/sccm/core/support/ceviewer): consente di visualizzare i dettagli relativi alla valutazione della raccolta  
+- [Collection Evaluation Viewer](/sccm/core/support/ceviewer): consente di visualizzare informazioni dettagliate sulla valutazione della raccolta  
 
 - [Content Library Explorer](/sccm/core/support/content-library-explorer): consente di visualizzare il contenuto dell'archivio a istanza singola della raccolta contenuto  
 
-- [Content Library Transfer](/sccm/core/support/content-library-transfer): trasferisce il contenuto di una raccolta tra diverse unità  
+- [Content Library Transfer](/sccm/core/support/content-library-transfer): trasferisce la raccolta contenuto tra diverse unità  
 
 - [Content Ownership Tool](/sccm/core/support/content-ownership-tool): modifica la proprietà dei pacchetti orfani. Questi pacchetti sono presenti nel sito senza un server del sito proprietario.  
 
@@ -77,10 +78,10 @@ Tutti i sistemi operativi Windows indicati come client supportati in [Sistemi op
 
 ## <a name="other-tools"></a>Altri strumenti
 
-- [Content Library Cleanup Tool](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool): usare **ContentLibraryCleanup.exe** in `CD.Latest\SMSSETUP\TOOLS\ContentLibraryCleanup` per rimuovere contenuto orfano da un punto di distribuzione.  
+- [Strumento di pulizia della raccolta contenuto](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool): usare **ContentLibraryCleanup.exe** in `CD.Latest\SMSSETUP\TOOLS\ContentLibraryCleanup` per rimuovere contenuto orfano da un punto di distribuzione.  
 
-- [Strumento di manutenzione gerarchia](/sccm/core/servers/manage/hierarchy-maintenance-tool-preinst.exe): usare **Preinst.exe** nella cartella condivisa `\<SiteServerName>\SMS_<SiteCode>\bin\X64\00000409` nel server del sito per passare i comandi al componente di gestione della gerarchia.  
+- [Strumento Gestione gerarchia](/sccm/core/servers/manage/hierarchy-maintenance-tool-preinst.exe): usare **Preinst.exe** nella cartella condivisa `\<SiteServerName>\SMS_<SiteCode>\bin\X64\00000409` nel server del sito per passare i comandi al componente di gestione della gerarchia.  
 
-- [Strumento di reimpostazione dell'aggiornamento](/sccm/core/servers/manage/update-reset-tool): usare **CMUpdateReset.exe** in `CD.Latest\SMSSETUP\TOOLS\CMUpdateReset` per risolvere i problemi quando gli aggiornamenti nella console mostrano problemi di download o replica.  
+- [Strumento di reimpostazione dell'aggiornamento](/sccm/core/servers/manage/update-reset-tool): usare **CMUpdateReset.exe** in `CD.Latest\SMSSETUP\TOOLS\CMUpdateReset` per risolvere i problemi quando gli aggiornamenti nella console registrano problemi di download o replica.  
 
-- [Strumento di connessione del servizio](/sccm/core/servers/manage/use-the-service-connection-tool): usare **ServiceConnectionTool.exe** in `CD.Latest\SMSSETUP\TOOLS\ServiceConnectionTool` per mantenere aggiornato il sito quando il punto di connessione del servizio è offline.  
+- [Strumento Connessione al servizio](/sccm/core/servers/manage/use-the-service-connection-tool): usare **ServiceConnectionTool.exe** in `CD.Latest\SMSSETUP\TOOLS\ServiceConnectionTool` per mantenere aggiornato il sito quando il punto di connessione del servizio è offline.  

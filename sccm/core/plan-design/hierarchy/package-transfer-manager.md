@@ -10,12 +10,13 @@ ms.assetid: 3359f254-dd48-42b7-9eab-c92a3417e3fb
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 44041fd0eb2a71cc72d809eea0a0b8d15ba6c53e
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 3a465317334879e048ef9fe628a0efbdd5dbad78
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338000"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56139569"
 ---
 # <a name="package-transfer-manager-in-system-center-configuration-manager"></a>Package Transfer Manager in System Center Configuration Manager
 
@@ -36,15 +37,15 @@ Per trasferire il contenuto a un punto di distribuzione standard, Package Transf
 Le informazioni seguenti descrivono come Package Transfer Manager gestisce il trasferimento del contenuto a punti di distribuzione standard e a punti di distribuzione configurati come pull:
 1.  **L'amministratore distribuisce il contenuto a uno o più punti di distribuzione in un sito.**  
 
-    -   **Punto di distribuzione standard:** Distribution Manager crea un processo di trasferimento per il contenuto.  
+    -   **Punto di distribuzione standard:** Distribution Manager crea un processo di trasferimento del contenuto per quel contenuto.  
 
-    -   **Punto di distribuzione pull:** Distribution Manager crea un processo di trasferimento per il contenuto.  
+    -   **Punto di distribuzione pull**: Distribution Manager crea un processo di trasferimento del contenuto per quel contenuto.  
 
 2.  **Distribution Manager esegue i controlli preliminari.**  
 
-    -   **Punto di distribuzione standard:** Distribution Manager esegue un controllo di base per verificare che ogni punto di distribuzione sia pronto per ricevere il contenuto. Dopo questa verifica, Distribution Manager comunica a Package Transfer Manager di iniziare il trasferimento del contenuto al punto di distribuzione.  
+    -   **Punto di distribuzione standard:** Distribution Manager esegue un controllo di base per confermare che ogni punto di distribuzione è pronto per ricevere il contenuto. Dopo questa verifica, Distribution Manager comunica a Package Transfer Manager di iniziare il trasferimento del contenuto al punto di distribuzione.  
 
-    -   **Punto di distribuzione pull:** Distribution Manager avvia Package Transfer Manager, il quale comunica al punto di distribuzione pull che è presente un nuovo processo di trasferimento del contenuto. Distribution Manager non verifica lo stato dei punti di distribuzione remoti che sono di tipo pull poiché ogni punto di distribuzione pull gestisce i propri trasferimenti di contenuto.  
+    -   **Punto di distribuzione pull**: Distribution Manager avvia Package Transfer Manager, il quale comunica al punto di distribuzione pull che è presente un nuovo processo di trasferimento del contenuto. Distribution Manager non verifica lo stato dei punti di distribuzione remoti che sono di tipo pull poiché ogni punto di distribuzione pull gestisce i propri trasferimenti di contenuto.  
 
 3.  **Package Transfer Manager si predispone al trasferimento del contenuto.**  
 
@@ -53,7 +54,7 @@ Le informazioni seguenti descrivono come Package Transfer Manager gestisce il tr
         > [!NOTE]  
         >  Per copiare ogni file della distribuzione nel punto di distribuzione, anche se i file sono già presenti nell'archivio a istanza singola del punto di distribuzione, usare l'azione **Ridistribuisci** per il contenuto.  
 
-    -   **Punto di distribuzione pull:** per ogni punto di distribuzione pull presente nella distribuzione, Package Transfer Manager verifica i punti di distribuzione di origine dei punti di distribuzione pull per determinare se il contenuto è disponibile.  
+    -   **Punto di distribuzione pull**: Per ogni punto di distribuzione pull nella distribuzione, Package Transfer Manager verifica i punti di distribuzione di origine dei punti di distribuzione pull per confermare la disponibilità del contenuto.  
 
         -   Quando il contenuto è disponibile in almeno uno dei punti di distribuzione di origine, Package Transfer Manager invia al punto di distribuzione pull una notifica che indica al punto di distribuzione di avviare il processo di trasferimento del contenuto. La notifica include i nomi e le dimensioni dei file, gli attributi e i valori hash.  
 
@@ -64,13 +65,13 @@ Le informazioni seguenti descrivono come Package Transfer Manager gestisce il tr
 
 4.  **Il trasferimento del contenuto viene avviato.**  
 
-    -   **Punto di distribuzione standard:** Package Transfer Manager copia i file in ogni punto di distribuzione remoto. Durante il trasferimento a un punto di distribuzione standard:  
+    -   **Punto di distribuzione standard:** Package Transfer Manager copia i file a ogni punto di distribuzione remoto. Durante il trasferimento a un punto di distribuzione standard:  
 
         -   Per impostazione predefinita, Package Transfer Manager può elaborare contemporaneamente tre pacchetti univoci e distribuirli ai cinque punti di distribuzione in parallelo. Complessivamente, questi sono definiti **Impostazioni distribuzione simultanea**. Per configurare la distribuzione simultanea, in **Proprietà componente distribuzione software** per ogni sito passare alla scheda **Generale**.  
 
         -   Package Transfer Manager usa le configurazioni di larghezza di banda di rete e di pianificazione di ogni punto di distribuzione durante il trasferimento del contenuto al punto di distribuzione. Per configurare queste impostazioni, nell'area **Proprietà** di ogni punto di distribuzione remoto passare alle schede **Pianifica** e **Limiti di velocità**. Per altre informazioni, vedere [Gestire il contenuto e l'infrastruttura del contenuto per System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
-    -   **Punto di distribuzione pull:** se un punto di distribuzione pull riceve un file di notifica, viene avviato il processo di trasferimento del contenuto. Il processo di trasferimento viene eseguito in modo indipendente in ogni punto di distribuzione pull:  
+    -   **Punto di distribuzione pull**: Quando un punto di distribuzione pull riceve un file di notifica, il punto di distribuzione inizia il processo di trasferimento del contenuto. Il processo di trasferimento viene eseguito in modo indipendente in ogni punto di distribuzione pull:  
 
         1.   La distribuzione pull identifica i file nella distribuzione del contenuto che non presenta già nel suo singolo archivio dell'istanza e si prepara per scaricare il contenuto da uno dei suoi punti di distribuzione di origine.  
 
@@ -83,4 +84,4 @@ Le informazioni seguenti descrivono come Package Transfer Manager gestisce il tr
 
     -   **Punto di distribuzione standard:** al termine del trasferimento dei file a ogni punto di distribuzione remoto designato, Package Transfer Manager verifica l'hash del contenuto nel punto di distribuzione e quindi comunica a Distribution Manager che la distribuzione è completata.  
 
-    -   **Punto di distribuzione pull:** dopo il completamento del download del contenuto, il punto di distribuzione pull verifica l'hash del contenuto e quindi invia un messaggio di stato al punto di gestione dei siti per segnalare la corretta esecuzione dell'operazione. Se dopo 60 minuti il messaggio di stato non viene ricevuto, Package Transfer Manager viene riattivato ed esegue una verifica del punto di distribuzione pull per determinare se tale punto ha scaricato il contenuto. Se il download del contenuto è in corso, Package Transfer Manager rimane in modalità di sospensione per altri 60 minuti prima di eseguire nuovamente una verifica del punto di distribuzione pull. Questo ciclo continua fino a quando il punto di distribuzione pull non ha completato il trasferimento del contenuto.  
+    -   **Punto di distribuzione pull**: dopo il completamento del download del contenuto, il punto di distribuzione pull verifica l'hash del contenuto e quindi invia un messaggio di stato al punto di gestione dei siti per segnalare la corretta esecuzione dell'operazione. Se dopo 60 minuti il messaggio di stato non viene ricevuto, Package Transfer Manager viene riattivato ed esegue una verifica del punto di distribuzione pull per determinare se tale punto ha scaricato il contenuto. Se il download del contenuto è in corso, Package Transfer Manager rimane in modalità di sospensione per altri 60 minuti prima di eseguire nuovamente una verifica del punto di distribuzione pull. Questo ciclo continua fino a quando il punto di distribuzione pull non ha completato il trasferimento del contenuto.  

@@ -10,11 +10,13 @@ ms.assetid: 17cf034f-eaff-43ce-bc8e-917213c1db74
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b7fa19ed6dbdcd745b911e235c95166a70c00f23
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f8efc99783b07b5097ac2e6de82df9651eefa5ce
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56127202"
 ---
 # <a name="publish-site-data-for-system-center-configuration-manager"></a>Pubblicare i dati del sito per System Center Configuration Manager
 
@@ -49,7 +51,7 @@ Per informazioni su come i client trovano un punto di gestione, vedere [Informaz
 
 1.  Nella console di Configuration Manager fare clic su **Amministrazione**.  
 
-2.  Nell'area di lavoro **Amministrazione** , fare clic su **Foreste Active Directory**. Se in precedenza è stato eseguito il metodo di individuazione foresta Active Directory, è possibile visualizzare ogni foresta rilevata nel riquadro dei risultati. La foresta locale e qualsiasi foresta trusted vengono individuate durante l'esecuzione del metodo di individuazione foresta Active Directory. È necessario aggiungere manualmente solo le foreste non trusted.  
+2.  Nell'area di lavoro **Amministrazione** espandere **Configurazione della gerarchia** e fare clic su **Foreste Active Directory**. Se in precedenza è stato eseguito il metodo di individuazione foresta Active Directory, è possibile visualizzare ogni foresta rilevata nel riquadro dei risultati. La foresta locale e qualsiasi foresta trusted vengono individuate durante l'esecuzione del metodo di individuazione foresta Active Directory. È necessario aggiungere manualmente solo le foreste non trusted.  
 
     -   Per configurare una foresta individuata in precedenza, selezionarla nel riquadro dei risultati. Nella scheda **Home**, nel gruppo **Proprietà**, fare clic su **Proprietà** per aprire le proprietà della foresta. Procedere al passaggio 3.  
 

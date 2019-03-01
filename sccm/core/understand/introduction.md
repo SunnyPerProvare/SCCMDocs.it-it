@@ -10,12 +10,13 @@ ms.assetid: 3343eccf-bf09-41cd-9e68-03e893c7f904
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f0986d713b47d15dc0298e413216a1e33fe2e937
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 10e30b2446d1b2f51d2de8d97c4d8b084357ae32
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342478"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56133386"
 ---
 # <a name="introduction-to-system-center-configuration-manager"></a>Introduzione a System Center Configuration Manager
 
@@ -63,7 +64,7 @@ Usare gli argomenti seguenti e le sezioni aggiuntive in questo argomento per alt
 **Argomenti correlati in questa libreria della documentazione:**  
 
 -   [Features and capabilities of System Center Configuration Manager](../../core/plan-design/changes/features-and-capabilities.md) (Caratteristiche e funzionalità di System Center Configuration Manager)  
--   [Choose a device management solution for System Center Configuration Manager](../../core/plan-design/choose-a-device-management-solution.md) (Scegliere una soluzione di gestione dei dispositivi per System Center Configuration Manager)  
+-   [Scegliere una soluzione di gestione dei dispositivi per System Center Configuration Manager](../../core/plan-design/choose-a-device-management-solution.md)  
 -   [What's changed in System Center Configuration Manager from System Center 2012 Configuration Manager](../../core/plan-design/changes/what-has-changed-from-configuration-manager-2012.md) (Novità in System Center Configuration Manager rispetto a System Center Configuration Manager 2012)
 -   [Fundamentals of System Center Configuration Manager](../../core/understand/fundamentals.md) (Nozioni fondamentali su System Center Configuration Manager)  
 -   [Evaluate System Center Configuration Manager by building your own lab environment](/sccm/core/get-started/set-up-your-lab) (Valutare System Center Configuration Manager creando un proprio ambiente lab)
@@ -110,7 +111,7 @@ Per altre informazioni, vedere [Introduzione alla gestione delle applicazioni in
 
 In tutti gli scenari, Davide è l'amministratore principale di Configuration Manager.  
 
-###  <a name="BKMK_ScenarioEmpower"></a> Scenario di esempio: consentire agli utenti di ottenere l'accesso alle applicazioni da qualsiasi dispositivo  
+###  <a name="BKMK_ScenarioEmpower"></a>Scenario di esempio: consentire agli utenti di ottenere l'accesso alle applicazioni da qualsiasi dispositivo  
  Trey Research vuole assicurarsi che i dipendenti abbiano accesso alle applicazioni necessarie nel modo più efficiente possibile. Davide esegue il mapping di questi requisiti aziendali agli scenari seguenti:  
 
 |Requisito|Stato corrente della gestione client|Stato futuro della gestione client|  
@@ -133,7 +134,7 @@ L'implementazione viene eseguita tramite la procedura di configurazione illustra
 |Davide verifica che i nuovi utenti dispongano di account utente in Active Directory e crea una nuova raccolta basata su query in Configuration Manager per questi utenti. Quindi definisce l'affinità utente dispositivo per questi utenti creando un file che associa gli account utente ai computer primari che utilizzeranno e importa il file in Configuration Manager.<br /><br /> Le applicazioni che i nuovi utenti devono avere sono già state create in Configuration Manager. Distribuisce quindi queste applicazioni con lo scopo Richiesto nella raccolta che contiene i nuovi utenti.|Tenendo conto delle informazioni di affinità utente-dispositivo, le applicazioni vengono installate nel computer primario o nei computer di ogni utente prima che l'utente esegua l'accesso.<br /><br /> Le applicazioni sono pronte all'uso non appena l'utente esegue l'accesso.|  
 |Davide installa e configura i ruoli del sistema del sito Catalogo applicazioni in modo che gli utenti possano cercare applicazioni da installare. Crea le distribuzioni delle applicazioni che hanno lo scopo di Disponibile e quindi distribuisce le applicazioni nella raccolta che contiene i nuovi utenti.<br /><br /> Per le applicazioni che dispongono di un numero limitato di licenze, Davide configura le applicazioni per richiedere l'approvazione.|Gli utenti possono ora usare il Catalogo applicazioni per vedere le applicazioni che sono autorizzati a installare. Gli utenti possono quindi installare le applicazioni subito o richiedere l'approvazione e tornare al Catalogo applicazioni per installarle dopo l'approvazione della richiesta dall'help desk.|  
 |Davide crea un connettore Exchange Server in Configuration Manager per gestire i dispositivi mobili che si connettono al server Exchange Server aziendale locale. Configura il connettore con le impostazioni di sicurezza che includono i requisiti per l'impostazione di una password complessa e il blocco del dispositivo mobile dopo un periodo di inattività.<br /><br /> Per la gestione aggiuntiva di dispositivi che eseguono Windows Phone 8, Windows RT e iOS, Davide ottiene una sottoscrizione di Microsoft Intune e installa quindi il ruolo del sistema del sito del punto di connessione del servizio. Questa soluzione di gestione dei dispositivi mobile offre alla società un maggiore supporto di gestione per questi dispositivi. Ad esempio, la possibilità data agli utenti di installare le applicazioni in questi dispositivi e la gestione completa delle impostazioni. La connessione per i dispositivi mobili, poi, viene protetta mediante certificati PKI creati automaticamente e distribuiti da Intune.<br /><br /> Dopo aver configurato il punto di connessione del servizio e la sottoscrizione per l'uso con Configuration Manager, Davide invia un messaggio di posta elettronica agli utenti proprietari dei dispositivi mobili interessati perché facciano clic su un collegamento per avviare il processo di registrazione.<br /><br /> Affinché i dispositivi mobili possano essere registrati da Microsoft Intune, Davide usa le impostazioni di conformità per configurare le impostazioni di protezione per i dispositivi mobili. Queste impostazioni includono il requisito di configurare una password complessa e il blocco del dispositivo mobile dopo un periodo di inattività.|Con queste due soluzioni per la gestione dei dispositivi mobili, l'organizzazione IT ora può fornire informazioni sulla creazione di report dei dispositivi mobili usati nella rete aziendale e la relativa conformità alle impostazioni di protezione configurate.<br /><br /> Agli utenti viene ora mostrato come cancellare da remoto il dispositivo mobile usando il Catalogo applicazioni o il portale aziendale in caso di perdita o furto del dispositivo mobile. Al supporto tecnico viene anche indicato come cancellare da remoto un dispositivo mobile per gli utenti usando la console di Configuration Manager.<br /><br /> Per i dispositivi mobili registrati da Microsoft Intune, Davide ora può anche distribuire le applicazioni mobili in modo che possano essere installate dagli utenti, raccogliere più dati di inventario dai dispositivi e disporre di maggiore controllo della gestione di questi dispositivi grazie alla possibilità di accedere a più impostazioni.|  
-|Trey Research dispone di diversi computer pubblici usati dai dipendenti in visita in ufficio. I dipendenti vogliono avere le loro applicazioni a disposizione ovunque eseguano l'accesso. Tuttavia, Davide non vuole installare localmente tutte le applicazioni in ogni computer.<br /><br /> A tale scopo, Davide crea le applicazioni richieste con due tipi di distribuzione:<br /><br /> **Primo**: un'installazione locale completa dell'applicazione, con il requisito di poter essere installata solo sul dispositivo primario dell'utente.<br /><br /> **Secondo**: una versione virtuale dell'applicazione, con il requisito di non dover essere installata sul dispositivo primario dell'utente.|Quando gli utenti in visita accedono a un computer pubblico, visualizzano le applicazioni necessarie come icone sul desktop di tale computer. L'applicazione viene eseguita in streaming come un'applicazione virtuale. In questo modo, possono essere produttivi come se fossero seduti alla propria scrivania.|  
+|Trey Research dispone di diversi computer pubblici usati dai dipendenti in visita in ufficio. I dipendenti vogliono avere le loro applicazioni a disposizione ovunque eseguano l'accesso. Tuttavia, Davide non vuole installare localmente tutte le applicazioni in ogni computer.<br /><br /> A tale scopo, Davide crea le applicazioni richieste con due tipi di distribuzione:<br /><br /> **Primo:** un'installazione locale completa dell'applicazione, con il requisito che tale installazione venga eseguita solo nel dispositivo primario dell'utente.<br /><br /> **Secondo:** una versione virtuale dell'applicazione, con il requisito che non venga installata nel dispositivo primario dell'utente.|Quando gli utenti in visita accedono a un computer pubblico, visualizzano le applicazioni necessarie come icone sul desktop di tale computer. L'applicazione viene eseguita in streaming come un'applicazione virtuale. In questo modo, possono essere produttivi come se fossero seduti alla propria scrivania.|  
 |Davide fa sapere agli utenti che possono configurare il loro orario lavorativo in Software Center e selezionare le opzioni per evitare le attività di distribuzione software durante questo periodo di tempo e quando il computer è in modalità presentazione.|Poiché gli utenti possono controllare quando Configuration Manager distribuisce software nei loro computer, gli utenti rimangono più produttivi durante le ore lavorative.|  
 
  Questi passaggi di configurazione e i relativi risultati consentono a Trey Research di aumentare la produttività dei dipendenti garantendo l'accesso alle applicazioni da qualsiasi dispositivo.  
@@ -163,7 +164,7 @@ Davide esegue il mapping di questi requisiti aziendali agli scenari seguenti:
 -   Endpoint Protection  
 -   Aggiornamenti software  
 -   Impostazioni di conformità  
--   Gestione dispositivi mobili  
+-   Gestione di dispositivi mobili  
 -   Gestione client basata su Internet  
 
 L'implementazione viene eseguita tramite la procedura di configurazione illustrata nella tabella seguente:  
@@ -178,7 +179,7 @@ L'implementazione viene eseguita tramite la procedura di configurazione illustra
 
  Questa procedura di configurazione e i relativi risultati consentono a Trey Research di semplificare la gestione dei client per dispositivi.  
 
-###  <a name="BKMK_ScenarioSimplify"></a> Scenario di esempio: semplificare la gestione client per dispositivi  
+###  <a name="BKMK_ScenarioSimplify"></a> Scenario di esempio: semplificare la gestione dei client per i dispositivi  
  Trey Research vuole che tutti i nuovi computer installino automaticamente l'immagine del computer di base dell'azienda, che esegue Windows 7. Dopo l'installazione dell'immagine del sistema operativo, i computer devono essere gestiti e monitorati per il software aggiuntivo installato dagli utenti. I computer che archiviano informazioni altamente riservate richiedono criteri di gestione più restrittivi rispetto ad altri computer. Ad esempio, i tecnici del supporto tecnico non devono connettersi da remoto, è necessario usare l'immissione PIN di BitLocker per il riavvio e solo gli amministratori locali possono installare software.  
 
  Davide esegue il mapping di questi requisiti aziendali agli scenari seguenti:  

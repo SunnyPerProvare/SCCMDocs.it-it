@@ -10,12 +10,13 @@ ms.assetid: ed931751-18f2-4230-a09e-a0a329fbfa1c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 51823b2e424450352d55402f16a8c05211eb77c5
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 59376c5b9846e32cc8b63666956424a11211f1c0
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342121"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56130793"
 ---
 # <a name="about-discovery-methods-for-system-center-configuration-manager"></a>Informazioni sui metodi di individuazione per System Center Configuration Manager
 
@@ -26,9 +27,9 @@ I metodi di individuazione di Configuration Manager consentono di individuare va
 
 
 ##  <a name="bkmk_aboutForest"></a> Individuazione foresta Active Directory  
- **Configurabile:** sì  
+ **Configurabile:** Sì  
 
- **Abilitata per impostazione predefinita:** no  
+ **Abilitato per impostazione predefinita:** No  
 
  Per eseguire questo metodo è possibile usare gli **account** seguenti:  
 
@@ -50,9 +51,9 @@ Usare Individuazione foresta Active Directory per eseguire queste operazioni:
 
 È possibile gestire l'individuazione foresta Active Directory nella console di Configuration Manager. Accedere all'area di lavoro **Amministrazione** ed espandere **Configurazione della gerarchia**.   
 
--   **Metodi di individuazione**: abilitare l'individuazione foresta Active Directory affinché venga eseguita nel sito principale della gerarchia. È anche possibile specificare una semplice pianificazione per eseguire l'individuazione. Configurarla per creare automaticamente limiti delle subnet IP e dei siti Active Directory individuati. Il metodo Individuazione foresta Active Directory non può essere eseguito in un sito primario figlio o in un sito secondario.  
+-   **Metodi di individuazione**: abilitare l'esecuzione dell'individuazione foresta Active Directory nel sito principale della gerarchia. È anche possibile specificare una semplice pianificazione per eseguire l'individuazione. Configurarla per creare automaticamente limiti delle subnet IP e dei siti Active Directory individuati. Il metodo Individuazione foresta Active Directory non può essere eseguito in un sito primario figlio o in un sito secondario.  
 
--   **Foreste Active Directory**: configurare le foreste aggiuntive che si vuole individuare, specificare tutti gli account foresta Active Directory e configurare la pubblicazione in ogni foresta. Monitorare il processo di individuazione. Aggiungere le subnet IP e i siti Active Directory come limiti di Configuration Manager e i membri dei gruppi di limiti.  
+-   **Foreste Active Directory**: configurare le foreste aggiuntive da individuare, specificare tutti gli account foresta Active Directory e configurare la pubblicazione in ogni foresta. Monitorare il processo di individuazione. Aggiungere le subnet IP e i siti Active Directory come limiti di Configuration Manager e i membri dei gruppi di limiti.  
 
 Per configurare la pubblicazione delle foreste Active Directory per ogni sito della gerarchia, connettere la console di Configuration Manager al sito principale della gerarchia. La scheda **Pubblicazione** nella finestra di dialogo **Proprietà** di un sito Active Directory può mostrare solo il sito corrente e i relativi siti figlio. Quando la pubblicazione è abilitata per una foresta e lo schema della foresta viene esteso a Configuration Manager, per ogni sito abilitato per la pubblicazione in tale foresta Active Directory vengono pubblicate le informazioni seguenti:  
 
@@ -81,9 +82,9 @@ Per altre informazioni su come configurare questo metodo di individuazione, vede
 
 
 ##  <a name="bkmk_aboutGroup"></a> Individuazione gruppo Active Directory  
-**Configurabile:** sì  
+**Configurabile:** Sì  
 
-**Abilitata per impostazione predefinita:** no  
+**Abilitato per impostazione predefinita:** No  
 
 Per eseguire questo metodo è possibile usare gli **account** seguenti:  
 
@@ -108,9 +109,9 @@ L'individuazione gruppo Active Directory non supporta gli attributi estesi di Ac
 
 È possibile configurare gli ambiti di individuazione seguenti per controllare come questo metodo deve ricercare le informazioni:  
 
--   **Percorso**: usare un percorso se si vuole effettuare la ricerca in uno o più contenitori di Active Directory. Questa opzione di ambito supporta una ricerca ricorsiva dei contenitori Active Directory specificati. Questo processo cerca tutti i contenitori figlio nel contenitore specificato. e continua la ricerca finché non vengono più trovati contenitori figlio.  
+-   **Location** (Percorso): utilizzare un percorso se si desidera effettuare la ricerca di uno o più contenitori di Active Directory. Questa opzione di ambito supporta una ricerca ricorsiva dei contenitori Active Directory specificati. Questo processo cerca tutti i contenitori figlio nel contenitore specificato. e continua la ricerca finché non vengono più trovati contenitori figlio.  
 
--   **Gruppi**: usare i gruppi se si vuole effettuare la ricerca in uno o più gruppi Active Directory specifici. È possibile configurare **Dominio Active Directory** per usare il dominio e la foresta predefiniti o limitare la ricerca a un singolo controller di dominio. Inoltre, è possibile specificare uno o più gruppi in cui effettuare la ricerca. Se non si specifica almeno un gruppo, viene effettuata la ricerca in tutti i gruppi trovati nel percorso specificato del **Dominio Active Directory** .  
+-   **Gruppi**: utilizzare i gruppi se si desidera effettuare la ricerca di uno o più gruppi Active Directory specifici. È possibile configurare **Dominio Active Directory** per usare il dominio e la foresta predefiniti o limitare la ricerca a un singolo controller di dominio. Inoltre, è possibile specificare uno o più gruppi in cui effettuare la ricerca. Se non si specifica almeno un gruppo, viene effettuata la ricerca in tutti i gruppi trovati nel percorso specificato del **Dominio Active Directory** .  
 
 > [!CAUTION]  
 >  Quando si configura un ambito di individuazione, scegliere solo i gruppi che è necessario individuare. Questo perché l'individuazione gruppo Active Directory prova a individuare tutti i membri di ogni gruppo nell'ambito di individuazione. L'individuazione di gruppi di grandi dimensioni può richiedere un uso estensivo della larghezza di banda e di risorse Active Directory.  
@@ -125,9 +126,9 @@ Per altre informazioni su come configurare questo metodo di individuazione, vede
 
 
 ##  <a name="bkmk_aboutSystem"></a>Individuazione sistema Active Directory  
-**Configurabile:** sì  
+**Configurabile:** Sì  
 
-**Abilitata per impostazione predefinita:** no  
+**Abilitato per impostazione predefinita:** No  
 
 Per eseguire questo metodo è possibile usare gli **account** seguenti:  
 
@@ -165,9 +166,9 @@ Per altre informazioni su come configurare questo metodo di individuazione, vede
 
 
 ##  <a name="bkmk_aboutUser"></a> Individuazione utente Active Directory  
-**Configurabile:** sì  
+**Configurabile:** Sì  
 
-**Abilitata per impostazione predefinita:** no  
+**Abilitato per impostazione predefinita:** No  
 
 Per eseguire questo metodo è possibile usare gli **account** seguenti:  
 
@@ -215,9 +216,9 @@ Per configurare l'individuazione utenti di AD Azure, vedere [Configurare i servi
 
 
 ##  <a name="bkmk_aboutHeartbeat"></a> Individuazione heartbeat  
-**Configurabile:** sì  
+**Configurabile:** Sì  
 
-**Abilitata per impostazione predefinita:** sì  
+**Abilitato per impostazione predefinita:** Sì  
 
 Per eseguire questo metodo è possibile usare gli **account** seguenti:  
 
@@ -255,9 +256,9 @@ Per altre informazioni su come configurare questo metodo di individuazione, vede
 
 
 ##  <a name="bkmk_aboutNetwork"></a> Individuazione di rete  
-**Configurabile:** sì  
+**Configurabile:** Sì  
 
-**Abilitata per impostazione predefinita:** no  
+**Abilitato per impostazione predefinita:** No  
 
 Per eseguire questo metodo è possibile usare gli **account** seguenti:  
 
@@ -273,11 +274,11 @@ Per usare Individuazione di rete, è necessario prima specificare il *livello* d
 
 Perché il metodo possa individuare correttamente una risorsa, Individuazione di rete deve identificare l'indirizzo IP e la subnet mask della risorsa. Per identificare la subnet mask di un oggetto vengono usati i metodi seguenti:  
 
--   **Cache ARP del router:** Individuazione di rete esegue una query nella cache ARP di un router per ottenere informazioni sulla subnet. In genere i dati nella cache ARP di un router hanno una durata breve. Pertanto, quando Individuazione di rete esegue una query nella cache ARP, è possibile che la cache ARP non contenga più informazioni sull'oggetto richiesto.  
+-   **Cache ARP del router:** L'individuazione di rete esegue query nella cache ARP di un router per ottenere informazioni sulla subnet. In genere i dati nella cache ARP di un router hanno una durata breve. Pertanto, quando Individuazione di rete esegue una query nella cache ARP, è possibile che la cache ARP non contenga più informazioni sull'oggetto richiesto.  
 
--   **DHCP:** Individuazione di rete esegue una query in ogni server DHCP specificato per individuare i dispositivi per cui il server DHCP ha indicato un lease. Individuazione di rete supporta solo i server DHCP che eseguono l'implementazione Microsoft di DHCP.  
+-   **DHCP:** L'individuazione di rete esegue query in ogni server DHCP specificato per individuare i dispositivi per cui il server DHCP ha fornito un lease. Individuazione di rete supporta solo i server DHCP che eseguono l'implementazione Microsoft di DHCP.  
 
--   **Dispositivo SNMP:** Individuazione di rete può eseguire direttamente una query in un dispositivo SNMP. Individuazione di rete può eseguire query in un dispositivo solo se nel dispositivo è installato un agente SNMP locale. Configurare questo metodo anche in modo da usare il nome della community impiegato dall'agente SNMP.  
+-   **Dispositivo SNMP:** Individuazione di rete può eseguire direttamente query in un dispositivo SNMP. Individuazione di rete può eseguire query in un dispositivo solo se nel dispositivo è installato un agente SNMP locale. Configurare questo metodo anche in modo da usare il nome della community impiegato dall'agente SNMP.  
 
 Quando rileva un oggetto indirizzabile tramite IP ed è in grado di determinare la subnet mask dell'oggetto, il metodo di individuazione crea un record dei dati di individuazione per l'oggetto. Dal momento che alla rete sono connessi diversi tipi di dispositivi, l'individuazione della rete consente di individuare risorse che non supportano il client di Configuration Manager. Ad esempio, i dispositivi che è possibile individuare ma non gestire includono stampanti e router.  
 
@@ -382,7 +383,7 @@ Per consentire all'individuazione della rete di eseguire correttamente le query 
 
 #### <a name="maximum-hops"></a>Hop massimi  
 
-Quando viene configurato il numero massimo di hop router, è necessario limitare il numero di router e segmenti di rete in cui l'individuazione di rete può eseguire query utilizzando SNMP.  
+Quando viene configurato il numero massimo di hop router, è necessario limitare il numero di router e segmenti di rete in cui Individuazione di rete può eseguire query usando SNMP.  
 
 Il numero di hop configurato limita il numero di segmenti di rete e dispositivi aggiuntivi in cui Individuazione di rete può eseguire query.  
 
@@ -412,7 +413,7 @@ Il diagramma seguente illustra i risultati di una query di Individuazione di ret
 
 
 ##  <a name="bkmk_aboutServer"></a> Individuazione server  
-**Configurabile:** no  
+**Configurabile:** No  
 
 Oltre a questi metodi di individuazione configurabili dall'utente, Configuration Manager usa un processo denominato **Individuazione server** (SMS_WINNT_SERVER_DISCOVERY_AGENT). Questo metodo di individuazione consente di creare record di risorse per i computer che sono sistemi del sito, ad esempio un computer configurato come punto di gestione.  
 

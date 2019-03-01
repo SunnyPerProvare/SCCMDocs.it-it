@@ -10,12 +10,13 @@ ms.assetid: f0f818d4-7f45-402f-8758-dc88bc024953
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2da1ff9f8a45ba33f6546dcab8df423d9064e650
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e185244bda88c317e0157618f066056a817a1a82
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32344637"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56141892"
 ---
 # <a name="supported-configurations-for-the-long-term-servicing-branch-of-system-center-configuration-manager"></a>Configurazioni supportate per Long-Term Servicing Branch di System Center Configuration Manager
 
@@ -45,18 +46,18 @@ LTSB supporta l'uso dei seguenti sistemi operativi di computer Windows come sist
 
 **Sistemi operativi supportati:**
 - Windows Server 2016
-- Windows Server 2012 R2 (x64) - Standard, Datacenter
-- Windows Server 2012 (x64) - Standard, Datacenter
-- Windows Server 2008 R2 con SP1 (x64) - Standard, Enterprise, Datacenter
-- Windows Server 2008 con SP2 (x86, x64): Standard, Enterprise, Datacenter *(Nota 1)*
+- Windows Server 2012 R2 (x64): Standard, Datacenter
+- Windows Server 2012 (x64): Standard, Datacenter
+- Windows Server 2008 R2 con SP1 (x64): Standard, Enterprise, Datacenter
+- Windows Server 2008 con SP2 (x86, x64): Standard, Enterprise, Datacenter  *(Vedere nota 1)*
 - Windows 10 Enterprise 2015 LTSB (x86, x64)
 - Windows 10 Enterprise 2016 LTSB (x86, x64)
-- Windows 8.1 (x86, x64) - Professional, Enterprise
-- Windows 7 con SP1 (x86, x64) - Professional, Enterprise, Ultimate
+- Windows 8.1 (x86, x64): Professional, Enterprise
+- Windows 7 con SP1 (x86, x64): Professional, Enterprise, Ultimate
 - Installazione Server Core di Windows Server 2012
 - Installazione Server Core di Windows Server 2012 R2    
 
-*Nota 1*: questo sistema operativo non è supportato per i server del sito o ruoli del sistema del sito fatta eccezione per il punto di distribuzione e il punto di distribuzione pull. È possibile continuare a usare questo sistema operativo come punto di distribuzione fino all'annuncio della deprecazione di questo supporto o alla scadenza del periodo di supporto "Extended" di questo sistema operativo. Per altre informazioni, vedere l'argomento relativo ai [problemi di installazione di System Center Configuration Manager CB in Windows Server 2008](https://support.microsoft.com/help/4015095).
+*Nota 1*: Questo sistema operativo non è supportato per i server del sito o ruoli del sistema del sito fatta eccezione per il punto di distribuzione e il punto di distribuzione pull. È possibile continuare a usare questo sistema operativo come punto di distribuzione fino all'annuncio della deprecazione di questo supporto o alla scadenza del periodo di supporto "Extended" di questo sistema operativo. Per altre informazioni, vedere l'argomento relativo ai [problemi di installazione di System Center Configuration Manager CB in Windows Server 2008](https://support.microsoft.com/help/4015095).
 
 ## <a name="client-management"></a>Gestione dei client
 Le sezioni seguenti identificano i sistemi operativi client che è possibile gestire con LTSB. LTSB non supporta l'aggiunta di nuovi sistemi operativi come client supportati.
@@ -66,17 +67,17 @@ Le sezioni seguenti identificano i sistemi operativi client che è possibile ges
 
 **Sistemi operativi supportati:**
 - Windows Server 2016
-- Windows Server 2012 R2 (x64) - Standard, Datacenter (Nota 1)
-- Windows Server 2012 (x64) - Standard, Datacenter (Nota 1)
+- Windows Server 2012 R2 (x64): Standard, Datacenter (Nota 1)
+- Windows Server 2012 (x64): Standard, Datacenter (Nota 1)
 - Windows Storage Server 2012 R2 (x64)
 - Windows Storage Server 2012 (x64)
-- Windows Server 2008 R2 con SP1 (x64) - Standard, Enterprise, Datacenter (Nota 1)
-- Windows Storage Server 2008 R2 (x86, x64) - Workgroup, Standard, Enterprise
-- Windows Server 2008 con SP2 (x86, x64) - Standard, Enterprise, Datacenter (Nota 1)
+- Windows Server 2008 R2 con SP1 (x64): Standard, Enterprise, Datacenter (Nota 1)
+- Windows Storage Server 2008 R2 (x86, x64): Workgroup, Standard, Enterprise
+- Windows Server 2008 con SP2 (x86, x64): Standard, Enterprise, Datacenter (Nota 1)
 - Windows 10 Enterprise 2015 LTSB (x86, x64)
 - Windows 10 Enterprise 2016 LTSB (x86, x64)
-- Windows 8.1 (x86, x64) - Professional, Enterprise
-- Windows 7 con SP1 (x86, x64) - Professional, Enterprise, Ultimate
+- Windows 8.1 (x86, x64): Professional, Enterprise
+- Windows 7 con SP1 (x86, x64): Professional, Enterprise, Ultimate
 - Installazione Server Core di Windows Server 2012 R2 (x64) (Nota 2)
 - Installazione Server Core di Windows Server 2012 (x64) (Nota 2)
 - Installazione Server Core di Windows Server 2008 R2 SP1 (x64)
@@ -287,14 +288,14 @@ LTSB supporta i sistemi operativi seguenti per eseguire la console di Configurat
 
 **Sistemi operativi supportati:**
 - Windows Server 2016
-- Windows Server 2012 R2 (x64) - Standard, Datacenter
-- Windows Server 2012 (x64) - Standard, Datacenter
-- Windows Server 2008 R2 con SP1 (x64) - Standard, Enterprise, Datacenter
-- Windows Server 2008 con SP2 (x86, x64) - Standard, Enterprise, Datacenter
+- Windows Server 2012 R2 (x64): Standard, Datacenter
+- Windows Server 2012 (x64): Standard, Datacenter
+- Windows Server 2008 R2 con SP1 (x64): Standard, Enterprise, Datacenter
+- Windows Server 2008 con SP2 (x86, x64): Standard, Enterprise, Datacenter
 - Windows 10 Enterprise 2016 LTSB (x86, x64)
 - Windows 10 Enterprise 2015 LTSB (x86, x64)
-- Windows 8.1 (x86, x64) - Professional, Enterprise
-- Windows 7 con SP1 (x86, x64) - Professional, Enterprise, Ultimate
+- Windows 8.1 (x86, x64): Professional, Enterprise
+- Windows 7 con SP1 (x86, x64): Professional, Enterprise, Ultimate
 
 
 ## <a name="sql-server-versions-supported-for-the-site-database-and-reporting-point"></a>Versioni di SQL Server supportate per il database del sito e il punto di reporting
@@ -302,11 +303,11 @@ LTSB supporta le versioni seguenti di SQL Server per ospitare il database del si
 
 **Versioni supportate:**
 
-- SQL Server 2016 - Standard, Enterprise
-- SQL Server 2014 SP2 - Standard, Enterprise
-- SQL Server 2014 SP1 - Standard, Enterprise
-- SQL Server 2012 SP3 - Standard, Enterprise
-- SQL Server 2008 R2 SP3 - Standard, Enterprise, Datacenter
+- SQL Server 2016: Standard, Enterprise
+- SQL Server 2014 SP2: Standard, Enterprise
+- SQL Server 2014 SP1: Standard, Enterprise
+- SQL Server 2012 SP3: Standard, Enterprise
+- SQL Server 2008 R2 SP3: Standard, Enterprise, Datacenter
 - SQL Server 2016 Express
 - SQL Server 2014 Express SP2
 - SQL Server 2014 Express SP1

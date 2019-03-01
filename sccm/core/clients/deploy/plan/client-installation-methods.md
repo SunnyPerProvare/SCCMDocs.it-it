@@ -10,12 +10,13 @@ ms.assetid: 51b5964b-374d-4abc-8619-414a9fffad2d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6e437709ec1b721cf9ca597bdc944bcce6da9b0f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: c206a8045429551f361f640febbcda4a39ef9698
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32334250"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56139943"
 ---
 # <a name="client-installation-methods-in-system-center-configuration-manager"></a>Metodi di installazione client in System Center Configuration Manager
 
@@ -157,7 +158,7 @@ Per altre informazioni su come installare manualmente il client in ogni piattafo
 
 ## <a name="microsoft-intune-mdm-installation"></a>Installazione MDM di Microsoft Intune
 
-**Piattaforma client supportata**: Windows 10
+**Piattaforme client supportate**: Windows 10
 
 #### <a name="advantages"></a>Vantaggi  
 

@@ -10,12 +10,13 @@ ms.assetid: 7d8f530b-1a39-4a9d-a2f0-675b516da7e4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 008da23a6fedf1666a29754dc41a47c61f8bfbda
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a5336db0bd16d4845650bae775f2eff895e617fb
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39384233"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56142273"
 ---
 # <a name="use-a-pull-distribution-point-with-configuration-manager"></a>Usare un punto di distribuzione pull con Configuration Manager
 
@@ -77,7 +78,7 @@ Quando si usa un punto di distribuzione pull, esaminare e configurare le imposta
 
 5.  Nel gruppo **Impostazioni del polling di stato** esaminare i valori seguenti.  
 
-    -   **Numero di polling**: numero di volte che Package Transfer Manager contatta il punto di distribuzione pull per recuperare lo stato del processo. Se esegue questo numero di tentativi prima che il processo sia completato, Package Transfer Manager annulla il trasferimento. Il valore predefinito è 72.   
+    -   **Numero di polling**: numero di volte per il quale Package Transfer Manager contatta il punto di distribuzione pull per recuperare lo stato del processo. Se esegue questo numero di tentativi prima che il processo sia completato, Package Transfer Manager annulla il trasferimento. Il valore predefinito è 72.   
 
     -   **Ritardo prima di riprovare (minuti)**: numero di minuti di attesa da parte di Package Transfer Manager tra un tentativo e il successivo. Il valore predefinito è 60.   
     

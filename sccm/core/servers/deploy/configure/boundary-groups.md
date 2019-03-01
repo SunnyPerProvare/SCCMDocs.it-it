@@ -10,12 +10,13 @@ ms.assetid: 5db2926f-f03e-49c7-b44b-e89b1a5a6779
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e9b2eaaf3581bdb951b23541c96532c5b049aac1
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a1062cd5983c3eb0d1353b6387b7d9ee507df3b4
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456363"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56132640"
 ---
 # <a name="configure-boundary-groups-for-configuration-manager"></a>Configurare gruppi di limiti per Configuration Manager
 
@@ -158,9 +159,9 @@ A partire dalla versione 1810, quando un dispositivo esegue una sequenza di atti
 
 Questo comportamento può essere configurato usando le impostazioni seguenti nella pagina **Punti di distribuzione** della distribuzione della sequenza di attività: 
 
-- **Utilizzare un punto di distribuzione remoto quando non sono disponibili punti di distribuzione locali**: per questa distribuzione, la sequenza di attività può eseguire il fallback nei punti di distribuzione in un gruppo di limiti adiacente.  
+- **Usare un punto di distribuzione remoto quando non sono disponibili punti di distribuzione locali**: per questa distribuzione la sequenza di attività può eseguire il fallback ai punti di distribuzione in un gruppo di limiti adiacente.  
 
-- **Consenti ai client di usare i punti di distribuzione dal gruppo di limiti del sito predefinito**: per questa distribuzione, la sequenza di attività può eseguire il fallback nei punti di distribuzione nel gruppo di limiti del sito predefinito.  
+- **Consenti ai client di usare i punti di distribuzione dal gruppo di limiti del sito predefinito**: per questa distribuzione la sequenza di attività può eseguire il fallback ai punti di distribuzione nel gruppo di limiti del sito predefinito.  
 
 Per usare questo nuovo comportamento, assicurarsi di aggiornare i client alla versione più recente.
 
@@ -306,7 +307,7 @@ Per consentire ai client di usare questa funzionalità, abilitare l'impostazione
 
 Nel log **LocationServices.log** sono presenti nuove voci. L'attributo **Locality** identifica uno degli stati seguenti:
 
-- **0**: sconosciuto  
+- **0**: Sconosciuto  
 
 - **1**: il punto di gestione specificato si trova solo nel gruppo di limiti predefinito del sito per il fallback  
 
@@ -381,7 +382,7 @@ Con questa configurazione:
 
 - Se il client non riesce a trovare il contenuto nel proprio gruppo limite *corrente* dopo 10 minuti di ricerca, aggiunge i punti di distribuzione dal gruppo limite BG_B alla ricerca. Prosegue quindi la ricerca di contenuto da un punto di distribuzione nel relativo pool combinato di server. Questo pool include ora i server dei gruppi di limiti BG_A e BG_B. Il client continua a contattare ogni punto di distribuzione per due minuti prima di passare al server successivo del pool. Il pool di percorsi di origine del contenuto validi del client include DP_A1, DP_A2, DP_B1 e DP_B2.  
 
-- Dopo altri 10 minuti (20 minuti in totale), se il client non ha ancora trovato un punto di distribuzione con contenuto, espande il proprio pool per includere i server disponibili del secondo gruppo *adiacente*, il gruppo di limiti BG_C. Il client ha ora sei punti di distribuzione per la ricerca: DP_A1, DP_A2, DP_B1, DP_B2, DP_C1 e DP_C2. Continua la modifica in un nuovo punto di distribuzione ogni due minuti finché non trova il contenuto.  
+- Dopo altri 10 minuti (20 minuti in totale), se il client non ha ancora trovato un punto di distribuzione con contenuto, espande il proprio pool per includere i server disponibili del secondo gruppo *adiacente*, il gruppo di limiti BG_C. Ora il client esegue la ricerca in sei punti di distribuzione: DP_A1, DP_A2, DP_B2, DP_B2, DP_C1 e DP_C2. Continua la modifica in un nuovo punto di distribuzione ogni due minuti finché non trova il contenuto.  
 
 - Se il client non ha trovato contenuto dopo un totale di 120 minuti, esegue il fallback per includere il *gruppo di limiti del sito predefinito* nella ricerca. Il pool include ora tutti i punti di distribuzione dei tre gruppi di limiti configurati e il punto di distribuzione finale presente nel server del sito. Il client continua quindi la ricerca del contenuto, modificando i punti di distribuzione ogni due minuti fino a quando il contenuto non viene trovato.  
 

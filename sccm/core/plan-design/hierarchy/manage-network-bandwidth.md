@@ -10,12 +10,13 @@ ms.assetid: e80d1151-91db-4a27-8411-a957297b67d0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2d8587c0640d831a723b9ff7c3a6402d47ee2405
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 03d85a55e51125e40e1df766382b0a074d865a51
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337242"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56141620"
 ---
 # <a name="manage-network-bandwidth-for-content"></a>Gestire la larghezza di banda della rete per il contenuto
 Per gestire più facilmente la larghezza di banda della rete usata per il processo di gestione del contenuto di System Center Configuration Manager, è possibile usare i controlli predefiniti per la pianificazione e la limitazione della larghezza di banda della rete. È inoltre possibile usare contenuto pre-installato. Le sezioni seguenti includono informazioni più dettagliate su queste opzioni.
@@ -59,7 +60,7 @@ Facoltativamente, è possibile configurare il punto di distribuzione come **pre-
 
     Le impostazioni seguenti sono disponibili nelle proprietà relative a un'applicazione, un pacchetto, un pacchetto driver, un'immagine d'avvio, un programma di installazione del sistema operativo e un'immagine. Queste impostazioni consentono di scegliere la modalità di gestione della distribuzione del contenuto nei punti di distribuzione remoti identificati come pre-installati:  
 
-    -   **Scarica automaticamente il contenuto quando i pacchetti sono assegnati ai punti di distribuzione**: usare questa opzione quando si hanno pacchetti più piccoli e le impostazioni di pianificazione e limitazione della larghezza di banda della rete forniscono sufficiente controllo per la distribuzione del contenuto.  
+    -   **Scarica automaticamente il contenuto quando i pacchetti sono assegnati ai punti di distribuzione**: usare questa opzione quando si hanno pacchetti più piccoli e le impostazioni di pianificazione e limitazione della larghezza di banda della rete consentono un controllo sufficiente per la distribuzione del contenuto.  
 
     -   **Scarica solo le modifiche di contenuto nel punto di distribuzione**: usare questa opzione quando si prevede che i futuri aggiornamenti al contenuto del pacchetto abbiano in genere dimensioni più piccole rispetto al pacchetto iniziale. Ad esempio, può essere opportuno pre-installare un'applicazione come Microsoft Office perché la dimensione del pacchetto iniziale è superiore a 700 MB e quindi troppo grande da inviare attraverso la rete. Tuttavia, gli aggiornamenti del contenuto di questo pacchetto possono essere inferiori a 10 MB e sono quindi accettabili per la distribuzione in rete. Un altro esempio può essere rappresentato dai pacchetti driver per i quali la dimensione iniziale è grande, ma le aggiunte incrementali possono avere dimensioni ridotte.  
 

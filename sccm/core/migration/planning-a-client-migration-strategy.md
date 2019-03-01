@@ -10,12 +10,13 @@ ms.assetid: 2e27b0b7-7bd3-45cd-bc99-9c991606c637
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a67fb2d070c971004418ba47c9eb56b6b0de3e5a
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 088f300e475e7299ae0f589790c6c9bfabea3544
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335865"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56132558"
 ---
 # <a name="plan-a-client-migration-strategy-in-system-center-configuration-manager"></a>Pianificare una strategia di migrazione client in System Center Configuration Manager
 
@@ -34,9 +35,9 @@ Per eseguire la migrazione dei client dalla gerarchia di origine a una gerarchia
 ##  <a name="Planning_for_Client_Agent_Migration"></a> Pianificare la migrazione dei client nella gerarchia di destinazione  
  Quando si esegue la migrazione dei client da una gerarchia di origine, il software client nel computer client viene aggiornato in base alla versione prodotto della gerarchia di destinazione.  
 
--   **Gerarchia di origine di Configuration Manager 2007:** quando si esegue la migrazione dei client da una gerarchia di origine che esegue una versione supportata di Configuration Manager, il software client esegue l'aggiornamento alla versione client per la gerarchia di destinazione.  
+-   **Gerarchia di origine con Configuration Manager 2007:** quando si esegue la migrazione dei client da una gerarchia di origine che esegue una versione supportata di Configuration Manager, il software client esegue l'aggiornamento alla versione client per la gerarchia di destinazione.  
 
--   **Gerarchia di origine di System Center 2012 Configuration Manager o versione successiva:** quando si esegue la migrazione dei client tra gerarchie della stessa versione di prodotto, non vengono eseguite modifiche o aggiornamenti al software client. Il client esegue invece la riassegnazione dalla gerarchia di origine a un sito della gerarchia di destinazione.  
+-   **System Center 2012 Configuration Manager o gerarchia di origine successiva:** Quando si esegue la migrazione dei client tra gerarchie della stessa versione prodotto, il software client non esegue modifiche o aggiornamenti. Il client esegue invece la riassegnazione dalla gerarchia di origine a un sito della gerarchia di destinazione.  
 
     > [!NOTE]  
     >  Quando la versione prodotto di una gerarchia non è supportata per la migrazione alla gerarchia di destinazione, aggiornare a una versione prodotto compatibile tutti i siti e i client nella gerarchia di origine. Dopo che la gerarchia di origine è stata aggiornata alla versione prodotto supportata, è possibile eseguire la migrazione tra le gerarchie. Per altre informazioni, vedere [Versioni di Configuration Manager supportate per la migrazione](../../core/migration/prerequisites-for-migration.md#BKMK_SupportedMigrationVersions) in [Prerequisiti per la migrazione in System Center Configuration Manager](../../core/migration/prerequisites-for-migration.md).  

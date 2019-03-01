@@ -10,12 +10,13 @@ ms.assetid: bc7de742-9e5c-4a70-945c-df4153a61cc3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 18305b26937c87cbdb4d5726bded571699416793
-ms.sourcegitcommit: be8c0182db9ef55a948269fcbad7c0f34fd871eb
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 3e8ebea21b735e6b93d73bf6ff5eb842243ef42d
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42756259"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56121863"
 ---
 # <a name="how-to-use-task-sequence-variables-in-configuration-manager"></a>Come usare le variabili della sequenza di attività in Configuration Manager
 
@@ -36,7 +37,7 @@ ms.locfileid: "42756259"
  Sono disponibili diversi tipi di variabili:  
  - [Predefinite](#bkmk_built-in)  
  - [Azione](#bkmk_action)  
- - [Personalizzate](#bkmk_custom)  
+ - [Personalizzato](#bkmk_custom)  
  - [Di sola lettura](#bkmk_read-only)  
  - [Di matrice](#bkmk_array)  
 
@@ -227,7 +228,7 @@ ms.locfileid: "42756259"
 
     - **Variabile**: nome della variabile. Ad esempio, `_SMSTSInWinPE`.  
 
-    - **Condizione**: condizione in base a cui valutare il valore della variabile. Ad esempio, **uguale a**.  
+    - **Condizione**: condizione in base alla quale valutare il valore della variabile. Ad esempio, **uguale a**.  
 
     - **Valore**: valore della variabile da controllare. Ad esempio, `false`.  
 

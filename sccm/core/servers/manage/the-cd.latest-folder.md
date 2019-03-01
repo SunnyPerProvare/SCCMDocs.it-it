@@ -10,12 +10,13 @@ ms.assetid: 8db92d67-5d9c-4e9c-80d0-ae6fa0dd4817
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 35a8e1356306815503f2c153a12139e06dd27be2
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ef94f51ad85f5d816a5de253a63a639111b4383a
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32337174"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56134334"
 ---
 # <a name="the-cdlatest-folder-for-system-center-configuration-manager"></a>Cartella CD.Latest per System Center Configuration Manager
 
@@ -32,15 +33,15 @@ Tuttavia il supporto di base, ad esempio la versione di base 1802 rilasciata a m
 
  Di seguito sono riportati alcuni scenari di creazione o aggiornamento della cartella CD.Latest in un sito di amministrazione centrale o in un server del sito primario:  
 
--   Installare un aggiornamento o un hotfix dalla console di Configuration Manager. La cartella viene creata o aggiornata nella cartella di installazione di Configuration Manager.  
+-   Si installa un aggiornamento o un aggiornamento rapido dalla console di Configuration Manager: la cartella viene creata nella cartella di installazione di Configuration Manager.  
 
--   Eseguire l'attività di backup predefinita di Configuration Manager. La cartella viene creata o aggiornata nel percorso della cartella di backup specificata.  
+-   Si esegue l'attività di backup incorporata di Configuration Manager: la cartella viene creata o aggiornata nel percorso della cartella di backup specificata.  
 
 -  La cartella CD.Latest viene creata quando si installa un nuovo sito usando il supporto di base, come ad esempio nella versione 1802.
 
 I file di origine della cartella CD.Latest sono supportati per le operazioni seguenti:  
 
-1.  **Backup e ripristino:** per ripristinare un sito, è necessario usare i file di origine da una cartella CD.Latest corrispondente al sito in questione. Quando si esegue un backup del sito usando l'attività di backup del sito predefinita, la cartella CD.Latest viene inclusa come parte del backup.
+1.  **Backup e ripristino:** per ripristinare un sito è necessario usare i file di origine da una cartella CD.Latest corrispondente al sito in questione. Quando si esegue un backup del sito usando l'attività di backup del sito predefinita, la cartella CD.Latest viene inclusa come parte del backup.
 
     -   **Quando si reinstalla un sito come parte di un ripristino del sito** , è necessario installarlo dalla cartella CD.Latest inclusa nel backup. In questo modo, il sito viene installato usando le versioni dei file che corrispondono al backup del sito e al database del sito.  Se non si ha accesso alla versione corretta della cartella CD.Latest, è possibile ottenere una cartella CD.Latest con le versioni dei file corrette installando un sito in un ambiente lab e quindi aggiornando tale sito in modo che corrisponda alla versione che si vuole ripristinare.
 
@@ -49,7 +50,7 @@ I file di origine della cartella CD.Latest sono supportati per le operazioni seg
 
     -   Quando una cartella CD.Latest non è disponibile, ma si ha un sito primario figlio o un sito di amministrazione centrale funzionante è possibile usarlo come sito di riferimento per il ripristino.  
 
-2.  **Per installare un sito primario figlio:** quando si vuole installare un nuovo sito primario figlio all'interno di un sito di amministrazione centrale in cui sono stati installati uno o più aggiornamenti nella console, è necessario usare il programma di installazione e i file di origine dalla cartella CD.Latest dal sito di amministrazione centrale. Quando il programma di installazione viene eseguito da una copia della cartella CD.Latest dal sito di amministrazione centrale, usa i file di origine di installazione che corrispondono alla versione del sito di amministrazione centrale. Per altre informazioni, vedere [Use the Setup Wizard to install sites](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md) (Usare l'installazione guidata per installare i siti).  
+2.  **Per installare un sito primario figlio:** quando si vuole installare un nuovo sito primario figlio all'interno di un sito di amministrazione centrale in cui sono stati installati uno o più aggiornamenti nella console, è necessario usare il programma di installazione e i file di origine della cartella CD.Latest dal sito di amministrazione centrale. Quando il programma di installazione viene eseguito da una copia della cartella CD.Latest dal sito di amministrazione centrale, usa i file di origine di installazione che corrispondono alla versione del sito di amministrazione centrale. Per altre informazioni, vedere [Use the Setup Wizard to install sites](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md) (Usare l'installazione guidata per installare i siti).  
 
 3.  **Per espandere un sito primario autonomo:** quando si espande un sito primario autonomo installando un nuovo sito di amministrazione centrale, è necessario usare il programma di installazione e i file di origine della cartella CD.Latest dal sito primario per installare il nuovo sito di amministrazione centrale. Quando il programma di installazione viene eseguito da una copia della cartella CD.Latest dal sito primario, usa i file di origine di installazione che corrispondono alla versione del sito primario. Per altre informazioni, vedere [Expand a stand-alone primary site](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_expand) (Espandere un sito primario autonomo) in [Use the Setup Wizard to install sites](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md) (Usare l'installazione guidata per installare i siti)
 

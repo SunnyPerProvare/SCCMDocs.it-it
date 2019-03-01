@@ -10,12 +10,13 @@ ms.assetid: 4b72922a-d11e-4aef-b309-19f5f0716f32
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5218d47ae8699ee0feb0cf59405833ec4cc49569
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1365c3951a829d92cbdb2f6a4a87c8496f9ada3c
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385832"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56136348"
 ---
 # <a name="dp-job-queue-manager"></a>DP Job Queue Manager
 
@@ -33,13 +34,13 @@ Ottiene anche informazioni dal server del sito sul punto di distribuzione in cui
 
 Eseguire **DPJobMgr.exe**. Il menu principale dello strumento contiene le schede seguenti: 
 
-- [Connetti](#bkmk_connect): stabilisce la connessione iniziale al server del sito primario  
+- [Connessione](#bkmk_connect): consente di stabilire la connessione iniziale al server del sito primario  
 
-- [Informazioni generali](#bkmk_overview): riepiloga tutti i processi in esecuzione in tutti i punti di distribuzione in una singola visualizzazione  
+- [Informazioni generali](#bkmk_overview): riepiloga tutti i processi in esecuzione in tutti i punti di distribuzione in una singola vista  
 
-- [Informazioni punto di distribuzione](#bkmk_dp-info): eseguire la selezione multipla dei punti di distribuzione per tenerne traccia e gestire un singolo processo di interesse  
+- [Informazioni punto di distribuzione](#bkmk_dp-info): consente di eseguire la selezione multipla dei punti di distribuzione per tenerne traccia e gestire un singolo processo di interesse  
 
-- [Gestione processi](#bkmk_manage-jobs): elenca tutti i processi e i relativi stati in una singola visualizzazione semplice. Modificare o spostare i processi più in alto nell'elenco, annullare o avviare manualmente un processo.  
+- [Gestione processi](#bkmk_manage-jobs): Elenca tutti i processi e i relativi stati in un'unica visualizzazione semplice. Modificare o spostare i processi più in alto nell'elenco, annullare o avviare manualmente un processo.  
 
 
 ### <a name="bkmk_connect"></a> Scheda Connetti
@@ -53,16 +54,16 @@ Al termine una notifica nella parte inferiore dello strumento conferma la corret
 
 Riepiloga tutti i processi in tutti i punti di distribuzione. Vedere le colonne seguenti:  
 
-- **Punto di distribuzione**: elenca i nomi dei punti di distribuzione.  
+- **Punto di distribuzione**: elenca i nomi dei punti di distribuzione  
 
-- **Processi in esecuzione**: indica il numero di processi simultanei in esecuzione in uno specifico punto di distribuzione.  
+- **Processi in esecuzione**: indica il numero di processi simultanei in esecuzione in un punto di distribuzione specifico.  
 
     > [!Tip]  
     > Un'impostazione del sito determina il numero di distribuzioni software simultanee. Modificare questa impostazione in Proprietà componente distribuzione software.  
 
-- **Totale processi**: indica il numero di tutti i processi che usano come destinazione uno specifico punto di distribuzione. Sono inclusi i processi in esecuzione, in attesa di esecuzione o di cui si sta eseguendo un nuovo tentativo.  
+- **Totale processi**: indica il numero di tutti i processi che hanno come destinazione un punto di distribuzione specifico. Sono inclusi i processi in esecuzione, in attesa di esecuzione o di cui si sta eseguendo un nuovo tentativo.  
 
-- **Total Retries** (Tentativi totali): indica il numero di volte per cui viene eseguito il tentativo di eseguire i processi in uno specifico punto di distribuzione. Un numero più alto può indicare un problema generale relativo allo specifico punto di distribuzione.  
+- **Total Retries** (Totale tentativi): indica il numero di volte per cui viene tentata l'esecuzione dei processi in un punto di distribuzione specifico. Un numero più alto può indicare un problema generale relativo allo specifico punto di distribuzione.  
 
 
 > [!Tip]  
@@ -79,27 +80,27 @@ Elenca tutti i punti di distribuzione sotto il sito connesso. Nel riquadro a sin
 
 Sono presenti otto colonne:  
 
-- **Icona stato**: le icone di stato sono tre.  
+- **Icona stato**: le icone di stato sono tre:  
 
-    - **Pronto**: indica che sono stati completati tutti i passaggi di verifica per uno specifico processo. Il processo è pronto per essere aggiunto ai processi simultanei in esecuzione. I processi in questo stato sono in genere in una fase di attesa. Rimangono in attesa che vengano completati i processi in esecuzione prima di riservarsi uno spazio.  
+    - **Pronto**: indica che sono stati completati tutti i passaggi di verifica per un processo specifico. Il processo è pronto per essere aggiunto ai processi simultanei in esecuzione. I processi in questo stato sono in genere in una fase di attesa. Rimangono in attesa che vengano completati i processi in esecuzione prima di riservarsi uno spazio.  
 
-    - **In esecuzione**: indica che uno specifico processo è attualmente in esecuzione in un punto di distribuzione. Per i processi ad esecuzione prolungata (pacchetti di grandi dimensioni), in genere un valore indica il tempo dallo stato di avanzamento (%) fino al completamento. Mostra questa percentuale nella colonna **Indicatore di stato** in questa visualizzazione. Per i pacchetti di piccole dimensioni, la colonna **Indicatore di stato** potrebbe non contenere alcun valore. Il processo potrebbe essere già stato completato prima di ricevere lo stato dal punto di distribuzione remoto.  
+    - **In esecuzione**: indica che un processo specifico è attualmente in esecuzione in un punto di distribuzione. Per i processi ad esecuzione prolungata (pacchetti di grandi dimensioni), in genere un valore indica il tempo dallo stato di avanzamento (%) fino al completamento. Mostra questa percentuale nella colonna **Indicatore di stato** in questa visualizzazione. Per i pacchetti di piccole dimensioni, la colonna **Indicatore di stato** potrebbe non contenere alcun valore. Il processo potrebbe essere già stato completato prima di ricevere lo stato dal punto di distribuzione remoto.  
 
     - **Riprova**: indica che un determinato processo ha avuto esito negativo ed è in corso un nuovo tentativo di esecuzione. Il nuovo tentativo viene eseguito dopo l'intervallo tentativi. Questo intervallo è configurabile e impostato su 30 minuti per impostazione predefinita.  
 
-- **Software**: il nome del pacchetto che usa come destinazione uno specifico punto di distribuzione  
+- **Software**: nome del pacchetto che ha come destinazione un punto di distribuzione specifico  
 
-- **ID pacchetto**: ID del pacchetto che usa come destinazione uno specifico punto di distribuzione  
+- **ID pacchetto**: ID del pacchetto che ha come destinazione un punto di distribuzione specifico  
 
-- **Dimensione**: la dimensione del pacchetto espressa in KB  
+- **Dimensioni**: dimensioni del pacchetto espresse in KB  
 
-- **Indicatore di stato**: la percentuale di completamento del processo. Per altre informazioni, vedere la descrizione dell'icona di stato **In esecuzione**.  
+- **Stato**: percentuale di completamento del processo. Per altre informazioni, vedere la descrizione dell'icona di stato **In esecuzione**.  
 
-- **Start/Restart Time** (Ora di avvio/riavvio): per un processo in esecuzione questo valore è l'ora di inizio (verde). Per un nuovo tentativo questo valore è l'ora in cui verrà eseguito un nuovo tentativo per il processo.  
+- **Start/Restart Time** (Orario avvio/riavvio): per un processo in esecuzione, si tratta dell'orario di avvio (in verde). Per un nuovo tentativo questo valore è l'ora in cui verrà eseguito un nuovo tentativo per il processo.  
 
-- **Tentativi**: il numero di tentativi di esecuzione di questo pacchetto.  
+- **Tentativi**: numero di tentativi di esecuzione del pacchetto.  
 
-- **Nome punto di distribuzione**: il nome di dominio completo (FQDN) del punto di distribuzione  
+- **Nome punto di distribuzione**: nome di dominio completo (FQDN) del punto di distribuzione  
 
 > [!Tip]  
 > - Per ordinare ciascuna colonna in questa scheda, fare clic sul nome della colonna.  
@@ -119,9 +120,9 @@ Elenca tutti i processi e i relativi stati in un'unica visualizzazione semplice.
 
 - **Sposta all'inizio**: sposta uno o più processi all'inizio della coda. Questa azione può comportare l'esecuzione immediata dei processi. Un processo con priorità più bassa può essere sospeso eseguendo questa azione.  
 
-- **Sposta su**: sposta uno specifico processo una riga più in alto. L'esecuzione di un processo con priorità più bassa può essere sospesa eseguendo questa azione.  
+- **Sposta su**: sposta un processo specifico una riga più in alto. L'esecuzione di un processo con priorità più bassa può essere sospesa eseguendo questa azione.  
 
-- **Sposta giù**: sposta uno specifico processo una riga più in basso.  
+- **Sposta giù**: sposta un processo specifico una riga più in basso.  
 
 - **Sposta alla fine**: sposta uno o più processi alla fine della coda.  
 

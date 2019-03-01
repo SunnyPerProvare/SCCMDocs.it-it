@@ -10,12 +10,13 @@ ms.assetid: 6a279624-ffc9-41aa-8132-df1809708dd5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ffcb60ff355a67304b057ef2d1b632fb9e0c21dc
-ms.sourcegitcommit: 5e7c4d36f4cdb3390ad3b381d31a3e1e4bf3c6e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6bea2d7fc41bdec96fbdfe3508d13eea0a59d514
+ms.sourcegitcommit: ceec0e20bf801071f2a05233f984cf17acc3fd29
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55986536"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265037"
 ---
 # <a name="list-of-prerequisite-checks-for-configuration-manager"></a>Elenco dei controlli dei prerequisiti per Configuration Manager
 
@@ -554,7 +555,7 @@ SELECT * FROM vLogs WHERE ProcedureName = 'spDiagChangeTracking'
 <!--SCCMDocs-pr issue 3094-->
 *Si applica a: sito di amministrazione centrale, sito primario, sito secondario*
 
-Quando si installa un nuovo sito, Configuration Manager installa automaticamente SQL Native Client come componente ridistribuibile. Configuration Manager non supporta l'aggiornamento di SQL Native Client. Questo controllo garantisce che il sito disponga di una versione supportata di SQL Native Client. A partire dalla versione 1810, la versione minima è SQL 2012 SP4 (`11.*.7001.0`). 
+Quando si installa un nuovo sito, Configuration Manager installa automaticamente SQL Server Native Client come componente ridistribuibile. Dopo l'installazione del sito, Configuration Manager non aggiorna SQL Server Native Client. Questo controllo garantisce che il sito disponga di una versione supportata di SQL Native Client. A partire dalla versione 1810, la versione minima è SQL 2012 SP4 (`11.*.7001.0`). 
 
 Questa versione di SQL Native Client supporta TLS 1.2. Per altre informazioni, vedere gli articoli seguenti:
 - [Supporto di TLS 1.2 per Microsoft SQL Server](https://support.microsoft.com/help/3135244/tls-1-2-support-for-microsoft-sql-server)  

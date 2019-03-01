@@ -10,12 +10,13 @@ ms.assetid: 9181c84e-d74f-44ea-9bb9-f7805eb465fc
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 38732081ce27fde764f7d47a565ce1211cef1f54
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 1fa26147539abc611b86791f6dd9a4be0bc89c59
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383559"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156475"
 ---
 # <a name="create-windows-applications-in-configuration-manager"></a>Creare applicazioni Windows in Configuration Manager
 
@@ -43,7 +44,7 @@ Quando si crea un'applicazione nella console di Configuration Manager, come **Ti
 
 
 ## <a name="bkmk_provision"></a> Effettuare il provisioning dei pacchetti app Windows per tutti gli utenti in un dispositivo
-<!--1358310--> A partire dalla versione 1806, è possibile effettuare il provisioning di un'applicazione con un pacchetto app Windows per tutti gli utenti nel dispositivo. Un esempio comune di questo scenario è il provisioning un'app dal Microsoft Store per le aziende e la formazione, ad esempio Minecraft: Education Edition, in tutti i dispositivi usati dagli studenti di una scuola. In precedenza, Configuration Manager supportava solo l'installazione di queste applicazioni per ogni utente. Dopo aver eseguito l'accesso a un nuovo dispositivo, uno studente dovrebbe attendere prima di poter accedere a un'app. Ora quando viene eseguito il provisioning dell'app nel dispositivo per tutti gli utenti, tutti possono essere produttivi più rapidamente.
+<!--1358310--> A partire dalla versione 1806, è possibile effettuare il provisioning di un'applicazione con un pacchetto app Windows per tutti gli utenti nel dispositivo. Un esempio comune di questo scenario è il provisioning di un'app da Microsoft Store per le aziende e la formazione, ad esempio Minecraft: Education Edition, in tutti i dispositivi usati dagli studenti di una scuola. In precedenza, Configuration Manager supportava solo l'installazione di queste applicazioni per ogni utente. Dopo aver eseguito l'accesso a un nuovo dispositivo, uno studente dovrebbe attendere prima di poter accedere a un'app. Ora quando viene eseguito il provisioning dell'app nel dispositivo per tutti gli utenti, tutti possono essere produttivi più rapidamente.
 
 > [!Important]  
 > Prestare attenzione con l'installazione, il provisioning e l'aggiornamento di versioni diverse dello stesso pacchetto di app di Windows in un dispositivo, poiché possono causare risultati imprevisti. Questo comportamento può verificarsi quando si usa Configuration Manager per eseguire il provisioning dell'app, ma dopo si consente agli utenti di aggiornare l'app dal Microsoft Store. Per altre informazioni, vedere le istruzioni del passaggio successivo quando si [gestiscono le app dal Microsoft Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business#next-steps).  
@@ -51,8 +52,8 @@ Quando si crea un'applicazione nella console di Configuration Manager, come **Ti
 Quando si esegue il provisioning di un'app con licenza offline Configuration Manager non consente a Windows di aggiornarla automaticamente dal Microsoft Store.  
 
 Configuration Manager supporta il provisioning di app nelle versioni seguenti di Windows:<!--SCCMDocs-pr issue 2762-->
-- Azione di installazione: Windows 10 versione 1607 e successiva
-- Azione di disinstallazione: Windows 10 versione 1703 e successiva
+- Azione di installazione: Windows 10 versione 1607 e successive
+- Azione di disinstallazione: Windows 10 versione 1703 e successive
 
 Per configurare un tipo di distribuzione delle app Windows per questa funzionalità, abilitare l'opzione **Effettua il provisioning di questa applicazione per tutti gli utenti nel dispositivo**. Per altre informazioni, vedere [Create applications](/sccm/apps/deploy-use/create-applications) (Creare le applicazioni).
 

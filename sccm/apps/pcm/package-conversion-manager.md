@@ -10,12 +10,13 @@ ms.assetid: f053fa73-c553-4522-a6b9-f885f23fe57c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 41dd6ad6f8a0292fdb16a0d727665b17e038f87b
-ms.sourcegitcommit: 1439817f1309658b31008d7bafaab32fc5ef8789
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: ba73d215b9a672f4843c2f1e4a63dfc6bd13ea74
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "52820042"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56132885"
 ---
 # <a name="package-conversion-manager"></a>Package Conversion Manager
 
@@ -61,9 +62,9 @@ Prima di iniziare a convertire i pacchetti in applicazioni, sviluppare un piano.
 
 Questa sezione descrive due piani di conversione dei pacchetti di esempio:  
 
-- [Ambiente di test con quantità elevata di risorse](#bkmk_define-high): si dispone di un ambiente di test con risorse, autorizzazioni e architettura per replicare l'intero ambiente di produzione.  
+- [Ambiente di test con ampia disponibilità di risorse](#bkmk_define-high): è presente un ambiente di test con risorse, autorizzazioni e architettura sufficienti per replicare l'intero ambiente di produzione.  
 
-- [Ambiente di test con quantità limitata di risorse](#bkmk_define-limited): non si dispone di un ambiente di test che consente di replicare l'intero ambiente di produzione.  
+- [Ambiente di test con quantità limitata di risorse](#bkmk_define-limited): non è presente un ambiente di test che consente di replicare l'intero ambiente di produzione.  
 
 Modificare questi piani in base alle esigenze per altri problemi specifici dell'ambiente in uso.
 

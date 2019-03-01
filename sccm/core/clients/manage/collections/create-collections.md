@@ -10,12 +10,13 @@ ms.assetid: 1401a35e-4312-4d3b-8ceb-0abbb10d4f05
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c314cba909929ee49355eab59dfc813aab7e393e
-ms.sourcegitcommit: a849dab9333ebac799812624d6155f2a96b523ca
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6235f3f58d8688d9ceee11e1b4be05a2df21a509
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "42584560"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56141120"
 ---
 # <a name="how-to-create-collections-in-system-center-configuration-manager"></a>Come creare le raccolte in System Center Configuration Manager
 
@@ -75,7 +76,7 @@ Le raccolte costituiscono raggruppamenti di utenti o dispositivi. Usare le racco
 
 -   **Importa istruzione query**: apre la finestra di dialogo **Sfoglia query** nella quale è possibile selezionare una [query di Configuration Manager](../../../../core/servers/manage/create-queries.md) da usare come regola di query per la raccolta.   
 
--   **Classe di risorse**: selezionare il tipo di risorsa che si vuole cercare e aggiungere alla raccolta. Selezionare un valore in **Risorsa di sistema** per cercare i dati di inventario restituiti dai computer client o **Computer sconosciuto** per effettuare una selezione tra i valori restituiti dai computer sconosciuti.  
+-   **Classe di risorse:** selezionare il tipo di risorsa che si vuole cercare e aggiungere alla raccolta. Selezionare un valore in **Risorsa di sistema** per cercare i dati di inventario restituiti dai computer client o **Computer sconosciuto** per effettuare una selezione tra i valori restituiti dai computer sconosciuti.  
 
 -   **Modifica istruzione query**: apre la finestra di dialogo **Proprietà istruzione query** nella quale è possibile creare una query da usare come regola per la raccolta. Per altre informazioni sulle query, vedere [Riferimento tecnico per le query per System Center Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md).  
 
@@ -143,7 +144,7 @@ Nella finestra di dialogo **Seleziona raccolte** selezionare le raccolte da escl
 
 1.  Nella finestra di dialogo **Proprietà regola di query** specificare:  
 
--   **Nome**: un nome univoco.  
+-   **Nome**: nome univoco.  
 
 -   **Importa istruzione query**: apre la finestra di dialogo **Sfoglia query** nella quale è possibile selezionare una [query di Configuration Manager](../../../../core/servers/manage/queries-technical-reference.md) da usare come regola di query per la raccolta.  
 

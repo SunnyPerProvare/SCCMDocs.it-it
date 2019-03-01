@@ -10,12 +10,13 @@ ms.assetid: 82e8a693-9adf-4ca3-8484-7e101c34c7c1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 44ddf230d33759787636e88f6edcdd79744fd7b2
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f6bc81a1aa6d8464094195c33faeecfeaf2d46f0
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32338925"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56123931"
 ---
 # <a name="monitor-content-you-have-distributed-with-system-center-configuration-manager"></a>Monitorare il contenuto distribuito con System Center Configuration Manager
 
@@ -157,11 +158,11 @@ A partire dalla versione 1610, è possibile usare il dashboard **Origini dati de
 Nella console passare a **Monitoraggio** > **Stato distribuzione** > **Origini dati del client**. In questa posizione è possibile selezionare un periodo di tempo da applicare al dashboard. Nella visualizzazione è quindi possibile selezionare il gruppo di limiti o il pacchetto per il quale visualizzare le informazioni. Quando si esaminano le informazioni, passare il puntatore sulla superficie per vedere altri dettagli relativi ai diversi contenuti o origini dei criteri.
 
 Sono incluse le seguenti informazioni:  
-- **Client Content Sources** (Origini contenuto client): visualizza l'origine da cui i client hanno ottenuto il contenuto.
-- **Distribution points** (Punti di distribuzione): visualizza il numero di punti di distribuzione che fanno parte del gruppo di limiti selezionato.
-- **Clients that used a distribution point** (Clienti che hanno usato un punto di distribuzione): questo valore indica quanti client, tra quelli presenti nel gruppo di limiti selezionato, hanno usato un punto di distribuzione per ottenere il contenuto.
-- **Peer Cache sources** (Origini peer cache): per il gruppo di limiti selezionato indica quanti origini di peer cache hanno segnalato la cronologia di download.
-- **Clients that used a peer** (Clienti che hanno usato un peer): questo valore indica quanti client, tra quelli presenti nel gruppo di limiti selezionato, hanno usato un'origine peer cache per ottenere il contenuto.
+- **Origini del contenuto client**: visualizza l'origine da cui i client hanno ottenuto il contenuto.
+- **Punti di distribuzione:**: visualizza il numero di punti di distribuzione che fanno parte del gruppo di limiti selezionato.
+- **Client che hanno usato un punto di distribuzione**: questo valore indica quanti client, tra quelli presenti nel gruppo di limiti selezionato, hanno usato un punto di distribuzione per ottenere contenuto.
+- **Origini di peer cache**: per il gruppo di limiti selezionato indica quante origini di peer cache hanno segnalato la cronologia di download.
+- **Client che hanno usato un peer**: questo valore indica quanti client, tra quelli presenti nel gruppo di limiti selezionato, hanno usato un'origine peer cache per ottenere contenuto.
 
 
 

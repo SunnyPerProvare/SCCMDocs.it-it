@@ -10,12 +10,13 @@ ms.assetid: a0bd093d-67a5-4f74-bf79-dd604889f5ba
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b5f7ac3125b099a764604b3338a92f3f45b10afe
-ms.sourcegitcommit: 2cc635835709fb8d86cdb63ea34233b36c94d4d8
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5adc8809edc0a069269dfce71f302452a0e01b45
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52258979"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56124030"
 ---
 # <a name="learn-more-about-powershell-script-security"></a>Informazioni sulla sicurezza degli script PowerShell
 
@@ -64,7 +65,7 @@ Il passaggio dei parametri garantisce flessibilità agli script e consente di ri
 - Usare il modulo ["hunter injection"](https://www.powershellgallery.com/packages/InjectionHunter/1.0.0) di PowerShell in PowerShell Gallery.
     - Potrebbero essere riscontrati falsi positivi. Controllare quindi la finalità nel caso in cui siano contrassegnati casi sospetti per determinare se si tratta effettivamente di un problema. 
 - Microsoft Visual Studio offre un analizzatore di script che può essere usato per controllare la sintassi di PowerShell.
-- Questo video intitolato: "DEF CON 25 - Lee Holmes - Get $pwnd: Attacking Battle Hardened Windows Server"(DEF CON 25 - Lee Holmes - Ottenere $pwnd: Attacco ai danni di Windows Server) offre una panoramica dei tipi di problemi da cui è possibile proteggersi (in particolare la sezione compresa tra 12:20 e 17:50):     <iframe width="560" height="315" src="https://www.youtube.com/embed/ahxMOAAani8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+- Questo video intitolato: "DEF CON 25 - Lee Holmes - Get $pwnd: Attacking Battle Hardened Windows Server"(DEF CON 25 - Lee Holmes - Colpito e affondato: Attacco ai danni di Windows Server) offre una panoramica dei tipi di problemi da cui è possibile proteggersi (in particolare la sezione compresa tra 12:20 e 17:50):     <iframe width="560" height="315" src="https://www.youtube.com/embed/ahxMOAAani8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## <a name="environment-recommendations"></a>Consigli relativi all'ambiente
 Consigli generali per gli amministratori di PowerShell.

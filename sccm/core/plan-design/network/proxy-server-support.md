@@ -10,12 +10,13 @@ ms.assetid: 9123a87a-0b6f-43c7-b5c2-fac5d09686b1
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 78694282dae7408e1f9e01fd75585f87aef41da7
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5123bd51de9678666b28ec464e811dafdd91a30d
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39383556"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156560"
 ---
 # <a name="proxy-server-support-in-configuration-manager"></a>Supporto dei server proxy in Configuration Manager
 
@@ -58,16 +59,16 @@ Per questa configurazione, il server del sito primario:
 Questo ruolo del sistema del sito si connette a un'istanza di Exchange Server. Usa una configurazione del server proxy nel computer che ospita il connettore Exchange Server.  
 
 
-#### <a name="service-connection-point"></a>Punto di connessione del servizio
+#### <a name="service-connection-point"></a>punto di connessione del servizio
 Questo ruolo del sistema del sito si connette al servizio cloud di Configuration Manager per scaricare gli aggiornamenti di versione per Configuration Manager e si connette a Microsoft Intune in una configurazione ibrida. Usa un server proxy configurato nel computer che ospita il punto di connessione del servizio.  
 
 
 #### <a name="software-update-point"></a>Punto di aggiornamento software
 Questo ruolo del sistema del sito usa il proxy quando si connette a Microsoft Update per scaricare le patch e sincronizzare le informazioni sugli aggiornamenti. Come per ogni altro ruolo del sistema del sito, configurare prima di tutto le impostazioni proxy del sistema del sito. Configurare quindi le opzioni seguenti specifiche per il punto di aggiornamento software:  
 
--   **Utilizza un server proxy durante la sincronizzazione degli aggiornamenti software**  
+-   **Usa un server proxy durante la sincronizzazione degli aggiornamenti software**  
 
--   **Utilizzare un server proxy quando si scaricano contenuti tramite le regole di distribuzione automatica.**  
+-   **Usare un server proxy quando si scaricano contenuti tramite le regole di distribuzione automatica**  
 
     > [!Note]  
     > Anche se disponibile, questa impostazione non viene usata dai punti di aggiornamento software nei siti secondari.  
@@ -75,7 +76,7 @@ Questo ruolo del sistema del sito usa il proxy quando si connette a Microsoft Up
 Queste impostazioni si trovano nella scheda **Impostazioni proxy e account** delle proprietà del punto di aggiornamento software.  
 
 > [!NOTE]  
->  Per impostazione predefinita, l'account di **sistema** del server in cui è stata creata una regola di distribuzione automatica viene usato per connettersi a Internet e scaricare gli aggiornamenti software quando sono in esecuzione le regole di distribuzione automatica. In alternativa, configurare e usare l'account del server proxy del sistema del sito. 
+>  Per impostazione predefinita, quando vengono eseguite le regole di distribuzione automatica, viene usato l'account di **sistema** del sito del server in cui è stata creata una regola di distribuzione automatica per connettersi a Internet e scaricare gli aggiornamenti software. In alternativa, configurare e usare l'account del server proxy del sistema del sito. 
 >   
 >  Quando questo account non può accedere a Internet, non è possibile scaricare gli aggiornamenti software. Nel file **ruleengine.log** viene registrata la voce seguente:  
 > `Failed to download the update from internet. Error = 12007.`  
@@ -90,12 +91,12 @@ Queste impostazioni si trovano nella scheda **Impostazioni proxy e account** del
 
 3.  In Proprietà sistema del sito passare alla scheda **Proxy**. Configurare le impostazioni proxy seguenti:  
 
-    - **Usa un server proxy quando si sincronizzano le informazioni da Internet**: selezionare questa opzione per consentire al server del sistema del sito di usare un server proxy.  
+    - **Utilizza un server proxy per sincronizzare le informazioni provenienti da Internet**: selezionare questa opzione per abilitare il server del sistema del sito per l'uso di un server proxy.  
 
-    - **Nome server proxy**: specificare il nome host o il nome di dominio completo del server proxy nell'ambiente.  
+    - **Nome del server proxy**: specificare il nome host o il nome di dominio completo del server proxy nell'ambiente.  
 
     - **Porta**: specificare la porta di rete da usare per comunicare con il server proxy. Per impostazione predefinita, viene usata la porta **80**.  
 
-    - **Utilizzare le credenziali per connettersi al server proxy**: molti server proxy richiedono che un utente esegua l'autenticazione. Per impostazione predefinita, il server del sistema del sito usa il relativo account computer per la connessione al server proxy. Se necessario, abilitare questa opzione. Fare clic su **Imposta** e quindi scegliere **Account esistente** o specificare un valore in **Nuovo account**. Tali credenziali costituiscono l'**account del server proxy del sistema del sito**.  Per altre informazioni, vedere [Account usati in Configuration Manager](/sccm/core/plan-design/hierarchy/accounts).  
+    - **Utilizzare le credenziali per connettersi al server proxy**: diversi server proxy richiedono l'autenticazione dell'utente. Per impostazione predefinita, il server del sistema del sito usa il relativo account computer per la connessione al server proxy. Se necessario, abilitare questa opzione. Fare clic su **Imposta** e quindi scegliere **Account esistente** o specificare un valore in **Nuovo account**. Tali credenziali costituiscono l'**account del server proxy del sistema del sito**.  Per altre informazioni, vedere [Account usati in Configuration Manager](/sccm/core/plan-design/hierarchy/accounts).  
 
 4.  Scegliere **OK** per salvare la nuova configurazione del server proxy.  

@@ -10,12 +10,13 @@ ms.assetid: 2be84a1d-ebb9-47ae-8982-c66d5b92a52a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: df936f3ab5567840560497edd60a32f3bbb9c74d
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 62d750a6ff711afc06ddbcec9b9ad98ecfab758e
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893602"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56124156"
 ---
 # <a name="plan-for-and-configure-application-management-in-configuration-manager"></a>Pianificare e configurare la gestione delle applicazioni in Configuration Manager
 
@@ -266,7 +267,7 @@ Installare il Catalogo applicazioni in nuovo server di sistema del sito o in un 
 
 #### <a name="verify-the-installation-of-these-site-system-roles"></a>Verificare l'installazione di questi ruoli del sistema del sito  
 
-- Messaggi di stato: Utilizzare i componenti **SMS_PORTALWEB_CONTROL_MANAGER** e **SMS_AWEBSVC_CONTROL_MANAGER**.  
+- Messaggi di stato: usare i componenti **SMS_PORTALWEB_CONTROL_MANAGER** e **SMS_AWEBSVC_CONTROL_MANAGER**.  
 
     Ad esempio, l'ID stato **1015** per **SMS_PORTALWEB_CONTROL_MANAGER** conferma che Gestione componenti del sito ha completato l'installazione del punto per siti Web del Catalogo applicazioni.  
 
@@ -291,7 +292,7 @@ Per altre informazioni, vedere gli articoli seguenti:
 Il client di Configuration Manager configura i dispositivi con queste impostazioni durante il successivo download dei criteri client. Per attivare il recupero dei criteri per un singolo client, vedere [Come gestire i client](/sccm/core/clients/manage/manage-clients).
 
 
-### <a name="step-5-verify-that-the-application-catalog-is-operational"></a>Passaggio 5: Verificare che il Catalogo applicazioni sia operativo
+### <a name="step-5-verify-that-the-application-catalog-is-operational"></a>Passaggio 5: verificare che il Catalogo applicazioni sia operativo
 
 Utilizzare le seguenti procedure per verificare che il Catalogo applicazioni sia operativo. 
 
@@ -301,7 +302,7 @@ Utilizzare le seguenti procedure per verificare che il Catalogo applicazioni sia
 > [!TIP]  
 >  La non aderenza ai prerequisiti è una delle più comuni cause di malfunzionamento del Catalogo applicazioni dopo l'installazione. Verificare i prerequisiti per i ruoli del sistema del sito del Catalogo applicazioni. Per altre informazioni, vedere [Prerequisiti del sito e del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).  
 
-In un browser immettere l'indirizzo del sito Web del Catalogo applicazioni. Verificare che nella pagina Web siano presenti tre schede: **Catalogo applicazioni**, **Richieste di applicazioni** e **Dispositivi personali**.  
+In un browser immettere l'indirizzo del sito Web del Catalogo applicazioni. Verificare che nella pagina Web siano visualizzate tre schede: **Catalogo applicazioni**, **Richieste di applicazioni** e **Dispositivi personali**.  
 
 Usare gli indirizzi appropriati per il Catalogo applicazioni tra quelli dell'elenco seguente, tenendo presente che &lt;server&gt; è il nome del computer, il nome di dominio completo Intranet o il nome di dominio completo Internet:  
 

@@ -2,7 +2,7 @@
 title: File di log per la risoluzione dei problemi
 titleSuffix: Configuration Manager
 description: Usare i file di log per la risoluzione dei problemi con i client di Configuration Manager e i sistemi del sito.
-ms.date: 11/27/2018
+ms.date: 02/12/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,12 +10,13 @@ ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 96673c0b299e45111c7d9a2bedf55282de50132e
-ms.sourcegitcommit: 5e7c4d36f4cdb3390ad3b381d31a3e1e4bf3c6e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a5c6cee6422d3fc8777f54bd42716748410c9323
+ms.sourcegitcommit: ceec0e20bf801071f2a05233f984cf17acc3fd29
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55986621"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265071"
 ---
 # <a name="log-files-in-configuration-manager"></a>File di log in Configuration Manager
 
@@ -524,7 +525,7 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 |SMS_Cloud_<br>ProxyConnector.log|Registra informazioni dettagliate sull'impostazione di connessioni tra il servizio gateway di gestione cloud e il punto di connessione al gateway di gestione cloud.|Server del sistema del sito|
 |CMGContentService.log<sup>1</sup>|<!--SCCMDocs-pr issue #2822-->A partire dalla versione 1806, quando si abilita un CMG perché trasferisca contenuto dall'archiviazione di Azure, questo log registra i dettagli di quel servizio.|Cartella **%approot%\logs** sul server di Azure o cartella SMS/Logs nel server del sistema del sito|
 
-<sup>1</sup> Si tratta di file di log locali di Configuration Manager che il gestore del servizio cloud sincronizza da Archiviazione di Azure ogni cinque minuti. Il gateway di gestione cloud effettua il push dei log ad Archiviazione di Azure ogni cinque minuti. Il ritardo massimo è quindi di 10 minuti. Le opzioni di tipo Dettagliato hanno effetto sia sui log locali che su quelli remoti. I nomi dei file includono il nome del servizio e l'identificatore dell'istanza del ruolo. Ad esempio, CMG -*ServiceName*-*RoleInstanceID*-CMGSetup.log
+<sup>1</sup> Si tratta di file di log locali di Configuration Manager che Gestione servizi cloud sincronizza da Archiviazione di Azure ogni cinque minuti. Il gateway di gestione cloud effettua il push dei log ad Archiviazione di Azure ogni cinque minuti. Il ritardo massimo è quindi di 10 minuti. Le opzioni di tipo Dettagliato hanno effetto sia sui log locali che su quelli remoti. I nomi dei file includono il nome del servizio e l'identificatore dell'istanza del ruolo. Ad esempio, CMG -*ServiceName*-*RoleInstanceID*-CMGSetup.log
 
 - Per la risoluzione dei problemi relativi alle distribuzioni, usare **CloudMgr.log** e **CMGSetup.log**
 - Per la risoluzione dei problemi relativi all'integrità del servizio, usare **CMGService.log** e **SMS_Cloud_ProxyConnector.log**.
@@ -809,9 +810,10 @@ Nella tabella seguente sono elencati i file di log contenenti informazioni corre
 ###  <a name="BKMK_WindowsServicingLog"></a>Manutenzione di Windows 10  
  Nella tabella seguente sono elencati i file di log contenenti informazioni correlate alla manutenzione di Windows 10.  
 Per la manutenzione vengono usati la stessa infrastruttura e lo stesso processo degli aggiornamenti software. Per altri log applicabili allo scenario di manutenzione, vedere [Aggiornamenti software](#BKMK_SU_NAPLog).
+
 |Nome registro|Descrizione|Computer con file di log|  
 |--------------|-----------------|----------------------------|  
-|CBS.log|Registra gli errori di manutenzione correlati alle modifiche per Aggiornamenti di Windows o ruoli e funzionalità.|Client|  
+|CBS.log|Registra gli errori di manutenzione correlati alle modifiche per Aggiornamenti di Windows o ruoli e funzionalità.|Client|
 |DISM.log|Registra tutte le azioni usando Gestione e manutenzione immagini distribuzione. Se necessario, DISM.log punterà a CBS.log per altri dettagli.|Client|
 |setupact.log|File di log primario per la maggior parte degli errori che si verificano durante il processo di installazione di Windows. Il file di log è disponibile nella cartella %windir%\$Windows.~BT\sources\panther.|Client|
 

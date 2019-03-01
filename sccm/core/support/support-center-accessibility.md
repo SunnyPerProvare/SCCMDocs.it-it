@@ -10,12 +10,13 @@ ms.assetid: 1b931c9d-ffae-4d8e-baa7-c330a152674f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 424ab2a1ca7ed81ccdb5c0607edd74ec8ccb7484
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 4d759ada36184ac8a6d1ac59c94c96cdaf234d56
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52458150"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56139375"
 ---
 # <a name="accessibility-features-in-support-center"></a>Funzionalità di accessibilità in Support Center
 
@@ -59,15 +60,15 @@ Usare i tasti di scelta rapida per accedere a tutti i menu della barra multifunz
 |Aprire file di log nella visualizzazione corrente<br>(nella scheda **Logs** (Log) di Support Center e nella finestra Log Viewer (Visualizzatore log))|**CTRL** + **MAIUSC** + **O** |
 |Aprire file di log in una nuova finestra Log Viewer<br>(nella scheda **Logs** (Log) di Support Center e nella finestra Log Viewer (Visualizzatore log))|**CTRL** + **N** |
 |Chiudere tutti i file di log<br>(nella scheda **Logs** (Log) di Support Center e nella finestra **Log Viewer** (Visualizzatore log))|**CTRL** + **W** |
-|Cercare nei file di log| - **CTRL** + **F**: consente di aprire la finestra di dialogo **Find** (Trova) per immettere la stringa di ricerca<br> - **F3**: consente di individuare la corrispondenza successiva<br> - **MAIUS** + **F3**: consente di individuare la corrispondenza precedente|
+|Cercare nei file di log| - **CTRL** + **F**: consente di aprire la finestra di dialogo **Find** (Trova) per immettere la stringa di ricerca<br> - **F3**: consente di individuare la corrispondenza successiva<br> - **MAIUSC** + **F3**: consente di individuare la corrispondenza precedente|
 |Cercare un codice di errore<br>(nella scheda **Logs** (Log) e nella finestra **Log Viewer** (Visualizzatore log))|**CTRL** + **L** |
-|Copiare da un file di log| - **CTRL** + **C**: consente di copiare il testo del file di log<br> - **CTRL** + **MAIUSC** + **C**: consente di copiare la voce di log senza formattazione|
+|Copiare da un file di log| - **CTRL** + **C**: copia il testo del file di log<br> - **CTRL** + **MAIUSC** + **C**: copia la voce di log senza formattazione|
 |Filtrare rapidamente usando testo del file di log<br>(nella scheda **Logs** (Log) e nella finestra **Log Viewer** (Visualizzatore log))|**CTRL** + **MAIUSC** + **C** |
 |Inserire annotazioni in un file di log<br>(nella scheda **Logs** (Log) e nella finestra **Log Viewer** (Visualizzatore log))|**CTRL** + **MAIUSC** + **N** <sup>[Note 1](#bkmk_note1)</sup>|
 |Aprire la Guida|**F1**|
 
 
-#### <a name="bkmk_note1"></a> Nota 1: inserire annotazioni in un file di log
+#### <a name="bkmk_note1"></a> Nota 1: Inserire annotazioni in un file di log
 Support Center archivia le annotazioni nella memoria. È possibile usarle solo all'interno di una sessione di visualizzazione log. Per mantenere un'annotazione e usarla in futuro, acquisire la schermata e salvare l'immagine risultante.
 
 

@@ -10,12 +10,13 @@ ms.assetid: b0c9db74-841e-46eb-8924-957cde968bf7
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0c15e919978ae8458f426511dd9a0e6d7c311b4b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 3cda70e7a5f1b2cf7dec079a7e933af48f0bf8ad
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333289"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56128399"
 ---
 # <a name="upgrade-windows-devices-with-the-edition-upgrade-policy-in-system-center-configuration-manager"></a>Aggiornare i dispositivi Windows con i criteri di aggiornamento edizione in System Center Configuration Manager
 

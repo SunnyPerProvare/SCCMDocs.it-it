@@ -10,12 +10,13 @@ ms.assetid: 08e0382d-de05-4a76-ba5c-7223173f7066
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 182006f0e4fcaf2304570ef4110527a61180c290
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 3a96f9292256227da6a216a913c7a0be1be5c60d
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32341016"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156713"
 ---
 # <a name="configure-asset-intelligence-in-system-center-configuration-manager"></a>Configurare Asset Intelligence in System Center Configuration Manager
 
@@ -27,7 +28,7 @@ Asset Intelligence consente di eseguire l'inventario e gestire l'uso delle licen
    
 
 - **Passaggio 1**: per raccogliere i dati di inventario necessari per i report di Asset Intelligence, è necessario abilitare Hardware Inventory Client Agent come descritto in [Come estendere l'inventario hardware in System Center Configuration Manager](../../../../core/clients/manage/inventory/extend-hardware-inventory.md).
-- **Passaggio 2**: [Abilitare le classi di report per l'inventario hardware di Asset Intelligence](#BKMK_EnableAssetIntelligence)  
+- **Passaggio 2**: [Abilitare le classi di report per l'inventario hardware di Asset Intelligence](#BKMK_EnableAssetIntelligence).  
 - **Passaggio 3**: [Installare un punto di sincronizzazione di Asset Intelligence](#BKMK_InstallAssetIntelligenceSynchronizationPoint)
 - **Passaggio 4**: [Abilitare il controllo degli eventi di accesso con esito positivo](#BKMK_EnableSuccessLogonEvents)  
 - **Passaggio 5**: [Importare le informazioni sulle licenze software](#BKMK_ImportSoftwareLicenseInformation)  
@@ -77,12 +78,12 @@ Oltre al download di nuove informazioni per il catalogo di Asset Intelligence, i
 
 3.  Aggiungere il ruolo del sistema del sito del punto di sincronizzazione di Asset Intelligence a un server del sistema del sito nuovo o esistente:  
 
-    -  Per un **nuovo server del sistema del sito**: nel gruppo **Crea** della scheda **Home** scegliere **Crea server di sistema sito** per avviare la procedura guidata.   
+    -  Per un **nuovo server di sistema del sito**: Nel gruppo **Crea** della scheda **Home** selezionare **Crea server di sistema sito** per avviare la procedura guidata.   
 
         > [!NOTE]  
         >  Per impostazione predefinita, quando Configuration Manager installa un ruolo del sistema del sito, i file di installazione vengono installati nella prima unità disco rigido NTFS con la maggiore quantità di spazio su disco disponibile. Per evitare l'installazione di Configuration Manager in unità specifiche, creare un file vuoto denominato No_sms_on_drive.sms e copiarlo nella cartella radice dell'unità prima dell'installazione del server del sistema del sito.  
 
-    -  Per un **server del sistema del sito esistente**: scegliere il server in cui si vuole installare il ruolo del sistema del sito del punto di sincronizzazione di Asset Intelligence. Quando si sceglie un server, nel riquadro dei dettagli viene visualizzato un elenco dei ruoli del sistema del sito già installati nel server.  
+    -  Per un **server di sistema del sito esistente**: scegliere il server in cui si vuole installare il ruolo del sistema del sito del punto di sincronizzazione di Asset Intelligence. Quando si sceglie un server, nel riquadro dei dettagli viene visualizzato un elenco dei ruoli del sistema del sito già installati nel server.  
 
          Nel gruppo **Server** della scheda **Home** scegliere **Aggiungi ruoli del sistema del sito** per avviare la procedura guidata.  
 
@@ -152,7 +153,7 @@ Oltre al download di nuove informazioni per il catalogo di Asset Intelligence, i
  È anche possibile importare un resoconto delle licenze generale nel catalogo di Asset Intelligence tramite un file di importazione delle licenze creato manualmente in formato delimitato da virgole (con estensione csv).  
 
 > [!NOTE]  
->  Anche se solo i campi **Name**, **Publisher**, **Version**ed **EffectiveQuantity** devono contenere dati, nella prima riga del file di importazione delle licenze è necessario immettere tutti i campi. Tutti i campi di dati devono essere visualizzati nel formato seguente: mese/giorno/anno, ad esempio, 08/04/2008.  
+>  Anche se solo i campi **Name**, **Publisher**, **Version**ed **EffectiveQuantity** devono contenere dati, nella prima riga del file di importazione delle licenze è necessario immettere tutti i campi. Tutti i campi di data devono essere visualizzati nel formato seguente: Giorno/Mese/Anno, ad esempio 04/08/2008.  
 
 Asset Intelligence abbina i prodotti specificati nel resoconto delle licenze generale in base al nome e alla versione del prodotto, ma non in base al nome dell'editore. Nel resoconto delle licenze generale è necessario usare un nome di prodotto esattamente uguale al nome del prodotto archiviato nel database del sito. Asset Intelligence usa il numero **EffectiveQuantity** specificato nel resoconto delle licenze generale e confronta questo valore con il numero di prodotti installati nell'inventario di Configuration Manager.  
 
@@ -163,9 +164,9 @@ Asset Intelligence abbina i prodotti specificati nel resoconto delle licenze gen
 
 |Voce resoconto licenze generale|Voci corrispondenti database del sito|  
 |-------------------------------------|------------------------------------|  
-|Name: "Software", ProductVersion0: "2"|ProductName0: "Software", ProductVersion0: "2.01.1234"<br /><br /> ProductName0: "Software", ProductVersion0: "2.02.5678"<br /><br /> ProductName0: "Software", ProductVersion0: "2.05.1234"<br /><br /> ProductName0: "Software", ProductVersion0: "2.05.5678"<br /><br /> ProductName0: "Software", ProductVersion0: "2.05.3579.000"<br /><br /> ProductName0: "Software", ProductVersion0: "2.10.1234"|  
-|Name: "Software", Version "2.05"|ProductName0: "Software", ProductVersion0: "2.05.1234"<br /><br /> ProductName0: "Software", ProductVersion0: "2.05.5678"<br /><br /> ProductName0: "Software", ProductVersion0: "2.05.3579.000"|  
-|Name: "Software", Version "2"<br /><br /> Name: "Software", Version "2.05"|Errore durante l'importazione. L'importazione non riesce quando più voci corrispondono alla stessa versione del prodotto.|  
+|Nome: "MySoftware", ProductVersion0:"2"|ProductName0: "Mysoftware", ProductVersion0: "2.01.1234"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.02.5678"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.05.1234"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.05.5678"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.05.3579.000"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.10.1234"|  
+|Nome: "MySoftware", Version "2.05"|ProductName0: "MySoftware", ProductVersion0: "2.05.1234"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.05.5678"<br /><br /> ProductName0: "MySoftware", ProductVersion0: "2.05.3579.000"|  
+|Nome: "Mysoftware", Version "2"<br /><br /> Nome: "Mysoftware", Version "2.05"|Errore durante l'importazione. L'importazione non riesce quando più voci corrispondono alla stessa versione del prodotto.|  
   
 
 ##### <a name="to-create-a-general-license-statement-import-file-by-using-microsoft-excel"></a>Per creare un file di importazione del resoconto delle licenze generale tramite Microsoft Excel  
@@ -199,9 +200,9 @@ Asset Intelligence abbina i prodotti specificati nel resoconto delle licenze gen
 |EffectiveQuantity|Valore intero|Sì|Numero di licenze acquistate|  
 |PONumber|Fino a 255 caratteri|No|Informazioni sull'ordine di acquisto|  
 |ResellerName|Fino a 255 caratteri|No|Informazioni sul rivenditore|  
-|DateOfPurchase|Valore di data nel formato seguente: MM/GG/AAAA|No|Data di acquisto della licenza|  
-|SupportPurchased|Valore bit|No|0 o 1: immettere 0 per sì o 1 per no|  
-|SupportExpirationDate|Valore di data nel formato seguente: MM/GG/AAAA|No|Data di fine del supporto acquistato|  
+|DateOfPurchase|Valore di data nel formato seguente: GG/MM/AAAA|No|Data di acquisto della licenza|  
+|SupportPurchased|Valore bit|No|0 o 1: immettere 0 per Sì o 1 per No|  
+|SupportExpirationDate|Valore di data nel formato seguente: GG/MM/AAAA|No|Data di fine del supporto acquistato|  
 |Comments|Fino a 255 caratteri|No|Commenti facoltativi|  
 
 ###  <a name="BKMK_ConfigureMaintenanceTasks"></a> Configure Asset Intelligence maintenance tasks  
@@ -209,7 +210,7 @@ Asset Intelligence abbina i prodotti specificati nel resoconto delle licenze gen
 
 -   **Verifica titolo applicazione con le informazioni di inventario**: controlla che il titolo software riportato nell'inventario software coincida con il titolo software nel catalogo di Asset Intelligence. Per impostazione predefinita, questa attività è abilitata e pianificata per l'esecuzione sabato tra le 00.00 e le 5.00. Questa attività di manutenzione è disponibile solo nel sito principale nella gerarchia di Configuration Manager.  
 
--   **Riepiloga dati software installato**: fornisce le informazioni visualizzate nell'area di lavoro **Asset e conformità** nel nodo **Software di inventario** sotto il nodo **Asset Intelligence**. All'esecuzione dell'attività, Configuration Manager raccoglie un conteggio di tutti i titoli software di inventario nel sito primario. Per impostazione predefinita, questa attività è abilitata e pianificata per l'esecuzione giornaliera tra le 00.00 e le 5.00. Questa attività di manutenzione è disponibile solo nei siti primari.  
+-   **Riepiloga dati software installato**: offre le informazioni visualizzate nell'area di lavoro **Asset e conformità** nel nodo **Software di inventario** sotto il nodo **Asset Intelligence**. All'esecuzione dell'attività, Configuration Manager raccoglie un conteggio di tutti i titoli software di inventario nel sito primario. Per impostazione predefinita, questa attività è abilitata e pianificata per l'esecuzione giornaliera tra le 00.00 e le 5.00. Questa attività di manutenzione è disponibile solo nei siti primari.  
 
 ##### <a name="to-configure-asset-intelligence-maintenance-tasks"></a>Per configurare le attività di manutenzione di Asset Intelligence  
 

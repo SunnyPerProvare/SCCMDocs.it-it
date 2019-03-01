@@ -10,18 +10,19 @@ ms.assetid: 29dd51b8-6576-4010-81ba-3129ed2c3421
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d630c5d02b6c7729e5f26ce3915f48bf20aef7e2
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 0925a4cc4e4db0a178a4ccf1c7e959a76910f6e8
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893754"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56142171"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1802-of-system-center-configuration-manager"></a>Livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1802
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Configuration Manager versione 1802 raccoglie tre livelli di dati di diagnostica e di utilizzo: **Base**, **Avanzato** e **Completo**. Per impostazione predefinita, per questa funzionalità è impostato il livello avanzato. Le sezioni seguenti forniscono ulteriori dettagli sui dati raccolti in ogni livello.
+Configuration Manager versione 1802 raccoglie tre livelli di dati di diagnostica e di utilizzo: **Di base**, **Avanzato** e **Completo**. Per impostazione predefinita, per questa funzionalità è impostato il livello avanzato. Le sezioni seguenti forniscono ulteriori dettagli sui dati raccolti in ogni livello.
 
 Le modifiche rispetto alle versioni precedenti sono contrassegnate da ***[Nuovo]***, ***[Aggiornato]***, ***[Rimosso]*** o ***[Spostato]***.
 
@@ -43,7 +44,7 @@ Il livello di base include i dati sulla gerarchia ed è necessario per consentir
 
 Per Configuration Manager versione 1802, questo livello include i dati seguenti:
 
-- Statistiche sulle connessioni della console di Connection Manager: versione del sistema operativo, lingua, SKU e architettura; memoria di sistema, conteggio dei processori logici, ID del sito di connessione, versioni di .NET installate e Language Pack della console
+- Statistiche sulle connessioni della console di Configuration Manager: versione del sistema operativo, lingua, SKU e architettura, memoria di sistema, conteggio dei processori logici, ID del sito di connessione, versioni di .NET installate e Language Pack della console
 
 - Conteggi di base per applicazioni e tipi di distribuzione: totale app, totale app con più tipi di distribuzione, totale app con dipendenze, totale app sostituite e numero delle tecnologie di distribuzione in uso
 

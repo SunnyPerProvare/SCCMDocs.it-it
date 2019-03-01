@@ -10,12 +10,13 @@ ms.assetid: b1970688-0cd2-404f-a17f-9e2aa4a78758
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 14251bb062423a31bcf74d2079b2e1b667f61ba9
-ms.sourcegitcommit: 06d490d526070e17d77e86bc6c200899ded911cb
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d096681c044b794b849d05c48fa17171344b8a64
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38967165"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56129868"
 ---
 # <a name="set-up-your-system-center-configuration-manager-lab"></a>Configurare un ambiente lab per System Center Configuration Manager
 
@@ -30,7 +31,7 @@ Le linee guida disponibili in questo argomento consentono di configurare un ambi
 
      È possibile scaricare una versione di valutazione di Windows Server 2012 R2 da [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012).  
 
-     È consigliabile modificare o disabilitare Sicurezza avanzata in Internet Explorer per semplificare l'accesso ad alcuni download a cui viene fatto riferimento durante questi esercizi. Vedere [Internet Explorer: Sicurezza avanzata](https://technet.microsoft.com/library/dd883248\(v=ws.10\).aspx) per altre informazioni.  
+     È consigliabile modificare o disabilitare Sicurezza avanzata in Internet Explorer per semplificare l'accesso ad alcuni download a cui viene fatto riferimento durante questi esercizi. Per altre informazioni, vedere [Internet Explorer: Sicurezza avanzata](https://technet.microsoft.com/library/dd883248\(v=ws.10\).aspx).  
 
 -   **Nell'ambiente lab viene usato SQL Server 2012 SP2** per il database del sito.  
 
@@ -81,9 +82,9 @@ Dopo aver installato tutti questi componenti, sono necessari passaggi aggiuntivi
 
 -   Gruppo di sicurezza: **Evaluation**  
 
-    -   Ambito del gruppo: **Universal**  
+    -   Ambito gruppo: **Universal**  
 
-    -   Tipo di gruppo: **Security**  
+    -   Tipo gruppo: **Security**  
 
 -   Utente di dominio: **ConfigUser**  
 

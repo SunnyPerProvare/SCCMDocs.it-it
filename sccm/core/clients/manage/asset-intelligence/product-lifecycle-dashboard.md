@@ -10,12 +10,13 @@ ms.assetid: 8b5b144a-0e5f-4fcc-87b2-33b9bcdb5655
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bda6e266c6be8897de87a2a30fb0198a4b4c8446
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 716c5218eafaf6297292fdd852589b7327e2ecaa
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456024"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56120028"
 ---
 # <a name="manage-microsoft-lifecycle-policy-with-configuration-manager"></a>Gestire i criteri del ciclo di vita Microsoft con Configuration Manager
 
@@ -70,11 +71,11 @@ Modificare la visualizzazione selezionando una delle opzioni seguenti dall'elenc
 
 Il dashboard include i riquadri seguenti:  
 
-- **Primi 5 prodotti che hanno superato la scadenza:** questo riquadro è una visualizzazione dati consolidata dei prodotti che hanno superato la scadenza trovati nell'ambiente. Il grafico mostra il software installato scaduto rispetto al ciclo di vita del supporto dei sistemi operativi e dei prodotti SQL Server.  
+- **Primi 5 prodotti che hanno superato la scadenza**: questo riquadro è una visualizzazione dati consolidata dei prodotti trovati nell'ambiente che hanno superato la scadenza. Il grafico mostra il software installato scaduto rispetto al ciclo di vita del supporto dei sistemi operativi e dei prodotti SQL Server.  
 
-- **Primi 5 prodotti che si avvicinano alla scadenza nei sei mesi successivi:** questo riquadro è una visualizzazione dati consolidata dei prodotti che si avvicinano alla scadenza nei 18 mesi successivi trovati nell'ambiente. Il grafico mostra il software installato che scadrà entro 18 mesi rispetto al ciclo di vita del supporto dei sistemi operativi e dei prodotti SQL Server.  
+- **Primi 5 prodotti che si avvicinano alla scadenza**: questo riquadro è una visualizzazione dati consolidata dei prodotti trovati nell'ambiente la cui scadenza è prevista nei 18 mesi successivi. Il grafico mostra il software installato che scadrà entro 18 mesi rispetto al ciclo di vita del supporto dei sistemi operativi e dei prodotti SQL Server.  
 
-- **Dati sul ciclo di vita per i prodotti installati:** questo riquadro offre un'idea generale della transizione di un prodotto dallo stato supportato allo stato scaduto. Il grafico presenta in dettaglio il numero di client in cui il prodotto è installato, lo stato di disponibilità del supporto e un collegamento ad altre informazioni sui passaggi successivi da eseguire. Nel grafico sono incluse le informazioni seguenti:     
+- **Dati sul ciclo di vita per i prodotti installati**: questo riquadro offre un'idea generale della transizione di un prodotto dallo stato supportato allo stato scaduto. Il grafico presenta in dettaglio il numero di client in cui il prodotto è installato, lo stato di disponibilità del supporto e un collegamento ad altre informazioni sui passaggi successivi da eseguire. Nel grafico sono incluse le informazioni seguenti:     
     - Tempo rimanente per il supporto tecnico
     - Numero nell'ambiente 
     - Data di fine del supporto Mainstream
@@ -90,14 +91,14 @@ Il dashboard include i riquadri seguenti:
 
 Sono disponibili anche report aggiuntivi. Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio**, espandere **Report** e quindi espandere **Report**. I nuovi report seguenti sono stati aggiunti alla categoria **Asset Intelligence**:  
 
-- **Ciclo di vita 01A - Computer con un prodotto software specifico**: visualizza un elenco dei computer in cui è stato rilevato un prodotto specifico.  
+- **Ciclo di vita 01A - Computer con un prodotto software specifico**: Visualizza un elenco dei computer in cui viene rilevato un prodotto specificato.  
 
-- **Ciclo di vita 02A - Elenco di computer con prodotti scaduti nell'organizzazione**: visualizza i computer in cui sono installati prodotti scaduti. È possibile filtrare questo report in base al nome del prodotto.
+- **Ciclo di vita 02A - Elenco di computer con prodotti scaduti nell'organizzazione**: Visualizza i computer con prodotti scaduti. È possibile filtrare questo report in base al nome del prodotto.
 
-- **Ciclo di vita 03A - Elenco di prodotti scaduti rilevati nell'organizzazione**: mostra i dettagli relativi ai prodotti trovati nell'ambiente con date del ciclo di vita scadute.  
+- **Ciclo di vita 03A - Elenco di prodotti scaduti rilevati nell'organizzazione**: Visualizza i dettagli relativi ai prodotti trovati nell'ambiente con date del ciclo di vita scadute.  
 
-- **Ciclo di vita 04A - Panoramica generale del ciclo di vita del prodotto**: offre un elenco dei cicli di vita dei prodotti. Filtrare l'elenco in base al nome del prodotto e ai giorni mancanti alla scadenza.  
+- **Ciclo di vita 04A - Panoramica generale del ciclo di vita del prodotto**: Visualizza un elenco di cicli di vita dei prodotti. Filtrare l'elenco in base al nome del prodotto e ai giorni mancanti alla scadenza.  
 
-- **Ciclo di vita 05A - Dashboard Ciclo di vita del prodotto**: a partire dalla versione 1810, questo report include informazioni simili a quelle del dashboard nella console. Selezionare una categoria per visualizzare il numero di prodotti presenti nel proprio ambiente e i giorni di supporto rimanenti.  
+- **Ciclo di vita 05A - Dashboard Ciclo di vita del prodotto**: A partire dalla versione 1810, questo report include informazioni simili a quelle del dashboard nella console. Selezionare una categoria per visualizzare il numero di prodotti presenti nel proprio ambiente e i giorni di supporto rimanenti.  
 
 Per altre informazioni, vedere [Elenco dei report](/sccm/core/servers/manage/list-of-reports#asset-intelligence).<!--SCCMDocs issue 997-->  

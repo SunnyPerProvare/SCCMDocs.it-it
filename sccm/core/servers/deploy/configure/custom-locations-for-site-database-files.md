@@ -10,12 +10,13 @@ ms.assetid: 500a9aa6-68aa-44eb-bf49-350c1314a697
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 597ce060dc1fb37f1cc827da3e1c059958a91163
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6f094e2e6eab0067f51cb7fcd193a4acc914fc5c
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32332730"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56134953"
 ---
 # <a name="custom-locations-for-system-center-configuration-manager-site-database-files"></a>Percorsi personalizzati per i file di database del sito di System Center Configuration Manager
 
@@ -28,9 +29,9 @@ ms.locfileid: "32332730"
 
  **Durante l'installazione** di un nuovo sito primario o di un sito di amministrazione centrale, è possibile:  
 
--   **Specificare percorsi file non predefiniti per il database del sito**: il programma di installazione di Configuration Manager crea quindi il database del sito usando questi percorsi.  
+-   **Specificare percorsi dei file non predefiniti per il database del sito**: l'installazione di Configuration Manager crea quindi il database del sito usando tali percorsi.  
 
--   **Specificare l'uso di un database di SQL Server creato in precedenza con percorsi file personalizzati**: il programma di installazione di Configuration Manager usa tale database con i relativi percorsi configurati in precedenza.  
+-   **Specificare l'uso di un database SQL Server creato in precedenza che usa percorsi dei file personalizzati**:  l'installazione di Configuration Manager usa quindi tale database creato in precedenza e i relativi percorsi di file preconfigurati.  
 
 **Al termine dell'installazione**, è possibile modificare il percorso dei file di database del sito. A questo scopo, è necessario arrestare il sito e modificare il percorso file in SQL Server:  
 

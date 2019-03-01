@@ -10,12 +10,13 @@ ms.assetid: 99222dc8-0e1e-4513-8302-7a1acf671e9b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 071c8cc45d81ceeee0ac97934a747c2fcc79821b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5b260a9e3deeb8668d736c3ed5ec2c2519e3ed50
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335049"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56138977"
 ---
 # <a name="determine-whether-to-migrate-data-to-system-center-configuration-manager"></a>Stabilire se eseguire la migrazione dei dati a System Center Configuration Manager
 
@@ -86,7 +87,7 @@ Queste modifiche non interessano i dati contenuti nel database del sito di origi
 
     -   Sequenze attività  
 
--   Risultati ricerca: criteri di ricerca salvati  
+-   Risultati della ricerca: criteri di ricerca salvati  
 
 -   Aggiornamenti software:  
 
@@ -116,7 +117,7 @@ Queste modifiche non interessano i dati contenuti nel database del sito di origi
 
 -   Limiti  
 
--   Raccolte: le raccolte vengono migrate da una versione supportata di Configuration Manager 2007 usando un processo di migrazione raccolte.  
+-   Raccolte: viene eseguita la migrazione delle raccolte da una versione supportata di Configuration Manager 2007 usando un processo di migrazione raccolte.  
 
 -   Impostazioni di conformità (definite gestione configurazione desiderata in Configuration Manager 2007):  
 
@@ -138,7 +139,7 @@ Queste modifiche non interessano i dati contenuti nel database del sito di origi
 
     -   Sequenze attività  
 
--   Risultati ricerca: cartelle di ricerca  
+-   Risultati della ricerca: cartelle di ricerca  
 
 -   Aggiornamenti software:  
 
@@ -181,4 +182,4 @@ Queste modifiche non interessano i dati contenuti nel database del sito di origi
 
     -   ruoli di sicurezza  
 
-    -   Ambiti di protezione  
+    -   ambiti di protezione  

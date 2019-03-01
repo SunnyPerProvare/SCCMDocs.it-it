@@ -10,12 +10,13 @@ ms.assetid: 1012ec24-27d9-4193-8236-918d283c7448
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 66a9949723e6555ddb72ebfdb845a523fb29bfe5
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 740dda5c41c28e1648eb24e75fe24a2e22784f3b
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385992"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56129104"
 ---
 # <a name="policy-spy"></a>Policy Spy
 
@@ -49,13 +50,13 @@ Nel menu **Strumenti** sono disponibili le azioni seguenti:
 
 - **Open Remote** (Apri remoto): si connette ai criteri client di Configuration Manager in un computer remoto. Usare la finestra di dialogo Connetti per recuperare il nome del computer remoto e le credenziali utente facoltative. Se la connessione non riesce, vengono visualizzate informazioni sull'errore nel riquadro Client Info (Informazioni client). Se la connessione ha di nuovo esito negativo, provare a connettersi scegliendo **Aggiorna** dal menu **Modifica** o premendo F5.  
 
-- **Apri file**: apre un file di esportazione dei criteri (XML) creato dall'opzione **Esporta criteri**. Lo strumento visualizza i criteri esportati esattamente come un criterio attivo. Disabilita alcune funzionalità che si applicano solo quando ci si connette a un client effettivo.  
+- **Open File** (Apri file): apre un file di esportazione dei criteri (XML) creato dall'opzione **Export Policy** (Esporta criteri). Lo strumento visualizza i criteri esportati esattamente come un criterio attivo. Disabilita alcune funzionalità che si applicano solo quando ci si connette a un client effettivo.  
 
 - **Request Machine Assignments** (Richiesta assegnazioni computer): attiva una richiesta di assegnazioni dei criteri del computer nel computer di destinazione. Questa funzionalità è disabilitata quando si visualizzano criteri esportati.  
 
 - **Evaluate Machine Policy** (Valuta criteri computer): attiva una valutazione dei criteri del computer nel computer di destinazione. Questa funzionalità è disabilitata quando si visualizza un criterio esportato.  
 
-- **Request User Assignments** (Richiedi assegnazioni di utenti): attiva una richiesta di assegnazioni dei criteri utente per l'utente attualmente connesso. Questa funzionalità è disponibile solo quando si visualizza un criterio nel computer locale.  
+- **Request User Assignments** (Richiedi assegnazioni utente): attiva una richiesta di assegnazioni dei criteri utente per l'utente attualmente connesso. Questa funzionalità è disponibile solo quando si visualizza un criterio nel computer locale.  
 
 - **Evaluate User Policy** (Valuta criteri utente): attiva una valutazione dei criteri utente per l'utente attualmente connesso. Questa funzionalità è disponibile solo quando si visualizza un criterio nel computer locale.  
 
@@ -70,7 +71,7 @@ Nel menu **Modifica** sono disponibili le azioni seguenti:
 
 - **Elimina**: elimina l'istanza selezionata nel riquadro dei risultati. Questa azione è supportata solo per le istanze dei criteri. Se si prova eliminare elementi diversi dalle istanze dei criteri, lo strumento visualizza un messaggio di errore. Questa funzionalità è disabilitata quando si visualizza un criterio esportato.  
 
-- **Aggiorna**: aggiorna tutti i risultati per visualizzare le informazioni più recenti. Tutti i nodi dell'albero espansi prima dell'aggiornamento vengono automaticamente espansi anche dopo. Se Policy Spy non è riuscito a connettersi ai criteri del computer di destinazione, prova a connettersi di nuovo. Questa funzionalità è disabilitata quando si visualizza un criterio esportato.  
+- **Aggiornare**: aggiorna tutti i risultati per visualizzare le informazioni più recenti. Tutti i nodi dell'albero espansi prima dell'aggiornamento vengono automaticamente espansi anche dopo. Se Policy Spy non è riuscito a connettersi ai criteri del computer di destinazione, prova a connettersi di nuovo. Questa funzionalità è disabilitata quando si visualizza un criterio esportato.  
 
 - **Cancella eventi**: cancella tutti gli elementi dalla scheda Eventi.  
 
@@ -94,9 +95,9 @@ Questa scheda visualizza i criteri correnti del client. I criteri correnti deter
 
 Questa scheda visualizza le assegnazioni dei criteri che il client ha recuperato dal sito assegnato. La scheda visualizza i risultati in formato albero con un nodo radice per lo spazio dei nomi del computer e lo spazio dei nomi specifico di ogni utente. Espandendo il nodo di uno spazio dei nomi, vengono visualizzati i nodi seguenti:  
 
-- **Configurazione**: visualizza un elenco di classi di configurazione derivate da CCM_Policy_Config, che include oggetto criteri, assegnazioni e altre.  
+- **Configuration** (Configurazione): visualizza un elenco di classi di configurazione derivate da CCM_Policy_Config, che include oggetto criteri, assegnazioni e altre.  
 
-- **Impostazioni**: visualizza tutte le impostazioni attive generate dai criteri. Le impostazioni vengono visualizzate sotto il nodo Configurazione. 
+- **Settings** (Impostazioni): visualizza tutte le impostazioni attive generate dai criteri. Le impostazioni vengono visualizzate sotto il nodo Configurazione. 
 
 > [!Note]   
 > Possono esistere più istanze con lo stesso nome perché il client non ha unito queste impostazioni in un set risultante finale. Policy Spy visualizza le istanze sotto questo nodo usando le proprietà RealKey invece delle vere chiavi dei criteri. Correlare queste istanze al set risultante visualizzato nella scheda Actual (Effettivi).  

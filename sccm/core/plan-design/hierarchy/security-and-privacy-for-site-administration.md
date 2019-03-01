@@ -10,12 +10,13 @@ ms.assetid: 1d58176e-abc0-4087-8583-ce70deb4dcf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 515385c6c6855e63dc32b522edff9cd2047331bd
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a41b2c0931fc3deb72ff92d8b12b433ef5651aa1
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32343035"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56129596"
 ---
 # <a name="security-and-privacy-for-site-administration-in-system-center-configuration-manager"></a>Sicurezza e privacy per l'amministrazione dei siti in System Center Configuration Manager
 
@@ -98,7 +99,7 @@ L'isolamento di ogni ruolo del sistema del sito in un server diverso riduce la p
 
 La Configurazione guidata impostazioni di sicurezza (SCW) consente di creare un criterio di protezione applicabile a qualsiasi server della rete. Dopo aver installato il modello di System Center Configuration Manager, Configurazione guidata impostazioni di sicurezza riconosce applicazioni, servizi, porte e ruoli del sistema del sito di Configuration Manager. Consente quindi la comunicazione richiesta per Configuration Manager e blocca le comunicazioni non richieste.  
 
-Configurazione guidata impostazioni di sicurezza è inclusa nel toolkit per System Center 2012 Configuration Manager che è possibile scaricare dall'Area download Microsoft: [System Center 2012 - Configuration Manager Component Add-ons and Extensions](http://go.microsoft.com/fwlink/p/?LinkId=251931) (System Center 2012 - Componenti aggiuntivi ed estensioni di Configuration Manager).  
+La configurazione guidata impostazioni di sicurezza è inclusa nel toolkit per System Center 2012 Configuration Manager che è possibile scaricare dall'area download Microsoft: [System Center 2012 - Configuration Manager Component Add-ons and Extensions](http://go.microsoft.com/fwlink/p/?LinkId=251931) (Componenti aggiuntivi ed estensioni di Configuration Manager).  
 
 **Configurare gli indirizzi IP statici per i sistemi del sito.**  
 

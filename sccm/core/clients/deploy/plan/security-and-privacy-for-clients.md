@@ -10,12 +10,13 @@ ms.assetid: c1d71899-308f-49d5-adfa-3a3ec0163ed8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3dfb749695ffb7a8ecdeab5e4fbed764023eb6e2
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 9671ccad42fc9135193cf41e058b472b52a412e1
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385593"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56142307"
 ---
 # <a name="security-and-privacy-for-configuration-manager-clients"></a>Sicurezza e privacy per i client di Configuration Manager
 
@@ -201,27 +202,27 @@ Per i dispositivi mobili registrati con Configuration Manager e basati su Intern
 
 #### <a name="configure-the-password-settings-to-help-protect-mobile-devices-from-unauthorized-access"></a>configurare le impostazioni della password per proteggere i dispositivi mobili da accessi non autorizzati  
 
-*Per i dispositivi mobili che vengono registrati da Configuration Manager*: usare un elemento di configurazione del dispositivo mobile per configurare una password della complessità di un PIN. Specificare almeno la lunghezza minima predefinita della password.  
+*Per i dispositivi mobili registrati da Configuration Manager*: usare un elemento di configurazione del dispositivo mobile per configurare la complessità delle password come PIN. Specificare almeno la lunghezza minima predefinita della password.  
 
-*Per i dispositivi mobili su cui non è installato il client di Configuration Manager ma che sono gestiti dal connettore Exchange Server*: configurare le **Impostazioni password** per il connettore Exchange Server, scegliendo di configurare una password della complessità di un PIN. Specificare almeno la lunghezza minima predefinita della password.  
+*Per i dispositivi mobili su cui non è installato il client di Configuration Manager ma che sono gestiti dal connettore Exchange Server*: configurare le **Impostazioni password** per il connettore Exchange Server in modo che la complessità della password sia il PIN. Specificare almeno la lunghezza minima predefinita della password.  
 
 
 #### <a name="only-allow-applications-to-run-that-are-signed-by-companies-that-you-trust"></a>Consentire solo l'esecuzione di applicazioni firmate da aziende considerate attendibili  
 
 Prevenire eventuali manomissioni delle informazioni di inventario e delle informazioni sullo stato abilitando solo l'esecuzione delle applicazioni firmate da aziende ritenute attendibili. Impedire ai dispositivi di installare file non firmati.  
 
-*Per dispositivi mobili registrati da Configuration Manager*: usare un elemento di configurazione del dispositivo mobile per configurare l'impostazione di protezione **Applicazioni non firmate** su **Non consentito**. Configurare l'impostazione **Installazione file non firmati** come un'origine attendibile.  
+*Per i dispositivi mobili registrati da Configuration Manager*: usare un elemento di configurazione del dispositivo mobile per configurare l'impostazione di protezione **Applicazioni non firmate** su **Non consentito**. Configurare l'impostazione **Installazione file non firmati** come un'origine attendibile.  
 
-*Per dispositivi mobili su cui non è installato il client di Configuration Manager ma che sono gestiti dal connettore Exchange Server*: configurare **Impostazioni applicazione** per il connettore Exchange Server in modo che **Installazione file non firmati** e **Applicazioni non firmate** siano impostate su **Non consentito**.  
+*Per i dispositivi mobili su cui non è installato il client di Configuration Manager ma che sono gestiti dal connettore Exchange Server*: configurare **Impostazioni applicazione** per il connettore Exchange Server in modo tale che **Installazione file non firmati** e **Applicazioni non firmate** siano impostate su **Non consentito**.  
 
 
 #### <a name="lock-mobile-devices-when-not-in-use"></a>Bloccare i dispositivi mobili quando non sono in uso  
 
 Evitare attacchi tramite elevazione dei privilegi bloccando il dispositivo mobile quando non è in uso.
 
-*Per dispositivi mobili registrati da Configuration Manager*: usare un elemento di configurazione del dispositivo mobile per configurare l'impostazione della password **Tempo di inattività in minuti prima del blocco del dispositivo mobile**.  
+*Per i dispositivi mobili registrati da Configuration Manager*: usare un elemento di configurazione del dispositivo mobile per configurare l'impostazione della password **Tempo di inattività in minuti prima del blocco del dispositivo mobile**.  
 
-*Per i dispositivi mobili su cui non è installato il client di Configuration Manager ma che sono gestiti dal connettore Exchange Server*: configurare le **Impostazioni password** per il connettore Exchange Server per impostare il **Tempo di inattività in minuti prima del blocco del dispositivo mobile**.  
+*Per i dispositivi mobili su cui non è installato il client di Configuration Manager ma che sono gestiti dal connettore Exchange Server*: Configurare le **Impostazioni password** per il connettore Exchange Server per impostare **Tempo di inattività in minuti prima del blocco del dispositivo mobile**.  
 
 
 #### <a name="restrict-the-users-who-can-enroll-their-mobile-devices"></a>Limitare gli utenti che possono registrare i dispositivi mobili  
@@ -293,9 +294,9 @@ Quando si registrano i computer Mac, viene installato automaticamente un certifi
 
 5.  Nella finestra di dialogo per il certificato CA radice espandere la sezione **Attendibilità** ed eseguire le modifiche seguenti:  
 
-    1.  **Quando si usa questo certificato**: modificare l'impostazione predefinita **Considera sempre attendibile** in **Usa valori predefiniti di sistema**.  
+    1.  **When using this certificate** (Quando si usa questo certificato): modificare l'impostazione predefinita **Always Trust** (Considera sempre attendibile) in **Use System Defaults** (Usa valori predefiniti di sistema).  
 
-    2.  **Secure Sockets Layer (SSL)**: modificare **Nessun valore specificato** in **Considera sempre attendibile**.  
+    2.  **Secure Sockets Layer (SSL)**: modificare **no value specified** (Nessun valore specificato) in **Always Trust** (Considera sempre attendibile).  
 
 6.  Chiudere la finestra di dialogo. Quando richiesto, immettere la password dell'amministratore e quindi fare clic su **Aggiorna impostazioni**.  
 

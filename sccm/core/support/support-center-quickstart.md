@@ -10,12 +10,13 @@ ms.assetid: 5cb41e2b-4c79-4da9-a432-ff869c0870f8
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5a9865a591f6947447ebb088b5e5e25db1e9fa54
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 026c6e5646983f815572974d5aaa67746178c03b
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52458119"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156458"
 ---
 # <a name="support-center-quickstart-guide"></a>Guida introduttiva di Support Center
 
@@ -47,7 +48,7 @@ Creare un file di *bundle di risoluzione dei problemi* (con estensione zip) per 
 
 
 
-## <a name="step-2-view-the-data-bundle-using-support-center-viewer"></a>Passaggio 2: Visualizzare il bundle di dati usando Support Center Viewer
+## <a name="step-2-view-the-data-bundle-using-support-center-viewer"></a>Passaggio 2: Visualizzare l'aggregazione di dati usando Support Center Viewer
 
 1.  Avviare **Support Center Viewer**. È possibile avviarlo in qualsiasi computer in cui è installato Support Center.  
 
@@ -75,11 +76,11 @@ Creare un file di *bundle di risoluzione dei problemi* (con estensione zip) per 
 
 Oltre a queste funzionalità di base, Support Center può raccogliere un'ampia gamma di altre informazioni sullo stato del client. Aprire **Support Center** e selezionare **Collect All Data** (Raccogli tutti i dati). Questo processo dura in genere alcuni minuti, anche nei computer più moderni. Support Center raccoglie i dati aggiuntivi seguenti:
 
-  - **Policy** (Criteri): informazioni sulle impostazioni dei criteri di Configuration Manager, comprese le configurazioni dei criteri richieste e l'effettiva configurazione dei criteri.  
+  - **Policy** (Criteri): informazioni sulle impostazioni dei criteri di Configuration Manager, comprese le configurazioni dei criteri richieste e la configurazione dei criteri effettiva  
 
-  - **Certificates** (Certificati): informazioni sulle chiavi pubbliche per i certificati client. Support Center non raccoglie chiavi private per i certificati.  
+  - **Certificati**: informazioni sulle chiavi pubbliche per i certificati client. Support Center non raccoglie chiavi private per i certificati.  
 
-  - **Client registry** (Registro di sistema client): informazioni di configurazione del client dal Registro di sistema. Support Center raccoglie solo le informazioni del Registro di sistema relative a Configuration Manager.  
+  - **Client registry** (Registro di sistema client): raccoglie informazioni di configurazione del client dal Registro di sistema. Support Center raccoglie solo le informazioni del Registro di sistema relative a Configuration Manager.  
 
   - **Client WMI** (WMI client): informazioni di configurazione del client da WMI. Support Center non raccoglie criteri client.  
 

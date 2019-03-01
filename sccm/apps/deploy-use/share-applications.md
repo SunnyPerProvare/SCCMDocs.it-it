@@ -10,16 +10,17 @@ ms.assetid: 2629c376-ec43-4f0e-a78b-4223cc9302bf
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 309a369358789e1948ab7b17ddb0e3619ae1b129
-ms.sourcegitcommit: 2504617dc4db90e205327d06cab32f050e88dbf2
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e7a700482dad9f1ab2e41456596423fa23c15434
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51505160"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56131048"
 ---
 # <a name="share-an-application-from-software-center"></a>Condividere un'applicazione da Software Center
 
-*Si applica a: System Center Configuration Manager (Current Branch)*<!-- 1706 -->
+*Si applica a: System Center Configuration Manager (Current Branch)* <!-- 1706 -->
 
 È possibile copiare un collegamento ipertestuale in un'applicazione in Software Center tramite il pulsante ![Condividi](media/share15.png) **Condividi** nella vista Dettagli applicazione. È possibile condividere collegamenti ipertestuali solo per le applicazioni. Se un'applicazione non è più disponibile, il collegamento ipertestuale apre una finestra con un messaggio che informa dell'indisponibilità dell'applicazione.
 

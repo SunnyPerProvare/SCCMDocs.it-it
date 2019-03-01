@@ -10,12 +10,13 @@ ms.assetid: 552e7e3d-e584-4a7c-9155-0f796a14b678
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: d1aaf6db583d9749dda3be14cfd06acbff19b093
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 4d58f8566f80efa2700f5947f4144623b10eb6ad
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456091"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56140593"
 ---
 # <a name="configure-security-in-configuration-manager"></a>Configurare la sicurezza in Configuration Manager
 
@@ -49,7 +50,7 @@ Se si desidera utilizzare i certificati di infrastruttura a chiave pubblica (PKI
 
     - **HTTPS o HTTP**: non viene richiesto l'uso dei certificati PKI da parte dei client.  
 
-    - **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**: per altre informazioni su questa impostazione, vedere [HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http).  
+    - **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**: Per altre informazioni su questa impostazione, vedere [HTTP avanzato](/sccm/core/plan-design/hierarchy/enhanced-http).  
 
 4.  Selezionare le impostazioni per i computer client.  
 
@@ -59,7 +60,7 @@ Se si desidera utilizzare i certificati di infrastruttura a chiave pubblica (PKI
 
     Per altre informazioni sul metodo di selezione del certificato client, vedere l'argomento [Pianificazione della selezione del certificato client PKI](/sccm/core/plan-design/security/plan-for-security#BKMK_PlanningForClientCertificateSelection).  
 
-    - **Controllo client dell'elenco di revoche di certificati (CRL) per i sistemi del sito**: abilitare questa impostazione per i client per il controllo CRL dell'organizzazione per i certificati revocati.  
+    - **Controllo client dell'elenco di revoche di certificati (CRL) per i sistemi del sito**: abilitare questa impostazione perché i client controllino l'elenco di revoche di certificati dell'organizzazione.  
 
     Per altre informazioni sul controllo CRL da parte dei client, vedere [Pianificazione di revoche di certificati PKI](/sccm/core/plan-design/security/plan-for-security#BKMK_PlanningForCRLs).  
 
@@ -95,7 +96,7 @@ Configurare le impostazioni di firma e crittografia più sicure per i sistemi de
     >   
     >  Se si sceglie questa opzione e i client con certificati autofirmati non sono supportano SHA-256, questi client vengono rifiutati da Configuration Manager. Il componente SMS_MP_CONTROL_MANAGER registra l'ID messaggio 5443.  
 
-    - **Utilizza crittografia**: i client eseguono la crittografia dei dati di inventario e dei messaggi di stato dei client prima dell'invio al punto di gestione. I client usano l'algoritmo 3DES.  
+    - **Utilizza crittografia**: i client eseguono la crittografia dei dati di inventario e dei messaggi di stato prima dell'invio al punto di gestione. I client usano l'algoritmo 3DES.  
 
 Ripetere questa procedura per tutti i siti primari nella gerarchia.  
 

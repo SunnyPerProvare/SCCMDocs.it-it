@@ -10,12 +10,13 @@ ms.assetid: 49505eb1-d44d-4121-8712-e0f3d8b15bf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e232875aab086dea04261abc4d83df8d5d03e6c8
-ms.sourcegitcommit: aca62bd3d267b1dbea46d4db6f32d797c5f6263c
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6524fb7715c9bc3040996a16b4204464e0505123
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43347971"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56139188"
 ---
 # <a name="configure-discovery-methods-for-configuration-manager"></a>Configurare i metodi di individuazione per Configuration Manager
 
@@ -175,7 +176,7 @@ Usare quindi le informazioni nelle sezioni seguenti per configurare metodi di in
 
         - **Individua oggetti all'interno dei gruppi di Active Directory**: il sito analizza anche l'appartenenza dei gruppi in questo percorso.  
 
-        - **Esegui ricerca ricorsiva nei contenitori figlio di Active Directory**: se si abilita questa opzione, il sito esegue la ricerca in unità organizzative o contenitori aggiuntivi nel percorso specificato. Se si disabilita questa opzione, il sito esegue la ricerca delle risorse solo nel percorso specifico.  
+        - **Esegui ricerca ricorsiva nei contenitori figlio di Active Directory**: se si abilita questa opzione, il sito esegue la ricerca in altre unità organizzative o contenitori nel percorso specificato. Se si disabilita questa opzione, il sito esegue la ricerca delle risorse solo nel percorso specifico.  
 
             A partire dalla versione 1806, selezionare i sottocontenitori da escludere da questa ricerca ricorsiva. Questa opzione consente di ridurre il numero di oggetti individuati. Selezionare **Aggiungi** per scegliere i contenitori nel percorso specificato. Nella finestra di dialogo Seleziona nuovo contenitore selezionare un contenitore figlio da escludere. Selezionare **OK** per chiudere la finestra di dialogo Seleziona nuovo contenitore.<!--1358143-->
 
@@ -307,7 +308,7 @@ Configuration Manager supporta i metodi seguenti per la ricerca nella rete:
 - [Limitare le ricerche tramite nomi community SNMP](#BKMK_LimitBySNMPname)
 - [Eseguire ricerche in un server DHCP specifico](#BKMK_SearchByDHCP)
 
-####  <a name="BKMK_LimitBySubnet"></a> Limitare le ricerche tramite subnet  
+####  <a name="BKMK_LimitBySubnet"></a> Limitare le ricerche mediante subnet  
 
  È possibile configurare l'individuazione di rete per effettuare la ricerca in subnet specifiche durante un ciclo di individuazione. Per impostazione predefinita, l'individuazione di rete effettua la ricerca nella subnet del server che esegue l'individuazione. Eventuali subnet aggiuntive configurate e abilitate si applicano esclusivamente alle opzioni di ricerca SNMP e DHCP. Per la ricerca nei domini, l'individuazione della rete non è limitata dalle configurazioni per subnet.  
 
@@ -337,14 +338,14 @@ Configuration Manager supporta i metodi seguenti per la ricerca nella rete:
 -   I server DHCP possono comunque rispondere con un elenco di risorse presenti nel dominio.  
 
 
-#### <a name="BKMK_LimitBySNMPname"></a> Limitare le ricerche tramite nomi community SNMP  
+#### <a name="BKMK_LimitBySNMPname"></a> Limitare le ricerche usando i nomi comunità SNMP  
 
- L'individuazione di rete viene configurata per effettuare la ricerca in una community SNMP specifica o in un insieme di community durante l'esecuzione dell'individuazione. Per impostazione predefinita, il metodo configura il nome community **pubblico**.  
+ L'individuazione di rete viene configurata per effettuare la ricerca in una comunità SNMP specifica o in un insieme di comunità durante l'esecuzione dell'individuazione. Per impostazione predefinita, il metodo configura il nome community **pubblico**.  
 
- L'individuazione di rete utilizza i nomi community per accedere ai router che sono dispositivi SNMP. Un router può fornire l'individuazione di rete con informazioni su altri router e subnet che sono collegati al primo router.  
+ L'individuazione di rete utilizza i nomi comunità per accedere ai router che sono dispositivi SNMP. Un router può fornire l'individuazione di rete con informazioni su altri router e subnet che sono collegati al primo router.  
 
 > [!NOTE]  
->  I nomi community SNMP sono simili alle password. L'individuazione della rete può ottenere informazioni solo da un dispositivo SNMP per il quale è stato specificato un nome community. Ciascun dispositivo SNMP può avere il proprio nome community, ma spesso lo stesso nome community viene condiviso tra diversi dispositivi. Inoltre, la maggior parte dei dispositivi SNMP hanno un nome community predefinito, cioè **pubblico**. Alcune organizzazioni, però, eliminano il nome community **pubblico** dai propri dispositivi come misura di sicurezza.  
+>  I nomi comunità SNMP sono simili alle password. L'individuazione della rete può ottenere informazioni solo da un dispositivo SNMP per il quale è stato specificato un nome community. Ciascun dispositivo SNMP può avere il proprio nome comunità, ma spesso lo stesso nome comunità viene condiviso tra diversi dispositivi. Inoltre, la maggior parte dei dispositivi SNMP hanno un nome comunità predefinito, cioè **Pubblico**. Alcune organizzazioni, però, eliminano il nome comunità **pubblico** dai propri dispositivi come misura di sicurezza.  
 
  Se si include più di una community SNMP nella scheda **SNMP** della finestra di dialogo **Individuazione di rete - Proprietà**, la ricerca viene eseguita in base all'ordine di visualizzazione. Assicurarsi che i nomi usati più di frequente si trovino all'inizio dell'elenco. Questa configurazione aiuta a ridurre al minimo il traffico di rete generato dal sito quando cerca di contattare un dispositivo usando nomi diversi.
 
@@ -356,7 +357,7 @@ Configuration Manager supporta i metodi seguenti per la ricerca nella rete:
 
  È possibile configurare l'individuazione di rete per l'utilizzo di un server DHCP specifico o di più server per individuare i client DHCP durante l'esecuzione dell'individuazione.  
 
- L'individuazione di rete effettua la ricerca in ogni server DHCP specificato nella scheda **DHCP** della finestra di dialogo **Proprietà dell'individuazione della rete**. Se il server che sta eseguendo l'individuazione esegue il lease dell'indirizzo IP da un server DHCP, è possibile configurare l'individuazione per eseguire la ricerca in tale server DHCP. Abilitare questo comportamento con l'opzione **Includi il server DHCP per il cui utilizzo è configurato il server di sito**.  
+ L'individuazione di rete effettua la ricerca in ogni server DHCP specificato nella scheda **DHCP** della finestra di dialogo **Proprietà dell'individuazione della rete** . Se il server che sta eseguendo l'individuazione esegue il lease dell'indirizzo IP da un server DHCP, è possibile configurare l'individuazione per eseguire la ricerca in tale server DHCP. Abilitare questo comportamento con l'opzione **Includi il server DHCP per il cui utilizzo è configurato il server di sito**.  
 
 > [!NOTE]  
 >  Per configurare correttamente un server DHCP nell'individuazione di rete, l'ambiente deve supportare IPv4. Non è possibile configurare l'individuazione della rete per usare un server DHCP in un ambiente IPv6 nativo.  
@@ -436,7 +437,7 @@ Configuration Manager supporta i metodi seguenti per la ricerca nella rete:
 
     - Per rimuovere un nome community SNMP, selezionare il nome e quindi l'icona **Elimina** ![Icona Elimina](media/Disc_delete_Icon.gif).  
 
-    - Per modificare l'ordine di ricerca dei nomi community SNMP, selezionare un nome nell'elenco. Selezionare quindi l'icona **Sposta elemento in alto** ![Icona Sposta elemento in alto](media/Disc_moveUp_Icon.gif) o **Sposta elemento in basso** ![Icona Sposta elemento in basso](media/Disc_moveDown_Icon.gif). Quando viene eseguita l'individuazione, viene effettuata la ricerca nei nomi community seguendo un ordine dall'alto in basso. 
+    - Per modificare l'ordine di ricerca dei nomi community SNMP, selezionare un nome nell'elenco. Selezionare quindi l'icona **Sposta elemento in alto** ![Icona Sposta elemento in alto](media/Disc_moveUp_Icon.gif) o **Sposta elemento in basso** ![Icona Sposta elemento in basso](media/Disc_moveDown_Icon.gif). Quando viene eseguita l'individuazione, viene effettuata la ricerca nei nomi comunità seguendo un ordine dall'alto in basso. 
 
     - Per configurare il numero massimo di hop router utilizzabili per le ricerche SNMP, selezionare il numero di hop nell'elenco a discesa **Hop massimi**.  
 
@@ -496,7 +497,7 @@ L'individuazione di rete non crea messaggi per avvisare quando l'operazione è t
 
     -   Componente: **SMS_NETWORK_DISCOVERY**  
 
-    -   Descrizione: **Il componente è stato interrotto**  
+    -   Descrizione: **Il componente è stato arrestato**  
 
     Se questo messaggio di stato non è presente, l'individuazione della rete non è stata completata.  
 

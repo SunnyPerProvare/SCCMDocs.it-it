@@ -10,12 +10,13 @@ ms.assetid: b7332ed3-8003-454b-bb12-1fdf8721425c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 01112dac89ba0fe9e18dabe186353506d9476213
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: cb208bdb360f726a59585d567c239074717acf66
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456771"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56120011"
 ---
 # <a name="list-of-reports-in-configuration-manager"></a>Elenco dei report di Configuration Manager
 
@@ -207,13 +208,13 @@ I sette report seguenti sono elencati nella categoria **Data warehouse**.
 
 |Nome report|Descrizione|  
 |-----------------|-----------------|  
-|**Distribuzione applicazioni**|Cronologico: visualizza i dettagli per la distribuzione di applicazioni per un'applicazione e un computer specifici.|
-|**Conformità di Endpoint Protection e degli aggiornamenti software**|Cronologico: visualizza i computer in cui mancano aggiornamenti software.|
-|**Inventario hardware generale**|Cronologico: visualizza tutto l'inventario dell'hardware per un computer specifico.|
-|**Inventario software generale**|Cronologico: visualizza tutto l'inventario del software per un computer specifico.|
-|**Panoramica dell'integrità dell'infrastruttura**|Cronologico: visualizza una panoramica dell'integrità dell'infrastruttura di Configuration Manager.|
-|**Elenco del malware rilevato**|Cronologico: visualizza il malware che è stato rilevato nell'organizzazione.|
-|**Riepilogo di distribuzione del software**|Cronologico: riepilogo della distribuzione del software per un annuncio e un computer specifici.|
+|**Distribuzione applicazioni**|Cronologico: Visualizza i dettagli per la distribuzione di applicazioni per un'applicazione e un computer specifici.|
+|**Conformità di Endpoint Protection e degli aggiornamenti software**|Cronologico: Visualizza i computer in cui mancano aggiornamenti software.|
+|**Inventario hardware generale**|Cronologico: Visualizza tutto l'inventario dell'hardware per un computer specifico.|
+|**Inventario software generale**|Cronologico: Visualizza tutto l'inventario del software per un computer specifico.|
+|**Panoramica dell'integrità dell'infrastruttura**|Cronologico: Visualizza una panoramica dell'integrità dell'infrastruttura di Configuration Manager.|
+|**Elenco del malware rilevato**|Cronologico: Visualizza il malware che è stato rilevato nell'organizzazione.|
+|**Riepilogo di distribuzione del software**|Cronologico: Riepilogo della distribuzione del software per un annuncio e un computer specifici.|
 
 
 ## <a name="device-management"></a>Gestione dei dispositivi  

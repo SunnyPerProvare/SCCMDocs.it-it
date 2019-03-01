@@ -10,12 +10,13 @@ ms.assetid: e102fd1a-76df-4d8e-b1b0-10ee18318f67
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 03b34c09a5fef63316bb1d9d1a94dbbfc3ccf69f
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 93a502e9c77e05eedba1c2989cbae69e4080832f
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456261"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56133732"
 ---
 # <a name="how-to-manage-collections-in-configuration-manager"></a>Come gestire le raccolte in Configuration Manager
 
@@ -40,7 +41,7 @@ Usare le informazioni generali di questo articolo per eseguire le attività di g
 #### <a name="add-selected-items"></a>Aggiungi elementi selezionati
  Fornisce le opzioni seguenti: 
 
- - **Aggiungi elementi selezionati alla raccolta dispositivi esistente**: apre la finestra di dialogo **Seleziona raccolta**. Selezionare la raccolta a cui aggiungere i membri della raccolta selezionata. La raccolta selezionata viene inclusa in questa raccolta tramite la regola di appartenenza **Includi raccolte** .  
+ - **Aggiungi elementi selezionati alla raccolta dispositivi esistente**: Apre la finestra di dialogo **Seleziona raccolta** . Selezionare la raccolta a cui aggiungere i membri della raccolta selezionata. La raccolta selezionata viene inclusa in questa raccolta tramite la regola di appartenenza **Includi raccolte** .  
 
  - **Aggiungi elementi selezionati alla nuova raccolta dispositivi**: apre la **Creazione guidata raccolta dispositivi** in cui è possibile creare una nuova raccolta. La raccolta selezionata viene inclusa in questa raccolta tramite la regola di appartenenza **Includi raccolte** .  
 

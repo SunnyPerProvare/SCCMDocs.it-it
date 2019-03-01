@@ -10,12 +10,13 @@ ms.assetid: 68fe0e7e-351e-4222-853a-877475adb589
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ce3353d9cc139da53a655f50144c3816b1a4a355
-ms.sourcegitcommit: 8791bb9be477fe6a029e8a7a76e2ca310acd92e0
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 5ebe37bb97c4a1e231bfaf94f420f7f0471f30f6
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50411375"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56141960"
 ---
 # <a name="communications-between-endpoints-in-configuration-manager"></a>Comunicazioni tra gli endpoint in Configuration Manager
 
@@ -74,7 +75,7 @@ Per utilizzare HTTPS, configurare una delle opzioni seguenti:
 
 - Usare un'infrastruttura a chiave pubblica (PKI) e installare i certificati PKI sui client e sui server. Per informazioni su come usare i certificati, vedere [Requisiti dei certificati PKI per Configuration Manager](/sccm/core/plan-design/network/pki-certificate-requirements).  
 
-- A partire dalla versione 1806, configurare il sito con l'opzione **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**. Per altre informazioni, vedere [Enhanced HTTP](/sccm/core/plan-design/hierarchy/enhanced-http) (HTTP avanzato).  
+- A partire dalla versione 1806, configurare il sito con l'opzione **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**. Per altre informazioni, vedere [HTTP migliorato](/sccm/core/plan-design/hierarchy/enhanced-http).  
 
 Quando si distribuisce un ruolo del sistema del sito che usa Internet Information Services (IIS) e supporta le comunicazioni dai client, è necessario specificare se i client si connettono al sistema del sito tramite HTTP o HTTPS. Se si usa HTTP, è necessario considerare anche le opzioni di firma e crittografia. Per altre informazioni, vedere [Pianificazione di firma e crittografia](/sccm/core/plan-design/security/plan-for-security#BKMK_PlanningForSigningEncryption).  
 
@@ -83,7 +84,7 @@ Quando si distribuisce un ruolo del sistema del sito che usa Internet Informatio
 
 La comunicazione tra un client e un punto di gestione avviene in due fasi: autenticazione (trasporto) e autorizzazione (messaggio). Questo processo varia a seconda dei fattori seguenti: 
 - Configurazione del sito: HTTP, HTTPS o HTTP avanzato
-- Configurazione del punto di gestione: solo HTTPS o sia HTTP che HTTPS
+- Configurazione del punto di gestione: solo HTTPS, oppure consente sia HTTP sia HTTPS
 - Identità del dispositivo per gli scenari incentrati sui dispositivi
 - Identità dell'utente per gli scenari incentrati sugli utenti
 
@@ -91,8 +92,8 @@ Usare la tabella seguente per comprendere il funzionamento del processo:
 
 | Tipo di punto di gestione  | Autenticazione client  | Autorizzazione client<br>Identità del dispositivo  | Autorizzazione client<br>Identità utente  |
 |----------|---------|---------|---------|
-| HTTP     | Anonima<br>Con la modalità HTTP avanzato, il sito verifica il token *user* (utente) o *device* (dispositivo) di Azure AD. | Richiesta della posizione: Anonima<br>Pacchetto client: Anonimo<br>Registrazione con uno dei metodi seguenti per dimostrare l'identità del dispositivo:<br> - Anonima (approvazione manuale)<br> - Autenticazione integrata Windows<br> - Token *device* di Azure AD (HTTP avanzato)<br>Dopo la registrazione il client usa la firma del messaggio per dimostrare l'identità del dispositivo | Per gli scenari incentrati sull'utente, registrazione con uno dei metodi seguenti per dimostrare l'identità dell'utente:<br> - Autenticazione integrata Windows<br> - Token *user* di Azure AD (HTTP avanzato) |
-| HTTPS    | Mediante uno dei metodi seguenti:<br> - Certificato PKI<br> - Autenticazione integrata Windows<br> - Token *user* o *device* di Azure AD | Richiesta della posizione: Anonima<br>Pacchetto client: Anonimo<br>Registrazione con uno dei metodi seguenti per dimostrare l'identità del dispositivo:<br> - Anonima (approvazione manuale)<br> - Autenticazione integrata Windows<br> - Certificato PKI<br> - Token *user* o *device* di Azure AD<br>Dopo la registrazione il client usa la firma del messaggio per dimostrare l'identità del dispositivo | Per gli scenari incentrati sull'utente, registrazione con uno dei metodi seguenti per dimostrare l'identità dell'utente:<br> - Autenticazione integrata Windows<br> - Token *user* di Azure AD |
+| HTTP     | Anonima<br>Con la modalità HTTP avanzato, il sito verifica il token *user* (utente) o *device* (dispositivo) di Azure AD. | Richiesta della posizione: Anonima<br>Pacchetto client: Anonima<br>Registrazione con uno dei metodi seguenti per dimostrare l'identità del dispositivo:<br> - Anonima (approvazione manuale)<br> - Autenticazione integrata Windows<br> - Token *device* di Azure AD (HTTP avanzato)<br>Dopo la registrazione il client usa la firma del messaggio per dimostrare l'identità del dispositivo | Per gli scenari incentrati sull'utente, registrazione con uno dei metodi seguenti per dimostrare l'identità dell'utente:<br> - Autenticazione integrata Windows<br> - Token *user* di Azure AD (HTTP avanzato) |
+| HTTPS    | Mediante uno dei metodi seguenti:<br> - Certificato PKI<br> - Autenticazione integrata Windows<br> - Token *user* o *device* di Azure AD | Richiesta della posizione: Anonima<br>Pacchetto client: Anonima<br>Registrazione con uno dei metodi seguenti per dimostrare l'identità del dispositivo:<br> - Anonima (approvazione manuale)<br> - Autenticazione integrata Windows<br> - Certificato PKI<br> - Token *user* o *device* di Azure AD<br>Dopo la registrazione il client usa la firma del messaggio per dimostrare l'identità del dispositivo | Per gli scenari incentrati sull'utente, registrazione con uno dei metodi seguenti per dimostrare l'identità dell'utente:<br> - Autenticazione integrata Windows<br> - Token *user* di Azure AD |
 
 > [!Tip]  
 > Per altre informazioni sulla configurazione del punto di gestione per i diversi tipi di identità del dispositivo e con il Cloud Management Gateway, vedere [Abilitare i punti di gestione per HTTPS](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#bkmk_mphttps).  
@@ -265,9 +266,9 @@ Può essere necessario configurare l'accesso del punto di registrazione e del pu
 
 Se si configura un account utente di dominio come account di connessione per questi ruoli del sistema del sito, assicurarsi che l'account utente di dominio abbia l'accesso appropriato al database di SQL Server in quel sito:  
 
--   Punto di gestione: **account di connessione al database del punto di gestione**  
+-   Punto di gestione: **account connessione di database punto di gestione**  
 
--   Punto di registrazione: **account di connessione del punto di registrazione**  
+-   Punto di registrazione: **account di connessione al punto di registrazione**  
 
 Considerare le seguenti informazioni aggiuntive per la pianificazione di ruoli del sistema del sito in altre foreste:  
 

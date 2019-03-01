@@ -10,12 +10,13 @@ ms.assetid: a6f7f6b7-9ef3-4ffa-a3cf-d877ac55983b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ca7dfce7b96747e46247cb290b4fc0d7e0df41ff
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: b100daf91b8bb7c5d4dd5f041c57e7dc9dac390e
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52458159"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56156781"
 ---
 # <a name="customize-support-center"></a>Personalizzare Support Center
 
@@ -23,11 +24,11 @@ ms.locfileid: "52458159"
 
 [Support Center](/sccm/core/support/support-center) è uno strumento che include un file di configurazione personalizzabile. Per impostazione predefinita, durante l'installazione di Support Center, questo file si trova nel percorso seguente: `C:\Program Files (x86)\Configuration Manager Support Center\ConfigMgrSupportCenter.exe.config`. Il file di configurazione modifica il comportamento del programma:
 
-  - [Personalizzare la raccolta dei dati:](#bkmk_datacoll) è possibile modificare i set di chiavi del Registro di sistema e gli spazi dei nomi WMI che vengono inclusi durante la raccolta dati  
+  - [Personalizzare la raccolta dati](#bkmk_datacoll): è possibile modificare i set di chiavi del Registro di sistema e gli spazi dei nomi WMI che vengono inclusi durante la raccolta dati  
 
-  - [Personalizzare i gruppi di log](#bkmk_loggroups): è possibile definire nuovi gruppi di file di log usando espressioni regolari. È anche possibile aggiungere altri file di log ai gruppi.  
+  - [Personalizzare i gruppi di file di log](#bkmk_loggroups): è possibile definire nuovi gruppi di file di log usando espressioni regolari. È anche possibile aggiungere altri file di log ai gruppi.  
 
-  - [Raccogliere file di log aggiuntivi usando caratteri jolly:](#bkmk_wildcards) è possibile usare le ricerche con caratteri jolly per raccogliere file di log aggiuntivi  
+  - [Raccolta di file di log aggiuntivi tramite i caratteri jolly](#bkmk_wildcards): è possibile usare le ricerche con caratteri jolly per raccogliere file di log aggiuntivi  
 
 Per apportare queste modifiche è necessario disporre di autorizzazioni di amministratore nel client in cui è installato Support Center. Per eseguire questi tipi di personalizzazione, usare un editor di testo o un editor XML, ad esempio Notepad o Visual Studio.
 
@@ -96,9 +97,9 @@ Per raccogliere le chiavi del Registro di sistema per i programmi classici insta
 
 Per personalizzare i file di log che Support Center raccoglie e la rispettiva visualizzazione nell'elenco **Log groups** (Gruppi di log), usare gli elementi contenuti nell'elemento `<logGroups>`. Quando si avvia Support Center, lo strumento analizza questa sezione del file di configurazione. Poi crea un gruppo nell'elenco **Log groups** (Gruppi di log) per ogni valore dell'attributo chiave trovato negli elementi `<add/>` contenuti nell'elemento `<logGroups>`.
 
-  - **Component log group**  (Gruppo di log componente): l'elemento `<componentLogGroup>` usa un attributo chiave per definire il nome del gruppo di log visualizzato nell'elenco. Usa anche un valore dell'attributo che contiene un'espressione regolare (regex). Usa questa espressione regolare per raccogliere un set di file di log correlati.  
+  - **Component log group** (Gruppo di log componente): l'elemento `<componentLogGroup>` usa un attributo chiave per definire il nome del gruppo di log visualizzato nell'elenco. Usa anche un valore dell'attributo che contiene un'espressione regolare (regex). Usa questa espressione regolare per raccogliere un set di file di log correlati.  
 
-  - **Component log group**  (Gruppo di log statico): l'elemento `<staticLogGroup>` usa un attributo chiave per definire il nome del gruppo di log visualizzato nell'elenco. Usa anche un valore dell'attributo che definisce il nome di un file di log.  
+  - **Static log group:** (Gruppo di log statico) l'elemento `<staticLogGroup>` usa un attributo chiave per definire il nome del gruppo di log visualizzato nell'elenco. Usa anche un valore dell'attributo che definisce il nome di un file di log.  
 
 Se lo stesso valore dell'attributo chiave viene usato in un elemento `<add/>` sia nell'elemento `<componentLogGroup>` che nell'elemento `<staticLogGroup>`, Support Center crea un singolo gruppo. Questo gruppo include i file di log definiti da entrambi gli elementi che usano la stessa chiave.
 
@@ -131,12 +132,12 @@ Per raccogliere file di log aggiuntivi, usare i caratteri jolly nel percorso di 
 
 Questi esempi illustrano come Support Center usa questa funzionalità nel file di configurazione predefinito.
 
-#### <a name="example-1-collect-all-windows-update-log-files-in-the-windows-directory"></a>Esempio 1: raccogliere tutti i file di log di Windows nella directory di Windows
+#### <a name="example-1-collect-all-windows-update-log-files-in-the-windows-directory"></a>Esempio 1: raccogliere tutti i file di log di Windows Update nella directory di Windows
 L'elemento seguente raccoglie tutti i file denominati `WindowsUpdate.log`, contenuti nella directory di Windows: 
 
 `<add key="%WINDIR%\WindowsUpdate.log" />`
 
-#### <a name="example-2-collect-all-log-files-in-the-windows-logs-directory"></a>Esempio 2: raccogliere tutti i file di log nella directory Registri di Windows
+#### <a name="example-2-collect-all-log-files-in-the-windows-logs-directory"></a>Esempio 2: raccogliere tutti i file di log nella directory dei log di Windows
 L'elemento seguente raccoglie tutti i file che terminano con `.log`, contenuti nella directory Registri di Windows: 
 
 `<add key="%WINDIR%\logs\*.log" />`

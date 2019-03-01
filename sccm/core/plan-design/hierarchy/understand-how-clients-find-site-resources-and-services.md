@@ -10,12 +10,13 @@ ms.assetid: ae72df4b-5f5d-4e19-9052-bda28edfbace
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ae82e17f5a0e7d32c3f5838edc3dfbf00b6f396b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 9cf206bfb0774ee1d45c70e2a0c890a2f157ad65
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342104"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56127185"
 ---
 # <a name="learn-how-clients-find-site-resources-and-services-for-system-center-configuration-manager"></a>Informazioni su come i client trovano i servizi e le risorse del sito per System Center Configuration Manager
 
@@ -93,13 +94,13 @@ Durante l'installazione del client vengono usate le regole seguenti per creare l
 ### <a name="organizing-the-mp-list"></a>Organizzazione dell'elenco dei punti di gestione  
 I client organizzano il proprio elenco dei punti di gestione usando le classificazioni seguenti:  
 
--   **Proxy**: un punto di gestione in un sito secondario.  
--   **Locale**: qualsiasi punto di gestione associato al percorso di rete corrente del client, come definito dai limiti del sito. Per i limiti, tenere presente quanto segue:
+-   **Proxy**: punto di gestione in un sito secondario.  
+-   **Locale**: qualsiasi punto di gestione associato al percorso di rete corrente del client definito dai limiti del sito. Per i limiti, tenere presente quanto segue:
     -   Quando un client appartiene a più gruppi di limiti, l'elenco dei punti di gestione locali è determinato dall'unione di tutti i limiti che includono il percorso di rete corrente del client.  
     -   In genere, i punti di gestione locali sono un sottoinsieme dei punti di gestione assegnati di un client, a meno che il client non si trovi in un percorso di rete associato a un altro sito con punti di gestione che servono i relativi gruppi di limiti.   
 
 
--   **Assegnato**: qualsiasi punto di gestione che corrisponde a un sistema del sito per il sito assegnato del client.  
+-   **Assegnato**: punto di gestione che è un sistema del sito per il sito assegnato del client.  
 
 È possibile usare i punti di gestione preferiti. I punti di gestione di un sito che non sono associati a un gruppo di limiti o che non sono in un gruppo di limiti associato al percorso di rete corrente del client, non sono considerati preferiti. Vengono usati quando il client non riesce a identificare un punto di gestione preferito disponibile.  
 
@@ -183,9 +184,9 @@ Configuration Manager supporta RFC 2782 per i record relativi alla posizione del
 
 Per pubblicare un punto di gestione in Configuration Manager, specificare i valori seguenti:  
 
--   **_Servizio**: immettere **_mssms_mp**_&lt;codicesito\>, dove &lt;codicesito\> è il codice del sito del punto di gestione.  
+-   **_Service**: immettere **_mssms_mp**_&lt;sitecode\>, dove &lt;sitecode\> è il codice del sito del punto di gestione.  
 -   **._Proto**: specificare **._tcp**.  
--   **.Nome**: immettere il suffisso DNS del punto di gestione, ad esempio **contoso.com**.  
+-   **.Name**: immettere il suffisso DNS del punto di gestione, ad esempio **contoso.com**.  
 -   **TTL**: immettere **14400**, che corrisponde a quattro ore.  
 -   **Classe**: specificare **IN** (in conformità con RFC 1035).  
 -   **Priorità**: questo campo non è usato da Configuration Manager.
@@ -195,7 +196,7 @@ Per pubblicare un punto di gestione in Configuration Manager, specificare i valo
     > [!NOTE]  
     >  La porta dei record SRV deve corrispondere alla porta di comunicazione usata dal punto di gestione. Per impostazione predefinita si tratta della porta **80** per le comunicazioni HTTP e **443** per le comunicazioni HTTPS.  
 
--   **Destinazione**: immettere il nome di dominio completo Intranet specificato per il sistema del sito configurato con il ruolo del sito del punto di gestione.  
+-   **Destinazione**: Immettere il nome FQDN Intranet specificato per il sistema del sito configurato con il ruolo del sito del punto di gestione.  
 
 Se si usa il DNS di Windows Server, è possibile usare la procedura seguente per immettere questo record DNS per i punti di gestione Intranet. Se si usa un'implementazione differente per DNS, usare le informazioni riportate in questa sezione sui valori dei campi e consultare la documentazione relativa al DNS per adattare questa procedura.  
 
@@ -225,8 +226,8 @@ Se si usa il DNS di Windows Server, è possibile usare la procedura seguente per
 
 4.  Usando l'opzione **Altri nuovi record**, scegliere **Posizione servizio (SRV)** nella finestra di dialogo **Tipo record di risorse**, scegliere **Crea record**, immettere le informazioni seguenti e infine scegliere **Chiudi**:  
 
-    -   **Dominio**: se necessario, immettere il suffisso DNS del punto di gestione, ad esempio **contoso.com**.  
-    -   **Servizio**: digitare **_mssms_mp**_&lt;codicesito\>, dove &lt;codicesito\> è il codice del sito del punto di gestione.  
+    -   **Dominio**: Se necessario, immettere il suffisso DNS del punto di gestione, ad esempio **contoso.com**.  
+    -   **Servizio**: digitare **_mssms_mp**_&lt;sitecode\>, dove &lt;sitecode\> è il codice del sito del punto di gestione.  
     -   **Protocollo**: digitare **_tcp**.  
     -   **Priorità**: questo campo non è usato da Configuration Manager.  
     -   **Peso**: questo campo non è usato da Configuration Manager.  
@@ -235,7 +236,7 @@ Se si usa il DNS di Windows Server, è possibile usare la procedura seguente per
         > [!NOTE]  
         >  La porta dei record SRV deve corrispondere alla porta di comunicazione usata dal punto di gestione. Per impostazione predefinita si tratta della porta **80** per le comunicazioni HTTP e **443** per le comunicazioni HTTPS.  
 
-    -   **Host che offre il servizio**: immettere il nome FQDN Intranet specificato per il sistema del sito configurato con il ruolo del sito del punto di gestione.  
+    -   **Host offering this service** (Host che offre questo servizio): Immettere il nome FQDN Intranet specificato per il sistema del sito configurato con il ruolo del sito del punto di gestione.  
 
 Ripetere questi passaggi per ogni punto di gestione della rete Intranet che si desidera pubblicare in DNS.  
 

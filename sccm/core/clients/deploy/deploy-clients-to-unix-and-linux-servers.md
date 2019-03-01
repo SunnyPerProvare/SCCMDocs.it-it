@@ -10,12 +10,13 @@ ms.assetid: 15a4e323-9f42-4fea-bb14-f2b905d1f77c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7caffbbccfa53ef4e502685263cb0d81c6e83535
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: a94cb1338e010bfbd9ed1e2ecf7bdb5ba2418390
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32336640"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56120692"
 ---
 # <a name="how-to-deploy-clients-to-unix-and-linux-servers-in-system-center-configuration-manager"></a>Come distribuire i client nei server UNIX e Linux in System Center Configuration Manager
 
@@ -145,7 +146,7 @@ Ogni pacchetto di installazione client contiene tutti i file necessari per compl
 
      Se non si utilizza questa proprietà per specificare un certificato PKI, il client utilizza un certificato autofirmato e tutte le comunicazioni ai sistemi del sito avvengono tramite HTTP.  
 
-     Se si specifica un certificato non valido nella riga di comando di installazione del client, non vengono restituiti errori Questo accade perché la convalida dei certificati si verifica dopo l'installazione di client. Quando viene avviato il client, vengono convalidati i certificati con il punto di gestione e se un certificato non viene visualizzato il seguente messaggio di **scxcm.log**, il file di log client Unix e Linux Configuration Manager: **Non riuscito di convalidare il certificato per punto di gestione**. Il percorso predefinito del file di log è:  **/var/opt/microsoft/scxcm.log**.  
+     Se si specifica un certificato non valido nella riga di comando di installazione del client, non vengono restituiti errori Questo accade perché la convalida dei certificati si verifica dopo l'installazione di client. All'avvio del client, i certificati vengono convalidati con il punto di gestione. Se la convalida di un certificato non riesce, in **scxcm.log**, il file di log del client di Configuration Manager per Unix e Linux, viene visualizzato il messaggio seguente: **Failed validate the certificate for Management Point** (Convalida non riuscita del certificato per il punto di gestione). Il percorso predefinito del file di log è:  **/var/opt/microsoft/scxcm.log**.  
 
     > [!NOTE]  
     >  È necessario specificare questa proprietà quando si installa un client e usare la proprietà **-mp** per specificare un punto di gestione configurato per accettare solo connessioni client HTTPS.  

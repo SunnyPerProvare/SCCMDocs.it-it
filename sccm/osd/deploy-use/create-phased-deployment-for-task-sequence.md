@@ -10,12 +10,13 @@ ms.assetid: b634ff68-b909-48d2-9e2c-0933486673c5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7d103f7f7b92003605d92d34d6294ed06009118c
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 9107e3bf851ddbcec061eeeac064f31e7392ee9f
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456516"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56142443"
 ---
 # <a name="create-phased-deployments-with-configuration-manager"></a>Creare distribuzioni in più fasi con Configuration Manager
 
@@ -63,7 +64,7 @@ Queste impostazioni sono univoche per le distribuzioni in più fasi. Configurare
 
 #### <a name="conditions-for-beginning-second-phase-of-deployment-after-success-of-the-first-phase"></a>Condizioni per l'inizio della seconda fase della distribuzione dopo la riuscita della prima fase  
 
-- **Inizia automaticamente questa fase dopo un periodo di differimento (in giorni)**: scegliere il numero di giorni di attesa prima di iniziare la seconda fase dopo la riuscita della prima. Per impostazione predefinita, questo valore è un giorno.  
+- **Inizia automaticamente questa fase dopo un periodo di differimento (in giorni)**: scegliere il numero di giorni di attesa prima di iniziare la seconda fase dopo l'esito positivo della prima. Per impostazione predefinita, questo valore è un giorno.  
 
 - **Inizia manualmente la seconda fase della distribuzione**: il sito non inizia automaticamente la seconda fase dopo la riuscita della prima fase. Questa opzione richiede l'avvio manuale della seconda fase. Per altre informazioni, vedere [Passare alla fase successiva](/sccm/osd/deploy-use/manage-monitor-phased-deployments#bkmk_move).  
 
@@ -77,9 +78,9 @@ Queste impostazioni sono univoche per le distribuzioni in più fasi. Configurare
 
 #### <a name="configure-the-deadline-behavior-relative-to-when-the-software-is-made-available"></a>Configurare il comportamento della scadenza rispetto al momento in cui viene reso disponibile il software  
 
-- **L'installazione è obbligatoria non appena possibile**: impostare come scadenza per l'installazione nel dispositivo il momento in cui il dispositivo viene incluso.  
+- **L'installazione è obbligatoria non appena possibile**: imposta come scadenza per l'installazione nel dispositivo il momento in cui il dispositivo viene incluso.  
 
-- **L'installazione è obbligatoria dopo questo periodo di tempo**: impostare come scadenza per l'installazione un numero di giorni specifico dopo che il dispositivo è stato incluso. Per impostazione predefinita, questo valore è 7 giorni.   
+- **L'installazione è obbligatoria dopo questo periodo di tempo**: imposta la scadenza per l'installazione su un determinato numero di giorni dopo l'inclusione del dispositivo. Per impostazione predefinita, questo valore è 7 giorni.   
 
 
 <!--### Examples
@@ -153,7 +154,7 @@ A partire dalla versione 1806, creare una distribuzione in più fasi con fasi co
 
         4. Controllare le impostazioni nella pagina **Riepilogo** e quindi completare l'Aggiunta guidata fasi.  
 
-    - **Modifica**: questa azione apre la finestra Proprietà della fase selezionata in cui le schede sono uguali alle pagine dell'Aggiunta guidata fasi.  
+    - **Modifica**: questa azione apre la finestra Proprietà della fase selezionata, le cui schede sono uguali alle pagine dell'Aggiunta guidata fasi.  
 
     - **Rimuovi**: questa azione elimina la fase selezionata.  
 

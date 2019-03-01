@@ -10,12 +10,13 @@ ms.assetid: 8fce5391-8e75-4f99-813a-76f8842be5bc
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7ba95a61b074fa1ae4cc4c77f896659b91eaaaaa
-ms.sourcegitcommit: 0d7efd9e064f9d6a9efcfa6a36fd55d4bee20059
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 6526d0cb6b6b84afcaa5faeef93cc230a335196f
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893699"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56136780"
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1710-of-system-center-configuration-manager"></a>Livelli dei dati di diagnostica e di utilizzo raccolti da System Center Configuration Manager versione 1710
 
@@ -463,7 +464,7 @@ Per System Center Configuration Manager versione 1710, questo livello include qu
 
 - Statistiche dei criteri di conformità per la conformità e gli errori
 
-- Impostazioni di conformità: dettagli di configurazione del modello dei criteri di conformità e di SCEP, VPN, Wi-Fi e numero di gruppi per cui sono scaduti gli aggiornamenti software
+- Impostazioni di conformità: dettagli di configurazione SCEP, VPN, Wi-Fi e del modello dei criteri di conformità e numero di gruppi con aggiornamenti software scaduti
 
 - Utilizzo del pacchetto di configurazione DCM per System Center Configuration Manager
 

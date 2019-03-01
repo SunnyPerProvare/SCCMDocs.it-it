@@ -10,12 +10,13 @@ ms.assetid: bda87fc5-2e4c-4992-98a4-01770365038c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1b29fb48d8d8abc2e0c6693725b65c90a0cf1cd1
-ms.sourcegitcommit: a849dab9333ebac799812624d6155f2a96b523ca
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: abfad38e0c02ff6c0af8d4c9c47bdeed7598e513
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "42584809"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56129749"
 ---
 # <a name="setup-downloader-for-system-center-configuration-manager"></a>Downloader di installazione per System Center Configuration Manager
 
@@ -63,9 +64,9 @@ Sono disponibili due opzioni per l'esecuzione del downloader di installazione:
 
     -   **/LANG**: usare questa opzione per scaricare solo i file della lingua nella cartella di download.  
 
-    -   **/NOUI**: usare questa opzione per avviare il downloader di installazione senza visualizzare l'interfaccia utente. Quando si usa questa opzione, è necessario specificare il **percorso di download** come parte della riga di comando al prompt dei comandi.  
+    -   **/NOUI**: usare questa opzione per avviare il Downloader di installazione senza visualizzare l'interfaccia utente. Quando si usa questa opzione, è necessario specificare il **percorso di download** come parte della riga di comando al prompt dei comandi.  
 
-    -   **&lt;PercorsoDownload\>**: è possibile specificare il percorso della cartella di download per avviare automaticamente la verifica o il processo di download. Quando si usa l'opzione **/NOUI**, è necessario specificare il percorso di download. Se non si specifica un percorso di download, sarà necessario specificarlo all'apertura del downloader di installazione. Il downloader di installazione crea la cartella se non esiste già.  
+    -   **&lt;DownloadPath\>**: è possibile specificare il percorso della cartella di download per avviare automaticamente la verifica o il processo di download. Quando si usa l'opzione **/NOUI**, è necessario specificare il percorso di download. Se non si specifica un percorso di download, sarà necessario specificarlo all'apertura del downloader di installazione. Il downloader di installazione crea la cartella se non esiste già.  
 
     Comandi di esempio:
 

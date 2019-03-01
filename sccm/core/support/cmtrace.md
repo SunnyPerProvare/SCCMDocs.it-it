@@ -10,12 +10,13 @@ ms.assetid: 6a4a3290-5228-4871-918a-554aa1c20834
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3ad96cedf1170f8563fdafe3922f6ad2e7c67b5a
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 87552016d1cd17e79abf01a9de9109195d3d2a70
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39386012"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56125311"
 ---
 # <a name="cmtrace"></a>CMTrace
 
@@ -65,9 +66,9 @@ Filtrare la vista per cercare i tipi di file seguenti:
 
 Per impostazione predefinita, le due opzioni seguenti non sono selezionate:  
 
-- **Ignore existing lines** (Ignora righe esistenti): se selezionata, CMTrace ignora i contenuti esistenti del file di log selezionato e visualizza solo le nuove righe quando vengono aggiunte. Usare questa opzione per monitorare solo le nuove azioni quando non è necessaria la cronologia completa del file di log.  
+- **Ignore existing lines** (Ignora righe esistenti): se questa opzione è selezionata, CMTrace ignora i contenuti esistenti del file di log selezionato e visualizza solo le nuove righe quando vengono aggiunte. Usare questa opzione per monitorare solo le nuove azioni quando non è necessaria la cronologia completa del file di log.  
 
-- **Merge selected files** (Unisci file selezionati): se si abilita questa opzione e si seleziona più di un file di log, CMTrace unisce i log selezionati nella vista. Li visualizza come se fossero un unico file di log. Il log unito viene aggiornato allo stesso modo e supporta tutte le altre funzionalità di CMTrace come se fosse un unico file di log.  
+- **Merge selected files** (Unisci file selezionati): se si abilita questa opzione e si selezionano più file di log, CMTrace unisce i log selezionati nella visualizzazione. Li visualizza come se fossero un unico file di log. Il log unito viene aggiornato allo stesso modo e supporta tutte le altre funzionalità di CMTrace come se fosse un unico file di log.  
 
 
 #### <a name="open-on-server"></a>Open on Server (Apri nel server)
@@ -85,21 +86,21 @@ Configurare le impostazioni per CMTrace. Sono disponibili le seguenti opzioni:
 
 - Scheda**Generale**  
 
-     - **Intervallo di aggiornamento**: controlla la frequenza con la quale CMTrace cerca le modifiche ai file di log e carica le nuove righe. Per impostazione predefinita, questo valore è impostato su 500 millisecondi.  
+     - **Update Interval** (Intervallo di aggiornamento): controlla la frequenza con la quale CMTrace controlla la presenza di modifiche nei file di log e carica le nuove righe. Per impostazione predefinita, questo valore è impostato su 500 millisecondi.  
 
-     - **Highlight** (Evidenzia): imposta il colore usato da CMTrace per evidenziare le righe dei log scelte. Per impostazione predefinita, questo colore è il giallo di base (rosso: 255, verde: 255, blu: 0).  
+     - **Highlight (Evidenziazione)**: imposta il colore usato da CMTrace per evidenziare le righe dei log scelte. Per impostazione predefinita, questo colore è il giallo di base (rosso: 255, verde: 255, blu: 0).  
 
-     - **Colonne**: configura le colonne visibili nella vista del log e l'ordine in cui vengono visualizzate. Per impostazione predefinita, visualizza Log Text, Component, Date/Time e Thread.  
+     - **Columns** (Colonne): consente di configurare le colonne visibili nella visualizzazione dei log e l'ordine in cui vengono visualizzate. Per impostazione predefinita, visualizza Log Text, Component, Date/Time e Thread.  
 
 - Scheda **Stampa**  
 
-     - **Colonne**: configurare le colonne usate nella stampa dei file di log e l'ordine in cui vengono visualizzate. Per impostazione predefinita, le colonne vengono stampate così come sono visualizzate.  
+     - **Columns** (Colonne): consente di configurare le colonne usate nella stampa dei file di log e l'ordine in cui vengono visualizzate. Per impostazione predefinita, le colonne vengono stampate così come sono visualizzate.  
 
-     - **Orientamento**: imposta l'orientamento di stampa predefinito durante la stampa dei file di log. Eseguire l'override di questa impostazione nella finestra di dialogo Stampa. Per impostazione predefinita, usa l'orientamento verticale.  
+     - **Orientation** (Orientamento): consente di impostare l'orientamento di stampa predefinito per la stampa dei file di log. Eseguire l'override di questa impostazione nella finestra di dialogo Stampa. Per impostazione predefinita, usa l'orientamento verticale.  
  
 - Scheda **Avanzate**  
 
-     - **Refresh Interval** (Intervallo di aggiornamento): forza CMTrace ad aggiornare la vista dei log in base a un intervallo specificato durante il caricamento di un numero elevato di righe. Per impostazione predefinita, questa opzione è disabilitata con un valore pari a zero.  
+     - **Refresh Interval** (Intervallo di aggiornamento): forza CMTrace ad aggiornare la visualizzazione dei log in base a un intervallo specificato durante il caricamento di un numero elevato di righe. Per impostazione predefinita, questa opzione è disabilitata con un valore pari a zero.  
 
         > [!Note]  
         > In generale non modificare l'**intervallo di aggiornamento**. Può aumentare notevolmente la quantità di tempo necessaria per aprire i file di log di grandi dimensioni. 
@@ -146,7 +147,7 @@ Esempi: <!--SCCMDocs issue #603-->
 
 
 #### <a name="error-lookup"></a>Error lookup (Ricerca errori)
-Digitare o incollare un codice errore in formato decimale o esadecimale per visualizzare una descrizione. Le possibili origini degli errori includono: Windows, WMI o Winhttp.
+Digitare o incollare un codice errore in formato decimale o esadecimale per visualizzare una descrizione. Alcune origini di errore possibili sono: Windows, WMI o Winhttp.
 
 #### <a name="pause"></a>Sospendi
 Sospendere o riavviare il monitoraggio dei log. I casi d'uso seguenti sono alcuni dei possibili motivi per usare questa azione:  

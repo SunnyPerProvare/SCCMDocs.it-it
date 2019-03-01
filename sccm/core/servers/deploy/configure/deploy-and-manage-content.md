@@ -10,12 +10,13 @@ ms.assetid: d50dcca0-4419-449d-a487-73abcadf328f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c6a2a69047a8fee5ab0c1f4f0f13197178334f05
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e27dd4479b4bb575cfc5c4a5e03c4252535f835b
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32342189"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56136967"
 ---
 # <a name="deploy-and-manage-content-for-system-center-configuration-manager"></a>Distribuire e gestire contenuto per System Center Configuration Manager
 
@@ -52,21 +53,21 @@ Utilizzare la procedura seguente per distribuire contenuto nei punti di distribu
 
 2.  Nell'area di lavoro **Raccolta software** , selezionare uno dei seguenti passaggi per il tipo di contenuto che si desidera distribuire:  
 
-    -   **Applicazioni**: espandere **Gestione applicazioni** > **Applicazioni** e selezionare le applicazioni da distribuire.  
+    -   **Applicazioni**: espandere **Gestione applicazioni** > **Applicazioni** e quindi selezionare le applicazioni da distribuire.  
 
-    -   **Pacchetti**: espandere **Gestione applicazioni** >  **Pacchetti** e selezionare i pacchetti da distribuire.  
+    -   **Pacchetti**: espandere **Gestione applicazioni** >  **Pacchetti** e quindi selezionare i pacchetti da distribuire.  
 
-    -   **Pacchetti di distribuzione**: espandere **Aggiornamenti software** >  **Pacchetti di distribuzione** e selezionare i pacchetti di distribuzione da distribuire.  
+    -   **Pacchetti di distribuzione**: espandere **Aggiornamenti software** >  **Pacchetti di distribuzione** e quindi selezionare i pacchetti di distribuzione da distribuire.  
 
-    -   **Pacchetti driver**: espandere **Sistemi operativi** >  **Pacchetti driver** e selezionare i pacchetti driver da distribuire.  
+    -   **Pacchetti driver**: espandere **Sistemi operativi** >  **Pacchetti driver** e quindi selezionare i pacchetti driver da distribuire.  
 
-    -   **Immagini del sistema operativo**: espandere **Sistemi operativi** >  **Immagini del sistema operativo** e selezionare le immagini del sistema operativo da distribuire.  
+    -   **Immagini del sistema operativo**: espandere **Sistemi operativi** >  **Immagini del sistema operativo** e quindi selezionare le immagini del sistema operativo da distribuire.  
 
-    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi** > **Programmi di installazione sistema operativo** e selezionare i programmi di installazione del sistema operativo da distribuire.  
+    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi** > **Programmi di installazione sistema operativo** e quindi selezionare i programmi di installazione del sistema operativo da distribuire.  
 
-    -   **Immagini d'avvio**: espandere **Sistemi operativi** >  **Immagini d'avvio** e selezionare le immagini di avvio da distribuire.  
+    -   **Immagini d'avvio**: espandere **Sistemi operativi** >  **Immagini d'avvio** e quindi selezionare le immagini di avvio da distribuire.  
 
-    -   **Sequenze di attività**: espandere **Sistemi operativi** >  **Sequenze di attività** e selezionare la sequenza di attività da distribuire. Anche se le sequenze attività non hanno contenuto, presentano delle dipendenze contenuto associate che vengono distribuite.  
+    -   **Sequenze di attività**: espandere **Sistemi operativi** >  **Sequenze di attività** e quindi selezionare la sequenza di attività da distribuire. Anche se le sequenze attività non hanno contenuto, presentano delle dipendenze contenuto associate che vengono distribuite.  
 
         > [!NOTE]  
         >  Se si modifica la sequenza attività, è necessario ridistribuire il contenuto.  
@@ -85,14 +86,14 @@ Utilizzare la procedura seguente per distribuire contenuto nei punti di distribu
 
 6.  Nella pagina **Destinazione contenuto** , fare clic su **Aggiungi**, scegliere uno dei seguenti elementi, quindi seguire i relativi passaggi:  
 
-    -   **Raccolte**: selezionare **Raccolte utenti** o **Raccolte dispositivi**, fare clic sulla raccolta associata a uno o più gruppi di punti di distribuzione, quindi fare clic su **OK**.  
+    -   **Raccolte**: selezionare **Raccolte utenti** o **Raccolte dispositivi**, fare clic sulla raccolta associata a uno o più gruppi di punti di distribuzione e quindi fare clic su **OK**.  
 
         > [!NOTE]  
         >  Vengono visualizzate solo le raccolte associate a un gruppo di punti di distribuzione. Per altre informazioni su come associare le raccolte ai gruppi di punti di distribuzione, vedere [Manage distribution point groups](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage) (Gestire i gruppi di punti di distribuzione) in [Install and configure distribution points for System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) (Installare e configurare i punti di distribuzione per System Center Configuration Manager).  
 
-    -   **Punto di distribuzione**: selezionare un punto di distribuzione esistente, quindi fare clic su **OK**. Non vengono visualizzati i punti di distribuzione che hanno ricevuto il contenuto in precedenza.  
+    -   **Punto di distribuzione**: selezionare un punto di distribuzione esistente e quindi fare clic su **OK**. Non vengono visualizzati i punti di distribuzione che hanno ricevuto il contenuto in precedenza.  
 
-    -   **Gruppo di punti di distribuzione**: selezionare un gruppo di punti di distribuzione esistente, quindi fare clic su **OK**. Non vengono visualizzati i gruppi di punti di distribuzione che hanno ricevuto il contenuto in precedenza.  
+    -   **Gruppo di punti di distribuzione**: selezionare un gruppo di punti di distribuzione esistente e quindi fare clic su **OK**. Non vengono visualizzati i gruppi di punti di distribuzione che hanno ricevuto il contenuto in precedenza.  
 
     Dopo aver aggiunto le destinazioni del contenuto, fare clic su **Avanti**.  
 
@@ -127,7 +128,7 @@ Per informazioni sugli scenari di pre-installazione dei file di contenuto, veder
 
 Utilizzare le sezioni seguenti per pre-installare il contenuto.  
 
-###  <a name="BKMK_CreatePrestagedContentFile"></a> Passaggio 1: Creare un file di contenuto pre-installazione  
+###  <a name="BKMK_CreatePrestagedContentFile"></a> Passaggio 1: creare un file di contenuto pre-installato  
  È possibile creare un file di contenuto pre-installazione compresso contenente i file e i metadati associati per il contenuto selezionato nella console di Configuration Manager. Utilizzare la procedura seguente per creare un file di contenuto pre-installato.  
 
 ##### <a name="to-create-a-prestaged-content-file"></a>Per creare un file di contenuto pre-installato  
@@ -136,26 +137,26 @@ Utilizzare le sezioni seguenti per pre-installare il contenuto.
 
 2.  Nell'area di lavoro **Raccolta software** selezionare uno dei seguenti passaggi per il tipo di contenuto che si desidera pre-installare:  
 
-    -   **Applicazioni**: espandere **Gestione applicazioni**, fare clic su **Applicazioni**, quindi selezionare le applicazioni che si desiderano pre-installare.  
+    -   **Applicazioni**: espandere **Gestione applicazioni**, fare clic su **Applicazioni** e quindi selezionare le applicazioni da pre-installare.  
 
-    -   **Pacchetti**: espandere **Gestione applicazioni**, fare clic su **Pacchetti**, quindi selezionare i pacchetti che si desiderano pre-installare.  
+    -   **Pacchetti**: espandere **Gestione applicazioni**, fare clic su **Pacchetti** e quindi selezionare i pacchetti da pre-installare.  
 
-    -   **Pacchetti driver**: espandere **Sistemi operativi**, fare clic su **Pacchetti driver**, quindi selezionare i pacchetti driver che si desiderano pre-installare.  
+    -   **Pacchetti driver**: espandere **Sistemi operativi**, fare clic su **Pacchetti driver** e quindi selezionare i pacchetti driver da pre-installare.  
 
-    -   **Immagini del sistema operativo**: espandere **Sistemi operativi**, fare clic su **Immagini del sistema operativo**, quindi selezionare le immagini del sistema operativo che si desiderano pre-installare.  
+    -   **Immagini del sistema operativo**: espandere **Sistemi operativi**, fare clic su **Immagini del sistema operativo** e quindi selezionare le immagini del sistema operativo da pre-installare.  
 
-    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi**, fare clic su **Programmi di installazione sistema operativo**, quindi selezionare i programmi di installazione del sistema operativo che si desiderano pre-installare.  
+    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi**, fare clic su **Programmi di installazione sistema operativo** e quindi selezionare i programmi di installazione del sistema operativo da pre-installare.  
 
-    -   **Immagini d'avvio**: espandere **Sistemi operativi**, fare clic su **Immagini d'avvio**, quindi selezionare le immagini d'avvio che si desiderano pre-installare.  
+    -   **Immagini d'avvio**: espandere **Sistemi operativi**, fare clic su **Immagini d'avvio** e quindi selezionare le immagini d'avvio da pre-installare.  
 
-    -   **Sequenze attività**: Espandere **Sistemi operativi**, fare clic su **Sequenze di attività**e quindi selezionare la sequenza di attività che si desidera pre-installare.  
+    -   **Sequenze di attività**: espandere **Sistemi operativi**, fare clic su **Sequenze di attività** e quindi selezionare la sequenza di attività da pre-installare.  
 
 3.  Nella scheda **Home** del gruppo **Distribuzione** , fare clic su **Crea file di contenuto di pre-installazione**. Si aprirà la Creazione guidata file di contenuto pre-installazione.  
 
     > [!NOTE]  
-    >  **Per le applicazioni**: nella scheda **Home** del gruppo **Applicazione** fare clic su **Crea file di contenuto di pre-installazione**.  
+    >  **Per le applicazioni:** nella scheda **Home**, nel gruppo **Applicazione**, fare clic su **Crea file di contenuto di pre-installazione**.  
     >   
-    >  **Per i pacchetti**: nella scheda **Home** nel gruppo &lt;*Nome pacchetto*> fare clic su **Crea file di contenuto di pre-installazione**.  
+    >  **Per i pacchetti:** nella scheda **Home**, nel gruppo &lt;*NomePacchetto*>, fare clic su **Crea file di contenuto di pre-installazione**.  
 
 4.  Nella pagina **Generale** , fare clic su **Sfoglia**, scegliere il percorso per il file di contenuto pre-installato e specificare il relativo nome, quindi fare clic su **Salva**. È possibile utilizzare questo file di contenuto pre-installato su server di siti primari, server di siti secondari o punti di distribuzione per importare il contenuto e i metadati.  
 
@@ -190,19 +191,19 @@ Utilizzare le sezioni seguenti per pre-installare il contenuto.
 
 2.  Nell'area di lavoro **Raccolta software** selezionare uno dei seguenti passaggi per il tipo di contenuto selezionato al momento della creazione del file di contenuto pre-installato:  
 
-    -   **Applicazioni**: espandere **Gestione applicazioni**, fare clic su **Applicazioni**, quindi selezionare le applicazioni pre-installate.  
+    -   **Applicazioni**: espandere **Gestione applicazioni**, fare clic su **Applicazioni** e quindi selezionare le applicazioni pre-installate.  
 
-    -   **Pacchetti**: espandere **Gestione applicazioni**, fare clic su **Pacchetti**, quindi selezionare i pacchetti pre-installati.  
+    -   **Pacchetti**: espandere **Gestione applicazioni**, fare clic su **Pacchetti** e quindi selezionare i pacchetti pre-installati.  
 
-    -   **Pacchetti di distribuzione**: espandere **Aggiornamenti software**, fare clic su **Pacchetti di distribuzione**, quindi selezionare i pacchetti di distribuzione pre-installati.  
+    -   **Pacchetti di distribuzione**: espandere **Aggiornamenti software**, fare clic su **Pacchetti di distribuzione** e quindi selezionare i pacchetti di distribuzione pre-installati.  
 
-    -   **Pacchetti driver**: espandere **Sistemi operativi**, fare clic su **Pacchetti driver**, quindi selezionare i pacchetti driver pre-installati.  
+    -   **Pacchetti driver**: espandere **Sistemi operativi**, fare clic su **Pacchetti driver** e quindi selezionare i pacchetti driver pre-installati.  
 
-    -   **Immagini del sistema operativo**: espandere **Sistemi operativi**, fare clic su **Immagini del sistema operativo**, quindi selezionare le immagini del sistema operativo pre-installate.  
+    -   **Immagini del sistema operativo**: espandere **Sistemi operativi**, fare clic su **Immagini del sistema operativo** e quindi selezionare le immagini del sistema operativo pre-installate.  
 
-    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi**, fare clic su **Programmi di installazione sistema operativo**, quindi selezionare i programmi di installazione del sistema operativo pre-installati.  
+    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi**, fare clic su **Programmi di installazione sistema operativo** e quindi selezionare i programmi di installazione del sistema operativo pre-installati.  
 
-    -   **Immagini d'avvio**: espandere **Sistemi operativi**, fare clic su **Immagini d'avvio**, quindi selezionare le immagini d'avvio pre-installate.  
+    -   **Immagini d'avvio**: espandere **Sistemi operativi**, fare clic su **Immagini d'avvio** e quindi selezionare le immagini d'avvio pre-installate.  
 
 3.  Nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Distribuisci contenuto**. Viene visualizzata la Distribuzione guidata contenuto.  
 
@@ -218,14 +219,14 @@ Utilizzare le sezioni seguenti per pre-installare il contenuto.
 
 6.  Nella pagina **Destinazione contenuto** fare clic su **Aggiungi**, scegliere uno dei seguenti elementi, che include i punti di distribuzione da pre-installare, quindi seguire il passaggio associato:  
 
-    -   **Raccolte**: selezionare **Raccolte utenti** o **Raccolte dispositivi**, fare clic sulla raccolta associata a uno o più gruppi di punti di distribuzione, quindi fare clic su **OK**.  
+    -   **Raccolte**: selezionare **Raccolte utenti** o **Raccolte dispositivi**, fare clic sulla raccolta associata a uno o più gruppi di punti di distribuzione e quindi fare clic su **OK**.  
 
         > [!NOTE]  
         >  Vengono visualizzate solo le raccolte associate a un gruppo di punti di distribuzione.  Per altre informazioni, vedere [Manage distribution point groups](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage) (Gestire i gruppi di punti di distribuzione) nell'argomento [Install and configure distribution points for System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md)(Installare e configurare i punti di distribuzione per System Center Configuration Manager).  
 
-    -   **Punto di distribuzione**: selezionare un punto di distribuzione esistente, quindi fare clic su **OK**. Non vengono visualizzati i punti di distribuzione che hanno ricevuto il contenuto in precedenza.  
+    -   **Punto di distribuzione**: selezionare un punto di distribuzione esistente e quindi fare clic su **OK**. Non vengono visualizzati i punti di distribuzione che hanno ricevuto il contenuto in precedenza.  
 
-    -   **Gruppo di punti di distribuzione**: selezionare un gruppo di punti di distribuzione esistente, quindi fare clic su **OK**. Non vengono visualizzati i gruppi di punti di distribuzione che hanno ricevuto il contenuto in precedenza.  
+    -   **Gruppo di punti di distribuzione**: selezionare un gruppo di punti di distribuzione esistente e quindi fare clic su **OK**. Non vengono visualizzati i gruppi di punti di distribuzione che hanno ricevuto il contenuto in precedenza.  
 
     Dopo aver aggiunto le destinazioni del contenuto, fare clic su **Avanti**.  
 
@@ -293,11 +294,11 @@ Utilizzare le sezioni seguenti per pre-installare il contenuto.
 
     4.  Nella scheda **Generale** verificare che la casella di controllo **Abilita questo punto di distribuzione per il contenuto pre-installato** non sia selezionata.  
 
-2.  Creare il file di contenuto pre-installazione come descritto nella sezione [Passaggio 1: Creare un file di contenuto pre-installazione](#BKMK_CreatePrestagedContentFile) in questo argomento.  
+2.  Creare il file di contenuto pre-installato utilizzando la sezione [Passaggio 1: Creare un file di contenuto pre-installato](#BKMK_CreatePrestagedContentFile) in questo argomento.  
 
-3.  Assegnare il contenuto al punto di distribuzione come descritto nella sezione [Passaggio 2: Assegnare il contenuto ai punti di distribuzione](#BKMK_AssignContentToDistributionPoint) in questo argomento.  
+3.  Assegnare il contenuto al punto di distribuzione usando la sezione [Passaggio 2: Assegnare il contenuto ai punti di distribuzione](#BKMK_AssignContentToDistributionPoint) in questo argomento.  
 
-4.  Nel server del sito estrarre il contenuto dal file di contenuto pre-installazione come descritto nella sezione [Passaggio 3: Estrarre il contenuto dal file di contenuto pre-installazione](#BKMK_ExportContentFromPrestagedContentFile) in questo argomento.  
+4.  Nel server del sito estrarre il contenuto dal file di contenuto pre-installato usando la sezione [Passaggio 3: Estrarre il contenuto dal file di contenuto pre-installazione](#BKMK_ExportContentFromPrestagedContentFile) in questo argomento.  
 
     > [!NOTE]  
     >  Quando il punto di distribuzione si trova su un sito secondario, attendere almeno 10 minuti e assegnare il contenuto al punto di distribuzione nel sito secondario usando una console di Configuration Manager connessa al sito primario padre.  
@@ -324,19 +325,19 @@ Quando il percorso del file di origine per una distribuzione viene aggiornato ag
 
 2.  Nell'area di lavoro **Raccolta software** , selezionare uno dei seguenti passaggi per il tipo di contenuto che si desidera distribuire:  
 
-    -   **Applicazioni**: espandere **Gestione applicazioni** > **Applicazioni** e selezionare le applicazioni da distribuire. Fare clic sulla scheda **Tipi di distribuzione** , quindi selezionare il tipo di distribuzione che si desidera aggiornare.  
+    -   **Applicazioni**: espandere **Gestione applicazioni** > **Applicazioni** e quindi selezionare le applicazioni da distribuire. Fare clic sulla scheda **Tipi di distribuzione** , quindi selezionare il tipo di distribuzione che si desidera aggiornare.  
 
-    -   **Pacchetti**: espandere **Gestione applicazioni** > **Pacchetti** e selezionare i pacchetti da aggiornare.  
+    -   **Pacchetti**: espandere **Gestione applicazioni** > **Pacchetti** e quindi selezionare i pacchetti da aggiornare.  
 
-    -   **Pacchetti di distribuzione**: espandere **Aggiornamenti software** > **Pacchetti di distribuzione** e selezionare i pacchetti di distribuzione da aggiornare.  
+    -   **Pacchetti di distribuzione**: espandere **Aggiornamenti software** > **Pacchetti di distribuzione** e quindi selezionare i pacchetti di distribuzione da aggiornare.  
 
-    -   **Pacchetti driver**: espandere **Sistemi operativi** > **Pacchetti driver** e selezionare i pacchetti driver da aggiornare.  
+    -   **Pacchetti driver**: espandere **Sistemi operativi** > **Pacchetti driver** e quindi selezionare i pacchetti driver da aggiornare.  
 
-    -   **Immagini del sistema operativo**: espandere **Sistemi operativi** > **Immagini del sistema operativo** e selezionare le immagini del sistema operativo da aggiornare.  
+    -   **Immagini del sistema operativo**: espandere **Sistemi operativi** > **Immagini del sistema operativo** e quindi selezionare le immagini del sistema operativo da aggiornare.  
 
-    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi** > **Programmi di installazione sistema operativo** e selezionare le immagini del sistema operativo da aggiornare.  
+    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi** > **Programmi di installazione sistema operativo** e quindi selezionare i programmi di installazione del sistema operativo da aggiornare.  
 
-    -   **Immagini d'avvio**: espandere **Sistemi operativi** >  **Immagini d'avvio** e selezionare le immagini d'avvio da aggiornare.  
+    -   **Immagini d'avvio**: espandere **Sistemi operativi** >  **Immagini d'avvio** e quindi selezionare le immagini di avvio da aggiornare.  
 
 3.  Nella scheda **Home** , nel gruppo **Distribuzione** , fare clic su **Aggiorna punti di distribuzione**, quindi fare clic su **OK** per confermare che si desidera aggiornare il contenuto.  
 
@@ -362,19 +363,19 @@ Quando il percorso del file di origine per una distribuzione viene aggiornato ag
 
 2.  Nell'area di lavoro **Raccolta software** , selezionare uno dei seguenti passaggi per il tipo di contenuto che si desidera distribuire:  
 
-    -   **Applicazioni**: espandere **Gestione applicazioni** >  **Applicazioni** e selezionare le applicazioni da ridistribuire.  
+    -   **Applicazioni**: espandere **Gestione applicazioni** >  **Applicazioni** e quindi selezionare l'applicazione da ridistribuire.  
 
-    -   **Pacchetti**: espandere **Gestione applicazioni** > **Pacchetti** e selezionare il pacchetto da ridistribuire.  
+    -   **Pacchetti**: espandere **Gestione applicazioni** > **Pacchetti** e quindi selezionare il pacchetto da ridistribuire.  
 
-    -   **Pacchetti di distribuzione**: espandere **Aggiornamenti software** >  **Pacchetti di distribuzione** e selezionare il pacchetto di distribuzione da ridistribuire.  
+    -   **Pacchetti di distribuzione**: espandere **Aggiornamenti software** >  **Pacchetti di distribuzione** e quindi selezionare il pacchetto di distribuzione da ridistribuire.  
 
-    -   **Pacchetti driver**: espandere **Sistemi operativi** > **Pacchetti driver** e selezionare i pacchetti driver da ridistribuire.  
+    -   **Pacchetti driver**: espandere **Sistemi operativi** > **Pacchetti driver** e quindi selezionare il pacchetto driver da ridistribuire.  
 
-    -   **Immagini del sistema operativo**: espandere **Sistemi operativi** > **Immagini del sistema operativo** e selezionare le immagini del sistema operativo da ridistribuire.  
+    -   **Immagini del sistema operativo**: espandere **Sistemi operativi** > **Immagini del sistema operativo** e quindi selezionare l'immagine del sistema operativo da ridistribuire.  
 
-    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi** > **Programmi di installazione sistema operativo** e selezionare l'immagine del sistema operativo da ridistribuire.  
+    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi** > **Programmi di installazione sistema operativo** e quindi selezionare il programma di installazione del sistema operativo da ridistribuire.  
 
-    -   **Immagini d'avvio**: espandere **Sistemi operativi** >  **Immagini d'avvio** e selezionare l'immagine d'avvio da ridistribuire.  
+    -   **Immagini d'avvio**: espandere **Sistemi operativi** >  **Immagini d'avvio** e quindi selezionare l'immagine di avvio da ridistribuire.  
 
 3.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 
@@ -426,19 +427,19 @@ Quando, tuttavia, il contenuto è associato a un altro pacchetto che è stato di
 
 2.  Nell'area di lavoro **Raccolta software** selezionare uno dei seguenti passaggi per il tipo di contenuto che si desidera eliminare:  
 
-    -   **Applicazioni**: espandere **Gestione applicazioni** > **Applicazioni** e selezionare le applicazioni da rimuovere.  
+    -   **Applicazioni**: espandere **Gestione applicazioni** > **Applicazioni** e quindi selezionare l'applicazione da rimuovere.  
 
-    -   **Pacchetti**: espandere **Gestione applicazioni** > **Pacchetti** e selezionare il pacchetto da rimuovere.  
+    -   **Pacchetti**: espandere **Gestione applicazioni** > **Pacchetti** e quindi selezionare il pacchetto da rimuovere.  
 
-    -   **Pacchetti di distribuzione**: espandere **Aggiornamenti software** > **Pacchetti di distribuzione** e selezionare il pacchetto di distribuzione da rimuovere.  
+    -   **Pacchetti di distribuzione**: espandere **Aggiornamenti software** > **Pacchetti di distribuzione** e quindi selezionare il pacchetto di distribuzione da rimuovere.  
 
-    -   **Pacchetti driver**: espandere **Sistemi operativi** > **Pacchetti driver** e selezionare i pacchetti driver da rimuovere.  
+    -   **Pacchetti driver**: espandere **Sistemi operativi** > **Pacchetti driver** e quindi selezionare il pacchetto driver da rimuovere.  
 
-    -   **Immagini del sistema operativo**: espandere **Sistemi operativi** > **Immagini del sistema operativo** e selezionare le immagini del sistema operativo da rimuovere.  
+    -   **Immagini del sistema operativo**: espandere **Sistemi operativi** > **Immagini del sistema operativo** e quindi selezionare l'immagine del sistema operativo da rimuovere.  
 
-    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi** > **Programmi di installazione sistema operativo** e selezionare il programma di installazione del sistema operativo da rimuovere.  
+    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi** > **Programmi di installazione sistema operativo** e quindi selezionare il programma di installazione del sistema operativo da rimuovere.  
 
-    -   **Immagini d'avvio**: espandere **Sistemi operativi** > **Immagini d'avvio** e selezionare l'immagine d'avvio da rimuovere.  
+    -   **Immagini d'avvio**: espandere **Sistemi operativi** > **Immagini d'avvio** e quindi selezionare l'immagine di avvio da rimuovere.  
 
 3.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 
@@ -491,19 +492,19 @@ Il processo di convalida del contenuto consente di verificare l'integrità dei f
 
 2.  Nell'area di lavoro **Raccolta software** selezionare uno dei seguenti passaggi per il tipo di contenuto che si desidera convalidare:  
 
-    -   **Applicazioni**: espandere **Gestione applicazioni** > **Applicazioni** e selezionare le applicazioni da convalidare.  
+    -   **Applicazioni**: espandere **Gestione applicazioni** > **Applicazioni** e quindi selezionare l'applicazione da convalidare.  
 
-    -   **Pacchetti**: espandere **Gestione applicazioni** > **Pacchetti** e selezionare il pacchetto da convalidare.  
+    -   **Pacchetti**: espandere **Gestione applicazioni** > **Pacchetti** e quindi selezionare il pacchetto da convalidare.  
 
-    -   **Pacchetti di distribuzione**: espandere **Aggiornamenti software** > **Pacchetti di distribuzione** e selezionare il pacchetto di distribuzione da convalidare.  
+    -   **Pacchetti di distribuzione**: espandere **Aggiornamenti software** > **Pacchetti di distribuzione** e quindi selezionare il pacchetto di distribuzione da convalidare.  
 
-    -   **Pacchetti driver**: espandere **Sistemi operativi** > **Pacchetti driver** e selezionare i pacchetti driver da convalidare.  
+    -   **Pacchetti driver**: espandere **Sistemi operativi** > **Pacchetti driver** e quindi selezionare il pacchetto driver da convalidare.  
 
-    -   **Immagini del sistema operativo**: espandere **Sistemi operativi** > **Immagini del sistema operativo** e selezionare le immagini del sistema operativo da convalidare.  
+    -   **Immagini del sistema operativo**: espandere **Sistemi operativi** > **Immagini del sistema operativo** e quindi selezionare l'immagine del sistema operativo da convalidare.  
 
-    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi** >  **Programmi di installazione sistema operativo** e selezionare l'immagine del sistema operativo da convalidare.  
+    -   **Programmi di installazione sistema operativo**: espandere **Sistemi operativi** >  **Programmi di installazione sistema operativo** e quindi selezionare il programma di installazione del sistema operativo da convalidare.  
 
-    -   **Immagini d'avvio**: espandere **Sistemi operativi** > **Immagini d'avvio** e selezionare l'immagine d'avvio da pre-installare.  
+    -   **Immagini d'avvio**: espandere **Sistemi operativi** > **Immagini d'avvio** e quindi selezionare l'immagine di avvio da pre-installare.  
 
 3.  Nella scheda **Home** , nel gruppo **Proprietà** , fare clic su **Proprietà**.  
 

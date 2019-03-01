@@ -10,12 +10,13 @@ ms.assetid: f7832d83-9ae2-4530-8a77-790e0845e12f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 85ce1c4b5201c29ffa3543357f50a379c1b11e7f
-ms.sourcegitcommit: 84afecee44200e27d1d5bb5ed2d54fd6a8c51617
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e876e34929479654240ff220c3cad91043da0f83
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43053882"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56123138"
 ---
 # <a name="back-up-a-configuration-manager-site"></a>Eseguire il backup di un sito di Configuration Manager
 
@@ -29,7 +30,7 @@ Le sezioni di questo articolo illustrano come eseguire un backup dei siti. Per r
 
 ## <a name="considerations-before-creating-a-backup"></a>Considerazioni prima della creazione di un backup  
 
--   Se si usa un gruppo di disponibilità SQL Server AlwaysOn per ospitare il database del sito, modificare i piani di backup e ripristino come descritto in [Preparare l'uso di gruppi di disponibilità SQL Server AlwaysOn con Configuration Manager](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database#changes-for-site-backup).  
+-   Se si usa un gruppo di disponibilità SQL Server Always On per ospitare il database del sito: Modificare i piani di backup e ripristino come descritto in [Preparare l'uso di gruppi di disponibilità Always On](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database#changes-for-site-backup).  
 
 -   Il ripristino del database del sito può essere eseguito dall'attività di backup di Configuration Manager. Può anche essere usato un backup del database del sito creato con un altro processo.   
 
@@ -83,11 +84,11 @@ Le informazioni sullo stato di backup del sito vengono scritte nel file **Smsbku
     > [!IMPORTANT]  
     >  Per impedire la manomissione dei file di backup, archiviare i file in una posizione sicura. Il percorso di backup più sicuro è un'unità locale, che consente di impostare le autorizzazioni file NTFS per la cartella. Configuration Manager non esegue la crittografia dei dati di backup archiviati nel percorso di backup.  
 
-    -   **Unità locale nel server del sito per il database e i dati del sito**: specifica che questa attività archivia i file di backup per il sito e il database del sito nel percorso indicato nel disco rigido locale del server del sito. Creare la cartella locale prima dell'esecuzione dell'attività di backup. L'account di sistema locale nel server del sito deve disporre delle autorizzazioni file NTFS di **Scrittura** nella cartella locale per il backup del server del sito. L'account di sistema locale nel computer che esegue SQL Server deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella per il backup del database del sito.  
+    -   **Unità locale nel server del sito per il database e i dati del sito**: specifica che l'attività deve archiviare i file di backup per il sito e il database del sito nel percorso specificato nell'unità disco locale del server del sito. Creare la cartella locale prima dell'esecuzione dell'attività di backup. L'account di sistema locale nel server del sito deve disporre delle autorizzazioni file NTFS di **Scrittura** nella cartella locale per il backup del server del sito. L'account di sistema locale nel computer che esegue SQL Server deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella per il backup del database del sito.  
 
-    -   **Percorso di rete (nome UNC) per il database e i dati del sito**: specifica che questa attività archivia i file di backup per il sito e il database del sito nel percorso di rete indicato. Creare la condivisione prima dell'esecuzione dell'attività di backup. L'account computer del server del sito deve disporre delle autorizzazioni di condivisione e NTFS di **Scrittura** per la cartella di rete condivisa. Se SQL Server è installato su un altro computer, l'account computer di SQL Server deve avere le stesse autorizzazioni.  
+    -   **Percorso di rete (nome UNC) per il database e i dati del sito**: specifica che l'attività deve archiviare i file di backup per il sito e il database del sito nel percorso di rete indicato. Creare la condivisione prima dell'esecuzione dell'attività di backup. L'account computer del server del sito deve disporre delle autorizzazioni di condivisione e NTFS di **Scrittura** per la cartella di rete condivisa. Se SQL Server è installato su un altro computer, l'account computer di SQL Server deve avere le stesse autorizzazioni.  
 
-    -   **Unità locali nel server del sito e SQL Server**: specifica che l'attività archivia i file di backup per il sito nel percorso specificato sull'unità locale del server del sito. L'attività archivia i file di backup per il database del sito nel percorso specificato nell'unità locale del server del database del sito. Creare le cartelle locali prima dell'esecuzione dell'attività di backup. L'account computer del server del sito deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella creata nel server del sito. L'account computer di SQL Server deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella creata nel server di database del sito. Questa opzione è disponibile solo quando il database del sito non è installato nel server del sito.  
+    -   **Unità locali nel server del sito e in SQL Server**: specifica che l'attività deve archiviare i file di backup per il sito nel percorso specificato nell'unità locale del server del sito. L'attività archivia i file di backup per il database del sito nel percorso specificato nell'unità locale del server del database del sito. Creare le cartelle locali prima dell'esecuzione dell'attività di backup. L'account computer del server del sito deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella creata nel server del sito. L'account computer di SQL Server deve disporre delle autorizzazioni NTFS di **Scrittura** nella cartella creata nel server di database del sito. Questa opzione è disponibile solo quando il database del sito non è installato nel server del sito.  
 
     > [!NOTE]  
     >   L'opzione per selezionare la destinazione di backup è disponibile solo quando si specifica il percorso di rete della destinazione di backup.  

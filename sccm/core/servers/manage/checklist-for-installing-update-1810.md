@@ -10,12 +10,13 @@ ms.assetid: b87ac054-9b37-4725-a3f3-2340cfb10bff
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6ea093b71d19c2cee35caa748ae60f76a95b078c
-ms.sourcegitcommit: 54e5786875c4e5f5c1b54e38ed59e96344faf9b4
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 99bde59429af4d75e7e1dfab42d627d3a973efe6
+ms.sourcegitcommit: ceec0e20bf801071f2a05233f984cf17acc3fd29
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53817767"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265013"
 ---
 # <a name="checklist-for-installing-update-1810-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1810 di Configuration Manager
 
@@ -31,7 +32,7 @@ Per ottenere l'aggiornamento per la versione 1810, è necessario usare un punto 
 
     -   Il file dmpdownloader.log può indicare che il processo dmpdownloader è in attesa di un intervallo prima di cercare gli aggiornamenti. Per riavviare il download dei file di ridistribuzione dell'aggiornamento, riavviare il servizio **SMS_Executive** nel server del sito.
 
-    -   Un altro problema di download comune si verifica quando le impostazioni del server proxy impediscono il download da http://silverlight.dlservice.microsoft.com e da http://download.microsoft.com.
+    -   Un altro problema di download comune si verifica quando le impostazioni del server proxy impediscono il download da http://silverlight.dlservice.microsoft.com, da http://download.microsoft.com e/o da http://go.microsoft.com.
 
 Per altre informazioni sull'installazione degli aggiornamenti, vedere [Aggiornamenti e manutenzione nella console](/sccm/core/servers/manage/updates#a-namebkmkinconsolea-in-console-updates-and-servicing).
 

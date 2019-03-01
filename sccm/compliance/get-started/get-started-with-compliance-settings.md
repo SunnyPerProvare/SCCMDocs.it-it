@@ -10,12 +10,13 @@ ms.assetid: a2742d52-851e-4abc-b623-d12d91684c0b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ec350bdb6b3b421d95bf13eafc562919bccc3c38
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: f4e85b6886947fe0ac720f5840dcefd91a441d3e
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32335610"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56130946"
 ---
 # <a name="get-started-with-compliance-settings-in-system-center-configuration-manager"></a>Introduzione alle impostazioni di conformità in System Center Configuration Manager
 
@@ -109,8 +110,7 @@ Per altre informazioni, vedere [Upgrade Windows devices with the edition upgrade
 
 
 ## <a name="microsoft-edge-browser-profiles"></a>Profili del browser Microsoft Edge
-<!-- 1357310 -->
-A partire dalla versione 1802 i clienti che usano il Web browser [Microsoft Edge](https://technet.microsoft.com/microsoft-edge/bb265256) nei client Windows 10 possono creare un criterio delle impostazioni di conformità per definire diverse impostazioni di Microsoft Edge. 
+<!-- 1357310 --> A partire dalla versione 1802 i clienti che usano il Web browser [Microsoft Edge](https://technet.microsoft.com/microsoft-edge/bb265256) nei client Windows 10 possono creare un criterio delle impostazioni di conformità per definire diverse impostazioni di Microsoft Edge. 
 
 Per altre informazioni, vedere [Profili del browser Microsoft Edge](/sccm/compliance/deploy-use/browser-profiles).
 

@@ -9,12 +9,13 @@ ms.assetid: 57413dd3-b2f8-4a5f-b27f-8464d357caff
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: f5a0601af46d4d5f835822d3e5c551096512ceb3
-ms.sourcegitcommit: 7eebd112a9862bf98359c1914bb0c86affc5dbc0
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 554e67e171fe5b800d231d257105531dcd633baf
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42590877"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56131575"
 ---
 # <a name="configure-role-based-administration-for-configuration-manager"></a>Configurare l'amministrazione basata su ruoli per Configuration Manager   
 
@@ -154,9 +155,9 @@ In Configuration Manager l'amministrazione basata su ruoli combina ruoli di sicu
 
 6.  Scegliere una delle due opzioni seguenti per definire il comportamento degli oggetti a protezione diretta per il nuovo utente:  
 
-    -   **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**: questa opzione associa l'utente amministratore all'ambito di protezione **Tutto** e alle raccolte **Tutti i sistemi** e **Tutti gli utenti e i gruppi di utenti**. I ruoli di sicurezza assegnati all'utente definiscono l'accesso agli oggetti. I nuovi oggetti creati dall'utente amministratore vengono assegnati all'ambito di protezione **Predefinito** .  
+    -   **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**: questa opzione associa l'utente amministratore all'ambito di protezione **Tutto** e alle raccolte **Tutti i sistemi** e **Tutti gli utenti e i gruppi utente**. I ruoli di sicurezza assegnati all'utente definiscono l'accesso agli oggetti. I nuovi oggetti creati dall'utente amministratore vengono assegnati all'ambito di protezione **Predefinito** .  
 
-    -   **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**: per impostazione predefinita, questa opzione associa l'utente amministratore all'ambito di protezione **Predefinito** e alle raccolte **Tutti i sistemi** e **Tutti gli utenti e i gruppi di utenti**. Tuttavia, le raccolte e gli ambiti di protezione effettivi sono limitati a quelli associati all'account utilizzato per creare il nuovo utente amministratore. Questa opzione supporta l'aggiunta o la rimozione di raccolte e ambiti di protezione per personalizzare l'ambito amministrativo dell'utente amministratore.  
+    -   **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**: per impostazione predefinita questa opzione associa l'utente amministratore all'ambito di protezione **Predefinito** e alle raccolte **Tutti i sistemi** e **Tutti gli utenti e i gruppi utente**. Tuttavia, le raccolte e gli ambiti di protezione effettivi sono limitati a quelli associati all'account utilizzato per creare il nuovo utente amministratore. Questa opzione supporta l'aggiunta o la rimozione di raccolte e ambiti di protezione per personalizzare l'ambito amministrativo dell'utente amministratore.  
 
     > [!IMPORTANT]  
     >  Le opzioni precedenti associano ogni raccolta e ambito di protezione assegnati a ogni ruolo di sicurezza assegnato all'utente amministratore. È possibile usare una terza opzione, **Associa ruoli di protezione assegnati a raccolte e ambiti di protezione specifici**, per associare singoli ruoli di sicurezza a raccolte e ambiti di protezione specifici. Questa terza opzione è disponibile dopo aver creato il nuovo utente amministratore, quando si modifica l'utente amministratore.  
@@ -172,11 +173,11 @@ In Configuration Manager l'amministrazione basata su ruoli combina ruoli di sicu
 
  Quando si modifica un utente amministratore, è possibile modificare il comportamento di associazione degli oggetti a protezione diretta ai ruoli di sicurezza assegnati. Di seguito, i tre comportamenti che è possibile selezionare:  
 
--   **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**: questa opzione associa l'utente amministratore all'ambito **Tutto** e alle raccolte **Tutti i sistemi** e **Tutti gli utenti e i gruppi di utenti**. I ruoli di sicurezza assegnati all'utente definiscono l'accesso agli oggetti.  
+-   **Tutte le istanze degli oggetti collegati ai ruoli di protezione assegnati**: questa opzione associa l'utente amministratore all'ambito **Tutto** e alle raccolte **Tutti i sistemi** e **Tutti gli utenti e i gruppi utente**. I ruoli di sicurezza assegnati all'utente definiscono l'accesso agli oggetti.  
 
--   **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**: questa opzione associa l'utente amministratore agli stessi ambiti e raccolte di protezione associati all'account usato per configurare l'utente amministratore. Questa opzione supporta l'aggiunta o la rimozione di raccolte e ruoli di sicurezza per personalizzare l'ambito amministrativo dell'utente amministratore.  
+-   **Solo le istanze di oggetti assegnati alle raccolte o agli ambiti di protezione specificati**: questa opzione associa l'utente amministratore agli stessi ambiti di protezione e alle stesse raccolte associate all'account utilizzato per configurare l'utente amministratore. Questa opzione supporta l'aggiunta o la rimozione di raccolte e ruoli di sicurezza per personalizzare l'ambito amministrativo dell'utente amministratore.  
 
--   **Associa ruoli di sicurezza assegnati a raccolte e ambiti di protezione specifici**: questa opzione consente di creare associazioni specifiche tra i singoli ruoli di sicurezza e gli ambiti di protezione e le raccolte specifici per l'utente.  
+-   **Associa ruoli di protezione assegnati a raccolte e ambiti di protezione specifici**: questa opzione consente di creare associazioni specifiche tra raccolte, ruoli di sicurezza e ambiti di protezione specifici per l'utente.  
 
     > [!NOTE]  
     >  Questa opzione è disponibile solo quando si modificano le proprietà di un utente amministratore.  

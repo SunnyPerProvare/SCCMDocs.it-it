@@ -9,12 +9,13 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 7304730b-b517-4c76-aadd-4cbd157dc971
-ms.openlocfilehash: d07c30d6a1e4fd1314b6e69ac157577ae0163696
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 013d00fd7c207df45b0f6b7910283c3e8b60b44d
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32333740"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56137171"
 ---
 # <a name="security-and-privacy-for-the-cloud-management-gateway"></a>Sicurezza e privacy per il gateway di gestione cloud
 
@@ -67,8 +68,7 @@ Perché i client basati su Internet possano accedere, è necessario pubblicare l
 <a name="bkmk_ctl"></a>
 
 ### <a name="review-entries-in-the-sites-certificate-trust-list"></a>Rivedere le voci dell'elenco scopi consentiti ai certificati del sito
-<!--503739-->
-Ogni sito di Configuration Manager include un elenco di autorità di certificazione radice attendibili, vale a dire l'elenco scopi consentiti ai certificati. Per visualizzare e modificare l'elenco, accedere all'area di lavoro Amministrazione, espandere Configurazione del sito e selezionare Siti. Selezionare un sito e fare clic su Proprietà nella barra multifunzione. Passare alla scheda Comunicazione computer client e selezionare **Imposta** in Autorità di certificazione radice attendibili.
+<!--503739--> Ogni sito di Configuration Manager include un elenco di autorità di certificazione radice attendibili, vale a dire l'elenco scopi consentiti ai certificati. Per visualizzare e modificare l'elenco, accedere all'area di lavoro Amministrazione, espandere Configurazione del sito e selezionare Siti. Selezionare un sito e fare clic su Proprietà nella barra multifunzione. Passare alla scheda Comunicazione computer client e selezionare **Imposta** in Autorità di certificazione radice attendibili.
  
 Usare un elenco scopi consentiti più restrittivo per un sito con un gateway di gestione cloud che usa l'autenticazione client PKI. In caso contrario, i client con certificati di autenticazione client emessi da qualsiasi radice attendibile che esiste già nel punto di gestione vengono automaticamente accettati per la registrazione del client.
 

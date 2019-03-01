@@ -10,12 +10,13 @@ ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b059fd3b8511a3cbbf308ea7a3ee21a4ec9dbfaa
-ms.sourcegitcommit: 6e42785c8c26e3c75bf59d3df7802194551f58e1
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: d8eff4154f5799ef0d6411b077f50753d203310e
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52456720"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56126778"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
@@ -315,7 +316,7 @@ I suggerimenti seguenti consentono di migliorare le prestazioni del gateway di g
 
 Non è necessario aprire alcuna porta in ingresso per la rete locale. Il punto di connessione del servizio e il punto di connessione del gateway di gestione cloud avviano tutte le comunicazioni con Azure e il gateway di gestione cloud. Questi due ruoli del sistema devono essere in grado di creare connessioni in uscita per il cloud Microsoft. Il punto di connessione del servizio distribuisce ed esegue il monitoraggio del servizio in Azure e pertanto deve essere in modalità online. Il punto di connessione del gateway di gestione cloud si connette a gateway per gestire le comunicazioni tra il gateway di gestione cloud e i ruoli del sistema del sito locali.
 
-Il diagramma seguente rappresenta un flusso di dati concettuale di base per il gateway di gestione cloud: ![flusso di dati del gateway di gestione cloud](media/cmg-data-flow.png)
+Il diagramma seguente rappresenta un flusso di dati concettuale di base per il gateway di gestione cloud: ![Flusso di dati del gateway di gestione cloud](media/cmg-data-flow.png)
    1. Il punto di connessione del servizio si connette ad Azure tramite la porta HTTPS 443. Esegue l'autenticazione usando Azure AD o il certificato di gestione di Azure. Il punto di connessione del servizio distribuisce il gateway di gestione cloud in Azure. Il gateway di gestione cloud crea il servizio cloud HTTPS usando il certificato di autenticazione del server.  
 
    2. Il punto di connessione del gateway di gestione cloud si connette al gateway in Azure tramite TCP-TLS o HTTPS. Mantiene la connessione aperta e crea il canale per le future comunicazioni bidirezionali.   
@@ -359,7 +360,7 @@ Il sistema del sito del punto di connessione del gateway di gestione cloud suppo
 
 - Per il recupero dei token di Azure AD da parte della console e del client di Configuration Manager: ActiveDirectoryEndpoint (https://login.microsoftonline.com/)  
 
-- Per l'individuazione degli utenti di Azure AD: endpoint Graph di Azure AD (https://graph.windows.net/)  
+- Per l'individuazione utente Azure AD: Endpoint Graph AAD (https://graph.windows.net/)  
 
 
 

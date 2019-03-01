@@ -10,12 +10,13 @@ ms.assetid: 9edc214f-f405-456d-80df-8adcc2a5428d
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 67a052fffcaf6ad105f417649aa9f3826922ce80
-ms.sourcegitcommit: 1826664216c61691292ea2a79e836b11e1e8a118
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 2188ce295f999b392166c99133822ad8fc1e441e
+ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39385892"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56125239"
 ---
 # <a name="deployment-monitoring-tool"></a>Deployment Monitoring Tool
 
@@ -39,11 +40,11 @@ Deployment Monitoring Tool è uno [strumento di Configuration Manager](/sccm/cor
 
 Deployment Monitoring Tool supporta solo l'interfaccia utente grafica. Per avviare lo strumento, eseguire **DeploymentMonitoringTool.exe** come amministratore. Sono disponibili tre viste:  
 
-- **Proprietà client**: un elenco di attributi utili relativi al dispositivo e al client di Configuration Manager. Questa vista è quella predefinita.   
+- **Proprietà client**: elenco di attributi utili relativi al dispositivo e al client di Configuration Manager. Questa vista è quella predefinita.   
 
-- **Distribuzioni**: consente di visualizzare tutte le distribuzioni di destinazione correnti. Selezionare una distribuzione nel riquadro dei risultati per visualizzare altre informazioni nel riquadro dei dettagli.  
+- **Distribuzioni**: visualizzazione di tutte le distribuzioni di destinazione correnti. Selezionare una distribuzione nel riquadro dei risultati per visualizzare altre informazioni nel riquadro dei dettagli.  
 
-- **Tutti gli aggiornamenti**: visualizza tutti gli aggiornamenti software e il relativo stato.  
+- **Tutti gli aggiornamenti**: visualizzazione di tutti gli aggiornamenti software e del relativo stato.  
 
 Per copiare i dati in qualsiasi visualizzazione, selezionare una cella e premere **CTRL** + **C**.
 
@@ -52,9 +53,9 @@ Per copiare i dati in qualsiasi visualizzazione, selezionare una cella e premere
 
 Nel menu **Azioni** sono disponibili le seguenti azioni:  
 
-- **Connect to remote machine** (Connettersi al computer remoto): selezionare un computer a cui connettersi. Se non si specifica un nome utente e password, usa le credenziali correnti. Fare clic su **Salva** per connettersi a un computer remoto.  
+- **Connect to remote machine** (Connettersi a un computer remoto): selezionare un computer a cui connettersi. Se non si specifica un nome utente e password, usa le credenziali correnti. Fare clic su **Salva** per connettersi a un computer remoto.  
 
-- **Esporta dati**: selezionare il file su cui scrivere i dati e fare clic su **Salva**. Usare il file XML esportato per la risoluzione remota dei problemi in un computer diverso.  
+- **Esporta dati**: selezionare il file in cui scrivere i dati e fare clic su **Salva**. Usare il file XML esportato per la risoluzione remota dei problemi in un computer diverso.  
 
 - **Importa dati**: selezionare un file da importare nello strumento.  
 
