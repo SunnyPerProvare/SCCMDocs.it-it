@@ -5,18 +5,18 @@ description: Informazioni su come cambiare l'autorità MDM da Configuration Mana
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 12/05/2017
+ms.date: 02/27/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: be503ec9-5324-4f7c-bcf5-77204328e99c
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bcd70b708208e2c49a1a7b6fff12d0a1cf5f16f0
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 9d6a909be4b1817b9a251046d666839e2e351443
+ms.sourcegitcommit: 0bf253085adeca0d9ea62d76497eb5ebf5ce89da
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132936"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "57012429"
 ---
 # <a name="change-your-mdm-authority-to-intune-standalone"></a>Cambiare l'autorità MDM in Intune autonomo
 
@@ -27,62 +27,112 @@ ms.locfileid: "56132936"
 > [!Important]    
 > Per cambiare l'autorità MDM senza prima eseguire la migrazione degli utenti MDM ibridi a Intune, vedere [Cambiare l'autorità MDM](change-mdm-authority.md).
 
-Questo articolo include informazioni su come modificare un tenant di Microsoft Intune esistente configurato dalla console di Configuration Manager (ibrido) a Intune autonomo e presuppone che siano già stati completati i passaggi seguenti:
+Questo articolo fornisce informazioni su come modificare un tenant di Microsoft Intune esistente configurato dalla console di Configuration Manager (ibrido) a Intune autonomo. Si presuppone di che aver già completato i passaggi seguenti:
 - Uso dello [strumento di importazione dei dati di Intune](migrate-import-data.md) per importare gli oggetti di Configuration Manager in Intune. 
 - [Preparazione di Intune per la migrazione degli utenti](migrate-prepare-intune.md) per assicurarsi che gli utenti e i relativi dispositivi continuino a essere gestiti dopo la migrazione.
 - [Modifica dell'autorità MDM per utenti specifici (autorità MDM mista)](migrate-mixed-authority.md) per iniziare a gestire i dispositivi utente dal portale di Azure.
 
 
-## <a name="users-and-devices-that-have-not-been-migrated"></a>Utenti e dispositivi di cui non è stata eseguita la migrazione
-È già stata eseguita la migrazione di molti utenti e sono stati eseguiti test delle funzionalità di Intune per verificare che tutto funzioni come previsto. Di conseguenza, i criteri, i profili, le app e altri elementi sono stati configurati in Intune e sono stati testati accuratamente gli oggetti nei dispositivi. Non dovrebbero essere necessarie nuove configurazioni per i criteri a livello di tenant dopo la modifica nell'autorità MDM. Tuttavia, per gli utenti e i dispositivi di cui non è stata eseguita la migrazione in precedenza, vedere le seguenti informazioni su cosa aspettarsi dopo la modifica nell'autorità MDM:    
-- È probabile che vi sia un tempo di transizione (fino a otto ore) prima dell'archiviazione del dispositivo e della sua sincronizzazione con il servizio.
-- I dispositivi devono connettersi con il servizio dopo la modifica, in modo che le impostazioni dalla nuova autorità MDM (Intune autonomo) sostituiscano le impostazioni esistenti nel dispositivo.
-- Alcune delle impostazioni di base (ad esempio i profili) dell'autorità MDM precedente (ibrido) rimarranno nel dispositivo per un massimo di sette giorni. 
-- Per i dispositivi senza utenti associati (generalmente con il Device Enrollment Program per dispositivi iOS o scenari di registrazione in massa) non viene eseguita la migrazione alla nuova autorità MDM. Per tali dispositivi è necessario chiamare il supporto tecnico per chiedere assistenza nel passaggio alla nuova autorità MDM.
+## <a name="users-and-devices-that-havent-been-migrated"></a>Utenti e dispositivi che non è stata eseguita la migrazione
+Già eseguita la migrazione di molti utenti e testato la funzionalità di Intune per assicurarsi che tutto funzioni come previsto. Si è configurato i criteri, profili e le App in Intune e testata accuratamente gli oggetti nei dispositivi. Non dovrebbero essere necessarie nuove configurazioni per i criteri a livello di tenant dopo la modifica nell'autorità MDM. Tuttavia, per gli utenti e dispositivi che non hanno precedentemente migrati, esaminare le informazioni seguenti su cosa aspettarsi dopo la modifica nell'autorità MDM:    
+
+- È probabile che un tempo di transizione fino a otto ore prima che il dispositivo e della sua sincronizzazione con il servizio.  
+
+- I dispositivi devono connettersi con il servizio dopo la modifica, in modo che le impostazioni dalla nuova autorità MDM (Intune autonomo) sostituiscano le impostazioni esistenti nel dispositivo.  
+
+- Alcune delle impostazioni di base (ad esempio i profili) dell'autorità MDM precedente (ibrido) rimarranno nel dispositivo per un massimo di sette giorni.  
+
+- Per i dispositivi senza utenti associati non viene eseguita la migrazione alla nuova autorità MDM. Questi dispositivi sono in genere con gli scenari per iOS Device Enrollment Program o con registrazione in blocco. Per tali dispositivi è necessario chiamare il supporto tecnico per chiedere assistenza nel passaggio alla nuova autorità MDM.
+
+
 
 ## <a name="prerequisites"></a>Prerequisiti
 Esaminare le informazioni seguenti per preparare il passaggio alla nuova autorità MDM:
 - Perché sia disponibile l'opzione per cambiare l'autorità MDM è necessario disporre di Configuration Manager 1610 o versioni successive.
-- Assicurarsi che a tutti gli utenti attualmente gestiti da un'autorità MDM ibrida sia assegnata una licenza di Intune/EMS prima della modifica dell'autorità MDM. Questa licenza garantisce che l'utente e i suoi dispositivi siano gestiti da Intune autonomo dopo la modifica all'autorità MDM. Per altre informazioni, vedere [Assign Intune licenses to your user accounts](https://docs.microsoft.com/intune/get-started/start-with-a-paid-subscription-to-microsoft-intune-step-4) (Assegnare licenze di Intune agli account utente).
+- Assicurarsi di assegnare una licenza Intune o EMS a tutti gli utenti attualmente gestiti da MDM ibrida. La licenza garantisce che l'utente e i suoi dispositivi siano gestiti da Intune autonomo dopo la modifica nell'autorità MDM. Per altre informazioni, vedere [Assign Intune licenses to your user accounts](https://docs.microsoft.com/intune/get-started/start-with-a-paid-subscription-to-microsoft-intune-step-4) (Assegnare licenze di Intune agli account utente).
 - Assicurarsi che all'account utente amministratore sia assegnata una licenza di Intune/EMS.
 
 ## <a name="change-the-mdm-authority-to-intune"></a>Cambiare l'autorità MDM in Intune
 Usa la procedura seguente per modificare l'autorità MDM a livello di tenant in Intune.
 
-1. Nella console di Configuration Manager passare ad **Amministrazione** &gt; **Panoramica** &gt; **Servizi cloud** &gt; **Sottoscrizione a Microsoft Intune** ed eliminare la sottoscrizione a Intune esistente.
-2. Selezionare **Cambia l'autorità MDM in Microsoft Intune** e fare clic su **Avanti**.
+1. Nella console di Configuration Manager passare ad il **Administration** dell'area di lavoro, espandere **servizi Cloud**e selezionare il **sottoscrizione a Microsoft Intune** nodo. Eliminare la sottoscrizione di Intune esistente.  
 
-   ![Finestra di dialogo Rimuovi la sottoscrizione di Microsoft Intune](media/mdm-change-delete-subscription.png)
-3. Accedere al tenant di Intune usato in origine quando è stata configurata l'autorità MDM in Configuration Manager.
-4. Fare clic su **Avanti** e completare la procedura guidata.
-5. L'autorità MDM è ora reimpostata. La sottoscrizione a Intune non è più visualizzata nel nodo Sottoscrizioni a Microsoft Intune della console di Configuration Manager.
-6. Accedere al [portale di Intune](https://aka.ms/IntunePortal).
-7. Nel pannello di Microsoft Intune fare clic su **Registrazione del dispositivo**.
-8. Nel pannello Panoramica di Registrazione del dispositivo vedere la proprietà **Autorità MDM**.
+2. Selezionare **cambia l'autorità MDM in Microsoft Intune**, quindi selezionare **successivo**.
+
+    ![Finestra di dialogo Rimuovi la sottoscrizione di Microsoft Intune](media/mdm-change-delete-subscription.png)  
+
+3. Accedere al tenant di Intune usato in origine quando è stata configurata l'autorità MDM in Configuration Manager. Selezionare **successivo** e completare la procedura guidata.
+
+    L'autorità MDM è ora reimpostata. La sottoscrizione a Intune non è più visualizzata nel nodo Sottoscrizioni a Microsoft Intune della console di Configuration Manager.  
+
+4. Accedi per il [portale di Intune](https://aka.ms/IntunePortal).
+
+5. Selezionare **registrazione del dispositivo**.  
+
+6. La registrazione di dispositivi panoramica, vedere la **autorità MDM** proprietà.
 
    > [!Important]    
-   > Non usare la console di Intune classica. È necessario accedere a Intune nel portale di Azure.
-9. Verificare che l'autorità MDM sia stata modificata in **Microsoft Intune**. 
+   > Non usare la console classica di Intune. Accedere a Intune nel portale di Azure.  
+
+7. Verificare che l'autorità MDM sia stata modificata in **Microsoft Intune**. 
+
+
+
+## <a name="after-migration"></a>Dopo la migrazione
+
+Una volta completata la modifica dell'autorità MDM, esaminare le informazioni seguenti:
+
+- Durante il cambiamento nell'autorità MDM non vi sarà alcun impatto visibile sugli utenti finali.  
+
+- Non è necessario riconfigurare i criteri a livello di tenant.  
+
+- Se è necessario modificare i criteri a livello di tenant, eseguire questa azione da Intune nel portale di Azure.  
+
+- In caso di problemi con dispositivi specifici, annullare e ripetere la registrazione dei dispositivi. Questa azione Ottiene siano connessi alla nuova autorità e gestiti nel minor tempo.
+
+
+#### <a name="validate-new-device-enrollment"></a>Convalidare nuova registrazione del dispositivo
+Dopo aver cambiato l'autorità MDM, è possibile usare la procedura seguente per convalidare che i nuovi dispositivi siano registrati correttamente con la nuova autorità:   
+1. Registrare un nuovo dispositivo
+2. Assicurarsi che il dispositivo appena registrato visualizzato in Intune
+3. Avviare un'azione del dispositivo dal portale di Intune, ad esempio [blocco remoto](https://docs.microsoft.com/intune/device-remote-lock). Se ha esito positivo, il dispositivo è gestito correttamente dalla nuova autorità MDM.
+
+
+#### <a name="for-users-and-devices-that-you-havent-previously-migrated"></a>Per gli utenti e dispositivi che non è stata precedentemente eseguita la migrazione
+
+- Verificare che i dispositivi sono ora visualizzati nel **dispositivi** pagina come dispositivi gestiti. Prima di visualizzarlo, questi dispositivi devono archiviare ed eseguire la sincronizzazione con il servizio dopo la modifica nell'autorità MDM. 
+
+- Quando il servizio Intune rileva che l'autorità MDM di un tenant è cambiata, invia un messaggio di notifica a tutti i dispositivi registrati. Indica ai dispositivi di archiviazione e la sincronizzazione con il servizio. Questa notifica viene eseguita all'esterno del controllo aggiuntivo regolarmente pianificato. Dopo aver cambiato l'autorità MDM per il tenant da ibrida a Intune autonomo, tutti i dispositivi online si connettono con il servizio. Si riceveranno la nuova autorità MDM e quindi vengono gestiti da Intune autonomo nel. Non vi è alcuna interruzione per la gestione e protezione di questi dispositivi.
+
+- Per i dispositivi sono offline durante o immediatamente dopo la modifica nell'autorità MDM, collegati ed eseguire la sincronizzazione con il servizio mediante la nuova autorità MDM quando è possibile accendere e online.  
+
+- È possibile passare rapidamente alla nuova autorità MDM avviando manualmente un'archiviazione dal dispositivo al servizio. Usare l'app portale aziendale per avviare un controllo di conformità.
+
+- È una situazione intermedia quando un dispositivo è offline durante la modifica nell'autorità MDM e quando tale dispositivo viene archiviato nel servizio. Per assicurarsi che il dispositivo rimanga protetto e funzionale durante questo periodo, i profili seguenti rimarranno sul dispositivo fino a sette giorni. Possono anche rimanere fino a quando il dispositivo si connette con la nuova autorità MDM e riceve le nuove impostazioni che sovrascriveranno quelle esistenti:
+    - Profilo di posta elettronica
+    - Profilo VPN
+    - Profilo certificato
+    - Profilo Wi-Fi
+    - Profili di configurazione
+
+- Per i dispositivi che non sono associati a un utente, contattare il supporto per modificare l'autorità MDM. 
+
+#### <a name="bkmk-ki-dep"></a> Record dei dispositivi DEP di Apple
+<!--ICM 105091970--> Dopo aver completato la migrazione da MDM ibrido, è possibile notare un dispositivo Apple DEP record rimangono nelle console di Configuration Manager. Dopo aver cambiato l'autorità MDM a Intune, è possibile rimuovere questi dispositivi da Configuration Manager. 
+
+Esistono due soluzioni alternative:
+
+- Se viene visualizzato questo comportamento prima di cambiare l'autorità MDM, quindi eliminare i record DEP da Configuration Manager.  
+
+- Se già stata eseguita la migrazione e sta ancora usando Configuration Manager, usare il comando SQL seguente sul database del sito per rimuovere i record:  
+
+    ```SQL
+    Delete from MDMCorpOwnedDevices where DeviceType=8 and DiscoverySources=4
+    ```
+
+
 
 ## <a name="next-steps"></a>Passaggi successivi
-Una volta completata la modifica dell'autorità MDM, esaminare le informazioni seguenti:
-- Durante il cambiamento nell'autorità MDM non vi sarà alcun impatto visibile sugli utenti finali. 
-- Non è necessario riconfigurare i criteri a livello di tenant. 
-- È possibile modificare i criteri a livello di tenant da Intune nel portale di Azure dopo la modifica nell'autorità MDM.
--  Dopo aver modificato l'autorità MDM, eseguire la procedura seguente per verificare che i nuovi dispositivi siano registrati correttamente con la nuova autorità:   
-    - Registrare un nuovo dispositivo
-    - Assicurarsi che il dispositivo appena registrato sia visualizzato in Intune.
-    - Eseguire un'azione, ad esempio il blocco remoto, dalla console di amministrazione al dispositivo. Se l'azione ha esito positivo, il dispositivo è gestito dalla nuova autorità MDM.
-- Nel caso di problemi con dispositivi specifici, è possibile annullare e ripetere la registrazione dei dispositivi in modo che siano connessi alla nuova autorità e gestiti il più rapidamente possibile.
-- Per gli utenti e i dispositivi di cui non è stata eseguita la migrazione in precedenza:
-    - Verificare che i dispositivi siano ora visualizzati nel pannello **Dispositivi** come dispositivi gestiti. Questi dispositivi devono collegarsi al servizio ed eseguire la sincronizzazione dopo la modifica nell'autorità MDM prima che vengano visualizzati. 
-    - Quando il servizio Intune rileva che l'autorità MDM di un tenant è cambiata, invia un messaggio di notifica a tutti i dispositivi registrati per l'archiviazione e la sincronizzazione con il servizio (questo avviene al di fuori delle archiviazioni periodiche pianificate). Di conseguenza, dopo che l'autorità MDM per il tenant è stata cambiata da ibrida a Intune autonomo, tutti i dispositivi accesi e online si connettono al servizio, ricevono la nuova autorità MDM e da quel momento vengono gestiti da Intune autonomo. Non ci sono interruzioni per la gestione e protezione di questi dispositivi.
-    - I dispositivi che sono spenti o non in linea durante (o immediatamente dopo) la modifica dell'autorità MDM si connettono e vengono sincronizzati con il servizio mediante la nuova autorità MDM quando sono nuovamente accesi e online.  
-    - Gli utenti possono passare rapidamente alla nuova autorità MDM avviando manualmente un'archiviazione dal dispositivo al servizio. Gli utenti possono farlo facilmente usando l'app del Portale aziendale e avviando un controllo di conformità del dispositivo.
-    - Quando un dispositivo è offline durante la modifica nell'autorità MDM e quando il dispositivo viene archiviato nel servizio si ha una situazione intermedia. Per garantire che il dispositivo rimanga protetto e funzionale durante questo periodo, i profili seguenti rimangono nel dispositivo per un massimo di sette giorni o fino a quando il dispositivo non si connette con la nuova autorità MDM e riceve le nuove impostazioni che sovrascrivono quelle esistenti:
-        - Profilo di posta elettronica
-        - Profilo VPN
-        - Profilo certificato
-        - Profilo Wi-Fi
-        - Profili di configurazione
-    - Contattare il supporto per modificare l'autorità MDM per i dispositivi non associati a un utente. 
+
+Ora che la migrazione è completata, gestire i dispositivi mobili con Intune. Per altre informazioni, vedere [quali sono le novità in Microsoft Intune](https://docs.microsoft.com/intune/whats-new).
+
