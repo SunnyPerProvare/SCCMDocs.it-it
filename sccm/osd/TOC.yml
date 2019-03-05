@@ -120,15 +120,18 @@ items:
   items:
   - name: Passaggi della sequenza di attività
     href: understand/task-sequence-steps.md
+    items:
+    - name: Installa aggiornamenti software
+      href: understand/install-software-updates.md
   - name: Come usare le variabili della sequenza di attività
     href: understand/using-task-sequence-variables.md
   - name: Variabili della sequenza di attività
     href: understand/task-sequence-variables.md
   - name: Comandi di preavvio per supporti per sequenza di attività
     href: understand/prestart-commands-for-task-sequence-media.md
-ms.openlocfilehash: c0d57368fc08fc08dcee0cca6a844d1344f8c762
-ms.sourcegitcommit: ef2960bd91655c741450774e512dd0a9be610625
+ms.openlocfilehash: 068cb9a5fb17fdb03647d95f6471d43c43ba2a64
+ms.sourcegitcommit: 33a006204f7f5f9b9acd1f3e84c4bc207362d00a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56838736"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57305746"

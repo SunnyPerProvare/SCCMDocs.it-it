@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c4f085bc418bc2a78452d54bd579cd362112e64
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: df8f8c850612d0c0f87683b9bbd17f34e97dcf47
+ms.sourcegitcommit: ef2960bd91655c741450774e512dd0a9be610625
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56135018"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56838889"
 ---
 # <a name="whats-new-in-version-1806-of-configuration-manager-current-branch"></a>Novità della versione 1806 di Configuration Manager (Current Branch)
 
@@ -276,7 +276,7 @@ Per altre informazioni, vedere [Distribuire app di Office 365](/sccm/sum/deploy-
 ### <a name="support-for-new-windows-app-package-formats"></a>Supporto per nuovi formati di pacchetti di app Windows
 <!--1357427--> Configuration Manager supporta ora la distribuzione dei nuovi formati di pacchetto dell'app (.msix) e bundle dell'app (.msixbundle) di Windows 10. 
 
-Per altre informazioni, vedere [Creare applicazioni Windows](/sccm/apps/get-started/creating-windows-applications#bkmk_general).
+Per altre informazioni, vedere [Creare applicazioni Windows](/sccm/apps/get-started/creating-windows-applications#bkmk_msix).
 
 
 ### <a name="uninstall-application-on-approval-revocation"></a>Disinstallare l'applicazione in caso di revoca dell'approvazione
