@@ -1,8 +1,8 @@
 ---
-title: 'Configurare la sottoscrizione di Intune '
+title: Configurare la sottoscrizione di Intune
 titleSuffix: Configuration Manager
-description: Configurare una sottoscrizione di Intune per tenere traccia delle licenze per la gestione dei dispositivi mobili locale in System Center Configuration Manager.
-ms.date: 03/05/2017
+description: Configurare una sottoscrizione di Intune per tenere traccia delle licenze per la gestione dei dispositivi mobili locale in Configuration Manager
+ms.date: 03/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,55 +11,67 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 21ff4920ae8829c41dace778ac74824519c5a628
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: aff4fcc67325645387aea1e57354321769a515ca
+ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56136008"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57558066"
 ---
-# <a name="set-up-a-microsoft-intune-subscription-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Configurare una sottoscrizione di Microsoft Intune per la gestione dei dispositivi mobili (MDM) locale in System Center Configuration Manager
+# <a name="set-up-a-microsoft-intune-subscription-for-on-premises-mdm-in-configuration-manager"></a>Configurare una sottoscrizione di Microsoft Intune per MDM locale in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-La gestione dei dispositivi mobili locale di System Center Configuration Manager richiede una sottoscrizione di Microsoft Intune per tenere traccia delle licenze. Il servizio Intune non viene usato per gestire i dispositivi o per archiviare le informazioni di gestione. Per la gestione dei dispositivi mobili locale, tutta la gestione dei dispositivi viene gestita dall'infrastruttura di Configuration Manager.  
+Configuration Manager in locale la gestione dei dispositivi mobili (MDM) richiede una sottoscrizione di Microsoft Intune per tenere traccia delle licenze. Il servizio Intune non viene usato per gestire i dispositivi o per archiviare le informazioni di gestione. Per MDM locale, tutte le gestione dei dispositivi viene gestita dall'infrastruttura di Configuration Manager.  
 
-> [!NOTE]  
-> A partire dalla versione 1610, Configuration Manager supporta l'uso di Microsoft Intune e dell'infrastruttura di Configuration Manager locale per gestire simultaneamente i dispositivi mobili.   
+Prima di installare i ruoli del sistema del sito necessari per MDM locale, impostare la sottoscrizione di Intune. Questa azione consente di ridurre il tempo necessario per i ruoli del sistema del sito appena installati diventare funzionale.  
 
-> [!TIP]  
->  È consigliabile configurare la sottoscrizione di Intune per la gestione dei dispositivi mobili locale prima di installare i ruoli del sistema del sito necessari, per ridurre al minimo il tempo necessario prima che diventino funzionanti i ruoli del sistema del sito appena installati.  
+> [!Note]  
+> A partire dalla versione 1810, una connessione di Intune non è più necessaria per le nuove distribuzioni MDM locale.<!--3607730, fka 1359124--> Per usare questa funzionalità è comunque necessario che l'organizzazione abbia le licenze di Intune. Attualmente, è possibile rimuovere la connessione di Intune da distribuzione MDM locale esistente. Per altre informazioni, vedere il [post di blog del supporto tecnico di Intune](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150).  
+
+
 
 ##  <a name="sign-up-for-microsoft-intune"></a>Iscriversi a Microsoft Intune  
- Intune è obbligatorio per il funzionamento della gestione dei dispositivi mobile locale. È sufficiente [iscriversi](http://www.microsoft.com/en-us/server-cloud/products/microsoft-intune/) per una sottoscrizione di valutazione o a pagamento e andare al passaggio successivo per aggiungere la sottoscrizione a Configuration Manager.  
+
+Intune è necessario per rendere funzionale MDM locale. [Effettuare l'iscrizione](https://docs.microsoft.com/intune/free-trial-sign-up) per una sottoscrizione di valutazione o a pagamento. Quindi andare al passaggio successivo per aggiungere la sottoscrizione a Configuration Manager.  
+
+
 
 ##  <a name="add-the-intune-subscription-to-configuration-manager"></a>Aggiungere la sottoscrizione di Intune a Configuration Manager  
- Per aggiungere la sottoscrizione a Configuration Manager, la procedura è fondamentalmente la stessa valida per l'aggiunta della sottoscrizione per la gestione dei dispositivi mobili con Intune. Leggere le note riportate di seguito in merito alle differenze specifiche e seguire le istruzioni in [Configurare la sottoscrizione di Intune](../deploy-use/configure-intune-subscription.md).  
+
+Per aggiungere la sottoscrizione a Configuration Manager, seguire i passaggi di base come si farebbe quando si aggiunge la sottoscrizione per la gestione ibrida MDM con Intune. Leggere le note riportate di seguito in merito alle differenze specifiche e seguire le istruzioni in [Configurare la sottoscrizione di Intune](/sccm/mdm/deploy-use/configure-intune-subscription).  
 
 > [!NOTE]
->  Quando si aggiunge la sottoscrizione di Intune, tenere presente quanto segue:  
+>  Quando si aggiunge la sottoscrizione di Intune, tenere presente le note seguenti:  
 > 
-> - La raccolta specificata nella procedura guidata Aggiungi sottoscrizione a Microsoft Intune non viene usata per la delega dei diritti utente della gestione dei dispositivi mobili locale. Viene usata solo per la gestione dei dispositivi mobili con Intune. È comunque necessario specificare una raccolta per poter continuare la procedura guidata.  
->   -   L'impostazione del codice del sito specificata nella procedura guidata viene ignorata per la gestione dei dispositivi mobili locale. Il codice del sito usato è quello che si specifica nel profilo di registrazione che concede agli utenti l'autorizzazione per registrare i dispositivi.  
->   -   Non abilitare l'autenticazione a più fattori. Non è supportata nella gestione dei dispositivi mobili locale.  
+> - La raccolta specificata di Microsoft Intune procedura guidata Aggiungi sottoscrizione non viene usata per la delega a destra di on-premises MDM utente. Viene usato solo per la gestione dei dispositivi mobili con Intune. Tuttavia, ti viene richiesto di specificare una raccolta per la procedura guidata continuare.  
+> 
+> - Il codice del sito che specifica nella procedura guidata viene ignorato per MDM locale. Usa il codice del sito specificato nell'ambito della registrazione profilo che concede l'autorizzazione per registrare i dispositivi degli utenti.  
+> 
+> - Non abilitare multi-factor authentication. Non è supportato in MDM locale.  
 
-##  <a name="configure-the-intune-subscription-for-on-premises-mobile-device-management"></a>Configurare la sottoscrizione di Intune per la gestione dei dispositivi mobili (MDM) locale  
 
-1. Nella console di Configuration Manager fare clic con il pulsante destro del mouse su **Sottoscrizione a Microsoft Intune** e scegliere **Proprietà**.  
 
-2. Nella casella On Premises Mobile Device Management (Gestione dispositivi mobili locale) scegliere una delle soluzioni seguenti:
+##  <a name="configure-the-intune-subscription-for-on-premises-mdm"></a>Configurare la sottoscrizione di Intune per MDM locale  
 
-   - Se si prevede di gestire i dispositivi solo in locale, selezionare la casella di controllo accanto a **Only manage devices on-premises** (Gestire solo dispositivi in locale) e fare clic su **OK**.  
+1. Nella console di Configuration Manager passare ad il **Administration** dell'area di lavoro, espandere **servizi Cloud**e selezionare il **sottoscrizioni a Microsoft Intune** nodo. Selezionare la sottoscrizione e quindi scegliere **proprietà** nella barra multifunzione.   
 
-     > [!NOTE]  
-     >  Selezionando questa casella di controllo, si configura la sottoscrizione di Intune per mantenere tutte le informazioni di gestione in locale senza replicare i dati nel cloud.  
+    1. Nella sezione nella gestione dei dispositivi mobili locale in fondo il **generale** pagina, scegliere una delle opzioni seguenti:
 
-   - Se si prevede di gestire i dispositivi in locale sia con Intune che con Configuration Manager, non selezionare la casella.
+        - Se si prevede di avere solo i dispositivi gestiti in locale, selezionare l'opzione **gestire solo dispositivi in locale**.  
 
-3. Se si prevede di gestire dispositivi Windows 10 Mobile, fare clic con il pulsante destro del mouse su **Sottoscrizione a Microsoft Intune**, fare clic su **Configura piattaforme**e quindi su  **Windows Phone**.  
+            > [!NOTE]  
+            > Quando si abilita questa opzione, si configura la sottoscrizione di Intune per mantenere tutti i management informazioni in locale. Nessun dato di gestione di dispositivi viene replicato nel cloud.  
 
-4. Fare clic sulla casella di controllo accanto a **Windows Phone 8.1 e Windows 10 Mobile**, quindi fare clic su **OK**.  
+        - Se si intende disporre i dispositivi gestiti da Intune sia Configuration Manager in locale, non configurare questa opzione.  
 
-5. Se si prevede di gestire computer desktop Windows 10, fare clic con il pulsante destro del mouse su **Sottoscrizione a Microsoft Intune**, fare clic su **Configura piattaforme**e quindi su **Abilita registrazione Windows**.  
+    Selezionare **OK** per chiudere le proprietà della sottoscrizione.
 
-6. Fare clic sulla casella di controllo accanto a **Abilita registrazione Windows**e quindi su **OK**.  
+2. Se si prevede di gestire i dispositivi Windows 10 Mobile, selezionare la sottoscrizione nell'elenco, selezionare **Configura piattaforme** nella barra multifunzione e quindi selezionare **Windows Phone**.  
+
+    1. Selezionare l'opzione **Windows Phone 8.1 e Windows 10 Mobile**, quindi selezionare **OK**.  
+
+3. Se si prevede di gestire computer desktop Windows 10, selezionare la sottoscrizione nell'elenco, selezionare **Configura piattaforme** nella barra multifunzione e quindi selezionare **Windows**.  
+
+    1. Selezionare l'opzione **registrazione di Windows di abilitare**e quindi selezionare **OK**.  
+

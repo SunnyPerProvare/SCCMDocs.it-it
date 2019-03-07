@@ -1,8 +1,8 @@
 ---
-title: 'Procedura di preparazione '
+title: Preparare per la MDM locale
 titleSuffix: Configuration Manager
-description: Preparare la gestione dei dispositivi con la gestione dei dispositivi mobili locale in System Center Configuration Manager.
-ms.date: 03/05/2017
+description: Preparare la gestione di dispositivi con la gestione dei dispositivi mobili locale in Configuration Manager
+ms.date: 03/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,33 +11,37 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b97d30e1d5cc5cdca0cd69e260910c7981d1cec
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: fad5ce96b84b5a6edfafdead64cff0223009ebf8
+ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56134215"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57558049"
 ---
-# <a name="preparation-steps-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Preparativi per la gestione dei dispositivi mobili (MDM) locale in System Center Configuration Manager
+# <a name="preparation-steps-for-on-premises-mdm-in-configuration-manager"></a>Preparativi per la MDM locale in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-La gestione di dispositivi con la gestione dei dispositivi mobili locale in System Center Configuration Manager richiede che l'infrastruttura di Configuration Manager sia impostata in modo che i ruoli di sistema necessari del sito (punto proxy di registrazione, punto di registrazione, punto di gestione dispositivi e punto di distribuzione) possano comunicare attraverso un canale affidabile con i dispositivi mobili da gestire.  
+Per gestire i dispositivi con gestione dei dispositivi mobili locale di Configuration Manager (MDM), prima di tutto configurare l'infrastruttura necessaria. I ruoli del sistema del sito devono comunicare attraverso un canale affidabile con i dispositivi mobili. Questi ruoli sono il punto proxy di registrazione, punto di registrazione, punto di Gestione periferiche e punto di distribuzione.
 
- Le attività seguenti di alto livello sono necessarie per preparare il sistema di Configuration Manager per la gestione dei dispositivi mobili locale:  
+Le attività di alto livello seguenti sono necessarie per preparare Configuration Manager per MDM locale:  
 
--   [Impostare una sottoscrizione di Microsoft Intune per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/set-up-intune-subscription-on-premises-mdm.md)  
+- [Configurare una sottoscrizione di Microsoft Intune per MDM locale](/sccm/mdm/get-started/set-up-intune-subscription-on-premises-mdm)  
 
-     In questa attività, è necessario registrarsi a Microsoft Intune e aggiungere la sottoscrizione a Configuration Manager tramite la console di Configuration Manager. Questo passaggio è necessario solo per scopi correlati alla gestione delle licenze. Intune non viene usato per gestire i dispositivi o archiviare le informazioni di gestione. Tutte le attività di coordinamento e gestione dei dispositivi sono a carico dell'azienda che usa l'infrastruttura di Configuration Manager locale.  
+    Iscriversi a Microsoft Intune e quindi aggiungere la sottoscrizione a Configuration Manager tramite la console di Configuration Manager. Questo passaggio è necessario solo per scopi correlati alla gestione delle licenze. Intune non viene usato per gestire i dispositivi o archiviare le informazioni di gestione. Tutte le attività di coordinamento e gestione dei dispositivi sono a carico dell'azienda che usa l'infrastruttura di Configuration Manager locale.  
 
--   [Installare i ruoli di sistema del sito per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/install-site-system-roles-for-on-premises-mdm.md)  
+    > [!Note]  
+    > A partire dalla versione 1810, una connessione di Intune non è più necessaria per le nuove distribuzioni MDM locale.<!--3607730, fka 1359124--> Per usare questa funzionalità è comunque necessario che l'organizzazione abbia le licenze di Intune. Attualmente, è possibile rimuovere la connessione di Intune da distribuzione MDM locale esistente. Per altre informazioni, vedere il [post di blog del supporto tecnico di Intune](https://techcommunity.microsoft.com/t5/Intune-Customer-Success/Move-from-Hybrid-Mobile-Device-Management-to-Intune-on-Azure/ba-p/280150).  
 
-     In questa attività si installano e configurano i ruoli di sistema del sito necessari per gestire i dispositivi con l'infrastruttura di Configuration Manager locale. La gestione dei dispositivi mobili locale richiede minimo i ruoli di sistema del sito del punto proxy di registrazione, del punto di registrazione, del punto di gestione dispositivo e del punto di distribuzione.  
+- [Installare ruoli del sistema del sito per MDM locale](/sccm/mdm/get-started/install-site-system-roles-for-on-premises-mdm)  
 
--   [Impostare i certificati per comunicazioni affidabili per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)  
+    Installare e configurare i sistemi del sito necessari per gestire i dispositivi con l'infrastruttura di Configuration Manager in locale. Come minimo, questa funzionalità richiede il punto proxy di registrazione, punto di registrazione, punto di gestione dei dispositivi e i ruoli punto di distribuzione.  
 
-     In questa attività si configura l'infrastruttura di Configuration Manager locale per consentire comunicazioni attendibili (HTTPS) tra i dispositivi gestiti e i server che ospitano i ruoli di sistema del sito necessari.  
+- [Configurare i certificati per le comunicazioni attendibili per MDM locale](/sccm/mdm/get-started/set-up-certificates-on-premises-mdm)  
 
--   [Impostare la registrazione dei dispositivi per la gestione dei dispositivi mobili locale in System Center Configuration Manager](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md)  
+    Configurare l'infrastruttura di Configuration Manager in locale per consentire le comunicazioni attendibili (HTTPS) tra i dispositivi gestiti e i server che ospitano i ruoli del sistema del sito necessari.  
 
-     In questa attività si concedono le autorizzazioni agli utenti per registrare computer e dispositivi e si installa il certificato radice attendibile nei dispositivi (in genere quelli non aggiunti al dominio) per consentire le connessioni HTTPS ai server del sistema del sito.  
+- [Impostare la registrazione dei dispositivi per MDM locale](/sccm/mdm/get-started/set-up-device-enrollment-on-premises-mdm)  
+
+    Concedere l'autorizzazione agli utenti di registrare i computer e dispositivi. Installare il certificato radice attendibile nei dispositivi per consentire le connessioni HTTPS al server del sistema del sito. Questi dispositivi non sono in genere aggiunti al dominio.  
+
