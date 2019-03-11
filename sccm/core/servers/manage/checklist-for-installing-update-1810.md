@@ -2,7 +2,7 @@
 title: Elenco di controllo per la versione 1810
 titleSuffix: Configuration Manager
 description: Informazioni sulle azioni da intraprendere prima di eseguire l'aggiornamento di Configuration Manager alla versione 1810.
-ms.date: 11/27/2018
+ms.date: 02/28/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99bde59429af4d75e7e1dfab42d627d3a973efe6
-ms.sourcegitcommit: ceec0e20bf801071f2a05233f984cf17acc3fd29
+ms.openlocfilehash: 11a67aa698340cd100ded1ca64b9a97960bc6b9b
+ms.sourcegitcommit: 56ec6933cf7bfc93842f55835ad336ee3a1c6ab5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265013"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57211670"
 ---
 # <a name="checklist-for-installing-update-1810-for-configuration-manager"></a>Elenco di controllo per l'installazione dell'aggiornamento 1810 di Configuration Manager
 
@@ -75,7 +75,7 @@ Questo valore è facoltativo. È possibile specificarlo come utile promemoria de
 Per altre informazioni, vedere [Licenze e rami](/sccm/core/understand/learn-more-editions).
 
 #### <a name="review-microsoft-net-versions"></a>Esaminare le versioni di Microsoft .NET 
-Quando un sito installa questo aggiornamento, Configuration Manager installa automaticamente .NET Framework 4.5.2. Quando questo prerequisito non è già installato, il sito lo installa in ogni server che ospita uno dei ruoli del sistema del sito seguenti:
+Quando un sito installa questo aggiornamento, se il requisito minimo di .NET Framework 4.5 non è installato, Configuration Manager installa automaticamente .NET Framework 4.5.2. Quando questo prerequisito non è già installato, il sito lo installa in ogni server che ospita uno dei ruoli del sistema del sito seguenti:
 
 -   Punto di gestione
 -   punto di connessione del servizio

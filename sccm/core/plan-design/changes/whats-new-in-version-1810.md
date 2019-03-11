@@ -2,7 +2,7 @@
 title: Novità della versione 1810
 titleSuffix: Configuration Manager
 description: Informazioni dettagliate sulle modifiche e sulle nuove funzionalità introdotte nella versione 1810 di Configuration Manager (Current Branch).
-ms.date: 02/19/2019
+ms.date: 03/02/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,28 +11,28 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 703b8be554f0a7ed1601703d381e4ed7c317af77
-ms.sourcegitcommit: 369db96ee84299b5ab6d74b177e6366b3017fc54
+ms.openlocfilehash: 7d8a3c6c73d30d7d5e8e825cd20baa334214dceb
+ms.sourcegitcommit: 33a006204f7f5f9b9acd1f3e84c4bc207362d00a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56589867"
+ms.lasthandoff: 03/04/2019
+ms.locfileid: "57305797"
 ---
 # <a name="whats-new-in-version-1810-of-configuration-manager-current-branch"></a>Novità della versione 1810 di Configuration Manager (Current Branch)
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-L'aggiornamento 1810 per Configuration Manager (Current Branch) è disponibile come aggiornamento nella console. Applicare questo aggiornamento ai siti con la versione 1710, 1802 o 1806. <!-- baseline only statement: When installing a new site, it's also available as a baseline version.-->
+L'aggiornamento 1810 per Configuration Manager (Current Branch) è disponibile come aggiornamento nella console. Applicare questo aggiornamento ai siti con la versione 1710, 1802 o 1806. <!-- baseline only statement: When installing a new site, it's also available as a baseline version.--> Questo articolo offre un riepilogo delle modifiche e delle nuove funzionalità di Configuration Manager versione 1810.  
 
 Esaminare sempre l'elenco di controllo più recente per installare questo aggiornamento. Per altre informazioni, vedere [Elenco di controllo per l'installazione dell'aggiornamento 1810](/sccm/core/servers/manage/checklist-for-installing-update-1810). Dopo aver aggiornato un sito, vedere anche [Elenco di controllo post-aggiornamento](/sccm/core/servers/manage/checklist-for-installing-update-1810#post-update-checklist).
+
+Per sfruttare i vantaggi delle nuove funzionalità di Configuration Manager, aggiornare prima di tutto i clienti alla versione più recente. Anche se le nuove funzionalità vengono visualizzate nella console di Configuration Manager quando si esegue l'aggiornamento del sito e della console, lo scenario completo risulta funzionante solo dopo l'aggiornamento alla versione più recente del client.
 
 > [!Note]  
 > Questo articolo elenca tutte le funzionalità importanti di questa versione al momento. Tuttavia, non tutte le sezioni sono ancora collegate al contenuto aggiornato con maggiori informazioni sulle nuove funzionalità. Continuare a controllare questa pagina con regolarità per verificare la disponibilità di aggiornamenti. Le modifiche sono contrassegnate con il tag ***[Aggiornato]***. Questa nota sarà rimossa nella versione finale del contenuto.  
 
-> [!Important]  
-> Per sfruttare i vantaggi delle nuove funzionalità di Configuration Manager, aggiornare prima di tutto i clienti alla versione più recente. Anche se le nuove funzionalità vengono visualizzate nella console di Configuration Manager quando si esegue l'aggiornamento del sito e della console, lo scenario completo risulta funzionante solo dopo l'aggiornamento alla versione più recente del client.
-
-Questo articolo offre un riepilogo delle modifiche e delle nuove funzionalità di Configuration Manager versione 1810.  
+> [!Tip]  
+> Per ricevere una notifica quando questa pagina viene aggiornata, copiare e incollare l'URL seguente nel lettore di feed RSS: `https://docs.microsoft.com/api/search/rss?search=%22what%27s+new+in+version+1810+-+Configuration+Manager%22&locale=en-us`
 
 
 
@@ -176,9 +176,10 @@ Per altre informazioni, vedere [Dashboard di co-gestione](/sccm/comanage/how-to-
 ## <a name="bkmk_app"></a> Gestione delle applicazioni
 
 ### <a name="convert-applications-to-msix"></a>Convertire le applicazioni in MSIX
-<!--1359029--> A partire dalla versione 1806, Configuration Manager supporta la distribuzione del nuovo formato di pacchetto di app di Windows 10 (file con estensione msix). È ora possibile convertire le applicazioni Windows Installer (con estensione msi) esistenti nel formato MSIX.
+<!--3607729, fka 1359029-->
+ ***[Aggiornato]*** A partire dalla versione 1806, Configuration Manager supporta la distribuzione del nuovo formato di pacchetto di app di Windows 10 (con estensione msix). È ora possibile convertire le applicazioni Windows Installer (con estensione msi) esistenti nel formato MSIX.
 
-<!--For more information, see [Create Windows applications](/sccm/apps/get-started/creating-windows-applications#bkmk_general).  this might move to a new section for msix-->
+Per altre informazioni, vedere [Creare applicazioni Windows](/sccm/apps/get-started/creating-windows-applications#bkmk_msix).  
 
 
 ### <a name="repair-applications"></a>Ripristinare le applicazioni
@@ -207,11 +208,11 @@ Un profilo di PowerShell è uno script che viene eseguito all'avvio di PowerShel
 ## <a name="bkmk_osd"></a> Distribuzione del sistema operativo
 
 ### <a name="task-sequence-support-of-windows-autopilot-for-existing-devices"></a>Supporto della sequenza di attività di Windows Autopilot per i dispositivi esistenti
-<!--1358333-->
+<!--3607717, fka 1358333-->
 
-[Windows Autopilot per i dispositivi esistenti](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) è ora disponibile con Windows 10 Insider Preview versione 1809 o successiva. Questa nuova funzionalità consente di ricreare l'immagine ed eseguire il provisioning di un dispositivo Windows 7 per la [modalità definita dall'utente di Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven) usando una singola sequenza di attività nativa di Configuration Manager. 
+***[Aggiornato]*** [Windows Autopilot per i dispositivi esistenti](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) è ora disponibile con Windows 10 versione 1809 o successiva. Questa nuova funzionalità consente di ricreare l'immagine ed eseguire il provisioning di un dispositivo Windows 7 per la [modalità definita dall'utente di Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven) usando una singola sequenza di attività nativa di Configuration Manager. 
 
-<!--For more information, see []().--> 
+Per altre informazioni, vedere [Windows Autopilot per dispositivi esistenti](/sccm/osd/deploy-use/windows-autopilot-for-existing-devices).
 
 
 ### <a name="specify-the-drive-for-offline-os-image-servicing"></a>Specificare l'unità per l'installazione offline dell'immagine del sistema operativo  
@@ -227,7 +228,10 @@ Per altre informazioni, vedere [Gruppi di limiti](/sccm/core/servers/deploy/conf
 
 
 ### <a name="improvements-to-driver-maintenance"></a>Miglioramenti della manutenzione dei driver
-<!--1358270--> I pacchetti driver includono ora campi di metadati aggiuntivi per **Produttore** e **Modello**. Usare questi campi per contrassegnare i pacchetti driver con informazioni utili per la manutenzione generale o per identificare driver precedenti e duplicati che è possibile eliminare.
+<!--3607716, fka 1358270-->
+ ***[Aggiornato]*** I pacchetti driver includono ora campi di metadati aggiuntivi per **Produttore** e **Modello**. Usare questi campi per contrassegnare i pacchetti driver con informazioni utili per la manutenzione generale o per identificare driver precedenti e duplicati che è possibile eliminare.
+
+Per altre informazioni, vedere [Gestire i driver](/sccm/osd/get-started/manage-drivers).
 
 
 ### <a name="new-task-sequence-variable-for-last-action-name"></a>Nuova variabile della sequenza di attività per il nome dell'ultima azione
@@ -378,6 +382,8 @@ Gli hotfix aggiuntivi seguenti sono disponibili per la risoluzione di problemi s
 | ID | Titolo | Data | Nella console |
 |---------|---------|---------|---------|
 | [4487960](https://support.microsoft.com/help/4487960) | Il certificato del connettore Microsoft Intune non viene rinnovato in Configuration Manager | 18 gennaio 2019 | Sì |
+| [4490434](https://support.microsoft.com/help/4490434) | Vengono create colonne di individuazione utente duplicate in Configuration Manager | 22 febbraio 2019 | Sì |
+| [4490575](https://support.microsoft.com/help/4490575) | Le installazioni degli aggiornamenti smettono di rispondere o non visualizzano mai il completamento in Configuration Manager, versione 1810 | 22 febbraio 2019 | Sì |
 
 
 ## <a name="next-steps"></a>Passaggi successivi

@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6eeb74e3e8e83dd0082f45583bd2eb5dbe1df4e
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: aec16c4b55afd8c4baf7486794e07f29fa84aebf
+ms.sourcegitcommit: 223549003829fce7c6dc63959ee71e8b88542417
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56131609"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56951835"
 ---
 # <a name="plan-for-the-sms-provider"></a>Piano per il provider SMS 
 
@@ -51,7 +51,7 @@ Il provider SMS consente di imporre la sicurezza di Configuration Manager. Resti
 
  Per supportare il provider SMS, il server di destinazione deve soddisfare i prerequisiti seguenti:  
 
--   Essere in un dominio con una relazione di trust bidirezionale con il server del sito e i sistemi del sito del database del sito  
+-   Essere incluso nello stesso dominio dei sistemi del sito del server del sito e del database del sito  
 
 -   Non disporre di un ruolo del sistema del sito da un sito differente  
 

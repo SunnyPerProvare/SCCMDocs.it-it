@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d8eff4154f5799ef0d6411b077f50753d203310e
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 0a66ba04defcea48db143487cc08bc5dc330cf2c
+ms.sourcegitcommit: ef2960bd91655c741450774e512dd0a9be610625
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56126778"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56838906"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
@@ -208,7 +208,8 @@ La tabella seguente elenca il supporto di Cloud Management Gateway (CMG) per le 
 | Distribuzione del software (indirizzata a dispositivi)     | ![Supportato](media/green_check.png) |
 | Distribuzione del software (indirizzata a utenti, obbligatoria)<br>(con integrazione di Azure AD)     | ![Supportato](media/green_check.png)  (1710) |
 | Distribuzione del software (indirizzata a utenti, disponibile)<br>([tutti i requisiti](/sccm/apps/deploy-use/deploy-applications#deploy-user-available-applications-on-azure-ad-joined-devices)) | ![Supportato](media/green_check.png)  (1802) |
-| Sequenza di attività di aggiornamento sul posto di Windows 10     | ![Supportato](media/green_check.png)  (1802) |
+| Sequenza di attività di aggiornamento sul posto di Windows 10      | ![Supportato](media/green_check.png)  (1802) |
+| Sequenze di attività che non usano le immagini d'avvio e vengono distribuite con un'opzione: **Scaricare tutto il contenuto in locale prima di avviare la sequenza di attività**      | ![Supportato](media/green_check.png)  (1802) |
 | CMPivot     | ![Supportato](media/green_check.png)  (1806) |
 | Qualsiasi altro scenario di sequenza di attività     | ![Non supportato](media/Red_X.png) |
 | Push client     | ![Non supportato](media/Red_X.png) |
