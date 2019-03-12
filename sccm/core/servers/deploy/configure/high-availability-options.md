@@ -2,7 +2,7 @@
 title: Disponibilità elevata
 titleSuffix: Configuration Manager
 description: Informazioni su come distribuire Configuration Manager usando opzioni che consentono di mantenere un livello elevato di disponibilità dei servizi.
-ms.date: 07/30/2018
+ms.date: 03/06/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b69fac83283963e49b01c733fb8fa3000702cfb
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 424b841360efbebef96ba5980c4ea7a45995ea0a
+ms.sourcegitcommit: 544f335cfd1bfd0a1d4973439780e9f5e9ee8bed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132167"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57562135"
 ---
 # <a name="high-availability-options-for-configuration-manager"></a>Opzioni di disponibilità elevata per Configuration Manager
 
@@ -214,6 +214,8 @@ Alcuni sistemi del sito non supportano istanze multiple in un sito o nella gerar
 > Questa sezione si applica solo a Configuration Manager versioni 1802 e precedenti. A partire dalla versione 1806, Configuration Manager offre un'opzione di disponibilità elevata per il server del sito. Per altre informazioni, vedere [Disponibilità elevata del server del sito](/sccm/core/servers/deploy/configure/site-server-high-availability).  
 
 Configuration Manager non supporta l'installazione del server del sito per ogni sito in un cluster di Windows Server o in un cluster Bilanciamento carico di rete.  
+
+A partire dalla versione 1810, il programma di installazione di Configuration Manager non blocca più l'installazione del ruolo del server del sito in un computer con il ruolo Windows per il clustering di failover. Poiché SQL Always On richiede questo ruolo, non era possibile in precedenza inserire il database del sito nel server del sito. Con questa modifica, è possibile creare un sito a disponibilità elevata con un minor numero di server usando SQL Always On e un server del sito in modalità passiva. <!--3607761, fka 1359132-->  
 
 Le informazioni seguenti consentono la preparazione per situazioni di errore o di mancata operatività di un server del sito:  
 
