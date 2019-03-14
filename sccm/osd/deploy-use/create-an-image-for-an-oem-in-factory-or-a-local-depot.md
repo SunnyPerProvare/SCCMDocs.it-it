@@ -13,7 +13,7 @@ manager: dougeby
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 56ac5353052fdba2884b6caee8f56d0835028e3e
 ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
 ms.lasthandoff: 02/12/2019
 ms.locfileid: "56135586"
@@ -45,7 +45,7 @@ Questo metodo di distribuzione può ridurre il traffico di rete perché l'immagi
 -   **Solo supporti e PXE (nascosto)**  
 
 ## <a name="create-the-prestaged-media"></a>Creare supporti pre-installati  
- Creare il file del supporto pre-installato da inviare all'OEM o al rivenditore locale. Per ulteriori informazioni, vedere [Create prestaged media with System Center Configuration Manager](create-prestaged-media.md).  
+ Creare il file del supporto pre-installato da inviare all'OEM o al rivenditore locale. Per ulteriori informazioni, vedere [Creare supporti pre-installati con System Center Configuration Manager](create-prestaged-media.md).  
 
 ## <a name="send-the-prestaged-media-file-to-the-oem-or-local-depot"></a>Inviare il file del supporto pre-installato all'OEM o al rivenditore locale  
  Inviare i supporti all'OEM o al rivenditore locale per pre-installare i computer. Il file del supporto pre-installato viene applicato a un disco rigido formattato nel computer.  
