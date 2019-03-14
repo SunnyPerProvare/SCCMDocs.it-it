@@ -13,7 +13,7 @@ ms.author: aaroncz
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2dee37b0cc55c35b6bd5286acbd18e39c2f5c40c
 ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
 ms.lasthandoff: 02/12/2019
 ms.locfileid: "56125222"
@@ -58,7 +58,7 @@ In questo argomento vengono illustrate informazioni sulla sicurezza e la privacy
 
      Quando si installa WSUS nel punto di aggiornamento software, è possibile scegliere di utilizzare il sito Web IIS predefinito o di creare un sito Web WSUS personalizzato. Creare un sito Web personalizzato per WSUS in modo che IIS ospiti i servizi WSUS in un sito Web virtuale dedicato invece di condividere lo stesso sito Web usato dagli altri sistemi del sito di Configuration Manager o da altre applicazioni.  
 
-     Per altre informazioni, vedere [Configure WSUS to use a custom web site](plan-for-software-updates.md#BKMK_CustomWebSite) (Configurare WSUS per l'uso di un sito Web personalizzato).  
+     Per altre informazioni, vedere [Configurare WSUS per l'uso di un sito Web personalizzato](plan-for-software-updates.md#BKMK_CustomWebSite).  
 
 ##  <a name="BKMK_Privacy_HardwareInventory"></a> Informazioni sulla privacy per gli aggiornamenti software  
  Gli aggiornamenti software consentono di esaminare i computer del client per stabilire quali aggiornamenti software sono necessari, quindi reinviano le informazioni al database del sito. Durante il processo di aggiornamento del software, Configuration Manager può trasmettere le informazioni tra i client e i server che identificano gli account di accesso e del computer.  
