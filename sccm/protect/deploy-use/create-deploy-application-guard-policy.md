@@ -19,8 +19,8 @@ ms.lasthandoff: 02/12/2019
 ms.locfileid: "56132422"
 ---
 # <a name="create-and-deploy-windows-defender-application-guard-policy"></a>Creare e distribuire criteri di Windows Defender Application Guard 
-*Si applica a: System Center Configuration Manager (Current Branch)* 
- <!-- 1351960 --> è possibile creare e distribuire [Windows Defender Application Guard](https://docs.microsoft.com/windows/threat-protection/windows-defender-application-guard/wd-app-guard-overview) criteri usando l'endpoint di Configuration Manager protezione dati. Questi criteri consentono di proteggere gli utenti tramite l'apertura dei siti Web non attendibili in un contenitore isolato protetto e non accessibile da altre parti del sistema operativo.
+*Si applica a: System Center Configuration Manager (Current Branch)*
+<!-- 1351960 --> è possibile creare e distribuire [Windows Defender Application Guard](https://docs.microsoft.com/windows/threat-protection/windows-defender-application-guard/wd-app-guard-overview) criteri usando l'endpoint di Configuration Manager protezione dati. Questi criteri consentono di proteggere gli utenti tramite l'apertura dei siti Web non attendibili in un contenitore isolato protetto e non accessibile da altre parti del sistema operativo.
 
 ## <a name="prerequisites"></a>Prerequisiti
 
