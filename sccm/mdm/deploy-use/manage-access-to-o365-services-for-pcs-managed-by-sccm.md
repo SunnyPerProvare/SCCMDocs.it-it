@@ -2,7 +2,7 @@
 title: Gestire l'accesso ai servizi di O365
 titleSuffix: Configuration Manager
 description: Informazioni su come configurare l'accesso condizionale ai servizi di Office 365 per i PC gestiti da System Center Configuration Manager.
-ms.date: 04/10/2018
+ms.date: 03/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,18 +11,19 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b45e9f586616a1f620864a6e6dc8d0777a118251
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 74a28863b2e30566b07890d57e927703d77247f6
+ms.sourcegitcommit: ec4411fe30770f90128cf6cbd181047db90040cb
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122288"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57881708"
 ---
 # <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Gestire l'accesso ai servizi di O365 per i PC gestiti da System Center Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-<!--1191496--> Configurare l'accesso condizionale ai servizi di Office 365 per i PC gestiti da Configuration Manager.  
+<!--1191496-->
+Configurare l'accesso condizionale ai servizi di Office 365 per i PC gestiti da Configuration Manager.  
 
 > [!Important]  
 > Tra cui MDM ibrida in locale l'accesso condizionale vengono [funzionalità deprecate](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-cmfeatures). Per altre informazioni, vedere [Informazioni sulla gestione di dispositivi mobili ibrida](/sccm/mdm/understand/hybrid-mobile-device-management).<!--Intune feature 2683117-->  
@@ -33,7 +34,7 @@ ms.locfileid: "56122288"
 Per informazioni sulla configurazione dell'accesso condizionale per dispositivi registrati e gestiti da Microsoft Intune, vedere [Gestire l'accesso ai servizi in System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md). Questo articolo riguarda anche i dispositivi che vengono aggiunti al dominio e la cui conformità non viene valutata.
 
 > [!Note]  
-> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Abilitare le funzionalità facoltative degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
 
 
 ## <a name="supported-services"></a>Servizi supportati  
@@ -102,7 +103,7 @@ Per informazioni sulla configurazione dell'accesso condizionale per dispositivi 
     > I criteri di accesso condizionale per l'attestazione dell'integrità dei dispositivi sono stati introdotti per la prima volta nella versione 1710 come [funzionalità di una versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1802, questa funzionalità non è più in versione non definitiva.<!--1235616-->  
 
     > [!Note]  
-    > Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Abilitare le funzionalità facoltative degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+    > Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
 
 ### <a name="step-2-evaluate-the-effect-of-conditional-access"></a>Passaggio 2: Valutare l'effetto dell'accesso condizionale  
  Eseguire il **report di conformità dell'accesso condizionale**, disponibile nell'area di lavoro **Monitoraggio** in **Report** > **Gestione conformità e impostazioni**. Il report indica lo stato di conformità di tutti i dispositivi. Ai dispositivi segnalati come non conformi viene impedito l'accesso a Exchange Online e SharePoint Online.  
@@ -112,7 +113,7 @@ Per informazioni sulla configurazione dell'accesso condizionale per dispositivi 
 ### <a name="configure-active-directory-security-groups"></a>Configurare i gruppi di sicurezza di Active Directory  
  I criteri di accesso condizionale sono destinati a diversi gruppi di utenti in base ai tipi di criteri. Questi gruppi contengono gli utenti a cui sono destinati i criteri o che ne sono esenti. Quando a un utente viene destinato un criterio, ogni dispositivo in uso deve essere conforme per accedere al servizio.  
 
- Gruppi di utenti di sicurezza di Active Directory. Questi gruppi di utenti devono essere sincronizzati con Azure Active Directory. È anche possibile configurare questi gruppi nell'interfaccia di amministrazione di Office 365 o nel portale per gli account di Intune.  
+ Gruppi di utenti di sicurezza di Active Directory. Questi gruppi di utenti devono essere sincronizzati con Azure Active Directory. È anche possibile configurare questi gruppi nell'interfaccia di amministrazione di Microsoft 365 o il portale account Intune.  
 
  È possibile specificare due tipi di gruppi in ogni criterio. :  
 

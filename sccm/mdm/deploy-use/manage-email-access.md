@@ -2,7 +2,7 @@
 title: Gestire l'accesso alla posta elettronica
 titleSuffix: Configuration Manager
 description: Informazioni su come usare l'accesso condizionale di Configuration Manager per gestire l'accesso alla posta elettronica di Exchange.
-ms.date: 03/05/2017
+ms.date: 03/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f976b63b4580b5df9c6e609ff6b361538860c41c
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 76326a1e0bcb3d9362db5eccfc08459bb4448206
+ms.sourcegitcommit: ec4411fe30770f90128cf6cbd181047db90040cb
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56137644"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57881776"
 ---
 # <a name="manage-email-access-in-configuration-manager"></a>Gestire l'accesso alla posta elettronica in Configuration Manager
 
@@ -146,7 +146,7 @@ L'accesso ad Exchange da parte dei dispositivi che appartengono a un gruppo di d
 
 I criteri di accesso condizionale sono destinati a diversi gruppi o raccolte di utenti in base ai tipi di criteri. Questi gruppi contengono gli utenti a cui saranno destinati i criteri o che ne saranno esenti. Quando a un utente viene destinato un criterio, ogni dispositivo in uso deve essere conforme per accedere alla posta elettronica.  
 
-- **Per i criteri di Exchange Online**: ai gruppi di utenti di sicurezza di Azure Active Directory. È possibile configurare questi gruppi nel **centro di amministrazione di Office 365**o nel **portale per gli account di Intune**.  
+- **Per i criteri di Exchange Online**: ai gruppi di utenti di sicurezza di Azure Active Directory. È possibile configurare questi gruppi nel **interfaccia di amministrazione di Microsoft 365**, o il **portale account Intune**.  
 
 - **Per i criteri di On-premises Exchange**: alle raccolte di utenti di Configuration Manager. È possibile configurarli nell'area di lavoro **Asset e conformità** .  
 

@@ -2,7 +2,7 @@
 title: Gestire l'accesso a Skype for Business Online
 titleSuffix: Configuration Manager
 description: Informazioni su come usare i criteri di accesso condizionale per gestire l'accesso a Skype for Business Online.
-ms.date: 12/22/2017
+ms.date: 03/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78c40d84b7d774d7621b983a6e2bb755b14f9563
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 601b58b2f955170e5ab2f038cb49306efe3b499c
+ms.sourcegitcommit: ec4411fe30770f90128cf6cbd181047db90040cb
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56138365"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57881725"
 ---
 # <a name="manage-skype-for-business-online-access"></a>Gestire l'accesso a Skype for Business Online
 
@@ -52,7 +52,7 @@ Usare i criteri di accesso condizionale per Skype for Business Online per gestir
 ## <a name="configure-conditional-access-for-skype-for-business-online"></a>Configurare l'accesso condizionale per Skype for Business Online  
 
 ### <a name="step-1-configure-active-directory-security-groups"></a>Passaggio 1: Configurare gruppi di sicurezza di Active Directory  
- Prima di iniziare configurare i gruppi di sicurezza di Azure Active Directory per i criteri di accesso condizionale. Configurare questi gruppi nell'interfaccia di amministrazione di Office 365. Questi gruppi contengono gli utenti ai quali destinare i criteri o da escludere. Per poter accedere alle risorse, un utente di destinazione in un criterio deve usare solo dispositivi conformi.  
+ Prima di iniziare configurare i gruppi di sicurezza di Azure Active Directory per i criteri di accesso condizionale. Configurare questi gruppi nell'interfaccia di amministrazione di Microsoft 365. Questi gruppi contengono gli utenti ai quali destinare i criteri o da escludere. Per poter accedere alle risorse, un utente di destinazione in un criterio deve usare solo dispositivi conformi.  
 
  È possibile specificare due tipi di gruppo da usare per i criteri di Skype for Business Online:  
 

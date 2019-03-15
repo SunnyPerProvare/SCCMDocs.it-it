@@ -2,7 +2,7 @@
 title: Gestire l'accesso a SharePoint Online
 titleSuffix: Configuration Manager
 description: Informazioni su come usare i criteri di accesso condizionale di SharePoint Online in System Center Configuration Manager per gestire l'accesso a OneDrive.
-ms.date: 12/09/2017
+ms.date: 03/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 755be3231c00eabf9562256e62061fbad70633e7
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 69a160a3c7833f196d50185e551f619d68dc0925
+ms.sourcegitcommit: ec4411fe30770f90128cf6cbd181047db90040cb
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140950"
+ms.lasthandoff: 03/14/2019
+ms.locfileid: "57881742"
 ---
 # <a name="manage-sharepoint-online-access-in-system-center-configuration-manager"></a>Gestire l'accesso a SharePoint Online in System Center Configuration Manager
 
@@ -106,7 +106,7 @@ Le applicazioni desktop di Office possono accedere a SharePoint Online nei PC ch
 ## <a name="configure-conditional-access-for-sharepoint-online"></a>Configurare l'accesso condizionale per SharePoint Online  
 
 ### <a name="step-1-configure-active-directory-security-groups"></a>Passaggio 1: Configurare gruppi di sicurezza di Active Directory  
- Prima di iniziare, configurare i gruppi di sicurezza di Azure AD per i criteri di accesso condizionale. È possibile configurare questi gruppi nel **centro di amministrazione di Office 365**o nel **portale per gli account di Intune**. Questi gruppi includono gli utenti a cui sono destinati i criteri o che ne sono esenti. Per accedere alle risorse, gli utenti a cui sono destinati i criteri devono usare solo dispositivi conformi.  
+ Prima di iniziare, configurare i gruppi di sicurezza di Azure AD per i criteri di accesso condizionale. È possibile configurare questi gruppi nel **interfaccia di amministrazione di Microsoft 365**, o il **portale account Intune**. Questi gruppi includono gli utenti a cui sono destinati i criteri o che ne sono esenti. Per accedere alle risorse, gli utenti a cui sono destinati i criteri devono usare solo dispositivi conformi.  
 
  In un criterio di SharePoint Online è possibile specificare due tipi di gruppi:  
 
