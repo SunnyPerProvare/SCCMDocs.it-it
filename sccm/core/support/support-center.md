@@ -2,7 +2,7 @@
 title: Support Center
 titleSuffix: Configuration Manager
 description: Risolvere i problemi dei client di Configuration Manager con Support Center.
-ms.date: 01/30/2019
+ms.date: 03/06/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5942f60ea15ad83f5debdf8dd3d53e72770744c6
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 367c293794eea86ef8b7b7fb0e331ce0602b325e
+ms.sourcegitcommit: 544f335cfd1bfd0a1d4973439780e9f5e9ee8bed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122866"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57562041"
 ---
 # <a name="support-center-for-configuration-manager"></a>Support Center per Configuration Manager
 
@@ -77,6 +77,9 @@ Dopo averlo installato, cercare gli elementi seguenti nel menu Start nel gruppo 
 
 
 ## <a name="known-issues"></a>Problemi noti 
+
+#### <a name="you-cant-install-the-latest-version-if-an-older-version-is-already-installed"></a>Non è possibile installare la versione più recente se è già installata una versione precedente
+<!--SCCMDocs-pr issue #3090--> Se è già stata installata una versione precedente di Support Center, l'installazione della versione 1810 ha esito negativo. Questo problema è dovuto alla modalità di controllo delle versioni dei file, tra la versione originale e la versione più recente. Per risolvere questo problema, disinstallare prima di tutto la versione meno recente di Support Center. Installare quindi la versione più recente da Configuration Manager versione 1810.
 
 #### <a name="remote-connections-must-include-computer-name-or-domain-as-part-of-the-user-name"></a>Le connessioni remote devono includere il nome del computer o il dominio come parte del nome utente
 Se ci si connette a un client remoto da Support Center, al momento di stabilire la connessione è necessario specificare il nome del computer o il nome di dominio per l'account utente. Se si usa un nome computer o un nome di dominio abbreviato (ad esempio `.\administrator`), la connessione avrà esito positivo, ma Support Center non raccoglierà i dati dal client. 

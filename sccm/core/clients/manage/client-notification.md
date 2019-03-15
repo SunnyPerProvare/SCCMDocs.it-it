@@ -2,7 +2,7 @@
 title: Notifica client
 titleSuffix: Configuration Manager
 description: Gestire i client intraprendendo azioni immediate dalla console centrale di Configuration Manager.
-ms.date: 11/27/2018
+ms.date: 03/06/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f190522300090247cdca0affa9d993fe46201668
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: a643924cbaef928f9db4011f634ae96171ab7914
+ms.sourcegitcommit: 544f335cfd1bfd0a1d4973439780e9f5e9ee8bed
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122033"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57562092"
 ---
 # <a name="client-notification-in-configuration-manager"></a>Notifica del client in Configuration Manager
 
@@ -76,6 +76,7 @@ Questa azione richiede le stesse autorizzazioni dell'azione [Esegui script](#run
 
 Le azioni seguenti sono disponibili nel menu **Notifica client**, nella barra multifunzione del gruppo Dispositivi o Raccolta della scheda Home.
 
+Nella versione 1806 o nelle versioni precedenti, l'opzione **Notifica client** è disponibile solo dal nodo Raccolta di dispositivi oppure quando si visualizza l'appartenenza di una raccolta di dispositivi. A partire dalla versione 1810, l'opzione **Notifica client** è disponibile direttamente nel nodo **Dispositivi**. Non è più un requisito essere all'interno di una visualizzazione di appartenenza della raccolta. <!--SCCMDocs-pr issue 2972-->
 
 #### <a name="permissions"></a>Autorizzazioni
 <!--SCCMDocs-pr issue #2972--> A partire dalla versione 1810, per le azioni di notifica client ora è necessaria l'autorizzazione **Invia una notifica alla risorsa** per l'oggetto Raccolta. Questa autorizzazione è applicabile a tutte le azioni del menu **Notifica client**. 
