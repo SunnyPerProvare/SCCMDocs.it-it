@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78acd5880bfdada80fca33ea4147fc36b28c495e
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 322ca2cb3f1df6a71fb7ceaf15017d7bd45db4c7
+ms.sourcegitcommit: 544f335cfd1bfd0a1d4973439780e9f5e9ee8bed
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56126745"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57562075"
 ---
 # <a name="use-pxe-to-deploy-windows-over-the-network-with-configuration-manager"></a>Usare PXE per distribuire Windows in rete con Configuration Manager
 
@@ -110,7 +110,7 @@ Distribuire il sistema operativo in una raccolta di destinazione. Per altre info
 
 -   **Distribuzione richiesta**: le distribuzioni richieste usano PXE senza alcun intervento da parte dell'utente. L'utente non può ignorare l'avvio PXE. Tuttavia, se l'utente annulla l'avvio di PXE prima della risposta del punto di distribuzione, il sistema operativo non viene distribuito.
 
--   **Distribuzione disponibile**: le distribuzioni disponibili richiedono la presenza dell'utente nel computer di destinazione. L'utente deve premere **F12** per continuare il processo di avvio PXE. Se l'utente non è presente per premere **F12**, il computer esegue l'avvio nel sistema operativo corrente oppure dal successivo dispositivo di avvio disponibile.
+-   **Distribuzione disponibile**: le distribuzioni disponibili richiedono la presenza dell'utente al computer di destinazione. L'utente deve premere **F12** per continuare il processo di avvio PXE. Se l'utente non è presente per premere **F12**, il computer esegue l'avvio nel sistema operativo corrente oppure dal successivo dispositivo di avvio disponibile.
 
 È possibile ridistribuire una distribuzione PXE richiesta cancellando lo stato dell'ultima distribuzione PXE assegnato a una raccolta di Configuration Manager o a un computer. Per altre informazioni sull'azione **Cancella distribuzioni PXE richieste**, vedere [Gestire i client](/sccm/core/clients/manage/manage-clients#BKMK_ManagingClients_DevicesNode) o [Come gestire le raccolte di dispositivi](/sccm/core/clients/manage/collections/manage-collections#how-to-manage-device-collections). Questa azione consente di reimpostare lo stato di quella distribuzione e reinstalla le distribuzioni richieste più recenti.
 
@@ -134,4 +134,4 @@ L'elenco seguente contiene informazioni dettagliate sulle modalità di selezione
 
 3. Nell'elenco di sequenze di attività trovato nel passaggio 2, Configuration Manager cerca un'immagine d'avvio corrispondente all'architettura del client che sta tentando di eseguire l'avvio. Se viene trovata un'immagine di avvio con la stessa architettura, verrà usata quell'immagine.  
 
-4. Se non viene trovata un'immagine d'avvio con la stessa architettura, Configuration Manager cerca un'immagine d'avvio compatibile con l'architettura del client. Esegue la ricerca nell'elenco di sequenze di attività indicato nel passaggio 2. Ad esempio, un client a 64 bit è compatibile con immagini di avvio a 32 bit e 64 bit. Un client a 32 bit è compatibile solo con le immagini di avvio a 32 bit. Un client UEFI è compatibile solo con le immagini di avvio a 64 bit.  
+4. Se non viene trovata un'immagine d'avvio con la stessa architettura, Configuration Manager cerca un'immagine d'avvio compatibile con l'architettura del client. Esegue la ricerca nell'elenco di sequenze di attività indicato nel passaggio 2. Ad esempio, un client BIOS/MBR a 64 bit è compatibile con immagini di avvio a 32 bit e 64 bit. Un client BIOS/MBR a 32 bit è compatibile solo con le immagini di avvio a 32 bit. I client UEFI compatibili solo con l'architettura corrispondente. Un client UEFI a 64 bit è compatibile con le immagini d'avvio solo 64 bit e un client UEFI 32 bit è compatibile con le sole immagini d'avvio a 32 bit.

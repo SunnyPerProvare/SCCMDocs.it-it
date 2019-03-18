@@ -1,8 +1,8 @@
 ---
-title: 'Creare elementi di configurazione per i computer Windows gestiti tramite client '
+title: Creare elementi di configurazione personalizzati
 titleSuffix: Configuration Manager
-description: È possibile gestire le impostazioni per i computer e i server Windows usando un elemento di configurazione personalizzato per computer desktop e server Windows.
-ms.date: 11/18/2016
+description: È possibile gestire le impostazioni per i computer e i server Windows usando un elemento di configurazione personalizzato per computer desktop e server Windows
+ms.date: 03/04/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-compliance
 ms.topic: conceptual
@@ -11,344 +11,368 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba02c1c3558cc7c0f7280e9517d7b67ee8e46eec
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 4253fdd94985a8a9adbc9e782f8397c2f76f5f2c
+ms.sourcegitcommit: 4ab85212268e76d3fd22f00e6c74edaa5abde60c
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56130378"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57426890"
 ---
-# <a name="how-to-create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-system-center-configuration-manager-client"></a>Come creare elementi di configurazione personalizzati per computer desktop e server Windows gestiti con il client di System Center Configuration Manager
+# <a name="create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-configuration-manager-client"></a>Creare elementi di configurazione personalizzati per computer desktop e server Windows gestiti con il client di Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-Usare l'elemento di configurazione **personalizzato per computer desktop e server Windows** di System Center Configuration Manager per gestire le impostazioni per i computer e server Windows gestiti dal client di Configuration Manager.  
+Usare l'elemento di configurazione **personalizzato per computer desktop e server Windows** di Configuration Manager per gestire le impostazioni per i computer e server Windows gestiti dal client di Configuration Manager.  
 
-## <a name="start-the-create-configuration-item-wizard"></a>Avviare la creazione guidata dell'elemento di configurazione
 
-1.  Nella console di Configuration Manager fare clic su **Asset e conformità** > **Impostazioni di conformità** > **Elementi di configurazione**.  
 
-3.  Nella scheda **Home** , nel gruppo **Crea** , fare clic su **Crea elemento di configurazione**.  
+## <a name="start-the-wizard"></a>Avviare la procedura guidata
 
-4.  Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
+1. Nella console di Configuration Manager passare all'area di lavoro **Asset e conformità**, espandere **Impostazioni di conformità** e selezionare il nodo **Elementi di configurazione**.  
 
-5.  In **Specificare il tipo di elemento di configurazione da creare**selezionare **Desktop e server di Windows (personalizzato)**.  
+2. Nella scheda **Home** della barra multifunzione selezionare **Crea elemento di configurazione** nel gruppo **Crea**.  
+
+3. Nella pagina **Generale** della **Creazione guidata dell'elemento di configurazione**specificare un nome e una descrizione facoltativa per l'elemento di configurazione.  
+
+4. In **Specificare il tipo di elemento di configurazione da creare**selezionare **Desktop e server di Windows (personalizzato)**.  
 
     > [!TIP]  
-    >  Per specificare le impostazioni del metodo di rilevamento che consentono di controllare l'esistenza di un'applicazione, selezionare **Questo elemento di configurazione contiene le impostazioni dell'applicazione**.  
+    > Per specificare le impostazioni del metodo di rilevamento che consentono di controllare l'esistenza di un'applicazione, selezionare **Questo elemento di configurazione contiene le impostazioni dell'applicazione**.  
 
-6.  Fare clic su **Categorie** se si vogliono creare e assegnare categorie per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager.  
+5. Per facilitare la ricerca e il filtraggio degli elementi di configurazione nella console di Configuration Manager, selezionare **Categorie** per creare e assegnare categorie.  
 
-## <a name="provide-detection-method-information"></a>Fornire informazioni sul metodo di rilevamento  
- Usare questa procedura per fornire informazioni sul metodo di rilevamento per l'elemento di configurazione.  
+
+
+## <a name="detection-methods"></a>Metodi di rilevamento  
+
+Usare questa procedura per fornire informazioni sul metodo di rilevamento per l'elemento di configurazione.  
 
 > [!NOTE]  
->  Si applica solo se si seleziona **questo elemento di configurazione contiene le impostazioni dell'applicazione** sul **Generale** pagina della procedura guidata.  
+> Queste informazioni si applicano solo se si seleziona **Questo elemento di configurazione contiene le impostazioni dell'applicazione** nella pagina **Generale** della procedura guidata.  
 
- Un metodo di rilevamento in Configuration Manager contiene regole che consentono di rilevare se un'applicazione viene installata in un computer. Questo rilevamento si verifica prima valutazione della conformità dell'elemento di configurazione. Per rilevare se un'applicazione è installata, è possibile rilevare la presenza di un file Windows Installer per l'applicazione, utilizzare uno script personalizzato o selezionare **presupporre sempre l'applicazione viene installata** per valutare l'elemento di configurazione per la conformità, anche se è installata l'applicazione.  
+Un metodo di rilevamento in Configuration Manager contiene regole che consentono di rilevare se un'applicazione viene installata in un computer. Questo rilevamento si verifica prima che il client valuta la conformità per l'elemento di configurazione. Per rilevare se un'applicazione è installata, è possibile rilevare la presenza di un file Windows Installer per l'applicazione, utilizzare uno script personalizzato o selezionare **presupporre sempre l'applicazione viene installata** per valutare l'elemento di configurazione per la conformità, anche se è installata l'applicazione.  
 
- Usare queste procedure per configurare i metodi di rilevamento in System Center Configuration Manager.  
 
-### <a name="to-detect-an-application-installation-by-using-the-windows-installer-file"></a>Per rilevare l'installazione di un'applicazione utilizzando il File Windows Installer  
+### <a name="to-detect-an-application-installation-by-using-the-windows-installer-file"></a>Per rilevare l'installazione di un'applicazione usando il file di Windows Installer  
 
-1.  Nel **metodi di rilevamento** pagina del **Creazione guidata dell'elemento di configurazione**, selezionare il **il rilevamento di utilizzare Windows Installer** casella di controllo.  
+1. Nella pagina **Metodi di rilevamento** della **Creazione guidata dell'elemento di configurazione** selezionare l'opzione **Utilizza rilevamento di Windows Installer**.  
 
-2.  Fare clic su **Apri**, individuare il file Windows Installer (MSI) che si desidera rilevare, quindi fare clic su **Apri**.  
+2. Selezionare su **Apri**, individuare il file di Windows Installer (MSI) che si vuole rilevare e quindi selezionare **Apri**.  
 
-3.  Il **versione** è popolato automaticamente con il numero di versione del file di Windows Installer selezionato. È possibile immettere un nuovo numero di versione in questa casella se il valore visualizzato è corretto.  
+3. Il **versione** campo viene popolato automaticamente con il numero di versione del file di Windows Installer. Se il valore visualizzato è corretto, immettere un nuovo numero di versione qui.  
 
-4.  Selezionare la casella di controllo **Questa applicazione viene installata per uno o più utenti** se si vuole rilevare ogni profilo utente nel computer.  
+4. Se si vuole rilevare ogni profilo utente nel computer, selezionare **Questa applicazione viene installata per uno o più utenti**.  
+
 
 ### <a name="to-detect-a-specific-application-and-deployment-type"></a>Per rilevare un tipo specifico di applicazione e di distribuzione  
 
-1.  Nella pagina **Metodi di rilevamento** della **Creazione guidata dell'elemento di configurazione**selezionare la casella di controllo **Rilevare un tipo di applicazione e distribuzione specifico** e quindi fare clic su **Seleziona**.  
+1. Nella pagina **Metodi di rilevamento** della **Creazione guidata dell'elemento di configurazione** selezionare **Rilevare un tipo di applicazione e distribuzione specifico**. Scegli **seleziona**.   
 
-2.  Nella finestra di dialogo **Specifica applicazione** selezionare l'applicazione e un tipo di distribuzione associato da rilevare.  
+2. Nella finestra di dialogo **Specifica applicazione** selezionare l'applicazione e un tipo di distribuzione associato da rilevare.  
+
 
 ### <a name="to-detect-an-application-installation-by-using-a-custom-script"></a>Per rilevare l'installazione di un'applicazione con uno script personalizzato  
 
-1.  Nel **metodi di rilevamento** pagina del **Creazione guidata dell'elemento di configurazione**, selezionare il **utilizzare uno script personalizzato per rilevare l'applicazione** casella di controllo.  
+1. Nella pagina **Metodi di rilevamento** della **Creazione guidata dell'elemento di configurazione** selezionare l'opzione **Utilizza script personalizzato per rilevare l'applicazione**.  
 
-2.  Nell'elenco, selezionare la lingua dello script che si desidera aprire. Scegliere gli script seguenti:  
+2. Nell'elenco, selezionare la lingua dello script. Scegliere uno dei formati seguenti:  
 
-    -   **VBScript**  
+    - **VBScript**  
 
-    -   **JScript**  
+    - **JScript**  
 
-    -   **PowerShell**  
+    - **PowerShell**  
 
-3.  Fare clic su **Apri**, selezionare lo script che si vuole usare e quindi fare clic su **Apri**.  
+        > [!Note]  
+        > A partire dalla versione 1810, quando uno script di Windows PowerShell viene eseguito come un metodo di rilevamento, il client di Configuration Manager chiama PowerShell con il `-NoProfile` parametro. Questa opzione avvia PowerShell senza i profili. Un profilo di PowerShell è uno script che viene eseguito all'avvio di PowerShell. <!--3607762-->  
+
+3. Selezionare **Apri**, selezionare lo script che si vuole usare e quindi selezionare **Apri**.  
+
+
+
+##  <a name="specify-supported-platforms"></a>Specificare le piattaforme supportate  
+
+Nella pagina **Piattaforme supportate** della **Creazione guidata dell'elemento di configurazione** selezionare le versioni di Windows in cui si vuole valutare la conformità dell'elemento di configurazione oppure scegliere **Seleziona tutto**. 
+
+È anche possibile **specificare la versione di Windows manualmente**. Selezionare **Add** e specificare il numero di build di ciascuna parte di Windows. 
+
+
 
 ##  <a name="configure-settings"></a>Configurare le impostazioni  
- Usare questa procedura per configurare le impostazioni nell'elemento di configurazione.  
 
- Le impostazioni rappresentano le condizioni aziendali o tecniche usate per valutare la conformità nei dispositivi client. È possibile configurare una nuova impostazione o selezionare un'impostazione esistente in un computer di riferimento.  
+Usare questa procedura per configurare le impostazioni nell'elemento di configurazione.  
 
-1. Nel **impostazioni** pagina del **Creazione guidata dell'elemento di configurazione**, fare clic su **New**.  
+Le impostazioni rappresentano le condizioni aziendali o tecniche usate per valutare la conformità nei dispositivi client. È possibile configurare una nuova impostazione o selezionare un'impostazione esistente in un computer di riferimento.  
+
+1. Nella pagina **Impostazioni** della **Creazione guidata dell'elemento di configurazione** selezionare **Nuovo**.  
 
 2. Nel **Generale** scheda il **Crea impostazione** finestra di dialogo immettere le informazioni seguenti:  
 
-   - **Nome:** immettere un nome univoco per l'impostazione. È possibile usare un massimo di 256 caratteri.  
+    - **Nome**: immettere un nome univoco per l'impostazione. È possibile usare un massimo di 256 caratteri.  
 
-   - **Descrizione:** immettere una descrizione per l'impostazione. È possibile usare un massimo di 256 caratteri.  
+    - **Descrizione**: immettere una descrizione per l'impostazione. È possibile usare un massimo di 256 caratteri.  
 
-   - **Tipo di impostazione:** scegliere dall'elenco e configurare uno dei seguenti tipi di impostazione da usare per questa impostazione:  
+    - **Tipo di impostazione**: nell'elenco scegliere e configurare uno dei tipi di impostazione seguenti da usare per questa impostazione:  
+        - [Query Active Directory](#bkmk_adquery)
+        - [Assembly](#bkmk_assembly)
+        - [File system](#bkmk_file)
+        - [Metabase IIS](#bkmk_iis)
+        - [Chiave del Registro di sistema](#bkmk_regkey)
+        - [Valore del Registro di sistema](#bkmk_regval)
+        - [Script](#bkmk_script)
+        - [Query SQL](#bkmk_sql)
+        - [Query WQL](#bkmk_wql)
+        - [Query XPath](#bkmk_xpath)
 
-     - **Query Active Directory**  
+    - **Tipo di dati**: nell'elenco scegliere il formato in cui la condizione restituisce i dati prima che vengano usati per valutare l'impostazione. L'elenco **Tipo di dati** non viene visualizzato per tutti i tipi di impostazioni.  
 
-        **Prefisso LDAP** - Specificare un prefisso valido per la query di Servizi di dominio Active Directory per valutare la conformità nei computer client. È possibile utilizzare **LDAP: / /** per una o **GC: / /** per eseguire una ricerca nel catalogo globale.  
+        > [!Tip]  
+        > Il tipo di dati **Virgola mobile** supporta solo tre cifre dopo il separatore decimale.  
 
-        **Nome distinto (DN)** -specificare il nome distinto dell'oggetto servizi di dominio Active Directory che viene valutata per la conformità nei computer client.  
+3. Configurare ulteriori dettagli su questa impostazione sotto il **impostazione tipo** elenco. Gli elementi che è possibile configurare variano a seconda del tipo di impostazione selezionata.  
 
-        Ad esempio, se si vuole valutare un valore correlato a un utente chiamato John Smith nel dominio corp.contoso.com, immettere quanto segue:  
+4. Selezionare **OK** per salvare l'impostazione e chiudere la finestra di dialogo **Crea impostazione**.  
 
-       - **Filtro di ricerca** : specificare un filtro LDAP opzionale per rifinire i risultati derivanti dalla query Servizi di dominio Active Directory per valutare la conformità nei computer client.  
 
-          Per restituire tutti i risultati della query, immettere **(objectclass=\*)**.  
+### <a name="bkmk_adquery"></a> Query Active Directory
 
-       - **Ambito di ricerca**: specificare l'ambito di ricerca in Servizi di dominio Active Directory/ È possibile scegliere tra:  
+- **Prefisso LDAP**: specificare un prefisso valido per la query di Servizi di dominio Active Directory per valutare la conformità nei computer client. Per eseguire una ricerca nel catalogo globale, usare `LDAP://` o `GC://`.  
 
-         -   **Base** -query solo nell'oggetto specificato.  
+- **Nome distinto (DN)**: specificare il nome distinto dell'oggetto Active Directory Domain Services che viene valutato per la conformità nei computer client.  
 
-         -   **Un livello**: questa opzione non è usata in questa versione di Configuration Manager.  
+- **Filtro di ricerca**: specificare un filtro LDAP facoltativo per rifinire i risultati derivanti dalla query Active Directory Domain Services per valutare la conformità nei computer client. Per restituire tutti i risultati della query, immettere `(objectclass=*)`.  
 
-         -   **Sottoalbero** -l'oggetto specificato e il relativo sottoalbero completo nella directory una query.  
+- **Ambito di ricerca**: specificare l'ambito di ricerca in Active Directory Domain Services  
 
-       - **Proprietà** -specificare la proprietà dell'oggetto servizi di dominio Active Directory che consente di valutare la conformità nei computer client.  
+    - **Base**: esegue una query solo dell'oggetto specificato  
 
-          Ad esempio, se si desidera eseguire una query la proprietà di Active Directory **badPwdCount**, che archivia il numero di volte in cui un utente immette correttamente una password, immettere **badPwdCount** in questo campo.  
+    - **Un livello**: questa opzione non è usata in questa versione di Configuration Manager  
 
-       - **Query** -Visualizza la query creata dalle voci in **prefisso LDAP**, **nome distinto (DN)**, **filtro di ricerca** (se specificato), e **proprietà**, che vengono utilizzati per valutare la conformità nei computer client.  
+    - **Sottoalbero**: esegue una query dell'oggetto specificato e il relativo sottoalbero completo nella directory  
 
-         Per ulteriori informazioni sulla creazione di query LDAP, vedere la documentazione di Windows Server.  
+- **Proprietà**: specificare la proprietà dell'oggetto Active Directory Domain Services che consente di valutare la conformità nei computer client.  
 
-     - **Assembly**  
+    Ad esempio, se si vuole eseguire una query per la proprietà di Active Directory che archivia il numero di volte in cui un utente digita una password in modo non corretto, immettere `badPwdCount` in questo campo.  
 
-        Configurare i seguenti elementi per questo tipo di impostazione:  
+- **Query**: visualizza la query creata dalle voci in **Prefisso LDAP**, **Nome distinto (DN)**, **Filtro di ricerca** (se specificati) e **Proprietà**.  
 
-       - **Nome dell'assembly:** specifica il nome dell'oggetto assembly che si vuole cercare. Il nome non può essere quella di altri oggetti assembly dello stesso tipo e deve essere registrato nella Global Assembly Cache. Il nome dell'assembly può essere composto al massimo da 256 caratteri.  
 
-         Un assembly è una porzione di codice che può essere condivisa tra applicazioni. Le assembly possono avere come estensione del nome file .dll o .exe. Global Assembly Cache è una cartella denominata *%systemroot%\Assembly* sul client vengono archiviati i computer in tutti gli assembly condivisi.  
+### <a name="bkmk_assembly"></a> Assembly
 
-     - **File system**  
+Un assembly è una porzione di codice che può essere condivisa tra applicazioni. Le assembly possono avere come estensione del nome file .dll o .exe. Global assembly cache è la cartella `%SystemRoot%\Assembly` nei computer client. Questa cache è in cui Windows memorizza tutti gli assembly condivisi.  
 
-       - **Tipo** - Nell'elenco selezionare se si vuole effettuare la ricerca di un **File** o di una **Cartella**.  
+- **Nome dell'assembly:** Specifica il nome dell'oggetto assembly che si desidera cercare. Il nome non può essere lo stesso di altri oggetti assembly dello stesso tipo. Registrarla innanzitutto nel global assembly cache. Il nome dell'assembly può essere composto al massimo da 256 caratteri.  
 
-       - **Percorso** -specificare il percorso del file specificato o della cartella nei computer client. È possibile specificare le variabili di ambiente relative al sistema e la variabile di ambiente *%USERPROFILE%* nel percorso.  
 
-         > [!NOTE]  
-         >  Se si usa la variabile di ambiente *% USERPROFILE %* nelle caselle **Percorso** o **Nome file o cartella** , la ricerca viene eseguita in tutti i profili utente nel computer client e ciò potrebbe portare all'individuazione di più istanze del file o della cartella.  
-         >   
-         >  Se le impostazioni di conformità non hanno accesso al percorso specificato, viene generato un errore di individuazione. Inoltre, se il file che si sta cercando è attualmente in uso, viene generato un errore di individuazione.  
+### <a name="bkmk_file"></a> File system
 
-       - **Nome file o cartella** -specificare il nome dell'oggetto per la ricerca di file o cartella. È possibile specificare le variabili di ambiente relative al sistema e la variabile di ambiente *%USERPROFILE%* nel nome file o cartella. È inoltre possibile usare i caratteri jolly * e ? nel nome di file.  
+- **Tipo**: nell'elenco selezionare se si vuole effettuare la ricerca di un **File** o di una **Cartella**.  
 
-         > [!NOTE]  
-         >  Se si specifica un nome di file o cartella con i caratteri jolly, questa combinazione potrebbe produrre un numero elevato di risultati e potrebbe causare un uso elevato delle risorse nel computer client e un traffico di rete elevato per la restituzione dei risultati a Configuration Manager.  
+- **Percorso**: specificare il percorso del file o della cartella specificati nei computer client. È possibile specificare le variabili di ambiente relative al sistema e la variabile di ambiente `%USERPROFILE%` nel percorso.  
 
-       - **Includi sottocartelle** : abilitare questa opzione se si desidera effettuare la ricerca anche nelle sottocartelle nel percorso specificato.  
+    > [!NOTE]  
+    > Se si usa la `%USERPROFILE%` variabile di ambiente nel **percorso** oppure **nome File o cartella** caselle, il client di Configuration Manager cerca tutti i profili utente nel computer client. Questo comportamento può comportare che ricerca di più istanze di file o della cartella.  
+    >   
+    > Se le impostazioni di conformità non hanno accesso al percorso specificato, viene generato un errore di individuazione. Inoltre, se il file che si sta cercando è attualmente in uso, viene generato un errore di individuazione.  
 
-       - **Cartella o il file è associato a un'applicazione a 64 bit** - se abilitato, solo i percorsi di file a 64 bit (ad esempio *% ProgramFiles %*) viene selezionata in computer a 64 bit. Se questa opzione non è abilitata, la ricerca verrà eseguita sia nei percorsi a 32 bit (ad esempio *%ProgramFiles(x86)%*) che in quelli a 64 bit.  
+    > [!Tip]  
+    > Selezionare **esplorare** per configurare l'impostazione di valori in un computer di riferimento.   
 
-         > [!NOTE]  
-         >  Se nel percorso dei file del sistema a 64 e 32 bit nello stesso computer a 64 bit esiste lo stesso file o cartella, la condizione globale individuerà più file.  
+- **Nome file o cartella**: specificare il nome dell'oggetto file o cartella per la ricerca. È possibile specificare le variabili di ambiente relative al sistema e la variabile di ambiente `%USERPROFILE%` nel nome file o cartella. È anche possibile usare i caratteri jolly `*` e `?` nel nome file.  
 
-         Il tipo di impostazione **File system** non supporta l'indicazione di un percorso UNC di una condivisione di rete nella casella **Percorso** .  
+    > [!NOTE]  
+    > Se si specifica un nome di file o cartella e si usano caratteri jolly, questa combinazione potrebbe produrre un numero elevato di risultati. Potrebbe anche portare a un uso elevato delle risorse nei computer client e a un intenso traffico di rete per la restituzione dei risultati a Configuration Manager.  
 
-     - **Metabase IIS**  
+- **Includi sottocartelle**: Cerca anche eventuali sottocartelle nel percorso specificato.  
 
-       -   **Percorso metabase** - Specificare un percorso valido per la metabase di Internet Information Services (IIS).  
+- **Il file o cartella è associata a un'applicazione a 64 bit**: se abilitata, solo cercare percorsi dei file a 64 bit, ad esempio `%ProgramFiles%` nei computer a 64 bit. Se questa opzione non è abilitata, eseguire una ricerca sia percorsi a 64 bit e 32 bit percorsi come `%ProgramFiles(x86)%`.  
 
-       -   **ID proprietà** : specificare la proprietà numerica dell'impostazione della metabase IIS.  
+    > [!NOTE]  
+    > Se nel percorso dei file del sistema a 64 e 32 bit nello stesso computer a 64 bit esiste lo stesso file o cartella, la condizione globale individuerà più file.  
 
-     - **Chiave del Registro di sistema**  
+    Il tipo di impostazione **File system** non supporta l'indicazione di un percorso UNC di una condivisione di rete nel campo **Percorso**.  
 
-       -   **Hive** - Nell'elenco a discesa selezionare l'hive del Registro di sistema in cui si vuole eseguire la ricerca.  
 
-       -   **Chiave** : specificare il nome della chiave del Registro di sistema in cui si desidera effettuare la ricerca. Utilizzare il formato *key\subkey*.  
+### <a name="bkmk_iis"></a> Metabase IIS
 
-       -   **Questa chiave del Registro di sistema associato a un'applicazione a 64 bit** -specifica se le chiavi del Registro di sistema a 64 bit devono essere eseguite oltre le chiavi del Registro di sistema a 32 bit su client che eseguono una versione a 64 bit di Windows.  
+- **Percorso metabase**: specificare un percorso valido per la metabase di Internet Information Services (IIS). Ad esempio, `/LM/W3SVC/`.  
 
-           > [!NOTE]  
-           >  Se la stessa chiave del Registro di sistema esiste nei percorsi dei Registri di sistema a 64 e 32 bit sullo stesso computer a 64 bit, la condizione globale individua entrambe le chiavi.  
+- **ID proprietà**: specificare la proprietà numerica dell'impostazione della metabase IIS.  
 
-     - **Valore del Registro di sistema**  
 
-       - **Hive** - Nell'elenco a discesa selezionare l'hive del Registro di sistema in cui si vuole eseguire la ricerca.  
+### <a name="bkmk_regkey"></a> Chiave del Registro di sistema
 
-       - **Chiave** : specificare il nome della chiave del Registro di sistema in cui si desidera effettuare la ricerca. Utilizzare il formato *key\subkey*.  
+- **Hive**: selezionare l'hive del Registro di sistema che si desidera eseguire la ricerca
 
-       - **Valore** : specificare il valore che deve essere contenuto all'interno della chiave del Registro di sistema specificato.  
+    > [!Tip]  
+    > Selezionare **esplorare** per configurare l'impostazione di valori in un computer di riferimento. Per passare a una chiave del Registro di sistema in un computer remoto, abilita il **Registro di sistema remoto** servizio nel computer remoto.  
 
-       - **Questa chiave del Registro di sistema è associata a un'applicazione a 64 bit** - Consente di specificare se effettuare la ricerca anche tra le chiavi del Registro di sistema a 64 bit, oltre alle chiavi del Registro di sistema a 32 bit su client che eseguono una versione a 64 bit di Windows.  
+- **Chiave**: specificare il nome della chiave del Registro di sistema che si vuole cercare. Usare il formato `key\subkey`.  
 
-         > [!NOTE]  
-         >  Se la stessa chiave del Registro di sistema esiste nei percorsi dei Registri di sistema a 64 e 32 bit sullo stesso computer a 64 bit, la condizione globale individua entrambe le chiavi.  
+- **Questa chiave del Registro di sistema è associata a un'applicazione a 64 bit**: consente di effettuare la ricerca anche tra le chiavi del Registro di sistema a 64 bit, oltre alle chiavi del Registro di sistema a 32 bit nei client che eseguono una versione a 64 bit di Windows.  
 
-         È anche possibile fare clic su **Sfoglia** per selezionare un percorso del Registro di sistema nel computer o in un computer remoto. Per individuare un computer remoto, è necessario disporre dei diritti di amministratore sul computer remoto e il computer remoto deve essere in esecuzione il servizio Registro di sistema remoto.  
+    > [!NOTE]  
+    > Se la stessa chiave del Registro di sistema esiste nei percorsi dei Registri di sistema a 64 e 32 bit sullo stesso computer a 64 bit, la condizione globale individua entrambe le chiavi.  
 
-     - **Script**  
 
-       -   **Script di individuazione** - Fare clic su **Aggiungi** per immetterne uno oppure selezionare lo script da usare. È possibile utilizzare gli script Windows PowerShell, VBScript o Microsoft JScript.  
+### <a name="bkmk_regval"></a> Valore del Registro di sistema
 
-       -   **Esegui script utilizzando le credenziali dell'utente connesso** - Se si abilita questa opzione, lo script verrà eseguito nei computer client che usano le credenziali degli utenti connessi.  
+- **Hive**: selezionare l'hive del Registro di sistema per la ricerca.  
 
-           > [!NOTE]  
-           >  Il valore restituito dallo script viene usato per valutare la conformità della condizione globale. Ad esempio, quando si usa VBScript, si può usare il comando **WScript.Echo Result** per restituire il valore della variabile *Result* alla condizione globale.  
+    > [!Tip]  
+    > Selezionare **esplorare** per configurare l'impostazione di valori in un computer di riferimento. Per esaminare un valore del Registro di sistema in un computer remoto, abilita il **Registro di sistema remoto** servizio nel computer remoto. È necessario anche le autorizzazioni di amministratore per accedere al computer remoto.  
 
-     - **Query SQL**  
+- **Chiave**: specificare il nome della chiave del Registro di sistema per la ricerca. Usare il formato `key\subkey`.  
 
-       -   **Istanza SQL Server** : scegliere se si desidera che la query SQL venga eseguita sul nome dell'istanza predefinita, di tutte le istanze o dell'istanza di un database specifico.  
+- **Valore**: specificare il valore che deve essere contenuto all'interno della chiave del Registro di sistema specificata.  
 
-           > [!NOTE]  
-           >  Il nome dell'istanza deve fare riferimento a un'istanza locale di SQL Server. Per fare riferimento a un'istanza di SQL server del cluster, è necessario utilizzare un'impostazione script.  
+- **Questa chiave del Registro di sistema è associata a un'applicazione a 64 bit**: consente di effettuare la ricerca anche tra le chiavi del Registro di sistema a 64 bit, oltre alle chiavi del Registro di sistema a 32 bit nei client che eseguono una versione a 64 bit di Windows.  
 
-       -   **Database** -specificare il nome del database Microsoft SQL Server in cui si desidera eseguire la query SQL.  
+    > [!NOTE]  
+    > Se la stessa chiave del Registro di sistema esiste nei percorsi dei Registri di sistema a 64 e 32 bit sullo stesso computer a 64 bit, la condizione globale individua entrambe le chiavi.  
 
-       -   **Colonna** -specificare il nome della colonna restituito dall'istruzione Transact-SQL che consente di valutare la conformità della condizione globale.  
 
-       -   **Istruzione Transact-SQL** : specificare la query SQL completa da utilizzare per la condizione globale. È inoltre possibile fare clic su **Apri** per aprire una query SQL esistente.  
+### <a name="bkmk_script"></a> Script
 
-           > [!IMPORTANT]  
-           >  Le impostazioni Query SQL non supportano i comandi SQL che modificano il database. È possibile usare solo comandi SQL che leggono informazioni dal database.  
+Il valore restituito dallo script viene usato per valutare la conformità della condizione globale. Ad esempio, quando si usa VBScript, si può usare il comando **WScript.Echo Result** per restituire il valore della variabile *Result* alla condizione globale.  
 
-     - **Query WQL**  
+- **Lo script di individuazione**: selezionare **Aggiungi Script**e immettere o selezionare uno script. Questo script viene usato per trovare il valore. È possibile utilizzare gli script Windows PowerShell, VBScript o Microsoft JScript.  
 
-       -   **Dello spazio dei nomi** -specificare lo spazio dei nomi di Strumentazione gestione Windows (WMI) che viene utilizzato per costruire una query WQL che viene valutata per la conformità nei computer client. Il valore predefinito è Root\cimv2.  
+- **(Facoltativo) script di correzione**: selezionare **Aggiungi Script**e immettere o selezionare uno script. Questo script viene usato per monitorare e aggiornare i valori delle impostazioni non conformi. È possibile utilizzare gli script Windows PowerShell, VBScript o Microsoft JScript.  
 
-       -   **Classe** -specifica la classe WMI che consente di compilare una query WQL che viene valutata per la conformità nei computer client.  
+- **Esegui script utilizzando le credenziali dell'utente connesso**: se si abilita questa opzione, lo script viene eseguito nei computer client che usano le credenziali dell'utente connesso.  
 
-       -   **Proprietà** -specifica la proprietà WMI che consente di compilare una query WQL che viene valutata per la conformità nei computer client.  
+> [!Note]  
+> A partire dalla versione 1810, quando si usa Windows PowerShell come script di individuazione o monitoraggio e aggiornamento, il client di Configuration Manager chiama PowerShell con il `-NoProfile` parametro. Questa opzione avvia PowerShell senza i profili. Un profilo di PowerShell è uno script che viene eseguito all'avvio di PowerShell. <!--3607762-->  
 
-       -   **Clausola WHERE della query WQL** : è possibile utilizzare l'elemento **Clausola WHERE della query WQL** per specificare una clausola WHERE da applicare allo spazio dei nomi, alla classe e alla proprietà specifici nei computer client.  
 
-     - **Query XPath**  
+### <a name="bkmk_sql"></a> Query SQL
 
-       - **Percorso** - Specificare il percorso del file XML nei computer client che verrà usato per valutare la conformità. Configuration Manager supporta l'uso di tutte le variabili di ambiente di sistema Windows e la variabile utente *%USERPROFILE%* nel nome del percorso.  
+- **Istanza SQL Server**: scegliere se si vuole che la query SQL venga eseguita nell'istanza predefinita, in tutte le istanze o nell'istanza di database specificata.  
 
-       - **Nome del file XML** -specificare il nome del file contenente la query XML utilizzato per valutare la conformità nei computer client.  
+    > [!NOTE]  
+    > Il nome dell'istanza deve fare riferimento a un'istanza locale di SQL Server. Per fare riferimento a un'istanza di SQL server del cluster, è necessario utilizzare un'impostazione script.  
 
-       - **Includi sottocartelle** : abilitare questa opzione se si desidera effettuare la ricerca anche nelle sottocartelle nel percorso specificato.  
+- **Database**: specificare il nome del database Microsoft SQL Server in cui si desidera eseguire la query SQL.  
 
-       - **Il file è associato a un'applicazione a 64 bit**: scegliere se effettuare la ricerca anche nel percorso dei file del sistema a 64 bit (*%windir%* \System32), oltre al percorso dei file del sistema a 32 bit (*%windir%* \Syswow64) nei client di Configuration Manager che eseguono una versione a 64 bit di Windows.  
+- **Colonna**: specificare il nome della colonna restituito dall'istruzione Transact-SQL usata per valutare la conformità della condizione globale.  
 
-       - **Query XPath** -specificare una valido XML path language (XPath) query completa che consente di valutare la conformità nei computer client.  
+- **Istruzione Transact-SQL**: specificare la query SQL completa da usare per la condizione globale. Per usare una query SQL esistente, selezionare **aperto**.  
 
-       - **Spazi dei nomi** - Apre la finestra di dialogo **Spazi dei nomi XML** per individuare gli spazi dei nomi e i prefissi da usare durante la query XPath.  
+    > [!IMPORTANT]  
+    > Le impostazioni Query SQL non supportano i comandi SQL che modificano il database. È possibile usare solo comandi SQL che leggono informazioni dal database.  
 
-         Se si tenta di individuare un file XML crittografato, le impostazioni di conformità trovano il file, ma la query XPath non genera alcun risultato e non viene generato alcun errore.  
 
-         Se la query XPath non è valida, l'impostazione viene valutata come non conforme nei computer client.  
+### <a name="bkmk_wql"></a> Query WQL
 
-   - **Tipo di dati:** nell'elenco scegliere il formato in cui la condizione restituisce i dati prima che vengano usati per valutare l'impostazione. Il **tipo di dati** elenco non viene visualizzata per tutti i tipi di impostazione.  
+- **Namespace**: specificare lo spazio dei nomi WMI che viene valutata la conformità nei computer client. Il valore predefinito è `root\cimv2`.  
 
-     > [!NOTE]  
-     >  Il **a virgola mobile** tipo di dati supporta solo 3 cifre dopo il separatore decimale.  
+- **Classe**: specificare la destinazione di classe WMI nello spazio dei nomi precedente.  
 
-3. Configurare ulteriori dettagli su questa impostazione sotto il **impostazione tipo** elenco. Gli elementi che è possibile configurare variano a seconda del tipo di impostazione che è stata selezionata.  
+- **Proprietà**: specificare la proprietà WMI di destinazione nella classe precedente.  
 
-   > [!NOTE]  
-   >  Quando si creano le impostazioni del tipo **File system**, **chiave del Registro di sistema**, e **il valore del Registro di sistema**, è possibile fare clic **Sfoglia** per configurare l'impostazione di valori in un computer di riferimento. Per selezionare una chiave del Registro di sistema o un valore in un computer remoto, il computer remoto deve essere il servizio Registro di sistema remoto abilitato.  
+- **Clausola WHERE della query WQL**: specificare una clausola di qualificazione per ridurre i risultati. Ad esempio, per eseguire query solo il servizio DHCP nella classe Win32_Service, la clausola WHERE potrebbe essere `Name = 'DHCP' and StartMode = 'Auto'`.   
 
-4. Fare clic su **OK** per salvare l'impostazione e chiudere la finestra di dialogo **Crea impostazione** .  
+
+### <a name="bkmk_xpath"></a> Query XPath
+
+- **Percorso**: specificare il percorso del file XML nei computer client che viene usato per valutare la conformità. Configuration Manager supporta l'uso di tutte le variabili di ambiente di sistema Windows e della variabile utente `%USERPROFILE%` nel nome del percorso.  
+
+- **Nome del file XML**: specificare il nome del file contenente la query XML nel percorso precedente.  
+
+- **Includi sottocartelle**: abilitare questa opzione per effettuare la ricerca anche nelle eventuali sottocartelle nel percorso specificato.  
+
+- **Questo file è associato a un'applicazione a 64 bit**: cercare il percorso del file system a 64 bit `%Windir%\System32` , oltre al percorso di file di sistema a 32 bit `%Windir%\Syswow64` nei client di Configuration Manager che eseguono una versione a 64 bit di Windows.  
+
+- **Query XPath**: specificare una query valida e completa XML path language (XPath).  
+
+- **Gli spazi dei nomi**: identificare gli spazi dei nomi e i prefissi da usare durante la query XPath.  
+
+Se si tenta di individuare un file XML crittografato, le impostazioni di conformità trovano il file, ma la query XPath non genera alcun risultato. Il client di Configuration Manager non genera un errore.  
+
+Se la query XPath non è valida, l'impostazione viene valutata come non conforme nei computer client.  
+
+
 
 ##  <a name="configure-compliance-rules"></a>Configurare le regole di conformità  
- Usare la procedura seguente per configurare le regole di conformità per l'elemento di configurazione.  
 
- Le regole di conformità consentono di specificare le condizioni che definiscono la conformità di un elemento di configurazione. Prima che sia possibile valutare la conformità di un'impostazione, è necessario che tale impostazione disponga almeno di una regola di conformità. Le impostazioni per WMI, Registro di sistema e script consentono di monitorare e aggiornare i valori che risultano non conformi. È possibile creare nuove regole o passare a un'impostazione esistente in qualsiasi elemento di configurazione per selezionare le regole in essa contenute.  
+Le regole di conformità consentono di specificare le condizioni che definiscono la conformità di un elemento di configurazione. Prima che sia possibile valutare la conformità di un'impostazione, è necessario che tale impostazione disponga almeno di una regola di conformità. Le impostazioni per WMI, Registro di sistema e script consentono di monitorare e aggiornare i valori che risultano non conformi. È possibile creare nuove regole o passare a un'impostazione esistente in qualsiasi elemento di configurazione per selezionare le regole in essa contenute.  
+
 
 ### <a name="to-create-a-compliance-rule"></a>Per creare una regola di conformità  
 
-1.  Nel **le regole di conformità** pagina del **Creazione guidata dell'elemento di configurazione**, fare clic su **New**.  
+1. Nella pagina **Regole di conformità** della **Creazione guidata dell'elemento di configurazione** selezionare **Nuovo**.  
 
-2.  Nel **Create Rule** finestra di dialogo immettere le informazioni seguenti:  
+2. Nel **Create Rule** finestra di dialogo immettere le informazioni seguenti:  
 
-    -   **Nome:** immettere un nome per la regola di conformità.  
+    - **Nome**: immettere un nome per la regola di conformità.  
 
-    -   **Descrizione:** immettere una descrizione per la regola di conformità.  
+    - **Descrizione**: immettere una descrizione per la regola di conformità.  
 
-    -   **Impostazione selezionata:** fare clic su **Sfoglia** per aprire la finestra di dialogo **Seleziona impostazione**. Selezionare l'impostazione che si desidera definire una regola per oppure fare clic su **nuova impostazione**. Al termine, fare clic su **selezionare**.  
+    - **Impostazione selezionata**: selezionare **Sfoglia** per aprire la finestra di dialogo **Seleziona impostazione**. Selezionare l'impostazione per cui si vuole definire una regola o selezionare **Nuova impostazione**. Al termine, scegliere **seleziona**.  
 
-        > [!NOTE]  
-        >  È inoltre possibile fare clic su **proprietà** per visualizzare informazioni sull'impostazione attualmente selezionata.  
+        > [!Tip]  
+        > Per visualizzare informazioni sull'impostazione attualmente selezionata, selezionare **proprietà**.  
 
-    -   **Tipo di regola:** selezionare il tipo di regola di conformità che si vuole usare:  
+    - **Tipo di regola**: Selezionare il tipo di regola di conformità che si desidera utilizzare:  
 
-        -   **Valore** creare una regola che confronta il valore restituito dall'elemento di configurazione con un valore specificato dall'utente.  
+        - **Valore**: creare una regola che confronta il valore restituito dall'elemento di configurazione con un valore specificato. Per altre informazioni sulle impostazioni aggiuntive, vedere [valore regole](#bkmk_value).  
 
-        -   **Existential** creare una regola che restituisce l'impostazione a seconda se esistente in un dispositivo client o sul numero di volte in cui viene trovato.  
+        - **Esistenziale**: creare una regola che valuta l'impostazione a seconda che esista in un dispositivo client oppure a seconda del numero di occorrenze trovate. Per altre informazioni sulle impostazioni aggiuntive, vedere [Esistenziale regole](#bkmk_exist).  
 
-    -   Per un tipo di regola di **valore**, specificare le seguenti informazioni:  
+3. Selezionare **OK** per chiudere la finestra di dialogo **Crea regola**.  
 
-        -   **L'impostazione deve essere conforme alle regole seguenti** : selezionare un operatore e un valore che viene valutato per la conformità con l'impostazione selezionata. È possibile utilizzare gli operatori seguenti:  
 
-            |Operator|Altre informazioni|  
-            |--------------|----------------------|  
-            |Uguale a|Nessuna informazione aggiuntiva|  
-            |Diverso da|Nessuna informazione aggiuntiva|  
-            |Maggiore di|Nessuna informazione aggiuntiva|  
-            |Minore di|Nessuna informazione aggiuntiva|  
-            |Tra|Nessuna informazione aggiuntiva|  
-            |Maggiore o uguale a|Nessuna informazione aggiuntiva|  
-            |Minore o uguale a|Nessuna informazione aggiuntiva|  
-            |Uno|Nella casella di testo, specificare una voce per ogni riga.|  
-            |Nessuno|Nella casella di testo, specificare una voce per ogni riga.|  
 
-        -   **Monitora e aggiorna le regole non conformi, se supportato** : selezionare questa opzione se si vuole monitorare e aggiornare automaticamente le regole non conformi mediante Configuration Manager. Configuration Manager consente di correggere automaticamente i tipi di regole seguenti:  
 
-            -   **Il valore del Registro di sistema** – il valore del Registro di sistema è aggiornato, se è conforme e creato se non esiste.  
+### <a name="bkmk_value"></a> Regole di valore  
 
-            -   **Script** (eseguendo automaticamente uno script di monitoraggio e aggiornamento).  
+- **Proprietà**: la proprietà dell'oggetto da controllare varia in base all'impostazione selezionata. Le proprietà disponibili variano a seconda del tipo di impostazione. 
 
-            -   **Query WQL**  
+- **L'impostazione deve essere conforme con il codice seguente...** : Le regole disponibili o le autorizzazioni variano a seconda del tipo di impostazione.
 
-            > [!IMPORTANT]  
-            >  È possibile correggere le regole non conformi solo quando l'operatore per la regola è impostato su **Uguale a**.  
+- **Monitora e aggiorna le regole non conformi, se supportato** : selezionare questa opzione se si vuole che Configuration Manager esegua il monitoraggio e l'aggiornamento delle regole non conformi. Configuration Manager supporta l'operazione con i tipi di regole seguenti:  
 
-        -   **Report non conformità, se questa istanza di impostazione non viene trovata** : l'elemento di configurazione segnala la non conformità, se questa impostazione non viene trovata nei computer client.  
+    - **Valore del Registro di sistema**: se non è conforme, il client imposta il valore del Registro di sistema. Se non esiste, il client crea il valore.  
 
-        -   **Gravità della non conformità per i report:** specificare il livello di gravità che viene segnalato nei report di Configuration Manager se si verifica un errore di questa regola di conformità. I livelli di gravità disponibili sono i seguenti:  
+    - **Script**: il client usa lo script di monitoraggio e aggiornamento specificato con l'impostazione.  
 
-            -   **Nessuno**: i computer che non soddisfano questa regola di conformità non segnalano una gravità dell'errore.  
+    - **Query WQL**  
 
-            -   **Informazioni**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Informazioni**.  
+    > [!IMPORTANT]  
+    > È possibile correggere le regole non conformi solo quando l'operatore per la regola è impostato su **Uguale a**.  
 
-            -   **Avviso**: i computer che non soddisfano questa regola di conformità segnalano una gravità errore del tipo **Avviso**.  
+- **Segnala la mancata conformità se questa istanza dell'impostazione non viene trovata**: se questa impostazione non viene trovata nei computer client, abilitare questa opzione per elemento di configurazione segnalare la non conformità.  
 
-            -   **Errore critico**: i computer che non soddisfano questa regola di conformità segnalano una gravità errore del tipo **Critico**.  
+- **Gravità della non conformità per i report**: specificare il livello di gravità che viene segnalato nei report di Configuration Manager se si verifica un errore di questa regola di conformità. Sono disponibili livelli di gravità seguenti:  
+    - **Nessuno**  
+    - **Informazioni**  
+    - **Avviso**  
+    - **Errore critico**  
+    - **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico**. Il livello di gravità viene anche registrato come un evento Windows nel registro eventi applicazione.  
 
-            -   **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico**. Il livello di gravità viene anche registrato come un evento Windows nel registro eventi applicazione.  
 
-        -   Per il tipo di regola **Esistenziale**specificare le informazioni seguenti:  
+### <a name="bkmk_exist"></a> Esistenziale regole 
 
-            > [!NOTE]  
-            >  Le opzioni visualizzate potrebbero variare a seconda del tipo di impostazione per cui si sta configurando una regola.  
+> [!NOTE]  
+> Le opzioni visualizzate potrebbero variare a seconda del tipo di impostazione per cui si sta configurando una regola.  
 
-            -   **L'impostazione deve esistere in dispositivi client**  
+- **L'impostazione deve esistere in dispositivi client**  
 
-            -   **L'impostazione non deve esistere in dispositivi client**  
+- **L'impostazione non deve esistere in dispositivi client**  
 
-            -   **L'impostazione è presente il seguente numero di volte:**  
+- **L'impostazione è presente il seguente numero di volte:**  
 
-        -   **Gravità della non conformità per i report:** specificare il livello di gravità che viene segnalato nei report di Configuration Manager se si verifica un errore di questa regola di conformità. I livelli di gravità disponibili sono i seguenti:  
+- **Gravità della non conformità per i report**: specificare il livello di gravità che viene segnalato nei report di Configuration Manager se si verifica un errore di questa regola di conformità. Sono disponibili livelli di gravità seguenti:  
+    - **Nessuno**  
+    - **Informazioni**  
+    - **Avviso**  
+    - **Errore critico**  
+    - **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Errore critico**. Il livello di gravità viene anche registrato come un evento Windows nel registro eventi applicazione.  
 
-            -   **Nessuno**: i computer che non soddisfano questa regola di conformità non segnalano una gravità dell'errore.  
 
-            -   **Informazioni**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Informazioni**.  
 
-            -   **Avviso**: i computer che non soddisfano questa regola di conformità segnalano una gravità errore del tipo **Avviso**.  
+## <a name="next-steps"></a>Passaggi successivi
 
-            -   **Errore critico**: i computer che non soddisfano questa regola di conformità segnalano una gravità errore del tipo **Critico**.  
-
-            -   **Errore critico con evento**: i computer che non soddisfano questa regola di conformità segnalano una gravità dell'errore del tipo **Critico**. Il livello di gravità viene anche registrato come un evento Windows nel registro eventi applicazione.  
-
-3.  Fare clic su **OK** per chiudere la finestra di dialogo **Crea regola** .  
-
-##  <a name="specify-supported-platforms"></a>Specificare le piattaforme supportate  
- Le piattaforme supportate sono i sistemi operativi in cui viene valutata la conformità di un elemento di configurazione.  
-
-Nella pagina **Piattaforme supportate** della **Creazione guidata dell'elemento di configurazione**selezionare nell'elenco le versioni di Windows in cui si vuole valutare la conformità dell'elemento di configurazione oppure fare clic su **Seleziona tutto**.  
-
-## <a name="complete-the-wizard"></a>Completare la procedura guidata  
- Nella pagina **Riepilogo** della procedura guidata verificare le azioni che verranno eseguite e quindi completare la procedura guidata. Nuovo elemento di configurazione viene visualizzato nel **gli elementi di configurazione** nodo il **asset e conformità** area di lavoro.  
+[Creare linee di base di configurazione](/sccm/compliance/deploy-use/create-configuration-baselines)
