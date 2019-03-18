@@ -2,7 +2,7 @@
 title: Windows Autopilot per dispositivi esistenti
 titleSuffix: Configuration Manager
 description: Usare una sequenza di attività di Configuration Manager per ricreare l'immagine ed eseguire il provisioning di un dispositivo Windows 7 per la modalità definita dall'utente di Windows Autopilot
-ms.date: 02/22/2019
+ms.date: 03/05/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-osd
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.assetid: 2e96f847-5b5a-4da9-8e8f-6aa488838508
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 53a9ac779a9a89e010334970c2045e71380a7801
-ms.sourcegitcommit: ef2960bd91655c741450774e512dd0a9be610625
-ms.translationtype: HT
+ms.openlocfilehash: 6878e36e5bf20774f6eef1ee855dda2f95dabfb4
+ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56839013"
+ms.lasthandoff: 03/07/2019
+ms.locfileid: "57558006"
 ---
 # <a name="windows-autopilot-for-existing-devices"></a>Windows Autopilot per dispositivi esistenti
 <!--3607717, fka 1358333-->
@@ -31,9 +31,12 @@ ms.locfileid: "56839013"
 
 ## <a name="prerequisites"></a>Prerequisiti
 
-Acquistare i supporti di installazione per Windows 10 versione 1809 o successive. Creare quindi un'immagine del sistema operativo di Configuration Manager. Per altre informazioni, vedere [Gestire le immagini del sistema operativo](/sccm/osd/get-started/manage-operating-system-images).
+- Acquistare i supporti di installazione per Windows 10 versione 1809 o successive. Creare quindi un'immagine del sistema operativo di Configuration Manager. Per altre informazioni, vedere [Gestire le immagini del sistema operativo](/sccm/osd/get-started/manage-operating-system-images).
 
-In Microsoft Intune, creare i profili per Windows Autopilot. Per altre informazioni, vedere [Registrare dispositivi Windows in Intune con Windows Autopilot](https://docs.microsoft.com/intune/enrollment-autopilot).
+- In Microsoft Intune, creare i profili per Windows Autopilot. Per altre informazioni, vedere [Registrare dispositivi Windows in Intune con Windows Autopilot](https://docs.microsoft.com/intune/enrollment-autopilot).
+
+- Un dispositivo che non sia già registrato con il servizio Windows Autopilot. Se il dispositivo è già registrato, il profilo assegnato ha la precedenza. Di Autopilot per i profili di dispositivi esistenti solo se che il profilo online verifica il timeout.
+
 
 
 ## <a name="create-the-configuration-file"></a>Creare il file di configurazione
@@ -87,13 +90,13 @@ In Microsoft Intune, creare i profili per Windows Autopilot. Per altre informazi
 
 3. Nella pagina **Informazioni sequenza attività** specificare un nome, aggiungere facoltativamente una descrizione e selezionare un'immagine di avvio. Per altre informazioni sulle versioni di immagini di avvio supportate, vedere [Supporto per Windows 10](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk).  
 
-4. Nella pagina **Installa Windows** selezionare il pacchetto dell'immagine di Windows 10. Configurare quindi le impostazioni seguenti:  
+4. Nella pagina **Installa Windows** selezionare il **pacchetto dell'immagine** di Windows 10. Configurare quindi le impostazioni seguenti:  
 
-    - **Indice immagine**: Selezionare Enterprise, Education o Professional, in base ai requisiti dall'organizzazione  
+    - **Indice delle immagini**: selezionare Enterprise, Education o Professional, in base ai requisiti dall'organizzazione  
 
     - Abilitare l'opzione **Creare partizioni e formattare il computer di destinazione prima di installare il sistema operativo**  
 
-    - **Configura sequenza di attività da utilizzare con BitLocker**: se si abilita questa opzione, la sequenza di attività include i passaggi necessari per abilitare Bitlocker  
+    - **Configurare la sequenza di attività per l'utilizzo con Bitlocker**: se si abilita questa opzione, la sequenza di attività include i passaggi necessari per abilitare Bitlocker  
 
     - **Codice Product Key**: se è necessario specificare un codice Product Key per l'attivazione di Windows, immetterlo qui  
 
@@ -123,7 +126,7 @@ Se si modifica la sequenza di attività, la procedura è simile a quella per la 
 
 - **Applica la configurazione di Windows Autopilot**: questo passaggio applica il file di configurazione di Autopilot dal pacchetto specificato. Non è un nuovo tipo di passaggio, ma un passaggio **Esegui riga di comando** per copiare il file.  
 
-- **Prepara Windows per l'acquisizione**: questo passaggio esegue Windows Sysprep e include l'impostazione **Arresta il computer dopo l'esecuzione di questa azione**. Per altre informazioni, vedere [Prepara Windows per l'acquisizione](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareWindowsforCapture).  
+- **Prepara Windows per l'acquisizione**: questo passaggio esegue Sysprep di Windows con l'impostazione **Arresta il computer dopo l'esecuzione di questa azione**. Per altre informazioni, vedere [Prepara Windows per l'acquisizione](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareWindowsforCapture).  
 
 Il risultato della sequenza di attività Windows Autopilot per i dispositivi esistenti è l'aggiunta di un dispositivo ad Azure Active Directory (Azure AD). 
 
