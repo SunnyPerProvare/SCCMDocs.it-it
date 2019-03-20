@@ -10,12 +10,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8104210fcf690cecf4bdb815384b8dd672c3873d
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 8add225db488a749eba98f9015fcb112e8f34f04
+ms.sourcegitcommit: 8803a64692f3edc0422b58f6c3037a8796374cc8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122323"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57881793"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificati per il gateway di gestione cloud
 
@@ -40,9 +40,10 @@ Per altre informazioni sui diversi scenari, vedere [Pianificare il gateway di ge
 
 
 ### <a name="general-information"></a>Informazioni generali
-<!--SCCMDocs issue #779--> I certificati per Cloud Management Gateway supportano le configurazioni seguenti:  
+<!--SCCMDocs issue #779-->
+I certificati per Cloud Management Gateway supportano le configurazioni seguenti:  
 
-- **Lunghezza della chiave 4096 bit**  
+- lunghezza della chiave 2048 bit o 4096 bit
 
 - A partire dalla versione 1710, supporto per provider di archiviazione chiavi per le chiavi private dei certificati. Per altre informazioni, vedere [Panoramica dei certificati CNG](/sccm/core/plan-design/network/cng-certificates-overview).  
 

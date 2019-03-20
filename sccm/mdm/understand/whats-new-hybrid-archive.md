@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 420026065caf619f51a5ebf84d7ae2f61a2248e1
-ms.sourcegitcommit: ec4411fe30770f90128cf6cbd181047db90040cb
+ms.openlocfilehash: 73eda37c9432750d94ef0b770348fc3d3250800c
+ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57881929"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58197079"
 ---
 # <a name="past-hybrid-features-with-system-center-configuration-manager-and-microsoft-intune"></a>Funzionalità ibride precedenti con System Center Configuration Manager e Microsoft Intune
 
@@ -223,12 +223,12 @@ Nella versione 1702 di Configuration Manager (Current Branch) sono disponibili a
   L'app Portale aziendale per Android usa Google Play Services per comunicare con il servizio Microsoft Intune. Poiché Google Play Services non è ancora disponibile in Cina, per eseguire una delle attività seguenti possono essere necessarie fino a 8 ore.
 
   | Console di amministrazione di Configuration Manager | App Portale aziendale di Intune per Android | Sito Web dell'app Portale aziendale di Intune |
-  |----|----|----|      
-  | Disattiva/Cancella (rimuovere tutti i dati)   | Rimuovere un dispositivo remoto | Rimuovi dispositivo (locale e remoto) |
-  | Disattiva/Cancella (rimuovere i dati aziendali)   | Reimposta dispositivo | Reimposta dispositivo|
+  |----|----|----|
+  | Disattiva/Cancella (rimuovere tutti i dati)| Rimuovere un dispositivo remoto | Rimuovi dispositivo (locale e remoto) |
+  | Disattiva/Cancella (rimuovere i dati aziendali)| Reimposta dispositivo | Reimposta dispositivo|
   | Distribuzioni di app nuove o aggiornate | Installare le app line-of-business disponibili | Reimpostazione del passcode del dispositivo|
-  | Blocco remoto | | |
-  | Reimpostazione del passcode | | |        
+  | Blocco remoto| | |
+  | Reimpostazione del passcode | | |
 
 
 ## <a name="november-2016"></a>Novembre 2016

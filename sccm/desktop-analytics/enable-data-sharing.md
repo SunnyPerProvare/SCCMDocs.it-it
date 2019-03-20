@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5213c96ee434d9d87ea7728701945ac46c0a62a0
-ms.sourcegitcommit: ceec0e20bf801071f2a05233f984cf17acc3fd29
+ms.openlocfilehash: f1a6ab6fca6650bde69179b71576d1df2e201b92
+ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56755473"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58196739"
 ---
 # <a name="enable-data-sharing-for-desktop-analytics"></a>Abilitare la condivisione per Desktop Analitica dei dati 
 
@@ -76,8 +76,8 @@ Per abilitare la condivisione dei dati, configurare il server proxy all'elenco e
 | `https://nexusrules.officeapps.live.com` | Usato per richiedere gli eventi dinamici dei dati di diagnostica dai client di Office. Questi dati sono utili per scopi di diagnostica e drill-down nel portale di Analitica Desktop |
 | `https://nexus.officeapps.live.com` | Usato dai client di Office per inviare gli eventi di dati di diagnostica da Office 14, Office 15 e versioni precedenti a 16.0.8702 pari a Office 16. Viene usato per raccogliere l'utilizzo e affidabilità segnala gli eventi per Desktop Analitica. |
 | `https://office.pipe.aria.microsoft.com` | Utilizzato dai client di Office per inviare gli eventi di dati di diagnostica dalle App Office universal/moderno e le versioni di Win32 Office 16 initializeasync 16.0.8702. Viene usato per raccogliere l'utilizzo e affidabilità segnala gli eventi per Desktop Analitica. |
-| `https://graph.windows.net` | Usato da Configuration Manager per recuperare automaticamente le impostazioni, ad esempio CommercialId quando ci si collega la gerarchia per Desktop Analitica. |
-| `https://fef.bmsub01.manage-beta.microsoft.com` | Usato da Configuration Manager per la sincronizzazione le appartenenze a raccolte di dispositivi, i piani di distribuzione e stato di conformità del dispositivo con Desktop Analitica. |
+| `https://graph.windows.net` | Consente di recuperare automaticamente le impostazioni, ad esempio CommercialId quando ci si collega la gerarchia per Desktop Analitica (on solo ruolo del Server di Configuration Manager). |
+| `https://fef.msua06.manage.microsoft.com` | Utilizzato per le appartenenze a raccolte di dispositivi di sincronizzazione, piani di distribuzione e lo stato di conformità dispositivo con Desktop Analitica (nel solo ruolo del Server di Configuration Manager). |
 
 
 ### <a name="ssl-inspection"></a>Ispezione SSL

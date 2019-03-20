@@ -2,7 +2,7 @@
 title: Criteri di conformità dei dispositivi
 titleSuffix: Configuration Manager
 description: Informazioni su come gestire i criteri di conformità in Configuration Manager per rendere i dispositivi conformi ai criteri di accesso condizionale.
-ms.date: 07/12/2018
+ms.date: 03/19/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2544d2b61c3d92555d0bc1abc908003f1c982bab
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 4e225b7ab54a1061387d1c8ee369641f68bd7889
+ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56136518"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58196875"
 ---
 # <a name="device-compliance-policies-in-system-center-configuration-manager"></a>Criteri di conformità del dispositivo in System Center Configuration Manager
 
@@ -26,7 +26,7 @@ I criteri di conformità in Configuration Manager definiscono le regole e le imp
 
 
 > [!IMPORTANT]  
->  Questo articolo descrive i criteri di conformità per i dispositivi gestiti da Microsoft Intune. I criteri di conformità per i dispostivi gestiti dal client di Configuration Manager sono descritti in [Gestire l'accesso ai servizi di O365 per i PC gestiti da System Center Configuration Manager](/sccm/protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm).  
+>  Questo articolo descrive i criteri di conformità per i dispositivi gestiti da Microsoft Intune. I criteri di conformità per i dispositivi gestiti dal client di Configuration Manager è descritta in [gestire l'accesso ai servizi di Office 365 per i dispositivi gestiti da Configuration Manager](/sccm/protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm).  
 
  Queste regole includono requisiti come:  
 
@@ -71,7 +71,8 @@ I criteri di conformità in Configuration Manager definiscono le regole e le imp
 
 
 ## <a name="devices-without-any-assigned-compliance-policy"></a>Dispositivi senza criteri di conformità assegnati
-<!--2520152--> A partire da luglio 2018, è necessario configurare i dispositivi specificando se devono essere considerati conformi o non conformi nel caso in cui non abbiano criteri di conformità assegnati. Per impostazione predefinita, i dispositivi senza criteri di conformità assegnati vengono considerati conformi. Usare la procedura seguente per modificare questa impostazione nel portale di Azure:
+<!--2520152-->
+A partire da luglio 2018, configurare se tutti i dispositivi dotati di alcun criterio di conformità assegnato vengono considerati conformi o non conformi. Per impostazione predefinita, i dispositivi senza criteri di conformità assegnati vengono considerati conformi. Usare la procedura seguente per modificare questa impostazione nel portale di Azure:
 
 1. Accedere a [Intune nel portale di Azure](https://aka.ms/intuneportal).  
 

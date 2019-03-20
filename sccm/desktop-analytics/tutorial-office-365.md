@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb4170bddfbad34807c6fb82131fa09dc7c6b09f
-ms.sourcegitcommit: ceec0e20bf801071f2a05233f984cf17acc3fd29
+ms.openlocfilehash: c8e346aaabb03296f19a1eaf40d79c0f9f241cce
+ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56755474"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58197011"
 ---
 # <a name="tutorial-deploy-office-365-to-pilot"></a>Esercitazione: Distribuire Office 365 per contenuto pilota 
 
@@ -84,7 +84,7 @@ Prima di iniziare questa esercitazione, accertarsi di avere i prerequisiti segue
     - `https://nexus.officeapps.live.com`  
     - `https://office.pipe.aria.microsoft.com`  
     - `https://graph.windows.net` (al solo ruolo del Server di Configuration Manager)
-    - `https://fef.bmsub01.manage-beta.microsoft.com` (al solo ruolo del Server di Configuration Manager)
+    - `https://fef.msua06.manage.microsoft.com` (al solo ruolo del Server di Configuration Manager)
 
     Per altre informazioni, vedere [come abilitare la condivisione per Desktop Analitica dei dati](/sccm/desktop-analytics/enable-data-sharing#endpoints).  
 
@@ -101,7 +101,7 @@ Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nel
 
 2. Nel **accettare il contratto di servizio** pagina, esaminare il contratto di servizio e selezionare **Accept**.  
 
-3. Nel **confermare la tua iscrizione** pagina, l'elenco di licenze idonee sono per la funzionalità integrità del dispositivo Windows del Desktop Analitica. Selezionare **successivo** per continuare.  
+3. Nel **confermare la tua iscrizione** pagina, l'elenco di licenze idonee sono per la funzionalità integrità del dispositivo Windows del Desktop Analitica. Selezionare **Avanti** per continuare.  
 
 4. Nel **consentire agli utenti accesso** pagina Desktop Analitica preconfigura i due gruppi di sicurezza in Azure Active Directory:  
 

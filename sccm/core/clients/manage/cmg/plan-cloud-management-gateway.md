@@ -11,25 +11,26 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a66ba04defcea48db143487cc08bc5dc330cf2c
-ms.sourcegitcommit: ef2960bd91655c741450774e512dd0a9be610625
+ms.openlocfilehash: 44d19c9d2ba7daa029bb46eeb386771de70a2e8f
+ms.sourcegitcommit: 8803a64692f3edc0422b58f6c3037a8796374cc8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56838906"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "57881895"
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Pianificare il gateway di gestione cloud in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
  
-<!--1101764--> Il gateway di gestione cloud (CMG) consente di gestire i client di Configuration Manager in Internet in modo semplice. Distribuendo il gateway di gestione cloud (CMG) come servizio cloud in Microsoft Azure, è possibile gestire i client tradizionali che effettuano il roaming in Internet senza un'infrastruttura aggiuntiva. Inoltre non è necessario esporre l'infrastruttura locale a Internet. 
+<!--1101764-->
+Il gateway di gestione cloud (CMG) consente di gestire i client di Configuration Manager in Internet in modo semplice. Distribuendo il gateway di gestione cloud (CMG) come servizio cloud in Microsoft Azure, è possibile gestire i client tradizionali che effettuano il roaming in Internet senza un'infrastruttura aggiuntiva. Inoltre non è necessario esporre l'infrastruttura locale a Internet. 
 
 > [!Tip]  
 > Questa funzionalità è stata introdotta per la prima volta nella versione 1610 come [versione non definitiva](/sccm/core/servers/manage/pre-release-features). A partire dalla versione 1802, questa funzionalità non è più in versione non definitiva.  
 
 
 > [!Note]  
-> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Abilitare le funzionalità facoltative degli aggiornamenti](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).<!--505213-->  
 
 
 Dopo aver definito i prerequisiti, la creazione del gateway di gestione cloud (CMG) prevede i tre passaggi seguenti nella console di Configuration Manager:
@@ -95,11 +96,12 @@ La distribuzione e l'utilizzo del gateway di gestione cloud includono i componen
 
 - Un [**punto di distribuzione cloud**](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) fornisce i contenuti ai client basati su Internet, in base alle esigenze.  
 
-    - A partire dalla versione 1806, un CMG può anche trasferire contenuti ai client. Questa funzionalità riduce i certificati necessari e i costi delle macchine virtuali di Azure. Per altre informazioni, vedere l'articolo sulla [modifica di un CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#modify-a-cmg).<!--1358651-->  
+    - A partire dalla versione 1806, un CMG può anche trasferire contenuti ai client. Questa funzionalità riduce i certificati necessari e i costi delle macchine virtuali di Azure. Per altre informazioni, vedere [Modify a CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#modify-a-cmg) (Modificare un gateway di gestione cloud).<!--1358651-->  
 
 
 ### <a name="azure-resource-manager"></a>Azure Resource Manager
-<!-- 1324735 --> A partire dalla versione 1802, è possibile creare il gateway di gestione cloud usando una **distribuzione Azure Resource Manager**. [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) è una piattaforma moderna per la gestione di tutte le risorse di una soluzione come una singola entità detta [gruppo di risorse](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups). Quando si distribuisce Cloud Management Gateway con Azure Resource Manager, il sito usa Azure Active Directory (Azure AD) per autenticare e creare le risorse cloud necessarie. Questa distribuzione modernizzata non richiede il certificato di gestione classico di Azure.  
+<!-- 1324735 -->
+A partire dalla versione 1802, è possibile creare il gateway di gestione cloud usando una **distribuzione Azure Resource Manager**. [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) è una piattaforma moderna per la gestione di tutte le risorse di una soluzione come una singola entità detta [gruppo di risorse](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups). Quando si distribuisce Cloud Management Gateway con Azure Resource Manager, il sito usa Azure Active Directory (Azure AD) per autenticare e creare le risorse cloud necessarie. Questa distribuzione modernizzata non richiede il certificato di gestione classico di Azure.  
 
 > [!Note]  
 > Questa funzionalità non supporta i provider di servizi cloud di Azure. La distribuzione del gateway di gestione cloud con Azure Resource Manager continua infatti a usare il servizio cloud classico, non supportato dal provider di servizi cloud. Per altre informazioni, vedere [Available Azure services in Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services) (servizi di Azure disponibili in Azure CSP). 
@@ -280,7 +282,7 @@ Cloud Management Gateway (CMG) usa i componenti di Azure seguenti, che implicano
 
 - Per altre informazioni, vedere i costi d'uso dei [punti di distribuzione cloud](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#bkmk_cost).  
 
-- A partire dalla versione 1806, un CMG può anche trasferire contenuti ai client. Questa funzionalità riduce i certificati necessari e i costi delle macchine virtuali di Azure. Per altre informazioni, vedere l'articolo sulla [modifica di un CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#modify-a-cmg).<!--1358651-->  
+- A partire dalla versione 1806, un CMG può anche trasferire contenuti ai client. Questa funzionalità riduce i certificati necessari e i costi delle macchine virtuali di Azure. Per altre informazioni, vedere [Modify a CMG](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway#modify-a-cmg) (Modificare un gateway di gestione cloud).<!--1358651-->  
 
 
 #### <a name="other-costs"></a>Altri costi
@@ -297,9 +299,9 @@ I suggerimenti seguenti consentono di migliorare le prestazioni del gateway di g
 
 - Se possibile, configurare il gateway di gestione cloud, il punto di connessione del gateway di gestione cloud e il server del sito di Configuration Manager nella stessa area di rete per ridurre la latenza.  
 
-- Attualmente la connessione tra il client di Configuration Manager e il gateway di gestione cloud non è in grado di riconoscere l'area.  
+- La connessione tra il client di Configuration Manager e il CMG non è in grado di riconoscere l'area. Le comunicazioni client sono in gran parte non interessate dalla latenza e/o dalla separazione geografica. Non è necessario distribuire più CMG ai fini della prossimità geografica. Distribuire il CMG nel sito di livello superiore nella gerarchia e aggiungere istanze per aumentare la disponibilità.
 
-- Per la disponibilità elevata del servizio, creare almeno due servizi Cloud Management Gateway e due punti di connessione del gateway di gestione cloud per ogni sito.  
+- Per la disponibilità elevata del servizio, creare un CMG con almeno due istanze di CMG e due punti di connessione CMG per ogni sito.  
 
 - Scalare il gateway di gestione cloud per supportare più client mediante l'aggiunta di più istanze di macchine virtuali. Il bilanciamento del carico di Azure controlla le connessioni client al servizio.  
 
