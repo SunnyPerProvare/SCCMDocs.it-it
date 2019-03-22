@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8e346aaabb03296f19a1eaf40d79c0f9f241cce
-ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
+ms.openlocfilehash: b8102e426e4737efdd5ca77de2824c1465b382ec
+ms.sourcegitcommit: 5f17355f954b9d9e10325c0e9854a9d582dec777
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58197011"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329499"
 ---
 # <a name="tutorial-deploy-office-365-to-pilot"></a>Esercitazione: Distribuire Office 365 per contenuto pilota 
 
@@ -97,7 +97,7 @@ Prima di iniziare questa esercitazione, accertarsi di avere i prerequisiti segue
 
 Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nella sottoscrizione. Questa procedura è un processo unico per configurare Desktop Analitica per l'organizzazione.  
 
-1. Aprire il [portal Desktop Analitica](https://aka.ms/m365aprod) nella gestione dei dispositivi Microsoft 365 come utente con **amministratore società** autorizzazioni. Selezionare **avviare**.  
+1. Aprire il portale di Analitica Desktop nella gestione di dispositivi di Microsoft 365 come utente con **amministratore società** autorizzazioni. Selezionare **avviare**.  
 
 2. Nel **accettare il contratto di servizio** pagina, esaminare il contratto di servizio e selezionare **Accept**.  
 
@@ -134,7 +134,7 @@ Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nel
 
 ### <a name="create-an-app-in-azure-ad-for-configuration-manager"></a>Creare un'app in Azure AD per Configuration Manager  
 
-1. Nel [portale di Azure](http://portal.azure.com)passare alla **Azure Active Directory**e selezionare **registrazioni per l'App**. Quindi selezionare **registrazione nuova applicazione**.  
+1. Nel [portale di Azure](https://portal.azure.com)passare alla **Azure Active Directory**e selezionare **registrazioni per l'App**. Quindi selezionare **registrazione nuova applicazione**.  
 
 2. Nel **Create** panel, configurare le impostazioni seguenti:  
 
