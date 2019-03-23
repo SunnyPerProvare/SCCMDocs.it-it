@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9bd3a9efcbc76647ae39eb1a104b401b112d15fb
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 7b20637cea4e02f390ae845ff9d421e5011120ab
+ms.sourcegitcommit: 4441b3035222cfaf7442416873ed824ac7d852c5
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56755172"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58356326"
 ---
 # <a name="how-to-set-up-desktop-analytics"></a>Come configurare Desktop Analitica 
 
@@ -30,7 +30,7 @@ Utilizzare questa procedura per accedere al Desktop Analitica e configurarlo nel
 
 ## <a name="initial-onboarding"></a>Onboarding iniziale
 
-1. Aprire il [portal Desktop Analitica](https://aka.ms/m365aprod) nella gestione dei dispositivi Microsoft 365 come utente con **amministratore società** autorizzazioni. Selezionare **avviare**.  
+1. Aprire il portale di Analitica Desktop nella gestione di dispositivi di Microsoft 365 come utente con **amministratore società** autorizzazioni. Selezionare **avviare**.  
 
 2. Nel **accettare il contratto di servizio** pagina, esaminare il contratto di servizio e selezionare **Accept**.  
 

@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8102e426e4737efdd5ca77de2824c1465b382ec
-ms.sourcegitcommit: 5f17355f954b9d9e10325c0e9854a9d582dec777
+ms.openlocfilehash: 0f05b1115338f9808a950bcd1646d8035f3a563b
+ms.sourcegitcommit: 4441b3035222cfaf7442416873ed824ac7d852c5
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329499"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58356360"
 ---
 # <a name="tutorial-deploy-office-365-to-pilot"></a>Esercitazione: Distribuire Office 365 per contenuto pilota 
 
@@ -381,5 +381,5 @@ Utilizzare questa procedura per distribuire Office 365 ProPlus in Configuration 
 
 Passare all'articolo successivo per altre informazioni sui piani di distribuzione Desktop Analitica.
 > [!div class="nextstepaction"]  
-> [Piani di distribuzione](/sccm/desktop-analytics/deployment-plans)  
+> [Piani di distribuzione](/sccm/desktop-analytics/about-deployment-plans)
 
