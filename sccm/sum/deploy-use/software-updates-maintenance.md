@@ -3,7 +3,7 @@ title: Manutenzione degli aggiornamenti software
 titleSuffix: Configuration Manager
 description: Per gestire gli aggiornamenti in Configuration Manager, è possibile pianificare l'attività di pulizia di WSUS oppure eseguirla manualmente.
 author: mestew
-ms.date: 03/05/2019
+ms.date: 03/15/2019
 ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
@@ -11,12 +11,12 @@ ms.assetid: 4b0e2e90-aac7-4d06-a707-512eee6e576c
 manager: dougeby
 ms.author: mstewart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff0f69a0e43c2d52aec9df262bf8d48587edb94c
-ms.sourcegitcommit: 4ab85212268e76d3fd22f00e6c74edaa5abde60c
+ms.openlocfilehash: c0391202054a80ea34180e73d107f5c2991aebe2
+ms.sourcegitcommit: d71e558db2da124357b840332e2da671b3810507
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57426856"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58269078"
 ---
 # <a name="software-updates-maintenance"></a>Manutenzione degli aggiornamenti software
 
@@ -56,7 +56,8 @@ Nelle versioni precedenti a Configuration Manager versione 1806, l'opzione della
 
 ## <a name="wsus-cleanup-behavior-starting-in-version-1806"></a>Comportamento del processo di pulizia WSUS a partire dalla versione 1806
 
-A partire dalla versione 1806, l'opzione della pulizia WSUS viene eseguita dopo ogni sincronizzazione per questi elementi: <!--1357898 -->
+A partire dalla versione 1806, l'opzione di pulizia WSUS viene eseguita dopo ogni sincronizzazione per questi elementi:
+<!--1357898 -->
 
 - Opzione **Aggiornamenti scaduti** per i server WSUS nei siti CAS e primari.
   - I server WSUS per i server secondari non eseguono la pulizia WSUS per gli aggiornamenti scaduti.
@@ -79,7 +80,8 @@ Nei database WSUS dei siti secondari, tutte le operazioni di manutenzione di WSU
 
 ## <a name="wsus-cleanup-behavior-starting-in-version-1810"></a>Comportamento del processo di pulizia WSUS a partire dalla versione 1810
 
-A partire dalla versione 1810, l'opzione di pulizia WSUS viene eseguita dopo ogni sincronizzazione per questi elementi: <!--2839349-->
+Avvio della versione 1810, è possibile specificare regole di sostituzione per gli aggiornamenti delle funzionalità separatamente dagli aggiornamenti delle funzionalità non nelle proprietà del componente punto di aggiornamento Software. L'opzione di pulizia WSUS viene eseguita dopo ogni sincronizzazione per questi elementi:
+<!--2839349,3098809, 2977644-->
 
 - Opzione **Aggiornamenti scaduti** per i server WSUS nei siti CAS, primari e secondari.
 - Configuration Manager crea un elenco degli aggiornamenti sostituiti dal proprio database. L'elenco è basato sul comportamento di sostituzione nelle proprietà del componente del punto di aggiornamento software.

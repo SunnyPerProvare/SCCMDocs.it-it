@@ -2,7 +2,7 @@
 title: Gestire Windows come servizio
 titleSuffix: Configuration Manager
 description: Visualizzare lo stato di Windows as a Service (WaaS) usando Configuration Manager, definire piani di manutenzione per formare anelli di distribuzione e visualizzare avvisi quando i client Windows 10 si avvicinano alla scadenza del supporto.
-ms.date: 10/02/2017
+ms.date: 03/15/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51c5d7f1bb6500eddfaf7e1a3a19e25bc7cafa63
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 614ccc06a3fef5cca54c7eb1c32952e8531aedfa
+ms.sourcegitcommit: d71e558db2da124357b840332e2da671b3810507
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56137593"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58269070"
 ---
 # <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Gestire Windows come servizio con System Center Configuration Manager
 
@@ -66,13 +66,13 @@ ms.locfileid: "56137593"
 
 -   **Riquadro Scaduta**: visualizza la percentuale di dispositivi presenti in una build di Windows 10 che ha superato la scadenza. Configuration Manager determina tale percentuale dai metadati scaricati dal punto di connessione del servizio messi a confronto con i dati di individuazione. Una build che ha superato la scadenza non riceve più gli aggiornamenti cumulativi mensili, inclusi gli aggiornamenti della sicurezza. I computer in questa categoria devono essere aggiornati alla versione successiva della build. Configuration Manager arrotonda al numero intero successivo. Ad esempio, se si hanno 10.000 computer e soltanto uno con una build scaduta, il riquadro restituisce 1%.  
 
--   **Riquadro Scade a breve**: visualizza la percentuale di computer presenti in una build in procinto di scadere nei quattro mesi successivi, analogamente al riquadro **Scaduta**. Configuration Manager arrotonda al numero intero successivo.  
+-   **Riquadro Scade a breve**: visualizza la percentuale di computer presenti in una build in procinto di scadere nei quattro mesi successivi, analogamente al riquadro **Scaduta** . Configuration Manager arrotonda al numero intero successivo.  
 
 -   **Riquadro Avvisi**: visualizza gli avvisi attivi.  
 
 -   **Riquadro Monitoraggio piano di manutenzione**: visualizza i piani di manutenzione creati e un grafico della conformità per ognuno. Questo riquadro offre una rapida panoramica dello stato attuale delle distribuzioni del piano di manutenzione. Se un anello di distribuzione precedente soddisfa le previsioni di conformità, è possibile selezionare un piano di manutenzione o un anello di distribuzione successivo e fare clic su **Distribuisci ora** , anziché attendere l'attivazione automatica delle regole del piano di manutenzione.  
 
--   **Riquadro Build di Windows 10**: visualizza l'immagine fissa di una sequenza temporale che offre una panoramica delle build di Windows 10 attualmente rilasciate e informazioni generali sul momento in cui passeranno a stati diversi.  
+-   Il **riquadro delle build di Windows 10** visualizza l'immagine fissa di una sequenza temporale che offre una panoramica delle build di Windows 10 attualmente rilasciate e informazioni generali sul momento in cui passeranno a stati diversi.  
 
 > [!IMPORTANT]  
 >  Le informazioni visualizzate nel dashboard di manutenzione di Windows 10, ad esempio il ciclo di vita del supporto per le versioni di Windows 10, vengono fornite per agevolare l'utente e sono destinate solo all'uso interno all'azienda. Non fare affidamento esclusivamente su queste informazioni per accertare la conformità dell'aggiornamento. Verificare l'accuratezza delle informazioni fornite.  
@@ -80,7 +80,7 @@ ms.locfileid: "56137593"
 ## <a name="servicing-plan-workflow"></a>Flusso di lavoro del piano di manutenzione  
  I piani di manutenzione di Windows 10 in Configuration Manager sono molto simili alle regole di distribuzione automatica degli aggiornamenti software. Creare un piano di manutenzione con i criteri seguenti, che verrà valutato da Configuration Manager:  
 
-- **Classificazione aggiornamenti**: vengono valutati solo gli aggiornamenti presenti nella classificazione **Aggiornamenti**.  
+- **Classificazione Aggiornamenti**: vengono valutati solo gli aggiornamenti presenti nella classificazione **Aggiornamenti** .  
 
 - **Stato di conformità**: lo stato di conformità definito nel piano di manutenzione viene confrontato con lo stato di conformità per l'aggiornamento. I metadati per l'aggiornamento vengono recuperati quando il punto di connessione del servizio verifica la disponibilità di aggiornamenti.  
 
@@ -133,9 +133,9 @@ ms.locfileid: "56137593"
 
 6. Nella pagina Anello di distribuzione configurare le impostazioni seguenti:  
 
-   -   **Specificare lo stato di conformità di Windows a cui applicare questo piano di manutenzione**: Selezionare una delle opzioni seguenti:  
+   -   **Specificare lo stato di conformità di Windows a cui applicare questo piano di manutenzione**: selezionare una delle opzioni riportate di seguito.  
 
-       -   **Canale semestrale (mirato)**: in questo modello di manutenzione gli aggiornamenti delle funzionalità sono disponibili non appena vengono rilasciati da Microsoft.
+       -   **Canale semestrale (mirato)**: in questo modello di manutenzione, gli aggiornamenti delle funzionalità sono disponibili non appena vengono rilasciati da Microsoft.
 
        -   **Canale semestrale**: questo canale di manutenzione viene in genere usato per distribuzioni di grandi dimensioni. I client Windows 10 nel canale semestrale ricevono la stessa build di Windows 10 dei dispositivi nel canale mirato, ma in un momento successivo.
 
@@ -144,27 +144,33 @@ ms.locfileid: "56137593"
    -   **Dopo quanti giorni dalla pubblicazione di un nuovo aggiornamento di Microsoft si vuole eseguire la distribuzione nell'ambiente**: se la data corrente è successiva alla data di rilascio più il numero di giorni configurato per questa impostazione, Configuration Manager valuta se includere un aggiornamento nella distribuzione.
 
 
-7. Nella pagina Aggiornamenti configurare i criteri di ricerca per filtrare gli aggiornamenti che vengono aggiunti al piano di manutenzione. Vengono aggiunti alla distribuzione associata solo gli aggiornamenti che soddisfano i criteri specificati.   
+7. Nella pagina Aggiornamenti configurare i criteri di ricerca per filtrare gli aggiornamenti che vengono aggiunti al piano di manutenzione. Vengono aggiunti alla distribuzione associata solo gli aggiornamenti che soddisfano i criteri specificati. Sono disponibili i filtri proprietà seguenti: <!--3098809, 3113836, 3204570 -->
 
-    > [!Important]    
-    > Nell'ambito dei criteri di ricerca è consigliabile impostare il valore **>=1** nel campo **Richiesto**. L'uso di questo criterio assicura che solo gli aggiornamenti applicabili vengano aggiunti al piano di manutenzione.
+   - **Architettura** (a partire dalla versione 1810)
+   - **Lingua**
+   - **Categoria di prodotto** (a partire dalla versione 1810)
+   - **Richiesto**
+      > [!Important]    
+      > Nell'ambito dei criteri di ricerca è consigliabile impostare il valore **>=1** nel campo **Richiesto**. L'uso di questo criterio assicura che solo gli aggiornamenti applicabili vengano aggiunti al piano di manutenzione.
+   - **Sostituito** (a partire dalla versione 1810)
+   - **Titolo**
 
     Fare clic su **Anteprima** per visualizzare gli aggiornamenti che soddisfano i criteri specificati.  
 
 8. Nella pagina Pianificazione della distribuzione configurare le seguenti impostazioni:  
 
-   -   **Pianificazione della valutazione**: specificare se Configuration Manager valuta il tempo disponibile e le scadenze dell'installazione in base all'ora UTC o all'ora locale del computer in cui è in esecuzione la console di Configuration Manager.  
+   -   **Pianificazione valutazione**: specificare se Configuration Manager valuta il tempo disponibile e le scadenze dell'installazione in base all'ora UTC o all'ora locale del computer su cui è in esecuzione la console di Configuration Manager.  
 
        > [!NOTE]  
        >  Quando si seleziona l'ora locale e quindi si sceglie **Appena possibile** per **Tempo disponibile software** o **Scadenza installazione**, per valutare quando sono disponibili aggiornamento o quando vengono installati in un client, viene usata l'ora corrente del computer che esegue la console di Configuration Manager. Se il client si trova in un fuso orario diverso, verranno eseguite le azioni seguenti quando l'ora del client raggiunge quella impostata per la valutazione.  
 
-   -   **Tempo disponibile software**: selezionare una delle seguenti impostazioni per specificare quando gli aggiornamenti software saranno disponibili per i client:  
+   -   **Tempo disponibile software**: selezionare una delle seguenti impostazioni per specificare quando gli aggiornamenti del software saranno disponibili per i client:  
 
        -   **Appena possibile**: selezionare questa impostazione per rendere disponibili il prima possibile gli aggiornamenti software inclusi nella distribuzione per i computer client. Quando si crea la distribuzione con questa impostazione selezionata, Configuration Manager aggiorna i criteri client. Quindi, al successivo ciclo di polling dei criteri client, ai client viene comunicata la distribuzione e possono ottenere gli aggiornamenti disponibili per l'installazione.  
 
        -   **Orario specifico**: selezionare questa impostazione per rendere disponibili gli aggiornamenti software inclusi nella distribuzione per i computer client in una data e a un orario specifici. Quando si crea la distribuzione con questa impostazione attivata, Configuration Manager aggiorna i criteri client. Quindi, al successivo ciclo di polling dei criteri client, ai client viene comunicata la distribuzione. Tuttavia, gli aggiornamenti del software nella distribuzione non saranno disponibili per l'installazione prima della data e dell'orario configurati.  
 
-   -   **Scadenza installazione**: selezionare una delle seguenti impostazioni per specificare la scadenza per l'installazione degli aggiornamenti software nella distribuzione.  
+   -   **Scadenza installazione**: selezionare una delle seguenti impostazioni per specificare la scadenza per l'installazione degli aggiornamenti software nella distribuzione:  
 
        -   **Appena possibile**: selezionare questa impostazione per installare automaticamente gli aggiornamenti software nella distribuzione appena possibile.  
 
@@ -183,7 +189,7 @@ ms.locfileid: "56137593"
 
     -   **Comportamento riavvio dispositivo**: specificare se evitare un riavvio del sistema in server e workstation dopo l'installazione degli aggiornamenti e se è richiesto un riavvio del sistema per completare l'installazione.  
 
-    -   **Gestione filtri di scrittura per dispositivi con Windows Embedded**: quando si distribuiscono aggiornamenti in dispositivi con Windows Embedded abilitati per i filtri di scrittura, è possibile specificare di installare l'aggiornamento nell'overlay temporaneo ed eseguire il commit delle modifiche in seguito oppure alla scadenza dell'installazione o all'interno di una finestra di manutenzione. Quando si confermano le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario il riavvio per mantenere le modifiche nel dispositivo.  
+    -   **Gestione filtri di scrittura per dispositivi con Windows Embedded**: quando si distribuiscono aggiornamenti in dispositivi con Windows Embedded abilitati per i filtri di scrittura, è possibile specificare di installare l'aggiornamento nella sovrapposizione temporanea e confermare le modifiche in seguito oppure alla scadenza dell'installazione o all'interno di una finestra di manutenzione. Quando si confermano le modifiche alla scadenza dell'installazione o all'interno di una finestra di manutenzione, è necessario il riavvio per mantenere le modifiche nel dispositivo.  
 
         > [!NOTE]  
         >  Quando si distribuisce un aggiornamento in un dispositivo con Windows Embedded, verificare che il dispositivo appartenga a una raccolta con una finestra di manutenzione configurata.  
@@ -205,7 +211,7 @@ ms.locfileid: "56137593"
         > [!IMPORTANT]  
         >  È possibile modificare il percorso di origine del pacchetto nelle proprietà del pacchetto di distribuzione dopo che Configuration Manager ha creato il pacchetto di distribuzione. Ma in tal caso, è prima necessario copiare il contenuto dall'origine del pacchetto originale nel nuovo percorso di origine del pacchetto.  
 
-    4.  **Priorità di invio**: Specificare la priorità di invio per il pacchetto di distribuzione. Configuration Manager usa la priorità di invio quando invia il pacchetto di distribuzione ai punti di distribuzione. I pacchetti di distribuzione vengono inviati in ordine di priorità: Alta, Media o Bassa. I pacchetti con priorità identiche vengono inviati nell'ordine in cui sono stati creati. Se non esiste alcun backlog, il pacchetto esegue l'elaborazione immediatamente indipendentemente dalla relativa priorità.  
+    4.  **Priorità di invio**: specificare la priorità di invio per il pacchetto di distribuzione. Configuration Manager usa la priorità di invio quando invia il pacchetto di distribuzione ai punti di distribuzione. I pacchetti di distribuzione vengono inviati in ordine di priorità: Alta, Media o Bassa. I pacchetti con priorità identiche vengono inviati nell'ordine in cui sono stati creati. Se non esiste alcun backlog, il pacchetto esegue l'elaborazione immediatamente indipendentemente dalla relativa priorità.  
 
 11. Nella pagina Punti di distribuzione specificare i punti di distribuzione o i gruppi di punti di distribuzione che ospitano i file di aggiornamento. Per altre informazioni, vedere [Configurare un punto di distribuzione](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_configs).
 
@@ -214,9 +220,9 @@ ms.locfileid: "56137593"
 
 12. Nella pagina Percorso download specificare se scaricare i file di aggiornamento da Internet o dalla rete locale. Configurare le seguenti impostazioni:  
 
-    -   **Scarica aggiornamenti software da Internet**: selezionare questa impostazione per scaricare gli aggiornamenti da un percorso specificato su Internet. Questa opzione è attivata per impostazione predefinita.  
+    -   **Scarica aggiornamenti software da Internet**: selezionare questa impostazione per scaricare gli aggiornamenti da un percorso specificato in Internet. Questa opzione è attivata per impostazione predefinita.  
 
-    -   **Scarica aggiornamenti software dal seguente percorso nella rete locale**: selezionare questa impostazione per scaricare gli aggiornamenti da una directory locale o una cartella condivisa. Questa impostazione è utile quando il computer che esegue la procedura guidata non dispone di accesso a Internet. I computer con accesso a Internet possono scaricare preventivamente gli aggiornamenti e archiviarli in un percorso di rete locale accessibile al computer che esegue la procedura guidata.  
+    -   **Scarica aggiornamenti software da un percorso sulla rete locale**: selezionare questa impostazione per scaricare gli aggiornamenti da una directory locale o una cartella condivisa. Questa impostazione è utile quando il computer che esegue la procedura guidata non dispone di accesso a Internet. I computer con accesso a Internet possono scaricare preventivamente gli aggiornamenti e archiviarli in un percorso di rete locale accessibile al computer che esegue la procedura guidata.  
 
 13. Nella pagina Selezione lingua selezionare le lingue per cui vengono scaricati gli aggiornamenti selezionati. Gli aggiornamenti vengono scaricati solo se sono disponibili nelle lingue selezionate. Gli aggiornamenti non specifici per la lingua vengono sempre scaricati. Per impostazione predefinita, la procedura guidata consente di selezionare le lingue configurate nelle proprietà del punto di aggiornamento software. Prima di procedere alla pagina successiva, è necessario selezionare almeno una lingua. Quando si selezionano solo lingue non supportate da un aggiornamento, il download dell'aggiornamento non riesce.  
 
@@ -244,7 +250,7 @@ Per modificare le proprietà di un piano di manutenzione, seguire la procedura r
 
     **Impostazioni distribuzione**: nella scheda Impostazioni distribuzione configurare le impostazioni seguenti:  
 
-    -   **Tipo di distribuzione**: Specificare il tipo di distribuzione per la distribuzione degli aggiornamenti software. Selezionare **Richiesto** per creare una distribuzione degli aggiornamenti software obbligatoria in cui gli aggiornamenti software vengano automaticamente installati nei client prima della scadenza di un'installazione configurata. Selezionare **Disponibile** per creare una distribuzione degli aggiornamenti software aggiuntiva che gli utenti possano installare da Software Center.  
+    -   **Tipo di distribuzione**: specificare il tipo di distribuzione per la distribuzione degli aggiornamenti software. Selezionare **Richiesto** per creare una distribuzione degli aggiornamenti software obbligatoria in cui gli aggiornamenti software vengano automaticamente installati nei client prima della scadenza di un'installazione configurata. Selezionare **Disponibile** per creare una distribuzione degli aggiornamenti software aggiuntiva che gli utenti possano installare da Software Center.  
 
         > [!IMPORTANT]  
         >  Dopo aver creato la distribuzione degli aggiornamenti software, non è possibile modificare successivamente il tipo di distribuzione.  
@@ -254,7 +260,7 @@ Per modificare le proprietà di un piano di manutenzione, seguire la procedura r
         >  
         > I gruppi di aggiornamenti software distribuiti come **Disponibile** vengono invece scaricati in primo piano e ignorano le impostazioni BITS.  
 
-    -   **Usa riattivazione LAN per riattivare i client per le distribuzioni richieste**: specificare se abilitare la Riattivazione LAN alla scadenza per inviare pacchetti di riattivazione ai computer che richiedono uno o più aggiornamenti software nella distribuzione. Tutti i computer in modalità sospensione all'ora di scadenza dell'installazione vengono riattivati in modo che si possa avviare l'installazione degli aggiornamenti software. I client in modalità sospensione che non richiedono aggiornamenti software nella distribuzione non vengono avviati. Per impostazione predefinita, questa impostazione non viene abilitata ed è disponibile solo quando **Tipo di distribuzione** è impostato su **Richiesto**.  
+    -   **Usa riattivazione LAN per riattivare i client per le distribuzioni richieste**: specificare se abilitare la riattivazione LAN alla scadenza per inviare pacchetti di riattivazione ai computer che richiedono uno o più aggiornamenti software nella distribuzione. Tutti i computer in modalità sospensione all'ora di scadenza dell'installazione vengono riattivati in modo che si possa avviare l'installazione degli aggiornamenti software. I client in modalità sospensione che non richiedono aggiornamenti software nella distribuzione non vengono avviati. Per impostazione predefinita, questa impostazione non viene abilitata ed è disponibile solo quando **Tipo di distribuzione** è impostato su **Richiesto**.  
 
         > [!WARNING]  
         >  Prima di usare questa opzione, i computer e le reti devono essere configurati per riattivazione LAN.  
@@ -267,7 +273,7 @@ Per modificare le proprietà di un piano di manutenzione, seguire la procedura r
 
     - Specificare se il client dovrà scaricare e installare gli aggiornamenti software da un punto di distribuzione di fallback nel caso in cui il contenuto per tali aggiornamenti non fosse disponibile su un punto di distribuzione preferito.  
 
-    -   **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'utilizzo di BranchCache per il download del contenuto. Per altre informazioni su BranchCache, vedere [Concetti di base per la gestione dei contenuti](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
+    -   **Consenti ai client di condividere il contenuto con altri client nella stessa subnet**: specificare se consentire l'uso di BranchCache per il download del contenuto. Per altre informazioni su BranchCache, vedere [Concetti di base per la gestione dei contenuti](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
 
     -   Specificare se far scaricare ai client gli aggiornamenti software da Microsoft Update nel caso in cui gli aggiornamenti non fossero disponibili nei punti di distribuzione.
         > [!IMPORTANT]
