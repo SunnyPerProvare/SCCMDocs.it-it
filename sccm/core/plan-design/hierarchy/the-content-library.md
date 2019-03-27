@@ -2,7 +2,7 @@
 title: Raccolta contenuto
 titleSuffix: Configuration Manager
 description: Informazioni sulla raccolta contenuto che Configuration Manager usa per ridurre le dimensioni complessive del contenuto distribuito.
-ms.date: 09/19/2018
+ms.date: 03/20/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0453f181133b69dcf3fe83032da0eace84718cf3
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 9b082e28fde0b1ae53a00b9d3236764d03b474ed
+ms.sourcegitcommit: 5f17355f954b9d9e10325c0e9854a9d582dec777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56129273"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329516"
 ---
 # <a name="the-content-library-in-configuration-manager"></a>Raccolta contenuto in Configuration Manager
 
@@ -75,7 +75,8 @@ Utilizzare le seguenti opzioni per gestire la raccolta contenuto nel sito di amm
 
 
 ## <a name="bkmk_remote"></a> Configurare una raccolta contenuto remota per il server del sito  
-<!--1357525--> A partire dalla versione 1806 per configurare l'[alta disponibilità del server del sito](/sccm/core/servers/deploy/configure/site-server-high-availability) o per liberare spazio sul disco rigido dei server del sito di amministrazione centrale o del sito primario, spostare la raccolta contenuto in un'altra posizione di archiviazione. Spostare la raccolta contenuto in un'altra unità sul server del sito, un server distinto o dischi a tolleranza di errore in una rete di archiviazione (SAN). È consigliabile una SAN perché è a disponibilità elevata e fornisce uno spazio di archiviazione elastico, che può aumentare o ridursi nel tempo per soddisfare i requisiti mutevoli del contenuto. Per altre informazioni, vedere [Opzioni di disponibilità elevata](/sccm/protect/understand/high-availability-options).
+<!--1357525-->
+A partire dalla versione 1806 per configurare la [disponibilità elevata del server del sito](/sccm/core/servers/deploy/configure/site-server-high-availability) o per liberare spazio sul disco rigido nei server del sito di amministrazione centrale o del sito primario, spostare la raccolta contenuto in un'altra posizione di archiviazione. Spostare la raccolta contenuto in un'altra unità sul server del sito, su un server distinto o su dischi a tolleranza d'errore in una rete di archiviazione (SAN). È consigliabile una SAN perché è a disponibilità elevata e fornisce uno spazio di archiviazione elastico, che può aumentare o ridursi nel tempo per soddisfare i requisiti mutevoli del contenuto. Per altre informazioni, vedere [Opzioni di disponibilità elevata](/sccm/protect/understand/high-availability-options).
 
 Una raccolta contenuto remota è un prerequisito per la [disponibilità elevata del server del sito](/sccm/core/servers/deploy/configure/site-server-high-availability). 
 
@@ -90,7 +91,7 @@ Una raccolta contenuto remota è un prerequisito per la [disponibilità elevata 
 
 ### <a name="prerequisites"></a>Prerequisiti  
 
-- L'account computer del server del sito deve disporre di autorizzazioni di **lettura** e **scrittura** per il percorso di rete in cui deve essere spostata la raccolta contenuto. Non sono installati componenti nel sistema remoto.  
+- L'account computer del server del sito deve avere le autorizzazioni **Controllo completo** per il percorso di rete in cui deve essere spostata la raccolta contenuto. Questa autorizzazione è applicabile sia alla condivisione che al file system. Non sono installati componenti nel sistema remoto.
 
 - Il server del sito non può avere il ruolo di punto di distribuzione. Il punto di distribuzione usa anche la raccolta contenuto e questo ruolo non supporta una raccolta contenuto remota. Dopo aver spostato la raccolta contenuto, non è possibile aggiungere il ruolo di punto di distribuzione al server del sito.  
 
@@ -115,6 +116,9 @@ Una raccolta contenuto remota è un prerequisito per la [disponibilità elevata 
 
    - Quando è **In corso**, il valore **Stato dello spostamento (%)** visualizza la percentuale di completamento.  
 
+        > [!Note]  
+        > Se è disponibile una raccolta contenuto di grandi dimensioni, potrebbe essere indicato lo stato di avanzamento `0%` nella console per un periodo di tempo. Ad esempio, con una raccolta di 1 TB devono essere copiati 10 GB prima che il valore di avanzamento diventi `1%`. Esaminare **distmgr.log**, che mostra il numero di file e byte copiati. A partire dalla versione 1810, il file di log mostra anche il tempo stimato rimanente.
+
    - Se è presente uno stato di errore, viene visualizzato l'errore. Gli errori tipici comprendono **accesso negato** o **disco pieno**.  
 
    - Al termine, viene visualizzato **Completo**.  
@@ -124,6 +128,10 @@ Una raccolta contenuto remota è un prerequisito per la [disponibilità elevata 
 Per altre informazioni su questo processo, vedere [Diagramma di flusso - Gestire la raccolta contenuto](/sccm/core/plan-design/hierarchy/manage-content-library-flowchart).
 
 Il sito *copia* effettivamente file della raccolta contenuto nel percorso remoto. Questo processo non elimina i file della raccolta contenuto nel percorso originale del server del sito. Per liberare spazio, un amministratore deve eliminare manualmente questi file originali.
+
+Se la raccolta contenuto originale si estende su due unità, viene unita in un'unica cartella nella nuova destinazione. 
+
+A partire dalla versione 1810, durante il processo di copia il sito arresta i componenti **despooler** e **gestione distribuzioni**. Questa azione assicura che non venga aggiunto contenuto alla raccolta durante lo spostamento. Ciò nonostante, pianificare questa modifica durante una finestra di manutenzione del sistema.
 
 Se è necessario spostare nuovamente la raccolta contenuto nel server del sito, ripetere questo processo, ma immettere un'unità e un percorso locali in **Nuova posizione**. Deve includere un nome di cartella già esistente nell'unità, ad esempio, `D:\SCCMContentLib`. Quando il contenuto originale è ancora presente, il processo sposta rapidamente la configurazione nel percorso locale al server del sito. 
 

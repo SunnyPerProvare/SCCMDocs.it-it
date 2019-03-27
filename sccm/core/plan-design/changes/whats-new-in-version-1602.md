@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ac08431c76653711eacb62aed4100c2fab0db50
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 7b0c162e7d1fcc38b388d0b39cc6811bc9e86973
+ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56122509"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58196807"
 ---
 # <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>Novità della versione 1602 di System Center Configuration Manager
 
@@ -120,7 +120,7 @@ Queste app si trovano nel nodo **Applicazioni** della console di Configuration M
 ### <a name="conditional-access-for-pcs-managed-by-system-center-configuration-manager"></a>Accesso condizionale per i PC gestiti da System Center Configuration Manager  
  Prima di questa versione, per configurare l'accesso condizionale per un PC era necessario che il PC fosse registrato in Intune o aggiunto a un dominio. A partire dall'aggiornamento 1602 è supportato l'accesso condizionale per i PC gestiti da System Center Configuration Manager. Per i PC gestiti da System Center Configuration Manager, è possibile limitare l'accesso a Exchange Online e SharePoint Online solo ai dispositivi che soddisfano i criteri di conformità impostati.  
 
- Per informazioni dettagliate, vedere [Gestire l'accesso ai servizi di O365 per i PC gestiti da System Center Configuration Manager](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
+ Per informazioni dettagliate, vedere [Gestire l'accesso ai servizi di Office 365 per i PC gestiti da System Center Configuration Manager](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
 
 ### <a name="restricting-access-based-on-the-health-of-devices"></a>Limitazione dell'accesso in base allo stato di integrità dei dispositivi  
  È ora possibile limitare l'accesso alla posta elettronica e ai servizi di Office 365 in base all'integrità dei dispositivi, come segnalato dal Servizio di attestazione dell'integrità. Inoltre, i dispositivi gestiti da Intune sono inclusi nei report sull'integrità del dispositivo.  

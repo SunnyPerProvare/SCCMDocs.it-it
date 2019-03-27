@@ -2,7 +2,7 @@
 title: Notifica client
 titleSuffix: Configuration Manager
 description: Gestire i client intraprendendo azioni immediate dalla console centrale di Configuration Manager.
-ms.date: 03/06/2019
+ms.date: 03/19/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a643924cbaef928f9db4011f634ae96171ab7914
-ms.sourcegitcommit: 544f335cfd1bfd0a1d4973439780e9f5e9ee8bed
+ms.openlocfilehash: 39135a1fa548c83e0ba9c7d2a98cf1e925217280
+ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57562092"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58197028"
 ---
 # <a name="client-notification-in-configuration-manager"></a>Notifica del client in Configuration Manager
 
@@ -79,7 +79,8 @@ Le azioni seguenti sono disponibili nel menu **Notifica client**, nella barra mu
 Nella versione 1806 o nelle versioni precedenti, l'opzione **Notifica client** è disponibile solo dal nodo Raccolta di dispositivi oppure quando si visualizza l'appartenenza di una raccolta di dispositivi. A partire dalla versione 1810, l'opzione **Notifica client** è disponibile direttamente nel nodo **Dispositivi**. Non è più un requisito essere all'interno di una visualizzazione di appartenenza della raccolta. <!--SCCMDocs-pr issue 2972-->
 
 #### <a name="permissions"></a>Autorizzazioni
-<!--SCCMDocs-pr issue #2972--> A partire dalla versione 1810, per le azioni di notifica client ora è necessaria l'autorizzazione **Invia una notifica alla risorsa** per l'oggetto Raccolta. Questa autorizzazione è applicabile a tutte le azioni del menu **Notifica client**. 
+<!--SCCMDocs-pr issue #2972-->
+A partire dalla versione 1810, per le azioni di notifica client ora è necessaria l'autorizzazione **Invia una notifica alla risorsa** per l'oggetto Raccolta. Questa autorizzazione è applicabile a tutte le azioni del menu **Notifica client**. 
 
 I ruoli predefiniti seguenti hanno questa autorizzazione per impostazione predefinita:
 - Amministratore completo  
@@ -135,7 +136,7 @@ Attivare i client di Windows 10 per il controllo e l'invio dello stato dell'inte
 
 ### <a name="check-conditional-access-compliance"></a>Controlla la conformità dell'accesso condizionale
 
-Attivare i client per il controllo della conformità dell'accesso condizionale. Per altre informazioni, vedere [Gestire l'accesso ai servizi di O365 per i PC](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm).  
+Attivare i client per il controllo della conformità dell'accesso condizionale. Per altre informazioni, vedere [Gestire l'accesso ai servizi di Office 365 per i PC](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm).  
 
 
 ### <a name="wake-up"></a>Riattiva

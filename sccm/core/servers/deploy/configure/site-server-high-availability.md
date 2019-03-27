@@ -2,7 +2,7 @@
 title: Disponibilità elevata del server del sito
 titleSuffix: Configuration Manager
 description: Come configurare la disponibilità elevata per il server del sito di Configuration Manager aggiungendo un server del sito in modalità passiva.
-ms.date: 07/30/2018
+ms.date: 03/20/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be12cfe29ff470f2f577bab2c685695ae5770bae
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 1259e54f552496f1c838ce4d8da5dbb385dc3c52
+ms.sourcegitcommit: 5f17355f954b9d9e10325c0e9854a9d582dec777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56131422"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329533"
 ---
 # <a name="site-server-high-availability-in-configuration-manager"></a>Disponibilità elevata del server del sito in Configuration Manager
 
@@ -24,7 +24,14 @@ ms.locfileid: "56131422"
 
 <!--1128774-->
 
-A partire da Configuration Manager versione 1806, la disponibilità elevata per il ruolo del server del sito è una soluzione di base di Configuration Manager per installare un server del sito aggiuntivo in modalità *passiva*. Il server del sito in modalità passiva è un'aggiunta al server del sito primario esistente in modalità *attiva*. Un server del sito in modalità passiva è disponibile per l'uso immediato, quando necessario. Includere questo server del sito aggiuntivo come parte della progettazione complessiva per rendere il servizio Configuration Manager a [disponibilità elevata](/sccm/core/servers/deploy/configure/high-availability-options).  
+In passato, era possibile aggiungere ridondanza per la maggior parte dei ruoli in Configuration Manager definendo più istanze di questi ruoli nell'ambiente in uso. Fatta eccezione per il server del sito stesso. A partire da Configuration Manager versione 1806, la disponibilità elevata per il ruolo del server del sito è una soluzione basata su Configuration Manager per installare un server del sito aggiuntivo in modalità  *passiva*. La versione 1810 aggiunge il supporto della gerarchia, quindi anche i siti di amministrazione centrale e i siti primari figlio possono avere un altro server del sito in modalità passiva. Il server del sito in modalità passiva può essere locale o basato sul cloud in Azure.
+
+Questa funzionalità offre i vantaggi seguenti 
+- Ridondanza e disponibilità elevata per il ruolo del server del sito  
+- Modificare più facilmente l'hardware o il sistema operativo del server del sito  
+- Spostare più facilmente il server del sito in un'infrastruttura IaaS di Azure  
+
+Il server del sito in modalità passiva è un'aggiunta al server del sito primario esistente in modalità *attiva*. Un server del sito in modalità passiva è disponibile per l'uso immediato, quando necessario. Includere questo server del sito aggiuntivo come parte della progettazione complessiva per rendere il servizio Configuration Manager a [disponibilità elevata](/sccm/core/servers/deploy/configure/high-availability-options).  
 
 Un server del sito in modalità passiva:
 - Usa lo stesso database del sito usato dal server del sito in modalità attiva.
@@ -33,12 +40,17 @@ Un server del sito in modalità passiva:
 
 Per far diventare attivo il server del sito in modalità passiva, lo si *alza di livello* manualmente. Questa azione fa passare il server del sito dalla modalità passiva alla modalità attiva. I ruoli del sistema del sito che sono disponibili nel server in modalità Attivo originale rimangono disponibili fin a quando tale computer è accessibile. Solo il ruolo del server del sito viene commutato tra le modalità attiva e passiva.
 
-> [!Note]  
-> Configuration Manager non abilita questa funzionalità facoltativa per impostazione predefinita. Pertanto sarà necessario abilitarla prima di poterla usare. Per altre informazioni, vedere [Enable optional features from updates](/sccm/core/servers/manage/install-in-console-updates#bkmk_options) (Abilitare le funzioni facoltative dagli aggiornamenti).
+Questa funzionalità è stata usata da Microsoft Core Services Engineering and Operations per eseguire la migrazione del sito di amministrazione a Microsoft Azure. Per altre informazioni, vedere l'[articolo di Microsoft IT Showcase](https://www.microsoft.com/itshowcase/Article/Content/1065/Migrating-System-Center-Configuration-Manager-onpremises-infrastructure-to-Microsoft-Azure).
 
 
 
 ## <a name="prerequisites"></a>Prerequisiti
+
+- La raccolta contenuto del sito deve essere in una condivisione di rete remota. Entrambi i server del sito necessitano di autorizzazioni di controllo completo per la condivisione e i relativi contenuti. Per altre informazioni, vedere [Gestire la raccolta contenuto](/sccm/core/plan-design/hierarchy/the-content-library#bkmk_remote).<!--1357525-->  
+
+    - L'account computer del server del sito deve avere le autorizzazioni **Controllo completo** per il percorso di rete in cui deve essere spostata la raccolta contenuto. Questa autorizzazione è applicabile sia alla condivisione che al file system. Non sono installati componenti nel sistema remoto.
+
+    - Il server del sito non può avere il ruolo di punto di distribuzione. Il punto di distribuzione usa anche la raccolta contenuto e questo ruolo non supporta una raccolta contenuto remota. Dopo aver spostato la raccolta contenuto, non è possibile aggiungere il ruolo di punto di distribuzione al server del sito.  
 
 - Il server del sito in modalità passiva può essere locale o basato sul cloud in Azure.  
     > [!Note]  
@@ -48,40 +60,73 @@ Per far diventare attivo il server del sito in modalità passiva, lo si *alza di
 
 - Entrambi i server del sito devono appartenere allo stesso dominio di Active Directory.  
 
-- Il sito è un sito primario autonomo. 
+- Nella versione 1806 il sito deve essere un sito primario autonomo.  
 
-- Entrambi i server del sito devono usare lo stesso database del sito, che deve essere remoto per ogni server del sito.  
+    - A partire dalla versione 1810, Configuration Manager supporta i server del sito in modalità passiva in una gerarchia. I siti di amministrazione centrale e i siti primari figlio ora possono avere un altro server del sito in modalità passiva.<!-- 3607755 -->  
 
-     - Entrambi i server del sito necessitano di autorizzazioni di **amministratore di sistema** per l'istanza di SQL Server che ospita il database del sito.
+- Entrambi i server del sito devono usare lo stesso database del sito.  
 
-     - L'istanza di SQL Server che ospita il database del sito può usare un'istanza predefinita, un'istanza denominata, un [cluster di SQL Server](/sccm/core/servers/deploy/configure/use-a-sql-server-cluster-for-the-site-database) o un [gruppo di disponibilità Always On di SQL Server](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database).  
+    - Nella versione 1806 il database deve essere remoto rispetto a ogni server del sito. A partire dalla versione 1810, il programma di installazione di Configuration Manager non blocca più l'installazione del ruolo del server del sito in un computer con il ruolo Windows per il clustering di failover. Poiché SQL Always On richiede questo ruolo, non era possibile in precedenza inserire il database del sito nel server del sito. Con questa modifica, è possibile creare un sito a disponibilità elevata con un minor numero di server usando SQL Always On e un server del sito in modalità passiva.<!-- SCCMDocs issue 1074 -->  
 
-     - Il server del sito in modalità passiva è configurato per usare lo stesso database del sito del server del sito in modalità attiva. Il server del sito in modalità passiva legge solo dal database. Non scrive nel database finché non viene alzato di livello alla modalità attiva.  
+    - L'istanza di SQL Server che ospita il database del sito può usare un'istanza predefinita, un'istanza denominata, un [cluster di SQL Server](/sccm/core/servers/deploy/configure/use-a-sql-server-cluster-for-the-site-database) o un [gruppo di disponibilità Always On di SQL Server](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database).  
 
-- La raccolta contenuto del sito deve essere in una condivisione di rete remota. Entrambi i server del sito necessitano di autorizzazioni di controllo completo per la condivisione e i relativi contenuti. Per altre informazioni, vedere [Gestire la raccolta contenuto](/sccm/core/plan-design/hierarchy/the-content-library#manage-content-library).<!--1357525-->  
+    - Entrambi i server del sito necessitano dei ruoli di sicurezza **sysadmin** e **securityadmin** per l'istanza di SQL Server che ospita il database del sito. Il server del sito originale deve avere già questi ruoli, quindi aggiungerli per il nuovo server del sito. Ad esempio, lo script SQL seguente consente di aggiungere i ruoli seguenti per il nuovo server del sito **VM2** nel dominio Contoso:  
 
-    - Il server del sito non può avere il ruolo di punto di distribuzione. Il punto di distribuzione usa anche la raccolta contenuto e questo ruolo non supporta una raccolta contenuto remota. Dopo aver spostato la raccolta contenuto, non è possibile aggiungere il ruolo di punto di distribuzione al server del sito.  
+        ```SQL
+        USE [master]
+        GO
+        CREATE LOGIN [contoso\vm2$] FROM WINDOWS WITH DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[us_english]
+        GO
+        ALTER SERVER ROLE [sysadmin] ADD MEMBER [contoso\vm2$]
+        GO
+        ALTER SERVER ROLE [securityadmin] ADD MEMBER [contoso\vm2$]
+        GO        
+        ```
+    - Entrambi i server del sito devono avere accesso al database del sito nell'istanza di SQL Server. Il server del sito originale deve avere già questo accesso, quindi aggiungerlo per il nuovo server del sito. Ad esempio, lo script SQL seguente aggiunge un account di accesso al database **CM_ABC** per il nuovo server del sito **VM2** nel dominio Contoso:  
+
+        ```SQL
+        USE [CM_ABC]
+        GO
+        CREATE USER [contoso\vm2$] FOR LOGIN [contoso\vm2$] WITH DEFAULT_SCHEMA=[dbo]
+        GO
+        ```
+
+    - Il server del sito in modalità passiva è configurato per usare lo stesso database del sito del server del sito in modalità attiva. Il server del sito in modalità passiva legge solo dal database. Non scrive nel database finché non viene alzato di livello alla modalità attiva.  
 
 - Il server del sito in modalità passiva:  
 
-     - Deve soddisfare i [prerequisiti per l'installazione di un sito primario](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#primary-sites-and-the-central-administration-site).  
+    - Deve soddisfare i prerequisiti per l'installazione di un sito primario. Ad esempio, .NET Framework, la compressione differenziale remota e Windows ADK. Per l'elenco completo, vedere [Prerequisiti del sito e del sistema del sito](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).<!-- SCCMDocs issue 765 -->  
 
-     - Deve avere l'account computer nel gruppo di amministratori locale sul server del sito in modalità attiva.<!--516036-->
+    - Deve avere l'account computer nel gruppo di amministratori locale nel server del sito in modalità attiva.<!--516036-->
 
-     - Esegue l'installazione usando file di origine che corrispondono alla versione del server del sito in modalità attiva.  
+    - Deve eseguire l'installazione usando file di origine che corrispondono alla versione del server del sito in modalità attiva.  
 
-     - Non può avere un ruolo del sistema del sito da qualsiasi sito prima di installare il server del sito nel ruolo in modalità passiva.  
+    - Non può avere un ruolo del sistema del sito da qualsiasi sito installato nel server prima di installare il ruolo di server del sito in modalità passiva.  
 
 - Entrambi i server del sito possono eseguire versioni diverse del sistema operativo o del Service Pack, purché entrambe siano [supportate da Configuration Manager](/sccm/core/plan-design/configs/supported-operating-systems-for-site-system-servers).  
+
+- Non ospitare il ruolo punto di connessione del servizio nel server del sito configurato per la disponibilità elevata. Se è attualmente nel server del sito originale, rimuoverlo e installarlo in un altro server del sistema del sito. Per altre informazioni, vedere [Informazioni sul punto di connessione del servizio](/sccm/core/servers/deploy/configure/about-the-service-connection-point).  
+
+- Autorizzazioni per l'[account di installazione sistema del sito](/sccm/core/plan-design/hierarchy/accounts#site-system-installation-account)  
+
+    - Per impostazione predefinita, molti clienti usano l'account computer del server del sito per installare nuovi sistemi del sito. Il requisito consiste quindi nell'aggiungere l'account computer del server del sito al gruppo **Amministratori** locale nel sistema del sito remoto. Se l'ambiente usa questa configurazione, assicurarsi di aggiungere l'account computer del nuovo server del sito a questo gruppo locale in tutti i sistemi del sito remoti. Ad esempio, tutti i punti di distribuzione remoti.  
+
+    - La configurazione più sicura e consigliata consiste nell'usare un account del servizio per l'installazione del sistema del sito. La configurazione più sicura consiste nell'usare un account del servizio locale. Se l'ambiente usa questa configurazione, non è necessaria alcuna modifica.  
 
 
 
 ## <a name="limitations"></a>Limitazioni
-- Ciascun sito primario supporta un singolo server del sito in modalità Passivo.  
 
-- Un server del sito in modalità passiva non è supportato in una gerarchia. Una gerarchia include un sito di amministrazione centrale e un sito primario figlio. Creare un server del sito in modalità passiva solo in un sito primario autonomo.<!--1358224-->
+- Ogni sito supporta un singolo server del sito in modalità passiva.  
+
+- Nella versione 1806, un server del sito in modalità passiva non è supportato in una gerarchia. Una gerarchia include un sito di amministrazione centrale e un sito primario figlio. Creare un server del sito in modalità passiva solo in un sito primario autonomo.<!--1358224-->  
+
+    - A partire dalla versione 1810, Configuration Manager supporta i server del sito in modalità passiva in una gerarchia. I siti di amministrazione centrale e i siti primari figlio ora possono avere un altro server del sito in modalità passiva.<!-- 3607755 -->  
 
 - Un server del sito in modalità passiva non è supportato in un sito secondario.<!--SCCMDocs issue 680-->  
+
+    > [!Note]  
+    > I siti secondari sono ancora supportati in un sito primario con server del sito a disponibilità elevata.
 
 - L'innalzamento di livello del server del sito in modalità passiva alla modalità attiva è manuale. Non si verificano failover automatici.  
 
@@ -92,7 +137,7 @@ Per far diventare attivo il server del sito in modalità passiva, lo si *alza di
 
 - Per ruoli come il punto di reporting, che usano un database, ospitare il database in un server remoto rispetto a entrambi i server del sito.  
 
-- Il provider SMS non viene installato nel server del sito in modalità passiva. Connettersi a un provider per consentire al sito di alzare manualmente di livello il server del sito in modalità passiva alla modalità attiva. Installare almeno un'istanza aggiuntiva del provider in un altro server. Per altre informazioni, vedere [Piano per il provider SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider).  
+- Quando si aggiunge il ruolo di server del sito in modalità passiva, il sito non installa anche il ruolo Provider SMS. Installare almeno un'istanza aggiuntiva del provider in un altro server per la disponibilità elevata. Se il progetto include questo ruolo nel server del sito, installarlo nel nuovo server del sito dopo aver aggiunto il ruolo di server del sito in modalità passiva. Per altre informazioni, vedere [Piano per il provider SMS](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider).  
 
 - La console di Configuration Manager non viene installata automaticamente nel server del sito in modalità passiva.  
 
@@ -154,10 +199,12 @@ Come per il backup e ripristino, pianificare e provare il processo per modificar
 
     - Controllare lo stato del contenuto per i pacchetti che eseguono la replica attiva tra siti.  
 
-    - Non avviare nuovi processi distribuzione del contenuto. 
+    - Controllare lo stato del sito secondario e la replica del sito. 
+
+    - Non avviare nuovi processi di distribuzione del contenuto o di manutenzione nei server del sito figlio o secondari. 
 
         > [!Note]  
-        > Se la replica di file tra siti è in corso durante il failover, il nuovo server del sito potrebbe non ricevere il file replicato. In questo caso, ridistribuire il contenuto software una volta che il nuovo server del sito è attivo.<!--515436-->  
+        > Se la replica di file o database tra siti è in corso durante il failover, il nuovo server del sito potrebbe non ricevere il contenuto replicato. In questo caso, ridistribuire il contenuto software quando il nuovo server del sito è attivo.<!--515436--> Per la replica di database, potrebbe essere necessario reinizializzare un sito secondario dopo il failover.<!-- SCCMDocs issue 808 -->
 
 
 ### <a name="process-to-promote-the-site-server-in-passive-mode-to-active-mode"></a>Processo per alzare di livello il server del sito in modalità passiva alla modalità attiva
@@ -196,13 +243,13 @@ Per altre informazioni sul processo di failover *non pianificato*, vedere [Diagr
 
 ### <a name="additional-tasks-after-site-server-promotion"></a>Attività aggiuntive dopo l'innalzamento di livello server del sito  
 
-Dopo aver commutato i server del sito, non c'è bisogno di eseguire la maggior parte delle altre attività necessarie quando [si ripristina un sito](/sccm/core/servers/manage/recover-sites#post-recovery-tasks). Non è ad esempio necessario reimpostare le password o riconnettersi alla sottoscrizione di Microsoft Intune.
+Dopo aver commutato i server del sito, non occorre eseguire la maggior parte delle altre attività necessarie per il [ripristino di un sito](/sccm/core/servers/manage/recover-sites#post-recovery-tasks). Non è ad esempio necessario reimpostare le password o riconnettersi alla sottoscrizione di Microsoft Intune.
 
 La procedura seguente potrebbe essere necessaria per l'ambiente specifico:  
 
 - Se si importano i certificati PKI per i punti di distribuzione, reimportare il certificato per i server interessati. Per altre informazioni, vedere [Rigenerare i certificati per i punti di distribuzione](/sccm/core/servers/manage/recover-sites#regenerate-the-certificates-for-distribution-points).  
 
-- Se si integra Confguration Manager con Microsoft Store per le aziende, riconfigurare tale connessione. Per altre informazioni, vedere [Gestire le app da Microsoft Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).  
+- Se si integra Configuration Manager con Microsoft Store per le aziende, riconfigurare tale connessione. Per altre informazioni, vedere [Gestire le app da Microsoft Store per le aziende](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).  
 
 
 

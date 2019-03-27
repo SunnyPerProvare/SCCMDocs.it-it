@@ -2,7 +2,7 @@
 title: Creare un lab in Azure
 titleSuffix: Configuration Manager
 description: Automatizzare la creazione di un lab di Configuration Manager Technical Preview usando i modelli di Azure
-ms.date: 01/22/2019
+ms.date: 03/18/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 02f3df4b8c090df960f1052a25c1f6cc8ef45395
-ms.sourcegitcommit: ef2960bd91655c741450774e512dd0a9be610625
+ms.openlocfilehash: 25283e513e256e8ce779df7b71ac6f6c17f1e370
+ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56838770"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58196824"
 ---
 # <a name="create-a-configuration-manager-technical-preview-lab-in-azure"></a>Creare un lab di Configuration Manager Technical Preview in Azure
 
@@ -33,7 +33,7 @@ Per altre informazioni sul ramo corrente di Configuration Manager, vedere [Confi
 ## <a name="prerequisites"></a>Prerequisiti
 
 Questo processo richiede una sottoscrizione di Azure in cui è possibile creare gli oggetti seguenti: 
-- Quattro macchine virtuali Standard_D2s_v3
+- Tre macchine virtuali Standard_D2s_v3
 - Account di archiviazione Standard_LRS
 
 > [!Tip]  
@@ -86,7 +86,7 @@ Per connettersi alle macchine virtuali, ottenere prima gli indirizzi IP pubblici
 
 ## <a name="azure-vm-info"></a>Informazioni sulle macchine virtuali di Azure
 
-Le specifiche di tutte le quattro macchine virtuali sono le seguenti:
+Le specifiche di tutte le tre macchine virtuali sono le seguenti:
 - Standard_D2s_v3, con due core CPU e 8 GB di memoria  
 - Windows Server 2016 Datacenter Edition
 - 150 GB di spazio su disco
@@ -127,14 +127,4 @@ Controller di dominio Active Directory
 - Compressione differenziale remota (RDC) 
 - Internet Information Service (IIS)
 - Servizio trasferimento intelligente in background (BITS)
-
-
-### `<prefix>Other`
-
-Questa macchina virtuale può essere usata come client o per ospitare altri ruoli del sito.
-
-#### <a name="windows-features-and-roles"></a>Ruoli e funzionalità di Windows
-- .NET
-- Compressione differenziale remota (RDC) 
-
 

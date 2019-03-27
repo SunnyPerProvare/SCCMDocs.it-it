@@ -10,12 +10,12 @@ ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8add225db488a749eba98f9015fcb112e8f34f04
-ms.sourcegitcommit: 8803a64692f3edc0422b58f6c3037a8796374cc8
+ms.openlocfilehash: 69c5f446c465655adb1e9fee1b891a3152af47e9
+ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 03/19/2019
-ms.locfileid: "57881793"
+ms.locfileid: "58197096"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certificati per il gateway di gestione cloud
 
@@ -43,7 +43,7 @@ Per altre informazioni sui diversi scenari, vedere [Pianificare il gateway di ge
 <!--SCCMDocs issue #779-->
 I certificati per Cloud Management Gateway supportano le configurazioni seguenti:  
 
-- lunghezza della chiave 2048 bit o 4096 bit
+- lunghezza della chiave 2048 o 4096 bit
 
 - A partire dalla versione 1710, supporto per provider di archiviazione chiavi per le chiavi private dei certificati. Per altre informazioni, vedere [Panoramica dei certificati CNG](/sccm/core/plan-design/network/cng-certificates-overview).  
 
@@ -206,11 +206,9 @@ Dopo aver emesso un certificato di autenticazione client per un computer, usare 
 Eseguire il provisioning del certificato all'esterno del contesto di Configuration Manager. Ad esempio, usare Servizi certificati Active Directory e i criteri di gruppo per rilasciare un certificato del server Web. Per altre informazioni, vedere [Requisiti dei certificati PKI](/sccm/core/plan-design/network/pki-certificate-requirements) e [Distribuzione del certificato del server Web per sistemi del sito che eseguono IIS](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_webserver2008_cm2012).
 
 
-- Nelle versioni 1706 o 1710, quando si gestiscono client tradizionali con identità locale usando un certificato di autenticazione client, questo certificato è consigliato ma non obbligatorio.  
+- Nella versione 1710, quando si gestiscono client tradizionali con identità locale usando un certificato di autenticazione client, questo certificato è consigliato ma non obbligatorio. Per la gestione di client Windows 10 aggiunti ad Azure AD, questo certificato è obbligatorio per i punti di gestione.
 
-- Nella versione 1710, quando si gestiscono i client Windows 10 aggiunti ad Azure AD, questo certificato è obbligatorio per i punti di gestione.  
-
-- A partire dalla versione 1802 questo certificato è necessario in tutti gli scenari. Solo i punti di gestione abilitati per il gateway di gestione cloud devono essere HTTPS. Questa modifica del comportamento offre un supporto migliore per l'autenticazione basata su token di Azure AD.  
+- Nella versione 1802 questo certificato è richiesto in tutti gli scenari. Solo i punti di gestione abilitati per il gateway di gestione cloud devono essere HTTPS. Questa modifica del comportamento offre un supporto migliore per l'autenticazione basata su token di Azure AD.  
 
 - A partire dalla versione 1806, quando si usa l'opzione del sito **Usa i certificati generati da Configuration Manager per sistemi del sito HTTP**, il punto di gestione può essere HTTP. Per altre informazioni, vedere [HTTP avanzato](/sccm/core/plan-design/hierarchy/enhanced-http).
 
@@ -220,12 +218,12 @@ Queste tabelle offrono un riepilogo che indica se il punto di gestione richiede 
 #### <a name="for-internet-based-clients-communicating-with-the-cloud-management-gateway"></a>Per i client basati su Internet che comunicano con il gateway di gestione cloud
 Configurare un punto di gestione locale per consentire le connessioni dal gateway di gestione cloud con la modalità di connessione client indicata di seguito:
 
-| Tipo di client   | 1706        | 1710        | 1802        | 1806        |
+| Tipo di client   | 1710        | 1802        | 1806        | 1810        |
 |------------------|-------------|-------------|-------------|-------------|
-| Gruppo di lavoro        | HTTP, HTTPS | HTTP, HTTPS | HTTPS       | E-HTTP<sup>[Note 1](#bkmk_note1)</sup>, HTTPS |
-| Aggiunto a un dominio AD | HTTP, HTTPS | HTTP, HTTPS | HTTPS       | E-HTTP<sup>[Note 1](#bkmk_note1)</sup>, HTTPS |
-| Aggiunto ad Azure AD  | HTTPS       | HTTPS       | HTTPS       | E-HTTP, HTTPS |
-| Aggiunto a ibrido    | HTTP, HTTPS | HTTP, HTTPS | HTTPS       | E-HTTP, HTTPS |
+| Gruppo di lavoro        | HTTP, HTTPS | HTTPS       | E-HTTP<sup>[Note 1](#bkmk_note1)</sup>, HTTPS | E-HTTP<sup>[Note 1](#bkmk_note1)</sup>, HTTPS |
+| Aggiunto a un dominio AD | HTTP, HTTPS | HTTPS       | E-HTTP<sup>[Note 1](#bkmk_note1)</sup>, HTTPS | E-HTTP<sup>[Note 1](#bkmk_note1)</sup>, HTTPS |
+| Aggiunto ad Azure AD  | HTTPS       | HTTPS       | E-HTTP, HTTPS | E-HTTP, HTTPS |
+| Aggiunto a ibrido    | HTTP, HTTPS | HTTPS       | E-HTTP, HTTPS | E-HTTP, HTTPS |
 
 <a name="bkmk_note1"></a> 
 
@@ -235,7 +233,7 @@ Configurare un punto di gestione locale per consentire le connessioni dal gatewa
 #### <a name="for-on-premises-clients-communicating-with-the-on-premises-management-point"></a>Per i client locali che comunicano con il punto di gestione locale
 Configurare un punto di gestione locale con la modalità di connessione client indicata di seguito:
 
-| Tipo di client   | 1706        | 1710        | 1802        | 1806        |
+| Tipo di client   | 1710        | 1802        | 1806        | 1810        |
 |------------------|-------------|-------------|-------------|-------------|
 | Gruppo di lavoro        | HTTP, HTTPS | HTTP, HTTPS | HTTP, HTTPS | HTTP, HTTPS |
 | Aggiunto a un dominio AD | HTTP, HTTPS | HTTP, HTTPS | HTTP, HTTPS | HTTP, HTTPS |
