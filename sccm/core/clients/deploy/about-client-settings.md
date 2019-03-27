@@ -2,7 +2,7 @@
 title: Impostazioni client
 titleSuffix: Configuration Manager
 description: Informazioni sulle impostazioni predefinite e personalizzate per il controllo dei comportamenti client
-ms.date: 08/31/2018
+ms.date: 03/21/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9a06e9f0607161b87422d29ede028da0e8aea8c
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 472cf012805700e1ec2de2f3c83a0ef63e10183b
+ms.sourcegitcommit: 5f17355f954b9d9e10325c0e9854a9d582dec777
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56140899"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58329601"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -294,7 +294,8 @@ Per altre informazioni sulle finestre di manutenzione, vedere [Come usare le fin
 
 ## <a name="delivery-optimization"></a>Ottimizzazione recapito
 
-<!-- 1324696 --> I gruppi di limiti di Configuration Manager consentono di definire e regolamentare la distribuzione del contenuto nella rete aziendale e negli uffici remoti. [Ottimizzazione recapito di Windows](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) è una tecnologia peer-to-peer basata sul cloud per la condivisione di contenuti tra dispositivi Windows 10. A partire dalla versione 1802, è possibile configurare Ottimizzazione recapito in modo che usi i gruppi di limiti per la condivisione di contenuti tra peer.
+<!-- 1324696 -->
+I gruppi di limiti di Configuration Manager consentono di definire e regolamentare la distribuzione del contenuto nella rete aziendale e negli uffici remoti. [Ottimizzazione recapito di Windows](https://docs.microsoft.com/windows/deployment/update/waas-delivery-optimization) è una tecnologia peer-to-peer basata sul cloud per la condivisione di contenuti tra dispositivi Windows 10. A partire dalla versione 1802, è possibile configurare Ottimizzazione recapito in modo che usi i gruppi di limiti per la condivisione di contenuti tra peer.
 
  > [!Note]
  > Ottimizzazione recapito è disponibile solo nei client Windows 10
@@ -722,7 +723,7 @@ Selezionare **Pianificazione** per regolare la frequenza con cui i client devono
 
 
 
-##  <a name="software-updates"></a>Aggiornamenti software  
+## <a name="software-updates"></a>Aggiornamenti software  
 
 ### <a name="enable-software-updates-on-clients"></a>Abilitare aggiornamento software nei client
 
@@ -774,6 +775,10 @@ Questa impostazione consente di configurare la porta locale per il listener HTTP
 ### <a name="enable-management-of-the-office-365-client-agent"></a>Abilitare la gestione dell'agente del client Office 365
 
 Impostare questa opzione su **Sì** per consentire la configurazione delle impostazioni di installazione di Office 365. Questa opzione consente anche il download di file dalle reti per la distribuzione di contenuti (CDN) di Office e la distribuzione dei file come applicazione in Configuration Manager. Per altre informazioni, vedere [Gestire gli aggiornamenti di Office 365 ProPlus](/sccm/sum/deploy-use/manage-office-365-proplus-updates).
+
+### <a name="bkmk_SUMMaint"></a> Consenti l'installazione degli aggiornamenti software nella finestra di manutenzione "Tutte le distribuzioni" quando la finestra di manutenzione "Aggiornamento software" è disponibile
+
+Quando si imposta questa opzione su **Sì** e per il client è stata definita almeno una finestra di manutenzione "Aggiornamento software", gli aggiornamenti software verranno installati durante una finestra di manutenzione "Tutte le distribuzioni". Per impostazione predefinita, questa impostazione è impostata su **No**. Questa impostazione client è stata aggiunta in Configuration Manager versione 1810. <!--2839307-->
 
 ### <a name="enable-third-party-software-updates"></a>Enable third party software updates (Abilita aggiornamenti software di terze parti) 
 
