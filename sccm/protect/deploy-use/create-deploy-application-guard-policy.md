@@ -11,16 +11,16 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6446fed2d48fc6428bdc3fbc7a24f728c206dc7
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: fa50719107838ed2c5c277a45ead4a7d9be6192a
+ms.sourcegitcommit: dff462bd9830e5e66f519f3c948d5150c18e94ad
 ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132422"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58417033"
 ---
 # <a name="create-and-deploy-windows-defender-application-guard-policy"></a>Creare e distribuire criteri di Windows Defender Application Guard 
 *Si applica a: System Center Configuration Manager (Current Branch)*
-<!-- 1351960 --> è possibile creare e distribuire [Windows Defender Application Guard](https://docs.microsoft.com/windows/threat-protection/windows-defender-application-guard/wd-app-guard-overview) criteri usando l'endpoint di Configuration Manager protezione dati. Questi criteri consentono di proteggere gli utenti tramite l'apertura dei siti Web non attendibili in un contenitore isolato protetto e non accessibile da altre parti del sistema operativo.
+<!-- 1351960 --> È possibile creare e distribuire criteri di [Windows Defender Application Guard](https://docs.microsoft.com/windows/threat-protection/windows-defender-application-guard/wd-app-guard-overview) usando Endpoint Protection di Configuration Manager. Questi criteri consentono di proteggere gli utenti tramite l'apertura dei siti Web non attendibili in un contenitore isolato protetto e non accessibile da altre parti del sistema operativo.
 
 ## <a name="prerequisites"></a>Prerequisiti
 
