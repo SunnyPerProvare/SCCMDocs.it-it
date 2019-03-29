@@ -2,7 +2,7 @@
 title: Creare applicazioni server Linux e UNIX
 titleSuffix: Configuration Manager
 description: Questo articolo descrive le considerazioni da tenere presenti quando si creano e distribuiscono applicazioni per i dispositivi Linux e UNIX.
-ms.date: 04/13/2017
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,25 +11,30 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 125a5fda74834c51e98f3028325bcc227fd106eb
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 35765aa804bf0e6d303caf2c395d3d44d5027951
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56126183"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58524082"
 ---
-# <a name="create-linux-and-unix-server-applications-with-system-center-configuration-manager"></a>Creare applicazioni server Linux e UNIX con System Center Configuration Manager
+# <a name="create-linux-and-unix-server-applications-with-configuration-manager"></a>Creare applicazioni server Linux e UNIX con Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
+
+> [!Important]  
+> A partire dalla versione 1902, Configuration Manager non supporta i client Linux o UNIX. 
+> 
+> Prendere in considerazione Microsoft Azure Management per la gestione dei server Linux. Le soluzioni di Azure includono un ampio supporto per Linux che nella maggior parte dei casi supera le funzionalità di Configuration Manager, inclusa la gestione end-to-end delle patch per Linux.
 
 Tenere presenti le seguenti considerazioni quando si creano e si distribuiscono applicazioni per computer che eseguono Linux e UNIX.  
 
 ## <a name="general-considerations"></a>Considerazioni generali  
  Il client di Configuration Manager per Linux e UNIX supporta le **distribuzioni software che usano pacchetti e programmi**. Non è possibile distribuire le applicazioni di Configuration Manager nei computer che eseguono Linux e UNIX.  
 
- Ecco alcune delle funzionalità disponibili per le distribuzioni software Linux e UNIX.  
+ Ecco alcune delle funzionalità disponibili per le distribuzioni software Linux e UNIX:  
 
--   Installazione del software per i server Linux e UNIX, tra cui:  
+-   Installazione del software per i server Linux e UNIX, include le funzionalità seguenti:  
 
     -   Nuova distribuzione software  
 
@@ -65,10 +70,10 @@ Di seguito sono illustrate le principali differenze tra la distribuzione di pacc
 ##  <a name="configure-packages-programs-and-deployments-for-linux-and-unix-servers"></a>Configurare pacchetti, programmi e distribuzioni per i server Linux e UNIX  
  È possibile creare e distribuire pacchetti e programmi usando le opzioni predefinite disponibili nella console di Configuration Manager. Il client non richiede configurazioni univoche.  
 
- Utilizzare le informazioni contenute nelle sezioni seguenti per configurare pacchetti, programmi e distribuzioni.  
+ Usare le informazioni contenute nelle sezioni seguenti per configurare pacchetti, programmi e distribuzioni.  
 
 ### <a name="packages-and-programs"></a>Pacchetti e programmi  
- Per creare un pacchetto e un programma per un server Linux o UNIX, usare la **Creazione guidata pacchetto e programma** dalla console di Configuration Manager. Il client per Linux e UNIX supporta la maggior parte delle impostazioni di pacchetti e programmi. Tuttavia, alcune impostazioni non sono supportate. Quando si crea o si configura un pacchetto e un programma, considerare quanto segue:  
+ Per creare un pacchetto e un programma per un server Linux o UNIX, usare la **Creazione guidata pacchetto e programma** dalla console di Configuration Manager. Il client per Linux e UNIX supporta la maggior parte delle impostazioni di pacchetti e programmi. Tuttavia, alcune impostazioni non sono supportate. Quando si crea o si configura un pacchetto e un programma, considerare i punti seguenti:  
 
 -   Includere i tipi di file supportati dai computer di destinazione.  
 
@@ -83,25 +88,25 @@ Nella seguente tabella vengono elencate le proprietà non supportate per i pacch
 |Impostazioni di condivisione del pacchetto:<br /><br /> - Tutte le opzioni|Viene generato un errore e l'installazione del software non viene completata|Il client non supporta questa configurazione. Il client deve invece scaricare il software utilizzando HTTP o HTTPS e quindi eseguire la riga di comando dalla cache locale.|  
 |Impostazioni di aggiornamento del pacchetto:<br /><br /> - Disconnetti gli utenti dai punti di distribuzione|Le impostazioni vengono ignorate|Il client non supporta questa configurazione.|  
 |Impostazioni di distribuzione del sistema operativo:<br /><br /> - Tutte le opzioni|Le impostazioni vengono ignorate|Il client non supporta questa configurazione.|  
-|Report:<br /><br /> - Usa le proprietà pacchetto per la corrispondenza MIF di stato<br /><br /> - Usa i campi per la corrispondenza MIF di stato|Le impostazioni vengono ignorate|Il client non supporta l'utilizzo di file MIF di stato.|  
+|Report:<br /><br /> - Usa le proprietà pacchetto per la corrispondenza MIF di stato<br /><br /> - Usa i campi per la corrispondenza MIF di stato|Le impostazioni vengono ignorate|Il client non supporta l'uso di file MIF di stato.|  
 |**Esegui**:<br /><br /> - Tutte le opzioni|Le impostazioni vengono ignorate|Il client esegue sempre i pacchetti senza interfaccia utente.<br /><br /> Il client ignora tutte le opzioni di configurazione per Esegui.|  
 |Dopo l'esecuzione:<br /><br />- Configuration Manager riavvia il computer<br /><br /> - Riavvio controlli programma<br /><br /> - Configuration Manager disconnette l'utente|Viene generato un errore e l'installazione del software non viene completata|L'impostazione di riavvio del sistema e le impostazioni specifiche dell'utente non sono supportate.<br /><br /> Quando viene utilizzata un'altra impostazione diversa da **Non è necessaria alcuna operazione** , il client genera un errore e continua l'installazione del software, senza eseguire alcuna operazione.|  
 |Requisiti per esecuzione programma:<br /><br /> - Solo se un utente è connesso|Viene generato un errore e l'installazione del software non viene completata|Le impostazioni specifiche dell'utente non sono supportate.<br /><br /> Quando questa opzione è configurata, il client genera un errore e l'installazione del software non viene completata.<br /><br /> Altre opzioni vengono ignorate e l'installazione del software continua.|  
 |Modalità esecuzione:<br /><br /> - Esegui con diritti dell'utente|Le impostazioni vengono ignorate|Le impostazioni specifiche dell'utente non sono supportate.<br /><br /> Tuttavia, il client supporta la configurazione per l'esecuzione con diritti amministrativi.<br /><br /> Quando si specifica l'opzione **Esegui con diritti amministrativi** il client di Configuration Manager usa le relative credenziali radice.<br /><br /> Questa impostazione non genera una voce di registro o errore. Al contrario, l'installazione del software non viene completata quando il client genera un errore per la configurazione dei prerequisiti di **Requisiti per esecuzione programma** = **Solo se un utente è connesso**.|  
 |Consenti agli utenti di visualizzare e interagire con l'installazione del programma|Le impostazioni vengono ignorate|Le impostazioni specifiche dell'utente non sono supportate.<br /><br /> Questa configurazione viene ignorata e l'installazione del software continua.|  
 |Modalità unità:<br /><br /> - Tutte le opzioni|Le impostazioni vengono ignorate|Questa impostazione non è supportata perché il contenuto viene sempre scaricato nel client ed eseguito localmente.|  
-|Esegui prima un altro programma|Viene generato un errore e l'installazione del software non viene completata|L'installazione del programma ricorsivo non è supportata.<br /><br /> Quando un programma viene configurato per eseguire prima un altro programma, è impossibile completare l'installazione del software e l'installazione dell'altro programma non viene avviata.|  
-|Se il programma è assegnato a un computer:<br /><br /> - Esegui una volta per ogni utente che si connette|Le impostazioni vengono ignorate|Le impostazioni specifiche dell'utente non sono supportate.<br /><br /> Tuttavia, il client supporta la configurazione per l'esecuzione unica per il computer.<br /><br /> Questa impostazione non genera una voce di registro o un errore perché sono già stati creati per la configurazione dei prerequisiti di **Requisiti per esecuzione programma** = **Solo se un utente è connesso**.|  
+|Esegui prima un altro programma|Viene generato un errore e l'installazione del software non viene completata|L'installazione del programma ricorsiva non è supportata.<br /><br /> Quando un programma viene configurato per eseguire prima un altro programma, è impossibile completare l'installazione del software e l'installazione dell'altro programma non viene avviata.|  
+|Se il programma è assegnato a un computer:<br /><br /> - Esegui una volta per ogni utente che si connette|Le impostazioni vengono ignorate|Le impostazioni specifiche dell'utente non sono supportate.<br /><br /> Tuttavia, il client supporta la configurazione per l'esecuzione unica per il computer.<br /><br /> Questa impostazione non genera una voce di log o un errore perché sono già stati creati per la configurazione dei prerequisiti di **Requisiti per esecuzione programma** = **Solo se un utente è connesso**.|  
 |Elimina notifiche programma|Le impostazioni vengono ignorate|Il client non implementa un'interfaccia utente.<br /><br /> Quando questa configurazione viene selezionata, viene ignorata e l'installazione del software continua.|  
 |Disattiva il programma nei computer in cui è distribuito|Le impostazioni vengono ignorate|Questa impostazione non è supportata e non influisce sull'installazione del software.|  
-|Consenti l'installazione di questo programma dalla sequenza di attività Installa pacchetto senza che venga distribuito||Il client non supporta le sequenze attività.<br /><br /> Questa impostazione non è supportata e non influisce sull'installazione del software.|  
-|Windows Installer:<br /><br /> - Tutte le opzioni|Le impostazioni vengono ignorate|Il client non supporta le impostazioni o file di Windows Installer.|  
+|Consenti l'installazione di questo programma dalla sequenza di attività Installa pacchetto senza che venga distribuito||Il client non supporta le sequenze di attività.<br /><br /> Questa impostazione non è supportata e non influisce sull'installazione del software.|  
+|Windows Installer:<br /><br /> - Tutte le opzioni|Le impostazioni vengono ignorate|Il client non supporta impostazioni o file di Windows Installer.|  
 |Modalità manutenzione OpsMgr:<br /><br /> - Tutte le opzioni|Le impostazioni vengono ignorate|Il client non supporta questa configurazione.|  
 
 ### <a name="deploy-software-to-a-linux-or-unix-server"></a>Distribuire il software in un server Linux o UNIX
- Per distribuire il software in un server Linux o UNIX usando un pacchetto e programma, è possibile usare la **Distribuzione guidata del software** dalla console di Configuration Manager. La maggior parte delle impostazioni di distribuzione è supportata dal client per Linux e UNIX. Tuttavia, alcune impostazioni non sono supportate. Quando si distribuisce il software, considerare quanto segue:  
+ Per distribuire il software in un server Linux o UNIX usando un pacchetto e programma, è possibile usare la **Distribuzione guidata del software** dalla console di Configuration Manager. La maggior parte delle impostazioni di distribuzione è supportata dal client per Linux e UNIX. Tuttavia, alcune impostazioni non sono supportate. Quando si distribuisce il software, considerare i punti seguenti:  
 
-- È necessario effettuare il provisioning del pacchetto in almeno un punto di distribuzione associato al gruppo di limiti configurato per la posizione del contenuto.  
+- Effettuare il provisioning del pacchetto in almeno un punto di distribuzione associato al gruppo di limiti configurato per la posizione del contenuto.  
 
 - È necessario che il client per Linux e UNIX che riceve questa distribuzione sia in grado di accedere a questo punto di distribuzione dal relativo percorso di rete.  
 
@@ -115,7 +120,7 @@ Nella seguente tabella vengono elencate le proprietà non supportate per i pacch
 |-------------------------|--------------|----------------------|  
 |Impostazioni di distribuzione - scopo:<br /><br /> - Disponibile<br /><br /> - Richiesto|Le impostazioni vengono ignorate|Le impostazioni specifiche dell'utente non sono supportate.<br /><br /> Tuttavia, il client supporta l'impostazione **Richiesto**, che applica l'ora di installazione pianificata, ma non supporta l'installazione manuale prima di tale ora pianificata.|  
 |Invia pacchetti di riattivazione|Le impostazioni vengono ignorate|Il client non supporta questa configurazione.|  
-|Pianificazione assegnazione:<br /><br /> - connessione<br /><br /> - disconnessione|Viene generato un errore e l'installazione del software non viene completata|Le impostazioni specifiche dell'utente non sono supportate.<br /><br /> Tuttavia, il client supporta l'impostazione **Appena possibile**.|  
+|Pianificazione assegnazione:<br /><br /> - Accesso<br /><br /> - Uscita|Viene generato un errore e l'installazione del software non viene completata|Le impostazioni specifiche dell'utente non sono supportate.<br /><br /> Tuttavia, il client supporta l'impostazione **Appena possibile**.|  
 |Impostazioni di notifica:<br /><br /> - Consenti agli utenti di eseguire il programma indipendentemente dalle assegnazioni|Le impostazioni vengono ignorate|Il client non implementa un'interfaccia utente.|  
 |Quando viene raggiunto il periodo di assegnazione pianificato, consentire l'esecuzione delle seguenti attività all'esterno della finestra di manutenzione:<br /><br /> - Riavvio del sistema (se necessario per completare l'installazione)|Viene generato un errore|Il client non supporta un riavvio del sistema.|  
 |Opzione di distribuzione per reti veloci (LAN):<br /><br /> - Esegui programma dal punto di distribuzione|Viene generato un errore e l'installazione del software non viene completata|Il client non è in grado di eseguire il software dal punto di distribuzione ed è necessario che scarichi il programma prima di poterlo eseguire.|  
@@ -148,7 +153,7 @@ La seguente configurazione per Trasferimento intelligente in background non è s
 
 - **Consentire i download BITS all'esterno dell'intervallo di limitazione**  
 
-  Se il download del software sul client da un punto di distribuzione viene interrotto, il client per Linux e UNIX non lo riprende, ma riavvia il download dell'intero pacchetto software.  
+  Se il download del software nel client da un punto di distribuzione viene interrotto, il client per Linux e UNIX non lo riprende, ma riavvia il download dell'intero pacchetto software.  
 
 ##  <a name="configure-operations-for-software-deployments"></a>Configurare le operazioni per le distribuzioni software  
  Come per il client Windows, il client di Configuration Manager per Linux e UNIX individua nuove distribuzioni software quando esegue il polling e verifica la presenza di nuovi criteri. La frequenza con cui il client verifica la presenza di nuovi criteri dipende dalle impostazioni del client. È possibile configurare le finestre di manutenzione in modo che controllino quando si verificano le distribuzioni software.  

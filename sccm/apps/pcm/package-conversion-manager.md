@@ -2,7 +2,7 @@
 title: Package Conversion Manager
 titleSuffix: Configuration Manager
 description: Informazioni sull'uso di Package Conversion Manager per convertire i pacchetti in applicazioni in Configuration Manager.
-ms.date: 08/24/2018
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-app
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba73d215b9a672f4843c2f1e4a63dfc6bd13ea74
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
-ms.translationtype: HT
+ms.openlocfilehash: 2abfa18bdf454850510c18551f2f64813a7891ea
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
+ms.translationtype: MTE75
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132885"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58523929"
 ---
 # <a name="package-conversion-manager"></a>Package Conversion Manager
 
@@ -41,6 +41,12 @@ Per altre informazioni, vedere gli articoli seguenti:
 
 La versione integrata di Package Conversion Manager funziona con i pacchetti nel sito di Configuration Manager Current Branch. Non si tratta di uno strumento autonomo. Se si hanno pacchetti e programmi in una versione precedente di Configuration Manager, eseguire prima di tutto la migrazione dei pacchetti nel sito Current Branch. Per altre informazioni, vedere [Eseguire la migrazione dei dati da una gerarchia all'altra](/sccm/core/migration/migrate-data-between-hierarchies).
 
+<!-- SCCMDocs-pr issue #3357 -->
+Configuration Manager versione 1902 include i miglioramenti seguenti:
+- Analisi del pacchetto pianificato viene eseguito ogni 7 giorni per impostazione predefinita
+- Cmdlet di PowerShell per l'analisi e conversione dei pacchetti
+- Miglioramenti e correzioni di bug generale
+
 
 
 ## <a name="planning"></a>Pianificazione
@@ -62,9 +68,9 @@ Prima di iniziare a convertire i pacchetti in applicazioni, sviluppare un piano.
 
 Questa sezione descrive due piani di conversione dei pacchetti di esempio:  
 
-- [Ambiente di test con ampia disponibilità di risorse](#bkmk_define-high): è presente un ambiente di test con risorse, autorizzazioni e architettura sufficienti per replicare l'intero ambiente di produzione.  
+- [Ambiente di test con quantità elevata di risorse](#bkmk_define-high): si dispone di un ambiente di test con risorse, autorizzazioni e architettura per replicare l'intero ambiente di produzione.  
 
-- [Ambiente di test con quantità limitata di risorse](#bkmk_define-limited): non è presente un ambiente di test che consente di replicare l'intero ambiente di produzione.  
+- [Ambiente di test con quantità limitata di risorse](#bkmk_define-limited): non si dispone di un ambiente di test che consente di replicare l'intero ambiente di produzione.  
 
 Modificare questi piani in base alle esigenze per altri problemi specifici dell'ambiente in uso.
 
