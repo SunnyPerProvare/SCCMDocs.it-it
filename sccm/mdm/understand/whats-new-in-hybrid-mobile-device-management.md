@@ -2,7 +2,7 @@
 title: Novità nella gestione di dispositivi mobili ibrida
 titleSuffix: Configuration Manager
 description: Informazioni sulle nuove funzionalità di gestione dei dispositivi mobili disponibili per le distribuzioni ibride con Configuration Manager e Intune.
-ms.date: 02/26/2019
+ms.date: 03/28/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6e883b6ea5cea6d6b27863afc84eef774b4d552
-ms.sourcegitcommit: f38ef9afb0c608c0153230ff819e5f5e0fb1520c
+ms.openlocfilehash: b26ad559d9417fcc81a2023c1bf1704ae44b7d0c
+ms.sourcegitcommit: 60aff44c76e6432dc544c8b26acba432ac799cfc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58197147"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58639597"
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>Novità della gestione ibrida di dispositivi mobili con Configuration Manager e Microsoft Intune
 
@@ -45,6 +45,32 @@ Ogni sezione di questo articolo elenca le funzionalità ibride in tre categorie 
 |**Novità di Microsoft Intune** | In generale, tutte le funzionalità elencate in questa categoria dovrebbero funzionare con tutte le versioni di Configuration Manager, incluse le versioni di System Center 2012 R2 Configuration Manager, perché richiedono solo il servizio Intune e non richiedono altre funzionalità di Configuration Manager.|
 |**Novità di Configuration Manager Technical Preview**| Tutte le funzionalità elencate in questa categoria funzionano solo con il ramo di Technical Preview specificato. Per provare queste funzionalità, è necessario installare la versione di Technical Preview specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Technical Preview per Configuration Manager](/sccm/core/get-started/technical-preview).|
 |**Novità di Configuration Manager (Current Branch)**| Tutte le funzionalità elencate in questa categoria funzionano solo con la versione di Configuration Manager (Current Branch) specificata. Se si usa una versione precedente di Configuration Manager per la distribuzione ibrida, eseguire l'aggiornamento alla versione di Configuration Manager (Current Branch) specificata nella descrizione della funzionalità. Per altre informazioni, vedere [Eseguire l'aggiornamento a Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).|
+
+
+
+## <a name="march-2019"></a>Marzo 2019
+
+### <a name="new-in-microsoft-intune"></a>Novità di Microsoft Intune
+
+#### <a name="install-available-apps-using-the-company-portal-app-after-windows-bulk-enrollment"></a>Installare le app disponibili tramite l'app portale aziendale dopo la registrazione in blocco Windows 
+<!-- 2751523 -->
+I dispositivi Windows registrati in Intune mediante [registrazione in blocco Windows](https://docs.microsoft.com/intune/windows-bulk-enroll) (dei pacchetti di provisioning) saranno possibile usare l'app portale aziendale per installare le app disponibili. Per altre informazioni sull'app portale aziendale, vedere [aggiungere manualmente il portale aziendale di Windows 10](https://docs.microsoft.com/intune/store-apps-company-portal-app) e [come configurare l'app portale aziendale di Microsoft Intune](https://docs.microsoft.com/intune/company-portal-app).
+
+> [!Note]  
+> Questa funzionalità non è ancora completamente distribuita a tutti i clienti. Se è possibile usare l'App portale aziendale nei dispositivi registrato in blocco, si potrebbe essere necessario attendere fino a quando non ha apportato questa modifica al tuo account.
+
+#### <a name="app-icons-are-displayed-with-an-automatically-generated-background"></a>Le icone dell'App vengono visualizzate con uno sfondo generato automaticamente 
+<!-- 1429026 -->
+L'app portale aziendale di Windows ora visualizza le icone dell'app con uno sfondo generato automaticamente. Lo sfondo si basa sul colore dominante dell'icona, se rilevabile. Quando applicabile, lo sfondo sostituisce il bordo grigio precedentemente visibile nei riquadri delle app. Si noterà che questa modifica nelle versioni successive a 10.3.3451.0 del portale aziendale.
+
+#### <a name="changes-to-company-portal-enrollment-for-ios-12-devices"></a>Modifiche alla registrazione con il portale aziendale per i dispositivi iOS 12
+<!-- 3448635 -->  
+Portale aziendale per iOS Aggiorna le schermate di registrazione dell'app e i passaggi per la compatibilità con le modifiche di registrazione MDM rilasciate in Apple iOS 12.2. Il flusso di lavoro aggiornato verrà quindi richiesto di:
+- Consenti Safari aprire il sito Web portale aziendale (tramite Safari) e scaricare il profilo di gestione prima di tornare all'app portale aziendale. 
+- Aprire l'app impostazioni e installare il profilo di gestione sul proprio dispositivo.
+- Tornare all'app portale aziendale per completare la registrazione.  
+
+Per altre informazioni su come preparare le modifiche, vedere la [post di Microsoft Tech Community](https://aka.ms/CP_changes_iOS12). Per supportare le nuove registrazioni di iOS nel portale aziendale, vedere [Enroll iOS device in Intune](https://docs.microsoft.com/intune/ios-enroll).
 
 
 
