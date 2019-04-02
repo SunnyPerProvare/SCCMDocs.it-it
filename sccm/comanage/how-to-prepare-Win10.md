@@ -1,7 +1,7 @@
 ---
-title: CO-gestione dei dispositivi basato su internet
+title: Co-gestire i dispositivi basati su Internet
 titleSuffix: Configuration Manager
-description: Informazioni su come preparare i dispositivi Windows 10 basato su internet per la co-gestione.
+description: Informazioni su come preparare i dispositivi Windows 10 basati su Internet per la co-gestione.
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
@@ -12,66 +12,67 @@ ms.technology: configmgr-client
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 31779b3588617816df4309461ed7715b20b0abd4
-ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
-ms.translationtype: MT
+ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
+ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/07/2019
+ms.lasthandoff: 03/27/2019
 ms.locfileid: "57558032"
 ---
-# <a name="how-to-prepare-internet-based-devices-for-co-management"></a>Come preparare i dispositivi basati su internet per la co-gestione
+# <a name="how-to-prepare-internet-based-devices-for-co-management"></a>Come preparare i dispositivi basati su Internet per la co-gestione
 
-Questo articolo è incentrato sul secondo percorso da CO-gestione, per i nuovi dispositivi basati su internet. Questo scenario è quando si dispongono di nuovi dispositivi Windows 10 aggiunti ad Azure AD e registrati automaticamente in Intune. Si installa il client di Configuration Manager per raggiungere uno stato di CO-gestione.  
+Questo articolo è incentrato sul secondo percorso relativo alla co-gestione, per i nuovi dispositivi basati su Internet. Questo scenario si verifica quando nuovi dispositivi Windows 10 vengono aggiunti ad Azure AD e automaticamente registrati in Intune. Per raggiungere uno stato di co-gestione, è necessario installare il client di Configuration Manager.  
 
 
 
 ## <a name="windows-autopilot"></a>Windows Autopilot
 
-Per i nuovi dispositivi Windows 10, è possibile usare il servizio Autopilot per la configurazione dell'esperienza di finestra (OOBE). Questo processo include l'aggiunta del dispositivo ad Azure AD e la registrazione del dispositivo in Intune.  
+Per i nuovi dispositivi Windows 10 è possibile usare il servizio Autopilot per definire la Configurazione guidata. Questo processo include l'aggiunta del dispositivo ad Azure AD e la registrazione del dispositivo in Intune.  
 
 Per altre informazioni, vedere [Panoramica di Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot).    
 
-Per configurare i dispositivi da registrare automaticamente in Intune quando accedono ad Azure AD, vedere [i dispositivi Windows registrati di Microsoft Intune](https://docs.microsoft.com/intune/windows-enroll).  
+Per configurare i dispositivi per la registrazione automatica in Intune quando vengono aggiunti ad Azure AD, vedere [Configurare la registrazione dei dispositivi Windows](https://docs.microsoft.com/intune/windows-enroll).  
 
 
 ### <a name="gather-information-from-configuration-manager"></a>Raccogliere informazioni da Configuration Manager
 
-A partire dalla versione 1802, usare Configuration Manager per raccogliere e segnalare le informazioni sul dispositivo richieste da Microsoft Store per le aziende e per la formazione. Queste informazioni includono il numero di serie del dispositivo, l'identificatore del prodotto Windows e un ID hardware. Viene utilizzato per registrare il dispositivo in di Microsoft Store per il supporto di Windows Autopilot. 
+A partire dalla versione 1802, usare Configuration Manager per raccogliere e segnalare le informazioni sul dispositivo richieste da Microsoft Store per le aziende e per la formazione. Queste informazioni includono il numero di serie del dispositivo, l'identificatore del prodotto Windows e un ID hardware. Vengono usate per registrare il dispositivo in Microsoft Store per il supporto di Windows Autopilot. 
 
-1. Nella console di Configuration Manager passare ad il **Monitoring** dell'area di lavoro, espandere il **Reporting** nodo, espandere **report**e selezionare il **Hardware - Generale** nodo.  
+1. Nella console di Configuration Manager passare all'area di lavoro **Monitoraggio**, espandere il nodo **Report**, espandere **Report** e selezionare il nodo **Hardware - Generale**.  
 
-2. Esecuzione del report **informazioni sui dispositivi di Windows Autopilot**e visualizzare i risultati.  
+2. Eseguire il report **Informazioni sui dispositivi di Windows Autopilot** e visualizzare i risultati.  
 
-3. Nel Visualizzatore di report, selezionare la **esportare** icona, scegliere il **CSV (comma-separated value)** opzione.  
+3. Nel visualizzatore report selezionare l'icona **Esporta** e scegliere l'opzione **CSV (delimitato da virgole)**.  
 
 4. Dopo aver salvato il file, caricare i dati in Microsoft Store per le aziende e per la formazione.  
 
-Per altre informazioni, vedere [aggiungere i dispositivi in Microsoft Store per Business ed Education](https://docs.microsoft.com/microsoft-store/add-profile-to-devices#add-devices-and-apply-autopilot-deployment-profile).
+Per altre informazioni, vedere [Add devices in Microsoft Store for Business and Education](https://docs.microsoft.com/microsoft-store/add-profile-to-devices#add-devices-and-apply-autopilot-deployment-profile) (Aggiungere dispositivi in Microsoft Store per le aziende e gli istituti di istruzione).
 
 
-### <a name="autopilot-for-existing-devices"></a>AutoPilot per i dispositivi esistenti
+### <a name="autopilot-for-existing-devices"></a>Autopilot per dispositivi esistenti
 <!--1358333-->
 
-[Windows Autopilot per i dispositivi esistenti](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) è disponibile in Windows 10, versione 1809 o versione successiva. Questa funzionalità consente di ricreare l'immagine ed eseguire il provisioning di un dispositivo Windows 7 per [modalità gestita dall'utente di Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven) utilizzando una sequenza di attività singola, native di Configuration Manager. 
+[Windows Autopilot per i dispositivi esistenti](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/New-Windows-Autopilot-capabilities-and-expanded-partner-support/ba-p/260430) è disponibile in Windows 10 versione 1809 o successive. Questa funzionalità consente di ricreare l'immagine ed eseguire il provisioning di un dispositivo Windows 7 per la [modalità definita dall'utente di Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/user-driven) usando una singola sequenza di attività nativa di Configuration Manager. 
 
-Per altre informazioni, vedere [Autopilot di Windows per la sequenza di attività esistente dispositivi](/sccm/osd/deploy-use/windows-autopilot-for-existing-devices).
+Per altre informazioni, vedere la [sequenza di attività Windows Autopilot per dispositivi esistenti](/sccm/osd/deploy-use/windows-autopilot-for-existing-devices).
 
 
 
 ## <a name="install-the-configuration-manager-client"></a>Installare il client di Configuration Manager
 
-Per i dispositivi basati su internet nel secondo percorso, è necessario creare un'app in Intune. Distribuire l'app per dispositivi Windows 10 che non sono già client di Configuration Manager. 
+Per i dispositivi basati su Internet nel secondo percorso, è necessario creare un'app in Intune. Distribuire quest'app nei dispositivi Windows 10 che non sono ancora client di Configuration Manager. 
 
-### <a name="get-the-command-line-from-configuration-manager"></a>Ottenere la riga di comando da Configuration Manager
+### <a name="get-the-command-line-from-configuration-manager"></a>Recuperare la riga di comando da Configuration Manager
 
 1. Nella console di Configuration Manager passare all'area di lavoro **Amministrazione**, espandere **Servizi cloud** e selezionare il nodo **Co-gestione**.  
 
-2. Selezionare l'oggetto di CO-gestione e quindi scegliere **proprietà** nella barra multifunzione.  
+2. Selezionare l'oggetto co-gestione e quindi scegliere **Proprietà** nella barra multifunzione.  
 
-3. Nel **abilitazione** scheda, copiare la riga di comando. Incollarlo nel blocco note salvare per il processo successivo.  
+3. Nella scheda **Abilitazione** copiare la riga di comando. Incollarla nel Blocco note e salvarla per il processo successivo.  
 
-Riga di comando seguente è riportato un esempio: `CCMSETUPCMD="CCMHOSTNAME=contoso.cloudapp.net/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC"`
+La riga di comando seguente è un esempio: `CCMSETUPCMD="CCMHOSTNAME=contoso.cloudapp.net/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC"`
 
-<!--1358215--> A partire dalla versione 1806, sono necessarie meno proprietà della riga di comando.  
+<!--1358215-->
+A partire dalla versione 1806, sono necessarie meno proprietà della riga di comando.  
 
 - Le seguenti proprietà della riga di comando sono richieste in tutti gli scenari:  
     - CCMHOSTNAME  
@@ -81,18 +82,18 @@ Riga di comando seguente è riportato un esempio: `CCMSETUPCMD="CCMHOSTNAME=cont
     - AADCLIENTAPPID  
     - AADRESOURCEURI  
 
-- Se il client ritorna a intranet, sarà necessaria la proprietà seguente:  
+- Se il client effettua il roaming alla rete Intranet, la proprietà seguente è obbligatoria:  
     - SMSMP  
 
-- Se tramite il proprio certificato SSL di PKI e i CRL non è pubblicato su internet, è necessario il parametro seguente:  
+- Se si usa il proprio certificato SSL PKI e l'elenco di revoche di certificati non è pubblicato in Internet, il parametro seguente è obbligatorio:  
     - /noCRLCheck  
     
-     Per altre informazioni, vedere [Planning for CRL](/sccm/core/plan-design/security/plan-for-security#-plan-for-the-site-server-signing-certificate-self-signed)  
+     Per altre informazioni, vedere [Planning for CRLs](/sccm/core/plan-design/security/plan-for-security#-plan-for-the-site-server-signing-certificate-self-signed) (Pianificazione degli elenchi di revoche di certificati)  
 
-A partire dalla versione 1810, il sito pubblica aggiuntivi di Azure le informazioni di Active Directory a cloud management gateway (CMG). Un client aggiunto ad Azure AD ottiene queste informazioni da CMG durante il processo ccmsetup, usando lo stesso tenant a cui viene aggiunto. Questo comportamento semplifica ulteriormente la registrazione dei dispositivi per la co-gestione in un ambiente con più di un tenant di Azure AD. A questo punto sono le proprietà ccmsetup necessari solo due **CCMHOSTNAME** e **SMSSiteCode**.<!--3607731-->
+A partire dalla versione 1810, il sito pubblica le informazioni aggiuntive di Azure AD in Cloud Management Gateway (CMG). Un client aggiunto ad Azure AD ottiene queste informazioni da CMG durante il processo ccmsetup, usando lo stesso tenant a cui viene aggiunto. Questo comportamento semplifica ulteriormente la registrazione dei dispositivi per la co-gestione in un ambiente con più di un tenant di Azure AD. Al momento le uniche due proprietà obbligatorie di ccmsetup sono **CCMHOSTNAME** e **SMSSiteCode**.<!--3607731-->
 
 > [!Note]
-> Se già si distribuisce il client di Configuration Manager da Intune, è possibile aggiornare l'app di Intune con una nuova riga di comando e un nuovo file MSI. <!-- SCCMDocs-pr issue 3084 -->
+> Se si distribuisce già il client di Configuration Manager da Intune, aggiornare l'app di Intune con una nuova riga di comando e un nuovo file MSI. <!-- SCCMDocs-pr issue 3084 -->
 
 L'esempio seguente include tutte queste proprietà:   
 `ccmsetup.exe CCMHOSTNAME=CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=ABC AADCLIENTAPPID=7506ee10-f7ec-415a-b415-cd3d58790d97 AADRESOURCEURI=https://contososerver SMSMP=https://mp1.contoso.com`
@@ -102,20 +103,20 @@ Per altre informazioni, vedere [Informazioni sulle proprietà di installazione d
 
 ### <a name="create-the-app-in-intune"></a>Creare l'app in Intune
 
-1. Andare alla [portale di Azure](https://portal.azure.com)e quindi aprire la pagina di Intune.  
+1. Accedere al [portale di Azure](https://portal.azure.com) e quindi aprire la pagina di Intune.  
 
-2. Selezionare **App Client** > **app** > **aggiungere**.  
+2. Selezionare **App client** > **App** > **Aggiungi**.  
 
 3. In **Altro** selezionare **App line-of-business**.  
 
-4. Caricare il **CCMSetup. msi** file pacchetto dell'app. Trovare il file nella cartella seguente in Configuration Manager server del sito: `<ConfigMgr installation directory>\bin\i386`.  
+4. Caricare il file del pacchetto dell'app **ccmsetup.msi**. Questo file è disponibile nella cartella seguente nel server del sito di Configuration Manager: `<ConfigMgr installation directory>\bin\i386`.  
 
     > [!Tip]  
-    > Quando si aggiorna il sito, assicurarsi di che aggiornare anche l'app in Intune.  
+    > Quando si aggiorna il sito, assicurarsi di aggiornare anche l'app in Intune.  
 
-5. Dopo che l'app viene aggiornata, configurare le informazioni sull'app con la riga di comando che è stato copiato da Configuration Manager.  
+5. Dopo aver aggiornato l'app, configurare le informazioni sull'app con la riga di comando copiata da Configuration Manager.  
 
 > [!IMPORTANT]    
-> Se si personalizza la riga di comando, assicurarsi che non è lungo più di 1024 caratteri. Quando la lunghezza della riga di comando è maggiore di 1024 caratteri, l'installazione del client ha esito negativo.
+> Se si personalizza questa riga di comando, assicurarsi che la lunghezza non superi i 1024 caratteri. Se la lunghezza della riga di comando supera i 1024 caratteri, l'installazione del client non va a buon fine.
 
 
