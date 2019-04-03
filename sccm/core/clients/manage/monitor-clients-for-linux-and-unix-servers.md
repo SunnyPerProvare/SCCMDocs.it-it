@@ -1,8 +1,8 @@
 ---
-title: 'Monitorare i client Linux/UNIX '
+title: Monitorare i client Linux/UNIX
 titleSuffix: Configuration Manager
-description: Monitorare i client su server Linux e UNIX in System Center Configuration Manager.
-ms.date: 08/04/2017
+description: Monitorare i client in server Linux e UNIX in Configuration Manager.
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,18 +11,23 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e8e10b4297e1367f6835e61ced77f2a1154319b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 47a85ec7dea72f08a0ec48ebb151566b8563ba9a
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56127933"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58523691"
 ---
-# <a name="how-to-monitor-clients-for-linux-and-unix-servers-in-system-center-configuration-manager"></a>Come monitorare i client per i server Linux e UNIX in System Center Configuration Manager
+# <a name="how-to-monitor-clients-for-linux-and-unix-servers-in-configuration-manager"></a>Come monitorare i client per i server Linux e UNIX in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-È possibile visualizzare le informazioni dei server Linux e UNIX nella console di System Center Configuration Manager usando gli stessi metodi usati per visualizzare informazioni dei client basati su Windows.  
+> [!Important]  
+> A partire dalla versione 1902, Configuration Manager non supporta i client Linux o UNIX. 
+> 
+> Per la gestione dei server Linux, è possibile usare la gestione di Microsoft Azure. Le soluzioni di Azure includono un ampio supporto per Linux che nella maggior parte dei casi supera le funzionalità di Configuration Manager, inclusa la gestione end-to-end delle patch per Linux.
+
+È possibile visualizzare le informazioni dei server Linux e UNIX nella console di Configuration Manager usando gli stessi metodi usati per visualizzare le informazioni dei client basati su Windows.  
 
  Le informazioni che è possibile visualizzare includono:  
 

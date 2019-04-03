@@ -2,7 +2,7 @@
 title: Versioni Current Branch
 titleSuffix: Configuration Manager
 description: Informazioni sulla cronologia delle versioni di Configuration Manager e sulle fasi del servizio offerto.
-ms.date: 11/27/2018
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: acdc85980db937433cf8bf10336d940d0a434c94
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: ed5e7b6931fe8c853b867483d3db8a2d5bc9ad8b
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56135957"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58523725"
 ---
 # <a name="support-for-configuration-manager-current-branch-versions"></a>Supporto per le versioni Current Branch di Configuration Manager
 
@@ -28,8 +28,11 @@ Microsoft prevede di rilasciare diversi aggiornamenti per le versioni Current Br
 
 - Fase di manutenzione **Aggiornamenti della sicurezza (solo)**: quando viene resa disponibile una nuova versione Current Branch, Microsoft supporta solo gli aggiornamenti della sicurezza per le versioni precedenti per il ciclo di vita di supporto rimanente per tali versioni (mostrato nella figura 1).  
 
-  ![Immagine della sequenza temporale per la manutenzione e il supporto di Configuration Manager](media/CM_Servicing_support_timeline1.png)  
-  Figura 1. Esempio di sovrapposizione del ciclo di rilascio per il supporto della manutenzione della versione Current Branch. Questo esempio ha il solo scopo di illustrare il ciclo e non rappresenta le date di rilascio effettive o previste.
+([Grafico a schermo intero](media/CM_Servicing_support_timeline1.png))
+
+![Immagine della sequenza temporale per la manutenzione e il supporto di Configuration Manager](media/CM_Servicing_support_timeline1.png)  
+
+Figura 1. Esempio di sovrapposizione del ciclo di rilascio per il supporto della manutenzione della versione Current Branch. Questo esempio ha il solo scopo di illustrare il ciclo e non rappresenta le date di rilascio effettive o previste.
 
 > [!NOTE]  
 >  La versione Current Branch più recente è sempre nella fase di manutenzione **Aggiornamenti di sicurezza e critici**. Questo significa che, nel caso in cui venga rilevato un errore del codice che richiede un aggiornamento critico, è necessario che sia installata la versione Current Branch più recente per ricevere una correzione. Tutte le altre versioni Current Branch supportate sono idonee a ricevere gli aggiornamenti della sicurezza.

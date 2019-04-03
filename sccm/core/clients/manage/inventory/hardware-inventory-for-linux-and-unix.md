@@ -1,8 +1,8 @@
 ---
 title: Inventario hardware per Linux e UNIX
 titleSuffix: Configuration Manager
-description: Informazioni su come usare l'inventario hardware per Linux e UNIX in System Center Configuration Manager.
-ms.date: 02/22/2017
+description: Di seguito viene descritto come usare l'inventario hardware per Linux e UNIX in Configuration Manager.
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,18 +11,23 @@ author: aczechowski
 manager: dougeby
 ms.author: aaroncz
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96bed23c96a6ccf511cd4808ad775343dc8e5d9e
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: f378bb3bda5341e99eb06303d5fb5a8e13c8ac88
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132473"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58524065"
 ---
-# <a name="hardware-inventory-for-linux-and-unix-in-system-center-configuration-manager"></a>Inventario hardware per Linux e UNIX in System Center Configuration Manager
+# <a name="hardware-inventory-for-linux-and-unix-in-configuration-manager"></a>Inventario hardware per Linux e UNIX in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Il client di System Center Configuration Manager per Linux e UNIX supporta l'inventario hardware. Dopo aver eseguito l'inventario hardware, è possibile visualizzarlo in Esplora inventario risorse o nei report di Configuration Manager e usare le informazioni per creare query e raccolte che consentono le operazioni seguenti:  
+> [!Important]  
+> A partire dalla versione 1902, Configuration Manager non supporta i client Linux o UNIX. 
+> 
+> Per la gestione dei server Linux, è possibile usare la gestione di Microsoft Azure. Le soluzioni di Azure includono un ampio supporto per Linux che nella maggior parte dei casi supera le funzionalità di Configuration Manager, inclusa la gestione end-to-end delle patch per Linux.
+
+Il client di Configuration Manager per Linux e UNIX supporta l'inventario hardware. Dopo aver eseguito l'inventario hardware, è possibile visualizzarlo in Esplora inventario risorse o nei report di Configuration Manager e usare le informazioni per creare query e raccolte che consentono le operazioni seguenti:  
 
 - Distribuzione software  
 
@@ -30,19 +35,19 @@ Il client di System Center Configuration Manager per Linux e UNIX supporta l'inv
 
 - Distribuzione di impostazioni client personalizzate  
 
-  La funzionalità di inventario hardware per server Linux e UNIX usa un server CIM (Common Information Model) basato su standard. Il server CIM viene eseguito come servizio software (o daemon) e fornisce un'infrastruttura di gestione basata sugli standard DMTF (Distributed Management Task Force). Il server CIM fornisce funzionalità simili alle funzionalità CIM WMI (Windows Management Infrastructure) disponibili nei computer basati su Windows.  
+La funzionalità di inventario hardware per i server Linux e UNIX usa un server CIM (Common Information Model) basato su standard. Il server CIM viene eseguito come servizio software (o daemon) e fornisce un'infrastruttura di gestione basata sugli standard DMTF (Distributed Management Task Force). Il server CIM fornisce funzionalità simili alle funzionalità CIM WMI (Windows Management Infrastructure) disponibili nei computer basati su Windows.  
 
-  A partire dall'aggiornamento cumulativo 1, il client per Linux e UNIX usa **omiserver** versione 1.0.6 open source di **The Open Group**. Prima dell'aggiornamento cumulativo 1, il client usava **nanowbem** come server CIM.  
+A partire dall'aggiornamento cumulativo 1, il client per Linux e UNIX usa la soluzione open source **omiserver** versione 1.0.6 di **The Open Group**. Prima dell'aggiornamento cumulativo 1, il client usava **nanowbem** come server CIM.  
 
-  Il server CIM viene installato come parte del client per Linux e UNIX. Il client per Linux e UNIX comunica direttamente con il server CIM e non usa l'interfaccia WS-MAN del server CIM. La porta WS-MAN nel server CIM viene disabilitata quando si installa il client. Microsoft ha sviluppato il server CIM che è ora disponibile come open source tramite il progetto OMI (Open Management Infrastructure). Per altre informazioni sul progetto OMI, vedere il sito Web di [The Open Group](http://go.microsoft.com/fwlink/p/?LinkId=262317) .  
+Il server CIM viene installato come parte del client per Linux e UNIX. Il client per Linux e UNIX comunica direttamente con il server CIM e non usa l'interfaccia WS-MAN del server CIM. La porta WS-MAN nel server CIM viene disabilitata quando si installa il client. Microsoft ha sviluppato il server CIM che è ora disponibile come open source tramite il progetto OMI (Open Management Infrastructure). Per altre informazioni sul progetto OMI, vedere il sito Web di [The Open Group](https://go.microsoft.com/fwlink/p/?LinkId=262317) .  
 
-  L'inventario hardware nei server Linux e UNIX funziona tramite il mapping delle classi e proprietà WMI Win32 esistenti alle classi e proprietà equivalenti per i server Linux e UNIX. Questo mapping uno-a-uno di classi e proprietà consente l'integrazione dell'inventario hardware di Linux e UNIX con Configuration Manager. I dati di inventario dai server Linux e UNIX vengono visualizzati insieme all'inventario dai computer basati su Windows nella console e nei report di Configuration Manager. Ciò offre un'esperienza di gestione eterogenea e coerente.  
+L'inventario hardware nei server Linux e UNIX funziona tramite il mapping delle classi e proprietà WMI Win32 esistenti alle classi e proprietà equivalenti per i server Linux e UNIX. Questo mapping uno-a-uno di classi e proprietà consente l'integrazione dell'inventario hardware di Linux e UNIX con Configuration Manager. I dati di inventario dai server Linux e UNIX vengono visualizzati insieme all'inventario dai computer basati su Windows nella console e nei report di Configuration Manager. Questo comportamento garantisce un'esperienza di gestione eterogenea e coerente.  
 
 > [!TIP]  
 >  È possibile usare il valore **Didascalia** per la classe **Sistema operativo** per identificare i diversi sistemi operativi Linux e UNIX nelle query e nelle raccolte.  
 
 ##  <a name="BKMK_ConfigHardwareforLnU"></a> Configurazione dell'inventario hardware per server Linux e UNIX  
- Per configurare l'inventario hardware, è possibile usare le impostazioni client predefinite o creare impostazioni personalizzate per i dispositivi client. Quando si usano impostazioni personalizzate per i dispositivi client, è possibile configurare le classi e proprietà da raccogliere solo dai server Linux e UNIX. È anche possibile specificare pianificazioni personalizzate per stabilire quando raccogliere inventari completi e differenziali dai server Linux e UNIX.  
+ Per configurare l'inventario hardware, è possibile usare le impostazioni client predefinite o creare impostazioni personalizzate per i dispositivi client. Quando si usano impostazioni personalizzate per i dispositivi client, è possibile configurare le classi e le proprietà da raccogliere solo dai server Linux e UNIX. È anche possibile specificare pianificazioni personalizzate per stabilire quando raccogliere inventari completi e differenziali dai server Linux e UNIX.  
 
  Il client per Linux e UNIX supporta le seguenti classi di inventario hardware disponibili nei server Linux e UNIX:  
 
@@ -70,7 +75,7 @@ Il client di System Center Configuration Manager per Linux e UNIX supporta l'inv
 
 - SMS_Processor  
 
-  Non tutte le proprietà di queste classi di inventario sono abilitate per i computer Linux e UNIX in Configuration Manager.  
+Non tutte le proprietà di queste classi di inventario sono abilitate per i computer Linux e UNIX in Configuration Manager.  
 
 ##  <a name="BKMK_OperationsforHardwareforLnU"></a> Operazioni per l'inventario hardware  
  Dopo aver raccolto l'inventario hardware dai server Linux e UNIX, è possibile visualizzare e usare tali informazioni con le stesse modalità valide per l'inventario raccolto dagli altri computer:  
@@ -83,11 +88,11 @@ Il client di System Center Configuration Manager per Linux e UNIX supporta l'inv
 
 - Eseguire i report che consentono di visualizzare informazioni dettagliate specifiche sulle configurazioni hardware  
 
-  L'inventario hardware in un server Linux o UNIX viene eseguito in base alla pianificazione configurata nelle impostazioni client. L'intervallo predefinito è di sette giorni. Il client per Linux e UNIX supporta sia cicli di inventario completo che cicli di inventario differenziale.  
+L'inventario hardware in un server Linux o UNIX viene eseguito in base alla pianificazione configurata nelle impostazioni client. La pianificazione predefinita prevede l'esecuzione ogni sette giorni. Il client per Linux e UNIX supporta sia cicli di inventario completo che cicli di inventario differenziale.  
 
-  È anche possibile imporre l'esecuzione immediata dell'inventario hardware per il client in un server Linux o UNIX. Per eseguire l'inventario hardware, in un client usare credenziali **root** per eseguire il comando seguente per avviare un ciclo di inventario hardware: **/opt/microsoft/configmgr/bin/ccmexec -rs hinv**  
+È anche possibile imporre l'esecuzione immediata dell'inventario hardware per il client in un server Linux o UNIX. Per eseguire l'inventario hardware, in un client usare credenziali **radice** per eseguire il comando seguente per avviare un ciclo di inventario hardware: `/opt/microsoft/configmgr/bin/ccmexec -rs hinv`  
 
-  Le azioni per l'inventario hardware vengono immesse nel file di log client **scxcm.log**.  
+Le azioni per l'inventario hardware vengono immesse nel file di log client **scxcm.log**.  
 
 ##  <a name="BKMK_CustomHINVforLinux"></a> Come usare OMI (Open Management Infrastructure) per creare un inventario hardware personalizzato  
  Il client per Linux e UNIX supporta l'inventario hardware personalizzato che è possibile creare tramite OMI (Open Management Infrastructure). A tale scopo, seguire questa procedura:  
@@ -108,7 +113,7 @@ Il client di System Center Configuration Manager per Linux e UNIX supporta l'inv
 
 1.  Copiare la libreria del provider in ogni computer Linux e UNIX da cui si vuole raccogliere l'inventario. Il nome della libreria del provider è simile al seguente: **XYZ_MyProvider.so**  
 
-2.  Registrare poi la libreria del provider nel server OMI in ogni computer Linux e UNIX. Il server OMI viene installato nel computer quando si installa il client di Configuration Manager per Linux e UNIX. È necessario tuttavia registrare manualmente i provider personalizzati. Usare la riga di comando seguente per registrare il provider: **/opt/microsoft/omi/bin/omireg XYZ_MyProvider.so**  
+2.  Registrare poi la libreria del provider nel server OMI in ogni computer Linux e UNIX. Il server OMI viene installato nel computer quando si installa il client di Configuration Manager per Linux e UNIX. È necessario tuttavia registrare manualmente i provider personalizzati. Usare la riga di comando seguente per registrare il provider: `/opt/microsoft/omi/bin/omireg XYZ_MyProvider.so`  
 
 3.  Dopo aver registrato il nuovo provider, testarlo con lo strumento **omicli** . Lo strumento **omicli** viene installato in ogni computer Linux e UNIX quando si installa il client di Configuration Manager per Linux e UNIX. Ad esempio, eseguire il comando seguente nel computer, in cui **XYZ_MyProvider** è il nome del provider creato: **/opt/microsoft/omi/bin/omicli ei root/cimv2 XYZ_MyProvider**  
 
@@ -118,6 +123,6 @@ Il client di System Center Configuration Manager per Linux e UNIX supporta l'inv
 >  Utilizzare la distribuzione del software per distribuire provider personalizzati e per registrare i provider personalizzati in ogni computer client Linux e UNIX.  
 
 ###  <a name="BKMK_AddLinuxProvidertoCM"></a> Abilitare la nuova classe di inventario in Configuration Manager:  
- Prima che Configuration Manager possa elaborare l'inventario fornito dal nuovo provider nei computer Linux e UNIX, è necessario importare il file MOF (Managed Object Format) che definisce lo schema del provider personalizzato.  
+ Affinché Configuration Manager possa elaborare l'inventario fornito dal nuovo provider nei computer Linux e UNIX, è necessario importare il file MOF (Managed Object Format) che definisce lo schema del provider personalizzato.  
 
  Per importare un file MOF personalizzato in Configuration Manager, vedere [Come configurare l'inventario hardware in System Center Configuration Manager](../../../../core/clients/manage/inventory/configure-hardware-inventory.md).  

@@ -2,7 +2,7 @@
 title: Elementi deprecati per i client
 titleSuffix: Configuration Manager
 description: Informazioni sui sistemi operativi client che Configuration Manager non supporta più.
-ms.date: 01/15/2019
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d55c246c696a550ad3935a1f2bf9a7b838af996a
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 9c6c4af31af08d2c723df01fa37f21f708453044
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156856"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58523776"
 ---
 # <a name="removed-and-deprecated-items-for-configuration-manager-clients"></a>Elementi rimossi e deprecati per i client di Configuration Manager
 
@@ -33,7 +33,7 @@ Se non specificato diversamente, ogni sistema operativo supportato è supportato
 
 |**Sistemi operativi**|**Primo avviso funzionalità deprecata**|**Supporto rimosso**|  
 |-|-|-|
-|Linux e UNIX|22 marzo 2018||
+|Linux e UNIX|22 marzo 2018|Versione 1902|
 |Windows 8: Professional, Enterprise|12 gennaio 2016|Versione 1802|
 |Windows Embedded 8 Pro|12 gennaio 2016|Versione 1802|
 |Windows Embedded 8 Industry|12 gennaio 2016|Versione 1802|

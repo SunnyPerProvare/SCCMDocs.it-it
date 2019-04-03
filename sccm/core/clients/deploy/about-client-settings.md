@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 472cf012805700e1ec2de2f3c83a0ef63e10183b
-ms.sourcegitcommit: 5f17355f954b9d9e10325c0e9854a9d582dec777
+ms.openlocfilehash: e76dc5892ad34d72bfee3cd4aea0fa660e34855d
+ms.sourcegitcommit: 9aebc20b25cdef0af908918ccfd791f3264a5d94
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58329601"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58477535"
 ---
 # <a name="about-client-settings-in-configuration-manager"></a>Informazioni sulle impostazioni client in Configuration Manager
 
@@ -460,6 +460,10 @@ Impostare questa opzione su **Sì** per abilitare il risparmio energia nei clien
 ### <a name="allow-users-to-exclude-their-device-from-power-management"></a>Consentire agli utenti di escludere il dispositivo usato dal risparmio energia
 
 Scegliere **Sì** per consentire agli utenti di Software Center di escludere il computer dalle impostazioni di risparmio energia configurate.  
+
+### <a name="allow-network-wake-up"></a>Consenti l'attivazione della rete
+
+Opzione aggiunta nella versione 1810. Se impostata su **Attiva**, configura le impostazioni di risparmio energia nella scheda di rete per consentire alla scheda di rete di riattivare il dispositivo. Se impostata su **Disattiva**, configura le impostazioni di risparmio energia nella scheda di rete per non consentire alla scheda di rete di riattivare il dispositivo.
 
 ### <a name="enable-wake-up-proxy"></a>Abilitare il proxy di riattivazione
 

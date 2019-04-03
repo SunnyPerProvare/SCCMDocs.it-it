@@ -1,8 +1,8 @@
 ---
 title: Accessibilità
 titleSuffix: Configuration Manager
-description: Informazioni sulle funzionalità che rendono System Center Configuration Manager accessibile a persone con particolari esigenze.
-ms.date: 7/31/2017
+description: Informazioni sulle funzionalità che rendono Configuration Manager accessibile a tutti.
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,24 +11,42 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f52e903f730590cd9e0b3c8e6f53982ac24fc1b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 5a1bf32c77989c11c55723d5edf271e234ccd4ec
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56136244"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58523742"
 ---
-# <a name="accessibility-features-in-system-center-configuration-manager"></a>Funzionalità di accessibilità in System Center Configuration Manager
+# <a name="accessibility-features-in-configuration-manager"></a>Funzionalità di accessibilità in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
 
-System Center Configuration Manager include funzionalità che lo rendono accessibile a persone con particolari esigenze.
+Configuration Manager include funzionalità che lo rendono accessibile a tutti.
+
+> [!Note]  
+> A partire dalla versione 1902, per migliorare le funzionalità di accessibilità della console di Configuration Manager, aggiornare .NET alla versione 4.7 o successiva nel computer che esegue la console. <!-- SCCMDocs-pr issue #3228 -->  
+> 
+> Per altre informazioni sulle modifiche all'accessibilità apportate in .NET 4.7.1 e 4.7.2, vedere [Nuove funzionalità di accessibilità in .NET Framework](https://docs.microsoft.com/dotnet/framework/whats-new/whats-new-in-accessibility).  
 
 
-## <a name="bkmk_aconsole"></a> Funzionalità di accessibilità per la console di Configuration Manager  
 
-**Combinazioni di tasti e miglioramenti della versione 1706 e delle versioni successive**
+## <a name="keyboard-shortcuts"></a>Tasti di scelta rapida
+
+### <a name="console-workspaces"></a>Aree di lavoro della console
+
+Per accedere a un'area di lavoro, utilizzare i seguenti tasti di scelta rapida:  
+
+|Tasti di scelta rapida| Area di lavoro|
+|--------|--------|  
+|CTRL+1| Asset e conformità|
+|CTRL+2|  Raccolta software|
+|CTRL+3|  Monitoraggio|
+|CTRL+4|  Amministrazione|
+
+
+### <a name="other-keyboard-shortcuts"></a>Altri tasti di scelta rapida
 
 |Tasti di scelta rapida|  Scopo|
 |--------|--------|  
@@ -40,93 +58,37 @@ System Center Configuration Manager include funzionalità che lo rendono accessi
 |ALT     |Sposta lo stato attivo all'interno e al di fuori della barra multifunzione.|
 
 
-- Navigazione migliorata nel riquadro di spostamento quando si digitano le lettere del nome di un nodo.
-- La navigazione tramite tastiera nella vista principale e nella barra multifunzione è ora circolare.
-- La navigazione tramite tastiera nel riquadro dei dettagli è ora circolare. Per tornare al riquadro o all'oggetto precedente, è possibile usare Ctrl + D e poi MAIUSC + TAB.
+
+## <a name="other-accessibility-features"></a>Altre funzionalità di accessibilità
+
+- Per muoversi nel riquadro di spostamento, digitare le lettere del nome di un nodo.
+
+- Lo spostamento tramite tastiera nella vista principale e nella barra multifunzione avviene in modo circolare.
+
+- Lo spostamento tramite tastiera nel riquadro dei dettagli avviene in modo circolare. Per tornare al riquadro o all'oggetto precedente, è possibile usare Ctrl + D e poi MAIUSC + TAB.
+
 - Dopo l'aggiornamento di una vista dell'area di lavoro, il focus è impostato nel riquadro principale dell'area di lavoro.
-- Risolto un problema per abilitare i lettori dello schermo per annunciare i nomi degli elementi dell'elenco.
-- Nomi accessibili aggiunti per più controlli nella pagina che consente ai lettori dello schermo di annunciare informazioni importanti.
+
+- Per accedere a un menu dell'area di lavoro, premere TAB fino a quando l'icona Espandi/comprimi non viene attivata. Premere quindi FRECCIA GIÙ per accedere al menu dell'area di lavoro.  
+
+- Per spostarsi all'interno di un menu dell'area di lavoro, utilizzare i tasti di direzione.  
+
+- Per accedere ad aree diverse dell'area di lavoro, utilizzare il tasto TAB e i tasti MAIUSC+TAB. Per spostarsi all'interno di un'area dell'area di lavoro, ad esempio la barra multifunzione, utilizzare i tasti di direzione.  
+
+- Per accedere alla barra degli indirizzi quando lo stato attivo si trova nel nodo della struttura, usare MAIUSC+TAB tre volte.  
+
+- In una pagina della creazione guidata o delle proprietà, è possibile spostarsi tra le caselle con i tasti di scelta rapida. Premere ALT più il carattere di sottolineatura (ALT+_) per selezionare una casella specifica.     
+
+- Per spostarsi tra i vari nodi di un'area di lavoro è sufficiente immettere la prima lettera del nome di un nodo. Quando si preme il tasto, il cursore si sposta sul nodo successivo che inizia con tale lettera. Se si usa un'utilità per la lettura dello schermo, verrà letto il nome del nodo.
 
 
-**Le combinazioni di tasti seguenti sono disponibili per tutte le versioni**
 
-- Per accedere a un'area di lavoro, utilizzare i seguenti tasti di scelta rapida:  
+## <a name="see-also"></a>Vedere anche
 
-|Tasti di scelta rapida| Area di lavoro|
-|--------|--------|  
-|CTRL+1| Asset e conformità|
-|CTRL+2|  Raccolta software|
-|CTRL+3|  Monitoraggio|
-|CTRL+4|  Amministrazione|
-
-
--   Per accedere a un menu dell'area di lavoro, premere TAB fino a quando l'icona Espandi/comprimi non viene attivata. Premere quindi FRECCIA GIÙ per accedere al menu dell'area di lavoro.  
-
--   Per spostarsi all'interno di un menu dell'area di lavoro, utilizzare i tasti di direzione.  
-
--   Per accedere ad aree diverse dell'area di lavoro, utilizzare il tasto TAB e i tasti MAIUSC+TAB. Per spostarsi all'interno di un'area dell'area di lavoro, ad esempio la barra multifunzione, utilizzare i tasti di direzione.  
-
--   Per accedere alla barra degli indirizzi quando lo stato attivo si trova nel nodo della struttura, usare MAIUSC+TAB tre volte.  
-
--   In una pagina della creazione guidata o delle proprietà, è possibile spostarsi tra le caselle con i tasti di scelta rapida. Premere ALT più il carattere di sottolineatura (ALT+_) per selezionare una casella specifica.     
-
--  Per spostarsi tra i vari nodi di un'area di lavoro è sufficiente immettere la prima lettera del nome di un nodo. Quando si preme il tasto, il cursore si sposta sul nodo successivo che inizia con tale lettera. Se si usa un'utilità per la lettura dello schermo, verrà letto il nome del nodo.
+Per altre informazioni sui concetti fondamentali relativi allo spostamento nelle interfacce utente di Configuration Manager, vedere gli articoli seguenti:
+- [Uso della console di Configuration Manager](/sccm/core/servers/manage/admin-console)  
+- [Manuale dell'utente di Software Center](/sccm/core/understand/software-center)
 
 > [!NOTE]  
->  Le informazioni riportate in questa sezione sono valide solo per gli utenti che acquistano una licenza di prodotti Microsoft negli Stati Uniti. Se il prodotto non è stato acquistato negli Stati Uniti, è possibile usare la scheda informativa della filiale inclusa nel pacchetto software oppure visitare il [sito Web Microsoft sull'accessibilità](http://go.microsoft.com/fwlink/?LinkId=8431) per informazioni di contatto per i servizi di supporto Microsoft. È possibile contattare la filiale locale per stabilire se i tipi di prodotti e servizi illustrati in questa sezione sono disponibili nell'area di interesse. Le informazioni sull'accesso facilitato sono disponibili in altre lingue, incluso giapponese e francese.  
+> Le informazioni in questo articolo sono valide solo per gli utenti che acquistano una licenza di prodotti Microsoft negli Stati Uniti. Se il prodotto non è stato acquistato negli Stati Uniti, è possibile usare la scheda informativa della filiale inclusa nel pacchetto software oppure visitare il [sito Web Microsoft sull'accessibilità](https://go.microsoft.com/fwlink/?LinkId=8431) per informazioni di contatto per i servizi di supporto Microsoft. È possibile contattare la filiale locale per stabilire se i tipi di prodotti e servizi illustrati in questa sezione sono disponibili nell'area di interesse. Le informazioni sull'accesso facilitato sono disponibili in altre lingue, incluso giapponese e francese.  
 
-##  <a name="bkmk_ahelp"></a> Funzionalità di accessibilità per la Guida di Configuration Manager  
- La Guida di Configuration Manager include funzionalità che la rendono accessibile a uno spettro più ampio di utenti, inclusi coloro che hanno difficoltà di movimento, soffrono di ipovisione o sono affetti da altre disabilità.  
-
-|Per eseguire questa operazione|Utilizzare questo tasto di scelta rapida|  
-|----------------|--------------------------------|  
-|Visualizzare la finestra della Guida.|F1|  
-|Spostare il cursore tra il riquadro argomenti della Guida e il riquadro di spostamento (le schede **Sommario**, **Cerca**e **Indice** ).|F6|  
-|Passare da una scheda all'altra (ad esempio, **Sommario**, **Cerca**e **Indice**) nel riquadro di spostamento.|ALT + lettera sottolineata della scheda|  
-|Selezionare il collegamento ipertestuale o il testo nascosto successivo.|Scheda|  
-|Selezionare il collegamento ipertestuale o il testo nascosto precedente.|MAIUSC + TAB|  
-|Eseguire l'azione per Mostra tutto, Nascondi tutto, il testo nascosto o il collegamento ipertestuale selezionato.|INVIO|  
-|Visualizzare il menu **Opzioni** per accedere ai comandi della barra degli strumenti della Guida.|ALT + O|  
-|Nascondere o mostrare il riquadro che contiene le schede **Sommario**, **Cerca** e **Indice**.|ALT + O e quindi premere T|  
-|Mostrare l'argomento precedentemente visualizzato.|ALT + O e quindi premere B|  
-|Visualizzare l'argomento successivo in una sequenza di argomenti visualizzati in precedenza.|ALT + O e quindi premere F|  
-|Tornare alla pagina iniziale specificata.|ALT + O e quindi premere H|  
-|Interrompere l'apertura di un argomento della Guida, ad esempio per interrompere il download di una pagina Web.|Alt+O e quindi premere S|  
-|Aprire la finestra di dialogo **Opzioni Internet** per Windows Internet Explorer, in cui è possibile modificare le impostazioni di accessibilità.|Alt+O e quindi premere I|  
-|Aggiornare l'argomento, ad esempio una pagina Web collegata.|Alt+O e quindi premere R|  
-|Stampare tutti gli argomenti di una cartella o solo l'argomento selezionato.|Alt+O e quindi premere P|  
-|Chiudere la finestra della Guida.|ALT + F4|  
-
-#### <a name="to-change-the-appearance-of-a-help-topic"></a>Per modificare l'aspetto di un argomento della Guida  
-
-1.  Per preparare la personalizzazione di colori, stili dei caratteri e dimensioni dei caratteri nella Guida, aprire la finestra della Guida.  
-
-2.  Scegliere **Opzioni** e quindi scegliere **Opzioni Internet**.  
-
-3.  Nella scheda **Generale** scegliere **Accessibilità**. Scegliere **Ignora i colori specificati sulle pagine Web**, **Ignora gli stili dei caratteri specificati sulle pagine Web** e **Ignora le dimensioni dei caratteri specificati sulle pagine Web**. È inoltre possibile utilizzare le impostazioni specificate nel proprio foglio di stile.  
-
-#### <a name="to-change-the-color-of-the-background-or-text-in-help"></a>Per modificare il colore dello sfondo o del testo della Guida  
-
-1.  Aprire la finestra della Guida.  
-
-2.  Scegliere **Opzioni** e quindi scegliere **Opzioni Internet**.  
-
-3.  Nella scheda **Generale** scegliere **Accessibilità**. Scegliere quindi **Ignora i colori specificati sulle pagine Web**. È inoltre possibile utilizzare le impostazioni specificate nel proprio foglio di stile.  
-
-4.  Per personalizzare i colori usati nella Guida in linea, nella scheda **Generale** scegliere **Colori**. Deselezionare la casella di controllo **Usa colori di Windows** e quindi scegliere i colori da usare per il carattere e lo sfondo.  
-
-    > [!NOTE]  
-    >  Se si modifica il colore di sfondo degli argomenti della Guida nella finestra della Guida, la modifica avrà effetto anche sul colore di sfondo delle pagine Web in Windows Internet Explorer.  
-
-#### <a name="to-change-the-font-in-help"></a>Per modificare il carattere nella Guida  
-
-1.  Aprire la finestra della Guida.  
-
-2.  Scegliere **Opzioni** e quindi scegliere **Opzioni Internet**.  
-
-3.  Nella scheda **Generale** scegliere **Accessibilità**. Per usare le stesse impostazioni usate nella propria istanza di Windows Internet Explorer, scegliere **Ignora gli stili dei caratteri specificati sulle pagine Web** e **Ignora le dimensioni dei caratteri specificati sulle pagine Web**. È inoltre possibile utilizzare le impostazioni specificate nel proprio foglio di stile.  
-
-4.  Per personalizzare lo stile del carattere usato nella Guida, nella scheda **Generale** scegliere **Caratteri** e quindi scegliere lo stile del carattere desiderato.  
-
-    > [!NOTE]  
-    >  Se si modifica il carattere degli argomenti della Guida nella finestra della Guida, la modifica avrà effetto anche sul carattere delle pagine Web in Windows Internet Explorer.  

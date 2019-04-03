@@ -2,7 +2,7 @@
 title: Controlli dei prerequisiti
 titleSuffix: Configuration Manager
 description: Informazioni di riferimento sugli specifici controlli dei prerequisiti per gli aggiornamenti di Configuration Manager.
-ms.date: 12/14/2018
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6bea2d7fc41bdec96fbdfe3508d13eea0a59d514
-ms.sourcegitcommit: ceec0e20bf801071f2a05233f984cf17acc3fd29
+ms.openlocfilehash: 81689907f326399de704b075b8500b82803b4d3d
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265037"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58524184"
 ---
 # <a name="list-of-prerequisite-checks-for-configuration-manager"></a>Elenco dei controlli dei prerequisiti per Configuration Manager
 
@@ -455,11 +455,11 @@ Il computer di Configuration Manager è membro di un dominio di Windows.
 Per installare il server del sito, il computer deve avere almeno 15 GB di spazio libero su disco. Se si installa il provider SMS nello stesso server, è necessario 1 GB di spazio libero aggiuntivo.
 
 #### <a name="pending-system-restart"></a>Riavvio del sistema in sospeso 
-*Si applica a: sito di amministrazione centrale, sito primario, sito secondario, console di Configuration Manager, provider SMS, SQL Server, punto di gestione, punto di distribuzione*
+*Si applica a: sito di amministrazione centrale, sito primario, sito secondario*
 
 Prima di eseguire l'installazione, un altro programma necessita del riavvio del server.
 
-A partire dalla versione 1810, questo controllo è più resiliente. Per verificare se il computer è in uno stato di riavvio in sospeso, controlla le posizioni del Registro di sistema seguenti:<!--SCCMDocs-pr issue 3010-->  
+A partire dalla versione 1810, questo controllo è più resiliente. Per verificare se il computer è in uno stato di riavvio in sospeso, vengono controllate le posizioni del Registro di sistema seguenti:<!--SCCMDocs-pr issue 3010-->  
 
 - `HKLM:Software\Microsoft\Windows\CurrentVersion\Component Based Servicing\RebootPending`  
 - `HKLM:SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update\RebootRequired`  
@@ -515,6 +515,18 @@ Il computer di Configuration Manager è membro di un dominio di Windows.
 
 L'unità disco deve essere formattata con il file system NTFS. Per una protezione migliore, installare i componenti del server del sito in unità disco formattate con il file system NTFS.
 
+#### <a name="pending-system-restart-on-the-remote-sql-server"></a>Riavvio del sistema in sospeso nell'istanza remota di SQL Server
+*Si applica a: Versione 1902 e versioni successive, istanza remota di SQL Server*
+
+Prima di eseguire l'installazione, un altro programma necessita del riavvio del server.
+
+Per verificare se il computer è in uno stato di riavvio in sospeso, vengono controllate le posizioni del Registro di sistema seguenti:<!--SCCMDocs-pr issue 3377-->  
+
+- `HKLM:Software\Microsoft\Windows\CurrentVersion\Component Based Servicing\RebootPending`  
+- `HKLM:SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update\RebootRequired`  
+- `HKLM:SYSTEM\CurrentControlSet\Control\Session Manager, PendingFileRenameOperations`  
+- `HKLM:Software\Microsoft\ServerManager, CurrentRebootAttempts`  
+
 #### <a name="schema-extensions"></a>Estensioni dello schema 
 *Si applica a: sito di amministrazione centrale, sito primario*
 
@@ -525,7 +537,7 @@ Configuration Manager non richiede le estensioni dello schema di Active Director
 #### <a name="bkmk_changetracking"></a> Pulizia rilevamento modifiche SQL
 *Si applica a: server di database del sito*
 
-A partire dalla versione 1810, è presente un controllo che verifica se il database del sito ha un backlog di dati di rilevamento modifiche di SQL.<!--SCCMDocs-pr issue 3023-->  
+A partire dalla versione 1810, è possibile controllare se il database del sito ha un backlog di dati di rilevamento modifiche di SQL.<!--SCCMDocs-pr issue 3023-->  
 
 Eseguire manualmente il controllo tramite una stored procedure nel database del sito. Creare prima di tutto una [connessione di diagnostica](https://docs.microsoft.com/sql/database-engine/configure-windows/diagnostic-connection-for-database-administrators?view=sql-server-2017) al database del sito. Il metodo più semplice è usare l'editor di query del motore di database di SQL Server Management Studio e connettersi a `admin:<instance name>`. 
 

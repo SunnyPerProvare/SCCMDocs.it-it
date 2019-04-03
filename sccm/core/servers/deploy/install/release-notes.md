@@ -2,7 +2,7 @@
 title: Note sulla versione
 titleSuffix: Configuration Manager
 description: Informazioni su problemi urgenti non ancora risolti nel prodotto o trattati in un articolo della Knowledge Base del supporto tecnico Microsoft.
-ms.date: 03/05/2019
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -11,12 +11,12 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 33ef7020e1b9312717919a9dda8ce189c8db533c
-ms.sourcegitcommit: f3dd8405018fe1043434386be15c16752c1a4a3c
+ms.openlocfilehash: a168e12000f11ca2bb6af8b1988f508910ab7263
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57558185"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58523963"
 ---
 # <a name="release-notes-for-configuration-manager"></a>Note sulla versione per Configuration Manager
 
@@ -29,6 +29,7 @@ La documentazione specifica delle funzionalità include informazioni sui problem
 Questo argomento contiene le note sulla versione di Configuration Manager (Current Branch). Per informazioni sul Technical Preview Branch, vedere [Technical Preview](/sccm/core/get-started/technical-preview)  
 
 Per informazioni sulle nuove funzionalità introdotte con le diverse versioni, vedere gli articoli seguenti:
+- [Novità della versione 1902](/sccm/core/plan-design/changes/whats-new-in-version-1902)
 - [Novità della versione 1810](/sccm/core/plan-design/changes/whats-new-in-version-1810)
 - [Novità della versione 1806](/sccm/core/plan-design/changes/whats-new-in-version-1806)  
 - [Novità della versione 1802](/sccm/core/plan-design/changes/whats-new-in-version-1802)
@@ -103,7 +104,7 @@ Nessuno
 
 ### <a name="security-roles-are-missing-for-phased-deployments"></a>Non sono presenti ruoli di sicurezza per le distribuzioni in più fasi
 <!--3479337, SCCMDocs-pr issue 3095-->
-*Si applica a: Configuration Manager versione 1810*
+*Si applica a: Configuration Manager versioni 1810, 1902*
 
 Il ruolo di sicurezza predefinito **Gestione distribuzione del sistema operativo** dispone di autorizzazioni per le [distribuzioni in più fasi](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence). I ruoli seguenti non dispongono di queste autorizzazioni:  
 
@@ -144,7 +145,8 @@ Impostare il valore del Registro di sistema seguente su `0` e riavviare il **Ser
 ## <a name="mobile-device-management"></a>Gestione di dispositivi mobili  
 
 ### <a name="validation-for-ios-app-link-sometimes-fails-on-valid-link"></a>Talvolta si verifica un errore di convalida per il collegamento dell'app iOS anche se il collegamento è valido
-<!-- LSI 106004348 --> Quando si crea una nuova applicazione di tipo **Pacchetto app per iOS nell'App Store**, il validator non accetta un alcuni URL validi come **Percorso**. In particolare, l'App Store iOS non richiede un valore per la sezione dell'URL relativa al nome dell'app. Ad esempio, entrambi i collegamenti seguenti sono validi e puntano alla stessa app, ma la **Creazione guidata applicazione** accetta solo il primo:
+<!-- LSI 106004348 -->
+Quando si crea una nuova applicazione di tipo **Pacchetto app per iOS nell'App Store**, il validator non accetta alcuni URL validi come **Percorso**. In particolare, l'App Store iOS non richiede un valore per la sezione dell'URL relativa al nome dell'app. Ad esempio, entrambi i collegamenti seguenti sono validi e puntano alla stessa app, ma la **Creazione guidata applicazione** accetta solo il primo:
 - `https://itunes.apple.com/us/app/app-name/id123456789?mt=8`
 - `https://itunes.apple.com/us/app//id123456789?mt=8`
 

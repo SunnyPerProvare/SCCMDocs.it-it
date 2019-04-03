@@ -1,8 +1,8 @@
 ---
 title: Servizi componenti client e comandi UNIX/Linux
 titleSuffix: Configuration Manager
-description: Informazioni sui servizi componenti e i comandi nei client Linux e UNIX in System Center Configuration Manager.
-ms.date: 04/23/2017
+description: Informazioni sui servizi componenti e sui comandi nei client Linux e UNIX in Configuration Manager.
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,32 +11,37 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2ecd5b3ad493f4916b475aea69b4db241f7ff74b
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 0f3538265bdd7de801acf3d8f04c5561364989cf
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56132851"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58523980"
 ---
-# <a name="linux-and-unix-clients-component-services-and-commands-for-system-center-configuration-manager"></a>Servizi componenti e comandi dei client Linux e UNIX per System Center Configuration Manager
+# <a name="linux-and-unix-clients-component-services-and-commands-for-configuration-manager"></a>Servizi componenti e comandi dei client Linux e UNIX per Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
+
+> [!Important]  
+> A partire dalla versione 1902, Configuration Manager non supporta i client Linux o UNIX. 
+> 
+> Per la gestione dei server Linux, è possibile usare la gestione di Microsoft Azure. Le soluzioni di Azure includono un ampio supporto per Linux che nella maggior parte dei casi supera le funzionalità di Configuration Manager, inclusa la gestione end-to-end delle patch per Linux.
 
 
  Nella tabella seguente sono riportati i servizi componenti client del client di Configuration Manager per Linux e UNIX.  
 
 |Nome del file|Altre informazioni|  
 |---------------|----------------------|  
-|ccmexec.bin|Questo servizio equivale al servizio ccmexc in un client basato su Windows. È responsabile di tutte le comunicazioni con i ruoli del sistema del sito di Configuration Manager e comunica anche con il servizio omiserver.bin per raccogliere l'inventario hardware dal computer locale.<br /><br /> Per un elenco di argomenti della riga di comando supportati, eseguire **ccmexec -h**|  
+|ccmexec.bin|Questo servizio è simile al servizio ccmexc in un client basato su Windows. È responsabile di tutte le comunicazioni con i ruoli del sistema del sito di Configuration Manager e comunica anche con il servizio omiserver.bin per raccogliere l'inventario hardware dal computer locale.<br /><br /> Per un elenco di argomenti della riga di comando supportati, eseguire `ccmexec -h`|  
 |omiserver.bin|Questo servizio è il server CIM. Il server CIM fornisce un framework per i moduli software plug-in denominati provider. I provider interagiscono con le risorse dei computer Linux e UNIX e raccolgono i dati di inventario hardware. Ad esempio, il **provider process** per Linux computer raccoglie i dati associati ai processi del sistema operativo Linux.|  
 
  I seguenti comandi dell'elenco di tabelle che è possibile utilizzare per avviare, arrestare o riavviare i servizi client (CCMExec e omiserver) in ogni versione di Linux o UNIX. Quando si avvia o arresta il servizio ccmexec, viene avviato o arrestato anche il servizio omiserver.  
 
 |Sistema operativo|Comandi:|  
 |----------------------|--------------|  
-|Universal Agent<br /><br /> RHEL 4 e SLES 9|Avvia: **/etc/init d/ccmexecd start**<br /><br /> Arresta: **/etc/init d/ccmexecd stop**<br /><br /> Riavvia: **/etc/init d/ccmexecd restart**|  
-|Solaris 9|Avvia: **/etc/init d/ccmexecd start**<br /><br /> Arresta: **/etc/init d/ccmexecd stop**<br /><br /> Riavvia: **/etc/init d/ccmexecd restart**|  
-|Solaris 10|Avvia:<br /><br /> **svcadm enable -s svc:/application/management/omiserver**<br /><br /> **svcadm enable -s svc:/application/management/ccmexecd**<br /><br /> Arresta:<br /><br /> **svcadm disable -s svc:/application/management/ccmexecd**<br /><br /> **svcadm disable -s svc:/application/management/omiserver**|  
-|Solaris 11|Avvia:<br /><br /> **svcadm enable -s svc:/application/management/omiserver**<br /><br /> **svcadm enable -s svc:/application/management/ccmexecd**<br /><br /> Arresta:<br /><br /> **svcadm disable -s svc:/application/management/ccmexecd**<br /><br /> **svcadm disable -s svc:/application/management/omiserver**|  
-|AIX|Avvia:<br /><br /> **startsrc -s omiserver**<br /><br /> **startsrc -s ccmexec**<br /><br /> Arresta:<br /><br /> **stopsrc -s ccmexec**<br /><br /> **stopsrc -s omiserver**|  
-|HP-UX|Avvia: **/sbin/init.d/ccmexecd start**<br /><br /> Arresta: **/sbin/init.d/ccmexecd stop**<br /><br /> Riavvia: **/sbin/init.d/ccmexecd restart**|  
+|Universal Agent<br /><br /> RHEL 4 e SLES 9|Avvia: `/etc/init d/ccmexecd start`<br /><br /> Arresta: `/etc/init d/ccmexecd stop`<br /><br /> Riavvia: `/etc/init d/ccmexecd restart`|  
+|Solaris 9|Avvia: `/etc/init d/ccmexecd start`<br /><br /> Arresta: `/etc/init d/ccmexecd stop`<br /><br /> Riavvia: `/etc/init d/ccmexecd restart`|  
+|Solaris 10|Avvia:<br /><br /> `svcadm enable -s svc:/application/management/omiserver`<br /><br /> `svcadm enable -s svc:/application/management/ccmexecd`<br /><br /> Arresta:<br /><br /> `svcadm disable -s svc:/application/management/ccmexecd`<br /><br /> `svcadm disable -s svc:/application/management/omiserver`|  
+|Solaris 11|Avvia:<br /><br /> `svcadm enable -s svc:/application/management/omiserver`<br /><br /> `svcadm enable -s svc:/application/management/ccmexecd`<br /><br /> Arresta:<br /><br /> `svcadm disable -s svc:/application/management/ccmexecd`<br /><br /> `svcadm disable -s svc:/application/management/omiserver`|  
+|AIX|Avvia:<br /><br /> `startsrc -s omiserver`<br /><br /> `startsrc -s ccmexec`<br /><br /> Arresta:<br /><br /> `stopsrc -s ccmexec`<br /><br /> `stopsrc -s omiserver`|  
+|HP-UX|Avvia: `/sbin/init.d/ccmexecd start`<br /><br /> Arresta: `/sbin/init.d/ccmexecd stop`<br /><br /> Riavvia: `/sbin/init.d/ccmexecd restart`|  

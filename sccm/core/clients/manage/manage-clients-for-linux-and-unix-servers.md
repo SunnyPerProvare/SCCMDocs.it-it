@@ -1,8 +1,8 @@
 ---
 title: Gestire i client Linux e UNIX
 titleSuffix: Configuration Manager
-description: Gestire i client su server Linux e UNIX in System Center Configuration Manager.
-ms.date: 04/23/2017
+description: Gestire i client in server Linux e UNIX in Configuration Manager.
+ms.date: 03/27/2019
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -11,18 +11,23 @@ author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43c7d4768e7da6af69422cce772665250d39764f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 32e7a643c98fc8a6bd4baccda703146816930367
+ms.sourcegitcommit: d8d142044586a53709b4478ad945f714737c8d6e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56138569"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58524048"
 ---
-# <a name="how-to-manage-clients-for-linux-and-unix-servers-in-system-center-configuration-manager"></a>Come gestire i client per i server Linux e UNIX in System Center Configuration Manager
+# <a name="how-to-manage-clients-for-linux-and-unix-servers-in-configuration-manager"></a>Come gestire i client per i server Linux e UNIX in Configuration Manager
 
 *Si applica a: System Center Configuration Manager (Current Branch)*
 
-Quando si gestiscono server Linux e UNIX con System Center Configuration Manager, è possibile configurare raccolte, finestre di manutenzione e impostazioni client per semplificare la gestione dei server. Inoltre, anche se il client di Configuration Manager per Linux e UNIX non ha un'interfaccia utente, è possibile forzarne manualmente il polling dei criteri client.
+> [!Important]  
+> A partire dalla versione 1902, Configuration Manager non supporta i client Linux o UNIX. 
+> 
+> Per la gestione dei server Linux, è possibile usare la gestione di Microsoft Azure. Le soluzioni di Azure includono un ampio supporto per Linux che nella maggior parte dei casi supera le funzionalità di Configuration Manager, inclusa la gestione end-to-end delle patch per Linux.
+
+Quando si gestiscono server Linux e UNIX con Configuration Manager, è possibile configurare raccolte, finestre di manutenzione e impostazioni client per semplificare la gestione dei server. Inoltre, anche se il client di Configuration Manager per Linux e UNIX non ha un'interfaccia utente, è possibile forzare manualmente il polling dei criteri client.
 
 ##  <a name="BKMK_CollectionsforLnU"></a> Raccolte di server Linux e UNIX  
  Usare le raccolte per gestire i gruppi di server Linux e UNIX in modo analogo all'uso delle raccolte per gestire altri tipi di client. Le raccolte possono essere raccolte di appartenenza diretta o raccolte basate su query. Le raccolte basate su query identificano i sistemi operativi client, le configurazioni hardware o altri dettagli relativi ai client archiviati nel database del sito. Ad esempio, è possibile usare le raccolte che includono server Linux e UNIX per gestire le impostazioni seguenti:  
@@ -51,9 +56,9 @@ Quando si gestiscono server Linux e UNIX con System Center Configuration Manager
 
  Per impostazione predefinita l'opzione **Impostazioni agente client predefinite** si applica a server Linux e UNIX. È anche possibile creare impostazioni client personalizzate e distribuirle alle raccolte di client specifici.  
 
- Non sono presenti impostazioni client aggiuntive che si applicano solo ai client Linux e UNIX. Tuttavia, esistono impostazioni client predefinite che non si applicano ai client Linux e UNIX. Il client per Linux e UNIX applica le impostazioni solo per le funzionalità supportate.  
+ Non sono presenti impostazioni client aggiuntive che si applicano solo ai client Linux e UNIX. Ci sono tuttavia impostazioni client predefinite che non si applicano ai client Linux e UNIX. Il client per Linux e UNIX applica le impostazioni solo per le funzionalità supportate.  
 
- Ad esempio, un'impostazione del dispositivo client personalizzata che abilita e configura le impostazioni di controllo remoto viene ignorata dal server Linux e UNIX, perché il client per Linux e UNIX non supporta il controllo remoto.  
+ Ad esempio, un'impostazione del dispositivo client personalizzata che abilita e configura le impostazioni di controllo remoto viene ignorata dai server Linux e UNIX, perché il client per Linux e UNIX non supporta il controllo remoto.  
 
 ##  <a name="BKMK_PolicyforLnU"></a> Criteri del computer per server Linux e UNIX  
  Il client per i server Linux e UNIX esegue periodicamente il polling dei criteri del computer nel relativo sito per recuperare informazioni sulle configurazioni richieste e per controllare le distribuzioni.  
@@ -66,12 +71,12 @@ Quando si gestiscono server Linux e UNIX con System Center Configuration Manager
 >  Il client di Configuration Manager per Linux e UNIX non richiede né elabora mai i criteri utente.  
 
 ##  <a name="BKMK_ManageLinuxCerts"></a> Come gestire i certificati sul client per Linux e UNIX  
- Dopo aver installato il client per Linux e UNIX, è possibile usare lo strumento **certutil** per aggiornare il client con un nuovo certificato PKI e per importare un nuovo elenco di revoche di certificati (CRL). Quando si installa il client per Linux e UNIX, questo strumento viene inserito in **/opt/microsoft/configmgr/bin/certutil**. 
+ Dopo aver installato il client per Linux e UNIX, è possibile usare lo strumento **certutil** per aggiornare il client con un nuovo certificato PKI e per importare un nuovo elenco di revoche di certificati (CRL). Quando si installa il client per Linux e UNIX, questo strumento viene inserito in `/opt/microsoft/configmgr/bin/certutil`. 
 
  Per gestire i certificati, in ogni client eseguire lo strumento certutil con una delle opzioni seguenti:  
 
 |Opzione|Altre informazioni|  
 |------------|----------------------|  
-|importPFX|Usare questa opzione per specificare un certificato per sostituire il certificato attualmente usato da un client.<br /><br /> Quando si usa **-importPFX** è necessario usare anche il parametro della riga di comando **-password** per specificare la password associata al file PKCS#12.<br /><br /> Usare **-rootcerts** per specificare eventuali requisiti aggiuntivi relativi al certificato radice.<br /><br /> Esempio:  **certutil -importPFX &lt;Percorso del certificato PKCS#12> -password &lt;Password certificato\> [-rootcerts &lt;elenco certificati separati da virgola>]**|  
-|-importsitecert|Usare questa opzione per aggiornare il certificato di firma del server del sito che si trova nel server di gestione.<br /><br /> Esempio: **certutil -importsitecert &lt;Percorso del certificato DER\>**|  
-|-importcrl|Usare questa opzione per aggiornare l'elenco di revoche di certificati sul client con uno o più percorsi di file CRL.<br /><br /> Esempio: **certutil -importcrl &lt;percorsi file CRL separati da virgola\>**|  
+|`importPFX`|Usare questa opzione per specificare un certificato per sostituire il certificato attualmente usato da un client.<br /><br /> Quando si usa `-importPFX`, è necessario usare anche il parametro della riga di comando `-password` per specificare la password associata al file PKCS#12.<br /><br /> Usare `-rootcerts` per specificare eventuali requisiti aggiuntivi relativi al certificato radice.<br /><br /> Esempio: `certutil -importPFX <path to the PKCS#12 certificate> -password <certificate password> [-rootcerts <comma-separated list of certificates>]`|  
+|`importsitecert`|Usare questa opzione per aggiornare il certificato di firma del server del sito che si trova nel server di gestione.<br /><br /> Esempio: `certutil -importsitecert <path to the DER certificate>`|  
+|`importcrl`|Usare questa opzione per aggiornare l'elenco di revoche di certificati sul client con uno o più percorsi di file CRL.<br /><br /> Esempio: `certutil -importcrl <comma separated CRL file paths>`|  
