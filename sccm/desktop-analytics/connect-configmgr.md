@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 063502ae7b09fcdcd7ae1b5c463da4b616829804
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: 1280e7cbd1c2d8e7524b296e48d0b1bec426d9ed
+ms.sourcegitcommit: da753df27d3909265ca45d3e79091f1e98758d16
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56755162"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58913626"
 ---
 # <a name="how-to-connect-configuration-manager-with-desktop-analytics"></a>Come connettere Configuration Manager con Desktop Analitica 
 
@@ -31,7 +31,7 @@ Desktop Analitica è strettamente integrato con Configuration Manager. In primo 
 
 In primo luogo, assicurarsi che il sito di Configuration Manager è in esecuzione almeno versione 1810. Per altre informazioni, vedere [Installare gli aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates).
 
-È anche necessario installare l'aggiornamento cumulativo versione 1810 (4486457) per supportare l'integrazione con Desktop Analitica. Per altre informazioni su questo aggiornamento, vedere [aggiornamento cumulativo per Configuration Manager current branch, versione 1810](https://support.microsoft.com/help/4486457).
+È anche necessario installare la versione 1810 aggiornamento cumulativo 2 (4488598) per supportare l'integrazione con Desktop Analitica. Per altre informazioni su questo aggiornamento, vedere [aggiornamento cumulativo 2 per Configuration Manager current branch, versione 1810](https://support.microsoft.com/help/4488598).
 
 1. Aggiornare il sito con l'aggiornamento cumulativo per la versione 1810. Per altre informazioni, vedere [Installare gli aggiornamenti nella console](/sccm/core/servers/manage/install-in-console-updates).  
 
