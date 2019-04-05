@@ -12,12 +12,12 @@ ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6bebf4065a4db1c45ee7eaa0a5b04b8d1533f29f
-ms.sourcegitcommit: 874d78f08714a509f61c52b154387268f5b73242
+ms.openlocfilehash: d857b0e9d280bfed0834a97760d4fd481f0398d7
+ms.sourcegitcommit: d138a6a9ccbb6a03dc378272cf6f81b98b940f1d
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56755242"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "59013408"
 ---
 # <a name="troubleshooting-desktop-analytics"></a>Risoluzione dei problemi relativi a Desktop Analitica
 
@@ -137,7 +137,8 @@ Le colonne seguenti sono disponibili nell'elenco dei dispositivi:
 - [Connettività dell'endpoint diagnostici Office](#office-diagnostic-endpoint-connectivity)  
 
 #### <a name="appraiser-configuration"></a>Configurazione valutazione
-<!--20,21--> Appraiser è il componente di Windows corrispondente per il [compatibilità aggiornamenti](/sccm/desktop-analytics/enroll-devices#update-devices). Valuta le App e driver di dispositivo per la compatibilità con la versione più recente di Windows. 
+<!--20,21-->
+Appraiser è il componente di Windows corrispondente per il [compatibilità aggiornamenti](/sccm/desktop-analytics/enroll-devices#update-devices). Valuta le App e driver di dispositivo per la compatibilità con la versione più recente di Windows. 
 
 Se questo controllo ha esito positivo, il componente appraiser è configurato correttamente nel dispositivo. 
 
@@ -155,7 +156,8 @@ Per altre informazioni, esaminare M365AHandler.log sul client.
 
 
 #### <a name="minimum-compatibility-update"></a>Aggiornamento di compatibilità minimo
-<!--18,19,32--> L'aggiornamento di compatibilità (appraiser.dll) non è installata o aggiornata nel dispositivo. È meno recente il requisito minimo per Desktop Analitica, 10.0.17763. 
+<!--18,19,32-->
+L'aggiornamento di compatibilità (appraiser.dll) non è installata o aggiornata nel dispositivo. È meno recente il requisito minimo per Desktop Analitica, 10.0.17763. 
 
 Installare l'aggiornamento di compatibilità più recente. Per altre informazioni, vedere [aggiornamenti per la compatibilità](/sccm/desktop-analytics/enroll-devices#bkmk_appraiser).
 
@@ -170,7 +172,8 @@ Questa proprietà consente di visualizzare la data e ora in cui il dispositivo u
 
 #### <a name="appraiser-data-collection"></a>Raccolta dei dati appraiser
 <!--Appraiser run status-->
-<!--22,33--> Questa proprietà indica il risultato più recente di Windows che esegue il componente di valutazione. 
+<!--22,33-->
+Questa proprietà indica il risultato più recente di Windows che esegue il componente di valutazione. 
 
 In caso contrario ha esito positivo, è possibile che visualizzi uno dei seguenti errori: 
 
@@ -212,7 +215,8 @@ Questa proprietà consente di visualizzare la data e ora in cui il dispositivo u
 
 #### <a name="census-data-collection"></a>Raccolta dei dati di censimento
 <!-- Census run status -->
-<!--51,52--> Census è il componente di Windows che esegue l'inventario del dispositivo. Questi dati di inventario vengono utilizzati per comprendere il dispositivo e la relativa configurazione. 
+<!--51,52-->
+Census è il componente di Windows che esegue l'inventario del dispositivo. Questi dati di inventario vengono utilizzati per comprendere il dispositivo e la relativa configurazione. 
 
 Questa proprietà indica il risultato più recente di Windows che esegue il componente di censimento.
 
@@ -228,7 +232,8 @@ Cercare il file seguente: `%windir%\System32\DeviceCensus.exe`. Se non esiste, r
 
 
 #### <a name="windows-diagnostic-endpoint-connectivity"></a>Connettività dell'endpoint diagnostica Windows
-<!--12,15--> Se questo controllo ha esito positivo, il dispositivo è in grado di connettersi all'utente connesso esperienza e i dati di telemetria endpoint (Vortex). 
+<!--12,15-->
+Se questo controllo ha esito positivo, il dispositivo è in grado di connettersi all'utente connesso esperienza e i dati di telemetria endpoint (Vortex). 
 
 In caso contrario, potrebbe essere visualizzato uno dei seguenti errori:  
 
@@ -275,7 +280,8 @@ Controllare le autorizzazioni per questa chiave del Registro di sistema. Assicur
 
 
 #### <a name="commercial-id-configuration"></a>Configurazione dell'ID commerciale
-<!--9, 11, 53--> Microsoft Usa un ID commerciale univoco per mappare le informazioni dai dispositivi all'area di lavoro di Analitica Desktop. Quando Configuration Manager si integra con Desktop Analitica, interroga automaticamente il servizio per questo ID. Configuration Manager deve applicare automaticamente questo ID per i client a cui si impostazioni Analitica Desktop di destinazione. 
+<!--9, 11, 53-->
+Microsoft Usa un ID commerciale univoco per mappare le informazioni dai dispositivi all'area di lavoro di Analitica Desktop. Quando Configuration Manager si integra con Desktop Analitica, interroga automaticamente il servizio per questo ID. Configuration Manager deve applicare automaticamente questo ID per i client a cui si impostazioni Analitica Desktop di destinazione. 
 
 Se questo controllo ha esito positivo, quindi il dispositivo sia configurato correttamente con un ID commerciale.
 
@@ -331,7 +337,8 @@ Assicurarsi che un altro meccanismo di criterio, ad esempio criteri di gruppo, n
 
 
 #### <a name="diagtrack-service-configuration"></a>Configurazione del servizio DiagTrack
-<!--44,45,50--> Se questo controllo ha esito positivo, il componente DiagTrack è configurato correttamente nel dispositivo. La versione minima richiesta per Desktop Analitica è 10010586 (10.0.10586). 
+<!--44,45,50-->
+Se questo controllo ha esito positivo, il componente DiagTrack è configurato correttamente nel dispositivo. La versione minima richiesta per Desktop Analitica è 10010586 (10.0.10586). 
 
 In caso contrario, potrebbe visualizzare uno dei seguenti errori:
 
@@ -369,7 +376,8 @@ Assicurarsi che non si dispone di ID duplicati nell'ambiente in uso. Ad esempio,
 
 
 #### <a name="unique-device-identifier-retrieval"></a>Recupero di identificatore univoco del dispositivo
-<!--54--> Desktop Analitica Usa il servizio Account Microsoft per un'identità del dispositivo più affidabile. 
+<!--54-->
+Desktop Analitica Usa il servizio Account Microsoft per un'identità del dispositivo più affidabile. 
 
 Assicurarsi che il **Microsoft Account Assistente** servizio non è disabilitato. Il tipo di avvio deve essere **manuale (avvio Trigger)**.
 
@@ -377,7 +385,8 @@ Per disabilitare l'accesso dell'utente finale Microsoft account, usare le impost
 
 
 #### <a name="windows-diagnostic-data-opt-in"></a>Opt-in Windows i dati di diagnostica
-<!--8,40,55,62--> Questa proprietà verifica che Windows sia configurato correttamente per consentire i dati di diagnostica. Verifica il valore AllowTelemetry nelle chiavi del Registro di sistema seguente:
+<!--8,40,55,62-->
+Questa proprietà verifica che Windows sia configurato correttamente per consentire i dati di diagnostica. Verifica il valore AllowTelemetry nelle chiavi del Registro di sistema seguente:
 
 - `HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection`
 - `HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection`
@@ -418,6 +427,7 @@ Sono i seguenti file di log nel punto di connessione del servizio nella director
 | **M365ADeploymentPlanWorker.log** | Informazioni sulla sincronizzazione di piano di distribuzione dal Desktop Analitica cloud del servizio per Gestione configurazione locale |
 | **M365ADeviceHealthWorker.log** | Informazioni sull'integrità del dispositivo caricare da Configuration Manager in Microsoft cloud |
 | **M365AUploadWorker.log** | Informazioni sulla raccolta e dispositivo caricare da Configuration Manager in Microsoft cloud |
+| **SmsAdminUI.log** | Informazioni sulle attività della console di Configuration Manager, ad esempio la configurazione dei servizi cloud di Azure  |
 
 
 ### <a name="configuration-manager-client"></a>Client di Configuration Manager
@@ -426,14 +436,14 @@ File di log seguenti sono nel client di Configuration Manager nella directory se
 
 | Registro | Descrizione |
 |---------|---------|
-| **M365Handler.log** | Informazioni sui criteri di impostazioni Desktop Analitica |
+| **M365AHandler.log** | Informazioni sui criteri di impostazioni Desktop Analitica |
 
 
 ### <a name="enable-verbose-logging"></a>Abilita la registrazione dettagliata 
 
 1. Punto di connessione del servizio, passare alla chiave del Registro di sistema seguente: `HKLM\Software\Microsoft\SMS\Tracing\SMS_SERVICE_CONNECTOR`  
 2. Impostare il **LogLevel** valore `0`  
-3. Eseguire il comando SQL seguente sul database del sito:  
+3. (Facoltativo) Eseguire il comando SQL seguente sul database del sito:  
 
     ```SQL
     DELETE FROM M365AProperties WHERE Name = 'M365ATenantUpdateInfo_LastUpdateTime'
